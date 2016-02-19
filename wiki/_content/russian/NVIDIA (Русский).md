@@ -243,7 +243,7 @@ EndSection
 
 #### Использование NVIDIA Settings
 
-Вы можете использовать инструмент `nvidia-settings`, предоставляемый пакетом [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) для настройки много-мониторной конфигурации. Этот метод использует закрытое програмнное обеспечение NVIDIA поставляемое с драйверами. Просто запустите `nvidia-settings` как root, затем настройте как вам надо и сохраните конфигурацию в `/etc/X11/xorg.conf.d/10-monitor.conf`.
+Вы можете использовать инструмент [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) для настройки много-мониторной конфигурации. Этот метод использует закрытое програмнное обеспечение NVIDIA поставляемое с драйверами. Просто запустите `nvidia-settings` как root, затем настройте как вам надо и сохраните конфигурацию в `/etc/X11/xorg.conf.d/10-monitor.conf`.
 
 #### ConnectedMonitor
 

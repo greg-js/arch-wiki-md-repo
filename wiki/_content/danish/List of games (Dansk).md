@@ -351,6 +351,7 @@ GNOME and KDE also have the game projects. For GNOME, we can install the games w
 *   [Libregamewiki](http://libregamewiki.org/) - Free software games wiki
 *   [SIG/Games](https://fedoraproject.org/wiki/SIGs/Games#Gaming_News_sites) - OS/Linux gaming news sites and lists at Fedora's wiki
 *   [live.linux-gamers](http://live.linux-gamers.net) - Arch-based live gaming distro
+*   [Unixgames](https://unixgames.org/) - Q&A service for Linux gamers
 
 #### Linux spil databaser
 

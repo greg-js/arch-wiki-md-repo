@@ -38,15 +38,15 @@ To track other changes to the `/etc` path, you need to either commit changes man
 
 Service and timer units are included in the package. Simply [enable](/index.php/Systemd/Timers#Management "Systemd/Timers") `etckeeper.timer`.
 
-See [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") for more informations and [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you wish to edit the provided units.
+See [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") for more information and [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you wish to edit the provided units.
 
 ### Cron
 
-There is a cron script in the source distribution at `debian/cron.daily`. You can use this script to automatically commit changes on a schedule. To make it run daily, for example, make sure you have cron installed and enabled, then simply copy the script from the srcdir where you built etckeeper to `/etc/cron.daily` and make sure it's executable (e.g. `chmod +x /path/to/script`).
+There is a cron script in the source distribution at `debian/cron.daily`. You can use this script to automatically commit changes on a schedule. To make it run daily, for example, make sure you have cron installed and enabled, then simply copy the script from the srcdir where you built etckeeper to `/etc/cron.daily` and make sure it is executable (e.g. `chmod +x /path/to/script`).
 
 ### Incron
 
-As an alternative to the above, you could set up incron to automatically commit changes using etckeeper whenever a file in /etc is modified.
+As an alternative to the above, you could set up incron to automatically commit changes using etckeeper whenever a file in `/etc` is modified.
 
 ### Automatic push to remote repo
 

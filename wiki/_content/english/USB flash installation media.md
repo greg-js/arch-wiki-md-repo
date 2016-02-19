@@ -177,14 +177,14 @@ $ diskutil eject /dev/disk2
 
 Because the ISO image is a hybrid which can either be burned to a disc or directly written to a USB drive, it does not include a standard partition table.
 
-After you install Arch Linux and you are done with the USB drive, you should zero out its first 512 bytes *(meaning the boot code from the MBR and the non-standard partition table)* if you want to restore it to full capacity:
+When you are done with the USB drive, you need to first erase the iso9660 filesystem signature:
 
 ```
-# dd count=1 bs=512 if=/dev/zero of=/dev/sd**x** && sync
+# wipefs --all /dev/sd**x**
 
 ```
 
-Then create a new partition table (e.g. "msdos") and filesystem (e.g. EXT4, FAT32) using [gparted](https://www.archlinux.org/packages/?name=gparted), or from a terminal:
+Then create a new partition table (e.g. "msdos") and a new partition along with a fresh filesystem (e.g. EXT4, FAT32). You can use a graphical [partitioning tool](https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools) like [gparted](https://www.archlinux.org/packages/?name=gparted), or from a terminal:
 
 *   For EXT2/3/4 (adjust accordingly), it would be:
 

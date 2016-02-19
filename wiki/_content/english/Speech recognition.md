@@ -35,7 +35,7 @@ Speech recognition can mean several things:
 
 The two major players in text-to-speech applications are Festival and eSpeak. Comparison available [here](http://braille.uwo.ca/pipermail/speakup/2008-July/046755.html)
 
-*   **[eSpeak](https://en.wikipedia.org/wiki/eSpeak "wikipedia:eSpeak")** — Compact open source software speech synthesizer for English and other languages which currently supports more than 50 languages.
+*   **[eSpeak](https://en.wikipedia.org/wiki/eSpeak "wikipedia:eSpeak")** — Compact open source software speech synthesizer for more than 50 languages.
 
 	[http://espeak.sourceforge.net/](http://espeak.sourceforge.net/) || [espeak](https://www.archlinux.org/packages/?name=espeak)
 

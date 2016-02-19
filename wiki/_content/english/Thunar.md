@@ -5,7 +5,7 @@ From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Automounting](#Automounting)
+    *   [1.1 Automounting and Trash functionality](#Automounting_and_Trash_functionality)
     *   [1.2 Plugins and addons](#Plugins_and_addons)
 *   [2 Thunar Volume Manager](#Thunar_Volume_Manager)
     *   [2.1 Installation](#Installation_2)
@@ -18,6 +18,7 @@ From the project [home page](http://docs.xfce.org/xfce/thunar/start):
     *   [3.5 Hide Shortcuts in Side Pane](#Hide_Shortcuts_in_Side_Pane)
     *   [3.6 Assign keyboard shortcuts in Thunar](#Assign_keyboard_shortcuts_in_Thunar)
     *   [3.7 Showing partitions defined in fstab](#Showing_partitions_defined_in_fstab)
+    *   [3.8 Enable Trash functionality on different filesystems (external drives)](#Enable_Trash_functionality_on_different_filesystems_.28external_drives.29)
 *   [4 Custom actions](#Custom_actions)
     *   [4.1 Search for files and folders](#Search_for_files_and_folders)
     *   [4.2 Scan for viruses](#Scan_for_viruses)
@@ -32,7 +33,7 @@ From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
 [Install](/index.php/Install "Install") the [thunar](https://www.archlinux.org/packages/?name=thunar) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories"). It is part of the [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) group, so if you are running [Xfce](/index.php/Xfce "Xfce"), you probably already have Thunar installed.
 
-### Automounting
+### Automounting and Trash functionality
 
 Thunar uses [GVFS](/index.php/GVFS "GVFS") for automounting. See also [File manager functionality](/index.php/File_manager_functionality "File manager functionality") for more details.
 
@@ -144,6 +145,24 @@ See [GTK+#Keyboard_shortcuts](/index.php/GTK%2B#Keyboard_shortcuts "GTK+"),
 By default Thunar will not show in devices any partitions defined in `/etc/fstab` besides the root partition.
 
 We can change that by adding the option **comment=x-gvfs-show** to fstab for the partition we wish to show.
+
+### Enable Trash functionality on different filesystems (external drives)
+
+Make trash directories `.Trash-*<uid>*` for each users on the top level of filesystems:
+
+For example (mount point: /media/sdc1, uid: 1000, gid: 1000):
+
+```
+# mkdir /media/sdc1/.Trash-1000
+
+```
+
+and `chown` them:
+
+```
+# chown 1000:1000 /media/sdc1/.Trash-1000
+
+```
 
 ## Custom actions
 

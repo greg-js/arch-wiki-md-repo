@@ -257,9 +257,9 @@ As of May 2015, the git version [vlc-git](https://aur.archlinux.org/packages/vlc
 
 ### Steam
 
-The "HiDPI-Steam-Skin" [[5]](https://github.com/MoriTanosuke/HiDPI-Steam-Skin) can be installed to increase the font size of the interface. While not perfect, it does improve usability.
+The [HiDPI-Steam-Skin](https://github.com/MoriTanosuke/HiDPI-Steam-Skin) can be installed to increase the font size of the interface. While not perfect, it does improve usability.
 
-Note: The skin must be downloaded to `~/.local/share/Steam/skins`, not `~/.steam/skins/` as the README says.
+**Note:** The skin must be downloaded to `~/.local/share/Steam/skins`, not `~/.steam/skins/` as the README says.
 
 ### Unsupported applications
 

@@ -1,4 +1,4 @@
-**Aura** is a multilingual package manager for Arch Linux written in [Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language) "wikipedia:Haskell (programming language)"). It connects to both the official [ABS](/index.php/ABS "ABS") repositories and to the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), allowing easy control of all packages on an Arch system. It allows all pacman operations and provides new custom ones for dealing with [AUR](/index.php/AUR "AUR") packages. Aura caches built package files, so they can be managed like any ABS package would. This includes downgrading with `-C`.
+**Aura** is a multilingual package manager for Arch Linux written in [Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language) "wikipedia:Haskell (programming language)"). It connects to both the [ABS](/index.php/ABS "ABS") and [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Aura caches built package files, so they can be managed like any ABS package would. This includes downgrading with `-C`.
 
 See the [README](https://github.com/aurapm/aura/blob/master/README.md) and [documentation](https://github.com/aurapm/aura/tree/master/doc) for general information.
 
@@ -7,12 +7,13 @@ See the [README](https://github.com/aurapm/aura/blob/master/README.md) and [docu
 *   [1 Installation](#Installation)
     *   [1.1 Binary Package](#Binary_Package)
     *   [1.2 Source Package](#Source_Package)
-*   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 AUR packages fail to build](#AUR_packages_fail_to_build)
-    *   [2.2 Build failing at configuration step](#Build_failing_at_configuration_step)
-    *   [2.3 Invalid argument](#Invalid_argument)
-    *   [2.4 Auto-prompt for sudo](#Auto-prompt_for_sudo)
-*   [3 See also](#See_also)
+*   [2 Tips and tricks](#Tips_and_tricks)
+    *   [2.1 Auto-prompt for sudo](#Auto-prompt_for_sudo)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 AUR packages fail to build](#AUR_packages_fail_to_build)
+    *   [3.2 Build failing at configuration step](#Build_failing_at_configuration_step)
+    *   [3.3 Invalid argument](#Invalid_argument)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -25,6 +26,27 @@ The easiest way to install aura without having to worry about Haskell dependenci
 ### Source Package
 
 The [aura](https://aur.archlinux.org/packages/aura/) source package requires Haskell packages which may be not available in the [official repositories](/index.php/Official_repositories "Official repositories") or [AUR](/index.php/AUR "AUR"). All of Aura's dependencies are however available in the *haskell-core* repository. See [ArchHaskell#haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell") on how to add *haskell-core* as a repository.
+
+## Tips and tricks
+
+### Auto-prompt for sudo
+
+Aura will not prompt for elevated privileges by default. If you'd like it do so (like some other AUR helpers) you can write a wrapper script to re-try aura with sudo when needed. The following creates a function `a` that wraps `aura`:
+
+```
+function a(){
+    AURA="$(aura "$@")"
+
+    if echo "$AURA" | grep -q '^aura >>= .*You have to use `.*sudo.*` for that.*$'
+    then
+        sudo aura "$@"
+    else
+        echo "$AURA"
+    fi
+}
+```
+
+Either add this function to your corresponding rc/profile or as a stand-alone script on your PATH.
 
 ## Troubleshooting
 
@@ -54,25 +76,6 @@ aura: fd:6: hGetContents: invalid argument (invalid byte sequence)
 ```
 
 This is a [known issue](https://github.com/aurapm/aura/issues/78) in 1.2.X and later versions. Make sure the [locale](/index.php/Locale "Locale") is configured correctly.
-
-### Auto-prompt for sudo
-
-Aura will not prompt for elevated privileges by default. If you'd like it do so (like some other AUR helpers) you can write a wrapper script to re-try aura with sudo when needed. The following creates a function `a` that wraps `aura`:
-
-```
-function a(){
-    AURA="$(aura "$@")"
-
-    if echo "$AURA" | grep -q '^aura >>= .*You have to use `.*sudo.*` for that.*$'
-    then
-        sudo aura "$@"
-    else
-        echo "$AURA"
-    fi
-}
-```
-
-Either add this function to your corresponding rc/profile or as a stand-alone script on your PATH.
 
 ## See also
 

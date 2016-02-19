@@ -1,7 +1,7 @@
 | [Laptop main page](/index.php/Laptop "Laptop") |
 | [Acer](/index.php/Laptop/Acer "Laptop/Acer") - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - [HP](/index.php/Laptop/HP "Laptop/HP") - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - **Toshiba** - [Other](/index.php/Laptop/Other "Laptop/Other") |
 
-### Portege, Qosmio, Satellite, Satellite Pro, T-Series, TE-Series, Tecra, libretto
+## Model list
 
 | Model Version | Arch Linux
 Install CD Version
@@ -87,7 +87,7 @@ Disk: not tested
 Battery: 2h/3:50h with power saving
 Dimming of display: brightness control works even after suspend with gnome-settings-daemon-backlight-toshiba 3.18.2-1 from AUR | NA | Camera works
 Microphone works | NA |
-| Portege z20-B2112 | Current | Intel® HD Graphics 5300 (Broadwell GT2)
+| [Portege Z20t](/index.php/Toshiba_Portege_Z20t "Toshiba Portege Z20t")-B2112 | Current | Intel® HD Graphics 5300 (Broadwell GT2)
 Touschscreen also works fine (Gnome)
 Side note: To use dual monitor setup one cable has to be connected to the screen and the other one to the base (keyboard), both cables to the base doesn't work. | Sound works. Also the keyboard shortcuts to mute/unmute
 Vol Buttons on the screen works too | works | works. | Not tested | Suspend to

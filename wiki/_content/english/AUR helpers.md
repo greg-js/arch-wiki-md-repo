@@ -147,27 +147,30 @@ This is a list of helper utilities that search and/or build packages.
 
 **Note:**
 
-*   *Secure* means that the application, by default, does not source the PKGBUILD at all, or, before doing so, reminds the user and offers him the opportunity to inspect it manually. Some helpers are known to source PKGBUILDs before the user can inspect them, allowing malicious code to be executed. *Optional* means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
-*   *Clean build* means that no new variables are exported to the build process.
-*   *Git clone* means that the helper uses git clones instead of tarballs in line with AUR 4.
+*   *Secure*: does not [source](/index.php/Source "Source"), by default, the PKGBUILD at all, or, before doing so, reminds the user and offers him the opportunity to inspect it manually. Some helpers are known to source PKGBUILDs before the user can inspect them, **allowing malicious code to be executed**. *Optional* means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
+*   *Clean build*: does not export new variables that can prevent a successful build process.
+*   *Reliable Parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli](https://aur.archlinux.org/packages/aws-cli/).
+*   *Reliable Solver*: ability to correctly solve and build complex dependency chains, such as [plasma-desktop-git](https://aur.archlinux.org/packages/plasma-desktop-git/).
+*   *Split packages*: ability to correctly build and install split packages independently, such as [python-novaclient](https://aur.archlinux.org/packages/python-novaclient/).
+*   *Git clone*: uses git clones instead of downloading tarballs (deprecated since AUR 4).
 
-| Name | Written In | Git clone | Clean build | Pacman-like Syntax | Shell Tab Completion | Secure (<small>see note above</small>) | Multilingual | Specificity |
-| apacman | Bash | No | Yes | Yes | No | Optional | No | Fork of packer |
-| [aura](/index.php/Aura "Aura") | Haskell | No | Yes | Yes | Yes (bash/zsh/fish) | Yes | Yes | Handles backups, downgrades, ABS support |
-| aurel | Emacs Lisp | No | N/A | No | No | Yes | No | Emacs integration |
-| aurget | Bash | No | Yes | Yes | Yes (bash/zsh) | Optional | No | - |
-| bauerbill | Python | No | Yes | Yes | Yes (bash/zsh) | Yes | No | Trust management, split package support, ABS support |
-| burgaur | Python 3 | No | Yes | No | No | Optional, with [mc](/index.php/Mc "Mc") | No | Wrapper around cower |
-| cower | C | No [[3]](https://github.com/falconindy/cower/commit/5b6009e7c3d006263eee5827dd247ffeefa2dbb5) | N/A | No | Yes (bash/zsh) | Yes | No | No automatic build support |
-| pacaur | Bash/C | Yes | Yes | Yes | Yes (bash/zsh) | Yes | Yes | Minimizes user interaction, split package support |
-| packer | Bash | No | Yes | Yes | No | Optional | No | - |
-| pbget | Python 3 | No | N/A | No | No | Yes | No | No automatic build support |
-| PKGBUILDer | Python 3 | Yes | Yes | Yes | No | Optional | Yes | Automatic builds by default, use -F to disable |
-| prm | Bash | Yes | N/A | No | No | Yes | No | ABS support (svn) |
-| trizen | Perl | No | Yes | Yes | No | Yes | No | - |
-| wrapaur | Bash | Yes | Yes | No | No | Yes | No | Mirror updates, print news and AUR comments |
-| yaah | Bash | Optional | N/A | No | Yes (bash) | Yes | No | No automatic build support |
-| yaourt | Bash/C | Optional | No [[4]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | Yes | Yes (bash/zsh/fish) | Yes | Yes | Handles backups, ABS support |
+| Name | Written In | Secure | Clean build | Reliable Parser | Reliable Solver | Split Packages | Git clone | Multilingual | Shell Completion | Syntax | Specificity |
+| apacman | Bash | Optional | Yes | No | No | No | No | No | No | Pacman-like | Fork of *packer* |
+| aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | Yes | No | No | Yes | Yes (bash/zsh) | Pacman-like | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support |
+| aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | No | No | Specific | Emacs integration |
+| aurget | Bash | Optional | Yes | No | No | No | No | No | Yes (bash/zsh) | Pacman-like | - |
+| bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | No | No | Yes (bash/zsh) | Specific | Trust management, ABS support |
+| burgaur | Python3 | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | No | No | Pacman-like | Wrapper for *cower* |
+| cower | C | Yes | N/A | Yes | N/A | N/A | No | No | Yes (bash/zsh) | Specific | No automatic builds |
+| pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (bash/zsh) | Pacman-like/specific | Minimizes user interaction |
+| packer | Bash | Optional | Yes | No | No | No | No | No | No | Pacman-like | - |
+| pbget | Python3 | Yes | N/A | Yes | N/A | N/A | No | No | No | Specific | No automatic builds |
+| PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[2]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | Yes | No | Pacman-like | Automatic builds by default, use -F to disable |
+| prm | Bash | Yes [[3]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | No | No | Specific | ABS support (svn), no automatic builds |
+| trizen | Perl | Yes | Yes | No | No | No | No | No | No | Pacman-like | - |
+| wrapaur | Bash | Yes | Yes | No | No | No | Yes | No | No | Specific | Mirror updates, print news and AUR comments |
+| yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | No | Yes (bash) | Specific | No automatic builds |
+| yaourt | Bash/C |  ??? [[4]](https://github.com/archlinuxfr/yaourt/blob/5a82dfed6dcd1f25664d3b0da571181284cf25fb/src/lib/pkgbuild.sh.in#L413) | No [[5]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No | No | Optional | Yes | Yes (bash/zsh/fish) | Pacman-like | Backup, ABS support |
 
 ## See also
 

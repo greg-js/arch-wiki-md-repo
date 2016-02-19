@@ -274,14 +274,7 @@ Sugerencia: use la opción para desactivar el uso de algunos dispositivos USB (p
 
 ## Instalación y configuración de cpufrequtils
 
-Para reducir el uso de energía del CPU, seguramente este interesado en **[cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils")**. El “[daemon](/index.php/Daemon "Daemon")” (proceso secundario o servidor) provisto por este script, se encarga de automatizar su uso. Usted puede elegir un valor de frecuencia mínima (min_freq) mayor (por ejemplo: 1000MHz) si prefiere que el sistema responda con mayor fluidez, mientras ahorra algo de energía. Note que esto también puede ser manejado por laptop-mode-tools si así lo prefiere.
-
-1.  Instalar el paquete: ` pacman -S cpufrequtils` 
-2.  Editar **/etc/conf.d/cpufreq** ` min_freq="800MHz" max_freq="1.60GHz"` 
-3.  Agregar los módulos: ` modprobe acpi-cpufreq cpufreq_ondemand cpufreq_powersave` 
-4.  Agregar los módulos anteriores al array MODULES=() en el archivo **rc.conf** (/etc/rc.conf por defecto).
-5.  Iniciar el daemon: ` /etc/rc.d/cpufreq start` 
-6.  Agregar **cpufreq** al array DAEMONS=() en el archivo **rc.conf**.
+See the main page: [Power management](/index.php/Power_management "Power management").
 
 ## Teclas de Función (Hotkeys)
 

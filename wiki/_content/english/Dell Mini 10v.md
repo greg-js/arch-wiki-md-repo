@@ -85,26 +85,7 @@ Once X has been restarted, the bottom part of the touchpad will be disabled, all
 
 ## Wireless
 
-The Wireless NIC is supported by the b43 module and is included in kernel from 2.6.32 on. Firmware must be installed for this hardware, as outlined in the [Wireless Setup](/index.php/Wireless_network_configuration#b43 "Wireless network configuration") article. You can find instructions for downloading and installing the correct firmware at this webpage: [[1]](http://wireless.kernel.org/en/users/Drivers/b43#fw-b43-lp).
-
-If you have difficulty with connection, or have unstable connection, try the option
-
- `qos=0` 
-
-when loading the b43 module. This can be done with
-
-```
-rmmod b43    # remove the module
-modprobe b43  qos=0  # reload it with the option
-```
-
-Once confirming that it works, you can create a file /etc/modprobe.d/b43.conf with the following line
-
- `options b43 qos=0` 
-
-permanently.
-
--- other option - use the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) driver from the AUR.
+See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless")
 
 ## Power
 

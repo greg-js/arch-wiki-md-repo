@@ -190,11 +190,13 @@ DNS=('192.168.11.254')
 
 For more information, for example how to use DHCP instead, check the [netctl](/index.php/Netctl "Netctl") article.
 
-Now enable both profile with:
+Now enable and start both profiles with:
 
 ```
  # netctl enable openvpn_tap
  # netctl enable openvpn_bridge
+ # netctl start openvpn_tap
+ # netctl start openvpn_bridge
 
 ```
 

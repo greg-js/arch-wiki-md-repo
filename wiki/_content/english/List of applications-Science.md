@@ -327,6 +327,10 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 #### Periodic table
 
+*   **eperiodique** — A simple Periodic Table Of Elements viewer using the EFL.
+
+	[http://eperiodique.sourceforge.net/](http://eperiodique.sourceforge.net/) || [eperiodique](https://aur.archlinux.org/packages/eperiodique/)
+
 *   **gElemental** — Periodic table of the elements with additional information.
 
 	[http://freshmeat.net/projects/gelemental](http://freshmeat.net/projects/gelemental) || [gelemental](https://aur.archlinux.org/packages/gelemental/)
@@ -334,10 +338,6 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 *   **[Kalzium](https://en.wikipedia.org/wiki/Kalzium "wikipedia:Kalzium")** — Periodic table of the elements with molecule editor and equation solver from the [KDE](/index.php/KDE "KDE") desktop.
 
 	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kdeedu-kalzium](https://www.archlinux.org/packages/?name=kdeedu-kalzium)
-
-*   **eperiodique** — A simple Periodic Table Of Elements viewer using the EFL.
-
-	[http://eperiodique.sourceforge.net/](http://eperiodique.sourceforge.net/) || [eperiodique](https://aur.archlinux.org/packages/eperiodique/)
 
 #### Biochemistry
 

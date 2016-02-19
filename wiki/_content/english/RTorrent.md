@@ -34,7 +34,7 @@
 
 [Install](/index.php/Install "Install") the [rtorrent](https://www.archlinux.org/packages/?name=rtorrent) package that is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Alternatively, install [rtorrent-git](https://aur.archlinux.org/packages/rtorrent-git/) or [rtorrent-extended](https://aur.archlinux.org/packages/rtorrent-extended/) from the [AUR](/index.php/AUR "AUR").
+Alternatively, install [rtorrent-git](https://aur.archlinux.org/packages/rtorrent-git/) or [rtorrent-vi-color](https://aur.archlinux.org/packages/rtorrent-vi-color/) or [rtorrent-extended](https://aur.archlinux.org/packages/rtorrent-extended/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -156,9 +156,11 @@ rTorrent relies exclusively on keyboard shortcuts for user input. A quick refere
 | Ctrl-d | Stop an active download or remove a stopped download |
 | Ctrl-k | Stop and close the files of an active download. |
 | Ctrl-r | Initiate hash check of torrent. Starts downloading if file is not available. |
+| Ctrl-o | Specify the download directory for a added, but not started torrent. |
 | Left | Returns to the previous screen |
 | Right | Goes to the next screen |
-| Backspace/Return | Adds the specified *.torrent |
+| Backspace | Adds and starts the specified *.torrent |
+| Return | Adds and doesn't start the specified *.torrent |
 | a|s|d | Increase global upload throttle about 1|5|50 KB/s |
 | A|S|D | Increase global download throttle about 1|5|50 KB/s |
 | z|x|c | Decrease global upload throttle about 1|5|50 KB/s |

@@ -103,36 +103,7 @@ Works out of the box. Just set up `dhcpd` daemon, plug and go.
 
 ### Wireless
 
-```
-$ lspci -d 14e4:4727
-12:00.0 Network controller: Broadcom Corporation BCM4313 802.11b/g/n Wireless LAN Controller (rev 01)
-
-```
-
-You will need the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) proprietary driver for it to work properly. Current new kernels support basic functionality but freezes the system when hot-plugging the device and causes hibernation/suspend issues.
-
-A dirty way to make the wireless work is described in what follows.
-
-First, compile the the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) driver from AUR, using the instructions in [AUR#Installing packages](/index.php/AUR#Installing_packages "AUR"), in order to obtain the wl module.
-
-Second, add `blacklist bcma` to `/etc/modprobe.d/modprobe.conf` and restart the computer. Finally, do
-
-```
-# rmmod wl
-# rmmod brcmsmac
-# rmmod brcmutil
-# modprobe wl
-
-```
-
-Now the wifi LED is supposed to turn on, and it should to work, as one can check using
-
-```
-$ iwlist eth1 scan
-
-```
-
-from the [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) package.
+See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless")
 
 ## Video
 

@@ -4,15 +4,16 @@ From the [libinput](http://wayland.freedesktop.org/libinput/doc/latest/index.htm
 
 	libinput originates from weston, the [Wayland](/index.php/Wayland "Wayland") reference compositor.
 
-The driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg"). Particularly notable is the project's goal to provide advanced support for touch (multitouch and gesture) features of touchpads and touchscreens. See the [product documentation](http://wayland.freedesktop.org/libinput/doc/latest/pages.html) for more information.
+The driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg"). Particularly notable is the project's goal to provide advanced support for touch (multitouch and gesture) features of touchpads and touchscreens. See the [project documentation](http://wayland.freedesktop.org/libinput/doc/latest/pages.html) for more information.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-*   [3 Touchpad configuration](#Touchpad_configuration)
-*   [4 Debugging](#Debugging)
-*   [5 See also](#See_also)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Touchpad configuration](#Touchpad_configuration)
+    *   [3.2 Debugging](#Debugging)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -49,7 +50,7 @@ $ xinput set-prop *device-number* *option-number* *setting*
 
 to change a setting.
 
-See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") illustrates an example.
+See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") and [#Touchpad configuration](#Touchpad_configuration) illustrate examples.
 
 Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence. One way to check which devices are managed by libinput is the *xorg* logfile. For example, the following:
 
@@ -69,7 +70,9 @@ is a notebok without any configuration files in `/etc/X11/xorg.conf.d/`, i.e. de
 
 Of course you can elect to use an alternative driver for one device and libinput for others. A number of factors may influence which driver to use. For example, in comparison to [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") the libinput driver has fewer options to customize touchpad behaviour to one's own taste, but far more programmatic logic to process multitouch events (e.g. palm detection as well). Hence, it makes sense to try the alternative, if you are experiencing problems on your hardware with one driver or the other.
 
-## Touchpad configuration
+## Troubleshooting
+
+### Touchpad configuration
 
 Tapping may be disabled by default. To enable it, add a configuration file:
 
@@ -83,11 +86,11 @@ Section "InputClass"
 EndSection
 ```
 
-## Debugging
+### Debugging
 
-Some inputs require kernel support and the best way to see that is using `evemu-describe`.
+Some inputs require kernel support. The tool *evemu-describe* from the [evemu](https://www.archlinux.org/packages/?name=evemu) package can be used to check:
 
-Compare the output of [software supported input trackpad driver](http://ix.io/m6b) with [a supported trackpad](https://github.com/whot/evemu-devices/blob/master/touchpads/SynPS2%20Synaptics%20TouchPad-with-scrollbuttons.events). i.e. a couple of ABS_ axes, a couple of ABS_MT axes and no REL_X/Y axis. INPUT_PROP_BUTTONPAD should also be set when it works.
+Compare the output of [software supported input trackpad driver](http://ix.io/m6b) with [a supported trackpad](https://github.com/whot/evemu-devices/blob/master/touchpads/SynPS2%20Synaptics%20TouchPad-with-scrollbuttons.events). i.e. a couple of ABS_ axes, a couple of ABS_MT axes and no REL_X/Y axis. For a clickpad the `INPUT_PROP_BUTTONPAD` property should also be set, if it is supported.
 
 ## See also
 

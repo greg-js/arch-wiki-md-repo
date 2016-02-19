@@ -152,6 +152,7 @@ The wrapper script `ecryptfs-migrate-home` will set up an encrypted home directo
 To run it, the user in question must be logged out and own no processes. The best way to achieve this is to log the user out, log into a console as the root user, and check that `ps -U *username*` returns no output. You also need to ensure that you have [rsync](https://www.archlinux.org/packages/?name=rsync) and [lsof](https://www.archlinux.org/packages/?name=lsof) installed. Once the prerequisites have been met, run:
 
 ```
+# modprobe ecryptfs
 # ecryptfs-migrate-home -u *username*
 
 ```

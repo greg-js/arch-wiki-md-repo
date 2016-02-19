@@ -23,6 +23,7 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [10 ls](#ls)
     *   [10.1 Long format](#Long_format)
     *   [10.2 Colored output](#Colored_output_2)
+    *   [10.3 Entry names containing spaces enclosed in quotes](#Entry_names_containing_spaces_enclosed_in_quotes)
 *   [11 mkdir](#mkdir)
 *   [12 mv](#mv)
 *   [13 od](#od)
@@ -421,6 +422,10 @@ The next step will further enhance the colored *ls* output; for example, broken 
 eval $(dircolors -b)
 
 ```
+
+### Entry names containing spaces enclosed in quotes
+
+By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` environment variable to `literal`. [[3]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
 
 ## mkdir
 

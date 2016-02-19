@@ -32,6 +32,7 @@
     *   [3.9 Lenovo ThinkPad T440p](#Lenovo_ThinkPad_T440p)
     *   [3.10 Lenovo S21e-20](#Lenovo_S21e-20)
         *   [3.10.1 tpacpi-bat](#tpacpi-bat)
+        *   [3.10.2 ThinkPad Edge E420s Delay with Space Bar](#ThinkPad_Edge_E420s_Delay_with_Space_Bar)
 *   [4 See also](#See_also)
 
 ## IBM/Lenovo
@@ -54,7 +55,7 @@ Install CD Version
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
 | [Lenovo ThinkPad Edge E330](/index.php/Lenovo_ThinkPad_Edge_E330 "Lenovo ThinkPad Edge E330") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad Edge E335](/index.php/Lenovo_ThinkPad_Edge_E335 "Lenovo ThinkPad Edge E335") | NA | Yes | Yes | Yes | Yes | NA | Yes | NA |
-| Lenovo ThinkPad Edge E420s | Yes | Yes | Yes | Yes | Not tested | Yes | NA | NA | SDcard (Yes), Webcam (Yes), Trackpoint (No) |
+| Lenovo ThinkPad Edge E420s | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA | SDcard (Yes), Webcam (Yes), Trackpoint (No) |
 | [Lenovo ThinkPad Edge E430](/index.php/Lenovo_ThinkPad_Edge_E430 "Lenovo ThinkPad Edge E430") | Yes | Yes | Yes* | Yes* | Not tested | Yes | NA | NA | SD card (yes) |
 | [Lenovo Thinkpad Edge E455](/index.php/Lenovo_Thinkpad_Edge_E455 "Lenovo Thinkpad Edge E455") | 2015.04.01 | Yes* | Yes | Yes | Yes | Yes | Yes | NA |
 | Lenovo ThinkPad Edge E530 | Yes | Yes | Yes* | Yes* | Yes | Yes | NA | NA | SD card (yes), Finger Print (not tested) |
@@ -270,6 +271,10 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 There is an issue with tpacpi-bat not reporting the right value for the stop threshold. This seems to be related to a buggy BIOS and can not be fixed application wise.
 
 See [https://github.com/teleshoes/tpacpi-bat/issues/44](https://github.com/teleshoes/tpacpi-bat/issues/44)
+
+#### ThinkPad Edge E420s Delay with Space Bar
+
+Solution: Update BIOS (at least 1.08).
 
 ## See also
 

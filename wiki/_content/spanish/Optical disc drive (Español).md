@@ -204,12 +204,7 @@ $ wodim dev=/dev/sr0 -checkdrive
 
 Que debe mostar el «Vendor_info» y la «Identification» de la unidad.
 
-Si no se encuentra ninguna unidad, compruebe si existe algún `/dev/sr*` y si tiene permisos de lectura/escritura (`wr-`) para usted y a su grupo. En el caso de que no exita `/dev/sr*` inténtelo con:
-
-```
-# modprobe sr_mod
-
-```
+Si no se encuentra ninguna unidad, compruebe si existe algún `/dev/sr*` y si tiene permisos de lectura/escritura (`wr-`) para usted y a su grupo. En el caso de que no exita `/dev/sr*` inténtelo con: [loading](/index.php/Kernel_modules "Kernel modules") module `sr_mod` manually.
 
 ### Leer una imagen ISO desde un CD, DVD o BD
 

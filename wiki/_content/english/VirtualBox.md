@@ -232,7 +232,7 @@ See also [UEFI Virtualbox installation boot problems](https://bbs.archlinux.org/
 
 After completing the installation of the guest system, install the VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) which include drivers and applications that optimize the guest operating system. These can be installed via [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils), which provides [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) as a required dependency.
 
-**Note:** You can also install the Guest Additions via the iso from the virtualbox-guest-iso, provied you installed this on the host system. To do this, go to the device menu click Insert Guest Additions CD Image. Then, in client, do the following as root:
+**Note:** You can also install the Guest Additions via the iso from the virtualbox-guest-iso, provided you installed this on the host system. To do this, go to the device menu click Insert Guest Additions CD Image. Then, in client, do the following as root:
 
 1.  mount /dev/sr0
 2.  bin /mnt/VBoxGuestAdditions.run

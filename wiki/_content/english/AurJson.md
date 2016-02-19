@@ -213,7 +213,7 @@ This would automatically call the JavaScript function `jsonp1192244621103` with 
 
 ## Reference clients
 
-Sometimes things are easier to understand with examples. A few reference implementations (jQuery, python, ruby) are available at the following url: [https://github.com/cactus/random/tree/master/aurjson_examples](https://github.com/cactus/random/tree/master/aurjson_examples)
+Sometimes things are easier to understand with examples. A few reference implementations (jQuery, python, ruby) are available at the following url: [https://github.com/cactus/random/tree/2b72a1723bfc8ae64eed6a3c40cb154accae3974/aurjson_examples](https://github.com/cactus/random/tree/2b72a1723bfc8ae64eed6a3c40cb154accae3974/aurjson_examples)
 
 ## Associated code
 

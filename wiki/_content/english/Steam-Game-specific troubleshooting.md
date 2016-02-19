@@ -35,11 +35,12 @@
     *   [12.1 Stuttering sound with PulseAudio](#Stuttering_sound_with_PulseAudio)
 *   [13 Counter-Strike: Global Offensive (CS:GO)](#Counter-Strike:_Global_Offensive_.28CS:GO.29)
     *   [13.1 Game runs on the wrong screen](#Game_runs_on_the_wrong_screen)
-    *   [13.2 Audio is not synced](#Audio_is_not_synced)
-    *   [13.3 Unable to aim when in game](#Unable_to_aim_when_in_game)
-    *   [13.4 Mouse Deadzone](#Mouse_Deadzone)
-    *   [13.5 Low Performance on AMD card using Catalyst proprietary driver ( <= 15.7 )](#Low_Performance_on_AMD_card_using_Catalyst_proprietary_driver_.28_.3C.3D_15.7_.29)
-    *   [13.6 Brightness slider not working](#Brightness_slider_not_working)
+    *   [13.2 Cannot reach bottom of the screen on menues](#Cannot_reach_bottom_of_the_screen_on_menues)
+    *   [13.3 Audio is not synced](#Audio_is_not_synced)
+    *   [13.4 Unable to aim when in game](#Unable_to_aim_when_in_game)
+    *   [13.5 Mouse Deadzone](#Mouse_Deadzone)
+    *   [13.6 Low Performance on AMD card using Catalyst proprietary driver ( <= 15.7 )](#Low_Performance_on_AMD_card_using_Catalyst_proprietary_driver_.28_.3C.3D_15.7_.29)
+    *   [13.7 Brightness slider not working](#Brightness_slider_not_working)
 *   [14 Crusader Kings II](#Crusader_Kings_II)
     *   [14.1 Troubleshooting](#Troubleshooting_2)
         *   [14.1.1 No audio](#No_audio)
@@ -403,6 +404,28 @@ See [PulseAudio/Troubleshooting#Laggy sound](/index.php/PulseAudio/Troubleshooti
 [GitHub Counter-Strike: Global Offensive issue #60](https://github.com/ValveSoftware/Counter-Strike-Global-Offensive/issues/60)
 
 If it happens, you can fix it by going into fullscreen windowed or windowed mode and then dragging the game onto the correct monitor. After you go back in fullscreen, the game should be on the correct monitor.
+
+### Cannot reach bottom of the screen on menues
+
+[GitHub Counter-Strike: Global Offensive issue #594](https://github.com/ValveSoftware/Counter-Strike-Global-Offensive/issues/594)
+
+If you have a secondary monitor you might have a part of your lower screen you cannot reach on menues. If on Gnome you can try to open the overview (Super key) and drag the game to the other monitor and back.
+
+If you are not on Gnome or dragging the window back and forth did not work you can try to install and run this command, where X and Y is the offset of the window and H and W is the size.
+
+```
+wmctrl -r "Counter-Strike: Global Offensive - OpenGL" -e 0,X,Y,H,W
+
+```
+
+**Example**: SecondaryMonitor: on the left 2560x1600, GamingMonitor: on the right 2560x1440).
+
+```
+wmctrl -r "Counter-Strike: Global Offensive - OpenGL" -e 0,2560,0,1600,1200
+
+```
+
+Here X and Y is 0,2560 to move the window to the monitor on the right and H and W 1600,1200 is set to match the ingame resolution.
 
 ### Audio is not synced
 

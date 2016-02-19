@@ -192,12 +192,7 @@ $ cdrecord dev=*/dev/sr0* -checkdrive
 
 which should report `Vendor_info` and `Identification` fields of the drive.
 
-If no drive is found, check whether any `/dev/sr*` exist and whether they offer read/write permission (`wr-`) to you or your group. If no `/dev/sr*` exists then try
-
-```
-# modprobe sr_mod
-
-```
+If no drive is found, check whether any `/dev/sr*` exist and whether they offer read/write permission (`wr-`) to you or your group. If no `/dev/sr*` exists then try [loading](/index.php/Kernel_modules "Kernel modules") module `sr_mod` manually.
 
 ### Reading the volume label of a CD or DVD
 

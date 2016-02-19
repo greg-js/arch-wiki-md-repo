@@ -68,6 +68,10 @@ ArchWiki 有一些特殊的语法和标注方式，要了解它们，请阅读 [
 
 要查找专门的信息，可以使用左侧的搜索框。也可以直接通过搜索引擎进行搜索 (例如加入 `site:wiki.archlinux.org` 语法限定搜索范围). 参阅 [Help:Searching](/index.php/Help:Searching "Help:Searching").
 
+## 非 Arch Linux 用户？
+
+你需要一个最新的 Arch Linux 来获得注册账户时需要的验证问题的答案。不是 Arch Linux 用户？也欢迎来贡献与发行版无关的[通用](/index.php/ArchWiki:Contributing#Non-Arch_users "ArchWiki:Contributing")内容。启动 Arch Linux 的 Live 映像就可以获得验证问题的答案，或者你也可以电子邮件联系一个[管理员](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")来获得账户。
+
 ## 相关链接
 
 全世界的 Arch 用户乐于帮助您，您可以通过以下方式找到他们：

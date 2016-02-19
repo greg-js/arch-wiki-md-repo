@@ -146,7 +146,7 @@ To check the service status, use `timedatectl status`.
 
 In this step, the storage devices that will be used by the new system will be prepared. Read [Partitioning](/index.php/Partitioning "Partitioning") for a more general overview.
 
-Users intending to create stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), should keep those instructions into consideration when preparing the partitions. If intending to install to a USB flash key, see [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key").
+Users intending to create stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), should keep those instructions in mind when preparing the partitions. If intending to install to a USB flash key, see [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key").
 
 ### Identify the devices
 
@@ -159,7 +159,7 @@ The first step is to identify the devices where the new system will be installed
 
 This will list all devices connected to your system along with their partition schemes, including that used to host and boot live Arch installation media (e.g. a USB drive). Not all devices listed will therefore be viable or appropriate mediums for installation. Results ending in `rom`, `loop` or `airoot` can be ignored.
 
-Devices (e.g. hard disks) will be listed as `sd*x*`, where `*x*` is a lower-case letter starting from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. Existing partitions on those devices will be listed as `sd*xY*`, where `*Y*` is a number starting from `1` for the first partition, `2` for the second, and so on. In the example below, only one device is available (`sda`), and that device uses only one partition (`sda1`):
+Devices (e.g. hard disks) will be listed as `sd*x*`, where `*x*` is a lower-case letter starting from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. Existing partitions on those devices will be listed as `sd*xY*`, where `*Y*` is a number starting from `1` for the first partition, `2` for the second, and so on. In the example below, only one device is available (`sda`), and that device has only one partition (`sda1`):
 
 ```
 NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
@@ -261,7 +261,7 @@ You can decide the number and size of the partitions the devices should be split
 *   At least a partition for the `/` (*root*) directory **must** be created.
 *   When using a UEFI motherboard, one [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") **must** be created.
 
-In the examples below it is assumed that a new and contiguous partitioning scheme is applied to a single device. Some optional partitions will also be created for the `/boot` and `/home` directories: see also [Arch filesystem hierarchy](/index.php/Arch_filesystem_hierarchy "Arch filesystem hierarchy") for an explanation of the purpose of the various directories; if separate partitions for directories like `/boot` or `/home` are not created, these will simply be contained in the `/` partition. Also the creation of an optional partiton for [swap space](/index.php/Swap_space "Swap space") will be illustrated.
+In the examples below it is assumed that a new and contiguous partitioning scheme is applied to a single device. Some optional partitions will also be created for the `/boot` and `/home` directories which otherwise would simply be contained in the `/` partition. (See the [Arch filesystem hierarchy](/index.php/Arch_filesystem_hierarchy "Arch filesystem hierarchy") for an explanation of the purpose of the various directories.) Also the creation of an optional partiton for [swap space](/index.php/Swap_space "Swap space") will be illustrated.
 
 If not already open in a *parted* interactive session, open each device to be partitioned with:
 

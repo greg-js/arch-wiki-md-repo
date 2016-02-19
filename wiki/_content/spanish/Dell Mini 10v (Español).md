@@ -69,41 +69,7 @@ Utilizando las teclas de cursor, seleccione **PCM** y aumente el valor a 100, se
 
 ### Tarjeta Inalámbrica
 
-El dispositivo siguiente es el que demanda más tiempo, preparar la configuración correcta puede resultar confusa pues hay demasiada información referente al mismo procedimiento y no siémpre concuerda. Aquí presentamos un método bastante sencillo y claro. Como información general, este dispositivo es propiciado por Dell bajo el nombre *1397 WLAN 802.11g Half Mini-Card*. Es conveniente leer el artículo relacionado a la [Configuración Wifi](https://wiki.archlinux.org/index.php/Wireless_Setup_(Espa%C3%B1ol)), para después continuar con las siguientes líneas.
-
-El driver necesario se encuentra en [AUR](https://aur.archlinux.org/packages.php?ID=21690) y requerimos tener instalado [Yaourt](https://wiki.archlinux.org/index.php/Yaourt_(Espa%C3%B1ol)). Asegúrese de contar con un kernel mayor a 2.6.33, ya que en versiones anteriores presenta conflictos con dicho driver. Puede comprobar esto con un simple:
-
-```
-$ uname -r
-
-```
-
-Proseguimos con la instalación del driver desde el repositorio de usuarios con el siguiente comando:
-
-```
-$ yaourt -S b43-firmware
-
-```
-
-Con esto descargamos e instalamos el driver desde la página de [Broadcom](http://www.broadcom.com/support/802.11/linux_sta.php).
-
-**Tip:** Cuando use *yaourt*, evite hacerlo como **root** o superusuario. Siempre es una mala idea.
-
-Ahora cargaremos los módulos correspondientes para el correcto funcionamiento de nuestra tarjeta, para esto abrimos el archivo */etc/rc.local* con el editor de su elección, por ejemplo [Nano](/index.php/Nano "Nano"):
-
-```
-# nano /etc/rc.local
-
-```
-
-Agregamos la siguiente línea al final del archivo:
-
-```
-sudo modprobe b43 pio=1 qos=0
-
-```
-
-Guardamos los cambios presionando las teclas **Ctrl + O** y para salir del editor con **Ctrl + X**. Ahora sólo resta reiniciar el equipo y al próximo inicio notaremos que nuestro gestor de redes detectará un nuevo dispositivo de red para administrar.
+See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless")
 
 ### Webcam
 

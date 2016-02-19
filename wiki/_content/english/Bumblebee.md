@@ -18,6 +18,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [4.2 Power management](#Power_management)
         *   [4.2.1 Default power state of NVIDIA card using bbswitch](#Default_power_state_of_NVIDIA_card_using_bbswitch)
         *   [4.2.2 Enable NVIDIA card during shutdown](#Enable_NVIDIA_card_during_shutdown)
+        *   [4.2.3 Enable NVIDIA card after waking from suspend](#Enable_NVIDIA_card_after_waking_from_suspend)
     *   [4.3 Multiple monitors](#Multiple_monitors)
         *   [4.3.1 Outputs wired to the Intel chip](#Outputs_wired_to_the_Intel_chip)
         *   [4.3.2 Output wired to the NVIDIA chip](#Output_wired_to_the_NVIDIA_chip)
@@ -292,6 +293,23 @@ WantedBy=shutdown.target
 ```
 
 Then enable the service by running `systemctl enable nvidia-enable.service` at the root prompt.
+
+#### Enable NVIDIA card after waking from suspend
+
+The bumblebee daemon may fail to activate the graphics card after suspending. A possible fix involves setting [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) as the default method for power management in `/etc/bumblebee/bumblebee.conf`:
+
+ `/etc/bumblebee/bumblebee.conf` 
+```
+[driver-nvidia]
+PMmethod=bbswitch
+
+# ...
+
+[driver-nouveau]
+PMmethod=bbswitch
+```
+
+**Note:** This fix seems to work only after rebooting the system. Restarting the bumblebee service is not enough.
 
 ### Multiple monitors
 
