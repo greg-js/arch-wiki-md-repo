@@ -74,7 +74,7 @@
 
 	<small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small>
 
-	<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(54)</small>
+	<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(53)</small>
 
 	<small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(25) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small>
 
@@ -110,7 +110,7 @@
 
 	<small>4.7.3.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(14)</small>
 
-	<small>4.8.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(19)</small>
+	<small>4.8.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(18)</small>
 
 	<small>4.8.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(34)</small>
 
@@ -124,7 +124,7 @@
 
 	<small>4.8.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(1)</small>
 
-	<small>4.8.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(49)</small>
+	<small>4.8.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(48)</small>
 
 	<small>4.8.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(7)</small>
 
@@ -180,7 +180,7 @@
 
 	<small>5.5.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(22)</small>
 
-	<small>5.6.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(23)</small>
+	<small>5.6.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(25)</small>
 
 	<small>5.7.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(20) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small>
 
@@ -232,7 +232,7 @@
 
 	<small>6.4.</small> [Dotfiles](/index.php/Category:Dotfiles "Category:Dotfiles") <small>(4)</small>
 
-	<small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy") <small>(27)</small>
+	<small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy") <small>(26)</small>
 
 	<small>6.5.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small>
 
@@ -250,7 +250,7 @@
 
 	<small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(21)</small>
 
-	<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(70)</small>
+	<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small>
 
 	<small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(25)</small>
 

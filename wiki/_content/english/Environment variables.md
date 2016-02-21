@@ -6,7 +6,8 @@ An environment variable is a named object that contains data used by one or more
 *   [2 Defining variables](#Defining_variables)
     *   [2.1 Globally](#Globally)
     *   [2.2 Per user](#Per_user)
-        *   [2.2.1 Graphical applications](#Graphical_applications)
+        *   [2.2.1 Using ~/.pam_environment](#Using_.7E.2F.pam_environment)
+        *   [2.2.2 Graphical applications](#Graphical_applications)
     *   [2.3 Per session](#Per_session)
 *   [3 Examples](#Examples)
 *   [4 See also](#See_also)
@@ -66,7 +67,7 @@ You do not always want to define an environment variable globally. For instance,
 
 1.  Configuration files of your shell, for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Configuration files](/index.php/Zsh#Configuration_files "Zsh").
 2.  `~/.profile` is used by many shells as fallback, see [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
-3.  `~/.pam_environment` is the user specific equivalent of `/etc/environment`, used by PAM-env module. See `pam_env(8)` for details.
+3.  `~/.pam_environment` is the user specific equivalent of `/etc/environment`, used by PAM-env module. See `pam_env(8)` and `pam_env.conf(5)` for details.
 
 To add a directory to the `PATH` for local usage, put following in `~/.bash_profile`:
 
@@ -76,6 +77,44 @@ export PATH="${PATH}:/home/my_user/bin"
 ```
 
 To update the variable, re-login or *source* the file: `$ source ~/.bash_profile`.
+
+#### Using ~/.pam_environment
+
+Using `~/.pam_environment` can be a little tricky, and the man pages are not particularly clear. So, here's an example:
+
+ `~/.pam_environment` 
+```
+LANG             DEFAULT=en_US.UTF-8
+LC_ALL           DEFAULT=${LANG}
+
+XDG_CONFIG_HOME  DEFAULT=@{HOME}/.config
+#XDG_CONFIG_HOME=@{HOME}/.config                    # is **not** valid see below
+XDG_DATA_HOME    DEFAULT=@{HOME}/.local/share
+
+# you can even use recently defined variables
+RCRC             DEFAULT=${XDG_CONFIG_HOME}/rcrc
+BROWSER=firefox
+#BROWSER         DEFAULT=firefox # same as above
+EDITOR=vim
+```
+
+In `~/.pam_environment` there are two ways to set environmental variables:
+
+```
+VARIABLE=VALUE
+
+```
+
+and
+
+```
+VARIABLE [DEFAULT=[value]] [OVERRIDE=[value]]
+
+```
+
+The first one **doesn't allow** the use of `${VARIABLES}` , while the second does. `@{HOME}` is a special variable that expands what is defined in `/etc/passwd` (same goes with `@{SHELL}` ). After defining a `VARIABLE`, you can recall it with `${VARIABLE}` . Note that curly braces and the dollar sign are needed ( `${}` ) when invoking the previously defined variable.
+
+**Note:** This file is read before everything, even `~/.{,bash_,z}profile` and `~/.zshenv` .
 
 #### Graphical applications
 

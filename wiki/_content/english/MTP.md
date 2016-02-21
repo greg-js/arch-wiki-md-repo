@@ -34,7 +34,7 @@ These packages to choose from all implement a [Wikipedia:Filesystem in Userspace
 *   [jmtpfs](https://aur.archlinux.org/packages/jmtpfs/) - is reported to work well for newer Android 4+ devices
 *   [go-mtpfs-git](https://aur.archlinux.org/packages/go-mtpfs-git/) - is reported to work well for newer Android 3+ devices
 *   [simple-mtpfs](https://aur.archlinux.org/packages/simple-mtpfs/)
-*   [android-file-transfer](https://aur.archlinux.org/packages/android-file-transfer/) - MTP client with minimalistic UI
+*   [android-file-transfer](https://www.archlinux.org/packages/?name=android-file-transfer) - MTP client with minimalistic UI
 
 All of them aim at better functionality and performance over `libmtp`. Since there are a lot of different USB devices, you might want to research first which one looks most suitable for yours.
 

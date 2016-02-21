@@ -70,7 +70,7 @@ Before editing any configuration files, create a backup. This way, you can rever
 
 Create backups of important data at regular intervals. Directories to consider are `/etc`, `/home` and `/var`, and, for server installations, also `/srv`.
 
-See [Backup programs](/index.php/Backup_programs "Backup programs") for many alternative applications that may better suit your case. See [Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") for other articles of interest.
+See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for many alternative applications that may better suit your case. See [Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") for other articles of interest.
 
 ### List of installed packages
 

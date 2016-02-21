@@ -13,40 +13,17 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Contents
 
-*   [1 Hardware](#Hardware)
-    *   [1.1 Tested Configurations](#Tested_Configurations)
-*   [2 Configuration](#Configuration)
-    *   [2.1 ClickPad](#ClickPad)
-    *   [2.2 Keyboard](#Keyboard)
-    *   [2.3 Backlight](#Backlight)
-    *   [2.4 Audio](#Audio)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Freezing on resume](#Freezing_on_resume)
-    *   [3.2 With Fn and Ctrl_L keys swapped, Ctrl_L+s hotkey is mapped to Alt_L](#With_Fn_and_Ctrl_L_keys_swapped.2C_Ctrl_L.2Bs_hotkey_is_mapped_to_Alt_L)
-    *   [3.3 Blinking power LED after resume from suspend](#Blinking_power_LED_after_resume_from_suspend)
-*   [4 BIOS Update](#BIOS_Update)
-*   [5 Tested configurations](#Tested_configurations_2)
-
-## Hardware
-
-### Tested Configurations
-
-Lenovo ThinkPad E440 comes with a wide range of available configurations.
-
-**Tip:** Below are the tested configurations at the time.
-
-| Feature | Configuration |
-| System | E440 20C5005LRT |
-| CPU | Intel(R) Pentium(R) CPU 3550M @ 2.30GHz |
-| Graphics | Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06) |
-| RAM | 4GB |
-| Disk | 500GB |
-| Display | 14" TFT |
-| Wi-Fi | Intel Corporation Wireless 7260 (rev 73) |
-| Backlight Keyboard | No |
-| Fingerprint Scanner | Yes |
-| Bluetooth | Yes |
-| Cam | Yes |
+*   [1 Configuration](#Configuration)
+    *   [1.1 ClickPad](#ClickPad)
+    *   [1.2 Keyboard](#Keyboard)
+    *   [1.3 Backlight](#Backlight)
+    *   [1.4 Audio](#Audio)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Freezing on resume](#Freezing_on_resume)
+    *   [2.2 With Fn and Ctrl_L keys swapped, Ctrl_L+s hotkey is mapped to Alt_L](#With_Fn_and_Ctrl_L_keys_swapped.2C_Ctrl_L.2Bs_hotkey_is_mapped_to_Alt_L)
+    *   [2.3 Blinking power LED after resume from suspend](#Blinking_power_LED_after_resume_from_suspend)
+*   [3 BIOS Update](#BIOS_Update)
+*   [4 Tested configurations](#Tested_configurations)
 
 ## Configuration
 
@@ -145,6 +122,29 @@ Below is the list of the tested configurations with corresponding **lspci** outp
 00:02.0 VGA compatible controller: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06)
 00:03.0 Audio device: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller (rev 06)
 00:14.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB xHCI (rev 04)
+00:16.0 Communication controller: Intel Corporation 8 Series/C220 Series Chipset Family MEI Controller #1 (rev 04)
+00:1a.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB EHCI #2 (rev 04)
+00:1b.0 Audio device: Intel Corporation 8 Series/C220 Series Chipset High Definition Audio Controller (rev 04)
+00:1c.0 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #1 (rev d4)
+00:1c.2 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #3 (rev d4)
+00:1c.3 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #4 (rev d4)
+00:1c.4 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #5 (rev d4)
+00:1d.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB EHCI #1 (rev 04)
+00:1f.0 ISA bridge: Intel Corporation HM87 Express LPC Controller (rev 04)
+00:1f.2 SATA controller: Intel Corporation 8 Series/C220 Series Chipset Family 6-port SATA Controller 1 [AHCI mode] (rev 04)
+00:1f.3 SMBus: Intel Corporation 8 Series/C220 Series Chipset Family SMBus Controller (rev 04)
+02:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. RTS5227 PCI Express Card Reader (rev 01)
+03:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 10)
+04:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)
+
+```
+
+**Note:** Model: E440 20C5005LRT
+
+```
+00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor DRAM Controller (rev 06)
+00:02.0 VGA compatible controller: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06)
+00:03.0 Audio device: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller (rev 06)
 00:16.0 Communication controller: Intel Corporation 8 Series/C220 Series Chipset Family MEI Controller #1 (rev 04)
 00:1a.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB EHCI #2 (rev 04)
 00:1b.0 Audio device: Intel Corporation 8 Series/C220 Series Chipset High Definition Audio Controller (rev 04)

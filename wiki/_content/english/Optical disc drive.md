@@ -15,19 +15,21 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
     *   [1.6 Reading the volume label of a CD or DVD](#Reading_the_volume_label_of_a_CD_or_DVD)
     *   [1.7 Reading an ISO image from a CD, DVD, or BD](#Reading_an_ISO_image_from_a_CD.2C_DVD.2C_or_BD)
     *   [1.8 Erasing CD-RW and DVD-RW](#Erasing_CD-RW_and_DVD-RW)
-    *   [1.9 Burning an ISO image to CD, DVD, or BD](#Burning_an_ISO_image_to_CD.2C_DVD.2C_or_BD)
-    *   [1.10 Verifying the burnt ISO image](#Verifying_the_burnt_ISO_image)
-    *   [1.11 ISO 9660 and burning on-the-fly](#ISO_9660_and_burning_on-the-fly)
-    *   [1.12 Multi-session](#Multi-session)
-        *   [1.12.1 Multi-session by cdrecord](#Multi-session_by_cdrecord)
-        *   [1.12.2 Multi-session by growisofs](#Multi-session_by_growisofs)
-        *   [1.12.3 Multi-session by xorriso](#Multi-session_by_xorriso)
-    *   [1.13 BD Defect Management](#BD_Defect_Management)
-    *   [1.14 Burning an audio CD](#Burning_an_audio_CD)
-    *   [1.15 Burning a BIN/CUE](#Burning_a_BIN.2FCUE)
-        *   [1.15.1 TOC/CUE/BIN for mixed-mode disks](#TOC.2FCUE.2FBIN_for_mixed-mode_disks)
-    *   [1.16 Burn backend problems](#Burn_backend_problems)
-    *   [1.17 Burning CD/DVD/BD with a GUI](#Burning_CD.2FDVD.2FBD_with_a_GUI)
+    *   [1.9 Formatting DVD-RW](#Formatting_DVD-RW)
+    *   [1.10 Formatting BD-RE and BD-R](#Formatting_BD-RE_and_BD-R)
+    *   [1.11 Burning an ISO image to CD, DVD, or BD](#Burning_an_ISO_image_to_CD.2C_DVD.2C_or_BD)
+    *   [1.12 Verifying the burnt ISO image](#Verifying_the_burnt_ISO_image)
+    *   [1.13 ISO 9660 and burning on-the-fly](#ISO_9660_and_burning_on-the-fly)
+    *   [1.14 Multi-session](#Multi-session)
+        *   [1.14.1 Multi-session by cdrecord](#Multi-session_by_cdrecord)
+        *   [1.14.2 Multi-session by growisofs](#Multi-session_by_growisofs)
+        *   [1.14.3 Multi-session by xorriso](#Multi-session_by_xorriso)
+    *   [1.15 BD Defect Management](#BD_Defect_Management)
+    *   [1.16 Burning an audio CD](#Burning_an_audio_CD)
+    *   [1.17 Burning a BIN/CUE](#Burning_a_BIN.2FCUE)
+        *   [1.17.1 TOC/CUE/BIN for mixed-mode disks](#TOC.2FCUE.2FBIN_for_mixed-mode_disks)
+    *   [1.18 Burn backend problems](#Burn_backend_problems)
+    *   [1.19 Burning CD/DVD/BD with a GUI](#Burning_CD.2FDVD.2FBD_with_a_GUI)
 *   [2 Playback](#Playback)
     *   [2.1 CD](#CD)
     *   [2.2 DVD](#DVD)
@@ -242,13 +244,13 @@ $ cdrecord -v dev=*/dev/sr0* blank=fast
 
 ```
 
-There are two options for blanking: `blank=fast` and `blank=full`. Full blanking is many times slower than fast, but with using fast you are losing ability of multi-session burning and recording of streams of unpredicted length. Also note than with fast blanking your data is not physically destroyed on disk and can be restored, which may be undesirable.
+There are two options for blanking: `blank=fast` and `blank=full`. Full blanking lasts as long as a full write run. It overwrites the payload data on the CD. Nevertheless this should not be considered as securely making those data unreadable. For that purpose, several full write runs with random data are advised.
 
 Alternative commands are:
 
 ```
-$ wodim -v dev=*/dev/sr0* blank=all
-$ cdrskin -v dev=*/dev/sr0* blank=all
+$ wodim -v dev=*/dev/sr0* blank=fast
+$ cdrskin -v dev=*/dev/sr0* blank=fast
 $ xorriso -outdev */dev/sr0* -blank as_needed
 
 ```
@@ -263,19 +265,51 @@ $ dvd+rw-format -blank=fast */dev/sr0*
 Alternative commands are:
 
 ```
-$ cdrskin -v dev=*/dev/sr0* blank=format_overwrite
+$ cdrecord -v dev=*/dev/sr0* blank=fast
+$ cdrskin -v dev=*/dev/sr0* blank=deformat_sequential_quickest
+$ xorriso -outdev */dev/sr0* -blank deformat_quickest
+
+```
+
+Such fastly blanked DVD-RW are not suitable for multi-session and cannot take input streams of unpredicted length. For that purpose one has to use one of:
+
+```
+$ cdrecord -v dev=*/dev/sr0* blank=all
+$ dvd+rw-format -blank=full */dev/sr0*
+$ cdrskin -v dev=*/dev/sr0* blank=as_needed
+$ xorriso -outdev */dev/sr0* -blank as_needed
+
+```
+
+The other media types are either write-once (CD-R, DVD-R, DVD+R, BD-R) or are overwritable without the need for erasing (DVD-RAM, DVD+RW, BD-RE).
+
+### Formatting DVD-RW
+
+Formatted DVD-RW media can be overwritten without previous erasure. So consider to apply once in their life time
+
+```
+$ dvd+rw-format -force */dev/sr0*
+$ cdrskin -v dev=*/dev/sr0* blank=format_if_needed
 $ xorriso -outdev */dev/sr0* -format as_needed
 
 ```
 
-Formatted DVD+RW (note for `+`!) media can be overwritten without such erasure. So consider to apply once in their life time
+Unlike DVD-RAM, DVD+RW, and BD-RE, formatted DVD-RW cannot be used as (slow) hard disk directly, but rather need the mediation of driver pktcdvd. See man pktsetup.
+
+### Formatting BD-RE and BD-R
+
+BD-RE need formatting before first use. This is done automatically by the burn programs when they detect the unformatted state. Nevertheless the size of the payload area can be influenced by expert versions of the format commands shown above for DVD-RW.
+
+BD-R can be used unformatted or formatted. Unformatted they are written with full nominal speed and offer maximum storage capacity. Formatted they get checkread during write operations and bad blocks get replaced by blocks from the Spare Area. This reduces write speed to a half or less of nominal speed. The default sized Spare Area reduces the storage capacity by 768 MiB.
+
+growisofs formats BD-R by default. The others do not. growisofs can be kept from formatting. cdrskin and xorriso can write with full nominal speed on formatted BD-RE or BD-R:
 
 ```
-$ dvd+rw-format -force */dev/sr0*
+ $ growisofs -use-the-force-luke=spare:none ...growisofs.or.mkisofs.options...
+ $ cdrskin stream_recording=on ...cdrecord.options...
+ $ xorriso -stream_recording on ...xorriso.commands...
 
 ```
-
-All other media are either write-once (CD-R, DVD-R, DVD+R, BD-R) or are overwritable without the need for erasing (DVD-RAM, BD-RE).
 
 ### Burning an ISO image to CD, DVD, or BD
 

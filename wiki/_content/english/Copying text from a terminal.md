@@ -54,7 +54,7 @@ Until the "Notes" column states otherwise, the keys combination is `Ctrl+Shift+c
 | [ETerm](https://aur.archlinux.org/packages/ETerm/) | No | Yes | No | No | No |
 | [germinal](https://aur.archlinux.org/packages/germinal/) | No | Yes | Yes | Yes | No |
 | [guake](/index.php/Guake "Guake") | No | Yes | Yes | Yes | No |
-| [Konsole](https://www.archlinux.org/packages/?name=Konsole) | No | No | Yes | Yes | Yes |
+| [konsole](https://www.archlinux.org/packages/?name=konsole) | No | No | Yes | Yes | Yes |
 | [lilyterm](https://www.archlinux.org/packages/?name=lilyterm) | No | Yes | Yes | Yes | No | `Ctrl+Delete` |
 | [lxterminal](https://www.archlinux.org/packages/?name=lxterminal) | No | Yes | Yes | Yes | Yes |
 | [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | No | Yes | Yes | Yes | Yes |

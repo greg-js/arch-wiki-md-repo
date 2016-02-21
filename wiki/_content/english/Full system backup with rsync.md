@@ -5,12 +5,11 @@ Either method will work even while the system is running. Since it's going to ta
 ## Contents
 
 *   [1 With a single command](#With_a_single_command)
-*   [2 Automated](#Automated)
-*   [3 Boot requirements](#Boot_requirements)
-    *   [3.1 Update the fstab](#Update_the_fstab)
-    *   [3.2 Update the bootloader's configuration file](#Update_the_bootloader.27s_configuration_file)
-*   [4 First boot](#First_boot)
-*   [5 See also](#See_also)
+*   [2 Boot requirements](#Boot_requirements)
+    *   [2.1 Update the fstab](#Update_the_fstab)
+    *   [2.2 Update the bootloader's configuration file](#Update_the_bootloader.27s_configuration_file)
+*   [3 First boot](#First_boot)
+*   [4 See also](#See_also)
 
 ## With a single command
 
@@ -41,10 +40,6 @@ You may want to include additional [rsync](/index.php/Rsync "Rsync") options, su
 *   Choosing `--info=progress2` option instead of `-v` will show overal progress info and transfer speed instead of huge list of files.
 
 If you wish to restore the backup use the same rsync command that was executed, but with the source and destination reversed.
-
-## Automated
-
-See [Backup programs#Rsync-type backups](/index.php/Backup_programs#Rsync-type_backups "Backup programs").
 
 ## Boot requirements
 

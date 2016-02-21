@@ -23,7 +23,7 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [10 ls](#ls)
     *   [10.1 Long format](#Long_format)
     *   [10.2 Colored output](#Colored_output_2)
-    *   [10.3 Entry names containing spaces enclosed in quotes](#Entry_names_containing_spaces_enclosed_in_quotes)
+    *   [10.3 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
 *   [11 mkdir](#mkdir)
 *   [12 mv](#mv)
 *   [13 od](#od)
@@ -32,7 +32,8 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [16 sed](#sed)
 *   [17 seq](#seq)
 *   [18 which](#which)
-*   [19 See also](#See_also)
+*   [19 wipefs](#wipefs)
+*   [20 See also](#See_also)
 
 ## Basic commands
 
@@ -423,9 +424,9 @@ eval $(dircolors -b)
 
 ```
 
-### Entry names containing spaces enclosed in quotes
+### File names containing spaces enclosed in quotes
 
-By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` environment variable to `literal`. [[3]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
+By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` [environment variable](/index.php/Environment_variable "Environment variable") to `literal`. [[3]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
 
 ## mkdir
 
@@ -505,6 +506,19 @@ The [which](https://en.wikipedia.org/wiki/Which_(Unix) command is useful to dete
 
 ```
 # journalctl $(which sshd)
+
+```
+
+## wipefs
+
+**wipefs** can list or erase [file system](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") or [partition-table](/index.php/Partition "Partition") signatures (magic strings) from the specified device. It does not erase the file systems themselves nor any other data from the device.
+
+See wipefs(8) for more information.
+
+For example, to erase all signatures from the device `/dev/sdb` and create a signature backup `~/wipefs-sdb-*offset*.bak` file for each signature:
+
+```
+# wipefs --all --backup /dev/sdb
 
 ```
 

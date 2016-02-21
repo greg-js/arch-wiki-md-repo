@@ -25,10 +25,11 @@ In order to integrate functions of the host system to the guests, including shar
         *   [2.3.3 After kernel update](#After_kernel_update)
     *   [2.4 Load the Virtualbox kernel modules](#Load_the_Virtualbox_kernel_modules_2)
     *   [2.5 Launch the VirtualBox guest services](#Launch_the_VirtualBox_guest_services)
-    *   [2.6 Enable shared folders](#Enable_shared_folders)
-        *   [2.6.1 Manual mounting](#Manual_mounting)
-        *   [2.6.2 Automounting](#Automounting)
-        *   [2.6.3 Mount at boot](#Mount_at_boot)
+    *   [2.6 Hardware acceleration](#Hardware_acceleration)
+    *   [2.7 Enable shared folders](#Enable_shared_folders)
+        *   [2.7.1 Manual mounting](#Manual_mounting)
+        *   [2.7.2 Automounting](#Automounting)
+        *   [2.7.3 Mount at boot](#Mount_at_boot)
 *   [3 Import/export VirtualBox virtual machines from/to other hypervisors](#Import.2Fexport_VirtualBox_virtual_machines_from.2Fto_other_hypervisors)
     *   [3.1 Remove additions](#Remove_additions)
     *   [3.2 Use the right virtual disk format](#Use_the_right_virtual_disk_format)
@@ -317,6 +318,10 @@ As a shortcut, the `VBoxClient-all` bash script enables all of these features. Y
 VirtualBox can also synchronize the time between the host and the guest. To do this, run `VBoxService` as root. To set this to run automatically on boot, simply [enable](/index.php/Enable "Enable") the `vboxservice` service.
 
 Now, you should have a working Arch Linux guest. Note that features like clipboard sharing are disabled by default in VirtualBox, and you will need to turn them on in the per-VM settings if you actually want to use them (e.g. *Settings > General > Advanced > Shared Clipboard*).
+
+### Hardware acceleration
+
+Hardware acceleration can be activated from the VirtualBox options on the host computer. Note that when the gdm display manager 3.16+ is known to break hardware acceleration support[[1]](https://bbs.archlinux.org/viewtopic.php?id=200025), so if you get issues with hardware acceleration it might be a good idea to try out another display manager (lightdm seems to work fine).
 
 If you want to share folders between your host and your Arch Linux guest, read on.
 
@@ -1314,7 +1319,7 @@ options snd-intel8x0 ac97_clock=48000
 
 ### Guest freezes after starting Xorg
 
-Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[2]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
+Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[3]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
 
 ### "NS_ERROR_FAILURE" and missing menu items
 
@@ -1380,7 +1385,7 @@ This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Inte
 Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
 
 *   Various Kernel bugs
-    *   Fuse mounted partitions (like ntfs) [[3]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
+    *   Fuse mounted partitions (like ntfs) [[4]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[5]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
 
 Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
 

@@ -45,7 +45,7 @@ From the [awesome website](https://awesome.naquadah.org/):
 
 ## Installation
 
-[Install](/index.php/Install "Install") [awesome](https://www.archlinux.org/packages/?name=awesome). The development version is [awesome-git](https://aur.archlinux.org/packages/awesome-git/), which is considered unstable and may have a different configuration syntax.
+[Install](/index.php/Install "Install") [awesome](https://www.archlinux.org/packages/?name=awesome). The development version is [awesome-git](https://aur.archlinux.org/packages/awesome-git/), which is considered unstable and may have a different configuration API.
 
 To run awesome from [Xinitrc](/index.php/Xinitrc "Xinitrc"), add `exec awesome` to `~/.xinitrc`. To use the included [xsession](/index.php/Xsession "Xsession") file, see [Display manager](/index.php/Display_manager "Display manager").
 
@@ -87,13 +87,13 @@ $ cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
 
 ```
 
-The syntax of the configuration often changes when awesome updates. So, remember to repeat the command above when you get something strange with awesome, or you want to modify the configuration.
+The API for the configuration often changes when awesome updates. So, remember to repeat the command above when you get something strange with awesome, or you want to modify the configuration.
 
 For more information about configuring awesome, check out the [configuration page at awesome wiki](http://awesome.naquadah.org/wiki/Awesome_3_configuration)
 
 #### Examples
 
-**Note:** The syntax of awesome configuration changes regularly, so you will likely have to modify any file you download.
+**Note:** The API for awesome configuration changes regularly, so you will likely have to modify any file you download.
 
 Some good examples of rc.lua would be as follows:
 

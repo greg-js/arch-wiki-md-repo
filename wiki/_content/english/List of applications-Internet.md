@@ -22,16 +22,17 @@
         *   [1.4.1 FTP](#FTP)
             *   [1.4.1.1 FTP clients](#FTP_clients)
             *   [1.4.1.2 FTP servers](#FTP_servers)
-        *   [1.4.2 BitTorrent clients](#BitTorrent_clients)
-            *   [1.4.2.1 Console](#Console_2)
-                *   [1.4.2.1.1 Command line / backend](#Command_line_.2F_backend)
-                *   [1.4.2.1.2 Console Interface](#Console_Interface)
-            *   [1.4.2.2 Graphical Interface](#Graphical_Interface)
-                *   [1.4.2.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
-                *   [1.4.2.2.2 libktorrent backend](#libktorrent_backend)
-                *   [1.4.2.2.3 others](#others)
-        *   [1.4.3 Other P2P networks](#Other_P2P_networks)
-        *   [1.4.4 Video downloaders](#Video_downloaders)
+        *   [1.4.2 Distributed file systems](#Distributed_file_systems)
+        *   [1.4.3 BitTorrent clients](#BitTorrent_clients)
+            *   [1.4.3.1 Console](#Console_2)
+                *   [1.4.3.1.1 Command line / backend](#Command_line_.2F_backend)
+                *   [1.4.3.1.2 Console Interface](#Console_Interface)
+            *   [1.4.3.2 Graphical Interface](#Graphical_Interface)
+                *   [1.4.3.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
+                *   [1.4.3.2.2 libktorrent backend](#libktorrent_backend)
+                *   [1.4.3.2.3 others](#others)
+        *   [1.4.4 Other P2P networks](#Other_P2P_networks)
+        *   [1.4.5 Video downloaders](#Video_downloaders)
     *   [1.5 Communication](#Communication)
         *   [1.5.1 Email clients](#Email_clients)
             *   [1.5.1.1 Console](#Console_3)
@@ -101,7 +102,7 @@
 
 	[http://www.infradead.org/openconnect/](http://www.infradead.org/openconnect/) || [openconnect](https://www.archlinux.org/packages/?name=openconnect)
 
-*   **[PPTPClient](/index.php?title=PPTPClient&action=edit&redlink=1 "PPTPClient (page does not exist)")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE).
+*   **[PPTP Client](/index.php/PPTP_Client "PPTP Client")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE).
 
 	[http://pptpclient.sourceforge.net/](http://pptpclient.sourceforge.net/) || [pptpclient](https://www.archlinux.org/packages/?name=pptpclient)
 
@@ -175,7 +176,11 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 *   **[Chromium](/index.php/Chromium "Chromium")** — Web browser developed by Google, the open source project behind Google Chrome.
 
-	[http://www.chromium.org/](http://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
+	[https://www.chromium.org/](https://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
+
+*   **[Google Chrome](/index.php/Google_Chrome "Google Chrome")** — Web browser developed by Google.
+
+	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
 
 *   **Liri** — A minimalistic material design web browser written for Papyros.
 
@@ -183,7 +188,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 *   **[Opera](/index.php/Opera "Opera")** — Highly customizable browser with focuses on an adherence to web rendering standards.
 
-	[http://opera.com](http://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
+	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
 
 *   **Quill** — A simple web browser that hopefully won't leave you asking "Why is the RAM gone?".
 
@@ -195,7 +200,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 *   **Yandex.Browser** — Combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
 
-	[http://browser.yandex.ru/beta/](http://browser.yandex.ru/beta/) || [yandex-browser](https://aur.archlinux.org/packages/yandex-browser/)
+	[https://browser.yandex.ru/beta/](https://browser.yandex.ru/beta/) || [yandex-browser](https://aur.archlinux.org/packages/yandex-browser/)
 
 ##### Webkit-based
 
@@ -366,6 +371,24 @@ Some file managers like Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Fil
 *   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — Lightweight, stable and secure FTP server for UNIX-like systems.
 
 	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
+
+#### Distributed file systems
+
+*   **[Ceph](/index.php/Ceph "Ceph")** — Distributed object store and file system designed to provide excellent performance, reliability and scalability.
+
+	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
+
+*   **GlusterFS** — Cluster file system capable of scaling to several peta-bytes.
+
+	[http://www.gluster.org/](http://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
+
+*   **Sheepdog** — Distributed object storage system for volume and container services and manages the disks and nodes intelligently.
+
+	[https://sheepdog.github.io/sheepdog/](https://sheepdog.github.io/sheepdog/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[Tahoe-LAFS](https://en.wikipedia.org/wiki/Tahoe-LAFS "wikipedia:Tahoe-LAFS")** — Tahoe Least-Authority Filesystem is a free and open, secure, decentralized, fault-tolerant, peer-to-peer distributed data store and distributed file system.
+
+	[https://tahoe-lafs.org/](https://tahoe-lafs.org/) || [tahoe-lafs](https://aur.archlinux.org/packages/tahoe-lafs/)
 
 #### BitTorrent clients
 

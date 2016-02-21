@@ -28,6 +28,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
         *   [2.5.4 Restart PulseAudio to apply the new settings (4/5)](#Restart_PulseAudio_to_apply_the_new_settings_.284.2F5.29)
         *   [2.5.5 Finally check by recording and playing it back (5/5)](#Finally_check_by_recording_and_playing_it_back_.285.2F5.29)
     *   [2.6 No microphone on Steam or Skype with enable-remixing = no](#No_microphone_on_Steam_or_Skype_with_enable-remixing_.3D_no)
+    *   [2.7 Microphone distorted due to automatic adjustment](#Microphone_distorted_due_to_automatic_adjustment)
 *   [3 Audio quality](#Audio_quality)
     *   [3.1 Enable Echo/Noise-Cancelation](#Enable_Echo.2FNoise-Cancelation)
     *   [3.2 Glitches, skips or crackling](#Glitches.2C_skips_or_crackling)
@@ -463,6 +464,23 @@ load-module module-remap-source master=alsa_input.pci-0000_00_14.2.analog-stereo
 
 ```
 
+### Microphone distorted due to automatic adjustment
+
+If your microphone volume creeps up automatically and causes the sound to be distorted, you can fix it by disabling mic boost:
+
+In `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.conf` and `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-mic.conf`,
+
+*   Under `[Element Internal Mic Boost]` set `volume` to `zero`.
+*   Under `[Element Int Mic Boost]` set `volume` to `zero`.
+*   Under `[Element Mic Boost]` set `volume` to `zero`.
+
+Then restart PulseAudio:
+
+```
+# pulseaudio -k
+
+```
+
 ## Audio quality
 
 ### Enable Echo/Noise-Cancelation
@@ -710,33 +728,6 @@ pulseaudio --start
 ```
 
 ### The only device shown is "dummy output" or newly connected cards are not detected
-
-This may be caused by settings in `~/.asoundrc` overriding the system wide settings in `/etc/asound.conf`. This can be prevented by commenting out the last line of `~/.asoundrc` like so:
-
- `~/.asoundrc` 
-```
-# </home/*yourusername*/.asoundrc.asoundconf>
-
-```
-
-Maybe some program is monopolizing the audio device:
-
- `# fuser -v /dev/snd/*` 
-```
-                     USER       PID  ACCESS COMMAND
-/dev/snd/controlC0:  root        931 F....  timidity
-                     bob        1195 F....  panel-6-mixer
-/dev/snd/controlC1:  bob        1195 F....  panel-6-mixer
-                     bob        1215 F....  pulseaudio
-/dev/snd/pcmC0D0p:   root        931 F...m  timidity
-/dev/snd/seq:        root        931 F....  timidity
-/dev/snd/timer:      root        931 f....  timidity
-
-```
-
-That means timidity blocks PulseAudio from accessing the audio devices. Just killing timidity will make the sound work again.
-
-If it does not help or you see nothing in the output, deleting the [timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B) package and restarting your system will help to get rid of the "dummy output".
 
 Another reason is [FluidSynth](/index.php/FluidSynth "FluidSynth") conflicting with PulseAudio as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=154002). One solution is to remove the package [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth).
 

@@ -1,22 +1,20 @@
-## Setting up bzr server with xinetd
+Bazaar is a version control system that helps you track project history over time and to collaborate easily with others.
 
-*   Install bzr package
+## Setting up Bazaar server with xinetd
 
-```
- pacman -S bzr
+Install the [bzr](https://www.archlinux.org/packages/?name=bzr) package.
 
-```
+Add a `*bzr-usr*` [user](/index.php/User "User") if needed.
 
-*   Add <bzr-user> if needed
-*   Create repo:
+Create a repository:
 
 ```
- bzr init /home/bzr/repo.bzr
- chown -R <bzr-user> /home/bzr/repo.bzr
+$ bzr init /home/bzr/repo.bzr
+$ chown -R *bzr_usr* /home/bzr/repo.bzr
 
 ```
 
-*   Add config for xinetd:
+Add configuration for *xinetd*:
 
 ```
 service bzr
@@ -24,7 +22,7 @@ service bzr
 	flags			= REUSE
 	socket_type		= stream
 	wait			= no
-	user			= <bzr-user>
+	user			= *bzr_usr*
 	server			= /usr/bin/bzr
 	server_args		= serve --inet --directory=/home/bzr/repo.bzr
 	env			= HOME=/home/bzr
@@ -33,5 +31,4 @@ service bzr
 	cps			= 50 10
 	instances		= 60
 }
-
 ```

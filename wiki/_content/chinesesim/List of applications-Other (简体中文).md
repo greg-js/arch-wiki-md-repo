@@ -4,67 +4,67 @@
 
 [互联网](/index.php/List_of_Applications/Internet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Internet (简体中文)") – [多媒体](/index.php/List_of_Applications/Multimedia_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Multimedia (简体中文)") – [工具](/index.php/List_of_Applications/Utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Utilities (简体中文)") – [文档](/index.php/List_of_Applications/Documents_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Documents (简体中文)") – [安全](/index.php/List_of_Applications/Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Security (简体中文)") – [科学](/index.php/List_of_Applications/Science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Science (简体中文)") – [其它](/index.php/List_of_Applications/Other_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Other (简体中文)")
 
+**翻译状态：** 本文是英文页面 [List_of_applications](/index.php/List_of_applications "List of applications") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-20，点击[这里](https://wiki.archlinux.org/index.php?title=List_of_applications&diff=0&oldid=417274)可以查看翻译后英文页面的改动。
+
 ## Contents
 
 *   [1 其它](#.E5.85.B6.E5.AE.83)
     *   [1.1 工作环境](#.E5.B7.A5.E4.BD.9C.E7.8E.AF.E5.A2.83)
-        *   [1.1.1 开机画面](#.E5.BC.80.E6.9C.BA.E7.94.BB.E9.9D.A2)
-        *   [1.1.2 Shell](#Shell)
+        *   [1.1.1 开机动画](#.E5.BC.80.E6.9C.BA.E5.8A.A8.E7.94.BB)
+        *   [1.1.2 命令行](#.E5.91.BD.E4.BB.A4.E8.A1.8C)
         *   [1.1.3 Terminal multiplexers](#Terminal_multiplexers)
-        *   [1.1.4 桌面环境](#.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83)
-        *   [1.1.5 窗口管理器](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
-            *   [1.1.5.1 命令行](#.E5.91.BD.E4.BB.A4.E8.A1.8C)
-            *   [1.1.5.2 图形](#.E5.9B.BE.E5.BD.A2)
+        *   [1.1.4 Desktop environments](#Desktop_environments)
+        *   [1.1.5 Window managers](#Window_managers)
+            *   [1.1.5.1 Console](#Console)
+            *   [1.1.5.2 Graphical](#Graphical)
         *   [1.1.6 Window tilers](#Window_tilers)
-        *   [1.1.7 虚拟工作区](#.E8.99.9A.E6.8B.9F.E5.B7.A5.E4.BD.9C.E5.8C.BA)
-        *   [1.1.8 辅助工具](#.E8.BE.85.E5.8A.A9.E5.B7.A5.E5.85.B7)
-            *   [1.1.8.1 登录管理器](#.E7.99.BB.E5.BD.95.E7.AE.A1.E7.90.86.E5.99.A8)
-            *   [1.1.8.2 窗口特效](#.E7.AA.97.E5.8F.A3.E7.89.B9.E6.95.88)
-            *   [1.1.8.3 任务栏，面板与 Dock](#.E4.BB.BB.E5.8A.A1.E6.A0.8F.EF.BC.8C.E9.9D.A2.E6.9D.BF.E4.B8.8E_Dock)
-            *   [1.1.8.4 快速启动](#.E5.BF.AB.E9.80.9F.E5.90.AF.E5.8A.A8)
-            *   [1.1.8.5 登出消息](#.E7.99.BB.E5.87.BA.E6.B6.88.E6.81.AF)
-    *   [1.2 金融](#.E9.87.91.E8.9E.8D)
+        *   [1.1.7 Virtual desktop pagers](#Virtual_desktop_pagers)
+        *   [1.1.8 Support applications](#Support_applications)
+            *   [1.1.8.1 Login managers](#Login_managers)
+            *   [1.1.8.2 Composite managers](#Composite_managers)
+            *   [1.1.8.3 Taskbars / panels / docks](#Taskbars_.2F_panels_.2F_docks)
+            *   [1.1.8.4 Application launchers](#Application_launchers)
+            *   [1.1.8.5 Logout dialogue](#Logout_dialogue)
+        *   [1.1.9 Accessibility](#Accessibility)
+            *   [1.1.9.1 Screen reading](#Screen_reading)
+            *   [1.1.9.2 Speech recognition](#Speech_recognition)
+    *   [1.2 Finance](#Finance)
     *   [1.3 Flashcards](#Flashcards)
-    *   [1.4 时间管理](#.E6.97.B6.E9.97.B4.E7.AE.A1.E7.90.86)
-        *   [1.4.1 命令行](#.E5.91.BD.E4.BB.A4.E8.A1.8C_2)
-        *   [1.4.2 图形环境](#.E5.9B.BE.E5.BD.A2.E7.8E.AF.E5.A2.83)
-    *   [1.5 模拟器](#.E6.A8.A1.E6.8B.9F.E5.99.A8)
-        *   [1.5.1 终端](#.E7.BB.88.E7.AB.AF)
-        *   [1.5.2 其它](#.E5.85.B6.E5.AE.83_2)
-    *   [1.6 业余无线电](#.E4.B8.9A.E4.BD.99.E6.97.A0.E7.BA.BF.E7.94.B5)
-*   [2 参阅](#.E5.8F.82.E9.98.85)
+    *   [1.4 Time management](#Time_management)
+        *   [1.4.1 Console](#Console_2)
+        *   [1.4.2 Graphical](#Graphical_2)
+    *   [1.5 Emulators](#Emulators)
+        *   [1.5.1 Consoles](#Consoles)
+        *   [1.5.2 Other](#Other)
+    *   [1.6 Amateur radio](#Amateur_radio)
 
 ## 其它
 
 ### 工作环境
 
-The default installation of Arch provides Bash as shell interpreter and does not contain any Desktop Environment, therefore forces users to choose one themselves. Most Arch boxes run some X11 Window Manager and/or Desktop Environment, but of course there are still people who prefer doing everyday tasks in bare console.
+初始安装的Arch系统使用Bash作为Shell但不包含任何图形环境,因此用户能够自行选择.大多数使用者使用X11窗口管理器或桌面环境,但还是有人喜欢使用命令行工作.
 
-#### 开机画面
+#### 开机动画
 
-见 [Wikipedia:Bootsplash](https://en.wikipedia.org/wiki/Bootsplash "wikipedia:Bootsplash").
+参见 [Wikipedia:Bootsplash](https://en.wikipedia.org/wiki/Bootsplash "wikipedia:Bootsplash").
 
-*   **[Fbsplash](/index.php/Fbsplash "Fbsplash")** — Gentoo implementation as bootsplash program
+*   **[Fbsplash](/index.php/Fbsplash "Fbsplash")** — Gentoo开机动画程序
 
 	[http://wiki.gentoo.org/wiki/Fbsplash](http://wiki.gentoo.org/wiki/Fbsplash) || [fbsplash](https://aur.archlinux.org/packages/fbsplash/)
 
-*   **[Plymouth](/index.php/Plymouth "Plymouth")** — The new graphical boot process for Fedora, replacing the aging Red Hat Graphical Boot
+*   **[Plymouth](/index.php/Plymouth "Plymouth")** — Fedora新开机动画程序,取代了Red Hat 的开机动画
 
 	[http://www.freedesktop.org/wiki/Software/Plymouth/](http://www.freedesktop.org/wiki/Software/Plymouth/) || [plymouth](https://aur.archlinux.org/packages/plymouth/)
 
-*   **[Splashy](/index.php/Splashy "Splashy")** — A graphical boot process designed to replace the aging Bootsplash program
+*   **[Splashy](/index.php/Splashy "Splashy")** — 另一个取代Bootsplash的开机动画程序
 
 	[https://alioth.debian.org/projects/splashy/](https://alioth.debian.org/projects/splashy/) || [splashy-full](https://aur.archlinux.org/packages/splashy-full/)
 
-*   **xplash** — New splash program used by Ubuntu starting from 9.10
+#### 命令行
 
-	[https://launchpad.net/xsplash](https://launchpad.net/xsplash) || [xsplash-bzr](https://aur.archlinux.org/packages/xsplash-bzr/)
+详见[Command-line shell](/index.php/Command-line_shell "Command-line shell").
 
-#### Shell
-
-See the main article: [Command-line shell](/index.php/Command-line_shell "Command-line shell").
-
-见 [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells "wikipedia:Comparison of command shells").
+参见[Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells "wikipedia:Comparison of command shells").
 
 #### Terminal multiplexers
 
@@ -80,19 +80,23 @@ See the main article: [Command-line shell](/index.php/Command-line_shell "Comman
 
 	[https://gnu.org/s/screen/](https://gnu.org/s/screen/) || [screen](https://www.archlinux.org/packages/?name=screen)
 
-*   **[tmux](https://en.wikipedia.org/wiki/Tmux "wikipedia:Tmux")** — BSD licensed terminal multiplexer.
+*   **[tmux](/index.php/Tmux "Tmux")** — BSD licensed terminal multiplexer.
 
-	[http://tmux.sourceforge.net/](http://tmux.sourceforge.net/) || [tmux](https://www.archlinux.org/packages/?name=tmux)
+	[http://tmux.github.io/](http://tmux.github.io/) || [tmux](https://www.archlinux.org/packages/?name=tmux)
 
-#### 桌面环境
+*   **[byobu](https://en.wikipedia.org/wiki/Byobu_(software) "wikipedia:Byobu (software)")** — An GPLv3 licensed addon for tmux or screen. It requires a terminal multiplexer installed.
+
+	[http://byobu.co/](http://byobu.co/) || [byobu](https://aur.archlinux.org/packages/byobu/)
+
+#### Desktop environments
 
 See the main article: [Desktop environment#List of desktop environments](/index.php/Desktop_environment#List_of_desktop_environments "Desktop environment").
 
-见 [Wikipedia:Comparison of X Window System desktop environments](https://en.wikipedia.org/wiki/Comparison_of_X_Window_System_desktop_environments "wikipedia:Comparison of X Window System desktop environments").
+See also [Wikipedia:Comparison of X Window System desktop environments](https://en.wikipedia.org/wiki/Comparison_of_X_Window_System_desktop_environments "wikipedia:Comparison of X Window System desktop environments").
 
-#### 窗口管理器
+#### Window managers
 
-##### 命令行
+##### Console
 
 See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of the functions of window managers for the console.
 
@@ -100,15 +104,15 @@ See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of t
 
 	[http://brain-dump.org/projects/dvtm/](http://brain-dump.org/projects/dvtm/) || [dvtm](https://www.archlinux.org/packages/?name=dvtm)
 
-*   **twin** — 文本模式的窗口管理器。
+*   **twin** — Text-mode window manager.
 
 	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
 
-##### 图形
+##### Graphical
 
 See the main article: [Window manager#List of window managers](/index.php/Window_manager#List_of_window_managers "Window manager").
 
-见 [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wiki/Comparison_of_X_window_managers "wikipedia:Comparison of X window managers").
+See also [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wiki/Comparison_of_X_window_managers "wikipedia:Comparison of X window managers").
 
 #### Window tilers
 
@@ -140,9 +144,9 @@ See the main article: [Window manager#List of window managers](/index.php/Window
 
 	[http://wumwum.sourceforge.net/](http://wumwum.sourceforge.net/) || [wumwum](https://aur.archlinux.org/packages/wumwum/)
 
-#### 虚拟工作区
+#### Virtual desktop pagers
 
-见 [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
+See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
 
 *   **bbpager** — Dockable pager for [blackbox](/index.php?title=Blackbox&action=edit&redlink=1 "Blackbox (page does not exist)") and other window managers.
 
@@ -151,10 +155,6 @@ See the main article: [Window manager#List of window managers](/index.php/Window
 *   **fbpager** — Virtual desktop pager for fluxbox.
 
 	[http://www.fluxbox.org/fbpager](http://www.fluxbox.org/fbpager) || [fbpager-git](https://aur.archlinux.org/packages/fbpager-git/)
-
-*   **fluxter** — Workspace pager for [fluxbox](/index.php/Fluxbox "Fluxbox").
-
-	[http://benedict.isomedia.com/homes/stevencooper/projects/fluxter.html](http://benedict.isomedia.com/homes/stevencooper/projects/fluxter.html) || [fluxter](https://www.archlinux.org/packages/?name=fluxter)
 
 *   **IPager** — A configurable pager with transparency, originally developed for Fluxbox.
 
@@ -176,29 +176,27 @@ See the main article: [Window manager#List of window managers](/index.php/Window
 
 	[https://github.com/BurntSushi/pager-multihead](https://github.com/BurntSushi/pager-multihead) || [pager-multihead-git](https://aur.archlinux.org/packages/pager-multihead-git/)
 
-#### 辅助工具
+#### Support applications
 
-##### 登录管理器
+##### Login managers
 
 See the main article: [Display manager#List of display managers](/index.php/Display_manager#List_of_display_managers "Display manager").
 
-##### 窗口特效
+##### Composite managers
 
-##### 任务栏，面板与 Dock
+See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_composite_managers "Xorg").
 
-*   **pancake** — 高度可定制、模块化的X系统面板
+##### Taskbars / panels / docks
 
-	[http://www.failedprojects.de/pancake/](http://www.failedprojects.de/pancake/) || [pancake](https://aur.archlinux.org/packages/pancake/)
-
-*   **[Avant Window Navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")** — 轻量级dock位于桌面底部.
+*   **[Avant Window Navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")** — Lightweight dock which sits at the bottom of the screen.
 
 	[http://launchpad.net/awn](http://launchpad.net/awn) || [avant-window-navigator](https://aur.archlinux.org/packages/avant-window-navigator/)
 
-*   **[Bmpanel](/index.php/Bmpanel "Bmpanel")** — 轻量级、兼容netwm的X11面板
+*   **[Bmpanel](/index.php/Bmpanel "Bmpanel")** — Lightweight, NETWM compliant panel.
 
-	[http://nsf.110mb.com/bmpanel/](http://nsf.110mb.com/bmpanel/) || [bmpanel](https://aur.archlinux.org/packages/bmpanel/)
+	[http://code.google.com/p/bmpanel2/](http://code.google.com/p/bmpanel2/) || [bmpanel](https://aur.archlinux.org/packages/bmpanel/)
 
-*   **[Cairo-Dock](/index.php/Cairo-Dock "Cairo-Dock")** — 高度可定制的dock或启动器
+*   **[Cairo-Dock](/index.php/Cairo-Dock "Cairo-Dock")** — Highly customizable dock and launcher application.
 
 	[http://www.glx-dock.org/](http://www.glx-dock.org/) || [cairo-dock](https://www.archlinux.org/packages/?name=cairo-dock)
 
@@ -206,27 +204,27 @@ See the main article: [Display manager#List of display managers](/index.php/Disp
 
 	[http://cdlszm.org/](http://cdlszm.org/) || [kdeplasma-applets-daisy](https://aur.archlinux.org/packages/kdeplasma-applets-daisy/)
 
-*   **[Docker](/index.php/Docker "Docker")** — 作为系统托盘的dock程序
+*   **Docker** — Docking application which acts as a system tray.
 
-	[http://icculus.org/openbox/2/docker/](http://icculus.org/openbox/2/docker/) || [docker](https://www.archlinux.org/packages/?name=docker)
+	[http://icculus.org/openbox/2/docker/](http://icculus.org/openbox/2/docker/) || [docker-tray](https://aur.archlinux.org/packages/docker-tray/)
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Full fledged dock application that makes opening common applications and managing windows easier and quicker.
 
 	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
 
-*   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — 轻量级，兼容netwm的面板
+*   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Lightweight, NETWM compliant desktop panel.
 
 	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
 
 *   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel included in the [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") desktop.
 
-	[https://wiki.gnome.org/GnomePanel](https://wiki.gnome.org/GnomePanel) || [gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel)
+	[https://wiki.gnome.org/Projects/GnomePanel](https://wiki.gnome.org/Projects/GnomePanel) || [gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel)
 
 *   **KoolDock** — KDE3 docker with great effects that tries to resemble the OS X dock.
 
 	[http://sourceforge.net/projects/kooldock](http://sourceforge.net/projects/kooldock) || [kooldock-svn](https://aur.archlinux.org/packages/kooldock-svn/)
 
-*   **LXPanel** — 来自LXDE桌面环境的轻量级X11面板。
+*   **LXPanel** — Lightweight X11 desktop panel and part of the LXDE desktop.
 
 	[http://lxde.org/lxpanel](http://lxde.org/lxpanel) || [lxpanel](https://www.archlinux.org/packages/?name=lxpanel)
 
@@ -242,23 +240,23 @@ See the main article: [Display manager#List of display managers](/index.php/Disp
 
 	[https://launchpad.net/plank](https://launchpad.net/plank) || [plank](https://www.archlinux.org/packages/?name=plank)
 
-*   **[PyPanel](/index.php/PyPanel "PyPanel")** — 基于python和C的轻量级面板/任务栏.
+*   **[PyPanel](/index.php/PyPanel "PyPanel")** — Lightweight panel/taskbar written in Python and C.
 
 	[http://pypanel.sourceforge.net/](http://pypanel.sourceforge.net/) || [pypanel](https://www.archlinux.org/packages/?name=pypanel)
 
-*   **qtpanel** — 致力于使用Qt创建好看且好用的面板的项目。
+*   **qtpanel** — Project to create useful and beautiful panel in Qt.
 
 	[https://gitorious.org/qtpanel/qtpanel](https://gitorious.org/qtpanel/qtpanel) || [qtpanel-git](https://aur.archlinux.org/packages/qtpanel-git/)
 
-*   **[Stalonetray](/index.php/Stalonetray "Stalonetray")** — 独立的系统托盘。
+*   **[Stalonetray](/index.php/Stalonetray "Stalonetray")** — Stand-alone system tray.
 
 	[http://stalonetray.sourceforge.net/](http://stalonetray.sourceforge.net/) || [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)
 
-*   **[Tint2](/index.php/Tint2 "Tint2")** — 特别为Openbox开发的面板/任务栏。
+*   **[Tint2](/index.php/Tint2 "Tint2")** — Simple panel/taskbar developed specifically for Openbox.
 
 	[http://code.google.com/p/tint2/](http://code.google.com/p/tint2/) || [tint2](https://www.archlinux.org/packages/?name=tint2)
 
-*   **Trayer** — 为GTK 1.2/2.x程序和KDE docklets提供一个dock
+*   **Trayer** — Lightweight GTK+-based systray.
 
 	[https://gna.org/projects/fvwm-crystal/](https://gna.org/projects/fvwm-crystal/) || [trayer](https://www.archlinux.org/packages/?name=trayer)
 
@@ -266,79 +264,103 @@ See the main article: [Display manager#List of display managers](/index.php/Disp
 
 	[http://freecode.com/projects/wbar/](http://freecode.com/projects/wbar/) || [wbar](https://www.archlinux.org/packages/?name=wbar)
 
-*   **Xfce Panel** — Xfce4环境默认面板
+*   **Xfce Panel** — Panel included in the [Xfce](/index.php/Xfce "Xfce") desktop.
 
 	[http://docs.xfce.org/xfce/xfce4-panel/start](http://docs.xfce.org/xfce/xfce4-panel/start) || [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel)
 
-##### 快速启动
+##### Application launchers
 
-见 [Wikipedia:Comparison of desktop application launchers](https://en.wikipedia.org/wiki/Comparison_of_desktop_application_launchers "wikipedia:Comparison of desktop application launchers").
+See also [Wikipedia:Comparison of desktop application launchers](https://en.wikipedia.org/wiki/Comparison_of_desktop_application_launchers "wikipedia:Comparison of desktop application launchers").
 
-*   **ADeskBar** — Openbox 专用快速启动，致力于简单，轻快与专心致志。
+*   **ADeskBar** — Easy, simple and unobtrusive application launcher for Openbox.
 
 	[http://adeskbar.tuxfamily.org/](http://adeskbar.tuxfamily.org/) || [adeskbar](https://aur.archlinux.org/packages/adeskbar/)
 
-*   **ayr** — 可通过名称或 MIME 类型，以打开文件，URL, 桌面文件和应用程序。基于 dmenu.
+*   **Albert** — An application launcher inspired by Alfred.
+
+	[https://github.com/manuelschneid3r/albert](https://github.com/manuelschneid3r/albert) || [albert](https://aur.archlinux.org/packages/albert/)
+
+*   **Ayr** — Manages menus of application launchers, either executables or desktop files. Also opens files and URLs with launchers, desktop files, or applications associated by name or mimetype. Uses dmenu to manage its menus.
 
 	[http://appstogo.mcfadzean.org.uk/linux.html#ayr](http://appstogo.mcfadzean.org.uk/linux.html#ayr) || [ayr](https://aur.archlinux.org/packages/ayr/)
 
-*   **Bashrun2** — 提供了全新的，骨感的运行对话方式，用的是在小 xterm 窗口的 Bash 会话。
+*   **Bashrun2** — Provides a different, barebones approach to a run dialog, using a specialized Bash session within a small xterm window.
 
-	[https://code.google.com/p/bashrun2/](https://code.google.com/p/bashrun2/) || [bashrun2](https://aur.archlinux.org/packages/bashrun2/)
+	[http://henning-bekel.de/bashrun2/](http://henning-bekel.de/bashrun2/) || [bashrun2](https://aur.archlinux.org/packages/bashrun2/)
 
-*   **[dmenu](/index.php/Dmenu "Dmenu")** — 为 X 打造的轻快动态菜单，作为快速启动再好不过了。
+*   **[dmenu](/index.php/Dmenu "Dmenu")** — Fast and lightweight dynamic menu for X which is also useful as an application launcher.
 
 	[http://tools.suckless.org/dmenu/](http://tools.suckless.org/dmenu/) || [dmenu](https://www.archlinux.org/packages/?name=dmenu)
 
-*   **dmenu-launch** — 基于 dmenu, 专门启动二进制文件和 XDG 快捷方式。
+*   **dmenu-extended** — An extension to *dmenu* for quickly opening files and folders.
+
+	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended](https://aur.archlinux.org/packages/dmenu-extended/)
+
+*   **dmenu-launch** — Simple *dmenu*-based application launcher. Launches binaries and XDG shortcuts.
 
 	[https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch](https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch) || [dmenu-launch](https://aur.archlinux.org/packages/dmenu-launch/)
 
-*   **dswitcher** — 基于 dmenu 的窗口切换器，能很好地工作，哪怕有工作区或窗口最小化。
+*   **dswitcher** — *dmenu*-based window switcher that works regardless of workspace or minimization.
 
 	[https://github.com/Antithesisx/dswitcher](https://github.com/Antithesisx/dswitcher) || [dswitcher-git](https://aur.archlinux.org/packages/dswitcher-git/)
 
-*   **Fehlstart** — 小型，GTK+
+*   **Fehlstart** — Small GTK+-based application launcher.
 
 	[https://gitorious.org/fehlstart](https://gitorious.org/fehlstart) || [fehlstart-git](https://aur.archlinux.org/packages/fehlstart-git/)
 
-*   **[Gmrun](/index.php/Gmrun "Gmrun")** — 轻量，GTK+, 可以相当于在终端地启动程序、手动运行命令。
+*   **[Gmrun](/index.php/Gmrun "Gmrun")** — Lightweight GTK+-based application launcher, with the ability to run programs inside a terminal and other handy features.
 
 	[http://sourceforge.net/projects/gmrun/](http://sourceforge.net/projects/gmrun/) || [gmrun](https://www.archlinux.org/packages/?name=gmrun)
 
-*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do 初衷在于为 GNOME 打造快速启动。
+*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do with many plugins, originally developed for the GNOME desktop.
 
 	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
 
-*   **j4-dmenu-desktop** — 超快 dmenu 类快速启动。
+*   **j4-dmenu-desktop** — Very fast dmenu application launcher.
 
 	[https://github.com/enkore/j4-dmenu-desktop](https://github.com/enkore/j4-dmenu-desktop) || [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/)
 
-*   **Kupfer** — GNOME 桌面方便的命令与访问工具，可以启动程序，打开文档以及访问众多不同类型的对象并操作它们。
+*   **Kupfer** — Convenient command and access tool for the GNOME desktop that can launch applications, open documents and access different types of objects and act on them.
 
-	[https://live.gnome.org/Kupfer](https://live.gnome.org/Kupfer) || [kupfer](https://aur.archlinux.org/packages/kupfer/)
+	[https://wiki.gnome.org/Apps/Kupfer](https://wiki.gnome.org/Apps/Kupfer) || [kupfer](https://aur.archlinux.org/packages/kupfer/)
 
-*   **[Launchy](https://en.wikipedia.org/wiki/Launchy "wikipedia:Launchy")** — 非常火的跨平台快速启动，提供了强大的插件机制以改造。
+*   **[Launchy](https://en.wikipedia.org/wiki/Launchy "wikipedia:Launchy")** — Very popular cross-platform application launcher with a plugin-based system used to provide extra functionality.
 
 	[http://www.launchy.net/](http://www.launchy.net/) || [launchy](https://www.archlinux.org/packages/?name=launchy)
 
-*   **slingshot** — 看上去很赏心悦目的样子，是 [pantheon](/index.php/Pantheon "Pantheon") 桌面环境的部分。
+*   **Lighthouse** — A simple scriptable popup dialog to run on X.
+
+	[https://github.com/emgram769/lighthouse](https://github.com/emgram769/lighthouse) || [lighthouse-git](https://aur.archlinux.org/packages/lighthouse-git/)
+
+*   **rofi** — A popup window switcher roughly based on superswitcher, requiring only xlib and pango.
+
+	[http://davedavenport.github.io/rofi/](http://davedavenport.github.io/rofi/) || [rofi](https://www.archlinux.org/packages/?name=rofi)
+
+*   **slingshot** — An application launcher has a clear look, part of [pantheon](/index.php/Pantheon "Pantheon") desktop environment.
 
 	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://www.archlinux.org/packages/?name=slingshot-launcher)
 
-*   **Synapse** — Synapse 是一家语义类快速启动，由 Vala 编写而成。您不光可以启动程序，还可以善用 Zeitgeist 引擎，以查找与访问相关文档文件。
+*   **Synapse** — Synapse is a semantic launcher written in Vala that you can use to start applications as well as find and access relevant documents and files by making use of the Zeitgeist engine.
 
 	[https://launchpad.net/synapse-project](https://launchpad.net/synapse-project) || [synapse](https://www.archlinux.org/packages/?name=synapse)
 
-*   **xboomx** — 支持智能排序的 *dmenu*, 由 Python 编写而成。
+*   **Whippet** — A launcher and xdg-open replacement for control freaks. Opens files and URLs with applications associated by name and/or mimetype. Applications and associations may be customized using an SQLite database. Uses dmenu to manage its menus.
+
+	[http://appstogo.mcfadzean.org.uk/linux.html#whippet](http://appstogo.mcfadzean.org.uk/linux.html#whippet) || [whippet](https://aur.archlinux.org/packages/whippet/)
+
+*   **xboomx** — Light *dmenu* wrapper that reorders commands based on popularity, written in Python.
 
 	[https://bitbucket.org/dehun/xboomx](https://bitbucket.org/dehun/xboomx) || [xboomx](https://aur.archlinux.org/packages/xboomx/)
 
-*   **Yeganesh** — 支持智能排序的 *dmenu*, 由 Haskell 编写而成。
+*   **xfce4-appfinder** — An eazy-to-use application launcher from Xfce.
+
+	[http://docs.xfce.org/xfce/xfce4-appfinder/start](http://docs.xfce.org/xfce/xfce4-appfinder/start) || [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)
+
+*   **Yeganesh** — Light *dmenu* wrapper that reorders commands based on popularity, written in Haskell.
 
 	[http://dmwit.com/yeganesh](http://dmwit.com/yeganesh) || [yeganesh](https://aur.archlinux.org/packages/yeganesh/)
 
-##### 登出消息
+##### Logout dialogue
 
 A few simple shutdown managers are available:
 
@@ -362,9 +384,25 @@ A few simple shutdown managers are available:
 
 	[https://github.com/panjandrum/obshutdown](https://github.com/panjandrum/obshutdown) || [obshutdown](https://aur.archlinux.org/packages/obshutdown/)
 
-### 金融
+#### Accessibility
 
-见[Wikipedia:Comparison of accounting software](https://en.wikipedia.org/wiki/Comparison_of_accounting_software "wikipedia:Comparison of accounting software").
+##### Screen reading
+
+*   **Orca** — Screen reader for individuals who are blind or visually impaired
+
+	[http://www.gnome.org/projects/orca](http://www.gnome.org/projects/orca) || [orca](https://www.archlinux.org/packages/?name=orca)
+
+*   **[Simple Orca Plugin System](/index.php/Simple_Orca_Plugin_System "Simple Orca Plugin System")** — Plug-in extension for the Orca screen reader
+
+	[https://stormdragon.tk/orca-plugins/index.php](https://stormdragon.tk/orca-plugins/index.php) || [simpleorcapluginsystem-git](https://aur.archlinux.org/packages/simpleorcapluginsystem-git/)
+
+##### Speech recognition
+
+See the main article [Speech recognition](/index.php/Speech_recognition "Speech recognition") for applications.
+
+### Finance
+
+See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/wiki/Comparison_of_accounting_software "wikipedia:Comparison of accounting software").
 
 *   **esniper** — Simple, lightweight tool for [sniping](https://en.wikipedia.org/wiki/Auction_sniping "wikipedia:Auction sniping") eBay auctions.
 
@@ -393,6 +431,10 @@ A few simple shutdown managers are available:
 *   **Moneychanger** — An intuitive QT/C++ system tray client for *Open-Transactions*
 
 	[https://github.com/Open-Transactions/Moneychanger](https://github.com/Open-Transactions/Moneychanger) || [moneychanger-git](https://aur.archlinux.org/packages/moneychanger-git/)
+
+*   **Manager Accounting** — Manager is free accounting software for small business.
+
+	[http://www.manager.io/](http://www.manager.io/) || [manager-accounting](https://aur.archlinux.org/packages/manager-accounting/)
 
 *   **Money Manager EX** — An easy-to-use personal finance suite
 
@@ -424,43 +466,55 @@ A few simple shutdown managers are available:
 
 	[http://mnemosyne-proj.org/](http://mnemosyne-proj.org/) || [mnemosyne](https://aur.archlinux.org/packages/mnemosyne/)
 
-### 时间管理
+### Time management
 
-#### 命令行
+#### Console
 
-*   **Calcurse** — 一个基于文本的日历和时间计划系统。
+*   **Calcurse** — Text-based ncurses calendar and scheduling system.
 
 	[http://calcurse.org/](http://calcurse.org/) || [calcurse](https://www.archlinux.org/packages/?name=calcurse)
 
-*   **Remind** — 一个高度复杂的基于文本的日历和提醒软件。
+*   **Doneyet** — Ncurses-based hierarchical To-do list manager written in C++.
 
-	[http://www.roaringpenguin.com/products/remind](http://www.roaringpenguin.com/products/remind) || [remind](https://www.archlinux.org/packages/?name=remind)
+	[https://github.com/gtaubman/doneyet](https://github.com/gtaubman/doneyet) || [doneyet](https://aur.archlinux.org/packages/doneyet/)
 
-*   **Doneyet** — An ncurses-based hierarchical To-do list manager written in C++.
-
-	[https://code.google.com/p/doneyet/](https://code.google.com/p/doneyet/) || [doneyet](https://aur.archlinux.org/packages/doneyet/)
-
-*   **Pal** — A very lightweight calendar with both interactive and non-interactive interfaces.
+*   **Pal** — Very lightweight calendar with both interactive and non-interactive interfaces.
 
 	[http://palcal.sourceforge.net/](http://palcal.sourceforge.net/) || [pal](https://aur.archlinux.org/packages/pal/)
 
-*   **[Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior")** — 另一个命令行待办事项管理软件，支持通过 lua 定制。
+*   **[Remind](/index.php/Remind "Remind")** — Highly sophisticated text-based calendaring and notification system.
+
+	[http://roaringpenguin.com/products/remind](http://roaringpenguin.com/products/remind) || [remind](https://www.archlinux.org/packages/?name=remind)
+
+*   **[Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior")** — Command-line To-do list application with support for lua customization and more.
 
 	[http://taskwarrior.org/](http://taskwarrior.org/) || [task](https://www.archlinux.org/packages/?name=task)
 
-*   **todo.txt** — 用命令行管理你的Todo清单
+*   **Todo.txt** — Small command-line To-do manager.
 
-	[https://ginatrapani.github.com/todo.txt-cli/](https://ginatrapani.github.com/todo.txt-cli/) || [todotxt](https://aur.archlinux.org/packages/todotxt/)
+	[http://ginatrapani.github.com/todo.txt-cli/](http://ginatrapani.github.com/todo.txt-cli/) || [todotxt](https://aur.archlinux.org/packages/todotxt/)
 
-*   **TuDu** — An ncurses-based hierarchical To-do list manager with vim-like keybindings.
+*   **TuDu** — Ncurses-based hierarchical To-do list manager with vim-like keybindings.
 
 	[http://code.meskio.net/tudu/](http://code.meskio.net/tudu/) || [tudu](https://aur.archlinux.org/packages/tudu/)
 
-*   **When** — 简单的个人日历软件
+*   **When** — Simple personal calendar program.
 
-	[http://www.lightandmatter.com/when/when.html](http://www.lightandmatter.com/when/when.html) || [when](https://www.archlinux.org/packages/?name=when)
+	[http://lightandmatter.com/when/when.html](http://lightandmatter.com/when/when.html) || [when](https://www.archlinux.org/packages/?name=when)
 
-#### 图形环境
+*   **Wyrd** — Text-based front-end to Remind, a calendar and alarm program used on UNIX and Linux computers.
+
+	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://www.archlinux.org/packages/?name=wyrd)
+
+*   **mail2rem** — Small script for importing *.ics calendars from Maildir to Remind calendar.
+
+	[https://github.com/esovetkin/mail2rem](https://github.com/esovetkin/mail2rem) || [mail2rem-git](https://aur.archlinux.org/packages/mail2rem-git/)
+
+*   **DevTodo** — Is a small command line application for maintaining lists of tasks.
+
+	[http://swapoff.org/devtodo1.html](http://swapoff.org/devtodo1.html) || [devtodo](https://aur.archlinux.org/packages/devtodo/)
+
+#### Graphical
 
 *   **Calendar** — Calendar application for GNOME.
 
@@ -488,7 +542,7 @@ A few simple shutdown managers are available:
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Calendar and scheduling program, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-	[http://www.kde.org/applications/office/korganizer/](http://www.kde.org/applications/office/korganizer/) || [kdepim-korganizer](https://www.archlinux.org/packages/?name=kdepim-korganizer)
+	[http://www.kde.org/applications/office/korganizer/](http://www.kde.org/applications/office/korganizer/) || [korganizer](https://www.archlinux.org/packages/?name=korganizer)
 
 *   **[Lightning](https://en.wikipedia.org/wiki/Lightning_(software) "wikipedia:Lightning (software)")** — Extension to Mozilla Thunderbird that provides calendar and task support.
 
@@ -534,11 +588,7 @@ A few simple shutdown managers are available:
 
 	[http://duke.edu/~dgraham/wxRemind/](http://duke.edu/~dgraham/wxRemind/) || [wxremind](https://aur.archlinux.org/packages/wxremind/)
 
-*   **Wyrd** — Remind 的图形前端，在 UNIX 和 Linux 中提供日历和提醒。
-
-	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://www.archlinux.org/packages/?name=wyrd)
-
-### 模拟器
+### Emulators
 
 An emulator is a program which serves to replicate the functions of another platform or system so as to allow applications and games to be run in environments they were not programmed for.
 
@@ -546,9 +596,9 @@ An emulator is a program which serves to replicate the functions of another plat
 
 **Warning:** Owning a high-level emulator is not illegal, but distribution of any type of copyrighted ROMs and unauthorized emulation (without written permission of the copyright holder allowing the user to do so) are **illegal**. Consequently, Arch Linux does not distribute this copyrighted content, including game ROMs and ripped console BIOSs. You are fully responsible for whatever usage of the emulators obtained from the [official repositories](/index.php/Official_repositories "Official repositories") or the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") you make, as well as any legal repercussion that result. Arch Linux bears no responsibility at all.
 
-#### 终端
+#### Consoles
 
-见 [Wikipedia:List of video game console emulators](https://en.wikipedia.org/wiki/List_of_video_game_console_emulators "wikipedia:List of video game console emulators").
+See also [Wikipedia:List of video game console emulators](https://en.wikipedia.org/wiki/List_of_video_game_console_emulators "wikipedia:List of video game console emulators").
 
 *   **Citra** — Nintendo 3DS emulator.
 
@@ -591,7 +641,7 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **higan** — Multisystem emulator focusing on accuracy, supporting SNES, NES, GB, GBC, GBA.
 
-	[http://code.google.com/p/higan/](http://code.google.com/p/higan/) || [higan-gtk](https://www.archlinux.org/packages/?name=higan-gtk) [higan-qt](https://www.archlinux.org/packages/?name=higan-qt)
+	[http://code.google.com/p/higan/](http://code.google.com/p/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
 
 *   **mednafen** — Command line driven multi system emulator.
 
@@ -625,7 +675,7 @@ An emulator is a program which serves to replicate the functions of another plat
 
 	[http://www.zsnes.com/](http://www.zsnes.com/) || [zsnes](https://www.archlinux.org/packages/?name=zsnes)
 
-#### 其它
+#### Other
 
 *   **DOSBox** — Open-source DOS emulator which primarily focuses on running DOS Games.
 
@@ -655,25 +705,8 @@ An emulator is a program which serves to replicate the functions of another plat
 
 	[http://www.asahi-net.or.jp/~aw9k-nnk/np2/](http://www.asahi-net.or.jp/~aw9k-nnk/np2/) || [xnp2](https://aur.archlinux.org/packages/xnp2/)
 
-### 业余无线电
+### Amateur radio
 
 See the main article: [Amateur radio#Software list](/index.php/Amateur_radio#Software_list "Amateur radio").
 
-见[Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
-
-## 参阅
-
-*   [List of terminal applications with their screenshots and reviews](http://kmandla.wordpress.com/software/)
-*   [Arch Linux Forums / LnF Awards 2011](https://bbs.archlinux.org/viewtopic.php?id=111878) - The best Light & Fast apps of 2011
-*   [Arch Linux Forums / LnF Awards 2012](https://bbs.archlinux.org/viewtopic.php?id=138281) - The best Light & Fast apps of 2012
-*   [Survey: Vote for the most popular apps of 2013-2014](https://bbs.archlinux.org/viewtopic.php?id=174764)
-*   [http://sourceforge.net/](http://sourceforge.net/) open source software
-*   [http://www.oschina.net/](http://www.oschina.net/) open source china
-*   [http://linuxappfinder.com/](http://linuxappfinder.com/)
-*   [http://www.linuxlinks.com/](http://www.linuxlinks.com/)
-*   [Wikipedia:List of open source software packages](https://en.wikipedia.org/wiki/List_of_open_source_software_packages "wikipedia:List of open source software packages")
-*   [http://linuxappfinder.com/alternatives](http://linuxappfinder.com/alternatives) - Windows and OS X Software Alternatives
-*   [http://alternativeto.net/](http://alternativeto.net/) - find alternatives to popular programs
-*   [http://www.linuxalt.com/](http://www.linuxalt.com/) - Linux equivalents of Windows software
-*   [http://lin-app.com/](http://lin-app.com/) - on-line information service of various commercial applications and games for Linux
-*   [http://www.osalt.com/](http://www.osalt.com/)
+See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").

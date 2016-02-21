@@ -83,6 +83,7 @@ The logical sector size is the sector size used for data transfer. This value mu
 | Western Digital | WD2500BPVT | 250.0 GB | 512 | 4096 |
 | Western Digital | WD1600BPVT | 160.0 GB |
 | Western Digital | WD7500BPKX | 750.0 GB | 512 | 4096 |
+| TOSHIBA | 500 GB | 512 | 4096 |
 | TOSHIBA | MQ01ABD100 | 1.0 TB | 512 | 4096 |
 | TOSHIBA | MQ01ABC150 | 1.5 TB | 512 | 4096 |
 

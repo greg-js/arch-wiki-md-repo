@@ -147,6 +147,13 @@ ytdl-format=bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best
 
 ```
 
+To find and play audio straight from your terminal with `mm ' *SEARCH* '` put the following function in your `.bashrc`:
+
+```
+mm () { youtube-dl ytsearch:"$@" -q -f bestaudio --ignore-config --console-title --print-traffic --max-downloads 1 --no-call-home --no-playlist -o - | mpv --no-terminal --no-video --cache=256 -; }
+
+```
+
 ## Vapoursynth
 
 Vapoursynth is an alternative to AviSynth that can be used on Linux and allows for Video manipulation via python scripts. Vapoursynths python scripts can be used as video filters for *mpv*.

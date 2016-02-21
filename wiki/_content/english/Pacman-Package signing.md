@@ -222,21 +222,6 @@ honor-http-proxy
 
 According to the dirmngr man, home or /etc are used depending on being a daemon or not. If pacman-key was used without "honor-http-proxy" and failed, it seems a reboot is required for it take effect.
 
-Otherwise there's the option to call gpg like:
-
-```
-gpg --keyserver-option http-proxy=HOST:PORT
-
-```
-
-Or to add that option in whether `/etc/pacman.d/gnupg/gpg.conf` or in `/etc/gnupg/gpg.conf`:
-
-```
-keyserver-options http-proxy = "http://user:password@server:port" 
-keyserver hkp://keyserver.kjsl.com:80
-
-```
-
 ## See also
 
 *   [DeveloperWiki:Package Signing Proposal for Pacman](/index.php/DeveloperWiki:Package_Signing_Proposal_for_Pacman "DeveloperWiki:Package Signing Proposal for Pacman")

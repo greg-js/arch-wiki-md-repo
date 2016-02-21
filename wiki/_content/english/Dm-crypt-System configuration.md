@@ -128,26 +128,31 @@ A specific example of arguments is
 
 ## crypttab
 
-The `/etc/crypttab` (or, encrypted device table) file contains a list of encrypted devices that are to be unlocked when the system boots, similar to [fstab](/index.php/Fstab "Fstab"). This file can be used for automatically mounting encrypted swap devices or secondary filesystems.
+The `/etc/crypttab` (encrypted device table) file is similar to the [fstab](/index.php/Fstab "Fstab") file and contains a list of encrypted devices to be unlocked during system boot up. This file can be used for automatically mounting encrypted swap devices or secondary file systems.
 
-It is read *before* [fstab](/index.php/Fstab "Fstab"), so that dm-crypt containers can be unlocked before the filesystem inside is mounted. Note that crypttab is read *after* the system has booted, so it is not a replacement for unlocking via [mkinitcpio](#mkinitcpio) hooks and [boot loader options](#Boot_loader) in the case of an [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") scenario. The boot time processing of crypttab is done by the `systemd-cryptsetup-generator` automatically, i. e. there is no need to activate it.
+`crypttab` is read *before* `fstab`, so that dm-crypt containers can be unlocked before the file system inside is mounted. Note that `crypttab` is read *after* the system has booted up, therefore it is not a replacement for unlocking encrypted partitions by using [mkinitcpio](#mkinitcpio) hooks and [boot loader options](#Boot_loader) as in the case of [encrypting the root partition](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). `crypttab` processing at boot time is made by the `systemd-cryptsetup-generator` automatically.
 
-See the crypttab [man page](http://linux.die.net/man/5/crypttab) for details, below for further examples and [#Mounting at boot time](#Mounting_at_boot_time) for setup steps using a device's UUID.
+See the `crypttab` [man page](http://linux.die.net/man/5/crypttab) for details, read below for some examples, and the [#Mounting at boot time](#Mounting_at_boot_time) section for instructions on how to use UUIDs to mount an encrypted device.
 
-**Warning:** For *dm-crypt* [plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") (`--type plain`) devices, systemd issues in the crypttab processing logic exist:
+**Warning:** There are issues with [systemd](/index.php/Systemd "Systemd") when processing `crypttab` entries for *dm-crypt* [plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") (`--type plain`) devices:
 
-*   For `--type plain`) devices with a keyfile, it is necessary to add the `hash=plain` option to crypttab due to a [systemd incompatibility](https://bugs.freedesktop.org/show_bug.cgi?id=52630). **Do not** use `systemd-cryptsetup` manually for device creation to work around it!
-*   It may further be required to add the `plain` option explicitly to force systemd-cryptsetup to recognize a `--type plain`) device at boot. [GitHub issue in question.](https://github.com/systemd/systemd/issues/442)
+*   For `--type plain` devices with a keyfile, it is necessary to add the `hash=plain` option to crypttab due to a [systemd incompatibility](https://bugs.freedesktop.org/show_bug.cgi?id=52630). **Do not** use `systemd-cryptsetup` manually for device creation to work around it.
+
+*   It may be further required to add the `plain` option explicitly to force `systemd-cryptsetup` to recognize a `--type plain`) device at boot. [GitHub issue in question.](https://github.com/systemd/systemd/issues/442)
 
  `/etc/crypttab` 
 ```
  # Example crypttab file. Fields are: name, underlying device, passphrase, cryptsetup options.
+
  # Mount /dev/lvm/swap re-encrypting it with a fresh key each reboot
  swap	/dev/lvm/swap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
+
  # Mount /dev/lvm/tmp as /dev/mapper/tmp using plain dm-crypt with a random passphrase, making its contents unrecoverable after it is dismounted.
  tmp	/dev/lvm/tmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256 
+
  # Mount /dev/lvm/home as /dev/mapper/home using LUKS, and prompt for the passphrase at boot time.
  home   /dev/lvm/home
+
  # Mount /dev/sdb1 as /dev/mapper/backup using LUKS, with a passphrase stored in a file.
  backup /dev/sdb1       /home/alice/backup.key
 
@@ -155,7 +160,7 @@ See the crypttab [man page](http://linux.die.net/man/5/crypttab) for details, be
 
 ### Mounting at boot time
 
-If you want to mount an encrypted drive at boot time, just enter the device's UUID in `/etc/crypttab`. You get the UUID (partition) by using the command `lsblk -f` and adding it to
+If you want to mount an encrypted drive at boot time, enter the device's UUID in `/etc/crypttab`. You get the UUID (partition) by using the command `lsblk -f` and adding it to `crypttab` in the form:
 
  `/etc/crypttab` 
 ```
@@ -165,7 +170,7 @@ If you want to mount an encrypted drive at boot time, just enter the device's UU
 
 The first parameter is your preferred device mapper's name for your encrypted drive. The option `none` will trigger a prompt during boot to type the passphrase for unlocking the partition. The `timeout` option defines the timeout in seconds for entering the decryption password while booting. A [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") can also be set up and referenced instead of `none`. This results in an automatic unlocking, if the keyfile is accessible during boot. Since LUKS offers the option to have multiple keys, the chosen option can also be changed later.
 
-Use the device mapper's name you've defined in `/etc/crypttab` in `/etc/fstab` as shown here:
+Use the device mapper's name you've defined in `/etc/crypttab` in `/etc/fstab` as follows:
 
  `/etc/fstab` 
 ```

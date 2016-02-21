@@ -9,9 +9,7 @@ Disk cloning is the process of making an image of a partition or of an entire ha
     *   [1.4 Create disk image](#Create_disk_image)
     *   [1.5 Restore system](#Restore_system)
 *   [2 Disk cloning software](#Disk_cloning_software)
-    *   [2.1 Disk cloning in Arch](#Disk_cloning_in_Arch)
-    *   [2.2 Disk cloning outside of Arch](#Disk_cloning_outside_of_Arch)
-*   [3 External Links](#External_Links)
+*   [3 See also](#See_also)
 
 ## Using dd
 
@@ -157,25 +155,100 @@ When the image has been split, use the following instead:
 
 ## Disk cloning software
 
-See also [Backup programs#Non-incremental backups](/index.php/Backup_programs#Non-incremental_backups "Backup programs").
+These applications allow easy backup of entire filesystems and recovery in case of failure, usually in the form of a Live CD or USB drive. They contain complete system images from one or more specific points in time and are frequently used to record known good configurations.
 
-### Disk cloning in Arch
+See also [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for other applications that can take full system snapshots, among other functionality.
 
-*   [Partclone](/index.php/Partclone "Partclone") provides utilities to save and restore used blocks on a partition and supports *ext2*, *ext3*, *ext4*, *hfs+*, *reiserfs*, *reiser4*, *btrfs*, *vmfs3*, *vmfs5*, *xfs*, *jfs*, *ufs*, *ntfs*, *fat(12/16/32)*, *exfat*. Optionally, an *ncurses* interface can be used. Partclone is available in the community repository.
-*   [Partimage](http://www.partimage.org/), an *ncurses* program, is available in the community repos. Partimage does not currently support *ext4* or *btrfs* filesystems. NTFS is experimental.
+*   **[Acronis True Image](https://en.wikipedia.org/wiki/Acronis_True_Image "wikipedia:Acronis True Image")** — Commercial disk cloner for Windows. It allows you to create a live (from within Windows), so you do not need a working Windows install on the actual machine to use it. After registration of the Acronis software on their website, you will be able to download a Linux-based Live CD and/or plugins for BartPE for creation of the Windows-based live CD. It can also create a WinPE Live CD based on Windows. The created ISO Live CD image by Acronis doesn't have the [hybrid boot](http://www.syslinux.org/wiki/index.php/Isohybrid) ability and cannot be written to USB storage as a raw file.
 
-### Disk cloning outside of Arch
+	[http://www.acronis.com/products/trueimage/](http://www.acronis.com/products/trueimage/) ||
 
-If you wish to backup or propagate your Arch install root, you are probably better off booting into something else and clone the partition from there. Some suggestions:
+*   **Arch Backup** — A trivial backup script with simple configuration.
+    *   Configurable compression method.
+    *   Multiple backup targets.
 
-*   [PartedMagic](http://partedmagic.com/doku.php?id=start) has a very nice live cd/usb with PartImage and other recovery tools.
-*   [Mindi](http://www.mondorescue.org/) is a linux distribution specifically for disk clone backup. It comes with its own cloning program, Mondo Rescue.
-*   [Acronis True Image](https://en.wikipedia.org/wiki/Acronis_True_Image "wikipedia:Acronis True Image") is a commercial disk cloner for Windows. It allows you to create a live (from within Windows), so you do not need a working Windows install on the actual machine to use it. After registration of the Acronis software on their website, you will be able to download a Linux-based Live CD and/or plugins for BartPE for creation of the Windows-based live CD. It can also create a WinPE Live CD based on Windows. The created ISO Live CD image by Acronis doesn't have the [hybrid boot](http://www.syslinux.org/wiki/index.php/Isohybrid) ability and cannot be written to USB storage as a raw file.
-*   [FSArchiver](http://www.fsarchiver.org/Main_Page) allows you to save the contents of a file system to a compressed archive file. Can be found on the [System Rescue CD](http://www.sysresccd.org/Main_Page).
-*   [Clonezilla](http://clonezilla.org/) is an enhanced partition imager which can also restore entire disks as well as partitions. Clonezilla is included on the Arch Linux installation media.
-*   [Redo Backup and Recovery](http://redobackup.org/) is a Live CD featuring a graphical front-end to *partclone*.
+	[http://code.google.com/p/archlinux-stuff/](http://code.google.com/p/archlinux-stuff/) || [arch-backup](https://aur.archlinux.org/packages/arch-backup/)
 
-## External Links
+*   **[Clonezilla](https://en.wikipedia.org/wiki/Clonezilla "wikipedia:Clonezilla")** — A disaster recovery, disk cloning, disk imaging and deployment solution.
+    *   Boots from live CD, USB flash drive, or PXE server.
+    *   Supports ext2, ext3, ext4, reiserfs, reiser4, xfs, jfs, btrfs FAT32, NTFS, HFS+ and others.
+    *   Uses Partclone (default), Partimage (optional), ntfsclone (optional), or dd to image or clone a partition.
+    *   Multicasting server to restore to many machines at once.
+    *   Included on the Arch Linux installation media.
+
+	[http://clonezilla.org/](http://clonezilla.org/) || [clonezilla](https://www.archlinux.org/packages/?name=clonezilla)
+
+*   **FSArchiver** — A safe and flexible file-system backup and deployment tool
+    *   Support for basic file attributes (permissions, owner, ...).
+    *   Support for multiple file-systems per archive.
+    *   Support for extended attributes (they are used by SELinux).
+    *   Support the basic file-system attributes (label, uuid, block-size) for all linux file-systems.
+    *   Support for [ntfs filesystems](http://www.fsarchiver.org/Cloning-ntfs) (ability to create flexible clones of a Windows partitions).
+    *   Checksumming of everything which is written in the archive (headers, data blocks, whole files).
+    *   Ability to restore an archive which is corrupt (it will just skip the current file).
+    *   Multi-threaded lzo, gzip, bzip2, lzma compression.
+    *   Support for splitting large archives into several files with a fixed maximum size.
+    *   Encryption of the archive using a password. Based on blowfish from libcrypto from [OpenSSL](/index.php/OpenSSL "OpenSSL").
+    *   Support backup of a mounted root filesystem (-A option).
+    *   Can be found on the [System Rescue CD](http://www.sysresccd.org/Main_Page).
+
+	[http://www.fsarchiver.org/Main_Page](http://www.fsarchiver.org/Main_Page) || [fsarchiver](https://www.archlinux.org/packages/?name=fsarchiver)
+
+*   **[Mondo Rescue](https://en.wikipedia.org/wiki/Mondo_Rescue "wikipedia:Mondo Rescue")** — A disaster recovery solution to create backup media that can be used to redeploy the damaged system.
+    *   Image-based backups, supporting Linux/Windows.
+    *   Compression rate is adjustable.
+    *   Can backup live systems (without having to halt it).
+    *   Can split image over many files.
+    *   Supports booting to a Live CD to perform a full restore.
+    *   Can backup/restore over NFS, from CDs, tape drives and and other media.
+    *   Can verify backups.
+
+	[http://www.mondorescue.org/](http://www.mondorescue.org/) || [mondo](https://aur.archlinux.org/packages/mondo/)
+
+*   **[Partclone](/index.php/Partclone "Partclone")** — A tool that can be used to back up and restore a partition while considering only used blocks.
+    *   Supports *ext2*, *ext3*, *ext4*, *hfs+*, *reiserfs*, *reiser4*, *btrfs*, *vmfs3*, *vmfs5*, *xfs*, *jfs*, *ufs*, *ntfs*, *fat(12/16/32)*, *exfat*.
+    *   Supports compression.
+    *   Optionally, an *ncurses* interface can be used.
+
+	[http://partclone.org/](http://partclone.org/) || [partclone](https://www.archlinux.org/packages/?name=partclone)
+
+*   **PartedMagic** — Live cd/usb with PartImage and other recovery tools.
+
+	[http://partedmagic.com/doku.php?id=start](http://partedmagic.com/doku.php?id=start) ||
+
+*   **[Partimage](https://en.wikipedia.org/wiki/Partimage "wikipedia:Partimage")** — An *ncurses* disk cloning utility for Linux/UNIX environments.
+    *   Has a Live CD.
+    *   Supports the most popular filesystems on Linux, Windows and Mac OS.
+    *   Compression.
+    *   Saving to multiple CDs or DVDs or across a network using Samba/NFS.
+
+	[http://www.partimage.org/Main_Page](http://www.partimage.org/Main_Page) || [partimage](https://www.archlinux.org/packages/?name=partimage)
+
+*   **Q7Z** — P7Zip GUI for Linux, which attempts to simplify data compression and backup. It can create the following archive types: 7z, BZip2, Zip, GZip, Tar.
+    *   Updates existing archives quickly.
+    *   Backup multiple folders to a storage location.
+    *   Create or extract protected archives.
+    *   Lessen effort by using archiving profiles and lists.
+
+	[http://k7z.sourceforge.net/](http://k7z.sourceforge.net/) || [q7z](https://aur.archlinux.org/packages/q7z/)
+
+*   **[Redo Backup and Recovery](https://en.wikipedia.org/wiki/Redo_Backup_and_Recovery "wikipedia:Redo Backup and Recovery")** — A backup and disaster recovery application that runs from a bootable Linux CD image.
+    *   Is capable of bare-metal backup and recovery of disk partitions.
+    *   Uses [xPUD](http://www.xpud.org/) and [Partclone](/index.php/Partclone "Partclone") for the backend.
+
+	[http://www.redobackup.org/](http://www.redobackup.org/) ||
+
+*   **System Tar & Restore** — Backup and Restore your system using tar or Transfer it with rsync
+    *   CLI and Dialog interfaces
+    *   Easy backup and restore wizards
+    *   Creates *.tar.gz*, *.tar.bz2*, *.tar.xz* or *.tar* archives
+    *   Supports openssl / gpg encryption
+    *   Uses rsync to transfer a running system
+    *   Supports Grub2, Syslinux, EFISTUB/efibootmgr and Systemd/bootctl
+
+	[https://github.com/tritonas00/system-tar-and-restore](https://github.com/tritonas00/system-tar-and-restore) || [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-and-restore/)
+
+## See also
 
 *   [Wikipedia:List of disk cloning software](https://en.wikipedia.org/wiki/List_of_disk_cloning_software "wikipedia:List of disk cloning software")
 *   [Arch Linux forum thread](https://bbs.archlinux.org/viewtopic.php?id=4329)

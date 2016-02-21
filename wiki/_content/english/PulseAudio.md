@@ -168,7 +168,7 @@ $ pulseaudio --kill
 
 ### ALSA
 
-Install the [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) package. It contains the necessary `/etc/asound.conf` for configuring ALSA to use PulseAudio.
+Install the [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) package. It contains the necessary `/etc/asound.conf` for configuring ALSA to use PulseAudio. Also make sure that `~/.asoundrc` does not exist, it would override the `/etc/asound.conf` file.
 
 Also install [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) if you run a x86_64 system and want to have sound for 32-bit [multilib](/index.php/Multilib "Multilib") programs like Wine, Skype and Steam.
 

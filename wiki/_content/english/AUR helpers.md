@@ -35,7 +35,7 @@ This is a list of helper utilities that search and/or build packages.
 
 *   **[aura](/index.php/Aura "Aura")** — A package manager for Arch Linux written in Haskell.
 
-	[https://github.com/fosskers/aura](https://github.com/fosskers/aura) || [aura](https://aur.archlinux.org/packages/aura/) or [aura-bin](https://aur.archlinux.org/packages/aura-bin/) (binary)
+	[https://github.com/aurapm/aura](https://github.com/aurapm/aura) || [aura](https://aur.archlinux.org/packages/aura/) or [aura-bin](https://aur.archlinux.org/packages/aura-bin/) (binary)
 
 *   **aurel** — Search, vote and download AUR packages from Emacs. ([Forum page](https://bbs.archlinux.org/viewtopic.php?id=177142))
 
@@ -158,19 +158,19 @@ This is a list of helper utilities that search and/or build packages.
 | apacman | Bash | Optional | Yes | No | No | No | No | No | No | Pacman-like | Fork of *packer* |
 | aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | Yes | No | No | Yes | Yes (bash/zsh) | Pacman-like | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | No | No | Specific | Emacs integration |
-| aurget | Bash | Optional | Yes | No | No | No | No | No | Yes (bash/zsh) | Pacman-like | - |
+| aurget | Bash | Optional | Yes | No | No | No [[2]](https://github.com/pbrisbin/aurget/issues/40) | No | No | Yes (bash/zsh) | Pacman-like | - |
 | bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | No | No | Yes (bash/zsh) | Specific | Trust management, ABS support |
 | burgaur | Python3 | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | No | No | Pacman-like | Wrapper for *cower* |
 | cower | C | Yes | N/A | Yes | N/A | N/A | No | No | Yes (bash/zsh) | Specific | No automatic builds |
 | pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (bash/zsh) | Pacman-like/specific | Minimizes user interaction |
 | packer | Bash | Optional | Yes | No | No | No | No | No | No | Pacman-like | - |
 | pbget | Python3 | Yes | N/A | Yes | N/A | N/A | No | No | No | Specific | No automatic builds |
-| PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[2]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | Yes | No | Pacman-like | Automatic builds by default, use -F to disable |
-| prm | Bash | Yes [[3]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | No | No | Specific | ABS support (svn), no automatic builds |
+| PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[3]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | Yes | No | Pacman-like | Automatic builds by default, use -F to disable |
+| prm | Bash | Yes [[4]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | No | No | Specific | ABS support (svn), no automatic builds |
 | trizen | Perl | Yes | Yes | No | No | No | No | No | No | Pacman-like | - |
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | No | No | Specific | Mirror updates, print news and AUR comments |
 | yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | No | Yes (bash) | Specific | No automatic builds |
-| yaourt | Bash/C |  ??? [[4]](https://github.com/archlinuxfr/yaourt/blob/5a82dfed6dcd1f25664d3b0da571181284cf25fb/src/lib/pkgbuild.sh.in#L413) | No [[5]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No | No | Optional | Yes | Yes (bash/zsh/fish) | Pacman-like | Backup, ABS support |
+| yaourt | Bash/C |  ??? [[5]](https://github.com/archlinuxfr/yaourt/blob/5a82dfed6dcd1f25664d3b0da571181284cf25fb/src/lib/pkgbuild.sh.in#L413) | No [[6]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No | No | Optional | Yes | Yes (bash/zsh/fish) | Pacman-like | Backup, ABS support |
 
 ## See also
 

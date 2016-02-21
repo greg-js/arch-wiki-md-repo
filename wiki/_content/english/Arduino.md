@@ -222,7 +222,7 @@ $ pip install platformio
 #### Usage
 
 ```
-$ platformio install atmelavr
+$ platformio platforms install atmelavr
 $ platformio init
 $ vim platformio.ini
 

@@ -23,7 +23,7 @@
 *   Для файловых менеджеров, которые используют [GVFS](/index.php/GVFS "GVFS") ([GNOME Files](/index.php/GNOME_Files "GNOME Files"), Xfce's [Thunar](/index.php/Thunar "Thunar")), установите [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) для поддержки MTP и [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) для поддержки PTP.
 *   Для файловых менеджеров, которые используют KIO (KDE's Dolphin), установите [kio-mtp](https://www.archlinux.org/packages/?name=kio-mtp) (поддержка PTP уже включена в него).
 
-Также существует альтернатива плагинам: минималистичный MTP клиент [android-file-transfer](https://aur.archlinux.org/packages/android-file-transfer/).
+Также существует альтернатива плагинам: минималистичный MTP клиент [android-file-transfer](https://www.archlinux.org/packages/?name=android-file-transfer).
 
 После установки необходимых пакетов, ваше устройство должно отобразиться в файловом менеджере автоматически, и вы сможете получать доступ к файлам по URL наподобие такого: `mtp://[usb:002,013]/`.
 

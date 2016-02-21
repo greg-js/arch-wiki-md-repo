@@ -30,7 +30,8 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
     *   [4.6 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
     *   [4.7 Cannot login through CLI, but phpmyadmin works well](#Cannot_login_through_CLI.2C_but_phpmyadmin_works_well)
     *   [4.8 MySQL binary logs are taking up huge disk space](#MySQL_binary_logs_are_taking_up_huge_disk_space)
-*   [5 See also](#See_also)
+*   [5 phpMyAdmin](#phpMyAdmin)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -499,12 +500,15 @@ Alternatively, you can purge some binary logs in `/var/lib/mysql` to free up dis
 
 ```
 
+## phpMyAdmin
+
+[phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") is a free software tool written in PHP intended to handle the administration of MySQL over the Internet. phpMyAdmin supports a wide range of operations with MySQL. The most frequently used operations are supported by the user interface (managing databases, tables, fields, relations, indexes, users, permissions, etc), while you still have the ability to directly execute any SQL statement." [http://www.phpmyadmin.net/home_page/index.php](http://www.phpmyadmin.net/home_page/index.php)
+
 ## See also
 
 *   [MariaDB Official Website](https://mariadb.org/)
 *   [MariaDB knowledge Base](https://mariadb.com/kb/en/)
 *   [MySQL documentation](http://dev.mysql.com/doc/)
 *   [LAMP](/index.php/LAMP "LAMP") - ArchWiki article covering the setup of a LAMP server (Linux Apache MySQL PHP)
-*   [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") - ArchWiki article covering the web-based tool to help manage MySQL databases using an Apache/PHP front-end.
 *   [PHP](/index.php/PHP "PHP") - ArchWiki article on PHP.
 *   [MySQL Performance Tuning Scripts and Know-How](http://www.askapache.com/mysql/performance-tuning-mysql.html)

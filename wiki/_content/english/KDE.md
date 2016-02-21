@@ -584,7 +584,7 @@ $ for j in plasma*; do mv -- "$j" "${j%}.bak"; done
 
 ```
 
-This command will **rename all Plasma related configs** to *.bak (e.g. `plasmarc.bak`) of your user and when you will relogin into Plasma, you will have the **default** settings back. To undo that action, remove the .bak file extension. If you already have *.bak files, rename, move, or delete them first. It is highly recommended that you create regular backups anyway. See [backup programs](/index.php/Backup_programs "Backup programs") for a list of possible solutions.
+This command will **rename all Plasma related configs** to *.bak (e.g. `plasmarc.bak`) of your user and when you will relogin into Plasma, you will have the **default** settings back. To undo that action, remove the .bak file extension. If you already have *.bak files, rename, move, or delete them first. It is highly recommended that you create regular backups anyway. See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for a list of possible solutions.
 
 #### Clean cache to resolve upgrade problems
 

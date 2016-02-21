@@ -31,19 +31,19 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment")** — Deepin desktop interface and apps feature an intuitive and elegant design. Moving around, sharing and searching etc. has become simply a joyful experience.
 
-	[http://www.deepin.org/?language=en](http://www.deepin.org/?language=en) || [deepin](https://www.archlinux.org/groups/x86_64/deepin/)
+	[https://www.deepin.org/](https://www.deepin.org/) || [deepin](https://www.archlinux.org/groups/x86_64/deepin/)
 
 *   **[Enlightenment](/index.php/Enlightenment "Enlightenment")** — The Enlightenment desktop shell provides an efficient window manager based on the Enlightenment Foundation Libraries along with other essential desktop components like a file manager, desktop icons and widgets. It supports themes, while still being capable of performing on older hardware or embedded devices.
 
-	[http://www.enlightenment.org/](http://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
+	[https://www.enlightenment.org/](https://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
 
 *   **[GNOME](/index.php/GNOME "GNOME")** — The GNOME desktop environment is an attractive and intuitive desktop with both a modern (*GNOME*) and a classic (*GNOME Classic*) session.
 
-	[http://www.gnome.org/gnome-3/](http://www.gnome.org/gnome-3/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
+	[https://www.gnome.org/gnome-3/](https://www.gnome.org/gnome-3/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
 *   **[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")** — GNOME Flashback is a shell for GNOME 3 which was initially called GNOME fallback mode. The desktop layout and the underlying technology is similar to GNOME 2.
 
-	[https://wiki.gnome.org/GnomeFlashback](https://wiki.gnome.org/GnomeFlashback) || [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback)
+	[https://wiki.gnome.org/Projects/GnomeFlashback](https://wiki.gnome.org/Projects/GnomeFlashback) || [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback)
 
 *   **[KDE Plasma](/index.php/KDE_Plasma "KDE Plasma")** — The KDE Plasma desktop environment is a familiar working environment. Plasma Desktop offers all the tools required for a modern desktop computing experience so you can be productive right from the start.
 
@@ -51,7 +51,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[LXDE](/index.php/LXDE "LXDE")** — The Lightweight X11 Desktop Environment is a fast and energy-saving desktop environment. It comes with a modern interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. Fundamentally designed to be lightweight, LXDE strives to be less CPU and RAM intensive than other environments.
 
-	[http://lxde.org/](http://lxde.org/) || [lxde](https://www.archlinux.org/groups/x86_64/lxde/)
+	[http://lxde.org/](http://lxde.org/) || GTK+ 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK+ 3 (experimental): [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
 
 *   **[LXQt](/index.php/LXQt "LXQt")** — LXQt is the Qt port and the upcoming version of LXDE, the Lightweight Desktop Environment. It is the product of the merge between the LXDE-Qt and the Razor-qt projects: A lightweight, modular, blazing-fast and user-friendly desktop environment.
 
@@ -73,7 +73,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Common Desktop Environment](/index.php/Common_Desktop_Environment "Common Desktop Environment")** — The Common Desktop Environment (CDE) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations.
 
-	[http://sourceforge.net/projects/cdesktopenv/](http://sourceforge.net/projects/cdesktopenv/) || [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/)
+	[https://sourceforge.net/projects/cdesktopenv/](https://sourceforge.net/projects/cdesktopenv/) || [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/)
 
 *   **[EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment")** — The "Equinox Desktop Environment" is a DE designed to be simple, extremely light-weight and fast.
 
@@ -89,15 +89,15 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Lumina](/index.php/Lumina "Lumina")** — Lumina is a lightweight desktop environment written in Qt 5 for FreeBSD that uses Fluxbox for window management.
 
-	[http://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/](http://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/) || [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/)
+	[https://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/](https://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/) || [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/)
 
 *   **[Moksha](/index.php/Moksha "Moksha")** — Fork of Enlightenment currently used as default desktop environment in Ubuntu-based Bodhi Linux.
 
-	[http://mokshadesktop.org/](http://mokshadesktop.org/) || [moksha](https://aur.archlinux.org/packages/moksha/)
+	[http://www.bodhilinux.com/moksha-desktop/](http://www.bodhilinux.com/moksha-desktop/) || [moksha](https://aur.archlinux.org/packages/moksha/)
 
 *   **[Pantheon](/index.php/Pantheon "Pantheon")** — Pantheon is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with GNOME Shell and Mac OS X.
 
-	[http://elementaryos.org/](http://elementaryos.org/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)
+	[https://elementary.io/](https://elementary.io/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)
 
 *   **[Papyros shell](/index.php/Papyros_shell "Papyros shell")** — Papyros shell is a modern desktop shell which adheres to Google's Material Design guidelines.
 
@@ -109,7 +109,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Sugar](/index.php/Sugar "Sugar")** — The Sugar Learning Platform is a computer environment composed of Activities designed to help children from 5 to 12 years of age learn together through rich-media expression. Sugar is the core component of a worldwide effort to provide every child with the opportunity for a quality education — it is currently used by nearly one-million children worldwide speaking 25 languages in over 40 countries. Sugar provides the means to help people lead fulfilling lives through access to a quality education that is currently missed by so many.
 
-	[http://wiki.sugarlabs.org/](http://wiki.sugarlabs.org/) || [sugar](https://aur.archlinux.org/packages/sugar/)
+	[https://wiki.sugarlabs.org/](https://wiki.sugarlabs.org/) || [sugar](https://aur.archlinux.org/packages/sugar/)
 
 *   **[Trinity](/index.php/Trinity "Trinity")** — The Trinity Desktop Environment (TDE) project is a computer desktop environment for Unix-like operating systems with a primary goal of retaining the overall KDE 3.5 computing style.
 
@@ -262,15 +262,15 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 | [LXDE](/index.php/LXDE "LXDE") (GTK+ 3) | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Openbox](/index.php/Openbox "Openbox")
 [openbox](https://www.archlinux.org/packages/?name=openbox) | [LXPanel](http://wiki.lxde.org/en/LXPanel)
-[lxpanel-gtk3](https://aur.archlinux.org/packages/lxpanel-gtk3/) | [LXTerminal](http://wiki.lxde.org/en/LXTerminal)
-[lxterminal-gtk3](https://aur.archlinux.org/packages/lxterminal-gtk3/) | [PCManFM](/index.php/PCManFM "PCManFM")
-[pcmanfm-gtk3](https://aur.archlinux.org/packages/pcmanfm-gtk3/) | [Galculator](http://galculator.sourceforge.net/)
+[lxpanel-gtk3](https://www.archlinux.org/packages/?name=lxpanel-gtk3) | [LXTerminal](http://wiki.lxde.org/en/LXTerminal)
+[lxterminal-gtk3](https://www.archlinux.org/packages/?name=lxterminal-gtk3) | [PCManFM](/index.php/PCManFM "PCManFM")
+[pcmanfm-gtk3](https://www.archlinux.org/packages/?name=pcmanfm-gtk3) | [Galculator](http://galculator.sourceforge.net/)
 [galculator](https://www.archlinux.org/packages/?name=galculator) | L3afpad
 [l3afpad](https://www.archlinux.org/packages/?name=l3afpad) | [GPicView](http://wiki.lxde.org/en/GPicView)
 [gpicview-gtk3](https://aur.archlinux.org/packages/gpicview-gtk3/) | [LXMusic](http://wiki.lxde.org/en/LXMusic)
-[lxmusic-gtk3](https://aur.archlinux.org/packages/lxmusic-gtk3/) | [Firefox](/index.php/Firefox "Firefox")
+[lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3) | [Firefox](/index.php/Firefox "Firefox")
 [firefox](https://www.archlinux.org/packages/?name=firefox) | [LXDM](/index.php/LXDM "LXDM")
-[lxdm-gtk3](https://aur.archlinux.org/packages/lxdm-gtk3/) |
+[lxdm-gtk3](https://www.archlinux.org/packages/?name=lxdm-gtk3) |
 | [LXQt](/index.php/LXQt "LXQt") | [Qt](/index.php/Qt "Qt") 5
 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [Openbox](/index.php/Openbox "Openbox")
 [openbox](https://www.archlinux.org/packages/?name=openbox) | LXQt Panel

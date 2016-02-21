@@ -1,4 +1,4 @@
-CrashPlan is a backup program that backs up data to remote servers, other computers, or hard drives. Backing up to the cloud servers requires a monthly subscription.
+CrashPlan is a [backup program](/index.php/Backup_program "Backup program") that backs up data to remote servers, other computers, or hard drives. Backing up to the cloud servers requires a monthly subscription.
 
 ## Contents
 
@@ -102,7 +102,6 @@ If you use real time protection for your backup set and have a lot of files to b
 
 ## See also
 
-*   [Backup programs](/index.php/Backup_programs "Backup programs")
 *   [CrashPlan home page](http://www.code42.com/crashplan/)
 *   [CrashPlan On A Headless Server - Code42Support](http://support.code42.com/CrashPlan/Latest/Configuring/Using_CrashPlan_On_A_Headless_Computer)
 *   [Wikipedia:CrashPlan](https://en.wikipedia.org/wiki/CrashPlan "wikipedia:CrashPlan")

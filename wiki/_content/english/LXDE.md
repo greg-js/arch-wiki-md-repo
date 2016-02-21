@@ -31,13 +31,13 @@ From project [home page](http://lxde.org/):
 
 ## Installation
 
-LXDE requires at least [lxde-common](https://www.archlinux.org/packages/?name=lxde-common) and [openbox](https://www.archlinux.org/packages/?name=openbox) (or another window manager) to be [installed](/index.php/Install "Install"). The [lxde](https://www.archlinux.org/groups/x86_64/lxde/) group contains the full desktop.
+LXDE requires at least [lxde-common](https://www.archlinux.org/packages/?name=lxde-common), [lxsession](https://www.archlinux.org/packages/?name=lxsession) and [openbox](https://www.archlinux.org/packages/?name=openbox) (or another window manager) to be [installed](/index.php/Install "Install"). The [lxde](https://www.archlinux.org/groups/x86_64/lxde/) group contains the full desktop.
 
 ### GTK+ 3 version
 
-An experimental GTK+ 3 build of LXDE can be installed with the *lxde-gtk3* group from the unofficial [city](/index.php/Unofficial_user_repositories#city "Unofficial user repositories") repository. The packages are available also from the [AUR](/index.php/AUR "AUR"): [search for packages tagged with lxde-gtk3](https://aur.archlinux.org/packages.php?K=lxde-gtk3).
+An experimental GTK+ 3 build of LXDE can be installed with the [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/) group.
 
-While it works mostly, there are some known issues with [gpicview](https://sourceforge.net/p/lxde/bugs/769/), [lxappearance-obconf](https://sourceforge.net/p/lxde/bugs/768/), [lxlauncher](https://sourceforge.net/p/lxde/patches/513/) and [lxpanel](https://sourceforge.net/p/lxde/bugs/773/).
+While it works mostly, there are some known issues with [gpicview](https://sourceforge.net/p/lxde/bugs/769/), [lxappearance-obconf](https://sourceforge.net/p/lxde/bugs/768/), [lxlauncher](https://sourceforge.net/p/lxde/bugs/803/) and [lxpanel](https://sourceforge.net/p/lxde/bugs/773/).
 
 ## Starting the desktop
 

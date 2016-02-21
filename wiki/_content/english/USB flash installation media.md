@@ -13,7 +13,6 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
             *   [1.1.2.3 Using Cygwin](#Using_Cygwin)
             *   [1.1.2.4 dd for Windows](#dd_for_Windows)
         *   [1.1.3 In Mac OS X](#In_Mac_OS_X)
-        *   [1.1.4 How to restore the USB drive](#How_to_restore_the_USB_drive)
     *   [1.2 Using manual formatting](#Using_manual_formatting)
         *   [1.2.1 In GNU/Linux](#In_GNU.2FLinux_2)
         *   [1.2.2 In Windows](#In_Windows_2)
@@ -41,7 +40,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 
 **Note:** This method is recommended due to its simplicity. If it does not work, switch to the alternative method [#Using manual formatting](#Using_manual_formatting) below.
 
-**Warning:** This will irrevocably destroy all data on `/dev/sd**x**`.
+**Warning:** This will irrevocably destroy all data on `/dev/sd**x**`. To restore the USB drive as an empty, usable storage device, it will have to be [repartitioned](/index.php/Repartition "Repartition") and [reformatted](/index.php/Reformat "Reformat") afterwards.
 
 #### In GNU/Linux
 
@@ -170,37 +169,6 @@ It is probably a good idea to eject your drive before physical removal at this p
 
 ```
 $ diskutil eject /dev/disk2
-
-```
-
-#### How to restore the USB drive
-
-Because the ISO image is a hybrid which can either be burned to a disc or directly written to a USB drive, it does not include a standard partition table.
-
-When you are done with the USB drive, you need to first erase the iso9660 filesystem signature:
-
-```
-# wipefs --all /dev/sd**x**
-
-```
-
-Then create a new partition table (e.g. "msdos") and a new partition along with a fresh filesystem (e.g. EXT4, FAT32). You can use a graphical [partitioning tool](https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools) like [gparted](https://www.archlinux.org/packages/?name=gparted), or from a terminal:
-
-*   For EXT2/3/4 (adjust accordingly), it would be:
-
-```
-# cfdisk /dev/sd**x**
-# mkfs.ext4 /dev/sd**x1**
-# e2label /dev/sd**x1** USB_STICK
-
-```
-
-*   For FAT32, install the [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) package and run:
-
-```
-# cfdisk /dev/sd**x**
-# mkfs.vfat -F32 /dev/sd**x1**
-# dosfslabel /dev/sd**x1** USB_STICK
 
 ```
 

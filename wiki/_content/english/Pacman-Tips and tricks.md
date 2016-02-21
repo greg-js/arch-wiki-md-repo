@@ -465,7 +465,7 @@ If willing, add the custom repository to the [list of unofficial user repositori
 
 ### Network shared pacman cache
 
-If you happen to run several Arch boxes on your LAN, you can share packages so that you can greatly decrease your download times. Keep in mind you should not share between different architectures (i.e. i686 and x86_64) or you'll get into troubles.
+If you happen to run several Arch boxes on your LAN, you can share packages so that you can greatly decrease your download times. Keep in mind you should not share between different architectures (i.e. i686 and x86_64) or you'll run into problems.
 
 #### Read-only cache
 

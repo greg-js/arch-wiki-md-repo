@@ -24,7 +24,7 @@
 
 	<small>5.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Boot loaders (العربية)")‎ <small>(1) (also in [العربية](/index.php/Category:%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9 "Category:العربية"))</small>
 
-	<small>6.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Getting and installing Arch (العربية)")‎ <small>(4)</small>
+	<small>6.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Getting and installing Arch (العربية)")‎ <small>(3)</small>
 
 	<small>7.</small> [Hardware](/index.php/Category:Hardware_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Hardware (العربية)")‎ <small>(1)</small>
 

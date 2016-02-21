@@ -18,7 +18,7 @@ The [Extended Window Manager Hints](http://standards.freedesktop.org/wm-spec/wm-
 
 Some window managers are developed as part of a more comprehensive [desktop environment](/index.php/Desktop_environment "Desktop environment"), usually allowing the other provided applications to better interact with each other, giving a more consistent experience to the user, complete with features like desktop icons, fonts, toolbars, wallpapers, or desktop widgets.
 
-Some window managers are instead designed to be used *standalone*, giving the user complete freedom over the choice of the other applications to be used. This allows the user to create a more lightweight and customized environment, tailored to his/her own specific needs. "Extras" like desktop icons, toolbars, wallpapers, or desktop widgets, if needed, will have to be added with additional dedicated applications.
+Other window managers are instead designed to be used *standalone*, giving the user complete freedom over the choice of the other applications to be used. This allows the user to create a more lightweight and customized environment, tailored to his/her own specific needs. "Extras" like desktop icons, toolbars, wallpapers, or desktop widgets, if needed, will have to be added with additional dedicated applications.
 
 Some standalone WMs can be also used to replace the default WM of a DE, just like some DE-oriented WMs can be used standalone too.
 

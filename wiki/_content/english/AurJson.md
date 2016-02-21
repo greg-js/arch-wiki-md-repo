@@ -85,7 +85,7 @@ Package information can be performed by issuing requests of the form:
 
 where ***pkg1***, ***pkg2***, … are the exact matches of names of packages to retrieve package details for.
 
-Possible return types are ***search*** and ***error***.
+Possible return types are ***multiinfo*** and ***error***.
 
 Examples:
 

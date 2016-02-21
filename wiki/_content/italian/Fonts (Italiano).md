@@ -21,14 +21,12 @@ Documenta l'installazione e l'utilizzo dei Fonts su Arch Linux.
             *   [3.2.2.1 Cinese (principalmente)](#Cinese_.28principalmente.29)
             *   [3.2.2.2 Giapponese](#Giapponese)
             *   [3.2.2.3 Coreano](#Coreano)
-        *   [3.2.3 Cirillico](#Cirillico)
-        *   [3.2.4 Greco](#Greco)
-        *   [3.2.5 Ebraico](#Ebraico)
-        *   [3.2.6 Indiano](#Indiano)
-        *   [3.2.7 Khmer](#Khmer)
-        *   [3.2.8 Singalese](#Singalese)
-        *   [3.2.9 Tamil](#Tamil)
-        *   [3.2.10 Thailandese](#Thailandese)
+        *   [3.2.3 Greco](#Greco)
+        *   [3.2.4 Ebraico](#Ebraico)
+        *   [3.2.5 Indiano](#Indiano)
+        *   [3.2.6 Khmer](#Khmer)
+        *   [3.2.7 Singalese](#Singalese)
+        *   [3.2.8 Tamil](#Tamil)
     *   [3.3 Math](#Math)
     *   [3.4 Microsoft fonts](#Microsoft_fonts)
     *   [3.5 Monospace](#Monospace)
@@ -253,7 +251,6 @@ Questa è una lista selettiva, ma riporta la maggior parte dei font reperibili s
 
 *   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - Font Unicode arabici da SIL *(AUR)*
 *   [ttf-sil-scheherazade](https://aur.archlinux.org/packages/ttf-sil-scheherazade/) - Font Unicode arabici da SIL *(AUR)*
-*   [arabeyes-fonts](https://aur.archlinux.org/packages/arabeyes-fonts/) - Collezione di Font arabici liberi *(AUR)*
 
 #### Cinese, Giapponese, Coreano, Vietnamita
 
@@ -273,20 +270,11 @@ Questa è una lista selettiva, ma riporta la maggior parte dei font reperibili s
 *   [ttf-kochi-substitute](https://aur.archlinux.org/packages/ttf-kochi-substitute/) - Font giapponesi TrueType di alta qualità. Forniscono informazioni "bitmap hinting", quindi sono curati e non risultano frastagliati nella visualizzazione su schermi CRT.
 *   [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont) - Set di font giapponesi gothic (san-serif) e Mincho (serif); uno dei font open source di migliore qualità. Di default su openSUSE-ja. *(AUR)*
 *   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - Font giapponesi gothic. Default su Debian/Fedora/Vine Linux *(AUR)*
-*   [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/), [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - Font giapponesi per visualizzare correttamente [2channel Shift JIS art](http://en.wikipedia.org/wiki/2channel_Shift_JIS_art). *(AUR)*
+*   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - Font giapponesi per visualizzare correttamente [2channel Shift JIS art](http://en.wikipedia.org/wiki/2channel_Shift_JIS_art). *(AUR)*
 
 ##### Coreano
 
 *   [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk) - Collezione di font coreani TrueType
-*   [ttf-alee](https://aur.archlinux.org/packages/ttf-alee/) - Set di font TrueType liberi Hangul *(AUR)*
-*   [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) - Un font (il font Baekmuk di default potrebbe non essere soddisfacente) (*AUR*)
-
-#### Cirillico
-
-*Vedere anche [#Monospace](#Monospace), [#Sans](#Sans) e [#Serif](#Serif)*
-
-*   [font-arhangai](https://aur.archlinux.org/packages/font-arhangai/) - Mongolian Cyrillic (*AUR*)
-*   [ttf-pingwi-typography](https://aur.archlinux.org/packages/ttf-pingwi-typography/) - PingWi Typography (PWT) fonts (*AUR*)
 
 #### Greco
 
@@ -307,7 +295,7 @@ Quasi tutti i font Unicode contengono il set di caratteri greci (polytonic inclu
 #### Khmer
 
 *   [ttf-khmer](https://www.archlinux.org/packages/?name=ttf-khmer) - Font necessario per i grafi della lingua Khmer
-*   [Hanuman](http://code.google.com/webfonts/family?family=Hanuman&subset=khmer) ([ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) o [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
+*   [Hanuman](http://code.google.com/webfonts/family?family=Hanuman&subset=khmer) ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 
 #### Singalese
 
@@ -316,10 +304,6 @@ Quasi tutti i font Unicode contengono il set di caratteri greci (polytonic inclu
 #### Tamil
 
 *   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - Font Unicode Tamil (*AUR*)
-
-#### Thailandese
-
-*   [ttf-thai](https://www.archlinux.org/packages/?name=ttf-thai) - Font necessario per i grafi thai
 
 ### Math
 
@@ -340,14 +324,13 @@ Qui è visualizzabile una discreta lista di font suggeriti da Trevor Lowing: [ht
 #### TrueType
 
 *   [Andalé Mono](https://en.wikipedia.org/wiki/Andal%C3%A9_Mono "wikipedia:Andalé Mono") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   Anka/Coder ([ttf-anka-coder](https://aur.archlinux.org/packages/ttf-anka-coder/))
 *   Anonymous Pro ([ttf-anonymous-pro](https://www.archlinux.org/packages/?name=ttf-anonymous-pro))
 *   [Bitstream Vera Mono](https://en.wikipedia.org/wiki/Bitstream_Vera "wikipedia:Bitstream Vera") ([ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera))
 *   [Consolas](https://en.wikipedia.org/wiki/Consolas "wikipedia:Consolas") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [Courier New](https://en.wikipedia.org/wiki/Courier_New "wikipedia:Courier New") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   Cousine ([ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) o [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Sostituto di Chrome/Chromium OS per Courier New (compatibilità metrica)
+*   Cousine ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Sostituto di Chrome/Chromium OS per Courier New (compatibilità metrica)
 *   [DejaVu Sans Mono](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
-*   [Droid Sans Mono](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), inclusi in [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) e [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
+*   [Droid Sans Mono](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), inclusi in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   Envy Code R ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/))
 *   [FreeMono](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
 *   [Inconsolata](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata](https://www.archlinux.org/packages/?name=ttf-inconsolata))
@@ -355,7 +338,7 @@ Qui è visualizzabile una discreta lista di font suggeriti da Trevor Lowing: [ht
 *   [Liberation Mono](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) - Alternativa a Courier New (compatibilità metrica)
 *   [Lucida Console](https://en.wikipedia.org/wiki/Lucida_Console "wikipedia:Lucida Console") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Lucida Typewriter](https://en.wikipedia.org/wiki/Lucida_Typewriter "wikipedia:Lucida Typewriter") (inclusi nel pacchetto [jre](https://aur.archlinux.org/packages/jre/))
-*   [Monaco](https://en.wikipedia.org/wiki/Monaco_(typeface) ([monaco-linux-font](https://aur.archlinux.org/packages/monaco-linux-font/))
+*   [Monaco](https://en.wikipedia.org/wiki/Monaco_(typeface) ([ttf-monaco](https://aur.archlinux.org/packages/ttf-monaco/))
 *   Monofur ([ttf-monofur](https://aur.archlinux.org/packages/ttf-monofur/))
 
 #### Bitmap
@@ -365,7 +348,6 @@ Qui è visualizzabile una discreta lista di font suggeriti da Trevor Lowing: [ht
 *   Lime ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts))
 *   [ProFont](https://en.wikipedia.org/wiki/ProFont "wikipedia:ProFont") ([profont](https://www.archlinux.org/packages/?name=profont))
 *   [Proggy Programming Fonts](https://en.wikipedia.org/wiki/Proggy_Programming_Fonts "wikipedia:Proggy Programming Fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/))
-*   Proggy opti cyrillic ([proggyopticyr-font](https://aur.archlinux.org/packages/proggyopticyr-font/))
 *   Tamsyn ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
 *   [Terminus](https://en.wikipedia.org/wiki/Terminus_(typeface) ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font))
 *   Unifont (glifi come ಠ_ಠ (sguardo di disapprovazione)) ([bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont))
@@ -375,24 +357,23 @@ Qui è visualizzabile una discreta lista di font suggeriti da Trevor Lowing: [ht
 *   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/), inclusi in [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/))
 *   [Arial](https://en.wikipedia.org/wiki/Arial "wikipedia:Arial") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Arial Black](https://en.wikipedia.org/wiki/Arial_Black "wikipedia:Arial Black") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   Arimo ([ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) o [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Sostituto di Chrome/Chromium OS per Arial (compatibilità metrica)
+*   Arimo ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Sostituto di Chrome/Chromium OS per Arial (compatibilità metrica)
 *   [Calibri](https://en.wikipedia.org/wiki/Calibri "wikipedia:Calibri") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [Candara](https://en.wikipedia.org/wiki/Candara "wikipedia:Candara") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [Constantia](https://en.wikipedia.org/wiki/Constantia_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [Corbel](https://en.wikipedia.org/wiki/Corbel_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [DejaVu Sans](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
-*   [Droid Sans](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), inclusi in [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) e [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
+*   [Droid Sans](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), inclusi in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [FreeSans](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
 *   [Impact](https://en.wikipedia.org/wiki/Impact_(typeface) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [Liberation Sans](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation), Cirillico ridisegnato e migliorato: [ttf-liberastika](https://aur.archlinux.org/packages/ttf-liberastika/)) - Alternativa a Arial (compatibilità metrica)
+*   [Liberation Sans](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) - Alternativa a Arial (compatibilità metrica)
 *   [Liberation Sans Narrow](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) - Alternativa ad Arial Narrow (compatibilità metrica)
 *   [Linux Biolinum](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine))
 *   [Lucida Sans](https://en.wikipedia.org/wiki/Lucida_Sans "wikipedia:Lucida Sans") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Microsoft Sans Serif](https://en.wikipedia.org/wiki/Microsoft_Sans_Serif "wikipedia:Microsoft Sans Serif") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) o [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - 3 varianti principali: normale, stretto, e didascalia- Unicode: Latino, Cirillico
+*   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - 3 varianti principali: normale, stretto, e didascalia- Unicode: Latino, Cirillico
 *   [Tahoma](https://en.wikipedia.org/wiki/Tahoma_(typeface) ([ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/))
 *   [Trebuchet](https://en.wikipedia.org/wiki/Trebuchet_MS "wikipedia:Trebuchet MS") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [Ubuntu-Title](https://en.wikipedia.org/wiki/Ubuntu-Title "wikipedia:Ubuntu-Title") ([ttf-ubuntu-title](https://aur.archlinux.org/packages/ttf-ubuntu-title/))
 *   [Ubuntu Font Family](https://en.wikipedia.org/wiki/Ubuntu_Font_Family "wikipedia:Ubuntu Font Family") ([ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family))
 *   [Verdana](https://en.wikipedia.org/wiki/Verdana "wikipedia:Verdana") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 
@@ -403,10 +384,10 @@ Qui è visualizzabile una discreta lista di font suggeriti da Trevor Lowing: [ht
 ### Serif
 
 *   [Cambria](https://en.wikipedia.org/wiki/Cambria_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
-*   [Charis](https://en.wikipedia.org/wiki/Charis_SIL "wikipedia:Charis SIL") ([ttf-charis](https://aur.archlinux.org/packages/ttf-charis/), inclusi in [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)) - Unicode: Latino, Cirillico
+*   [Charis](https://en.wikipedia.org/wiki/Charis_SIL "wikipedia:Charis SIL") (inclusi in [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)) - Unicode: Latino, Cirillico
 *   [DejaVu Serif](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
-*   [Doulos](https://en.wikipedia.org/wiki/Doulos_SIL "wikipedia:Doulos SIL") ([doulos-sil](https://aur.archlinux.org/packages/doulos-sil/), inclusi in [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)) - Unicode: Latino, Cirillico
-*   [Droid Serif](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), inclusi in [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) e [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
+*   [Doulos](https://en.wikipedia.org/wiki/Doulos_SIL "wikipedia:Doulos SIL") (inclusi in [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)) - Unicode: Latino, Cirillico
+*   [Droid Serif](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), inclusi in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
 *   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium), inclusi in [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)) - Unicode: Latino, Cirillico, Greco, alfabeto fonetico
 *   [Georgia](https://en.wikipedia.org/wiki/Georgia_(typeface) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
@@ -414,11 +395,11 @@ Qui è visualizzabile una discreta lista di font suggeriti da Trevor Lowing: [ht
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latino, greco, cirillico, ebraico
 
 *   [Times New Roman](https://en.wikipedia.org/wiki/Times_New_Roman "wikipedia:Times New Roman") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   Tinos ([ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) o [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Sostituto di Chrome/Chromium OS per Times New Roman (compatibilità metrica)
+*   Tinos ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Sostituto di Chrome/Chromium OS per Times New Roman (compatibilità metrica)
 
 ### Assortiti
 
-*   [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) o [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - una vasta collezione di font gratuiti (tra cui ubuntu, inconsolata, droid, ecc.)
+*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - una vasta collezione di font gratuiti (tra cui ubuntu, inconsolata, droid, ecc.)
 
 **Nota:** La finestra di dialogo dove vengono mostrati i font, nelle singole applicazioni, diventerannò molto lunghe perchè questo pacchetto installa sul sistema più di cento nuovi font
 
@@ -426,9 +407,7 @@ Qui è visualizzabile una discreta lista di font suggeriti da Trevor Lowing: [ht
 *   [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/) - Gentium, Charis, Doulos, Andika e Abyssinica da SIL *(AUR)*
 *   [font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf) - Font Xorg Luxi
 *   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) - Collezione di font di *dustismo.com*
-*   [ttf-isabella](https://aur.archlinux.org/packages/ttf-isabella/) - Carattere calligrafico basato sul *Breviario di Isabella* del 1497
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) - Caratteri junius contenenti una collezione di glifi medievali in alfabeto latino
-*   arkpandorafonts [ttf-arkpandora](https://aur.archlinux.org/packages/ttf-arkpandora/) — Alternativa a font Arial e Times New Roman
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) — Set IBM Courier e Adobe Utopia per [Font PostScript](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
 
 ## Font per console

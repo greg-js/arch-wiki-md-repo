@@ -7,7 +7,8 @@ Currently, Metasploit requires to setup and configure Postgresql on target syste
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 RVM](#RVM)
+    *   [1.1 Armitage](#Armitage)
+    *   [1.2 RVM](#RVM)
 *   [2 Setting up the database](#Setting_up_the_database)
 *   [3 Usage](#Usage)
     *   [3.1 Module types](#Module_types)
@@ -32,6 +33,14 @@ Currently, Metasploit requires to setup and configure Postgresql on target syste
 Install [metasploit](https://aur.archlinux.org/packages/metasploit/) from [AUR](/index.php/AUR "AUR").
 
 For latest development version, install [metasploit-git](https://aur.archlinux.org/packages/metasploit-git/) instead.
+
+### Armitage
+
+[Armitage](http://www.fastandeasyhacking.com/) is a GUI front end for metasploit written in Java; it can be installed with the [armitage](https://aur.archlinux.org/packages/armitage/) package.
+
+When running Armitage, [#Setting up the database](#Setting_up_the_database) is not optional, and must be followed. It is also mandatory to use a `~/.msf4/database.yml` file.
+
+A sample `database.yml` file is packaged as `/usr/share/metasploit/database.yml.sample`.
 
 ### RVM
 
@@ -65,6 +74,8 @@ $ bundle install
 **Note:** Commands which must be run from `msfconsole` will be prefixed with `msf >` in this article.
 
 Metasploit can be used without a database, but cache operations like searching would be very slow. This section shows how to set up Metasploit with *Postgresql* database server.
+
+**Note:** If you are using the [#Armitage](#Armitage) front-end, the database is mandatory.
 
 Follow the [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") article and create a new database called `msf`. Any database name can be used, but this article will follow `msf`.
 
@@ -127,7 +138,7 @@ Run `db_status` to verify that database connection is properly established:
 
 There are several interfaces available for Metasploit. This section will explain how to use `msfconsole`, the interface that provides the most features available in MSF.
 
-To start it, simply type `msfconsole`. The prompt will change to `msf >` to indicate it's waiting for commands.
+To start it, simply type `msfconsole`. The prompt will change to `msf >` to indicate it is waiting for commands.
 
 **Tip:** Besides additional Metasploit commands explained below, all the regular shell commands and scripts found in `$PATH` are available too! (except for aliases)
 
@@ -155,7 +166,7 @@ msf > search platform:linux type:exploit name:Novell
 
 ```
 
-To search for specific field, type it's name, followed by column and the phrase. The following search fields are available:
+To search for specific field, type its name, followed by column and the phrase. The following search fields are available:
 
 | Search field | Matches | Possible values | DB table & column |
 | `app` | Passive (client) or Active (server) exploits | `client`, `server` | `module_details.stance` |
@@ -170,7 +181,7 @@ See [#Searching from the database](#Searching_from_the_database) and [#Database 
 
 ### Using an exploit
 
-After choosing an appropriate exploit, it's time to start hacking!
+After choosing an appropriate exploit, it is time to start hacking!
 
 First, select an exploit using the `use` command:
 
@@ -272,7 +283,7 @@ See [#Searching from the database](#Searching_from_the_database) for a workaroun
 
 ### Searching from the database
 
-Since everything in Metasploit is stored in a database, it's easy to make powerful search queries without the need of the `search` frontend command.
+Since everything in Metasploit is stored in a database, it is easy to make powerful search queries without the need of the `search` frontend command.
 
 To start the database interface, run:
 
@@ -401,7 +412,7 @@ $ msfconsole --quiet
 
 ### Preserve variable values between sessions
 
-If you don't want the variables to reset when selecting another module and when rerunning `msfconsole` then set it globally via `setg`, for example:
+If you do not want the variables to reset when selecting another module and when rerunning `msfconsole` then set it globally via `setg`, for example:
 
 ```
 msf > setg RHOST 192.168.56.102

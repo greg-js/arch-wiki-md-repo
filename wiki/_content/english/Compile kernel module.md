@@ -69,7 +69,9 @@ $ make M=fs/btrfs
 
 ## Module installation
 
-Now after successful compilation you just need to gzip and copy it over for your current kernel. If you are replacing some existing module you will need to overwrite it (and remember that reinstalling [linux](https://www.archlinux.org/packages/?name=linux) will replace it with default module)
+Now after successful compilation you just need to gzip and copy it over for your current kernel.
+
+If you are replacing some existing module you will need to overwrite it (and remember that reinstalling [linux](https://www.archlinux.org/packages/?name=linux) will replace it with default module)
 
 ```
 $ gzip fs/btrfs/btrfs.ko
@@ -77,14 +79,21 @@ $ gzip fs/btrfs/btrfs.ko
 
 ```
 
-But if you are adding new module you can just copy it to extramodules (note, this is just example as btrfs will not get loaded from here)
+Or alternatively, you can place the updated module in the updates folder (create it if it doesn't already exist)
+
+```
+$ cp fs/btrfs/btrfs.ko.gz /usr/lib/modules/`uname -r`/updates
+
+```
+
+However if you are adding a new module you can just copy it to extramodules (note, this is just example as btrfs will not get loaded from here)
 
 ```
 # cp fs/btrfs/btrfs.ko.gz /usr/lib/modules/`uname -r`/extramodules/
 
 ```
 
-If you are compiling module for early boot which is copied to [Initramfs](/index.php/Initramfs "Initramfs") then you must remember to regenerate it with (otherwise your compiled module will not be loaded)
+If you are compiling a module for early boot (e.g. updated module) which is copied to [Initramfs](/index.php/Initramfs "Initramfs") then you must remember to regenerate it with (otherwise your compiled module will not be loaded)
 
 ```
 # mkinitcpio -p linux

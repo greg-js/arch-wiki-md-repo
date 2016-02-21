@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Beginners'_Guide](/index.php/Beginners%27_Guide "Beginners' Guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-1-17，点击[这里](https://wiki.archlinux.org/index.php?title=Beginners'_Guide&diff=0&oldid=415601)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Beginners'_Guide](/index.php/Beginners%27_Guide "Beginners' Guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-1-17，点击[这里](https://wiki.archlinux.org/index.php?title=Beginners'_Guide&diff=0&oldid=421315)可以查看翻译后英文页面的改动。
 
 欢迎，本向导写给 Arch 新用户，但是会尽量做到成为所有用户的参考和信息库。 本文档指导您使用[Arch安装脚本](https://projects.archlinux.org/arch-install-scripts.git/)来安装[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")：一个简单、轻量级、适合计算机水平较高用户使用的发行版。建议在安装前先浏览一下[FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。 社区维护的 [ArchWiki](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")应该有办法解决遇到的疑难。若在其它地方找不到解决办法，[IRC 频道](/index.php/IRC_channel "IRC channel")([irc://irc.freenode.net/#archlinux-cn](irc://irc.freenode.net/#archlinux-cn)) 和[论坛](https://bbs.archlinux.org/)都是求助的好地方。为了贯彻[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，如遇陌生的命令，可输入`man *command*`以查询相关`man`手册页。
 
@@ -419,7 +419,7 @@ Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 用以下命令生成 [fstab](/index.php/Fstab "Fstab"). 之所以用 [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier "wikipedia:Universally unique identifier") 是因为它们能唯一且独立地标识，详见 [fstab#Identifying filesystems](/index.php/Fstab#Identifying_filesystems "Fstab"). 如果您想用卷标，用 `-L` 代替 `-U` 即可。
 
 ```
-# genfstab -U -p /mnt > /mnt/etc/fstab
+# genfstab -U -p /mnt >> /mnt/etc/fstab
 
 ```
 
@@ -550,7 +550,7 @@ FONT=lat9w-16
 
 ```
 # pacman -S grub os-prober
-# grub-install --recheck **/dev/sda**
+# grub-install **/dev/sda**
 
 ```
 

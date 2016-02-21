@@ -16,6 +16,7 @@ This article outlines the additional software packages necessary to expand the f
     *   [2.4 Archive files](#Archive_files)
     *   [2.5 NTFS read/write support](#NTFS_read.2Fwrite_support)
     *   [2.6 Desktop notifications](#Desktop_notifications)
+    *   [2.7 Enable Trash functionality on different filesystems (external drives)](#Enable_Trash_functionality_on_different_filesystems_.28external_drives.29)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 "Not Authorized" when attempting to mount drives](#.22Not_Authorized.22_when_attempting_to_mount_drives)
     *   [3.2 Password required to access partitions](#Password_required_to_access_partitions)
@@ -53,9 +54,9 @@ Folders used by GVFS:
 
 Additional packages for installation usually follows the [gvfs-* pattern](https://www.archlinux.org/packages/?q=gvfs-), for example:
 
-*   [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc): removable media (e.g. optical disks, USB data sticks, and cameras)
-*   [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp): phones and media players that require [MTP](/index.php/MTP "MTP")
-*   [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2): automatically transfer content from many digital cameras
+*   [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp): media players and mobile devices that use [MTP](/index.php/MTP "MTP")
+*   [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2): digital cameras and mobile devices that use [PTP](https://en.wikipedia.org/wiki/Picture_Transfer_Protocol "wikipedia:Picture Transfer Protocol")
+*   [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc): Apple mobile devices
 
 #### File manager daemon
 
@@ -85,7 +86,6 @@ Another option is to install a separate [mount application](/index.php/List_of_a
 *   [obexfs](https://www.archlinux.org/packages/?name=obexfs): Bluetooth device mounting and file transfers (see [Bluetooth](/index.php/Bluetooth "Bluetooth"))
 *   [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb): Windows File and printer sharing for **Non-KDE** desktops (see [Samba](/index.php/Samba "Samba"))
 *   [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing): Windows File and printer sharing for [KDE](/index.php/KDE "KDE") (see [Samba#KDE](/index.php/Samba#KDE "Samba"))
-*   [gvfs-afp](https://www.archlinux.org/packages/?name=gvfs-afp): Apple file and printer sharing
 *   [sshfs](https://www.archlinux.org/packages/?name=sshfs): FUSE client based on the SSH File Transfer Protocol
 
 #### Windows access
@@ -99,7 +99,7 @@ smb://<server name>/<share name>
 
 #### Apple access
 
-If using [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc), to access AFP files first open the file manager, and enter the following into the path name, changing <sever name> and <share name> as appropriate:
+AFP support is included in [gvfs](https://www.archlinux.org/packages/?name=gvfs). To access AFP files first open the file manager, and enter the following into the path name, changing <sever name> and <share name> as appropriate:
 
 ```
 afp://<server name>/<share name>
@@ -147,6 +147,24 @@ See the [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") article.
 ### Desktop notifications
 
 Some file managers make use of [desktop notifications](/index.php/Desktop_notifications "Desktop notifications") to confirm various events and statuses like mounting, unmounting and ejection of removable media.
+
+### Enable Trash functionality on different filesystems (external drives)
+
+Make [trash directories](http://www.ramendik.ru/docs/trashspec.html) `.Trash-*<uid>*` for each users on the top level of filesystems:
+
+For example (mount point: /media/sdc1, uid: 1000, gid: 1000):
+
+```
+# mkdir /media/sdc1/.Trash-1000
+
+```
+
+and `chown` them:
+
+```
+# chown 1000:1000 /media/sdc1/.Trash-1000
+
+```
 
 ## Troubleshooting
 

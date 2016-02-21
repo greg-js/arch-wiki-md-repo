@@ -9,14 +9,16 @@ It is well known that different motherboard manufactures implement UEFI differen
     *   [2.2 ux32vd](#ux32vd)
     *   [2.3 P8Z77 Family](#P8Z77_Family)
     *   [2.4 M5A97](#M5A97)
-*   [3 HP](#HP)
-    *   [3.1 EliteBook 840 G1](#EliteBook_840_G1)
-*   [4 Intel](#Intel)
-    *   [4.1 S5400 Family](#S5400_Family)
-*   [5 Lenovo](#Lenovo)
-    *   [5.1 K450 IdeaCentre](#K450_IdeaCentre)
-    *   [5.2 M92p ThinkCentre](#M92p_ThinkCentre)
-*   [6 VirtualBox](#VirtualBox)
+*   [3 Asrock](#Asrock)
+    *   [3.1 Z97M Pro4](#Z97M_Pro4)
+*   [4 HP](#HP)
+    *   [4.1 EliteBook 840 G1](#EliteBook_840_G1)
+*   [5 Intel](#Intel)
+    *   [5.1 S5400 Family](#S5400_Family)
+*   [6 Lenovo](#Lenovo)
+    *   [6.1 K450 IdeaCentre](#K450_IdeaCentre)
+    *   [6.2 M92p ThinkCentre](#M92p_ThinkCentre)
+*   [7 VirtualBox](#VirtualBox)
 
 ## Apple Mac EFI systems
 
@@ -189,6 +191,24 @@ To list the current boot entries you can run:
 
 ```
 Shell> bcfg boot dump -v
+
+```
+
+## Asrock
+
+### Z97M Pro4
+
+This is a similar procedure to Asus Z68 Family. This was tested on a Z97M Pro4 BIOS P1.90.
+
+```
+# cp /boot/efi/EFI/grub/grubx64.efi /boot/efi/shellx64.efi
+
+```
+
+After this launch the UEFI Shell from the UEFI setup/menu (in ASROCK UEFI BIOS, goto Exit tab and choose "Launch EFI Shell From Filesystem Device"). The GRUB2 menu will show up and you can boot into your system. Afterwards you can use efibootmgr to setup a menu entry, for example if you have the uefi partition in /dev/sda1: (read [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"))
+
+```
+# efibootmgr -c -g -d /dev/sda -p 1 -w -L "Arch Linux (GRUB)" -l /EFI/grub/grubx64.efi
 
 ```
 

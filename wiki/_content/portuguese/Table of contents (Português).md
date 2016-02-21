@@ -1,6 +1,6 @@
 [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(27)</small>
 
-	<small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(16)</small>
+	<small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(15)</small>
 
 	<small>1.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(0)</small>
 

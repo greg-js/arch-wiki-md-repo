@@ -170,7 +170,7 @@ sda               8:0    0    80G  0 disk
 
 The `sd*xY*` convention will be used in the examples provided below for partition tables, partitions, and file systems. As they are just examples, it is important to ensure that any necessary changes to device names, partition numbers, and/or partition sizes (etc.) are made. Do not just blindly copy and paste the commands.
 
-If the existing partition scheme does not need to be changed, skip to [#File systems and swap](#File_systems_and_swap), otherwise continue reading the following section.
+If the existing partition scheme does not need to be changed, skip to [#Format the file systems and enable swap](#Format_the_file_systems_and_enable_swap), otherwise continue reading the following section.
 
 ### Partition table types
 
@@ -261,7 +261,7 @@ You can decide the number and size of the partitions the devices should be split
 *   At least a partition for the `/` (*root*) directory **must** be created.
 *   When using a UEFI motherboard, one [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") **must** be created.
 
-In the examples below it is assumed that a new and contiguous partitioning scheme is applied to a single device. Some optional partitions will also be created for the `/boot` and `/home` directories which otherwise would simply be contained in the `/` partition. (See the [Arch filesystem hierarchy](/index.php/Arch_filesystem_hierarchy "Arch filesystem hierarchy") for an explanation of the purpose of the various directories.) Also the creation of an optional partiton for [swap space](/index.php/Swap_space "Swap space") will be illustrated.
+In the examples below it is assumed that a new and contiguous partitioning scheme is applied to a single device. Some optional partitions will also be created for the `/boot` and `/home` directories which otherwise would simply be contained in the `/` partition. See the [Arch filesystem hierarchy](/index.php/Arch_filesystem_hierarchy "Arch filesystem hierarchy") for an explanation of the purpose of the various directories. Also the creation of an optional partiton for [swap space](/index.php/Swap_space "Swap space") will be illustrated.
 
 If not already open in a *parted* interactive session, open each device to be partitioned with:
 
@@ -278,7 +278,7 @@ The following command will be used to create partitions:
 ```
 
 *   `*part-type*` is one of `primary`, `extended` or `logical`, and is meaningful only for MBR partition tables.
-*   `*fs-type*` is an identifier chosen among those listed by entering `help mkpart` as the closest match to the file system that you will use in [#File systems and swap](#File_systems_and_swap). The *mkpart* command does not actually create the file system: the `*fs-type*` parameter will simply be used by *parted* to set a 1-byte code that is used by boot loaders to "preview" what kind of data is found in the partition, and act accordingly if necessary. See also [Wikipedia:Disk partitioning#PC partition types](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
+*   `*fs-type*` is an identifier chosen among those listed by entering `help mkpart` as the closest match to the file system that you will use in [#Format the file systems and enable swap](#Format_the_file_systems_and_enable_swap). The *mkpart* command does not actually create the file system: the `*fs-type*` parameter will simply be used by *parted* to set a 1-byte code that is used by boot loaders to "preview" what kind of data is found in the partition, and act accordingly if necessary. See also [Wikipedia:Disk partitioning#PC partition types](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
 
 **Tip:** Most [Linux native file systems](https://en.wikipedia.org/wiki/File_system#Linux "wikipedia:File system") map to the same partition code ([0x83](https://en.wikipedia.org/wiki/Partition_type#PID_83h "wikipedia:Partition type")), so it is perfectly safe to e.g. use `ext2` for an *ext4*-formatted partition.
 

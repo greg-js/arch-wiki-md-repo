@@ -693,6 +693,10 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.org/wiki/Comparison_of_file_comparison_tools "wikipedia:Comparison of file comparison tools").
 
+*   **Beyond Compare** — A graphical tool for comparing files and folders, and generating reports.
+
+	[http://www.scootersoftware.com/](http://www.scootersoftware.com/) || [beyond-compare](https://aur.archlinux.org/packages/beyond-compare/)
+
 *   **colordiff** — A Perl script wrapper for 'diff' that produces the same output but with pretty 'syntax' highlighting.
 
 	[http://www.colordiff.org/](http://www.colordiff.org/) || [colordiff](https://www.archlinux.org/packages/?name=colordiff)
@@ -711,7 +715,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **[Meld](https://en.wikipedia.org/wiki/Meld_(software) "wikipedia:Meld (software)")** — Visual diff and merge tool that can compare files, directories, and version controlled projects.
 
-	[http://meld.sourceforge.net](http://meld.sourceforge.net) || [meld](https://www.archlinux.org/packages/?name=meld)
+	[http://meldmerge.org/](http://meldmerge.org/) || [meld](https://www.archlinux.org/packages/?name=meld)
 
 *   **xxdiff** — A graphical browser for file and directory differences.
 
@@ -1013,7 +1017,7 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 ### File synchronization
 
-See [Backup programs#Data synchronization](/index.php/Backup_programs#Data_synchronization "Backup programs").
+See [Synchronization and backup programs#Data synchronization](/index.php/Synchronization_and_backup_programs#Data_synchronization "Synchronization and backup programs").
 
 ### Finders
 

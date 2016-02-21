@@ -87,6 +87,7 @@ La idea de crear un equipo tiene como objetivo fundamental implementar, mediante
 *   [Cabrokimer](/index.php?title=User:Cabrokimer&action=edit&redlink=1 "User:Cabrokimer (page does not exist)") - [email](/index.php/Special:EmailUser/Cabrokimer "Special:EmailUser/Cabrokimer")
 *   [Pedro](/index.php/User:Pedro "User:Pedro") –*omnia vinces perseverando*– [enviar email](/index.php/Special:EmailUser/Pedro "Special:EmailUser/Pedro")
 *   [SignoSN](/index.php/User:SignoSN "User:SignoSN") - [enviar email](/index.php/Special:EmailUser/SignoSN "Special:EmailUser/SignoSN")
+*   [icemodding](/index.php?title=User:Icemodding&action=edit&redlink=1 "User:Icemodding (page does not exist)") - [enviar email](/index.php/Special:EmailUser/icemodding "Special:EmailUser/icemodding")
 
 ### Inactivos
 

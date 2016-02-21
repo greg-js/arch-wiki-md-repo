@@ -246,6 +246,8 @@ where `/dev/sdXY` is the partition containing the bootloader.
 
 **Note:** The config file for UEFI is `$esp/EFI/syslinux/syslinux.cfg`, not `/boot/syslinux/syslinux.cfg`. Files in `/boot/syslinux/` are BIOS specific and not related to UEFI syslinux.
 
+**Note:** The path to `vmlinuz-linux` in `syslinux.cfg` must be set to `../../vmlinuz-linux` not `../vmlinuz-linux`. The same applies to path to `initramfs-linux.img` and `initramfs-linux-fallback.img`.
+
 ## Configuration
 
 The Syslinux configuration file, `syslinux.cfg`, should be created in the same directory where you installed Syslinux. In our case, `/boot/syslinux/` for BIOS systems and `$esp/EFI/syslinux/` for UEFI systems.

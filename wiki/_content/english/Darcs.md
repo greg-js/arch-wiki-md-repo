@@ -2,4 +2,4 @@
 
 ## Installation
 
-There is no official package for that, but you could installing via [AUR](/index.php/AUR "AUR") package [darcs-bin](https://aur.archlinux.org/packages/darcs-bin/).
+[Install](/index.php/Install "Install") the [darcs](https://www.archlinux.org/packages/?name=darcs) package.

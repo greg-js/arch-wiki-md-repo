@@ -407,7 +407,7 @@ See [DNSSEC](/index.php/DNSSEC "DNSSEC") and [DNSCrypt](/index.php/DNSCrypt "DNS
 
 Proxies are commonly used as an extra layer between applications and the network, sanitizing data from untrusted sources. The attack surface of a small proxy running with lower privileges is significantly smaller than a complex application running with the end user privileges.
 
-For example the DNS resolver is implemented in the libc, that is linked with the application (that may be running as root), so a bug in the DNS resolver may lead to a remote code execution. This can be prevented installing a DNS caching server (like [Dnsmasq](/index.php/Dnsmasq "Dnsmasq")), that acts as proxy (running as nobody). [[2]](https://googleonlinesecurity.blogspot.it/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html)
+For example the DNS resolver is implemented in [glibc](https://www.archlinux.org/packages/?name=glibc), that is linked with the application (that may be running as root), so a bug in the DNS resolver might lead to a remote code execution. This can be prevented by installing a DNS caching server, such as [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"), which acts as a proxy. [[2]](https://googleonlinesecurity.blogspot.it/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html)
 
 ## Authenticating packages
 

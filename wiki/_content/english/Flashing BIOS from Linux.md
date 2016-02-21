@@ -84,7 +84,7 @@ The above command will tell you your motherboard and chipset. You can then find 
 
 ```
 
-On modern mainboards you probably get more than one rom chip listed. You have to select the chipname you get from the upper command. Them you use the `-c` option to select which rom is affected by the command
+On modern mainboards you probably get more than one rom chip listed. You have to select the chipname you get from the upper command. Then you use the `-c` option to select which rom is affected by the command
 
 ```
 # flashrom --programmer internal -c "CHIPNAME" -r backup_CHIPNAME.bin

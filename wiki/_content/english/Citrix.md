@@ -6,6 +6,7 @@
 *   [2 Manual Install](#Manual_Install)
     *   [2.1 Citrix Receiver (icaclient) Installation](#Citrix_Receiver_.28icaclient.29_Installation)
 *   [3 TLS/SSL Certificates](#TLS.2FSSL_Certificates)
+*   [4 Troubleshooting](#Troubleshooting)
 
 ## Install from AUR
 
@@ -129,3 +130,9 @@ There may be several reasons for this:
 
 1.  Upgrade your client to 13.1 or later. Citrix now supports SHA-2 hashes in the ICA client version 13.1.0.285639.
 2.  Contact your CA and have your certificate re-keyed with a SHA-1 hash.
+
+## Troubleshooting
+
+If you have issues opening a Citrix connection under Firefox you may need to set the Citrix Receiver plugin to 'Always Activate' under the Firefox Add-ons Manager plugin settings.
+
+If you have cursor alignment issues under Citrix and you have multiple displays connected to your machine you may need to disable all but one when using Citrix.

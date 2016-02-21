@@ -14,6 +14,7 @@
     *   [4.6 MySQL/MariaDB](#MySQL.2FMariaDB)
     *   [4.7 PostgreSQL](#PostgreSQL)
     *   [4.8 Sqlite](#Sqlite)
+    *   [4.9 XDebug](#XDebug)
 *   [5 Caching](#Caching)
     *   [5.1 OPCache](#OPCache)
     *   [5.2 APCu](#APCu)
@@ -167,6 +168,15 @@ Install and configure [SQLite](/index.php/SQLite "SQLite"), then install the [ph
 ```
 extension=pdo_sqlite.so
 extension=sqlite3.so
+
+```
+
+### XDebug
+
+XDebug allows you to easily debug php code using modified var_dump() function. Install [xdebug](https://www.archlinux.org/packages/?name=xdebug) and add the line at `/etc/php/php.ini`:
+
+```
+extension=xdebug.so
 
 ```
 

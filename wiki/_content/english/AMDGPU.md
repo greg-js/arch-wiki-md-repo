@@ -13,6 +13,7 @@ Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/inde
 *   [4 Performance tuning](#Performance_tuning)
     *   [4.1 Enabling video acceleration](#Enabling_video_acceleration)
 *   [5 Enable amdgpu for Sea Islands Cards](#Enable_amdgpu_for_Sea_Islands_Cards)
+*   [6 Disable radeon driver](#Disable_radeon_driver)
 
 ## Installation
 
@@ -80,15 +81,21 @@ The change takes effect at the next reboot.
 
 ## Enable amdgpu for Sea Islands Cards
 
-`amdgpu` has experimental support for Sea Islands (CI) cards, which is disabled by default. One possible reason why you might want to enable it and switch from radeon to `amdgpu` is that AMD announced their user space [Vulkan](https://www.khronos.org/vulkan/) driver will only be supporting the new `amdgpu` stack [[1]](https://phoronix.com/scan.php?page=news_item&px=AMDGPU-Vulkan-Driver-Only). Same might be the case for the new OpenCL driver, which was also mentioned in the [XDC presentation](http://www.x.org/wiki/Events/XDC2015/Program/deucher_zhou_amdgpu.pdf). If you want to enable `amdgpu` and use it with your Sea Islands product, you have to recompile your kernel. Probably the easiest way to setup a custom kernel is using the ABS, described in the article [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). Set "Enable amdgpu support for CIK parts" to "yes", then compile and install your kernel.
+`amdgpu` has experimental support for Sea Islands (CI) cards, which is disabled by default. One possible reason why you might want to enable it and switch from radeon to `amdgpu` is that AMD announced their user space [Vulkan](https://www.khronos.org/vulkan/) driver will only be supporting the new `amdgpu` stack [[1]](https://phoronix.com/scan.php?page=news_item&px=AMDGPU-Vulkan-Driver-Only). Same might be the case for the new OpenCL driver, which was also mentioned in the [XDC presentation](http://www.x.org/wiki/Events/XDC2015/Program/deucher_zhou_amdgpu.pdf).
+
+If you want to enable `amdgpu` and use it with your Sea Islands product, you have to recompile your kernel. Probably the easiest way to setup a custom kernel is using the ABS, described in [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). You can also uncomment `make menuconfig` or `make nconfig` in the PKGBUILD, which will allow you to verify that the CIK option is selected by following the instructions from [Gentoo wiki](https://wiki.gentoo.org/wiki/Amdgpu#Feature_support).
+
+Set "Enable amdgpu support for CIK parts" to "yes", then compile and install your kernel.
 
 ```
 CONFIG_DRM_AMDGPU_CIK=Y
 
 ```
 
+It may also be needed to use the `amdgpu.exp_hw_support=1` [[2]](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-Iceland-Experimental) as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or by setting the [kernel module](/index.php/Kernel_modules#Using_files_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules") options.
+
+## Disable radeon driver
+
 To prevent `radeon` from loading, you can disable it in the Kconfig or [blacklist](https://wiki.archlinux.org/index.php/Kernel_modules#Blacklisting) the `radeon` module.
 
- `/etc/modprobe.d/radeon.conf`  `blacklist radeon` 
-
-It may also be needed to use the `amdgpu.exp_hw_support=1` [[2]](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-Iceland-Experimental) as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or by setting the [kernel module](/index.php/Kernel_modules#Using_files_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules") options.
+ `/etc/modprobe.d/radeon.conf`  `blacklist radeon`

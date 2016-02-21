@@ -356,12 +356,7 @@ Users preferring to run the firmware update from a live USB created under Linux 
 
 Alternatively, the firmware can be upgraded natively, without making a bootable USB stick, as shown below.
 
-Lookup the Samsung website to get the path of the latest firmware for Windows, which is available as a disk image:
-
-```
-$ wget http://www.samsung.com/global/business/semiconductor/minisite/SSD/downloads/software/Samsung_SSD_840_EVO_EXT0DB6Q.iso
-
-```
+First visit the [Samsung downloads page](http://www.samsung.com/global/business/semiconductor/minisite/SSD/global/html/support/downloads.html) and download the latest firmware for Windows, which is available as a disk image. In the following, `Samsung_SSD_840_EVO_EXT0DB6Q.iso` is used as an example file name, adjust it accordingly.
 
 Setup the disk image:
 

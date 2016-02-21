@@ -12,25 +12,24 @@ This guide will give you an overview for the most common server options in exist
 *   [4 Additional web-services](#Additional_web-services)
     *   [4.1 E-Mail](#E-Mail)
     *   [4.2 FTP](#FTP)
+    *   [4.3 DAViCal](#DAViCal)
+    *   [4.4 WebDAV](#WebDAV)
+    *   [4.5 DLAN](#DLAN)
+    *   [4.6 Web cache](#Web_cache)
 *   [5 Local Network Services](#Local_Network_Services)
-    *   [5.1 CUPS (printing)](#CUPS_.28printing.29)
-    *   [5.2 DHCP](#DHCP)
-    *   [5.3 Samba (Windows-compatible file and printer sharing)](#Samba_.28Windows-compatible_file_and_printer_sharing.29)
+    *   [5.1 Zeroconf](#Zeroconf)
+    *   [5.2 CUPS (printing)](#CUPS_.28printing.29)
+    *   [5.3 DHCP](#DHCP)
+    *   [5.4 Samba (Windows-compatible file and printer sharing)](#Samba_.28Windows-compatible_file_and_printer_sharing.29)
+    *   [5.5 DNS](#DNS)
 *   [6 Security](#Security)
     *   [6.1 Firewall](#Firewall)
     *   [6.2 Protecting SSH](#Protecting_SSH)
     *   [6.3 SELinux](#SELinux)
 *   [7 Administration and maintenance](#Administration_and_maintenance)
     *   [7.1 Accessibility](#Accessibility)
-*   [8 Extras](#Extras)
-    *   [8.1 phpMyAdmin](#phpMyAdmin)
-*   [9 Local Package Repositories](#Local_Package_Repositories)
-*   [10 Home cloud server](#Home_cloud_server)
-    *   [10.1 Basic home cloud server components](#Basic_home_cloud_server_components)
-    *   [10.2 Prerequisites](#Prerequisites)
-    *   [10.3 Installation](#Installation)
-    *   [10.4 Extras](#Extras_2)
-*   [11 More Resources](#More_Resources)
+    *   [7.2 Local Package Repositories](#Local_Package_Repositories)
+*   [8 See also](#See_also)
 
 ## Preface
 
@@ -44,7 +43,7 @@ You may have seen the comments or claims: *Arch Linux was never intended as a se
 
 ## Requirements
 
-For using Arch Linux on a server, you will need to have an Arch Linux installation ready.
+For using Arch Linux on a server, you will need to have an Arch Linux [installation](/index.php/Installation_guide "Installation guide") ready.
 
 In most GNU/Linux server operating systems, you have two options:
 
@@ -54,6 +53,8 @@ In most GNU/Linux server operating systems, you have two options:
 **Note:** If you have services on your server that need to be administered using a GUI and cannot be done remotely, you must choose the second option.
 
 For the installation of Arch Linux, please refer to the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [General recommendations](/index.php/General_recommendations "General recommendations") articles, but do not go any further than [this section](/index.php/General_recommendations#Graphical_user_interface "General recommendations") unless you require a GUI.
+
+For remote access to this server, you need a static IP address/ domain name, or something like [No-Ip](http://www.noip.com).
 
 ## Basic set-up
 
@@ -104,7 +105,27 @@ There are several FTP daemons available. See [List of applications#FTP servers](
 
 There is also the option of FTP over SSH, or [SFTP](/index.php/SFTP "SFTP").
 
+### DAViCal
+
+[DAViCal](/index.php/DAViCal "DAViCal") is a server implementing the CalDAV and CardDAV protocol for calendar, reminder, and contact sharing.
+
+### WebDAV
+
+[WebDAV](/index.php/WebDAV "WebDAV")(Web Distributed Authoring and Versioning) is an extension of HTTP 1.1\. It contains a set of concepts and accompanying extension methods to allow read and write across the HTTP 1.1 protocol. Instead of using NFS or SMB, WebDAV offers file transfers via HTTP.
+
+### DLAN
+
+[ReadyMedia](/index.php/ReadyMedia "ReadyMedia") (previously **MiniDLNA**) is server software with the aim of being fully compliant with [DLNA](https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance "wikipedia:Digital Living Network Alliance")/[UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play "wikipedia:Universal Plug and Play") clients to serves media files (music, pictures, and video) to clients on a network.
+
+### Web cache
+
+[Squid](/index.php/Squid "Squid") is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. Squid has extensive access controls and makes a great server accelerator.
+
 ## Local Network Services
+
+### Zeroconf
+
+[Avahi](/index.php/Avahi "Avahi") is a free [Zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") (zeroconf) implementation, including a system for multicast DNS/DNS-SD service discovery. It allows programs to publish and discover services and hosts running on a local network with no specific configuration. For example you can plug into a network and instantly find printers to print to, files to look at and people to talk to.
 
 ### CUPS (printing)
 
@@ -121,6 +142,10 @@ Please refer to the [CUPS](/index.php/CUPS "CUPS") wiki page for instructions on
 Samba is an open-source implementation of the SMB/CIFS networking protocols, effectively allowing you to share files and printers between Linux and Windows systems. Samba can provide public shares or require several forms of authentication.
 
 Please refer to the [Samba](/index.php/Samba "Samba") wiki page for instructions on installation and configuration.
+
+### DNS
+
+[Category:Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") contains many implementations of the Domain Name System (DNS) protocols.
 
 ## Security
 
@@ -144,58 +169,10 @@ Please refer to the [SELinux](/index.php/SELinux "SELinux") wiki page for instru
 
 **X Forwarding** is forwarding your X session via SSH so you can log in to the desktop GUI remotely. Use of this feature will require SSH and an X server to be installed on the server. You will also need to have a working X server installed on the client system you will be using to connect to the server with. More information can be found in the [X Forwarding](/index.php/SSH#X11_forwarding "SSH") section of the [SSH](/index.php/SSH "SSH") guide.
 
-## Extras
-
-### phpMyAdmin
-
-[phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") is a free software tool written in PHP intended to handle the administration of MySQL over the Internet. phpMyAdmin supports a wide range of operations with MySQL. The most frequently used operations are supported by the user interface (managing databases, tables, fields, relations, indexes, users, permissions, etc), while you still have the ability to directly execute any SQL statement." [http://www.phpmyadmin.net/home_page/index.php](http://www.phpmyadmin.net/home_page/index.php)
-
-## Local Package Repositories
+### Local Package Repositories
 
 [Repose](https://github.com/vodik/repose) can be used to create a package repository for a local server cluster where packages must be tested for quality and reliability before undergoing deployment into a production environment.
 
-## Home cloud server
+## See also
 
-With Arch Linux, you can easily make a home cloud server, to replace web-based data storage. This lets you store your data on your own computer, and have it be accessible across platforms.
-
-### Basic home cloud server components
-
-*   A SMB server for file sharing
-*   Zeroconf for service discovery
-*   WebDAV for remote iPhone/web based file sharing
-*   SSH / SFTP for remote access and file sharing
-*   CardDAV/ConDAV for calendar, reminder, and contact sharing
-*   A DLNA server for sharing music and photos with TVs and video game consoles
-
-### Prerequisites
-
-*   An IP address. For example a static IP address/ domain name, or something like [No-Ip](http://www.noip.com)
-*   You will need to know how to set up your firewall for port forwarding.
-
-### Installation
-
-*   Follow the [Installation guide](/index.php/Installation_guide "Installation guide")
-*   Set up a [LAMP](/index.php/LAMP "LAMP") stack (Apache + Mysql + PHP)
-*   Set up [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") (for davical)
-*   Install [Avahi](/index.php/Avahi "Avahi") (for zeroconf)
-*   [Samba](/index.php/Samba "Samba")
-*   [DAViCal](/index.php/DAViCal "DAViCal") / Webical - Make sure to check the user comments at [AUR](https://aur.archlinux.org/packages/davical/) and the [davical](http://www.davical.org) website, for help.
-*   [SSH](/index.php/SSH "SSH")
-*   [MiniDLNA](/index.php/MiniDLNA "MiniDLNA")
-
-### Extras
-
-Once you have got the base set up there are lots of optional things you can do such as:
-
-*   Set up [BIND](/index.php/BIND "BIND") so you can have a nameserver and DNS cache for your local network
-*   Set up a web cache, for example with [Squid](/index.php/Squid "Squid")
-*   Locally host your email and notes, for example via a [Simple Virtual User Mail System](/index.php/Simple_Virtual_User_Mail_System "Simple Virtual User Mail System")
-
-## More Resources
-
-*   [LAMP](/index.php/LAMP "LAMP")
-*   [MySQL](/index.php/MySQL "MySQL") - ArchWiki article for MySQL
 *   [Virtual Private Server](/index.php/Virtual_Private_Server "Virtual Private Server") - A list of VPS providers offering Arch
-*   [https://mariadb.org/](https://mariadb.org/)
-*   [https://www.apache.org/](https://www.apache.org/)
-*   [https://www.php.net/](https://www.php.net/)

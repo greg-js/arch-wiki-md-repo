@@ -143,7 +143,7 @@ server {
 
 ```
 
-Finally, [restart](/index.php/Restart "Restart") the `nginx.service` daemon.
+Finally, [restart](/index.php/Restart "Restart") `nginx.service` and `php-fpm.service` daemons.
 
 #### Lighttpd
 

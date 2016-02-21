@@ -15,8 +15,7 @@ TiMidity++ is a [software synthesizer](https://en.wikipedia.org/wiki/software_sy
         *   [3.1.3 Connect to virtual MIDI device](#Connect_to_virtual_MIDI_device)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 TiMidity++ does not play MIDI files](#TiMidity.2B.2B_does_not_play_MIDI_files)
-    *   [4.2 Daemon mode won't start](#Daemon_mode_won.27t_start)
-    *   [4.3 Daemon mode plays sound out of pace](#Daemon_mode_plays_sound_out_of_pace)
+    *   [4.2 Daemon mode plays sound out of pace](#Daemon_mode_plays_sound_out_of_pace)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Convert files](#Convert_files)
     *   [5.2 How to make DOSBox use TiMidity++](#How_to_make_DOSBox_use_TiMidity.2B.2B)
@@ -69,7 +68,7 @@ soundfont /usr/share/soundfonts/FluidR3_GM2-2.sf2
 
 ### Daemon
 
-Start and configure to autostart the `timidity.service`. Read [Daemons](/index.php/Daemons "Daemons") for more details.
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `timidity.service`.
 
 If you are using [PulseAudio](/index.php/PulseAudio "PulseAudio"), that may not work. You may want to add the following command as an auto start program in your desktop environment. Or, if you just want to start TiMidity++ in daemon mode once, you can use the following command which will make console output viewable:
 
@@ -209,26 +208,6 @@ this instrument will not be heard
 ```
 
 Make sure you've installed some samples and your SoundFile is added to `/etc/timidity++/timidity.cfg`. See [SoundFonts](#SoundFonts) for more details.
-
-### Daemon mode won't start
-
-First, make sure you are in the **audio** group. If not, add yourself to it:
-
-```
-# gpasswd audio -a *username*
-
-```
-
-After group change, you should re-login.
-
-If you are using [PulseAudio](/index.php/PulseAudio "PulseAudio"), instead of [enabling](/index.php/Daemons "Daemons") the `timidity.service`, start TiMidity++ as an user:
-
-```
-$ timidity -iA -OO
-
-```
-
-If you want to run TiMidity++ in background, do not use TiMidity++'s daemonize option, append `&` instead.
 
 ### Daemon mode plays sound out of pace
 

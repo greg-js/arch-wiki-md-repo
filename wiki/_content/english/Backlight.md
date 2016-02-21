@@ -332,15 +332,23 @@ First [install](/index.php/Install "Install") [inotify-tools](https://www.archli
 
  `/usr/local/bin/xbacklightmon` 
 ```
-#!/bin/bash
-max=/sys/class/backlight/acpi_video0/max_brightness
-level=/sys/class/backlight/acpi_video0/actual_brightness
-factor=$(awk '{print $1/100}' <<< $(<$max)) 
+#!/bin/sh
 
-xblevel() { awk '{print int($1/$2)}' <<< "$(<$level) $factor"; }
-xbacklight -set $(xblevel)
-inotifywait -m -qe modify $level | while read -r file event; do
-    xbacklight -set $(xblevel)
+path=/sys/class/backlight/acpi_video0
+
+luminance() {
+    read -r level < "$path"/actual_brightness
+    factor=$((max / 100))
+    printf '%d
+' "$((level / factor))"
+}
+
+read -r max < "$path"/max_brightness
+
+xbacklight -set "$(luminance)"
+
+inotifywait -me modify --format '' "$path"/actual_brightness | while read; do
+    xbacklight -set "$(luminance)"
 done
 
 ```

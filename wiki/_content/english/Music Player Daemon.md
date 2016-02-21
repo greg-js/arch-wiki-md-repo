@@ -97,15 +97,7 @@ If you prefer to listen on different UNIX sockets or network ports (even multipl
 
 #### Configure audio
 
-To change the volume for mpd independent from other programs, uncomment or add this switch in mpd.conf:
-
- `/etc/mpd.conf` 
-```
-mixer_type			"software"
-
-```
-
-Users of [ALSA](/index.php/ALSA "ALSA") will want to have the following device definition, which allows software volume control in the MPD client to control the volume separately from other applications.
+Users of [ALSA](/index.php/ALSA "ALSA") will want to have the following device definition; replace `My Sound Card` with the name of a sound card or pcm (`aplay --list-pcms`).
 
  `/etc/mpd.conf` 
 ```
@@ -115,6 +107,8 @@ audio_output {
         mixer_type      "software"      # optional
 }
 ```
+
+The `mixer_type "software"` option tells 'mpd' to use its own independent software volume control.
 
 Users of [PulseAudio](/index.php/PulseAudio "PulseAudio") will need to make the following modification:
 

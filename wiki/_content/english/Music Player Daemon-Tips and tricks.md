@@ -127,7 +127,7 @@ To autostart *mpdscribble* along with *mpd*, add an entry for it into the file i
 
 ```
 
-**Note:** If you get a `[last.fm] handshake failed, username or password incorrect (BADAUTH)` error, then make sure your username/password are right, and that your password [doesn't](http://bugs.musicpd.org/view.php?id=3836#c7881) have 32 characters.
+**Note:** If you get a `[last.fm] handshake failed, username or password incorrect (BADAUTH)` error, make sure your username and password are correct, and that your password is not [32 characters long](http://bugs.musicpd.org/view.php?id=3836).
 
 #### systemd user service
 

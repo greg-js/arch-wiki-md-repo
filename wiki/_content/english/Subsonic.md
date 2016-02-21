@@ -104,7 +104,7 @@ If you start subsonic using `/etc/rc.d/subsonic`, and your /etc/[rc.conf](/index
 
 Subsonic stores all its data inside a [HyperSQL](http://hsqldb.org/) database in `/var/lib/subsonic/db`. You can access it with a simple web interface by going to [http://localhost:4040/db.view](http://localhost:4040/db.view) (replace with your Subsonic URL).
 
-You can also use the SQLTool command-line tool from the HyperSQL distribution, found in [hypersql2-java](https://aur.archlinux.org/packages/hypersql2-java/). Note that this tool cannot be run concurrently with your Subsonic instance, so you will have to either shut it down or copy the database directory.
+You can also use the SQLTool command-line tool from the HyperSQL distribution, found in [hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/). Note that this tool cannot be run concurrently with your Subsonic instance, so you will have to either shut it down or copy the database directory.
 
 SQLTool first needs a `~/sqltool.rc` file with the following contents :
 

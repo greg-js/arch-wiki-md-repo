@@ -423,22 +423,21 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 #### 阿拉伯和乌尔都文字
 
-*   [ttf-qurancomplex-fonts](https://aur.archlinux.org/packages/ttf-qurancomplex-fonts/) - 位于麦地那的 King Fahd Glorious Quran Printing Complex 制作的字体 *(AUR)*
-*   [ttf-amiri](https://aur.archlinux.org/packages/ttf-amiri/) - 一个典型的阿拉伯文誊抄体 (Naskh) 字体，一开始由 Amiria Press 采用 *(AUR)*
-*   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - 来自 SIL 的 Unicode 阿拉伯文字体 *(AUR)*
-*   [ttf-sil-scheherazade](https://aur.archlinux.org/packages/ttf-sil-scheherazade/) - 来自 SIL 的 Unicode 阿拉伯文字体 *(AUR)*
-*   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - 自由的阿拉伯文字体集合 *(AUR)*
+*   [ttf-qurancomplex-fonts](https://aur.archlinux.org/packages/ttf-qurancomplex-fonts/) - 位于麦地那的 King Fahd Glorious Quran Printing Complex 制作的字体
+*   [ttf-amiri](https://aur.archlinux.org/packages/ttf-amiri/) - 一个典型的阿拉伯文誊抄体 (Naskh) 字体，一开始由 Amiria Press 采用
+*   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - 来自 SIL 的 Unicode 阿拉伯文字体
+*   [ttf-sil-scheherazade](https://aur.archlinux.org/packages/ttf-sil-scheherazade/) - 来自 SIL 的 Unicode 阿拉伯文字体
+*   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - 自由的阿拉伯文字体集合
 
 #### 波斯文字
 
-*   [ttf-persian-irfonts](https://aur.archlinux.org/packages/ttf-persian-irfonts/) - 伊朗信息与通信技术高级理事会(SCICT)的官方标准波斯字体集 *(AUR)*
-*   [ttf-persian-borna](https://aur.archlinux.org/packages/ttf-persian-borna/) - Borna Rayaneh 波斯 B 字体系列 *(AUR)*
-*   [ttf-persian-x2](https://aur.archlinux.org/packages/ttf-persian-x2/) - X 系列 2 字体是建立在开源可使用的字体基础上并扩展支持波斯语，阿拉伯语，乌尔都语，普什图语，达里语，乌兹别克语，库尔德语，维吾尔语，老土耳其（奥斯曼）和现代土耳其（罗马）. *(AUR)*
-*   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - 由伊朗信息高级理事会公布的一款 Unicode 书法字体 *(AUR)*
+*   [ttf-irfonts](https://aur.archlinux.org/packages/ttf-irfonts/) - 伊朗信息与通信技术高级理事会(SCICT)的官方标准波斯字体集
+*   [ttf-borna](https://aur.archlinux.org/packages/ttf-borna/) - Borna Rayaneh 波斯 B 字体系列
+*   [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) - X 系列 2 字体是建立在开源可使用的字体基础上并扩展支持波斯语，阿拉伯语，乌尔都语，普什图语，达里语，乌兹别克语，库尔德语，维吾尔语，老土耳其（奥斯曼）和现代土耳其（罗马）.
+*   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - 由伊朗信息高级理事会公布的一款 Unicode 书法字体
 
 #### 缅甸文字
 
-*   [ttf-myanmar3](https://aur.archlinux.org/packages/ttf-myanmar3/) - 缅甸手写体字体 *(AUR)*
 *   [ttf-myanmar-fonts](https://aur.archlinux.org/packages/ttf-myanmar-fonts/) - 源自myordbok.com的121款字体*(AUR)*
 
 #### 中日韩越文字
@@ -451,7 +450,7 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 *   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - 思源黑体简体中文部分
 *   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - 思源黑体繁体中文部分
-*   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - （繁体）台湾教育部发行的标准楷书、宋体字体 *(AUR)*
+*   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - （繁体）台湾教育部发行的标准楷书、宋体字体
 *   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - 文泉驿微米黑：无衬线形式的高质量中日韩越 (CJKV) 轮廓字体，自 Google Droid 字体衍生而来。
 *   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - 文泉驿正黑：黑体 (无衬线) 的中文轮廓字体，附带文泉驿点阵宋体 (也支持部分日韩字符)。
 *   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - **楷书** (带有笔触) Unicode 字体 (推荐启用反锯齿)
@@ -464,9 +463,9 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 *   [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) - 思源黑体日文部分
 *   [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont) - 正规的日文哥特体 (无衬线) 与明朝体 (衬线) 字形集；其中一项高质量的开放原始码字形。openSUSE-ja 的缺省字形。
-*   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - 日文哥特体字形。Debian/Fedora/Vine Linux 的缺省字体 *(AUR)*
-*   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) - 现代哥特体的日文轮廓字体。包含所有日文平假名/片假名、Basic Latin、Latin-1 Supplement、Latin Extended-A、IPA Extensions。另外还有大部分日文汉字、希腊字母、西里尔字与越南文字，可以 7 磅 (等比例) 或 5 磅 (等宽) 字重显示。 *(AUR)*
-*   [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/), [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - 日文字体，可正确显示 [2ch 的 Shift JIS 艺术创作](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art")。 *(AUR)*
+*   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - 日文哥特体字形。Debian/Fedora/Vine Linux 的缺省字体
+*   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) - 现代哥特体的日文轮廓字体。包含所有日文平假名/片假名、Basic Latin、Latin-1 Supplement、Latin Extended-A、IPA Extensions。另外还有大部分日文汉字、希腊字母、西里尔字与越南文字，可以 7 磅 (等比例) 或 5 磅 (等宽) 字重显示。
+*   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - 日文字体，可正确显示 [2ch 的 Shift JIS 艺术创作](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art")。
 *   [ttf-sazanami](https://www.archlinux.org/packages/?name=ttf-sazanami) - 自由的日文 TrueType 字体。已经过期无人维护，但在某些环境下可当作备案字体使用。
 *   [ttf-hanazono](https://www.archlinux.org/packages/?name=ttf-hanazono) - 一款免费的日文汉字字体，Mincho (serif)风格。
 
@@ -474,29 +473,25 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 *   [adobe-source-han-sans-kr-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-kr-fonts) - 思源黑体韩文部分
 *   [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk) - 韩文 TrueType 字体集合
-*   [ttf-alee](https://aur.archlinux.org/packages/ttf-alee/) - 自由的韩文 (谚文；Hangul) TrueType 字体 (*AUR*)
-*   [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) - Un 字体 (缺省的 Baekmuk 字体较让人不满意) (*AUR*)
-*   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) - 共享体 (Nanum) 系列 TrueType 字体 (*AUR*)
-*   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) - 共享体 (Nanum) 系列 TrueType 等宽字体 (*AUR*)
+*   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) - 共享体 (Nanum) 系列 TrueType 字体
+*   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) - 共享体 (Nanum) 系列 TrueType 等宽字体
 
 #### 西里尔文字
 
 另请参阅[#等宽字体](#.E7.AD.89.E5.AE.BD.E5.AD.97.E4.BD.93)、[#无衬线字体](#.E6.97.A0.E8.A1.AC.E7.BA.BF.E5.AD.97.E4.BD.93)和[#衬线字体](#.E8.A1.AC.E7.BA.BF.E5.AD.97.E4.BD.93)
 
-*   [ttf-paratype](https://aur.archlinux.org/packages/ttf-paratype/) - ParaType类别的字体: sans, serif, mono, 扩展的西里尔和拉丁文字, OFL 认证 (*AUR*)
-*   [font-arhangai](https://aur.archlinux.org/packages/font-arhangai/) - 蒙古文西里尔字 (*AUR*)
-*   [ttf-pingwi-typography](https://aur.archlinux.org/packages/ttf-pingwi-typography/) - PingWi Typography (PWT) 字体 (*AUR*)
+*   [ttf-paratype](https://aur.archlinux.org/packages/ttf-paratype/) - ParaType类别的字体: sans, serif, mono, 扩展的西里尔和拉丁文字, OFL 认证
 
 #### 希腊文字
 
 几乎所有 Unicode 字体都包含希腊代码集 (也包含多调变音符号)。某些额外的字体软件包未包含完整的 Unicode 集，但拥有高质量的希腊字字形 (当然包含拉丁字)：
 
-*   [otf-gfs](https://aur.archlinux.org/packages/otf-gfs/) - 由 Greek Font Society 选用的 OpenType 字体 *(AUR)*
-*   [ttf-mgopen](https://aur.archlinux.org/packages/ttf-mgopen/) - 来自 Magenta 的专业 TrueType 字体 *(AUR)*
+*   [otf-gfs](https://aur.archlinux.org/packages/otf-gfs/) - 由 Greek Font Society 选用的 OpenType 字体
+*   [ttf-mgopen](https://aur.archlinux.org/packages/ttf-mgopen/) - 来自 Magenta 的专业 TrueType 字体
 
 #### 希伯来文字
 
-*   [culmus](https://aur.archlinux.org/packages/culmus/) - 自由的希伯来文字体集合 *(AUR)*
+*   [culmus](https://aur.archlinux.org/packages/culmus/) - 自由的希伯来文字体集合
 
 #### 印地文字
 
@@ -505,26 +500,26 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 	(This one contains a "look of disapproval" that might be more to your liking than the [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont) one mentioned elsewhere in this document)
 
-*   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/) - 来自 Fedora 专案的印地文 TrueType 字体 (包含 Oriya 字体以及更多) *(AUR)*
-*   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/) - 梵文TrueType字体(包含 283 种字体) *(AUR)*
-*   [ttf-gujrati-fonts](https://aur.archlinux.org/packages/ttf-gujrati-fonts/) - TTF 古吉拉特 fonts (Avantika,Gopika,Shree768) *(AUR)*
-*   [ttf-gurmukhi-fonts_sikhnet](https://aur.archlinux.org/packages/ttf-gurmukhi-fonts_sikhnet/) - TrueType Gurmukhi fonts (gurbaniwebthick,prabhki) *(AUR)*
-*   [ttf-gurmukhi_punjabi](https://aur.archlinux.org/packages/ttf-gurmukhi_punjabi/) - TTF Gurmukhi / Punjabi (contains 252 fonts) *(AUR)*
-*   [ttf-kannada-font](https://aur.archlinux.org/packages/ttf-kannada-font/) - Kannada, the language of Karnataka state in India *(AUR)*
-*   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - Tamil Unicode fonts (*AUR*)
+*   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/) - 来自 Fedora 专案的印地文 TrueType 字体 (包含 Oriya 字体以及更多)
+*   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/) - 梵文TrueType字体(包含 283 种字体)
+*   [ttf-gujrati-fonts](https://aur.archlinux.org/packages/ttf-gujrati-fonts/) - TTF 古吉拉特 fonts (Avantika,Gopika,Shree768)
+*   [ttf-gurmukhi-fonts_sikhnet](https://aur.archlinux.org/packages/ttf-gurmukhi-fonts_sikhnet/) - TrueType Gurmukhi fonts (gurbaniwebthick,prabhki)
+*   [ttf-gurmukhi_punjabi](https://aur.archlinux.org/packages/ttf-gurmukhi_punjabi/) - TTF Gurmukhi / Punjabi (contains 252 fonts)
+*   [ttf-kannada-font](https://aur.archlinux.org/packages/ttf-kannada-font/) - Kannada, the language of Karnataka state in India
+*   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - Tamil Unicode fonts
 
 #### 高棉文字
 
 *   [ttf-khmer](https://www.archlinux.org/packages/?name=ttf-khmer) - 涵盖高棉语 (Khmer) 文字的字体
-*   [Hanuman](https://www.google.com/fonts/specimen/Hanuman) ([ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
+*   [Hanuman](https://www.google.com/fonts/specimen/Hanuman) ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 
 #### 僧伽罗文字
 
-*   [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/) - 僧伽罗文 (Sinhala) Unicode 字体 (*AUR*)
+*   [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/) - 僧伽罗文 (Sinhala) Unicode 字体
 
 #### 塔米尔文字
 
-*   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - 塔米尔文 (Tamil) Unicode 字体 (*AUR*)
+*   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - 塔米尔文 (Tamil) Unicode 字体
 
 #### 藏文字
 

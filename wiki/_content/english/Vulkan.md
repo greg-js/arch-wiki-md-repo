@@ -8,7 +8,7 @@ Learn more at [Khronos](https://www.khronos.org/vulkan/).
 
 To run a Vulkan appplication, you will need to [install](/index.php/Install "Install") the [vulkan-icd-loader](https://www.archlinux.org/packages/?name=vulkan-icd-loader) package, as well as the Vulkan drivers for your graphics card(s):
 
-*   Intel: [vulkan-i965-git](https://aur.archlinux.org/packages/vulkan-i965-git/)
+*   Intel: [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel)
 
 The other drivers are not packaged yet, so you will have to install them manually:
 

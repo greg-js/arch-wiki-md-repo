@@ -14,9 +14,9 @@ Tmux is a BSD-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Sc
     *   [2.5 Autostart with systemd](#Autostart_with_systemd)
 *   [3 Session initialization](#Session_initialization)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Terminal emulator isn't supporting UTF-8 Mouse Events](#Terminal_emulator_isn.27t_supporting_UTF-8_Mouse_Events)
-    *   [4.2 Scrolling issues](#Scrolling_issues)
-    *   [4.3 Mouse scrolling](#Mouse_scrolling)
+    *   [4.1 Scrolling issues](#Scrolling_issues)
+    *   [4.2 Mouse scrolling](#Mouse_scrolling)
+    *   [4.3 Terminal emulator does not support UTF-8 mouse events](#Terminal_emulator_does_not_support_UTF-8_mouse_events)
     *   [4.4 Fix reverse-video/italic mode in urxvt](#Fix_reverse-video.2Fitalic_mode_in_urxvt)
     *   [4.5 Shift+F6 not working in Midnight Commander](#Shift.2BF6_not_working_in_Midnight_Commander)
 *   [5 X clipboard integration](#X_clipboard_integration)
@@ -274,17 +274,6 @@ bind B source-file ~/.tmux/bar
 
 ## Troubleshooting
 
-### Terminal emulator isn't supporting UTF-8 Mouse Events
-
-When stuff like "[M#" or "[Ma" gets pasted into the promt when left-clicking on a terminal emulator with tmux and "mouse on" running it might be that your terminal emulator isn't supporting UTF-8 mouse events, although the encoding is set to UTF-8.
-
-To solve this issue set:
-
-```
-set -g mouse-utf8 off
-
-```
-
 ### Scrolling issues
 
 If you have issues scrolling with Shift-Page Up/Down in your terminal, the following will remove the smcup and rmcup capabilities for any term that reports itself as anything beginning with `xterm`:
@@ -329,6 +318,17 @@ Though the above will only scroll one line at a time, add this solution to scrol
    bind -t vi-copy    WheelDownPane page-down
    bind -t emacs-copy WheelUpPane   page-up
    bind -t emacs-copy WheelDownPane page-down
+
+```
+
+### Terminal emulator does not support UTF-8 mouse events
+
+When the terminal emulator does not support the UTF-8 mouse events and the `mouse on` tmux option is set, left-clicking inside the terminal window might paste strings like `[M#` or `[Ma` into the promt.
+
+To solve this issue set:
+
+```
+set -g mouse-utf8 off
 
 ```
 

@@ -1202,7 +1202,7 @@ In the game, go to the options and set all audio to the proper volume.
 
 ### Dependencies
 
-*   [lib32-libcaca](https://aur.archlinux.org/packages/lib32-libcaca/)
+*   [lib32-libcaca](https://www.archlinux.org/packages/?name=lib32-libcaca)
 
 ## Serious Sam 3: BFE
 

@@ -139,7 +139,7 @@ The steps to remediate this issue are outlined in [GnuPG#Unattended_passphrase](
 
 ## See also
 
-*   [Backup programs](/index.php/Backup_programs "Backup programs")
+*   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
 *   [Duplicity home page](http://duplicity.nongnu.org/)
 *   [Wikipedia:Duplicity (software)](https://en.wikipedia.org/wiki/Duplicity_(software) "wikipedia:Duplicity (software)")
 *   [Déjà Dup home page](https://launchpad.net/deja-dup)

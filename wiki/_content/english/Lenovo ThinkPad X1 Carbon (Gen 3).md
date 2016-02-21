@@ -7,14 +7,14 @@
     *   [2.2 Audio](#Audio)
     *   [2.3 Display](#Display)
         *   [2.3.1 HDMI](#HDMI)
-        *   [2.3.2 Fingerprint Reader](#Fingerprint_Reader)
+    *   [2.4 Fingerprint Reader](#Fingerprint_Reader)
 *   [3 See also](#See_also)
 
 ## Model description
 
 Lenovo ThinkPad X1 Carbon, Gen 3\.
 
-*   No optical drive. There is also a touch version.
+*   No optical drive.
 *   [UEFI](/index.php/UEFI "UEFI") with BIOS-legacy fallback mode.
 
 To ensure you have this version, run *dmidecode*:
@@ -26,13 +26,21 @@ Version: ThinkPad X1 Carbon 3rd
 
 ```
 
+Options:
+
+*   There is a version with a touch screen
+*   The integrated mobile broadband can be upgraded to a LTE Sierra EM7345
+
 ### Support
 
 | **Device** | **Working** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes |
+| Mobile broadband |  ?? |
 | [ALSA](/index.php/ALSA "ALSA") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
+| [Touchscreen](/index.php/Touchscreen "Touchscreen") | Yes |
+| [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | Camera | Yes |
 | Fingerprint Reader | Yes |
 | [Power management](/index.php/Power_management "Power management") | Yes |
@@ -66,9 +74,20 @@ Install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-i
 
 Works with [xrandr](/index.php/Xrandr "Xrandr"). Use [arandr](https://www.archlinux.org/packages/?name=arandr) or [lxrandr](https://www.archlinux.org/packages/?name=lxrandr) for a GUI.
 
-#### Fingerprint Reader
+### Fingerprint Reader
 
 There are stable releases of [libfprint](https://www.archlinux.org/packages/?name=libfprint) that support this device. See [Fprint](/index.php/Fprint "Fprint") for more details about how to configure it.
+
+To display the reader's model:
+
+```
+# lsusb | grep -i finger
+
+Bus 001 Device 004: ID 138a:0017 Validity Sensors, Inc. Fingerprint Reader
+
+```
+
+Note that recent versions of fprint are broken for this model : One is able to enroll a finger but recognition always fails.
 
 ## See also
 

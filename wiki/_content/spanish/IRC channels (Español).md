@@ -15,7 +15,7 @@ Usted puede encontrar una discusión oficial sobre ArchLinux en los siguientes c
 | [#archlinux64](irc://irc.freenode.net/archlinux64) | Canal de discusión específico de x86_64, mayormente en Inglés. |
 | [#archlinux-aur](irc://irc.freenode.net/archlinux-aur) | Desarrollo de AUR y discusión sobre paquetes. |
 | [#archlinux-bugs](irc://irc.freenode.net/archlinux-bugs) | Debate centrado en Bugs. |
-| [#archlinux-offtopic](irc://irc.freenode.net/archlinux-offtopic) | offtopics aleatorios. |
+| [#archlinux-offtopic](irc://irc.freenode.net/archlinux-offtopic) | Offtopics aleatorios. |
 | [#archlinux-pacman](irc://irc.freenode.net/archlinux-pacman) | Desarrollo de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") y debate. |
 | [#archlinux-projects](irc://irc.freenode.net/archlinux-projects) | Desarrollo y debates sobre proyectos (initscripts, mkinitcpio, abs, dbscripts, devtools, ...) |
 | [#archlinuxppc](irc://irc.freenode.net/archlinuxppc) | Canal de debate PPC, en su mayoría en inglés. |

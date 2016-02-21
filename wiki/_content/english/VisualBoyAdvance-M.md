@@ -32,6 +32,10 @@ It is a fork of VisualBoyAdvance, a now closed project. VBA-M combines features 
 
 	[http://vba-m.com/](http://vba-m.com/) || [vbam-wx-svn](https://aur.archlinux.org/packages/vbam-wx-svn/)
 
+*   **VBA-M (SDL) (development version)** — Improved (Super) Game Boy Color/Advance emulator - SDL, SVN version
+
+	[http://vba-m.com/](http://vba-m.com/) || [vbam-sdl-svn](https://aur.archlinux.org/packages/vbam-sdl-svn/)
+
 ## Usage
 
 For VBA-M, execute `gvbam ~/path/to/foo.*` or `gvbam` to load the ROM from the interface.
