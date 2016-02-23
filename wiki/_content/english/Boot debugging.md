@@ -35,7 +35,10 @@ Getting an interactive shell at some stage in the boot process can help you pinp
 *   `emergency` launches a shell even earlier, before most filesystems are mounted
 *   `init=/bin/sh` (as a last resort) changes the init program to a root shell. `rescue` and `emergency` both rely on [systemd](/index.php/Systemd "Systemd"), but this should work even if *systemd* is broken
 
-Another option is to [enable](/index.php/Enable "Enable") `debug-shell.service`, which adds a root shell on `tty9` (accessible with Ctrl+Alt+F9). Take care to disable the service when done to avoid the security risk of leaving a root shell open on every boot.
+Another option is systemd's debug-shell which adds a root shell on `tty9` (accessible with Ctrl+Alt+F9):
+
+*   Add `systemd.debug-shell` to the [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") during boot.
+*   [enable](/index.php/Enable "Enable") `debug-shell.service`. Take care to disable the service when done to avoid the security risk of leaving a root shell open on every boot.
 
 ## See also
 

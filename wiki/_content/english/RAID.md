@@ -444,7 +444,9 @@ Remove device permanently (for example, to use it individually from now on): Iss
 
 ```
 
-**Warning:** Reusing the removed disk without zeroing the superblock **WILL CAUSE LOSS OF ALL DATA** on the next boot. (After mdadm will try to use it as the part of the raid array). **DO NOT** issue this command on linear or RAID0 arrays or data **LOSS** will occur!
+**Warning:** **DO NOT** issue this command on linear or RAID0 arrays or data **LOSS** will occur!
+
+**Warning:** Reusing the removed disk without zeroing the superblock **WILL CAUSE LOSS OF ALL DATA** on the next boot. (After mdadm will try to use it as the part of the raid array).
 
 Stop using an array:
 

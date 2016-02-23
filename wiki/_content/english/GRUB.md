@@ -1096,7 +1096,7 @@ GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons
 
 ### grub-reboot not resetting
 
-GRUB seems to be unable to write to root BTRFS partitions [[4]](https://bbs.archlinux.org/viewtopic.php?id=166131). If you use grub-reboot to boot into another entry it will therefore be unable to update its on-disk environment. Either run grub-reboot from the other entry (for example when switching between various distributions) or consider a different file system. You can reset a "sticky" entry by executing `grub-editenv create` and setting `GRUB_DEFAULT=0` in your `/etc/default/grub` (don't forget `grub-mkconfig`).
+GRUB seems to be unable to write to root BTRFS partitions [[4]](https://bbs.archlinux.org/viewtopic.php?id=166131). If you use grub-reboot to boot into another entry it will therefore be unable to update its on-disk environment. Either run grub-reboot from the other entry (for example when switching between various distributions) or consider a different file system. You can reset a "sticky" entry by executing `grub-editenv create` and setting `GRUB_DEFAULT=0` in your `/etc/default/grub` (don't forget `grub-mkconfig -o /boot/grub/grub.cfg`).
 
 ### Old BTRFS prevents installation
 

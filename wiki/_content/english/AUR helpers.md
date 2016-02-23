@@ -10,7 +10,6 @@ AUR Helpers are written to make using the [Arch User Repository](/index.php/Arch
 *   [4 Libraries](#Libraries)
 *   [5 Graphical](#Graphical)
 *   [6 Comparison table](#Comparison_table)
-*   [7 See also](#See_also)
 
 ## Uploading
 
@@ -63,7 +62,7 @@ This is a list of helper utilities that search and/or build packages.
 
 *   **pacaur** — An AUR helper that minimizes user interaction. ([Forum page](https://bbs.archlinux.org/viewtopic.php?pid=937423))
 
-	[https://github.com/Spyhawk/pacaur](https://github.com/Spyhawk/pacaur) || [pacaur](https://aur.archlinux.org/packages/pacaur/)
+	[https://github.com/rmarquis/pacaur](https://github.com/rmarquis/pacaur) || [pacaur](https://aur.archlinux.org/packages/pacaur/)
 
 *   **packer** — Wrapper for pacman and the AUR. ([Forum page](https://bbs.archlinux.org/viewtopic.php?id=88115))
 
@@ -157,21 +156,17 @@ This is a list of helper utilities that search and/or build packages.
 | Name | Written In | Secure | Clean build | Reliable Parser | Reliable Solver | Split Packages | Git clone | Multilingual | Shell Completion | Syntax | Specificity |
 | apacman | Bash | Optional | Yes | No | No | No | No | No | No | Pacman-like | Fork of *packer* |
 | aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | Yes | No | No | Yes | Yes (bash/zsh) | Pacman-like | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support |
-| aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | No | No | Specific | Emacs integration |
+| aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | No | No | Specific | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[2]](https://github.com/pbrisbin/aurget/issues/40) | No | No | Yes (bash/zsh) | Pacman-like | - |
 | bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | No | No | Yes (bash/zsh) | Specific | Trust management, ABS support |
 | burgaur | Python3 | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | No | No | Pacman-like | Wrapper for *cower* |
-| cower | C | Yes | N/A | Yes | N/A | N/A | No | No | Yes (bash/zsh) | Specific | No automatic builds |
+| cower | C | Yes | N/A | Yes | N/A | N/A | No | No | Yes (bash/zsh) | Specific | No automatic builds, regex support |
 | pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (bash/zsh) | Pacman-like/specific | Minimizes user interaction |
 | packer | Bash | Optional | Yes | No | No | No | No | No | No | Pacman-like | - |
 | pbget | Python3 | Yes | N/A | Yes | N/A | N/A | No | No | No | Specific | No automatic builds |
 | PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[3]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | Yes | No | Pacman-like | Automatic builds by default, use -F to disable |
-| prm | Bash | Yes [[4]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | No | No | Specific | ABS support (svn), no automatic builds |
+| prm | Bash | Yes [[4]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | No | No | Specific | No automatic builds, ABS support |
 | trizen | Perl | Yes | Yes | No | No | No | No | No | No | Pacman-like | - |
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | No | No | Specific | Mirror updates, print news and AUR comments |
 | yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | No | Yes (bash) | Specific | No automatic builds |
-| yaourt | Bash/C |  ??? [[5]](https://github.com/archlinuxfr/yaourt/blob/5a82dfed6dcd1f25664d3b0da571181284cf25fb/src/lib/pkgbuild.sh.in#L413) | No [[6]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No | No | Optional | Yes | Yes (bash/zsh/fish) | Pacman-like | Backup, ABS support |
-
-## See also
-
-*   [AUR helpers comparison](http://www.slant.co/topics/1447/~what-is-the-best-aur-helper-for-arch-based-linux-distributions)
+| yaourt | Bash/C |  ??? [[5]](https://github.com/archlinuxfr/yaourt/blob/5a82dfed6dcd1f25664d3b0da571181284cf25fb/src/lib/pkgbuild.sh.in#L413) | No [[6]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No | No | Optional | Yes | Yes (bash/zsh/fish) | Pacman-like | Backup, ABS support, AUR comments |

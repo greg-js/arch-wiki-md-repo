@@ -794,6 +794,16 @@ You can try commenting out the following modules in `/etc/pulse/default.pa`
 
 ```
 
+Finally you have to restart pulseaudio:
+
+```
+$ pulseaudio --kill
+$ pulseaudio --start
+
+```
+
+If restarting doesn't solve the sound problem try to log out and log in again.
+
 If that does not help, you can try changing flat-volumes to no in `/etc/pulse/daemon.conf`.
 
 ```

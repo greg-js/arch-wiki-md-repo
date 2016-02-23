@@ -87,6 +87,8 @@ WantedBy=timers.target
 
 **Tip:** Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. Consider manually staggering such timers using specific events e.g. `OnCalendar=Wed 23:15`. See [#Caveats](#Caveats).
 
+**Tip:** If you have many timers at the same time, you can use the `RandomizedDelaySec` option (`systemd.timer (5)`) to get a crontab-like behavoir to stretch the start-time, instead of running them all at one
+
 ## As a cron replacement
 
 Although [cron](/index.php/Cron "Cron") is arguably the most well-known job scheduler, *systemd* timers can be an alternative.
@@ -107,9 +109,6 @@ Some things that are easy to do with cron are difficult or impossible to do with
 
 *   Complexity: to set up a timed job with *systemd* you create two files and run a couple `systemctl` commands. Compare that to adding a single line to a crontab.
 *   Emails: there is no built-in equivalent to cron's `MAILTO` for sending emails on job failure. See the next section for an example of setting up an equivalent using `OnFailure=`.
-*   Random delay: there is no built-in equivalent to cron's `RANDOM_DELAY` for randomly spreading timers out across a given interval (see [bug report](https://bugs.freedesktop.org/show_bug.cgi?id=82084), [test results](https://wiki.archlinux.org/index.php?title=Talk:Systemd/Timers&oldid=356408#Parallelization_section_is_confusing)). Services which you do not want to run concurrently must have their timers manually set to minimize overlap.
-
-**Note:** The `AccuracySec` option is **not** useful for randomly staggering timers since it "is synchronized between all local timers units" (`systemd.timer(5)`). In other words, `AccuracySec` shifts all timer activation times by the same amount. For example, all `OnCalendar=daily` timer units with `AccuracySec=15m` will trigger the associated services at the same point in time between 00:00 and 00:15.
 
 ### MAILTO
 

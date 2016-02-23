@@ -23,11 +23,9 @@ This article is for users that have a mouse with more than 7 mouse buttons and w
     *   [5.5 Firefox 3 button 6 + 7 correction](#Firefox_3_button_6_.2B_7_correction)
 *   [6 Binding keyboard to mouse buttons](#Binding_keyboard_to_mouse_buttons)
     *   [6.1 xvkbd and xbindkeys](#xvkbd_and_xbindkeys)
-    *   [6.2 Why standard methods are not enough?](#Why_standard_methods_are_not_enough.3F)
-    *   [6.3 kbde](#kbde)
-    *   [6.4 evrouter](#evrouter)
-    *   [6.5 Binding + and - in Logitech G5 mouse](#Binding_.2B_and_-_in_Logitech_G5_mouse)
-    *   [6.6 startup scripts](#startup_scripts)
+    *   [6.2 evrouter](#evrouter)
+    *   [6.3 Binding + and - in Logitech G5 mouse](#Binding_.2B_and_-_in_Logitech_G5_mouse)
+    *   [6.4 startup scripts](#startup_scripts)
 *   [7 User tools](#User_tools)
 *   [8 Device Specific Configuration Files](#Device_Specific_Configuration_Files)
     *   [8.1 Logitech G600](#Logitech_G600)
@@ -488,142 +486,79 @@ This is an example for a keybinding for Meta+M:
 
 ```
 
-### Why standard methods are not enough?
-
-This will work great for X servers, but it seems not to work in some specific situations, like in Enemy Territory game. So I will describe a bit more advanced configuration, which work with my logitech G5 buttons - I can use all my 5 additional buttons along with 3 standard and a scroll, which gives overall 10 events to use in Enemy Territory. So here we go:
-
-**Note:** **Update:** evrouter can now simulate X11 key events so it is now possible to skip [kbde](#kbde) and only use [evrouter](#evrouter) to bind keyboard buttons to your mouse.
-
-### kbde
-
-To emulate keystroke which will be later detected in Enemy Territory we need something more advanced than xvkbd. Here comes in handy kbde, but it does not exist in the AUR yet – we have got to compile it by ourselves. We need two programs: kbde and kbde-driver. Kbde website is located on sourceforge [[2]](http://kbde.sourceforge.net/), check it for download, you need only kbde-driver. Apparently, it does not work for me without some hacking. Use your editor and add
-
-```
-#include <linux/version.h>
-
-```
-
-somewhere near other includes in the driver/kbde.c file. (OK, I'm not sure whether it is a proper way to compile it, but it works). Assuming that you have already done that try:
-
-```
-tar -zxvf kbde-driver-1*
-cd kbde-driver-1*
-make
-# if you do not have sudo just use su and type this as root
-sudo make install mknod
-modprobe kbde
-
-```
-
-and now you should have kbde working. If you want to use it as a non-root (yes, you want) change permissions, the quickest and dirtiest way is (note that I added my startup scripts at the end of this text):
-
-```
-chgrp users /dev/kbde
-chmod 220 /dev/kbde
-
-```
-
-If not try reading installation instructions on the site. Now we can use it to emulate keystrokes visible even in login shells:
-
-```
-kbde --press 5 --release 5 -b
-
-```
-
-this will press 5 for about three times. If you want to type a string using this, rather than this use --asci=STRING, as press sometimes generates 3 strokes before it is released.
-
 ### evrouter
 
-Now we need something which will work when Enemy Territory is loaded. Apparently, xbindkeys does not work here, so we need another program: [evrouter](https://aur.archlinux.org/packages/evrouter/) [[3]](http://www.bedroomlan.org/~alexios/coding_evrouter.html).
+Some programs, especially games, use different methods of reading input, so another program is needed: [evrouter](https://aur.archlinux.org/packages/evrouter/).
 
-OK, so now we must have evdev and we can NOT use it in X, so here is how my example `/etc/X11/xorg.conf` mouse section looks like:
+For the `evrouter` command to be able to read the input devices, it will have to be run in the `input` group (or as root). This can be achieved by adding yourself to that group:
 
 ```
- Section "InputDevice"
-
-   Identifier  "Logitech G5"
-
-   Driver      "mouse"
-   Option      "Protocol" "Auto"
-   Option      "Device" "/dev/input/mouse1" # probably you will need here mouse0
-   Option      "Name"   "Logitech USB Gaming Mouse"
-   Option      "Buttons" "8" # set this to your number of buttons
-   Option      "ZAxisMapping" "4 5"
-
- EndSection
+sudo gpasswd -a *user* input
 
 ```
 
-and now we have to restart the X server. You will run this as user, and event devices are owned by root, so you got to change the permissions at this point. Let us say we do it just like that, but I advise you to do this more carefully (note that I added my start-up scripts at the end of this text):
+Now we can use the `--dump` option to display what the button to be changed is called:
 
+**Tip:** udev will usually create symbolic links in `/dev/input/by-id/` which can be used to refer to specific devices.
+ `evrouter --dump /dev/input/event*` 
 ```
-chgrp users /dev/input/event*
-chmod 660 /dev/input/event*
-
-```
-
-Now we can use the `--dump` option to check what we will have to bind and to which device:
-
-```
-evrouter --dump /dev/input/event*
-# here click buttons you would like to bind
-
-```
-
-It will give you output similar to config. Here is my example config `~/.evrouterrc` with kbde usage:
-
-```
-"Logitech USB Gaming Mouse" "/dev/input/event.*" any key/278 "SHELL/kbde --press 2 --release 2 -b"
-"Logitech USB Gaming Mouse" "/dev/input/event.*" any key/279 "SHELL/kbde --press 3 --release 3 -b"
-"Logitech USB Gaming Mouse" "/dev/input/event.*" any key/274 "SHELL/kbde --press 4 --release 4 -b"
-"Logitech USB Gaming Mouse" "/dev/input/event.*" any key/277 "SHELL/kbde --press 5 --release 5 -b"
-"Logitech USB Gaming Mouse" "/dev/input/event.*" any key/276 "SHELL/kbde --press 6 --release 6 -b"
+device  0: /dev/input/event0: AT Translated Set 2 keyboard
+device  1: /dev/input/event1: Microsoft Microsoft Trackball Explorer®
+device  2: /dev/input/event2: Sleep Button
+device  3: /dev/input/event3: Power Button
+device  4: /dev/input/event4: Power Button
+device  5: /dev/input/event5: PC Speaker
+Display name: :0.0
 
 ```
 
-Same config using evrouters built in X11 key event emulator instead of kbde:
+Now press the buttons that you wish to change:
 
 ```
-"Logitech USB Gaming Mouse" "/dev/input/event.*" any key/278 "XKey/2"
-"Logitech USB Gaming Mouse" "/dev/input/event.*" any key/278 "XKey/3"
-"Logitech USB Gaming Mouse" "/dev/input/event.*" any key/278 "XKey/4"
-"Logitech USB Gaming Mouse" "/dev/input/event.*" any key/278 "XKey/5"
-"Logitech USB Gaming Mouse" "/dev/input/event.*" any key/278 "XKey/6"
+Window "(null)": # Window title
+# Window "(null)": # Resource name
+# Window "(null)": # Class name
+"Microsoft Trackball Explorer®" "/dev/input/event1" none key/275 "fill this in!"
 
-```
-
-This works great, even in Enemy Territory. The "none" modifier means that I have to only press the button, other options are `Ctrl+Alt` and so on. Here I use "any" because "none" means that after pressing `Shift`, `Ctrl`, or `Alt`, our buttons would not work. Also note that it accepts regular expressions for mouse name and event path. Then, after setting up a config, run service with:
-
-```
-evrouter /dev/input/event* >> /dev/null
+Window "(null)": # Window title
+# Window "(null)": # Resource name
+# Window "(null)": # Class name
+"Microsoft Trackball Explorer®" "/dev/input/event1" none key/276 "fill this in!"
 
 ```
 
-or change the `event*` to a device corresponding to your mouse -- but be aware that the numbers are changing sometimes. It will work in background, while outputting some annoying messages, so we stream it to `/dev/null`. If something went wrong, run it without streaming and check what it outputs. If you want to end it, you have to delete `/tmp/evrouter.*` manually. Here is a script to kill evrouter:
+The line that ends with "fill this in!" can be copied into the config file which by default is `~/.evrouterrc`. For example, using the X11 key event emulator built into evrouter:
+
+ `~/.evrouterrc` 
+```
+"Microsoft Trackball Explorer®" "/dev/input/event*" any key/275 "XKey/1"
+"Microsoft Trackball Explorer®" "/dev/input/event*" any key/276 "XKey/2"
+```
+
+The 'event1' was changed to 'event*' in case udev gives it a different device number at boot. The 'none' was changed to 'any' so that the rule works even if any modifier keys are pressed when the button is pressed. See `man 1 evrouter` for a full explanation of the fields.
+
+**Tip:** Rules can apply only to specific windows, see `man 1 evrouter` for details.
+
+After setting up the config file, run it as a daemon:
 
 ```
-#!/bin/bash
+evrouter /dev/input/event*
+
+```
+
+To stop the daemon:
+
+```
 evrouter -q
 rm -f /tmp/.evrouter*
 
 ```
 
-and here is one to start it:
-
-```
-#!/bin/bash
-mydevicename="Logitech USB Gaming Mouse"
-
-device=$(evrouter -D /dev/input/event* | grep "$mydevicename") | cut -d ":" -f 2
-evrouter $device > /dev/null
-
-```
-
-You have to edit the `mydevicename` variable to its proper value (the one which is shown by `evrouter -D`), or just change it to listen on all events by changing device var to `/dev/input/event*`. OK, I have saved them in `/usr/bin/`. Now, everything should be ready for use!
+**Note:** `evrouter` will fail to start if the `/tmp/.evrouter:0.0` file exists but does not delete it when exiting, so you will have to delete it yourself.
 
 ### Binding + and - in Logitech G5 mouse
 
-If you want to bind the buttons `+` and `-` in G5/7 mouse, which normally changes DPI, you have to use `g5hack` [[4]](http://piie.net/temp/g5_hiddev.c) released by a lomoco author.
+If you want to bind the buttons `+` and `-` in G5/7 mouse, which normally changes DPI, you have to use `g5hack` [[2]](http://piie.net/temp/g5_hiddev.c) released by a lomoco author.
 
 ```
 wget http://piie.net/temp/g5_hiddev.c
@@ -705,7 +640,7 @@ None, Thumb2, Alt_L|Right
 
 Be sure to look at `/etc/udev/lomoco_mouse.conf` and set up the the options you want to be automatically applied when the mouse gets loaded by [udev](/index.php/Udev "Udev").
 
-**Note:** The lomoco package may be out of date. There is a hack for newer Logitech mice: [[5]](http://piie.net/temp/g5_hiddev.c)
+**Note:** The lomoco package may be out of date. There is a hack for newer Logitech mice: [[3]](http://piie.net/temp/g5_hiddev.c)
 
 ## Device Specific Configuration Files
 

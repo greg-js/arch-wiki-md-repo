@@ -57,7 +57,7 @@ Wine by default is 32-bit, as is the i686 Arch package. As such, it is unable to
 The x86_64 Arch package, however, is built with `--enable-win64`. This activates the Wine version of [WoW64](https://en.wikipedia.org/wiki/WoW64 "wikipedia:WoW64").
 
 *   In Windows, this complicated subsystem allows the user to use 32-bit and 64-bit Windows programs concurrently and even in the same directory.
-*   In Wine, the user will probably have to make separate directories/prefixes. See the [Wine FAQ](https://wiki.winehq.org/FAQ#How_do_I_create_a_32_bit_wineprefix_on_a_64_bit_system.3F) for specific information on this.
+*   In Wine, some 32-bit programs do not work properly in a 64-bit prefix. In that case the user will have to make separate directories/prefixes. See the [Wine FAQ](https://wiki.winehq.org/FAQ#How_do_I_create_a_32_bit_wineprefix_on_a_64_bit_system.3F) for specific information on this.
 
 If you run into problems with `winetricks` or programs with a 64-bit environment, try creating a new 32-bit `WINEPREFIX`. See below: [#WINEARCH](#WINEARCH). Using the x86_64 Wine package with `WINEARCH=win32` should have the same behaviour as using the i686 Wine package.
 

@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Kernels/Arch_Build_System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2012-10-07，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels/Arch_Build_System&diff=0&oldid=226152)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Kernels/Arch_Build_System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-23，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels/Arch_Build_System&diff=0&oldid=417795)可以查看翻译后英文页面的改动。
 
-[Arch Build System](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)") 可以用来在官方的 [linux](https://www.archlinux.org/packages/?name=linux) 包基础上编译一个自定义内核。这种编译方法可以自动化整个过程，并且是基于一个已经经过详细测试过的内核包。你可以编辑 PKGBUILD 来使用一个自定义内核配置或者添加附加的补丁。
+参阅 [Kernels (简体中文)](/index.php/Kernels_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernels (简体中文)"). 利用 [Arch 编译系统](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")，可以基于官方的 [linux](https://www.archlinux.org/packages/?name=linux) 包编译自定义内核。这种编译方法可以自动化整个过程，并且是基于一个已经经过详细测试过的内核包。你可以编辑 PKGBUILD 来使用一个自定义内核配置或者添加附加的补丁。
 
 ## Contents
 
@@ -13,36 +13,49 @@
 
 ## 获取所需内容
 
-```
-# pacman -S abs base-devel
+因为要使用到 [makepkg](/index.php/Makepkg "Makepkg"), 请先了解 makepkg 的使用方法和最佳实践建议。例如不要用 root/sudo 运行 makepkg.
+
+首先建立一个编译目录 `build`：
 
 ```
+ $ cd ~/
+ $ mkdir build
+ $ cd build/
 
-首先，需要一个干净的内核作为开始。从 ABS 获取内核包：
+```
 
- `$ ABSROOT=. abs core/linux` 
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [abs](https://www.archlinux.org/packages/?name=abs) 和 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/).
+
+首先需要一个原始内核作为自定义的基础，从 ABS 获取内核包文件，并放到编译目录：
+
+```
+$ ABSROOT=. abs core/linux
+
+```
+
+如果防火墙屏蔽了 rsync 端口，可以用 -t 参数通过 tarball 下载:
+
+```
+$ ABSROOT=. abs core/linux -t
+
+```
 
 然后从相应的来源获取其他需要的文件 (例如自定义配置文件、补丁等)。
 
 ## 修改 PKGBUILD
 
-修改`pkgbase`为自定义软件包的名称，例如:
+编辑 `PKGBUILD`，找到 `pkgbase` 修改为自定义软件包的名称:
 
 ```
  pkgbase=linux-custom
 
 ```
 
-如果不需要重新编译 linux-headers 和 -docs，请从`pkgname`中删除:
-
-```
- pkgname=("${pkgbase}")
-
-```
+根据 PKGBUILD，还需要修改 `linux.install` 的内容，与 `pkgbase` 相匹配(例如 [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec).
 
 ### 修改 build()
 
-可能需要内核的自定义 .config 文件，只需在 PKGBUILD 文件的 build() 函数中取消相应行的注释。例如：
+修改 config 文件，或用 GUI 调整编译选项。从 PKGBUILD 的 prepare() 函数中选择一种方式，取消前面的注释：
 
  `PKGBUILD` 
 ```
@@ -58,9 +71,12 @@
 
 ```
 
-如果已经有了内核配置文件，我建议取消注释一个交互配置工具如 nconfig，然后装入自己的配置文件。这样可以避免我遇到过的其他方法中的内核命名问题。
+如果已经有了`.config`内核配置文件，取消一个交互配置工具的注释，如 nconfig，然后装入自己的配置文件。
 
-**注意:** 如果取消 *return 1* 的注释，可以在 makepkg 完成解压后进入内核代码目录然后 make nconfig。这样可以在多个会话间配置内核。可以编译时，用 .config 文件覆盖 config 或 config.x86_64(根据相应的架构)，然后注释掉 *return 1* 并使用**makepkg -i**。 但是不要对自定义补丁使用这种方法，把你的补丁命令放在这行之后。如果你要手动补丁，bztar 解包然后替换你的补丁。
+*   如果取消 build() 中的 'make menuconfig'，但是用 menuconfig gui 加载了已有的 config 文件，在最终软件包中会出现文件冲突。因为 PKGBUILD 设置了单独的安装路径，默认的 LOCALVERSION 和 LOCALVERSION_AUTO 配置选项会修改。要修正这个问题，在 menuconfg 中设置 LOCALVERSION 和 LOCALVERSION_AUTO，详情参考 [BBS#173504](https://bbs.archlinux.org/viewtopic.php?id=173504)。
+*   如果取消 *return 1* 的注释，可以在 makepkg 完成解压后进入内核代码目录然后 make nconfig。这样可以在多个会话间配置内核。可以编译时，用 .config 文件覆盖 config 或 config.x86_64(根据相应的架构)，然后注释掉 *return 1* 并使用**makepkg -i**。
+
+但是不要对自定义补丁使用这种方法，把你的补丁命令放在这行之后。如果你要手动补丁，bztar 解包然后替换你的补丁。
 
 ## 编译
 

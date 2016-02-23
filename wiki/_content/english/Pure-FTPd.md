@@ -9,6 +9,9 @@
         *   [2.1.2 Removing user](#Removing_user)
         *   [2.1.3 Checking user settings](#Checking_user_settings)
     *   [2.2 Backends](#Backends)
+    *   [2.3 Set up TLS](#Set_up_TLS)
+        *   [2.3.1 Create a certificate](#Create_a_certificate)
+        *   [2.3.2 Enable TLS](#Enable_TLS)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -124,6 +127,40 @@ Available backends are:
 *   [PAM](https://en.wikipedia.org/wiki/Linux_PAM)
 *   PureDB
 *   Or you can write [your own](http://download.pureftpd.org/pub/pure-ftpd/doc/README.Authentication-Modules)
+
+### Set up TLS
+
+#### Create a certificate
+
+Refer to [the documentation](http://download.pureftpd.org/pub/pure-ftpd/doc/README.TLS) for more information. The short version is this:
+
+Create a Self-Signed Certificate:
+
+```
+# mkdir -p /etc/ssl/private
+# openssl req -x509 -nodes -days 7300 -newkey rsa:1024 -keyout /etc/ssl/private/pure-ftpd.pem -out /etc/ssl/private/pure-ftpd.pem
+
+```
+
+Make it private:
+
+```
+# chmod 600 /etc/ssl/private/*.pem
+
+```
+
+**Warning:** Be aware that using 1024 bits in some countries is against the law. Choose 512 or less if unsure.
+
+#### Enable TLS
+
+Towards the bottom of `/etc/pure-ftpd.conf` you should find a section for TLS. Uncomment and change the TLS setting to `1` to enable both FTP and SFTP:
+
+```
+TLS             1
+
+```
+
+Now restart the `pure-ftpd.service` daemon and you should be able to log in with SFTP-enabled clients, e.g. [filezilla](https://www.archlinux.org/packages/?name=filezilla) or [SmartFTP](https://www.smartftp.com/).
 
 ## See also
 

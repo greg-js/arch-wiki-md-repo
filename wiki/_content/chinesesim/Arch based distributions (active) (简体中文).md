@@ -47,7 +47,7 @@
 
 ## 特色发行版
 
-以下列表所包含的发行版都是使用 Arch Linux [官方软件仓库](/index.php/Official_repositories "Official repositories") 并且大致遵守 [Arch 之道](/index.php/The_Arch_Way_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "The Arch Way (简体中文)")的发行版。
+以下列表所包含的发行版都是使用 Arch Linux [官方软件仓库](/index.php/Official_repositories "Official repositories") 并且大致遵守 [Arch 之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")的发行版。
 
 ### Antergos
 

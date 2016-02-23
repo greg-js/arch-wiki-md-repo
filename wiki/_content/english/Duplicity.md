@@ -19,7 +19,7 @@ Backups are granularly incremental, meaning that only changes in files (since th
 
 [Install](/index.php/Install "Install") [duplicity](https://www.archlinux.org/packages/?name=duplicity) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
-*   [duply](https://aur.archlinux.org/packages/duply/), a shell front-end, is available in [AUR](/index.php/AUR "AUR").
+*   [duply](/index.php/Duply "Duply"), a shell front-end, is available in [AUR](/index.php/AUR "AUR").
 *   [deja-dup](https://www.archlinux.org/packages/?name=deja-dup), an easy-to-use front-end, is available in the [Official repositories](/index.php/Official_repositories "Official repositories"). It provides the command-line tool `deja-dup` and the GTK frontend `deja-dup-preferences`.
 
 ## Basic Usage

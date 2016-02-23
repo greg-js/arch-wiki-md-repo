@@ -127,9 +127,9 @@ Vim включает в себя diff-редактор (программа, ко
 
 ### Нумерация строк
 
-To show the line number column, use `:set number`. By default absolute line numbers are shown, relative numbers can be enabled with `:set relativenumber`.
+Чтобы включить отображение номера столбца, используйте `:set number`. По умолчанию показываются абсолютные значения номеров строк, относительные включаются посредством `:set relativenumber`.
 
-Jumping to a specific line is possible with `:*line number*` or `*line number*gg`. Jumps are remembered in a jump list, see `:h jump-motions` for details
+Переход к новой строке осуществляется посредством `:*line number*` или `*line number*gg`. Все переходы запоминаются в лист переходов, для более подробной информации смотрите `:h jump-motions`.
 
 ### Проверка орфографии
 

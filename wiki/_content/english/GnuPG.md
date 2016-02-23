@@ -20,35 +20,39 @@ According to the [official website](http://www.gnupg.org):
     *   [5.2 Exporting subkey](#Exporting_subkey)
     *   [5.3 Rotating subkeys](#Rotating_subkeys)
     *   [5.4 List keys](#List_keys)
-*   [6 gpg-agent](#gpg-agent)
-    *   [6.1 Configuration](#Configuration)
-    *   [6.2 Reload the agent](#Reload_the_agent)
-    *   [6.3 pinentry](#pinentry)
-    *   [6.4 Start gpg-agent with systemd user](#Start_gpg-agent_with_systemd_user)
-    *   [6.5 Unattended passphrase](#Unattended_passphrase)
-*   [7 Smartcards](#Smartcards)
-    *   [7.1 GnuPG only setups](#GnuPG_only_setups)
-    *   [7.2 GnuPG together with OpenSC](#GnuPG_together_with_OpenSC)
-*   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 Different algorithm](#Different_algorithm)
-    *   [8.2 Encrypt a password](#Encrypt_a_password)
-    *   [8.3 Default options for new users](#Default_options_for_new_users)
-    *   [8.4 Revoking a key](#Revoking_a_key)
-    *   [8.5 Change trust model](#Change_trust_model)
-    *   [8.6 Hide all recipient id's](#Hide_all_recipient_id.27s)
-    *   [8.7 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
-    *   [8.8 Use a keyserver with an http proxy](#Use_a_keyserver_with_an_http_proxy)
-*   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
-    *   [9.2 su](#su)
-    *   [9.3 Agent complains end of file](#Agent_complains_end_of_file)
-    *   [9.4 KGpg configuration permissions](#KGpg_configuration_permissions)
-    *   [9.5 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
-    *   [9.6 mutt and gpg](#mutt_and_gpg)
-    *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
-    *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
-    *   [9.9 Smartcard not detected](#Smartcard_not_detected)
-*   [10 See also](#See_also)
+*   [6 Signatures](#Signatures)
+    *   [6.1 Sign a file](#Sign_a_file)
+    *   [6.2 Clearsign a file or message](#Clearsign_a_file_or_message)
+    *   [6.3 Make a detached signature](#Make_a_detached_signature)
+    *   [6.4 Verify a signature](#Verify_a_signature)
+*   [7 gpg-agent](#gpg-agent)
+    *   [7.1 Configuration](#Configuration)
+    *   [7.2 Reload the agent](#Reload_the_agent)
+    *   [7.3 pinentry](#pinentry)
+    *   [7.4 Start gpg-agent with systemd user](#Start_gpg-agent_with_systemd_user)
+    *   [7.5 Unattended passphrase](#Unattended_passphrase)
+*   [8 Smartcards](#Smartcards)
+    *   [8.1 GnuPG only setups](#GnuPG_only_setups)
+    *   [8.2 GnuPG together with OpenSC](#GnuPG_together_with_OpenSC)
+*   [9 Tips and tricks](#Tips_and_tricks)
+    *   [9.1 Different algorithm](#Different_algorithm)
+    *   [9.2 Encrypt a password](#Encrypt_a_password)
+    *   [9.3 Default options for new users](#Default_options_for_new_users)
+    *   [9.4 Revoking a key](#Revoking_a_key)
+    *   [9.5 Change trust model](#Change_trust_model)
+    *   [9.6 Hide all recipient id's](#Hide_all_recipient_id.27s)
+    *   [9.7 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
+*   [10 Troubleshooting](#Troubleshooting)
+    *   [10.1 Not enough random bytes available](#Not_enough_random_bytes_available)
+    *   [10.2 su](#su)
+    *   [10.3 Agent complains end of file](#Agent_complains_end_of_file)
+    *   [10.4 KGpg configuration permissions](#KGpg_configuration_permissions)
+    *   [10.5 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
+    *   [10.6 mutt and gpg](#mutt_and_gpg)
+    *   [10.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
+    *   [10.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
+    *   [10.9 Smartcard not detected](#Smartcard_not_detected)
+*   [11 See also](#See_also)
 
 ## Installation
 
@@ -62,9 +66,9 @@ If you want to use a graphical frontend or program that integrates with GnuPG, s
 
 ### GNUPGHOME
 
-`$GNUPGHOME` is used by GnuPG to point to the directory where its configuration files are stored. By default `$GNUPGHOME` is not set and your `$HOME` is used instead, thus you will find a `~/.gnupg` directory right after installation. You may change this default by setting `GNUPGHOME` in one of your regular [startup files](/index.php/Startup_files "Startup files").
+`$GNUPGHOME` is used by GnuPG to point to the directory where its configuration files are stored. By default `$GNUPGHOME` is not set and your `$HOME` is used instead; thus, you will find a `~/.gnupg` directory right after installation. You may change this default by setting `GNUPGHOME` in one of your regular [startup files](/index.php/Startup_files "Startup files").
 
-**Note:** By default, the gnupg directory has its [Permissions](/index.php/Permissions "Permissions") set to *700* and the files it contains have their permissions set to *600*. Only the owner of the directory has permission to read, write and access the files (*r*,*w*,*x*). This is for security purposes and should not be changed. In case this directory or any file inside it does not follow this security measure, you will get warnings about unsafe file and home directory permissions.
+**Note:** By default, the gnupg directory has its [permissions](/index.php/Permissions "Permissions") set to `700` and the files it contains have their permissions set to `600`. Only the owner of the directory has permission to read, write, and access the files. This is for security purposes and should not be changed. In case this directory or any file inside it does not follow this security measure, you will get warnings about unsafe file and home directory permissions.
 
 ## Configuration files
 
@@ -116,7 +120,7 @@ Place the private key in a safe place, such as a locked container or encrypted d
 
 In order for others to send encrypted messages to you, they need your public key.
 
-To generate an ASCII version of your public key (e.g. to distribute it by e-mail):
+To generate an ASCII version of your public key (*e.g.* to distribute it by e-mail):
 
 ```
 $ gpg --armor --output public.key --export *<user-id>*
@@ -160,10 +164,11 @@ $ gpg --recv-keys *<key-id>*
 
 *   An alternative key server is `pool.sks-keyservers.net` and can be specified with `--keyserver`; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
 *   You can connect to the keyserver over [Tor](/index.php/Tor "Tor") using `--use-tor`. `hkp://jirk5u4osbsr34t5.onion` is the onion address for the sks-keyservers pool. [See this GnuPG blog post](https://gnupg.org/blog/20151224-gnupg-in-november-and-december.html) for more information.
+*   You can connect to a keyserver using a proxy by setting the `http_proxy` environment variable and setting `honor-http-proxy` in `dirmngr.conf`. Alternatively, set `http-proxy *host[:port]*` in `dirmgr.conf`, overriding the `http_proxy` environment variable.
 
 ### Encrypt and decrypt
 
-When encrypting or decrypting it is possible to have more than one private key in use. If this occurs you need to select the active key. This can be done by using the option `-u *<user-id>*` or by using the option `--local-user *<user-id>*`. This causes the default key to use to be replaced by wanted key.
+When encrypting or decrypting it is possible to have more than one private key in use. If this occurs you need to select the active key by using the option `-u *<user-id>*` or `--local-user *<user-id>*`.
 
 To encrypt a file using ASCII armor (suitable for copying and pasting a message in text format), use:
 
@@ -189,7 +194,7 @@ $ gpg --decrypt secret.txt.asc
 
 ```
 
-You will be prompted to enter your passphrase. You will need to have already imported the sender's public key to decrypt a file or message from them.
+You will be prompted to enter your passphrase. You will need to have already [imported](#Import_a_key) the sender's public key to decrypt a file or message from them.
 
 ## Key maintenance
 
@@ -296,6 +301,63 @@ To list keys in your secret key ring:
 $ gpg --list-secret-keys
 
 ```
+
+## Signatures
+
+Signatures certify and timestamp documents. If the document is modified, verification of the signature will fail. Unlike encryption which uses public keys to encrypt a document, signatures are created with the user's private key. The recipient of a signed document then verifies the signature using the sender's public key.
+
+### Sign a file
+
+To sign a file use the `--sign` or `-s` flag:
+
+```
+ $ gpg --output doc.sig --sign doc
+
+```
+
+The above also encrypts the file and stores it in binary format.
+
+### Clearsign a file or message
+
+To sign a file without compressing it into binary format use:
+
+```
+ $ gpg --clearsign doc
+
+```
+
+This wraps the document into an ASCII-armored signature, but does not modify the document.
+
+### Make a detached signature
+
+To create a separate signature file to be distributed separately from the document or file itself, use the `--detach-sig` flag:
+
+```
+ $ gpg --output doc.sig --detach-sig doc
+
+```
+
+This method is often used in distributing software projects to allow users to verify that the program has not been modified by a third part.
+
+### Verify a signature
+
+To verify a signature use the `--verify` flag:
+
+```
+ $ gpg --verify doc.sig
+
+```
+
+To verify and decrypt a file at the same time, use the `--decrypt` flag as you normally would in decrypting a file.
+
+If you are verifying a detached signature, both the file and the signature must be present when verifying. For example, to verify Arch Linux's latest iso you would do:
+
+```
+ $ gpg --verify archlinux-<version>-dual.iso.sig
+
+```
+
+where `archlinux-<version>-dual.iso` must be located in the same directory.
 
 ## gpg-agent
 
@@ -553,21 +615,6 @@ cpanm GnuPG::Interface
 ```
 
 To send the signatures to their owners you need a working [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent"). If you do not have already one, install [msmtp](/index.php/Msmtp "Msmtp").
-
-### Use a keyserver with an http proxy
-
-If you want `http_proxy` environment variable to be used, you can add the files `/etc/gnupg/dirmngr.conf`, `~/.gnupg/dirmngr.conf`, and `/etc/pacman.d/gnupg/dirmngr.conf`, and include in them:
-
-```
- honor-http-proxy
-
-```
-
-The last file of course is for the pacman gnupg home, if there's a need to make pacman-key to work behind a proxy. Both home and /etc are used depending if working as daemon or not, according to the dirmngr man.
-
-Notice that if gpg was used without that "honor-http-proxy" before, and failed, the changes won't take effect. To work around that a reboot is required, and afterwords the settings will take effect.
-
-See [https://bugs.gnupg.org/gnupg/issue1786](https://bugs.gnupg.org/gnupg/issue1786) for more explanation.
 
 ## Troubleshooting
 

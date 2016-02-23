@@ -372,7 +372,7 @@ Android 5 (Lollipop) 可以使用 [jdk7-openjdk](https://www.archlinux.org/packa
 ```
 $ mkdir ~/bin
 $ export PATH=~/bin:$PATH
-$ curl [http://commondatastorage.googleapis.com/git-repo-downloads/repo](http://commondatastorage.googleapis.com/git-repo-downloads/repo) > ~/bin/repo
+$ curl [https://storage.googleapis.com/git-repo-downloads/repo](https://storage.googleapis.com/git-repo-downloads/repo) > ~/bin/repo
 $ chmod a+x ~/bin/repo
 
 ```

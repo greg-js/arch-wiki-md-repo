@@ -17,13 +17,10 @@ Please note that wmii does not appear to be in active development, so any bugs e
     *   [4.2 Views and Tagging](#Views_and_Tagging)
 *   [5 WMII filesystem](#WMII_filesystem)
 *   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Laptop Status Bar](#Laptop_Status_Bar)
-    *   [6.2 Conky Replacement Status Bar](#Conky_Replacement_Status_Bar)
-    *   [6.3 Terminal Title](#Terminal_Title)
-    *   [6.4 Weechat Highlight Notification](#Weechat_Highlight_Notification)
-    *   [6.5 Mod4 on an old Thinkpad](#Mod4_on_an_old_Thinkpad)
-    *   [6.6 Nice fonts](#Nice_fonts)
-    *   [6.7 Keyboard layouts](#Keyboard_layouts)
+    *   [6.1 Weechat Highlight Notification](#Weechat_Highlight_Notification)
+    *   [6.2 Mod4 on an old Thinkpad](#Mod4_on_an_old_Thinkpad)
+    *   [6.3 Nice fonts](#Nice_fonts)
+    *   [6.4 Keyboard layouts](#Keyboard_layouts)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -291,49 +288,6 @@ But there are easier ways to accomplish this ;) Just type MOD+shift+t and enter
 **Note:** There's also the possibility to mount WMII's filesystem. Have a look at the [official documentation](http://wmii.suckless.org/9p).
 
 ## Tips and tricks
-
-### Laptop Status Bar
-
-If you are using wmii on a laptop, it may be convenient to display items such as wireless quality, remaining battery time, and load averages in the status bar; the script below requires you to [install](/index.php/Install "Install") [acpi](https://www.archlinux.org/packages/?name=acpi) and [gawk](https://www.archlinux.org/packages/?name=gawk).
-
-```
-# Status Bar Info
-status() {
-    echo -n ' Wlan0:' $(iwconfig wlan0 | awk '/Quality/{print $2}' | sed 's/.*=//' | awk -F"/" '{printf("%.0f%%", $1/$2*100)}') '| Bat:' $(acpi -b | sed -n 's/.*\([0-9][0-9]:[0-9][0-9]\):[0-9][0-9].*/\1/p') '|' $(uptime | sed 's/.*: //; s/,//g') '|' $(date '+%c')
-}
-
-```
-
-By default the status bar only shows date and an uptime pager (displays system load average for the last 1, 5, 15 minutes).
-
-### Conky Replacement Status Bar
-
-Similar to the above status() function any user can essentially replace the functions of the conky system monitor by using the wmii status bar. Below is an example of such to show CPU and GPU temperatures, CPU speeds, /home and / partition sizes, RAM used, system load averages and date/time:
-
-```
-# Status Bar Info
-status() {
-    echo -n 'CPUTemp:' `expr $(sensors | grep temp1 | awk '{print $2}' | cut -c2-3) + 15` '|' 'GPUTemp:' $(nvidia-settings -q=GPUCoreTemp | grep eagle | awk '{print $4}' | cut -c1-2 ) '|' 'CPUMHz:' $(cat /proc/cpuinfo | grep MHz | awk '{printf "%.0f
-", $4}') '|' '/home:' $(df -h | grep sda5 | awk '{print $3}') '|' '/:' $(df -h | grep sda1 | awk '{print $3}') '|' 'RAM:' $(free -m | grep -i /cache | awk '{print $3}') 'MB |' $(uptime | sed 's/.*://; s/,//g') '|' $(date +"%a %b %d %H:%M")
-}
-
-```
-
-By judicious use of the info available from common Linux system commands, the /proc filesystem and GNU tools such as grep, awk, sed and cut you can create a highly informational wmii status bar. Note that the above is specific to the author's computer and will have to be edited to suit.
-
-### Terminal Title
-
-If you would like to display the current directory in your terminal emulator's titlebar, add this to your .bashrc
-
-```
-WMII_IS_RUNNING=`ps a | grep wmii | awk '/[^"grep"] wmii$/'`
-if [ -n "$WMII_IS_RUNNING" ]; then
-  PROMPT_COMMAND='dirs | wmiir write /client/sel/label'
-fi
-
-```
-
-With this you can shorten you shell prompt and have more horizontal space to type. This test prevents you from getting a "WMII_ADRESS not set" error when you spawn a console.
 
 ### Weechat Highlight Notification
 

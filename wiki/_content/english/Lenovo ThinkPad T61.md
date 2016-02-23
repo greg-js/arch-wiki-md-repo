@@ -6,26 +6,14 @@
 *   [3 Accessing the recovery partition with GRUB](#Accessing_the_recovery_partition_with_GRUB)
 *   [4 Configuration](#Configuration)
     *   [4.1 Video Driver](#Video_Driver)
-        *   [4.1.1 Intel](#Intel)
-        *   [4.1.2 Nvidia](#Nvidia)
-    *   [4.2 Audio](#Audio)
-    *   [4.3 Network](#Network)
-        *   [4.3.1 Wired](#Wired)
-        *   [4.3.2 Wireless](#Wireless)
-        *   [4.3.3 Modem](#Modem)
-    *   [4.4 USB](#USB)
-    *   [4.5 Bluetooth](#Bluetooth)
-    *   [4.6 TrackPoint scrolling (wheel emulation)](#TrackPoint_scrolling_.28wheel_emulation.29)
-    *   [4.7 Touchpad](#Touchpad)
-    *   [4.8 ThinkFinger](#ThinkFinger)
-    *   [4.9 ACPI](#ACPI)
-    *   [4.10 Hotswap UltraBay devices](#Hotswap_UltraBay_devices)
-    *   [4.11 Multimedia Keys](#Multimedia_Keys)
-    *   [4.12 HDAPS](#HDAPS)
-    *   [4.13 Card Readers](#Card_Readers)
-        *   [4.13.1 PCMCIA](#PCMCIA)
-        *   [4.13.2 Compact Flash](#Compact_Flash)
-        *   [4.13.3 Secure Digital](#Secure_Digital)
+        *   [4.1.1 Nvidia](#Nvidia)
+    *   [4.2 Network](#Network)
+        *   [4.2.1 Wireless](#Wireless)
+    *   [4.3 Mouse settings](#Mouse_settings)
+    *   [4.4 ThinkFinger](#ThinkFinger)
+    *   [4.5 Hotswap UltraBay devices](#Hotswap_UltraBay_devices)
+    *   [4.6 Multimedia Keys](#Multimedia_Keys)
+    *   [4.7 HDAPS](#HDAPS)
 *   [5 Other Tweaks](#Other_Tweaks)
     *   [5.1 HDD clicks](#HDD_clicks)
 *   [6 See also](#See_also)
@@ -109,183 +97,13 @@ chainloader +1
 
 ### Video Driver
 
-#### Intel
-
-The Intel® Graphics Media Accelerator GM965 uses the xf86-video-intel driver.
-
-```
-#pacman -S xf86-video-intel
-
-```
-
-The relevent kernel drivers include:
-
-*   DRM_I915
-
-For framebuffer graphics one of the kernel drivers:
-
-*   intelfb
-*   fb_uvesa
-*   fb_vesa
-
-Should work. It is up to you which one you wish to use. Intelfb is known to have a few problems with hardware acceleration and requires grub2 patched with 915resolution to properly set the correct resolution.
-
-The package grub2-915resolution in the AUR has the necessary patch to make intelfb work with laptops that use the 965GM card.
-
-Here is a sample file:
-
- `/etc/X11/xorg.conf` 
-```
-
-    Section "Module"
-        Load        "dbe"   # Double buffer extension
-        SubSection  "extmod"
-          Option    "omit xfree86-dga"
-        EndSubSection
-        Load        "freetype"
-        Load        "GLcore"
-        Load        "glx"
-        Load        "bitmap"
-        Load        "dri"
- #        Load        "int10"
- #        Load        "ddc"
- #        Load        "vbe"
- #        Load        "xtrap"
-    EndSection
-
-    Section "Files"
-        ModulePath "/usr/lib/xorg/modules"
-        FontPath   "/usr/share/fonts/local/"
-        FontPath   "/usr/share/fonts/misc/:unscaled"
-        FontPath   "/usr/share/fonts/75dpi/:unscaled"
-        FontPath   "/usr/share/fonts/100dpi/:unscaled"
-        FontPath   "/usr/share/fonts/misc/"
-        FontPath   "/usr/share/fonts/75dpi/"
-        FontPath   "/usr/share/fonts/100dpi/"
-        FontPath   "/usr/share/fonts/TTF/"
-        FontPath   "/usr/share/fonts/Type1/"
-        FontPath   "/usr/share/fonts/local/"
-    EndSection
-
-    Section "ServerFlags"
-        Option      "blank time"    "3"
-        Option      "standby time"  "5"
-        Option      "suspend time"  "10"
-        Option      "off time"      "15"
-        Option      "RandR"
-        Option      "AutoAddDevices" "False"
-    EndSection
-
-    Section "InputDevice"
-        Identifier  "Keyboard0"
-        Driver      "kbd"
-        Option      "CoreKeyboard"
-        Option      "XkbRules" "xorg"
-        Option      "XkbModel" "thinkpad60"
-        Option      "XkbLayout" "us"
-    EndSection
-
-    Section "InputDevice"
-        Identifier  "UltraNav Trackpoint"
-        Driver      "mouse"
-        Option      "CorePointer"
-        Option      "Device"              "/dev/input/mice"
-        Option      "Protocol"            "ImPS/2"
-        Option      "Emulate3Buttons"     "off"
-        Option      "EmulateWheel"        "on"
-        Option      "EmulateWheelTimeOut" "250"
-        Option      "EmulateWheelButton"  "2"
-        Option      "YAxisMapping"        "4 5"
-        Option      "XAxisMapping"        "6 7"
-        Option      "ZAxisMapping"        "4 5"
-    EndSection
-
- #    Section "InputDevice"
- #           Identifier  "Synaptics"
- #           Driver      "synaptics"
- #           Option      "Device" "/dev/input/mice"
- #           Option      "Protocol" "auto-dev"
- #           Option      "Emulate3Buttons" "yes"
- #           Option      "SHMConfig" "on"
- #    EndSection
-
-    Section "Monitor"
-        Identifier  "Thinkpad Monitor"
-        Option      "DPMS"
- #        HorizSync   31.5-50.0
- #        VertRefresh 59.9-60.1
-     EndSection
-
-    Section "Device"
-        Identifier  "Intel GMA X3100"
-        Driver      "intel"
-        BusID       "PCI:0:2:0"
-        Option      "AccelMethod"  "exa"
-        Option      "MigrationHeuristic"     "greedy"
-    EndSection
-
-    Section "Screen"
-        Identifier          "Thinkpad Screen"
-        Device              "Intel GMA X3100"
-        Monitor             "Thinkpad Monitor"
-        DefaultDepth        24
-        SubSection "Display"
-             Depth 24
-             Modes "1280x800" "1024x768"  "832x624" "800x600" "640x480" "720x400" "640x400" "640x350"
-             Virtual     2048 2048
-        EndSubSection
-    EndSection
-
-    Section "DRI"
-        Mode        0666
-    EndSection
-
-    Section "Extensions"
-        Option      "Composite"     "Enable"
-        Option      "RENDER"        "Enable"
-    EndSection
-
-    Section "ServerLayout"
-        Identifier  "Default Layout"
-        Screen "Thinkpad Screen"
-        InputDevice "UltraNav Trackpoint" "CorePointer"
- #        InputDevice "Synaptics" "CorePointer"
-        InputDevice "Keyboard0" "CoreKeyboard"
-    EndSection
-
-```
-
-Please note that this has the touchpad and xorg input hotplugging disabled.
-
 #### Nvidia
 
 Follow the instructions in [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 **Note:** If you're following the [Beginners Guide](/index.php/Beginners_Guide "Beginners Guide") and you're not seeing the cursor after the NVIDIA logo, you should try the simple baseline X test.
 
-### Audio
-
-Sound works out of the box. The relevant module for sound is:
-
-*   SND_HDA_INTEL
-
-Refer to following guides to set it up:
-
-[OSS](/index.php/OSS "OSS")
-
-[ALSA](/index.php/ALSA "ALSA")
-
-[PulseAudio](/index.php/PulseAudio "PulseAudio")
-
-Use whichever you wish.
-
 ### Network
-
-#### Wired
-
-The wired connection works out of the box and uses the following module:
-
-*   e1000e
 
 #### Wireless
 
@@ -298,181 +116,13 @@ Requires firmware be installed to work.
 
 Refer to [Wireless network configuration#Intel](/index.php/Wireless_network_configuration#Intel "Wireless network configuration")
 
-#### Modem
+### Mouse settings
 
-Untested.
-
-### USB
-
-Works out of the box.
-
-Following modules are used:
-
-*   uhci_hcd
-*   ehci_hcd
-*   usbhid
-
-### Bluetooth
-
-Works out of the box.
-
-Following modules are used:
-
-*   bluetooth
-*   btusb
-*   l2cap
-*   rfcomm
-*   hci_usb
-*   ehci-hcd
-*   uhci-hcd
-
-### TrackPoint scrolling (wheel emulation)
-
-See [TrackPoint](/index.php/TrackPoint "TrackPoint").
-
-### Touchpad
-
-There is a synaptic touchpad on this laptop. If you follow [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics"), you should have no problems getting this to work.
-
-The relevant kernel driver is:
-
-*   mouse_ps2_synaptics
+See [TrackPoint](/index.php/TrackPoint "TrackPoint") and [Synaptics](/index.php/Synaptics "Synaptics").
 
 ### ThinkFinger
 
-Works, read [ThinkFinger](/index.php/ThinkFinger "ThinkFinger") for reference and examples.
-
-### ACPI
-
-To get all the special keys working requires the module:
-
-*   THINKPAD_ACPI
-
-It is necessary to edit the default /etc/acpi/handler.sh included with the acpid package to get these keys working.
-
-```
-#!/bin/sh
-# Default acpi script that takes an entry for all actions, modified to include thinkpad special keys.
-
-# NOTE: This is a 2.6-centric script.  If you use 2.4.x, you'll have to
-#       modify it to not use /sys
-
-minspeed=`cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq`
-maxspeed=`cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq`
-setspeed="/sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
-
-set $*
-
-case "$1" in
-   ibm/hotkey)
-   case "$2" in
-       HKEY)
-           case "$4" in
-               00001002) # Lock screen
-               #Enter your xlock or xscreensaver command here
-                   ;;
-               00001003) # switching display off
-                   xset dpms force off
-                   ;;
-               00001004) # Suspend to RAM
-                   /usr/sbin/pm-suspend
-                   ;;
-               00001005) # Switch Bluetooth
-                   ;;
-               00001007) # Toggle external display
-                   if [ "$(xrandr -q | grep "VGA connected")" ]; then
-                       if [ "$(xrandr -q | grep "VGA connected [0-9]")" ]; then
-                           xrandr --output VGA --off
-                       else
-                           xrandr --output VGA --auto
-                       fi
-                   else
-                       xrandr --output VGA --off
-                   fi
-                   ;;
-               #00001008) # Toggle Trackpoint/Touchpad
-               #    ;;
-               #00001009) # Eject from dock
-               #    ;;
-               0000100c) # Hibernate
-                   /usr/sbin/pm-hibernate
-                   ;;
-               00001011) #Brightness down
-                   CUR="xbacklight -get"
-                   CUR="echo $CUR | awk '{print $1-5}'"
-                   xbacklight -set $CUR
-                   ;;
-               00001012) #Brightness up
-                   CUR=`xbacklight -get`
-                   CUR="echo $CUR | awk '{print $1+5}'"
-                   xbacklight -set $CUR
-                   ;;
-               #00001014) # Toggle zoom
-               #    ;;
-               00001018) # ThinkVantage button
-                   ;;
-           esac
-           ;;
-   esac
-   ;;
-   button/power)
-       #echo "PowerButton pressed!">/dev/tty5
-       case "$2" in
-           PWRF)   
-              logger "PowerButton pressed: $2"
-              /sbin/init 0
-              ;;
-           *)      logger "ACPI action undefined: $2" ;;
-       esac
-       ;;
-   button/sleep)
-       case "$2" in
-           SLPB)   /usr/sbin/pm-suspend ;;
-           *)      logger "ACPI action undefined: $2" ;;
-       esac
-       ;;
-   ac_adapter)
-       case "$2" in
-           AC)
-               case "$4" in
-                   00000000)
-                       #/etc/laptop-mode/laptop-mode start
-                   ;;
-                   00000001)
-                       #/etc/laptop-mode/laptop-mode stop
-                   ;;
-               esac
-               ;;
-           *)  logger "ACPI action undefined: $2" ;;
-       esac
-       ;;
-   battery)
-       case "$2" in
-           BAT0)
-               case "$4" in
-                   00000000)   #echo "offline" >/dev/tty5
-                   #Enter whatever power scripts you have here.
-                   ;;
-                   00000001)   #echo "online"  >/dev/tty5
-                   #Enter whatever power scripts you may have here.
-                   ;;
-               esac
-               ;;
-           CPU0)	
-               ;;
-           *)  logger "ACPI action undefined: $2" ;;
-       esac
-       ;;
-   button/lid)
-       #echo "LID switched!">/dev/tty5
-       /usr/sbin/pm-suspend
-       ;;
-   *)
-       logger "ACPI group/action undefined: $1 / $2"
-       ;;
-esac
-
-```
+See [ThinkFinger](/index.php/ThinkFinger "ThinkFinger").
 
 ### Hotswap UltraBay devices
 
@@ -517,22 +167,6 @@ See [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys").
 ### HDAPS
 
 See [HDAPS](/index.php/HDAPS "HDAPS").
-
-### Card Readers
-
-#### PCMCIA
-
-Works as expected. Uses the module:
-
-*   yenta
-
-#### Compact Flash
-
-The same goes for the Compact Flash. It's supposed to work as it uses the same interfaces as the PCMCIA does, but I can't confirm anything since I do not have a CF-card.
-
-#### Secure Digital
-
-The SD-card reader works out of the box with SD cards.
 
 ## Other Tweaks
 

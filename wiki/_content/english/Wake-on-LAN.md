@@ -31,7 +31,7 @@ The Wake-on-LAN feature also has to be enabled in the PC's BIOS. Different mothe
 It is known that some motherboards are affected by a nasty bug that causes reboots rather than shutdowns under certain situations (see [this](https://bbs.archlinux.org/viewtopic.php?id=173648) thread for example). To prevent this bug from surfacing, it is recommended to do the following on the target machine:
 
 1.  Disable all references to "xHCI" as it pertains to USB settings.
-2.  Disable EuP 2013 if it is implicitly an option.
+2.  Disable EuP 2013 if it is explicitly an option.
 3.  Optionally enable WOL for keyboard actions.
 
 **Note:** There are mixed opinions as to the value of #3 above and it may be motherboard dependent.

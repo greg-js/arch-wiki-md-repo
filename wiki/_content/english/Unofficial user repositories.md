@@ -44,10 +44,11 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.1.19 pipelight](#pipelight)
         *   [3.1.20 repo-ck](#repo-ck)
         *   [3.1.21 seblu](#seblu)
-        *   [3.1.22 sergej-repo](#sergej-repo)
-        *   [3.1.23 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.24 herecura](#herecura)
-        *   [3.1.25 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.22 seiichiro](#seiichiro)
+        *   [3.1.23 sergej-repo](#sergej-repo)
+        *   [3.1.24 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.25 herecura](#herecura)
+        *   [3.1.26 blackeagle-pre-community](#blackeagle-pre-community)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 arch-deepin](#arch-deepin)
         *   [3.2.2 archaudio](#archaudio)
@@ -130,7 +131,7 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.2.12 pnsft-pur](#pnsft-pur)
         *   [5.2.13 rakudo](#rakudo)
         *   [5.2.14 rightlink](#rightlink)
-        *   [5.2.15 seiichiro](#seiichiro)
+        *   [5.2.15 seiichiro](#seiichiro_2)
         *   [5.2.16 studioidefix](#studioidefix_2)
         *   [5.2.17 zrootfs](#zrootfs)
 *   [6 armv6h only](#armv6h_only)
@@ -433,7 +434,8 @@ Server = http://arch.miffe.org/$arch/
 
 #### nullptr_t
 
-*   **Maintainers:** Sebastian Lau (nullptr_t),
+*   **Down until 01st March**
+*   **Maintainers:** nullptr_t,
 *   **Description:** AUR packages that have a longer build time on some machines (e.g. [veracrypt](https://aur.archlinux.org/packages/veracrypt/) or [plymouth](/index.php/Plymouth "Plymouth"))
 *   **Key-ID:** B4767A17CEC5B4E9
 
@@ -480,6 +482,18 @@ Server = http://repo-ck.com/$arch
 ```
 [seblu]
 Server = http://seblu.net/a/$repo/$arch
+
+```
+
+#### seiichiro
+
+*   **Maintainer:** [Stefan Brand (seiichiro0185)](https://www.seiichiro0185.org)
+*   **Description:** AUR-packages I use frequently
+*   **Key-ID:** 805517CC
+
+```
+[seiichiro]
+Server = http://www.seiichiro0185.org/repo/$arch
 
 ```
 
@@ -1461,7 +1475,7 @@ Server = http://downloads.sourceforge.net/project/pnsft-aur/pur/x86_64
 
 ```
 [rakudo]
-Server = http://spidermario.free.fr/archlinux/$repo/$arch
+Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
 
 ```
 

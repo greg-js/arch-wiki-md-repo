@@ -8,7 +8,7 @@ This article details the installation and configuration process of the ***Synapt
     *   [2.2 Configuration on the fly](#Configuration_on_the_fly)
         *   [2.2.1 Console tools](#Console_tools)
         *   [2.2.2 Graphical tools](#Graphical_tools)
-    *   [2.3 GNOME/Cinnamon](#GNOME.2FCinnamon)
+    *   [2.3 GNOME/Xfce4/Cinnamon](#GNOME.2FXfce4.2FCinnamon)
     *   [2.4 MATE](#MATE)
 *   [3 Advanced configuration](#Advanced_configuration)
     *   [3.1 Using xinput to determine touchpad capabilities](#Using_xinput_to_determine_touchpad_capabilities)
@@ -177,11 +177,11 @@ Next to the traditional method of configuration, the Synaptics driver also suppo
 
 	[https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository](https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository) || [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)
 
-### GNOME/Cinnamon
+### GNOME/Xfce4/Cinnamon
 
 Users of [GNOME](/index.php/GNOME "GNOME") may have to edit its configuration as well, because in default it is set to disable tapping to click, horizontal scrolling and not to allow touchpad disabling while typing.
 
-To change these settings in **GNOME 3**:
+To change these settings in **GNOME 3** or **XFCE 4**:
 
 1.  Open *System Settings*.
 2.  Click *Mouse and Touchpad*.

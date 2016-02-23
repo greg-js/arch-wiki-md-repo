@@ -8,8 +8,9 @@ Disk cloning is the process of making an image of a partition or of an entire ha
     *   [1.3 Backing up the MBR](#Backing_up_the_MBR)
     *   [1.4 Create disk image](#Create_disk_image)
     *   [1.5 Restore system](#Restore_system)
-*   [2 Disk cloning software](#Disk_cloning_software)
-*   [3 See also](#See_also)
+*   [2 Using ddrescue](#Using_ddrescue)
+*   [3 Disk cloning software](#Disk_cloning_software)
+*   [4 See also](#See_also)
 
 ## Using dd
 
@@ -22,7 +23,7 @@ The *dd* command is a simple, yet versatile and powerful tool. It can be used to
 From physical disk `/dev/sda`, partition 1, to physical disk `/dev/sdb`, partition 1.
 
 ```
-# dd if=/dev/sda1 of=/dev/sdb1 bs=512 conv=noerror,sync
+# dd if=/dev/sda1 of=/dev/sdb1 bs=64K conv=noerror,sync
 
 ```
 
@@ -33,7 +34,7 @@ From physical disk `/dev/sda`, partition 1, to physical disk `/dev/sdb`, partiti
 From physical disk `/dev/sd*X*` to physical disk `/dev/sd*Y*`
 
 ```
-# dd if=/dev/sd*X* of=/dev/sd*Y* bs=512 conv=noerror,sync
+# dd if=/dev/sd*X* of=/dev/sd*Y* bs=64K conv=noerror,sync
 
 ```
 
@@ -41,13 +42,13 @@ This will clone the entire drive, including the MBR (and therefore bootloader), 
 
 *   `noerror` instructs *dd* to continue operation, ignoring all read errors. Default behavior for *dd* is to halt at any error.
 *   `sync` fills input blocks with zeroes if there were any read errors, so data offsets stay in sync.
-*   `bs=512` sets the block size to 512 bytes, the "classic" block size for hard drives. If and only if your hard drives have a 4 Kib block size, you may use "4096" instead of "512". Also, please read the warning below, because there is more to this than just "block sizes" -it also influences how read errors propagate.
+*   `bs=` sets the block size. Defaults to 512 bytes, which is the "classic" block size for hard drives since the early 1980s, but is not the most convenient. Use a bigger value, 64K or 128K. Also, please read the warning below, because there is more to this than just "block sizes" -it also influences how read errors propagate. See [[1]](http://www.mail-archive.com/eug-lug@efn.org/msg12073.html) and [[2]](http://blog.tdg5.com/tuning-dd-block-size/) for details and to figure out the best bs value for your use case.
 
-**Warning:** The block size you specify influences how read errors are handled. Read below.
+**Warning:** The block size you specify influences how read errors are handled. Read below. For data recovery, use [ddrescue](#Using_ddrescue).
 
-The *dd* utility technically has an "input block size" (IBS) and an "output block size" (OBS). When you set `bs`, you effectively set both IBS and OBS. Normally, if your block size is, say, 1 Mib, *dd* will read 1024*1024 bytes and write as many bytes. But if a read error occurs, things will go wrong. Many people seem to think that *dd* will "fill up read errors with zeroes" if you use the `noerror,sync` options, but this is not what happens. *dd* will, according to documentation, fill up the OBS to IBS size *after completing its read*, which means adding zeroes at the *end* of the block. This means, for a disk, that effectively the whole 1 Mib would become messed up because of a single 512 byte read error in the beginning of the read: 12ERROR89 would become 128900000 instead of 120000089.
+The *dd* utility technically has an "input block size" (IBS) and an "output block size" (OBS). When you set `bs`, you effectively set both IBS and OBS. Normally, if your block size is, say, 1 MiB, *dd* will read 1024*1024 bytes and write as many bytes. But if a read error occurs, things will go wrong. Many people seem to think that *dd* will "fill up read errors with zeroes" if you use the `noerror,sync` options, but this is not what happens. *dd* will, according to documentation, fill up the OBS to IBS size *after completing its read*, which means adding zeroes at the *end* of the block. This means, for a disk, that effectively the whole 1 MiB would become messed up because of a single 512 byte read error in the beginning of the read: 12ERROR89 would become 128900000 instead of 120000089.
 
-If you are positive that your disk does not contain any errors, you could proceed using a larger block size, which will increase the speed of your copying several fold. For example, changing bs from 512 to 64 Ki changed copying speed from 35 MB/s to 120 MB/s on a simple Celeron 2.7 GHz system. But keep in mind that read errors on the source disk will end up as *block errors* on the destination disk, i.e. a single 512-byte read error will mess up the whole 64 Kib output block.
+If you are positive that your disk does not contain any errors, you could proceed using a larger block size, which will increase the speed of your copying several fold. For example, changing bs from 512 to 64K changed copying speed from 35 MB/s to 120 MB/s on a simple Celeron 2.7 GHz system. But keep in mind that read errors on the source disk will end up as *block errors* on the destination disk, i.e. a single 512-byte read error will mess up the whole 64 KiB output block.
 
 **Tip:** If you would like to view *dd* progressing, use the `status=progress` option. See [dd](/index.php/Dd "Dd") for details.
 
@@ -135,7 +136,7 @@ If there is not enough disk space locally, you may send the image through ssh:
 
 ```
 
-**Note:** You may wish to use a block size (`bs=`) that is equal to the amount of cache on the HD you are backing up. For example, `bs=8192K` works for an 8 MiB cache. The 64 Kib mentioned in this article is better than the default `bs=512` bytes, but it will run faster with a larger `bs=`.
+**Note:** You may wish to use a block size (`bs=`) that is equal to the amount of cache on the HD you are backing up. For example, `bs=8192K` works for an 8 MiB cache. The 64 KiB mentioned in this article is better than the default `bs=512` bytes, but it will run faster with a larger `bs=`.
 
 ### Restore system
 
@@ -150,6 +151,31 @@ When the image has been split, use the following instead:
 
 ```
 # cat */path/to/backup.img.gz** | gunzip -c | dd of=/dev/sd*X*
+
+```
+
+## Using ddrescue
+
+*ddrescue* is a tool designed for cloning and recovering data. It copies data from one file or block device (hard disc, cdrom, etc) to another, trying to rescue the good parts first in case of read errors, to maximize the recovered data.
+
+To clone a faulty or dying drive, run ddrescue twice. First round, copy every block without read error and log the errors to rescue.log.
+
+```
+# ddrescue -f -n /dev/sdX /dev/sdY rescue.log
+
+```
+
+Second round, copy only the bad blocks and try 3 times to read from the source before giving up.
+
+```
+# ddrescue -d -f -r3 /dev/sdX /dev/sdY rescue.log
+
+```
+
+Now you can check the file system for corruption and mount the new drive.
+
+```
+# fsck -f /dev/sdY
 
 ```
 

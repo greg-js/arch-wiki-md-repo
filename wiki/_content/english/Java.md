@@ -20,7 +20,9 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
 *   [4 Package pre-requisites to support archlinux-java](#Package_pre-requisites_to_support_archlinux-java)
 *   [5 Unsupported JVM from AUR](#Unsupported_JVM_from_AUR)
     *   [5.1 Java SE](#Java_SE)
-        *   [5.1.1 Java SE 6/7](#Java_SE_6.2F7)
+        *   [5.1.1 Java SE 9](#Java_SE_9)
+        *   [5.1.2 Java SE 6/7](#Java_SE_6.2F7)
+        *   [5.1.3 32-bit Java SE](#32-bit_Java_SE)
     *   [5.2 Oracle JRockit](#Oracle_JRockit)
     *   [5.3 VMkit](#VMkit)
     *   [5.4 Parrot VM](#Parrot_VM)
@@ -196,9 +198,19 @@ Also please note that:
 
 Several packages from [AUR](/index.php/AUR "AUR") provide Oracle's implementations of JRE and JDK, but the main ones are [jre](https://aur.archlinux.org/packages/jre/), [server-jre](https://aur.archlinux.org/packages/server-jre/) and [jdk](https://aur.archlinux.org/packages/jdk/).
 
+#### Java SE 9
+
+The development version of Java 9 includes [jre-devel](https://aur.archlinux.org/packages/jre-devel/) and [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/).
+
 #### Java SE 6/7
 
 Older versions include [jre6](https://aur.archlinux.org/packages/jre6/)/[jre7](https://aur.archlinux.org/packages/jre7/) and [jdk6](https://aur.archlinux.org/packages/jdk6/)/[jdk7](https://aur.archlinux.org/packages/jdk7/).
+
+#### 32-bit Java SE
+
+Almost all of the above packages can be found in 32-bit by prefixing `bin32-`, e.g. [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) and [bin32-jdk](https://aur.archlinux.org/packages/bin32-jdk/).
+
+**Note:** These packages use `archlinux-java32` ([java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/)), which is separate from `archlinux-java` ([java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common)), but functions the same, by suffixing the Java links with `32`, e.g. `java32`.
 
 ### Oracle JRockit
 
@@ -255,7 +267,7 @@ There are several things that may help:
 
 to the `LogHook` may help.
 
-See [[2]](http://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) for more information.
+See [[1]](http://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) for more information.
 
 ## Tips and tricks
 

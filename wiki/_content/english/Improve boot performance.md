@@ -147,9 +147,7 @@ Other filesystems like `/home` can be mounted with custom mount units. Adding `n
 
 ## Initramfs
 
-As mentioned above, boot time can be decreased by slimming the kernel, thereby reducing the amount of data that must be loaded. This is also true for your initramfs (result of mkinitcpio), as this is loaded immediately after the kernel, and takes care of recognizing your root filesystem and mounting it. To boot, very little is actually needed and includes the storage bus, block device, and filesystem. Falconindy (Dave Reisner) has begrudgingly created a [short tutorial](http://blog.falconindy.com/articles/optmizing-bootup-with-mkinitcpio.html) on how to achieve this on his blog.
-
-**Note:** If you are using anything that requires [udev](/index.php/Udev "Udev") to be included in the initramfs (for example, lvm2, mdadm_udev, or even just specifying the filesystem label with `/dev/disk/by-label`), trying to strip down your initramfs will not be a worthwhile endeavor.
+See [Minimal initramfs](/index.php/Minimal_initramfs "Minimal initramfs")
 
 ## Less output during boot
 

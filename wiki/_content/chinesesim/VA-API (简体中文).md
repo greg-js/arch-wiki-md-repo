@@ -16,11 +16,11 @@
 
 **开源驱动:**
 
-*   [AMD](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)"): 位于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")的[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)和[ati-dri](https://www.archlinux.org/packages/?name=ati-dri)两者为 Radeon 9500 或更新的GPU提供支持。
+*   [AMD](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)"): 位于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")的[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)和[mesa](https://www.archlinux.org/packages/?name=mesa)两者为 Radeon 9500 或更新的GPU提供支持。
 
 *   [Intel](/index.php/Intel_Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel Graphics (简体中文)"): 位于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")的[libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver)软件包为 GMA 4500 系列或者更新的GPU提供支持。
 
-*   [NVIDIA](/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nouveau (简体中文)"): 位于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")的[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)和[nouveau-dri](https://www.archlinux.org/packages/?name=nouveau-dri)两者为 GeForce 8 系列和更新的GPU提供支持。位于AUR的 [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/) 软件包包含从NVIDIA闭源驱动中提取出的必要的固件文件。
+*   [NVIDIA](/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nouveau (简体中文)"): 位于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")的[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)和[mesa](https://www.archlinux.org/packages/?name=mesa)两者为 GeForce 8 系列和更新的GPU提供支持。位于AUR的 [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/) 软件包包含从NVIDIA闭源驱动中提取出的必要的固件文件。
 
 **闭源驱动:**
 
@@ -30,7 +30,8 @@
 
 ### 支持的格式
 
- [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) 和 [ati-dri](https://www.archlinux.org/packages/?name=ati-dri) | [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) 和 [nouveau-dri](https://www.archlinux.org/packages/?name=nouveau-dri) | [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) 和 [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) |
+ Open source | Proprietary |
+ AMD | Intel | Nvidia | AMD | Nvidia |
 | MPEG2 解码 | AMD Radeon 9500 或更新 | Intel GMA 4500 或更新 | Nvidia GeForce 8 或更新 | AMD Radeon HD 4000 或更新 | Nvidia GeForce 8 或更新 |
 | MPEG4 解码 | AMD Radeon HD 6000 或更新 | -- | Nvidia GeForce 200 或更新 | AMD Radeon HD 6000 或更新 | Nvidia GeForce 200 或更新 |
 | H264 解码 | AMD Radeon HD 4000 或更新 | Intel GMA 4500, Ironlake Graphics 或更新 | Nvidia GeForce 8 或更新 | AMD Radeon HD 4000 或更新 | Nvidia GeForce 8 或更新 |
@@ -38,7 +39,7 @@
 | MPEG2 编码 | -- | Intel Ivy Bridge Graphics 或更新 | -- | -- | -- |
 | H264 编码 | -- | Intel Sandy Bridge Graphics 或更新 | -- | -- | -- |
 
-位于[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")的[libva-driver-intel-g45-h264](https://aur.archlinux.org/packages/libva-driver-intel-g45-h264/)软件包为其提供支持。具体方法和注意事项参看： [在 GMA 4500 硬解 H.264](/index.php/Intel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.9C.A8_GMA_4500_.E7.A1.AC.E8.A7.A3_H.264 "Intel (简体中文)")。
+[libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) 软件包为其提供支持。具体方法和注意事项参看： [在 GMA 4500 硬解 H.264](/index.php/Intel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.9C.A8_GMA_4500_.E7.A1.AC.E8.A7.A3_H.264 "Intel (简体中文)")。
 
 运行下面的命令以查看你的GPU支持哪些功能。这个命令由 [libva](https://www.archlinux.org/packages/?name=libva) 软件包提供:
 
@@ -48,7 +49,7 @@
 
 ### 配置
 
-[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) 必须手动通过设置环境变量手动开启。参看[环境变量](/index.php?title=Environment_Variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Environment Variables (简体中文) (page does not exist)") [定义全局环境变量](/index.php?title=Environment_Variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Environment Variables (简体中文) (page does not exist)") 或 [定义本地环境变量](/index.php?title=Environment_Variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Environment Variables (简体中文) (page does not exist)")。
+[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) 必须手动通过设置环境变量手动开启。参看[环境变量](/index.php/Environment_variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Environment variables (简体中文)")。
 
 ```
 export LIBVA_DRIVER_NAME=vdpau

@@ -156,9 +156,9 @@ Reboot and enjoy. In my case I'm using the Windows boot loader so that I can map
 
 If you already have Windows installed, it will already have created some partitions (on a [GPT](/index.php/GPT "GPT")-formatted disk):
 
-*   a partition of type `ef00 EFI System` and filesystem {{ic|FAT32},
+*   a partition of type `ef00 EFI System` and filesystem `FAT32`,
 *   a partition of type `0c01 Microsoft reserved`, generally of size `128 MiB`,
-*   a partition of type `0700 Microsoft basic data` and of filesystem {{ic|NTFS}, which corresponds to `C:\`,
+*   a partition of type `0700 Microsoft basic data` and of filesystem `NTFS`, which corresponds to `C:\`,
 *   potentially system recovery and backup partitions and/or secondary data partitions (corresponding often to `D:\` and above).
 
 Using the Disk Management utility in Windows, check how the partitions are labelled and which type gets reported. This will help you understand which partitions are essential to Windows, and which others you might repurpose: the first 3 bullets in the above list are essential, do not delete them.

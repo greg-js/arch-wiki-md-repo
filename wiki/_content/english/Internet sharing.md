@@ -59,6 +59,8 @@ Enter this command to temporarily enable packet forwarding at runtime:
 
 **Tip:** To enable packet forwarding selectively for a specific interface, use `sysctl net.ipv4.conf.*interface_name*.forwarding=1` instead.
 
+**Warning:** If the system uses [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") to control the network interfaces, a per-interface setting for IPv4 is not possible, i.e. systemd logic propagates any configured forwarding into a global (for all interfaces) setting for IPv4\. The advised work-around is to use a firewall to forbid forwarding again on selective interfaces. See the systemd.network(5) manual page for more information. The `IPForward=kernel` semantics introduced in a previous systemd release 220/221 to honor kernel settings does not apply anymore.[[1]](https://github.com/poettering/systemd/commit/765afd5c4dbc71940d6dd6007ecc3eaa5a0b2aa1) [[2]](https://github.com/systemd/systemd/blob/a2088fd025deb90839c909829e27eece40f7fce4/NEWS)
+
 Edit `/etc/sysctl.d/30-ipforward.conf` to make the previous change persistent after a reboot for all interfaces:
 
  `/etc/sysctl.d/30-ipforward.conf` 
@@ -70,8 +72,6 @@ net.ipv6.conf.all.forwarding=1
 ```
 
 Afterwards it is advisable to double-check forwarding is enabled as required after a reboot.
-
-**Note:** [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") introduced new forwarding semantics in version 220/221.[[1]](https://github.com/systemd/systemd/blob/a2088fd025deb90839c909829e27eece40f7fce4/NEWS) If you use systemd-networkd to control the network interfaces, it **overrides** `net.*.ip_forward` settings, turning forwarding off by default. To have it respect above settings it is required to set `IPForward=kernel` in systemd-networkd's interface configuration file (see `man 5 systemd.network` for more information).
 
 ### Enable NAT
 

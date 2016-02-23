@@ -34,6 +34,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### February 2016
 
+*   [21 February 2016] [ASA-201602-17](https://lists.archlinux.org/pipermail/arch-security/2016-February/000558.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
+*   [21 February 2016] [ASA-201602-16](https://lists.archlinux.org/pipermail/arch-security/2016-February/000557.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) multiple issues
 *   [17 February 2016] [ASA-201602-15](https://lists.archlinux.org/pipermail/arch-security/2016-February/000555.html) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) multiple issues
 *   [17 February 2016] [ASA-201602-14](https://lists.archlinux.org/pipermail/arch-security/2016-February/000554.html) [glibc](https://www.archlinux.org/packages/?name=glibc) multiple issues
 *   [13 February 2016] [ASA-201602-13](https://lists.archlinux.org/pipermail/arch-security/2016-February/000553.html) [nghttp2](https://www.archlinux.org/packages/?name=nghttp2) denial of service

@@ -56,7 +56,7 @@ First, enter a directory on the SSD with at least 1.1 GB of free space (and one 
 
 ```
 $ cd /path/to/SSD
-$ dd if=/dev/zero of=tempfile bs=1M count=1024 conv=fdatasync,notrunc
+$ dd if=/dev/zero of=tempfile bs=1M count=1024 conv=fdatasync,notrunc status=progress
 1024+0 records in
 1024+0 records out
 w bytes (x GB) copied, y s, z MB/s
@@ -69,7 +69,7 @@ Next, clear the buffer-cache to accurately measure read speeds directly from the
 
 ```
 # echo 3 > /proc/sys/vm/drop_caches
-$ dd if=tempfile of=/dev/null bs=1M count=1024
+$ dd if=tempfile of=/dev/null bs=1M count=1024 status=progress
 1024+0 records in
 1024+0 records out
 w bytes (x GB) copied, y s, z MB/s
@@ -79,7 +79,7 @@ w bytes (x GB) copied, y s, z MB/s
 Now that the last file is in the buffer, repeat the command to see the speed of the buffer-cache:
 
 ```
-$ dd if=tempfile of=/dev/null bs=1M count=1024
+$ dd if=tempfile of=/dev/null bs=1M count=1024 status=progress
 1024+0 records in
 1024+0 records out
 w bytes (x GB) copied, y s, z GB/s

@@ -10,9 +10,7 @@ See the [README](https://github.com/aurapm/aura/blob/master/README.md) and [docu
 *   [2 Tips and tricks](#Tips_and_tricks)
     *   [2.1 Auto-prompt for sudo](#Auto-prompt_for_sudo)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 AUR packages fail to build](#AUR_packages_fail_to_build)
-    *   [3.2 Build failing at configuration step](#Build_failing_at_configuration_step)
-    *   [3.3 Invalid argument](#Invalid_argument)
+    *   [3.1 Build failing at configuration step](#Build_failing_at_configuration_step)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -52,10 +50,6 @@ Either add this function to your corresponding rc/profile or as a stand-alone sc
 
 See [GitHub issues](https://github.com/aurapm/aura/issues) for known problems.
 
-### AUR packages fail to build
-
-See [List of AUR packages that don't build](https://github.com/aurapm/aura/issues/14).
-
 ### Build failing at configuration step
 
 If you get the following:
@@ -67,15 +61,6 @@ regex-pcre-builtin -any
 ```
 
 Then you need to rebuild the [haskell-regex-pcre-builtin](https://www.archlinux.org/packages/?name=haskell-regex-pcre-builtin) AUR package, or install it out of [haskell-core]. This usually occurs after ghc upgrades, and has to do with ghc and all the haskell libraries being linked by special hash values for security purposes.
-
-### Invalid argument
-
-```
-aura >> Determining dependencies...
-aura: fd:6: hGetContents: invalid argument (invalid byte sequence)
-```
-
-This is a [known issue](https://github.com/aurapm/aura/issues/78) in 1.2.X and later versions. Make sure the [locale](/index.php/Locale "Locale") is configured correctly.
 
 ## See also
 

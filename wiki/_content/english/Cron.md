@@ -233,6 +233,31 @@ Multiple times may be specified with a comma, a range can be given with a hyphen
 
 Will execute the script `i_love_cron.sh` at five minute intervals from 9 AM to 4:55 PM on weekdays except during the summer months (June, July, and August). More examples and advanced configuration techniques can be found below.
 
+Besides, crontab has some special keywords:
+
+```
+@reboot at startup 
+@yearly once a year
+@annually ( == @yearly)
+@monthly once a month
+@weekly once a week
+@daily once a day
+@midnight ( == @daily)
+@hourly once an hour
+
+```
+
+For example:
+
+```
+@reboot ~/bin/i_love_cron.sh
+
+```
+
+Will execute the script `i_love_cron.sh` at startup.
+
+See more at: [http://www.linuxandlife.com/2013/01/how-to-use-crontab-to-schedule-tasks.html#sthash.AXvOdsAz.dpuf](http://www.linuxandlife.com/2013/01/how-to-use-crontab-to-schedule-tasks.html#sthash.AXvOdsAz.dpuf)
+
 ## Basic commands
 
 Crontabs should never be edited directly; instead, users should use the `crontab` program to work with their crontabs. To be granted access to this command, user must be a member of the users group (see the `gpasswd` command).

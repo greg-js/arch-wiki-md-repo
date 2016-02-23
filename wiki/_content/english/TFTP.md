@@ -2,7 +2,9 @@ The [Trivial File Transfer Protocol](https://en.wikipedia.org/wiki/Trivial_File_
 
 ## Server
 
-There are several TFTP server implementations, some listed below.
+There are several TFTP server implementations, some are listed below and [iputils](https://www.archlinux.org/packages/?name=iputils) also includes a version of tftp.
+
+**Note:** Make sure not to start different TFTP implementations at the same time. They will fail with an error `got more than one socket`, because only one may listen to the default TFTP port `69`.
 
 ### tftp-hpa
 

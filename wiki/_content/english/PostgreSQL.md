@@ -47,7 +47,7 @@ $ su
 Before PostgreSQL can function correctly, the database cluster must be initialized:
 
 ```
-[postgres]$ initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
+[postgres]$ initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
 
 ```
 
@@ -354,7 +354,7 @@ hhvm.extensions[pgsql] = pgsql.so
 
 ## Upgrading PostgreSQL
 
-This is for upgrading from 9.2 to 9.3, 9.3 to 9.4 and 9.4 to 9.5.
+Upgrading minor PostgreSQL versions (i.e. `9.2, 9.3, 9.4, 9.5`) requires some extra maintenance.
 
 **Tip:** If you already migrated from 9.2 to 9.3 and you want to migrate from 9.3 to 9.4, change versions before executing commands. If `/var/lib/postgres/data-9.2` already exists and you just copy-paste all commands, `pg_upgrade` will complain about the wrong version of the database, because your version 9.3 database will be stored in `/var/lib/postgres/data-9.2/data/`.
 
@@ -368,15 +368,15 @@ upgrade_pg.sh
 ```
 
 ```
-## Set the old version that we want to upgrade to.
+## Set the old version that we want to upgrade from.
 export FROM_VERSION=9.4
 
 pacman -S --needed postgresql-old-upgrade
-su - chown postgres:postgres /var/lib/postgres/
-su - postgres -c 'mv /var/lib/postgres/data /var/lib/postgres/data-${FROM_VERSION}'
+chown postgres:postgres /var/lib/postgres/
+su - postgres -c "mv /var/lib/postgres/data /var/lib/postgres/data-${FROM_VERSION}"
 su - postgres -c 'mkdir /var/lib/postgres/data'
 su - postgres -c 'initdb --locale en_US.UTF-8 -E UTF8 -D /var/lib/postgres/data'
-su - postgres -c 'pg_upgrade -b /opt/pgsql-${FROM_VERSION}/bin/ -B /usr/bin/ -d /var/lib/postgres/data-${FROM_VERSION} -D /var/lib/postgres/data'
+su - postgres -c "pg_upgrade -b /opt/pgsql-${FROM_VERSION}/bin/ -B /usr/bin/ -d /var/lib/postgres/data-${FROM_VERSION} -D /var/lib/postgres/data"
 
 ```
 

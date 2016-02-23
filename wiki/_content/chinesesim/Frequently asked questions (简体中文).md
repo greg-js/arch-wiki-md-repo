@@ -55,13 +55,13 @@
 
 ### Q) 为什么我要用Arch？
 
-**A)** 请先阅读[Arch之道](/index.php/The_Arch_Way_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "The Arch Way (简体中文)")。如果你乐于“DIY”，并且需要（或喜欢）简洁、优雅、可定制、前沿的通用GNU/Linux发行版，你也许会爱上Arch。
+**A)** 请先阅读[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。如果你乐于“DIY”，并且需要（或喜欢）简洁、优雅、可定制、前沿的通用GNU/Linux发行版，你也许会爱上Arch。
 
 ### Q) 为什么我不想用Arch？
 
 **A)** 您也许不想使用Arch，如果：
 
-*   看完了[Arch之道](/index.php/The_Arch_Way_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "The Arch Way (简体中文)")，你并不赞同我们的哲学。
+*   看完了[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，你并不赞同我们的哲学。
 *   没有能力、时间、愿望去打理这样一个高度可定制的GNU/Linux发行版。
 *   需要非x86_64、i686平台支持。
 *   你是狂热的自由软件爱好者，只希望发行版提供GNU定义的自由软件。
@@ -98,7 +98,7 @@ Arch Linux 支持 i686 和 x86_64 (有时称为amd64) 架构.
 
 ### Q) 我太喜欢Arch了，希望开发团队实现一个新功能。
 
-**A)** 首先，你看过[Arch之道](/index.php/The_Arch_Way_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "The Arch Way (简体中文)")了吗？你能否自己实现这个功能？这个功能是否符合Arch的最小化和代码的正确性胜过易用性的哲学？与大家分享你的代码或是解决方案。如果大家和开发者确实认同该功能，有可能会被添加到系统中。Arch社区依靠大众贡献分享的代码和工具蓬勃发展。
+**A)** 首先，你看过[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")了吗？你能否自己实现这个功能？这个功能是否符合Arch的最小化和代码的正确性胜过易用性的哲学？与大家分享你的代码或是解决方案。如果大家和开发者确实认同该功能，有可能会被添加到系统中。Arch社区依靠大众贡献分享的代码和工具蓬勃发展。
 
 ### Q) 什么时候发布新版本？
 
@@ -189,11 +189,11 @@ $ pkgfile *file_name*
 
 ### Q) 为什么不提供官方的pacman图形化前端？
 
-**A)** 请阅读[Arch之道](/index.php/The_Arch_Way_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "The Arch Way (简体中文)")、[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。答案很明确，Arch开发团队不会提供这样的工具。如果需要，请使用用户开发的[pacman图形化前端](/index.php/Pacman_GUI_Frontends_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman GUI Frontends (简体中文)")。
+**A)** 请阅读[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")、[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。答案很明确，Arch开发团队不会提供这样的工具。如果需要，请使用用户开发的[pacman图形化前端](/index.php/Pacman_GUI_Frontends_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman GUI Frontends (简体中文)")。
 
 ### Q) pacman需要某某功能！
 
-**A)** 请阅读[Arch之道](/index.php/The_Arch_Way_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "The Arch Way (简体中文)")、[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。Arch的哲学是“保持简单”。但如果你认为这个功能确实是必要的，可以在[官方论坛](https://bbs.archlinux.org/)说出来让大家讨论，或者直接与开发者联系。如果你认为这对pacman特别重要甚至是一个bug，请到[这里](https://bugs.archlinux.org)汇报。
+**A)** 请阅读[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")、[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。Arch的哲学是“保持简单”。但如果你认为这个功能确实是必要的，可以在[官方论坛](https://bbs.archlinux.org/)说出来让大家讨论，或者直接与开发者联系。如果你认为这对pacman特别重要甚至是一个bug，请到[这里](https://bugs.archlinux.org)汇报。
 
 也欢迎你自己实现新功能。也许你的代码或补丁不会被官方接受，但他人可能会用到。
 

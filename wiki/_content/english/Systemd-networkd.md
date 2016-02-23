@@ -240,7 +240,9 @@ Most common keys are:
 *   `DHCP=` enables [DHCPv4](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol") and/or DHCPv6 support. Accepts `yes`, `no`, `ipv4` or `ipv6`
 *   `DNS=` is a [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") server address. You can specify this option more than once
 *   `Bridge=` is the name of the bridge to add the link to
-*   `IPForward=` enables IP forwarding, performing the forwarding according to the routing table, and is required for setting up [Internet sharing](/index.php/Internet_sharing "Internet sharing"). Accepts `yes`, `no`, `ipv4`, `ipv6` or `kernel`. Note that `IPForward` defaults to 0, which means that if you do not specify a setting for `IPForward` in your .network file, your interface will have IP forwarding turned off even if you turned it on with `sysctl` or by writing into `/proc/sys`.
+*   `IPForward=` defaults to `no`. It enables IP forwarding, performing the forwarding according to the routing table and is required for setting up [Internet sharing](/index.php/Internet_sharing "Internet sharing"). Note that turning `IPForward=` on applies to *all* network interfaces.
+
+Please see `systemd.network(5)` for details.
 
 #### [Address] section
 

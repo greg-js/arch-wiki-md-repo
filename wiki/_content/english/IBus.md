@@ -161,7 +161,7 @@ Then you can either let KDE autostart ibus, or set it as the input method applic
 
 If anyone has any issues with IBus and *rxvt-unicode*, the following steps should solve it.
 
-Add the following to your `~/.Xdefaults` (possibly not required, first try without):
+Add the following to your `~/.Xresources` (possibly not required, first try without):
 
 ```
 URxvt.inputMethod: ibus

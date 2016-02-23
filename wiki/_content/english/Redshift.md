@@ -17,6 +17,7 @@ The project is developed on [GitHub](https://github.com/jonls/redshift).
     *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
     *   [3.2 redshift-gtk will not start](#redshift-gtk_will_not_start)
     *   [3.3 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
+    *   [3.4 If you can't get redshift to autostart in i3](#If_you_can.27t_get_redshift_to_autostart_in_i3)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -162,6 +163,10 @@ users=
 ```
 
 If using Gnome, you can also toggle Location Services to "On" in "Settings -> Privacy"
+
+### If you can't get redshift to autostart in i3
+
+You can add 'exec --no-startup-id redshift-gtk to your i3 config
 
 ## See also
 

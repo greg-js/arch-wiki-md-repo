@@ -42,6 +42,7 @@ This article covers all non-specific (ie, not related to any one printer) troubl
         *   [6.9.1 Conflict with SANE](#Conflict_with_SANE)
     *   [6.10 Cannot print from LibreOffice](#Cannot_print_from_LibreOffice)
     *   [6.11 Printer output shifted](#Printer_output_shifted)
+    *   [6.12 Printer becomes stuck after a problem](#Printer_becomes_stuck_after_a_problem)
 
 ## Introduction
 
@@ -503,3 +504,7 @@ If you can print a test page from the [CUPS](/index.php/CUPS "CUPS") web interfa
 ### Printer output shifted
 
 This seems to be caused by the wrong page size being set in [CUPS](/index.php/CUPS "CUPS").
+
+### Printer becomes stuck after a problem
+
+When an issue arises during printing, the printer in CUPS may become unresponsive. `lpq` reports that the printer `is not ready`. It can be reactivated using `cupsenable`. To automatically have CUPS reactivate the printer, change [ErrorPolicy](https://www.cups.org/documentation.php/doc-1.6/ref-printers-conf.html#ErrorPolicy) from the default `stop-printer` to `retry-current-job`.

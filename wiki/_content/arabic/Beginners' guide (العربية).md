@@ -2,7 +2,7 @@
 
 الصفحة الرئيسية للمجتمع على ArchWiki هو المورد الأساسي الذي ينبغي استشارته إذا نشأت أي مشاكل.
 
-قناة المجتمع IRC ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) وأيضا المنتديات forums تعتبر مصدرا ممتازا إن لم تجد إجابة عن اﻷسئلة في مكان آخر. وفقا ل Arch Way ، مطلوب منك أن تكتب man command لقراءة صفحة الإراشادات ﻷي أمر man لست معتادا عليه .
+قناة المجتمع (IRC ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux) وأيضا المنتديات forums تعتبر مصدرا ممتازا إن لم تجد إجابة عن اﻷسئلة في مكان آخر. وفقا ل Arch Way ، مطلوب منك أن تكتب man command لقراءة صفحة الإراشادات ﻷي أمر غير مألوف بالنسبة لك.
 
 ## Contents
 
