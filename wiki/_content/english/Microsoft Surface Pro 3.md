@@ -47,7 +47,7 @@ Boot into the UEFI setup, and select *Secure Boot Control > Disable*. Now contin
 
 ### Boot with Secure Boot
 
-See [Unified Extensible Firmware Interface#Secure Boot](/index.php/Unified_Extensible_Firmware_Interface#Secure_Boot "Unified Extensible Firmware Interface").
+See [Secure Boot](/index.php/Secure_Boot "Secure Boot").
 
 ## Installation
 

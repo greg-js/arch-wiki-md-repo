@@ -77,6 +77,8 @@ To enable this swap partition on boot, add an entry to [fstab](/index.php/Fstab 
 *   Adding an entry to fstab is optional in most cases with systemd. See the next subsection.
 *   If using an SSD with TRIM support, consider using `defaults,discard` in the swap line in [fstab](/index.php/Fstab "Fstab"). If activating swap manually with *swapon*, using the `-d` or `--discard` parameter achieves the same. See `man 8 swapon` for details.
 
+**Warning:** Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.
+
 ### Activation by systemd
 
 systemd activates swap partitions based on two different mechanisms, both are executables in `/usr/lib/systemd/system-generators`. The generators are run on start-up and create native systemd units for mounts. The first, `systemd-fstab-generator`, reads the fstab to generate units, including a unit for swap. The second, `systemd-gpt-auto-generator` inspects the root disk to generate units. It operates on GPT disks only, and can identify swap partitions by their type code **82**.

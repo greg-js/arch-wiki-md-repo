@@ -19,12 +19,12 @@ RNGD_OPTS="-o /dev/random -r /dev/my_hw_random_device"
 
 ```
 
-**Warning:** Some tutorials available in the Internet, and even early versions of rng-tools package, recommend the following line for systems without TRGN:
+**Warning:** Some tutorials available in the Internet, and even early versions of rng-tools package, recommend the following line for systems without TRNG:
 ```
 RNGD_OPTS="-o /dev/random -r /dev/urandom"
 
 ```
-Of course, this is a [really bad idea](https://lwn.net/Articles/525459/), since you are simple filling the kernel entropy pool with entropy coming from the kernel itself! If your system does not have an available TRGN consider using [haveged](/index.php/Haveged "Haveged") instead. See [FS#34580](https://bugs.archlinux.org/task/34580) for details.
+Of course, this is a [really bad idea](https://lwn.net/Articles/525459/), since you are simple filling the kernel entropy pool with entropy coming from the kernel itself! If your system does not have an available TRNG consider using [haveged](/index.php/Haveged "Haveged") instead. See [FS#34580](https://bugs.archlinux.org/task/34580) for details.
 
 If your system does not have a [TPM module](https://en.wikipedia.org/wiki/Trusted_Platform_Module "wikipedia:Trusted Platform Module"), you may pass `"--no-tpm=1"` to `RNGD_OPTS` to suppress the following warning message from log:
 

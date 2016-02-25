@@ -14,19 +14,20 @@ From the project [home page](http://www.pidgin.im/):
 *   [8 Xfire](#Xfire)
 *   [9 Web QQ](#Web_QQ)
 *   [10 Facebook XMPP](#Facebook_XMPP)
-*   [11 Privacy](#Privacy)
-    *   [11.1 Pidgin-OTR](#Pidgin-OTR)
-    *   [11.2 Pidgin-Encryption](#Pidgin-Encryption)
-    *   [11.3 Pidgin-GPG](#Pidgin-GPG)
-*   [12 Sametime protocol](#Sametime_protocol)
-*   [13 SIP/Simple protocol for Live Communications Server 2003/2005/2007](#SIP.2FSimple_protocol_for_Live_Communications_Server_2003.2F2005.2F2007)
-*   [14 Other packages](#Other_packages)
-*   [15 Skype plugin](#Skype_plugin)
-*   [16 Auto logout on suspend](#Auto_logout_on_suspend)
-*   [17 Troubleshooting](#Troubleshooting)
-    *   [17.1 Installing Pidgin after a Carrier installation](#Installing_Pidgin_after_a_Carrier_installation)
-*   [18 History import Kopete to Pidgin](#History_import_Kopete_to_Pidgin)
-*   [19 See also](#See_also)
+*   [11 Security](#Security)
+*   [12 Privacy](#Privacy)
+    *   [12.1 Pidgin-OTR](#Pidgin-OTR)
+    *   [12.2 Pidgin-Encryption](#Pidgin-Encryption)
+    *   [12.3 Pidgin-GPG](#Pidgin-GPG)
+*   [13 Sametime protocol](#Sametime_protocol)
+*   [14 SIP/Simple protocol for Live Communications Server 2003/2005/2007](#SIP.2FSimple_protocol_for_Live_Communications_Server_2003.2F2005.2F2007)
+*   [15 Other packages](#Other_packages)
+*   [16 Skype plugin](#Skype_plugin)
+*   [17 Auto logout on suspend](#Auto_logout_on_suspend)
+*   [18 Troubleshooting](#Troubleshooting)
+    *   [18.1 Installing Pidgin after a Carrier installation](#Installing_Pidgin_after_a_Carrier_installation)
+*   [19 History import Kopete to Pidgin](#History_import_Kopete_to_Pidgin)
+*   [20 See also](#See_also)
 
 ## Installation
 
@@ -153,6 +154,13 @@ Simply install [pidgin-lwqq](https://www.archlinux.org/packages/?name=pidgin-lwq
 Facebook XMPP is not working since April 30th, 2015\. See [[1]](https://developers.facebook.com/docs/chat?_fb_noscript=1)
 
 An alternative is to use a ThirdPartyPlugin that uses Facebook IM, see [[2]](https://github.com/jgeboski/purple-facebook)
+
+## Security
+
+Pidgin uses Libpurple 2 which stores passwords unencrypted (in plaintext) in $HOME/.purple/account.xml, see [[3]](https://developer.pidgin.im/wiki/PlainTextPasswords). You can store them in a keyring by using a plugin like:
+
+*   [purple-gnome-keyring](https://aur.archlinux.org/packages/purple-gnome-keyring/)
+*   [pidgin-kwallet](https://www.archlinux.org/packages/?name=pidgin-kwallet)
 
 ## Privacy
 

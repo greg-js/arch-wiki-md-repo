@@ -8,10 +8,10 @@ Improving the boot performance of a system can provide reduced boot wait times a
     *   [1.3 Using bootchart2](#Using_bootchart2)
 *   [2 Readahead](#Readahead)
 *   [3 Compiling a custom kernel](#Compiling_a_custom_kernel)
-*   [4 Early start for services](#Early_start_for_services)
-*   [5 Staggered spin-up](#Staggered_spin-up)
-*   [6 Filesystem mounts](#Filesystem_mounts)
-*   [7 Initramfs](#Initramfs)
+*   [4 Initramfs](#Initramfs)
+*   [5 Early start for services](#Early_start_for_services)
+*   [6 Staggered spin-up](#Staggered_spin-up)
+*   [7 Filesystem mounts](#Filesystem_mounts)
 *   [8 Less output during boot](#Less_output_during_boot)
 *   [9 Suspend to RAM](#Suspend_to_RAM)
 
@@ -106,6 +106,10 @@ To enable systemd readahead install the [systemd-readahead](https://aur.archlinu
 
 Compiling a custom kernel can reduce boot time and memory usage. Though with the standardization of the 64 bit architecture and the modular nature of the Linux kernel, these benefits may not be as great as expected. [Read more about compiling a kernel](/index.php/Kernel_Compilation "Kernel Compilation").
 
+## Initramfs
+
+In a similar approach to [#Compiling a custom kernel](#Compiling_a_custom_kernel), the initramfs can be slimmed down. A simple way is to include the [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") `autodetect` hook. If you want to go further than that, see [Minimal initramfs](/index.php/Minimal_initramfs "Minimal initramfs").
+
 ## Early start for services
 
 One central feature of systemd is [D-Bus](/index.php/D-Bus "D-Bus") and socket activation. This causes services to be started when they are first accessed and is generally a good thing. However, if you know that a service (like [UPower](/index.php/UPower "UPower")) will always be started during boot, then the overall boot time might be reduced by starting it as early as possible. This can be achieved (if the service file is set up for it, which in most cases it is) by issuing:
@@ -144,10 +148,6 @@ Other filesystems like `/home` can be mounted with custom mount units. Adding `n
 
 *   This will make your `/home` filesystem type `autofs`, which is ignored by [mlocate](/index.php/Mlocate "Mlocate") by default. The speedup of automounting `/home` may not be more than a second or two, depending on your system, so this trick may not be worth it.
 *   If the system is installed into a [Btrfs](/index.php/Btrfs "Btrfs") subvolume (specifically: the root directory `/` itself is a subvolume) and `/home` is a separate file system, you may also want to prevent the creation of a `/home` subvolume. Mask the `home.conf` tmpfile: `ln -s /dev/null /etc/tmpfiles.d/home.conf`.
-
-## Initramfs
-
-See [Minimal initramfs](/index.php/Minimal_initramfs "Minimal initramfs")
 
 ## Less output during boot
 

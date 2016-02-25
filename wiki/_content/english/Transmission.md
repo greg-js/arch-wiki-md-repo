@@ -14,8 +14,7 @@
             *   [3.1.2.3 NetworkManager](#NetworkManager)
     *   [3.2 Choosing a user](#Choosing_a_user)
     *   [3.3 Configuring the daemon](#Configuring_the_daemon)
-        *   [3.3.1 Logging daemon to logfile](#Logging_daemon_to_logfile)
-        *   [3.3.2 Watch dir](#Watch_dir)
+        *   [3.3.1 Watch dir](#Watch_dir)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 UDP Failed to set receive/sent buffer](#UDP_Failed_to_set_receive.2Fsent_buffer)
 *   [5 See also](#See_also)
@@ -200,10 +199,6 @@ Now `/mnt/data/torrents` will be accessible for the system user `facade` and for
 **Note:** If `/mnt/data/torrents` is located on a removable device, e.g. with an `/etc/fstab` entry with the option `nofail`, Transmission will complain that it cannot find your files. To remedy this, you can add `RequiresMountsFor=/mnt/data/torrents` to `/etc/systemd/system/transmission.service.d/transmission.conf` in the section `[Unit]`.
 
 An alternative is to add your user to the `transmission` group (`#usermod -a -G transmission yourusername`) and then modify the permissions on the `/var/lib/transmission` and `/var/lib/transmission/Downloads` directories to allow `rwx` access by members of the `transmission` group.
-
-#### Logging daemon to logfile
-
-too many tracker error messages in the syslog. logfile facility needed.
 
 #### Watch dir
 

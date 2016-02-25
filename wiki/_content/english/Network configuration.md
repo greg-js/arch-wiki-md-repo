@@ -4,10 +4,10 @@ This page explains how to set up a **wired** connection to a network. If you nee
 
 *   [1 Check the connection](#Check_the_connection)
 *   [2 Set the hostname](#Set_the_hostname)
-*   [3 Device Driver](#Device_Driver)
+*   [3 Device driver](#Device_driver)
     *   [3.1 Check the status](#Check_the_status)
     *   [3.2 Load the module](#Load_the_module)
-*   [4 Network Interfaces](#Network_Interfaces)
+*   [4 Network interfaces](#Network_interfaces)
     *   [4.1 Device names](#Device_names)
         *   [4.1.1 Get current device names](#Get_current_device_names)
         *   [4.1.2 Change device name](#Change_device_name)
@@ -121,7 +121,7 @@ To temporarily set the hostname (until reboot), use *hostname* from [inetutils](
 
 ```
 
-## Device Driver
+## Device driver
 
 ### Check the status
 
@@ -153,7 +153,7 @@ Search in the Internet for the right module/driver for the chipset. Some common 
 
 If udev is not detecting and loading the proper module automatically during bootup, see [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules").
 
-## Network Interfaces
+## Network interfaces
 
 ### Device names
 

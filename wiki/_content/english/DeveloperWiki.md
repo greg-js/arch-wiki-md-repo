@@ -38,17 +38,13 @@
 *   [DeveloperWiki:Adopting Packages](/index.php/DeveloperWiki:Adopting_Packages "DeveloperWiki:Adopting Packages")
 *   [DeveloperWiki:Package Testing](/index.php/DeveloperWiki:Package_Testing "DeveloperWiki:Package Testing")
 *   [DeveloperWiki:PKGBUILD.com](/index.php/DeveloperWiki:PKGBUILD.com "DeveloperWiki:PKGBUILD.com")
-*   [DeveloperWiki:Migration Procedure: Proposal](/index.php/DeveloperWiki:Migration_Procedure:_Proposal "DeveloperWiki:Migration Procedure: Proposal")
 
 ### Packaging Reference
 
 *   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
 *   [DeveloperWiki:Provides Database](/index.php/DeveloperWiki:Provides_Database "DeveloperWiki:Provides Database")
-*   [DeveloperWiki:Repo Cleanup](/index.php/DeveloperWiki:Repo_Cleanup "DeveloperWiki:Repo Cleanup")
 *   [DeveloperWiki:KDE](/index.php/DeveloperWiki:KDE "DeveloperWiki:KDE")
-*   [DeveloperWiki:Python Todo List](/index.php/DeveloperWiki:Python_Todo_List "DeveloperWiki:Python Todo List")
 *   [DeveloperWiki:Ncurses Todo List](/index.php/DeveloperWiki:Ncurses_Todo_List "DeveloperWiki:Ncurses Todo List")
-*   [DeveloperWiki:Unimportant Rebuild List](/index.php/DeveloperWiki:Unimportant_Rebuild_List "DeveloperWiki:Unimportant Rebuild List")
 
 ### Important Public Information
 
@@ -66,8 +62,6 @@
 
 ### Artwork and Branding
 
-*   [DeveloperWiki:Branding Proposals](/index.php/DeveloperWiki:Branding_Proposals "DeveloperWiki:Branding Proposals")
-*   [DeveloperWiki:Branding Todo List](/index.php/DeveloperWiki:Branding_Todo_List "DeveloperWiki:Branding Todo List")
 *   [DeveloperWiki:TrademarkPolicy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy")
 
 ### Web Development
@@ -77,8 +71,6 @@
 ### Release Engineering
 
 *   [DeveloperWiki:iso building](/index.php/DeveloperWiki:iso_building "DeveloperWiki:iso building")
-*   [DeveloperWiki:releng testimages feedback](/index.php/DeveloperWiki:releng_testimages_feedback "DeveloperWiki:releng testimages feedback")
-*   [DeveloperWiki:releng roadmap](/index.php/DeveloperWiki:releng_roadmap "DeveloperWiki:releng roadmap")
 
 ### Devops Team
 

@@ -493,14 +493,14 @@ Some programs, especially games, use different methods of reading input, so anot
 For the `evrouter` command to be able to read the input devices, it will have to be run in the `input` group (or as root). This can be achieved by adding yourself to that group:
 
 ```
-sudo gpasswd -a *user* input
+# gpasswd -a *user* input
 
 ```
 
 Now we can use the `--dump` option to display what the button to be changed is called:
 
-**Tip:** udev will usually create symbolic links in `/dev/input/by-id/` which can be used to refer to specific devices.
- `evrouter --dump /dev/input/event*` 
+**Tip:** For USB devices udev will usually create symbolic links in `/dev/input/by-id/` which can be used to refer to specific devices.
+ `$ evrouter --dump /dev/input/event*` 
 ```
 device  0: /dev/input/event0: AT Translated Set 2 keyboard
 device  1: /dev/input/event1: Microsoft Microsoft Trackball Explorer®
@@ -542,15 +542,15 @@ The 'event1' was changed to 'event*' in case udev gives it a different device nu
 After setting up the config file, run it as a daemon:
 
 ```
-evrouter /dev/input/event*
+$ evrouter /dev/input/event*
 
 ```
 
 To stop the daemon:
 
 ```
-evrouter -q
-rm -f /tmp/.evrouter*
+$ evrouter -q
+$ rm -f /tmp/.evrouter*
 
 ```
 
@@ -582,19 +582,9 @@ For the newest G5 mouse which is reported as "product 0xc049" original hack does
 
 Currently, I am using a startup script with a few dirty methods, so if somebody can propose better, please edit. I have created an input group and made my user a member of it.
 
-`/etc/rc.local`:
-
+ `/etc/rc.local` 
 ```
 #!/bin/bash
-# creating /dev/kbde nod and changing permissions
-# also do not forget to add kbde in modules line in /etc/rc.conf
-# to be honest, I'm not sure why we have to create /dev/kbde after each startup, but it seems that only this way it works
-# maybe first check if it's needed for you, too
-mknod --mode=220 /dev/kbde c 11 0 
-chgrp input /dev/kbde
-# changing permissions for event* -- evrouter needs that
-chmod 660 /dev/input/event*
-chgrp input /dev/input/event*
 # g5hack ran for a few times to make sure that it will work...
 # note that I have add it to /usr/bin, you should probably put your full path here
 # you probably should skip this lines, especially if you do not have a Logitech g5/g3/g7
@@ -603,21 +593,14 @@ g5hack /dev/usb/hiddev0 3
 g5hack /dev/usb/hiddev0 3
 
 ```
-
-`~/.kde/Autostart/init`:
-
+ `~/.kde/Autostart/init` 
 ```
 #!/bin/bash
-# there I use my script to start evrouter, which I have presented above
-evrouter-start
 # here I map my buttons so I can use G5 thumb button as push to talk in TS
 # note that I have to use it as middle button also on KDE
 # you probably do not need it
 xmodmap -e "pointer = 1 9 3 4 5 6 7 2 8 10 11 12"
-
 ```
-
-And voila, we have got it working immediately after KDE login.
 
 ## User tools
 

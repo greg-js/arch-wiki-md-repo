@@ -104,27 +104,17 @@ Then activate this new service by [starting](/index.php/Starting "Starting") `wo
 
 ### udev
 
-udev is capable of running any command as soon as a device is visible. Here, udev will turn on WOL. Due to the predictable network interface names, it can be a bit tricky to get it working. You can either use the PCI path (you can get it via `lspci`), or use a rule that is parsed after the interface renaming, i.e. bigger than 80\. For example, if your `lspci` output is
+[udev](/index.php/Udev "Udev") is capable of running any command as soon as a device is visible. The following rule will turn on WOL on all [network interfaces](/index.php/Network_interface "Network interface") whose name matches `enp*`:
 
- `$ lspci` 
+ `/etc/udev/rules.d/99-wol.rules` 
 ```
-04:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 06)
+ACTION=="add", SUBSYSTEM=="net", NAME=="enp*", RUN+="/usr/bin/ethtool -s $name wol g"
 
 ```
 
-Your udev rule (for this type of match -KERNELS-, the rule number is not relevant) could be
+The `$name` placeholder will be replaced by the value of the `NAME` variable for the matched device.
 
- `/etc/udev/rules.d/50-wol.rules`  `ACTION=="add", SUBSYSTEM=="net", KERNELS=="0000:04:00.0", RUN+="/usr/bin/ethtool -s $name wol g"` 
-
-Note the `$name` instead of `%k`. The former returns the predictable name, whereas the latter returns the traditional `eth0` style kernel name. Only the former works.
-
-Alternatively, you can force the rule by `NAME`, but this must be done after the rule which renames the interface (`80-net-setup-link.rules`). For the example given it would be:
-
- `/etc/udev/rules.d/99-wol.rules`  `ACTION=="add", SUBSYSTEM=="net", NAME=="enp4s0", RUN+="/usr/bin/ethtool -s $name wol g"` 
-
-This tells udev to run "/usr/bin/ethtool -s enp4s0 wol g" as soon as the device enp4s0 exists.
-
-You can also match with the old kernel name via KERNEL match, or even with a particular driver via DRIVER match. See [udev](/index.php/Udev "Udev") for more info.
+**Note:** The name of the configuration file is important. Due to the introduction of [persistent device names](/index.php/Network_configuration#Device_names "Network configuration") in systemd v197, it is important that the rules matching a specific network interface are named lexicographically after `80-net-name-slot.rules`, so that they are applied after the devices gain the persistent names.
 
 ### cron
 

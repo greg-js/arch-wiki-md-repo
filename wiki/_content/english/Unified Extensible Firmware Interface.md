@@ -10,8 +10,6 @@
     *   [2.2 Detecting UEFI Firmware bitness](#Detecting_UEFI_Firmware_bitness)
         *   [2.2.1 Non Macs](#Non_Macs)
         *   [2.2.2 Apple Macs](#Apple_Macs)
-    *   [2.3 Secure Boot](#Secure_Boot)
-        *   [2.3.1 Secure Boot in the installed system](#Secure_Boot_in_the_installed_system)
 *   [3 Linux Kernel Config options for UEFI](#Linux_Kernel_Config_options_for_UEFI)
 *   [4 UEFI Variables](#UEFI_Variables)
     *   [4.1 UEFI Variables Support in Linux Kernel](#UEFI_Variables_Support_in_Linux_Kernel)
@@ -56,9 +54,12 @@
 
 1.  System switched on - Power On Self Test, or POST process.
 2.  UEFI firmware is loaded. Firmware initializes the hardware required for booting.
-3.  Firmware then reads its Boot Manager data to determine which UEFI application to be launched and from where (i.e. from which disk and partition).
-4.  Firmware then launches the UEFI application as defined in the boot entry in the firmware's boot manager.
-5.  The launched UEFI application may launch another application (in case of UEFI Shell or a boot manager like rEFInd) or the kernel and initramfs (in case of a boot loader like GRUB) depending on how the UEFI application was configured.
+3.  Firmware then reads boot entry in the firmware's boot manager to determine which UEFI application to be launched and from where (i.e. from which disk and partition).
+4.  Firmware then launches the UEFI application.
+5.  Arch kernel support [EFISTUB](/index.php/EFISTUB "EFISTUB") by default, so EFI firmware could load the kernel as an EFI executable and then handle control to kernel.
+6.  Or the launched UEFI application may launch another application (in case of UEFI Shell or a boot manager like rEFInd) or the kernel and initramfs (in case of a boot loader like GRUB) depending on how the UEFI application was configured.
+
+If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enable, the boot process will verify authenticity of the EFI binary by signature.
 
 **Note:** On some UEFI systems the only possible way to launch UEFI application on boot (if it does not have custom entry in UEFI boot menu) is to put it in this fixed location: `<EFI SYSTEM PARTITION>/EFI/BOOT/BOOTX64.EFI` (for 64-bit x86 system)
 
@@ -88,93 +89,6 @@ ioreg -l -p IODeviceTree | grep firmware-abi
 ```
 
 If the command returns EFI32 then it is IA32 (32-bit) EFI firmware. If it returns EFI64 then it is x86_64 EFI firmware. Most of the Macs do not have UEFI 2.x firmware as Apple's EFI implementation is not fully compliant with UEFI 2.x Specification.
-
-### Secure Boot
-
-For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html) article. This section focuses on how to set up Secure Boot in Arch Linux. This section explains the procedure of booting the archiso with Secure Boot enabled. Booting the archiso with Secure Boot enabled is possible since the EFI applications `PreLoader.efi` and `HashTool.efi` have been added to it. A message will show up that says *Failed to Start loader... I will now execute HashTool.* To use HashTool for enrolling the hash of `loader.efi` and `vmlinuz.efi`, follow these steps.
-
-*   Select `OK`
-*   In the HashTool main menu, select `Enroll Hash`, choose `\loader.efi` and confirm with `Yes`. Again, select `Enroll Hash` and `archiso` to enter the archiso directory, then select `vmlinuz.efi` and confirm with `Yes`. Then choose `Exit` to return to the boot device selection menu.
-*   In the boot device selection menu choose `Arch Linux archiso x86_64 UEFI CD`
-
-The archiso boots, and you are presented with a shell prompt, automatically logged in as root. To check if the archiso was booted with Secure Boot, use this command:
-
-```
-$ od -An -t u1 /sys/firmware/efi/efivars/SecureBoot-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-
-```
-
-The characters denoted by `XXXX` differ from machine to machine. To help with this, you can use tab completion or list the EFI variables.
-
-If a Secure Boot is enabled, this command returns `1` as the final integer in a list of five, for example:
-
-```
-6  0  0  0  1
-
-```
-
-For a verbose status, another way is to execute:
-
-```
-# bootctl status
-
-```
-
-#### Secure Boot in the installed system
-
-[Install](/index.php/Install "Install") the [prebootloader](https://www.archlinux.org/packages/?name=prebootloader) package and copy `PreLoader.efi` and `HashTool.efi` to the boot{loader,manager} directory; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
-
-```
-# cp /usr/lib/prebootloader/{PreLoader,HashTool}.efi $ESP/EFI/systemd
-
-```
-
-Now copy over the boot{loader,manager} binary and rename it to "loader.efi"; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
-
-```
-# cp $ESP/EFI/systemd/systemd-bootx64.efi $ESP/EFI/systemd/loader.efi
-
-```
-
-Finally, create a new NVRAM entry to boot `PreLoader.efi`:
-
-```
-# efibootmgr -d /dev/sd**X** -p **Y** -c -L "PreLoader" -l /EFI/systemd/PreLoader.efi
-
-```
-
-Replace `X` with the drive letter and replace `Y` with the partition number of the EFI system partition.
-
-This entry should be added to the list as the first to boot; check with the `efibootmgr` command and adjust the bootorder if necessary.
-
-If there are problems booting the custom NVRAM entry, copy `HashTool.efi` & `loader.efi` to the default loader location booted automatically by UEFI systems:
-
-```
-# cp /usr/lib/prebootloader/HashTool.efi $ESP/EFI/Boot
-# cp $ESP/EFI/systemd/systemd-bootx64.efi $ESP/EFI/Boot/loader.efi
-
-```
-
-Copy over `PreLoader.efi` and rename it:
-
-```
-# cp /usr/lib/prebootloader/PreLoader.efi $ESP/EFI/Boot/bootx64.efi
-
-```
-
-For particularly intransigent UEFI implementations, copy `PreLoader.efi` to the default loader location used by Windows systems:
-
-```
-# mkdir -p $ESP/EFI/Microsoft/Boot
-# cp /usr/lib/prebootloader/PreLoader.efi $ESP/EFI/Microsoft/Boot/bootmgfw.efi
-
-```
-
-**Note:** If dual-booting with Windows, backup the original `bootmgfw.efi` first as replacing it may cause problems with Windows updates.
-
-As before, copy `HashTool.efi` & `loader.efi` to `$ESP/EFI/Microsoft/Boot`
-
-When the system starts with Secure Boot enabled, follow the steps above to enrol `loader.efi` and `/vmlinuz-linux` (or whichever kernel image is being used).
 
 ## Linux Kernel Config options for UEFI
 

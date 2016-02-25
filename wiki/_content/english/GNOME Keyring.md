@@ -16,7 +16,8 @@ From [GnomeKeyring](https://live.gnome.org/GnomeKeyring/):
             *   [3.1.2.2 xinitrc method](#xinitrc_method)
     *   [3.2 With a display manager](#With_a_display_manager)
 *   [4 SSH keys](#SSH_keys)
-    *   [4.1 Disable keyring daemon SSH component](#Disable_keyring_daemon_SSH_component)
+    *   [4.1 Start SSH and Secrets components of keyring daemon](#Start_SSH_and_Secrets_components_of_keyring_daemon)
+    *   [4.2 Disable keyring daemon SSH component](#Disable_keyring_daemon_SSH_component)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Integration with applications](#Integration_with_applications)
     *   [5.2 Flushing passphrases](#Flushing_passphrases)
@@ -171,6 +172,17 @@ Alternatively, to permanently save the a passphrase in the keyring, use seahorse
 ```
 
 **Note:** You have to have a have the corresponding `.pub` file in the same directory as the private key (`~/.ssh/id_dsa.pub` in the example). Also, make sure that the public key is the file name of the private key plus `.pub` (for example, `my_key.pub`).
+
+### Start SSH and Secrets components of keyring daemon
+
+If you are starting Gnome Keyring with a display manager or the Pam method described above and you are NOT using Gnome, Unity or Mate as your desktop you may find that the SSH and Secrets components are not being started automatically. You can fix this by copying the desktop files gnome-keyring-ssh.desktop and gnome-keyring-secrets.desktop from /etc/xdg/autostart/ to ~/.config/autostart/ and deleting the OnlyShowIn line.
+
+```
+$ cp /etc/xdg/autostart/{gnome-keyring-secrets.desktop,gnome-keyring-ssh.desktop} ~/.config/autostart/
+$ sed -i '/^OnlyShowIn.*$/d' ~/.config/autostart/gnome-keyring-secrets.desktop
+$ sed -i '/^OnlyShowIn.*$/d' ~/.config/autostart/gnome-keyring-ssh.desktop
+
+```
 
 ### Disable keyring daemon SSH component
 

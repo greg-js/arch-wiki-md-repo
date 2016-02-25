@@ -31,6 +31,7 @@ According to the [official website](http://www.gnupg.org):
     *   [7.3 pinentry](#pinentry)
     *   [7.4 Start gpg-agent with systemd user](#Start_gpg-agent_with_systemd_user)
     *   [7.5 Unattended passphrase](#Unattended_passphrase)
+    *   [7.6 SSH agent](#SSH_agent)
 *   [8 Smartcards](#Smartcards)
     *   [8.1 GnuPG only setups](#GnuPG_only_setups)
     *   [8.2 GnuPG together with OpenSC](#GnuPG_together_with_OpenSC)
@@ -361,31 +362,9 @@ where `archlinux-<version>-dual.iso` must be located in the same directory.
 
 ## gpg-agent
 
-*gpg-agent* is mostly used as daemon to request and cache the password for the keychain. This is useful if GnuPG is used from an external program like a mail client. It can be activated by adding following line in `gpg.conf`:
+*gpg-agent* is mostly used as daemon to request and cache the password for the keychain. This is useful if GnuPG is used from an external program like a mail client.
 
- `~/.gnupg/gpg.conf`  `use-agent` 
-
-This tells GnuPG to use the agent whenever it needs the password. However, the agent needs to be already running. To autostart it, add the following entry to your `.xinitrc` or `.bash_profile`. Remember to change the envfile path if you changed your `$GNUPGHOME`.
-
- `~/.bash_profile` 
-```
-envfile="$HOME/.gnupg/gpg-agent.env"
-if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
-    eval "$(cat "$envfile")"
-else
-    eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "$envfile")"
-fi
-export GPG_AGENT_INFO  # the env file does not contain the export statement
-export SSH_AUTH_SOCK   # enable gpg-agent for ssh
-
-```
-
-Log out of the session and log back in. Check if *gpg-agent* is activated:
-
-```
-$ pgrep gpg-agent
-
-```
+Starting with GnuPG 2.1.0 the use of *gpg-agent* is required. *gpg-agent* is started on-demand by the GnuPG tools, so there is usually no reason to start it manually.
 
 ### Configuration
 
@@ -407,14 +386,14 @@ where XXXX is the keygrip. You can get its value when running `gpg --with-keygri
 
 ### Reload the agent
 
-After changing the configuration, reload the agent by piping the `RELOADAGENT` string to `gpg-connect-agent`.
+After changing the configuration, reload the agent using *gpg-connect-agent*:
 
 ```
-$ echo RELOADAGENT | gpg-connect-agent
+$ gpg-connect-agent reloadagent /bye
 
 ```
 
-The shell should print `OK`.
+The command should print `OK`.
 
 ### pinentry
 
@@ -452,28 +431,18 @@ IgnoreOnIsolate=true
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/gpg-agent --daemon --homedir=%h/.gnupg
-ExecStop=/usr/bin/pkill gpg-agent
+ExecStart=/usr/bin/gpg-agent --daemon
 Restart=on-abort
 
 [Install]
 WantedBy=default.target
 ```
 
-**Note:**
-
-*   You may need to set some environment variables for the service, for example `GNUPGHOME`. See [systemd/User#Environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User") for details.
-*   if your gnupg home directory is ~/.gnupg, there is no need to specify its path
-*   `gpg -agent` will not use standard socket, but rather listen for a socket name `S.gpg-agent` located in your gnupg home directory. We can thus forget any script to read an environment file and get the path of the random socket created in `/tmp`.
-*   If you use SSH capabilities of gpg-agent (--enable-ssh-support), the systemd unit above will not work
-
-**Tip:**
-
-To ensure your gpg-agent is running and listening to connection, simply run this command: `$ gpg-connect-agent`. If your settings are valid, you will be on a prompt (enter *bye* and *quit* to close connection and leave)
+**Note:** If you use non-default value for the [#GNUPGHOME](#GNUPGHOME) environment variable, you need to pass it to the service. See [systemd/User#Environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User") for details.
 
 ### Unattended passphrase
 
-Starting with GnuPG 2.1.0 the use of gpg-agent and pinentry is required; this may break backwards compatibility for passphrases piped in from STDIN using the `--passphrase-fd 0` commandline option. In order to have the same type of functionality as the older releases two things must be done:
+Starting with GnuPG 2.1.0 the use of gpg-agent and pinentry is required, which may break backwards compatibility for passphrases piped in from STDIN using the `--passphrase-fd 0` commandline option. In order to have the same type of functionality as the older releases two things must be done:
 
 First, edit the gpg-agent configuration to allow *loopback* pinentry mode:
 
@@ -491,7 +460,62 @@ $ gpg --pinentry-mode loopback ...
 ...or if this is not possible, add the option to the configuration:
 
  `~/.gnupg/gpg.conf`  `pinentry-mode loopback` 
-**Note:** The upstream author indicates setting **pinentry-mode loopback** in *gpg.conf* may break other usage, using the commandline option should be preferred if at all possible. [[2]](https://bugs.g10code.com/gnupg/issue1772)
+**Note:** The upstream author indicates setting `pinentry-mode loopback` in `gpg.conf` may break other usage, using the commandline option should be preferred if at all possible. [[2]](https://bugs.g10code.com/gnupg/issue1772)
+
+### SSH agent
+
+*gpg-agent* has OpenSSH agent emulation. If you already use the GnuPG suite, you might consider using its agent to also cache your SSH keys. Additionally, some users may prefer the PIN entry dialog GnuPG agent provides as part of its passphrase management.
+
+To start using GnuPG agent for your SSH keys, enable SSH support in the `~/.gnupg/gpg-agent.conf` file:
+
+ `~/.gnupg/gpg-agent.conf` 
+```
+enable-ssh-support
+
+```
+
+Next, make sure that *gpg-agent* is always started. Use either the [systemd user service](#Start_gpg-agent_with_systemd_user) or add the following to your `.bashrc` file:
+
+ `~/.bashrc` 
+```
+# Start the gpg-agent if not already running
+if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+  gpg-connect-agent /bye >/dev/null 2>&1
+fi
+
+```
+
+Then set `SSH_AUTH_SOCK` so that SSH will use *gpg-agent* instead of *ssh-agent*:
+
+ `~/.bashrc` 
+```
+# Set SSH to use gpg-agent
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+fi
+
+```
+
+Also set the GPG TTY and refresh the TTY in case user has switched into an X session. Example:
+
+ `~/.bashrc` 
+```
+# Set GPG TTY
+export GPG_TTY=$(tty)
+
+# Refresh gpg-agent tty in case user switches into an X session
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
+```
+
+Once *gpg-agent* is running you can use *ssh-add* to approve keys, following the same steps as for [ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys"). The list of approved keys is stored in the `~/.gnupg/sshcontrol` file. Once your key is approved, you will get a *pinentry* dialog every time your passphrase is needed. You can control passphrase caching in the `~/.gnupg/gpg-agent.conf` file. The following example would have *gpg-agent* cache your keys for 3 hours:
+
+ `~/.gnupg/gpg-agent.conf` 
+```
+default-cache-ttl-ssh 10800
+
+```
 
 ## Smartcards
 

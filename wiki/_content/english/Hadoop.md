@@ -51,7 +51,7 @@ The following example copies the unpacked conf directory to use as input and the
 $ HADOOP_CONF_DIR=/usr/lib/hadoop/orig_etc/hadoop/
 $ mkdir input
 $ cp /etc/hadoop/*.xml input
-$ hadoop jar /usr/lib/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
+$ hadoop jar /usr/lib/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep input output 'dfs[a-z.]+'
 $ cat output/*
 
 ```
@@ -125,7 +125,7 @@ $ hadoop fs -put /etc/hadoop input
 Run some of the examples provided:
 
 ```
-$ hadoop jar /usr/lib/hadoop-2.7.1/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
+$ hadoop jar /usr/lib/hadoop-2.7.2/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep input output 'dfs[a-z.]+'
 
 ```
 

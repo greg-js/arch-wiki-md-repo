@@ -6,7 +6,8 @@ The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be
 
 *   [1 Getting the Ingredients](#Getting_the_Ingredients)
 *   [2 Modifying the PKGBUILD](#Modifying_the_PKGBUILD)
-    *   [2.1 Changing build()](#Changing_build.28.29)
+    *   [2.1 Changing prepare()](#Changing_prepare.28.29)
+        *   [2.1.1 Load existing .config](#Load_existing_.config)
     *   [2.2 Generate new checksums](#Generate_new_checksums)
 *   [3 Compiling](#Compiling)
 *   [4 Installing](#Installing)
@@ -23,15 +24,21 @@ Since you'll be using [makepkg](/index.php/Makepkg "Makepkg"), follow the best p
 
 ```
 
-[Install](/index.php/Install "Install") the [abs](https://www.archlinux.org/packages/?name=abs) package and the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) package group from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [abs](https://www.archlinux.org/packages/?name=abs) package and the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) package group.
 
 You need a clean kernel to start your customization from. Fetch the kernel package files from ABS into your build directory by running:
 
- `$ ABSROOT=. abs core/linux` 
+```
+$ ABSROOT=. abs core/linux
+
+```
 
 If you have some problem with the firewall blocking the rsync port, you can try with -t, which uses the tarball to sync.
 
- `$ ABSROOT=. abs core/linux -t` 
+```
+$ ABSROOT=. abs core/linux -t
+
+```
 
 Then, get any other file you need (e.g. custom configuration files, patches, etc.) from the respective sources.
 
@@ -44,19 +51,13 @@ Edit `PKGBUILD` and look for the `pkgbase` parameter. Change this to your custom
 
 ```
 
-**Note:** Depending on the PKGBUILD you may have to also rename `linux.install` to match the modified `pkgbase` (e.g. for [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec)).
+Depending on the PKGBUILD you may have to also rename `linux.install` to match the modified `pkgbase` (e.g. for [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec)).
 
-### Changing build()
+### Changing prepare()
 
-If you need to change a few config options you can use the default one and append your options to the config file:
+In prepare function, you can apply needed kernel patch or change kernel build configuration.
 
-```
-$ echo '
-CONFIG_DEBUG_INFO=y
-CONFIG_FOO=n
-' >> config.x86_64
-
-```
+If you need to change a few config options you can edit config file in the source. Change or copy existing cofig file to `config.x86_64` for 64bit system and `config` for 32bit system.
 
 Or you can use GUI tool to tweak the options. Uncomment one of the possibilities shown in the prepare() function of the PKGBUILD, e.g.:
 
@@ -74,14 +75,13 @@ Or you can use GUI tool to tweak the options. Uncomment one of the possibilities
 
 ```
 
+**Warning:** systemd has a number of kernel configuration requirements for general use, for specific usecases (e.g., UEFI) and for specific systemd functionality (e.g., bootchart). Failure to meet these requirements can result in your system being degraded or unusable. The list of required and recommended kernel CONFIGs can be found in `/usr/share/doc/systemd/README`. Check them before you compile.These requirements also change over time. Because Arch assumes you are using the official kernel, there will be no announcement of these changes. Before you install a new version of systemd, check the version release notes to make sure your current custom kernel meets any new systemd requirements.
+
+#### Load existing .config
+
 If you have already a kernel `.config` file, uncommenting one of the interactive config tools, such as `nconfig`, and loading your `.config` from there avoids any problems with kernel naming that may otherwise occur - except in the case of at least make menuconfig. See note.
 
-**Note:**
-
-*   If you uncomment and use 'make menuconfig' in build(), then use the menuconfig gui to load your existing config, you will run into problems with conflicting files in the end package. This is because you will overwrite the default config that PKGBUILD has modified to provide a unique install path, specifically the LOCALVERSION and LOCALVERSION_AUTO config options. To fix this, simply re-set LOCALVERSION to your custom kernel naming and LOCALVERSION_AUTO=n while still in menuconfig. For details, see [BBS#173504](https://bbs.archlinux.org/viewtopic.php?id=173504)
-*   If you uncomment *return 1*, you can change to the kernel source directory after makepkg finishes extraction and then make nconfig. This lets you configure the kernel over multiple sessions. When you're ready to compile, copy the .config file over top of either config or config.x86_64 (depending on your architecture), comment *return 1* and use **makepkg -i**. But do not use this for custom patches; put your patch commands after these lines. If you do patch manually bztar unpack and replace your patch.
-
-**Warning:** systemd has a number of kernel configuration requirements for general use, for specific usecases (e.g., UEFI) and for specific systemd functionality (e.g., bootchart). Failure to meet these requirements can result in your system being degraded or unusable. The list of required and recommended kernel CONFIGs can be found in `/usr/share/doc/systemd/README`. Check them before you compile.These requirements also change over time. Because Arch assumes you are using the official kernel, there will be no announcement of these changes. Before you install a new version of systemd, check the version release notes to make sure your current custom kernel meets any new systemd requirements.
+**Note:** If you uncomment and use 'make menuconfig' in prepare(), then use the menuconfig gui to load your existing config, you will run into problems with conflicting files in the end package. This is because you will overwrite the default config that PKGBUILD has modified to provide a unique install path, specifically the LOCALVERSION and LOCALVERSION_AUTO config options. To fix this, simply re-set LOCALVERSION to your custom kernel naming and LOCALVERSION_AUTO=n while still in menuconfig. For details, see [BBS#173504](https://bbs.archlinux.org/viewtopic.php?id=173504)
 
 ### Generate new checksums
 
@@ -112,7 +112,9 @@ The `-s` parameter will download any additional dependencies used by recent kern
 
 ## Installing
 
-After the makepkg, you can have a look at the linux.install file. You will see that some variables have changed. Now, you only have to install the package as usual with pacman (or equivalent program):
+After the makepkg, you can have a look at the linux.install file. You will see that some variables have changed.
+
+Now, you only have to install the package as usual. Best practice is to install kernel headers first as they will be needed if you want your nvidia driver included with the [nvidia-hook](/index.php/NVIDIA#Alternate_install:_custom_kernel "NVIDIA").
 
 ```
 # pacman -U <kernel-headers_package>
@@ -120,8 +122,6 @@ After the makepkg, you can have a look at the linux.install file. You will see t
 
 ```
 
-**Note:** Best practice is to install kernel headers first as they will be needed if you want your nvidia driver included with the [nvidia-hook](/index.php/NVIDIA#Alternate_install:_custom_kernel "NVIDIA")
-
 ## Boot Loader
 
-Now, the folders and files for your custom kernel have been created, e.g. `/boot/vmlinuz-linux-test`. To test your kernel, update your bootloader (grub-mkconfig for GRUB) and add new entries ('default' and 'fallback') for your custom kernel. If you renamed your kernel in the *PKGBUILD pkgbase* you may have to rename the initramfs.img in your *$build/pkg/kernel/etc* before installing with pacman. That way, you can have both the stock kernel and the custom one to choose from.
+Now, the folders and files for your custom kernel have been created, e.g. `/boot/vmlinuz-linux-test`. To test your kernel, update your [bootloader](/index.php/Boot_loaders "Boot loaders") configuration file and add new entries ('default' and 'fallback') for your custom kernel. If you renamed your kernel in the *PKGBUILD pkgbase* you may have to rename the initramfs.img in your *$build/pkg/kernel/etc* before installing with pacman. That way, you can have both the stock kernel and the custom one to choose from.

@@ -25,7 +25,7 @@ You are able to disable Secure Boot using the firmware setup menu.
 
 **Note:** For security reasons, you are unable to change the firmware keys using [EFI utilities](/index.php/Unified_Extensible_Firmware_Interface#Userspace_Tools "Unified Extensible Firmware Interface"), even when Secure Boot is disabled.
 
-Read [Unified Extensible Firmware Interface#Secure Boot](/index.php/Unified_Extensible_Firmware_Interface#Secure_Boot "Unified Extensible Firmware Interface") for more information on how to generate firmware keys.
+Read [Secure Boot](/index.php/Secure_Boot "Secure Boot") for more information on how to generate firmware keys.
 
 In order to change the firmware keys, you must enter the [UEFI](/index.php/UEFI "UEFI") firmware setup menu. Enable the Secure Boot option. There should be an option below the Secure Boot toggle for changing UEFI firmware keys.
 

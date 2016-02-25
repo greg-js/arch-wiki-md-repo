@@ -375,8 +375,6 @@ To defragment the entire file system verbosely:
 
 ```
 
-**Note:** The command above will defragment only file data. To defragment directory metadata for every directory in the file system, run this command: `# find / -xdev -type d -print -exec btrfs filesystem defragment '{}' \;` 
-
 ### Compression
 
 Btrfs supports transparent compression, meaning every file on the partition is automatically compressed. This not only reduces the size of files, but also [improves performance](http://www.phoronix.com/scan.php?page=article&item=btrfs_compress_2635&num=1), in particular if using the [lzo algorithm](http://www.phoronix.com/scan.php?page=article&item=btrfs_lzo_2638&num=1), in some specific use cases (e.g. single thread with heavy file IO), while obviously harming performance on other cases (e.g. multithreaded and/or cpu intensive tasks with large file IO).

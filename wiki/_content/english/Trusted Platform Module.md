@@ -10,7 +10,7 @@ TPM is naturally supported only on devices that have TPM hardware support. If yo
 *   [2 Usage](#Usage)
     *   [2.1 Basics](#Basics)
     *   [2.2 Securing SSH Keys](#Securing_SSH_Keys)
-*   [3 References](#References)
+*   [3 See also](#See_also)
 
 ## Drivers
 
@@ -117,8 +117,9 @@ $ ssh-keygen -D /usr/lib/libsimple-tpm-pk11.so
 
 **Note:** This method currently does not allow for multiple keys to be generated and used.
 
-## References
+## See also
 
 *   [TPM on Wikipedia](https://en.wikipedia.org/wiki/Trusted_Platform_Module)
+*   [Protecting systems with the TPM](http://lwn.net/Articles/674751/)
 *   [Embedded Security Subsystem on Thinkwiki](http://www.thinkwiki.org/wiki/Embedded_Security_Subsystem)
 *   [TPM Fundamentals (PDF)](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)

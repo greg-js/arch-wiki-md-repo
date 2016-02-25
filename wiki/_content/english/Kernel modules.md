@@ -142,7 +142,7 @@ For example:
 options thinkpad_acpi fan_control=1
 ```
 
-**Note:** If any of the affected modules is loaded from the initramfs, then you will need to add the appropriate `.conf` file to `FILES` in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") or use the `modconf` [hook](/index.php/Mkinitcpio.conf#HOOKS "Mkinitcpio.conf"), so that it will be included in the initramfs.
+**Note:** If any of the affected modules is loaded from the initramfs, then you will need to add the appropriate `.conf` file to `FILES` in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") or use the `modconf` [hook](/index.php/Mkinitcpio.conf#HOOKS "Mkinitcpio.conf"), so that it will be included in the initramfs. To see the contents of the default initramfs use `lsinitcpio /boot/initramfs-linux.img`.
 
 ### Using kernel command line
 

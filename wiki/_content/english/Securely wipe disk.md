@@ -72,7 +72,7 @@ A good example is cryptsetup using `/dev/urandom` for [wiping the LUKS keyslots]
 
 #### Flash memory
 
-[Write amplification](https://en.wikipedia.org/wiki/Write_amplification "wikipedia:Write amplification") and other characteristics make Flash memory a stubborn target for reliable wiping. As there is a lot of transparent abstraction in between data as seen by a device's controller chip and the operating system sight data is never overwritten in place and wiping particular blocks or files is not reliable.
+[Write amplification](https://en.wikipedia.org/wiki/Write_amplification "wikipedia:Write amplification") and other characteristics make Flash memory (explicitly including SSDs) a stubborn target for reliable wiping. As there is a lot of transparent abstraction in between data as seen by a device's controller chip and the operating system sight data is never overwritten in place and wiping particular blocks or files is not reliable.
 
 Other "features" like transparent compression (all SandForce SSD's) can compress your /dev/zero or pattern stream so if wiping is fast beyond belief this might be the case.
 

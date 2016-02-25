@@ -17,4 +17,4 @@ The other drivers are not packaged yet, so you will have to install them manuall
 *   PowerVR: [https://imgtec.com/vulkan](https://imgtec.com/vulkan)
 *   Adreno: [https://developer.qualcomm.com/software/adreno-gpu-sdk/gpu](https://developer.qualcomm.com/software/adreno-gpu-sdk/gpu)
 
-To develop a Vulkan application, you will also need the SDK: [vulkan-sdk](https://www.archlinux.org/packages/?name=vulkan-sdk).
+To develop a Vulkan application, you will also need the [vulkan-headers](https://www.archlinux.org/packages/?name=vulkan-headers), and you will probably want the [vulkan-validation-layers](https://www.archlinux.org/packages/?name=vulkan-validation-layers) and the [vulkan-tools](https://www.archlinux.org/packages/?name=vulkan-tools).

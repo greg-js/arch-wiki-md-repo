@@ -1,8 +1,8 @@
 هذا المستند سيرشدك خلال عملية تثبيت [Arch Linux](/index.php/Arch_Linux "Arch Linux") باستخدام [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). قبل التثبيت, ننصحك بإلقاء نظرة على [FAQ](/index.php/FAQ "FAQ").
 
-الصفحة الرئيسية للمجتمع على ArchWiki هو المورد الأساسي الذي ينبغي استشارته إذا نشأت أي مشاكل.
+الصفحة الرئيسية للمجتمع على [ArchWiki](https://wiki.archlinux.org/index.php/Main_page_%28%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9%29) هي المورد الأساسي الذي ينبغي استشارته إذا نشأت أي مشاكل.
 
-قناة المجتمع (IRC ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux) وأيضا المنتديات forums تعتبر مصدرا ممتازا إن لم تجد إجابة عن اﻷسئلة في مكان آخر. وفقا ل Arch Way ، مطلوب منك أن تكتب man command لقراءة صفحة الإراشادات ﻷي أمر غير مألوف بالنسبة لك.
+تعتبر قناة المجتمع (IRC ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux) وأيضا المنتديات [forums](https://bbs.archlinux.org/) مصدرا ممتازا إن لم تجد إجابة عن اﻷسئلة في مكان آخر. وفقا لـ[منهج آرتش](https://wiki.archlinux.org/index.php/The_Arch_Way), نشجعك على أن تكتب man command لقراءة [دليل إرشادات](https://wiki.archlinux.org/index.php/Man_page) أي أمر غير مألوف لك.
 
 ## Contents
 
@@ -284,7 +284,7 @@ sda               8:0    0    80G  0 disk
 
 ****تلميح:**** معظم [أنظمة الملفات الخاصة بلينكس](https://en.wikipedia.org/wiki/File_system#Linux "wikipedia:File system") تستخدم نفس معرف القسم ([0x83](https://en.wikipedia.org/wiki/Partition_type#PID_83h "wikipedia:Partition type")), لذلك يفضل إستخدام `ext2` لقسم مهيأ بنظام ملفات `ext4`
 
-*   بداية القسم من أول الجهاز `*start*`. تتكون من عدد متبوع بـ [unit](http://www.gnu.org/software/parted/manual/parted.html#unit), مثلا `1M` تعني البداية من 1MiB
+*   بداية القسم من أول الجهاز `*start*`. تتكون من عدد متبوع بـ [وحدة](http://www.gnu.org/software/parted/manual/parted.html#unit), مثلا `1M` تعني البداية من 1MiB
 *   نهاية القسم `*end*`. بنفس صياغة `*start*`, مثلا `100%` تعني النهاية عند نهاية الجهاز (كامل المساحة المتبقية).
 
 **تحذير:** من المهم ألا تتخطى الأقسام بعضها البعض: إذا كنت لا ترغب بترك أي مساحة غير مستخدمة على الجهاز, تأكد من أن كل قسم يبدأ حيث انتهى سابقه.

@@ -19,6 +19,7 @@ This article explains what RAID is and how to create/manage a software RAID arra
         *   [3.6.1 Calculating the Stride and Stripe-width](#Calculating_the_Stride_and_Stripe-width)
             *   [3.6.1.1 Example 1\. RAID0](#Example_1._RAID0)
             *   [3.6.1.2 Example 2\. RAID5](#Example_2._RAID5)
+            *   [3.6.1.3 Example 3\. RAID10,far2](#Example_3._RAID10.2Cfar2)
 *   [4 Mounting from a Live CD](#Mounting_from_a_Live_CD)
 *   [5 Installing Arch Linux on RAID](#Installing_Arch_Linux_on_RAID)
     *   [5.1 Update configuration file](#Update_configuration_file_2)
@@ -72,13 +73,25 @@ There are many different [levels of RAID](https://en.wikipedia.org/wiki/Standard
 
 	Requires 3 or more physical drives, and provides the redundancy of RAID 1 combined with the speed and size benefits of RAID 0\. RAID 5 uses striping, like RAID 0, but also stores parity blocks *distributed across each member disk*. In the event of a failed disk, these parity blocks are used to reconstruct the data on a replacement disk. RAID 5 can withstand the loss of one member disk.
 
-**Note:** RAID 5 is a common choice due to its combination of speed and data redundancy. The caveat is that if one drive were to fail and another drive failed before that drive was replaced, all data will be lost.
+**Note:** RAID 5 is a common choice due to its combination of speed and data redundancy. The caveat is that if one drive were to fail and another drive failed before that drive was replaced, all data will be lost. Furthermore, with modern disk sizes and expected unrecoverable read error rates on consumer disks, the rebuild of a 4TiB array is **expected** (i.e. higher than 50% chance) to have at least one URE. Because of this, RAID 5 is no longer advised by the storage industry.
+
+	[RAID 6](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_6 "wikipedia:Standard RAID levels")
+
+	Requires 4 or more physical drives, and provides the benefits of RAID 5 but with security against two drive failures. RAID 6 also uses striping, like RAID 5, but stores two distinct parity blocks *distributed across each member disk*. In the event of a failed disk, these parity blocks are used to reconstruct the data on a replacement disk. RAID 6 can withstand the loss of two member disks. The robustness against unrecoverable read errors is somewhat better, because the array still has parity blocks when rebuilding from a single failed drive. However, given the overhead, RAID 6 is costly and in most settings RAID 10 in far2 layout (see below) provides better speed benefits and robustness, and is therefore preferred.
 
 ### Nested RAID levels
 
 	[RAID 1+0](https://en.wikipedia.org/wiki/Nested_RAID_levels#RAID_1_.2B_0 "wikipedia:Nested RAID levels")
 
-	Commonly referred to as *RAID 10*, is a nested RAID that combines two of the standard levels of RAID to gain performance and additional redundancy. It is the best alternative to RAID 5 when redundancy is crucial.
+	RAID1+0 is a nested RAID that combines two of the standard levels of RAID to gain performance and additional redundancy. It is commonly referred to as *RAID10*, however, Linux MD RAID10 is slightly different from simple RAID layering, see below.
+
+	[RAID 10](https://en.wikipedia.org/wiki/Non-standard_RAID_levels#Linux_MD_RAID_10 "wikipedia:Non-standard RAID levels")
+
+	RAID10 under Linux is built on the concepts of RAID1+0, however, it implements this as a single layer, with multiple possible layouts.
+
+	The *near X* layout on Y disks repeats each chunk X times on Y/2 stripes, but does not need X to divide Y evenly. The chunks are placed on almost the same location on each disk they're mirrored on, hence the name. It can work with any number of disks, starting at 2\. Near 2 on 2 disks is equivalent to RAID1, near 2 on 4 disks to RAID1+0.
+
+	The *far X* layout on Y disks is designed to offer striped read performance on a mirrored array. It accomplishes this by dividing each disk in two sections, say front and back, and what is written to disk 1 front is mirrored in disk 2 back, and vice versa. This has the effect of being able to stripe sequential reads, which is where RAID0 and RAID5 get their performance from. The drawback is that sequential writing has a very slight performance penalty because of the distance the disk needs to seek to the other section of the disk to store the mirror. RAID10 in far 2 layout is, however, preferable to layered RAID1+0 **and** RAID5 whenever read speeds are of concern and availability / redundancy is crucial. However, it is still not a substitute for backups. See the wikipedia page for more information.
 
 ### RAID level comparison
 
@@ -92,11 +105,7 @@ There are many different [levels of RAID](https://en.wikipedia.org/wiki/Standard
 **Best**
 
  | 2 |
-| **1** | Yes | 50% | nX (theoretically)
-
-1X (in practice)
-
- | 1X | 2 |
+| **1** | Yes | 50% | Up to nX if multiple processes are reading, otherwise 1X | 1X | 2 |
 | **5** | Yes | 67% - 94% | (n−1)X
 
 **Superior**
@@ -107,7 +116,12 @@ There are many different [levels of RAID](https://en.wikipedia.org/wiki/Standard
 
  | 3 |
 | **6** | Yes | 50% - 88% | (n−2)X | (n−2)X | 4 |
-| **10** | Yes | 50% | nX (theoretically) | (n/2)X | 4 |
+| **10,far2** | Yes | 50% | nX
+
+**Best;** on par with RAID0 but redundant
+
+ | (n/2)X | 2 |
+| **10,near2** | Yes | 50% | Up to nX if multiple processes are reading, otherwise 1X | (n/2)X | 2 |
 
 * Where *n* is standing for the number of dedicated disks.
 
@@ -207,6 +221,13 @@ The following example shows building a RAID5 array with 4 active devices and 1 s
 
 ```
 
+The following example shows building a RAID10,far2 array with 2 devices:
+
+```
+# mdadm --create --verbose --level=10 --metadata=1.2 --chunk=512 --raid-devices=2 --layout=f2 /dev/md0 /dev/sdb1 /dev/sdc1
+
+```
+
 **Tip:** See [Chunks: the hidden key to RAID performance](http://www.zdnet.com/article/chunks-the-hidden-key-to-raid-performance/) for determining a good chunk size.
 
 The array is created under the virtual device `/dev/mdX`, assembled and ready to use (in degraded mode). One can directly start using it while mdadm resyncs the array in the background. It can take a long time to restore parity. Check the progress with:
@@ -261,6 +282,15 @@ The array can now be formatted like any other disk, just keep in mind that:
 
 #### Calculating the Stride and Stripe-width
 
+The array will have an entry in
+
+```
+# /sys/devices/virtual/block/mdX/queue/optimal_io_size
+
+```
+
+(where mdX is the name of your array). It will give the stripe-width in bytes. Divide by the block size to get the stripe width in blocks, then divide by number of data disks to get the stride. The following calculations should match this.
+
 Stride = (chunk size/block size).
 
 **Note:** Arch's default block size for many filesystems is 4096, see: `/etc/mke2fs.conf` for details.
@@ -302,6 +332,31 @@ Stripe-width = (# of physical **data** disks * stride). In this example, the mat
 ```
 
 For more on stride and stripe-width, see: [RAID Math](http://wiki.centos.org/HowTos/Disk_Optimization).
+
+##### Example 3\. RAID10,far2
+
+Example formatting to ext4 with the correct stripe-width and stride:
+
+*   Hypothetical RAID10 array is composed of 2 physical disks. Because of the properties of RAID10 in far2 layout, both count as data disks.
+*   Chunk size is 512k.
+*   Block size is 4k.
+
+```
+# cat /sys/devices/virtual/block/md0/queue/optimal_io_size
+# 1048576
+
+```
+
+So the stripe-width should match 1048576 / 4096 = 256, and the stride should match 256 / 2 = 128.
+
+Stride = (chunk size/block size). In this example, the math is (512/4) so the stride = 128.
+
+Stripe-width = (# of physical **data** disks * stride). In this example, the math is (2*128) so the stripe-width = 256.
+
+```
+# mkfs.ext4 -v -L myarray -m 0.01 -b 4096 -E stride=128,stripe-width=256 /dev/md0
+
+```
 
 ## Mounting from a Live CD
 

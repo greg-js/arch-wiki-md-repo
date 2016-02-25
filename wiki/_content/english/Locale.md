@@ -10,18 +10,12 @@ Locales are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and 
     *   [3.2 LANGUAGE: fallback locales](#LANGUAGE:_fallback_locales)
     *   [3.3 LC_TIME: date and time format](#LC_TIME:_date_and_time_format)
     *   [3.4 LC_COLLATE: collation](#LC_COLLATE:_collation)
-*   [4 LC_ALL](#LC_ALL)
-*   [5 Customizing locales](#Customizing_locales)
-    *   [5.1 Setting the first day of the week](#Setting_the_first_day_of_the_week)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Launch application with different locale from terminal](#Launch_application_with_different_locale_from_terminal)
-    *   [6.2 Launch application with different locale from desktop](#Launch_application_with_different_locale_from_desktop)
-    *   [6.3 Using Python, ViM and UTF-8](#Using_Python.2C_ViM_and_UTF-8)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 My terminal does not support UTF-8](#My_terminal_does_not_support_UTF-8)
-        *   [7.1.1 Gnome-terminal or rxvt-unicode does not support UTF-8](#Gnome-terminal_or_rxvt-unicode_does_not_support_UTF-8)
-    *   [7.2 My system is still using wrong language](#My_system_is_still_using_wrong_language)
-*   [8 See also](#See_also)
+    *   [3.5 LC_ALL](#LC_ALL)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 My terminal does not support UTF-8](#My_terminal_does_not_support_UTF-8)
+        *   [4.1.1 Gnome-terminal or rxvt-unicode does not support UTF-8](#Gnome-terminal_or_rxvt-unicode_does_not_support_UTF-8)
+    *   [4.2 My system is still using wrong language](#My_system_is_still_using_wrong_language)
+*   [5 See also](#See_also)
 
 ## Generating locales
 
@@ -53,8 +47,8 @@ When done, save the file and generate the uncommented locale(s) by executing:
 
 **Note:**
 
-*   `locale-gen` also runs with every update of [glibc](https://www.archlinux.org/packages/?name=glibc).
-*   `UTF-8` is recommended over other options. [[1]](http://utf8everywhere.org/)
+*   `locale-gen` also runs with every update of [glibc](https://www.archlinux.org/packages/?name=glibc). [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/glibc.install?h=packages/glibc#n5)
+*   `UTF-8` is recommended over other options. [[2]](http://utf8everywhere.org/)
 
 ## Setting the locale
 
@@ -167,63 +161,15 @@ Setting the value to `C` can for example make the *ls* command sort dotfiles fir
 
  `locale.conf`  `LC_COLLATE=C` 
 
-See also [[2]](http://superuser.com/a/448294/175967).
+See also [[3]](http://superuser.com/a/448294/175967).
 
 To get around potential issues, Arch used to set `LC_COLLATE=C` in `/etc/profile`, but this method is now deprecated.
 
-## LC_ALL
+### LC_ALL
 
 The locale set for this variable will always override `LANG` and all the other `LC_*` variables, whether they are set or not.
 
 `LC_ALL` is the only `LC_*` variable, which **cannot** be set in `locale.conf` files: it is meant to be used only for testing or troubleshooting purposes, for example in `/etc/profile`.
-
-## Customizing locales
-
-Locales are defined in text files located in `/usr/share/i18n/locales/` and can be edited to adapt to particular needs.
-
-After editing a locale file, do not forget to [re-generate](#Generating_locales) the locales for the changes to take effect after reboot.
-
-### Setting the first day of the week
-
-In many countries the first day of the week is Monday. To adjust this, change or add the following lines:
-
- `/usr/share/i18n/locales/*chosen_locale*` 
-```
-LC_TIME
-[...]
-week            7;19971130;5
-first_weekday   2
-first_workday   2
-
-```
-
-## Tips and tricks
-
-### Launch application with different locale from terminal
-
-For example launch Abiword with Hebrew locale:
-
-```
-$ env LANG=he_IL.UTF-8 abiword &
-
-```
-
-### Launch application with different locale from desktop
-
-Copy the *.desktop* file to the user home directory so it will take precedence:
-
-```
-$ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
-
-```
-
-Edit the `Exec` command:
-
- `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
-
-### Using Python, ViM and UTF-8
-
-When executing `:!python -c "import sys; print(sys.stdout.encoding)"` in ViM, the output may be `ANSI_X3.4-1968`, even if the locale is set correctly everyhere. Set the `PYTHONIOENCODING` environment variable to `utf-8` to remedy the situation.
 
 ## Troubleshooting
 

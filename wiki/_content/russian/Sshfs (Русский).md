@@ -16,7 +16,7 @@
     *   [6.1 Контрольный список](#.D0.9A.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.81.D0.BF.D0.B8.D1.81.D0.BE.D0.BA)
     *   [6.2 Connection reset by peer](#Connection_reset_by_peer)
     *   [6.3 Remote host has disconnected](#Remote_host_has_disconnected)
-    *   [6.4 Freezing apps (e.g. Nautilus, Gedit)](#Freezing_apps_.28e.g._Nautilus.2C_Gedit.29)
+    *   [6.4 Подвисание приложений (например, Nautilus, Gedit)](#.D0.9F.D0.BE.D0.B4.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.28.D0.BD.D0.B0.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D1.80.2C_Nautilus.2C_Gedit.29)
     *   [6.5 Shutdown hangs when sshfs is mounted](#Shutdown_hangs_when_sshfs_is_mounted)
 *   [7 See also](#See_also)
 
@@ -283,18 +283,18 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 
 Для Arch Linux значением по умолчанию в `/etc/ssh/sshd_config` является `Subsystem sftp /usr/lib/ssh/sftp-server`.
 
-### Freezing apps (e.g. Nautilus, Gedit)
+### Подвисание приложений (например, Nautilus, Gedit)
 
-**Note:** This prevents the recently used file list from being populated and may lead to possible write errors.
+**Обратите внимание:** Этот способ предотвращает от загрязнения список последних использованных файлов и может привести к возможным ошибкам записи.
 
-If you experience freezing/hanging (stopped responding) applications, you may need to disable write-access to the `~/recently-used.xbel` file.
+Если у вас подвисают (не отвечают) приложения, вам возможно придется отключить защиту от записи файлу `~/recently-used.xbel`.
 
 ```
 # chattr +i /home/USERNAME/.local/share/recently-used.xbel
 
 ```
 
-See the following [bug report](https://bugs.archlinux.org/task/40260) for more details and/or solutions.
+Смотрите следующий [отчет об ошибке](https://bugs.archlinux.org/task/40260) для более подробной информации и/или решения.
 
 ### Shutdown hangs when sshfs is mounted
 

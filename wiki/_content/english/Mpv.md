@@ -105,7 +105,7 @@ You can cycle between aspect ratios using `Shift+a` from version 0.8.0 onwards.
 
 ### Drawing to a root window
 
-Run *mpv* with `--wid=0 file.mp4`. This tells *mpv* to draw onto a window with a window ID of 0.
+Run *mpv* with `--wid=0`. This tells *mpv* to draw onto a window with a window ID of 0.
 
 ### Always show GUI
 

@@ -48,7 +48,7 @@ Surface Pro 3有三种启动模式 [详细看这里](http://www.microsoft.com/su
 
 ### 开启Secure Boot启动安装镜像
 
-看这里[Unified Extensible Firmware Interface#Secure Boot](/index.php/Unified_Extensible_Firmware_Interface#Secure_Boot "Unified Extensible Firmware Interface").
+看这里[Secure Boot](/index.php/Secure_Boot "Secure Boot").
 
 ## 安装
 

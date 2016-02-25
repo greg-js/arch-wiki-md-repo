@@ -651,13 +651,13 @@ If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM
 
 | Model | Version | Comments | Compatible |
 | **Philips SHB9150** | bluez5, pulseaudio 5 | Pause and resume does not work. With at least mpv and Banshee hitting the pause button stops audio output but does not pause the player. | Limited |
-| **Philips SHB9100** | Pause and resume is flaky. See [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1315428#p1315428) for the underlying issue and a temporary solution to improve audio quality. | Limited |
+| **Philips SHB9100** | Pause and resume is flaky. See [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1315428#p1315428) for the underlying issue and a temporary solution to improve audio quality. | Limited |
 | **Philips SHB7000** | Pause and resume is flaky. | Limited |
 | **Philips SHB7100** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume is flaky (sometimes works in VLC, not at all in Audacious). Tested only A2DP and Handsfree audio out, built-in mic was broken. | Limited |
 | **Philips SHB7150** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume work in VLC. Tested only A2DP profile. | Yes |
 | **Philips SHB5500BK/00** | bluez 5.28, PulseAudio 6.0 | Pause and resume is not working. | Limited |
 | **Parrot Zik** | Firmware 1.04\. The microphone is detected, but does not work. Sometimes it lags (but does not stutter); usually this is not noticeable unless playing games, in which case you may switch to a wired connection. | Limited |
-| **Sony DR-BT50** | bluez{4,5} | Works for a2dp, see [[2]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html)). Adapter: D-Link DBT-120 USB dongle. | Yes |
+| **Sony DR-BT50** | bluez{4,5} | Works for a2dp, see [[3]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html)). Adapter: D-Link DBT-120 USB dongle. | Yes |
 | **Sony SBH50** | bluez5 | Works for a2dp, Adapter: Broadcom Bluetooth 2.1 Device (Vendor=0a5c ProdID=219b Rev=03.43). Requires the `btusb` [module](/index.php/Modprobe "Modprobe"). | Yes |
 | **Sony MDR-XB950BT** | pulseaudio | Tested a2dp. Adapter: Grand-X BT40G. Doesn't auto-connect, need to connect manually. Other functionality works fine. | Limited |
 | **Sony MUC-M1BT1** | bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/) | Both A2DP & HSP/HFP work fine. | Yes |

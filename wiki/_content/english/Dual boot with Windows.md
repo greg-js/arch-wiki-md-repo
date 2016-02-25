@@ -67,11 +67,11 @@ However if Arch is installed in BIOS-GPT in one disk and Windows is installed in
 
 ### UEFI Secure Boot
 
-All pre-installed Windows 8/8.1 systems by default boot in UEFI-GPT mode and have UEFI Secure Boot enabled by default (which can be manually disabled by the user) and Legacy BIOS support (CSM) disabled by default (which can be manually enabled by the user, if the firmware supports it) in the firmware. This is mandated by Microsoft for all OEM pre-installed systems.
+All pre-installed Windows 8/8.1 systems by default boot in UEFI-GPT mode and have UEFI Secure Boot enabled by default. This is mandated by Microsoft for all OEM pre-installed systems.
 
-Arch Linux install media currently supports Secure Boot but it requires some manual steps by the user to [setup the HashTool while booting](/index.php/UEFI#Secure_Boot "UEFI"). There it is advisable to disable UEFI Secure Boot in the firmware setup before attempting to boot Arch Linux. Windows 8/8.1 SHOULD continue to boot fine even if Secure boot is disabled.
+Arch Linux install media currently supports Secure Boot but it requires some manual steps by the user to [setup the HashTool while booting](/index.php/Secure_Boot#Secure_boot_archiso "Secure Boot").
 
-The only issue with regards to disabling UEFI Secure Boot support is that it requires physical access to the system to disable secure boot option in the firmware setup, as Microsoft has explicitly forbidden presence of any method to remotely or programmatically (from within OS) disable secure boot in all Windows 8/8.1 pre-installed systems
+So it is advisable to disable UEFI Secure Boot in the firmware setup manually before attempting to boot Arch Linux. Windows 8/8.1 SHOULD continue to boot fine even if Secure boot is disabled. The only issue with regards to disabling UEFI Secure Boot support is that it requires physical access to the system to disable secure boot option in the firmware setup, as Microsoft has explicitly forbidden presence of any method to remotely or programmatically (from within OS) disable secure boot in all Windows 8/8.1 pre-installed systems
 
 ### Fast Start-Up
 

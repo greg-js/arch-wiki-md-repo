@@ -2,7 +2,7 @@ The HP 2560p is a subnotebook with an Intel i5 or Intel i7 processor inside.
 
 | **Device** | **Working** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
-| Displayport | Not tested |
+| Displayport | Yes |
 | [Network](/index.php/Network "Network") | Yes |
 | [Wireless](/index.php/Wireless_network_configuration "Wireless network configuration") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |

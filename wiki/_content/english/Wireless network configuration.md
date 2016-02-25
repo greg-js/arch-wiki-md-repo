@@ -31,7 +31,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
     *   [3.8 Connection always times out](#Connection_always_times_out)
         *   [3.8.1 Lowering the rate](#Lowering_the_rate)
         *   [3.8.2 Lowering the txpower](#Lowering_the_txpower)
-        *   [3.8.3 Setting rts and fragmentation thresholds](#Setting_rts_and_fragmentation_thresholds)
+        *   [3.8.3 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
     *   [3.9 Random disconnections](#Random_disconnections)
         *   [3.9.1 Cause #1](#Cause_.231)
         *   [3.9.2 Cause #2](#Cause_.232)
@@ -603,7 +603,7 @@ If you are on a public wireless network that may have a [captive portal](https:/
 
 ### Connection always times out
 
-The driver may suffer from a lot of tx excessive retries and invalid misc errors for some unknown reason, resulting in a lot of packet loss and keep disconnecting, sometimes instantly. Following tips might be helpful.
+There are a few things to try if you are experiencing excessive transmission retries, errors, packet loss, and/or disconnects.
 
 #### Lowering the rate
 
@@ -623,38 +623,40 @@ Fixed option should ensure that the driver does not change the rate on its own, 
 
 #### Lowering the txpower
 
-You can try lowering the transmit power as well. This may save power as well:
+You can try lowering the transmit power. This may save power as well:
 
 ```
-# iwconfig wlan0 txpower 5
-
-```
-
-Valid settings are from `0` to `20`, `auto` and `off`.
-
-#### Setting rts and fragmentation thresholds
-
-Default iwconfig options have rts and fragmentation thresholds off. These options are particularly useful when there are many adjacent APs or in a noisy environment.
-
-The minimum value for fragmentation value is 256 and maximum is 2346\. In many windows drivers the maximum is the default value:
-
-```
-# iwconfig wlan0 frag 2346
+# iw phy0 set txpower fixed 500
 
 ```
 
-For rts minimum is 0, maximum is 2347\. Once again windows drivers often use maximum as the default:
+Valid settings are from 0 to 2000, though certain values may be restricted by your card's regulatory domain.
+
+#### Setting RTS and fragmentation thresholds
+
+Wireless hardware disables RTS and fragmentation by default. These are two different methods of increasing throughput at the expense of bandwidth (i.e. reliability at the expense of speed). These are useful in environments with wireless noise or many adjacent access points.
+
+Packet fragmentation improves throughput by splitting up packets with size exceeding the fragmentation threshold. The maximum value (2346) effectively disables fragmentation since no packet can exceed it. The minimum value (256) maximizes throughput, but may carry a significant bandwidth cost.
 
 ```
-# iwconfig wlan0 rts 2347
+# iw phy0 set frag 512
 
 ```
+
+[RTS](https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS "wikipedia:IEEE 802.11 RTS/CTS") improves throughput by performing a handshake with the access point before transmitting packets with size exceeding the RTS threshold. The maximum threshold (2347) effectively disables RTS since no packet can exceed it. The minimum threshold (0) enables RTS for all packets, which is probably excessive for most situations.
+
+```
+# iw phy0 set rts 500
+
+```
+
+**Note:** `phy0` is the name of the wireless device as listed by `$ iw phy`.
 
 ### Random disconnections
 
 #### Cause #1
 
-If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[2]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
+If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[1]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
 If your card does not support enabling/disabling power save mode, check the BIOS for power management options. Disabling PCI-Express power management in the BIOS of a Lenovo W520 resolved this issue.
 
@@ -885,7 +887,7 @@ If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
 
-Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[5]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[6]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[4]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[5]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
 In case this does not work for you, you may try disabling power saving for your wireless adapter. For a permanent solution, add a new udev rule:
 
@@ -893,7 +895,7 @@ In case this does not work for you, you may try disabling power saving for your 
 
 [Some](http://ubuntuforums.org/showthread.php?t=2183486&p=12845473#post12845473) have never gotten this to work. [Others](http://ubuntuforums.org/showthread.php?t=2205733&p=12935783#post12935783) found salvation by disabling N in their router settings after trying everything. This is known to have be the only solution on more than one occasion. The second link there mentions a 5ghz option that might be worth exploring.
 
-**Note:** The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)-3.14 kernel may take several minutes to load the firmware and make the wireless card ready for use. The issue is reported to be fixed in [linux](https://www.archlinux.org/packages/?name=linux)-3.17 kernel.[[7]](https://bbs.archlinux.org/viewtopic.php?id=190757)
+**Note:** The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)-3.14 kernel may take several minutes to load the firmware and make the wireless card ready for use. The issue is reported to be fixed in [linux](https://www.archlinux.org/packages/?name=linux)-3.17 kernel.[[6]](https://bbs.archlinux.org/viewtopic.php?id=190757)
 
 #### Disabling LED blink
 
@@ -950,7 +952,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[8]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[7]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
 
 #### hostap_cs
 

@@ -34,6 +34,9 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### February 2016
 
+*   [25 February 2016] [ASA-201602-20](https://lists.archlinux.org/pipermail/arch-security/2016-February/000561.html) [libssh2](https://www.archlinux.org/packages/?name=libssh2) man-in-the-middle
+*   [24 February 2016] [ASA-201602-19](https://lists.archlinux.org/pipermail/arch-security/2016-February/000560.html) [libgcrypt](https://www.archlinux.org/packages/?name=libgcrypt) secret key extraction
+*   [23 February 2016] [ASA-201602-18](https://lists.archlinux.org/pipermail/arch-security/2016-February/000559.html) [libssh](https://www.archlinux.org/packages/?name=libssh) man-in-the-middle
 *   [21 February 2016] [ASA-201602-17](https://lists.archlinux.org/pipermail/arch-security/2016-February/000558.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
 *   [21 February 2016] [ASA-201602-16](https://lists.archlinux.org/pipermail/arch-security/2016-February/000557.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) multiple issues
 *   [17 February 2016] [ASA-201602-15](https://lists.archlinux.org/pipermail/arch-security/2016-February/000555.html) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) multiple issues

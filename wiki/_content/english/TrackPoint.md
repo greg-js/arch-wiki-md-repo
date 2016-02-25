@@ -10,7 +10,7 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point, but mi
 *   [4 udev configuration rule](#udev_configuration_rule)
 *   [5 Xorg configuration](#Xorg_configuration)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Trackpoint is NOT detected or is detected after X minutes](#Trackpoint_is_NOT_detected_or_is_detected_after_X_minutes)
+    *   [6.1 Trackpoint is not detected or is detected after X minutes](#Trackpoint_is_not_detected_or_is_detected_after_X_minutes)
 *   [7 See also](#See_also)
 
 ## GUI configuration
@@ -55,7 +55,7 @@ The TrackPoint supports tap-to-click functionality just as most touchpads do. To
 
 This rule increases the trackpoint **speed** and enables **tap to select** (see above) on boot. Feel free to alter the values and add other modifications to files in /sys/devices/platform/i8042/serio1/serio2/. The rule also works for trackpoint-only devices.
 
- `/etc/udev/rules.d/10-trackpoint.rules`  `SUBSYSTEM=="serio", DRIVERS=="psmouse", ACTION=="change", ENV{SERIO_TYPE}=="05", ATTR{press_to_select}="1", ATTR{sensitivity}="230", ATTR{speed}="200"` 
+ `/etc/udev/rules.d/10-trackpoint.rules`  `ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/sensitivity}="240"` 
 
 ## Xorg configuration
 
@@ -77,7 +77,7 @@ EndSection
 
 ## Troubleshooting
 
-### Trackpoint is NOT detected or is detected after X minutes
+### Trackpoint is not detected or is detected after X minutes
 
 This appears to be a kernel bug. See: [https://bugzilla.kernel.org/show_bug.cgi?id=33292](https://bugzilla.kernel.org/show_bug.cgi?id=33292)
 

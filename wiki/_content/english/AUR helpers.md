@@ -149,7 +149,7 @@ This is a list of helper utilities that search and/or build packages.
 *   *Secure*: does not [source](/index.php/Source "Source"), by default, the PKGBUILD at all, or, before doing so, reminds the user and offers him the opportunity to inspect it manually. Some helpers are known to source PKGBUILDs before the user can inspect them, **allowing malicious code to be executed**. *Optional* means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
 *   *Clean build*: does not export new variables that can prevent a successful build process.
 *   *Reliable Parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli](https://aur.archlinux.org/packages/aws-cli/).
-*   *Reliable Solver*: ability to correctly solve and build complex dependency chains, such as [plasma-desktop-git](https://aur.archlinux.org/packages/plasma-desktop-git/).
+*   *Reliable Solver*: ability to correctly solve and build complex dependency chains, such as [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
 *   *Split packages*: ability to correctly build and install split packages independently, such as [python-novaclient](https://aur.archlinux.org/packages/python-novaclient/).
 *   *Git clone*: uses git clones instead of downloading tarballs (deprecated since AUR 4).
 

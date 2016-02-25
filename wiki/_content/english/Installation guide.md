@@ -27,7 +27,7 @@ The installation process needs to retrieve packages from a remote repository, th
 
 ### Set the keyboard layout
 
-The default keyboard layout is US. Alternative keyboard layouts can be loaded with `loadkeys *keymap_file*`: keymap files can be found in `/usr/share/kbd/keymaps/` (path and file extension can be ommitted).
+The default keyboard layout is US. Alternative keyboard layouts can be loaded with `loadkeys *keymap_file*`: keymap files can be found in `/usr/share/kbd/keymaps/` (path and file extension can be omitted).
 
 ### Connect to the Internet
 

@@ -163,7 +163,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Secure Shell (简体中文)](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") | 完成 | HelloCode | 完成 |
 | [Smart Common Input Method platform (简体中文)](/index.php/Smart_Common_Input_Method_platform_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Smart Common Input Method platform (简体中文)") | 过期 | 无 | 无 |
 | [Systemd-timesyncd (简体中文)‎‎](/index.php/Systemd-timesyncd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-timesyncd (简体中文)") | 完成 | Peter |
-| [Vim (简体中文)](/index.php/Vim_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Vim (简体中文)") | 翻译中 | 无 | 更新中 |
+| [Vim (简体中文)](/index.php/Vim_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Vim (简体中文)") | 完成 | Crupest | 无 |
 | [VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") | 翻译中 | Carl X. Su | 请优先翻译此文 |
 | [VirtualBox Extras (简体中文)](/index.php/VirtualBox_Extras_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox Extras (简体中文)") | 部分翻译 | 无 | 需要合并到 [VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") |
 | [VMware (简体中文)](/index.php/VMware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VMware (简体中文)") | 翻译中 | Jason Zhang | 无 |

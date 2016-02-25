@@ -99,7 +99,7 @@ $ alsamixer -c 0
 
 ### Output stuck muted while Master is toggled
 
-In setups with multiple outputs (e.g. 'Headphone' and 'Speaker') using plain amixer to toggle Master can trigger PulseAudio to mute the active output too, but it doesn't necessarily unmute it when Master is toggled back to be unmuted. To resolve this, amixer must have the device flag set to 'pulse':
+In setups with multiple outputs (e.g. 'Headphone' and 'Speaker') using plain amixer to toggle Master can trigger PulseAudio to mute the active output too, but it does not necessarily unmute it when Master is toggled back to be unmuted. To resolve this, amixer must have the device flag set to 'pulse':
 
 ```
 $ amixer -D pulse sset Master toggle

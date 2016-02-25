@@ -91,7 +91,7 @@ Make one shell script inside `/etc/wicd/scripts/postconnect/openntpd-start.sh` w
 
 ```
 #!/bin/sh
-/etc/rc.d/openntpd start
+systemctl start openntpd
 
 ```
 
@@ -99,7 +99,7 @@ Similarly, make another shell script inside `/etc/wicd/scripts/predisconnect/ope
 
 ```
 #!/bin/sh
-/etc/rc.d/openntpd stop
+systemctl stop openntpd
 
 ```
 

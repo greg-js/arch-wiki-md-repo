@@ -85,6 +85,5 @@ quiet console=tty1 splash=verbose,theme:arch-banner-icons
 
 ## Links
 
-*   [http://fbsplash.alanhaggai.org](http://fbsplash.alanhaggai.org) 
 *   [http://dev.gentoo.org/~spock/projects/fbcondecor/](http://dev.gentoo.org/~spock/projects/fbcondecor/) 
 *   [http://www.mepiscommunity.org/fbcondecor](http://www.mepiscommunity.org/fbcondecor)

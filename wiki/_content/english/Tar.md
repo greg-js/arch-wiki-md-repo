@@ -71,10 +71,10 @@ $ pbzip2 /path/to/chosen/directory/etc-backup.tar.bz2
 
 Store `etc-backup.tar.bz2` on one or more offline media, such as a USB stick, external hard drive, or CD-R. Occasionally verify the integrity of the backup process by comparing original files and directories with their backups. Possibly maintain a list of hashes of the backed up files to make the comparison quicker.
 
-Restore corrupted `/etc` files by extracting the `etc-backup.tar.bz2` file in a temporary working directory, and copying over individual files and directories as needed. To restore the entire `/etc` directory with all its contents, move the `etc-backup.tar.bz2` files into the `/` directory. As root, execute the following command:
+Restore corrupted `/etc` files by extracting the `etc-backup.tar.bz2` file in a temporary working directory, and copying over individual files and directories as needed. To restore the entire `/etc` directory with all its contents execute the following command as root:
 
 ```
-tar -xvjf etc-backup.tar.bz2
+tar -xvjf etc-backup.tar.bz2 -C /
 
 ```
 

@@ -141,6 +141,8 @@ instead of, i.e.:
 
 ```
 
+Sometimes it could be the same problem with "Operation not permitted" : *nfs-utils* uses NFSv4 per default instead of NFSv3\. Go and see the previons section
+
 ## Performance issues
 
 This [NFS Howto page](http://nfs.sourceforge.net/nfs-howto/ar01s05.html) has some useful information regarding performance. Here are some further tips:

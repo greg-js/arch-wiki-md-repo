@@ -388,69 +388,7 @@ See [the below notes on using x11-ssh-askpass with ssh-add](#Calling_x11-ssh-ask
 
 ### GnuPG Agent
 
-The [GnuPG](/index.php/GnuPG "GnuPG") agent, distributed with the [gnupg](https://www.archlinux.org/packages/?name=gnupg) package, available in the [official repositories](/index.php/Official_repositories "Official repositories"), has OpenSSH agent emulation. If you already use the GnuPG suite, you might consider using its agent to also cache your SSH keys. Additionally, some users may prefer the PIN entry dialog GnuPG agent provides as part of its passphrase management.
-
-**Note:** If you are using KDE and have [kde-agent](https://www.archlinux.org/packages/?name=kde-agent) installed you only need to set `enable-ssh-support` into `~/.gnupg/gpg-agent.conf`! Otherwise, continue reading.
-
-To start using GnuPG agent for your SSH keys, you should enable `enable-ssh-support` in the `~/.gnupg/gpg-agent.conf` file.
-
- `~/.gnupg/gpg-agent.conf` 
-```
-  # Enable SSH support
-  enable-ssh-support
-
-```
-
-Next, start *gpg-agent* when using `gpg-connect-agent`, set `SSH_AUTH_SOCK` so that SSH will use *gpg-agent* instead of *ssh-agent*, set the GPG TTY and refresh the TTY in case user has switched into an X session. Example:
-
- `~/.bashrc` 
-```
-  #!/bin/sh
-
-  # Start the gpg-agent if not already running
-  if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-    gpg-connect-agent /bye >/dev/null 2>&1
-  fi
-
-  # Set SSH to use gpg-agent
-  unset SSH_AGENT_PID
-  if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-    export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-  fi
-
-  # Set GPG TTY
-  GPG_TTY=$(tty)
-  export GPG_TTY
-
-  # Refresh gpg-agent tty in case user switches into an X session
-  gpg-connect-agent updatestartuptty /bye >/dev/null
-
-```
-
-Once *gpg-agent* is running you can use *ssh-add* to approve keys, just like you did with plain *ssh-agent*. The list of approved keys is stored in the `~/.gnupg/sshcontrol` file. Once your key is approved, you will get a PIN entry dialog every time your passphrase is needed. You can control passphrase caching in the `~/.gnupg/gpg-agent.conf` file. The following example would have *gpg-agent* cache your keys for 3 hours:
-
- `~/.gnupg/gpg-agent.conf` 
-```
-  # Cache settings
-  default-cache-ttl 10800
-  default-cache-ttl-ssh 10800
-
-```
-
-Other useful settings for this file include the PIN entry program (GTK, QT, or ncurses version), keyboard grabbing, and so on...
-
- `~/.gnupg/gpg-agent.conf` 
-```
-  # Keyboard control
-  #no-grab
-
-  # PIN entry program
-  #pinentry-program /usr/bin/pinentry-curses
-  #pinentry-program /usr/bin/pinentry-qt4
-  #pinentry-program /usr/bin/pinentry-kwallet
-  #pinentry-program /usr/bin/pinentry-gtk-2
-
-```
+The [gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") has OpenSSH agent emulation. See [GnuPG#SSH agent](/index.php/GnuPG#SSH_agent "GnuPG") for necessary configuration.
 
 ### Keychain
 

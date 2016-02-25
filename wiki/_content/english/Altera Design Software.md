@@ -1,22 +1,22 @@
 This tutorial shows how to download, install, and configure the following software from Altera:
 
-*   Quartus II Subscription Edition v15.0
+*   Quartus Prime Stamdard Edition v15.1
     *   USB-Blaster (I and II) Download Cable Driver
-*   ModelSim-Altera Edition 10.3d (As included with Quartus II Subscription Edition v15.0)
+*   ModelSim-Altera Edition (Included with Quartus Prime Standard Edition v15.1)
 
 **Note:** The following tutorial works for older Quartus II and ModelSim versions, including both Subscription Editions and Web Editions, from at-least v13.0 through v15.0.
 
 ## Contents
 
-*   [1 Quartus II Subscription Edition](#Quartus_II_Subscription_Edition)
-    *   [1.1 Get Quartus II](#Get_Quartus_II)
+*   [1 Quartus Prime Standard Edition](#Quartus_Prime_Standard_Edition)
+    *   [1.1 Get Quartus Prime](#Get_Quartus_Prime)
     *   [1.2 Install dependencies](#Install_dependencies)
     *   [1.3 Installing](#Installing)
-    *   [1.4 Launching Quartus II](#Launching_Quartus_II)
-    *   [1.5 Integrating Quartus II with the system](#Integrating_Quartus_II_with_the_system)
+    *   [1.4 Launching Quartus Prime](#Launching_Quartus_Prime)
+    *   [1.5 Integrating Quartus Prime with the system](#Integrating_Quartus_Prime_with_the_system)
         *   [1.5.1 PATH variable](#PATH_variable)
-        *   [1.5.2 Application menu entry - Quartus II](#Application_menu_entry_-_Quartus_II)
-    *   [1.6 Subscription Edition License Validation](#Subscription_Edition_License_Validation)
+        *   [1.5.2 Application menu entry - Quartus Prime](#Application_menu_entry_-_Quartus_Prime)
+    *   [1.6 Standard Edition License Validation](#Standard_Edition_License_Validation)
     *   [1.7 USB-Blaster Download Cable Driver](#USB-Blaster_Download_Cable_Driver)
 *   [2 ModelSim-Altera Edition](#ModelSim-Altera_Edition)
     *   [2.1 Install](#Install)
@@ -28,25 +28,25 @@ This tutorial shows how to download, install, and configure the following softwa
     *   [2.3 Application Menu Entry - ModelSim-Altera Edition](#Application_Menu_Entry_-_ModelSim-Altera_Edition)
     *   [2.4 Resolving the "ModelSim Failed to access library 'work'" error](#Resolving_the_.22ModelSim_Failed_to_access_library_.27work.27.22_error)
 
-## Quartus II Subscription Edition
+## Quartus Prime Standard Edition
 
-The following procedure shows how to download, install, and configure Altera Quartus II Subscription Edition v15.0 for Arch Linux.
+The following procedure shows how to download, install, and configure Altera Quartus Prime Standard Edition v15.1 for Arch Linux.
 
 **Note:** The following tutorial works for older Quartus II and ModelSim versions, including both Subscription Editions and Web Editions, from at-least v13.0 through v15.0.
 
-Quartus II is Altera's design software collection to design and interact with all their FPGAs/CPLDs/etc. products.
+Quartus Prime is Altera's design software collection to design and interact with all their FPGAs/CPLDs/etc. products.
 
 The procedure focuses on Arch Linux 64-bit systems, although 32-bit installations should work fine too.
 
-Quartus II Subscription Edition v15.0 is [officially supported](http://www.altera.com/download/os-support/oss-index.html) for RHEL 5 and RHEL 6, but since it is one of those huge collections of proprietary software that does not interact so much with the distribution, it is fairly easy to install on Arch Linux.
+Quartus Prime Standard Edition v15.1 is [officially supported](http://www.altera.com/download/os-support/oss-index.html) for RHEL 5 and RHEL 6, but since it is one of those huge collections of proprietary software that does not interact so much with the distribution, it is fairly easy to install on Arch Linux.
 
-### Get Quartus II
+### Get Quartus Prime
 
-In [Altera's Downloads section](http://dl.altera.com/?edition=subscription), select Linux as the operating system and get the *Combined Files* tar archive (something like `Quartus-15.0.0.145-linux-complete.tar`).
+In [Altera's Downloads section](http://dl.altera.com/?edition=standard), select Linux as the operating system and get the *Combined Files* tar archive (something like `Quartus-15.1.2.193-linux-complete.tar`).
 
 ### Install dependencies
 
-Although the main Quartus II software is 64-bit, lots of Altera tools shipped with Quartus II are still 32-bit softwares. Those include the Nios II EDS and Qsys, for example. This is why we need to install lots of `lib32-` libraries and other programs from the Arch Linux Multilib repo. Obviously, if you have a 32-bit Arch Linux system, you do not need the Multilib versions.
+Although the main Quartus Prime software is 64-bit, alot of Altera tools shipped with Quartus Prime are still 32-bit software. Those include the Nios II EDS and Qsys, for example. This is why we need to install lots of `lib32-` libraries and other programs from the Arch Linux Multilib repo. Obviously, if you have a 32-bit Arch Linux system, you do not need the Multilib versions.
 
 In order to install Multilib packages using [pacman](/index.php/Pacman "Pacman"), you need to enable the [multilib](/index.php/Multilib "Multilib") repository first (if not already done).
 
@@ -56,18 +56,18 @@ Let us first install the native versions of the required packages: [expat](https
 
 And the Multilib versions: [lib32-expat](https://www.archlinux.org/packages/?name=lib32-expat) [lib32-fontconfig](https://www.archlinux.org/packages/?name=lib32-fontconfig) [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2) [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra) [lib32-libpng](https://www.archlinux.org/packages/?name=lib32-libpng) [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/) [lib32-libice](https://www.archlinux.org/packages/?name=lib32-libice) [lib32-libsm](https://www.archlinux.org/packages/?name=lib32-libsm) [lib32-util-linux](https://www.archlinux.org/packages/?name=lib32-util-linux) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-libx11](https://www.archlinux.org/packages/?name=lib32-libx11) [lib32-libxau](https://www.archlinux.org/packages/?name=lib32-libxau) [lib32-libxdmcp](https://www.archlinux.org/packages/?name=lib32-libxdmcp) [lib32-libxext](https://www.archlinux.org/packages/?name=lib32-libxext) [lib32-libxft](https://www.archlinux.org/packages/?name=lib32-libxft) [lib32-libxrender](https://www.archlinux.org/packages/?name=lib32-libxrender) [lib32-libxt](https://www.archlinux.org/packages/?name=lib32-libxt) [lib32-libxtst](https://www.archlinux.org/packages/?name=lib32-libxtst).
 
-You are now ready to install and launch Quartus II.
+You are now ready to install and launch Quartus Prime.
 
 ### Installing
 
 To install, first extract the downloaded tar archive:
 
 ```
-$ tar -xvf Quartus-15.0.0.145-linux-complete.tar
+$ tar -xvf Quartus-15.1.2.193-linux-complete.tar
 
 ```
 
-and launch `setup.sh`. If you are going to install Quartus II anywhere outside your home directory, run it as root:
+and launch `setup.sh`. If you are going to install Quartus Prime anywhere outside your home directory, run it as root:
 
 ```
 # ./setup.sh
@@ -76,31 +76,31 @@ and launch `setup.sh`. If you are going to install Quartus II anywhere outside y
 
 You will probably get a GUI install wizard if you installed all the aforementioned packages. You might also get a command-line interactive install wizard, which will do the same.
 
-The default install path is `/root/altera/15.0`, but some prefer `/opt/altera/15.0`, which we assume for the rest of this document.
+The default install path is `/root/altera/15.1`, but some prefer `/opt/altera/15.1`, which we assume for the rest of this document.
 
-**Make sure to include** the 64-bit option of Quartus II when installing.
+**Make sure to include** the 64-bit option of Quartus Prime when installing.
 
-### Launching Quartus II
+### Launching Quartus Prime
 
-Assuming you installed Quartus II in `/opt/altera/15.0`, Quartus II binaries are located into `/opt/altera/15.0/quartus/bin`. Run Quartus II (64-bit version):
+Assuming you installed Quartus Prime in `/opt/altera/15.1`, Quartus Prime binaries are located into `/opt/altera/15.1/quartus/bin`. Run Quartus Prime (64-bit version):
 
 ```
-$ /opt/altera/15.0/quartus/bin/quartus --64bit
+$ /opt/altera/15.1/quartus/bin/quartus --64bit
 
 ```
 
 or the 32-bit version:
 
 ```
-$ /opt/altera/15.0/quartus/bin/quartus
+$ /opt/altera/15.1/quartus/bin/quartus
 
 ```
 
-All other Altera tools, like Qsys, the Nios II EDS, Chip Planner and SignalTap II may be launched without any problem from the *Tools* menu of Quartus II.
+All other Altera tools, like Qsys, the Nios II EDS, Chip Planner and SignalTap II may be launched without any problem from the *Tools* menu of Quartus Prime.
 
-### Integrating Quartus II with the system
+### Integrating Quartus Prime with the system
 
-Quartus II can be integrated with the system in several ways, but those are optional.
+Quartus Prime can be integrated with the system in several ways, but those are optional.
 
 #### `PATH` variable
 
@@ -112,7 +112,7 @@ Let us now add the Quartus `bin` folder to the `PATH` variable so it can be exec
 ```
 
 ```
-export PATH=$PATH:/opt/altera/15.0/quartus/bin
+export PATH=$PATH:/opt/altera/15.1/quartus/bin
 
 ```
 
@@ -123,7 +123,7 @@ Also, make sure it can be executed:
 
 ```
 
-Please note that those `profile.d` files are loaded at each *login*. In the mean time, simply source that file in Bash:
+Please note that those `profile.d` files are loaded at each *login*. In the mean time, simply `source` that file in Bash:
 
 ```
 $ source /etc/profile.d/quartus.sh
@@ -134,7 +134,7 @@ Other environment variables related to Quartus can be found in [the official ins
 
 Even if `quartus` is now a command known by Bash, you still need to add the `--64bit` argument in order to launch the 64-bit version. A shell alias, like `quartus64`, is a great solution to avoid typing it each time.
 
-#### Application menu entry - Quartus II
+#### Application menu entry - Quartus Prime
 
 A freedesktop.org application menu entry (which a lot of desktop environments and window managers follow) can be added to the system by creating a `quartus.desktop` file in your `~/.local/share/applications` directory:
 
@@ -146,19 +146,19 @@ A freedesktop.org application menu entry (which a lot of desktop environments an
 ```
 [Desktop Entry]
 Version=1.0
-Name=Quartus II Subscription Edition v15.0
-Comment=Quartus II design software for Altera FPGA's
-Exec=/opt/altera/15.0/quartus/bin/quartus --64bit
-Icon=/opt/altera/15.0/quartus/adm/quartusii.png
+Name=Quartus Prime Standard Edition v15.1
+Comment=Quartus Prime design software for Altera FPGA's
+Exec=/opt/altera/15.1/quartus/bin/quartus --64bit
+Icon=/opt/altera/15.1/quartus/adm/quartusii.png
 Terminal=false
 Type=Application
 Categories=Development
 
 ```
 
-### Subscription Edition License Validation
+### Standard Edition License Validation
 
-Configuring the path to your Quartus II Subscription Edition license file from the Quartus II settings interface is not enough for successful license validation. The license validation routine looks for your MAC address on device `eth0`. This was the legacy name for your ethernet controller; now `systemd` dynamically allocates a name to your device on boot - this can be different from machine to machine. We need to rename that device back to the expected `eth0`.
+Configuring the path to your Quartus Prime Standard Edition license file from the Quartus Prime settings interface is not enough for successful license validation. The license validation routine looks for your MAC address on device `eth0`. This was the legacy name for your ethernet controller; now `systemd` dynamically allocates a name to your device on boot - this can be different from machine to machine. We need to rename that device back to the expected `eth0`.
 
 Create a new udev rule:
 
@@ -172,14 +172,40 @@ SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="xx:xx:xx:xx:xx:xx", NAME="eth0"
 
 ```
 
-where `xx:xx:xx:xx:xx:xx` is your networking device's IP address. Then, *reload* that file using `udevadm`:
+where `xx:xx:xx:xx:xx:xx` is your networking device's MAC address. Then, *reload* that file using `udevadm`:
 
 ```
 # udevadm control --reload
 
 ```
 
-The Quartus II Subscription Edition license validation routine also uses the deprecated networking tool `ifconfig` to validate your networking devices MAC address as per your Quartus II license. The deprecated networking package `net-tools` contains the `ifconfig` tool. Thus one must also install the `net-tools` package for Quartus II Subscription Edition licensing validation success.
+Alternatively a dummy `eth0` network interface can be created by `systemd-networkd` daemon dynamically at boot. Create the file `25-dummy.netdev` in the `/etc/systemd/network/` directory
+
+```
+/etc/systemd/network/25-dummy.netdev
+
+```
+
+```
+[Match]
+Host=hostname
+
+[NetDev]
+Name=eth0
+Kind=dummy
+MACAddress=xx:xx:xx:xx:xx:xx
+
+```
+
+where `xx:xx:xx:xx:xx:xx` is the licensed networking device's MAC address and `hostname` is your machine's hostname. Finally ensure `systemd-networkd` service is enabled and started:
+
+```
+# systemctl enable systemd-networkd.service
+# systemctl start systemd-networkd.service
+
+```
+
+The Quartus Prime Standard Edition license validation routine also uses the deprecated networking tool `ifconfig` to validate your networking devices MAC address as per your Quartus Prime license. The deprecated networking package `net-tools` contains the `ifconfig` tool. Thus one must also install the `net-tools` package for Quartus Prime Standard Edition licensing validation success.
 
 ### USB-Blaster Download Cable Driver
 
@@ -211,7 +237,7 @@ Then, *reload* that file using `udevadm` (disconnect any Altera device from port
 To check that everything is working, plug your FPGA or CPLD board using your USB-Blaster Download Cable and run:
 
 ```
-$ /opt/altera/15.0/quartus/bin/jtagconfig
+$ /opt/altera/15.1/quartus/bin/jtagconfig
 
 ```
 
@@ -227,7 +253,7 @@ If jtagconfig output does not contain board name, you might have problems with l
 
 ```
 # mkdir /etc/jtagd
-# cp /opt/altera/15.0/quartus/linux/pgm_parts.txt /etc/jtagd/jtagd.pgm_parts
+# cp /opt/altera/15.1/quartus/linux/pgm_parts.txt /etc/jtagd/jtagd.pgm_parts
 
 ```
 
@@ -245,10 +271,10 @@ $ jtagconfig
 
 ```
 
-If there seems to be an error message about "linux64" and you did not install the 64-bit version of Quartus II, create a symlink from `linux` to `linux64` in `/opt/altera/15.0/quartus`:
+If there seems to be an error message about "linux64" and you did not install the 64-bit version of Quartus Prime, create a symlink from `linux` to `linux64` in `/opt/altera/15.1/quartus`:
 
 ```
-# ln -s /opt/altera/15.0/quartus/linux /opt/altera/15.0/quartus/linux64
+# ln -s /opt/altera/15.1/quartus/linux /opt/altera/15.1/quartus/linux64
 
 ```
 
@@ -256,20 +282,20 @@ If there seems to be an error message about "linux64" and you did not install th
 
 ### Install
 
-ModelSim-Altera Edition 10.3d is downloaded and installed from the *Combined Files* tar archive `Quartus-15.0.0.145-linux-complete.tar` as part of the Quartus II installation procedure above.
+ModelSim-Altera Edition is downloaded and installed from the *Combined Files* tar archive `Quartus-15.1.2.193-linux-complete.tar` as part of the Quartus Prime installation procedure above.
 
 ### Compatibility with Archlinux
 
 #### With the kernel 4.x and Upwards
 
-**Note:** ModelSim Starter Edition installation uses the path `/opt/altera/15.0/modelsim_ase/` where ModelSim Subscription Edition installation uses the path `/opt/altera/15.0/modelsim_ae/`; the following assumes the ModelSim Subcription Edition installation.
+**Note:** ModelSim Starter Edition installation uses the path `/opt/altera/15.1/modelsim_ase/` where ModelSim Subscription Edition installation uses the path `/opt/altera/15.1/modelsim_ae/`; the following assumes the ModelSim Subcription Edition installation.
 
 Modelsim has a problem with version 4 of the linux kernel. You need to edit the `vsim` script to make it compatible. This file may be be read only, so temporarily give yourself write permissions and:
 
 change
 
 ```
-/opt/altera/15.0/modelsim_ae/bin/vsim line 206
+/opt/altera/15.1/modelsim_ae/bin/vsim line 206
 
 ```
 
@@ -281,7 +307,7 @@ change
 to
 
 ```
-/opt/altera/15.0/modelsim_ae/bin/vsim line 206
+/opt/altera/15.1/modelsim_ae/bin/vsim line 206
 
 ```
 
@@ -322,7 +348,7 @@ libfreetype.so.6
 libfreetype.so.6.10.2
 ```
 
-*   Edit the ModelSim script in `/opt/altera/15.0/modelsim_ae/bin/vsim` and add near the top (after the `#!/bin/sh`)
+*   Edit the ModelSim script in `/opt/altera/15.1/modelsim_ae/bin/vsim` and add near the top (after the `#!/bin/sh`)
 
 ```
 export LD_LIBRARY_PATH=/home/user/altera/xx.x/lib32
@@ -368,10 +394,10 @@ You can add Modelsim to your system application menu by creating a `modelsim.des
 ```
 [Desktop Entry]
 Version=1.0
-Name=ModelSim-Altera Edition 10.3d
+Name=ModelSim-Altera Edition
 Comment=ModelSim simulation software for Altera FPGA's
-Exec=/opt/altera/15.0/modelsim_ae/bin/vsim
-Icon=/opt/altera/15.0/modelsim_ae/modesim.gif
+Exec=/opt/altera/15.1/modelsim_ae/bin/vsim
+Icon=/opt/altera/15.1/modelsim_ae/modesim.gif
 Terminal=true
 Type=Application
 Categories=Development

@@ -29,14 +29,12 @@ A computer has two clocks that need to be considered: the "Hardware clock" and t
 
 ### Read clock
 
-To check the current system clock time (presented both in local time and UTC):
+To check the current system clock time (presented both in local time and UTC) as well as the RTC:
 
 ```
 $ timedatectl
 
 ```
-
-Run the same command as root to display also the hardware clock time.
 
 ### Set clock
 

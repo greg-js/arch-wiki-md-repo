@@ -14,7 +14,9 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
 *   [4 Widget bindings](#Widget_bindings)
 *   [5 Old versions](#Old_versions)
 *   [6 Tips and tricks](#Tips_and_tricks)
-*   [7 See also](#See_also)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Python, ViM and UTF-8](#Python.2C_ViM_and_UTF-8)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -202,6 +204,12 @@ $ jupyter notebook
 to autostart the browser and run the IPython kernel. You can select the python version when creating the notebook in the browser.
 
 [bpython](http://bpython-interpreter.org/) is a ncurses interface to the Python interpreter, available in the official repositories as [bpython](https://www.archlinux.org/packages/?name=bpython) and [bpython2](https://www.archlinux.org/packages/?name=bpython2).
+
+## Troubleshooting
+
+### Python, ViM and UTF-8
+
+When executing `:!python -c "import sys; print(sys.stdout.encoding)"` in ViM, the output may be `ANSI_X3.4-1968`, even if the locale is set correctly everyhere. Set the `PYTHONIOENCODING` environment variable to `utf-8` to remedy the situation.
 
 ## See also
 

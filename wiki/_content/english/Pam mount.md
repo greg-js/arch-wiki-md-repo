@@ -14,7 +14,7 @@ To have an encrypted home partition (encrypted with, for example, LUKS or ecrypt
 1.  Install [pam_mount](https://www.archlinux.org/packages/?name=pam_mount) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 2.  Edit /etc/security/pam_mount.conf.xml as follows:
 
-Insert 3 new lines at the end of the file, but **before** the last closing tag, *</pam_mount>*. Notes:
+Insert 2 new lines at the end of the file, but **before** the last closing tag, *</pam_mount>*. Notes:
 
 *   USERNAME should be replaced with your linux-username.
 *   /dev/sdaX should be replaced with the corresponding device or container file.
@@ -23,7 +23,6 @@ Insert 3 new lines at the end of the file, but **before** the last closing tag, 
 
  `/etc/security/pam_mount.conf.xml` 
 ```
-**<lclmount>mount -t%(FSTYPE) %(VOLUME) %(MNTPT) "%(if %(OPTIONS),-o%(OPTIONS))"</lclmount>**
 **<volume user="USERNAME" fstype="auto" path="/dev/sdaX" mountpoint="/home" options="fsck,noatime" />**
 **<mkmountpoint enable="1" remove="true" />**
 

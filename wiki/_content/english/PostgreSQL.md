@@ -469,7 +469,7 @@ When you are ready, upgrade the following packages: [postgresql](https://www.arc
 The upgrade invocation will likely look something like the following. **Do not run this command blindly without understanding what it does!** Reference the [upstream pg_upgrade documentation](http://www.postgresql.org/docs/current/static/pgupgrade.html) for details.
 
 ```
-# su - postgres -c 'pg_upgrade -d /var/lib/postgres/olddata/ -D /var/lib/postgres/data/ -b /opt/pgsql-8.4/bin/ -B /usr/bin/'
+# su - postgres -c 'pg_upgrade -d /var/lib/postgres/olddata/ -D /var/lib/postgres/data/ -b /opt/pgsql-9.4/bin/ -B /usr/bin/'
 
 ```
 
@@ -477,13 +477,13 @@ The upgrade invocation will likely look something like the following. **Do not r
 
 You could also do something like this (after the upgrade and install of [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade)).
 
-**Note:** Below are the commands for PostgreSQL 8.4\. You can find similar commands in `/opt/` for PostgreSQL 9.2.
+**Note:** Below are the commands for PostgreSQL 9.4\. You can find similar commands in `/opt/` for PostgreSQL 9.2.
 
 ```
 # systemctl stop postgresql
-# /opt/pgsql-8.4/bin/pg_ctl -D /var/lib/postgres/olddata/ start
-# /opt/pgsql-8.4/bin/pg_dumpall >> old_backup.sql
-# /opt/pgsql-8.4/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
+# /opt/pgsql-9.4/bin/pg_ctl -D /var/lib/postgres/olddata/ start
+# /opt/pgsql-9.4/bin/pg_dumpall >> old_backup.sql
+# /opt/pgsql-9.4/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
 # systemctl start postgresql
 # psql -f old_backup.sql postgres
 

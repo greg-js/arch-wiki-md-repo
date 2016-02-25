@@ -1,13 +1,12 @@
-**翻译状态：** 本文是英文页面 [Unified_Extensible_Firmware_Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=362674)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Unified_Extensible_Firmware_Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-24，点击[这里](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=420028)可以查看翻译后英文页面的改动。
 
-**统一可扩展固件界面（Unified Extensible Firmware Interface）** (或简称为UEFI) 是一种新型固件，它引入了一种新的启动系统的方式，该方式有别于传统[BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS")系统所使用的“[MBR](/index.php/MBR "MBR")启动代码”(其二者区别见 [Arch boot process#Firmware_types](/index.php/Arch_boot_process#Firmware_types "Arch boot process") )。本文介绍了 **什么是UEFI** 以及 **UEFI在Linux内核中的支持** 。若要配置 UEFI 引导器，详见 [Boot loaders](/index.php/Boot_loaders "Boot loaders").
+**统一可扩展固件界面（Unified Extensible Firmware Interface）** (简称UEFI) 是一种新型固件，引入了新的系统启动方式，该方式有别于传统[BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS")系统所使用的“[MBR](/index.php/MBR "MBR")启动代码”(其二者区别见 [Arch boot process#Firmware_types](/index.php/Arch_boot_process#Firmware_types "Arch boot process"))。本文介绍了 **什么是UEFI** 以及 **UEFI在Linux内核中的支持** 。若要配置 UEFI 引导器，详见 [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)").
 
 ## Contents
 
 *   [1 UEFI 发展历史](#UEFI_.E5.8F.91.E5.B1.95.E5.8E.86.E5.8F.B2)
 *   [2 UEFI 引导过程](#UEFI_.E5.BC.95.E5.AF.BC.E8.BF.87.E7.A8.8B)
     *   [2.1 UEFI 的多重引导](#UEFI_.E7.9A.84.E5.A4.9A.E9.87.8D.E5.BC.95.E5.AF.BC)
-        *   [2.1.1 启动 Microsoft Windows](#.E5.90.AF.E5.8A.A8_Microsoft_Windows)
     *   [2.2 检测 UEFI 固件架构](#.E6.A3.80.E6.B5.8B_UEFI_.E5.9B.BA.E4.BB.B6.E6.9E.B6.E6.9E.84)
         *   [2.2.1 非 Mac 机](#.E9.9D.9E_Mac_.E6.9C.BA)
         *   [2.2.2 Apple Mac](#Apple_Mac)
@@ -49,7 +48,7 @@
 *   UEFI起始于Intel的EFI 1.x版。
 *   从2.0版本起，一个名为UEFI论坛的公司组织接管了其开发工作，并更名为Unified EFI(统一EFI).
 *   除非特别指明是EFI 1.x, EFI和UEFI均指代UEFI 2.x固件。
-*   自2013年七月24日起，UEFI标准2.4 (发布于013年7月11日)是最新的版本。
+*   自2015年4月，UEFI 标准 2.5 是最新的版本。
 *   苹果公司的EFI实现不是EFI 1.x也不是UEFI 2.x而是这两者的混合体。这类固件不被归入到任何(U)EFI规格中，因而并没有一个标准的UEFI固件。除非特别指明，以下说明可通用但部分可能会在[Apple Macs](/index.php/MacBook "MacBook")上有所不同或是会不起效。
 
 ## UEFI 引导过程
@@ -64,11 +63,9 @@
 
 ### UEFI 的多重引导
 
-因为每个操作系统或者提供者都可以维护自己的 EFI 系统分区中的文件，同时不影响其他系统，所以 UEFI 的多重启动只是简单的运行不同的UEFI 程序，对应于特定操作系统的引导程序。这避免了依赖 chainloading 机制（通过一个[引导程序](/index.php/Boot_loaders "Boot loaders")加载另一个引导程序，来切换操作系统）。
+因为每个操作系统或者提供者都可以维护自己的 EFI 系统分区中的文件，同时不影响其他系统，所以 UEFI 的多重启动只是简单的运行不同的UEFI 程序，对应于特定操作系统的引导程序。这避免了依赖 chainloading 机制（通过一个[启动引导程序](/index.php/Boot_loaders "Boot loaders")加载另一个引导程序，来切换操作系统）。
 
-#### 启动 Microsoft Windows
-
-64位版本的 Windows Vista (SP1+)、Windows 7 和 Windows 8 源生支持通过 UEFI 固件引导，但是这需要将硬盘格式化为 GPT 格式。64位版本的 Windows 系统支持 UEFI-GPT 模式引导或 BIOS-MBR 模式引导，而32位版本的 Windows 系统仅支持 BIOS-MBR 模式引导。具体做法请参考论坛参考文献章节中提供的链接。查看 [[这里](http://support.microsoft.com/default.aspx?scid=kb;EN-US;2581408)] 来获得更多信息。
+参阅 [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
 
 ### 检测 UEFI 固件架构
 
@@ -76,7 +73,7 @@
 
 检查目录 `/sys/firmware/efi` 是否存在，如果存在表明内核已经以 UEFI 模式启动，这种情况下 UEFI 架构等同于内核架构。(例如： 32位 或者 64位)
 
-**注意:** Intel 的 Atom 片上系统 附带32位的 UEFI (自2013年11月2日). 更多信息见 [这个页面](/index.php?title=HCL/Firmwares/UEFI&action=edit&redlink=1 "HCL/Firmwares/UEFI (page does not exist)") 。
+**注意:** Intel 的 Atom 片上系统 附带32位的 UEFI (自2013年11月2日). 更多信息见 [使用 GRUB](/index.php?title=%E4%BD%BF%E7%94%A8_GRUB&action=edit&redlink=1 "使用 GRUB (page does not exist)") 。
 
 #### Apple Mac
 
@@ -104,14 +101,14 @@ $ od -An -t u1 /sys/firmware/efi/efivars/SecureBoot-XXXXXXXX-XXXX-XXXX-XXXX-XXXX
 
 ```
 
+XXXX 部分因不同机器而各不相同。可以使用 tab 补全来获取帮助或者列出 EFI 变量。
+
 如果以 Secure Boot 模式启动，命令会返回以 **1** 结尾的五个整数，例如：
 
 ```
 6  0  0  0  1
 
 ```
-
-XXXX 部分因不同机器而各不相同。可以使用 tab 补全来获取帮助或者列出 EFI 变量。
 
 此外，另一种方法是执行：
 

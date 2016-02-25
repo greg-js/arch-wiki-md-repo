@@ -72,7 +72,7 @@ To remount the file-system, issue the first command, and enter the key used to e
 
 The [Gnome Encfs Manager](http://libertyzero.com/GEncfsM/) is an easy to use manager and mounter for encfs stashes featuring per-stash configuration, Gnome Keyring support, a tray menu inspired by Cryptkeeper but using the AppIndicator API and lots of unique features.
 
-The author has created a [repository](/index.php/Unofficial_user_repositories#gnome-encfs-manager "Unofficial user repositories") that tends to be slightly more up to date than the [gnome-encfs-manager](https://aur.archlinux.org/packages/gnome-encfs-manager/) package.
+Both [gnome-encfs-manager](https://aur.archlinux.org/packages/gnome-encfs-manager/) and a slightly more up to date [gnome-encfs-manager-bzr](https://aur.archlinux.org/packages/gnome-encfs-manager-bzr/) are available.
 
 ### Mount using gnome-encfs
 

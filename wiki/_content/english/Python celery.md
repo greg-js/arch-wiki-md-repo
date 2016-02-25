@@ -26,48 +26,6 @@ Quoting [Celery documentation](http://docs.celeryproject.org/en/latest/getting-s
 
 For configuration files the directory `/etc/celery/` needs to be created. An example configuration file is provided within [Celery documentation](http://docs.celeryproject.org/en/latest/tutorials/daemonizing.html#example-configuration).
 
-```
-   # Names of nodes to start
-   #   most people will only start one node:
-   CELERYD_NODES="worker1"
-   #   but you can also start multiple and configure settings
-   #   for each in CELERYD_OPTS (see `celery multi --help` for examples):
-   #CELERYD_NODES="worker1 worker2 worker3"
-   #   alternatively, you can specify the number of nodes to start:
-   #CELERYD_NODES=10
-
-   # Absolute or relative path to the 'celery' command:
-   CELERY_BIN="/usr/bin/celery"
-   #CELERY_BIN="/virtualenvs/def/bin/celery"
-
-   # App instance to use
-   # comment out this line if you don't use an app
-   CELERY_APP="proj"
-   # or fully qualified:
-   #CELERY_APP="proj.tasks:app"
-
-   # Where to chdir at start.
-   CELERYD_CHDIR="/opt/Myproject/"
-
-   # Extra command-line arguments to the worker
-   CELERYD_OPTS="--time-limit=300 --concurrency=8"
-
-   # %N will be replaced with the first part of the nodename.
-   CELERYD_LOG_FILE="/var/log/celery/%N.log"
-   CELERYD_PID_FILE="/var/run/celery/%N.pid"
-
-   # Workers should run as an unprivileged user.
-   #   You need to create this user manually (or you can choose
-   #   a user/group combination that already exists, e.g. nobody).
-   CELERYD_USER="celery"
-   CELERYD_GROUP="celery"
-
-   # If enabled pid and log directories will be created if missing,
-   # and owned by the userid/group configured.
-   CELERY_CREATE_DIRS=1
-
-```
-
 [Start/enable](/index.php/Start/enable "Start/enable") the `celery@*celery*.service`.
 
 ### RabbitMQ
@@ -93,10 +51,10 @@ You probably want to replace `0.0.0.0` with `127.0.0.1`, RabbitMQ does not suppo
 Follow [RabbitMQ documentation](http://docs.celeryproject.org/en/latest/getting-started/brokers/rabbitmq.html#broker-rabbitmq) and add your user and virtual host:
 
 ```
-   su rabbitmq -c 'rabbitmqctl add_user myuser mypassword'
-   su rabbitmq -c 'rabbitmqctl add_vhost myvhost'
-   su rabbitmq -c 'rabbitmqctl set_user_tags myuser mytag'
-   su rabbitmq -c 'rabbitmqctl set_permissions -p myvhost myuser ".*" ".*" ".*"'
+$ su rabbitmq -c 'rabbitmqctl add_user myuser mypassword'
+$ su rabbitmq -c 'rabbitmqctl add_vhost myvhost'
+$ su rabbitmq -c 'rabbitmqctl set_user_tags myuser mytag'
+$ su rabbitmq -c 'rabbitmqctl set_permissions -p myvhost myuser ".*" ".*" ".*"'
 
 ```
 
@@ -114,17 +72,17 @@ You may want to read a security section from [relevant Celery documentation](htt
 
 Follow [Celery documentation](http://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html#application) to create a sample task:
 
-Create a celery application python file `nano test.py`
+Create a celery application python file:
 
+ `$ nano test.py` 
 ```
-   from celery import Celery
+from celery import Celery
 
-   app = Celery('tasks', backend='amqp', broker='amqp://myuser:mypassword@localhost:5672/myvhost')
+    app = Celery('tasks', backend='amqp', broker='amqp://myuser:mypassword@localhost:5672/myvhost')
 
-   @app.task
-   def add(x, y):
-       return x + y
-
+    @app.task
+    def add(x, y):
+        return x + y
 ```
 
 `amqp://myuser:mypassword@localhost:5672/myvhost` - use the same credentials/vhost you have created when configuring RabbitMQ
@@ -133,34 +91,34 @@ Create a celery application python file `nano test.py`
 
 ### Test run
 
-While in the same directory as your test.py you can run (as non-root user):
+While in the same directory as your `test.py` you can run:
 
 ```
-   celery -A task worker --loglevel=info
-
-```
-
-Then from another console (but within same directory) create call.py:
-
-```
-   from test import add
-
-   add.delay(4, 4)
+$ celery -A task worker --loglevel=info
 
 ```
 
-Run call.py:
+Then from another console (but within same directory) create:
+
+ `$ nano call.py` 
+```
+from test import add
+
+    add.delay(4, 4)
+```
+
+Run it:
 
 ```
-   python call.py
+$ python call.py
 
 ```
 
-First console should log some information suggesting worker was called:
+First, the console should log some information suggesting worker was called:
 
 ```
-   Received task: task.add[f4aff99a-7477-44db-9f6e-7e0f9342cd4e]
-   Task task.add[f4aff99a-7477-44db-9f6e-7e0f9342cd4e] succeeded in 0.0007182330009527504s: 8
+Received task: task.add[f4aff99a-7477-44db-9f6e-7e0f9342cd4e]
+Task task.add[f4aff99a-7477-44db-9f6e-7e0f9342cd4e] succeeded in 0.0007182330009527504s: 8
 
 ```
 
@@ -171,58 +129,52 @@ Procedure below is slightly different than what you will find within [Celery doc
 Create `test_task` module:
 
 ```
-   mkdir /lib/python3.5/site-packages/test_task
-   touch /lib/python3.5/site-packages/test_task/__init__.py
-   touch /lib/python3.5/site-packages/test_task/test_task.py
-   touch /lib/python3.5/site-packages/test_task/celery.py
+# mkdir /lib/python3.5/site-packages/test_task
+# touch /lib/python3.5/site-packages/test_task/__init__.py
+# touch /lib/python3.5/site-packages/test_task/test_task.py
+# touch /lib/python3.5/site-packages/test_task/celery.py
 
 ```
-
-`nano /lib/python3.5/site-packages/test_task/celery.py`
-
+ `# nano /lib/python3.5/site-packages/test_task/celery.py` 
 ```
-   from __future__ import absolute_import
+from __future__ import absolute_import
 
-   from celery import Celery
+from celery import Celery
 
-   app = Celery('tasks', backend='amqp', broker='amqp://myuser:mypassword@localhost:5672/myvhost')
+app = Celery('tasks', backend='amqp', broker='amqp://myuser:mypassword@localhost:5672/myvhost')
 
-   if __name__ == '__main__':
-       app.start() 
-
+if __name__ == '__main__':
+ app.start()
 ```
-
-`nano /lib/python3.5/site-packages/test_task/test_task.py`
-
+ `# nano /lib/python3.5/site-packages/test_task/test_task.py` 
 ```
-   from __future__ import absolute_import
+from __future__ import absolute_import
 
-   from test_task.celery import app
+from test_task.celery import app
 
-   @app.task
-   def add(x, y):
-       return x + y
-
+@app.task
+def add(x, y):
+ return x + y
 ```
 
 At this point if you issue `python` in your console you should be able to issue following without any error:
 
 ```
-   >>> from test_task import celery
+>>> from test_task import celery
 
 ```
 
-Modify `/etc/celery/celery.conf`, replace following line:
+In `/etc/celery/celery.conf` replace:
 
 ```
-  CELERY_APP="proj"
+CELERY_APP="proj"
 
 ```
 
-With following line:
+with the following line:
 
 ```
-  CELERY_APP="test_task"
+CELERY_APP="test_task"
 
 ```
 

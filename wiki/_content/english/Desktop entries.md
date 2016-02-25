@@ -34,6 +34,7 @@ The following sections will roughly explain how these are created and validated.
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Hide desktop entries](#Hide_desktop_entries)
     *   [4.2 Autostart](#Autostart)
+    *   [4.3 Modify environment variables](#Modify_environment_variables)
 *   [5 See also](#See_also)
 
 ## Application entry
@@ -239,6 +240,12 @@ Users can override system-wide `*.desktop` files by copying them into the user-s
 For an explanation of the desktop file standard refer to [Desktop Entry Specification](http://standards.freedesktop.org/desktop-entry-spec/latest/). For a more specific description of directories used, [Desktop Application Autostart Specification](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
 
 **Note:** This method is supported only by XDG-compliant desktop environments. Tools like [dapper](https://aur.archlinux.org/packages/dapper/), [dex](https://www.archlinux.org/packages/?name=dex), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) can be used to offer XDG autostart in unsupported desktop environments as long as some other autostart mechanism exists. Use the existing mechanism to start the xdg compliant autostart tool.
+
+### Modify environment variables
+
+Edit the `Exec` command by appending `env`, for example:
+
+ `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
 
 ## See also
 

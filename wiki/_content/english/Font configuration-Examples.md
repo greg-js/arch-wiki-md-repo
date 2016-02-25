@@ -10,8 +10,9 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 *   [4 Liberation fonts](#Liberation_fonts)
 *   [5 Enable anti-aliasing only for bigger fonts](#Enable_anti-aliasing_only_for_bigger_fonts)
 *   [6 Chrome OS fonts](#Chrome_OS_fonts)
-*   [7 Patched packages](#Patched_packages)
-*   [8 See also](#See_also)
+*   [7 Google Noto Fonts](#Google_Noto_Fonts)
+*   [8 Patched packages](#Patched_packages)
+*   [9 See also](#See_also)
 
 ## Hinted fonts
 
@@ -194,6 +195,32 @@ Web browser and another common applications use `Serif`, `Sans-Serif` and `Monos
     <family>monospace</family>
     <prefer><family>Cousine</family></prefer>
   </alias>
+</fontconfig>
+
+```
+
+## Google Noto Fonts
+
+The following configuration might be necessary to make use of [Google's Noto Fonts](https://www.google.com/get/noto/) available in the [official repositories](/index.php/Official_repositories "Official repositories").
+
+```
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <alias> <family>serif</family>      <prefer> <family>Noto Serif</family> </prefer> </alias>
+  <alias> <family>sans-serif</family> <prefer> <family>Noto Sans</family>  </prefer> </alias>
+  <alias> <family>sans</family>       <prefer> <family>Noto Sans</family>  </prefer> </alias>
+  <alias> <family>monospace</family>  <prefer> <family>Noto Mono</family>  </prefer> </alias>
+
+  <match> <test name="family"> <string>Arial</string> </test>           <edit name="family" mode="assign" binding="strong"> <string>Noto Sans</string>  </edit> </match>
+  <match> <test name="family"> <string>Helvetica</string> </test>       <edit name="family" mode="assign" binding="strong"> <string>Noto Sans</string>  </edit> </match>
+  <match> <test name="family"> <string>Verdana</string> </test>         <edit name="family" mode="assign" binding="strong"> <string>Noto Sans</string>  </edit> </match>
+  <match> <test name="family"> <string>Tahoma</string> </test>          <edit name="family" mode="assign" binding="strong"> <string>Noto Sans</string>  </edit> </match>
+  <match> <test name="family"> <string>Times New Roman</string> </test> <edit name="family" mode="assign" binding="strong"> <string>Noto Serif</string> </edit> </match>
+  <match> <test name="family"> <string>Times</string> </test>           <edit name="family" mode="assign" binding="strong"> <string>Noto Serif</string> </edit> </match>
+  <!--match> <test name="family"> <string>Georgia</string> </test>         <edit name="family" mode="assign" binding="strong"> <string>Noto Serif</string> </edit> </match-->
+  <match> <test name="family"> <string>Consolas</string> </test>        <edit name="family" mode="assign" binding="strong"> <string>Noto Mono</string>  </edit> </match>
+  <match> <test name="family"> <string>Courier New</string> </test>     <edit name="family" mode="assign" binding="strong"> <string>Noto Mono</string>  </edit> </match>
 </fontconfig>
 
 ```

@@ -1,4 +1,4 @@
-[Touchegg](https://code.google.com/p/touchegg/) is a multitouch gesture program, that runs as a user in the background, and adds multitouch support to window managers.
+[Touchegg](https://github.com/JoseExposito/touchegg) is a multitouch gesture program, that runs as a user in the background, and adds multitouch support to window managers.
 
 ## Contents
 

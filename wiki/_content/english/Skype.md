@@ -3,14 +3,14 @@
 *   [1 Installation](#Installation)
 *   [2 Skype sound](#Skype_sound)
 *   [3 Restricting Skype access](#Restricting_Skype_access)
-    *   [3.1 AppArmor](#AppArmor)
-    *   [3.2 TOMOYO](#TOMOYO)
+    *   [3.1 systemd-nspawn](#systemd-nspawn)
+    *   [3.2 Docker](#Docker)
     *   [3.3 Use Skype with special user](#Use_Skype_with_special_user)
         *   [3.3.1 Access Pulseaudio controls when using Skype as a different user](#Access_Pulseaudio_controls_when_using_Skype_as_a_different_user)
         *   [3.3.2 Open URLs in your user's browser](#Open_URLs_in_your_user.27s_browser)
         *   [3.3.3 Access received files](#Access_received_files)
-    *   [3.4 systemd-nspawn](#systemd-nspawn)
-    *   [3.5 Docker](#Docker)
+    *   [3.4 AppArmor](#AppArmor)
+    *   [3.5 TOMOYO](#TOMOYO)
 *   [4 Skype plugin for Pidgin](#Skype_plugin_for_Pidgin)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 GUI does not match GTK Theme](#GUI_does_not_match_GTK_Theme)
@@ -29,6 +29,8 @@
     *   [5.12 Empty white screen window](#Empty_white_screen_window)
 
 ## Installation
+
+**Note:** The official Skype client for Linux has not been updated in a long time and receiving calls from the latest versions of other clients is [reportedly](http://nickforall.nl/skype/) broken.
 
 **Tip:** There is also a web version of Skype [available](https://web.skype.com), which you might want to use if you don't trust the proprietary Skype client. You can also use it as an unofficial app: [skype-desktop-bin](https://aur.archlinux.org/packages/skype-desktop-bin/). Audio/video is currently not supported because the required browser plugin is only available for OS X and Windows.
 
@@ -71,6 +73,258 @@ There are a couple of reasons you might want to restrict Skype's access to your 
 *   It produces encrypted traffic even when you are not actively using Skype.
 
 See [[1]](http://www1.cs.columbia.edu/~salman/skype/index.html) for more information.
+
+Restrictions can be implemented in a number of ways, with varying ease and security. It is possible to run Skype in a container, run it as a separate user, or use the [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control) functionality available in the Linux kernel.
+
+### systemd-nspawn
+
+**Warning:** systemd-nspawn provides the most straightforward way to run an application in a separate environment, however it is [not considered](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html) to provide a fully secure setup.
+
+The following script will create a container in `/mnt/stor/vm/skype` and run Skype from there on each subsequent run. Fetching the default pacman config is necessary for 64-bit systems with multilib enabled, but be careful in case you have custom repositories enabled. Note that sound and video may be broken with this method.
+
+```
+ #!/bin/bash
+ set -e
+ DEST=/mnt/stor/vm/skype
+ if [ ! -d "$DEST" ];then
+     sudo mkdir -p "$DEST/var/lib/pacman/";
+     sudo mkdir -p "$DEST/etc/"
+     sudo curl https://projects.archlinux.org/svntogit/packages.git/plain/trunk/pacman.conf.i686?h=packages/pacman -o "$DEST/etc/pacman.conf"
+     echo sudo skype | sudo pacman --arch i686 --root "$DEST" --cachedir /var/cache/pacman/pkg --config "$DEST/etc/pacman.conf" -Sy - --noconfirm
+     sudo systemd-nspawn -D "$DEST" groupadd skype
+     sudo systemd-nspawn -D "$DEST" useradd -g skype skype
+     sudo mkdir -p $DEST/home/skype/.config/pulse
+     sudo cp ~/.config/pulse/cookie $DEST/home/skype/.config/pulse/
+     sudo cp ~/.Xauthority $DEST/home/skype/
+     sudo chmod 755 -R $DEST/home/skype/
+     sudo chown -R 1000:1000 $DEST/home/skype/
+ fi
+ sudo systemd-nspawn -D "$DEST" --bind=/tmp/.X11-unix --share-system sudo -u skype env DISPLAY=:0 PULSE_SERVER=desktop skype
+
+```
+
+### Docker
+
+**Warning:** Running Docker has its own set of security implications and caveats. Read the main Docker article for more information.
+
+Install [Docker](/index.php/Docker "Docker") and feel free to [explore Docker Hub](https://hub.docker.com/search/?q=skype&page=1&isAutomated=0&isOfficial=0&pullCount=0&starCount=0) for Skype images prepared by users.
+
+A tried and tested image is [sameersbn/skype](https://github.com/sameersbn/docker-skype) (hosted on Github). It uses X11 and [PulseAudio](/index.php/PulseAudio "PulseAudio") unix domain sockets on the host to enable audio/video support in Skype. A wrapper script mounts the X11 and Pulseaudio sockets inside the container. The X11 socket allows for the user interface to display on the host, while Pulseaudio socket allows for the audio output to be rendered on the host. `/dev/video0` is also mounted.
+
+Container has access to `~/.Skype` and `~/Downloads` directories on your host system. Wrapper scripts are installed into `/usr/local/bin`.
+
+For installation use [upstream instructions](https://github.com/sameersbn/docker-skype/blob/master/README.md).
+
+### Use Skype with special user
+
+**Warning:** As of version 1.16, Xorg runs as a regular user. This means a special user has no access to X. The following approach only works when enabling root for Xorg; see [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
+
+A special user can be used for running Skype within one's normal environment. Permissions will have to be set to ensure your home directory is not readable by the special Skype user (see [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")).
+
+An AUR package, [skype-restricted](https://aur.archlinux.org/packages/skype-restricted/) exists that will run skype as a separate user ("_skype") cleanly. It is heavily based on the information in this section. Alternatively, one can use [skype-secure](https://aur.archlinux.org/packages/skype-secure/), a package that works similarly to skype-restricted, but wraps around already installed Skype binary.
+
+Create a new group for the skype user:
+
+```
+# groupadd skype
+
+```
+
+Then we have to add the new user:
+
+```
+# useradd -m -g skype -G audio,video -s /bin/bash skype
+
+```
+
+**Note:** Maybe you need to add "skype" user to "pulse-access" and "pulse-rt" groups. But it works fine with "audio" and "skype" groups only.
+
+Now add the following line to `/home/skype/.bashrc`:
+
+```
+export DISPLAY=":0.0"
+
+```
+
+At last we define the alias (e.g. in `~/.bashrc`):
+
+```
+alias skype='xhost +local: && su skype -c skype'
+
+```
+
+Now we can start Skype as the newly created user simply by running `skype` from the command line and entering the password of the user skype.
+
+If you are tired of typing in the skype user's password every time, make sure you installed the [sudo](/index.php/Sudo "Sudo") package, run `visudo` then add this line at the bottom:
+
+```
+%wheel ALL=(skype) NOPASSWD: /usr/bin/skype
+
+```
+
+And use this alias to launch skype:
+
+```
+alias skype='xhost +local: && sudo -u skype /usr/bin/skype'
+
+```
+
+**Note:** If you forget the `xhost` command, Skype may fail with a "No protocol specified" error on stdout.
+
+I noticed that the newly created user is able to read some of the files in my home directory because the permissions were a+r, so I changed them manually to a-r u+r and changed umask from 022 to 066.
+
+In order to restrict user "skype" accessing your external drive mounted in `/media/data` for instance, make sure first that "skype" does not belong to group "users" (if you used the default group "skype", everything should be fine), then change the accesses on the mount point:
+
+```
+# chown :users /media/data
+# chmod o-rwx /media/data
+
+```
+
+This way, it is ensured that only the owner (normally "root") and "users" can access the specified directory tree while the others, including "skype", will be forbidden.
+
+#### Access Pulseaudio controls when using Skype as a different user
+
+As the "main-user" copy /etc/pulse/default.pa to ~/.pulse/default.pa and add:
+
+```
+load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
+
+```
+
+As the skype user, create ~/.pulse/client.conf and add:
+
+```
+default-server = 127.0.0.1
+
+```
+
+#### Open URLs in your user's browser
+
+When one clicks URL in chat window, skype execute [xdg-open](/index.php/Xdg-open "Xdg-open") to handle it. By default `xdg-open` uses default web browser for skype user environment. In order to open links in your user's browser perform next setup.
+
+**Note:**
+
+*   [Sudo](/index.php/Sudo "Sudo") should be installed and properly configured.
+*   Current example uses [firefox](/index.php/Firefox "Firefox") as preferred browser.
+*   Do not forget to adjust *your_user* to proper value.
+
+Log in as skype user:
+
+```
+$ sudo -u skype -i
+
+```
+
+Create local preferences dir:
+
+```
+$ mkdir -p ~/.local/share/applications
+
+```
+
+Create `/home/skype/.local/share/applications/firefox-sudo.desktop` file:
+
+```
+[Desktop Entry]
+Name=Firefox
+Exec=/home/skype/firefox-wrapper %u
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+
+```
+
+Set `firefox-sudo.desktop` to manage HTTP and HTTPS URLs:
+
+```
+$ xdg-mime default firefox-sudo.desktop x-scheme-handler/http
+$ xdg-mime default firefox-sudo.desktop x-scheme-handler/https
+
+```
+
+(Optionally) add FTP handler:
+
+```
+$ xdg-mime default firefox-sudo.desktop x-scheme-handler/ftp
+
+```
+
+Create `/home/skype/firefox-wrapper` script (adjust *your_user*):
+
+```
+#!/bin/bash
+DISPLAY=:0.0 HOME=/home/*your_user* sudo -u *your_user* /usr/lib/firefox/firefox -new-tab $1
+
+```
+
+Make it executable:
+
+```
+$ chmod +x ~/firefox-wrapper
+
+```
+
+Now as root user open `/etc/sudoers`:
+
+```
+# visudo
+
+```
+
+And add permission for skype user to exec user's browser (adjust *your_user*):
+
+```
+skype ALL=(*your_user*) NOPASSWD: /usr/lib/firefox/firefox -new-tab http*, /usr/lib/firefox/firefox -new-tab ftp*
+
+```
+
+#### Access received files
+
+By default `skype` stores received files with 600 permissions (only owner can access them). One may use [incron](https://www.archlinux.org/packages/?name=incron) to perform automatic permission fix upon downloading.
+
+**Note:** This example assumes that you configure skype to save received files into `/home/skype/downloads`
+
+Make skype home dir and download dir accessible:
+
+```
+# chmod 755 /home/skype /home/skype/downloads
+
+```
+
+Install incron with the [incron](https://www.archlinux.org/packages/?name=incron) package from the [official repositories](/index.php/Official_repositories "Official repositories"), and enable and start `incrond` [using systemd](/index.php/Systemd#Using_units "Systemd"). Open incrontab for root user:
+
+```
+# incrontab -e
+
+```
+
+Add incron job:
+
+```
+/home/skype/downloads IN_CREATE chmod 644 $@/$#
+
+```
+
+Save changes and exit incrontab editor.
+
+To test incron in action just enter skype download dir and create test file:
+
+```
+# cd /home/skype/downloads
+# install -m 600 /dev/null test.txt
+# ls -l test.txt
+
+```
+
+File permissions should be 644 or -rw-r--r--
+
+(Optionally) link skype download dir into your home dir:
+
+```
+$ ln -s /home/skype/downloads ~/skype_files
+
+```
 
 ### AppArmor
 
@@ -376,250 +630,6 @@ $ tail -f reject_003.log
 The output of this command will show you rejected actions for Skype, so you will be able to add them to `domain_policy.conf` file if needed.
 
 See [[2]](http://tomoyo.sourceforge.jp/2.5/index.html.en) for a detailed guide to TOMOYO configuration.
-
-### Use Skype with special user
-
-**Warning:** As of version 1.16, Xorg runs as a regular user. This means a [special user](#Use_Skype_with_special_user) has no access to X. The following approach only works when enabling root for Xorg; see [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
-
-Instead of using AppArmor or TOMOYO, one may prefer to add a special user. This user is only used for running Skype within one's normal environment. This approach restricts Skype to reading only the data of this particular user instead of one's main user. (The new user should not be used for any other thing. Skype only.)
-
-An AUR package, [skype-restricted](https://aur.archlinux.org/packages/skype-restricted/) exists that will run skype as a separate user ("_skype") cleanly. It is heavily based on the information in this section. Alternatively, one can use [skype-secure](https://aur.archlinux.org/packages/skype-secure/), a package that works similarly to skype-restricted, but wraps around already installed Skype binary.
-
-Optionally, we first add a default group for the skype user. The security advantage in keeping the *skype* user in its separate group is that it can be restricted from accessing places other users are allowed in.
-
-```
-# groupadd skype
-
-```
-
-Then we have to add the new user:
-
-```
-# useradd -m -g skype -G audio,video -s /bin/bash skype
-
-```
-
-**Note:** Maybe you need to add "skype" user to "pulse-access" and "pulse-rt" groups. But it works fine with "audio" and "skype" groups only.
-
-Now add the following line to `/home/skype/.bashrc`:
-
-```
-export DISPLAY=":0.0"
-
-```
-
-At last we define the alias (e.g. in `~/.bashrc`):
-
-```
-alias skype='xhost +local: && su skype -c skype'
-
-```
-
-Now we can start Skype as the newly created user simply by running `skype` from the command line and entering the password of the user skype.
-
-If you are tired of typing in the skype user's password every time, make sure you installed the [sudo](/index.php/Sudo "Sudo") package, run `visudo` then add this line at the bottom:
-
-```
-%wheel ALL=(skype) NOPASSWD: /usr/bin/skype
-
-```
-
-And use this alias to launch skype:
-
-```
-alias skype='xhost +local: && sudo -u skype /usr/bin/skype'
-
-```
-
-**Note:** If you forget the `xhost` command, Skype may fail with a "No protocol specified" error on stdout.
-
-I noticed that the newly created user is able to read some of the files in my home directory because the permissions were a+r, so I changed them manually to a-r u+r and changed umask from 022 to 066.
-
-In order to restrict user "skype" accessing your external drive mounted in `/media/data` for instance, make sure first that "skype" does not belong to group "users" (if you used the default group "skype", everything should be fine), then change the accesses on the mount point:
-
-```
-# chown :users /media/data
-# chmod o-rwx /media/data
-
-```
-
-This way, it is ensured that only the owner (normally "root") and "users" can access the specified directory tree while the others, including "skype", will be forbidden.
-
-#### Access Pulseaudio controls when using Skype as a different user
-
-As the "main-user" copy /etc/pulse/default.pa to ~/.pulse/default.pa and add:
-
-```
-load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
-
-```
-
-As the skype user, create ~/.pulse/client.conf and add:
-
-```
-default-server = 127.0.0.1
-
-```
-
-#### Open URLs in your user's browser
-
-When one clicks URL in chat window, skype execute [xdg-open](/index.php/Xdg-open "Xdg-open") to handle it. By default `xdg-open` uses default web browser for skype user environment. In order to open links in your user's browser perform next setup.
-
-**Note:**
-
-*   [Sudo](/index.php/Sudo "Sudo") should be installed and properly configured.
-*   Current example uses [firefox](/index.php/Firefox "Firefox") as preferred browser.
-*   Do not forget to adjust *your_user* to proper value.
-
-Log in as skype user:
-
-```
-$ sudo -u skype -i
-
-```
-
-Create local preferences dir:
-
-```
-$ mkdir -p ~/.local/share/applications
-
-```
-
-Create `/home/skype/.local/share/applications/firefox-sudo.desktop` file:
-
-```
-[Desktop Entry]
-Name=Firefox
-Exec=/home/skype/firefox-wrapper %u
-Terminal=false
-Type=Application
-Categories=Network;WebBrowser;
-
-```
-
-Set `firefox-sudo.desktop` to manage HTTP and HTTPS URLs:
-
-```
-$ xdg-mime default firefox-sudo.desktop x-scheme-handler/http
-$ xdg-mime default firefox-sudo.desktop x-scheme-handler/https
-
-```
-
-(Optionally) add FTP handler:
-
-```
-$ xdg-mime default firefox-sudo.desktop x-scheme-handler/ftp
-
-```
-
-Create `/home/skype/firefox-wrapper` script (adjust *your_user*):
-
-```
-#!/bin/bash
-DISPLAY=:0.0 HOME=/home/*your_user* sudo -u *your_user* /usr/lib/firefox/firefox -new-tab $1
-
-```
-
-Make it executable:
-
-```
-$ chmod +x ~/firefox-wrapper
-
-```
-
-Now as root user open `/etc/sudoers`:
-
-```
-# visudo
-
-```
-
-And add permission for skype user to exec user's browser (adjust *your_user*):
-
-```
-skype ALL=(*your_user*) NOPASSWD: /usr/lib/firefox/firefox -new-tab http*, /usr/lib/firefox/firefox -new-tab ftp*
-
-```
-
-#### Access received files
-
-By default `skype` stores received files with 600 permissions (only owner can access them). One may use [incron](https://www.archlinux.org/packages/?name=incron) to perform automatic permission fix upon downloading.
-
-**Note:** This example assumes that you configure skype to save received files into `/home/skype/downloads`
-
-Make skype home dir and download dir accessible:
-
-```
-# chmod 755 /home/skype /home/skype/downloads
-
-```
-
-Install incron with the [incron](https://www.archlinux.org/packages/?name=incron) package from the [official repositories](/index.php/Official_repositories "Official repositories"), and enable and start `incrond` [using systemd](/index.php/Systemd#Using_units "Systemd"). Open incrontab for root user:
-
-```
-# incrontab -e
-
-```
-
-Add incron job:
-
-```
-/home/skype/downloads IN_CREATE chmod 644 $@/$#
-
-```
-
-Save changes and exit incrontab editor.
-
-To test incron in action just enter skype download dir and create test file:
-
-```
-# cd /home/skype/downloads
-# install -m 600 /dev/null test.txt
-# ls -l test.txt
-
-```
-
-File permissions should be 644 or -rw-r--r--
-
-(Optionally) link skype download dir into your home dir:
-
-```
-$ ln -s /home/skype/downloads ~/skype_files
-
-```
-
-### systemd-nspawn
-
-You can also run Skype in systemd container with this script:
-
-```
-#!/bin/bash
-set -e
-DEST=/mnt/stor/vm/skype
-if [ ! -d "$DEST" ];then
-    sudo mkdir -p "$DEST/var/lib/pacman/";
-    echo sudo skype | sudo pacman --arch i686 --root "$DEST" --cachedir /var/cache/pacman/pkg --config /etc/pacman.conf -Sy - --noconfirm
-    sudo systemd-nspawn -D "$DEST" groupadd skype
-    sudo systemd-nspawn -D "$DEST" useradd -g skype skype
-    sudo mkdir -p $DEST/home/skype/.config/pulse
-    sudo cp ~/.config/pulse/cookie $DEST/home/skype/.config/pulse/
-    sudo cp ~/.Xauthority $DEST/home/skype/
-    sudo chmod 755 -R $DEST/home/skype/
-    sudo chown -R 1000:1000 $DEST/home/skype/
-fi
-sudo systemd-nspawn -D "$DEST" --bind=/tmp/.X11-unix --share-system sudo -u skype env DISPLAY=:0 PULSE_SERVER=desktop skype
-
-```
-
-### Docker
-
-There is also [Docker](/index.php/Docker "Docker") solution. Install Docker and feel free to [explore Docker Hub](https://hub.docker.com/search/?q=skype&page=1&isAutomated=0&isOfficial=0&pullCount=0&starCount=0) for Skype images prepared by users.
-
-One of suggested images is [sameersbn/skype](https://github.com/sameersbn/docker-skype) (hosted on Github). It uses X11 and [PulseAudio](/index.php/PulseAudio "PulseAudio") unix domain sockets on the host to enable audio/video support in Skype. A wrapper scripts mounts the X11 and Pulseaudio sockets inside the container. The X11 socket allows for the user interface to display on the host, while Pulseaudio socket allows for the audio output to be rendered on the host. `/dev/video0` is also mounted.
-
-Container has access to `~/.Skype` and `~/Downloads` directories on your host system. Wrapper scripts are installed into `/usr/local/bin`.
-
-For installation use [upstream instructions](https://github.com/sameersbn/docker-skype/blob/master/README.md).
 
 ## Skype plugin for Pidgin
 

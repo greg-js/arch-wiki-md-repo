@@ -26,13 +26,11 @@ SageMath provides support for the following:
 
 ## Installation
 
-**Warning:** Most if not all of the [standard sage packages](http://doc.sagemath.org/html/en/installation/standard_packages.html) are available as Arch packages and exposed as (optional) dependencies of [sagemath](https://www.archlinux.org/packages/?name=sagemath), so there is no need to install them with `sage -i`.
-
 *   [sagemath](https://www.archlinux.org/packages/?name=sagemath) contains the command-line version;
 *   [sagemath-doc](https://www.archlinux.org/packages/?name=sagemath-doc) for HTML documentation and inline help from the command line.
 *   [sage-notebook](https://www.archlinux.org/packages/?name=sage-notebook) includes the browser-based notebook interface.
 
-The [sagemath](https://www.archlinux.org/packages/?name=sagemath) package has number of [optional dependencies](/index.php/Pacman#Installing_packages "Pacman") for various features that will be disabled if the needed packages are missing.
+**Note:** Most if not all of the [standard sage packages](http://doc.sagemath.org/html/en/installation/standard_packages.html) are available as [optional dependencies](/index.php/Pacman#Installing_packages "Pacman") of the [sagemath](https://www.archlinux.org/packages/?name=sagemath) package, therefore they have to be installed additionally as normal Arch packages in order to take advantage of their features. Note that there is no need to install them with `sage -i`, in fact mixing system and user packages is discouraged.
 
 ## Usage
 

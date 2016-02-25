@@ -3,12 +3,11 @@
 *   [1 Note](#Note)
 *   [2 GPT / MBR Partition Table](#GPT_.2F_MBR_Partition_Table)
 *   [3 Wifi issues](#Wifi_issues)
-*   [4 Nvidia Optimus issues](#Nvidia_Optimus_issues)
-    *   [4.1 Bumblebee Setup](#Bumblebee_Setup)
-    *   [4.2 Multimonitor Setup](#Multimonitor_Setup)
-*   [5 Sound](#Sound)
-*   [6 Ultranav - Trackpoint and Touchpad](#Ultranav_-_Trackpoint_and_Touchpad)
-*   [7 Other](#Other)
+*   [4 Nvidia Optimus Setup](#Nvidia_Optimus_Setup)
+    *   [4.1 Bumblebee](#Bumblebee)
+    *   [4.2 Multimonitor](#Multimonitor)
+*   [5 Ultranav - Trackpoint and Touchpad](#Ultranav_-_Trackpoint_and_Touchpad)
+*   [6 Other](#Other)
 
 ## Note
 
@@ -20,8 +19,6 @@ I was unable to get the most recent version of the BIOS to boot from a GPT parti
 
 ## Wifi issues
 
-*   Update wireless drivers:
-    *   TODO
 *   Random Disconnection
     *   check "dmesg | grep wlan0" will probably be complaining about "wlan0: deauthenticating from MAC by local choice (reason=3)"
     *   Arch wiki hints at solution: [Wicd#Random disconnecting](/index.php/Wicd#Random_disconnecting "Wicd")
@@ -34,20 +31,17 @@ I was unable to get the most recent version of the BIOS to boot from a GPT parti
         *   Set wicd to use dhclient:
         *   in wicd-curse press 'P', select external sources, and then select dhclient
 
-## Nvidia Optimus issues
+## Nvidia Optimus Setup
 
-*   TODO
+### Bumblebee
 
-### Bumblebee Setup
+nVidia Optimus works nicely with a standard [bumblebee](/index.php/Bumblebee "Bumblebee") setup, using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers. For further information refer to the [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") article.
 
-nVidia Optimus works nicely with a standard [[bumblebee}} setup, using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers. For further information refer to the [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") article.
+### Multimonitor
 
-### Multimonitor Setup
+The digital and analog video outputs are hardwired to the nVidia chip and are thus unvailable in a standard bumblebee setup, since the X Server is run by the Intel GPU. Unlike earlier Thinkpad W Models, the VGA-Output is not connected to the integrated chip. There are several workarounds available.
 
-The digital video outputs are hardwired to the nVidia chip and are thus unvailable in a standard bumblebee setup, since the X Server is run by the Intel GPU. Unlike earlier Thinkpad W Models, the VGA-Output is not connected to the integrated chip. There are several workarounds available.
-
-*   Using `intel-virtual-output`
-    *   Works really well with little tweaking necessary
+Using `intel-virtual-output` works really well with little tweaking necessary
 
 ```
 $ intel-virtual-output -f
@@ -56,7 +50,9 @@ $ intel-virtual-output -f
 
 **Note:** -f prevents it from becoming a daemon (thus easier to stop)
 
-*   for the nvidia card to recognize external monitors, some lines have to be commented out of the default config file at `/etc/bumblebee/xorg.conf.nvidia`
+**Note:** Starting with nvidia-360 the nvidia-modeset module will prevent bumblebee from unloading properly and has to be removed first.
+
+For the nvidia card to recognize external monitors, some lines have to be commented out of the default config file at `/etc/bumblebee/xorg.conf.nvidia`.
 
  `xorg.conf.nvidia` 
 ```
@@ -67,14 +63,7 @@ $ intel-virtual-output -f
 
 ```
 
-*   see:
-    *   [Phoronix](http://www.phoronix.com/scan.php?page=news_item&px=OTQxNg)
-    *   [Nvidia Forums](http://forums.nvidia.com/index.php?showtopic=203600)
-
-## Sound
-
-*   Worked out of the box, but was choppy. This helped:
-    *   [PulseAudio#Choppy sound](/index.php/PulseAudio#Choppy_sound "PulseAudio")
+see also: [Phoronix](http://www.phoronix.com/scan.php?page=news_item&px=OTQxNg) [Nvidia Forums](http://forums.nvidia.com/index.php?showtopic=203600)
 
 ## Ultranav - Trackpoint and Touchpad
 

@@ -210,7 +210,7 @@ However, GTK does not use [XIM](https://en.wikipedia.org/wiki/X_Input_Method "wi
 
 **Tip:** XIM is very old, you might have better luck with other input methods: [SCIM](https://en.wikipedia.org/wiki/Smart_Common_Input_Method "wikipedia:Smart Common Input Method"), [uim](https://en.wikipedia.org/wiki/Uim "wikipedia:Uim"), [IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus "wikipedia:Intelligent Input Bus") etc. See [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization") for details.
 
-**Warning:** XIM will prevent insertion of Unicode characters with the `Control` `Shift` `u` combination.
+**Note:** XIM will prevent insertion of Unicode characters with the `Ctrl+Shift+u` combination.
 
 ### Currency sign on other key
 

@@ -105,6 +105,10 @@ There are also a number of other unofficial MATE applications that are contribut
 
 The followings are also available via the AUR and integrate with MATE but the packages are not maintained by the MATE team.
 
+*   **Dock Applet** — Application dock for the MATE panel.
+
+	[https://github.com/robint99/dock-applet](https://github.com/robint99/dock-applet) || [mate-applet-dock](https://aur.archlinux.org/packages/mate-applet-dock/)
+
 *   **MATE Menu** — Advanced menu for MATE Panel, a fork of MintMenu.
 
 	[https://bitbucket.org/ubuntu-mate/mate-menu](https://bitbucket.org/ubuntu-mate/mate-menu) || [mate-menu](https://aur.archlinux.org/packages/mate-menu/)

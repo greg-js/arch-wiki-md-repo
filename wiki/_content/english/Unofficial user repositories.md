@@ -31,24 +31,23 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.1.6 city](#city)
         *   [3.1.7 demz-repo-archiso](#demz-repo-archiso)
         *   [3.1.8 demz-repo-core](#demz-repo-core)
-        *   [3.1.9 gnome-encfs-manager](#gnome-encfs-manager)
-        *   [3.1.10 haskell-core](#haskell-core)
-        *   [3.1.11 haskell-happstack](#haskell-happstack)
-        *   [3.1.12 haskell-web](#haskell-web)
-        *   [3.1.13 infinality-bundle](#infinality-bundle)
-        *   [3.1.14 ivasilev](#ivasilev_2)
-        *   [3.1.15 llvm-svn](#llvm-svn)
-        *   [3.1.16 metalgamer](#metalgamer)
-        *   [3.1.17 miffe](#miffe)
-        *   [3.1.18 nullptr_t](#nullptr_t)
-        *   [3.1.19 pipelight](#pipelight)
-        *   [3.1.20 repo-ck](#repo-ck)
-        *   [3.1.21 seblu](#seblu)
-        *   [3.1.22 seiichiro](#seiichiro)
-        *   [3.1.23 sergej-repo](#sergej-repo)
-        *   [3.1.24 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.25 herecura](#herecura)
-        *   [3.1.26 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.9 haskell-core](#haskell-core)
+        *   [3.1.10 haskell-happstack](#haskell-happstack)
+        *   [3.1.11 haskell-web](#haskell-web)
+        *   [3.1.12 infinality-bundle](#infinality-bundle)
+        *   [3.1.13 ivasilev](#ivasilev_2)
+        *   [3.1.14 llvm-svn](#llvm-svn)
+        *   [3.1.15 metalgamer](#metalgamer)
+        *   [3.1.16 miffe](#miffe)
+        *   [3.1.17 nullptr_t](#nullptr_t)
+        *   [3.1.18 pipelight](#pipelight)
+        *   [3.1.19 repo-ck](#repo-ck)
+        *   [3.1.20 seblu](#seblu)
+        *   [3.1.21 seiichiro](#seiichiro)
+        *   [3.1.22 sergej-repo](#sergej-repo)
+        *   [3.1.23 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.24 herecura](#herecura)
+        *   [3.1.25 blackeagle-pre-community](#blackeagle-pre-community)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 arch-deepin](#arch-deepin)
         *   [3.2.2 archaudio](#archaudio)
@@ -340,19 +339,6 @@ Server = http://demizerone.com/$repo/$arch
 ```
 [demz-repo-core]
 Server = http://demizerone.com/$repo/$arch
-
-```
-
-#### gnome-encfs-manager
-
-*   **Maintainer:** Moritz Molch
-*   **Description:** The gnome-encfs-manager can be used to integrate [EncFS](/index.php/EncFS "EncFS")
-*   **Upstream page:** [Gnome EncfsM](https://launchpad.net/gencfsm).
-*   **Key ID:**
-
-```
-[home_moritzmolch_gencfsm_Arch_Extra]
-Server = http://download.opensuse.org/repositories/home:/moritzmolch:/gencfsm/Arch_Extra/$arch
 
 ```
 
