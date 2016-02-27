@@ -39,16 +39,15 @@ vagrant plugin install vagrant-vbguest vagrant-share
 
 This plugin adds [Libvirt](/index.php/Libvirt "Libvirt") support.
 
-It currently has the same issue with ruby as the vagrant-kvm plugin. As of vagrant 1.7.2, this invocation will install vagrant-libvirt successfully:
+As of vagrant 1.8.1, this invocation will install vagrant-libvirt successfully:
 
 ```
- # in case it's already installled
  vagrant plugin uninstall vagrant-libvirt
 
  # vagrant's copy of curl prevents the proper installation of ruby-libvirt
  sudo mv /opt/vagrant/embedded/lib/libcurl.so{,.backup}
  sudo mv /opt/vagrant/embedded/lib/libcurl.so.4{,.backup}
- sudo mv /opt/vagrant/embedded/lib/libcurl.so.4.3.0{,.backup}
+ sudo mv /opt/vagrant/embedded/lib/libcurl.so.4.4.0{,.backup}
  sudo mv /opt/vagrant/embedded/lib/pkgconfig/libcurl.pc{,.backup}
 
  CONFIGURE_ARGS="with-libvirt-include=/usr/include/libvirt with-libvirt-lib=/usr/lib" vagrant plugin install vagrant-libvirt
@@ -56,12 +55,32 @@ It currently has the same issue with ruby as the vagrant-kvm plugin. As of vagra
  # put vagrant's copy of curl back
  sudo mv /opt/vagrant/embedded/lib/libcurl.so{.backup,}
  sudo mv /opt/vagrant/embedded/lib/libcurl.so.4{.backup,}
- sudo mv /opt/vagrant/embedded/lib/libcurl.so.4.3.0{.backup,}
+ sudo mv /opt/vagrant/embedded/lib/libcurl.so.4.4.0{.backup,}
+ sudo mv /opt/vagrant/embedded/lib/pkgconfig/libcurl.pc{.backup,}
+
+ # [https://github.com/pradels/vagrant-libvirt/issues/541](https://github.com/pradels/vagrant-libvirt/issues/541)
+ export PATH=/opt/vagrant/embedded/bin:$PATH
+ export GEM_HOME=~/.vagrant.d/gems
+ export GEM_PATH=$GEM_HOME:/opt/vagrant/embedded/gems
+ gem uninstall ruby-libvirt
+ sudo mv /opt/vagrant/embedded/lib/libcurl.so{,.backup}
+ sudo mv /opt/vagrant/embedded/lib/libcurl.so.4{,.backup}
+ sudo mv /opt/vagrant/embedded/lib/libcurl.so.4.4.0{,.backup}
+ sudo mv /opt/vagrant/embedded/lib/pkgconfig/libcurl.pc{,.backup}
+ gem install ruby-libvirt
+ sudo mv /opt/vagrant/embedded/lib/libcurl.so{.backup,}
+ sudo mv /opt/vagrant/embedded/lib/libcurl.so.4{.backup,}
+ sudo mv /opt/vagrant/embedded/lib/libcurl.so.4.4.0{.backup,}
  sudo mv /opt/vagrant/embedded/lib/pkgconfig/libcurl.pc{.backup,}
 
 ```
 
-If starting a box with vagrant-libvirt still gives you errors it can help to replace the `ruby-libvirt` gem located in `~/.vagrant.d` with the one from the [AUR](/index.php/AUR "AUR"). First install [ruby-libvirt](https://aur.archlinux.org/packages/ruby-libvirt/) from the [AUR](/index.php/AUR "AUR") Arch User repository. Then copy `/usr/lib/ruby/gems/2.2.0/gems/ruby-libvirt-*` to `~/.vagrant.d/gems/gems/` (make sure to remove the `ruby-libvirt-*` directory under `~/.vagrant.d/gems/gems/` beforehand).
+Then start the virtual machine with
+
+```
+ vagrant up --provider=libvirt
+
+```
 
 ### vagrant-lxc
 

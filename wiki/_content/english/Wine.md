@@ -46,7 +46,7 @@
 
 **Warning:** If you can access a file or resource with your user account, programs running in Wine can too. Wine prefixes are **not** [sandboxes](https://en.wikipedia.org/wiki/Sandbox_(computer_security) "wikipedia:Sandbox (computer security)"). Consider using [virtualization](https://en.wikipedia.org/wiki/Virtualization "wikipedia:Virtualization") if security is important.
 
-Wine can be [installed](/index.php/Pacman "Pacman") with the package [wine](https://www.archlinux.org/packages/?name=wine), available in the [official repositories](/index.php/Official_repositories "Official repositories"). If you are running a 64-bit system, you will need to enable the [Multilib](/index.php/Multilib "Multilib") repository first. See also [Wine#Sound](/index.php/Wine#Sound "Wine").
+Wine can be [installed](/index.php/Pacman "Pacman") with the package [wine](https://www.archlinux.org/packages/?name=wine), available in the [official repositories](/index.php/Official_repositories "Official repositories"). If you are running a 64-bit system, you will need to enable the [Multilib](/index.php/Multilib "Multilib") repository first. See also [#Sound](#Sound).
 
 You may also want to install [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that need support for Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
 
@@ -265,7 +265,7 @@ $ rm ~/.local/share/mime/application/x-wine-extension*
 
 **Warning:** Do not run or install Wine applications as root! See [Running Wine as root](https://wiki.winehq.org/FAQ#run_as_root) for the official statement.
 
-See [Installing Windows Applications](https://wiki.winehq.org/FAQ#Installing_Windows_Applications) at WineHQ. See [Wine#Desktop_launcher_menus](/index.php/Wine#Desktop_launcher_menus "Wine") for information on where the shortcuts were created.
+See [Installing Windows Applications](https://wiki.winehq.org/FAQ#Installing_Windows_Applications) at WineHQ. See [#Desktop launcher menus](#Desktop_launcher_menus) for information on where the shortcuts were created.
 
 See [Running applications](https://wiki.winehq.org/FAQ#Running_applications) at WineHQ. The `.desktop` files created by the installer should automatically appear as entries in any X menu or file manager applications. They can also be examined to determine what command to use to run the application from a terminal.
 

@@ -52,7 +52,7 @@ As of [linux](https://www.archlinux.org/packages/?name=linux) 4.4 and [linux-lts
 
 ### Hibernation
 
-Hibernation works with [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) 4.1\. See [Power_management/Suspend_and_hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate").
+Hibernation works with [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) 4.1\. See [Power management/Suspend and hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate").
 
 ## Troubleshooting
 
@@ -100,7 +100,7 @@ Other issues include the yellow USB port not being powered.
 
 ### Display issues
 
-See [Intel_graphics#SNA_issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
+See [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
 
 ## lspci
 

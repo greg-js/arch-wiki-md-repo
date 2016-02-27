@@ -45,7 +45,7 @@ Follow [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU"
 
 There is no need for any configuration to run [Xorg](/index.php/Xorg "Xorg").
 
-**Note:** The latest generation of integrated GPUs (Skylake/HD 530 for instance) may require additional configuration, see [#Skylake_Support](#Skylake_Support)
+**Note:** The latest generation of integrated GPUs (Skylake/HD 530 for instance) may require additional configuration, see [#Skylake Support](#Skylake_Support)
 
 However, to take advantage of some driver options, you will need to create a Xorg configuration file similar to the one below:
 

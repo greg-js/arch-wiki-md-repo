@@ -352,7 +352,7 @@ This means that the `snapper-timeline.service` will now run every five minutes, 
 
 For the timeline cleanup algorithm the value of `TIMELINE_LIMIT_HOURLY` now means how many 5-minute snapshots should be kept.
 
-You can find more information in the `systemd.timers` and `systemd.time` manpages, and also on the [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") page. Information about overriding unit files is in [Systemd#Drop-in_snippets](/index.php/Systemd#Drop-in_snippets "Systemd").
+You can find more information in the `systemd.timers` and `systemd.time` manpages, and also on the [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") page. Information about overriding unit files is in [Systemd#Drop-in snippets](/index.php/Systemd#Drop-in_snippets "Systemd").
 
 ### Deleting files from snapshots
 

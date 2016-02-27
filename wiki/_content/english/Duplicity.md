@@ -135,7 +135,7 @@ gpg_start
 
 If you get gpg errors revolving around “inappropriate ioctl for device” it most likely has to do with changes to the gpg agent behavior from gpg version 2.1 up. See [this thread](https://bbs.archlinux.org/viewtopic.php?id=190301) for more information. Generally speaking one needs to explicitly allow programs to provide the passphrase to gpg agent instead of prompting the user.
 
-The steps to remediate this issue are outlined in [GnuPG#Unattended_passphrase](/index.php/GnuPG#Unattended_passphrase "GnuPG").
+The steps to remediate this issue are outlined in [GnuPG#Unattended passphrase](/index.php/GnuPG#Unattended_passphrase "GnuPG").
 
 ## See also
 

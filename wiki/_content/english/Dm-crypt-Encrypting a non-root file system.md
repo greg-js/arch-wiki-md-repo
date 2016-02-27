@@ -8,8 +8,8 @@ The following are examples of encrypting a secondary, i.e. non-root, filesystem 
 *   [2 Partition](#Partition)
     *   [2.1 Manual mounting and unmounting](#Manual_mounting_and_unmounting)
     *   [2.2 Automated unlocking and mounting](#Automated_unlocking_and_mounting)
-        *   [2.2.1 Crypttab](#Crypttab)
-        *   [2.2.2 Pam mount](#Pam_mount)
+        *   [2.2.1 At boot time](#At_boot_time)
+        *   [2.2.2 On user login](#On_user_login)
 *   [3 Loop device](#Loop_device)
     *   [3.1 Manual mounting and unmounting](#Manual_mounting_and_unmounting_2)
     *   [3.2 Resizing the loopback filesystem](#Resizing_the_loopback_filesystem)
@@ -75,25 +75,25 @@ To unmount it:
 
 ### Automated unlocking and mounting
 
-There are two different solutions for automating the process of unlocking the partition and mounting its filesystem.
+There are three different solutions for automating the process of unlocking the partition and mounting its filesystem.
 
-#### Crypttab
+#### At boot time
 
 Using the `/etc/crypttab` configuration file, unlocking happens at boot time by systemd's automatic parsing. This is the recommended solution if you want to use one common partition for all user's home partitions or automatically mount another encrypted block device.
 
 See [Dm-crypt/System configuration#crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration") for references and [Dm-crypt/System configuration#Mounting at boot time](/index.php/Dm-crypt/System_configuration#Mounting_at_boot_time "Dm-crypt/System configuration") for an example set up.
 
-#### Pam mount
+#### On user login
 
-With Pam mount, unlocking happens on user login: this is the recommended solution if you want to have a single user's home directory on a partition.
+Using [pam_exec](/index.php/Pam_exec "Pam exec") and systemd service file, it is possible to unlock the partition on user login: this is the recommended solution if you want to have a single user's home directory on a partition.
 
-See [pam_mount](/index.php/Pam_mount "Pam mount").
+Unlocking on user login is also possible with [pam_mount](/index.php/Pam_mount "Pam mount").
 
 ## Loop device
 
 A loop device enables to map a blockdevice to a file with the standard util-linux tool `losetup`. The file can then contain a filesystem, which can be used quite like any other filesystem. A lot of users know [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") as a tool to create encrypted containers. Just about the same functionality can be achieved with a loopback filesystem encrypted with LUKS and is shown in the following example.
 
-First, start by creating an encrypted container, using an appropriate [random number generator](/index.php/Random_number_generation "Random number generation"):
+First, start by creating an encrypted container, using an appropriate [random number generator](/index.php/Random_number_generator "Random number generator"):
 
 ```
 # dd if=/dev/urandom of=/bigsecret bs=1M count=10

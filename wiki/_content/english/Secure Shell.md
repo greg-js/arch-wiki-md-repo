@@ -137,7 +137,7 @@ Port 39901
 
 ```
 
-For a discussion, see [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity"). Even though the port ssh is running on could be detected by using a port-scanner like [nmap](https://www.archlinux.org/packages/?name=nmap), changing it will reduce the number of log entries caused by automated authentication attempts. To help select a port review the [list of TCP and UDP port numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers"). You can also find port information locally in `/etc/services`. Select an alternative port that is **not** already assigned to a common service to prevent conflicts.
+To help select a port review the [list of TCP and UDP port numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers"). You can also find port information locally in `/etc/services`. Select an alternative port that is **not** already assigned to a common service to prevent conflicts. A port change from default port 22 is recommended, because it will reduce the *number* of log entries caused by automated authentication attempts - not eliminate them. See [Port knocking](/index.php/Port_knocking "Port knocking") for related information.
 
 **Note:** OpenSSH can also listen on multiple ports simply by having multiple **Port x** lines in the config file.
 

@@ -62,7 +62,7 @@ If the package is unavailable, find the correct [PKGBUILD](/index.php/PKGBUILD "
 
 For packages from the [official repositories](/index.php/Official_repositories "Official repositories"), retrieve the PKGBUILD with [ABS](/index.php/ABS "ABS") and change the software version. Alternatively, find the package on the [Packages](https://www.archlinux.org/packages) website, click "View Changes", and navigate to the desired version. The files are available through a `.tar.gz` snapshot, and via the *Tree* view.
 
-See also [Getting PKGBUILDS From SVN#Checkout an older revision of a package](/index.php/Getting_PKGBUILDS_From_SVN#Checkout_an_older_revision_of_a_package "Getting PKGBUILDS From SVN").
+See also [Getting PKGBUILDs from SVN#Checkout an older revision of a package](/index.php/Getting_PKGBUILDs_from_SVN#Checkout_an_older_revision_of_a_package "Getting PKGBUILDs from SVN").
 
 Old AUR packages can be obtained from [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/). See [Arch User Repository#Git repositories for AUR3 packages](/index.php/Arch_User_Repository#Git_repositories_for_AUR3_packages "Arch User Repository") for details.
 

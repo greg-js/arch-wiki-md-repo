@@ -272,7 +272,7 @@ See `man iptables` for more advanced rules, like matching multiple ports.
 
 #### Port knocking
 
-Port knocking is a method to externally open ports that, by default, the firewall keeps closed. It works by requiring connection attempts to a series of predefined closed ports. When the correct sequence of port "knocks" (connection attempts) is received, the firewall opens certain port(s) to allow a connection. See [Port Knocking](/index.php/Port_Knocking "Port Knocking") for more information.
+Port knocking is a method to externally open ports that, by default, the firewall keeps closed. It works by requiring connection attempts to a series of predefined closed ports. When the correct sequence of port "knocks" (connection attempts) is received, the firewall opens certain port(s) to allow a connection. See [Port knocking](/index.php/Port_knocking "Port knocking") for more information.
 
 ### Protection against spoofing attacks
 

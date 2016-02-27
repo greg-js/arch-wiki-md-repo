@@ -217,7 +217,7 @@ $ rm -f cookies.sqlite
 
 ```
 
-**Обратите внимание:** *xxxxxxxx* — случайно сгенерированная строка из 8 символов.
+**Примечание:** *xxxxxxxx* — случайно сгенерированная строка из 8 символов.
 
 ### Unreadable input fields with dark GTK+ themes
 

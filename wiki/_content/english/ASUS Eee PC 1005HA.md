@@ -45,11 +45,11 @@ For an in-depth guide on the installation see the [Beginners' guide](/index.php/
 
 Boot Booster is a feature that caches the result of the POST check to the hard drive. It can save several seconds off your boot time once activated.
 
-To continue using Boot Booster, create a [partition](/index.php/Partitioning "Partitioning") on the disk:
+To continue using Boot Booster, create a [partition](/index.php/Partition "Partition") on the disk:
 
 *   It must be a primary partition.
 *   It must be 8MB minimum, pay attention to [partition alignments](/index.php/Partitioning#Partition_alignment "Partitioning").
-*   It must be type <tt>0xEF</tt> (<tt>EFI (FAT-12/16/32)</tt> in [Fdisk](/index.php/Fdisk "Fdisk"), <tt>esp</tt> in [GNU_Parted](/index.php/GNU_Parted "GNU Parted")).
+*   It must be type <tt>0xEF</tt> (<tt>EFI (FAT-12/16/32)</tt> in [Fdisk](/index.php/Fdisk "Fdisk"), <tt>esp</tt> in [GNU Parted](/index.php/GNU_Parted "GNU Parted")).
 
 After install is complete, enable Boot Booster in the BIOS. On the second boot after enabling, Boot Booster will be fully activated. Boot Booster must be disabled in the BIOS to boot from other devices again.
 

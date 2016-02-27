@@ -43,7 +43,7 @@ You may have seen the comments or claims: *Arch Linux was never intended as a se
 
 ## Requirements
 
-For using Arch Linux on a server, you will need to have an Arch Linux [installation](/index.php/Installation_guide "Installation guide") ready.
+For using Arch Linux on a server, you will need to have an Arch Linux [installation](/index.php/Installation "Installation") ready.
 
 In most GNU/Linux server operating systems, you have two options:
 

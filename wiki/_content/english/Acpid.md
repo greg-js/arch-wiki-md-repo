@@ -181,7 +181,7 @@ event=button/volumeup
 action=amixer set Master 5+
 ```
 
-**Note:** These commands may not work as expected with PulseAudio. See [PulseAudio/Troubleshooting#Output_stuck_muted_while_Master_is_toggled](/index.php/PulseAudio/Troubleshooting#Output_stuck_muted_while_Master_is_toggled "PulseAudio/Troubleshooting").
+**Note:** These commands may not work as expected with PulseAudio. See [PulseAudio/Troubleshooting#Output stuck muted while Master is toggled](/index.php/PulseAudio/Troubleshooting#Output_stuck_muted_while_Master_is_toggled "PulseAudio/Troubleshooting").
 
 **Tip:** Disable or bind the volume buttons in Xorg to prevent conflicts with other applications. See [Xmodmap](/index.php/Xmodmap "Xmodmap") for details.
 

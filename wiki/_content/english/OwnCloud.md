@@ -198,7 +198,7 @@ If you would like to have ownCloud run in a subdirectory, then edit the `/etc/ht
 
 ### php-fpm configuration
 
-*ownCloud* official documentation uses [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) for [PHP](/index.php/PHP "PHP") and as such it is the best supported configuration. See [Nginx#PHP_implementation](/index.php/Nginx#PHP_implementation "Nginx") to set up *php-fpm* and [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") to acquire and/or set up a TLS certificate.
+*ownCloud* official documentation uses [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) for [PHP](/index.php/PHP "PHP") and as such it is the best supported configuration. See [Nginx#PHP implementation](/index.php/Nginx#PHP_implementation "Nginx") to set up *php-fpm* and [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") to acquire and/or set up a TLS certificate.
 
 By default, the only things you need to change from the [recommended server configuration](https://doc.owncloud.org/server/8.2/admin_manual/installation/nginx_configuration.html) for ownCloud to run on Arch Linux are the `server_name`, `ssl_certificate`, `ssl_certificate_key`, `root` and `fastcgi_pass` directives:
 
@@ -317,7 +317,7 @@ You can run *ownCloud* in its own process and service by using the [uWSGI](/inde
 
 #### Configuration
 
-The only part that differs from [#php-fpm_configuration](#php-fpm_configuration) is the `location ~ \.php(?:$|/) {}` block:
+The only part that differs from [#php-fpm configuration](#php-fpm_configuration) is the `location ~ \.php(?:$|/) {}` block:
 
 ```
   location ~ \.php(?:$|/) {

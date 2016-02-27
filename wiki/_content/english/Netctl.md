@@ -622,7 +622,7 @@ After that, try to restart your netctl-auto service and WiFi auto detection shou
 
 ### netctl-auto does not automatically unblock a wireless card to use an interface
 
-Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by the kernel. This can be handled by [rfkill](/index.php/Wireless_network_configuration#Rfkill_caveat "Wireless network configuration").
+Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by the kernel. This can be handled by [rfkill](/index.php/Rfkill "Rfkill").
 
 If you want *netctl-auto* to automatically unblock your wireless card to connect to a particular network, set `RFKill=++auto++` option for the wireless connection of your choice, as specified in the [netctl.profile(5)](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt) man page.
 

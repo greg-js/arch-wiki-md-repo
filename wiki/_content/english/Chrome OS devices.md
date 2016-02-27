@@ -271,7 +271,7 @@ Create an [Arch Linux Installer USB drive](https://wiki.archlinux.org/index.php/
 
 The Arch Linux installer boot menu should appear and the installation process can [proceed as normal](/index.php/Beginners%27_guide#Installation "Beginners' guide").
 
-**Note:** For now choose [GRUB](/index.php/Beginners%27_guide#For_BIOS_motherboards "Beginners' guide") as your bootloader: you can choose MBR or GPT [partitioning schemes](/index.php/Beginners%27_Guide#Partition_schemes "Beginners' Guide"). If you choose GPT then do not forget to add a [BIOS Boot Partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Also see [Known Issues](#Syslinux).
+**Note:** For now choose [GRUB](/index.php/Beginners%27_guide#For_BIOS_motherboards "Beginners' guide") as your bootloader: you can choose MBR or GPT [partitioning schemes](/index.php/Beginners%27_guide#Partition_schemes "Beginners' guide"). If you choose GPT then do not forget to add a [BIOS Boot Partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Also see [Known Issues](#Syslinux).
 
 After finishing installing Arch Linux continue by following the [Post Installation Configuration](#Post_installation_configuration).
 

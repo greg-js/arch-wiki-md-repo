@@ -348,7 +348,7 @@ destination d_iptables { file("/var/log/iptables.log"); };
 
 [wikipedia:es:iptables](https://en.wikipedia.org/wiki/es:iptables "wikipedia:es:iptables")
 
-*   [Port Knocking](/index.php/Port_Knocking "Port Knocking")
+*   [Port knocking](/index.php/Port_knocking "Port knocking")
 *   [Sitio web oficial de iptables](http://www.netfilter.org/projects/iptables/index.html)
 *   [Tutorial de iptables 1.2.2](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) por Oskar Andreasson
 *   [iptables Debian](http://wiki.debian.org/iptables) Wiki de Debian

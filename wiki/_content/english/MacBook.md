@@ -145,7 +145,7 @@ The only special consideration is the MacBook firmware boot sound. To ensure tha
 
 **Note:**
 
-*   The swap partition is optional, on machines with a RAM of size 4GB or more, good performance can be expected without a swap partition. Also, a **swap file** can be created later, see [Swap file](/index.php/Swap#Swap_file "Swap"). You'll need a swap partition/file if you expect to [Hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") your machine in future.
+*   The swap partition is optional, on machines with a RAM of size 4GB or more, good performance can be expected without a swap partition. Also, a **swap file** can be created later, see [Swap file](/index.php/Swap#Swap_file "Swap"). You'll need a swap partition/file if you expect to [Hibernate](/index.php/Hibernate "Hibernate") your machine in future.
 *   For more information on partitioning, see [Partitioning hard disks: General information](/index.php/Beginners%27_guide#Partitioning_hard_disks:_General_information "Beginners' guide").
 *   As of Aug 2014 [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) has a bug that does not allow to run `refind-install` if EFI partition is mounted to `/boot`. Other bootloaders (like [gummiboot](https://www.archlinux.org/packages/?name=gummiboot)) have no such problem and thus there is no need to split `/boot/efi` from `/boot`.
 
@@ -338,7 +338,7 @@ If, on the other hand, you are dual/triple booting, then read on.
 
 *   Remember to hold ALT/Option key **while** starting your computer if you want to boot back into OS X.
 
-**Details (quoted from [GRUB_EFI_Examples#M5A97](/index.php/GRUB_EFI_Examples#M5A97 "GRUB EFI Examples")):**
+**Details (quoted from [GRUB EFI Examples#M5A97](/index.php/GRUB_EFI_Examples#M5A97 "GRUB EFI Examples")):**
 
 Finish the standard Arch install procedures, making sure that you install [grub](https://www.archlinux.org/packages/?name=grub) and partition your boot hard disk as GPT.
 
@@ -412,13 +412,13 @@ Some models may need EFI_ARCH set to i386.
 *   Some MacBook users report strange keyboard output such as long delays and character doubling. To fix this problem, boot with the following options: arch noapic irqpoll acpi=force
 
 *   Proceed through the installation as described in the [Installation guide](/index.php/Installation_guide "Installation guide") **except** in the following areas:
-    *   In the [prepare hard drive](/index.php/Installation_guide#Prepare_Hard_Drive "Installation guide") stage, do only the [set filesystem mountpoints](/index.php/Installation_guide#Manually_configure_block_devices.2C_filesystems_and_mountpoints "Installation guide") step, taking care to assign the correct partitions. Partitions have already been created if you followed [#Partition](#Partition)
-    *   **(for booting with EFI**) After the [install boot loader](/index.php/Installation_guide#Install_Bootloader "Installation guide") stage, exit the installer and install [GRUB](/index.php/GRUB "GRUB").
-    *   **(for booting with BIOS-compatibility)** In the [install boot loader](/index.php/Installation_guide#Install_Bootloader "Installation guide") stage, edit the menu.lst file and add **reboot=pci** to the end of the **kernel** lines, for example: `kernel /vmlinuz26 root=/dev/sda5 ro reboot=pci` This will allow your MacBook to reboot correctly from Arch.
-    *   **(for booting with BIOS-compatibility)** Also in the [install boot loader](/index.php/Installation_guide#Install_Bootloader "Installation guide") stage, install GRUB on whatever partition that `/boot` is on.
+    *   In the [prepare hard drive](/index.php/Installation_guide#Prepare_Hard_Drive "Installation guide") stage, do only the [set filesystem mountpoints](/index.php/Installation_guide#Manually_configure_block_devices.2C_filesystems_and_mountpoints "Installation guide") step, taking care to assign the correct partitions. Partitions have already been created if you followed [#Partitions](#Partitions)
+    *   **(for booting with EFI**) After the [install boot loader](/index.php/Installation_guide#Install_a_boot_loader "Installation guide") stage, exit the installer and install [GRUB](/index.php/GRUB "GRUB").
+    *   **(for booting with BIOS-compatibility)** In the [install boot loader](/index.php/Installation_guide#Install_a_boot_loader "Installation guide") stage, edit the menu.lst file and add **reboot=pci** to the end of the **kernel** lines, for example: `kernel /vmlinuz26 root=/dev/sda5 ro reboot=pci` This will allow your MacBook to reboot correctly from Arch.
+    *   **(for booting with BIOS-compatibility)** Also in the [install boot loader](/index.php/Installation_guide#Install_a_boot_loader "Installation guide") stage, install GRUB on whatever partition that `/boot` is on.
         **Warning:** Do not install GRUB onto */dev/sda* !!! Doing so is likely to lead to an unstable post-environment.
 
-    *   In the [configure system](/index.php/Installation_guide#Configure_System "Installation guide") stage, edit /etc/mkinitcpio.conf and ensure the **keyboard** hook is in the **HOOKS** line somewhere after the **autodetect** hook. This will load the drivers for your keyboard in case you need to use it before Arch boots (e.g. entering a [LUKS](/index.php/LUKS "LUKS") password or using the troubleshooting shell).
+    *   In the [configure system](/index.php/Installation_guide#Configure_the_system "Installation guide") stage, edit /etc/mkinitcpio.conf and ensure the **keyboard** hook is in the **HOOKS** line somewhere after the **autodetect** hook. This will load the drivers for your keyboard in case you need to use it before Arch boots (e.g. entering a [LUKS](/index.php/LUKS "LUKS") password or using the troubleshooting shell).
 
 *   When the install process is complete, reboot your computer.
 
@@ -449,7 +449,7 @@ $ lspci | grep VGA
 
 ##### NVIDIA note
 
-**Tip:** MBP 6.2 - With the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers, support for [PureVideo HD](/index.php/NVIDIA#Enabling_Pure_Video_HD_.28VDPAU.2FVAAPI.29 "NVIDIA") is available for hardware video decoding.
+**Tip:** MBP 6.2 - With the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers, support for [PureVideo HD](/index.php/NVIDIA#Pure_Video_HD_.28VDPAU.2FVAAPI.29 "NVIDIA") is available for hardware video decoding.
 
 **Tip:** If you have installed OS in EFI mode and NVIDIA binary drivers are working only in BIOS mode (e.g. you get black screen on EFI boot), try this approach: [http://askubuntu.com/a/613573/492886](http://askubuntu.com/a/613573/492886)
 
@@ -804,7 +804,7 @@ See also [Linux bug #71131](https://bugzilla.kernel.org/show_bug.cgi?id=71131) a
 
 ### Temperature Sensors
 
-For reading temperature just install [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors). See the [Lm sensors](/index.php/Lm_sensors "Lm sensors") page for more information.
+For reading temperature just install [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors). See the [lm_sensors](/index.php/Lm_sensors "Lm sensors") page for more information.
 
 ### Color Profile
 

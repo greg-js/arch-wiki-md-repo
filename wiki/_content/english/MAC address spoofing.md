@@ -32,7 +32,7 @@ First, you can check your current MAC address with the command:
 
 ```
 
-where `*interface*` is the name of your [network interface](/index.php/Network_configuration#Network_Interfaces "Network configuration").
+where `*interface*` is the name of your [network interface](/index.php/Network_interface "Network interface").
 
 The section that interests us at the moment is the one that has "link/ether" followed by a 6-byte number. It will probably look something like this:
 
@@ -74,7 +74,7 @@ Another method uses [macchanger](https://www.archlinux.org/packages/?name=maccha
 
 [Install](/index.php/Pacman#Installing_specific_packages "Pacman") the package [macchanger](https://www.archlinux.org/packages/?name=macchanger) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-The spoofing is done on per-interface basis, specify [network interface](/index.php/Network_configuration#Network_Interfaces "Network configuration") name as `*interface*` in each of the following commands.
+The spoofing is done on per-interface basis, specify [network interface](/index.php/Network_interface "Network interface") name as `*interface*` in each of the following commands.
 
 The MAC address can be spoofed with a fully random address:
 

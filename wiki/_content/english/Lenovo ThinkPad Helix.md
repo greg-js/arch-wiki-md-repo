@@ -82,7 +82,7 @@ The [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) package install
 
 [Udev](/index.php/Udev "Udev") should automatically detect the changes if already running. But, you may want to reboot your system to verify the changes stick.
 
-Additionally, you may want to read the [Wacom_Tablet#Dynamic_with_udev](/index.php/Wacom_Tablet#Dynamic_with_udev "Wacom Tablet") section to ensure the two wacom input devices are found. On this Helix system, it looks like this:
+Additionally, you may want to read the [Wacom Tablet#Dynamic with udev](/index.php/Wacom_Tablet#Dynamic_with_udev "Wacom Tablet") section to ensure the two wacom input devices are found. On this Helix system, it looks like this:
 
 ```
 $ ls -l /dev/input/wacom* 
@@ -162,7 +162,7 @@ There is also [Magick Rotation](https://launchpad.net/magick-rotation/), which i
 
 The built in 128 GB and 256 GB mSATA SSDs included with the Helix all support SSD TRIM functions.
 
-Follow the [Solid_State_Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives") instructions to enable trim. For example, one could use **fstrim** and set it up weekly like so:
+Follow the [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives") instructions to enable trim. For example, one could use **fstrim** and set it up weekly like so:
 
 ```
 # systemctl enable fstrim.timer

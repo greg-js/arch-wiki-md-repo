@@ -22,6 +22,7 @@ This page is a starting point for a basic OpenLDAP installation and a sanity che
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Client Authentication Checking](#Client_Authentication_Checking)
     *   [4.2 LDAP Server Stops Suddenly](#LDAP_Server_Stops_Suddenly)
+    *   [4.3 LDAP Server Doesn't Start](#LDAP_Server_Doesn.27t_Start)
 *   [5 See Also](#See_Also)
 
 ## Installation
@@ -145,6 +146,7 @@ If you decide to use SSL:
 
 *   The protocol (ldap or ldaps) in the `URI` entry has to conform with the slapd configuration
 *   If you decide to use self-signed certificates, add a `TLS_REQCERT allow` line to `ldap.conf`
+*   If you use a signed certificate from a CA, add the line `TLS_CACERTDIR /usr/share/ca-certificates/trust-source` in `ldap.conf`.
 
 ### Create initial entry
 
@@ -231,6 +233,18 @@ TLSCertificateKeyFile /etc/openldap/ssl/slapdkey.pem
 
 ```
 
+If you are using a signed SSL Certificate from a certification authority such as [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt"), you will also need to specify the path to the root certificates database and your intermediary certificate. You will also need to change ownership of the `.pem` files and intermediary directories to make them readable to the user `ldap`:
+
+```
+# Certificate/SSL Section
+TLSCipherSuite DEFAULT
+TLSCertificateFile /etc/letsencrypt/live/ldap.my-domain.com/cert.pem
+TLSCertificateKeyFile /etc/letsencrypt/live/ldap.my-domain.com/privkey.pem
+TLSCACertificateFile /etc/letsencrypt/live/ldap.my-domain.com/chain.pem
+TLSCACertificatePath /usr/share/ca-certificates/trust-source
+
+```
+
 The TLSCipherSuite specifies a list of OpenSSL ciphers from which slapd will choose when negotiating TLS connections, in decreasing order of preference. In addition to those specific ciphers, you can use any of the wildcards supported by OpenSSL. **NOTE:** DEFAULT is a wildcard. See `man ciphers` for description of ciphers, wildcards and options supported.
 
 **Note:** To see which ciphers are supported by your local OpenSSL installation, type the following: `openssl ciphers -v ALL:COMPLEMENTOFALL`. Always test which ciphers will actually be enabled by TLSCipherSuite by providing it to OpenSSL command, like this: `openssl ciphers -v 'DEFAULT'`
@@ -304,6 +318,15 @@ If you notice that slapd seems to start but then stops, try running:
 ```
 
 to allow slapd write access to its data directory as the user "ldap".
+
+### LDAP Server Doesn't Start
+
+Try starting the server from the command line with debugging output enabled:
+
+```
+# slapd -u ldap -g ldap -h ldaps://ldaservername:636 -d Config,Stats
+
+```
 
 ## See Also
 

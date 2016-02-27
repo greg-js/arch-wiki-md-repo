@@ -31,7 +31,7 @@ To disable Secure Boot, set the [supervisor password](https://acer.custhelp.com/
 
 ## mSATA Slot
 
-Laptop has an empty mSATA [SSD](/index.php/SSD "SSD") slot, which can be used for almost anything you want to. For example, you can use it as your `/` [partition](/index.php/Partitioning "Partitioning"), which will improve boot and application startup times, with `/home` and possibly `/var` located on your HDD. However, it can't be used as the primary boot device, so you will have to create a `/boot` partition on the HDD and install your [bootloader](/index.php/Bootloader "Bootloader") there.
+Laptop has an empty mSATA [SSD](/index.php/SSD "SSD") slot, which can be used for almost anything you want to. For example, you can use it as your `/` [partition](/index.php/Partition "Partition"), which will improve boot and application startup times, with `/home` and possibly `/var` located on your HDD. However, it can't be used as the primary boot device, so you will have to create a `/boot` partition on the HDD and install your [bootloader](/index.php/Bootloader "Bootloader") there.
 
 ## Hardware
 

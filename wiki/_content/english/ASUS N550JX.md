@@ -60,7 +60,7 @@ At the time of writing this article kernel [bug](https://bugzilla.kernel.org/sho
 
 ## Keyboard
 
-In order to make all keyboard function keys (FN+F{1..12}) generate correct signals - add [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") 'acpi_osi=' (without quotation marks) to your bootloader.
+In order to make all keyboard function keys (FN+F{1..12}) generate correct signals - add [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") 'acpi_osi=' (without quotation marks) to your bootloader.
 
 # Troubleshooting
 

@@ -66,7 +66,7 @@ This machine running with a vcore of +0.005 (in offset mode) remains stable in b
 
 ### Mprime (Prime95 for Windows and MacOS)
 
-Prime95 is recognized universally as one defacto measure of system stability. Mprime under torture test mode will preform a series of very CPU intensive calculations and compare the values it gets to known good values.
+Prime95 is recognized universally as one defacto measure of system stability. Mprime under torture test mode will perform a series of very CPU intensive calculations and compare the values it gets to known good values.
 
 Prime95 for Linux is called [mprime](https://aur.archlinux.org/packages/mprime/) and is available in the AUR.
 

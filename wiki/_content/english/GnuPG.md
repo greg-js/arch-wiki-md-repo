@@ -73,7 +73,7 @@ If you want to use a graphical frontend or program that integrates with GnuPG, s
 
 ## Configuration files
 
-The default configuration files are `~/.gnupg/gpg.conf` and `~/.gnupg/dirmngr.conf`. To change the default location, either run gpg this way `$ gpg --homedir *path/to/file*` or use the `$GNUPGHOME` environment variable. Append to these files any long options you want. Do not write the two dashes, but simply the name of the option and required arguments. You will find skeleton files in `/usr/share/gnupg`. These files are copied to `~/.gnupg` the first time gpg is run if they do not exist there. Other examples are found in [#See_also](#See_also).
+The default configuration files are `~/.gnupg/gpg.conf` and `~/.gnupg/dirmngr.conf`. To change the default location, either run gpg this way `$ gpg --homedir *path/to/file*` or use the `$GNUPGHOME` environment variable. Append to these files any long options you want. Do not write the two dashes, but simply the name of the option and required arguments. You will find skeleton files in `/usr/share/gnupg`. These files are copied to `~/.gnupg` the first time gpg is run if they do not exist there. Other examples are found in [#See also](#See_also).
 
 ## Usage
 

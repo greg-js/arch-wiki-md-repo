@@ -71,7 +71,7 @@ Until the "Notes" column states otherwise, the keys combination is `Ctrl+Shift+c
 | [termite](/index.php/Termite "Termite") | No | Yes | Yes | No | No |
 | [tilda](/index.php/Tilda "Tilda") | No | Yes | Yes | Yes | No |
 | tinyterm ([tinyterm-git](https://aur.archlinux.org/packages/tinyterm-git/)) | No | Yes | Yes | No | No |
-| [urxvt](/index.php/Rxvt-unicode "Rxvt-unicode") | Optional | Yes | Yes | No | No | `Ctrl+Alt+c` |
+| [urxvt](/index.php/Urxvt "Urxvt") | Optional | Yes | Yes | No | No | `Ctrl+Alt+c` |
 | XFCE Terminal ([xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)) | No | Yes | Yes | Yes | Yes |
 | [xterm](/index.php/Xterm "Xterm") | Yes | Yes | Optional | No | No | [[1]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=588785) |
 | [yakuake](/index.php/Yakuake "Yakuake") | No | Yes | Yes | Yes | No |
@@ -84,7 +84,7 @@ The [xclip approach](#Terminals_without_CLIPBOARD_selection) works for *putty*: 
 
 ### urxvt
 
-Selecting text to CLIPBOARD requires the `selection-to-clipboard` perl extension. See [Rxvt-unicode#Cut_and_paste](/index.php/Rxvt-unicode#Cut_and_paste "Rxvt-unicode") for details.
+Selecting text to CLIPBOARD requires the `selection-to-clipboard` perl extension. See [Rxvt-unicode#Cut and paste](/index.php/Rxvt-unicode#Cut_and_paste "Rxvt-unicode") for details.
 
 ### xterm
 

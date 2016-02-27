@@ -32,7 +32,7 @@
 
 **Note:** The official Skype client for Linux has not been updated in a long time and receiving calls from the latest versions of other clients is [reportedly](http://nickforall.nl/skype/) broken.
 
-**Tip:** There is also a web version of Skype [available](https://web.skype.com), which you might want to use if you don't trust the proprietary Skype client. You can also use it as an unofficial app: [skype-desktop-bin](https://aur.archlinux.org/packages/skype-desktop-bin/). Audio/video is currently not supported because the required browser plugin is only available for OS X and Windows.
+**Tip:** There is also a web version of Skype [available](https://web.skype.com), which you might want to use if you do not trust the proprietary Skype client. You can also use it as an unofficial app: [skype-desktop-bin](https://aur.archlinux.org/packages/skype-desktop-bin/). Audio/video is currently not supported because the required browser plugin is only available for OS X and Windows.
 
 [Install](/index.php/Install "Install") [skype](https://www.archlinux.org/packages/?name=skype) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository first as Skype is 32-bit only.
 
@@ -74,7 +74,7 @@ There are a couple of reasons you might want to restrict Skype's access to your 
 
 See [[1]](http://www1.cs.columbia.edu/~salman/skype/index.html) for more information.
 
-Restrictions can be implemented in a number of ways, with varying ease and security. It is possible to run Skype in a container, run it as a separate user, or use the [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control) functionality available in the Linux kernel.
+Restrictions can be implemented in a number of ways, with varying ease and security. It is possible to run Skype in a container, run it as a separate user, or use the [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") functionality available in the Linux kernel.
 
 ### systemd-nspawn
 
@@ -812,7 +812,7 @@ $ pulseaudio --start
 
 ```
 
-If restarting doesn't solve the sound problem try to log out and log in again.
+If restarting does not solve the sound problem try to log out and log in again.
 
 If that does not help, you can try changing flat-volumes to no in `/etc/pulse/daemon.conf`.
 

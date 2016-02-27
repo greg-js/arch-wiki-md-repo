@@ -1,4 +1,4 @@
-Evolution is a [GNOME](/index.php/GNOME "GNOME") mail client it supports IMAP, Microsoft Exchange Server and Novell GroupWise. It also has a calender function that supports vcal, csv, google calendar and many more. You can also organise your contacts, tasks and memos with Evolution. The beautiful thing about Evolution is that it's easy to use and integrates with the GNOME environment. You can see your calendar, tasks and location in the GNOME panel along with the weather and date. Just add the clock to your GNOME panel.
+[Evolution](https://wiki.gnome.org/Apps/Evolution/) is an application for managing email, calendars, contacts, tasks, and notes. It is the default mail client in [GNOME](/index.php/GNOME "GNOME"). It includes support for IMAP, Microsoft Exchange Server 2007 and 2010, Novell GroupWise, [Kolab](/index.php/Kolab "Kolab"), LDAP, WebDAV, CalDAV, and many other services and protocols.
 
 ## Contents
 
@@ -26,7 +26,7 @@ Evolution is a [GNOME](/index.php/GNOME "GNOME") mail client it supports IMAP, M
 
 [Install](/index.php/Install "Install") the [evolution](https://www.archlinux.org/packages/?name=evolution) package.
 
-Exchange servers are supported by [evolution-ews](https://www.archlinux.org/packages/?name=evolution-ews) and web calendars (like Google calendar) by [evolution-data-server](https://www.archlinux.org/packages/?name=evolution-data-server).
+Exchange servers are supported by [evolution-ews](https://www.archlinux.org/packages/?name=evolution-ews) and web calendars (like Google Calendar) by [evolution-data-server](https://www.archlinux.org/packages/?name=evolution-data-server).
 
 ## IMAP Setup
 
@@ -34,7 +34,7 @@ This is the setup for a standard IMAP mail address. Go to Edit -> Preferences ->
 
 ## Alternative IMAP Setup
 
-An alternative to letting Evolution connect directly to the IMAP server is to sync the IMAP server to your PC. This costs as much hard-disc space as you have mail, though it is possible to limit the folders synced in this manner (see below). An additional benefit (primary inspiration for this app) is that you have a full copy of your email, including attachments, on your PC for retrieval, even if on the move without an internet connection.
+An alternative to letting Evolution connect directly to the IMAP server is to sync the IMAP server to your PC. This costs as much hard-disk space as you have mail, though it is possible to limit the folders synced in this manner (see below). An additional benefit (primary inspiration for this app) is that you have a full copy of your email, including attachments, on your PC for retrieval, even if on the move without an internet connection.
 
 To set this up, you will need to [install](/index.php/Install "Install") the [offlineimap](https://www.archlinux.org/packages/?name=offlineimap) package (see also [[2]](http://offlineimap.org/)).
 
@@ -157,7 +157,7 @@ This is really quite simple, use Evolution's Account Assistant and select the Se
 
 To setup a GMail account, go to `Edit > Preferences > Mail Accounts` and enter your mail account details.
 
-**Tip:** In [Gnome](/index.php/Gnome "Gnome") you can add a Google account in *Gnome Settings > Online Account* instead.
+**Tip:** In [GNOME](/index.php/GNOME "GNOME") you can add a Google account in *Gnome Settings > Online Account* instead.
 
 ### Receiving Mail
 

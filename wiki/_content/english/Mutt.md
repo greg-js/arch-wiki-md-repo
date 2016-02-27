@@ -123,7 +123,7 @@ set my_name = "John Doe"
 
 #### Native IMAP support
 
-The pacman version of Mutt is compiled with IMAP support. At the very least you need to have 4 lines in your muttrc file to be able to access your mail.
+The [mutt](https://www.archlinux.org/packages/?name=mutt) package is compiled with IMAP support. At the very least you need to have 4 lines in your muttrc file to be able to access your mail.
 
 ##### imap_user
 
@@ -280,7 +280,7 @@ unset record
 
 #### Native SMTP support
 
-The official [mutt](https://www.archlinux.org/packages/?name=mutt) is also compiled with SMTP support.
+The [mutt](https://www.archlinux.org/packages/?name=mutt) package is compiled with SMTP support.
 
 For example:
 

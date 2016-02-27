@@ -242,7 +242,7 @@ Some of updates can be installed directly if you want make it download new relea
 
 ### Update packages from the AUR
 
-First must be created the [GPG key](/index.php/GnuPG#Create_key "GnuPG") and added to the `makepkg` configuration file.
+First must be created the [GPG key](/index.php/GnuPG#Create_key_pair "GnuPG") and added to the `makepkg` configuration file.
 
  `/etc/makepkg.conf` 
 ```

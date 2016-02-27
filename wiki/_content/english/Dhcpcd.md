@@ -35,7 +35,7 @@ You might be interested in [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd
 
 *dhcpcd* includes two unit files which can be used to [control](/index.php/Enable "Enable") the daemon:
 
-*   `dhcpcd.service` starts the daemon for *all* [network interfaces](/index.php/Network_configuration#Network_Interfaces "Network configuration");
+*   `dhcpcd.service` starts the daemon for *all* [network interfaces](/index.php/Network_interfaces "Network interfaces");
 *   the template unit `dhcpcd@.service` binds it to a particular interface, for example `dhcpcd@*interface*.service` where *interface* is an interface shown with `ip link`.
 
 Using the template unit is recommended; see [#dhcpcd and systemd network interfaces](#dhcpcd_and_systemd_network_interfaces) for details.

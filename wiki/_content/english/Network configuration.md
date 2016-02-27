@@ -260,6 +260,8 @@ To check the result:
 
 You have two options: a dynamically assigned address using [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol"), or an unchanging "static" address.
 
+**Tip:** In addition to the methods described below one can also use a [network manager](/index.php/List_of_applications#Network_managers "List of applications"). Network managers are especially useful for dynamic network connections and wifi networking.
+
 ### Dynamic IP address
 
 #### systemd-networkd
@@ -305,7 +307,7 @@ See [dhcpcd#Static profile](/index.php/Dhcpcd#Static_profile "Dhcpcd").
 
 #### Manual assignment
 
-It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection will not persist across reboots. First enable the [network interface](#Network_Interfaces):
+It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection will not persist across reboots. First enable the [network interface](#Network_interfaces):
 
 ```
 # ip link set *interface* up

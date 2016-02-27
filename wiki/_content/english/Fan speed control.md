@@ -15,7 +15,7 @@ Support for newer motherboards may not yet be in the Linux kernel. Check the off
 
 It is recommended not to use `lm_sensors.service` to load the needed modules for fancontrol. Instead, manually place them in `/etc/modules-load.d/load_these.conf` since the order in which these modules are loaded dictate the order in which the needed symlinks for hwmon get created. In other words, using the `lm_sensors.service` causes inconsistencies boot-to-boot which will render the configuration file for fan control worthless for a consistency point of view. To avoid this problem:
 
-In `/etc/conf.d/lm_sensors` you find the modules. If not there, run as root `sensors-detect` accepting the defaults. In the `modules-load.d` file place one module name per line. Specifying them like this will create a reproducible order. Another alternative is to use absolute device names in the configuration file.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1251766)
+In `/etc/conf.d/lm_sensors` you find the modules. If not there, run as root `sensors-detect` accepting the defaults. In the `modules-load.d` file place one module name per line. Specifying them like this will create a reproducible order. Another alternative is to use absolute device names in the configuration file.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1415552#p1415552)
 
 ### lm-sensors
 
@@ -47,7 +47,15 @@ If the output does not display an RPM value for the CPU fan, one may need to inc
 
 The first line of the sensors output is the chipset used by the motherboard for readings of temperatures and voltages.
 
-Edit `/etc/sensors3.conf` and look up the exact chipset. A few chipset names are similar, so make sure the one to edit is correct. Add the line `set fanX_div 4` near the start of the chipset config, replacing X with the number of CPU fans in the target system.
+Create a file in `/etc/sensors.d/`:
+
+ `/etc/sensors.d/fan-speed-control.conf` 
+```
+chip "*coretemp-isa-**"
+set fan*X*_div 4
+```
+
+Replacing *coretemp-isa-* with name of the chipset and *X* with the number of the CPU fan to change.
 
 Save the file, and run as root:
 
@@ -56,7 +64,9 @@ Save the file, and run as root:
 
 ```
 
-which will reload the `sensors3.conf` file's set variables. Run `sensors` again, and check if there is an RPM readout. If not, increase the divisor to 8, 16, or 32\. YMMV!
+which will reload the configuration files.
+
+Run `sensors` again, and check if there is an RPM readout. If not, increase the divisor to 8, 16, or 32\. YMMV!
 
 ## Configuration
 

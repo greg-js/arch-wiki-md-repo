@@ -11,8 +11,7 @@ The configuration file allows to change colors and set some options. Termite sup
     *   [3.2 Colors](#Colors)
 *   [4 Transparency](#Transparency)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Colored ls output](#Colored_ls_output)
-    *   [5.2 Ctrl+Shift+t](#Ctrl.2BShift.2Bt)
+    *   [5.1 Ctrl+Shift+t](#Ctrl.2BShift.2Bt)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -70,45 +69,6 @@ opacity-rule = [
 ```
 
 ## Troubleshooting
-
-### Colored ls output
-
-For colored `ls` output it is necessary to use a custom LS_COLORS [environment variable](/index.php/Environment_variable "Environment variable"), which can be set with a `dircolors` file. Generate one with:
-
-```
-$ dircolors -p > ~/.dircolors
-
-```
-
-Then edit `~/.dircolors` file, and append
-
-```
-TERM xterm-termite
-
-```
-
-to the end of the list of terminals, and save the file.
-
-For [Bash](/index.php/Bash "Bash") in `~/.bashrc` and [Zsh](/index.php/Zsh "Zsh") in `~/.zshrc`, add:
-
-```
-eval $(dircolors ~/.dircolors)
-
-```
-
-and restart the terminal. For [fish](/index.php/Fish "Fish"), add
-
-```
-eval (dircolors -c ~/.dircolors | sed 's/>&\/dev\/null$//')
-
-```
-
-to `~/.config/fish/config.fish` and relogin or reload the config via:
-
-```
-. ~/.config/fish/config.fish
-
-```
 
 ### Ctrl+Shift+t
 

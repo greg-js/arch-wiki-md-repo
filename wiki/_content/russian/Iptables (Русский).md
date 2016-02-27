@@ -220,7 +220,7 @@ num   pkts bytes target     prot opt in     out     source               destina
 
 ```
 
-**Обратите внимание:** Здесь мы использовали действие `REJECT`, а не `DROP`, так как [RFC 1122, раздел 3.3.8](https://tools.ietf.org/html/rfc1122#page-69) требует, чтобы хосты возвращали ошибки ICMP всегда, когда это возможно вместо просто игнорирования отбрасываемых пакетов. [На этой странице](http://www.chiark.greenend.org.uk/~peterb/network/drop-vs-reject) поясняется, почему почти всегда `REJECT` лучше чем `DROP`.
+**Примечание:** Здесь мы использовали действие `REJECT`, а не `DROP`, так как [RFC 1122, раздел 3.3.8](https://tools.ietf.org/html/rfc1122#page-69) требует, чтобы хосты возвращали ошибки ICMP всегда, когда это возможно вместо просто игнорирования отбрасываемых пакетов. [На этой странице](http://www.chiark.greenend.org.uk/~peterb/network/drop-vs-reject) поясняется, почему почти всегда `REJECT` лучше чем `DROP`.
 
 Теперь, скажем мы поменяли наш взгляд касательно Dropbox и решили установить его на наш компьютер. Мы также хотим использовать возможность синхронизации по локальной сети, но только с единственным компьютером в сети, IP-адрес которого нам известен, пусть это будет, например, `10.0.0.85`. Нам следует использовать ключ `-R` для того, чтобы заменить старое правило новым:
 
@@ -319,7 +319,7 @@ num   pkts bytes target     prot opt in     out     source               destina
 
 Правила iptables для IPv6 должны находиться в файле `/etc/iptables/ip6tables.rules`. Для этого файла, соответственно, существует служба `ip6tables.service`, которую тем же образом вы можете активировать, если вы используете IPv6.
 
-**Обратите внимание:** Файлы служб `iptables.service` и `ip6tables.service` в [iptables](https://www.archlinux.org/packages/?name=iptables) версии 1.4.21-1 устарели. Начиная с systemd 214 в целях безопасности рекомендуется запускать межсетевые экраны перед `network-pre.target`, чтобы экран начинал работать перед установкой сети. В ожидании обновления пакета iptables, создайте каталог `/etc/systemd/system/iptables.service.d` и файл `00-pre-network.conf` в нем со следующим содержимым:
+**Примечание:** Файлы служб `iptables.service` и `ip6tables.service` в [iptables](https://www.archlinux.org/packages/?name=iptables) версии 1.4.21-1 устарели. Начиная с systemd 214 в целях безопасности рекомендуется запускать межсетевые экраны перед `network-pre.target`, чтобы экран начинал работать перед установкой сети. В ожидании обновления пакета iptables, создайте каталог `/etc/systemd/system/iptables.service.d` и файл `00-pre-network.conf` в нем со следующим содержимым:
 ```
 [Unit]
 Before=network-pre.target
@@ -435,7 +435,7 @@ destination d_iptables { file("/var/log/iptables.log"); };
 ## Смотрите также
 
 *   [Iptables в Википедии](https://en.wikipedia.org/wiki/ru:iptables "wikipedia:ru:iptables")
-*   [Port Knocking](/index.php/Port_Knocking "Port Knocking")
+*   [Port knocking](/index.php/Port_knocking "Port knocking")
 *   [Официальный сайт iptables](http://www.netfilter.org/projects/iptables/index.html)
 *   [Руководство по iptables версии 1.2.2](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) от Оскара Андреассона
 *   [статья iptables на Debian Wiki](http://wiki.debian.org/iptables)

@@ -168,7 +168,7 @@ Icon=/name/of/new/icon/added/to/pixmaps/.png
 
 ### lxpanel menus
 
-The panel's menus can be configured in `/etc/xdg/menus/lxde-applications.menu` as per the [xdg-menu](/index.php/Xdg-menu "Xdg-menu") format to work with applications from other sessions (notably [mate](/index.php/Mate "Mate")) to add some of the function-ability that lxde lacks.
+The panel's menus can be configured in `/etc/xdg/menus/lxde-applications.menu` as per the [xdg-menu](/index.php/Xdg-menu "Xdg-menu") format to work with applications from other sessions (notably [MATE](/index.php/MATE "MATE")) to add some of the function-ability that lxde lacks.
 
 ### Replace Openbox
 

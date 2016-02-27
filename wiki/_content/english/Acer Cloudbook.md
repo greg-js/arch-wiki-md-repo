@@ -90,4 +90,4 @@ in the **/etc/default/grub** configuration file.
 
 ### GDM
 
-If Gnome/GDM is installed and started, the login page will flicker up-to the point that it becomes nonfunctional. See [GDM#Use_Xorg_backend](/index.php/GDM#Use_Xorg_backend "GDM").
+If Gnome/GDM is installed and started, the login page will flicker up-to the point that it becomes nonfunctional. See [GDM#Use Xorg backend](/index.php/GDM#Use_Xorg_backend "GDM").

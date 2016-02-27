@@ -305,7 +305,7 @@ esac
 If client connections keep timing out, make sure that GRE is allowed through the client firewall. For iptables, the necessary command is:
 
 ```
-# iptables -A ACCEPT -p 47 -j ACCEPT
+# iptables -A INPUT -p 47 -j ACCEPT
 
 ```
 

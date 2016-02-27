@@ -434,7 +434,7 @@ ServerName localhost:631
 
 ```
 
-*   Try to remove Foomatic drivers or refer to [CUPS/Printer-specific_problems#HPLIP_Driver](/index.php/CUPS/Printer-specific_problems#HPLIP_Driver "CUPS/Printer-specific problems") for a workaround.
+*   Try to remove Foomatic drivers or refer to [CUPS/Printer-specific problems#HPLIP Driver](/index.php/CUPS/Printer-specific_problems#HPLIP_Driver "CUPS/Printer-specific problems") for a workaround.
 
 ### lp: Error - Scheduler Not Responding
 

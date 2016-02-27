@@ -433,7 +433,7 @@ destination d_iptables { file("/var/log/iptables.log"); };
 ## See also
 
 *   [Wikipedia article](https://en.wikipedia.org/wiki/iptables "wikipedia:iptables")
-*   [Port Knocking](/index.php/Port_Knocking "Port Knocking")
+*   [Port knocking](/index.php/Port_knocking "Port knocking")
 *   [Official iptables web site](http://www.netfilter.org/projects/iptables/index.html)
 *   [iptables Tutorial 1.2.2](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) by Oskar Andreasson
 *   [iptables Debian](http://wiki.debian.org/iptables) Debian wiki

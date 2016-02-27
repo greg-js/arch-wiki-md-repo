@@ -739,7 +739,7 @@ AUDIO_DRIVER=pulseaudio
 OTHER_OPTS='-m alsa_seq-r 48000'
 ```
 
-It is also possible there is an issue with logind giving permissions, see [General_troubleshooting#Session_permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") for more information.
+It is also possible there is an issue with logind giving permissions, see [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") for more information.
 
 ### No HDMI 5/7.1 Selection for Device
 

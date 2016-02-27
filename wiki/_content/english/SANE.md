@@ -195,7 +195,7 @@ You can also try to comment out "net" driver, if there are no network scanners.
 
 ### Permission problem
 
-After systemd, the `scanner` and `lp` groups are deprecated. No need to add your user to those groups. See [Users_and_groups#Pre-systemd_groups](/index.php/Users_and_groups#Pre-systemd_groups "Users and groups") for detail.
+After systemd, the `scanner` and `lp` groups are deprecated. No need to add your user to those groups. See [Users and groups#Pre-systemd groups](/index.php/Users_and_groups#Pre-systemd_groups "Users and groups") for detail.
 
 You can also try to change permissions of usb device but this is not recommended, a better solution is to fix the Udev rules so that your scanner is recognized.
 

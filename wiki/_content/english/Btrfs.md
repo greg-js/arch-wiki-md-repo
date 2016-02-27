@@ -388,7 +388,7 @@ Compression is enabled using the `compress=zlib` or `compress=lzo` mount options
 
 **Tip:** Compression can also be enabled per-file without using the `compress` mount option; simply apply `chattr +c` to the file. When applied to directories, it will cause new files to be automatically compressed as they come.
 
-When installing Arch to an empty Btrfs partition, use the `compress` option when [mounting the filesystem](/index.php/Beginners%27_guide#Format_file_systems_and_enable_swap "Beginners' guide"): `mount -o compress=lzo /dev/sd*xY* /mnt/`. During [configuration](/index.php/Beginners%27_guide#Configuration "Beginners' guide"), add `compress=lzo` to the mount options of the root file system in [fstab](/index.php/Fstab "Fstab").
+When installing Arch to an empty Btrfs partition, use the `compress` option when [mounting the filesystem](/index.php/Beginners%27_guide#Format_the_file_systems_and_enable_swap "Beginners' guide"): `mount -o compress=lzo /dev/sd*xY* /mnt/`. During [configuration](/index.php/Beginners%27_guide#Configuration "Beginners' guide"), add `compress=lzo` to the mount options of the root file system in [fstab](/index.php/Fstab "Fstab").
 
 ### Checkpoint interval
 

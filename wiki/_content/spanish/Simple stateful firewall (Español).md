@@ -278,7 +278,7 @@ Vea `man iptables` para conocer reglas más avanzadas, como equipar múltiples p
 
 #### Golpear puertos
 
-El [golpeo de puertos](https://en.wikipedia.org/wiki/es:Golpeo_de_puertos "wikipedia:es:Golpeo de puertos") es un método para abrir puertos externamente que, por defecto, el cortafuegos mantiene cerrado. Funciona al demandar intentos de conexión a una serie de puertos cerrados de forma predefinida. Cuando la secuencia correcta del puerto al que se «golpea» (intentos de conexión) es recibida, el cortafuegos abre determinado puerto(s) para permitir una conexión. Ver [Port Knocking](/index.php/Port_Knocking "Port Knocking") para más información.
+El [golpeo de puertos](https://en.wikipedia.org/wiki/es:Golpeo_de_puertos "wikipedia:es:Golpeo de puertos") es un método para abrir puertos externamente que, por defecto, el cortafuegos mantiene cerrado. Funciona al demandar intentos de conexión a una serie de puertos cerrados de forma predefinida. Cuando la secuencia correcta del puerto al que se «golpea» (intentos de conexión) es recibida, el cortafuegos abre determinado puerto(s) para permitir una conexión. Ver [Port knocking](/index.php/Port_knocking "Port knocking") para más información.
 
 ### Protección contra ataques de suplantación
 

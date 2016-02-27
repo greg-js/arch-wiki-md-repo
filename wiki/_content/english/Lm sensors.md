@@ -25,6 +25,8 @@
 
 [Install](/index.php/Install "Install") the [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) package.
 
+**Note:** More documentation is at the [GitHub repository](https://github.com/groeck/lm-sensors/tree/master/doc). In the future these may be installed, see [FS#48354](https://bugs.archlinux.org/task/48354).
+
 ## Setup
 
 Use **sensors-detect** to detect and generate a list of kernel modules:
@@ -36,7 +38,7 @@ Use **sensors-detect** to detect and generate a list of kernel modules:
 
 ```
 
-This will create the `/etc/conf.d/lm_sensors` configuration file which is used by the `sensors` daemon to automatically load kernel modules on boot. Users are asked to probe for various hardware. The "safe" answers are the defaults, so just hitting `Enter` to all the questions will generally not cause any problems.
+It will ask to probe for various hardware. The "safe" answers are the defaults, so just hitting `Enter` to all the questions will generally not cause any problems. This will create the `/etc/conf.d/lm_sensors` configuration file which is used by `lm_sensors.service` to automatically load kernel modules on boot.
 
 When the detection is finished, a summary of the probes is presented.
 

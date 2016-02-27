@@ -41,7 +41,7 @@ lshwd output:
 
 ### Graphics
 
-See [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics").
+See [Intel graphics](/index.php/Intel_graphics "Intel graphics").
 
 ### Touchpad
 

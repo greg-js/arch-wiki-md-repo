@@ -264,7 +264,7 @@ Out of the box, the only keysyms correctly sent are the audio volume keys (F10-F
 
 Some users experience regular freezes, where their x205ta can only be restarted by holding down the power button for several seconds. Some users have reported that so far kernel version 4.1.6 seems to experience fewest freezes. Freezes seem to occur less regular with the current(2015-11-02) 4.3-mainline vanilla kernel.
 
-Setting kernel argument "intel_idle.max_cstate=1" solve the problem without affecting performance. The [kernel_parameters](/index.php/Kernel_parameters "Kernel parameters") page may help with adding to the kernel parameters.
+Setting kernel argument "intel_idle.max_cstate=1" solve the problem without affecting performance. The [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") page may help with adding to the kernel parameters.
 
 ### Bluetooth
 

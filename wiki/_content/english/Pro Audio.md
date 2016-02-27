@@ -269,7 +269,7 @@ In addition to the factors listed under the System Configuration section above a
 
 #### A General Example
 
-A general configuration example is [JACK Audio Connection Kit#A Shell-Based Example Setup](/index.php/JACK_Audio_Connection_Kit#A_Shell-Based_Example_Setup "JACK Audio Connection Kit").
+A general configuration example is [JACK Audio Connection Kit#A shell-based example setup](/index.php/JACK_Audio_Connection_Kit#A_shell-based_example_setup "JACK Audio Connection Kit").
 
 ## Realtime Kernel
 

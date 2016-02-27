@@ -200,7 +200,7 @@ we need to edit how the service calls bind.
 
  `/etc/systemd/system/named-chroot.service` 
 ```
-  ExecStart=/usr/bin/named '''-4''' -f -u named '''-t "/srv/named"'''
+  ExecStart=/usr/bin/named -4 -f -u named -t "/srv/named"
 
 ```
 }

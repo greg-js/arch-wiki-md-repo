@@ -275,7 +275,7 @@ Make sure you are in a [bash](/index.php/Bash "Bash") shell. For example, when b
 
 The following steps install the GRUB UEFI application to `**$esp**/EFI/grub`, install its modules to `/boot/grub/x86_64-efi`, and place the bootable `grubx64.efi` stub in `**$esp**/EFI/grub`.
 
-First, tell GRUB to use UEFI, set the boot directory and set the bootloader ID. Change `$esp` to your efi partition (usually `/boot`):
+First, tell GRUB to use UEFI, set the boot directory and set the bootloader ID. Mount the ESP partition to e.g. `/boot` or `/boot/efi` and in the following change `$esp` to that mount point (usually `/boot`):
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=**$esp** --bootloader-id=**grub**

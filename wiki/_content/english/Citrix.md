@@ -42,13 +42,7 @@ Note: if you are running Xfce and Chromium is opening the .ica files in the wron
 
 #### Citrix Receiver (icaclient) Installation
 
-*   **Step 0\. 64-bit Arch systems only - install 32-bit libs:**
-
-from Arch repositories: openmotif, lib32-libxmu, printproto, nspluginwrapper, lib32-alsa-lib, lib32-gcc-libs, lib32-libxft, lib32-gtk2, lib32-libxdamage, lib32-libpng12\. From AUR: lib32-libxp, lib32-libxpm, lib32-libxaw, lib32-openmotif
-
-Citrix has released a 64-bit version of the Citrix Receiver. You might try this version first (Navigate to [[1]](http://www.citrix.com/downloads/citrix-receiver/linux.html), select the newest version, go to section "For 64-bit Systems")
-
-*   **Step 1.** Download Citrix Receiver It can be found [here](http://www.citrix.com/downloads/citrix-receiver/linux.html). Choose the latest version of the x86 client in the .tar.gz format.
+*   **Step 1.** Download Citrix Receiver It can be found [here](http://www.citrix.com/downloads/citrix-receiver/linux.html). Choose the latest version of the x86 client for 32-bit systems or the x86_64 file for 64-bit systems in the .tar.gz format.
 
 *   **Step 2.** Unpack the archive:
 
@@ -120,13 +114,13 @@ There may be several reasons for this:
 
 	You may also need to download your CA's intermediate certificates and store them in the same directory.
 
-	Changes to your certificate directory will likely require rehashing links for openssl to find them properly. Skipping this step might result in Citrix still giving certificate errors. To do this, use this command (borrowed from [[2]](https://help.ubuntu.com/community/CitrixICAClientHowTo#A5._Add_more_SSL_certificates))
+	Changes to your certificate directory will likely require rehashing links for openssl to find them properly. Skipping this step might result in Citrix still giving certificate errors. To do this, use this command (borrowed from [[1]](https://help.ubuntu.com/community/CitrixICAClientHowTo#A5._Add_more_SSL_certificates))
 
 	 `# c_rehash /opt/Citrix/ICAClient/keystore/cacerts/` 
 
 	Your server is using a certificate with a SHA-2 hash for the Signature Algorithm.
 
-	Microsoft has mandated that any certificates with an expiry date of 2017 or later must use a SHA-2 hash[[3]](http://www.p2vme.com/2014/02/sha2-certificates-and-citrix-receiver.html). You may either:
+	Microsoft has mandated that any certificates with an expiry date of 2017 or later must use a SHA-2 hash[[2]](http://www.p2vme.com/2014/02/sha2-certificates-and-citrix-receiver.html). You may either:
 
 1.  Upgrade your client to 13.1 or later. Citrix now supports SHA-2 hashes in the ICA client version 13.1.0.285639.
 2.  Contact your CA and have your certificate re-keyed with a SHA-1 hash.

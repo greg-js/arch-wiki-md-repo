@@ -752,7 +752,7 @@ If it work, [disable](/index.php/Disable "Disable") `fcgiwrap.socket` and [enabl
 
 2\. Another occasion is that, wrong `root` argument in the `location ~ \.php$` section in `nginx.conf`. Make sure the `root` points to the same directory as it in `location /` in the same server. Or you may just set root as global, do not define it in any location section.
 
-3\. Check permissions: e.g. `http` for user/group, `755` for directories and `644` for files. Remember the entire path to the `html` directory should have the correct permissions. See [File permissions and attributes#Bulk_chmod](/index.php/File_permissions_and_attributes#Bulk_chmod "File permissions and attributes") to bulk modify a directory tree.
+3\. Check permissions: e.g. `http` for user/group, `755` for directories and `644` for files. Remember the entire path to the `html` directory should have the correct permissions. See [File permissions and attributes#Bulk chmod](/index.php/File_permissions_and_attributes#Bulk_chmod "File permissions and attributes") to bulk modify a directory tree.
 
 4\. You do not have the `SCRIPT_FILENAME` containing the full path to your scripts. If the configuration of nginx (`fastcgi_param SCRIPT_FILENAME`) is correct, this kind of error means php failed to load the requested script. Usually it is simply a permissions issue, you can just run php-cgi as root:
 

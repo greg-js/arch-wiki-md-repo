@@ -154,7 +154,7 @@ Then simply add `OnFailure=status-email-user1@%n.service` to the `[Unit]` sectio
 
 ### Using a crontab
 
-Several of the caveats can be worked around by installing a package that parses a traditional crontab to configure the timers. [systemd-crontab-generator](https://aur.archlinux.org/packages/systemd-crontab-generator/) and [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/) are two such packages. These can provide the missing `MAILTO` and `RANDOM_DELAY` features.
+Several of the caveats can be worked around by installing a package that parses a traditional crontab to configure the timers. [systemd-cron-next](https://aur.archlinux.org/packages/systemd-cron-next/) and [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/) are two such packages. These can provide the missing `MAILTO` and `RANDOM_DELAY` features.
 
 If you like crontabs just because they provide a unified view of all scheduled jobs, `systemctl` can provide this. See [#Management](#Management).
 
@@ -163,9 +163,9 @@ If you like crontabs just because they provide a unified view of all scheduled j
 *   [systemd.timer man page](http://www.freedesktop.org/software/systemd/man/systemd.timer.html) on freedesktop.org
 *   [Fedora Project wiki page](https://fedoraproject.org/wiki/Features/SystemdCalendarTimers) on *systemd* calendar timers
 *   [Gentoo wiki section](https://wiki.gentoo.org/wiki/Systemd#Timer_services) on *systemd* timer services
-*   **systemd-crontab-generator** — tool to generate timers/services from crontab and anacrontab files
+*   **systemd-cron-next** — tool to generate timers/services from crontab and anacrontab files
 
-	[https://github.com/kstep/systemd-crontab-generator](https://github.com/kstep/systemd-crontab-generator) || [systemd-crontab-generator](https://aur.archlinux.org/packages/systemd-crontab-generator/)
+	[https://github.com/kstep/systemd-cron-next](https://github.com/kstep/systemd-cron-next) || [systemd-cron-next](https://aur.archlinux.org/packages/systemd-cron-next/)
 
 *   **systemd-cron** — provides systemd units to run cron scripts; using *systemd-crontab-generator* to convert crontabs
 

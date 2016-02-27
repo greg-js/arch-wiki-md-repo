@@ -25,6 +25,8 @@
 
 	‒ goroutines здесь полновесные потоки(проблема решается использованием [*gold* линковщика](http://blog.golang.org/gccgo-in-gcc-471))
 
+Также с [go](https://www.archlinux.org/packages/?name=go) можно установить дополнительные инструменты разработчика [go-tools](https://www.archlinux.org/packages/?name=go-tools).
+
 ### Проверка установки
 
 Для проверки работоспособности создайте простенькую программу:
@@ -151,21 +153,22 @@ android           : Android
 
 ```
 
-примеры компиляции:
+пример компиляции:
 
 ```
-$ GOOS=linux GOARCH=386 go build -o test
+$ GOOS=windows GOARCH=amd64 go build -o test
 
 ```
 
 ## Смотрите также
 
 *   [Официальный веб-сайт языка Go (en)](http://golang.org/)
+*   [Интерактивный тур обучения Go (en)](http://tour.golang.org)
 *   [Статья в Википедии](https://en.wikipedia.org/wiki/ru:Go "wikipedia:ru:Go")
 *   [Русская группа в G+](https://groups.google.com/forum/#!forum/golang-ru)
 *   [Хаб на Habrahabr про Go](http://habrahabr.ru/hub/go/)
 *   [Веб-ресурс посвящённый Go](http://4gophers.com/)
 *   [Примеры с кратким описанием](http://gobyexample.ru/)
-*   [Интерактивный тур обучения Go (en)](http://tour.golang.org)
+*   [Awesome Go](http://awesome-go.com/)
 *   [IDE и плагины для Go](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins)
 *   [Руководство по созданию пакетов для AUR программ написанных на языке Go](/index.php/Go_package_guidelines "Go package guidelines")

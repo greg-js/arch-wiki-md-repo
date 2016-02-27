@@ -34,6 +34,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### February 2016
 
+*   [25 February 2016] [ASA-201602-21](https://lists.archlinux.org/pipermail/arch-security/2016-February/000562.html) [lib32-libssh2](https://www.archlinux.org/packages/?name=lib32-libssh2) man-in-the-middle
 *   [25 February 2016] [ASA-201602-20](https://lists.archlinux.org/pipermail/arch-security/2016-February/000561.html) [libssh2](https://www.archlinux.org/packages/?name=libssh2) man-in-the-middle
 *   [24 February 2016] [ASA-201602-19](https://lists.archlinux.org/pipermail/arch-security/2016-February/000560.html) [libgcrypt](https://www.archlinux.org/packages/?name=libgcrypt) secret key extraction
 *   [23 February 2016] [ASA-201602-18](https://lists.archlinux.org/pipermail/arch-security/2016-February/000559.html) [libssh](https://www.archlinux.org/packages/?name=libssh) man-in-the-middle

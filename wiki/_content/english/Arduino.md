@@ -219,6 +219,8 @@ $ pip install platformio
 
 ```
 
+another option is to use platformio as an [Atom](/index.php/Atom "Atom") plugin, using [Atom Package Manager](http://docs.platformio.org/en/latest/ide/atom.html#manual-installation).
+
 #### Usage
 
 ```

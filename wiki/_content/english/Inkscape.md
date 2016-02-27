@@ -34,8 +34,6 @@ You should be able to solve that by simply commenting the two mentioned Lines in
 
 ```
 
-(I have got no idea what else those changes influence, so you might want to undo them after inkscape is built. This could be related to Debian Bug#522477 and might get fixed in libpng 1.4)
-
 ### Segfaults with qtcurve-gtk2
 
 There is a problem with qtcurve-gtk2 1.8.18-3 that makes inkscape segfault shortly after launch. The bug is fixed upstream ([Bug 343704](https://bugs.kde.org/show_bug.cgi?id=343704#c3)) but no release is yet available and the AUR package qtcurve-git is not compatible with KDE Frameworks 5\. Best option today to use qtcurve and inkscape is to use speps patched packages from [FS#43631](https://bugs.archlinux.org/task/43631#comment132113).

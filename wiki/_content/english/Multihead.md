@@ -125,7 +125,7 @@ EndSection
 
 The ID for each monitor can be found by running the `$ xrandr -q` command and should be defined as `Monitor-<ID>` inside the `Device` section.
 
-See [Xrandr#Adding_undetected_resolutions](/index.php/Xrandr#Adding_undetected_resolutions "Xrandr").
+See [Xrandr#Adding undetected resolutions](/index.php/Xrandr#Adding_undetected_resolutions "Xrandr").
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
 ```

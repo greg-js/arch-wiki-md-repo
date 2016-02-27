@@ -113,7 +113,7 @@ This list is by no means complete. If you know of a community that is not listed
 
 *   Homepage: [http://www.archlinux.lt/](http://www.archlinux.lt/)
 *   Forum: [http://sls.archlinux.lt/](http://sls.archlinux.lt/)
-*   Wiki: [Main Page (Lietuviškai)](/index.php/Main_Page_(Lietuvi%C5%A1kai) "Main Page (Lietuviškai)")
+*   Wiki: [Main page (Lietuviškai)](/index.php/Main_page_(Lietuvi%C5%A1kai) "Main page (Lietuviškai)")
 
 ### Poland
 
@@ -147,7 +147,7 @@ This list is by no means complete. If you know of a community that is not listed
 
 *   Homepage: [http://www.archlinux-es.org/](http://www.archlinux-es.org/)
 *   Forum: [http://foros.archlinux-es.org/](http://foros.archlinux-es.org/)
-*   Wiki: [Main Page (Español)](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)")
+*   Wiki: [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)")
 *   Planet: [http://planeta.archlinux-es.org](http://planeta.archlinux-es.org)
 
 ### Sweden

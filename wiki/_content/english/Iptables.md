@@ -177,7 +177,7 @@ Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
 
 If the output looks like the above, then there are no rules (i.e. nothing is blocked) in the default `filter` table. An other table can be specified with the `-t` option.
 
-To show the line numbers when listing rules, append `--line-numbers` to that input. The line numbers are a useful shorthand when [#editing rules](#editing_rules) on the command line.
+To show the line numbers when listing rules, append `--line-numbers` to that input. The line numbers are a useful shorthand when [#Editing rules](#Editing_rules) on the command line.
 
 #### Resetting rules
 
@@ -414,7 +414,7 @@ destination d_iptables { file("/var/log/iptables.log"); };
 ## See also
 
 *   [Wikipedia article](https://en.wikipedia.org/wiki/iptables "wikipedia:iptables")
-*   [Port Knocking](/index.php/Port_Knocking "Port Knocking")
+*   [Port knocking](/index.php/Port_knocking "Port knocking")
 *   [Official iptables web site](http://www.netfilter.org/projects/iptables/index.html)
 *   [iptables Tutorial 1.2.2](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) by Oskar Andreasson
 *   [iptables Debian](http://wiki.debian.org/iptables) Debian wiki

@@ -133,7 +133,7 @@ The following "block device encryption" solutions are available in Arch Linux:
 
 	Note that the developers of [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") ended support for it in May 2014\.
 
-For practical implications of the chosen layer of operation, see the [comparison table](#practical_implications) below, as well as the general write up for [eCryptfs](http://ksouedu.com/doc/ecryptfs-utils/ecryptfs-faq.html#compare). See [Category:Encryption](/index.php/Category:Encryption "Category:Encryption") for the available content of the methods compared below, as well as other tools not included in the table.
+For practical implications of the chosen layer of operation, see the [comparison table](#Practical_implications) below, as well as the general write up for [eCryptfs](http://ksouedu.com/doc/ecryptfs-utils/ecryptfs-faq.html#compare). See [Category:Encryption](/index.php/Category:Encryption "Category:Encryption") for the available content of the methods compared below, as well as other tools not included in the table.
 
 ### Comparison table
 
@@ -533,17 +533,17 @@ See [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_de
 
 ## See also
 
-1.  [^](#summary) see [http://www.truecrypt.org/legal/license](http://www.truecrypt.org/legal/license)
-2.  [^](#practical_implications) well, a single file in those filesystems could be used as a container (virtual loop-back device!) but then one would not actually be using the filesystem (and the features it provides) anymore
-3.  [^](#compatibility_.26_prevalence) [CrossCrypt](http://www.scherrer.cc/crypt)  - Open Source AES and TwoFish Linux compatible on the fly encryption for Windows XP and Windows 2000
-4.  [^](#compatibility_.26_prevalence) (1) [FreeOTFE (on sf.net)](http://sourceforge.net/projects/freeotfe.mirror/) (2) [FreeOTFE (archived)](http://web.archive.org/web/20130531062457/http://freeotfe.org/) - supports Windows 2000 and later (for PC), and Windows Mobile 2003 and later (for PDA)
-5.  [^](#compatibility_.26_prevalence) see [EncFs build instructions for Mac](http://www.arg0.net/encfs-mac-build)
-6.  [^](#compatibility_.26_prevalence) see [http://www.freshports.org/sysutils/fusefs-encfs/](http://www.freshports.org/sysutils/fusefs-encfs/)
-7.  [^](#compatibility_.26_prevalence) see [http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data](http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)
-8.  [^](#compatibility_.26_prevalence) [http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c](http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c)
-9.  [^](#compatibility_.26_prevalence) [http://members.ferrara.linux.it/freddy77/encfs.html](http://members.ferrara.linux.it/freddy77/encfs.html)
-10.  [^](#compatibility_.26_prevalence) [http://csrc.nist.gov/archive/aes/round2/r2report.pdf](http://csrc.nist.gov/archive/aes/round2/r2report.pdf)
-11.  [^](#compatibility_.26_prevalence) [https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)
-12.  [^](#compatibility_.26_prevalence) [https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf)
+1.  [^](#Summary) see [http://www.truecrypt.org/legal/license](http://www.truecrypt.org/legal/license)
+2.  [^](#Practical_implications) well, a single file in those filesystems could be used as a container (virtual loop-back device!) but then one would not actually be using the filesystem (and the features it provides) anymore
+3.  [^](#Compatibility_.26_prevalence) [CrossCrypt](http://www.scherrer.cc/crypt)  - Open Source AES and TwoFish Linux compatible on the fly encryption for Windows XP and Windows 2000
+4.  [^](#Compatibility_.26_prevalence) (1) [FreeOTFE (on sf.net)](http://sourceforge.net/projects/freeotfe.mirror/) (2) [FreeOTFE (archived)](http://web.archive.org/web/20130531062457/http://freeotfe.org/) - supports Windows 2000 and later (for PC), and Windows Mobile 2003 and later (for PDA)
+5.  [^](#Compatibility_.26_prevalence) see [EncFs build instructions for Mac](http://www.arg0.net/encfs-mac-build)
+6.  [^](#Compatibility_.26_prevalence) see [http://www.freshports.org/sysutils/fusefs-encfs/](http://www.freshports.org/sysutils/fusefs-encfs/)
+7.  [^](#Compatibility_.26_prevalence) see [http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data](http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)
+8.  [^](#Compatibility_.26_prevalence) [http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c](http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c)
+9.  [^](#Compatibility_.26_prevalence) [http://members.ferrara.linux.it/freddy77/encfs.html](http://members.ferrara.linux.it/freddy77/encfs.html)
+10.  [^](#Compatibility_.26_prevalence) [http://csrc.nist.gov/archive/aes/round2/r2report.pdf](http://csrc.nist.gov/archive/aes/round2/r2report.pdf)
+11.  [^](#Compatibility_.26_prevalence) [https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)
+12.  [^](#Compatibility_.26_prevalence) [https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf)
 13.  [^](#encfs_acceleration) [https://code.google.com/p/encfs/issues/detail?id=131](https://code.google.com/p/encfs/issues/detail?id=131)
-14.  [^](#compatibility_.26_prevalence) [DOXBOX](https://github.com/t-d-k/doxbox) - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE)
+14.  [^](#Compatibility_.26_prevalence) [DOXBOX](https://github.com/t-d-k/doxbox) - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE)

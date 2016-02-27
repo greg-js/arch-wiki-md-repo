@@ -150,7 +150,11 @@ We have no intention of filtering any outgoing traffic, as this would make the s
 
 Similar to the previous chains, we set the default policy for the **INPUT** chain to **DROP** in case something somehow slips by our rules. Dropping all traffic and specifying what is allowed is the best way to make a secure firewall.
 
+和上述的链一样，设置 **INPUT** 链默认策略为 **DROP** 已避免某些东西莫名其妙的穿过规则。停止所有的数据交换，然后指定可以被允许的数据是建立一个安全的防火墙的最好方式。
+
 **Warning:** If you are logged in via SSH, the following will immediately disconnect the SSH session. To avoid it: (1) add the first INPUT chain rule below (it will keep the session open), (2) add a regular rule to allow inbound SSH (to be able to reconnect in case of a connection drop) and (3) set the policy.
+
+**警告:** 如果使用 SSH 登陆，之后的操作将导致丢失 SSH 链接。通过下面的步骤避免出现这个问题：（1）将下面的语句添加到第一 INPUT 链规则中（将保持界面开启）。（2）
 
 ```
 # iptables -P INPUT DROP
@@ -158,6 +162,8 @@ Similar to the previous chains, we set the default policy for the **INPUT** chai
 ```
 
 Every packet that is received by any network interface will pass the **INPUT** chain first, if it is destined for this machine. In this chain, we make sure that only the packets that we want are accepted.
+
+首先通过任意网络接口接收的任何数据包将穿过 **INPUT** 链，
 
 The first rule added to the INPUT chain will allow traffic that belongs to established connections, or new valid traffic that is related to these connections such as ICMP errors, or echo replies (the packets a host returns when pinged). **ICMP** stands for **Internet Control Message Protocol**. Some ICMP messages are very important and help to manage congestion and MTU, and are accepted by this rule.
 
@@ -302,7 +308,7 @@ See `man iptables` for more advanced rules, like matching multiple ports.
 
 #### Port knocking
 
-Port knocking is a method to externally open ports that, by default, the firewall keeps closed. It works by requiring connection attempts to a series of predefined closed ports. When the correct sequence of port "knocks" (connection attempts) is received, the firewall opens certain port(s) to allow a connection. See [Port Knocking](/index.php/Port_Knocking "Port Knocking") for more information.
+Port knocking is a method to externally open ports that, by default, the firewall keeps closed. It works by requiring connection attempts to a series of predefined closed ports. When the correct sequence of port "knocks" (connection attempts) is received, the firewall opens certain port(s) to allow a connection. See [Port knocking](/index.php/Port_knocking "Port knocking") for more information.
 
 ### Protection against spoofing attacks
 

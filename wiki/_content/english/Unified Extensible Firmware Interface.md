@@ -52,16 +52,17 @@
 
 ## Boot Process under UEFI
 
-1.  System switched on - Power On Self Test, or POST process.
+1.  System switched on. The Power On Self Test (POST) is executed.
 2.  UEFI firmware is loaded. Firmware initializes the hardware required for booting.
-3.  Firmware then reads boot entry in the firmware's boot manager to determine which UEFI application to be launched and from where (i.e. from which disk and partition).
-4.  Firmware then launches the UEFI application.
-5.  Arch kernel support [EFISTUB](/index.php/EFISTUB "EFISTUB") by default, so EFI firmware could load the kernel as an EFI executable and then handle control to kernel.
-6.  Or the launched UEFI application may launch another application (in case of UEFI Shell or a boot manager like rEFInd) or the kernel and initramfs (in case of a boot loader like GRUB) depending on how the UEFI application was configured.
+3.  Firmware reads the boot entries in the firmware's boot manager to determine which UEFI application to be launched and from where (i.e. from which disk and partition).
+4.  Firmware launches the UEFI application.
+    *   This could be the Arch kernel itself (since [EFISTUB](/index.php/EFISTUB "EFISTUB") is enabled by default).
+    *   It could be some other application such as a shell or a graphical boot manager.
+    *   Or the boot entry could simply be a disk. In this case the firmware looks for an EFI system partition on that disk and tries to run the fallback UEFI application `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` on 32-bit systems). This is how UEFI bootable thumb drives work.
 
-If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enable, the boot process will verify authenticity of the EFI binary by signature.
+If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enabled, the boot process will verify authenticity of the EFI binary by signature.
 
-**Note:** On some UEFI systems the only possible way to launch UEFI application on boot (if it does not have custom entry in UEFI boot menu) is to put it in this fixed location: `<EFI SYSTEM PARTITION>/EFI/BOOT/BOOTX64.EFI` (for 64-bit x86 system)
+**Note:** On some (poorly-designed) UEFI systems the only way to boot is using a disk boot entry with the fallback UEFI application path.
 
 ### Multibooting in UEFI
 

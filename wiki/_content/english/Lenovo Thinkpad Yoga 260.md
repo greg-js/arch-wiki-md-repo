@@ -8,21 +8,21 @@
 *   [4 Configuration](#Configuration)
     *   [4.1 TrackPad](#TrackPad)
     *   [4.2 TrackPoint](#TrackPoint)
-    *   [4.3 TouchScreen](#TouchScreen)
+    *   [4.3 TouchScreen and Stylus](#TouchScreen_and_Stylus)
     *   [4.4 Video](#Video)
     *   [4.5 Card reader](#Card_reader)
 *   [5 Hardware information](#Hardware_information)
 
 ## Overview
 
-Most functionality works out of the box, although a kernel of version 4.3 or higher is necessary for the video card and the wifi adapter. Suspending the machine also works. The accelerometer does not show up and the Wacom touchscreen needs the latest git of xf86-input-wacom-git. The stylus elicits no reaction.
+Most functionality works out of the box, although a kernel of version 4.3 or higher is necessary for the video card and the wifi adapter. Suspending the machine also works. The accelerometer does not show up.
 
 | **Device** | **Status** | **Modules** |
 | Graphics | **Working** | i915 |
 | Wireless | **Working** | iwlwifi |
 | Audio | **Working** | snd_hda_intel |
 | Touchscreen | **Working** | wacom |
-| Stylus | **Not Working** |
+| Stylus | **Partial** ¹ | wacom,usbhid |
 | Accelerometer | **Not Working** |
 | Touchpad | **Working** | psmouse |
 | Trackpoint | **Working** | psmouse |
@@ -31,9 +31,13 @@ Most functionality works out of the box, although a kernel of version 4.3 or hig
 | Bluetooth | **Unknown** | btintel |
 | Fingerprint Reader | **Unknown** |
 
+¹Only one pen-button working
+
 ## Installation
 
-Installation is difficult because you either choose an old kernel (e.g., installation media from 2015.08 or before) and you do not have network access, or you select a newer ISO, but then the boot processes freezes. The Ethernet interface shows up, but the laptop does not have an RJ45 port. To boot with a new kernel that supports the wireless, you must pass `intel_pstate=no_hwp` to the kernel.
+In order to boot with a current kernel, you need to pass `intel_pstate=no_hwp` as kernel parameter. With a standard Arch-USB-ISO this can be done by pressing the Tabulator-Key on selecting the boot-menu-entry.
+
+If you cannot manage to utilize the kernel parameter, installation gets difficult because you need to choose an old kernel (e.g., installation media from 2015.08 or before) and you do not have network access without additional RJ45 adapter, as the laptop does not have an RJ45 port.
 
 ### Booting the install USB
 
@@ -70,9 +74,9 @@ See [TrackPoint](/index.php/TrackPoint "TrackPoint"). Sometimes the TrackPoint s
 
 ```
 
-### TouchScreen
+### TouchScreen and Stylus
 
-Touchscreen works with the Wacom driver git (package: [xf86-input-wacom-git](https://aur.archlinux.org/packages/xf86-input-wacom-git/)).
+Touchscreen works with the Wacom driver (package: [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom)). Also using the Stylus, only one of the two buttons on the pen is usable.
 
 ### Video
 

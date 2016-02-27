@@ -20,7 +20,8 @@ Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, c
     *   [4.5 Shell tips](#Shell_tips)
         *   [4.5.1 Synchronize path](#Synchronize_path)
         *   [4.5.2 Start a shell from ranger](#Start_a_shell_from_ranger)
-        *   [4.5.3 Start new ranger instance only if it's not running in current shell](#Start_new_ranger_instance_only_if_it.27s_not_running_in_current_shell)
+            *   [4.5.2.1 A simpler solution](#A_simpler_solution)
+        *   [4.5.3 Start new ranger instance only if it is not running in current shell](#Start_new_ranger_instance_only_if_it_is_not_running_in_current_shell)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Artifacts in image preview](#Artifacts_in_image_preview)
 *   [6 See also](#See_also)
@@ -286,7 +287,7 @@ map <c-n>  eval fm.tab_new('%d')
 
 #### Synchronize path
 
-*ranger* provides a shell [function](/index.php/Bash#Functions "Bash") `/usr/share/doc/ranger/examples/bash_automatic_cd.sh`. Running `ranger-cd` instead of `ranger` will automatically *cd* to the last browsed folder.
+*ranger* provides a shell [function](/index.php/Bash/Functions "Bash/Functions") `/usr/share/doc/ranger/examples/bash_automatic_cd.sh`. Running `ranger-cd` instead of `ranger` will automatically *cd* to the last browsed folder.
 
 If you launch ranger from a graphical launcher (such as `$TERMCMD -e ranger`, where TERMCMD is an X terminal), you cannot use `ranger-cd`. Create an executable script:
 
@@ -352,7 +353,17 @@ zsh
 
 Change ZDIRS for your dirstack.
 
-#### Start new ranger instance only if it's not running in current shell
+##### A simpler solution
+
+ `rc.conf` 
+```
+map S shell bash -c "cd %d; bash"
+
+```
+
+This could probably be adapted to other shells as well. Instead of just running a shell (like the default config), this will run `cd` in a shell, then execute a interactive shell which will not immediately exit so that you can continue with what you wanted.
+
+#### Start new ranger instance only if it is not running in current shell
 
 Put this in your [shell's startup file](/index.php/Autostarting#Shells "Autostarting"):
 

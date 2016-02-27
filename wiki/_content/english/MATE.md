@@ -117,6 +117,10 @@ The followings are also available via the AUR and integrate with MATE but the pa
 
 	[https://bitbucket.org/ubuntu-mate/mate-tweak](https://bitbucket.org/ubuntu-mate/mate-tweak) || [mate-tweak](https://aur.archlinux.org/packages/mate-tweak/)
 
+*   **TopMenu (GTK+)** — MATE panel applet for a global menubar.
+
+	[https://git.javispedro.com/cgit/topmenu-gtk.git/about/](https://git.javispedro.com/cgit/topmenu-gtk.git/about/) || [topmenu-gtk](https://aur.archlinux.org/packages/topmenu-gtk/)
+
 Additional packages need to be installed to take advantage of some of Caja's advanced features - see [File manager functionality](/index.php/File_manager_functionality "File manager functionality").
 
 ### GTK+ 3 version

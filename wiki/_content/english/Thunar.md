@@ -137,7 +137,7 @@ Right click in the Side Pane where there are no shortcuts, like on the DEVICES s
 
 ### Assign keyboard shortcuts in Thunar
 
-See [GTK+#Keyboard_shortcuts](/index.php/GTK%2B#Keyboard_shortcuts "GTK+"),
+See [GTK+#Keyboard shortcuts](/index.php/GTK%2B#Keyboard_shortcuts "GTK+"),
 
 ### Showing partitions defined in fstab
 

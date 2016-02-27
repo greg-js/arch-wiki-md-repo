@@ -59,7 +59,7 @@ You can get a list of all configurable options by typing `/set` in the **weechat
 
 ### Internal menu-based
 
-For a more convenient method, install the **iset** script. If you have weechat 0.3.9, run:
+For a more convenient method, install the **iset** script. If you have weechat 0.3.9 or newer, run:
 
 ```
 /script install iset.pl

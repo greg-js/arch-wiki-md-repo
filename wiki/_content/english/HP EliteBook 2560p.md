@@ -4,7 +4,7 @@ The HP 2560p is a subnotebook with an Intel i5 or Intel i7 processor inside.
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | Displayport | Yes |
 | [Network](/index.php/Network "Network") | Yes |
-| [Wireless](/index.php/Wireless_network_configuration "Wireless network configuration") | Yes |
+| [Wireless](/index.php/Wireless "Wireless") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | [Audio](/index.php/Audio "Audio") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
@@ -21,7 +21,7 @@ The HP 2560p is a subnotebook with an Intel i5 or Intel i7 processor inside.
 
 ### Touchpad
 
-Without xf86-input-synaptics (see [Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")) the touchpad doesnt work, but the pointstick with the buttons are ready to use.
+Without xf86-input-synaptics (see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")) the touchpad doesnt work, but the pointstick with the buttons are ready to use.
 
 ### Cardreader
 

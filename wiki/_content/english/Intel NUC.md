@@ -34,17 +34,17 @@ Intel NUCs support NVMe drives connected to the PCIe M.2 connector. See [Solid S
 
 ### Graphics
 
-Most NUCs use integrated [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics"). Make sure to install [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") to enjoy the hardware graphics acceleration on supported NUC models.
+Most NUCs use integrated [Intel graphics](/index.php/Intel_graphics "Intel graphics"). Make sure to install [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") to enjoy the hardware graphics acceleration on supported NUC models.
 
 #### Skylake
 
 **Warning:** The `i915` Intel DRM driver suffers from various bugs that can result in kernel errors, GPU crashes and even complete system freezes.
 
-There are no pending fixes for DRM bugs in latest kernel versions (last tested on `4.5-rc2`). See [Intel_graphics#Skylake_Support](/index.php/Intel_graphics#Skylake_Support "Intel graphics") for useful workarounds.
+There are no pending fixes for DRM bugs in latest kernel versions (last tested on `4.5-rc2`). See [Intel graphics#Skylake Support](/index.php/Intel_graphics#Skylake_Support "Intel graphics") for useful workarounds.
 
 ### Wireless
 
-Most NUC wireless adapters should work out of the box. Make sure relevant firmware is loaded. See [Wireless_network_configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") for details.
+Most NUC wireless adapters should work out of the box. Make sure relevant firmware is loaded. See [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") for details.
 
 ## Performance
 
@@ -64,7 +64,7 @@ If your NUC has become bricked, it might be possible to restore it by momentaril
 
 ### Audio plug
 
-The [PulseAudio#Switch_on_connect](/index.php/PulseAudio#Switch_on_connect "PulseAudio") module is buggy and in some cases might cause pulseaudio to stop playing audio when disconnecting the plug, until pulse is restarted. In this case, comment out the module:
+The [PulseAudio#Switch on connect](/index.php/PulseAudio#Switch_on_connect "PulseAudio") module is buggy and in some cases might cause pulseaudio to stop playing audio when disconnecting the plug, until pulse is restarted. In this case, comment out the module:
 
  `/etc/pulse/default.pa` 
 ```

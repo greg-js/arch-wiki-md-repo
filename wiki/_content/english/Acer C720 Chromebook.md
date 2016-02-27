@@ -126,7 +126,7 @@ Additionally see [SSD#Troubleshooting](/index.php/SSD#Troubleshooting "SSD") if 
 
 If your internal microphone is not working (for example, in Skype), select "Microphone (unplugged)" as your input source in the PulseAudio Volume Control. Your internal microphone should now work. [[1]](http://forums.bodhilinux.com/index.php?/topic/9975-microphone-support-on-acer-c720/)
 
-See also [Chromebook#Fixing_audio](/index.php/Chromebook#Fixing_audio "Chromebook") for another possible solution.
+See also [Chromebook#Fixing audio](/index.php/Chromebook#Fixing_audio "Chromebook") for another possible solution.
 
 ## See also
 

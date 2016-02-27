@@ -23,7 +23,7 @@ You are able to disable Secure Boot using the firmware setup menu.
 
 **Warning:** Clearing the provided firmware keys will disable your ability to securely boot into Windows.
 
-**Note:** For security reasons, you are unable to change the firmware keys using [EFI utilities](/index.php/Unified_Extensible_Firmware_Interface#Userspace_Tools "Unified Extensible Firmware Interface"), even when Secure Boot is disabled.
+**Note:** For security reasons, you are unable to change the firmware keys using [EFI utilities](/index.php/Unified_Extensible_Firmware_Interface#Userspace_tools "Unified Extensible Firmware Interface"), even when Secure Boot is disabled.
 
 Read [Secure Boot](/index.php/Secure_Boot "Secure Boot") for more information on how to generate firmware keys.
 

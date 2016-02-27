@@ -163,7 +163,7 @@ tail /var/log/cups/error_log
 
 Remote print servers can be accessed by adding an IPP "printer" to the local CUPS server, with a URI of `ipp://192.168.0.101:631/printers/<name-of-printer>`. See [CUPS/Printer sharing#Between GNU/Linux systems](/index.php/CUPS/Printer_sharing#Between_GNU.2FLinux_systems "CUPS/Printer sharing") for details on setting up the remote print server.
 
-**Note:** Avoid configuring both the server and the client with a printer filter - either the print queue on the client or the server should be 'raw'. This avoids sending a print job through the filters for a printer twice, which can cause problems (for instance, [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1589908#p1589908)). See [CUPS#Usage](/index.php/CUPS#Usage "CUPS") for an example of setting a print queue to 'raw'.
+**Note:** Avoid configuring both the server and the client with a printer filter - either the print queue on the client or the server should be 'raw'. This avoids sending a print job through the filters for a printer twice, which can cause problems (for instance, [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1589908#p1589908)). See [#Usage](#Usage) for an example of setting a print queue to 'raw'.
 
 #### Without a local CUPS server
 
