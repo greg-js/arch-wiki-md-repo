@@ -83,7 +83,7 @@ Nejprve je potřeba načíst příslušný jaderný modul:
 
 ```
 
-Pokud už máte Arch Linux nainstalovaný a pouze chcete přidat či vyzkoušet LVM, přeskočte na [rozdělení disků](/index.php/LVM_(%C4%8Cesky)#Rozd.C4.9Blen.C3.AD_disk.C5.AF "LVM (Česky)").
+Pokud už máte Arch Linux nainstalovaný a pouze chcete přidat či vyzkoušet LVM, přeskočte na [rozdělení disků](#Rozd.C4.9Blen.C3.AD_disk.C5.AF).
 
 #### Instalace Arch Linuxu na LVM
 
@@ -186,7 +186,7 @@ Nyní můžete na logických svazcích vytvořit systémy souborů. Poté už je
 
 ```
 
-Pokud instalujete Arch Linux, spusťte /arch/setup, vyberte volbu *Prepare Hard Drive* a pak přímo krok 3 *Set Filesystem Mountpoints* a ***přečtěte si sekci [Důležité informace](/index.php/LVM_(%C4%8Cesky)#D.C5.AFle.C5.BEit.C3.A9_informace "LVM (Česky)") před tím, než budete s instalací systému pokračovat!***
+Pokud instalujete Arch Linux, spusťte /arch/setup, vyberte volbu *Prepare Hard Drive* a pak přímo krok 3 *Set Filesystem Mountpoints* a ***přečtěte si sekci [Důležité informace](#D.C5.AFle.C5.BEit.C3.A9_informace) před tím, než budete s instalací systému pokračovat!***
 
 ### Důležité informace
 
@@ -403,7 +403,7 @@ Další články týkající se LVM na Archwiki:
 
 Externí zdroje:
 
-*   [LVM na Wikipedii (anglicky)](http://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux))
+*   [LVM na Wikipedii (anglicky)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux) "wikipedia:Logical Volume Manager (Linux)")
 *   [LVM HOWTO na tldp.org (anglicky)](http://tldp.org/HOWTO/LVM-HOWTO/)
 *   [LVM na wiki.gentoo.org (anglicky)](http://wiki.gentoo.org/wiki/LVM)
 *   [LVM2 zrcadlení vs. MD raid 1 (anglicky)](http://www.joshbryan.com/blog/2008/01/02/lvm2-mirrors-vs-md-raid-1)

@@ -31,11 +31,11 @@ Mientras que [Hurd](http://www.gnu.org/s/hurd/hurd.html), el núcleo GNU, está 
 
 **librería de C:** [glibc](https://www.archlinux.org/packages/?name=glibc) es *"la librería la cual define las 'llamadas al sistema' y otras funciones básicas como open, malloc, printf, exit... "*[[1]](http://www.gnu.org/software/libc/)
 
-**utilidades binarias:** [binutils](https://www.archlinux.org/packages/?name=binutils) provee una *"colección de herramientas de programación para la manipulación de código objeto en varios formatos de archivo"*[[2]](http://en.wikipedia.org/wiki/GNU_Binutils).
+**utilidades binarias:** [binutils](https://www.archlinux.org/packages/?name=binutils) provee una *"colección de herramientas de programación para la manipulación de código objeto en varios formatos de archivo"*[GNU_Binutils](https://en.wikipedia.org/wiki/GNU_Binutils "wikipedia:GNU Binutils").
 
-**shell:** [Bash](/index.php/Bash "Bash"), otra aplicación basada en GNU [[3]](http://www.gnu.org/software/bash/), es el shell por defecto.
+**shell:** [Bash](/index.php/Bash "Bash"), otra aplicación basada en GNU [[2]](http://www.gnu.org/software/bash/), es el shell por defecto.
 
-**utilidades esenciales:** El paquete [coreutils](https://www.archlinux.org/packages/?name=coreutils) contiene *"las utilidades básicas para manejo de archivos, shell y manipulación de texto"*[[4]](http://www.gnu.org/software/coreutils/).
+**utilidades esenciales:** El paquete [coreutils](https://www.archlinux.org/packages/?name=coreutils) contiene *"las utilidades básicas para manejo de archivos, shell y manipulación de texto"*[[3]](http://www.gnu.org/software/coreutils/).
 
 **compresión:** [gzip](https://www.archlinux.org/packages/?name=gzip) y [Tar](/index.php/Tar "Tar") manejan muchos paquetes para sistemas GNU/Linux. Por ejemplo, los paquetes del [Repositorio de Usuarios de Arch](/index.php/Arch_User_Repository "Arch User Repository") vienen en formato [Gzip](http://www.gnu.org/software/gzip/) [tarballs](http://www.gnu.org/software/tar/).
 

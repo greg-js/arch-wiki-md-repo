@@ -359,9 +359,9 @@ The important points to check:
 
 ```
 
-假设设备使用 `wext` 驱动。如果无法工作，可能需要调整选项，参见 [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant")。
+假设设备使用 `wext` 驱动。如果无法工作，可能需要调整选项，参见 [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")。
 
-如果连接成功，在新终端中执行后续命令或(或者通过 `Ctrl+c` 退出并使用 `-B` 参数在后台再次执行上述命令。[WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant") 页面包含更多参数和配置文件的信息。
+如果连接成功，在新终端中执行后续命令或(或者通过 `Ctrl+c` 退出并使用 `-B` 参数在后台再次执行上述命令。[WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") 页面包含更多参数和配置文件的信息。
 
 通过下面命令确认是否连接成功：
 
@@ -519,7 +519,7 @@ See: [Netctl](/index.php/Netctl "Netctl")
 
 ##### Wicd
 
-Wicd 是可以同时处理无线和有线网络的管理器。用 Python 和 Gtk 写成，依赖关系比 NetworkManager 少，所以是轻量级桌面的理想选择。位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)").
+Wicd 是可以同时处理无线和有线网络的管理器。用 Python 和 Gtk 写成，依赖关系比 NetworkManager 少，所以是轻量级桌面的理想选择。位于[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库").
 
 参见: [Wicd](/index.php/Wicd "Wicd")
 
@@ -529,7 +529,7 @@ Wicd 是可以同时处理无线和有线网络的管理器。用 Python 和 Gtk
 
 NetworkManager 是高级网络管理工具，在大部分流行发行版中使用。除了能管理有线链接，NetworkManager还提供了一个易于使用的图形界面程序来选择想要的无线移动链接。
 
-**Note:** GNOME's [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) also works under [Xfce](/index.php/Xfce "Xfce") if you install [xfce4-xfapplet-plugin](https://aur.archlinux.org/packages/xfce4-xfapplet-plugin/) (available in the [AUR](/index.php/Arch_User_Repository "Arch User Repository")) first. Additionally, there are applets available for [KDE](/index.php/KDE "KDE").
+**Note:** GNOME's [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) also works under [Xfce](/index.php/Xfce "Xfce") if you install [xfce4-xfapplet-plugin](https://aur.archlinux.org/packages/xfce4-xfapplet-plugin/) (available in the [AUR](/index.php/AUR "AUR")) first. Additionally, there are applets available for [KDE](/index.php/KDE "KDE").
 
 详情请见 [NetworkManager](/index.php/NetworkManager "NetworkManager")。
 
@@ -541,7 +541,7 @@ WiFi Radar是 一个Python/PyGTK2 的管理无线配置的程序（**只有**无
 
 ### Power saving
 
-参阅[Power_saving](/index.php/Power_saving "Power saving").
+参阅[Power saving](/index.php/Power_saving "Power saving").
 
 ## Troubleshooting
 
@@ -566,17 +566,17 @@ If the card is *hard-blocked*, use the hardware button (switch) to unblock it. I
 
 ```
 
-**Note:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_modules "Kernel modules").
+**Note:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
 
 More info: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
 
 ### Respecting the regulatory domain
 
-The [regulatory domain](http://en.wikipedia.org/wiki/IEEE_802.11#Regulatory_domains_and_legal_compliance), or "regdomain", is used to reconfigure wireless drivers to make sure that wireless hardware usage complies with local laws set by the FCC, ETSI and other organizations. Regdomains use [ISO 3166-1 alpha-2 country codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). For example, the regdomain of the United States would be "US", China would be "CN", etc.
+The [regulatory domain](https://en.wikipedia.org/wiki/IEEE_802.11#Regulatory_domains_and_legal_compliance "wikipedia:IEEE 802.11"), or "regdomain", is used to reconfigure wireless drivers to make sure that wireless hardware usage complies with local laws set by the FCC, ETSI and other organizations. Regdomains use [ISO 3166-1 alpha-2 country codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 "wikipedia:ISO 3166-1 alpha-2"). For example, the regdomain of the United States would be "US", China would be "CN", etc.
 
-Regdomains affect the availability of wireless channels. In the 2.4GHz band, the allowed channels are 1-11 for the US, 1-14 for Japan, and 1-13 for most of the rest of the world. In the 5GHz band, the rules for allowed channels are much more complex. In either case, consult [this list of WLAN channels](https://en.wikipedia.org/wiki/List_of_WLAN_channels) for more detailed information.
+Regdomains affect the availability of wireless channels. In the 2.4GHz band, the allowed channels are 1-11 for the US, 1-14 for Japan, and 1-13 for most of the rest of the world. In the 5GHz band, the rules for allowed channels are much more complex. In either case, consult [this list of WLAN channels](https://en.wikipedia.org/wiki/List_of_WLAN_channels "wikipedia:List of WLAN channels") for more detailed information.
 
-Regdomains also affect the limit on the [effective isotropic radiated power (EIRP)](https://en.wikipedia.org/wiki/Equivalent_isotropically_radiated_power) from wireless devices. This is derived from transmit power/"tx power", and is measured in [dBm/mBm (1dBm=100mBm) or mW (log scale)](https://en.wikipedia.org/wiki/DBm). In the 2.4GHz band, the maximum is 30dBm in the US and Canada, 20dBm in most of Europe, and 20dB-30dBm for the rest of the world. In the 5GHz band, maximums are usually lower. Consult the [wireless-regdb](http://git.kernel.org/cgit/linux/kernel/git/linville/wireless-regdb.git/tree/db.txt) for more detailed information (EIRP dBm values are in the second set of brackets for each line).
+Regdomains also affect the limit on the [effective isotropic radiated power (EIRP)](https://en.wikipedia.org/wiki/Equivalent_isotropically_radiated_power "wikipedia:Equivalent isotropically radiated power") from wireless devices. This is derived from transmit power/"tx power", and is measured in [dBm/mBm (1dBm=100mBm) or mW (log scale)](https://en.wikipedia.org/wiki/DBm "wikipedia:DBm"). In the 2.4GHz band, the maximum is 30dBm in the US and Canada, 20dBm in most of Europe, and 20dB-30dBm for the rest of the world. In the 5GHz band, maximums are usually lower. Consult the [wireless-regdb](http://git.kernel.org/cgit/linux/kernel/git/linville/wireless-regdb.git/tree/db.txt) for more detailed information (EIRP dBm values are in the second set of brackets for each line).
 
 Misconfiguring the regdomain can be useful - for example, by allowing use of an unused channel when other channels are crowded, or by allowing an increase in tx power to widen transmitter range. However, **this is not recommended** as it could break local laws and cause interference with other radio devices.
 
@@ -901,7 +901,7 @@ There are some other drivers for some Atheros devices. See [Linux Wireless docum
 *   [http://wireless.kernel.org/en/users/Drivers/ath5k](http://wireless.kernel.org/en/users/Drivers/ath5k)
 *   [http://wiki.debian.org/ath5k](http://wiki.debian.org/ath5k)
 
-If you find web pages randomly loading very slow, or if the device is unable to lease an IP address, try to switch from hardware to software encryption by loading the `ath5k` module with `nohwcrypt=1` option. See [Kernel Modules#Setting module options](/index.php/Kernel_Modules#Setting_module_options "Kernel Modules") for details.
+If you find web pages randomly loading very slow, or if the device is unable to lease an IP address, try to switch from hardware to software encryption by loading the `ath5k` module with `nohwcrypt=1` option. See [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") for details.
 
 有些笔记本的 LED 指示灯有问题，可以：
 

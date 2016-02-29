@@ -1,4 +1,4 @@
-**Xorg** is een open-source implementatie van het X Window Systeem, versie 11\. Omdat X zeer populair is bij GNU/Linux gebruikers, maken veel distributies en graphische applicaties hier gebruik van. Zie voor meer details het [Wikipedia artikel](http://nl.wikipedia.org/wiki/X_Window_System) of de [Xorg Wiki](http://www.x.org/wiki).
+**Xorg** is een open-source implementatie van het X Window Systeem, versie 11\. Omdat X zeer populair is bij GNU/Linux gebruikers, maken veel distributies en graphische applicaties hier gebruik van. Zie voor meer details het [Wikipedia artikel](https://nl.wikipedia.org/wiki/X_Window_System) of de [Xorg Wiki](http://www.x.org/wiki).
 
 ## Contents
 
@@ -102,4 +102,4 @@ Xorg kan geconfigureerd worden met /etc/X11/xorg.conf of /etc/xorg.conf en confi
 
 * * *
 
-Dit artikel is gebaseerd op het artikel [Xorg](https://wiki.archlinux.org/index.php/Xorg) op de engelstalige ArchWiki.
+Dit artikel is gebaseerd op het artikel [Xorg](/index.php/Xorg "Xorg") op de engelstalige ArchWiki.

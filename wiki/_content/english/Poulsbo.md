@@ -20,7 +20,7 @@ On this page you find comprehensive information about how to get the best out of
 
 ## Kernel's gma500_gfx module
 
-With kernel 2.6.39, a new psb_gfx module appeared in the kernel developed by [Alan Cox](http://en.wikipedia.org/wiki/Alan_Cox) to support Poulsbo hardware. As of kernel 3.3.rc1 the driver has left staging and been renamed gma500_gfx. ([[1]](http://blog.bodhizazen.net/linux/linux-gma500-poulsbo-driver-moved-out-of-staging/))
+With kernel 2.6.39, a new psb_gfx module appeared in the kernel developed by [Alan Cox](https://en.wikipedia.org/wiki/Alan_Cox "wikipedia:Alan Cox") to support Poulsbo hardware. As of kernel 3.3.rc1 the driver has left staging and been renamed gma500_gfx. ([[1]](http://blog.bodhizazen.net/linux/linux-gma500-poulsbo-driver-moved-out-of-staging/))
 
 **Advantages**
 
@@ -48,7 +48,7 @@ i2c_core               16653  5 drm,drm_kms_helper,i2c_algo_bit,gma500_gfx,video
 
 ## Modesetting driver and dual monitor Setup
 
-To setup different resolution for external monitor using [xrandr](https://wiki.archlinux.org/index.php/Xrandr), xf86-video-modesetting provided by package [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) from official repo is needed. If you choose to use the git package ([xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/)), remember to recompile it after a new version of [Xorg](/index.php/Xorg "Xorg"). After installing, an [Xorg](/index.php/Xorg "Xorg") file is needed to setup the driver. Use this for device section:
+To setup different resolution for external monitor using [xrandr](/index.php/Xrandr "Xrandr"), xf86-video-modesetting provided by package [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) from official repo is needed. If you choose to use the git package ([xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/)), remember to recompile it after a new version of [Xorg](/index.php/Xorg "Xorg"). After installing, an [Xorg](/index.php/Xorg "Xorg") file is needed to setup the driver. Use this for device section:
 
  `/etc/X11/xorg.conf.d/20-gpudriver.conf` 
 ```

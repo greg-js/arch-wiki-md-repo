@@ -233,4 +233,4 @@ window.font:                             AR PL NewSung-8
 *   [Fluxbox Wiki](http://fluxbox-wiki.org/)
 *   [fbsetbg documentation](http://www.xs4all.nl/~hanb/software/fbsetbg/fbsetbg.html)
 *   [Application recommendations](http://archux.com/page/application-recommendations)
-*   [Fluxbox Style Guide](https://wiki.archlinux.org/index.php/Fluxbox_Style_Guide)
+*   [Fluxbox Style Guide](/index.php/Fluxbox_Style_Guide "Fluxbox Style Guide")

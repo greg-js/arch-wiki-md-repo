@@ -13,15 +13,15 @@
     *   [1.8 Validate configuration](#Validate_configuration)
 *   [2 Client configuration](#Client_configuration)
     *   [2.1 List Public Shares](#List_Public_Shares)
-    *   [2.2 Manual mounting](#Manual_mounting)
-        *   [2.2.1 Add Share to /etc/fstab](#Add_Share_to_.2Fetc.2Ffstab)
-            *   [2.2.1.1 Storing Share Passwords](#Storing_Share_Passwords)
-            *   [2.2.1.2 systemd.automount](#systemd.automount)
-    *   [2.3 WINS host names](#WINS_host_names)
+    *   [2.2 WINS host names](#WINS_host_names)
+    *   [2.3 Manual mounting](#Manual_mounting)
+        *   [2.3.1 Storing Share Passwords](#Storing_Share_Passwords)
     *   [2.4 Automatic mounting](#Automatic_mounting)
-        *   [2.4.1 smbnetfs](#smbnetfs)
-            *   [2.4.1.1 Daemon](#Daemon)
-        *   [2.4.2 autofs](#autofs)
+        *   [2.4.1 As mount entry](#As_mount_entry)
+        *   [2.4.2 As systemd unit](#As_systemd_unit)
+        *   [2.4.3 smbnetfs](#smbnetfs)
+            *   [2.4.3.1 Daemon](#Daemon)
+        *   [2.4.4 autofs](#autofs)
     *   [2.5 File manager configuration](#File_manager_configuration)
         *   [2.5.1 GNOME Files, Nemo, Caja, Thunar and PCManFM](#GNOME_Files.2C_Nemo.2C_Caja.2C_Thunar_and_PCManFM)
         *   [2.5.2 KDE](#KDE)
@@ -233,6 +233,10 @@ $ smbclient -L *hostname* -U%
 
 ```
 
+### WINS host names
+
+The [smbclient](https://www.archlinux.org/packages/?name=smbclient) package provides a driver to resolve host names using WINS. To enable it, add “wins” to the “hosts” line in /etc/nsswitch.conf.
+
 ### Manual mounting
 
 Create a mount point for the share:
@@ -278,13 +282,6 @@ Try specifying the option "sec=ntlmv2" as workaround.
 *   If your mount does not work stable, stutters or freezes, try to enable different SMB protocol version with `vers=` option. For example, `vers=2.0` for Windows Vista mount.
 *   If having timeouts on a mounted network share with cifs on a shutdown, see [WPA supplicant#Problem with mounted network shares (cifs) and shutdown (Date: 1st Oct. 2015)](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown_.28Date:_1st_Oct._2015.29 "WPA supplicant").
 
-#### Add Share to /etc/fstab
-
-This is an simple example of a `cifs` [mount entry](/index.php/Fstab "Fstab") that requires authentication:
-
- `/etc/fstab`  `//*SERVER*/*sharename* /mnt/*mountpoint* cifs username=*myuser*,password=*mypass* 0 0` 
-**Note:** Space in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//*SERVER*/share name` on the command line should be `//*SERVER*/share\040name` in `/etc/fstab`.
-
 ##### Storing Share Passwords
 
 Storing passwords in a world readable file is not recommended. A safer method is to create a credentials file:
@@ -304,19 +301,54 @@ The credential file should explicitly readable/writeable to root:
 
 ```
 
-##### systemd.automount
+### Automatic mounting
+
+#### As mount entry
+
+This is an simple example of a `cifs` [mount entry](/index.php/Fstab "Fstab") that requires authentication:
+
+ `/etc/fstab`  `//*SERVER*/*sharename* /mnt/*mountpoint* cifs username=*myuser*,password=*mypass* 0 0` 
+**Note:** Space in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//*SERVER*/share name` on the command line should be `//*SERVER*/share\040name` in `/etc/fstab`.
 
 To speed up the service on boot, add the `x-systemd.automount` option to the entry:
 
  `/etc/fstab`  `//*SERVER*/*SHARENAME* /mnt/*mountpoint* cifs credentials=*/path/to/smbcredentials/share*,x-systemd.automount 0 0` 
 
-### WINS host names
+#### As systemd unit
 
-The [smbclient](https://www.archlinux.org/packages/?name=smbclient) package provides a driver to resolve host names using WINS. To enable it, add “wins” to the “hosts” line in /etc/nsswitch.conf.
+Create a new `.mount` file inside `/etc/systemd/system`, e.g. `mnt-myshare.mount`.
 
-### Automatic mounting
+`Requires=` replace (if needed) with your [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration").
 
-There are several ways to easily browse shared resources:
+`What=` path to share
+
+`Where=` path to mount the share
+
+`Options=` share mounting options
+
+ `/etc/systemd/systemd/mnt-myshare.mount` 
+```
+[Unit]
+Description=Mount Share at boot
+Requires=systemd-networkd.service
+After=network-online.target
+Wants=network-online.target
+
+[Mount]
+What=//server/share
+Where=/mnt/myshare
+Options=credentials=/etc/samba/creds/myshare,iocharset=utf8,rw,x-systemd.automount
+Type=cifs
+TimeoutSec=30
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+To use `myshare.mount`, [start](/index.php/Start "Start") the unit and [enable](/index.php/Enable "Enable") it to run on system boot.
+
+You may need to [enable](/index.php/Enable "Enable") `systemd-networkd-wait-online.service` or `NetworkManager-wait-online.service` (depending on your setup) to proper enable booting on start-up.
 
 #### smbnetfs
 

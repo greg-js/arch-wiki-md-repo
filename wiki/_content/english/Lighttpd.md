@@ -368,7 +368,7 @@ Note that you cannot use the scheme conditional around ssl.engine above, since l
 
 ##### Server Name Indication
 
-To use [SNI](http://en.wikipedia.org/wiki/Server_Name_Indication) with lighttpd, simply put additional ssl.pemfile configuration directives inside host conditionals. A default ssl.pemfile is [still required](https://redmine.lighttpd.net/projects/1/wiki/Docs_SSL#Server-Name-Indication-SNI).
+To use [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication "wikipedia:Server Name Indication") with lighttpd, simply put additional ssl.pemfile configuration directives inside host conditionals. A default ssl.pemfile is [still required](https://redmine.lighttpd.net/projects/1/wiki/Docs_SSL#Server-Name-Indication-SNI).
 
 ```
 $HTTP["host"] == "www.example.org" {

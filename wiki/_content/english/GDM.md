@@ -138,7 +138,7 @@ Now, open the `gnome-shell.css` file in the directory and change the `#lockDialo
 
 ```
 
-Set `background-size` to the resolution that GDM uses, this might not necessarily be the resolution of the image. For a list of display resolutions see [Display resolution](https://en.wikipedia.org/wiki/Display_resolution#Computer_monitors). Again, set **filename** to be the name of the background image.
+Set `background-size` to the resolution that GDM uses, this might not necessarily be the resolution of the image. For a list of display resolutions see [Display resolution](https://en.wikipedia.org/wiki/Display_resolution#Computer_monitors "wikipedia:Display resolution"). Again, set **filename** to be the name of the background image.
 
 Finally, compile the theme using the following command:
 

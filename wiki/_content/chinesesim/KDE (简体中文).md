@@ -118,7 +118,7 @@ KDE 上游维护了一份 [UserBase Wiki](http://userbase.kde.org/)。用户能�
 1.  隔离 `multi-user.target` `# systemctl isolate multi-user.target` 
 2.  [卸载](/index.php/Pacman "Pacman") kdebase-workspace 软件包 `# pacman -Rc kdebase-workspace` 
 3.  [安装](/index.php/Pacman "Pacman") 软件包组[plasma](https://www.archlinux.org/groups/x86_64/plasma/),或者只安装[plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta)软件包.
-4.  停用KDM(如果你在使用的话) `# systemctl disable kdm` 然后安装[SDDM](/index.php/SDDM "SDDM") `# systemctl enable sddm` 或其他的 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)").
+4.  停用KDM(如果你在使用的话) `# systemctl disable kdm` 然后安装[SDDM](/index.php/SDDM "SDDM") `# systemctl enable sddm` 或其他的 [显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器").
 5.  重新启动.
 
 **Note:** Plasma 4 设置并不会自动合并到Plasma 5,所以你要从桌面重新设置.
@@ -208,7 +208,7 @@ Arch Linux 的官方徽标、图标、CD标签和其它艺术作品都可以在[
 
 右击Kicker菜单按钮, 点击“**程序启动器设置**”，接着点击**右边**的图标。然后您可以选择Arch Linux图标或其他图标来代替默认图标。
 
-Arch Linux 官方图库位于 [archlinux-artwork](https://www.archlinux.org/packages/extra/any/archlinux-artwork/) 软件包，安装后位于
+Arch Linux 官方图库位于 [archlinux-artwork](https://www.archlinux.org/packages/?name=archlinux-artwork) 软件包，安装后位于
 
 ```
 /usr/share/archlinux/icons
@@ -299,7 +299,7 @@ KDE 桌面活动是基于 Plasma 的类似于“虚拟桌面”的一组 Plasma 
 
 KDE 集成了一个名为 "**电源管理**"的节能服务，它可以调整系统的节能配置文件及/或（如果支持的话）屏幕的亮度。
 
-从 KDE 4.6起，KDE 不再管理 CPU 的频率调节，而是假设它由硬件及/或内核来自动管理。从版本 3.3 的内核起，Arch 使用 `ondemand` 作为默认 CPU 频率调速器。多数情况下不需要进行额外的配置。调节频率的细节，请参见[CPU 频率调节](/index.php/CPU_Frequency_Scaling_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "CPU Frequency Scaling (简体中文)")。
+从 KDE 4.6起，KDE 不再管理 CPU 的频率调节，而是假设它由硬件及/或内核来自动管理。从版本 3.3 的内核起，Arch 使用 `ondemand` 作为默认 CPU 频率调速器。多数情况下不需要进行额外的配置。调节频率的细节，请参见[CPU 频率调节](/index.php/CPU_frequency_scaling_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "CPU frequency scaling (简体中文)")。
 
 ### 监视本地文件和目录的变化
 
@@ -755,7 +755,7 @@ export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
 
 ##### GPU 驱动程序问题
 
-请确保你已经安装了适当的显卡驱动，这样你的桌面至少有 2D 加速。遵照这些文章：[ATI](/index.php/ATI "ATI")、[NVIDIA](/index.php/NVIDIA "NVIDIA")、[Intel](/index.php/Intel_Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel Graphics (简体中文)")，以获得更多信息来保证一切正常。 开源的 ATI 和 Intel 驱动程序和私有的（二进制）Nvidia 驱动程序理论上应该能提供最好的 2D 和 3D 加速。
+请确保你已经安装了适当的显卡驱动，这样你的桌面至少有 2D 加速。遵照这些文章：[ATI](/index.php/ATI "ATI")、[NVIDIA](/index.php/NVIDIA "NVIDIA")、[Intel](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)")，以获得更多信息来保证一切正常。 开源的 ATI 和 Intel 驱动程序和私有的（二进制）Nvidia 驱动程序理论上应该能提供最好的 2D 和 3D 加速。
 
 ##### 使用 Raster 引擎跳过问题
 

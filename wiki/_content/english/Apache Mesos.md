@@ -1,5 +1,3 @@
-Apache Mesos is a cluster manager. For more information, see the [official documentation](http://mesos.apache.org/documentation/latest/).
+Redirect to:
 
-## Installation
-
-Install the [mesos](https://aur.archlinux.org/packages/mesos/) package.
+*   [Apache](/index.php?title=Apache&redirect=no "Apache")

@@ -53,7 +53,7 @@ You will need Gimp (of course), either Separate or Separate+ plugins, and ICC pr
 
 If you are not interested in the theory, you may skip straight to the heading on [CMYK color support in GIMP](#About_CMYK_color_and_Gimp).
 
-First off, the proper name for *CMYK mode*, as it is commonly known, is *[CMYK color model](http://en.wikipedia.org/wiki/CMYK)*. It is called a *color model*, because it represents a standard way of describing colors.
+First off, the proper name for *CMYK mode*, as it is commonly known, is *[CMYK color model](https://en.wikipedia.org/wiki/CMYK "wikipedia:CMYK")*. It is called a *color model*, because it represents a standard way of describing colors.
 
 The color model is also called a *subtractive* color model, as opposed to *additive* (that is RGB) color model. Words additive and subtractive suggest that light, which is essential for perception of color, is either added or subtracted before it reaches the eye. The choice of primary colors is based on belief that the combination of Red, Green, and Blue (for RGB) or Cyan, Magenta, Yellow (for CMYK) produce the greatest range visible colors.
 
@@ -251,10 +251,10 @@ Although Adobe RGB is a common profile, sRGB profiles (especially the new v4 ver
 
 ## See also
 
-*   [About CMYK color model (Wikipedia)](http://en.wikipedia.org/wiki/CMYK)
-*   [About color in general (Wikipedia)](http://en.wikipedia.org/wiki/Color)
+*   [About CMYK color model (Wikipedia)](https://en.wikipedia.org/wiki/CMYK "wikipedia:CMYK")
+*   [About color in general (Wikipedia)](https://en.wikipedia.org/wiki/Color "wikipedia:Color")
 *   [International Color Consortium (ICC home page)](http://www.color.org/)
-*   [About color management (Wikipedia)](http://en.wikipedia.org/wiki/Color_management)
+*   [About color management (Wikipedia)](https://en.wikipedia.org/wiki/Color_management "wikipedia:Color management")
 *   [Introduction to ICC color profile format (ICC home page)](http://www.color.org/iccprofile.html)
 *   [Gimp Color Management for DTP (Foxbunny's Journal)](http://www.brankovukelic.com/post/513356271/gimp-color-management-for-dtp)
 *   [Color Management: Color Space Conversion (Cambridge in Color)](http://www.cambridgeincolour.com/tutorials/color-space-conversion.htm)

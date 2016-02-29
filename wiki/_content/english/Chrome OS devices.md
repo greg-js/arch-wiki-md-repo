@@ -262,7 +262,7 @@ After flashing the firmware you can continue to [Installing Arch Linux](#Install
 
 #### Preparing the installation media
 
-Create an [Arch Linux Installer USB drive](https://wiki.archlinux.org/index.php/USB_Flash_Installation_Media).
+Create an [Arch Linux Installer USB drive](/index.php/USB_flash_installation_media "USB flash installation media").
 
 #### Booting the installation media
 
@@ -302,7 +302,7 @@ So after booting the installation media:
 
 *   Run the command `fdisk -l` to list drives and partitions. Find the internal drive and note the name of the partition matching the size you specified in the ChrUbuntu script.
 *   Use `mkfs.ext4 /dev/sdxY` (where xY is drive letter and partition number, eg. /dev/sda7) This will create the filesystem for arch.
-*   Following the [instructions for installing GRUB on GPT](https://wiki.archlinux.org/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions), use gdisk to create a 1007kb partition and set the type to EF02.
+*   Following the [instructions for installing GRUB on GPT](/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB2"), use gdisk to create a 1007kb partition and set the type to EF02.
 
 **Note:** Contrary to what some people say, the grub partition does **not** need to be the first partition on the disk. The existing ChromeOS partitions make this difficult to do anyways.
 
@@ -360,7 +360,7 @@ There are few options how to set the touchpad:
 
 [xf86-input-cmt](https://aur.archlinux.org/packages/xf86-input-cmt/) offers a port of the Chromium OS input driver: [xf86-input-cmt](https://github.com/hugegreenbug/xf86-input-cmt) as an alternative for the [Synaptics input driver](/index.php/Synaptics "Synaptics"). It provides tweaked configuration files for most devices, and provides functionality that the [Synaptics input driver](/index.php/Synaptics "Synaptics") does not such as palm rejection. Additionally, it enables functionality not enabled by default in the Chromium OS input driver such as tap-to-drag.
 
-Please note, the input driver does not work under [some circumstances](https://github.com/hugegreenbug/xf86-input-cmt/issues/5) where you have insufficient permissions to access `/dev/input/event` This will affect you if you use [startx](https://wiki.archlinux.org/index.php/Xinitrc) to load a DE/WM session. If this is the case or if the driver does not load for any other cases, you should run:
+Please note, the input driver does not work under [some circumstances](https://github.com/hugegreenbug/xf86-input-cmt/issues/5) where you have insufficient permissions to access `/dev/input/event` This will affect you if you use [startx](/index.php/Startx "Startx") to load a DE/WM session. If this is the case or if the driver does not load for any other cases, you should run:
 
 ```
 # usermod -a -G input $USER
@@ -369,7 +369,7 @@ Please note, the input driver does not work under [some circumstances](https://g
 
 Where $USER is the current user wanting to use the input driver.
 
-It should also be noted that some users have reported the driver does not work in [GDM](https://wiki.archlinux.org/index.php/GDM) but works normally after log in. If you are affected by this, you should run:
+It should also be noted that some users have reported the driver does not work in [GDM](/index.php/GDM "GDM") but works normally after log in. If you are affected by this, you should run:
 
 ```
 # usermod -a -G input gdm

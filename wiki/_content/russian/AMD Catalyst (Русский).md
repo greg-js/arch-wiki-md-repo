@@ -83,7 +83,7 @@
 
 Прежде чем выбрать понравившийся способ, нужно узнать какой драйвер вам нужен. Начиная с Catalyst 12.4, AMD отделила разработку драйвера для видеокарт Radeon HD 2xxx, 3xxx и 4xxx версий в отдельный драйвер, который называется Catalyst **legacy**. Для видеокарт Radeon HD 5xxx и новее, подойдет обычный драйвер Catalyst. В независимости от выбранного драйвера, вам нужно установить утилиты Catalyst.
 
-**Обратите внимание:** После установки драйвера выбранным способом, вы найдете общие указания, которые должен выполнить **каждый**, в независимости от выбранного способа.
+**Примечание:** После установки драйвера выбранным способом, вы найдете общие указания, которые должен выполнить **каждый**, в независимости от выбранного способа.
 
 ### Установка драйвера
 
@@ -99,7 +99,7 @@
 
 Чтобы добавить один из репозиториев следуйте инструкциям в этой [статье](/index.php/Unofficial_user_repositories "Unofficial user repositories"). Добавьте выбранный репозиторий **выше всех других репозиториев** в `pacman.conf`.
 
-**Обратите внимание:** Репозитории *catalyst* и *catalyst-stable* предоставляют один и тот же URL. Чтобы включить *catalyst-stable*, следуйте тем же инструкциям, что и для *catalyst*, но замените `[catalyst]` на `[catalyst-stable]` в `pacman.conf`. Если вам нужно придерживаться старой версии, есть несколько репозиториев, которые используют один и тот же URL (например, *catalyst-stable-13.4*).
+**Примечание:** Репозитории *catalyst* и *catalyst-stable* предоставляют один и тот же URL. Чтобы включить *catalyst-stable*, следуйте тем же инструкциям, что и для *catalyst*, но замените `[catalyst]` на `[catalyst-stable]` в `pacman.conf`. Если вам нужно придерживаться старой версии, есть несколько репозиториев, которые используют один и тот же URL (например, *catalyst-stable-13.4*).
 
 **Важно:**
 
@@ -125,7 +125,7 @@
 *   *catalyst-utils-pxp*
 *   *lib32-catalyst-utils-pxp* - необязательный, нужен для поддержки 32-битного OpenGL на 64-битных системах
 
-**Обратите внимание:** Если pacman спросит вас про удаление **libgl**, вы можете смело соглашаться.
+**Примечание:** Если pacman спросит вас про удаление **libgl**, вы можете смело соглашаться.
 
 **Важно:** Пакет catalyst был удален из репозитория Vi0L0, его место занял catalyst-hook.
 
@@ -171,7 +171,7 @@
 
 **Важно:** Используйте параметр `--output` прежде чем совершать изменения в `/etc/X11/`, также как и в файле `xorg.conf`, инструмент перезапишет все в `/etc/X11/xorg.conf.d/`
 
-**Обратите внимание:** Чтобы использовать новое местоположение файла конфигурации используйте `# aticonfig [...] --output`, чтобы адаптировать раздел `Device` в `/etc/X11/xorg.conf.d/20-radeon.conf`. Недостатком является то, что многие опции `aticonfig` зависят от `xorg.conf` и будут недоступны.
+**Примечание:** Чтобы использовать новое местоположение файла конфигурации используйте `# aticonfig [...] --output`, чтобы адаптировать раздел `Device` в `/etc/X11/xorg.conf.d/20-radeon.conf`. Недостатком является то, что многие опции `aticonfig` зависят от `xorg.conf` и будут недоступны.
 
 Теперь, настроим Catalyst. Если у вас только один монитор, запустите:
 
@@ -180,7 +180,7 @@
 
 ```
 
-**Обратите внимание:** Если у вас проблемы с PowerXpress, вам, вероятно, нужно установить [catalyst-total-pxp](https://aur.archlinux.org/packages/catalyst-total-pxp/).
+**Примечание:** Если у вас проблемы с PowerXpress, вам, вероятно, нужно установить [catalyst-total-pxp](https://aur.archlinux.org/packages/catalyst-total-pxp/).
 
 Если у вас два монитора и вы хотите использовать их оба, вы можете запустить команду ниже. Обратите внимание на то, что инструмент сгенерирует файл конфигурации, где второй экран выше первого экрана.
 
@@ -189,7 +189,7 @@
 
 ```
 
-**Обратите внимание:** Смотрите [#Два экрана (Dual Head / Dual Screen / Xinerama)](#.D0.94.D0.B2.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29) для получения дополнительной информации по настройке двух экранов.
+**Примечание:** Смотрите [#Два экрана (Dual Head / Dual Screen / Xinerama)](#.D0.94.D0.B2.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29) для получения дополнительной информации по настройке двух экранов.
 
 Вы можете сравнить сгенерированный файл с [примером xorg.conf](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_xorg.conf "Xorg (Русский)").
 
@@ -235,7 +235,7 @@ Section "DRI"
 EndSection
 ```
 
-**Обратите внимание:** C **каждым** обновлением Catalyst этим способом вы должны удалять файл `amdpcsdb`: убейте X, удалите `/etc/ati/amdpcsdb`, запустите X и запустите`amdcccle` - иначе, версия Catalyst может не правильно отображаться в`amdcccle`.
+**Примечание:** C **каждым** обновлением Catalyst этим способом вы должны удалять файл `amdpcsdb`: убейте X, удалите `/etc/ati/amdpcsdb`, запустите X и запустите`amdcccle` - иначе, версия Catalyst может не правильно отображаться в`amdcccle`.
 
 *Если вам нужна дополнительная информация о Catalyst, посетите [эту тему](https://bbs.archlinux.org/viewtopic.php?id=57084).*
 
@@ -247,7 +247,7 @@ EndSection
 
 #### Отключение kernel mode setting
 
-**Обратите внимание:** Не отключайте kernel mode setting если вы используете `catalyst-utils-pxp` или `catalyst-total-pxp`, так как драйвер intel использует это.
+**Примечание:** Не отключайте kernel mode setting если вы используете `catalyst-utils-pxp` или `catalyst-total-pxp`, так как драйвер intel использует это.
 
 Важно отключить kernel mode setting, так как драйвер не использует преимущества [KMS](/index.php/KMS "KMS"). Если вы не отключите KMS, ваша система может зависнуть при попытке переключиться в TTY или даже при выключении через среду рабочего стола.
 
@@ -272,7 +272,7 @@ $ glxinfo | grep "direct rendering"
 
 Если ответ `"direct rendering: yes"`, то это хорошо! Если команда `$ glxinfo` не найдена, установите пакет [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos).
 
-**Обратите внимание:** Вы также можете использовать:
+**Примечание:** Вы также можете использовать:
 ```
 $ fgl_glxgears
 
@@ -284,7 +284,7 @@ $ fgl_glxgears
 
 ### Пользовательские ядра
 
-**Обратите внимание:** Если вам неудобно или вы не умеете собирать пакеты, прочитайте статью [ABS](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)").
+**Примечание:** Если вам неудобно или вы не умеете собирать пакеты, прочитайте статью [ABS](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)").
 
 Чтобы установить catalyst с пользовательским ядром, вам нужно собрать свой собственный пакет `catalyst-$kernel`:
 
@@ -294,7 +294,7 @@ $ fgl_glxgears
     2.  Измените зависимости `linux` на `$название_ядра`.
 3.  Соберите и установите этот пакет; запустите `makepkg -i` или `makepkg`, затем `# pacman -U имяпакета.pkg.tar.gz`
 
-**Обратите внимание:**
+**Примечание:**
 
 *   Если вы запускаете несколько ядер, вам нужно установить пакет [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) для всех ядер. Они не конфликтуют друг с другом.
 *   Утилита [catalyst-generator](https://aur.archlinux.org/packages/catalyst-generator/) в состоянии собрать пакеты `catalyst-{версия_ядра}` для вас и вам ненужно проделывать все самостоятельно. Для большей информации, смотрите [раздел инструменты](#.D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B).
@@ -310,7 +310,7 @@ $ fgl_glxgears
 
 Чтобы переключиться на ИГП Intel, вам нужно установить пакет [mesa](https://www.archlinux.org/packages/?name=mesa) и драйвер Intel: [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel).
 
-**Обратите внимание:** Иногда у catalyst появляются проблемы с новейшими драйверами intel. Если это происходит, понизьте версию пакета [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) на предыдущую версию найденную в [архиве Arch Linux](/index.php/Arch_Linux_Archive "Arch Linux Archive") или даже в архиве [репозиториев Xorg](#.D0.A0.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.B8_Xorg) вместе с пакетом (пакетами) xorg-server.
+**Примечание:** Иногда у catalyst появляются проблемы с новейшими драйверами intel. Если это происходит, понизьте версию пакета [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) на предыдущую версию найденную в [архиве Arch Linux](/index.php/Arch_Linux_Archive "Arch Linux Archive") или даже в архиве [репозиториев Xorg](#.D0.A0.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.B8_Xorg) вместе с пакетом (пакетами) xorg-server.
 
 Вы можете переключаться между встроенным графическим процессором и дискретным, используя следующие команды:
 
@@ -514,7 +514,7 @@ Catalyst-generator - это самое безопасное и просто ре
 3.  он не бросает файлы туда-сюда, [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") всегда знает где они есть;
 4.  все что вам нужно запомнить, это не забыть использовать catalyst-generator
 
-**Обратите внимание:** Если вы видите эти предупреждения:
+**Примечание:** Если вы видите эти предупреждения:
 ```
 **WARNING:** Package contains reference to $srcdir
 
@@ -558,7 +558,7 @@ AMD Aparapi - это API языка программирования Java для
 
 #### amdapp-codexl
 
-CodeXL - это Отладчик и Профилировщик для OpenCL и OpenGL со статическим анализом ядра OpenCL. Это приложение с графическим интерфейсом написано поверх известного [gDEBugger](https://aur.archlinux.org/packages/gdebugger) и доступно только для систем x86_64.
+CodeXL - это Отладчик и Профилировщик для OpenCL и OpenGL со статическим анализом ядра OpenCL. Это приложение с графическим интерфейсом написано поверх известного [gdebugger](https://aur.archlinux.org/packages/gdebugger/) и доступно только для систем x86_64.
 
 Больше информации о CodeXL вы найдете [здесь](http://developer.amd.com/tools/heterogeneous-computing/codexl/).
 
@@ -590,7 +590,7 @@ CodeXL - это Отладчик и Профилировщик для OpenCL и 
 
 У VA-API есть проприетарный бекэнд (появился в ноябре 2009) называемый [xvba-video](https://aur.archlinux.org/packages/xvba-video/), который позволяет приложениям VA-API использовать преимущества чипсетов AMD Radeons UVD2 через библиотеку [XvBA (X-Video Bitstream Acceleration API designed by AMD)](https://en.wikipedia.org/wiki/XvBA "wikipedia:XvBA").
 
-**Обратите внимание:** Нет необходимости устанавливать пакет [xvba-video](https://aur.archlinux.org/packages/xvba-video/), если вы используете `catalyst-test` или `catalyst-total`, потому что в этом случае работает символическая ссылка
+**Примечание:** Нет необходимости устанавливать пакет [xvba-video](https://aur.archlinux.org/packages/xvba-video/), если вы используете `catalyst-test` или `catalyst-total`, потому что в этом случае работает символическая ссылка
 
 Поддержка XvBA и xvba-video находится еще в стадии разработки, однако они **работают хорошо в большинстве случаев**. Соберите (или установите из репозитория Vi0L0) проприетарный пакет [xvba-video](https://aur.archlinux.org/packages/xvba-video/), если у вас имеются проблемы с этой версией установите [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/), а также установите [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) и [libva](https://www.archlinux.org/packages/?name=libva). Затем просто скажите вашему видео проигрывателю, чтобы он использовал vaapi:gl как видеовыход:
 
@@ -611,7 +611,7 @@ $ mplayer -vo vaapi:gl movie.avi
 
 ```
 
-**Обратите внимание:** Если технология Tear Free Desktop включена, лучше использовать:
+**Примечание:** Если технология Tear Free Desktop включена, лучше использовать:
 ```
 Настройки → Настройки → Основные → Видео (вкладка) → Устройство вывода: vaapi
 
@@ -638,7 +638,7 @@ $ mplayer -vo vaapi:gl movie.avi
 
 ```
 
-**Обратите внимание:** Если вы используете **Compiz/KWin**, то единственный способ **избежать мерцания видео** - это смотреть видео в **полноэкранном режиме** и только когда **Unredirect Fullscreen выключен**. В **compiz** вам нужно включить **Redirected Direct Rendering** в настройках ccsm. Если видео по прежнему мерцает, попробуйте выключить эту опцию в CCSM. Redirected Direct Rendering по умолчанию выключен в **KWin**, но если вы видите мерцания, попробуйте включить "Suspend desktop effects for fullscreen windows" или выключить в `System Settings` → `Desktop Effects` → `Advanced`.
+**Примечание:** Если вы используете **Compiz/KWin**, то единственный способ **избежать мерцания видео** - это смотреть видео в **полноэкранном режиме** и только когда **Unredirect Fullscreen выключен**. В **compiz** вам нужно включить **Redirected Direct Rendering** в настройках ccsm. Если видео по прежнему мерцает, попробуйте выключить эту опцию в CCSM. Redirected Direct Rendering по умолчанию выключен в **KWin**, но если вы видите мерцания, попробуйте включить "Suspend desktop effects for fullscreen windows" или выключить в `System Settings` → `Desktop Effects` → `Advanced`.
 
 ### Частота, температура, скорость вентилятора, утилиты для разгона GPU/Памяти
 
@@ -697,7 +697,7 @@ $ {kdesu/gksu} amdcccle
 
 ```
 
-**Обратите внимание:** Аргумент `overlay` важен, поскольку он позволяет вам иметь 1 пиксель (или больше) разделенный между 2 экранами.
+**Примечание:** Аргумент `overlay` важен, поскольку он позволяет вам иметь 1 пиксель (или больше) разделенный между 2 экранами.
 
 **Совет:** Для других возможных и доступных опций, напечатайте `aticonfig --help` внутри терминала чтобы отобразить все доступные аргументы командой строки.
 
@@ -730,7 +730,7 @@ From now on, instead of editing the `xorg.conf` file manually, let us use the AT
 *   Вам, возможно, придется использовать `# pacman -Rdd` чтобы удалить [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) (и/или [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)), потому что этот пакет содержит связанные файлы *gl* и много ваших пакетов зависят от них. Эти зависимости снова удовлетворятся когда вы установите [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati).
 *   Вам, возможно, придется удалить `/etc/profile.d/ati-flgrx.sh` и `/etc/profile.d/lib32-catalyst` (если они существуют в вашей системе), в противном случае `r600_dri.so` не сможет загрузится и у вас скорее всего не будет 3D поддержки.
 
-**Обратите внимание:** Вам следует удалить неофициальный репозиторий из вашего `/etc/pacman.conf` и запустить `# pacman -Syu`, потому что они содержат пакеты с устаревшими версиями Xorg, которые позволяют использовать `catalyst`, а пакету [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) нужна самая свежая версия пакета Xorg из [Официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+**Примечание:** Вам следует удалить неофициальный репозиторий из вашего `/etc/pacman.conf` и запустить `# pacman -Syu`, потому что они содержат пакеты с устаревшими версиями Xorg, которые позволяют использовать `catalyst`, а пакету [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) нужна самая свежая версия пакета Xorg из [Официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
 Также выполните следующие действие:
 

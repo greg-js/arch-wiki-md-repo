@@ -17,7 +17,7 @@ Beep is an advanced PC speaker beeping program. It is useful for situations wher
 
 ### Access for non-root users
 
-By default `beep` will fail if not run by the root. Other users may call it using [sudo](/index.php/Sudo "Sudo"). To let group `users` call `sudo beep` without a password (for example to use it in scripts), `/etc/sudoers` [should be edited](https://wiki.archlinux.org/index.php/Sudo#Using_visudo):
+By default `beep` will fail if not run by the root. Other users may call it using [sudo](/index.php/Sudo "Sudo"). To let group `users` call `sudo beep` without a password (for example to use it in scripts), `/etc/sudoers` [should be edited](/index.php/Sudo#Using_visudo "Sudo"):
 
 ```
 %users ALL=(ALL) NOPASSWD: /usr/bin/beep

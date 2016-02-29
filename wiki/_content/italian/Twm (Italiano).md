@@ -11,7 +11,7 @@ TWM è un window manager per X11\. Si tratta di un piccolo programma, in fase di
 
 ### Breve storia di Twm
 
-Twm è stato scritto da Tom LaStrange, uno sviluppatore che era frustrato dalle limitazioni di [uwm (Ultrix Window Manager)](http://en.wikipedia.org/wiki/UWM_(computing)), il primo gestore di finestre che girava su X11 al momento del suo rilascio. TWM ha soppiantato UWM come window manager predefinito fornito con X11 dal rilascio in X11R4 nel 1989 .
+Twm è stato scritto da Tom LaStrange, uno sviluppatore che era frustrato dalle limitazioni di [uwm (Ultrix Window Manager)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)"), il primo gestore di finestre che girava su X11 al momento del suo rilascio. TWM ha soppiantato UWM come window manager predefinito fornito con X11 dal rilascio in X11R4 nel 1989 .
 
 Twm è sinonimo di*Tom's Window Manager*, *Tab Window Manager* e più recentemente di *Timeless Window Manager*.
 
@@ -64,8 +64,8 @@ xcompmgr -o 0.3  -c -r 8 -t -10 -l -12 &
 ## Referenze
 
 1.  Proffitt, Brian. "[From the Desktop: Tom LaStrange Speaks!](http://www.linuxplanet.com/linuxplanet/reports/3000/2/)", *LinuxPlanet*, February 6, 2001\. Retrieved October 22, 2009.
-2.  "[UWM (computing)](http://en.wikipedia.org/wiki/UWM_(computing))", *Wikipedia*. Retrieved October 22, 2009.
-3.  "[Twm](http://en.wikipedia.org/wiki/Twm)", *Wikipedia*. Retrieved October 22, 2009.
+2.  "[UWM (computing)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)")", *Wikipedia*. Retrieved October 22, 2009.
+3.  "[Twm](https://en.wikipedia.org/wiki/Twm "wikipedia:Twm")", *Wikipedia*. Retrieved October 22, 2009.
 4.  "[Pkg: xorg-twm - Arch Linux Package Details](https://www.archlinux.org/packages/extra/i686/xorg-twm/)", *Arch Linux package search*. Retrieved October 22, 2009.
 5.  "[Twm man page](http://linux.die.net/man/1/twm)", *linux.die.net*. Retrieved October 22, 2009.
 6.  "[Sample twmrc](http://www.custompc.plus.com/twm/configs/twmrc09)", *custompc.plus.com*. Retrieved August 12, 2013.

@@ -1,4 +1,4 @@
-[Touhou Project](https://en.wikipedia.org/wiki/Touhou_Project) is the name of a series of [danmaku games](https://en.wikipedia.org/wiki/Danmaku#.22Bullet_hell.22_evolution_and_niche_appeal) (also know as "bullet-hell shooters")
+[Touhou Project](https://en.wikipedia.org/wiki/Touhou_Project "wikipedia:Touhou Project") is the name of a series of [danmaku games](https://en.wikipedia.org/wiki/Danmaku#.22Bullet_hell.22_evolution_and_niche_appeal "wikipedia:Danmaku") (also know as "bullet-hell shooters")
 
 Bullet-hell shooters is a genre of 2D shooters based on really complex patterns, which are beautiful and interesting to look at, and impiles great difficulty, memorizing patterns and fast player reaction.
 
@@ -75,6 +75,6 @@ If you find that you have no audio in any of the Windows era or later games (Tou
 
 ## See also
 
-*   [Touhou Project on Wikipedia](https://en.wikipedia.org/wiki/Touhou_Project)
+*   [Touhou Project on Wikipedia](https://en.wikipedia.org/wiki/Touhou_Project "wikipedia:Touhou Project")
 *   [Running Touhou Games in Linux](http://en.touhouwiki.net/wiki/Running_in_Linux_and_MacOS_X)
 *   [Wine PKGBUILD Guidelines](/index.php/Wine_PKGBUILD_Guidelines "Wine PKGBUILD Guidelines")

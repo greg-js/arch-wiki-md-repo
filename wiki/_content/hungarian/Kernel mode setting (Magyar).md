@@ -55,4 +55,4 @@ A különböző kimenetek módjait a "video" opció többszöri beírásával le
 
 ## További források (angol)
 
-[Mode-setting at Wikipedia](http://en.wikipedia.org/wiki/Mode-setting)
+[Mode-setting at Wikipedia](https://en.wikipedia.org/wiki/Mode-setting "wikipedia:Mode-setting")

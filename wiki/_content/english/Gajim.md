@@ -70,5 +70,5 @@ At first time, you also need to activate OMEMO plugin:
 1.  Go to menu Edit => Modules;
 2.  Activate the "OMEMO Multi-End Message and Object Encryption" plugin;
 3.  Close dialogs to save the changes.
-4.  Use the checkbox on the bottom of each chat tab to enable or disable OMEMO encryption.
+4.  Use the checkbox on the bottom of each chat tab to enable or disable OMEMO encryption. (if you don't see a checkbox you might have "Make message windows compact" enabled in the general settings)
 5.  Click on "Get Device Keys".

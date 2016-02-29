@@ -20,6 +20,8 @@ As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works
     *   [5.2 Garbled screen](#Garbled_screen)
     *   [5.3 Opening files](#Opening_files)
     *   [5.4 Find file shows no results](#Find_file_shows_no_results)
+    *   [5.5 Terminfo](#Terminfo)
+        *   [5.5.1 Shift+F6 not working](#Shift.2BF6_not_working)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -149,39 +151,21 @@ Press `Ctrl+l` to redraw the display. This only redraws, but does not refresh (`
 
 ### Opening files
 
-*mc* uses [xdg-open](/index.php/Xdg-open "Xdg-open") to open files by default, as shown in `/usr/lib/mc/ext.d/`. While *stderr* is redirected, *stdout* is not, which may result in a garbled screen.
+*mc* reads the `MC_XDG_OPEN` [environment variable](/index.php/Environment_variable "Environment variable") to open files, which defaults to [xdg-open](/index.php/Xdg-open "Xdg-open") when unset. [[3]](https://github.com/MidnightCommander/mc/blob/master/misc/ext.d/misc.sh.in)
 
- `/usr/lib/mc/ext.d/*.sh` 
-```
-[ -n "${MC_XDG_OPEN}" ] || MC_XDG_OPEN="xdg-open"
-...
-open)
-    "${MC_XDG_OPEN}" "${MC_EXT_FILENAME}" **2>/dev/null** || \
-        do_open_action "${filetype}"
-```
+if *mc* is blocked until the resulting process ends, or the process exits together with mc, use *nohup &*:
 
-Create a script to wrap *xdg-open*:
-
- `~/bin/xdg-open-null` 
+ `~/bin/nohup-open` 
 ```
 #!/bin/bash
-xdg-open "$@" **>/dev/null**
+nohup xdg-open "$@" &
 
 ```
 
-If *mc* is blocked until *xdg-open* ends, detach the process:
-
- `~/bin/xdg-open-null` 
-```
-#!/bin/bash
-nohup xdg-open "$@" >/dev/null &
+and set `MC_XDG_OPEN` accordingly:
 
 ```
-
-and make *mc* aware of it by setting the `MC_XDG_OPEN` [environment variable](/index.php/Environment_variable "Environment variable"):
-
-```
-export MC_XDG_OPEN=~/bin/xdg-open-null
+export MC_XDG_OPEN=~/bin/nohup-open
 
 ```
 
@@ -190,6 +174,26 @@ export MC_XDG_OPEN=~/bin/xdg-open-null
 ### Find file shows no results
 
 If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. Find file does not follow symbolic links, so use bind mounts (see `man mount`) instead, or the *External panelize* command.
+
+### Terminfo
+
+#### Shift+F6 not working
+
+If the `Shift+F6` key combination is not working with either `TERM=screen` or `TERM=screen-256color`, then from inside tmux, run this command:
+
+```
+$ infocmp > screen (or screen-256color)
+
+```
+
+Open the file in a text editor, and add the following to the bottom of that file:
+
+```
+kf16=\E[29~,
+
+```
+
+Then compile the file with `tic`. The keys should be working now.
 
 ## See also
 

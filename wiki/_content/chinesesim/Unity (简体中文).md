@@ -49,7 +49,7 @@ $ makepkg -sci # '-s' 意思是安装需要的依赖， '-c' 意思是编译完�
 
 3\. 注销再登陆进Unity环境。
 
-如想使用lightdm启动Unity，请从[Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra)安装 **lightdm-ubuntu** and **lightdm-unity-greeter** ，步骤基本和上面一致。 然后将lightdm加入自启动守护进程。使用Systemd的用户可以查看 [关于Systemd的文章](https://wiki.archlinux.org/index.php/Systemd_(简体中文)).
+如想使用lightdm启动Unity，请从[Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra)安装 **lightdm-ubuntu** and **lightdm-unity-greeter** ，步骤基本和上面一致。 然后将lightdm加入自启动守护进程。使用Systemd的用户可以查看 [关于Systemd的文章](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)").
 
 **Note:** 可以使用 [这个脚本](https://gist.github.com/3906721) 来使安装自动化。
 

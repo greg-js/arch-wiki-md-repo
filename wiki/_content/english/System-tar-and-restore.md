@@ -9,7 +9,7 @@
 
 ## Installation
 
-Install [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-and-restore/) from the [AUR](/index.php/AUR "AUR") or from [archlinuxgr-any](https://wiki.archlinux.org/index.php/Unofficial_user_repositories#archlinuxgr-any) repo.
+Install [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-and-restore/) from the [AUR](/index.php/AUR "AUR") or from [archlinuxgr-any](/index.php/Unofficial_user_repositories#archlinuxgr-any "Unofficial user repositories") repo.
 
 ## Features
 
@@ -46,8 +46,8 @@ When the process completes, you may want to check `backup.log` file in the same 
 **Warning:**
 
 *   If you plan to restore in [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID") or [Dm-crypt](/index.php/Dm-crypt "Dm-crypt") you need to add the corresponding hooks in `/etc/mkinitpcio.conf` **before** the backup.
-*   If you plan to restore in [GPT](https://wiki.archlinux.org/index.php/GUID_Partition_Table) with [syslinux](https://www.archlinux.org/packages/?name=syslinux), make sure you have [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) installed **before** the backup.
-*   If you plan to restore in [UEFI](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface) make sure you have [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) and [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) installed **before** the backup.
+*   If you plan to restore in [GPT](/index.php/GPT "GPT") with [syslinux](https://www.archlinux.org/packages/?name=syslinux), make sure you have [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) installed **before** the backup.
+*   If you plan to restore in [UEFI](/index.php/UEFI "UEFI") make sure you have [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) and [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) installed **before** the backup.
 
 ## Restore/Transfer
 
@@ -59,7 +59,7 @@ The *restore.sh* script has two modes: **Restore** and **Transfer**. The first u
 
 Boot from a livecd (preferably an Arch Linux based) or another system, prepare your target partition(s) and start the script. You will be asked for:
 
-*   **Target partitions**: You must specify at least one target root partition. Optionally you can choose any other partition for your /home, /boot, swap or custom mount points (/var /opt etc.) and in case of UEFI a target [ESP](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition) partition and it's mount point.
+*   **Target partitions**: You must specify at least one target root partition. Optionally you can choose any other partition for your /home, /boot, swap or custom mount points (/var /opt etc.) and in case of UEFI a target [ESP](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") partition and it's mount point.
 *   **Mount options**: You can specify alternative comma-seperated mount options for the target root partition. Defaults are `defaults,noatime`.
 *   **Btrfs subvolumes**: If the target root filesystem is [Btrfs](/index.php/Btrfs "Btrfs"), you will be prompted for root subvolume name. Leave empty if you dont want subvolumes. Also you can specify other subvolumes. Just enter the paths (/home /var /usr etc.) seperated by space. Recommended root subvolume name is `__active`.
 *   **Bootloader**: In BIOS systems you can choose [grub](https://www.archlinux.org/packages/?name=grub) or [syslinux](https://www.archlinux.org/packages/?name=syslinux) and the target disk. If you select a raid array as bootloader disk, the script will install the bootloader in all disks that the array contains. In case of UEFI you can choose grub, EFISTUB/efibootmgr or Systemd/bootctl. Also you can define additional kernel options.

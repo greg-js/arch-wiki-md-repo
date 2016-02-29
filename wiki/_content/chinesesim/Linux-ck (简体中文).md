@@ -80,7 +80,7 @@ Linux-ck大致跟随官方Arch内核的发布周期。 但受以下要求的限�
 
 **注意:** 源中的包包含了作为模块编译的 BFQ I/O 调度器。如果你想加载或启用它，阅读下面的[小节](#.E6.80.8E.E6.A0.B7.E5.90.AF.E7.94.A8_BFQ_I.2FO_.E8.B0.83.E5.BA.A6.E5.99.A8)。
 
-[[Graysky 的公钥](http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x6D605D846176ED4B)]被用来为包签名。Pacman v4 会自动请求这个公钥服务器，但是如果你想手动下载和添加这个公钥，从上面的链接下载。
+[Graysky 的公钥](http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x6D605D846176ED4B)被用来为包签名。Pacman v4 会自动请求这个公钥服务器，但是如果你想手动下载和添加这个公钥，从上面的链接下载。
 
 #### 通用和优化的内核包
 
@@ -230,7 +230,7 @@ A major benefit of using the BFS is increased responsiveness. The benefits howev
 
 It is noteworthy to mention that this is not a novel idea, Phoronix also benchmarking using non-latency based endpoints about which Con subsequently [blogged](http://ck-hack.blogspot.com/2011/08/phoronix-revisits-bfs.html).
 
-[[Benchmark results](http://repo-ck.com/bench/benchmark.pdf)] are available for download in pdf format.
+[Benchmark results](http://repo-ck.com/bench/benchmark.pdf) are available for download in pdf format.
 
 For those not wanting to see the data and just wanting the highlights:
 
@@ -243,7 +243,7 @@ For those not wanting to see the data and just wanting the highlights:
 
 *   [Con Kolivas' White Paper on the BFS](http://ck.kolivas.org/patches/bfs/sched-BFS.txt)
 *   [Con Kolivas' BFS FAQ](http://ck.kolivas.org/patches/bfs/bfs-faq.txt)
-*   [Wikipedia's BFS Article](http://en.wikipedia.org/wiki/Brain_Fuck_Scheduler)
+*   [Wikipedia's BFS Article](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")
 *   [Con Kolivas' Blog](http://ck-hack.blogspot.com/)
 
 ## [Linux-ck Package Changelog](/index.php/Linux-ck/Changelog "Linux-ck/Changelog")

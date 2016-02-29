@@ -41,4 +41,4 @@ sudo mkinitcpio -p linux
 
 ```
 
-Zobacz też: [Migrating from ext3 to ext4](https://wiki.archlinux.org/index.php/Ext4#Migrating_from_ext3_to_ext4)
+Zobacz też: [Migrating from ext3 to ext4](/index.php/Ext4#Migrating_from_ext2.2Fext3_to_ext4 "Ext4")

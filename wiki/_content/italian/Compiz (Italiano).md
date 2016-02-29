@@ -1,4 +1,4 @@
-Compiz è un [gestore di finestre composito](http://it.wikipedia.org/wiki/Compositing_window_manager). Fornisce il suo proprio gestore di finestre [Emerald](/index.php/Emerald "Emerald"), quindi non può essere utilizzato insieme ad altri programmi dello stesso tipo come [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)"), [Fluxbox](/index.php/Fluxbox_(Italiano) "Fluxbox (Italiano)"), [Enlightenment](/index.php/Enlightenment_(Italiano) "Enlightenment (Italiano)"). Gli utenti che vogliono mantenere i propri gestori di finestre potrebbero vole provare [Xcompmgr](/index.php/Xcompmgr "Xcompmgr").
+Compiz è un [gestore di finestre composito](https://it.wikipedia.org/wiki/Compositing_window_manager). Fornisce il suo proprio gestore di finestre [Emerald](/index.php/Emerald "Emerald"), quindi non può essere utilizzato insieme ad altri programmi dello stesso tipo come [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)"), [Fluxbox](/index.php/Fluxbox_(Italiano) "Fluxbox (Italiano)"), [Enlightenment](/index.php/Enlightenment_(Italiano) "Enlightenment (Italiano)"). Gli utenti che vogliono mantenere i propri gestori di finestre potrebbero vole provare [Xcompmgr](/index.php/Xcompmgr "Xcompmgr").
 
 Compiz è il cuore del progetto Compiz-Fusion, il quale aveva l'obiettivo di aggiungere funzionalità e plugin al WM e che da un po' di tempo è stato riassorbito dal progetto Compiz originale. Entrambi i progetti sono attivi e in costante sviluppo. Per maggiori informazioni, riferirsi all'articolo (in inglese) [Compiz Fusion vs. Compiz](http://wiki.compiz-fusion.org/CompizFusionVsCompiz).
 
@@ -41,7 +41,7 @@ Compiz è il cuore del progetto Compiz-Fusion, il quale aveva l'obiettivo di agg
 
 ## Requisiti
 
-Gli utenti dei più diffusi [DE](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") possono utilizzare [compiz-manager](https://aur.archlinux.org/packages/compiz-manager/), che permette di effettuare un breve controllo dei requisiti ed eventualmente ripristinare un window manager alternativo.
+Gli utenti dei più diffusi [DE](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") possono utilizzare [compiz-manager](https://aur.archlinux.org/packages/compiz-manager/), che permette di effettuare un breve controllo dei requisiti ed eventualmente ripristinare un window manager alternativo.
 
 ## Installazione
 

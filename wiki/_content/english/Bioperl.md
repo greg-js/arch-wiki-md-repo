@@ -1,4 +1,4 @@
-**Bioperl** is a set of scripts in Perl language to aid researchers in [Computational Biology](http://en.wikipedia.org/wiki/Computational_biology) and [Bioinformatics](http://en.wikipedia.org/wiki/Bioinformatics).
+**Bioperl** is a set of scripts in Perl language to aid researchers in [Computational Biology](https://en.wikipedia.org/wiki/Computational_biology "wikipedia:Computational biology") and [Bioinformatics](https://en.wikipedia.org/wiki/Bioinformatics "wikipedia:Bioinformatics").
 
 ## Contents
 

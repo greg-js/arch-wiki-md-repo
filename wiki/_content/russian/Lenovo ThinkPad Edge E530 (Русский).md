@@ -1,4 +1,4 @@
-**Обратите внимание:** Данная статья актуальна как для Lenovo thinkPad Edge E530, так и для E430.
+**Примечание:** Данная статья актуальна как для Lenovo thinkPad Edge E530, так и для E430.
 
 ## Contents
 
@@ -29,11 +29,11 @@
 
 ### Видео
 
-При наличии дополнительной видеокарты **Nvidia GTX 630**, следует установить пакет [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) из [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository_(Русский)). Далее следовать инструкциям соответствующей страницы [вики](https://wiki.archlinux.org/index.php/Bumblebee).
+При наличии дополнительной видеокарты **Nvidia GTX 630**, следует установить пакет [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"). Далее следовать инструкциям соответствующей страницы [вики](/index.php/Bumblebee "Bumblebee").
 
 ### Ethernet
 
-Хотя, **Realtek RTL8111/8168B** работает корректно со стандартным модулем **r8169**, в некоторых случаях рекомендуется установить модуль [r8168](https://www.archlinux.org/packages/?name=r8168), доступный в [официальном репозитории](https://wiki.archlinux.org/index.php/Official_Repositories_(Русский)):
+Хотя, **Realtek RTL8111/8168B** работает корректно со стандартным модулем **r8169**, в некоторых случаях рекомендуется установить модуль [r8168](https://www.archlinux.org/packages/?name=r8168), доступный в [официальном репозитории](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"):
 
 ```
 # pacman -S r8168
@@ -51,7 +51,7 @@
 
 ### Wireless
 
-Сетевая карта **Broadcom BCM4313** работает с модулем **brcmsmac** "из коробки". Однако, при работе с этим модулем устройство находится в режиме энергосбережения, что приводит к плохому приему сигнала и малому радиусу видимости сетей. Рекомендуется установить проприетарный драйвер для карточки из [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository_(Русский)):
+Сетевая карта **Broadcom BCM4313** работает с модулем **brcmsmac** "из коробки". Однако, при работе с этим модулем устройство находится в режиме энергосбережения, что приводит к плохому приему сигнала и малому радиусу видимости сетей. Рекомендуется установить проприетарный драйвер для карточки из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"):
 
 ```
 # yaourt -S broadcom-wl
@@ -69,14 +69,14 @@
 
 ### Сканер отпечатков пальцев
 
-Работает корректно с [fingerprint-gui](https://aur.archlinux.org/packages/fingerprint-gui/). Следует установить соответствующий пакет из [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository_(Русский)):
+Работает корректно с [fingerprint-gui](https://aur.archlinux.org/packages/fingerprint-gui/). Следует установить соответствующий пакет из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"):
 
 ```
 # yaourt -S fingerprint-gui
 
 ```
 
-Далее следовать инструкциям соответствующей страницы [вики](https://wiki.archlinux.org/index.php/Fingerprint-gui). Адрес устройства можно посмотреть, выполнив команду:
+Далее следовать инструкциям соответствующей страницы [вики](/index.php/Fingerprint-gui "Fingerprint-gui"). Адрес устройства можно посмотреть, выполнив команду:
 
 ```
 # lsusb | grep Upek
@@ -86,7 +86,7 @@ Bus 001 Device 004: ID 147e:1002 Upek
 
 ### Картридер
 
-**Обратите внимание:** При использовании ядра версии >3.8 драйвер работает "из коробки". Устройства будут определяться, как **/dev/mmcX**.
+**Примечание:** При использовании ядра версии >3.8 драйвер работает "из коробки". Устройства будут определяться, как **/dev/mmcX**.
 
 Картридер **не работает** "из коробки". Для корректной работы следует установить пакет [rts5229](https://aur.archlinux.org/packages/rts5229/) и выполнить команду `modprobe rts5229`.
 
@@ -139,7 +139,7 @@ EndSection
 
 ## tp_smapi
 
-Стандартный модуль [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) в настоящее время не поддерживает настройку батареи на данной модели. Для настройки режима зарядки следует установить из [пользовательского репозитория](https://wiki.archlinux.org/index.php/Arch_User_Repository_(Русский)) пакет [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/):
+Стандартный модуль [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) в настоящее время не поддерживает настройку батареи на данной модели. Для настройки режима зарядки следует установить из [пользовательского репозитория](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") пакет [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/):
 
 ```
 # yaourt -S tpacpi-bat
@@ -168,7 +168,7 @@ WantedBy=multi-user.target
 
 ```
 
-Включать сервис при каждой загрузке нет необходимости. Для подробностей обратитесь к соответствующей странице [вики](https://wiki.archlinux.org/index.php/Tp_smapi).
+Включать сервис при каждой загрузке нет необходимости. Для подробностей обратитесь к соответствующей странице [вики](/index.php/Tp_smapi "Tp smapi").
 
 ## Информация об устройствах
 

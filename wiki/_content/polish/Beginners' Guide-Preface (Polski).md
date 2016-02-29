@@ -1,4 +1,4 @@
-**Tip:** To część wielostronicowego artykułu Przewodnik Początkującego. **[Kliknij tutaj](/index.php/Beginners%27_Guide_(Polski) "Beginners' Guide (Polski)")** jeśli wolisz czytać przewodnik w całości.
+**Tip:** To część wielostronicowego artykułu Przewodnik Początkującego. **[Kliknij tutaj](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)")** jeśli wolisz czytać przewodnik w całości.
 
 ## Contents
 
@@ -12,7 +12,7 @@
 
 ### Wprowadzenie
 
-Witaj. Ten artykuł przeprowadzi Cię przez proces instalacji systemu [Arch Linux_(Polski)](/index.php/Arch_Linux_(Polski) "Arch Linux (Polski)"): prostej, lekkiej dystrybucji [GNU](http://pl.wikipedia.org/wiki/Projekt_GNU)/Linux skierowanej do doświadczonych użytkowników. Ten przewodnik przeznaczony jest dla początkujących użytkowników Archa, może być jednak bazą informacji dla wszystkich.
+Witaj. Ten artykuł przeprowadzi Cię przez proces instalacji systemu [Arch Linux (Polski)](/index.php/Arch_Linux_(Polski) "Arch Linux (Polski)"): prostej, lekkiej dystrybucji [GNU](https://pl.wikipedia.org/wiki/Projekt_GNU)/Linux skierowanej do doświadczonych użytkowników. Ten przewodnik przeznaczony jest dla początkujących użytkowników Archa, może być jednak bazą informacji dla wszystkich.
 
 Przed instalacją radzimy przejrzeć [FAQ](/index.php/FAQ "FAQ").
 
@@ -43,7 +43,7 @@ Arch Linux, pacman, dokumentacja i skrypty są objęte licencją [GNU General Pu
 
 **Note:** AIF (the Arch Installation Framework) nie jest dołączony do obrazów instalacyjnych ze względu na brak wsparcia (zobacz [https://www.archlinux.org/news/install-media-20120715-released/](https://www.archlinux.org/news/install-media-20120715-released/) po więcej informacji).
 
-Utrzymywana przez społeczność [Arch wiki](/index.php/Main_Page_(Polski) "Main Page (Polski)") to znakomite źródło i w razie problemów należy się do niej odwołać. Kanał [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i [forum](https://bbs.archlinux.org/) są dostępne, jeśli odpowiedź nie może być znaleziona w innym miejscu. Oprócz tego, sprawdź strony `man` każdej komendy, której nie znasz; zwykle można je wywołać poleceniem `man *komenda*`.
+Utrzymywana przez społeczność [Arch wiki](/index.php/Main_page_(Polski) "Main page (Polski)") to znakomite źródło i w razie problemów należy się do niej odwołać. Kanał [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i [forum](https://bbs.archlinux.org/) są dostępne, jeśli odpowiedź nie może być znaleziona w innym miejscu. Oprócz tego, sprawdź strony `man` każdej komendy, której nie znasz; zwykle można je wywołać poleceniem `man *komenda*`.
 
 **Note:** Dokładne podążanie za tym poradnikiem jest niezbędne, aby zainstalować poprawnie skonfigurowany system Arch Linux, więc przeczytaj go dokładnie. Zaleca się, abyś przeczytał(a) każdą sekcję w całości <u>przed</u> wykonaniem zawartych w niej poleceń.
 

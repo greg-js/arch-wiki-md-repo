@@ -139,7 +139,7 @@ The audio device is an Intel HD.
 
 ### Suspend and hibernate
 
-Suspend and hibernate work out of the box with `systemd-logind`. See below for setting up resuming from [hibernation](https://wiki.archlinux.org/index.php/Samsung_N140#Hibernate).
+Suspend and hibernate work out of the box with `systemd-logind`. See below for setting up resuming from [hibernation](#Hibernate).
 
 Edit `/etc/systemd/logind.conf` to change default key handling.
 
@@ -181,7 +181,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sda1"
 
 Run `grub-mkconfig -o /boot/grub/grub.cfg`
 
-If you use an initramfs (default for Arch), you need to add the `resume` hook into the configuration of [mkinitcpio](https://wiki.archlinux.org/index.php/Mkinitcpio)
+If you use an initramfs (default for Arch), you need to add the `resume` hook into the configuration of [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
 
 ```
 /etc/mkinitcpio.conf

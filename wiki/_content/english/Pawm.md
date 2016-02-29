@@ -56,13 +56,13 @@ If you would like to configure X (and PAWM) to start on boot (or when you login)
 
 By default, PAWM looks blue, plain and kind of dated. By editing the file `/etc/pawm.conf` you can customize the scheme of your PAWM.
 
-Colors are changed through hexadecimal values. Fonts can be changed either through core fonts[[1]](http://en.wikipedia.org/wiki/X_logical_font_description) or Xft fonts[[2]](http://www.x.org/archive/X11R6.8.2/doc/fonts.html).
+Colors are changed through hexadecimal values. Fonts can be changed either through core fonts[wikipedia:X_logical_font_description](https://en.wikipedia.org/wiki/X_logical_font_description "wikipedia:X logical font description") or Xft fonts[[1]](http://www.x.org/archive/X11R6.8.2/doc/fonts.html).
 
 You may also adjust adjust the behavior of pabar, paicons, pashut icon or any modules added.
 
 ### Icons
 
-PAWM only supports [.xpm](http://en.wikipedia.org/wiki/X_PixMap) format. Programs like [GIMP](/index.php/GIMP#GIMP "GIMP") can convert images appropriately.
+PAWM only supports [.xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap") format. Programs like [GIMP](/index.php/GIMP#GIMP "GIMP") can convert images appropriately.
 
 *   Window icons must be 20x20 pixels.
 *   Pashut icons must be 20x20 pixels.

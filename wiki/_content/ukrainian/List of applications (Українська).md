@@ -365,7 +365,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 	[http://wicd.sourceforge.net/](http://wicd.sourceforge.net/) || [wicd](https://www.archlinux.org/packages/?name=wicd)
 
-*   **[networkmanager](/index.php/Networkmanager "Networkmanager")** — Networkmanager provides wired, wireless, mobile broadband and OpenVPN detection and configuration allowing automatic connection to a network.
+*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** — Networkmanager provides wired, wireless, mobile broadband and OpenVPN detection and configuration allowing automatic connection to a network.
 
 	[http://projects.gnome.org/NetworkManager/](http://projects.gnome.org/NetworkManager/) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
@@ -846,7 +846,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 ## Security
 
-*   [iptables](/index.php/Iptables "Iptables") - A powerful [firewall](/index.php/Firewall "Firewall") built into the linux kernel that is part of the [netfilter](http://en.wikipedia.org/wiki/Netfilter) project
+*   [iptables](/index.php/Iptables "Iptables") - A powerful [firewall](/index.php/Firewall "Firewall") built into the linux kernel that is part of the [netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project
 *   **arpwatch** - arpwatch and arpsnmp network monitoring tools [ftp://ftp.ee.lbl.gov/](ftp://ftp.ee.lbl.gov/)
 *   [fail2ban](/index.php/Fail2ban "Fail2ban") - bans IP that makes too many password failures [http://www.fail2ban.org/](http://www.fail2ban.org/)
 *   [Sshguard](/index.php/Sshguard "Sshguard") - Daemon that protects SSH and other services against brute-force attacts, similar to Fail2ban.
@@ -860,7 +860,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 *   [snort](/index.php/Snort "Snort") - A lightweight network intrusion detection system [http://www.snort.org](http://www.snort.org)
 *   **swatch** - The active log file monitoring tool [http://swatch.sourceforge.net/](http://swatch.sourceforge.net/)
 *   **tcpdump** - A tool for network monitoring and data acquisition [http://www.tcpdump.org](http://www.tcpdump.org)
-*   [vnstat](/index.php/Vnstat "Vnstat") - console-based network traffic monitor that keeps a log of network traffic [http://humdi.net/vnstat/](http://humdi.net/vnstat/)
+*   [VnStat](/index.php/VnStat "VnStat") - console-based network traffic monitor that keeps a log of network traffic [http://humdi.net/vnstat/](http://humdi.net/vnstat/)
 *   [wireshark](/index.php/Wireshark "Wireshark") - A free network protocol analyzer for Unix/Linux and Windows [http://www.wireshark.org/](http://www.wireshark.org/)
 
 ## Time Management
@@ -927,7 +927,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **Pkgtools** — A collection of scripts for Arch Linux packages.
 
-	Which includes **pkgfile**; find what package owns a file. [[Forum topic](https://bbs.archlinux.org/viewtopic.php?pid=384196)] || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
+	[pkgtools](https://aur.archlinux.org/packages/pkgtools/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[Yaourt](/index.php/Yaourt "Yaourt")** — A Pacman frontend with more features and AUR support.
 
@@ -1293,7 +1293,7 @@ See also [Wikipedia:Comparison of text editors](https://en.wikipedia.org/wiki/Co
 
 ### Console
 
-*   **[GNU Emacs](/index.php/Emacs "Emacs")** — The somewhat intimidating but famously extensible text editor with hundreds of tricks and add-ons
+*   **[GNU Emacs](/index.php/GNU_Emacs "GNU Emacs")** — The somewhat intimidating but famously extensible text editor with hundreds of tricks and add-ons
 
 	[http://www.gnu.org/software/emacs/](http://www.gnu.org/software/emacs/) || [emacs](https://www.archlinux.org/packages/?name=emacs)
 
@@ -1414,7 +1414,7 @@ There are several steps to the whole OCR process, the actual OCR engine is only 
 *   [Arch Linux Forums / LnF Awards 2011](https://bbs.archlinux.org/viewtopic.php?id=111878) - The best Light & Fast apps of 2011.
 *   [http://linuxappfinder.com/](http://linuxappfinder.com/)
 *   [http://www.linuxlinks.com/](http://www.linuxlinks.com/)
-*   [http://en.wikipedia.org/wiki/List_of_open_source_software_packages](http://en.wikipedia.org/wiki/List_of_open_source_software_packages)
+*   [wikipedia:List_of_open_source_software_packages](https://en.wikipedia.org/wiki/List_of_open_source_software_packages "wikipedia:List of open source software packages")
 *   [http://linuxappfinder.com/alternatives](http://linuxappfinder.com/alternatives) - Windows and OS X Software Alternatives
 *   [http://alternativeto.net/](http://alternativeto.net/) - find alternatives to popular programs
 *   [http://www.linuxalt.com/](http://www.linuxalt.com/) - Linux equivalents of Windows software

@@ -75,7 +75,7 @@ Ci sono alcune caratteristiche chiave da considerare prima di procedere all'acqu
 
 ### Caratteristiche chiave
 
-*   Il supporto nativo al [TRIM](http://en.wikipedia.org/wiki/TRIM) è una caratteristica fondamentale sia per prolungare la vita degli SSD sia per ridurre la perdita di prestazioni in scrittura nel tempo.
+*   Il supporto nativo al [TRIM](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") è una caratteristica fondamentale sia per prolungare la vita degli SSD sia per ridurre la perdita di prestazioni in scrittura nel tempo.
 *   Comprare SSD della giusta dimensione è fondamentale. Con qualsiasi filesystem, l'occupazione massima di ogni partizione non deve superare il 75% per garantirne un uso efficiente da parte del kernel.
 
 ### Approfondimenti
@@ -328,7 +328,7 @@ Disk identifier: 0x76b978dc
 /dev/sdb2        25167872   156301311    65566720   83  Linux
 ```
 
-**Warning:** Prestare attenzione all'ultimo step per testare lo stato di salute. Se le testine e i settori/traccia non rimangono 32/32, questo è dovuto o ad un bug in fdisk o a una ragione sconosciuta. Vedere la pagine del wiki [using cfdisk/post process observation](/index.php/SSD_Memory_Cell_Clearing#Post_Process_Observation "SSD Memory Cell Clearing") per una soluzione.
+**Warning:** Prestare attenzione all'ultimo step per testare lo stato di salute. Se le testine e i settori/traccia non rimangono 32/32, questo è dovuto o ad un bug in fdisk o a una ragione sconosciuta. Vedere la pagine del wiki [using cfdisk/post process observation](/index.php/SSD_memory_cell_clearing#Post_Process_Observation "SSD memory cell clearing") per una soluzione.
 
 ###### Considerazioni Speciali per Partizioni Logiche
 
@@ -475,7 +475,7 @@ vm.vfs_cache_pressure=50
 
 In alcune occasioni, si potrebbe volere resettare completamente le celle di un SSD allo stesso stato iniziale che avevano al momento dell'installazione per ripristinarle alle loro [prestazioni di fabbrica in scrittura](http://www.anandtech.com/storage/showdoc.aspx?i=3531&p=8). Le prestazioni in scrittura tendono a degradare con l'andare del tempo anche su SSD con supporto TRIM. Il TRIM si limita a salvaguardare contro la cancellazione dei file, non contro le sostituzioni come nel caso di un salvataggio incrementale.
 
-La prcoedura di reset è facilmente realizzabile in tree passi indicati sull'articolo del wiki [SSD Memory Cell Clearing](/index.php/SSD_Memory_Cell_Clearing "SSD Memory Cell Clearing").
+La prcoedura di reset è facilmente realizzabile in tree passi indicati sull'articolo del wiki [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing").
 
 ## Consigli per Minimizzare Letture/Scritture su SSD
 
@@ -553,13 +553,13 @@ Esistono molte opzioni per i filesystem inclusi ext2, ext3, ext4, btrfs, ecc.
 
 #### Btrfs
 
-Il supporto a [Btrfs](http://it.wikipedia.org/wiki/Btrfs) è stato incluso con la release principale del kernel Linux versione 2.6.29\. Qualcuno sostiene che non sia abbastanza maturo per l'utilizzo in ambienti di produzione mentre altri già da tempo utilizzano questo potenziale successore di ext4\. Notare che quando questo articolo è stato originariamente scritto (27-Giugno-2010), una versione stabile di btfrs non esiste. Vedere [questo](http://www.madeo.co.uk/?p=346) articolo di blog per maggiori informazioni su btfrs. Assicurarsi di leggere anche il [wiki di btfrs](https://btrfs.wiki.kernel.org/index.php/Main_Page).
+Il supporto a [Btrfs](https://it.wikipedia.org/wiki/Btrfs) è stato incluso con la release principale del kernel Linux versione 2.6.29\. Qualcuno sostiene che non sia abbastanza maturo per l'utilizzo in ambienti di produzione mentre altri già da tempo utilizzano questo potenziale successore di ext4\. Notare che quando questo articolo è stato originariamente scritto (27-Giugno-2010), una versione stabile di btfrs non esiste. Vedere [questo](http://www.madeo.co.uk/?p=346) articolo di blog per maggiori informazioni su btfrs. Assicurarsi di leggere anche il [wiki di btfrs](https://btrfs.wiki.kernel.org/index.php/Main_Page).
 
 **Warning:** Al momento in cui questo è stato scritto (21-Nov-2010) non esiste un utility fsck per diagnosticare e correggere errori sulle partizioni btrfs. Mentre Btrfs è stabile su una macchina stabile, è attualmente possibile corrompere irrimediabilmente un filesystem nel caso di crash o interruzione di alimentazione ai dischi che non gestiscono le richieste di flush correttamente.
 
 #### Ext4
 
-[Ext4](http://it.wikipedia.org/wiki/Ext4) è un altro filsesystem che supporta gli SSD. Viene considerato stabile a partire dalla versione 2.6.28 ed è sufficientemente maturo per un uso quotidiano. Contrariamente a btrfs, ext4 non riconosce automaticamente la natura del disco ed è necessario abilitare esplicitamente il supporto al comando TRIM attraverso l'opzione di mount **discard** in [fstab](/index.php/Fstab_(Italiano) "Fstab (Italiano)") (oppure con tune2fs -o discard /dev/sdaX). Vedere la [documentazione ufficiale del kernel](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/filesystems/btrfs.txt;h=64087c34327fe0ba11e790e0a41224b8e7c1d30c;hb=HEAD) per maggiori informazioni su ext4.
+[Ext4](https://it.wikipedia.org/wiki/Ext4) è un altro filsesystem che supporta gli SSD. Viene considerato stabile a partire dalla versione 2.6.28 ed è sufficientemente maturo per un uso quotidiano. Contrariamente a btrfs, ext4 non riconosce automaticamente la natura del disco ed è necessario abilitare esplicitamente il supporto al comando TRIM attraverso l'opzione di mount **discard** in [fstab](/index.php/Fstab_(Italiano) "Fstab (Italiano)") (oppure con tune2fs -o discard /dev/sdaX). Vedere la [documentazione ufficiale del kernel](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/filesystems/btrfs.txt;h=64087c34327fe0ba11e790e0a41224b8e7c1d30c;hb=HEAD) per maggiori informazioni su ext4.
 
 ## Misurare le Prestazioni degli SSD
 

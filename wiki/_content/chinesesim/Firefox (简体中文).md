@@ -5,7 +5,6 @@
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 Firefox变种](#Firefox.E5.8F.98.E7.A7.8D)
 *   [2 附加组件](#.E9.99.84.E5.8A.A0.E7.BB.84.E4.BB.B6)
 *   [3 插件](#.E6.8F.92.E4.BB.B6)
     *   [3.1 Gnome Keyring 整合](#Gnome_Keyring_.E6.95.B4.E5.90.88)
@@ -37,27 +36,35 @@
 
 [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")中有最新稳定版[firefox](https://www.archlinux.org/packages/?name=firefox)，可以用[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")安装。中文界面请安装简体中文语言包 [firefox-i18n-zh-cn](https://www.archlinux.org/packages/?name=firefox-i18n-zh-cn)。
 
-如果 Firefox 无法进行抗锯齿显示，请安装 [ttf-win7-fonts](https://aur.archlinux.org/packages/ttf-win7-fonts/) 或 [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) 并查看 [Font_Configuration](/index.php/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Font Configuration (简体中文)").
+其它变种：
 
-### Firefox变种
+*   **Firefox Extended Support Release** — long-term supported version
 
-*   **[Iceweasel](https://en.wikipedia.org/wiki/Mozilla_Corporation_software_rebranded_by_the_Debian_project#IceWeasel "wikipedia:Mozilla Corporation software rebranded by the Debian project")** — 由 Debian 开发的 Firefox 分支。主要的区别是它不包含任何含有 Mozilla 商标的内容。
+	[https://www.mozilla.org/en-US/firefox/organizations/](https://www.mozilla.org/en-US/firefox/organizations/) || [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)
 
-	[http://wiki.debian.org/Iceweasel](http://wiki.debian.org/Iceweasel) || [iceweasel](https://aur.archlinux.org/packages/iceweasel/)
+*   **Firefox Beta** — cutting-edge version
 
-**注意:** 关于 Iceweasel 的详情参见 [此帖](http://web.glandium.org/blog/?p=97)(英文)。
+	[https://www.mozilla.org/en-US/firefox/channel](https://www.mozilla.org/en-US/firefox/channel) || [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
 
-*   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — 由 GNU 项目分发的浏览器。 它是完全自由的软件，与 GNU/Linux 兼容，并支持大多数的 Firefox 附加组件。
+*   **Firefox Aurora/Developer edition** — for developers
 
-	[http://www.gnu.org/software/gnuzilla/](http://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/)
+	[https://www.mozilla.org/en-US/firefox/aurora/](https://www.mozilla.org/en-US/firefox/aurora/) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/)
+
+*   **Firefox Nightly** — nightly builds for testing
+
+	[https://nightly.mozilla.org/](https://nightly.mozilla.org/) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
 
 *   **Firefox KDE** — OpenSUSE 打过补丁的、具有更好的 KDE 集成特性的 Firefox 版本。
 
+	[https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox](https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)
+
+*   On top of the different Mozilla build channels, a number of forks exist with more or less special features; see [List of applications#Gecko-based](/index.php/List_of_applications#Gecko-based "List of applications").
+
+Here you can find an overview of Mozilla's [releases](https://wiki.mozilla.org/Releases).
+
+*   **Firefox KDE** —
+
 	[http://gitorious.org/firefox-kde-opensuse](http://gitorious.org/firefox-kde-opensuse) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)
-
-*   **Firefox GTK3** — GTK3 版本的 Firefox。
-
-	|| [firefox-gtk3-bin](https://aur.archlinux.org/packages/firefox-gtk3-bin/)
 
 ## 附加组件
 

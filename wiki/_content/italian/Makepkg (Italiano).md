@@ -186,7 +186,7 @@ Prima di continuare, assicurarsi che sia installato il gruppo di strumenti [base
 
 **Nota:** Prima di lamentarsi di eventuali mancanze di (make)dipendenze, ricordare che si assume che il gruppo di pacchetti [base](https://www.archlinux.org/groups/x86_64/base/) sia correttamente installato sul sistema Arch Linux. Il gruppo "base-devel" è fondamentale per poter compilare e creare pacchetti con **makepkg**.
 
-Per creare un pacchetto, si deve innanzitutto creare un [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)"), o creare uno script, così come descritto in [Creating Packages](https://wiki.archlinux.org/index.php/Creating_Packages_%28Italiano%29), oppure ottenerne uno da [ABS](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)"), da [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"), o da altre fonti.
+Per creare un pacchetto, si deve innanzitutto creare un [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)"), o creare uno script, così come descritto in [Creating Packages](/index.php/Creating_packages_(Italiano) "Creating packages (Italiano)"), oppure ottenerne uno da [ABS](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)"), da [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"), o da altre fonti.
 
 **Attenzione:** Compilare e/o installare pacchetti solo da fonti sicure.
 
@@ -211,7 +211,7 @@ $ makepkg -s
 
 ```
 
-Si noti che queste dipendenze devono essere disponibili nei repository configurati; vedere [pacman#Repositories](https://wiki.archlinux.org/index.php/Pacman_%28Italiano%29#Repositories) per i dettagli. Altrimenti, si si possono installare manualmente le dipendenze prima della compilazione (`pacman -S --asdeps dep1 dep2`).
+Si noti che queste dipendenze devono essere disponibili nei repository configurati; vedere [pacman#Repositories](/index.php/Pacman_(Italiano)#Repository "Pacman (Italiano)") per i dettagli. Altrimenti, si si possono installare manualmente le dipendenze prima della compilazione (`pacman -S --asdeps dep1 dep2`).
 
 Quando tutte le dipendenze sono soddisfatte ed il pacchetto compilato correttamente, verrà creato, nella directory di lavoro, il file del pacchetto (`pkgname-pkgver.pkg.tar.gz`). Per installarlo, eseguire (da root):
 

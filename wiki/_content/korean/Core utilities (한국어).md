@@ -49,9 +49,9 @@
 
 ## cat
 
-[위키백과에서:](http://ko.wikipedia.org/w/index.php?title=Cat_%28%EC%9C%A0%EB%8B%89%EC%8A%A4%29&) *cat* 명령어는 파일들을 연결하고 표시하기 위해 사용되는 표준 유닉스 프로그램입니다.
+[위키백과에서:](https://ko.wikipedia.org/w/index.php?title=Cat_%28%EC%9C%A0%EB%8B%89%EC%8A%A4%29&) *cat* 명령어는 파일들을 연결하고 표시하기 위해 사용되는 표준 유닉스 프로그램입니다.
 
-*   *cat*은 쉘에 포함된 프로그램이 아닙니다. 스크립트를 작성하고 있거나, 성능을 향상하고 싶은 사용자라면 많은 경우에[리다이렉션](http://ko.wikipedia.org/wiki/%EB%A6%AC%EB%8B%A4%EC%9D%B4%EB%A0%89%EC%85%98)을 사용하는 것이 유용할 수 있습니다. 실제로 `< *file*` 명령은 `cat *file*`과 같은 기능을 합니다.
+*   *cat*은 쉘에 포함된 프로그램이 아닙니다. 스크립트를 작성하고 있거나, 성능을 향상하고 싶은 사용자라면 많은 경우에[리다이렉션](https://ko.wikipedia.org/wiki/%EB%A6%AC%EB%8B%A4%EC%9D%B4%EB%A0%89%EC%85%98)을 사용하는 것이 유용할 수 있습니다. 실제로 `< *file*` 명령은 `cat *file*`과 같은 기능을 합니다.
 
 *   *cat*은 여러 줄을 처리할 수 있습니다. 그러나 경우에 따라 cat을 이렇게 사용하는 것은 권장되지 않습니다.
 
@@ -156,14 +156,14 @@ copy() {
 
 ## grep
 
-grep은 유닉스용 명령줄 텍스트 검색 프로그램입니다. ([ed 텍스트 편집기](http://en.wikipedia.org/wiki/Ed_%28text_editor%29)의 g/re/p(모든 범위/정규표현식/출력) 명령어에서 유래되었습니다) *grep* 명령어는 표준 입력 내용 혹은 파일들에서 주어진 정규표현식과 일치하는 줄들을 찾고, 표준 출력에서 검색 결과를 표시합니다.
+grep은 유닉스용 명령줄 텍스트 검색 프로그램입니다. ([ed 텍스트 편집기](https://en.wikipedia.org/wiki/Ed_(text_editor) "wikipedia:Ed (text editor)")의 g/re/p(모든 범위/정규표현식/출력) 명령어에서 유래되었습니다) *grep* 명령어는 표준 입력 내용 혹은 파일들에서 주어진 정규표현식과 일치하는 줄들을 찾고, 표준 출력에서 검색 결과를 표시합니다.
 
 *   *grep*은 파일을 처리합니다. 그러므로 `cat *파일*`과 같은 명령 대신 `grep *파일* *패턴*`으로 대체해도 무관합니다.
 *   버전 컨트롤 시스템 안의 소스 코드를 위하여 최적화된 `grep` 대용판들에는 [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher)과 [ack](https://www.archlinux.org/packages/?name=ack) 등이 있습니다.
 
 ### 컬러 출력
 
-`grep`의 컬러 출력 기능은 [정규표현식](http://ko.wikipedia.org/wiki/%EC%A0%95%EA%B7%9C_%ED%91%9C%ED%98%84%EC%8B%9D)과 `grep`의 추가적인 기능을 익히는 데에 도움이 될 수 있습니다.
+`grep`의 컬러 출력 기능은 [정규표현식](https://ko.wikipedia.org/wiki/%EC%A0%95%EA%B7%9C_%ED%91%9C%ED%98%84%EC%8B%9D)과 `grep`의 추가적인 기능을 익히는 데에 도움이 될 수 있습니다.
 
 *grep*의 컬러 출력을 활성화하려면 다음 항목을 쉘의 설정 파일에 추가하십시오. (이 예에서는 [Bash](/index.php/Bash "Bash")를 사용할 경우를 보여줍니다)
 

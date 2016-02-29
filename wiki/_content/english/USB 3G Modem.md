@@ -79,7 +79,7 @@ There may be the chance that the modem stick is supported by [sakis3g](http://ww
 
 ### Low connection speed
 
-Someone claims that the connection speed under Linux is lower than Windows: [[[1]](https://bbs.archlinux.org/viewtopic.php?id=111513)]
+Someone claims that the connection speed under Linux is lower than Windows: [[1]](https://bbs.archlinux.org/viewtopic.php?id=111513)
 
 A short summary for possible solutions which are not fully verified. In most of conditions, the low speed is caused by bad receiver signals and too many people in cell. But you still could use the following method to try to improve the connection speed.
 

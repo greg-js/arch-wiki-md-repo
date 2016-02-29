@@ -18,7 +18,7 @@ This is one of the products from the [Lenovo S-series](http://shop.lenovo.com/de
 
 ## Hardware specifications
 
-*   CPU: [Intel Celeron N2830](http://en.wikipedia.org/wiki/Silvermont#Mobile_processors_.28Bay_Trail-M.29) (2x 2.16 GHz, turbo 2.41 GHz)
+*   CPU: [Intel Celeron N2830](https://en.wikipedia.org/wiki/Silvermont#Mobile_processors_.28Bay_Trail-M.29 "wikipedia:Silvermont") (2x 2.16 GHz, turbo 2.41 GHz)
 *   Memory: 4048 MB internal - can not be changed
 *   WiFi: Broadcom BCM43142
 *   Bluetooth: Broadcom BCM43142A0

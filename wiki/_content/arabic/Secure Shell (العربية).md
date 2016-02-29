@@ -274,7 +274,7 @@ Banner /etc/issue
 
 ```
 
-{{تلميح : لربما تريد تغيير المنفذ الإفتراضي من 22 الى رقم منفذ أعلى منه (يُمكنك الرجوع الى المقال security through obscurity) (راجع [security through obscurity](http://en.wikipedia.org/wiki/Security_through_obscurity)).}}
+{{تلميح : لربما تريد تغيير المنفذ الإفتراضي من 22 الى رقم منفذ أعلى منه (يُمكنك الرجوع الى المقال security through obscurity) (راجع [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity")).}}
 
 وعلى الرغم من أن منفذ ssh يُمكن الكشف عنه بسهولةبإحدى أدوات المسح الخاصة بالشبكات nmap، لكن تغييره سيُفيد بتقليل عدد محاولات الدخول المؤتمتة، للمساعدة في إختيار رقم منفذ مناسب قم بمراجعة المقال التالي [list of TCP and UDP port numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers").
 

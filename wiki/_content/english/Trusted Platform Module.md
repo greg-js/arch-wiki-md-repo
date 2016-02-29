@@ -119,7 +119,7 @@ $ ssh-keygen -D /usr/lib/libsimple-tpm-pk11.so
 
 ## See also
 
-*   [TPM on Wikipedia](https://en.wikipedia.org/wiki/Trusted_Platform_Module)
+*   [TPM on Wikipedia](https://en.wikipedia.org/wiki/Trusted_Platform_Module "wikipedia:Trusted Platform Module")
 *   [Protecting systems with the TPM](http://lwn.net/Articles/674751/)
 *   [Embedded Security Subsystem on Thinkwiki](http://www.thinkwiki.org/wiki/Embedded_Security_Subsystem)
 *   [TPM Fundamentals (PDF)](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)

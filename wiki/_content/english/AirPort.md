@@ -10,7 +10,7 @@ Traditionally, AirPort base stations can be configured two ways, both of which r
 
 The second way is to use the AirPort Utility app on an iOS device. If you or a friend has an iPod Touch, iPhone, or iPad lying around, this is probably the most hassle-free way to configure your AirPort base station.
 
-If that's not an option, you basically have two things to try: either run the desktop version of AirPort Utility in [Wine](/index.php/Wine "Wine"), or use [airport-utils](https://launchpad.net/airport-utils). airport-utils is not yet in the [AUR](/index.php/AUR "AUR").
+If that's not an option, you basically have one thing left to try: run the desktop version of AirPort Utility in [Wine](/index.php/Wine "Wine").
 
 ## Music streaming
 

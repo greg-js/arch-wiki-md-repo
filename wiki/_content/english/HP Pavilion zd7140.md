@@ -10,7 +10,7 @@ Another work in Progress - by PhrakTure I am currently running Arch on this lapt
 ## Modules
 
 *   Ethernet: 8139too
-*   Wireless: ndiswrapper using BCMWL5A [[pkg](http://phrakture.freelinuxhost.com/ndiswrapper-bcmwl5a-0.2-1.pkg.tar.gz)] [[PKGBUILD](http://phrakture.freelinuxhost.com/pkgbuilds/PKGBUILD.ndiswrapper-bcmwl5a)]
+*   Wireless: ndiswrapper using BCMWL5A [pkg](http://phrakture.freelinuxhost.com/ndiswrapper-bcmwl5a-0.2-1.pkg.tar.gz) [PKGBUILD](http://phrakture.freelinuxhost.com/pkgbuilds/PKGBUILD.ndiswrapper-bcmwl5a)
 *   Audio: snd-intel-8x0 / snd-pcm-oss
 *   Video: nvidia [[1]](http://www.nvidia.com)
 

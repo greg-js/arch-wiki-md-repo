@@ -17,7 +17,7 @@
 
 # Introduction
 
-Marketed by various telecommunications companies in several countries, the [E220](http://en.wikipedia.org/wiki/Huawei_E220) is a 3.5G HSDPA USB modem used mainly for wireless Internet access via mobile telephony networks. Technically it is a modem, USB and (due to the CDFS format) CD-ROM device. With a kernel version older than 2.6.20, getting Linux to recognize the device as a modem and accessing its functions requires a workaround.
+Marketed by various telecommunications companies in several countries, the [E220](https://en.wikipedia.org/wiki/Huawei_E220 "wikipedia:Huawei E220") is a 3.5G HSDPA USB modem used mainly for wireless Internet access via mobile telephony networks. Technically it is a modem, USB and (due to the CDFS format) CD-ROM device. With a kernel version older than 2.6.20, getting Linux to recognize the device as a modem and accessing its functions requires a workaround.
 
 *"Linux kernel versions prior to 2.6.20 have some problems with it, as the SCSI CDROM fakevolume with drivers for Microsoft systems gets automounted by usbstorage.ko module, preventing serial device /dev/ttyUSB0 from working properly."*
 

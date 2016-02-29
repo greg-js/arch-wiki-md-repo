@@ -10,7 +10,7 @@ One must download the packages from Humble Bundle's website in order for the PKG
 
 *   Manual: view the PKGBUILD and download the file it expects from humblebundle.com to your build directory. If using an [AUR helper](/index.php/AUR_helper "AUR helper"), the build directory will be located in a subdirectory of /tmp by default.
 
-*   `hib:// DLAGENT`: by creating a `DLAGENT` in [makepkg](/index.php/Makepkg "Makepkg")'s configuration file, the process of giving the PKGBUILD the game files is entirely automated. The recommended package for such a scenario is [hib-dlagent](https://aur.archlinux.org/packages/hib-dlagent), available in the AUR.
+*   `hib:// DLAGENT`: by creating a `DLAGENT` in [makepkg](/index.php/Makepkg "Makepkg")'s configuration file, the process of giving the PKGBUILD the game files is entirely automated. The recommended package for such a scenario is [hib-dlagent](https://aur.archlinux.org/packages/hib-dlagent/), available in the AUR.
 
 After installing a dlagent helper, associate *hib://* as a valid dlagent in */etc/makepkg.conf*:
 

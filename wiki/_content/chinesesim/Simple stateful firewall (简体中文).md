@@ -6,11 +6,11 @@ This page explains how to set up a stateful firewall using [iptables](/index.php
 
 **Warning:** The rules are given in the order that they are executed. If you are logged into a remote machine, you may be locked out of the machine while setting up the rules. You should only follow the steps below while you are logged in locally.
 
-The [example config file](https://wiki.archlinux.org/index.php/Simple_Stateful_Firewall#Example_iptables.rules_file) can be used to get around this problem.
+The [example config file](/index.php/Simple_stateful_firewall#Example_iptables.rules_file "Simple stateful firewall") can be used to get around this problem.
 
 **警告:** 规则是按照执行的顺序给与的，如果是远程登录计算机，那么在设置规则时可能会被计算机拒之门外，所以只能在本地登录计算机的时候做下面的设置。
 
-[example config file](https://wiki.archlinux.org/index.php/Simple_Stateful_Firewall#Example_iptables.rules_file) 可以用来解决这个问题。
+[example config file](/index.php/Simple_stateful_firewall#Example_iptables.rules_file "Simple stateful firewall") 可以用来解决这个问题。
 
 ## Contents
 

@@ -171,7 +171,7 @@ rfcomm.conf
 
 **注意:** 这一部分描述可能不是完全的准确。感谢**Gattschardo**解决了**个人验证码**部分
 
-许多蓝牙(Bluetooth)设备要求在使用时[配对](http://en.wikipedia.org/wiki/Bluetooth#Pairing)。 实际上的过程取决于配对涉及到的设备和这些设备的输入功能。 在移动电话上的配对过程可能会像下面那样：
+许多蓝牙(Bluetooth)设备要求在使用时[配对](https://en.wikipedia.org/wiki/Bluetooth#Pairing "wikipedia:Bluetooth")。 实际上的过程取决于配对涉及到的设备和这些设备的输入功能。 在移动电话上的配对过程可能会像下面那样：
 
 *   计算机向移动电话发送一个配对请求
 *   移动电话上会提示输入一个由计算机给出的PIN（个人识别码）码

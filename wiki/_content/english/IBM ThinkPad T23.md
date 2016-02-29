@@ -52,7 +52,7 @@ Then, edit your [xorg.conf](/index.php/Xorg.conf "Xorg.conf") to reflect the fol
 
 #### Advanced Installation
 
-Thanks to Conor Behan for [this post](https://bbs.archlinux.org/viewtopic.php?id=137666) and [User:mulesryan](https://wiki.archlinux.org/index.php/User:Mulesryan) for figuring out this chipset.
+Thanks to Conor Behan for [this post](https://bbs.archlinux.org/viewtopic.php?id=137666) and [User:mulesryan](/index.php?title=User:Mulesryan&action=edit&redlink=1 "User:Mulesryan (page does not exist)") for figuring out this chipset.
 
 The savage driver supports two types of hardware acceleration: XAA and EXA. Unfortunately, you can use DRI for SuperSavage **only if** you are using XAA. Since you want hardware 3D (for instance, opengl/d3d in wine) then this is probably important.
 
@@ -133,7 +133,7 @@ resume=/dev/sd*x*
 
 to the kernel line in `/boot/grub/menu.lst`
 
-[Sleepmode](https://wiki.archlinux.org/index.php/Sleepmode)
+[Sleepmode](/index.php?title=Sleepmode&action=edit&redlink=1 "Sleepmode (page does not exist)")
 
 #### Laptop Mode Tools
 

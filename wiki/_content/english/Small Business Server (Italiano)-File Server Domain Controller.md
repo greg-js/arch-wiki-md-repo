@@ -337,7 +337,7 @@ e inseriamo :
 
 ```
 
-Come si può notare al momento (ricordo che *il servizio samba non è stato ancora avviato*) forniamo sono i dati essenziali, quali il dominio (workgroup = MEDE), il nome del server (netbios name = ARCHI), il suo ruolo di *Domain Controller* (domain logons = Yes) e i parametri LDAP. Sugli altri parametri consiglio una buona guida di Samba o le sue *manpage* :). Come secondo passo prendiamo nota del [SID](http://en.wikipedia.org/wiki/Security_Identifier) del nostro server:
+Come si può notare al momento (ricordo che *il servizio samba non è stato ancora avviato*) forniamo sono i dati essenziali, quali il dominio (workgroup = MEDE), il nome del server (netbios name = ARCHI), il suo ruolo di *Domain Controller* (domain logons = Yes) e i parametri LDAP. Sugli altri parametri consiglio una buona guida di Samba o le sue *manpage* :). Come secondo passo prendiamo nota del [SID](https://en.wikipedia.org/wiki/Security_Identifier "wikipedia:Security Identifier") del nostro server:
 
 ```
 sudo net getlocalsid
@@ -634,7 +634,7 @@ drwxrwx--- 2 root Tecnico      4096 17 dic 16:24 tecnico
 
 #### La *"rogna"* dei permessi utente
 
-Ora che abbiamo dato i permessi alle cartelle ci troviamo di fronte ad un problema inaspettato. Quando gli utenti creano nuovi files o cartelle nelle condivisioni questi vengono *flaggati* con utente=UtenteCreatore e gruppo=GruppoDefaultUtente. Il gruppo di default è "Domain Users", quindi tutti i nuovi files vengono impostati con questo gruppo. Dunque i nuovi files creati in "commerciale" sono potenzialmente a disposizione anche degli utenti del gruppo "Tecnico", essendo anche questi membri del gruppo "Domain Users". In questo caso sono protetti dai permessi della cartella stessa, ma potrebbe non essere così in un altro caso. L'utente "Administrator" ha come gruppo di default "Domain Admins", quindi ogni file creato/copiato/ripristinato dall'amministratore risulta non accessibile dagli utenti "normali". Indubbiamente una bella rottura di scatole dover ogni volta reimpostare a mano i permessi sui files manipolati dall'amministratore ... Ma non disperate ! :) Ci viene in aiuto il flag [SETUID](http://en.wikipedia.org/wiki/Setuid) di unix. Se leggete l'articolo linkato sembra non centrare una benemerita fava con l'argomento in questione, ma in questo caso l'effetto del flag è quello da noi voluto. In pratica abilitiamo il flag sul gruppo in questo modo :
+Ora che abbiamo dato i permessi alle cartelle ci troviamo di fronte ad un problema inaspettato. Quando gli utenti creano nuovi files o cartelle nelle condivisioni questi vengono *flaggati* con utente=UtenteCreatore e gruppo=GruppoDefaultUtente. Il gruppo di default è "Domain Users", quindi tutti i nuovi files vengono impostati con questo gruppo. Dunque i nuovi files creati in "commerciale" sono potenzialmente a disposizione anche degli utenti del gruppo "Tecnico", essendo anche questi membri del gruppo "Domain Users". In questo caso sono protetti dai permessi della cartella stessa, ma potrebbe non essere così in un altro caso. L'utente "Administrator" ha come gruppo di default "Domain Admins", quindi ogni file creato/copiato/ripristinato dall'amministratore risulta non accessibile dagli utenti "normali". Indubbiamente una bella rottura di scatole dover ogni volta reimpostare a mano i permessi sui files manipolati dall'amministratore ... Ma non disperate ! :) Ci viene in aiuto il flag [SETUID](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid") di unix. Se leggete l'articolo linkato sembra non centrare una benemerita fava con l'argomento in questione, ma in questo caso l'effetto del flag è quello da noi voluto. In pratica abilitiamo il flag sul gruppo in questo modo :
 
 ```
 sudo chmod g+s /samba/public/commerciale
@@ -779,7 +779,7 @@ domain logons = Yes
 
 ```
 
-Eleggiamo il nostro server ad autorità *maxima*, facciamolo diventare [master browser](http://en.wikipedia.org/wiki/Domain_Master_Browser) per il segmento della nostra rete.
+Eleggiamo il nostro server ad autorità *maxima*, facciamolo diventare [master browser](https://en.wikipedia.org/wiki/Domain_Master_Browser "wikipedia:Domain Master Browser") per il segmento della nostra rete.
 
 ```
 domain master = yes
@@ -788,7 +788,7 @@ os level = 65
 
 ```
 
-Il nostro server è anche server [wins](http://en.wikipedia.org/wiki/Windows_Internet_Name_Service)
+Il nostro server è anche server [wins](https://en.wikipedia.org/wiki/Windows_Internet_Name_Service "wikipedia:Windows Internet Name Service")
 
 ```
 wins support = Yes

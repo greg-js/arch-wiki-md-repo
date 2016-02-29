@@ -175,7 +175,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 | [ccache](/index.php/Ccache "Ccache") | `~/.ccache` | `$ export CCACHE_DIR="$XDG_CACHE_HOME"/ccache` |
 | [conky](/index.php/Conky "Conky") | `~/.conkyrc` | [00481ee](https://github.com/brndnmtthws/conky/commit/00481ee9a97025e8e2acd7303d080af1948f7980) | [[37]](https://github.com/brndnmtthws/conky/issues/144) | `$ conky --config="$XDG_CONFIG_HOME"/conky/conkyrc` |
 | [crawl](http://www.dungeoncrawl.org/) | `~/.crawl` | `$ export CRAWL_DIR="$XDG_DATA_HOME"/crawl/ # Trailing '/' is required.` |
-| [composer](https://wiki.archlinux.org/index.php/PHP#Composer) | `~/.composer` | `$ export COMPOSER_HOME="$XDG_CONFIG_HOME"/composer`
+| [composer](/index.php/PHP#Composer "PHP") | `~/.composer` | `$ export COMPOSER_HOME="$XDG_CONFIG_HOME"/composer`
 
 `$ export COMPOSER_CACHE_DIR="$XDG_CACHE_HOME"/composer`
 

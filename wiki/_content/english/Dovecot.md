@@ -114,7 +114,7 @@ By using the `pam_mkhomedir.so` module and by adding the `session` part in the `
 
 ### Sieve
 
-[Sieve](http://en.wikipedia.org/wiki/Sieve_%28mail_filtering_language%29) is a programming language that can be used to create filters for email on mail server.
+[Sieve](https://en.wikipedia.org/wiki/Sieve_(mail_filtering_language) is a programming language that can be used to create filters for email on mail server.
 
 *   Install [pigeonhole](https://www.archlinux.org/packages/?name=pigeonhole).
 *   Add "sieve" to "protocols" in dovecot.conf (and the lines from the next points)

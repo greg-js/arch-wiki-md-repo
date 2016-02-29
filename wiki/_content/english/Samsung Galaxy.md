@@ -21,4 +21,4 @@ You will now be able to transfer your files back and forth from command line.
 
 reverse out your steps when you unmount.
 
-**If you have some troubles, install go-mtpfs from** [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository). For more detail, check [go-mtpfs](https://wiki.archlinux.org/index.php/MTP#go-mtpfs).
+**If you have some troubles, install go-mtpfs from** [AUR](/index.php/AUR "AUR"). For more detail, check [go-mtpfs](/index.php/MTP#go-mtpfs "MTP").

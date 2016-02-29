@@ -244,11 +244,11 @@ PermitRootLogin no # (put yes here if you want root login)
 
 Você pode também descomentar a opção BANNER e editar `/etc/issue` para uma mensagem de boas vindas.
 
-**Tip:** Você deve querer alterar a porta padrão de 22 para qualquer porta alta (veja em inglês [security through obscurity](http://en.wikipedia.org/wiki/Security_through_obscurity)).
+**Tip:** Você deve querer alterar a porta padrão de 22 para qualquer porta alta (veja em inglês [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity")).
 
 Mesmo que a porta utilizada pelo ssh possa ser detectada por um port-scanner como o nmap, alterando-a irá reduzir o número de entradas nos logs por tentativas automatizadas de acesso.pts.
 
-**Tip:** Desativando inteiramente logins por senha pode melhorar sua segurança, desde que cada usuário com acesso ao servidor necessitará criar chaves ssh. (veja em inglês [Using SSH Keys](https://wiki.archlinux.org/index.php/Using_SSH_Keys)).
+**Tip:** Desativando inteiramente logins por senha pode melhorar sua segurança, desde que cada usuário com acesso ao servidor necessitará criar chaves ssh. (veja em inglês [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys")).
  `/etc/ssh/sshd_config` 
 ```
 PasswordAuthentication no

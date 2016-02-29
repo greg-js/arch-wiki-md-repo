@@ -67,4 +67,4 @@ $ sudo systemctl enable openvpn@TunnelBearJapan.service
 ## References
 
 *   [TunnelBear Helper](https://github.com/JenniferMack/TunnelBear-Helper)
-*   [Arch Wiki OpenVPN](https://wiki.archlinux.org/index.php/OpenVPN)
+*   [Arch Wiki OpenVPN](/index.php/OpenVPN "OpenVPN")

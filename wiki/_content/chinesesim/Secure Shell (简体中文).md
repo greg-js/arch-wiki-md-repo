@@ -84,8 +84,8 @@ PermitRootLogin no
 
 **小贴士:**
 
-*   可以考虑把默认的端口从22改成更高的端口(参考 [security through obscurity](http://en.wikipedia.org/wiki/Security_through_obscurity)).尽管ssh的运行端口可以被像nmap这样的端口扫描器侦测到，但改变它可以减少由于自动验证的尝试造成的登录日志条目。
-*   完全取消密码登录方式可以极大的增强安全性，(参考 [SSH Keys](/index.php/SSH_Keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH Keys (简体中文)")).
+*   可以考虑把默认的端口从22改成更高的端口(参考 [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity")).尽管ssh的运行端口可以被像nmap这样的端口扫描器侦测到，但改变它可以减少由于自动验证的尝试造成的登录日志条目。
+*   完全取消密码登录方式可以极大的增强安全性，(参考 [SSH Keys](/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH keys (简体中文)")).
 
 ### 管理 sshd 守护进程
 

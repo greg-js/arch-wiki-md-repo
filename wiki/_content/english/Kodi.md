@@ -172,6 +172,8 @@ At last start and enable the service:
 
 ### Sharing a database across multiple nodes
 
+**Warning:** Updating from kodi 15x to 16x is currently broken due to some bugs within mariadb which as of 28-Feb-2016 are not yet in [community]/mariadb. For more, see the links in [FS#48364](https://bugs.archlinux.org/task/48364)
+
 One can easily configure Kodi to share a single media library (video and music). The advantage of this is that key metadata are stored in one place, and are shared/updated by all nodes on the network. For example, users of this setup can:
 
 *   Stop watching a movie or show in one room then finish watching it in another room automatically.
@@ -278,7 +280,7 @@ First time setup:
 $ mysql -u root -p
    <<enter the mysqld root password assigned in the first step>>
 MariaDB [(none)]> CREATE USER 'kodi'@'localhost' IDENTIFIED BY 'kodi';
-MariaDB [(none)]> GRANT ALL ON *.* TO 'kodi';
+MariaDB [(none)]> GRANT ALL ON *.* TO 'kodi'@'localhost';
 MariaDB [(none)]> \q
 
 ```
@@ -515,7 +517,7 @@ The [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package is used to
 
 **Tip:** By default, press `O` during playback to show codec information and CPU usage. More information about this overlay can be found [here](http://kodi.wiki/view/Codecinfo).
 
-If your setup doesn't or can't make use of hardware acceleration, disable it and explicitly set video decoding to software. This is because [H.264 decoding is only multithreaded when video decoding is set to software](http://forum.kodi.tv/showthread.php?tid=170084&pid=1789661#pid1789661). To achieve this, go to `System Settings` and then to `Video`. Set the `settings level` to `Advanced` or `Expert` and go to `Acceleration`. There, set `Decoding method` to `software`.
+If your setup does not or cannot make use of hardware acceleration, disable it and explicitly set video decoding to software. This is because [H.264 decoding is only multithreaded when video decoding is set to software](http://forum.kodi.tv/showthread.php?tid=170084&pid=1789661#pid1789661). To achieve this, go to `System Settings` and then to `Video`. Set the `settings level` to `Advanced` or `Expert` and go to `Acceleration`. There, set `Decoding method` to `software`.
 
 ### Raspberry Pi
 

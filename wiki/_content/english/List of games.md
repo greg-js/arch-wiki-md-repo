@@ -215,9 +215,9 @@
 
 	[http://wiki.linuxquestions.org/wiki/BSD_games](http://wiki.linuxquestions.org/wiki/BSD_games) || [bsd-games](https://www.archlinux.org/packages/?name=bsd-games)
 
-*   **Fortune** — Displays Random messages/quotes/jokes when invoked
+*   **[Fortune](https://en.wikipedia.org/wiki/Fortune_(Unix) "w:Fortune (Unix)")** — Displays Random messages/quotes/jokes when invoked
 
-	[http://en.wikipedia.org/wiki/Fortune_(Unix)](http://en.wikipedia.org/wiki/Fortune_(Unix)) || [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)
+	|| [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)
 
 *   **Mah-Jong** — Chinese Classical mahjong (not solitaire) with network support
 
@@ -1043,7 +1043,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Zero-K](https://en.wikipedia.org/wiki/Zero-K "wikipedia:Zero-K")** — Zero-K is a free multi-platform open source real-time strategy computer game. Initially based on content from Total Annihilation on the open source Spring Engine, it was forked and all proprietary content replaced, and evolved into a completely new game with unique features. It can be easily installed by installing mono and downloading and running the Zero-K lobby from the official website at [http://zero-k.info/](http://zero-k.info/)
 
-	[https://en.wikipedia.org/wiki/Zero-K](https://en.wikipedia.org/wiki/Zero-K) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	{{{3}}} || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ## Tycoon/Management Games
 
@@ -1102,5 +1102,5 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Wikipedia:Source port](https://en.wikipedia.org/wiki/Source_port "wikipedia:Source port")
 *   [Linux game database](http://www.lgdb.org/)
 *   [Penguspy](http://www.penguspy.com/#/All/free_and_commercial/open_closed/sort=1/view=1/limit=0)
-*   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
+*   [Lists of Linux games on Wikipedia](https://en.wikipedia.org/wiki/Category:Linux_games "wikipedia:Category:Linux games")
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)

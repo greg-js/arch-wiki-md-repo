@@ -1,3 +1,3 @@
-Install [lttng-ust](https://aur.archlinux.org/packages/lttng-ust/) from the AUR
+Redirect to:
 
-Install [dot net runtime](https://aur.archlinux.org/packages/coreclr-git/) from the AUR
+*   [List of applications](/index.php?title=List_of_applications&redirect=no "List of applications")

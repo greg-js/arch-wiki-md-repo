@@ -166,7 +166,7 @@ Instead, find takes a set of directories and matches each file under them agains
 
 ## locate
 
-`locate` is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](http://en.wikipedia.org/wiki/Find) tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by `locate`. This problem is minimised by regular, typically scheduled use of the `updatedb` command, which (as the name suggests) updates the database.
+`locate` is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by `locate`. This problem is minimised by regular, typically scheduled use of the `updatedb` command, which (as the name suggests) updates the database.
 
 **Note:** Although in other distros `locate` and `updatedb` are in the [findutils](https://www.archlinux.org/packages/?name=findutils) package, they are no longer present in Arch's package. To use it, install the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. mlocate is a newer implementation of the tool, but is used in exactly the same way.
 

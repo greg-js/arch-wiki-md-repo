@@ -29,7 +29,7 @@ Install rtorrent and configure to your liking.
 
 ```
 
-Information on configuring rtorrent can be found on it's wiki page: [https://wiki.archlinux.org/index.php/Rtorrent](https://wiki.archlinux.org/index.php/Rtorrent).
+Information on configuring rtorrent can be found on it's wiki page: [RTorrent](/index.php/RTorrent "RTorrent").
 
 rtorrent in the repos should be compiled with XML-RPC support.
 
@@ -53,7 +53,7 @@ Install lighthttp and php.
 
 ```
 
-Information on setting up lighthttp can be found on it's wiki page: [https://wiki.archlinux.org/index.php/Lighttpd](https://wiki.archlinux.org/index.php/Lighttpd)
+Information on setting up lighthttp can be found on it's wiki page: [Lighttpd](/index.php/Lighttpd "Lighttpd")
 
 After starting lighthttp as per the wiki, you should be able to access the test page at [http://localhost:80](http://localhost:80).
 
@@ -331,7 +331,7 @@ Restart lighttpd, and it should now require you to enter your username and passw
 
 The following resources can help you add ssl to lighttpd:
 
-[https://wiki.archlinux.org/index.php/Lighttpd#SSL](https://wiki.archlinux.org/index.php/Lighttpd#SSL) [http://redmine.lighttpd.net/projects/1/wiki/Docs_SSL](http://redmine.lighttpd.net/projects/1/wiki/Docs_SSL) [http://redmine.lighttpd.net/projects/1/wiki/HowToSimpleSSL](http://redmine.lighttpd.net/projects/1/wiki/HowToSimpleSSL)
+[Lighttpd#SSL](/index.php/Lighttpd#SSL "Lighttpd") [http://redmine.lighttpd.net/projects/1/wiki/Docs_SSL](http://redmine.lighttpd.net/projects/1/wiki/Docs_SSL) [http://redmine.lighttpd.net/projects/1/wiki/HowToSimpleSSL](http://redmine.lighttpd.net/projects/1/wiki/HowToSimpleSSL)
 
 If you just want to get it working, the following commands should work.
 

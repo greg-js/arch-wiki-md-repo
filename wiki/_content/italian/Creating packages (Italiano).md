@@ -151,7 +151,7 @@ Una spiegazione delle variabili `PKGBUILD` possibili può essere trovata nell'ar
 
 ### La funzione `build()`
 
-Ora è necessario implementare la funzione `build()` nel file `PKGBUILD`. Questa funzione utilizza i comandi di shell comuni nella sintassi [Bash](http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) per compilare automaticamente il software e creare una directory `pkg` per installare il software. Questo permette a *makepkg* di impacchettare i file senza dover passare al setaccio il filesystem.
+Ora è necessario implementare la funzione `build()` nel file `PKGBUILD`. Questa funzione utilizza i comandi di shell comuni nella sintassi [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) per compilare automaticamente il software e creare una directory `pkg` per installare il software. Questo permette a *makepkg* di impacchettare i file senza dover passare al setaccio il filesystem.
 
 Il primo passo della funzione `build()` è quello di spostarsi nella directory creata durante la decompressione dei sorgenti. Nella maggior parte dei casi il primo comando sarà simile a questo:
 
@@ -189,7 +189,7 @@ Nei pacchetti datati, non vi era alcuna funzione `package()`, e così, sistemare
 
 ### Informazioni aggiuntive
 
-Si prega di leggere [Arch Packaging Standards](/index.php/Arch_Packaging_Standards_(Italiano) "Arch Packaging Standards (Italiano)") per approfondimenti e considerazioni aggiuntive.
+Si prega di leggere [Arch Packaging Standards](/index.php/Arch_packaging_standards_(Italiano) "Arch packaging standards (Italiano)") per approfondimenti e considerazioni aggiuntive.
 
 ## Testare il PKGBUILD
 
@@ -217,7 +217,7 @@ L'altro strumento è [namcap](/index.php/Namcap_(Italiano) "Namcap (Italiano)"),
 
 ## Invio di pacchetti di AUR
 
-Si prega di leggere [AUR User Guidelines#SCondividere i PKGBUILD su UNSUPPORTED](https://wiki.archlinux.org/index.php/Arch_User_Repository_%28Italiano%29#Condividere_i_PKGBUILD_su_UNSUPPORTED) per una descrizione dettagliata del processo di invio.
+Si prega di leggere [AUR User Guidelines#SCondividere i PKGBUILD su UNSUPPORTED](/index.php/Arch_User_Repository_(Italiano)#Condividere_i_PKGBUILD_su_UNSUPPORTED "Arch User Repository (Italiano)") per una descrizione dettagliata del processo di invio.
 
 ## Per ricapitolare
 

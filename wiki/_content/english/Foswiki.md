@@ -2,7 +2,7 @@
 
 More information:
 
-*   [Wikipedia article](http://en.wikipedia.org/wiki/Foswiki)
+*   [Wikipedia article](https://en.wikipedia.org/wiki/Foswiki "wikipedia:Foswiki")
 *   [The Foswiki website](http://foswiki.org)
 
 You may also be interested in [XWiki](/index.php/XWiki "XWiki"), which caters to similar needs, but is Java-based.

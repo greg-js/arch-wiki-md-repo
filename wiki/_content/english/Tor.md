@@ -593,7 +593,7 @@ COMMIT
 
 `-A INPUT -p udp -j ACCEPT` allow all incoming UDP connections because we do not use connection tracking.
 
-`-A INPUT -p icmp -j ACCEPT` allow [ICMP](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol).
+`-A INPUT -p icmp -j ACCEPT` allow [ICMP](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol "wikipedia:Internet Control Message Protocol").
 
 `-A INPUT -p tcp --dport 443 -j ACCEPT` allow incoming connections to the `ORPort`.
 

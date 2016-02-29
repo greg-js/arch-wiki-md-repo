@@ -34,7 +34,7 @@ Because Arch permanently strips debugging data from its distributed binaries (in
 
 ## Kernel rebuild
 
-You may consider to build a *linux-custom* package to run SystemTap, but rebuilding the original [linux](https://www.archlinux.org/packages/?name=linux) package is easy and efficient. See also [[3]](https://wiki.archlinux.org/index.php/Kernels/Compilation/Traditional).
+You may consider to build a *linux-custom* package to run SystemTap, but rebuilding the original [linux](https://www.archlinux.org/packages/?name=linux) package is easy and efficient. See also [Kernels/Compilation/Traditional](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional").
 
 ### Prepare
 

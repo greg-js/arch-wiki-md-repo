@@ -122,7 +122,7 @@ alias sound-slot-0 snd-hda-intel
 ### Touchpad
 
 *   Follow the [Synaptics](/index.php/Synaptics "Synaptics") guide.
-*   [Disable touchpad upon external mouse detection](https://wiki.archlinux.org/index.php/Synaptics#Disable_touchpad_upon_external_mouse_detection)
+*   [Disable touchpad upon external mouse detection](/index.php/Synaptics#Disable_touchpad_on_mouse_detection "Synaptics")
 
 ### Webcam
 

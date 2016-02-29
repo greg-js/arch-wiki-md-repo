@@ -11,9 +11,9 @@ Twm is a window manager for X11\. It is a small program, being built against Xli
 
 ### Twm creation and name
 
-Twm was written by Tom LaStrange, a developer who was frustrated by the limitations of [uwm (Ultrix Window Manager)](https://en.wikipedia.org/wiki/UWM_(computing))[[[1]](http://www.linuxplanet.com/linuxplanet/reports/3000/2/), the only window manager around when X11 was first released. Twm supplanted uwm as the default window manager supplied with X11 from the X11R4 release in 1989[[2]](https://en.wikipedia.org/wiki/UWM_(computing)).
+Twm was written by Tom LaStrange, a developer who was frustrated by the limitations of [uwm (Ultrix Window Manager)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)")[[[1]](http://www.linuxplanet.com/linuxplanet/reports/3000/2/), the only window manager around when X11 was first released. Twm supplanted uwm as the default window manager supplied with X11 from the X11R4 release in 1989[wikipedia:UWM_(computing)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)").
 
-Twm has stood for *Tom's Window Manager*, *Tab Window Manager* and more recently *Timeless Window Manager*[[3]](https://en.wikipedia.org/wiki/Twm).
+Twm has stood for *Tom's Window Manager*, *Tab Window Manager* and more recently *Timeless Window Manager*[wikipedia:Twm](https://en.wikipedia.org/wiki/Twm "wikipedia:Twm").
 
 ## Installation
 
@@ -59,8 +59,8 @@ xcompmgr -o 0.3  -c -r 8 -t -10 -l -12 &
 ## References
 
 1.  Proffitt, Brian. "[From the Desktop: Tom LaStrange Speaks!](http://www.linuxplanet.com/linuxplanet/reports/3000/2/)", *LinuxPlanet*, February 6, 2001\. Retrieved October 22, 2009.
-2.  "[UWM (computing)](https://en.wikipedia.org/wiki/UWM_(computing))", *Wikipedia*. Retrieved October 22, 2009.
-3.  "[Twm](https://en.wikipedia.org/wiki/Twm)", *Wikipedia*. Retrieved October 22, 2009.
+2.  "[UWM (computing)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)")", *Wikipedia*. Retrieved October 22, 2009.
+3.  "[Twm](https://en.wikipedia.org/wiki/Twm "wikipedia:Twm")", *Wikipedia*. Retrieved October 22, 2009.
 4.  "[Twm man page](http://linux.die.net/man/1/twm)", *linux.die.net*. Retrieved October 22, 2009.
 5.  "[Sample twmrc](http://www.custompc.plus.com/twm/configs/twmrc09)", *custompc.plus.com*. Retrieved August 12, 2013.
 6.  "[Window Managers for X: TWM/VTWM](http://xwinman.org/vtwm.php)", *xwinman.org*. Retrieved October 22, 2009.

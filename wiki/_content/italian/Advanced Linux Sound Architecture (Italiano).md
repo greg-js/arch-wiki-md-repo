@@ -906,7 +906,7 @@ Ad esempio: su una scheda integrata VIA VT1708S (che utilizza il modulo snd-hda-
 
 Fonte: [http://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt](http://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt)
 
-Se si utilizza un portatile, pm-utils riporterà il valore di `power_save` a 1 quando si passa all'alimentazione da batteria, anche se è stato disabilitato il risparmio energetico in `/etc/modprobe.d`. Evitare questo comportamento di pm-utils disabilitando lo script che lo determina (consultare [Disabling a hook](https://wiki.archlinux.org/index.php/Pm-utils#Disabling_a_hook) per ulteriori informazioni):
+Se si utilizza un portatile, pm-utils riporterà il valore di `power_save` a 1 quando si passa all'alimentazione da batteria, anche se è stato disabilitato il risparmio energetico in `/etc/modprobe.d`. Evitare questo comportamento di pm-utils disabilitando lo script che lo determina (consultare [Disabling a hook](/index.php/Pm-utils#Disabling_a_hook "Pm-utils") per ulteriori informazioni):
 
 `# touch /etc/pm/power.d/intel-audio-powersave`
 

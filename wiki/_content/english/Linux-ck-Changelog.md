@@ -282,7 +282,7 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 *   Commit: [http://pkgbuild.com/git/aur-mirror.git/commit/linux-ck?id=9ca5354e304794dd4b566a0c9f0b355f0febddad](http://pkgbuild.com/git/aur-mirror.git/commit/linux-ck?id=9ca5354e304794dd4b566a0c9f0b355f0febddad)
 *   Note: This PKGBUILD now conforms to the pacman-4.2 standards of being able to verify pgp signatures of upstream files. See the following for info on how to add the needed keys or how to disable this feature entirely,[1]
 
-1\. [https://wiki.archlinux.org/index.php/Makepkg#Signature_checking](https://wiki.archlinux.org/index.php/Makepkg#Signature_checking)
+1\. [Makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg")
 
 **Bump to v3.18.1-3**
 
@@ -1053,7 +1053,7 @@ sed -i 's/_bfqpath=.*$/_bfqpath="http:\/\/repo-ck.com\/source\/mirror"/' PKGBUIL
 
 **Bump to v3.6.7-2**
 
-*   Changelog: Included fix for [[FS#32615](https://bugs.archlinux.org/task/32615)] - Check for valid irq_cfg pointer in smp_irq_move_cleanup_interrupt
+*   Changelog: Included fix for [FS#32615](https://bugs.archlinux.org/task/32615) - Check for valid irq_cfg pointer in smp_irq_move_cleanup_interrupt
 *   Commit: --- pkgbuild.com/git/aur-mirror.git is down ---
 
 **Bump to v3.6.7-1**
@@ -1770,7 +1770,7 @@ Changed the configs based on CK's suggestions:
 1.  Disabled dynamic ticks (ARCH default is enabled).
 2.  Tick rate = 1000 Hz (ARCH default is 300 Hz).
 
-All other options are set to the ARCH defaults outlined in the main kernel's config files. Why the changes? See CK's [[BFS configuration FAQ](http://ck.kolivas.org/patches/bfs/bfs-configuration-faq.txt)]. These settings are based on his recommended configuration for "Desktop."
+All other options are set to the ARCH defaults outlined in the main kernel's config files. Why the changes? See CK's [BFS configuration FAQ](http://ck.kolivas.org/patches/bfs/bfs-configuration-faq.txt). These settings are based on his recommended configuration for "Desktop."
 
 **10-Apr-2011 kernel26-ck 2.6.38.2-3**
 
@@ -1830,7 +1830,7 @@ Bump dependency to avoid util-linux breakage.
 
 **19-Feb-2011 kernel26-ck 2.6.37.1-1**
 
-Bump to latest version - thanks to koeleck for providing [[this patch](http://aur.pastebin.com/ajz5yyUC)] to fix the ck2 patchset!
+Bump to latest version - thanks to koeleck for providing [this patch](http://aur.pastebin.com/ajz5yyUC) to fix the ck2 patchset!
 
 **13-Feb-2011 kernel26-ck 2.6.37-7**
 

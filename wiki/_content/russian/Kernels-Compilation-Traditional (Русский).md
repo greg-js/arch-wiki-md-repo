@@ -1,8 +1,8 @@
 Представленная ниже информация будет полезна при сборке пользовательского ядра c **kernel.org**. Данный метод компиляции ядра является традиционным методом, общим для всех дистрибутивов; однако, он отличается от установки ядра при помощи makepkg и pacman.
 
-Вы также можете использовать ABS для сборки и установки своего ядра; смотрите: [Kernel Compilation](https://wiki.archlinux.org/index.php/Kernel_Compilation). Использование существующего PKGBUILD [из архива](https://www.archlinux.org/packages/?name=linux) позволит автоматизировать большинство процессов и создаст готовый установочный пакет. Хотя некоторые пользователи предпочитают традиционный метод сборки.
+Вы также можете использовать ABS для сборки и установки своего ядра; смотрите: [Kernel Compilation](/index.php/Kernel_Compilation "Kernel Compilation"). Использование существующего PKGBUILD [из архива](https://www.archlinux.org/packages/?name=linux) позволит автоматизировать большинство процессов и создаст готовый установочный пакет. Хотя некоторые пользователи предпочитают традиционный метод сборки.
 
-Начинающие пользователи, которые не в полной мере знакомы с компиляцией ядра, должны взглянуть на [Compilation without ABS for New Users](https://wiki.archlinux.org/index.php/Kernel_Compilation_without_ABS_for_New_Users).
+Начинающие пользователи, которые не в полной мере знакомы с компиляцией ядра, должны взглянуть на [Compilation without ABS for New Users](/index.php/Kernel_Compilation_without_ABS_for_New_Users "Kernel Compilation without ABS for New Users").
 
 ## Contents
 
@@ -167,11 +167,11 @@ $ make -j[# число ядер + 1]
 
 #### 2\. Использование makepkg и pacman (рекомендуется)
 
-Смотрите [Kernel Compilation](https://wiki.archlinux.org/index.php/Kernel_Compilation).
+Смотрите [Kernel Compilation](/index.php/Kernel_Compilation "Kernel Compilation").
 
 ## Конфигурация загрузчика
 
-Добавьте строку для загрузки вашего нового ядра в [GRUB](https://wiki.archlinux.org/index.php/GRUB_(Русский)) или [LILO](https://wiki.archlinux.org/index.php/Lilo) как указано в примерах. Заметим, что если у вас установлен LILO, исходные тексты ядра содержат скрипт для автоматизации процесса:
+Добавьте строку для загрузки вашего нового ядра в [GRUB](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB (Русский)") или [LILO](/index.php/LILO "LILO") как указано в примерах. Заметим, что если у вас установлен LILO, исходные тексты ядра содержат скрипт для автоматизации процесса:
 
 ```
 $ arch/i386/boot/install.sh
@@ -182,4 +182,4 @@ $ arch/i386/boot/install.sh
 
 ## Использование драйвера NVIDIA в ядре
 
-Об использовании драйвера NVIDIA в ядре смотрите: [Installing the driver for a custom kernel](https://wiki.archlinux.org/index.php/NVIDIA). Также вы можете установить драйвер nvidia из AUR.
+Об использовании драйвера NVIDIA в ядре смотрите: [Installing the driver for a custom kernel](/index.php/NVIDIA "NVIDIA"). Также вы можете установить драйвер nvidia из AUR.

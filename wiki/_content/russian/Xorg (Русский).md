@@ -1,4 +1,4 @@
-**Xorg** - свободная открытая реализация оконной системы X11\. Xorg очень популярен среди пользователей Linux, что привело к тому, что большинство приложений с графическим интерфейсом используют X11, из-за этого Xorg доступен в большинстве дистрибутивов. Более подробную информацию смотрите в [статье о Xorg в Википедии](http://en.wikipedia.org/wiki/X.Org_Server) или [на wiki X.org](http://wiki.x.org/wiki/)
+**Xorg** - свободная открытая реализация оконной системы X11\. Xorg очень популярен среди пользователей Linux, что привело к тому, что большинство приложений с графическим интерфейсом используют X11, из-за этого Xorg доступен в большинстве дистрибутивов. Более подробную информацию смотрите в [статье о Xorg в Википедии](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") или [на wiki X.org](http://wiki.x.org/wiki/)
 
 ## Contents
 
@@ -120,7 +120,7 @@ Xorg should run smoothly without closed source drivers, which are typically need
 
 Более подробная информация доступна в статье [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)").
 
-**Обратите внимание:**
+**Примечание:**
 
 *   Если возникают проблемы, почитайте журнал в `/var/log/Xorg.0.log`. Строчки, начинающиеся с `(EE)` сообщают об ошибках, `(WW)` — предупреждения.
 *   Если файл `~/.xinitrc` *пустой*, нужно удалить или [отредактировать его](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"), чтобы запустить X правильно. Если этого не сделать, X покажет пустой экран без ошибок в `Xorg.0.log`. Удаление этого файла запустит среду по умолчанию.
@@ -137,7 +137,7 @@ Xorg можно настроить через `/etc/X11/xorg.conf`, `/etc/xorg.c
 
 *Основная статья: [Touchpad Synaptics](/index.php/Touchpad_Synaptics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Touchpad Synaptics (Русский)")*
 
-Если у вас ноутбук, [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") драйвер тачпада из пакета [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), доступного в [официальном репозитории](/index.php/Official_Repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official Repositories (Русский)").
+Если у вас ноутбук, [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") драйвер тачпада из пакета [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), доступного в [официальном репозитории](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
 После установки вы можете обнаружить файл `10-synaptics.conf` в `/etc/X11/xorg.conf.d`. Можете закомментировать или удалить строчки `InputClass`, связанные с тачпадом, в файле `10-evdev.conf`.
 
@@ -202,7 +202,7 @@ Xorg может определить клавиатуру неправильно
 
 #### Переключение раскладок средствами X.org
 
-**Обратите внимание:** Установите [xorg-xkbevd](https://www.archlinux.org/packages/?name=xorg-xkbevd) и добавьте `xkbevd` в секцию DAEMONS файла `/etc/rc.conf`.
+**Примечание:** Установите [xorg-xkbevd](https://www.archlinux.org/packages/?name=xorg-xkbevd) и добавьте `xkbevd` в секцию DAEMONS файла `/etc/rc.conf`.
 
 Для настройки переключения раскладок нужно создать новый файл в `/etc/X11/xorg.conf.d/`, например, `20-keyboard-layout.conf` со следующим содержанием:
 
@@ -308,7 +308,7 @@ Xorg должен работать гладко и без проприетарн
 
 #### Начало работы
 
-**Обратите внимание:** Эти настройки необязательны, и не следует что-либо менять, если вы не знаете, что делаете.
+**Примечание:** Эти настройки необязательны, и не следует что-либо менять, если вы не знаете, что делаете.
 Но нужно выполнять настройку при использовании двух мониторов и драйвера nouveau. См. [Nouveau#Configuration](/index.php/Nouveau#Configuration "Nouveau").
 
 Создайте новый файл конфигурации, например `/etc/X11/xorg.conf.d/10-monitor.conf`. Вставьте в него следующий код:
@@ -404,7 +404,7 @@ fi
 
 Для того чтобы выбрать правильный размер шрифтов, размер дисплея должен быть установлен для предпочитаемого DPI.
 
-Сначала можно попробовать - настроить Xorg на автоопределение DPI и размеров экрана с помощью [DDC](http://en.wikipedia.org/wiki/Display_Data_Channel).
+Сначала можно попробовать - настроить Xorg на автоопределение DPI и размеров экрана с помощью [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel").
 В `/etc/X11/xorg.conf` :
 
 ```
@@ -595,11 +595,11 @@ man Xserver
 
 ### Самые распространённые пакеты
 
-**Обратите внимание:** Мета-пакет 'xorg' включает в себя самые распространённые нужные пакеты - когда вы делаете **pacman -Syu** для обновления с Xorg 6.8, он должен обновиться до этого пакета
+**Примечание:** Мета-пакет 'xorg' включает в себя самые распространённые нужные пакеты - когда вы делаете **pacman -Syu** для обновления с Xorg 6.8, он должен обновиться до этого пакета
 
 Удостоверьтесь, что вы установили драйвера для мыши, клавиатуры и видеокарты. Для устройств ввода пакеты **xf86-input-keyboard** и **xf86-input-mouse** должны быть установлены. Дргие пакеты вида **xf86-input-*** доступны для других устройств ввода.
 
-Что касается видеокарты, найдите, какой драйвер требуется и установите соответствующий пакет вида **xf86-video-***. Пользователи ATI и Nvidia могут установить проприетарные драйвера для своих видеокарт ( [NVIDIA](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)"), [ATI](/index.php/ATI "ATI")).
+Что касается видеокарты, найдите, какой драйвер требуется и установите соответствующий пакет вида **xf86-video-***. Пользователи ATI и Nvidia могут установить проприетарные драйвера для своих видеокарт ([NVIDIA](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)"), [ATI](/index.php/ATI "ATI")).
 
 Для установки всех драйверов сразу доступны пакеты **xorg-input-drivers** и **xorg-video-drivers**.
 
@@ -713,7 +713,7 @@ Option         "Protocol" "ExplorerPS/2"
 
 ### Дополнительные кнопки на мыши перестали работать
 
-Пользователи USB мышей должны прочитать [Get_All_Mouse_Buttons_Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working").
+Пользователи USB мышей должны прочитать [Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working").
 
 Пользователи Intellimouse (ExplorerPS/2) могут столкнуться с неработающим скроллом и боковыми кнопками. Раньше была запись в xorg.conf:
 
@@ -979,5 +979,5 @@ Option "OldDmaInit" "On"
 
 Внешние ссылки:
 
-*   [X.org Wikipedia Article](http://en.wikipedia.org/wiki/X.Org_Server)
+*   [X.org Wikipedia Article](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server")
 *   [X.org](http://wiki.x.org/wiki/)

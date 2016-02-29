@@ -1,6 +1,6 @@
 This wiki page documents the configuration and troubleshooting specific to the Alienware13 laptop.
 
-See the [Begginer's Guide](https://wiki.archlinux.org/index.php/Beginners%27_guide) for installation instructions.
+See the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for installation instructions.
 
 ## Contents
 
@@ -12,7 +12,7 @@ See the [Begginer's Guide](https://wiki.archlinux.org/index.php/Beginners%27_gui
 
 ## Getting Linux to boot
 
-First of all we must create a [bootable usb](https://wiki.archlinux.org/index.php/USB_flash_installation_media), after that we must reboot the computer and press F12 button while the bios is loading to access to the boot menu, from there we select the USB and boot from there.
+First of all we must create a [bootable usb](/index.php/USB_flash_installation_media "USB flash installation media"), after that we must reboot the computer and press F12 button while the bios is loading to access to the boot menu, from there we select the USB and boot from there.
 
 The first issue that we can find is that the distribution not boots and gets stuck into a nouveau loop or a black screen; if this happens we must change the kernel parameters to get ArchLinux to boot; in my case I erase all the default parameters and put only "nomodeset" with only this parameter I was able to get ArchLinux to boot.
 
@@ -29,7 +29,7 @@ After we install a graphic interface we can appreciate that the touchpad of the 
 
 ```
 
-See more about [blacklisting](https://wiki.archlinux.org/index.php/Kernel_modules#Blacklisting).
+See more about [blacklisting](/index.php/Blacklisting "Blacklisting").
 
 ## Wifi
 
@@ -61,7 +61,7 @@ After a reboot we should be able to see wireless networks (It's compatible with 
 
 ## Switchable graphics
 
-To have switchable graphics working we must use the [bumblebee](https://wiki.archlinux.org/index.php/Bumblebee) utility that is able to turn on and off our dedicated graphics card ondemand and without having to restart the computer or reopening session.
+To have switchable graphics working we must use the [bumblebee](/index.php/Bumblebee "Bumblebee") utility that is able to turn on and off our dedicated graphics card ondemand and without having to restart the computer or reopening session.
 
 ```
  sudo pacman -S bumblebee mesa xf86-video-intel lib32-virtualgl lib32-nvidia-utils dkms bbswitch lib32-mesa-libgl nvidia primus mesa-demos

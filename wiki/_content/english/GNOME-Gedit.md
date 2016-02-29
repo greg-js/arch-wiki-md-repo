@@ -11,7 +11,7 @@
 
 ## Installing
 
-[Install](/index.php/Install "Install") [gedit](https://www.archlinux.org/packages/?name=gedit), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [gedit](https://www.archlinux.org/packages/?name=gedit) package.
 
 ## Configuration
 

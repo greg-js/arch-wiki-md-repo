@@ -1,4 +1,4 @@
-Linuxsampler is a software [audio sampler](http://en.wikipedia.org/wiki/Sampler_%28musical_instrument%29).It can be loaded with sound libraries in the gigasampler format (.gig). One benefit of LS is it can stream the samples directly from hard disk, allowing the usage of huge libraries (several GBs..).LS can be started as a standalone application or lv2 or dssi plugin. By now, "Linuxsampler" refers to a group of software interacting together :
+Linuxsampler is a software [audio sampler](https://en.wikipedia.org/wiki/Sampler_(musical_instrument) "wikipedia:Sampler (musical instrument)").It can be loaded with sound libraries in the gigasampler format (.gig). One benefit of LS is it can stream the samples directly from hard disk, allowing the usage of huge libraries (several GBs..).LS can be started as a standalone application or lv2 or dssi plugin. By now, "Linuxsampler" refers to a group of software interacting together :
 
 *   the sampler engine itself : linuxsampler
 *   a gig file editor : gigedit

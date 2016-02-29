@@ -107,4 +107,4 @@ $ ln -s /etc/xdg/qtchooser/4.conf ~/.config/qtchooser/default.conf
 
 ```
 
-See forum discussion [[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1374434#p1374434)]
+See forum discussion [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1374434#p1374434)

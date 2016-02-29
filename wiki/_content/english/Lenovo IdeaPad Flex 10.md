@@ -51,7 +51,7 @@ Before installing any other OS (other than the default Windows 8/8.1) it is requ
 
 ### Video
 
-Works natively with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). [SNA mode](https://wiki.archlinux.org/index.php/Intel_Graphics#SNA_issues), however, is unstable and can cause occasional screen freezes, using UXA mode is recommended instead.
+Works natively with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). [SNA mode](/index.php/Intel_graphics#SNA_issues "Intel graphics"), however, is unstable and can cause occasional screen freezes, using UXA mode is recommended instead.
 
 ### Touchpad
 
@@ -82,7 +82,7 @@ echo max_performance > /sys/class/scsi_host/host1/link_power_management_policy
 
 ```
 
-The easiest workaround is to use [TLP](https://wiki.archlinux.org/index.php/TLP) for power management governing with max_performance set for both SATA ALPM settings in `/etc/default/tlp`
+The easiest workaround is to use [TLP](/index.php/TLP "TLP") for power management governing with max_performance set for both SATA ALPM settings in `/etc/default/tlp`
 
 ```
 # SATA aggressive link power management (ALPM):

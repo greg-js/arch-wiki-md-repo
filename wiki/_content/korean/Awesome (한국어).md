@@ -506,7 +506,7 @@ Another option is moving /usr/bin/nautilus to a new location and replacing it wi
 
 Run 'gnome-session-properties' and remove programs that you won't be needing anymore (e.g Bluetooth Manager, Login Sounds, etc).
 
-If you'd like to get rid of GDM, make sure that your rc.conf DAEMONS list includes "dbus" (and "cupsd" if you have a printer). It's advisable to get a different login manager (like [SLiM](https://wiki.archlinux.org/index.php/SLiM)), but you can do things manually if you wish. That entails setting up your [.xinitrc properly](https://wiki.archlinux.org/index.php/Udev) and installing something like devmon ([AUR](https://aur.archlinux.org/packages.php?ID=45842)).
+If you'd like to get rid of GDM, make sure that your rc.conf DAEMONS list includes "dbus" (and "cupsd" if you have a printer). It's advisable to get a different login manager (like [SLiM](/index.php/SLiM "SLiM")), but you can do things manually if you wish. That entails setting up your [.xinitrc properly](/index.php/Udev "Udev") and installing something like devmon ([AUR](https://aur.archlinux.org/packages.php?ID=45842)).
 
 If you wan't to keep a few convenient systray applets and your GTK theme, append this to your rc.lua;
 

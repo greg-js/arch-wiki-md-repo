@@ -1,4 +1,4 @@
-**Attenzione:** Sysvinit è obsoleto su Arch Linux ed è stato tolto dai [repositorier ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). È necessario [migrare a systemd](#Migrare_a_Systemd).
+**Attenzione:** Sysvinit è obsoleto su Arch Linux ed è stato tolto dai [repositorier ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"). È necessario [migrare a systemd](#Migrare_a_Systemd).
 
 Nei sistemi basati su Sysvinit *init* è il primo processo che viene eseguito una volta che il kernel Linux è stato caricato. Il programma di init del kernel è `/sbin/init` ed è fornito dal pacchetto [sysvinit](https://aur.archlinux.org/packages/sysvinit/) o [systemd-sysvcompact](https://www.archlinux.org/packages/?name=systemd-sysvcompact) (di default sulle nuove installazioni, vedere [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)")). La parola *init* in questo articolo si riferirà a sysvinit.
 
@@ -46,7 +46,7 @@ Quando Arch usava `init`, la maggior parte del lavoro veniva delegato ai [princi
 
 ### Procedura di installazione
 
-1.  [Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [systemd](https://www.archlinux.org/packages/?name=systemd) dai [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+1.  [Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [systemd](https://www.archlinux.org/packages/?name=systemd) dai [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 2.  Aggiungere il seguente comando ai [parametri del kernel](/index.php/Kernel_line "Kernel line") nel bootloader: `init=/usr/lib/systemd/systemd`
 3.  Una volta fatto è possibile abilitare qualsiasi servizio si desideri per mezzo di `systemctl enable <service_name>` (pari a ciò che si trova nella sezione `DAEMONS`. Nuovi nomi possono essere trovati [qui](/index.php/Daemons_List "Daemons List"). ).
 4.  Riavviare il proprio sistema e verificare che *systemd* sia attivo utilizzando il seguente comando: `cat /proc/1/comm`. Questo dovrebbe rispondere con la stringa `systemd`.
@@ -57,7 +57,7 @@ Quando Arch usava `init`, la maggior parte del lavoro veniva delegato ai [princi
 ### Informazioni supplementari
 
 *   Se si utilizza `quiet` nei parametri del kernel, è possibile rimuoverlo durante i primi avvii di systemd per identificare eventuali problemi durante il boot.
-*   Aggiungere il vostro utente ai [gruppi](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") (`sys`, `disk`, `lp`, `network`, `video`, `audio`, `optical`, `storage`, `scanner`, `power`, etc.) **non** è necessario per la maggior parte dei casi di uso comune con systemd. I gruppi possono anche causare alcuni malfunzionamenti. Ad esempio, il gruppo `audio` si romperà al cambio rapido di utente e permette di bloccare le applicazioni software di mixaggio. Ogni login di PAM prevede una sessione logind , che per una sessione locale vi darà i permessi tramite le [POSIX ACLs](https://en.wikipedia.org/wiki/Access_control_list "wikipedia:Access control list") sui dispositivi audio/video, e consentirà alcune operazioni come il montaggio di memorizzazione rimovibile tramite [udisks](/index.php/Udisks "Udisks")
+*   Aggiungere il vostro utente ai [gruppi](/index.php/Users_and_groups_(Italiano) "Users and groups (Italiano)") (`sys`, `disk`, `lp`, `network`, `video`, `audio`, `optical`, `storage`, `scanner`, `power`, etc.) **non** è necessario per la maggior parte dei casi di uso comune con systemd. I gruppi possono anche causare alcuni malfunzionamenti. Ad esempio, il gruppo `audio` si romperà al cambio rapido di utente e permette di bloccare le applicazioni software di mixaggio. Ogni login di PAM prevede una sessione logind , che per una sessione locale vi darà i permessi tramite le [POSIX ACLs](https://en.wikipedia.org/wiki/Access_control_list "wikipedia:Access control list") sui dispositivi audio/video, e consentirà alcune operazioni come il montaggio di memorizzazione rimovibile tramite [udisks](/index.php/Udisks "Udisks")
 *   Si veda l'articolo [Configurazione della Rete](/index.php/Configurazione_della_Rete "Configurazione della Rete") per come impostare i target per la connessione di rete.
 
 ## Panoramica di init e inittab
@@ -213,14 +213,14 @@ Keyboard Request -- edit /etc/inittab to customize
 
 *   [Avviare X all'avvio del sistema](/index.php/Start_X_at_boot_(Italiano) "Start X at boot (Italiano)")
 *   [Login automatico in una console virtuale](/index.php/Automatic_login_to_virtual_console_(Italiano) "Automatic login to virtual console (Italiano)")
-*   [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)")
-*   [Disable Clearing of Boot Messages](/index.php/Disable_Clearing_of_Boot_Messages "Disable Clearing of Boot Messages")
+*   [Display Manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)")
+*   [Disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages")
 *   [il file ~/.xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)")
 *   [SLiM](/index.php/SLiM_(Italiano) "SLiM (Italiano)")
 
 ## Link Esterni
 
-*   [Wikipedia: Init](http://en.wikipedia.org/wiki/Init)
+*   [Wikipedia: Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init")
 *   [Conoscenze di base di Linux e turorial. Runlevel.](http://www.linux-tutorial.info/modules.php?name=MContent&pageid=65)
 *   [Linux.com. Introduzione ai runlevel ed inittab(inglese)](http://www.linux.com/articles/114107)
 *   [Linux.com. Una introduzione ai servizi, runlevel, ed agli script rc.d.](http://www.linux.com/news/enterprise/systems-management/8116-an-introduction-to-services-runlevels-and-rcd-scripts)

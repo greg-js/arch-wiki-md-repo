@@ -124,7 +124,7 @@ Available backends are:
 *   [MySQL](/index.php/MySQL "MySQL")
 *   [LDAP](/index.php/LDAP "LDAP")
 *   [PostgreSQL](http://www.postgresql.org/)
-*   [PAM](https://en.wikipedia.org/wiki/Linux_PAM)
+*   [PAM](https://en.wikipedia.org/wiki/Linux_PAM "wikipedia:Linux PAM")
 *   PureDB
 *   Or you can write [your own](http://download.pureftpd.org/pub/pure-ftpd/doc/README.Authentication-Modules)
 

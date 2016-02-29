@@ -81,9 +81,9 @@ pacman -S gamin
 
 ### Display Managers
 
-Если Вы используете менеджеры [SLiM](/index.php/SLiM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SLiM (Русский)"), [GDM](/index.php/Display_Manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display Manager (Русский)"), или [KDM](/index.php/KDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDM (Русский)"), в настройках сессии нужно выбрать LXDE.
+Если Вы используете менеджеры [SLiM](/index.php/SLiM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SLiM (Русский)"), [GDM](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)"), или [KDM](/index.php/KDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDM (Русский)"), в настройках сессии нужно выбрать LXDE.
 
-Инструкция по использованию LXDM [ниже на этой странице](https://wiki.archlinux.org/index.php/LXDE#LXDM).
+Инструкция по использованию LXDM [ниже на этой странице](/index.php/LXDE#LXDM "LXDE").
 
 Если не используете менеджер дисплея приветствия добавьте
 
@@ -137,7 +137,7 @@ $ ln -s /usr/share/applications/lxterminal.desktop ~/.config/autostart/
 
 ```
 
-**Обратите внимание:** Пoсле команды **не нужно** ставить символ `&`
+**Примечание:** Пoсле команды **не нужно** ставить символ `&`
 
 Существует также глобальный файл автозапуска `/etc/xdg/lxsession/LXDE/autostart`. Если эти файлы присутствуют одновременно, то оба будут выполнены.
 
@@ -371,7 +371,7 @@ window_manager=compiz ccp --indirect-rendering
 
 ### Редактирование меню приложений
 
-(нужно проверить перевод). Ссылка на [оригинал](/index.php/LXDE#Application_Menu_Editing "LXDE")
+(нужно проверить перевод). Ссылка на [оригинал](/index.php/LXDE#Application_menu_editing "LXDE")
 
 Меню приложений работает через передачу `.desktop` файлов, которые расположены в `/usr/share/applications`. Многие DE запускают программы, которые supersede эти настройки для кастомизации меню. Для LXDE еще только создают редактор меню приложений, но вы можете настроить его вручную, если нужно. Сторонние редакторы меню вы можете найти в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") - [lxmed](https://aur.archlinux.org/packages/lxmed/).
 

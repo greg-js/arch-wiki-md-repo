@@ -236,11 +236,11 @@ In kernel 3.9 firmware problem seems to be fixed and headphone detection is work
 
 ## Touchpad
 
-Works out of the box. See [Synaptics](https://wiki.archlinux.org/index.php/Synaptics)
+Works out of the box. See [Synaptics](/index.php/Synaptics "Synaptics")
 
 ## Video
 
-Since kernel 3.5, PRIME technology is officially supported by the Nouveau graphic drivers. This means that the Nvidia Optimus GPU used in this computer is supported. You need to install [bumblebee](https://wiki.archlinux.org/index.php/Bumblebee) to let vgaswitcheroo disable your graphics card.
+Since kernel 3.5, PRIME technology is officially supported by the Nouveau graphic drivers. This means that the Nvidia Optimus GPU used in this computer is supported. You need to install [bumblebee](/index.php/Bumblebee "Bumblebee") to let vgaswitcheroo disable your graphics card.
 
 In kernel 3.7 power managing methods were added, so battery life increased a lot.
 
@@ -248,7 +248,7 @@ Kernel 3.10 is coming with a lot of fixes in the Nouveau driver for our NVE0 (Ke
 
 ## AlienFX
 
-AlienFX on Alienware M14xR2 is only supported by [pyalienfx](https://aur.archlinux.org/packages/pyalienfx) that can be installed from AUR.
+AlienFX on Alienware M14xR2 is only supported by [pyalienfx](https://aur.archlinux.org/packages/pyalienfx/) that can be installed from AUR.
 
 You can visit [pyalienfx project webpage](https://code.google.com/p/pyalienfx/) for reporting issues.
 

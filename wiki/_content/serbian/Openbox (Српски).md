@@ -117,7 +117,7 @@ mv ~/.config/autostart ~/.config/autostart-bak
 
 ```
 
-**Note:** [pyxdg](https://www.archlinux.org/packages/extra/i686/pyxdg/) je neophodan za Openbox xdg-autostart
+**Note:** [pyxdg](https://www.archlinux.org/packages/?name=pyxdg) je neophodan za Openbox xdg-autostart
 
 ## Prozor menadžer za desktop okruženja
 
@@ -473,7 +473,7 @@ $ ln -s /usr/share/icons/[ime-teme-za-kursor] ~/.icons/default
 
 ```
 
-Za više informacija pročitajte Arč Wiki [X11_Cursors](/index.php/X11_Cursors "X11 Cursors")
+Za više informacija pročitajte Arč Wiki [X11 Cursors](/index.php/X11_Cursors "X11 Cursors")
 
 ### GTK teme
 

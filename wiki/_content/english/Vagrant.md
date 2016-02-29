@@ -37,11 +37,12 @@ vagrant plugin install vagrant-vbguest vagrant-share
 
 ### vagrant-libvirt
 
-This plugin adds [Libvirt](/index.php/Libvirt "Libvirt") support.
+This plugin adds [Libvirt](/index.php/Libvirt "Libvirt") support. Unfortunately, we have to use Vagrant's embedded version of Ruby to avoid RubyGem Native Extension version conflicts.
 
 As of vagrant 1.8.1, this invocation will install vagrant-libvirt successfully:
 
 ```
+ # in case it's already installled
  vagrant plugin uninstall vagrant-libvirt
 
  # vagrant's copy of curl prevents the proper installation of ruby-libvirt
@@ -52,28 +53,22 @@ As of vagrant 1.8.1, this invocation will install vagrant-libvirt successfully:
 
  CONFIGURE_ARGS="with-libvirt-include=/usr/include/libvirt with-libvirt-lib=/usr/lib" vagrant plugin install vagrant-libvirt
 
+ # [https://github.com/pradels/vagrant-libvirt/issues/541](https://github.com/pradels/vagrant-libvirt/issues/541)
+ export PATH=/opt/vagrant/embedded/bin:$PATH
+ export GEM_HOME=~/.vagrant.d/gems
+ export GEM_PATH=$GEM_HOME:/opt/vagrant/embedded/gems
+ gem uninstall ruby-libvirt
+ gem install ruby-libvirt
+
  # put vagrant's copy of curl back
  sudo mv /opt/vagrant/embedded/lib/libcurl.so{.backup,}
  sudo mv /opt/vagrant/embedded/lib/libcurl.so.4{.backup,}
  sudo mv /opt/vagrant/embedded/lib/libcurl.so.4.4.0{.backup,}
  sudo mv /opt/vagrant/embedded/lib/pkgconfig/libcurl.pc{.backup,}
 
- # [https://github.com/pradels/vagrant-libvirt/issues/541](https://github.com/pradels/vagrant-libvirt/issues/541)
- export PATH=/opt/vagrant/embedded/bin:$PATH
- export GEM_HOME=~/.vagrant.d/gems
- export GEM_PATH=$GEM_HOME:/opt/vagrant/embedded/gems
- gem uninstall ruby-libvirt
- sudo mv /opt/vagrant/embedded/lib/libcurl.so{,.backup}
- sudo mv /opt/vagrant/embedded/lib/libcurl.so.4{,.backup}
- sudo mv /opt/vagrant/embedded/lib/libcurl.so.4.4.0{,.backup}
- sudo mv /opt/vagrant/embedded/lib/pkgconfig/libcurl.pc{,.backup}
- gem install ruby-libvirt
- sudo mv /opt/vagrant/embedded/lib/libcurl.so{.backup,}
- sudo mv /opt/vagrant/embedded/lib/libcurl.so.4{.backup,}
- sudo mv /opt/vagrant/embedded/lib/libcurl.so.4.4.0{.backup,}
- sudo mv /opt/vagrant/embedded/lib/pkgconfig/libcurl.pc{.backup,}
-
 ```
+
+[Source](https://gist.github.com/robled/070e1922816bbe983623#file-reinstall-vagrant-libvirt-sh)
 
 Then start the virtual machine with
 

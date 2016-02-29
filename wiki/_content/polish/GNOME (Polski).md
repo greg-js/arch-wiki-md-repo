@@ -507,7 +507,7 @@ Domyślnie naciśnięcie przycisku włączenia komputera powoduje jego uśpienie
 
 #### Układ klawiatury w GDM
 
-GDM nie wie o Twoich ustawieniach klawiatury w GNOME 3\. Aby zmienić układ klawiatury uźywany przez GDM, ustaw go w konfiguracji Xorg. Odwołaj się do tej sekcji [Przewodnika Początkującego.](/index.php/Beginners%27_Guide_(Polski)#Nieameryka.C5.84ski_uk.C5.82ad_klawiatury "Beginners' Guide (Polski)")
+GDM nie wie o Twoich ustawieniach klawiatury w GNOME 3\. Aby zmienić układ klawiatury uźywany przez GDM, ustaw go w konfiguracji Xorg. Odwołaj się do tej sekcji [Przewodnika Początkującego.](/index.php/Beginners%27_guide_(Polski)#Nieameryka.C5.84ski_uk.C5.82ad_klawiatury "Beginners' guide (Polski)")
 
 ## Różne ustawienia
 
@@ -977,7 +977,7 @@ Note: Zamiast "Adwaita", możesz wybrać inny temat kursorów (np. Human). Może
 
 ### Tracker & Dokumenty nie pokazują lokalnych plików
 
-Żeby Tracker (i Dokumenty) mogły znaleźć Twoje pliki, muszą one być przechowywane w odpowiednich folderach. Jeśli Twoje dokumenty znajdują się w jednym z katalogów XDG (takich jak "Dokumenty" czy "Muzyka"), zainstaluj [xdg-user-dirs](https://www.archlinux.org/packages/extra/x86_64/xdg-user-dirs/) i uruchom:
+Żeby Tracker (i Dokumenty) mogły znaleźć Twoje pliki, muszą one być przechowywane w odpowiednich folderach. Jeśli Twoje dokumenty znajdują się w jednym z katalogów XDG (takich jak "Dokumenty" czy "Muzyka"), zainstaluj [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) i uruchom:
 
 ```
  # xdg-user-dirs-update

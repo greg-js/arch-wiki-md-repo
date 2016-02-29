@@ -1,4 +1,4 @@
-***[SNMP](http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol)** is a tool designed for the management and monitoring of network devices. The Net-SNMP package is one implementation of SNMP that is available for Arch Linux. This article discusses the configuration and testing of the snmpd daemon that ships with Arch's net-snmp package.*
+***[SNMP](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol "wikipedia:Simple Network Management Protocol")** is a tool designed for the management and monitoring of network devices. The Net-SNMP package is one implementation of SNMP that is available for Arch Linux. This article discusses the configuration and testing of the snmpd daemon that ships with Arch's net-snmp package.*
 
 ## Contents
 

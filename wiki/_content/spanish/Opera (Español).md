@@ -66,13 +66,13 @@
 
 ### ¿Porque no debería usar Opera?
 
-*   No es [Libre](http://www.gnu.org/philosophy/free-sw.html). Es [software propietario](http://en.wikipedia.org/wiki/Proprietary_software).
-*   Si usted es usuario de GNOME o de algun window manager basado en GTK+, requiere cargar bibliotecas adicionales, ya que Opera es una aplicación [Qt](http://en.wikipedia.org/wiki/Qt_(toolkit)). Sin embargo, a partir de la versión 10.50 esto cambia, puesto que se utilizaran las librerías del sistema X11 y dependiendo del tipo de librería gráfica, Opera intentará cargarla para su integración con el sistema del usuario (Gnome/GTK+ y KDE4/Qt4).
+*   No es [Libre](http://www.gnu.org/philosophy/free-sw.html). Es [software propietario](https://en.wikipedia.org/wiki/Proprietary_software "wikipedia:Proprietary software").
+*   Si usted es usuario de GNOME o de algun window manager basado en GTK+, requiere cargar bibliotecas adicionales, ya que Opera es una aplicación [Qt](https://en.wikipedia.org/wiki/Qt_(toolkit) "wikipedia:Qt (toolkit)"). Sin embargo, a partir de la versión 10.50 esto cambia, puesto que se utilizaran las librerías del sistema X11 y dependiendo del tipo de librería gráfica, Opera intentará cargarla para su integración con el sistema del usuario (Gnome/GTK+ y KDE4/Qt4).
 *   Algunas paginas web no se mostrarán de forma correcta porque esas paginas no siguen los estándares de la web (Opera se apega a los estándares).
 
 ## Instalación
 
-El paquete [opera](https://www.archlinux.org/packages/?name=opera) se puede descargar desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+El paquete [opera](https://www.archlinux.org/packages/?name=opera) se puede descargar desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ```
 $ pacman -S opera
@@ -81,11 +81,11 @@ $ pacman -S opera
 
 ## Plugins (conectores)
 
-Opera usa los plugins basados en Mozilla; vea [Browser Plugins (Español)](/index.php/Browser_Plugins_(Espa%C3%B1ol) "Browser Plugins (Español)") para más información. Los plugins que usa el navegador están especificados en: Menú Opera -> Configuración -> Opciones -> Avanzado -> Contenidos -> Opciones de conectores.
+Opera usa los plugins basados en Mozilla; vea [Browser plugins (Español)](/index.php/Browser_plugins_(Espa%C3%B1ol) "Browser plugins (Español)") para más información. Los plugins que usa el navegador están especificados en: Menú Opera -> Configuración -> Opciones -> Avanzado -> Contenidos -> Opciones de conectores.
 
 ### Flash Player
 
-Puede descargar el paquete [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Puede descargar el paquete [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 #### Mejorar el rendimiento de Flash
 
@@ -106,7 +106,7 @@ GDK_NATIVE_WINDOWS=1
 
 ### WebM
 
-Opera permite visualizar vídeos insertados en formato [WebM](http://www.webmproject.org), con HTML5\. Para que funcione, debe tener instalado [Gstreamer](/index.php/Gstreamer "Gstreamer") “**base**” y “**good**”.
+Opera permite visualizar vídeos insertados en formato [WebM](http://www.webmproject.org), con HTML5\. Para que funcione, debe tener instalado [GStreamer](/index.php/GStreamer "GStreamer") “**base**” y “**good**”.
 
 ```
 $ pacman -S gstreamer0.10-base gstreamer0.10-plugins-base gstreamer0.10-good gstreamer0.10-plugins-good

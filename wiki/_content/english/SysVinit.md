@@ -285,7 +285,7 @@ esac
 
 ## See also
 
-*   [Wikipedia: Init](http://en.wikipedia.org/wiki/Init)
+*   [Wikipedia: Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init")
 *   [Linux Knowledge Base and Tutorial. Run Levels.](http://www.linux-tutorial.info/modules.php?name=MContent&pageid=65)
 *   [Linux.com. Introduction to runlevels and inittab](http://www.linux.com/articles/114107)
 *   [Linux.com. An introduction to services, runlevels, and rc.d scripts.](http://www.linux.com/news/enterprise/systems-management/8116-an-introduction-to-services-runlevels-and-rcd-scripts)

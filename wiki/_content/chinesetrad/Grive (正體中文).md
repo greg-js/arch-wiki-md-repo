@@ -1,4 +1,4 @@
-Grive 是一個開源的 [Google雲端硬碟](http://en.wikipedia.org/wiki/Google_Drive) 客戶端軟體。
+Grive 是一個開源的 [Google雲端硬碟](https://en.wikipedia.org/wiki/Google_Drive "wikipedia:Google Drive") 客戶端軟體。
 
 ## Contents
 

@@ -903,7 +903,7 @@ drwxr-xr-x 2 root root 280 Jul 11 11:01 adapter5
 
 ### VDR installation
 
-First install VDR as described here: [https://wiki.archlinux.org/index.php/VDR#Installation](https://wiki.archlinux.org/index.php/VDR#Installation)
+First install VDR as described here: [VDR#Installation](/index.php/VDR#Installation "VDR")
 
 ### install vdr-plugin-sc-hg from aur
 
@@ -1103,7 +1103,7 @@ The first time you try to watch an encrypted channel, it may take up to 15 minut
 
 ## Mythtv Integration
 
-First install Mythtv als described here: [https://wiki.archlinux.org/index.php/MythTV_HOWTO](https://wiki.archlinux.org/index.php/MythTV_HOWTO)
+First install Mythtv als described here: [MythTV HOWTO](/index.php/MythTV_HOWTO "MythTV HOWTO")
 
 ### Mythtv-setup
 

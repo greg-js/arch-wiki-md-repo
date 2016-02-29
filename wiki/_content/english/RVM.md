@@ -37,7 +37,7 @@ There exists a similar application that you may also want to consider: [rbenv](/
 
 ## Installing RVM
 
-The install process is very easy, and is the very same for any distro, including Arch Linux. You have two choices, one system-wide, another as a user. The first is for production servers, or if your are alone on your machine. You'll need root privileges. The second is the recommended for multiple users on the same machine (like a development test box). If you do not know which to choose, start with a single user installation.
+The install process is very easy, and is the very same for any distro, including Arch Linux. You have two choices, one system-wide, another as a user. The first is for production servers, or if you are alone on your machine, you'll need root privileges. The second is recommended for multiple users on the same machine (like a development test box). If you do not know which to choose then start with a single user installation.
 
 The upstream instructions for installing RVM should just work. The install script is aware enough to tell you what packages you need to install on Arch Linux to make different rubies work. This usually involves gcc and some other stuff needed to compile ruby.
 
@@ -121,7 +121,7 @@ However, closing out your current shell or terminal and opening a new one is the
 
 **Note:** Remember to change the line [ [ -s $HOME/.rvm/scripts/rvm ] ] && source $HOME/.rvm/scripts/rvm to the system-wide location changing $HOME to /usr/local/
 
-RVM will be automatically configured for every user on the system (in opposite to the single-user installation); this is accomplished by loading /etc/profile.d/rvm.sh on login. Archlinux defaults to parsing /etc/profile which contains the logic to load all files residing in the /etc/profile.d/ directory.
+RVM will be automatically configured for every user on the system (in opposite to the single-user installation); this is accomplished by loading /etc/profile.d/rvm.sh on login. Arch Linux defaults to parsing /etc/profile which contains the logic to load all files residing in the /etc/profile.d/ directory.
 
 Before installing gems with multi-user rvm, make sure that /etc/gemrc does not have the line "gem: --user-install". If it does you need to comment it out otherwise the gems will install to the wrong place.
 
@@ -287,7 +287,7 @@ $ rvm default
 
 #### System ruby
 
-If you wish the ruby interpreter that is outside RVM (i.e. the one installed in /usr by the standard Archlinux package), you can switch to it using:
+If you wish the ruby interpreter that is outside RVM (i.e. the one installed in /usr by the standard Arch Linux package), you can switch to it using:
 
 ```
 $ rvm system
@@ -353,7 +353,7 @@ $ rvm use <ruby_version>@<gemset_name> --default
 
 #### Using
 
-Tip: remove gems that reside in system priore RVM installation with:
+Tip: remove gems that reside in system prior to the RVM installation with:
 
 ```
 $ gem  list --local | awk '{print "gem uninstall " $1}' | bash
@@ -507,7 +507,7 @@ This is just a simple introduction to switching ruby versions with RVM and manag
 
 ## Troubleshooting
 
-You will need to take care with rvm installations, since ArchLinux is very well updated, and some earlier ruby's patchlevels do not like it. RVM many times do not choose the latest patchlevel version to install, and you'll need to check manually on the [ruby website](http://www.ruby-lang.org/en/news/), and force RVM to install it.
+Unfortunately, some ruby patchlevels just do not play nicely with Arch Linux, and many times RVM does not choose the latest patchlevel version to install. So, you'll need to manually check on the [ruby website](http://www.ruby-lang.org/en/news/), and force RVM to install it.
 
 #### "data definition has no type or storage class"
 

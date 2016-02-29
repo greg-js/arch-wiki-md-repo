@@ -68,24 +68,24 @@ To disable Secure Boot, set the [supervisor password](https://acer.custhelp.com/
 
 ## Video
 
-Install the xf86-video-intel package as shown [here](https://wiki.archlinux.org/index.php/Intel_graphics#Installation)
+Install the xf86-video-intel package as shown [here](/index.php/Intel_graphics#Installation "Intel graphics")
 
 ## Solid State Drive
 
-[Enable TRIM by mount flag](https://wiki.archlinux.org/index.php/Solid_State_Drives#Enable_TRIM_by_mount_flag)
+[Enable TRIM by mount flag](/index.php/Solid_State_Drives#Enable_continuous_TRIM_by_mount_flag "Solid State Drives")
 
-[Apply trim via periodic fstrim with systemd](https://wiki.archlinux.org/index.php/Solid_State_Drives#Apply_TRIM_via_periodic_fstrim)
+[Apply trim via periodic fstrim with systemd](/index.php/Solid_State_Drives#Apply_TRIM_via_periodic_fstrim "Solid State Drives")
 
-[Switch from default CFQ scheduler to NOOP, for the whole system](https://wiki.archlinux.org/index.php/Solid_State_Drives#Kernel_parameter_.28for_a_single_device.29)
+[Switch from default CFQ scheduler to NOOP, for the whole system](/index.php/Solid_State_Drives#Kernel_parameter_.28for_a_single_device.29 "Solid State Drives")
 
-[Reduce Swappiness to 1](https://wiki.archlinux.org/index.php/Swap#Swappiness)
+[Reduce Swappiness to 1](/index.php/Swap#Swappiness "Swap")
 
 ## Touchpad
 
-Configure the touchpad as a ClickPad by editing the touchpad section in `/etc/X11/xorg.conf.d/50-synaptics.conf` as shown [here](https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Buttonless_touchpads_.28aka_ClickPads.29)
+Configure the touchpad as a ClickPad by editing the touchpad section in `/etc/X11/xorg.conf.d/50-synaptics.conf` as shown [here](/index.php/Touchpad_Synaptics#Buttonless_touchpads_.28aka_ClickPads.29 "Touchpad Synaptics")
 
 ## Troubleshooting
 
 ### Video
 
-I experienced a [loss of h-sync when swiching TTYs](https://wiki.archlinux.org/index.php/Intel_graphics#Loss_of_horizontal_sync_when_switching_TTYs) and solved it as suggested by the wiki, by adding `i915.enable_ips=0` as a kernel parameter
+I experienced a [loss of h-sync when swiching TTYs](/index.php/Intel_graphics#Loss_of_horizontal_sync_when_switching_TTYs "Intel graphics") and solved it as suggested by the wiki, by adding `i915.enable_ips=0` as a kernel parameter

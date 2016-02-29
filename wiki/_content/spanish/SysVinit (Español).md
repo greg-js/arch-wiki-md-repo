@@ -1,4 +1,4 @@
-**Advertencia:** SysVinit está en desuso en Arch Linux [[1]](https://www.archlinux.org/news/end-of-initscripts-support/) y se ha retirado de los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Es necesario actualizar a [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)").
+**Advertencia:** SysVinit está en desuso en Arch Linux [[1]](https://www.archlinux.org/news/end-of-initscripts-support/) y se ha retirado de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Es necesario actualizar a [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)").
 
 En los sistemas basados en SysVinit, **init** es el primer proceso que se ejecuta una vez que se carga el Kernel de Linux. Por defecto, el programa init usado por el kernel es `/sbin/init` proveido por [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) (de forma predeterminada en las instalaciones nuevas, véase [systemd](/index.php/Systemd "Systemd")) o [sysvinit](https://aur.archlinux.org/packages/sysvinit/). La palabra **init** siempre se refiere a sysvinit en este artículo.
 
@@ -35,7 +35,7 @@ Aunque un sistema Arch basado en SysVinit no utiliza init, la mayor parte del tr
 **Nota:**
 
 *   [systemd](https://www.archlinux.org/packages/?name=systemd) y [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) son utilizados de forma predeterminada en los nuevos soportes de instalación desde el [2012-10-13](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/). Esta sección está dedicada a las instalaciones de Arch Linux que todavía dependen de sysvinit e initscripts.
-*   Si se está utilizando Arch Linux en un [VPS](https://en.wikipedia.org/wiki/es:Servidor_virtual_privado "wikipedia:es:Servidor virtual privado"), véase [la página apropiada](https://wiki.archlinux.org/index.php/Virtual_Private_Server#Moving_your_VPS_from_initscripts_to_systemd).
+*   Si se está utilizando Arch Linux en un [VPS](https://en.wikipedia.org/wiki/es:Servidor_virtual_privado "wikipedia:es:Servidor virtual privado"), véase [la página apropiada](/index.php/Virtual_Private_Server#Moving_your_VPS_from_initscripts_to_systemd "Virtual Private Server").
 
 ### Consideraciones previas antes de pasarse a systemd
 
@@ -57,9 +57,9 @@ Aunque un sistema Arch basado en SysVinit no utiliza init, la mayor parte del tr
 
 *   Se si utiliza `quiet` en los parámetros del kernel, es posible removerlo durante el primer incio de systemd para identificar eventuales problemas durante el arranque.
 
-*   No es necesario añadir su usuario a los [grupos](/index.php/Users_and_Groups_(Espa%C3%B1ol) "Users and Groups (Español)") (`sys`, `disk`, `lp`, `network`, `video`, `audio`, `optical`, `storage`, `scanner`, `power`, etc.) para la mayoría de los casos con systemd. Los grupos pueden, incluso, causar alguna disfuncionalidad. Por ejemplo, el grupo de audio impedirá el cambio rápido de usuarios y permitirá que las aplicaciones bloqueen el software de mezcla. Cada inicio de sesión PAM proporciona una sesión logind, que, durante una sesión local, le dará permisos a través de [POSIX ACLs](https://en.wikipedia.org/wiki/es:Lista_de_control_de_acceso "wikipedia:es:Lista de control de acceso") para dispositivos de audio/vídeo, y permitirá ciertas operaciones, como el montaje de discos extraíbles, a través de [udisks](/index.php/Udev_(Espa%C3%B1ol)#Udisks "Udev (Español)").
+*   No es necesario añadir su usuario a los [grupos](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") (`sys`, `disk`, `lp`, `network`, `video`, `audio`, `optical`, `storage`, `scanner`, `power`, etc.) para la mayoría de los casos con systemd. Los grupos pueden, incluso, causar alguna disfuncionalidad. Por ejemplo, el grupo de audio impedirá el cambio rápido de usuarios y permitirá que las aplicaciones bloqueen el software de mezcla. Cada inicio de sesión PAM proporciona una sesión logind, que, durante una sesión local, le dará permisos a través de [POSIX ACLs](https://en.wikipedia.org/wiki/es:Lista_de_control_de_acceso "wikipedia:es:Lista de control de acceso") para dispositivos de audio/vídeo, y permitirá ciertas operaciones, como el montaje de discos extraíbles, a través de [udisks](/index.php/Udev_(Espa%C3%B1ol)#Udisks "Udev (Español)").
 
-*   Consulte el artículo sobre [Network Configuration](/index.php/Network_Configuration_(Espa%C3%B1ol) "Network Configuration (Español)") para saber cómo configurar los targets de las conexiones de red.
+*   Consulte el artículo sobre [Network Configuration](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)") para saber cómo configurar los targets de las conexiones de red.
 
 ## Descripción de init e inittab
 
@@ -218,14 +218,14 @@ Keyboard Request -- edit /etc/inittab to customize
 
 *   [Automatic login to virtual console (Español)](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)")
 *   [Disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages")
-*   [Start X at Login (Español)](/index.php/Start_X_at_Login_(Espa%C3%B1ol) "Start X at Login (Español)")
+*   [Start X at login (Español)](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)")
 *   [xinitrc (Español)](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)")
-*   [Display Manager (Español)](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)")
+*   [Display manager (Español)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)")
 *   [SLiM](/index.php/SLiM "SLiM")
 
 ## Enlaces externos
 
-*   [Wikipedia: Init](http://en.wikipedia.org/wiki/Init)
+*   [Wikipedia: Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init")
 *   [Linux Knowledge Base and Tutorial. Run Levels.](http://www.linux-tutorial.info/modules.php?name=MContent&pageid=65)
 *   [Linux.com. Introduction to runlevels and inittab](http://www.linux.com/articles/114107)
 *   [Linux.com. An introduction to services, runlevels, and rc.d scripts.](http://www.linux.com/news/enterprise/systems-management/8116-an-introduction-to-services-runlevels-and-rcd-scripts)

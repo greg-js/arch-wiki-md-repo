@@ -26,7 +26,7 @@ This article will explain one method for creating a dual boot setup while leavin
 
 The situation of a fully encrypted system is a difficult one because even the MBR is encrypted and SafeBoot uses its encrypted bootloader to load the real partition table and load Windows. Thus, if one attempts to simply partition the disk with [c]fdisk, writing the partition table will render one's system unbootable. Likewise, even if there *is* a free partition, a) one isn't able to update the partition table with the correct type (which is necessary), b) one can't install the bootloader (e.g. grub) to the MBR, and c) even if one installs the bootloader to the partition instead of the MBR, there is no way to make the system aware that such a bootloader exists via the partition table. It is quite a difficult situation to work with.
 
-Some are content with using live distributions or running Linux from a flash drive; the primary author of this article found such methods frustrating and limiting. There is also quite a lot of discussion about how to get around this situation, [1] [2] [3] and thus an article seemed relevant after a firsthand experience and success.
+Some are content with using live distributions or running Linux from a flash drive; the primary author of this article found such methods frustrating and limiting. There is also quite a lot of discussion about how to get around this situation, [[1]](http://ubuntuforums.org/showthread.php?t=1039401) [[2]](http://blog.nixpanic.net/2008/06/starting-safeboot-with-grub.html) [[3]](http://mbrfde.blogspot.com/2008/11/dual-boot-ubuntu-with-safeboot-fde_19.html) and thus an article seemed relevant after a firsthand experience and success.
 
 ## Alternatives Considered
 
@@ -58,18 +58,18 @@ In brief, the successful setup used by this author is as follows:
 
 If the issued computer is encrypted with SafeBoot, it will likely contain one primary partition where Windows is installed. We need to shrink this partition in order to make space for Linux. To shrink this partition as much as possible, defragmenting is helpful. Windows 7 comes with a built in defragmenting utility, available through the control panel. Open this program and defrag on the primary drive (probably called C:\). Do this several times, if desired.
 
-It may be helpful to use an additional program as well. Wikipedia has a list of various options [HERE](http://en.wikipedia.org/wiki/List_of_defragmentation_software). The author of this article used [Auslogics Disk Defrag](http://www.auslogics.com/en/software/disk-defrag/), which worked well and had the ability to view what specific files were unmovable. Such files will hinder the minimum size possible to shrink the volume in the next step.
+It may be helpful to use an additional program as well. Wikipedia has a [list of various options](https://en.wikipedia.org/wiki/List_of_defragmentation_software "wikipedia:List of defragmentation software"). The author of this article used [Auslogics Disk Defrag](http://www.auslogics.com/en/software/disk-defrag/), which worked well and had the ability to view what specific files were unmovable. Such files will hinder the minimum size possible to shrink the volume in the next step.
 
-*   Screenshot of Auslogic Disk Defrag [HERE](http://i.imgur.com/XJnZx.png)
-*   Screenshot showing an unmovable file related to SafeBoot [HERE](http://i.imgur.com/fzfOe.png) (click any gray, unmovable square to see details)
+*   Screenshot of Auslogic Disk Defrag: [[4]](http://i.imgur.com/XJnZx.png)
+*   Screenshot showing an unmovable file related to SafeBoot: [[5]](http://i.imgur.com/fzfOe.png) (click any gray, unmovable square to see details)
 
-For some other options for maximizing the amount one can shrink a Windows partition, see the article [HERE](http://www.howtogeek.com/howto/windows-vista/working-around-windows-vistas-shrink-volume-inadequacy-problems/). While it is written for Windows Vista, it contains some applicable suggestions for Windows 7 as well. The author of this article disabled system restore temporarily and was able to shrink the partition another 6 GB.
+For some other options for maximizing the amount one can shrink a Windows partition, see [this article](http://www.howtogeek.com/howto/windows-vista/working-around-windows-vistas-shrink-volume-inadequacy-problems/). While it is written for Windows Vista, it contains some applicable suggestions for Windows 7 as well. The author of this article disabled system restore temporarily and was able to shrink the partition another 6 GB.
 
 **Note:** **After shrinking the partition in the next step, you should undo any system-critical adjustments you made during this step. In other words, re-enable system recovery, paging file, etc.**
 
 ### Shrink the Windows Partition
 
-Once defragmenting is complete, open the control panel and either search for "partition" or navigate to System and Security > Administrative Tools > Create and Format Hard Disk Partitions. This will open Windows 7's built-in partition editor as shown [HERE](http://i.imgur.com/33WpH.png). Right click on the Windows 7 partition and choose "Shrink Volume." This will open a dialog prompting you for the amount you want to shrink the volume. The dialog will also inform you of the maximum amount possible to shrink the volume. Shrink the volume by the desired size, or, if unmovable files prevent you from shrinking it as much as you'd like, just shrink it as much as possible. For a more picture-filled walkthrough, see [this article](http://www.howtogeek.com/howto/windows-vista/resize-a-partition-for-free-in-windows-vista/)
+Once defragmenting is complete, open the control panel and either search for "partition" or navigate to System and Security > Administrative Tools > Create and Format Hard Disk Partitions. This will open Windows 7's built-in partition editor as shown in [[6]](http://i.imgur.com/33WpH.png). Right click on the Windows 7 partition and choose "Shrink Volume." This will open a dialog prompting you for the amount you want to shrink the volume. The dialog will also inform you of the maximum amount possible to shrink the volume. Shrink the volume by the desired size, or, if unmovable files prevent you from shrinking it as much as you'd like, just shrink it as much as possible. For a more picture-filled walkthrough, see [this article](http://www.howtogeek.com/howto/windows-vista/resize-a-partition-for-free-in-windows-vista/)
 
 When this step completes, the Windows partition will be smaller and the rest of the partition will be denoted as "Unallocated space." Right click the unallocated section and choose "New Simple Volume." Windows will walk you through the steps necessary to create a new volume. Repeat these steps for the desired number of partitions. On possible setup would be like so:
 
@@ -84,7 +84,7 @@ For each of these drives, the format doesn't really matter because they'll all b
 
 ### Edit the Partition Table
 
-It is now necessary to edit the partition table so that it shows the Linux partitions as actual Linux partitions rather than FAT or NTFS (whatever was created in the last step). Since we can't use fdisk to write the partition table, we'll use a tool in Windows itself. This author used [MiniTool Partition Wizard Home Edition](http://partitionwizard.com/), a free partition tool recommended highly by [CNET](http://download.cnet.com/Partition-Wizard-Home-Edition/3000-2094_4-10962200.html). Open the program and right click on a partition that will contain a Linux filesystem. Choose "Change partition type ID" from the drop down menu. Choose the manual ID entry option and set the type to `0x83`, as shown [HERE](http://i.imgur.com/YN4yH.png). Repeat this with any other partitions that will be formatted with Linux filesystems. For a walkthrough on this step, see [this article](http://www.fanhow.com/knowhow:Change_Partition_Type_ID_in_Windows_7_46298757).
+It is now necessary to edit the partition table so that it shows the Linux partitions as actual Linux partitions rather than FAT or NTFS (whatever was created in the last step). Since we can't use fdisk to write the partition table, we'll use a tool in Windows itself. This author used [MiniTool Partition Wizard Home Edition](http://partitionwizard.com/), a free partition tool recommended highly by [CNET](http://download.cnet.com/Partition-Wizard-Home-Edition/3000-2094_4-10962200.html). Open the program and right click on a partition that will contain a Linux filesystem. Choose "Change partition type ID" from the drop down menu. Choose the manual ID entry option and set the type to `0x83`, as shown in [[7]](http://i.imgur.com/YN4yH.png). Repeat this with any other partitions that will be formatted with Linux filesystems. For a walkthrough on this step, see [this article](http://www.fanhow.com/knowhow:Change_Partition_Type_ID_in_Windows_7_46298757).
 
 Lastly, if a fourth partition was created in the previous step, click it, and then go to the Disk menu and choose "Convert dynamic disk to basic disk." This will change the extended partition to a simple one. For a walkthrough on this, see [this article](http://www.partitionwizard.com/help/convert-dynamic-disk-to-basic-disk.html).
 
@@ -92,9 +92,9 @@ When finished, click the "Apply" button in the upper left of the main window.
 
 ### Add an Option to Boot Linux
 
-Next, we're going to add a Linux option to the Windows boot options using a free program called [EasyBCD](http://neosmart.net/dl.php?id=1). Theoretically, this should be possible using Windows 7's built in program, bcdedit, as shown [HERE](http://www.windows7home.net/how-to-use-bcdedit-in-windows-7/). The author had difficulty attempting this due to privilege errors, and was successful with EasyBCD and thus never retried with bcdedit. Open EasyBCD and click "Add New Entry" on the left. Choose the Linux/BSD tab and set the bootloader type (Grub (legacy)) for Arch and partition. Make sure that if you are going to have a dedicated boot partition that you point EasyBCD to that partition, *not* the one that will contain the root filesystem. A screenshot of these settings may be found [HERE](http://i.imgur.com/YE79o.png).
+Next, we're going to add a Linux option to the Windows boot options using a free program called [EasyBCD](http://neosmart.net/dl.php?id=1). Theoretically, this should be possible using Windows 7's built in program, bcdedit, as shown in [[8]](http://www.windows7home.net/how-to-use-bcdedit-in-windows-7/). The author had difficulty attempting this due to privilege errors, and was successful with EasyBCD and thus never retried with bcdedit. Open EasyBCD and click "Add New Entry" on the left. Choose the Linux/BSD tab and set the bootloader type (Grub (legacy)) for Arch and partition. Make sure that if you are going to have a dedicated boot partition that you point EasyBCD to that partition, *not* the one that will contain the root filesystem. A screenshot of these settings may be found in [[9]](http://i.imgur.com/YE79o.png).
 
-Next view the entry by clicking "View Settings," and make sure everything looks appropriate. For a legacy grub setting pointing toward the second partition on the disk, the boot entry should look like [THIS](http://i.imgur.com/5zri9.png).
+Next view the entry by clicking "View Settings," and make sure everything looks appropriate. For a legacy grub setting pointing toward the second partition on the disk, the boot entry should look like [[10]](http://i.imgur.com/5zri9.png).
 
 ### Backup the SafeBoot MBR
 
@@ -252,7 +252,7 @@ NTFS does not use Linux permissions and attributes, so it may be helpful to pass
 
 See [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") for more information.
 
-**Note:** TrueCrypt includes its own ability to both map and mount an encrypted file or device in one step, however as of version 7.0a (current Arch version as of 4/19/2011), some have reported problems with NTFS formatted devices and mounting. This author has found that the two-step process outlined above (first, using `truecrypt --filesystem=none --slot=1 /dev/sda4`, and then the system's mount command, `mount /dev/mapper/truecrypt1 /mnt`) works reliably. A bug report exists [HERE](https://bugs.archlinux.org/task/23184) and contains a post by this author with more detail.
+**Note:** TrueCrypt includes its own ability to both map and mount an encrypted file or device in one step, however as of version 7.0a (current Arch version as of 4/19/2011), some have reported problems with NTFS formatted devices and mounting. This author has found that the two-step process outlined above (first, using `truecrypt --filesystem=none --slot=1 /dev/sda4`, and then the system's mount command, `mount /dev/mapper/truecrypt1 /mnt`) works reliably. The bug report [FS#23184](https://bugs.archlinux.org/task/23184) contains more details.
 
 Finally, reboot into Windows, install TrueCrypt, and attempt to mount the device. Once verified that both OSs can mount the volume, begin adding any files that one desires to share between OSs.
 
@@ -267,12 +267,6 @@ If all of the above goes smoothly, one should have a dual-booting, fully encrypt
 *   If trying to install grub and one sees an error about an unknown filesystem or partition type and the code `0x7`, you've either pointed grub to the wrong place (wrong partition number), or did not successfully change the partition type ID. 0x7 is the identifier for NTFS. Reboot back into Windows, open the Partition Wizard discussed above, and manually change the type to `0x83`. Then reboot and attempt to install grub again. After issuing `grub > root (hd0,1)`, grub should report back `Filesystem type is ext2fs, partition type 0x83`. This is what you want.
 
 ## Additional Resources
-
-[1] [http://ubuntuforums.org/showthread.php?t=1039401](http://ubuntuforums.org/showthread.php?t=1039401)
-
-[2] [http://blog.nixpanic.net/2008/06/starting-safeboot-with-grub.html](http://blog.nixpanic.net/2008/06/starting-safeboot-with-grub.html)
-
-[3] [http://mbrfde.blogspot.com/2008/11/dual-boot-ubuntu-with-safeboot-fde_19.html](http://mbrfde.blogspot.com/2008/11/dual-boot-ubuntu-with-safeboot-fde_19.html)
 
 *   Tools
     *   [MiniTool Partition Wizard Home Edition](http://www.partitionwizard.com/)

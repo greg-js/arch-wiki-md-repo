@@ -40,9 +40,9 @@ Il Personale Computer e' ormai diventato un meta-medium, un media che comprende 
 *   Sistema Operativo: [Linux](http://www.linux.it)
 *   Distribuzione: [ArchLinux](http://www.archlinux.it/)
 *   Desktop Environment: [Gnome](http://www.it.gnome.org/index.php/Home), [kde](http://www.kde.org/), [lxde](http://lxde.org/), [openbox](http://openbox.org/)... Una delle caratteristiche della distribuzione Arch e' quella di 'essere quello che vuoi'
-*   MediaCenter: [xbmc](/index.php/Media_Center_(Italiano)#Un_mediacenter_molto_figo "Media Center (Italiano)")
-*   Controllo Remoto: [lirc](/index.php/Media_Center_(Italiano)#Usare_qualsiasi_telecomando... "Media Center (Italiano)")
-*   Backup: [rsnapshot](/index.php/Media_Center_(Italiano)#Il_backup_perfetto "Media Center (Italiano)")
+*   MediaCenter: [xbmc](#Un_mediacenter_molto_figo)
+*   Controllo Remoto: [lirc](#Usare_qualsiasi_telecomando...)
+*   Backup: [rsnapshot](#Il_backup_perfetto)
 
 ### Hardware
 
@@ -263,7 +263,7 @@ export VISUAL="/usr/bin/nano"
 
 ```
 
-Possono essere utili ( anche perche' scritte in modo sintetico) [queste indicazioni su wikipedia](http://it.wikipedia.org/wiki/Crontab) per personalizzare crontab. Si tratta di un sistema molto semplice di registrazione. Se le necessita' crescono (ad es. la gestione dei conflitti tra le programmazioni o la presenza di piu' sintonizzatori) dobbiamo chiaramente rivolgerci a strumenti piu' adeguati come [MythTV](http://www.mythtv.org/) o [vdr](http://www.tvdr.de/).
+Possono essere utili ( anche perche' scritte in modo sintetico) [queste indicazioni su wikipedia](https://it.wikipedia.org/wiki/Crontab) per personalizzare crontab. Si tratta di un sistema molto semplice di registrazione. Se le necessita' crescono (ad es. la gestione dei conflitti tra le programmazioni o la presenza di piu' sintonizzatori) dobbiamo chiaramente rivolgerci a strumenti piu' adeguati come [MythTV](http://www.mythtv.org/) o [vdr](http://www.tvdr.de/).
 
 La TV e' il primo passo verso la convergenza dei media che oggi e' una realta' con i mediacenter. Possiamo quindi gestire TV, MUSICA, VIDEO e FOTO in modo semplice piacevole e integrato con i mille vantaggi che questa integrazione comporta. Il MediaCenter di cui parliamo in questo wiki e' xbmc. Un blog ricco completo di suggerimenti preziosi su questo tema e' il sito di telperion [http://telperion.wordpress.com/](http://telperion.wordpress.com/) che andrebbe visitato.
 
@@ -357,7 +357,7 @@ In alternativa a tvheadend possiamo usare la tv minimalista descritta sopra che 
 
 ## Usare qualsiasi telecomando...
 
-Oggi un TV senza telecomando non è una tv. Il telecomando è fondamentale in un MC, rende il MediaCenter veramente completo e degno di tale nome. Vediamo come si configura con Linux e come fare ad utilizzare un **qualsiasi telecomando universale per fare quasi tutto**. Gli esempi sono fatti con il ricevitore e telecomando inclusi nel sintonizzatore tv Hauppauge WinTV MiniStick HD ma i metodi esposti potranno essere utili per la configurazione di tutti telecomandi con lirc in generale. Questa sezione potrebbe essere considerata una integrazione al [wiki di lirc](https://wiki.archlinux.org/index.php/Lirc).
+Oggi un TV senza telecomando non è una tv. Il telecomando è fondamentale in un MC, rende il MediaCenter veramente completo e degno di tale nome. Vediamo come si configura con Linux e come fare ad utilizzare un **qualsiasi telecomando universale per fare quasi tutto**. Gli esempi sono fatti con il ricevitore e telecomando inclusi nel sintonizzatore tv Hauppauge WinTV MiniStick HD ma i metodi esposti potranno essere utili per la configurazione di tutti telecomandi con lirc in generale. Questa sezione potrebbe essere considerata una integrazione al [wiki di lirc](/index.php/LIRC "LIRC").
 
 ### Riconoscimento del ricevitore IR
 
@@ -378,7 +378,7 @@ $cat /proc/bus/input/devices
 
 ```
 
-Il comando non restituisce nessun output. Con [questa patch](https://patchwork.kernel.org/patch/116347/) che possiamo applicare al kernel con le istruzioni [di questo wiki](https://wiki.archlinux.org/index.php/Kernel_Compilation) e di [questo post](http://www.archlinux.it/forum/viewtopic.php?pid=85583#p85583). Applicando la patch vediamo il ricevitore IR:
+Il comando non restituisce nessun output. Con [questa patch](https://patchwork.kernel.org/patch/116347/) che possiamo applicare al kernel con le istruzioni [di questo wiki](/index.php/Kernel_Compilation "Kernel Compilation") e di [questo post](http://www.archlinux.it/forum/viewtopic.php?pid=85583#p85583). Applicando la patch vediamo il ricevitore IR:
 
 ```
 $cat /proc/bus/input/devices

@@ -114,7 +114,7 @@ sudo modprobe -r firewire_ohci
 
 ```
 
-To make the change permanent, remember to blacklist the firewire_ohci module (see [Blacklisting](https://wiki.archlinux.org/index.php/Blacklisting#Using_files_in_.2Fetc.2Fmodprobe.d.2F_2)).
+To make the change permanent, remember to blacklist the firewire_ohci module (see [Blacklisting](/index.php/Blacklisting#Using_files_in_.2Fetc.2Fmodprobe.d.2F_2 "Blacklisting")).
 
 Even with this fix, some corruption has occurred on certain SD cards when using the drive, along with seemingly related kernel panics. It would appear than driver support is lacking for this device.
 

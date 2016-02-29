@@ -97,7 +97,7 @@ To install [postgresql](https://www.archlinux.org/packages/?name=postgresql) sim
 Make sure your database datestyle is set to ISO (Postgresql default setting). You can set it using:
 
  `ALTER DATABASE "redmine_db" SET datestyle="ISO,MDY";` 
-**Note:** Some bugs in PostgreSQL 8.4.0 and 8.4.1 affect Redmine behavior ([[#4259](http://www.redmine.org/issues/4259)], [[#4314](http://www.redmine.org/issues/4314)]), they are fixed in PostgreSQL 8.4.2
+**Note:** Some bugs in PostgreSQL 8.4.0 and 8.4.1 affect Redmine behavior ([#4259](http://www.redmine.org/issues/4259), [#4314](http://www.redmine.org/issues/4314)), they are fixed in PostgreSQL 8.4.2
 
 #### Microsoft SQL Server
 

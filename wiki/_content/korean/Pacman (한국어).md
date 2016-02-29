@@ -13,7 +13,7 @@
 
 ## 개요
 
-**pacman** [꾸러미 관리자](http://en.wikipedia.org/wiki/Package_manager)(패키지 매니저)는 아치 리눅스만의 개성있는 주 기능 중 하나입니다. 이진 꾸러미(바이너리 패키지) 형식과 사용하기 쉬운 [빌드 시스템](/index.php/Arch_Build_System_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Arch Build System (한국어)")으로 이루어져 있습니다. *pacman*은 [아치 공식 저장소](/index.php/Official_repositories "Official repositories")나 사용자가 직접 만든 꾸러미 등을 쉽게 관리하도록 해줍니다.
+**pacman** [꾸러미 관리자](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager")(패키지 매니저)는 아치 리눅스만의 개성있는 주 기능 중 하나입니다. 이진 꾸러미(바이너리 패키지) 형식과 사용하기 쉬운 [빌드 시스템](/index.php/Arch_Build_System_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Arch Build System (한국어)")으로 이루어져 있습니다. *pacman*은 [아치 공식 저장소](/index.php/Official_repositories "Official repositories")나 사용자가 직접 만든 꾸러미 등을 쉽게 관리하도록 해줍니다.
 
 *pacman*은 꾸러미 목록과 마스터 서버를 동기화해 가장 최신의 시스템을 유지합니다. 게다가 이 서버 및 클라이언트 모델은 간단한 명령으로 사용자에게 꾸러미와 필요한 의존성 꾸러미까지 같이 내려받고 설치도 해줍니다!
 

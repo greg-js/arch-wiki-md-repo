@@ -51,7 +51,7 @@ $ echo center | aspell -a
 
 ```
 
-**Обратите внимание:** Плагин **switch spell**-входит в состав пакета [purple-plugin-pack](https://www.archlinux.org/packages/?name=purple-plugin-pack). Он позволяет переключатся между разными языками.
+**Примечание:** Плагин **switch spell**-входит в состав пакета [purple-plugin-pack](https://www.archlinux.org/packages/?name=purple-plugin-pack). Он позволяет переключатся между разными языками.
 
 ## Исправление звука
 

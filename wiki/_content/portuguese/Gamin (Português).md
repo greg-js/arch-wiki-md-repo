@@ -17,5 +17,5 @@ Se existir a linha `fam` no `DAEMON` em `/etc/[rc.conf](/index.php/Rc.conf "Rc.c
 
 ## Links externos
 
-*   [Gamin](http://pt.wikipedia.org/wiki/Gamin)
+*   [Gamin](https://pt.wikipedia.org/wiki/Gamin)
 *   [FAM, Gamin and inotify (em inglês)](http://www.noah.org/wiki/FAM,_Gamin,_inotify)

@@ -15,14 +15,14 @@
 ## Especificações
 
 | Modelo | HP Mini 210-1040br |
-| Processador | Intel Atom N450 (1.66 GHz, 512 KB L2 cache, 667 MHz FSB) [Intel Atom (Wikipedia)](https://en.wikipedia.org/wiki/List_of_Intel_Atom_microprocessors#.22Pineview.22_.2845_nm.29_3) |
+| Processador | Intel Atom N450 (1.66 GHz, 512 KB L2 cache, 667 MHz FSB) [Intel Atom (Wikipedia)](https://en.wikipedia.org/wiki/List_of_Intel_Atom_microprocessors#.22Pineview.22_.2845_nm.29_3 "wikipedia:List of Intel Atom microprocessors") |
 | Arquitetura | x86_64 |
 | Tela | LED HD 10.1" (1024x600) |
 | RAM | 2GB 667 |
 | HDD | 250GB 7200RPM HDD (Seagate SATA II) [Seagate](http://www.seagate.com/ww/v/index.jsp?name=st9250410as-momentus-7200.4-sata-250-gb-hd&vgnextoid=e9f188b2ea9dd110VgnVCM100000f5ee0a0aRCRD&locale=en-US) |
 | Bateria | 6 células, aproximadamente 6 horas de duração utilizando rede sem fio |
 | Drive Óptico | Nenhum |
-| Gráfico | Intel Graphics Media Accelerator HD (3150) (Integrado ao processador) [Intel GMA (Wikipedia)](https://en.wikipedia.org/wiki/Intel_GMA#Specifications) |
+| Gráfico | Intel Graphics Media Accelerator HD (3150) (Integrado ao processador) [Intel GMA (Wikipedia)](https://en.wikipedia.org/wiki/Intel_GMA#Specifications "wikipedia:Intel GMA") |
 | LAN | Realtek Semiconductor Co., Ltd. RTL8101E/RTL8102E |
 | Wireless/Bluetooth | Broadcom Corporation BCM4312 802.11b/g |
 | Webcam | 0.3 Megapixel |

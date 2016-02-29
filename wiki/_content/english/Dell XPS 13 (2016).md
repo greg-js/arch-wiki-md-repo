@@ -43,7 +43,7 @@ When the SATA-controller is set to "RAID On" in Bios, the hard disk (at least th
 
 ### Cannot find root device
 
-The location of the `nvme` module for ["NVM Express"](https://en.wikipedia.org/wiki/NVM_Express) SSD has changed between [linux](https://www.archlinux.org/packages/?name=linux) kernel version 4.3 and 4.4\. If you experience "cannot find root device" on boot, it may be due to the [`nvme` module not being present in `initramfs`](https://bugs.archlinux.org/task/47761). In this case, the following may resolve your issue.
+The location of the `nvme` module for ["NVM Express"](https://en.wikipedia.org/wiki/NVM_Express "wikipedia:NVM Express") SSD has changed between [linux](https://www.archlinux.org/packages/?name=linux) kernel version 4.3 and 4.4\. If you experience "cannot find root device" on boot, it may be due to the [`nvme` module not being present in `initramfs`](https://bugs.archlinux.org/task/47761). In this case, the following may resolve your issue.
 
 Edit your `/etc/mkinitcpio.conf` file:
 

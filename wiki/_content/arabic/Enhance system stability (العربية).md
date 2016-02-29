@@ -212,7 +212,7 @@ tar -xjvf pacman-database.tar.bz2
 
 ##### أتمتة Systemd
 
-يمكنك إعداد [systemd](https://wiki.archlinux.org/index.php/Systemd) لكي يقوم بأخذ نسخة احتياطية من قاعدة بيانات pacman في كل مرة يتم تثبيت أو تحديث حزمة جديدة، قم بحفظ وتشغيل السكربت التالي، انظر [هنا](/index.php/Pacman_tips#Backing_up_Local_database_with_Systemd "Pacman tips").
+يمكنك إعداد [systemd](/index.php/Systemd "Systemd") لكي يقوم بأخذ نسخة احتياطية من قاعدة بيانات pacman في كل مرة يتم تثبيت أو تحديث حزمة جديدة، قم بحفظ وتشغيل السكربت التالي، انظر [هنا](/index.php/Pacman_tips#Backing_up_Local_database_with_Systemd "Pacman tips").
 
 ### أفضل الممارسات العامة
 

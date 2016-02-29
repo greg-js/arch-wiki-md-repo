@@ -124,4 +124,4 @@ X-KDE-autostart-after=kdesktop</tt>
 
 [Xcompmgr](/index.php/Xcompmgr "Xcompmgr")
 
-Wikipedia: [[[http://en.wikipedia.org/wiki/Compositing_window_manager](http://en.wikipedia.org/wiki/Compositing_window_manager) | Gerenciador de Janelas Compositores(English)
+Wikipedia: [Gerenciador de Janelas Compositores(English)](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager")

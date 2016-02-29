@@ -19,9 +19,9 @@
 
 ## 安装
 
-从 [官方源](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") [安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") [rtorrent](https://www.archlinux.org/packages/?name=rtorrent) 包。
+从 [官方源](/index.php/%E5%AE%98%E6%96%B9%E6%BA%90 "官方源") [安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") [rtorrent](https://www.archlinux.org/packages/?name=rtorrent) 包。
 
-你也可以从 [AUR](/index.php/Arch_User_Repository "Arch User Repository") 中安装 [rtorrent-git](https://aur.archlinux.org/packages/rtorrent-git/) 或 [rtorrent-extended](https://aur.archlinux.org/packages/rtorrent-extended/)。
+你也可以从 [AUR](/index.php/AUR "AUR") 中安装 [rtorrent-git](https://aur.archlinux.org/packages/rtorrent-git/) 或 [rtorrent-extended](https://aur.archlinux.org/packages/rtorrent-extended/)。
 
 ## 配置
 
@@ -95,7 +95,7 @@ schedule = tied_directory,5,5,start_tied=
 
 ```
 
-下面的 `schedule` 选项将使 rTorrent 在磁盘空间不足时停止。 这对于[Seedbox](http://en.wikipedia.org/wiki/Seedbox)这种磁盘空间非常有限的设备来说是很有用的。按照你的喜好来改变下面的数值：
+下面的 `schedule` 选项将使 rTorrent 在磁盘空间不足时停止。 这对于[Seedbox](https://en.wikipedia.org/wiki/Seedbox "wikipedia:Seedbox")这种磁盘空间非常有限的设备来说是很有用的。按照你的喜好来改变下面的数值：
 
 ```
 # 当磁盘空间不足时停止下载
@@ -116,7 +116,7 @@ Additionally, make sure port forwarding is enabled for the proper port(s) (see: 
 
 ### 附加设置
 
-`encryption` 选项使能加密功能。 使用加密功能十分重要not only for yourself, but also for your peers in the torrent swarm. 人们也许需要对它们的网络提供商模糊其带宽使用。即使你不需要这些保护，开启加密也不会对你有所负作用。详细信息请见： [Bittorrent Protocol Encryption](http://en.wikipedia.org/wiki/BitTorrent_protocol_encryption)
+`encryption` 选项使能加密功能。 使用加密功能十分重要not only for yourself, but also for your peers in the torrent swarm. 人们也许需要对它们的网络提供商模糊其带宽使用。即使你不需要这些保护，开启加密也不会对你有所负作用。详细信息请见： [Bittorrent Protocol Encryption](https://en.wikipedia.org/wiki/BitTorrent_protocol_encryption "wikipedia:BitTorrent protocol encryption")
 
 ```
 # 加密选项，设为0（默认情况）或下面的任何一个：

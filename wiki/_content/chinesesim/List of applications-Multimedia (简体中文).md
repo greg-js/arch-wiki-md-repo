@@ -165,7 +165,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **[Simple Viewer GL](/index.php?title=Simple_Viewer_GL&action=edit&redlink=1 "Simple Viewer GL (page does not exist)")** — Simple image viewer using OpenGL, it has few dependencies.
 
-	[https://aur.archlinux.org/packages/simpleviewergl-git/](https://aur.archlinux.org/packages/simpleviewergl-git/) || [simpleviewergl-git](https://aur.archlinux.org/packages/simpleviewergl-git/)
+	[simpleviewergl-git](https://aur.archlinux.org/packages/simpleviewergl-git/) || [simpleviewergl-git](https://aur.archlinux.org/packages/simpleviewergl-git/)
 
 *   **SXIV** — 简单的 X 图像查看器; works well with tiling window managers, uses imlib2
 
@@ -191,7 +191,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 ##### 位图编辑器
 
-*   **[GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP")** — GIMP 是 [GNU](/index.php/GNU_Project "GNU Project") Image Manipulation Program（GNU图像处理程序）的缩写。成立于20世纪90年代中期的GIMP是一个与 Adobe Photoshop 相似的图像编辑套件。Arch Linux 软件仓库拥有数量众多的GIMP插件和辅助工具。可以使用如下命令来搜索它们：
+*   **[GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP")** — GIMP 是 [GNU](/index.php/GNU "GNU") Image Manipulation Program（GNU图像处理程序）的缩写。成立于20世纪90年代中期的GIMP是一个与 Adobe Photoshop 相似的图像编辑套件。Arch Linux 软件仓库拥有数量众多的GIMP插件和辅助工具。可以使用如下命令来搜索它们：
 
 ```
 pacman -Ss gimp

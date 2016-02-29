@@ -20,7 +20,7 @@
 
 ## 安裝
 
-從 [AUR](/index.php/AUR_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "AUR (正體中文)") 安裝 [sup-git](https://aur.archlinux.org/packages/sup-git)。 不過開發團隊建議您用以下方式安裝：
+從 [AUR](/index.php/AUR_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "AUR (正體中文)") 安裝 [sup-git](https://aur.archlinux.org/packages/sup-git/)。 不過開發團隊建議您用以下方式安裝：
 
 ```
 $ gem install sup

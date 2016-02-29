@@ -42,7 +42,7 @@ DAEMONS=(... **iptables** network ...)
 
 ## Metodo con daemon
 
-Puedes usar un daemon para que haga todo el trabajo por ti. En **Simple stateful firewall**[[1]](https://wiki.archlinux.org/index.php/Simple_stateful_firewall#Port_Knocking) puedes leer un metodo para eso.
+Puedes usar un daemon para que haga todo el trabajo por ti. En **Simple stateful firewall**[Simple stateful firewall#Port knocking](/index.php/Simple_stateful_firewall#Port_knocking "Simple stateful firewall") puedes leer un metodo para eso.
 
 ## Metodo con solo-iptables
 

@@ -22,7 +22,7 @@ This article is intended specifically for Macbook(4,2) (late September 2008) mod
 
 ## The Model
 
-To make sure that you have the right model, here is the list of system specifications for Macbook(4,2) [[1]](http://en.wikipedia.org/wiki/Macbook)
+To make sure that you have the right model, here is the list of system specifications for Macbook(4,2) [wikipedia:Macbook](https://en.wikipedia.org/wiki/Macbook "wikipedia:Macbook")
 
 *   **Release Date**: October 14, 2008
 *   **Model Numbers**: MB402*/B

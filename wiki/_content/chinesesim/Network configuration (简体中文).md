@@ -330,7 +330,7 @@ clientid
 
 ```
 
-否则，你可能得不到租凭，因为 DHCP 服务器可能无法正确读取你的 [DHCPv6-style](http://en.wikipedia.org/wiki/DHCPv6) Client ID。更多信息可参见[RFC 4361](http://tools.ietf.org/html/rfc4361)。
+否则，你可能得不到租凭，因为 DHCP 服务器可能无法正确读取你的 [DHCPv6-style](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") Client ID。更多信息可参见[RFC 4361](http://tools.ietf.org/html/rfc4361)。
 
 在 `/etc/dhcpcd.conf` 中使用 nooption 选项来阻止 dhcpcd 向 `/etc/resolv.conf` 添加域名服务器：
 

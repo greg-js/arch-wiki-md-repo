@@ -347,7 +347,7 @@ Adding only the order in `/etc/rc.local` cannot assure that mpd will play absolu
 
 #### Method 3
 
-The general idea is to ask mdp to pause music when the user logs out, so that mdp will stick to the "pause" state after a reboot. Sending such command can be achieved using [mpc](https://www.archlinux.org/packages/extra/x86_64/mpc/), the command line interface to MPD.
+The general idea is to ask mdp to pause music when the user logs out, so that mdp will stick to the "pause" state after a reboot. Sending such command can be achieved using [mpc](https://www.archlinux.org/packages/?name=mpc), the command line interface to MPD.
 
 GDM users can then add `/usr/bin/mpc pause` to `/etc/gdm/PostSession/Default` (be sure to add it before `exit 0`):
 
@@ -463,7 +463,7 @@ Ya hay algunos clientes diseñado para las comunicaciones entre lircd y MPD, sin
 
 Se recomienda el uso de MPC con irexec. MPC es un reproductor de línea de comandos que sólo le envía la orden a MPD y se cierra inmediatamente, lo cual es perfecto para irexec, el ejecutor de comandos incluidas en lirc. Lo que hace irexec es ejecutar un comando especificado una vez recibió una señal de algun control remoto.
 
-Si asi lo desea, lea primero el articulo [Lirc](/index.php/Lirc "Lirc").
+Si asi lo desea, lea primero el articulo [LIRC](/index.php/LIRC "LIRC").
 
 Edite el archivo de configuración, por defecto se encuentra en `~/.lircrc`.
 

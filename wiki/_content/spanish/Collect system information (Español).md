@@ -63,7 +63,7 @@ Para este tutorial se utilizarán las siguientes herramientas:
 
 *   Acceso a una consola
 *   Teclado
-*   [Cerebro](http://es.wikipedia.org/wiki/Cerebro)
+*   [Cerebro](https://es.wikipedia.org/wiki/Cerebro)
 
 ## Mi Distribución y Kernel
 
@@ -111,7 +111,7 @@ De aquí podemos obtener la siguiente información:
 *   La versión *major* o principal del Kernel es la <tt>2.6</tt>. Esto es indicativo de qué rama de desarrollo y tecnologías tienes disponibles este kernel.
 *   La versión *minor* es la <tt>.31</tt>.
 *   El kernel está compilado para la arquitectura y máquina *Intel 686* o mejor conocido como Intel Pentium Pro (6), lo que equivale a las familias de procesadores Core y M, y a todos los procesadores Intel posteriores a Pentium II y AMD Athlon y posteriores. En términos básicos esto significa que el kernel está optimizado para correr en hardware Intel "moderno".
-*   El kernel soporta la capacidad <tt>PAE</tt> o [Extensión de Dirección Física](http://es.wikipedia.org/wiki/Extensión_de_dirección_física) del procesador, que permite a procesadores de 32-bit obtener más de 4GiB de memoria RAM cuando esté disponible, además de habilitar el llamado "bit NX".
+*   El kernel soporta la capacidad <tt>PAE</tt> o [Extensión de Dirección Física](https://es.wikipedia.org/wiki/Extensión_de_dirección_física) del procesador, que permite a procesadores de 32-bit obtener más de 4GiB de memoria RAM cuando esté disponible, además de habilitar el llamado "bit NX".
 
 *   Más información: `man uname`.
 
@@ -213,7 +213,7 @@ Swap:   393584k total,        0k used,   393584k free,   540072k cached
 
 ### Tarjeta Madre
 
-El programa <tt>dmidecode</tt> lee la información de los chips de la tarjeta madre, de esta forma es posible determinar qué atributos soporta el hardware o cómo está construido. Toda esta información es proporcionada por el estándar [Desktop Management Interface](http://en.wikipedia.org/wiki/Desktop_Management_Interface) que soportan las placas madres desde 1997.
+El programa <tt>dmidecode</tt> lee la información de los chips de la tarjeta madre, de esta forma es posible determinar qué atributos soporta el hardware o cómo está construido. Toda esta información es proporcionada por el estándar [Desktop Management Interface](https://en.wikipedia.org/wiki/Desktop_Management_Interface "wikipedia:Desktop Management Interface") que soportan las placas madres desde 1997.
 
 #### Bios
 

@@ -10,7 +10,7 @@
 
 ### Configuración del servidor
 
-Para saber como instalar PHP, Apache y MySQL mira el artículo [LAMP](https://wiki.archlinux.org/index.php/LAMP_(Espa%C3%B1ol)).
+Para saber como instalar PHP, Apache y MySQL mira el artículo [LAMP](/index.php/LAMP_(Espa%C3%B1ol) "LAMP (Español)").
 
 #### Zend Core + Apache
 

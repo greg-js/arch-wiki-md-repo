@@ -7,15 +7,14 @@ Compton is a standalone composite manager, suitable for use with [window manager
     *   [2.1 Autostarting](#Autostarting)
     *   [2.2 Command only](#Command_only)
     *   [2.3 Using a configuration file](#Using_a_configuration_file)
-        *   [2.3.1 Disable conky shadowing](#Disable_conky_shadowing)
+        *   [2.3.1 Disable shadowing of some windows](#Disable_shadowing_of_some_windows)
 *   [3 Multihead](#Multihead)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 slock](#slock)
     *   [4.2 dwm & dmenu](#dwm_.26_dmenu)
-    *   [4.3 Dual shadow on some GTK3 applications](#Dual_shadow_on_some_GTK3_applications)
-    *   [4.4 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [4.5 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [4.6 High CPU use with nvidia drivers](#High_CPU_use_with_nvidia_drivers)
+    *   [4.3 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
+    *   [4.4 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [4.5 High CPU use with nvidia drivers](#High_CPU_use_with_nvidia_drivers)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -32,7 +31,7 @@ Compton may be manually enabled or disabled at any time during a session, or aut
 *   `-G`: Disable shadow effects for application windows and drag-and-drop objects
 *   `--config`: Use a specified configuration file
 
-Many more options are availble, including to set timing, displays to be managed, and the opacity of menus, window borders, and inactive application menus. See the [Compton Man Page](https://github.com/chjj/compton/blob/master/man/compton.1.asciidoc) for further information.
+Many more options are available, including to set timing, displays to be managed, and the opacity of menus, window borders, and inactive application menus. See the [Compton Man Page](https://github.com/chjj/compton/blob/master/man/compton.1.asciidoc) for further information.
 
 ### Autostarting
 
@@ -93,7 +92,16 @@ compton --config <path/to/compton.conf> -b
 
 It is recommended to either create the configuration file in the hidden `~/.config` directory (`~/.config/compton.conf`) or as a hidden file in the `Home` directory (`~/.compton.conf`). A sample config file can be found here: [Compton Sample Config](https://github.com/chjj/compton/blob/master/compton.sample.conf)
 
-#### Disable conky shadowing
+#### Disable shadowing of some windows
+
+Due to the way compton draws its shadows, certain applications will have visual glitches when you have shadows enabled. The `shadow-exclude` options could disable compton shadows.
+
+For example, to disable Compton shadows on all GTK +3 windows, add below setting to `shadow-exclude` in `compton.conf`:
+
+```
+"_GTK_FRAME_EXTENTS@:c"
+
+```
 
 To disable shadows around [conky](/index.php/Conky "Conky") windows - where used - first amend the conky configuration file `~/.conkyrc` as follows:
 
@@ -108,6 +116,8 @@ Then amend the compton configuration file as follows:
 shadow-exclude = "class_g = 'conky'";
 
 ```
+
+For currently disabled windows, please see [here](https://projects.archlinux.org/svntogit/community.git/tree/trunk/compton.conf?h=packages/compton#n80).
 
 ## Multihead
 
@@ -187,16 +197,6 @@ focus-exclude = "x = 0 && y = 0 && override_redirect = true";
 ```
 
 The override redirect property seems to be false for most windows- having this in the exclusion rule prevents other windows drawn in the upper left corner from being excluded (for example, when dwm statusbar is hidden, x0 y0 will match whatever is in dwm's master stack).
-
-### Dual shadow on some GTK3 applications
-
-Since [gtk3](https://www.archlinux.org/packages/?name=gtk3) version 3.12.1, some GTK+ 3 windows and dialogs render a double shadow when used with Compton. This is because both shadows from GTK+ 3 and Compton are [applied concurrently](https://github.com/chjj/compton/issues/189). See [GTK+#Client-side decorations](/index.php/GTK%2B#Client-side_decorations "GTK+").
-
-To disable Compton shadows on all GTK +3 windows, add a new rule to `compton.conf`:
-
- `shadow-exclude = [ "_GTK_FRAME_EXTENTS@:c" ]` 
-
-or run `compton` with the following arguments: `--shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c'`
 
 ### Unable to change the background color with xsetroot
 

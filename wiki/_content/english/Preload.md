@@ -49,6 +49,6 @@ The configuration file is located in `/etc/preload.conf`, it contains default se
 
 ## See also
 
-*   [http://en.wikipedia.org/wiki/Preload_(software)](http://en.wikipedia.org/wiki/Preload_(software))
+*   [wikipedia:Preload_(software)](https://en.wikipedia.org/wiki/Preload_(software) "wikipedia:Preload (software)")
 *   [http://techthrob.com/2009/03/02/drastically-speed-up-your-linux-system-with-preload/](http://techthrob.com/2009/03/02/drastically-speed-up-your-linux-system-with-preload/)
 *   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")

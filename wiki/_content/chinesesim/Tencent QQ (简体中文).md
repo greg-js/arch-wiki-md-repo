@@ -32,7 +32,7 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 将 Google Chrome 的把网站做为应用程序与其桌面提醒功能整合，也可以打造一个实用的 QQ 软件：
 
-1.  安装并运行 [Chromium (简体中文)](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")或者[火狐浏览器firefox](https://wiki.archlinux.org/index.php/Firefox_(简体中文))，并打开 [SmartQQ](http://w.qq.com/)，需要手机QQ客户端扫描二维码登陆，功能少。
+1.  安装并运行 [Chromium (简体中文)](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")或者[火狐浏览器firefox](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")，并打开 [SmartQQ](http://w.qq.com/)，需要手机QQ客户端扫描二维码登陆，功能少。
 
 ### 官方 Adobe Air 客户端
 

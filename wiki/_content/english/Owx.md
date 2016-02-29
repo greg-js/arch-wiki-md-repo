@@ -8,7 +8,7 @@
 
 Frequency lists; replace `CH` with the desired channel number.
 
-U.S. [NOAA Weather Radio](http://en.wikipedia.org/wiki/NOAA_Weather_Radio):
+U.S. [NOAA Weather Radio](https://en.wikipedia.org/wiki/NOAA_Weather_Radio "wikipedia:NOAA Weather Radio"):
 
 ```
 "CH","NWR1","162.40000","162.40000","","","narrow","high","no","no"
@@ -20,7 +20,7 @@ U.S. [NOAA Weather Radio](http://en.wikipedia.org/wiki/NOAA_Weather_Radio):
 "CH","NWR7","162.55000","162.55000","","","narrow","high","no","no"
 ```
 
-U.S. [Family Radio Service (FRS)](http://en.wikipedia.org/wiki/Family_Radio_Service):
+U.S. [Family Radio Service (FRS)](https://en.wikipedia.org/wiki/Family_Radio_Service "wikipedia:Family Radio Service"):
 
 ```
 "CH","FRS1","462.56250","462.56250","","","narrow","high","yes","no"
@@ -39,7 +39,7 @@ U.S. [Family Radio Service (FRS)](http://en.wikipedia.org/wiki/Family_Radio_Serv
 "CH","FRS14","467.71250","467.71250","","","narrow","high","yes","no"
 ```
 
-U.S. [General Mobile Radio Service (GMRS)](http://en.wikipedia.org/wiki/GMRS), exclusive of interstitial frequencies shared by FRS, and using simplex operation:
+U.S. [General Mobile Radio Service (GMRS)](https://en.wikipedia.org/wiki/GMRS "wikipedia:GMRS"), exclusive of interstitial frequencies shared by FRS, and using simplex operation:
 
 ```
 "CH","GMRS1","462.55000","462.55000","","","narrow","high","yes","no"
@@ -52,7 +52,7 @@ U.S. [General Mobile Radio Service (GMRS)](http://en.wikipedia.org/wiki/GMRS), e
 "CH","GMRS8","462.72500","462.72500","","","narrow","high","yes","no"
 ```
 
-U.S. [Multi-Use Radio Service (MURS)](http://en.wikipedia.org/wiki/Multi-Use_Radio_Service):
+U.S. [Multi-Use Radio Service (MURS)](https://en.wikipedia.org/wiki/Multi-Use_Radio_Service "wikipedia:Multi-Use Radio Service"):
 
 ```
 "CH","MURS1","151.82000","151.82000","","","narrow","high","yes","no"

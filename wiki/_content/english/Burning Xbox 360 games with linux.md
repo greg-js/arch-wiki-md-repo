@@ -32,7 +32,7 @@ Using this tool should patch the file with no issues. It will also output metada
 
 ## Burning ISO Files
 
-**Note:** You can use [Imgburn + Wine](https://wiki.archlinux.org/index.php/Wine#Burning_optical_media) to burn ISO (yes, XGD3 burns work with burnermax drives and since Imgburn 2.5.8 the builtin "BurnerMax Payload" feature works as well).
+**Note:** You can use [Imgburn + Wine](/index.php/Wine#Burning_optical_media "Wine") to burn ISO (yes, XGD3 burns work with burnermax drives and since Imgburn 2.5.8 the builtin "BurnerMax Payload" feature works as well).
 
 Burning an iso is best done through the command line with growisofs. This is found in the [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) package found in the [Official repositories](/index.php/Official_repositories "Official repositories").
 

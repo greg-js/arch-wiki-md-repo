@@ -243,7 +243,7 @@ PermitRootLogin no # (put yes here if you want root login)
 
 You could also uncomment the BANNER option and edit `/etc/issue` for a nice welcome message.
 
-**Tip:** 기본 22번 포트 말고도 다른 포트로도 변경 가능합니다.([security through obscurity](http://en.wikipedia.org/wiki/Security_through_obscurity)).
+**Tip:** 기본 22번 포트 말고도 다른 포트로도 변경 가능합니다.([security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity")).
 
 Even though the port ssh is running on could be detected by using a port-scanner like nmap, changing it will reduce the number of log entries caused by automated authentication attempts.
 

@@ -1,4 +1,4 @@
-From [Wikipedia](http://en.wikipedia.org/wiki/FTPFS):
+From [Wikipedia](https://en.wikipedia.org/wiki/FTPFS "wikipedia:FTPFS"):
 
 	"[FTPFS](http://ftpfs.sourceforge.net/) (File Transfer Protocol FileSystem) is an obsoleted Linux kernel module that allows the user to *mount a FTP server onto the local filesystem*".
 

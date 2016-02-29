@@ -1,7 +1,7 @@
 | **Вцілому**  |
 | Ця стаття про детальне налаштування тем для GTK+ додатків. GTK+ (GIMP Toolkit) крос-платформний інструмент для створення користувацьких інтерфейсів. В статті досліджуються інструменти для створення тем, стилів, значків, шрифтів та розмірів шрифтів GTK+, і звичайно детальне ручне налаштування. |
 | **Пов’язані** |
-| [[[Однаковий вигляд для QT та GTK застосунків](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Uniform Look for QT and GTK Applications (Українська)")]] |
+| [[[Однаковий вигляд для QT та GTK застосунків](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Uniform look for Qt and GTK applications (Українська)")]] |
 
 GTK+, GIMP Toolkit, спочатку був зроблений для [GIMP](/index.php/GIMP "GIMP") але тепер дуже популярний інструментарій прив’язаний до багатьох мов.
 
@@ -91,7 +91,7 @@ gtk-font-name = "DejaVu Sans 8"
 
 ### GTK+ та QT
 
-Якщо на робочому столі встановлено GTK+ та QT (KDE) додатки то помітно, що їхня зовнішність відрізняється. Якщо ви хочете зробити стилі GTK+ відповідними до QT будьласка прочитайте [Однаковий вигляд для QT та GTK застосунків](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Uniform Look for QT and GTK Applications (Українська)").
+Якщо на робочому столі встановлено GTK+ та QT (KDE) додатки то помітно, що їхня зовнішність відрізняється. Якщо ви хочете зробити стилі GTK+ відповідними до QT будьласка прочитайте [Однаковий вигляд для QT та GTK застосунків](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Uniform look for Qt and GTK applications (Українська)").
 
 ## Налаштування
 
@@ -132,4 +132,4 @@ gcc -g -Wall `pkg-config --cflags --libs gtk+-2.0` -o base base.c
 
 *   [Офіційний GTK+ вебсайт (Англійська)](http://www.gtk.org/)
 *   [Підручник для GTK+ 2 (Англійська)](http://library.gnome.org/devel/gtk-tutorial/stable/)
-*   [Стаття в Вікіпедії про GTK+ (Англійська)](http://en.wikipedia.org/wiki/GTK%2B)
+*   [Стаття в Вікіпедії про GTK+ (Англійська)](https://en.wikipedia.org/wiki/GTK%2B "wikipedia:GTK+")

@@ -243,7 +243,7 @@ end
 
 ```
 
-**Обратите внимание:** Смотрите [это решение](https://github.com/fish-shell/fish-shell/issues/1772) пичины почему `startx` требует `-keeptty` Флаг при использовании fish.
+**Примечание:** Смотрите [это решение](https://github.com/fish-shell/fish-shell/issues/1772) пичины почему `startx` требует `-keeptty` Флаг при использовании fish.
 
 ## Смотрите также
 

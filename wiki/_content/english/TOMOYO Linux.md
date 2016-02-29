@@ -88,7 +88,7 @@ CONFIG_SECURITY_NETWORK=y [optional: for providing network restriction]
 ```
 
 *   The restriction of a few advanced networking operations are limited or unavailable due to the absence of required LSM hooks
-*   Restricting use of [capabilities](http://en.wikipedia.org/wiki/Capability-based_security) is not possible
+*   Restricting use of [capabilities](https://en.wikipedia.org/wiki/Capability-based_security "wikipedia:Capability-based security") is not possible
 *   Looking up per-task variables is slower as they are managed outside "struct task_struct" in order to keep KABI unchanged. However, this should not be noticeable for the typical end-user as performance decrease by pathname based permission checking is dominant
 
 This [table](http://akari.sourceforge.jp/comparison.html) provides a comprehensive comparison of AKARI with the TOMOYO Linux 1.x and 2.x branches.
@@ -230,7 +230,7 @@ Now, the computer should be restarted.
 
 ### Log daemon
 
-For tomoyo exists the log-daemon `/usr/sbin/tomoyo-auditd`. It is usefull for monitoring the behaviour for example of applications like Skype (see [Skype](https://wiki.archlinux.org/index.php/Skype#Securing_Skype)). The initial configuration file is well explained and can be found in `/etc/tomoyo/tools/auditd.conf` whereas the log files can be found in `/var/log/tomoyo`.
+For tomoyo exists the log-daemon `/usr/sbin/tomoyo-auditd`. It is usefull for monitoring the behaviour for example of applications like Skype (see [Skype](/index.php/Skype#Securing_Skype "Skype")). The initial configuration file is well explained and can be found in `/etc/tomoyo/tools/auditd.conf` whereas the log files can be found in `/var/log/tomoyo`.
 
 To use it with systemd create the file `/lib/systemd/system/tomoyo-auditd.service` with the content described in chapter 4.6 in the official [documentation](http://tomoyo.sourceforge.jp/2.5/chapter-4.html.en).
 

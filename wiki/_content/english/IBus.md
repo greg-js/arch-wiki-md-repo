@@ -1,4 +1,4 @@
-**IBus** (*Intelligent Input Bus*) is an [input method framework](http://en.wikipedia.org/wiki/Input_method), a system for entering foreign characters. IBus functions similarly to [Fcitx](/index.php/Fcitx "Fcitx"), [SCIM](/index.php/SCIM "SCIM") and [UIM](/index.php/UIM "UIM").
+**IBus** (*Intelligent Input Bus*) is an [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method"), a system for entering foreign characters. IBus functions similarly to [Fcitx](/index.php/Fcitx "Fcitx"), [SCIM](/index.php/SCIM "SCIM") and [UIM](/index.php/UIM "UIM").
 
 ## Contents
 

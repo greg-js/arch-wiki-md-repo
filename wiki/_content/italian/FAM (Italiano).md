@@ -59,6 +59,6 @@ Per fermarlo:
 
 ## Altre risorse
 
-[FAM](http://en.wikipedia.org/wiki/File_alteration_monitor)
+[FAM](https://en.wikipedia.org/wiki/File_alteration_monitor "wikipedia:File alteration monitor")
 
 [FAM, Gamin and inotify](http://www.noah.org/wiki/FAM,_Gamin,_inotify)

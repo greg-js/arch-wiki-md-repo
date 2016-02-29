@@ -490,7 +490,7 @@ If the computer is believed not to support [ASPM](https://en.wikipedia.org/wiki/
 
 ```
 
-ASPM is handled by the BIOS, if ASPM is disabled it will be because [[ref](http://wireless.kernel.org/en/users/Documentation/ASPM)]:
+ASPM is handled by the BIOS, if ASPM is disabled it will be because [ref](http://wireless.kernel.org/en/users/Documentation/ASPM):
 
 1.  The BIOS disabled it for some reason (for conflicts?).
 2.  PCIE requires ASPM but L0s are optional (so L0s might be disabled and only L1 enabled).

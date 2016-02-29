@@ -14,5 +14,5 @@ Togliete `fam` dalla riga `DAEMONS` nell'[rc.conf](/index.php/Rc.conf "Rc.conf")
 
 ## Links Esterni
 
-*   [Gamin](http://en.wikipedia.org/wiki/Gamin)
+*   [Gamin](https://en.wikipedia.org/wiki/Gamin "wikipedia:Gamin")
 *   [FAM, Gamin and inotify](http://www.noah.org/wiki/FAM,_Gamin,_inotify)

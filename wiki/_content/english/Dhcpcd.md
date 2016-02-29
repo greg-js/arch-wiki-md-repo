@@ -229,7 +229,7 @@ clientid
 
 ```
 
-Else, you may not obtain a lease since the DHCP server may not read your [DHCPv6-style](http://en.wikipedia.org/wiki/DHCPv6) Client ID correctly. See [RFC 4361](http://tools.ietf.org/html/rfc4361) for more information.
+Else, you may not obtain a lease since the DHCP server may not read your [DHCPv6-style](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") Client ID correctly. See [RFC 4361](http://tools.ietf.org/html/rfc4361) for more information.
 
 ### Check DHCP problem by releasing IP first
 

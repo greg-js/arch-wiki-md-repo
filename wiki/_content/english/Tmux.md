@@ -347,21 +347,7 @@ set -g default-terminal "tmux-256color"
 
 ### Shift+F6 not working in Midnight Commander
 
-If the `Shift+F6` key combination is not working with either `TERM=screen` or `TERM=screen-256color`, then from inside tmux, run this command:
-
-```
-infocmp > screen (or screen-256color)
-
-```
-
-Open the file in a text editor, and add the following to the bottom of that file:
-
-```
-kf16=\E[29~,
-
-```
-
-Then compile the file with `tic`. The keys should be working now.
+See [Midnight Commander#Shift+F6 not working](/index.php/Midnight_Commander#Shift.2BF6_not_working "Midnight Commander").
 
 ## X clipboard integration
 

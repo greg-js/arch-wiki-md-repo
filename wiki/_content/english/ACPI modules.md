@@ -108,7 +108,7 @@ Using `/proc` to store ACPI information has been discouraged and deprecated sinc
 
 ### DSDT fix
 
-If problems with power management persist despite having loaded the proper modules, a Linux-unfriendly [DSDT](http://en.wikipedia.org/wiki/DSDT#ACPI_Tables) might be the cause. See the wiki article on [DSDT](/index.php/DSDT "DSDT").
+If problems with power management persist despite having loaded the proper modules, a Linux-unfriendly [DSDT](https://en.wikipedia.org/wiki/DSDT#ACPI_Tables "wikipedia:DSDT") might be the cause. See the wiki article on [DSDT](/index.php/DSDT "DSDT").
 
 ### ACPI fix for notebooks
 

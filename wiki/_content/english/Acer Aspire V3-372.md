@@ -54,7 +54,7 @@ If you set up your installation media (USB drive) via [Rufus](/index.php/USB_fla
 
 ### Video
 
-Install the xf86-video-intel package as shown [here](https://wiki.archlinux.org/index.php/Intel_graphics#Installation)
+Install the xf86-video-intel package as shown [here](/index.php/Intel_graphics#Installation "Intel graphics")
 
 ### Solid State Drive
 

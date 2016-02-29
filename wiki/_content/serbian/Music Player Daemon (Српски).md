@@ -221,7 +221,7 @@ $ mkdir -p ~/.mpd/playlists && touch ~/.mpd/database && cp /usr/share/doc/mpd/mp
 
 ```
 
-Zatim izmenite mpd.conf prema zelji na slican nacin kao [Music_Player_Daemon#Edit_mpd.conf](/index.php/Music_Player_Daemon#Edit_mpd.conf "Music Player Daemon"). Vodite racuna da morate da otkomentirate db_file unos ako editujete mpd.conf.
+Zatim izmenite mpd.conf prema zelji na slican nacin kao [Music Player Daemon#Edit_mpd.conf](/index.php/Music_Player_Daemon#Edit_mpd.conf "Music Player Daemon"). Vodite racuna da morate da otkomentirate db_file unos ako editujete mpd.conf.
 
 Zatim, da ga pokrenete:
 
@@ -426,7 +426,7 @@ Dodavanje samo poretka u `/etc/rc.local` ne moze da garantuje da ce mpd pustati 
 
 #### 3\. metod
 
-Generalna ideja izmedju ove metode je da pitate mpd da pauzira muziku gde se korisnik odjavljuje (logs out) tako da ce tokom sledeceg restarta mpd drzati kod tog "pauziranog " stanja. Slanje takve komande se moze postici upotrebom [mpc](https://www.archlinux.org/packages/extra/x86_64/mpc/), interfejsa za MPD koji se pokrece sa komandne linije:
+Generalna ideja izmedju ove metode je da pitate mpd da pauzira muziku gde se korisnik odjavljuje (logs out) tako da ce tokom sledeceg restarta mpd drzati kod tog "pauziranog " stanja. Slanje takve komande se moze postici upotrebom [mpc](https://www.archlinux.org/packages/?name=mpc), interfejsa za MPD koji se pokrece sa komandne linije:
 
 ```
 pacman -S mpc
@@ -542,7 +542,7 @@ Vec postoje neki klijenti dizajnirani za komunikaciju izmedju lircd-a i MPD-a, m
 
 Preporucuje se upotreba mpc-a sa irexec-om. mpc je plejer za komandnu liniju koji samo salje komande ka MPD-u i odmah izlazi, sto je savrseno za irexec, koji je inace izvrsilac komandi sadrzan u lirc-u. irexec izvrsava zadatu komandu po prispeloj informaciji sa udaljenog kontrolnog dugmeta.
 
-Pre svega, podesite vase daljinske upravljace kao sto je navedeno u **[Lirc](/index.php/Lirc "Lirc")** clanku.
+Pre svega, podesite vase daljinske upravljace kao sto je navedeno u **[LIRC](/index.php/LIRC "LIRC")** clanku.
 
 Editujte vas lirc konfiguracioni fajl za startovanje; difolt lokacija je `~/.lircrc`.
 

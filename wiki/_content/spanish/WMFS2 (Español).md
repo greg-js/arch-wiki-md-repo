@@ -14,7 +14,7 @@
 
 ## Instalación
 
-Encontramos en [AUR](/index.php/AUR "AUR") el paquete [wmfs2-git](https://aur.archlinux.org/packages/wmfs2-git/) facilmente instalable mediante el [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") o mediante un [AUR-Helper](https://wiki.archlinux.org/index.php/AUR_Helpers).
+Encontramos en [AUR](/index.php/AUR "AUR") el paquete [wmfs2-git](https://aur.archlinux.org/packages/wmfs2-git/) facilmente instalable mediante el [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") o mediante un [AUR-Helper](/index.php/AUR_helpers "AUR helpers").
 
 Instalando WMFS2 con ayuda de yaourt:
 

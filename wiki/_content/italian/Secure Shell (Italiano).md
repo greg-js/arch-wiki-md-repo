@@ -260,15 +260,15 @@ PermitRootLogin no
 
 Si potrebbe anche rimuovere l'opzione BANNER e modificare il file `/etc/issue` per un gradevole messaggio di benvenuto.
 
-**Tip:** Si consiglia di modificare la porta di default 22 ad una di numero più alto (consultare [security through obscurity](http://en.wikipedia.org/wiki/Security_through_obscurity)).
+**Tip:** Si consiglia di modificare la porta di default 22 ad una di numero più alto (consultare [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity")).
 
 Anche se la porta SSH è in esecuzione e può essere rilevata utilizzando un port scanner come nmap, cambiandola si ridurrà il numero di voci del registro di log, causato dai tentativi di autenticazione automatica. Per un aiuto sulla scelta della porta consultare la [lista dei numeri delle porte TCP ed UDP](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers").
 
-**Tip:** Disabilitando gli accessi con la password, aumenta il livello di sicurezza. (consultare [SSH Keys](/index.php/SSH_Keys_(Italiano) "SSH Keys (Italiano)")).
+**Tip:** Disabilitando gli accessi con la password, aumenta il livello di sicurezza. (consultare [SSH Keys](/index.php/SSH_keys_(Italiano) "SSH keys (Italiano)")).
 
 ### Gestione demone SSHD
 
-Aggiungere `sshd` alla lista di [demoni](/index.php/Daemon_(Italiano) "Daemon (Italiano)") caricati all'avvio con:
+Aggiungere `sshd` alla lista di [demoni](/index.php/Demoni "Demoni") caricati all'avvio con:
 
 ```
 # systemctl enable sshd

@@ -10,7 +10,7 @@ O Arch Linux é uma distribuição desenvolvida de forma independente, tem como 
 
 ## História
 
-O Arch Linux foi criado pelo programador Canadense, Judd Vinet. Sua primeira versão formal, Arch Linux 0.1, foi lançada em 11 de Março de 2002\. Embora o Arch seja completamente independente, foi inspirado na simplicidade de outras distribuições incluindo [Slackware](http://slackware.com/), [CRUX](http://www.crux.nu/) e [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution). Em 2007, Judd Vinet deixou o cargo de Líder do Projeto para seguir outros interesses e foi substituído por Aaron Griffin que continua até hoje como Líder do Projeto.
+O Arch Linux foi criado pelo programador Canadense, Judd Vinet. Sua primeira versão formal, Arch Linux 0.1, foi lançada em 11 de Março de 2002\. Embora o Arch seja completamente independente, foi inspirado na simplicidade de outras distribuições incluindo [Slackware](http://slackware.com/), [CRUX](http://www.crux.nu/) e [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"). Em 2007, Judd Vinet deixou o cargo de Líder do Projeto para seguir outros interesses e foi substituído por Aaron Griffin que continua até hoje como Líder do Projeto.
 
 **Veja também**: [History of Arch Linux](/index.php/History_of_Arch_Linux "History of Arch Linux")
 

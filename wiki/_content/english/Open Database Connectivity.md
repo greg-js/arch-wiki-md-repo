@@ -23,7 +23,7 @@ Open Database Connectivity, commonly ODBC, is an open specification for providin
 
 ## ODBC engines
 
-You have two options to chose from: [unixODBC](http://www.unixodbc.org/) and [iODBC](http://en.wikipedia.org/wiki/IODBC). Apparently unixODBC is more widely supported. This document shows how to set up unixODBC. First to access your database on your localhost and then extends the steps to configure MySQL to allow remote access through ODBC.
+You have two options to chose from: [unixODBC](http://www.unixodbc.org/) and [iODBC](https://en.wikipedia.org/wiki/IODBC "wikipedia:IODBC"). Apparently unixODBC is more widely supported. This document shows how to set up unixODBC. First to access your database on your localhost and then extends the steps to configure MySQL to allow remote access through ODBC.
 
 Additionally you can choose from various [Devart ODBC drivers](https://www.devart.com/odbc/) for SQL Server, Oracle, MySQL, SQLite, Firebird, PostgreSQL, Interbase.
 

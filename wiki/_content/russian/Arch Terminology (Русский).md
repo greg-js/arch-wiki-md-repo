@@ -56,21 +56,21 @@ ABS полезна при использоввании Arch Linux, но не о�
 
 ## ARM
 
-**Обратите внимание:** Сервис Arch Rollback Machine закрылся 18 августа 2013 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360)
+**Примечание:** Сервис Arch Rollback Machine закрылся 18 августа 2013 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360)
 
-[Arch Rollback Machine](/index.php/Downgrading_Packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#ARM "Downgrading Packages (Русский)") это зеркало, с которого можно было загрузить старые версии пакетов для отката системы.
+[Arch Rollback Machine](/index.php/Downgrading_packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#ARM "Downgrading packages (Русский)") это зеркало, с которого можно было загрузить старые версии пакетов для отката системы.
 
 ## AUR
 
 [Arch User Repository (AUR)](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") — это поддерживаемый сообществом репозиторий пакетов. AUR был изначально задуман, чтобы собрать в одном месте широко распространенные среди сообщества файлы [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)") и ускорить процесс попадания наиболее популярных из репозитория AUR [community] в репозитории [core] и [extra].
 
-AUR - это родина всех новых пакетов. Пользователи представляют в AUR самостоятельно созданные пакеты. Сообщество AUR голосует за любимые из них, и, когда набирается достаточное количество голосов, [AUR Trusted User](/index.php/Arch_Terminology_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#TU.2C_Trusted_User "Arch Terminology (Русский)") может перевести пакет в репозиторий [community], к которому можно получить доступ через [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") и [ABS](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)").
+AUR - это родина всех новых пакетов. Пользователи представляют в AUR самостоятельно созданные пакеты. Сообщество AUR голосует за любимые из них, и, когда набирается достаточное количество голосов, [AUR Trusted User](#TU.2C_Trusted_User) может перевести пакет в репозиторий [community], к которому можно получить доступ через [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") и [ABS](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)").
 
 AUR находится здесь [здесь](https://aur.archlinux.org).
 
 ## PKGBUILD
 
-[PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")-ы - это небольшие скрипты для сборки пакетов Arch. Смотрите [Creating Packages](/index.php/Creating_Packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Creating Packages (Русский)")
+[PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")-ы - это небольшие скрипты для сборки пакетов Arch. Смотрите [Creating Packages](/index.php/Creating_packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Creating packages (Русский)")
 
 ## TU, Trusted User
 
@@ -145,7 +145,7 @@ Arch's package manager pacman can install, update, and remove those packages. Us
 *   dependency checks: pacman handles dependencies for you, you only need to specify the program and pacman installs it together with every other program it needs
 *   clean removal: pacman has a list of every file in a package. This way, no files are left behind when you decide to remove a package.
 
-**Обратите внимание:** Different GNU/Linux distributions use different packages and package managers, meaning that you cannot use pacman to install a Debian package on Arch.
+**Примечание:** Different GNU/Linux distributions use different packages and package managers, meaning that you cannot use pacman to install a Debian package on Arch.
 
 ## Package maintainer
 
@@ -159,7 +159,7 @@ The maintainer of a package is the person currently responsible for the package.
 
 ## pacman
 
-The [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") package manager is one of the great highlights of Arch Linux. It combines a simple binary package format with an easy-to-use build system (see [ABS](/index.php/Arch_Build_System "Arch Build System")). Pacman makes it possible to easily manage and customize packages, whether they be from the official Arch repositories or the user's own creations. The repository system allows users to build and maintain their own custom package repositories, which encourages community growth and contribution (see [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)")).
+The [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") package manager is one of the great highlights of Arch Linux. It combines a simple binary package format with an easy-to-use build system (see [ABS](/index.php/ABS "ABS")). Pacman makes it possible to easily manage and customize packages, whether they be from the official Arch repositories or the user's own creations. The repository system allows users to build and maintain their own custom package repositories, which encourages community growth and contribution (see [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)")).
 
 Pacman can keep a system up to date by synchronizing package lists with the master server, making it a breeze for the security-conscious system administrator to maintain. This server/client model also allows you to download/install packages with a simple command, complete with all required dependencies (similar to Debian's apt-get).
 
@@ -178,7 +178,7 @@ man pacman.conf
 
 Репозиторий содержит предварительно скомпилированные пакеты одного или, что чаще, нескольких [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")-ов. Официальными являются следующие репозитории:
 
-*   [core]: содержит последние версии пакетов, необходимых для полностью работоспособной [CLI](http://ru.wikipedia.org/wiki/Интерфейс_командной_строки)-системы
+*   [core]: содержит последние версии пакетов, необходимых для полностью работоспособной [CLI](https://ru.wikipedia.org/wiki/Интерфейс_командной_строки)-системы
 *   [extra]: содержит последние версии пакетов общего назначения, как было описано выше.
 *   [community]: пакеты, набравшие достаточное количество голосов в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") и перенесенные оттуда.
 
@@ -224,4 +224,4 @@ If udev receives a device event, it matches its configured rules against the ava
 
 ## [wiki](https://en.wikipedia.org/wiki/Wiki "wikipedia:Wiki")
 
-[Вот!](/index.php/Main_Page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Main Page (Русский)") Документация Arch Linux, которую может редактировать каждый.
+[Вот!](/index.php/Main_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Main page (Русский)") Документация Arch Linux, которую может редактировать каждый.

@@ -13,7 +13,7 @@ The Master Boot Record (MBR) is the first 512 bytes of a storage device. It cont
 
 ## Boot process
 
-Booting is a multi-stage process. Most PCs today initialize system devices with firmware called the [BIOS](http://en.wikipedia.org/wiki/BIOS) (Basic Input/Output System), which is typically stored in a dedicated ROM chip on the system board. After system devices have been initialized, the BIOS looks for the bootloader on the MBR of the first recognized storage device (hard disk drive, solid state drive, CD/DVD drive, USB drive...) or the first partition of the device. It then executes that program. The bootloader reads the partition table, and is then capable of loading the operating system(s). Common GNU/Linux bootloaders include [GRUB](/index.php/GRUB "GRUB") and [Syslinux](/index.php/Syslinux "Syslinux").
+Booting is a multi-stage process. Most PCs today initialize system devices with firmware called the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") (Basic Input/Output System), which is typically stored in a dedicated ROM chip on the system board. After system devices have been initialized, the BIOS looks for the bootloader on the MBR of the first recognized storage device (hard disk drive, solid state drive, CD/DVD drive, USB drive...) or the first partition of the device. It then executes that program. The bootloader reads the partition table, and is then capable of loading the operating system(s). Common GNU/Linux bootloaders include [GRUB](/index.php/GRUB "GRUB") and [Syslinux](/index.php/Syslinux "Syslinux").
 
 ## History
 

@@ -94,7 +94,7 @@ for c in /sys/devices/system/cpu/cpu*/online; do echo 1 >$c; done
 
 ```
 
-One might find useful to follow [https://wiki.archlinux.org/index.php/Power_management#Sleep_hooks](https://wiki.archlinux.org/index.php/Power_management#Sleep_hooks) to configure systemd sleep, hibernate and wakeup hooks
+One might find useful to follow [Power management#Sleep hooks](/index.php/Power_management#Sleep_hooks "Power management") to configure systemd sleep, hibernate and wakeup hooks
 
 All the rest works fine.
 

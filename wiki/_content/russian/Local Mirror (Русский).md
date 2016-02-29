@@ -1,4 +1,4 @@
-**Если вы хотите организовать официальное зеркало, посетите [эту страницу](https://wiki.archlinux.org/index.php/DeveloperWiki:NewMirrors).**
+**Если вы хотите организовать официальное зеркало, посетите [эту страницу](/index.php/DeveloperWiki:NewMirrors "DeveloperWiki:NewMirrors").**
 
 **Замечание:** 95% пользователей не нуждаются в зеркале. Большинство пакетов из репозитория вы никогда не используете. Инструкция может понадобиться человеку, управляющему большим количеством машин с Arch Linux. Возможно, [Network Shared Pacman Cache](/index.php/Network_Shared_Pacman_Cache "Network Shared Pacman Cache") окажется для вас более полезным. Вы также можете воспользоваться [pkgd](http://xyne.archlinux.ca/info/pkgd) для создания общедоступного кэша в локальной сети без необходимости управления центральным кэшем.
 

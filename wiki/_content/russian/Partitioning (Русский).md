@@ -1,4 +1,4 @@
-**Обратите внимание:** В настоящий момент статья переводится. Вы можете помочь завершить перевод скорее :)
+**Примечание:** В настоящий момент статья переводится. Вы можете помочь завершить перевод скорее :)
 
 **Важно:** Оригинальная английская статья ещё не завершена, к моменту начала перевода текст может оказаться устаревшим.
 
@@ -83,7 +83,7 @@
 
 **Важно:** Нажатие кнопки Cancel, в меню подготовки жёсткого диска, не отменит выбранные операции - смотри [FS#19805](https://bugs.archlinux.org/task/19805). Если вам необходимо прервать установку в этом месте, нажмите <Control>+C, чтобы полностью и немедленно покинуть установщик.
 
-**Обратите внимание:** Разбиение жесткого диска, при желании, можно провести до установки Archlinux, например используя [GParted](http://gparted.sourceforge.net/download.php) или другой подобный инструмент. Если диск уже был разбит до установки, то начните с [Set Filesystem Mountpoints](#Set_Filesystem_Mountpoints)
+**Примечание:** Разбиение жесткого диска, при желании, можно провести до установки Archlinux, например используя [GParted](http://gparted.sourceforge.net/download.php) или другой подобный инструмент. Если диск уже был разбит до установки, то начните с [Set Filesystem Mountpoints](#Set_Filesystem_Mountpoints)
 
 Посмотреть на текущую таблицу разделов можно с помощью программы `/sbin/fdisk` с ключом `-l` (маленькая L).
 
@@ -116,7 +116,7 @@
 
 *Здесь более продвинутые пользователи GNU/Linux, хорошо знакомые с ручной разбивкой диска, могут сразу перейти к разделу **[D: Select Packages](#D:_Select_Packages)**.*
 
-**Обратите внимание:** Если вы устанавливаете систему на USB flash носитель, смотрите "[Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key")".
+**Примечание:** Если вы устанавливаете систему на USB flash носитель, смотрите "[Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key")".
 
 #### Разметка жестких дисков
 
@@ -142,7 +142,7 @@ Swap раздел - это место на жестком диске, где п�
 
 Исторически, основным правилом для установления размера раздела подкачки был умноженный на 2 размер физической ОЗУ. Со временем компьютеры стали оснащаться памятью большей емкостью и это правило перестало применяться. Это правило применяется в основном для компьютеров с ОЗУ до 512MB. Если же на вашем компьютере больше 1024MB ОЗУ, то про создание раздела подкачки можно и забыть, ведь всегда можно создать [swap file](/index.php/HOW_TO:_Create_swap_file "HOW TO: Create swap file") (с тех пор, как такая возможность появилась). В этом примере будет использоваться раздел подкачки размером в 1GB.
 
-**Обратите внимание:** Для использования гибернации, раздел подкачки должен быть по крайней мере **равен** размеру ОЗУ. Некоторые пользователи Arch даже рекомендуют делать размер раздела на 10-15% больше ОЗУ для предотвращения возможности появления плохих секторов.
+**Примечание:** Для использования гибернации, раздел подкачки должен быть по крайней мере **равен** размеру ОЗУ. Некоторые пользователи Arch даже рекомендуют делать размер раздела на 10-15% больше ОЗУ для предотвращения возможности появления плохих секторов.
 
 ##### Схема разметки
 
@@ -174,7 +174,7 @@ Swap раздел - это место на жестком диске, где п�
 
 В следующем примере мы рассмотрим разбиение на корень /, /var, /home, и swap разделы.
 
-**Обратите внимание:** /var содержит много маленьких файлов. Учитывайте это при выборе типа файловой системы, если уделяете /var отдельный раздел
+**Примечание:** /var содержит много маленьких файлов. Учитывайте это при выборе типа файловой системы, если уделяете /var отдельный раздел
 
 ##### Насколько большими должны быть мои разделы?
 
@@ -220,7 +220,7 @@ sda4               Primary     Linux                             140480 #/home
 
 Choose **W**rite and type '**yes'**. Beware that this operation may destroy data on your disk. Choose **Q**uit to leave the partitioner. Choose Done to leave this menu and continue with "Set Filesystem Mountpoints".
 
-**Обратите внимание:** Since the latest developments of the Linux kernel which include the libata and PATA modules, all IDE, SATA and SCSI drives have adopted the sd*x* naming scheme. This is perfectly normal and should not be a concern.
+**Примечание:** Since the latest developments of the Linux kernel which include the libata and PATA modules, all IDE, SATA and SCSI drives have adopted the sd*x* naming scheme. This is perfectly normal and should not be a concern.
 
 #### Set Filesystem Mountpoints
 
@@ -248,11 +248,11 @@ Again, a filesystem type is a very subjective matter which comes down to persona
 
 ##### A note on Journaling
 
-All above filesystems, except ext2, utilize [journaling](http://en.wikipedia.org/wiki/Journaling_file_system). Journaling file systems are fault-resilient file systems that use a journal to log changes before they are committed to the file system to avoid metadata corruption in the event of a crash. Note that not all journaling techniques are alike; specifically, only ext3 and ext4 offer *data-mode journaling*, (though, not by default), which journals *both* data *and* meta-data (but with a significant speed penalty). The others only offer *ordered-mode journaling*, which journals meta-data only. While all will return your filesystem to a valid state after recovering from a crash, *data-mode journaling* offers the greatest protection against file system corruption and data loss but can suffer from performance degradation, as all data is written twice (first to the journal, then to the disk). Depending upon how important your data is, this may be a consideration in choosing your filesystem type.
+All above filesystems, except ext2, utilize [journaling](https://en.wikipedia.org/wiki/Journaling_file_system "wikipedia:Journaling file system"). Journaling file systems are fault-resilient file systems that use a journal to log changes before they are committed to the file system to avoid metadata corruption in the event of a crash. Note that not all journaling techniques are alike; specifically, only ext3 and ext4 offer *data-mode journaling*, (though, not by default), which journals *both* data *and* meta-data (but with a significant speed penalty). The others only offer *ordered-mode journaling*, which journals meta-data only. While all will return your filesystem to a valid state after recovering from a crash, *data-mode journaling* offers the greatest protection against file system corruption and data loss but can suffer from performance degradation, as all data is written twice (first to the journal, then to the disk). Depending upon how important your data is, this may be a consideration in choosing your filesystem type.
 
 ***Moving on...***
 
 Choose and create the filesystem (format the partition) for / by selecting **yes**. You will now be prompted to add any additional partitions. In our example, sda2 and sda4 remain. For sda2, choose a filesystem type and mount it as /var. Finally, choose the filesystem type for sda4, and mount it as /home.
 
-**Обратите внимание:** If you have not created and do not need a separate /boot partition, you may safely ignore the warning that it does not exist.
+**Примечание:** If you have not created and do not need a separate /boot partition, you may safely ignore the warning that it does not exist.
 Return to the main menu.

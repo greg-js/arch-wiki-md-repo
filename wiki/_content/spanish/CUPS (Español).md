@@ -75,7 +75,7 @@ Hay dos maneras de configurar una impresora:
 
 ## Instalar el paquete del cliente
 
-El paquete [libcups](https://www.archlinux.org/packages/?name=libcups) es el único necesario. [Instálelo](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+El paquete [libcups](https://www.archlinux.org/packages/?name=libcups) es el único necesario. [Instálelo](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 A continuación, agregue la dirección IP del servidor CUPS o el nombre del equipo en `/etc/cups/client.conf`. Eso es todo lo que se necesita. Cada solicitud debe rápidamente encontrar la impresora(s) compartida por el servidor CUPS.
 
@@ -102,7 +102,7 @@ Si tiene una instalación base de 64 bit con un [entorno chroot de 32 bit](/inde
 
 ## Instalar los paquetes del servidor
 
-Son necesarios los siguientes paquetes y algunos controladores de impresora. [Instálelos](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Son necesarios los siguientes paquetes y algunos controladores de impresora. [Instálelos](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 *   [cups](https://www.archlinux.org/packages/?name=cups) - el demonio CUPS presente.
 *   [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) - (opcional) el intérprete para el lenguaje PostScript.
@@ -229,7 +229,7 @@ DeviceID = parallel:/dev/usb/lp0
 
 ### Impresora HP
 
-Las impresoras HP también se pueden instalar a través de la herramienta de configuración de Linux de HP. Intálela con el paquete [hplip](https://www.archlinux.org/packages/?name=hplip) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Las impresoras HP también se pueden instalar a través de la herramienta de configuración de Linux de HP. Intálela con el paquete [hplip](https://www.archlinux.org/packages/?name=hplip) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Para ejecutar con la interfaz qt:
 
@@ -278,7 +278,7 @@ Ahora pruebe la configuración pulsando *Administración*, en el menú desplegab
 **Nota:**
 
 *   Cuando se configura una impresora USB, esta debe aparecer listada en la página *Agregar Impresora*. Si solo se puede ver una «impresora SCSI», probablemente significa que CUPS no ha reconocido la impresora.
-*   Para habilitar el escaneo de redes inalámbricas en determinados dispositivos multifunción HP, utilizando el paquete [hplip](https://www.archlinux.org/packages/extra/i686/hplip/), puede que tenga que agregar la impresora como una impresora de red, utilizando http:// protocol. Para determinar el URI correcto a usar, ejecute la orden `hp-makeuri`.
+*   Para habilitar el escaneo de redes inalámbricas en determinados dispositivos multifunción HP, utilizando el paquete [hplip](https://www.archlinux.org/packages/?name=hplip), puede que tenga que agregar la impresora como una impresora de red, utilizando http:// protocol. Para determinar el URI correcto a usar, ejecute la orden `hp-makeuri`.
 
 #### Administración de CUPS
 

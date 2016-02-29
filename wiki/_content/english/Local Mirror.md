@@ -1,4 +1,4 @@
-**Warning:** If you want to create an official mirror see [this page](https://wiki.archlinux.org/index.php/DeveloperWiki:NewMirrors).
+**Warning:** If you want to create an official mirror see [this page](/index.php/DeveloperWiki:NewMirrors "DeveloperWiki:NewMirrors").
 
 ## Contents
 
@@ -39,7 +39,7 @@
 
 #### Building Rsync Command
 
-*   Use the rsync arguments from [DeveloperWiki:NewMirrors](https://wiki.archlinux.org/index.php/DeveloperWiki:NewMirrors)
+*   Use the rsync arguments from [DeveloperWiki:NewMirrors](/index.php/DeveloperWiki:NewMirrors "DeveloperWiki:NewMirrors")
 *   Select a server from the above article
 *   Exclude folder/files you do not want by including `--exclude-from="/path/to/exclude.txt"` in the rsync arguments. Example contents might include:
 

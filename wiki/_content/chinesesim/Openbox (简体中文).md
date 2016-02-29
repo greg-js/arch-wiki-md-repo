@@ -112,7 +112,7 @@ mv ~/.config/autostart ~/.config/autostart-bak
 
 ```
 
-**注意:** Openbox 中的 xdg-autostart 需要 [pyxdg](https://www.archlinux.org/packages/extra/any/pyxdg/)
+**注意:** Openbox 中的 xdg-autostart 需要 [pyxdg](https://www.archlinux.org/packages/?name=pyxdg)
 
 ## Openbox 作为在桌面环境使用的窗口管理器
 

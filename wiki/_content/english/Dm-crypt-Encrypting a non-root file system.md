@@ -85,7 +85,7 @@ See [Dm-crypt/System configuration#crypttab](/index.php/Dm-crypt/System_configur
 
 #### On user login
 
-Using [pam_exec](/index.php/Pam_exec "Pam exec") and systemd service file, it is possible to unlock the partition on user login: this is the recommended solution if you want to have a single user's home directory on a partition.
+Using *pam_exec* and systemd service file, it is possible to unlock the partition on user login: this is the recommended solution if you want to have a single user's home directory on a partition. See [dm-crypt/Mounting at login](/index.php/Dm-crypt/Mounting_at_login "Dm-crypt/Mounting at login").
 
 Unlocking on user login is also possible with [pam_mount](/index.php/Pam_mount "Pam mount").
 

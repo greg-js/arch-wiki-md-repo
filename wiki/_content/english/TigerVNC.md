@@ -339,7 +339,7 @@ See [https://help.ubuntu.com/community/AppleRemoteDesktop](https://help.ubuntu.c
 
 ### Copying clipboard contents from the remote machine to the local
 
-If copying from the remote machine to the local machine does not work, run autocutsel on the server, as mentioned below [[reference](https://bbs.archlinux.org/viewtopic.php?id=101243)]:
+If copying from the remote machine to the local machine does not work, run autocutsel on the server, as mentioned below [reference](https://bbs.archlinux.org/viewtopic.php?id=101243):
 
 ```
 $ autocutsel -fork
@@ -374,7 +374,7 @@ $ vncserver -x509key /path/to/key.pem -x509cert /path/to/cerm.pem -SecurityTypes
 
 ```
 
-Issuing x509 certificates is beyond the scope of this guide. However, this is expected to be straightforward after the public launch of Let's Encrypt [[1]](https://en.wikipedia.org/wiki/Let%27s_Encrypt). Alternatively, one can issue certificates using [OpenSSL](/index.php/OpenSSL "OpenSSL") and manually share the keys between server and client using email for instance.
+Issuing x509 certificates is beyond the scope of this guide. However, this is expected to be straightforward after the public launch of [Let's Encrypt](https://en.wikipedia.org/wiki/Let%27s_Encrypt "wikipedia:Let's Encrypt"). Alternatively, one can issue certificates using [OpenSSL](/index.php/OpenSSL "OpenSSL") and manually share the keys between server and client using email for instance.
 
 ### Toggling Fullscreen
 
@@ -382,7 +382,7 @@ This can be done through vncclient's Menu. By default, vncclient's Menu Key is F
 
 ### Unable to type less than character (<)
 
-If pressing `<` on a remote client emits the `>` character, try remapping the incoming key [[2]](https://insaner.com/blog/2013/05.html#20130422063137):
+If pressing `<` on a remote client emits the `>` character, try remapping the incoming key [[1]](https://insaner.com/blog/2013/05.html#20130422063137):
 
 ```
 $ x0vncserver -RemapKeys="0x3c->0x2c"

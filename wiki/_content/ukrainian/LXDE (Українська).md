@@ -436,7 +436,7 @@ window_manager=compiz ccp --indirect-rendering
 
 ```
 
-Переконайтесь, що Ви сконфігурували `~/.xinitrc` так як сказано в [Запуск робочого столу](/index.php/LXDE_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.80.D0.BE.D0.B1.D0.BE.D1.87.D0.BE.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D1.83 "LXDE (Українська)"):
+Переконайтесь, що Ви сконфігурували `~/.xinitrc` так як сказано в [Запуск робочого столу](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.80.D0.BE.D0.B1.D0.BE.D1.87.D0.BE.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D1.83):
 
 ```
 exec startlxde
@@ -456,7 +456,7 @@ exec startlxde
 
 ### Управління ключами SSH
 
-Управління ключами ssh можна здійснити за допомогою keychain. Дивіться статтю [використання keychain](https://wiki.archlinux.org/index.php/Using_SSH_Keys#Using_keychain) для більшої інформації.
+Управління ключами ssh можна здійснити за допомогою keychain. Дивіться статтю [використання keychain](/index.php/Using_SSH_Keys#Using_keychain "Using SSH Keys") для більшої інформації.
 
 ### GTK+ Warnings with lxsession 0.4.1
 

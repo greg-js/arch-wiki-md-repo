@@ -116,7 +116,7 @@ mv ~/.config/autostart ~/.config/autostart-bak
 
 ```
 
-**Note:** [pyxdg](https://www.archlinux.org/packages/extra/i686/pyxdg/) yra reikalingas Openbox xdg-autostart programai
+**Note:** [pyxdg](https://www.archlinux.org/packages/?name=pyxdg) yra reikalingas Openbox xdg-autostart programai
 
 ## Langų tvarkyklė darbastalio aplinkoms
 
@@ -778,7 +778,7 @@ Pagerintam kopijavimui/įklijavimui, yra galimybė įdiegti iškarpų tvarkyklę
 
 #### volwheel
 
-[volwheel](https://www.archlinux.org/packages/community/i686/volwheel/) yra dėklo ikona, kurios srityje galima keisti garso lygi pelės ratuko pagalba.
+[volwheel](https://www.archlinux.org/packages/?name=volwheel) yra dėklo ikona, kurios srityje galima keisti garso lygi pelės ratuko pagalba.
 
 ### Klaviatūros išdėstymo tvarkyklės
 
@@ -788,7 +788,7 @@ Pagerintam kopijavimui/įklijavimui, yra galimybė įdiegti iškarpų tvarkyklę
 
 #### xxkb
 
-[Xxkb](https://www.archlinux.org/packages/community/i686/xxkb/) yra klaviatūros išdėstymo perjungiklis/indikatorius.
+[xxkb](https://www.archlinux.org/packages/?name=xxkb) yra klaviatūros išdėstymo perjungiklis/indikatorius.
 
 #### axkb
 

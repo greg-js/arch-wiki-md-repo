@@ -40,10 +40,10 @@ jumanji allows for a lot of user configuration either by modifying the config.de
 ```
 # jumanji configuration
 # search engines
-searchengine ggl [http://www.google.com/search?q=%s](http://www.google.com/search?q=%s)
-searchengine wiki [http://en.wikipedia.org/w/index.php?search=%s](http://en.wikipedia.org/w/index.php?search=%s)
+searchengine ggl https://www.google.com/search?q=%s
+searchengine wiki https://en.wikipedia.org/w/index.php?search=%s
 # browser settings
-set homepage [http://www.google.com/ig](http://www.google.com/ig)
+set homepage https://www.google.com/ig
 set auto_save 60
 set single_instance false
 # Use privoxy for adblocking

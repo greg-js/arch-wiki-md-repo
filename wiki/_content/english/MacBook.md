@@ -274,7 +274,7 @@ So in linux terms your partitions will be something like:
 
 *   If the above completed successfully, you can continue. If not, then you may need to fix your partitions from within OS X first.
 
-*   You will not be needing boot camp this way, the program rEFIt is much more flexible (though not as flexible as GRUB). Download and install rEFIt [[[1]](http://refit.sourceforge.net/)]
+*   You will not be needing boot camp this way, the program rEFIt is much more flexible (though not as flexible as GRUB). Download and install rEFIt [[1]](http://refit.sourceforge.net/)
 
 *   Go into a terminal in OS X and perform the following, this will enable the rEFIt boot manager.
 

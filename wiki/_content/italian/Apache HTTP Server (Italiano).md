@@ -1,4 +1,4 @@
-[LAMP](http://en.wikipedia.org/wiki/LAMP_%28software_bundle%29) costituisce una combinazione comune di vari software utilizzati in molti server web: **L**inux, **A**pache, **M**ySQL, e **P**HP. Questo documento descrive i passi necessari per configurare un [Apache HTTP Server](http://httpd.apache.org) su un sistema Arch Linux. Spiega inoltre come installare [PHP](/index.php/PHP "PHP") e [MySQL](/index.php/MySQL "MySQL") ed integrarli con il server Apache.
+[LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) costituisce una combinazione comune di vari software utilizzati in molti server web: **L**inux, **A**pache, **M**ySQL, e **P**HP. Questo documento descrive i passi necessari per configurare un [Apache HTTP Server](http://httpd.apache.org) su un sistema Arch Linux. Spiega inoltre come installare [PHP](/index.php/PHP "PHP") e [MySQL](/index.php/MySQL "MySQL") ed integrarli con il server Apache.
 
 Avendo bisogno di solo un server web per sviluppo e test, [Xampp](/index.php/Xampp "Xampp") potrebbe essere la scelta migliore, oltre che la più facile.
 
@@ -651,7 +651,7 @@ a
 
 ```
 
-**Tip:** Si consiglia di installare [phpmyadmin](/index.php/PhpMyAdmin "PhpMyAdmin"), [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) o [adminer](/index.php/Adminer "Adminer") per lavorare con i database.
+**Tip:** Si consiglia di installare [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"), [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) o [adminer](/index.php/Adminer "Adminer") per lavorare con i database.
 
 ## Vedere anche
 

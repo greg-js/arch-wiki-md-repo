@@ -118,7 +118,7 @@ Now, launch your `command prompt` as an administrator. Next, change directory (`
 If your Arch Linux ISO is elsewhere you may need to state the full path, for convenience you may wish to put the Arch Linux ISO into the same folder as the dd executable. The basic format of the command will look like this.
 
 ```
-# dd if=*archlinux-2015-XX-YY-dual.iso* od=\\.\*x*: bs=4M
+# dd if=*archlinux-2015-XX-YY-dual.iso* of=\\.\*x*: bs=4M
 
 ```
 
@@ -129,7 +129,7 @@ If your Arch Linux ISO is elsewhere you may need to state the full path, for con
 Simply replace the various null spots (indicated by an "x") with the correct date and correct drive letter. Here is a complete example.
 
 ```
-# dd if=ISOs\archlinux-2015.01.01-dual.iso od=\\.\d: bs=4M
+# dd if=ISOs\archlinux-2015.01.01-dual.iso of=\\.\d: bs=4M
 
 ```
 
@@ -155,9 +155,9 @@ $ diskutil unmountDisk /dev/disk2
 
 ```
 
-Now we can continue in accordance with the instructions above (but, if you are using the OS X `dd`, use `/dev/rdisk` instead of `/dev/disk`, and use `bs=1M`. `rdisk` means "raw disk" and is much faster on OS X, and `bs=1M` indicates a 1 MB block size).
+Now we can continue in accordance with the instructions above (but, if you are using the OS X `dd`, use `/dev/rdisk` instead of `/dev/disk`, and use `bs=1m`. `rdisk` means "raw disk" and is much faster on OS X, and `bs=1m` indicates a 1 MB block size).
 
- `# dd if=image.iso of=/dev/rdisk2 bs=1M` 
+ `# dd if=image.iso of=/dev/rdisk2 bs=1m` 
 ```
 20480+0 records in
 20480+0 records out

@@ -2,9 +2,9 @@ The most commonly used licenses covering software packages on an Arch Linux syst
 
 Additional information and perspectives on free and open source software licenses may be found on the following pages:
 
-*   [Wikipedia - Free software license](https://en.wikipedia.org/wiki/Free_software_licence)
-*   [Wikipedia - Comparison of free and open-source software licenses](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses "w:Comparison of free and open-source software licenses")
-*   [- A Legal Issues Primer for Open Source and Free Software Projects](https://www.softwarefreedom.org/resources/2008/foss-primer.html)
+*   [w:Free software licence](https://en.wikipedia.org/wiki/Free_software_licence "w:Free software licence")
+*   [w:Comparison of free and open-source software licenses](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses "w:Comparison of free and open-source software licenses")
+*   [A Legal Issues Primer for Open Source and Free Software Projects](https://www.softwarefreedom.org/resources/2008/foss-primer.html)
 *   [GNU Project - Various Licenses and Comments about Them](https://www.gnu.org/licenses/license-list.html)
 *   [Debian - License information](https://www.debian.org/legal/licenses/)
 *   [Open Source Initiative - Licenses by Name](http://www.opensource.org/licenses/alphabetical)

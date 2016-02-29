@@ -1,4 +1,4 @@
-[Fcitx](https://fcitx-im.org/wiki/Fcitx) (Flexible Input Method Framework) is a lightweight [input method framework](http://en.wikipedia.org/wiki/Input_method) aimed at providing environment independent language support for Linux. It supports a lot of different languages and also provides many useful non-CJK features.
+[Fcitx](https://fcitx-im.org/wiki/Fcitx) (Flexible Input Method Framework) is a lightweight [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") aimed at providing environment independent language support for Linux. It supports a lot of different languages and also provides many useful non-CJK features.
 
 ## Contents
 
@@ -36,7 +36,7 @@ Additionally, you might want to install [input method modules](#Configuration) f
 
 ### Input method engines
 
-Fcitx provides built-in input methods for Chinese [Pinyin](http://en.wikipedia.org/wiki/Pinyin) and table-based input (for example [Wubi](http://en.wikipedia.org/wiki/Wubi)).
+Fcitx provides built-in input methods for Chinese [Pinyin](https://en.wikipedia.org/wiki/Pinyin "wikipedia:Pinyin") and table-based input (for example [Wubi](https://en.wikipedia.org/wiki/Wubi "wikipedia:Wubi")).
 
 Depending on the language you wish to type, other input method engines are available:
 
@@ -48,7 +48,7 @@ Depending on the language you wish to type, other input method engines are avail
 *   [fcitx-sogoupinyin](https://aur.archlinux.org/packages/fcitx-sogoupinyin/), Sogou input method for linux—Supports, Jianpin, fuzzy sound, cloud input, English input, mixed skin.[Official website](http://pinyin.sogou.com/linux/)
 *   [fcitx-cloudpinyin](https://www.archlinux.org/packages/?name=fcitx-cloudpinyin) uses internet sources to provide input candidates.
 *   [fcitx-chewing](https://www.archlinux.org/packages/?name=fcitx-chewing) is a popular Zhuyin input engine for Traditional Chinese based on [libchewing](https://www.archlinux.org/packages/?name=libchewing).
-*   [fcitx-table-extra](https://www.archlinux.org/packages/?name=fcitx-table-extra) adds [Cangjie](http://en.wikipedia.org/wiki/Cangjie_input_method), [Zhengma](http://en.wikipedia.org/wiki/Zhengma_method), [Boshiamy](http://en.wikipedia.org/wiki/Boshiamy_method) support.
+*   [fcitx-table-extra](https://www.archlinux.org/packages/?name=fcitx-table-extra) adds [Cangjie](https://en.wikipedia.org/wiki/Cangjie_input_method "wikipedia:Cangjie input method"), [Zhengma](https://en.wikipedia.org/wiki/Zhengma_method "wikipedia:Zhengma method"), [Boshiamy](https://en.wikipedia.org/wiki/Boshiamy_method "wikipedia:Boshiamy method") support.
 *   [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime), based on schemas from the [Rime IME](/index.php/Rime_IME "Rime IME") project.
 
 #### Japanese

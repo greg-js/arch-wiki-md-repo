@@ -445,7 +445,7 @@ Una vez hecho esto, cualquier aplicación que se inicie desde esta shell abrirá
 
 ## CUDA sin Bumblebee
 
-Esto no está bien documentado, pero no es necesario que Bumblebee utilice CUDA y pueda funcionar incluso en máquinas donde optirun falla. Para una guía sobre cómo conseguir que funcione con el Lenovo IdeaPad Y580 (que utiliza la GeForce 660m), consulte: [https://wiki.archlinux.org/index.php/Lenovo_IdeaPad_Y580#NVIDIA_Card](https://wiki.archlinux.org/index.php/Lenovo_IdeaPad_Y580#NVIDIA_Card). Estas instrucciones son muy probable que se adapten a otras máquinas.
+Esto no está bien documentado, pero no es necesario que Bumblebee utilice CUDA y pueda funcionar incluso en máquinas donde optirun falla. Para una guía sobre cómo conseguir que funcione con el Lenovo IdeaPad Y580 (que utiliza la GeForce 660m), consulte: [Lenovo IdeaPad Y580#NVIDIA_Card](/index.php/Lenovo_IdeaPad_Y580#NVIDIA_Card "Lenovo IdeaPad Y580"). Estas instrucciones son muy probable que se adapten a otras máquinas.
 
 ## Solución de problemas
 

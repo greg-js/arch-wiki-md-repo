@@ -169,7 +169,7 @@ Tome nota que [SDDM](/index.php/SDDM "SDDM") gestor de inicio de sesión no es p
 
 ###### Qt y GTK+ Aplicaciones y Apariencias
 
-**Tip:** Para que Qt y GTK tengan consistencia con el tema, ver [Uniform Look for Qt and GTK Applications (Español)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(Espa%C3%B1ol) "Uniform Look for Qt and GTK Applications (Español)").
+**Tip:** Para que Qt y GTK tengan consistencia con el tema, ver [Uniform look for Qt and GTK applications (Español)](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)").
 , y/o en ingles en caso de estar des-actualizada
 
 	Qt4
@@ -294,7 +294,7 @@ No existen muchos temas de iconos diponibles para todo sistema en KDE 4\. Puede 
 
 #### Logo de Arch Linux en el menu de Kicker
 
-Haga clic derecho en el botón de menú de Kicker, pulse **Preferencias del lanzador de aplicaciones** y, a continuación, pulse el icono la**derecha**. Ahora puedes elegir el icono de ArchLinux o cualquier otro icono para reemplazar a la opción por defecto. Los iconos oficiales de Arch se encuentran en [archlinux-artwork](https://www.archlinux.org/packages/extra/any/archlinux-artwork/) , puedes encontrarlo después de instalar en
+Haga clic derecho en el botón de menú de Kicker, pulse **Preferencias del lanzador de aplicaciones** y, a continuación, pulse el icono la**derecha**. Ahora puedes elegir el icono de ArchLinux o cualquier otro icono para reemplazar a la opción por defecto. Los iconos oficiales de Arch se encuentran en [archlinux-artwork](https://www.archlinux.org/packages/?name=archlinux-artwork) , puedes encontrarlo después de instalar en
 
 ```
 /usr/share/archlinux/icons
@@ -303,7 +303,7 @@ Haga clic derecho en el botón de menú de Kicker, pulse **Preferencias del lanz
 
 #### Fuentes
 
-Por defecto, las fuentes de KDE son pobres, prueba instalando los paquetes [ttf-dejavu](https://www.archlinux.org/packages/extra/any/ttf-dejavu/) y [ttf-liberation](https://www.archlinux.org/packages/community/any/ttf-liberation/).
+Por defecto, las fuentes de KDE son pobres, prueba instalando los paquetes [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) y [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation).
 
 Después de la instalación, asegúrete de cerrar y volver a iniciar sesión. No deberías tener que modificar ninguna configuración en la sección "Fuentes" de la configuración del sistema de KDE.
 

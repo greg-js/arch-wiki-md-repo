@@ -76,7 +76,7 @@ Normally namcap prints a human-readable explanation (sometimes with suggestions 
 *   **missing-license** (*error*) This package is missing a license. Licenses should be put in the `license=()` array of the PKGBUILD. See the [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") for more information. It is **very important** to fix this error as soon as possible, since not including a license is a copyright violation in many cases.
 *   **missing-custom-license-dir** (*error*) The license specified is *custom* but no license directory was found under */usr/share/licenses/* as specified in the packaging guidelines.
 *   **missing-custom-license-file** (*error*) The license specified is *custom* but no license file was found in */usr/share/licenses/$pkgname*.
-*   **not-a-common-license** (*error*) The license specified is **not** *custom* but it is not present in the common [licenses](https://www.archlinux.org/packages/core/any/licenses/) package shipped in the Arch Linux distribution.
+*   **not-a-common-license** (*error*) The license specified is **not** *custom* but it is not present in the common [licenses](https://www.archlinux.org/packages/?name=licenses) package shipped in the Arch Linux distribution.
 
 ### Files
 
@@ -104,7 +104,7 @@ This section describes the tags which relate to incorrect permissions of files o
 ### Miscellaneous
 
 *   **mime-cache-not-updated** (*error*) The package installs mime files but does not call update-mime-database to update them.
-*   **hicolor-icon-cache-not-updated** (*error*) There are files in */usr/share/icons/hicolor* but the hicolor icon cache has not been updated. One should use *gtk-update-icon-cache* (for packages depending on *gtk*) or *xdg-icon-resource* to update the icon cache. If you use *xdg-icon-resource* then you should declare a dependency on [xdg-utils](https://www.archlinux.org/packages/extra/i686/xdg-utils/).
+*   **hicolor-icon-cache-not-updated** (*error*) There are files in */usr/share/icons/hicolor* but the hicolor icon cache has not been updated. One should use *gtk-update-icon-cache* (for packages depending on *gtk*) or *xdg-icon-resource* to update the icon cache. If you use *xdg-icon-resource* then you should declare a dependency on [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils).
 *   **insecure-rpath** (*error*) An RPATH (for an executable) is outside */usr/lib*. An RPATH to an insecure location is a potential security issue. See [FS#14049](https://bugs.archlinux.org/task/14049) for discussion.
 
 ### PKGBUILDs

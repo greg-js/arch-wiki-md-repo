@@ -837,7 +837,7 @@ WantedBy=multi-user.target
 
 It is not necesary to set the default location, nginx loads at default `-c /etc/nginx/nginx.conf`, but it is a good idea though.
 
-Alternatively you can run **only** `ExecStart` as chroot with parameter `RootDirectoryStartOnly` set as `yes` [[man systemd service](http://www.freedesktop.org/software/systemd/man/systemd.service.html)] or start it before mount point as effective or a [systemd path](http://www.freedesktop.org/software/systemd/man/systemd.path.html) is available.
+Alternatively you can run **only** `ExecStart` as chroot with parameter `RootDirectoryStartOnly` set as `yes` [man systemd service](http://www.freedesktop.org/software/systemd/man/systemd.service.html) or start it before mount point as effective or a [systemd path](http://www.freedesktop.org/software/systemd/man/systemd.path.html) is available.
 
  `/etc/systemd/system/nginx.path` 
 ```

@@ -69,7 +69,7 @@ Openbox主题控制了窗口边框的外观 , 包括标题和标题上的按钮.
 
 ### X11 鼠标光标
 
-参阅 [Cursor Themes](/index.php/Cursor_Themes "Cursor Themes").
+参阅 [Cursor themes](/index.php/Cursor_themes "Cursor themes").
 
 ### GTK 主题
 
@@ -127,7 +127,7 @@ Arch's wiki 上有一个 [轻量级软件清单](/index.php/Lightweight_Applicat
 
 | 
 ```
- [Avant window navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")                 
+[Avant window navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")                 
 
  [BMPanel](http://nsf.110mb.com/bmpanel/)                           
 
@@ -148,14 +148,14 @@ Arch's wiki 上有一个 [轻量级软件清单](/index.php/Lightweight_Applicat
 
    [PerlPanel](http://freshmeat.net/projects/perlpanel/)            
 
-  [ PyPanel](/index.php/PyPanel "PyPanel")
+  [PyPanel](/index.php/PyPanel "PyPanel")
 
 ```
  | 
 ```
      [Screenlets](http://www.screenlets.org/)                       
 
-    [ Tint2](/index.php/Tint2 "Tint2")                                               
+    [Tint2](/index.php/Tint2 "Tint2")                                               
 
      [Wbar](http://code.google.com/p/wbar/)                         
 
@@ -209,7 +209,7 @@ Arch's wiki 上有一个 [轻量级软件清单](/index.php/Lightweight_Applicat
 
 更轻量的,考虑 [Gentoo](http://www.obsession.se/gentoo/) 或 [emelFM2.](http://emelfm2.net/). 这两个软件实现了典型的两格布局, 其它的文件管理器有 [xfe](http://sourceforge.net/projects/xfe/) 和 [muCommander.](http://www.mucommander.com/)
 
-也可以用 Gnome 的 Nautilus. 虽然不轻量而且比上述程序要慢, 但是 Nautilus 支持 [virtual file systems,](http://en.wikipedia.org/wiki/Virtual_file_system) 通过 SSH, FTP, 或 Samba 接入文件夹.这也是优势.
+也可以用 Gnome 的 Nautilus. 虽然不轻量而且比上述程序要慢, 但是 Nautilus 支持 [virtual file systems,](https://en.wikipedia.org/wiki/Virtual_file_system "wikipedia:Virtual file system") 通过 SSH, FTP, 或 Samba 接入文件夹.这也是优势.
 
 ### 应用程序启动器
 
@@ -320,7 +320,7 @@ Volti 是在系统托盘/通知区域控制音量的 GTK+ 程序 . [volti](https
 
 Volumeicon 系统托盘上的音量控制. [volumeicon](https://www.archlinux.org/packages/?name=volumeicon) AUR 有.
 
-Volwheel 是通过鼠标滚轮控制音量的托盘图标. [volwheel](https://www.archlinux.org/packages/community/any/volwheel/) AUR 有.
+Volwheel 是通过鼠标滚轮控制音量的托盘图标. [volwheel](https://www.archlinux.org/packages/?name=volwheel) AUR 有.
 
 ### 电池 & CPU
 

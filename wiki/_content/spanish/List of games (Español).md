@@ -1,4 +1,4 @@
-**Nota:** Esta página se esfuerza para listar todos los juegos conocidos que funcionan bajo GNU/Linux. Algunos de ellos están accesibles líbremente a través de los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") y [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)"). Para más información sobre cómo ejecutar juegos, consejos relacionados con la configuración del sistema, etc. véase [Gaming](/index.php/Gaming "Gaming"). Para una selección de juegos disponibles en AUR, posiblemente más actualizada, pruebe sondeando la [categoría «games» de AUR](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=6&SeB=nd&SB=n&SO=a&PP=25).
+**Nota:** Esta página se esfuerza para listar todos los juegos conocidos que funcionan bajo GNU/Linux. Algunos de ellos están accesibles líbremente a través de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)"). Para más información sobre cómo ejecutar juegos, consejos relacionados con la configuración del sistema, etc. véase [Gaming](/index.php/Gaming "Gaming"). Para una selección de juegos disponibles en AUR, posiblemente más actualizada, pruebe sondeando la [categoría «games» de AUR](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=6&SeB=nd&SB=n&SO=a&PP=25).
 
 ## Contents
 
@@ -205,7 +205,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **Fortune** — Muestra mensajes al azar/citas/chistes cuando se invoca.
 
-	[http://en.wikipedia.org/wiki/Fortune_(Unix)](http://en.wikipedia.org/wiki/Fortune_(Unix)) || [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)
+	[wikipedia:Fortune_(Unix)](https://en.wikipedia.org/wiki/Fortune_(Unix) || [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)
 
 *   **nInvaders** — Clon de invasores del espacio basado en ncurses.
 

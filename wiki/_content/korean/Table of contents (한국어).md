@@ -24,6 +24,8 @@
 
 	<small>5.1.1.</small> [Package development](/index.php/Category:Package_development_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Package development (한국어)") <small>(1)</small>
 
+	<small>5.2.</small> [Programming languages](/index.php/Category:Programming_languages_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Programming languages (한국어)") <small>(1)</small>
+
 	<small>6.</small> [General](/index.php/Category:General_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:General (한국어)") <small>(3)</small>
 
 	<small>7.</small> [하드웨어](/index.php/Category:Hardware_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Hardware (한국어)") <small>(0)</small>

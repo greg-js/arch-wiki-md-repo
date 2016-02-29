@@ -1,4 +1,4 @@
-[Inkscape](http://inkscape.org/) is a vector graphics editor application. It is distributed under a free software license, the GNU GPL. Its stated goal is to become a powerful graphics tool while being fully compliant with the XML, SVG, and CSS standards.[[1]](https://en.wikipedia.org/wiki/Inkscape)
+[Inkscape](http://inkscape.org/) is a vector graphics editor application. It is distributed under a free software license, the GNU GPL. Its stated goal is to become a powerful graphics tool while being fully compliant with the XML, SVG, and CSS standards.[wikipedia:Inkscape](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")
 
 ## Contents
 

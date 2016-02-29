@@ -34,16 +34,16 @@ Installa uno o più pacchetti dei temi di fbsplash cercando su AUR [fbsplash-the
 
 Se vuoi utilizzare l'ibernazione con fbsplash:
 
-*   Se utilizzi Uswsusp, installa il pacchetto [uswsusp-fbsplash](https://aur.archlinux.org/packages/uswsusp-fbsplash/) da AUR. Per maggiori informazioni leggere le wiki di [pm-utils](https://wiki.archlinux.org/index.php/Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29) ed [hibernate-script](https://wiki.archlinux.org/index.php/Suspend_to_Disk#Uswsusp_method_.28hibernate-script.29)
+*   Se utilizzi Uswsusp, installa il pacchetto [uswsusp-fbsplash](https://aur.archlinux.org/packages/uswsusp-fbsplash/) da AUR. Per maggiori informazioni leggere le wiki di [pm-utils](/index.php/Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29 "Pm-utils") ed [hibernate-script](/index.php/Suspend_to_Disk#Uswsusp_method_.28hibernate-script.29 "Suspend to Disk")
 *   Se utilizzi TuxOnIce, il pacchetto [tuxonice-userui](https://aur.archlinux.org/packages/tuxonice-userui/) permette di utilizzare i temi di fbsplash.
 
-In questa wiki sono presenti ulteriori informazioni su [uswsusp](https://wiki.archlinux.org/index.php/Suspend_to_Disk#Uswsusp_method) e [TuxOnIce](https://wiki.archlinux.org/index.php/Tuxonice_%28Italiano%29).
+In questa wiki sono presenti ulteriori informazioni su [uswsusp](/index.php/Suspend_to_Disk#Uswsusp_method "Suspend to Disk") e [TuxOnIce](/index.php/TuxOnIce_(Italiano) "TuxOnIce (Italiano)").
 
 ## Configurazione
 
 ### Parametri di avvio del Kernel
 
-Il bootloader necessita di essere configurato per Fbsplash. L'esempio seguente vale per [Grub2](/index.php/Grub2 "Grub2") e `/boot/grub/grub.cfg` ([Grub](/index.php/Grub "Grub") e [Lilo](/index.php/Lilo "Lilo") seguono lo stesso criterio):
+Il bootloader necessita di essere configurato per Fbsplash. L'esempio seguente vale per [Grub2](/index.php/Grub2 "Grub2") e `/boot/grub/grub.cfg` ([GRUB](/index.php/GRUB "GRUB") e [LILO](/index.php/LILO "LILO") seguono lo stesso criterio):
 
 ```
 linux /boot/vmlinuz-linux root=/dev/... quiet loglevel=3 logo.nologo console=tty1 splash=silent,fadein,fadeout,theme:arch-banner-icons

@@ -209,7 +209,7 @@
 
 *   **Fortune** — Displays Random messages/quotes/jokes when invoked
 
-	[http://en.wikipedia.org/wiki/Fortune_(Unix)](http://en.wikipedia.org/wiki/Fortune_(Unix)) || [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)
+	[wikipedia:Fortune_(Unix)](https://en.wikipedia.org/wiki/Fortune_(Unix) || [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)
 
 *   **nInvaders** — Ncurses based space invaders clone
 
@@ -1049,5 +1049,5 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Wikipedia:Source port](https://en.wikipedia.org/wiki/Source_port "wikipedia:Source port")
 *   [Linux 游戏数据库](http://www.lgdb.org/)
 *   [Penguspy](http://www.penguspy.com/#/All/free_and_commercial/open_closed/sort=1/view=1/limit=0)
-*   [Linux的游戏名字维基百科](http://en.wikipedia.org/wiki/Category)
+*   [Linux的游戏名字维基百科](https://en.wikipedia.org/wiki/Category "wikipedia:Category")
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)

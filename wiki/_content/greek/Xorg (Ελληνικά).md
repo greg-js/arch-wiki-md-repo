@@ -53,7 +53,7 @@
 
 ## Εισαγωγή
 
-**Xorg** is the public, open-source implementation of the X11 X Window System. (See the [X.org Wikipedia Article](http://en.wikipedia.org/wiki/X.Org_Server) or [X.org](http://wiki.x.org/wiki/) for details.) Basically, if you want a GUI atop Arch, you will want xorg.
+**Xorg** is the public, open-source implementation of the X11 X Window System. (See the [X.org Wikipedia Article](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") or [X.org](http://wiki.x.org/wiki/) for details.) Basically, if you want a GUI atop Arch, you will want xorg.
 
 ## Εγκατάσταση του Xorg
 
@@ -368,7 +368,7 @@ $ X -config *<your config file>*
 
 If a problem occurs, then view the log at <tt>/var/log/Xorg.0.log</tt>. Be on the lookout for any lines beginning with *(EE)* which represent errors, and also *(WW)* which are warnings that could indicate other issues.
 
-**Note:** Using startx requires a [~/.xinitrc](/index.php/Xinitrc "Xinitrc") file, so that X knows what to run when it starts.
+**Note:** Using startx requires a [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc") file, so that X knows what to run when it starts.
 
 In addition, you can also install twm and xterm (via pacman), which will be used as a fallback if ~/.xinitrc does not exist (as stated in /etc/X11/xinit/xinitrc).
 
@@ -529,7 +529,7 @@ Option         "Protocol" "ExplorerPS/2"
 
 ### Μερικά κουμπιά του ποντικιού δεν λειτουργούν
 
-Οι χρήστες του USB Mice πρέπει να διαβάσουν [Get_All_Mouse_Buttons_Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working").
+Οι χρήστες του USB Mice πρέπει να διαβάσουν [Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working").
 
 Οι χρήστες Intellimouse (ExplorerPS/2) users might find their scroll and side buttons aren't behaving as they used to. Previously xorg.conf needed:
 
@@ -788,6 +788,6 @@ to the file `/etc/pam.d/su`. pam_xauth will properly set environment variables a
 
 ## Εξωτερικοί σύνδεσμοι
 
-*   [X.org Wikipedia Article](http://en.wikipedia.org/wiki/X.Org_Server)
+*   [X.org Wikipedia Article](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server")
 *   [X.org](http://wiki.x.org/wiki/)
 *   [Installing and setting up Xorg](http://archux.com/page/installing-and-setting-xorg)

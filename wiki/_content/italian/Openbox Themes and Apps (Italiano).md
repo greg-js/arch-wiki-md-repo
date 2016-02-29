@@ -422,22 +422,22 @@ Controllo del volume per il vassoio di sistema [[5]](https://aur.archlinux.org/p
 
 #### volwheel
 
-Icona del vassoio per modificare il volume con il mouse [[6]](https://www.archlinux.org/packages/community/any/volwheel/)
+Icona del vassoio per modificare il volume con il mouse [volwheel](https://www.archlinux.org/packages/?name=volwheel)
 
 ### Switcher per il layout della tastiera
 
 #### fbxkb
 
-Indicatore di tastiera e switcher [[7]](https://aur.archlinux.org/packages.php?ID=3458)
+Indicatore di tastiera e switcher [[6]](https://aur.archlinux.org/packages.php?ID=3458)
 
 #### xxkb
 
-Indicatore di tastiera e switcher [[8]](https://www.archlinux.org/packages/community/i686/xxkb/)
+Indicatore di tastiera e switcher [xxkb](https://www.archlinux.org/packages/?name=xxkb)
 
 #### axkb
 
-Switcher per il layout della tastiera scritto in QT4 [[9]](https://aur.archlinux.org/packages.php?ID=25555)
+Switcher per il layout della tastiera scritto in QT4 [[7]](https://aur.archlinux.org/packages.php?ID=25555)
 
 #### xneur
 
-X Neural Switcher è un analizzatore di testo, che rileva la lingua di input e la corregge se necessario [[10]](https://aur.archlinux.org/packages.php?ID=9750)
+X Neural Switcher è un analizzatore di testo, che rileva la lingua di input e la corregge se necessario [[8]](https://aur.archlinux.org/packages.php?ID=9750)

@@ -201,4 +201,4 @@ Some applications such as [Chromium](/index.php/Chromium "Chromium") will not di
 ## See Also
 
 *   [Official website](http://www.windowmaker.org/)
-*   [Window Maker (Wikipedia)](http://en.wikipedia.org/wiki/Window_Maker)
+*   [Window Maker (Wikipedia)](https://en.wikipedia.org/wiki/Window_Maker "wikipedia:Window Maker")

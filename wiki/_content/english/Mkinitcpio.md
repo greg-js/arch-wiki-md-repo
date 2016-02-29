@@ -471,4 +471,4 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging") - Debugging with GRUB
 *   Linux Kernel documentation on [initramfs](https://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/filesystems/ramfs-rootfs-initramfs.txt;hb=HEAD)
 *   Linux Kernel documentation on [initrd](https://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/initrd.txt;hb=HEAD)
-*   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd)
+*   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")

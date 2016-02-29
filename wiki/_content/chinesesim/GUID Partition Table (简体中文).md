@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [GUID_Partition_Table](/index.php/GUID_Partition_Table "GUID Partition Table") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=GUID_Partition_Table&diff=0&oldid=355829)可以查看翻译后英文页面的改动。
 
-全局唯一标识分区表（GUID Partition Table，缩写：GPT）是一个实体硬盘的分区表的结构布局的标准。它是[统一可扩展固件接口](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")标准的一部分，它使用[全局唯一标识](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier")来标识设备。它是新一代分区表格式，用以替代 [MBR](/index.php/Master_Boot_Record "Master Boot Record") 分区表。它用来解决 MBR 分区表的缺点，同时带来了一些优点。
+全局唯一标识分区表（GUID Partition Table，缩写：GPT）是一个实体硬盘的分区表的结构布局的标准。它是[统一可扩展固件接口](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")标准的一部分，它使用[全局唯一标识](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier")来标识设备。它是新一代分区表格式，用以替代 [MBR](/index.php/MBR "MBR") 分区表。它用来解决 MBR 分区表的缺点，同时带来了一些优点。
 
 ## Contents
 
@@ -188,12 +188,12 @@ gdisk (以及 sgdisk 和 cgdisk也是)最好的特性之一就是能无损转换
 
 ## 另见
 
-1.  Wikipedia's Page on [GPT](http://en.wikipedia.org/wiki/GUID_Partition_Table) and [MBR](http://en.wikipedia.org/wiki/Master_boot_record)
+1.  Wikipedia's Page on [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") and [MBR](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record")
 2.  [Homepage of Rod Smith's GPT fdisk tool](http://rodsbooks.com/gdisk/) and its [Sourceforge.net Project page - gptfdisk](http://sourceforge.net/projects/gptfdisk/)
 3.  Rod Smith's page on [What's a GPT?](http://www.rodsbooks.com/gdisk/whatsgpt.html) [Converting MBR to GPT](http://rodsbooks.com/gdisk/mbr2gpt.html) and [Booting OSes from GPT](http://rodsbooks.com/gdisk/booting.html)
 4.  Rod Smith's page on the [New Partition Type GUID](http://www.rodsbooks.com/linux-fs-code/index.html) for Linux data partitions
 5.  [System Rescue CD's page on GPT](http://sysresccd.org/Sysresccd-Partitioning-The-new-GPT-disk-layout)
-6.  Wikipedia page on [BIOS Boot Partition](http://en.wikipedia.org/wiki/BIOS_Boot_partition)
+6.  Wikipedia page on [BIOS Boot Partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 7.  [Make the most of large drives with GPT and Linux - IBM Developer Works](http://www.ibm.com/developerworks/linux/library/l-gpt/index.html?ca=dgr-lnxw07GPT-Storagedth-lx&S_TACT=105AGY83&S_CMP=grlnxw07)
 8.  [Microsoft's Windows and GPT FAQ](http://www.microsoft.com/whdc/device/storage/GPT_FAQ.mspx)
 9.  Fedora developer discussion on [BIOS/GPT configuration](http://mjg59.dreamwidth.org/8035.html)

@@ -463,7 +463,8 @@ If the key is `~/.ssh/id_rsa`, `~/.ssh/id_dsa`, `~/.ssh/id_ecdsa`, or `~/.ssh/id
 
 If you have long passphrases for your SSH keys, remembering them can be a pain. So let us tell kwallet to store them! Along with [envoy](https://www.archlinux.org/packages/?name=envoy), install [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) and [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) from the [official repositories](/index.php/Official_repositories "Official repositories"). Next, enable the envoy socket in systemd (see above).
 
-**Note:** As of April 30, 2015, if after installation [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) keeps asking for access to your wallet even after having submitted the password, you might have [[this](https://bbs.archlinux.org/viewtopic.php?id=192862)] problem. The proposed solution is to install [ksshaskpass4](https://aur.archlinux.org/packages/ksshaskpass4/), though this might break your login.
+**Note:**
+**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
 
 First, you will add this script to `~/.kde4/Autostart/ssh-agent.sh`:
 

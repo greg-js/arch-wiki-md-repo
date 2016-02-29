@@ -1,4 +1,4 @@
-[LAMP](http://en.wikipedia.org/wiki/LAMP_%28software_bundle%29) αναφέρεται σε ένα κοινό συνδυασμό προγραμμάτων που χρησιμοποιείται σε πολλούς web servers: **L**inux, **A**pache, **M**ySQL, και **P**HP. Αυτό το άρθρο περιγράφει την παραμετροποίηση ενός [Apache HTTP Server](http://httpd.apache.org) σε ένα Arch Linux σύστημα. Επίσης, περιγράφει την προαιρετική εγκατάσταση της [PHP](/index.php/PHP "PHP") και της [MySQL](/index.php/MySQL "MySQL") και την ενσωμάτωση τους στον Apache Server.
+[LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) αναφέρεται σε ένα κοινό συνδυασμό προγραμμάτων που χρησιμοποιείται σε πολλούς web servers: **L**inux, **A**pache, **M**ySQL, και **P**HP. Αυτό το άρθρο περιγράφει την παραμετροποίηση ενός [Apache HTTP Server](http://httpd.apache.org) σε ένα Arch Linux σύστημα. Επίσης, περιγράφει την προαιρετική εγκατάσταση της [PHP](/index.php/PHP "PHP") και της [MySQL](/index.php/MySQL "MySQL") και την ενσωμάτωση τους στον Apache Server.
 
 Αν χρειάζεστε απλά έναν web server για ανάπτυξη λογισμικού και δοκιμές, ο [Xampp](/index.php/Xampp "Xampp") ίσως είναι μια καλυτέρη και πιο εύκολη επιλογή.
 

@@ -67,7 +67,7 @@
 
 ### Συστήματα UEFI
 
-Όλοι οι UEFI Bootloaders υποστηρίζουν δίσκους GPT disks μιας και το GPT είναι μέρος της προδιαγραφής UEFI και ως εκ τούτου υποχρεωτική για την εκκίνηση συστημάτων UEFI. Δείτε το [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") για περισσότερες πληροφορίες.
+Όλοι οι UEFI Bootloaders υποστηρίζουν δίσκους GPT disks μιας και το GPT είναι μέρος της προδιαγραφής UEFI και ως εκ τούτου υποχρεωτική για την εκκίνηση συστημάτων UEFI. Δείτε το [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") για περισσότερες πληροφορίες.
 
 ### Συστήματα BIOS
 
@@ -107,11 +107,11 @@
 
 ## Δείτε επίσης
 
-1.  Wikipedia's Page on [GPT](http://en.wikipedia.org/wiki/GUID_Partition_Table) and [MBR](http://en.wikipedia.org/wiki/Master_boot_record)
+1.  Wikipedia's Page on [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") and [MBR](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record")
 2.  [Homepage of Rod Smith's GPT fdisk tool](http://rodsbooks.com/gdisk/) and its [Sourceforge.net Project page - gptfdisk](http://sourceforge.net/projects/gptfdisk/)
 3.  Rod Smith's page on [Converting MBR to GPT](http://rodsbooks.com/gdisk/mbr2gpt.html) and [Booting OSes from GPT](http://rodsbooks.com/gdisk/booting.html)
 4.  Rod Smith's page on the [New Partition Type GUID](http://www.rodsbooks.com/linux-fs-code/index.html) for Linux data partitions
 5.  [System Rescue CD's page on GPT](http://sysresccd.org/Sysresccd-Partitioning-The-new-GPT-disk-layout)
-6.  Wikipedia page on [BIOS Boot Partition](http://en.wikipedia.org/wiki/BIOS_Boot_partition)
+6.  Wikipedia page on [BIOS Boot Partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 7.  [Make the most of large drives with GPT and Linux - IBM Developer Works](http://www.ibm.com/developerworks/linux/library/l-gpt/index.html?ca=dgr-lnxw07GPT-Storagedth-lx&S_TACT=105AGY83&S_CMP=grlnxw07)
 8.  [Microsoft's Windows and GPT FAQ](http://www.microsoft.com/whdc/device/storage/GPT_FAQ.mspx)

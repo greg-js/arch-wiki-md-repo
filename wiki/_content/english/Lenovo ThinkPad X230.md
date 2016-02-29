@@ -38,7 +38,7 @@ The `badblocks` binary helps fix logical bad blocks if detected by fsck during s
 
 After saving the above files, make sure to regenerate your init ram image by the command `mkinitcpio -p linux`, and follow the steps in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
-**Note:** Using **enable_rc6=1** will enable basic power saving with first stage of [C-state 6](http://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface#Processor_states) [(sleeping state)](http://software.intel.com/en-us/blogs/2013/06/03/intel-xeon-phi-coprocessor-power-management-part-2a-core-c-states-the-details). The stages vary by the depth of sleep, that can be attained by setting the value of **enable_rc6** between 1 to 7 in ascending order as can be seen in its documentation with **modinfo i915** command shown above.
+**Note:** Using **enable_rc6=1** will enable basic power saving with first stage of [C-state 6](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface#Processor_states "wikipedia:Advanced Configuration and Power Interface") [(sleeping state)](http://software.intel.com/en-us/blogs/2013/06/03/intel-xeon-phi-coprocessor-power-management-part-2a-core-c-states-the-details). The stages vary by the depth of sleep, that can be attained by setting the value of **enable_rc6** between 1 to 7 in ascending order as can be seen in its documentation with **modinfo i915** command shown above.
 
 **Warning:** Keep in mind that c-state power saving always comes at performance sacrifice and setting a higher value can cause a jittery display or some other unexplained and unexpected misbehavior with i915 so you may want to experiment with different values to find out what suits your needs.
 
@@ -48,7 +48,7 @@ X230 has IPS screen with 125.37 DPI. Refer to [HiDPI](/index.php/HiDPI "HiDPI") 
 
 ### Touchpad
 
-The original configuration renders the touchpad quite useless, as it behaves very jumpily. [[Ubuntu Bugtracker](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069/comments/5)] offers a solution for this issue. Add the following
+The original configuration renders the touchpad quite useless, as it behaves very jumpily. [Ubuntu Bugtracker](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069/comments/5) offers a solution for this issue. Add the following
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
 ```

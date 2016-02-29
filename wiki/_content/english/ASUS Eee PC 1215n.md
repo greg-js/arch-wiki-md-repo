@@ -2,15 +2,15 @@
 
 	Kernels 3.10.6 - 3.10.10 cause kernel panics with the brcmsmac WiFi driver.
 
-	If you need one of these kernels, see [section](https://wiki.archlinux.org/index.php/ASUS_Eee_PC_1215n#brcmsmac_WiFi_driver_kernel_panic) below for work-around. Otherwise, update kernel to 3.11.1+
+	If you need one of these kernels, see [section](#brcmsmac_WiFi_driver_kernel_panic) below for work-around. Otherwise, update kernel to 3.11.1+
 
 | **Device** | **Status** | **Module** |
 | Ethernet | **Working** | atl1c [[1]](http://www.linuxfoundation.org/collaborate/workgroups/networking/alx) |
-| Wireless | **Working** | [brcmsmac](https://wiki.archlinux.org/index.php/Broadcom_wireless#brcmsmac.2Fbrcmfmac); [broadcom-wl](https://wiki.archlinux.org/index.php/Broadcom_wireless#broadcom-wl) |
-| Video | **Working** | [i915](https://www.archlinux.org/packages/extra/x86_64/xf86-video-intel/); [nvidia](https://wiki.archlinux.org/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA); [noveau](https://wiki.archlinux.org/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNouveau) |
-| Audio | **Working** | [snd-hda-intel](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture) |
-| Camera | **Working** | [uvcvideo](https://wiki.archlinux.org/index.php/Webcam_Setup#linux-uvc) |
-| Card Reader | **Working** | [usb-storage](https://wiki.archlinux.org/index.php/USB_Storage_Devices#Getting_a_kernel_that_supports_usb_storage) |
+| Wireless | **Working** | [brcmsmac](/index.php/Broadcom_wireless#brcmsmac.2Fbrcmfmac "Broadcom wireless"); [broadcom-wl](/index.php/Broadcom_wireless#broadcom-wl "Broadcom wireless") |
+| Video | **Working** | [i915](https://www.archlinux.org/packages/extra/x86_64/xf86-video-intel/); [nvidia](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA "Bumblebee"); [noveau](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNouveau "Bumblebee") |
+| Audio | **Working** | [snd-hda-intel](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") |
+| Camera | **Working** | [uvcvideo](/index.php/Webcam_setup#linux-uvc "Webcam setup") |
+| Card Reader | **Working** | [usb-storage](/index.php/USB_storage_devices#Getting_a_kernel_that_supports_usb_storage "USB storage devices") |
 | Function Keys | **Partial** | eeepc-wmi [[2]](http://acpi4asus.sourceforge.net/) |
 
 This page includes general information regarding Asus EEE PC 1215n and related notes on installing/using Arch Linux on it.
@@ -32,19 +32,19 @@ This page includes general information regarding Asus EEE PC 1215n and related n
 
 # System Specs
 
-**CPU:** [Intel Atom D525](http://ark.intel.com/products/49490) (Dual Core; 1.8GHz; Codename [Pineview](https://en.wikipedia.org/wiki/List_of_Intel_Atom_microprocessors#.22Pineview.22_.2845_nm.29_2))
+**CPU:** [Intel Atom D525](http://ark.intel.com/products/49490) (Dual Core; 1.8GHz; Codename [Pineview](https://en.wikipedia.org/wiki/List_of_Intel_Atom_microprocessors#.22Pineview.22_.2845_nm.29_2 "wikipedia:List of Intel Atom microprocessors"))
 
 **RAM:** 1-2 x 1GB DDR3 SO-DIMM; 800 MHz (Maximum 4 GB)
 
 **HDD:** 2.5" SATA2 250GB/320GB HDD; 5400 RPM (SATA2)
 
-**GPU:** [nVidia ION2](http://www.nvidia.com/object/sff_ion.html) (GT218; 16 CUDA cores; 475 MHz; 256 MB DDR3) [[3]](https://en.wikipedia.org/wiki/Nvidia_Ion#Ion_2_.28next-generation_Nvidia_Ion.29) / Intel Graphics Media Accelerator on CPU die ([Intel GMA 3150](https://en.wikipedia.org/wiki/GMA_3150#GMA_3150); 400 MHz; 256 MB Max Shared Memory [[4]](http://www.intel.com/support/graphics/sb/CS-031160.htm?wapkw=gma+3150))
+**GPU:** [nVidia ION2](http://www.nvidia.com/object/sff_ion.html) (GT218; 16 CUDA cores; 475 MHz; 256 MB DDR3) [wikipedia:Nvidia_Ion#Ion_2_.28next-generation_Nvidia_Ion.29](https://en.wikipedia.org/wiki/Nvidia_Ion#Ion_2_.28next-generation_Nvidia_Ion.29 "wikipedia:Nvidia Ion") / Intel Graphics Media Accelerator on CPU die ([Intel GMA 3150](https://en.wikipedia.org/wiki/GMA_3150#GMA_3150 "wikipedia:GMA 3150"); 400 MHz; 256 MB Max Shared Memory [[3]](http://www.intel.com/support/graphics/sb/CS-031160.htm?wapkw=gma+3150))
 
-**North Bridge:** [NM10](http://ark.intel.com/products/47610/Intel-CG82NM10-PCH?q=nm10Intel) [[5]](http://www.intel.com/content/www/us/en/chipsets/internet-devices-chipsets/nm10-chipset.html)
+**North Bridge:** [NM10](http://ark.intel.com/products/47610/Intel-CG82NM10-PCH?q=nm10Intel) [[4]](http://www.intel.com/content/www/us/en/chipsets/internet-devices-chipsets/nm10-chipset.html)
 
-**South Bridge:** [Intel ICH7-M](http://ark.intel.com/products/27680/Intel-82801GBM-IO-Controller) [[6]](https://en.wikipedia.org/wiki/List_of_Intel_chipsets#Southbridge_9xx_and_3.2F4_Series_chipsets)
+**South Bridge:** [Intel ICH7-M](http://ark.intel.com/products/27680/Intel-82801GBM-IO-Controller) [wikipedia:List_of_Intel_chipsets#Southbridge_9xx_and_3.2F4_Series_chipsets](https://en.wikipedia.org/wiki/List_of_Intel_chipsets#Southbridge_9xx_and_3.2F4_Series_chipsets "wikipedia:List of Intel chipsets")
 
-**Audio:** [Intel High Definition Audio Controller](https://en.wikipedia.org/wiki/Intel_High_Definition_Audio)
+**Audio:** [Intel High Definition Audio Controller](https://en.wikipedia.org/wiki/Intel_High_Definition_Audio "wikipedia:Intel High Definition Audio")
 
 **Display:** 12.1" 1366x768 LED display
 
@@ -52,7 +52,7 @@ This page includes general information regarding Asus EEE PC 1215n and related n
 
 **Ethernet:** [Qualcomm Atheros AR8152 v2.0](https://www.qca.qualcomm.com/media/product/product_98_file1.pdf) 10/100 Mb
 
-**Bluetooth:** [BCM4313](http://www.broadcom.com/products/Wireless-LAN/802.11-Wireless-LAN-Solutions/BCM4313Broadcom) [Bluetooth v3.0 + HS](https://en.wikipedia.org/wiki/Bluetooth#Bluetooth_v3.0_.2B_HS)
+**Bluetooth:** [BCM4313](http://www.broadcom.com/products/Wireless-LAN/802.11-Wireless-LAN-Solutions/BCM4313Broadcom) [Bluetooth v3.0 + HS](https://en.wikipedia.org/wiki/Bluetooth#Bluetooth_v3.0_.2B_HS "wikipedia:Bluetooth")
 
 **Webcam:** [Azurewave 0.3 MP (VGA)](http://www.azurewave.com/product_AM-VB002_1.asp)
 
@@ -118,7 +118,7 @@ There is a new project, called [Bumblebee](/index.php/Bumblebee "Bumblebee") (Tr
 
 Recently tested Bumblebee installation with kernel 3.1.8 and nvidia driver 290.10, which is installed as part of bumblebee package.
 
-Install Bumblebee from AUR and follow instructions [here](https://wiki.archlinux.org/index.php/Bumblebee)
+Install Bumblebee from AUR and follow instructions [here](/index.php/Bumblebee "Bumblebee")
 
 **Output from Optirun Test**
 
@@ -185,7 +185,7 @@ On the default kernel (2.6.36 branch) you cannot suspend system after disabling 
 
 **Update (after a little testing):**
 
-With the latest kernel running (3.0) and the "acpi_call" module installed from [AUR](https://aur.archlinux.org/packages.php?O=0&K=acpi_call&do_Search=Go), the suspend and hibernate scripts used by [pm-utils](https://wiki.archlinux.org/index.php/Pm-utils) will work (from commandline and in Gnome 3) as long as the acpi_call module is added to the suspend modules list used by the scripts.
+With the latest kernel running (3.0) and the "acpi_call" module installed from [AUR](https://aur.archlinux.org/packages.php?O=0&K=acpi_call&do_Search=Go), the suspend and hibernate scripts used by [pm-utils](/index.php/Pm-utils "Pm-utils") will work (from commandline and in Gnome 3) as long as the acpi_call module is added to the suspend modules list used by the scripts.
 
 Create a file `modules` in `/etc/pm/config.d` and paste in the line below.
 

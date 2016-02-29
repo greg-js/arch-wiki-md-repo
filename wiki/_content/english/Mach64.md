@@ -1,4 +1,4 @@
-[The Mach 64 chip](http://en.wikipedia.org/wiki/ATI_Mach#Mach_64) is an old graphic accelerator developped by ATI. This board has basic 3D capabilites. Its support on Linux is poor but exists. This page is a walkthrough to setup Mach 64 graphics chipsets (including ATI Rage Pro) and obtain direct rendering on some of them.
+[The Mach 64 chip](https://en.wikipedia.org/wiki/ATI_Mach#Mach_64 "wikipedia:ATI Mach") is an old graphic accelerator developped by ATI. This board has basic 3D capabilites. Its support on Linux is poor but exists. This page is a walkthrough to setup Mach 64 graphics chipsets (including ATI Rage Pro) and obtain direct rendering on some of them.
 
 ## Contents
 

@@ -352,7 +352,7 @@ qemu-system-x86_64 \
 
 `-drive if=flash,format=raw,readonly,file=/usr/share/edk2.git/ovmf-x64/OVMF_CODE-pure-efi.fd` BIOS location.
 
-For more commands see [QEMU.](https://wiki.archlinux.org/index.php/QEMU)
+For more commands see [QEMU](/index.php/QEMU "QEMU").
 
 ## Create and configure VM for OVMF
 

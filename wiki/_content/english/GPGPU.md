@@ -87,7 +87,7 @@ Code is compiled using [llvm](https://www.archlinux.org/packages/?name=llvm) (de
 
 OpenCL support from Mesa is in development (see [http://www.x.org/wiki/GalliumStatus/](http://www.x.org/wiki/GalliumStatus/)). AMD Radeon cards are supported by the r600g driver.
 
-Arch Linux ships OpenCL support as a separate package [opencl-mesa](https://www.archlinux.org/packages/extra/x86_64/opencl-mesa/). See [http://dri.freedesktop.org/wiki/GalliumCompute/](http://dri.freedesktop.org/wiki/GalliumCompute/) for usage instructions.
+Arch Linux ships OpenCL support as a separate package [opencl-mesa](https://www.archlinux.org/packages/?name=opencl-mesa). See [http://dri.freedesktop.org/wiki/GalliumCompute/](http://dri.freedesktop.org/wiki/GalliumCompute/) for usage instructions.
 
 You could also use [lordheavy's repo](http://pkgbuild.com/~lcarlier/mesa-git/). Install these packages:
 

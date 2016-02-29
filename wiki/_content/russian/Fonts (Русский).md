@@ -142,7 +142,7 @@ $ fc-cache -vf
 
 # Рекомендации по выбору шрифтов
 
-В качестве основного шрифта рабочего окружения можно рекомендовать либо [Droid Fonts](http://en.wikipedia.org/wiki/Droid_(font)), либо [Bitstream Vera Fonts](http://ru.wikipedia.org/wiki/Bitstream_Vera), либо [Red Hats Liberation Fonts](http://www.redhat.com/promo/fonts). Однако стоит заметить, что [начертание некоторых букв](http://i.imgur.com/osBDC4e.png) шрифта *Red Hats Liberation Fonts* на данный момент оставляет желать лучшего, поэтому его, в отличие от *Bitstream Vera Fonts*, необходимо устанавливать вручную, а не из репозитория.
+В качестве основного шрифта рабочего окружения можно рекомендовать либо [Droid Fonts](https://en.wikipedia.org/wiki/Droid_(font) "wikipedia:Droid (font)"), либо [Bitstream Vera Fonts](https://ru.wikipedia.org/wiki/Bitstream_Vera), либо [Red Hats Liberation Fonts](http://www.redhat.com/promo/fonts). Однако стоит заметить, что [начертание некоторых букв](http://i.imgur.com/osBDC4e.png) шрифта *Red Hats Liberation Fonts* на данный момент оставляет желать лучшего, поэтому его, в отличие от *Bitstream Vera Fonts*, необходимо устанавливать вручную, а не из репозитория.
 
 ## Установка Droid Fonts
 
@@ -170,7 +170,7 @@ $ fc-cache -vf
 
 Так как в пакете *ttf-ms-fonts* присутствуют некоторые шрифты, начертание которых на данный момент оставляет желать лучшего, можно воспользоваться альтернативным вариантом их установки, который заключается в выборочной инсталляции только необходимых шрифтов.
 
-Необходимые шрифты Вы можете скачать на [этой](http://sourceforge.net/project/showfiles.php?group_id=34153&package_id=56408) странице веб-сайта [SourceForge.net](http://ru.wikipedia.org/wiki/SourceForge.net)
+Необходимые шрифты Вы можете скачать на [этой](http://sourceforge.net/project/showfiles.php?group_id=34153&package_id=56408) странице веб-сайта [SourceForge.net](https://ru.wikipedia.org/wiki/SourceForge.net)
 
 ***Не рекомендуется** скачивать шрифт* Arial*, т.к.* Red Hats Liberation Fonts*, загруженный с сайта [Red Hat Bugzilla](https://bugzilla.redhat.com/show_bug.cgi?id=427791), имеет схожее начертание и более чёткие линии.*
 

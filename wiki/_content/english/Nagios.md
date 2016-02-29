@@ -148,7 +148,7 @@ If you are still getting this error, you might need to change the rights on the 
 
 ### Nginx Configuration
 
-Apart from php and php-fpm, You should have [fcgiwrap](https://wiki.archlinux.org/index.php/Nginx#CGI_implementation) installed or else CGI scripts will not run.
+Apart from php and php-fpm, You should have [fcgiwrap](/index.php/Nginx#CGI_implementation "Nginx") installed or else CGI scripts will not run.
 
 Example configuration:
 

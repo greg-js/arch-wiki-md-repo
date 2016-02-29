@@ -16,13 +16,13 @@
 Requires a custom module not currently avalable in the stock 3.14.4-1-ARCH kernel.
 
 ```
-   See [Hardware Modules](https://wiki.archlinux.org/index.php/Fujitsu_Lifebook_T904#Wacom_Digitizer) for how to enable the digitizer
+   See [Hardware Modules](#Wacom_Digitizer) for how to enable the digitizer
 
 ```
 
 ### Fingerprint reader
 
-According to the [Fprint wiki](https://wiki.archlinux.org/index.php/Fprint), the reader does not appear to be a [supported model](http://www.freedesktop.org/wiki/Software/fprint/libfprint/Supported_devices/). If the reader is unused, it is recommended that the device be physically disabled in the bios.
+According to the [Fprint wiki](/index.php/Fprint "Fprint"), the reader does not appear to be a [supported model](http://www.freedesktop.org/wiki/Software/fprint/libfprint/Supported_devices/). If the reader is unused, it is recommended that the device be physically disabled in the bios.
 
 ### Fan noise
 
@@ -40,7 +40,7 @@ Until future updates are released, users may obtain a functional digitizer by in
 
 #### X11 wacom input
 
-Install *xf86-input-wacom-git* via [building from source](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or using an [AUR helper](https://wiki.archlinux.org/index.php/AUR_Helpers))
+Install *xf86-input-wacom-git* via [building from source](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") or using an [AUR helper](/index.php/AUR_helper "AUR helper"))
 
 #### Wacom Kernel Module
 

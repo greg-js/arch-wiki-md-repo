@@ -14,17 +14,17 @@
 *   Ο *bootloader* είναι το πρώτο πρόγραμμα που τρέχει ο υπολογιστής κατά την εκκίνησή του. Είναι υπεύθυνος στο να διαβαστεί και να μεταφερθεί ο πυρήνας (kernel) του Linux.
 *   Το όνομα GRUB ουσιαστικά απευθύνετε στην *δεύτερη* έκδοση της εφαρμογής αυτής, [δες](https://www.gnu.org/software/grub/). Αν θέλετε να μάθετε περισσότερο για την παλαιότερη έκδοσή του, διαβάστε στο [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
 *   Ο GRUB υποστηρίζει το σύστημα αρχείων [Btrfs](/index.php/Btrfs "Btrfs") σαν διαχειριστής *root* είτε είναι συμπιεσμένο σαν *zlib* είτε *LZO* χωρίς ξεχωριστό `/boot`.
-*   Ο GRUB δεν υποστηρίζει στο σύστημα αρχείων [F2fs](/index.php/F2fs "F2fs") σαν διαχειριστής *root*. Έτσι θα χρειαστείτε ένα ξεχωριστό `/boot` με υποστηριζόμενο σύστημα αρχείων.
+*   Ο GRUB δεν υποστηρίζει στο σύστημα αρχείων [F2FS](/index.php/F2FS "F2FS") σαν διαχειριστής *root*. Έτσι θα χρειαστείτε ένα ξεχωριστό `/boot` με υποστηριζόμενο σύστημα αρχείων.
 
 ## Σήστημα BIOS
 
 ### Ειδικές οδηγίες για τον πίνακα κατατμήσεων GUID (GPT)
 
-Για την ρύθμιση του BIOS/[GUID_Partition_Table_(Ελληνικά)](/index.php/GUID_Partition_Table_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "GUID Partition Table (Ελληνικά)") χρειάζεται ο [BIOS boot partition](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html). Ο GRUB ενσωματώνει σε αυτόν το `core.img` του.
+Για την ρύθμιση του BIOS/[GUID Partition Table (Ελληνικά)](/index.php/GUID_Partition_Table_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "GUID Partition Table (Ελληνικά)") χρειάζεται ο [BIOS boot partition](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html). Ο GRUB ενσωματώνει σε αυτόν το `core.img` του.
 
 **Σημείωση:**
 
-*   Πριν κάνετε αυτήν την μέθοδο, να έχετε υπόψιν πως όλα τα συστήματα δεν υποστηρίζουν αυτήν την μέθοδο διαμόρφωσης. Περισσότερες πληροφορίες στο [[Σύστημα BIOS](https://wiki.archlinux.org/index.php/GUID_Partition_Table_%28%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC%29#.CE.A3.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.B1_BIOS)].
+*   Πριν κάνετε αυτήν την μέθοδο, να έχετε υπόψιν πως όλα τα συστήματα δεν υποστηρίζουν αυτήν την μέθοδο διαμόρφωσης. Περισσότερες πληροφορίες στο [Σύστημα BIOS](/index.php/GUID_Partition_Table_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC)#.CE.A3.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.B1_BIOS "GUID Partition Table (Ελληνικά)").
 *   Ο GRUB χρειάζεται αυτό το έξτρα τμήμα σκληρού μόνο για την μέθοδο διαμόρφωσης BIOS/GPT. Παλιότερα στην μέθοδο BIOS/MBR ο GRUB χρησιμοποιούσε το Post-MBR για να ενσωματώσει το `core.img` του. Ο GRUB για το BIOS/GPT δεν χρησιμοποιεί το Post-GPT για να συμμορφωθεί με τις απαιτήσεις που χρειάζεται 1_μεγκαμπάιτ/2048_τομείς σκληρού δίσκου.
 *   Στα συστήματα [UEFI](/index.php/UEFI "UEFI") δεν χρειάζεται αυτό το έξτρα τμήμα σκληρού μιας και δεν ενσωματώνετε στο boot sector.
 
@@ -46,7 +46,7 @@
 
 Υπάρχουν 4 τρόποι για να εγκατασταθούν τα αρχεία του GRUB boot για τον BIOS:
 
-*   [Εγκατάσταση στον δίσκο](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.CF.83.CF.84.CE.BF.CE.BD_.CE.B4.CE.AF.CF.83.CE.BA.CE.BF) (συνιστάται)
+*   [Εγκατάσταση στον δίσκο](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.CE.B1.CF.81.CF.87.CE.B5.CE.AF.CF.89.CE.BD_boot) (συνιστάται)
 *   [Εγκατάσταση σε εξωτερική USB μονάδα](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.CF.83.CE.B5_.CE.B5.CE.BE.CF.89.CF.84.CE.B5.CF.81.CE.B9.CE.BA.CE.AE_USB_.CE.BC.CE.BF.CE.BD.CE.AC.CE.B4.CE.B1) (για ανάκτηση)
 *   Εγκατάσταση σε τμήμα, μη-τμήμα σκληρού δίσκου (δεν συνιστάται)
 *   [Δημιουργία μόνο του core.img](#.CE.94.CE.B7.CE.BC.CE.B9.CE.BF.CF.85.CF.81.CE.B3.CE.AF.CE.B1_.CE.BC.CF.8C.CE.BD.CE.BF_.CF.84.CE.BF.CF.85_core.img) (ασφαλέστερη μέθοδος, αλλά απαιτεί άλλον έναν BIOS bootloader σαν το [Syslinux](/index.php/Syslinux "Syslinux") να είναι ήδη εγκατεστημένο για να συνδέσει το `/boot/grub/i386-pc/core.img`)

@@ -158,7 +158,7 @@ $ cat /proc/acpi/video/VID/LCD/brightness
 
 ##### ThinkPad T40/T42
 
-对于 [ThinkPad](http://en.wikipedia.org/wiki/ThinkPad) T40/T42 笔记本，最小和最大亮度的查看要通过以下命令:
+对于 [ThinkPad](https://en.wikipedia.org/wiki/ThinkPad "wikipedia:ThinkPad") T40/T42 笔记本，最小和最大亮度的查看要通过以下命令:
 
 ```
 $ cat /sys/class/backlight/acpi_video0/brightness
@@ -181,7 +181,7 @@ BRIGHTNESS_OUTPUT="/sys/class/backlight/thinkpad_screen/brightness"
 
 ##### ThinkPad T60
 
-*   对于 [ThinkPad](http://en.wikipedia.org/wiki/ThinkPad) T60 笔记本，最小和最大亮度的查看要通过以下命令:
+*   对于 [ThinkPad](https://en.wikipedia.org/wiki/ThinkPad "wikipedia:ThinkPad") T60 笔记本，最小和最大亮度的查看要通过以下命令:
 
 ```
 $ cat /sys/class/backlight/thinkpad_screen/max_brightness

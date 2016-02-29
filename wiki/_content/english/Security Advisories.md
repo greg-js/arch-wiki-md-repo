@@ -34,6 +34,9 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### February 2016
 
+*   [28 February 2016] [ASA-201602-24](https://lists.archlinux.org/pipermail/arch-security/2016-February/000565.html) [cacti](https://www.archlinux.org/packages/?name=cacti) SQL injection
+*   [28 February 2016] [ASA-201602-23](https://lists.archlinux.org/pipermail/arch-security/2016-February/000564.html) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) unbound stack usage
+*   [28 February 2016] [ASA-201602-22](https://lists.archlinux.org/pipermail/arch-security/2016-February/000563.html) [glibc](https://www.archlinux.org/packages/?name=glibc) unbound stack usage
 *   [25 February 2016] [ASA-201602-21](https://lists.archlinux.org/pipermail/arch-security/2016-February/000562.html) [lib32-libssh2](https://www.archlinux.org/packages/?name=lib32-libssh2) man-in-the-middle
 *   [25 February 2016] [ASA-201602-20](https://lists.archlinux.org/pipermail/arch-security/2016-February/000561.html) [libssh2](https://www.archlinux.org/packages/?name=libssh2) man-in-the-middle
 *   [24 February 2016] [ASA-201602-19](https://lists.archlinux.org/pipermail/arch-security/2016-February/000560.html) [libgcrypt](https://www.archlinux.org/packages/?name=libgcrypt) secret key extraction

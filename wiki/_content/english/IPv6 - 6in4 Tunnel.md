@@ -8,7 +8,7 @@
 
 ## Introduction
 
-[http://en.wikipedia.org/wiki/6in4](http://en.wikipedia.org/wiki/6in4)
+[wikipedia:6in4](https://en.wikipedia.org/wiki/6in4 "wikipedia:6in4")
 
 ## 6in4-tunnel rc.d script
 

@@ -49,7 +49,7 @@ Arch is backed by [pacman](/index.php/Pacman "Pacman"), a lightweight, simple an
 
 ### The early years
 
-Judd Vinet, a Canadian programmer and occasional guitarist, began developing Arch Linux in early 2001\. Its first formal release, Arch Linux 0.1, was on March 11, 2002\. Inspired by the elegant simplicity of [Slackware](http://www.slackware.com/), [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution), [PLD Linux](http://www.pld-linux.org/), and [CRUX](http://crux.nu/), and yet disappointed with their lack of package management at the time; Vinet built his own distribution on similar principles as those distros. But, he also wrote a package management program called [pacman](/index.php/Pacman "Pacman"), to automatically handle package installation, removal, and upgrades.
+Judd Vinet, a Canadian programmer and occasional guitarist, began developing Arch Linux in early 2001\. Its first formal release, Arch Linux 0.1, was on March 11, 2002\. Inspired by the elegant simplicity of [Slackware](http://www.slackware.com/), [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"), [PLD Linux](http://www.pld-linux.org/), and [CRUX](http://crux.nu/), and yet disappointed with their lack of package management at the time; Vinet built his own distribution on similar principles as those distros. But, he also wrote a package management program called [pacman](/index.php/Pacman "Pacman"), to automatically handle package installation, removal, and upgrades.
 
 ### The middle years
 

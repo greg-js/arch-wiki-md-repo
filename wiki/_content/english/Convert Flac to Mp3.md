@@ -139,6 +139,6 @@ For ease of use, add the script to your `PATH`. Open up a terminal, `cd` to the 
 ## See also
 
 *   [https://www.xiph.org/flac/](https://www.xiph.org/flac/)
-*   [https://en.wikipedia.org/wiki/FLAC](https://en.wikipedia.org/wiki/FLAC)
+*   [wikipedia:FLAC](https://en.wikipedia.org/wiki/FLAC "wikipedia:FLAC")
 *   [http://lame.sourceforge.net/](http://lame.sourceforge.net/)
 *   [http://wiki.hydrogenaudio.org/index.php?title=Flac](http://wiki.hydrogenaudio.org/index.php?title=Flac) - More information on FLAC.

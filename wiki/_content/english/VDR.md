@@ -114,7 +114,7 @@ $ cd ..
 
 ```
 
-if not downloaded, [https://aur.archlinux.org/packages/start-stop-daemon/](https://aur.archlinux.org/packages/start-stop-daemon/)
+if not downloaded, [start-stop-daemon](https://aur.archlinux.org/packages/start-stop-daemon/)
 replace the contents PKGBUILD [https://aur.archlinux.org/packages/st/start-stop-daemon/PKGBUILD](https://aur.archlinux.org/packages/st/start-stop-daemon/PKGBUILD)
 
 #### vdr
@@ -593,7 +593,7 @@ Theoretically, the concept of streaming VDR over LAN or WLAN with the plugin vdr
 
 Even though the quality of the video is visibly diminished, the result looks startlingly great and you can watch live TV and recordings with hardly any cutback.
 
-You can control the remote VDR with either the [[plugin](http://live.vdr-developer.org/en/index.php%7CLIVE)] or SVDRP software like ["VDR Remote Control"](http://www.chrisz.de/blog/?p=61) (unsecure, since the SVDRP port has to be forwarded on your router). You can even use your iPhone or iPod Touch with the application [ZapperPro](http://www.vdr-wiki.de/wiki/index.php/ZapperPro), available in the Apple Store. As a requirement you need access to to the Internet through WLAN. Be careful regarding the security issue when opening the SVDRP port to the Internet.
+You can control the remote VDR with either the [plugin](http://live.vdr-developer.org/en/index.php%7CLIVE) or SVDRP software like ["VDR Remote Control"](http://www.chrisz.de/blog/?p=61) (unsecure, since the SVDRP port has to be forwarded on your router). You can even use your iPhone or iPod Touch with the application [ZapperPro](http://www.vdr-wiki.de/wiki/index.php/ZapperPro), available in the Apple Store. As a requirement you need access to to the Internet through WLAN. Be careful regarding the security issue when opening the SVDRP port to the Internet.
 
 Two concepts will be provided, since using the same techniques, the quality of the resulting stream should be similar.
 

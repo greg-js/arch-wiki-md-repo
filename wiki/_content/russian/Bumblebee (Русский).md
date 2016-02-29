@@ -61,7 +61,7 @@ Bumblebee пытается подражать поведению Optimus; исп
 
 ### Использование драйвера Nouveau
 
-Для использования драйвера [Nouveau](https://wiki.archlinux.org/index.php/Nouveau) вы должны инсталлировать git версию Bumblebee и некоторые дополнительные пакеты:
+Для использования драйвера [Nouveau](/index.php/Nouveau "Nouveau") вы должны инсталлировать git версию Bumblebee и некоторые дополнительные пакеты:
 
 *   [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) экспериментальный 3D драйвер
 *   [nouveau-dri](https://www.archlinux.org/packages/?name=nouveau-dri) классический Mesa DRI + Gallium3D drivers

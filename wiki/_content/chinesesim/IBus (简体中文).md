@@ -1,4 +1,4 @@
-[IBus](http://en.wikipedia.org/wiki/Intelligent_Input_Bus) ("Intelligent Input Bus") 是一个 [输入法框架](http://en.wikipedia.org/wiki/Input_method)，一个输入非英语字符的系统。IBus 的功能与 [SCIM](/index.php/Smart_Common_Input_Method_platform_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Smart Common Input Method platform (简体中文)") 和 [UIM](/index.php/UIM "UIM") 类似。
+[IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus 和 [UIM](/index.php/UIM "UIM") 类似。
 
 ## Contents
 

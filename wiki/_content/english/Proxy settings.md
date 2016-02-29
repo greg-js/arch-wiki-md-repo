@@ -144,7 +144,7 @@ The `/usr/bin/proxy` binary takes URL(s) as argument(s) and returns the proxy/pr
 
 **Note:** the version 0.4.11 does not support http_proxy='wpad:' because `{ pkg-config 'mozjs185 >= 1.8.5'; }` fails .
 
-As of 06/04/2009 libproxy is required by libsoup. It is then indirectly used by the [Midori](https://www.archlinux.org/packages/extra/i686/midori/) browser.
+As of 06/04/2009 libproxy is required by libsoup. It is then indirectly used by the [midori](https://www.archlinux.org/packages/?name=midori) browser.
 
 ## Web Proxy Options
 

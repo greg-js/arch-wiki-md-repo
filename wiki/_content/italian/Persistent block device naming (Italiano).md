@@ -99,7 +99,7 @@ Se la swap è montata, eseguire `swapoff /dev/XXX` prima e `swapon /dev/XXX` dop
 
 ### By-uuid
 
-Gli [UUID](http://en.wikipedia.org/wiki/UUID), ovvero *Universally Unique Identifier(identificatore unico universale)*, è un meccanismo che assegna ad ogni filesystem un identificatore unico. Esso è studiato in modo da evitare conflitti. Tutti i filesystem GNU/Linux (inclusa l'area di swap) supportano gli UUID. I filesystem FAT ed NTFS non supportano gli UUID, ma sono comunque elencate in `/dev/disk/by-uuid` con un identificatore unico:
+Gli [UUID](https://en.wikipedia.org/wiki/UUID "wikipedia:UUID"), ovvero *Universally Unique Identifier(identificatore unico universale)*, è un meccanismo che assegna ad ogni filesystem un identificatore unico. Esso è studiato in modo da evitare conflitti. Tutti i filesystem GNU/Linux (inclusa l'area di swap) supportano gli UUID. I filesystem FAT ed NTFS non supportano gli UUID, ma sono comunque elencate in `/dev/disk/by-uuid` con un identificatore unico:
 
  `$ ls -lF /dev/disk/by-uuid/` 
 ```

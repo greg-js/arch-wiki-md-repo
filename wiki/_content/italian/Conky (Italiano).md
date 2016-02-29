@@ -408,15 +408,15 @@ ${execpi 300 ~/.conky/imap.pl}
 
 o la directory contenente il file.
 
-In alternativa, è possibile utilizzare stunnel, come indicato sopra: [Conky (Italiano)#Visualizzazione numero di nuove email (GMail)](/index.php/Conky_(Italiano)#Visualizzazione_numero_di_nuove_email_.28GMail.29 "Conky (Italiano)")
+In alternativa, è possibile utilizzare stunnel, come indicato sopra: [#Visualizzazione numero di nuove email (GMail)](#Visualizzazione_numero_di_nuove_email_.28GMail.29)
 
 ## Contributo-Utenti Configurazioni d'esempio
 
 ### Graysky
 
-[[Screen shot](http://img9.imageshack.us/img9/3153/imageffj.jpg)]
+[Screen shot](http://img9.imageshack.us/img9/3153/imageffj.jpg)
 
-[[Disponibile qui](https://github.com/graysky2/configs/raw/master/dotfiles/.conkyrc)] - modificarlo per adattarlo al proprio sistema. Ottimizzato per chip quad core w/ e numerosi hdds (anche se uno di essi non è collegato nello screenshot) ed una scheda grafica nvidia. E' possibile modificare facilmente a dual o single core con uno o un qualunque altro numero di hdds.
+[Disponibile qui](https://github.com/graysky2/configs/raw/master/dotfiles/.conkyrc) - modificarlo per adattarlo al proprio sistema. Ottimizzato per chip quad core w/ e numerosi hdds (anche se uno di essi non è collegato nello screenshot) ed una scheda grafica nvidia. E' possibile modificare facilmente a dual o single core con uno o un qualunque altro numero di hdds.
 
 ## Un semplice script ad anelli con supporto nvidia:
 

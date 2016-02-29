@@ -139,5 +139,5 @@ Niektoré projekty majú iba 32bitové aplikácie a niektoré potrebujú pre svo
 
 *   [BOINC homepage](http://boinc.berkeley.edu/)
 *   [List of BOINC projects](http://boinc.berkeley.edu/projects.php)
-*   [Wikipedia entry](http://en.wikipedia.org/wiki/BOINC)
+*   [Wikipedia entry](https://en.wikipedia.org/wiki/BOINC "wikipedia:BOINC")
 *   [BOINC.sk](http://boinc.sk)

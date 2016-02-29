@@ -30,7 +30,7 @@ In all three package is sqlite, redis and memcache activate for compile. To use 
 
 Installing Gogs from the [AUR](/index.php/AUR "AUR") instead of manually has the added benefit that lots of steps have been taken care of for you (e.g. permissions and ownership for files, etc).
 
-Make sure you perform a system upgrade (`pacman -Syu`) before installing Gogs from AUR and that you have installed the `base-devel` group, or you may face problems installing Gogs because [base-devel packages are not required to be listed as dependencies in PKGBUILD files](https://wiki.archlinux.org/index.php/Makepkg#Usage).
+Make sure you perform a system upgrade (`pacman -Syu`) before installing Gogs from AUR and that you have installed the `base-devel` group, or you may face problems installing Gogs because [base-devel packages are not required to be listed as dependencies in PKGBUILD files](/index.php/Makepkg#Usage "Makepkg").
 
 Also before installing the Gogs package from the [AUR](/index.php/AUR "AUR"), you need to choose a database backend if you're planning to host Gogs it on the same machine as the database:
 

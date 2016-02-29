@@ -16,7 +16,7 @@
 
 ## Úvod
 
-*"udev je správce zařízení pro linuxová jádra ze série 2.6\. Jeho primární úkol je správa souborů zařízení v `/dev`. Je to následník devfs a hotplugu, což znamená, že se kromě adresáře `/dev` stará i o veškeré akce v uživatelském prostoru během přidávání a odebírání zařízení, včetně nahrávání firmware."* Zdroj: [Wikipedia](http://en.wikipedia.org/wiki/Udev)
+*"udev je správce zařízení pro linuxová jádra ze série 2.6\. Jeho primární úkol je správa souborů zařízení v `/dev`. Je to následník devfs a hotplugu, což znamená, že se kromě adresáře `/dev` stará i o veškeré akce v uživatelském prostoru během přidávání a odebírání zařízení, včetně nahrávání firmware."* Zdroj: [Wikipedia](https://en.wikipedia.org/wiki/Udev "wikipedia:Udev")
 
 udev nahrazuje funkcionalitu balíčků `hotplug` a `hwdetect`.
 

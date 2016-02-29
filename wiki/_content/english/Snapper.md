@@ -29,7 +29,7 @@ In kernels 3.17 and 3.17-1, snapper in combination with [Btrfs](/index.php/Btrfs
 
 ## Installation
 
-The stable version [snapper](https://www.archlinux.org/packages/?name=snapper) can be installed from the [official repositories](https://wiki.archlinux.org/index.php/Official_repositories).
+The stable version [snapper](https://www.archlinux.org/packages/?name=snapper) can be installed from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 The development version [snapper-git](https://aur.archlinux.org/packages/snapper-git/) is also available.
 

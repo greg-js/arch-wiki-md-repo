@@ -14,7 +14,7 @@ Arch Linux es una distribución GNU/Linux independiente, de propósito general, 
 
 	*Artículo principal:* [History of Arch Linux](/index.php/History_of_Arch_Linux "History of Arch Linux").
 
-Arch Linux fue fundada por el programador canadiense Vinet Judd. Su primer lanzamiento formal, Arch Linux 0.1, fue el 11 de marzo de 2002\. Aunque Arch es completamente independiente, se inspira en la simplicidad de otras distribuciones, incluyendo [Slackware](http://slackware.com), [CRUX](http://www.crux.nu) y [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution). En 2007, Judd Vinet dejó el cargo de Project Lead para dedicarse a otros asuntos y fue reemplazado por el programador estadounidense Aaron Griffin, que continúa dirigiendo el proyecto en la actualidad.
+Arch Linux fue fundada por el programador canadiense Vinet Judd. Su primer lanzamiento formal, Arch Linux 0.1, fue el 11 de marzo de 2002\. Aunque Arch es completamente independiente, se inspira en la simplicidad de otras distribuciones, incluyendo [Slackware](http://slackware.com), [CRUX](http://www.crux.nu) y [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"). En 2007, Judd Vinet dejó el cargo de Project Lead para dedicarse a otros asuntos y fue reemplazado por el programador estadounidense Aaron Griffin, que continúa dirigiendo el proyecto en la actualidad.
 
 ## Simplicidad
 
@@ -30,7 +30,7 @@ Arch incorpora muchas de las nuevas tecnologías disponibles para los usuarios d
 
 Arch está respaldado por [pacman](/index.php/Pacman "Pacman"), un simple [gestor de paquetes](https://en.wikipedia.org/wiki/es:Sistema_de_gesti%C3%B3n_de_paquetes "wikipedia:es:Sistema de gestión de paquetes") binarios que permite actualizar todo el sistema con un solo comando. Pacman está escrito en *C* y diseñado desde cero para ser ligero, simple y muy rápido. Arch también proporciona la [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), un sistema ports-like para que sea fácil de compilar e instalar paquetes desde las fuentes, que también puede ser sincronizado con un solo comando. Incluso se puede recompilar todo el sistema con un solo comando.
 
-Soportando las arquitecturas i686 y x86-64, los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") proporcionan varios miles de paquetes de alta calidad para satisfacer las distintas demandas de software. Además, Arch estimula el crecimiento de la comunidad y la colaboración al ofrecer la [Arch User Repository](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"), que contiene miles de scripts PKGBUILD mantenidas por el usuario para la compilación y la instalación de paquetes de origen mediante la aplicación *makepkg* . También es posible que los usuarios construyan y gestionen fácilmente sus repositorios personalizados.
+Soportando las arquitecturas i686 y x86-64, los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") proporcionan varios miles de paquetes de alta calidad para satisfacer las distintas demandas de software. Además, Arch estimula el crecimiento de la comunidad y la colaboración al ofrecer la [Arch User Repository](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"), que contiene miles de scripts PKGBUILD mantenidas por el usuario para la compilación y la instalación de paquetes de origen mediante la aplicación *makepkg* . También es posible que los usuarios construyan y gestionen fácilmente sus repositorios personalizados.
 
 ## Integridad del código
 
@@ -40,7 +40,7 @@ Arch ofrece software vanilla sin parchear; los paquetes son ofrecidos desde las 
 
 La comunidad de Arch es muy confiable, alegre y acogedora: a todos los *Archers* se les anima a participar y contribuir en la distribución, ya sea ayudando con el desarrollo del software principal, mantener paquetes, informar o reparar [bugs](https://bugs.archlinux.org/), mejorar la [documentación ArchWiki](/index.php/Main_page "Main page"), ayudar a otros usuarios a solucionar problemas o a intercambiando opiniones en los [foros](https://bbs.archlinux.org/), [listas de correos](https://mailman.archlinux.org/mailman/listinfo/), [canales IRC](/index.php/IRC_channels "IRC channels"), o compartiendo el conocimiento propio o el desarrollo autónomo de aplicaciones. Arch Linux es el sistema operativo elegido por muchas personas en todo el mundo y existen diversas [Comunidades Internacionales](/index.php/International_communities "International communities") que ofrecen ayuda y documentación en varios idiomas.
 
-Véase [este artículo](/index.php/Getting_Involved_(Espa%C3%B1ol) "Getting Involved (Español)") si tiene intención de convertirse en un miembro activo de la comunidad.
+Véase [este artículo](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") si tiene intención de convertirse en un miembro activo de la comunidad.
 
 ## Resumen
 

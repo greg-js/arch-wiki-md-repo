@@ -546,7 +546,7 @@ Ubuntu aggiunge configurazioni extra, ed occasionalmente patcha le librerie di r
 
 Installare i pacchetti con le patch da [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"), i nomi dei pacchetti sono: [freetype2-ubuntu](https://aur.archlinux.org/packages/freetype2-ubuntu/), [fontconfig-ubuntu](https://aur.archlinux.org/packages/fontconfig-ubuntu/), [libxft-ubuntu](https://aur.archlinux.org/packages/libxft-ubuntu/), [cairo-ubuntu](https://aur.archlinux.org/packages/cairo-ubuntu/).
 
-E' necessario aggiungere la configurazione globale. Vedere [Configurazione fontconfig](https://wiki.archlinux.org/index.php/Font_Configuration_%28Italiano%29#Configurazione_fontconfig) per un punto di partenza.
+E' necessario aggiungere la configurazione globale. Vedere [Configurazione fontconfig](#Configurazione_fontconfig) per un punto di partenza.
 
 ### Ripristino dei pacchetti senza patch
 
@@ -587,7 +587,7 @@ Fontconfig dovrebbe essere in grado di rilevare i parametri DPI, come rilevato d
  `$ xdpyinfo | grep dots`  `  resolution:    102x102 dots per inch` 
 **Nota:** Per utilizzare il comando *xdpyinfo*, è necessario installare il pacchetto [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo).
 
-Se i DPI non sono correttamente rilevati (di solito a causa di un errato EDID monitor), è possibile specificarli manualmente nella configurazione di Xorg, vedere [Dimensione dello schermo e DPI](https://wiki.archlinux.org/index.php/Xorg_%28Italiano%29#Dimensione_dello_schermo_e_DPI). Questa è la soluzione raccomandata, ma potrebbe non funzionare con alcuni driver.
+Se i DPI non sono correttamente rilevati (di solito a causa di un errato EDID monitor), è possibile specificarli manualmente nella configurazione di Xorg, vedere [Dimensione dello schermo e DPI](/index.php/Xorg_(Italiano)#Dimensione_dello_schermo_e_DPI "Xorg (Italiano)"). Questa è la soluzione raccomandata, ma potrebbe non funzionare con alcuni driver.
 
 Fontconfig userà il valore di Xft.dpi, se impostato. Xft.dpi è solitamente impostato dal desktop environment (di solito l'impostazione DPI di Xorg) o manualmente in `~/.Xdefaults` o `~/.Xresources`. Utilizzare xrdb per trovare il valore:
 

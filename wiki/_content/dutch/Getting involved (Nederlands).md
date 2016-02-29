@@ -21,57 +21,57 @@ Arch Linux overleeft door onvermoeibare inspanningen van vele mensen in de gemee
 
 ## Forums
 
-Een van de makkelijkste manieren om betrokken te raken is deel te nemen aan de [Arch Linux Forums](https://bbs.archlinux.org/). Lees eerst [Forum Etiquette](https://wiki.archlinux.org/index.php/Forum_Etiquette), voel je dan vrij om je ideeën te delen, een helpende hand aan nieuwe gebruikers te zijn, en de gemeenschap te leren kennen. Gebruik het forum Report-functie (in de rechter benedenhoek van alle berichten) op het forum om ons team van misbruik te waarschuwen.
+Een van de makkelijkste manieren om betrokken te raken is deel te nemen aan de [Arch Linux Forums](https://bbs.archlinux.org/). Lees eerst [Forum etiquette](/index.php/Forum_etiquette "Forum etiquette"), voel je dan vrij om je ideeën te delen, een helpende hand aan nieuwe gebruikers te zijn, en de gemeenschap te leren kennen. Gebruik het forum Report-functie (in de rechter benedenhoek van alle berichten) op het forum om ons team van misbruik te waarschuwen.
 
 ## Wiki
 
-[ArchWiki](https://wiki.archlinux.org/index.php/AboutWiki) is een gemeenschap die alle documentatie bijhoud. De inhoud wordt gemaakt door de gemeenschap voor de gemeenschap. Medewerkers spenderen vrijwillig hun tijd en energie om hun kennis te delen met de community. Alle gebruikers worden aangemoedigd om bij te dragen. Taken op ArchWiki kunnen grofweg worden onderverdeeld in de volgende:
+[ArchWiki](/index.php/AboutWiki "AboutWiki") is een gemeenschap die alle documentatie bijhoud. De inhoud wordt gemaakt door de gemeenschap voor de gemeenschap. Medewerkers spenderen vrijwillig hun tijd en energie om hun kennis te delen met de community. Alle gebruikers worden aangemoedigd om bij te dragen. Taken op ArchWiki kunnen grofweg worden onderverdeeld in de volgende:
 
 *   Technisch onderhoud
 *   Inhoud's management
 *   Inhoud bewerken
-*   Creatie en [vertaling](https://wiki.archlinux.org/index.php/ArchWiki_Translation_Team) van inhoud
+*   Creatie en [vertaling](/index.php/ArchWiki_Translation_Team "ArchWiki Translation Team") van inhoud
 
-	1\. Als u over de juiste kennis beschikt kan u zelf de [wiki pagina's aanpassen](https://wiki.archlinux.org/index.php/Help:Editing).
+	1\. Als u over de juiste kennis beschikt kan u zelf de [wiki pagina's aanpassen](/index.php/Help:Editing "Help:Editing").
 
-	2\. Vlag artikelen met het juiste [artikel status](https://wiki.archlinux.org/index.php/Category:Template#Article_status_templates) van sjablonen.
+	2\. Vlag artikelen met het juiste [artikel status](/index.php/Help:Template#Article_status_templates "Help:Template") van sjablonen.
 
-	3\. Inhoud toevoegen aan [stubs](https://wiki.archlinux.org/index.php/Category:Stub) en [uitbreiden](https://wiki.archlinux.org/index.php/Category:Request:Expansion) van onvolledige of slecht geschreven artikelen.
+	3\. Inhoud toevoegen aan [stubs](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub") en [uitbreiden](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion") van onvolledige of slecht geschreven artikelen.
 
-	4\. [Toevoegen of de vertalingen te verbeteren](https://wiki.archlinux.org/index.php/Category:Request:Translation), zorgen dat de vertalingen synchroon met elkaar.
+	4\. [Toevoegen of de vertalingen te verbeteren](/index.php/Category:Pages_or_sections_flagged_with_Template:Translateme "Category:Pages or sections flagged with Template:Translateme"), zorgen dat de vertalingen synchroon met elkaar.
 
-	5\. Verminder en [combineren](https://wiki.archlinux.org/index.php/Category:Request:Merge) dubbele pagina's.
+	5\. Verminder en [combineren](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge") dubbele pagina's.
 
-	6\. [Wijzigen](https://wiki.archlinux.org/index.php/Category:Request:Correction) van onnauwkeurige inhoud, spelling, grammatica, taal en [stijl](https://wiki.archlinux.org/index.php/Help:Style).
+	6\. [Wijzigen](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy") van onnauwkeurige inhoud, spelling, grammatica, taal en [stijl](/index.php/Help:Style "Help:Style").
 
-	7\. Verminder het aantal [categorieën](https://wiki.archlinux.org/index.php/Special:Categories). Scan de wiki voor vergelijkbare categorieën die moeten worden gecombineerd; te verbeteren wiki [navigatie](https://wiki.archlinux.org/index.php/Table_of_Contents).
+	7\. Verminder het aantal [categorieën](/index.php/Special:Categories "Special:Categories"). Scan de wiki voor vergelijkbare categorieën die moeten worden gecombineerd; te verbeteren wiki [navigatie](/index.php/Table_of_contents "Table of contents").
 
-	8\. [Categoriseren uncategorized pagina's](https://wiki.archlinux.org/index.php/Special:UncategorizedPages).
+	8\. [Categoriseren uncategorized pagina's](/index.php/Special:UncategorizedPages "Special:UncategorizedPages").
 
-	9\. [Voeg artikel samenvatting dozen naar alle artikelen](https://wiki.archlinux.org/index.php/Writing_Article_Overviews).
+	9\. [Voeg artikel samenvatting dozen naar alle artikelen](/index.php/Writing_Article_Overviews "Writing Article Overviews").
 
-	10\. Werk de [FAQ](https://wiki.archlinux.org/index.php/FAQ) met relevante vragen van het forum en verwijder verouderde vragen.
+	10\. Werk de [FAQ](/index.php/FAQ "FAQ") met relevante vragen van het forum en verwijder verouderde vragen.
 
 Andere nuttige pagina's voor opruimen:
 
-*   [Verzoeken](https://wiki.archlinux.org/index.php/ArchWiki:Requests)
-*   [Rapporten](https://wiki.archlinux.org/index.php/ArchWiki:Reports)
-*   [Spam](https://wiki.archlinux.org/index.php/ArchWiki:Spam)
-*   [Gebroken redirects](https://wiki.archlinux.org/index.php/Special:BrokenRedirects)
-*   [Dubbele redirects](https://wiki.archlinux.org/index.php/Special:DoubleRedirects)
-*   [Korte pagina's](https://wiki.archlinux.org/index.php/Special:ShortPages)
+*   [Verzoeken](/index.php/ArchWiki:Requests "ArchWiki:Requests")
+*   [Rapporten](/index.php/ArchWiki:Reports "ArchWiki:Reports")
+*   [Spam](/index.php/ArchWiki:Spam "ArchWiki:Spam")
+*   [Gebroken redirects](/index.php/Special:BrokenRedirects "Special:BrokenRedirects")
+*   [Dubbele redirects](/index.php/Special:DoubleRedirects "Special:DoubleRedirects")
+*   [Korte pagina's](/index.php/Special:ShortPages "Special:ShortPages")
 
 Op lang termijn is het doel een professionele en gemakkelijk te navigeren wiki, zodat aanvullende gidsen, documenteerders, etc. niet nodig zijn. Dit is een gemeenschappelijke inspanning, maar het wiki onderhoud is vaak een vervelend en ondankbare taak. Als u de taak serieus neemt, kan een formele positie als wiki onderhouder in orde zijn. Dit geeft de job doel en erkenning.
 
 ## Bugs
 
-Bugs rapporten op de [Arch Linux Bugtracker](https://bugs.archlinux.org/) is een van de mogelijke manieren om de gemeenschap te helpen. Inefficiënt gebruik van de bug-tracker kan contraproductief zijn in plaats van nuttig. [Dit artikel](https://wiki.archlinux.org/index.php/Reporting_Bug_Guidelines) zal iedereen die aan de gemeenschap efficiënt helpen met het aanmelden of voor de jacht bugs.
+Bugs rapporten op de [Arch Linux Bugtracker](https://bugs.archlinux.org/) is een van de mogelijke manieren om de gemeenschap te helpen. Inefficiënt gebruik van de bug-tracker kan contraproductief zijn in plaats van nuttig. [Dit artikel](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") zal iedereen die aan de gemeenschap efficiënt helpen met het aanmelden of voor de jacht bugs.
 
-Zie ook: [Bug squashen Day](https://wiki.archlinux.org/index.php/Bug_Squashing_Day)
+Zie ook: [Bug squashen Day](/index.php/Bug_Squashing_Day "Bug Squashing Day")
 
 ## AUR
 
-Het [Arch User Repository](https://wiki.archlinux.org/index.php/Arch_User_Repository) is een community-gedreven repository van PKGBUILDs voor Arch gebruikers. Pakketten in de AUR worden gebouwd door de PKGBUILDs en zijn niet pre-built binary's, zoals uit de officiële repositories. De AUR is gemaakt om zich te organiseren en nieuwe pakketten te delen van de gemeenschap en om de populaire pakketten te versnellen.
+Het [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") is een community-gedreven repository van PKGBUILDs voor Arch gebruikers. Pakketten in de AUR worden gebouwd door de PKGBUILDs en zijn niet pre-built binary's, zoals uit de officiële repositories. De AUR is gemaakt om zich te organiseren en nieuwe pakketten te delen van de gemeenschap en om de populaire pakketten te versnellen.
 
 ## 'Rolling Release' e-zine
 
@@ -87,23 +87,23 @@ Arch heeft een vitale en actieve gemeenschap van software-ontwikkelaars. Als u e
 
 **Note:** Alle hier genoemde projecten zijn projecten voor de gemeenschap. Geen van deze projecten worden beschouwd als officiële Arch projecten.
 
-[**Arch gebaseerde distributies**](https://wiki.archlinux.org/index.php/Arch_Based_Distributions)
+[**Arch gebaseerde distributies**](/index.php/Arch_Based_Distributions "Arch Based Distributions")
 
 	Andere distributies op Arch Linux
 
-[**AUR Helpers**](https://wiki.archlinux.org/index.php/AUR_Helpers)
+[**AUR Helpers**](/index.php/AUR_helpers "AUR helpers")
 
 	Hulpprogramma's voor eindgebruikers te helpen bij het gebruik van de AUR
 
-[**Pacman GUI Frontends**](https://wiki.archlinux.org/index.php/Pacman_GUI_Frontends)
+[**Pacman GUI Frontends**](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
 
 	Grafische front-ends voor pacman
 
-[**rc.conf GUI Frontends**](https://wiki.archlinux.org/index.php/Rc.conf_GUI_Frontends)
+[**rc.conf GUI Frontends**](/index.php/Rc.conf_GUI_Frontends "Rc.conf GUI Frontends")
 
 	Grafische front-ends voor rc.conf
 
-[**netcfg**](https://wiki.archlinux.org/index.php/Netcfg)
+[**netcfg**](/index.php/Netcfg "Netcfg")
 
 	Netwerk voor Arch Linux
 
@@ -111,7 +111,7 @@ Arch heeft een vitale en actieve gemeenschap van software-ontwikkelaars. Als u e
 
 	Projecten die niet helemaal past in een bestaande categorie
 
-*   [ArchMap](https://wiki.archlinux.org/index.php/ArchMap)
+*   [ArchMap](/index.php/ArchMap "ArchMap")
 
 	Google Earth Arch gebruiker kaart
 
@@ -139,7 +139,7 @@ Arch heeft een vitale en actieve gemeenschap van software-ontwikkelaars. Als u e
 
 	Arch Linux-groep voor gebruikers en professionals.
 
-*   [Namcap Reports](https://wiki.archlinux.org/index.php/Namcap_Reports)
+*   [Namcap Reports](/index.php/Namcap_Reports "Namcap Reports")
 
 	namcap is een hulpprogramma voor Arch Linux die helpt bij het automatisch detecteren van veel voorkomende fouten en fouten in PKGBUILDs. Deze pagina is een automatisch gegenereerd rapport verkregen na het uitvoeren van namcap tegen de kern, en de gemeenschap.
 

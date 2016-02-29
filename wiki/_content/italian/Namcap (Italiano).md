@@ -76,7 +76,7 @@ Normalmente namcap stampa una spiegazione "umanamente comprensibile" (talvolta c
 *   **missing-license** (*error*) A questo pacchetto manca una licenza. Le licenze dovrebbero essere messe nella stringa `license=()` del PKGBUILD. Consultare [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") per ulteriori informazioni. È **molto importante** correggere questo errore il prima possibile, dal momento che non includere una licenza è in molti casi una violazione del copyright.
 *   **missing-custom-license-dir** (*error*) La licenza specificata è *custom* ma non è stata trovata la cartella della licenza in */usr/share/licenses/* come specificato nelle linee guida del pacchetto.
 *   **missing-custom-license-file** (*error*) La licenza specificata è *custom* ma non è stato trovato il file con la licenza in */usr/share/licenses/$pkgname*.
-*   **not-a-common-license** (*error*) La licenza specificata **non** è *custom* e non è presente nel pacchetto [licenses](https://www.archlinux.org/packages/core/any/licenses/) incluso nella distribuzione Arch Linux.
+*   **not-a-common-license** (*error*) La licenza specificata **non** è *custom* e non è presente nel pacchetto [licenses](https://www.archlinux.org/packages/?name=licenses) incluso nella distribuzione Arch Linux.
 
 ### File
 
@@ -96,7 +96,7 @@ Questa sezione descrive i tag relativi alle autorizzazioni non corrette dei file
 *   **directory-not-world-executable** (*warning*) La directory non ha impostato il bit eseguibile. Questo non consente l'accesso alla directory per i programmi in esecuzione con privilegi di utente.
 *   **incorrect-library-permissions** (*warning*) Il file della libreria non ha il permesso 644 (lettura e scrittura da root, lettura da chiunque altro).
 *   **libtool-file-present** (*warning*) Questo file è di tipo libtool (.la) e di norma non dovrebbe essere presente. Si può utilizzare l'opzione `!libtool` nella stringa *opzioni* del PKGBUILD per rimuovere questi file automaticamente.
-*   **perllocal-pod-present** (*error*) I file perllocal.pod non dovrebbero essere presenti in un pacchetto perl; consultare [Perl Package Guidelines](/index.php/Perl_Package_Guidelines "Perl Package Guidelines") per ulteriori informazioni.
+*   **perllocal-pod-present** (*error*) I file perllocal.pod non dovrebbero essere presenti in un pacchetto perl; consultare [Perl package guidelines](/index.php/Perl_package_guidelines "Perl package guidelines") per ulteriori informazioni.
 *   **scrollkeeper-dir-exists** (*error*) Una directory scrollkeeper è stata trovata nel pacchetto. scrollkeeper non dovrebbe essere eseguito fino al post {install,upgrade,remove}.
 *   **info-dir-file-present** (*error*) Il file della directory info /usr/share/info/dir è stato trovato nel pacchetto. Questo file non dovrebbe essere presente.
 *   **gnome-mime-file** (*error*) Il file è del tipo autogenerato da GNOME mime e non dovrebbe essere presente nel pacchetto.
@@ -104,7 +104,7 @@ Questa sezione descrive i tag relativi alle autorizzazioni non corrette dei file
 ### Varie
 
 *   **mime-cache-not-updated** (*error*) Il pacchetto installa i file mime, ma non richiama update-mime-database per aggiornarli.
-*   **hicolor-icon-cache-not-updated** (*error*) Ci sono file in /usr/share/icons/hicolor ma la cache delle icone hicolor non è stata aggiornata. Si dovrebbe usare *gtk-update-icon-cache* (per i pacchetti dipendenti da gtk) o *xdg-icon-resource* per aggiornare la cache delle icone. Se si utilizza *xdg-icon-resource* allora si dovrebbe dichiarare una dipendenza da [xdg-utils](https://www.archlinux.org/packages/extra/i686/xdg-utils/).
+*   **hicolor-icon-cache-not-updated** (*error*) Ci sono file in /usr/share/icons/hicolor ma la cache delle icone hicolor non è stata aggiornata. Si dovrebbe usare *gtk-update-icon-cache* (per i pacchetti dipendenti da gtk) o *xdg-icon-resource* per aggiornare la cache delle icone. Se si utilizza *xdg-icon-resource* allora si dovrebbe dichiarare una dipendenza da [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils).
 *   **insecure-rpath** (*error*) Un RPATH (per un eseguibile) è al di fuori di */usr/lib*. Un RPATH in una posizione non sicura è un potenziale problema di sicurezza. Consultare [FS#14049](https://bugs.archlinux.org/14049).
 
 ### PKGBUILDs

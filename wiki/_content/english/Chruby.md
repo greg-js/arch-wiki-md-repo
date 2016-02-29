@@ -1,10 +1,3 @@
-[chruby](https://github.com/postmodern/chruby#readme) is a minimal version switcher for Ruby.
+Redirect to:
 
-## Installation
-
-You can install [chruby](https://aur.archlinux.org/packages/chruby/) from the [AUR](/index.php/AUR "AUR").
-
-## External links
-
-*   [chruby](https://github.com/postmodern/chruby#readme)
-*   [ruby-install](https://github.com/postmodern/ruby-install#readme)
+*   [Ruby#Multiple versions](/index.php?title=Ruby&redirect=no#Multiple_versions "Ruby")

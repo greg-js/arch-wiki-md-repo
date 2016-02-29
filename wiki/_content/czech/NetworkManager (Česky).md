@@ -357,7 +357,7 @@ Přinejmenším v KDE4 systému, není vytvořena default route při navázání
 
 ### 3G modem není detekován
 
-Jestliže NetworkManager (od verze 0.7.999) nedetekuje váš 3G modem, ale i nadále jste schopní se připojit přes [wvdial](/index.php/Wvdial "Wvdial"), zkuste nainstalovat balíček [modemmanager](https://www.archlinux.org/packages/extra/i686/modemmanager/) příkazem `pacman -S modemmanager` a restartujte NetworkManager démona `/etc/rc.d/networkmanager restart`. Odpojte a znovu připojte váš modem nebo restartujte. Tato utilita poskytuje podporu pro hardware, který není v základní databázi networkmanageru.
+Jestliže NetworkManager (od verze 0.7.999) nedetekuje váš 3G modem, ale i nadále jste schopní se připojit přes [wvdial](/index.php/Wvdial "Wvdial"), zkuste nainstalovat balíček [modemmanager](https://www.archlinux.org/packages/?name=modemmanager) příkazem `pacman -S modemmanager` a restartujte NetworkManager démona `/etc/rc.d/networkmanager restart`. Odpojte a znovu připojte váš modem nebo restartujte. Tato utilita poskytuje podporu pro hardware, který není v základní databázi networkmanageru.
 
 ### VPN problémy v Networkmanageru 0.7.999
 

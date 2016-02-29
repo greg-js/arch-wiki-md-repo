@@ -35,7 +35,7 @@
 **警告:** 如果错误的格式化了`/dev/sda`，整个硬盘数据都会丢失。
 
 *   启动到 Arch 安装光盘/优盘，安装目标是另外一个优盘。
-*   如果你有别的 linux 电脑（不一定是 Arch),你也可以参考这篇文章 [从现有的 Linux 系统进行安装](/index.php/Install_from_Existing_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Install from Existing Linux (简体中文)")，并跳过配置部分。
+*   如果你有别的 linux 电脑（不一定是 Arch),你也可以参考这篇文章 [从现有的 Linux 系统进行安装](/index.php/Install_from_existing_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Install from existing Linux (简体中文)")，并跳过配置部分。
 *   如果你运行Windows或OS X，可以通过VirtualBox引导Arch的Live ISO，然后将U盘连接到虚拟机上进行安装。
 
 ## 安装
@@ -43,7 +43,7 @@
 按照[安装指南](/index.php/Installation_guide "Installation guide")进行安装，仅需注意以下几点：
 
 *   如果 cfdisk 由于 "Partition ends in the final partial cylinder" 这个错误失败，唯一的解决方法就是干掉U盘上的所有分区。打开另一个终端(Alt+F2)，输入 fdisk /dev/sdX (sdX 对应你的 U盘)，显示分区表(p)，查看，删除掉已存在的分区(d)然后保存修改(w)。最后，再进 cfdisk。
-*   强烈建议，关于如何选择文件系统的问题，请先阅读一下 [SSD](/index.php/SSD "SSD") 这篇文章 [关于优化 SSD 固态硬盘读写的技巧](https://wiki.archlinux.org/index.php/SSD#Tips_for_Minimizing_SSD_Read.2FWrites)，总地来说，不带日志(journal)功能的 ext4 是比较通用的优选方案。可以用这样的命令来创建：`# mkfs.ext4 -O "^has_journal" /dev/sdXX`。因为带日志功能的文件系统日志更新会在一定程度上消耗闪存有限的写入寿命。由于同样的原因，最好放弃 swap 分区。注意这个建议并不适用于安装在 USB(机械)硬盘的情况。
+*   强烈建议，关于如何选择文件系统的问题，请先阅读一下 [SSD](/index.php/SSD "SSD") 这篇文章 [关于优化 SSD 固态硬盘读写的技巧](/index.php/SSD#Tips_for_minimizing_disk_reads.2Fwrites "SSD")，总地来说，不带日志(journal)功能的 ext4 是比较通用的优选方案。可以用这样的命令来创建：`# mkfs.ext4 -O "^has_journal" /dev/sdXX`。因为带日志功能的文件系统日志更新会在一定程度上消耗闪存有限的写入寿命。由于同样的原因，最好放弃 swap 分区。注意这个建议并不适用于安装在 USB(机械)硬盘的情况。
 *   用 `# mkinitcpio -p linux`创建 RAM Disk 前，在修改 `/etc/mkinitcpio.conf`，将 `block` 添加到紧挨 udev 的后面. 只有这样早期用户空间才能正确的装入模块。
 *   如果想在其它操作系统上继续使用优盘，可以使用 NTFS 或 exFAT 创建数据分区. 数据分区需要是设备的第一个分区，因为 Windows 会假定移动设备仅有一个分区。需要安装 [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) 和 [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g).网上有一些工具可以翻转U盘的可移动媒体位使得操作系统把它当作额外的硬盘，这样你就可以使用你选择的任意磁盘划分方式。
 
@@ -174,7 +174,7 @@ i686 架构可以在 32位和 64位系统上使用，而且 32位二进制软件
 
 #### 持久块设备命名
 
-推荐在[fstab](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)")和启动管理器的配置文件中都使用持久块设备命名法,参阅[Persistent_block_device_naming_(简体中文)](/index.php/Persistent_block_device_naming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Persistent block device naming (简体中文)")获得更多细节.
+推荐在[fstab](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)")和启动管理器的配置文件中都使用持久块设备命名法,参阅[Persistent block device naming (简体中文)](/index.php/Persistent_block_device_naming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Persistent block device naming (简体中文)")获得更多细节.
 
 或者,你可以自行创建udev规则为你的U盘创建符号链接并将其用于fstab和启动管理器的配置文件中,参阅[udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev")获得更多信息.
 

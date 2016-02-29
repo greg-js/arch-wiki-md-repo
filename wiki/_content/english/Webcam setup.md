@@ -33,6 +33,7 @@ This is a guide to setting up your webcam in Arch Linux.
     *   [6.12 Sonic-snap](#Sonic-snap)
     *   [6.13 Skype](#Skype)
     *   [6.14 Motion](#Motion)
+    *   [6.15 MJPG-streamer](#MJPG-streamer)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio.2FCinema)
 
@@ -389,6 +390,10 @@ You can either set an alias for skype, or rename the original skype binary in `/
 [motion](https://www.archlinux.org/packages/?name=motion) can only handle v4l2 devices so if you need to use a camera that only has v4l1 drivers you need to preload v4l1compat.so as previously mentioned. Otherwise you will get loads of errors about motion not able to find a suitable palette.
 
 **Tip:** If you need to load webcams in order (i.e. get the /dev/video0..n device order) or set ownership or permissions, take a look at writing rules for [writing udev rules](/index.php/Udev#Writing_udev_rules "Udev").
+
+### MJPG-streamer
+
+[mjpg-streamer](https://aur.archlinux.org/packages/mjpg-streamer/) takes JPGs from Linux-UVC compatible webcams, filesystem or other input plugins and streams them as M-JPEG via HTTP to webbrowsers, VLC and other software.
 
 ## Troubleshooting
 

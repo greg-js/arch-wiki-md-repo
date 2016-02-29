@@ -131,4 +131,4 @@ Gobolinux:lla on oma uniikki paketin hallinta siten ettei siinä ole sellaista. 
 
 ## Arch vs Minix 3
 
-Arch on kokonainen jakelu modernilla yhteisöllä ja rauta tuolla. Minix 3 on sutjakka, käytettävä kehityskäyttöön suunnattu käyttöjärjestelmä mielenkiintoisilla ominaisuuksilla kuten [mikroydin](http://en.wikipedia.org/wiki/Microkernel). [http://www.minix3.org/](http://www.minix3.org/)
+Arch on kokonainen jakelu modernilla yhteisöllä ja rauta tuolla. Minix 3 on sutjakka, käytettävä kehityskäyttöön suunnattu käyttöjärjestelmä mielenkiintoisilla ominaisuuksilla kuten [mikroydin](https://en.wikipedia.org/wiki/Microkernel "wikipedia:Microkernel"). [http://www.minix3.org/](http://www.minix3.org/)

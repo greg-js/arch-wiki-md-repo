@@ -165,7 +165,7 @@ Thanks to the following web pages that gave me all this information:
 
 ```
    * [http://blog.ufsoft.org/zte-mf622-usb-modem-under-linux](http://blog.ufsoft.org/zte-mf622-usb-modem-under-linux)
-   * [https://wiki.archlinux.org/index.php/ZTE_MF626_/_MF636](https://wiki.archlinux.org/index.php/ZTE_MF626_/_MF636)
+   * [ZTE MF626 / MF636](/index.php/ZTE_MF626_/_MF636 "ZTE MF626 / MF636")
    * [http://wiki.bandaancha.st/APN_de_las_operadoras_para_configurar_el_módem_de_Internet_móvil_3G](http://wiki.bandaancha.st/APN_de_las_operadoras_para_configurar_el_módem_de_Internet_móvil_3G)
 
 ```

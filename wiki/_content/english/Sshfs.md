@@ -191,7 +191,7 @@ This will map UID of the remote user "sessy" to the local user, who runs this pr
 
 ### Checklist
 
-Read the [SSH Checklist](https://wiki.archlinux.org/index.php/Secure_Shell#Checklist) Wiki entry first. Further issues to check are:
+Read the [SSH Checklist](/index.php/Secure_Shell#Checklist "Secure Shell") Wiki entry first. Further issues to check are:
 
 1\. Is your SSH login sending additional information from server's `/etc/issue` file e.g.? This might confuse SSHFS. You should temporarily deactivate server's `/etc/issue` file:
 

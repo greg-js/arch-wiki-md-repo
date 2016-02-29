@@ -7,7 +7,7 @@
 
 ## Introduction
 
-[SLIME](http://www.common-lisp.net/project/slime/) (Superior Lisp Interaction Mode for [Emacs](/index.php/Emacs "Emacs")) provides a development environment for [SBCL](http://www.sbcl.org) (detailed in this article), [CMUCL](http://www.cons.org/cmucl/), [CLISP](http://clisp.cons.org/) and other [Lisp](http://en.wikipedia.org/wiki/Lisp_(programming_language)) implementations.
+[SLIME](http://www.common-lisp.net/project/slime/) (Superior Lisp Interaction Mode for [Emacs](/index.php/Emacs "Emacs")) provides a development environment for [SBCL](http://www.sbcl.org) (detailed in this article), [CMUCL](http://www.cons.org/cmucl/), [CLISP](http://clisp.cons.org/) and other [Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language) implementations.
 
 The components required are:
 

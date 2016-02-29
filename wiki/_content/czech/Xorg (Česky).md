@@ -415,7 +415,7 @@ EndSection
 3.  Pokud není přítomné žádné nastavení DisplaySize, jsou pro odvození DPI pro dané rozlišení obrazovky použity hodnoty velikosti monitoru získané z DDC.
 4.  Pokud DDC neříká nic o velikosti, ve výchozím nastavení je použito DPI 75.
 
-Abyste získali správnou hodnotu bodů na palec (DPI), musí být rozpoznána nebo nastavena velikost displeje. Správné nastavení DPI je zvláště nutné tam, kde jsou vyžadovány jemné detaily (například vykreslování fontů). V minulosti se výrobci pokoušeli vytvořit standard 96 DPI (monitor s uhlopříčkou 10.3" by měl 800x600 a monitor 13.2" 1024x768). V dnešní době mohou mít obrazovky rozličné hodnoty DPI, které ani nemusí být shodné vertikálně a horizontálně. Aby byl Xorg server schopný nastavit DPI, pokouší se automaticky zjistit fyzickou velikost vašeho monitoru skrze grafickou kartu pomocí [DDC (anglicky)](http://en.wikipedia.org/wiki/Display_Data_Channel). Pokud Xorg server zná fyzickou velikost obrazovky, bude schopný v závislosti na rozlišení nastavit správnou hodnotu DPI.
+Abyste získali správnou hodnotu bodů na palec (DPI), musí být rozpoznána nebo nastavena velikost displeje. Správné nastavení DPI je zvláště nutné tam, kde jsou vyžadovány jemné detaily (například vykreslování fontů). V minulosti se výrobci pokoušeli vytvořit standard 96 DPI (monitor s uhlopříčkou 10.3" by měl 800x600 a monitor 13.2" 1024x768). V dnešní době mohou mít obrazovky rozličné hodnoty DPI, které ani nemusí být shodné vertikálně a horizontálně. Aby byl Xorg server schopný nastavit DPI, pokouší se automaticky zjistit fyzickou velikost vašeho monitoru skrze grafickou kartu pomocí [DDC (anglicky)](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel"). Pokud Xorg server zná fyzickou velikost obrazovky, bude schopný v závislosti na rozlišení nastavit správnou hodnotu DPI.
 
 Abyste zjistili, zda jsou velikost vašeho displeje a DPI zjištěny/vypočítány správně:
 
@@ -857,7 +857,7 @@ Then your filesystem will show up under `/mnt`. From here you can delete the `gd
 
 ## Vizte též
 
-*   [Správci displeje](/index.php/Display_Manager_(%C4%8Cesky) "Display Manager (Česky)")
+*   [Správci displeje](/index.php/Display_manager_(%C4%8Cesky) "Display manager (Česky)")
 *   [Start X at login](/index.php/Start_X_at_login "Start X at login") (anglicky)
 *   [Font configuration](/index.php/Font_configuration "Font configuration") (anglicky)
 *   Proprietární grafické ovladače

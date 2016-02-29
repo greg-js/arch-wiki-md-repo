@@ -2,7 +2,7 @@
 
 主引导记录 (Master Boot Record, MBR) 是指一个存储设备的头512B. 它包含操作系统的引导器和存储设备的分区表。
 
-**注意:** 作为新的分区方案， [GPT](/index.php/GUID_Partition_Table "GUID Partition Table") ( [UEFI](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 标准的一部分) 也能通过[保护分区](https://en.wikipedia.org/wiki/GUID_Partition_Table#Legacy_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table")在 BIOS 系统上使用。GPT 解决了一些 MBR 的遗留问题但又造成了许多兼容问题。更多见 [GUID Partition Table#Master Boot Record](/index.php/GUID_Partition_Table#Master_Boot_Record "GUID Partition Table").
+**注意:** 作为新的分区方案， [GPT](/index.php/GPT "GPT") ( [UEFI](/index.php/UEFI "UEFI") 标准的一部分) 也能通过[保护分区](https://en.wikipedia.org/wiki/GUID_Partition_Table#Legacy_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table")在 BIOS 系统上使用。GPT 解决了一些 MBR 的遗留问题但又造成了许多兼容问题。更多见 [GUID Partition Table#Master Boot Record](/index.php/GUID_Partition_Table#Master_Boot_Record "GUID Partition Table").
 
 ## Contents
 
@@ -15,7 +15,7 @@
 
 ## 启动过程
 
-启动是一个多阶段的过程。今天，大多数 PC 通过一个叫做 [BIOS](http://en.wikipedia.org/wiki/BIOS) (Basic Input/Output System) 的固件初始化系统，它存储在主板的专有芯片中。系统初始化之后，BIOS 会搜寻在第一个识别出的存储设备(机械硬盘，固态硬盘，CD/DVD, USB等等) MBR 的第一个分区的引导器，然后运行它。引导器读取分区表，然后它就能加载操作系统了。常见的 GNU/Linux 引导器包括 [GRUB](/index.php/GRUB "GRUB") 和 [Syslinux](/index.php/Syslinux "Syslinux").
+启动是一个多阶段的过程。今天，大多数 PC 通过一个叫做 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") (Basic Input/Output System) 的固件初始化系统，它存储在主板的专有芯片中。系统初始化之后，BIOS 会搜寻在第一个识别出的存储设备(机械硬盘，固态硬盘，CD/DVD, USB等等) MBR 的第一个分区的引导器，然后运行它。引导器读取分区表，然后它就能加载操作系统了。常见的 GNU/Linux 引导器包括 [GRUB](/index.php/GRUB "GRUB") 和 [Syslinux](/index.php/Syslinux "Syslinux").
 
 ## 历史
 

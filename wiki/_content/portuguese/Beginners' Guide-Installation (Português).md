@@ -1,4 +1,4 @@
-**Dica:** Esta é parte de um artigo multi-páginas do "The Beginners' Guide" ("O Guia para Iniciantes"). **[Clique aqui](/index.php/Beginners%27_Guide_(Portugu%C3%AAs) "Beginners' Guide (Português)")** se preferir ler o artigo completo.
+**Dica:** Esta é parte de um artigo multi-páginas do "The Beginners' Guide" ("O Guia para Iniciantes"). **[Clique aqui](/index.php/Beginners%27_guide_(Portugu%C3%AAs) "Beginners' guide (Português)")** se preferir ler o artigo completo.
 
 ## Contents
 
@@ -261,7 +261,7 @@ A partir de agora, você já deve ter uma conexão de internet funcionando. Caso
 
 #### Proxy
 
-Para que seja possível instalar e atualizar o Arch Linux através de um servidor proxy autenticado é preciso alterar a maneira como o [pacman](https://wiki.archlinux.org/index.php/Pacman_%28Portugu%C3%AAs%29) baixa os pacotes, de modo que ele utilize o [wget](/index.php/Wget "Wget") para isso.
+Para que seja possível instalar e atualizar o Arch Linux através de um servidor proxy autenticado é preciso alterar a maneira como o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") baixa os pacotes, de modo que ele utilize o [wget](/index.php/Wget "Wget") para isso.
 
 ##### Configurando o pacman
 
@@ -356,7 +356,7 @@ Se quiser reiniciar o processo, você pode simplesmente selecionar "Sair" (ou pr
 
 Se tiver satisfeito, selecione Gravar (ou pressione `Shift+W`) para finalizar a gravação da tabela de partições para o disco. Digite "Sim"(yes) e selecione Sair (ou pressionar `Q`) para sair do cfdisk.
 
-Particionar não é o bastante; As partições precisam de um [File Systems](/index.php/File_Systems "File Systems"). Para formatar as partições com um sistema de arquivos ext4:
+Particionar não é o bastante; As partições precisam de um [File systems](/index.php/File_systems "File systems"). Para formatar as partições com um sistema de arquivos ext4:
 
 **Warning:** Verifique e "re-Verifique" se é realmente a partição `/dev/sda1` que você deseja formatar. Pode mudar de caso para caso.
 

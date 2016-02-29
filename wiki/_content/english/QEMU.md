@@ -673,11 +673,11 @@ Alternatively, you can configure [iptables](/index.php/Iptables "Iptables") to a
 
 Bridged networking works fine between a wired interface (Eg. eth0), and it's easy to setup. However if the host gets connected to the network through a wireless device, then bridging is not possible.
 
-See [https://wiki.archlinux.org/index.php/Network_bridge#Wireless_interface_on_a_bridge](https://wiki.archlinux.org/index.php/Network_bridge#Wireless_interface_on_a_bridge) as a reference.
+See [Network bridge#Wireless interface on a bridge](/index.php/Network_bridge#Wireless_interface_on_a_bridge "Network bridge") as a reference.
 
 One way to overcome that is to setup a tap device with a static IP, making linux automatically handle the routing for it, and then forward traffic between the tap interface and the device connected to the network through iptables rules.
 
-See [https://wiki.archlinux.org/index.php/Internet_sharing](https://wiki.archlinux.org/index.php/Internet_sharing) as a reference.
+See [Internet sharing](/index.php/Internet_sharing "Internet sharing") as a reference.
 
 There you can find what's needed to share the network between devices, included tap and tun ones. The following just hints further on some of the host configurations required. As indicated in the reference above, the client needs to be configured for a static IP, using the IP assigned to the tap interface as the gateway. The caveat is that the DNS servers on the client might need to be manually edited if they change when changing from one host device connected to the network to another.
 
@@ -1463,7 +1463,7 @@ or some other boot hindering process (e.g. can't unpack initramfs, cant start se
 *   [Building a Virtual Army](http://blog.falconindy.com/articles/build-a-virtual-army.html) by Falconindy
 *   [Lastest docs](http://git.qemu.org/?p=qemu.git;a=tree;f=docs)
 *   [QEMU on Windows](http://qemu.weilnetz.de/)
-*   [Wikipedia](http://en.wikipedia.org/wiki/Qemu)
+*   [Wikipedia](https://en.wikipedia.org/wiki/Qemu "wikipedia:Qemu")
 *   [QEMU - Debian Wiki](https://wiki.debian.org/QEMU)
 *   [QEMU Networking on gnome.org](https://people.gnome.org/~markmc/qemu-networking.html)
 *   [Networking QEMU Virtual BSD Systems](http://bsdwiki.reedmedia.net/wiki/networking_qemu_virtual_bsd_systems.html)

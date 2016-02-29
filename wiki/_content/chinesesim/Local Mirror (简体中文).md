@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Local_Mirror](/index.php/Local_Mirror "Local Mirror") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-05-26，点击[这里](https://wiki.archlinux.org/index.php?title=Local_Mirror&diff=0&oldid=258420)可以查看翻译后英文页面的改动。
 
-**警告:** 如果你想创建一个官方镜像，参考 [这个页面](https://wiki.archlinux.org/index.php/DeveloperWiki:NewMirrors)。
+**警告:** 如果你想创建一个官方镜像，参考 [这个页面](/index.php/DeveloperWiki:NewMirrors "DeveloperWiki:NewMirrors")。
 
 ## Contents
 
@@ -40,7 +40,7 @@
 
 #### 编写 Rsync 命令
 
-*   参照 [DeveloperWiki:NewMirrors](https://wiki.archlinux.org/index.php/DeveloperWiki:NewMirrors) 使用 rsync 参数
+*   参照 [DeveloperWiki:NewMirrors](/index.php/DeveloperWiki:NewMirrors "DeveloperWiki:NewMirrors") 使用 rsync 参数
 *   从上文中选择一个服务器
 *   在 rsync 参数中包含 `--exclude-from="/path/to/exclude.txt"` 以排除那些你不想包含的目录或文件。示例内容可能包括：
 

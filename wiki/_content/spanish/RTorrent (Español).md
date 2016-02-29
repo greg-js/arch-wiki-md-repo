@@ -82,7 +82,7 @@ schedule = tied_directory,5,5,start_tied=
 
 ```
 
-La siguiente opción hará que RTorrent deje de bajar cuando sea bajo el espacio en disco. Esto es particularmente útil con [Seedbox](http://en.wikipedia.org/wiki/Seedbox) allí donde el espacio de disco sea muy limitad. Cambie el valor a su gusto:
+La siguiente opción hará que RTorrent deje de bajar cuando sea bajo el espacio en disco. Esto es particularmente útil con [Seedbox](https://en.wikipedia.org/wiki/Seedbox "wikipedia:Seedbox") allí donde el espacio de disco sea muy limitad. Cambie el valor a su gusto:
 
 ```
 # Cierre torrents cuando el espacio de disco sea bajo.
@@ -107,7 +107,7 @@ check_hash = yes
 
 ```
 
-La siguiente opción permite la habilitación del cifrado. Esto es muy importante habilitar esto, si no ya por usted, por aquellos otros en la marea del torrent, que pudieran necesitar la ofuscación del uso del ancho de banda a su ISP. No le hace daño habilitarlo aunque usted no necesite tal protección. Más información: [Bittorrent Protocol Encryption](http://en.wikipedia.org/wiki/BitTorrent_protocol_encryption)
+La siguiente opción permite la habilitación del cifrado. Esto es muy importante habilitar esto, si no ya por usted, por aquellos otros en la marea del torrent, que pudieran necesitar la ofuscación del uso del ancho de banda a su ISP. No le hace daño habilitarlo aunque usted no necesite tal protección. Más información: [Bittorrent Protocol Encryption](https://en.wikipedia.org/wiki/BitTorrent_protocol_encryption "wikipedia:BitTorrent protocol encryption")
 
 ```
 # Opciones de cifrado, no establezca ninguna (situación por defecto) o establezca una combinación de las siguientes::

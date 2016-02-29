@@ -112,7 +112,7 @@ The overall audio signal level of the on-board digital mixer's "pre-out" is indi
 
 ### Monitor PCMs
 
-**Tip:** For the inquisitive: PCM is an acronym for [Pulse Code Modulation](http://en.wikipedia.org/wiki/Pulse-code_modulation).
+**Tip:** For the inquisitive: PCM is an acronym for [Pulse Code Modulation](https://en.wikipedia.org/wiki/Pulse-code_modulation "wikipedia:Pulse-code modulation").
 
 The Monitor PCMs page is effectively a monitor mixer for your card's *software* inputs. Software inputs are the digital audio streams sent by your software applications. Typically, on a Linux-based Digital Audio Workstation (DAW), this means [JACK](/index.php/JACK "JACK"). The power of this functionality is most apparent when "Digital Mix" is connected to a pair of audio outputs in the *Patchbay / Router* tab, and you are mixing multiple sources from both hardware and software inputs See [#Usage examples](#Usage_examples).
 

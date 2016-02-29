@@ -66,7 +66,7 @@ As an alternative to acpi, you can use apm. By default Arch Linux uses the much 
 
 ### Hibernation
 
-With apm enabled, all hotkeys work out of the box, but to use suspend to disk (Fn+F12), you have to prepare a "save2dsk.bin" file on a fat16 partition using the program [[[1]](http://samba.org/junkcode/#tphdisk%7Ctphdisk)]. The Size of this file should be ramsize+videoramsize+few mb more. eg:
+With apm enabled, all hotkeys work out of the box, but to use suspend to disk (Fn+F12), you have to prepare a "save2dsk.bin" file on a fat16 partition using the program [tphdisk](http://samba.org/junkcode/#tphdisk). The Size of this file should be ramsize+videoramsize+few mb more. eg:
 
 ```
 tphdisk 565 > save2dsk.bin

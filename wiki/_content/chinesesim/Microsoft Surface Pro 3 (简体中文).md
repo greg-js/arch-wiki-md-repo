@@ -56,7 +56,7 @@ Surface Pro 3有三种启动模式 [详细看这里](http://www.microsoft.com/su
 
 ## 额外的步骤
 
-虽然在最新的内核中已经支持了触摸屏,屏幕等等.但是它不支持摄像头,多点触控,Type Cover等.在Github上有为Surface Pro 3专制的内核:[[1]](https://github.com/nuclearsandwich/surface3-archlinux).改项目设法支持了这些设备.你可以直接在AUR[[2]](https://aur.archlinux.org/packages/linux-surfacepro3)中安装或自行编译.
+虽然在最新的内核中已经支持了触摸屏,屏幕等等.但是它不支持摄像头,多点触控,Type Cover等.在Github上有为Surface Pro 3专制的内核:[[1]](https://github.com/nuclearsandwich/surface3-archlinux).改项目设法支持了这些设备.你可以直接在AUR[linux-surfacepro3](https://aur.archlinux.org/packages/linux-surfacepro3/)中安装或自行编译.
 
 ### 编译内核
 

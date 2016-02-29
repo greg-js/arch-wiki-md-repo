@@ -94,7 +94,7 @@ For the most part the hardware should Just Work™. Hardware-specific modules in
 
 ### AHCI SATA Mode
 
-The U120 supports the [AHCI](http://en.wikipedia.org/wiki/Ahci) SATA specification, however this feature is disabled in the BIOS by default. To enable AHCI during setup:
+The U120 supports the [AHCI](https://en.wikipedia.org/wiki/Ahci "wikipedia:Ahci") SATA specification, however this feature is disabled in the BIOS by default. To enable AHCI during setup:
 
 *   Add "ahci" to the MODULES array in */etc/mkinitcpio.conf*
 *   Once Arch installation is complete, reboot and enter the BIOS

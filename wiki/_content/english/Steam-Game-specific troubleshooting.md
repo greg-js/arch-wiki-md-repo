@@ -886,7 +886,7 @@ Hold the <tab> key.
 
 #### Sound support
 
-Install [java-commons-codec](https://aur.archlinux.org/packages/java-commons-codec) from the [AUR](/index.php/AUR "AUR") to get sound support.
+Install [java-commons-codec](https://aur.archlinux.org/packages/java-commons-codec/) from the [AUR](/index.php/AUR "AUR") to get sound support.
 
 #### Cutscenes
 
@@ -1622,7 +1622,7 @@ rm ~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu
 
 ### Graphical glitches on Intel HD
 
-XCOM may not recognize sdl2 shared libraries shipped with Steam runtime. Check if binary finds all required files and install missing packages if necessary ([sdl2](https://www.archlinux.org/packages/extra/i686/sdl2/) and [sdl2_image](https://www.archlinux.org/packages/extra/x86_64/sdl2_image/)).
+XCOM may not recognize sdl2 shared libraries shipped with Steam runtime. Check if binary finds all required files and install missing packages if necessary ([sdl2](https://www.archlinux.org/packages/?name=sdl2) and [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image)).
 
  `ldd ~/.local/share/Steam/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 ` 
 

@@ -48,7 +48,7 @@ Si tiene dudas sobre cuál elegir, pruebe primero el controlador de código abie
 
 La marca ATI [Radeon](https://en.wikipedia.org/wiki/es:Radeon "wikipedia:es:Radeon") sigue un esquema de nombres que relaciona cada producto para un segmento del mercado. En este artículo, se utilizará la nomenclatura tanto en base al nombre del *producto* (por ejemplo, HD 4850, X1900) como en base al nombre del *código* o del *núcleo* (*core*) (por ejemplo, RV770, R580). Tradicionalmente, una *serie del producto* se correspondería a una *serie del núcleo* (por ejemplo, la serie del producto «X1000» incluye todos los productos X1300, X1600, X1800, X1900 y del mismo modo cuando utilizan el núcleo de la serie «R500» - que incluiría los núcleos RV515, RV530, R520, y R580).
 
-Para una tabla completa de comparación entre el nombre de los productos y los correlativos núcleos, consulte la [comparación de las unidades de procesamiento gráfico AMD](http://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units)
+Para una tabla completa de comparación entre el nombre de los productos y los correlativos núcleos, consulte la [comparación de las unidades de procesamiento gráfico AMD](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units")
 
 ## Descripción
 
@@ -189,7 +189,7 @@ Por otra parte, también se puede hacer con una opción modprobe en `/etc/modpro
 
 **Para más información y otras opciones, lea la página de manual radeon y la página de módulos info**: `man radeon`, `modinfo radeon`.
 
-Un buena herramienta para probar es [driconf](https://www.archlinux.org/packages/community/any/driconf/). Esto le permitirá modificar varias configuraciones, como vsync, filtrado anisotrópico, compresión de texturas, etc. Con esta herramienta es posible deshabilitar «Low Impact fallback», necesario para algunos programas (por ejemplo, Google Earth).
+Un buena herramienta para probar es [driconf](https://www.archlinux.org/packages/?name=driconf). Esto le permitirá modificar varias configuraciones, como vsync, filtrado anisotrópico, compresión de texturas, etc. Con esta herramienta es posible deshabilitar «Low Impact fallback», necesario para algunos programas (por ejemplo, Google Earth).
 
 ### Desactivar PCI-E 2.0
 
@@ -526,7 +526,7 @@ para tarjetas basadas en r600 (todos los controladores disponibles para el varlo
 
 ## Cambiar vsync a off
 
-El controlador radeon activa vsync por defecto, lo cual es perfectamente correcto, excepto para el [benchmarking](http://es.wikipedia.org/wiki/Benchmarking). Para desactivarlo, cree el archivo `~/.drirc` (o modifíquelo si ya existe) y añada la siguiente sección:
+El controlador radeon activa vsync por defecto, lo cual es perfectamente correcto, excepto para el [benchmarking](https://es.wikipedia.org/wiki/Benchmarking). Para desactivarlo, cree el archivo `~/.drirc` (o modifíquelo si ya existe) y añada la siguiente sección:
 
  `~/.drirc` 
 ```
@@ -590,7 +590,7 @@ compruebe si el controlador AGP de la placa base (por ejemplo, `via_agp`, `intel
 
 ### TV mostrando un borde negro alrededor de la pantalla
 
-Si al conectar la TV y una Radeon HD 5770 a través del puerto HDMI, la TV muestra una imagen borrosa con un borde de 2-3 cm alrededor, se debe a la protección de [Overscan](http://en.wikipedia.org/wiki/Overscan), que se puede desactivar mediante xrandr:
+Si al conectar la TV y una Radeon HD 5770 a través del puerto HDMI, la TV muestra una imagen borrosa con un borde de 2-3 cm alrededor, se debe a la protección de [Overscan](https://en.wikipedia.org/wiki/Overscan "wikipedia:Overscan"), que se puede desactivar mediante xrandr:
 
 ```
  xrandr --output HDMI-0 --set underscan off

@@ -66,7 +66,7 @@
 
 ### Instalación
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [syslinux](https://www.archlinux.org/packages/?name=syslinux) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [syslinux](https://www.archlinux.org/packages/?name=syslinux) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 **Nota:**
 
@@ -116,7 +116,7 @@ gpt
 
 ```
 
-*   Si sew está tratando de rescatar un sistema instalado con un live CD, asegúrese de efectuar [chroot](/index.php/Change_Root_(Espa%C3%B1ol) "Change Root (Español)") antes de ejecutar las siguientes órdenes. Si no efectúa chroot, será necesario anteponer el punto de montaje a todas las rutas especificadas (salvo las que se inician con `/dev/`).
+*   Si sew está tratando de rescatar un sistema instalado con un live CD, asegúrese de efectuar [chroot](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") antes de ejecutar las siguientes órdenes. Si no efectúa chroot, será necesario anteponer el punto de montaje a todas las rutas especificadas (salvo las que se inician con `/dev/`).
 
 La partición de arranque, en la que se tiene previsto instalar Syslinux, debe estar formateada con un sistema de archivos FAT, ext2, ext3, ext4, o Btrfs. Se debe instalar sobre un directorio montado (y no sobre una partición `/dev/sdXY`). No es necesario instalarlo en el directorio root de un sistema de archivos, por ejemplo, si tenemos la partición `/dev/sda1` montada en `/boot` es posible instalar Syslinux en el directorio `syslinux`:
 
@@ -333,7 +333,7 @@ Syslinux permite también el uso de un menú de arranque gráfico. Para usarlo, 
 
 ```
 
-**Nota:** Si utiliza [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") asegúrese de copiar desde `/usr/lib/syslinux/efi64/` (`efi32` para sistemas i686), de lo contrario se mostrará una pantalla en negro. En ese caso, arranque desde un medio live y utilice [chroot](/index.php/Change_Root_(Espa%C3%B1ol) "Change Root (Español)") para hacer los cambios apropiados.
+**Nota:** Si utiliza [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") asegúrese de copiar desde `/usr/lib/syslinux/efi64/` (`efi32` para sistemas i686), de lo contrario se mostrará una pantalla en negro. En ese caso, arranque desde un medio live y utilice [chroot](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") para hacer los cambios apropiados.
 
 Esta configuración utiliza el mismo diseño del menú del CD de instalación de Arch Install, dicha configuración se puede encontrar en [projects.archlinux.org](https://projects.archlinux.org/archiso.git/tree/configs/releng/syslinux). La [imagen de fondo de Arch Linux](https://projects.archlinux.org/archiso.git/plain/configs/releng/syslinux/splash.png) se puede descargar desde allí, también. Copie la imagen a `/boot/syslinux/splash.png`.
 
@@ -562,7 +562,7 @@ Tratado en la [página de usuario](/index.php/User:Djgera "User:Djgera") de Djge
 
 ### Usar memtest
 
-Instale [memtest+](https://www.archlinux.org/packages/?name=memtest%2B) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Instale [memtest+](https://www.archlinux.org/packages/?name=memtest%2B) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Use la sección`LABEL` para lanzar [memtest](https://en.wikipedia.org/wiki/es:Memtest86%2B "wikipedia:es:Memtest86+"):
 
@@ -758,7 +758,7 @@ Y obtenga el ejecutable tune2fs binary que se encuentra en la partición root pa
 
 ```
 
-Siga con las instrucciones descritas en [ext2fs: no external journal](https://wiki.archlinux.org/index.php/Fsck#ext2fs_:_no_external_journal) para crear un journal nuevo para la partición root.
+Siga con las instrucciones descritas en [ext2fs: no external journal](/index.php/Fsck#ext2fs_:_no_external_journal "Fsck") para crear un journal nuevo para la partición root.
 
 ### Default o UI no encontrado en su equipo
 
@@ -841,7 +841,7 @@ LABEL Windows
 
 ```
 
-sustituya el código mbr con el de la unidad de windows (puede ver cómo [más arriba](/index.php/Syslinux_(Espa%C3%B1ol)#Chainloading "Syslinux (Español)")), y añada `swap` a las opciones.
+sustituya el código mbr con el de la unidad de windows (puede ver cómo [más arriba](#Chainloading)), y añada `swap` a las opciones.
 
 ### Leer el registro del gestor de arranque
 

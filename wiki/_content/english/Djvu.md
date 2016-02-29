@@ -1,4 +1,4 @@
-From [Wikipedia's DjVu Page](http://en.wikipedia.org/wiki/DjVu):
+From [Wikipedia's DjVu Page](https://en.wikipedia.org/wiki/DjVu "wikipedia:DjVu"):
 
 	*DjVu is a computer file format designed primarily to store scanned documents, especially those containing a combination of text, line drawings, indexed color images, and photographs. It uses technologies such as image layer separation of text and background/images, progressive loading, arithmetic coding, and lossy compression for bitonal (monochrome) images. This allows for high-quality, readable images to be stored in a minimum of space, so that they can be made available on the web.*
 

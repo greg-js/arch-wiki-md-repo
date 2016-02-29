@@ -1,6 +1,6 @@
 **Unified Extensible Firmware Interface** (или UEFI для краткости) представляет из себя новый тип прошивки, который изначально был разработан Intel (известно было тогда как просто EFI) в основном для систем на базе Itanium. Он вводит новый способ загрузки операционных систем, который отличается от обычного "загрузочного кода MBR" использующийся в BIOS системах. Она началась как Intel EFI в версии 1.x и после группы компании UEFI Forum взяла на себя её дальнейшее развитие и начиная с версии 2.x стала именоваться как Unified EFI. По состоянию на 23 мая 2012 года, спецификация UEFI 2.3.1 является самой последней.
 
-**Обратите внимание:** Если явно не указана спецификация EFI 1.x то термины EFI и UEFI используются как взаимозаменяемые для обозначения прошивок UEFI 2.x. Также, если не указано явно, эти указания являются общими и не Mac специфичными. Часть из них может не работать и может быть быть различными в Mac. Кроме того, реализация EFI компании Apple является ни EFI версии 1.x, ни UEFI версии 2.x, она смешивает обе версии. Такая прошивка не попадает ни под одну из версий спецификаций UEFI и поэтому она не является стандартной прошивкой UEFI.
+**Примечание:** Если явно не указана спецификация EFI 1.x то термины EFI и UEFI используются как взаимозаменяемые для обозначения прошивок UEFI 2.x. Также, если не указано явно, эти указания являются общими и не Mac специфичными. Часть из них может не работать и может быть быть различными в Mac. Кроме того, реализация EFI компании Apple является ни EFI версии 1.x, ни UEFI версии 2.x, она смешивает обе версии. Такая прошивка не попадает ни под одну из версий спецификаций UEFI и поэтому она не является стандартной прошивкой UEFI.
 
 ## Contents
 
@@ -80,7 +80,7 @@ This limitation does not exist in Linux Kernel but rather depends on the bootloa
 
 Если каталог `/sys/firmware/efi` существует, то ядро загружено в режиме EFI. В этом случае UEFI имеет такую же разрядность, как у ядра. (т.е. i686 или x86_64)
 
-**Обратите внимание:** Системы с SoC (System-on-a-Chip) Intel Atom поставляются с 32-битным UEFI (по состоянию на 2 ноября 2013). Дополнительную информацию можно получить на [этой странице](/index.php?title=HCL/Firmwares/UEFI&action=edit&redlink=1 "HCL/Firmwares/UEFI (page does not exist)").
+**Примечание:** Системы с SoC (System-on-a-Chip) Intel Atom поставляются с 32-битным UEFI (по состоянию на 2 ноября 2013). Дополнительную информацию можно получить на [этой странице](/index.php?title=HCL/Firmwares/UEFI&action=edit&redlink=1 "HCL/Firmwares/UEFI (page does not exist)").
 
 #### Apple Mac
 
@@ -117,11 +117,11 @@ CONFIG_EFI_VARS=m
 
 ```
 
-**Обратите внимание:** This option is compiled as module in Arch core/testing kernel.
+**Примечание:** This option is compiled as module in Arch core/testing kernel.
 
-**Обратите внимание:** For Linux to access UEFI Runtime Services, the UEFI Firmware processor architecture and the Linux kernel processor architecture must match. This is independent of the bootloader used.
+**Примечание:** For Linux to access UEFI Runtime Services, the UEFI Firmware processor architecture and the Linux kernel processor architecture must match. This is independent of the bootloader used.
 
-**Обратите внимание:** If the UEFI Firmware arch and Linux Kernel arch are different, then the "**noefi**" kernel parameter must be used to avoid the kernel panic and boot successfully. The "noefi" option instructs the kernel not to access the UEFI Runtime Services.
+**Примечание:** If the UEFI Firmware arch and Linux Kernel arch are different, then the "**noefi**" kernel parameter must be used to avoid the kernel panic and boot successfully. The "noefi" option instructs the kernel not to access the UEFI Runtime Services.
 
 GUID Partition Table [GPT](/index.php/GPT "GPT") config option - mandatory for UEFI support
 
@@ -130,7 +130,7 @@ CONFIG_EFI_PARTITION=y
 
 ```
 
-**Обратите внимание:** All of the above options are required to boot Linux via UEFI, and are enabled in Archlinux kernels in official repos.
+**Примечание:** All of the above options are required to boot Linux via UEFI, and are enabled in Archlinux kernels in official repos.
 
 Retrieved from [http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=blob_plain;f=Documentation/x86/x86_64/uefi.txt;hb=HEAD](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=blob_plain;f=Documentation/x86/x86_64/uefi.txt;hb=HEAD) .
 
@@ -138,7 +138,7 @@ Retrieved from [http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=b
 
 UEFI defines variables through which an operating system can interact with the firmware. UEFI Boot Variables are used by the boot-loader and used by the OS only for early system start-up. UEFI Runtime Variables allow an OS to manage certain setting sof the firmware like the UEFI Boot Manager or managing the keys for UEFI Secure Boot Protocol etc.
 
-**Обратите внимание:** The below steps will not work if the system has been booted in BIOS mode and will not work if the UEFI processor architecture does not match the kernel one, i.e. x86_64 UEFI + ix86 32-bit Kernel and vice-versa config will not work. This is true only for efivars kernel module and efibootmgr step. The other steps (ie. upto setting up <UEFISYS>/efi/arch/grub.{efi,cfg} ) can be done even in BIOS/Legacy boot mode.
+**Примечание:** The below steps will not work if the system has been booted in BIOS mode and will not work if the UEFI processor architecture does not match the kernel one, i.e. x86_64 UEFI + ix86 32-bit Kernel and vice-versa config will not work. This is true only for efivars kernel module and efibootmgr step. The other steps (ie. upto setting up <UEFISYS>/efi/arch/grub.{efi,cfg} ) can be done even in BIOS/Legacy boot mode.
 
 Access to UEFI Runtime services is provided by "efivars" kernel module which is enabled through the `CONFIG_EFI_VAR=m` kernel config option. This module once loaded exposes the variables under the directory `/sys/firnware/efi/vars`. One way to check whether the system has booted in UEFI boot mode is to load the "efivars" kernel module and check for the existence of `/sys/firnware/efi/vars` directory with contents similar to :
 
@@ -200,7 +200,7 @@ Verify whether there are files in */sys/firmware/efi/vars/* directory. This dire
 
 If */sys/firmware/efi/vars/* directory is empty or does not exist, then `efibootmgr` command will not work. If you are unable to make the ISO/CD/DVD/USB boot in UEFI mode try [https://gitorious.org/tianocore_uefi_duet_builds/pages/Linux_Windows_BIOS_UEFI_boot_USB](https://gitorious.org/tianocore_uefi_duet_builds/pages/Linux_Windows_BIOS_UEFI_boot_USB).
 
-**Обратите внимание:** The below commands use grub2-efi-x86_64 boot-loader as example.
+**Примечание:** The below commands use grub2-efi-x86_64 boot-loader as example.
 
 Assume the boot-loader file to be launched is `/boot/efi/efi/arch_grub/grubx64.efi`. `/boot/efi/efi/arch_grub/grubx64.efi` can be split up as `/boot/efi` and `/efi/arch_grub/grubx64.efi`, wherein `/boot/efi` is the mountpoint of the UEFI System Partition, which is assumed to be /dev/sdXY (here X and Y are just placeholders for the actual values - eg:- in /dev/sda1 , X=a Y=1).
 
@@ -233,7 +233,7 @@ FAT32 filesystem is case-insensitive since it does not use UTF-8 encoding by def
 
 ## Создание UEFI раздела в Linux
 
-**Обратите внимание:** Раздел UEFISYS может быть любого размера, который поддерживается файловой системой FAT32\. В соответствии с документацией пресловутой Microsoft, минимальный размер раздела с FAT32 - 512Мб. В соответствии с вышесказанным рекомендуется устанавливать размер UEFISYS раздела больше 512Мб. Особенно, если Вы используете несколько UEFI загрузчиков или несколько ОС, загружаемых с помощью UEFI. В общем, места должно быть достаточно, чтобы хранить сопутствующие файлы всех загружаемых операционных систем. Если в качестве загрузчика Вы решили использовать [Linux Kernel EFISTUB](/index.php/UEFI_Bootloaders "UEFI Bootloaders") то Вы должны выделить достаточно места, чтобы в разделе хранились файлы Kernel и Initramfs.
+**Примечание:** Раздел UEFISYS может быть любого размера, который поддерживается файловой системой FAT32\. В соответствии с документацией пресловутой Microsoft, минимальный размер раздела с FAT32 - 512Мб. В соответствии с вышесказанным рекомендуется устанавливать размер UEFISYS раздела больше 512Мб. Особенно, если Вы используете несколько UEFI загрузчиков или несколько ОС, загружаемых с помощью UEFI. В общем, места должно быть достаточно, чтобы хранить сопутствующие файлы всех загружаемых операционных систем. Если в качестве загрузчика Вы решили использовать [Linux Kernel EFISTUB](/index.php/UEFI_Bootloaders "UEFI Bootloaders") то Вы должны выделить достаточно места, чтобы в разделе хранились файлы Kernel и Initramfs.
 
 ### Для GPT разметки диска
 
@@ -242,7 +242,7 @@ Two choices:
 *   Using GNU Parted/GParted: Create a FAT32 partition. Set "boot" flag on for that partition.
 *   Using GPT fdisk (aka gdisk): Create a partition with gdisk type code "EF00". Then format that partition as FAT32 using `mkfs.vfat -F32 /dev/<THAT_PARTITION>`
 
-**Обратите внимание:** Setting "boot" flag in parted in a MBR partition marks that partition as active, while the same "boot" flag in a GPT partition marks that partition as "UEFI System Partition".
+**Примечание:** Setting "boot" flag in parted in a MBR partition marks that partition as active, while the same "boot" flag in a GPT partition marks that partition as "UEFI System Partition".
 
 **Важно:** Do not use util-linux fdisk, cfdisk or sfdisk to change the type codes in a GPT disk. Similarly do not use gptfdisk gdisk, cgdisk or sgdisk on a MBR disk, it will be automatically converted to GPT (no data loss will occur, but the system will fail to boot).
 
@@ -253,7 +253,7 @@ Two choices:
 *   Using GNU Parted/GParted: Create FAT32 partition. Change the type code of that partition to 0xEF using fdisk, cfdisk or sfdisk.
 *   Using fdisk: Create a partition with partition type 0xEF and format it as FAT32 using `mkfs.vfat -F32 /dev/<THAT_PARTITION>`
 
-**Обратите внимание:** It is recommended to use always GPT for UEFI boot as some UEFI firmwares do not allow UEFI-MBR boot.
+**Примечание:** It is recommended to use always GPT for UEFI boot as some UEFI firmwares do not allow UEFI-MBR boot.
 
 ## UEFI консоль
 
@@ -276,7 +276,7 @@ Few Asus and other AMI Aptio x86_64 UEFI firmware based motherboards (from Sandy
 
 Systems with Phoenix SecureCore Tiano UEFI firmware are known to have embedded UEFI Shell which can be launched using either F6, F11 or F12 key.
 
-**Обратите внимание:** If you are unable to launch UEFI Shell from the firmware directly using any of the above mentioned methods, create a FAT32 USB pen drive with Shell.efi copied as (USB)/efi/boot/bootx64.efi . This USB should come up in the firmware boot menu. Launching this option will launch the UEFI Shell for you.
+**Примечание:** If you are unable to launch UEFI Shell from the firmware directly using any of the above mentioned methods, create a FAT32 USB pen drive with Shell.efi copied as (USB)/efi/boot/bootx64.efi . This USB should come up in the firmware boot menu. Launching this option will launch the UEFI Shell for you.
 
 ### Важные команды UEFI консоли
 
@@ -349,8 +349,8 @@ Main page [HCL/Firmwares/UEFI](/index.php?title=HCL/Firmwares/UEFI&action=edit&r
 
 ## См. также
 
-*   Wikipedia's page on [UEFI](http://en.wikipedia.org/wiki/UEFI)
-*   Wikipedia's page on [UEFI SYSTEM Partition](http://en.wikipedia.org/wiki/EFI_System_partition)
+*   Wikipedia's page on [UEFI](https://en.wikipedia.org/wiki/UEFI "wikipedia:UEFI")
+*   Wikipedia's page on [UEFI SYSTEM Partition](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition")
 *   [Linux Kernel UEFI Documentation](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=blob_plain;f=Documentation/x86/x86_64/uefi.txt;hb=HEAD)
 *   [UEFI Forum](http://www.uefi.org/home/) - contains the official [UEFI Specifications](http://www.uefi.org/specs/) - GUID Partition Table is part of UEFI Specification
 *   [Intel's Tianocore Project](http://sourceforge.net/apps/mediawiki/tianocore/index.php?title=Welcome_to_TianoCore) for Open-Source UEFI firmware which includes DuetPkg for direct BIOS based booting and OvmfPkg used in QEMU and Oracle VirtualBox

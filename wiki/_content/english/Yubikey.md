@@ -1,4 +1,4 @@
-The Yubikey is a small [USB token](http://en.wikipedia.org/wiki/Security_token) that generates [One-Time Passwords](http://en.wikipedia.org/wiki/One-time_password) (OTP). It is manufactured by [Yubico](http://www.yubico.com/).
+The Yubikey is a small [USB token](https://en.wikipedia.org/wiki/Security_token "wikipedia:Security token") that generates [One-Time Passwords](https://en.wikipedia.org/wiki/One-time_password "wikipedia:One-time password") (OTP). It is manufactured by [Yubico](http://www.yubico.com/).
 
 One of its strengths is that it emulates a USB keyboard to send the OTP as text, and thus requires only USB HID drivers found on practically all desktop computers.
 
@@ -31,9 +31,9 @@ One of its strengths is that it emulates a USB keyboard to send the OTP as text,
 
 ### How does it work
 
-Yubikey's authentication protocol is based on [symmetric cryptography](http://en.wikipedia.org/wiki/Symmetric_cryptography). More specifically, each Yubikey contains a 128-bit [AES](http://en.wikipedia.org/wiki/Advanced_Encryption_Standard) key unique to that device. It is used to encrypt a token made of different fields such as the ID of the key, a counter, a random number, etc. The OTP is made from concatenating the ID of the key with this encrypted token.
+Yubikey's authentication protocol is based on [symmetric cryptography](https://en.wikipedia.org/wiki/Symmetric_cryptography "wikipedia:Symmetric cryptography"). More specifically, each Yubikey contains a 128-bit [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") key unique to that device. It is used to encrypt a token made of different fields such as the ID of the key, a counter, a random number, etc. The OTP is made from concatenating the ID of the key with this encrypted token.
 
-This OTP is sent to the target system, to which we want to authenticate. This target system asks a validation server if the OTP is good. The validation server has a mapping of Yubikey IDs -> AES key. Using the key ID in the OTP, it can thus retrieve the AES key and decrypt the other part of the OTP. If it looks OK (plain-text ID and encrypted ID are the same, the counter is bigger than the last seen one to prevent [replay attacks](http://en.wikipedia.org/wiki/Replay_attack)...), then authentication is successful.
+This OTP is sent to the target system, to which we want to authenticate. This target system asks a validation server if the OTP is good. The validation server has a mapping of Yubikey IDs -> AES key. Using the key ID in the OTP, it can thus retrieve the AES key and decrypt the other part of the OTP. If it looks OK (plain-text ID and encrypted ID are the same, the counter is bigger than the last seen one to prevent [replay attacks](https://en.wikipedia.org/wiki/Replay_attack "wikipedia:Replay attack")...), then authentication is successful.
 
 The validation server sends that authentication status back to the target system, which grants access or not based on that response.
 
@@ -68,7 +68,7 @@ So you can either:
 
 **Note:** See also: [https://developers.yubico.com/yubico-pam/Yubikey_and_SSH_via_PAM.html](https://developers.yubico.com/yubico-pam/Yubikey_and_SSH_via_PAM.html)
 
-This details how to use a Yubikey to have [two-factor authentication](http://en.wikipedia.org/wiki/Two-factor_authentication) with SSH, that is, to use both a password and a Yubikey-generated OTP.
+This details how to use a Yubikey to have [two-factor authentication](https://en.wikipedia.org/wiki/Two-factor_authentication "wikipedia:Two-factor authentication") with SSH, that is, to use both a password and a Yubikey-generated OTP.
 
 ### Prerequisites
 

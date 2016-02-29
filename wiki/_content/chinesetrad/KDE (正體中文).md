@@ -346,7 +346,7 @@ Right-Click on the Kicker menu button, press "**Application launcher settings**"
 
 #### 字型
 
-如果預設情況下，KDE 的字型看起來不佳，嘗試安裝 [ttf-dejavu](https://www.archlinux.org/packages/extra/any/ttf-dejavu/) 和 [ttf-liberation](https://www.archlinux.org/packages/community/any/ttf-liberation/) 套件。安裝之後，一定要登出並重新登入。您不必修改 KDE 系統設定中"字型"面板的任何設定。
+如果預設情況下，KDE 的字型看起來不佳，嘗試安裝 [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) 和 [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) 套件。安裝之後，一定要登出並重新登入。您不必修改 KDE 系統設定中"字型"面板的任何設定。
 
 If you have personally set up how your [Fonts](/index.php/Fonts "Fonts") render, be aware that System Settings may alter their appearance. When you go **System Settings > Appearance > Fonts** System Settings will likely alter your font configuration file (`fonts.conf`). There is no way to prevent this but if you set the values to match your `fonts.conf` file the expected font rendering will return (it will require you to restart your application or in a few cases for you to have to restart your desktop). Note too that Gnomes' Font Preferences will also do this if you use both desktop environments.
 

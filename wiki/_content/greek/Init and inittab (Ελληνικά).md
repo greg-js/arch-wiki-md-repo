@@ -206,7 +206,7 @@ Keyboard Request -- edit /etc/inittab to customize
 
 ## External Links
 
-*   [Wikipedia: Init](http://en.wikipedia.org/wiki/Init)
+*   [Wikipedia: Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init")
 *   [Γνωσιακή Βάση Linux και Οδηγός. Run Levels.](http://www.linux-tutorial.info/modules.php?name=MContent&pageid=65)
 *   [Linux.com. Εισαγωγή στα runlevels και το inittab](http://www.linux.com/articles/114107)
 *   [Linux.com. Μια εισαγωγή στις υπηρεσίες, τα runlevels, και τις δέσμες εντολών rc.d.](http://www.linux.com/news/enterprise/systems-management/8116-an-introduction-to-services-runlevels-and-rcd-scripts)

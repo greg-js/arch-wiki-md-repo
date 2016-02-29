@@ -2,7 +2,7 @@ De [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 	*El proyecto X.Org proporciona una implementación de código abierto del sistema de ventanas X. El trabajo de desarrollo se está haciendo conjuntamente con la comunidad freedesktop.org. La Fundación X.Org es una corporación educativa sin fines de lucro cuyo Consejo sirve a este fin, y cuyos Miembros encaminan este trabajo.*
 
-**Xorg** es una aplicación pública, una implementación en código abierto del sistema X window versión 11\. Desde el momento que Xorg se convierte en la opción más popular entre los usuarios de Linux, su omnipresencia ha dado lugar a que sea un requisito cada vez más utilizado por las aplicaciones GUI (**G**raphical **U**ser **I**nterface), con la consiguiente adopción masiva por la mayoría de las distribuciones. Consulte el artículo de Wikipedia sobre [Xorg](http://en.wikipedia.org/wiki/X.Org_ServerX.Org) o visite el [sitio web de Xorg](http://www.x.org/wiki/) para más detalles.
+**Xorg** es una aplicación pública, una implementación en código abierto del sistema X window versión 11\. Desde el momento que Xorg se convierte en la opción más popular entre los usuarios de Linux, su omnipresencia ha dado lugar a que sea un requisito cada vez más utilizado por las aplicaciones GUI (**G**raphical **U**ser **I**nterface), con la consiguiente adopción masiva por la mayoría de las distribuciones. Consulte el artículo de Wikipedia sobre [Xorg](https://en.wikipedia.org/wiki/X.Org_ServerX.Org "wikipedia:X.Org ServerX.Org") o visite el [sitio web de Xorg](http://www.x.org/wiki/) para más detalles.
 
 ## Contents
 
@@ -44,11 +44,11 @@ De [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 ## Instalación
 
-En primer lugar, tendrá que [instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el servidor X con el paquete [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+En primer lugar, tendrá que [instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el servidor X con el paquete [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Por otro lado, algunos paquetes del grupo [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) pueden ser útiles para realizar ciertas tareas de configuración, las cuales se señalan en la sección/página correspondiente.
 
-**Sugerencia:** El entorno X, por defecto, es bastante árido, y normalmente preferirá instalar un [Gestor de Ventanas](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)") o un [Entorno de Escritorio](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)") para complementar X.
+**Sugerencia:** El entorno X, por defecto, es bastante árido, y normalmente preferirá instalar un [Gestor de Ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") o un [Entorno de Escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") para complementar X.
 
 ### Instalación del controlador
 
@@ -89,9 +89,9 @@ Xorg debería funcionar sin problemas y sin necesidad de controladores privativo
 
 ## Ejecución
 
-*Consulte también: [Start X at Login](/index.php/Start_X_at_Login_(Espa%C3%B1ol) "Start X at Login (Español)")*
+*Consulte también: [Start X at Login](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)")*
 
-**Sugerencia:** La forma más fácil de arrancar X es usando un [gestor de pantalla](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") como [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM") o [SLiM](/index.php/SLiM "SLiM").
+**Sugerencia:** La forma más fácil de arrancar X es usando un [gestor de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") como [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM") o [SLiM](/index.php/SLiM "SLiM").
 
 Si desea arrancar X sin un gestor de pantalla, instale el paquete [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). Opcionalmente, los paquetes [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) y [xterm](https://www.archlinux.org/packages/?name=xterm) permiten un entorno por defecto, como se describe a continuación.
 
@@ -169,7 +169,7 @@ Véase la página principal: [Touchpad Synaptics](/index.php/Touchpad_Synaptics_
 
 ### Configuración del teclado
 
-Véase la página principal: [Keyboard Configuration in Xorg](/index.php/Keyboard_Configuration_in_Xorg_(Espa%C3%B1ol) "Keyboard Configuration in Xorg (Español)")
+Véase la página principal: [Keyboard Configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg_(Espa%C3%B1ol) "Keyboard configuration in Xorg (Español)")
 
 ## Configuraciones del monitor
 
@@ -252,7 +252,7 @@ El DPI del servidor X se determina de la siguiente manera:
 3.  Si no viene proporcionado el tamaño de la pantalla, los valores de dimensión del monitor DDC se utilizan para deducir el DPI, dada la resolución de la pantalla.
 4.  Si DDC no especifica un tamaño, el valor DPI 75 se utiliza por defecto.
 
-Con el fin de obtener una correcta configuración de los puntos por pulgada (DPI), el tamaño de la pantalla hay que conocerlo o establecerlo. La configuración correcta del DPI es especialmente necesaria cuando se requiere una resolución fina (como, por ejemplo, renderizado de la tipografía). Anteriormente, los fabricantes trataron de crear un estándar para 96 DPI (para un monitor de 10,3" sería una pantalla en diagonal de 800x600, para un monitor de 13,2" sería 1024x768). Hoy en día, los DPI de la pantalla varían y pueden no ser iguales horizontal y verticalmente. Por ejemplo, un LCD de 19" de pantalla ancha de 1440x900 puede tener una DPI de 89x87\. Para poder establecer el DPI, el servidor Xorg intenta detectar automáticamente el tamaño de pantalla de su monitor físico a través de la tarjeta gráfica con [DDC](http://en.wikipedia.org/wiki/Display_Data_Channel). ~~Cuando el servidor Xorg conoce el tamaño de la pantalla física, será capaz de establecer el correcto DPI dependiendo del tamaño de la resolución.~~
+Con el fin de obtener una correcta configuración de los puntos por pulgada (DPI), el tamaño de la pantalla hay que conocerlo o establecerlo. La configuración correcta del DPI es especialmente necesaria cuando se requiere una resolución fina (como, por ejemplo, renderizado de la tipografía). Anteriormente, los fabricantes trataron de crear un estándar para 96 DPI (para un monitor de 10,3" sería una pantalla en diagonal de 800x600, para un monitor de 13,2" sería 1024x768). Hoy en día, los DPI de la pantalla varían y pueden no ser iguales horizontal y verticalmente. Por ejemplo, un LCD de 19" de pantalla ancha de 1440x900 puede tener una DPI de 89x87\. Para poder establecer el DPI, el servidor Xorg intenta detectar automáticamente el tamaño de pantalla de su monitor físico a través de la tarjeta gráfica con [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel"). ~~Cuando el servidor Xorg conoce el tamaño de la pantalla física, será capaz de establecer el correcto DPI dependiendo del tamaño de la resolución.~~
 
 Para ver si el tamaño de la pantalla y DPI han sido detectados/calculados correctamente, escriba:
 
@@ -388,7 +388,7 @@ Véase la página principal: [SSH#X11 forwarding](/index.php/SSH#X11_forwarding 
 
 Con la ayuda de `xinput` podemos activar o desactivar temporalmente las fuentes de entrada. Esto puede ser útil, por ejemplo, en sistemas que tienen más de un ratón, como los ThinkPads, y preferimos usar uno solo para evitar clics no deseados del ratón. Vamos a ver cómo lograr esto.
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Busque el ID del dispositivo que deseamos desactivar: `xinput` 
 

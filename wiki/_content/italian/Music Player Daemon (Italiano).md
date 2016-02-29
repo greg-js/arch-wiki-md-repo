@@ -89,7 +89,7 @@ Mai mettere questo file nella home dell'utente come suggerito in altri tutorial.
 
 ### Configurare correttamente il suono
 
-Per far funzionare l'audio assicurarsi di aver correttamente configurato la scheda audio e il mixer. Visitare [ALSA_(Italiano)](/index.php/ALSA_(Italiano) "ALSA (Italiano)"). Non dimenticarsi di rimuovere il muto dai canali necessari in alsamixer, alzare il volume e salvare i cambiamenti con alsactl store. Visitare `~/.mpd/error` se ancora l'audio non funziona.
+Per far funzionare l'audio assicurarsi di aver correttamente configurato la scheda audio e il mixer. Visitare [ALSA (Italiano)](/index.php/ALSA_(Italiano) "ALSA (Italiano)"). Non dimenticarsi di rimuovere il muto dai canali necessari in alsamixer, alzare il volume e salvare i cambiamenti con alsactl store. Visitare `~/.mpd/error` se ancora l'audio non funziona.
 
 Assicurarsi che la propria scheda audio possa effettuare il mixing hardware (molte di esse possono, incluse quelle integrate). In caso contrario questo potrebbe causare problemi con le riproduzioni multiple. Per esempio, impedirebbe ad Mplayer di riprodurre il suono mentre il demone MPD è attivo, restituendo un messaggio di errore audio comunicante che il dispositivo è occupato.
 
@@ -376,7 +376,7 @@ Aggiungere il comando al solo `/etc/rc.local` non assicura che mpd non riproduca
 
 #### Metodo 3
 
-L'idea di base di questo metodo è chiedere ad mpd di mettere in pausa la musica quando l'utente esegue il logout, così al prossimo avvio mpd si bloccherà nello stato di pausa. È possibile inviare questo comando usando [mpc](https://www.archlinux.org/packages/extra/x86_64/mpc/), l'interfaccia a linea di comando di mpd:
+L'idea di base di questo metodo è chiedere ad mpd di mettere in pausa la musica quando l'utente esegue il logout, così al prossimo avvio mpd si bloccherà nello stato di pausa. È possibile inviare questo comando usando [mpc](https://www.archlinux.org/packages/?name=mpc), l'interfaccia a linea di comando di mpd:
 
 ```
 pacman -S mpc
@@ -457,7 +457,7 @@ Esistono già alcuni client realizzati per interfacciare lircd e MPD, tuttavia, 
 
 Si raccomanda di usare mpc con irexec. mpc è un player da linea di comando che invia un'istruzione a MPD ed esce immediatamente, il che è perfetto per irexec, il parser di comandi incluso in lirc. Ciò che irexec fa è lanciare uno specifico comando una volta ricevuto un controllo dal telecomando.
 
-Prima di tutto, configurare il telecomando come indicato nell'articolo **[Lirc](/index.php/Lirc "Lirc")**.
+Prima di tutto, configurare il telecomando come indicato nell'articolo **[LIRC](/index.php/LIRC "LIRC")**.
 
 Modificare il file di configurazione di lirc, usualmente situato in `~/.lircrc`, seguendo questa struttura base:
 

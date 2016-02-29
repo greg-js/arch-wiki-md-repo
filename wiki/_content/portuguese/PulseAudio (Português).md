@@ -2,7 +2,7 @@
 
 PulseAudio roda em sistemas Microsoft Windows e POSIX-compliant, como o Linux e FreeBSD. PulseAudio é um software livre lançado sobre os termos da GNU Lesser General Public License.
 
-**Fonte:** [Wikipédia](http://en.wikipedia.org/wiki/PulseAudio)
+**Fonte:** [Wikipédia](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio")
 
 ## Contents
 

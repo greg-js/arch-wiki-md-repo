@@ -55,7 +55,7 @@ Frequency scaling: OK
 Audio touch panel NOT working
 Web cam: OK
 HDMI: OK | By "audio touch panel" I mean the illuminated plastic hot key touch panel on the right-hand side of the keyboard. |
-| AspireOne D255e | [Archboot 2010.12-1](https://wiki.archlinux.org/index.php/Archboot) | Intel GMA 3150 | OK | OK, Atheros 8132 worked only with latest Archboot not official images | OK, Broadcom worked only with latest Archboot not official images | Untested | Untested | Untested | Hot keys: OK
+| AspireOne D255e | [Archboot 2010.12-1](/index.php/Archboot "Archboot") | Intel GMA 3150 | OK | OK, Atheros 8132 worked only with latest Archboot not official images | OK, Broadcom worked only with latest Archboot not official images | Untested | Untested | Untested | Hot keys: OK
 Synaptic Touchpad: OK |
 | Aspire 2920Z | 2009.2 | Intel Mobile GM965/GL960 Integrated Graphics Controller | OK, Intel 82801H | OK, Broadcom NetLink BCM5787M Gigabit Ethernet PCI Express | OK, Broadcom BCM4311 802.11b/g WLAN | n/a | Suspend to RAM: OK.
 Suspend to disk: OK.

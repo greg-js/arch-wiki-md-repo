@@ -143,7 +143,7 @@ The [RTL8192E](/index.php/Wireless_network_configuration#rtl8192e "Wireless netw
 
 Samsung N150-Plus has a newer Broadcom BCM4313 adapter with built-in bluetooth. As of kernel v2.6.37, this card works out of the box thanks to the open-source brcm80211 driver. However, on older kernels you'll need a proprietary driver (AUR: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or if you want to compile manually: [http://www.broadcom.com/support/802.11/linux_sta.php](http://www.broadcom.com/support/802.11/linux_sta.php)). Bluetooth also works fine with either driver.
 
-For more information: [Broadcom wireless](https://wiki.archlinux.org/index.php/Broadcom_wireless#Wi-Fi_card_does_not_work_or_show_up_since_kernel_upgrade_.28brcmsmac.29)
+For more information: [Broadcom wireless](/index.php/Broadcom_wireless#Wi-Fi_card_does_not_work_or_show_up_since_kernel_upgrade_.28brcmsmac.29 "Broadcom wireless")
 
 ### Graphics
 

@@ -42,4 +42,4 @@ Ostatnią zasadą przewodnią Arch Linuksa jest wolność oznaczająca, iż wszy
 
 ## Zobacz również
 
-*   [The Arch Way v2.0](https://wiki.archlinux.org/index.php/The_Arch_Way_v2.0)
+*   [The Arch Way v2.0](/index.php/The_Arch_Way_v2.0 "The Arch Way v2.0")

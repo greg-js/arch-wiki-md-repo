@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [General_Recommendations](/index.php/General_Recommendations "General Recommendations") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-20，点击[这里](https://wiki.archlinux.org/index.php?title=General_Recommendations&diff=0&oldid=388232)可以查看翻译后英文页面的改动。
 
-本文是各种重要或常用的文章的详细索引。阅读本文前，读者应该先通过 [新手指南](/index.php/Beginners%27_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' Guide (简体中文)") 和 [官方安装指南](/index.php/Official_Arch_Linux_Install_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Arch Linux Install Guide (简体中文)") 安装 Arch Linux 基本系统。
+本文是各种重要或常用的文章的详细索引。阅读本文前，读者应该先通过 [新手指南](/index.php/%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97 "新手指南") 和 [官方安装指南](/index.php/%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97 "官方安装指南") 安装 Arch Linux 基本系统。
 
 **注意:** 中国用户可以特别留意 [#中国大陆用户的推荐解决方案](#.E4.B8.AD.E5.9B.BD.E5.A4.A7.E9.99.86.E7.94.A8.E6.88.B7.E7.9A.84.E6.8E.A8.E8.8D.90.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88) 内容。
 
@@ -116,7 +116,7 @@
 
 ### 系统服务
 
-这一部分涉及[守护进程](/index.php/Daemon_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Daemon (简体中文)")（daemon）。Arch Linux 使用 [systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 管理系统服务。新用户有必要了解其基本使用方法。通常使用 `# systemctl` 命令进行系统管理，参见[此文](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#systemd_.E5.9F.BA.E6.9C.AC.E5.B7.A5.E5.85.B7 "Systemd (简体中文)").
+这一部分涉及[守护进程](/index.php/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B "守护进程")（daemon）。Arch Linux 使用 [systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 管理系统服务。新用户有必要了解其基本使用方法。通常使用 `# systemctl` 命令进行系统管理，参见[此文](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#systemd_.E5.9F.BA.E6.9C.AC.E5.B7.A5.E5.85.B7 "Systemd (简体中文)").
 
 ### 系统维护
 
@@ -136,7 +136,7 @@ Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4
 
 ### 软件仓库
 
-[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")包含了各个仓库的详细介绍。[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") 包含很多个人维护的软件仓库。
+[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")包含了各个仓库的详细介绍。[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") 包含很多个人维护的软件仓库。
 
 如果安装的是 Arch Linux x86_64，并计划使用 32 位程序，建议[启用 [multilib] 仓库](/index.php/Multilib "Multilib")。
 
@@ -160,7 +160,7 @@ Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4
 
 ## 启动
 
-这部分包含系统启动方面的信息。关于Arch开机过程，参见： [Arch 启动过程](/index.php/Arch_Boot_Process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Boot Process (简体中文)")。更多信息，参见：[启动过程分类](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)")。
+这部分包含系统启动方面的信息。关于Arch开机过程，参见：[Arch 启动过程](/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch boot process (简体中文)")。更多信息，参见：[启动过程分类](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)")。
 
 ### 硬件自动探测
 
@@ -198,15 +198,15 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 ### 窗口管理器
 
-完整的桌面环境提供了完全的用户界面，但是通常会占用不少系统资源。希望系统性能最大化的用户可以只安装[窗口管理器](/index.php/Window_Manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window Manager (简体中文)")，然后加入需要的其他软件。大部分的桌面环境都可以换用其它的窗口管理器。 [动态](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs"), [堆栈式](/index.php/Category:Stacking_WMs "Category:Stacking WMs") 和 [平铺](/index.php/Category:Tiling_WMs "Category:Tiling WMs") 窗口管理器处理窗口的方式各不相同。
+完整的桌面环境提供了完全的用户界面，但是通常会占用不少系统资源。希望系统性能最大化的用户可以只安装[窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")，然后加入需要的其他软件。大部分的桌面环境都可以换用其它的窗口管理器。 [动态](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs"), [堆栈式](/index.php/Category:Stacking_WMs "Category:Stacking WMs") 和 [平铺](/index.php/Category:Tiling_WMs "Category:Tiling WMs") 窗口管理器处理窗口的方式各不相同。
 
 ### 显示管理器
 
-除了手动启动 X 的方法外，可以让图形界面自动启动，[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") 介绍了启动管理器的使用方法。 [Start X at Login](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)") 提供了直接从终端启动的轻量方法。
+除了手动启动 X 的方法外，可以让图形界面自动启动，[显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器") 介绍了启动管理器的使用方法。 [Start X at Login](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)") 提供了直接从终端启动的轻量方法。
 
 ### 桌面环境
 
-[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")只提供图形环境的基本框架，完整的用户体验还需要其他组件。 [桌面环境](/index.php/Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop Environment (简体中文)")(DE): 在**X**之上并与其共同运作，提供完整的功能和动态图形界面。桌面环境通常提供图标、小程序（applets）、窗口、工具栏、文件夹、壁纸、应用程序和拖放等功能。使用[GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")、[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")、[LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")、[Xfce](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)")这类[桌面环境](/index.php/Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop Environment (简体中文)")，是最简单的配置方法. [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") 包含了各种桌面环境。
+[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")只提供图形环境的基本框架，完整的用户体验还需要其他组件。 [桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")(DE): 在**X**之上并与其共同运作，提供完整的功能和动态图形界面。桌面环境通常提供图标、小程序（applets）、窗口、工具栏、文件夹、壁纸、应用程序和拖放等功能。使用[GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")、[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")、[LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")、[Xfce](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)")这类[桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")，是最简单的配置方法. [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") 包含了各种桌面环境。
 
 ## 电源管理
 
@@ -214,11 +214,11 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 ### ACPI 事件
 
-电源按键或者合上笔记本会发出 ACPI 事件，可以配置系统在收到这些事件时的相应。推荐的方式是使用 [systemd_(简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)"), 参阅 [Systemd 电源管理](/index.php/Power_management#Power_management_with_systemd "Power management"). 老的方法是使用 [acpid_(简体中文)](/index.php/Acpid_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Acpid (简体中文)")，不推荐使用。.
+电源按键或者合上笔记本会发出 ACPI 事件，可以配置系统在收到这些事件时的相应。推荐的方式是使用 [systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)"), 参阅 [Systemd 电源管理](/index.php/Power_management#Power_management_with_systemd "Power management"). 老的方法是使用 [acpid (简体中文)](/index.php/Acpid_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Acpid (简体中文)")，不推荐使用。.
 
 ### CPU 频率调节
 
-最新的CPU通常都有自动调节频率的功能。通过该功能可以有效节约电能、减少发热，提升硬件寿命。[cpufrequtils_(简体中文)](/index.php/Cpufrequtils_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Cpufrequtils (简体中文)")是配置该功能的工具集。
+最新的CPU通常都有自动调节频率的功能。通过该功能可以有效节约电能、减少发热，提升硬件寿命。[Cpufrequtils (简体中文)](/index.php/Cpufrequtils_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Cpufrequtils (简体中文)")是配置该功能的工具集。
 
 ### 笔记本电脑
 
@@ -309,11 +309,11 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 ### 性能最大化
 
-[性能最大化](/index.php/Maximizing_Performance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Maximizing Performance (简体中文)")一文提供了提升Arch系统性能的方法。
+[性能最大化](/index.php/Maximizing_performance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Maximizing performance (简体中文)")一文提供了提升Arch系统性能的方法。
 
 ### 固态硬盘
 
-[固态硬盘](/index.php/Solid_State_Drives_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Solid State Drives (简体中文)") 一文包含固态硬盘的各个方面，包括配置和提高寿命。
+[固态硬盘](/index.php/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98 "固态硬盘") 一文包含固态硬盘的各个方面，包括配置和提高寿命。
 
 ## 系统服务
 
@@ -327,7 +327,7 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 ### 本地邮件交换
 
-参见[使用Postfix进行本地邮件交换](/index.php/Local_Mail_Delivery_with_Postfix "Local Mail Delivery with Postfix")简单配置邮件交换。此外，用户还可以选择：[SSMTP](/index.php/SSMTP "SSMTP")，[MSMTP](/index.php/Msmtp "Msmtp")和[fdm](/index.php/Fdm "Fdm")。
+参见[使用Postfix进行本地邮件交换](/index.php/Local_Mail_Delivery_with_Postfix "Local Mail Delivery with Postfix")简单配置邮件交换。此外，用户还可以选择：[SSMTP](/index.php/SSMTP "SSMTP")，[Msmtp](/index.php/Msmtp "Msmtp")和[fdm](/index.php/Fdm "Fdm")。
 
 ## 外观美化
 
@@ -364,7 +364,7 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 ### GTK and Qt themes
 
-Linux 下的图形界面基本都使用 [GTK+](/index.php/GTK%2B "GTK+") 或者 [Qt](/index.php/Qt "Qt") 工具集。这些文章和 [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications") 提供了让程序更美观的方法。
+Linux 下的图形界面基本都使用 [GTK+](/index.php/GTK%2B "GTK+") 或者 [Qt](/index.php/Qt "Qt") 工具集。这些文章和 [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") 提供了让程序更美观的方法。
 
 ## 控制台优化
 
@@ -392,11 +392,11 @@ Linux 下的图形界面基本都使用 [GTK+](/index.php/GTK%2B "GTK+") 或者 
 
 #### 核心工具
 
-关于Linux核心工具（例如**grep**以及**ls**）的彩色输出，参见[核心工具](/index.php/Core_Utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core Utilities (简体中文)")。
+关于Linux核心工具（例如**grep**以及**ls**）的彩色输出，参见[核心工具](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core utilities (简体中文)")。
 
 #### Man帮助文档
 
-Man页（帮助文档）是GNU/Linux最常用的信息工具。为提高可读性，可以打开彩色输出，参见：[彩色显示](/index.php/Man_Page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BD.A9.E8.89.B2.E6.98.BE.E7.A4.BA "Man Page (简体中文)")。
+Man页（帮助文档）是GNU/Linux最常用的信息工具。为提高可读性，可以打开彩色输出，参见：[彩色显示](/index.php/Man_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BD.A9.E8.89.B2.E6.98.BE.E7.A4.BA "Man page (简体中文)")。
 
 这一部分介绍优化控制台程序的方法。更多信息，参见：[Category:Command shells (简体中文)](/index.php/Category:Command_shells_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command shells (简体中文)")。
 
@@ -414,7 +414,7 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 
 ### 鼠标支持
 
-在控制台中，使用鼠标复制粘贴比传统 GNU [screen](/index.php/Screen "Screen") 操作方式方便许多。参见：[Console Mouse Support](/index.php/Console_Mouse_Support "Console Mouse Support")。
+在控制台中，使用鼠标复制粘贴比传统 GNU [screen](/index.php/Screen "Screen") 操作方式方便许多。参见：[Console mouse support](/index.php/Console_mouse_support "Console mouse support")。
 
 ### 页面回滚缓冲
 
@@ -440,7 +440,7 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 
 ### 中文输入法
 
-参见 [Fcitx (简体中文)](/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fcitx (简体中文)")或[Ibus](https://wiki.archlinux.org/index.php/IBus_(简体中文))。
+参见 [Fcitx (简体中文)](/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fcitx (简体中文)")或[Ibus](/index.php/IBus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "IBus (简体中文)")。
 
 ### 代理
 
@@ -470,7 +470,7 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 
 * * *
 
-借助[wine](https://wiki.archlinux.org/index.php/Wine_(简体中文))尝试安装使用。
+借助[wine](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)")尝试安装使用。
 
 * * *
 

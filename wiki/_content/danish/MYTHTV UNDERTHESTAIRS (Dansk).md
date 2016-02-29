@@ -127,7 +127,7 @@ Da denne er vigtig for at vi kan rippe DVD mm fra vores Frontends, da vores brug
 
 ```
 
-Nu skal resten af installationen foregå ligesom ved almindelig installation af backendserver [som beskrevet her:](/index.php/MYTHTV_HOWTO_(Dansk) "MYTHTV HOWTO (Dansk)") **(Dansk)** [https://wiki.archlinux.org/index.php/MYTHTV_HOWTO_(Dansk)](https://wiki.archlinux.org/index.php/MYTHTV_HOWTO_(Dansk))
+Nu skal resten af installationen foregå ligesom ved almindelig installation af backendserver [som beskrevet her:](/index.php/MYTHTV_HOWTO_(Dansk) "MYTHTV HOWTO (Dansk)") **(Dansk)** [MYTHTV HOWTO (Dansk)](/index.php/MYTHTV_HOWTO_(Dansk) "MYTHTV HOWTO (Dansk)")
 
 ## Installation af MythTV
 

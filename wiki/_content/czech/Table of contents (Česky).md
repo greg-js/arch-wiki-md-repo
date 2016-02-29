@@ -50,7 +50,9 @@
 
 	<small>5.</small> [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)") <small>(9)</small>
 
-	<small>5.1.</small> [Web server](/index.php/Category:Web_server_(%C4%8Cesky) "Category:Web server (Česky)") <small>(5)</small>
+	<small>5.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%C4%8Cesky) "Category:Secure Shell (Česky)") <small>(1) (také v [Bezpečnost](/index.php/Category:Security_(%C4%8Cesky) "Category:Security (Česky)"))</small>
+
+	<small>5.2.</small> [Web server](/index.php/Category:Web_server_(%C4%8Cesky) "Category:Web server (Česky)") <small>(5)</small>
 
 	<small>6.</small> [Administrace systému](/index.php/Category:System_administration_(%C4%8Cesky) "Category:System administration (Česky)") <small>(3)</small>
 
@@ -77,6 +79,8 @@
 	<small>6.9.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository_(%C4%8Cesky) "Category:Arch User Repository (Česky)") <small>(2)</small>
 
 	<small>6.10.</small> [Bezpečnost](/index.php/Category:Security_(%C4%8Cesky) "Category:Security (Česky)") <small>(1)</small>
+
+	<small>6.10.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%C4%8Cesky) "Category:Secure Shell (Česky)") <small>(1) (také v [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)"))</small>
 
 	<small>6.11.</small> [Obnova systému](/index.php/Category:System_recovery_(%C4%8Cesky) "Category:System recovery (Česky)") <small>(2)</small>
 

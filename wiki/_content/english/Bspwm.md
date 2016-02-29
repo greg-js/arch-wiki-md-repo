@@ -85,7 +85,7 @@ If a particular window does not seem to be behaving according to your rules, che
 
 ### Panels
 
-An example panel for [lemonbar](https://aur.archlinux.org/packages/lemonbar) is provided in the examples folder on the GitHub page. You might also get some insights from the [lemonbar](https://wiki.archlinux.org/index.php/Lemonbar) wiki page. The panel will be executed by placing `panel &` in your bspwmrc. Check the opt-depends in the bspwm package for dependencies that may be required.
+An example panel for [lemonbar](https://aur.archlinux.org/packages/lemonbar/) is provided in the examples folder on the GitHub page. You might also get some insights from the [lemonbar](/index.php/Lemonbar "Lemonbar") wiki page. The panel will be executed by placing `panel &` in your bspwmrc. Check the opt-depends in the bspwm package for dependencies that may be required.
 
 To display system information on your status bar you can use various system calls. This example will show you how to edit your `panel` to get the volume status on your BAR:
 

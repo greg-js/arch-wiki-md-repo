@@ -59,7 +59,7 @@ vim -c NotMuch
 
 alot is a standalone CLI interface for notmuch, written in python. It is available from [AUR](/index.php/AUR "AUR") as [alot](https://aur.archlinux.org/packages/alot/) or [alot-git](https://aur.archlinux.org/packages/alot-git/).
 
-Alot uses [mailcap](https://en.wikipedia.org/wiki/Mailcap) for handling different kinds of files. This currently includes html mails, which means that you need to configure a `~/.mailcap` file in order to view html mails. As minimum, put this line into your `~/.mailcap`:
+Alot uses [mailcap](https://en.wikipedia.org/wiki/Mailcap "wikipedia:Mailcap") for handling different kinds of files. This currently includes html mails, which means that you need to configure a `~/.mailcap` file in order to view html mails. As minimum, put this line into your `~/.mailcap`:
 
 ```
  text/html; w3m -dump -o -document_charset=%{charset} %s; nametemplate=%s.html; copiousoutput

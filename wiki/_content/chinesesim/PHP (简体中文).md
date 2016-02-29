@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [PHP](/index.php/PHP "PHP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=PHP&diff=0&oldid=421404)可以查看翻译后英文页面的改动。
+
 [PHP](http://www.php.net/)是一种广泛使用的通用脚本语言，特别适合于Web开发，可嵌入到HTML。
 
 ## Contents
@@ -5,7 +7,7 @@
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 运行](#.E8.BF.90.E8.A1.8C)
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
-*   [4 拓展](#.E6.8B.93.E5.B1.95)
+*   [4 扩展](#.E6.89.A9.E5.B1.95)
     *   [4.1 gd](#gd)
     *   [4.2 imagemagick](#imagemagick)
     *   [4.3 pthreads](#pthreads)
@@ -14,6 +16,7 @@
     *   [4.6 MySQL/MariaDB](#MySQL.2FMariaDB)
     *   [4.7 PostgreSQL](#PostgreSQL)
     *   [4.8 Sqlite](#Sqlite)
+    *   [4.9 XDebug](#XDebug)
 *   [5 缓存](#.E7.BC.93.E5.AD.98)
     *   [5.1 OPCache](#OPCache)
     *   [5.2 APCu](#APCu)
@@ -24,11 +27,24 @@
     *   [6.4 Netbeans](#Netbeans)
     *   [6.5 PhpStorm](#PhpStorm)
     *   [6.6 Zend Studio](#Zend_Studio)
-*   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [7.1 PHP Fatal error: 'ZipArchive' 类找不到](#PHP_Fatal_error:_.27ZipArchive.27_.E7.B1.BB.E6.89.BE.E4.B8.8D.E5.88.B0)
-    *   [7.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
-    *   [7.3 PHP Warning: PHP Startup: *<module>*: Unable to initialize module](#PHP_Warning:_PHP_Startup:_.3Cmodule.3E:_Unable_to_initialize_module)
-*   [8 参见](#.E5.8F.82.E8.A7.81)
+*   [7 Commandline tools](#Commandline_tools)
+    *   [7.1 Box](#Box)
+    *   [7.2 Composer](#Composer)
+    *   [7.3 PDepend](#PDepend)
+    *   [7.4 PHP Coding Standards Fixer](#PHP_Coding_Standards_Fixer)
+    *   [7.5 PHP-CodeSniffer](#PHP-CodeSniffer)
+    *   [7.6 phpcov](#phpcov)
+    *   [7.7 phpDox](#phpDox)
+    *   [7.8 PHPLoc](#PHPLoc)
+    *   [7.9 PhpMetrics](#PhpMetrics)
+    *   [7.10 phptok](#phptok)
+    *   [7.11 PHPUnit](#PHPUnit)
+    *   [7.12 PHPUnit Skeleton Generator](#PHPUnit_Skeleton_Generator)
+*   [8 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
+    *   [8.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_.27ZipArchive.27_not_found)
+    *   [8.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
+    *   [8.3 PHP Warning: PHP Startup: *<module>*: Unable to initialize module](#PHP_Warning:_PHP_Startup:_.3Cmodule.3E:_Unable_to_initialize_module)
+*   [9 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
@@ -38,7 +54,7 @@
 
 ## 运行
 
-虽然PHP可以独立运行，它通常用于HTTP服务器如： [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"), [nginx](/index.php/Nginx "Nginx") 和 [lighttpd](/index.php/Lighttpd "Lighttpd").
+虽然PHP可以独立运行，它通常用于HTTP服务器如： [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"), [nginx](/index.php/Nginx "Nginx"), [lighttpd](/index.php/Lighttpd "Lighttpd") 和 [Hiawatha](/index.php/Hiawatha "Hiawatha").
 
 使用命令：“`php -S localhost:8000 -t public_html/` ”可以独立运行PHP。 见 [documentation](https://secure.php.net/manual/en/features.commandline.webserver.php).
 
@@ -60,9 +76,16 @@ display_errors=On
 
 ```
 
-**Tip:** 保持[php-composer](https://www.archlinux.org/packages/?name=php-composer) 的配置文件在单独的文件夹中，如： `/usr/share/php-composer/php.ini`
+**Tip:** 2015-11-22 前，[php-composer](https://www.archlinux.org/packages/?name=php-composer) 的配置文件在`/usr/share/php-composer/php.ini`
 
-## 拓展
+*   [open_basedir](http://php.net/open-basedir) 限制 PHP 可以访问的目录，可以增加安全性。从 PHP 7.0 开始，和上游一样默认不再设置，要使用的用户请手动设置，例如：
+
+```
+open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/
+
+```
+
+## 扩展
 
 一些常用的PHP扩展也可以在官方库发现：
 
@@ -71,11 +94,11 @@ $ pacman -Ss php-
 
 ```
 
-**Tip:** 不要编辑`/etc/php/php.ini`, 拓展的启停可在 `/etc/php/conf.d` 中设置，如： (e.g. `/etc/php/conf.d/gd.ini`)
+**Tip:** 不要编辑`/etc/php/php.ini`，扩展的启停可在 `/etc/php/conf.d` 中设置，如： (e.g. `/etc/php/conf.d/gd.ini`)
 
 ### gd
 
-欲使用 [php-gd](https://www.archlinux.org/packages/?name=php-gd) 勿在`/etc/php/php.ini`中注释下列内容:
+欲使用 [php-gd](https://www.archlinux.org/packages/?name=php-gd) 在 `/etc/php/php.ini`中取消下列内容的注释:
 
 ```
 extension=gd.so
@@ -93,13 +116,13 @@ extension=imagick.so
 
 ### pthreads
 
-如果你想使用POSIX多线程需要pthreads拓展 。To install the pthreads ([http://pecl.php.net/package/pthreads](http://pecl.php.net/package/pthreads)) extension using `pecl` you are required to use a compiled version of PHP with the the thread safety support flag `--enable-maintainer-zts`. Currently the most clean way to do this would be to rebuild the original package with the flag.
+要使用POSIX多线程，需要pthreads扩展 。要使用 `pecl` 安装 pthreads ([http://pecl.php.net/package/pthreads](http://pecl.php.net/package/pthreads)) 扩展，需要 PHP 在编译时启用线程安全选项 `--enable-maintainer-zts`. 当前最简单的方式是用需要的选项重新编译.
 
 可在 [PHP pthreads extension](/index.php/PHP_pthreads_extension "PHP pthreads extension") 页面找到指令介绍。
 
 ### mcrypt
 
-如果想用 `mcrypt` 模块， 安装 [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) 以及在`/etc/php/php.ini`中注释掉下面这行：
+如果想用 `mcrypt` 模块， 安装 [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) 以及在`/etc/php/php.ini`中取消下面这行的注释：
 
 ```
 extension=mcrypt.so
@@ -108,7 +131,7 @@ extension=mcrypt.so
 
 ### PCNTL
 
-PCNTL allows you to create process directly into the server side machine. While this may seen as something you would want, it also gives the power to PHP to mess things up really bad. So it is a PHP extension that cannot be loaded like other more convenient extension. This is because of the great power it gives to PHP. To enable it (by default it is disabled) PCNTL has to be compiled into PHP.
+利用 PCNTL 可以在服务器上直接创建进程。虽然这可能是你想要的，但是这样也会让 PHP 有能力把机器搞的一团糟。所以 PHP 不能和其他扩展一样加载，要启用此扩展，需要重新编译PHP。
 
 ### MySQL/MariaDB
 
@@ -145,6 +168,15 @@ Install and configure [SQLite](/index.php/SQLite "SQLite"), then install the [ph
 ```
 extension=pdo_sqlite.so
 extension=sqlite3.so
+
+```
+
+### XDebug
+
+XDebug allows you to easily debug php code using modified var_dump() function. Install [xdebug](https://www.archlinux.org/packages/?name=xdebug) and add the line at `/etc/php/php.ini`:
+
+```
+extension=xdebug.so
 
 ```
 
@@ -202,7 +234,7 @@ You would need other plugins for JavaScript support and DB query.
 
 ### Netbeans
 
-A complete IDE for many languages including PHP. Includes features like debugging, refactoring, code tempalting, autocomplete, XML features, and web design and development functionalities (very good CSS autocomplete functionality and PHP/JavaScript code notifications/tips). Install it with the [netbeans](https://www.archlinux.org/packages/?name=netbeans) package.
+[NetBeans IDE](https://netbeans.org/) is a complete IDE for many languages including PHP. Includes features like debugging, refactoring, code templating, autocomplete, XML features, and web design and development functionalities (very good CSS autocomplete functionality and PHP/JavaScript code notifications/tips). Install it with the [netbeans](https://www.archlinux.org/packages/?name=netbeans) package.
 
 ### PhpStorm
 
@@ -212,9 +244,59 @@ A complete IDE for many languages including PHP. Includes features like debuggin
 
 [Zend Studio](http://www.zend.com/products/studio/) is the official PHP IDE, based on eclipse. The IDE has autocomplete, advanced code formatting, WYSIWYG html editor, refactoring, and all the eclipse features such as db access and version control integration and whatever you can get from other eclipse plugins. You can install it with the [zendstudio](https://aur.archlinux.org/packages/zendstudio/) package.
 
+## Commandline tools
+
+### Box
+
+[Box](http://box-project.github.io/box2/) is an application for building and managing Phars. It can be installed with the [php-box](https://aur.archlinux.org/packages/php-box/) package.
+
+### Composer
+
+[Composer](https://getcomposer.org/) is a dependency manager for PHP. It can be installed with the [php-composer](https://www.archlinux.org/packages/?name=php-composer) package.
+
+### PDepend
+
+[PHP Depend](http://pdepend.org/) (pdepend) is software metrics tool for php. It can be installed with the [pdepend](https://aur.archlinux.org/packages/pdepend/) package.
+
+### PHP Coding Standards Fixer
+
+[PHP Coding Standards Fixer](http://cs.sensiolabs.org/) a is PSR-1 and PSR-2 Coding Standards fixer for your code. It can be installed with the [php-cs-fixer](https://aur.archlinux.org/packages/php-cs-fixer/) package.
+
+### PHP-CodeSniffer
+
+[PHP CodeSniffer](http://pear.php.net/package/PHP_CodeSniffer/) tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards. It can be installed with the [php-codesniffer](https://aur.archlinux.org/packages/php-codesniffer/) package.
+
+### phpcov
+
+[phpcov](https://github.com/sebastianbergmann/phpcov) is a command-line frontend for the PHP_CodeCoverage library. It can be installed with the [phpcov](https://aur.archlinux.org/packages/phpcov/) package.
+
+### phpDox
+
+[phpDox](http://phpdox.de/) is the documentation generator for PHP projects. This includes, but is not limited to, API documentation. It can be installed with the [phpdox](https://aur.archlinux.org/packages/phpdox/) package.
+
+### PHPLoc
+
+[PHPLoc](https://github.com/sebastianbergmann/phploc/) is a tool for quickly measuring the size of a PHP project. It can be installed with the [phploc](https://aur.archlinux.org/packages/phploc/) package.
+
+### PhpMetrics
+
+[PhpMetrics](http://www.phpmetrics.org/) provides various metrics about PHP projects. It can be installed with the [phpmetrics](https://aur.archlinux.org/packages/phpmetrics/) package.
+
+### phptok
+
+[phptok](https://github.com/sebastianbergmann/phptok) is a tool for quickly dumping the tokens of a PHP sourcecode file. It can be installed with the [phptok](https://aur.archlinux.org/packages/phptok/) package.
+
+### PHPUnit
+
+[PHPUnit](https://phpunit.de) is a programmer-oriented testing framework for PHP. It can be installed with the [phpunit](https://aur.archlinux.org/packages/phpunit/) package.
+
+### PHPUnit Skeleton Generator
+
+[PHPUnit Skeleton Generator](https://github.com/sebastianbergmann/phpunit-skeleton-generator) is a tool that can generate skeleton test classes from production code classes and vice versa. It can be installed with the [phpunit-skeleton-generator](https://aur.archlinux.org/packages/phpunit-skeleton-generator/) package.
+
 ## 故障排除
 
-### PHP Fatal error: 'ZipArchive' 类找不到
+### PHP Fatal error: Class 'ZipArchive' not found
 
 Ensure the zip extension is enabled.
 

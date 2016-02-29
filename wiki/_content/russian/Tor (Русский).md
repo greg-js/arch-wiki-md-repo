@@ -129,7 +129,7 @@ fi
 
 ```
 
-или если вы используете systemd [отредактируйте](https://wiki.archlinux.org/index.php/Systemd_(Русский)#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0.D0.BC.D0.B8_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2) `tor.service`:
+или если вы используете systemd [отредактируйте](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0.D0.BC.D0.B8_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `tor.service`:
 
  `/etc/systemd/system/tor.service.d/chroot.conf` 
 ```
@@ -204,7 +204,7 @@ LimitNOFILE=32768
 
 #### Запуск и включение systemd-nspawn
 
-[Запустите/Включите](https://wiki.archlinux.org/index.php/Systemd_(Русский)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2) `systemd-nspawn@tor-exit.service`.
+[Запустите/Включите](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `systemd-nspawn@tor-exit.service`.
 
 ### Настройка контейнера
 
@@ -214,7 +214,7 @@ LimitNOFILE=32768
 
 #### Запуск и включение systemd-networkd
 
-[Запустите/Включите](https://wiki.archlinux.org/index.php/Systemd_(Русский)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2) `systemd-networkd.service`. `networkctl` отобразит интерфейсы, если `systemd-networkd` настроен корректно.
+[Запустите/Включите](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `systemd-networkd.service`. `networkctl` отобразит интерфейсы, если `systemd-networkd` настроен корректно.
 
 ### Настройка Tor
 
@@ -224,7 +224,7 @@ LimitNOFILE=32768
 
 ## Использование
 
-[Запустите/Включите](https://wiki.archlinux.org/index.php/Systemd_(Русский)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2) `tor.service` используя [systemd](https://wiki.archlinux.org/index.php/Systemd_(Русский)). Или запустите с помощью `vidalia`, или `sudo -u tor /usr/bin/tor`.
+[Запустите/Включите](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `tor.service` используя [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"). Или запустите с помощью `vidalia`, или `sudo -u tor /usr/bin/tor`.
 
 Для использования программы через Tor, настройте её на использование 127.0.0.1 или localhost в качестве SOCKS5 прокси, порт 9050 (Tor со стандартными настройками) или порт 9051 (Настройка с помощью vidalia, стандартные настройки).
 
@@ -232,7 +232,7 @@ LimitNOFILE=32768
 
 ## Веб-сёрфинг
 
-**Обратите внимание:** В связи со сложностями обеспечения анонимности (cookies, javascripts, etc), проект Torproject рекомендует использовать свою версию Firefox для анонимного серфинга. Мы вас предупреждали. [[2]](http://www.opennet.ru/opennews/art.shtml?num=30449)
+**Примечание:** В связи со сложностями обеспечения анонимности (cookies, javascripts, etc), проект Torproject рекомендует использовать свою версию Firefox для анонимного серфинга. Мы вас предупреждали. [[2]](http://www.opennet.ru/opennews/art.shtml?num=30449)
 
 [Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)") и [Chromium](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)") позволяют без проблем направлять трафик через Tor.
 
@@ -257,7 +257,7 @@ $ chromium --proxy-server="socks://localhost:9050"
 
 Если вам требуется какой-либо HTTP-прокси.
 
-**Обратите внимание:** На данный момент командой разработчиков Tor рекомендуется прокси-сервер Polipo.
+**Примечание:** На данный момент командой разработчиков Tor рекомендуется прокси-сервер Polipo.
 
 ### Polipo
 

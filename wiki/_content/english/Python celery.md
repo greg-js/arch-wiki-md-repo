@@ -55,9 +55,12 @@ You probably want to replace `0.0.0.0` with `127.0.0.1`, RabbitMQ does not suppo
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `rabbitmq.service`.
 
+**Note:** `rabbitmq-service` is being started as rabbitmq user with home folder stored within `/var/lib/rabbitmq` - you may want to make sure rabbitmq user owns this folder and all subfolders
+
 Follow [RabbitMQ documentation](http://docs.celeryproject.org/en/latest/getting-started/brokers/rabbitmq.html#broker-rabbitmq) and add your user and virtual host:
 
 ```
+$ cd /var/lib/rabbitmq
 $ su rabbitmq -c 'rabbitmqctl add_user myuser mypassword'
 $ su rabbitmq -c 'rabbitmqctl add_vhost myvhost'
 $ su rabbitmq -c 'rabbitmqctl set_user_tags myuser mytag'
@@ -68,6 +71,8 @@ $ su rabbitmq -c 'rabbitmqctl set_permissions -p myvhost myuser ".*" ".*" ".*"'
 Read [RabbitMQ admin guide](http://www.rabbitmq.com/admin-guide.html#access-control) to understand the above.
 
 If issuing `su rabbitmq -c "rabbitmqctl status"` results in `badrpc,nodedown` visit [this blog post](http://www.somic.org/2009/02/19/on-rabbitmqctl-and-badrpcnodedown/) for more information how to fix the problem.
+
+**Note:** You may also want to run `su rabbitmq -c "erl"` and as a result you should get an erlang prompt with no errors
 
 ### Security
 

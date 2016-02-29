@@ -26,7 +26,7 @@ Ora si entra nel vivo, si comincia ad installare e configurare i servizi sulla n
 
 ## Introduzione
 
-Il server LDAP è essenzialmente un database gerarchico che viene utilizzato per la memorizzazione dei dati degli utenti, e di tutto quanto si desideri gestire tramite una base dati condivisibile via rete tra più sistemi. Per maggiori informazioni potete leggere la definizione che ne da [wikipedia](http://it.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol). Perchè installiamo questo servizio ? Per la sua grande versatilità e comodità. La recente normativa sulla privacy impone (tra le altre cose) di cambiare periodicamente la password degli utenti. Oltretutto ogni utente deve poter cambiare la propria password in modo autonomo. Non vorrete mica ogni volta aggiornare manualmente prima la password nel pc, poi della condivisione poi della mail, poi ... Installando un server LDAP (nel nostro caso [OpenLDAP](http://www.openldap.org)) abbiamo la possibilità di centralizzare tutto (o quasi). Cambiando la password nel pc dell'utente questa verrà salvata nell'albero LDAP e tutti i servizi saranno sincronizzati. Signori e Signore ecco il **Single Signon**, il santo graal di ogni amministratore di rete :).
+Il server LDAP è essenzialmente un database gerarchico che viene utilizzato per la memorizzazione dei dati degli utenti, e di tutto quanto si desideri gestire tramite una base dati condivisibile via rete tra più sistemi. Per maggiori informazioni potete leggere la definizione che ne da [wikipedia](https://it.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol). Perchè installiamo questo servizio ? Per la sua grande versatilità e comodità. La recente normativa sulla privacy impone (tra le altre cose) di cambiare periodicamente la password degli utenti. Oltretutto ogni utente deve poter cambiare la propria password in modo autonomo. Non vorrete mica ogni volta aggiornare manualmente prima la password nel pc, poi della condivisione poi della mail, poi ... Installando un server LDAP (nel nostro caso [OpenLDAP](http://www.openldap.org)) abbiamo la possibilità di centralizzare tutto (o quasi). Cambiando la password nel pc dell'utente questa verrà salvata nell'albero LDAP e tutti i servizi saranno sincronizzati. Signori e Signore ecco il **Single Signon**, il santo graal di ogni amministratore di rete :).
 
 ## Installazione
 
@@ -75,7 +75,7 @@ index   uid     eq
 
 ```
 
-Attenzione al parametro *rootpw*: la stringa che vedete corrisponde all' [hash](http://it.wikipedia.org/wiki/Hash) [MD5](http://it.wikipedia.org/wiki/MD5) della password che ho deciso, nel mio caso *archimede*, che ho ottenuto così:
+Attenzione al parametro *rootpw*: la stringa che vedete corrisponde all' [hash](https://it.wikipedia.org/wiki/Hash) [MD5](https://it.wikipedia.org/wiki/MD5) della password che ho deciso, nel mio caso *archimede*, che ho ottenuto così:
 
 ```
 slappasswd -h {MD5} -s archimede
@@ -93,7 +93,7 @@ hosts: files dns ldap
 
 ```
 
-specifica che le funzioni di ricerca degli host dovrebbero prima guardare nel file locale /etc/hosts, di seguito fare una richiesta al servizio dei nomi di dominio [DNS](http://it.wikipedia.org/wiki/Domain_Name_System) ed infine utilizzare il server ldap. A quel punto, se nessuna corrispondenza è stata trovata, viene riportato un errore. *Questo file deve essere leggibile da ogni utente!* Dobbiamo istruire *nsswitch* al fine di fargli usare il nostro server LDAP per la risoluzione perlomeno delle password. Per ovviare ad un [fastidioso baco di udev](https://bugs.archlinux.org/task/3369) (o di nsswitch, non saprei) creiamo due file che poi scambieramo al boot (vedi più avanti). Prima il file che non utilizza ldap :
+specifica che le funzioni di ricerca degli host dovrebbero prima guardare nel file locale /etc/hosts, di seguito fare una richiesta al servizio dei nomi di dominio [DNS](https://it.wikipedia.org/wiki/Domain_Name_System) ed infine utilizzare il server ldap. A quel punto, se nessuna corrispondenza è stata trovata, viene riportato un errore. *Questo file deve essere leggibile da ogni utente!* Dobbiamo istruire *nsswitch* al fine di fargli usare il nostro server LDAP per la risoluzione perlomeno delle password. Per ovviare ad un [fastidioso baco di udev](https://bugs.archlinux.org/task/3369) (o di nsswitch, non saprei) creiamo due file che poi scambieramo al boot (vedi più avanti). Prima il file che non utilizza ldap :
 
 ```
 sudo nano /etc/nsswitch.file

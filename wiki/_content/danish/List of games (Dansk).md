@@ -252,7 +252,7 @@ Der er alt for mange at skrive ned. Her er et par eksempler (der m√• gerne tilf√
 *   [Stone Soup](http://crawl.develz.org/wordpress/) (aka Dungeon Crawl Stone Soup).
 *   [ToME](http://www.t-o-m-e.net/main.php?tome_current=0) (aka Troubles of Middle Earth).
 *   [BSD Games](http://wiki.linuxquestions.org/wiki/BSD_games) - Collection of classic text games distributed with *BSD. Available in Community.
-*   [fortune-mod](http://en.wikipedia.org/wiki/Fortune_(Unix)) Displays Random messages/quotes/jokes when invoked. Available in Extra.
+*   [fortune-mod](https://en.wikipedia.org/wiki/Fortune_(Unix) Displays Random messages/quotes/jokes when invoked. Available in Extra.
 
 These games can usually be found in the official repositories or in [AUR](/index.php/AUR "AUR").
 
@@ -278,7 +278,7 @@ An emulator is a program which serves to replicate the functions of another plat
 *   [PCSX2](http://www.pcsx2.net/) - PlayStation 2 emulator it is still being maintained and developed.
 *   **PCSXR** - Debian fork of the abandoned original PCSX. [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
 *   **ScummVM** - Virtual machine for old school adventures, available in extra. [scummvm](https://www.archlinux.org/packages/?name=scummvm)
-*   [MAME](http://mamedev.org/) - Multiple Arcade Machine Emulator (MAME). Can be obtained using pacman, [sdlmame](https://www.archlinux.org/packages/community/i686/sdlmame/).
+*   [MAME](http://mamedev.org/) - Multiple Arcade Machine Emulator (MAME). Can be obtained using pacman, [sdlmame](https://www.archlinux.org/packages/?name=sdlmame).
 *   [snes-9x](http://www.snes9x.com/) - portable, freeware Super Nintendo Entertainment System (SNES) emulator.
 *   [Visual Boy Advance](http://vba.ngemu.com/) - Game Boy emulator with Game Boy Advance, Game Boy Color, and Super Game Boy support.
 
@@ -305,7 +305,7 @@ For a full selection of emulators, try checking the [AUR 'emulators' category](h
 
 *   [Book of Eschalon I and II](http://basiliskgames.com/) - Classical isometric RPG like Ultima, Might & Magic or Wizardry.
 
-*   [Sacred Gold](http://en.wikipedia.org/wiki/Sacred_%28video_game%29) - Hack'n Slay Roleplay Game like Diablo.
+*   [Sacred Gold](https://en.wikipedia.org/wiki/Sacred_(video_game) - Hack'n Slay Roleplay Game like Diablo.
 
 **Tip:** If running on a low resolution (netbook etc) either play it on external monitor, but you can't see the skill/action bar. You can move the Window pressing alt+left_mouse. You can see the action bar, but then you can't see the health bar anymore. Email Michael from linuxgamepublishing.com and ask for a fix - would be really great if we could fully enjoy this game on Linux netbooks
 
@@ -358,4 +358,4 @@ GNOME and KDE also have the game projects. For GNOME, we can install the games w
 *   [The Linux Game Tome](http://www.happypenguin.org/)
 *   [Linux game database](http://www.lgdb.org/)
 *   [Penguspy](http://www.penguspy.com/#/All/free_and_commercial/open_closed/sort=1/view=1/limit=0)
-*   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
+*   [Lists of Linux games on Wikipedia](https://en.wikipedia.org/wiki/Category:Linux_games "wikipedia:Category:Linux games")

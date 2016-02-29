@@ -18,8 +18,8 @@
 
 ## Proč bych NEMĚL používat Operu?
 
-*   Není [svobodná](http://www.gnu.org/philosophy/free-sw.html). Je to [proprietární software](http://en.wikipedia.org/wiki/Proprietary_software).
-*   Je to [Qt](http://en.wikipedia.org/wiki/Qt_(toolkit)) aplikace, což znamená, že pokud nepoužíváte [KDE (Česky)](/index.php/KDE_(%C4%8Cesky) "KDE (Česky)"), tak vyžaduje dodatečné knihovny, čímž zabírá další paměť.
+*   Není [svobodná](http://www.gnu.org/philosophy/free-sw.html). Je to [proprietární software](https://en.wikipedia.org/wiki/Proprietary_software "wikipedia:Proprietary software").
+*   Je to [Qt](https://en.wikipedia.org/wiki/Qt_(toolkit) aplikace, což znamená, že pokud nepoužíváte [KDE (Česky)](/index.php/KDE_(%C4%8Cesky) "KDE (Česky)"), tak vyžaduje dodatečné knihovny, čímž zabírá další paměť.
 *   Některé webové stránky se nezobrazují korektně, protože nedbají na standardy (Opera se drží standardů).
 
 ## Jak nainstalovat Operu?

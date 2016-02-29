@@ -28,7 +28,7 @@ AUR Helpers are written to make using the [Arch User Repository](/index.php/Arch
 
 This is a list of helper utilities that search and/or build packages.
 
-*   **apacman** — A fork of packer with additional features and bugfixes.
+*   **apacman** — A fork of packer.
 
 	[https://github.com/oshazard/apacman](https://github.com/oshazard/apacman) || [apacman](https://aur.archlinux.org/packages/apacman/)
 
@@ -40,7 +40,7 @@ This is a list of helper utilities that search and/or build packages.
 
 	[https://github.com/alezost/aurel](https://github.com/alezost/aurel) || [aurel](https://aur.archlinux.org/packages/aurel/)
 
-*   **aurget** — Aims to be a pacman-like interface to the AUR, without wrapping pacman commands.
+*   **aurget** — pacman-like interface to the AUR, without wrapping pacman commands.
 
 	[http://github.com/pbrisbin/aurget/](http://github.com/pbrisbin/aurget/) || [aurget](https://aur.archlinux.org/packages/aurget/)
 
@@ -48,7 +48,7 @@ This is a list of helper utilities that search and/or build packages.
 
 	[http://xyne.archlinux.ca/projects/python3-aur](http://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
 
-*   **bauerbill** — Powerpill/pacman extension with support for building packages from ABS and AUR, with full dependency resolution.
+*   **bauerbill** — Powerpill/pacman extension with support for building packages from ABS and AUR.
 
 	[http://xyne.archlinux.ca/projects/bauerbill](http://xyne.archlinux.ca/projects/bauerbill) || [bauerbill](https://aur.archlinux.org/packages/bauerbill/)
 
@@ -68,7 +68,7 @@ This is a list of helper utilities that search and/or build packages.
 
 	[https://github.com/keenerd/packer](https://github.com/keenerd/packer) || [packer](https://aur.archlinux.org/packages/packer/)
 
-*   **pbget** — Retrieve source files from the official SVN and CVS web interface, the AUR, and the ABS rsync server.
+*   **pbget** — Retrieve source files from the Arch SVN and CVS web interface, the AUR, and the ABS rsync server.
 
 	[http://xyne.archlinux.ca/projects/pbget](http://xyne.archlinux.ca/projects/pbget) || [pbget](https://aur.archlinux.org/packages/pbget/)
 
@@ -86,7 +86,7 @@ This is a list of helper utilities that search and/or build packages.
 
 *   **wrapaur** — A pacman and AUR wrapper written in bash.
 
-	[https://aur.archlinux.org/packages/wrapaur/](https://aur.archlinux.org/packages/wrapaur/) || [wrapaur](https://aur.archlinux.org/packages/wrapaur/)
+	|| [wrapaur](https://aur.archlinux.org/packages/wrapaur/)
 
 *   **yaah** — Yet another AUR helper
 

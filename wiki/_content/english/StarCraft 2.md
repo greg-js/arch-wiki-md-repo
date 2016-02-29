@@ -146,7 +146,7 @@ Some scrollclick demo videos:
 *   [infestor spawning infested terran](https://www.youtube.com/watch?v=7pQKnS1CPEQ)
 *   [scrollclick applied to protoss](https://www.youtube.com/watch?v=9aPd8_9_vB4)
 
-Using [Xmodmap](https://wiki.archlinux.org/index.php/Xmodmap#Reverse_scrolling), it possible to set your regular 3-buttons mouse with scroll wheel to practice scrollclick. First change scroll fonction to "forward mouse button" and "back mouse button":
+Using [Xmodmap](/index.php/Xmodmap#Reverse_scrolling "Xmodmap"), it possible to set your regular 3-buttons mouse with scroll wheel to practice scrollclick. First change scroll fonction to "forward mouse button" and "back mouse button":
 
 ```
 $ xmodmap -e "pointer = 1 2 3 8 9 6 7 4 5"

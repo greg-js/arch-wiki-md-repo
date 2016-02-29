@@ -16,7 +16,7 @@ Arch Linux 是一套獨立開發、支援 [i686](https://en.wikipedia.org/wiki/P
 
 	**主文章：[Arch Linux 的歷史](/index.php/History_of_Arch_Linux "History of Arch Linux")**
 
-Arch Linux 的起始作者是加拿大籍程式設計師 Judd Vinet。第一個正式版本 Arch Linux 0.1 於 2002/03/11 釋出。雖然 Arch 是完全獨立的發行版，但它也借鑑了其他發行版本講求簡潔的思想，例如 [Slackware](http://slackware.com)、[CRUX](http://www.crux.nu) 與 [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution)。2007 年，Judd Vinet 離開專案領導人的位置，由美籍程式設計師 Aaron Griffin 接手領導專案至今。
+Arch Linux 的起始作者是加拿大籍程式設計師 Judd Vinet。第一個正式版本 Arch Linux 0.1 於 2002/03/11 釋出。雖然 Arch 是完全獨立的發行版，但它也借鑑了其他發行版本講求簡潔的思想，例如 [Slackware](http://slackware.com)、[CRUX](http://www.crux.nu) 與 [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution")。2007 年，Judd Vinet 離開專案領導人的位置，由美籍程式設計師 Aaron Griffin 接手領導專案至今。
 
 ## 簡潔
 
@@ -32,7 +32,7 @@ Arch 內含 GNU/Linux 下很多嶄新的功能可供使用，像是 [systemd](/i
 
 使用 Arch 不得不知 [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)")，這是一套容易使用的[軟體包管理員](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager")，升級整個系統只需一項指令。Pacman 是以 *C* 語言從頭開始撰寫，不僅輕量、簡潔，執行也十分快速。Arch 也提供了與 ports 類似的 [Arch 組建系統 (ABS)](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)")，從下載程式原始碼、編譯到安裝都十分簡單，同步也只需一項指令。您甚至可以用一條指令重建整台系統。
 
-Arch 的[官方倉庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")提供了上千種高品質的軟體包，並同時支援 i686 與 x86-64 架構，相信能夠滿足您的軟體需求。另外，Arch 為了鼓勵社群的成長與貢獻，也提供 [Arch 使用者倉庫](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)")，裡頭包含了數千種由使用者自行維護的 PKGBUILD 腳本，只要使用 *makepkg* 程式，從下載源碼、編譯到打包軟體一氣呵成。使用者也可以輕鬆組建、維護他們自己的客製倉庫。
+Arch 的[官方倉庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")提供了上千種高品質的軟體包，並同時支援 i686 與 x86-64 架構，相信能夠滿足您的軟體需求。另外，Arch 為了鼓勵社群的成長與貢獻，也提供 [Arch 使用者倉庫](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)")，裡頭包含了數千種由使用者自行維護的 PKGBUILD 腳本，只要使用 *makepkg* 程式，從下載源碼、編譯到打包軟體一氣呵成。使用者也可以輕鬆組建、維護他們自己的客製倉庫。
 
 ## 來源完整性
 

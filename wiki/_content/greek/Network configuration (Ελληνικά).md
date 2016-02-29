@@ -314,7 +314,7 @@ clientid
 
 ```
 
-Αλλιώς, ίσως να μην πάρετε άδεια πρόσβασης, αφού υπάρχει περίπτωση ο DHCP server να μην είναι σε θέση να διαβάσει σωστά την [DHCPv6-style](http://en.wikipedia.org/wiki/DHCPv6) ταυτότητα πελάτη (Client id) του υπολογιστή σας. Δείτε [RFC 4361](http://tools.ietf.org/html/rfc4361) για περισσότερες πληροφορίες.
+Αλλιώς, ίσως να μην πάρετε άδεια πρόσβασης, αφού υπάρχει περίπτωση ο DHCP server να μην είναι σε θέση να διαβάσει σωστά την [DHCPv6-style](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") ταυτότητα πελάτη (Client id) του υπολογιστή σας. Δείτε [RFC 4361](http://tools.ietf.org/html/rfc4361) για περισσότερες πληροφορίες.
 
 Για να αποτρέψετε τον `dhcpcd` από το να προσθέσει DNS servers στο αρχείο `/etc/resolv.conf`, χρησιμοποιήστε την επιλογή `nooption`:
 

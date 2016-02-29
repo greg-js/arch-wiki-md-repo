@@ -1,4 +1,4 @@
-From [Wikipedia](http://en.wikipedia.org):
+From [Wikipedia](https://en.wikipedia.org):
 
 	[Moodle](https://en.wikipedia.org/wiki/Moodle "wikipedia:Moodle") (abbreviation for Modular Object-Oriented Dynamic Learning Environment) is a free source e-learning software platform, also known as a Course Management System, Learning Management System, or Virtual Learning Environment (VLE).
 

@@ -10,7 +10,7 @@ Il Master Boot Record (MBR) comprende i primi 512 byte di un dispositivo di memo
 
 ## Processo di Boot
 
-L'avvio è un processo con più fasi. La maggior parte dei PC oggi inizializzano i dispositivi di sistema con un firmware chiamato [BIOS](http://en.wikipedia.org/wiki/BIOS) (Basic Input/Output System), che è tipicamente memorizzato in un chip ROM dedicato sulla scheda madre. Dopo che i dispositivi di sistema sono stati inizializzati il BIOS cerca il bootloader nel MBR del primo dispositivo di memorizzazione riconosciuto (hard disk drive, solid state drive, CD/DVD drive, USB drive...) o nella prima partizione del dispositivo. Esegue poi quel programma. Il bootloader legge la tabella delle partizioni e riesce poi ad avviare il sistema operativo. I bootloader più comuni sotto GNU/Linux sono [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)") e [Syslinux](/index.php/Syslinux_(Italiano) "Syslinux (Italiano)").
+L'avvio è un processo con più fasi. La maggior parte dei PC oggi inizializzano i dispositivi di sistema con un firmware chiamato [BIOS](https://en.wikipedia.org/wiki/BIOS e [Syslinux](/index.php/Syslinux_(Italiano) "Syslinux (Italiano)").
 
 ## Storia
 

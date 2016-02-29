@@ -65,7 +65,7 @@
 
 ## 安装
 
-[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的软件包 [awesome](https://www.archlinux.org/packages/?name=awesome)。
+[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")位于[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")的软件包 [awesome](https://www.archlinux.org/packages/?name=awesome)。
 
 如果你对不稳定的预览版本有兴趣，可以从 [AUR](/index.php/AUR "AUR") 安装 [awesome-git](https://aur.archlinux.org/packages/awesome-git/)。但是请注意，这是一个不稳定的开发版，配置文件会有语法差异。
 
@@ -182,7 +182,7 @@ $ awmtt restart
 如果需要使用不同的键盘布局 [qwerty -> dvorak] 有两种方法。
 
 *   第一种就是按照 Awesome Wiki [这里](http://awesome.naquadah.org/wiki/Change_keyboard_maps#Display.2Fchange_keyboard_map) 所说的更改 Awesome 的配置
-*   第二种就是在 [xorg settings](https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files) 改变键盘布局
+*   第二种就是在 [xorg settings](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg") 改变键盘布局
 
 ## 主题
 
@@ -653,7 +653,7 @@ Another option is moving /usr/bin/nautilus to a new location and replacing it wi
 
 Run 'gnome-session-properties' and remove programs that you won't be needing anymore (e.g Bluetooth Manager, Login Sounds, etc).
 
-If you'd like to get rid of GDM, make sure that your rc.conf DAEMONS list includes "dbus" (and "cupsd" if you have a printer). It's advisable to get a different login manager (like [SLiM](https://wiki.archlinux.org/index.php/SLiM)), but you can do things manually if you wish. That entails setting up your [.xinitrc properly](https://wiki.archlinux.org/index.php/Udev) and installing something like devmon ([AUR](https://aur.archlinux.org/packages.php?ID=45842)).
+If you'd like to get rid of GDM, make sure that your rc.conf DAEMONS list includes "dbus" (and "cupsd" if you have a printer). It's advisable to get a different login manager (like [SLiM](/index.php/SLiM "SLiM")), but you can do things manually if you wish. That entails setting up your [.xinitrc properly](/index.php/Udev "Udev") and installing something like devmon ([AUR](https://aur.archlinux.org/packages.php?ID=45842)).
 
 If you wan't to keep a few convenient systray applets and your GTK theme, append this to your rc.lua;
 
@@ -730,7 +730,7 @@ There is an extension called *Run or raise*, which makes it possible to configur
 
 ### Battery notification
 
-If you want to add a simple battery notification you can add following lines to your rc.lua. These lines originate from a [[blogpost](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html)]. Note that you need naughty for the notifications (installed by default in version 3.5).
+If you want to add a simple battery notification you can add following lines to your rc.lua. These lines originate from a [blogpost](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html). Note that you need naughty for the notifications (installed by default in version 3.5).
 
  `rc.lua` 
 ```

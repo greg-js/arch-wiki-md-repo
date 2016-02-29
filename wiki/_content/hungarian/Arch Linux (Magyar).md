@@ -14,7 +14,7 @@ Az Arch Linux egy függetlenül fejlesztett, [i686](https://en.wikipedia.org/wik
 
 	*Fő cikk: [Arch Linux története](/index.php/History_of_Arch_Linux "History of Arch Linux")*
 
-Az Arch Linuxot Judd Vinet kanadai programozó alapította. Az első kiadása, az Arch Linux 0.1, 2002\. március 11-én jelent meg. Habár az Arch teljesen független, ihletet merít más disztribúciók egyszerűségéből, beleértve a [Slackware-t](http://slackware.com), a [CRUX-ot](http://www.crux.nu) és a [BSD-t](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution). 2007-ben Judd Vinet elhagyta a projektvezetői státuszt egyéb érdekeltségek miatt, és Aaron Griffin amerikai programozó vette át, aki folytatta a projekt vezetését napjainkig.
+Az Arch Linuxot Judd Vinet kanadai programozó alapította. Az első kiadása, az Arch Linux 0.1, 2002\. március 11-én jelent meg. Habár az Arch teljesen független, ihletet merít más disztribúciók egyszerűségéből, beleértve a [Slackware-t](http://slackware.com), a [CRUX-ot](http://www.crux.nu) és a [BSD-t](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"). 2007-ben Judd Vinet elhagyta a projektvezetői státuszt egyéb érdekeltségek miatt, és Aaron Griffin amerikai programozó vette át, aki folytatta a projekt vezetését napjainkig.
 
 ## Egyszerűség
 
@@ -38,7 +38,7 @@ Az Arch foltozás nélküli vanilla szoftvereket nyújt; a csomagokat a tiszta [
 
 ## Közösség
 
-Az Arch közösség nagyon megbízható, élénk és barátságos: minden Arch felhasználót arra ösztönzünk, hogy vegyen részt, és járuljon hozzá a disztribúcióhoz, segítve akár az alapszoftver fejlesztését, csomagok karbantartását, [hibák](https://bugs.archlinux.org/) jelentését vagy javítását, az [ArchWiki dokumentáció](/index.php/Main_Page_(Magyar) "Main Page (Magyar)") javítását, segítve más felhasználóknak problémáik megoldásában, vagy csak véleménycserével a [fórumokban](https://bbs.archlinux.org/), [levelezőlistákon](https://mailman.archlinux.org/mailman/listinfo/), [IRC csatornákon](/index.php/IRC_channels "IRC channels"), vagy megosztva a saját ismereteiket vagy akár saját fejlesztésű alkalmazásaikat. Az Arch Linux a választott operációs rendszere számos embernek a világon, és számos [nemzetközi közösség](/index.php/International_communities "International communities") létezik, akik segítséget kínálnak és dokumentációt nyújtanak több nyelven.
+Az Arch közösség nagyon megbízható, élénk és barátságos: minden Arch felhasználót arra ösztönzünk, hogy vegyen részt, és járuljon hozzá a disztribúcióhoz, segítve akár az alapszoftver fejlesztését, csomagok karbantartását, [hibák](https://bugs.archlinux.org/) jelentését vagy javítását, az [ArchWiki dokumentáció](/index.php/Main_page_(Magyar) "Main page (Magyar)") javítását, segítve más felhasználóknak problémáik megoldásában, vagy csak véleménycserével a [fórumokban](https://bbs.archlinux.org/), [levelezőlistákon](https://mailman.archlinux.org/mailman/listinfo/), [IRC csatornákon](/index.php/IRC_channels "IRC channels"), vagy megosztva a saját ismereteiket vagy akár saját fejlesztésű alkalmazásaikat. Az Arch Linux a választott operációs rendszere számos embernek a világon, és számos [nemzetközi közösség](/index.php/International_communities "International communities") létezik, akik segítséget kínálnak és dokumentációt nyújtanak több nyelven.
 
 Lásd a [Vegyél részt benne!](/index.php/Getting_involved "Getting involved") lapot, ha úgy érzed, hogy szeretnél a közösség aktív tagja lenni.
 

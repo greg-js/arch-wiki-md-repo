@@ -1,4 +1,4 @@
-**Обратите внимание:** Эта статья является дополнением к основной: [Openbox](/index.php/Openbox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Openbox (Русский)").
+**Примечание:** Эта статья является дополнением к основной: [Openbox](/index.php/Openbox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Openbox (Русский)").
 
 Эта wiki страница призвана помочь пользователям в настройке Openbox в Arch Linux. В статье описывается как можно настроить темы, системные иконки, итп. А так же тут содержится краткий обзор панелей, трея и вспомогательных программ.
 
@@ -86,7 +86,7 @@ Xdefaults это конфигурационный файл, вносящий и�
 *   определение темы xscreensaver
 *   альтернативные настройки для низкоуровневых программ для X (xclock, xpdf,итп.)
 
-Xdefaults Arch WiKi [https://wiki.archlinux.org/index.php/Xdefaults](https://wiki.archlinux.org/index.php/Xdefaults)
+Xdefaults Arch WiKi [Xdefaults](/index.php/Xdefaults "Xdefaults")
 
 ### X11 курсоры мыши
 
@@ -121,7 +121,7 @@ $ ln -s /usr/share/icons/[name-of-cursor-theme] ~/.icons/default
 
 ```
 
-Для более подробной информации ознакомьтесь с более подробной страницей Arch WiKi [https://wiki.archlinux.org/index.php/X11_Cursors](https://wiki.archlinux.org/index.php/X11_Cursors)
+Для более подробной информации ознакомьтесь с более подробной страницей Arch WiKi [X11 Cursors](/index.php/X11_Cursors "X11 Cursors")
 
 ### Темы GTK
 
@@ -252,7 +252,7 @@ $ gsettings set org.gnome.desktop.background draw-background false
 
 ## Рекомендуемые программы
 
-**Обратите внимание:** The <u>main</u> [Openbox](/index.php/Openbox "Openbox") основная статья по установке Openbox.
+**Примечание:** The <u>main</u> [Openbox](/index.php/Openbox "Openbox") основная статья по установке Openbox.
 
 В этой <u>справочной</u> части wiki рассматриваются программы, которые вы можете использовать для реализации дополнительного функционала, после установки Openbox.
 
@@ -278,7 +278,7 @@ $ gsettings set org.gnome.desktop.background draw-background false
 
 | 
 
-  [Avant window navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")
+ [Avant window navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")
   [BMPanel](http://nsf.110mb.com/bmpanel/)
   [Cairo-Dock](/index.php/Cairo-Dock "Cairo-Dock")
   [Fbpanel](http://fbpanel.sourceforge.net)
@@ -290,12 +290,12 @@ $ gsettings set org.gnome.desktop.background draw-background false
     [LXPanel](http://www.gnomefiles.org/app.php/LXPanel)
     [Pancake](http://www.failedprojects.de/pancake/)
     [PerlPanel](http://freshmeat.net/projects/perlpanel/)
-    [PyPanel](/index.php/PyPanel "PyPanel")
+   [PyPanel](/index.php/PyPanel "PyPanel")
 
  | 
 
       [Screenlets](http://www.screenlets.org/)
-      [Tint2](/index.php/Tint2 "Tint2")
+     [Tint2](/index.php/Tint2 "Tint2")
       [Wbar](http://code.google.com/p/wbar/)
       [Xfce4-panel](http://www.xfce.org/projects/xfce4-panel/)
 
@@ -341,7 +341,7 @@ $ gsettings set org.gnome.desktop.background draw-background false
 
 Для еще большей легковесности системы можно использовать For even lighter options, consider [Gentoo](http://www.obsession.se/gentoo/) или [emelFM2.](http://emelfm2.net/). Эти программы реализованы в классическом двухпанельном виде. Другие менеджеры: [xfe](http://sourceforge.net/projects/xfe/) и [muCommander.](http://www.mucommander.com/)
 
-Как альтернативу, вы можете использовать Nautilus из окружения GNOME. Этот менеджер тяжелее и медленней чем вышеназванные менеджеры, но Nautilus поддерживает [виртуальные файловые системы,](http://en.wikipedia.org/wiki/Virtual_file_system) и умеет реализовывать доступ к папкам по средствам SSH, FTP и Samba. Ето его преимущество, перед другими менеджерами файлов.
+Как альтернативу, вы можете использовать Nautilus из окружения GNOME. Этот менеджер тяжелее и медленней чем вышеназванные менеджеры, но Nautilus поддерживает [виртуальные файловые системы,](https://en.wikipedia.org/wiki/Virtual_file_system "wikipedia:Virtual file system") и умеет реализовывать доступ к папкам по средствам SSH, FTP и Samba. Ето его преимущество, перед другими менеджерами файлов.
 
 ### Быстрый запуск приложения (Application launchers)
 
@@ -441,7 +441,7 @@ Volti это приложение на GTK+ для управления гром
 
 Volumeicon миксер звука в трее. [volumeicon](https://www.archlinux.org/packages/?name=volumeicon) в AUR.
 
-Volwheel интегрируется в трей, позволяет управлять звуком. [volwheel](https://www.archlinux.org/packages/community/any/volwheel/) в AUR.
+Volwheel интегрируется в трей, позволяет управлять звуком. [volwheel](https://www.archlinux.org/packages/?name=volwheel) в AUR.
 
 ### Батарея & CPU
 
@@ -455,7 +455,7 @@ Volwheel интегрируется в трей, позволяет управл
 
 Индикатор и управляющая программа [fbxkb](https://aur.archlinux.org/packages/fbxkb/) в AUR.
 
-Индикатор раскладки [xxkb](https://www.archlinux.org/packages/community/i686/xxkb/) в AUR.
+Индикатор раскладки [xxkb](https://www.archlinux.org/packages/?name=xxkb) в AUR.
 
 Индикатор написаный на QT4 [axkb](https://aur.archlinux.org/packages.php?ID=25555) в AUR.
 

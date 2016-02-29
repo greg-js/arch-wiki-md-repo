@@ -388,7 +388,7 @@ make revoke item=**cert.pem**
 
 ## See also
 
-*   [Wikipedia page](http://en.wikipedia.org/wiki/OpenSSL) on OpenSSL, with background information.
+*   [Wikipedia page](https://en.wikipedia.org/wiki/OpenSSL "wikipedia:OpenSSL") on OpenSSL, with background information.
 *   [OpenSSL](http://www.openssl.org) project page.
 *   [FreeBSD Handbook](http://www.freebsd.org/doc/en/books/handbook/openssl.html)
 *   [Step-by-step guide to create a signed SSL certificate](http://www.akadia.com/services/ssh_test_certificate.html)

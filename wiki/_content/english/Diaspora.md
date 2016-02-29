@@ -1,6 +1,6 @@
 [Diaspora](http://www.diasporafoundation.org/) is the privacy aware, personally controlled, do-it-all, open source social network.
 
-On November 23, 2010 was [announced](http://blog.joindiaspora.com/2010/11/23/private-alpha-released.html) that Diaspora is in [private alpha](http://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha) phase.
+On November 23, 2010 was [announced](http://blog.joindiaspora.com/2010/11/23/private-alpha-released.html) that Diaspora is in [private alpha](https://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha "wikipedia:Software release life cycle") phase.
 
 Since August 27, 2012 Diaspora is ruled by the community ([announcement](http://blog.diasporafoundation.org/2012/08/27/announcement-diaspora-will-now-be-a-community-project.html)).
 

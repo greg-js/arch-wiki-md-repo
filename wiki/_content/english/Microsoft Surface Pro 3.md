@@ -12,7 +12,9 @@ This page aims to document all relevant information on getting Arch Linux workin
     *   [3.1 Compile Kernel with Patches](#Compile_Kernel_with_Patches)
         *   [3.1.1 Surface Pro 3 Linux Kernel Hardware Patches](#Surface_Pro_3_Linux_Kernel_Hardware_Patches)
     *   [3.2 Enabling Touchpad](#Enabling_Touchpad)
-    *   [3.3 Booting with Secure Boot Enabled](#Booting_with_Secure_Boot_Enabled)
+    *   [3.3 Tuning the Pen](#Tuning_the_Pen)
+    *   [3.4 Virtual Keboard](#Virtual_Keboard)
+    *   [3.5 Booting with Secure Boot Enabled](#Booting_with_Secure_Boot_Enabled)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Invalid signature detected check secure boot policy in setup](#Invalid_signature_detected_check_secure_boot_policy_in_setup)
     *   [4.2 Keyboard Cover not working](#Keyboard_Cover_not_working)
@@ -69,9 +71,9 @@ This way, with Secure Boot enabled, you will be able to boot your kernel wheneve
 
 ## Extra steps
 
-Although in the latest kernel you have support for the touchpad, the screen, etc. It doesn't have support for stuff like the webcam, etc. A github repo to track the support of the Surface Pro 3 in Archlinux was created: [[1]](https://github.com/nuclearsandwich/surface3-archlinux), where you can check for the status.
+Although in latest kernel you have basic support for the touchpad, the screen, etc. the cameras are not yet supported by the kernel. A github repo to track the support of the Surface Pro 3 in Archlinux was created: [[1]](https://github.com/nuclearsandwich/surface3-archlinux), where you can check for the status.
 
-Other resource, listed in the github repo, is a surface pro 3 specific linux kernel package, with support for these devices. It is available in the AUR [[2]](https://aur.archlinux.org/packages/linux-surfacepro3). You can check there the support for the different modules available, or take the patch from upstream.
+The easiest way for Arch Linux users is to use a Surface Pro 3 specific package available in the AUR [linux-surfacepro3](https://aur.archlinux.org/packages/linux-surfacepro3/). You can check there the support for the different modules available, or take the patch from upstream[GitHub](https://github.com/matthewwardrop/linux-surfacepro3).
 
 ### Compile Kernel with Patches
 
@@ -84,6 +86,8 @@ Ref: [Kernels/Compilation/Traditional#Build configuration](/index.php/Kernels/Co
 
 #### Surface Pro 3 Linux Kernel Hardware Patches
 
+Since kernel 4.3, only the multitouch and camera patches are required.
+
 *   [Camera patch](https://github.com/shvr/fedora-surface-pro-3-kernel/blob/f23/surface-pro-3-Add-support-driver-for-Surface-Pro-3-b.patch)
 *   [Hardware Buttons patch](https://github.com/shvr/fedora-surface-pro-3-kernel/blob/f23/Add-Microsoft-Surface-Pro-3-camera-support.patch)
 *   [Type Cover patch](https://github.com/shvr/fedora-surface-pro-3-kernel/blob/f23/Add-multitouch-support-for-Microsoft-Type-Cover-3.patch)
@@ -92,22 +96,26 @@ Ref: [Kernels/Compilation/Traditional#Build configuration](/index.php/Kernels/Co
 
 ### Enabling Touchpad
 
-Ref: [Reddit](https://www.reddit.com/r/SurfaceLinux/comments/3lbgs4/ubuntu_gnome_1510/)
-
-[Install](/index.php/Install "Install") the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package, as well as add the following to the end of `/usr/share/X11/xorg.conf.d/10-evdev.conf`:
+Ref: [GitHub](https://github.com/matthewwardrop/linux-surfacepro3/issues/1) In order to enable full functionality of the touchpad (e.g. two-finger scrolling, right click), you need to [Install](/index.php/Install "Install") the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package, have the kernel patch applied as well as add the following to `/etc/X11/xorg.conf.d/10-multitouch.conf`:
 
 ```
-Section "InputClass"··
-    Identifier "Surface Pro 3 cover"
-    MatchIsPointer "on"
-    MatchDevicePath "/dev/input/event*"
-    Driver "evdev"
-    Option "vendor" "045e"
-    Option "product" "07dc"
-    Option "IgnoreAbsoluteAxes" "True"
+Section "InputClass"
+  Identifier "Default clickpad buttons"
+  MatchDriver "synaptics"
+  Option "ClickPad" "true"
+  Option "SoftButtonAreas" "50% 0 82% 0 0 0 0 0"
+  Option "SecondarySoftButtonAreas" "58% 0 0 15% 42% 58% 0 15%"
 EndSection
 
 ```
+
+### Tuning the Pen
+
+The pen buttons might not work out of the box. [Install](/index.php/Install "Install") the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) package and comment the `MatchIsTablet` section in `/usr/share/X11/xorg.conf.d/10-evdev.conf`. Furthermore add in the `MatchProduct` line of N-Trig in `/usr/share/X11/xorg.conf.d/50-wacom.conf`. Note that the purple bluetooth button is recognized but able to be bound to an action. Ref:[Reddit](https://www.reddit.com/r/SurfaceLinux/comments/3mu28a/sp3_pen_tip_button_working/)
+
+### Virtual Keboard
+
+Depending on the desktop environment you are using, you might want to use different virtual keyboard. [onboard](https://www.archlinux.org/packages/?name=onboard) provides a reliable and comfortable experience. A guide for optical tweaking is provided [here](https://github.com/Vistaus/surface3-arch-antergoslinux/issues/5). If you are using [GNOME](https://wiki.archlinux.org/index.php/GNOME), these two extension ([1](https://extensions.gnome.org/extension/992/onboard-integration/), [2](https://extensions.gnome.org/extension/993/slide-for-keyboard/)) provide a better integration.
 
 ### Booting with Secure Boot Enabled
 

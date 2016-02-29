@@ -15,7 +15,7 @@
 
 ## Introduction
 
-The XPS M2010 is a large 'mobile desktop' with an adjustable display, built-in speakers, and detachable bluetooth keyboard. For transportation, it may be folded and carried as a briefcase. (Adapted from [Wikipedia](http://en.wikipedia.org/wiki/Dell_XPS#XPS_M2010))
+The XPS M2010 is a large 'mobile desktop' with an adjustable display, built-in speakers, and detachable bluetooth keyboard. For transportation, it may be folded and carried as a briefcase. (Adapted from [Wikipedia](https://en.wikipedia.org/wiki/Dell_XPS#XPS_M2010 "wikipedia:Dell XPS"))
 
 It also [made an appearance](http://www.starringthecomputer.com/appearance.html?f=647&c=324) in the 2008 Iron Man film.
 

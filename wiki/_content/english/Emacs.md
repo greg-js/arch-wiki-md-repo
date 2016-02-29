@@ -65,6 +65,7 @@
     *   [8.9 Emacs-nox output gets messy](#Emacs-nox_output_gets_messy)
     *   [8.10 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
     *   [8.11 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
+    *   [8.12 Invalid font name for Oxygen-Sans](#Invalid_font_name_for_Oxygen-Sans)
 *   [9 Alternatives](#Alternatives)
     *   [9.1 mg](#mg)
     *   [9.2 zile](#zile)
@@ -1564,6 +1565,17 @@ But, this will break other key combinations. To fix them, put the following in y
 KDE users may observe that the Emacs window does not resize properly, but rather, the resized portion is transparent and mouse clicks are sent to the underlying window. To correct this behavior, change KDE's GTK3 theme to something other than oxygen-gtk. For instance, use the Emacs theme which is included with [gtk3](https://www.archlinux.org/packages/?name=gtk3).
 
 To force Emacs to maximize completely in KDE, click the Emacs icon in the title bar, and select More Actions > Special Window Settings. Then in the "Size & Position" tab, select "Obey geometry restrictions", choose "Force" in the dropdown menu, and select "No" from the radio buttons on the right.
+
+### Invalid font name for Oxygen-Sans
+
+When [emacs](https://www.archlinux.org/packages/?name=emacs) (24.5-2) and [ttf-oxygen](https://www.archlinux.org/packages/?name=ttf-oxygen) (1:5.4.3-1) are installed, you will get an error like:
+
+```
+Error:invalid font name.-unknown-Oxygen-Sans-nolmal-normal--15----*-0-iso10646-1
+
+```
+
+when setting font attributes. This seems to be a bug in emacs, which is fixed in [emacs-git](https://www.archlinux.org/packages/?name=emacs-git) (25.1.50.r125104-1).
 
 ## Alternatives
 

@@ -142,12 +142,12 @@ The following makes for a nice solution to keyboard layout switching between mul
 
 Just:
 
-*   Add a status entry consisting only of an iconic font glyph (read this [[5]](https://wiki.archlinux.org/index.php/I3#Iconic_fonts_in_the_status_bar) if you do not know what I'm talking about), and
+*   Add a status entry consisting only of an iconic font glyph (read this [I3#Iconic fonts in the status bar](/index.php/I3#Iconic_fonts_in_the_status_bar "I3") if you do not know what I'm talking about), and
 *   Add a handler to `on_event()` in order to launch the application when the icon is clicked upon. Remember to launch it in background to avoid blocking the event cycle.
 
 ### Dynamic icons
 
-You can show different iconic font glyphs (read this [[6]](https://wiki.archlinux.org/index.php/I3#Iconic_fonts_in_the_status_bar) if you do not know what I'm talking about) according to the current status of some modules. For example, different battery icons corresponding to different charge levels or different volume icons corresponding to different volume levels. Just write your own transformation hook and add it to the `transform()` function in ~/.h2statusrc.
+You can show different iconic font glyphs (read this [I3#Iconic fonts in the status bar](/index.php/I3#Iconic_fonts_in_the_status_bar "I3") if you do not know what I'm talking about) according to the current status of some modules. For example, different battery icons corresponding to different charge levels or different volume icons corresponding to different volume levels. Just write your own transformation hook and add it to the `transform()` function in ~/.h2statusrc.
 
 ## Dependencies
 

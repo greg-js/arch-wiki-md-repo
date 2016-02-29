@@ -163,7 +163,7 @@ There are tens of thousands of themes available for Wordpress. Searching on goog
 
 #### Install using the admin panel
 
-Before installing a theme using the admin panel, you will need to setup an [FTP](https://wiki.archlinux.org/index.php/Very_Secure_FTP_Daemon) server on your WordPress host. To maintain a high level of protection, you might set up a [user](/index.php/User "User") on your system specifically for WordPress, give it the home directory of `<path to your WordPress install>/wp-content`, disallow anonymous login, and allow no more users to log in than for WordPress (and obviously others as required by your setup).
+Before installing a theme using the admin panel, you will need to setup an [FTP](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") server on your WordPress host. To maintain a high level of protection, you might set up a [user](/index.php/User "User") on your system specifically for WordPress, give it the home directory of `<path to your WordPress install>/wp-content`, disallow anonymous login, and allow no more users to log in than for WordPress (and obviously others as required by your setup).
 
 Once the FTP server is setup, login to your WordPress installation and click "Appearance->Install Themes->Upload". From there select your zip file that contains your theme and click "Install Now". You will be presented with a box asking for FTP information, enter it and click "Proceed". You might need to update [file ownership](/index.php/Chown "Chown") and [rights](/index.php/Chmod "Chmod") if WordPress reports that it is unable to write to the directory. If you have been following along closely, you should now have an installed theme. Activate it if you wish.
 

@@ -1,4 +1,4 @@
-[Dash](http://en.wikipedia.org/wiki/Debian_Almquist_shell) is a minimalist POSIX-compliant shell. It can be much faster than Bash, and takes up less memory when in use. Most POSIX compliant scripts specify `/bin/sh` at the first line of the script, which means it will run `/bin/sh` as the shell, which by default in Arch is a symlink to `/bin/bash`.
+[Dash](https://en.wikipedia.org/wiki/Debian_Almquist_shell "wikipedia:Debian Almquist shell") is a minimalist POSIX-compliant shell. It can be much faster than Bash, and takes up less memory when in use. Most POSIX compliant scripts specify `/bin/sh` at the first line of the script, which means it will run `/bin/sh` as the shell, which by default in Arch is a symlink to `/bin/bash`.
 
 ## Contents
 

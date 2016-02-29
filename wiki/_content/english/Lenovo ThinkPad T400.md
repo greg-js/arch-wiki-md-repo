@@ -23,7 +23,7 @@ Installation instructions for the Lenovo ThinkPad T400.
 
 ## System Specification
 
-Note, [ThinkPad T400](http://en.wikipedia.org/wiki/ThinkPad_T_Series) is available in a few hardware variants. Check the [ThinkWiki](http://www.thinkwiki.org) where details of hardware specification are discussed in the [T400](http://www.thinkwiki.org/wiki/Category:T400) category.
+Note, [ThinkPad T400](https://en.wikipedia.org/wiki/ThinkPad_T_Series "wikipedia:ThinkPad T Series") is available in a few hardware variants. Check the [ThinkWiki](http://www.thinkwiki.org) where details of hardware specification are discussed in the [T400](http://www.thinkwiki.org/wiki/Category:T400) category.
 
 Below is an overview of the T400 specifications as originally used to start this article:
 

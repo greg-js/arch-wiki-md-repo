@@ -31,7 +31,7 @@ The first option is the recommended default, and what you will end up with if yo
 
 You can also force fsck at boot time by passing `fsck.mode=force`, as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). This will check every filesystem you have on the machine.
 
-**Note:** For those accustomed to use other GNU/Linux distributions, the old tricks consisting in writing a file with the name `forcefsck` to the root of each filesystem or using the command `shutdown` with the `-F` flag were only working for the old [SysVinit](/index.php/SysVinit "SysVinit") and early versions of [Upstart](https://en.wikipedia.org/wiki/Upstart) and are not working with [systemd](/index.php/Systemd "Systemd"). The aforementioned solution is thus the only one working for Arch Linux.
+**Note:** For those accustomed to use other GNU/Linux distributions, the old tricks consisting in writing a file with the name `forcefsck` to the root of each filesystem or using the command `shutdown` with the `-F` flag were only working for the old [SysVinit](/index.php/SysVinit "SysVinit") and early versions of [Upstart](https://en.wikipedia.org/wiki/Upstart "wikipedia:Upstart") and are not working with [systemd](/index.php/Systemd "Systemd"). The aforementioned solution is thus the only one working for Arch Linux.
 
 ## Tips and tricks
 
@@ -99,7 +99,7 @@ The 6th column (in bold) is the fsck option.
 
 ### Can't run fsck on a separate /usr partition
 
-1.  Make sure you have the required [hooks](https://wiki.archlinux.org/index.php/Mkinitcpio#.2Fusr_as_a_separate_partition) in `/etc/mkinitcpio.conf` and that you remembered to re-generate your initramfs image after editing this file.
+1.  Make sure you have the required [hooks](/index.php/Mkinitcpio#.2Fusr_as_a_separate_partition "Mkinitcpio") in `/etc/mkinitcpio.conf` and that you remembered to re-generate your initramfs image after editing this file.
 2.  Check your [fstab](/index.php/Fstab "Fstab")! Only the root partition needs "1" at the end, everything else should have either "2" or "0". Carefully inspect it for other typos, as well.
 
 ### ext2fs : no external journal

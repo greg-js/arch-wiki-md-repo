@@ -12,7 +12,7 @@ This article describes specific steps to configure hardware on the notebook mode
 
 # Wireless
 
-The Compaq nx6325 has the BCM4311 or BCM4312 wireless chipset. The b43 drivers that come with the latest kernel will get these to work. The b43-firmware package **must** also be installed from the AUR. Details can be found [here](https://wiki.archlinux.org/index.php/Broadcom_wireless#b43.2Fb43legacy)
+The Compaq nx6325 has the BCM4311 or BCM4312 wireless chipset. The b43 drivers that come with the latest kernel will get these to work. The b43-firmware package **must** also be installed from the AUR. Details can be found [here](/index.php/Broadcom_wireless#b43.2Fb43legacy "Broadcom wireless")
 
 # Power management
 
@@ -44,7 +44,7 @@ and restart X.
 
 # Video
 
-The free [xf86-video-driver](https://wiki.archlinux.org/index.php/ATI) driver works perfectly for the Radeon Xpress 200M that ships with the nx6325\. The proprietry [catalyst](/index.php/ATI#ATI_Catalyst_proprietary_driver "ATI") driver no longer works for this card, support has been dropped.
+The free [xf86-video-driver](/index.php/ATI "ATI") driver works perfectly for the Radeon Xpress 200M that ships with the nx6325\. The proprietry [catalyst](/index.php/ATI#ATI_Catalyst_proprietary_driver "ATI") driver no longer works for this card, support has been dropped.
 
 ## Xorg.conf
 
@@ -56,4 +56,4 @@ For troubleshooting or setting up a complicated environment, refer to [Xorg](/in
 
 The multi-card reader work out-of-the-box with the latest kernel.
 
-The Authentec fingerprint reader works with the installation and configuration of [fprint](https://wiki.archlinux.org/index.php/Fprint)
+The Authentec fingerprint reader works with the installation and configuration of [fprint](/index.php/Fprint "Fprint")

@@ -87,9 +87,9 @@
 
 在此之前，您最好了解一下Arch的打包系统(the Arch Build System)的工作原理：
 
-*   这里是一篇[Arch_Build_System_(简体中文)](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")的介绍
-*   还有[Makepkg_(简体中文)](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")
-*   还有[Creating_Packages_(简体中文)](/index.php/Creating_Packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating Packages (简体中文)")
+*   这里是一篇[Arch Build System (简体中文)](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")的介绍
+*   还有[makepkg (简体中文)](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")
+*   还有[Creating packages (简体中文)](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)")
 
 **注意:** 在[AUR](/index.php/AUR "AUR")上有一个叫[nvidia-all](https://aur.archlinux.org/packages/nvidia-all/)的软件包可以帮助您更方便地安装英伟达的专有驱动，它适合于定制内核或者多内核。
 
@@ -556,7 +556,7 @@ $ xrandr -o normal
 
 **硬件需求：**
 
-至少是一块第二代的PureVideo HD[[1]](http://en.wikipedia.org/wiki/PureVideo_HD#Table_of_PureVideo_.28HD.29_GPUs)
+至少是一块第二代的PureVideo HD[wikipedia:PureVideo_HD#Table_of_PureVideo_.28HD.29_GPUs](https://en.wikipedia.org/wiki/PureVideo_HD#Table_of_PureVideo_.28HD.29_GPUs "wikipedia:PureVideo HD")
 
 **软件需求：**
 
@@ -846,7 +846,7 @@ Name=nvidia-fan-speed
 
 **想要成功地完成切换，一次重启是很有必要的。** 请根据您正在使用的驱动版本来修改一些地方(在这里我使用的是nvidia-173xx)
 
-假如您正在使用的xorg-server的版本低于1.10.2-1，取消注释行，复制和删除{10-monitor,30-nouveau}.conf。自从1.10.2-1之后的版本，xorg-server修补为自动加载nouveau。我保留了10-monitor.conf和[30-nouveau.conf](https://wiki.archlinux.org/index.php/Nouveau#Configuration)在同一个目录作为这个脚本，必要时还要调整一下路径。
+假如您正在使用的xorg-server的版本低于1.10.2-1，取消注释行，复制和删除{10-monitor,30-nouveau}.conf。自从1.10.2-1之后的版本，xorg-server修补为自动加载nouveau。我保留了10-monitor.conf和[30-nouveau.conf](/index.php/Nouveau#Configuration "Nouveau")在同一个目录作为这个脚本，必要时还要调整一下路径。
 
 ## 故障排除
 

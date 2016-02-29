@@ -96,6 +96,6 @@ It may also be needed to use the `amdgpu.exp_hw_support=1` [[2]](https://www.pho
 
 ## Disable radeon driver
 
-To prevent `radeon` from loading, you can disable it in the Kconfig or [blacklist](https://wiki.archlinux.org/index.php/Kernel_modules#Blacklisting) the `radeon` module.
+To prevent `radeon` from loading, you can disable it in the Kconfig or [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `radeon` module.
 
  `/etc/modprobe.d/radeon.conf`  `blacklist radeon`

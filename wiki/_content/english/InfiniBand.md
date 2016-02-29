@@ -151,7 +151,7 @@ Like Ethernet MAC addresses, but a device has multiple GUID's. Assigned by the h
 
 ## Software installation
 
-This article makes many references to the InfiniBand AUR packages. You can [obtain and install AUR packages any way you wish](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages).
+This article makes many references to the InfiniBand AUR packages. You can [obtain and install AUR packages any way you wish](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository").
 
 ### Upgrade firmware
 
@@ -251,7 +251,7 @@ And/or by examining the `/sys` filesystem:
 
 ### TCP/IP over InfiniBand (IPoIB)
 
-You can create a virtual Ethernet Adapter to be ran on an InfiniBand adapter. This is intended so programs that are designed to work with TCP/IP but not InfiniBand, can (indirectly) use InfiniBand networks. This is not intended to route internet traffic through your InfiniBand network. (Unless your internet connection is faster than your Ethernet devices are... Which means you're working with [Internet2](https://en.wikipedia.org/wiki/Internet2), **very** high performance supercomputers, clusters, or data centers, or you live in a handpicked area by [Google Fiber](https://fiber.google.com/about/) or [Comcast](http://www.pcmag.com/article2/0,2817,2479953,00.asp) offering a 2Gbps+ internet connection, which isn't available residentially anywhere as of mid 2015.)
+You can create a virtual Ethernet Adapter to be ran on an InfiniBand adapter. This is intended so programs that are designed to work with TCP/IP but not InfiniBand, can (indirectly) use InfiniBand networks. This is not intended to route internet traffic through your InfiniBand network. (Unless your internet connection is faster than your Ethernet devices are... Which means you're working with [Internet2](https://en.wikipedia.org/wiki/Internet2 "wikipedia:Internet2"), **very** high performance supercomputers, clusters, or data centers, or you live in a handpicked area by [Google Fiber](https://fiber.google.com/about/) or [Comcast](http://www.pcmag.com/article2/0,2817,2479953,00.asp) offering a 2Gbps+ internet connection, which isn't available residentially anywhere as of mid 2015.)
 
 There is a performance hit for programs using InfiniBand via TCP/IP rather than natively. Using IPoIB sends all traffic through the normal TCP stack, requires system calls, memory copies, and the network protocols are ran on the CPU rather than on the InfiniBand adapter.
 

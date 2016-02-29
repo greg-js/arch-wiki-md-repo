@@ -225,7 +225,7 @@ mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
 
 #### mynetworks
 
-Questo identifica le reti (o gli specifici host), che invieranno posta da questo server. Di default Postfix riceve le mail da tutte le interfacce di rete installate, ma permette di inviare solo dalla interfaccia di loopback (127.0.0.1) che, nel nostro caso, non và ovviamente bene. Il valore del parametro mynetworks può essere un singolo host, un indirizzo IP e la maschera di rete per indicare un range di host o di una sottorete, o qualsiasi numero di host separati da virgola o indirizzo IP e associati netmasks. Questo parametro è molto importante, deve essere presente e deve contenere SOLO la rete o gli host autorizzati, altrimenti il vostro server si trasforma in un [open relay](http://en.wikipedia.org/wiki/Open_relay), ovvero un server attraverso cui *chiunque* può inviare mail. Gli open relay sono il bersaglio preferito dagli spammers, e sono, per fortuna, una razza quasi estinta (gli OpenRelay, non gli Spammers ...). Nel nostro caso il mail server permetterà alla rete interna 192.168.20.* di inviare mail attraverso di esso:
+Questo identifica le reti (o gli specifici host), che invieranno posta da questo server. Di default Postfix riceve le mail da tutte le interfacce di rete installate, ma permette di inviare solo dalla interfaccia di loopback (127.0.0.1) che, nel nostro caso, non và ovviamente bene. Il valore del parametro mynetworks può essere un singolo host, un indirizzo IP e la maschera di rete per indicare un range di host o di una sottorete, o qualsiasi numero di host separati da virgola o indirizzo IP e associati netmasks. Questo parametro è molto importante, deve essere presente e deve contenere SOLO la rete o gli host autorizzati, altrimenti il vostro server si trasforma in un [open relay](https://en.wikipedia.org/wiki/Open_relay "wikipedia:Open relay"), ovvero un server attraverso cui *chiunque* può inviare mail. Gli open relay sono il bersaglio preferito dagli spammers, e sono, per fortuna, una razza quasi estinta (gli OpenRelay, non gli Spammers ...). Nel nostro caso il mail server permetterà alla rete interna 192.168.20.* di inviare mail attraverso di esso:
 
 ```
 mynetworks = 127.0.0.0/8, 192.168.20.0/24
@@ -234,7 +234,7 @@ mynetworks = 127.0.0.0/8, 192.168.20.0/24
 
 #### masquerade_domains
 
-Ora i nostri utenti di rete invieranno mail ma molti client di posta inviano la mail usando il [fully qualified domain name](http://en.wikipedia.org/wiki/Fully_qualified_domain_name) dell'host da cui inviano la mail. Per capirci meglio: se il mio host si chiama *mybox* e il mio utente *steno* chi riceve le mail che spedisco vede il mittente nella forma *steno@mybox.mede.it* che non è esattamente quello che voglio. Probabilmente non ho nemmeno un utente in quell'host e non riusciranno a rispondere alle mie mail. Risolviamo questo problema con il parametro *masquerade_domains*. Postfix sostitusce la parte domain con quanto specificato qui.
+Ora i nostri utenti di rete invieranno mail ma molti client di posta inviano la mail usando il [fully qualified domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name "wikipedia:Fully qualified domain name") dell'host da cui inviano la mail. Per capirci meglio: se il mio host si chiama *mybox* e il mio utente *steno* chi riceve le mail che spedisco vede il mittente nella forma *steno@mybox.mede.it* che non è esattamente quello che voglio. Probabilmente non ho nemmeno un utente in quell'host e non riusciranno a rispondere alle mie mail. Risolviamo questo problema con il parametro *masquerade_domains*. Postfix sostitusce la parte domain con quanto specificato qui.
 
 ```
 masquerade_domains = mede.it
@@ -405,7 +405,7 @@ sudo nano /etc/dovecot/dovecot.conf
 
 ```
 
-Possiamo notare che il file è bello corposo o_O, noi impostamo solo quello che ci interessa lasciando il resto invariato. Cominciamo con l'abilitare i protocolli [pop3](http://it.wikipedia.org/wiki/POP3) e [imap](http://it.wikipedia.org/wiki/IMAP)
+Possiamo notare che il file è bello corposo o_O, noi impostamo solo quello che ci interessa lasciando il resto invariato. Cominciamo con l'abilitare i protocolli [pop3](https://it.wikipedia.org/wiki/POP3) e [imap](https://it.wikipedia.org/wiki/IMAP)
 
 ```
 protocols = imap pop3
@@ -429,7 +429,7 @@ pop3_uidl_format = %08Xu%08Xv
 
 ### Autenticazione
 
-Al fine di ottenere il nostro agognato *Single Signon* vogliamo far sì che Dovecot autentichi gli utenti utilizzando la stessa coppia utente/password utilizzata da Samba. I nostri utenti utilizzeranno sempre lo stesso account sia per il File Server che per la posta. Questo si può fare in modi diversi, qui utilizzeremo [PAM](http://it.wikipedia.org/wiki/Pluggable_authentication_modules) che di "riflesso" utilizzerà LDAP per l'autenticazione. Apriamo (se lo abbiamo chiuso) il file di configurazione /etc/dovecot/dovecot.conf e aggiungiamo (o cerchiamo e modifichiamo, meglio) il seguente parametro :
+Al fine di ottenere il nostro agognato *Single Signon* vogliamo far sì che Dovecot autentichi gli utenti utilizzando la stessa coppia utente/password utilizzata da Samba. I nostri utenti utilizzeranno sempre lo stesso account sia per il File Server che per la posta. Questo si può fare in modi diversi, qui utilizzeremo [PAM](https://it.wikipedia.org/wiki/Pluggable_authentication_modules) che di "riflesso" utilizzerà LDAP per l'autenticazione. Apriamo (se lo abbiamo chiuso) il file di configurazione /etc/dovecot/dovecot.conf e aggiungiamo (o cerchiamo e modifichiamo, meglio) il seguente parametro :
 
 ```
 passdb pam {
@@ -788,7 +788,7 @@ Per questa configurazione sono state scelte delle applicazioni note per il buon 
 
 Cos'e' *Amavis-new* ? **Amavisd-new** è un framework per il filtraggio di contenuti che utilizza applicazioni di supporto per il riconoscimento di virus e spam. Il nostro *caporale filtratore* utilizzerà due *soldati* per la sua campagna d'armi: [ClamAV](http://www.clamav.net/) per il filtraggio dei virus e [Spamassassin](http://spamassassin.apache.org/) per quello dello spam. Spamassassin, a sua volta, può poggiarsi su applicazioni di livello inferiore, come ad esempio [Vipul's Razor](http://razor.sourceforge.net/) e [DCC](http://www.rhyolite.com/anti-spam/dcc/) (non trattati in questa guida). Rispetto ad altre tecnologie di controllo dello spam (come gli *RBL*, dall'inglese *Real-time Blackhole List*, termine con il quale si indicano impropriamente le tecnologie *DNSBL*, o di *DNS blacklist*, che consistono nella pubblicazione, da parte di un sito Internet, di una lista di indirizzi IP che, per varie ragioni, ma principalmente spam, dovrebbero essere bloccati), Spamassassin non valida un dato messaggio email in base ad un singolo test. Questo programma, invece, esegue una lista di controlli, sia interni, sia usando delle applicazioni esterne, per calcolare un punteggio da assegnare ad ogni messaggio di posta. Questo punteggio è determinato in base a:
 
-*   [Filtro Bayesiano](http://it.wikipedia.org/wiki/Filtro_bayesiano)
+*   [Filtro Bayesiano](https://it.wikipedia.org/wiki/Filtro_bayesiano)
 *   Regole statiche basate su espressioni regolari
 *   Reti distribuite e collaborative (RBL, Razor, Pyzor, DCC)
 

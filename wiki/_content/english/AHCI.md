@@ -49,5 +49,5 @@ ata2.00: 625142448 sectors, multi 16: LBA48 NCQ (depth 31/32)
 
 ## See also
 
-*   [AHCI on Wikipedia](http://en.wikipedia.org/wiki/AHCI)
-*   [NCQ on Wikipedia](http://en.wikipedia.org/wiki/NCQ)
+*   [AHCI on Wikipedia](https://en.wikipedia.org/wiki/AHCI "wikipedia:AHCI")
+*   [NCQ on Wikipedia](https://en.wikipedia.org/wiki/NCQ "wikipedia:NCQ")

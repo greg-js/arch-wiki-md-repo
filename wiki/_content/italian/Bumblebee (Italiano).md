@@ -444,7 +444,7 @@ Una volta che questo è stato fatto tutto , ogni applicazione che si avvia da qu
 
 ## CUDA senza Bumblebee
 
-Non vi è una chiara documentazione in proposito, ma non è necessario che Bumblebee utilizzi CUDA e può funzionare anche su macchine in cui non riesce optirun. Per una guida su come farlo funzionare con il Lenovo IdeaPad Y580 (che utilizza il GeForce 660M), si veda: [https://wiki.archlinux.org/index.php/Lenovo_IdeaPad_Y580#NVIDIA_Card](https://wiki.archlinux.org/index.php/Lenovo_IdeaPad_Y580#NVIDIA_Card) . Queste istruzioni molto probabilmente funzioneranno anche con altre macchine (ad eccezione della parte acpi-manico-hack , che non può essere tralasciata).
+Non vi è una chiara documentazione in proposito, ma non è necessario che Bumblebee utilizzi CUDA e può funzionare anche su macchine in cui non riesce optirun. Per una guida su come farlo funzionare con il Lenovo IdeaPad Y580 (che utilizza il GeForce 660M), si veda: [Lenovo IdeaPad Y580#NVIDIA_Card](/index.php/Lenovo_IdeaPad_Y580#NVIDIA_Card "Lenovo IdeaPad Y580") . Queste istruzioni molto probabilmente funzioneranno anche con altre macchine (ad eccezione della parte acpi-manico-hack , che non può essere tralasciata).
 
 ## Risoluzione dei problemi
 

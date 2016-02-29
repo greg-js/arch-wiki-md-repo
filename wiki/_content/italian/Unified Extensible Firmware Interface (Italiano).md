@@ -463,8 +463,8 @@ Masterizzare `~/archiso.iso` su un dispositivo ottico e procedere normalmente co
 
 ## Altre risorse
 
-*   Pagina di Wikipedia(inglese) su [UEFI](http://en.wikipedia.org/wiki/UEFI)
-*   Pagina di Wikipedia(inglese) su [UEFI SYSTEM Partition](http://en.wikipedia.org/wiki/EFI_System_partition)
+*   Pagina di Wikipedia(inglese) su [UEFI](https://en.wikipedia.org/wiki/UEFI "wikipedia:UEFI")
+*   Pagina di Wikipedia(inglese) su [UEFI SYSTEM Partition](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition")
 *   [Linux Kernel UEFI Documentation](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=blob_plain;f=Documentation/x86/x86_64/uefi.txt;hb=HEAD)
 *   [UEFI Forum](http://www.uefi.org/home/) - contiene le [Specifiche UEFI](http://www.uefi.org/specs/) ufficiali - GUID Partition Table è una delle Specifiche UEFI
 *   [Tianocore Project di Intel](http://sourceforge.net/apps/mediawiki/tianocore/index.php?title=Welcome_to_TianoCore) per i firmware UEFI Open-Source che includono DuetPkg per gli avvii basati sul BIOS e OvmfPkg utilizzato in in QEMU ed Oracle VirtualBox

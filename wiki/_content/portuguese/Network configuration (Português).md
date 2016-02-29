@@ -123,7 +123,7 @@ Para alterar o hostname temporariamente(até o próximo restart), utilize o coma
 
 ### Verifique o estado do seu driver
 
-O [udev](/index.php/Udev "Udev") deverá detectar sua interface de rede([NIC](http://pt.wikipedia.org/wiki/Placa_de_rede)) e carregará automaticamente o módulo necessário. Busque pela entrada "Ethernet controller"(ou similar) no resultado do comando `lspci -v`. Este comando dirá qual módulo do kernel é necessário para o funcionamento do dispositivo. Por exemplo:
+O [udev](/index.php/Udev "Udev") deverá detectar sua interface de rede([NIC](https://pt.wikipedia.org/wiki/Placa_de_rede)) e carregará automaticamente o módulo necessário. Busque pela entrada "Ethernet controller"(ou similar) no resultado do comando `lspci -v`. Este comando dirá qual módulo do kernel é necessário para o funcionamento do dispositivo. Por exemplo:
 
  `$ lspci -v` 
 ```
@@ -220,7 +220,7 @@ Prova real:
 
 ## Configurando endereços IP
 
-Você possui duas opções: Endereços dinâmicos através de [DHCP](http://pt.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) ou um endereço "estático".
+Você possui duas opções: Endereços dinâmicos através de [DHCP](https://pt.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) ou um endereço "estático".
 
 ### Endereço IP dinâmico
 
@@ -284,9 +284,9 @@ Há várias razões que levam a utilização de um IP estático de rede. Os bene
 Você precisa de:
 
 *   Endereço estático
-*   [Máscara de rede](http://pt.wikipedia.org/wiki/M%C3%A1scara_de_rede)
-*   [Endereço de broadcast](http://pt.wikipedia.org/wiki/Endere%C3%A7o_de_broadcast)
-*   Endereço IP do [gateway](http://pt.wikipedia.org/wiki/Gateway)
+*   [Máscara de rede](https://pt.wikipedia.org/wiki/M%C3%A1scara_de_rede)
+*   [Endereço de broadcast](https://pt.wikipedia.org/wiki/Endere%C3%A7o_de_broadcast)
+*   Endereço IP do [gateway](https://pt.wikipedia.org/wiki/Gateway)
 
 Se você estiver em uma rede privada, é seguro atribuir endereços ip 192.168.*.* com a máscara de rede 255.255.255.0 e broadcast 192.168.*.255\. O gateway geralmente possui os endereços 192.168.*.1 ou 192.168.*.254.
 
@@ -306,7 +306,7 @@ Exemplo:
 
 ```
 
-**Note:** A máscara de rede deve ser atribuída na notação [CIDR](http://pt.wikipedia.org/wiki/CIDR).
+**Note:** A máscara de rede deve ser atribuída na notação [CIDR](https://pt.wikipedia.org/wiki/CIDR).
 
 Para maiores opções veja `man ip`.
 

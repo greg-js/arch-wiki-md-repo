@@ -17,7 +17,7 @@ Per l'installazione di KDE e di numerose applicazioni sono raccomandati almeno 3
 
 ## Ottenere il CD
 
-Un cd di Arch Linux può essere usato per installare Arch sulla chiave USB, avviando il sistema da CD e lanciando `/arch/setup` per far partire l'AIF. Oppure, se si dispone di un altro computer con Linux (non è necessario che sia Arch), è possibile seguire le istruzioni di [Installazione da un sistema Linux esistente](/index.php/Install_from_Existing_Linux_(Italiano) "Install from Existing Linux (Italiano)"), e saltare direttamente alla parte di configurazione.
+Un cd di Arch Linux può essere usato per installare Arch sulla chiave USB, avviando il sistema da CD e lanciando `/arch/setup` per far partire l'AIF. Oppure, se si dispone di un altro computer con Linux (non è necessario che sia Arch), è possibile seguire le istruzioni di [Installazione da un sistema Linux esistente](/index.php/Install_from_existing_Linux_(Italiano) "Install from existing Linux (Italiano)"), e saltare direttamente alla parte di configurazione.
 
 ## Installazione
 
@@ -25,7 +25,7 @@ Eseguire l'installer (`/arch/setup`). Il processo di installazione può essere e
 
 *   E' consigliato partizionare manualmente il disco, dal momento che il partizionamento automatico potrebbe non funzionare, e creare partizioni non necessarie.
 *   Se cfdisk dovesse fallire restituendo l'errore fatale "Partition ends in the final partial cylinder", l'unica soluzione è chiudere tutte le partizioni presenti sul supporto USB. Spostarsi in un altro terminale (come ad esempio `Alt + F2`), usare il comando `fdisk /dev/sdX` (dove `sdX` è ovviamente il supporto che si sta utilizzando), stampare la tabella delle partizioni (p), controllare che sia tutto a posto, cancellare (d) e scrivere i cambiamenti (w). Ora tornare a cfdisk.
-*   E' altamente consigliato consultare [I consigli per minimizzare letture e scritture](https://wiki.archlinux.org/index.php/SSD#Tips_for_Minimizing_SSD_Read.2FWrites) sugli [SSD)](/index.php/Solid_State_Drives_(Italiano) "Solid State Drives (Italiano)") prima di selezionare un filesystem. Per riassumere, ext4 senza un sistema di journal dovrebbe andare bene. Ricordare che quel tipo di flash ha un numero limitato di scritture e un sistema di journaling utilizzerà una parte di esse. Per la stessa ragione, è meglio anche non utilizzare una partizione di swap. Notare che questo non influenzerà l'installazione su un disco USB.
+*   E' altamente consigliato consultare [I consigli per minimizzare letture e scritture](/index.php/SSD#Tips_for_minimizing_disk_reads.2Fwrites "SSD") sugli [SSD)](/index.php/Solid_State_Drives_(Italiano) "Solid State Drives (Italiano)") prima di selezionare un filesystem. Per riassumere, ext4 senza un sistema di journal dovrebbe andare bene. Ricordare che quel tipo di flash ha un numero limitato di scritture e un sistema di journaling utilizzerà una parte di esse. Per la stessa ragione, è meglio anche non utilizzare una partizione di swap. Notare che questo non influenzerà l'installazione su un disco USB.
 *   Editare il file `/etc/mkinitcpio.conf` ed aggiungere `usb` alla stringa degli hooks dopo `udev`. Questo serve a compilare adeguatamente il modulo necessario ad ogni aggiornamento del kernel.
 
 ## Configurazione
@@ -109,7 +109,7 @@ KERNEL=="sd**", SYSFS{product}=="DataTraveler 2.0", SYMLINK+="WHATEVERYOUWANTOTC
 
 ### Ottimizzare il tempo di vita delle memorie flash
 
-*   E' altamente consigliato consultare [Consigli per minimizzare letture e scritture](https://wiki.archlinux.org/index.php/SSD#Tips_for_Minimizing_SSD_Read.2FWrites) sull'artico del wiki dedicato alle [SSD](/index.php/Solid_State_Drives_(Italiano) "Solid State Drives (Italiano)").
+*   E' altamente consigliato consultare [Consigli per minimizzare letture e scritture](/index.php/SSD#Tips_for_minimizing_disk_reads.2Fwrites "SSD") sull'artico del wiki dedicato alle [SSD](/index.php/Solid_State_Drives_(Italiano) "Solid State Drives (Italiano)").
 
 ## Da consultare
 

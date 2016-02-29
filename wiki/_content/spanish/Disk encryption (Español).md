@@ -429,7 +429,7 @@ En la práctica, podría resultar algo así:
 	cifrado completo del sistema —disco duro entero— (excepto la partición /boot), cifrado con [dm-crypt con LUKS](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")
 └──> desbloqueado durante el arranque, mediante frases de contraseña o desde una memoria USB con un archivo de claves
 └──> se pueden tener diferentes frases/claves por usuario, independientes y revocables
-└──> el cifrado puede abarcar múltiples unidades o permitir flexibilidad en el esquema de particionado con [LUKS sobre LVM](/index.php/Dm-crypt/Encrypting_an_Entire_System_(Espa%C3%B1ol)#LUKS_sobre_LVM "Dm-crypt/Encrypting an Entire System (Español)")
+└──> el cifrado puede abarcar múltiples unidades o permitir flexibilidad en el esquema de particionado con [LUKS sobre LVM](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#LUKS_sobre_LVM "Dm-crypt/Encrypting an entire system (Español)")
 
 	Ejemplo 5
 
@@ -460,7 +460,7 @@ Antes de configurar el cifrado de un disco (o parte de él), considere realizar 
 
 El segundo objetivo solo tiene sentido en combinación con el cifrado de dispositivos de bloques, ya que en el caso del cifrado de sistemas de archivos apilados, los datos cifrados se pueden localizar fácilmente de todos modos (en forma de archivos cifrados distintos en el sistema de archivos anfitrión). También tenga en cuenta que, incluso si solo se va a cifrar una carpeta en particular, tendrá que borrar la partición entera si quiere deshacerse de los archivos que estaban almacenados previamente en esa carpeta sin cifrar (debido a la [fragmentación del disco](https://en.wikipedia.org/wiki/es:Fragmentaci%C3%B3n_de_un_sistema_de_ficheros "wikipedia:es:Fragmentación de un sistema de ficheros")). Si hay otras carpetas en la misma partición, habrá que hacerles una copia de respaldo y restablecerlas de nuevo más tarde.
 
-Una vez que haya decidido qué tipo de borrado de disco desea realizar, remítase al artículo [Securely_wipe_disk](/index.php/Securely_wipe_disk "Securely wipe disk") para conocer instrucciones más técnicas.
+Una vez que haya decidido qué tipo de borrado de disco desea realizar, remítase al artículo [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk") para conocer instrucciones más técnicas.
 
 **Sugerencia:** Al decidir qué método utilizar para el borrado seguro de una unidad de disco duro, recuerde que esto no será necesario realizarlo más que una vez durante el tiempo que la unidad se utiliza como una unidad cifrada.
 
@@ -630,7 +630,7 @@ La modalidad más básica (y común) de operar utilizada en la práctica es la d
 
 Al descifrar, el procedimiento se invierte de forma análoga.
 
-Una cosa a destacar es la generación del vector de inicialización único para cada sector. La opción más sencilla consiste en calcularlo de una manera predecible a partir de un valor fácilmente disponible, como puede ser el número del sector. Sin embargo, esto podría permitir que un atacante con acceso reiterado al sistema pudiera realizar el llamado [watermarking attack](http://en.wikipedia.org/wiki/Watermarking_attack). Para evitar esto, un método llamado «Encrypted salt-sector initialization vector (**ESSIV**)» se puede utilizar para generar vectores de inicialización de una manera que hace que se vean completamente aleatorios por un atacante potencial.
+Una cosa a destacar es la generación del vector de inicialización único para cada sector. La opción más sencilla consiste en calcularlo de una manera predecible a partir de un valor fácilmente disponible, como puede ser el número del sector. Sin embargo, esto podría permitir que un atacante con acceso reiterado al sistema pudiera realizar el llamado [watermarking attack](https://en.wikipedia.org/wiki/Watermarking_attack "wikipedia:Watermarking attack"). Para evitar esto, un método llamado «Encrypted salt-sector initialization vector (**ESSIV**)» se puede utilizar para generar vectores de inicialización de una manera que hace que se vean completamente aleatorios por un atacante potencial.
 
 También hay otras opciones disponibles, modalidades de operación más complicadas para cifrar el disco, que ya ofrecen seguridad integrada contra este tipo de ataques (y, por lo tanto, no requieren ESSIV). Otras opciones también pueden garantizar, además, la autenticidad de los datos cifrados (es decir, confirmar que no se han modificado/corrompido por alguien que no tiene acceso a la clave).
 

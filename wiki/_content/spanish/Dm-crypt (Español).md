@@ -1,6 +1,6 @@
 <center>**Subpáginas de dm-crypt**</center>
 
-<center>[Preparar la unidad](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") — [Cifrar un dispositivo](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption") — [Cifrar el espacio de intercambio](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") — [Cifrar un sistema de archivos no root](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system") — [Cifrar un sistema completo](/index.php/Dm-crypt/Encrypting_an_Entire_System_(Espa%C3%B1ol) "Dm-crypt/Encrypting an Entire System (Español)") — [Configurar el sistema](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration") — [Especialidades](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties")</center>
+<center>[Preparar la unidad](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") — [Cifrar un dispositivo](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption") — [Cifrar el espacio de intercambio](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") — [Cifrar un sistema de archivos no root](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system") — [Cifrar un sistema completo](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)") — [Configurar el sistema](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration") — [Especialidades](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties")</center>
 
 * * *
 
@@ -65,4 +65,4 @@ Véase [Dm-crypt/Specialties](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialt
 *   [dm-crypt](https://code.google.com/p/cryptsetup/wiki/DMCrypt) - The project homepage
 *   [cryptsetup](http://code.google.com/p/cryptsetup/) - The LUKS homepage and [FAQ](https://code.google.com/p/cryptsetup/wiki/FrequentlyAskedQuestions) - the main and foremost help resource.
 *   [cryptsetup repository](https://git.kernel.org/cgit/utils/cryptsetup/cryptsetup.git/) and [release](https://www.kernel.org/pub/linux/utils/cryptsetup/) archive.
-*   [FreeOTFE](https://en.wikipedia.org/wiki/FreeOTFE) - Supports unlocking LUKS encrypted volumes in Microsoft Windows.
+*   [FreeOTFE](https://en.wikipedia.org/wiki/FreeOTFE "wikipedia:FreeOTFE") - Supports unlocking LUKS encrypted volumes in Microsoft Windows.

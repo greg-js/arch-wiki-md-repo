@@ -270,7 +270,7 @@ Questa è una lista selettiva, ma riporta la maggior parte dei font reperibili s
 *   [ttf-kochi-substitute](https://aur.archlinux.org/packages/ttf-kochi-substitute/) - Font giapponesi TrueType di alta qualità. Forniscono informazioni "bitmap hinting", quindi sono curati e non risultano frastagliati nella visualizzazione su schermi CRT.
 *   [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont) - Set di font giapponesi gothic (san-serif) e Mincho (serif); uno dei font open source di migliore qualità. Di default su openSUSE-ja. *(AUR)*
 *   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - Font giapponesi gothic. Default su Debian/Fedora/Vine Linux *(AUR)*
-*   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - Font giapponesi per visualizzare correttamente [2channel Shift JIS art](http://en.wikipedia.org/wiki/2channel_Shift_JIS_art). *(AUR)*
+*   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - Font giapponesi per visualizzare correttamente [2channel Shift JIS art](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art"). *(AUR)*
 
 ##### Coreano
 
@@ -464,7 +464,7 @@ CONSOLEFONT="lat2-16"
 
 ```
 
-Ciò significa che la seconda parte dei caratteri ISO/IEC 8859 sono usati con il formato 16\. È possibile modificare la dimensione del carattere usando altri valori come lat2-08...16\. Per le regioni soggette alle specifiche 8859, vedere [Wikipedia](http://en.wikipedia.org/wiki/ISO/IEC_8859#The_Parts_of_ISO.2FIEC_8859). Si possono usare i caratteri Terminus, consigliati se si lavora molto in console senza server X. Per esempio ter-216b è latin-2 part, dimensione 16, grassetto. ter-216n è lo stesso, ma con peso normale. I font Terminus hanno dimensioni fino a 32.
+Ciò significa che la seconda parte dei caratteri ISO/IEC 8859 sono usati con il formato 16\. È possibile modificare la dimensione del carattere usando altri valori come lat2-08...16\. Per le regioni soggette alle specifiche 8859, vedere [Wikipedia](https://en.wikipedia.org/wiki/ISO/IEC_8859#The_Parts_of_ISO.2FIEC_8859 "wikipedia:ISO/IEC 8859"). Si possono usare i caratteri Terminus, consigliati se si lavora molto in console senza server X. Per esempio ter-216b è latin-2 part, dimensione 16, grassetto. ter-216n è lo stesso, ma con peso normale. I font Terminus hanno dimensioni fino a 32.
 
 Ora, impostare il keymap corretto; per lat2-16 sarà:
 

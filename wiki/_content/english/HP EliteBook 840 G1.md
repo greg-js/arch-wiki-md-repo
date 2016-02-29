@@ -64,7 +64,7 @@ or
 
 ### Encryption
 
-This notebook supports [HDD FDE (SED)](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption#Hard_disk_drive_FDE). The HDD/SSD can be locked by setting a password in the UEFI pre-boot graphical environment under the option "DriveLock" (this requires setting a password for the UEFI pre-boot graphical environment first). If you replace the HDD/SSD, make sure to get a compatible one to make use of this feature.
+This notebook supports [HDD FDE (SED)](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption#Hard_disk_drive_FDE "wikipedia:Hardware-based full disk encryption"). The HDD/SSD can be locked by setting a password in the UEFI pre-boot graphical environment under the option "DriveLock" (this requires setting a password for the UEFI pre-boot graphical environment first). If you replace the HDD/SSD, make sure to get a compatible one to make use of this feature.
 
 Otherwise, see [Disk encryption](/index.php/Disk_encryption "Disk encryption") for software-based encryption.
 

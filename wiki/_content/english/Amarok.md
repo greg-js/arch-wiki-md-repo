@@ -46,7 +46,7 @@ Then go to *Settings > Configure Amarok* and check "Show moodbar in progress sli
 
 ## SHOUTcast
 
-For reasons which have not been adequately explained Amarok developers have removed the SHOUTcast Internet radio features from version 2.1.90 onwards. See the [discussion page](https://wiki.archlinux.org/index.php/Talk:Amarok_2#Shoutcast), the forum [here](http://forum.kde.org/viewtopic.php?f=116&t=83718) and the thread starting [here](http://mail.kde.org/pipermail/amarok/2009-November/009696.html).
+For reasons which have not been adequately explained Amarok developers have removed the SHOUTcast Internet radio features from version 2.1.90 onwards. See the [discussion page](/index.php/Talk:Amarok_2#Shoutcast "Talk:Amarok 2"), the forum [here](http://forum.kde.org/viewtopic.php?f=116&t=83718) and the thread starting [here](http://mail.kde.org/pipermail/amarok/2009-November/009696.html).
 
 You can get back SHOUTcast by using the "SHOUTcast service" script. Start Amarok, go *Tools > Script Manager > Get More Scripts*, search for *SHOUTcast* install *Shoutcast Service*, restart Amarok. Then you have it in "Internet" context.
 

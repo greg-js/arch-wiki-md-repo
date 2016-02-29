@@ -11,7 +11,7 @@ A Master Boot Record (MBR) egy tárolóeszköz első 512 bájtja. Az MBR nem val
 
 ## Rendszerindítás (Boot)
 
-A bootolás több szakaszból áll. A legtöbb PC a hardver alkotóelemeit a [BIOS](http://en.wikipedia.org/wiki/BIOS)-nak (Basic Input/Output System) nevezett firmware segítségével inicializálja, mely rendszerint az alaplap erre külön kijelölt ROM chipjében foglal helyet. Miután a hardverelemek inicializálásra kerültek, a BIOS az az első felismert tárolóegységen (merevlemez, SSD, CD/DVD, USB eszköz) MBR-én megkeresi a rendszerbetöltőt, vagy ezen eszköz első partícióján. Ezt a programot aztán végrehajtja. A rendszerbetöltő beolvassa a partíciós táblát, majd betölti a megfelelő partícióról az operációs rendszert. A leggyakoribb GNU/Linux rendszerbetöltők manapság a [GRUB](/index.php/GRUB "GRUB") és a [Syslinux](/index.php/Syslinux "Syslinux").
+A bootolás több szakaszból áll. A legtöbb PC a hardver alkotóelemeit a [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS")-nak (Basic Input/Output System) nevezett firmware segítségével inicializálja, mely rendszerint az alaplap erre külön kijelölt ROM chipjében foglal helyet. Miután a hardverelemek inicializálásra kerültek, a BIOS az az első felismert tárolóegységen (merevlemez, SSD, CD/DVD, USB eszköz) MBR-én megkeresi a rendszerbetöltőt, vagy ezen eszköz első partícióján. Ezt a programot aztán végrehajtja. A rendszerbetöltő beolvassa a partíciós táblát, majd betölti a megfelelő partícióról az operációs rendszert. A leggyakoribb GNU/Linux rendszerbetöltők manapság a [GRUB](/index.php/GRUB "GRUB") és a [Syslinux](/index.php/Syslinux "Syslinux").
 
 ## Történet
 

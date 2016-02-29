@@ -1064,7 +1064,7 @@ Check if `$ lspci | grep VGA` outputs something similar to:
 
 ```
 
-NVIDIA drivers now offer Optimus support since 319.12 Beta [[[5]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html)] with kernels above and including 3.9.
+NVIDIA drivers now offer Optimus support since 319.12 Beta [[5]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html) with kernels above and including 3.9.
 
 Another solution is to install the [Intel](/index.php/Intel "Intel") driver to handle the screens, then if you want 3D software you should run them through [Bumblebee](/index.php/Bumblebee "Bumblebee") to tell them to use the NVIDIA card.
 

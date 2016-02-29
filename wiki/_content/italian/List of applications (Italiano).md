@@ -3628,5 +3628,5 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 *   [http://lin-app.com/](http://lin-app.com/) - Servizio di nformazioni on-line di famose applicazioni commerciali e giochi per Linux
 *   [Linux game database](http://www.lgdb.org/)
 *   [Penguspy](http://www.penguspy.com/#/All/free_and_commercial/open_closed/sort=1/view=1/limit=0)
-*   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
+*   [Lists of Linux games on Wikipedia](https://en.wikipedia.org/wiki/Category:Linux_games "wikipedia:Category:Linux games")
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)

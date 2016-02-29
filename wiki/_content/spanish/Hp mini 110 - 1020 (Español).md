@@ -20,7 +20,7 @@
 
 Esta es una guía diferencial para instalar ArchLinux en una Netbook HP mini note 110-1020.
 
-Es como yo instale en la mia, un modelo 1020LA (con teclado en español) y les indica solo las particularidades, para el proceso general se deben referir al correspondiente artículo [Guía para principiantes](https://wiki.archlinux.org/index.php/Guía_para_Principiantes).
+Es como yo instale en la mia, un modelo 1020LA (con teclado en español) y les indica solo las particularidades, para el proceso general se deben referir al correspondiente artículo [Guía para principiantes](/index.php/Gu%C3%ADa_para_Principiantes "Guía para Principiantes").
 
 ## Primero
 
@@ -38,7 +38,7 @@ de un plumazo pongan en la lista negra el módulo de broadcom (placa wireless) "
 
 [Agosto 2010] Desde el kernel 2.6.35 el módulo B43 funciona bien y es más estable que el de Broadcom. Sin embargo, el procedimiento para comenzar la conexion/desconexion es notablemente más largo. Eso es especialmente molesto a la hora de suspender la computadora ya que demora varios segundos para hacerlo.
 
-Por el resto, desde el kernel 2.6.33 que solo funciona el driver intel con KMS, y realmente es una maravilla, por fin dejé de tener problemas de video, para pasar a una estabilidad ideal. Para activar KMS tienen el siguiente artículo en la wiki: [Intel (ver KMS)](https://wiki.archlinux.org/index.php/Intel).
+Por el resto, desde el kernel 2.6.33 que solo funciona el driver intel con KMS, y realmente es una maravilla, por fin dejé de tener problemas de video, para pasar a una estabilidad ideal. Para activar KMS tienen el siguiente artículo en la wiki: [Intel (ver KMS)](/index.php/Intel "Intel").
 
 Para futuras referencias el teclado responde a la distribución latinoamericana en el caso del modelo 1020LA, cuando editan /etc/rc.conf en la sección KEYMAP ponen "la-latin1" y todo va sobre ruedas en los inicios subsiguientes
 
@@ -68,7 +68,7 @@ setxkbmap latam,es,us
 
 ## Sobre las interfaces de red
 
-Artículo a leer: [Broadcom BCM4312](https://wiki.archlinux.org/index.php/Broadcom_BCM4312) especialmente la sección sobre como evitar que intercambien las interfaces sus nombres: eth0 <==> eth1
+Artículo a leer: [Broadcom BCM4312](/index.php/Broadcom_BCM4312 "Broadcom BCM4312") especialmente la sección sobre como evitar que intercambien las interfaces sus nombres: eth0 <==> eth1
 
 les sugiero que el archivo /etc/udev/rules.d/10-network.rules lo dejen así:
 
@@ -123,11 +123,11 @@ El ultimo numero es la cuenta. Tengan a consideracion que la vida util de los di
 
 ### Entorno gráfico
 
-Mi recomendación: [XFCE](https://wiki.archlinux.org/index.php/Xfce) o [LXDE](https://wiki.archlinux.org/index.php/LXDE); ambos son muy buenos, ligeros y rápidos. Mi elección: XFCE, es más facilmente configurable sobretodo a la hora de usar atajos de teclado, y tiene muchos plugins interesantes.
+Mi recomendación: [Xfce](/index.php/Xfce "Xfce") o [LXDE](/index.php/LXDE "LXDE"); ambos son muy buenos, ligeros y rápidos. Mi elección: XFCE, es más facilmente configurable sobretodo a la hora de usar atajos de teclado, y tiene muchos plugins interesantes.
 
 ### Gestor de redes
 
-Casi obligado es usar [WICD](https://wiki.archlinux.org/index.php/Wicd), rápido, ligero y siempre anda. No tiene dependencias pesadas y anda perfectamente con cualquiera de los dos escritorios arriba nombrados.
+Casi obligado es usar [WICD](/index.php/Wicd "Wicd"), rápido, ligero y siempre anda. No tiene dependencias pesadas y anda perfectamente con cualquiera de los dos escritorios arriba nombrados.
 
 ### Navegador web
 
@@ -137,7 +137,7 @@ Tengan en cuenta que Chromium no se lleva bien con los proxy, asi que si van a n
 
 ### Optimizaciones
 
-Hay varias, aqui van a encontrar las más comunes y recomendadas: [Acelerar el arranque](https://wiki.archlinux.org/index.php/Speedup_boot); aunque yo solo recomiendo alterar la secuencia de carga de los daemons en el rc.conf para manejar el tiempo de arranque, poniendo una "@" delante de todos, menos hal y los daemons de red como "network" ó "wicd".
+Hay varias, aqui van a encontrar las más comunes y recomendadas: [Acelerar el arranque](/index.php/Speedup_boot "Speedup boot"); aunque yo solo recomiendo alterar la secuencia de carga de los daemons en el rc.conf para manejar el tiempo de arranque, poniendo una "@" delante de todos, menos hal y los daemons de red como "network" ó "wicd".
 
 ### Kernel personalizado
 
@@ -147,11 +147,11 @@ Cuando termine de armar el paquete para AUR que funcione bien incluiré aquí la
 
 ### Make CFlags para compilar
 
-Editen el [makepkg.conf](https://wiki.archlinux.org/index.php/Makepkg.conf) para que compile con las optimizaciones para su procesador específico.
+Editen el [makepkg.conf](/index.php/Makepkg.conf "Makepkg.conf") para que compile con las optimizaciones para su procesador específico.
 
 ## Software ligero
 
-No dejen de leer este artículo: [Aplicaciones Ligeras](https://wiki.archlinux.org/index.php/Lightweight_Applications)
+No dejen de leer este artículo: [Aplicaciones Ligeras](/index.php/Lightweight_Applications "Lightweight Applications")
 
 Parte del soft que elegí con mucho esmero para mi netbook es el que listo aquí:
 

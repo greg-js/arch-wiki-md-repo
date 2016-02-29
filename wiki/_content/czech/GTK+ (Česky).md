@@ -82,10 +82,10 @@ gtk-font-name = "DejaVu Sans 8"
 
 ### GTK a QT
 
-Pokud máte na svém desktopu aplikace pro GTK i Qt (KDE), víte, že jejich vzhledy spolu moc neladí. Pokud si přejete změnit styl GTK tak, aby následoval styl Qt nebo naopak, přečtěte si [Uniform Look for QT and GTK Applications (anglicky)](/index.php/Uniform_Look_for_QT_and_GTK_Applications "Uniform Look for QT and GTK Applications").
+Pokud máte na svém desktopu aplikace pro GTK i Qt (KDE), víte, že jejich vzhledy spolu moc neladí. Pokud si přejete změnit styl GTK tak, aby následoval styl Qt nebo naopak, přečtěte si [Uniform Look for QT and GTK Applications (anglicky)](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
 ## Zdroje
 
 *   [Oficiální stránky GTK (anglicky)](http://www.gtk.org/)
 *   [Tutoriál pro GTK2 (anglicky)](http://www.gtk.org/tutorial/)
-*   [Článek o GTK na Wikipedii (anglicky)](http://en.wikipedia.org/wiki/GTK%2B)
+*   [Článek o GTK na Wikipedii (anglicky)](https://en.wikipedia.org/wiki/GTK%2B "wikipedia:GTK+")

@@ -48,7 +48,7 @@ Si noti che a partire dal 19 febbraio Amarok 2 NON genera moodfile, è possibile
 
 ## SHOUTcast
 
-Per ragioni che non sono state adeguatamente spiegate gli sviluppatori di Amarok hanno tolto le SHOUTcast Internet radio features dalla versione 2.1.90 in poi. Si può dare un'occhiata alla [pagina di discussione](https://wiki.archlinux.org/index.php/Talk:Amarok_2#Shoutcast), [qui](http://forum.kde.org/viewtopic.php?f=116&t=83718) al forum e alla discussione partita [qui](http://mail.kde.org/pipermail/amarok/2009-November/009696.html).
+Per ragioni che non sono state adeguatamente spiegate gli sviluppatori di Amarok hanno tolto le SHOUTcast Internet radio features dalla versione 2.1.90 in poi. Si può dare un'occhiata alla [pagina di discussione](/index.php/Talk:Amarok_2#Shoutcast "Talk:Amarok 2"), [qui](http://forum.kde.org/viewtopic.php?f=116&t=83718) al forum e alla discussione partita [qui](http://mail.kde.org/pipermail/amarok/2009-November/009696.html).
 
 Si può tornare a SHOUTcast usando lo script "SHOUTcast service". Avviare Amarok, andare in "Impastazioni" -> "Configura Amarok" -> Tab "Script" -> "Gestisci gli script" -> cercare SHOUTcast -> installare il servizio Shoutcast, riavviare Amarok. Si ha poi nel contesto "Internet".
 

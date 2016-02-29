@@ -70,11 +70,7 @@
 
 硬盘镜像是一个文件，存储虚拟机硬盘上的内容。除非直接从 CD-ROM 或网络引导并且不安装系统到本地，运行 QEMU 时都需要硬盘镜像。
 
-To run QEMU you will need a hard disk image, unless you are booting a live system from CD-ROM or the network (and not doing so to install an operating system to a hard disk image). A hard disk image is a file which stores the contents of the emulated hard disk.
-
-A hard disk image can be *raw*, so that it is literally byte-by-byte the same as what the guest sees, and will always use the full capacity of the guest hard drive on the host. This method provides the least I/O overhead, but can waste a lot of space, as not-used space on the guest cannot be used on the host.
-
-Alternatively, the hard disk image can be in a format such as *qcow2* which only allocates space to the image file when the guest operating system actually writes to those sectors on its virtual hard disk. The image appears as the full size to the guest operating system, even though it may take up only a very small amount of space on the host system. Using this format instead of *raw* will likely affect performance.
+一个硬盘镜像可能是 *raw*镜像, 和客户机器上看到的内容一模一样，主机上占用的空间客户机上的大小一样。这个方式 I/O 效率最高，但是因为客户机器上没使用的空间也被占用，所以有点浪费空间。另外一种方式是*qcow2* 格式，仅当客户系统实际写入内容的时候，才会分配镜像空间。对客户机器来说，硬盘大小是完整大小，但是在主机系统上实际仅占用和很小的空间。使用这种方式会影响效率.
 
 QEMU 提供 `qemu-img`命令创建硬盘镜像.例如创建一个 4 GB *raw* 格式的镜像:
 
@@ -85,9 +81,9 @@ $ qemu-img create -f raw *image_file* 4G
 
 您可以用 `-f qcow2` 改为创建一个 *qcow2* 磁盘
 
-**Note:** You can also simply create a *raw* image by creating a file of the needed size using `dd` or `fallocate`.
+用 `dd` 或 `fallocate` 也可以创建一个 *raw* 镜像。
 
-**Warning:** If you store the hard disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") for the directory before creating any images.
+**Warning:** 如果硬盘镜像存储在 [Btrfs](/index.php/Btrfs "Btrfs") 系统上，在创建前请考虑禁用 [写时复制](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs")。
 
 #### Overlay storage images
 

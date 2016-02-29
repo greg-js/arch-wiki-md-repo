@@ -135,7 +135,7 @@ WantedBy = multi-user.target
 
 **Note:** `--foreground` is needed and not optional.
 
-Finally, [start/enable](https://wiki.archlinux.org/index.php/Systemd) your newly created `openvas-manager` and `gsa` services in addition to `openvas-scanner` if you haven't already started it.
+Finally, [start/enable](/index.php/Systemd "Systemd") your newly created `openvas-manager` and `gsa` services in addition to `openvas-scanner` if you haven't already started it.
 
 **Note:** `openvas-manager` should start immediately but will take time to load NVTs. You won't be able to start scanning until all NVTs are loaded.
 

@@ -264,7 +264,7 @@ PermitRootLogin no
 
 You could also uncomment the BANNER option and edit `/etc/issue` for a nice welcome message.
 
-**Tip:** You may want to change the default port from 22 to any higher port (see [security through obscurity](http://en.wikipedia.org/wiki/Security_through_obscurity)).
+**Tip:** You may want to change the default port from 22 to any higher port (see [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity")).
 
 Even though the port ssh is running on could be detected by using a port-scanner like nmap, changing it will reduce the number of log entries caused by automated authentication attempts. To help select a port review the [list of TCP and UDP port numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers").
 

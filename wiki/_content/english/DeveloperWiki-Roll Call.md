@@ -131,6 +131,8 @@
 *   Jakob Gruber
     *   Packaging
 *   Jaroslav Lichtblau
+    *   Packaging
+    *   AUR requests
 *   Jelle van der Waa
     *   Packaging (Random Python modules, XMonad/XMobar and Haskell related packages)
     *   IRC Op #archlinux, #archlinux-offtopic, (TU channel OP too)

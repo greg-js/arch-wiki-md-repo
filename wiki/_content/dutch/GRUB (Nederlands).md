@@ -335,7 +335,7 @@ Voor gebruiksgemak zou je de "[Allow users to shutdown](/index.php/Allow_users_t
 
 ## LiLO en GRUB interactie
 
-Als je ooit [lilo](/index.php/Lilo "Lilo") gebruikte, vergeet dan niet om het te verwijderen met:
+Als je ooit [LILO](/index.php/LILO "LILO") gebruikte, vergeet dan niet om het te verwijderen met:
 
 ```
 pacman -R lilo
@@ -346,9 +346,9 @@ omdat sommige taken (bijvoorbeeld een kernel compilatie met `make all`) een lilo
 
 ## Framebuffer Resolutie
 
-Je kunt de resoluties gebruiken, die in het menu.lst bestand van [grub](/index.php/Grub "Grub") staan. Je zult echter liever je LCD wide-screen op zijn eigenlijke resolutie willen gebruiken. Hier is wat je kunt doen om dit te bereiken:
+Je kunt de resoluties gebruiken, die in het menu.lst bestand van [GRUB](/index.php/GRUB "GRUB") staan. Je zult echter liever je LCD wide-screen op zijn eigenlijke resolutie willen gebruiken. Hier is wat je kunt doen om dit te bereiken:
 
-Op [wikipedia](http://en.wikipedia.org/wiki/VESA_BIOS_Extensions#Linux_video_mode_numbers) staat een lijst van extended framebuffer resoluties (degenen die niet bij de VBE standaard horen). Maar, bijvoorbeeld, degene die ik wil gebruiken is 1440x900 de vga=867 optie werkt niet. Mischien omdat deze resoluties buiten de standaard vallen en de fabrikant van de grafische kaart een andere code gebruikt.
+Op [wikipedia](https://en.wikipedia.org/wiki/VESA_BIOS_Extensions#Linux_video_mode_numbers "wikipedia:VESA BIOS Extensions") staat een lijst van extended framebuffer resoluties (degenen die niet bij de VBE standaard horen). Maar, bijvoorbeeld, degene die ik wil gebruiken is 1440x900 de vga=867 optie werkt niet. Mischien omdat deze resoluties buiten de standaard vallen en de fabrikant van de grafische kaart een andere code gebruikt.
 
 In plaats van het gebruiken van die tabel, suggereer ik deze methode:
 

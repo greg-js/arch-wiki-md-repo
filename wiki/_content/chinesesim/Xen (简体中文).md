@@ -180,7 +180,7 @@ See [Network bridge#Creating a bridge](/index.php/Network_bridge#Creating_a_brid
 
 ### Creating bridge with Network Manager
 
-Gnome's Network Manager can sometime be troublesome. If following the bridge creation section outlined in the [bridges](https://wiki.archlinux.org/index.php/Network_bridge) section of the wiki are unclear or do not work, then the following steps may work.
+Gnome's Network Manager can sometime be troublesome. If following the bridge creation section outlined in the [bridges](/index.php/Network_bridge "Network bridge") section of the wiki are unclear or do not work, then the following steps may work.
 
 Open the Network Settings and disable the interface you wish to use in your bridge (ex enp5s0). Edit the setting to off and uncheck "connect automatically."
 

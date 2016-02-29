@@ -24,16 +24,16 @@ Esta página describe cómo realizar una instalación normal de Arch en una llav
 
 Hay varias maneras de instalar Arch en una memoria USB, la más sencilla es desde dentro del propio Arch:
 
-*   Si ya estamos ejecutando Arch, bastará con instalar [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) y continuar con la [Installation Guide (Español)](https://wiki.archlinux.org/index.php/Installation_Guide_(Español)) al igual que lo haríamos desde la imagen iso, pero sin utilizar /dev/sda. Utilizaremos `lsblk` para obtener el nombre de /dev/sd* de la llave USB antes de proceder a la instalación.
+*   Si ya estamos ejecutando Arch, bastará con instalar [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) y continuar con la [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") al igual que lo haríamos desde la imagen iso, pero sin utilizar /dev/sda. Utilizaremos `lsblk` para obtener el nombre de /dev/sd* de la llave USB antes de proceder a la instalación.
 
 **Advertencia:** Si por error formateamos /dev/sda, es probable que eliminemos todo el contenido del disco duro.
 
-*   Podemos también utilizar un CD/USB de Arch Linux para instalar Arch en la llave USB, arrancando el CD/USB y siguiendo las instrucciones de la [Installation Guide (Español)](https://wiki.archlinux.org/index.php/Installation_Guide_(Español)). Si arrancamos desde un Live USB, la instalación tendrá que hacerse en una memoria USB diferente.
-*   O bien, si tenemos otro equipo disponible con linux (que no tiene por que ser con Arch), podemos seguir las instrucciones para [instalar desde un sistema linux existente](/index.php/Install_from_Existing_Linux "Install from Existing Linux"), y, a continuación, seguiremos en la sección de configuración.
+*   Podemos también utilizar un CD/USB de Arch Linux para instalar Arch en la llave USB, arrancando el CD/USB y siguiendo las instrucciones de la [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Si arrancamos desde un Live USB, la instalación tendrá que hacerse en una memoria USB diferente.
+*   O bien, si tenemos otro equipo disponible con linux (que no tiene por que ser con Arch), podemos seguir las instrucciones para [instalar desde un sistema linux existente](/index.php/Install_from_existing_Linux "Install from existing Linux"), y, a continuación, seguiremos en la sección de configuración.
 
 ## Instalación
 
-Siga la [Guía de Instalación](https://wiki.archlinux.org/index.php/Installation_Guide) como lo haría normalmente, con las siguientes excepciones:
+Siga la [Guía de Instalación](/index.php/Installation_guide "Installation guide") como lo haría normalmente, con las siguientes excepciones:
 
 *   Si cfdisk falla devolviendo el error fatal *«Partition ends in the final partial cylinder»*, la única manera de proceder es cerrar a todas las particiones en el disco usb. Abra otra terminal presionando (`Alt+F2`), escriba `fdisk/dev/sdX` (donde `sdX` es el disco USB), imprima la tabla de particiones (p), compruebe que todo está bien, bórrelo (d) y escribir los cambios (w). Ahora regrese a cfdisk.
 *   Se recomienda revisar el artículo sobre los [Consejos para minimizar la lectura/escritura del SSD](#Optimizar_la_vida_.C3.BAtil_de_la_memoria_flash) del artículo de la wiki [SSD](/index.php/SSD "SSD") antes de seleccionar un sistema de archivos. En resumen, ext4 con un sistema journal, puede ser adecuado. Recuerde que el flash usb tiene un número limitado de escrituras, y un sistema de archivos journaling utilizará una parte de ellos cada vez que actualice. Por esta misma razón, lo mejor es renunciar a una partición de intercambio. Tenga en cuenta que esto no afecta a la instalación en un disco duro USB.
@@ -148,10 +148,10 @@ La imagen fallback se debe utilizar para obtener una máxima compatibilidad.
 
 ### Optimizar la vida útil de la memoria flash
 
-*   De nuevo, se recomienda revisar los [Consejos para minimizar la lectura/escritura del SSD](/index.php/SSD#Tips_for_Minimizing_SSD_Read.2FWrites "SSD") del artículo de la wiki [SSD](/index.php/SSD "SSD").
+*   De nuevo, se recomienda revisar los [Consejos para minimizar la lectura/escritura del SSD](/index.php/SSD#Tips_for_minimizing_disk_reads.2Fwrites "SSD") del artículo de la wiki [SSD](/index.php/SSD "SSD").
 
 ## Véase también
 
-*   [Installation Guide (Español)](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)")
+*   [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)")
 *   [Installing Arch Linux from VirtualBox](/index.php/Installing_Arch_Linux_from_VirtualBox "Installing Arch Linux from VirtualBox")
 *   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")

@@ -209,7 +209,7 @@ Caso os bancos de dados estejam corrimpidos, e não há backup disponível, exis
 
 ##### Automação no systemd
 
-Você pode configurar o [systemd](https://wiki.archlinux.org/index.php/Systemd) para fazer backups do banco de dados do pacman a cada novo pacote instalado, ou a cada atualização do sistema, através dos scripts que podem ser encontrados [aqui](/index.php/Pacman_tips#Backing_up_Local_database_with_systemd "Pacman tips").
+Você pode configurar o [systemd](/index.php/Systemd "Systemd") para fazer backups do banco de dados do pacman a cada novo pacote instalado, ou a cada atualização do sistema, através dos scripts que podem ser encontrados [aqui](/index.php/Pacman_tips#Backing_up_Local_database_with_systemd "Pacman tips").
 
 ### Melhores práticas genéricas
 

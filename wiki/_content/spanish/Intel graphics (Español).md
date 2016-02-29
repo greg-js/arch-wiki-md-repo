@@ -2,7 +2,7 @@ Desde que Intel desarrolla y proporciona controladores de código abierto, las t
 
 Para obtener una lista completa de los modelos GPU-Intel, y los chipsets y CPUs correspondientes, consulte [esta comparación en la wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
 
-**Nota:** Las tarjetas gráficas basadas en el chip PowerVR (series [GMA 500](/index.php/Poulsbo "Poulsbo") y [GMA 3600](/index.php/Intel_gma3600 "Intel gma3600")) no son compatibles con los controladores de código abierto.
+**Nota:** Las tarjetas gráficas basadas en el chip PowerVR (series [GMA 500](/index.php/GMA_500 "GMA 500") y [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600")) no son compatibles con los controladores de código abierto.
 
 ## Contents
 
@@ -34,7 +34,7 @@ Para obtener una lista completa de los modelos GPU-Intel, y los chipsets y CPUs 
 
 Prerrequisito: [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)").
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Este paquete proporciona el controlador DDX para la aceleración 2D y tira de [intel-dri](https://www.archlinux.org/packages/?name=intel-dri) como una dependencia, proporcionando el controlador DRI para la aceleración 3D.
+[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Este paquete proporciona el controlador DDX para la aceleración 2D y tira de [intel-dri](https://www.archlinux.org/packages/?name=intel-dri) como una dependencia, proporcionando el controlador DRI para la aceleración 3D.
 
 Para soporte 3D de programas de 32 bits que corran en sistemas de x86_64, instale [lib32-intel-dri](https://www.archlinux.org/packages/?name=lib32-intel-dri) desde el repositorio [multilib](/index.php/Multilib "Multilib").
 
@@ -48,9 +48,9 @@ Para ver la lista de opciones, escriba `man intel`
 
 ## KMS (Kernel Mode Setting)
 
-**Sugerencia:** Si tiene problemas con la resolución, compruebe [esta página](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol)#Forzar_modos "Kernel Mode Setting (Español)").
+**Sugerencia:** Si tiene problemas con la resolución, compruebe [esta página](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Forzar_modos "Kernel mode setting (Español)").
 
-[KMS](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol) "Kernel Mode Setting (Español)") es necesario para ejecutar X y el entorno de escritorio, tales como [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), etc. KMS es compatible con el chipset Intel cuando usa el driver i915 DRM, el cual ahora está activado por defecto en el kernel v2.6.32\. Las versiones 2.10 del kernel y las más recientes del driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) ya no dan soporte a UMS (excepto para la antigua familia de chipsets 810), que requieran el uso de KMS obligatoriamente. KMS se suele inicializar normalmente una vez arrancado el kernel. Es posible, sin embargo, habilitar KMS durante la fase de arranque el kernel, permitiendo que todo el proceso de arranque funcione en la resolución nativa.
+[KMS](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)") es necesario para ejecutar X y el entorno de escritorio, tales como [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), etc. KMS es compatible con el chipset Intel cuando usa el driver i915 DRM, el cual ahora está activado por defecto en el kernel v2.6.32\. Las versiones 2.10 del kernel y las más recientes del driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) ya no dan soporte a UMS (excepto para la antigua familia de chipsets 810), que requieran el uso de KMS obligatoriamente. KMS se suele inicializar normalmente una vez arrancado el kernel. Es posible, sin embargo, habilitar KMS durante la fase de arranque el kernel, permitiendo que todo el proceso de arranque funcione en la resolución nativa.
 
 **Nota:** Al utilizar KMS, **es necesario** quitar todas las referencias al obsoleto `vga` o `nomodeset` de la configuración de arranque.
 
@@ -260,7 +260,7 @@ Esta cuestión se aborda en el artículo [Xrandr](/index.php/Xrandr#Adding_undet
 
 ### Lentitud tras una actualización de libGL 9 e Intel-DRI 9
 
-Efectuar un [Downgrade](https://wiki.archlinux.org/index.php/Downgrading_Packages#ARM) para Intel-DRI 8 y libGL 8.
+Efectuar un [Downgrade](/index.php/Downgrading_packages#ARM "Downgrading packages") para Intel-DRI 8 y libGL 8.
 
 ### Texturas en negro en videojuegos
 
@@ -268,7 +268,7 @@ Si está experimentando texturas negras en los juegos de vídeo, la solución pu
 
 Este «problema» se solucionará muy pronto en los [nuevos controladores](http://www.phoronix.com/scan.php?page=news_item&px=MTIwOTg)
 
-Puede leer más sobre la compresión S3TC en: [http://dri.freedesktop.org/wiki/S3TC](http://dri.freedesktop.org/wiki/S3TC) [http://en.wikipedia.org/wiki/S3_Texture_Compression](http://en.wikipedia.org/wiki/S3_Texture_Compression)
+Puede leer más sobre la compresión S3TC en: [http://dri.freedesktop.org/wiki/S3TC](http://dri.freedesktop.org/wiki/S3TC) [wikipedia:S3_Texture_Compression](https://en.wikipedia.org/wiki/S3_Texture_Compression "wikipedia:S3 Texture Compression")
 
 Uno de los juegos que se ve afectado por este problema es [Oil Rush](http://www.phoronix.com/scan.php?page=article&item=unigine_oilrush_gold&num=2) y World of Warcraft usando Wine.
 
@@ -349,11 +349,11 @@ La solución es desactivar la compresión del frame buffer, lo cual aumentará l
 
 ### Alteraciones en Chrome/Chromium
 
-Si experimenta alteraciones en Chrome/Chromium establezca AccelMethod a "UXA" [[8]](https://wiki.archlinux.org/index.php/Intel_%28Espa%C3%B1ol%29#Elegir_el_m.C3.A9todo_de_aceleraci.C3.B3n)
+Si experimenta alteraciones en Chrome/Chromium establezca AccelMethod a "UXA" [#Elegir el método de aceleración](#Elegir_el_m.C3.A9todo_de_aceleraci.C3.B3n)
 
 ## Véase también
 
 *   [http://intellinuxgraphics.org/documentation.html](http://intellinuxgraphics.org/documentation.html) (incluye una lista de hardware compatible)
-*   [KMS](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol) "Kernel Mode Setting (Español)") — Artículo de Arch wiki sobre kernel mode setting
+*   [KMS](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)") — Artículo de Arch wiki sobre kernel mode setting
 *   [Xrandr](/index.php/Xrandr "Xrandr") — Si tiene problemas con la configuración de la resolución
 *   Arch Linux forums: [Intel 945GM, Xorg, Kernel - performance](https://bbs.archlinux.org/viewtopic.php?pid=522665#p522665)

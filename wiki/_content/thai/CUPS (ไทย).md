@@ -259,7 +259,7 @@ MODULES=(!usbserial scsi_mod sd_mod snd-ymfpci snd-pcm-oss printer ide-scsi)
 
 *[http://localhost:631](http://localhost:631)*
 
-หรือติดตั้ง "Gnome Cups Manager" ซึ่งเป็น GUI frontend (โปรดดูภาคผนวกที่ A.1 [การเรียกใช้งาน CUPS ในรูปแบบอื่นๆ](https://wiki.archlinux.org/index.php/CUPS#Alternative_CUPS_Interfaces))
+หรือติดตั้ง "Gnome Cups Manager" ซึ่งเป็น GUI frontend (โปรดดูภาคผนวกที่ A.1 [การเรียกใช้งาน CUPS ในรูปแบบอื่นๆ](/index.php/CUPS#Alternative_CUPS_Interfaces "CUPS"))
 
 จากจุดนี้ไป คุณเพียงแค่ทำตาม Wizard ต่างๆ เพื่อเพิ่มและจัดการกับเครื่องพิมพ์ของคุณ ตัวอย่างคร่าวๆ คือการคลิก *Manage Printers* และคลิกต่อไปที่ *Add Printer* เมื่อระบบถามหาชื่อผู้ใช้และรหัสผ่าน ให้ใส่ *root* และรหัสผ่านของ root จากนั้นใส่ชื่อ, ที่ตั้ง และคำอธิบายอื่นๆ ของเครื่องพิมพ์ หลังจากนั้นคุณจะต้องเลือกอุปกรณ์ และ Driver ที่เหมาะสมกับเครื่องพิมพ์ เป็นอันเสร็จสิ้นการติดตั้งเครื่องพิมพ์
 

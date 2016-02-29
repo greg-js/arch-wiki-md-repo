@@ -1,4 +1,4 @@
-출처 [Wikipedia](https://en.wikipedia.org/wiki/Cron):
+출처 [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
 
 ***cron**은 유닉스 계열 운영 체제의 시간 기반 작업 스케줄러이다. cron을 사용하면 사용자는 명령어나 쉘 스크립트와 같은 작업을 특정 시간이나 날짜에 주기적으로 실행할 수 있도록 일정을 짤 수 있다. 시스템 관리나 작업을 자동화하기 위해 보통 사용된다.[...]*
 
@@ -41,7 +41,7 @@ cron should be working upon login on a new system to run root scripts. This can 
 
 cron registers the output from **stdout** and **stderr** and attempts to send it as email to the user's spools via the `sendmail` command. Cronie disables mail output if `/usr/bin/sendmail` is not found. To log these messages use the `-m` option and write a script or install a rudimentary SMTP subsystem.
 
-1.  [Edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") the `cronie.service` unit.
+1.  [Edit](/index.php/Systemd#Editing_provided_units "Systemd") the `cronie.service` unit.
 2.  Install [esmtp](https://www.archlinux.org/packages/?name=esmtp), [msmtp](https://www.archlinux.org/packages/?name=msmtp), [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) or write a custom script.
 
 #### Example with msmtp
@@ -57,7 +57,7 @@ Here are two ways to obtain emails from cronie with msmtp:
         default: your@email.com
         ```
 
-2.  [Edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") the `cronie.service` unit. For example, create `/etc/sytemd/system/cronie.service.d/msmtp.conf`:
+2.  [Edit](/index.php/Systemd#Editing_provided_units "Systemd") the `cronie.service` unit. For example, create `/etc/sytemd/system/cronie.service.d/msmtp.conf`:
     ```
     [Service]
     ExecStart=

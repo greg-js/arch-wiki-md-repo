@@ -601,7 +601,7 @@ Should this not work, consider disabling `mod_curl` in `/etc/php/php.ini`.
 
 ### Self-signed certificate for Android devices
 
-Once you have followed the setup for SSL, as on [LAMP](https://wiki.archlinux.org/index.php/LAMP#TLS.2FSSL) for example, early versions of DAVdroid will reject the connection because the certificate is not trusted. A certificate can be made as follows on your server:
+Once you have followed the setup for SSL, as on [LAMP](/index.php/LAMP#TLS.2FSSL "LAMP") for example, early versions of DAVdroid will reject the connection because the certificate is not trusted. A certificate can be made as follows on your server:
 
 ```
  # openssl x509 -req -days 365 -in /etc/httpd/conf/server.csr -signkey /etc/httpd/conf/server.key -extfile android.txt -out CA.crt

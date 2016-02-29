@@ -83,7 +83,7 @@ ssh -ND user@localhost -p 8888
 
 **Note:** As SSH thinks it is connecting to localhost it will not recognize the fingerprint and display a warning.
 
-You can now use `localhost:8888` as a [SOCKS](http://en.wikipedia.org/wiki/SOCKS) proxy.
+You can now use `localhost:8888` as a [SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS") proxy.
 
 ### Using proxytunnel
 

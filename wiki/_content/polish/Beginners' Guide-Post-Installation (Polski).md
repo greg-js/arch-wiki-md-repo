@@ -1,4 +1,4 @@
-**Tip:** To część wielostronicowego artykułu Przewodnik Początkującego. **[Kliknij tutaj](/index.php/Beginners%27_Guide_(Polski) "Beginners' Guide (Polski)")** jeśli wolisz czytać przewodnik w całości.
+**Tip:** To część wielostronicowego artykułu Przewodnik Początkującego. **[Kliknij tutaj](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)")** jeśli wolisz czytać przewodnik w całości.
 
 ## Contents
 
@@ -112,7 +112,7 @@ Użycie dwóch parametrów `--refresh` lub `-y` zmusza pacmana do odświeżenia 
 
 #### Inicjalizacja weryfikacji pakietów
 
-Aby zainicjować weryfikację pakietów, możesz postępować według [[poniższych kroków](https://www.archlinux.org/news/having-pacman-verify-packages/)]. Zobacz [Pacman-key](/index.php?title=Pacman-key_(Polski)&action=edit&redlink=1 "Pacman-key (Polski) (page does not exist)") po więcej informacji.
+Aby zainicjować weryfikację pakietów, możesz postępować według [poniższych kroków](https://www.archlinux.org/news/having-pacman-verify-packages/). Zobacz [Pacman-key](/index.php?title=Pacman-key_(Polski)&action=edit&redlink=1 "Pacman-key (Polski) (page does not exist)") po więcej informacji.
 
  `$ pacman-key --init` 
 

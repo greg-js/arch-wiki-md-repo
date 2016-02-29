@@ -186,7 +186,7 @@ La variable `arch` debe contener `'i686'` o `'x86_64'` dependiendo de las arquit
 
 ## Licencias
 
-La variable [licence](https://wiki.archlinux.org/index.php/Licenses) está implementandose en los repositorios oficiales, y también **debes** usarla en tus paquetes. Úsala de la siguiente manera:
+La variable [licence](/index.php/Licenses "Licenses") está implementandose en los repositorios oficiales, y también **debes** usarla en tus paquetes. Úsala de la siguiente manera:
 
 *   Un paquete de licencias se ha creado en [core] y almacena licencias comunes en `/usr/share/licenses/common`, por ejemplo: {{Ic|/usr/share/licenses/common/GPL}. Si un paquete está licenciado bajo una de esas licencias, la variable licenses se nombrará con el nombre del directorio. En el ejemplo anterior: {{Ic|license=('GPL')}
 
@@ -249,11 +249,11 @@ Por favor mira la [Guía de empaquetamiento de plugins de Eclipse](/index.php/Ec
 
 ### Paquetes de GNOME
 
-Por favor mira la [Guía de empaquetamiento GNOME](/index.php/GNOME_Package_Guidelines "GNOME Package Guidelines")
+Por favor mira la [Guía de empaquetamiento GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines")
 
 ### Paquetes Go
 
-Por favor mira la [Guía para paquetes Go](/index.php/Go_Package_Guidelines "Go Package Guidelines")
+Por favor mira la [Guía para paquetes Go](/index.php/Go_package_guidelines "Go package guidelines")
 
 ### Paquetes Haskell
 
@@ -261,35 +261,35 @@ Por favor mira la [Guía de empaquetamiento Haskell](/index.php/Haskell_package_
 
 ### Paquetes Java
 
-Por favor mira la [Guía de empaquetamiento Java](/index.php/Java_Package_Guidelines "Java Package Guidelines")
+Por favor mira la [Guía de empaquetamiento Java](/index.php/Java_package_guidelines "Java package guidelines")
 
 ### Paquetes KDE
 
-Por favor mira la [Guía de empaquetamiento KDE](/index.php/KDE_Package_Guidelines "KDE Package Guidelines")
+Por favor mira la [Guía de empaquetamiento KDE](/index.php/KDE_package_guidelines "KDE package guidelines")
 
 ### Paquetes de módulos del kernel
 
-Por favor mira la [Guía de empaquetamiento de Módulos del Kernel](/index.php/Kernel_Module_Package_Guidelines "Kernel Module Package Guidelines")
+Por favor mira la [Guía de empaquetamiento de Módulos del Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines")
 
 ### Paquetes Lisp
 
-Por favor mira la [Guía de empaquetamiento Llisp](/index.php/Lisp_Package_Guidelines "Lisp Package Guidelines")
+Por favor mira la [Guía de empaquetamiento Llisp](/index.php/Lisp_package_guidelines "Lisp package guidelines")
 
 ### Paquetes OCaml
 
-Por favor mira la [Guía de empaquetamiento OCaml](/index.php/OCaml_Package_Guidelines "OCaml Package Guidelines")
+Por favor mira la [Guía de empaquetamiento OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines")
 
 ### Paquetes Perl
 
-Por favor mira la [Guía de empaquetamiento Perl](/index.php/Perl_Package_Guidelines "Perl Package Guidelines")
+Por favor mira la [Guía de empaquetamiento Perl](/index.php/Perl_package_guidelines "Perl package guidelines")
 
 ### Paquetes Python
 
-Por favor mira la [Guía de empaquetamiento Python](/index.php/Python_Package_Guidelines "Python Package Guidelines")
+Por favor mira la [Guía de empaquetamiento Python](/index.php/Python_package_guidelines "Python package guidelines")
 
 ### Paquetes Ruby Gem
 
-Por favor mira la [Guía de empaquetamiento Ruby](/index.php/Ruby_Gem_Package_Guidelines "Ruby Gem Package Guidelines")
+Por favor mira la [Guía de empaquetamiento Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines")
 
 ### Paquetes Wine
 

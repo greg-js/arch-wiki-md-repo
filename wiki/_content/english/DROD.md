@@ -1,11 +1,3 @@
-[DROD](http://caravelgames.com/Articles/Games.html) is a series of puzzle games with native Linux support.
+Redirect to:
 
-## Sound problems
-
-```
-# pacman -S lib32-alsa-plugins lib32-alsa-oss sdl_mixer
-# modprobe snd_mixer_oss
-# modprobe snd_pcm_oss
-# modprobe snd_seq_oss
-
-```
+*   [List of games](/index.php?title=List_of_games&redirect=no "List of games")

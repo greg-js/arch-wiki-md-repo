@@ -30,7 +30,7 @@ In Arch Linux, IPv6 is enabled by default.
 Pinging the multicast address `ff02::1` results in all hosts in link-local scope responding. An interface has to be specified:
 
 ```
-$ ping6 ff02::1%eth0
+$ ping ff02::1%eth0
 
 ```
 
@@ -39,7 +39,7 @@ With a ping to the multicast address `ff02::2` only routers will respond.
 If you add an option `-I *your-global-ipv6*`, link-local hosts will respond with their link-global scope addresses. The interface can be omitted in this case:
 
 ```
-$ ping6 -I 2001:4f8:fff6::21 ff02::1
+$ ping -I 2001:4f8:fff6::21 ff02::1
 
 ```
 

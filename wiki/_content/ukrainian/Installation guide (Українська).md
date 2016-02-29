@@ -44,7 +44,7 @@
 
 Докладніше дивись [partitioning](/index.php/Partitioning "Partitioning").
 
-При потребі не забудьте створити [LVM](/index.php/LVM "LVM"), [LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS"), чи [RAID](/index.php/RAID "RAID") пристрої.
+При потребі не забудьте створити [LVM](/index.php/LVM "LVM"), [LUKS](/index.php/LUKS "LUKS"), чи [RAID](/index.php/RAID "RAID") пристрої.
 
 ### Форматування розділів
 
@@ -104,7 +104,7 @@
 
 ### Встановлення завантажувача
 
-#### [GRUB](/index.php/GRUB2 "GRUB2")
+#### [GRUB](/index.php/GRUB "GRUB")
 
 *   Для BIOS
 
@@ -153,9 +153,9 @@
 
 ```
 
-*   Також можливо ви захочете налаштувати [locale](https://wiki.archlinux.org/index.php/Locale#Setting_system-wide_locale) в `/etc/locale.conf`.
+*   Також можливо ви захочете налаштувати [locale](/index.php/Locale#Setting_system-wide_locale "Locale") в `/etc/locale.conf`.
 *   Налаштуйте [розкладку консолі та шрифти](/index.php/KEYMAP "KEYMAP") в `/etc/vconsole.conf`
-*   Розкоментуйте(приберіть знак 'гратки', що стоїть на початку рядка) потрібні рядки [locales](https://wiki.archlinux.org/index.php/Locale) в `/etc/locale.gen` і згенеруйте `locale-gen`.
+*   Розкоментуйте(приберіть знак 'гратки', що стоїть на початку рядка) потрібні рядки [locales](/index.php/Locale "Locale") в `/etc/locale.gen` і згенеруйте `locale-gen`.
 *   Налаштуйте `/etc/mkinitcpio.conf` для ваших потреб (читай [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")) і створіть ramdisk:
 
 ```
@@ -185,7 +185,7 @@
 
 ### Керування пакунками
 
-Читайте [pacman](https://wiki.archlinux.org/index.php/Pacman_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)) та [FAQ#Package Management](/index.php/FAQ#Package_Management "FAQ") для отримання інформації про встановлення, оновлення та керування пакунками.
+Читайте [pacman](/index.php/Pacman_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Pacman (Українська)") та [FAQ#Package Management](/index.php/FAQ#Package_Management "FAQ") для отримання інформації про встановлення, оновлення та керування пакунками.
 
 ### Керування службами
 

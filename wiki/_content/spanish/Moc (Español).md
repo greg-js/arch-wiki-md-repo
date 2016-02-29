@@ -22,7 +22,7 @@ Instalamos utilizando pacman:
 
 # Configuración
 
-Si desea configurar moc para utilizar OSS v4.1 rediríjase a éste [article](https://wiki.archlinux.org/index.php/OSS).
+Si desea configurar moc para utilizar OSS v4.1 rediríjase a éste [article](/index.php/OSS "OSS").
 
 # Uso
 

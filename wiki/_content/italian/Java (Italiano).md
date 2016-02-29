@@ -67,13 +67,13 @@ Il JDK Oracle (sia versione 6 che 7) può essere installato a fianco di un'altra
 
 ### MySQL
 
-A causa del fatto che i JDBC-drivers usano spesso la porta nell'URL per stabilire una connessione col database, quest'ultimo viene considerato "remoto" nonostante JDBC e MySQL possano essere in esecuzione sullo stesso host (ad esempio: MySQL non è in ascolto di connessioni "remote" con la sua configurazione di default). Quindi, per usare JDBC e MySQL, si dovrebbe abilitare l'accesso remoto a MySQL seguendo le istruzioni nella [pagina su MySQL](/index.php/MySQL#Enable_remote_access "MySQL") dell'ArchWiki.
+A causa del fatto che i JDBC-drivers usano spesso la porta nell'URL per stabilire una connessione col database, quest'ultimo viene considerato "remoto" nonostante JDBC e MySQL possano essere in esecuzione sullo stesso host (ad esempio: MySQL non è in ascolto di connessioni "remote" con la sua configurazione di default). Quindi, per usare JDBC e MySQL, si dovrebbe abilitare l'accesso remoto a MySQL seguendo le istruzioni nella [pagina su MySQL](/index.php/MySQL#Disable_remote_access "MySQL") dell'ArchWiki.
 
 ### Audio applicazioni Java con Pulseaudio
 
 **Nota:** Questa procedura è utile solo per versioni precedenti di Java (Java 6).
 
-Di default Java e [Pulseaudio](/index.php/Pulseaudio "Pulseaudio") non convivono molto bene l'uno con l'altro, ma questo problema è facilmente risolvibile usando padsp.
+Di default Java e [PulseAudio](/index.php/PulseAudio "PulseAudio") non convivono molto bene l'uno con l'altro, ma questo problema è facilmente risolvibile usando padsp.
 
 (Questi percorsi sono corretti per Java della Sun, è necessario cambiarli per OpenJDK)
 
@@ -111,7 +111,7 @@ Usando [wmname](https://www.archlinux.org/packages/?name=wmname) da [suckless.or
 
 (È necessario riavviare l'applicazione in questione dopo aver eseguito il comando wmname.)
 
-Questa soluzione è efficace in quanto la JVM contiene una lista "hard-coded" di window manager non-reparenting noti. Per il massimo dell'ironia, molti utenti preferiscono utilizzare con wmname il window manager non-reparenting [scritto da Sun](http://en.wikipedia.org/wiki/Project_Looking_Glass): `LG3D`.
+Questa soluzione è efficace in quanto la JVM contiene una lista "hard-coded" di window manager non-reparenting noti. Per il massimo dell'ironia, molti utenti preferiscono utilizzare con wmname il window manager non-reparenting [scritto da Sun](https://en.wikipedia.org/wiki/Project_Looking_Glass "wikipedia:Project Looking Glass"): `LG3D`.
 
 ### I font sono illeggibili
 
@@ -143,7 +143,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 
 Sia l'implementazione closed-source, sia quella open-source di Java sono note avere un'implementazione impropria dell'antialiasing dei font. Questo può essere risolto attraverso le seguenti opzioni: `awt.useSystemAAFontSettings=on`, `swing.aatext=true`
 
-Per maggiori informazioni si veda [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts").
+Per maggiori informazioni si veda [Java Runtime Environment fonts](/index.php/Java_Runtime_Environment_fonts "Java Runtime Environment fonts").
 
 ### GTK LookAndFeel
 

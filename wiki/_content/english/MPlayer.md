@@ -145,7 +145,7 @@ If the video file to be played is on a read-only filesystem, or otherwise lives 
 
 ### Enabling VDPAU
 
-For a complete list of NVIDIA VDPAU capable hardware, see [this table](http://en.wikipedia.org/wiki/PureVideo#Table_of_PureVideo_.28HD.29_GPUs). Ensure the [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver is installed and consider one of the following two methods to automatically enable VDPAU for playback.
+For a complete list of NVIDIA VDPAU capable hardware, see [this table](https://en.wikipedia.org/wiki/PureVideo#Table_of_PureVideo_.28HD.29_GPUs "wikipedia:PureVideo"). Ensure the [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver is installed and consider one of the following two methods to automatically enable VDPAU for playback.
 
 For an Intel or (AMD with [Catalyst](/index.php/Catalyst "Catalyst")) video card, you can use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) — VAAPI backend for VDPAU. For AMD you should also install [xvba-video](https://aur.archlinux.org/packages/xvba-video/). To use it, create:
 

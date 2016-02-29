@@ -58,7 +58,7 @@ Add `acpi_osi="!Windows 2012"` to your [kernel parameters](/index.php/Kernel_par
 
 ## Power management
 
-Just consult [Laptop](https://wiki.archlinux.org/index.php/Laptop) page to read about [tp_smapi](https://wiki.archlinux.org/index.php/tp_smapi), [pm-utils](https://wiki.archlinux.org/index.php/pm-utils), [uswsusp](https://wiki.archlinux.org/index.php/Uswsusp) and [acpid](https://wiki.archlinux.org/index.php/Acpid).
+Just consult [Laptop](/index.php/Laptop "Laptop") page to read about [tp_smapi](/index.php/Tp_smapi "Tp smapi"), [pm-utils](/index.php/Pm-utils "Pm-utils"), [uswsusp](/index.php/Uswsusp "Uswsusp") and [acpid](/index.php/Acpid "Acpid").
 
 Tp_smapi does not seem to work at all.
 

@@ -30,7 +30,7 @@
 
 ## 安装
 
-[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") 提供了 [pidgin](https://www.archlinux.org/packages/?name=pidgin) 的安装包。 Notable variants are:
+[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") 提供了 [pidgin](https://www.archlinux.org/packages/?name=pidgin) 的安装包。 Notable variants are:
 
 *   **Pidgin Light** — 不包含 GStreamer, Tcl/Tk, XScreenSaver, video/voice 支持的 Light Pidgin 版本。
 

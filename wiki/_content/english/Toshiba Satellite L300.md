@@ -162,7 +162,7 @@ EndSection
 
 ```
 `
-**Warning:** [GRUB2](https://wiki.archlinux.org/index.php/GRUB2) The fan will work properly assigning the parameter:
+**Warning:** [GRUB2](/index.php/GRUB2 "GRUB2") The fan will work properly assigning the parameter:
 **Note:** GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_osi=Linux"
 in `/etc/default/grub`.
 
@@ -186,7 +186,7 @@ For information on how to bind keycodes (e.g. Fn+F4) read [Extra keyboard keys](
 *   Fn+F7 - xbacklight -inc 80
 *   Fn+F9 - (see the "Software Toggle" here): [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")
 
-**Audio:** Should just work, but ensure by using "alsamixer", that the "Front" mixer is set to max, or near max. By default it may be set at zero. Read [restoring alsa settings](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture#Restore_ALSA_Mixer_settings_at_startup) to find out how to store alsamixer settings between reboots.
+**Audio:** Should just work, but ensure by using "alsamixer", that the "Front" mixer is set to max, or near max. By default it may be set at zero. Read [restoring alsa settings](/index.php/Advanced_Linux_Sound_Architecture#Restore_ALSA_Mixer_settings_at_startup "Advanced Linux Sound Architecture") to find out how to store alsamixer settings between reboots.
 
 **Bluetooth:** This laptop does not have in-built Bluetooth, but works just great with any bluetooth dongle via USB if you follow these [Bluetooth](/index.php/Bluetooth "Bluetooth") instructions.
 

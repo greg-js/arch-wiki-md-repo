@@ -213,4 +213,4 @@ Connection to 192.168.1.1 closed.
 ## See also
 
 *   [Port knocking homepage](http://www.portknocking.org/)
-*   [Wikipedia on Port knocking](http://en.wikipedia.org/wiki/Port_knocking)
+*   [Wikipedia on Port knocking](https://en.wikipedia.org/wiki/Port_knocking "wikipedia:Port knocking")

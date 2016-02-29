@@ -3610,5 +3610,5 @@ Vea también [Wikipedia:List of software-defined radios](https://en.wikipedia.or
 *   [http://lin-app.com/](http://lin-app.com/) - Servicio de información on-line sobre diversas aplicaciones comerciales y de juegos para Linux.
 *   [Base de datos de juegos de Linux](http://www.lgdb.org/)
 *   [Penguspy](http://www.penguspy.com/#/All/free_and_commercial/open_closed/sort=1/view=1/limit=0)
-*   [Listado de juegos de Linux en Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games).
+*   [Listado de juegos de Linux en Wikipedia](https://en.wikipedia.org/wiki/Category:Linux_games "wikipedia:Category:Linux games").
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)

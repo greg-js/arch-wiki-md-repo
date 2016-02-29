@@ -355,6 +355,6 @@ The entry in `avahi-browse` should now be:
 ## See also
 
 *   [Avahi](http://avahi.org/) - Official project website
-*   [Wikipedia entry](http://en.wikipedia.org/wiki/Avahi_%28software%29)
+*   [Wikipedia entry](https://en.wikipedia.org/wiki/Avahi_(software) "wikipedia:Avahi (software)")
 *   [Bonjour for Windows](http://www.apple.com/support/downloads/bonjourforwindows.html) - Enable Zeroconf on Windows
 *   [http://www.zeroconf.org/](http://www.zeroconf.org/)

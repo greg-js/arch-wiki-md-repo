@@ -1,4 +1,4 @@
-[Fcitx](http://code.google.com/p/fcitx/) (Flexible Input Method Framework) ──即小企鹅输入法，它是一个以 GPL 方式发布的[输入法](http://en.wikipedia.org/wiki/Input_method)平台(即原来的 G 五笔)，包括五笔、拼音(全拼和双拼)、二笔、区位等输入模块，支持简入繁出，是在 Linux 操作系统中常用的中文输入法。它的优点是，短小精悍、跟程序的兼容性比较好。
+[Fcitx](http://code.google.com/p/fcitx/) (Flexible Input Method Framework) ──即小企鹅输入法，它是一个以 GPL 方式发布的[输入法](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method")平台(即原来的 G 五笔)，包括五笔、拼音(全拼和双拼)、二笔、区位等输入模块，支持简入繁出，是在 Linux 操作系统中常用的中文输入法。它的优点是，短小精悍、跟程序的兼容性比较好。
 
 ## Contents
 
@@ -105,7 +105,7 @@ Fcitx 提供对 Gtk+/Qt 提供了输入法模块，请根据需要安装 [fcitx-
 
 ### 桌面环境
 
-如果您用 XDG 兼容的桌面环境，比如 [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [XFCE](/index.php/XFCE "XFCE"), [LXDE](/index.php/LXDE "LXDE"), 那么当您安装好 Fcitx 并重新登录后，Fcitx 应该会自动启动。如果没有的话，可以打开控制台并运行：
+如果您用 XDG 兼容的桌面环境，比如 [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), 那么当您安装好 Fcitx 并重新登录后，Fcitx 应该会自动启动。如果没有的话，可以打开控制台并运行：
 
 ```
   fcitx
@@ -153,7 +153,7 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 ### Xim
 
-您还可以在 Gtk+/Qt 程序中用 xim, 为此您要将 [Fcitx (简体中文)#非桌面环境](/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.9D.9E.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83 "Fcitx (简体中文)") 里的环境变量改成如下的值：
+您还可以在 Gtk+/Qt 程序中用 xim, 为此您要将 [#非桌面环境](#.E9.9D.9E.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83) 里的环境变量改成如下的值：
 
 ```
  export GTK_IM_MODULE=xim
@@ -171,7 +171,7 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 **警告:** Fcitx 不支持手动编辑配置文件，否则后果自负。
 
-Fcitx 提供了若干图形界面的配置程序：基于 KDE 之 kcm 的 [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), 基于 GTK+3 的 [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool), 或者来自 [AUR](/index.php/Arch_User_Repository "Arch User Repository"), 基于 GTK+2, 但不被官方支持的 [fcitx-configtool-gtk2](https://aur.archlinux.org/packages/fcitx-configtool-gtk2/).
+Fcitx 提供了若干图形界面的配置程序：基于 KDE 之 kcm 的 [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), 基于 GTK+3 的 [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool), 或者来自 [AUR](/index.php/AUR "AUR"), 基于 GTK+2, 但不被官方支持的 [fcitx-configtool-gtk2](https://aur.archlinux.org/packages/fcitx-configtool-gtk2/).
 
 安装完配置工具[fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)之后打开配置工具的方法是用终端运行fcitx-config-gtk3，打开这个配置工具之后还要添加中文输入法。
 
@@ -183,7 +183,7 @@ Fcitx 支持使用 kimpanel 协议的界面，以提供更好的桌面整合体�
 
 #### Gnome-Shell
 
-您可以在 [AUR](/index.php/Arch_User_Repository "Arch User Repository") 安装 [gnome-shell-extension-kimpanel-git](https://aur.archlinux.org/packages/gnome-shell-extension-kimpanel-git/), 它提供了类似 ibus-gjs 的用户体验，其候选框界面将会采用 Gnome-Shell 的主题风格, 同时在状态栏中增加 Fcitx 的输入法状态图标。
+您可以在 [AUR](/index.php/AUR "AUR") 安装 [gnome-shell-extension-kimpanel-git](https://aur.archlinux.org/packages/gnome-shell-extension-kimpanel-git/), 它提供了类似 ibus-gjs 的用户体验，其候选框界面将会采用 Gnome-Shell 的主题风格, 同时在状态栏中增加 Fcitx 的输入法状态图标。
 
 #### KDE
 

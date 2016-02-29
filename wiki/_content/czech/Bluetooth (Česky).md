@@ -155,7 +155,7 @@ Defaultní konfigurace by měla fungovat bez problémů. Většina výše zmín�
 
 **Note:** Toto řešení nemusí být úplně to nejlepší. Vřelé díky Gattschardo za jeho řešení.
 
-Většina bluetooth zařízení vyžaduje [párování](http://en.wikipedia.org/wiki/Bluetooth#Pairing). Způsob párování počítače s mobilním telefonem:
+Většina bluetooth zařízení vyžaduje [párování](https://en.wikipedia.org/wiki/Bluetooth#Pairing "wikipedia:Bluetooth"). Způsob párování počítače s mobilním telefonem:
 
 *   Počítač pošle telefonu žádost o připojení.
 *   Pin/Klíč, který určí počítač, se musí zadat na telefonu (telefon si ho sám vyžádá)
@@ -175,7 +175,7 @@ Pro spárování zařízení bez použití grafického rozhraní balíku gnome-b
 
 ```
 
-Pokud se vše zdařilo, měla by se vám v konzoli zobrazit hlaška "Agent registered". Následně můžete začít párování ze svého mobilního telefonu. Skript se vás v konzoli zeptá na tzv. passcode, vložte ho a potvrďte enterem - voalá, povedlo se. Teď už můžete ukončit agenta použitím klávesy *Ctrl+C* (^C-c). Agenta jsme použili pouze pro párování, nebudeme ho potřebovat při každém připojení zařízení. Pokud váš telefon nemuže naleznout počítač, pokračujte do [řešení problémů](/index.php/Bluetooth_(%C4%8Cesky)#Nelze_nal.C3.A9zt_po.C4.8D.C3.ADta.C4.8D "Bluetooth (Česky)").
+Pokud se vše zdařilo, měla by se vám v konzoli zobrazit hlaška "Agent registered". Následně můžete začít párování ze svého mobilního telefonu. Skript se vás v konzoli zeptá na tzv. passcode, vložte ho a potvrďte enterem - voalá, povedlo se. Teď už můžete ukončit agenta použitím klávesy *Ctrl+C* (^C-c). Agenta jsme použili pouze pro párování, nebudeme ho potřebovat při každém připojení zařízení. Pokud váš telefon nemuže naleznout počítač, pokračujte do [řešení problémů](#Nelze_nal.C3.A9zt_po.C4.8D.C3.ADta.C4.8D).
 
 Pro příklad spárování přejděte do sekce *příklady*.
 

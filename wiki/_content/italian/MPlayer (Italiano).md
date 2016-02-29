@@ -32,7 +32,7 @@
 
 ## Installazione
 
-MPlayer è disponibile nel [repository [extra]](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+MPlayer è disponibile nel [repository [extra]](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 *   [mplayer](https://www.archlinux.org/packages/?name=mplayer): il pacchetto "standard".
 *   [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/): una versione di MPlayer con il supporto a VAAPI.
@@ -81,7 +81,7 @@ Se desiderate che Mplayer si occupi di riprodurre i video sul web nel vostro bro
 
 #### Firefox
 
-Il plugin per [Firefox](/index.php/Firefox_(Italiano) "Firefox (Italiano)") si chiama [gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer) e si trova nei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Il plugin per [Firefox](/index.php/Firefox_(Italiano) "Firefox (Italiano)") si chiama [gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer) e si trova nei [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 **Note:** Dipende da [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer) il quale provvede anche a una completa GUI per MPlayer
 
@@ -183,7 +183,7 @@ Se si sta guardando un video da una directory che per qualunque motivo non possa
 
 ### Abilitare VDPAU (solo per schede grafiche nVidia moderne)
 
-Per una lista completa dell'hardware compatibile con la tecnologia VDPAU controllare [[questa tabella](http://en.wikipedia.org/wiki/PureVideo#Table_of_PureVideo_.28HD.29_GPUs)]. Assicurarsi di aver installato i driver [NVIDIA](/index.php/NVIDIA_(Italiano) "NVIDIA (Italiano)") e seguire uno dei due seguenti metodi per abilitare VDPAU di default ad ogni avvio di mplayer.
+Per una lista completa dell'hardware compatibile con la tecnologia VDPAU controllare [questa tabella](https://en.wikipedia.org/wiki/PureVideo#Table_of_PureVideo_.28HD.29_GPUs e seguire uno dei due seguenti metodi per abilitare VDPAU di default ad ogni avvio di mplayer.
 
 #### Usare il file di configurazione
 

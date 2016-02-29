@@ -1,6 +1,6 @@
 Tomado de la [página de GNOME](http://www.gnome.org/about/%7Cla):
 
-	*«El Proyecto GNOME se inició en 1997 por —en aquellos días— dos estudiantes universitarios, Miguel de Icaza y Federico Mena. Su objetivo: producir un [entorno de escritorio](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)") de código libre. Desde entonces, GNOME se ha convertido en una empresa exitosa. Usado por millones de personas en todo el mundo, es el entorno de escritorio más popular para GNU/Linux y sistemas operativos tipo UNIX. El escritorio se ha utilizado con éxito en empresas de gran escala, y en despliegues públicos, y las tecnologías del proyecto desarrollador se utilizan en un gran número de dispositivos móviles populares.»*
+	*«El Proyecto GNOME se inició en 1997 por —en aquellos días— dos estudiantes universitarios, Miguel de Icaza y Federico Mena. Su objetivo: producir un [entorno de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") de código libre. Desde entonces, GNOME se ha convertido en una empresa exitosa. Usado por millones de personas en todo el mundo, es el entorno de escritorio más popular para GNU/Linux y sistemas operativos tipo UNIX. El escritorio se ha utilizado con éxito en empresas de gran escala, y en despliegues públicos, y las tecnologías del proyecto desarrollador se utilizan en un gran número de dispositivos móviles populares.»*
 
 ## Contents
 
@@ -115,7 +115,7 @@ Ambos usan GNOME Shell y el gestor de ventanas Mutter. Mutter actúa como un ges
 
 ## Instalación
 
-GNOME 3 está disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") y puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con dos grupos de paquetes:
+GNOME 3 está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con dos grupos de paquetes:
 
 *   [gnome](https://www.archlinux.org/groups/x86_64/gnome/) contiene el entorno de escritorio básico y aplicaciones necesarias para la experiencia estándar de GNOME.
 
@@ -127,7 +127,7 @@ GNOME 3 está disponible en los [repositorios oficiales](/index.php/Official_Rep
 
 **Acceso gráfico**
 
-Para una mejor integración con el escritorio es aconsejable el uso del gestor de pantala **GDM**. Pueden ser utilizados otros gestores de inicio de sesión (también conocidos como gestores de pantalla) en lugar de GDM. Eche un vistazo al artículo de la wiki sobre [gestores de pantalla](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") para saber cómo se inician los entornos de escritorio.
+Para una mejor integración con el escritorio es aconsejable el uso del gestor de pantala **GDM**. Pueden ser utilizados otros gestores de inicio de sesión (también conocidos como gestores de pantalla) en lugar de GDM. Eche un vistazo al artículo de la wiki sobre [gestores de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") para saber cómo se inician los entornos de escritorio.
 
 El administrador de inicio de sesión es un proceso limitado, encargado de las tareas imprescindibles para el sistema. El [artículo wiki sobre PolicyKit](/index.php/PolicyKit "PolicyKit") aborda el tema del control de acceso a todo el sistema.
 
@@ -226,7 +226,7 @@ Los instrumentos actuales de configuración se hacen cada vez más familiares: a
 
 #### GNOME Tweak Tool
 
-Esta herramienta gráfica personaliza tipos de letras, temas, botones en la barra de título y otros ajustes. El paquete [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) está disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Esta herramienta gráfica personaliza tipos de letras, temas, botones en la barra de título y otros ajustes. El paquete [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 #### Temas GTK3 a través de settings.ini
 
@@ -326,7 +326,7 @@ A continuación, guarde los cambios y reinicie la shell para ver los resultados:
 
 #### Mostrar el icono de la batería
 
-Para mostrar el icono de batería en el panel, [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [gnome-power-manager](https://www.archlinux.org/packages/?name=gnome-power-manager) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Para mostrar el icono de batería en el panel, [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [gnome-power-manager](https://www.archlinux.org/packages/?name=gnome-power-manager) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 #### Eliminar la demora al salir
 
@@ -491,7 +491,7 @@ Es necesario reiniciar GNOME Shell. La bandeja de mensajes seguirá siendo visib
 
 Por último, [reinicie GNOME shell.](#Reiniciar_la_shell)
 
-Para reestablecer los valores por defecto, [instale](/index.php/Pacman "Pacman") el paquete [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") o elimine el archivo `/home/$USER/.themes/Adwaita/metacity-1/metacity-theme-3.xml`
+Para reestablecer los valores por defecto, [instale](/index.php/Pacman "Pacman") el paquete [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") o elimine el archivo `/home/$USER/.themes/Adwaita/metacity-1/metacity-theme-3.xml`
 
 #### Reordenar los botones de la barra de titulo
 
@@ -593,7 +593,7 @@ La instalación por defecto establece el botón de encendido para suspender el s
 
 #### Distribución del teclado GDM
 
-GDM no sabe nada de las configuraciones del teclado del escritorio de GNOME 3\. Para cambiar la configuración del teclado usado ​​por GDM, establezca la distribución usando la configuración de Xorg. Remítase a la sección correspondiente de la [Guía para Principiantes.](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)")
+GDM no sabe nada de las configuraciones del teclado del escritorio de GNOME 3\. Para cambiar la configuración del teclado usado ​​por GDM, establezca la distribución usando la configuración de Xorg. Remítase a la sección correspondiente de la [Guía para Principiantes.](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)")
 
 ### Gestión de energía
 
@@ -605,7 +605,7 @@ Desde GNOME 3.0 las opciones necesarias se eliminan de la configuración del sis
 
 #### Sin reacción al cerrar la tapa
 
-Al configurar los comportamientos esperados al cerrar la tapa mediante [Systemd#ACPI_power_management](/index.php/Systemd#ACPI_power_management "Systemd"), los ajustes pueden parecer no haber tenido ningún efecto. Si se tiene un monitor externo conectado al portátil, este es el comportamiento por defecto de GNOME. Desconecte el monitor y los ajustes deberían funcionar, de lo contrario el archivo `/etc/systemd/logind.conf` puede estar configurado incorrectamente.
+Al configurar los comportamientos esperados al cerrar la tapa mediante [Systemd#Power management](/index.php/Systemd#Power_management "Systemd"), los ajustes pueden parecer no haber tenido ningún efecto. Si se tiene un monitor externo conectado al portátil, este es el comportamiento por defecto de GNOME. Desconecte el monitor y los ajustes deberían funcionar, de lo contrario el archivo `/etc/systemd/logind.conf` puede estar configurado incorrectamente.
 
 #### Cambiar la acción del nivel de batería crítico (para portátiles)
 
@@ -735,7 +735,7 @@ xdg-mime default evince.desktop application/pdf
 
 ### Terminal predeterminado
 
-`gsettings` (que reemplaza a `gconftool-2`) se utiliza para establecer el terminal predeterminado. El ajuste afecta a **nautilus-open-terminal** (una extensión de Nautilus). Para hacer [urxvt](/index.php/Rxvt-unicode "Rxvt-unicode") predeterminado, ejecute:
+`gsettings` (que reemplaza a `gconftool-2`) se utiliza para establecer el terminal predeterminado. El ajuste afecta a **nautilus-open-terminal** (una extensión de Nautilus). Para hacer [urxvt](/index.php/Urxvt "Urxvt") predeterminado, ejecute:
 
 ```
 gsettings set org.gnome.desktop.default-applications.terminal exec urxvtc
@@ -837,7 +837,7 @@ Utilice **dconf-editor**, vaya a la clave denominada *org.gnome.desktop.input-so
 
 Véase `/usr/share/X11/xkb/rules/xorg` para conocer todas las XkbOptions y, luego, `/usr/share/X11/xkb/symbols/*` para conocer sus respectivas descripciones.
 
-**Nota:** Para activar la combinación `Ctrl+Alt+Retroceso` para terminar Xorg, utilice el paquete [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Una vez en Gnome Tweak Tool, navegue a *Escritura > Terminate* y seleccione la opción `Ctrl+Alt+Backspace` del menú desplegable.
+**Nota:** Para activar la combinación `Ctrl+Alt+Retroceso` para terminar Xorg, utilice el paquete [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Una vez en Gnome Tweak Tool, navegue a *Escritura > Terminate* y seleccione la opción `Ctrl+Alt+Backspace` del menú desplegable.
 
 ### Alternar distribuciones de teclado
 
@@ -1037,7 +1037,7 @@ Nota: En lugar de «Adwaita», puede elegir otro tema para el cursor (por ejempl
 
 ### Tracker & Documentos no enumeran todos los archivos locales
 
-Para que Tracker (y, por lo tanto, los Documentos) puedan detectar los archivos locales, los mismos deben ser guardados en carpetas conocidas por ellos. Si sus documentos están contenidos en uno de los directorios estándar de XDG habituales (por ejemplo, «Documentos» o «Música»), debe instalar [xdg-user-dirs](https://www.archlinux.org/packages/extra/x86_64/xdg-user-dirs/) y ejecutar:
+Para que Tracker (y, por lo tanto, los Documentos) puedan detectar los archivos locales, los mismos deben ser guardados en carpetas conocidas por ellos. Si sus documentos están contenidos en uno de los directorios estándar de XDG habituales (por ejemplo, «Documentos» o «Música»), debe instalar [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) y ejecutar:
 
 ```
  # xdg-user-dirs-update

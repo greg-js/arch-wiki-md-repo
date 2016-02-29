@@ -1,4 +1,4 @@
-Windows Maker è un gestore delle finestre (WM = [Windows Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") per il il server X. È stato progettato per emulare NeXT GUI come un ambiente OpenStep-compatibile ed è caratterizzato da esigenze di bassa memoria e alta flessibilità. Essendo uno dei più leggeri WM è ben adattato per le macchine con modeste specifiche di prestazione.
+Windows Maker è un gestore delle finestre (WM = [Windows Manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") per il il server X. È stato progettato per emulare NeXT GUI come un ambiente OpenStep-compatibile ed è caratterizzato da esigenze di bassa memoria e alta flessibilità. Essendo uno dei più leggeri WM è ben adattato per le macchine con modeste specifiche di prestazione.
 
 ## Contents
 
@@ -19,7 +19,7 @@ Windows Maker è un gestore delle finestre (WM = [Windows Manager](/index.php/Wi
 
 ## Installazione
 
-L'ultima release ufficiale è disponibile nel pacchetto [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) presso i [repositori ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+L'ultima release ufficiale è disponibile nel pacchetto [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) presso i [repositori ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Per installare Window Maker:
 
@@ -44,7 +44,7 @@ Avviare il programma di installazione di Window Maker per impostare del configur
 
 ### Avviare Window Maker senza un display manager
 
-Una volta installato, creare o editare il file [~/.xinitrc](/index.php/Xinitrc "Xinitrc") aggiungendo quanto segue:
+Una volta installato, creare o editare il file [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc") aggiungendo quanto segue:
 
 ```
 exec wmaker
@@ -146,7 +146,7 @@ Le Dockapps sono piccole applicazioni che girano all'interno della dock. Di soli
 *   [wmnetload](https://aur.archlinux.org/packages/wmnetload/) - Mostra lo stato della rete. Esempio di utilizzo: `wmnetload -i eth0`
 *   [wmdiskmon](https://aur.archlinux.org/packages/wmdiskmon/) - Mostra l'utilizzo dei dischi. Esempio di utilizzo: `wmdiskmon -p /dev/sda1 -p /dev/sda2`
 
-Una raccolta di quasi tutte le dockapps possono essere trovate sul sito ufficiale dockapps, è possibile trovare il link in [Risorse aggiuntive](/index.php/Window_Maker_(Italiano)#Risorse_aggiuntive "Window Maker (Italiano)").
+Una raccolta di quasi tutte le dockapps possono essere trovate sul sito ufficiale dockapps, è possibile trovare il link in [Risorse aggiuntive](#Risorse_aggiuntive).
 
 ## Vassoio di sistema
 
@@ -177,5 +177,5 @@ Cancellare (conviene fare una copia di backup) la cartella `~/.fontconfig/` ed i
 ## Altre fonti
 
 *   [Sito ufficiale](http://www.windowmaker.org/)
-*   [Window Maker (Wikipedia)](http://en.wikipedia.org/wiki/Window_Maker)
+*   [Window Maker (Wikipedia)](https://en.wikipedia.org/wiki/Window_Maker "wikipedia:Window Maker")
 *   [Dockapps](http://dockapps.windowmaker.org/)

@@ -25,7 +25,7 @@ Use the command jdownloader to start JDownloader. When you just installed JDownl
 
 When you first start JDownloader you can choose your preferred language and also your download directory. On the next window, JDownloader asks you if you want to install FlashGot, a Firefox extension. I recommend clicking on Cancel. If you want this extension, you can still download it through [the official mozilla addons website](http://addons.mozilla.org).
 
-If you enable the Light(GTK) theme and the fonts appear to lack anti-aliasing, modify `~/.bashrc` as appropriate following the directions [here](https://wiki.archlinux.org/index.php/Java_Fonts_-_Sun_JRE#Anti-aliasing).
+If you enable the Light(GTK) theme and the fonts appear to lack anti-aliasing, modify `~/.bashrc` as appropriate following the directions [here](/index.php/Java_Fonts_-_Sun_JRE#Anti-aliasing "Java Fonts - Sun JRE").
 
 ## Tips and tricks
 

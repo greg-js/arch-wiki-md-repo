@@ -102,7 +102,7 @@ Il modo in cui è applicato, è che per sbloccare la cartella che contiene i fil
 
 Le soluzioni disponibili in questa categoria sono:
 
-	[eCryptfs](/index.php/System_Encryption_with_eCryptfs "System Encryption with eCryptfs")
+	[eCryptfs](/index.php/ECryptfs "ECryptfs")
 
 	*...*
 
@@ -353,7 +353,7 @@ usato da
 
 ### Scegliere un setup
 
-Il setup di cifratura dei dischi appropriato per te dipende dai tuoi scopi (per favore leggi [#Perché_usare_la_crittografia?](#Perch.C3.A9_usare_la_crittografia.3F) sopra) e le specifiche del tuo sistema..
+Il setup di cifratura dei dischi appropriato per te dipende dai tuoi scopi (per favore leggi [#Perché usare la crittografia?](#Perch.C3.A9_usare_la_crittografia.3F) sopra) e le specifiche del tuo sistema..
 Tra le altre cose, dovrai rispondere alle seguenti domande:
 
 *   Da che tipo di hacker (attacker) ti vuoi proteggere?
@@ -387,7 +387,7 @@ Tra le altre cose, dovrai rispondere alle seguenti domande:
     *   più chiavi indipendenti e revocabili per la stessa parte di disco
     *   parti del disco cifrate separate per utenti diversi
 
-Dopo puoi fare le scelte tecniche richieste (vedi [#Metodi_disponibili](#Metodi_disponibili) e [#How_the_encryption_works](#How_the_encryption_works) circa:
+Dopo puoi fare le scelte tecniche richieste (vedi [#Metodi disponibili](#Metodi_disponibili) e [#How_the_encryption_works](#How_the_encryption_works) circa:
 
 *   crittografia stacked filesystem vs. cifratura dei dispositivi a blocchi
 *   amministrazioni delle chiavi
@@ -425,7 +425,7 @@ Molte e molte altre combinazioni sono possibili. Dovresti pianificare che tipo d
 Quando fai affidamento a una password, essa deve essere completa abbastanza da non essere facile da indovinare o scavalcare usando attacchi brute-force. I princìpi di una buona password sono basati sulla *lunghezza* e *casualità d'ordine*
 Vedi [The passphrase FAQ](http://www.iusmentis.com/security/passphrasefaq/) e considera di usare il metodo [Diceware Passphrase](http://world.std.com/~reinhold/diceware.html).
 
-Un altro aspetto della forza di una password è che non deve essere facilmente recuperabile da altri posti. Se si usa la stessa password per la cifratura del disco e per il login (utile per esempio auto montare la partizione o la cartella cifrata al login), assicurati che `/etc/shadow` non finisca su una partizione cifrata, oppure usa un buon algoritmo hash (cioè sha512/bcrypt, non md5) per la password memorizzata (vedi [SHA_password_hashes](/index.php/SHA_password_hashes "SHA password hashes") per altre info).
+Un altro aspetto della forza di una password è che non deve essere facilmente recuperabile da altri posti. Se si usa la stessa password per la cifratura del disco e per il login (utile per esempio auto montare la partizione o la cartella cifrata al login), assicurati che `/etc/shadow` non finisca su una partizione cifrata, oppure usa un buon algoritmo hash (cioè sha512/bcrypt, non md5) per la password memorizzata (vedi [SHA password hashes](/index.php/SHA_password_hashes "SHA password hashes") per altre info).
 
 ### Preparare il disco
 
@@ -442,7 +442,7 @@ Prima di iniziare il setup della cifratura del disco su un (parte di un) disco, 
 
 Il secondo motivo ha senso con la cifratura del dispositivo a blocchi, perché in caso di cifratura stacked filesystem i dati cifrati sono comunque facilmente identificabili (in forma di distinti file cifrati nel filesystem ospitante). Ricordare anche che se si intende cifrare una cartella particolare, si dovrà cancellare l'intera partizione se si vuole sbarazzare completamente dei file precedentemente memorizzati in quella cartella in forma non cifrata. Se ci sono altre cartelle sulla stessa partizione, si dovrà fare il backup di essi e riposizionarli a fine pulizia.
 
-Non appena si ha deciso quale tipo di disco si vuole impegnare, vedere l'articolo [Securely_wipe_disk](/index.php/Securely_wipe_disk "Securely wipe disk") per istruzioni tecniche.
+Non appena si ha deciso quale tipo di disco si vuole impegnare, vedere l'articolo [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk") per istruzioni tecniche.
 
 **Tip:** Nel decidere quale metodo usare per una sicura cancellazione dell'hard disk, ricorda che non ci sarò bisogno di rifarlo più di una volta fino a quando l'unità non è utilizzata come unità crittografata.
 
@@ -516,7 +516,7 @@ Ogni volta che il dispositivo a blocchi o la cartella cifrata in questione deve 
     Additional security can be attained by instead storing the encrypted master key in a keyfile on e.g. a USB stick. This provides **two-factor authentication**: Accessing the encrypted data now requires something only you *know* (the passphrase), and additionally something only you *have* (the keyfile).
 
     Another way of achieving two-factor authentication is to augment the above key retrieval scheme to mathematically "combine" the passphrase with byte data read from one or more external files (located on a USB stick or similar), before passing it to the key derivation function.
-    The files in question can be anything, e.g. normal JPEG images, which can be beneficial for [#Plausible Deniability](#Plausible_Deniability). They are still called "keyfiles" in this context, though.
+    The files in question can be anything, e.g. normal JPEG images, which can be beneficial for [#Plausible deniability](#Plausible_deniability). They are still called "keyfiles" in this context, though.
 *   ***randomly generated on-the-fly for each session***
 
     In some cases, e.g. when encrypting swap space or a `/tmp` partition, it is not necessary to keep a persistent master key at all. A new throwaway key can be randomly generated for each session, without requiring any user interaction. This means that once unmounted, all files written to the partition in question can never be decrypted again by *anyone* - which in those particular use-cases is perfectly fine.
@@ -595,7 +595,7 @@ The most basic (and common) mode of operation used in practice is "*cipher-block
 
 When decrypting, the procedure is reversed analogously.
 
-One thing worth noting is the generation of the unique initialization vector for each sector. The simplest choice is to calculate it in a predictable fashion from a readily available value such as the sector number. However, this might allow an attacker with repeated access to the system to perform a so-called [watermarking attack](http://en.wikipedia.org/wiki/Watermarking_attack). To prevent that, a method called "Encrypted salt-sector initialization vector (**ESSIV**)" can be used to generate the initialization vectors in a way that makes them look completely random to a potential attacker.
+One thing worth noting is the generation of the unique initialization vector for each sector. The simplest choice is to calculate it in a predictable fashion from a readily available value such as the sector number. However, this might allow an attacker with repeated access to the system to perform a so-called [watermarking attack](https://en.wikipedia.org/wiki/Watermarking_attack "wikipedia:Watermarking attack"). To prevent that, a method called "Encrypted salt-sector initialization vector (**ESSIV**)" can be used to generate the initialization vectors in a way that makes them look completely random to a potential attacker.
 
 There are also a number of other, more complicated modes of operation available for disk encryption, which already provide built-in security agains such attacks. Some can also additionally guarantee authenticity ([see below](#Data_integrity.2Fauthenticity)) of the encrypted data.
 

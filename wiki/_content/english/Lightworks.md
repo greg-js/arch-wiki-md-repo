@@ -1,5 +1,3 @@
-[Lightworks](https://www.lwks.com/) is a powerful non-linear video editing program.
+Redirect to:
 
-## Installation
-
-Install the [lwks-openssl](https://aur.archlinux.org/packages/lwks-openssl/) package.
+*   [List of applications](/index.php?title=List_of_applications&redirect=no "List of applications")

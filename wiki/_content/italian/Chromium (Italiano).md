@@ -62,7 +62,7 @@ A differenza di [Firefox](/index.php/Firefox_(Italiano) "Firefox (Italiano)"), C
 
 In un [ambiente desktop](/index.php/Desktop_environment "Desktop environment") (es. [Gnome](/index.php/GNOME_(Italiano) "GNOME (Italiano)"), o [Kde](/index.php/KDE_(Italiano) "KDE (Italiano)"), or [Xfce](/index.php/Xfce_(Italiano) "Xfce (Italiano)")), `xdg-open` passa semplicemente gli argomenti all'applicazione che apre i file di quell'ambiente desktop (rispettivamente `gnome-open`, `kde-open`, o `exo-open`), e ciò significa che le associazioni sono lasciate all'ambiente desktop.
 
-Quando non vengono rilevati ambienti desktop invece (per esempio quando viene eseguito un [window manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") standalone, come [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)")), il comportamento di `xdg-open` diventa piuttosto strano e irritante: molti tipi di file vengono aperti da Firefox o Chromium stessi, non c'è nessun supporto per i magnet link, etc.
+Quando non vengono rilevati ambienti desktop invece (per esempio quando viene eseguito un [window manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") standalone, come [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)")), il comportamento di `xdg-open` diventa piuttosto strano e irritante: molti tipi di file vengono aperti da Firefox o Chromium stessi, non c'è nessun supporto per i magnet link, etc.
 
 Ci sono molte soluzioni a questo problema, elencate qui sotto. È possibile:
 
@@ -340,7 +340,7 @@ Questa potrebbe essere un'altra soluzione se, per esempio, `/tmp` è in RAM.
 
 ### Profilo in tmpfs
 
-Il profilo predefinito di Chromium è posizionato in `~/.config/chromium`. Questo profilo può essere riposizionato in un filesystem [tmpfs](http://en.wikipedia.org/wiki/Tmpfs), incluso `/tmp`, o `/dev/shm` per miglioramenti nella risposta delle applicazioni una volta che l'intero profilo sia immagazzinato nella RAM. Un altro beneficio è la riduzione delle operazioni di lettura e scrittura del disco, della quale gli SSD beneficiano di più.
+Il profilo predefinito di Chromium è posizionato in `~/.config/chromium`. Questo profilo può essere riposizionato in un filesystem [tmpfs](https://en.wikipedia.org/wiki/Tmpfs "wikipedia:Tmpfs"), incluso `/tmp`, o `/dev/shm` per miglioramenti nella risposta delle applicazioni una volta che l'intero profilo sia immagazzinato nella RAM. Un altro beneficio è la riduzione delle operazioni di lettura e scrittura del disco, della quale gli SSD beneficiano di più.
 
 #### Semplice script in Bash per automatizzare il processo
 

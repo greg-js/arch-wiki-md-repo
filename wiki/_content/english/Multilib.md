@@ -55,5 +55,6 @@ Then update the package list and upgrade with `pacman -Syu`.
 
 ## See also
 
+*   [Makepkg#Build_32-bit_packages_on_a_64-bit_system](/index.php/Makepkg#Build_32-bit_packages_on_a_64-bit_system "Makepkg")
 *   [64-bit FAQ](/index.php/64-bit_FAQ "64-bit FAQ")
 *   [arch-multilib](//mailman.archlinux.org/mailman/listinfo/arch-multilib) mailing list

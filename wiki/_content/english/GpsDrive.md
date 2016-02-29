@@ -338,7 +338,7 @@ The following ManageHook setup requires the `XMonad.Hooks.ManageHelpers` module 
 | [http://wiki.openstreetmap.org/wiki/Mapnik/PostGIS](http://wiki.openstreetmap.org/wiki/Mapnik/PostGIS) | OSM Mapnik/PostGIS Directions |
 | [http://wiki.openstreetmap.org/wiki/Map_Icons](http://wiki.openstreetmap.org/wiki/Map_Icons) | OSM Map Icon Information |
 | [http://wiki.openstreetmap.org/wiki/Osm2pgsql](http://wiki.openstreetmap.org/wiki/Osm2pgsql) | OSM osm2pgsql Page |
-| [https://wiki.archlinux.org/index.php/PostgreSQL](https://wiki.archlinux.org/index.php/PostgreSQL) | Archwiki PostgreSQL Page |
+| [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") | Archwiki PostgreSQL Page |
 | [http://www.postgresql.org/docs/current/static/auth-methods.html](http://www.postgresql.org/docs/current/static/auth-methods.html) | PostgreSQL Auth Methods |
 | [http://www.davidpashley.com/articles/postgresql-user-administration.html](http://www.davidpashley.com/articles/postgresql-user-administration.html) | PostgreSQL User Administration |
 | file:///usr/share/doc/postgresql/html/xplang-install.html | PostgreSQL Installing Languages |

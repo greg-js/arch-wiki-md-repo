@@ -93,8 +93,8 @@ Queste istruzioni sono per gli utenti che usano il pacchetto stock [linux](https
 
 3\. Installare il driver appropriato per la propria scheda:
 
-*   Per schede serie GeForce 8 e superiori [NV50 e nuovi], installare il pacchetto [nvidia](https://www.archlinux.org/packages/?name=nvidia) disponibile nei [repositori ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
-*   Per schede serie GeForce 6/7 e superiori [[NV40-NV50], installare il pacchetto [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) disponibile nei [repositori ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+*   Per schede serie GeForce 8 e superiori [NV50 e nuovi], installare il pacchetto [nvidia](https://www.archlinux.org/packages/?name=nvidia) disponibile nei [repositori ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
+*   Per schede serie GeForce 6/7 e superiori [[NV40-NV50], installare il pacchetto [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) disponibile nei [repositori ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 *   Per schede serie GeForce 5 FX [NV30-NV38], installare il pacchetto [nvidia-173xx](https://aur.archlinux.org/packages/nvidia-173xx/), disponibile su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
 *   Per schede serie GeForce2/3/4 MX/Ti [NV11 and NV17-NV28], installare il pacchetto [nvidia-96xx](https://aur.archlinux.org/packages/nvidia-96xx/), disponibile su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
 
@@ -114,7 +114,7 @@ Per prima cosa potrebbe essere utile sapere come funziona il sistema [ABS](/inde
 
 *   Articolo principale di [ABS](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)")
 *   Articolo su [makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)")
-*   Articolo su [Creazione pacchetti](/index.php/Creating_Packages_(Italiano) "Creating Packages (Italiano)")
+*   Articolo su [Creazione pacchetti](/index.php/Creating_packages_(Italiano) "Creating packages (Italiano)")
 
 **Nota:** É presente anche il pacchetto [nvidia-all](https://aur.archlinux.org/packages/nvidia-all/) reperibile su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)") che risulta più semplice da utilizzare con kernel personalizzati e/o multipli.
 
@@ -208,7 +208,7 @@ EndSection
 
 ```
 
-**Suggerimento:** Se state aggiornando dopo aver utilizzato i driver nouveau, assicurarsi di rimuovere `nouveau` dal file `/etc/mkinitcpio.conf`. Si veda [passare tra i driver nvidia e nouveau](/index.php/NVIDIA_(Italiano)#Passare_tra_i_driver_nvidia_e_nouveau "NVIDIA (Italiano)"), se si desidera passare tra i driver Open e quelli proprietari.
+**Suggerimento:** Se state aggiornando dopo aver utilizzato i driver nouveau, assicurarsi di rimuovere `nouveau` dal file `/etc/mkinitcpio.conf`. Si veda [passare tra i driver nvidia e nouveau](#Passare_tra_i_driver_nvidia_e_nouveau), se si desidera passare tra i driver Open e quelli proprietari.
 
 ### Configurazione automatica
 
@@ -782,7 +782,7 @@ La transizione da nouveau può causare all'avvio una visualizzazione del termina
 
 **Requisiti Hardware:**
 
-Avere una scheda video che supporti almeno la seconda generazione di PureVideo HD [[1]](http://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_PureVideo_.28HD.29_GPUs)
+Avere una scheda video che supporti almeno la seconda generazione di PureVideo HD [wikipedia:Nvidia_PureVideo#Table_of_PureVideo_.28HD.29_GPUs](https://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_PureVideo_.28HD.29_GPUs "wikipedia:Nvidia PureVideo")
 
 **Software richiesto:**
 
@@ -809,7 +809,7 @@ vc=ffmpeg12vdpau,ffwmv3vdpau,ffvc1vdpau,ffh264vdpau,ffodivxvdpau,
 
 **Attenzione:** Il codec `ffodivxvdpau` è supportato solo dalla più recente serie di hardware NVIDIA . Considerare di ometterlo, sulla base di hardware specifico.
 
-*   Per abilitare l'accelerazione hardware in [VLC](/index.php/VLC_media_player "VLC media player") andate su:
+*   Per abilitare l'accelerazione hardware in [VLC](/index.php/VLC "VLC") andate su:
 
 `**Strumenti**>**Preferenze**>**Ingresso e Codificatori**` e spuntare `**Use GPU acceleration**`
 
@@ -1128,7 +1128,7 @@ Option "Metamodes" "1680x1050,1680x1050; 1280x1024,1280x1024; 1680x1050,NULL;  1
 
 ```
 
-Un altro metodo che può funzionare da solo o congiuntamente a quelli sopra descritti consiste nel [starting games in a seperate X server](/index.php/Gaming#Starting_games_in_a_seperate_X_server "Gaming").
+Un altro metodo che può funzionare da solo o congiuntamente a quelli sopra descritti consiste nel [starting games in a seperate X server](/index.php/Gaming#Starting_games_in_a_separate_X_server "Gaming").
 
 ### Vertical sync using TwinView
 
@@ -1304,7 +1304,7 @@ Controllare se `$ lspci | grep VGA` restituisce un output simile a questo:
 
 ```
 
-Dalla versione 319,12 Beta, i driver NVIDIA offrono il supporto ad Optimus [[[3]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html)] con versioni del kernel 2.9 e superiori.
+Dalla versione 319,12 Beta, i driver NVIDIA offrono il supporto ad Optimus [[2]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html) con versioni del kernel 2.9 e superiori.
 
 Un'altra soluzione è installare il driver [Intel](/index.php/Intel_(Italiano) "Intel (Italiano)") per gestire gli schermi, inoltre se si vuole che funzioni anche il software 3D si potrebbe utilizzare [Bumblebee](/index.php/Bumblebee_(Italiano) "Bumblebee (Italiano)") per fare in modo che essi utilizzino la scheda Nvidia.
 
@@ -1374,7 +1374,7 @@ Un problema con le versioni 11.2.202.228-1 e 11.2.202.233-1 di [flashplugin](htt
 1.  Installare il pacchetto [libvdpau](https://www.archlinux.org/packages/?name=libvdpau).
 2.  Patchare `vdpau_trace.so` con [questo makepkg](https://bbs.archlinux.org/viewtopic.php?pid=1078368#p1078368).
 3.  Tasto destro del mouse su un video, selezionare "Impostazioni..." e spuntare "Abilita l'accelerazione hardware". Ricaricare la pagina per fare in modo che le modifiche abbiano effetto. Si noti che viene disabilitata l'accelerazione GPU.
-4.  Effettuare un [downgrade](/index.php/Downgrading_Packages_(Italiano) "Downgrading Packages (Italiano)") di [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) alla versione 11.1.102.63-1 o precedente.
+4.  Effettuare un [downgrade](/index.php/Downgrading_packages_(Italiano) "Downgrading packages (Italiano)") di [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) alla versione 11.1.102.63-1 o precedente.
 5.  Utilizzare [google-chrome](https://aur.archlinux.org/packages/google-chrome/) con la nuova [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/)
 6.  Provare una delle poche alternative Flash.
 

@@ -80,7 +80,7 @@ Alcuni chipset wireless richiedono oltre al driver l'installazione di un firmwar
 *   Udev non è perfetto. Se il modulo appropriato non è caricato all'avvio, basta [caricarlo manualmente](/index.php/Kernel_modules_(Italiano)#Caricamento "Kernel modules (Italiano)"). Si noti inoltre che udev può occasionalmente caricare più di un driver per una periferica, e il conflitto risultante impedirebbe una configurazione corretta della periferica. Asicurarsi quindi di mettere in [blacklist](/index.php/Kernel_modules_(Italiano)#Blacklist "Kernel modules (Italiano)") eventuali moduli non necessari.
 *   Il nome dell'interfaccia varia in base al driver e al chipset installato. Alcuni esempi sono `wlan0`, `eth1`, o `ath0`.
 
-**Suggerimento:** Benchè non sia strettamente necessario, è utile installare innanzitutto i tools in user-space menzionati alla sezione [#Configurazione manuale](#Configurazione_manuale), soprattutto nel caso in cui dovessero verificarsi problemi.
+**Suggerimento:** Benchè non sia strettamente necessario, è utile installare innanzitutto i tools in user-space menzionati alla sezione [#Configurazione Manuale](#Configurazione_Manuale), soprattutto nel caso in cui dovessero verificarsi problemi.
 
 ### Verificare se il driver per la propria periferica è stato caricato
 
@@ -153,7 +153,7 @@ La procedure e gli strumenti di cui avrete bisogno dipendono da una pluralità d
 Questa tabella mostra i differenti metodi che possono essere utilizzati per attivare e gestire una connessione wireless, a seconda del tipo di crittazione e del metodo di gestione che si vuole utilizzare, e i vari strumenti che sono necessari per ogni caso. Anche se ci sono possibilità ulteriori, queste sono quelle utilizzate più di frequente:
 
 | Gestione | Senza Crittazione/WEP | WPA/WPA2 PSK |
-| Manuale | [iproute2](https://www.archlinux.org/packages/?name=iproute2) + `iwconfig` + `dhcpcd`/`iproute2` | `iproute2` + `iwconfig` + [wpa_supplicant](/index.php/WPA_Supplicant_(Italiano) "WPA Supplicant (Italiano)") + `dhcpcd`/`iproute2` |
+| Manuale | [iproute2](https://www.archlinux.org/packages/?name=iproute2) + `iwconfig` + `dhcpcd`/`iproute2` | `iproute2` + `iwconfig` + [wpa_supplicant](/index.php/WPA_supplicant_(Italiano) "WPA supplicant (Italiano)") + `dhcpcd`/`iproute2` |
 | Automatica, con supporto ai profili di rete | [netctl](/index.php/Netctl "Netctl"), [wicd](/index.php/Wicd_(Italiano) "Wicd (Italiano)"), [NetworkManager](/index.php/NetworkManager_(Italiano) "NetworkManager (Italiano)"), ecc… |
 
 Altri metodi:
@@ -172,7 +172,7 @@ Il pacchetto [wireless_tools](https://www.archlinux.org/packages/?name=wireless_
 **Nota:**
 
 *   Negli esempi seguenti, si presume che la periferica wireless sia `wlan0` e che ci si stia connettendo all'access point `"your_essid"`. Si sostituiscano i due valori di conseguenza.
-*   Si noti inoltre che la maggior parte dei comandi proposti dovrà essere eseguita con [i permessi di root](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)"). In caso contrario, alcuni comandi come `iwlist` potrebbero terminare correttamente ma senza produrre l'output corretto, creando confusione.
+*   Si noti inoltre che la maggior parte dei comandi proposti dovrà essere eseguita con [i permessi di root](/index.php/Users_and_groups_(Italiano) "Users and groups (Italiano)"). In caso contrario, alcuni comandi come `iwlist` potrebbero terminare correttamente ma senza produrre l'output corretto, creando confusione.
 
 | Comando *iw* | Comando *wireless_tools* | Descrizione |
 | iw dev wlan0 link | iwconfig wlan0 | Informazioni sullo stato del collegamento. |
@@ -297,7 +297,7 @@ Voci importanti:
     *   WEP, WPA o RSN. Si noti che RSN e WPA2 sono nomi differenti dello stesso protocollo.
     *   Group cipher: ha valori TKIP, CCMP, entrambi, altri.
     *   Pairwise ciphers: ha valori: TKIP, CCMP, entrambi, altri. Non ha necessariamente lo stesso valore di "Group cipher.
-    *   Authentication Suites: ha valore PSK, 802.1x, altri. Utilizzando un router domestico, sarà solitamente visualizzato il valore PSK (ovvero "passphrase"). Nelle università, è più probabile trovare la suite 802.1x, che richiede un login ed una password. Sarà poi necessario conoscere il tipo di metodo per la gestione delle chiavi da utilizzare (ad esempio EAP) e quale incapsulazione esso utilizza (ad esempio PEAP). Per ulteriori dettagli consultare [http://en.wikipedia.org/wiki/List_of_authentication_protocols](http://en.wikipedia.org/wiki/List_of_authentication_protocols).
+    *   Authentication Suites: ha valore PSK, 802.1x, altri. Utilizzando un router domestico, sarà solitamente visualizzato il valore PSK (ovvero "passphrase"). Nelle università, è più probabile trovare la suite 802.1x, che richiede un login ed una password. Sarà poi necessario conoscere il tipo di metodo per la gestione delle chiavi da utilizzare (ad esempio EAP) e quale incapsulazione esso utilizza (ad esempio PEAP). Per ulteriori dettagli consultare [wikipedia:List_of_authentication_protocols](https://en.wikipedia.org/wiki/List_of_authentication_protocols "wikipedia:List of authentication protocols").
 
 #### Modalità di funzionamento
 
@@ -341,7 +341,7 @@ con una chiave ASCII, specificando la terza chiave come default (le chiavi sono 
 
 *   **WPA/WPA2**
 
-Sarà necessario modificare il file `/etc/wpa_supplicant.conf` come descritto nella pagina [WPA Supplicant](/index.php/WPA_Supplicant_(Italiano) "WPA Supplicant (Italiano)"). Quindi, eseguire il comando:
+Sarà necessario modificare il file `/etc/wpa_supplicant.conf` come descritto nella pagina [WPA Supplicant](/index.php/WPA_supplicant_(Italiano) "WPA supplicant (Italiano)"). Quindi, eseguire il comando:
 
 ```
 # wpa_supplicant -i wlan0 -c /etc/wpa_supplicant.conf
@@ -350,7 +350,7 @@ Sarà necessario modificare il file `/etc/wpa_supplicant.conf` come descritto ne
 
 Ciò è valido presupponendo che la periferica utilizzi il driver `wext`. In caso di problemi, si controllino le opzioni. Se la connessione funziona correttamente, continuare in un nuovo terminale (o uscire da `wpa_supplicant` con `Ctrl+c` e aggiungere l'opzione `-B` al comando precedente per farlo funzionare in background).
 
-Controllare la pagina relativa a [WPA Supplicant](/index.php/WPA_Supplicant_(Italiano) "WPA Supplicant (Italiano)") per maggiori informazioni e suggerimenti.
+Controllare la pagina relativa a [WPA Supplicant](/index.php/WPA_supplicant_(Italiano) "WPA supplicant (Italiano)") per maggiori informazioni e suggerimenti.
 
 Indipendentemente dal metodo utilizzato, è possibile verificare l'avvenuta associazione con:
 
@@ -361,7 +361,7 @@ Indipendentemente dal metodo utilizzato, è possibile verificare l'avvenuta asso
 
 #### Ottenere un indirizzo IP
 
-**Nota:** Si legga la pagina [Configuring Network (Italiano)# Configurare l'indirizzo IP](/index.php/Configuring_Network_(Italiano)#_Configurare_l.27indirizzo_IP "Configuring Network (Italiano)") per ulteriori esempi.
+**Nota:** Si legga la pagina [Configuring Network (Italiano)#Configurare l'indirizzo IP](/index.php/Configuring_Network_(Italiano)#Configurare_l.27indirizzo_IP "Configuring Network (Italiano)") per ulteriori esempi.
 .
 
 Infine, associate la vostra interfaccia di rete ad un indirizzo IP. Alcuni semplici esempi:
@@ -396,7 +396,7 @@ Nella sezione successiva sarà possibile trovare alcuni esempi.
 
 ##### Connessione wireless manuale al boot utilizzando systemd e dhcpcd
 
-Questo esempio utilizza [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)") per l'avvio, `dhcpcd` e [WPA Supplicant](/index.php/WPA_Supplicant_(Italiano) "WPA Supplicant (Italiano)") per la connessione.
+Questo esempio utilizza [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)") per l'avvio, `dhcpcd` e [WPA Supplicant](/index.php/WPA_supplicant_(Italiano) "WPA supplicant (Italiano)") per la connessione.
 
 Si crei un servizio per systemd, ad esempio `/etc/systemd/system/network@.service`:
 
@@ -443,7 +443,7 @@ gateway=192.168.0.1
 
 ```
 
-Assicurarsi che [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) sia installato e creare il file `/etc/wpa_supplicant.conf`. Si faccia riferimento a [WPA Supplicant](/index.php/WPA_Supplicant_(Italiano) "WPA Supplicant (Italiano)").
+Assicurarsi che [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) sia installato e creare il file `/etc/wpa_supplicant.conf`. Si faccia riferimento a [WPA Supplicant](/index.php/WPA_supplicant_(Italiano) "WPA supplicant (Italiano)").
 
  `/etc/wpa_supplicant.conf` 
 ```
@@ -525,7 +525,7 @@ Si veda [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar").
 
 Wlassistant è un'interfaccia grafica molto intuitiva per gestire le connessioni wireless.
 
-Installare il pacchetto [wlassistant](https://aur.archlinux.org/packages/wlassistant/) da [AUR](/index.php/Arch_User_Repository "Arch User Repository").
+Installare il pacchetto [wlassistant](https://aur.archlinux.org/packages/wlassistant/) da [AUR](/index.php/AUR "AUR").
 
 Wlassistant deve essere eseguito con privilegi di amministratore:
 
@@ -538,7 +538,7 @@ Un metodo per usare wlassistant è quello di configurare la scheda wireless attr
 
 ## Risparmio energetico
 
-Si veda [Power_saving#Network_interfaces](/index.php/Power_saving#Network_interfaces "Power saving").
+Si veda [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces "Power saving").
 
 ## Risoluzione dei problemi
 
@@ -546,7 +546,7 @@ Questa sezione contiene informazioni generali relative alla risoluzione dei prob
 
 ### Impossibile ottenere un indirizzo IP
 
-Se non si riesce ad ottenere un indirizzo IP tramite il client di default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), si provi con [dhclient](https://www.archlinux.org/packages/?name=dhclient). Ricordarsi di selezionare `dhclient` come client DHCP predefinito nel proprio [gestore di rete](#Configurazione_Automatica).
+Se non si riesce ad ottenere un indirizzo IP tramite il client di default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), si provi con [dhclient](https://www.archlinux.org/packages/?name=dhclient). Ricordarsi di selezionare `dhclient` come client DHCP predefinito nel proprio [gestore di rete](#Configurazione_automatica).
 
 Se si riesce ad ottenere un indirizzo tramite interfaccia Ethernet ma non tramite Wifi, si provi a disabilitare il risparmio energetico della scheda wireless:
 
@@ -725,7 +725,7 @@ Per utilizzare il vecchio driver `ath_pci`, si installi il pacchetto [madwifi](h
 
 ```
 
-Se si sta utilizzando questo driver, potrebbe essere necessario mettere in blacklist `ath5k`. Si veda [Kernel modules (Italiano)#Blacklisting](/index.php/Kernel_modules_(Italiano)#Blacklisting "Kernel modules (Italiano)") per ulteriori informazioni.
+Se si sta utilizzando questo driver, potrebbe essere necessario mettere in blacklist `ath5k`. Si veda [Kernel modules (Italiano)#Blacklist](/index.php/Kernel_modules_(Italiano)#Blacklist "Kernel modules (Italiano)") per ulteriori informazioni.
 
 Alcuni utenti potrebbero dover specificare l'opzione `countrycode` al caricamento del driver MadWifi, al fine di scegliere canali e potenza di trasmissione legali nel paese di appartenenza. Se ad esempio ci si trova nei paesi bassi, il modulo andrà caricato in questo modo:
 

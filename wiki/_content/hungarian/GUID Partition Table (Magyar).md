@@ -107,11 +107,11 @@ A GNU Parted 3.0 és felette lévő verziói valamint a `parted` parancssori esz
 
 ## Lásd még
 
-1.  A vonatkozó [GPT](http://en.wikipedia.org/wiki/GUID_Partition_Table) és [MBR](http://en.wikipedia.org/wiki/Master_boot_record) Wikipédia oldalakat
+1.  A vonatkozó [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") és [MBR](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record") Wikipédia oldalakat
 2.  [Rod Smith GPT fdisk eszközről szóló honlapja](http://rodsbooks.com/gdisk/) és [Sourceforge.net Projekt lapja - gptfdisk](http://sourceforge.net/projects/gptfdisk/)
 3.  Rod Smith oldala [az MBR-ről GPT-re történő konverzióról](http://rodsbooks.com/gdisk/mbr2gpt.html) és a [Rendszerindítás GPT-ről](http://rodsbooks.com/gdisk/booting.html)
 4.  Rod Smith oldala [Az Új Partíció-típus GUID-ről](http://www.rodsbooks.com/linux-fs-code/index.html) Linux adat partíciók számára
 5.  [A System Rescue CD oldala a GPT-ről](http://sysresccd.org/Sysresccd-Partitioning-The-new-GPT-disk-layout)
-6.  A Wikipédia a [BIOS Boot Partícióról](http://en.wikipedia.org/wiki/BIOS_Boot_partition)
+6.  A Wikipédia a [BIOS Boot Partícióról](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 7.  [Nagyméretű lemezek GPT-vel és Linux-szal - IBM Developer Works](http://www.ibm.com/developerworks/linux/library/l-gpt/index.html?ca=dgr-lnxw07GPT-Storagedth-lx&S_TACT=105AGY83&S_CMP=grlnxw07)
 8.  [A Microsoft Windows és a GPT FAQ](http://www.microsoft.com/whdc/device/storage/GPT_FAQ.mspx)

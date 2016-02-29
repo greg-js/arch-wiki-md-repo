@@ -33,7 +33,7 @@ Linux-ck обычно следует за свежими версиями ядр
 
 ## Варианты установки
 
-**Обратите внимание:** Если вы используете также другие ядра, вы должны самостоятельно отредактировать `/boot/grub/menu.lst` (если используете [GRUB](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB (Русский)")) или обновить `/boot/grub/grub.cfg` с помощью `grub-mkconfig -o /boot/grub/grub.cfg` (если используете [GRUB2](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB (Русский)"))
+**Примечание:** Если вы используете также другие ядра, вы должны самостоятельно отредактировать `/boot/grub/menu.lst` (если используете [GRUB](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB (Русский)")) или обновить `/boot/grub/grub.cfg` с помощью `grub-mkconfig -o /boot/grub/grub.cfg` (если используете [GRUB2](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB (Русский)"))
 
 **Важно:** Пользователи [GRUB](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB (Русский)"), прежде чем устанавливать пакет, должны удостовериться, что используют версию выше 1:1.99-5
 
@@ -50,13 +50,13 @@ Linux-ck обычно следует за свежими версиями ядр
 
 Более подробная информация содержится в самом `PKBUILD` в виде комментариев.
 
-**Обратите внимание:** В AUR также находятся пакеты некоторых специфических модулей, таких как [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [lirc-ck](https://aur.archlinux.org/packages/lirc-ck/) и [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/)
+**Примечание:** В AUR также находятся пакеты некоторых специфических модулей, таких как [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [lirc-ck](https://aur.archlinux.org/packages/lirc-ck/) и [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/)
 
 ### Использование готовых пакетов
 
 Если вы не хотите компилировать пакет самостоятельно, можете установить его из неофициального репозитория пользователя [graysky](/index.php/User:Graysky "User:Graysky").
 
-**Обратите внимание:** В репозитории содержатся пакеты, в которых BFQ включен как модуль. О том, как включить его, читайте ниже
+**Примечание:** В репозитории содержатся пакеты, в которых BFQ включен как модуль. О том, как включить его, читайте ниже
 
 Для подписи пакета используется [публичный ключ Graysky](http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x6D605D846176ED4B). *pacman* четвертой версии автоматически получит ключ, но если этого не произошло, вы можете сделать это вручную с помощью ссылки.
 
@@ -167,7 +167,7 @@ noop deadline cfq [bfq]
 
 Учтите что при использовании этого способы параметры не сохранятся при перезагрузке. Чтобы вносить изменения автоматически при загрузке ,поместитье строку "echo" в `/etc/rc.local`
 
-**Обратите внимание:** Пользователи которые устанавливали пакет из AUR могут включить BFQ глобально с помощью PKBUILD
+**Примечание:** Пользователи которые устанавливали пакет из AUR могут включить BFQ глобально с помощью PKBUILD
 
 ## Запуск VirtualBox
 
@@ -193,7 +193,7 @@ BFS — это аббревиатура от Brain Fuck Scheduler. Он пред
 
 *   [Con Kolivas' White Paper on the BFS](http://ck.kolivas.org/patches/bfs/sched-BFS.txt)
 *   [Con Kolivas' BFS FAQ](http://ck.kolivas.org/patches/bfs/bfs-faq.txt)
-*   [Wikipedia's BFS Article](http://en.wikipedia.org/wiki/Brain_Fuck_Scheduler)
+*   [Wikipedia's BFS Article](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")
 *   [Con Kolivas' Blog](http://ck-hack.blogspot.com/)
 
 ## [Linux-ck Package Changelog](/index.php/Linux-ck/Changelog "Linux-ck/Changelog")

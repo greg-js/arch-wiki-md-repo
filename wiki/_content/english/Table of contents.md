@@ -2,13 +2,13 @@
 
 	<small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(26)</small>
 
-	<small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(25) (also in [Development](/index.php/Category:Development "Category:Development"))</small>
+	<small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(21) (also in [Development](/index.php/Category:Development "Category:Development"))</small>
 
-	<small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(54)</small>
+	<small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(49)</small>
 
 	<small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small>
 
-	<small>1.2.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(4) (also in [Package management](/index.php/Category:Package_management "Category:Package management"))</small>
+	<small>1.2.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(3) (also in [Package management](/index.php/Category:Package_management "Category:Package management"), [Pages flagged with Template:Archive](/index.php/Category:Pages_flagged_with_Template:Archive "Category:Pages flagged with Template:Archive"))</small>
 
 	<small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(13)</small>
 
@@ -16,7 +16,7 @@
 
 	<small>1.4.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(1)</small>
 
-	<small>1.5.</small> [Events](/index.php/Category:Events "Category:Events") <small>(10)</small>
+	<small>1.5.</small> [Events](/index.php/Category:Events "Category:Events") <small>(7)</small>
 
 	<small>1.6.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(27)</small>
 
@@ -26,9 +26,9 @@
 
 	<small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(8)</small>
 
-	<small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(9)</small>
+	<small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(10)</small>
 
-	<small>2.3.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(15)</small>
+	<small>2.3.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(14)</small>
 
 	<small>2.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(12)</small>
 
@@ -66,9 +66,9 @@
 
 	<small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(2)</small>
 
-	<small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(10)</small>
+	<small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(11)</small>
 
-	<small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(16)</small>
+	<small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17)</small>
 
 	<small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(12)</small>
 
@@ -76,9 +76,9 @@
 
 	<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(53)</small>
 
-	<small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(25) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small>
+	<small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(21) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small>
 
-	<small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(54)</small>
+	<small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(49)</small>
 
 	<small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small>
 
@@ -196,17 +196,17 @@
 
 	<small>5.13.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(18) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
 
-	<small>5.14.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice") <small>(9)</small>
+	<small>5.14.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice") <small>(10)</small>
 
-	<small>5.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(17) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
+	<small>5.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(17) (also in [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style"), [Security](/index.php/Category:Security "Category:Security"))</small>
 
 	<small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(62)</small>
 
 	<small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(10)</small>
 
-	<small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(29)</small>
+	<small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(28)</small>
 
-	<small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(41)</small>
+	<small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(42)</small>
 
 	<small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(13)</small>
 
@@ -214,7 +214,7 @@
 
 	<small>6.2.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services") <small>(16)</small>
 
-	<small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(24)</small>
+	<small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(26)</small>
 
 	<small>6.3.1.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(12)</small>
 
@@ -246,11 +246,11 @@
 
 	<small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small>
 
-	<small>6.9.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(4) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small>
+	<small>6.9.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(3) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"), [Pages flagged with Template:Archive](/index.php/Category:Pages_flagged_with_Template:Archive "Category:Pages flagged with Template:Archive"))</small>
 
 	<small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(21)</small>
 
-	<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small>
+	<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(72)</small>
 
 	<small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(25)</small>
 
@@ -260,7 +260,7 @@
 
 	<small>6.11.4.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(18) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
-	<small>6.11.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
+	<small>6.11.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"), [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style"))</small>
 
 	<small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(36)</small>
 

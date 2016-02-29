@@ -6,12 +6,13 @@
     *   [1.3 Wired and Wireless Networking](#Wired_and_Wireless_Networking)
     *   [1.4 Bluetooth](#Bluetooth)
     *   [1.5 CPU](#CPU)
-    *   [1.6 TouchPad](#TouchPad)
-    *   [1.7 Webcam](#Webcam)
-    *   [1.8 Input Devices](#Input_Devices)
-    *   [1.9 Storage](#Storage)
-    *   [1.10 RAM](#RAM)
-    *   [1.11 Manufacturer](#Manufacturer)
+    *   [1.6 HDMI Out](#HDMI_Out)
+    *   [1.7 TouchPad](#TouchPad)
+    *   [1.8 Webcam](#Webcam)
+    *   [1.9 Input Devices](#Input_Devices)
+    *   [1.10 Storage](#Storage)
+    *   [1.11 RAM](#RAM)
+    *   [1.12 Manufacturer](#Manufacturer)
 *   [2 Software Information](#Software_Information)
     *   [2.1 BIOS](#BIOS)
 
@@ -61,6 +62,12 @@ Works out of the box
 Intel(R) Celeron(R) CPU N2830 @ 2.16GHz
 
 You can't shut the laptop down sometimes. A user reported there is need for a microcode to shutdown [[1]](https://communities.intel.com/thread/54149) and [[2]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1341925) . You can get the related microcode here: [[3]](https://chromium.googlesource.com/chromiumos/third_party/coreboot/+/379bf9beb361d392dc5d4b52220b3a3b274cdf01/src/soc/intel/baytrail/microcode/M0C30678_00000829.h) but it does not fix the issue, it just makes it happen less often.
+
+With Linux 4.3 (4.2?) and up, there is no shutdown issue.
+
+### HDMI Out
+
+There are issues with it while running Linux 4.4.
 
 ### TouchPad
 

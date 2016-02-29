@@ -1,4 +1,4 @@
-W nowym wydaniu Archa AIF (Arch Installation Framework) nie jest już dostarczany wraz z [Nośnikiem instalacyjnym 2012.07.15](https://www.archlinux.org/news/install-media-20120715-released/). W miejsce przestarzałego rozwiązania wprowadzone nowe [skrypty instalacyjne Archa](https://github.com/falconindy/arch-install-scripts), których zadaniem jest pomoc w instalacji nowego systemu. Ten artykuł stworzony jest po to, by przybliżyć proces korzystania z tych skryptów. Aby uzyskać opis procesu instalacji i postinstalacji nakierowany na początkującego użytkownika, zapoznaj się z [Poradnikiem początkującego](/index.php/Beginners%27_Guide_(Polski) "Beginners' Guide (Polski)").
+W nowym wydaniu Archa AIF (Arch Installation Framework) nie jest już dostarczany wraz z [Nośnikiem instalacyjnym 2012.07.15](https://www.archlinux.org/news/install-media-20120715-released/). W miejsce przestarzałego rozwiązania wprowadzone nowe [skrypty instalacyjne Archa](https://github.com/falconindy/arch-install-scripts), których zadaniem jest pomoc w instalacji nowego systemu. Ten artykuł stworzony jest po to, by przybliżyć proces korzystania z tych skryptów. Aby uzyskać opis procesu instalacji i postinstalacji nakierowany na początkującego użytkownika, zapoznaj się z [Poradnikiem początkującego](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)").
 
 ## Contents
 
@@ -34,7 +34,7 @@ Zajrzyj do działu [Partycjonowanie dysku](/index.php/Partitioning_(Polski) "Par
 
 ## Formatowanie partycji
 
-Zajrzyj do działu [Formatowanie partycji](/index.php/File_Systems_(Polski)#Formatowanie_partycji "File Systems (Polski)") w celu zasięgnięcia dodatkowych informacji.
+Zajrzyj do działu [Formatowanie partycji](/index.php/File_systems_(Polski)#Formatowanie_partycji "File systems (Polski)") w celu zasięgnięcia dodatkowych informacji.
 
 Jeśli używasz (U)EFI, prawdopodobnie będziesz potrzebować dodatkowej partycji, na której będziesz mógł umieścić systemową partycję UEFI. Więcej możesz przeczytać w artykule [UEFI](/index.php?title=Unified_Extensible_Firmware_Interface_(Polski)&action=edit&redlink=1 "Unified Extensible Firmware Interface (Polski) (page does not exist)").
 
@@ -115,7 +115,7 @@ Następnie chrootujemy się do naszego nowo zainstalowanego środowiska:
 ```
 
 *   Usuń znak komentarza `#` w odpowiednich miejscach w pliku `/etc/locale.gen`, a następnie wygeneruj locale przy użyciu `locale-gen`.
-*   Zmień ustawienia [locale](https://wiki.archlinux.org/index.php/Locale#Setting_system-wide_locale_(Polski)) w pliku `/etc/locale.conf`.
+*   Zmień ustawienia [locale](/index.php/Locale#Setting_system-wide_locale_.28Polski.29 "Locale") w pliku `/etc/locale.conf`.
 *   Ustaw polską czcionkę i układ klawiatury w `/etc/vconsole.conf`. Standardowe ustawienie dla klawiatury qwerty:
 
 ```
@@ -131,7 +131,7 @@ FONT=Lat2-Terminus16
 
 ```
 
-*   Skonfiguruj program rozruchowy. Jeśli potrzebujesz pomocy, zajrzyj do poradnika [| GRUB2](https://wiki.archlinux.org/index.php/GRUB2); jeśli korzystasz z innego bootloadera, skorzystaj z opcji „szukaj”.
+*   Skonfiguruj program rozruchowy. Jeśli potrzebujesz pomocy, zajrzyj do poradnika [GRUB2](/index.php/GRUB2 "GRUB2"); jeśli korzystasz z innego bootloadera, skorzystaj z opcji „szukaj”.
 
 *   Ustaw hasło dla użytkownika root przy pomocy polecenia `passwd`.
 

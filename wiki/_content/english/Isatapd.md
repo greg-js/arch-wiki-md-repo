@@ -1,4 +1,4 @@
-[isatapd](http://www.saschahlusiak.de/linux/isatap.htm) is an [ISATAP](http://en.wikipedia.org/wiki/ISATAP) client. It is a daemon program to create and to maintain an ISATAP tunnel [RFC 5214](//tools.ietf.org/html/rfc5214) in Linux.
+[isatapd](http://www.saschahlusiak.de/linux/isatap.htm) is an [ISATAP](https://en.wikipedia.org/wiki/ISATAP "wikipedia:ISATAP") client. It is a daemon program to create and to maintain an ISATAP tunnel [RFC 5214](//tools.ietf.org/html/rfc5214) in Linux.
 
 ## Installation
 

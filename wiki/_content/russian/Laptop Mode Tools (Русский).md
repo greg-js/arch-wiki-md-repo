@@ -60,7 +60,7 @@ $ yaourt -S laptop-mode-tools
 
 **Важно:** Некорректные опции, касающиеся жесткого диска, могут привести к его преждевременному износу, а также к потере данных. Будьте внимательны при настройке и использовании!
 
-**Обратите внимание:** Здесь и далее приводится адаптированный перевод конфигурационных файлов пакета Laptop Mode Tools. В данном переводе часть настроек по умолчанию **изменена**. Сам пакет утилит и его конфигурационные файлы достаточно часто обновляются и использовать данный текст как конфигурационный файл не рекомендуется.
+**Примечание:** Здесь и далее приводится адаптированный перевод конфигурационных файлов пакета Laptop Mode Tools. В данном переводе часть настроек по умолчанию **изменена**. Сам пакет утилит и его конфигурационные файлы достаточно часто обновляются и использовать данный текст как конфигурационный файл не рекомендуется.
 
 ```
 ###############################################################################
@@ -310,7 +310,7 @@ CONTROL_NOATIME=0
 # Монтирование с опцией `relatime` более соответствует семантическим
 # стандартам и позволяет использовать больше приложений, сохраняя при этом
 # низкий уровень `atime` обновления (например, записи на диск).
-# [http://ru.wikipedia.org/wiki/Fstab](http://ru.wikipedia.org/wiki/Fstab)
+# [https://ru.wikipedia.org/wiki/Fstab](https://ru.wikipedia.org/wiki/Fstab)
 USE_RELATIME=1
 
 #
@@ -532,11 +532,11 @@ CONTROL_NMI_WATCHDOG="auto"
 
 *   [Linux NMIs on Intel 64-bit Hardware](http://x86vmm.blogspot.com/2005/10/linux-nmis-on-intel-64-bit-hardware.html)
 *   [Linux kernel Documentation](http://www.mjmwired.net/kernel/Documentation/nmi_watchdog.txt)
-*   [Не маскируемые прерывания](http://en.wikipedia.org/wiki/Non-Maskable_interrupt)
+*   [Не маскируемые прерывания](https://en.wikipedia.org/wiki/Non-Maskable_interrupt "wikipedia:Non-Maskable interrupt")
 
 На русском:
 
-*   [Прерывание](http://ru.wikipedia.org/wiki/Прерывание) на Википедии
+*   [Прерывание](https://ru.wikipedia.org/wiki/Прерывание) на Википедии
 
 Может быть он отключает счётчики неиспользуемых ядер?
 
@@ -693,7 +693,7 @@ CONTROL_SCHED_SMT_POWER_SAVINGS="auto"
 
 ```
 
-*   См. [SMT](http://en.wikipedia.org/wiki/Simultaneous_multithreading) на Википедии (на английском).
+*   См. [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading "wikipedia:Simultaneous multithreading") на Википедии (на английском).
 
 ### Устройства и шины
 
@@ -701,7 +701,7 @@ CONTROL_SCHED_SMT_POWER_SAVINGS="auto"
 
 `hal-polling.conf`
 
-**Обратите внимание:** [HAL](/index.php/HAL_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "HAL (Русский)") устарел и вытеснен [Udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)").
+**Примечание:** [HAL](/index.php/HAL_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "HAL (Русский)") устарел и вытеснен [Udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)").
 
 ```
 #
@@ -776,7 +776,7 @@ NOLM_AC_ACTIVATE_SATA_POWER=0
 
 ```
 
-*   См. [AHCI](http://ru.wikipedia.org/wiki/AHCI) на Википедии.
+*   См. [AHCI](https://ru.wikipedia.org/wiki/AHCI) на Википедии.
 
 #### Автоотключение USB
 
@@ -1009,7 +1009,7 @@ NOLM_AC_DPMS_STANDBY=1200
 
 ```
 
-*   См. [DPMS](http://ru.wikipedia.org/wiki/DPMS) на Википедии
+*   См. [DPMS](https://ru.wikipedia.org/wiki/DPMS) на Википедии
 
 #### Затемнение терминала
 
@@ -1757,7 +1757,7 @@ NOLM_AC_EXEC_COMMAND_9="" # Disable power saving feature 9 here
 
 ## Хитрости
 
-Используя `exec-commands.conf` можно заставить вашу видеокарту ATI потреблять меньше энергии. См. [ATI Powersawing](https://wiki.archlinux.org/index.php/Ati#Powersaving) за пояснениями по коммандам. Данный способ предполагает, что вы используете [KMS](/index.php/KMS "KMS"). Пример части файла `exec-commands.conf`. Перед тем как добавить эти команды в ваш файл, убедитесь, что на вашей системе они работают корректно.
+Используя `exec-commands.conf` можно заставить вашу видеокарту ATI потреблять меньше энергии. См. [ATI Powersawing](/index.php/ATI#Powersaving "ATI") за пояснениями по коммандам. Данный способ предполагает, что вы используете [KMS](/index.php/KMS "KMS"). Пример части файла `exec-commands.conf`. Перед тем как добавить эти команды в ваш файл, убедитесь, что на вашей системе они работают корректно.
 
 ```
 CONTROL_EXEC_COMMANDS="1"

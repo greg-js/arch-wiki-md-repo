@@ -213,7 +213,7 @@ You should have no problem with the power level information now if you obtain th
 
 With kernel version < 4.3.* the x205ta touchpad is recognised as a mouse and so gestures (e.g., two-finger scrolling) are not recognised.
 
-Since kernel 4.3.* a [[simpler patch](https://lkml.org/lkml/2015/8/24/647)] was merged and provides all touch/clickpad functionality out of the box.
+Since kernel 4.3.* a [simpler patch](https://lkml.org/lkml/2015/8/24/647) was merged and provides all touch/clickpad functionality out of the box.
 
 Explicitly assigning the 'synaptics' driver to 'Elan Touchpad' in xorg.conf provides even more functionality (e.g., two-finger tap to right click, etc.)
 

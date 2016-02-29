@@ -18,7 +18,7 @@ Vysvětlím vám druhý způsob.
 
 1.  Nainstalujte druhou síťovou kartu do PC1.
 2.  Propojte PC pomocí kříženého kabelu.
-3.  Předpokládejme že první karta (s internetem) je ***eth0*** a druhá je ***eth1***. (If those two keep switching at every boot read [this](https://wiki.archlinux.org/index.php/Udev#Mixed_Up_Devices.2C_Sound.2FNetwork_Cards_Changing_Order_Each_Boot) ).
+3.  Předpokládejme že první karta (s internetem) je ***eth0*** a druhá je ***eth1***. (If those two keep switching at every boot read [this](/index.php/Udev#Mixed_Up_Devices.2C_Sound.2FNetwork_Cards_Changing_Order_Each_Boot "Udev") ).
 4.  Konfigurace druhé síťové karty s:
 
     	**IP:** 192.168.0.1

@@ -19,7 +19,7 @@ In questa pagina si trovano informazioni su come ottenere il meglio dal vostro h
 
 ## Modulo del kernel gma500_gfx
 
-Con il kernel 2.6.39 [Alan Cox](http://it.wikipedia.org/wiki/Alan_Cox) sviluppò il modulo psb_gfx per supportare la periferica Poulsbo. A partire dal kernel 3.3.rc1 il driver è stato stabilizzato e rinominato come gma500_gfx. ([[1]](http://blog.bodhizazen.net/linux/linux-gma500-poulsbo-driver-moved-out-of-staging/))
+Con il kernel 2.6.39 [Alan Cox](https://it.wikipedia.org/wiki/Alan_Cox) sviluppò il modulo psb_gfx per supportare la periferica Poulsbo. A partire dal kernel 3.3.rc1 il driver è stato stabilizzato e rinominato come gma500_gfx. ([[1]](http://blog.bodhizazen.net/linux/linux-gma500-poulsbo-driver-moved-out-of-staging/))
 
 **Vantaggi**
 
@@ -75,7 +75,7 @@ Riavviate e dovreste avere i vostri driver abilitati e funzionanti
 
 ## Modesetting driver e procedura per l'uso di un monitor esterno
 
-Puoi impostare una risoluzione diversa a un monitor esterno usando [xrandr](https://wiki.archlinux.org/index.php/Xrandr) scaricando [xorg-xserver](https://www.archlinux.org/packages/?name=xorg-xserver) dai repository ufficiali. Se scegli di usare il pacchetto git ([xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/)), ricordati di ricompilarlo dopo ogni aggiornamento di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"). Dopo l'installazione, un file di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") deve essere modificato per usare il driver. Modifica quindi il file `/etc/X11/xorg.conf.d/20-gpudriver.conf` aggiungendo:
+Puoi impostare una risoluzione diversa a un monitor esterno usando [xrandr](/index.php/Xrandr "Xrandr") scaricando [xorg-xserver](https://www.archlinux.org/packages/?name=xorg-xserver) dai repository ufficiali. Se scegli di usare il pacchetto git ([xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/)), ricordati di ricompilarlo dopo ogni aggiornamento di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"). Dopo l'installazione, un file di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") deve essere modificato per usare il driver. Modifica quindi il file `/etc/X11/xorg.conf.d/20-gpudriver.conf` aggiungendo:
 
 ```
 Section "Device"
@@ -96,8 +96,8 @@ Se hai problemi a riprodurre video a 720 e 1080 dpi è normale fintanto che non 
 
 1.  Aggiungere pm-powersave false a /etc/rc.local.
 2.  Utilizzare [xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/) come sopra indicato.
-3.  Utilizzare sempre [mplayer](/index.php/Mplayer "Mplayer") o una sua variante. [VLC](/index.php/VLC "VLC") e player simili sono spesso troppo pesanti.
-4.  Sostituire il normale [mplayer](/index.php/Mplayer "Mplayer") con mplayer-minimal-svn e compilare con le ottimizzazioni:-march = native-fomit-frame-pointer-O3-ffast-matematica '.
+3.  Utilizzare sempre [MPlayer](/index.php/MPlayer "MPlayer") o una sua variante. [VLC](/index.php/VLC "VLC") e player simili sono spesso troppo pesanti.
+4.  Sostituire il normale [MPlayer](/index.php/MPlayer "MPlayer") con mplayer-minimal-svn e compilare con le ottimizzazioni:-march = native-fomit-frame-pointer-O3-ffast-matematica '.
 5.  Usare linux-lqx in quanto è un kernel con ottime prestazioni. Modifica il file PKGBUILD in modo da poter assicurarsi di selezionare il proprio processore e rimuovere ottimizzazioni generiche per altri processori.
 
 ### Correzione la sospensione
@@ -251,7 +251,7 @@ kernel /vmlinuz-linux root=/dev/sda2 ro mem=896mb
 
 ```
 
-*   [Grub](/index.php/Grub "Grub")
+*   [GRUB](/index.php/GRUB "GRUB")
 
 Modifica `/etc/default/grub`
 

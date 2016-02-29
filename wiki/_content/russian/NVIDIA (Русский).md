@@ -184,16 +184,16 @@ $ makepkg -ci
 
 Хук будет вызывать команду *dkms* для обновления модуля NVIDIA при обновлении версии вашего ядра.
 
-**Обратите внимание:**
+**Примечание:**
 
 *   Если вы используете данную функциональность **необходимо** наблюдать процесс установки пакета [linux](https://www.archlinux.org/packages/?name=linux) (или другого ядра). Хук nvidia будет сообщать вам, если что-то пойдет не так.
-*   Если вы хотите это делать вручную, обратитесь к статье [Dynamic_Kernel_Module_Support_(Русский)#Использование](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Dynamic Kernel Module Support (Русский)").
+*   Если вы хотите это делать вручную, обратитесь к статье [Dynamic Kernel Module Support (Русский)#Использование](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Dynamic Kernel Module Support (Русский)").
 
 ## Настройка
 
 Вполне возможно, что после установки драйвера, вам будет не нужно создавать конфигурационные файлы для сервера Xorg. Вы можете запустить [тест](/index.php/Xorg#Running "Xorg") для проверки корректной работы сервера Xorg без файла конфигурации. Однако, может потребоваться создание конфигурационного файла (предпочтительно `/etc/X11/xorg.conf.d/20-nvidia.conf` поверх `/etc/X11/xorg.conf`) для дополнительной настройки. Это конфигурация может быть сгенерирована инструментом конфигурации NVIDIA Xorg или можно создать её вручную. Если создается вручную, это может быть минимальной конфигурацией (в том смысле, что она будет содержать базовые настройки сервера [Xorg](/index.php/Xorg "Xorg")), либо она может включать в себя ряд настроек, которые могут обоходить автоматически обнаруженные настройки Xorg или предварительно заданные настройки.
 
-**Обратите внимание:** Начиная с версии 1.8.x, Xorg использует разделение конфигурационных файлов в `/etc/X11/xorg.conf.d/` - проверьте раздел [advanced configuration](#Advanced:_20-nvidia.conf).
+**Примечание:** Начиная с версии 1.8.x, Xorg использует разделение конфигурационных файлов в `/etc/X11/xorg.conf.d/` - проверьте раздел [advanced configuration](#Advanced:_20-nvidia.conf).
 
 ### Минимальная настройка
 
@@ -452,7 +452,7 @@ $ nvidia-xconfig --base-mosaic --metamodes="GPU-0.DFP-0: 1920x1024+0+0, GPU-0.DF
 
 ```
 
-**Обратите внимание:** Хотя в документации и указано конфигурация мониторов 2х2, Nvidia уменьшила данную возможность до трех мониторов в режиме Base Mosaic в 304 версии драйвера. Большее количество мониторов доступно в картах серии Quadro, а в обычных картах ограничение в три монитора. Как объяснение данного уменьшения озвучивается как "Паритетное свойство драйвера Windows". С сентября 2014, Windows не имеет ограничение на количество мониторов с той же самой версией драйвера. Это не ошибка, так задумано по дизайну архитектуры.
+**Примечание:** Хотя в документации и указано конфигурация мониторов 2х2, Nvidia уменьшила данную возможность до трех мониторов в режиме Base Mosaic в 304 версии драйвера. Большее количество мониторов доступно в картах серии Quadro, а в обычных картах ограничение в три монитора. Как объяснение данного уменьшения озвучивается как "Паритетное свойство драйвера Windows". С сентября 2014, Windows не имеет ограничение на количество мониторов с той же самой версией драйвера. Это не ошибка, так задумано по дизайну архитектуры.
 
 ##### SLI Mosaic
 
@@ -512,7 +512,7 @@ Option "ConnectedMonitor" "DFP"
 
 ```
 
-**Обратите внимание:** Используйте "CRT" для все аналоговых соединений типа VGA 15-пин, даже если монитор тонкий. "DFP" предназначен только для цифровых подключений такие как DVI, HDMI и DisplayPort.
+**Примечание:** Используйте "CRT" для все аналоговых соединений типа VGA 15-пин, даже если монитор тонкий. "DFP" предназначен только для цифровых подключений такие как DVI, HDMI и DisplayPort.
 
 #### Включение контроля яркости
 
@@ -547,7 +547,7 @@ BusID "PCI:3:0:0"
 
 ```
 
-**Обратите внимание:** Формат написания очень важен. Значение BusID должно быть указано в таком формате `"PCI:<BusID>:0:0"`
+**Примечание:** Формат написания очень важен. Значение BusID должно быть указано в таком формате `"PCI:<BusID>:0:0"`
 
 Добавьте желаемое значение режима рендеринга SLI в секцию `Screen`:
 
@@ -610,7 +610,7 @@ Option "Coolbits" "*value*"
 
 Документация по *Coolbits* находится в `/usr/share/doc/nvidia/html/xconfigoptions.html`. Последния онлайн-версия документации по *Coolbits* (версия драйвера 355.11) находится [тут (англ.)](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html).
 
-**Обратите внимание:** Также, возможно отредактировать и переписать BIOS графического процессора, используя DOS (предпочтительнее) или с использованием Win32 окружения с помощью [nvflash](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,127/orderby,2/page,1/) и [NiBiTor 6.0](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,135/orderby,2/page,1/). Преимущество данного способа в том, что вы можете поднять не только напряжение, но и повысить стабильность программных методов разгона, такие как Coolbits. [Руководство по модификации BIOS архитектуры Fermi (англ.)](http://ivanvojtko.blogspot.sk/2014/03/how-to-overclock-geforce-460gtx-fermi.html)
+**Примечание:** Также, возможно отредактировать и переписать BIOS графического процессора, используя DOS (предпочтительнее) или с использованием Win32 окружения с помощью [nvflash](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,127/orderby,2/page,1/) и [NiBiTor 6.0](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,135/orderby,2/page,1/). Преимущество данного способа в том, что вы можете поднять не только напряжение, но и повысить стабильность программных методов разгона, такие как Coolbits. [Руководство по модификации BIOS архитектуры Fermi (англ.)](http://ivanvojtko.blogspot.sk/2014/03/how-to-overclock-geforce-460gtx-fermi.html)
 
 ##### Настройка статического 2D/3D разгона
 
@@ -631,7 +631,7 @@ Option "RegistryDwords" "PerfLevelSrc=0x2222"
 
 **Аппаратные требования:**
 
-Как миниум, видеокарта с вторым поколением PureVideo HD [[3]](http://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_PureVideo_.28HD.29_GPUs).
+Как миниум, видеокарта с вторым поколением PureVideo HD [wikipedia:Nvidia_PureVideo#Table_of_PureVideo_.28HD.29_GPUs](https://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_PureVideo_.28HD.29_GPUs "wikipedia:Nvidia PureVideo").
 
 **Программные требования:**
 
@@ -779,7 +779,7 @@ Config Options in the README.
 
 #### Метод 1 - nvidia-settings
 
-**Обратите внимание:** Данный метод требует наличия сервера X. Используйте второй или третий метод если X сервер вам не нужен. Также, третий метод не работает с новыми картами NVIDIA, такими как GeForce 200 series, и с интегрированными графическими решениями, такими как Zotac IONITX's 8800GS.
+**Примечание:** Данный метод требует наличия сервера X. Используйте второй или третий метод если X сервер вам не нужен. Также, третий метод не работает с новыми картами NVIDIA, такими как GeForce 200 series, и с интегрированными графическими решениями, такими как Zotac IONITX's 8800GS.
 
 Для отображения температуры графического ядра в оболочке используйте `nvidia-settings` как указано ниже:
 
@@ -864,7 +864,7 @@ GPU 0000:01:00.0
 
 Используйте [nvclock](https://aur.archlinux.org/packages/nvclock/), который доступен в [AUR](/index.php/AUR "AUR").
 
-**Обратите внимание:** `nvclock` не может получить доступ к тепловому сенсору на картах NVIDIA новее Geforce 200 series.
+**Примечание:** `nvclock` не может получить доступ к тепловому сенсору на картах NVIDIA новее Geforce 200 series.
 
 Могут быть расхождения значений температуры между nvclock и nvidia-settings/nv-control. В соответствии с [этим сообщением](http://sourceforge.net/projects/nvclock/forums/forum/67426/topic/1906899) от автора (thunderbird) nvclock, значения выдаваемые nvclock более точные.
 
@@ -877,7 +877,7 @@ Option "Coolbits" "4"
 
 ```
 
-**Обратите внимание:** Для карт GeForce 400/500 series, на текущий момент, этот метод при входе не устанавливает скорость вентилятора. Также, этот метод только позволяет настраивать скорость вентилятора только для текущей сессии X через nvidia-settings.
+**Примечание:** Для карт GeForce 400/500 series, на текущий момент, этот метод при входе не устанавливает скорость вентилятора. Также, этот метод только позволяет настраивать скорость вентилятора только для текущей сессии X через nvidia-settings.
 
 Поместите следующую строку в ваш файл [xinitrc](/index.php/Xinitrc "Xinitrc") для управления вентилятором при запуске Xorg. Замените `*n*` на значение скорости вентилятора нужное вам в процентах.
 
@@ -905,7 +905,7 @@ Name=nvidia-fan-speed
 
 ```
 
-**Обратите внимание:** С версии драйвера 349.16, опция `GPUCurrentFanSpeed` заменена на `GPUTargetFanSpeed`. [[4]](https://devtalk.nvidia.com/default/topic/821563/linux/can-t-control-fan-speed-with-beta-driver-349-12/post/4526208/#4526208)
+**Примечание:** С версии драйвера 349.16, опция `GPUCurrentFanSpeed` заменена на `GPUTargetFanSpeed`. [[3]](https://devtalk.nvidia.com/default/topic/821563/linux/can-t-control-fan-speed-with-beta-driver-349-12/post/4526208/#4526208)
 
 ### Порядок установки/удаления при смене драйвера
 
@@ -1028,7 +1028,7 @@ vmalloc=384M
 
 ```
 
-If running a 64bit kernel, a driver defect can cause the NVIDIA module to fail initializing when IOMMU is on. Turning it off in the BIOS has been confirmed to work for some users. [[5]](http://www.nvnews.net/vbulletin/showthread.php?s=68bb2fabadcb53b10b286aa42d13c5bc&t=159335)[User:Clickthem#nvidia module](/index.php/User:Clickthem#nvidia_module "User:Clickthem")
+If running a 64bit kernel, a driver defect can cause the NVIDIA module to fail initializing when IOMMU is on. Turning it off in the BIOS has been confirmed to work for some users. [[4]](http://www.nvnews.net/vbulletin/showthread.php?s=68bb2fabadcb53b10b286aa42d13c5bc&t=159335)[User:Clickthem#nvidia module](/index.php/User:Clickthem#nvidia_module "User:Clickthem")
 
 Another thing to try is to change your BIOS IRQ routing from `Operating system controlled` to `BIOS controlled` or the other way around. The first one can be passed as a kernel parameter:
 
@@ -1150,7 +1150,7 @@ Check if `$ lspci | grep VGA` outputs something similar to:
 
 ```
 
-NVIDIA drivers now offer Optimus support since 319.12 Beta [[[6]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html)] with kernels above and including 3.9.
+NVIDIA drivers now offer Optimus support since 319.12 Beta [[5]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html) with kernels above and including 3.9.
 
 Another solution is to install the [Intel](/index.php/Intel "Intel") driver to handle the screens, then if you want 3D software you should run them through [Bumblebee](/index.php/Bumblebee "Bumblebee") to tell them to use the NVIDIA card.
 

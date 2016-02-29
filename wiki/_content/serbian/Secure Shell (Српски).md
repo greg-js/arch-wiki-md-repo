@@ -254,11 +254,11 @@ PermitRootLogin no # (put yes here if you want root login)
 
 Може се и склонити коментар са опције BANNER и изменити `/etc/issue` како би добили поруку добродошлице.
 
-**Tip:** Може се променити подразумевани порт са 22 на неки други виши порт (види [security through obscurity](http://en.wikipedia.org/wiki/Security_through_obscurity)).
+**Tip:** Може се променити подразумевани порт са 22 на неки други виши порт (види [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity")).
 
 Иако се порт који је додељен ssh може детектовати коришћењем порт скенера као што је nmap, мењање порта ће смањити број уноса у дневник.
 
-**Tip:** Онемогућавање шифре при пријављивању може повећати сигурност, пошто сваки корисник који приступа серверу мора да креира ssh кључ. (види [Using SSH Keys](https://wiki.archlinux.org/index.php/Using_SSH_Keys)).
+**Tip:** Онемогућавање шифре при пријављивању може повећати сигурност, пошто сваки корисник који приступа серверу мора да креира ssh кључ. (види [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys")).
  `/etc/ssh/sshd_config` 
 ```
 PasswordAuthentication no
@@ -614,7 +614,7 @@ If the above command do not show SSH port is open, SSH is NOT running. Check `/v
 
 # Такође погледајте
 
-*   [Using SSH Keys_(Српски)](/index.php/Using_SSH_Keys_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Using SSH Keys (Српски)")
+*   [Using SSH Keys (Српски)](/index.php/Using_SSH_Keys_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Using SSH Keys (Српски)")
 
 # Линкови и препоруке
 

@@ -37,7 +37,7 @@
 | **Hard Disk** | 1 TB 5400rpm SATA |
 | **Touchpad** | Synaptics ClickPad |
 
-[[Schematic diagram](https://framapic.org/HHmPmSh9DV1r/S04qJm6r)]
+[Schematic diagram](https://framapic.org/HHmPmSh9DV1r/S04qJm6r)
 
 # Configuration
 
@@ -45,7 +45,7 @@ This is based on the HP Envy 15 j013sg (E8N68EA) and HP Envy j082sf
 
 ## Video -- *j013sg and j082sf*
 
-xf86-video-modesetting and bumblebee setups work. nouveau untested Works by folllowing [https://wiki.archlinux.org/index.php/Optimus](https://wiki.archlinux.org/index.php/Optimus)
+xf86-video-modesetting and bumblebee setups work. nouveau untested Works by folllowing [Optimus](/index.php/Optimus "Optimus")
 
 ## Audio -- *j013sg and j082sf*
 

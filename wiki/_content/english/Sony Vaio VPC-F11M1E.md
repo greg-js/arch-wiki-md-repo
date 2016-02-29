@@ -18,7 +18,7 @@
 
 X server works with the standard [nvidia](https://www.archlinux.org/packages/?name=nvidia) package but shows a blank screen when exiting the X server or just switching terminals using Ctrl+Alt+Fx.
 
-To resolve the blank screen issue you need to use [vesafb](https://wiki.archlinux.org/index.php/Uvesafb).
+To resolve the blank screen issue you need to use [vesafb](/index.php/Uvesafb "Uvesafb").
 
 Install [v86d](https://aur.archlinux.org/packages/v86d/) and remove any vga=<foo> kernel boot parameters.
 
@@ -194,4 +194,4 @@ Put channels to the highest number of **channels** supported by the combination 
 
 [http://code.google.com/p/vaio-f11-linux/w/list?q=label:State-Solution](http://code.google.com/p/vaio-f11-linux/w/list?q=label:State-Solution)
 
-[https://wiki.archlinux.org/index.php/Map_scancodes_to_keycodes](https://wiki.archlinux.org/index.php/Map_scancodes_to_keycodes)
+[Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes")

@@ -137,7 +137,7 @@ location / {
 
 #### Nginx configuration (with chrooted Nginx)
 
-**Note:** Please refer to the below tips if you have deployed Nginx as described here: [https://wiki.archlinux.org/index.php/Nginx#Installation_in_a_chroot](https://wiki.archlinux.org/index.php/Nginx#Installation_in_a_chroot)
+**Note:** Please refer to the below tips if you have deployed Nginx as described here: [Nginx#Installation in a chroot](/index.php/Nginx#Installation_in_a_chroot "Nginx")
 
 **Note:** It is assumed your Nginx chroot is located within `/srv/http`
 

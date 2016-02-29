@@ -30,58 +30,53 @@ Disk quota only requires one package:
 
 ## Enabling
 
-*For journaled quota, see the notes in [#Journaled quota](#Journaled_quota).*
-
-1\. First, edit `/etc/fstab` to enable the quota mount option(s) on selected file systems:
+First, edit `/etc/fstab` to enable the quota mount option(s) on selected file systems. For example, edit an entry
 
 ```
- /dev/sda1 /home ext4 defaults 1 1
+/dev/sda1 /home ext4 defaults 1 1
 
 ```
 
-	edit it as follows;
+as follows:
 
 ```
- /dev/sda1 /home ext4 defaults**,usrquota** 1 1
-
-```
-
-	or aditionally enable the group quota mount option;
-
-```
- /dev/sda1 /home ext4 defaults**,usrquota,grpquota** 1 1
+/dev/sda1 /home ext4 defaults**,usrquota** 1 1
 
 ```
 
-2\. The next step is to remount:
+or, to additionally enable the group quota mount option:
+
+```
+/dev/sda1 /home ext4 defaults**,usrquota,grpquota** 1 1
+
+```
+
+For journaled quota the fstab options vary, see [#Journaled quota](#Journaled_quota).
+
+After adding the options remount
 
 ```
  # mount -vo remount /home
 
 ```
 
-3\. Create the quota index:
+and create the quota index:
 
 ```
  # quotacheck -vgum /home
 
 ```
+If you added quota options for more partitions, you may also use `quotacheck -vguma` as root.
+**Tip:**
 
-	or for all partitions with the quota mount options in `/etc/mtab`;
+If the command returns with
 
-```
- # quotacheck -vguma
+*   `[...]Quotafile $FILE was probably truncated. Cannot save quota settings...`, you can try removing the previously created files `aquota*`.
+*   `quotacheck: Mountpoint (or device) /home not found or has no quota enabled. quotacheck: Cannot find filesystem to check or filesystem not mounted with quota option.` and you are using a custom kernel, make sure quota support is enabled in your kernel.
 
-```
+If it continues to throw an error, you can additionally try to use options `"-F vfsold` or `-F vfsv0` afterwards. Note that as of kernel 3.1.6-1, Arch does not support the `vfsv1` anymore.
 
-**Tip:** If you end up with the output "[...]Quotafile $FILE was probably truncated. Cannot save quota settings..." you can try removing the previously created files aquota*
-
-**Tip:** If you get the output "quotacheck: Mountpoint (or device) /home not found or has no quota enabled.
-quotacheck: Cannot find filesystem to check or filesystem not mounted with quota option." and you are using a custom kernel, make sure quota support is enabled in your kernel.
-
-**Tip:** In Addition you can try to use "-F vfsold" and "-F vfsv0" afterwards **NOTE:** As of 3.1.6-1, Arch does not support "vfsv1"
-
-4\. Finally, enable quotas:
+Finally, enable quotas:
 
 ```
  # quotaon -av

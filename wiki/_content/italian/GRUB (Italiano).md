@@ -96,11 +96,11 @@ In sintesi, il *bootloader* è il primo programma ad essere eseguito quando il c
 
 *   E' supportato l'uso del filesystem [Btrfs](/index.php/Btrfs "Btrfs") per la root (eliminando quindi la necessità di una partizione /boot separata con un filesystem diverso). Sono inoltre supportati gli algoritmi di compressione zlib o LZO.
 
-*   GRUB non supporta partizioni root formattate in [F2fs](/index.php/F2fs "F2fs"), perciò sarà necessario creare una partizione `/boot` separata usando un filesystem supportato.
+*   GRUB non supporta partizioni root formattate in [F2FS](/index.php/F2FS "F2FS"), perciò sarà necessario creare una partizione `/boot` separata usando un filesystem supportato.
 
 ### Note per gli utenti di GRUB Legacy
 
-*   Aggiornare [GRUB Legacy](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)") a [GRUB](/index.php/GRUB2_(Italiano) "GRUB2 (Italiano)")(2) è un procedimento molto simile ad un installazione ex-novo di GRUB2, argomento trattato [qui](/index.php/GRUB2_(Italiano)#Installazione "GRUB2 (Italiano)").
+*   Aggiornare [GRUB Legacy](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)") a [GRUB](/index.php/GRUB2_(Italiano) "GRUB2 (Italiano)")(2) è un procedimento molto simile ad un installazione ex-novo di GRUB2, argomento trattato [qui](#Installazione).
 
 *   Vi sono differenze nei comandi di GRUB e GRUB2\. Si consiglia di familiarizzare con i [comandi di GRUB2](http://www.gnu.org/software/grub/manual/grub.html#Commands) prima di procedere. (ad esempio, "find" è stato rimpiazzato da "search").
 *   GRUB2 è ora *modulare* e non richiede più lo "stage 1.5". Di conseguenza, il bootloader dispone di capacità limitate e i moduli sono caricati dal disco rigido in caso di necessità (ad esempio, se si necessita del supporto [LVM](/index.php/LVM_(Italiano) "LVM (Italiano)") o RAID).
@@ -130,7 +130,7 @@ Solamente i primi 446 bytes del MBR contengono il boot code, mentre i restanti 6
 
 ```
 
-Se non si è stati in grado di installare GRUB2 correttamente, si veda [GRUB2 (Italiano)#Ripristinare GRUB Legacy](/index.php/GRUB2_(Italiano)#Ripristinare_GRUB_Legacy "GRUB2 (Italiano)")
+Se non si è stati in grado di installare GRUB2 correttamente, si veda [#Ripristinare GRUB Legacy](#Ripristinare_GRUB_Legacy)
 
 ### Prerequisiti per GRUB2
 
@@ -138,7 +138,7 @@ Se non si è stati in grado di installare GRUB2 correttamente, si veda [GRUB2 (I
 
 ##### Istruzioni specifiche per GUID Partition Table (GPT)
 
-Su sistemi [GPT](/index.php/GUID_Partition_Table "GUID Partition Table") è necessario creare una [partizione di boot BIOS](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) dove GRUB possa inserire il proprio `core.img`
+Su sistemi [GPT](/index.php/GPT "GPT") è necessario creare una [partizione di boot BIOS](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) dove GRUB possa inserire il proprio `core.img`
 
 **Nota:**
 
@@ -156,7 +156,7 @@ Solitamente, il gap dopo il [MBR](/index.php/Master_Boot_Record_(Italiano) "Mast
 
 #### Sistemi UEFI
 
-**Nota:** Per ulteriori informazioni su GRUB2 UEFI, è consigliabile leggere le pagine [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)"), [GPT](/index.php/GPT "GPT") e [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") prima di proseguire con questo articolo.
+**Nota:** Per ulteriori informazioni su GRUB2 UEFI, è consigliabile leggere le pagine [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)"), [GPT](/index.php/GPT "GPT") e [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") prima di proseguire con questo articolo.
 
 ##### Controllare se si sta utilizzando GPT ed una partizione EFI di sistema
 
@@ -173,11 +173,11 @@ Se si utilizza GPT, il comando dovrebbe riportare `Partition Table: GPT`. Per EF
 
 ##### Creazione di una partizione EFI di sistema
 
-Se non si dispone di una ESP, sarà necesario crearla. Si veda [Unified_Extensible_Firmware_Interface#EFI_System_Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") per le istruzioni su come procedere.
+Se non si dispone di una ESP, sarà necesario crearla. Si veda [Unified Extensible Firmware Interface#EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") per le istruzioni su come procedere.
 
 ## Installazione
 
-**Nota:** Se si sta [installando](/index.php/Installation_Guide_(Italiano) "Installation Guide (Italiano)") Arch Linux da LiveCD assicurarsi di aver effettuato il chroot nel sistema appena installato prima di installare GRUB: se si utilizzano gli script di installazione contenuti nel LiveCD potrebbe venir generato un `grub.cfg` errato o potrebbero verificarsi altri problemi che non consentirebbero al sistema di avviarsi.
+**Nota:** Se si sta [installando](/index.php/Installation_guide_(Italiano) "Installation guide (Italiano)") Arch Linux da LiveCD assicurarsi di aver effettuato il chroot nel sistema appena installato prima di installare GRUB: se si utilizzano gli script di installazione contenuti nel LiveCD potrebbe venir generato un `grub.cfg` errato o potrebbero verificarsi altri problemi che non consentirebbero al sistema di avviarsi.
 
 ### Sistemi BIOS
 
@@ -333,7 +333,7 @@ Assicurarsi che la partizione UEFI sia stata montata (ad esempio creata come `/b
 
 **Nota:**
 
-*   Se si riscontrano problemi nell'utilizzo di `grub-install` e lo script ci consiglia di caricare il modulo efivars, si provi con [Unified_Extensible_Firmware_Interface#Switch_to_efivarfs](/index.php/Unified_Extensible_Firmware_Interface#Switch_to_efivarfs "Unified Extensible Firmware Interface")
+*   Se si riscontrano problemi nell'utilizzo di `grub-install` e lo script ci consiglia di caricare il modulo efivars, si provi con [Unified Extensible Firmware Interface#Switch_to_efivarfs](/index.php/Unified_Extensible_Firmware_Interface#Switch_to_efivarfs "Unified Extensible Firmware Interface")
 *   Se si sta installando GRUB in un ambiente chroot su un sistema che utilizza LVM è possibile che vengano visualizzati messaggi simili a questo: `/run/lvm/lvmetad.socket: connect failed: No such file or directory` o `WARNING: failed to connect to lvmetad: No such file or directory. Falling back to internal scanning.`.
 
 Questi messaggi sono causati dalla mancanza della directory `/run` nell'ambiente di chroot ma non pregiudicano l'avvio del sistema, percui è possibile proseguire tranquillamente con l'installazione.
@@ -522,7 +522,7 @@ GRUB_GFXPAYLOAD_LINUX=keep
 
 È possibile specificare diverse risoluzioni, incluso il valore di default `auto`. È quindi consigliabile che la variabile `GRUB_GFXMODE` abbia un valore simile a `GRUB_GFXMODE=<risoluzione desiderata>,<fallback, ad esempio 1024x768>,auto`. Per ulteriori informazioni, consultare la [documentazione di GRUB relativa a gfxmode](https://www.gnu.org/software/grub/manual/html_node/gfxmode.html#gfxmode). L'opzione [gfxpayload](https://www.gnu.org/software/grub/manual/html_node/gfxpayload.html#gfxpayload) farà si che il kernel mantenga la risoluzione.
 
-**Nota:** È possibile utilizzare solamente le risoluzioni che la scheda grafica supporta tramite le [estensioni VESA BIOS](http://en.wikipedia.org/wiki/VESA_BIOS_Extensions). Per ottenere un elenco delle risoluzioni supportate, si installi [hwinfo](https://www.archlinux.org/packages/?name=hwinfo) e si esegua `hwinfo --framebuffer` come utente root. In alternativa, si entri nella riga di comando di GRUB e si esegua `vbeinfo`.
+**Nota:** È possibile utilizzare solamente le risoluzioni che la scheda grafica supporta tramite le [estensioni VESA BIOS](https://en.wikipedia.org/wiki/VESA_BIOS_Extensions "wikipedia:VESA BIOS Extensions"). Per ottenere un elenco delle risoluzioni supportate, si installi [hwinfo](https://www.archlinux.org/packages/?name=hwinfo) e si esegua `hwinfo --framebuffer` come utente root. In alternativa, si entri nella riga di comando di GRUB e si esegua `vbeinfo`.
 
 Se quanto sopra non funziona, è possibile utilizzare il vecchio parametro `vga=`. Lo si aggiunga semplicemente alla variabile `"GRUB_CMDLINE_LINUX_DEFAULT="` in `/etc/default/grub`: ad esempio: `"GRUB_CMDLINE_LINUX_DEFAULT="quiet splash vga=792"` imposterà una risoluzione di `1024x768`.
 
@@ -722,7 +722,7 @@ GRUB_SAVEDEFAULT=true
 
 **Nota:** Le voci di menù aggiunte manualmente in `/etc/grub.d/40_custom` o `/boot/grub/custom.cfg` (ad esempio Windows), richiederanno l'opzione `savedefault`.
 
-Ci si ricordi di [rigenerare](/index.php/GRUB2_(Italiano)#Generare_un_file_di_configurazione "GRUB2 (Italiano)") il file di configurazione di GRUB.
+Ci si ricordi di [rigenerare](#Generare_un_file_di_configurazione) il file di configurazione di GRUB.
 
 ### Cambiare la voce di menu predefinita
 
@@ -744,7 +744,7 @@ GRUB_DEFAULT='Arch Linux, with Linux core repo kernel'
 
 ```
 
-**Nota:** Ricordarsi di [rigenerare](/index.php/GRUB2_(Italiano)#Generare_un_file_di_configurazione "GRUB2 (Italiano)") il file di configurazione di GRUB.
+**Nota:** Ricordarsi di [rigenerare](#Generare_un_file_di_configurazione) il file di configurazione di GRUB.
 
 ### Disabilitare il sottomenu
 
@@ -761,7 +761,7 @@ GRUB_DISABLE_SUBMENU=y
 
 Per far sì che GRUB passi automaticamente al kernel i parametri necessari per la cifratura della root, si aggiunga `cryptdevice=/dev/device:etichetta` a `GRUB_CMDLINE_LINUX` in `/etc/default/grub`.
 
-Si veda inoltre [Dm-crypt/System Configuration#Boot loader](/index.php/Dm-crypt/System_Configuration#Boot_loader "Dm-crypt/System Configuration") per ulteriori informazioni.
+Si veda inoltre [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") per ulteriori informazioni.
 
 **Suggerimento:** Se si sta effettuando l'aggiornamento da GRUB Legacy, si controlli il file `/boot/grub/menu.lst.pacsave` per l'identificativo dispositivo o l'etichetta corretta da inserire. Si cerchi dopo la riga `kernel /vmlinuz-linux`.
 
@@ -1441,7 +1441,7 @@ Il percorso che segue la voce `chainloader` identifica il file .efi del quale si
 
 #### Avvio normale
 
-Si vedano gli esempi in [GRUB2 (Italiano)#Usare la console di emergenza](/index.php/GRUB2_(Italiano)#Usare_la_console_di_emergenza "GRUB2 (Italiano)").
+Si vedano gli esempi in [#Usare la console di emergenza](#Usare_la_console_di_emergenza).
 
 ## Tools grafici per la configurazione
 
@@ -1632,7 +1632,7 @@ grub-setup: error: If you really want blocklists, use --force.
 
 Questo problema si verifica quando si tenta di installare GRUB in VMWare. Ulteriori informazioni [qui](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). Si spera in un fix in tempi brevi.
 
-Può anche verificarsi quando la partizione inizia subito dopo l'MBR (blocco 63), senza lasciare uno spazio di circa 1MB (2048 blocchi) prima dell'inizio della prima partizione. Si veda [GRUB2 (Italiano)#Istruzioni specifiche per Master Boot Record (MBR)](/index.php/GRUB2_(Italiano)#Istruzioni_specifiche_per_Master_Boot_Record_.28MBR.29 "GRUB2 (Italiano)")
+Può anche verificarsi quando la partizione inizia subito dopo l'MBR (blocco 63), senza lasciare uno spazio di circa 1MB (2048 blocchi) prima dell'inizio della prima partizione. Si veda [#Istruzioni specifiche per Master Boot Record (MBR)](#Istruzioni_specifiche_per_Master_Boot_Record_.28MBR.29)
 
 ### GRUB UEFI torna alla shell
 
@@ -1712,7 +1712,7 @@ Una soluzione più sicura è il ripristino del solo MBR:
 
 ### Arch non rilevata da altre distribuzioni
 
-Alcuni utenti hanno riportato che altre distribuzioni hanno problemi a rilevare Arch Linux automaticamente tramite `os-prober`. È possibile mitigare la situazione attraverso la creazione del file `/etc/lsb-release`: il file in questione e relativo tool per l'aggiornamento dello stesso sono disponibili nel pacchetto [lsb-release](https://www.archlinux.org/packages/?name=lsb-release), disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Alcuni utenti hanno riportato che altre distribuzioni hanno problemi a rilevare Arch Linux automaticamente tramite `os-prober`. È possibile mitigare la situazione attraverso la creazione del file `/etc/lsb-release`: il file in questione e relativo tool per l'aggiornamento dello stesso sono disponibili nel pacchetto [lsb-release](https://www.archlinux.org/packages/?name=lsb-release), disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ## Riferimenti
 

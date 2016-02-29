@@ -95,7 +95,7 @@ change the vmux value to 3 from 1 in the card SAA7134_BOARD_FLYVIDEO2000 and cha
 
 ```
 
-After that I have used the Traditional method ( [https://wiki.archlinux.org/index.php/Kernel_Compilation_From_Source#1._Manual.2C_Traditional_method](https://wiki.archlinux.org/index.php/Kernel_Compilation_From_Source#1._Manual.2C_Traditional_method) ) to recompile the kernel.
+After that I have used the Traditional method ( [Kernels/Compilation/Traditional](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional") ) to recompile the kernel.
 
 After getting the system up with new kernel, you can use the following commands to get the tuner card up.
 

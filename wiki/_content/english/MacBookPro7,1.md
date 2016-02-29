@@ -244,7 +244,7 @@ I also recommend `netctl`.
 
 **Note:** Alternative solution for using b43:
 
-As of kernel version 3.17.1-2, Broadcom Wireless driver most likely won't work (ERROR @wl_cfg80211_scan :WLC_SCAN error (-22)). The only option seems to be loading the b43 driver in [PIO](http://en.wikipedia.org/wiki/Programmed_input/output) mode. To enable PIO mode, install driver by following the guide at [wireless.kernel.org](http://wireless.kernel.org/en/users/Drivers/b43), then load the b43 kernel module with pio=1 and qos=0 parameters. To make this happen at boot, create `b43-firmware.conf` file in `/etc/modprobe.d/` and add the following lines:
+As of kernel version 3.17.1-2, Broadcom Wireless driver most likely won't work (ERROR @wl_cfg80211_scan :WLC_SCAN error (-22)). The only option seems to be loading the b43 driver in [PIO](https://en.wikipedia.org/wiki/Programmed_input/output "wikipedia:Programmed input/output") mode. To enable PIO mode, install driver by following the guide at [wireless.kernel.org](http://wireless.kernel.org/en/users/Drivers/b43), then load the b43 kernel module with pio=1 and qos=0 parameters. To make this happen at boot, create `b43-firmware.conf` file in `/etc/modprobe.d/` and add the following lines:
 
  `b43-firmware.conf` 
 ```
@@ -259,7 +259,7 @@ blacklist brcm80211
 
 ```
 
-~~Although using PIO should be much slower than using [DMA](http://en.wikipedia.org/wiki/Direct_memory_access), I haven't noticed any performance drop.~~ Further testing showed repetitive occurrences of noticable performance drops. Mostly expressed as rapid decrease of transfer speed, sometimes even dropped connections. It also seems that b43 driver has issues operating at 5Ghz.
+~~Although using PIO should be much slower than using [DMA](https://en.wikipedia.org/wiki/Direct_memory_access "wikipedia:Direct memory access"), I haven't noticed any performance drop.~~ Further testing showed repetitive occurrences of noticable performance drops. Mostly expressed as rapid decrease of transfer speed, sometimes even dropped connections. It also seems that b43 driver has issues operating at 5Ghz.
 
 Some later kernels are giving me more success (without PIO), but still some wifi drops have occurred.
 

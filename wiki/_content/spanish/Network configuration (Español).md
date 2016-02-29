@@ -294,7 +294,7 @@ clientid
 
 ```
 
-De lo contrario, no podrá obtener una dirección IP desde el servidor DHCP dado que no podrá leer correctamente el ID Cliente [estilo DHCPv6](http://en.wikipedia.org/wiki/DHCPv6). Véase [RFC 4361](http://tools.ietf.org/html/rfc4361) para más información.
+De lo contrario, no podrá obtener una dirección IP desde el servidor DHCP dado que no podrá leer correctamente el ID Cliente [estilo DHCPv6](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6"). Véase [RFC 4361](http://tools.ietf.org/html/rfc4361) para más información.
 
 Para evitar que `dhcpcd` añada servidores de nombres de dominio a `/etc/resolve.conf`, use el parámetro `nooption`:
 
@@ -454,7 +454,7 @@ $ ping -c 3 www.google.com
 
 **Sugerencia:** [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) proporciona la misma función tras instalarse sin necesidad de configuración adicional.
 
-[ifplugd](https://www.archlinux.org/packages/?name=ifplugd) disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") es un demonio que configura automáticamente el dispositivo Ethernet, cuando un cable de red está enchufado y automáticamente se desconfigura si el cable se retira. Esto es útil en portátiles con los adaptadores de red integrados, ya que solo se va a configurar la interfaz cuando un cable está realmente conectado. Otro utilidad es cuando solo tiene que reiniciar la red, pero no desea reiniciar el equipo o utilizar la shell.
+[ifplugd](https://www.archlinux.org/packages/?name=ifplugd) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") es un demonio que configura automáticamente el dispositivo Ethernet, cuando un cable de red está enchufado y automáticamente se desconfigura si el cable se retira. Esto es útil en portátiles con los adaptadores de red integrados, ya que solo se va a configurar la interfaz cuando un cable está realmente conectado. Otro utilidad es cuando solo tiene que reiniciar la red, pero no desea reiniciar el equipo o utilizar la shell.
 
 Por defecto, está configurado para trabajar para el dispositivo `eth0`. Esta y otras configuraciones, como demoras, se pueden establecer en `/etc/ifplugd/ifplugd.conf`.
 
@@ -470,7 +470,7 @@ El *aliasing* IP es el proceso de agregar más de una dirección IP a una interf
 
 #### Ejemplo
 
-Necesitará [netcfg](https://aur.archlinux.org/packages/netcfg/) disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Necesitará [netcfg](https://aur.archlinux.org/packages/netcfg/) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Prepare la configuración:
 

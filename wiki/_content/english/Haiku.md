@@ -1,4 +1,4 @@
-[Haiku](http://www.haiku-os.org/) is a free and open source operating system compatible with [BeOS](http://en.wikipedia.org/wiki/BeOS). It is in active development.
+[Haiku](http://www.haiku-os.org/) is a free and open source operating system compatible with [BeOS](https://en.wikipedia.org/wiki/BeOS "wikipedia:BeOS"). It is in active development.
 
 ## Contents
 
@@ -63,7 +63,7 @@ Then reinstall [GRUB](/index.php/GRUB "GRUB"):
 
 Haiku can mount and read EXT3 file systems. In Haiku, click on the deskbar "leaf" menu and select "Mount".
 
-Conversely, Linux can mount the [Be File System](http://en.wikipedia.org/wiki/Be_File_System).
+Conversely, Linux can mount the [Be File System](https://en.wikipedia.org/wiki/Be_File_System "wikipedia:Be File System").
 
 ```
  # mount -t befs /dev/sda1 /mnt # Replace the drive name and number with your BFS drive

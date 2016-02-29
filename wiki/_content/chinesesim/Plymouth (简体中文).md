@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Plymouth](/index.php/Plymouth "Plymouth") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2012-07-16，点击[这里](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=213045)可以查看翻译后英文页面的改动。
 
-[Plymouth](http://fedoraproject.org/wiki/Releases/FeatureBetterStartup) 是一个来自于Fedora社区的提供美化启动图形界面的功能的项目。它依靠[KMS](https://wiki.archlinux.org/index.php/Kernel_mode_setting)尽可能早的设置显示器的原始分辨率显示，之后产生美化的启动引导界面直至登陆界面。
+[Plymouth](http://fedoraproject.org/wiki/Releases/FeatureBetterStartup) 是一个来自于Fedora社区的提供美化启动图形界面的功能的项目。它依靠[KMS](/index.php/KMS "KMS")尽可能早的设置显示器的原始分辨率显示，之后产生美化的启动引导界面直至登陆界面。
 
 ## Contents
 
@@ -38,7 +38,7 @@ Plymouth primarily uses to display graphics. Plymouth依靠 [KMS](/index.php/KMS
  `/etc/mkinitcpio.conf`  `HOOKS="base udev plymouth[...] "` 
 **警告:** 如果你使用 **encrypt** hook[硬盘加密](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt")，你*必须* 使用**plymouth-encrypt** 替代以便提示输入TTY 密码
 
-对于早期KMS，需要添加模块到 `/etc/mkinitcpio.conf`中的MODULES 行， [radeon](/index.php/Radeon "Radeon") (ATI显卡), [i915](/index.php/Intel "Intel") (Intel显卡) or [nouveau](/index.php/Nouveau "Nouveau") (nvidia显卡)：
+对于早期KMS，需要添加模块到 `/etc/mkinitcpio.conf`中的MODULES 行， [radeon](/index.php/Radeon "Radeon") (ATI显卡), [i915](/index.php/I915 "I915") (Intel显卡) or [nouveau](/index.php/Nouveau "Nouveau") (nvidia显卡)：
 
  `/etc/mkinitcpio.conf` 
 ```

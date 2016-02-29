@@ -28,7 +28,7 @@ trap EC ERR
 
 ## Compile and execute a C source on the fly
 
-The following function will compile (within the `/tmp/` directory) and execute the [C](http://en.wikipedia.org/wiki/C_%28programming_language%29) source argument on the fly (and the execution will be without arguments). And finally, after program terminates, will remove the compiled file.
+The following function will compile (within the `/tmp/` directory) and execute the [C](https://en.wikipedia.org/wiki/C_(programming_language) source argument on the fly (and the execution will be without arguments). And finally, after program terminates, will remove the compiled file.
 
  `~/.bashrc` 
 ```

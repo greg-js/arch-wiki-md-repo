@@ -20,7 +20,7 @@
 
 ## Compatibility
 
-Everything in this laptop is Linux compatible, therefore you will not have any issues installing Linux. I recommend [Xbindkeys](https://wiki.archlinux.org/index.php/Xbindkeys) for sound buttons. Every other fn-X button works. Suspend, wifi, brightness works. The video out button does not work, use xrandr instead. HDMI works as well. The battery is properly read. Use [laptop-mode-tools](https://wiki.archlinux.org/index.php/Laptop#Laptop_mode_tools) for power saving. You can run xorg without config file. xf86-video-intel is the package you need. I could not run x with vesa on this chipset, it just froze completely. HDMI and VGA out works, but not via fn-F8\. You can use lxrandr, GUI for xrandr for setting up video out. You can make fn-f8 work by configuring [Acpid](https://wiki.archlinux.org/index.php/Acpid).
+Everything in this laptop is Linux compatible, therefore you will not have any issues installing Linux. I recommend [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") for sound buttons. Every other fn-X button works. Suspend, wifi, brightness works. The video out button does not work, use xrandr instead. HDMI works as well. The battery is properly read. Use [laptop-mode-tools](/index.php/Laptop#Laptop_mode_tools "Laptop") for power saving. You can run xorg without config file. xf86-video-intel is the package you need. I could not run x with vesa on this chipset, it just froze completely. HDMI and VGA out works, but not via fn-F8\. You can use lxrandr, GUI for xrandr for setting up video out. You can make fn-f8 work by configuring [Acpid](/index.php/Acpid "Acpid").
 
 ### Webcam Flipping
 
@@ -107,7 +107,7 @@ You can find out a bit more about pm-powersave in the [Pm-utils](/index.php/Pm-u
 
 ## Fun
 
-This computer has an extra power button on the left, you can configure this with [Xbindkeys](https://wiki.archlinux.org/index.php/Xbindkeys) and run something useful. Like I use it for switching songs. The extra button is originally for powering up with Asus Express gate.
+This computer has an extra power button on the left, you can configure this with [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") and run something useful. Like I use it for switching songs. The extra button is originally for powering up with Asus Express gate.
 
 ## Freezes while/after booting
 

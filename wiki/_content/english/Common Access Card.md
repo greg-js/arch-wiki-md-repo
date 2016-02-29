@@ -1,4 +1,4 @@
-This page explains how to setup Arch to use a US Department of Defense [Common Access Card](http://en.wikipedia.org/wiki/Common_Access_Card) (CAC). It was tested with a Dell Smart Card Reader Keyboard and a SCM SCR3310\. Others may not work.
+This page explains how to setup Arch to use a US Department of Defense [Common Access Card](https://en.wikipedia.org/wiki/Common_Access_Card "wikipedia:Common Access Card") (CAC). It was tested with a Dell Smart Card Reader Keyboard and a SCM SCR3310\. Others may not work.
 
 ## Contents
 

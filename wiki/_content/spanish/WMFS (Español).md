@@ -1,4 +1,4 @@
-**Advertencia:** WMFS se encuentra obsoleto y sin soporte, por lo que se recomienda usar [WMFS2](https://wiki.archlinux.org/index.php/WMFS2_(Espa%C3%B1ol))
+**Advertencia:** WMFS se encuentra obsoleto y sin soporte, por lo que se recomienda usar [WMFS2](/index.php/WMFS2_(Espa%C3%B1ol) "WMFS2 (Español)")
 
 ## Contents
 

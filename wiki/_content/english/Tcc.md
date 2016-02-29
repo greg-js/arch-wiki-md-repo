@@ -22,5 +22,5 @@ You can make a C source file executed by *tcc* by adding a shebang:
 
 ## See also
 
-*   [Wikipedia article about tcc](http://en.wikipedia.org/wiki/Tiny_C_Compiler)
+*   [Wikipedia article about tcc](https://en.wikipedia.org/wiki/Tiny_C_Compiler "wikipedia:Tiny C Compiler")
 *   [Clang](/index.php/Clang "Clang")

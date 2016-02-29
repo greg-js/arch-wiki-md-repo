@@ -292,7 +292,7 @@ vm.vfs_cache_pressure=50
 
 ## وقت الإقلاع
 
-يمكنك العثور على الدروس مع النصائح الجيدة في الصفحة [تحسين أداء الاقلاع](/index.php/Improve_Boot_Performance_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Improve Boot Performance (العربية)").
+يمكنك العثور على الدروس مع النصائح الجيدة في الصفحة [تحسين أداء الاقلاع](/index.php/Improve_boot_performance_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Improve boot performance (العربية)").
 
 ### التعليق في RAM
 

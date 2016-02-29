@@ -35,7 +35,7 @@
 *   Arch Linux并不在[官方支持](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) 中。
 *   由于Steam客户端是个32位程序，用户需要在pacman中开启 [Multilib](/index.php/Multilib "Multilib") 软件源。 **如果你的系统是纯64位的话**。 有可能还需要安装一些multilib-devel软件包来提供重要的multilib库。此外，还需要安装显卡的32位版本才能运行Steam。
 
-现在，可直接从 [官方仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") 中安装 [steam](https://www.archlinux.org/packages/?name=steam) 。如果你使用64位系统，请先启用 [multilib](/index.php/Multilib "Multilib") 仓库。
+现在，可直接从 [官方仓库](/index.php/%E5%AE%98%E6%96%B9%E4%BB%93%E5%BA%93 "官方仓库") 中安装 [steam](https://www.archlinux.org/packages/?name=steam) 。如果你使用64位系统，请先启用 [multilib](/index.php/Multilib "Multilib") 仓库。
 
 Steam 目前在 Arch Linux 上并不被官方支持，因此需要用户做一些调整以使程序顺利运行：
 

@@ -44,7 +44,7 @@ Poskytuje seznam odlehčeného softwaru pro ty, kteří si přejí používat pr
 
 [Pragha](http://pragha.wikispaces.com/) je GTK+ hudební správce, který se vývojově oddělil od programu Consonance Music Manager.
 
-[QmpdClient](https://www.archlinux.org/packages/community/i686/qmpdclient/) je Qt4 mpd klient.
+[qmpdclient](https://www.archlinux.org/packages/?name=qmpdclient) je Qt4 mpd klient.
 
 [Sonata](http://sonata.berlios.de/) je elegantní GTK+ hudební klient pro [mpd](/index.php/Mpd "Mpd").
 
@@ -76,7 +76,7 @@ Poskytuje seznam odlehčeného softwaru pro ty, kteří si přejí používat pr
 
 [Gnome-Mplayer](http://kdekorte.googlepages.com/gnomemplayer) je jednoduchý grafický přehrávač v GTK pro [MPlayer](/index.php/MPlayer "MPlayer") bez závislostí na Gnome
 
-[MPlayer](/index.php/MPlayer "MPlayer") a [mencoder](/index.php/Mencoder "Mencoder") podporují obrovské množství video a audio formátů a jsou velmi přizpůsobiví.
+[MPlayer](/index.php/MPlayer "MPlayer") a [MEncoder](/index.php/MEncoder "MEncoder") podporují obrovské množství video a audio formátů a jsou velmi přizpůsobiví.
 
 [SMPlayer](http://smplayer.sourceforge.net/) je kompletní grafická nástavba pro MPlayer.
 

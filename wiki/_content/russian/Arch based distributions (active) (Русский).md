@@ -33,7 +33,7 @@
 
 [ArchBang](/index.php/ArchBang "ArchBang") — Live-дистрибутив, имеющий возможность загрузки с CD/USB и предоставляемый под 32 и 64 разрядные системы.
 
-Имеет визуальную среду, основанную на Openbox[[1]](http://ru.wikipedia.org/wiki/Openbox), и минимальный набор программ.
+Имеет визуальную среду, основанную на Openboxhttps://ru.wikipedia.org/wiki/Openbox, и минимальный набор программ.
 
 *   Домашняя страница: [http://www.archbang.org/](http://www.archbang.org/)
 *   Форум: [http://archbang.47.forumer.com/](http://archbang.47.forumer.com/)
@@ -43,7 +43,7 @@
 
 ### Arch Hurd
 
-[Arch Hurd Project](/index.php/Arch_Hurd_Project "Arch Hurd Project"). Проект по портированию Arch Linux на Hurd платформу [[2]](http://ru.wikipedia.org/wiki/GNU_Hurd)
+[Arch Hurd Project](/index.php/Arch_Hurd_Project "Arch Hurd Project"). Проект по портированию Arch Linux на Hurd платформу [https://ru.wikipedia.org/wiki/GNU_Hurd](https://ru.wikipedia.org/wiki/GNU_Hurd)
 
 *   Домашняя страница: [http://www.archhurd.org/](http://www.archhurd.org/)
 *   форум: [http://bbs.archhurd.org/](http://bbs.archhurd.org/)
@@ -52,11 +52,11 @@
 
 Большинство обсуждений, касающихся проекта, происходит на канале #archhurd на irc.freenode.net.
 
-Есть бета live-образа [[3]](http://calimeroteknik.free.fr/ctkarchlive/index-en.html) имеющая легковесную визуальную среду и базовый набор программ.
+Есть бета live-образа [[1]](http://calimeroteknik.free.fr/ctkarchlive/index-en.html) имеющая легковесную визуальную среду и базовый набор программ.
 
 ### Arch Linux Mobile
 
-Оптимизирован под ARM и OpenMoko Freerunner [[4]](http://ru.wikipedia.org/wiki/OpenMoko_FreeRunner). Находится в ранней, но активной разработке.
+Оптимизирован под ARM и OpenMoko Freerunner [https://ru.wikipedia.org/wiki/OpenMoko_FreeRunner](https://ru.wikipedia.org/wiki/OpenMoko_FreeRunner). Находится в ранней, но активной разработке.
 
 *   Домашняя страница: [http://www.archmobile.org/](http://www.archmobile.org/)
 *   Форум: [https://bbs.archlinux.org/viewforum.php?id=35](https://bbs.archlinux.org/viewforum.php?id=35)
@@ -79,7 +79,7 @@ ArchPwn дистрибутив, во главу угла ставящий без
 
 ### Archboot
 
-[Archboot](/index.php/Archboot "Archboot") предназначен для работ по восстановлению в live-режиме, но так-же может быть легко установлен в качестве стабильной системы. В образе присутствует поддержка как i686, так и x86_64 архитектур. Использует [hwdetect](/index.php/Hwdetect "Hwdetect") и набор скриптов из официальных образов Arch Linux. В live-режиме работает в оперативной памяти с использованием iniramfs и без применения squashfs [[5]](http://ru.wikipedia.org/wiki/Squashfs) и прочих специализированных файловых систем, поэтому чувствителен к объёму оперативной памяти.
+[Archboot](/index.php/Archboot "Archboot") предназначен для работ по восстановлению в live-режиме, но так-же может быть легко установлен в качестве стабильной системы. В образе присутствует поддержка как i686, так и x86_64 архитектур. Использует [hwdetect](/index.php/Hwdetect "Hwdetect") и набор скриптов из официальных образов Arch Linux. В live-режиме работает в оперативной памяти с использованием iniramfs и без применения squashfs [https://ru.wikipedia.org/wiki/Squashfs](https://ru.wikipedia.org/wiki/Squashfs) и прочих специализированных файловых систем, поэтому чувствителен к объёму оперативной памяти.
 
 *   Домашняя страница: [https://projects.archlinux.org/?p=archboot.git;a=summary](https://projects.archlinux.org/?p=archboot.git;a=summary)
 *   Форум: [https://bbs.archlinux.org/](https://bbs.archlinux.org/)
@@ -112,7 +112,7 @@ ArchPwn дистрибутив, во главу угла ставящий без
 
 	<small>источник: [ConnochaetOS Website](http://www.connochaetos.org/wiki/doku.php?id=connochaetos)</small>
 
-[Дистрибутив](http://ru.wikipedia.org/wiki/ConnochaetOS) рассчитан на использование на старых компьютерах. Разработчики ставят перед собой цель создания системы, способной работать даже на компьютерах с процессором Pentium I с 64 МБ оперативной памяти и выполнять функции настольного компьютера с графическим интерфейсом. В дистрибутив включены: рабочая среда LXDE [[6]](http://ru.wikipedia.org/wiki/LXDE) и базовый пакет программ.
+[Дистрибутив](https://ru.wikipedia.org/wiki/ConnochaetOS) рассчитан на использование на старых компьютерах. Разработчики ставят перед собой цель создания системы, способной работать даже на компьютерах с процессором Pentium I с 64 МБ оперативной памяти и выполнять функции настольного компьютера с графическим интерфейсом. В дистрибутив включены: рабочая среда LXDE [https://ru.wikipedia.org/wiki/LXDE](https://ru.wikipedia.org/wiki/LXDE) и базовый пакет программ.
 
 *   Домашняя страница: [http://www.connochaetos.org](http://www.connochaetos.org)
 *   Форум: [http://www.connochaetos.org/forum](http://www.connochaetos.org/forum)
@@ -124,7 +124,7 @@ ArchPwn дистрибутив, во главу угла ставящий без
 
 *"Un seul mot d'ordre : simple & léger. (et complet, dans la mesure du possible)* Il est désormais installable !"
 
-Легковесный дистрибутив, использующий c²DE (модификация [Openbox](http://ru.wikipedia.org/wiki/Openbox)). Полностью на французком, есть [патч](http://calimeroteknik.free.fr/ctkarchlive/0.5/addons/officiels/locale-en/) для добавления английского.
+Легковесный дистрибутив, использующий c²DE (модификация [Openbox](https://ru.wikipedia.org/wiki/Openbox)). Полностью на французком, есть [патч](http://calimeroteknik.free.fr/ctkarchlive/0.5/addons/officiels/locale-en/) для добавления английского.
 
 *   Домашняя страница: [http://calimeroteknik.free.fr/](http://calimeroteknik.free.fr/)
 *   Документация: [http://calimeroteknik.free.fr/arch-guide/](http://calimeroteknik.free.fr/arch-guide/)
@@ -140,7 +140,7 @@ ArchPwn дистрибутив, во главу угла ставящий без
 
 *"Kahel OS is the first and remains to be the only Filipino Linux Distro with the rolling release model on Arch Linux + GNOME. In the community, it is the first to release (non-beta) such Linux OS on Arch Linux + GNOME."*
 
-Дистрибутив включает в себя среду рабочего стола [GNOME](http://ru.wikipedia.org/wiki/GNOME), и базовый пакет программ.
+Дистрибутив включает в себя среду рабочего стола [GNOME](https://ru.wikipedia.org/wiki/GNOME), и базовый пакет программ.
 
 *   Домашняя страница: [http://www.kahelos.org/](http://www.kahelos.org/)
 *   Форум: [http://forum.kahelos.org/](http://forum.kahelos.org/)
@@ -150,7 +150,7 @@ ArchPwn дистрибутив, во главу угла ставящий без
 
 ### LinHES
 
-[LinHES](/index.php/LinHES "LinHES") (**Lin**ux **H**ome **E**ntertainment **S**ystem) дистрибутив позиционируется как система для построения домашнего мультимедиа-центра. В большинстве своём построена на [MythTV](http://ru.wikipedia.org/wiki/MythTV),и предоставляет возможно как для работы со статичной графикой, так и с видеозаписями и играми.
+[LinHES](/index.php/LinHES "LinHES") (**Lin**ux **H**ome **E**ntertainment **S**ystem) дистрибутив позиционируется как система для построения домашнего мультимедиа-центра. В большинстве своём построена на [MythTV](https://ru.wikipedia.org/wiki/MythTV),и предоставляет возможно как для работы со статичной графикой, так и с видеозаписями и играми.
 
 *   Домашняя страница: [http://www.linhes.org/](http://www.linhes.org/)
 *   Форум: [http://www.linhes.org/phpBB2](http://www.linhes.org/phpBB2)
@@ -160,7 +160,7 @@ ArchPwn дистрибутив, во главу угла ставящий без
 
 ### live.linuX-gamers.net
 
-Live-дистрибутив, включающий в себя проприетарные драйвера к ATI/nVidia, и набор [3d игр](http://ru.wikipedia.org/wiki/LinuX-gamers#.D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8). Кроме игр, не предоставляет ни какой функциональности.
+Live-дистрибутив, включающий в себя проприетарные драйвера к ATI/nVidia, и набор [3d игр](https://ru.wikipedia.org/wiki/LinuX-gamers#.D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8). Кроме игр, не предоставляет ни какой функциональности.
 
 *   Домашняя страница: [http://live.linux-gamers.net/](http://live.linux-gamers.net/)
 *   Форум: [http://github.com/svenstaro/lglive](http://github.com/svenstaro/lglive)
@@ -199,7 +199,7 @@ Live-дистрибутив, включающий в себя проприета
 
 ### Archiso-live
 
-Archiso-live форк от [archiso](/index.php/Archiso_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Archiso (Русский)"), использующий модульную структуру и во многом основанный на [Slax](http://ru.wikipedia.org/wiki/Slax).
+Archiso-live форк от [archiso](/index.php/Archiso_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Archiso (Русский)"), использующий модульную структуру и во многом основанный на [Slax](https://ru.wikipedia.org/wiki/Slax).
 
 *   Домашняя страница: [http://godane.wordpress.com/](http://godane.wordpress.com/) (GIT: [http://github.com/godane/archiso-live/tree/master](http://github.com/godane/archiso-live/tree/master))
 
@@ -231,7 +231,7 @@ Archiso-live форк от [archiso](/index.php/Archiso_(%D0%A0%D1%83%D1%81%D1%8
 
 *"Frugalware Linux — дистрибутив Linux общего назначения, спроектированный для пользователя, знакомого с командной строкой. Он основан на Slackware, но использует другой менеджер пакетов — Pacman. Frugalware — один из тех дистрибутивов, в которых обновлённые пакеты и обновления безопасности появляются ежедневно."*
 
-	<small>источник: [Википедия](http://ru.wikipedia.org/wiki/Frugalware)</small>
+	<small>источник: [Википедия](https://ru.wikipedia.org/wiki/Frugalware)</small>
 
 *   Домашняя страница: [http://frugalware.org](http://frugalware.org)
 *   Форум: [http://forums.frugalware.org](http://forums.frugalware.org)

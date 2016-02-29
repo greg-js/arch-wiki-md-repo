@@ -30,7 +30,7 @@ This laptop uses a Broadcom BCM4113 chipset for wireless networking. Some revisi
 
 ### Free kernel driver for the Broadcom BCM4113 chipset
 
-As of kernel version 2.6.37, there is now a Free driver in the kernel: [brcmsmac](http://linuxwireless.org/en/users/Drivers/brcm80211). This driver should be loaded out of the box. It does however suffer from a resume issue in kernel 2.6.37 when the laptop resumes from suspend. The Wi-Fi does not come back up unless it is [reloaded](https://wiki.archlinux.org/index.php/Broadcom_wireless#Wifi_card_does_not_work_when_resuming_from_suspend_.28brcm80211.29).
+As of kernel version 2.6.37, there is now a Free driver in the kernel: [brcmsmac](http://linuxwireless.org/en/users/Drivers/brcm80211). This driver should be loaded out of the box. It does however suffer from a resume issue in kernel 2.6.37 when the laptop resumes from suspend. The Wi-Fi does not come back up unless it is [reloaded](/index.php/Broadcom_wireless#Wifi_card_does_not_work_when_resuming_from_suspend_.28brcm80211.29 "Broadcom wireless").
 
 ### Non-free alternative driver for the Broadcom BCM4113 chipset
 
@@ -40,7 +40,7 @@ An alternative may be the [802.11 Linux STA driver](http://www.broadcom.com/supp
 
 The [ath9k](http://wireless.kernel.org/en/users/Drivers/ath9k) module is detected by [udev](/index.php/Udev "Udev") and loaded out of the box.
 
-Some users report issues with the `ath9k` driver and this particular chipset. In this case, use the [ndiswrapper](https://wiki.archlinux.org/index.php/Wireless_Setup#ndiswrapper) method. Also, add `!ath9k` and `ndiswrapper` to the `MODULES` array in `/etc/rc.conf`.
+Some users report issues with the `ath9k` driver and this particular chipset. In this case, use the [ndiswrapper](/index.php/Wireless_Setup#ndiswrapper "Wireless Setup") method. Also, add `!ath9k` and `ndiswrapper` to the `MODULES` array in `/etc/rc.conf`.
 
 ## Graphics
 

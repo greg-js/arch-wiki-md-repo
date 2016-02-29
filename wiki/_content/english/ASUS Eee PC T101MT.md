@@ -83,7 +83,7 @@ Save this script as "skyp" and '#chmod +x skyp'. Move this script to '/usr/bin/'
 
 Suspend-, Brightness- and Audiokeys work. Others may need special configuration. My Suspendkey was executing the suspend from KDE and from the acpi Interface. I disabled the KDE event, and now Suspend works.
 
-In openbox, editting ~/.config/rc.xml and appending (under <keyboard>); this was taken from [https://wiki.archlinux.org/index.php/Openbox](https://wiki.archlinux.org/index.php/Openbox):
+In openbox, editting ~/.config/rc.xml and appending (under <keyboard>); this was taken from [Openbox](/index.php/Openbox "Openbox"):
 
 ```
    <!-- Keybindings for audio control -->

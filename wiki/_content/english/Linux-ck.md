@@ -241,5 +241,5 @@ It is a common mistake to think that BFS does not support cgroups. It does suppo
 ## Further Reading on BFS and CK Patchset
 
 *   [Con Kolivas' White Paper on the BFS](http://ck.kolivas.org/patches/bfs/bfs-faq.txt)
-*   [Wikipedia's BFS Article](http://en.wikipedia.org/wiki/Brain_Fuck_Scheduler)
+*   [Wikipedia's BFS Article](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")
 *   [Con Kolivas' Blog](http://ck-hack.blogspot.com/)

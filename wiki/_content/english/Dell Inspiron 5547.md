@@ -73,7 +73,7 @@ Need to configure [PulseAudio](/index.php/PulseAudio/Troubleshooting#Microphone_
 
 The notebook comes two GPUs, one power-efficent (Intel Corporation Haswell-ULT Integrated Graphics) and one more powerful and more power-hungry (AMD Radeon R7 M265). Please read this [ATI Dynamic Switchable Graphics](/index.php/Hybrid_graphics#ATI_Dynamic_Switchable_Graphics "Hybrid graphics"). This has not be testing yet.
 
-You can found a topic in the Archlinux forum about the problem [[[1]](https://bbs.archlinux.org/viewtopic.php?id=190236%7Chere)]
+You can found a topic in the Archlinux forum about the problem [here](https://bbs.archlinux.org/viewtopic.php?id=190236)
 
 ### Keyboard
 

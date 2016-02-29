@@ -37,7 +37,7 @@
 
 Δείτε το άρθρο [partitioning](/index.php/Partitioning "Partitioning") για λεπτομέρειες.
 
-Αν θέλετε να δημιουργήσετε μια Στοίβα συσκευών αποθήκευσης (stacked block devices) όπως [LVM](/index.php/Lvm "Lvm"), [LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS"), ή [RAID](/index.php/RAID "RAID"), κάντε το τώρα.
+Αν θέλετε να δημιουργήσετε μια Στοίβα συσκευών αποθήκευσης (stacked block devices) όπως [LVM](/index.php/LVM "LVM"), [LUKS](/index.php/LUKS "LUKS"), ή [RAID](/index.php/RAID "RAID"), κάντε το τώρα.
 
 ## Διαμόρφωση των partitions
 
@@ -72,7 +72,7 @@
 
 ## Εγκατάσταση του bootloader
 
-### [GRUB](/index.php/GRUB2 "GRUB2")
+### [GRUB](/index.php/GRUB "GRUB")
 
 *   Για BIOS:
 
@@ -88,7 +88,7 @@
 
 ```
 
-*   Εγκατάσταση του GRUB μετά το chrooting (αναφερθείτε στο τμήμα [Διαμόρφωση συστήματος](#.CE.94.CE.B9.CE.B1.CE.BC.CF.8C.CF.81.CF.86.CF.89.CF.83.CE.B7_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)).
+*   Εγκατάσταση του GRUB μετά το chrooting (αναφερθείτε στο τμήμα [Διαμόρφωση συστήματος](#.CE.95.CE.BD.CE.B7.CE.BC.CE.AD.CF.81.CF.89.CF.83.CE.B7_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)).
 
 ### [Syslinux](/index.php/Syslinux "Syslinux")
 
@@ -121,7 +121,7 @@
 
 ```
 
-*   Ρυθμίστε τις προτιμήσεις του [locale](https://wiki.archlinux.org/index.php/Locale#Setting_system-wide_locale) στο `/etc/locale.conf`.
+*   Ρυθμίστε τις προτιμήσεις του [locale](/index.php/Locale#Setting_system-wide_locale "Locale") στο `/etc/locale.conf`.
 *   Προσθέστε τις προτίμήσεις του [console keymap και της γραμματοσειράς](/index.php/KEYMAP "KEYMAP") στο `/etc/vconsole.conf`
 *   Αποσχολιάστε το locale που θέλετε να χρησιμοποιήσετε στο `/etc/locale.gen` και δημιουργήστε το με `locale-gen`.
 *   Διαμορφώστε το `/etc/mkinitcpio.conf` όπως χρειάζεται (δείτε [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")) και δημιουργήστε το initial RAM disk με:

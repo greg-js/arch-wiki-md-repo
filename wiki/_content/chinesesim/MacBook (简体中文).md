@@ -1,4 +1,4 @@
-在MacBook上安装Arch Linux与在其他电脑上安装Arch Linux非常相似。然而，由于MacBook的特殊硬件配置，需要一些特殊的考虑，因此建立MacBook专页。更多背景信息，可以从[官方安装指南](https://wiki.archlinux.org/index.php/Official_Arch_Linux_Install_Guide)、[新手指南](https://wiki.archlinux.org/index.php/Beginners_Guide)、[新手指南扩展](https://wiki.archlinux.org/index.php/Beginners_Guide_Appendix)以及[安装后小贴士](https://wiki.archlinux.org/index.php/Post_Installation_Tips)上获取。本文同样适用于MacBook Pro系列机型，也支持32位及64位版本。如果您正在使用MacBook 5,2并且有其他疑问，请猛击[MacBook5,2](https://wiki.archlinux.org/index.php/Macbook5,2)获取帮助。
+在MacBook上安装Arch Linux与在其他电脑上安装Arch Linux非常相似。然而，由于MacBook的特殊硬件配置，需要一些特殊的考虑，因此建立MacBook专页。更多背景信息，可以从[官方安装指南](/index.php/Official_Arch_Linux_Install_Guide "Official Arch Linux Install Guide")、[新手指南](/index.php/Beginners_Guide "Beginners Guide")、[新手指南扩展](/index.php/Beginners_Guide_Appendix "Beginners Guide Appendix")以及[安装后小贴士](/index.php/Post_Installation_Tips "Post Installation Tips")上获取。本文同样适用于MacBook Pro系列机型，也支持32位及64位版本。如果您正在使用MacBook 5,2并且有其他疑问，请猛击[MacBook5,2](/index.php/Macbook5,2 "Macbook5,2")获取帮助。
 
 ## Contents
 
@@ -83,7 +83,7 @@
 
 ```
 
-在调试 [色彩配置](#.E8.89.B2.E5.BD.A9.E9.85.8D.E7.BD.AE)时会用到。
+在调试[色彩配置](#.E8.89.B2.E5.BD.A9.E9.85.8D.E7.BD.AE)时会用到。
 
 ## 分区
 
@@ -226,7 +226,7 @@ menuentry "Boot from USB" {
 
 **Note:** 有些MacBook用户反映键盘不能正确响应，那就按照下面的参数来启动光盘。
 
-**Note:** 截止2011年4月30日，MacBook7,1不能从普通的iso镜像启动，但最新的[archboot](https://wiki.archlinux.org/index.php/Archboot)应该有用。
+**Note:** 截止2011年4月30日，MacBook7,1不能从普通的iso镜像启动，但最新的[archboot](/index.php/Archboot "Archboot")应该有用。
 
 ```
 boot: arch noapic irqpoll acpi=force
@@ -243,12 +243,12 @@ boot: arch noapic irqpoll acpi=force
 ```
 
 *   按照[官方安装文档](/index.php/Installation_guide "Installation guide")中说明的过程来做，但是在下面几个部分中请留意：
-    *   在 [准备磁盘](/index.php/Installation_guide#Prepare_Hard_Drive "Installation guide")部分，只要做设置磁盘挂在这步，注意要设对磁盘挂载点。
-    *   在 [安装启动器](/index.php/Installation_guide#Install_Bootloader "Installation guide")部分，编辑menu.lst文件，添加**reboot=pci**到**kernel**行的末尾，例如下面这行： `kernel /vmlinuz-linux root=/dev/sda5 ro reboot=pci` 这样你的MacBook才能从Arch Linux正常重启
-    *   还是在 [安装启动器](/index.php/Installation_guide#Install_Bootloader "Installation guide")部分，将GRUB安装至`/boot`所在的分区。
+    *   在[准备磁盘](/index.php/Installation_guide#Prepare_Hard_Drive "Installation guide")部分，只要做设置磁盘挂在这步，注意要设对磁盘挂载点。
+    *   在[安装启动器](/index.php/Installation_guide#Install_a_boot_loader "Installation guide")部分，编辑menu.lst文件，添加**reboot=pci**到**kernel**行的末尾，例如下面这行： `kernel /vmlinuz-linux root=/dev/sda5 ro reboot=pci` 这样你的MacBook才能从Arch Linux正常重启
+    *   还是在[安装启动器](/index.php/Installation_guide#Install_a_boot_loader "Installation guide")部分，将GRUB安装至`/boot`所在的分区。
         **Warning:** 别把GRUB安装到*/dev/sda*这样的地方！！！这样做会造成系统不稳定。
 
-    *   在 [配置系统](/index.php/Installation_guide#Configure_System "Installation guide")部分，编辑 /etc/mkinitcpio.conf，添加**usbinput**到**HOOKS**行的**autodetect**之后。这样才能在Arch Linux启动之前加载键盘驱动
+    *   在[配置系统](/index.php/Installation_guide#Configure_the_system "Installation guide")部分，编辑 /etc/mkinitcpio.conf，添加**usbinput**到**HOOKS**行的**autodetect**之后。这样才能在Arch Linux启动之前加载键盘驱动
 
 *   安装完成之后就可以重启系统了。
 
@@ -287,7 +287,7 @@ $ lspci | grep VGA
 
 ##### NVIDIA注意
 
-**Tip:** MacBookPro 6,2 - 使用合适的[NVIDIA](/index.php/NVIDIA "NVIDIA")驱动，在使用[Pure Video HD](https://wiki.archlinux.org/index.php/NVIDIA#Enabling_Pure_Video_HD_.28VDPAU.2FVAAPI.29)之后支持硬件视频解码。
+**Tip:** MacBookPro 6,2 - 使用合适的[NVIDIA](/index.php/NVIDIA "NVIDIA")驱动，在使用[Pure Video HD](/index.php/NVIDIA#Pure_Video_HD_.28VDPAU.2FVAAPI.29 "NVIDIA")之后支持硬件视频解码。
 
 对于使用NVIDIA显卡的MacBook，背景亮度可以通过[AUR](/index.php/AUR "AUR")中的[nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/)包解决。
 

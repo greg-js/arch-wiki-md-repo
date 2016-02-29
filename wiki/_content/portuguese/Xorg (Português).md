@@ -49,7 +49,7 @@
 
 ## Introdução
 
-O **Xorg** é uma implementação pública e código-aberto do sistema *X11 X Window System*. (Ver [[1]](http://pt.wikipedia.org/wiki/X.Org) para mais detalhes.) Basicamente, se quer um GUI (Interface Gráfica de Utilizador) no Arch, vai precisar do Xorg.
+O **Xorg** é uma implementação pública e código-aberto do sistema *X11 X Window System*. (Ver [https://pt.wikipedia.org/wiki/X.Org](https://pt.wikipedia.org/wiki/X.Org) para mais detalhes.) Basicamente, se quer um GUI (Interface Gráfica de Utilizador) no Arch, vai precisar do Xorg.
 
 ## Instalação do Xorg
 
@@ -483,7 +483,7 @@ Option         "Protocol" "ExplorerPS/2"
 
 ### Extra mouse buttons not working
 
-USB Mice users should read [Get_All_Mouse_Buttons_Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working").
+USB Mice users should read [Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working").
 
 Intellimouse (ExplorerPS/2) users might find their scroll and side buttons aren't behaving as they used to. Previously xorg.conf needed:
 
@@ -700,7 +700,7 @@ to the Device section that references the video card in xorg.conf.
 
 ### Cannot start any clients under Xephyr
 
-The client connections are rejected by the X server's security mechanism, you can find a complete explanation and solution in [[2]](http://wiki.debian.org/XStrikeForce/FAQ#howtoxnest).
+The client connections are rejected by the X server's security mechanism, you can find a complete explanation and solution in [[1]](http://wiki.debian.org/XStrikeForce/FAQ#howtoxnest).
 
 ## Links
 
@@ -721,5 +721,5 @@ See also:
 
 External Links:
 
-*   [X.org Wikipedia Article](http://en.wikipedia.org/wiki/X.Org_Server)
+*   [X.org Wikipedia Article](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server")
 *   [X.org](http://wiki.x.org/wiki/)

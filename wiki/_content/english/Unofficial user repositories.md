@@ -665,7 +665,7 @@ Server = http://pkgbuild.com/~lcarlier/$repo/$arch
 
 #### noware
 
-*   **Maintainer:** Alexandru Thirtheu (alex_giusi_tiri2@yahoo.com) ([Forums](https://bbs.archlinux.org/profile.php?id=65036)) ([Wiki](https://wiki.archlinux.org/index.php/User:AGT)) ([Web Site](http://direct.noware.systems.:2))
+*   **Maintainer:** Alexandru Thirtheu (alex_giusi_tiri2@yahoo.com) ([Forums](https://bbs.archlinux.org/profile.php?id=65036)) ([Wiki](/index.php?title=User:AGT&action=edit&redlink=1 "User:AGT (page does not exist)")) ([Web Site](http://direct.noware.systems.:2))
 *   **Description:** Software which I prefer being present in a repository, than being compiled each time. It eases software maintenance, I find. Almost anything goes.
 
 ```

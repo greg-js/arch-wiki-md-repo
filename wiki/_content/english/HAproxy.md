@@ -18,7 +18,7 @@ Install the [haproxy](https://www.archlinux.org/packages/?name=haproxy) package 
 
 ## Running
 
-Enable `haproxy.service` [using systemd](https://wiki.archlinux.org/index.php/Systemd#Using_units). HAProxy's configuration can be reloaded live using `# systemctl reload haproxy.service`.
+Enable `haproxy.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). HAProxy's configuration can be reloaded live using `# systemctl reload haproxy.service`.
 
 ## Configuration
 

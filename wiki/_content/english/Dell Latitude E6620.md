@@ -49,4 +49,4 @@ For the TouchPad to work correctly install the [xf86-input-synaptics](https://ww
 
 ### Wireless
 
-To get the wireless working, see the Broadcom Wireless wiki page: [https://wiki.archlinux.org/index.php/broadcom_wireless#Installation](https://wiki.archlinux.org/index.php/broadcom_wireless#Installation)
+To get the wireless working, see the Broadcom Wireless wiki page: [Broadcom wireless#Installation](/index.php/Broadcom_wireless#Installation "Broadcom wireless")

@@ -31,13 +31,13 @@ While [Hurd](http://www.gnu.org/s/hurd/hurd.html), the GNU Kernel, is under acti
 
 **bootloader:** [GRUB](/index.php/GRUB "GRUB") is the standard bootloader for Arch Linux, which is now maintained by [GNU](http://www.gnu.org/software/grub/).
 
-**C library:** [glibc](https://www.archlinux.org/packages/?name=glibc) is *"the library which defines the `system calls' and other basic facilities such as open, malloc, printf, exit..."*[[1]](http://www.gnu.org/software/libc/)
+[C library](http://www.gnu.org/software/libc/): [glibc](https://www.archlinux.org/packages/?name=glibc) is *"the library which defines the `system calls' and other basic facilities such as open, malloc, printf, exit..."*
 
-**binary utilities:** [binutils](https://www.archlinux.org/packages/?name=binutils) provides the *"collection of programming tools for the manipulation of object code in various object file formats"*[[2]](http://en.wikipedia.org/wiki/GNU_Binutils).
+[binary utilities](https://en.wikipedia.org/wiki/GNU_Binutils "wikipedia:GNU Binutils"): [binutils](https://www.archlinux.org/packages/?name=binutils) provides the *"collection of programming tools for the manipulation of object code in various object file formats"*.
 
-**shell:** [Bash](/index.php/Bash "Bash"), another GNU based application[[3]](http://www.gnu.org/software/bash/), is the default shell.
+[shell](http://www.gnu.org/software/bash/): [Bash](/index.php/Bash "Bash"), another GNU based application, is the default shell.
 
-**core utilities:** The [coreutils](https://www.archlinux.org/packages/?name=coreutils) package contains *"the basic file, shell and text manipulation utilities"*[[4]](http://www.gnu.org/software/coreutils/).
+[core utilities](http://www.gnu.org/software/coreutils/): The [coreutils](https://www.archlinux.org/packages/?name=coreutils) package contains *"the basic file, shell and text manipulation utilities"*.
 
 **compression:** [gzip](https://www.archlinux.org/packages/?name=gzip) and [Tar](/index.php/Tar "Tar") handle many packages for GNU/Linux systems. For example, those from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") come as [Gzipped](http://www.gnu.org/software/gzip/) [tarballs](http://www.gnu.org/software/tar/).
 
@@ -52,6 +52,8 @@ Among **base-devel** are several members of the [GNU toolchain](https://en.wikip
 **compiler collection:** [gcc](https://www.archlinux.org/packages/?name=gcc)
 
 **linker, assembler and other tools:** [binutils](https://www.archlinux.org/packages/?name=binutils)
+
+	[w:gold (linker)](https://en.wikipedia.org/wiki/gold_(linker) "w:gold (linker)"), [w:GNU Binutils](https://en.wikipedia.org/wiki/GNU_Binutils "w:GNU Binutils"), [w:GNU linker](https://en.wikipedia.org/wiki/GNU_linker "w:GNU linker")
 
 **parser generator:** [bison](https://www.archlinux.org/packages/?name=bison)
 

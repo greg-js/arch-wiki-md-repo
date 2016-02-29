@@ -22,7 +22,7 @@ Pacman-key è un nuovo tool disponibile con pacman 4\. Con la nuova implementazi
 
 ## Introduzione
 
-Il sistema di firmatura pacchetti in pacman utilizza il modello ["web of trust"](http://it.wikipedia.org/wiki/Web_of_trust) per assicurare che i pacchetti vengano dagli sviluppatori e non da qualcuno che si sostituisca a loro indebitamente. Gli sviluppatori dei pacchetti e i Trusted User hanno chiavi PGP individuali che utilizzano per firmare i propri pacchetti. Questo significa che loro garantiscono il contenuto del pacchetto. Anche l'utente comune possiede una PGP key unica, che viene generata quando questi configura pacman-key.
+Il sistema di firmatura pacchetti in pacman utilizza il modello ["web of trust"](https://it.wikipedia.org/wiki/Web_of_trust) per assicurare che i pacchetti vengano dagli sviluppatori e non da qualcuno che si sostituisca a loro indebitamente. Gli sviluppatori dei pacchetti e i Trusted User hanno chiavi PGP individuali che utilizzano per firmare i propri pacchetti. Questo significa che loro garantiscono il contenuto del pacchetto. Anche l'utente comune possiede una PGP key unica, che viene generata quando questi configura pacman-key.
 
 Le chiavi possono essere usate per firmare *altre* key. Ciò significa che il proprietario della chiave firmante garantisce per l'autenticità della chiave firmata. Per verificare un pacchetto, è necessario avere una catena di firme dalla propria chiave PGP al pacchetto stesso. Con la struttura di chiavi Arch questo può avventire in tre modi:
 
@@ -30,7 +30,7 @@ Le chiavi possono essere usate per firmare *altre* key. Ciò significa che il pr
 *   **Pacchetti non ufficiali (unofficial)**: uno sviluppatore fa un pacchetto e lo firma. L'utente utilizza la propria key per firmare quella dello sviluppatore.
 *   **Pacchetti ufficiali (official)**: uno sviluppatore fa un pacchetto e lo firma. La chiave dello sviluppatore viene convalidata dalle chiavi principali (master-key). L'utente fa poi affidamento su queste ultime per garantire gli sviluppatori.
 
-Per un po' di storia sulla questione, si rimanda a questi articoli blog: [[1]](http://allanmcrae.com/2011/08/pacman-package-signing-1-makepkg-and-repo-add/) [[2]](http://allanmcrae.com/2011/08/pacman-package-signing-2-pacman-key/) [[3]](http://allanmcrae.com/2011/08/pacman-package-signing-3-pacman/) [[4]](http://allanmcrae.com/2011/12/pacman-package-signing-4-arch-linux/) e alla [proposta di controllo delle firme in Pacman](https://wiki.archlinux.org/index.php/Package_Signing_Proposal_for_Pacman) della wiki.
+Per un po' di storia sulla questione, si rimanda a questi articoli blog: [[1]](http://allanmcrae.com/2011/08/pacman-package-signing-1-makepkg-and-repo-add/) [[2]](http://allanmcrae.com/2011/08/pacman-package-signing-2-pacman-key/) [[3]](http://allanmcrae.com/2011/08/pacman-package-signing-3-pacman/) [[4]](http://allanmcrae.com/2011/12/pacman-package-signing-4-arch-linux/) e alla [proposta di controllo delle firme in Pacman](/index.php/Package_Signing_Proposal_for_Pacman "Package Signing Proposal for Pacman") della wiki.
 
 **Nota:** Il protocollo HKP usa la porta 11371/tcp per comunicare. Per ricevere le chiavi firmate dai server (usando pacman-key), è richiesto che questa porta sia aperta.
 
@@ -136,7 +136,7 @@ In questo modo si permetterà alla chiave di firmare i pacchetti.
 
 ## Risoluzione dei problemi
 
-**Attenzione:** *pacman-key* dipende dall'[[[5]](https://wiki.archlinux.org/index.php/Time%7Corario)] di sistema. Se è impostato in maniera errata, si avrà il seguente errore:
+**Attenzione:** *pacman-key* dipende dall'[orario](/index.php/Time "Time") di sistema. Se è impostato in maniera errata, si avrà il seguente errore:
 ```
 error: PackageName: signature from "User <email@archlinux.org>" is invalid
 error: failed to commit transaction (invalid or corrupted package (PGP signature))

@@ -116,12 +116,14 @@ Alternatively, if your cursor turns to a black cross at the same time, and you a
 
 ### SDDM starts on tty1 instead of tty7
 
-SDDM follows the [systemd convention](http://0pointer.de/blog/projects/serial-console.html) of starting the first graphical session on tty1\. If you prefer the old convention where tty1 through tty6 are reserved for text consoles, add the following to your `sddm.conf`:
+SDDM follows the [systemd convention](http://0pointer.de/blog/projects/serial-console.html) of starting the first graphical session on tty1\. If you prefer the old convention where tty1 through tty6 are reserved for text consoles, uncomment and edit the "MinimumVT" variable, under section [X11], in `sddm.conf`:
 
  `/etc/sddm.conf` 
 ```
-[XDisplay]
+[X11]
+...
 MinimumVT=7
+...
 ```
 
 ### One or more users do not show up on the greeter

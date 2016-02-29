@@ -1,6 +1,6 @@
-[Opera](http://www.opera.com) é um navegador da web livre e gratuito desenvolvido desde de 1994 pela empresa norueguesa [Opera Software](http://pt.wikipedia.org/wiki/Opera_Software). Ele é conhecido por ser o primeiro a trazer novos recursos de navegação para o mundo que se tornaram comuns em todos os navegadores da Web, como navegação por abas e construído em pesquisa.
+[Opera](http://www.opera.com) é um navegador da web livre e gratuito desenvolvido desde de 1994 pela empresa norueguesa [Opera Software](https://pt.wikipedia.org/wiki/Opera_Software). Ele é conhecido por ser o primeiro a trazer novos recursos de navegação para o mundo que se tornaram comuns em todos os navegadores da Web, como navegação por abas e construído em pesquisa.
 
-Opera continua a inovar com o seu cliente de email integrado, de um clique bookmarking, pilhas guia (uma forma de organizar suas abas) e suporte muito bom para recursos [HTML5](http://pt.wikipedia.org/wiki/HTML5).
+Opera continua a inovar com o seu cliente de email integrado, de um clique bookmarking, pilhas guia (uma forma de organizar suas abas) e suporte muito bom para recursos [HTML5](https://pt.wikipedia.org/wiki/HTML5).
 
 ## Contents
 
@@ -37,7 +37,7 @@ Opera continua a inovar com o seu cliente de email integrado, de um clique bookm
 
 ## Instalação
 
-O navegador Opera pode ser [instalado](/index.php/Pacman "Pacman") através do pacote [opera](https://www.archlinux.org/packages/?name=opera), disponível nos [repositórios oficiais](https://wiki.archlinux.org/index.php/Official_Repositories_(Português)).
+O navegador Opera pode ser [instalado](/index.php/Pacman "Pacman") através do pacote [opera](https://www.archlinux.org/packages/?name=opera), disponível nos [repositórios oficiais](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)").
 
 Versões em desenvolvimento podem ser encontradas no [AUR](/index.php/AUR "AUR"):
 

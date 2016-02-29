@@ -26,7 +26,7 @@
 
 ## التثبيت
 
-قم [بتثبيت](https://wiki.archlinux.org/index.php/Pacman) [nautilus](https://www.archlinux.org/packages/?name=nautilus) من [المستودعات الرسمية](https://wiki.archlinux.org/index.php/Official_repositories).
+قم [بتثبيت](/index.php/Pacman "Pacman") [nautilus](https://www.archlinux.org/packages/?name=nautilus) من [المستودعات الرسمية](/index.php/Official_repositories "Official repositories").
 
 **ملاحظة:** نوتيلس لا يحتاج إلى كل محتويات حزمة [gnome-desktop](https://www.archlinux.org/packages/?name=gnome-desktop)، البعض سيجد هذا جيداً لأن حزمة [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) أعقد قليلاً من أن تكون عملية تثبيت.
 
@@ -101,11 +101,11 @@ $ gsettings set org.gnome.nautilus.preferences always-use-location-entry true
 
 ### نوتيلس لا يستطيع تصفح الملفات المُشاركة على شبكة ويندوز
 
-"نوتيلس" يعتمد على حزمة [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) للقيام بهذا العمل، يمكن [تثبيت](https://wiki.archlinux.org/index.php/Pacman) الحزمة من [المستودعات الرسمية](https://wiki.archlinux.org/index.php/Official_repositories)
+"نوتيلس" يعتمد على حزمة [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) للقيام بهذا العمل، يمكن [تثبيت](/index.php/Pacman "Pacman") الحزمة من [المستودعات الرسمية](/index.php/Official_repositories "Official repositories")
 
 ### نوتيلس لا يستطيع تصفح الملفات المُشاركة على شبكة آبل
 
-"نوتيلس" يعتمد على حزمة [gvfs-afp](https://www.archlinux.org/packages/?name=gvfs-afp) وحزمة [avahi](https://www.archlinux.org/packages/?name=avahi) للقيام بهذا العمل، يمكن [تثبيت](https://wiki.archlinux.org/index.php/Pacman) الحزمتان من [المستودعات الرسمية](https://wiki.archlinux.org/index.php/Official_repositories)،لاحظ أنه بالإضافة إلى [[1]](https://wiki.archlinux.org/index.php/Avahi) يجب تشغيل الحزم أيضاً باستخدام التالي:
+"نوتيلس" يعتمد على حزمة [gvfs-afp](https://www.archlinux.org/packages/?name=gvfs-afp) وحزمة [avahi](https://www.archlinux.org/packages/?name=avahi) للقيام بهذا العمل، يمكن [تثبيت](/index.php/Pacman "Pacman") الحزمتان من [المستودعات الرسمية](/index.php/Official_repositories "Official repositories")،لاحظ أنه بالإضافة إلى [Avahi](/index.php/Avahi "Avahi") يجب تشغيل الحزم أيضاً باستخدام التالي:
 
  `systemctl start avahi-daemon` 
 

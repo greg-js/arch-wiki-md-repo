@@ -13,7 +13,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/RuneScape "wikipedia:RuneScape"):
 
 ### Rsu-client (Recommended)
 
-**Note:** If you are unable to install the client from the AUR because of a problem with [perl-wx](https://aur.archlinux.org/packages/perl-wx/), remove it from the [depends array](https://wiki.archlinux.org/index.php/PKGBUILD#depends). [perl-wx](https://aur.archlinux.org/packages/perl-wx/) is needed for the [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface). The client will work fine without it, but you will not have a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface).
+**Note:** If you are unable to install the client from the AUR because of a problem with [perl-wx](https://aur.archlinux.org/packages/perl-wx/), remove it from the [depends array](/index.php/PKGBUILD#depends "PKGBUILD"). [perl-wx](https://aur.archlinux.org/packages/perl-wx/) is needed for the [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface "wikipedia:Graphical user interface"). The client will work fine without it, but you will not have a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface "wikipedia:Graphical user interface").
 
 Rsu-client is an unofficial RuneScape Unix/Linux Client and it's currently the recommended way to play RuneScape/Old School RuneScape. It's available to install from the AUR [unix-runescape-client](https://aur.archlinux.org/packages/unix-runescape-client/), or you can manually grab the source at [https://github.com/HikariKnight/rsu-client](https://github.com/HikariKnight/rsu-client). After installation, to start playing, open either “RuneScape” or “RuneScape OldSchool”, depending on what version you are interested in.
 

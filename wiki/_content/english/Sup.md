@@ -20,7 +20,7 @@
 
 ## Installation
 
-Install [sup-git](https://aur.archlinux.org/packages/sup-git) from the [AUR](/index.php/AUR "AUR"). Although the developers suggest that you install Sup via:
+Install [sup-git](https://aur.archlinux.org/packages/sup-git/) from the [AUR](/index.php/AUR "AUR"). Although the developers suggest that you install Sup via:
 
 ```
 $ gem install sup

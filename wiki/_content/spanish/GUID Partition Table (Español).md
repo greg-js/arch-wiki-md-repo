@@ -107,11 +107,11 @@ En GNU Parted >=3,0, la utilidad de línea de órdenes `parted` no es compatible
 
 ## Véase también
 
-1.  Página de Wikipedia sobre [GPT](http://en.wikipedia.org/wiki/GUID_Partition_Table) y [MBR](http://en.wikipedia.org/wiki/Master_boot_record)
+1.  Página de Wikipedia sobre [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") y [MBR](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record")
 2.  Página de Rod Smith sobre [la herramienta fdisk GPT](http://rodsbooks.com/gdisk/) y página del proyecto [Sourceforge.net - gptfdisk](http://sourceforge.net/projects/gptfdisk/)
 3.  Página Rod Smith's sobre [conversión de MBR a GPT](http://rodsbooks.com/gdisk/mbr2gpt.html) y arranque de sistemas operativos [desde GPT](http://rodsbooks.com/gdisk/booting.html~~HEAD=NNS)
 4.  Página Rod Smith's sobre la [Nueva Partición Tipo GUID](http://www.rodsbooks.com/linux-fs-code/index.html) para datos de particiones Linux
 5.  Presentación página [CD's de Recuperación del Sistema en GPT](http://sysresccd.org/Sysresccd-Partitioning-The-new-GPT-disk-layout)
-6.  Página de Wikipedia sobre [BIOS Boot Partition](http://en.wikipedia.org/wiki/BIOS_Boot_partition)
+6.  Página de Wikipedia sobre [BIOS Boot Partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 7.  Aproveche al máximo de unidades de gran tamaño con [GPT y Linux - IBM Developer Works](http://www.ibm.com/developerworks/linux/library/l-gpt/index.html?ca=dgr-lnxw07GPT-Storagedth-lx&S_TACT=105AGY83&S_CMP=grlnxw07)
 8.  [FAQ de Microsoft Windows y GPT](http://www.microsoft.com/whdc/device/storage/GPT_FAQ.mspx)

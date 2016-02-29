@@ -1,4 +1,4 @@
-**RetroShare** – open source, cross-platform [Friend-to-Friend](https://en.wikipedia.org/wiki/Friend-to-friend) application that offers secure chat and file sharing features.
+**RetroShare** – open source, cross-platform [Friend-to-Friend](https://en.wikipedia.org/wiki/Friend-to-friend "wikipedia:Friend-to-friend") application that offers secure chat and file sharing features.
 
 ## Contents
 
@@ -42,4 +42,4 @@ First, you have to create new profile. Then you need to explicitly add friends t
 ## External Links
 
 *   [RetroShare Homepage](http://retroshare.sourceforge.net/)
-*   [RetroShare Wikipedia entry](http://en.wikipedia.org/wiki/RetroShare)
+*   [RetroShare Wikipedia entry](https://en.wikipedia.org/wiki/RetroShare "wikipedia:RetroShare")

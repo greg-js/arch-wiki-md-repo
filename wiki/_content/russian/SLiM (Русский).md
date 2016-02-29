@@ -30,13 +30,13 @@
 
 ## Настройка
 
-**Обратите внимание:** SLiM больше не поддерживает сессию 'по умолчанию', если включено несколько сессий. Это не заметно, если пытаетесь выйти, п потом обратно войти в ту же сессию.
+**Примечание:** SLiM больше не поддерживает сессию 'по умолчанию', если включено несколько сессий. Это не заметно, если пытаетесь выйти, п потом обратно войти в ту же сессию.
 
 Начиная с версии **1.3.6-2**, SLiM может автоматически определить установленные окружения рабочего стола и оконные менеджеры. Это достигается с помощью использования `sessiondir /usr/share/xsessions/` в `/etc/slim.conf`. Поэтому тем, кто устанавливал прошлую версию SLiM будет необходимо внести изменения в `/etc/slim.conf` и [xinitrc](/index.php/Xinitrc "Xinitrc"), соответственно.
 
 ### Включение SLiM
 
-**Обратите внимание:** [slim](https://www.archlinux.org/packages/?name=slim) зависит от *systemd-logind*.
+**Примечание:** [slim](https://www.archlinux.org/packages/?name=slim) зависит от *systemd-logind*.
 
 [Включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") SLiM сервис `slim.service`:
 
@@ -215,7 +215,7 @@ esac
 
 ### Версия ≥1.3.6
 
-**Обратите внимание:** As of version 1.3.6-2 SLiM makes use of `/usr/share/xsessions/` in order to find currently available desktop environments. If you have a prior version of SLiM installed you will have to add this directory as the value of the 'sessiondir' option to your `slim.conf` file. SLiM then passes the appropriate executable to `~/.xinitrc` as an argument. Instead of a case statement, a basic multiple environments setup now only requires the addition of this to `~/.xinitrc`: `exec $1` 
+**Примечание:** As of version 1.3.6-2 SLiM makes use of `/usr/share/xsessions/` in order to find currently available desktop environments. If you have a prior version of SLiM installed you will have to add this directory as the value of the 'sessiondir' option to your `slim.conf` file. SLiM then passes the appropriate executable to `~/.xinitrc` as an argument. Instead of a case statement, a basic multiple environments setup now only requires the addition of this to `~/.xinitrc`: `exec $1` 
 
 ## Темы
 
@@ -248,7 +248,7 @@ slim -p /usr/share/slim/themes/<theme name>
 
 ```
 
-Для того, чтобы закрыть просмотр, наберите "exit" в поле логина и нажмите Enter. Дополнительные пакеты тем могут быть найдены в [AUR](https://wiki.archlinux.org/index.php/AUR).
+Для того, чтобы закрыть просмотр, наберите "exit" в поле логина и нажмите Enter. Дополнительные пакеты тем могут быть найдены в [AUR](/index.php/AUR "AUR").
 
 # Советы и Хитрости
 
@@ -333,7 +333,7 @@ to
 
 ## Автомонтирование шифрованной /home при входе в систему
 
-Можете использовать [pam_mount](https://wiki.archlinux.org/index.php/Pam_mount#Slim)
+Можете использовать [pam_mount](/index.php/Pam_mount#Slim "Pam mount")
 
 Пример файла /etc/pam.d/slim:
 
@@ -355,7 +355,7 @@ to
 
 ```
 
-**Обратите внимание:** Важно помнить, что в настоящее время нет команды отображения меню в SLIM. Нужно запомнить стандартные команды, перечисленые в ["Выключение, перезагрузка,...."](/index.php/SLiM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.2C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0.2C_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC_.D1.81.D0.BD.D0.B0.2C_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.2C_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.82.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.B0.D0.BB.D0.B0_.D0.B8.D0.B7_SLIM "SLiM (Русский)") и т.д. Эти команды используются в поле Имя пользователя, которое всегда отображается.
+**Примечание:** Важно помнить, что в настоящее время нет команды отображения меню в SLIM. Нужно запомнить стандартные команды, перечисленые в ["Выключение, перезагрузка,...."](#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.2C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0.2C_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC_.D1.81.D0.BD.D0.B0.2C_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.2C_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.82.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.B0.D0.BB.D0.B0_.D0.B8.D0.B7_SLIM) и т.д. Эти команды используются в поле Имя пользователя, которое всегда отображается.
 
 # Ссылки
 

@@ -229,7 +229,7 @@ Below is a basic structure of a `*MyProfile*.network` file:
 
 Most common keys are:
 
-*   `Name=` the device name (e.g Br0, enp4s0)
+*   `Name=` the device name (e.g Br0, enp4s0, en*)
 *   `Host=` the machine hostname
 *   `Virtualization=` check whether the system is executed in a virtualized environment or not. A `Virtualization=no` key will only apply on your host machine, while `Virtualization=yes` apply to any container or VM.
 
@@ -241,6 +241,7 @@ Most common keys are:
 *   `DNS=` is a [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") server address. You can specify this option more than once
 *   `Bridge=` is the name of the bridge to add the link to
 *   `IPForward=` defaults to `no`. It enables IP forwarding, performing the forwarding according to the routing table and is required for setting up [Internet sharing](/index.php/Internet_sharing "Internet sharing"). Note that turning `IPForward=` on applies to *all* network interfaces.
+*   `Domains=` a list of the domains used for DNS host name resolution.
 
 Please see `systemd.network(5)` for details.
 

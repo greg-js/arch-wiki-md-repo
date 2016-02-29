@@ -151,7 +151,7 @@ Konfigurace bezdrátových sítí je probírána v [Wireless network configurati
 
 ### Firewall
 
-Abyste se cítili bezpečněji, nainstalujte a nakonfigurujte si [firewall](/index.php/Firewalls "Firewalls").
+Abyste se cítili bezpečněji, nainstalujte a nakonfigurujte si [firewall](/index.php/Firewall "Firewall").
 
 ### Ifplugd
 
@@ -278,7 +278,7 @@ source ./vars
 **Zdroje:**
 
 1.  [http://www.openvpn.net/index.php/open-source/documentation/howto.html](http://www.openvpn.net/index.php/open-source/documentation/howto.html)
-2.  [https://wiki.archlinux.org/index.php/OpenVPN](https://wiki.archlinux.org/index.php/OpenVPN)
+2.  [OpenVPN](/index.php/OpenVPN "OpenVPN")
 3.  [http://openvpn.net/index.php/open-source/documentation/miscellaneous/77-rsa-key-management.html](http://openvpn.net/index.php/open-source/documentation/miscellaneous/77-rsa-key-management.html)
 
 #### Konfigurace serveru
@@ -542,7 +542,7 @@ DHCPCD_ARGS="-R -t 30 -h $HOSTNAME"
 
 ```
 
-**POZN.**: Používáte-li dhcpcd >= 4.0.2, flag -R byl potlačen, prosím přečtěte si informace na těchto stránkách: ([[1]](https://wiki.archlinux.org/index.php/Configuring_network#For_DHCP_IP)) sekce How to use a custom resolv.conf file
+**POZN.**: Používáte-li dhcpcd >= 4.0.2, flag -R byl potlačen, prosím přečtěte si informace na těchto stránkách: ([Configuring network#For_DHCP_IP](/index.php/Configuring_network#For_DHCP_IP "Configuring network")) sekce How to use a custom resolv.conf file
 
 Uložte soubor a zavřete jej, potom znovu otevřete /etc/resolv.conf. Měli byste vidět jednu IP (nejpravděpodobněji 10.1.1.1), což je brána vašeho routeru, kterou potřebujete připojit, abyste dostali DNS vašeho ISP. Vložte IP do vašeho internetového prohlížeče a přihlaste se do routeru. V sekci DNS byste měli vidět IP preferovaného DNS serveru, zkopírujte ji a vložte do souboru NAD IP adresu brány.
 

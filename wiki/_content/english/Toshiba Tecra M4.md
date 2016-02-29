@@ -70,21 +70,17 @@ that produces: tablet is landscape and orientation "normal" - joystick up -> pag
 
 # Script for changing orientation
 
-```
-# nano -w /usr/bin/rotate
-
-```
-
+ `/usr/bin/rotate` 
 ```
 #!/bin/bash
 
 #### rotate.sh - A script for tablet PCs to rotate the display.
 
 ## This software is licensed under the CC-GNU GPL.
-## [http://creativecommons.org/licenses/GPL/2.0/](http://creativecommons.org/licenses/GPL/2.0/)
+## http://creativecommons.org/licenses/GPL/2.0/
 
-## [https://wiki.archlinux.org/index.php/Tablet_PC](https://wiki.archlinux.org/index.php/Tablet_PC)
-## REQUIRES: linuxwacom ([http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Main_Page](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Main_Page))
+## https://wiki.archlinux.org/index.php/Tablet_PC
+## REQUIRES: linuxwacom (http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Main_Page)
 
 #### Function(s)
 function set_normal {
@@ -116,8 +112,6 @@ elif [ "$orientation" = "inverted" ]; then
 elif [ "$orientation" = "left" ]; then
 	set_normal
 fi
-
-#### EOF
 
 ```
 

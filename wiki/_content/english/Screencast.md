@@ -1,5 +1,3 @@
-This article explains different methods to create a [screencast](https://en.wikipedia.org/wiki/Screencast "wikipedia:Screencast") on your system.
+Redirect to:
 
-## FFmpeg
-
-See [FFmpeg#Screen cast](/index.php/FFmpeg#Screen_cast "FFmpeg").
+*   [FFmpeg#Screen cast](/index.php?title=FFmpeg&redirect=no#Screen_cast "FFmpeg")

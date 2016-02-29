@@ -1,4 +1,4 @@
-Compiz es un [Compositing Window manager](http://es.wikipedia.org/wiki/Ventana_(informática)). Al proveer su propio window manager, no puede ser usado simultáneamente con otros, tales como [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), [Enlightenment](/index.php/Enlightenment "Enlightenment") - aquellos usuarios que quieran mantener su actual window manager y agregarle algunos efectos podrían probar con [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") en su lugar.
+Compiz es un [Compositing Window manager](https://es.wikipedia.org/wiki/Ventana_(informática)). Al proveer su propio window manager, no puede ser usado simultáneamente con otros, tales como [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), [Enlightenment](/index.php/Enlightenment "Enlightenment") - aquellos usuarios que quieran mantener su actual window manager y agregarle algunos efectos podrían probar con [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") en su lugar.
 
 **Note:** En español es común traducir Window manager como administrador de ventanas, o manejador de ventanas, pero durante la traducción se prefirió dejarlo en ingles.
 
@@ -624,8 +624,8 @@ Una lista mas detallada puede ser encontrada en [CommonKeyboardShortcuts](http:/
 
 # Recursos adicionales
 
-*   [Compiz_Troubleshooting](/index.php/Compiz_Troubleshooting "Compiz Troubleshooting") -- sub article
-*   [Compiz_configuration](/index.php/Compiz_configuration "Compiz configuration") -- sub article
+*   [Compiz Troubleshooting](/index.php/Compiz_Troubleshooting "Compiz Troubleshooting") -- sub article
+*   [Compiz configuration](/index.php/Compiz_configuration "Compiz configuration") -- sub article
 *   [Compiz Website](http://compiz.org) -- including wiki and forum
 *   [Composite](/index.php/Composite "Composite") -- A Xorg extension required by composite managers
 *   [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") -- A simple composite manager capable of drop shadows and primitive transparency

@@ -543,7 +543,7 @@ You can find more information about AMD APP SDK [here](http://developer.amd.com/
 
 #### amdapp-codexl
 
-CodeXL is an OpenCL and OpenGL Debugger and Profiler, with a static OpenCL kernel analyzer. It is a GUI application written atop of the well known [gDEBugger](https://aur.archlinux.org/packages/gdebugger) and is available only for x86_64 systems.
+CodeXL is an OpenCL and OpenGL Debugger and Profiler, with a static OpenCL kernel analyzer. It is a GUI application written atop of the well known [gdebugger](https://aur.archlinux.org/packages/gdebugger/) and is available only for x86_64 systems.
 
 You can find more informations about CodeXL [here](http://developer.amd.com/tools/heterogeneous-computing/codexl/).
 

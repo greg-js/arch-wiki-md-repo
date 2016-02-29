@@ -296,7 +296,7 @@ Una barra di plasma verrà visualizzata nella parte inferiore dello schermo che 
 
 KDE ha un servizio di risparmio energetico integrato chiamato "**Powerdevil Power Management**" con il quale è possibile modificare il profilo di risparmio energetico del sistema e/o la luminosità dello schermo (se supportata).
 
-Dalla versione KDE 4.6, CPU frequency scaling non è più gestito da KDE. Si presuppone che sia gestito automaticamente dal hardware e/o dal kernel. Dalla versione del kernel 3.3, Arch Linux utilizza `ondemand` come governatore predefinito per Cpufreq. Leggere attentamente il [CPU Frequency Scaling (Italiano)](/index.php/CPU_Frequency_Scaling_(Italiano) "CPU Frequency Scaling (Italiano)").
+Dalla versione KDE 4.6, CPU frequency scaling non è più gestito da KDE. Si presuppone che sia gestito automaticamente dal hardware e/o dal kernel. Dalla versione del kernel 3.3, Arch Linux utilizza `ondemand` come governatore predefinito per Cpufreq. Leggere attentamente il [CPU frequency scaling (Italiano)](/index.php/CPU_frequency_scaling_(Italiano) "CPU frequency scaling (Italiano)").
 
 ### Monitorare i cambiamenti su file locali e cartelle
 
@@ -425,7 +425,7 @@ Akonadi è un sistema destinato a funzionare da cache locale per dati PIM, indip
 
 Akonadi non memorizza i dati di per sé : il formato di memorizzazione dipende dalla natura dei dati (per esempio, i contatti possono essere memorizzati in formato vCard ).
 
-Per ulteriori informazioni su Akonadi e il suo rapporto con Nepomuk, vedere [[4]](http://blogs.kde.org/node/4503) e [[5]](http://cmollekopf.wordpress.com/2013/02/13/kontact-nepomuk-integration-why-data-from-akonadi-is-indexed-in-nepomuk/).
+Per ulteriori informazioni su Akonadi e il suo rapporto con Nepomuk, vedere [[3]](http://blogs.kde.org/node/4503) e [[4]](http://cmollekopf.wordpress.com/2013/02/13/kontact-nepomuk-integration-why-data-from-akonadi-is-indexed-in-nepomuk/).
 
 #### Disabilitare Akonadi
 
@@ -455,7 +455,7 @@ Da [Wikipedia](https://en.wikipedia.org/wiki/it:Phonon "wikipedia:it:Phonon"):
 
 ### Quale backend si dovrebbe scegliere?
 
-Si possono utilizzare diversi backend come [Gstreamer](/index.php/Gstreamer "Gstreamer") ([phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer)) e [VLC](/index.php/VLC "VLC") ([phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc)) disponibili nei [Depositi Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), mentre QuickTime ([phonon-quicktime-git](https://aur.archlinux.org/packages/phonon-quicktime-git/)), e [AVKode](http://martinsandsmark.wordpress.com/2012/07/07/akademy/) ([phonon-avkode-git](https://aur.archlinux.org/packages/phonon-avkode-git/)) sono reperibili su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
+Si possono utilizzare diversi backend come [GStreamer](/index.php/GStreamer "GStreamer") ([phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer)) e [VLC](/index.php/VLC "VLC") ([phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc)) disponibili nei [Depositi Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), mentre QuickTime ([phonon-quicktime-git](https://aur.archlinux.org/packages/phonon-quicktime-git/)), e [AVKode](http://martinsandsmark.wordpress.com/2012/07/07/akademy/) ([phonon-avkode-git](https://aur.archlinux.org/packages/phonon-avkode-git/)) sono reperibili su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
 
 La maggior parte degli utenti preferisce GStreamer o VLC, poiché sono maggiormente supportati. Si noti che possono essere installati più backend in una sola volta, e sceglierne uno in *Impostazioni di Sistema > Multimedia > Phonon > Backend*.
 
@@ -738,7 +738,7 @@ Enabled=false
 
 Per ulteriori informazioni consultare questa [discussione](https://bbs.archlinux.org/viewtopic.php?pid=932598).
 
-Se si è effettuata una installazione minimale di KDE, assicurarsi di installare il font richiesto dal vostro backend phonon, come elencato elencato [qui](/index.php/KDE_(Italiano)#Installazione_minimale "KDE (Italiano)")
+Se si è effettuata una installazione minimale di KDE, assicurarsi di installare il font richiesto dal vostro backend phonon, come elencato elencato [qui](#Installazione_minimale)
 
 ### KDE ed i programmi in Qt vengono visualizzati in maniera errata con gestori di finestre differenti
 
@@ -944,7 +944,7 @@ Nel caso in cui si abbiano problemi e si scriva sul forum di Arch, assicurarsi i
 
 ## Links Esterni
 
-*   [[6]](http://www.kde.org) - KDE homepage
-*   [[7]](https://bugs.kde.org) - KDE bug tracker
-*   [[8]](https://bugs.archlinux.org) - Arch Linux bug tracker
-*   [[9]](https://projects.kde.org) - KDE Projects
+*   [[5]](http://www.kde.org) - KDE homepage
+*   [[6]](https://bugs.kde.org) - KDE bug tracker
+*   [[7]](https://bugs.archlinux.org) - Arch Linux bug tracker
+*   [[8]](https://projects.kde.org) - KDE Projects

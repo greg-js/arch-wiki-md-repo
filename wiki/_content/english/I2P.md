@@ -34,4 +34,4 @@ HTTPS 127.0.0.1 4445
 *   [I2P Homepage](http://www.i2p2.de)
 *   [I2P FAQ](http://www.i2p2.de/faq.html)
 *   [Homepage mirror](http://www.i2pproject.net)
-*   [I2P Wikipedia entry](http://en.wikipedia.org/wiki/I2p)
+*   [I2P Wikipedia entry](https://en.wikipedia.org/wiki/I2p "wikipedia:I2p")

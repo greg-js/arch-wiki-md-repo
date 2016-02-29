@@ -12,7 +12,7 @@ Arch Linux je nezavisno razvijana, i686/x86-64 GNU/Linux distrubucija opče namj
 
 ## Povijest
 
-Arch Linux-a je osnovao kanadski programer Judd Vinet. Prvo Arch izdanje, Arch Linux 0.1 bilo je 11\. ožujka 2002\. godine. Iako je Arch potpuno nezavisan, inspiriran je jednostavnošću ostalih distribucija kao što su [Slackware](http://slackware.com), [CRUX](http://www.crux.nu) i [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution). 2007\. godine, Judd Vinet je prestao biti glavni programer radi ostalih interesa i zamijenio ga je Aaron Griffin tko i dalje nastavlja sa radom kao glavni zaduženi za projekt.
+Arch Linux-a je osnovao kanadski programer Judd Vinet. Prvo Arch izdanje, Arch Linux 0.1 bilo je 11\. ožujka 2002\. godine. Iako je Arch potpuno nezavisan, inspiriran je jednostavnošću ostalih distribucija kao što su [Slackware](http://slackware.com), [CRUX](http://www.crux.nu) i [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"). 2007\. godine, Judd Vinet je prestao biti glavni programer radi ostalih interesa i zamijenio ga je Aaron Griffin tko i dalje nastavlja sa radom kao glavni zaduženi za projekt.
 
 ## Jednostavnost
 
@@ -40,7 +40,7 @@ Arch pruža software koji nije patchovan niti mjenjan u bilo kojem smislu; paket
 
 ## Zajednica
 
-Arch zajednica je zbilja pouzdana, i živahna, te su svi *Archeri* dobro došli, te se potiču na sudjelovanje i doprinošenje distribuciji, bilo to da je pomoć sa programiranjem core software-a, održavanje paketa, prijavljivanje ili popravljanje [bugova](https://bugs.archlinux.org/) (*kvarova*), poboljšavanje ArchWiki dokumentacije na [početnoj strani](/index.php/Main_Page_(Hrvatski) "Main Page (Hrvatski)"), pomaganje drugima ili izraživanje mišljenja na sljedećima mjestima: [forumima](https://bbs.archlinux.org/), [mailing listama](https://mailman.archlinux.org/mailman/listinfo/) ili IRC kanalima, kao i djeljenje svog znanja ili vlastitih aplikacija. Arch je operativni sustav koga ljudi biraju širom svijeta, i postoji nekolicina internacionalnih zajednica koje pružaju pomoć ili pružaju dokumentaciju na mnogim jezicima (kao što je ova na hrvatskom).
+Arch zajednica je zbilja pouzdana, i živahna, te su svi *Archeri* dobro došli, te se potiču na sudjelovanje i doprinošenje distribuciji, bilo to da je pomoć sa programiranjem core software-a, održavanje paketa, prijavljivanje ili popravljanje [bugova](https://bugs.archlinux.org/) (*kvarova*), poboljšavanje ArchWiki dokumentacije na [početnoj strani](/index.php/Main_page_(Hrvatski) "Main page (Hrvatski)"), pomaganje drugima ili izraživanje mišljenja na sljedećima mjestima: [forumima](https://bbs.archlinux.org/), [mailing listama](https://mailman.archlinux.org/mailman/listinfo/) ili IRC kanalima, kao i djeljenje svog znanja ili vlastitih aplikacija. Arch je operativni sustav koga ljudi biraju širom svijeta, i postoji nekolicina internacionalnih zajednica koje pružaju pomoć ili pružaju dokumentaciju na mnogim jezicima (kao što je ova na hrvatskom).
 
 ## Sažetak
 

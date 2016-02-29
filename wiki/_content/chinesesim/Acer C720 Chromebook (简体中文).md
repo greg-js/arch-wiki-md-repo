@@ -71,7 +71,7 @@
 几点安装提示：
 
 *   使用内核版本 > 4.0 的 ISO，可以开箱即用。相关触摸板补丁已经合并。
-*   建议选择 [GRUB](https://wiki.archlinux.org/index.php/Beginners%27_Guide#GRUB) 作为您的引导程序，而非 Syslinux。
+*   建议选择 [GRUB](/index.php/Beginners%27_Guide#GRUB "Beginners' Guide") 作为您的引导程序，而非 Syslinux。
 *   安装完成之后，开机启动是要按 `Ctrl-L` 而非 `Ctrl-D`。
 
 ### Xorg Video 驱动

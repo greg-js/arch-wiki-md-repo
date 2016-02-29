@@ -258,7 +258,7 @@ fastcgi.server = (
 
 ##### eAccelerator
 
-Install [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/) from the [AUR](/index.php/Arch_User_Repository "Arch User Repository").
+Install [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/) from the [AUR](/index.php/AUR "AUR").
 
 Add own config file for eaccelerator:
 
@@ -391,7 +391,7 @@ Note that you cannot use the scheme conditional around ssl.engine above, since l
 
 ##### Server Name Indication
 
-To use [SNI](http://en.wikipedia.org/wiki/Server_Name_Indication) with lighttpd, simply put additional ssl.pemfile configuration directives inside host conditionals. It seems a default ssl.pemfile is still required, though.
+To use [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication "wikipedia:Server Name Indication") with lighttpd, simply put additional ssl.pemfile configuration directives inside host conditionals. It seems a default ssl.pemfile is still required, though.
 
 ```
 $HTTP["host"] == "www.example.org" {

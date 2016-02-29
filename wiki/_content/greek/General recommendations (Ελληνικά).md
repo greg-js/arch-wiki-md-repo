@@ -330,7 +330,7 @@ GPM_ARGS="-m /dev/input/mice -t ps2"
 
 ```
 
-Για περισσότερες πληροφορίες δείτε το λήμμα [Safe CFlags](https://wiki.archlinux.org/index.php/Safe_Cflags).
+Για περισσότερες πληροφορίες δείτε το λήμμα [Safe CFlags](/index.php/Safe_Cflags "Safe Cflags").
 
 ### Εξοικονομώντας χρόνο με Command-aliases
 

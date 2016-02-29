@@ -7,7 +7,8 @@
     *   [1.2 $GOPATH](#.24GOPATH)
 *   [2 Динамические библиотеки](#.D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B8)
 *   [3 Кросс-компиляция](#.D0.9A.D1.80.D0.BE.D1.81.D1.81-.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D1.8F)
-*   [4 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [4 Оптимизация](#.D0.9E.D0.BF.D1.82.D0.B8.D0.BC.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F)
+*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
@@ -23,7 +24,7 @@
 
 	+ хорошая оптимизация
 
-	‒ goroutines здесь полновесные потоки(проблема решается использованием [*gold* линковщика](http://blog.golang.org/gccgo-in-gcc-471))
+	‒ goroutines здесь полновесные потоки(проблема решается использованием [*gold-линковщика*](/index.php/Gold_linker_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gold linker (Русский)") ([*info*](http://blog.golang.org/gccgo-in-gcc-471))
 
 Также с [go](https://www.archlinux.org/packages/?name=go) можно установить дополнительные инструменты разработчика [go-tools](https://www.archlinux.org/packages/?name=go-tools).
 
@@ -35,10 +36,8 @@
 ```
 package main
 
-import "fmt"
-
 func main() {
-    fmt.Println("Привет, Арч!")
+    println("Привет, Арч!")
 }
 
 ```
@@ -65,7 +64,7 @@ $ gccgo test.go -o test
 
 ```
 
-Компиляция с помощью *gccgo* и линковщика [*gold*](/index.php/Gold_linker_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gold linker (Русский)"):
+Компиляция с помощью *gccgo* и [*gold-линковщика*](/index.php/Gold_linker_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gold linker (Русский)"):
 
 ```
 $ gccgo test.go -fuse-ld=gold -o test
@@ -134,6 +133,8 @@ amd64             : AMD64
 amd64p32          : AMD64 с 32-указателями
 arm               : ARM
 arm64             : ARM64
+mips64            : MIPS64
+mips64le          : MIPS64-LE
 
 ```
 
@@ -157,6 +158,15 @@ android           : Android
 
 ```
 $ GOOS=windows GOARCH=amd64 go build -o test
+
+```
+
+## Оптимизация
+
+Компилятор go по умолчанию компилирует пакет с отладочной информацией что существенно увеличивает размер исполняемого файла, чтобы этого избежать необходимо добавить флаг:
+
+```
+$ go build -ldflags '-s' test.go
 
 ```
 

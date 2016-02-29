@@ -87,7 +87,7 @@
 
 #### [Ruby](http://www.ruby-lang.org/)
 
-*   [why's (poignant) Guide to Ruby](https://en.wikipedia.org/wiki/Why's_(poignant)_Guide_to_Ruby)
+*   [why's (poignant) Guide to Ruby](https://en.wikipedia.org/wiki/Why%27s_(poignant)_Guide_to_Ruby "wikipedia:Why's (poignant) Guide to Ruby")
 *   [Learn Ruby The Hard Way](http://ruby.learncodethehardway.org/)
 
 ## [Typesetting](https://en.wikipedia.org/wiki/Typesetting "wikipedia:Typesetting")/[Markup Languages](https://en.wikipedia.org/wiki/Markup_language "wikipedia:Markup language")

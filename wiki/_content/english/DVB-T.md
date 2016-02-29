@@ -1,4 +1,4 @@
-[DVB-T](https://en.wikipedia.org/wiki/DVB-T) is the worldwide standard for transmitting terrestrial digital video broadcast. It is possible to receive DVB-T using several different hardware setups, however this article will focus on DVB-T USB dongles based on the RTL2832U chipset (which are also very popular as cheap software defined radios using [RTL-SDR](/index.php/RTL-SDR "RTL-SDR")).
+[DVB-T](https://en.wikipedia.org/wiki/DVB-T "wikipedia:DVB-T") is the worldwide standard for transmitting terrestrial digital video broadcast. It is possible to receive DVB-T using several different hardware setups, however this article will focus on DVB-T USB dongles based on the RTL2832U chipset (which are also very popular as cheap software defined radios using [RTL-SDR](/index.php/RTL-SDR "RTL-SDR")).
 
 ## Contents
 

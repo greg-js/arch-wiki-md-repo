@@ -1,4 +1,4 @@
-The [Common Desktop Environment](https://en.wikipedia.org/wiki/Common_Desktop_Environment) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations. Despite being a legacy environment, it is still kept alive with support for Linux systems as well.
+The [Common Desktop Environment](https://en.wikipedia.org/wiki/Common_Desktop_Environment "wikipedia:Common Desktop Environment") is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations. Despite being a legacy environment, it is still kept alive with support for Linux systems as well.
 
 **Warning:** Running CDE on Linux is extremely experimental, has several known security issues, and requires some system modifications which are insecure. It is advisable to run CDE only under controlled settings (e.g. inside a VM) and never for real-life usage.
 

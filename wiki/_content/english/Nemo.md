@@ -16,7 +16,7 @@
 
 ## Installation
 
-[Install](https://wiki.archlinux.org/index.php/Pacman) [nemo](https://www.archlinux.org/packages/?name=nemo) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Pacman "Pacman") [nemo](https://www.archlinux.org/packages/?name=nemo) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Extensions
 

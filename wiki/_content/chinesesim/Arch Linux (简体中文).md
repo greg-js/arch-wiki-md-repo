@@ -62,13 +62,13 @@ Arch的官方源提供了数千种高质量的i686/x86-64二进制包来满足�
 
 Arch社区是值得信赖、充满活力并且好客的：我们鼓励所有的*Archers*都来积极参与，为发行版作出贡献，帮助核心软件的开发，维护软件包，报告或修复[bug](https://bugs.archlinux.org/)，改进 [ArchWiki文档库](/index.php/Main_page "Main page")，在[论坛](https://bbs.archlinux.org/)、[邮件列表](https://mailman.archlinux.org/mailman/listinfo/)和[IRC 频道](/index.php/IRC_channels "IRC channels") 中帮助其他用户解决问题、交换观点，或是分享自己开发的应用程序。Arch Linux是众多地球人的选择，并且有一些[国际社区](/index.php/International_communities "International communities") 提供不同语言的帮助以及文档库。
 
-如果你想成为社区的活跃成员，请点击[参与](/index.php/Getting_Involved_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Getting Involved (简体中文)")。
+如果你想成为社区的活跃成员，请点击[参与](/index.php/Getting_involved_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Getting involved (简体中文)")。
 
 ## 历史
 
 ### 早期
 
-加拿大程序员和吉他师 Judd Vinet 从 2001 年早期开始开发 Arch Linux，并在2002年3月11日正式发行0.1版。它受到[Slackware](http://www.slackware.com/), [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution), [PLD Linux](http://www.pld-linux.org/) 和 [CRUX](http://crux.nu/) 的启发，但是那时候这些发行版缺少软件包管理工具。所以 Vinet 以同样的简洁原则建立发行版，并编写了 [pacman](/index.php/Pacman "Pacman") 软件包，自动处理软件包的安装、删除和更新。
+加拿大程序员和吉他师 Judd Vinet 从 2001 年早期开始开发 Arch Linux，并在2002年3月11日正式发行0.1版。它受到[Slackware](http://www.slackware.com/), [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"), [PLD Linux](http://www.pld-linux.org/) 和 [CRUX](http://crux.nu/) 的启发，但是那时候这些发行版缺少软件包管理工具。所以 Vinet 以同样的简洁原则建立发行版，并编写了 [pacman](/index.php/Pacman "Pacman") 软件包，自动处理软件包的安装、删除和更新。
 
 ### 中期
 

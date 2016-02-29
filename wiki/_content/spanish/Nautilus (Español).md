@@ -27,7 +27,7 @@
 
 ## Instalación
 
-[Instale](https://wiki.archlinux.org/index.php/Pacman) [nautilus](https://www.archlinux.org/packages/?name=nautilus) desde los [repositorios oficiales](https://wiki.archlinux.org/index.php/Official_repositories).
+[Instale](/index.php/Pacman "Pacman") [nautilus](https://www.archlinux.org/packages/?name=nautilus) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
 
 **Nota:** Nautilus no necesita el paquete completo [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell), pero sí requiere [gnome-desktop](https://www.archlinux.org/packages/?name=gnome-desktop). Algunos pueden encontrar este procedimiento interesante ya que instalar gnome-shell supone cierta complejidad.
 
@@ -41,7 +41,7 @@ Nautilus es fácil de configurar gráficamente, pero no todas las configuracione
 
 Nautilus, por defecto, ya no controla fondos/escritorio en gnome-shell. No obstante, si le gusta tener iconos en el escritorio o disfrutar de la función de arrastrar y soltar, puede configurar fácilmente nautilus para manejar el escritorio.
 
-Instale el paquete [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) y ejecútelo. Haga click en la opción "Escritorio" de la lista, y pinche en "Tener administrador de archivos para manejar el escritorio" deslizando la opción a "on". Puede que tenga que reiniciar nautilus ejecutando `killall nautilus;nautilus` o resetear [Gnome](/index.php/Gnome "Gnome"), presionando `ALT+F2`, escribiendo `r`, y pulsando `Intro`.
+Instale el paquete [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) y ejecútelo. Haga click en la opción "Escritorio" de la lista, y pinche en "Tener administrador de archivos para manejar el escritorio" deslizando la opción a "on". Puede que tenga que reiniciar nautilus ejecutando `killall nautilus;nautilus` o resetear [GNOME](/index.php/GNOME "GNOME"), presionando `ALT+F2`, escribiendo `r`, y pulsando `Intro`.
 
 ### Cambiar la vista de elementos por defecto
 
@@ -115,11 +115,11 @@ Por defecto, Nautilus ahora ya no utiliza la tecla «Supr» para mover archivos 
 
 ### Nautilus no puede explorar mis recursos compartidos de red Windows
 
-Nautilus cuenta con el paquete [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) para esta funcionalidad; puede ser [instalado](https://wiki.archlinux.org/index.php/Pacman) desde los [repositorios oficiales](https://wiki.archlinux.org/index.php/Official_repositories).
+Nautilus cuenta con el paquete [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) para esta funcionalidad; puede ser [instalado](/index.php/Pacman "Pacman") desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
 
 ### Nautilus no puede ver los recursos compartidos de red de apple
 
-Nautilus depende de [gvfs-afp](https://www.archlinux.org/packages/?name=gvfs-afp) y [avahi](https://www.archlinux.org/packages/?name=avahi) para esta funcionalidad, que puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Tenga en cuenta que, además de instalar [Avahi](/index.php/Avahi "Avahi"), necesita iniciarlo también, utilizando:
+Nautilus depende de [gvfs-afp](https://www.archlinux.org/packages/?name=gvfs-afp) y [avahi](https://www.archlinux.org/packages/?name=avahi) para esta funcionalidad, que puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Tenga en cuenta que, además de instalar [Avahi](/index.php/Avahi "Avahi"), necesita iniciarlo también, utilizando:
 
  `systemctl start avahi-daemon` 
 

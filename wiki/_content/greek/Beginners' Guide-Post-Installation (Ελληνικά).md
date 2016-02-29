@@ -1,4 +1,4 @@
-**Σημείωση:** Αυτό το έγγραφο είναι μέρος του άρθρου πολλαπλών σελίδων για τον Οδηγό για Αρχάριους (Beginners Guide). Κάντε κλίκ [εδώ](/index.php/Beginners%27_Guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Beginners' Guide (Ελληνικά)") αν θέλετε να τον διαβάσετε σε μια σελίδα.
+**Σημείωση:** Αυτό το έγγραφο είναι μέρος του άρθρου πολλαπλών σελίδων για τον Οδηγό για Αρχάριους (Beginners Guide). Κάντε κλίκ [εδώ](/index.php/Beginners%27_guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Beginners' guide (Ελληνικά)") αν θέλετε να τον διαβάσετε σε μια σελίδα.
 
 ## Contents
 
@@ -30,7 +30,7 @@
 
 Ο Pacman είναι ο διαχειριστής πακέτων (**pac**kage **man**ager) του Arch Linux. Δείτε στο [pacman](/index.php/Pacman_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Pacman (Ελληνικά)") για απαντήσεις σχετικά με την εγκατάσταση, ενημέρωση και διαχείριση των πακέτων.
 
-Εξαιτίας του ["Ορθότητα κώδικα σε σύγκριση με την άνεση"](/index.php/The_Arch_Way_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC)#.CE.9F.CF.81.CE.B8.CF.8C.CF.84.CE.B7.CF.84.CE.B1_.CE.BA.CF.8E.CE.B4.CE.B9.CE.BA.CE.B1_.CF.83.CE.B5_.CF.83.CF.8D.CE.B3.CE.BA.CF.81.CE.B9.CF.83.CE.B7_.CE.BC.CE.B5_.CF.84.CE.B7.CE.BD_.CE.AC.CE.BD.CE.B5.CF.83.CE.B7 "The Arch Way (Ελληνικά)"), είναι απαραίτητο να είστε ενημερωμένοι για τυχών αλλαγές που χρειάζονται χειροκίνητη παρέμβαση **πριν** κάνετε αναβάθμιση του συστήματος. Γραφτείτε στην λίστα ηλεκτρονικού ταχυδρομείου [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ή ελέγχετε την αρχική σελίδα [Arch news](https://www.archlinux.org/) πριν κάνετε αναβάθμιση. Εναλλακτικά, μπορεί να είναι χρήσιμο να γραφτείτε συνδρομητές [σε αυτό το RSS](https://www.archlinux.org/feeds/news/) ή να ακολουθείτε το [@archlinux](https://twitter.com/archlinux) στο Twitter.
+Εξαιτίας του ["Ορθότητα κώδικα σε σύγκριση με την άνεση"](/index.php/The_Arch_Way_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC)#.CE.9F.CF.81.CE.B8.CF.8C.CF.84.CE.B7.CF.84.CE.B1_.CE.BA.CF.8E.CE.B4.CE.B9.CE.BA.CE.B1_.CE.B1.CE.BD.CF.84.CE.AF_.CE.B3.CE.B9.CE.B1_.CE.AC.CE.BD.CE.B5.CF.83.CE.B7 "The Arch Way (Ελληνικά)"), είναι απαραίτητο να είστε ενημερωμένοι για τυχών αλλαγές που χρειάζονται χειροκίνητη παρέμβαση **πριν** κάνετε αναβάθμιση του συστήματος. Γραφτείτε στην λίστα ηλεκτρονικού ταχυδρομείου [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ή ελέγχετε την αρχική σελίδα [Arch news](https://www.archlinux.org/) πριν κάνετε αναβάθμιση. Εναλλακτικά, μπορεί να είναι χρήσιμο να γραφτείτε συνδρομητές [σε αυτό το RSS](https://www.archlinux.org/feeds/news/) ή να ακολουθείτε το [@archlinux](https://twitter.com/archlinux) στο Twitter.
 
 Αν έχετε εγκαταστήσει το Arch Linux 64bit, ίσως θα θέλατε να ενεργοποιήσετε το [[multilib] αποθετήριο](/index.php/Multilib "Multilib") αν σχεδιάζετε να εγκαταστήσετε 32bit εφαρμογές.
 
@@ -198,7 +198,7 @@ $ wgetpaste /var/log/Xorg.0.log
 
 #### Γραμματοσειρές
 
-Ίσως θέλετε να εγκαταστήσετε ένα σετ από TrueType γραμματοσειρές, διότι μόνον οι bitmap γραμματοσειρές συμπεριλαμβάνονται από προ-επιλογή. Ωστόσο αν χρησιμοποιήσετε ένα πλήρες [γραφικό περιβάλλον(αγγλικά)](/index.php/Desktop_environment "Desktop environment") όπως για παράδειγμα το [KDE|KDE(αγγλικά)]], τότε αυτό το βήμα μάλλον δεν χρειάζεται. Οι DejaVu είναι ένα σετ υψηλής ποιότητας και γενικής χρήσεως γραμματοσειρές με καλή υποστήριξη [Unicode](http://el.wikipedia.org/wiki/Unicode):
+Ίσως θέλετε να εγκαταστήσετε ένα σετ από TrueType γραμματοσειρές, διότι μόνον οι bitmap γραμματοσειρές συμπεριλαμβάνονται από προ-επιλογή. Ωστόσο αν χρησιμοποιήσετε ένα πλήρες [γραφικό περιβάλλον(αγγλικά)](/index.php/Desktop_environment "Desktop environment") όπως για παράδειγμα το [KDE|KDE(αγγλικά)]], τότε αυτό το βήμα μάλλον δεν χρειάζεται. Οι DejaVu είναι ένα σετ υψηλής ποιότητας και γενικής χρήσεως γραμματοσειρές με καλή υποστήριξη [Unicode](https://el.wikipedia.org/wiki/Unicode):
 
 ```
 # pacman -S ttf-dejavu
@@ -228,7 +228,7 @@ $ wgetpaste /var/log/Xorg.0.log
 
 Για μια λίστα από εφαρμογές που μπορεί να σας ενδιαφέρουν, δείτε στο [List of Applications(αγγλικά)](/index.php/List_of_applications "List of applications").
 
-Δείτε στο [Γενικές Συμβουλές](/index.php/General_Recommendations_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "General Recommendations (Ελληνικά)") για μετά-την-εγκατάσταση tutorials όπως, πως να ρυθμίσετε το touchpad ή το font rendering.
+Δείτε στο [Γενικές Συμβουλές](/index.php/General_recommendations_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "General recommendations (Ελληνικά)") για μετά-την-εγκατάσταση tutorials όπως, πως να ρυθμίσετε το touchpad ή το font rendering.
 
 **[Beginners' Guide (Ελληνικά)](/index.php/Beginners%27_Guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Beginners' Guide (Ελληνικά)")**
 

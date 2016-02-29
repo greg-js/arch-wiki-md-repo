@@ -4,10 +4,9 @@ This page is a set of instructions, known issues, tips and workarounds for insta
 
 *   [1 Installation](#Installation)
 *   [2 Configuring](#Configuring)
-    *   [2.1 Kernel](#Kernel)
-    *   [2.2 Video](#Video)
-    *   [2.3 Desktop Environment](#Desktop_Environment)
-    *   [2.4 Sound](#Sound)
+    *   [2.1 Video](#Video)
+    *   [2.2 Desktop Environment](#Desktop_Environment)
+    *   [2.3 Sound](#Sound)
 
 ## Installation
 
@@ -22,14 +21,6 @@ An installation process is quite common. Please refer to [Beginners' guide](/ind
 ## Configuring
 
 Thus, post-installation steps are very-well described in [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and most features will work out of the box, there are some specific tips for ASUS N-series laptops (N56/76).
-
-### Kernel
-
-**Note:** Try to avoid 3.10.x kernels
-
-Some Arch-users prefer to install [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel as a backup alternative for a main system. However, it is likely to be not such a good idea for ASUS N-series laptops users. Current LTS kernel 3.10.X has a bug [FS#36288](https://bugs.archlinux.org/task/36288) which does effect ASUS N56/N76 intel cards as of Feb 3, 2014\. Since it is likely to be version related, the author of this article would not expect the situation to change in future, unless new LTS version appears. You will as well loose out-of-box keyboard Brightness shortcuts and Keyboard backlight will work quite unreliably. Also you are likely to suffer from hard-repeatable acpi bug ([ASUS-N56-VZ-bug](https://bugs.launchpad.net/ubuntu/+source/upower/+bug/1088146)) which will randomly stop the battery from charging without any notification. The know workaround is: 1\. Unplug a power cable 2\. Deattach a battery
-
-All that problems will not affect you in case of using Arch Linux main kernel [linux](https://www.archlinux.org/packages/?name=linux) (as of version 3.12.9-2)
 
 ### Video
 

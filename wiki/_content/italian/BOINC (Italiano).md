@@ -114,5 +114,5 @@ I progetti hanno una differente richiesta dei requisiti minimi (CPU, spazio del 
 
 *   [BOINC homepage](http://boinc.berkeley.edu/)
 *   [Lista dei progetti BOINC molto interessante](http://boinc.berkeley.edu/projects.php)
-*   [Pagina di Wikipedia riguardo BOINC in iinglese](http://en.wikipedia.org/wiki/BOINC)
-*   [Pagina di Wikipedia riguardo BOINC in italiano](http://it.wikipedia.org/wiki/BOINC)
+*   [Pagina di Wikipedia riguardo BOINC in iinglese](https://en.wikipedia.org/wiki/BOINC "wikipedia:BOINC")
+*   [Pagina di Wikipedia riguardo BOINC in italiano](https://it.wikipedia.org/wiki/BOINC)

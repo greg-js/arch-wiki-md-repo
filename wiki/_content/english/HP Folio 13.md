@@ -91,11 +91,11 @@ Works out of the box.
 
 More correctly, the HP Folio has what is known as a clickpad i.e. no actual physical buttons exist. It mostly works out of the box with a few niggles: the pointer can jump around a bit (this seems improved in recent drivers) and the button areas are quite stiff (it does improve with use).
 
-The right-click area on the clickpad does not work out of the box - although the xf86-input-synaptics driver (in [Extra]) supports right-click functionality with a small edit to the config file as per the Synaptics Arch Wiki [[1]](https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Buttonless_TouchPads_.28aka_ClickPads.29).
+The right-click area on the clickpad does not work out of the box - although the xf86-input-synaptics driver (in [Extra]) supports right-click functionality with a small edit to the config file as per the Synaptics Arch Wiki [Touchpad Synaptics#Buttonless touchpads (aka ClickPads)](/index.php/Touchpad_Synaptics#Buttonless_touchpads_.28aka_ClickPads.29 "Touchpad Synaptics").
 
-You can also enable two-finger tap gesture as right-click functionality, but this can be annoying when trying to two-finger scroll and an accidental right-click is triggered - YMMV. A third way of restoring a right-click button is to install the xf86-input-synaptics-led package from the AUR[[2]](https://aur.archlinux.org/packages.php?ID=57575).
+You can also enable two-finger tap gesture as right-click functionality, but this can be annoying when trying to two-finger scroll and an accidental right-click is triggered - YMMV. A third way of restoring a right-click button is to install the xf86-input-synaptics-led package from the AUR[[1]](https://aur.archlinux.org/packages.php?ID=57575).
 
-Finally, there is currently no functionality to enable/disable the trackpad by double-tapping the top left corner of the pad (a function provided for by the windows drivers). The LED light of the clickpad also doesn't work (even using the synaptics-led package [[3]](https://aur.archlinux.org/packages.php?ID=49284) from AUR).
+Finally, there is currently no functionality to enable/disable the trackpad by double-tapping the top left corner of the pad (a function provided for by the windows drivers). The LED light of the clickpad also doesn't work (even using the synaptics-led package [[2]](https://aur.archlinux.org/packages.php?ID=49284) from AUR).
 
 *UPDATE:* As of 21/5/12, the default xf86-input-synaptics does have 1-button click (either left or right) + drag functionality restored. This means, for example, that you can left-click and drag to select text and right-click and drag to perform mouse gestures (assuming you have enabled the right button as above).
 

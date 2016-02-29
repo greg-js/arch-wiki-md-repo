@@ -1,6 +1,6 @@
 ## 安裝
 
-首先請先確定你的 [extra](https://wiki.archlinux.org/index.php/Official_Repositories#.5Bextra.5D) 已啟動，然後安裝 NTFS-3G
+首先請先確定你的 [extra](/index.php/Official_repositories#.5Bextra.5D "Official repositories") 已啟動，然後安裝 NTFS-3G
 
  `# pacman -S ntfs-3g` 
 

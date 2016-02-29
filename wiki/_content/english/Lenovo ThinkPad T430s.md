@@ -17,7 +17,7 @@ The following are known problems and workarounds for the Lenovo Thinkpad T430s, 
 
 ### Fixed
 
-*   Fixed accurately setting the brightness levels with the Fn + brightness up/down shortcut keys. The problem comes from Intel graphics, and the solution can be found from [here](https://wiki.archlinux.org/index.php/Intel#Backlight_not_fully_adjusting.2C_or_adjusting_at_all.2C_after_resume.).
+*   Fixed accurately setting the brightness levels with the Fn + brightness up/down shortcut keys. The problem comes from Intel graphics, and the solution can be found from [here](/index.php/Intel#Backlight_not_fully_adjusting.2C_or_adjusting_at_all.2C_after_resume. "Intel").
 
 ### Laptop Settings
 

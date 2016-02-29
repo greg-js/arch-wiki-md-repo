@@ -59,7 +59,7 @@ Install [thermald](https://aur.archlinux.org/packages/thermald/)
 
 Install [tlp](https://www.archlinux.org/packages/?name=tlp)
 
-Configure it as per [https://wiki.archlinux.org/index.php/TLP](https://wiki.archlinux.org/index.php/TLP)
+Configure it as per [TLP](/index.php/TLP "TLP")
 
 Install [iw](https://www.archlinux.org/packages/?name=iw)
 

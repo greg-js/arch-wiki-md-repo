@@ -223,4 +223,4 @@ non_smtpd_milters = unix:/run/opendkim/opendkim.sock
 
 ## Notes
 
-While you're about to fight spam and increase people's trust in your server, you might want to take a look at [Sender Policy Framework](http://en.wikipedia.org/wiki/Sender_Policy_Framework), which basically means adding a DNS Record stating which servers are authorized to send email for your domain.
+While you're about to fight spam and increase people's trust in your server, you might want to take a look at [Sender Policy Framework](https://en.wikipedia.org/wiki/Sender_Policy_Framework "wikipedia:Sender Policy Framework"), which basically means adding a DNS Record stating which servers are authorized to send email for your domain.

@@ -480,7 +480,7 @@ ROX en PCmanFM hebben daarnaast het voordeel dat het lichtgewichte bestandsbehee
 
 ### Weergave van lettertypen verbeteren
 
-Verbeter de weergave van lettertypes op LCD monitoren, door [door deze gids te volgen](https://wiki.archlinux.org/index.php/Fonts#Fonts_with_LCD_filter_enabled).
+Verbeter de weergave van lettertypes op LCD monitoren, door [door deze gids te volgen](/index.php/Fonts#Fonts_with_LCD_filter_enabled "Fonts").
 
 Maak vervolgens ~/.fonts.conf en voeg het volgende toe:
 
@@ -613,7 +613,7 @@ Er zijn veel tools beschikbaar, die een paneel (taakbalk), system tray en pager 
 
 **Panelen**
 
-*   [PyPanel](https://wiki.archlinux.org/index.php/PyPanel)
+*   [PyPanel](/index.php/PyPanel "PyPanel")
 *   [bmpanel](http://nsf.110mb.com/bmpanel/)
 *   [Tint2](http://code.google.com/p/tint2/)
 *   [LXPanel](http://sourceforge.net/projects/lxpanel)

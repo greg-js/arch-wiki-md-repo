@@ -215,7 +215,7 @@ Once synchronization is complete the `State` line should read `clean`. Each devi
 
 #### Scrubbing
 
-It is good practice to regularly run data [scrubbing](http://en.wikipedia.org/wiki/Data_scrubbing) to check for and fix errors.
+It is good practice to regularly run data [scrubbing](https://en.wikipedia.org/wiki/Data_scrubbing "wikipedia:Data scrubbing") to check for and fix errors.
 
 **Note:** Depending on the size/configuration of the array, a scrub may take multiple hours to complete.
 

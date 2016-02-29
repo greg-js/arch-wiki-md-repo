@@ -1,4 +1,4 @@
-"*Java je programovací jazyk, původně vyvinutý společností Sun Microsystems a uvolněný v roce 1995 jako hlavní část Java platformy od Sun Microsystems. Jazyk odvozuje většinu své syntaxe z C a C++, ale má jednodušší objektový model a méně low-level prostředků. Java aplikace jsou obvykle kompilovány do mezikódu, který může běžet na libovolném Java virtuálním stoji (JVM = Java virtual machine) bez ohledu na architekturu počítače.*" [[1]](http://en.wikipedia.org/wiki/Java_(programming_language))
+"*Java je programovací jazyk, původně vyvinutý společností Sun Microsystems a uvolněný v roce 1995 jako hlavní část Java platformy od Sun Microsystems. Jazyk odvozuje většinu své syntaxe z C a C++, ale má jednodušší objektový model a méně low-level prostředků. Java aplikace jsou obvykle kompilovány do mezikódu, který může běžet na libovolném Java virtuálním stoji (JVM = Java virtual machine) bez ohledu na architekturu počítače.*" [wikipedia:Java_(programming_language)](https://en.wikipedia.org/wiki/Java_(programming_language) "wikipedia:Java (programming language)")
 
 ## Contents
 

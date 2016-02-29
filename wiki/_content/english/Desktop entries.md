@@ -121,10 +121,10 @@ $ convert <icon name>.gif <icon name>.png
 
 ```
 
-If you convert from a container format like `ico`, you will get all images that were encapsulated in the `ico` file in the form `<icon name>-<number>.png`. If you want to know the size of the image, or the number of images in a container file like `ico` you can use the *identify* tool (also part of the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package)
+If you convert from a container format like `ico`, you will get all images that were encapsulated in the `ico` file in the form `<icon name>-<number>.png`. If you want to know the size of the image, or the number of images in a container file like `ico` you can use the *identify* tool (also part of the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package):
 
+ `$ identify /usr/share/vlc/vlc48x48.ico` 
 ```
-$ identify /usr/share/vlc/vlc48x48.ico
 /usr/share/vlc/vlc48x48.ico[0] ICO 32x32 32x32+0+0 8-bit DirectClass 84.3kb
 /usr/share/vlc/vlc48x48.ico[1] ICO 16x16 16x16+0+0 8-bit DirectClass 84.3kb
 /usr/share/vlc/vlc48x48.ico[2] ICO 128x128 128x128+0+0 8-bit DirectClass 84.3kb
@@ -134,7 +134,7 @@ $ identify /usr/share/vlc/vlc48x48.ico
 
 ```
 
-As you can see, the example *ico* file, although its name might suggest a single image of size 48x48, contains no less than 6 different sizes, of which one is even greater than 48x48, namely 128x128\. And to give a bit of motivation on this subject, at the point of writing this section (2008-10-27), the 128x128 size was missing in the *vlc* package (0.9.4-2). So the next step would be to look at the vlc PKGBUILD and check whether this icon format was not in the source package to begin with (in that case we would inform the vlc developers), or whether this icon was somehow omitted from the Arch-specific package (in that case we can file a bug report at [the Arch Linux bug tracker](https://bugs.archlinux.org/)). (*Update:* this bug has now been [fixed](https://bugs.archlinux.org/task/11923), so as you can see, your work will not be in vain.)
+As you can see, the example *ico* file, although its name might suggest a single image of size 48x48, contains no less than 6 different sizes, of which one is even greater than 48x48, namely 128x128.
 
 ### Obtaining icons
 

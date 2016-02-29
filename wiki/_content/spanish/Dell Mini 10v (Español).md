@@ -13,7 +13,7 @@
 
 Este artículo pretende ofrecer al usuario una guía básica de configuración para una netbook Dell Inspiron mini 10v. El hardware de estos equipos varía, así que nos enfocaremos en un modelo: el PRN 6326, también conocida como [Mini 10v](http://www.dell.com/us/dfh/p/inspiron-mini10/pd?cs=22) y pertenece a la serie 1010.
 
-Como era de esperarse, asumimos que existe una instalación fresca de Arch Linux, la cual puede encontrarse en esta Wiki como [Beginners' Guide (Español)](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)"). Ya que este equipo no dispone de una unidad óptica para gestionar la instalacion, puede adaptar otros medios externos como una [Unidad Flash USB](https://wiki.archlinux.org/index.php/Install_from_a_USB_flash_drive_(Espa%C3%B1ol)) o un CD-ROM externo USB.
+Como era de esperarse, asumimos que existe una instalación fresca de Arch Linux, la cual puede encontrarse en esta Wiki como [Beginners' guide (Español)](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)"). Ya que este equipo no dispone de una unidad óptica para gestionar la instalacion, puede adaptar otros medios externos como una [Unidad Flash USB](/index.php/Install_from_a_USB_flash_drive_(Espa%C3%B1ol) "Install from a USB flash drive (Español)") o un CD-ROM externo USB.
 
 ## Hardware
 
@@ -44,7 +44,7 @@ Nos centraremos en los dispositivos siguientes:
 
 ### Video
 
-La configuración de este chip no suele dar problemas en Arch Linux, después de pasar por el apartado de la instalación de las *X* en la [La Guía de Principiantes](https://wiki.archlinux.org/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Instalar_X), instale el driver correspondiente:
+La configuración de este chip no suele dar problemas en Arch Linux, después de pasar por el apartado de la instalación de las *X* en la [La Guía de Principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Instalar_X "Beginners' guide (Español)"), instale el driver correspondiente:
 
 ```
 # pacman -S xf86-video-intel
@@ -53,7 +53,7 @@ La configuración de este chip no suele dar problemas en Arch Linux, después de
 
 ### Audio
 
-La tarjeta de sonido puede ser configurada fácilmente, siguendo los pasos que se enlistan en la [Sección de Instalación de ALSA](https://wiki.archlinux.org/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Sonido). Una vez hecho esto, y en cuanto el entorno gráfico arranque, asegúrese de ejecutar:
+La tarjeta de sonido puede ser configurada fácilmente, siguendo los pasos que se enlistan en la [Sección de Instalación de ALSA](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Sonido "Beginners' guide (Español)"). Una vez hecho esto, y en cuanto el entorno gráfico arranque, asegúrese de ejecutar:
 
 ```
 $ alsamixer
@@ -73,7 +73,7 @@ See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless")
 
 ### Webcam
 
-Este dispositivo queda configurado al [Instalar las X](https://wiki.archlinux.org/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Instalar_X), sólo necesitamos **Cheese**, el cual gestionará nuestra Webcam. Si eligió [GNOME](https://wiki.archlinux.org/index.php/GNOME_(Espa%C3%B1ol)) como entorno de escritorio puede encontrarlo en el menú Aplicaciones > Sonido y Vídeo > Cheese. En cualquier caso puede instalarlo con:
+Este dispositivo queda configurado al [Instalar las X](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Instalar_X "Beginners' guide (Español)"), sólo necesitamos **Cheese**, el cual gestionará nuestra Webcam. Si eligió [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") como entorno de escritorio puede encontrarlo en el menú Aplicaciones > Sonido y Vídeo > Cheese. En cualquier caso puede instalarlo con:
 
 ```
 # pacman -S cheese

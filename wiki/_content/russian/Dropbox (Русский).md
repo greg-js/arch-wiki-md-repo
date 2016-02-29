@@ -81,4 +81,4 @@ $ encfs ~/Dropbox/Encrypted ~/Private
 
 Ваш зашифрованный каталог готов. Помещение в директорию `Private` любого файла автоматически создаст его зашифрованную копию в {{ic|~/Dropbox/Encrypted}, которая будет синхронизирована с вашим хранилищем.
 
-Чтобы монтировать директорию EncFS при каждой загрузке, следуйте инструкциям из wiki: [https://wiki.archlinux.org/index.php/EncFS#User_friendly_mounting](https://wiki.archlinux.org/index.php/EncFS#User_friendly_mounting)
+Чтобы монтировать директорию EncFS при каждой загрузке, следуйте инструкциям из wiki: [EncFS#User friendly mounting](/index.php/EncFS#User_friendly_mounting "EncFS")

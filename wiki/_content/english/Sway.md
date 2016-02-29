@@ -5,19 +5,67 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration examples](#Configuration_examples)
-    *   [2.1 Statusbar](#Statusbar)
-    *   [2.2 Wallpaper](#Wallpaper)
-    *   [2.3 Input devices](#Input_devices)
-    *   [2.4 Custom keybindings](#Custom_keybindings)
-*   [3 Usage](#Usage)
+*   [2 Starting sway](#Starting_sway)
+    *   [2.1 From TTY](#From_TTY)
+    *   [2.2 Using a display manager](#Using_a_display_manager)
+    *   [2.3 From X](#From_X)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Keymap](#Keymap)
+    *   [3.2 Statusbar](#Statusbar)
+    *   [3.3 Wallpaper](#Wallpaper)
+    *   [3.4 Input devices](#Input_devices)
+    *   [3.5 Custom keybindings](#Custom_keybindings)
 *   [4 See also](#See_also)
 
 ## Installation
 
 *sway* can be [installed](/index.php/Installed "Installed") with the [sway-git](https://aur.archlinux.org/packages/sway-git/) package. If you already use i3, then copy your i3 configuration to `~/.config/sway/config` and it will work out of the box. Otherwise, copy the sample configuration file to `~/.config/sway/config`. It is located at `/etc/sway/config`, unless the `DFALLBACK_CONFIG_DIR` flag has been set. See the sway(5) [man page](/index.php/Man_page "Man page") for information on the configuration.
 
-## Configuration examples
+## Starting sway
+
+### From TTY
+
+You can start sway by simply typing `sway` in the TTY.
+
+### Using a display manager
+
+The sway session is located at `/usr/share/wayland-sessions/sway.desktop`. It is automatically recognized by GDM.
+
+### From X
+
+If you want to start *sway* in an X session for testing purposes it is possible to start it as a regular program.
+
+## Configuration
+
+### Keymap
+
+By default, sway starts with the US keymap. You can override this behaviour by starting sway with
+
+```
+$ XKB_DEFAULT_LAYOUT=de sway
+
+```
+
+to get a German keyboard layout, for example.
+
+If you are using a display manager, you can not simply prepend the above line to the `sway.desktop` file. As root, create the following file:
+
+ `/usr/bin/sway-de` 
+```
+#!/bin/sh
+XKB_DEFAULT_LAYOUT=de sway
+```
+
+Then, create a `sway-de.desktop` file that starts the above script:
+
+ `/usr/share/wayland-sessions/sway.desktop` 
+```
+[Desktop Entry]
+Name=Sway (German keymap)
+Comment=SirCmpwn's Wayland window manager with German keymap
+Exec=sway-de
+Type=Application
+```
 
 ### Statusbar
 
@@ -88,17 +136,6 @@ Special keys on your keyboard can be used to execute commands, for example to co
  bindsym XF86MonBrightnessUp exec dsplight up 5
 
 ```
-
-## Usage
-
-To actually use *sway*, you can type in a tty:
-
-```
-$ sway
-
-```
-
-However, if you want to start *sway* in an X session for testing purposes it is possible to start it as a regular program or even from a [Display manager](/index.php/Display_manager "Display manager").
 
 ## See also
 

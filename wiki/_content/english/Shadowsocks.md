@@ -126,7 +126,7 @@ User=root
 
 Installing the [python2-m2crypto](https://www.archlinux.org/packages/?name=python2-m2crypto) package will make encryption a little faster.
 
-To use [Salsa20](https://en.wikipedia.org/wiki/Salsa20) or *ChaCha20* cyphers, install the [libsodium](https://www.archlinux.org/packages/?name=libsodium) package.
+To use [Salsa20](https://en.wikipedia.org/wiki/Salsa20 "wikipedia:Salsa20") or *ChaCha20* cyphers, install the [libsodium](https://www.archlinux.org/packages/?name=libsodium) package.
 
 ## See also
 

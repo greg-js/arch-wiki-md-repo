@@ -40,6 +40,6 @@ See man pages for `ksplice-apply`, `ksplice-create`, `ksplice-view`, and `ksplic
 ## See also
 
 *   [Ksplice GitHub](https://github.com/jirislaby/ksplice)
-*   [Ksplice on Wikipedia](https://en.wikipedia.org/wiki/Ksplice)
+*   [wikipedia:Ksplice](https://en.wikipedia.org/wiki/Ksplice "wikipedia:Ksplice")
 *   [Offical website of Ksplice Uptrack](http://www.ksplice.com/) (proprietary, owned by Oracle)
 *   [How to use the Ksplice raw utilities](http://cormander.com/2011/08/how-to-use-the-ksplice-raw-utilities/)

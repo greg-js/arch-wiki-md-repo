@@ -1,4 +1,4 @@
-[Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(400)</small>
+[Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(401)</small>
 
 	<small>1.</small> [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)") <small>(17)</small>
 
@@ -26,7 +26,7 @@
 
 	<small>2.3.</small> [Командная оболочка](/index.php/Category:Command_shells_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Command shells (Русский)") <small>(7)</small>
 
-	<small>2.4.</small> [Сжатие данных и архивирование](/index.php/Category:Data_compression_and_archiving_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Data compression and archiving (Русский)") <small>(3)</small>
+	<small>2.4.</small> [Сжатие данных и архивирование](/index.php/Category:Data_compression_and_archiving_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Data compression and archiving (Русский)") <small>(4)</small>
 
 	<small>2.5.</small> [Системы управления базами данных](/index.php/Category:Database_management_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Database management systems (Русский)") <small>(2)</small>
 
@@ -158,7 +158,7 @@
 
 	<small>6.1.2.</small> [Экран загрузки](/index.php/Category:Bootsplash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Bootsplash (Русский)") <small>(3) (Также в [Визульные спецэффекты](/index.php/Category:Eye_candy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Eye candy (Русский)"))</small>
 
-	<small>6.2.</small> [Системные службы и сервисы](/index.php/Category:Daemons_and_system_services_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Daemons and system services (Русский)") <small>(4)</small>
+	<small>6.2.</small> [Системные службы и сервисы](/index.php/Category:Daemons_and_system_services_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Daemons and system services (Русский)") <small>(5)</small>
 
 	<small>6.3.</small> [Окружение рабочего стола (DE)](/index.php/Category:Desktop_environments_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Desktop environments (Русский)") <small>(10)</small>
 
@@ -210,7 +210,7 @@
 
 	<small>6.12.5.</small> [Виртуальные частные сети (VPN)](/index.php/Category:Virtual_Private_Network_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtual Private Network (Русский)") <small>(2) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
 
-	<small>6.13.</small> [Восстановление системы](/index.php/Category:System_recovery_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System recovery (Русский)") <small>(6)</small>
+	<small>6.13.</small> [Восстановление системы](/index.php/Category:System_recovery_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System recovery (Русский)") <small>(7)</small>
 
 	<small>6.14.</small> [Виртуализация](/index.php/Category:Virtualization_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtualization (Русский)") <small>(2)</small>
 

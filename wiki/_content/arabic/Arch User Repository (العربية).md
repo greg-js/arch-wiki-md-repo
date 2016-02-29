@@ -1,7 +1,7 @@
 | **ملخص**  |
 | مستودع مستخدم آرتش The Arch User Repository عبارة عن مجموعة من ملفات [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") تم وضعها من قبل المستخدمين تزيد من توفر البرمجيات مع [official repositories](/index.php/Official_repositories "Official repositories"). هذه المقالة تشرح كيفية بناء حزم *غير مدعومة* من مستودع AUR. |
 | **نظرة عامة** |
-| في آرتش لينوكس يتم بناء الحزم باستخدام [makepkg](/index.php/Makepkg "Makepkg") وسكربت بناء مخصص لكل حزمة (يُعرف بـ [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")). حالما يتم بناء الحزمة تستطيع تثبيت البرنامج وإدارته باستخدام مدير الحزم [pacman](/index.php/Pacman "Pacman"). ملفات البناء PKGBUILDs للبرامج الموجودة في [المستودعات الرسمية](/index.php/Official_repositories "Official repositories") متوفرة عن طريق شجرة [Arch Build System](/index.php/Arch_Build_System "Arch Build System")، وآلاف الملفات غيرها متوفرة في مستودع [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)). |
+| في آرتش لينوكس يتم بناء الحزم باستخدام [makepkg](/index.php/Makepkg "Makepkg") وسكربت بناء مخصص لكل حزمة (يُعرف بـ [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")). حالما يتم بناء الحزمة تستطيع تثبيت البرنامج وإدارته باستخدام مدير الحزم [pacman](/index.php/Pacman "Pacman"). ملفات البناء PKGBUILDs للبرامج الموجودة في [المستودعات الرسمية](/index.php/Official_repositories "Official repositories") متوفرة عن طريق شجرة [Arch Build System](/index.php/Arch_Build_System "Arch Build System")، وآلاف الملفات غيرها متوفرة في مستودع **AUR**. |
 | **مواضيع متصلة** |
 | [AUR Helpers](/index.php/AUR_Helpers "AUR Helpers") |
 | [AurJson](/index.php/AurJson "AurJson") |
@@ -12,7 +12,7 @@
 
 مستودع مستخدِم آرتش (AUR) هو عبارة عن مستودع يديره أعضاء مجتمع آرتش لينوكس يحتوي على ملفات بناء الحزم ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) والتي تسمح لك ببناء الحزمة من المصدر باستخدام سكربت [makepkg](/index.php/Makepkg "Makepkg") ومن ثم تثبيت هذه الحزمة عن طريق مدير الحزم [pacman](/index.php/Pacman "Pacman")، تم إنشاء AUR لكي تنظم وتُشارك الحزم الصادرة من المجتمع، ولكي تساعد في الإسراع من ضم الحزم الشائعة إلى مستودع [[community]](#.5Bcommunity.5D)، هذا المستند يشرح كيفية الوصول والاستفادة من AUR.
 
-عدد لا بأس به من الحزم التي تتواجد في المستودعات الرسمية بدأت أولاً في مستودع AUR، حيث أن المستخدمين قادرين على مشاركة ما قاموا بتصميمه (PKGBUILD والملفات المتعلقة بها)، ويستطيع أعضاء مجتمع AUR التصويت مع أو ضد الحزم الموجودة في المستودع، وإذا أصبح لإحدى الحزم شعبية كافية فقد يتم إدخالها إلى مستودع [community] (الذي تستطيع الوصول إليه مباشرة عن طريق [pacman](/index.php/Pacman "Pacman") أو [abs](/index.php/ABS "ABS")).
+عدد لا بأس به من الحزم التي تتواجد في المستودعات الرسمية بدأت أولاً في مستودع AUR، حيث أن المستخدمين قادرين على مشاركة ما قاموا بتصميمه (PKGBUILD والملفات المتعلقة بها)، ويستطيع أعضاء مجتمع AUR التصويت مع أو ضد الحزم الموجودة في المستودع، وإذا أصبح لإحدى الحزم شعبية كافية فقد يتم إدخالها إلى مستودع [community] (الذي تستطيع الوصول إليه مباشرة عن طريق [pacman](/index.php/Pacman "Pacman") أو [abs](/index.php/Abs "Abs")).
 
 ## Contents
 
@@ -185,7 +185,7 @@ $ pacman -Qm
 
 ```
 
-**ملاحظة:** المثال السابق عبارة عن ملخص لعملية بناء الحزم، يٌنصح بزيارة صفحات [makepkg](/index.php/Makepkg "Makepkg") و [ABS](/index.php/Arch_Build_System "Arch Build System") للاطلاع على المزيد من التفاصيل خاصة للمستخدمين الجدد.
+**ملاحظة:** المثال السابق عبارة عن ملخص لعملية بناء الحزم، يٌنصح بزيارة صفحات [makepkg](/index.php/Makepkg "Makepkg") و [ABS](/index.php/ABS "ABS") للاطلاع على المزيد من التفاصيل خاصة للمستخدمين الجدد.
 
 ## ردود الأفعال (التغذية الراجعة)
 
@@ -264,7 +264,7 @@ Include = /etc/pacman.d/mirrorlist
 ...
 ```
 
-هذا المستودع وعلى خلاف مستودع AUR يحتوي على حزم ثنائية يمكن تثبيتها مباشرة عن طريق مدير الحزم [pacman](/index.php/Pacman "Pacman")، كما يمكن الحصول على ملفات البناء عن طريق [ABS](/index.php/Arch_Build_System "Arch Build System")، في بعض الحالات يرى المطورون أن بعض هذه الحزم مهمة للتوزيعة عندها يقومون بنقلها من مستودع [community] إلى مستودعات [core] أو [extra].
+هذا المستودع وعلى خلاف مستودع AUR يحتوي على حزم ثنائية يمكن تثبيتها مباشرة عن طريق مدير الحزم [pacman](/index.php/Pacman "Pacman")، كما يمكن الحصول على ملفات البناء عن طريق [ABS](/index.php/ABS "ABS")، في بعض الحالات يرى المطورون أن بعض هذه الحزم مهمة للتوزيعة عندها يقومون بنقلها من مستودع [community] إلى مستودعات [core] أو [extra].
 
 يمكن للمستخدمين الوصول أيضاً إلى ملفات البناء في مستودع [community] عن طريق تفعيل مستودع [community] الموجود في مجموعة `REPOS` داخل الملف `/etc/abs.conf`.
 
@@ -321,7 +321,7 @@ AUR (Arch User Repository) هو عبارة عن مكان يقوم مستخدمو
 
 ### لدي ملفات بناء حزمة PKGBUILD أرغب بتقديمها، هل يمكن ﻷحد أن يتفحصها لكي يتأكد من خلوها من الأخطاء؟
 
-إذا كنت ترغب بوضع حزمتك في موضع النقد قم بإرسالها إلى قائمة AUR البريدية العامة لكي تتعرف على آراء وردود المستخدمين الموثوقين TU والأعضاء الزملاء في AUR، كما يمكنك الحصول على المساعدة من قناة آي آر سي [IRC channel](/index.php/ArchChannel "ArchChannel") الخاصة بآرتش #archlinux على الرابط irc.freenode.net، كما يمكنك أيضاً استعمال [namcap](/index.php/Namcap "Namcap") لفحص ملفات البناء والحزمة النهائية من الأخطاء.
+إذا كنت ترغب بوضع حزمتك في موضع النقد قم بإرسالها إلى قائمة AUR البريدية العامة لكي تتعرف على آراء وردود المستخدمين الموثوقين TU والأعضاء الزملاء في AUR، كما يمكنك الحصول على المساعدة من قناة آي آر سي [IRC channel](/index.php/IRC_channel "IRC channel") الخاصة بآرتش #archlinux على الرابط irc.freenode.net، كما يمكنك أيضاً استعمال [namcap](/index.php/Namcap "Namcap") لفحص ملفات البناء والحزمة النهائية من الأخطاء.
 
 ### حزمة foo في AUR لا يتم بناؤها عند استخدام الأمر makepkg، ماذا يمكنني أن أفعل؟
 

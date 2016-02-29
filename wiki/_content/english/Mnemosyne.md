@@ -1,4 +1,4 @@
-[Mnemosyne](http://mnemosyne-proj.org) is an open-source, cross-platform flashcard program that uses a [spaced repetition](http://en.wikipedia.org/wiki/Spaced_repetition) algorithm for maximizing learning efficiency.
+[Mnemosyne](http://mnemosyne-proj.org) is an open-source, cross-platform flashcard program that uses a [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition "wikipedia:Spaced repetition") algorithm for maximizing learning efficiency.
 
 It is inspired by the proprietary [SuperMemo](http://www.supermemo.com) and comparable to [Anki](/index.php/Anki "Anki"), but with a stronger focus on a minimalist, distraction-free UI and simple but flexible work-flow.
 

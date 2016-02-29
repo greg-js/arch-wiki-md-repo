@@ -146,7 +146,7 @@ ROX y PCmanFM tienen la ventaja adicional de ser gestores de ficheros ligeros.
 
 ### Gestores de sesiones
 
-[SLiM](http://slim.berlios.de/) propordiona una solución ligera y elegante para el ingreso gráfico en configuraciones de Openbox en solitario. Consulte la entrada de [SLiM](/index.php/SLiM "SLiM") en la wiki de Arch ver las instrucciones en detalle. También puedes visitar [Display Manager (Español)](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") si deseas mas información sobre gestores de sesiones, como así también si deseas no instalar alguno.
+[SLiM](http://slim.berlios.de/) propordiona una solución ligera y elegante para el ingreso gráfico en configuraciones de Openbox en solitario. Consulte la entrada de [SLiM](/index.php/SLiM "SLiM") en la wiki de Arch ver las instrucciones en detalle. También puedes visitar [Display manager (Español)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") si deseas mas información sobre gestores de sesiones, como así también si deseas no instalar alguno.
 
 ### Utilizar "Composite" en el escritorio
 
@@ -205,7 +205,7 @@ Existe un gran número de utilidades que proporcionan un panel (barra de tareas)
 
 **Paneles**
 
-*   [PyPanel](https://wiki.archlinux.org/index.php/PyPanel)
+*   [PyPanel](/index.php/PyPanel "PyPanel")
 *   [bmpanel](http://nsf.110mb.com/bmpanel/)
 *   [Tint](http://code.google.com/p/ttm/)
 *   [LXPanel](http://sourceforge.net/projects/lxpanel)

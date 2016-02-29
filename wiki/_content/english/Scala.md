@@ -1,4 +1,4 @@
-From [Wikipedia](https://en.wikipedia.org/wiki/Scala_(programming_language)):
+From [Wikipedia](https://en.wikipedia.org/wiki/Scala_(programming_language) "wikipedia:Scala (programming language)"):
 
 	*Scala is an object-functional programming and scripting language for general software applications. Scala has full support for functional programming (including currying, pattern matching, algebraic data types, lazy evaluation, tail recursion, immutability, etc.) and a very strong static type system. This allows programs written in Scala to be very concise and thus smaller in size than most general purpose programming languages. Many of Scala's design decisions were inspired by criticism over the shortcomings of Java.*
 
@@ -6,7 +6,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Scala_(programming_language)):
 
 [Install](/index.php/Install "Install") the [scala](https://www.archlinux.org/packages/?name=scala) package available in the [official repositories](/index.php/Official_repositories "Official repositories"). Additionally you can install the packages [scala-docs](https://www.archlinux.org/packages/?name=scala-docs) and/or [scala-sources](https://www.archlinux.org/packages/?name=scala-sources) for further reference.
 
-Since Scala runs on the [JVM](https://en.wikipedia.org/wiki/JVM) (Java Virtual Machine), you'll need a fully functional [Java Runtime Environment](/index.php/Java#Installation "Java") (JRE) in order to execute or compile your programs.
+Since Scala runs on the [JVM](https://en.wikipedia.org/wiki/JVM "wikipedia:JVM") (Java Virtual Machine), you'll need a fully functional [Java Runtime Environment](/index.php/Java#Installation "Java") (JRE) in order to execute or compile your programs.
 
 ## Usage and IDEs
 

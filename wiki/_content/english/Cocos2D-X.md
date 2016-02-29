@@ -27,7 +27,7 @@ export PATH=/opt/cocos2d-x/tools/cocos2d-console/bin:/opt/cocos2d-x/tools/cocos2
 
 ### Python Buildscripts Workaround
 
-Since most Cocos2D-X scripts use `python2` instead of `python3`, simply calling `python2 foo.py` will not suffice since other modules will be called with "env python" which could point to python3\. To fix this, read [here](https://wiki.archlinux.org/index.php/python#Dealing_with_version_problem_in_build_scripts). Don't forget to add `/usr/local/bin`, or whichever directory the workaround shell script is installed at, before `/usr/bin` in your PATH environment variable. The following should suffice:
+Since most Cocos2D-X scripts use `python2` instead of `python3`, simply calling `python2 foo.py` will not suffice since other modules will be called with "env python" which could point to python3\. To fix this, read [here](/index.php/Python#Dealing_with_version_problem_in_build_scripts "Python"). Don't forget to add `/usr/local/bin`, or whichever directory the workaround shell script is installed at, before `/usr/bin` in your PATH environment variable. The following should suffice:
 
 ```
 export PATH=/usr/local/bin:${PATH}

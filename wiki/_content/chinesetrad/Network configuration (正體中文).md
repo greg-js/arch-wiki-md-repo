@@ -385,7 +385,7 @@ $ ping -c 3 www.google.com
 
 **提示:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 提供了開箱即用的相同功能。
 
-[官方軟體套件庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")中的 [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) 為一個當網路線插入後自動組態乙太設備；網路線拔除後自動取消組態的 Daemon 。 這對於搭載內建網路介面卡的筆記型電腦特別有用，因為其只會在網路線真正連上後才會對介面進行組態。另一個會用到的情況為，當您需要重新啟動網路，但您並不想重開及或在 Shell 中進行設定。
+[官方軟體套件庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")中的 [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) 為一個當網路線插入後自動組態乙太設備；網路線拔除後自動取消組態的 Daemon 。 這對於搭載內建網路介面卡的筆記型電腦特別有用，因為其只會在網路線真正連上後才會對介面進行組態。另一個會用到的情況為，當您需要重新啟動網路，但您並不想重開及或在 Shell 中進行設定。
 
 預設情況下，其會對 `eth0` 裝置進行設定使其運作。這與其他設定類似延遲之類的設定能在 `/etc/ifplugd/ifplugd.conf` 中進行設定。
 
@@ -401,7 +401,7 @@ IP 別名為讓同一個網路介面有多個 IP 位址。如此一來，單個�
 
 #### 範例
 
-您將需要來自[官方軟體套件庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")的 [netctl](https://www.archlinux.org/packages/?name=netctl) 。
+您將需要來自[官方軟體套件庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")的 [netctl](https://www.archlinux.org/packages/?name=netctl) 。
 
 準備組態設定檔：
 
@@ -456,7 +456,7 @@ PING hostname (192.168.1.2) 56(84) bytes of data.
 
 ### 雜亂模式
 
-Toggling [promiscuous mode](https://en.wikipedia.org/wiki/Promiscuous_mode) will make a (wireless) NIC forward all traffic it receives to the OS for further processing. This is opposite to "normal mode" where a NIC will drop frames it is not intended to receive. It is most often used for advanced network troubleshooting and [packet sniffing](https://en.wikipedia.org/wiki/Packet_sniffing).
+Toggling [promiscuous mode](https://en.wikipedia.org/wiki/Promiscuous_mode "wikipedia:Promiscuous mode") will make a (wireless) NIC forward all traffic it receives to the OS for further processing. This is opposite to "normal mode" where a NIC will drop frames it is not intended to receive. It is most often used for advanced network troubleshooting and [packet sniffing](https://en.wikipedia.org/wiki/Packet_sniffing "wikipedia:Packet sniffing").
 
  `/etc/systemd/system/promiscuous@.service` 
 ```

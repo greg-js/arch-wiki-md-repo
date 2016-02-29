@@ -11,7 +11,7 @@
 
 ## لمحة تاريخية
 
-*المقال الرئيسي [History of Arch Linux](/index.php/History_of_Arch_Linux "History of Arch Linux")* : تم إنشاء آرتش لينكس عن طريق مبرمج كندي يدعى Judd Vinet. , وكان الإصدار الرسمي اﻷول لها هو Arch Linux 0.1 الصادر بتاريخ 11 مارس 2002\. على الرغم من ان آرتش مستقلة تماما ، إلا أنها استلهمت البساطة من التوزيعات اﻷخرى بما فيها توزيعة [Slackware](http://slackware.com) ، [CRUX](http://www.crux.nu) و [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution). في عام 2007 تنحى Judd Vinet رائد المشروع لتحقيق بعض اهتماماته الأخرى وحل محله مبرمج أمريكي يدعى هارون غريفين الذي يواصل قيادة المشروع حتى اليوم.
+*المقال الرئيسي [History of Arch Linux](/index.php/History_of_Arch_Linux "History of Arch Linux")* : تم إنشاء آرتش لينكس عن طريق مبرمج كندي يدعى Judd Vinet. , وكان الإصدار الرسمي اﻷول لها هو Arch Linux 0.1 الصادر بتاريخ 11 مارس 2002\. على الرغم من ان آرتش مستقلة تماما ، إلا أنها استلهمت البساطة من التوزيعات اﻷخرى بما فيها توزيعة [Slackware](http://slackware.com) ، [CRUX](http://www.crux.nu) و [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"). في عام 2007 تنحى Judd Vinet رائد المشروع لتحقيق بعض اهتماماته الأخرى وحل محله مبرمج أمريكي يدعى هارون غريفين الذي يواصل قيادة المشروع حتى اليوم.
 
 ## البساطة
 

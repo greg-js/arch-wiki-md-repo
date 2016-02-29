@@ -83,6 +83,6 @@ set-window-option -g clock-mode-style 24
 
 ## Ver más
 
-*   [GNU Screen](https://wiki.archlinux.org/index.php/Screen_Tips)
+*   [GNU Screen](/index.php/GNU_Screen "GNU Screen")
 *   [Tmux tutorial from OpenBSD FAQ](http://www.openbsd.org/faq/faq7.html#tmux)
 *   [Tmux/Screen cheat sheet](http://www.dayid.org/os/notes/tm.html)

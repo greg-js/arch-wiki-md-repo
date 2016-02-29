@@ -13,7 +13,7 @@
 
 ## Introduction
 
-Running an overclocked PC is totally fine provided that the PC is stable at the overclock settings. There are several programs available to assess system stability through stress testing the system and thereby the overclock level. The steps of overclocking a PC are beyond the scope of this article, but there is pretty inclusive guide written by graysky on the topic: [[Overclocking guide](http://www.hardforum.com/showthread.php?t=1198647)].
+Running an overclocked PC is totally fine provided that the PC is stable at the overclock settings. There are several programs available to assess system stability through stress testing the system and thereby the overclock level. The steps of overclocking a PC are beyond the scope of this article, but there is pretty inclusive guide written by graysky on the topic: [Overclocking guide](http://www.hardforum.com/showthread.php?t=1198647).
 
 **Note:** The linked guide is a bit dated. More contemporary guides are recommended for modern hardware.
 
@@ -171,7 +171,7 @@ Once it is installed, you can run the Diagnostic Tool by clicking on the IPDT Ic
 
 ## Stressing Memory
 
-A very good program for stress testing memory is [[Memtest86+](http://www.memtest.org/)]. It is based on the well-known original memtest86 written by Chris Brady. Memtest86+ is, like the original, released under the terms of the GNU General Public License (GPL). No restrictions for use, private or commercial exist other than the ones mentioned in the GNU GPL.
+A very good program for stress testing memory is [Memtest86+](http://www.memtest.org/). It is based on the well-known original memtest86 written by Chris Brady. Memtest86+ is, like the original, released under the terms of the GNU General Public License (GPL). No restrictions for use, private or commercial exist other than the ones mentioned in the GNU GPL.
 
 ### Running Memtest86+
 

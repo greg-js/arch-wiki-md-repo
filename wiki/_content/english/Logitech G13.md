@@ -22,31 +22,50 @@ There are a couple options for drivers, but only one that appears to work well t
 
 Install [g13-git](https://aur.archlinux.org/packages/g13-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
-In order to run g13d as your user instead of root, download [91-g13.rules](https://github.com/ecraven/g13/blob/master/91-g13.rules), and put it in `/etc/udev/rules.d/`.
+This will install the g13d daemon, the pbm2lpbm bitmap converter and a [systemd](/index.php/Systemd "Systemd") service that runs g13d as user/group "g13". It will also set up rules for [udev](/index.php/Udev "Udev") to identify your G13 device, but the automatic starting and stopping of the service by connecting or unplugging is disabled by default.
+
+**Note:** To enable the [systemd](/index.php/Systemd "Systemd") service and have g13d start and stop automatically upon hotplug you will need to uncomment the two bottom lines in `/usr/lib/udev/rules.d/91-g13.rules`
+
+**Note:** You will also need to uncomment the uinput line in `/usr/lib/udev/rules.d/91-g13.rules`, which will set owner and permissions for `/dev/uinput` on boot, followed by a reboot.
 
 ### Running
 
-**Note:** The binary is named g13d, the binary g13 is from [gnupg](https://www.archlinux.org/packages/?name=gnupg).
+**Note:** The binary is named g13d, there is already a binary named g13 within [gnupg](https://www.archlinux.org/packages/?name=gnupg).
 
-After following the steps above, when you reboot and launch g13, you should receive an image with a "linux inside" logo, "G13", and the GNU logo.
+After following the steps above, when you reboot and launch g13d (either manually or automatically through [systemd](/index.php/Systemd "Systemd")), you should receive an image with a "linux inside" logo, "G13", and the GNU logo.
 
-If you receive the error `/dev/uinput doesn't grant write permissions`, running the command below should fix it, but only until you reboot.
+Running manually prints errors on stderr but if you have enabled the service you can take a look at:
+
+ `$ systemctl status g13` 
+
+If you receive the error `/dev/uinput doesn't grant write permissions`, or if your bound keys do not generate any keypresses, running the command below should fix it temporarily, but will revert once you reboot.
 
  `# chmod a+rw /dev/uinput` 
+**Note:** The permanent solution is to uncomment the appropriate line in `/usr/lib/udev/rules.d/91-g13.rules`, which will set owner and permissions for `/dev/uinput` on boot.
 
 ### Configuring
 
-g13 is configured via writing to /tmp/g13-0.
+**Note:** When g13d is run as a systemd service it uses a fifo at `/run/g13d/g13-0` instead of the default `/tmp/g13-0`
 
-Ex, to set the display a purple colour:
+g13d is configured in one of two ways, either by writing commands to `/run/g13d/g13-0`, or preferably by specifying keybindings and commands in a configuration file which is read at launch.
 
- `$ echo "rgb 177 13 201" > /tmp/g13-0` 
+When running g13d manually you can specify a configuration file using the `--config` parameter, and when running as a service the file `/etc/g13/default.bind` will be used.
+
+**Note:** In most cases, specifying your default keybindings in `/etc/g13/default.bind` is the easiest option. However, please read above about editing `/usr/lib/udev/rules.d/91-g13.rules` and uncommenting both lines that start and stop the systemd service upon hotplug. You may need to create the `/etc/g13 directory` if it was not created during initial install.
+
+**Tip:** An example default.bind file can be found here [[1]](https://github.com/zekesonxx/g13-profiles/blob/master/default.bind).
+
+Manual commands can also be evoked one at a time by manually writing to `/run/g13d/g13-0`:
+
+For example, to set the display a purple colour:
+
+ `$ echo "rgb 177 13 201" > /run/g13d/g13-0` 
 
 g13 can also handle multiple commands at once:
 
  `$ echo -e "rgb 177 13 201
-bind G4 KEY_W" > /tmp/g13-0` 
-**Tip:** g13 can handle multiple commands at once, and will ignore lines starting with `#`. You can use this to make files full of commands and run `cat file > /tmp/g13-0` when you're ready to play.
+bind G4 KEY_W" > /run/g13d/g13-0` 
+**Tip:** g13 can handle multiple commands at once, and will ignore lines starting with `#`. You can use this to make files full of commands and run `cat file > /run/g13d/g13-0` when you're ready to play.
 
 ### Commands
 

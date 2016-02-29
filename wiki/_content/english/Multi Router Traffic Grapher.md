@@ -17,7 +17,7 @@
 
 ## Server Setup
 
-This document assumes that you already have a [Apache](https://wiki.archlinux.org/index.php/Apache_and_FastCGI) and [net-snmp](https://wiki.archlinux.org/index.php/Snmpd) working and configured properly
+This document assumes that you already have a [Apache](/index.php/Apache_and_FastCGI "Apache and FastCGI") and [net-snmp](/index.php/Snmpd "Snmpd") working and configured properly
 
 The following should all be performed as root.
 

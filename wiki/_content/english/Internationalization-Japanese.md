@@ -35,7 +35,7 @@ Recommended Japanese fonts are as follows.
 
 	An open source OTF font set including sans-serif (Gothic) and serif (Mincho) glyphs provided by Information-technology Promotion Agency, Japan (IPA).
 
-If you want to show [2channel Shift JIS art](http://en.wikipedia.org/wiki/2channel_Shift_JIS_art) properly, use one of the following fonts:
+If you want to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art") properly, use one of the following fonts:
 
 *   ipamona font (AUR: [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/))
 *   Monapo font (AUR: [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/))

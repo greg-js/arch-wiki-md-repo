@@ -1,4 +1,4 @@
-Čia papasakosiu, kaip greitai įsidiegti Arch linux (toliau Arch) į kompiuterį. Kol kas remiuosi tik [angliška](https://wiki.archlinux.org/index.php/Quick_Archlinux_Install) šio puslapio versija.
+Čia papasakosiu, kaip greitai įsidiegti Arch linux (toliau Arch) į kompiuterį. Kol kas remiuosi tik [angliška](/index.php/Quick_Archlinux_Install "Quick Archlinux Install") šio puslapio versija.
 
 ## Contents
 
@@ -58,11 +58,11 @@ Jeigu turite tuščią kietą diską, galite iš karto pereiti prie automatinio 
 
 ```
 
-*   Jei jūsų Windows sistema įdiegta į pirmą skirsnį ir naudojama [ntfs](http://en.wikipedia.org/wiki/Ntfs) failų sistema, vaizdas turėtų atrodyti [taip](http://home.arcor.de/Langeland/9.png).
+*   Jei jūsų Windows sistema įdiegta į pirmą skirsnį ir naudojama [ntfs](https://en.wikipedia.org/wiki/Ntfs "wikipedia:Ntfs") failų sistema, vaizdas turėtų atrodyti [taip](http://home.arcor.de/Langeland/9.png).
 
 cfdisk
 
-*   Jokiu būdu nelieskite ntfs (arba [vfat](http://en.wikipedia.org/wiki/Vfat)) skirsnio, nes prarasite Windows skirsnį.
+*   Jokiu būdu nelieskite ntfs (arba [vfat](https://en.wikipedia.org/wiki/Vfat "wikipedia:Vfat")) skirsnio, nes prarasite Windows skirsnį.
 *   Skirsnio swap tipas žymimas numeriu 82.
 *   Jei norite išeiti iš cfdisk nepalikdami jokių pakeitimų, pasirinkite quit, o norėdami išsaugoti - write.
 *   Po dalijimo su cfdisk turėtumėte matyti tokį [skirsnių išdėstymą](http://home.arcor.de/Langeland/10.png).
@@ -72,7 +72,7 @@ cfdisk
 *   Parinkite 3 punktą: nustatyti failų sistemos prijungimo vietas
 *   Pasirinkite skirsnį, kurį pažymėjote kaip swap
 *   Pasirinkite kitą failų sistemą į kurią rašysite Arch (prijungimo vieta /)
-*   Failų sistemą [ext3](http://en.wikipedia.org/wiki/Ext3)
+*   Failų sistemą [ext3](https://en.wikipedia.org/wiki/Ext3 "wikipedia:Ext3")
 *   Pasirinkite atlikta (done)
 
 *Nepamirškite pasirinkt atlikta (done), nes kitaip nebūs atlikti jokie pakeitimai.*

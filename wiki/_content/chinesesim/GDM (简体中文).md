@@ -4,7 +4,7 @@
 
 	*GDM是一种GNOME显示环境的管理器, 它是一个运行在后台的小程序（脚本）, runs your X sessions,显示一个登录界面并在你忘记密码的时候告诉你无法登录.GDM比xdm在任何方面都做的更好,也没有xdm那么多的漏洞. 它没有使用任何来自xdm的代码. 它支持 XDMCP, and in fact extends XDMCP a little bit in places where I thought xdm was lacking (but is still compatible with xdm's XDMCP).*
 
-[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")为[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")用户们提供了图形化登录提示。
+[显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器")为[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")用户们提供了图形化登录提示。
 
 ## Contents
 
@@ -212,7 +212,7 @@ Now, open the `gnome-shell.css` file in the directory and change the `#lockDialo
 
 ```
 
-Set `background-size` to the resolution that GDM uses, this might not necessarily be the resolution of the image. For a list of display resolutions see [Display resolution](https://en.wikipedia.org/wiki/Display_resolution#Computer_monitors). Again, set **filename** to be the name of the background image.
+Set `background-size` to the resolution that GDM uses, this might not necessarily be the resolution of the image. For a list of display resolutions see [Display resolution](https://en.wikipedia.org/wiki/Display_resolution#Computer_monitors "wikipedia:Display resolution"). Again, set **filename** to be the name of the background image.
 
 Finally, compile the theme using the following command:
 

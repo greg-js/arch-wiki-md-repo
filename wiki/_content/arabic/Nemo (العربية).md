@@ -13,7 +13,7 @@
 
 ## التثبيت
 
-قم [بتثبيت](https://wiki.archlinux.org/index.php/Pacman) [nemo](https://www.archlinux.org/packages/?name=nemo) من [المستودعات الرسمية](https://wiki.archlinux.org/index.php/Official_repositories)
+قم [بتثبيت](/index.php/Pacman "Pacman") [nemo](https://www.archlinux.org/packages/?name=nemo) من [المستودعات الرسمية](/index.php/Official_repositories "Official repositories")
 
 ### جعل نيمو مدير الملفات الافتراضي
 

@@ -1,4 +1,4 @@
-[wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) es una multiplataforma de [WPA Supplicant](https://en.wikipedia.org/wiki/Supplicant_(computer) con soporte para WPA y WPA2 ([IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i) / RSN —Robust Secure Network—). Está adaptado tanto para los ordenadores de sobremesa/portátiles como para sistemas integrados.
+[wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) es una multiplataforma de [WPA Supplicant](https://en.wikipedia.org/wiki/Supplicant_(computer) con soporte para WPA y WPA2 ([IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i "wikipedia:IEEE 802.11i") / RSN —Robust Secure Network—). Está adaptado tanto para los ordenadores de sobremesa/portátiles como para sistemas integrados.
 
 *wpa_supplicant* es el componente IEEE 802.1X/WPA utilizado por las estaciones cliente. Implementa las negociaciones entre la clave y un WPA Authenticator, y contola el roaming y la asociación/autenticación IEEE 802.11 del controlador wland.
 
@@ -14,7 +14,7 @@
 
 ## Instalación
 
-Instale el paquete [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Instale el paquete [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 También tiene la posibilidad de instalar el paquete [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui) que proporciona *wpa_gui*; es un fronted gráfico para *wpa_supplicant* que usa las herramientas [qt4](https://www.archlinux.org/packages/?name=qt4).
 
@@ -68,7 +68,7 @@ Es posible que tenga que especificar un controlador para que funcione. Para obte
 
 ```
 
-Todo lo que queda es simplemente conectarse usando una dirección [IP estática](/index.php/Network_configuration#Static_IP_Address "Network configuration") o [DHCP](/index.php/Network_configuration#Dynamic_IP_Address "Network configuration"). Por ejemplo:
+Todo lo que queda es simplemente conectarse usando una dirección [IP estática](/index.php/Network_configuration#Static_IP_address "Network configuration") o [DHCP](/index.php/Network_configuration#Dynamic_IP_address "Network configuration"). Por ejemplo:
 
 ```
 # dhcpcd *interfaz*
@@ -152,7 +152,7 @@ WantedBy=multi-user.target
 
 ```
 
-Véase [systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd") para obtener ayuda con la edición.
+Véase [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") para obtener ayuda con la edición.
 
 **Nota:** Si utiliza`dhcpcd@.service`, es posible que también desee reemplazar la etiqueta `-w` por `-b` para que no espere hasta que se le asigne una dirección IP, antes de pasar a funcionar en segundo plano.
 

@@ -117,4 +117,4 @@ Ovo moze biti slucaj jer drupal zahteva da //json// bude aktiviran u vasem php.i
 
 *   [Oficijalna Drupal dokumentacija](http://drupal.org/handbook)
 *   [Jednostavno uputstvo za instalaciju Drupal-a na Xampp](http://drupal.org/node/307956)
-*   [LAMP (Kako da podesite apache server)](https://wiki.archlinux.org/index.php/LAMP)
+*   [LAMP (Kako da podesite apache server)](/index.php/LAMP "LAMP")
