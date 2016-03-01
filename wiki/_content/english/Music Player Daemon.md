@@ -50,21 +50,16 @@ MPD is configured in `mpd.conf`. The location of this file depends on how you wa
 
 **Warning:** Users of PulseAudio with a global mpd have to implement a [workaround](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_.28with_separate_mpd_user.29 "Music Player Daemon/Tips and tricks") in order to run mpd as its own user!
 
-The default `/etc/mpd.conf` keeps the setup in `/var/lib/mpd` and uses *mpd* as default user. However, `/var/lib/mpd` is owned by *root* by default, we need to change this so *mpd* can write here:
+The default `/etc/mpd.conf` keeps the setup in `/var/lib/mpd` which is assigned to user as well as primary group *mpd*.
 
-```
-# chown -R mpd /var/lib/mpd
+#### Music directory
 
-```
-
-Edit `/etc/mpd.conf` and add a `music_directory` line with the path to your music directory:
+The music directory has to be set by parameter `music_directory` in file `/etc/mpd.conf`:
 
 ```
 music_directory "/path/to/music"
 
 ```
-
-#### Music directory
 
 MPD needs to have `+x` permissions on *all* parent directories to the music collection and also read access to all directories containing music files. This conflicts with the default configuration of the user directory where many users store their music.
 
@@ -79,7 +74,7 @@ While there are several solutions to this problem one of these should be most pr
 
 ```
 
-*   put your music collection to a different path (a) by moving it entirely, (b) with a bind mount or (c) with a [Btrfs subvolume](/index.php/Btrfs#Sub-volumes "Btrfs") (you should make this change persistent with an entry to `/etc/fstab` ).
+*   put your music collection to a different path (a) by moving it entirely, (b) with a bind mount or (c) with a [Btrfs subvolume](/index.php/Btrfs#Sub-volumes "Btrfs") (you should make this change persistent with an entry to `/etc/fstab` ). Permissions of alternate directories can be adjusted with [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists").
 
 The MPD config must contain only one music directory. If the music collection is contained under multiple directories, create symbolic links under the main music directory in `/var/lib/mpd`. Remember to set permissions accordingly on the directories being linked.
 

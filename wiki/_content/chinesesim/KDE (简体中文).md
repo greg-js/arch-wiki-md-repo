@@ -208,7 +208,7 @@ Arch Linux 的官方徽标、图标、CD标签和其它艺术作品都可以在[
 
 右击Kicker菜单按钮, 点击“**程序启动器设置**”，接着点击**右边**的图标。然后您可以选择Arch Linux图标或其他图标来代替默认图标。
 
-Arch Linux 官方图库位于 [archlinux-artwork](https://www.archlinux.org/packages/?name=archlinux-artwork) 软件包，安装后位于
+Arch Linux 官方图库位于 [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/) 软件包，安装后位于
 
 ```
 /usr/share/archlinux/icons

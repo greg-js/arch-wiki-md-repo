@@ -49,7 +49,7 @@ See the article entitled [Arch Linux](/index.php/Arch_Linux "Arch Linux").
 
 ### Why would I want to use Arch?
 
-If, after reading about the [The Arch Way](/index.php/The_Arch_Way "The Arch Way") philosophy, you wish to embrace the 'do-it-yourself' approach and require or desire a simple, elegant, highly customizable, bleeding edge, general purpose GNU/Linux distribution, you may like Arch.
+If, after reading about the [The Arch Way](/index.php/The_Arch_Way "The Arch Way") philosophy, you wish to embrace the 'do-it-yourself' approach and require or desire a simple, elegant, highly customizable, general purpose GNU/Linux distribution, you may like Arch.
 
 ### Why would I not want to use Arch?
 
@@ -60,7 +60,7 @@ You may **not** want to use Arch, if:
 *   you require support for an architecture other than x86_64 or i686.
 *   you take a strong stand on using a distribution which only provides free software as defined by GNU.
 *   you believe an operating system should configure itself, run out of the box, and include a complete default set of software and desktop environment on the installation media.
-*   you do not want a bleeding edge, rolling release GNU/Linux distribution.
+*   you do not want a rolling release GNU/Linux distribution.
 *   you are happy with your current OS.
 *   you want an OS that targets a different userbase.
 
@@ -98,7 +98,7 @@ Before going further, did you read [The Arch Way](/index.php/The_Arch_Way "The A
 
 Arch Linux releases are simply a live environment for installation or rescue, which include the [base](https://www.archlinux.org/groups/x86_64/base/) group and a few [other packages](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both). The releases are issued usually in the first half of every month.
 
-The rolling release model keeps every Arch Linux system current and on the bleeding edge by issuing one command. For this reason, releases are not terribly important in Arch, because they become out of date as soon as a package has been updated. If you are looking to obtain the latest Arch Linux release, you do not need to reinstall. Simply run the `pacman -Syu` command, and your system will be identical to what you would get with a brand-new install. For this same reason, new Arch Linux releases are not typically full of new and exciting features. New and exciting features are released as needed with the packages that are updated, and can be obtained immediately via `pacman -Syu`.
+The rolling release model keeps every Arch Linux system current by issuing one command. For this reason, releases are not terribly important in Arch, because they become out of date as soon as a package has been updated. If you are looking to obtain the latest Arch Linux release, you do not need to reinstall. Simply run the `pacman -Syu` command, and your system will be identical to what you would get with a brand-new install. For this same reason, new Arch Linux releases are not typically full of new and exciting features. New and exciting features are released as needed with the packages that are updated, and can be obtained immediately via `pacman -Syu`.
 
 ### Is Arch Linux a stable distribution? Will I get frequent breakage?
 
@@ -112,7 +112,7 @@ See the [System maintenance](/index.php/System_maintenance "System maintenance")
 
 ### Arch needs more press (i.e. advertisement)
 
-Arch gets plenty of press as it is. The goal of Arch Linux is not to be large, but rather, to provide an elegant, minimalist and bleeding edge distribution focused on simplicity and code-correctness. Organic, sustainable growth occurs naturally amongst the target user base.
+Arch gets plenty of press as it is. The goal of Arch Linux is not to be large, but rather, to provide an elegant distribution focused on simplicity and code-correctness. Organic, sustainable growth occurs naturally amongst the target user base.
 
 ### Arch needs more developers
 

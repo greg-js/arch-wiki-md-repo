@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [LAMP](/index.php?title=LAMP&redirect=no "LAMP")
+*   [Apache HTTP Server](/index.php?title=Apache_HTTP_Server&redirect=no "Apache HTTP Server")

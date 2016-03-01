@@ -250,11 +250,11 @@ lo eth0 eth1 firewire0
 
 #### systemd-networkd
 
-An easy way to setup DHCP for simple requirements is to use [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") service provided by systemd. See [systemd-networkd#Basic DHCP network](/index.php/Systemd-networkd#Basic_DHCP_network "Systemd-networkd").
+一种DHCP的简单配置方法是利用systemd提供的[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")服务。参见[systemd-networkd#Basic DHCP network](/index.php/Systemd-networkd#Basic_DHCP_network "Systemd-networkd")。
 
 #### netctl
 
-[netctl](/index.php/Netctl "Netctl") is a CLI-based tool for configuring and managing network connections through user-created profiles. Create a profile as shown in [netctl#Example profiles](/index.php/Netctl#Example_profiles "Netctl"), then enable it as described in [netctl#Basic method](/index.php/Netctl#Basic_method "Netctl").
+[netctl](/index.php/Netctl "Netctl")是利用用户创建的profiles进行网络配置的CTI-based工具，如何创建profile参见[netctl#Example profiles](/index.php/Netctl#Example_profiles "Netctl")，激活参见[netctl#Basic method](/index.php/Netctl#Basic_method "Netctl")。
 
 #### 手工运行 DHCP 客户端守护进程
 

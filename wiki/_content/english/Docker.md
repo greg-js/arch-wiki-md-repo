@@ -23,6 +23,7 @@
     *   [7.2 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
     *   [7.3 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
     *   [7.4 docker complains about no loopback devices](#docker_complains_about_no_loopback_devices)
+    *   [7.5 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -242,6 +243,31 @@ Finally [restart](/index.php/Restart "Restart") the `systemd-networkd` and `dock
 ### docker complains about no loopback devices
 
 If starting the docker service fails and `journalctl` says that no loopback device can be found, try following the steps outlined in [TrueCrypt's troubleshooting section](/index.php/TrueCrypt#Failed_to_set_up_a_loop_device "TrueCrypt"). In particular, if you've upgraded the kernel since last rebooting, you just need to reboot.
+
+### Default number of allowed processes/threads too low
+
+If you run into error messages like
+
+```
+# e.g. Java
+java.lang.OutOfMemoryError: unable to create new native thread
+# e.g. C, bash, ...
+fork failed: Resource temporarily unavailable
+
+```
+
+then you might need to adjust the number of processes allowed by systemd. Default (see system.conf) is 500, which is pretty small for running several docker containers. You need to create a drop-in service file for this:
+
+```
+# mkdir /etc/systemd/system/docker.service.d
+# cat > /etc/systemd/system/docker.service.d/tasks.conf <<EOF
+[Service]
+TasksMax=infinity
+EOF
+# systemctl daemon-reload
+# systemctl restart docker.service
+
+```
 
 ## See also
 

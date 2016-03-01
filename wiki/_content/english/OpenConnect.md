@@ -65,11 +65,12 @@ IP=no
 
 PIDFILE=/run/openconnect_${Interface}.pid
 SERVER=vpn.example.net
-AUTHGROUP="VPN"                                     # might be asked by openconnect before asking for password
-USERNAME=user 
-PASSWORD=`su ${USERNAME} -c "pass vpn/${USERNAME}"` # assuming the user uses pass(1) to keep their passwords safe
+AUTHGROUP="<AUTHGROUP>"
+LOCAL_USERNAME=<USERNAME>
+REMOTE_USERNAME=<VPN_USERNAME>
+PASSWORD="`su ${LOCAL_USERNAME} -c "pass ${REMOTE_USERNAME}" | head -n 1`" # Assume the use of pass(1)
 
-ExecUpPost="echo ${PASSWORD} | /usr/bin/openconnect --background --pid-file=${PIDFILE} --interface=${Interface} --authgroup='${AUTHGROUP}' --user=${USERNAME} --passwd-on-stdin ${SERVER}"
+ExecUpPost="echo '${PASSWORD}' | /usr/bin/openconnect --background --pid-file=${PIDFILE} --interface=${Interface} --authgroup=\"${AUTHGROUP}\" --user=${USERNAME} --passwd-on-stdin ${SERVER}"
 ExecDownPre="kill -INT $(cat ${PIDFILE}) ; ip link delete ${Interface}"
 
 ```

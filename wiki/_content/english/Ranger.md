@@ -36,10 +36,7 @@ To start ranger, launch a [terminal](/index.php/List_of_applications#Terminal_em
 
 <caption></caption>
 | Key | Command |
-| `?` | Open the manual |
-| `1?` | List keybindings |
-| `2?` | List commands |
-| `3?` | List settings |
+| `?` | Open the manual or list keybindings, commands and settings |
 | `l`, `Enter` | Launch files |
 
 ## Configuration

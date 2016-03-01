@@ -527,7 +527,7 @@ Option "ConnectedMonitor" "CRT"
 
 ### ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored.
 
-Probablemente quiera comenzar una aplicación de 32-bits con bumblebee en un sistema x64\. Instale [lib32-virtualgl](https://aur.archlinux.org/packages/lib32-virtualgl/) o el más rápido en rendimiento de Primus, [primus-git](https://aur.archlinux.org/packages/primus-git/), de [AUR](https://aur.archlinux.org/). Recuerde usar `primusrun` con Primus.
+Probablemente quiera comenzar una aplicación de 32-bits con bumblebee en un sistema x64\. Instale [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) o el más rápido en rendimiento de Primus, [primus-git](https://aur.archlinux.org/packages/primus-git/), de [AUR](https://aur.archlinux.org/). Recuerde usar `primusrun` con Primus.
 
 ### Fatal IO error 11 (Recurso temporalmente no disponible) en el servidor X
 

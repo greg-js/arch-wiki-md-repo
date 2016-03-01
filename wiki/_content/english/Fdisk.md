@@ -1,11 +1,37 @@
+[GNU fdisk](https://www.gnu.org/software/fdisk/) is a dialogue driven command-line utility that creates and manipulates partition tables and partitions on a hard disk. Hard disks are divided into partitions and this division is described in the partition table. Arch Linux needs at least one partition in order to be installed.
+
+The first step to partitioning a disk is making a partition table. There are two different partition table types that Arch Linux can use, [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) and [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR). GPT is the more modern partition table type that supports larger disks and on disk partition table backups among others. MBR may be required if you [dual boot](/index.php/Dual_boot "Dual boot") with Microsoft Windows.
+
 ## Contents
 
-*   [1 Using GPT - modern method](#Using_GPT_-_modern_method)
-    *   [1.1 Gdisk usage summary](#Gdisk_usage_summary)
-*   [2 Using MBR - legacy method](#Using_MBR_-_legacy_method)
-    *   [2.1 Fdisk usage summary](#Fdisk_usage_summary)
-*   [3 Using cgdisk to create GPT partitions](#Using_cgdisk_to_create_GPT_partitions)
-*   [4 Using fdisk to create MBR partitions](#Using_fdisk_to_create_MBR_partitions)
+*   [1 Usage](#Usage)
+*   [2 Backing up the partition table with sfdisk](#Backing_up_the_partition_table_with_sfdisk)
+*   [3 Using GPT - modern method](#Using_GPT_-_modern_method)
+    *   [3.1 Gdisk usage summary](#Gdisk_usage_summary)
+*   [4 Using MBR - legacy method](#Using_MBR_-_legacy_method)
+    *   [4.1 Fdisk usage summary](#Fdisk_usage_summary)
+*   [5 Using cgdisk to create GPT partitions](#Using_cgdisk_to_create_GPT_partitions)
+*   [6 Using fdisk to create MBR partitions](#Using_fdisk_to_create_MBR_partitions)
+
+## Usage
+
+To get a list of options when using fdisk you can list the help information.
+
+```
+# fdisk -h
+
+```
+
+To list partition tables and partitions on a device, you can run the following, where device is a name like `/dev/sda`.
+
+```
+# fdisk [options] -l <device>
+
+```
+
+## Backing up the partition table with sfdisk
+
+Before making changes to a hard disk, you may want to backup the partition table and partition scheme of the drive.
 
 ## Using GPT - modern method
 

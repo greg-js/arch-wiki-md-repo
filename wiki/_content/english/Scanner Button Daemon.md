@@ -35,9 +35,9 @@ As of version 1.3, scanbd is fully compatible with [systemd](/index.php/Systemd 
 
 ### Sane configuration
 
-Since scanbd and saned are running on the same machine as the scanner is connected to, we need to have two sets of saned configurations - one in the default location (/etc/sane.d/), which would redirect local applications to a network socket, that systemd is listening on, and another one (e.g. /etc/scandb/sane.d/), which will be actually used by sane backend to access the attached scanner.
+Since scanbd and saned are running on the same machine as the scanner is connected to, we need to have two sets of saned configurations - one in the default location (/etc/sane.d/), which would redirect local applications to a network socket, that systemd is listening on, and another one (e.g. /etc/scanbd/sane.d/), which will be actually used by sane backend to access the attached scanner.
 
-First, copy all config files from `/etc/sane.d/` to `/etc/scandb/sane.d/` (these will be needed later):
+First, copy all config files from `/etc/sane.d/` to `/etc/scanbd/sane.d/` (these will be needed later):
 
 ```
 # cp /etc/sane.d/* /etc/scanbd/sane.d/
@@ -60,7 +60,7 @@ Now the desktop applications (which use libsane) are forced (by the above dll.co
 
 Whenever there is a connection to the standard sane network socket, systemd starts scanbm ("manager mode" of scanbd), which in turn tells (the already running) scanbd to stop polling the scanner and then it starts saned with the alternative configuration directory.
 
-The last step is to modify the alternative configuration of sane in `/etc/scandb/sane.d/dll.conf`: just make sure that the "net" directive is commented and the corresponding scanner-backends are uncommented:
+The last step is to modify the alternative configuration of sane in `/etc/scanbd/sane.d/dll.conf`: just make sure that the "net" directive is commented and the corresponding scanner-backends are uncommented:
 
  `/etc/scanbd/sane.d/dll.conf` 
 ```

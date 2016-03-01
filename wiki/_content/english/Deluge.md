@@ -3,6 +3,7 @@
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Plugins](#Plugins)
 *   [2 Daemon setup](#Daemon_setup)
     *   [2.1 System service](#System_service)
     *   [2.2 User service](#User_service)
@@ -25,17 +26,24 @@
 
 ## Installation
 
-[deluge](https://www.archlinux.org/packages/?name=deluge) is available. Due to changes in twisted, [python2-service-identity](https://www.archlinux.org/packages/?name=python2-service-identity) is optionally needed. Without it, users may experience a lengthy warning and have their client reject many valid certificate/hostname mappings.
+Install [deluge](https://www.archlinux.org/packages/?name=deluge) and optionally [python2-service-identity](https://www.archlinux.org/packages/?name=python2-service-identity) as users may experience a lengthy warning and have their client reject many valid certificate/hostname mappings.
 
-The GTK+ UI requires additional dependencies as does the Web UI. Inspect the pacman output to determine which are right for the intended application:
+The GTK+ UI requires additional dependencies as does the Web UI:
 
-```
-[python2-notify](https://www.archlinux.org/packages/?name=python2-notify): libnotify notifications
-[pygtk](https://www.archlinux.org/packages/?name=pygtk): needed for gtk ui
-[librsvg](https://www.archlinux.org/packages/?name=librsvg): needed for gtk ui
-[python2-mako](https://www.archlinux.org/packages/?name=python2-mako): needed for web ui
+*   [python2-notify](https://www.archlinux.org/packages/?name=python2-notify): libnotify notifications support
+*   [pygtk](https://www.archlinux.org/packages/?name=pygtk): requirement for the GTK+ UI
+*   [librsvg](https://www.archlinux.org/packages/?name=librsvg): requirement for the GTK+ UI
+*   [python2-mako](https://www.archlinux.org/packages/?name=python2-mako): requirement for Web UI
 
-```
+### Plugins
+
+**Note:** Plugins should be compiled with Python2.7: e.g. `$ python2.7 *setup.py build*`.
+
+A complete list of plugins can be found on the [Deluge Wiki](http://dev.deluge-torrent.org/wiki/Plugins)
+
+[ltConfig](https://github.com/ratanakvlun/deluge-ltconfig) is a useful plugin that allows direct modification to libtorrent settings and has preset support.
+
+It offers additional settings like `announce_ip` (IP to announce to trackers), `half_open_limit` (Remove maximum half-open connections limit) and more possible privacy and (seed) speedboost features.
 
 ## Daemon setup
 
@@ -45,14 +53,14 @@ Deluge comes with a daemon called `deluged`. If it is not running when one of th
 
 ### System service
 
-A system service will allow `deluged` to run at boot without the need to start Xorg or a client. Deluge comes with a system service called `deluged.service`, which can be [started](/index.php/Start "Start") and enabled without change, which will run the deluge daemon as the **deluge** user, which is created by the package. To run the daemon as another user, copy `/usr/lib/systemd/system/deluged.service` to `/etc/systemd/system/deluged.service` and change the User parameter within the file, such as the **torrent** user:
+A system service will allow `deluged` to run at boot without the need to start Xorg or a client. Deluge comes with a system service called `deluged.service`, which can be [started](/index.php/Start "Start") and enabled without change, which will run the deluge daemon as the **deluge** user, which is created by the package.
+
+To run the daemon under a different user, copy `/usr/lib/systemd/system/deluged.service` to `/etc/systemd/system/deluged.service` and change the User parameter within the file, such as the **archie** user:
 
 ```
-User=**torrent**
+User=**archie**
 
 ```
-
-In that case, create a user called **torrent**.
 
 ### User service
 
@@ -162,18 +170,22 @@ The GTK+ client has a number of useful plugins:
 
 ### Web
 
-**Note:** It is recommended that you use https for the Web client.
+**Note:** It is recommended to use HTTPS for the Web client to protect against a Man-in-the-middle attack.
 
 **Warning:**
 
 *   If multiple users are running a daemon, the default port (8112) will need to be changed for each user.
-*   The deluge Web client comes with a default password. See the Setup section.
+*   The deluge Web client comes with `deluge` as default password. Please update the password to something more secure.
 
-The Web UI can be started by running `deluge-web`, through a plugin in the GTK+ UI, or via systemd. It has many of the same features of the GTK+ UI, including the plugin system.
+The Web UI can be [start](/index.php/Start "Start") by running `deluge-web` or by enabling the Web UI through the GTK+ UI. It offers many of the same features of the GTK+ UI, including the plugin system.
 
 #### System service
 
-Deluge comes with a system service file called `deluge-web.service`. The process for this is the same as starting `deluged.service`, except with `deluge-web` instead of `deluged`. This service will also run as the **deluge** user unless the service file is modified in the same way as `deluged.service`.
+Deluge comes with a system service file called `deluge-web.service`, which is used to [start](/index.php/Start "Start") the Deluge Web UI.
+
+The Deluge Web UI uses a Connection Manager, allowing managing of multiple Deluge clients running under the same host. It's however also possible to connect and manage Deluge clients running under a different host.
+
+Remember to [start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") the `deluged` service to allow the Web UI connect to the host Deluge client.
 
 #### User service
 

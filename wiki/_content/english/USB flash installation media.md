@@ -118,7 +118,7 @@ Now, launch your `command prompt` as an administrator. Next, change directory (`
 If your Arch Linux ISO is elsewhere you may need to state the full path, for convenience you may wish to put the Arch Linux ISO into the same folder as the dd executable. The basic format of the command will look like this.
 
 ```
-# dd if=*archlinux-2015-XX-YY-dual.iso* of=\\.\*x*: bs=4M
+# dd if=*archlinux-2015-XX-YY-dual.iso* od=\\.\*x*: bs=4M
 
 ```
 
@@ -129,7 +129,7 @@ If your Arch Linux ISO is elsewhere you may need to state the full path, for con
 Simply replace the various null spots (indicated by an "x") with the correct date and correct drive letter. Here is a complete example.
 
 ```
-# dd if=ISOs\archlinux-2015.01.01-dual.iso of=\\.\d: bs=4M
+# dd if=ISOs\archlinux-2015.01.01-dual.iso od=\\.\d: bs=4M
 
 ```
 

@@ -294,7 +294,7 @@ No existen muchos temas de iconos diponibles para todo sistema en KDE 4\. Puede 
 
 #### Logo de Arch Linux en el menu de Kicker
 
-Haga clic derecho en el botón de menú de Kicker, pulse **Preferencias del lanzador de aplicaciones** y, a continuación, pulse el icono la**derecha**. Ahora puedes elegir el icono de ArchLinux o cualquier otro icono para reemplazar a la opción por defecto. Los iconos oficiales de Arch se encuentran en [archlinux-artwork](https://www.archlinux.org/packages/?name=archlinux-artwork) , puedes encontrarlo después de instalar en
+Haga clic derecho en el botón de menú de Kicker, pulse **Preferencias del lanzador de aplicaciones** y, a continuación, pulse el icono la**derecha**. Ahora puedes elegir el icono de ArchLinux o cualquier otro icono para reemplazar a la opción por defecto. Los iconos oficiales de Arch se encuentran en [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/) , puedes encontrarlo después de instalar en
 
 ```
 /usr/share/archlinux/icons

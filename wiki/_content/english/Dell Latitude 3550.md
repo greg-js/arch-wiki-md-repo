@@ -14,7 +14,7 @@ Intel Core i7-5500U Processor, NVIDIA GeForce 830M 2GB Graphics 15.6" FHD (1920x
 ## Installation
 
 You can follow the [Installation guide](/index.php/Installation_guide "Installation guide") to get yourself up and running
-booting: uefi boot works with [Gummiboot](/index.php/Gummiboot "Gummiboot")
+booting: uefi boot works with [Systemd-boot](/index.php/Systemd-boot "Systemd-boot")
 I try witch efibootmgr but have kernel panic
 
 ## Hardware
@@ -97,4 +97,4 @@ works with [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptic
 
 ### Cpu frequency scaling
 
-install from aur [pstate-frequency](https://aur.archlinux.org/packages/pstate-frequency/)
+install from aur [thermald](https://aur.archlinux.org/packages/thermald/) or [pstate-frequency](https://aur.archlinux.org/packages/pstate-frequency/)

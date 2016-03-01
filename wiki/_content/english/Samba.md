@@ -303,6 +303,8 @@ The credential file should explicitly readable/writeable to root:
 
 ### Automatic mounting
 
+**Note:** You may need to [enable](/index.php/Enable "Enable") `systemd-networkd-wait-online.service` or `NetworkManager-wait-online.service` (depending on your setup) to proper enable booting on start-up.
+
 #### As mount entry
 
 This is an simple example of a `cifs` [mount entry](/index.php/Fstab "Fstab") that requires authentication:
@@ -326,7 +328,7 @@ Create a new `.mount` file inside `/etc/systemd/system`, e.g. `mnt-myshare.mount
 
 `Options=` share mounting options
 
- `/etc/systemd/systemd/mnt-myshare.mount` 
+ `/etc/systemd/system/mnt-myshare.mount` 
 ```
 [Unit]
 Description=Mount Share at boot
@@ -347,8 +349,6 @@ WantedBy=multi-user.target
 ```
 
 To use `myshare.mount`, [start](/index.php/Start "Start") the unit and [enable](/index.php/Enable "Enable") it to run on system boot.
-
-You may need to [enable](/index.php/Enable "Enable") `systemd-networkd-wait-online.service` or `NetworkManager-wait-online.service` (depending on your setup) to proper enable booting on start-up.
 
 #### smbnetfs
 

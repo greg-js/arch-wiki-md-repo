@@ -701,7 +701,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **Tesseract** — Accurate open source OCR engine. Package splitted, you need install some datafiles for each language ([tesseract-data-eng](https://www.archlinux.org/packages/?name=tesseract-data-eng) for example).
 
-	[http://code.google.com/p/tesseract-ocr/](http://code.google.com/p/tesseract-ocr/) || [tesseract](https://www.archlinux.org/packages/?name=tesseract)
+	[https://github.com/tesseract-ocr](https://github.com/tesseract-ocr) || [tesseract](https://www.archlinux.org/packages/?name=tesseract)
 
 #### Layout analyzers and user interfaces
 
