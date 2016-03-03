@@ -57,7 +57,7 @@ When *mpd* is started with a [systemd user service](/index.php/Music_Player_Daem
  `~/.config/systemd/user/mpdas.service` 
 ```
 [Unit]
-Description=AudoScrobbler client for MPD
+Description=AudioScrobbler client for MPD
 After=mpd.service
 
 [Service]

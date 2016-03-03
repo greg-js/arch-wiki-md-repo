@@ -225,7 +225,7 @@ Recent kernels have InfiniBand modules compiled in, and they just need to be loa
 
 ### Subnet manager
 
-Each InfiniBand network requires a subnet manager. (It is also possible to set up a redundant subnet manager.) Without one, your devices may show they have a link, but will never move past the state "Initializing" to "Active". A subnet manager often (typically every 5 or 30 seconds) checks the InfiniBand for new adapters, and adds them to the network's routing tables. If you have an InfiniBand switch with an embedded subnet manager, or you can use that, or you can keep it disabled and use a software subnet manager instead. Dedicated InfiniBand subnet manager devices also exist.
+Each InfiniBand network requires a subnet manager. (It is also possible to set up a redundant subnet manager.) Without one, your devices may show they have a link, but will never move past the state "Initializing" to "Active". A subnet manager often (typically every 5 or 30 seconds) checks the InfiniBand for new adapters, and adds them to the network's routing tables. If you have an InfiniBand switch with an embedded subnet manager, you can use that, or you can keep it disabled and use a software subnet manager instead. Dedicated InfiniBand subnet manager devices also exist.
 
 #### For a software subnet manager, use opensm
 

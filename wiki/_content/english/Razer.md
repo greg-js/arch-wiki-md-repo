@@ -7,13 +7,19 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
     *   [1.2 Installation](#Installation)
     *   [1.3 Using the Razer Configuration Tool](#Using_the_Razer_Configuration_Tool)
 *   [2 Razer Blade](#Razer_Blade)
-    *   [2.1 2014 version](#2014_version)
-        *   [2.1.1 Problems](#Problems)
-        *   [2.1.2 Possible trackpad solution](#Possible_trackpad_solution)
-    *   [2.2 2013 version](#2013_version)
-        *   [2.2.1 What works](#What_works)
-        *   [2.2.2 Problems](#Problems_2)
-        *   [2.2.3 Possible trackpad solution](#Possible_trackpad_solution_2)
+    *   [2.1 2015 version (Razer Blade Stealth)](#2015_version_.28Razer_Blade_Stealth.29)
+        *   [2.1.1 Killer Wireless Network Adapter](#Killer_Wireless_Network_Adapter)
+        *   [2.1.2 Touchpad](#Touchpad)
+        *   [2.1.3 Graphics Drivers](#Graphics_Drivers)
+        *   [2.1.4 Tweaking](#Tweaking)
+        *   [2.1.5 Unresolved Issues](#Unresolved_Issues)
+    *   [2.2 2014 version](#2014_version)
+        *   [2.2.1 Problems](#Problems)
+        *   [2.2.2 Possible trackpad solution](#Possible_trackpad_solution)
+    *   [2.3 2013 version](#2013_version)
+        *   [2.3.1 What works](#What_works)
+        *   [2.3.2 Problems](#Problems_2)
+        *   [2.3.3 Possible trackpad solution](#Possible_trackpad_solution_2)
 *   [3 Razer Keyboards](#Razer_Keyboards)
 
 ## Razer Peripherals
@@ -75,6 +81,70 @@ From the tool you can use the 5 profiles, change the DPI, change mouse frequency
 ## Razer Blade
 
 Razer Blade is Razer's line of gaming laptops. There is currently a 14" model, and a 17" model. Due to the proprietary SBUI trackpad on the 17" model, it will be extremely difficult to get it to work without extensive USB protocol reversing.
+
+### 2015 version (Razer Blade Stealth)
+
+The normal installation process works in general with the exceptions enumerated below.
+
+#### Killer Wireless Network Adapter
+
+The wireless adapter won't work without proprietary firmware. You will require a USB ethernet adapter to do the installation or an ISO with the proprietary driver installed. The wireless adapter presents itself as
+
+```
+01:00.0 Network controller: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter (rev 32)
+
+```
+
+It is a [Killer Wireless-AC 1535](http://www.killernetworking.com/support/knowledge-base/17-linux/20-killer-wireless-ac-in-linux-ubuntu-debian) which requires proprietary firmware for the board. The latest 4.4.1 kernel only requires the *board.bin* to be overwritten.
+
+```
+# wget -O /lib/firmware/ath10k/QCA6174/hw3.0/board.bin http://www.killernetworking.com/support/board.bin
+
+```
+
+#### Touchpad
+
+The touchpad requires the synaptic drivers to work properly.
+
+```
+# pacman -S xf86-input-synaptics
+
+```
+
+See [Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") for more information on installation and configuration.
+
+#### Graphics Drivers
+
+The graphics card works OK with the standard intel drivers.
+
+```
+# pacman -S xf86-video-intel
+
+```
+
+See [Intel_graphics](/index.php/Intel_graphics "Intel graphics") for more information on installation and configuration.
+
+Issues with screen flickering seem to be resolved by changing *AccelMethod* to *sna* As described in the wiki for the driver.
+
+```
+# cat >/etc/X11/xorg.conf.d/20-intel.conf 
+Section "Device"
+  Identifier  "Intel Graphics"
+  Driver      "intel"
+  Option      "AccelMethod"  "uxa"
+  #Option      "AccelMethod"  "sna"
+EndSection
+
+```
+
+#### Tweaking
+
+If you are using [GNOME](/index.php/GNOME "GNOME"), the *gnome-tweak-tool* can be used to adjust the window and font scaling. A font scale of *1.25* puts the font sizes closer to how they are displayed by default in Windows 10.
+
+#### Unresolved Issues
+
+*   the webcam does not seem to work with a basic installation. External webcams work fine. It seems to fail when the resolution is anything but 640x480\. [guvcview](https://www.archlinux.org/packages/community/x86_64/guvcview/) works because it defaults to the resolution. [cheese](https://www.archlinux.org/packages/community/x86_64/cheese/) and [Google Hangouts](https://hangouts.google.com) do not because they default to the max resolution.
+*   Suspending does not seem to work with a basic installation. You can suspend but once the system resumes it suffers from random suspends or the screen going blank for no apparent reason.
 
 ### 2014 version
 

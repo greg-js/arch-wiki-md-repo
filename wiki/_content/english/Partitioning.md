@@ -241,11 +241,12 @@ To verify a partition is aligned, query it using `/usr/bin/blockdev` as shown be
 
 ```
 
-Or alternatively:
+You can also use [parted](/index.php/Parted "Parted") to verify the alignment of a partition on a device. For instance, to verify alignment of partition 1 on /dev/sda:
 
 ```
-# parted /dev/<partition>
-(parted) align-check
+# parted /dev/sda
+(parted) align-check optimal 1
+1 aligned
 
 ```
 

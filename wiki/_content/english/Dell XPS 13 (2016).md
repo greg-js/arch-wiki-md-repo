@@ -76,7 +76,7 @@ An answer from [Intel Communities](https://communities.intel.com/thread/75161?st
 
 ## Wireless
 
-The built-in Broadcom BCM4350 is now supported in the current [linux](https://www.archlinux.org/packages/?name=linux) kernel (version 4.4.1-1). The wireless module `brcmfmac` also needs the firmware `brcmfmac4350-pcie.bin` from the related [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
+The built-in Broadcom BCM4350 is now supported in the current [linux](https://www.archlinux.org/packages/?name=linux) kernel (as of version 4.4.1-1). The wireless module `brcmfmac` also needs the firmware `brcmfmac4350-pcie.bin` from the related [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
 
 If you have not already done so, enable the testing repository to retrieve the package in `/etc/pacman.conf`:
 
@@ -111,17 +111,10 @@ After reboot, the firmware should be available for your Bluetooth interface.
 
 ## Video
 
-**Note:** some hardware only needs `i915`. If the kernel does not load `intel_agp` during startup, you do not need it.
+The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. If you experience a blank screen issue after booting, try loading the driver early in the boot process (see [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics")):
 
-Works with kernel parameter `i915.preliminary_hw_support=1` [Intel graphics#Driver not working for Intel Skylake chips](/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips "Intel graphics"). For kernels 4.3+ ([linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)) the parameter is unnecessary, but you may face blank screen problem after booting - adding `intel_agp` (if needed) and `i915` to the kernel modules fixes the problem, see [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics")
-
-```
-   # nano /etc/mkinitcpio.conf
-   ...
-   MODULES="... intel_agp i915"
-   ...
-
-```
+ `/etc/mkinitcpio.conf`  `MODULES="... i915 ..."` 
+**Note:** Some hardware also need `intel_agp`. If you do, you should write `"... intel_agp i915 ..."` (the order matters).
 
 Then update the bootloader.
 
@@ -130,7 +123,9 @@ Then update the bootloader.
 
 ```
 
-where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) then change that to `linux-mainline`.
+Where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) then change that to `linux-mainline`.
+
+If you are using an older kernel 4.3 or earlier, you also require the kernel parameter `i915.preliminary_hw_support=1`, see [Intel graphics#Driver not working for Intel Skylake chips](/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips "Intel graphics"). (For later kernels 4.3+ or [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/) the parameter is unnecessary.)
 
 ## Touchpad
 

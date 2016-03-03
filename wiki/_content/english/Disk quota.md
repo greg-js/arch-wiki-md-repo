@@ -17,7 +17,7 @@ This article covers the installation and setup of disk quota.
         *   [4.2.1 To one or several users](#To_one_or_several_users)
         *   [4.2.2 To all users](#To_all_users)
     *   [4.3 Other commands](#Other_commands)
-*   [5 More resources](#More_resources)
+*   [5 See also](#See_also)
 
 ## Installing
 
@@ -66,7 +66,9 @@ and create the quota index:
  # quotacheck -vgum /home
 
 ```
+
 If you added quota options for more partitions, you may also use `quotacheck -vguma` as root.
+
 **Tip:**
 
 If the command returns with
@@ -74,7 +76,11 @@ If the command returns with
 *   `[...]Quotafile $FILE was probably truncated. Cannot save quota settings...`, you can try removing the previously created files `aquota*`.
 *   `quotacheck: Mountpoint (or device) /home not found or has no quota enabled. quotacheck: Cannot find filesystem to check or filesystem not mounted with quota option.` and you are using a custom kernel, make sure quota support is enabled in your kernel.
 
-If it continues to throw an error, you can additionally try to use options `"-F vfsold` or `-F vfsv0` afterwards. Note that as of kernel 3.1.6-1, Arch does not support the `vfsv1` anymore.
+If it continues to throw an error, you can additionally try to use options `"-F vfsold` or `-F vfsv0` afterwards. Note that as of kernel 3.1.6-1, Arch does not support `vfsv1` anymore.
+
+If trying to remount the filesystem returns with
+
+*   `mount: /home not mounted already, or bad option` you might have enabled quotas already, run `quotaoff /home` as root and the remount again.
 
 Finally, enable quotas:
 
@@ -83,7 +89,7 @@ Finally, enable quotas:
 
 ```
 
-Consider adding this command to your start-up, see [Autostarting](/index.php/Autostarting "Autostarting").
+After this configuration the systemd units `quotaon.service` and `systemd-quotacheck.service` will perform the disk quota check without further configuration at least each boot.[[1]](https://bugs.archlinux.org/task/31391) Both are started automatically, if `/etc/fstab` quota mount options are parsed.
 
 ### Journaled quota
 
@@ -160,6 +166,10 @@ The `soft` limit means that once *user1* uses over 10MB of space a warning gets 
 
 The `hard` limit is stricter, so to speak; a user can never write more data once this limit is reached.
 
+**Warning:** The `hard` limit applies to all files written by and for the respective user/group, including temporary files by started applications, which may crash at this point.
+
+**Tip:** If a problem is encountered with the defined quotas, you should first try to correct them with `edquota *user1*` from a root console. Alternatively, `quotaoff -a` as root disables all quotas at runtime and the `quotacheck.mode=skip` [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") can be used at boot to temporarily disable the `systemd-quotacheck.service`.
+
 ## Managing
 
 *Checking for quota limits and advanced operations*
@@ -215,12 +225,9 @@ The idea is to modify the quota settings for one user and copy the setting to al
 
 There are several useful commands:
 
-```
-repquota -a      # Shows the status on disk usage
-warnquota        # Can be used to warn the users about their quota, configuration in /etc/warnquota.conf
-setquota         # Non-interactive quota setting--useful for scripting
-
-```
+*   `repquota -a` shows the status on disk usage
+*   `warnquota` can be used to warn the users about their quota, configuration in `/etc/warnquota.conf`
+*   `setquota` is a non-interactive quota setting - useful for scripting.
 
 Lasty, `quotastats` is used to give thorough information about the quota system:
 
@@ -239,7 +246,7 @@ Number of in use dquot entries (user/group): -1946
 
 ```
 
-## More resources
+## See also
 
 *   [http://tldp.org/HOWTO/Quota.html](http://tldp.org/HOWTO/Quota.html)
 *   [http://www.sf.net/projects/linuxquota/](http://www.sf.net/projects/linuxquota/)

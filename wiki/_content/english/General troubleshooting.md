@@ -66,7 +66,7 @@ Instead, look at it in its entirety:
 
 ### Additional support
 
-With all the information in front of you. You should have a good idea as to what is going on with the system. And you can now start working on a proper fix.
+With all the information in front of you you should have a good idea as to what is going on with the system and you can now start working on a proper fix.
 
 If you require any additional support, it can be found on [the forums](https://bbs.archlinux.org) or IRC at irc.freenode.net #archlinux
 

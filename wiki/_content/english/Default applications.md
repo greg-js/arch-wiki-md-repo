@@ -7,8 +7,9 @@ Default applications can be set for use with particular file types (e.g. the [Fi
     *   [1.2 Gnome Control Center](#Gnome_Control_Center)
     *   [1.3 gnome-defaults-list](#gnome-defaults-list)
     *   [1.4 xdg-open](#xdg-open)
-    *   [1.5 Custom file associations](#Custom_file_associations)
-    *   [1.6 Maintaining settings for multiple desktop environments](#Maintaining_settings_for_multiple_desktop_environments)
+    *   [1.5 Mimeo](#Mimeo)
+    *   [1.6 Custom file associations](#Custom_file_associations)
+    *   [1.7 Maintaining settings for multiple desktop environments](#Maintaining_settings_for_multiple_desktop_environments)
 *   [2 Using environment variables](#Using_environment_variables)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Applications do not appear in the Open With... context menu (of a file manager)](#Applications_do_not_appear_in_the_Open_With..._context_menu_.28of_a_file_manager.29)
@@ -90,6 +91,10 @@ Open this file with a text editor. Here you can replace a given application with
 [xdg-open](/index.php/Xdg-open "Xdg-open") is a desktop-independent tool for starting default applications. Many applications invoke the `xdg-open` command internally. xdg-open uses xdg-mime to query `~/.local/share/applications/mimeapps.list` (among other things; if you use a mainstream DE like GNOME, KDE or LXDE, xdg-open might try using their specific tools before xdg-mime) to find the MIME type of the file that is to be opened and the default application associated with that MIME type.
 
 See [xdg-open](/index.php/Xdg-open "Xdg-open") for more information.
+
+### Mimeo
+
+[Mimeo](http://xyne.archlinux.ca/projects/mimeo) is a command-line file association manager and launcher that can be used by applications such as web browsers and mail clients to open files. It adheres to the [freedesktop.org specifications](https://www.freedesktop.org/wiki/Specifications/) while providing optional support for the deprecated `~/.local/share/applications/mimeapps.list` which is still commonly used. It also supports a custom and versatile regular-expression-based association file that can be used to associate arbitrary strings with applications (e.g. open youtube URLs with VLC or open protein database files with PyMol). Mimeo is available from the AUR ([mimeo](https://aur.archlinux.org/packages/mimeo/)) as well as [Xyne's repos](http://xyne.archlinux.ca/repos/).
 
 ### Custom file associations
 

@@ -30,7 +30,7 @@ fdisk -l > partitions.txt 2>&1
 
 ```
 
-It will redirect all output to a text file (both standard output and error output) and can be uploaded to a pastebin service.
+It will redirect all output to a text file (both standard output and standard error output) and can be uploaded to a pastebin service.
 
 ## Programs to Upload to Pastebin Services
 

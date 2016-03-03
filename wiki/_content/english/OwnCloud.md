@@ -2,7 +2,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
 
 	*ownCloud is a software suite that provides a location-independent storage area for data (cloud storage).*
 
-The ownCloud installation and configuration mainly depends on what web server and database you decide to run. Currently the wiki discusses [#Apache configuration](#Apache_configuration) and [Nginx configuration](#Nginx).
+The ownCloud installation and configuration mainly depends on what web server and database you decide to run. Currently the wiki discusses [Apache configuration](#Apache_configuration) and [Nginx configuration](#Nginx).
 
 ## Contents
 

@@ -71,7 +71,7 @@ Download and extract the root filesystem:
 
 #### Compile and copy U-Boot bootloader
 
-The next step is creating a u-boot image. Make sure you have [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc), [git](https://www.archlinux.org/packages/?name=git) and [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools) installed on your system. Then clone the u-boot source code and compile a Banana Pi image:
+The next step is creating a u-boot image. Make sure you have [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc), [dtc](https://www.archlinux.org/packages/?name=dtc), [git](https://www.archlinux.org/packages/?name=git) and [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools) installed on your system. Then clone the u-boot source code and compile a Banana Pi image:
 
 ```
 $ git clone [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)

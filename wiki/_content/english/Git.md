@@ -62,7 +62,7 @@ This tutorial teaches how to use Git for basic distributed revision control of a
 
 Git is a distributed version control system, which means that the entire history of changes to a repository is stored locally, in a directory called `./.git` in the project directory. The project files which are visible to the user constitute the *working tree*. These files can be updated to match revisions stored in `./.git` using `git` commands (e.g. `git checkout`), and new revisions can be created in turn by editing these files and running the appropriate `git` commands (e.g. `git commit`).
 
-See gitglossary(7) for more complete definitions of the terms used in this tutorial.
+See `man gitglossary` for more complete definitions of the terms used in this tutorial.
 
 A typical Git workflow is generally:
 
@@ -228,7 +228,9 @@ $ git log -p *(-N)*
 
 #### Branch a repository
 
-Fixes and new features are usually tested in branches. When changes are satisfactory they can merged back into the default (master) branch. **Create** a branch, whose name accurately reflects its purpose:
+Fixes and new features are usually tested in branches. When changes are satisfactory they can merged back into the default (master) branch.
+
+**Create** a branch, whose name accurately reflects its purpose:
 
 ```
 $ git branch *help-section-addition*
@@ -295,7 +297,9 @@ $ git clone *location* *folder*
 
 #### Pull requests
 
-After making and committing some changes, the contributor can ask the original author to merge them. This is called a *pull request*. To **pull**:
+After making and committing some changes, the contributor can ask the original author to merge them. This is called a *pull request*.
+
+To **pull**:
 
 ```
 $ git pull *location* master
@@ -315,7 +319,9 @@ $ git merge *location* master
 
 #### Using remotes
 
-Remotes are aliases for tracked remote repositories. A *label* is created defining a location. These labels are used to identify frequently accessed repositories. **Create** a remote:
+Remotes are aliases for tracked remote repositories. A *label* is created defining a location. These labels are used to identify frequently accessed repositories.
+
+**Create** a remote:
 
 ```
 $ git remote add *label* *location*
@@ -354,7 +360,9 @@ $ git push *location* *branch*
 
 ```
 
-When *git clone* is performed, it records the original location and gives it a remote name of `origin`. So what **typically** is done is this:
+When *git clone* is performed, it records the original location and gives it a remote name of `origin`.
+
+So what **typically** is done is this:
 
 ```
 $ git push origin master
@@ -396,7 +404,9 @@ $ git send-email --to=*openembedded-core@lists.openembedded.org* --confirm=alway
 
 #### Searching the history
 
-`git log` will give the history with a commit checksum, author, date, and the short message. The *checksum* is the "object name" of a commit object, typically a 40-character SHA-1 hash. For **history** with a **long message** (where the "*checksum*" can be truncated, as long as it is unique):
+`git log` will give the history with a commit checksum, author, date, and the short message. The *checksum* is the "object name" of a commit object, typically a 40-character SHA-1 hash.
+
+For **history** with a **long message** (where the "*checksum*" can be truncated, as long as it is unique):
 
 ```
 $ git show (*checksum*)
@@ -426,7 +436,9 @@ $ git tag 2.14 *checksum*
 
 ```
 
-*Tagging* is generally done for [releasing/versioning](https://www.drupal.org/node/1066342) but it can be any string. Generally annotated tags are used, because they get added to the Git database. **Tag** the **current** commit with:
+*Tagging* is generally done for [releasing/versioning](https://www.drupal.org/node/1066342) but it can be any string. Generally annotated tags are used, because they get added to the Git database.
+
+**Tag** the **current** commit with:
 
 ```
 $ git tag -a 2.14 -m "Version 2.14"
@@ -447,7 +459,7 @@ $ git tag -d 2.08
 
 ```
 
-**Update remote** tags with a separate:
+**Update remote** tags:
 
 ```
 $ git push --tags

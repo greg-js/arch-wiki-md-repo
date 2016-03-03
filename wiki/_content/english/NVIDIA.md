@@ -73,6 +73,7 @@ This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s
     *   [5.26 Override EDID](#Override_EDID)
     *   [5.27 Fix rendering lag (firefox, gedit, vim, tmux …)](#Fix_rendering_lag_.28firefox.2C_gedit.2C_vim.2C_tmux_.E2.80.A6.29)
     *   [5.28 Screen Tearing with Multiple Monitor Orientations](#Screen_Tearing_with_Multiple_Monitor_Orientations)
+    *   [5.29 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
 *   [6 See also](#See_also)
 
 ## Installing
@@ -1315,6 +1316,31 @@ nvidia-settings -a InitialPixmapPlacement=0
 ### Screen Tearing with Multiple Monitor Orientations
 
 When running multiple monitors in different orientations (through [Xrandr](/index.php/Xrandr "Xrandr") settings) such as portrait and landscape simultaneously, you may notice screen tearing in one of the orientations/monitors. Unfortunately, this issue is fixed by setting all monitors to the same orientation via [Xrandr](/index.php/Xrandr "Xrandr") settings
+
+### Overclocking with nvidia-settings GUI not working
+
+Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking(as explained in [#Enabling overclocking](#Enabling_overclocking) ). `man nvidia-settings` for more information.
+
+Example to query all variables:
+
+```
+ nvidia-settings -q all
+
+```
+
+Example to set PowerMizerMode to prefer performance mode:
+
+```
+ nvidia-settings -a [gpu:0]/GPUPowerMizerMode=1
+
+```
+
+Example to set multiple variables at once(Overclock on performance level [3] by 50Mhz, overclock MemoryTransferRate by 50Mhz, Over Voltage by 100 microvolts)
+
+```
+ nvidia-setting -a GPUGraphicsClockOffset[3]=50 -a GPUMemoryTransferRateOffset[3]=50 -a GPUOverVoltageOffset=100
+
+```
 
 ## See also
 

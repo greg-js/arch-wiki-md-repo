@@ -115,4 +115,7 @@ If you are having issues loading GParted from a menu, for instance the xfce appl
 
 You need rebuild package using following configuration:
 
+```
 ./configure --enable-online-resize --enable-libparted-dmraid
+
+```

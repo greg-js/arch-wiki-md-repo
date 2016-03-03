@@ -564,7 +564,7 @@ YEAR_DAY=148
     *   [List of syslog-ng 3.4 Parameters](http://www.balabit.com/sites/default/files/documents/syslog-ng-ose-3.4-guides/en/syslog-ng-ose-v3.4-guide-admin/html/syslog-ng-parameter-index.html)
     *   [List of syslog-ng 3.4 Macros](http://www.balabit.com/sites/default/files/documents/syslog-ng-ose-3.4-guides/en/syslog-ng-ose-v3.4-guide-admin/html/reference-macros.html)
 *   [syslog-ng Project Page on Freshmeat](http://freshmeat.net/projects/syslog-ng/)
-*   [Gentoo syslog-ng wiki](http://en.gentoo-wiki.com/wiki/Syslog-ng)
+*   [Gentoo syslog-ng wiki](https://wiki.gentoo.org/wiki/Syslog-ng)
 *   [Gentoo Security Handbook on Logging](http://www.gentoo.org/doc/en/security/security-handbook.xml?part=1&chap=3)
 *   [What is Syslog? Logging with PostgreSQL HOWTO](http://www.pcwdld.com/what-is-syslog-including-servers-and-ports)
 *   [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601 "wikipedia:ISO 8601") Wikipedia page for ISO 8601

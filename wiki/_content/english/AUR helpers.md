@@ -26,7 +26,7 @@ AUR Helpers are written to make using the [Arch User Repository](/index.php/Arch
 
 ## Build and search
 
-This is a list of helper utilities that search and/or build packages.
+This is a list of helper utilities that search, download and/or build packages.
 
 *   **apacman** — A fork of packer.
 
@@ -47,6 +47,10 @@ This is a list of helper utilities that search and/or build packages.
 *   **aurquery** — Caching wrapper around the AUR's RPC interface using the python3-aur library.
 
 	[http://xyne.archlinux.ca/projects/python3-aur](http://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
+
+*   **aurutils** — Helper tools for the AUR.
+
+	[https://github.com/AladW/aurutils](https://github.com/AladW/aurutils) ||
 
 *   **bauerbill** — Powerpill/pacman extension with support for building packages from ABS and AUR.
 
@@ -150,7 +154,7 @@ This is a list of helper utilities that search and/or build packages.
 *   *Clean build*: does not export new variables that can prevent a successful build process.
 *   *Reliable Parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli](https://aur.archlinux.org/packages/aws-cli/).
 *   *Reliable Solver*: ability to correctly solve and build complex dependency chains, such as [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
-*   *Split packages*: ability to correctly build and install split packages independently, such as [python-novaclient](https://aur.archlinux.org/packages/python-novaclient/).
+*   *Split packages*: ability to correctly build and install split packages independently, such as [python-nikola](https://aur.archlinux.org/packages/python-nikola/).
 *   *Git clone*: uses git clones instead of downloading tarballs (deprecated since AUR 4).
 
 | Name | Written In | Secure | Clean build | Reliable Parser | Reliable Solver | Split Packages | Git clone | Shell Completion | Syntax | Specificity |
@@ -158,7 +162,8 @@ This is a list of helper utilities that search and/or build packages.
 | aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | No | No | No | bash/zsh | Pacman-like | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support, multilangual |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | Specific | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[2]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | Pacman-like | - |
-| bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | No | bash/zsh | Specific | Trust management, ABS support |
+| aurutils | Bash/C | Yes | N/A | Yes | Yes | N/A | Yes | None | Specific | [tsort](https://en.wikipedia.org/wiki/Topological_sorting "w:Topological sorting") |
+| bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | No | bash/zsh | Pacman-like/Specific | Trust management, ABS support, extends Powerpill |
 | burgaur | Python3 | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | Pacman-like | Wrapper for *cower* |
 | cower | C | Yes | N/A | Yes | N/A | N/A | No | bash/zsh | Specific | No automatic builds, regex support |
 | pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | Pacman-like/specific | Minimizes user interaction, multilangual |

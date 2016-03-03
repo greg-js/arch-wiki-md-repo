@@ -9,8 +9,9 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
 *   [1 OpenSSH](#OpenSSH)
     *   [1.1 Installation](#Installation)
     *   [1.2 Client usage](#Client_usage)
+        *   [1.2.1 Configuration](#Configuration)
     *   [1.3 Server usage](#Server_usage)
-        *   [1.3.1 Configuration](#Configuration)
+        *   [1.3.1 Configuration](#Configuration_2)
         *   [1.3.2 Daemon management](#Daemon_management)
         *   [1.3.3 Protection](#Protection)
             *   [1.3.3.1 Force public key authentication](#Force_public_key_authentication)
@@ -37,10 +38,9 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
     *   [3.5 Speeding up SSH](#Speeding_up_SSH)
     *   [3.6 Mounting a remote filesystem with SSHFS](#Mounting_a_remote_filesystem_with_SSHFS)
     *   [3.7 Keep alive](#Keep_alive)
-    *   [3.8 Saving connection data in SSH config](#Saving_connection_data_in_SSH_config)
-    *   [3.9 Automatically restart SSH tunnels with systemd](#Automatically_restart_SSH_tunnels_with_systemd)
-    *   [3.10 Autossh - automatically restarts SSH sessions and tunnels](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels)
-        *   [3.10.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
+    *   [3.8 Automatically restart SSH tunnels with systemd](#Automatically_restart_SSH_tunnels_with_systemd)
+    *   [3.9 Autossh - automatically restarts SSH sessions and tunnels](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels)
+        *   [3.9.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Checklist](#Checklist)
         *   [4.1.1 Verify SSH settings](#Verify_SSH_settings)
@@ -59,8 +59,7 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
         *   [4.3.6 Read from socket failed: connection reset by peer](#Read_from_socket_failed:_connection_reset_by_peer)
     *   [4.4 "[your shell]: No such file or directory" / ssh_exchange_identification problem](#.22.5Byour_shell.5D:_No_such_file_or_directory.22_.2F_ssh_exchange_identification_problem)
     *   [4.5 "Terminal unknown" or "Error opening terminal" error message](#.22Terminal_unknown.22_or_.22Error_opening_terminal.22_error_message)
-        *   [4.5.1 Workaround by setting the $TERM variable](#Workaround_by_setting_the_.24TERM_variable)
-        *   [4.5.2 Solution using terminfo file](#Solution_using_terminfo_file)
+        *   [4.5.1 TERM hack](#TERM_hack)
     *   [4.6 Connection closed by x.x.x.x [preauth]](#Connection_closed_by_x.x.x.x_.5Bpreauth.5D)
     *   [4.7 id_dsa refused by OpenSSH 7.0](#id_dsa_refused_by_OpenSSH_7.0)
     *   [4.8 No matching key exchange method found by OpenSSH 7.0](#No_matching_key_exchange_method_found_by_OpenSSH_7.0)
@@ -86,6 +85,33 @@ $ ssh -p port user@server-address
 ```
 
 If the server only allows public-key authentication, follow [SSH keys](/index.php/SSH_keys "SSH keys").
+
+#### Configuration
+
+The client can be configured to store common options and hosts. All options can be declared globally or restricted to specific hosts. For example:
+
+ `~/.ssh/config` 
+```
+# global options
+User user
+
+# host-specific options
+Host myserver
+    HostName server-address
+    Port     port
+```
+
+With such a configuration, the following commands are equivalent
+
+```
+$ ssh -p port user@server-address
+$ ssh myserver
+
+```
+
+See the `ssh_config` [man page](/index.php/Man_page "Man page") for more information.
+
+Some options do not have command line switch equivalents, but you can specify config options on the command line with `-o`. For example `-oKexAlgorithms=+diffie-hellman-group1-sha1`.
 
 ### Server usage
 
@@ -552,42 +578,26 @@ However, it is likely that port 443 is already in use by a web server serving HT
 
 ### Speeding up SSH
 
-**Note:** If you intend to use SSH for SFTP or SCP, installing [openssh-hpn-git](https://aur.archlinux.org/packages/openssh-hpn-git/) can significantly increase throughput.[[7]](https://www.psc.edu/index.php/hpn-ssh)
+**Tip:** If you intend to use SSH for SFTP or SCP, installing [openssh-hpn-git](https://aur.archlinux.org/packages/openssh-hpn-git/) can significantly increase throughput.[[7]](https://www.psc.edu/index.php/hpn-ssh)
 
-You can make all sessions to the same host use a single connection, which will greatly speed up subsequent logins, by adding these lines under the proper host in `/etc/ssh/ssh_config` or `$HOME/.ssh/config`:
+There are several [client configuration](#Configuration) options which can speed up connections either globally or for specific hosts. See the `ssh_config(5)` manual page for full description of these options.
 
-```
-Host examplehost.com
-  ControlMaster auto
-  ControlPersist yes
-  ControlPath ~/.ssh/socket-%r@%h:%p
+You can make all sessions to the same host share a single connection using these options:
 
 ```
-
-**Tip:** To make it a global setting, you can create a `~/.ssh/sockets/` folder and use the following: `~/.ssh/config` 
-```
-Host *
-  ControlPath ~/.ssh/sockets/%r@%h-%p
+ControlMaster auto
+ControlPersist yes
+ControlPath ~/.ssh/sockets/socket-%r@%h:%p
 
 ```
 
-See the `ssh_config(5)` manual page for full description of these options.
+where `~/.ssh/sockets` can be any directory not writable by other users.
 
-Another option to improve speed is to enable compression with the `-C` flag. A permanent solution is to add this line under the proper host in `/etc/ssh/ssh_config` or `$HOME/.ssh/config`:
-
-```
-Compression yes
-
-```
+Another option to improve speed is to enable compression with the `Compression yes` option or the `-C` flag.
 
 **Warning:** `man ssh` states that "*Compression is desirable on modem lines and other slow connections, but will only slow down things on fast networks*". This tip might be counterproductive depending on your network configuration.
 
-Login time can be shortened by using the `-4` flag, which bypasses IPv6 lookup. This can be made permanent by adding this line under the proper host in `/etc/ssh/ssh_config`:
-
-```
-AddressFamily inet
-
-```
+Login time can be shortened by bypassing IPv6 lookup using the `AddressFamily inet` option or `-4` flag.
 
 ### Mounting a remote filesystem with SSHFS
 
@@ -595,53 +605,9 @@ Please refer to the [Sshfs](/index.php/Sshfs "Sshfs") article to use sshfs to mo
 
 ### Keep alive
 
-Your ssh session will automatically log out if it is idle. To keep the connection active (alive) add this to `~/.ssh/config` or to `/etc/ssh/ssh_config` on the client.
+Your ssh session will automatically log out if it is idle. To send a "keep alive" signal to the server every 120 seconds add the `ServerAliveInterval 120` option to your [client configuration](#Configuration). See also the `ServerAliveCountMax` and `TCPKeepAlive` options.
 
-```
-ServerAliveInterval 120
-
-```
-
-This will send a "keep alive" signal to the server every 120 seconds.
-
-See also the `ServerAliveCountMax` and `TCPKeepAlive` options.
-
-Conversely, to keep incoming connections alive, you can set
-
-```
-ClientAliveInterval 120
-
-```
-
-(or some other number greater than 0) in `/etc/ssh/sshd_config` on the server.
-
-### Saving connection data in SSH config
-
-Whenever you want to connect to a ssh server, you usually have to type at least its address and the username. To save that typing work for servers you regularly connect to, you can use the personal `~/.ssh/config` or the global `/etc/ssh/ssh_config` files as shown in the following example:
-
- `~/.ssh/config` 
-```
-Host myserver
-    HostName 123.123.123.123
-    Port 12345
-    User bob
-    IdentityFile ~/.ssh/some_key_file
-Host other_server
-    HostName test.something.org
-    User alice
-    CheckHostIP no
-    Cipher blowfish
-
-```
-
-Now you can simply connect to the server by using the name you specified:
-
-```
-$ ssh myserver
-
-```
-
-To see a complete list of the possible options, check out ssh_config's manpage on your system or the [ssh_config documentation](http://www.openbsd.org/cgi-bin/man.cgi?query=ssh_config) on the official website.
+Conversely, to keep incoming connections alive, set the `ClientAliveInterval` option in your [server configuration](#Configuration_2).
 
 ### Automatically restart SSH tunnels with systemd
 
@@ -900,20 +866,11 @@ Also make sure that other "Port" configuration lines in the file are commented o
 
 #### Read from socket failed: connection reset by peer
 
-Recent versions of openssh sometimes fail with the above error message, due to a bug involving elliptic curve cryptography. In that case add the following line to `~/.ssh/config`:
+Recent versions of openssh sometimes fail with the above error message when connecting to older ssh servers. This can be worked around by setting various [client options](#Configuration) for that host. See the `ssh_config` manual page for more information about the following options.
 
-```
-HostKeyAlgorithms ssh-rsa-cert-v01@openssh.com,ssh-dss-cert-v01@openssh.com,ssh-rsa-cert-v00@openssh.com,ssh-dss-cert-v00@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-rsa,ssh-dss
+The problem could be the `ecdsa-sha2-nistp*-cert-v01@openssh` elliptical host key algorithms. These can be disabled by setting `HostKeyAlgorithms` to a list excluding those algorithms.
 
-```
-
-With openssh 5.9, the above fix does not work. Instead, put the following lines in `~/.ssh/config`:
-
-```
-Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc 
-MACs hmac-md5,hmac-sha1,hmac-ripemd160
-
-```
+If that does not work, it could be that the list of ciphers is too long. Set the `Ciphers` option to a shorter list (fewer than 80 characters should be enough). Similarly, you can also try shortening the list of `MACs`.
 
 See also the [discussion](http://www.gossamer-threads.com/lists/openssh/dev/51339) on the openssh bug forum.
 
@@ -923,27 +880,23 @@ One possible cause for this is the need of certain SSH clients to find an absolu
 
 ### "Terminal unknown" or "Error opening terminal" error message
 
-With ssh it is possible to receive errors like "Terminal unknown" upon logging in. Starting ncurses applications like nano fails with the message "Error opening terminal". There are two methods to this problem, a quick one using the $TERM variable and a profound one using the terminfo file.
+If you receive the above errors upon logging in, this means the server does not recognize your terminal. Ncurses applications like nano may fail with the message "Error opening terminal".
 
-#### Workaround by setting the $TERM variable
+The correct solution is to install the client terminal's terminfo file on the server. This tells console programs on the server how to correctly interact with your terminal. If you cannot [install](/index.php/Install "Install") it normally, you can copy your terminfo to your home directory on the server:
 
-After connecting to the remote server set the $TERM variable to "xterm" with the following command.
+```
+$ ssh myserver mkdir -p  ~/.terminfo/${TERM:0:1}
+$ scp /usr/share/terminfo/*/$TERM myserver:~/.terminfo/*/
 
-`TERM=xterm`
+```
 
-This method is a workaround and should be used on ssh servers you do seldomly connect to, because it can have unwanted side effects. Also you have to repeat the command after every connection, or alternatively set it in ~.bashrc .
+After logging in and out from the server the problem should be fixed.
 
-#### Solution using terminfo file
+#### TERM hack
 
-A profound solution is transferring the terminfo file of the terminal on your client computer to the ssh server. In this example we cover how to setup the terminfo file for the "rxvt-unicode-256color" terminal. Create the directory containing the terminfo files on the ssh server, while you are logged in to the server issue this command:
+**Warning:** This should only be used as a last resort.
 
-`mkdir -p ~/.terminfo/r/`
-
-Now copy the terminfo file of your terminal to the new directory. Replace `rxvt-unicode-256color` with your client's terminal in the following command and `ssh-server` with the relevant user and server adress.
-
-`$ scp /usr/share/terminfo/r/*rxvt-unicode-256color* ssh-server:~/.terminfo/r/`
-
-After logging in and out from the ssh server the problem should be fixed.
+Alternatively, you can simply set `TERM=xterm` in your environment on the server (e.g. in `.bash_profile`). This will silence the error and allow ncurses applications to run again, but you may experience strange behavior and graphical glitches unless your terminal's control sequences exactly match xterm's.
 
 ### Connection closed by x.x.x.x [preauth]
 
@@ -956,45 +909,19 @@ HostKey /etc/ssh/ssh_host_rsa_key
 
 ### id_dsa refused by OpenSSH 7.0
 
-OpenSSH 7.0 deprecated ssh-dss and [http://www.openssh.com/legacy.html](http://www.openssh.com/legacy.html) does not document how to reach server if id_dsa keys are used:
-
-```
-PubkeyAcceptedKeyTypes +ssh-dss
-
-```
-
-While this can be added a per host basis or with -o, to make sure "ProxyCommand ssh" still works, add it to ssh_config.
+OpenSSH 7.0 deprecated DSA public keys for security reasons. If you absolutely must enable them, set the [config](#Configuration) option `PubkeyAcceptedKeyTypes +ssh-dss` ([http://www.openssh.com/legacy.html](http://www.openssh.com/legacy.html) does not mention this).
 
 ### No matching key exchange method found by OpenSSH 7.0
 
-OpenSSH 7.0 also deprecated the key algorithm diffie-hellman-group1-sha1, as we could see in [http://www.openssh.com/legacy.html](http://www.openssh.com/legacy.html).
-
-If the client and server are unable to agree on a mutual set of parameters then the connection will fail. OpenSSH (7.0 and greater) will produce an error message like this:
+OpenSSH 7.0 deprecated the diffie-hellman-group1-sha1 key algorithm because it is weak and within theoretical range of the so-called Logjam attack (see [http://www.openssh.com/legacy.html](http://www.openssh.com/legacy.html)). If the key algorithm is needed for a particular host, ssh will produce an error message like this:
 
 ```
- Unable to negotiate with 127.0.0.1: no matching key exchange method found.
- Their offer: diffie-hellman-group1-sha1
+Unable to negotiate with 127.0.0.1: no matching key exchange method found.
+Their offer: diffie-hellman-group1-sha1
 
 ```
 
-In this case, the client and server were unable to agree on the key exchange algorithm. The server offered only a single method diffie-hellman-group1-sha1\. OpenSSH supports this method, but does not enable it by default because is weak and within theoretical range of the so-called Logjam attack.
-
-The best resolution for these failures is to upgrade the software at the other end. OpenSSH only disables algorithms that we actively recommend against using because they are known to be weak. In some cases, this might not be immediately possible so you may need to temporarily re-enable the weak algorithms to retain access.
-
-For the case of the above error message, OpenSSH can be configured to enable the diffie-hellman-group1-sha1 key exchange algorithm (or any other that is disabled by default) using the KexAlgorithm option - either on the command-line:
-
-```
- ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 user@127.0.0.1
-
-```
-
-or in the ~/.ssh/config file:
-
-```
- Host somehost.example.org
- 	KexAlgorithms +diffie-hellman-group1-sha1
-
-```
+The best resolution for these failures is to upgrade/configure the server to not use deprecated algorithms. If that is not possible, you can force the client to reenable the algorithm with the [client option](#Configuration) `KexAlgorithms +diffie-hellman-group1-sha1`.
 
 ## See also
 

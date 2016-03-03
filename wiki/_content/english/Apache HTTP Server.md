@@ -20,10 +20,9 @@ Apache is often used together with a scripting language such as PHP and database
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Apache Status and Logs](#Apache_Status_and_Logs)
     *   [4.2 Error: PID file /run/httpd/httpd.pid not readable (yet?) after start](#Error:_PID_file_.2Frun.2Fhttpd.2Fhttpd.pid_not_readable_.28yet.3F.29_after_start)
-    *   [4.3 Upgrading Apache to 2.4 from 2.2](#Upgrading_Apache_to_2.4_from_2.2)
-    *   [4.4 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)
-    *   [4.5 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
-    *   [4.6 Changing the max_execution_time in php.ini has no effect](#Changing_the_max_execution_time_in_php.ini_has_no_effect)
+    *   [4.3 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)
+    *   [4.4 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
+    *   [4.5 Changing the max_execution_time in php.ini has no effect](#Changing_the_max_execution_time_in_php.ini_has_no_effect)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -266,7 +265,7 @@ To install [PHP](/index.php/PHP "PHP"), first [install](/index.php/Install "Inst
 In `/etc/httpd/conf/httpd.conf`, comment the line:
 
 ```
-LoadModule mpm_event_module modules/mod_mpm_event.so
+#LoadModule mpm_event_module modules/mod_mpm_event.so
 
 ```
 
@@ -294,6 +293,13 @@ To enable PHP, add these lines to `/etc/httpd/conf/httpd.conf`:
 
 ```
 LoadModule php7_module modules/libphp7.so
+
+```
+
+*   Add this line anywhere to your `/etc/httpd/conf/httpd.conf`:
+
+```
+SetHandler	application/x-httpd-php
 
 ```
 
@@ -464,15 +470,7 @@ Apache logs can be found in `/var/log/httpd/`
 
 ### Error: PID file /run/httpd/httpd.pid not readable (yet?) after start
 
-Comment out the unique_id_module: `#LoadModule unique_id_module modules/mod_unique_id.so`
-
-### Upgrading Apache to 2.4 from 2.2
-
-If you use [php-apache](https://www.archlinux.org/packages/?name=php-apache), follow the instructions at [#PHP](#PHP) above.
-
-Access Control has changed. Convert all `Order`, `Allow`, `Deny` and `Satisfy` directives to the new `Require` syntax. [mod_access_compat](http://httpd.apache.org/docs/2.4/mod/mod_access_compat.html) allows you to use the deprecated format during a transition phase.
-
-More information: [Upgrading to 2.4 from 2.2](http://httpd.apache.org/docs/2.4/upgrading.html)
+Comment out the `unique_id_module` line in `httpd.conf`: `#LoadModule unique_id_module modules/mod_unique_id.so`
 
 ### Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.
 

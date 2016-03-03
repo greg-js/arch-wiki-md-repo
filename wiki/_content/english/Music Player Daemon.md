@@ -152,6 +152,7 @@ MPD searches for a config file in `$XDG_CONFIG_HOME/mpd/mpd.conf` and then `~/.m
 Copy the example configuration file to desired location, for example:
 
 ```
+$ mkdir -p ~/.config/mpd
 $ cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf
 
 ```
@@ -173,11 +174,10 @@ sticker_file       "~/.config/mpd/sticker.sql"
 
 ```
 
-Create all the files and directories as configured above:
+Create the playlist directory as configured above:
 
 ```
 $ mkdir ~/.config/mpd/playlists
-$ touch ~/.config/mpd/{database,log,pid,state,sticker.sql}
 
 ```
 

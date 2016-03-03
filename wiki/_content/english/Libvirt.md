@@ -144,7 +144,7 @@ While some guides mention changed permissions of certain libvirt directories to 
 
 ### Daemon
 
-[Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") `libvirtd.service` and `virtlogd.service` to begin system-level administration.
+[Start](/index.php/Start "Start") both `libvirtd.service` and `virtlogd.service`. Optionally [enable](/index.php/Enable "Enable") `libvirtd.service`. There is no need to enable `virtlogd.service`, since `libvirtd.service`, when enabled, also enables the `virtlogd.socket` and `virtlockd.socket` [units](/index.php/Systemd#Using_units "Systemd").
 
 ### Unencrypt TCP/IP sockets
 

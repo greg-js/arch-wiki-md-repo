@@ -158,7 +158,7 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 SWAP -> ../../sda4
 
 **Note:**
 
-*   GPT partition labels have also to be different to avoid conflicts. To change your partition label, you can use `gdisk` or the ncurse-based version `cgdisk`. Both are available from the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package. See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools "Partitioning").
+*   GPT partition labels have also to be different to avoid conflicts. To change your partition label, you can use `gdisk` or the ncurses-based version `cgdisk`. Both are available from the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package. See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools "Partitioning").
 *   According to the specification, GPT partition labels can be up to 72 characters long.
 
 ### by-partuuid

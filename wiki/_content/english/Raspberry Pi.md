@@ -2,7 +2,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Raspberry_Pi "wikipedia:Raspberry
 
 	"*The Raspberry Pi is a series of credit card-sized single-board computers developed in the UK by the Raspberry Pi Foundation with the intention of promoting the teaching of basic computer science in schools.*"
 
-The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([ARM11 architecture](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")). The Raspberry Pi 2, released in 2015, is shipped with a BCM2836 SoC (quad-core [ARM Cortex-A7 architecture](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")).
+The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([ARM11 architecture](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")). The Raspberry Pi 2, released in 2015, is shipped with a BCM2836 SoC (quad-core [ARM Cortex-A7 architecture](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")). In February 2016, the Pi 3 was launched which contains a BCM2837 SoC (quad-core [ARM Cortex-A53 architectue](https://en.wikipedia.org/wiki/ARM_Cortex-A53 "wikipedia:ARM Cortex-A53")) and built in WiFi and Bluetooth.
 
 ## Contents
 
@@ -46,6 +46,7 @@ The Raspberry Pi is an ARM-based device and therefore needs binaries compiled fo
 
 *   ARMv6 (BCM2835): Raspberry Pi Model A, A+, B, B+, Zero
 *   ARMv7 (BCM2836): Raspberry Pi 2 (based on Model B+)
+*   ARMv8 (BCM2837): Raspberry Pi 3
 
 ## SD card performance
 

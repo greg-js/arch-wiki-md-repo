@@ -1,6 +1,6 @@
 **Arch User Repository** (AUR) è un repository sostenuto dalla comunità per utenti Arch. Contiene le descrizioni dei pacchetti (i [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)")) che ti permettono di compilare i sorgenti grazie al comando [makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)") e quindi installarli con [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)"). AUR È stato creato per creare e scambiare pacchetti tra la comunità e per aiutarne lo sviluppo, inclusi i pacchetti del repository [community](#community). Questo documento spiega come accedere ed installare i pacchetti presenti in AUR.
 
-Un buon numero di pacchetti ufficiali, in precedenza, erano presenti in AUR. La AUR community può votare pro o contro dei pacchetti presenti in AUR. Se un pacchetto diventa abbastanza popolare, sempre che venga incontro alle esigenze di pacchettizzazione e alle licenze, allora può entrare a far parte del repository *community* (direttamente accessibile da [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)") o [abs](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)")).
+Un buon numero di nuovi pacchetti che entrano nei repository ufficiali, partono prima in AUR. In AUR gli utenti sono in grado di contribuire con i propri pacchetti (PKGBUILD). La AUR community può votare pro o contro i pacchetti presenti in AUR. Se un pacchetto diventa abbastanza popolare, sempre che venga incontro alle esigenze di pacchettizzazione e alle licenze, può entrare a far parte del repository *community* (direttamente accessibile da [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)") o [abs](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)")).
 
 ## Contents
 
@@ -44,7 +44,7 @@ Un buon numero di pacchetti ufficiali, in precedenza, erano presenti in AUR. La 
 
 Gli utenti possono cercare e scaricare i PKGBUILD dal [sito Web di AUR](https://aur.archlinux.org). Questi PKGBUILD possono essere compilati in pacchetti installabili usando [makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)") e successivamente installati con pacman.
 
-*   Assicurarsi di aver isntallato il gruppo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) (`pacman -S --needed base-devel`).
+*   Assicurarsi di aver installato il gruppo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) (`pacman -S --needed base-devel`).
 *   Leggere il resto di questo articolo per ulteriori informazioni e un breve tutorial su come installare i pacchetti AUR.
 *   Visitare il [sito Web di AUR](https://aur.archlinux.org) per informarsi riguardo agli aggiornamenti ed agli eventi. Lì troverete anche statistiche ed una lista aggiornata delle ultime versioni disponibili per i pacchetti di AUR.
 *   Dare un occhiata alle [#FAQ](#FAQ) in cerca di risposte alle domande più comuni.
@@ -56,7 +56,7 @@ I seguenti stumenti sono stati riportati solo per motivazioni storiche, e sono s
 
 Agli inizi c'era `ftp://ftp.archlinux.org/incoming` e le persone vi hanno contribuito semplicemente inviando i PKGBUILD, i file necessari ed i file compilati stessi sul server. I pacchetti ed i file associati rimanevano lì fino a quando un [Package Maintainer](/index.php/Package_Maintainer "Package Maintainer") li vedeva e li adottava.
 
-Quindi nacquero i Trusted User Repositories (repositori per utenti fidati). Ad alcuni utenti della community era permesso dare ospitare i loro personali repository per condividerli con gli altri. AUR si è espanso su questa base, con l'obbiettivo di rendere contemporaneamente più flessibile e semplice il suo utilizzo. Infatti, i manutentori di AUR sono ancora definiti TUs ([Trusted Users](/index.php/Trusted_Users "Trusted Users")).
+Quindi nacquero i Trusted User Repositories (repositori per utenti fidati). Ad alcuni utenti della community era permesso di ospitare i loro personali repository per condividerli con gli altri. AUR si è espanso su questa base, con l'obbiettivo di rendere contemporaneamente più flessibile e semplice il suo utilizzo. Infatti, i manutentori di AUR sono ancora definiti TUs ([Trusted Users](/index.php/Trusted_Users "Trusted Users")).
 
 ## Ricerche su AUR
 
@@ -69,10 +69,11 @@ Le ricerche avvengono all'interno dei nomi e delle descrizioni attraverso un met
 Installare i pacchetti da AUR è un processo relativamente semplice. Essenzialmente:
 
 1.  Ottenere il tarball contenente il [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") e gli eventuali altri file necessari come unità di systemd e patch (ma spesso non i sorgenti di per sè).
-2.  Estrarre il tarball (preferibilmente in una cartella da tenere da parte solo per le compilazioni di AUR) con `tar -xzf foo.tar.gz`.
-3.  Lanciare il comando `makepkg` all'interno della directory contenente i file scaricati (il comando "`makepkg -s`" si occuperà di risolvere automaticamente le dipendenze tramite pacman). Questo scaricherà e compilerà il codice, infine creerà il pacchetto.
-4.  Leggere l'eventuale file README in `src/`, dato che potrebbe contenere informazioni utili più avanti.
-5.  Installare il pacchetto ottenuto tramite [pacman](/index.php/Pacman "Pacman"):
+2.  Estrarre il tarball (preferibilmente in una cartella a parte da usare solo per le compilazioni di AUR) con `tar -xvzf foo.tar.gz`.
+3.  Verificare che il PKGBUILD e i file che lo accompagnano non siano maligni o inattendibili.
+4.  Lanciare il comando `makepkg` all'interno della directory contenente i file scaricati (il comando "`makepkg -s`" si occuperà di risolvere automaticamente le dipendenze tramite pacman). Questo scaricherà e compilerà il codice, infine creerà il pacchetto.
+5.  Leggere l'eventuale file README in `src/`, dato che potrebbe contenere informazioni utili più avanti.
+6.  Installare il pacchetto ottenuto tramite [pacman](/index.php/Pacman "Pacman"):
 
 	 `$ pacman -U /percorso/per/il/pacchetto.tar.xz` 
 
@@ -84,7 +85,7 @@ Gli [AUR helpers](/index.php/AUR_helpers "AUR helpers") garantiscono un accesso 
 
 Per prima cosa, assicurarsi che gli strumenti necessari siano installati. Il gruppo di pacchetti [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) dovrebbe essere sufficiente; include [make](https://www.archlinux.org/packages/?name=make) ed altri pacchetti necessari alla compilazione dai sorgenti.
 
-**Attenzione:** I pacchetti su AUR presumono che il gruppo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) sia già stato installato, ed essi non riporteranno i componenti di questo gruppo tra le dipendenze, anche se il pacchetto non può essere compilato senza di essi. Siete pregati di assicurarvi che questo gruppo sia installato prima di denunciare fallimenti nelle compilazioni.
+**Attenzione:** I pacchetti su AUR presumono che il gruppo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) sia già stato installato, cioè essi non riporteranno i componenti di questo gruppo tra le dipendenze, anche se il pacchetto non può essere compilato senza di essi. Siete pregati di assicurarvi che questo gruppo sia installato prima di denunciare fallimenti nelle compilazioni.
 
 ```
 # pacman -S --needed base-devel

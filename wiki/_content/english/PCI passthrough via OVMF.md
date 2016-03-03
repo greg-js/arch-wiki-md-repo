@@ -181,7 +181,7 @@ Add `pci-stub` to `/etc/mkinitcpio.conf`:
 If it doesn't work, try adding it to /etc/modules-load.d/ as well:
 
 ```
-$ echo "pci-stub" > sude tee /etc/modules-load.d/vfio.conf
+# echo pci-stub > /etc/modules-load.d/vfio.conf
 
 ```
 

@@ -7,8 +7,8 @@ The **ArchMap** project creates a map of Arch Linux users all over the world.
 *   [2 archmap](#archmap)
 *   [3 Maps](#Maps)
     *   [3.1 OpenStreetMap](#OpenStreetMap)
-    *   [3.2 Google Maps](#Google_Maps)
-    *   [3.3 Google Earth](#Google_Earth)
+    *   [3.2 Google Earth](#Google_Earth)
+    *   [3.3 Daily updated map](#Daily_updated_map)
 *   [4 List yourself](#List_yourself)
 
 ## History
@@ -47,10 +47,6 @@ geojson.io is *"a fast, simple tool to create, change, and publish maps"*, it us
 
 Some other renderings of the data are hosted by [CartoDB](https://alux.cartodb.com/viz/c1cd0e2a-5af7-11e4-afcd-0e9d821ea90d/embed_map) and [MapBox](https://a.tiles.mapbox.com/v3/alux.hclg4eg0/page.html?secure=1#4/39.63/-104.91). However, these may be out of date as they have to be updated manually by [alux](/index.php/User:Alux "User:Alux") importing the *GeoJSON* file.
 
-### Google Maps
-
-To display the coordinates in Google Maps, enter [this link](https://archwomen.org/media/archmap/archmap.kml) to the *KML* file into the search bar, here is [that search](https://maps.google.com/maps?hl=en&q=https%3A%2F%2Farchwomen.org%2Fmedia%2Farchmap%2Farchmap.kml).
-
 ### Google Earth
 
 You can add the coordinates to Google Earth permanently:
@@ -60,6 +56,10 @@ You can add the coordinates to Google Earth permanently:
 *   Enter "ArchMap" into the *Name* field and put `[https://archwomen.org/media/archmap/archmap.kml](https://archwomen.org/media/archmap/archmap.kml)` into the *Link* field, then press *OK*.
 
 You can refresh the data by right-clicking the ArchMap folder and selecting *Refresh*.
+
+### Daily updated map
+
+[This map](http://dopsi.ch/archmap) is updated daily (around 10:00am UTC) using the [ArchMap](http://github.com/maelstrom59/ArchMap) script. The KML data used to render the map is available [here](http://dopsi.ch/archmap/archmap.kml).
 
 ## List yourself
 

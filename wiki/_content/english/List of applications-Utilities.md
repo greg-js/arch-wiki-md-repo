@@ -891,6 +891,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://github.com/KittyKatt/screenFetch](https://github.com/KittyKatt/screenFetch) || [screenfetch](https://www.archlinux.org/packages/?name=screenfetch)
 
+*   **neofetch** — A fast, highly customizable system info script that supports displaying images with w3m.
+
+	[https://github.com/dylanaraps/neofetch](https://github.com/dylanaraps/neofetch) || [neofetch-git](https://aur.archlinux.org/packages/neofetch-git/)
+
 #### Graphical
 
 *   **CPU-G** — An application that shows useful information about your hardware, it looks like CPU-Z in Windows.

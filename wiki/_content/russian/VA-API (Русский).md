@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [GnuPG](/index.php/GnuPG "GnuPG"). Дата последней синхронизации: 12 декабря 2015‎‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GnuPG&diff=0&oldid=411159).
+**Состояние перевода:** На этой странице представлен перевод статьи [VA-API](/index.php/VA-API "VA-API"). Дата последней синхронизации: 12 декабря 2015‎‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=VA-API&diff=0&oldid=411159).
 
 **[Video Acceleration API](http://www.freedesktop.org/wiki/Software/vaapi)** — спецификация и открытая библиотека, созданная с целью предоставить возможность аппаратного кодирования и декодирования видео.
 

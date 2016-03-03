@@ -1,4 +1,4 @@
-**LinuX Containers** (**LXC**) is an operating system-level virtualization method for running multiple isolated Linux systems (containers) on a single control host (LXC host). It does not provide a virtual machine, but rather provides a virtual environment that has its own CPU, memory, block I/O, network, etc. space. This is provided by [cgroups](/index.php/Cgroups "Cgroups") features in Linux kernel on LXC host. It is similar to a chroot, but offers much more isolation.
+Linux Containers (LXC) is an operating-system-level virtualization method for running multiple isolated Linux systems (containers) on a single control host (LXC host). It does not provide a virtual machine, but rather provides a virtual environment that has its own CPU, memory, block I/O, network, etc. space. This is provided by [cgroups](/index.php/Cgroups "Cgroups") features in Linux kernel on LXC host. It is similar to a chroot, but offers much more isolation.
 
 ## Contents
 
@@ -27,7 +27,7 @@
 
 ### Required software
 
-Install [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Install the [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) packages.
 
 Verify that the running kernel is properly configured to run a container:
 
@@ -36,7 +36,7 @@ $ lxc-checkconfig
 
 ```
 
-Due to security concerns, the default Arch kernel does NOT ship with the ability to run containers as an unprivileged user; therefore, it is normal to see a **missing** status for "User namespaces" when running the check. See [FS#36969](https://bugs.archlinux.org/task/36969) for this feature request.
+Due to security concerns, the default Arch kernel does **not** ship with the ability to run containers as an unprivileged user; therefore, it is normal to see a **missing** status for "User namespaces" when running the check. See [FS#36969](https://bugs.archlinux.org/task/36969) for this feature request.
 
 ### Host Network Configuration
 
@@ -44,7 +44,7 @@ LXCs support different virtual network types. A bridge device on the host is req
 
 #### Example for a wired network
 
-[netctl](https://www.archlinux.org/packages/?name=netctl) is available from the [official repositories](/index.php/Official_repositories "Official repositories"). A bridge template can be found in `/etc/netctl/examples` which needs to be edited to match the host network hardware specs and IP ranges of the host network. Below are two example bridge configs, one using a dhcp setup and the other using a static IP setup.
+This example uses [netctl](/index.php/Netctl "Netctl"): a bridge template can be found in `/etc/netctl/examples` which needs to be edited to match the host network hardware specs and IP ranges of the host network. Below are two example bridge configs, one using a dhcp setup and the other using a static IP setup.
 
  `/etc/netctl/lxcbridge` 
 ```
@@ -103,8 +103,8 @@ The remaining steps are similar, except for one thing: for the container, the ga
 
 Select a template from `/usr/share/lxc/templates` that matches the target distro to containerize. Users wishing to containerize non-Arch distros will need additional packages on the host depending on the target distro:
 
-*   Debian-based: [debootstrap](https://aur.archlinux.org/packages/debootstrap/) from [AUR](/index.php/AUR "AUR").
-*   Fedora-based: [yum](https://aur.archlinux.org/packages/yum/) from [AUR](/index.php/AUR "AUR").
+*   Debian-based: [debootstrap](https://aur.archlinux.org/packages/debootstrap/)
+*   Fedora-based: [yum](https://aur.archlinux.org/packages/yum/)
 
 Run `lxc-create` to create the container, which installs the root filesystem of the LXC to `/var/lib/lxc/CONTAINER_NAME/rootfs` by default. Example creating an Arch Linux LXC named "playtime":
 

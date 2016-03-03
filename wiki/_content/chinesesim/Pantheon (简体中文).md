@@ -1,8 +1,8 @@
-[Pantheon](http://elementaryos.org/) is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and Mac OS X.
+[Pantheon](http://elementaryos.org/) 是linux发行版 elementary os 的默认桌面环境。由开发者使用vala语言和gtk3工具包编写完成，高效并且易于使用。用户界面上，与GNOME-shell和Mac OS X多有相似之处。
 
 ## Contents
 
-*   [1 Installation](#Installation)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
     *   [1.1 Additional Info](#Additional_Info)
         *   [1.1.1 Packages based on older evolution-data-server](#Packages_based_on_older_evolution-data-server)
 *   [2 Launching Pantheon](#Launching_Pantheon)
@@ -29,9 +29,9 @@
     *   [5.4 I do not have any mouse cursor](#I_do_not_have_any_mouse_cursor)
     *   [5.5 Wingpanel is empty except for Applications](#Wingpanel_is_empty_except_for_Applications)
 
-## Installation
+## 安装
 
-Pantheon is split into several packages which are available in an unofficial repository which is daily updated with recent changes from upstream. To use the repository add the following lines at the top of your sources in `/etc/pacman.conf`:
+Pantheon桌面环境目前不由archlinux官方维护，要在archlinux安装使用Pantheon桌面环境可以向系统添加三方维护的软件源，并从该软件源安装相关软件包，将以下代码添加到软件源列表（需要管理员权限） `/etc/pacman.conf`:（每日构建版本）
 
 ```
 [pantheon]
@@ -40,21 +40,21 @@ Server = http://pkgbuild.com/~alucryd/$repo/$arch
 
 ```
 
-**Note:** All Pantheon related PKGBUILDs can be found in [Alucryd's GitHub repository](https://github.com/alucryd/aur-alucryd/tree/master/pantheon).
+**提示:** 对这些软件包的编译脚本感兴趣的可以访问[Alucryd's GitHub repository](https://github.com/alucryd/aur-alucryd/tree/master/pantheon).
 
-Alternatively, all packages provided by the repository are also available in the [AUR](/index.php/AUR "AUR") for those who prefer to build the packages from source.
+当然，如果喜欢也可以选择自己编译这些软件包，相关的软件包源码都可以直接从 [AUR](/index.php/AUR "AUR") 系统找到.
 
-To get a minimal desktop interface, you may start by installing [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/). This will pull the following core components:
+如果只是向体验基础的Pantheon用户界面.可以安装[pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)，这将自动安装以下软件包：
 
-*   [cerbere-bzr](https://aur.archlinux.org/packages/cerbere-bzr/): Watchdog service to keep core Pantheon apps running
-*   [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/): Window Manager
-*   [wingpanel-bzr](https://aur.archlinux.org/packages/wingpanel-bzr/): Top panel
-*   [slingshot-launcher-bzr](https://aur.archlinux.org/packages/slingshot-launcher-bzr/): Application launcher
-*   [plank-bzr](https://aur.archlinux.org/packages/plank-bzr/): Dock
+*   [cerbere-bzr](https://aur.archlinux.org/packages/cerbere-bzr/): 进程守护程序
+*   [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/): 窗口管理器
+*   [wingpanel-bzr](https://aur.archlinux.org/packages/wingpanel-bzr/): 顶部面板组件
+*   [slingshot-launcher-bzr](https://aur.archlinux.org/packages/slingshot-launcher-bzr/): 顶部面板应用程序菜单
+*   [plank-bzr](https://aur.archlinux.org/packages/plank-bzr/): 地步Dock程序启动器
 
-However,it is recommended to install the following packages to get a fully working Pantheon Shell:
+当然，要获取更完美的Pantheon桌面体验，还请同时安装以下软件包：
 
-**Note:** Problems can occur when using (non)-mixed bzr packages! You can install the latest release, by adding -bzr to its install package-name.
+**提示:** 请确保系统安装的以下程序包都是带-bzr的版本，已避免可能导致的错误。
 
 *   [audience-bzr](https://aur.archlinux.org/packages/audience-bzr/): Video player
 *   [contractor-bzr](https://aur.archlinux.org/packages/contractor-bzr/): Service for sharing data between apps
@@ -184,7 +184,7 @@ OnlyShowIn=Unity;XFCE;GNOME;Pantheon;
 
 *   [indicator-session-bzr](https://aur.archlinux.org/packages/indicator-session-bzr/)
 
-This version of indicator-session relies on dbus methods native to Unity for most of its fuctions; it can be made to work by patching out the use of Unity dialogs, such as in [indicator-session-pantheon-bzr](https://github.com/quequotion/pantheon-bzr-qq/tree/master/REDUNDANT/indicator-session-pantheon-bzr)
+This version of indicator-session relies on dbus methods native to Unity for most of it's fuctions; it can be made to work by patching out the use of Unity dialogs, such as in [indicator-session-pantheon-bzr](https://github.com/quequotion/pantheon-bzr-qq/tree/master/REDUNDANT/indicator-session-pantheon-bzr)
 
 *   [indicator-session](https://aur.archlinux.org/packages/indicator-session/)
 

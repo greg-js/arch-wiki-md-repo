@@ -231,7 +231,7 @@ The disk layout in this example is:
 ```
 +-----------------------------------------------------------------------+ +----------------+
 | Logical volume1       | Logical volume2       | Logical volume3       | |                |
-|/dev/MyStorage/swapvol |/dev/MyStorage/rootvol |/dev/MyStorage/homevol | | Boot partition |
+|/dev/mapper/MyVol-swap |/dev/mapper/MyVol-root |/dev/mapper/MyVol-home | | Boot partition |
 |_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _| | (may be on     |
 |                                                                       | | other device)  |
 |                        LUKS encrypted partition                       | |                |
@@ -284,38 +284,38 @@ Create a physical volume on top of the opened LUKS container:
 
 ```
 
-Create the volume group named `MyStorage`, adding the previously created physical volume to it:
+Create the volume group named `MyVol` (or whatever you want), adding the previously created physical volume to it:
 
 ```
-# vgcreate MyStorage /dev/mapper/lvm
+# vgcreate MyVol /dev/mapper/lvm
 
 ```
 
 Create all your logical volumes on the volume group:
 
 ```
-# lvcreate -L 8G MyStorage -n swapvol
-# lvcreate -L 15G MyStorage -n rootvol
-# lvcreate -l 100%FREE MyStorage -n homevol
+# lvcreate -L 8G MyVol -n swap
+# lvcreate -L 15G MyVol -n root
+# lvcreate -l 100%FREE MyVol -n home
 
 ```
 
 Format your filesystems on each logical volume:
 
 ```
-# mkfs.ext4 /dev/mapper/MyStorage-rootvol
-# mkfs.ext4 /dev/mapper/MyStorage-homevol
-# mkswap /dev/mapper/MyStorage-swapvol
+# mkfs.ext4 /dev/mapper/MyVol-root
+# mkfs.ext4 /dev/mapper/MyVol-home
+# mkswap /dev/mapper/MyVol-swap
 
 ```
 
 Mount your filesystems:
 
 ```
-# mount /dev/MyStorage/rootvol /mnt
+# mount /dev/mapper/MyVol-root /mnt
 # mkdir /mnt/home
-# mount /dev/MyStorage/homevol /mnt/home
-# swapon /dev/MyStorage/swapvol
+# mount /dev/mapper/MyVol-home /mnt/home
+# swapon /dev/mapper/MyVol-swapv
 
 ```
 
@@ -344,7 +344,7 @@ Mount the partition to `/mnt/boot`:
 
 ```
 
-Afterwards continue with the installation procedure up to the mkinitcpio step.
+Afterwards continue with the installation procedure up to the `mkinitcpio` step.
 
 ### Configuring mkinitcpio
 
@@ -360,13 +360,13 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to unlock the encrypted root partition at boot, the following kernel parameters need to be set by the boot loader:
 
 ```
-cryptdevice=UUID=*<device-UUID>*:MyStorage root=/dev/mapper/MyStorage-rootvol
+cryptdevice=UUID=*device-UUID*:lvm root=/dev/mapper/MyVol-root
 
 ```
 
-See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
-
 The `*<device-UUID>*` refers to the UUID of `/dev/sdaX`, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
+
+See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
 
 ## LUKS on LVM
 
@@ -771,7 +771,7 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to unlock the encrypted root partition at boot, the following kernel parameters need to be set by the boot loader:
 
 ```
-cryptdevice=UUID=*<device-UUID>*:MyStorage root=/dev/mapper/MyStorage-rootvol
+cryptdevice=UUID=*<device-UUID>*:lvm root=/dev/mapper/MyStorage-rootvol
 
 ```
 

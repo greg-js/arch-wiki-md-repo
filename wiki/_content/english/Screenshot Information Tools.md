@@ -7,7 +7,7 @@ Here is a compiled list of the community-made screenshot information tools. Thes
 *   [3 Archey](#Archey)
 *   [4 archey3 (Python3)](#archey3_.28Python3.29)
 *   [5 Screenfo](#Screenfo)
-*   [6 Fetch](#Fetch)
+*   [6 Neofetch](#Neofetch)
 
 ## envee
 
@@ -41,9 +41,9 @@ Here is a compiled list of the community-made screenshot information tools. Thes
 *   More Information: [screenfo](https://bbs.archlinux.org/viewtopic.php?pid=816258#p816258)
 *   AUR: [screenfo-git](https://aur.archlinux.org/packages/screenfo-git/)
 
-## Fetch
+## Neofetch
 
 *   Creator: [dylan](https://github.com/dylanaraps)
 *   Language: Bash
-*   More Information: [fetch](https://github.com/dylanaraps/fetch)
-*   AUR: [fetch-git](https://aur.archlinux.org/packages/fetch-git/)
+*   More Information: [neofetch](https://github.com/dylanaraps/neofetch)
+*   AUR: [neofetch-git](https://aur.archlinux.org/packages/neofetch-git/)

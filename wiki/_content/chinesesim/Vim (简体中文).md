@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Vim](/index.php/Vim "Vim") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-24，点击[这里](https://wiki.archlinux.org/index.php?title=Vim&diff=0&oldid=420839)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Vim](/index.php/Vim "Vim") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-3-3，点击[这里](https://wiki.archlinux.org/index.php?title=Vim&diff=0&oldid=423741)可以查看翻译后英文页面的改动。
 
 [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) "wikipedia:Vim (text editor)")是[终端](https://en.wikipedia.org/wiki/Computer_terminal#Text_terminals "wikipedia:Computer terminal")文本编辑器[Vi](https://en.wikipedia.org/wiki/Vi "wikipedia:Vi")的加强版本,加入了更多特性来帮助编辑源代码。Vim的一部分增强功能包括文件比较（vimdiff），语法高亮，全面的帮助系统，本地脚本（vimscript），和便于选择的可视化模式。
 
@@ -75,6 +75,15 @@ runtime! vimrc_example.vim
 :syntax on
 
 ```
+
+**注意**当在archlinux文字模式下使用vim时，你还需要运行
+
+```
+:syntax=[programming language]
+
+```
+
+其中[programming language]是你想要高亮语言，例如php, python等。
 
 ### 自动换行显示
 

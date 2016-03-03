@@ -1003,5 +1003,6 @@ You can use the following website to get your device's coordinates along with a 
 46.518568, 6.566716 "dopsi" # Lausanne, VD, Switzerland
 40.915535, 17.021062 "TheSillex" # Turi, BA, Italy
 20.624184, -103.352554 "arknix" # Guadalajara, Jalisco, Mexico
+52.5134438, 13.4263034 "XenGi" # Berlin, Germany
 
 ```

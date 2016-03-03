@@ -1029,7 +1029,7 @@ If you want to boot from a virtio disk, the initial ramdisk must contain the nec
 
 Virtio disks are recognized with the prefix `**v**` (e.g. `**v**da`, `**v**db`, etc.); therefore, changes must be made in at least `/etc/fstab` and `/boot/grub/grub.cfg` when booting from a virtio disk.
 
-**Tip:** When referencing to disks by [UUID](/index.php/UUID "UUID") in both `/etc/fstab` and bootloader, nothing has to be done.
+**Tip:** When referencing disks by [UUID](/index.php/UUID "UUID") in both `/etc/fstab` and bootloader, nothing has to be done.
 
 Further information on paravirtualization with KVM can be found [here](http://www.linux-kvm.org/page/Boot_from_virtio_block_device).
 

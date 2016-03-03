@@ -4,13 +4,6 @@ From [GNU's Tar Page](http://www.gnu.org/software/tar/):
 
 As an early Unix compression format, `tar` files (known as **tarballs**) are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") `Tar` program by default.
 
-## Contents
-
-*   [1 Usage](#Usage)
-    *   [1.1 Creating an archive and updating](#Creating_an_archive_and_updating)
-    *   [1.2 Backup with parallel compression](#Backup_with_parallel_compression)
-*   [2 See also](#See_also)
-
 ## Usage
 
 For `tar` archives, `tar` by default will extract the file according to its extension:
@@ -33,23 +26,6 @@ Forcing a given format:
 `xz -cd file.xz | tar xvf -` |
 
 The construction of some of these `tar` arguments may be considered legacy, but they are still useful when performing specific operations. The **Compatibility** section of `tar`'s [man page](/index.php/Man_page "Man page") shows how they work in detail.
-
-### Creating an archive and updating
-
-Creating an initial archive and updating it proves useful for updating web-domains. First, create an archive in the present working directory. Note that `tar` will not include `./archive.tar` into the new tarball if `./archive.tar` already exists.
-
-```
- $ tar -cf ./archive.tar .
-
-```
-
-When updating the archive, keep in mind that `tar` will only update files listed in the archive.
-
-```
- $ tar --list -f ./archive.tar
- $ tar -uf ./archive.tar
-
-```
 
 ### Backup with parallel compression
 

@@ -261,7 +261,7 @@ export LESS_TERMCAP_us=$'\E[1;32m'
 
 Change the values ([ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code")) as you like.
 
-**Note:** The `LESS_TERMCAL_*xx*` variables is currently undocumented in less(1), for a detailed explanation on these sequences, see this [anwser](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
+**Note:** The `LESS_TERMCAL_*xx*` variables is currently undocumented in less(1), for a detailed explanation on these sequences, see this [answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
 
 ### Colored output through wrappers
 

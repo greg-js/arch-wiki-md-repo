@@ -1,4 +1,4 @@
-The first step when setting up OpenVPN is to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure"). The PKI consists of:
+The first step when setting up [OpenVPN](/index.php/OpenVPN "OpenVPN") is to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure"). The PKI consists of:
 
 *   A public master [Certificate Authority (CA)](https://en.wikipedia.org/wiki/Certificate_Authority "wikipedia:Certificate Authority") certificate and a private key.
 *   A separate public certificate and private key pair (hereafter referred to as a certificate) for each server and each client.
@@ -13,13 +13,23 @@ In this article the needed certificates are created by root in root's home direc
 
 **Warning:** Make sure that the generated files are backed up, especially the ca.key and ca.crt files, since if lost you will not be able to create any new, nor revoke any compromised certificates, thus requiring the generation of a new [Certificate Authority (CA)](https://en.wikipedia.org/wiki/Certificate_Authority "wikipedia:Certificate Authority") certificate, invalidating the entire PKI infrastructure.
 
+## Contents
+
+*   [1 Installing the easy-rsa scripts](#Installing_the_easy-rsa_scripts)
+*   [2 Creating certificates on the server](#Creating_certificates_on_the_server)
+*   [3 Creating certificates on the client](#Creating_certificates_on_the_client)
+    *   [3.1 Creating a certificate signing request](#Creating_a_certificate_signing_request)
+    *   [3.2 Signing a certificate signing request](#Signing_a_certificate_signing_request)
+*   [4 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
+*   [5 See Also](#See_Also)
+
 ### Installing the easy-rsa scripts
 
 Install the scripts by doing the following:
 
  `# pacman -S easy-rsa`  `# cp -r /usr/share/easy-rsa /root` 
 
-### Creating certificates
+### Creating certificates on the server
 
 Change to the directory where you installed the scripts.
 
@@ -192,7 +202,7 @@ Data Base Updated
 
 ```
 
-The build-dh script generates the [Diffie-Hellman parameters](https://web.archive.org/web/20130701090246/https://www.rsa.com/rsalabs/node.asp?id=2248) .pem file needed by the server.
+The build-dh script generates the [Diffie-Hellman parameters](https://web.archive.org/web/20130701090246/https://www.rsa.com/rsalabs/node.asp?id=2248) .pem file needed by the server. This command will take some time, possibly around a minute or two.
 
 **Note:** It would be better to generate a new one for each server, but you can use the same one if you want to.
  `# ./build-dh` 
@@ -206,6 +216,8 @@ This is going to take a long time
 ............+...............+...................................................
 ..................................................................++*++*
 ```
+
+To generate the client(s) key(s), one can either do so on the server side directly using the `./build-key` script, or generate the key entirely on the client side and then ask the CA authority to sign it. The first method is simpler and quicker, but the second method doesn't require the client private key to leave its machine and is therefore slightly more secure. (see [#Creating certificates on the client](#Creating_certificates_on_the_client) for an outline of the second method)
 
 The build-key script `# ./build-key <client name>` generates a client certificate. Make sure that the client name (Common Name when running the script) is unique.
 
@@ -257,6 +269,8 @@ Data Base Updated
 
 ```
 
+This generates a client certificate (`bugs.crt`) and a client private key (`bugs.key`) which need to be transferred to the client through a secure channel.
+
 Generate a secret [Hash-based Message Authentication Code (HMAC)](https://en.wikipedia.org/wiki/HMAC "wikipedia:HMAC") by running: `# openvpn --genkey --secret /root/easy-rsa/keys/ta.key` (This is no typo -- the command generates a ta.key file)
 
 This will be used to add an additional HMAC signature to all SSL/TLS handshake packets. In addition any UDP packet not having the correct HMAC signature will be immediately dropped, protecting against:
@@ -270,8 +284,37 @@ All the created keys and certificates have been stored in /root/easy-rsa/keys. I
 
 **Warning:** This will delete any previously generated certificates stored in /root/easy-rsa/keys, including the [Certificate Authority (CA)](https://en.wikipedia.org/wiki/Certificate_Authority "wikipedia:Certificate Authority") certificate.
 
+### Creating certificates on the client
+
+It might be desirable for the clients to generate their private keys on their own machine, removing the need to trust that the CA operator not keep the client's private key stored remotely (or other nefarious intentions). To do so, the client needs to create the private key locally, and create a [Signing Request](https://en.wikipedia.org/wiki/Certificate_signing_request%7CCertificate) (which is a `.csr` file) to the key-signing machine, run by the CA. The operator will then sign the request and return a signed certificate (a `.crt` file) which is then transferred back to the client.
+
+#### Creating a certificate signing request
+
+An outline of the required steps follows, assuming "bugs" is the client name:
+
+1.  Transfer the `ca.crt` file from the CA to the client. The `ca.crt` file is public information, and thus this transfer can be done over an insecure channel. The file should be stored in `/root/easy-rsa/keys/ca.crt`
+2.  Check that the `ca.crt` file has not been tampered with by either:
+    1.  Having the file be signed by the CA and verified by the client using the CA's public key. Note that this is referring to standard [GnuPG](/index.php/GnuPG#Signatures "GnuPG")-style signature verification: `gpg --verify doc.sig`
+    2.  Checking the hash of the file (e.g. using `sha1sum ca.crt`) and verifying that it matches the expected hash, provided you trust the "expected hash".
+    3.  Simply transferring ca.crt over a trusted channel.
+    4.  Some other mechanism that the reader sees fit.
+3.  Run `./build-req bugs` which is analogous to running `./build-key bugs` in the server section above. The same warning, that the Common Name should be unique, still stands.
+4.  Leave all password field blank. If you'd like to protect your private key with a password, use `./build-req-pass` instead. Note that this will require you to input the password whenever the key needs to be unlocked.
+5.  You now have the `bugs.csr` and `bugs.key` files. Send your certificate signing request to the CA, e.g. by emailing your `bugs.csr` file. Keep your `bugs.key` file secret, this is your private key.
+6.  Wait until you receive your signed certificate from the CA, which will be a file named `bugs.crt`.
+
+#### Signing a certificate signing request
+
+To sign a certificate signing request, the CA simply needs to run `./sign-req bugs` after placing `bugs.csr` into `/root/easy-rsa/keys/bugs.csr`. The CA can then transfer the resulting `bugs.crt` file back the client using an insecure channel (e.g. via email)
+
+**Note:** When running the command, the error `chmod: cannot access `bugs.key': No such file or directory` will show up. This is expected, and is safe to ignore [[1]](https://forums.openvpn.net/topic13418.html)
+
 ### Converting certificates to encrypted .p12 format
 
 Some software (such as Android) will only read VPN certificates that are stored in a password-encrypted .p12 file. These can be generated with the following command:
 
- `# openssl pkcs12 -export -inkey keys/bugs.key -in keys/bugs.crt -certfile keys/ca.crt -out keys/bugs.p12`
+ `# openssl pkcs12 -export -inkey keys/bugs.key -in keys/bugs.crt -certfile keys/ca.crt -out keys/bugs.p12` 
+
+## See Also
+
+*   [Official EasyRSA instructions](https://openvpn.net/index.php/open-source/documentation/miscellaneous/rsa-key-management.html)

@@ -58,9 +58,10 @@ $ mkdir ~/.trash
 
 ### Browse through images in directory after opening a single file
 
-Place [this script](http://git.savannah.gnu.org/cgit/ranger.git/tree/doc/examples/rifle_sxiv.sh) in `/usr/local/bin` and call it like this:
+Place [this script](http://git.savannah.gnu.org/cgit/ranger.git/tree/examples/rifle_sxiv.sh)
 
 ```
+in `/usr/local/bin` and call it like this:
 $ *scriptname* a_single_image.jpg
 
 ```

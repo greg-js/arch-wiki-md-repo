@@ -4,11 +4,9 @@ From the project [home page](https://tox.chat/):
 
 ## Installation
 
-Tox core and Tox clients are developed separately. You need to install [toxcore](https://www.archlinux.org/packages/?name=toxcore) and any of [Tox clients](https://wiki.tox.chat/clients):
+Install one of many [Tox clients](https://wiki.tox.chat/clients). [toxcore](https://www.archlinux.org/packages/?name=toxcore) is installed as a dependency.
 
-*   **µTox (uTox)** — Lightweight Tox client
-
-	[https://github.com/notsecure/uTox](https://github.com/notsecure/uTox) || [utox-git](https://aur.archlinux.org/packages/utox-git/)
+Currently two clients are available in the official repositories:
 
 *   **qTox** — Powerful Tox client written in QT
 
@@ -18,21 +16,35 @@ Tox core and Tox clients are developed separately. You need to install [toxcore]
 
 	[https://wiki.tox.chat/clients/toxic](https://wiki.tox.chat/clients/toxic) || [toxic](https://www.archlinux.org/packages/?name=toxic)
 
-*   **Ratox** — FIFO based client
-
-	[http://ratox.2f30.org/](http://ratox.2f30.org/) || [ratox-git](https://aur.archlinux.org/packages/ratox-git/)
+Alternatively, select a client from the AUR:
 
 *   **gTox** — GTK3-Style Tox-Client
 
 	[https://github.com/KoKuToru/gTox/](https://github.com/KoKuToru/gTox/) || [gtox-git](https://aur.archlinux.org/packages/gtox-git/)
 
-*   **Blight** — Cross-platform graphical user interface for Tox
+*   **µTox (uTox)** — Lightweight Tox client
 
-	|| Not in AUR
+	[https://github.com/GrayHatter/utox/](https://github.com/GrayHatter/utox/) || [utox-git](https://aur.archlinux.org/packages/utox-git/)
+
+*   **Ratox** — FIFO based client
+
+	[http://ratox.2f30.org/](http://ratox.2f30.org/) || [ratox-git](https://aur.archlinux.org/packages/ratox-git/)
+
+*   **qTox** — Powerful Tox client written in QT
+
+	[https://wiki.tox.chat/clients/qtox](https://wiki.tox.chat/clients/qtox) || [qtox-git](https://aur.archlinux.org/packages/qtox-git/)
+
+*   **Ricin** — Lightweight and fully-Hackable Tox client powered by Vala & Gtk3
+
+	[https://ricin.im/](https://ricin.im/) || [ricin-git](https://aur.archlinux.org/packages/ricin-git/)
 
 *   **Tox Pidgin Protocol Plugin** — a plugin for Pidgin which allows the use of the Tox protocol within Pidgin
 
 	[http://tox.dhs.org/](http://tox.dhs.org/) || [tox-prpl-git](https://aur.archlinux.org/packages/tox-prpl-git/)
+
+*   **Toxic** — ncurses-based CLI
+
+	[https://wiki.tox.chat/clients/toxic](https://wiki.tox.chat/clients/toxic) || [toxic-git](https://aur.archlinux.org/packages/toxic-git/)
 
 ## Run a node
 

@@ -2,7 +2,7 @@
 
 	"*Raspberry Pi - це одноплатний комп'ютер, розроблений британським фондом Raspberry Pi Foundation. Його головне призначення — стимулювати навчання базовим комп'ютерним наукам у школах.*"
 
-Оригінальні моделі, випущені в 2012, базувалися на процесорі Broadcom SoC BCM2835 ([ARM11 architecture](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")). Модель Raspberry Pi 2, випущена в 2015, продавалася з процесором BCM2836 SoC (4-ядерному [ARM Cortex-A7 architecture](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")).
+Оригінальні моделі, випущені в 2012, базувалися на процесорі Broadcom SoC BCM2835 ([ARM11 architecture](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")). Модель Raspberry Pi 2, випущена в 2015, продавалася з процесором BCM2836 SoC (4-ядерному [ARM Cortex-A7 architecture](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")). В лютому 2016 випущено модель Pi 3, яка містить BCM2837 SoC (quad-core [ARM Cortex-A53 architectue](https://en.wikipedia.org/wiki/ARM_Cortex-A53 "wikipedia:ARM Cortex-A53")), вбудований модуль WiFi і Bluetooth.
 
 ## Contents
 
@@ -45,6 +45,7 @@ Raspberry Pi базується на ARM, а тому потребує вико�
 
 *   ARMv6 (BCM2835): Raspberry Pi Model A, A+, B, B+, Zero
 *   ARMv7 (BCM2836): Raspberry Pi 2 (базується на моделі B+)
+*   ARMv8 (BCM2837): Raspberry Pi 3
 
 ## Продуктивність SD-карти
 

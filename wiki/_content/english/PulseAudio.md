@@ -86,7 +86,7 @@ PulseAudio runs as a server daemon that can run either system-wide or on per-use
 
 *   It is strongly suggested not to edit system wide configuration files, but rather edit user ones. Create the `~/.config/pulse` directory, then copy the system configuration files into it and edit according to your need.
 *   Make sure you keep user configuration in sync with changes to the packaged files in `/etc/pulse/`. Otherwise, PulseAudio may refuse to start due to configuration errors.
-*   There is no need to add your user to audio group, as it uses [udev](/index.php/Udev "Udev") and *logind* to dynamically give access to the currently "active" user
+*   There is usually no need to add your user to the `audio` group, as PulseAudio uses [udev](/index.php/Udev "Udev") and *logind* to give access dynamically to the currently "active" user. Exceptions would include running the machine headless so that there is no currently "active" user.
 
 #### daemon.conf
 
