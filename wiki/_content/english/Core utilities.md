@@ -5,25 +5,17 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [1 Basic commands](#Basic_commands)
 *   [2 cat](#cat)
 *   [3 dd](#dd)
-    *   [3.1 dd spin-offs](#dd_spin-offs)
 *   [4 grep](#grep)
-    *   [4.1 Colored output](#Colored_output)
-    *   [4.2 Standard error](#Standard_error)
+    *   [4.1 Standard error](#Standard_error)
 *   [5 find](#find)
 *   [6 locate](#locate)
-    *   [6.1 Keeping the database up-to-date](#Keeping_the_database_up-to-date)
 *   [7 iconv](#iconv)
     *   [7.1 Convert a file in place](#Convert_a_file_in_place)
 *   [8 ip](#ip)
 *   [9 less](#less)
-    *   [9.1 Colored output through environment variables](#Colored_output_through_environment_variables)
-    *   [9.2 Colored output through wrappers](#Colored_output_through_wrappers)
-    *   [9.3 Vim as alternative pager](#Vim_as_alternative_pager)
-    *   [9.4 Colored output when reading from stdin](#Colored_output_when_reading_from_stdin)
 *   [10 ls](#ls)
     *   [10.1 Long format](#Long_format)
-    *   [10.2 Colored output](#Colored_output_2)
-    *   [10.3 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
+    *   [10.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
 *   [11 mkdir](#mkdir)
 *   [12 mv](#mv)
 *   [13 od](#od)
@@ -31,9 +23,10 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [15 rm](#rm)
 *   [16 sed](#sed)
 *   [17 seq](#seq)
-*   [18 which](#which)
-*   [19 wipefs](#wipefs)
-*   [20 See also](#See_also)
+*   [18 tar](#tar)
+*   [19 which](#which)
+*   [20 wipefs](#wipefs)
+*   [21 See also](#See_also)
 
 ## Basic commands
 
@@ -99,18 +92,6 @@ By default, *dd* outputs nothing until the task has finished. To monitor the pro
 
 **Note:** *cp* does the same as *dd* without any operands but is not designed for more versatile disk wiping procedures.
 
-### dd spin-offs
-
-Other *dd*-like programs feature periodical status output, e.g. a simple progress bar.
-
-	dcfldd 
-
-	[dcfldd](https://www.archlinux.org/packages/?name=dcfldd) is an enhanced version of dd with features useful for forensics and security. It accepts most of dd's parameters and includes status output. The last stable version of dcfldd was released on December 19, 2006.
-
-	ddrescue 
-
-	GNU [ddrescue](https://www.archlinux.org/packages/?name=ddrescue) is a data recovery tool. It is capable of ignoring read errors, which is a useless feature for disk wiping in almost any case. See the [official manual](http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) for details.
-
 ## grep
 
 [grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (from [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed")'s *g/re/p*, *global/regular expression/print*) is a command line text search utility originally written for Unix. The *grep* command searches files or standard input globally for lines matching a given regular expression, and prints them to the program's standard output.
@@ -118,25 +99,6 @@ Other *dd*-like programs feature periodical status output, e.g. a simple progres
 *   Remember that *grep* handles files, so a construct like `cat *file* | grep *pattern*` is replaceable with `grep *pattern* *file*`
 
 *   *grep* alternatives optimized for VCS source code do exist, such as [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) and [ack](https://www.archlinux.org/packages/?name=ack).
-
-### Colored output
-
-`grep`'s color output can be helpful for learning [regexp](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") and additional `grep` functionality.
-
-To enable *grep* coloring write the following entry to the shell configuration file (e.g. if using [Bash](/index.php/Bash "Bash")):
-
- `~/.bashrc`  `alias grep='grep --color=auto'` 
-
-To include file line numbers in the output, add the option `-n` to the line.
-
-The environment variable `GREP_COLOR` can be used to define the default highlight color (the default is red). To change the color find the [ANSI escape sequence](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html) for the color liked and add it:
-
-```
-export GREP_COLOR="1;32"
-
-```
-
-`GREP_COLORS` may be used to define specific searches.
 
 ### Standard error
 
@@ -166,19 +128,13 @@ Instead, find takes a set of directories and matches each file under them agains
 
 ## locate
 
-`locate` is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by `locate`. This problem is minimised by regular, typically scheduled use of the `updatedb` command, which (as the name suggests) updates the database.
+Install the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. When `mlocate` is installed, a script is automatically scheduled to run daily via `systemd`, to update the database. You can also manually run `updatedb` as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so `locate` may not discover files on external devices. See `man updatedb.conf` for details.
 
-**Note:** Although in other distros `locate` and `updatedb` are in the [findutils](https://www.archlinux.org/packages/?name=findutils) package, they are no longer present in Arch's package. To use it, install the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. mlocate is a newer implementation of the tool, but is used in exactly the same way.
+`locate` is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by `locate`. This problem is minimised by regular, typically scheduled use of the `updatedb` command, which (as the name suggests) updates the database.
 
 Before `locate` can be used, the database will need to be created. To do this, simply run `updatedb` as root.
 
 See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/)
-
-### Keeping the database up-to-date
-
-When `mlocate` is installed, a script is automatically scheduled to run daily via `systemd`, to update the database. You can also manually run `updatedb` as root at any time.
-
-To save time, the `updatedb` can be (and by default is) configured to ignore certain filesystems and paths by editing `/etc/updatedb.conf`. `man updatedb.conf` will tell you about the semantics of this file. It is worth noting that among the paths ignored in the default configuration (i.e. those in the "PRUNEPATHS" string) are `/media` and `/mnt`, so `locate` may not discover files on external devices.
 
 ## iconv
 
@@ -243,131 +199,6 @@ The [Network configuration](/index.php/Network_configuration "Network configurat
 
 See [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") for alternatives.
 
-### Colored output through environment variables
-
-Add the following lines to your shell configuration file:
-
- `~/.bashrc` 
-```
-export LESS=-R
-export LESS_TERMCAP_mb=$'\E[1;31m'
-export LESS_TERMCAP_md=$'\E[1;36m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[1;32m'
-```
-
-Change the values ([ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code")) as you like.
-
-**Note:** The `LESS_TERMCAL_*xx*` variables is currently undocumented in less(1), for a detailed explanation on these sequences, see this [answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
-
-### Colored output through wrappers
-
-You can enable code syntax coloring in *less*. First, [install](/index.php/Install "Install") [source-highlight](https://www.archlinux.org/packages/?name=source-highlight), then add these lines to your shell configuration file:
-
- `~/.bashrc` 
-```
-export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
-export LESS='-R '
-
-```
-
-Frequent users of the command line interface might want to install [lesspipe](https://www.archlinux.org/packages/?name=lesspipe).
-
-Users may now list the compressed files inside of an archive using their pager:
-
- `$ less *compressed_file*.tar.gz` 
-```
-==> use tar_file:contained_file to view a file in the archive
--rw------- *username*/*group*  695 2008-01-04 19:24 *compressed_file*/*content1*
--rw------- *username*/*group*   43 2007-11-07 11:17 *compressed_file*/*content2*
-*compressed_file*.tar.gz (END)
-```
-
-*lesspipe* also grants *less* the ability of interfacing with files other than archives, serving as an alternative for the specific command associated for that file-type (such as viewing HTML via [python-html2text](https://www.archlinux.org/packages/?name=python-html2text)).
-
-Re-login after installing *lesspipe* in order to activate it, or source `/etc/profile.d/lesspipe.sh`.
-
-### Vim as alternative pager
-
-[Vim](/index.php/Vim "Vim") (*visual editor improved*) has a script to view the content of text files, compressed files, binaries, directories. Add the following line to your shell configuration file to use it as a pager:
-
- `~/.bashrc`  `alias less='/usr/share/vim/vim74/macros/less.sh'` 
-
-There is also an alternative to *less.sh* macro, which may work as the `PAGER` environment variable. Install [vimpager](https://www.archlinux.org/packages/?name=vimpager) and add the following to your shell configuration file:
-
- `~/.bashrc` 
-```
-export PAGER='vimpager'
-alias less=$PAGER
-```
-
-Now programs that use the `PAGER` environment variable, like [git](/index.php/Git "Git"), will use *vim* as pager.
-
-### Colored output when reading from stdin
-
-**Note:** It is recommended to add [#Colored output through environment variables](#Colored_output_through_environment_variables) to your `~/.bashrc` or `~/.zshrc`, as the below is based on `export LESS=R`
-
-When you run a command and pipe its [standard output](https://en.wikipedia.org/wiki/Standard_output "wikipedia:Standard output") (*stdout*) to *less* for a paged view (e.g. `pacman -Qe | less`), you may find that the output is no longer colored. This is usually because the program tries to detect if its *stdout* is an interactive terminal, in which case it prints colored text, and otherwise prints uncolored text. This is good behaviour when you want to redirect *stdout* to a file, e.g. `pacman -Qe > pkglst-backup.txt`, but less suited when you want to view output in `less`.
-
-Some programs provide an option to disable the interactive tty detection:
-
-```
-# dmesg --color=always | less
-
-```
-
-In case that the program does not provide any similar option, it is possible to trick the program into thinking its *stdout* is an interactive terminal with the following utilities:
-
-*   **stdoutisatty** — A small program which catches the `isatty` function call.
-
-	[https://github.com/lilydjwg/stdoutisatty](https://github.com/lilydjwg/stdoutisatty). || [stdoutisatty-git](https://aur.archlinux.org/packages/stdoutisatty-git/)
-
-	Example: `stdoutisatty *program* | less`
-
-*   **unbuffer** — A tclsh script comes with expect, it invokes desired program within a pty.
-
-	[http://expect.sourceforge.net/example/unbuffer.man.html](http://expect.sourceforge.net/example/unbuffer.man.html) || [expect](https://www.archlinux.org/packages/?name=expect)
-
-	Example: `unbuffer *program* | less`
-
-Alternatively, using [zpty](http://zsh.sourceforge.net/Doc/Release/Zsh-Modules.html#The-zsh_002fzpty-Module) module from [zsh](/index.php/Zsh "Zsh"): [[2]](http://lilydjwg.is-programmer.com/2011/6/29/using-zpty-module-of-zsh.27677.html)
-
- `~/.zshrc` 
-```
-zmodload zsh/zpty
-
-pty() {
-	zpty pty-${UID} ${1+$@}
-	if [[ ! -t 1 ]];then
-		setopt local_traps
-		trap '' INT
-	fi
-	zpty -r pty-${UID}
-	zpty -d pty-${UID}
-}
-
-ptyless() {
-	pty $@ | less
-}
-```
-
-Usage:
-
-```
-$ ptyless *program*
-
-```
-
-To pipe it to other pager (less in this example):
-
-```
-$ pty *program* | less
-
-```
-
 ## ls
 
 [ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") (*list*) is a command to list files in Unix and Unix-like operating systems.
@@ -408,37 +239,24 @@ Below, each file and subdirectory is represented by a line divided into 7 metada
 *   last modification timestamp;
 *   entity name.
 
-### Colored output
-
-Colored output can be enabled with a simple alias. File `~/.bashrc` should already have the following entry copied from `/etc/skel/.bashrc`:
-
-```
-alias ls='ls --color=auto'
-
-```
-
-The next step will further enhance the colored *ls* output; for example, broken (orphan) symlinks will start showing in a red hue. Add the following to your shell configuration file:
-
-```
-eval $(dircolors -b)
-
-```
-
 ### File names containing spaces enclosed in quotes
 
-By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` [environment variable](/index.php/Environment_variable "Environment variable") to `literal`. [[3]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
+By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` [environment variable](/index.php/Environment_variable "Environment variable") to `literal`. [[1]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
 
 ## mkdir
 
 [mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") (*make directory*) is a command to create directories.
 
-*   To create a directory and its whole hierarchy, the `-p` switch is used, otherwise an error is printed. As users are supposed to know what they want, `-p` switch may be used as a default:
+To create a directory and its whole hierarchy, the `-p` switch is used, otherwise an error is printed. As users are supposed to know what they want, `-p` switch may be used as a default:
 
-	 `alias mkdir='mkdir -p -v'` 
+```
+alias mkdir='mkdir -p -v
 
-	The `-v` switch make it verbose.
+```
 
-*   Changing mode of a just created directory using *chmod* is not necessary as the `-m` option lets you define the access permissions.
+The `-v` switch make it verbose.
+
+Changing mode of a just created directory using *chmod* is not necessary as the `-m` option lets you define the access permissions.
 
 **Tip:** If you just want a temporary directory, a better alternative may be [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file") (*make temporary*): `mktemp -p`.
 
@@ -446,11 +264,14 @@ By default, file and directory names that contain spaces are displayed surrounde
 
 [mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") (*move*) is a command to move and rename files and directories.
 
-*   It can be very dangerous so it is prudent to limit its scope:
+To limit potential damage caused by the command, use an alias:
 
-	 `alias mv=' timeout 8 mv -iv'` 
+```
+alias mv='timeout 8 mv -iv'
 
-	This alias suspends *mv* after eight seconds, asks confirmation to delete three or more files, lists the operations in progress and does not store itself in the shell history file if the shell is configured to ignore space starting commands.
+```
+
+This alias suspends *mv* after eight seconds, asks confirmation to delete three or more files, lists the operations in progress and does not store itself in the shell history file if the shell is configured to ignore space starting commands.
 
 ## od
 
@@ -478,15 +299,18 @@ Use of *strace* shows that `pv` is stopped with `SIGTTOU`.
 
 [rm](https://en.wikipedia.org/wiki/rm_(Unix) (*remove*) is a command to delete files and directories.
 
-*   It can be very dangerous, so it is prudent to limit its scope:
+To limit potential damage caused by the command, use an alias:
 
-	 `alias rm=' timeout 3 rm -Iv --one-file-system'` 
+```
+alias rm='timeout 3 rm -Iv --one-file-system'
 
-	This alias suspends *rm* after three seconds, asks confirmation to delete three or more files, lists the operations in progress, does not involve more than one file systems and does not store itself in the shell history file if the shell is configured to ignore space starting commands. Substitute `-I` with `-i` if you prefer to confirm even for one file.
+```
 
-	Zsh users may want to put `noglob` before `timeout` to avoid implicit expansions.
+This alias suspends *rm* after three seconds, asks confirmation to delete three or more files, lists the operations in progress, does not involve more than one file systems and does not store itself in the shell history file if the shell is configured to ignore space starting commands. Substitute `-I` with `-i` if you prefer to confirm even for one file.
 
-*   To remove directories known to be empty, use *rmdir* as it fails in case of files inside the target.
+Zsh users may want to put `noglob` before `timeout` to avoid implicit expansions.
+
+To remove directories known to be empty, use *rmdir* as it fails in case of files inside the target.
 
 ## sed
 
@@ -499,6 +323,31 @@ Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-lin
 ## seq
 
 **seq** (*sequence*) is a utility for generating a sequence of numbers. Shell built-in alternatives are available, so it is good practice to use them as explained on [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
+
+## tar
+
+As an early Unix compression format, `tar` files (known as **tarballs**) are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") `Tar` program by default.
+
+For `tar` archives, `tar` by default will extract the file according to its extension:
+
+```
+$ tar xvf file.EXTENSION
+
+```
+
+Forcing a given format:
+
+| File Type | Extraction Command |
+| `file.tar` | `tar xvf file.tar` |
+| `file.tgz` | `tar xvzf file.tgz` |
+| `file.tar.gz` | `tar xvzf file.tar.gz` |
+| `file.tar.bz` | `bzip -cd file.bz | tar xvf -` |
+| `file.tar.bz2` | `tar xvjf file.tar.bz2`
+`bzip2 -cd file.bz2 | tar xvf -` |
+| `file.tar.xz` | `tar xvJf file.tar.xz`
+`xz -cd file.xz | tar xvf -` |
+
+The construction of some of these `tar` arguments may be considered legacy, but they are still useful when performing specific operations. The **Compatibility** section of `tar`'s [man page](/index.php/Man_page "Man page") shows how they work in detail.
 
 ## which
 

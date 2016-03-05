@@ -25,6 +25,10 @@ Prior to installing a desktop environment, a functional X server installation is
 
 ### Officially supported
 
+*   **[Budgie](/index.php/Budgie_Desktop "Budgie Desktop")** — Budgie is a desktop environment designed with the modern user in mind, it focuses on simplicity and elegance.
+
+	[https://solus-project.com/budgie/](https://solus-project.com/budgie/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
+
 *   **[Cinnamon](/index.php/Cinnamon "Cinnamon")** — Cinnamon strives to provide a traditional user experience. Cinnamon is a fork of GNOME 3.
 
 	[http://cinnamon.linuxmint.com/](http://cinnamon.linuxmint.com/) || [cinnamon](https://www.archlinux.org/packages/?name=cinnamon)
@@ -66,10 +70,6 @@ Prior to installing a desktop environment, a functional X server installation is
 	[http://www.xfce.org/](http://www.xfce.org/) || [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/)
 
 ### Unofficially supported
-
-*   **[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop")** — Budgie Desktop is a lightweight Desktop Environment designed with the modern user in mind, it focuses on simplicity and elegance. Also it resembles the Chrome/Chromium OS desktop layout.
-
-	[https://solus-project.com/budgie/](https://solus-project.com/budgie/) || [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/)
 
 *   **[Common Desktop Environment](/index.php/Common_Desktop_Environment "Common Desktop Environment")** — The Common Desktop Environment (CDE) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations.
 
@@ -127,17 +127,17 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 
 <caption>Overview of desktop environments</caption>
 | Desktop environment | Widget toolkit | Window manager | Taskbar | Terminal emulator | File manager | Calculator | Text editor | Image viewer | Media player | Web browser | Display manager |
-| [Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop") | [GTK+](/index.php/GTK%2B "GTK+") 3
+| [Budgie](/index.php/Budgie_Desktop "Budgie Desktop") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | budgie-wm
-[budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) | budgie-panel
-[budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
+[budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) | budgie-panel
+[budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
 [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
 [nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
 [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
 [gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
 [eog](https://www.archlinux.org/packages/?name=eog) | [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Chromium](/index.php/Chromium "Chromium")
-[chromium](https://www.archlinux.org/packages/?name=chromium) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
+[totem](https://www.archlinux.org/packages/?name=totem) | [Epiphany](/index.php/Epiphany "Epiphany")
+[epiphany](https://www.archlinux.org/packages/?name=epiphany) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [Cinnamon](/index.php/Cinnamon "Cinnamon") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | Muffin

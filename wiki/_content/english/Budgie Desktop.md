@@ -2,11 +2,16 @@ Budgie is the default desktop of Solus Operating System, written from scratch. B
 
 At this time Budgie is heavily under development, so you can expect minor bugs and new features to be added as time goes on.
 
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 Starting](#Starting)
+*   [2 Usage](#Usage)
+*   [3 See also](#See_also)
+
 ## Installation
 
-[Install](/index.php/Install "Install") the [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) package for the latest stable or [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) for current git master.
-
-For additional settings, install [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
+[Install](/index.php/Install "Install") the [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) package for the latest stable or [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) for current git master. It's recommended to install its optional dependencies also to get a more complete desktop environment. It's recommended also to install the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group, which contains applications required for the standard GNOME experience.
 
 ### Starting
 
@@ -14,9 +19,14 @@ Choose *Budgie Desktop* session from a [display manager](/index.php/Display_mana
 
  `~/.xinitrc` 
 ```
+export XDG_CURRENT_DESKTOP=Budgie:GNOME
 exec budgie-desktop
 
 ```
+
+## Usage
+
+You can see the notification messages, set volume, and modify the look and feel of the desktop with the sidebar called "Raven". It can be accessed with `Super+N` key or by clicking on the Status Indicator applet.
 
 ## See also
 

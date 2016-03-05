@@ -45,7 +45,7 @@
 
 	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
-*   **xt7-player-mpv** — Qt/Gambas gui to mpv with a rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, youtube, online radios, podcasts, dvb-t and more.
+*   **xt7-player-mpv** — Qt/Gambas GUI to mpv with a rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, YouTube, online radios, podcasts, DVB-T and more.
 
 	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv-git](https://aur.archlinux.org/packages/xt7-player-mpv-git/)
 
@@ -131,7 +131,7 @@ Another alternative based on Livestreamer is this Lua script: [https://gist.gith
 
 ### youtube-dl and choosing formats
 
-The default `--ytdl-format` is `bestvideo+bestaudio/besŧ`. For youtube videos that have 4K resolutions available, this may mean that your device will struggle to decode 4K VP9 encoded video in software even if the attached monitor is much lower resolution.
+The default `--ytdl-format` is `bestvideo+bestaudio/best`. For youtube videos that have 4K resolutions available, this may mean that your device will struggle to decode 4K VP9 encoded video in software even if the attached monitor is much lower resolution.
 
 Setting the right youtube-dl format selectors can fix this easily though. In the following configuration example, only videos with a vertical resolution of 1080 pixels or less will be considered.
 

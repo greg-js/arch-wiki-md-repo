@@ -60,7 +60,7 @@ While PulseAudio usually runs fine out of the box and requires only minimal conf
 
 ### Configuration files
 
-PulseAudio can be configured in multiple ways depending on your needs and uses multiple different configuration files. Configuration files are read from `~/.pulse/` first, then from `/etc/pulse/` for system-wide defaults. People usually change the system-wide version unless they intend to have multiple users with different configurations.
+PulseAudio can be configured in multiple ways depending on your needs and uses multiple different configuration files. Configuration files are read from `~/.config/pulse/` first, then from `/etc/pulse/` for system-wide defaults. People usually change the system-wide version unless they intend to have multiple users with different configurations.
 
 #### `daemon.conf`
 

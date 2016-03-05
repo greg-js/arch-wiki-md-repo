@@ -336,7 +336,7 @@ Hello.show
 
 **Rust**
 
-*   Dependencies: [rust](https://www.archlinux.org/packages/?name=rust) and [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/) (or just [multirust](https://aur.archlinux.org/packages/multirust/))
+*   Dependencies: [rust](https://www.archlinux.org/packages/?name=rust) and [cargo](https://www.archlinux.org/packages/?name=cargo) (or just [multirust](https://aur.archlinux.org/packages/multirust/))
 *   notification crate: [notify-rust](https://crates.io/crates/notify-rust)
 
  `hello_world.rs` 
@@ -348,7 +348,7 @@ fn main(){
         .summary("Hello world")
         .body("This is an example notification")
         .icon("dialog-information")
-        .show();
+        .show().unwrap();
 }
 ```
 

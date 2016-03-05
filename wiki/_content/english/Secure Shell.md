@@ -43,13 +43,9 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
         *   [3.9.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Checklist](#Checklist)
-        *   [4.1.1 Verify SSH settings](#Verify_SSH_settings)
-        *   [4.1.2 Restart SSH + relogin users](#Restart_SSH_.2B_relogin_users)
-        *   [4.1.3 Cleanup outdated keys (optional)](#Cleanup_outdated_keys_.28optional.29)
-        *   [4.1.4 Recommendations](#Recommendations)
-    *   [4.2 SSH connection left hanging after poweroff/reboot](#SSH_connection_left_hanging_after_poweroff.2Freboot)
+    *   [4.2 SSH connection hangs after poweroff/reboot](#SSH_connection_hangs_after_poweroff.2Freboot)
     *   [4.3 Connection refused or timeout problem](#Connection_refused_or_timeout_problem)
-        *   [4.3.1 Is your router doing port forwarding?](#Is_your_router_doing_port_forwarding.3F)
+        *   [4.3.1 Port forwarding](#Port_forwarding)
         *   [4.3.2 Is SSH running and listening?](#Is_SSH_running_and_listening.3F)
         *   [4.3.3 Are there firewall rules blocking the connection?](#Are_there_firewall_rules_blocking_the_connection.3F)
         *   [4.3.4 Is the traffic even getting to your computer?](#Is_the_traffic_even_getting_to_your_computer.3F)
@@ -167,7 +163,7 @@ To help select a port review the [list of TCP and UDP port numbers](https://en.w
 
 **Note:** OpenSSH can also listen on multiple ports simply by having multiple **Port x** lines in the config file.
 
-It is also recommended to disable password logins entirely. This will greatly increase security, see [#Disabling password logins](#Disabling_password_logins) for more information.
+It is also recommended to disable password logins entirely. This will greatly increase security, see [#Force public key authentication](#Force_public_key_authentication) for more information.
 
 #### Daemon management
 
@@ -694,80 +690,36 @@ $ ExecStart=/usr/bin/autossh -M 0 -o ControlMaster=no -NL 2222:localhost:2222 -o
 
 ### Checklist
 
-This is a first-steps troubleshooting checklist. It is recommended to check these issues before you look any further.
+Check these simple issues before you look any further.
 
-#### Verify SSH settings
+1.  The config directory `~/.ssh` and its contents should be accessible only by your user (check this on both the client and the server):
+    ```
+    $ chmod 700 ~/.ssh
+    $ chmod 600 ~/.ssh/*
+    $ chown -R $USER ~/.ssh
 
-1\. The client and server `~/.ssh` folder and its content should be accessible by its user:
+    ```
 
+2.  Check that the client's public key (e.g. `id_rsa.pub`) is in `~/.ssh/authorized_keys` on the server.
+3.  Check that you did not limit SSH access with `AllowUsers` or `AllowGroups` in the [server config](#Configuration_2).
+4.  Check if the user has set a password. Sometimes new users who have not yet logged in to the server do not have a password.
+5.  [Restart](/index.php/Restart "Restart") `sshd` and logout/login on both client and server.
+
+### SSH connection hangs after poweroff/reboot
+
+SSH connections hang after poweroff or reboot if systemd stops the network before sshd. To fix this, change the `After` statement for user sessions:
+
+ `# systemctl edit systemd-user-sessions.service` 
 ```
-  $ chmod 700 /home/USER/.ssh
-  $ chmod 600 /home/USER/.ssh/*
-
-```
-
-2\. Check that all files within client's and server's `~/.ssh` folder are owned by its user:
-
-```
-  $ chown -R USER: /home/USER/.ssh
-
-```
-
-3\. Check that the client's public key in e.g. `id_rsa.pub` is in the server's `authorized_keys` file in the user's `~/.ssh/` folder.
-
-4\. Check that you did not limit SSH access with `AllowUsers or AllowGroups` options in `/etc/ssh/sshd_config` (space separated).
-
-5\. Check if the user has set a password. Sometimes new users are added and do not have a password set nor were logged in once.
-
-#### Restart SSH + relogin users
-
-6\. [Restart](/index.php/Restart "Restart") `sshd` (server).
-
-7\. Relogin the user (shell) on both systems (client, host)
-
-#### Cleanup outdated keys (optional)
-
-8\. Delete old/invalid key rows in server's `~/.ssh/authorized_keys` file.
-
-9\. Delete old/invalid private and public keys within the clients `~/.ssh` folder.
-
-#### Recommendations
-
-10\. Keep as few keys as possible in user's `~/.ssh/authorized_keys` file on the server.
-
-11\. Secure server's `/home/USER/.ssh/authorized_keys` file against manipulation:
-
-```
-  $ chmod 400 /home/USER/.ssh/authorized_keys
-
-```
-
-### SSH connection left hanging after poweroff/reboot
-
-SSH connection hangs after poweroff or reboot if systemd stop network before sshd. To fix that problem, comment and change the `After` statement:
-
- `/usr/lib/systemd/system/systemd-user-sessions.service` 
-```
-#After=remote-fs.target
+[Unit]
 After=network.target
 ```
 
 ### Connection refused or timeout problem
 
-#### Is your router doing port forwarding?
+#### Port forwarding
 
-SKIP THIS STEP IF YOU ARE NOT BEHIND A NAT MODEM/ROUTER (eg, a VPS or otherwise publicly addressed host). Most home and small businesses will have a NAT modem/router.
-
-The first thing is to make sure that your router knows to forward any incoming ssh connection to your machine. Your external IP is given to you by your ISP, and it is associated with any requests coming out of your router. So your router needs to know that any incoming ssh connection to your external IP needs to be forwarded to your machine running sshd.
-
-Find your internal network address.
-
-```
-ip a
-
-```
-
-Find your interface device and look for the inet field. Then access your router's configuration web interface, using your router's IP (find this on the web). Tell your router to forward it to your inet IP. Go to [[8]](http://portforward.com/) for more instructions on how to do so for your particular router.
+If you are behind a NAT mode/router (which is likely unless you are on a VPS or publicly addressed host), make sure that your router is forwarding incoming ssh connections to your machine. Find the server's internal IP address with `$ ip addr` and set up your router to forward TCP on your SSH port to that IP. [portforward.com](http://portforward.com) can help with that.
 
 #### Is SSH running and listening?
 

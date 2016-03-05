@@ -58,6 +58,15 @@ The correct driver is called **SynPS/2 Synaptics TouchPad**.
 
 Works with [PulseAudio](/index.php/PulseAudio "PulseAudio") and [ALSA](/index.php/ALSA "ALSA") installed. The built-in speakers, headphone, and mic all work.
 
+Some users have experienced problems with white noise and popping/cracking sounds when audio is first played and when the computer is turned off.
+
+To fix this, blacklist snd_hda_codec_realtek.
+
+```
+# echo "blacklist snd_hda_codec_realtek" >> /etc/modprobe.d/blacklist.conf
+
+```
+
 ### Display
 
 There are three options for displays:

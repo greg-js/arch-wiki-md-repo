@@ -15,6 +15,7 @@ Dedicated article for common problems and solutions.
     *   [2.5 Intermittent client freezes when copying large files](#Intermittent_client_freezes_when_copying_large_files)
     *   [2.6 mount.nfs: Operation not permitted](#mount.nfs:_Operation_not_permitted)
     *   [2.7 mount.nfs: Protocol not supported](#mount.nfs:_Protocol_not_supported)
+    *   [2.8 Problems with Vagrant and synced_folders](#Problems_with_Vagrant_and_synced_folders)
 *   [3 Performance issues](#Performance_issues)
     *   [3.1 Diagnose the problem](#Diagnose_the_problem)
     *   [3.2 Server threads](#Server_threads)
@@ -142,6 +143,10 @@ instead of, i.e.:
 ```
 
 Sometimes it could be the same problem with "Operation not permitted" : *nfs-utils* uses NFSv4 per default instead of NFSv3\. Go and see the previons section
+
+### Problems with Vagrant and synced_folders
+
+If Vagrant scripts are unable to mount folders over NFS, installing the *net-tools* package may solve the issue.
 
 ## Performance issues
 

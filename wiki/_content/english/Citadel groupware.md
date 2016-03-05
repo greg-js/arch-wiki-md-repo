@@ -17,7 +17,9 @@ This guide will help you install and configure Citadel groupware server and web 
 
 ## Installing
 
-First [Install](/index.php/Install "Install") the following dependences:
+[Install](/index.php/Install "Install") the [libcitadel](https://aur.archlinux.org/packages/libcitadel/), [citadel](https://aur.archlinux.org/packages/citadel/) and [webcit](https://aur.archlinux.org/packages/webcit/) packages.
+
+or manually install following dependences:
 
 ```
    pacman -S curl expat libical libsieve perl-berkeleydb

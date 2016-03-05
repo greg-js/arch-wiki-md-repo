@@ -19,7 +19,7 @@ See [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode") for the main article.
     *   [4.2 Native transparency](#Native_transparency)
 *   [5 Set icon](#Set_icon)
 *   [6 Use urxvt as application launcher](#Use_urxvt_as_application_launcher)
-*   [7 Xterm escape sequences, word by word movement](#Xterm_escape_sequences.2C_word_by_word_movement)
+*   [7 Xterm escape sequences](#Xterm_escape_sequences)
 
 ## Improved Kuake-like behavior in Openbox
 
@@ -378,7 +378,7 @@ Using the URxvt*background setting exemplified above instead of URxvt*shading wi
 
 ## Set icon
 
-**Note:** Because of a bug report[FS#34862](https://bugs.archlinux.org/task/34862) complaining that the rxvt-unicode package had too many dependencies, you must now install the AUR package [rxvt-unicode-pixbuf](https://aur.archlinux.org/packages/rxvt-unicode-pixbuf/) in order to use the icon option.
+**Note:** Because of a bug report ([FS#34862](https://bugs.archlinux.org/task/34862)) complaining that the rxvt-unicode package had too many dependencies, you must now install the AUR package [rxvt-unicode-pixbuf](https://aur.archlinux.org/packages/rxvt-unicode-pixbuf/) in order to use the icon option.
 
 By default URxvt does not feature a taskbar icon. However, this can be easily changed by adding the following line to `~/.Xresources` and pointing to the desired icon:
 
@@ -396,9 +396,9 @@ $ urxvt -geometry 80x3 -name 'bashrun' -e sh -c "/bin/bash -i -t"
 
 ```
 
-## Xterm escape sequences, word by word movement
+## Xterm escape sequences
 
-It is possible for rxvt-unicode to mimic the Xterm escape sequences. You can find the correct escape for any combination you like with the command `$cat -v` and then bind it using keysym.
+It is possible for rxvt-unicode to mimic the [Xterm](/index.php/Xterm "Xterm") escape sequences. These can be found for arbitrary key combinations by running `cat -v` inside *xterm*, then bound in *urxvt* using keysyms.
 
 Take this word by word movement binding as an example:
 
@@ -410,4 +410,4 @@ URxvt.keysym.Control-Right:    \033[1;5C
 
 ```
 
-For more information read the keysym section of the urxvt(1) man page.
+For more information, see ascii(7) and the keysym section of the urxvt(1) man page.

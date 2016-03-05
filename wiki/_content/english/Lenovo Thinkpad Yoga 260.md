@@ -93,6 +93,8 @@ EndSection
 
 ```
 
+The miniDP port works, at least when used with a VGA adapter. The connected display shows up in *xrandr* correctly..
+
 ### Card reader
 
 The microSD-card reader works out of the box.

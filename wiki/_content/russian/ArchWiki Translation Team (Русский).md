@@ -1,6 +1,6 @@
 Эта страница содержит информацию о русской команде переводчиков [ArchWiki](/index.php/ArchWiki:About_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki:About (Русский)") и задачах, стоящих перед ней.
 
-**Обратите внимание:** Не вносите изменения в эту страницу, если вы не являетесь членом команды
+**Примечание:** Не вносите изменения в эту страницу, если вы не являетесь членом команды
 
 ## Contents
 
@@ -31,13 +31,13 @@
 
 Список наших переводчиков:
 
-*   [Clearsprite](/index.php/User:Clearsprite "User:Clearsprite") ([обсуждение](/index.php/User_talk:Clearsprite "User talk:Clearsprite")|[вклад](/index.php/Special:Contributions/Clearsprite "Special:Contributions/Clearsprite"))
 *   [Kycok](/index.php/User:Kycok "User:Kycok") ([обсуждение](/index.php/User_talk:Kycok "User talk:Kycok")|[вклад](/index.php/Special:Contributions/Kycok "Special:Contributions/Kycok")) ([ArchWiki Maintainer](/index.php/ArchWiki:Maintainers "ArchWiki:Maintainers"))
-*   [Agent0](/index.php/User:Agent0 "User:Agent0") ([обсуждение](/index.php/User_talk:Agent0 "User talk:Agent0")|[вклад](/index.php/Special:Contributions/Agent0 "Special:Contributions/Agent0"))
+*   [Clearsprite](/index.php/User:Clearsprite "User:Clearsprite") ([обсуждение](/index.php/User_talk:Clearsprite "User talk:Clearsprite")|[вклад](/index.php/Special:Contributions/Clearsprite "Special:Contributions/Clearsprite"))
 *   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
 
 Неактивны (менее 5 правок за последние 30 дней):
 
+*   [Agent0](/index.php/User:Agent0 "User:Agent0") ([обсуждение](/index.php/User_talk:Agent0 "User talk:Agent0")|[вклад](/index.php/Special:Contributions/Agent0 "Special:Contributions/Agent0"))
 *   [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([обсуждение](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")|[вклад](/index.php/Special:Contributions/Vladimir_Shatalin "Special:Contributions/Vladimir Shatalin"))
 *   [Natrio](/index.php/User:Natrio "User:Natrio") ([обсуждение](/index.php?title=User_talk:Natrio&action=edit&redlink=1 "User talk:Natrio (page does not exist)")|[вклад](/index.php/Special:Contributions/Natrio "Special:Contributions/Natrio"))
 
@@ -134,7 +134,7 @@
 
 Здесь представлен список статей, которые [попросили перевести](http://archlinux.org.ru/forum/topic/15139/) пользователи русскоязычного форума. Если вы хотите взять одну из них на перевод, пожалуйста, напишите об этом в заметках, указав раздел (или написав "Полностью") и оставив свою подпись.
 
-**Обратите внимание:**
+**Примечание:**
 
 *   Если статьи имеют одинаковое количество голосов, они отсортированы по возрасту запроса, по убыванию
 *   Не удаляйте из рейтинга полностью переведенные статьи раньше, чем через неделю после завершения перевода, чтобы другие участники команды могли их проверить и внести свои исправления
@@ -202,6 +202,7 @@
 | [Rxvt-unicode (Русский)](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [SDDM (Русский)](/index.php/SDDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SDDM (Русский)") | Не требуется | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |
 | [SpaceFM (Русский)](/index.php/SpaceFM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SpaceFM (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
+| [Sshfs (Русский)](/index.php/Sshfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sshfs (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [Sudo (Русский)](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sudo (Русский)") | Не требуется | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |
 | [systemd-networkd (Русский)](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Tox (Русский)](/index.php/Tox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Tox (Русский)") | Не требуется | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |

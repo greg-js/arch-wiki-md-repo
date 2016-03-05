@@ -1,3 +1,5 @@
+See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting") for generic troubleshooting.
+
 **Note:** [Steam](/index.php/Steam "Steam") installs library dependencies of a game to a library directory, but some are missing at the moment. Report bugs involving missing libraries on Valve's bug tracker on their [GitHub page](https://github.com/ValveSoftware/steam-for-linux) before adding workarounds here, and then provide a link to the bug so it can be removed as the problems are fixed.
 
 **Tip:** If a game fails to start, a possible reason is that it is missing required libraries. You can find out what libraries it requests by running `ldd *game_executable*`. `*game_executable*` is likely located somewhere in `~/.steam/root/SteamApps/common/`. Please note that most of these "missing" libraries are actually already included with Steam, and do not need to be installed globally.

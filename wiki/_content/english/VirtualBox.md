@@ -221,7 +221,7 @@ If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings
 
 Once the system and the boot loader are installed, VirtualBox will first attempt to run `/EFI/BOOT/BOOTX64.EFI` from the ESP. If that first option fails, VirtualBox will then try the EFI shell script `startup.nsh` from the root of the ESP. This means that in order to boot the system you have the following options:
 
-*   Launch the bootloader manually from the EFI shell every time;
+*   [Launch the bootloader manually](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") from the EFI shell every time;
 *   Move the bootloader to the default `/EFI/BOOT/BOOTX64.EFI` path;
 *   Create the `startup.nsh` script at the ESP root containing the path to the boot loader application, e.g. `\EFI\grub\grubx64.efi`.
 
@@ -235,7 +235,7 @@ After completing the installation of the guest system, install the VirtualBox [G
 
 **Note:** You can also install the Guest Additions via the iso from the virtualbox-guest-iso, provided you installed this on the host system. To do this, go to the device menu click Insert Guest Additions CD Image. Then, in client, do the following as root:
 
-1.  mount /dev/sr0
+1.  mount /dev/sr0 /mnt
 2.  bin /mnt/VBoxGuestAdditions.run
 
 After installation is complete run as root:

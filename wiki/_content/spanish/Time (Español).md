@@ -8,7 +8,7 @@ En un sistema operativo, el reloj (*«clock»*) está determinado por cuatro par
     *   [1.3 Reloj RTC (Reloj en Tiempo Real)](#Reloj_RTC_.28Reloj_en_Tiempo_Real.29)
 *   [2 Hora estándar](#Hora_est.C3.A1ndar)
     *   [2.1 UTC en Windows](#UTC_en_Windows)
-*   [3 Uso horario](#Uso_horario)
+*   [3 Huso horario](#Huso_horario)
 *   [4 Desviación del horario](#Desviaci.C3.B3n_del_horario)
 *   [5 Solución de problemas](#Soluci.C3.B3n_de_problemas)
     *   [5.1 El reloj muestra un valor que no es ni UTC ni hora local](#El_reloj_muestra_un_valor_que_no_es_ni_UTC_ni_hora_local)
@@ -124,9 +124,9 @@ Si está teniendo problemas con el desfase del horario, pruebe reinstalando `tzd
 
 Es lógico [desactivar](http://www.addictivetips.com/windows-tips/disable-time-synchronization-in-windows-7/) la sincronización horaria en Windows, de lo contrario se hará un lío el reloj del equipo.
 
-## Uso horario
+## Huso horario
 
-Puede comprobar el [uso horario](https://en.wikipedia.org/wiki/es:Uso_horario "wikipedia:es:Uso horario") que rige en su equipo con:
+Puede comprobar el [Huso horario](https://en.wikipedia.org/wiki/es:Huso_horario "wikipedia:es:Huso horario") que rige en su equipo con:
 
 ```
 $ timedatectl status
@@ -186,7 +186,7 @@ Esto podría ser causado por varias razones. Por ejemplo, si el reloj de hardwar
 Para forzar al reloj a que adopte la hora correcta, y para pasar también el horario UTC correcto al reloj del hardware, siga estos pasos:
 
 *   Instale [NTP](/index.php/NTP "NTP") (no es necesario activarlo como un servicio).
-*   Establezca el [uso horario](#Uso_horario) correctamente.
+*   Establezca el [huso horario](#Huso_horario) correctamente.
 *   Ejecute `ntpd -qg` para sincronizar manualmente el reloj con la red, omitiendo las desviaciones grandes entre UTC local y UTC de red.
 *   Ejecute `hwclock --systohc` para pasar el horario UTC actual del software al reloj del clock.
 

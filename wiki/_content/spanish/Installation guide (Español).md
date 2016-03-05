@@ -80,7 +80,7 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 *   Configurar el [nombre del equipo](/index.php/Configuring_Network_(Espa%C3%B1ol)#Establecer_el_nombre_del_equipo "Configuring Network (Español)"): `# echo *nombre_equipo* > /etc/hostname` 
 
-*   Configurar el [uso horario](/index.php/Time_(Espa%C3%B1ol)#Uso_horario "Time (Español)"): `# ln -sf /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime` 
+*   Configurar el [huso horario](/index.php/Time_(Espa%C3%B1ol)#Uso_horario "Time (Español)"): `# ln -sf /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime` 
 
 *   Configurar el [idioma del sistema](/index.php/Locale_(Espa%C3%B1ol) "Locale (Español)") descomentando el locale necesario en el archivo `/etc/locale.gen`, y después generarlo con la orden: `# locale-gen` 
 

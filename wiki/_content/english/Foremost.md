@@ -5,7 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Usage](#Usage)
-*   [4 External Links](#External_Links)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -42,7 +42,7 @@ Run following command with image or device path as parameter and additional path
 
 The parameter `-t all` tries to recover all known file types.
 
-## External Links
+## See also
 
 *   Homepage: [http://foremost.sourceforge.net](http://foremost.sourceforge.net)
 *   Entry in Forensicswiki.org: [http://www.forensicswiki.org/wiki/Foremost](http://www.forensicswiki.org/wiki/Foremost)

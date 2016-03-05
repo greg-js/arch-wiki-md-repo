@@ -13,10 +13,11 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
 *   [5 Backlight utilities](#Backlight_utilities)
     *   [5.1 xbacklight](#xbacklight)
     *   [5.2 light](#light)
-    *   [5.3 relight](#relight)
-    *   [5.4 setpci (use with great care)](#setpci_.28use_with_great_care.29)
-    *   [5.5 Calise](#Calise)
-    *   [5.6 brightd](#brightd)
+    *   [5.3 acpilight](#acpilight)
+    *   [5.4 relight](#relight)
+    *   [5.5 setpci (use with great care)](#setpci_.28use_with_great_care.29)
+    *   [5.6 Calise](#Calise)
+    *   [5.7 brightd](#brightd)
 *   [6 Color correction](#Color_correction)
     *   [6.1 xcalib](#xcalib)
     *   [6.2 Xflux](#Xflux)
@@ -200,6 +201,12 @@ Light is the successor and C-port of *LightScript*.
 [Install](/index.php/Install "Install") [light](https://aur.archlinux.org/packages/light/) for the latest tagged version, or [light-git](https://aur.archlinux.org/packages/light-git/) for the latest development version. Patches are frequently committed to the git repository so it is recommended to use the [light-git](https://aur.archlinux.org/packages/light-git/) package.
 
 See the [GitHub page](http://haikarainen.github.io/light/) for more information.
+
+### acpilight
+
+acpilight contains an "xbacklight" compatibile utility that uses the sys filesystem to set the display brightness. Since it doesn't use X at all, it can also be used on the console.
+
+See the [acpilight repository](https://github.com/wavexx/acpilight/) for more information.
 
 ### relight
 

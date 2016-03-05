@@ -337,7 +337,7 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 
 ### Picture flickers while scrolling
 
-**Note:** Problem available in some Mate Desktops
+**Note:** Problem available in some MATE desktops
 
 Uncheck the "smooth scrolling" settings:
 

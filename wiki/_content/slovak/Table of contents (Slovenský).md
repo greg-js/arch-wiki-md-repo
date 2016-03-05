@@ -12,7 +12,7 @@
 
 	<small>3.</small> [Networking](/index.php/Category:Networking_(Slovensk%C3%BD) "Category:Networking (Slovenský)") <small>(0)</small>
 
-	<small>3.1.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network_(Slovensk%C3%BD) "Category:Virtual Private Network (Slovenský)") <small>(1) (tiež v [Security](/index.php/Category:Security_(Slovensk%C3%BD) "Category:Security (Slovenský)"))</small>
+	<small>3.1.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network_(Slovensk%C3%BD) "Category:Virtual Private Network (Slovenský)") <small>(1) (tiež v [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style"), [Security](/index.php/Category:Security_(Slovensk%C3%BD) "Category:Security (Slovenský)"))</small>
 
 	<small>4.</small> [Software](/index.php/Category:Software_(Slovensk%C3%BD) "Category:Software (Slovenský)") <small>(0)</small>
 
@@ -26,4 +26,4 @@
 
 	<small>5.1.</small> [Security](/index.php/Category:Security_(Slovensk%C3%BD) "Category:Security (Slovenský)") <small>(0)</small>
 
-	<small>5.1.1.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network_(Slovensk%C3%BD) "Category:Virtual Private Network (Slovenský)") <small>(1) (tiež v [Networking](/index.php/Category:Networking_(Slovensk%C3%BD) "Category:Networking (Slovenský)"))</small>
+	<small>5.1.1.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network_(Slovensk%C3%BD) "Category:Virtual Private Network (Slovenský)") <small>(1) (tiež v [Networking](/index.php/Category:Networking_(Slovensk%C3%BD) "Category:Networking (Slovenský)"), [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style"))</small>

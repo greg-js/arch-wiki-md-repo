@@ -76,7 +76,7 @@ See [this page](http://www.postfix.org/TLS_README.html) for more information abo
 
 	 `mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain` 
 
-*   `mynetworks` and `mynetwork_style` control relaying, and whom is allowed to. We do not want any relaying.
+*   `mynetworks` and `mynetworks_style` control relaying, and whom is allowed to. We do not want any relaying.
 
 	For our sakes, we will simply set `mynetwork_style` to host, as we are trying to make a standalone Postfix host, that people will use webmail on. No relaying, no other MTA's. Just webmail.
 

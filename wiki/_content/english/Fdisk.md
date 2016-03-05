@@ -5,13 +5,15 @@ The first step to partitioning a disk is making a partition table. There are two
 ## Contents
 
 *   [1 Usage](#Usage)
-*   [2 Backing up the partition table with sfdisk](#Backing_up_the_partition_table_with_sfdisk)
-*   [3 Using GPT - modern method](#Using_GPT_-_modern_method)
-    *   [3.1 Gdisk usage summary](#Gdisk_usage_summary)
-*   [4 Using MBR - legacy method](#Using_MBR_-_legacy_method)
-    *   [4.1 Fdisk usage summary](#Fdisk_usage_summary)
-*   [5 Using cgdisk to create GPT partitions](#Using_cgdisk_to_create_GPT_partitions)
-*   [6 Using fdisk to create MBR partitions](#Using_fdisk_to_create_MBR_partitions)
+*   [2 Backup the partition table](#Backup_the_partition_table)
+*   [3 Create a partition table](#Create_a_partition_table)
+    *   [3.1 Gdisk (GPT)](#Gdisk_.28GPT.29)
+        *   [3.1.1 Gdisk usage summary](#Gdisk_usage_summary)
+    *   [3.2 Fdisk (MBR)](#Fdisk_.28MBR.29)
+        *   [3.2.1 Fdisk usage summary](#Fdisk_usage_summary)
+*   [4 Create Partitions](#Create_Partitions)
+    *   [4.1 Using cgdisk to create GPT partitions](#Using_cgdisk_to_create_GPT_partitions)
+*   [5 Using fdisk to create MBR partitions](#Using_fdisk_to_create_MBR_partitions)
 
 ## Usage
 
@@ -29,15 +31,17 @@ To list partition tables and partitions on a device, you can run the following, 
 
 ```
 
-## Backing up the partition table with sfdisk
+## Backup the partition table
 
 Before making changes to a hard disk, you may want to backup the partition table and partition scheme of the drive.
 
-## Using GPT - modern method
+## Create a partition table
 
-### Gdisk usage summary
+### Gdisk (GPT)
 
 Using GPT, the utility for editing the partition table is called *gdisk*. It can perform partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. GNU parted also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions. The environment provided by the Arch install ISO includes the *gdisk* command. If you need it later on in the installed system, *gdisk* is available in the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package.
+
+#### Gdisk usage summary
 
 A summary of the typical usage of *gdisk*:
 
@@ -55,13 +59,13 @@ A summary of the typical usage of *gdisk*:
 *   Write the table to disk and exit via the `w` command.
 *   Format the new partitions with a [file system](/index.php/File_system "File system").
 
-## Using MBR - legacy method
+### Fdisk (MBR)
 
 Using MBR, the utility for editing the partition table is called *fdisk*. Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. The latest *fdisk* automatically aligns all partitions to 2048 sectors, or 1024 KiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
 
 Note that in the olden days, *fdisk* used cylinders as the default display unit, and retained an MS-DOS compatibility quirk that messed with SSD alignment. Therefore one will find many guides around the internet from around 2008-2009 making a big deal out of getting everything correct. With the latest *fdisk*, things are much simpler, as reflected in this guide.
 
-### Fdisk usage summary
+#### Fdisk usage summary
 
 *   Start *fdisk* against your drive as root (*disk-device* may be e.g. `/dev/sda`):
 
@@ -74,7 +78,9 @@ Note that in the olden days, *fdisk* used cylinders as the default display unit,
 *   Assign other partitions in a like fashion.
 *   Write the table to disk and exit via the `w` command.
 
-## Using cgdisk to create GPT partitions
+## Create Partitions
+
+### Using cgdisk to create GPT partitions
 
 Launch *cgdisk* with:
 

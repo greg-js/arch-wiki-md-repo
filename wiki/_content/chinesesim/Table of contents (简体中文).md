@@ -2,7 +2,7 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-[简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(140)</small>
+[简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(139)</small>
 
 	<small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(21)</small>
 
@@ -122,7 +122,7 @@
 
 	<small>5.</small> [帮助](/index.php/Category:Help_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Help (简体中文)") <small>(9)</small>
 
-	<small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(30)</small>
+	<small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(29)</small>
 
 	<small>6.1.</small> [域名解析](/index.php/Category:Domain_Name_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Domain Name System (简体中文)") <small>(5)</small>
 

@@ -30,7 +30,7 @@
 
 	<small>2.3.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(14)</small>
 
-	<small>2.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(12)</small>
+	<small>2.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(11)</small>
 
 	<small>2.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(13)</small>
 
@@ -40,21 +40,21 @@
 
 	<small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small>
 
-	<small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(47)</small>
+	<small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(46)</small>
 
-	<small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(66) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
+	<small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(65) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
 	<small>2.10.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(18)</small>
 
-	<small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(19)</small>
+	<small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small>
 
 	<small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(22)</small>
 
 	<small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(23)</small>
 
-	<small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(46)</small>
+	<small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(44)</small>
 
-	<small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(14)</small>
+	<small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(13)</small>
 
 	<small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(23)</small>
 
@@ -74,7 +74,7 @@
 
 	<small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small>
 
-	<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(53)</small>
+	<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(51)</small>
 
 	<small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(21) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small>
 
@@ -118,7 +118,7 @@
 
 	<small>4.8.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(13)</small>
 
-	<small>4.8.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(62)</small>
+	<small>4.8.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(61)</small>
 
 	<small>4.8.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small>
 
@@ -148,7 +148,7 @@
 
 	<small>4.10.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(16)</small>
 
-	<small>4.11.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(20) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
+	<small>4.11.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
 	<small>4.12.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(22)</small>
 
@@ -162,9 +162,9 @@
 
 	<small>4.16.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small>
 
-	<small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(70)</small>
+	<small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(69)</small>
 
-	<small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(6)</small>
+	<small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small>
 
 	<small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(12)</small>
 
@@ -172,17 +172,17 @@
 
 	<small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(10) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
 
-	<small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(66) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small>
+	<small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(65) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small>
 
 	<small>5.5.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(18)</small>
 
-	<small>5.5.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(19)</small>
+	<small>5.5.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small>
 
 	<small>5.5.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(22)</small>
 
-	<small>5.6.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(25)</small>
+	<small>5.6.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(24)</small>
 
-	<small>5.7.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(20) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small>
+	<small>5.7.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small>
 
 	<small>5.8.</small> [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration") <small>(11)</small>
 
@@ -200,7 +200,7 @@
 
 	<small>5.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(17) (also in [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style"), [Security](/index.php/Category:Security "Category:Security"))</small>
 
-	<small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(62)</small>
+	<small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(61)</small>
 
 	<small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(10)</small>
 
@@ -214,7 +214,7 @@
 
 	<small>6.2.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services") <small>(16)</small>
 
-	<small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(26)</small>
+	<small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(27)</small>
 
 	<small>6.3.1.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(12)</small>
 
@@ -250,7 +250,7 @@
 
 	<small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(21)</small>
 
-	<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(72)</small>
+	<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small>
 
 	<small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(25)</small>
 
@@ -262,7 +262,7 @@
 
 	<small>6.11.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"), [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style"))</small>
 
-	<small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(36)</small>
+	<small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(33)</small>
 
 	<small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(20)</small>
 

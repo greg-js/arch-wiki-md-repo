@@ -183,7 +183,7 @@ EndSection
 
 and restart X.
 
-Since libinput1.1.0-1 and xf86-input-libinput0.15.0-1 you can use a flat acceleration profile which will give a 1:1 mapping of physical to virtual mouse movements. To enable it put this in the following file:
+Since [libinput](https://www.archlinux.org/packages/?name=libinput)-1.1.0-1 and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)-0.15.0-1 you can use a flat acceleration profile which will give a 1:1 mapping of physical to virtual mouse movements. To enable it put this in the following file:
 
  `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf` 
 ```
@@ -197,4 +197,4 @@ EndSection
 
 and restart X.
 
-**Note:** The speed setting `libinput Accel Speed` is the same as before, taking values in the [-1, 1] range. Speed settings < 0 are a percentage of the default speed (e.g. -0.3 is 70% of the normal speed), speeds > 0 are times 2, so 0.5 is 200% and 1.0 is 300% of the normal speed. For example, to adjust the mouse speed down to 50%, use `xinput --set-prop 8 'libinput Accel Speed' -0.5`.
+**Note:** The speed setting `libinput Accel Speed` is the same as before, taking values in the [-1, 1] range. The Speed setting is a fraction that is added (or subtracted) to 100%, e.g. -0.3 is 70% of the normal speed, and 0.5 is 150%. For example, to adjust the mouse speed down to 50%, use `xinput --set-prop 8 'libinput Accel Speed' -0.5`.

@@ -96,7 +96,7 @@ For those of you with the nVidia 8400GM chipset, using the [nVidia](/index.php/N
 
 #### Compiz Fusion
 
-Works just great with the nVidia chipset. You might like to tweak the nVidia Powermizer for maximum battery life. I have forced my graphics chipset to the lowest performance level and Compiz-Fusion runs satisfactorily with a little slowdown here and there. See [NVIDIA#Force Powermizer performance level (for laptops)](/index.php/NVIDIA#Force_Powermizer_performance_level_.28for_laptops.29 "NVIDIA") for more details on how to set this up.
+Works just great with the nVidia chipset. You might like to tweak the nVidia Powermizer for maximum battery life. I have forced my graphics chipset to the lowest performance level and Compiz-Fusion runs satisfactorily with a little slowdown here and there.
 
 To have better performance with nVidia drivers, you should try "loose binding" in Compiz Fusion (bug with Geforce 8 series). If you use Fusion Icon, just right click it, then "Compiz Options"->"Loose Binding".
 

@@ -7,6 +7,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [1.2 Upgrading from Plasma 4 to 5](#Upgrading_from_Plasma_4_to_5)
     *   [1.3 KDE applications and language packs](#KDE_applications_and_language_packs)
 *   [2 Starting Plasma](#Starting_Plasma)
+    *   [2.1 Wayland](#Wayland)
 *   [3 Configuration](#Configuration)
     *   [3.1 Personalization](#Personalization)
         *   [3.1.1 Plasma desktop](#Plasma_desktop_2)
@@ -114,7 +115,7 @@ Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 
 
 ### KDE applications and language packs
 
-To install the full set of KDE Applications, install the [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) group or the [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) meta-packages to install specific modules. Note that this will only install applications, it will not install any version of the Plasma Desktop.
+To install the full set of KDE Applications, install the [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) group or the [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) meta-package. Note that this will only install applications, it will not install any version of the Plasma Desktop.
 
 If you need language files, install `kde-l10n-**yourlanguagehere**` (e.g. [kde-l10n-de](https://www.archlinux.org/packages/?name=kde-l10n-de) for the German language). For a full list of available languages see [this link](https://www.archlinux.org/packages/extra/any/kde-l10n/).
 
@@ -122,11 +123,16 @@ If you need language files, install `kde-l10n-**yourlanguagehere**` (e.g. [kde-l
 
 **Tip:** To better integrate SDDM with Plasma, it is recommended to edit `/etc/sddm.conf` to use the breeze theme. Refer to [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM") for instructions.
 
-**Note:** The Plasma 4 configuration is not automatically migrated to Plasma 5, so you will have to configure your desktop from scratch.
-
 To launch a Plasma 5 session, choose *Plasma* in your [display manager](/index.php/Display_manager "Display manager") menu.
 
 Alternatively, to start Plasma with *startx*, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login").
+
+### Wayland
+
+As of Plasma 5.6, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable but still buggy.[[3]](https://blog.martin-graesslin.com/blog/2016/03/february-kwinwayland-update-all-about-input/) Multi-monitor support is broken.
+
+*   To start a Plasma on Wayland session from a display manager, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma* should show up in the display manager.
+*   To start a Plasma on Wayland session from a console, run `startplasmacompositor`.
 
 ## Configuration
 
@@ -192,14 +198,14 @@ Most plasmoids are not created officially by KDE developers. You can also try in
 
 ##### Disable panel shadow
 
-As the plasma panel is on top of other windows, its shadow is drawn over them. [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
+As the plasma panel is on top of other windows, its shadow is drawn over them. [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
 
 ```
 $ xprop -remove _KDE_NET_WM_SHADOW
 
 ```
 
-then select the panel with the plus-sized cursor. [[4]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
+then select the panel with the plus-sized cursor. [[5]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
 
  `/usr/local/bin/kde-no-shadow` 
 ```

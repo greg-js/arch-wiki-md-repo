@@ -1004,5 +1004,6 @@ You can use the following website to get your device's coordinates along with a 
 40.915535, 17.021062 "TheSillex" # Turi, BA, Italy
 20.624184, -103.352554 "arknix" # Guadalajara, Jalisco, Mexico
 52.5134438, 13.4263034 "XenGi" # Berlin, Germany
+50.207419, 9.536354 "c-korn" # Hessen, Germany
 
 ```

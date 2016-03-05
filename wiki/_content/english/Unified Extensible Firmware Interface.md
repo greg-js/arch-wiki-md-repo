@@ -26,7 +26,8 @@
     *   [6.2 Launching UEFI Shell](#Launching_UEFI_Shell)
     *   [6.3 Important UEFI Shell Commands](#Important_UEFI_Shell_Commands)
         *   [6.3.1 bcfg](#bcfg)
-        *   [6.3.2 edit](#edit)
+        *   [6.3.2 map](#map)
+        *   [6.3.3 edit](#edit)
 *   [7 UEFI Linux Hardware Compatibility](#UEFI_Linux_Hardware_Compatibility)
 *   [8 UEFI Bootable Media](#UEFI_Bootable_Media)
     *   [8.1 Create UEFI bootable USB from ISO](#Create_UEFI_bootable_USB_from_ISO)
@@ -245,7 +246,7 @@ It is an OS independent partition that acts as the storage place for the EFI boo
 
 *   It is recommended to use always GPT for UEFI boot as some UEFI firmwares do not allow UEFI-MBR boot.
 *   In [GNU Parted](/index.php/GNU_Parted "GNU Parted"), `boot` flag (not to be confused with `legacy_boot` flag) has different effect in MBR and GPT disk. In MBR disk, it marks the partition as active. In GPT disk, it changes the type code of the partition to `EFI System Partition` type. [Parted](/index.php/Parted "Parted") has no flag to mark a partition as ESP in MBR disk (this can be done using fdisk though).
-*   According to a Microsoft note[[3]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules), the minimum size for the EFI System Partition (ESP) would be 100 MB, though this is not stated in the UEFI Specification. Note that for Advanced Format 4K Native drives (4-KB-per-sector) drives, the size is at least 260 MB, because it's the minimum partition size of FAT32 drives (calculated as sector size (4KB) x 65527 = 256 MB), due to a limitation of the FAT32 file format.
+*   According to a Microsoft note[[3]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules), the minimum size for the EFI System Partition (ESP) would be 100 MB, though this is not stated in the UEFI Specification. Note that for Advanced Format 4K Native drives (4-KB-per-sector) drives, the size is at least 260 MB, because it is the minimum partition size of FAT32 drives (calculated as sector size (4KB) x 65527 = 256 MB), due to a limitation of the FAT32 file format.
 *   In case of [EFISTUB](/index.php/EFISTUB "EFISTUB"), the kernels and initramfs files should be stored in the EFI System Partition. For sake of simplicity, you can also use the ESP as the `/boot` partition itself instead of a separate `/boot` partition, for EFISTUB booting.
 
 ### GPT partitioned disks
@@ -293,17 +294,17 @@ Systems with Phoenix SecureCore Tiano UEFI firmware are known to have embedded U
 
 ### Important UEFI Shell Commands
 
-UEFI Shell commands usually support `-b` option which makes output pause after each page. `map` lists recognized filesystems (`fs0`, ...) and data storage devices (`blk0`, ...). Run `help -b` to list available commands.
+UEFI Shell commands usually support `-b` option which makes output pause after each page. Run `help -b` to list available commands.
 
 More info at [http://software.intel.com/en-us/articles/efi-shells-and-scripting/](http://software.intel.com/en-us/articles/efi-shells-and-scripting/)
 
 #### bcfg
 
-BCFG command is used to modify the UEFI NVRAM entries, which allow the user to change the boot entries or driver options. This command is described in detail in page 83 (Section 5.3) of "UEFI Shell Specification 2.0" PDF document.
+`bcfg` modifies the UEFI NVRAM entries which allows the user to change the boot entries or driver options. This command is described in detail in page 83 (Section 5.3) of "UEFI Shell Specification 2.0" PDF document.
 
 **Note:**
 
-*   Users are recommended to try `bcfg` only if `efibootmgr` fails to create working boot entries in their system.
+*   Try `bcfg` only if `efibootmgr` fails to create working boot entries on your system.
 *   UEFI Shell v1 official binary does not support `bcfg` command. You can download a [modified UEFI Shell v2 binary](http://dl.dropbox.com/u/17629062/Shell2.zip) which may work in UEFI pre-2.3 firmwares.
 
 To dump a list of current boot entries:
@@ -350,11 +351,23 @@ Shell> bcfg -? -v -b
 
 ```
 
+#### map
+
+`map` displays a list of device mappings i.e. the names of available file systems (`fs0`) and storage devices (`blk0`).
+
+Before running file system commands such as `cd` or `ls`, you need to change the shell to the appropriate file system by typing its name:
+
+```
+  Shell> fs0:
+  fs0:\> cd EFI/
+
+```
+
 #### edit
 
-EDIT command provides a basic text editor with an interface similar to nano text editor, but slightly less functional. It handles UTF-8 encoding and takes care or LF vs CRLF line endings.
+`edit` provides a basic text editor with an interface similar to nano, but slightly less functional. It handles UTF-8 encoding and takes care or LF vs CRLF line endings.
 
-To edit, for example rEFInd's `refind.conf` in the EFI System Partition (`fs0:` in the firmware)
+For example, to edit rEFInd's `refind.conf` in the EFI System Partition (`fs0:` in the firmware),
 
 ```
 Shell> fs0:
@@ -449,7 +462,7 @@ bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
 
 *   This issue can occur either due to [KMS](/index.php/KMS "KMS") issue. Try [Disabling KMS](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting") while booting the USB.
 
-*   If the issue is not due to KMS, then it may be due to bug in [EFISTUB](/index.php/EFISTUB "EFISTUB") booting (see [[4]](https://bugs.archlinux.org/task/33745) and [[5]](https://bbs.archlinux.org/viewtopic.php?id=156670) for more information.). Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso use EFISTUB (via [Gummiboot](/index.php/Gummiboot "Gummiboot") Boot Manager for menu) for booting the kernel in UEFI mode. In such a case you have to use [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader by following the below section.
+*   If the issue is not due to KMS, then it may be due to bug in [EFISTUB](/index.php/EFISTUB "EFISTUB") booting (see [FS#33745](https://bugs.archlinux.org/task/33745) and [[4]](https://bbs.archlinux.org/viewtopic.php?id=156670) for more information.). Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso use EFISTUB (via [Gummiboot](/index.php/Gummiboot "Gummiboot") Boot Manager for menu) for booting the kernel in UEFI mode. In such a case you have to use [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader by following the below section.
 
 #### Using GRUB
 

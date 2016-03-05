@@ -7,10 +7,12 @@
 | Card Reader | **Working** |
 | Function Keys | **Working** |
 
-This article describes both the 1005HA and the 1005HAB. The functional differences are:
+This article describes both the 1005HA and the 1005HAB. The functional differences are outlined below.
 
-*   1005HA has the Atom N280, a larger 6-cell 63Wh battery and Bluetooth.
-*   1005HAB has the Atom N270, a 3 cell battery and no Bluetooth.
+| **Component** | **1005HA** | **1005HAB** |
+| CPU | Atom N280 | Atom N270 |
+| Battery | 63Wh | 48Wh or 23Wh |
+| Bluetooth | Yes | No |
 
 ## Contents
 

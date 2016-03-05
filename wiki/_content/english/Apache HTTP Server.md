@@ -296,13 +296,6 @@ LoadModule php7_module modules/libphp7.so
 
 ```
 
-*   Add this line anywhere to your `/etc/httpd/conf/httpd.conf`:
-
-```
-SetHandler	application/x-httpd-php
-
-```
-
 *   Place this at the end of the `Include` list:
 
 ```

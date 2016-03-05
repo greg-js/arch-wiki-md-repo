@@ -79,7 +79,7 @@ $ gzip fs/btrfs/btrfs.ko
 
 ```
 
-Or alternatively, you can place the updated module in the updates folder (create it if it doesn't already exist)
+Or alternatively, you can place the updated module in the updates folder (create it if it doesn't already exist).
 
 ```
 $ cp fs/btrfs/btrfs.ko.gz /usr/lib/modules/`uname -r`/updates
@@ -93,7 +93,7 @@ However if you are adding a new module you can just copy it to extramodules (not
 
 ```
 
-If you are compiling a module for early boot (e.g. updated module) which is copied to [Initramfs](/index.php/Initramfs "Initramfs") then you must remember to regenerate it with (otherwise your compiled module will not be loaded)
+If you are compiling a module for early boot (e.g. updated module) which is copied to [Initramfs](/index.php/Initramfs "Initramfs") then you must remember to regenerate it with (otherwise your compiled module will not be loaded). Furthermore, if you are using the "updates" folder method, you may need to rebuild the module dependency tree with "depmod" before regenerating [Initramfs](/index.php/Initramfs "Initramfs")
 
 ```
 # mkinitcpio -p linux

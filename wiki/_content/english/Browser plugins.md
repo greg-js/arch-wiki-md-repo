@@ -40,13 +40,12 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
     *   [8.3 Flash Player: performance](#Flash_Player:_performance)
     *   [8.4 Flash Player: low webcam resolution](#Flash_Player:_low_webcam_resolution)
     *   [8.5 Flash Player: black bars in full screen playback on multi-headed setups](#Flash_Player:_black_bars_in_full_screen_playback_on_multi-headed_setups)
-    *   [8.6 Flash Player: blue tint on videos with NVIDIA](#Flash_Player:_blue_tint_on_videos_with_NVIDIA)
-    *   [8.7 Flash Player: leaking overlay with NVIDIA](#Flash_Player:_leaking_overlay_with_NVIDIA)
-    *   [8.8 Flash Player: videos not working on older systems](#Flash_Player:_videos_not_working_on_older_systems)
-    *   [8.9 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
-        *   [8.9.1 Firefox](#Firefox)
-    *   [8.10 Plugins are installed but not working](#Plugins_are_installed_but_not_working)
-    *   [8.11 Gecko Media Player will not play Apple trailers](#Gecko_Media_Player_will_not_play_Apple_trailers)
+    *   [8.6 Flash Player: videos not working on older systems](#Flash_Player:_videos_not_working_on_older_systems)
+    *   [8.7 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
+        *   [8.7.1 Firefox](#Firefox)
+    *   [8.8 Plugins are installed but not working](#Plugins_are_installed_but_not_working)
+    *   [8.9 Gecko Media Player will not play Apple trailers](#Gecko_Media_Player_will_not_play_Apple_trailers)
+*   [9 See also](#See_also)
 
 ## Flash Player
 
@@ -450,14 +449,6 @@ To fix this, you can use the "hack" described [here](http://al.robotfuzz.com/con
 
 **Note:** While the author mentions using NVDIA's TwinView, the hack should work for any multi-monitor setup.
 
-### Flash Player: blue tint on videos with NVIDIA
-
-An issue with [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) versions 11.2.202.228-1 and 11.2.202.233-1 causes it to send the U/V panes in the incorrect order resulting in a blue tint on certain videos. Version 0.5 of [libvdpau](https://www.archlinux.org/packages/?name=libvdpau) includes a workaround to fix this, see the [official announcement](http://lists.x.org/archives/xorg-announce/2012-September/002066.html).
-
-### Flash Player: leaking overlay with NVIDIA
-
-This bug is due to the incorrect color key being used by the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) version 11.2.202.228-1 (see [this post](http://www.nvnews.net/vbulletin/showpost.php?p=2514210&postcount=102) on the NVIDIA forums) and causes the Flash content to "leak" into other pages or solid black backgrounds. To avoid this issue simply export `VDPAU_NVIDIA_NO_OVERLAY=1` within either your shell profile (e.g. `~/.bash_profile` or `~/.zprofile`) or `~/.xinitrc`
-
 ### Flash Player: videos not working on older systems
 
 If you have Adobe Flash installed on an older system and you start playing a video which simply turns black with nothing happening, it is most likely that your CPU does not support SSE2\. You can simply check this by looking at your CPU flags with this command:
@@ -470,8 +461,6 @@ $ grep sse2 /proc/cpuinfo
 If no results are returned, then you need to install an older version of Flash (for example 10.3, or 11.1). Older versions possibly will have vulnerabilities. You should then consider sandboxing Firefox using the [sandfox](https://aur.archlinux.org/packages/sandfox/) package See the [sandfox homepage](https://igurublog.wordpress.com/downloads/script-sandfox/) for usage information.
 
 Older versions of Flash are available here: [https://www.adobe.com/products/flashplayer/distribution3.html](https://www.adobe.com/products/flashplayer/distribution3.html) You need to copy `libflashplayer.so` to the folder `/usr/lib/mozilla/plugins/`
-
-Older [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) packages can be downloaded from the [AUR](/index.php/AUR "AUR") e.g. [flashplugin-10](https://aur.archlinux.org/packages/flashplugin-10/).
 
 The most recent package without SSE2 is `flashplugin-11.1.102.63-1-i686.pkg.tar.xz`. If you use the packaged version, you have to add `IgnorePkg = flashplugin` to `/etc/pacman.conf`.
 
@@ -511,3 +500,7 @@ If Apple Trailers appear to start to play and then fail, try setting the user ag
 QuickTime/7.6.2 (qtver=7.6.2;os=Windows NT 5.1Service Pack 3)
 
 ```
+
+## See also
+
+*   [Play videos without using Flash](https://trisquel.info/en/wiki/play-videos-without-using-flash) at the Trisquel Wiki

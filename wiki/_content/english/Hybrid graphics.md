@@ -68,7 +68,7 @@ The Dynamic Switch needs Xorg support for the discrete videocard assigned for re
 
 This means that with a muxless intel+ati design, you cannot use your discrete card by simply modprobing the radeon module.
 
-As of now, there are 3 choices:
+As of now, there are 2 choices:
 
 - Test and improve some virtualGL based program to make the switch, like the common-amd branch of bumblebee project. Check the [project repository](https://github.com/Bumblebee-Project/Bumblebee/issues/52) and [this](http://forums.gentoo.org/viewtopic-t-909802.html) useful post.
 

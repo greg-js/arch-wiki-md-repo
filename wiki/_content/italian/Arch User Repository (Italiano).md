@@ -15,6 +15,8 @@ Un buon numero di nuovi pacchetti che entrano nei repository ufficiali, partono 
 *   [5 Feedback](#Feedback)
 *   [6 Condividere e mantenere i pacchetti](#Condividere_e_mantenere_i_pacchetti)
     *   [6.1 Aggiungere pacchetti](#Aggiungere_pacchetti)
+        *   [6.1.1 Regole per la sottomissione dei pacchetti](#Regole_per_la_sottomissione_dei_pacchetti)
+        *   [6.1.2 Creare un nuovo pacchetto](#Creare_un_nuovo_pacchetto)
     *   [6.2 Mantenere i pacchetti](#Mantenere_i_pacchetti)
     *   [6.3 Altri tipi di richieste](#Altri_tipi_di_richieste)
 *   [7 community](#community)
@@ -70,7 +72,7 @@ Installare i pacchetti da AUR è un processo relativamente semplice. Essenzialme
 
 1.  Ottenere il tarball contenente il [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") e gli eventuali altri file necessari come unità di systemd e patch (ma spesso non i sorgenti di per sè).
 2.  Estrarre il tarball (preferibilmente in una cartella a parte da usare solo per le compilazioni di AUR) con `tar -xvzf foo.tar.gz`.
-3.  Verificare che il PKGBUILD e i file che lo accompagnano non siano maligni o inattendibili.
+3.  Verificare che il PKGBUILD e i file che lo accompagnano non siano pericolosi o inattendibili.
 4.  Lanciare il comando `makepkg` all'interno della directory contenente i file scaricati (il comando "`makepkg -s`" si occuperà di risolvere automaticamente le dipendenze tramite pacman). Questo scaricherà e compilerà il codice, infine creerà il pacchetto.
 5.  Leggere l'eventuale file README in `src/`, dato che potrebbe contenere informazioni utili più avanti.
 6.  Installare il pacchetto ottenuto tramite [pacman](/index.php/Pacman "Pacman"):
@@ -112,13 +114,23 @@ Per maggiori informazioni su ABS leggete la guida [Arch Build System](/index.php
 
 Trovare il pacchetto su AUR. Ciò può essere fatto usando lo strumento di ricerca (la casella di testo in alto nella [home page di AUR](https://aur.archlinux.org/)). Cliccando sul nome del pacchetto nei risultati della ricerca si aprirà la pagina informativa relativa al pacchetto. Leggere la descrizione per assicurarsi che si tratti del pacchetto che si stà cercando, controllare quando il pacchetto è stato aggiornato l'ultima volta, e leggere i relativi commenti.
 
-Scaricare i file necessari cliccando sul link "Scarica il tarball" nel riquadro "Azioni del pacchetto" a destra. Questo file dovrebbe essere salvato nella cartella di compilazione o quantomeno vi andrebbe copiato al termine del download. In questo esempio si suppone di avere il file chiamato "foo.tar.gz"(il formato standard è *nomepacchetto*.tar.gz, se è stato inviato correttamente).
+Ci sono tre metodi per ottenere i file necessari per la compilazione, senza la necessità di utilizzare un AUR helper:
 
-In alternativa è possibile scaricare il tarball dal terminale, dopo essersi spostati nella cartella di compilazione:
+*   Scaricare i file necessari per la compilazione cliccando sul link "Scarica lo snapshot" nel riquadro "Azioni del pacchetto" a destra. Questo file dovrebbe essere salvato nella cartella di compilazione o quantomeno vi andrebbe copiato al termine del download. In questo esempio si suppone di avere il file chiamato "foo.tar.gz"(il formato standard è *nomepacchetto*.tar.gz, se è stato inviato correttamente).
+
+*   In alternativa è possibile scaricare il tarball dal terminale, dopo essersi spostati nella cartella di compilazione:
 
 ```
 $ cd ~/builds
-$ curl -O https://aur.archlinux.org/packages/fo/foo/foo.tar.gz
+$ curl -L -O https://aur.archlinux.org/packages/fo/foo/foo.tar.gz
+
+```
+
+*   E' anche possibile clonare il repository [Git](/index.php/Git "Git"), che è denominato "Git Clone URL" nei "Dettagli del pacchetto":
+
+```
+$ cd ~/build-repos
+$ git clone [https://aur.archlinux.org/foo.git](https://aur.archlinux.org/foo.git)
 
 ```
 
@@ -133,6 +145,8 @@ $ tar -xvzf foo.tar.xz
 ```
 
 Questo creerà una cartella di nome "foo" all'interno della directory di compilazione.
+
+**Note:** Nel caso di clone del git, il processio di estrazione non è necesseario. Il clone git ha già creato la directory `foo`.
 
 **Attenzione:** **Controllare accuratamente tutti i file.** Spostarsi nella nuova cartella appena creata e controllare accuratamente il `PKGBUILD` ed eventuali `.install` verificando che non contengano comandi potenzialmente pericolosi. I `PKGBUILD` sono script bash che contengono funzioni che verranno eseguite da `makepkg`: queste funzioni possono contenere un qualsiasi comando valido o sintassi di Bash, quindi è del tutto possibile che un `PKGBUILD` contenga comandi pericolosi all'insaputa dell'autore. Da quando `makepkg` utilizza fakeroot (e non dovrebbe mai essere eseguito da root), c'è un certo livello di protezione, ma non si dovrebbe mai farci troppo affidamento. In caso di dubbi NON compilare il pacchetto e cercare consigli sui forum o sulle mailing list.
 
@@ -191,6 +205,8 @@ Gli utenti possono **condividere** i PKGBUILD usando l'interfaccia di AUR. L'Arc
 
 ### Aggiungere pacchetti
 
+**Attenzione:** Prima di sottomettere un pacchetto ci si aspetta che tu abbia familiarizzato con [Arch Packaging Standards (Italiano)](/index.php/Arch_Packaging_Standards_(Italiano) "Arch Packaging Standards (Italiano)").
+
 Dopo aver effettuato l'accesso sul sito di AUR, un utente può [spedire](https://aur.archlinux.org/pkgsubmit.php) un archivio tar compresso con gzip (`.tar.gz`) di una directory contenente i file necessari alla compilazione del pacchetto. La directory all'interno dell'archivio deve contenere un `PKGBUILD`, eventuali file `.install`, le patch, eccetera (**assolutamente** nessun file compilato). Un esempio di come questa cartella dovrebbe essere può essere trovato all'interno di `/var/abs` nel caso in cui sia stato installato [ABS](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)").
 
 L'archivio può essere creato con il seguente comando:
@@ -209,6 +225,8 @@ libfoo/PKGBUILD
 libfoo/libfoo.install
 ```
 
+#### Regole per la sottomissione dei pacchetti
+
 Quando si invia un pacchetto, attenersi alle seguenti regole:
 
 *   Cercare il pacchetto nel [database ufficiale](https://www.archlinux.org/packages/). Se **una qualunque versione** è già presente, **non** inviare il pacchetto. Se il pacchetto ufficiale non è aggiornato, marcarlo con l'apposito link. Se il pacchetto ufficiale è danneggiato o privo di alcune funzionalità è raccomandato aprire un [bug report](https://bugs.archlinux.org/).
@@ -220,6 +238,32 @@ Quando si invia un pacchetto, attenersi alle seguenti regole:
 *   L'AUR e i repository ufficiali sono concepiti per pacchetti che installano generalmente software e contenuti correlati, compresi uno o più tra i seguenti: eseguibili; file di configurazione; dcumentazione online o offline per software specifici o per la distribuzione Arch Linux intera; file multimediali utilizzati direttamente dal software.
 *   Accumulare esperienza prima di spedire pacchetti. Compilare alcuni pacchetti per imparare il meccanismo ed allora spedirlo.
 *   Se si spedisce `pacchetto.tar.gz` con all'interno un file di nome `pacchetto` si otterrà un errore: "Could not change to directory `/home/aur/unsupported/pacchetto/pacchetto`". Per evitare questo errore rinominare il file chiamato `pacchetto` ad esempio in `pacchetto.rc` o simili. Quando sarà estratto nella cartella `pkg` sarà possibile rinominarlo nuovamente come `pacchetto`. Assicurarsi di leggere anche [Arch Packaging Standards (Italiano)#Invio di pacchetti ad AUR](/index.php/Arch_Packaging_Standards_(Italiano)#Invio_di_pacchetti_ad_AUR "Arch Packaging Standards (Italiano)").
+
+#### Creare un nuovo pacchetto
+
+Per avere accesso in scrittura ad AUR, gli utenti hanno bisogno di avere una coppia di [SSH keys](/index.php/SSH_keys "SSH keys"). E' necessario copiare il contenuto della chiave pubblica nel profilo utente in *Il mio account*, e configurare la chiave privata corrispondente, per l'host `aur.archlinux.org`. Ad esempio:
+
+ `~/.ssh/config` 
+```
+Host aur.archlinux.org
+  IdentityFile ~/.ssh/aur
+  User aur
+```
+
+Si raccomanda di [creare una nuova coppia](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") piuttosto che usarne una esistente, in modo da poter revocare le chiavi selettivamente nel caso in cui succeda qualcosa.
+
+Per inviare un pacchetto, è semplicemente necessario clonare il repository Git col nome corrispondente:
+
+```
+$ git clone ssh://aur@aur.archlinux.org/*foobar*.git
+
+```
+
+Eseguire il cloning, o il pushing, di un repository non esistente ne creerà automaticamente uno nuovo.
+
+E' possibile adesso aggiungere i file sorgenti nella copia locale del repository Git. Quando si effettuano modifiche al repository, accertarsi di includere sempre il `PKGBUILD` e `.SRCINFO` nella directory di livello piu' alto. E' possibile creare file `.SRCINFO` usando `makepkg --printsrcinfo` (stampato sullo standard output) o utilizzando `mksrcinfo`, fornito da [pkgbuild-introspection](https://www.archlinux.org/packages/?name=pkgbuild-introspection) (scritto su file).
+
+**Note:** `.SRCINFO` contiene metadata del pacchetto sorgente, vedere [#AUR metadata](#AUR_metadata) per i dettagli.
 
 ### Mantenere i pacchetti
 

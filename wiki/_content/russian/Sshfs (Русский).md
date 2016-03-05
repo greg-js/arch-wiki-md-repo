@@ -17,8 +17,8 @@
     *   [6.2 Connection reset by peer](#Connection_reset_by_peer)
     *   [6.3 Remote host has disconnected](#Remote_host_has_disconnected)
     *   [6.4 Подвисание приложений (например, Nautilus, Gedit)](#.D0.9F.D0.BE.D0.B4.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.28.D0.BD.D0.B0.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D1.80.2C_Nautilus.2C_Gedit.29)
-    *   [6.5 Shutdown hangs when sshfs is mounted](#Shutdown_hangs_when_sshfs_is_mounted)
-*   [7 See also](#See_also)
+    *   [6.5 Завершение работы зависает, когда sshfs примонтирована](#.D0.97.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.B5.D1.82.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_sshfs_.D0.BF.D1.80.D0.B8.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B0)
+*   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
@@ -296,9 +296,9 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 
 Смотрите следующий [отчет об ошибке](https://bugs.archlinux.org/task/40260) для более подробной информации и/или решения.
 
-### Shutdown hangs when sshfs is mounted
+### Завершение работы зависает, когда sshfs примонтирована
 
-Systemd may hang on shutdown if an sshfs mount was mounted manually and not unmounted before shutdown. To solve this problem, create this file (as root):
+Systemd может зависать при завершении работы если sshfs примонтирована вручную и не отмонтирована перед выключением. Чтобы решить эту проблему, создайте следующий файл (как суперпользователь):
 
  `/etc/systemd/system/killsshfs.service` 
 ```
@@ -315,10 +315,10 @@ WantedBy=multi-user.target
 
 ```
 
-Then enable the service: `systemctl enable killsshfs.service`
+Затем [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу `killsshfs.service`.
 
-## See also
+## Смотрите также
 
-*   [sftpman](/index.php/Sftpman "Sftpman") - sshfs helper tool
+*   [sftpman](/index.php/Sftpman "Sftpman") - помощник sshfs
 *   [SSH](/index.php/SSH "SSH")
-*   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
+*   [Как монтировать файловую систему SSH, находящуюся в chroot-среде](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), с специальными владельцами и вопросами доступа.

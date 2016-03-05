@@ -11,7 +11,6 @@
     *   [2.5 Font spacing](#Font_spacing)
     *   [2.6 Colors](#Colors)
 *   [3 Cut and paste](#Cut_and_paste)
-    *   [3.1 Clipboard management](#Clipboard_management)
 *   [4 Perl extensions](#Perl_extensions)
     *   [4.1 Clickable URLs](#Clickable_URLs)
     *   [4.2 Yankable URLs (no mouse)](#Yankable_URLs_.28no_mouse.29)
@@ -161,9 +160,7 @@ Rxvt-unicode uses cut buffers which are loaded into the current `PRIMARY` select
 
 **Note:** Text can be selected to `CLIPBOARD` with the `selection-to-clipboard` [perl extension](#Perl_extensions) available since [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) 9.20.
 
-### Clipboard management
-
-See [Clipboard#List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard")
+See also [Clipboard#List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard")
 
 ## Perl extensions
 

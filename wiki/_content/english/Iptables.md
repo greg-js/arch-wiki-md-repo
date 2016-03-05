@@ -130,14 +130,14 @@ Then [start](/index.php/Start "Start") the `iptables.service` unit. As with othe
 
 iptables rules for IPv6 are, by default, stored in `/etc/iptables/ip6tables.rules`, which is read by `ip6tables.service`. You can start it the same way as above.
 
-**Note:** The `iptables.service` and `ip6tables.service` files in the iptables 1.4.21-1 package are outdated. Since systemd 214 for security reasons it is recommended that firewalls be started before the `network-pre.target` target so that the firewall is running before any network is configured. Pending updating of the iptables package, create the dropin directory `/etc/systemd/system/iptables.service.d`, create the file `00-pre-network.conf` and include the following snippet:
+**Note:** The `iptables.service` and `ip6tables.service` files in the iptables 1.4.21-1 package are outdated. Since systemd 214 for security reasons it is recommended that firewalls be started before the `network-pre.target` target so that the firewall is running before any network is configured. Pending updating of the iptables package, create an override config file with the command `systemctl edit iptables.service` and include the following snippet:
 ```
 [Unit]
 Wants=network-pre.target
 Before=network-pre.target
 
 ```
-If the system uses the `ip6tables.service`, do the same via a `/etc/systemd/system/ip6tables.service.d` dropin directory. For more details see this [systemd bug report](https://bugs.freedesktop.org/show_bug.cgi?id=79600), this [systemd documentation](http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) and [FS#33478](https://bugs.archlinux.org/task/33478).
+If the system uses the `ip6tables.service`, create an override config file with a `systemctl edit ip6tables.service` command and the same contents. For more details see this [systemd bug report](https://bugs.freedesktop.org/show_bug.cgi?id=79600), this [systemd documentation](http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) and [FS#33478](https://bugs.archlinux.org/task/33478).
 
 After adding rules via command-line as shown in the following sections, the configuration file is not changed automatically — you have to save it manually:
 

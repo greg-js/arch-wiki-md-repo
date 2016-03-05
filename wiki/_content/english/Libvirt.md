@@ -307,9 +307,9 @@ Print active and inactive domains:
 
 #### Create a new domain using virt-install
 
-For an extremely detailed domain (virtual machine) setup, it is easier to [#Create a new domain using virt-manager](#Create_a_new_domain_using_virt-manager). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD).
+For an extremely detailed domain (virtual machine) setup, it is easier to [#Create a new domain using virt-manager](#Create_a_new_domain_using_virt-manager). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD). See `man virt-install` for more details and information about unlisted options.
 
-Arch Linux install (two GiB, raw format volume create; user-networking):
+Arch Linux install (two GiB, qcow2 format volume create; user-networking):
 
 ```
 $ virt-install  \
@@ -318,7 +318,7 @@ $ virt-install  \
   --vcpus=2,maxvcpus=4      \
   --cpu host                \
   --cdrom $HOME/Downloads/arch-linux_install.iso \
-  --disk size=2,format=raw  \
+  --disk size=2,format=qcow2  \
   --network user            \
   --virt-type kvm
 
@@ -357,7 +357,7 @@ $ virt-install \
 
 ```
 
-**Tip:** Run `osinfo-query --fields=name,version os` to get argument for `--os-variant`; this will help define some specifications for the domain. However, `--memory` and `--disk` will need to be entered; one can look within the appropriate `/usr/share/libosinfo/db/oses/*os*.xml` if needing these specifications. After installing, it will likely be preferable to install the [Spice Guest Tools](http://www.spice-space.org/download.html) that include the [VirtIO drivers](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Virtualization_Host_Configuration_and_Guest_Installation_Guide/form-Virtualization_Host_Configuration_and_Guest_Installation_Guide-Para_virtualized_drivers-Mounting_the_image_with_virt_manager.html). For a Windows VirtIO network driver there is also [virtio-win](https://aur.archlinux.org/packages/virtio-win/). These drivers are referenced by a `<model type='virtio' />` in the guest's `.xml` configuration section for the device. A bit more information can also be found on the [QEMU article](/index.php/QEMU#Preparing_a_Windows_guest "QEMU").
+**Tip:** Run `osinfo-query --fields=name,short-id,version os` to get argument for `--os-variant`; this will help define some specifications for the domain. However, `--memory` and `--disk` will need to be entered; one can look within the appropriate `/usr/share/libosinfo/db/oses/*os*.xml` if needing these specifications. After installing, it will likely be preferable to install the [Spice Guest Tools](http://www.spice-space.org/download.html) that include the [VirtIO drivers](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Virtualization_Host_Configuration_and_Guest_Installation_Guide/form-Virtualization_Host_Configuration_and_Guest_Installation_Guide-Para_virtualized_drivers-Mounting_the_image_with_virt_manager.html). For a Windows VirtIO network driver there is also [virtio-win](https://aur.archlinux.org/packages/virtio-win/). These drivers are referenced by a `<model type='virtio' />` in the guest's `.xml` configuration section for the device. A bit more information can also be found on the [QEMU article](/index.php/QEMU#Preparing_a_Windows_guest "QEMU").
 
 Import existing volume:
 

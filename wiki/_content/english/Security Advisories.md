@@ -4,24 +4,25 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 *   [1 Scheduled Advisories](#Scheduled_Advisories)
 *   [2 Recent Advisories](#Recent_Advisories)
-    *   [2.1 February 2016](#February_2016)
-    *   [2.2 January 2016](#January_2016)
-    *   [2.3 December 2015](#December_2015)
-    *   [2.4 November 2015](#November_2015)
-    *   [2.5 October 2015](#October_2015)
-    *   [2.6 September 2015](#September_2015)
-    *   [2.7 August 2015](#August_2015)
-    *   [2.8 July 2015](#July_2015)
-    *   [2.9 June 2015](#June_2015)
-    *   [2.10 May 2015](#May_2015)
-    *   [2.11 Apr 2015](#Apr_2015)
-    *   [2.12 Mar 2015](#Mar_2015)
-    *   [2.13 Feb 2015](#Feb_2015)
-    *   [2.14 Jan 2015](#Jan_2015)
-    *   [2.15 Dec 2014](#Dec_2014)
-    *   [2.16 Nov 2014](#Nov_2014)
-    *   [2.17 Oct 2014](#Oct_2014)
-    *   [2.18 Sep 2014](#Sep_2014)
+    *   [2.1 Mars 2016](#Mars_2016)
+    *   [2.2 February 2016](#February_2016)
+    *   [2.3 January 2016](#January_2016)
+    *   [2.4 December 2015](#December_2015)
+    *   [2.5 November 2015](#November_2015)
+    *   [2.6 October 2015](#October_2015)
+    *   [2.7 September 2015](#September_2015)
+    *   [2.8 August 2015](#August_2015)
+    *   [2.9 July 2015](#July_2015)
+    *   [2.10 June 2015](#June_2015)
+    *   [2.11 May 2015](#May_2015)
+    *   [2.12 Apr 2015](#Apr_2015)
+    *   [2.13 Mar 2015](#Mar_2015)
+    *   [2.14 Feb 2015](#Feb_2015)
+    *   [2.15 Jan 2015](#Jan_2015)
+    *   [2.16 Dec 2014](#Dec_2014)
+    *   [2.17 Nov 2014](#Nov_2014)
+    *   [2.18 Oct 2014](#Oct_2014)
+    *   [2.19 Sep 2014](#Sep_2014)
 *   [3 Publishing a new advisory](#Publishing_a_new_advisory)
     *   [3.1 Templates](#Templates)
     *   [3.2 Vim-Snippet](#Vim-Snippet)
@@ -31,6 +32,10 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
+
+### Mars 2016
+
+*   [3 March 2016] [ASA-201603-1](https://lists.archlinux.org/pipermail/arch-security/2016-March/000566.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
 
 ### February 2016
 

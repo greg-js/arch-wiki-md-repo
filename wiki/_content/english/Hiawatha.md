@@ -11,7 +11,8 @@
         *   [2.3.2 Ruby on Rails](#Ruby_on_Rails)
         *   [2.3.3 Python FastCGI](#Python_FastCGI)
     *   [2.4 SSL](#SSL)
-        *   [2.4.1 Server Name Indication](#Server_Name_Indication)
+        *   [2.4.1 Let's Encrypt](#Let.27s_Encrypt)
+        *   [2.4.2 Server Name Indication](#Server_Name_Indication)
     *   [2.5 Output Compression](#Output_Compression)
 *   [3 See also](#See_also)
 
@@ -157,7 +158,50 @@ The order of the items in `serverkey.pem` is important. The order has to be as f
 
 ```
 
-If you want to use Let's Encrypt see this [forum post](https://www.hiawatha-webserver.org/forum/topic/2085).
+#### Let's Encrypt
+
+If you want to use Let's Encrypt with Hiawatha follow [Let’s_Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") (the manual way is recommended). Read Let's Encrypt [Getting Started](https://letsencrypt.org/getting-started/) for detailed instructions. Afterwards, create a Hiawatha certificate bundle:
+
+```
+# cd /etc/letsencrypt/live/domain.tld/
+# cat privkey.pem cert.pem chain.pem > /etc/hiawatha/certs/domain.tld/hiawatha.pem
+
+```
+
+and secure it:
+
+```
+# chmod 400 /etc/hiawatha/certs/domain.tld/hiawatha.pem
+
+```
+
+Change your Hiawatha TLScertFile paths accordingly in hiawatha.conf:
+
+```
+   Binding {                                                      
+      ...                                                         
+      RequireTLS = yes                                           
+      TLScertFile = /etc/hiawatha/certs/domain.tld/hiawatha.pem 
+      ...                                                         
+   }                                                              
+
+   VirtualHost {                                                  
+       ...                                                        
+       RequireTLS = yes                                           
+       TLScertFile = /etc/hiawatha/certs/domain.tld/hiawatha.pem
+       ...                                                        
+   }                                                              
+
+```
+
+Then restart Hiawatha:
+
+```
+   # systemctl restart hiawatha.service
+
+```
+
+For see this [forum post](https://www.hiawatha-webserver.org/forum/topic/2085).
 
 For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto/bindings).
 

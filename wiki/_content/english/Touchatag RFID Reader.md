@@ -40,7 +40,9 @@ The Version this howto is about is the above ACS ACR122U PICC firmware 1.0.
 
 ## Disable pn533 and nfc driver in kernel
 
-When the ACR122U plug in, kernel(>3.5) will automatic load the pn533 driver. With the pn533 driver, pcscd will report "Can't claim interface" error. use below command to disable pn533 and nfc driver in kernel.
+When the ACR122U is plugged in, kernel(>3.5) will automatically load the pn533 driver. With the pn533 driver, pcscd will report "Can't claim interface" error. use below command to disable pn533 and nfc driver in kernel.
+
+The pn533 driver together with nfc driver is used by libnfc. This instruction is for using libpcsd-lite (Why not use libnfc, I can't find any comparative information between libpcsclite and libnfc)
 
 ```
 # echo "install nfc /bin/false" >> /etc/modprobe.d/blacklist.conf

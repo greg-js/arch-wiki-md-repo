@@ -2,46 +2,24 @@
 
 ## Contents
 
-*   [1 针对已安装官方专有驱动的](#.E9.92.88.E5.AF.B9.E5.B7.B2.E5.AE.89.E8.A3.85.E5.AE.98.E6.96.B9.E4.B8.93.E6.9C.89.E9.A9.B1.E5.8A.A8.E7.9A.84)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-*   [3 加载](#.E5.8A.A0.E8.BD.BD)
-    *   [3.1 KMS](#KMS)
-        *   [3.1.1 延迟启动](#.E5.BB.B6.E8.BF.9F.E5.90.AF.E5.8A.A8)
-        *   [3.1.2 提早启动](#.E6.8F.90.E6.97.A9.E5.90.AF.E5.8A.A8)
-*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 保留已安装的Nvidia驱动](#.E4.BF.9D.E7.95.99.E5.B7.B2.E5.AE.89.E8.A3.85.E7.9A.84Nvidia.E9.A9.B1.E5.8A.A8)
-    *   [4.2 安装最新的开发包](#.E5.AE.89.E8.A3.85.E6.9C.80.E6.96.B0.E7.9A.84.E5.BC.80.E5.8F.91.E5.8C.85)
-    *   [4.3 Tear-free compositing](#Tear-free_compositing)
-    *   [4.4 双输出](#.E5.8F.8C.E8.BE.93.E5.87.BA)
-    *   [4.5 设置控制台分辨率](#.E8.AE.BE.E7.BD.AE.E6.8E.A7.E5.88.B6.E5.8F.B0.E5.88.86.E8.BE.A8.E7.8E.87)
-    *   [4.6 电源管理](#.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
-    *   [4.7 启用 MSI (Message Signaled Interrupts)](#.E5.90.AF.E7.94.A8_MSI_.28Message_Signaled_Interrupts.29)
-*   [5 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-
-## 针对已安装官方专有驱动的
-
-**Note:** 此部分内容仅针对已安装[NVIDIA](/index.php/NVIDIA "NVIDIA")专有驱动的，其他人可略过此部分
-
-**Tip:** 如果你要继续保留专有驱动， 你需要[配置一些东西](#Keep_NVIDIA_driver_installed)来加载Nouvean驱动
-
-如果你已经安装了专有驱动，请先卸载它们：
-
-```
- # pacman -Rdds nvidia nvidia-utils nvidia-libgl
-
-```
-
-请确保已经删除Nvidia专有驱动创建的`/etc/X11/xorg.conf` 文件 (或者你可以撤销对这个文件的修改), 否则X将无法正确加载nouveau驱动。
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 加载](#.E5.8A.A0.E8.BD.BD)
+    *   [2.1 提前启动KMS](#.E6.8F.90.E5.89.8D.E5.90.AF.E5.8A.A8KMS)
+*   [3 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
+    *   [3.1 保留已安装的Nvidia驱动](#.E4.BF.9D.E7.95.99.E5.B7.B2.E5.AE.89.E8.A3.85.E7.9A.84Nvidia.E9.A9.B1.E5.8A.A8)
+    *   [3.2 安装最新的开发包](#.E5.AE.89.E8.A3.85.E6.9C.80.E6.96.B0.E7.9A.84.E5.BC.80.E5.8F.91.E5.8C.85)
+    *   [3.3 Tear-free compositing](#Tear-free_compositing)
+    *   [3.4 双输出](#.E5.8F.8C.E8.BE.93.E5.87.BA)
+    *   [3.5 设置控制台分辨率](#.E8.AE.BE.E7.BD.AE.E6.8E.A7.E5.88.B6.E5.8F.B0.E5.88.86.E8.BE.A8.E7.8E.87)
+    *   [3.6 电源管理](#.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
+    *   [3.7 启用 MSI (Message Signaled Interrupts)](#.E5.90.AF.E7.94.A8_MSI_.28Message_Signaled_Interrupts.29)
+*   [4 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
 
 ## 安装
 
-在继续操作之前，请先弄清楚你显卡[型号](http://nouveau.freedesktop.org/wiki/CodeNames) (更详细的列表请看 [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units")) 的 [特性矩阵](http://nouveau.freedesktop.org/wiki/FeatureMatrix/) ，看看你的显卡支持什么功能，另外，请确保您的[Xorg](/index.php/Xorg "Xorg") 已经正确安装。
-
-[安装](/index.php/Pacman "Pacman") 位于 [官网](/index.php/Official_repositories "Official repositories")的DDX 驱动通过[xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) 包, 它会引入 [mesa](https://www.archlinux.org/packages/?name=mesa)，为DRI驱动提供3D加速功能
+[安装](/index.php/Pacman "Pacman") [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) 包, 它会引入 [mesa](https://www.archlinux.org/packages/?name=mesa)，为DRI驱动提供3D加速功能
 
 为x86_64提供32-bit支持, 请从[multilib](/index.php/Multilib "Multilib")源中安装[lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa)。
-
-**Note:** 在为3D驱动提交Bug前请先参阅 [Nouveau MesaDrivers 页](http://nouveau.freedesktop.org/wiki/MesaDrivers)。
 
 ## 加载
 
@@ -50,19 +28,13 @@ Nouveau的内核模块应该在系统启动时就已加载完成。 如果没有
 *   确保你的[内核参数](/index.php/Kernel_parameters "Kernel parameters")中没有`nomodeset` 或者 `vga=`， 因为Nouveau需要内核模式设置才能成功运行（见下文）。
 *   另外，确保你没有在`/etc/modprobe.d/`中通过modprobe名单禁用Nouveau。
 
-### KMS
+### 提前启动KMS
 
 **Tip:** 如果你对这个问题的解决有问题的话，请访问[这个页面](/index.php/Kernel_Mode_Setting#Forcing_modes_and_EDID "Kernel Mode Setting").
 
 Nouveau 驱动依赖[Kernel Mode Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting") (KMS)。当系统启动时，由于KMS初始化显示驱动程序可能会使分辨率发生改变。只需要安装Nouveau驱动，足以使系统能够识别并使用"延迟启动"模式初始化它。查看 [Nouveau KernelModeSetting page](http://nouveau.freedesktop.org/wiki/KernelModeSetting) 获取更多细节
 
 **Note:** 用户可能会更喜欢提前启动的方法，因为它不会在引导过程中产生讨厌的分辨率变化问题
-
-#### 延迟启动
-
-这种方法会在其他内核模块都加载完成后启动KMS。你可以去看看名为"Loading modules"的那段文本
-
-#### 提早启动
 
 这种方法会在[initramfs](/index.php/Initramfs "Initramfs")加载后尽可能早的启动KMS。 为了实现这个，可以在`/etc/mkinitcpio.conf`的`MODULES` 数组中添加 `nouveau`：
 

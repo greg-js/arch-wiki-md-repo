@@ -166,10 +166,10 @@ This is a list of helper utilities that search, download and/or build packages.
 | bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | No | bash/zsh | Pacman-like/Specific | Trust management, ABS support, extends Powerpill |
 | burgaur | Python3 | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | Pacman-like | Wrapper for *cower* |
 | cower | C | Yes | N/A | Yes | N/A | N/A | No | bash/zsh | Specific | No automatic builds, regex support |
-| pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | Pacman-like/specific | Minimizes user interaction, multilangual |
+| pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | Pacman-like/specific | Minimizes user interaction, multilingual |
 | packer | Bash | No | Yes | No | No | No | No | None | Pacman-like | - |
 | pbget | Python3 | Yes | N/A | Yes | N/A | N/A | No | None | Specific | No automatic builds |
-| PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[3]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | Pacman-like | Automatic builds by default, use -F to disable; multilangual |
+| PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[3]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | Pacman-like | Automatic builds by default, use -F to disable; multilingual |
 | prm | Bash | Yes [[4]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | Specific | No automatic builds, ABS support |
 | trizen | Perl | Yes | Yes | No | No | No | No | None | Pacman-like | - |
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | Specific | Mirror updates, print news and AUR comments |
