@@ -269,7 +269,8 @@ Once the pool has been created, volumes can be created inside the pool. *If buil
 Create volume, list volumes, resize, and delete:
 
 ```
-$ virsh vol-create-as      *poolname* *volumename* 10GiB
+$ virsh vol-create-as      *poolname* *volumename* 10GiB --format aw|bochs|raw|qcow|qcow2|vmdk
+$ virsh vol-upload  --pool *poolname* *volumename* *volumepath*
 $ virsh vol-list           *poolname*
 $ virsh vol-resize  --pool *poolname* *volumename* 12GiB
 $ virsh vol-delete  --pool *poolname* *volumename*

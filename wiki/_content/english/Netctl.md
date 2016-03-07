@@ -634,7 +634,7 @@ Remove it and everything works, except you no longer have a default route and so
 
 A possible solution is creating a new service:
 
- `/etc/system/system/defaultrouter.service` 
+ `/etc/systemd/system/defaultrouter.service` 
 ```
 [Unit]
 Description

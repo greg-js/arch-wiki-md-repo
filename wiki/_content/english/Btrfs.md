@@ -1,6 +1,6 @@
 From [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs")
 
-	*Btrfs (B-tree file system, variously pronounced: "Butter F S", "Better F S", "B-tree F S", or simply "Bee Tee Arr Eff Ess") is a GPL-licensed experimental copy-on-write file system for Linux. Development began at Oracle Corporation in 2007.*
+	*Btrfs (B-tree file system, pronounced as "butter F S", "better F S", "b-tree F S", or simply by spelling it out) is a file system based on the copy-on-write (COW) principle, initially designed at Oracle Corporation for use in Linux. The development of Btrfs began in 2007, and by August 2014, the file system's on-disk format has been marked as stable.*
 
 From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page)
 
@@ -78,9 +78,7 @@ To format a partition do:
 
 ```
 
-**Note:** As of [this](https://git.kernel.org/cgit/linux/kernel/git/mason/btrfs-progs.git/commit/?id=c652e4efb8e2dd76ef1627d8cd649c6af5905902) commit (November 2013), Btrfs default blocksize is 16KB.
-
-To use a larger blocksize for data/metadata, specify a value for the `nodesize` via the `-n` switch as shown in this example using 16KB blocks:
+The Btrfs default blocksize is 16KB. To use a larger blocksize for data/metadata, specify a value for the `nodesize` via the `-n` switch as shown in this example using 16KB blocks:
 
 ```
 # mkfs.btrfs -L *mylabel* -n 16k /dev/*partition*

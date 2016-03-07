@@ -34,8 +34,6 @@ The *negative effect* of using DKMS is that DKMS breaks the Pacman database. The
 
 [Install](/index.php/Install "Install") the [dkms](https://www.archlinux.org/packages/?name=dkms) package.
 
-[Enable](/index.php/Enable "Enable") the `dkms` [systemd](/index.php/Systemd "Systemd") service to have DKMS modules rebuilt automatically upon reboot after a kernel upgrade.
-
 A good number of modules that lie outside the kernel source tree have a DKMS variant; a few are hosted in the [official repositories](https://www.archlinux.org/packages/?&q=dkms), most are found in the [AUR](https://aur.archlinux.org/packages/?SeB=n&K=dkms). Listed below are a few of the software packages that have a DKMS variant with additional links to dedicated sections where available:
 
 *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"): [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)

@@ -93,6 +93,8 @@ EndSection
 
 ```
 
+Enabling the option `"TearFree"`, however, breaks screen rotation: *xrandr -o left* will either result in a blank screen or in an error message (`xrandr: Configure crtc 0 failed`).
+
 The miniDP port works, at least when used with a VGA adapter. The connected display shows up in *xrandr* correctly..
 
 ### Card reader

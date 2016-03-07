@@ -250,13 +250,15 @@ Server = ftp://repo.arcanis.me/repo/$arch
 *   **Maintainers:** [Phoenix Nemo (phoenixlzx)](https://plus.google.com/+PhoenixNemo/), Felix Yan (felixonmars, TU), [lilydjwg](https://twitter.com/lilydjwg), and others
 *   **Description:** Packages by the Chinese Arch Linux community (mostly signed)
 *   **Git Repo:** [https://github.com/archlinuxcn/repo](https://github.com/archlinuxcn/repo)
-*   **Mirrors:** [https://github.com/archlinuxcn/mirrorlist-repo](https://github.com/archlinuxcn/mirrorlist-repo)
-*   **Key-ID:** Once the repo is added, *archlinuxcn-keyring* package must be installed before any other.
+*   **Mirrors:** [https://github.com/archlinuxcn/mirrorlist-repo](https://github.com/archlinuxcn/mirrorlist-repo) (Mostly for users in mainland China)
+*   **Key-ID:** Once the repo is added, *archlinuxcn-keyring* package must be installed before any other so you don't get errors about PGP signatures.
 
 ```
 [archlinuxcn]
 SigLevel = Optional TrustedOnly
 Server = http://repo.archlinuxcn.org/$arch
+## or use a CDN (beta)
+#Server = https://cdn.repo.archlinuxcn.org/$arch
 
 ```
 
@@ -420,7 +422,6 @@ Server = http://arch.miffe.org/$arch/
 
 #### nullptr_t
 
-*   **Down until 01st March**
 *   **Maintainers:** nullptr_t,
 *   **Description:** AUR packages that have a longer build time on some machines (e.g. [veracrypt](https://aur.archlinux.org/packages/veracrypt/) or [plymouth](/index.php/Plymouth "Plymouth"))
 *   **Key-ID:** B4767A17CEC5B4E9

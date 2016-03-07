@@ -92,7 +92,7 @@ prefix=~/.node_modules
 Do not forget to delete the preceding `;` on the line or it will be read as a comment. You can now add the location of your executables to your shell configuration file (e.g. `.bash_profile`).
 
 ```
-PATH="$HOME/.node_modules/bin:$PATH"
+export PATH="$HOME/.node_modules/bin:$PATH"
 
 ```
 

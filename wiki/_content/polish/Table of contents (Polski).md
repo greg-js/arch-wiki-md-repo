@@ -52,8 +52,6 @@
 
 	<small>7.4.</small> [Package management](/index.php/Category:Package_management_(Polski) "Category:Package management (Polski)") <small>(4)</small>
 
-	<small>7.4.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository_(Polski) "Category:Arch User Repository (Polski)") <small>(0)</small>
-
 	<small>7.5.</small> [Utilities](/index.php/Category:Utilities_(Polski) "Category:Utilities (Polski)") <small>(3)</small>
 
 	<small>7.6.</small> [X server](/index.php/Category:X_server_(Polski) "Category:X server (Polski)") <small>(2)</small>

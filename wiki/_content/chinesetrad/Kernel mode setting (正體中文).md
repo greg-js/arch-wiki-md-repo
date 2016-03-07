@@ -23,9 +23,7 @@ KMS是一個新的技術，仍無法支援所有的顯卡，因此被認為還�
 
 ## 開啟 KMS 的方法
 
-有非常多種開啟KMS的方法。但請寄的不管你用什麼樣的方法，請記得把開機載入程序(bootloader)中的"vga="、"video=" 這些選項刪除，因為這些會造成KMS啟動時程式衝突。其他幀緩衝(framebuffer)驅動(例：[uvesafb](/index.php/Uvesafb "Uvesafb"))也請在啟動KMS前關閉。
-
-KMS現在並沒有支援全部的顯卡。請針對您的顯卡察看下列文章。
+有非常多種開啟KMS的方法。但請記得不管你用什麼樣的方法，請記得把開機載入程序(bootloader)中的"vga="、"video=" 這些選項刪除，因為這些會造成KMS啟動時程式衝突。其他幀緩衝(framebuffer)驅動(例：[uvesafb](/index.php/Uvesafb "Uvesafb"))也請在啟動KMS前關閉。 KMS現在並沒有支援全部的顯卡。請針對您的顯卡察看下列文章。
 
 *   [ATI](/index.php/ATI "ATI")
 *   [Intel](/index.php/Intel "Intel")

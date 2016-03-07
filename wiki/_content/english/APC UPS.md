@@ -15,7 +15,7 @@ This document describes how to install the APC UPS daemon. The main advantage of
 
 ## Install the package
 
-[Install](/index.php/Install "Install") [apcupsd](https://www.archlinux.org/packages/?name=apcupsd) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [apcupsd](https://www.archlinux.org/packages/?name=apcupsd) package.
 
 ## Configure APC UPS
 

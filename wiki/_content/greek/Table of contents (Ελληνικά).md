@@ -1,12 +1,10 @@
 [Ελληνικά](/index.php/Category:%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC "Category:Ελληνικά") <small>(2)</small>
 
-	<small>1.</small> [About Arch](/index.php/Category:About_Arch_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:About Arch (Ελληνικά)") <small>(11)</small>
+	<small>1.</small> [About Arch](/index.php/Category:About_Arch_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:About Arch (Ελληνικά)") <small>(12)</small>
 
-	<small>1.1.</small> [Arch64](/index.php/Category:Arch64_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Arch64 (Ελληνικά)") <small>(1)</small>
+	<small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:ArchWiki (Ελληνικά)") <small>(1)</small>
 
-	<small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:ArchWiki (Ελληνικά)") <small>(1)</small>
-
-	<small>1.3.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Live Arch systems (Ελληνικά)") <small>(1)</small>
+	<small>1.2.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Live Arch systems (Ελληνικά)") <small>(1)</small>
 
 	<small>2.</small> [Applications](/index.php/Category:Applications_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Applications (Ελληνικά)") <small>(0)</small>
 

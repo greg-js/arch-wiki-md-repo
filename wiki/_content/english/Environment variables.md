@@ -6,10 +6,10 @@ An environment variable is a named object that contains data used by one or more
 *   [2 Defining variables](#Defining_variables)
     *   [2.1 Globally](#Globally)
     *   [2.2 Per user](#Per_user)
-        *   [2.2.1 Using ~/.pam_environment](#Using_.7E.2F.pam_environment)
-        *   [2.2.2 Graphical applications](#Graphical_applications)
+        *   [2.2.1 Graphical applications](#Graphical_applications)
     *   [2.3 Per session](#Per_session)
 *   [3 Examples](#Examples)
+    *   [3.1 Using pam_env](#Using_pam_env)
 *   [4 See also](#See_also)
 
 ## Utilities
@@ -77,44 +77,6 @@ export PATH="${PATH}:/home/my_user/bin"
 ```
 
 To update the variable, re-login or *source* the file: `$ source ~/.bash_profile`.
-
-#### Using ~/.pam_environment
-
-Using `~/.pam_environment` can be a little tricky, and the man pages are not particularly clear. So, here's an example:
-
- `~/.pam_environment` 
-```
-LANG             DEFAULT=en_US.UTF-8
-LC_ALL           DEFAULT=${LANG}
-
-XDG_CONFIG_HOME  DEFAULT=@{HOME}/.config
-#XDG_CONFIG_HOME=@{HOME}/.config                    # is **not** valid see below
-XDG_DATA_HOME    DEFAULT=@{HOME}/.local/share
-
-# you can even use recently defined variables
-RCRC             DEFAULT=${XDG_CONFIG_HOME}/rcrc
-BROWSER=firefox
-#BROWSER         DEFAULT=firefox # same as above
-EDITOR=vim
-```
-
-In `~/.pam_environment` there are two ways to set environmental variables:
-
-```
-VARIABLE=VALUE
-
-```
-
-and
-
-```
-VARIABLE [DEFAULT=[value]] [OVERRIDE=[value]]
-
-```
-
-The first one **doesn't allow** the use of `${VARIABLES}` , while the second does. `@{HOME}` is a special variable that expands what is defined in `/etc/passwd` (same goes with `@{SHELL}` ). After defining a `VARIABLE`, you can recall it with `${VARIABLE}` . Note that curly braces and the dollar sign are needed ( `${}` ) when invoking the previously defined variable.
-
-**Note:** This file is read before everything, even `~/.{,bash_,z}profile` and `~/.zshenv` .
 
 #### Graphical applications
 
@@ -208,6 +170,44 @@ http_proxy="http://192.168.0.1:80"
 *   `INFODIR` contains a colon-separated list of directories in which the info command searches for the info pages, e.g., `/usr/share/info:/usr/local/share/info`
 
 *   `TZ` can be used to to set a time zone different to the system zone for a user. The zones listed in `/usr/share/zoneinfo/` can be used as reference, for example `TZ="/usr/share/zoneinfo/Pacific/Fiji"`
+
+### Using pam_env
+
+Using `/etc/environment` and `~/.pam_environment` can be a little tricky, and the man pages (`pam_env(8)` and `pam_env.conf(5)`) are not particularly clear. So, here's an example:
+
+ `~/.pam_environment` 
+```
+LANG             DEFAULT=en_US.UTF-8
+LC_ALL           DEFAULT=${LANG}
+
+XDG_CONFIG_HOME  DEFAULT=@{HOME}/.config
+#XDG_CONFIG_HOME=@{HOME}/.config                    # is **not** valid see below
+XDG_DATA_HOME    DEFAULT=@{HOME}/.local/share
+
+# you can even use recently defined variables
+RCRC             DEFAULT=${XDG_CONFIG_HOME}/rcrc
+BROWSER=firefox
+#BROWSER         DEFAULT=firefox # same as above
+EDITOR=vim
+```
+
+In `~/.pam_environment` there are two ways to set environmental variables:
+
+```
+VARIABLE=VALUE
+
+```
+
+and
+
+```
+VARIABLE [DEFAULT=[value]] [OVERRIDE=[value]]
+
+```
+
+The first one **doesn't allow** the use of `${VARIABLES}` , while the second does. `@{HOME}` is a special variable that expands what is defined in `/etc/passwd` (same goes with `@{SHELL}` ). After defining a `VARIABLE`, you can recall it with `${VARIABLE}` . Note that curly braces and the dollar sign are needed ( `${}` ) when invoking the previously defined variable.
+
+**Note:** This file is read before everything, even `~/.{,bash_,z}profile` and `~/.zshenv` .
 
 ## See also
 

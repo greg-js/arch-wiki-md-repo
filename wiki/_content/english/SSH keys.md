@@ -111,7 +111,7 @@ OpenSSH 7.0 [deprecated and disabled support for DSA keys](https://www.archlinux
 
 [#RSA](#RSA) keys will give you the greatest portability, while [#Ed25519](#Ed25519) will give you the best security but requires recent versions of client & server.[[2]](https://www.gentoo.org/support/news-items/2015-08-13-openssh-weak-keys.html) [#ECDSA](#ECDSA) is likely more compatible than Ed25519 (though still less than RSA), but suspicions exist about its security (see below).
 
-**Note:** As of July 10, 2015, [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") does not handle ECDSA[[3]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[4]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. Users will have to turn to other [SSH agents](#SSH_agents) or stick to RSA keys.
+**Note:** [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") does not handle ECDSA[[3]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[4]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. Users will have to turn to other [SSH agents](#SSH_agents) or stick to RSA keys.
 
 **Note:** These keys are used only to authenticate you; choosing stronger keys will not increase CPU load when transferring data over SSH.
 
@@ -159,7 +159,7 @@ On the other hand, the latest iteration of the [NSA Fact Sheet Suite B Cryptogra
 
 #### ECDSA
 
-**Note:** As of December 28, 2013, the Windows SSH client PuTTY does not support ECDSA and cannot connect to a server that uses only ECDSA keys.
+**Note:** The Windows SSH client PuTTY does not support ECDSA and cannot connect to a server that uses only ECDSA keys.
 
 The Elliptic Curve Digital Signature Algorithm (ECDSA) was introduced as the preferred algorithm for authentication [in OpenSSH 5.7](http://www.openssh.com/txt/release-5.7). Some vendors also disable the required implementations due to potential patent issues.
 

@@ -24,7 +24,7 @@ Arch Linux是一种独立开发的通用 [i686](https://en.wikipedia.org/wiki/P6
 
 *精于心简于形* -列昂纳多.达.芬奇
 
-Arch Linux 将简洁定义为：**避免任何不必要的添加、修改和复杂增加**。它提供的软件都来自原始开发者(([上游](https://en.wikipedia.org/wiki/Upstream_(software_development) "wikipedia:Upstream (software development)"))，仅进行和发行版(下游)相关的最小修改。
+Arch Linux 将简洁定义为：**避免任何不必要的添加、修改和复杂增加**。它提供的软件都来自原始开发者([上游](https://en.wikipedia.org/wiki/Upstream_(software_development) "wikipedia:Upstream (software development)"))，仅进行和发行版(下游)相关的最小修改。
 
 *   不包含上游不愿意接受的补丁。绝大部分 Arch 下游补丁都已经被上游接受，下一个正式版本里会包含。
 *   配置文件也是来自上游，仅包含发行版必须的调整，比如特殊的文件系统路径变动。Arch 不会在安装一个软件包后就自动启动服务。
@@ -60,7 +60,7 @@ Arch的官方源提供了数千种高质量的i686/x86-64二进制包来满足�
 
 ## 社区
 
-Arch社区是值得信赖、充满活力并且好客的：我们鼓励所有的*Archers*都来积极参与，为发行版作出贡献，帮助核心软件的开发，维护软件包，报告或修复[bug](https://bugs.archlinux.org/)，改进 [ArchWiki文档库](/index.php/Main_page "Main page")，在[论坛](https://bbs.archlinux.org/)、[邮件列表](https://mailman.archlinux.org/mailman/listinfo/)和[IRC 频道](/index.php/IRC_channels "IRC channels") 中帮助其他用户解决问题、交换观点，或是分享自己开发的应用程序。Arch Linux是众多地球人的选择，并且有一些[国际社区](/index.php/International_communities "International communities") 提供不同语言的帮助以及文档库。
+Arch社区是值得信赖、充满活力并且好客的：我们鼓励所有的*Archers*都来积极参与，为发行版作出贡献，帮助核心软件的开发，维护软件包，报告或修复[bug](https://bugs.archlinux.org/)，改进 [ArchWiki文档库](/index.php/Main_page "Main page")，在[论坛](https://bbs.archlinux.org/)、[邮件列表](https://mailman.archlinux.org/mailman/listinfo/)和[IRC 频道](/index.php/IRC_channels "IRC channels") 中帮助其他用户解决问题、交换观点，或是分享自己开发的应用程序。Arch Linux是众多地球人的选择，并且有一些[国际社区](/index.php/International_communities "International communities")提供不同语言的帮助以及文档库。
 
 如果你想成为社区的活跃成员，请点击[参与](/index.php/Getting_involved_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Getting involved (简体中文)")。
 

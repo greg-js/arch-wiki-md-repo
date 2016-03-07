@@ -200,7 +200,7 @@ PacBSD began in July 2010 as ArchBSD in an attempt to bring pacman to FreeBSD, t
 
 ### Parabola GNU/Linux-libre
 
-Parabola GNU/Linux-libre is a fully free (as in freedom) distribution [approved by the Free Software Foundation](http://www.gnu.org/distros/free-distros.html). It's packages are optimized for i686, x86_64, and Loongson 2F (mips64el) CPUs.
+Parabola GNU/Linux-libre is a fully free (as in freedom) distribution [approved by the Free Software Foundation](http://www.gnu.org/distros/free-distros.html). It's packages are optimized for i686, x86_64, and armv7h CPUs.
 
 Parabola uses [its own repositories](https://wiki.parabola.nu/Repositories), which are almost identical to Arch's [official repositories](/index.php/Official_repositories "Official repositories"), but with non-free or problematic packages removed (see [blacklist](https://repo.parabola.nu/docs/blacklist.txt) for difference) and other free software replacements available.
 

@@ -236,7 +236,7 @@ After completing the installation of the guest system, install the VirtualBox [G
 **Note:** You can also install the Guest Additions via the iso from the virtualbox-guest-iso, provided you installed this on the host system. To do this, go to the device menu click Insert Guest Additions CD Image. Then, in client, do the following as root:
 
 1.  mount /dev/sr0 /mnt
-2.  bin /mnt/VBoxGuestAdditions.run
+2.  bin /mnt/VBoxLinuxAdditions.run
 
 After installation is complete run as root:
 

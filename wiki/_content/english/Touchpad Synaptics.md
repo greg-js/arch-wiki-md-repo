@@ -363,7 +363,7 @@ fi
 
 ```
 
-**Tip:** When using external monitors with bumblebee, the touchpad can be configured on the second x server by prepending DISPLAY=:8 to the command.
+**Tip:** When using external monitors with [bumblebee](/index.php/Bumblebee "Bumblebee"), the touchpad can be configured on the second X server by prepending `DISPLAY=:8` to the command.
 
 Alternatively, `synclient` can be used to toggle the touchpad. However, it can only turn off touch events but not physical clickpad button usage:
 

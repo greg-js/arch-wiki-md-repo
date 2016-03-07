@@ -30,7 +30,7 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 ### Distribución del teclado en el entorno live
 
 *   La distribución del teclado por defecto es la de EE.UU.
-*   Hay disponibles distribuciones de teclado alternativas que se pueden cargar con la orden `loadkeys *archivo_keymap*`: los archivos de mapas de teclas se pueden encontrar en la carpeta `/usr/share/kbd/keymaps/` (no es necesario especificar la ruta ni la extensión del archivo cuando se usa «loadkeys»).
+*   Hay disponibles distribuciones de teclado alternativas que se pueden cargar con la orden `loadkeys *archivo_keymap*`: los archivos de mapas de teclas se pueden encontrar en la carpeta `/usr/share/kbd/keymaps/` (no es necesario especificar la ruta ni la extensión del archivo cuando se usa «loadkeys», por ejemplo `loadkeys es` para especificar el teclado en español).
 
 ### Conectarse a Internet
 

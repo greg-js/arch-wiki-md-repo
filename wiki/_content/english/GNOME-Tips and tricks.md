@@ -149,7 +149,7 @@ Also see [HiDPI](/index.php/HiDPI "HiDPI").
 
 ## Passwords and keys (PGP Keys)
 
-You can use the Passwords and Keys program (*seahorse*) to create a PGP key as it is a front end for [GnuPG](/index.php/GnuPG "GnuPG") and installs it as dependency. This may be useful in the future (for instance if to encrypt a file). Create a key as shown below (the process may take about 10 minutes):
+You can use the Passwords and Keys program [seahorse](https://www.archlinux.org/packages/?name=seahorse) to create a PGP key as it is a front end for [GnuPG](/index.php/GnuPG "GnuPG") and installs it as dependency. This may be useful in the future (for instance if to encrypt a file). Create a key as shown below (the process may take about 10 minutes):
 
 *File* > *New* > *PGP Key* > *Name* > *Email* > *Defaults* > *Passphrase*.
 

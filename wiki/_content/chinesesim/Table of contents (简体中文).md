@@ -2,9 +2,9 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-[简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(139)</small>
+[简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(138)</small>
 
-	<small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(21)</small>
+	<small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(23)</small>
 
 	<small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small>
 
@@ -12,7 +12,7 @@
 
 	<small>1.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small>
 
-	<small>1.2.</small> [64位Arch](/index.php/Category:Arch64_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch64 (简体中文)") <small>(3)</small>
+	<small>1.2.</small> [64位Arch](/index.php/Category:Arch64_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch64 (简体中文)") <small>(1)</small>
 
 	<small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ArchWiki (简体中文)") <small>(6)</small>
 

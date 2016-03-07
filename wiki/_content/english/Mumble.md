@@ -16,8 +16,6 @@ This page goes over installation and configuration of both the client portion of
         *   [2.2.2 Config File](#Config_File)
         *   [2.2.3 Startup](#Startup)
         *   [2.2.4 Self-Signed Certificate](#Self-Signed_Certificate)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Joystick Binds Not Working or Mouse Binds Get Stuck](#Joystick_Binds_Not_Working_or_Mouse_Binds_Get_Stuck)
 
 ## Client
 
@@ -87,20 +85,3 @@ Edit murmur.ini and tell it where your key and cert is:
 sslKey=/var/lib/murmur/ssl/voip.example.com.key
 sslCert=/var/lib/murmur/ssl/voip.example.com.crt
 ```
-
-## Troubleshooting
-
-### Joystick Binds Not Working or Mouse Binds Get Stuck
-
-Kernel input devices by default are unreadable by Mumble. This causes Mumble to fall back onto a buggy global bind system. This can be fixed temporarily with
-
-```
-# chmod a+r /dev/input/event*
-
-```
-
-or permanently fixed by creating a udev rule
-
- `/etc/udev/rules.d/99-input-permissions.rules`  `KERNEL=="event*", MODE="0644"` 
-
-but be weary this exposes all your input devices to all your applications!

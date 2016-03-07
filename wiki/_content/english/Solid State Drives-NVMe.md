@@ -3,8 +3,6 @@ NVM Express (NVMe) is a specification for accessing SSDs attached through the PC
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Limitations](#Limitations)
-        *   [1.1.1 GRUB](#GRUB)
 *   [2 Performance](#Performance)
     *   [2.1 Alignment](#Alignment)
     *   [2.2 Discards](#Discards)
@@ -17,12 +15,6 @@ NVM Express (NVMe) is a specification for accessing SSDs attached through the PC
 The Linux NVMe driver is natively included in the kernel since version 3.3\. NVMe devices should show up under `/dev/nvme*`.
 
 Extra userspace NVMe tools can be found in [nvme-cli-git](https://aur.archlinux.org/packages/nvme-cli-git/)
-
-### Limitations
-
-#### GRUB
-
-[GRUB](/index.php/GRUB "GRUB") does not support booting from `/boot` partitions that reside on NVMe drives, see [FS#47447](https://bugs.archlinux.org/task/47447).
 
 ## Performance
 

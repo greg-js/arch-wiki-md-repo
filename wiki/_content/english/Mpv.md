@@ -18,6 +18,7 @@
     *   [3.9 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
     *   [3.10 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
     *   [3.11 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
+    *   [3.12 youtube-dl audio with search](#youtube-dl_audio_with_search)
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
 
@@ -146,6 +147,8 @@ If you wish to avoid a certain codec altogether because you cannot hardware-deco
 ytdl-format=bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best
 
 ```
+
+### youtube-dl audio with search
 
 To find and play audio straight from your terminal with `mm ' *SEARCH* '` put the following function in your `.bashrc`:
 

@@ -15,13 +15,13 @@ A good number of new packages that enter the official repositories start in the 
 *   [6 Sharing and maintaining packages](#Sharing_and_maintaining_packages)
     *   [6.1 Submitting packages](#Submitting_packages)
         *   [6.1.1 Rules of submission](#Rules_of_submission)
-        *   [6.1.2 Creating a new package](#Creating_a_new_package)
-        *   [6.1.3 Updating packages](#Updating_packages)
+        *   [6.1.2 Authentication](#Authentication)
+        *   [6.1.3 Creating a new package](#Creating_a_new_package)
+        *   [6.1.4 Uploading packages](#Uploading_packages)
     *   [6.2 Maintaining packages](#Maintaining_packages)
     *   [6.3 Other requests](#Other_requests)
 *   [7 Git repositories for AUR3 packages](#Git_repositories_for_AUR3_packages)
 *   [8 AUR metadata](#AUR_metadata)
-    *   [8.1 How it works](#How_it_works)
 *   [9 AUR translation](#AUR_translation)
 *   [10 FAQ](#FAQ)
     *   [10.1 What is the AUR?](#What_is_the_AUR.3F)
@@ -173,9 +173,9 @@ When submitting a package, observe the following rules:
 *   The AUR and official repositories are intended for packages which install generally software and software-related content, including one or more of the following: executable(s); config file(s); online or offline documentation for specific software or the Arch Linux distribution as a whole; media intended to be used directly by software.
 *   Gain some experience before submitting packages. Build a few packages to learn the process and then submit.
 
-#### Creating a new package
+#### Authentication
 
-For write access to the AUR, users need to have an [SSH key pair](/index.php/SSH_keys "SSH keys"). The content of the public key needs to be copied to the user profile in *My Account*, and the corresponding private key configured for the `aur.archlinux.org` host. For example:
+For write access to the AUR, you need to have an [SSH key pair](/index.php/SSH_keys "SSH keys"). The content of the public key needs to be copied to your profile in *My Account*, and the corresponding private key configured for the `aur.archlinux.org` host. For example:
 
  `~/.ssh/config` 
 ```
@@ -184,49 +184,46 @@ Host aur.archlinux.org
   User aur
 ```
 
-It is recommended that you [create a new key pair](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") rather than use an existing one, so that you could selectively revoke the keys should something happen.
+You should [create a new key pair](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") rather than use an existing one, so that you can selectively revoke the keys should something happen.
 
-In order to upload a package, simply clone the Git repository with the corresponding name:
+#### Creating a new package
+
+In order to create a new, empty, local Git repository for a package, simply `git clone` the remote repository with the corresponding name. If the package does not exist on AUR yet, you will see the following warning:
+
+ `$ git clone ssh://aur@aur.archlinux.org/*package_name*.git` 
+```
+Cloning into '*package_name*'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+```
+
+The new package will appear on AUR after you *push* the first commit. You can now add the source files to the local copy of the Git repository. See [#Uploading packages](#Uploading_packages).
+
+#### Uploading packages
+
+The procedure for uploading packages to the AUR is the same for new packages and package updates. You need at least [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") in the top-level directory to *push* your package to AUR.
+
+**Note:** `.SRCINFO` contains [#AUR metadata](#AUR_metadata).
+
+To upload, add the `PKGBUILD`, `.SRCINFO`, and any helper files (like `.install` files or local source files like `.patch`) to the *staging area* with `git add`, commit them to your local tree with a commit message with `git commit`, and finally publish the changes to the AUR with `git push`.
+
+For example:
 
 ```
-$ git clone ssh://aur@aur.archlinux.org/*foobar*.git
-
-```
-
-Cloning from, or pushing to, a non-existing repository will automatically create a new one.
-
-You can now add the source files to the local copy of the Git repository. When making changes to the repository, make sure you always include the `PKGBUILD` and `.SRCINFO` in the top-level directory. You can create `.SRCINFO` files using `makepkg --printsrcinfo` (printed to standard output) or using `mksrcinfo`, provided by [pkgbuild-introspection](https://www.archlinux.org/packages/?name=pkgbuild-introspection) (written to file).
-
-**Note:** `.SRCINFO` contains source package metadata, see [#AUR metadata](#AUR_metadata) for details.
-
-#### Updating packages
-
-In order to submit new versions of a package base to the AUR, add the new `PKGBUILD`, `.SRCINFO` and possibly helper files (like `.install` files or local source files like `.patch`) to the *staging area* with `git add`, commit them to your local tree with a commit message with `git commit`, and finally publish the changes to the AUR with `git push`.
-
-For example, to create and submit the initial commit:
-
-```
-$ mksrcinfo
-$ git add *PKGBUILD .SRCINFO*
-$ git commit -m 'Initial import'
-$ git push origin master
+$ makepkg --printsrcinfo > .SRCINFO
+$ git add PKGBUILD .SRCINFO
+$ git commit -m "*useful commit message*"
 
 ```
 
 **Warning:** If you do not want to publish your system-wide identity, do not forget to set a local user name and email address via `git config user.name [...]` and `git config user.email [...]`! It is much more difficult to rewrite already published history, see: [FS#45425](https://bugs.archlinux.org/task/45425). Review your commits before pushing them!
 
-To update a package, edit the `PKGBUILD` and run the following commands to track the changes in the AUR Git repository:
-
 ```
-$ mksrcinfo
-$ git commit -am 'Update to *1.0.0-2'*
-$ git push
+$ git push origin master
 
 ```
 
-See [Git](/index.php/Git "Git") for more information.
-
-**Tip:** If you forget to commit the `.SRCINFO` and add it in a later commit, the AUR will still reject your pushes because the `.SRCINFO` must exist for *every* commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
+**Tip:** If you initially forgot to commit the `.SRCINFO` and added it in a later commit, the AUR will still reject your pushes because the `.SRCINFO` must exist for *every* commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
 
 ### Maintaining packages
 
@@ -266,44 +263,9 @@ There is also the [AUR Archive](https://github.com/aur-archive) on GitHub with a
 
 ## AUR metadata
 
-In order to display information in the [AUR](/index.php/AUR "AUR") web interface, the AUR's back-end code attempts to parse [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files and salvage package name, version, and other information from it. `PKGBUILD`s are [Bash](/index.php/Bash "Bash") scripts, and correctly parsing Bash scripts without executing them is a huge challenge, which is why [makepkg](/index.php/Makepkg "Makepkg") is a Bash script itself: it includes the PKGBUILD of the package being built via the `source` directive. AUR metadata files were created to get rid of some hacks, used by AUR package maintainers to work around incorrect parsing in the web interface. See also [FS#25210](https://bugs.archlinux.org/task/25210), [FS#15043](https://bugs.archlinux.org/task/15043), and [FS#16394](https://bugs.archlinux.org/task/16394).
+In order to display information in the [AUR](/index.php/AUR "AUR") web interface, the AUR's back-end code attempts to parse [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files and salvage package name, version, and other information from it. `PKGBUILD`s are [Bash](/index.php/Bash "Bash") scripts, and correctly parsing Bash scripts without executing them is a huge challenge, which is why [makepkg](/index.php/Makepkg "Makepkg") is a Bash script itself: it includes the PKGBUILD of the package being built via the `source` directive.
 
-### How it works
-
-By adding a metadata file called `.SRCINFO` to source tarballs to overwrite specific PKGBUILD fields. An outdated format of this file was described in the [AUR 2.1.0 release announcement](https://mailman.archlinux.org/pipermail/aur-dev/2013-March/002428.html). `.SRCINFO` files are parsed line-by-line. The syntax for each line is `key[_arch] = value`. Exactly one space must be on each side of the equals sign, even for an empty value, and do not include quotes around the values.
-
-The `key` is a field name, based on the names of the corresponding [PKGBUILD Variables](/index.php/PKGBUILD_Variables "PKGBUILD Variables"). Some field names may optionally be suffixed with an architecture name. Fields are grouped into sections, each headed by one of the following two field names:
-
-*   pkgbase: This is required by AUR 3, otherwise the infamous “only lowercase letters are allowed” error is reported. (Pacman uses the first *pkgname* if *pkgbase* is omitted.) Repeat pkgname if unsure. There is only one *pkgbase* section. The field values from this section are inherited unless overridden in the *pkgname* sections that follow it. An empty field value in the *pkgname* section cancels the inheritance.
-*   pkgname: There may be multiple *pkgname* sections.
-
-The following field names are associated with a single value for the section:
-
-*   epoch
-*   pkgver: package version, may be formatted as [*epoch*:]*pkgver* if the epoch field is not given separately
-*   pkgrel: release number of the package specific to Arch Linux
-*   pkgdesc
-*   url
-
-The following field names may be repeated on multiple lines in a section to add multiple values:
-
-*   license: in case of multiple licenses separate them by a space
-*   groups
-
-The following field names may be repeated, and also may optionally have an architecture suffix, separated from the field name by an underscore:
-
-*   depends: dependencies, one per line
-*   makedepends
-*   checkdepends
-*   optdepends
-*   conflicts
-*   provides
-*   replaces
-*   source
-
-Fields with other names are ignored. Blank lines and comment lines beginning with a hash sign (#) are also ignored. Lines may be indented. This format closely matches the `.PKGINFO` format that is used for binary packages in [pacman](/index.php/Pacman "Pacman")/libalpm.
-
-The `.SRCINFO` can also be created from the `PKGBUILD` with `mksrcinfo` from [pkgbuild-introspection](https://www.archlinux.org/packages/?name=pkgbuild-introspection).
+[.SRCINFO](/index.php/.SRCINFO ".SRCINFO") was created to get rid of some hacks used by AUR package maintainers to work around incorrect parsing in the web interface. See also [FS#25210](https://bugs.archlinux.org/task/25210), [FS#15043](https://bugs.archlinux.org/task/15043), and [FS#16394](https://bugs.archlinux.org/task/16394).
 
 ## AUR translation
 

@@ -3,25 +3,25 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Inox](#Inox)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Set Chromium as default browser](#Set_Chromium_as_default_browser)
-    *   [3.2 File associations](#File_associations)
-    *   [3.3 Flash Player plugin](#Flash_Player_plugin)
-    *   [3.4 Widevine Content Decryption Module plugin](#Widevine_Content_Decryption_Module_plugin)
-    *   [3.5 PDF viewer plugin](#PDF_viewer_plugin)
-        *   [3.5.1 PDF.js](#PDF.js)
-    *   [3.6 Certificates](#Certificates)
-*   [4 Tips and tricks](#Tips_and_tricks)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Constant freezes under KDE](#Constant_freezes_under_KDE)
-    *   [5.2 Fonts](#Fonts)
-        *   [5.2.1 Font rendering issues in PDF plugin](#Font_rendering_issues_in_PDF_plugin)
-    *   [5.3 Force 3D acceleration](#Force_3D_acceleration)
-    *   [5.4 WebGL](#WebGL)
-    *   [5.5 Distorted GUI](#Distorted_GUI)
-    *   [5.6 "Search Google for this image" broken](#.22Search_Google_for_this_image.22_broken)
-*   [6 See also](#See_also)
+    *   [1.1 Inox](#Inox)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Set Chromium as default browser](#Set_Chromium_as_default_browser)
+    *   [2.2 File associations](#File_associations)
+    *   [2.3 Flash Player plugin](#Flash_Player_plugin)
+    *   [2.4 Widevine Content Decryption Module plugin](#Widevine_Content_Decryption_Module_plugin)
+    *   [2.5 PDF viewer plugin](#PDF_viewer_plugin)
+        *   [2.5.1 PDF.js](#PDF.js)
+    *   [2.6 Certificates](#Certificates)
+*   [3 Tips and tricks](#Tips_and_tricks)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Constant freezes under KDE](#Constant_freezes_under_KDE)
+    *   [4.2 Fonts](#Fonts)
+        *   [4.2.1 Font rendering issues in PDF plugin](#Font_rendering_issues_in_PDF_plugin)
+    *   [4.3 Force 3D acceleration](#Force_3D_acceleration)
+    *   [4.4 WebGL](#WebGL)
+    *   [4.5 Distorted GUI](#Distorted_GUI)
+    *   [4.6 "Search Google for this image" broken](#.22Search_Google_for_this_image.22_broken)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -38,12 +38,12 @@ The derived browser, **Google Chrome**, bundled with Flash Player and Widevine [
 
 **Tip:** See these [two](https://chromium.googlesource.com/chromium/src/+/master/docs/chromium_browser_vs_google_chrome.md) [articles](http://news.softpedia.com/news/Google-Chrome-vs-Chromium-Understanding-Stable-Beta-Dev-Releases-and-Version-No-140060.shtml) for an explanation of the differences between Stable/Beta/Dev, as well as Chromium vs. Chrome and an explanation of the version numbering.
 
-## Inox
+### Inox
 
-Inox is a fairly large, privacy-focused patchset which removes/disables all Google services, proprietary features, prevents "calling home" and unhides all extensions, slightly improves performance, among other things. You might prefer these builds instead of the upstream Chromium/Chrome. See [this GitHub project](https://github.com/gcarq/inox-patchset) for details. Except these changes, all Chromium articles apply to Inox as well.
+Inox is a privacy-focused patchset which disables Google services, proprietary features, prevents "calling home" and unhides all extensions. Flags are stored in `inox-flags.conf`. See [this GitHub project](https://github.com/gcarq/inox-patchset) for details. Otherwise, instructions regarding Chromium apply equally.
 
 *   [inox-bin](https://aur.archlinux.org/packages/inox-bin/) - prebuilt binaries.
-*   [inox](https://aur.archlinux.org/packages/inox/) - ready to build from source. Allows disabling additional features in PKGBUILD. Takes a **long** time to build, regardless of your CPU.
+*   [inox](https://aur.archlinux.org/packages/inox/) - Allows disabling additional features in PKGBUILD. Takes a **long** time to build, regardless of your CPU.
 
 ## Configuration
 

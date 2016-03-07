@@ -28,7 +28,7 @@ This section outlines how to apply patches you created or downloaded from the In
 5.  Now you simply need to apply the patch from within this directory. This is very simply done by adding
 
 ```
-patch -p1 -i $srcdir/pkgname.patch 
+patch -p1 -i pkgname.patch 
 
 ```
 
@@ -38,7 +38,7 @@ An example prepare-function:
 
 ```
 prepare() {
- cd "${srcdir}"/${pkgname}-${pkgver}
+ cd $pkgname-$pkgver
  patch -Np1 -i ../eject.patch
 }
 

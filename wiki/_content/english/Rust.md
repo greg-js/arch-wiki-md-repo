@@ -6,6 +6,7 @@
     *   [1.1 Test your installation](#Test_your_installation)
 *   [2 Cross Compiling](#Cross_Compiling)
     *   [2.1 Windows](#Windows)
+    *   [2.2 unofficial packages](#unofficial_packages)
 *   [3 Cargo](#Cargo)
     *   [3.1 Usage](#Usage)
 *   [4 See also](#See_also)
@@ -66,6 +67,10 @@ $ # Run unit tests under wine
 $ cargo test --target "$ARCH-pc-windows-gnu"
 
 ```
+
+### unofficial packages
+
+The [unofficial repo archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") has rust-nightly and Rust std library for i686, ARM, ARMv7, Windows 32 and 64 so you can just install the one you want then enjoy cross compiling. However, you have to find an ARM toolchain by yourself. For Windows 32bit targets, you'll need to get a libgcc_s_dw2-1.dll to build and run.
 
 ## Cargo
 

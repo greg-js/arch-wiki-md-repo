@@ -4,42 +4,44 @@ Besides the questions covered below, you may find [The Arch Way](/index.php/The_
 
 *   [1 General](#General)
     *   [1.1 What is Arch Linux?](#What_is_Arch_Linux.3F)
-    *   [1.2 Why would I want to use Arch?](#Why_would_I_want_to_use_Arch.3F)
-    *   [1.3 Why would I not want to use Arch?](#Why_would_I_not_want_to_use_Arch.3F)
-    *   [1.4 What distribution is Arch based on?](#What_distribution_is_Arch_based_on.3F)
-    *   [1.5 What architectures does Arch support?](#What_architectures_does_Arch_support.3F)
-    *   [1.6 Does Arch support ARM CPUs?](#Does_Arch_support_ARM_CPUs.3F)
-    *   [1.7 I am a complete GNU/Linux beginner. Should I use Arch?](#I_am_a_complete_GNU.2FLinux_beginner._Should_I_use_Arch.3F)
-    *   [1.8 Arch requires too much time and effort to install and use. Also, the community keeps telling me to RTFM in so many words](#Arch_requires_too_much_time_and_effort_to_install_and_use._Also.2C_the_community_keeps_telling_me_to_RTFM_in_so_many_words)
-    *   [1.9 Is Arch designed to be used as a server? A desktop? A workstation?](#Is_Arch_designed_to_be_used_as_a_server.3F_A_desktop.3F_A_workstation.3F)
-    *   [1.10 I really like Arch, except the development team needs to implement feature X](#I_really_like_Arch.2C_except_the_development_team_needs_to_implement_feature_X)
-    *   [1.11 When will the new release be made available?](#When_will_the_new_release_be_made_available.3F)
-    *   [1.12 Is Arch Linux a stable distribution? Will I get frequent breakage?](#Is_Arch_Linux_a_stable_distribution.3F_Will_I_get_frequent_breakage.3F)
-    *   [1.13 Arch needs more press (i.e. advertisement)](#Arch_needs_more_press_.28i.e._advertisement.29)
-    *   [1.14 Arch needs more developers](#Arch_needs_more_developers)
-    *   [1.15 Why is my internet so slow compared to other operating systems?](#Why_is_my_internet_so_slow_compared_to_other_operating_systems.3F)
-    *   [1.16 Why is Arch using all my RAM?](#Why_is_Arch_using_all_my_RAM.3F)
-    *   [1.17 Where did all my free space go?](#Where_did_all_my_free_space_go.3F)
-*   [2 Package Management](#Package_Management)
+    *   [1.2 Why would I not want to use Arch?](#Why_would_I_not_want_to_use_Arch.3F)
+    *   [1.3 What architectures does Arch support?](#What_architectures_does_Arch_support.3F)
+    *   [1.4 Does Arch support ARM CPUs?](#Does_Arch_support_ARM_CPUs.3F)
+    *   [1.5 I am a complete GNU/Linux beginner. Should I use Arch?](#I_am_a_complete_GNU.2FLinux_beginner._Should_I_use_Arch.3F)
+    *   [1.6 Is Arch designed to be used as a server? A desktop? A workstation?](#Is_Arch_designed_to_be_used_as_a_server.3F_A_desktop.3F_A_workstation.3F)
+    *   [1.7 I really like Arch, except the development team needs to implement feature X](#I_really_like_Arch.2C_except_the_development_team_needs_to_implement_feature_X)
+    *   [1.8 When will the new release be made available?](#When_will_the_new_release_be_made_available.3F)
+    *   [1.9 Is Arch Linux a stable distribution? Will I get frequent breakage?](#Is_Arch_Linux_a_stable_distribution.3F_Will_I_get_frequent_breakage.3F)
+    *   [1.10 Arch needs more press (i.e. advertisement)](#Arch_needs_more_press_.28i.e._advertisement.29)
+    *   [1.11 Arch needs more developers](#Arch_needs_more_developers)
+    *   [1.12 Why is my internet so slow compared to other operating systems?](#Why_is_my_internet_so_slow_compared_to_other_operating_systems.3F)
+    *   [1.13 Why is Arch using all my RAM?](#Why_is_Arch_using_all_my_RAM.3F)
+    *   [1.14 Where did all my free space go?](#Where_did_all_my_free_space_go.3F)
+*   [2 Package management](#Package_management)
     *   [2.1 In which package is X?](#In_which_package_is_X.3F)
     *   [2.2 I've found an error with Package X. What should I do?](#I.27ve_found_an_error_with_Package_X._What_should_I_do.3F)
     *   [2.3 Arch packages need to use a unique naming convention. ".pkg.tar.gz" and ".pkg.tar.xz" are too long and/or confusing](#Arch_packages_need_to_use_a_unique_naming_convention._.22.pkg.tar.gz.22_and_.22.pkg.tar.xz.22_are_too_long_and.2For_confusing)
     *   [2.4 Pacman needs a library so other applications can easily access package information](#Pacman_needs_a_library_so_other_applications_can_easily_access_package_information)
-    *   [2.5 Why doesn't pacman have an official GUI front-end?](#Why_doesn.27t_pacman_have_an_official_GUI_front-end.3F)
-    *   [2.6 Pacman needs feature X!](#Pacman_needs_feature_X.21)
-    *   [2.7 What is the difference between all these repositories?](#What_is_the_difference_between_all_these_repositories.3F)
-    *   [2.8 I just installed Package X. How do I start it?](#I_just_installed_Package_X._How_do_I_start_it.3F)
-    *   [2.9 Why is there only a single version of each shared library in the official repositories?](#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F)
-    *   [2.10 What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?](#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F)
-    *   [2.11 Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?](#Is_it_possible_that_there.27s_a_major_kernel_update_in_the_repository.2C_and_that_some_of_the_driver_packages_haven.27t_been_updated.3F)
-    *   [2.12 Does Arch use package signing?](#Does_Arch_use_package_signing.3F)
-    *   [2.13 What to do before upgrading?](#What_to_do_before_upgrading.3F)
-    *   [2.14 A package update was released, but pacman says the system is up to date](#A_package_update_was_released.2C_but_pacman_says_the_system_is_up_to_date)
+    *   [2.5 Pacman needs feature X!](#Pacman_needs_feature_X.21)
+    *   [2.6 What is the difference between all these repositories?](#What_is_the_difference_between_all_these_repositories.3F)
+    *   [2.7 I just installed Package X. How do I start it?](#I_just_installed_Package_X._How_do_I_start_it.3F)
+    *   [2.8 Why is there only a single version of each shared library in the official repositories?](#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F)
+    *   [2.9 What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?](#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F)
+    *   [2.10 Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?](#Is_it_possible_that_there.27s_a_major_kernel_update_in_the_repository.2C_and_that_some_of_the_driver_packages_haven.27t_been_updated.3F)
+    *   [2.11 Does Arch use package signing?](#Does_Arch_use_package_signing.3F)
+    *   [2.12 What to do before upgrading?](#What_to_do_before_upgrading.3F)
+    *   [2.13 A package update was released, but pacman says the system is up to date](#A_package_update_was_released.2C_but_pacman_says_the_system_is_up_to_date)
 *   [3 Installation](#Installation)
     *   [3.1 Arch needs an installer. Maybe a GUI installer?](#Arch_needs_an_installer._Maybe_a_GUI_installer.3F)
     *   [3.2 I installed Arch, and now I am at a shell! What now?](#I_installed_Arch.2C_and_now_I_am_at_a_shell.21_What_now.3F)
     *   [3.3 Which desktop environment or window manager should I use?](#Which_desktop_environment_or_window_manager_should_I_use.3F)
     *   [3.4 What makes Arch unique amongst other "minimal" distributions?](#What_makes_Arch_unique_amongst_other_.22minimal.22_distributions.3F)
+*   [4 64-bit](#64-bit)
+    *   [4.1 How do I determine if my processor is x86_64 compatible?](#How_do_I_determine_if_my_processor_is_x86_64_compatible.3F)
+    *   [4.2 Will I have all the packages from my 32-bit Arch?](#Will_I_have_all_the_packages_from_my_32-bit_Arch.3F)
+    *   [4.3 Why 64-bit?](#Why_64-bit.3F)
+    *   [4.4 Can I build 32-bit packages for i686 inside 64-bit Arch?](#Can_I_build_32-bit_packages_for_i686_inside_64-bit_Arch.3F)
+    *   [4.5 Can I switch from i686 to x86_64 without reinstalling?](#Can_I_switch_from_i686_to_x86_64_without_reinstalling.3F)
 
 ## General
 
@@ -47,26 +49,16 @@ Besides the questions covered below, you may find [The Arch Way](/index.php/The_
 
 See the article entitled [Arch Linux](/index.php/Arch_Linux "Arch Linux").
 
-### Why would I want to use Arch?
-
-If, after reading about the [The Arch Way](/index.php/The_Arch_Way "The Arch Way") philosophy, you wish to embrace the 'do-it-yourself' approach and require or desire a simple, elegant, highly customizable, general purpose GNU/Linux distribution, you may like Arch.
-
 ### Why would I not want to use Arch?
 
 You may **not** want to use Arch, if:
 
-*   after reading [The Arch Way](/index.php/The_Arch_Way "The Arch Way"), you disagree with the philosophy.
 *   you do not have the ability/time/desire for a 'do-it-yourself' GNU/Linux distribution.
 *   you require support for an architecture other than x86_64 or i686.
 *   you take a strong stand on using a distribution which only provides free software as defined by GNU.
 *   you believe an operating system should configure itself, run out of the box, and include a complete default set of software and desktop environment on the installation media.
 *   you do not want a rolling release GNU/Linux distribution.
 *   you are happy with your current OS.
-*   you want an OS that targets a different userbase.
-
-### What distribution is Arch based on?
-
-Arch is independently developed, was built from scratch and is not based on any other GNU/Linux distribution. Before creating Arch, Judd Vinet admired and used CRUX, a great, minimalist distribution created by Per Lidén. Originally inspired by ideas in common with CRUX, Arch was built from scratch, and pacman was then coded in C.
 
 ### What architectures does Arch support?
 
@@ -78,13 +70,11 @@ No, but the [Arch Linux ARM](http://archlinuxarm.org/) project provides a port o
 
 ### I am a complete GNU/Linux beginner. Should I use Arch?
 
-This question has had much debate. Arch is targeted more towards advanced GNU/Linux users, but some people feel that Arch is a good place to start for the motivated novice. If you are a beginner and want to use Arch, just be warned that you must be willing to invest significant time into learning a new system, as well as accept the fact that Arch is fundamentally designed as a DIY (Do-It-Yourself) distribution. It is the user who assembles the system and controls what it will become. Before asking for help, do your own independent research by Googling, searching the forum (and reading the rest of these FAQs) and searching the superb documentation provided by the Arch Wiki. *There is a reason these resources were made available to you in the first place.* Many thousands of *volunteered* hours have been spent compiling this excellent information.
+If you are a beginner and want to use Arch, you must be willing to invest time into learning a new system, and accept that Arch is designed as a DIY (Do-It-Yourself) distribution; it is the user who assembles the system.
 
-Recommended reading: The Arch Linux [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+Before asking for help, do your own independent research by Googling, searching the forum and the superb documentation provided by the Arch Wiki. *There is a reason these resources were made available to you in the first place.* Many thousands of *volunteered* hours have been spent compiling this excellent information.
 
-### Arch requires too much time and effort to install and use. Also, the community keeps telling me to RTFM in so many words
-
-Arch is designed for and used by a specifically targeted user base. Perhaps it is not right for you. See [above](#I_am_a_complete_GNU.2FLinux_beginner._Should_I_use_Arch.3F).
+See also [Arch_Terminology#RTFM](/index.php/Arch_Terminology#RTFM "Arch Terminology") and the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
 
 ### Is Arch designed to be used as a server? A desktop? A workstation?
 
@@ -92,27 +82,21 @@ Arch is not designed for any particular type of use. Rather, it is designed for 
 
 ### I really like Arch, except the development team needs to implement feature X
 
-Before going further, did you read [The Arch Way](/index.php/The_Arch_Way "The Arch Way")? Have you provided the feature/solution? Does it conform to the Arch philosophy of *minimalism* and *code-correctness over convenience*? Get involved, contribute your code/solution to the community. If it is well regarded by the community and development team, perhaps it will be merged. The Arch community thrives on contribution and sharing of code and tools.
+Get involved, contribute your code/solution to the community. If it is well regarded by the community and development team, perhaps it will be merged. The Arch community thrives on contribution and sharing of code and tools.
 
 ### When will the new release be made available?
 
 Arch Linux releases are simply a live environment for installation or rescue, which include the [base](https://www.archlinux.org/groups/x86_64/base/) group and a few [other packages](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both). The releases are issued usually in the first half of every month.
 
-The rolling release model keeps every Arch Linux system current by issuing one command. For this reason, releases are not terribly important in Arch, because they become out of date as soon as a package has been updated. If you are looking to obtain the latest Arch Linux release, you do not need to reinstall. Simply run the `pacman -Syu` command, and your system will be identical to what you would get with a brand-new install. For this same reason, new Arch Linux releases are not typically full of new and exciting features. New and exciting features are released as needed with the packages that are updated, and can be obtained immediately via `pacman -Syu`.
-
 ### Is Arch Linux a stable distribution? Will I get frequent breakage?
 
-The short answer is: It is largely as stable as *you* make it.
-
-*You* assemble your own Arch system, atop the simple base environment, and *you* control system upgrades. Obviously, a larger, more complicated system incorporating multitudes of customized packages, and a plethora of toolkits and desktop environments would be more likely to experience configuration problems due to upstream changes than a slimmer, more simple system would. Arch is targeted at capable, proactive users. General UNIX competence and good system maintenance and upgrade practices also play a large role in system stability. Also recall that Arch packages are predominantly unpatched, so most application problems are inherently upstream.
-
-Therefore, it is *the user* who is ultimately responsible for the stability of his own rolling release system. The user decides when to upgrade, and merges necessary changes when required. If the user reaches out to the community for help, it is often provided in a timely manner. The difference between Arch and other distributions in this regard is that Arch is truly a 'do-it-yourself' distribution; complaints of breakage are misguided and unproductive, since upstream changes are not the responsibility of Arch devs.
+It is *the user* who is ultimately responsible for the stability of his own rolling release system. The user decides when to upgrade, and merges necessary changes when required. If the user reaches out to the community for help, it is often provided in a timely manner. The difference between Arch and other distributions in this regard is that Arch is truly a 'do-it-yourself' distribution; complaints of breakage are misguided and unproductive, since upstream changes are not the responsibility of Arch devs.
 
 See the [System maintenance](/index.php/System_maintenance "System maintenance") article for tips on how to make an Arch Linux system as stable as possible.
 
 ### Arch needs more press (i.e. advertisement)
 
-Arch gets plenty of press as it is. The goal of Arch Linux is not to be large, but rather, to provide an elegant distribution focused on simplicity and code-correctness. Organic, sustainable growth occurs naturally amongst the target user base.
+Arch gets plenty of press as it is. The goal of Arch Linux is not to be large; rather, organic, sustainable growth occurs naturally amongst the target user base.
 
 ### Arch needs more developers
 
@@ -148,7 +132,7 @@ See [this wonderful article](http://www.linuxjournal.com/article/2770) if your c
 
 The answer to this question depends on your system. There are some [fine utilities](/index.php/List_of_applications#Disk_usage_display "List of applications") that may help you find the answer.
 
-## Package Management
+## Package management
 
 ### In which package is X?
 
@@ -177,13 +161,9 @@ This has been discussed on the Arch mailing list. Some proposed a `.pac` file ex
 
 Since version 3.0.0, pacman has been the front-end to libalpm, the "Arch Linux Package Management" library. This library allows alternative front-ends to be written (for instance, a GUI front-end).
 
-### Why doesn't pacman have an official GUI front-end?
-
-Please read [The Arch Way](/index.php/The_Arch_Way "The Arch Way") and [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Basically, the answer is that the Arch dev team will not be providing one. Feel free to use one developed by other users. A selective list can be found in [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends").
-
 ### Pacman needs feature X!
 
-Please read [The Arch Way](/index.php/The_Arch_Way "The Arch Way") and [Arch Linux](/index.php/Arch_Linux "Arch Linux"). The Arch philosophy is "Keep It Simple". If you think the idea has merit, and does not violate this simple litany, then you may choose to discuss it on the forum [here](https://bbs.archlinux.org/). You might also like to check [here](https://bugs.archlinux.org); it is a place for feature requests if you find it is important.
+If you think an idea has merit, you may choose to discuss it on [pacman-dev](https://lists.archlinux.org//listinfo/pacman-dev/). Also check [https://bugs.archlinux.org](https://bugs.archlinux.org) for existing feature requests.
 
 However, the best way to get a feature added to pacman or Arch Linux is to implement it yourself. The patch or code may or may not be officially accepted, but perhaps others will appreciate, test and contribute to your effort.
 
@@ -202,9 +182,9 @@ $ pacman -Qlq *package_name* | grep /usr/bin/
 
 ### Why is there only a single version of each shared library in the official repositories?
 
-Several distributions, such as Debian, have different versions of shared libraries packaged as different packages: `libfoo1`, `libfoo2`, `libfoo3` and so on. In this way it is possible to have apps compiled against different versions of `libfoo` installed on the same system.
+Several distributions, such as Debian, have different versions of shared libraries packaged as different packages: `libfoo1`, `libfoo2`, `libfoo3` and so on. In this way it is possible to have applications compiled against different versions of `libfoo` installed on the same system.
 
-Unlike Debian, Arch is a rolling-release cutting-edge distribution. The most visible trait of a cutting-edge distribution is availability of the latest versions of software in the repositories; in case of a distribution like Arch, it also means that only the latest versions of all packages are officially supported. By dropping support for outdated software, package maintainers are able to spend more time ensuring that the newest versions work as expected. As soon as a new version of a shared library becomes available from upstream, it is added to the repositories and affected packages are rebuilt to utilize the new version.
+In case of a distribution like Arch, only the latest stable versions of packages are officially supported. By dropping support for outdated software, package maintainers are able to spend more time ensuring that the newest versions work as expected. As soon as a new version of a shared library becomes available from upstream, it is added to the repositories and affected packages are rebuilt to use the new version.
 
 ### What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?
 
@@ -236,7 +216,7 @@ Since installation doesn't occur often (read the rest of this article to know mo
 
 ### I installed Arch, and now I am at a shell! What now?
 
-Have a look at the Arch Linux [Beginners' guide#Post-installation](/index.php/Beginners%27_guide#Post-installation "Beginners' guide").
+See [General recommendations](/index.php/General_recommendations "General recommendations").
 
 ### Which desktop environment or window manager should I use?
 
@@ -244,11 +224,45 @@ Since many are available to you, use the one you like the most to fit your needs
 
 ### What makes Arch unique amongst other "minimal" distributions?
 
-Some distributions may provide minimal installation methods, sharing some similarities to the Arch installation process. However, a few points must be noted:
+See [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions").
 
-1.  Arch has been *fundamentally designed* as a lightweight, minimal base environment upon which to build.
-2.  The *only* way to install Arch is by building up from this minimal base.
-3.  The base system and the entire distribution are inherently a K.I.S.S. design approach, which makes it uniquely suitable for its target base of users.
-4.  Installing services and packages requires manual, interactive user configuration. Unlike other distributions which automatically configure services and startup behavior, the Arch philosophy puts emphasis on the power user's competence and prerogative to handle such responsibilities.
-5.  Arch packaging is designed to be minimal, and *optional* package dependencies are never automatically installed. Rather, the user is simply notified of their existence during package installation, resulting in a slimmer system.
-6.  Arch provides excellent, thorough documentation, aiding in the process of system assembly.
+## 64-bit
+
+### How do I determine if my processor is x86_64 compatible?
+
+If your processor is [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") compatible, you will have the `lm` flag in `/proc/cpuinfo`. For example,
+
+```
+$ grep -w lm /proc/cpuinfo
+
+```
+
+Under Windows, using the freeware [CPU-Z](http://www.cpuid.com/cpuz.php) helps determine whether your CPU is 64-bit compatible. CPUs with AMD's instruction set "AMD64" or Intel's solution "EM64T" should be compatible with the x86_64 releases and binary packages.
+
+### Will I have all the packages from my 32-bit Arch?
+
+Most official packages have 64-bit versions, though you may need to enable the [multilib](/index.php/Multilib "Multilib") repository to run some 32-bit programs. [Package Differences](https://www.archlinux.org/packages/differences/) lists the few cases where the multilib packages differ from the native 32-bit versions.
+
+The only exception is [AUR](/index.php/AUR "AUR") packages which only have `'i686'` listed, but even then they may work for 64-bit too. Just try adding `'x86_64'` to the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+
+As a last resort, you can always [install a 32-bit system inside your 64-bit system](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system").
+
+### Why 64-bit?
+
+It is faster under most circumstances and as an added bonus also inherently more secure due to the nature of [Address space layout randomization (ASLR)](https://en.wikipedia.org/wiki/Address_space_layout_randomization "wikipedia:Address space layout randomization") in combination with [Position-independent code (PIC)](https://en.wikipedia.org/wiki/Position-independent_code "wikipedia:Position-independent code") and the [NX Bit](https://en.wikipedia.org/wiki/NX_Bit "wikipedia:NX Bit") which is not available in the stock i686 kernel due to disabled PAE. If your computer has more than 4GB of RAM, only a 64-bit OS will be able to fully utilize it.
+
+Programmers also increasingly tend to care less about 32-bit ("legacy") as "new" x86 CPUs typically support the 64-bit extensions.
+
+There are many more reasons we could list here to tell you to avoid 32-bit, but between the kernel, userspace and individual programs it is simply not viable to list every last thing that 64-bit does much better these days.
+
+### Can I build 32-bit packages for i686 inside 64-bit Arch?
+
+Yes. You can use the [multilib](/index.php/Multilib "Multilib") repository with a [makepkg config](/index.php/Makepkg#Build_32-bit_packages_on_a_64-bit_system "Makepkg") or [install a 32-bit system inside your 64-bit system](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system").
+
+### Can I switch from i686 to x86_64 without reinstalling?
+
+No. All packages need to be reinstalled for the new architecture and configuration changes may be necessary. However, you do not need to repartition or reformat your hard drives during installation, so it possible to migrate all of your old data. A forum thread has been created [here](https://bbs.archlinux.org/viewtopic.php?id=64485) which outlines steps taken to migrate an install from 32 to 64 bit without losing any configurations/settings/data using a large external hard drive.
+
+However, you can also start the system with the 64-bit installation ISO, mount the disk, backup anything you may want to keep that is not a 32-bit binary (e.g: `/home` & `/etc`), and install.
+
+You may also want to read about [migrating between architectures](/index.php/Migrating_between_architectures "Migrating between architectures").

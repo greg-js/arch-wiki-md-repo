@@ -70,6 +70,8 @@ See [UEFI#UEFI Variables](/index.php/UEFI#UEFI_Variables "UEFI") for details.
 
 The default [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") is set to [us](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Available choices can be listed with `localectl list-keymaps`.
 
+**Note:** `localectl list-keymaps` will not work with any ISO released after September 2015, due to a bug in [Overlayfs](/index.php/Overlay_filesystem "Overlay filesystem") ([FS#46725](https://bugs.archlinux.org/task/46725)). Available layouts are located inside the `/usr/share/kbd/keymaps` folder.
+
 For example, to change the layout to `de-latin1`, run:
 
 ```

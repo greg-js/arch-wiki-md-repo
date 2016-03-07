@@ -10,8 +10,9 @@ This document describes how to set up PostgreSQL. It also describes how to confi
     *   [3.1 Access the database shell](#Access_the_database_shell)
 *   [4 Optional configuration](#Optional_configuration)
     *   [4.1 Configure PostgreSQL to be accessible from remote hosts](#Configure_PostgreSQL_to_be_accessible_from_remote_hosts)
-    *   [4.2 Change default data directory](#Change_default_data_directory)
-    *   [4.3 Change default encoding of new databases to UTF-8](#Change_default_encoding_of_new_databases_to_UTF-8)
+    *   [4.2 Configure PostgreSQL authenticate against PAM](#Configure_PostgreSQL_authenticate_against_PAM)
+    *   [4.3 Change default data directory](#Change_default_data_directory)
+    *   [4.4 Change default encoding of new databases to UTF-8](#Change_default_encoding_of_new_databases_to_UTF-8)
 *   [5 Administration tools](#Administration_tools)
 *   [6 Setup HHVM to work with PostgreSQL](#Setup_HHVM_to_work_with_PostgreSQL)
 *   [7 Upgrading PostgreSQL](#Upgrading_PostgreSQL)
@@ -190,6 +191,25 @@ For troubleshooting take a look in the server log file:
 
 ```
 $ journalctl -u postgresql
+
+```
+
+### Configure PostgreSQL authenticate against PAM
+
+PostgreSQL offers a number of authentication methods. If you would like to allow users to authenticate with their system password, additional steps are necessary. First you need to enable PAM for the connection.
+
+For example, the same configuration as above, but with PAM enabled:
+
+```
+# IPv4 local connections:
+host   all   all   *my_remote_client_ip_address*/32   pam
+
+```
+
+The PostgreSQL server is however running without root privileges and will not be able to access `/etc/shadow`. We can work around that by allowing the postgres group to access this file:
+
+```
+setfacl -m g:postgres:r /etc/shadow
 
 ```
 

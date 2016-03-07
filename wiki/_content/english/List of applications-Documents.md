@@ -731,6 +731,10 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 #### Console
 
+*   **deft** — Manage notes within emacs
+
+	[http://jblevins.org/projects/deft/](http://jblevins.org/projects/deft/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 *   **hnb (hierarchical notebook)** — Program to organize many kinds of data (addresses, to-do lists, ideas, book reviews, etc.) in one place using the XML format.
 
 	[http://hnb.sourceforge.net/](http://hnb.sourceforge.net/) || [hnb](https://aur.archlinux.org/packages/hnb/)

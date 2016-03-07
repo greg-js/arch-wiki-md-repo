@@ -28,15 +28,16 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
         *   [2.3.1 MCE remote with Lirc and Systemd](#MCE_remote_with_Lirc_and_Systemd)
         *   [2.3.2 HDMI-CEC with Pulse Eight USB-CEC](#HDMI-CEC_with_Pulse_Eight_USB-CEC)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
-    *   [3.1 Fixing the Wunderground Weather Add-on](#Fixing_the_Wunderground_Weather_Add-on)
-    *   [3.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
-    *   [3.3 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
-    *   [3.4 Slowing down CD/DVD drive speed](#Slowing_down_CD.2FDVD_drive_speed)
-    *   [3.5 Use port 80 for webserver](#Use_port_80_for_webserver)
-    *   [3.6 Using ALSA](#Using_ALSA)
-    *   [3.7 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
-    *   [3.8 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
-    *   [3.9 Raspberry Pi](#Raspberry_Pi)
+    *   [3.1 CLI tool for kodi](#CLI_tool_for_kodi)
+    *   [3.2 Fixing the Wunderground Weather Add-on](#Fixing_the_Wunderground_Weather_Add-on)
+    *   [3.3 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
+    *   [3.4 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
+    *   [3.5 Slowing down CD/DVD drive speed](#Slowing_down_CD.2FDVD_drive_speed)
+    *   [3.6 Use port 80 for webserver](#Use_port_80_for_webserver)
+    *   [3.7 Using ALSA](#Using_ALSA)
+    *   [3.8 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
+    *   [3.9 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
+    *   [3.10 Raspberry Pi](#Raspberry_Pi)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -432,6 +433,10 @@ Remember that modifying the groups of any logged in users means those users need
 **Note:** Trying to use the USB-CEC without belonging to above groups may lead to problems, including Kodi crashes, so make sure the correct user belongs to both groups.
 
 ## Tips and Tricks
+
+### CLI tool for kodi
+
+A powerful CLI tool for use with kodi is [texturecache](https://aur.archlinux.org/packages/texturecache/). Users can accomplish many task from library management to querying what is currently playing.
 
 ### Fixing the Wunderground Weather Add-on
 

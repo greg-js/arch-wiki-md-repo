@@ -108,7 +108,7 @@ bootctl searches for boot menu items in `$esp/loader/entries/*.conf` – each fi
 
 *   `efi` – EFI program to start, relative to your ESP (`$esp`); e.g. `/vmlinuz-linux`. Either this or `linux` (see below) is **required.**
 
-*   `options` – command line options to pass to the EFI program. Optional, but you will need at least `initrd=*efipath*` and `root=*dev*` if booting Linux.
+*   `options` – command line options to pass to the EFI program or Kernel Boot Parameters. Optional, but you will need at least `initrd=*efipath*` and `root=*dev*` if booting Linux.
 
 For Linux, you can specify `linux *path-to-vmlinuz*` and `initrd *path-to-initramfs*`; this will be automatically translated to `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 

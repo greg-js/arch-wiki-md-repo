@@ -1,20 +1,18 @@
 [Česky](/index.php/Category:%C4%8Cesky "Category:Česky") <small>(1)</small>
 
-	<small>1.</small> [O Archu](/index.php/Category:About_Arch_(%C4%8Cesky) "Category:About Arch (Česky)") <small>(13)</small>
+	<small>1.</small> [O Archu](/index.php/Category:About_Arch_(%C4%8Cesky) "Category:About Arch (Česky)") <small>(15)</small>
 
 	<small>1.1.</small> [Vývoj Archu](/index.php/Category:Arch_development_(%C4%8Cesky) "Category:Arch development (Česky)") <small>(0)</small>
 
 	<small>1.1.1.</small> [Vývoj balíčků](/index.php/Category:Package_development_(%C4%8Cesky) "Category:Package development (Česky)") <small>(5)</small>
 
-	<small>1.2.</small> [Arch64](/index.php/Category:Arch64_(%C4%8Cesky) "Category:Arch64 (Česky)") <small>(2)</small>
+	<small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%C4%8Cesky) "Category:ArchWiki (Česky)") <small>(1)</small>
 
-	<small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(%C4%8Cesky) "Category:ArchWiki (Česky)") <small>(1)</small>
+	<small>1.2.1.</small> [Pomoc](/index.php/Category:Help_(%C4%8Cesky) "Category:Help (Česky)") <small>(2)</small>
 
-	<small>1.3.1.</small> [Pomoc](/index.php/Category:Help_(%C4%8Cesky) "Category:Help (Česky)") <small>(2)</small>
+	<small>1.3.</small> [Události](/index.php/Category:Events_(%C4%8Cesky) "Category:Events (Česky)") <small>(1)</small>
 
-	<small>1.4.</small> [Události](/index.php/Category:Events_(%C4%8Cesky) "Category:Events (Česky)") <small>(1)</small>
-
-	<small>1.5.</small> [Získání a instalace Archu](/index.php/Category:Getting_and_installing_Arch_(%C4%8Cesky) "Category:Getting and installing Arch (Česky)") <small>(6)</small>
+	<small>1.4.</small> [Získání a instalace Archu](/index.php/Category:Getting_and_installing_Arch_(%C4%8Cesky) "Category:Getting and installing Arch (Česky)") <small>(6)</small>
 
 	<small>2.</small> [Aplikace](/index.php/Category:Applications_(%C4%8Cesky) "Category:Applications (Česky)") <small>(4)</small>
 
@@ -24,9 +22,11 @@
 
 	<small>2.3.</small> [Správci souborů](/index.php/Category:File_managers_(%C4%8Cesky) "Category:File managers (Česky)") <small>(1)</small>
 
-	<small>2.4.</small> [Internetové aplikace](/index.php/Category:Internet_applications_(%C4%8Cesky) "Category:Internet applications (Česky)") <small>(7)</small>
+	<small>2.4.</small> [Internetové aplikace](/index.php/Category:Internet_applications_(%C4%8Cesky) "Category:Internet applications (Česky)") <small>(7) (také v [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)"))</small>
 
-	<small>2.5.</small> [Přehrávače](/index.php/Category:Multimedia_players_(%C4%8Cesky) "Category:Multimedia players (Česky)") <small>(2)</small>
+	<small>2.5.</small> [Multimedia](/index.php/Category:Multimedia_(%C4%8Cesky) "Category:Multimedia (Česky)") <small>(2)</small>
+
+	<small>2.5.1.</small> [Přehrávače](/index.php/Category:Multimedia_players_(%C4%8Cesky) "Category:Multimedia players (Česky)") <small>(2)</small>
 
 	<small>2.6.</small> [Kancelář](/index.php/Category:Office_(%C4%8Cesky) "Category:Office (Česky)") <small>(2)</small>
 
@@ -50,38 +50,38 @@
 
 	<small>5.</small> [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)") <small>(9)</small>
 
-	<small>5.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%C4%8Cesky) "Category:Secure Shell (Česky)") <small>(1) (také v [Bezpečnost](/index.php/Category:Security_(%C4%8Cesky) "Category:Security (Česky)"))</small>
+	<small>5.1.</small> [Internetové aplikace](/index.php/Category:Internet_applications_(%C4%8Cesky) "Category:Internet applications (Česky)") <small>(7) (také v [Aplikace](/index.php/Category:Applications_(%C4%8Cesky) "Category:Applications (Česky)"))</small>
 
-	<small>5.2.</small> [Web server](/index.php/Category:Web_server_(%C4%8Cesky) "Category:Web server (Česky)") <small>(5)</small>
+	<small>5.2.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%C4%8Cesky) "Category:Secure Shell (Česky)") <small>(1) (také v [Bezpečnost](/index.php/Category:Security_(%C4%8Cesky) "Category:Security (Česky)"))</small>
+
+	<small>5.3.</small> [Web server](/index.php/Category:Web_server_(%C4%8Cesky) "Category:Web server (Česky)") <small>(5)</small>
 
 	<small>6.</small> [Administrace systému](/index.php/Category:System_administration_(%C4%8Cesky) "Category:System administration (Česky)") <small>(3)</small>
 
-	<small>6.1.</small> [Audio/Video](/index.php/Category:Audio/Video_(%C4%8Cesky) "Category:Audio/Video (Česky)") <small>(3)</small>
+	<small>6.1.</small> [Bootovací proces](/index.php/Category:Boot_process_(%C4%8Cesky) "Category:Boot process (Česky)") <small>(11)</small>
 
-	<small>6.2.</small> [Bootovací proces](/index.php/Category:Boot_process_(%C4%8Cesky) "Category:Boot process (Česky)") <small>(11)</small>
+	<small>6.2.</small> [Démoni a systémové služby](/index.php/Category:Daemons_and_system_services_(%C4%8Cesky) "Category:Daemons and system services (Česky)") <small>(2)</small>
 
-	<small>6.3.</small> [Démoni a systémové služby](/index.php/Category:Daemons_and_system_services_(%C4%8Cesky) "Category:Daemons and system services (Česky)") <small>(2)</small>
+	<small>6.3.</small> [Desktopová prostředí](/index.php/Category:Desktop_environments_(%C4%8Cesky) "Category:Desktop environments (Česky)") <small>(10)</small>
 
-	<small>6.4.</small> [Desktopová prostředí](/index.php/Category:Desktop_environments_(%C4%8Cesky) "Category:Desktop environments (Česky)") <small>(10)</small>
+	<small>6.3.1.</small> [Display manažeři](/index.php/Category:Display_managers_(%C4%8Cesky) "Category:Display managers (Česky)") <small>(5)</small>
 
-	<small>6.4.1.</small> [Display manažeři](/index.php/Category:Display_managers_(%C4%8Cesky) "Category:Display managers (Česky)") <small>(5)</small>
+	<small>6.4.</small> [Eye candy](/index.php/Category:Eye_candy_(%C4%8Cesky) "Category:Eye candy (Česky)") <small>(2)</small>
 
-	<small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy_(%C4%8Cesky) "Category:Eye candy (Česky)") <small>(2)</small>
+	<small>6.5.</small> [Souborové systémy](/index.php/Category:File_systems_(%C4%8Cesky) "Category:File systems (Česky)") <small>(2)</small>
 
-	<small>6.6.</small> [Souborové systémy](/index.php/Category:File_systems_(%C4%8Cesky) "Category:File systems (Česky)") <small>(2)</small>
+	<small>6.6.</small> [Zmezinárodnění](/index.php/Category:Internationalization_(%C4%8Cesky) "Category:Internationalization (Česky)") <small>(1)</small>
 
-	<small>6.7.</small> [Zmezinárodnění](/index.php/Category:Internationalization_(%C4%8Cesky) "Category:Internationalization (Česky)") <small>(1)</small>
+	<small>6.7.</small> [Kernel](/index.php/Category:Kernel_(%C4%8Cesky) "Category:Kernel (Česky)") <small>(2)</small>
 
-	<small>6.8.</small> [Kernel](/index.php/Category:Kernel_(%C4%8Cesky) "Category:Kernel (Česky)") <small>(2)</small>
+	<small>6.8.</small> [Správa balíčků](/index.php/Category:Package_management_(%C4%8Cesky) "Category:Package management (Česky)") <small>(8)</small>
 
-	<small>6.9.</small> [Správa balíčků](/index.php/Category:Package_management_(%C4%8Cesky) "Category:Package management (Česky)") <small>(8)</small>
+	<small>6.8.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository_(%C4%8Cesky) "Category:Arch User Repository (Česky)") <small>(2)</small>
 
-	<small>6.9.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository_(%C4%8Cesky) "Category:Arch User Repository (Česky)") <small>(2)</small>
+	<small>6.9.</small> [Bezpečnost](/index.php/Category:Security_(%C4%8Cesky) "Category:Security (Česky)") <small>(1)</small>
 
-	<small>6.10.</small> [Bezpečnost](/index.php/Category:Security_(%C4%8Cesky) "Category:Security (Česky)") <small>(1)</small>
+	<small>6.9.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%C4%8Cesky) "Category:Secure Shell (Česky)") <small>(1) (také v [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)"))</small>
 
-	<small>6.10.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%C4%8Cesky) "Category:Secure Shell (Česky)") <small>(1) (také v [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)"))</small>
+	<small>6.10.</small> [Obnova systému](/index.php/Category:System_recovery_(%C4%8Cesky) "Category:System recovery (Česky)") <small>(2)</small>
 
-	<small>6.11.</small> [Obnova systému](/index.php/Category:System_recovery_(%C4%8Cesky) "Category:System recovery (Česky)") <small>(2)</small>
-
-	<small>6.12.</small> [X server](/index.php/Category:X_server_(%C4%8Cesky) "Category:X server (Česky)") <small>(3)</small>
+	<small>6.11.</small> [X server](/index.php/Category:X_server_(%C4%8Cesky) "Category:X server (Česky)") <small>(3)</small>

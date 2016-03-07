@@ -6,14 +6,20 @@ The first step to partitioning a disk is making a partition table. There are two
 
 *   [1 Usage](#Usage)
 *   [2 Backup the partition table](#Backup_the_partition_table)
+    *   [2.1 Backup the partition layout](#Backup_the_partition_layout)
+    *   [2.2 Backup and restore GPT with sgdisk](#Backup_and_restore_GPT_with_sgdisk)
+    *   [2.3 Backup and restore MBR with sfdisk](#Backup_and_restore_MBR_with_sfdisk)
 *   [3 Create a partition table](#Create_a_partition_table)
     *   [3.1 Gdisk (GPT)](#Gdisk_.28GPT.29)
-        *   [3.1.1 Gdisk usage summary](#Gdisk_usage_summary)
+        *   [3.1.1 Installation](#Installation)
+        *   [3.1.2 Gdisk usage summary](#Gdisk_usage_summary)
     *   [3.2 Fdisk (MBR)](#Fdisk_.28MBR.29)
         *   [3.2.1 Fdisk usage summary](#Fdisk_usage_summary)
+    *   [3.3 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
 *   [4 Create Partitions](#Create_Partitions)
     *   [4.1 Using cgdisk to create GPT partitions](#Using_cgdisk_to_create_GPT_partitions)
-*   [5 Using fdisk to create MBR partitions](#Using_fdisk_to_create_MBR_partitions)
+    *   [4.2 Use cfdisk to create MBR partitions](#Use_cfdisk_to_create_MBR_partitions)
+    *   [4.3 Using fdisk to create MBR partitions](#Using_fdisk_to_create_MBR_partitions)
 
 ## Usage
 
@@ -33,23 +39,134 @@ To list partition tables and partitions on a device, you can run the following, 
 
 ## Backup the partition table
 
-Before making changes to a hard disk, you may want to backup the partition table and partition scheme of the drive.
+Before making changes to a hard disk, you may want to backup the partition table and partition scheme of the drive. You can also use a backup to copy the same partition layout to numerous drives.
+
+### Backup the partition layout
+
+For both GPT and MBR you can use sfdisk to save the partition layout of your device to a file with the --dump option. Run the following command for device /dev/sda:
+
+```
+# sfdisk -d /dev/sda > sda.dump
+
+```
+
+The file should look something like this for a single ext4 partition that is 1GB in size:
+
+ `sda.dump` 
+```
+label: gpt
+label-id: AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE
+device: /dev/sda
+unit: sectors
+first-lba: 34
+last-lba: 1048576
+
+/dev/sda1 : start=2048, size=1048576, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, uuid=BBF1CD36-9262-463E-A4FB-81E32C12BDE7
+
+```
+
+To later restore this layout you can run:
+
+```
+# sfdisk /dev/sda < sda.dump
+
+```
+
+### Backup and restore GPT with sgdisk
+
+Using sgdisk you can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table.
+
+```
+# sgdisk -b=sgdisk-sda.bak
+
+```
+
+You can later restore the backup by running:
+
+```
+# sgdisk -l=sgdisk-sda.bak
+
+```
+
+If you want to clone your current device's partition layout (/dev/sda in this case) to another drive (/dev/sdc) run:
+
+```
+# sgdisk -R=/dev/sdc /dev/sda
+
+```
+
+If both drives will be in the same computer, you need to randomize the GUID's.
+
+```
+# sgdisk -G /dev/sdc
+
+```
+
+### Backup and restore MBR with sfdisk
+
+**Warning:** I have not tested this yet to see if it works as expected. - [User:Meskarune](/index.php/User:Meskarune "User:Meskarune")
+
+To create a raw binary backup of all the sectors where your partitions are stored on an MBR disk you can use the --backup option with sfdisk.
+
+```
+# sfdisk -b /dev/sda
+
+```
+
+This will create a file called sfdisk-<device>-<offset>.bak
+
+To restore the binary backup you can use `dd`
+
+```
+# dd if=sfdisk-sda-0x00000200.bak of=/dev/sda  bs=512 count=1
+
+```
 
 ## Create a partition table
 
 ### Gdisk (GPT)
 
-Using GPT, the utility for editing the partition table is called *gdisk*. It can perform partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. GNU parted also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions. The environment provided by the Arch install ISO includes the *gdisk* command. If you need it later on in the installed system, *gdisk* is available in the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package.
+Using GPT, the utility for editing the partition table is called *gdisk*. It can perform partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. GNU parted also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
+
+#### Installation
+
+gdisk is available for use on the Arch install ISO but not installed by default on the regular system.
+
+[Install](/index.php/Install "Install") [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 #### Gdisk usage summary
 
-A summary of the typical usage of *gdisk*:
+To use gdisk, run the program with the name of the device you want to change/edit. This example uses `/dev/sda`.
 
-*   Start *gdisk* against your drive as root (*disk-device* may be e.g. `/dev/sda`):
+```
+# gdisk /dev/sda
+GPT fdisk (gdisk) version 1.0.1
 
-	 `# gdisk *disk-device*` 
+Partition table scan:
+  MBR: protective
+  BSD: not present
+  APM: not present
+  GPT: present
 
-*   If the drive is brand new or if you are wanting to start over, create a new empty GUID partition table with the `o` command.
+Found valid GPT with protective MBR; using GPT.
+
+Command (? for help): _
+
+```
+
+To create a new GPT partition table, type the `o` command. You should see something like this:
+
+```
+Command (? for help): o
+This option deletes all partitions and creates a new protective MBR.
+Proceed? (Y/N): _
+
+```
+
+Type `Y` and a new partition table will be created.
+
+**Warning:** If you create a new partition table on a disk with data on it, it will erase all the data on the disk. Make sure this is what you want to do.
+
 *   Create a new partition with the `n` command (primary type/1st partition).
 *   Assuming the partition is new, *gdisk* will pick the highest possible alignment. Otherwise, it will pick the largest power of two that divides all partition offsets.
 *   If choosing to start on a sector before the 2048th *gdisk* will automatically shift the partition start to the 2048th disk sector. This is to ensure a 2048-sectors alignment (as a sector is 512B, this is a 1024KiB alignment which should fit any SSD NAND erase block).
@@ -67,9 +184,20 @@ Note that in the olden days, *fdisk* used cylinders as the default display unit,
 
 #### Fdisk usage summary
 
-*   Start *fdisk* against your drive as root (*disk-device* may be e.g. `/dev/sda`):
+*   Start *fdisk* against your drive as root, in this example we are using `/dev/sda`):
 
-	 `# fdisk *disk-device*` 
+```
+# fdisk /dev/sda
+
+Welcome to fdisk (util-linux 2.27.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Command (m for help): _ 
+
+```
+
+This opens the fdisk dialogue where you can type in commands.
 
 *   If the drive is brand new or if you are wanting to start over, create a new empty DOS partition table with the `o` command.
 *   Create a new partition with the `n` command (primary type/1st partition).
@@ -77,6 +205,24 @@ Note that in the olden days, *fdisk* used cylinders as the default display unit,
 *   Change the partition's system id from the default type of Linux (`type 83`) to the desired type via the `t` command. This is an optional step should the user wish to create another type of partition for example, swap, NTFS, LVM, etc. Note that a complete listing of all valid partition types is available via the `l` command.
 *   Assign other partitions in a like fashion.
 *   Write the table to disk and exit via the `w` command.
+
+### Convert between MBR and GPT
+
+To convert an MBR partition table to GPT, you need the tool sgdisk.
+
+```
+# sgdisk -g /dev/sda
+
+```
+
+To convert GPT to MBR use the `m` option. Note that it is not possible to convert more than four partitions from GPT to MBR.
+
+```
+# sgdisk -m /dev/sda
+
+```
+
+If the device will be bootable you will need to set the bootable flag with fdisk.
 
 ## Create Partitions
 
@@ -89,7 +235,22 @@ Launch *cgdisk* with:
 
 ```
 
-**Tip:** If cgdisk cannot change your disk to GPT, [parted](https://www.archlinux.org/packages/?name=parted) can.
+```
+cgdisk 1.0.1
+Disk Drive: /dev/sda
+Size: 234441648, 111.8 GiB
+
+ Part. #     Size        Partition Type            Partition Name
+ ----------------------------------------------------------------
+             1007.0 KiB  free space
+    1        512.0 MiB   BIOS boot partition
+    2        111.3 GiB    free space
+
+    [ Align  ]  [ Backup ]  [  Help  ]  [  Load  ]  [  **New**   ]  [  Quit  ]  [ Verify ]  [ Write  ]
+
+                                      Create new partition from free space
+
+```
 
 **Root:**
 
@@ -117,7 +278,24 @@ If you would like to start over, you can simply select *Quit* (or press `Q`) to 
 
 If you are satisfied, choose *Write* (or press `Shift+W`) to finalize and to write the partition table to the drive. Type `yes` and choose *Quit* (or press `Q`) to exit without making any more changes.
 
-## Using fdisk to create MBR partitions
+### Use cfdisk to create MBR partitions
+
+```
+                                   Disk: Disk: /dev/sda
+                    Size: 111.8 GiB, 120034123776 bytes, 234441648 sectors
+                 Label: gpt, identifier: AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE
+
+    Device                  Start            End        Sectors       Size Type
+>>  Free space            1050624      234441648      233391024         119G                     
+    /dev/sda1                2048        1050623        1048576       512M BIOS boot
+
+                    [   **New**  ]  [  Quit  ]  [  Help  ]  [  Write ]  [  Dump  ]
+
+                                Create new partition from free space
+
+```
+
+### Using fdisk to create MBR partitions
 
 Launch *fdisk* with:
 

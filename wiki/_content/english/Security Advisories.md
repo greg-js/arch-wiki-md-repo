@@ -35,6 +35,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### Mars 2016
 
+*   [7 March 2016] [ASA-201603-3](https://lists.archlinux.org/pipermail/arch-security/2016-March/000568.html) [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl) multiple issues
+*   [7 March 2016] [ASA-201603-2](https://lists.archlinux.org/pipermail/arch-security/2016-March/000567.html) [openssl](https://www.archlinux.org/packages/?name=openssl) multiple issues
 *   [3 March 2016] [ASA-201603-1](https://lists.archlinux.org/pipermail/arch-security/2016-March/000566.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
 
 ### February 2016

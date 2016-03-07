@@ -328,7 +328,6 @@ The only part that differs from [#php-fpm configuration](#php-fpm_configuration)
     uwsgi_hide_header X-XSS-Protection;
     uwsgi_hide_header X-Content-Type-Options;
     uwsgi_hide_header X-Robots-Tag;
-    uwsgi_hide_header X-Frame-Options;
     uwsgi_pass unix:/run/uwsgi/owncloud.sock;
     }
 
@@ -362,6 +361,9 @@ cheaper = 1
 ; reload whenever this config file changes
 ; %p is the full path of the current config file
 touch-reload = %p
+
+; disable uWSGI request logging
+;disable-logging = true
 
 ; enforce a DOCUMENT_ROOT
 php-docroot     = /usr/share/webapps/%n
@@ -433,7 +435,10 @@ cron = -3 -1 -1 -1 -1 /usr/bin/php -f /usr/share/webapps/owncloud/cron.php 1>/de
 
 ```
 
-**Note:** Do not forget to uncomment the required database connector.
+**Note:**
+
+*   Do not forget to set your timezone and uncomment the required database connector in the uWSGI config file
+*   Starting with PHP 7, the [open_basedir](/index.php/PHP#Configuration "PHP") directive is [no longer set by default](https://www.archlinux.org/news/php-70-packages-released/) to keep in line with upstream, but is left here as a security feature. Feel free to comment it out if you feel otherwise.
 
 #### Activation
 

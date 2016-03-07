@@ -33,7 +33,7 @@
 
 [ArchBang](/index.php/ArchBang "ArchBang") — Live-дистрибутив, имеющий возможность загрузки с CD/USB и предоставляемый под 32 и 64 разрядные системы.
 
-Имеет визуальную среду, основанную на Openboxhttps://ru.wikipedia.org/wiki/Openbox, и минимальный набор программ.
+Имеет визуальную среду, основанную на [Openbox](https://ru.wikipedia.org/wiki/Openbox), и минимальный набор программ.
 
 *   Домашняя страница: [http://www.archbang.org/](http://www.archbang.org/)
 *   Форум: [http://archbang.47.forumer.com/](http://archbang.47.forumer.com/)

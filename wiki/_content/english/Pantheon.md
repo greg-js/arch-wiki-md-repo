@@ -211,6 +211,23 @@ GtkToolItem { color: @text_color; }
 
 Wingpanel is transparent by design when using the elementary GTK theme. It becomes black when a maximized window occupies your screen. However, using other GTK themes will produce a solid panel most of the time.
 
+To achieve the former behavior within other themes just add the following lines to the end of it's css. It is mostly found within `/usr/share/themes/<theme-name>` or `~/.themes/<theme-name>`. Depending on your theme the filename may be `apps.css` or `gtk.css`:
+
+```
+/*********************
+ * wingpanel support *
+ ********************/
+.panel {
+    background-color: transparent;
+    transition: all 1s ease-in-out;
+}
+
+.panel.maximized {
+    background-color: #000;
+}
+
+```
+
 ### Corrupted graphics in canonical indicators
 
 Indicators behave incorrectly with every theme I have tried. They are very ancient, all of them date back to 2012 because the newer indicators depend on Ubuntu patches, and they should be killed with fire anyway. Wingpanel is doing just that and I hope the next major release will ship their new plugin system.

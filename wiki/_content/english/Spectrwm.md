@@ -8,6 +8,7 @@ Spectrwm is written in C and configured with a text configuration file. It was p
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
+    *   [2.1 Keybindings configuration](#Keybindings_configuration)
 *   [3 Starting spectrwm](#Starting_spectrwm)
     *   [3.1 Starting spectrwm with XDM](#Starting_spectrwm_with_XDM)
     *   [3.2 Starting spectrwm with KDM](#Starting_spectrwm_with_KDM)
@@ -41,6 +42,14 @@ See [Xdefaults](/index.php/Xdefaults "Xdefaults") for details of how to set up f
 *spectrwm* first tries to open the user specific file, `~/.spectrwm.conf`. If that file is unavailable, it tries to open the global configuration file at `/etc/spectrwm.conf`.
 
 Optionally, spectrwm can call `baraction.sh` (in the user's path), which should output a text status message to `stdout` for the status bar.
+
+### Keybindings configuration
+
+Default keybindings are in `/etc/spectrwm/spectrwm_<<keyboard layout>>.conf`. In order to customize keybingings:
+
+*   Set `keyboard_mapping` to /dev/null in your `~/.spectrwm.com`
+
+*   Copy-paste the contents of `/etc/spectrwm/spectrwm_<<keyboard layout>>.conf` to the end of your `~/.spectrwm.conf`.
 
 ## Starting spectrwm
 

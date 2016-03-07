@@ -107,6 +107,8 @@ To set the CPU to run at a specified frequency:
 
 ## Scaling governors
 
+**Note:** The modern pstate driver only supports the performance and powersave governors and the performance governor [should give better power saving functionality than the old ondemand governor](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ).
+
 Governors (see table below) are power schemes for the CPU. Only one may be active at a time. For details, see the [kernel documentation](https://www.kernel.org/doc/Documentation/cpu-freq/governors.txt) in the kernel source.
 
 | Governor | Description |

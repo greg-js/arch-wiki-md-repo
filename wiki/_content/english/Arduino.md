@@ -37,15 +37,8 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
 ## Installation
 
 *   Install [arduino](https://aur.archlinux.org/packages/arduino/) from the [AUR](/index.php/AUR "AUR").
-*   Add yourself to the `uucp` and `lock` [groups](/index.php/Groups "Groups"). (More information in the next section: "Accessing serial")
-*   You may need to load the cdc_acm module.
-
-```
- # modprobe cdc_acm
-
-```
-
-*   Can be built on a Raspberry Pi by adding 'armv6h' to the arch=('i686' 'x86_64') line like so arch=('i686' 'x86_64' 'armv6h') in the PKGBUILD
+*   Add yourself to the `uucp` and `lock` [groups](/index.php/Groups "Groups") (more information in the [#Accessing serial](#Accessing_serial) section).
+*   You may need to [load](/index.php/Kernel_modules "Kernel modules") the `cdc_acm` module.
 
 ### Arduino Due / Yun
 

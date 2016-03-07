@@ -8,9 +8,9 @@ Disk cloning is the process of making an image of a partition or of an entire ha
     *   [1.3 Backing up the MBR](#Backing_up_the_MBR)
     *   [1.4 Create disk image](#Create_disk_image)
     *   [1.5 Restore system](#Restore_system)
-    *   [1.6 dd spin-offs](#dd_spin-offs)
 *   [2 Using ddrescue](#Using_ddrescue)
 *   [3 Disk cloning software](#Disk_cloning_software)
+    *   [3.1 dd spin-offs](#dd_spin-offs)
 *   [4 See also](#See_also)
 
 ## Using dd
@@ -155,18 +155,6 @@ When the image has been split, use the following instead:
 
 ```
 
-### dd spin-offs
-
-Other *dd*-like programs feature periodical status output, e.g. a simple progress bar.
-
-	dcfldd 
-
-	[dcfldd](https://www.archlinux.org/packages/?name=dcfldd) is an enhanced version of dd with features useful for forensics and security. It accepts most of dd's parameters and includes status output. The last stable version of dcfldd was released on December 19, 2006.
-
-	ddrescue 
-
-	GNU [ddrescue](https://www.archlinux.org/packages/?name=ddrescue) is a data recovery tool. It is capable of ignoring read errors, which is a useless feature for disk wiping in almost any case. See the [official manual](http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) for details.
-
 ## Using ddrescue
 
 *ddrescue* is a tool designed for cloning and recovering data. It copies data from one file or block device (hard disc, cdrom, etc) to another, trying to rescue the good parts first in case of read errors, to maximize the recovered data.
@@ -286,6 +274,18 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
     *   Supports Grub2, Syslinux, EFISTUB/efibootmgr and Systemd/bootctl
 
 	[https://github.com/tritonas00/system-tar-and-restore](https://github.com/tritonas00/system-tar-and-restore) || [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-and-restore/)
+
+### dd spin-offs
+
+Other *dd*-like programs feature periodical status output, e.g. a simple progress bar.
+
+	dcfldd 
+
+	[dcfldd](https://www.archlinux.org/packages/?name=dcfldd) is an enhanced version of dd with features useful for forensics and security. It accepts most of dd's parameters and includes status output. The last stable version of dcfldd was released on December 19, 2006.
+
+	ddrescue 
+
+	GNU [ddrescue](https://www.archlinux.org/packages/?name=ddrescue) is a data recovery tool. It is capable of ignoring read errors, which is a useless feature for disk wiping in almost any case. See the [official manual](http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) for details.
 
 ## See also
 

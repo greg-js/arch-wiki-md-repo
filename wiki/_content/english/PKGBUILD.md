@@ -113,7 +113,7 @@ The URL of the official site of the software being packaged.
 
 ### license
 
-The license under which the software is distributed. The [licenses](https://www.archlinux.org/packages/?name=licenses) package from the [official repositories](/index.php/Official_repositories "Official repositories") contains many commonly used licenses, which are installed to `/usr/share/licenses/common`. If a package is licensed under one of these licenses, the value should be set to the directory name, e.g. `license=('GPL')`. If the appropriate license is not included, several things must be done:
+The license under which the software is distributed. The [licenses](https://www.archlinux.org/packages/?name=licenses) package contains many commonly used licenses, which are installed to `/usr/share/licenses/common`. If a package is licensed under one of these licenses, the value should be set to the directory name, e.g. `license=('GPL')`. If the appropriate license is not included, several things must be done:
 
 1.  Add `custom` to the `license` array. Optionally, you can replace `custom` with `custom:*name of license*`. Once a license is used in two or more packages in an official repository (including `[community]`), it becomes a part of the [licenses](https://www.archlinux.org/packages/?name=licenses) package.
 2.  Install the license in: `/usr/share/licenses/*pkgname*/`, e.g. `/usr/share/licenses/foobar/LICENSE`.

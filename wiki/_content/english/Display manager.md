@@ -58,10 +58,6 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 	[https://github.com/linuxmint/mdm](https://github.com/linuxmint/mdm) || [mdm-display-manager](https://aur.archlinux.org/packages/mdm-display-manager/)
 
-*   **[Qingy](/index.php/Qingy "Qingy")** — Ultralight and very configurable graphical login independent on X Windows (uses DirectFB). (discontinued)
-
-	[http://qingy.sourceforge.net/](http://qingy.sourceforge.net/) || [qingy](https://aur.archlinux.org/packages/qingy/)
-
 *   **[SDDM](/index.php/SDDM "SDDM")** — QML-based display manager and successor to KDE4's kdm; recommended for Plasma 5 and LXQt.
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)

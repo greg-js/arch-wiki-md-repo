@@ -879,7 +879,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 *   **OBS** — Free and open source software for video recording and live streaming.
 
-	[https://obsproject.com/](https://obsproject.com/) || [obs-studio](https://aur.archlinux.org/packages/obs-studio/)
+	[https://obsproject.com/](https://obsproject.com/) || [obs-studio](https://www.archlinux.org/packages/?name=obs-studio)
 
 *   **[RecordMyDesktop](https://en.wikipedia.org/wiki/RecordMyDesktop "wikipedia:RecordMyDesktop")** — An easy to use utility that records your desktop into the ogg format with a CLI, Qt or GTK+ interface.
 

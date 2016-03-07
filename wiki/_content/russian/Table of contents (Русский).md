@@ -8,7 +8,7 @@
 
 	<small>1.2.</small> [Репозитории пользователей Arch](/index.php/Category:Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Arch User Repository (Русский)") <small>(2) (Также в [Управление пакетами](/index.php/Category:Package_management_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Package management (Русский)"))</small>
 
-	<small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:ArchWiki (Русский)") <small>(5)</small>
+	<small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:ArchWiki (Русский)") <small>(4)</small>
 
 	<small>1.3.1.</small> [Справка](/index.php/Category:Help_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Help (Русский)") <small>(9)</small>
 

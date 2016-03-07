@@ -148,21 +148,20 @@ This is a list of helper utilities that search, download and/or build packages.
 
 ## Comparison table
 
-**Note:**
+The columns have the following meaning:
 
 *   *Secure*: does not [source](/index.php/Source "Source"), by default, the PKGBUILD at all, or, before doing so, reminds the user and offers him the opportunity to inspect it manually. Some helpers are known to source PKGBUILDs before the user can inspect them, **allowing malicious code to be executed**. *Optional* means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
 *   *Clean build*: does not export new variables that can prevent a successful build process.
-*   *Reliable Parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli](https://aur.archlinux.org/packages/aws-cli/).
-*   *Reliable Solver*: ability to correctly solve and build complex dependency chains, such as [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
+*   *Reliable parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli](https://aur.archlinux.org/packages/aws-cli/).
+*   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
 *   *Split packages*: ability to correctly build and install split packages independently, such as [python-nikola](https://aur.archlinux.org/packages/python-nikola/).
 *   *Git clone*: uses git clones instead of downloading tarballs (deprecated since AUR 4).
 
-| Name | Written In | Secure | Clean build | Reliable Parser | Reliable Solver | Split Packages | Git clone | Shell Completion | Syntax | Specificity |
+| Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Shell completion | Syntax | Specificity |
 | apacman | Bash | No | Yes | No | No | No | No | None | Pacman-like | Fork of *packer* |
 | aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | No | No | No | bash/zsh | Pacman-like | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support, multilangual |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | Specific | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[2]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | Pacman-like | - |
-| aurutils | Bash/C | Yes | N/A | Yes | Yes | N/A | Yes | None | Specific | [tsort](https://en.wikipedia.org/wiki/Topological_sorting "w:Topological sorting") |
 | bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | No | bash/zsh | Pacman-like/Specific | Trust management, ABS support, extends Powerpill |
 | burgaur | Python3 | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | Pacman-like | Wrapper for *cower* |
 | cower | C | Yes | N/A | Yes | N/A | N/A | No | bash/zsh | Specific | No automatic builds, regex support |

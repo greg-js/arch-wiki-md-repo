@@ -641,9 +641,26 @@ If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseA
 
 #### Gnome with GDM
 
-**Note:** Below was tested with Gnome 3.16.2 and PulseAudio 7.0
+**Note:** Below was tested with Gnome 3.18.4 and PulseAudio 8.0
 
-If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM, you need to prevent GDM from starting its own instance of PulseAudio. Apply the same fix as shown in [#Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound).
+If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM, you need to prevent GDM from starting its own instance of PulseAudio :
+
+*   Prevent Pulseaudio clients from automatically starting a server if one isn't running by adding the following lines to `/var/lib/gdm/.config/pulse/client.conf` :
+
+```
+autospawn = no
+daemon-binary = /bin/true
+```
+
+*   Prevent systemd from starting Pulseaudio anyway with socket activation :
+
+```
+sudo -ugdm mkdir -p /var/lib/gdm/.config/systemd/user
+sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
+
+```
+
+*   Restart, and check that there is no Pulseaudio process for the `gdm` user.
 
 **Note:** Discussion about this problem can be found [here](https://bbs.archlinux.org/viewtopic.php?id=194006) and [here](https://bbs.archlinux.org/viewtopic.php?id=196689)
 

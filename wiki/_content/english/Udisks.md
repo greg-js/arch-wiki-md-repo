@@ -6,7 +6,7 @@
 *   [2 Configuration](#Configuration)
 *   [3 Mount helpers](#Mount_helpers)
     *   [3.1 Devmon](#Devmon)
-    *   [3.2 inotify](#inotify)
+    *   [3.2 udevadm monitor](#udevadm_monitor)
     *   [3.3 udiskie](#udiskie)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
@@ -54,27 +54,23 @@ To mount devices with *udisks* or *udisks2*, remove the SUID permission from *ud
 
 **Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@*user*.service`. Keep in mind services run outside the [session](/index.php/Session "Session"). Adjust [Polkit](/index.php/Polkit "Polkit") rules where appropriate, or run *devmon* from the user session (see [Autostart](/index.php/Autostart "Autostart")).
 
-### inotify
+### udevadm monitor
 
-You may use [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) to monitor `/dev`, and mount drives when a new block device is created. Stale mount points are automatically removed by *udisksd*, such that no special action is required on deletion.
+You may use `udevadm monitor` to monitor block events and mount drives when a new block device is created. Stale mount points are automatically removed by *udisksd*, such that no special action is required on deletion.
 
 ```
 #!/bin/bash
-pattern='sd[b-z][1-9]$'
-coproc inotifywait --monitor --event create,delete --format '%e %w%f' /dev
 
-while read -r -u "${COPROC[0]}" event file; do
-    if [[ $file =~ $pattern ]]; then
-	case $event in
-	    CREATE)
-		echo "Settling..."; sleep 1
-		udisksctl mount --block-device $file --no-user-interaction
-		;;
-	    DELETE)
-		;;
-	esac
-    fi
-done
+pathtoname() {
+    udevadm info -p "/sys/$1" | awk -v FS== '/DEVNAME/ {print $2}'
+}
+
+while read -r _ _ event devpath _; do
+        if [[ $event == add ]]; then
+            devname=$(pathtoname "$devpath")
+            udisksctl mount --block-device "$devname" --no-user-interaction ;;
+        fi
+done < <(stdbuf -o L udevadm monitor --udev -s "block/disk")
 
 ```
 
