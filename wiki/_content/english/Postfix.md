@@ -116,9 +116,9 @@ Then, generate a [dhparam file](https://www.openssl.org/docs/apps/dhparam.html) 
 Postfix imposes both message and mailbox size limits by default. The message_size_limit controls the maximum size in bytes of a message, including envelope information. (default 10240000) The mailbox_size_limit controls the maximum size of any local individual mailbox or maildir file. This limits the size of **any** file that is written to upon local delivery, **including files written by external commands** (i.e. procmail) that are executed by the local delivery agent. (default is 51200000, set to 0 for no limit) If bounced message notifications are generated, check the size of the local mailbox under `/var/spool/mail` and use postconf to check these size limits:
 
 ```
-# postconf -d mailbox_size_limit
+# postconf mailbox_size_limit
 mailbox_size_limit = 51200000
-# postconf -d message_size_limit
+# postconf message_size_limit
 message_size_limit = 10240000
 
 ```

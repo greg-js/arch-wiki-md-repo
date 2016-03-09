@@ -66,7 +66,7 @@ Set the touchpad to basic in the BIOS to get it working. Then enable it by press
 
 ### Wireless
 
-**Note:** I got the device to work by following [these instructions](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1520343/comments/19) on the Ubuntu bugtracker. Please note that this is only a workaround.
+**Note:** I got the device to work by following [these instructions](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1520343/comments/19) on the Ubuntu bugtracker. Please note that this is only a workaround. A fix is ready by the official maintainer ([https://github.com/kvalo/ath10k-firmware/commit/6162bf1d7782520ffe79945bb9677648e496dc5e](https://github.com/kvalo/ath10k-firmware/commit/6162bf1d7782520ffe79945bb9677648e496dc5e)) but not yet in the linux-firmware tree
 
 By enabling [testing] and updating the linux-firmware package the device is visible:
 

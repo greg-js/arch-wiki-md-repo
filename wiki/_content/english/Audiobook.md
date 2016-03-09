@@ -27,7 +27,7 @@ Multiple tools are available to help create audiobook files.
 
 ### Tools
 
-*   [m4baker](https://aur.archlinux.org/packages/m4baker/) — GUI program to combine numerous AAC-encoded audio files into a single m4b file with a chapter index
+*   [m4baker-git](https://aur.archlinux.org/packages/m4baker-git/) — GUI program to combine numerous AAC-encoded audio files into a single m4b file with a chapter index
 
 	m4baker usage is straightforward and detailed on the [project wiki](http://code.google.com/p/m4baker/w/list) — its usage will not be covered here.
 

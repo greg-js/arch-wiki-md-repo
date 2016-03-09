@@ -7,6 +7,7 @@ This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s
     *   [1.2 Alternate install: custom kernel](#Alternate_install:_custom_kernel)
         *   [1.2.1 Automatic re-compilation of the NVIDIA module with kernel update](#Automatic_re-compilation_of_the_NVIDIA_module_with_kernel_update)
     *   [1.3 Pure Video HD (VDPAU/VAAPI)](#Pure_Video_HD_.28VDPAU.2FVAAPI.29)
+    *   [1.4 Hardware accelerated video decoding with XvMC](#Hardware_accelerated_video_decoding_with_XvMC)
 *   [2 Configuration](#Configuration)
     *   [2.1 Minimal configuration](#Minimal_configuration)
     *   [2.2 Automatic configuration](#Automatic_configuration)
@@ -98,6 +99,10 @@ See [Dynamic Kernel Module Support#Usage](/index.php/Dynamic_Kernel_Module_Suppo
 ### Pure Video HD (VDPAU/VAAPI)
 
 At least a video card with second generation [PureVideo HD](https://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_GPUs_containing_a_PureVideo_SIP_block "wikipedia:Nvidia PureVideo") is required to use [VDPAU](/index.php/VDPAU "VDPAU") and [VA-API](/index.php/VA-API "VA-API").
+
+### Hardware accelerated video decoding with XvMC
+
+Accelerated decoding of MPEG-1 and MPEG-2 videos via [XvMC](/index.php/XvMC "XvMC") are supported on GeForce4, GeForce 5 FX, GeForce 6 and GeForce 7 series cards. See [XvMC](/index.php/XvMC "XvMC") for detail.
 
 ## Configuration
 

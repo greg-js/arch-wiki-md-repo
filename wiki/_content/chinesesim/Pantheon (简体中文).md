@@ -1,12 +1,14 @@
+**翻译状态：** 本文是英文页面 [Pantheon](/index.php/Pantheon "Pantheon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-08，点击[这里](https://wiki.archlinux.org/index.php?title=Pantheon&diff=0&oldid=423635)可以查看翻译后英文页面的改动。
+
 [Pantheon](http://elementaryos.org/) 是linux发行版 elementary os 的默认桌面环境。由开发者使用vala语言和gtk3工具包编写完成，高效并且易于使用。用户界面上，与GNOME-shell和Mac OS X多有相似之处。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 Additional Info](#Additional_Info)
+    *   [1.1 补充信息](#.E8.A1.A5.E5.85.85.E4.BF.A1.E6.81.AF)
         *   [1.1.1 Packages based on older evolution-data-server](#Packages_based_on_older_evolution-data-server)
-*   [2 Launching Pantheon](#Launching_Pantheon)
-    *   [2.1 Via a Display Manager](#Via_a_Display_Manager)
+*   [2 启用Pantheon桌面](#.E5.90.AF.E7.94.A8Pantheon.E6.A1.8C.E9.9D.A2)
+    *   [2.1 使用显示服务器启动](#.E4.BD.BF.E7.94.A8.E6.98.BE.E7.A4.BA.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.90.AF.E5.8A.A8)
     *   [2.2 Via .xinitrc](#Via_.xinitrc)
     *   [2.3 Autostart applications](#Autostart_applications)
 *   [3 Configuration](#Configuration)
@@ -86,7 +88,7 @@ Server = http://pkgbuild.com/~alucryd/$repo/$arch
 
 **Note:** You will also need to install plugs, look for "switchboard-plug-*" in the [AUR](https://aur.archlinux.org/packages/?O=0&K=switchboard-plug) or in [Alucryd's GitHub repository](https://github.com/alucryd/aur-alucryd/tree/master/pantheon).
 
-It is also recommended to install the following fonts:
+推荐安装以下字体包来获取最佳桌面体验:
 
 *   [ttf-opensans](https://aur.archlinux.org/packages/ttf-opensans/): Open Sans Fonts
 *   [ttf-raleway-font-family](https://aur.archlinux.org/packages/ttf-raleway-font-family/): Raleway Font Family
@@ -95,15 +97,15 @@ It is also recommended to install the following fonts:
 *   [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont): Set of free outline fonts covering the Unicode character set
 *   [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation): Red Hats Liberation fonts
 
-### Additional Info
+### 补充信息
 
 #### Packages based on older evolution-data-server
 
 [dexter-contacts-bzr](https://aur.archlinux.org/packages/dexter-contacts-bzr/) and [feedler-bzr](https://aur.archlinux.org/packages/feedler-bzr/) do not build because they are based on evolution-data-server 3.2\. Arch Linux provides version 3.10 which uses a different Vala API.
 
-## Launching Pantheon
+## 启用Pantheon桌面
 
-### Via a Display Manager
+### 使用显示服务器启动
 
 [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/) provides a session entry for display managers such as [gdm](https://www.archlinux.org/packages/?name=gdm) or [lightdm](https://www.archlinux.org/packages/?name=lightdm).
 

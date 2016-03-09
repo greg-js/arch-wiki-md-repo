@@ -1,4 +1,4 @@
-[sdcv](https://www.archlinux.org/packages/?name=sdcv) is the console version of the StarDict program that provides console access to dictionaries in StarDict's format
+[sdcv](https://www.archlinux.org/packages/?name=sdcv) is a command line dictionary. It provides access to dictionarsies in StarDict's format.
 
 ## Contents
 

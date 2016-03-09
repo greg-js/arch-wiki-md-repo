@@ -123,9 +123,11 @@ maxsyncaccounts = 1
 # In the account identifier
 [Account main]
 # Minutes between syncs
-autorefresh = 5
-# Number of quick-syncs between autorefreshes. Quick-syncs do not update if the
-# only changes were to IMAP flags
+autorefresh = 0.5
+# Quick-syncs do not update if the only changes were to IMAP flags.
+# autorefresh=0.5 together with quick=10 yields
+# 10 quick refreshes between each full refresh, with 0.5 minutes between every 
+# refresh, regardless of type.
 quick = 10
 
 # In the remote repository identifier

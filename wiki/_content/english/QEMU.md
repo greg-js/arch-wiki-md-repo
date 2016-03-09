@@ -18,6 +18,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [3.3 Installing the operating system](#Installing_the_operating_system)
 *   [4 Running virtualized system](#Running_virtualized_system)
     *   [4.1 Enabling KVM](#Enabling_KVM)
+    *   [4.2 Enabling IOMMU (Intel VT-d/AMD-Vi) support](#Enabling_IOMMU_.28Intel_VT-d.2FAMD-Vi.29_support)
 *   [5 Moving data between host and guest OS](#Moving_data_between_host_and_guest_OS)
     *   [5.1 Network](#Network)
     *   [5.2 QEMU's built-in SMB server](#QEMU.27s_built-in_SMB_server)
@@ -47,11 +48,12 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
         *   [6.5.1 Basics](#Basics_2)
         *   [6.5.2 Startup scripts](#Startup_scripts_2)
 *   [7 Graphics](#Graphics)
-    *   [7.1 cirrus](#cirrus)
-    *   [7.2 std](#std)
+    *   [7.1 std](#std)
+    *   [7.2 qxl](#qxl)
+        *   [7.2.1 SPICE](#SPICE)
     *   [7.3 vmware](#vmware)
-    *   [7.4 qxl](#qxl)
-    *   [7.5 virtio](#virtio)
+    *   [7.4 virtio](#virtio)
+    *   [7.5 cirrus](#cirrus)
     *   [7.6 none](#none)
     *   [7.7 vnc](#vnc)
 *   [8 Installing virtio drivers](#Installing_virtio_drivers)
@@ -69,9 +71,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [9.2 Mouse integration](#Mouse_integration)
     *   [9.3 Pass-through host USB device](#Pass-through_host_USB_device)
     *   [9.4 Enabling KSM](#Enabling_KSM)
-    *   [9.5 Spice support](#Spice_support)
-        *   [9.5.1 SPICE Guest Additions](#SPICE_Guest_Additions)
-        *   [9.5.2 Multi-monitor support](#Multi-monitor_support)
+    *   [9.5 Multi-monitor support](#Multi-monitor_support)
     *   [9.6 Copy and paste](#Copy_and_paste)
     *   [9.7 Windows-specific notes](#Windows-specific_notes)
         *   [9.7.1 Fast startup](#Fast_startup)
@@ -200,7 +200,7 @@ $ qemu-system-i386 -cdrom *iso_image* -boot order=d -drive file=*disk_image*,for
 
 ```
 
-See `qemu(1)` for more information about loading other media types, such as floppy or disk images, or physical drives.
+See `qemu(1)` for more information about loading other media types (such as floppy, disk images or physical drives) and [#Running virtualized system](#Running_virtualized_system) for other useful options.
 
 After the operating system has finished installing, the QEMU image can be booted directly (see [#Running virtualized system](#Running_virtualized_system)).
 
@@ -236,6 +236,17 @@ To start QEMU in KVM mode, append `-enable-kvm` to the additional start options.
 
 *   If you start your VM with a GUI tool and experience very bad performance, you should check for proper KVM support, as QEMU may be falling back to software emulation.
 *   KVM needs to be enabled in order to start Windows 7 and Windows 8 properly without a *blue screen*.
+
+### Enabling IOMMU (Intel VT-d/AMD-Vi) support
+
+Using IOMMU opens to features like PCI passthrough and provide memory protection from faulty or malicious devices [[2]](https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit#Advantages) [[3]](https://www.quora.com/Memory-Management-computer-programming/Could-you-explain-IOMMU-in-plain-English).
+
+To enable IOMMU:
+
+1.  Ensure that AMD-Vi/Intel VT-d is supported by the CPU and is enabled in the BIOS settings.
+2.  Add `intel_iommu=on` if you have an Intel CPU or `amd_iommu=on` if you have an AMD CPU, to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+3.  Reboot and ensure IOMMU is enabled by checking `dmesg` for `DMAR`: `[0.000000] DMAR: IOMMU enabled`
+4.  Add `iommu=on` as *option*.
 
 ## Moving data between host and guest OS
 
@@ -957,29 +968,55 @@ And finally, you can create the [bridge interface with netctl](/index.php/Bridge
 
 ## Graphics
 
-QEMU can use the following different graphic outputs: `std`, `cirrus`, `vmware`, `qxl`, `virtio`, and `none`.
-
-### cirrus
-
-The cirrus graphical adapter was the default [before 2.2](http://wiki.qemu.org/ChangeLog/2.2#VGA). It [should not](https://www.kraxel.org/blog/2014/10/qemu-using-cirrus-considered-harmful/) be used on modern systems.
+QEMU can use the following different graphic outputs: `std`, `qxl`, `vmware`, `virtio`, `cirrus` and `none`.
 
 ### std
 
 With `-vga std` you can get a resolution of up to 2560 x 1600 pixels without requiring guest drivers. This is the default since QEMU 2.2.
 
-### vmware
-
-Although it is a bit buggy, it performs better than std and cirrus. On the guest, install the VMware drivers ([xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) and [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) for Arch Linux guests).
-
 ### qxl
 
-QXL is a paravirtual graphics driver with 2D support. To use it, pass the `-vga qxl` option and install drivers in the guest.
+QXL is a paravirtual graphics driver with 2D support. To use it, pass the `-vga qxl` option and install drivers in the guest. You may want to use SPICE for improved graphical performance when using QXL.
 
-For basic support (similar to `-vga std`) in Linux guests, the qxl and bochs_drm kernel modules must be loaded. The xorg modesetting driver (part of [xorg-server](https://www.archlinux.org/packages/?name=xorg-server)) can be combined with these drivers. Guest drivers for other operating systems can be found on the [SPICE download page](http://www.spice-space.org/download.html). Advanced functionality such as multi-monitor support requires [SPICE](#Spice_support).
+On Linux guests, the `qxl` and `bochs_drm` kernel modules must be loaded in order to gain a decent performance.
+
+#### SPICE
+
+The [SPICE project](http://spice-space.org/) aims to provide a complete open source solution for remote access to virtual machines in a seamless way.
+
+SPICE can only be used when using QXL as the graphical output.
+
+The following is example of booting with SPICE as the remote desktop protocol:
+
+```
+$ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing -chardev spicevm 
+
+```
+
+Connect to the guest by using a SPICE client. At the moment [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) is recommended, however other [clients](http://www.spice-space.org/download.html), including other platforms, are available:
+
+```
+$ spicy -h 127.0.0.1 -p 5930
+
+```
+
+For improved support for multiple monitors, clipboard sharing, etc. the following packages should be installed on the guest:
+
+*   [spice-vdagent](https://aur.archlinux.org/packages/spice-vdagent/): Spice agent xorg client that enables copy and paste between client and X-session and more
+*   [xf86-video-qxl](https://aur.archlinux.org/packages/xf86-video-qxl/) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl video driver
+*   For other operating systems, see the Guest section on [SPICE-Space download](http://www.spice-space.org/download.html) page.
+
+### vmware
+
+Although it is a bit buggy, it performs better than std and cirrus. Install the VMware drivers ([xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) and [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) for Arch Linux guests.
 
 ### virtio
 
 `virtio-vga` / `virtio-gpu` is a paravirtual 3D graphics driver based on [virgl](https://virgil3d.github.io/). Currently a work in progress, supporting only very recent (>= 4.4) Linux guests.
+
+### cirrus
+
+The cirrus graphical adapter was the default [before 2.2](http://wiki.qemu.org/ChangeLog/2.2#VGA). It [should not](https://www.kraxel.org/blog/2014/10/qemu-using-cirrus-considered-harmful/) be used on modern systems.
 
 ### none
 
@@ -1035,7 +1072,7 @@ Further information on paravirtualization with KVM can be found [here](http://ww
 
 ### Preparing a Windows guest
 
-**Note:** The only (reliable) way to upgrade a Windows 8.1 guest to Windows 10 seems to be to temporarily choose cpu core2duo,nx for the install [[2]](http://ubuntuforums.org/showthread.php?t=2289210). After the install, you may revert to other cpu settings (8/8/2015).
+**Note:** The only (reliable) way to upgrade a Windows 8.1 guest to Windows 10 seems to be to temporarily choose cpu core2duo,nx for the install [[4]](http://ubuntuforums.org/showthread.php?t=2289210). After the install, you may revert to other cpu settings (8/8/2015).
 
 #### Block device drivers
 
@@ -1257,58 +1294,7 @@ If KSM is running, and there are pages to be merged (i.e. at least two similar V
 
 **Tip:** An easy way to see how well KSM is performing is to simply print the contents of all the files in that directory: `$ grep . /sys/kernel/mm/ksm/*` 
 
-### Spice support
-
-The [SPICE project](http://spice-space.org/) aims to provide a complete, open-source solution for interaction with virtualized desktop devices. Its main focus is to provide high-quality remote access to QEMU virtual machines.
-
-The official [qemu](https://www.archlinux.org/packages/?name=qemu) package is built with SPICE support.
-
-You can start your VM:
-
-```
-$ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing,addr=::1
-
-```
-
-Then connect with a spice client
-
-```
-$ spicec -h 127.0.0.1 -p 5930
-
-```
-
-**Tip:**
-
-*   The key combination to escape mouse and keyboard grab can be configured for `spicec`, the default is `Shift+F12`: `$ spicec --hotkeys release-cursor=ctrl+alt` 
-*   To disable mouse and keyboard grabbing for `spicec` (useful to allow your window manager shortcuts to work), set `SPICE_NOGRAB=1`.
-*   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) has a SPICE client built in.
-*   [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) provides another client for demoing purposes. Example usage: `spicy -h 127.0.0.1 -p 5930`.
-
-#### SPICE Guest Additions
-
-For improved support for multiple monitors, clipboard sharing and more, you have to install additional packages in your *guest*:
-
-*   [spice-vdagent](https://aur.archlinux.org/packages/spice-vdagent/): for [Agent](http://people.freedesktop.org/~teuf/spice-doc/html/ch02s05.html) support. Do not forget to enable the `spice-vdagentd` service.
-*   [xf86-video-qxl](https://aur.archlinux.org/packages/xf86-video-qxl/): for the QXL display driver.
-*   For other operating systems, see [http://people.freedesktop.org/~teuf/spice-doc/html/ch04.html](http://people.freedesktop.org/~teuf/spice-doc/html/ch04.html)
-
-In addition to the `-spice` option, these options are also needed:
-
-```
--device virtio-serial \
--chardev spicevmc,id=vdagent,name=vdagent \
--device virtserialport,chardev=vdagent,name=com.redhat.spice.0
-
-```
-
-The spicec and spicy program are intended for testing purposes, to enable additional monitors you have to install the [virtviewer](https://www.archlinux.org/packages/?name=virtviewer) package. Then connect with the VM using:
-
-```
-remote-viewer spice://localhost:5930
-
-```
-
-#### Multi-monitor support
+### Multi-monitor support
 
 The Linux QXL driver supports four heads (virtual screens) by default. This can be changed via the `qxl.heads=N` kernel parameter.
 
@@ -1339,6 +1325,8 @@ It is possible to run [Windows PE](/index.php/Windows_PE "Windows PE") in QEMU.
 
 For Windows 8 (or later) guests it is better to disable "Fast Startup" from the Power Options of the Control Panel, as it causes the guest to hang during every other boot.
 
+Fast Startup may also need to be disabled for changes to the `-smp` option to be properly applied.
+
 #### Remote Desktop Protocol
 
 If you use a MS Windows guest, you might want to use RDP to connect to your guest VM. If you are using a VLAN or are not in the same network as the guest, use:
@@ -1348,7 +1336,7 @@ $ qemu-system-i386 -nographic -net user,hostfwd=tcp::5555-:3389
 
 ```
 
-Then connect with either rdesktop or freerdp to the guest. For example:
+Then connect with either [rdesktop](https://www.archlinux.org/packages/?name=rdesktop) or [freerdp](https://www.archlinux.org/packages/?name=freerdp) to the guest. For example:
 
 ```
 $ xfreerdp -g 2048x1152 localhost:5555 -z -x lan
@@ -1398,10 +1386,17 @@ $ qemu-system-i386 -net nic,model=virtio -net tap,if=tap0,script=no -drive file=
 
 *   Use TAP devices instead of user-mode networking. See [#Tap networking with QEMU](#Tap_networking_with_QEMU).
 *   If the guest OS is doing heavy writing to its disk, you may benefit from certain mount options on the host's file system. For example, you can mount an [ext4 file system](/index.php/Ext4 "Ext4") with the option `barrier=0`. You should read the documentation for any options that you change because sometimes performance-enhancing options for file systems come at the cost of data integrity.
-*   If you have a raw disk image, disable the cache:
+*   If you have a raw disk image, you may want to disable the cache:
 
 ```
 $ qemu-system-i386 -drive file=*disk_image*,if=virtio,cache=none
+
+```
+
+*   Use the native Linux AIO:
+
+```
+$ qemu-system-i386 -drive file=*disk_image*,if=virtio,aio=native
 
 ```
 

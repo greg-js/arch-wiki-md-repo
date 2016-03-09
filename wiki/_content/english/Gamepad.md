@@ -313,7 +313,7 @@ Install the [bluez-plugins](https://www.archlinux.org/packages/?name=bluez-plugi
 
 You can now disconnect your controller. The next time you hit the PlayStation button it will connect without asking anything else.
 
-Just remind to disconnect the device once you are done, once it will stay connected, on and consuming battery.
+Remember to disconnect the controller when you are done as the controller will stay on when connected and drain the battery.
 
 ### Steam Controller
 

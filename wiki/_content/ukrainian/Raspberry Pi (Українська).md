@@ -37,7 +37,7 @@
 
 Ця стаття не є путівником по встановленню і припускає, що читач уже має встановлену систему Arch. Початківцям бажано прочитати [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), де описано початкові завдання, як створення користувачів, керування системою, етс.
 
-**Note:** Підтримка для архітектури ARM представлена на сторінці [http://archlinuxarm.org](http://archlinuxarm.org), а не через повідомлення на офіційному форумі Arch Linux. Будь-які повідомлення, які стосуються специфічних проблем, пов'язаних з ARM, будуть закриті в зв'язку з [Arch Linux distribution support ONLY](/index.php/Forum_etiquette#Arch_Linux_distribution_support_ONLY "Forum etiquette") policy.
+**Note:** Підтримка для архітектури ARM представлена на сторінці [http://archlinuxarm.org](http://archlinuxarm.org), а не через повідомлення на офіційному форумі Arch Linux. Будь-які повідомлення, які стосуються специфічних проблем, пов'язаних з ARM, будуть закриті в зв'язку з політикою [Arch Linux distribution support ONLY](/index.php/Forum_etiquette#Arch_Linux_distribution_support_ONLY "Forum etiquette").
 
 ## Системна архітектура
 
@@ -59,7 +59,7 @@ Raspberry Pi базується на ARM, а тому потребує вико�
 
 ## Встановлення Arch Linux ARM
 
-Дивіться [документацію по Arch Linux ARM Pi](http://archlinuxarm.org/platforms/armv6/raspberry-pi) або [документацію по Arch Linux ARM Pi2](http://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2).
+Дивіться [документацію по Arch Linux ARM Pi](http://archlinuxarm.org/platforms/armv6/raspberry-pi) або [документацію по Arch Linux ARM Pi2](http://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2) або [документацію по Arch Linux ARM Pi3](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3).
 
 ## Мережа
 

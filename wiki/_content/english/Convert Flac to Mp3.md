@@ -43,6 +43,8 @@ parallel ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: *.flac
 
 ```
 
+[Note: the above script now skips the first 'flac' file in the directory. I think it has to do with recent versions of parallel.]
+
 #### Makefile for incremental recursive transcoding
 
 **Warning:** Makefiles do not handle spaces correctly, see [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1506405#p1506405) for details.

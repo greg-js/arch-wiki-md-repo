@@ -175,6 +175,15 @@ Unlike Qt4, Qt5 doesn't ship a qtconfig utility to configure fonts, icons or sty
 
 Another solution is provided by the [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package, which provides a DE independent Qt5 QPA and a configuration utility. After installing the package, run `qt5ct` to set an icon theme, and set the environment variable `QT_QPA_PLATFORMTHEME="qt5ct"` so that the settings are picked up by Qt applications.
 
+If the below errors are received, and some icons still do not appear in some of the apps, install [oxygen](https://www.archlinux.org/packages/?name=oxygen) and [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons):
+
+```
+Icon theme "oxygen" not found.
+Icon theme "oxygen" not found.
+Error: standard icon theme "oxygen" not found!
+
+```
+
 ## Development
 
 ### Supported platforms

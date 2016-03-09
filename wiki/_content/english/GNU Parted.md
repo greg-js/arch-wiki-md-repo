@@ -309,6 +309,13 @@ Ignore/Cancel?
 
 The warning means the partition start is not aligned. Enter "Ignore" to go ahead anyway, print the partition table in sectors to see where it starts, and remove/recreate the partition with the start sector rounded up to increasing powers of 2 until the warning stops. As one example, on a flash drive with 512B sectors, Parted wanted partitions to start on sectors that were a multiple of 2048, which is 1 MiB alignment.
 
+If you want *parted* to attempt to calculate the correct alignment for you, specify the start position as 0% instead of some concrete value. To make one large ext4 partition, your command would look like this:
+
+```
+(parted) mkpart primary ext4 0% 100%
+
+```
+
 ## See also
 
 *   [GNU parted - Parted User's Manual](https://www.gnu.org/software/parted/manual/)

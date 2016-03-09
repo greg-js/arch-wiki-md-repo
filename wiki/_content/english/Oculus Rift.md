@@ -20,6 +20,7 @@ The Oculus Rift is a virtual reality head-mounted display developed by [Oculus V
     *   [3.1 Kernel log spamming by DK2 camera](#Kernel_log_spamming_by_DK2_camera)
     *   [3.2 Camera misbehaving after suspend/resume](#Camera_misbehaving_after_suspend.2Fresume)
     *   [3.3 Inaccurate latency readings for legacy applications](#Inaccurate_latency_readings_for_legacy_applications)
+    *   [3.4 OpenVR/SteamVR not working](#OpenVR.2FSteamVR_not_working)
 
 ## Basic Setup
 
@@ -168,3 +169,7 @@ If you try to suspend/resume and then use the Rift, the camera will have issues 
 ### Inaccurate latency readings for legacy applications
 
 For some reason, it seems that using `ovrd > 0.5.0` with applications compiled against 0.4.4 and below gives a latency reading of many millions of milliseconds (most likely a signed/unsigned change). This means timewarp is always clamped at maximum, and gives a 'swimming' view when using legacy applications. There isn't an ideal fix for this yet, although it is possible to install an old version of the SDK and use that instead.
+
+### OpenVR/SteamVR not working
+
+SteamVR/OpenVR create a config directory ~/.openvr that can get misconfigured over the various versions. Delete that directory and completely uninstall/reinstall SteamVR.

@@ -152,9 +152,13 @@ If [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") is active, the network in
 
 ### Instantaneous wakeups from suspend
 
-Some USB devices are reported to mess with the ACPI wakeup triggers after being plugged in once, causing the system to wake from suspension instantaneously. This is usually resolved by a reboot, but can also be fixed by disabling wakeup through USB. To view the current configuration:
+For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[1]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
 
- `# cat /proc/acpi/wakeup` 
+Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
+
+To view the current configuration:
+
+ `$ cat /proc/acpi/wakeup` 
 ```
 Device  S-state   Status   Sysfs node
 ...
@@ -174,4 +178,4 @@ The relevant devices are `EHC1`, `EHC1` and `XHC` (for USB 3.0). To toggle their
 
 ```
 
-This should result in suspension working again. However, this settings are only temporary and would have to be set at every reboot. To automate this take a look at [systemd#Writing unit files](/index.php/Systemd#Writing_unit_files "Systemd"). See [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1575617#p1575617) for a possible solution and more information.
+This should result in suspension working again. However, this settings are only temporary and would have to be set at every reboot. To automate this take a look at [systemd#Writing unit files](/index.php/Systemd#Writing_unit_files "Systemd"). See [BBS thread](https://bbs.archlinux.org/viewtopic.php?pid=1575617#p1575617) for a possible solution and more information.

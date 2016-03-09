@@ -16,6 +16,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM):
         *   [2.3.3 Larger font for log-in screen](#Larger_font_for_log-in_screen)
         *   [2.3.4 Turning off the sound](#Turning_off_the_sound)
         *   [2.3.5 Make the power button interactive](#Make_the_power_button_interactive)
+        *   [2.3.6 Enabling tap-to-click](#Enabling_tap-to-click)
     *   [2.4 GDM keyboard layout](#GDM_keyboard_layout)
         *   [2.4.1 GNOME Control Center](#GNOME_Control_Center)
         *   [2.4.2 GDM 2.x layout](#GDM_2.x_layout)
@@ -29,7 +30,6 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM):
     *   [2.12 Rotate login screen](#Rotate_login_screen)
     *   [2.13 xrandr at login](#xrandr_at_login)
     *   [2.14 Configure X server access permission](#Configure_X_server_access_permission)
-    *   [2.15 Enabling tap-to-click](#Enabling_tap-to-click)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Failure to start with AMD Catalyst driver](#Failure_to_start_with_AMD_Catalyst_driver)
     *   [3.2 Failure on logout](#Failure_on_logout)
@@ -261,6 +261,24 @@ and then recompile the GDM database.
 
 **Warning:** Please note that the [acpid](/index.php/Acpid "Acpid") daemon also handles the "power button" and "hibernate button" events. Running both systems at the same time may lead to unexpected behaviour.
 
+#### Enabling tap-to-click
+
+Tap-to-click is disabled in GDM (and GNOME) by default, but you can easily enable it with a dconf setting.
+
+**Note:** If you want to do this under X, you have to first set up correct X server access permissions - see [#Configure X server access permission](#Configure_X_server_access_permission).
+
+To directly enable tap-to-click, use:
+
+ `# sudo -u gdm gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
+
+If you prefer to do this with a GUI, use:
+
+ `# sudo -u gdm dconf-editor` 
+
+To check the if it was set correctly, use:
+
+ `$ sudo -u gdm gsettings get org.gnome.desktop.peripherals.touchpad tap-to-click` 
+
 ### GDM keyboard layout
 
 See [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg").
@@ -471,24 +489,6 @@ You can use the `xhost` command to configure X server access permissions.
 For instance, to grant GDM the right to access the X server, use the following command:
 
  `# xhost +SI:localuser:gdm` 
-
-### Enabling tap-to-click
-
-Tap-to-click is disabled in GDM (and GNOME) by default, but you can easily enable it with a dconf setting.
-
-**Note:** If you want to do this under X, you have to first set up correct X server access permissions - see [#Configure X server access permission](#Configure_X_server_access_permission).
-
-To directly enable tap-to-click, use:
-
- `# sudo -u gdm gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
-
-If you prefer to do this with a GUI, use:
-
- `# sudo -u gdm dconf-editor` 
-
-To check the if it was set correctly, use:
-
- `$ sudo -u gdm gsettings get org.gnome.desktop.peripherals.touchpad tap-to-click` 
 
 ## Troubleshooting
 

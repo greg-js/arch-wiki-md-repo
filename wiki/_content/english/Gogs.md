@@ -58,6 +58,8 @@ You can get or create own .gitignore files on this [page](http://www.gitignore.i
 
 #### SQLite
 
+Install [sqlite](https://www.archlinux.org/packages/?name=sqlite) and select SQLite on the installation page.
+
 #### PostgreSQL
 
 #### MariaDB

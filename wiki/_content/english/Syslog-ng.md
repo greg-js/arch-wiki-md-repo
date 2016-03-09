@@ -103,7 +103,7 @@ source src {
 };
 ```
 
-If, on the other hand, you wish *not* to retain the journald logs, but only syslog-ng's text logs, set `Storage=none` and `ForwardToSyslog=yes` in `/etc/systemd/journald.conf`.
+If, on the other hand, you wish *not* to retain the journald logs, but only syslog-ng's text logs, set `Storage=volatile` and `ForwardToSyslog=yes` in `/etc/systemd/journald.conf`. This will store journald in ram. As of syslog-ng 3.6.3, syslog-ng is using journald as the system(); source so if you set `Storage=none`, the systemd journal will drop all messages and **not** forward them to syslog-ng.
 
 After the change [restart](/index.php/Restart "Restart") the `systemd-journald.service` and `syslog-ng.service` daemons.
 

@@ -88,7 +88,7 @@ It's still possible/required to use other filesystems, e.g. FAT32 for the [EFI S
 
 ### Btrfs
 
-[Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs") support has been included with the mainline 2.6.29 release of the Linux kernel. Some feel that it is not mature enough for production use while there are also early adopters of this potential successor to ext4\. Users are encouraged to read the [Btrfs](/index.php/Btrfs "Btrfs") article for more info.
+[Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs") support has been included with the mainline 2.6.29 release of the Linux kernel, and since August 2014 it has been marked as stable. However, some features are experimental, and users are encouraged to read the [Btrfs](/index.php/Btrfs "Btrfs") article for more info.
 
 ### Ext4
 

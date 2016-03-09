@@ -479,9 +479,9 @@ Before continuing, remember there is a reason some of these variables are not en
 
 <caption>Suggested values</caption>
 | Key | Value | Description |
-| media.mediasource.enabled | true | Enable [Media Source Extensions](https://en.wikipedia.org/wiki/Media_Source_Extensions "wikipedia:Media Source Extensions") (MSE) |
+| media.mediasource.enabled | true (default) | Enable [Media Source Extensions](https://en.wikipedia.org/wiki/Media_Source_Extensions "wikipedia:Media Source Extensions") (MSE) |
 | media.mediasource.mp4.enabled | true (default) | Enable [MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14 "wikipedia:MPEG-4 Part 14") MSE |
-| media.mediasource.webm.enabled | true | Enable [WebM](https://en.wikipedia.org/wiki/WebM "wikipedia:WebM") MSE. If you use Youtube see [WebM and Youtube](#WebM_and_Youtube). |
+| media.mediasource.webm.enabled | true (default) | Enable [WebM](https://en.wikipedia.org/wiki/WebM "wikipedia:WebM") MSE. If you use Youtube see [WebM and Youtube](#WebM_and_Youtube). |
 | media.fragmented-mp4.exposed | true | Enable fragmented MP4 segments |
 | media.fragmented-mp4.ffmpeg.enabled | true | Enable fragmented MP4 ffmpeg |
 | media.mediasource.ignore_codecs | true | Enable H.264 MSE, amongst other things (This boolean key has to be created!) |

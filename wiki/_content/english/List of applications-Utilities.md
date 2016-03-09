@@ -287,6 +287,10 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://www.archlinux.org/packages/?name=rxvt)
 
+*   **shellinabox** — A web-based SSH Terminal
+
+	[https://github.com/shellinabox/shellinabox](https://github.com/shellinabox/shellinabox) || [shellinabox-git](https://aur.archlinux.org/packages/shellinabox-git/)
+
 *   **[st](/index.php/St "St")** — Simple terminal implementation for X.
 
 	[http://st.suckless.org](http://st.suckless.org) || [st](https://www.archlinux.org/packages/?name=st)

@@ -106,7 +106,7 @@ In order to launch VirtualBox virtual machines on your Arch Linux box, follow th
 
 ### Install the core packages
 
-First, [install](/index.php/Install "Install") the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package which contains the GPL-licensed VirtualBox suite with the SDL and headless command-line tools included. The [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package comes with [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) as a required dependency.
+First, [install](/index.php/Install "Install") the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package which contains the GPL-licensed VirtualBox suite with the SDL and headless command-line tools included. The [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package comes with [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) as a required dependency.
 
 You can install the [qt4](https://www.archlinux.org/packages/?name=qt4) optional dependency in order to use the graphical interface which is based on [Qt](/index.php/Qt "Qt"). This is not required if you intend to use VirtualBox in command-line only. [See below to learn the differences](#Use_the_right_front-end).
 
@@ -231,26 +231,33 @@ See also [UEFI Virtualbox installation boot problems](https://bbs.archlinux.org/
 
 ### Install the Guest Additions
 
-After completing the installation of the guest system, install the VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) which include drivers and applications that optimize the guest operating system. These can be installed via [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils), which provides [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) as a required dependency.
+After completing the installation of the guest system, install the VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) which include drivers and applications that optimize the guest operating system. These can be installed via [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils), which provides [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) as a required dependency.
+
+To install for guests without an X server, use the [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) package.
+
+You will need to install [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) for DKMS to be able to automatically compile the required kernel modules.
 
 **Note:** You can also install the Guest Additions via the iso from the virtualbox-guest-iso, provided you installed this on the host system. To do this, go to the device menu click Insert Guest Additions CD Image. Then, in client, do the following as root:
+```
+# mount /dev/sr0 /mnt
+# /bin/bash /mnt/VBoxLinuxAdditions.run
 
-1.  mount /dev/sr0 /mnt
-2.  bin /mnt/VBoxLinuxAdditions.run
+```
 
 After installation is complete run as root:
 
-1.  umount /mnt
-2.  eject /dev/sr0
+```
+# umount /mnt
+# eject /dev/sr0
 
+```
 Don't forget to reboot.
 
 ### Install the VirtualBox guest kernel modules
 
 #### Guests running an official kernel
 
-*   If you are using the [linux](https://www.archlinux.org/packages/?name=linux) kernel, make sure the [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) package is still installed. The latter has been installed when you installed the [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package.
-*   If you are using the LTS version of the kernel ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), you need to install the [virtualbox-guest-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-lts) package. [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) can now be removed if you want.
+*   If you are using the [linux](https://www.archlinux.org/packages/?name=linux) kernel, make sure the [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) package is still installed. The latter has been installed when you installed the [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package.
 *   If you are using the [linux-ck](https://aur.archlinux.org/packages/linux-ck/), kernel, build the [virtualbox-ck-guest-modules](https://aur.archlinux.org/packages/virtualbox-ck-guest-modules/) package. [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) can now be removed in this case too, if you want.
 
 #### Guests running a custom kernel
@@ -270,6 +277,8 @@ to recompile vbox kernel modules
 
 ### Load the Virtualbox kernel modules
 
+To load the modules automatically, [enable](/index.php/Enable "Enable") the `vboxservice` service which loads the modules and synchronizes the guest's system time with the host.
+
 To load the modules manually, type:
 
 ```
@@ -285,8 +294,6 @@ vboxguest
 vboxsf
 vboxvideo
 ```
-
-Alternatively, [enable](/index.php/Enable "Enable") the `vboxservice` service which loads the modules and synchronizes the guest's system time with the host.
 
 Note that depending on your choice of paravirtualization in VirtualBox, you may need to [edit the unit](/index.php/Systemd#Editing_provided_units "Systemd") with the following property to get it to load: `ConditionVirtualization=*paravirtualization*`
 

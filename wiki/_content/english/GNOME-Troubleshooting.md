@@ -235,7 +235,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.cursor active false
 
 ## No restart button in session menu when screen is locked
 
-If [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") is installed, ensure that it is not running at startup, see [#Startup applications](#Startup_applications).
+If [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") is installed, ensure that it is not running at startup, see [GNOME#Startup applications](/index.php/GNOME#Startup_applications "GNOME").
 
 ## PulseAudio system-wide causes delay in GNOME and GDM
 

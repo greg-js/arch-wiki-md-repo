@@ -233,15 +233,7 @@ In the past, proper alignment required manual calculation and intervention when 
 *   gparted
 *   parted
 
-To verify a partition is aligned, query it using `/usr/bin/blockdev` as shown below, if a '0' is returned, the partition is aligned:
-
-```
-# blockdev --getalignoff /dev/<partition>
-0
-
-```
-
-You can also use [parted](/index.php/Parted "Parted") to verify the alignment of a partition on a device. For instance, to verify alignment of partition 1 on /dev/sda:
+On an already partitioned disk, you can use [parted](/index.php/Parted "Parted") to verify the alignment of a partition on a device. For instance, to verify alignment of partition 1 on /dev/sda:
 
 ```
 # parted /dev/sda
@@ -249,6 +241,8 @@ You can also use [parted](/index.php/Parted "Parted") to verify the alignment of
 1 aligned
 
 ```
+
+**Warning:** Using `/usr/bin/blockdev` with option `--getalignoff` to check if a the partition is aligned has been reported to be [[unreliable](http://bbs.archlinux.org/viewtopic.php?id=174141)].
 
 ## See also
 

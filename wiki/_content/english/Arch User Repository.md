@@ -199,6 +199,8 @@ Checking connectivity... done.
 
 The new package will appear on AUR after you *push* the first commit. You can now add the source files to the local copy of the Git repository. See [#Uploading packages](#Uploading_packages).
 
+**Warning:** Your AUR commits will be authored according to your git user name and email address and it is very difficult to change commits after you push them (see [FS#45425](https://bugs.archlinux.org/task/45425)). If you want to push to AUR under a different name/email, you can change them for this package via `git config user.name [...]` and `git config user.email [...]`. Review your commits before pushing them!
+
 #### Uploading packages
 
 The procedure for uploading packages to the AUR is the same for new packages and package updates. You need at least [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") in the top-level directory to *push* your package to AUR.
@@ -213,12 +215,6 @@ For example:
 $ makepkg --printsrcinfo > .SRCINFO
 $ git add PKGBUILD .SRCINFO
 $ git commit -m "*useful commit message*"
-
-```
-
-**Warning:** If you do not want to publish your system-wide identity, do not forget to set a local user name and email address via `git config user.name [...]` and `git config user.email [...]`! It is much more difficult to rewrite already published history, see: [FS#45425](https://bugs.archlinux.org/task/45425). Review your commits before pushing them!
-
-```
 $ git push origin master
 
 ```

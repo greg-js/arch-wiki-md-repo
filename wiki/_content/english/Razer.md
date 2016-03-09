@@ -141,6 +141,8 @@ EndSection
 
 If you are using [GNOME](/index.php/GNOME "GNOME"), the *gnome-tweak-tool* can be used to adjust the window and font scaling. A font scale of *1.25* puts the font sizes closer to how they are displayed by default in Windows 10.
 
+If you are using an external monitor that is not [HiDPI](/index.php/HiDPI "HiDPI"), you can use *xrandr* to alter the scaling of the external monitor using the instructions for [Multiple Displays](https://wiki.archlinux.org/index.php/HiDPI#Multiple_displays). You may have better results though running [GNOME](/index.php/GNOME "GNOME") on [Wayland](/index.php/Wayland "Wayland"). When installed, clicking the gear icon in [GDM](/index.php/GDM "GDM") will allow you to select *Gnome On Wayland* and will default to that in the future.
+
 #### Unresolved Issues
 
 *   the webcam does not seem to work with a basic installation. External webcams work fine. It seems to fail when the resolution is anything but 640x480\. [guvcview](https://www.archlinux.org/packages/community/x86_64/guvcview/) works because it defaults to the resolution. [cheese](https://www.archlinux.org/packages/community/x86_64/cheese/) and [Google Hangouts](https://hangouts.google.com) do not because they default to the max resolution.

@@ -17,9 +17,10 @@ The first step to partitioning a disk is making a partition table. There are two
         *   [3.2.1 Fdisk usage summary](#Fdisk_usage_summary)
     *   [3.3 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
 *   [4 Create Partitions](#Create_Partitions)
-    *   [4.1 Using cgdisk to create GPT partitions](#Using_cgdisk_to_create_GPT_partitions)
-    *   [4.2 Use cfdisk to create MBR partitions](#Use_cfdisk_to_create_MBR_partitions)
-    *   [4.3 Using fdisk to create MBR partitions](#Using_fdisk_to_create_MBR_partitions)
+    *   [4.1 Create GPT partitions with gdisk, a dialogue based program](#Create_GPT_partitions_with_gdisk.2C_a_dialogue_based_program)
+    *   [4.2 Create GPT partitions with cgdisk, a curses based program](#Create_GPT_partitions_with_cgdisk.2C_a_curses_based_program)
+    *   [4.3 Create MBR partitions with fdisk, a dialogue based program](#Create_MBR_partitions_with_fdisk.2C_a_dialogue_based_program)
+    *   [4.4 Create MBR partitions with cfdisk, a curses based program](#Create_MBR_partitions_with_cfdisk.2C_a_curses_based_program)
 
 ## Usage
 
@@ -199,12 +200,9 @@ Command (m for help): _
 
 This opens the fdisk dialogue where you can type in commands.
 
-*   If the drive is brand new or if you are wanting to start over, create a new empty DOS partition table with the `o` command.
-*   Create a new partition with the `n` command (primary type/1st partition).
-*   Use the `+*x*G` format to extend the partition *x* gibibytes. For example, if you want to create a 15GiB partition, you would enter `+15G`
-*   Change the partition's system id from the default type of Linux (`type 83`) to the desired type via the `t` command. This is an optional step should the user wish to create another type of partition for example, swap, NTFS, LVM, etc. Note that a complete listing of all valid partition types is available via the `l` command.
-*   Assign other partitions in a like fashion.
-*   Write the table to disk and exit via the `w` command.
+If the drive is brand new or if you are wanting to start over, create a new empty DOS partition table with the `o` command.
+
+**Warning:** Creating a new partition table will erase the data on your drive, make sure this is what you want to do.
 
 ### Convert between MBR and GPT
 
@@ -226,7 +224,34 @@ If the device will be bootable you will need to set the bootable flag with fdisk
 
 ## Create Partitions
 
-### Using cgdisk to create GPT partitions
+### Create GPT partitions with gdisk, a dialogue based program
+
+Launch gdisk against the device you want to partition. In this example we use `/dev/sda`:
+
+```
+# gdisk /dev/sda
+
+```
+
+You should see a dialogue like the following:
+
+```
+# gdisk /dev/sda
+GPT fdisk (gdisk) version 1.0.1
+
+Partition table scan:
+  MBR: protective
+  BSD: not present
+  APM: not present
+  GPT: present
+
+Found valid GPT with protective MBR; using GPT.
+
+Command (? for help): _
+
+```
+
+### Create GPT partitions with cgdisk, a curses based program
 
 Launch *cgdisk* with:
 
@@ -235,10 +260,12 @@ Launch *cgdisk* with:
 
 ```
 
+You should see a program similar to this on your screen:
+
 ```
-cgdisk 1.0.1
-Disk Drive: /dev/sda
-Size: 234441648, 111.8 GiB
+                                                   cgdisk 1.0.1
+                                               Disk Drive: /dev/sda
+                                            Size: 234441648, 111.8 GiB
 
  Part. #     Size        Partition Type            Partition Name
  ----------------------------------------------------------------
@@ -278,43 +305,44 @@ If you would like to start over, you can simply select *Quit* (or press `Q`) to 
 
 If you are satisfied, choose *Write* (or press `Shift+W`) to finalize and to write the partition table to the drive. Type `yes` and choose *Quit* (or press `Q`) to exit without making any more changes.
 
-### Use cfdisk to create MBR partitions
+### Create MBR partitions with fdisk, a dialogue based program
 
-```
-                                   Disk: Disk: /dev/sda
-                    Size: 111.8 GiB, 120034123776 bytes, 234441648 sectors
-                 Label: gpt, identifier: AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE
-
-    Device                  Start            End        Sectors       Size Type
->>  Free space            1050624      234441648      233391024         119G                     
-    /dev/sda1                2048        1050623        1048576       512M BIOS boot
-
-                    [   **New**  ]  [  Quit  ]  [  Help  ]  [  Write ]  [  Dump  ]
-
-                                Create new partition from free space
-
-```
-
-### Using fdisk to create MBR partitions
-
-Launch *fdisk* with:
+Launch *fdisk* aginst the device you want to partition, in this example we use `/dev/sda`.
 
 ```
 # fdisk /dev/sda
 
 ```
 
-Create the partition table:
+You should see a dialogue that looks like the following:
 
-*   `Command (m for help):` type `o` and press `Enter`
+```
+# fdisk /dev/sda
 
-Then create the first partition:
+Welcome to fdisk (util-linux 2.27.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
 
-1.  `Command (m for help):` type `n` and press `Enter`
-2.  Partition type: `Select (default p):` press `Enter`
-3.  `Partition number (1-4, default 1):` press `Enter`
-4.  `First sector (2048-209715199, default 2048):` press `Enter`
-5.  `Last sector, +sectors or +size{K,M,G,T,P} (2048-209715199....., default 209715199):` type `+15G` and press `Enter`
+Command (m for help): _ 
+
+```
+
+*   To create a new partition, type `n` and hit enter.
+*   When prompted, specify the partition type, type `p` to create a primary partition or `e` to create an extended one. There may be up to four primary partitions.
+*   You then need to pick a partition number, the default should be fine.
+*   Set the first sector for the new partition. Again the default should be fine so you can hit enter.
+*   Set the size for your new partition.
+
+The following is an example of the dialogue you would see when creating a new 15G partition.
+
+```
+Command (m for help): n ↵
+Partition type (default p): p ↵
+Partition number (1-4, default 1): ↵
+First sector (2048-209715199, default 2048): ↵
+Last sector, +sectors or +size{K,M,G,T,P} (2048-209715199....., default 209715199): +15G ↵
+
+```
 
 Then create a second partition:
 
@@ -356,3 +384,26 @@ Syncing disks.
 ```
 
 In case this does not work because *fdisk* encountered an error, you can use the `q` command to exit.
+
+*   Create a new partition with the `n` command (primary type/1st partition).
+*   Use the `+*x*G` format to extend the partition *x* gibibytes. For example, if you want to create a 15GiB partition, you would enter `+15G`
+*   Change the partition's system id from the default type of Linux (`type 83`) to the desired type via the `t` command. This is an optional step should the user wish to create another type of partition for example, swap, NTFS, LVM, etc. Note that a complete listing of all valid partition types is available via the `l` command.
+*   Assign other partitions in a like fashion.
+*   Write the table to disk and exit via the `w` command.
+
+### Create MBR partitions with cfdisk, a curses based program
+
+```
+                                   Disk: Disk: /dev/sda
+                    Size: 111.8 GiB, 120034123776 bytes, 234441648 sectors
+                 Label: mbr, identifier: AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE
+
+    Device                  Start            End        Sectors       Size Type
+>>  Free space            1050624      234441648      233391024         119G                     
+    /dev/sda1                2048        1050623        1048576       512M BIOS boot
+
+                    [   **New**  ]  [  Quit  ]  [  Help  ]  [  Write ]  [  Dump  ]
+
+                                Create new partition from free space
+
+```

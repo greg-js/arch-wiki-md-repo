@@ -64,7 +64,7 @@ Check the permissions of DavLockDB's directory and insure it is writable by the 
 
 ```
 # mkdir -p /home/httpd/html/dav
-# chown -R nobody:nobody /home/httpd/html/dav
+# chown -R http:http /home/httpd/html/dav
 
 ```
 

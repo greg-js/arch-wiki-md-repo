@@ -188,7 +188,7 @@ Old versions of Python are available via the [AUR](/index.php/AUR "AUR") and may
 *   [python33](https://aur.archlinux.org/packages/python33/): Python 3.3.5
 *   [python34](https://aur.archlinux.org/packages/python34/): Python 3.4.3
 
-Python upstream only supports Python 2.7, 3.2, 3.3, and 3.4 for security fixes. Using older versions for Internet-facing applications or untrusted code may be dangerous and is not recommended.
+As of July 2014, Python upstream only supports Python 2.7, 3.2, 3.3, and 3.4 for security fixes. Using older versions for Internet-facing applications or untrusted code may be dangerous and is not recommended.
 
 Extra modules/libraries for old versions of Python may be found on the AUR by searching for `python<*version without period*>`, e.g. searching for "python26" for 2.6 modules.
 

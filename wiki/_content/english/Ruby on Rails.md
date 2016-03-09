@@ -41,7 +41,7 @@ This document describes how to set up the Ruby on Rails Framework on an Arch Lin
 
 ## Installation
 
-Ruby on Rails requires [Ruby](/index.php/Ruby "Ruby") to be installed, so read that article first for installation instructions. The [nodejs](https://www.archlinux.org/packages/?name=nodejs) package is also required due to uglifier (Ruby wrapper for UglifyJS JavaScript compressor)
+Ruby on Rails requires [Ruby](/index.php/Ruby "Ruby") to be installed, so read that article first for installation instructions. The [nodejs](https://www.archlinux.org/packages/?name=nodejs) package is also required if using uglifier (Ruby wrapper for UglifyJS JavaScript compressor, optional)
 
 ### RubyGems
 

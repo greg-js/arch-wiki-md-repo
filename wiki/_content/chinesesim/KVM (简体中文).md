@@ -1,4 +1,4 @@
-**KVM**（Kernel-based Virtual Machine的英文缩写是内核内建的虚拟机。有点类似于 [Xen](/index.php/Xen "Xen") ，但更追求更简便的运作，比如运行此虚拟机，仅需要加载相应的 `kvm` 模块即可后台待命。和 Xen 的完整模拟不同的是，KVM 需要芯片支持虚拟化技术（英特尔的 VT 扩展或者 AMD 的 AMD-V 扩展）。
+**KVM**（Kernel-based Virtual Machine的英文缩写）是内核内建的虚拟机。有点类似于 [Xen](/index.php/Xen "Xen") ，但更追求更简便的运作，比如运行此虚拟机，仅需要加载相应的 `kvm` 模块即可后台待命。和 Xen 的完整模拟不同的是，KVM 需要芯片支持虚拟化技术（英特尔的 VT 扩展或者 AMD 的 AMD-V 扩展）。
 
 在KVM中，可以运行各种未更改的GNU/Linux, Windows 或任何其他系统镜像。(请看[客户机支持状态](http://www.linux-kvm.org/page/Guest_Support_Status))，每个虚拟机都可提供独享的虚拟硬件：网卡，硬盘，显卡等。请看 [KVM Howto](http://www.linux-kvm.org/page/HOWTO)
 

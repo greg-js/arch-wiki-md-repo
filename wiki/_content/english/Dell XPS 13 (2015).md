@@ -95,7 +95,7 @@ Note that if you are dual-booting with Windows, you will have to do a cold boot 
 
 With BIOS A02+ and Arch kernel 4.4 or newer, the sound card will be initialized in I2S mode.
 
-**Note:** I2S regressed: in 4.5-rc6 'aplay -l' doesn't even show broadwell-rt286 anymore. Expect a regression when 4.5 hits stable.
+**Note:** I2S regressed: in 4.5-rc6 and 4.5-rc7 'aplay -l' doesn't even show broadwell-rt286 anymore. Expect a regression when 4.5 hits stable.
 
 I2S support in Linux is quite nascent and wasn't up to par with HDA support until recently, so a quirk flag was enabled in the mainline kernel that would force HDA mode on.[[1]](http://thread.gmane.org/gmane.linux.acpi.devel/75464/focus=75466)[[2]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=18d78b64fddc11eb336f01e46ad3303a3f55d039) This flag has been disabled in the stock Arch kernel as of 4.4.[[3]](https://bugs.archlinux.org/task/47710) Also note that I2S support is known to be broken with older versions of alsalib.[[4]](http://www.spinics.net/lists/linux-acpi/msg57457.html)
 

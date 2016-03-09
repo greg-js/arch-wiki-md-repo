@@ -23,9 +23,10 @@ This article provides information on basic system diagnostics relating to perfor
     *   [2.9 RAM disks](#RAM_disks)
     *   [2.10 USB storage devices](#USB_storage_devices)
 *   [3 CPU](#CPU)
-    *   [3.1 Verynice](#Verynice)
-    *   [3.2 cgroups](#cgroups)
-    *   [3.3 irqbalance](#irqbalance)
+    *   [3.1 Overclocking](#Overclocking)
+    *   [3.2 Verynice](#Verynice)
+    *   [3.3 cgroups](#cgroups)
+    *   [3.4 irqbalance](#irqbalance)
 *   [4 Graphics](#Graphics)
     *   [4.1 Xorg.conf configuration](#Xorg.conf_configuration)
     *   [4.2 Driconf](#Driconf)
@@ -256,6 +257,14 @@ w /sys/kernel/mm/transparent_hugepage/khugepaged/defrag - - - - 0
 See also [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl"), [[3]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive) and [[4]](http://lwn.net/Articles/572911/).
 
 ## CPU
+
+There are few ways to get more performance:
+
+*   Overclock the CPU. Please note that most CPUs cannot be overclocked (locked by the vendor).
+    *   Nehalem (Core i#) CPUs already use overclocking (Turbo technology). This limits the possibilities of overclocking heavily (unless you use liquid cooling).
+*   [Change the CPU governor](/index.php/CPU_frequency_scaling "CPU frequency scaling")
+
+### Overclocking
 
 The only way to directly improve CPU speed is overclocking. As it is a complicated and risky task, it is not recommended for anyone except experts. The best way to overclock is through the BIOS. When purchasing your system, keep in mind that most Intel motherboards are notorious for disabling the capability to overclock.
 

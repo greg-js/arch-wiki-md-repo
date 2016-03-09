@@ -13,63 +13,86 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page)
 
 ## Contents
 
-*   [1 Installation](#Installation)
-    *   [1.1 Additional packages](#Additional_packages)
-*   [2 General administration of Btrfs](#General_administration_of_Btrfs)
-    *   [2.1 Creating a new file system](#Creating_a_new_file_system)
-    *   [2.2 Convert from Ext3/4](#Convert_from_Ext3.2F4)
-    *   [2.3 Mount options](#Mount_options)
-        *   [2.3.1 Examples](#Examples)
-    *   [2.4 Displaying used/free space](#Displaying_used.2Ffree_space)
-*   [3 Limitations](#Limitations)
-    *   [3.1 Encryption](#Encryption)
-    *   [3.2 Swap file](#Swap_file)
-    *   [3.3 Linux-rt kernel](#Linux-rt_kernel)
-*   [4 Features](#Features)
-    *   [4.1 Commit interval settings](#Commit_interval_settings)
+*   [1 Preparation](#Preparation)
+*   [2 Partitioning](#Partitioning)
+*   [3 File system creation](#File_system_creation)
+    *   [3.1 Creating a new file system](#Creating_a_new_file_system)
+        *   [3.1.1 File system on a single device](#File_system_on_a_single_device)
+        *   [3.1.2 Multi-device file system](#Multi-device_file_system)
+    *   [3.2 Converting a file system from Ext3/4](#Converting_a_file_system_from_Ext3.2F4)
+*   [4 Configuring the file system](#Configuring_the_file_system)
+    *   [4.1 Mount options](#Mount_options)
+        *   [4.1.1 Examples](#Examples)
     *   [4.2 Copy-On-Write (CoW)](#Copy-On-Write_.28CoW.29)
-    *   [4.3 Multi-device filesystem and RAID feature](#Multi-device_filesystem_and_RAID_feature)
-        *   [4.3.1 Multi-device filesystem](#Multi-device_filesystem)
-        *   [4.3.2 RAID features](#RAID_features)
-    *   [4.4 Sub-volumes](#Sub-volumes)
-        *   [4.4.1 Creating sub-volumes](#Creating_sub-volumes)
-        *   [4.4.2 Listing sub-volumes](#Listing_sub-volumes)
-        *   [4.4.3 Setting a default sub-volume](#Setting_a_default_sub-volume)
-        *   [4.4.4 Snapshots](#Snapshots)
-    *   [4.5 Defragmentation](#Defragmentation)
-    *   [4.6 Compression](#Compression)
-    *   [4.7 Checkpoint interval](#Checkpoint_interval)
-    *   [4.8 Partitioning](#Partitioning)
-    *   [4.9 Scrub](#Scrub)
-        *   [4.9.1 Services](#Services)
-    *   [4.10 Balance](#Balance)
-    *   [4.11 SSD TRIM](#SSD_TRIM)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 GRUB](#GRUB)
-        *   [5.1.1 Partition offset](#Partition_offset)
-        *   [5.1.2 Missing root](#Missing_root)
-    *   [5.2 BTRFS: open_ctree failed](#BTRFS:_open_ctree_failed)
-    *   [5.3 btrfs check](#btrfs_check)
-*   [6 See also](#See_also)
+    *   [4.3 Compression](#Compression)
+    *   [4.4 Subvolumes](#Subvolumes)
+        *   [4.4.1 Creating a subvolume](#Creating_a_subvolume)
+        *   [4.4.2 Listing subvolumes](#Listing_subvolumes)
+        *   [4.4.3 Deleting a subvolume](#Deleting_a_subvolume)
+        *   [4.4.4 Mounting subvolumes](#Mounting_subvolumes)
+        *   [4.4.5 Changing the default sub-volume](#Changing_the_default_sub-volume)
+    *   [4.5 Commit interval settings](#Commit_interval_settings)
+    *   [4.6 Checkpoint interval](#Checkpoint_interval)
+    *   [4.7 SSD TRIM](#SSD_TRIM)
+*   [5 File system administration and maintenance](#File_system_administration_and_maintenance)
+    *   [5.1 Displaying used/free space](#Displaying_used.2Ffree_space)
+    *   [5.2 Defragmentation](#Defragmentation)
+    *   [5.3 Scrub](#Scrub)
+    *   [5.4 Balance](#Balance)
+    *   [5.5 RAID](#RAID)
+    *   [5.6 Snapshots](#Snapshots)
+*   [6 Limitations](#Limitations)
+    *   [6.1 Encryption](#Encryption)
+    *   [6.2 Swap file](#Swap_file)
+    *   [6.3 Linux-rt kernel](#Linux-rt_kernel)
+*   [7 Tips and tricks](#Tips_and_tricks)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 GRUB](#GRUB)
+        *   [8.1.1 Partition offset](#Partition_offset)
+        *   [8.1.2 Missing root](#Missing_root)
+    *   [8.2 BTRFS: open_ctree failed](#BTRFS:_open_ctree_failed)
+    *   [8.3 btrfs check](#btrfs_check)
+*   [9 See also](#See_also)
 
-## Installation
+## Preparation
 
-The official kernels [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) include support for Btrfs, user space utilities are available in [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs).
+The official kernels [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) include support for Btrfs. Additionally [GRUB](/index.php/GRUB "GRUB"), [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"), and [Syslinux](/index.php/Syslinux "Syslinux") have support for Btrfs and require no additional configuration.
 
-[GRUB](/index.php/GRUB "GRUB"), [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"), and [Syslinux](/index.php/Syslinux "Syslinux") have support for Btrfs and require no additional configuration.
+User space utilities are available by [installing](/index.php/Installing "Installing") the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package.
 
-### Additional packages
+## Partitioning
 
-*   [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) includes *btrfsck*, a tool that can fix errors on Btrfs filesystems.
-*   [btrfs-progs-git](https://aur.archlinux.org/packages/btrfs-progs-git/) for nightly
+Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes; however, this is not required to simply [create a Btrfs filesystem](#Creating_a_new_file_system) on an existing [partition](/index.php/Partition "Partition") that was created using another method. If using Btrfs for partitioning, one can use [subvolumes](#Sub-volumes) to simulate partitions. There are some limitations to this approach in single disk setups:
 
-**Tip:** See [Btrfs Wiki Getting Started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for suggestions regarding running Btrfs effectively.
+*   Cannot use different [file systems](/index.php/File_systems "File systems") for different [mount points](/index.php/Fstab "Fstab").
+*   Cannot use [swap area](/index.php/Swap "Swap") as Btrfs does not support [swap files](/index.php/Swap#Swap_file "Swap") and there is no place to create [swap partition](/index.php/Swap#Swap_partition "Swap"). This also limits the use of hibernation/resume, which needs a swap area to store the hibernation image.
+*   Cannot use [UEFI](/index.php/UEFI "UEFI") to boot.
 
-## General administration of Btrfs
+To overwrite the existing partition table with Btrfs, run the following command:
+
+```
+# mkfs.btrfs /dev/sd*X*
+
+```
+
+For example, use `/dev/sda` rather than `/dev/sda1`. The latter would format an existing partition instead of replacing the entire partitioning scheme.
+
+Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). For example, in the case of [GRUB](/index.php/GRUB#Install_to_440-byte_MBR_boot_code_region "GRUB"):
+
+```
+# grub-install --recheck /dev/sd*X*
+
+```
+
+**Warning:** Using the `btrfs subvolume set-default` command to change the default sub-volume from anything other than the top level (ID 0) may break Grub. See [#Setting a default sub-volume](#Setting_a_default_sub-volume) to reset.
+
+## File system creation
+
+A Btrfs file system can either be newly created or have one converted.
 
 ### Creating a new file system
 
-A Btrfs file system can either be newly created or have one converted.
+#### File system on a single device
 
 To format a partition do:
 
@@ -85,6 +108,8 @@ The Btrfs default blocksize is 16KB. To use a larger blocksize for data/metadata
 
 ```
 
+#### Multi-device file system
+
 Multiple devices can be entered to create a RAID. Supported RAID levels include RAID 0, RAID 1, RAID 10, RAID 5 and RAID 6\. The RAID levels can be configured separately for data and metadata using the `-d` and `-m` options respectively. By default the metadata is mirrored and data is striped. See [Using Btrfs with Multiple Devices](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) for more information about how to create a Btrfs RAID volume.
 
 ```
@@ -92,7 +117,11 @@ Multiple devices can be entered to create a RAID. Supported RAID levels include 
 
 ```
 
-### Convert from Ext3/4
+**Note:** Mounting such a filesystem may result in all but one of the according *.device*-jobs getting stuck and systemd never finishing startup due to a [bug](https://github.com/systemd/systemd/issues/1921) in handling this type of filesystem.
+
+See [RAID](#RAID) for advice on maintenance specific to multi-device Btrfs file systems.
+
+### Converting a file system from Ext3/4
 
 **Warning:** As of mid-to-late 2015, there are many reports on the btrfs mailing list about incomplete/corrupt/broken conversions. The situation is improving as patches are being submitted, but proceed very carefully. Make sure you have *working* backups of any data you cannot afford to lose. See [Conversion from Ext3](https://btrfs.wiki.kernel.org/index.php/Conversion_from_Ext3) on the btrfs wiki.
 
@@ -114,6 +143,8 @@ After confirming that there are no problems, complete the conversion by deleting
 
 Finally [balance](#Balance) the file system to reclaim the space.
 
+## Configuring the file system
+
 ### Mount options
 
 **Warning:** Specific mount options can disable safety features and increase the risk of complete file system corruption.
@@ -134,71 +165,6 @@ As this is a file system that is still in active development, changes and regres
     *   Btrfs on a HDD for archival purposes with an emphasis on maximizing space.
 
     	 `noatime,autodefrag,compress-force=lzo,space_cache` 
-
-### Displaying used/free space
-
-General linux userspace tools such as `/usr/bin/df` will inaccurately report free space on a Btrfs partition since it does not take into account space allocated for and used by the metadata. It is recommended to use `/usr/bin/btrfs` to query a Btrfs partition. Below is an illustration of this effect, first querying using `df -h`, and then using `btrfs filesystem df`:
-
- `$ df -h /` 
-```
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda3       119G  3.0G  116G   3% /
-
-```
- `$ btrfs filesystem df /` 
-```
-Data: total=3.01GB, used=2.73GB
-System: total=4.00MB, used=16.00KB
-Metadata: total=1.01GB, used=181.83MB
-```
-
-Notice that `df -h` reports 3.0GB used but `btrfs filesystem df` reports 2.73GB for the data. This is due to the way Btrfs allocates space into the pool. The true disk usage is the sum of all three 'used' values which is inferior to 3.0GB as reported by `df -h`.
-
-**Note:** If you see an entry of type `unknown` in the output of `btrfs filesystem df` at kernel >= 3.15, this is a display bug. As of [this patch](http://thread.gmane.org/gmane.comp.file-systems.btrfs/34419), the entry means GlobalReserve, which is kind of a buffer for changes not yet flushed. This entry is displayed as `unknown, single` in RAID setups and is not possible to re-balance.
-
-Another useful command to show a less verbose readout of used space is `btrfs filesystem show`:
-
-```
-# btrfs filesystem show /dev/sda3
-
-```
-
-The newest command to get information on free/used space of a is `btrfs filesystem usage`:
-
-```
-# btrfs filesystem usage
-
-```
-
-**Note:** The `btrfs filesystem usage` command does not currently work correctly with `RAID5/RAID6` RAID levels.
-
-## Limitations
-
-A few limitations should be known before trying.
-
-### Encryption
-
-Btrfs has no built-in encryption support (this may come in future); users can encrypt the partition before running `mkfs.btrfs`. See [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
-
-Existing Btrfs file system, can use something like [EncFS](/index.php/EncFS "EncFS") or [TrueCrypt](/index.php/TrueCrypt "TrueCrypt"), though perhaps without some of Btrfs' features.
-
-### Swap file
-
-Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs doesn't have for possibility of file system corruption [[1]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[2]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) from the [official repositories](/index.php/Official_repositories "Official repositories") to automate this.
-
-### Linux-rt kernel
-
-As of version 3.14.12_rt9, the [linux-rt](/index.php/Kernel#-rt "Kernel") kernel does not boot with the Btrfs file system. This is due to the slow development of the *rt* patchset.
-
-## Features
-
-Various features are available and can be adjusted.
-
-### Commit interval settings
-
-The resolution at which data are written to the filesystem is dictated by Btrfs itself and by system-wide settings. Btrfs defaults to a 30 seconds checkpoint interval in which new data are committed to the filesystem. This is tuneable using mount options (see below)
-
-System-wide settings also affect commit intervals. They include the files under `/proc/sys/vm/*` and are out-of-scope of this wiki article. The kernel documentation for them resides in `Documentation/sysctl/vm.txt`.
 
 ### Copy-On-Write (CoW)
 
@@ -242,47 +208,26 @@ $ cp --reflink *source* *dest*
 
 As `*dest*` file is changed, only those blocks that are changed from source will be written to the disk. One might consider aliasing *cp* to `cp --reflink=auto`.
 
-### Multi-device filesystem and RAID feature
+### Compression
 
-See [Using Btrfs with Multiple Devices](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) for suggestions.
+Btrfs supports transparent compression, meaning every file on the partition is automatically compressed. This not only reduces the size of files, but also [improves performance](http://www.phoronix.com/scan.php?page=article&item=btrfs_compress_2635&num=1), in particular if using the [lzo algorithm](http://www.phoronix.com/scan.php?page=article&item=btrfs_lzo_2638&num=1), in some specific use cases (e.g. single thread with heavy file IO), while obviously harming performance on other cases (e.g. multithreaded and/or cpu intensive tasks with large file IO).
 
-#### Multi-device filesystem
-
-**Note:** Mounting such a filesystem may result in all but one of the according *.device*-jobs getting stuck and systemd never finishing startup due to a [bug](https://github.com/systemd/systemd/issues/1921) in handling this type of filesystem.
-
-When creating a Btrfs filesystem, one can pass many partitions or disk devices to *mkfs.btrfs*. The filesystem will be created across these devices. One can **"**pool**"** this way, multiple partitions or devices to get a single Btrfs filesystem.
-
-One can also add or remove device from an existing Btrfs filesystem (caution is mandatory).
-
-#### RAID features
-
-**Note:** As of kernel 3.19, the recovery and rebuild code has been integrated. This brings the implementation to the point where it should be usable for most purposes. Since this is new code, you should expect it to stabilize over the next couple of kernel releases.
-
-When creating a multi-device filesystem, one can also specify to use RAID0, RAID1, RAID10, RAID5 or RAID6 across the devices comprising the filesystem. RAID levels can be applied independently to data and metadata. By default, metadata is duplicated on single volumes or RAID1 on multi-disk sets.
-
-Btrfs works in block-pairs for raid0, raid1, and raid10\. This means:
-
-raid0 - block-pair striped across 2 devices
-
-raid1 - block-pair written to 2 devices
-
-The raid level can be changed while the disks are online using the `btrfs balance` command:
+Compression is enabled using the `compress=zlib` or `compress=lzo` mount options. Only files created or modified after the mount option is added will be compressed. However, it can be applied quite easily to existing files (e.g. after a conversion from ext3/4) using the `btrfs filesystem defragment -c*alg*` command, where `*alg*` is either `zlib` or `lzo`. In order to re-compress the whole file system with `lzo`, run the following command:
 
 ```
-# btrfs balance start -mconvert=RAIDLEVEL -dconvert=RAIDLEVEL /path/to/mount
+# btrfs filesystem defragment -r -v -clzo /
 
 ```
 
-For 2 disk sets, this matches raid levels as defined in md-raid (mdadm). For 3+ disk-sets, the result is entirely different than md-raid.
+**Tip:** Compression can also be enabled per-file without using the `compress` mount option; simply apply `chattr +c` to the file. When applied to directories, it will cause new files to be automatically compressed as they come.
 
-For example:
+When installing Arch to an empty Btrfs partition, use the `compress` option when [mounting the filesystem](/index.php/Beginners%27_guide#Format_the_file_systems_and_enable_swap "Beginners' guide"): `mount -o compress=lzo /dev/sd*xY* /mnt/`. During [configuration](/index.php/Beginners%27_guide#Configuration "Beginners' guide"), add `compress=lzo` to the mount options of the root file system in [fstab](/index.php/Fstab "Fstab").
 
-*   Three 1TB disks in an md based raid1 yields a `/dev/md0` with 1TB free space and the ability to safely lose 2 disks without losing data.
-*   Three 1TB disks in a Btrfs volume with data=raid1 will allow the storage of approximately 1.5TB of data before reporting full. Only 1 disk can safely be lost without losing data.
+### Subvolumes
 
-Btrfs uses a round-robin scheme to decide how block-pairs are spread among disks. As of Linux 3.0, a quasi-round-robin scheme is used which prefers larger disks when distributing block pairs. This allows raid0 and raid1 to take advantage of most (and sometimes all) space in a disk set made of multiple disks. For example, a set consisting of a 1TB disk and 2 500GB disks with data=raid1 will place a copy of every block on the 1TB disk and alternate (round-robin) placing blocks on each of the 500GB disks. Full space utilization will be made. A set made from a 1TB disk, a 750GB disk, and a 500GB disk will work the same, but the filesystem will report full with 250GB unusable on the 750GB disk. To always take advantage of the full space (even in the last example), use data=single. (data=single is akin to JBOD defined by some raid controllers) See [the Btrfs FAQ](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_space_do_I_get_with_unequal_devices_in_RAID-1_mode.3F) for more info.
+*A btrfs subvolume is not a block device (and cannot be treated as one) instead, a btrfs subvolume can be thought of as a POSIX file namespace. This namespace can be accessed via the top-level subvolume of the filesystem, or it can be mounted in its own right.*[[1]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Subvolumes)
 
-### Sub-volumes
+Each Btrfs file system has a top-level subvolume with ID 5\. It can be mounted itself as "/" (by default), or another subvolume can be [mounted](#Mounting_subvolumes).
 
 See the following links for more details:
 
@@ -290,27 +235,44 @@ See the following links for more details:
 *   [Btrfs Wiki Getting started#Basic Filesystem Commands](https://btrfs.wiki.kernel.org/index.php/Getting_started#Basic_Filesystem_Commands)
 *   [Btrfs Wiki Trees](https://btrfs.wiki.kernel.org/index.php/Trees)
 
-#### Creating sub-volumes
+#### Creating a subvolume
 
-To create a sub-volume:
+To create a subvolume:
 
 ```
 # btrfs subvolume create */path/to/subvolume*
 
 ```
 
-#### Listing sub-volumes
+#### Listing subvolumes
 
-To see a list of current sub-volumes:
+To see a list of current subvolumes:
 
 ```
 # btrfs subvolume list -p .
 
 ```
 
-#### Setting a default sub-volume
+#### Deleting a subvolume
 
-**Warning:** Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible, except by use of the `subvolid=0` mount option. Reference: [Btrfs Wiki Sysadmin Guide](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
+To delete a subvolume:
+
+```
+# btrfs subvolume delete */path/to/subvolume*
+
+```
+
+Attempting to remove the directory */path/to/subvolume* without using the above command will not delete the subvolume.
+
+#### Mounting subvolumes
+
+Subvolumes can be mounted like file system partitions using the `subvol=*/path/to/subvolume*` or `subvolid=*objectid*` mount flags. For example, you could have a subvolume named 'subvol_root' and mount it as '/'. One can mimic traditional file system partitions by creating various subvolumes under the top level of the file system and then mounting them the appropriate mount points. Thus one can easily restore a file system (or part of it) to a previous state easily using [#Snapshots](#Snapshots).
+
+See [Snapper#Suggested_Filesystem_Layout](/index.php/Snapper#Suggested_Filesystem_Layout "Snapper"), [Btrfs SysadminGuide#Managing Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Managing_Snapshots), and [Btrfs SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout) for example file system layouts using subvolumes.
+
+#### Changing the default sub-volume
+
+**Warning:** Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible, except by use of the `subvolid=5` mount option. Reference: [Btrfs Wiki Sysadmin Guide](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
 
 The default sub-volume is mounted if no `subvol=` mount option is provided.
 
@@ -338,22 +300,69 @@ ID 261 gen 9512 top level 258 path usr
 **Reset:**
 
 ```
-# btrfs subvolume set-default 0 .
+# btrfs subvolume set-default 5 .
 
 ```
 
-#### Snapshots
+### Commit interval settings
 
-See [Btrfs Wiki SysadminGuide#Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Snapshots) for details.
+The resolution at which data are written to the filesystem is dictated by Btrfs itself and by system-wide settings. Btrfs defaults to a 30 seconds checkpoint interval in which new data are committed to the filesystem. This is tuneable using mount options (see below)
 
-To create a snapshot:
+System-wide settings also affect commit intervals. They include the files under `/proc/sys/vm/*` and are out-of-scope of this wiki article. The kernel documentation for them resides in `Documentation/sysctl/vm.txt`.
+
+### Checkpoint interval
+
+Starting with Linux 3.12, users are able to change the checkpoint interval from the default 30 s to any value by appending the `commit` mount option in `/etc/fstab` for the btrfs partition.
 
 ```
-# btrfs subvolume snapshot *source* [*dest*/]*name*
+LABEL=arch64 / btrfs defaults,noatime,ssd,compress=lzo,commit=120 0 0
 
 ```
 
-Snapshots are not recursive. Every sub-volume inside sub-volume will be an empty directory inside the snapshot.
+### SSD TRIM
+
+A Btrfs filesystem will automatically free unused blocks from an SSD drive supporting the TRIM command.
+
+More information about enabling and using TRIM can be found in [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives").
+
+## File system administration and maintenance
+
+### Displaying used/free space
+
+General linux userspace tools such as `/usr/bin/df` will inaccurately report free space on a Btrfs partition since it does not take into account space allocated for and used by the metadata. It is recommended to use `/usr/bin/btrfs` to query a Btrfs partition. Below is an illustration of this effect, first querying using `df -h`, and then using `btrfs filesystem df`:
+
+ `$ df -h /` 
+```
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda3       119G  3.0G  116G   3% /
+
+```
+ `$ btrfs filesystem df /` 
+```
+Data: total=3.01GB, used=2.73GB
+System: total=4.00MB, used=16.00KB
+Metadata: total=1.01GB, used=181.83MB
+```
+
+Notice that `df -h` reports 3.0GB used but `btrfs filesystem df` reports 2.73GB for the data. This is due to the way Btrfs allocates space into the pool. The true disk usage is the sum of all three 'used' values which is inferior to 3.0GB as reported by `df -h`.
+
+**Note:** If you see an entry of type `unknown` in the output of `btrfs filesystem df` at kernel >= 3.15, this is a display bug. As of [this patch](http://thread.gmane.org/gmane.comp.file-systems.btrfs/34419), the entry means GlobalReserve, which is kind of a buffer for changes not yet flushed. This entry is displayed as `unknown, single` in RAID setups and is not possible to re-balance.
+
+Another useful command to show a less verbose readout of used space is `btrfs filesystem show`:
+
+```
+# btrfs filesystem show /dev/sda3
+
+```
+
+The newest command to get information on free/used space of a is `btrfs filesystem usage`:
+
+```
+# btrfs filesystem usage
+
+```
+
+**Note:** The `btrfs filesystem usage` command does not currently work correctly with `RAID5/RAID6` RAID levels.
 
 ### Defragmentation
 
@@ -373,61 +382,9 @@ To defragment the entire file system verbosely:
 
 ```
 
-### Compression
-
-Btrfs supports transparent compression, meaning every file on the partition is automatically compressed. This not only reduces the size of files, but also [improves performance](http://www.phoronix.com/scan.php?page=article&item=btrfs_compress_2635&num=1), in particular if using the [lzo algorithm](http://www.phoronix.com/scan.php?page=article&item=btrfs_lzo_2638&num=1), in some specific use cases (e.g. single thread with heavy file IO), while obviously harming performance on other cases (e.g. multithreaded and/or cpu intensive tasks with large file IO).
-
-Compression is enabled using the `compress=zlib` or `compress=lzo` mount options. Only files created or modified after the mount option is added will be compressed. However, it can be applied quite easily to existing files (e.g. after a conversion from ext3/4) using the `btrfs filesystem defragment -c*alg*` command, where `*alg*` is either `zlib` or `lzo`. In order to re-compress the whole file system with `lzo`, run the following command:
-
-```
-# btrfs filesystem defragment -r -v -clzo /
-
-```
-
-**Tip:** Compression can also be enabled per-file without using the `compress` mount option; simply apply `chattr +c` to the file. When applied to directories, it will cause new files to be automatically compressed as they come.
-
-When installing Arch to an empty Btrfs partition, use the `compress` option when [mounting the filesystem](/index.php/Beginners%27_guide#Format_the_file_systems_and_enable_swap "Beginners' guide"): `mount -o compress=lzo /dev/sd*xY* /mnt/`. During [configuration](/index.php/Beginners%27_guide#Configuration "Beginners' guide"), add `compress=lzo` to the mount options of the root file system in [fstab](/index.php/Fstab "Fstab").
-
-### Checkpoint interval
-
-Starting with Linux 3.12, users are able to change the checkpoint interval from the default 30 s to any value by appending the `commit` mount option in `/etc/fstab` for the btrfs partition.
-
-```
-LABEL=arch64 / btrfs defaults,noatime,ssd,compress=lzo,commit=120 0 0
-
-```
-
-### Partitioning
-
-Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes. One can use [subvolumes](#Sub-volumes) to simulate partitions. There are some limitations to this approach in single disk setups:
-
-*   Cannot use different [file systems](/index.php/File_systems "File systems") for different [mount points](/index.php/Fstab "Fstab").
-*   Cannot use [swap area](/index.php/Swap "Swap") as Btrfs does not support [swap files](/index.php/Swap#Swap_file "Swap") and there is no place to create [swap partition](/index.php/Swap#Swap_partition "Swap"). This also limits the use of hibernation/resume, which needs a swap area to store the hibernation image.
-*   Cannot use [UEFI](/index.php/UEFI "UEFI") to boot.
-
-To overwrite the existing partition table with Btrfs, run the following command:
-
-```
-# mkfs.btrfs /dev/sd*X*
-
-```
-
-Do not specify `/dev/sda*X*` or it will format an existing partition instead of replacing the entire partitioning scheme.
-
-Install the [boot loader](/index.php/Boot_loader "Boot loader") in a like fashion to installing it for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). For example:
-
-```
-# grub-install --recheck /dev/sd*X*
-
-```
-
-for [GRUB](/index.php/GRUB#Install_to_440-byte_MBR_boot_code_region "GRUB").
-
-**Warning:** Using the `btrfs subvolume set-default` command to change the default sub-volume from anything other than the top level (ID 0) may break Grub. See [#Setting a default sub-volume](#Setting_a_default_sub-volume) to reset.
-
 ### Scrub
 
-See [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary).
+The [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary) says that Btrfs scrub is *[a]n online filesystem checking tool. Reads all the data and metadata on the filesystem, and uses checksums and the duplicate copies from RAID storage to identify and repair any corrupt data.*
 
 ```
 # btrfs scrub start /
@@ -437,17 +394,13 @@ See [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary).
 
 **Warning:** The running scrub process will prevent the system from suspending, see [this thread](http://comments.gmane.org/gmane.comp.file-systems.btrfs/33106) for details.
 
-#### Services
-
 The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package brings the `btrfs-scrub@.timer` unit for monthly scrubbing the specified mountpoint. [Enable](/index.php/Enable "Enable") the timer with an encoded path, e.g. `btrfs-scrub@-.timer` for `/` and `btrfs-scrub@home.timer` for `/home`.
 
 You can also run the scrub manually by [starting](/index.php/Starting "Starting") `btrfs-scrub@.service` (with the same encoded path). The advantage of this over `# btrfs scrub` is that the results of the scrub will be logged in the [systemd journal](/index.php/Systemd_journal "Systemd journal").
 
 ### Balance
 
-See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
-
-Since [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)-3.12 *balancing* is a background process - see `man 8 btrfs-balance` for full description.
+*A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed.* [[2]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
 
 ```
 # btrfs balance start /
@@ -455,11 +408,66 @@ Since [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)-3.12 *
 
 ```
 
-### SSD TRIM
+### RAID
 
-A Btrfs filesystem will automatically free unused blocks from an SSD drive supporting the TRIM command.
+Btrfs works in block-pairs for raid0, raid1, and raid10\. This means:
 
-More information about enabling and using TRIM can be found in [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives").
+raid0 - block-pair striped across 2 devices
+
+raid1 - block-pair written to 2 devices
+
+The RAID level can be changed while the disks are online using the `btrfs balance` command:
+
+```
+# btrfs balance start -mconvert=RAIDLEVEL -dconvert=RAIDLEVEL /path/to/mount
+
+```
+
+For 2 disk sets, this matches raid levels as defined in md-raid (mdadm). For 3+ disk-sets, the result is entirely different than md-raid.
+
+For example:
+
+*   Three 1TB disks in an md based raid1 yields a `/dev/md0` with 1TB free space and the ability to safely lose 2 disks without losing data.
+*   Three 1TB disks in a Btrfs volume with data=raid1 will allow the storage of approximately 1.5TB of data before reporting full. Only 1 disk can safely be lost without losing data.
+
+Btrfs uses a round-robin scheme to decide how block-pairs are spread among disks. As of Linux 3.0, a quasi-round-robin scheme is used which prefers larger disks when distributing block pairs. This allows raid0 and raid1 to take advantage of most (and sometimes all) space in a disk set made of multiple disks. For example, a set consisting of a 1TB disk and 2 500GB disks with data=raid1 will place a copy of every block on the 1TB disk and alternate (round-robin) placing blocks on each of the 500GB disks. Full space utilization will be made. A set made from a 1TB disk, a 750GB disk, and a 500GB disk will work the same, but the filesystem will report full with 250GB unusable on the 750GB disk. To always take advantage of the full space (even in the last example), use data=single. (data=single is akin to JBOD defined by some raid controllers) See [the Btrfs FAQ](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_space_do_I_get_with_unequal_devices_in_RAID-1_mode.3F) for more info.
+
+### Snapshots
+
+*A snapshot is simply a subvolume that shares its data (and metadata) with some other subvolume, using btrfs's COW capabilities.* See [Btrfs Wiki SysadminGuide#Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Snapshots) for details.
+
+To create a snapshot:
+
+```
+# btrfs subvolume snapshot *source* [*dest*/]*name*
+
+```
+
+To create a readonly snapshot add the `-r` flag. To create writable version of a readonly snapshot, simply create a snapshot of it.
+
+**Note:** Snapshots are not recursive. Every sub-volume inside sub-volume will be an empty directory inside the snapshot.
+
+## Limitations
+
+A few limitations should be known before trying.
+
+### Encryption
+
+Btrfs has no built-in encryption support, but this may come in future. Users can encrypt the partition before running `mkfs.btrfs`. See [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
+
+Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "EncFS") or [TrueCrypt](/index.php/TrueCrypt "TrueCrypt"), though perhaps without some of Btrfs' features.
+
+### Swap file
+
+Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs doesn't have for possibility of file system corruption [[3]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[4]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) from the [official repositories](/index.php/Official_repositories "Official repositories") to automate this.
+
+### Linux-rt kernel
+
+As of version 3.14.12_rt9, the [linux-rt](/index.php/Kernel#-rt "Kernel") kernel does not boot with the Btrfs file system. This is due to the slow development of the *rt* patchset.
+
+## Tips and tricks
+
+See [Btrfs - Tips and tricks](/index.php/Btrfs_-_Tips_and_tricks "Btrfs - Tips and tricks").
 
 ## Troubleshooting
 

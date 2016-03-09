@@ -159,7 +159,7 @@ The columns have the following meaning:
 
 | Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Shell completion | Syntax | Specificity |
 | apacman | Bash | No | Yes | No | No | No | No | None | Pacman-like | Fork of *packer* |
-| aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | No | No | No | bash/zsh | Pacman-like | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support, multilangual |
+| aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | No | No | No | bash/zsh | Pacman-like | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support, multilingual |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | Specific | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[2]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | Pacman-like | - |
 | bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | No | bash/zsh | Pacman-like/Specific | Trust management, ABS support, extends Powerpill |
@@ -173,4 +173,4 @@ The columns have the following meaning:
 | trizen | Perl | Yes | Yes | No | No | No | No | None | Pacman-like | - |
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | Specific | Mirror updates, print news and AUR comments |
 | yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | bash | Specific | No automatic builds |
-| yaourt | Bash/C | No [[5]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) | No [[6]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No | No | Optional | bash/zsh/fish | Pacman-like | Backup, ABS support, AUR comments, multilangual |
+| yaourt | Bash/C | No [[5]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) | No [[6]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No | No | Optional | bash/zsh/fish | Pacman-like | Backup, ABS support, AUR comments, multilingual |

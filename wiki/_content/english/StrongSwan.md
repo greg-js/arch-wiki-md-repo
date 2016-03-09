@@ -17,7 +17,8 @@ They are typically implemented in userspace daemons on the server side. [strongS
         *   [1.2.3 IPSec/L2TP](#IPSec.2FL2TP)
     *   [1.3 Secrets](#Secrets)
     *   [1.4 Networking](#Networking)
-    *   [1.5 Troubleshooting](#Troubleshooting)
+    *   [1.5 Running Strongswan in a Container](#Running_Strongswan_in_a_Container)
+    *   [1.6 Troubleshooting](#Troubleshooting)
 *   [2 Client configuration](#Client_configuration)
 *   [3 See also](#See_also)
 
@@ -296,6 +297,18 @@ You may also need to allow the following protocols in your firewall:
 *   UDP 500: Key exchanges (IKE)
 
 Finally, you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `strongswan` service.
+
+### Running Strongswan in a Container
+
+For running `strongswan` in a container like [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") you need the following service file:
+
+ `/etc/systemd/system/systemd-nspawn@.service.d/override.conf}` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=try-guest --settings=override --machine=%I --capability=CAP_NET_ADMIN --network-veth 
+
+```
 
 ### Troubleshooting
 

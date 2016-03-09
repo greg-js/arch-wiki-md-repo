@@ -71,7 +71,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 ### Unofficially supported
 
-*   **[Common Desktop Environment](/index.php/Common_Desktop_Environment "Common Desktop Environment")** — The Common Desktop Environment (CDE) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations.
+*   **[CDE](/index.php/Common_Desktop_Environment "Common Desktop Environment")** — The Common Desktop Environment (CDE) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations.
 
 	[https://sourceforge.net/projects/cdesktopenv/](https://sourceforge.net/projects/cdesktopenv/) || [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/)
 
@@ -99,7 +99,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 	[https://elementary.io/](https://elementary.io/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)
 
-*   **[Papyros shell](/index.php/Papyros_shell "Papyros shell")** — Papyros shell is a modern desktop shell which adheres to Google's Material Design guidelines.
+*   **[Papyros](/index.php/Papyros_shell "Papyros shell")** — Papyros shell is a modern desktop shell which adheres to Google's Material Design guidelines.
 
 	[http://papyros.io/](http://papyros.io/) || [papyros-shell](https://aur.archlinux.org/packages/papyros-shell/)
 
@@ -388,6 +388,10 @@ Alternative window managers cannot be used with GNOME Shell however [GNOME Flash
 	Cinnamon
 
 Alternative window managers cannot be used with [Cinnamon](/index.php/Cinnamon "Cinnamon").
+
+	Budgie
+
+All components of the Budgie desktop are independent of the Budgie window manager, so these components can be launched alongside a different window manager.
 
 	Other desktop environments
 

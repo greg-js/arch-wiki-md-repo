@@ -168,7 +168,7 @@ Go to *System Settings > Login Screen (LightDM)* and change the background image
 
 Alternatively, you can edit the `Background` variable in `lightdm-kde-greeter.conf` :
 
- `/etc/lightdm/lightdm-kdm-greeter.conf` 
+ `/etc/lightdm/lightdm-kde-greeter.conf` 
 ```
 [greeter]
 theme-name=classic

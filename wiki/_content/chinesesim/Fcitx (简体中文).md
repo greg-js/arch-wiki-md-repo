@@ -169,13 +169,13 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 ### 配置工具
 
-**警告:** Fcitx 不支持手动编辑配置文件，否则后果自负。
-
-Fcitx 提供了若干图形界面的配置程序：基于 KDE 之 kcm 的 [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), 基于 GTK+3 的 [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool), 或者来自 [AUR](/index.php/AUR "AUR"), 基于 GTK+2, 但不被官方支持的 [fcitx-configtool-gtk2](https://aur.archlinux.org/packages/fcitx-configtool-gtk2/).
+Fcitx 提供了若干图形界面的配置程序：基于 KDE 之 kcm 的 [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), 基于 GTK+3 的 [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool), 或者来自 [AUR](/index.php/AUR "AUR"), 基于 GTK+2, 但不被官方支持的 [fcitx-configtool-gtk2](https://aur.archlinux.org/packages/fcitx-configtool-gtk2/)。
 
 安装完配置工具[fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)之后打开配置工具的方法是用终端运行fcitx-config-gtk3，打开这个配置工具之后还要添加中文输入法。
 
 添加中文输入法的方法是在第一个标签，点下面的加号，然后它默认本身是勾选了之显示当前语言的输入法的（Only Show Current Language），因为一般按照默认的方法安装Archlinux的是英文语言，在这种状态下是找不到中文输入法的，一定要先取消勾选这个选项，然后才能在上面的列表中找到中文输入法（可能叫Pinyin, Libpinyin之类的）。然后添加这个才会有中文输入法。
+
+如果要手工编辑 fcitx 的配置文件，请确保系统中并没有在运行 fcitx ，否则手工编辑的配置内容可能丢失。
 
 ### 替换自带的经典界面
 

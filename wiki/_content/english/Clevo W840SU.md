@@ -8,8 +8,6 @@ The W840SU is a device by the taiwanese OEM manufacturer Clevo. It is sold as Sc
     *   [1.3 Brightness Keys](#Brightness_Keys)
     *   [1.4 Sound](#Sound)
     *   [1.5 Touchpad](#Touchpad)
-*   [2 Problems](#Problems)
-    *   [2.1 Suspend/Hibernate/Resume](#Suspend.2FHibernate.2FResume)
 
 ## Installation
 
@@ -68,9 +66,3 @@ The volume control for the microphone is mislabeled and reads *Digital* in ALSA.
 ### Touchpad
 
 The touchpad works out of the box with the *synaptics* driver. All current features are supported including two finger scroll, two- and three finger click and optional mouse buttons for the edges. Use *synclient* for configuration. Four finger recognition and three finger swipe gestures do not seem to work, though.
-
-## Problems
-
-### Suspend/Hibernate/Resume
-
-Suspend to disk works best with kernel 3.14.43-2-lts. Newer kernels, including the new LTS 4.1.9 and 4.2 series lead to black screens or reboots immediately after resuming. Further information may be found in [https://bugs.archlinux.org/task/44807](https://bugs.archlinux.org/task/44807) .

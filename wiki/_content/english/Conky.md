@@ -85,7 +85,7 @@ In addition to the basic *conky* package, there are various [AUR](/index.php/AUR
 
 ### Configuration notice
 
-Take note that settings bellow say something like setting_x yes | no. however, if you copy the default config from system folder, you will see that syntax there is different.
+Take note that settings below say something like setting_x yes | no. however, if you copy the default config from system folder, you will see that syntax there is different.
 
 Instead of writing setting_x y, do " setting_x = true | false | 'string' "
 

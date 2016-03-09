@@ -3,40 +3,28 @@ See [NVIDIA](/index.php/NVIDIA "NVIDIA") for the main article.
 ## Contents
 
 *   [1 Fixing terminal resolution](#Fixing_terminal_resolution)
-*   [2 Hardware accelerated video decoding with XvMC](#Hardware_accelerated_video_decoding_with_XvMC)
-*   [3 Using TV-out](#Using_TV-out)
-*   [4 X with a TV (DFP) as the only display](#X_with_a_TV_.28DFP.29_as_the_only_display)
-*   [5 Check the power source](#Check_the_power_source)
-*   [6 Listening to ACPI events](#Listening_to_ACPI_events)
-*   [7 Displaying GPU temperature in the shell](#Displaying_GPU_temperature_in_the_shell)
-    *   [7.1 Method 1 - nvidia-settings](#Method_1_-_nvidia-settings)
-    *   [7.2 Method 2 - nvidia-smi](#Method_2_-_nvidia-smi)
-    *   [7.3 Method 3 - nvclock](#Method_3_-_nvclock)
-*   [8 Set fan speed at login](#Set_fan_speed_at_login)
-*   [9 Switching between NVIDIA and nouveau drivers](#Switching_between_NVIDIA_and_nouveau_drivers)
-*   [10 Avoid tearing with GeForce 500/600/700/900 series cards](#Avoid_tearing_with_GeForce_500.2F600.2F700.2F900_series_cards)
-*   [11 Manual configuration](#Manual_configuration)
-    *   [11.1 Disabling the logo on startup](#Disabling_the_logo_on_startup)
-    *   [11.2 Overriding monitor detection](#Overriding_monitor_detection)
-    *   [11.3 Enabling brightness control](#Enabling_brightness_control)
-    *   [11.4 Enabling SLI](#Enabling_SLI)
-    *   [11.5 Enabling overclocking](#Enabling_overclocking)
-        *   [11.5.1 Setting static 2D/3D clocks](#Setting_static_2D.2F3D_clocks)
+*   [2 Using TV-out](#Using_TV-out)
+*   [3 X with a TV (DFP) as the only display](#X_with_a_TV_.28DFP.29_as_the_only_display)
+*   [4 Check the power source](#Check_the_power_source)
+*   [5 Listening to ACPI events](#Listening_to_ACPI_events)
+*   [6 Displaying GPU temperature in the shell](#Displaying_GPU_temperature_in_the_shell)
+    *   [6.1 Method 1 - nvidia-settings](#Method_1_-_nvidia-settings)
+    *   [6.2 Method 2 - nvidia-smi](#Method_2_-_nvidia-smi)
+    *   [6.3 Method 3 - nvclock](#Method_3_-_nvclock)
+*   [7 Set fan speed at login](#Set_fan_speed_at_login)
+*   [8 Switching between NVIDIA and nouveau drivers](#Switching_between_NVIDIA_and_nouveau_drivers)
+*   [9 Avoid tearing with GeForce 500/600/700/900 series cards](#Avoid_tearing_with_GeForce_500.2F600.2F700.2F900_series_cards)
+*   [10 Manual configuration](#Manual_configuration)
+    *   [10.1 Disabling the logo on startup](#Disabling_the_logo_on_startup)
+    *   [10.2 Overriding monitor detection](#Overriding_monitor_detection)
+    *   [10.3 Enabling brightness control](#Enabling_brightness_control)
+    *   [10.4 Enabling SLI](#Enabling_SLI)
+    *   [10.5 Enabling overclocking](#Enabling_overclocking)
+        *   [10.5.1 Setting static 2D/3D clocks](#Setting_static_2D.2F3D_clocks)
 
 ## Fixing terminal resolution
 
 Transitioning from nouveau may cause your startup terminal to display at a lower resolution. For GRUB, see [GRUB/Tips and tricks#Setting the framebuffer resolution](/index.php/GRUB/Tips_and_tricks#Setting_the_framebuffer_resolution "GRUB/Tips and tricks") for details.
-
-## Hardware accelerated video decoding with XvMC
-
-Accelerated decoding of MPEG-1 and MPEG-2 videos via [XvMC](/index.php/XvMC "XvMC") are supported on GeForce4, GeForce 5 FX, GeForce 6 and GeForce 7 series cards. To use it, create a new file `/etc/X11/XvMCConfig` with the following content:
-
-```
-libXvMCNVIDIA_dynamic.so.1
-
-```
-
-See how to configure [supported software](/index.php/XvMC#Supported_software "XvMC").
 
 ## Using TV-out
 

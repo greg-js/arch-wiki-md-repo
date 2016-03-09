@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [LXQt](/index.php/LXQt "LXQt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-15，点击[这里](https://wiki.archlinux.org/index.php?title=LXQt&diff=0&oldid=408422)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [LXQt](/index.php/LXQt "LXQt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-08，点击[这里](https://wiki.archlinux.org/index.php?title=LXQt&diff=0&oldid=415023)可以查看翻译后英文页面的改动。
 
 2013年间，洪任諭（“PCMan”）启动了将 LXDE 移植到 Qt 的项目。LXDE-Qt 的首个预览版发布于2013年7月3日。而在2013年7月21日，Razor-qt（一个与LXDE类似的桌面）与 LXDE 宣布合并，产生了 LXQt。这个桌面集合了 Razor-qt 和 LXDE 的组件。尽管 LXDE 目前的精力已经集中到 LXQt，GTK+ 2 的版本依然在维护。
 
@@ -21,7 +21,7 @@
 
 你还可以安装以下附加功能包：
 
-*   **Connman** — 类似 [NetworkManager](/index.php/NetworkManager "NetworkManager") 的网络管理器。
+*   **[Connman](/index.php/Connman "Connman")** — 类似 [NetworkManager](/index.php/NetworkManager "NetworkManager") 的网络管理器。
 
 	[http://git.kernel.org/cgit/network/connman](http://git.kernel.org/cgit/network/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
@@ -45,6 +45,12 @@
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
+*   **[XScreenSaver](/index.php/XScreenSaver "XScreenSaver")** — LXQt 的锁屏组件所需的屏幕保护程序。
+
+	[https://www.jwz.org/xscreensaver/](https://www.jwz.org/xscreensaver/) || [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)
+
+某些 LXQt 面板插件的某些功能需要安装额外的包。可查阅 [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel) 的 [可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")。
+
 ## 启动桌面
 
 ### 使用 xinit
@@ -58,7 +64,7 @@ exec startlxqt
 
 ### 图形界面登入
 
-在[显示管理器](/index.php/Display_manager "Display manager")的桌面菜单中选择 *LXQt Desktop*.
+在[显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器")的桌面菜单中选择 *LXQt Desktop*.
 
 ## 配置
 
@@ -66,7 +72,7 @@ LXQt 尝试提供 GUI 应用程序修改其设置。配置文件位于 `~/.confi
 
 ### 替换 Openbox
 
-虽然 [Openbox](/index.php/Openbox "Openbox") 是 LXQt 默认的 [window manager](/index.php/Window_manager "Window manager")，你仍可以在“会话设置”中指定一个不同的窗口管理器用于 LXQt。也可以编辑 `~/.config/lxqt/session.conf`，将下面这行：
+虽然 [Openbox](/index.php/Openbox "Openbox") 是 LXQt 默认的[窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")，你仍可以在“会话设置”（`lxqt-config-session`）中指定一个不同的窗口管理器用于 LXQt。也可以编辑 `~/.config/lxqt/session.conf`，将下面这行：
 
 ```
 window_manager=openbox
@@ -93,11 +99,11 @@ lxqt-config-session
 
 ### 编辑应用程序菜单
 
-可以通过编辑`/usr/share/applications/lxqt-*.desktop`中的桌面文件修改菜单，参阅 [桌面配置项](/index.php/Desktop_entries_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop entries (简体中文)")。
+可以通过编辑`/usr/share/applications/lxqt-*.desktop`中的桌面文件修改菜单，参阅[桌面配置项](/index.php/Desktop_entries_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop entries (简体中文)")。
 
 ## 建议应用
 
-LXQt是一个轻量级桌面,作一个简单的安装不会提供很多桌面应用程序。它留给用户选择他们想要安装的应用程序。[Razor-qt wiki](https://github.com/Razor-qt/razor-qt/wiki/3rd-party-applications) 上有一个网页，其中列出了一些有用的 Qt 应用程序，您可能想要安装。另请参阅 [List of applications](/index.php/List_of_applications "List of applications") 的页面中Arch可用应用程序的完整列表。
+LXQt是一个轻量级桌面，作为一个简单的安装不会提供很多桌面应用程序。它留给用户选择他们想要安装的应用程序。[Razor-qt wiki](https://github.com/Razor-qt/razor-qt/wiki/3rd-party-applications) 上有一个网页，其中列出了一些有用的 Qt 应用程序可按需选装。另请参阅[应用程序清单](/index.php/List_of_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of applications (简体中文)")页面中 Arch 可用应用程序的完整列表。
 
 ## 参阅
 
