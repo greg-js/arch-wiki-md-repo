@@ -425,7 +425,7 @@ $ xorriso -as mkisofs -iso-level 3 \
 
 [OVMF](https://tianocore.github.io/ovmf/) is a tianocore project to enable UEFI support for Virtual Machines. OVMF contains a sample UEFI firmware for QEMU.
 
-You can build OVMF (with Secure Boot support) from AUR [ovmf-svn](https://aur.archlinux.org/packages/ovmf-svn/) and run it as follows:
+You can install [ovmf](https://www.archlinux.org/packages/?name=ovmf) from the extra repository and run it as follows:
 
 ```
 $ qemu-system-x86_64 -enable-kvm -net none -m 1024 -drive file=/usr/share/ovmf/x86_64/bios.bin,format=raw,if=pflash,readonly

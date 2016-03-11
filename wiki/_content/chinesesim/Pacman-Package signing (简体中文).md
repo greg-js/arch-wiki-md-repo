@@ -98,7 +98,7 @@ PGP 通常很长(2048 位或更长)，不太容易使用，所以通常创建一
 
 ### 官方开发者密钥
 
-官方开发者和 TU 的密钥已经被主密钥签名认证，所以不需要用 pacman-key 认证它们。pacman 遇到不认识的签名时，它将会询问是否从密钥服务器（设置在{ic|/etc/pacman.d/gnupg/gpg.conf}文件中，或在命令行中使用`--keyserver`选项）下载。
+官方开发者和 TU 的密钥已经被主密钥签名认证，所以不需要用 pacman-key 认证它们。pacman 遇到不认识的签名时，它将会询问是否从密钥服务器（设置在`/etc/pacman.d/gnupg/gpg.conf`文件中，或在命令行中使用`--keyserver`选项）下载。
 
 **提示:** Wikipedia maintains a [list of keyservers](https://en.wikipedia.org/wiki/Key_server_(cryptographic) "wikipedia:Key server (cryptographic)").
 

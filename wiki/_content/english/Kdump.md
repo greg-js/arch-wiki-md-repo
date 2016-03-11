@@ -69,7 +69,7 @@ Description=Load dump capture kernel
 After=local-fs.target
 
 [Service]
-ExecStart=/usr/bin/kexec -p [/boot/vmlinuz-linux-kdump] --initrd=[/boot/initramfs-linux-kdump.img] --append=root=[root-device] single irqpoll maxcpus=1 reset_devices
+ExecStart=/usr/bin/kexec -p [/boot/vmlinuz-linux-kdump] --initrd=[/boot/initramfs-linux-kdump.img] --append="root=[root-device] single irqpoll maxcpus=1 reset_devices"
 Type=oneshot
 
 [Install]

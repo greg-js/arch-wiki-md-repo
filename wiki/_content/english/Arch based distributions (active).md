@@ -59,7 +59,7 @@ Antergos is Archlinux-based via Arch's repositories and can be installed by boot
 
 ### Apricity OS
 
-Apricity OS uses the Pamac graphical package manager, PushBullet, Syncthing, the ICE SSB manager, and a modified [GNOME](/index.php/GNOME "GNOME")(now [Cinnamon](/index.php/Cinnamon "Cinnamon") is also available)environment. It may be downloaded as a live image, and can be installed graphically.
+Apricity OS uses the Pamac graphical package manager, PushBullet, Syncthing, the ICE SSB manager, and a modified [GNOME](/index.php/GNOME "GNOME") or [Cinnamon](/index.php/Cinnamon "Cinnamon") environment. It may be downloaded as a live image, and can be installed graphically.
 
 *   Homepage: [http://apricityos.com/](http://apricityos.com/)
 *   Forums: [http://apricityos.com/forum](http://apricityos.com/forum)

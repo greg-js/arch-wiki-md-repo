@@ -43,7 +43,7 @@ Default Arch installation already includes kernel sound system, namely [ALSA](/i
 
 *   **JACK2** — This is the newer edition of JACK, designed explicitly towards multi-processor systems, and also includes transport over network.
 
-	[http://trac.jackaudio.org/wiki/Q_differenc_jack1_jack2](http://trac.jackaudio.org/wiki/Q_differenc_jack1_jack2) || [jack2](https://www.archlinux.org/packages/?name=jack2)
+	[https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2](https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2) || [jack2](https://www.archlinux.org/packages/?name=jack2)
 
 *   **JACK2 with D-Bus** — This is JACK2 with a different startup architecture, capable of running well at all times in coexistence with PulseAudio and non-JACK applications, which is a problem for the other two categories of JACK setup.
 

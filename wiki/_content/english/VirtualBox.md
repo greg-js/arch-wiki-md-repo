@@ -7,29 +7,23 @@ In order to integrate functions of the host system to the guests, including shar
 *   [1 Installation steps for Arch Linux hosts](#Installation_steps_for_Arch_Linux_hosts)
     *   [1.1 Install the core packages](#Install_the_core_packages)
     *   [1.2 Install the VirtualBox kernel modules](#Install_the_VirtualBox_kernel_modules)
-        *   [1.2.1 Hosts running an official kernel](#Hosts_running_an_official_kernel)
-        *   [1.2.2 Hosts running a custom kernel](#Hosts_running_a_custom_kernel)
-            *   [1.2.2.1 DKMS Install](#DKMS_Install)
+        *   [1.2.1 Hosts running a custom kernel](#Hosts_running_a_custom_kernel)
+            *   [1.2.1.1 DKMS Install](#DKMS_Install)
     *   [1.3 Load the VirtualBox kernel modules](#Load_the_VirtualBox_kernel_modules)
     *   [1.4 Add usernames to the vboxusers group](#Add_usernames_to_the_vboxusers_group)
     *   [1.5 Guest additions disc](#Guest_additions_disc)
     *   [1.6 Extension pack](#Extension_pack)
     *   [1.7 Use the right front-end](#Use_the_right_front-end)
 *   [2 Installation steps for Arch Linux guests](#Installation_steps_for_Arch_Linux_guests)
-    *   [2.1 Install Arch Linux inside the virtual machine](#Install_Arch_Linux_inside_the_virtual_machine)
-        *   [2.1.1 Installation in EFI mode](#Installation_in_EFI_mode)
+    *   [2.1 Installation in EFI mode](#Installation_in_EFI_mode)
     *   [2.2 Install the Guest Additions](#Install_the_Guest_Additions)
-    *   [2.3 Install the VirtualBox guest kernel modules](#Install_the_VirtualBox_guest_kernel_modules)
-        *   [2.3.1 Guests running an official kernel](#Guests_running_an_official_kernel)
-        *   [2.3.2 Guests running a custom kernel](#Guests_running_a_custom_kernel)
-        *   [2.3.3 After kernel update](#After_kernel_update)
-    *   [2.4 Load the Virtualbox kernel modules](#Load_the_Virtualbox_kernel_modules_2)
-    *   [2.5 Launch the VirtualBox guest services](#Launch_the_VirtualBox_guest_services)
-    *   [2.6 Hardware acceleration](#Hardware_acceleration)
-    *   [2.7 Enable shared folders](#Enable_shared_folders)
-        *   [2.7.1 Manual mounting](#Manual_mounting)
-        *   [2.7.2 Automounting](#Automounting)
-        *   [2.7.3 Mount at boot](#Mount_at_boot)
+    *   [2.3 Load the Virtualbox kernel modules](#Load_the_Virtualbox_kernel_modules_2)
+    *   [2.4 Launch the VirtualBox guest services](#Launch_the_VirtualBox_guest_services)
+    *   [2.5 Hardware acceleration](#Hardware_acceleration)
+    *   [2.6 Enable shared folders](#Enable_shared_folders)
+        *   [2.6.1 Manual mounting](#Manual_mounting)
+        *   [2.6.2 Automounting](#Automounting)
+        *   [2.6.3 Mount at boot](#Mount_at_boot)
 *   [3 Import/export VirtualBox virtual machines from/to other hypervisors](#Import.2Fexport_VirtualBox_virtual_machines_from.2Fto_other_hypervisors)
     *   [3.1 Remove additions](#Remove_additions)
     *   [3.2 Use the right virtual disk format](#Use_the_right_virtual_disk_format)
@@ -106,9 +100,16 @@ In order to launch VirtualBox virtual machines on your Arch Linux box, follow th
 
 ### Install the core packages
 
-First, [install](/index.php/Install "Install") the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package which contains the GPL-licensed VirtualBox suite with the SDL and headless command-line tools included. The [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package comes with [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) as a required dependency.
+[install](/index.php/Install "Install") the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package. [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) will also be installed as a required dependency. To compile the virtualbox modules provided by `virtualbox-host-dkms`, it will also be necessary to install the appropriate headers package(s) for your installed kernel(s)[[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html):
 
-You can install the [qt4](https://www.archlinux.org/packages/?name=qt4) optional dependency in order to use the graphical interface which is based on [Qt](/index.php/Qt "Qt"). This is not required if you intend to use VirtualBox in command-line only. [See below to learn the differences](#Use_the_right_front-end).
+*   [linux](https://www.archlinux.org/packages/?name=linux) kernel: [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)
+*   [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel: [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)
+*   [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel: [linux-zen-headers](https://www.archlinux.org/packages/?name=linux-zen-headers)
+*   [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) kernel: [linux-grsec-headers](https://www.archlinux.org/packages/?name=linux-grsec-headers)
+
+You can also install the [qt4](https://www.archlinux.org/packages/?name=qt4) optional dependency in order to use the graphical interface which is based on [Qt](/index.php/Qt "Qt"). This is not required if you intend to use VirtualBox in command-line only. [See below to learn the differences](#Use_the_right_front-end).
+
+**Note:** if you do not have the header package installed, dkms will silently do nothing after a kernel upgrade, and you will be left wondering where your Virtualbox kernel modules are. Fortunately, installing the header package after the fact will automatically trigger a dkms run.
 
 ### Install the VirtualBox kernel modules
 
@@ -116,20 +117,9 @@ Next, to fully virtualize your guest installation, VirtualBox provides the follo
 
 The binary compatibility of kernel modules depends on the API of the kernel against which they have been compiled. The problem with the Linux kernel is that these interfaces might not be the same from one kernel version to another. In order to avoid compatibility problems and subtle bugs, each time the Linux kernel is upgraded, it is advised to recompile the kernel modules against the Linux kernel version that has just been installed. This is what Arch Linux packagers actually do with the VirtualBox kernel modules packages: each time a new Arch Linux kernel is released, the Virtualbox modules are upgraded accordingly.
 
-Therefore, if you are using a kernel from the [official repositories](/index.php/Official_repositories "Official repositories") or a custom one (self-compiled or installed from the [AUR](/index.php/AUR "AUR")), the kernel module package you will need to install will thus vary.
-
-#### Hosts running an official kernel
-
-*   If you are using the [linux](https://www.archlinux.org/packages/?name=linux) kernel, make sure the [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) package is still installed. The latter has been installed when you installed the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package.
-*   If you are using the LTS version of the kernel ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), you need to install the [virtualbox-host-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-host-modules-lts) package. [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) can now be removed if you want.
-*   If you are using the [linux-ck](https://aur.archlinux.org/packages/linux-ck/) kernel, build the [virtualbox-ck-host-modules](https://aur.archlinux.org/packages/virtualbox-ck-host-modules/) package.
-*   If you are using the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel, build the [virtualbox-zen-host-modules](https://aur.archlinux.org/packages/virtualbox-zen-host-modules/) package.
-
 #### Hosts running a custom kernel
 
 If you use or intend to use a self-compiled kernel from sources, you have to know that VirtualBox does not require any virtualization modules (e.g. virtuo, kvm,...). The VirtualBox kernel modules provide all the necessary for VirtualBox to work properly. You can thus disable in your kernel *.config* file these virtualization modules if you do not use other hypervisors like Xen, KVM or QEMU.
-
-The [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) package works fine with custom kernels of the same version of the Arch Linux stock kernel such as [linux-ck](https://aur.archlinux.org/packages/linux-ck/). If you do not use such kernel, see [#DKMS Install](#DKMS_Install) instead.
 
 ##### DKMS Install
 
@@ -211,9 +201,7 @@ Refer to the [VirtualBox manual](https://www.virtualbox.org/manual) to learn how
 
 ## Installation steps for Arch Linux guests
 
-### Install Arch Linux inside the virtual machine
-
-Boot the Arch installation media through one of the virtual machine's virtual drives. Then, complete the installation of a basic Arch system as explained in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") or the [Installation guide](/index.php/Installation_guide "Installation guide") without installing any graphic driver: we will install one provided by VirtualBox just at the next step.
+Boot the Arch installation media through one of the virtual machine's virtual drives. Then, complete the installation of a basic Arch system as explained in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") or the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 #### Installation in EFI mode
 
@@ -231,49 +219,19 @@ See also [UEFI Virtualbox installation boot problems](https://bbs.archlinux.org/
 
 ### Install the Guest Additions
 
-After completing the installation of the guest system, install the VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) which include drivers and applications that optimize the guest operating system. These can be installed via [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils), which provides [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) as a required dependency.
+VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) provides drivers and applications that optimize the guest operating system including improved image resolution and better control of the mouse. Within the installed guest system, if using a graphical environment, install [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils). Otherwise install [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) for VirtualBox Guest utilities without X support.
 
-To install for guests without an X server, use the [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) package.
+Both packages will install [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) as a dependency. To compile the virtualbox modules provided by `virtualbox-guest-dkms`, it will also be necessary to install the appropriate headers package(s) for your installed kernel(s)[[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html):
 
-You will need to install [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) for DKMS to be able to automatically compile the required kernel modules.
+*   [linux](https://www.archlinux.org/packages/?name=linux) kernel: [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)
+*   [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel: [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)
+*   [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel: [linux-zen-headers](https://www.archlinux.org/packages/?name=linux-zen-headers)
+*   [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) kernel: [linux-grsec-headers](https://www.archlinux.org/packages/?name=linux-grsec-headers)
 
-**Note:** You can also install the Guest Additions via the iso from the virtualbox-guest-iso, provided you installed this on the host system. To do this, go to the device menu click Insert Guest Additions CD Image. Then, in client, do the following as root:
-```
-# mount /dev/sr0 /mnt
-# /bin/bash /mnt/VBoxLinuxAdditions.run
+**Note:**
 
-```
-
-After installation is complete run as root:
-
-```
-# umount /mnt
-# eject /dev/sr0
-
-```
-Don't forget to reboot.
-
-### Install the VirtualBox guest kernel modules
-
-#### Guests running an official kernel
-
-*   If you are using the [linux](https://www.archlinux.org/packages/?name=linux) kernel, make sure the [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) package is still installed. The latter has been installed when you installed the [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package.
-*   If you are using the [linux-ck](https://aur.archlinux.org/packages/linux-ck/), kernel, build the [virtualbox-ck-guest-modules](https://aur.archlinux.org/packages/virtualbox-ck-guest-modules/) package. [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) can now be removed in this case too, if you want.
-
-#### Guests running a custom kernel
-
-As this installation step is quite similar to the Virtualbox kernel modules section for the host described above, please refer to [that section](#Install_the_VirtualBox_kernel_modules) for more information and replace all [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules), [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) and [vboxhost-hook](https://aur.archlinux.org/packages/vboxhost-hook/) statements by [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules), [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) and [vboxguest-hook](https://aur.archlinux.org/packages/vboxguest-hook/) respectively.
-
-#### After kernel update
-
-Run a command:
-
-```
-# sudo /usr/bin/rcvboxdrv
-
-```
-
-to recompile vbox kernel modules
+*   You can alternatively install the Guest Additions with the ISO from the [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) package, provided you installed this on the host system. To do this, go to the device menu click Insert Guest Additions CD Image.
+*   To recompile the vbox kernel modules, run `rcvboxdrv` as root.
 
 ### Load the Virtualbox kernel modules
 
@@ -328,7 +286,7 @@ Now, you should have a working Arch Linux guest. Note that features like clipboa
 
 ### Hardware acceleration
 
-Hardware acceleration can be activated from the VirtualBox options on the host computer. Note that when the gdm display manager 3.16+ is known to break hardware acceleration support[[1]](https://bbs.archlinux.org/viewtopic.php?id=200025), so if you get issues with hardware acceleration it might be a good idea to try out another display manager (lightdm seems to work fine).
+Hardware acceleration can be activated from the VirtualBox options on the host computer. Note that when the gdm display manager 3.16+ is known to break hardware acceleration support[[3]](https://bbs.archlinux.org/viewtopic.php?id=200025), so if you get issues with hardware acceleration it might be a good idea to try out another display manager (lightdm seems to work fine).
 
 If you want to share folders between your host and your Arch Linux guest, read on.
 
@@ -1326,7 +1284,7 @@ options snd-intel8x0 ac97_clock=48000
 
 ### Guest freezes after starting Xorg
 
-Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[3]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
+Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[5]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
 
 ### "NS_ERROR_FAILURE" and missing menu items
 
@@ -1392,7 +1350,7 @@ This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Inte
 Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
 
 *   Various Kernel bugs
-    *   Fuse mounted partitions (like ntfs) [[4]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[5]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
+    *   Fuse mounted partitions (like ntfs) [[6]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[7]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
 
 Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
 

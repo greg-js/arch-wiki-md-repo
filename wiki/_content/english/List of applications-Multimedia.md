@@ -659,6 +659,10 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 
 	[http://audacity.sourceforge.net/](http://audacity.sourceforge.net/) || [audacity](https://www.archlinux.org/packages/?name=audacity)
 
+*   **Bitwig Studio** — Proprietary professional digital audio workstation.
+
+	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio-demo](https://aur.archlinux.org/packages/bitwig-studio-demo/)
+
 *   **GNOME Sound Recorder** — The Sound Recorder application enables you to record and play .flac, .ogg (OGG audio, or .oga), and .wav sound files.
 
 	[https://wiki.gnome.org/Design/Apps/SoundRecorder](https://wiki.gnome.org/Design/Apps/SoundRecorder) || [gnome-sound-recorder](https://www.archlinux.org/packages/?name=gnome-sound-recorder)

@@ -26,7 +26,7 @@ Chances are, your system already has [ffmpeg](https://www.archlinux.org/packages
 ```
 #!/bin/bash
 
-for a in *.flac; do
+for a in ./*.flac; do
   ffmpeg -i "$a" -qscale:a 0 "${a[@]/%flac/mp3}"
 done
 
@@ -34,22 +34,21 @@ done
 
 #### Parallel version
 
-Since LAME is a single-threaded encoder, conversion can be accelerated by encoding multiple files concurrently on multiple cores. To do this, install [parallel](https://www.archlinux.org/packages/?name=parallel) from the [official repositories](/index.php/Official_repositories "Official repositories"), and use the following script.
+Since LAME is a single-threaded encoder, conversion can be accelerated by encoding multiple files concurrently on multiple cores. To do this, install the [moreutils](https://www.archlinux.org/packages/?name=moreutils) package, and run:
 
 ```
 #!/bin/bash
 
-parallel ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: *.flac
+parallel-moreutils -i -j$(nproc) ffmpeg -i {} -qscale:a 0 {}.mp3 -- ./*.flac
+rename .flac.mp3 .mp3 ./*.mp3
 
 ```
-
-[Note: the above script now skips the first 'flac' file in the directory. I think it has to do with recent versions of parallel.]
 
 #### Makefile for incremental recursive transcoding
 
 **Warning:** Makefiles do not handle spaces correctly, see [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1506405#p1506405) for details.
 
-Besides transcoding in parallel with 'make -j$(nproc)', this has the added benefit of not regenerating transcoded files that already exist on subsequent executions:
+Besides transcoding in parallel with `make -j$(nproc)`, this has the added benefit of not regenerating transcoded files that already exist on subsequent executions:
 
 ```
 SOURCE_DIR := flacdir

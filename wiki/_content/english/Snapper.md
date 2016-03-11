@@ -1,37 +1,37 @@
 [Snapper](http://snapper.io) is a tool created by openSUSE's Arvin Schnell that helps with managing snapshots of [Btrfs](/index.php/Btrfs "Btrfs") subvolumes and [LVM](/index.php/LVM "LVM") volumes. It can create and compare snapshots, revert between snapshots, and supports automatic snapshots timelines.
 
-**Warning:**
-
-In kernels 3.17 and 3.17-1, snapper in combination with [Btrfs](/index.php/Btrfs "Btrfs") using read-only snapshots will cause [random corruption](http://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg38049.html) and affected snapshots cannot be deleted without recreating the filesystem. This bug is fixed as of 3.17-2.
-
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Create a new configuration](#Create_a_new_configuration)
 *   [3 Automatic timeline snapshots](#Automatic_timeline_snapshots)
-*   [4 Access for non-root users](#Access_for_non-root_users)
-*   [5 Periodic launch without cron](#Periodic_launch_without_cron)
-*   [6 Tips and Tricks](#Tips_and_Tricks)
-    *   [6.1 Pre-post snapshots with pacman](#Pre-post_snapshots_with_pacman)
-    *   [6.2 Wrapping upgrades in pre-post snapshots](#Wrapping_upgrades_in_pre-post_snapshots)
-        *   [6.2.1 Easing the rollback process](#Easing_the_rollback_process)
-    *   [6.3 Suggested Filesystem Layout](#Suggested_Filesystem_Layout)
-        *   [6.3.1 Configuring Snapper](#Configuring_Snapper)
-        *   [6.3.2 Restoring the entire system](#Restoring_the_entire_system)
-    *   [6.4 Changing the default snapshot interval](#Changing_the_default_snapshot_interval)
-    *   [6.5 Deleting files from snapshots](#Deleting_files_from_snapshots)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Snapper logs](#Snapper_logs)
-    *   [7.2 IO Error](#IO_Error)
-*   [8 Caveats](#Caveats)
-    *   [8.1 Snapshots of root filesystem](#Snapshots_of_root_filesystem)
-    *   [8.2 updatedb](#updatedb)
+    *   [3.1 Enable/disable](#Enable.2Fdisable)
+    *   [3.2 Set snapshot limits](#Set_snapshot_limits)
+    *   [3.3 Change snapshot and cleanup frequencies](#Change_snapshot_and_cleanup_frequencies)
+*   [4 Take a snapshot manually](#Take_a_snapshot_manually)
+*   [5 List snapshots](#List_snapshots)
+*   [6 Access for non-root users](#Access_for_non-root_users)
+*   [7 Tips and tricks](#Tips_and_tricks)
+    *   [7.1 Pacman](#Pacman)
+        *   [7.1.1 Using a hook to automatically create a snapshot on pacman transaction](#Using_a_hook_to_automatically_create_a_snapshot_on_pacman_transaction)
+        *   [7.1.2 Using a script and alias to create pre/post snapshots on a pacman transaction](#Using_a_script_and_alias_to_create_pre.2Fpost_snapshots_on_a_pacman_transaction)
+        *   [7.1.3 Using pacupg to wrap pacman transactions in snapshots](#Using_pacupg_to_wrap_pacman_transactions_in_snapshots)
+    *   [7.2 Suggested filesystem layout](#Suggested_filesystem_layout)
+        *   [7.2.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
+        *   [7.2.2 Restoring / to a previous snapshot of subvol_root](#Restoring_.2F_to_a_previous_snapshot_of_subvol_root)
+    *   [7.3 Deleting files from snapshots](#Deleting_files_from_snapshots)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Snapper logs](#Snapper_logs)
+    *   [8.2 IO error](#IO_error)
+*   [9 Caveats](#Caveats)
+    *   [9.1 Snapshots of root filesystem](#Snapshots_of_root_filesystem)
+    *   [9.2 updatedb](#updatedb)
 
 ## Installation
 
-The stable version [snapper](https://www.archlinux.org/packages/?name=snapper) can be installed from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [snapper](https://www.archlinux.org/packages/?name=snapper) package. The development version [snapper-git](https://aur.archlinux.org/packages/snapper-git/) is also available.
 
-The development version [snapper-git](https://aur.archlinux.org/packages/snapper-git/) is also available.
+Additionally, a GUI is available with [snapper-gui-git](https://aur.archlinux.org/packages/snapper-gui-git/).
 
 ## Create a new configuration
 
@@ -52,78 +52,88 @@ This will
 *   create a subvolume `.snapshots` in the root of the subvolume (/.snapshots in this case)
 *   add "root" to SNAPPER_CONFIGS in `/etc/conf.d/snapper`
 
-At this point, the configuration is active. If your cron daemon is running, snapper will start taking snapshots every hour. It is advised to review the configuration file and set the desired amount of snapshots to be kept.
+At this point, the configuration is active. If your [cron](/index.php/Cron "Cron") daemon is running, snapper will take [#Automatic timeline snapshots](#Automatic_timeline_snapshots).
 
-**Note:** For informations on all settings in the config file see `man snapper-configs`.
+See `man snapper-configs`.
 
 ## Automatic timeline snapshots
 
-Snapper can create a snapshot timeline with a configurable number of snapshots kept per hour/day/month/year.
+By default, snapper is set to create a snapshot timeline with a configurable number of snapshots kept per hour/day/month/year when a new configuration is created.
 
 The implementation works as follows:
 
-*   By default a snapshot gets created once an hour (cron.hourly)
-*   Once a day the "old and unwanted" snapshots get cleaned up by the timeline cleanup algorithm (cron.daily)
+*   By default a snapshot gets created once an hour
+*   Once a day the "old and unwanted" snapshots get cleaned up by the timeline cleanup algorithm.
 
-When creating a new configuration with `snapper create-config` as shown above, this feature is enabled by default. To disable it, edit the configuration file and set
+Snapshots are stored into `$BTRFS_ROOT/.snapshots` or, more precisely, the subvolume path is `$BTRFS_ROOT/.snapshots/$SNAPHOST_ID/snapshot`. See this [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1458872#p1458872).
+
+### Enable/disable
+
+If you have [cronie](https://www.archlinux.org/packages/?name=cronie) installed, this feature should start automatically. To disable it, edit the configuration file corresponding with the subvolume you do not want to have this feature and set:
 
  `TIMELINE_CREATE="no"` 
 
-The default settings will keep 10 hourly, 10 daily, 10 monthly and 10 yearly snapshots. You may want to change this, especially on busy subvolumes like /. See [#Caveats](#Caveats).
+If you do not have [cronie](https://www.archlinux.org/packages/?name=cronie), you can use the provided systemd units. [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `snapper-timeline.timer` to start the automatic snapshot timeline. Additionally, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `snapper-cleanup.timer` to periodically cleanup older snapshots.
+
+### Set snapshot limits
+
+The default settings will keep 10 hourly, 10 daily, 10 monthly and 10 yearly snapshots. You may want to change this in the configuration, especially on busy subvolumes like /. See [#Caveats](#Caveats).
 
 Here is an example for a configuration with only 5 hours of snapshots, 7 daily ones, no monthly and no yearly ones:
 
  `/etc/snapper/configs/root` 
 ```
-# limits for timeline cleanup
 TIMELINE_MIN_AGE="1800"
 TIMELINE_LIMIT_HOURLY="5"
 TIMELINE_LIMIT_DAILY="7"
 TIMELINE_LIMIT_WEEKLY="0"
 TIMELINE_LIMIT_MONTHLY="0"
 TIMELINE_LIMIT_YEARLY="0"
+```
+
+### Change snapshot and cleanup frequencies
+
+If you are using the provided systemd timers, you can [Systemd#Editing_provided_units|edit] them to change the snapshot and cleanup frequency.
+
+For example, when editing the `snapper-timeline.timer`, add the following to make the frequency every five minutes, instead of hourly:
+
+```
+[Timer]
+OnCalendar=*:0/5
 
 ```
 
-The `snapper -c root list` output after some weeks:
+**Note:** The configuration parameter `TIMELINE_LIMIT_HOURLY` is tied to the above setting. In the above example it now refers to how many 5-minute snapshots are kept.
 
- `# snapper -c root list` 
+When editing `snapper-cleanup.timer`, you need to change `OnUnitActiveSec`. To make cleanups occur every hour instead of every day, add:
+
 ```
-Type   | #    | Pre # | Date                     | User | Cleanup  | Description | Userdata
--------+------+-------+--------------------------+------+----------+-------------+---------
-single | 0    |       |                          | root |          | current     |                                                                            
-single | 3053 |       | Tue Oct 22 00:01:02 2013 | root | timeline | timeline    |                                                                            
-single | 3077 |       | Wed Oct 23 00:01:01 2013 | root | timeline | timeline    |                                                                            
-single | 3101 |       | Thu Oct 24 00:01:01 2013 | root | timeline | timeline    |                                                                            
-single | 3125 |       | Fri Oct 25 00:01:01 2013 | root | timeline | timeline    |                                                                            
-single | 3149 |       | Sat Oct 26 00:01:01 2013 | root | timeline | timeline    |                                                                            
-single | 3173 |       | Sun Oct 27 00:01:01 2013 | root | timeline | timeline    |                                                                            
-single | 3197 |       | Sun Oct 27 23:01:01 2013 | root | timeline | timeline    |                                                                            
-single | 3198 |       | Mon Oct 28 00:01:01 2013 | root | timeline | timeline    |                                                                            
-single | 3199 |       | Mon Oct 28 01:01:01 2013 | root | timeline | timeline    |                                                                            
-single | 3200 |       | Mon Oct 28 02:01:01 2013 | root | timeline | timeline    |                                                                            
-single | 3201 |       | Mon Oct 28 03:01:02 2013 | root | timeline | timeline    |                                                                            
-single | 3202 |       | Mon Oct 28 04:01:01 2013 | root | timeline | timeline    |                                                                            
-single | 3203 |       | Mon Oct 28 05:01:02 2013 | root | timeline | timeline    |         
-single | 3204 |       | Mon Oct 28 06:01:01 2013 | root | timeline | timeline    |         
-single | 3205 |       | Mon Oct 28 07:01:02 2013 | root | timeline | timeline    |         
-single | 3206 |       | Mon Oct 28 08:01:01 2013 | root | timeline | timeline    |         
-single | 3207 |       | Mon Oct 28 09:01:01 2013 | root | timeline | timeline    |         
-single | 3208 |       | Mon Oct 28 10:01:01 2013 | root | timeline | timeline    |         
-single | 3209 |       | Mon Oct 28 11:01:01 2013 | root | timeline | timeline    |         
-single | 3210 |       | Mon Oct 28 12:01:01 2013 | root | timeline | timeline    |         
-single | 3211 |       | Mon Oct 28 13:01:01 2013 | root | timeline | timeline    |         
-single | 3212 |       | Mon Oct 28 14:01:01 2013 | root | timeline | timeline    |         
-single | 3213 |       | Mon Oct 28 15:01:01 2013 | root | timeline | timeline    |         
-single | 3214 |       | Mon Oct 28 16:01:01 2013 | root | timeline | timeline    |         
-single | 3215 |       | Mon Oct 28 17:01:01 2013 | root | timeline | timeline    |         
-single | 3216 |       | Mon Oct 28 18:01:01 2013 | root | timeline | timeline    |         
-single | 3217 |       | Mon Oct 28 19:01:01 2013 | root | timeline | timeline    |         
-single | 3218 |       | Mon Oct 28 20:01:01 2013 | root | timeline | timeline    |
+[Timer]
+OnUnitActiveSec=1h
 
 ```
 
-Those snapshots are stored into $BTRFS_ROOT/.snapshots or, more precisely, the subvolume path is $BTRFS_ROOT/.snapshots/$SNAPHOST_ID/snapshot. See this [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1458872#p1458872).
+See [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") and [Systemd#Drop-in_snippets](/index.php/Systemd#Drop-in_snippets "Systemd").
+
+## Take a snapshot manually
+
+To take a snapshot of a subvolume manually, do:
+
+```
+ # snapper -c *config* create --description *description*
+
+```
+
+where *config* is the snapper configuration file corresponding with the subvolume you wish to take the snapshot of.
+
+## List snapshots
+
+To list snapshots taken for a given configuration *config* do:
+
+```
+ # snapper -c *config* list
+
+```
 
 ## Access for non-root users
 
@@ -139,22 +149,35 @@ Eventually, you want to be able to browse the `.snapshots` directory with a user
 
 ```
 
-## Periodic launch without cron
+## Tips and tricks
 
-If you haven't installed `cronie`, the cron jobs will never be launched. However, you can benefit from the systemd timers installed along with snapper.
+### Pacman
 
-To start the timeline timer:
+There are several methods for automatically creating snapshots upon a pacman transaction.
 
+#### Using a hook to automatically create a snapshot on pacman transaction
+
+The following adds a hook for pacman to create a snapshot for the root configuration using snapper just before an upgrade, install, or removal occurs:
+
+ `/usr/share/libalpm/hooks/snapshot.hook` 
 ```
-# systemctl start snapper-timeline.timer
+[Trigger]
+Operation = Upgrade
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
 
+[Action]
+Description = Btrfs snapshot before a transaction
+Depends = snapper
+When = PreTransaction
+Exec = /usr/bin/snapper -c root create --description "pacman transaction"
 ```
 
-You may also want to start `snapper-cleanup.timer`, and perhaps enable them, so that they start during boot.
+See the man page for `alpm-hooks` for more options.
 
-## Tips and Tricks
-
-### Pre-post snapshots with pacman
+#### Using a script and alias to create pre/post snapshots on a pacman transaction
 
 Snapper can create snapshots "tagged" as pre or post snapshots. This is handy when it comes to system upgrades. Using `NUMBER_CLEANUP="yes"` those can get cleaned up after a configurable number of snapshots using the number cleanup algorithm - see `man snapper` and `man snapper-configs` for details.
 
@@ -181,7 +204,7 @@ $ sysupgrade
 
 ```
 
-### Wrapping upgrades in pre-post snapshots
+#### Using pacupg to wrap pacman transactions in snapshots
 
 [Pacupg](https://aur.archlinux.org/packages/Pacupg/) is a script specifically designed to wrap a system upgrade in snapshots. In contrast with the above solution, it downloads the packages first (`pacman -Syuw`) and then only wraps the upgrade (`pacman -Su`) in snapshots so as to keep the differences between the pre and post snapshots to a minimum. It also detects if the user's `/boot` directory is on a separate partition and automatically makes a copy of it when it detects an upgrade to the Linux kernel. Additionally, it will avoid taking snapshots if there is nothing to upgrade and log all upgraded packages (with changed version numbers) to `/var/local/log/pacupg`. If [pacaur](https://aur.archlinux.org/packages/pacaur/) is installed, the script can also upgrade AUR packages. It builds them first, then takes a snapshot when they are ready to be installed thus keeping the pre-post snapshot differences minimal. As with regular packages, it logs all upgraded packages and will avoid taking snapshots if no packages are available to upgrade. The script now integrates with [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/). If it is installed, `pacupg` will automatically regenerate your grub.cfg after every upgrade to include your snapshots as boot options.
 
@@ -194,14 +217,14 @@ As of version 0.0.9 snapper can run commands wrapped in pre-post-snapshots:
 
 See also the "How do I add pre and post hooks (like YaST)?" section in the official FAQ: [http://snapper.io/faq.html](http://snapper.io/faq.html)
 
-#### Easing the rollback process
-
 The [pacupg](https://aur.archlinux.org/packages/pacupg/) script also allows for the easy rollback of snapshots. Running `pacupg -r` will bring up a menu that allows the user to rollback both pre-post snapshots (upgrades) or single snapshots (timeline snapshots).
 
-### Suggested Filesystem Layout
+### Suggested filesystem layout
+
+Here is a suggested file system layout for easily restoring your `/` to a previous snapshot:
 
 ```
-subvolid=0
+subvolid=5
    |
    ├── subvol_root
    |       |
@@ -219,140 +242,69 @@ subvolid=0
 
 ```
 
-Where /.snapshots is a mountpoint for subvol_snapshots, and subvol_... is any number of subvolumes - one for every directory that you:
+Where `/.snapshots` is a mountpoint for `subvol_snapshots`. `subvol_...` are subvolumes that you want to keep separate from the subvolume you'll be mounting as `/` (`subvol_root`). When taking a snapshot of `/`, these other subvolumes are not included. However, you can still snapshot these other subvolumes separately by creating other snapper configurations for them. Additionally, if you were to restore your system to a previous snapshots of `/`, these other subvolumes will remain unaffected.
 
-*   Do NOT wish for snapper to backup
-*   Do NOT wish to lose the contents of when you restore an entire system from a snapshot
+For example if you want to be able restore `/` to a previous snapshot but keep your `/home` intact, you should create a subvolume that will be mounted at `/home`. See [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
 
-This layout allows the snapper utility to take regular system snapshots, while at the same time making it easy to restore the entire system from an Arch Live CD if it becomes unbootable.
+This layout allows the snapper utility to take regular snapshots of `/`, while at the same time making it easy to restore `/` from an Arch Live CD if it becomes unbootable.
 
 In this sceneario, after the initial setup, snapper needs no changes, and will work as expected.
 
-#### Configuring Snapper
+**Note:** Even if a subvolume is nested below `subvol_root`, a snapshot of `/` will *not* include it. Be sure to set up snapper for any additional subvolumes you want to keep snapshots of besides the one mounted at `/`.
 
-Add this line to your /etc/fstab:
+#### Configuration of snapper and mount point
 
-```
-UUID=...        /.snapshots             btrfs   ...,subvol=subvol_snapshots    0       0
+Make sure `/.snapshots` does *not* exist. Then [#Create a new configuration](#Create_a_new_configuration) for `/`.
 
-```
-
-This will make all snapshots that snapper creates be stored outside of the subvol_root subvolume, so that subvol_root can easily be replaced anytime without losing the snapper snapshots.
-
-Now, because snapper does not like /.snapshots to already exist when you run `snapper -c root create-config /`, do this:
-
-Make sure /.snapshots does NOT exist
-
-Create snapper config:
+Now that snapper is happy, delete the `/.snapshots` subvolume:
 
 ```
-# snapper -c root create-config /
+ # btrfs subvolume delete /.snapshots
 
 ```
 
-Now that snapper is happy, delete /.snapshots subvolume:
+Create the `/.snapshots` folder to use as a mount point. Give the folder `750` [permissions](/index.php/Permissions#Numeric_method "Permissions").
+
+Now [mount](/index.php/Mount "Mount") `subvol_snapshots` to `/.snapshots`. For example, for a file system located on `/dev/sda1`:
 
 ```
-# btrfs subvolume delete /.snapshots
-
-```
-
-Create the /.snapshots folder to use as a mountpoint:
-
-```
-# mkdir /.snapshots
-# chmod 750 /.snapshots
+ # mount -o subvol=subvol_snapshots /dev/sda1 /.snapshots
 
 ```
 
-Mount subvol_snapshots at /.snapshots
+To make this mount permanent, add an entry to your [fstab](/index.php/Fstab "Fstab").
+
+This will make all snapshots that snapper creates be stored outside of the `subvol_root` subvolume, so that `subvol_root` can easily be replaced anytime without losing the snapper snapshots.
+
+#### Restoring `/` to a previous snapshot of `subvol_root`
+
+If you ever want to restore `/` using one of snapper's snapshots, first boot into a live Arch Linux USB/CD.
+
+[Mount](/index.php/Mount "Mount") the toplevel subvolume (subvolid=5). That is, omit any `subvolid` mount flags.
+
+Find the snapshot you want to recover in `/mnt/subvol_snapshots/*/info.xml`.
+
+**Tip:** You can use `vi` to easily browse through each file:
+```
+ # vi /mnt/subvol_snapshots/*/info.xml
 
 ```
-# mount /.snapshots
+Use `:n` to see the next file and `:rew` to go back to the first file.
 
-```
+Browse through the `<description>` tags and the `<date>` tags, and when you find the snapshot you wish to restore, remember the `<num>` number.
 
-**Note:** Since /.snapshots will be in your /etc/fstab at this point, you do not need to specify the device
-
-#### Restoring the entire system
-
-If you ever want to restore your entire system using one of snapper's snapshots, follow this procedure:
-
-Boot Arch live CD
-
-Mount btrfs device (subvolid=0):
-
-```
-# mount /dev/sdX /mnt
-
-```
-
-Find the snapshot you want to recover:
-
-```
-# vi /mnt/subvol_snapshots/*/info.xml
-
-```
-
-**Note:** Here, you can read the `<description>` tag and the `<date>` tag, and when you find it, remember the `<num>` number
-
-**Note:** In vi, use `:n` to see the next file, `:rew` to go back to the first file, and `:q` to quit
-
-Delete or move the root subvolume:
-
-```
-# mv /mnt/subvol_root /mnt/subvol_root.broken
-
-```
-
-**Note:** If you want to delete it instead, remember to use `btrfs subvol delete subvol_root` since subvolumes can't be deleted with rm like folders can
+Now, move `subvol_root` to another location (*e.g.* `/subvol_root.broken`) to save a copy of the current system. Alternatively, simply delete `subvol_root` using `btrfs subvolume delete`.
 
 Create a read-write snapshot of the read-only snapshot snapper took:
 
 ```
-# btrfs subvol snapshot /mnt/subvol_snapshots/#/snapshot /mnt/subvol_root
+ # btrfs subvol snapshot /mnt/subvol_snapshots/*#*/snapshot /mnt/subvol_root
 
 ```
 
-**Note:** Where `#` is the number of the snapper snapshot you found earlier using vi
-
-Unmount the btrfs device and reboot:
-
-```
-# umount /mnt
-# reboot
-
-```
+Where *#* is the number of the snapper snapshot you wish to restore. Your `/` has now been restore to the previous snapshot. Now just simply reboot.
 
 For a more detailed description of the problem this layout solves, see: [https://bbs.archlinux.org/viewtopic.php?id=194491](https://bbs.archlinux.org/viewtopic.php?id=194491)
-
-### Changing the default snapshot interval
-
-The default snapshot interval of one hour can be changed by overriding the systemd timer units, `snapper-cleanup.timer` and `snapper-timeline.timer`. The easiest way to do so is to use `systemctl edit snapper-{cleanup,timeline}.timer`. This will open the default editor with an empty file for overriding values in the respective unit file.
-
-For the `snapper-cleanup.timer` unit, the item might look like this:
-
-```
- [Timer]
- OnUnitActiveSec=1h
-
-```
-
-This means that instead of daily, the `snapper-cleanup.service` will run every hour from now on.
-
-The `snapper-timeline.timer` unit can be overriden like this:
-
-```
- [Timer]
- OnCalendar=*:0/5
-
-```
-
-This means that the `snapper-timeline.service` will now run every five minutes, hence creating 12 snapshots per hour.
-
-For the timeline cleanup algorithm the value of `TIMELINE_LIMIT_HOURLY` now means how many 5-minute snapshots should be kept.
-
-You can find more information in the `systemd.timers` and `systemd.time` manpages, and also on the [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") page. Information about overriding unit files is in [Systemd#Drop-in snippets](/index.php/Systemd#Drop-in_snippets "Systemd").
 
 ### Deleting files from snapshots
 
@@ -366,7 +318,7 @@ Snapper writes all activity to `/var/log/snapper.log` - check this file first if
 
 If you have issues with hourly/daily/weekly snapshots, the most common cause for this so far has been that the cronie service (or whatever cron daemon you are using) was not running.
 
-### IO Error
+### IO error
 
 If you get an 'IO Error' when trying to create a snapshot please make sure that the [.snapshots](https://bbs.archlinux.org/viewtopic.php?id=164404) directory associated to the subvolume you are trying to snapshot is a subvolume by itself.
 

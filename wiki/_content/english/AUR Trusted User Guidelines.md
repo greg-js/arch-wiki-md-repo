@@ -1,4 +1,4 @@
-**Trusted Users (TU)** are members of the community charged with keeping the AUR in working order. They maintain popular packages ([communicating with and sending patches upstream as needed](https://mailman.archlinux.org/pipermail/aur-general/2010-September/010649.html)), and votes in administrative matters. A TU is elected from active community members by current TUs in a democratic process. TUs are the only members who have a final say in the direction of the AUR.
+**Trusted Users (TU)** are members of the community charged with keeping the AUR in working order. They maintain popular packages ([communicating with and sending patches upstream as needed](https://mailman.archlinux.org/pipermail/aur-general/2010-September/010649.html)), and vote in administrative matters. A TU is elected from active community members by current TUs in a democratic process. TUs are the only members who have a final say in the direction of the AUR.
 
 The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html)
 

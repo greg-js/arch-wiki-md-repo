@@ -267,9 +267,9 @@ From [kernel documentation](https://www.kernel.org/doc/Documentation/networking/
 
 To use bonding with netctl, additional package from official repositories is required: [ifenslave](https://www.archlinux.org/packages/?name=ifenslave).
 
-Copy `/etc/netctl/examples/bonding` to `/etc/netctl/bonding` and edit it, for example:
+Copy `/etc/netctl/examples/bonding` to `/etc/netctl/bond0` and edit it, for example:
 
- `/etc/netctl/bonding` 
+ `/etc/netctl/bond0` 
 ```
 Description='Bond Interface'
 Interface='bond0'
@@ -279,10 +279,10 @@ IP=dhcp
 IP6=stateless
 ```
 
-Now you can disable your old configuration and set *bonding* to be started automatically. Switch to the new profile, for example:
+Now you can disable your old configuration and set *bond0* to be started automatically. Switch to the new profile, for example:
 
 ```
-# netctl switch-to bonding
+# netctl switch-to bond0
 
 ```
 

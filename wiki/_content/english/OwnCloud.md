@@ -94,8 +94,6 @@ Then, after enabling APCu, add the following directive to `/etc/webapps/owncloud
 
 **Note:** Make sure to add `apc.enable_cli=1` under the `[apc]` portion of your [PHP configuration](/index.php/PHP#Configuration "PHP") and uncomment `extension=apcu.so` in `/etc/php/conf.d/apcu.ini`. As of 2015-07-12, [several](https://github.com/owncloud/core/issues/17329#issuecomment-119248944) [things](https://github.com/owncloud/documentation/issues/1233#issuecomment-120664134) won't work properly without it.
 
-**Note:** As of 2016-01-04 and OwnCloud 8.2.2, the "APCu Backwards Compatibility Module" is still needed and provided by [php-apcu-bc](https://www.archlinux.org/packages/?name=php-apcu-bc). You need to add `extension=apc.so` AFTER `extension=apcu.so` in `/etc/php/conf.d/apcu.ini`
-
 See [the official documentation](https://doc.owncloud.org/server/8.1/admin_manual/configuration_server/config_sample_php_parameters.html#memory-caching-backend-configuration).
 
 #### Exif support
@@ -200,7 +198,7 @@ If you would like to have ownCloud run in a subdirectory, then edit the `/etc/ht
 
 *ownCloud* official documentation uses [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) for [PHP](/index.php/PHP "PHP") and as such it is the best supported configuration. See [Nginx#PHP implementation](/index.php/Nginx#PHP_implementation "Nginx") to set up *php-fpm* and [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") to acquire and/or set up a TLS certificate.
 
-By default, the only things you need to change from the [recommended server configuration](https://doc.owncloud.org/server/8.2/admin_manual/installation/nginx_configuration.html) for ownCloud to run on Arch Linux are the `server_name`, `ssl_certificate`, `ssl_certificate_key`, `root` and `fastcgi_pass` directives:
+By default, the only things you need to change from the [recommended server configuration](https://doc.owncloud.org/server/9.0/admin_manual/installation/nginx_configuration.html) for ownCloud to run on Arch Linux are the `server_name`, `ssl_certificate`, `ssl_certificate_key`, `root` and `fastcgi_pass` directives:
 
  `/etc/nginx/nginx.conf` 
 ```
@@ -374,7 +372,7 @@ php-index = index.php
 
 ; set php configuration for this instance of php, no need to edit global php.ini
 php-set = date.timezone=Etc/UTC
-php-set = open_basedir=/tmp/:/usr/share/webapps/owncloud:/etc/webapps/owncloud:/dev/urandom
+;php-set = open_basedir=/tmp/:/usr/share/webapps/owncloud:/etc/webapps/owncloud:/dev/urandom
 php-set = expose_php=false
 ; avoid security risk of leaving sessions in world-readable /tmp
 php-set = session.save_path=/usr/share/webapps/owncloud/data
@@ -383,9 +381,6 @@ php-set = session.save_path=/usr/share/webapps/owncloud/data
 php-set = upload_max_filesize=513M
 php-set = post_max_size=513M
 php-set = memory_limit=512M
-php-set = mbstring.func_overload=0
-php-set = always_populate_raw_post_data=-1
-php-set = default_charset='UTF-8'
 php-set = output_buffering=off
 
 ; load all extensions only in this instance of php, no need to edit global php.ini
@@ -425,20 +420,20 @@ php-set = zend_extension=opcache.so
 ; user cache
 ; provided by php-acpu, to be enabled **either** here **or** in /etc/php/conf.d/apcu.ini
 php-set = extension=apcu.so
-; provided by php-apcu-bc
-php-set = extension=apc.so
 ; per https://github.com/krakjoe/apcu/blob/simplify/INSTALL
 php-set = apc.ttl=7200
 php-set = apc.enable_cli=1
 
-cron = -3 -1 -1 -1 -1 /usr/bin/php -f /usr/share/webapps/owncloud/cron.php 1>/dev/null
+cron2 = minute=-15,unique=1 /usr/bin/php -f /usr/share/webapps/owncloud/cron.php 1>/dev/null
 
 ```
 
 **Note:**
 
 *   Do not forget to set your timezone and uncomment the required database connector in the uWSGI config file
-*   Starting with PHP 7, the [open_basedir](/index.php/PHP#Configuration "PHP") directive is [no longer set by default](https://www.archlinux.org/news/php-70-packages-released/) to keep in line with upstream, but is left here as a security feature. Feel free to comment it out if you feel otherwise.
+*   Starting with PHP 7, the [open_basedir](/index.php/PHP#Configuration "PHP") directive is [no longer set by default](https://www.archlinux.org/news/php-70-packages-released/) to keep in line with upstream. A commented out version functional until at least OC 8.2 has been left in the config for users wishing to harden security. Be aware that it may [occasionally break things](https://github.com/owncloud/core/search?q=open_basedir&type=Issues&utf8=%E2%9C%93).
+
+**Warning:** The way the [ownCloud background job](https://doc.owncloud.org/server/9.0/admin_manual/configuration_server/background_jobs_configuration.html) is currently set up with [uWSGI cron](https://uwsgi-docs.readthedocs.org/en/latest/Cron.html) will make use of the default global configuration from `/etc/php/php.ini`. This means that none of the specific parameters defined (e.g. required modules) will be enabled, [leading to various issues](https://github.com/owncloud/core/issues/12678#issuecomment-66114448). One solution is to copy `/etc/php/php.ini` to e.g. `/etc/uwsgi/cron-php.ini`, make the required modifications there (mirroring `/etc/uwsgi/owncloud.ini` parameters) and referencing it in the cron directive by adding the `-c /etc/uwsgi/cron-php.ini` option to *php* invocation.
 
 #### Activation
 

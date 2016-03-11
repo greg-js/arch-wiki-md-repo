@@ -34,8 +34,6 @@
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [dkms](https://www.archlinux.org/packages/?name=dkms).
 
-[Включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу `dkms`. Модули DKMS автоматически пересоберуться после обновления ядра и перезагрузки.
-
 Значительное число модулей, не включенных в ядро, имеют DKMS вариант; некоторые из них размещаются в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"), но большинство из них можно найти только в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"). Ниже перечислены пакеты, которые имеют DKMS версию:
 
 *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"): [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)

@@ -10,7 +10,8 @@
     *   [2.4 Colors](#Colors)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Keyboard](#Keyboard)
-        *   [3.1.1 Backspace not working properly](#Backspace_not_working_properly)
+        *   [3.1.1 DEL-Key not working properly in some Application](#DEL-Key_not_working_properly_in_some_Application)
+        *   [3.1.2 Backspace not working properly](#Backspace_not_working_properly)
     *   [3.2 Vim](#Vim)
         *   [3.2.1 The background colour of text in *vim* will not fill in anything that is not a character](#The_background_colour_of_text_in_vim_will_not_fill_in_anything_that_is_not_a_character)
 *   [4 See also](#See_also)
@@ -121,6 +122,15 @@ The values refer to the `*colorname[]` array in the same file, you can use defau
 ## Troubleshooting
 
 ### Keyboard
+
+#### DEL-Key not working properly in some Application
+
+add following to *~/.inputrc* or */etc/inputrc*:
+
+```
+ set enable-keypad on
+
+```
 
 #### Backspace not working properly
 

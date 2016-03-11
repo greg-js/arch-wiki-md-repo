@@ -74,7 +74,7 @@ systemctl restart org.cups.cupsd.service
 
 ```
 
-You can avahi-discover find the name of your printer and its address (ex. Address: BRN30055C6B4C7A.local/10.10.0.155:631) or just add .local to the hostname cups was using (ex. BRN30055C6B4C7A.local). Double check that everything is working with ping:
+You can use avahi-discover find the name of your printer and its address (ex. Address: BRN30055C6B4C7A.local/10.10.0.155:631) or just add .local to the hostname cups was using (ex. BRN30055C6B4C7A.local). Double check that everything is working with ping:
 
 ```
 ping XXXXXX.local

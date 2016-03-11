@@ -246,7 +246,7 @@ To enable IOMMU:
 1.  Ensure that AMD-Vi/Intel VT-d is supported by the CPU and is enabled in the BIOS settings.
 2.  Add `intel_iommu=on` if you have an Intel CPU or `amd_iommu=on` if you have an AMD CPU, to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 3.  Reboot and ensure IOMMU is enabled by checking `dmesg` for `DMAR`: `[0.000000] DMAR: IOMMU enabled`
-4.  Add `iommu=on` as *option*.
+4.  Add `iommu=on` or `q35,iommu=on` depending on the `-machine`, as *option*.
 
 ## Moving data between host and guest OS
 

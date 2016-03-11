@@ -153,12 +153,11 @@ location /webmail {
         }
         #Roundcube fastcgi config
         location ~ /webmail(/.*\.php)$ {
-                set $valid_fastcgi_script_name $1;
                 include fastcgi_params;
                 fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
                 fastcgi_split_path_info ^(.+.php)(/.*)$;
                 fastcgi_index index.php;
-                fastcgi_param SCRIPT_FILENAME /usr/share/webapps/roundcubemail/$valid_fastcgi_script_name;
+                fastcgi_param SCRIPT_FILENAME /usr/share/webapps$fastcgi_script_name;
                 fastcgi_param PHP_VALUE open_basedir="/tmp/:/var/cache/roundcubemail:/usr/share/webapps/roundcubemail:/etc/webapps/roundcubemail:/usr/share/pear/:/var/log/roundcubemail";
         }
 }

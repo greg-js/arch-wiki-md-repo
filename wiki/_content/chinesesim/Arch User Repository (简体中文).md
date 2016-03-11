@@ -314,7 +314,7 @@ $ git clone --depth=1 git://pkgbuild.com/aur-mirror.git
 
 ## AUR translation
 
-参阅 [TRANSLATING](https://projects.archlinux.org/aurweb.git/tree/TRANSLATING) 获得关于创建和维护AUR web界面翻译的详细信息.
+参阅 [i18n.txt](https://projects.archlinux.org/aurweb.git/tree/doc/i18n.txt) 获得关于创建和维护AUR web界面翻译的详细信息.
 
 ## FAQ
 

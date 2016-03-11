@@ -13,7 +13,7 @@ From [Wikipedia article](https://en.wikipedia.org/wiki/Netbeans "wikipedia:Netbe
         *   [2.1.2 Java Generally](#Java_Generally)
     *   [2.2 Look and feel](#Look_and_feel)
     *   [2.3 Maven problems with small tmpfs](#Maven_problems_with_small_tmpfs)
-*   [3 Integrate with tomcat](#Integrate_with_tomcat)
+*   [3 Integrate with the Apache Tomcat Servlet Container](#Integrate_with_the_Apache_Tomcat_Servlet_Container)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 OpenJDK vs Sun's JDK](#OpenJDK_vs_Sun.27s_JDK)
     *   [4.2 Glassfish server - Can`t download Glassfish server I/O Exception](#Glassfish_server_-_Can.60t_download_Glassfish_server_I.2FO_Exception)
@@ -50,27 +50,42 @@ To add dark look and feels install the Dark Look And Feel Themes plugin via Tool
 
 If your system has a small tmpfs partition you will have problems unpacking the maven index (will continue downloading again after failing to unpack). To remedy this add `netbeans_default_options="-J-client -J-Xss2m -J-Xms32m -J-XX:PermSize=32m -J-Dapple.laf.useScreenMenuBar=true -J-Dapple.awt.graphics.UseQuartz=true -J-Dsun.java2d.noddraw=true -J-Dsun.java2d.dpiaware=true -J-Dsun.zip.disableMemoryMapping=true -J-Djava.io.tmpdir=/path/to/tmp/dir"` to the end of your netbeans.conf file.
 
-## Integrate with tomcat
+## Integrate with the Apache Tomcat Servlet Container
 
-It is possible to debug web applications running on tomcat within netbeans:
+It is possible to debug web applications running on [Tomcat](/index.php/Tomcat "Tomcat") from within Netbeans, using stock Arch packages for both Netbeans and Tomcat. While this section is written for `tomcat7`, this applies to all versions of Tomcat currently in the repositories. (To check which are available, run `pacman -Ss tomcat`)
 
-First install [tomcat](/index.php/Tomcat "Tomcat").
+*   First install your desired version of Tomcat, such as `pacman -S tomcat7` (see also [Tomcat](/index.php/Tomcat "Tomcat")).
+*   While you can modify the configuration files in `/etc/tomcat7` to work with Netbeans debugging, it is recommended you create local copies and use those instead. That way, you still can run Tomcat as an ongoing system service, while debuggging with a different instance:
+    *   Pick a location for the local configuration files, such as `~/.tomcat7` and create that directory.
+    *   Copy `/etc/tomcat7/` to `~/.tomcat7/conf`, e.g. `sudo cp -r /etc/tomcat7 ~/.tomcat7/conf` and `sudo chown -R $(id -un):$(id -gn) ~/.tomcat7`
+    *   Clean up the Tomcat users and permission file, so Netbeans can insert what it needs. Edit `~/.tomcat7/conf/tomcat-users.xml` to like this without any user and role information in it:
 
-You will need to create a configuration and deployment folder for your user, for example in `~/.tomcat7`.
+```
+<?xml version='1.0' encoding='utf-8'?>
+ <tomcat-users xmlns="http://tomcat.apache.org/xml"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
+               version="1.0">
+ </tomcat-users>
 
-Copy `/etc/tomcat7/` in `~/.tomcat7/conf`.
+```
 
-Make sure to configure `~/.tomcat7/conf/tomcat-users.xml` with a user having tomcat admin permissions so that netbeans can deploy applications.
+*   Make the "manager" app accessible from your local configuration: `mkdir ~/.tomcat7/webapps` and `ln -s /var/lib/tomcat7/webapps/manager ~/.tomcat7/webapps/manager`
+*   Provide a temp directory: `mkdir ~/.tomcat7/temp`
+*   If needed, change the port at which Tomcat runs by editing `~/.tomcat7/conf/server.xml`
+*   Have Tomcat write its logs somewhere else than `/var/log/tomcat7`
+*   Unfortunately, Netbeans refuses to continue unless you make file `/etc/tomcat7/server.xml` readable to it. So `sudo chmod 644 /etc/tomcat7/server.xml` temporarily, and change it back later.
 
-Copy `/var/lib/tomcat7/webapps` to `~/.tomcat7/webapps`.
+Then, in Netbeans:
 
-Then, in Netbeans go to Tools>Servers>Add Server and select Apache Tomcat.
+*   Go to "Tools>Servers>Add Server" and select Apache Tomcat. Click "Next".
+*   In "server location", specify `/usr/share/tomcat7`
+*   Check "Use Private Configuration Folder (Catalina Base)" and specify the full path to directory `~/.tomcat7`. This must be the full path, as Netbeans does not recognize the meaning of `~`.
+*   Finally, pick a username and password. Check "Create user if it does not exist". This will configure Netbeans, but also add the user information to the `tomcat-users.xml` file.
 
-In server location specify `/usr/share/tomcat7`
+Done.
 
-Check "Use Private Configuration Folder (Catalina Base)" and specify `~/.tomcat7`.
-
-Finally, set the username and password you configured in `/etc/tomcat7/tomcat-users.xml`.
+Note that this local instance of Tomcat will write its logs to `~/.tomcat7/logs`, not `/var/log/tomcat7`.
 
 ## Troubleshooting
 

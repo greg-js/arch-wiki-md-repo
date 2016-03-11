@@ -37,21 +37,11 @@ This comprises both the [Enlightenment](https://www.enlightenment.org/) [window 
 
 Enlightenment can be [installed](/index.php/Installed "Installed") with the package [enlightenment](https://www.archlinux.org/packages/?name=enlightenment).
 
-Due to the slow updates of the E*-applications and libraries in the offical repository there is a summary of *-fresh packages in the AUR. If you want to use the up-to-date version of the E-software install [enlightenment-fresh](https://aur.archlinux.org/packages/enlightenment-fresh/).
-
 You might also want to install [terminology](https://www.archlinux.org/packages/?name=terminology), which is an EFL-based terminal emulator that integrates well with Enlightenment.
 
 #### From the AUR
 
 **Warning:** Some of these PKGBUILDs use unstable development code. Use them at your own risk.
-
-Stable and up-to-date packages in the AUR:
-
-*   [enlightenment-fresh](https://aur.archlinux.org/packages/enlightenment-fresh/) - Enlightenment window manager - updated stable version
-*   [elementary-fresh](https://aur.archlinux.org/packages/elementary-fresh/) - Enlightenment's widget set - updated stable version
-*   [efl-fresh](https://aur.archlinux.org/packages/efl-fresh/) - Enlightenment Foundation Libraries - updated stable version
-*   [emotion_generic_players-fresh](https://aur.archlinux.org/packages/emotion_generic_players-fresh/) - EFL emotion generic players - updated stable version
-*   [evas_generic_loaders-fresh](https://aur.archlinux.org/packages/evas_generic_loaders-fresh/) - Additional generic loaders for Evas - updated stable version
 
 Development PKGBUILDs which download and install the very latest development code are available as [enlightenment-git](https://aur.archlinux.org/packages/enlightenment-git/) and its dependencies.
 
@@ -77,6 +67,7 @@ The following are EFL-based applications, most in an early stage of development 
 *   [e_cho-git](https://aur.archlinux.org/packages/e_cho-git/) – E_Cho simon style game
 *   [e_jeweled-git](https://aur.archlinux.org/packages/e_jeweled-git/) – E_Jeweled bejeweled style game
 *   [rage](https://aur.archlinux.org/packages/rage/) and [rage-git](https://aur.archlinux.org/packages/rage-git/) – Rage video player
+*   [jesus-git](https://aur.archlinux.org/packages/jesus-git/) – A filemanager based on Elementary and EFL
 
 ### Starting Enlightenment
 

@@ -35,9 +35,11 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. It provides the DDX driver for 2D acceleration and it pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency, providing the DRI driver for 3D acceleration.
+You can optionally [install](/index.php/Install "Install") the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. It provides the DDX driver for 2D acceleration and also pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency, providing the DRI driver for 3D acceleration.
 
 To enable OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl). If you are on x86_64 and need 32-bit support, also install [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) from the [multilib](/index.php/Multilib "Multilib") repository.
+
+For [Vulkan](/index.php/Vulkan "Vulkan") support you can install [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) on Ivy-Bridge or newer GPUs.
 
 Follow [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") for hardware-accelerated video processing; on older GPUs, this is provided instead by the [XvMC](/index.php/XvMC "XvMC") driver, which is included with the DDX driver.
 
@@ -182,6 +184,7 @@ See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686
 *   This option may not work when `SwapbuffersWait` is `false`.
 *   This option is problematic for applications that are very picky about vsync timing, like [Super Meat Boy](https://en.wikipedia.org/wiki/Super_Meat_Boy "wikipedia:Super Meat Boy").
 *   This option does not work with UXA acceleration method, only with SNA.
+*   This option shouldn't be needed when DRI3 is enabled.
 
 ### Disable Vertical Synchronization (VSYNC)
 

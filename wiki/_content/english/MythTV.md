@@ -16,7 +16,7 @@ MythTV is an application suite designed to provide an amazing multimedia experie
     *   [5.2 Troubleshooting](#Troubleshooting)
         *   [5.2.1 XvMCW](#XvMCW)
         *   [5.2.2 PVR150](#PVR150)
-        *   [5.2.3 TurboSight TBS 6281](#TurboSight_TBS_6281)
+        *   [5.2.3 Opening DVB frontend device failed](#Opening_DVB_frontend_device_failed)
 *   [6 Frontend setup](#Frontend_setup)
     *   [6.1 Nvidia XvMC Setup](#Nvidia_XvMC_Setup)
 *   [7 MythTV Plugins](#MythTV_Plugins)
@@ -239,9 +239,9 @@ If you get a libXvMCW.so.1 shared library error, [install](/index.php/Install "I
 
 If you cannot open /dev/video0 of your PVR150, install the firmware, located in the [ivtv-utils](https://www.archlinux.org/packages/?name=ivtv-utils) package.
 
-#### TurboSight TBS 6281
+#### Opening DVB frontend device failed
 
-The kernel takes time to register TurboSight TBS 62x1's adapters and they may not be available when systemd starts `mythbackend.service`. This leads to the following error recorded in the system logs:
+The kernel takes time to register the frontend devices (such as those of TurboSight TBS 62x1) and they may not be available when systemd starts `mythbackend.service`. This leads to the following error recorded in the system log:
 
 ```
 # DVBChan[1](/dev/dvb/adapter0/frontend0): Opening DVB frontend device failed.
@@ -252,14 +252,30 @@ The kernel takes time to register TurboSight TBS 62x1's adapters and they may no
 
 ```
 
-The solution consists in starting the `mythbackend.service` once `udevd` settled. Override systemd's defaults by [creating](/index.php/Edit "Edit") the file `/etc/systemd/system/mythbackend.service.d/override.conf` with the following content:
+The solution consists in starting the `mythbackend.service` only after the devices are available:
+
+*   [Create](/index.php/Edit "Edit") file `/etc/udev/rules.d/99-mythbackend.rules`:
+
+```
+#
+# Create systemd device units for capture devices
+#
+SUBSYSTEM=="video4linux", TAG+="systemd"
+SUBSYSTEM=="dvb", TAG+="systemd"
+SUBSYSTEM=="firewire", TAG+="systemd"
+
+```
+
+*   Override systemd's defaults by [creating](/index.php/Edit "Edit") file `/etc/systemd/system/mythbackend.service.d/override.conf`:
 
 ```
 # [Unit]
-# After=systemd-udev-settle.service
-# Wants=systemd-udev-settle.service
+# After=dev-dvb-adapter0-frontend0.device
+# Wants=dev-dvb-adapter0-frontend0.device
 
 ```
+
+See MythTV wiki's page [Systemd mythbackend Configuration](https://www.mythtv.org/wiki/Systemd_mythbackend_Configuration#Delay_starting_the_backend_until_tuners_have_initialized) for further details.
 
 ## Frontend setup
 

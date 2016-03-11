@@ -28,7 +28,9 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [docker](https://www.archlinux.org/packages/?name=docker) package or, for the i686 architecture, the [docker-git](https://aur.archlinux.org/packages/docker-git/) package. You may need to reboot. Next [start](/index.php/Start "Start") `docker.service` and verify operation:
+**Note:** Docker doesn't support i686\. [[1]](https://github.com/docker/docker/issues/136)
+
+[Install](/index.php/Install "Install") the [docker](https://www.archlinux.org/packages/?name=docker) package or, for the development version, the [docker-git](https://aur.archlinux.org/packages/docker-git/) package. You may need to reboot. Next [start](/index.php/Start "Start") and enable `docker.service` and verify operation:
 
 ```
 # docker info
@@ -109,7 +111,7 @@ ListenStream=0.0.0.0:2375
 
 Since version 0.9.0 Docker provides a new way to start containers without relying on a LXC library called *libcontainer*.
 
-The lxc exec driver and the -lxc-conf option may also be removed in the near future, [[1]](https://github.com/docker/docker/pull/5797)
+The lxc exec driver and the -lxc-conf option may also be removed in the near future, [[2]](https://github.com/docker/docker/pull/5797)
 
 Hence, you will not be able to use `lxc-attach` with containers managed by Docker 0.9.0+ by default. It is required to make Docker daemon run with `-e lxc` as an argument.
 

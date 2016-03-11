@@ -29,22 +29,17 @@ The [aura](https://aur.archlinux.org/packages/aura/) source package requires Has
 
 ### Auto-prompt for sudo
 
-Aura will not prompt for elevated privileges by default. If you'd like it do so (like some other AUR helpers) you can write a wrapper script to re-try aura with sudo when needed. The following creates a function `a` that wraps `aura`:
+Aura will not prompt for elevated privileges by default. If you'd like it do so (like some other AUR helpers) you can write a [function](/index.php/Bash/Functions "Bash/Functions") to elevate aura with sudo when needed:
 
 ```
-function a(){
-    AURA="$(aura "$@")"
-
-    if echo "$AURA" | grep -q '^aura >>= .*You have to use `.*sudo.*` for that.*$'
-    then
-        sudo aura "$@"
-    else
-        echo "$AURA"
-    fi
+function a() {
+  if ! LC_MESSAGES=C aura "$@" > >(tee aura.out); then
+    egrep -q '^aura >>=.+sudo.+' aura.out && sudo aura "$@"
+  fi
 }
 ```
 
-Either add this function to your corresponding rc/profile or as a stand-alone script on your PATH.
+See [[1]](https://github.com/aurapm/aura/issues/394).
 
 ## Troubleshooting
 

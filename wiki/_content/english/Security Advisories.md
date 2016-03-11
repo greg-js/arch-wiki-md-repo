@@ -35,6 +35,13 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### Mars 2016
 
+*   [11 March 2016] [ASA-201603-10](https://lists.archlinux.org/pipermail/arch-security/2016-March/000575.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) arbitrary code execution
+*   [10 March 2016] [ASA-201603-9](https://lists.archlinux.org/pipermail/arch-security/2016-March/000574.html) [perl](https://www.archlinux.org/packages/?name=perl) improper input validation
+*   [10 March 2016] [ASA-201603-8](https://lists.archlinux.org/pipermail/arch-security/2016-March/000573.html) [exim](https://www.archlinux.org/packages/?name=exim) privilege escalation
+*   [9 March 2016] [ASA-201603-7](https://lists.archlinux.org/pipermail/arch-security/2016-March/000572.html) [bind](https://www.archlinux.org/packages/?name=bind) denial of service
+*   [9 March 2016] [ASA-201603-6](https://lists.archlinux.org/pipermail/arch-security/2016-March/000571.html) [libotr](https://www.archlinux.org/packages/?name=libotr) arbitrary code execution
+*   [9 March 2016] [ASA-201603-5](https://lists.archlinux.org/pipermail/arch-security/2016-March/000570.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
+*   [9 March 2016] [ASA-201603-4](https://lists.archlinux.org/pipermail/arch-security/2016-March/000569.html) [firefox](https://www.archlinux.org/packages/?name=firefox) multiple issues
 *   [7 March 2016] [ASA-201603-3](https://lists.archlinux.org/pipermail/arch-security/2016-March/000568.html) [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl) multiple issues
 *   [7 March 2016] [ASA-201603-2](https://lists.archlinux.org/pipermail/arch-security/2016-March/000567.html) [openssl](https://www.archlinux.org/packages/?name=openssl) multiple issues
 *   [3 March 2016] [ASA-201603-1](https://lists.archlinux.org/pipermail/arch-security/2016-March/000566.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
@@ -535,52 +542,54 @@ References
 Vim-Snippet for vim-ultisnips plugin for easy completing the archlinux template. Just install [vim-ultisnips](https://www.archlinux.org/packages/?name=vim-ultisnips) and copy the text below in your `~/.vim/UltiSnips/all.snippets` you can jump through the tabstops with `CTRL+j`.
 
 ```
-snippet archsec "arch security form"
+snippet archsec "arch security form"                                                                                   
 Arch Linux Security Advisory ASA-`date -I -u | egrep -o '[0-9]{4}'``date -I -u | egrep -o '[0-9]{2}' | sed '3q;d'`-${1}
-========================================${1/./=/g}
+========================================${1/./=/g}                                                                     
 
-Severity: ${2}
-Date    : `date -I -u`
-CVE-ID  : $3
-Package : $4
+Severity: ${2}                                                                                                         
+Date    : `date -I -u`                                                                                                 
+CVE-ID  : $3                                                                                                           
+Package : $4                                                                                                           
 Type    : $5
-Remote  : ${6}
-Link    : https://wiki.archlinux.org/index.php/CVE
+Remote  : ${6}                                                                                                         
+Link    : https://wiki.archlinux.org/index.php/CVE                                                                     
 
 Summary
 =======
 
-The package $4 before version $7 is vulnerable to $5 ${8}
+The package $4 before version $7 is vulnerable to $5 ${8}                                                              
 
 Resolution
 ==========
 
 Upgrade to $7.
 
-# pacman -Syu "$4>=$7"
+# pacman -Syu "$4>=$7"                                                                                                 
 
-${9:The problems have been fixed upstream in version ${7/-\d+$/./}}
+${9:The problems have been fixed upstream in version ${7/-\d+$/./}}                                                    
 
 Workaround
-==========
+==========                                                                                                             
 
-${10:None.}
+${10:None.}                                                                                                            
 
-Description
-===========
+Description                                                                                                            
+===========                                                                                                            
 
 ${3/(CVE-....-....)(\s?)/- $1(?2: : )()
 
-/g}
+/g}                                                                         
 
 Impact
-======
+======                                                                                                                 
 
-A${6/(Yes)|(No)/(?1: remote )(?2: local )/}attacker is able to ${12}
+A${6/(Yes)|(No)/(?1: remote )(?2: local )/}attacker is able to ${12}                                                   
 
 References
-==========
+==========                                                                                                             
 
+${3/(CVE-....-....)(\s?)/https:\/\/access.redhat.com\/security\/cve\/$1
+/g}
 ${13}
 endsnippet
 

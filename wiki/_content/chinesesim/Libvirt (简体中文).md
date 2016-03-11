@@ -94,27 +94,27 @@ Libvirt 的一些主要功能如下：
 
 #### 使用 polkit
 
-**Note:** A system reboot may be required before authenticating with `polkit` works correctly.
+**注意:** 为使 `polkit` 认证工作正常，应该重启一次系统。
 
-The *libvirt* daemon provides two [polkit actions](/index.php/Polkit#Actions "Polkit") in `/usr/share/polkit-1/actions/org.libvirt.unix.policy`:
+*libvirt* 守护进程在 polkit 策略配置文件（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了两种[polkit 动作策略](/index.php/Polkit#Actions "Polkit")：
 
-*   `org.libvirt.unix.manage` for full management access (RW daemon socket), and
-*   `org.libvirt.unix.monitor` for monitoring only access (read-only socket).
+*   `org.libvirt.unix.manage` 面向完全的管理访问（读写模式后台 socket），以及
+*   `org.libvirt.unix.monitor` 面向仅监视察看访问（只读 socket）。
 
-The default policy for the RW daemon socket will require to authenticate as an admin. This is akin to [sudo](/index.php/Sudo "Sudo") auth, but does not require that the client application ultimately run as root. Default policy will still allow any application to connect to the RO socket.
+默认的面向读写模式后台 socket 的策略将请求认证为管理员。这点类似于 [sudo](/index.php/Sudo "Sudo") 认证，但它并不要求客户应用最终以 root 身份运行。默认策略下也仍然允许任何应用连接到只读 socket。
 
-Arch defaults to consider anybody in the `wheel` group as an administrator: this is defined in `/etc/polkit-1/rules.d/50-default.rules` (see [Polkit#Administrator identities](/index.php/Polkit#Administrator_identities "Polkit")). Therefore there is no need to create a new group and rule file **if your user is a member of the `wheel` group**: upon connection to the RW socket (e.g. via [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)) you will be prompted for your user's password.
+Arch Linux 默认 `wheel` 组的所有用户都是管理员身份：定义于 `/etc/polkit-1/rules.d/50-default.rules`（参阅 [Polkit#Administrator identities](/index.php/Polkit#Administrator_identities "Polkit")）。这样就不必新建组和规则文件。 **如果用户是 `wheel` 组的成员**：只要连接到了读写模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就会被提示输入该用户的口令。
 
-**Note:** Prompting for a password relies on the presence of an [authentication agent](/index.php/Polkit#Authentication_agents "Polkit") on the system. Console users may face an issue with the default `pkttyagent` agent which may or may not work properly.
+**注意:** 要求口令的提示由系统中的[认证代理](/index.php/Polkit#Authentication_agents "Polkit")给出。文本控制台默认的认证代理是 `pkttyagent` 它可能因工作不正常而导致各种问题。
 
-**Tip:** If you want to configure passwordless authentication, see [Polkit#Bypass password prompt](/index.php/Polkit#Bypass_password_prompt "Polkit").
+**提示:** 如果要配置无口令认证，参阅[跳过口令提示](/index.php/Polkit#Bypass_password_prompt "Polkit")。
 
-As of libvirt 1.2.16 (commit:[[1]](http://libvirt.org/git/?p=libvirt.git;a=commit;h=e94979e901517af9fdde358d7b7c92cc055dd50c)), members of the `libvirt` group have passwordless access to the RW daemon socket by default. The easiest way to ensure your user has access is to ensure the libvirt group exists and they are a member of it. If you wish to change the group authorized to access the RW daemon socket to be the kvm group, create the following file:
+从 libvirt 1.2.16 版开始（提案见：[[1]](http://libvirt.org/git/?p=libvirt.git;a=commit;h=e94979e901517af9fdde358d7b7c92cc055dd50c)），`libvirt` 组的成员用户默认可以无口令访问读写模式 socket。最简单的判断方法就是看 libvirt 组是否存在并且用户是否该组成员。如果要把 kvm 组访问读写模式后台 socket 的认证策略改为免认证模式，可创建下面的文件：
 
  `/etc/polkit-1/rules.d/50-libvirt.rules` 
 ```
-/* Allow users in kvm group to manage the libvirt
-daemon without authentication */
+/* Allow users in kvm group to manage the libvirt daemon without authentication（允许 kvm 组的用户管理 libvirt 而无需认证）
+*/
 polkit.addRule(function(action, subject) {
     if (action.id == "org.libvirt.unix.manage" &&
         subject.isInGroup("kvm")) {
@@ -124,9 +124,9 @@ polkit.addRule(function(action, subject) {
 
 ```
 
-Then [add yourself](/index.php/Users_and_groups#Other_examples_of_user_management "Users and groups") to the `kvm` group and relogin. Replace *kvm* with any group of your preference just make sure it exists and that your user is a member of it (see [Users and groups](/index.php/Users_and_groups "Users and groups") for more information).
+然后[添加用户](/index.php/Users_and_groups#Other_examples_of_user_management "Users and groups")到 `kvm` 组并重新登录。*kvm* 也可以是任何其它存在的组并且用户是该组成员（详阅[用户和用户组](/index.php/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84 "用户和用户组")）。
 
-Do not forget to relogin for group changes to take effect.
+修改组之后别忘了重新登录才能生效。
 
 #### 基于文件的权限授权
 

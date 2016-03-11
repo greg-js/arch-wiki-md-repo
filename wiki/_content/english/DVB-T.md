@@ -71,7 +71,7 @@ Various DVB utilities can be found in the [linuxtv-dvb-apps](https://www.archlin
 If you do not know your country code, enter the following to get a list of codes.
 
 ```
-# w_scan -c ?
+# w_scan -c "?"
 
 ```
 

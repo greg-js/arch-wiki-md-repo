@@ -22,7 +22,7 @@ A good number of new packages that enter the official repositories start in the 
     *   [6.3 Other requests](#Other_requests)
 *   [7 Git repositories for AUR3 packages](#Git_repositories_for_AUR3_packages)
 *   [8 AUR metadata](#AUR_metadata)
-*   [9 AUR translation](#AUR_translation)
+*   [9 Web interface translation](#Web_interface_translation)
 *   [10 FAQ](#FAQ)
     *   [10.1 What is the AUR?](#What_is_the_AUR.3F)
     *   [10.2 What kind of packages are permitted on the AUR?](#What_kind_of_packages_are_permitted_on_the_AUR.3F)
@@ -203,9 +203,7 @@ The new package will appear on AUR after you *push* the first commit. You can no
 
 #### Uploading packages
 
-The procedure for uploading packages to the AUR is the same for new packages and package updates. You need at least [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") in the top-level directory to *push* your package to AUR.
-
-**Note:** `.SRCINFO` contains [#AUR metadata](#AUR_metadata).
+The procedure for uploading packages to the AUR is the same for new packages and package updates. You need at least [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") (which contains [#AUR metadata](#AUR_metadata)) in the top-level directory to *push* your package to AUR.
 
 To upload, add the `PKGBUILD`, `.SRCINFO`, and any helper files (like `.install` files or local source files like `.patch`) to the *staging area* with `git add`, commit them to your local tree with a commit message with `git commit`, and finally publish the changes to the AUR with `git push`.
 
@@ -261,11 +259,11 @@ There is also the [AUR Archive](https://github.com/aur-archive) on GitHub with a
 
 In order to display information in the [AUR](/index.php/AUR "AUR") web interface, the AUR's back-end code attempts to parse [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files and salvage package name, version, and other information from it. `PKGBUILD`s are [Bash](/index.php/Bash "Bash") scripts, and correctly parsing Bash scripts without executing them is a huge challenge, which is why [makepkg](/index.php/Makepkg "Makepkg") is a Bash script itself: it includes the PKGBUILD of the package being built via the `source` directive.
 
-[.SRCINFO](/index.php/.SRCINFO ".SRCINFO") was created to get rid of some hacks used by AUR package maintainers to work around incorrect parsing in the web interface. See also [FS#25210](https://bugs.archlinux.org/task/25210), [FS#15043](https://bugs.archlinux.org/task/15043), and [FS#16394](https://bugs.archlinux.org/task/16394).
+[.SRCINFO](/index.php/.SRCINFO ".SRCINFO") was created to get rid of some hacks used by AUR package maintainers to work around incorrect parsing in the web interface.
 
-## AUR translation
+## Web interface translation
 
-See [TRANSLATING](https://projects.archlinux.org/aurweb.git/tree/TRANSLATING) in the AUR source tree for information about creating and maintaining translation of the AUR web interface.
+See [i18n.txt](https://projects.archlinux.org/aurweb.git/tree/doc/i18n.txt) in the AUR source tree for information about creating and maintaining translation of the AUR web interface.
 
 ## FAQ
 

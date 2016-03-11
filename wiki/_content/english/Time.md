@@ -219,6 +219,7 @@ The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol 
 *   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") is a simple [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") daemon that only implements a client side, focusing only on querying time from one remote server. It should be more than appropriate for most installations.
 *   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") is part of the OpenBSD project and implements both a client and a server.
 *   [Chrony](/index.php/Chrony "Chrony") is a client and server that is roaming friendly and designed specifically for systems that are not online all the time.
+*   [ntpclient](https://aur.archlinux.org/packages/ntpclient/) is a simple command-line NTP client
 
 ## Per-user/session or temporary settings
 

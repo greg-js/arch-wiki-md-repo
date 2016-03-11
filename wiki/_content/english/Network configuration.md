@@ -212,7 +212,7 @@ SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
 
 The device path should match both the new and old device name, since the rule may be executed more than once on bootup. For example, in the second rule, `"/devices/pci*/*1c.0/*/net/enp*"` would be wrong since it will stop matching once the name is changed to `en`. Only the system-default rule will fire the second time around, causing the name to be changed back to e.g. `enp1s0`.
 
-To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they can be triggered directly from userspace, e.g. with `udevadm --debug test /sys/*DEVPATH*`. Remember to first take down the interface you are trying to rename (e.g. `ip link set down enp1s0`).
+To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they can be triggered directly from userspace, e.g. with `udevadm --debug test /sys/*DEVPATH*`. Remember to first take down the interface you are trying to rename (e.g. `ip link set enp1s0 down`).
 
 **Note:** When choosing the static names **it should be avoided to use names in the format of "eth*X*" and "wlan*X*"**, because this may lead to race conditions between the kernel and udev during boot. Instead, it is better to use interface names that are not used by the kernel as default, e.g.: `net0`, `net1`, `wifi0`, `wifi1`. For further details please see the [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) documentation.
 
@@ -354,7 +354,7 @@ Then remove any assigned gateway:
 And finally disable the interface:
 
 ```
-# ip link set dev *interface* down
+# ip link set *interface* down
 
 ```
 

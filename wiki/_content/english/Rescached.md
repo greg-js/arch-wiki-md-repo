@@ -1,6 +1,6 @@
-*rescached* is a daemon that caching internet name and address on local memory when running and in local disk when not running.
+*rescached* is a daemon to cache internet name and address resolution in local memory when running and in a disk cache when not running.
 
-*rescached* is not a reimplementation of DNS server like BIND. *rescached* primary goal is only to caching DNS queries and answers, used by personal or small group of users, to minimize unneeded traffic to outside network.
+*rescached* is not a reimplementation of a DNS server like BIND. The primary goal of *rescached* is only to cache DNS queries and answers to minimize unneeded traffic to the outside network. It is intended for personal systems or serving a small group of users.
 
 ## Contents
 
@@ -12,13 +12,13 @@
 
 ## Features
 
-*   Enable to handle request from UDP and TCP
+*   Enable to handle requests via UDP and TCP
 *   Saving/loading cache to/from disk
 *   Load and serve addresses and hostnames in `/etc/hosts`
 
 ## How cache in rescached works
 
-Each of query and answer data in cache have a number of accessed field, which defined how the cache will be ordered in memory. The frequently queried host-name will be at the top of cache list, and less queried host-name will at the bottom of cache list. This, obviously, will make a cache list based on user habit (frequently accessed host-name), which effect on the search time on cache list: fast reply.
+Each query and answer data pair in the cache is enriched with statistical usage to define how the cache will be ordered in memory. The frequently queried hostnames will be at the top of the cache list, and less queried hostnames will be at the bottom of the cache list. This, obviously, results in a cache list based on user's habits (frequently accessed hosts) and speeds up resolving accordingly.
 
 ```
 +-----+------------------+
@@ -35,27 +35,27 @@ Each of query and answer data in cache have a number of accessed field, which de
 
 ```
 
-The number of cache that rescached can hold in memory is depend on the value of *cache.max* in configuration file. When the number of cache in memory reached it *cache.max* value, it will remove all cache data that has the number of frequently accessed less than *cache.threshold*.
+The number of cache entries that rescached holds in memory depends on the value of *cache.max* in the configuration file. When the *cache.max* limit is reached, the daemon will remove all cached entries which are accessed less frequently than set in *cache.threshold*.
 
 ## Installation
 
-Install from [rescached-git](https://aur.archlinux.org/packages/rescached-git/).
+Install the [rescached-git](https://aur.archlinux.org/packages/rescached-git/) package.
 
 ## Post-installation configuration
 
-Default configuration setting is already working as expected.
+The default configuration enables a direct start of the daemon.
 
-Rescached configuration is reside in `/etc/rescached/rescached.cfg`.
+Rescached configuration resides in `/etc/rescached/rescached.cfg`. Select entries to change are:
 
-*   Set your parent DNS server.
+*   Set your parent DNS server:
 
-	Edit rescached configuration change the value of `server.parent` based on your preferred DNS server.
+	Change the value of `server.parent` based on your preferred DNS server.
 
 *   Set maximum caches.
 
-	Edit rescached configuration, change the value of `cache.max` and/or `cache.threshold` to match your needs.
+	Change the value of `cache.max` and/or `cache.threshold` to match your needs.
 
-*   Set your system DNS server to point to rescached.
+After finishing the configuration file, set your system DNS server to point to rescached:
 
 ```
 # mv /etc/resolv.conf /etc/resolv.conf.org
@@ -63,11 +63,11 @@ Rescached configuration is reside in `/etc/rescached/rescached.cfg`.
 
 ```
 
-*   [Start](/index.php/Start "Start") and possibly [enable](/index.php/Enable "Enable") `rescached.service`.
+Finally, [start](/index.php/Start "Start") and possibly [enable](/index.php/Enable "Enable") `rescached.service`.
 
 ## See also
 
-*   For more information and configuration see manpage of rescached
+*   For more information and configuration see the manpage of rescached
 *   For non-technical explanation you can read it [here](http://kilabit.info/journal/2009/12/04__rescached_is_here/index.html)
 *   For user documentation you can read it [here](http://kilabit.info/projects/rescached/doc/user/index.html)
-*   Report bug and feature request [here](https://github.com/shuLhan/rescached/issues)
+*   Report bug and feature requests are preferred on the [github](https://github.com/shuLhan/rescached/issues)

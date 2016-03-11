@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Netctl](/index.php/Netctl "Netctl") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-06-04，点击[这里](https://wiki.archlinux.org/index.php?title=Netctl&diff=0&oldid=376935)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Netctl](/index.php/Netctl "Netctl") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-10，点击[这里](https://wiki.archlinux.org/index.php?title=Netctl&diff=0&oldid=424868)可以查看翻译后英文页面的改动。
 
 Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch Linux 网络管理方面的原生项目。
 
@@ -15,24 +15,26 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
         *   [3.3.1 有线连接](#.E6.9C.89.E7.BA.BF.E8.BF.9E.E6.8E.A5)
         *   [3.3.2 无线连接（WPA-PSK）](#.E6.97.A0.E7.BA.BF.E8.BF.9E.E6.8E.A5.EF.BC.88WPA-PSK.EF.BC.89)
 *   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 Eduroam](#Eduroam)
-    *   [4.2 绑定（Bonding）](#.E7.BB.91.E5.AE.9A.EF.BC.88Bonding.EF.BC.89)
-        *   [4.2.1 均衡负载](#.E5.9D.87.E8.A1.A1.E8.B4.9F.E8.BD.BD)
-        *   [4.2.2 有线 -> 无线故障切换](#.E6.9C.89.E7.BA.BF_-.3E_.E6.97.A0.E7.BA.BF.E6.95.85.E9.9A.9C.E5.88.87.E6.8D.A2)
-    *   [4.3 使用任意接口](#.E4.BD.BF.E7.94.A8.E4.BB.BB.E6.84.8F.E6.8E.A5.E5.8F.A3)
-    *   [4.4 使用钩子](#.E4.BD.BF.E7.94.A8.E9.92.A9.E5.AD.90)
-        *   [4.4.1 范例](#.E8.8C.83.E4.BE.8B)
-            *   [4.4.1.1 在已有连接上执行命令](#.E5.9C.A8.E5.B7.B2.E6.9C.89.E8.BF.9E.E6.8E.A5.E4.B8.8A.E6.89.A7.E8.A1.8C.E5.91.BD.E4.BB.A4)
-            *   [4.4.1.2 激活 network-online.target](#.E6.BF.80.E6.B4.BB_network-online.target)
-            *   [4.4.1.3 设置默认 DHCP 客户端](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4_DHCP_.E5.AE.A2.E6.88.B7.E7.AB.AF)
+    *   [4.1 使用体验版图形用户界面](#.E4.BD.BF.E7.94.A8.E4.BD.93.E9.AA.8C.E7.89.88.E5.9B.BE.E5.BD.A2.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2)
+    *   [4.2 Eduroam](#Eduroam)
+    *   [4.3 绑定（Bonding）](#.E7.BB.91.E5.AE.9A.EF.BC.88Bonding.EF.BC.89)
+        *   [4.3.1 负载均衡](#.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1)
+        *   [4.3.2 有线 -> 无线故障切换](#.E6.9C.89.E7.BA.BF_-.3E_.E6.97.A0.E7.BA.BF.E6.95.85.E9.9A.9C.E5.88.87.E6.8D.A2)
+    *   [4.4 使用任意接口](#.E4.BD.BF.E7.94.A8.E4.BB.BB.E6.84.8F.E6.8E.A5.E5.8F.A3)
+    *   [4.5 使用钩子](#.E4.BD.BF.E7.94.A8.E9.92.A9.E5.AD.90)
+        *   [4.5.1 范例](#.E8.8C.83.E4.BE.8B)
+            *   [4.5.1.1 在已有连接上执行命令](#.E5.9C.A8.E5.B7.B2.E6.9C.89.E8.BF.9E.E6.8E.A5.E4.B8.8A.E6.89.A7.E8.A1.8C.E5.91.BD.E4.BB.A4)
+            *   [4.5.1.2 激活 network-online.target](#.E6.BF.80.E6.B4.BB_network-online.target)
+            *   [4.5.1.3 设置默认 DHCP 客户端](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4_DHCP_.E5.AE.A2.E6.88.B7.E7.AB.AF)
 *   [5 排错](#.E6.8E.92.E9.94.99)
     *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
     *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
     *   [5.3 DHCP timeout issues](#DHCP_timeout_issues)
     *   [5.4 Connection timeout issues](#Connection_timeout_issues)
     *   [5.5 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
-    *   [5.6 移除过时的dhcpcd租期](#.E7.A7.BB.E9.99.A4.E8.BF.87.E6.97.B6.E7.9A.84dhcpcd.E7.A7.9F.E6.9C.9F)
-    *   [5.7 DHCP超时问题](#DHCP.E8.B6.85.E6.97.B6.E9.97.AE.E9.A2.98)
+    *   [5.6 netctl-auto suddenly stopped working for WiFi adapters](#netctl-auto_suddenly_stopped_working_for_WiFi_adapters)
+    *   [5.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
+    *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
 *   [6 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
@@ -242,71 +244,29 @@ Key=\"64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 
 ## 提示与技巧
 
+### 使用体验版图形用户界面
+
+如果你想使用图形用户界面管理 *netctl* 和你的网络连接，并且不在意使用非官方体验版软件包的话，可以从 [AUR](/index.php/AUR "AUR") 安装 [netgui](https://aur.archlinux.org/packages/netgui/)。注意：它毕竟还只是一个 beta 版，你应该熟悉 *netctl* 的语法以便解决可能出现的问题。另一个图形用户界面程序的替代品是 [netctl-gui](https://aur.archlinux.org/packages/netctl-gui/)，它提供了基于 Qt 的图形界面、DBus 守护进程和 KDE 桌面小部件。第三个替代品是 [netmenu](https://aur.archlinux.org/packages/netmenu/)，它使用 [dmenu](https://www.archlinux.org/packages/?name=dmenu) 作为图形界面。
+
 ### Eduroam
 
-有些大学使用一个叫做"Eduroam"的系统管理其无线网络。（鉴于未发现此节对于中文用户的作用，不做翻译）For this system, a WPA config-section profile with the following format is often useful:
-
- `/etc/netctl/wlan0-eduroam` 
-```
-Description='Eduroam-profile for <user>'
-Interface=wlan0
-Connection=wireless
-Security=wpa-configsection
-IP=dhcp
-WPAConfigSection=(
- 'ssid="eduroam"'
- 'proto=RSN'
- 'key_mgmt=WPA-EAP'
- 'pairwise=CCMP'
- 'auth_alg=OPEN'
- 'eap=PEAP'
- 'identity="<user>"'
- 'password="<password>"'
-)
-
-```
-
-**Tip:** To prevent storing your password as plaintext, you can generate a password hash with `$ echo -n <password> | iconv -t utf16le | openssl md4`. Then use it as `'password=hash:<hash>'`.
-
-For TTLS and certified universities this setup works:
-
- `/etc/netctl/wlan0-eduroam` 
-```
-Description='Eduroam university'
-Interface=wlan0 
-Connection=wireless
-Security=wpa-configsection
-IP=dhcp
-ESSID=eduroam
-WPAConfigSection=(
-    'ssid="eduroam"'
-    'key_mgmt=WPA-EAP'
-    'eap=TTLS'
-    'group=TKIP'
-    'anonymous_identity="anonymous@domain_university"'
-    'identity="XXX@domain_university"'
-    'password="XXX"'
-    'ca_cert="Path/to/the/certificate"'
-    'phase2="auth=PAP"'
-)
-
-```
+参阅 [WPA2 Enterprise#netctl](/index.php/WPA2_Enterprise#netctl "WPA2 Enterprise")
 
 ### 绑定（Bonding）
 
-引自 [kernel documentation](https://www.kernel.org/doc/Documentation/networking/bonding.txt):
+引自 [内核文档](https://www.kernel.org/doc/Documentation/networking/bonding.txt):
 
 	*The Linux bonding driver provides a method for aggregating multiple network interfaces into a single logical "bonded" interface. The behavior of the bonded interfaces depends on the mode. Generally speaking, modes provide either hot standby or load balancing services. Additionally, link integrity monitoring may be performed.*
 
-（Linux bonding驱动提供了一个把多个网络接口“绑定”成一个逻辑接口的途径。绑定后的接口的行为取决于绑定的模式，一般来说，提供“随时收发”和“均衡负载”两种模式。另外，可以提供对连接的总体情况的监测功能。）
+	*（Linux bonding 驱动提供了把多个网络接口聚合成一个“绑定”的单一逻辑接口的途径。绑定后接口的行为取决于绑定的模式，一般来说，提供“主备”和“负载均衡”两种模式。另外，可以提供对连接总体情况的监测功能。）*
 
-#### 均衡负载
+#### 负载均衡
 
-要用netctl配合bonding, 需要从官方软件源安装 [ifenslave](https://www.archlinux.org/packages/?name=ifenslave)。
+要用 netctl 配合 bonding，需要从官方软件源安装 [ifenslave](https://www.archlinux.org/packages/?name=ifenslave)。
 
-复制 `/etc/netctl/examples/bonding` 到 `/etc/netctl/bonding` 然后进行编辑。例如:
+复制 `/etc/netctl/examples/bonding` 到 `/etc/netctl/bond0` 然后进行编辑。例如:
 
- `/etc/netctl/bonding` 
+ `/etc/netctl/bond0` 
 ```
 Description='Bond Interface'
 Interface='bond0'
@@ -316,22 +276,22 @@ IP=dhcp
 IP6=stateless
 ```
 
-现在你可以停用之前的配置文件。然后设置bonding为自动启动，切换到新的配置。例如：
+现在你可以停用之前的配置文件。然后设置 bonding 为自动启动，切换到新的配置。例如：
 
 ```
-# netctl switch-to bonding
+# netctl switch-to bond0
 
 ```
 
-**Note:** 这将使用`bonding`驱动的默认策略round-robin。更多信息参见 [官方文档](https://www.kernel.org/doc/Documentation/networking/bonding.txt)。
+**注意:** 这将使用 `bonding` 驱动的默认策略 round-robin（负载均衡）。详见[官方文档](https://www.kernel.org/doc/Documentation/networking/bonding.txt)。
 
-**Tip:** 查看状态和绑定模式: `$ cat /proc/net/bonding/bond0` 
+**提示:** 查看状态和绑定模式： `$ cat /proc/net/bonding/bond0` 
 
 #### 有线 -> 无线故障切换
 
 这一部分探讨怎样用bonding来实现当有线以太网无法工作时自动切换至无线网络。我们假设所有的网络接口默认启动dhcdpcd服务。
 
-你需要从官方源安装软件包: ~~[ifplugd](https://www.archlinux.org/packages/?name=ifplugd)~~, [ifenslave](https://www.archlinux.org/packages/?name=ifenslave) 和 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
+你需要从官方源安装软件包：[ifenslave](https://www.archlinux.org/packages/?name=ifenslave) 和 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
 
 首先设置 `bonding` 驱动使用 `active-backup`:
 
@@ -586,16 +546,54 @@ WantedBy=suspend.target
 
 To [enable](/index.php/Enable "Enable") this service for your wireless card, for example, enable `netctl-auto-resume@wlan0.service` as root. Change `wlan0` to the required network interface.
 
-### 移除过时的dhcpcd租期
+If the device is not yet running on resume when the unit is started, this will fail. It can be fixed by adding the following dependency in the *After* line:
+
+ `/etc/systemd/system/netctl-auto-resume@.service` 
+```
+...
+After=suspend.target sys-subsystem-net-devices-%i.device
+...
 
 ```
-# rm /var/lib/dhcpcd/dhcpcd-wlan0.lease
+
+### netctl-auto suddenly stopped working for WiFi adapters
+
+This problem seems to be related to a recent wpa_supplicant update (see [FS#44731](https://bugs.archlinux.org/task/44731)), but a work-around is quite trivial. Just create a file for your interface (e.g. wlp3s0) in /etc/netctl/interfaces with the following content and make it executable:
+
+ `/etc/netctl/interfaces/wlp3s0` 
+```
+WPAOptions="-m ''"
 
 ```
 
-### DHCP超时问题
+After that, try to restart your netctl-auto service and WiFi auto detection should work well again.
 
-如果在通过DHCP申请租期时有超时问题，你可以设置超时的时限大于netctl默认的30秒。Create a file in 在`/etc/netctl/hooks/`或者`/etc/netctl/interfaces/`中创建一个文件，在其中加入 `TimeoutDHCP=40` 可以使时限设置为40秒。然后为这个文件加上可执行权限。
+### netctl-auto does not automatically unblock a wireless card to use an interface
+
+Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by the kernel. This can be handled by [rfkill](/index.php/Rfkill "Rfkill").
+
+If you want *netctl-auto* to automatically unblock your wireless card to connect to a particular network, set `RFKill=++auto++` option for the wireless connection of your choice, as specified in the [netctl.profile(5)](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt) man page.
+
+### RTNETLINK answers: File exists (with multiple NICs)
+
+This is a very misleading response, it really means that you have assigned a default gateway in an earlier netctl control file. When netctl starts up the n-th NIC and goes to set its local route, it fails because there is already a default route from n-1.
+
+Remove it and everything works, except you no longer have a default route and so cannot access things such as the internet. `ExecUpPost` does not work as it gets executed for each network card.
+
+A possible solution is creating a new service:
+
+ `/etc/systemd/system/defaultrouter.service` 
+```
+[Unit]
+Description
+Requires=netctl.service
+After=netctl.service
+Before=ntpd.service,dnsmasq.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ip route add default via 192.168.xxx.yyy
+```
 
 ## 参见
 

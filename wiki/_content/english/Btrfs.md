@@ -266,7 +266,9 @@ Attempting to remove the directory */path/to/subvolume* without using the above 
 
 #### Mounting subvolumes
 
-Subvolumes can be mounted like file system partitions using the `subvol=*/path/to/subvolume*` or `subvolid=*objectid*` mount flags. For example, you could have a subvolume named 'subvol_root' and mount it as '/'. One can mimic traditional file system partitions by creating various subvolumes under the top level of the file system and then mounting them the appropriate mount points. Thus one can easily restore a file system (or part of it) to a previous state easily using [#Snapshots](#Snapshots).
+Subvolumes can be mounted like file system partitions using the `subvol=*/path/to/subvolume*` or `subvolid=*objectid*` mount flags. For example, you could have a subvolume named 'subvol_root' and mount it as '/'. One can mimic traditional file system partitions by creating various subvolumes under the top level of the file system and then mounting them at the appropriate mount points. Thus one can easily restore a file system (or part of it) to a previous state easily using [#Snapshots](#Snapshots).
+
+**Tip:** Changing subvolume layouts is made simpler by not using the toplevel subvolume (ID=5) as "/" (which is done by default). Instead, consider creating a subvolume to house your actual data and mounting it as "/".
 
 See [Snapper#Suggested_Filesystem_Layout](/index.php/Snapper#Suggested_Filesystem_Layout "Snapper"), [Btrfs SysadminGuide#Managing Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Managing_Snapshots), and [Btrfs SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout) for example file system layouts using subvolumes.
 

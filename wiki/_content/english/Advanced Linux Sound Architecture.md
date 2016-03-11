@@ -540,7 +540,7 @@ If this is not the case, your sound modules have not been detected properly. To 
 
 [S/PDIF](https://en.wikipedia.org/wiki/S/PDIF "wikipedia:S/PDIF") is a digital audio interface often used to connect a computer to a digital amplifier (such as a home theatre with 5.1/7.1 surround sound).
 
-**Note:** With some soundcards this disables analog sound output (eg. Audigy2).
+**Note:** With some soundcards this disables analog sound output (eg. Sound Blaster Audigy 2).
 
 Depending on what [shell](/index.php/Shell "Shell") you use, add the following line to your shell's configuration file:
 

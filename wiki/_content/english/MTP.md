@@ -84,8 +84,6 @@ If connection is successful, there are several switch options to use in conjunct
 
 ```
 
-**Warning:** Some commands may be harmful to your MTP device!
-
 ### mtpfs
 
 **Note:** The following is likely to not work and you might have to resort to [gphoto2](/index.php/Digital_Cameras#libgphoto2 "Digital Cameras") or a file manager with gvfs support like [PCManFM](/index.php/PCManFM "PCManFM").

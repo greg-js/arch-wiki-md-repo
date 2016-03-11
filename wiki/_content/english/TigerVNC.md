@@ -88,7 +88,7 @@ exec startlxqt
 
 With the release of tigervnc 1.60-1, support for parsing options in `~/.vnc/config` has been implemented which obviates the need to call `vncserver` with command line switches. The format is one option per line. An example is provided:
 
- `~/.vnc.config` 
+ `~/.vnc/config` 
 ```
 
 ## Supported server options to pass to vncserver upon invocation can be listed

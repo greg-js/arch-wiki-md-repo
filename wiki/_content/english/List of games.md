@@ -19,7 +19,8 @@
 *   [15 Strategy](#Strategy)
 *   [16 Tycoon/Management Games](#Tycoon.2FManagement_Games)
 *   [17 Visual novels](#Visual_novels)
-*   [18 See also](#See_also)
+*   [18 Other](#Other)
+*   [19 See also](#See_also)
 
 ## Action and adventure
 
@@ -84,10 +85,6 @@
 	[http://www.t3-i.com/pages/project.php?id=paintball_party_2](http://www.t3-i.com/pages/project.php?id=paintball_party_2) || [paintball-party-2](https://aur.archlinux.org/packages/paintball-party-2/)
 
 ## Arcade
-
-*   **Bullet Candy Perfect** — Fun shoot-em-up game, with sharp, super smooth 3D graphics and a cool techno soundtrack. Features cross-platform, achievements, and online scores. 'PAMAYW' scheme.
-
-	[http://www.charliesgames.com/wordpress/?page_id=14/](http://www.charliesgames.com/wordpress/?page_id=14/) || [bulletcandyperfect-demo](https://aur.archlinux.org/packages/bulletcandyperfect-demo/)
 
 *   **Bomberclone** — Free Bomberman-like game for Linux and Windows. The rules of the game are simple: run though a level and bomb other players.
 
@@ -196,10 +193,6 @@
 *   **Ultrastar-ng** — Clone of SingStar, a music video game.
 
 	[http://performous.org/](http://performous.org/) || [ultrastardx-svn](https://aur.archlinux.org/packages/ultrastardx-svn/)
-
-*   **Viruskiller** — Your computer has been invaded! Using your trusty mouse you must shoot the buggers before they can destroy your files!
-
-	[http://www.parallelrealities.co.uk/projects/virusKiller.php](http://www.parallelrealities.co.uk/projects/virusKiller.php) || [viruskiller](https://aur.archlinux.org/packages/viruskiller/)
 
 *   **[Wormux (now Warmux)](https://en.wikipedia.org/wiki/Warmux "wikipedia:Warmux")** — Somewhat similar to Worms 2/Worms Armageddon
 
@@ -601,11 +594,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 ## Shooters (FPS, Third Person)
 
-*   **Alien Arena** — Free, standalone FPS focused mainly on online multiplayer, but can also be played singleplayer against bots.
+*   **[Alien Arena](https://en.wikipedia.org/wiki/CodeRED:_Alien_Arena "wikipedia:CodeRED: Alien Arena")** — Free, standalone FPS focused mainly on online multiplayer, but can also be played singleplayer against bots.
 
 	[http://red.planetarena.org/](http://red.planetarena.org/) || [alienarena](https://www.archlinux.org/packages/?name=alienarena)
 
-*   **AssaultCube** — Free multiplayer FPS, based on the cube engine. Realistic environments, fast, arcade gameplay. Much like Counter-Strike.
+*   **[AssaultCube](https://en.wikipedia.org/wiki/AssaultCube "wikipedia:AssaultCube")** — Free multiplayer FPS, based on the cube engine. Realistic environments, fast, arcade gameplay. Much like Counter-Strike.
 
 	[http://assault.cubers.net/](http://assault.cubers.net/) || [assaultcube](https://www.archlinux.org/packages/?name=assaultcube)
 
@@ -613,11 +606,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://acr.victorz.ca](http://acr.victorz.ca) || [assaultcube-reloaded](https://aur.archlinux.org/packages/assaultcube-reloaded/)
 
-*   **Counter-Strike** — Team-based, semi-realistic FPS. Condition Zero is also available.
+*   **[Counter-Strike](https://en.wikipedia.org/wiki/Counter-Strike "wikipedia:Counter-Strike")** — Team-based, semi-realistic FPS. Condition Zero is also available.
 
 	[http://store.steampowered.com/app/10/](http://store.steampowered.com/app/10/) || Steam
 
-*   **Counter-Strike Source** — Team-based, semi-realistic FPS using Source Engine.
+*   **[Counter-Strike: Source](https://en.wikipedia.org/wiki/Counter-Strike:_Source "wikipedia:Counter-Strike: Source")** — Team-based, semi-realistic FPS using Source Engine.
 
 	[http://store.steampowered.com/app/240/](http://store.steampowered.com/app/240/) || Steam
 
@@ -629,15 +622,15 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://sauerbraten.org/](http://sauerbraten.org/) || [sauerbraten](https://www.archlinux.org/packages/?name=sauerbraten)
 
-*   **Day of Defeat** — WWII online FPS.
+*   **[Day of Defeat](https://en.wikipedia.org/wiki/Day_of_Defeat "wikipedia:Day of Defeat")** — WWII online FPS.
 
 	[http://store.steampowered.com/app/30/](http://store.steampowered.com/app/30/) || Steam
 
-*   **Day of Defeat: Source** — WWII online FPS. Using Source Engine. Still in beta as of July 2013.
+*   **[Day of Defeat: Source](https://en.wikipedia.org/wiki/Day_of_Defeat:_Source "wikipedia:Day of Defeat: Source")** — WWII online FPS. Using Source Engine.
 
 	[http://store.steampowered.com/app/300/](http://store.steampowered.com/app/300/) || Steam
 
-*   **Deathmatch Classic** — Half-Life modification of the multiplayer deathmatch mode.
+*   **[Deathmatch Classic](https://en.wikipedia.org/wiki/Deathmatch_Classic "wikipedia:Deathmatch Classic")** — Half-Life modification of the multiplayer deathmatch mode.
 
 	[http://store.steampowered.com/app/40/](http://store.steampowered.com/app/40/) || Steam
 
@@ -741,11 +734,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   Hexen 1 Demo game data – [hexen1-wad](https://aur.archlinux.org/packages/hexen1-wad/)
 
-*   **Left 4 Dead 2** — Coop survival horror. Using Source Engine.
+*   **[Left 4 Dead 2](https://en.wikipedia.org/wiki/Left_4_Dead_2 "wikipedia:Left 4 Dead 2")** — Coop survival horror. Using Source Engine.
 
 	[http://store.steampowered.com/app/550/](http://store.steampowered.com/app/550/) || Steam
 
-*   **Nexuiz** — Free, open-source first person shooter. Development ceased, most of the developers moved to project [Xonotic](http://xonotic.org/).
+*   **[Nexuiz](https://en.wikipedia.org/wiki/Nexuiz "wikipedia:Nexuiz")** — Free, open-source first person shooter. Development ceased, most of the developers moved to project [Xonotic](http://xonotic.org/).
 
 	[http://alientrap.org/nexuiz](http://alientrap.org/nexuiz) || [nexuiz](https://aur.archlinux.org/packages/nexuiz/)
 
@@ -753,7 +746,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://nquake.sourceforge.net/](http://nquake.sourceforge.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=nquake)</small>
 
-*   **Open Arena** — Fast multiplayer shooter based on the quake3-engine.
+*   **[OpenArena](https://en.wikipedia.org/wiki/OpenArena "wikipedia:OpenArena")** — Fast multiplayer shooter based on the quake3-engine.
 
 	[http://openarena.ws](http://openarena.ws) || [openarena](https://aur.archlinux.org/packages/openarena/)
 
@@ -787,10 +780,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   Demo version – [quake4-demo](https://aur.archlinux.org/packages/quake4-demo/)
 *   Quake 4 engine – [quake4](https://aur.archlinux.org/packages/quake4/)
-
-*   **Quake Live** — MMO shooter running in browser as plugin
-
-	[http://www.quakelive.com/](http://www.quakelive.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[Red Eclipse](https://en.wikipedia.org/wiki/Red_Eclipse "wikipedia:Red Eclipse")** — Single-player and multi-player first-person ego-shooter, built as a total conversion of Cube Engine 2.
 
@@ -832,17 +821,21 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://tremulous.net/](http://tremulous.net/) || [tremulous](https://aur.archlinux.org/packages/tremulous/)
 
-*   **[Unreal Tournament (UT99)](https://en.wikipedia.org/wiki/Unreal_Tournament "wikipedia:Unreal Tournament")** — Fast-paced first person shooter featuring arena combat.
+*   **[Unreal Tournament (1999)](https://en.wikipedia.org/wiki/Unreal_Tournament "wikipedia:Unreal Tournament")** — Fast-paced first person shooter featuring arena combat.
 
-	[http://www.unrealtournament2004.com/utgoty/](http://www.unrealtournament2004.com/utgoty/) || [ut1999](https://aur.archlinux.org/packages/ut1999/)
+	|| [ut1999](https://aur.archlinux.org/packages/ut1999/)
 
-*   **[Unreal Tournament 2003 (UT2003)](https://en.wikipedia.org/wiki/Unreal_Tournament_2003 "wikipedia:Unreal Tournament 2003")** — Fast-paced first person shooter featuring arena combat.
+*   **[Unreal Tournament 2003](https://en.wikipedia.org/wiki/Unreal_Tournament_2003 "wikipedia:Unreal Tournament 2003")** — Fast-paced first person shooter featuring arena combat.
 
-	[http://www.unrealtournament.com](http://www.unrealtournament.com) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=ut2003)</small>
+	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=ut2003)</small>
 
-*   **[Unreal Tournament 2004 (UT2004)](https://en.wikipedia.org/wiki/Unreal_Tournament_2004 "wikipedia:Unreal Tournament 2004")** — Fast-paced first person shooter featuring arena combat. UT2004 is almost a superset of UT2003.
+*   **[Unreal Tournament 2004](https://en.wikipedia.org/wiki/Unreal_Tournament_2004 "wikipedia:Unreal Tournament 2004")** — Fast-paced first person shooter featuring arena combat. UT2004 is almost a superset of UT2003.
 
-	[http://www.unrealtournament2004.com](http://www.unrealtournament2004.com) || [ut2004](https://aur.archlinux.org/packages/ut2004/) for the retail version, [ut2004-anthology](https://aur.archlinux.org/packages/ut2004-anthology/) for the anthology version
+	|| [ut2004](https://aur.archlinux.org/packages/ut2004/) for the retail version, [ut2004-anthology](https://aur.archlinux.org/packages/ut2004-anthology/) for the anthology version
+
+*   **[Unreal Tournament (upcoming)](https://en.wikipedia.org/wiki/Unreal_Tournament_(upcoming_video_game) "wikipedia:Unreal Tournament (upcoming video game)")** — Free and open-source remake of the original using Unreal Engine 4
+
+	[https://www.unrealtournament.com/](https://www.unrealtournament.com/) || [ut4](https://aur.archlinux.org/packages/ut4/)
 
 *   **[Unvanquished](https://en.wikipedia.org/wiki/Unvanquished_(video_game) "wikipedia:Unvanquished (video game)")** — Team-based fps/rts hybrid game which pits aliens against humans. Monthly release that can be played on official servers.
 
@@ -873,9 +866,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://mutantfactions.net](http://mutantfactions.net) || [mutantfactions](https://aur.archlinux.org/packages/mutantfactions/)
 
-*   Blood Frontier – Team oriented multiplayer FPS based on the Cube2 (Sauerbraten) engine
 *   [Futuristic Arenas](http://www.javagameplay.com/futuristicarenas/medium.html)
-*   [Jake 2](http://www.bytonic.de/downloads/jake2_jogl11.jnlp)
 *   [Scared](http://www.pulpgames.net/scared/)
 *   [True Combat: Elite(TCE)](http://www.truecombatelite.com/) - Completely free, realistic, team-based modification for Enemy Territory.
 *   [TUER](http://tuer.sourceforge.net)
@@ -1088,6 +1079,12 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **[RE: Alistair++](https://en.wikipedia.org/wiki/RE:_Alistair "wikipedia:RE: Alistair")** — English otome game (subtype of visual novel) that tells a story of a young girl fond of MMORPGs, her online and everyday life.
 
 	[http://sakevisual.com/realistair/](http://sakevisual.com/realistair/) || [realistair](https://aur.archlinux.org/packages/realistair/)
+
+## Other
+
+*   **Pygame** — A set of python modules for writing games in [python](https://en.wikipedia.org/wiki/python "wikipedia:python"). It is used as the basis of the ["Invent with Python"](http://inventwithpython.com/) books.
+
+	[http://www.pygame.org](http://www.pygame.org) || [python2-pygame](https://www.archlinux.org/packages/?name=python2-pygame)
 
 ## See also
 

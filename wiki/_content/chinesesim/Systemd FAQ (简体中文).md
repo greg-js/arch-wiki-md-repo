@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Systemd_FAQ](/index.php/Systemd_FAQ "Systemd FAQ") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-10-18，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd_FAQ&diff=0&oldid=338039)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd_FAQ](/index.php/Systemd_FAQ "Systemd FAQ") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-11，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd_FAQ&diff=0&oldid=418529)可以查看翻译后英文页面的改动。
 
 ## Contents
 
@@ -17,7 +17,7 @@
 
 ## 常见问题
 
-最新的已知问题，参见：[TODO](http://cgit.freedesktop.org/systemd/systemd/tree/TODO)。
+最新的已知问题，参见：[TODO](https://github.com/systemd/systemd/blob/master/TODO)。
 
 ### 为什么控制台上会显示日志信息？
 

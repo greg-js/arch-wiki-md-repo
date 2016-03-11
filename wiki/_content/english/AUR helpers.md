@@ -173,4 +173,4 @@ The columns have the following meaning:
 | trizen | Perl | Yes | Yes | No | No | No | No | None | Pacman-like | - |
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | Specific | Mirror updates, print news and AUR comments |
 | yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | bash | Specific | No automatic builds |
-| yaourt | Bash/C | No [[5]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) | No [[6]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No | No | Optional | bash/zsh/fish | Pacman-like | Backup, ABS support, AUR comments, multilingual |
+| yaourt | Bash/C | No [[5]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) | No [[6]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[7]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[8]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | Pacman-like | Backup, ABS support, AUR comments, multilingual |

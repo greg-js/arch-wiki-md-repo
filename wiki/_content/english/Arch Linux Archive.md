@@ -20,17 +20,18 @@ The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollb
 
 ## Location
 
-The Arch Linux Archive is currently available at [https://archive.archlinux.org/](https://archive.archlinux.org/) (former [http://ala.seblu.net/](http://ala.seblu.net/)).
+The Arch Linux Archive is available at [https://archive.archlinux.org/](https://archive.archlinux.org/).
 
 Previous locations listed below are deprecated and will be closed soon:
 
 *   [http://seblu.net/a/archive](http://seblu.net/a/archive)
-*   [ftp://seblu.net/archlinux/archive](ftp://seblu.net/archlinux/archive)
+*   [http://ala.seblu.net/](http://ala.seblu.net/)
 
-The following locations listed below are now closed:
+The locations listed below are now closed:
 
 *   [http://seblu.net/a/arm](http://seblu.net/a/arm)
 *   [ftp://seblu.net/archlinux/arm](ftp://seblu.net/archlinux/arm)
+*   [ftp://seblu.net/archlinux/archive](ftp://seblu.net/archlinux/archive)
 
 The [source code](https://github.com/seblu/archivetools) is also available for setting up your own mirror.
 
@@ -190,7 +191,7 @@ See also [Downgrading packages#Automation](/index.php/Downgrading_packages#Autom
 
 ### How to restore all my packages at a specific date
 
-To restore all the package you have at a specific date, let says 30th March 2014, you have to stuck [pacman](/index.php/Pacman "Pacman") at this date, by editing your `/etc/pacman.conf` and use the following server directive:
+To restore all the package you have at a specific date, let says 30 March 2014, you have to stuck [pacman](/index.php/Pacman "Pacman") at this date, by editing your `/etc/pacman.conf` and use the following server directive:
 
 ```
 [core]
