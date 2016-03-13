@@ -13,7 +13,7 @@ They can do many operations, including:
 
 ## Contents
 
-*   [1 Getting started](#Getting_started)
+*   [1 Usage](#Usage)
     *   [1.1 Parsing .Xresources](#Parsing_.Xresources)
     *   [1.2 Adding to xinitrc](#Adding_to_xinitrc)
     *   [1.3 Default settings](#Default_settings)
@@ -24,36 +24,25 @@ They can do many operations, including:
         *   [1.4.4 Include files](#Include_files)
 *   [2 Sample usage](#Sample_usage)
     *   [2.1 Terminal colors](#Terminal_colors)
-    *   [2.2 Xcursor resources](#Xcursor_resources)
-    *   [2.3 Xft resources](#Xft_resources)
-    *   [2.4 Xterm resources](#Xterm_resources)
-    *   [2.5 rxvt-unicode (urxvt) resources](#rxvt-unicode_.28urxvt.29_resources)
-    *   [2.6 Aterm preferences](#Aterm_preferences)
-    *   [2.7 Xpdf resources](#Xpdf_resources)
-    *   [2.8 Lal clock resources](#Lal_clock_resources)
-    *   [2.9 Xclock preferences](#Xclock_preferences)
-    *   [2.10 X11-ssh-askpass resources](#X11-ssh-askpass_resources)
-    *   [2.11 XScreenSaver resources](#XScreenSaver_resources)
-    *   [2.12 Xcalc resources](#Xcalc_resources)
+    *   [2.2 Xcursor](#Xcursor)
+    *   [2.3 Xft](#Xft)
+    *   [2.4 Xterm](#Xterm)
+    *   [2.5 rxvt-unicode](#rxvt-unicode)
+    *   [2.6 Xpdf](#Xpdf)
 *   [3 Color scheme commands](#Color_scheme_commands)
     *   [3.1 Display all 256 colors](#Display_all_256_colors)
     *   [3.2 Display tput escape codes](#Display_tput_escape_codes)
     *   [3.3 Enumerating colors supported by terminals](#Enumerating_colors_supported_by_terminals)
     *   [3.4 Enumerating terminal capabilities](#Enumerating_terminal_capabilities)
 *   [4 Color scheme scripts](#Color_scheme_scripts)
-    *   [4.1 Script #1](#Script_.231)
-    *   [4.2 Script #2](#Script_.232)
-    *   [4.3 Script #3](#Script_.233)
-    *   [4.4 Script #4](#Script_.234)
-    *   [4.5 Script #5](#Script_.235)
-    *   [4.6 Script #6](#Script_.236)
-    *   [4.7 Script #7](#Script_.237)
-*   [5 Contributed examples](#Contributed_examples)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Parsing errors](#Parsing_errors)
-*   [7 See also](#See_also)
+    *   [4.1 LUA](#LUA)
+    *   [4.2 Bash](#Bash)
+    *   [4.3 Ruby](#Ruby)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Parsing errors](#Parsing_errors)
+*   [6 See also](#See_also)
 
-## Getting started
+## Usage
 
 Make sure that [xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb) is installed in your system.
 
@@ -205,19 +194,14 @@ xrdb -I*$HOME* ~/.Xresources
 
 ## Sample usage
 
-The following samples should provide a good understanding of how application settings can be modified using an Xresources file. For full details, refer to the man page of the application in question.
+The following samples should provide a good understanding of how application settings can be modified using an Xresources file. See [[2]](https://gist.github.com/anonymous/fa98de9fd70b51611303) for more examples. Refer to the man page of the application in question otherwise.
 
 ### Terminal colors
 
-Most terminals, including [xterm](/index.php/Xterm "Xterm") and [urxvt](/index.php/Urxvt "Urxvt"), support at least 16 basic colors. The following is an example of a 16-color scheme. The colors 0-7 are the 'normal' colors, while colors 8-15 are their 'bright' counterparts, used for highlighting and such. A good place to start when making your Xresources, is to define the default terminal colors:
+Most terminals, including [xterm](/index.php/Xterm "Xterm") and [urxvt](/index.php/Urxvt "Urxvt"), support at least 16 basic colors. The colors 0-7 are the 'normal' colors. Colors 8-15 are their 'bright' counterparts, used for highlighting.
 
 ```
-! terminal colors ------------------------------------------------------------
-
-! tangoesque scheme
-*background: #111111
-*foreground: #babdb6
-! Black (not tango) + DarkGrey
+! Black + DarkGrey
 *color0:  #000000
 *color8:  #555753
 ! DarkRed + Red
@@ -246,243 +230,27 @@ Most terminals, including [xterm](/index.php/Xterm "Xterm") and [urxvt](/index.p
 
 See [man page#Colored man pages on xterm or rxvt-unicode](/index.php/Man_page#Colored_man_pages_on_xterm_or_rxvt-unicode "Man page") for how to color bold and underlined text automatically xterm and rxvt.
 
-For more examples of color schemes, see the [#Contributed examples](#Contributed_examples) section at the bottom of this article.
+**Warning:** Color resources such as `foreground` and `background` can be read by other applications (such as [emacs](https://www.gnu.org/software/emacs/manual/html_node/emacs/Table-of-Resources.html)). This can be avoided by specifiying the class name, for example `XTerm.foreground`.
 
-### Xcursor resources
+### Xcursor
 
-Set the theme and size of your mouse cursor:
+See [Cursor_themes#X_resources](/index.php/Cursor_themes#X_resources "Cursor themes").
 
-```
-! Xcursor --------------------------------------------------------------------
+### Xft
 
-Xcursor.theme: Vanilla-DMZ-AA
-Xcursor.size:  22
+See [Font_configuration#Applications_without_fontconfig_support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration").
 
-```
+### Xterm
 
-Available themes reside in `/usr/share/icons` and local themes can be installed to `~/.icons`.
+See [Xterm#Configuration](/index.php/Xterm#Configuration "Xterm").
 
-### Xft resources
+### rxvt-unicode
 
-You can define basic font resources without the need of a `fonts.conf` file or a desktop environment. Note however, the use of a desktop environment and/or `fonts.conf` can override these settings. Your best option is to use one or the other, but not both.
+See [Rxvt-unicode#Configuration](/index.php/Rxvt-unicode#Configuration "Rxvt-unicode").
 
-```
-! Xft settings ---------------------------------------------------------------
+### Xpdf
 
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintslight
-
-```
-
-### Xterm resources
-
-The following resources will open [xterm](/index.php/Xterm "Xterm") in an 80x25 character window with a scroll-bar and scroll capability for the last 512 lines. The specified [Terminus](/index.php/Fonts#Bitmap "Fonts") facename is a popular and clean terminal font.
-
-```
-! xterm ----------------------------------------------------------------------
-
-xterm*VT100.geometry:     80x25
-xterm*faceName:           Terminus:style=Regular:size=10
-!xterm*font:              -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
-xterm*dynamicColors:      true
-xterm*utf8:               2
-xterm*eightBitInput:      true
-xterm*saveLines:          512
-xterm*scrollKey:          true
-xterm*scrollTtyOutput:    false
-xterm*scrollBar:          true
-xterm*rightScrollBar:     true
-xterm*jumpScroll:         true
-xterm*multiScroll:        true
-xterm*toolBar:            false
-
-```
-
-### rxvt-unicode (urxvt) resources
-
-[rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) features an extensive list of options which can be configured via `~/.Xresources`. Refer to the *urxvt* man page or [rxvt-unicode#Creating ~/.Xresources](/index.php/Rxvt-unicode#Creating_.7E.2F.Xresources "Rxvt-unicode") article for details.
-
-### Aterm preferences
-
-Sample settings for aterm (very similar to urxvt):
-
-```
-!aterm settings-------------------------------------------------------------     
-
-aterm*background:               black
-aterm*foreground:               white
-aterm*transparent:              true
-aterm*shading:                  30
-aterm*cursorColor:              gray
-aterm*saveLines:                2000
-!aterm*tinting:                 gray
-aterm*scrollBar:                false
-!aterm*scrollBar_right:          true
-aterm*transpscrollbar:          true
-aterm*borderwidth:              0
-aterm*font:                     -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
-aterm*geometry:                 80x25
-!aterm*fading:                  70  
-
-```
-
-### Xpdf resources
-
-Following are some basic resources for [xpdf](https://aur.archlinux.org/packages/xpdf/), a lightweight PDF viewer:
-
-```
-! xpdf -----------------------------------------------------------------------
-
-xpdf*enableFreetype:    yes
-xpdf*antialias:         yes
-xpdf*foreground:        black
-xpdf*background:        white
-xpdf*urlCommand:        /usr/bin/firefox %s
-
-```
-
-Anything more detailed than the above you should be putting in `~/.xpdfrc` instead. See the xpdf man page for more information. Note that `viKeys` is deprecated.
-
-### Lal clock resources
-
-```
-! lal clock ------------------------------------------------------------------
-
-lal*font:       Arial
-lal*fontsize:   12
-lal*bold:       true
-lal*color:      #ffffff
-lal*width:      150
-lal*format:     %a %b %d %l:%M%P
-
-```
-
-### Xclock preferences
-
-Some basic xclock settings. See the xclock man page for all X resources.
-
-```
-! xclock ---------------------------------------------------------------------
-
-xclock*update:            1
-xclock*analog:            false
-xclock*Foreground:        white
-xclock*background:        black
-
-```
-
-### X11-ssh-askpass resources
-
-```
-! x11-ssh-askpass ------------------------------------------------------------
-
-x11-ssh-askpass*font:                   -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-x11-ssh-askpass*background:             #000000
-x11-ssh-askpass*foreground:             #ffffff
-x11-ssh-askpass.Button*background:      #000000
-x11-ssh-askpass.Indicator*foreground:   #ff9900
-x11-ssh-askpass.Indicator*background:   #090909
-x11-ssh-askpass*topShadowColor:         #000000
-x11-ssh-askpass*bottomShadowColor:      #000000
-x11-ssh-askpass.*borderWidth:           1
-
-```
-
-### XScreenSaver resources
-
-The following is a sample [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") theme. For more information, refer to the XScreenSaver man page.
-
-**Note:** In older versions of XScreenSaver, if the `~/.xscreensaver` file exists, it overrides any settings in the X resource database. However, in the latest versions, you can use both simultaneously.
-
-```
-! xscreensaver ---------------------------------------------------------------
-
-!font settings
-xscreensaver.Dialog.headingFont:        -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.bodyFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.labelFont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.unameFont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.buttonFont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.dateFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.passwd.passwdFont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-!general dialog box (affects main hostname, username, password text)
-xscreensaver.Dialog.foreground:         #ffffff
-xscreensaver.Dialog.background:         #111111
-xscreensaver.Dialog.topShadowColor:     #111111
-xscreensaver.Dialog.bottomShadowColor:  #111111
-xscreensaver.Dialog.Button.foreground:  #666666
-xscreensaver.Dialog.Button.background:  #ffffff
-!username/password input box and date text colour
-xscreensaver.Dialog.text.foreground:    #666666
-xscreensaver.Dialog.text.background:    #ffffff
-xscreensaver.Dialog.internalBorderWidth:24
-xscreensaver.Dialog.borderWidth:        20
-xscreensaver.Dialog.shadowThickness:    2
-!timeout bar (background is actually determined by Dialog.text.background)
-xscreensaver.passwd.thermometer.foreground:  #ff0000
-xscreensaver.passwd.thermometer.background:  #000000
-xscreensaver.passwd.thermometer.width:       8
-!datestamp format--see the strftime(3) manual page for details
-xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
-
-```
-
-### Xcalc resources
-
-Following are some xcalc resources to colorize and customize buttons.
-
-```
-!xcalc-----------------------------------------------------------------------
-
-xcalc*geometry:                        200x275
-xcalc.ti.bevel.background:             #111111
-xcalc.ti.bevel.screen.background:      #000000
-xcalc.ti.bevel.screen.DEG.background:  #000000
-xcalc.ti.bevel.screen.DEG.foreground:  LightSeaGreen
-xcalc.ti.bevel.screen.GRAD.background: #000000
-xcalc.ti.bevel.screen.GRAD.foreground: LightSeaGreen
-xcalc.ti.bevel.screen.RAD.background:  #000000
-xcalc.ti.bevel.screen.RAD.foreground:  LightSeaGreen
-xcalc.ti.bevel.screen.INV.background:  #000000
-xcalc.ti.bevel.screen.INV.foreground:  Red
-xcalc.ti.bevel.screen.LCD.background:  #000000
-xcalc.ti.bevel.screen.LCD.foreground:  LightSeaGreen
-xcalc.ti.bevel.screen.LCD.shadowWidth: 0
-xcalc.ti.bevel.screen.M.background:    #000000
-xcalc.ti.bevel.screen.M.foreground:    LightSeaGreen
-xcalc.ti.bevel.screen.P.background:    #000000
-xcalc.ti.bevel.screen.P.foreground:    Yellow
-xcalc.ti.Command.foreground:  White
-xcalc.ti.Command.background:  #777777
-xcalc.ti.button5.background:  Orange3
-xcalc.ti.button19.background: #611161
-xcalc.ti.button18.background: #611161
-xcalc.ti.button20.background: #611111
-!uncomment to change label on division button
-!xcalc.ti.button20.label:      /
-xcalc.ti.button25.background: #722222
-xcalc.ti.button30.background: #833333
-xcalc.ti.button35.background: #944444
-xcalc.ti.button40.background: #a55555
-xcalc.ti.button22.background: #222262
-xcalc.ti.button23.background: #222262
-xcalc.ti.button24.background: #222272
-xcalc.ti.button27.background: #333373
-xcalc.ti.button28.background: #333373
-xcalc.ti.button29.background: #333373
-xcalc.ti.button32.background: #444484
-xcalc.ti.button33.background: #444484
-xcalc.ti.button34.background: #444484
-xcalc.ti.button37.background: #555595
-xcalc.ti.button38.background: #555595
-xcalc.ti.button39.background: #555595
-XCalc*Cursor:                 hand2
-XCalc*ShapeStyle:             rectangle
-
-```
+See `**Options**` in [man xpdf](http://linux.die.net/man/1/xpdf).
 
 ## Color scheme commands
 
@@ -563,115 +331,7 @@ cnorm	dl1	invis	kcuu1	kf20	kf35	kf5	kf7	rc	setaf	vpa
 
 Any of the following scripts will display a chart of your current terminal color scheme. Handy for testing and whatnot.
 
-### Script #1
-
-```
-#!/usr/bin/bash
-#
-#   This file echoes a bunch of color codes to the 
-#   terminal to demonstrate what's available.  Each 
-#   line is the color code of one foreground color,
-#   out of 17 (default + 16 escapes), followed by a 
-#   test use of that color on all nine background 
-#   colors (default + 8 escapes).
-#
-
-T='gYw'   # The test text
-
-echo -e "
-                 40m     41m     42m     43m\
-     44m     45m     46m     47m";
-
-for FGs in '    m' '   1m' '  30m' '1;30m' '  31m' '1;31m' '  32m' \
-           '1;32m' '  33m' '1;33m' '  34m' '1;34m' '  35m' '1;35m' \
-           '  36m' '1;36m' '  37m' '1;37m';
-  do FG=${FGs// /}
-  echo -en " $FGs \033[$FG  $T  "
-  for BG in 40m 41m 42m 43m 44m 45m 46m 47m;
-    do echo -en "$EINS \033[$FG\033[$BG  $T  \033[0m";
-  done
-  echo;
-done
-echo
-```
-
-### Script #2
-
-```
-#!/usr/bin/bash
-# Original: [http://frexx.de/xterm-256-notes/](http://frexx.de/xterm-256-notes/) 
-#           [http://frexx.de/xterm-256-notes/data/colortable16.sh](http://frexx.de/xterm-256-notes/data/colortable16.sh) 
-# Modified by Aaron Griffin
-# and further by Kazuo Teramoto
-FGNAMES=(' black ' '  red  ' ' green ' ' yellow' '  blue ' 'magenta' '  cyan ' ' white ')
-BGNAMES=('DFT' 'BLK' 'RED' 'GRN' 'YEL' 'BLU' 'MAG' 'CYN' 'WHT')
-
-echo "     ┌──────────────────────────────────────────────────────────────────────────┐"
-for b in {0..8}; do
-  ((b>0)) && bg=$((b+39))
-
-  echo -en "\033[0m ${BGNAMES[b]} │ "
-
-  for f in {0..7}; do
-    echo -en "\033[${bg}m\033[$((f+30))m ${FGNAMES[f]} "
-  done
-
-  echo -en "\033[0m │"
-  echo -en "\033[0m
-\033[0m     │ "
-
-  for f in {0..7}; do
-    echo -en "\033[${bg}m\033[1;$((f+30))m ${FGNAMES[f]} "
-  done
-
-  echo -en "\033[0m │"
-  echo -e "\033[0m"
-
-  ((b<8)) &&
-  echo "     ├──────────────────────────────────────────────────────────────────────────┤"
-done
-echo "     └──────────────────────────────────────────────────────────────────────────┘"
-```
-
-### Script #3
-
-```
-#!/usr/bin/bash
-# Original: [http://frexx.de/xterm-256-notes/](http://frexx.de/xterm-256-notes/) 
-#           [http://frexx.de/xterm-256-notes/data/colortable16.sh](http://frexx.de/xterm-256-notes/data/colortable16.sh) 
-# Modified by Aaron Griffin
-# and further by Kazuo Teramoto
-
-FGNAMES=(' black ' '  red  ' ' green ' ' yellow' '  blue ' 'magenta' '  cyan ' ' white ')
-BGNAMES=('DFT' 'BLK' 'RED' 'GRN' 'YEL' 'BLU' 'MAG' 'CYN' 'WHT')
-echo "     ----------------------------------------------------------------------------"
-for b in $(seq 0 8); do
-    if [ "$b" -gt 0 ]; then
-      bg=$(($b+39))
-    fi
-
-    echo -en "\033[0m ${BGNAMES[$b]} : "
-    for f in $(seq 0 7); do
-      echo -en "\033[${bg}m\033[$(($f+30))m ${FGNAMES[$f]} "
-    done
-    echo -en "\033[0m :"
-
-    echo -en "\033[0m
-\033[0m     : "
-    for f in $(seq 0 7); do
-      echo -en "\033[${bg}m\033[1;$(($f+30))m ${FGNAMES[$f]} "
-    done
-    echo -en "\033[0m :"
-        echo -e "\033[0m"
-
-  if [ "$b" -lt 8 ]; then
-    echo "     ----------------------------------------------------------------------------"
-  fi
-done
-echo "     ----------------------------------------------------------------------------"
-```
-
-### Script #4
+### LUA
 
 ```
 #!/usr/bin/env lua
@@ -701,7 +361,7 @@ end
 -- Andres P
 ```
 
-### Script #5
+### Bash
 
 ```
 #!/usr/bin/bash
@@ -744,7 +404,7 @@ cat << EOF
 EOF
 ```
 
-### Script #6
+### Ruby
 
 ```
 #!/usr/bin/env ruby
@@ -774,74 +434,6 @@ print <<EOF
 
 EOF
 ```
-
-### Script #7
-
-```
-#!/bin/sh
-# Original Posted at [http://crunchbang.org/forums/viewtopic.php?pid=126921%23p126921#p126921](http://crunchbang.org/forums/viewtopic.php?pid=126921%23p126921#p126921)
-# [ESC] character in original post removed here.
-
-# ANSI Color -- use these variables to easily have different color
-#    and format output. Make sure to output the reset sequence after
-#    colors (f = foreground, b = background), and use the 'off'
-#    feature for anything you turn on.
-
-initializeANSI()
-{
- esc="$(echo -en '\e')"
-
-  blackf="${esc}[30m";   redf="${esc}[31m";    greenf="${esc}[32m"
-  yellowf="${esc}[33m"   bluef="${esc}[34m";   purplef="${esc}[35m"
-  cyanf="${esc}[36m";    whitef="${esc}[37m"
-
-  blackb="${esc}[40m";   redb="${esc}[41m";    greenb="${esc}[42m"
-  yellowb="${esc}[43m"   blueb="${esc}[44m";   purpleb="${esc}[45m"
-  cyanb="${esc}[46m";    whiteb="${esc}[47m"
-
-  boldon="${esc}[1m";    boldoff="${esc}[22m"
-  italicson="${esc}[3m"; italicsoff="${esc}[23m"
-  ulon="${esc}[4m";      uloff="${esc}[24m"
-  invon="${esc}[7m";     invoff="${esc}[27m"
-
-  reset="${esc}[0m"
-}
-
-# note in this first use that switching colors doesn't require a reset
-# first - the new color overrides the old one.
-
-#clear
-
-initializeANSI
-
-cat << EOF
-
- ${yellowf}  ▄███████▄${reset}   ${redf}  ▄██████▄${reset}    ${greenf}  ▄██████▄${reset}    ${bluef}  ▄██████▄${reset}    ${purplef}  ▄██████▄${reset}    ${cyanf}  ▄██████▄${reset}
- ${yellowf}▄█████████▀▀${reset}  ${redf}▄${whitef}█▀█${redf}██${whitef}█▀█${redf}██▄${reset}  ${greenf}▄${whitef}█▀█${greenf}██${whitef}█▀█${greenf}██▄${reset}  ${bluef}▄${whitef}█▀█${bluef}██${whitef}█▀█${bluef}██▄${reset}  ${purplef}▄${whitef}█▀█${purplef}██${whitef}█▀█${purplef}██▄${reset}  ${cyanf}▄${whitef}█▀█${cyanf}██${whitef}█▀█${cyanf}██▄${reset}
- ${yellowf}███████▀${reset}      ${redf}█${whitef}▄▄█${redf}██${whitef}▄▄█${redf}███${reset}  ${greenf}█${whitef}▄▄█${greenf}██${whitef}▄▄█${greenf}███${reset}  ${bluef}█${whitef}▄▄█${bluef}██${whitef}▄▄█${bluef}███${reset}  ${purplef}█${whitef}▄▄█${purplef}██${whitef}▄▄█${purplef}███${reset}  ${cyanf}█${whitef}▄▄█${cyanf}██${whitef}▄▄█${cyanf}███${reset}
- ${yellowf}███████▄${reset}      ${redf}████████████${reset}  ${greenf}████████████${reset}  ${bluef}████████████${reset}  ${purplef}████████████${reset}  ${cyanf}████████████${reset}
- ${yellowf}▀█████████▄▄${reset}  ${redf}██▀██▀▀██▀██${reset}  ${greenf}██▀██▀▀██▀██${reset}  ${bluef}██▀██▀▀██▀██${reset}  ${purplef}██▀██▀▀██▀██${reset}  ${cyanf}██▀██▀▀██▀██${reset}
- ${yellowf}  ▀███████▀${reset}   ${redf}▀   ▀  ▀   ▀${reset}  ${greenf}▀   ▀  ▀   ▀${reset}  ${bluef}▀   ▀  ▀   ▀${reset}  ${purplef}▀   ▀  ▀   ▀${reset}  ${cyanf}▀   ▀  ▀   ▀${reset}
-
- ${boldon}${yellowf}  ▄███████▄   ${redf}  ▄██████▄    ${greenf}  ▄██████▄    ${bluef}  ▄██████▄    ${purplef}  ▄██████▄    ${cyanf}  ▄██████▄${reset}
- ${boldon}${yellowf}▄█████████▀▀  ${redf}▄${whitef}█▀█${redf}██${whitef}█▀█${redf}██▄  ${greenf}▄${whitef}█▀█${greenf}██${whitef}█▀█${greenf}██▄  ${bluef}▄${whitef}█▀█${bluef}██${whitef}█▀█${bluef}██▄  ${purplef}▄${whitef}█▀█${purplef}██${whitef}█▀█${purplef}██▄  ${cyanf}▄${whitef}█▀█${cyanf}██${whitef}█▀█${cyanf}██▄${reset}
- ${boldon}${yellowf}███████▀      ${redf}█${whitef}▄▄█${redf}██${whitef}▄▄█${redf}███  ${greenf}█${whitef}▄▄█${greenf}██${whitef}▄▄█${greenf}███  ${bluef}█${whitef}▄▄█${bluef}██${whitef}▄▄█${bluef}███  ${purplef}█${whitef}▄▄█${purplef}██${whitef}▄▄█${purplef}███  ${cyanf}█${whitef}▄▄█${cyanf}██${whitef}▄▄█${cyanf}███${reset}
- ${boldon}${yellowf}███████▄      ${redf}████████████  ${greenf}████████████  ${bluef}████████████  ${purplef}████████████  ${cyanf}████████████${reset}
- ${boldon}${yellowf}▀█████████▄▄  ${redf}██▀██▀▀██▀██  ${greenf}██▀██▀▀██▀██  ${bluef}██▀██▀▀██▀██  ${purplef}██▀██▀▀██▀██  ${cyanf}██▀██▀▀██▀██${reset}
- ${boldon}${yellowf}  ▀███████▀   ${redf}▀   ▀  ▀   ▀  ${greenf}▀   ▀  ▀   ▀  ${bluef}▀   ▀  ▀   ▀  ${purplef}▀   ▀  ▀   ▀  ${cyanf}▀   ▀  ▀   ▀${reset}
-
-EOF
-```
-
-## Contributed examples
-
-Check out these links for some real world examples of X resource files, contributed by fellow community members.
-
-**Note:** `~/.Xdefaults` has the same syntax as `~/.Xresources`, and it is recommended that you use `~/.Xresources` because `~/.Xdefaults` is deprecated upstream.
-
-*   [http://dotfiles.org/~buttons/.Xdefaults](http://dotfiles.org/~buttons/.Xdefaults)
-*   [https://github.com/jelly/Dotfiles/blob/master/.Xdefaults](https://github.com/jelly/Dotfiles/blob/master/.Xdefaults)
-*   [https://paste.debian.net/14515/](https://paste.debian.net/14515/) .Xresources
 
 ## Troubleshooting
 

@@ -1,4 +1,4 @@
-**Note:** This page strives to list all games known to run under GNU/Linux. Some of them are freely accessible via [official repositories](/index.php/Official_repositories "Official repositories") and [AUR](/index.php/AUR "AUR"). For more about running games, related system configuration tips, see [Gaming](/index.php/Gaming "Gaming"). For possibly more up to date selection of games available in the AUR, try checking the [AUR 'games' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=6&SeB=nd&SB=n&SO=a&PP=25).
+**Note:** This page strives to list all games known to run under GNU/Linux. Some of them are freely accessible via [official repositories](/index.php/Official_repositories "Official repositories") and [AUR](/index.php/AUR "AUR"). For more about running games, related system configuration tips, see [Gaming](/index.php/Gaming "Gaming"). For possibly more up to date selection of games available in the AUR, try checking the [AUR 'game' keyword](https://aur.archlinux.org/packages/?SeB=k&K=game).
 
 ## Contents
 
@@ -129,10 +129,6 @@
 *   **[Hedgewars](https://en.wikipedia.org/wiki/Hedgewars "wikipedia:Hedgewars")** — Yet another Worms clone, considered to be better than its predecessor by many. Take turns to blast your opponents into oblivion with comedic results! Best in Multiplayer.
 
 	[http://hedgewars.org/](http://hedgewars.org/) || [hedgewars](https://www.archlinux.org/packages/?name=hedgewars)
-
-*   **Irukandji** — Cross-platform 'pay as much as you want' (minimum $1 USD) scheme. A fun score attack shooter, set in an abstract underwater trench. Features unlockables, online score system, and challenges.
-
-	[www.charliesgames.com](http://www.charliesgames.com/wordpress/?page_id=11/) || [irukandji](https://aur.archlinux.org/packages/irukandji/)
 
 *   **lbreakout2** — Breakout-style arcade game in the manner of Arkanoid
 
@@ -865,12 +861,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **Mutant Factions** — Free multiplayer action coop game.
 
 	[http://mutantfactions.net](http://mutantfactions.net) || [mutantfactions](https://aur.archlinux.org/packages/mutantfactions/)
-
-*   [Futuristic Arenas](http://www.javagameplay.com/futuristicarenas/medium.html)
-*   [Scared](http://www.pulpgames.net/scared/)
-*   [True Combat: Elite(TCE)](http://www.truecombatelite.com/) - Completely free, realistic, team-based modification for Enemy Territory.
-*   [TUER](http://tuer.sourceforge.net)
-*   [Ancient Arenas](http://www.javagameplay.com/ancientarenas/medium.html)
 
 ## Simulation
 

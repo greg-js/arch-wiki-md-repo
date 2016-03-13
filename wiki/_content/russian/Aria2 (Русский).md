@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Aria2](/index.php/Aria2 "Aria2"). Дата последней синхронизации: 8 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Aria2&diff=0&oldid=419572).
+
 С домашней страницы [проекта](http://aria2.sourceforge.net/):
 
 	*aria2 - это легкая мультипротокольная и многопоточная консольная утилита. Она поддерживает [HTTP](https://en.wikipedia.org/wiki/ru:HTTP и [Metalink](https://en.wikipedia.org/wiki/ru:Metalink "wikipedia:ru:Metalink").* aria2 *можно управлять с помощью встроенных интерфейсов [JSON-RPC](https://en.wikipedia.org/wiki/ru:JSON-RPC "wikipedia:ru:JSON-RPC") и [XML-RPC](https://en.wikipedia.org/wiki/ru:XML-RPC "wikipedia:ru:XML-RPC").*
@@ -46,7 +48,7 @@
 
 ### aria2.conf
 
-aria2 смотрит файл `~/.aria2/aria2.conf` для установки глобальных параметров по умолчанию. Это поведение может быть изменено переключателем `--conf-path`:
+aria2 смотрит файл `$XDG_CONFIG_HOME/aria2/aria2.conf` для установки глобальных параметров по умолчанию. Это поведение может быть изменено переключателем `--conf-path`:
 
 *   Скачайте `aria2.example.rar` используя параметры, указанные в файле настроек `/file/aria2.rapidshare`
 
@@ -55,7 +57,7 @@ $ aria2c --conf-path=/file/aria2.rapidshare http://rapidshare.com/files/12345678
 
 ```
 
-Если существует `~/.aria2/aria2.conf` и параметры, указанные в `/file/aria2.rapidshare` нужны, то переключатель `--no-conf` должен быть добавлен к команде:
+Если существует `$XDG_CONFIG_HOME/aria2/aria2.conf` и параметры, указанные в `/file/aria2.rapidshare` нужны, то переключатель `--no-conf` должен быть добавлен к команде:
 
 *   Не использовать файл настроек по умолчанию и скачать `aria2.example.rar` используя параметры, указанные в файле настроек `/file/aria2.rapidshare`
 
@@ -64,10 +66,10 @@ $ aria2c --no-conf --conf-path=/file/aria2.rapidshare http://rapidshare.com/file
 
 ```
 
-Если `~/.aria2/aria2.conf` пока не существует, и вы хотите упростить управление параметрами настроек:
+Если `$XDG_CONFIG_HOME/aria2/aria2.conf` пока не существует, и вы хотите упростить управление параметрами настроек:
 
 ```
-$ touch ~/.aria2/aria2.conf
+$ touch $XDG_CONFIG_HOME/aria2/aria2.conf
 
 ```
 
@@ -100,7 +102,7 @@ $ aria2c dir=${HOME}/Desktop file-allocation=none input-file=${HOME}/.aria2/inpu
 
 ```
 
-**Обратите внимание:** The example aria2.conf above may incorrectly use the $HOME variable. Some users have reported the curly brace syntax to explicitly create a separate ${HOME} subdirectory in the aria2 working directory. Such a directory may be difficult to traverse as bash will consider it to be the $HOME environment variable. For now, it is recommended to use absolute path names in aria2.conf.
+**Примечание:** The example aria2.conf above may incorrectly use the $HOME variable. Some users have reported the curly brace syntax to explicitly create a separate ${HOME} subdirectory in the aria2 working directory. Such a directory may be difficult to traverse as bash will consider it to be the $HOME environment variable. For now, it is recommended to use absolute path names in aria2.conf.
 
 #### Детали опций
 
@@ -118,7 +120,7 @@ $ aria2c dir=${HOME}/Desktop file-allocation=none input-file=${HOME}/.aria2/inpu
 
 	`input-file=${HOME}/.aria2/input.conf`
 
-	Скачать список построчно, или разделённых TAB'ом URI, найденных в `~/.aria2/input.conf`
+	Скачать список построчно, или разделённых TAB'ом URI, найденных в `$XDG_CONFIG_HOME/aria2/input.conf`
 
 	`log-level=warn`
 
@@ -246,7 +248,7 @@ total 128M
 
 **Совет:** Пример файла настройки также может быть применён к [Hotfile](http://www.hotfile.com/), [DepositFiles](http://depositfiles.com/), и т.д. и т.п.
 
-**Обратите внимание:** Параметры командной строки всегда имеют преимущество перед параметрами, перечисленных в файле настроек.
+**Примечание:** Параметры командной строки всегда имеют преимущество перед параметрами, перечисленных в файле настроек.
 
 ### Пример aria2.bittorrent
 
@@ -281,7 +283,7 @@ seed-time=240
 
 	Указать время сидирования (раздачи) 240 минут.
 
-**Обратите внимание:** Если оба `seed-ratio` и `seed-time` указаны, сидирование заканчивается, когда по крайней мере одно из условий выполнено.
+**Примечание:** Если оба `seed-ratio` и `seed-time` указаны, сидирование заканчивается, когда по крайней мере одно из условий выполнено.
 
 ### Пример aria2.daemon
 
@@ -308,11 +310,11 @@ rpc-passwd=rpcpass
 
 ## Интерфейс
 
-**Обратите внимание:** Настройки осуществляемые во фронтэндах не влияют на собственные настройки `aria2`, и неясно, повторяют ли различные интерфейсы настройку `aria2`, если обычная была сделана. Пользователи должны гарантировать, что их желаемые параметры эффективно реализуется в рамках отдельных утилит, и что они хранятся постоянно (Uget, например, имеет командную строку своего собственного `aria2`, который прилипает после перезагрузки)
+**Примечание:** Настройки осуществляемые во фронтэндах не влияют на собственные настройки `aria2`, и неясно, повторяют ли различные интерфейсы настройку `aria2`, если обычная была сделана. Пользователи должны гарантировать, что их желаемые параметры эффективно реализуется в рамках отдельных утилит, и что они хранятся постоянно (Uget, например, имеет командную строку своего собственного `aria2`, который прилипает после перезагрузки)
 
 ### Веб-интерфейсы
 
-**Обратите внимание:** Для работы этих фронтэндов, `aria2c` нужно запускать с `--enable-rpc`. Они предназначены для работы на локальном компьютере, а не на удаленном сервере, используя aria для загрузок.
+**Примечание:** Для работы этих фронтэндов, `aria2c` нужно запускать с `--enable-rpc`. Они предназначены для работы на локальном компьютере, а не на удаленном сервере, используя aria для загрузок.
 
 *   **YaaW** — Yet это Aria2 веб-интерфейс на чистом HTML/CSS/Javascirpt.
 
@@ -328,7 +330,7 @@ rpc-passwd=rpcpass
 
 ### Другие интерфейсы
 
-**Обратите внимание:** Эти фронтэнды **не нужны** `aria2c` для запуска с функцией `--enable-rpc`.
+**Примечание:** Эти фронтэнды **не нужны** `aria2c` для запуска с функцией `--enable-rpc`.
 
 *   **aria2fe** — Графический интерфейс CLI-based утилиты загрузок aria2.
 
@@ -437,7 +439,7 @@ DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
 [...]
 ```
 
-**Обратите внимание:** Используйте параметр `-UWget` для изменения пользовательского агента на Wget. Это может предотвратить проблемы при загрузке с сайтов, которые фильтрует запросы, основанные на агенте пользователя (user agent), чтобы избежать проблемы доступа к URL-адресу. Смотрите [#Изменение User Agent](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_User_Agent)
+**Примечание:** Используйте параметр `-UWget` для изменения пользовательского агента на Wget. Это может предотвратить проблемы при загрузке с сайтов, которые фильтрует запросы, основанные на агенте пользователя (user agent), чтобы избежать проблемы доступа к URL-адресу. Смотрите [#Изменение User Agent](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_User_Agent)
 .
 
 ## Смотрите также

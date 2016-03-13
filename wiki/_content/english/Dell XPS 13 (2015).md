@@ -55,7 +55,7 @@ There are no exclusive hardware differences between the Developer Edition and th
 
 ### WiFi
 
-Most configurations feature the Dell DW1560 802.11ac adapter (Broadcom BCM4352), which requires [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) to be installed. See the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for more details and/or assistance.
+Most configurations feature the Dell DW1560 802.11ac adapter (Broadcom BCM4352), which requires [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) (in this case, remember to install `linux-headers` too; even if it is listed as an optional dependency) to be installed. See the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for more details and/or assistance.
 
 Some higher-end models do not use the Dell-branded adapter but instead use an Intel Wireless 7265, which is supported by the mainline kernel. This card is generally available as an aftermarket purchase for those wishing to replace the Broadcom wireless in their laptop. Compared to the Broadcom card, the Intel card has a 2-3 times wider reception range and way higher throughput, making it an worthwhile upgrade should you decide to do so. Note that the Intel 7265 card exists as both a WLAN standalone and WLAN/Bluetooth combo card; both work, so it's your decision if you are willing to pay extra to get Bluetooth support or not.
 
@@ -97,15 +97,15 @@ Note that if you are dual-booting with Windows, you will have to do a cold boot 
 
 With BIOS A02+ and Arch kernel 4.4 or newer, the sound card will be initialized in I2S mode.
 
-**Note:** I2S regressed: in 4.5-rc6 and 4.5-rc7 'aplay -l' doesn't even show broadwell-rt286 anymore. Expect a regression when 4.5 hits stable.
+**Note:** Linux 4.5 requires CONFIG_DW_DMAC_CORE statically compiled[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792), otherwise 'aplay -l' doesn't even show broadwell-rt286 anymore. Unfortunately this means having to carry DW_DMAC_CORE in-memory regardless of whether or not it is needed. Expect a regression when 4.5 gets released.
 
-I2S support in Linux is quite nascent and wasn't up to par with HDA support until recently, so a quirk flag was enabled in the mainline kernel that would force HDA mode on.[[1]](http://thread.gmane.org/gmane.linux.acpi.devel/75464/focus=75466)[[2]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=18d78b64fddc11eb336f01e46ad3303a3f55d039) This flag has been disabled in the stock Arch kernel as of 4.4.[[3]](https://bugs.archlinux.org/task/47710) Also note that I2S support is known to be broken with older versions of alsalib.[[4]](http://www.spinics.net/lists/linux-acpi/msg57457.html)
+I2S support in Linux is quite nascent and wasn't up to par with HDA support until recently, so a quirk flag was enabled in the mainline kernel that would force HDA mode on.[[2]](http://thread.gmane.org/gmane.linux.acpi.devel/75464/focus=75466)[[3]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=18d78b64fddc11eb336f01e46ad3303a3f55d039) This flag has been disabled in the stock Arch kernel as of 4.4.[[4]](https://bugs.archlinux.org/task/47710) Also note that I2S support is known to be broken with older versions of alsalib.[[5]](http://www.spinics.net/lists/linux-acpi/msg57457.html)
 
 In I2S mode, the dual-boot workaround is not necessary.
 
 #### ALSA configuration
 
-By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). In the current case, both cards use the `snd_hda_intel` module. To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
+By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). In the current case, both cards use the `snd_hda_intel` module. To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
 
  `/etc/modprobe.d/alsa-base.conf`  `options snd_hda_intel index=1,0` 
 

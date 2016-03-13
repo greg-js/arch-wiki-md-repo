@@ -84,6 +84,8 @@ $ uname -r
 
 ```
 
+and make sure the corresponding kernel header package, which was built during kernel compilation, is installed as well. Next:
+
 1.  In nvidia.install, replace the `EXTRAMODULES='extramodules-3.4-ARCH'` variable with the custom kernel version, such as `EXTRAMODULES='extramodules-3.4.4'` or `EXTRAMODULES='extramodules-3.4.4-custom'` depending on what the kernel's version is and the local version's text/numbers. Do this for all instances of the version number within this file.
 2.  In PKGBUILD, change the `_extramodules=extramodules-3.4-ARCH` variable to match the appropriate version, as above.
 3.  If there are multiple kernels installed in parallel (such as a custom kernel alongside the default -ARCH kernel), change the `pkgname=nvidia` variable in the PKGBUILD to a unique identifier, such as nvidia-344 or nvidia-custom. This will allow both kernels to use the nvidia module, since the custom nvidia module has a different package name and will not overwrite the original. You will also need to comment the line in `package()` that blacklists the nouveau module in `/usr/lib/modprobe.d/nvidia.conf` (no need to do it again).

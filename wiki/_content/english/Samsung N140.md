@@ -227,41 +227,4 @@ In [Openbox](/index.php/Openbox "Openbox") one can use the internal keybind setu
 
 Read [Laptop#Power management](/index.php/Laptop#Power_management "Laptop").
 
-The Samsung N130/N140 contains a 1.6 GHz Intel Atom ULV (ultra low voltage) N270 processor, designed for low power consumption. The power consumption of the netbook (not just the processor) can be as low as 6W on idle with HDD spun down, although a typical figure under normal usage would be considerably higher.
-
-Obviously the battery life depends on battery capacity as well as power consumption. The supplied battery varies in different markets. This list is a guideline only. Do not rely on this information before purchase -- check with YOUR vendor and update this wiki if it is incorrect:
-
-```
-Voltage 11.1V
-
-```
-
-```
-N130             = 4000mAh [44Wh] (most markets), 5200mAh [57Wh] (Sweden)
-N130 (Vodafone)  = ? [?] (Spain)
-N130 (CMCC)      = ? [?] (China)
-N140             = 5200mAh [57Wh] (US, Germany, France, Sweden), 5900mAh [65Wh] (UK)
-Extended battery = 7800mAh [86Wh]
-
-```
-
-Install [powertop](https://www.archlinux.org/packages/?name=powertop) which is a [very useful tool](/index.php/Powertop "Powertop") for measuring and tuning power consumption.
-
-Enable CPU frequency scaling (P-states) by loading the driver module `acpi-cpufreq`. This is most conveniently done dropping a namesake file in `/etc/modules-load.d`:
-
- `/etc/modules-load.d/acpi-cpufreq.conf` 
-```
-acpi-cpufreq
-
-```
-
-Select the CPU frequency governor by adding the following lines to a systemd tmpfile:
-
- `/etc/tmpfiles.d/local.conf` 
-```
- w /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor - - - - ondemand
- w /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor - - - - ondemand
-
-```
-
 **Note:** Contrary to the advice in many places `hdparm -B 255 /dev/sda` does NOT necessarily turn off advanced power management. What happens depends on the disk model. With the Samsung HM160HI disk 255 results in very frequent spindowns

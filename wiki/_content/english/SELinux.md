@@ -47,14 +47,14 @@ Summary of changes in AUR as compared to official core packages:
 | coreutils | Need a rebuild with `--with-selinux` flag to link with libselinux |
 | cronie | Need a rebuild with `--with-selinux` flag |
 | dbus | Need a rebuild with `--enable-libaudit` and `--enable-selinux` flags |
-| findutils | Need SELinux patch for 4.4.2, already upstream |
+| findutils | Need a rebuild with libselinux installed to enable SELinux-specific options |
 | iproute2 | Need a rebuild with `--with-selinux` flag |
 | logrotate | Need a rebuild with `--with-selinux` flag |
 | openssh | Need a rebuild with `--with-selinux` flag |
 | pam | Need a rebuild with `--enable-selinux` flag for Linux-PAM ; Need a patch for pam_unix2, which only removes a function already implemented in a recent versions of libselinux |
 | pambase | Configuration changes to add pam_selinux.so to `/etc/pam.d/system-login` |
 | psmisc | Need a rebuild with `--with-selinux` flag |
-| shadow | --with-selinux}} flags |
+| shadow | Need a rebuild with `--with-selinux` flags |
 | sudo | Need a rebuild with `--with-selinux` flag |
 | systemd | Need a rebuild with `--enable-audit` and `--enable-selinux` flags |
 | util-linux | Need a rebuild with `--with-selinux` flag |

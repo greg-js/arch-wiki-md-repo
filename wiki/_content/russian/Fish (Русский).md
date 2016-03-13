@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Fish](/index.php/Fish "Fish"). Дата последней синхронизации: 12 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Fish&diff=0&oldid=420178).
+
 **fish** (**friendly interactive shell**, т.е. **дружелюбная интерактивная оболочка**) представляет собой удобную интерактивную оболочку командной строки предназначенную в основном для интерактивного использования.
 
 ## Contents
@@ -15,17 +17,14 @@
 *   [4 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
     *   [4.1 История Замены](#.D0.98.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8F_.D0.97.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B)
 *   [5 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [5.1 su запускает Bash](#su_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82_Bash)
-    *   [5.2 Запуск X при входе в систему](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_X_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
+    *   [5.1 Скрипты не совместимые с fish](#.D0.A1.D0.BA.D1.80.D0.B8.D0.BF.D1.82.D1.8B_.D0.BD.D0.B5_.D1.81.D0.BE.D0.B2.D0.BC.D0.B5.D1.81.D1.82.D0.B8.D0.BC.D1.8B.D0.B5_.D1.81_fish)
+    *   [5.2 su запускает Bash](#su_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82_Bash)
+    *   [5.3 Запуск X при входе в систему](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_X_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
 *   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") пакет [fish](https://www.archlinux.org/packages/?name=fish) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"), - стабильную версию пакета [основного форка](http://fishshell.com/) проекта.
-
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") [fish-shell-git](https://aur.archlinux.org/packages/fish-shell-git/) из [AUR](/index.php/AUR "AUR"), - последнюю разрабатываемую версию.
-
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") [fish-git](https://aur.archlinux.org/packages/fish-git/) из [AUR](/index.php/AUR "AUR") [прекращённую разработку](http://www.mail-archive.com/fish-users@lists.sourceforge.net/msg02893.html) по его [оригинальной разработке](https://github.com/liljencrantz) в 2011.
+[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") пакет [fish](https://www.archlinux.org/packages/?name=fish) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Либо установите [fish-git](https://aur.archlinux.org/packages/fish-git/) версию пакета для разработки.
 
 Для того чтобы сделать fish оболочкой по умолчанию, выполните `chsh -s /usr/bin/fish`.
 
@@ -180,7 +179,9 @@ Fish does not implement history substitution (e.g. `sudo !!`), and the fish dev
 
 ## Решение проблем
 
-В Arch есть много сценариев оболочки (shell scripts), написанных для Bash, и они небыли переведены для fish. Чтобы не устанавливать Fish оболочкой по умолчанию, самым лучшим вариантом будет открыть эмулятор терминала с возможностью командной строки fish. Для большинства терминалов это параметр `-e`, так например, чтобы открыть gnome-terminal, использующим fish, измените свой ярлык для использования:
+### Скрипты не совместимые с fish
+
+В Arch, некоторые скрипты написаны для Bash, и они не полностью совместимы с fish. Вы можете получатьошибки вскриптах, если ваша оболочка по умолчанию устанавливается как fish. В Arch есть много сценариев оболочки (shell scripts), написанных для Bash, и они небыли переведены для fish. Чтобы не устанавливать Fish оболочкой по умолчанию, самым лучшим вариантом будет открыть эмулятор терминала с возможностью командной строки fish. Для большинства терминалов это параметр `-e`, так например, чтобы открыть gnome-terminal, использующим fish, измените свой ярлык для использования:
 
 ```
 gnome-terminal -e fish
@@ -243,7 +244,7 @@ end
 
 ```
 
-**Примечание:** Смотрите [это решение](https://github.com/fish-shell/fish-shell/issues/1772) пичины почему `startx` требует `-keeptty` Флаг при использовании fish.
+**Примечание:** Смотрите [это решение](https://github.com/fish-shell/fish-shell/issues/1772), причины почему `startx` требует `-keeptty` Флаг при использовании fish.
 
 ## Смотрите также
 

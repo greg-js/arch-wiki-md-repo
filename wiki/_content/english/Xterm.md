@@ -2,7 +2,7 @@
 
 ## Contents
 
-*   [1 Basics](#Basics)
+*   [1 Configuration](#Configuration)
     *   [1.1 Resource file settings](#Resource_file_settings)
         *   [1.1.1 TERM Environmental Variable](#TERM_Environmental_Variable)
         *   [1.1.2 UTF-8](#UTF-8)
@@ -35,7 +35,7 @@
     *   [5.1 Flickering on scroll](#Flickering_on_scroll)
 *   [6 See also](#See_also)
 
-## Basics
+## Configuration
 
 ### Resource file settings
 

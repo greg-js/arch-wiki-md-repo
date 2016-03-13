@@ -114,7 +114,7 @@ A separate `/boot` partition is needed if installing a software RAID0 (stripe) s
 
 The `/home` directory contains user-specific configuration files, caches, application data and media files.
 
-Separating out `/home` allows `/` to be re-partitioned separately, but note that you can still reinstall Arch with `/home` untouched even if it isn't separate - the other top-level directories just need to be removed, and then pacstrap can be run.
+Separating out `/home` allows `/` to be re-partitioned separately, but note that you can still reinstall Arch with `/home` untouched even if it is not separate - the other top-level directories just need to be removed, and then pacstrap can be run.
 
 You should not share home directories between users on different distributions, because they use incompatible software versions and patches. Instead, consider sharing a media partition or at least using different home directories on the same `/home` partition.
 
@@ -228,12 +228,12 @@ Solid state drives are based on [flash memory](https://en.wikipedia.org/wiki/Fla
 
 In the past, proper alignment required manual calculation and intervention when partitioning. Many of the common partition tools now handle partition alignment automatically:
 
-*   fdisk
-*   gdisk
-*   gparted
-*   parted
+*   *fdisk*
+*   *gdisk*
+*   *gparted*
+*   *parted*
 
-On an already partitioned disk, you can use [parted](/index.php/Parted "Parted") to verify the alignment of a partition on a device. For instance, to verify alignment of partition 1 on /dev/sda:
+On an already partitioned disk, you can use [parted](/index.php/Parted "Parted") to verify the alignment of a partition on a device. For instance, to verify alignment of partition 1 on `/dev/sda`:
 
 ```
 # parted /dev/sda
@@ -242,7 +242,7 @@ On an already partitioned disk, you can use [parted](/index.php/Parted "Parted")
 
 ```
 
-**Warning:** Using `/usr/bin/blockdev` with option `--getalignoff` to check if a the partition is aligned has been reported to be [[unreliable](http://bbs.archlinux.org/viewtopic.php?id=174141)].
+**Warning:** Using `/usr/bin/blockdev` with option `--getalignoff` to check if a the partition is aligned has been reported to be [unreliable](https://bbs.archlinux.org/viewtopic.php?id=174141).
 
 ## See also
 

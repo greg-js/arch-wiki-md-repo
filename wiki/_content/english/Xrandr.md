@@ -16,6 +16,7 @@
         *   [4.1.1 EDID checksum is invalid](#EDID_checksum_is_invalid)
     *   [4.2 Permanently adding undetected resolutions](#Permanently_adding_undetected_resolutions)
     *   [4.3 Resolution lower than expected](#Resolution_lower_than_expected)
+    *   [4.4 Full RGB in HDMI](#Full_RGB_in_HDMI)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -388,9 +389,33 @@ EndSection
 
 About the numbers: DELL on the left and Samsung on the right. So the virtual width is of sum of both LCD width 3600=1920+1680; Height then is figured as the max of them, which is max(1200,1050)=1200\. If you put one LCD above the other, use this calculation instead: (max(width1, width2), height1+height2).
 
+### Full RGB in HDMI
+
+Background: May occur that the intel driver will not configure correctly the output of the HDMI monitor. It will set a limited "Broadcast RGB"(limited 16-235), and the black will not look black, it will be grey.
+
+To see if it is your case:
+
+ `Run in the terminal` 
+```
+/usr/bin/xrandr --output HDMI1 --set "Broadcast RGB" "Full"
+
+```
+
+Note: Run xrandr without arguments to see if it is really HDMI1 in your case.
+
+If it fixed your issue, you can configure it permanently creating a file in /etc/X11/xinit/xinitrc.d/70-fullrgb.sh. Don't forget to change the permissions for the file to be executable (I used chmod 755).
+
+```
+if [ "$(/usr/bin/xrandr -q --prop | grep 'Broadcast RGB: Full' | wc -l)" = "0" ] ; then
+/usr/bin/xrandr --output HDMI1 --set "Broadcast RGB" "Full"
+fi
+
+```
+
 ## See also
 
 *   [https://wiki.ubuntu.com/X/Config/Resolution](https://wiki.ubuntu.com/X/Config/Resolution)
 *   [RandR 1.2 tutorial](http://wiki.debian.org/XStrikeForce/HowToRandR12)
 *   [Xorg RandR 1.2 on ThinkWiki](http://www.thinkwiki.org/wiki/Xorg_RandR_1.2)
 *   [FAQVideoModes - more information about modelines](http://www.x.org/wiki/FAQVideoModes#ObtainingmodelinesfromWindowsprogramPowerStrip)
+*   [RGB Correction issue](https://patchwork.kernel.org/patch/1972181/)

@@ -113,7 +113,7 @@ It supports GPT as well as MBR.
 
 ### Util-linux fdisk
 
-The fdisk utility from util-linux (based on util-linux internal libfdisk) partially supports GPT, but it is still in beta stage (as on 07 October 2013). The related utilities cfdisk and sfdisk do not yet support GPT, and may damage the GPT header and partition table if used on a GPT disk.
+The [fdisk](/index.php/Fdisk "Fdisk") utility from [util-linux](https://www.archlinux.org/packages/?name=util-linux) (based on util-linux internal libfdisk) partially supports GPT, but it is still in beta stage (as on 07 October 2013). The related utilities cfdisk and sfdisk do not yet support GPT, and may damage the GPT header and partition table if used on a GPT disk.
 
 ## Partitioning examples
 
@@ -192,6 +192,8 @@ Just open the MBR disk using gdisk and exit with "w" option to write the changes
 *   Keep in mind that if your Boot-Manager is GRUB, it needs a [BIOS Boot Partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). If your MBR Partitioning Layout isn't too old, there is a good chance that the first partition starts at sector 2048 for alignment reasons. That means at the beginning will be 1007 [KiB](https://en.wikipedia.org/wiki/KiB "wikipedia:KiB") of empty space where this bios-boot partition can be created. To do this, first do the mbr->gpt conversion with gdisk as described above. Afterwards, create a new partition with gdisk and manually specify its position to be sectors 34 - 2047, and set the `EF02` partition type.
 *   There are known corruption issues with the backup GPT table on laptops that are Intel chipset based, and run in RAID mode. The solution is to use AHCI instead of RAID, if possible.
 
+See also [fdisk#Convert between MBR and GPT](/index.php/Fdisk#Convert_between_MBR_and_GPT "Fdisk").
+
 ### Resize a partition
 
 This is generally applicable to reduce partition, so a new one can be created in that space. But it can be applied to growing a partition also. This example is for reducing a partition size.
@@ -223,12 +225,12 @@ After sorting the partitions, it might be required to adjust the `/etc/fstab` an
 
 ## See also
 
-1.  Wikipedia's Page on [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") and [MBR](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record")
-2.  [Homepage of Rod Smith's GPT fdisk tool](http://rodsbooks.com/gdisk/) and its [Sourceforge.net Project page - gptfdisk](http://sourceforge.net/projects/gptfdisk/)
-3.  Rod Smith's page on [What's a GPT?](http://www.rodsbooks.com/gdisk/whatsgpt.html) [Converting MBR to GPT](http://rodsbooks.com/gdisk/mbr2gpt.html) and [Booting OSes from GPT](http://rodsbooks.com/gdisk/booting.html)
-4.  Rod Smith's page on the [New Partition Type GUID](http://www.rodsbooks.com/linux-fs-code/index.html) for Linux data partitions
-5.  [System Rescue CD's page on GPT](http://sysresccd.org/Sysresccd-Partitioning-The-new-GPT-disk-layout)
-6.  Wikipedia page on [BIOS Boot Partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
-7.  [Make the most of large drives with GPT and Linux - IBM Developer Works](http://www.ibm.com/developerworks/linux/library/l-gpt/index.html?ca=dgr-lnxw07GPT-Storagedth-lx&S_TACT=105AGY83&S_CMP=grlnxw07)
-8.  [Microsoft's Windows and GPT FAQ](http://www.microsoft.com/whdc/device/storage/GPT_FAQ.mspx)
-9.  Fedora developer discussion on [BIOS/GPT configuration](http://mjg59.dreamwidth.org/8035.html)
+*   Wikipedia's Page on [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") and [MBR](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record")
+*   [Homepage of Rod Smith's GPT fdisk tool](http://rodsbooks.com/gdisk/) and its [Sourceforge.net Project page - gptfdisk](http://sourceforge.net/projects/gptfdisk/)
+*   Rod Smith's page on [What's a GPT?](http://www.rodsbooks.com/gdisk/whatsgpt.html) [Converting MBR to GPT](http://rodsbooks.com/gdisk/mbr2gpt.html) and [Booting OSes from GPT](http://rodsbooks.com/gdisk/booting.html)
+*   Rod Smith's page on the [New Partition Type GUID](http://www.rodsbooks.com/linux-fs-code/index.html) for Linux data partitions
+*   [System Rescue CD's page on GPT](http://sysresccd.org/Sysresccd-Partitioning-The-new-GPT-disk-layout)
+*   Wikipedia page on [BIOS Boot Partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
+*   [Make the most of large drives with GPT and Linux - IBM Developer Works](http://www.ibm.com/developerworks/linux/library/l-gpt/index.html?ca=dgr-lnxw07GPT-Storagedth-lx&S_TACT=105AGY83&S_CMP=grlnxw07)
+*   [Microsoft's Windows and GPT FAQ](http://www.microsoft.com/whdc/device/storage/GPT_FAQ.mspx)
+*   Fedora developer discussion on [BIOS/GPT configuration](http://mjg59.dreamwidth.org/8035.html)

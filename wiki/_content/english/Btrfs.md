@@ -34,13 +34,14 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page)
     *   [4.5 Commit interval settings](#Commit_interval_settings)
     *   [4.6 Checkpoint interval](#Checkpoint_interval)
     *   [4.7 SSD TRIM](#SSD_TRIM)
-*   [5 File system administration and maintenance](#File_system_administration_and_maintenance)
+*   [5 Usage](#Usage)
     *   [5.1 Displaying used/free space](#Displaying_used.2Ffree_space)
     *   [5.2 Defragmentation](#Defragmentation)
     *   [5.3 Scrub](#Scrub)
     *   [5.4 Balance](#Balance)
     *   [5.5 RAID](#RAID)
     *   [5.6 Snapshots](#Snapshots)
+    *   [5.7 Send/receive](#Send.2Freceive)
 *   [6 Limitations](#Limitations)
     *   [6.1 Encryption](#Encryption)
     *   [6.2 Swap file](#Swap_file)
@@ -327,7 +328,7 @@ A Btrfs filesystem will automatically free unused blocks from an SSD drive suppo
 
 More information about enabling and using TRIM can be found in [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives").
 
-## File system administration and maintenance
+## Usage
 
 ### Displaying used/free space
 
@@ -448,6 +449,28 @@ To create a snapshot:
 To create a readonly snapshot add the `-r` flag. To create writable version of a readonly snapshot, simply create a snapshot of it.
 
 **Note:** Snapshots are not recursive. Every sub-volume inside sub-volume will be an empty directory inside the snapshot.
+
+### Send/receive
+
+A subvolume can be sent to stdout or a file using the `send` command. This is usually most useful when piped to a Btrfs `receive` command. For example, to send a snapshot named `/root_backup` (perhaps of a snapshot you made of `/` earlier) to `/backup` you would do the following:
+
+```
+ # btrfs send /root_backup | btrfs receive /backup
+
+```
+
+The snapshot that is sent *must* be readonly. The above command is useful for copying a subvolume to an external device (*e.g.*, a USB disk mounted at `/backup` above).
+
+You can also send only the difference between two snapshots. For example, let's say you've already sent a copy of `root_backup` above and have made a new readonly snapshot on your system named `root_backup_new`. To send only the incremental difference to `/backup` do:
+
+```
+ # btrfs send -p /root_backup /root_backup_new | btrfs send /backup
+
+```
+
+Now a new subvolume named `root_backup_new` will be present in `/backup`.
+
+See [Btrfs Wiki's Incremental Backup page](https://btrfs.wiki.kernel.org/index.php/Incremental_Backup) on how to use this for an incremental backup and for tools that automate the process.
 
 ## Limitations
 

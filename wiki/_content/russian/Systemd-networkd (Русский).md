@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"). Дата последней синхронизации: 7 ноября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd-networkd&diff=0&oldid=408418).
+**Состояние перевода:** На этой странице представлен перевод статьи [Systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"). Дата последней синхронизации: 28 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd-networkd&diff=0&oldid=423358).
 
 *systemd-networkd* - это системный демон, который управляет сетевыми настройками. По мере появления он обнаруживает и настраивает сетевые устройства, также может создавать виртуальные сетевые устройства. Эта служба может быть особенно полезной для установки сложных сетевых настроек, для контейнера управляемым [Systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") или для виртуальных машин. А также отлично работает на простом соединении.
 
@@ -11,13 +11,14 @@
         *   [1.2.2 Проводной адаптер использующий статический IP](#.D0.9F.D1.80.D0.BE.D0.B2.D0.BE.D0.B4.D0.BD.D0.BE.D0.B9_.D0.B0.D0.B4.D0.B0.D0.BF.D1.82.D0.B5.D1.80_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8E.D1.89.D0.B8.D0.B9_.D1.81.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_IP)
         *   [1.2.3 Беспроводной адаптер](#.D0.91.D0.B5.D1.81.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B4.D0.BD.D0.BE.D0.B9_.D0.B0.D0.B4.D0.B0.D0.BF.D1.82.D0.B5.D1.80)
         *   [1.2.4 Проводные и беспроводные адаптеры на одной машине](#.D0.9F.D1.80.D0.BE.D0.B2.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.B1.D0.B5.D1.81.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D0.B0.D0.B4.D0.B0.D0.BF.D1.82.D0.B5.D1.80.D1.8B_.D0.BD.D0.B0_.D0.BE.D0.B4.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D0.B5)
+        *   [1.2.5 IPv6 расширения конфиденциальности](#IPv6_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B4.D0.B5.D0.BD.D1.86.D0.B8.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8)
 *   [2 Файлы настроек](#.D0.A4.D0.B0.D0.B9.D0.BB.D1.8B_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA)
     *   [2.1 Файлы network](#.D0.A4.D0.B0.D0.B9.D0.BB.D1.8B_network)
         *   [2.1.1 [Match] раздел](#.5BMatch.5D_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB)
         *   [2.1.2 [Network] раздел](#.5BNetwork.5D_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB)
         *   [2.1.3 [Address] раздел](#.5BAddress.5D_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB)
         *   [2.1.4 [Route] раздел](#.5BRoute.5D_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB)
-    *   [2.2 Файлы netdev](#.D0.A4.D0.B0.D0.B9.D0.BB.D1.8B_netdev)
+    *   [2.2 Файлы NetDev](#.D0.A4.D0.B0.D0.B9.D0.BB.D1.8B_NetDev)
         *   [2.2.1 [Match] раздел](#.5BMatch.5D_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB_2)
         *   [2.2.2 [Netdev] раздел](#.5BNetdev.5D_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB)
     *   [2.3 Файлы link](#.D0.A4.D0.B0.D0.B9.D0.BB.D1.8B_link)
@@ -46,7 +47,7 @@
 *   `systemd-networkd.service`
 *   `systemd-resolved.service`
 
-**Обратите внимание:** *systemd-resolved* на самом деле требуется, только если вы указали записи DNS в файлах *.network* или если вы хотите получить адреса DNS от DHCP клиента networkd.
+**Примечание:** *systemd-resolved* на самом деле требуется, только если вы указали записи DNS в файлах *.network* или если вы хотите получить адреса DNS от DHCP клиента networkd.
 
 Для совместимости с [resolv.conf](/index.php/Resolv.conf "Resolv.conf"), удалите или переименуйте существующий файл и создайте следующую символическую ссылку:
 
@@ -64,7 +65,7 @@ hosts: files **resolve** myhostname
 
 Смотрите `man systemd-resolved`, `man resolved.conf` и [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
 
-**Обратите внимание:** Systemd's `resolve` не может найти локальный домен, когда дается только имя хоста, даже когда `UseDomains=yes` или `Domains=[domain-list]` присутствует в соответствующем файле `.network`, и что файл производит ожидаемый `search [domain-list]` в `resolv.conf`. Если вы столкнулись с этой проблемой:
+**Примечание:** Systemd's `resolve` не может найти локальный домен, когда дается только имя хоста, даже когда `UseDomains=yes` или `Domains=[domain-list]` присутствует в соответствующем файле `.network`, и что файл производит ожидаемый `search [domain-list]` в `resolv.conf`. Если вы столкнулись с этой проблемой:
 
 *   Переключитесь на использование полного доменного имени
 *   Используйте разрешения имен хостов `/etc/hosts`
@@ -83,7 +84,7 @@ Systemd/udev автоматически назначает предсказуе�
 
 ```
 
-**Обратите внимание:** В приведенных ниже примерах, **enp1s0** это проводной адаптер, а **wlp2s0** беспроводной адаптер. Эти имена могут быть другими в разных системах.
+**Примечание:** В приведенных ниже примерах, **enp1s0** это проводной адаптер, а **wlp2s0** беспроводной адаптер. Эти имена могут быть другими в разных системах.
 
 #### Проводной адаптер с DHCP
 
@@ -134,7 +135,7 @@ DHCP=ipv4
 
 Маршрут метрики ядра (также как настройка *ip*) решает, какой маршрут использовать для исходящих пакетов, в тех случаях, когда установлено несколько **Match**. Это происходит в том случае, когда оба устройства (проводное и беспроводное) в системе имеют активные соединения. Чтобы разорвать связь, ядро использует метрики. Если одно из соединений завершается, другое автоматически выигрывает без наличия разрывов (текущие трансферты могут до сих пор не справиться с этим хорошо, но это в другом слое OSI).
 
-**Обратите внимание:** Опция **Metric** для статических маршрутов, а опция **RouteMetric** для не использующих статические маршруты.
+**Примечание:** Опция **Metric** для статических маршрутов, а опция **RouteMetric** для не использующих статические маршруты.
  `/etc/systemd/network/*wired*.network` 
 ```
 [Match]
@@ -159,6 +160,10 @@ DHCP=ipv4
 RouteMetric=20
 
 ```
+
+#### IPv6 расширения конфиденциальности
+
+**Примечание:** Broken on v228 [https://github.com/systemd/systemd/issues/2242](https://github.com/systemd/systemd/issues/2242)
 
 ## Файлы настроек
 
@@ -210,7 +215,7 @@ RouteMetric=20
 
 Наиболее распространенные ключи:
 
-*   `Name=` имя устройства (например Br0, enp4s0)
+*   `Name=` имя устройства (например Br0, enp4s0, en*)
 *   `Host=` имя хоста машины
 *   `Virtualization=` проверить, является ли система выполненной в виртуализированной среде или нет. `Virtualization=no` ключ будет применяться только на вашей машине, в то время как `Virtualization=yes` применяются к любому контейнеру или VM.
 
@@ -221,7 +226,10 @@ RouteMetric=20
 *   `DHCP=` включает поддержку [DHCPv4](https://en.wikipedia.org/wiki/ru:DHCP "wikipedia:ru:DHCP") и/или DHCPv6\. Принимает: `yes`, `no`, `ipv4` или `ipv6`
 *   `DNS=` является [DNS](https://en.wikipedia.org/wiki/ru:DNS "wikipedia:ru:DNS") адрес сервера. Вы можете указать этот параметр более одного раза
 *   `Bridge=` это имя моста, чтобы добавить ссылку на
-*   `IPForward=` позволяет перенаправление IP, выполняя перенаправление в соответствии с таблицей маршрутизации, и необходим для создания [Internet sharing](/index.php/Internet_sharing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Internet sharing (Русский)"). Принимает: `yes`, `no`, `ipv4`, `ipv6` или `kernel`. Обратите внимание, что `IPForward` по умолчанию имеет значение 0, что означает, что если вы не зададите настройки для `IPForward` в вашем файле .network, у вашего интерфейса будет выключена IP-переадресация, даже если вы включили её с помощью `sysctl` или прописали в `/proc/sys`. Make sure that your .network file does not accidentally turn off forwarding because if you do not have a IPForward=1 setting in it, systemd-networkd will turn off forwarding on this interface, even if you have it enabled globally.
+*   `IPForward=` по умолчанию `no`. Это разрешает IP forwarding, выполняя пересылку в соответствии с таблицей маршрутизации и необходим для настройк [Internet sharing](/index.php/Internet_sharing "Internet sharing"). Заметим, что включение `IPForward=` относится ко *всем* сетевым интерфейсам.
+*   `Domains=` список доменов, используемых для разрешения имен DNS хоста.
+
+Для подробностей, смотрите `systemd.network(5)`.
 
 #### [Address] раздел
 
@@ -239,7 +247,7 @@ RouteMetric=20
 
 **Совет:** you can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `Address=` contains only an Address key and `Gateway=` section contains only a Gateway key
 
-### Файлы netdev
+### Файлы NetDev
 
 Эти файлы будут создавать виртуальные сетевые устройства.
 
@@ -250,7 +258,7 @@ RouteMetric=20
 [Match]
 *вертикальный список ключей*
 
-[Netdev]
+[NetDev]
 *вертикальный список ключей*
 
 ```
@@ -300,7 +308,7 @@ RouteMetric=20
 
 `MACAddress=` должен использоваться, когда не указан `MACAddressPolicy=`
 
-**Обратите внимание:** Системе, как правило, `/usr/lib/systemd/network/99-default.link` достаточно для большинства случаев.
+**Примечание:** Системе, как правило, `/usr/lib/systemd/network/99-default.link` достаточно для большинства случаев.
 
 ## Использование с контейнерами
 
@@ -312,15 +320,15 @@ RouteMetric=20
 
 **Совет:** Before you start to configure your container network, it is useful to:
 
-*   disable all your [netctl](/index.php/Netctl "Netctl") services. This will avoid any potential conflicts with **systemd-networkd** and make all your configurations easier to test. Furthermore, odds are high you will end with few or even no [netctl](/index.php/Netctl "Netctl") activated profiles. The `netctl list` command will output a list of all your profiles, with the activated one being starred.
+*   disable all your [netctl](/index.php/Netctl "Netctl") services. This will avoid any potential conflicts with `systemd-networkd` and make all your configurations easier to test. Furthermore, odds are high you will end with few or even no [netctl](/index.php/Netctl "Netctl") activated profiles. The `netctl list` command will output a list of all your profiles, with the activated one being starred.
 *   disable the `systemd-nspawn@.service` and use the `systemd-nspawn -bnD /path_to/your_container/` command as root to boot the container. To log off and shutdown inside the container `systemctl poweroff` is used as root. Once the network setting meets your requirements, [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `systemd-nspawn@.service`
 *   disable the `dhcpcd.service` if enabled on your system, since it activates *dhcpcd* on **all** interfaces
 *   make sure you have no [netctl](/index.php/Netctl "Netctl") profiles activated in the container, and ensure that `systemd-networkd.service` is neither enabled nor started
 *   make sure you do not have any [iptables](/index.php/Iptables "Iptables") rules which can block traffic
-*   make sure *packet forwarding* is [enabled](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") if you want to let containers access the internet
+*   * make sure *packet forwarding* is [enabled](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") if you want to let containers access the internet. Make sure that your `.network` file does not accidentally turn off forwarding because if you do not have a `IPForward=1` setting in it, `systemd-networkd` will turn off forwarding on this interface, even if you have it enabled globally.
 *   when the daemon is started the systemd `networkctl` command displays the status of network interfaces.
 
-**Обратите внимание:** For the set-up described below,
+**Примечание:** For the set-up described below,
 
 *   we will limit the output of the `ip a` command to the concerned interfaces
 *   we assume the *host* is your main OS you are booting to and the *container* is your guest virtual machine

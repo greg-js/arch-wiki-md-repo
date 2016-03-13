@@ -131,6 +131,8 @@ Your boot partition, on which you plan to install Syslinux, must contain a FAT, 
 
 After this, proceed to install the Syslinux boot code (`mbr.bin` or `gptmbr.bin`) to the Master Boot Record 440-byte boot code region (not to be confused with MBR aka msdos partition table) of the disk, as described in the next sections, respectively.
 
+**Note:** For a partitionless install, there is no need to install the Syslinux boot code to the MBR. See [[1]](https://unix.stackexchange.com/questions/103501/boot-partiotionless-disk-with-syslinux).
+
 ##### MBR partition table
 
 See the main article: [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record").
@@ -761,7 +763,7 @@ Syslinux supports booting from ISO images directly using the [memdisk](http://ww
 
 ### Serial console
 
-To enable Serial Console add the `SERIAL port [baudrate]` to the top of `syslinux.cfg` file. "port" is a number (0 for `/dev/ttyS0`), if "baudrate" is omitted, the baud rate default is 9600 bps. The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[1]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D)
+To enable Serial Console add the `SERIAL port [baudrate]` to the top of `syslinux.cfg` file. "port" is a number (0 for `/dev/ttyS0`), if "baudrate" is omitted, the baud rate default is 9600 bps. The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[2]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D)
 
  `syslinux.cfg` 
 ```
@@ -769,7 +771,7 @@ SERIAL 0 115200
 
 ```
 
-Enable Serial Console in the kernel at boot by adding `console=tty0 console=ttyS0,115200n8` to the `APPEND` option.[[2]](http://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt#681)
+Enable Serial Console in the kernel at boot by adding `console=tty0 console=ttyS0,115200n8` to the `APPEND` option.[[3]](http://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt#681)
 
  `syslinux.cfg`  `APPEND root=UUID=126ca36d-c853-4f3a-9f46-cdd49d034ce4 rw console=tty0 console=ttyS0,115200n8` 
 
@@ -941,7 +943,7 @@ To get more detailed debug log, recompile the [syslinux](https://www.archlinux.o
 
 ### Btrfs compression
 
-Booting from btrfs with compression is not supported.[[3]](http://www.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
+Booting from btrfs with compression is not supported.[[4]](http://www.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
 
 ```
 btrfs: found compressed data, cannot continue!

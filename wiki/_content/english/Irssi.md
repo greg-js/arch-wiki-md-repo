@@ -63,32 +63,24 @@ Personal configuration file should be located at `~/.irssi/config`; there is a t
 
 ### Authenticating with SASL
 
-[Install](/index.php/Install "Install") the [irssi-script-sasl](https://aur.archlinux.org/packages/irssi-script-sasl/) package. Load the script with each start of irssi:
+**Tip:** Irssi version 0.8.18 now supports built-in SASL.
+
+In order to add network with sasl mechanism here's an example:
 
 ```
-$ mkdir -p ~/.irssi/scripts/autorun
-$ cd ~/.irssi/scripts/autorun
-$ ln -s /usr/share/irssi/scripts/cap_sasl.pl cap_sasl.pl
-
-```
-
-Then open irssi and run the SASL script and enter your SASL settings. Please use your main nick "your-primary-nick" and "your-password" which is registered with nickserv. See [here](https://freenode.net/sasl/sasl-irssi.shtml) for available authentication mechanisms (Note that DH-BLOWFISH is no longer supported):
-
-```
-/script load autorun/cap_sasl.pl
-/sasl set Freenode *primary-nick* *password* *auth*
-/sasl save
-/save
+/SERVER ADD -auto -ssl -ssl_verify -ssl_capath /etc/ssl/certs -network freenode -port 6697 irc.freenode.net
+/NETWORK ADD -sasl_mechanism plain -sasl_username <username> -sasl_password <password> freenode
 
 ```
 
 **Note:**
 
 *   Make sure to use the correct capitalization for the network name.
-*   Your password will be visible when you type it and can also be seen in `~/.irssi/sasl.auth`
+*   First command line is for adding server with [#SSL Connection](#SSL_Connection)
+*   If you have an existing network, then type second command line only.
 *   If your password contains `$`, you have to prefix it with another `$` for *irssi* to properly parse it.
 
-Restart irssi and look for "Irssi: SASL authentication successful".
+Restart irssi, connect network and look for "SASL authentication succeeded".
 
 ### Automatically connect to #archlinux on startup
 

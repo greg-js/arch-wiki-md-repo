@@ -639,7 +639,7 @@ See [Pidgin#Skype plugin](/index.php/Pidgin#Skype_plugin "Pidgin").
 
 ### GUI does not match GTK Theme
 
-See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for information about theming Qt based applications like [VirtualBox](/index.php/VirtualBox "VirtualBox") or Skype.
+See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for information about theming Qt based applications like [VirtualBox](/index.php/VirtualBox "VirtualBox") or Skype. Also, you may need to install the [lib32-gtk-engines](https://aur.archlinux.org/packages/lib32-gtk-engines/) package.
 
 ### Test call fails
 

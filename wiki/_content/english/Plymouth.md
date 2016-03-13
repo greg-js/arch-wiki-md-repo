@@ -65,8 +65,6 @@ Rebuild your initrd image (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 
 
 ### Smooth transition
 
-**Warning:** Plymouth version 0.9.2-5 has been reported to cause issues when starting [LightDM](/index.php/LightDM "LightDM"). The issue is known on upstream and you should use light display managers like [SLiM](/index.php/SLiM "SLiM") or [SDDM](/index.php/SDDM "SDDM") for now.
-
 For *smooth transition* to [display manager](/index.php/Display_manager "Display manager") you have to:
 
 1.  Disable your Display Manager Unit, e.g. `systemctl disable gdm.service`

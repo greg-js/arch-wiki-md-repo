@@ -131,6 +131,10 @@ pacman has the `-q` operand to hide the version column, so it is possible to que
 
 	[https://projects.archlinux.org/srcpac.git](https://projects.archlinux.org/srcpac.git) || [srcpac](https://www.archlinux.org/packages/?name=srcpac)
 
+*   **[snap-pac](/index.php/Snapper#snap-pac_pacman_hooks "Snapper")** — Make pacman automatically use snapper to create pre/post snapshots like openSUSE's YaST.
+
+	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://aur.archlinux.org/packages/snap-pac/)
+
 ## Maintenance
 
 See also [System maintenance](/index.php/System_maintenance "System maintenance").

@@ -70,7 +70,7 @@ Install:
 
 *   [mesa](https://www.archlinux.org/packages/?name=mesa) - An open-source implementation of the **OpenGL** specification.
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel driver.
-*   [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) - Install appropriate NVIDIA driver. For more information read [NVIDIA#Installing](/index.php/NVIDIA#Installing "NVIDIA").
+*   [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) - Install appropriate NVIDIA driver. For more information read [NVIDIA#Installation](/index.php/NVIDIA#Installation "NVIDIA").
 
 For 32-bit ([Multilib](/index.php/Multilib "Multilib") must be enabled) applications support on 64-bit machines, install:
 
@@ -162,6 +162,8 @@ For another example, open NVIDIA Settings panel with Optimus:
 $ optirun -b none nvidia-settings -c :8
 
 ```
+
+**Note:** A patched version of [nvdock](https://www.archlinux.org/packages/?name=nvdock) is available in the package [nvdock-bumblebee](https://aur.archlinux.org/packages/nvdock-bumblebee/)
 
 For a list of the options for `optirun`, view its manual page:
 

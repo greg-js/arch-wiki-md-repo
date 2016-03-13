@@ -472,4 +472,4 @@ Since the AUR packages have been built from the Debian 8 packages, every link to
 
 *   [Official homepage](http://ox.io)
 *   [Installation Guide for Debian 8](http://oxpedia.org/wiki/index.php?title=AppSuite:Open-Xchange_Installation_Guide_for_Debian_8.0)
-*   [Archlinux Forums Thread](https://bbs.archlinux.org/viewforum.php?id=38)
+*   [Archlinux Forums Thread](https://bbs.archlinux.org/viewtopic.php?id=207031)

@@ -24,7 +24,6 @@ There are various alternative kernels available for Arch Linux in addition to th
 *   [3 Compilation](#Compilation)
     *   [3.1 Using the Arch Build System](#Using_the_Arch_Build_System)
     *   [3.2 Traditional](#Traditional)
-    *   [3.3 Proprietary NVIDIA driver](#Proprietary_NVIDIA_driver)
 *   [4 See also](#See_also)
 
 ## Precompiled kernels
@@ -236,10 +235,6 @@ See [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Ar
 This involves manually downloading a source tarball, and compiling in your home directory as a normal user. Once configured, two installation methods are available; the traditional manual method, or with [Makepkg](/index.php/Makepkg "Makepkg") + [Pacman](/index.php/Pacman "Pacman").
 
 See [Kernels/Compilation/Traditional](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional").
-
-### Proprietary NVIDIA driver
-
-See [NVIDIA#Alternate install: custom kernel](/index.php/NVIDIA#Alternate_install:_custom_kernel "NVIDIA") for instructions on using the proprietary NVIDIA driver with a custom kernel.
 
 ## See also
 

@@ -10,22 +10,25 @@
     *   [3.3 Change snapshot and cleanup frequencies](#Change_snapshot_and_cleanup_frequencies)
 *   [4 Take a snapshot manually](#Take_a_snapshot_manually)
 *   [5 List snapshots](#List_snapshots)
-*   [6 Access for non-root users](#Access_for_non-root_users)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Pacman](#Pacman)
-        *   [7.1.1 Using a hook to automatically create a snapshot on pacman transaction](#Using_a_hook_to_automatically_create_a_snapshot_on_pacman_transaction)
-        *   [7.1.2 Using a script and alias to create pre/post snapshots on a pacman transaction](#Using_a_script_and_alias_to_create_pre.2Fpost_snapshots_on_a_pacman_transaction)
-        *   [7.1.3 Using pacupg to wrap pacman transactions in snapshots](#Using_pacupg_to_wrap_pacman_transactions_in_snapshots)
-    *   [7.2 Suggested filesystem layout](#Suggested_filesystem_layout)
-        *   [7.2.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
-        *   [7.2.2 Restoring / to a previous snapshot of subvol_root](#Restoring_.2F_to_a_previous_snapshot_of_subvol_root)
-    *   [7.3 Deleting files from snapshots](#Deleting_files_from_snapshots)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Snapper logs](#Snapper_logs)
-    *   [8.2 IO error](#IO_error)
-*   [9 Caveats](#Caveats)
-    *   [9.1 Snapshots of root filesystem](#Snapshots_of_root_filesystem)
-    *   [9.2 updatedb](#updatedb)
+*   [6 List configurations](#List_configurations)
+*   [7 Delete a snapshot](#Delete_a_snapshot)
+*   [8 Pre/post snapshots](#Pre.2Fpost_snapshots)
+*   [9 Access for non-root users](#Access_for_non-root_users)
+*   [10 Tips and tricks](#Tips_and_tricks)
+    *   [10.1 Wrapping pacman transactions in snapshots](#Wrapping_pacman_transactions_in_snapshots)
+        *   [10.1.1 snap-pac pacman hooks](#snap-pac_pacman_hooks)
+        *   [10.1.2 pacupg bash script](#pacupg_bash_script)
+    *   [10.2 Suggested filesystem layout](#Suggested_filesystem_layout)
+        *   [10.2.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
+        *   [10.2.2 Restoring / to a previous snapshot of subvol_root](#Restoring_.2F_to_a_previous_snapshot_of_subvol_root)
+    *   [10.3 Deleting files from snapshots](#Deleting_files_from_snapshots)
+    *   [10.4 Preventing slowdowns](#Preventing_slowdowns)
+        *   [10.4.1 updatedb](#updatedb)
+    *   [10.5 Preserving log files](#Preserving_log_files)
+*   [11 Troubleshooting](#Troubleshooting)
+    *   [11.1 Snapper logs](#Snapper_logs)
+    *   [11.2 IO error](#IO_error)
+*   [12 See also](#See_also)
 
 ## Installation
 
@@ -124,7 +127,16 @@ To take a snapshot of a subvolume manually, do:
 
 ```
 
-where *config* is the snapper configuration file corresponding with the subvolume you wish to take the snapshot of.
+where *config* is the snapper configuration file corresponding with the subvolume you wish to take the snapshot of. The above command does not use any cleanup algorithm, so the snapshot is stored permanently or until [#Delete_a_snapshot|deleted].
+
+To set a cleanup algorithm, use the `-c` flag after `create` and choose either `number`, `timeline`, `pre`, or `post`. `number` sets snapper to periodically remove snapshots that have exceeded a set number in the configuration file. For example, to create a snaphot that uses the `number` algorithm for cleanup do:
+
+```
+ # snapper -c root create -c number
+
+```
+
+See [#Automatic timeline snapshots](#Automatic_timeline_snapshots) for how `timeline` snapshots work and see [#Pre/post snapshots](#Pre.2Fpost_snapshots) on how `pre` and `post` work.
 
 ## List snapshots
 
@@ -134,6 +146,68 @@ To list snapshots taken for a given configuration *config* do:
  # snapper -c *config* list
 
 ```
+
+## List configurations
+
+To list all [configurations](#Create_a_new_configuration) you've created do:
+
+```
+ # snapper list-configs
+
+```
+
+## Delete a snapshot
+
+To delete a snapshot use `snapper delete`. For example, to delete snapshot 65 for the subvolume corresponding with configuration `root` do:
+
+```
+ # snapper -c root delete 65
+
+```
+
+Multiple snapshots can be delete at one time, For example, to delete snapshots 65 and 70:
+
+```
+ # snapper -c root delete 65 70
+
+```
+
+**Note:** When deleting a pre snapshot, you should always delete its corresponding post snapshot and vice versa.
+
+## Pre/post snapshots
+
+By default snapper takes snapshots that are of the *simple* type, having no special relationship to other snapshots. You can also create pre/post snapshots where *pre* snapshots always have a corresponding *post* snapshot. The purpose of these pairs is to create a snapshot before and after a system modification.
+
+To create a pre/post snapshot pair, first create a *pre* snapshot:
+
+```
+ # snapper -c root create -t pre -p
+
+```
+
+Note the number of the snapshot printed, as it is required for the post snapshot.
+
+Then perform a system modification (*e.g.*, install a new program, upgrade, etc.).
+
+Now create the *post* snapshot:
+
+```
+ # snapper -c root create -t post --pre-number *N*
+
+```
+
+where *N* is the corresponding *pre* snapshot number.
+
+An alternative method is to use the `--command` flag for `create`, which wraps a command with pre/post snapshots:
+
+```
+ # snapper -c root create --command *command*
+
+```
+
+where *command* is the command you wish to wrap with pre/post snapshots.
+
+See [#Wrapping pacman transactions in snapshots](#Wrapping_pacman_transactions_in_snapshots).
 
 ## Access for non-root users
 
@@ -151,75 +225,27 @@ Eventually, you want to be able to browse the `.snapshots` directory with a user
 
 ## Tips and tricks
 
-### Pacman
+### Wrapping pacman transactions in snapshots
 
-There are several methods for automatically creating snapshots upon a pacman transaction.
+There are a couple of packages used for automatically creating snapshots upon a pacman transaction.
 
-#### Using a hook to automatically create a snapshot on pacman transaction
+#### snap-pac pacman hooks
 
-The following adds a hook for pacman to create a snapshot for the root configuration using snapper just before an upgrade, install, or removal occurs:
+The [snap-pac](https://aur.archlinux.org/packages/snap-pac/) package provides [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman") for snapper [#Pre/post snapshots](#Pre.2Fpost_snapshots), wrapping a pacman transaction with them, similar to the behavior used by openSUSE's YaST. After installation, simply continue to use pacman as normal and pre/post snapshots will be created automatically. Snapshots are only created if an actual change occurs.
 
- `/usr/share/libalpm/hooks/snapshot.hook` 
-```
-[Trigger]
-Operation = Upgrade
-Operation = Install
-Operation = Remove
-Type = Package
-Target = *
+See [the package homepage](https://github.com/wesbarnett/snap-pac) for more details.
 
-[Action]
-Description = Btrfs snapshot before a transaction
-Depends = snapper
-When = PreTransaction
-Exec = /usr/bin/snapper -c root create --description "pacman transaction"
-```
+#### pacupg bash script
 
-See the man page for `alpm-hooks` for more options.
+The [pacupg](https://aur.archlinux.org/packages/pacupg/) package is a bash script specifically designed to wrap a system upgrade in [#Pre/post snapshots](#Pre.2Fpost_snapshots). It downloads the packages first (`pacman -Syuw`) and then only wraps the upgrade (`pacman -Su`) in snapshots so as to keep the differences between the pre and post snapshots to a minimum. It also detects if the user's `/boot` directory is on a separate partition and automatically makes a copy of it when it detects an upgrade to the Linux kernel. Additionally, it will avoid taking snapshots if there is nothing to upgrade and log all upgraded packages (with changed version numbers) to `/var/local/log/pacupg`.
 
-#### Using a script and alias to create pre/post snapshots on a pacman transaction
+If [pacaur](https://aur.archlinux.org/packages/pacaur/) is installed, the script can also upgrade AUR packages. It builds them first, then takes a snapshot when they are ready to be installed thus keeping the pre-post snapshot differences minimal. As with regular packages, it logs all upgraded packages and will avoid taking snapshots if no packages are available to upgrade. The script now integrates with [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/). If it is installed, `pacupg` will automatically regenerate your grub.cfg after every upgrade to include your snapshots as boot options.
 
-Snapper can create snapshots "tagged" as pre or post snapshots. This is handy when it comes to system upgrades. Using `NUMBER_CLEANUP="yes"` those can get cleaned up after a configurable number of snapshots using the number cleanup algorithm - see `man snapper` and `man snapper-configs` for details.
-
-To use this feature with pacman, you will need some wrapper script. User [erikw](https://aur.archlinux.org/account/erikw/) created one for this purpose called [snp](https://gist.github.com/erikw/5229436).
-
-Download it and put it somewhere in your `$PATH` (e.g. `/usr/local/bin/`) and make it executable. Usage example:
-
-```
-# snp pacman -Syu
-
-```
-
-If you like, you can create an [alias](/index.php/Alias "Alias"), similar to [plain pacman aliases](/index.php/Pacman_tips#Shortcuts "Pacman tips"):
-
-```
-alias sysupgrade='sudo snp pacman -Syu'
-
-```
-
-Then you can do system upgrades with pre-post snapshots using
-
-```
-$ sysupgrade
-
-```
-
-#### Using pacupg to wrap pacman transactions in snapshots
-
-[Pacupg](https://aur.archlinux.org/packages/Pacupg/) is a script specifically designed to wrap a system upgrade in snapshots. In contrast with the above solution, it downloads the packages first (`pacman -Syuw`) and then only wraps the upgrade (`pacman -Su`) in snapshots so as to keep the differences between the pre and post snapshots to a minimum. It also detects if the user's `/boot` directory is on a separate partition and automatically makes a copy of it when it detects an upgrade to the Linux kernel. Additionally, it will avoid taking snapshots if there is nothing to upgrade and log all upgraded packages (with changed version numbers) to `/var/local/log/pacupg`. If [pacaur](https://aur.archlinux.org/packages/pacaur/) is installed, the script can also upgrade AUR packages. It builds them first, then takes a snapshot when they are ready to be installed thus keeping the pre-post snapshot differences minimal. As with regular packages, it logs all upgraded packages and will avoid taking snapshots if no packages are available to upgrade. The script now integrates with [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/). If it is installed, `pacupg` will automatically regenerate your grub.cfg after every upgrade to include your snapshots as boot options.
-
-As of version 0.0.9 snapper can run commands wrapped in pre-post-snapshots:
-
-```
- snapper create --command "pacman -Su" --description "pacman system update"
-
-```
-
-See also the "How do I add pre and post hooks (like YaST)?" section in the official FAQ: [http://snapper.io/faq.html](http://snapper.io/faq.html)
-
-The [pacupg](https://aur.archlinux.org/packages/pacupg/) script also allows for the easy rollback of snapshots. Running `pacupg -r` will bring up a menu that allows the user to rollback both pre-post snapshots (upgrades) or single snapshots (timeline snapshots).
+The script also allows for the easy rollback of snapshots. Running `pacupg -r` will bring up a menu that allows the user to rollback both pre-post snapshots (upgrades) or single snapshots (timeline snapshots).
 
 ### Suggested filesystem layout
+
+**Note:** The following layout is intended *not* to be used with `snapper rollback`, but is intended to mitigate inherit problems with restoring `/` with that command. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=194491).
 
 Here is a suggested file system layout for easily restoring your `/` to a previous snapshot:
 
@@ -304,11 +330,26 @@ Create a read-write snapshot of the read-only snapshot snapper took:
 
 Where *#* is the number of the snapper snapshot you wish to restore. Your `/` has now been restore to the previous snapshot. Now just simply reboot.
 
-For a more detailed description of the problem this layout solves, see: [https://bbs.archlinux.org/viewtopic.php?id=194491](https://bbs.archlinux.org/viewtopic.php?id=194491)
-
 ### Deleting files from snapshots
 
 If you want to delete a specific file or folder from past snapshots without deleting the snapshots themselves, [snapperS](https://pypi.python.org/pypi/snapperS) is a script that adds this functionality to Snapper. This script can also be used to manipulate past snapshots in a number of other ways that Snapper does not currently support.
+
+### Preventing slowdowns
+
+Keeping many of snapshots for a large timeframe on a busy filesystem (like `/`, where many system updates happen over time) can cause serious slowdowns. You can prevent it by:
+
+*   [Creating](/index.php/Btrfs#Creating_a_subvolume "Btrfs") subvolumes for things that are not worth being snapshotted, like `/var/cache/pacman/pkg`, `/var/abs`, `/var/tmp`, and `/srv`.
+*   Editing the default settings for hourly/daily/monthly/yearly snapshots when using [#Automatic timeline snapshots](#Automatic_timeline_snapshots).
+
+#### updatedb
+
+By default, `updatedb` will also index the `.snapshots` directory created by snapper, which can cause serious slowdown and excessive memory usage if you have many snapshots. You can prevent `updatedb` from indexing over it by editing:
+
+ `/etc/updatedb.conf`  `PRUNENAMES = ".snapshots"` 
+
+### Preserving log files
+
+It's recommended to create a subvolume of `/var/log` so that snapshots of `/` exclude it. That way if a snapshot of `/` is restored your log files will not also be reverted to the previous state. This make it easier to troubleshoot.
 
 ## Troubleshooting
 
@@ -324,17 +365,9 @@ If you get an 'IO Error' when trying to create a snapshot please make sure that 
 
 Another possible cause is that .snapshots directory doesn't have root as an owner (You will find `Btrfs.cc(openInfosDir):219 - .snapshots must have owner root` in the `/var/log/snapper.log`).
 
-## Caveats
+## See also
 
-### Snapshots of root filesystem
-
-Keeping many of snapshots for a large timeframe on a busy filesystem (like `/`, where many system updates happen over time) can cause serious slowdowns. You can prevent it by:
-
-*   Create subvolumes for things that are not worth to be snapshotted, like `/var/cache/pacman/pkg` and `/var/abs`.
-*   Edit the default settings for hourly/daily/monthly/yearly snapshots when using [#Automatic timeline snapshots](#Automatic_timeline_snapshots).
-
-### updatedb
-
-By default, `updatedb` will also index the `.snapshots` directory created by snapper, which can cause serious slowdown and excessive memory usage if you have many snapshots. You can prevent `updatedb` from indexing over it by editing:
-
- `/etc/updatedb.conf`  `PRUNENAMES = ".snapshots"`
+*   [Snapper homepage](http://snapper.io/)
+*   [openSUSE Snapper portal](https://en.opensuse.org/Portal:Snapper)
+*   [Btrfs homepage](https://btrfs.wiki.kernel.org/index.php/Main_Page)
+*   [Linux.com: Snapper: SUSE's Ultimate Btrfs Snapshot Manager](https://www.linux.com/news/enterprise/systems-management/878490-snapper-suses-ultimate-btrfs-snapshot-manager/)

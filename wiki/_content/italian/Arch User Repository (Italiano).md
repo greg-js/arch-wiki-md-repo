@@ -16,7 +16,9 @@ Un buon numero di nuovi pacchetti che entrano nei repository ufficiali, partono 
 *   [6 Condividere e mantenere i pacchetti](#Condividere_e_mantenere_i_pacchetti)
     *   [6.1 Aggiungere pacchetti](#Aggiungere_pacchetti)
         *   [6.1.1 Regole per la sottomissione dei pacchetti](#Regole_per_la_sottomissione_dei_pacchetti)
-        *   [6.1.2 Creare un nuovo pacchetto](#Creare_un_nuovo_pacchetto)
+        *   [6.1.2 Autenticazione](#Autenticazione)
+        *   [6.1.3 Creare un nuovo pacchetto](#Creare_un_nuovo_pacchetto)
+        *   [6.1.4 Caricare i pacchetti](#Caricare_i_pacchetti)
     *   [6.2 Mantenere i pacchetti](#Mantenere_i_pacchetti)
     *   [6.3 Altri tipi di richieste](#Altri_tipi_di_richieste)
 *   [7 community](#community)
@@ -239,7 +241,7 @@ Quando si invia un pacchetto, attenersi alle seguenti regole:
 *   Accumulare esperienza prima di spedire pacchetti. Compilare alcuni pacchetti per imparare il meccanismo ed allora spedirlo.
 *   Se si spedisce `pacchetto.tar.gz` con all'interno un file di nome `pacchetto` si otterrà un errore: "Could not change to directory `/home/aur/unsupported/pacchetto/pacchetto`". Per evitare questo errore rinominare il file chiamato `pacchetto` ad esempio in `pacchetto.rc` o simili. Quando sarà estratto nella cartella `pkg` sarà possibile rinominarlo nuovamente come `pacchetto`. Assicurarsi di leggere anche [Arch Packaging Standards (Italiano)#Invio di pacchetti ad AUR](/index.php/Arch_Packaging_Standards_(Italiano)#Invio_di_pacchetti_ad_AUR "Arch Packaging Standards (Italiano)").
 
-#### Creare un nuovo pacchetto
+#### Autenticazione
 
 Per avere accesso in scrittura ad AUR, gli utenti hanno bisogno di avere una coppia di [SSH keys](/index.php/SSH_keys "SSH keys"). E' necessario copiare il contenuto della chiave pubblica nel profilo utente in *Il mio account*, e configurare la chiave privata corrispondente, per l'host `aur.archlinux.org`. Ad esempio:
 
@@ -252,6 +254,8 @@ Host aur.archlinux.org
 
 Si raccomanda di [creare una nuova coppia](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") piuttosto che usarne una esistente, in modo da poter revocare le chiavi selettivamente nel caso in cui succeda qualcosa.
 
+#### Creare un nuovo pacchetto
+
 Per inviare un pacchetto, è semplicemente necessario clonare il repository Git col nome corrispondente:
 
 ```
@@ -259,16 +263,29 @@ $ git clone ssh://aur@aur.archlinux.org/*foobar*.git
 
 ```
 
-Eseguire il cloning, o il pushing, di un repository non esistente ne creerà automaticamente uno nuovo.
+Eseguire il cloning, o il pushing, di un repository non esistente ne creerà automaticamente uno nuovo. E' possibile adesso aggiungere i file sorgenti nella copia locale del repository Git. Vedi [#Caricare i pacchetti](#Caricare_i_pacchetti). Il nuovo pacchetto comparirà su AUR dopo che viene effettuato il push del primo commit.
 
-E' possibile adesso aggiungere i file sorgenti nella copia locale del repository Git. Quando si effettuano modifiche al repository, accertarsi di includere sempre il `PKGBUILD` e `.SRCINFO` nella directory di livello piu' alto. E' possibile creare file `.SRCINFO` usando `makepkg --printsrcinfo` (stampato sullo standard output) o utilizzando `mksrcinfo`, fornito da [pkgbuild-introspection](https://www.archlinux.org/packages/?name=pkgbuild-introspection) (scritto su file).
+#### Caricare i pacchetti
 
-**Note:** `.SRCINFO` contiene metadata del pacchetto sorgente, vedere [#AUR metadata](#AUR_metadata) per i dettagli.
+La procedura per caricare i pacchetti su AUR è la stessa sia per i nuovi pacchetti, che per gli aggiornamenti di quelli già esistenti. Per fare il push del pacchetto su AUR è necessario includere sempre almeno il `PKGBUILD` e `.SRCINFO` (che contiene [#AUR metadata](#AUR_metadata)) nella directory di livello piu' alto. Per caricarlo, aggiungere il `PKGBUILD`, `.SRCINFO` e qualsiasi altro file utile (come file `.install` o file sorgenti locali come `.patch`) alla *staging area* con `git add`, eseguire il commit sull'albero locale con un messaggio di commit `git commit`, e infine pubblicare i cambiamenti in AUR con `git push`.
+
+Per esempio:
+
+```
+$ makepkg --printsrcinfo > .SRCINFO
+$ git add PKGBUILD .SRCINFO
+$ git commit -m "*useful commit message*"
+$ git push origin master
+
+```
+
+**Tip:** Se all'inizio ci si dimentica di fare il commit del `.SRCINFO` e viene aggiunto in un commit successivo, AUR rifiutera' il push poichè `.SRCINFO` deve esserci per *ogni* commit. Per risolvere questo problema è possibile usare [git rebase](https://git-scm.com/docs/git-rebase) con l'opzione `--root` o [git filter-branch](https://git-scm.com/docs/git-filter-branch) con l'opzione `--tree-filter`.
 
 ### Mantenere i pacchetti
 
-*   Se si mantiene un pacchetto e si vuole aggiornare il PKGBUILD dello stesso, basta ripresentarlo.
+*   Se si mantiene un pacchetto e si vuole aggiornare il PKGBUILD dello stesso, basta reinviarlo.
 *   Controllare le opinioni ed i commenti degli utenti, provare ad implementare eventuali miglioramenti suggeriti; considerare questa come una possibiltà per imparare!
+*   Per favore non lasciare commenti contenenti il numero della versione ogni volta che viene aggiornato il pacchetto. Questo permette di mantenere la sezione dei commenti utilizzabile per i contenuti utili menzionati sopra. Gli [AUR helpers](/index.php/AUR_helpers "AUR helpers") sono piu' adatti per cercare gli aggiornamenti.
 *   Non spedire e poi dimenticarsi dei pacchetti! È responsabilità del "maintainer" mantenere e controllare il pacchetto, seguendo gli aggiornamenti ed ottimizzando il PKGBUILD.
 *   Se non si vuole più mantenere un pacchetto per qualsiasi ragione, `abbandonare` il pacchetto dalla propria pagina sul sito di AUR e postare un messaggio sulla mailing list.
 

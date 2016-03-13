@@ -11,6 +11,7 @@
     *   [4.3 TouchScreen and Stylus](#TouchScreen_and_Stylus)
     *   [4.4 Video](#Video)
     *   [4.5 Card reader](#Card_reader)
+    *   [4.6 Bluetooth](#Bluetooth)
 *   [5 Hardware information](#Hardware_information)
 
 ## Overview
@@ -28,7 +29,7 @@ Most functionality works out of the box, although a kernel of version 4.3 or hig
 | Trackpoint | **Working** | psmouse |
 | Camera | **Working** | uvcvideo |
 | Card Reader | **Working** | mmc_core |
-| Bluetooth | **Unknown** | btintel |
+| Bluetooth | **Working** | btintel |
 | Fingerprint Reader | **Unknown** |
 
 ¹Only one pen-button working
@@ -100,6 +101,10 @@ The miniDP port works, at least when used with a VGA adapter. The connected disp
 ### Card reader
 
 The microSD-card reader works out of the box.
+
+### Bluetooth
+
+The Bluetooth adapter works out of the box. It was tested with Android tethering and file transfer.
 
 ## Hardware information
 

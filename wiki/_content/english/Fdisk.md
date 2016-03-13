@@ -1,50 +1,52 @@
-[GNU fdisk](https://www.gnu.org/software/fdisk/) is a dialogue driven command-line utility that creates and manipulates partition tables and partitions on a hard disk. Hard disks are divided into partitions and this division is described in the partition table. Arch Linux needs at least one partition in order to be installed.
+[GNU fdisk](https://www.gnu.org/software/fdisk/) is a dialogue-driven command-line utility that creates and manipulates partition tables and partitions on a hard disk. Hard disks are divided into partitions and this division is described in the partition table. Arch Linux needs at least one partition in order to be installed.
+
+This article covers **fdisk** and its related **sfdisk** and **cfdisk** utilities from the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package, as well as the analogous **gdisk**, **sgdisk** and **cgdisk** utilities from the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package
 
 The first step to partitioning a disk is making a partition table. There are two different partition table types that Arch Linux can use, [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) and [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR). GPT is the more modern partition table type that supports larger disks and on disk partition table backups among others. MBR may be required if you [dual boot](/index.php/Dual_boot "Dual boot") with Microsoft Windows.
 
 ## Contents
 
 *   [1 Usage](#Usage)
-*   [2 Backup the partition table](#Backup_the_partition_table)
-    *   [2.1 Backup the partition layout](#Backup_the_partition_layout)
-    *   [2.2 Backup and restore GPT with sgdisk](#Backup_and_restore_GPT_with_sgdisk)
-    *   [2.3 Backup and restore MBR with sfdisk](#Backup_and_restore_MBR_with_sfdisk)
+*   [2 Backup and restore](#Backup_and_restore)
+    *   [2.1 Partition layout](#Partition_layout)
+    *   [2.2 GPT partition table (sgdisk)](#GPT_partition_table_.28sgdisk.29)
+    *   [2.3 MBR partition table (sfdisk)](#MBR_partition_table_.28sfdisk.29)
 *   [3 Create a partition table](#Create_a_partition_table)
-    *   [3.1 Gdisk (GPT)](#Gdisk_.28GPT.29)
+    *   [3.1 GPT (gdisk)](#GPT_.28gdisk.29)
         *   [3.1.1 Installation](#Installation)
-        *   [3.1.2 Gdisk usage summary](#Gdisk_usage_summary)
-    *   [3.2 Fdisk (MBR)](#Fdisk_.28MBR.29)
-        *   [3.2.1 Fdisk usage summary](#Fdisk_usage_summary)
+        *   [3.1.2 gdisk usage summary](#gdisk_usage_summary)
+    *   [3.2 MBR (fdisk)](#MBR_.28fdisk.29)
+        *   [3.2.1 fdisk usage summary](#fdisk_usage_summary)
     *   [3.3 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
-*   [4 Create Partitions](#Create_Partitions)
-    *   [4.1 Create GPT partitions with gdisk, a dialogue based program](#Create_GPT_partitions_with_gdisk.2C_a_dialogue_based_program)
-    *   [4.2 Create GPT partitions with cgdisk, a curses based program](#Create_GPT_partitions_with_cgdisk.2C_a_curses_based_program)
-    *   [4.3 Create MBR partitions with fdisk, a dialogue based program](#Create_MBR_partitions_with_fdisk.2C_a_dialogue_based_program)
-    *   [4.4 Create MBR partitions with cfdisk, a curses based program](#Create_MBR_partitions_with_cfdisk.2C_a_curses_based_program)
+*   [4 Create partitions](#Create_partitions)
+    *   [4.1 GPT (gdisk)](#GPT_.28gdisk.29_2)
+    *   [4.2 GPT (cgdisk)](#GPT_.28cgdisk.29)
+    *   [4.3 MBR (fdisk)](#MBR_.28fdisk.29_2)
+    *   [4.4 MBR (cfdisk)](#MBR_.28cfdisk.29)
 
 ## Usage
 
-To get a list of options when using fdisk you can list the help information.
+To get a list of options when using *fdisk* you can list the help information:
 
 ```
 # fdisk -h
 
 ```
 
-To list partition tables and partitions on a device, you can run the following, where device is a name like `/dev/sda`.
+To list partition tables and partitions on a device, you can run the following, where device is a name like `/dev/sda`:
 
 ```
 # fdisk [options] -l <device>
 
 ```
 
-## Backup the partition table
+## Backup and restore
 
 Before making changes to a hard disk, you may want to backup the partition table and partition scheme of the drive. You can also use a backup to copy the same partition layout to numerous drives.
 
-### Backup the partition layout
+### Partition layout
 
-For both GPT and MBR you can use sfdisk to save the partition layout of your device to a file with the --dump option. Run the following command for device /dev/sda:
+For both GPT and MBR you can use *sfdisk* to save the partition layout of your device to a file with the `--dump` option. Run the following command for device `/dev/sda`:
 
 ```
 # sfdisk -d /dev/sda > sda.dump
@@ -73,9 +75,9 @@ To later restore this layout you can run:
 
 ```
 
-### Backup and restore GPT with sgdisk
+### GPT partition table (sgdisk)
 
-Using sgdisk you can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table.
+Using *sgdisk* you can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table:
 
 ```
 # sgdisk -b=sgdisk-sda.bak
@@ -96,48 +98,46 @@ If you want to clone your current device's partition layout (/dev/sda in this ca
 
 ```
 
-If both drives will be in the same computer, you need to randomize the GUID's.
+If both drives will be in the same computer, you need to randomize the GUID's:
 
 ```
 # sgdisk -G /dev/sdc
 
 ```
 
-### Backup and restore MBR with sfdisk
+### MBR partition table (sfdisk)
 
-**Warning:** I have not tested this yet to see if it works as expected. - [User:Meskarune](/index.php/User:Meskarune "User:Meskarune")
-
-To create a raw binary backup of all the sectors where your partitions are stored on an MBR disk you can use the --backup option with sfdisk.
+To create a raw binary backup of all the sectors where your partitions are stored on an MBR disk you can use the `--backup` option with *sfdisk*.
 
 ```
 # sfdisk -b /dev/sda
 
 ```
 
-This will create a file called sfdisk-<device>-<offset>.bak
+This will create a file called `sfdisk-*device*-*offset*.bak`.
 
-To restore the binary backup you can use `dd`
+To restore the binary backup you can use [dd](/index.php/Dd "Dd"):
 
 ```
 # dd if=sfdisk-sda-0x00000200.bak of=/dev/sda  bs=512 count=1
 
 ```
 
+See also [Master Boot Record#Backup and restoration](/index.php/Master_Boot_Record#Backup_and_restoration "Master Boot Record").
+
 ## Create a partition table
 
-### Gdisk (GPT)
+### GPT (gdisk)
 
-Using GPT, the utility for editing the partition table is called *gdisk*. It can perform partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. GNU parted also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
+Using GPT, the utility for editing the partition table is called *gdisk*. It can perform partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. [GNU parted](/index.php/GNU_parted "GNU parted") also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
 
 #### Installation
 
-gdisk is available for use on the Arch install ISO but not installed by default on the regular system.
+*gdisk* is available for use on the Arch install ISO but not installed by default on the regular system. The [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package must be [installed](/index.php/Installed "Installed") explicitly.
 
-[Install](/index.php/Install "Install") [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) from the [official repositories](/index.php/Official_repositories "Official repositories").
+#### gdisk usage summary
 
-#### Gdisk usage summary
-
-To use gdisk, run the program with the name of the device you want to change/edit. This example uses `/dev/sda`.
+To use *gdisk*, run the program with the name of the device you want to change/edit. This example uses `/dev/sda`:
 
 ```
 # gdisk /dev/sda
@@ -177,15 +177,15 @@ Type `Y` and a new partition table will be created.
 *   Write the table to disk and exit via the `w` command.
 *   Format the new partitions with a [file system](/index.php/File_system "File system").
 
-### Fdisk (MBR)
+### MBR (fdisk)
 
 Using MBR, the utility for editing the partition table is called *fdisk*. Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. The latest *fdisk* automatically aligns all partitions to 2048 sectors, or 1024 KiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
 
 Note that in the olden days, *fdisk* used cylinders as the default display unit, and retained an MS-DOS compatibility quirk that messed with SSD alignment. Therefore one will find many guides around the internet from around 2008-2009 making a big deal out of getting everything correct. With the latest *fdisk*, things are much simpler, as reflected in this guide.
 
-#### Fdisk usage summary
+#### fdisk usage summary
 
-*   Start *fdisk* against your drive as root, in this example we are using `/dev/sda`):
+Start *fdisk* against your drive as root, in this example we are using `/dev/sda`):
 
 ```
 # fdisk /dev/sda
@@ -198,7 +198,7 @@ Command (m for help): _
 
 ```
 
-This opens the fdisk dialogue where you can type in commands.
+This opens the *fdisk* dialogue where you can type in commands.
 
 If the drive is brand new or if you are wanting to start over, create a new empty DOS partition table with the `o` command.
 
@@ -206,7 +206,7 @@ If the drive is brand new or if you are wanting to start over, create a new empt
 
 ### Convert between MBR and GPT
 
-To convert an MBR partition table to GPT, you need the tool sgdisk.
+To convert an MBR partition table to GPT, you need the tool *sgdisk*.
 
 ```
 # sgdisk -g /dev/sda
@@ -220,13 +220,15 @@ To convert GPT to MBR use the `m` option. Note that it is not possible to conver
 
 ```
 
-If the device will be bootable you will need to set the bootable flag with fdisk.
+If the device will be bootable you will need to set the bootable flag with *fdisk*.
 
-## Create Partitions
+See also [GUID Partition Table#Convert from MBR to GPT](/index.php/GUID_Partition_Table#Convert_from_MBR_to_GPT "GUID Partition Table").
 
-### Create GPT partitions with gdisk, a dialogue based program
+## Create partitions
 
-Launch gdisk against the device you want to partition. In this example we use `/dev/sda`:
+### GPT (gdisk)
+
+Launch *gdisk* against the device you want to partition. In this example we use `/dev/sda`:
 
 ```
 # gdisk /dev/sda
@@ -251,7 +253,7 @@ Command (? for help): _
 
 ```
 
-### Create GPT partitions with cgdisk, a curses based program
+### GPT (cgdisk)
 
 Launch *cgdisk* with:
 
@@ -305,7 +307,7 @@ If you would like to start over, you can simply select *Quit* (or press `Q`) to 
 
 If you are satisfied, choose *Write* (or press `Shift+W`) to finalize and to write the partition table to the drive. Type `yes` and choose *Quit* (or press `Q`) to exit without making any more changes.
 
-### Create MBR partitions with fdisk, a dialogue based program
+### MBR (fdisk)
 
 Launch *fdisk* aginst the device you want to partition, in this example we use `/dev/sda`.
 
@@ -391,7 +393,7 @@ In case this does not work because *fdisk* encountered an error, you can use the
 *   Assign other partitions in a like fashion.
 *   Write the table to disk and exit via the `w` command.
 
-### Create MBR partitions with cfdisk, a curses based program
+### MBR (cfdisk)
 
 ```
                                    Disk: Disk: /dev/sda

@@ -140,11 +140,12 @@
 *   Не удаляйте из рейтинга полностью переведенные статьи раньше, чем через неделю после завершения перевода, чтобы другие участники команды могли их проверить и внести свои исправления
 
 | Количество голосов | Страница | Степень готовности | Заметки |
-| 1 | [PulseAudio/Troubleshooting (Русский)](/index.php/PulseAudio/Troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PulseAudio/Troubleshooting (Русский)") | 4/7 (Звук, Микрофон, Качество звука, Bluetooth) | - |
-| 1 | [PulseAudio/Examples](/index.php/PulseAudio/Examples "PulseAudio/Examples") | 10/15 (1 - 10) | - |
-| 1 | [Sshfs](/index.php/Sshfs "Sshfs") | 5/7 (1 - 5) | - |
+| 1 | [PulseAudio/Решение проблем](/index.php/PulseAudio/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC "PulseAudio/Решение проблем") | 4/7 (Звук, Микрофон, Качество звука, Bluetooth) | - |
+| 1 | [PulseAudio/Примеры](/index.php/PulseAudio/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B "PulseAudio/Примеры") | 10/15 (1 - 10) | - |
+| 1 | [Sshfs (Русский)](/index.php/Sshfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sshfs (Русский)") | 5/7 (1 - 5) | - |
 | 1 | [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)") | 0 | - |
-| 1 | [xrandr](/index.php/Xrandr "Xrandr") | 4/5 (1, 2, 3, 5) | - |
+| 1 | [xrandr (Русский)](/index.php/Xrandr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xrandr (Русский)") | 5/5 | - |
+| 1 | [LightDM (Русский)](/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LightDM (Русский)") | 4/7 (1 - 4) | - |
 
 ## Список страниц с сопроводителем
 
@@ -200,6 +201,7 @@
 | [rEFInd (Русский)](/index.php/REFInd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "REFInd (Русский)") | Не требуется | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |
 | [Reporting bug guidelines (Русский)](/index.php/Reporting_bug_guidelines_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Reporting bug guidelines (Русский)") | [Указания по созданию отчета об ошибке](/index.php/%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BE_%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E_%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%B0_%D0%BE%D0%B1_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B5 "Указания по созданию отчета об ошибке") | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |
 | [Rxvt-unicode (Русский)](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
+| [Rxvt-unicode/Tips and tricks (Русский)](/index.php/Rxvt-unicode/Tips_and_tricks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode/Tips and tricks (Русский)") | [Rxvt-unicode/Советы и приёмы](/index.php/Rxvt-unicode/%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D1%8B "Rxvt-unicode/Советы и приёмы") | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [SDDM (Русский)](/index.php/SDDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SDDM (Русский)") | Не требуется | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |
 | [SpaceFM (Русский)](/index.php/SpaceFM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SpaceFM (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Sshfs (Русский)](/index.php/Sshfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sshfs (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |

@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [OpenRC](/index.php/OpenRC "OpenRC"). Дата последней синхронизации: 4 октября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=OpenRC&diff=0&oldid=403187).
+**Состояние перевода:** На этой странице представлен перевод статьи [OpenRC](/index.php/OpenRC "OpenRC"). Дата последней синхронизации: 3 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=OpenRC&diff=0&oldid=418899).
 
 **Важно:** Arch Linux официально поддерживает только [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"). При обращении за поддержкой, пожалуйста, укажите, что пользуетесь OpenRC
 
@@ -132,7 +132,7 @@ no_umounts="/tmp"
 
 в `/etc/openrc/conf.d/localmount`
 
-**Обратите внимание:** Эта проблема проявляется только если ваш tmp примонтирован как tmpfs.
+**Примечание:** Эта проблема проявляется только если ваш tmp примонтирован как tmpfs.
 
 ### Не работает отключение IPv6
 
@@ -165,7 +165,7 @@ sync; sync
 
 ### Не найден /etc/sysctl.conf
 
-По умолчанию, `sysctl --system` вызывается для загрузки настройки sysctl. [[4]](https://github.com/OpenRC/openrc/blob/master/init.d/sysctl.Linux.in#L17) Он содержит `/etc/sysctl.conf`, которого нет в Arch по умолчанию. [[5]](https://www.archlinux.org/news/deprecation-of-etcsysctlconf/)
+По умолчанию, `sysctl --system` вызывается для загрузки настройки sysctl. [[4]](https://github.com/OpenRC/openrc/blob/master/init.d/sysctl.Linux.in#L17) Он содержит файл `/etc/sysctl.conf`, который удалён в Arch. [[5]](https://www.archlinux.org/news/deprecation-of-etcsysctlconf/)
 
 Чтобы предотвратить ошибку "файл не найден", создайте файл:
 

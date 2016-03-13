@@ -9,8 +9,8 @@
 *   [1 在arch linux的安装步骤](#.E5.9C.A8arch_linux.E7.9A.84.E5.AE.89.E8.A3.85.E6.AD.A5.E9.AA.A4)
     *   [1.1 安装基本软件包](#.E5.AE.89.E8.A3.85.E5.9F.BA.E6.9C.AC.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [1.2 安装VirtualBox内核模块](#.E5.AE.89.E8.A3.85VirtualBox.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
-        *   [1.2.1 运行官方内核的主机](#.E8.BF.90.E8.A1.8C.E5.AE.98.E6.96.B9.E5.86.85.E6.A0.B8.E7.9A.84.E4.B8.BB.E6.9C.BA)
-        *   [1.2.2 定制内核的主机](#.E5.AE.9A.E5.88.B6.E5.86.85.E6.A0.B8.E7.9A.84.E4.B8.BB.E6.9C.BA)
+        *   [1.2.1 定制内核的主机](#.E5.AE.9A.E5.88.B6.E5.86.85.E6.A0.B8.E7.9A.84.E4.B8.BB.E6.9C.BA)
+            *   [1.2.1.1 DKMS Install](#DKMS_Install)
     *   [1.3 加载VirtualBox的内核模块](#.E5.8A.A0.E8.BD.BDVirtualBox.E7.9A.84.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
     *   [1.4 添加用户到 vboxusers组](#.E6.B7.BB.E5.8A.A0.E7.94.A8.E6.88.B7.E5.88.B0_vboxusers.E7.BB.84)
     *   [1.5 Guest 附加光盘](#Guest_.E9.99.84.E5.8A.A0.E5.85.89.E7.9B.98)
@@ -125,11 +125,16 @@
 
 ### 安装基本软件包
 
-[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") GPL 版本的 [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) 软件包。作为依赖安装的 [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) 包含了archlinux 默认内核使用的模块。
+[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 软件不 [virtualbox](https://www.archlinux.org/packages/?name=virtualbox)。[virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 会安装为依赖软件包，要使用它安装内核模块，需要根据实际使用的内核安装内核头文件[[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html):
 
-如果使用[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)内核，需要安装[virtualbox-host-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-host-modules-lts).
+*   [linux](https://www.archlinux.org/packages/?name=linux)内核: [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)
+*   [linux-lts](https://www.archlinux.org/packages/?name=linux-lts): [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)
+*   [linux-zen](https://www.archlinux.org/packages/?name=linux-zen): [linux-zen-headers](https://www.archlinux.org/packages/?name=linux-zen-headers)
+*   [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec): [linux-grsec-headers](https://www.archlinux.org/packages/?name=linux-grsec-headers)
 
-要使用基于 [Qt](/index.php/Qt "Qt") 的 `VirtualBox` 命令，需要安装 [qt4](https://www.archlinux.org/packages/?name=qt4) 软件包。如果使用简单的基于 SDL 的 `VBoxSDL` 命令或者 `VBoxHeadless` 命令，则不需要安装 [qt4](https://www.archlinux.org/packages/?name=qt4)。
+要使用基于 [Qt](/index.php/Qt "Qt") 的图形界面，需要安装 [qt4](https://www.archlinux.org/packages/?name=qt4) 软件包。如果使用命令行命令，则不需要安装。
+
+如果不安装需要的内核，dkms 在内核升级后不会做任何操作，你会找不到 Virtualbox 内核模块。只要安装了内核头文件， dkms 就会在内核升级后运行。
 
 ### 安装VirtualBox内核模块
 
@@ -137,48 +142,26 @@ Next, to fully virtualize your guest installation, VirtualBox provides the follo
 
 The binary compatibility of kernel modules depends on the API of the kernel against which they have been compiled. The problem with the Linux kernel is that these interfaces might not be the same from one kernel version to another. In order to avoid compatibility problems and subtle bugs, each time the Linux kernel is upgraded, it is advised to recompile the kernel modules against the Linux kernel version that has just been installed. This is what Arch Linux packagers actually do with the VirtualBox kernel modules packages: each time a new Arch Linux kernel is released, the Virtualbox modules are upgraded accordingly.
 
-Therefore, if you are using a kernel from the [official repositories](/index.php/Official_repositories "Official repositories") or a custom one (self-compiled or installed from the [AUR](/index.php/AUR "AUR")), the kernel module package you will need to install will thus vary.
-
-#### 运行官方内核的主机
-
-*   如果你使用的是 [linux](https://www.archlinux.org/packages/?name=linux) 内核, 当你安装 [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) 软件包的时候，需要安装[virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package.
-*   如果你使用的是 LTS 稳定内核 ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), 你需要安装 [virtualbox-host-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-host-modules-lts) 软件包。 [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) 现在可以移除。
-*   如果你使用的是 [linux-ck](https://aur.archlinux.org/packages/linux-ck/) kernel, 需要构建 [virtualbox-ck-host-modules](https://aur.archlinux.org/packages/virtualbox-ck-host-modules/) 软件包。
-
 #### 定制内核的主机
 
 If you use or intend to use a self-compiled kernel from sources, you have to know that VirtualBox does not require any virtualization modules (e.g. virtuo, kvm,...). The VirtualBox kernel modules provide all the necessary for VirtualBox to work properly. You can thus disable in your kernel *.config* file these virtualization modules if you do not use other hypervisors like Xen, KVM or QEMU.
 
-The `virtualbox-host-modules` package works fine with custom kernels of the same version of the Arch Linux stock kernel such as [linux-ck](https://aur.archlinux.org/packages/linux-ck/). Since the `virtualbox-host-modules` comes with the official Arch Linux kernel ([linux](https://www.archlinux.org/packages/?name=linux)) as a dependency and if you do not use that kernel, install [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) instead.
+##### DKMS Install
 
-If you are using a custom kernel which is not of the same version of the Arch Linux stock one, you will have to install the [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) too. The latter comes bundled with the source of the VirtualBox kernel modules that will be compiled to generate these modules for your kernel.
+**Tip:** [DKMS](/index.php/DKMS "DKMS") can automatically generate the modules of the current running kernel by running the following command: `# dkms autoinstall` 
 
-As the [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) package requires compilation, make sure you have the kernel headers corresponding to your custom kernel version to prevent this error from happening `Your kernel headers for kernel *your custom kernel version* cannot be found at /usr/lib/modules/*your custom kernel version*/build or /usr/lib/modules/*your custom kernel version*/source`.
+As the [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) package requires compilation, make sure you have the kernel headers corresponding to your custom kernel version to prevent this error from happening: `Your kernel headers for kernel *your custom kernel version* cannot be found at /usr/lib/modules/*your custom kernel version*/build or /usr/lib/modules/*your custom kernel version*/source`
 
-*   If you use a self-compiled kernel and have used `make modules_install` to install its modules, folders `/usr/lib/modules/*your custom kernel version*/build` and `(...)/source` will be symlinked to your kernel sources. These will act as the kernel headers you need. If you have not removed these kernel sources yet, you have nothing to do.
-*   If you use a custom kernel from [AUR](/index.php/AUR "AUR"), make sure the package [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) is installed.
-
-一旦[virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 安装完成后，只要用下面命令生成内核模块：
+Once [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) is installed, simply generate the kernel modules for the custom kernel by running the following command:
 
 ```
-# dkms install vboxhost/<virtualbox-host-source 版本> -k <你的自制内核模块版本>/<你的架构>
+# dkms install vboxhost/*virtualbox-host-source version* -k *your custom kernel version*/*your architecture*
 
 ```
 
-**Tip:** 懒人做法是键入以下命令: `# dkms install vboxhost/$(pacman -Q virtualbox|awk '{print $2}'|sed 's/\-.\+//') -k $(uname -rm|sed 's/\ /\//')` 
+**Tip:** Use this all-in-one command instead, if you do not want to adapt the above command: `# dkms install vboxhost/$(pacman -Q virtualbox|awk '{print $2}'|sed 's/\-.\+//') -k $(uname -rm|sed 's/\ /\//')` 
 
-To automatically recompile the VirtualBox kernel modules when their sources get upgraded (i.e. when the [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) package gets upgraded) and avoid to type again the above `dkms install` command manually afterwards, enable the `dkms` service with:
-
-```
-# systemctl enable dkms.service
-
-```
-
-If this service is not enabled while the [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) package is being updated, the VirtualBox modules will not be updated and you will have to type in manually the `dkms install` command described above to compile the latest version of the Virtualbox kernel modules. If you do not want to type in manually this command, if the `dkms` service is automatically loaded at startup, you just need to reboot and your VirtualBox modules will be recompiled silently.
-
-However, if you want to keep this daemon disabled, you can use an [initramfs hook](/index.php/Mkinitcpio "Mkinitcpio") that will automatically trigger the `dkms install` command described above at boot time. This will require a reboot to recompile the VirtualBox modules. To enable this hook, install the [vboxhost-hook](https://aur.archlinux.org/packages/vboxhost-hook/) package and add `vboxhost` to your HOOKS array in `/etc/mkinitcpio.conf`. Again, make sure the right linux headers are available for the new kernel otherwise the compilation will fail.
-
-**Tip:** Like the `dkms` command, the `vboxhost` hook will tell you if anything goes wrong during the recompilation of the VirtualBox modules.
+To automatically recompile the VirtualBox kernel modules when their sources get upgraded (i.e. when the [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) package has been upgraded), enable the `dkms` service.
 
 ### 加载VirtualBox的内核模块
 
@@ -1545,7 +1528,7 @@ options snd-intel8x0 ac97_clock=48000
 
 ### 客户端启动后的Xorg死机
 
-Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[2]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
+Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[3]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
 
 ### "NS_ERROR_FAILURE" and missing menu items
 
@@ -1746,7 +1729,7 @@ Where 8888 is the port the host should listen on and 80 is the port the VM will 
 
 Note: "pcnet" refers to the network card of the VM. If you use an Intel card in your VM settings change "pcnet" to "e1000"
 
-*   from [[3]](http://mydebian.blogdns.org/?p=111)
+*   from [[4]](http://mydebian.blogdns.org/?p=111)
 
 It might also be necessary to allow connections from the outside to the server in your VM. E.g. if the guest OS is Arch, you may want to add the line
 
@@ -1761,7 +1744,7 @@ to your /etc/hosts.allow file.
 
 While VirtualBox can mount ISO images without a problem, there are some image formats which cannot reliably be converted to ISO. For instance, ccd2iso ignores .ccd and .sub files, which can give disk images with broken files. cdemu, fuseiso, and MagicISO will do the same. In this case there is no choice but to use Daemon Tools inside VirtualBox.
 
-Recent Daemon Tools versions won't install, so use this old one: [[4]](http://www.disc-tools.com/download/daemon347+hashcalc)
+Recent Daemon Tools versions won't install, so use this old one: [[5]](http://www.disc-tools.com/download/daemon347+hashcalc)
 
 ## 参阅
 

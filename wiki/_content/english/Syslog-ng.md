@@ -351,6 +351,7 @@ psql -U postgres
 ```
 postgres=# CREATE ROLE syslog WITH LOGIN;
 postgres=# \password syslog    # Using the \password function is secure because
+postgres=# CREATE ROLE logwriter WITH LOGIN;
 postgres=# \password logwriter # the password is not saved in history.
 postgres=# CREATE DATABASE syslog OWNER syslog;
 postgres=# \q # You are done here for the moment
@@ -359,7 +360,7 @@ postgres=# \q # You are done here for the moment
 
 Edit `pg_hba.conf` to allow `syslog` and `logwriter` to establish a connection to PostgreSQL.
 
- `/var/lib/postgresql/data/pg_hba.conf` 
+ `/var/lib/postgres/data/pg_hba.conf` 
 ```
 # TYPE  DATABASE    USER        CIDR-ADDRESS          METHOD
 
@@ -375,7 +376,7 @@ Tell PostgreSQL to reload the configuration files:
 
 ```
 
-Edit `/etc/syslog-ng.conf` so that it knows where and how to write to PostgreSQL. syslog-ng will utilize the `logwriter` role.
+Edit `/etc/syslog-ng/syslog-ng.conf` so that it knows where and how to write to PostgreSQL. syslog-ng will utilize the `logwriter` role.
 
 ```
 ...

@@ -409,14 +409,7 @@ If you are using [LightDM](/index.php/LightDM "LightDM"), awesome will log error
 
 ### Mod4 key
 
-Awesome recommends to remap Mod4\. The Mod4 is by default the **Win key**. If it is not mapped by default, for some reason, you can check the keycode of your Mod4 key with
-
-```
-$ xev
-
-```
-
-It should be 115 for the left one. Then add this to your ~/.xinitrc
+Awesome recommends to remap `mod4`, which by default should be **Win key**. If for some reason it isn't mapped to `mod4`, use [xmodmap](/index.php/Xmodmap "Xmodmap") to find out what is. To change the mapping, use `xev` to find the keycode and name of the key to be mapped. Then add something like the following to `~/.xinitrc`
 
 ```
 xmodmap -e "keycode 115 = Super_L" -e "add mod4 = Super_L"
@@ -426,21 +419,19 @@ exec awesome
 
 The problem in this case is that some xorg installations recognize keycode 115, but incorrectly as the 'Select' key. The above command explictly remaps keycode 115 to the correct 'Super_L' key.
 
-To see remap Mod4 with `setxkbmap` (conflict with `xmodmap`) see:
+To remap `mod4` with `setxkbmap` (conflict with `xmodmap`) see:
 
 ```
 tail -50 /usr/share/X11/xkb/rules/evdev
 
 ```
 
-To set the caps lock key mod4 use
+To set the caps lock key as `mod4` add the following to [Template:~/.xinitrc](/index.php?title=Template:~/.xinitrc&action=edit&redlink=1 "Template:~/.xinitrc (page does not exist)"):
 
 ```
 setxkbmap -option caps:hyper
 
 ```
-
-in your startup file.
 
 #### Mod4 key vs. IBM ThinkPad users
 

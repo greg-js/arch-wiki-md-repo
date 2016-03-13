@@ -35,6 +35,14 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### Mars 2016
 
+*   [12 March 2016] [ASA-201603-18](https://lists.archlinux.org/pipermail/arch-security/2016-March/000583.html) [pcre](https://www.archlinux.org/packages/?name=pcre) arbitrary code execution
+*   [12 March 2016] [ASA-201603-17](https://lists.archlinux.org/pipermail/arch-security/2016-March/000582.html) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) denial of service
+*   [12 March 2016] [ASA-201603-16](https://lists.archlinux.org/pipermail/arch-security/2016-March/000581.html) [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) denial of service
+*   [12 March 2016] [ASA-201603-15](https://lists.archlinux.org/pipermail/arch-security/2016-March/000580.html) [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) denial of service
+*   [12 March 2016] [ASA-201603-14](https://lists.archlinux.org/pipermail/arch-security/2016-March/000579.html) [pidgin-otr](https://www.archlinux.org/packages/?name=pidgin-otr) arbitrary code execution
+*   [12 March 2016] [ASA-201603-13](https://lists.archlinux.org/pipermail/arch-security/2016-March/000578.html) [bind](https://www.archlinux.org/packages/?name=bind) denial of service
+*   [11 March 2016] [ASA-201603-12](https://lists.archlinux.org/pipermail/arch-security/2016-March/000577.html) [openssh](https://www.archlinux.org/packages/?name=openssh) command injection
+*   [11 March 2016] [ASA-201603-11](https://lists.archlinux.org/pipermail/arch-security/2016-March/000576.html) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) arbitrary code execution
 *   [11 March 2016] [ASA-201603-10](https://lists.archlinux.org/pipermail/arch-security/2016-March/000575.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) arbitrary code execution
 *   [10 March 2016] [ASA-201603-9](https://lists.archlinux.org/pipermail/arch-security/2016-March/000574.html) [perl](https://www.archlinux.org/packages/?name=perl) improper input validation
 *   [10 March 2016] [ASA-201603-8](https://lists.archlinux.org/pipermail/arch-security/2016-March/000573.html) [exim](https://www.archlinux.org/packages/?name=exim) privilege escalation

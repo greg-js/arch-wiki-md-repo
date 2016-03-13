@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Wireless_network_configuration](/index.php/Wireless_network_configuration "Wireless network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-06-21，点击[这里](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=320903)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Wireless_network_configuration](/index.php/Wireless_network_configuration "Wireless network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-13，点击[这里](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=423440)可以查看翻译后英文页面的改动。
 
 配置无线网络一般分两步：第一步是识别硬件、安装正确的驱动程序并进行配置，安装盘中已经包含驱动，但是通常需要额外安装；第二步是选择一种管理无线连接的方式。这篇文章涵盖了这两方面，并提供了无线管理工具的链接地址。
 
@@ -129,9 +129,11 @@ Udev 不是完美的，有些内核模块需要[手动安装](/index.php/Kernel_
 
 根据获得的信息，在下面网址查找硬件支持：
 
+*   查看[Linux 支持的无线驱动](https://wireless.wiki.kernel.org/en/users/drivers)表格并查看对应的Driver页面，此外还有一个 [Linux Wi-Fi 设备 IDs 列表](https://wikidevi.com/wiki/List_of_Wi-Fi_Device_IDs_in_Linux).
 *   [Ubuntu Wiki](https://help.ubuntu.com/community/WifiDocs/WirelessCardsSupported) 维护了一个设备被内核和用户空间驱动支持状况的列表。
 *   [Linux 无线支持页面](http://linux-wless.passys.nl/) 和[硬件兼容性列表](http://www.linuxquestions.org/hcl/index.php?cat=10)(HCL)也维护了一个内核友好的设备列表。
-*   [内核页面](http://wireless.kernel.org/en/users/Devices) 也有一个支持的硬件矩阵。
+
+注意有些厂商的产品即使有相同的名称，实际使用的芯片却是不同的。必须通过usb-id (USB设备) 或 pci-id (PCI设备) 进行判断。
 
 如果列表中没有，可能你的设备只提供了 Windows 驱动(比如 Broadcom, 3com 等)。这时需要用 [ndiswrapper](http://ndiswrapper.sourceforge.net/wiki/index.php/List).
 
@@ -146,6 +148,7 @@ Ndiswrapper 可以在 Linux 中使用 Windows 驱动。兼容性列表在 [这�
 *   配置方式，从完全手动执行每一步到软件自动管理、自动启动
 *   是否使用加密及加密类型
 *   是否需要区分网络配置,是否经常切换不同网络（比如手提电脑）。
+*   如果要在不同网络间切换，使用工具会更方便。
 
 无论选的那个方案，最好先尝试手动方法。这将有助于您了解不同步骤的意义，并在出问题时解决之。 如果可以的话（比如说你在管理你自己的无线接入点），尝试连接一个开放的无线网络来检查是否所有的配置都在正常工作。然后再尝试加密的无线接入点，比如WEP（更易于配置）或者WPA。
 
@@ -155,9 +158,9 @@ Ndiswrapper 可以在 Linux 中使用 Windows 驱动。兼容性列表在 [这�
 (/=alternatives) | IP 地址分配
 (/=alternatives) |
 | [手动设置](#.E6.89.8B.E5.8A.A8.E8.AE.BE.E7.BD.AE),
-无加密或 WEP 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") | [iw](https://www.archlinux.org/packages/?name=iw) / [iwconfig](https://www.archlinux.org/packages/?name=wireless_tools) | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") / [dhcpcd](/index.php/Dhcpcd "Dhcpcd") / [dhclient](https://www.archlinux.org/packages/?name=dhclient) |
+无加密或 WEP 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") | [iw](https://www.archlinux.org/packages/?name=iw)/[iwconfig](https://www.archlinux.org/packages/?name=wireless_tools) | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)")/[dhcpcd](/index.php/Dhcpcd "Dhcpcd")/[dhclient](https://www.archlinux.org/packages/?name=dhclient)/[networkd](/index.php/Networkd "Networkd") |
 | [手动管理](#.E6.89.8B.E5.8A.A8.E8.AE.BE.E7.BD.AE),
-WPA 或 WPA2 PSK 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") | [iw](https://www.archlinux.org/packages/?name=iw) / [iwconfig](https://www.archlinux.org/packages/?name=wireless_tools) + [wpa_supplicant](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)") | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") / [dhcpcd](/index.php/Dhcpcd "Dhcpcd") / [dhclient](https://www.archlinux.org/packages/?name=dhclient) |
+WPA 或 WPA2 PSK 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") | [iw](https://www.archlinux.org/packages/?name=iw)/[iwconfig](https://www.archlinux.org/packages/?name=wireless_tools) + [wpa_supplicant](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)") | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)")/[dhcpcd](/index.php/Dhcpcd "Dhcpcd")/[dhclient](https://www.archlinux.org/packages/?name=dhclient) |
 | [自动管理](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE),
 支持网络配置 | [netctl](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Netctl (简体中文)"), [Wicd](/index.php/Wicd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wicd (简体中文)"), [NetworkManager](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)"), etc.
 

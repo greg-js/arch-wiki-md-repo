@@ -51,8 +51,7 @@ and then edit this entry:
 4.  in the box labeled "Command" type `touchegg`. Fill in "Name" and "Label" as you choose;
 5.  hit `OK`.
 
-**Note:**
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
+**Note:** `gnome-session-properties` has been removed from `gnome 3.12`. Currently, you can install [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) from the [AUR](/index.php/AUR "AUR"). See more details in the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=180282)
 
 Alternatively, you can modify your [.xprofile](/index.php/.xprofile ".xprofile"):
 

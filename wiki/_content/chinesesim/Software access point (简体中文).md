@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Software_access_point](/index.php/Software_access_point "Software access point") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-23，点击[这里](https://wiki.archlinux.org/index.php?title=Software_access_point&diff=0&oldid=393095)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Software_access_point](/index.php/Software_access_point "Software access point") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-13，点击[这里](https://wiki.archlinux.org/index.php?title=Software_access_point&diff=0&oldid=420459)可以查看翻译后英文页面的改动。
 
 软件接入点是在你要让你的电脑当作一个本地网络的Wi-Fi接入点时使用的。它免除了你去弄一个独立无线路由器的麻烦。
 

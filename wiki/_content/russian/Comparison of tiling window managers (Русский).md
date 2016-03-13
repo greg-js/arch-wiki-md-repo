@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers"). Дата последней синхронизации: 5 января 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Comparison_of_tiling_window_managers&diff=0&oldid=414427).
+
 Эта статья предусматривает объективное сравнение наиболее популярных *тайловых* [оконных менеджеров](/index.php/Window_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Window manager (Русский)") (в отличие от *плавающих* оконных менеджеров).
 
 ## Contents
@@ -16,7 +18,7 @@
 | Оконный менеджер (WM) | Написан на | Настраивается с помощью | Стиль управления | Поддержка системного трея | Перезагрузка на лету | Информационный бар | Композитность | Слои по умолчанию | Pixel usage | Внешнее управление | Библиотека | Многомониторный (n) режим | ICCCM/EWMH Совместимый | Состояние |
 | [alopex](/index.php/Alopex "Alopex") | C | C (recompile) | Гибридный | Нету | Нет | Встроенный; Вызов сценария / программы в качестве первого аргумента | внешний | max, h-stack, v-stack, h-tab | Variable borders; titles in-statusbar | Xlib | шесть меток, два вида, доступные по умолчанию | Активный |
 | [Awesome](/index.php/Awesome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Awesome (Русский)") | C | Lua | Динамический | Встроенный | Да | Встроенный, изображения и текст | внешний | max, nh-stack (and invert), nv-stack (and invert), free | variable borders, optional h-tab titles | dbus (если включен) | XCB | n-tags (рабочие пространства). По-умолчанию включено 9\. [Example](https://awesome.naquadah.org/images/6mon.medium.png) | Да | Активный |
-| [bspwm](/index.php/Bspwm "Bspwm") | C | Anything | Гибридный | Нету | Да | Can write internal state to a FIFO | внешний | v-split, h-split | Variable borders | via `bspc` | XCB | Рабочие столы привязаны к мониторам | Да | Активный |
+| [bspwm](/index.php/Bspwm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bspwm (Русский)") | C | Anything | Гибридный | Нету | Да | Can write internal state to a FIFO | внешний | v-split, h-split | Variable borders | via `bspc` | XCB | Рабочие столы привязаны к мониторам | Да | Активный |
 | [catwm](/index.php/Catwm "Catwm") | C | C (recompile) | Динамический | Нету | Нет | Нету | Нет | v-stack, max | 1-pix borders | Xlib | Заброшенный |
 | dswm | Lisp | Lisp | Ручной | Нету | Да | Да | Нет | Активный |
 | [dwm](/index.php/Dwm "Dwm") | C | C (recompile) | Динамический | Дополнительный патч | [Optional](/index.php/Dwm#Restart_dwm_without_logging_out_or_closing_programs "Dwm") | Built-in, reads from root window name | внешний | v-stack, max | Xlib | n regions, 9 workspaces fixed to each region | Активный |

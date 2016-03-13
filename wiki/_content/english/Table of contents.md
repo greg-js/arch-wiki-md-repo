@@ -1,10 +1,10 @@
 [English](/index.php/Category:English "Category:English") <small>(1)</small>
 
-	<small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(26)</small>
+	<small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(25)</small>
 
 	<small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(21) (also in [Development](/index.php/Category:Development "Category:Development"))</small>
 
-	<small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(49)</small>
+	<small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(50)</small>
 
 	<small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small>
 
@@ -50,7 +50,7 @@
 
 	<small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(22)</small>
 
-	<small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(23)</small>
+	<small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(24)</small>
 
 	<small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(44)</small>
 
@@ -68,7 +68,7 @@
 
 	<small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(11)</small>
 
-	<small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17)</small>
+	<small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(18)</small>
 
 	<small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(12)</small>
 
@@ -78,7 +78,7 @@
 
 	<small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(21) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small>
 
-	<small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(49)</small>
+	<small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(50)</small>
 
 	<small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small>
 
@@ -132,7 +132,7 @@
 
 	<small>4.8.10.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small>
 
-	<small>4.8.11.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(65)</small>
+	<small>4.8.11.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(67)</small>
 
 	<small>4.8.12.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(3)</small>
 
@@ -146,7 +146,7 @@
 
 	<small>4.9.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(5)</small>
 
-	<small>4.10.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(16)</small>
+	<small>4.10.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(15)</small>
 
 	<small>4.11.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
@@ -216,7 +216,7 @@
 
 	<small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(27)</small>
 
-	<small>6.3.1.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(12)</small>
+	<small>6.3.1.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(11)</small>
 
 	<small>6.3.2.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(10)</small>
 
@@ -252,7 +252,7 @@
 
 	<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small>
 
-	<small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(25)</small>
+	<small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(26)</small>
 
 	<small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(10) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
@@ -262,7 +262,7 @@
 
 	<small>6.11.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
-	<small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(33)</small>
+	<small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(32)</small>
 
 	<small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(20)</small>
 

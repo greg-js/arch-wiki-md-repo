@@ -13,15 +13,16 @@
 *   [2 Configuration files](#Configuration_files)
     *   [2.1 network files](#network_files)
         *   [2.1.1 [Match] section](#.5BMatch.5D_section)
-        *   [2.1.2 [Network] section](#.5BNetwork.5D_section)
-        *   [2.1.3 [Address] section](#.5BAddress.5D_section)
-        *   [2.1.4 [Route] section](#.5BRoute.5D_section)
+        *   [2.1.2 [Link] section](#.5BLink.5D_section)
+        *   [2.1.3 [Network] section](#.5BNetwork.5D_section)
+        *   [2.1.4 [Address] section](#.5BAddress.5D_section)
+        *   [2.1.5 [Route] section](#.5BRoute.5D_section)
     *   [2.2 netdev files](#netdev_files)
         *   [2.2.1 [Match] section](#.5BMatch.5D_section_2)
         *   [2.2.2 [NetDev] section](#.5BNetDev.5D_section)
     *   [2.3 link files](#link_files)
         *   [2.3.1 [Match] section](#.5BMatch.5D_section_3)
-        *   [2.3.2 [Link] section](#.5BLink.5D_section)
+        *   [2.3.2 [Link] section](#.5BLink.5D_section_2)
 *   [3 Usage with containers](#Usage_with_containers)
     *   [3.1 Basic DHCP network](#Basic_DHCP_network)
     *   [3.2 DHCP with two distinct IP](#DHCP_with_two_distinct_IP)
@@ -232,6 +233,13 @@ Most common keys are:
 *   `Name=` the device name (e.g Br0, enp4s0, en*)
 *   `Host=` the machine hostname
 *   `Virtualization=` check whether the system is executed in a virtualized environment or not. A `Virtualization=no` key will only apply on your host machine, while `Virtualization=yes` apply to any container or VM.
+
+#### [Link] section
+
+Most common keys are:
+
+*   `MACAddress=` useful for [MAC address spoofing](/index.php/MAC_address_spoofing#Method_1:_systemd-networkd "MAC address spoofing")
+*   `MTUBytes=` the maximum transmission unit in bytes (suffixes K, M, G, are supported and are understood to the base of 1024). Using a larger MTU value ([Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")) can significantly speed up your network transfers.
 
 #### [Network] section
 

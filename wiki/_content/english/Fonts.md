@@ -114,6 +114,7 @@ You should give pacman the ability to manage your fonts, which is done by creati
 The family name of a font file can be aquired with the use of `fc-query` for example: `fc-query -f '%{family[0]}
 ' /path/to/file`. The formatting is described in the FcPatternFormat(3) manual.
 
+ `PKGBUILD` 
 ```
 pkgname=fontname-fonts
 pkgver=1.0
@@ -130,7 +131,7 @@ package() {
 }
 
 ```
-
+ `fontname-fonts.install` 
 ```
 post_install() {
   fc-cache -s

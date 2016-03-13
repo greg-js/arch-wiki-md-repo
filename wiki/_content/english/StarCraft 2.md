@@ -14,7 +14,8 @@
     *   [3.1 Preliminary](#Preliminary)
     *   [3.2 Rapid Fire Hotkey throughput](#Rapid_Fire_Hotkey_throughput)
     *   [3.3 Enable double-key Rapid Fire Hotkey behaviour](#Enable_double-key_Rapid_Fire_Hotkey_behaviour)
-    *   [3.4 Enable Scrollclick](#Enable_Scrollclick)
+    *   [3.4 Enable CapsLock as a Rapid Fire Hotkey](#Enable_CapsLock_as_a_Rapid_Fire_Hotkey)
+    *   [3.5 Enable Scrollclick](#Enable_Scrollclick)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 See also](#See_also)
 
@@ -138,6 +139,24 @@ $ xset r rate <delay_to_activate_in_ms> <nb_of_repeats_per_second>
 #### Enable double-key Rapid Fire Hotkey behaviour
 
 Fancy double-key Rapid Fire Trick are not possible by default for Linux. The [xkb_repeat](https://git.framasoft.org/bobo/xkb_repeat/tree/master) git project may help you unlock this behaviour, providing patches to recompile your X server.
+
+#### Enable CapsLock as a Rapid Fire Hotkey
+
+TheCore and TheCore Lite hotkeys rely on CapsLock to be a rapid fire hotkey. This does not work by default under Linux. To make it work, CapsLock key could be remapped to another key with [xmodmap](/index.php/Xmodmap "Xmodmap"). Hereafter an example with "!" character that cannot be used by Starcraft2 in any case.
+
+```
+$ xmodmap -e "remove Lock = Caps_Lock" -e "keycode 66 = exclam"
+
+```
+
+The .SC2Hotkeys file would need to be modified, to take it into account to add "!" as an alternate wherever CapsLock is used
+
+```
+$ sed -i -e "s:CapsLock:CapsLock,OEM8:g" <file>.SC2Hotkeys
+
+```
+
+**Tip:** `xmodmap -e "add Lock = Caps_Lock" -e "keycode 66 = Caps_Lock"` to get back to default CapsLock behavior
 
 #### Enable Scrollclick
 

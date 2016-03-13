@@ -1,27 +1,37 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Дата последней синхронизации: 23 октября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=406300).
+**Состояние перевода:** На этой странице представлен перевод статьи [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Дата последней синхронизации: 2 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=423687).
 
 General troubleshooting - Устранение общих неполадок в системе. Эта статья дает советы по устранению общих проблем. Для решения проблем, связанных с конкретной программой, посетите соответствующую страницу Wiki.
 
 ## Contents
 
-*   [1 Внимание к деталям](#.D0.92.D0.BD.D0.B8.D0.BC.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BA_.D0.B4.D0.B5.D1.82.D0.B0.D0.BB.D1.8F.D0.BC)
-*   [2 Вопросы / перечень](#.D0.92.D0.BE.D0.BF.D1.80.D0.BE.D1.81.D1.8B_.2F_.D0.BF.D0.B5.D1.80.D0.B5.D1.87.D0.B5.D0.BD.D1.8C)
-*   [3 Более конкретно](#.D0.91.D0.BE.D0.BB.D0.B5.D0.B5_.D0.BA.D0.BE.D0.BD.D0.BA.D1.80.D0.B5.D1.82.D0.BD.D0.BE)
-*   [4 Дополнительная поддержка](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0)
+*   [1 Общие процедуры](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D0.B4.D1.83.D1.80.D1.8B)
+    *   [1.1 Внимание к деталям](#.D0.92.D0.BD.D0.B8.D0.BC.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BA_.D0.B4.D0.B5.D1.82.D0.B0.D0.BB.D1.8F.D0.BC)
+    *   [1.2 Вопросы / перечень](#.D0.92.D0.BE.D0.BF.D1.80.D0.BE.D1.81.D1.8B_.2F_.D0.BF.D0.B5.D1.80.D0.B5.D1.87.D0.B5.D0.BD.D1.8C)
+    *   [1.3 Более конкретно](#.D0.91.D0.BE.D0.BB.D0.B5.D0.B5_.D0.BA.D0.BE.D0.BD.D0.BA.D1.80.D0.B5.D1.82.D0.BD.D0.BE)
+    *   [1.4 Дополнительная поддержка](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0)
+*   [2 Проблемы загрузки](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
+    *   [2.1 Пустой экран с видео Intel](#.D0.9F.D1.83.D1.81.D1.82.D0.BE.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D1.81_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE_Intel)
+    *   [2.2 Зависание при загрузке ядра](#.D0.97.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.D1.8F.D0.B4.D1.80.D0.B0)
+    *   [2.3 Не загружается система](#.D0.9D.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0)
+    *   [2.4 Отладка модулей ядра](#.D0.9E.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B0_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D0.B5.D0.B9_.D1.8F.D0.B4.D1.80.D0.B0)
+    *   [2.5 Отладка аппаратных средств](#.D0.9E.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B0_.D0.B0.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D1.8B.D1.85_.D1.81.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B2)
+*   [3 Менеджер пакетов](#.D0.9C.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+*   [4 fuser](#fuser)
 *   [5 Разрешения сессии](#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D0.B5.D1.81.D1.81.D0.B8.D0.B8)
-*   [6 Проблемы загрузки](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
+*   [6 Ошибка при загрузке разделяемых библиотек](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D1.8F.D0.B5.D0.BC.D1.8B.D1.85_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA)
 *   [7 Файл: не может быть найден файл!](#.D0.A4.D0.B0.D0.B9.D0.BB:_.D0.BD.D0.B5_.D0.BC.D0.BE.D0.B6.D0.B5.D1.82_.D0.B1.D1.8B.D1.82.D1.8C_.D0.BD.D0.B0.D0.B9.D0.B4.D0.B5.D0.BD_.D1.84.D0.B0.D0.B9.D0.BB.21)
-*   [8 Fuser](#Fuser)
-*   [9 Почему я не могу записывать на NTFS разделы?](#.D0.9F.D0.BE.D1.87.D0.B5.D0.BC.D1.83_.D1.8F_.D0.BD.D0.B5_.D0.BC.D0.BE.D0.B3.D1.83_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.BD.D0.B0_NTFS_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D1.8B.3F)
-*   [10 Проверка орфографии помечает весь мой текст как с ошибками!](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.BE.D1.80.D1.84.D0.BE.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.B8_.D0.BF.D0.BE.D0.BC.D0.B5.D1.87.D0.B0.D0.B5.D1.82_.D0.B2.D0.B5.D1.81.D1.8C_.D0.BC.D0.BE.D0.B9_.D1.82.D0.B5.D0.BA.D1.81.D1.82_.D0.BA.D0.B0.D0.BA_.D1.81_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B0.D0.BC.D0.B8.21)
-*   [11 Проблемы с GTK-приложениями](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_GTK-.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8)
-*   [12 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [8 Почему я не могу записывать на NTFS разделы?](#.D0.9F.D0.BE.D1.87.D0.B5.D0.BC.D1.83_.D1.8F_.D0.BD.D0.B5_.D0.BC.D0.BE.D0.B3.D1.83_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.BD.D0.B0_NTFS_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D1.8B.3F)
+*   [9 Проверка орфографии помечает весь мой текст как с ошибками!](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.BE.D1.80.D1.84.D0.BE.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.B8_.D0.BF.D0.BE.D0.BC.D0.B5.D1.87.D0.B0.D0.B5.D1.82_.D0.B2.D0.B5.D1.81.D1.8C_.D0.BC.D0.BE.D0.B9_.D1.82.D0.B5.D0.BA.D1.81.D1.82_.D0.BA.D0.B0.D0.BA_.D1.81_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B0.D0.BC.D0.B8.21)
+*   [10 Проблемы с GTK-приложениями](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_GTK-.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8)
+*   [11 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
-## Внимание к деталям
+## Общие процедуры
+
+### Внимание к деталям
 
 Для того чтобы решить проблему *абсолютно необходимо* твёрдо понимать конкретные функции системы. Как это работает, и что нужно для запуска без ошибок? Если вы не можете ответить на эти вопросы, то настоятельно рекомендуется к рассмотрению [Archwiki](/index.php/Table_of_contents_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Table of contents (Русский)") статьи, для функций с которыми у вас проблемы. После того, как вы почувствуете, что поняли систему, вам будет проще с решением точечных проблем.
 
-## Вопросы / перечень
+### Вопросы / перечень
 
 Для вас ниже приведён ряд вопросов , когда дело обстоит с неисправной системой. Под каждым вопросом есть замечания, объясняющие, как вы должны ответить на каждый вопрос, и несколько лёгких способов, о том как собрать данные вывода, и какие инструменты могут быть использованы для обзора логов и журналов.
 
@@ -45,9 +55,9 @@ General troubleshooting - Устранение общих неполадок в 
 
     	 `$ systemctl status dhcpcd@eth0.service >> $HOME/issue.log` 
 
-    **Обратите внимание:** Использование `**>>**` не перезапишет существующий текст в `$HOME/issue.log`.
+    **Примечание:** Использование `**>>**` не перезапишет существующий текст в `$HOME/issue.log`.
 
-## Более конкретно
+### Более конкретно
 
 При попытке решить проблему, **никогда** не подходите к ней как:
 
@@ -59,15 +69,49 @@ General troubleshooting - Устранение общих неполадок в 
 
 Например: LibreOffice(X) не даёт навести курсор(Y) при выборе меню(Z) в xmonad(A).
 
-## Дополнительная поддержка
+### Дополнительная поддержка
 
 Вся информация перед вами. Вы должны иметь хорошее представление о том, что происходит с системой. Теперь можете начать работать над исправлениями.
 
 Если вам нужна дополнительная поддержка, обратитесь на [[форум](http://archlinux.org.ru/forum/%7CРусскоязычный)].
 
+## Проблемы загрузки
+
+Для получения дополнительнойинформации, смотрите [Boot debugging](/index.php/Boot_debugging "Boot debugging").
+
+### Пустой экран с видео Intel
+
+Скорее всего проблема с [настройками режима ядра](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"). Попробуйте [отключить modesetting](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_modesetting "Kernel mode setting (Русский)") или изменить [видео порт](/index.php/Intel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.81_KMS:_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D1.8C_.D0.BE.D0.B3.D1.80.D0.B0.D0.BD.D0.B8.D1.87.D0.B5.D0.BD.D0.B0_.D0.B2_.D0.BD.D0.B5.D0.B1.D0.BE.D0.BB.D1.8C.D1.88.D1.83.D1.8E_.D0.BF.D0.BB.D0.BE.D1.89.D0.B0.D0.B4.D1.8C "Intel (Русский)").
+
+### Зависание при загрузке ядра
+
+Попробуйте отключить ACPI, добавив параметр ядра `acpi=off`.
+
+### Не загружается система
+
+Если ваша система вообще не запускается, загрузитесь с [live-образа](https://www.archlinux.org/download/) и [воспользуйтесь chroot](/index.php/Change_root_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Change root (Русский)") чтобы войти в систему и устранить проблему.
+
+### Отладка модулей ядра
+
+Смотрите [Модули ядра#Получение информации](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.B8 "Kernel modules (Русский)").
+
+### Отладка аппаратных средств
+
+Смотрите [udev#Debug output](/index.php/Udev#Debug_output "Udev").
+
+## Менеджер пакетов
+
+Смотрите общие [решения проблем](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC "Pacman (Русский)") и [решение проблем с PGP-ключами](/index.php/Pacman/Package_signing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC "Pacman/Package signing (Русский)").
+
+## fuser
+
+*fuser* это утилита командной строки для определения процессов использующих ресурсы, таких как файлы, файловые системы и порты TCP / UDP.
+
+*fuser* содержится в пакете [psmisc](https://www.archlinux.org/packages/?name=psmisc), который должен быть уже установлен, как часть группы [base](https://www.archlinux.org/groups/x86_64/base/).
+
 ## Разрешения сессии
 
-**Обратите внимание:** Вы должны использовать [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") в качестве системы инициализации работы локальных сеансов, - которая необходима для разрешения polkit и ACL для различных устройств (смотрите `/usr/lib/udev/rules.d/70-uaccess.rules` и [[1]](http://enotty.pipebreaker.pl/2012/05/23/linux-automatic-user-acl-management/))
+**Примечание:** Вы должны использовать [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") в качестве системы инициализации работы локальных сеансов [[1]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) - которая необходима для разрешения polkit и ACL для различных устройств (смотрите `/usr/lib/udev/rules.d/70-uaccess.rules` и [[2]](http://enotty.pipebreaker.pl/2012/05/23/linux-automatic-user-acl-management/))
 
 Во-первых, убедитесь, что у вас есть действующий локальный сеанс X:
 
@@ -82,9 +126,27 @@ $ loginctl show-session $XDG_SESSION_ID
 
 Основные [polkit](/index.php/Polkit "Polkit") действия не требуют дальнейшей настройки. Некоторые действия polkit требуют дальнейшей проверки подлинности, даже при местной сессии. Для этой работы агент аутентификации polkit должен быть запущен. Смотрите больше информации по [polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit").
 
-## Проблемы загрузки
+## Ошибка при загрузке разделяемых библиотек
 
-Смотрите [Boot debugging](/index.php/Boot_debugging "Boot debugging").
+Если при использовании программы, вы получите сообщение об ошибке подобное:
+
+```
+error while loading shared libraries: libusb-0.1.so.4: cannot open shared object file: No such file or directory
+
+```
+
+Воспользуйтесь [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") или [pkgfile](/index.php/Pkgfile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pkgfile (Русский)") для поиска пакета, которому принадлежит недостающая библиотека:
+
+ `$ pacman -Fs libusb-0.1.so.4` 
+```
+extra/libusb-compat 0.1.5-1
+    usr/lib/libusb-0.1.so.4
+
+```
+
+В этом случае должен быть [установлен](/index.php/Installed "Installed") пакет [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat).
+
+Ошибка также может означать, что пакет, который вы использовали для установки программы не перечисляет библиотеку в качестве зависимости в его [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)"): если это официальный пакет, [сообщите об ошибке](/index.php/Report_a_bug "Report a bug"); если это пакет [AUR](/index.php/AUR "AUR"), сообщите об этом сопровождающему, используя свою страницу сайта AUR.
 
 ## Файл: не может быть найден файл!
 
@@ -115,7 +177,7 @@ file: could not find any magic files!
 1.  Загрузитесь с установочного носителя Arch Linux Live CD.
 2.  Смонтируйте корневой раздел (`**/**`) в `/mnt` и воспользуйтесь [arch-chroot](/index.php/Change_root_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8F_arch-chroot "Change root (Русский)"), [chroot](/index.php/Change_root_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Change root (Русский)") в вашей системе.
 
-**Обратите внимание:** [arch-chroot](/index.php/Change_root_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8F_arch-chroot "Change root (Русский)") leaves mounting the `/boot` partition up to the user.
+**Примечание:** [arch-chroot](/index.php/Change_root_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8F_arch-chroot "Change root (Русский)") leaves mounting the `/boot` partition up to the user.
 
 1.  Исследуйте `/etc/ld.so.conf` и удалите любые найденные неверные строки.
 2.  Исследуйте файлы расположенные в каталоге `/etc/ld.so.conf.d/` и удалите все неверные файлы.
@@ -133,12 +195,6 @@ file: could not find any magic files!
 # pacman -S <пакет>
 
 ```
-
-## Fuser
-
-*fuser* это утилита командной строки для обнаружения процессов, использующих ресурсы, такие как файлы, файловые системы и порты TCP/UDP.
-
-*fuser* находится в пакете [psmisc](https://www.archlinux.org/packages/?name=psmisc), который уже должен быть установлен как часть группы [base](https://www.archlinux.org/groups/x86_64/base/).
 
 ## Почему я не могу записывать на NTFS разделы?
 
@@ -178,7 +234,5 @@ ru_RU:aspell
 
 ## Смотрите также
 
-*   [IRC Collaborative Debugging](/index.php/IRC_Collaborative_Debugging "IRC Collaborative Debugging")
-*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
 *   [Fix the Most Common Problems](http://www.maximumpc.com/article/features/linux_troubleshooting_guide_fix_most_common_problems)
 *   [A how-to in troubleshooting for newcomers](https://www.reddit.com/r/archlinux/comments/tjjwr/archlinux_a_howto_in_troubleshooting_for_newcomers/)

@@ -165,7 +165,7 @@ An array of packages that are **only** required to build the software. The minim
 
 **Tip:** The following can be used to see if a particular package is either in the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group or pulled in by a members of the group:
 ```
-$ pacman -Si $(pactree -rl *package*) 2>/dev/null | grep -q "^Groups *:.*base-devel"
+$ LC_ALL=C pacman -Si $(pactree -rl *package*) 2>/dev/null | grep -q "^Groups *:.*base-devel"
 
 ```
 

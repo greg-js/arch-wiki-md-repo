@@ -173,10 +173,14 @@ extension=sqlite3.so
 
 ### XDebug
 
-XDebug allows you to easily debug php code using modified var_dump() function. Install [xdebug](https://www.archlinux.org/packages/?name=xdebug) and add the line at `/etc/php/php.ini`:
+XDebug allows you to easily debug php code using modified var_dump() function. Install [xdebug](https://www.archlinux.org/packages/?name=xdebug) and uncomment the lines at `/etc/php/conf.d/xdebug.ini`:
 
 ```
-extension=xdebug.so
+zend_extension=xdebug.so
+xdebug.remote_enable=on
+xdebug.remote_host=127.0.0.1
+xdebug.remote_port=9000
+xdebug.remote_handler=dbgp
 
 ```
 

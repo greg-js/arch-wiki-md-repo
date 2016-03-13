@@ -47,11 +47,11 @@ SSH keys are not without their drawbacks and may not be appropriate for all envi
 
 SSH keys are always generated in pairs with one known as the private key and the other as the public key. The private key is known only to you and it should be safely guarded. By contrast, the public key can be shared freely with any SSH server to which you wish to connect.
 
-If a SSH server has your public key on file and sees you requesting a connection, it uses your public key to construct and send you a challenge. This challenge is an encrypted message and it must be met with the appropriate response before the server will grant you access. What makes this coded message particularly secure is that it can only be understood by the private key holder. While the public key can be used to encrypt the message, it cannot be used to decrypt that very same message. Only you, the holder of the private key, will be able to correctly understand the challenge and produce the proper response.
+If an SSH server has your public key on file and sees you requesting a connection, it uses your public key to construct and send you a challenge. This challenge is an encrypted message and it must be met with the appropriate response before the server will grant you access. What makes this coded message particularly secure is that it can only be understood by the private key holder. While the public key can be used to encrypt the message, it cannot be used to decrypt that very same message. Only you, the holder of the private key, will be able to correctly understand the challenge and produce the proper response.
 
 This challenge-response phase happens behind the scenes and is invisible to the user. As long as you hold the private key, which is typically stored in the `~/.ssh/` directory, your SSH client should be able to reply with the appropriate response to the server.
 
-A private key is a guarded secret and as such it is advisable to store it on disk in an encrypted form. When the encrypted private key is required, a passphrase must first be entered in order to decrypt it. While this might superficially appear as though you are providing a login password to the SSH server, the passphrase is only used to decrypt the private key on the local system. The passphrase is not be transmitted over the network.
+A private key is a guarded secret and as such it is advisable to store it on disk in an encrypted form. When the encrypted private key is required, a passphrase must first be entered in order to decrypt it. While this might superficially appear as though you are providing a login password to the SSH server, the passphrase is only used to decrypt the private key on the local system. The passphrase is not transmitted over the network.
 
 ## Generating an SSH key pair
 
@@ -96,28 +96,28 @@ ssh-keygen -C "$(whoami)@$(hostname)-$(date -I)"
 
 will add a comment saying which user created the key on which machine and when.
 
-The `-o` switch can also be used to save the private key in the new OpenSSH format, which has increased resistance to brute-force password cracking (but is not supported by versions of OpenSSH prior to 6.5). Use the `-a` switch to specify the number of KDF rounds. Ed25519 keys always use the new private key format.
+The `-o` switch can also be used to save the private key in the new OpenSSH format, which has increased resistance to brute-force password cracking (but is not supported by versions of OpenSSH prior to 6.5). Use the `-a` switch to specify the number of KDF rounds. Ed25519 keys always use the new private key format[[2]](http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man1/ssh-keygen.1?query=ssh-keygen&sec=1).
 
 ### Choosing the type of encryption
 
 OpenSSH supports several key exchange algorithms which can be divided in two groups depending on the mathematical properties they exploit:
 
-1.  [DSA](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm "wikipedia:Digital Signature Algorithm") and [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem) "wikipedia:RSA (cryptosystem)"), which rely on the practical difficulty of factoring the product of two large prime numbers,
+1.  [DSA](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm "wikipedia:Digital Signature Algorithm") and [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem) "wikipedia:RSA (cryptosystem)"), which rely on the [practical difficulty](https://en.wikipedia.org/wiki/Integer_factorization#Difficulty_and_complexity) of factoring the product of two large prime numbers,
 2.  [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "wikipedia:Elliptic Curve Digital Signature Algorithm") and [Ed25519](https://en.wikipedia.org/wiki/Curve25519 "wikipedia:Curve25519"), which rely on the elliptic curve [discrete logarithm](https://en.wikipedia.org/wiki/Discrete_logarithm "wikipedia:Discrete logarithm") problem. ([example](https://www.certicom.com/index.php/52-the-elliptic-curve-discrete-logarithm-problem))
 
-[Elliptic curve cryptography](https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/) (ECC) algorithms are a [more recent addition](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography#History "wikipedia:Elliptic curve cryptography") to public key cryptosystems. One of their main advantages is their ability to provide [the same level of security with smaller keys](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography#Rationale "wikipedia:Elliptic curve cryptography"), which makes for less computationally intensive operations (*i.e.* faster key creation and decryption) and reduced storage and transmission requirements.
+[Elliptic curve cryptography](https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/) (ECC) algorithms are a [more recent addition](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography#History "wikipedia:Elliptic curve cryptography") to public key cryptosystems. One of their main advantages is their ability to provide [the same level of security with smaller keys](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography#Rationale "wikipedia:Elliptic curve cryptography"), which makes for less computationally intensive operations (*i.e.* faster key creation, encryption and decryption) and reduced storage and transmission requirements.
 
 OpenSSH 7.0 [deprecated and disabled support for DSA keys](https://www.archlinux.org/news/openssh-70p1-deprecates-ssh-dss-keys/) due to discovered vulnerabilities, therefore the choice of [cryptosystem](https://en.wikipedia.org/wiki/cryptosystem "wikipedia:cryptosystem") lies within RSA or one of the two types of ECC.
 
-[#RSA](#RSA) keys will give you the greatest portability, while [#Ed25519](#Ed25519) will give you the best security but requires recent versions of client & server.[[2]](https://www.gentoo.org/support/news-items/2015-08-13-openssh-weak-keys.html) [#ECDSA](#ECDSA) is likely more compatible than Ed25519 (though still less than RSA), but suspicions exist about its security (see below).
+[#RSA](#RSA) keys will give you the greatest portability, while [#Ed25519](#Ed25519) will give you the best security but requires recent versions of client & server[[3]](https://www.gentoo.org/support/news-items/2015-08-13-openssh-weak-keys.html). [#ECDSA](#ECDSA) is likely more compatible than Ed25519 (though still less than RSA), but suspicions exist about its security (see below).
 
-**Note:** [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") does not handle ECDSA[[3]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[4]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. Users will have to turn to other [SSH agents](#SSH_agents) or stick to RSA keys.
+**Note:** [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") does not handle ECDSA[[4]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[5]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. Users will have to turn to other [SSH agents](#SSH_agents) or stick to RSA keys.
 
 **Note:** These keys are used only to authenticate you; choosing stronger keys will not increase CPU load when transferring data over SSH.
 
 #### RSA
 
-As said previously, *ssh-keygen* defaults to RSA therefore there is no need to specify it with the `-t` option. It provides the best compatibility of all algorithms but requires the key size to be larger to provide sufficient security.
+As said previously, `ssh-keygen` defaults to RSA therefore there is no need to specify it with the `-t` option. It provides the best compatibility of all algorithms but requires the key size to be larger to provide sufficient security.
 
 Minimum key size is 1024 bits, default is 2048 (see `man ssh-keygen`) and maximum is 16384:
 
@@ -153,13 +153,13 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-Be aware though that there are diminishing returns in using longer keys.[[5]](https://security.stackexchange.com/a/25377)[[6]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096) The GnuPG FAQ reads: "*If you need more security than RSA-2048 offers, the way to go would be to switch to elliptical curve cryptography — not to continue using RSA*".[[7]](https://www.gnupg.org/faq/gnupg-faq.html#please_use_ecc)
+Be aware though that there are diminishing returns in using longer keys.[[6]](https://security.stackexchange.com/a/25377)[[7]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096) The GnuPG FAQ reads: "*If you need more security than RSA-2048 offers, the way to go would be to switch to elliptical curve cryptography — not to continue using RSA*".[[8]](https://www.gnupg.org/faq/gnupg-faq.html#please_use_ecc)
 
-On the other hand, the latest iteration of the [NSA Fact Sheet Suite B Cryptography](https://www.nsa.gov/ia/programs/suiteb_cryptography/index.shtml) suggests a minimum 3072-bit modulus for RSA while "*[preparing] for the upcoming quantum resistant algorithm transition*".[[8]](http://www.keylength.com/en/6/)
+On the other hand, the latest iteration of the [NSA Fact Sheet Suite B Cryptography](https://www.nsa.gov/ia/programs/suiteb_cryptography/index.shtml) suggests a minimum 3072-bit modulus for RSA while "*[preparing] for the upcoming quantum resistant algorithm transition*".[[9]](http://www.keylength.com/en/6/)
 
 #### ECDSA
 
-**Note:** The Windows SSH client PuTTY does not support ECDSA and cannot connect to a server that uses only ECDSA keys.
+**Note:** The Windows SSH client PuTTY does not support ECDSA as of March 2016\. One needs a PuTTY development snapshot to connect to a server that uses only ECDSA keys.[[10]](http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/)
 
 The Elliptic Curve Digital Signature Algorithm (ECDSA) was introduced as the preferred algorithm for authentication [in OpenSSH 5.7](http://www.openssh.com/txt/release-5.7). Some vendors also disable the required implementations due to potential patent issues.
 
@@ -172,7 +172,7 @@ Both of those concerns are best summarized in [libssh curve25519 introduction](h
 
 #### Ed25519
 
-[Ed25519](http://ed25519.cr.yp.to/) was introduced in [OpenSSH 6.5](http://www.openssh.com/txt/release-6.5): "*Ed25519 is an elliptic curve signature scheme that offers better security than ECDSA and DSA and good performance*". Its main strengths are its speed, its constant-time run time (and resistance against side-channel attacks), and its lack of nebulous hard-coded constants.[[9]](https://git.libssh.org/projects/libssh.git/tree/doc/curve25519-sha256@libssh.org.txt) See also [this blog post](https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/) by a Mozilla developer on how it works.
+[Ed25519](http://ed25519.cr.yp.to/) was introduced in [OpenSSH 6.5](http://www.openssh.com/txt/release-6.5): "*Ed25519 is an elliptic curve signature scheme that offers better security than ECDSA and DSA and good performance*". Its main strengths are its speed, its constant-time run time (and resistance against side-channel attacks), and its lack of nebulous hard-coded constants.[[11]](https://git.libssh.org/projects/libssh.git/tree/doc/curve25519-sha256@libssh.org.txt) See also [this blog post](https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/) by a Mozilla developer on how it works.
 
 It is already implemented in [many applications and libraries](https://en.wikipedia.org/wiki/Curve25519#Popularity "wikipedia:Curve25519") and is the [default key exchange algorithm](https://www.libssh.org/2013/11/03/openssh-introduces-curve25519-sha256libssh-org-key-exchange/) (which is different from key *signature*) in OpenSSH.
 

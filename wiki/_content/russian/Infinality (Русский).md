@@ -1,10 +1,12 @@
-Набор патчей **infinality** стремится значительно улучшить отрисовку шрифтов freetype2, и добавляет несколько новых возможностей.
+**Состояние перевода:** На этой странице представлен перевод статьи [Infinality](/index.php/Infinality "Infinality"). Дата последней синхронизации: 27 декабря 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Infinality&diff=0&oldid=413518).
+
+Набор патчей [Infinality](http://www.infinality.net/) стремится значительно улучшить отрисовку шрифтов freetype2, и добавляет несколько новых возможностей.
 
 ## Contents
 
 *   [1 Особенности](#.D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8)
 *   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [2.1 Пользовательский репозиторий](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B9_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.B9)
+    *   [2.1 Infinality-bundle](#Infinality-bundle)
         *   [2.1.1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_2)
         *   [2.1.2 Рекомендуемые шрифты с ограниченными лицензиями](#.D0.A0.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D1.83.D0.B5.D0.BC.D1.8B.D0.B5_.D1.88.D1.80.D0.B8.D1.84.D1.82.D1.8B_.D1.81_.D0.BE.D0.B3.D1.80.D0.B0.D0.BD.D0.B8.D1.87.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC.D0.B8_.D0.BB.D0.B8.D1.86.D0.B5.D0.BD.D0.B7.D0.B8.D1.8F.D0.BC.D0.B8)
         *   [2.1.3 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
@@ -12,7 +14,7 @@
         *   [2.1.5 Замены шрифта](#.D0.97.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.B0)
         *   [2.1.6 Подписи пакетов](#.D0.9F.D0.BE.D0.B4.D0.BF.D0.B8.D1.81.D0.B8_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
         *   [2.1.7 Обновление](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5)
-    *   [2.2 Ручное](#.D0.A0.D1.83.D1.87.D0.BD.D0.BE.D0.B5)
+    *   [2.2 Апстрим infinality](#.D0.90.D0.BF.D1.81.D1.82.D1.80.D0.B8.D0.BC_infinality)
 *   [3 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [3.1 Spotify проблемы шрифта](#Spotify_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.B0)
     *   [3.2 Google Chrome проблемы](#Google_Chrome_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B)
@@ -25,7 +27,7 @@
 
 ## Особенности
 
-Все настройки Infinality задаются во время выполнения с помощью переменных сред в `/etc/X11/xinit/xinitrc.d/infinality-settings.sh`, и включают следующее:
+Все настройки Infinality задаются во время выполнения с помощью переменных сред в `/etc/X11/xinit/xinitrc.d/xft-settings.sh`, и включают следующее:
 
 *   **Emboldening Enhancement**: Отключение Y Emboldening, производит гораздо приятный результат на шрифты без утолщённых версий. Работает на родном TT Hinter и autohinter.
 *   **Auto-Autohint**: Автоматически ставит autohint на шрифты, которые не содержат никаких инструкций TT.
@@ -37,15 +39,17 @@
 *   **Force Slight Hinting**: Принудительно использовать slight hinting, даже когда программы запрашивают full hinting. Если вы используете local.conf, который я предоставляю (включенный в пакет fedora infinality-settings), то вы заметите улучшения отображения шрифтов.
 *   **ChromeOS Style Sharpening**: Использует патч ChromeOS , чтобы сделать резче вид шрифтов. В настоящее время включено в набор патчей infinality.
 
-Ряд предустановок включено, и может быть использовано, путем установки переменной USE_STYLE в `/etc/X11/xinit/xinitrc.d/infinality-settings.sh`.
+Для подробностей смотрите [README](http://www.infinality.net/forum/viewtopic.php?f=2&t=18).
 
-**Обратите внимание:** Файл `/etc/X11/xinit/xinitrc.d/infinality-settings.sh` часто меняет своё содержимое, в зависимости от версии. Все стили отображения, и перечисленные настройки параметров, смотрите [[в файле настроек с примерами и описанием](https://github.com/bohoomil/fontconfig-ultimate/blob/master/freetype/generic_settings/infinality-settings.sh)]. Можете скопировать его себе полностью, взяв за основу.
+Ряд предустановок включено, и может быть использовано, путем установки переменной USE_STYLE в `/etc/X11/xinit/xinitrc.d/xft-settings.sh`.
+
+**Примечание:** Файл `/etc/X11/xinit/xinitrc.d/infinality-settings.sh` часто меняет своё содержимое, в зависимости от версии. Все стили отображения, и перечисленные настройки параметров, смотрите [[в файле настроек с примерами и описанием](https://github.com/bohoomil/fontconfig-ultimate/blob/master/freetype/generic_settings/infinality-settings.sh)]. Можете скопировать его себе полностью, взяв за основу.
 
 ## Установка
 
-### Пользовательский репозиторий
+### Infinality-bundle
 
-**Infinality-bundle** представляет собой набор программного обеспечения, простой метод "установил-и-забыл", для улучшения визуализации текста в Arch Linux. Пакеты полностью совместимы с системными библиотеками, доступными в *extra* репозитории и предназначены для использования в качестве небольшой замены в них.
+**Infinality-bundle** представляет собой набор программного обеспечения, направленного на улучшение визуализации текста в Arch Linux.
 
 В настоящее время, в комплект входят:
 
@@ -61,25 +65,23 @@
 
 #### Установка
 
-Добавьте репозиторий [infinality-bundle](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories") в `pacman.conf`, затем [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") мета-пакет *infinality-bundle*.
+Установка состоит из добавления выбранных репозиториев в `pacman.conf` и [установки](/index.php/Installing "Installing") пакетов из соответствующих групп или мета-пакетов. Не забудьте перезапустить сервер X после установки, чтобы увидеть изменения.
 
-**Обратите внимание:** Не забудьте добавить ключ ID 962DDE58 в ваш pacman keyring. Смотрите подробную инструкцию [как добавить ключ](/index.php/Pacman-key_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.B9 "Pacman-key (Русский)").
+*   [infinality-bundle](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories") содержит базовые пакеты собранные в группе *infinality-bundle*.
+*   [infinality-bundle-multilib](/index.php/Unofficial_user_repositories#infinality-bundle-multilib "Unofficial user repositories") репозиторий содержит дополнительные мультибиблиотечные библиотеки для архитектуры x86_64 собранные в группе *infinality-bundle-multilib*.
+*   [infinality-bundle-fonts](/index.php/Unofficial_user_repositories#infinality-bundle-fonts "Unofficial user repositories") репозиторий содержит полную коллекцию бесплатных шрифтов в метапакетах *ibfonts-meta-base*, *ibfonts-meta-extended* и *ibfonts-meta-extended-lt*.
 
-Если Вы хотите получить доступ к библиотекам multilib в архитектуре x86_64 (требуются для использования в пакетах Wine и Skype), также добавьте репозитоий [infinality-bundle-multilib](/index.php/Unofficial_user_repositories#infinality-bundle-multilib "Unofficial user repositories"), затем [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") мета-пакет *infinality-bundle-multilib*.
+**Примечание:**
 
-Дополнительно, если вы хотите получить обширную коллекцию свободных шрифтов из репозитория [infinality-bundle-fonts](/index.php/Unofficial_user_repositories#infinality-bundle-fonts "Unofficial user repositories"), тогда [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") мета-пакеты *ibfonts-meta-base* (базовый), и/или *ibfonts-meta-extended*.
+*   Не забудьте добавить ключ ID 962DDE58 в ваш pacman keyring. Для подробных инструкций как это сделать,смотрите [Добавление неофициальных ключей](/index.php/Pacman-key_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.BE.D1.84.D0.B8.D1.86.D0.B8.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.B9 "Pacman-key (Русский)").
+*   Когда pacman разрешает зависимости и получает конфликтующий пакет, например:
+    ```
+    resolving dependencies...
+    looking for inter-conflicts...
+    :: freetype2-infinality-ultimate and freetype2 are in conflict. Remove freetype2? [y/N]
 
-**Обратите внимание:** Когда Pacman разрешает зависимости и обнаруживает конфликты с пакетами, например::
-```
-resolving dependencies...
-looking for inter-conflicts...
-:: freetype2-infinality-ultimate and freetype2 are in conflict. Remove freetype2? [y/N]
-
-```
-отвечайте `yes`
-`(да)`.}}
-
-Перезагрузите X-сервер (или компьютер) для применения изменений.
+    ```
+    отвечайте `yes`.
 
 #### Рекомендуемые шрифты с ограниченными лицензиями
 
@@ -92,7 +94,7 @@ looking for inter-conflicts...
 
 #### Использование
 
-Пользователи популярных окружений рабочего стола (GNOME, KDE, Xfce4, Cinnamon, LXDE) должны настроить параметры шрифта через их панели управления DE. В принципе, настройки должны дублировать те, что в файле настроек freetype2 (`/etc/X11/xinit/xinitrc.d/infinality-settings.sh`):
+Пользователи популярных окружений рабочего стола (GNOME, KDE, Xfce4, Cinnamon, LXDE) должны настроить параметры шрифта через их панели управления DE. В принципе, настройки должны дублировать те, что в файле настроек freetype2 (`/etc/X11/xinit/xinitrc.d/xft-settings.sh`):
 
 ```
 Xft.antialias: 1
@@ -116,7 +118,7 @@ export INFINALITY_FT_FILTER_PARAMS="16 20 28 20 16"
 
 ```
 
-**Обратите внимание:** Ваши настройки будут сохранены в файл`.pacsave` при обнавлении пакета infinality.
+**Примечание:** Ваши настройки будут сохранены в файл`.pacsave` при обнавлении пакета infinality.
 
 *   Можно пропустить установку *infinality-bundle-fonts* если вы хотите использовать пропиетарную коллекцию шрифтов Microsoft. Если это так, то вы должны активировать предустановки Fontconfig MS для обеспечения правильного выбора набора шрифтов. Сделайте это:
 
@@ -148,10 +150,9 @@ $ pacman -Ss infinality-bundle-fonts-extra
 
 чтобы получить список доступных пакетов.
 
-**Обратите внимание:**
+**Совет:** Перед установкой любого стороннего шрифта либо из [официальных репозиториев](/index.php/Official_repositories "Official repositories") или [AUR](/index.php/AUR "AUR"), всегда проверяйте доступен ли он в коллекции *infinality-bundle-fonts*
 
-*   Перед установкой любого стороннего шрифта либо из [официальных репозиториев](/index.php/Official_repositories "Official repositories") или [AUR](/index.php/AUR "AUR"), всегда проверяйте доступен ли он в коллекции *infinality-bundle-fonts*.
-*   **Не** пытайтесь установить все группы *infinality-bundle-fonts* или *infinality-bundle-fonts-extra*. Если вы не знаете наверняка, какие нужны шрифты из доступных там, вы только излишне загромоздите свой жесткий диск и снизите производительность кэша шрифтов. *ibfonts-meta-extended* должно хватить в большинстве, даже очень сложных случаях использования. Кроме того, несколько семейств шрифтов доступны в нескольких форматах (T1, TTF, OTF): попытка установить все пакеты шрифтов приведет к неразрешимым конфликтам пакетов. Если это так, то вы всегда должны использовать только **один** формат на семью.
+**Важно:** **Не** пытайтесь установить все группы *infinality-bundle-fonts* или *infinality-bundle-fonts-extra*. Если вы не знаете наверняка, какие нужны шрифты из доступных там, вы только излишне загромоздите свой жесткий диск и снизите производительность кэша шрифтов. *ibfonts-meta-extended* должно хватить в большинстве, даже очень сложных случаях использования. Кроме того, несколько семейств шрифтов доступны в нескольких форматах (T1, TTF, OTF): попытка установить все пакеты шрифтов приведет к неразрешимым конфликтам пакетов. Если это так, то вы всегда должны использовать только **один** формат на семью
 
 #### Замены шрифта
 
@@ -161,7 +162,7 @@ $ pacman -Ss infinality-bundle-fonts-extra
 
 Бывает пользователи сталкиваются с тем, что подпись не соответствует репозиторию. Частое обновление списка пакетов (`pacman -Syy`), решит проблему. Если не получается, удалите файлы infinality-bundle files из `/var/lib/pacman/sync` и снова обновите список пакетов.
 
-**Обратите внимание:** Можно отказаться от проверки подписи *SigLevel = Never* для каждого репозитория Infinality в вашем */etc/pacman.conf*. Например:
+**Примечание:** Можно отказаться от проверки подписи *SigLevel = Never* для каждого репозитория Infinality в вашем */etc/pacman.conf*. Например:
 ```
 [infinality-bundle]
 Server = [http://bohoomil.com/repo/$arch](http://bohoomil.com/repo/$arch)
@@ -173,14 +174,14 @@ SigLevel = Never
 
 *fontconfig-infinality-ultimate* часто обновляется, обычно каждые 3-4 недели, после ряда сообщений об незначительных ошибках, которые были исправлены. Каждое исправление появляется сразу в репозитории GitHub, и пользователи выбравшие [fontconfig-infinality-ultimate-git](https://aur.archlinux.org/packages/fontconfig-infinality-ultimate-git/) из AUR получат их раньше, т.е. когда пересоберут пакет.
 
-**Обратите внимание:**
+**Примечание:**
 
 *   *fontconfig-infinality-ultimate-git* пакет разработки доступен в репозитории [infinality-bundle]. Имейте в виду, что это не стабильный релиз, и может что-нибудь нарушить.
 *   When **reporting bugs**, please report all code-related issues (incorrect rendering, fontconfig problems, etc.) at GitHub [Issues * bohoomil/fontconfig-ultimate](https://github.com/bohoomil/fontconfig-ultimate/issues) and Arch specific, including problems regarding maintenance, packaging and general questions, in dedicated threads at Arch Forums. Before filing a report, make sure that [infinality-bundle] packages were correctly installed and customized.
 
-### Ручное
+### Апстрим infinality
 
-**Важно:** Infinality патчи предназначены для версии старше 2.4x freetype2\. Пользователям рекомендуется использовать [пользовательский репозиторий](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B9_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.B9) поддерживаемый *bohoomil*.
+**Важно:** Infinality патчи предназначены для версии старше 2.4x freetype2\. Пользователям рекомендуется использовать [infinality-bundle](#Infinality-bundle) поддерживаемый *bohoomil*.
 
 [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/) Может быть установлен из [AUR](/index.php/AUR "AUR"). Если вы пользователь multilib, также установите [lib32-freetype2-infinality](https://aur.archlinux.org/packages/lib32-freetype2-infinality/) из AUR. AUR также содержит последний снимок разработки патча Infinality с freetype2 : [freetype2-infinality-git](https://aur.archlinux.org/packages/freetype2-infinality-git/) и [lib32-freetype2-infinality-git](https://aur.archlinux.org/packages/lib32-freetype2-infinality-git/).
 
@@ -193,9 +194,8 @@ SigLevel = Never
 
 Соответствующие шрифты должны быть установлены.
 
-**Обратите внимание:**
+**Примечание:**
 
-*   Пользователь bohoomil поддерживает очень хорошую конфигурацию в его [github репозитории](https://github.com/bohoomil/fontconf) которая доступна в качестве [fontconfig-infinality-ultimate-git](https://aur.archlinux.org/packages/fontconfig-infinality-ultimate-git/) в AUR.
 *   Установите [grip-git](https://aur.archlinux.org/packages/grip-git/) из AUR, чтобы иметь предварительный просмотр шрифта в реальном времени.
 *   `README` для [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) говорит, что `/etc/fonts/local.conf` должен быть, либо не существует, или не имеет связанных настроек с infinality. `local.conf` является устаревшим и полностью заменен этой конфигурацией.
 
@@ -298,7 +298,7 @@ $ ln -s ../conf.avail.infinality/36-repl-missing-glyphs.conf .
 
 после чего отредактируйте файл согласно приведенному примеру.
 
-**Обратите внимание:** Шрифты, используемые по умолчанию для нелатинских сценариев указаны в `65-non-latin-*preset*.conf`(настройки по умолчанию).
+**Примечание:** Шрифты, используемые по умолчанию для нелатинских сценариев указаны в `65-non-latin-*preset*.conf`(настройки по умолчанию).
 
 Перезапись стандартных правил замен и добавление своих возможно с `35-repl-custom.conf`. Этот файл используется по умолчанию, так что все что потребуется это его редактирование.
 

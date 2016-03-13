@@ -40,7 +40,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 
 **Note:** This method is recommended due to its simplicity. If it does not work, switch to the alternative method [#Using manual formatting](#Using_manual_formatting) below.
 
-**Warning:** This will irrevocably destroy all data on `/dev/sd**x**`. To restore the USB drive as an empty, usable storage device, it will have to be [repartitioned](/index.php/Repartition "Repartition") and [reformatted](/index.php/Reformat "Reformat") afterwards.
+**Warning:** This will irrevocably destroy all data on `/dev/**sdx**`. To restore the USB drive as an empty, usable storage device after using the Arch ISO image, the iso9660 filesystem signature needs to be removed by running `wipefs --all /dev/**sdx**` as root, before [repartitioning](/index.php/Repartition "Repartition") and [reformating](/index.php/Reformat "Reformat") the USB drive.
 
 #### In GNU/Linux
 
@@ -184,7 +184,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 *   If not done yet, create the partition table and/or partition on the device before continuing. The partition `/dev/sd**Xn**` must be formatted to FAT32.
 
-*   Mount the ISO image, the FAT32 filesystem located in the USB flash device, and copy the contents of the ISO image to it. Then unmount the ISO image, but keep the FAT32 partition mounted (this will be used in subsequent steps). Eg:
+*   Mount the ISO image, mount the FAT32 filesystem located in the USB flash device, and copy the contents of the ISO image to it. Then unmount the ISO image, but keep the FAT32 partition mounted (this will be used in subsequent steps). Eg:
 
 ```
 # mkdir -p /mnt/{iso,usb}

@@ -85,13 +85,15 @@ If you have not already done so, enable the testing repository to retrieve the p
  # repo name header and Include lines. You can add preferred servers immediately
  # after the header, and they will be used before the default mirrors.
 
- [testing]
- Include = /etc/pacman.d/mirrorlist
-
  [core]
  Include = /etc/pacman.d/mirrorlist
 
+ [testing]
+ Include = /etc/pacman.d/mirrorlist
+
 ```
+
+The order matters. If you put the `[testing]` repository before `[core]` you are setting `pacman` to default to the *testing* repository for all packages. Otherwise only packages that you install with `# pacman -S testing/*package-name*` will be pulled from the *testing* repository. This way is preferred if you only need the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) from *testing* and want to keep on *core* for others. You might want to install `testing/linux` as well, but it is not mandatory if both the core and testing versions are on the same major version.
 
 ## Bluetooth
 
@@ -126,6 +128,14 @@ Then update the bootloader.
 Where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) then change that to `linux-mainline`.
 
 If you are using an older kernel 4.3 or earlier, you also require the kernel parameter `i915.preliminary_hw_support=1`, see [Intel graphics#Driver not working for Intel Skylake chips](/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips "Intel graphics"). (For later kernels 4.3+ or [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/) the parameter is unnecessary.)
+
+If you have the newer i7-6560 CPU with Iris 540 graphics, the GPU hangs every few minutes with the current kernel (4.4.1) and up. This is probably due to this bug [https://bugs.freedesktop.org/show_bug.cgi?id=94161](https://bugs.freedesktop.org/show_bug.cgi?id=94161) and can be countered by either disabling DRI in your Xorg configuration:
+
+ `/etc/X11/xorg.conf.d/20-intel.conf`  `Option "DRI" "False"` 
+
+or by adding `i915.enable_rc6=0` to the kernel boot parameters.
+
+See also [Intel_graphics#X_freeze.2Fcrash_with_intel_driver](/index.php/Intel_graphics#X_freeze.2Fcrash_with_intel_driver "Intel graphics")
 
 ## Touchpad
 

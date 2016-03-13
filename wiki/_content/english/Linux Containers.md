@@ -1,5 +1,7 @@
 Linux Containers (LXC) is an operating-system-level virtualization method for running multiple isolated Linux systems (containers) on a single control host (LXC host). It does not provide a virtual machine, but rather provides a virtual environment that has its own CPU, memory, block I/O, network, etc. space. This is provided by [cgroups](/index.php/Cgroups "Cgroups") features in Linux kernel on LXC host. It is similar to a chroot, but offers much more isolation.
 
+Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") and [docker](/index.php/Docker "Docker").
+
 ## Contents
 
 *   [1 Setup](#Setup)

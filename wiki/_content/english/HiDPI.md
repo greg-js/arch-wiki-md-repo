@@ -32,6 +32,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [5.10 Steam](#Steam)
     *   [5.11 Unsupported applications](#Unsupported_applications)
 *   [6 Multiple displays](#Multiple_displays)
+    *   [6.1 Side display](#Side_display)
+    *   [6.2 Mirroring](#Mirroring)
 *   [7 Linux console](#Linux_console)
 *   [8 See also](#See_also)
 
@@ -269,7 +271,11 @@ One approach is to run the application full screen and without decoration in its
 
 ## Multiple displays
 
-The HiDPI setting applies to the whole desktop, so non-HiDPI external displays show everything too large. One workaround is to using [xrandr](/index.php/Xrandr "Xrandr")'s scale option. To have a non-HiDPI monitor (on DP1) right of an internal HiDPI display (eDP1), one could run:
+The HiDPI setting applies to the whole desktop, so non-HiDPI external displays show everything too large.
+
+### Side display
+
+One workaround is to using [xrandr](/index.php/Xrandr "Xrandr")'s scale option. To have a non-HiDPI monitor (on DP1) right of an internal HiDPI display (eDP1), one could run:
 
 ```
 xrandr --output eDP1 --auto --output DP1 --auto --scale 2x2 --right-of eDP1
@@ -311,6 +317,33 @@ Generically if your hidpi monitor is AxB pixels and your regular monitor is CxD 
 
 ```
 xrandr --output eDP1 --auto --pos 0x(DxF) --output HDMI --auto --scale [E]x[F] --pos 0x0 --fb [greater between A and (C*E)]x[B+(D*F)]
+
+```
+
+You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
+
+### Mirroring
+
+If all you want is to mirror ("unify") displays, this is easy as well:
+
+With AxB your native HiDPI resolution (for ex 3200x1800) and CxD your external screen resolution (for ex 1920x1200)
+
+```
+xrandr --output HDMI --scale [A/C]x[B/D]
+
+```
+
+In this example which is QHD (3200/1920 = 1.66 and 1800/1200 = 1.5)
+
+```
+xrandr --output HDMI --scale 1.66x1.5
+
+```
+
+For UHD to 1080p (3840/1920=2 2160/1080=1.98)
+
+```
+xrandr --output HDMI --scale 2x1.98
 
 ```
 

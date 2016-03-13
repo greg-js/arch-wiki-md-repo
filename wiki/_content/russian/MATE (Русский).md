@@ -85,7 +85,7 @@ MATE может быть запущен при помощи менеджера �
 
 ### Графический вход
 
-Выберите *MATE* в [менеджере входа](/index.php/Display_Manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display Manager (Русский)"). Команда MATE рекомендует использовать [LightDM](/index.php/LightDM "LightDM"), который устанавливается пакетом [lightdm-gtk2-greeter](https://aur.archlinux.org/packages/lightdm-gtk2-greeter/).
+Выберите *MATE* в [менеджере входа](/index.php/Display_Manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display Manager (Русский)"). Команда MATE рекомендует использовать [LightDM (Русский)](/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LightDM (Русский)"), который устанавливается пакетом [lightdm-gtk2-greeter](https://aur.archlinux.org/packages/lightdm-gtk2-greeter/).
 
 ### Ручной запуск
 

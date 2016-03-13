@@ -139,7 +139,7 @@ $ speaker-test -c 8
 If audio is being outputted to the wrong device, try manually specifying it with the argument `-D`.
 
 ```
-$ speaker-test -D default -c 8
+$ speaker-test -D default:PCH -c 8
 
 ```
 
@@ -147,7 +147,7 @@ $ speaker-test -D default -c 8
 
  `$ aplay -L | grep :CARD` 
 ```
-default:CARD=PCH  # 'default' is the PCM channel name
+default:CARD=PCH  # 'default:PCH' is the PCM channel name for -D
 sysdefault:CARD=PCH
 front:CARD=PCH,DEV=0
 surround21:CARD=PCH,DEV=0
@@ -173,6 +173,16 @@ If that does not work, consult the [#Configuration](#Configuration) section or t
 *   If your volume adjustments seem to be lost after you reboot, try running alsamixer as root.
 
 ## Configuration
+
+The system configuration file is `/etc/asound.conf`, and the per-user configuration file is `$HOME/.asoundrc`. Usually neither of these files are needed. When they are needed, the most common reason is to specify the default card and device for PCM playback:
+
+```
+  defaults.pcm.card 1
+  defaults.pcm.device 0
+
+```
+
+In the example above, `1` and `0` should be replaced by the right numbers for your system, as shown via `aplay -l` or `aplay -L`.
 
 ### Basic syntax
 
@@ -325,7 +335,7 @@ pcm.default.slave.pcm.card 0;
 
 ### Set the default sound card
 
-If your sound card order changes on boot, you can specify their order in any file ending with `.conf` in `/etc/modprobe.d` (`/etc/modprobe.d/alsa-base.conf` is suggested). For example, if you want your mia sound card to be #0:
+In addition to the previous instruction regarding and `defaults.pcm.device`, if your sound card order changes on boot, you can specify their order in any file ending with `.conf` in `/etc/modprobe.d` (`/etc/modprobe.d/alsa-base.conf` is suggested). For example, if you want your mia sound card to be #0:
 
  `/etc/modprobe.d/alsa-base.conf` 
 ```
@@ -482,7 +492,7 @@ The 'pcm' options affect which card and device will be used for audio playback w
 The changes should take effect as soon as you (re-)start an application (MPlayer etc.). You can also test with a command like *aplay*.
 
 ```
-$ aplay -D default *your_favourite_sound.wav*
+$ aplay -D default:PCH *your_favourite_sound.wav*
 
 ```
 

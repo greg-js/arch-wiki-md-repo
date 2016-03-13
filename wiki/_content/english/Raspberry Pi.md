@@ -9,7 +9,8 @@ The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([A
 *   [1 Article preface](#Article_preface)
 *   [2 System architecture](#System_architecture)
 *   [3 SD card performance](#SD_card_performance)
-    *   [3.1 Enable fsck on boot](#Enable_fsck_on_boot)
+    *   [3.1 Adding root to fstab](#Adding_root_to_fstab)
+    *   [3.2 Enable fsck on boot](#Enable_fsck_on_boot)
 *   [4 Installing Arch Linux ARM](#Installing_Arch_Linux_ARM)
 *   [5 Network](#Network)
     *   [5.1 Configure WLAN without ethernet](#Configure_WLAN_without_ethernet)
@@ -53,6 +54,18 @@ The Raspberry Pi is an ARM-based device and therefore needs binaries compiled fo
 System responsiveness, particularly during operations involving disk I/O such as updating the system, can be adversely affected by poor quality/slow SD media. This is characterized by [frequent, often extended pauses](http://archlinuxarm.org/forum/viewtopic.php?f=64&t=9467) as pacman writes out files to the file system. The pauses are not due to saturation of the RPi or RPi2 bus, but are likely the bottle-neck due to a slow SD (or micro SD) card. See the [Benchmarking#Flash media](/index.php/Benchmarking#Flash_media "Benchmarking") for more.
 
 Performance and system responsiveness can be generally improved by making adjustments to the system configuration. See especially [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") and [SSD#Tips for minimizing disk reads/writes](/index.php/SSD#Tips_for_minimizing_disk_reads.2Fwrites "SSD").
+
+### Adding root to fstab
+
+By default, the *root* partition (`/dev/mmcblk0p2`) isn't set in `/etc/fstab`. This is an example of how to set the `/etc/fstab` file:
+
+ `/etc/fstab` 
+```
+# <file system> <dir>   <type>  <options>           <dump> <pass>
+/dev/mmcblk0p2  /       ext4    defaults,noatime    0      1
+/dev/mmcblk0p1  /boot   vfat    defaults,noatime    0      2
+
+```
 
 ### Enable fsck on boot
 

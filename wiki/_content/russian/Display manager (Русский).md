@@ -40,7 +40,7 @@
 
 	[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
 
-*   **[LightDM](/index.php/LightDM "LightDM")** — независимый от среды рабочего стола экранный менеджер, основанный на WebKit.
+*   **[LightDM (Русский)](/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LightDM (Русский)")** — независимый от среды рабочего стола экранный менеджер, основанный на WebKit.
 
 	[http://www.freedesktop.org/wiki/Software/LightDM](http://www.freedesktop.org/wiki/Software/LightDM) || [lightdm](https://www.archlinux.org/packages/?name=lightdm)
 

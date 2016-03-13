@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [GTK+](/index.php/GTK%2B "GTK+"). Дата последней синхронизации: 28.09.2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=402027).
+**Состояние перевода:** На этой странице представлен перевод статьи [GTK+](/index.php/GTK%2B "GTK+"). Дата последней синхронизации: 26 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=422340).
 
 C [сайта GTK+](http://www.gtk.org):
 
@@ -31,6 +31,7 @@ GTK+, GIMP Toolkit, изначально сделан [проектом GNU](/in
     *   [6.5 Подавить предупреждение о accessibility bus](#.D0.9F.D0.BE.D0.B4.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.BF.D1.80.D0.B5.D0.B4.D1.83.D0.BF.D1.80.D0.B5.D0.B6.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE_accessibility_bus)
     *   [6.6 Не соответствует цвет фона в строке заголовка (TitleBar)](#.D0.9D.D0.B5_.D1.81.D0.BE.D0.BE.D1.82.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.D1.86.D0.B2.D0.B5.D1.82_.D1.84.D0.BE.D0.BD.D0.B0_.D0.B2_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D0.B5_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B0_.28TitleBar.29)
     *   [6.7 Неправильный фокус событий в тайловых оконных менеджерах](#.D0.9D.D0.B5.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.84.D0.BE.D0.BA.D1.83.D1.81_.D1.81.D0.BE.D0.B1.D1.8B.D1.82.D0.B8.D0.B9_.D0.B2_.D1.82.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D1.85_.D0.BE.D0.BA.D0.BE.D0.BD.D0.BD.D1.8B.D1.85_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0.D1.85)
+    *   [6.8 Поддержка эскизов для диалога файлов GTK + 2](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D1.8D.D1.81.D0.BA.D0.B8.D0.B7.D0.BE.D0.B2_.D0.B4.D0.BB.D1.8F_.D0.B4.D0.B8.D0.B0.D0.BB.D0.BE.D0.B3.D0.B0_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_GTK_.2B_2)
 *   [7 Примеры](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B)
 *   [8 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
@@ -44,7 +45,7 @@ GTK+, GIMP Toolkit, изначально сделан [проектом GNU](/in
 
 ## Темы
 
-В GTK+ 2, тема по умолчанию *Raleigh*, но Arch Linux имеет пользовательский файл настроек `/usr/share/gtk-2.0/gtkrc`, который устанавливает тему по умолчанию *Adwaita*. В GTK+ 3, тема по умолчанию *Adwaita*.
+В GTK+ 2, тема по умолчанию *Raleigh*, но Arch Linux имеет пользовательский файл настроек `/usr/share/gtk-2.0/gtkrc`, который устанавливает тему по умолчанию *Adwaita*. В GTK+ 3, тема по умолчанию *Adwaita*, но также включены темы*HighContrast* и *Raleigh*.
 
 Чтобы установить определенную тему, вы можете задать переменные среды.
 
@@ -70,13 +71,17 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 **С поддержкой обеих GTK+ 2 и GTK+ 3:**
 
+*   **Breeze** — GTK+ версия тем виджетов KDE's по умолчанию.
+
+	[https://quickgit.kde.org/?p=breeze-gtk.git](https://quickgit.kde.org/?p=breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
+
+*   **Deepin** — Тема по умолчанию для рабочего стола Deepin.
+
+	[https://gitcafe.com/Deepin/deepin-gtk-theme](https://gitcafe.com/Deepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
+
 *   **GNOME Standard Themes** — Тема по умолчанию для Рабочего стола GNOME. Включает: *Adwaita*, *HighContrast*
 
 	[https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
-
-*   **Orion** — Современная, светлая тема GTK.
-
-	[http://deviantart.com/view/281431756](http://deviantart.com/view/281431756) || [gtk-theme-orion](https://aur.archlinux.org/packages/gtk-theme-orion/)
 
 *   **MATE Themes** — Тема по умолчанию для Рабочего стола MATE. Включает: *BlackMATE*, *BlueMenta*, *Blue-Submarine*, *ContrastHigh*, *ContrastHighInverse*, *GreenLaguna*, *Green-Submarine*, *Menta*, *TraditionalGreen*, *TraditionalOk*, *TraditionalOkTest*
 
@@ -90,29 +95,37 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 	[https://numixproject.org/](https://numixproject.org/) || [numix-themes](https://www.archlinux.org/packages/?name=numix-themes)
 
-*   **Vertex** — Тема для GTK 3, GTK 2, Gnome-Shell и Cinnamon.
+*   **Arc** — Плоская тема с современным дизайном и прозрачными элементами.
 
-	[http://horst3180.deviantart.com/art/Vertex-Theme-470663601](http://horst3180.deviantart.com/art/Vertex-Theme-470663601) || [vertex-themes](https://aur.archlinux.org/packages/vertex-themes/)
-
-*   **Clearlooks-Phénix** — GTK3 тема визуально близкая к Clearlooks.
-
-	[https://github.com/jpfleury/clearlooks-phenix](https://github.com/jpfleury/clearlooks-phenix) || [clearlooks-phenix-gtk-theme](https://aur.archlinux.org/packages/clearlooks-phenix-gtk-theme/)
-
-*   **Zukitwo** — Темы для GTK, gnome-shell и др.
-
-	[http://gnome-look.org/content/show.php/Zukitwo?content=140562](http://gnome-look.org/content/show.php/Zukitwo?content=140562) || [zukitwo-themes](https://aur.archlinux.org/packages/zukitwo-themes/)
+	[https://github.com/horst3180/Arc-theme](https://github.com/horst3180/Arc-theme) || [gtk-theme-arc-git](https://aur.archlinux.org/packages/gtk-theme-arc-git/)
 
 *   **Ceti-2** — Тема для GTK 3, GTK 2 и Gnome-Shell.
 
 	[http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140](http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140) || [ceti-2-themes](https://aur.archlinux.org/packages/ceti-2-themes/)
 
-*   **Greybird** — Серая и синяя тема Xfce, используемая по умолчанию в Xubuntu 12.04.
+*   **Clearlooks-Phénix** — GTK3 тема визуально близкая к Clearlooks.
 
-	[http://shimmerproject.org/our-projects/greybird/](http://shimmerproject.org/our-projects/greybird/) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
+	[https://github.com/jpfleury/clearlooks-phenix](https://github.com/jpfleury/clearlooks-phenix) || [clearlooks-phenix-gtk-theme](https://aur.archlinux.org/packages/clearlooks-phenix-gtk-theme/)
 
 *   **Gnome-breeze** — Тема GTK создана в соответствии с новой Plasma 5 Breeze.
 
 	[https://github.com/dirruk1/gnome-breeze](https://github.com/dirruk1/gnome-breeze) || [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)
+
+*   **Greybird** — Серая и синяя тема Xfce, используемая по умолчанию в Xubuntu 12.04.
+
+	[http://shimmerproject.org/our-projects/greybird/](http://shimmerproject.org/our-projects/greybird/) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
+
+*   **Orion** — Современная, светлая тема GTK.
+
+	[http://deviantart.com/view/281431756](http://deviantart.com/view/281431756) || [gtk-theme-orion](https://aur.archlinux.org/packages/gtk-theme-orion/)
+
+*   **Vertex** — Тема для GTK 3, GTK 2, Gnome-Shell и Cinnamon.
+
+	[http://horst3180.deviantart.com/art/Vertex-Theme-470663601](http://horst3180.deviantart.com/art/Vertex-Theme-470663601) || [vertex-themes](https://aur.archlinux.org/packages/vertex-themes/)
+
+*   **Zukitwo** — Темы для GTK, gnome-shell и др.
+
+	[http://gnome-look.org/content/show.php/Zukitwo?content=140562](http://gnome-look.org/content/show.php/Zukitwo?content=140562) || [zukitwo-themes](https://aur.archlinux.org/packages/zukitwo-themes/)
 
 **Поддерживается только GTK+ 2:**
 
@@ -142,7 +155,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 Есть ряд дополнительных тем GTK+ в [AUR](/index.php/AUR "AUR"): [поиск gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme), [поиск gtk2-theme](https://aur.archlinux.org/packages.php?K=gtk2-theme), [поиск gtk3-theme](https://aur.archlinux.org/packages.php?K=gtk3-theme).
 
-**Обратите внимание:**
+**Примечание:**
 
 *   Так как GTK+ 3 быстро меняется, GTK+ 3 темы требуют переработки после выпуска GTK+ 3\. По этой причине, не все темы GTK+ 3, могут выглядеть как предполагалось при использовании последней GTK + 3 версии.
 *   Некоторые темы могут потребовать [librsvg](https://www.archlinux.org/packages/?name=librsvg) для правильного отображения, но не все указывают его в качестве зависимости. Попробуйте установить его, если выбранная тема выглядит сломанной.
@@ -208,7 +221,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 *   GTK+ 3 конкрентного пользователя: `$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, или `$HOME/.config/gtk-3.0/settings.ini` если не установлена `$XDG_CONFIG_HOME`
 *   GTK+ 3 всей системы: `/etc/gtk-3.0/settings.ini`
 
-**Обратите внимание:**
+**Примечание:**
 
 *   Смотрите [GTK+ 3 свойства *GtkSettings*](http://library.gnome.org/devel/gtk3/stable/GtkSettings.html#GtkSettings.properties) (и [GTK+ 2 свойства](http://library.gnome.org/devel/gtk2/stable/GtkSettings.html#GtkSettings.properties)) в справочном руководстве программирования GTK+, для полного перечня поддерживаемых в настоящее время вариантов настройки GTK+.
 *   Некоторые настройки, описанных ниже (например `gtk-icon-sizes`) являются устаревшими и игнорируется с GTK+ 3.10.
@@ -237,7 +250,7 @@ gtk-theme-name = Adwaita
 gtk-font-name = DejaVu Sans 11
 ```
 
-**Обратите внимание:** Название темы значков определено в файле индекса темы, а *не* в имени своего каталога.
+**Примечание:** Название темы значков определено в файле индекса темы, а *не* в имени своего каталога.
 
 ### Вариант тёмной темы
 
@@ -322,7 +335,7 @@ $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
 
 ### Наследие поведения скроллбара
 
-**Обратите внимание:** Этот параметр не повиновался всеми приложениями GTK+.
+**Примечание:** Этот параметр не повиновался всеми приложениями GTK+.
 
 **Совет:** Наследство поведения прокрутки может быть надежно достигнуто, просто используя правую кнопку мыши вместо левой кнопки мыши.
 
@@ -472,21 +485,14 @@ GtkLabel.title {
 
 ### Подавить предупреждение о accessibility bus
 
-Если ваш терминал показывает такое предупреждение:
+Если вы не используете функции [Gnome Accessibility](https://wiki.gnome.org/Accessibility) (специальных возможностей),вы можете получать такие предупреждения :
 
 ```
 WARNING **: Couldn't connect to accessibility bus:
 
 ```
 
-при запуске GTK+ 3 программы, вы можете подавить предупреждение, выполнив:
-
-```
-NO_AT_BRIDGE=1 *программа*
-
-```
-
-или путем добавления `NO_AT_BRIDGE=1` в ваш `~/.bashrc` или `/etc/environment`.
+вы можете подавить предупреждение, запуская программу с `NO_AT_BRIDGE=1` или установить в качестве [глобальной переменной окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)")
 
 ### Не соответствует цвет фона в строке заголовка (TitleBar)
 
@@ -517,9 +523,13 @@ NautilusWindow {
 
 ### Неправильный фокус событий в тайловых оконных менеджерах
 
-**Обратите внимание:** Это отключит поддержку Сенсорного экрана для приложений GTK3\. [[7]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
+**Примечание:** Это отключит поддержку Сенсорного экрана для приложений GTK3\. [[7]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
 
-[Установите переменную](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D1.85 "Environment variables (Русский)") `GDK_CORE_DEVICE_EVENTS=1` для использования стиля ввода GTK2, вместо xinput2\. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
+[Определите](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D1.85 "Environment variables (Русский)") `GDK_CORE_DEVICE_EVENTS=1` для использования стиля ввода GTK2, вместо xinput2\. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
+
+### Поддержка эскизов для диалога файлов GTK + 2
+
+Установите [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) чтобы получить возможность просмотра файлов в виде миниатюр, вместо списка, в файловом браузере GTK +.
 
 ## Примеры
 

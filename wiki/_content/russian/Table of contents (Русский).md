@@ -1,4 +1,4 @@
-[Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(401)</small>
+[Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(402)</small>
 
 	<small>1.</small> [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)") <small>(17)</small>
 
@@ -170,11 +170,11 @@
 
 	<small>6.3.4.</small> [Оконные менеджеры](/index.php/Category:Window_managers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Window managers (Русский)") <small>(2)</small>
 
-	<small>6.3.4.1.</small> [Динамические оконные менеджеры](/index.php/Category:Dynamic_WMs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dynamic WMs (Русский)") <small>(3)</small>
+	<small>6.3.4.1.</small> [Динамические оконные менеджеры](/index.php/Category:Dynamic_WMs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dynamic WMs (Русский)") <small>(4)</small>
 
 	<small>6.3.4.2.</small> [Стэковые оконные менеджеры](/index.php/Category:Stacking_WMs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Stacking WMs (Русский)") <small>(4)</small>
 
-	<small>6.3.4.3.</small> [Тайловые оконные менеджеры](/index.php/Category:Tiling_WMs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Tiling WMs (Русский)") <small>(4)</small>
+	<small>6.3.4.3.</small> [Тайловые оконные менеджеры](/index.php/Category:Tiling_WMs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Tiling WMs (Русский)") <small>(5)</small>
 
 	<small>6.4.</small> [Dotfiles](/index.php/Category:Dotfiles_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dotfiles (Русский)") <small>(1)</small>
 
