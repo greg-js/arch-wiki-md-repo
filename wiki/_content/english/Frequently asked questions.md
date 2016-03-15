@@ -74,7 +74,7 @@ If you are a beginner and want to use Arch, you must be willing to invest time i
 
 Before asking for help, do your own independent research by Googling, searching the forum and the superb documentation provided by the Arch Wiki. *There is a reason these resources were made available to you in the first place.* Many thousands of *volunteered* hours have been spent compiling this excellent information.
 
-See also [Arch_Terminology#RTFM](/index.php/Arch_Terminology#RTFM "Arch Terminology") and the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+See also [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch terminology") and the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
 
 ### Is Arch designed to be used as a server? A desktop? A workstation?
 

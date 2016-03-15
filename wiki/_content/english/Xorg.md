@@ -339,15 +339,13 @@ DPMS (Display Power Management Signaling) is a technology that allows power savi
 
 The Composite extension for X causes an entire sub-tree of the window hierarchy to be rendered to an off-screen buffer. Applications can then take the contents of that buffer and do whatever they like. The off-screen buffer can be automatically merged into the parent window or merged by external programs, called compositing managers. See the following article for more information: [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager")
 
+Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment](/index.php/Enlightenment "Enlightenment"), KWin, Marco, Metacity, Muffin, Mutter, [Xfwm](/index.php/Xfwm "Xfwm")) do compositing on it's own. For other window managers, a standalone composite manager can be used.
+
 ### List of composite managers
 
 *   **[Cairo Composite Manager](/index.php/Cairo_Compmgr "Cairo Compmgr")** — Cairo based composite manager
 
 	[http://cairo-compmgr.tuxfamily.org/](http://cairo-compmgr.tuxfamily.org/) || [cairo-compmgr-git](https://aur.archlinux.org/packages/cairo-compmgr-git/)
-
-*   **[Compiz](/index.php/Compiz "Compiz")** — Composite manager for Aiglx and Xgl, with plugins and CCSM
-
-	[http://www.compiz.org/](http://www.compiz.org/) || [compiz](https://aur.archlinux.org/packages/compiz/)
 
 *   **[Compton](/index.php/Compton "Compton")** — Compositor (a fork of xcompmgr-dana)
 

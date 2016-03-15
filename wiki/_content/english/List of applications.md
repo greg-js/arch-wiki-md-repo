@@ -32,16 +32,17 @@ This article is a general list of applications sorted by category, as a referenc
         *   [1.4.1 FTP](#FTP)
             *   [1.4.1.1 FTP clients](#FTP_clients)
             *   [1.4.1.2 FTP servers](#FTP_servers)
-        *   [1.4.2 BitTorrent clients](#BitTorrent_clients)
-            *   [1.4.2.1 Console](#Console_2)
-                *   [1.4.2.1.1 Command line / backend](#Command_line_.2F_backend)
-                *   [1.4.2.1.2 Console Interface](#Console_Interface)
-            *   [1.4.2.2 Graphical Interface](#Graphical_Interface)
-                *   [1.4.2.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
-                *   [1.4.2.2.2 libktorrent backend](#libktorrent_backend)
-                *   [1.4.2.2.3 others](#others)
-        *   [1.4.3 Other P2P networks](#Other_P2P_networks)
-        *   [1.4.4 Video downloaders](#Video_downloaders)
+        *   [1.4.2 Distributed file systems](#Distributed_file_systems)
+        *   [1.4.3 BitTorrent clients](#BitTorrent_clients)
+            *   [1.4.3.1 Console](#Console_2)
+                *   [1.4.3.1.1 Command line / backend](#Command_line_.2F_backend)
+                *   [1.4.3.1.2 Console Interface](#Console_Interface)
+            *   [1.4.3.2 Graphical Interface](#Graphical_Interface)
+                *   [1.4.3.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
+                *   [1.4.3.2.2 libktorrent backend](#libktorrent_backend)
+                *   [1.4.3.2.3 others](#others)
+        *   [1.4.4 Other P2P networks](#Other_P2P_networks)
+        *   [1.4.5 Video downloaders](#Video_downloaders)
     *   [1.5 Communication](#Communication)
         *   [1.5.1 Email clients](#Email_clients)
             *   [1.5.1.1 Console](#Console_3)
@@ -260,7 +261,7 @@ This article is a general list of applications sorted by category, as a referenc
 
 ### Network managers
 
-*   **[Connman](/index.php/Connman "Connman")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, GTK and Dmenu clients are available.
+*   **[Connman](/index.php/Connman "Connman")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, ncurses, GTK and Dmenu clients are available.
 
 	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
@@ -286,7 +287,7 @@ This article is a general list of applications sorted by category, as a referenc
 
 	[http://www.infradead.org/openconnect/](http://www.infradead.org/openconnect/) || [openconnect](https://www.archlinux.org/packages/?name=openconnect)
 
-*   **[PPTPClient](/index.php?title=PPTPClient&action=edit&redlink=1 "PPTPClient (page does not exist)")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE).
+*   **[PPTP Client](/index.php/PPTP_Client "PPTP Client")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE).
 
 	[http://pptpclient.sourceforge.net/](http://pptpclient.sourceforge.net/) || [pptpclient](https://www.archlinux.org/packages/?name=pptpclient)
 
@@ -360,7 +361,11 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 *   **[Chromium](/index.php/Chromium "Chromium")** — Web browser developed by Google, the open source project behind Google Chrome.
 
-	[http://www.chromium.org/](http://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
+	[https://www.chromium.org/](https://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
+
+*   **[Google Chrome](/index.php/Google_Chrome "Google Chrome")** — Web browser developed by Google.
+
+	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
 
 *   **Liri** — A minimalistic material design web browser written for Papyros.
 
@@ -368,7 +373,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 *   **[Opera](/index.php/Opera "Opera")** — Highly customizable browser with focuses on an adherence to web rendering standards.
 
-	[http://opera.com](http://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
+	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
 
 *   **Quill** — A simple web browser that hopefully won't leave you asking "Why is the RAM gone?".
 
@@ -380,7 +385,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 *   **Yandex.Browser** — Combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
 
-	[http://browser.yandex.ru/beta/](http://browser.yandex.ru/beta/) || [yandex-browser](https://aur.archlinux.org/packages/yandex-browser/)
+	[https://browser.yandex.ru/beta/](https://browser.yandex.ru/beta/) || [yandex-browser](https://aur.archlinux.org/packages/yandex-browser/)
 
 ##### Webkit-based
 
@@ -552,6 +557,24 @@ Some file managers like Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Fil
 
 	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
 
+#### Distributed file systems
+
+*   **[Ceph](/index.php/Ceph "Ceph")** — Distributed object store and file system designed to provide excellent performance, reliability and scalability.
+
+	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
+
+*   **GlusterFS** — Cluster file system capable of scaling to several peta-bytes.
+
+	[http://www.gluster.org/](http://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
+
+*   **Sheepdog** — Distributed object storage system for volume and container services and manages the disks and nodes intelligently.
+
+	[https://sheepdog.github.io/sheepdog/](https://sheepdog.github.io/sheepdog/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[Tahoe-LAFS](https://en.wikipedia.org/wiki/Tahoe-LAFS "wikipedia:Tahoe-LAFS")** — Tahoe Least-Authority Filesystem is a free and open, secure, decentralized, fault-tolerant, peer-to-peer distributed data store and distributed file system.
+
+	[https://tahoe-lafs.org/](https://tahoe-lafs.org/) || [tahoe-lafs](https://aur.archlinux.org/packages/tahoe-lafs/)
+
 #### BitTorrent clients
 
 See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients").
@@ -602,7 +625,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 *   **[qBittorrent](https://en.wikipedia.org/wiki/qBittorrent "wikipedia:qBittorrent")** — Open source (GPLv2) BitTorrent client that strongly resembles µtorrent.
 
-	[http://www.qbittorrent.org/](http://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent)
+	[http://www.qbittorrent.org/](http://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) [qbittorrent-nogui](https://aur.archlinux.org/packages/qbittorrent-nogui/)
 
 *   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 4th generation file sharing system bittorrent client.
 
@@ -1558,10 +1581,6 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[https://wiki.gnome.org/Apps/Shotwell](https://wiki.gnome.org/Apps/Shotwell) || [shotwell](https://www.archlinux.org/packages/?name=shotwell)
 
-*   **Simple Viewer GL** — Simple image viewer using OpenGL, it has few dependencies.
-
-	[https://aur.archlinux.org/packages/simpleviewergl-git/](https://aur.archlinux.org/packages/simpleviewergl-git/) || [simpleviewergl-git](https://aur.archlinux.org/packages/simpleviewergl-git/)
-
 *   **[sxiv](/index.php/Sxiv "Sxiv")** — Simple image viewer based on imlib2 that works well with tiling window managers.
 
 	[https://github.com/muennich/sxiv](https://github.com/muennich/sxiv) || [sxiv](https://www.archlinux.org/packages/?name=sxiv)
@@ -2064,6 +2083,10 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 
 	[http://audacity.sourceforge.net/](http://audacity.sourceforge.net/) || [audacity](https://www.archlinux.org/packages/?name=audacity)
 
+*   **Bitwig Studio** — Proprietary professional digital audio workstation.
+
+	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio-demo](https://aur.archlinux.org/packages/bitwig-studio-demo/)
+
 *   **GNOME Sound Recorder** — The Sound Recorder application enables you to record and play .flac, .ogg (OGG audio, or .oga), and .wav sound files.
 
 	[https://wiki.gnome.org/Design/Apps/SoundRecorder](https://wiki.gnome.org/Design/Apps/SoundRecorder) || [gnome-sound-recorder](https://www.archlinux.org/packages/?name=gnome-sound-recorder)
@@ -2284,7 +2307,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 *   **OBS** — Free and open source software for video recording and live streaming.
 
-	[https://obsproject.com/](https://obsproject.com/) || [obs-studio](https://aur.archlinux.org/packages/obs-studio/)
+	[https://obsproject.com/](https://obsproject.com/) || [obs-studio](https://www.archlinux.org/packages/?name=obs-studio)
 
 *   **[RecordMyDesktop](https://en.wikipedia.org/wiki/RecordMyDesktop "wikipedia:RecordMyDesktop")** — An easy to use utility that records your desktop into the ogg format with a CLI, Qt or GTK+ interface.
 
@@ -2494,7 +2517,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[http://www.microchip.com/mplabx](http://www.microchip.com/mplabx) || [microchip-mplabx-bin](https://aur.archlinux.org/packages/microchip-mplabx-bin/)
 
-*   **[NetBeans](/index.php/Netbeans "Netbeans")** — Integrated development environment (IDE) for developing with Java, JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure, and other languages.
+*   **[Netbeans](/index.php/Netbeans "Netbeans")** — Integrated development environment (IDE) for developing with Java, JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure, and other languages.
 
 	[http://netbeans.org/](http://netbeans.org/) || [netbeans](https://www.archlinux.org/packages/?name=netbeans)
 
@@ -2583,6 +2606,10 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 *   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Popular replacement for the xterm.
 
 	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://www.archlinux.org/packages/?name=rxvt)
+
+*   **shellinabox** — A web-based SSH Terminal
+
+	[https://github.com/shellinabox/shellinabox](https://github.com/shellinabox/shellinabox) || [shellinabox-git](https://aur.archlinux.org/packages/shellinabox-git/)
 
 *   **[st](/index.php/St "St")** — Simple terminal implementation for X.
 
@@ -2990,6 +3017,10 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.org/wiki/Comparison_of_file_comparison_tools "wikipedia:Comparison of file comparison tools").
 
+*   **Beyond Compare** — A graphical tool for comparing files and folders, and generating reports.
+
+	[http://www.scootersoftware.com/](http://www.scootersoftware.com/) || [beyond-compare](https://aur.archlinux.org/packages/beyond-compare/)
+
 *   **colordiff** — A Perl script wrapper for 'diff' that produces the same output but with pretty 'syntax' highlighting.
 
 	[http://www.colordiff.org/](http://www.colordiff.org/) || [colordiff](https://www.archlinux.org/packages/?name=colordiff)
@@ -3008,7 +3039,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **[Meld](https://en.wikipedia.org/wiki/Meld_(software) "wikipedia:Meld (software)")** — Visual diff and merge tool that can compare files, directories, and version controlled projects.
 
-	[http://meld.sourceforge.net](http://meld.sourceforge.net) || [meld](https://www.archlinux.org/packages/?name=meld)
+	[http://meldmerge.org/](http://meldmerge.org/) || [meld](https://www.archlinux.org/packages/?name=meld)
 
 *   **xxdiff** — A graphical browser for file and directory differences.
 
@@ -3184,6 +3215,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://github.com/KittyKatt/screenFetch](https://github.com/KittyKatt/screenFetch) || [screenfetch](https://www.archlinux.org/packages/?name=screenfetch)
 
+*   **neofetch** — A fast, highly customizable system info script that supports displaying images with w3m.
+
+	[https://github.com/dylanaraps/neofetch](https://github.com/dylanaraps/neofetch) || [neofetch-git](https://aur.archlinux.org/packages/neofetch-git/)
+
 #### Graphical
 
 *   **CPU-G** — An application that shows useful information about your hardware, it looks like CPU-Z in Windows.
@@ -3310,7 +3345,7 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 ### File synchronization
 
-See [Backup programs#Data synchronization](/index.php/Backup_programs#Data_synchronization "Backup programs").
+See [Synchronization and backup programs#Data synchronization](/index.php/Synchronization_and_backup_programs#Data_synchronization "Synchronization and backup programs").
 
 ### Finders
 
@@ -3447,6 +3482,10 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 *   **Pyspread** — Pyspread is a non-traditional spreadsheet application that is based on and written in the programming language Python.
 
 	[http://manns.github.io/pyspread/index.html](http://manns.github.io/pyspread/index.html) || [pyspread](https://aur.archlinux.org/packages/pyspread/)
+
+*   **[sc](/index.php?title=Sc&action=edit&redlink=1 "Sc (page does not exist)")** — curses-based lightweight spreadsheet.
+
+	[http://ibiblio.org/pub/linux/apps/financial/spreadsheet/!INDEX.html](http://ibiblio.org/pub/linux/apps/financial/spreadsheet/!INDEX.html) || [sc](https://www.archlinux.org/packages/?name=sc)
 
 *   **Siag** — Spreadsheet application based on the X Window System and the Scheme programming language included in Siag Office.
 
@@ -3984,7 +4023,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **Tesseract** — Accurate open source OCR engine. Package splitted, you need install some datafiles for each language ([tesseract-data-eng](https://www.archlinux.org/packages/?name=tesseract-data-eng) for example).
 
-	[http://code.google.com/p/tesseract-ocr/](http://code.google.com/p/tesseract-ocr/) || [tesseract](https://www.archlinux.org/packages/?name=tesseract)
+	[https://github.com/tesseract-ocr](https://github.com/tesseract-ocr) || [tesseract](https://www.archlinux.org/packages/?name=tesseract)
 
 #### Layout analyzers and user interfaces
 
@@ -4013,6 +4052,10 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/wiki/Comparison_of_notetaking_software "wikipedia:Comparison of notetaking software").
 
 #### Console
+
+*   **deft** — Manage notes within emacs
+
+	[http://jblevins.org/projects/deft/](http://jblevins.org/projects/deft/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **hnb (hierarchical notebook)** — Program to organize many kinds of data (addresses, to-do lists, ideas, book reviews, etc.) in one place using the XML format.
 
@@ -4302,7 +4345,7 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 #### Backup programs
 
-See the main article: [Backup programs](/index.php/Backup_programs "Backup programs").
+See the main article: [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs").
 
 See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software").
 
@@ -4818,6 +4861,10 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 #### Periodic table
 
+*   **eperiodique** — A simple Periodic Table Of Elements viewer using the EFL.
+
+	[http://eperiodique.sourceforge.net/](http://eperiodique.sourceforge.net/) || [eperiodique](https://aur.archlinux.org/packages/eperiodique/)
+
 *   **gElemental** — Periodic table of the elements with additional information.
 
 	[http://freshmeat.net/projects/gelemental](http://freshmeat.net/projects/gelemental) || [gelemental](https://aur.archlinux.org/packages/gelemental/)
@@ -4825,10 +4872,6 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 *   **[Kalzium](https://en.wikipedia.org/wiki/Kalzium "wikipedia:Kalzium")** — Periodic table of the elements with molecule editor and equation solver from the [KDE](/index.php/KDE "KDE") desktop.
 
 	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kdeedu-kalzium](https://www.archlinux.org/packages/?name=kdeedu-kalzium)
-
-*   **eperiodique** — A simple Periodic Table Of Elements viewer using the EFL.
-
-	[http://eperiodique.sourceforge.net/](http://eperiodique.sourceforge.net/) || [eperiodique](https://aur.archlinux.org/packages/eperiodique/)
 
 #### Biochemistry
 
@@ -5302,7 +5345,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[https://github.com/emgram769/lighthouse](https://github.com/emgram769/lighthouse) || [lighthouse-git](https://aur.archlinux.org/packages/lighthouse-git/)
 
-*   **rofi** — A popup window switcher roughly based on superswitcher, requiring only xlib and pango.
+*   **[rofi](/index.php/Rofi "Rofi")** — A popup window switcher roughly based on superswitcher, requiring only xlib and pango.
 
 	[http://davedavenport.github.io/rofi/](http://davedavenport.github.io/rofi/) || [rofi](https://www.archlinux.org/packages/?name=rofi)
 

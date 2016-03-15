@@ -305,6 +305,8 @@ lithium:/var/cache/pacman   /var/cache/pacman	nfs noauto,noatime,rsize=32768,wsi
 
 ```
 
+**Note:** You must use hostnames in `/etc/fstab` for this to work, not IP addresses.
+
 The `noauto` mount option tells systemd not to automatically mount the shares at boot. systemd would otherwise attempt to mount the nfs shares that may or may not exist on the network causing the boot process to appear to stall on a blank screen.
 
 In order to mount NFS shares with non-root users the `user` option has to be added.

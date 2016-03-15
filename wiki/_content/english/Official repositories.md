@@ -1,6 +1,6 @@
 A [software repository](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository") is a storage location from which software packages are retrieved for installation.
 
-Arch Linux **official repositories** contain essential and popular software, readily accessible via [pacman](/index.php/Pacman "Pacman"). They are maintained by [package maintainers](/index.php/Arch_Terminology#Package_maintainer "Arch Terminology").
+Arch Linux **official repositories** contain essential and popular software, readily accessible via [pacman](/index.php/Pacman "Pacman"). They are maintained by [package maintainers](/index.php/Arch_terminology#Package_maintainer "Arch terminology").
 
 Packages in the official repositories are constantly upgraded: when a package is upgraded, its old version is removed from the repository. There are no major Arch releases: each package is upgraded as new versions become available from upstream sources. Each repository is always coherent, i.e. the packages that it hosts always have reciprocally compatible versions.
 

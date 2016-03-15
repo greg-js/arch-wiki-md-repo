@@ -61,6 +61,7 @@ You will likely want to add some typically used [schemas](http://www.openldap.or
 ```
 
 ```
+include         /etc/openldap/schema/core.schema
 include         /etc/openldap/schema/cosine.schema
 include         /etc/openldap/schema/inetorgperson.schema
 include         /etc/openldap/schema/nis.schema

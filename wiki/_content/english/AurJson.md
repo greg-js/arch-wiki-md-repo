@@ -61,7 +61,7 @@ https://aur.archlinux.org/rpc/?v=5&type=search&arg=foobar
 Search for *foobar*.
 
 ```
-https://aur.archlinux.org/rpc/?v=5&type=search&search_by=maintainer&arg=john
+https://aur.archlinux.org/rpc/?v=5&type=search&by=maintainer&arg=john
 
 ```
 

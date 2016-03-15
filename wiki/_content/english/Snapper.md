@@ -338,7 +338,7 @@ If you want to delete a specific file or folder from past snapshots without dele
 
 Keeping many of snapshots for a large timeframe on a busy filesystem (like `/`, where many system updates happen over time) can cause serious slowdowns. You can prevent it by:
 
-*   [Creating](/index.php/Btrfs#Creating_a_subvolume "Btrfs") subvolumes for things that are not worth being snapshotted, like `/var/cache/pacman/pkg`, `/var/abs`, `/var/tmp`, and `/srv`.
+*   [Creating](/index.php/Btrfs#Creating_a_subvolume "Btrfs") subvolumes for things that are not worth being snapshotted, like `/var/cache/pacman/pkg`, `/var/abs`, `/var/tmp`, `/tmp`, and `/srv`.
 *   Editing the default settings for hourly/daily/monthly/yearly snapshots when using [#Automatic timeline snapshots](#Automatic_timeline_snapshots).
 
 #### updatedb

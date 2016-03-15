@@ -71,6 +71,13 @@ Append two `initrd=` options:
 
  `initrd=/intel-ucode.img initrd=/initramfs-linux.img` 
 
+For kernels that have been generated as a single file containing all initrd, cmdline and kernel, first generate the initrd to integrate by creating a new one as follows:
+
+```
+cat /boot/intel-ucode.img /boot/initramfs-linux.img > my_new_initrd
+objcopy ... --add-section .initrd=my_new_initrd
+```
+
 ### rEFInd
 
 Edit boot options in `/boot/refind_linux.conf` as per EFI boot stub above, example:

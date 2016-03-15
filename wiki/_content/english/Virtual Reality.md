@@ -147,7 +147,7 @@ Additionally, many users have reported much better performance with JRE8, rather
 
 ### JanusVR
 
-"janusVR: an immersive, collaborative, multi-dimensional internet." JanusVR is an application that lets you explore 3D websites in a multiplayer experience. An AUR package is available: [janus-vr-browser-bin](https://aur.archlinux.org/packages/janus-vr-browser-bin/)
+"janusVR: an immersive, collaborative, multi-dimensional internet." JanusVR is an application that lets you explore 3D websites in a multiplayer experience. An AUR package is available: [janusvr](https://aur.archlinux.org/packages/janusvr/)
 
 The AUR package does not automatically update when JanusVR does, but the application will tell you when a new version is available. Simply re-build the package when this happens.
 

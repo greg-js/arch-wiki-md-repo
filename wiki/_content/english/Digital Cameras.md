@@ -4,19 +4,12 @@ This article documents the configuration of `libgphoto2` to access digital camer
 
 ## Contents
 
-*   [1 GNOME](#GNOME)
-*   [2 libgphoto2](#libgphoto2)
-    *   [2.1 Installation](#Installation)
-    *   [2.2 Permission issues](#Permission_issues)
-    *   [2.3 GPhoto2 usage](#GPhoto2_usage)
-        *   [2.3.1 Other frontend applications for libgphoto2](#Other_frontend_applications_for_libgphoto2)
-*   [3 See also](#See_also)
-
-## GNOME
-
-[GNOME Files](/index.php/GNOME_Files "GNOME Files") supports accessing digital cameras and smartphones using MTP, and has two backends: the new [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) using libmtp, and the old [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) using libgphoto2.
-
-Once you have `gvfs-mtp` installed, the device should just show up in Files' sidebar.
+*   [1 libgphoto2](#libgphoto2)
+    *   [1.1 Installation](#Installation)
+    *   [1.2 Permission issues](#Permission_issues)
+    *   [1.3 GPhoto2 usage](#GPhoto2_usage)
+        *   [1.3.1 Other frontend applications for libgphoto2](#Other_frontend_applications_for_libgphoto2)
+*   [2 See also](#See_also)
 
 ## libgphoto2
 
@@ -77,6 +70,7 @@ For advanced file manipulation, use
 *   [GTKam](http://www.gphoto.org/proj/gtkam/) - [gtkam](https://aur.archlinux.org/packages/gtkam/) - graphical [GTK](/index.php/GTK "GTK") front-end to gphoto2
 *   [Pantheon Photos](https://launchpad.net/pantheon-photos) - [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) - "continuation" of Shotwell for [Pantheon](/index.php/Pantheon "Pantheon")
 *   [Shotwell](http://wiki.gnome.org/Apps/Shotwell) - [shotwell](https://www.archlinux.org/packages/?name=shotwell) - digital photo organizer designed for [GNOME](/index.php/GNOME "GNOME")
+*   [GNOME Files](/index.php/GNOME_Files "GNOME Files") - Supports accessing digital cameras and smartphones using MTP, and has two backends: the new [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) using libmtp, and the old [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) using libgphoto2.
 
 ## See also
 

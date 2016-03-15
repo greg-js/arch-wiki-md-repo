@@ -315,7 +315,7 @@ Mount your filesystems:
 # mount /dev/mapper/MyVol-root /mnt
 # mkdir /mnt/home
 # mount /dev/mapper/MyVol-home /mnt/home
-# swapon /dev/mapper/MyVol-swapv
+# swapon /dev/mapper/MyVol-swap
 
 ```
 
