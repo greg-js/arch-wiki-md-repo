@@ -76,12 +76,7 @@ All configurations in this section are stored as `foo.network` in `/etc/systemd/
 
 Systemd/udev automatically assigns predictable, stable network interface names for all local Ethernet, WLAN, and WWAN interfaces. Use `networkctl list` to list the devices on the system.
 
-After making changes to a configuration file, reload the networkd daemon.
-
-```
-# systemctl restart systemd-networkd 
-
-```
+After making changes to a configuration file, [restart](/index.php/Restart "Restart") `systemd-networkd.service`.
 
 **Note:** In the examples below, **enp1s0** is the wired adapter and **wlp2s0** is the wireless adapter. These names can be different on different systems.
 
@@ -422,6 +417,8 @@ Name=br0
 Kind=bridge
 
 ```
+
+[Restart](/index.php/Restart "Restart") `systemd-networkd.service` to have systemd create the bridge.
 
 On host and container:
 

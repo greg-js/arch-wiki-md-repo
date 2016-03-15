@@ -21,24 +21,23 @@ A good number of new packages that enter the official repositories start in the 
     *   [6.2 Maintaining packages](#Maintaining_packages)
     *   [6.3 Other requests](#Other_requests)
 *   [7 Git repositories for AUR3 packages](#Git_repositories_for_AUR3_packages)
-*   [8 AUR metadata](#AUR_metadata)
-*   [9 Web interface translation](#Web_interface_translation)
-*   [10 FAQ](#FAQ)
-    *   [10.1 What is the AUR?](#What_is_the_AUR.3F)
-    *   [10.2 What kind of packages are permitted on the AUR?](#What_kind_of_packages_are_permitted_on_the_AUR.3F)
-    *   [10.3 How can I vote for packages in the AUR?](#How_can_I_vote_for_packages_in_the_AUR.3F)
-    *   [10.4 What is a Trusted User / TU?](#What_is_a_Trusted_User_.2F_TU.3F)
-    *   [10.5 What is the difference between the Arch User Repository and the community repository?](#What_is_the_difference_between_the_Arch_User_Repository_and_the_community_repository.3F)
-    *   [10.6 Foo in the AUR is outdated; what do I do?](#Foo_in_the_AUR_is_outdated.3B_what_do_I_do.3F)
-    *   [10.7 Foo in the AUR does not compile when I run makepkg; what should I do?](#Foo_in_the_AUR_does_not_compile_when_I_run_makepkg.3B_what_should_I_do.3F)
-    *   [10.8 How do I make a PKGBUILD?](#How_do_I_make_a_PKGBUILD.3F)
-    *   [10.9 I have a PKGBUILD I would like to submit; can someone check it to see if there are any errors?](#I_have_a_PKGBUILD_I_would_like_to_submit.3B_can_someone_check_it_to_see_if_there_are_any_errors.3F)
-    *   [10.10 How to get a PKGBUILD into the community repository?](#How_to_get_a_PKGBUILD_into_the_community_repository.3F)
-    *   [10.11 How can I speed up repeated build processes?](#How_can_I_speed_up_repeated_build_processes.3F)
-    *   [10.12 What is the difference between foo and foo-git packages?](#What_is_the_difference_between_foo_and_foo-git_packages.3F)
-    *   [10.13 Why has foo disappeared from the AUR?](#Why_has_foo_disappeared_from_the_AUR.3F)
-    *   [10.14 How do I find out if any of my installed packages disappeared from AUR?](#How_do_I_find_out_if_any_of_my_installed_packages_disappeared_from_AUR.3F)
-*   [11 See also](#See_also)
+*   [8 Web interface translation](#Web_interface_translation)
+*   [9 FAQ](#FAQ)
+    *   [9.1 What is the AUR?](#What_is_the_AUR.3F)
+    *   [9.2 What kind of packages are permitted on the AUR?](#What_kind_of_packages_are_permitted_on_the_AUR.3F)
+    *   [9.3 How can I vote for packages in the AUR?](#How_can_I_vote_for_packages_in_the_AUR.3F)
+    *   [9.4 What is a Trusted User / TU?](#What_is_a_Trusted_User_.2F_TU.3F)
+    *   [9.5 What is the difference between the Arch User Repository and the community repository?](#What_is_the_difference_between_the_Arch_User_Repository_and_the_community_repository.3F)
+    *   [9.6 Foo in the AUR is outdated; what do I do?](#Foo_in_the_AUR_is_outdated.3B_what_do_I_do.3F)
+    *   [9.7 Foo in the AUR does not compile when I run makepkg; what should I do?](#Foo_in_the_AUR_does_not_compile_when_I_run_makepkg.3B_what_should_I_do.3F)
+    *   [9.8 How do I make a PKGBUILD?](#How_do_I_make_a_PKGBUILD.3F)
+    *   [9.9 I have a PKGBUILD I would like to submit; can someone check it to see if there are any errors?](#I_have_a_PKGBUILD_I_would_like_to_submit.3B_can_someone_check_it_to_see_if_there_are_any_errors.3F)
+    *   [9.10 How to get a PKGBUILD into the community repository?](#How_to_get_a_PKGBUILD_into_the_community_repository.3F)
+    *   [9.11 How can I speed up repeated build processes?](#How_can_I_speed_up_repeated_build_processes.3F)
+    *   [9.12 What is the difference between foo and foo-git packages?](#What_is_the_difference_between_foo_and_foo-git_packages.3F)
+    *   [9.13 Why has foo disappeared from the AUR?](#Why_has_foo_disappeared_from_the_AUR.3F)
+    *   [9.14 How do I find out if any of my installed packages disappeared from AUR?](#How_do_I_find_out_if_any_of_my_installed_packages_disappeared_from_AUR.3F)
+*   [10 See also](#See_also)
 
 ## Getting started
 
@@ -203,7 +202,7 @@ The new package will appear on AUR after you *push* the first commit. You can no
 
 #### Uploading packages
 
-The procedure for uploading packages to the AUR is the same for new packages and package updates. You need at least [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") (which contains [#AUR metadata](#AUR_metadata)) in the top-level directory to *push* your package to AUR.
+The procedure for uploading packages to the AUR is the same for new packages and package updates. You need at least [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") in the top-level directory to *push* your package to AUR.
 
 To upload, add the `PKGBUILD`, `.SRCINFO`, and any helper files (like `.install` files or local source files like `.patch`) to the *staging area* with `git add`, commit them to your local tree with a commit message with `git commit`, and finally publish the changes to the AUR with `git push`.
 
@@ -254,12 +253,6 @@ You can also visit `http://pkgbuild.com/git/aur-mirror.git/tree/<packagename>` d
 For more information, see the following: [Git Web interface](http://pkgbuild.com/git/aur-mirror.git/), [forum thread](https://bbs.archlinux.org/viewtopic.php?id=113099).
 
 There is also the [AUR Archive](https://github.com/aur-archive) on GitHub with a repository for every package that was in AUR 3 during the migration to AUR 4.
-
-## AUR metadata
-
-In order to display information in the [AUR](/index.php/AUR "AUR") web interface, the AUR's back-end code attempts to parse [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files and salvage package name, version, and other information from it. `PKGBUILD`s are [Bash](/index.php/Bash "Bash") scripts, and correctly parsing Bash scripts without executing them is a huge challenge, which is why [makepkg](/index.php/Makepkg "Makepkg") is a Bash script itself: it includes the PKGBUILD of the package being built via the `source` directive.
-
-[.SRCINFO](/index.php/.SRCINFO ".SRCINFO") was created to get rid of some hacks used by AUR package maintainers to work around incorrect parsing in the web interface.
 
 ## Web interface translation
 

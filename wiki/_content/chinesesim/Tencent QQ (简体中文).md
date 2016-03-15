@@ -76,11 +76,9 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 ### weechat-webqq
 
-**注意:** 目前仅支持单帐号登录
+**注意:** 也可选择其它支持IRC协议的聊天客户端
 
-在 [WeeChat](/index.php/WeeChat "WeeChat") 可使用的 qq 脚本，使用 perl语言开发的 [Webqq-Client](https://github.com/sjdy521/Webqq-Client)库，基于 smartqq 协议 。
-
-脚本地址 在 [weechat-webqq](https://github.com/wxg4net/weechat-webqq)
+在 [WeeChat](/index.php/WeeChat "WeeChat") 可使用的 QQ 插件脚本，使用 perl语言开发的 [Mojo-Webqq](https://github.com/sjdy521/Mojo-Webqq)库，基于 smartqq 协议 。 源码脚本可访问 [weechat-webqq](https://github.com/wxg4net/weechat-webqq) 获取
 
 ## 独立开发
 

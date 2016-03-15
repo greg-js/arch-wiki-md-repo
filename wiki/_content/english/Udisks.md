@@ -68,9 +68,9 @@ pathtoname() {
 while read -r _ _ event devpath _; do
         if [[ $event == add ]]; then
             devname=$(pathtoname "$devpath")
-            udisksctl mount --block-device "$devname" --no-user-interaction ;;
+            udisksctl mount --block-device "$devname" --no-user-interaction
         fi
-done < <(stdbuf -o L udevadm monitor --udev -s "block/disk")
+done < <(stdbuf -o L udevadm monitor --udev -s block)
 
 ```
 

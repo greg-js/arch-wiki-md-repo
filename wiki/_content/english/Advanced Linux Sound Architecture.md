@@ -174,19 +174,11 @@ If that does not work, consult the [#Configuration](#Configuration) section or t
 
 ## Configuration
 
-The system configuration file is `/etc/asound.conf`, and the per-user configuration file is `$HOME/.asoundrc`. Usually neither of these files are needed. When they are needed, the most common reason is to specify the default card and device for PCM playback:
-
-```
-  defaults.pcm.card 1
-  defaults.pcm.device 0
-
-```
-
-In the example above, `1` and `0` should be replaced by the right numbers for your system, as shown via `aplay -l` or `aplay -L`.
+The system configuration file is `/etc/asound.conf`, and the per-user configuration file is `~/.asoundrc`.
 
 ### Basic syntax
 
-ALSA configuration files follow a simple syntax consisting of hierarchical value to parameter (key) assignments. Below are (modified) excerpts from asoundrc.txt, which is usually found in `alsa-lib` package but can be also reached [here](http://www.alsa-project.org/alsa-doc/alsa-lib/conf.html).
+ALSA configuration files follow a simple syntax consisting of hierarchical value to parameter (key) assignments. Below are (modified) excerpts from asoundrc.txt, which is usually found in [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) package but can be also reached [here](http://www.alsa-project.org/alsa-doc/alsa-lib/conf.html).
 
 #### Assignments and Separators
 
@@ -335,7 +327,7 @@ pcm.default.slave.pcm.card 0;
 
 ### Set the default sound card
 
-In addition to the previous instruction regarding and `defaults.pcm.device`, if your sound card order changes on boot, you can specify their order in any file ending with `.conf` in `/etc/modprobe.d` (`/etc/modprobe.d/alsa-base.conf` is suggested). For example, if you want your mia sound card to be #0:
+In addition to the previous instruction regarding `defaults.pcm.card` and `defaults.pcm.device`, if your sound card order changes on boot, you can specify their order in any file ending with `.conf` in `/etc/modprobe.d` (`/etc/modprobe.d/alsa-base.conf` is suggested). For example, if you want your mia sound card to be #0:
 
  `/etc/modprobe.d/alsa-base.conf` 
 ```

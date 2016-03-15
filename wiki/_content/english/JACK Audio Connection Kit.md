@@ -25,7 +25,7 @@
 
 ## Installation
 
-In order for JACK to work properly, your user needs to be [added](/index.php/Users_and_groups#Group_management "Users and groups") to the `audio` group for access to higher ulimits defined in `/etc/security/limits.conf`, which is needed for realtime audio processing.
+In order for JACK to work properly, your user needs to be [added](/index.php/Users_and_groups#Group_management "Users and groups") to the `audio` group for access to higher ulimits defined in `/etc/security/limits.d/99-audio.conf`, which is needed for realtime audio processing.
 
 **Note:** You need to manually add your user to the `audio` group even if you're using logind, since logind just handles access to direct hardware.
 

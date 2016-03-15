@@ -213,7 +213,7 @@ As `*dest*` file is changed, only those blocks that are changed from source will
 
 Btrfs supports transparent compression, meaning every file on the partition is automatically compressed. This not only reduces the size of files, but also [improves performance](http://www.phoronix.com/scan.php?page=article&item=btrfs_compress_2635&num=1), in particular if using the [lzo algorithm](http://www.phoronix.com/scan.php?page=article&item=btrfs_lzo_2638&num=1), in some specific use cases (e.g. single thread with heavy file IO), while obviously harming performance on other cases (e.g. multithreaded and/or cpu intensive tasks with large file IO).
 
-Compression is enabled using the `compress=zlib` or `compress=lzo` mount options. Only files created or modified after the mount option is added will be compressed. However, it can be applied quite easily to existing files (e.g. after a conversion from ext3/4) using the `btrfs filesystem defragment -c*alg*` command, where `*alg*` is either `zlib` or `lzo`. In order to re-compress the whole file system with `lzo`, run the following command:
+Compression is enabled using the `compress=zlib` or `compress=lzo` mount options. Only files created or modified after the mount option is added will be compressed. However, it can be applied quite easily to existing files (e.g. after a conversion from ext3/4) using the `btrfs filesystem defragment -c*alg*` command, where `*alg*` is either `zlib` or `lzo`. In order to re-compress the whole file system with [lzo](https://www.archlinux.org/packages/?name=lzo), run the following command:
 
 ```
 # btrfs filesystem defragment -r -v -clzo /

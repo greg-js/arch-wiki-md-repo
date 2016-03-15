@@ -86,8 +86,8 @@ Section "InputClass"
         Option "EmulateTwoFingerMinZ" "40"
         Option "EmulateTwoFingerMinW" "8"
         Option "CoastingSpeed" "0"
-        Option "FingerLow" "35"
-        Option "FingerHigh" "40"
+        Option "FingerLow" "30"
+        Option "FingerHigh" "50"
         ...
 EndSection
 

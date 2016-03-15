@@ -1502,11 +1502,11 @@ Server = http://studioidefix.googlecode.com/hg/repo/x86_64
 #### zrootfs
 
 *   **Maintainer:** Isabell Cowan <isabellcowan@gmail.com>
-*   **Description:** For Haswell architecture processors with size in mind.
+*   **Description:** For Haswell and Broadwell architecture processors with size in mind (out of date 2016-03-14).
 
 ```
 [zrootfs]
-Server = http://www.izzette.com/izzi/zrootfs
+Server = http://www.izzette.com/izzi/zrootfs-old
 
 ```
 

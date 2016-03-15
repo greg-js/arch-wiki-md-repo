@@ -69,10 +69,6 @@ See [Wikipedia:Tor (anonymity network)](https://en.wikipedia.org/wiki/Tor_(anony
 
 The [arm](https://www.archlinux.org/packages/?name=arm) (Anonymizing Relay Monitor) package provides a terminal status monitor for bandwidth usage, connection details and more.
 
-Additionally, there is a [Qt](/index.php/Qt "Qt") frontend for Tor in package [vidalia](https://aur.archlinux.org/packages/vidalia/). In addition to controlling the Tor process, Vidalia allows you to view and configure the status of Tor, monitor bandwidth usage, and view, filter, and search log messages.
-
-**Warning:** As there is no active maintainer for Vidalia, along with a large number of longstanding bugs, [avoid using](https://www.whonix.org/wiki/Tor_Controller#Vidalia_recommended_against) *vidalia*.
-
 ## Configuration
 
 By default Tor reads configurations from the file `/etc/tor/torrc`. The configuration options are explained in `man tor` and the [Tor website](https://torproject.org/docs/tor-manual.html.en). The default configuration should work fine for most Tor users.
@@ -243,9 +239,9 @@ See [#Running a Tor server](#Running_a_Tor_server).
 
 ## Usage
 
-Start/enable `tor.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). Alternatively, launch it from `vidalia`, or with `sudo -u tor /usr/bin/tor`.
+Start/enable `tor.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). Alternatively, launch it with `sudo -u tor /usr/bin/tor`.
 
-To use a program over tor, configure it to use 127.0.0.1 or localhost as a SOCKS5 proxy, with port 9050 (plain tor with standard settings) or port 9051 (configuration with **vidalia**, standard settings). To check if Tor is functioning properly visit the [Tor](https://check.torproject.org/), [Harvard](http://serifos.eecs.harvard.edu/cgi-bin/ipaddr.pl?tor=1) or [Xenobite.eu](https://torcheck.xenobite.eu/) websites.
+To use a program over tor, configure it to use 127.0.0.1 or localhost as a SOCKS5 proxy, with port 9050 (plain tor with standard settings). To check if Tor is functioning properly visit the [Tor](https://check.torproject.org/), [Harvard](http://serifos.eecs.harvard.edu/cgi-bin/ipaddr.pl?tor=1) or [Xenobite.eu](https://torcheck.xenobite.eu/) websites.
 
 ## Web browsing
 

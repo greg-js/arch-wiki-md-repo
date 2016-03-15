@@ -118,6 +118,8 @@ keyserver-options auto-key-retrieve
 
 ```
 
+**Note:** The bug has been fixed in GnuPG version 2.1.11 [[2]](https://bugs.gnupg.org/gnupg/msg7736).
+
 ## Usage
 
 Before continuing, [install](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group. Packages belonging to this group are **not** required to be listed as build-time dependencies (*makedepends*) in [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files. In addition, the [base](https://www.archlinux.org/groups/x86_64/base/) group is assumed to be installed on **all** Arch systems.
@@ -125,7 +127,7 @@ Before continuing, [install](/index.php/Install "Install") the [base-devel](http
 **Note:**
 
 *   Make sure [sudo](/index.php/Sudo "Sudo") is configured properly for commands passed to [pacman](/index.php/Pacman "Pacman").
-*   Running *makepkg* itself as root is [disallowed](https://lists.archlinux.org/pipermail/pacman-dev/2014-March/018911.html).[[2]](https://projects.archlinux.org/pacman.git/tree/NEWS) Besides how a `PKGBUILD` may contain arbitrary commands, building as root is generally considered unsafe.[[3]](https://bbs.archlinux.org/viewtopic.php?id=67561) Users who have no access to a regular user account should run makepkg as the [nobody user](http://allanmcrae.com/2015/01/replacing-makepkg-asroot/).
+*   Running *makepkg* itself as root is [disallowed](https://lists.archlinux.org/pipermail/pacman-dev/2014-March/018911.html).[[3]](https://projects.archlinux.org/pacman.git/tree/NEWS) Besides how a `PKGBUILD` may contain arbitrary commands, building as root is generally considered unsafe.[[4]](https://bbs.archlinux.org/viewtopic.php?id=67561) Users who have no access to a regular user account should run makepkg as the [nobody user](http://allanmcrae.com/2015/01/replacing-makepkg-asroot/).
 
 To build a package, one must first create a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), or build script, as described in [Creating packages](/index.php/Creating_packages "Creating packages"). Existing scripts are available from the [ABS tree](/index.php/Arch_Build_System "Arch Build System") or the [AUR](/index.php/AUR "AUR"). Once in possession of a `PKGBUILD`, change to the directory where it is saved and issue the following command to build the package described by said `PKGBUILD`:
 
@@ -146,7 +148,7 @@ Adding the `-r`/`--rmdeps` flag causes *makepkg* to remove the make dependencies
 **Note:**
 
 *   These dependencies must be available in the configured repositories; see [pacman#Repositories](/index.php/Pacman#Repositories "Pacman") for details. Alternatively, one can manually install dependencies prior to building (`pacman -S --asdeps *dep1* *dep2*`).
-*   Only global values are used when installing dependencies, i.e any override done in a split package's packaging function will not be used. [[4]](https://patchwork.archlinux.org/patch/2271/)
+*   Only global values are used when installing dependencies, i.e any override done in a split package's packaging function will not be used. [[5]](https://patchwork.archlinux.org/patch/2271/)
 
 Once all dependencies are satisfied and the package builds successfully, a package file (`*pkgname*-*pkgver*.pkg.tar.xz`) will be created in the working directory. To install, use `-i`/`--install` (same as `pacman -U *pkgname*-*pkgver*.pkg.tar.xz`):
 

@@ -162,6 +162,8 @@ bindkey "${terminfo[kend]}" end-of-line
 
 See [Zsh#Key bindings](/index.php/Zsh#Key_bindings "Zsh") and [zshwiki: bindkeys](http://zshwiki.org/home/zle/bindkeys#reading_terminfo) for more complete information.
 
+Alternatively, you can install [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) package, which contain a lot of features and tweaks for zsh and also fixes the problem with `Home`, `End` and other keys.
+
 ### Less
 
 Create a config file using `lesskey` and the same escape codes for [Readline](#Readline):

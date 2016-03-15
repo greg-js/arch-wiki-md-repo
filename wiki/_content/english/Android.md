@@ -341,6 +341,8 @@ $ adb pull *<what-to-pull>* *<where-to-place>*
 
 ```
 
+*   On moto e it could happen to have a different vendor/product id while you are on sideload or fastboot, verify again lsusb if you get no permission.
+
 ### NVIDIA Tegra platform
 
 If you target your application at NVIDIA Tegra platform, you might also want to install tools, samples and documentation provided by NVIDIA. In [NVIDIA Developer Zone for Mobile](http://developer.nvidia.com/category/zone/mobile-development) there are two tools:

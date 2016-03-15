@@ -50,6 +50,7 @@ The logical sector size is the sector size used for data transfer. This value mu
 | Seagate | ST2000DL003 | 2.0 TB | 512 | 512 |
 | Seagate | ST2000DM001 | 2.0 TB | 512 | 4096 |
 | Seagate | ST3000DM001 | 3.0 TB | 512 | 4096 |
+| Seagate | ST4000DM000 | 4.0 TB | 512 | 4096 |
 | Seagate | ST4000VN000 | 4.0 TB | 512 | 4096 |
 | Western Digital | WD3000F9YZ | 2.0 TB | 512 | 4096 |
 | Western Digital | WD30EZRX | 3.0 TB | 512 | 4096 |

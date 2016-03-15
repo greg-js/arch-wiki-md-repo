@@ -42,6 +42,10 @@ You can do this on the fly or add these parameters in the config file:
 
 Touchpad will only work by default with Linux 4.5.0-rc1 or later. Can currently be used by installing [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/).
 
+**UX305UA**
+
+Touchpad works great on Linux-4.4.3 kernel and superior.
+
 ### Wifi
 
 Intel Dual Band wifi. Should work with recent kernels. 3.10+ with iwlwifi. See [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") for details.
@@ -116,6 +120,10 @@ No effect so far. Investigate.
 #### Brightness Keys
 
 For whatever reason, `xev` does not return any events for the standard brightness keys, but `F3` and `F4` seem to be detected as `XF86KbdBrightnessDown` and `XF86KbdBrightnessUp`, respectively.
+
+You can create your own shortcut on gnome, on keyboard configuration, associating a key with the commands: xdotool key XF86MonBrightnessUp xdotool key XF86MonBrightnessDown
+
+You need to install xdotool first.
 
 ## See also
 

@@ -1,4 +1,4 @@
-This article is an introduction to building custom kernels from **kernel.org sources**. This method of compiling kernels is the traditional method common to all distributions. If this seems too complicated, see some alternatives at: [Kernels#Compilation](/index.php/Kernels#Compilation "Kernels")
+This article is an introduction to building custom kernels from **kernel.org sources**. This method of compiling kernels is the traditional method common to all distributions. It is, of course, more complicated than compiling according to [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). Consider the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") tools are developed and maintained to make repeatable compilation tasks efficient and safe.
 
 ## Contents
 
@@ -44,7 +44,7 @@ $ mkdir ~/kernelbuild
 **Note:**
 
 *   It is a good idea to verify the signature for any downloaded tarball to ensure that it is legitimate. See [kernel.org/signature](http://kernel.org/signature.html#using-gnupg-to-verify-kernel-signatures).
-*   [systemd](/index.php/Systemd "Systemd") requires kernel version 3.11 and above (4.2 and above for unified cgroup hierarchy support). See `/usr/share/systemd/README` for more information.
+*   [systemd](/index.php/Systemd "Systemd") requires kernel version 3.11 and above (4.2 and above for unified [cgroups](/index.php/Cgroups "Cgroups") hierarchy support). See `/usr/share/systemd/README` for more information.
 
 Download the kernel source from [http://www.kernel.org](http://www.kernel.org). This should be the [tarball](https://en.wikipedia.org/wiki/Tar_%28computing%29%7C) (`tar.xz`) file for your chosen kernel. It can be downloaded by simply right-clicking the `tar.xz` link in your browser and selecting `Save Link As...`, or any other number of ways via alternative graphical or command-line tools that utilise HTTP, [FTP](/index.php/Ftp#FTP "Ftp"), [RSYNC](/index.php/Rsync "Rsync"), or [Git](/index.php/Git "Git"). In the following command-line example, [wget](https://www.archlinux.org/packages/?name=wget) has been installed and is used inside the `~/kernelbuild` directory to obtain kernel 3.18:
 
@@ -134,7 +134,7 @@ Once the changes have been made save the `.config` file. It is a good idea to ma
 **Tip:** If you want to have [gcc](https://www.archlinux.org/packages/?name=gcc) optimize for your processor's instruction sets, edit `arch/x86/Makefile` (i686) or `arch/x86_64/Makefile` (86_64) within the kernel source directory:
 
 *   Look for `CONFIG_MK8,CONFIG_MPSC,CONFIG_MCORE2,CONFIG_MATOM,CONFIG_GENERIC_CPU` that you have chosen in `Processor type and features > Processor Family`
-*   Change the call cc-options flag to -march=native to the one that you have selected in Processor Family, e.g. `cflags-$(CONFIG_MK8) += $(call cc-option,-march=native)`. This is probably the best way to compile with `-march=native` as it works.
+*   Change the call cc-options flag to `-march=native` to the one that you have selected in Processor Family, e.g. `cflags-$(CONFIG_MK8) += $(call cc-option,-march=native)`. This is probably the best way to compile with `-march=native` as it works.
 
 ### Compile the kernel
 
@@ -190,16 +190,16 @@ If you do not know what making an initial RAM disk is, see [Initramfs on Wikiped
 
 #### Automated preset method
 
-An existing [mkinitcpio preset](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") can be copied and modified so that the custom kernel initramfs images can be generated in the same way as for an official kernel. This is useful where intending to recompile the kernel in time (e.g. where updated). In the example below, the preset file for the stock Arch kernel will be copied and modified for kernel 3.18, installed above.
+An existing [mkinitcpio preset](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") can be copied and modified so that the custom kernel initramfs images can be generated in the same way as for an official kernel. This is useful where intending to recompile the kernel (e.g. where updated). In the example below, the preset file for the stock Arch kernel will be copied and modified for kernel 3.18, installed above.
 
-First, copy the existing preset file, renaming it to match the name of the custom kernel specified when copying the `bzImage` to the `/boot` directory:
+First, copy the existing preset file, renaming it to match the name of the custom kernel specified as a suffix to `/boot/vmlinuz-` when copying the `bzImage` (in this case, `linux318`):
 
 ```
 # cp /etc/mkinitcpio.d/linux.preset /etc/mkinitcpio.d/linux318.preset
 
 ```
 
-Second, edit the file and amend for the custom kernel. Note that the `ALL-kver=` parameter also marches the name of the custom kernel specified when copying the `bzImage` to `/boot/vmlinuz-<custom kernel name>`:
+Second, edit the file and amend for the custom kernel. Note (again) that the `ALL_kver=` parameter also matches the name of the custom kernel specified when copying the `bzImage`:
 
  `/etc/mkinitcpio.d/linux318.preset` 
 ```
@@ -256,10 +256,10 @@ If your `/boot` is on a filesystem which supports symlinks (i.e., not FAT32), co
 
 After completing all steps above, you should have the following 3 files and 1 soft symlink in your `/boot` directory along with any other previously existing files:
 
-*   Kernel: vmlinuz-YourKernelName
-*   Initramfs-YourKernelName.img
-*   System Map: System.map-YourKernelName
-*   System Map symlink: System.map
+*   Kernel: `vmlinuz-YourKernelName`
+*   Initramfs: `Initramfs-YourKernelName.img`
+*   System Map: `System.map-YourKernelName`
+*   System Map kernel symlink
 
 ## Bootloader configuration
 

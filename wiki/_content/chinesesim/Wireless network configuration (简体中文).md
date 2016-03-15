@@ -15,9 +15,7 @@
         *   [2.1.4 操作模式](#.E6.93.8D.E4.BD.9C.E6.A8.A1.E5.BC.8F)
         *   [2.1.5 关联](#.E5.85.B3.E8.81.94)
         *   [2.1.6 获取 IP 地址](#.E8.8E.B7.E5.8F.96_IP_.E5.9C.B0.E5.9D.80)
-        *   [2.1.7 Custom startup scripts/services](#Custom_startup_scripts.2Fservices)
-            *   [2.1.7.1 Manual wireless connection at boot using systemd and dhcpcd](#Manual_wireless_connection_at_boot_using_systemd_and_dhcpcd)
-            *   [2.1.7.2 Systemd with wpa_supplicant and static IP](#Systemd_with_wpa_supplicant_and_static_IP)
+        *   [2.1.7 Example](#Example)
         *   [2.1.8 自动设置](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE)
         *   [2.1.9 Connman](#Connman)
         *   [2.1.10 Netctl](#Netctl)
@@ -26,18 +24,22 @@
             *   [2.1.10.3 Wifi Radar](#Wifi_Radar)
     *   [2.2 Power saving](#Power_saving)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Rfkill caveat](#Rfkill_caveat)
-    *   [3.2 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
-    *   [3.3 Observing Logs](#Observing_Logs)
-    *   [3.4 Failed to get IP address](#Failed_to_get_IP_address)
-    *   [3.5 Connection always times out](#Connection_always_times_out)
-        *   [3.5.1 Lowering the rate](#Lowering_the_rate)
-        *   [3.5.2 Lowering the txpower](#Lowering_the_txpower)
-        *   [3.5.3 Setting rts and fragmentation thresholds](#Setting_rts_and_fragmentation_thresholds)
-    *   [3.6 Random disconnections](#Random_disconnections)
-        *   [3.6.1 Cause #1](#Cause_.231)
-        *   [3.6.2 Cause #2](#Cause_.232)
-        *   [3.6.3 Cause #3](#Cause_.233)
+    *   [3.1 Temporary internet access](#Temporary_internet_access)
+    *   [3.2 Rfkill caveat](#Rfkill_caveat)
+    *   [3.3 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
+    *   [3.4 Observing Logs](#Observing_Logs)
+    *   [3.5 Power saving](#Power_saving_2)
+    *   [3.6 Failed to get IP address](#Failed_to_get_IP_address)
+    *   [3.7 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
+    *   [3.8 Connection always times out](#Connection_always_times_out)
+        *   [3.8.1 Lowering the rate](#Lowering_the_rate)
+        *   [3.8.2 Lowering the txpower](#Lowering_the_txpower)
+        *   [3.8.3 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
+    *   [3.9 Random disconnections](#Random_disconnections)
+        *   [3.9.1 Cause #1](#Cause_.231)
+        *   [3.9.2 Cause #2](#Cause_.232)
+        *   [3.9.3 Cause #3](#Cause_.233)
+        *   [3.9.4 Cause #4](#Cause_.234)
 *   [4 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
     *   [4.1 Ralink](#Ralink)
         *   [4.1.1 rt2x00](#rt2x00)
@@ -49,12 +51,13 @@
         *   [4.2.1 rtl8192cu](#rtl8192cu)
         *   [4.2.2 rtl8192e](#rtl8192e)
         *   [4.2.3 rtl8188eu](#rtl8188eu)
-        *   [4.2.4 rtl8723be](#rtl8723be)
+        *   [4.2.4 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
     *   [4.3 Atheros](#Atheros)
         *   [4.3.1 ath5k](#ath5k)
         *   [4.3.2 ath9k](#ath9k)
         *   [4.3.3 ath9k](#ath9k_2)
-            *   [4.3.3.1 ASUS](#ASUS)
+            *   [4.3.3.1 Power saving](#Power_saving_3)
+            *   [4.3.3.2 ASUS](#ASUS)
     *   [4.4 Intel](#Intel)
         *   [4.4.1 ipw2100 与 ipw2200](#ipw2100_.E4.B8.8E_ipw2200)
         *   [4.4.2 iwlegacy](#iwlegacy)
@@ -68,6 +71,7 @@
         *   [4.5.5 zd1211rw](#zd1211rw)
         *   [4.5.6 hostap_cs](#hostap_cs)
     *   [4.6 ndiswrapper](#ndiswrapper)
+    *   [4.7 compat-drivers-patched](#compat-drivers-patched)
 *   [5 参见](#.E5.8F.82.E8.A7.81)
 *   [6 其他资源](#.E5.85.B6.E4.BB.96.E8.B5.84.E6.BA.90)
 
@@ -180,14 +184,15 @@ WPA 或 WPA2 PSK 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%
 
 基本的工具如下，这些用户空间工具可以对无线连接进行完整控制。
 
-*   [iw](https://www.archlinux.org/packages/?name=iw) - 当前的 nl80211 标准，不是所有的芯片都支持。
-*   [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) - 已经过时，但是依然广泛使用。
-*   [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) - 提供 WPA/WPA2 加密支持
+*   [iw](https://www.archlinux.org/packages/?name=iw) - 仅支持 nl80211 标准，不支持老的 WEXT (Wireless EXTentions) 标准. 如果 *iw* 没有显示网卡，可能是这个原因。
+*   [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) - 已经过时，但是依然广泛使用。WEXT 设备使用此工具.
+*   [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) - 提供 WPA/WPA2 加密支持,同时支持 nl80211 和 WEXT。
 
 下面表格给出了 `iw` 和 `wireless_tools` 命令的对比(更多示例参阅 [这里](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig)).
 
 **Note:**
 
+*   安装介质上包含 [iw](https://www.archlinux.org/packages/?name=iw) 和 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
 *   示例中使用网络接口 `wlan0` 和热点 `*your_essid*`.
 *   大部分命令需要以 [root 权限](/index.php/Users_and_groups "Users and groups")执行，否则会无输出就退出。
 
@@ -302,12 +307,12 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 **注意:** 如果显示 "Interface doesn't support scanning"，可能是忘了安装固件。有时不以 root 运行 `iwlist` 也会产生这个问题。同样无线网络可能被软禁于，请安装 [rfkill](https://www.archlinux.org/packages/?name=rfkill) 并运行 `rfkill list all` 进行检查。
 
-The important points to check:
+需要关注的信息:
 
-*   **SSID:** the name of the network.
-*   **Signal:** is reported in a wireless power ratio in dbm (e.g. from -100 to 0). The closer the negative value gets to zero, the better the signal. Observing the reported power on a good quality link and a bad one should give an idea about the individual range.
+*   **SSID:** 网络的名称.
+*   **Signal:** 用 dbm (-100 to 0) 报告的无线信号强度。数值越接近零，信号越好。观察高质量连接和低质量连接的数值差异可以了解设备的信号范围。
 *   **Security:** it is not reported directly, check the line starting with `capability`. If there is `Privacy`, for example `capability: ESS Privacy ShortSlotTime (0x0411)`, then the network is protected somehow.
-    *   If you see an `RSN` information block, then the network is protected by [Robust Security Network](https://en.wikipedia.org/wiki/Robust_Security_Network "wikipedia:Robust Security Network") protocol, also known as WPA2.
+    *   If you see an `RSN` information block, then the network is protected by [Robust Security Network](https://en.wikipedia.org/wiki/IEEE_802.11i-2004 "wikipedia:IEEE 802.11i-2004") protocol, also known as WPA2.
     *   If you see an `WPA` information block, then the network is protected by [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access") protocol.
     *   In the `RSN` and `WPA` blocks you may find the following information:
         *   **Group cipher:** value in TKIP, CCMP, both, others.
@@ -317,7 +322,7 @@ The important points to check:
 
 #### 操作模式
 
-(可能需要) 设置无线网卡的操作模式，如果连接到漫游网络，需要设置操作模式为 **ibss**
+设置无线网卡的操作模式，如果连接到漫游网络，需要设置操作模式为 **ibss**
 
 ```
 # iw wlan0 set type ibss
@@ -382,13 +387,6 @@ The important points to check:
 
 ```
 
-或
-
-```
-# dhclient wlan0
-
-```
-
 静态 IP：
 
 ```
@@ -397,101 +395,39 @@ The important points to check:
 
 ```
 
-**Tip:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") contains a hook (enabled by default) to automatically launch [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces. It is started only if a configuration file at `/etc/wpa_supplicant/wpa_supplicant.conf` exists and no *wpa_supplicant* process is listening on that interface. In most cases, you do not need to create any [custom service](#Manual_wireless_connection_at_boot_using_systemd_and_dhcpcd), just enable `dhcpcd@*interface*`.
+**Tip:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") provides a [hook](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd"), which can be enabled to automatically launch [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces.
 
-#### Custom startup scripts/services
+#### Example
 
-Although the manual configuration method will help troubleshoot wireless problems, you will have to re-type every command each time you reboot. You can also quickly write a shell script to automate the whole process, which is still a quite convenient way of managing network connection while keeping full control over your configuration. You can find some examples in this section.
+Here is a complete example of setting up a wireless network with WPA supplicant and DHCP.
 
-##### Manual wireless connection at boot using systemd and dhcpcd
-
-This example uses [systemd](/index.php/Systemd "Systemd") for start up, [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for connecting, and [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) for assigning an IP address.
-
-**Note:** Make sure that [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) is installed and create `/etc/wpa_supplicant/wpa_supplicant.conf`. See [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for details.
-
-Create a systemd unit, e.g `/etc/systemd/system/network-wireless@.service`:
-
- `/etc/systemd/system/network-wireless@.service` 
 ```
-[Unit]
-Description=Wireless network connectivity (%i)
-Wants=network.target
-Before=network.target
-BindsTo=sys-subsystem-net-devices-%i.device
-After=sys-subsystem-net-devices-%i.device
-
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-
-ExecStart=/usr/bin/ip link set dev %i up
-ExecStart=/usr/bin/wpa_supplicant -B -i %i -c /etc/wpa_supplicant/wpa_supplicant.conf
-ExecStart=/usr/bin/dhcpcd %i
-
-ExecStop=/usr/bin/ip link set dev %i down
-
-[Install]
-WantedBy=multi-user.target
+# ip link set dev wlp13s1 up
+# wpa_supplicant -B -i wlp13s1 -c /etc/wpa_supplicant/wpa_supplicant.conf
+# dhcpcd wlp13s1
 
 ```
 
-Start and/or enable the unit as described in [systemd#Using units](/index.php/Systemd#Using_units "Systemd"), remember to pass the name of the interface:
+And then to close the connection, you can simply disable the interface:
 
 ```
-# systemctl enable network-wireless@wlan0.service
-# systemctl start network-wireless@wlan0.service
-
-```
-
-##### Systemd with wpa_supplicant and static IP
-
-**Note:** Make sure that [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) is installed and create a custom `/etc/wpa_supplicant/wpa_supplicant.conf`. See [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for details.
-
-First create configuration file for the [systemd](/index.php/Systemd "Systemd") service, replace `*interface*` with proper interface name:
-
- `/etc/conf.d/network-wireless@*interface*` 
-```
-address=192.168.0.10
-netmask=24
-broadcast=192.168.0.255
-gateway=192.168.0.1
+# ip link set dev wlp13s1 down
 
 ```
 
-Create a systemd unit file:
+For a static IP, you would replace the dhcpcd command with
 
- `/etc/systemd/system/network-wireless@.service` 
 ```
-[Unit]
-Description=Wireless network connectivity (%i)
-Wants=network.target
-Before=network.target
-BindsTo=sys-subsystem-net-devices-%i.device
-After=sys-subsystem-net-devices-%i.device
-
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-EnvironmentFile=/etc/conf.d/network-wireless@%i
-
-ExecStart=/usr/bin/ip link set dev %i up
-ExecStart=/usr/bin/wpa_supplicant -B -i %i -c /etc/wpa_supplicant/wpa_supplicant.conf
-ExecStart=/usr/bin/ip addr add ${address}/${netmask} broadcast ${broadcast} dev %i
-ExecStart=/usr/bin/ip route add default via ${gateway}
-
-ExecStop=/usr/bin/ip addr flush dev %i
-ExecStop=/usr/bin/ip link set dev %i down
-
-[Install]
-WantedBy=multi-user.target
+# ip addr add 192.168.0.10/24 broadcast 192.168.0.255 dev wlp13s1
+# ip route add default via 192.168.0.1
 
 ```
 
-Enable the unit and start it, passing the name of the interface:
+And before disabling the interface you would first flush the IP address and gateway:
 
 ```
-# systemctl enable network-wireless@wlan0.service
-# systemctl start network-wireless@wlan0.service
+# ip addr flush dev wlp13s1
+# ip route flush dev wlp13s1
 
 ```
 
@@ -505,8 +441,9 @@ Enable the unit and start it, passing the name of the interface:
 GUI | 控制台工具 |
 | [Connman](/index.php/Connman "Connman") | Yes | Yes | Yes | No | `connmanctl` |
 | [Netctl](/index.php/Netctl "Netctl") | Yes | Yes | Yes | No | `netctl`,`wifi-menu` |
-| [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | Yes | Yes | `nmcli` |
+| [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | Yes | Yes | `nmcli`,`nmtui` |
 | [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | Yes | `wicd-curses` |
+| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Yes |  ? |  ? | Yes | `wifi-radar` |
 
 #### Connman
 
@@ -524,15 +461,11 @@ See: [Netctl](/index.php/Netctl "Netctl")
 
 Wicd 是可以同时处理无线和有线网络的管理器。用 Python 和 Gtk 写成，依赖关系比 NetworkManager 少，所以是轻量级桌面的理想选择。位于[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库").
 
-参见: [Wicd](/index.php/Wicd "Wicd")
-
-**Note:** [wicd](/index.php/Wicd "Wicd") may cause excessive dropped connections with some drivers, while [NetworkManager](/index.php/NetworkManager "NetworkManager") might work better.
+参见: [Wicd](/index.php/Wicd "Wicd").
 
 ##### NetworkManager
 
 NetworkManager 是高级网络管理工具，在大部分流行发行版中使用。除了能管理有线链接，NetworkManager还提供了一个易于使用的图形界面程序来选择想要的无线移动链接。
-
-**Note:** GNOME's [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) also works under [Xfce](/index.php/Xfce "Xfce") if you install [xfce4-xfapplet-plugin](https://aur.archlinux.org/packages/xfce4-xfapplet-plugin/) (available in the [AUR](/index.php/AUR "AUR")) first. Additionally, there are applets available for [KDE](/index.php/KDE "KDE").
 
 详情请见 [NetworkManager](/index.php/NetworkManager "NetworkManager")。
 
@@ -548,7 +481,11 @@ WiFi Radar是 一个Python/PyGTK2 的管理无线配置的程序（**只有**无
 
 ## Troubleshooting
 
-This section contains general troubleshooting tips, not strictly related to problems with drivers or firmware. For such topics, see next section.
+This section contains general troubleshooting tips, not strictly related to problems with drivers or firmware. For such topics, see next section [#Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware).
+
+### Temporary internet access
+
+If you have problematic hardware and need internet access to, for example, download some software or get help in forums, you can make use of Android's built-in feature for internet sharing via USB cable. See [Android tethering#USB tethering](/index.php/Android_tethering#USB_tethering "Android tethering") for more information.
 
 ### Rfkill caveat
 
@@ -583,7 +520,7 @@ Regdomains also affect the limit on the [effective isotropic radiated power (EIR
 
 Misconfiguring the regdomain can be useful - for example, by allowing use of an unused channel when other channels are crowded, or by allowing an increase in tx power to widen transmitter range. However, **this is not recommended** as it could break local laws and cause interference with other radio devices.
 
-To configure the regdomain, install [crda](https://www.archlinux.org/packages/?name=crda) and [wireless-regdb](https://www.archlinux.org/packages/?name=wireless-regdb) and reboot (to reload the `cfg80211` module and all related drivers). Check the boot log to make sure that CRDA is being called by `cfg80211`:
+To configure the regdomain, install [crda](https://www.archlinux.org/packages/?name=crda) and reboot (to reload the `cfg80211` module and all related drivers). Check the boot log to make sure that CRDA is being called by `cfg80211`:
 
 ```
 $ dmesg | grep cfg80211
@@ -626,7 +563,7 @@ $ iw list | grep -A 15 Frequencies:
 
 A more permanent configuration of the regdomain can be achieved through editing `/etc/conf.d/wireless-regdom` and uncommenting the appropriate domain. `wpa_supplicant` can also use a regdomain in the `country=` line of `/etc/wpa_supplicant.conf`.
 
-It is also possible to configure the [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) kernel module to use a specific regdomain by adding, for example, `options cfg80211 ieee80211_regdom=EU` to `/etc/modprobe.d/modprobe.conf`. However, this is part of the [old regulatory implementation](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
+It is also possible to configure the [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) kernel module to use a specific regdomain by adding, for example, `options cfg80211 ieee80211_regdom=EU` as [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). However, this is part of the [old regulatory implementation](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
 
 For further information, read the [wireless.kernel.org regulatory documentation](http://wireless.kernel.org/en/developers/Regulatory/).
 
@@ -655,20 +592,19 @@ wlan0: deauthenticating from XX:XX:XX:XX:XX:XX by local choice (reason=3)
 
 ```
 
-Looking up [the reason code](http://www.aboutcher.co.uk/2012/07/linux-wifi-deauthenticated-reason-codes/) might give a first hint.
+Looking up [the reason code](http://www.aboutcher.co.uk/2012/07/linux-wifi-deauthenticated-reason-codes/) might give a first hint. Maybe it also helps you to look at the control message [flowchart](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211/auth-assoc-deauth), the journal messages will follow it.
 
 The individual tools used in this article further provide options for more detailed debugging output, which can be used in a second step of the analysis, if required.
+
+### Power saving
+
+See [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces "Power saving").
 
 ### Failed to get IP address
 
 *   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in your [connection manager](#Automatic_setup)!
 
-*   If you can get an IP address for a wired interface and not for a wireless interface, try disabling the wireless card's power saving features:
-
-```
-# iwconfig wlan0 power off
-
-```
+*   If you can get an IP address for a wired interface and not for a wireless interface, try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
 *   If you get a timeout error due to a *waiting for carrier* problem, then you might have to set the channel mode to `auto` for the specific device:
 
@@ -679,9 +615,13 @@ The individual tools used in this article further provide options for more detai
 
 Before changing the channel to auto, make sure your wireless interface is down. After it has successfully changed it, you can bring the interface up again and continue from there.
 
+### Valid IP address but cannot resolve host
+
+If you are on a public wireless network that may have a [captive portal](https://en.wikipedia.org/wiki/Captive_portal "wikipedia:Captive portal"), make sure to query an HTTP page (not an HTTPS page) from your web browser, as some captive portals only redirect HTTP. If this is not the issue, it may be necessary to remove any custom DNS servers from [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
+
 ### Connection always times out
 
-The driver may suffer from a lot of tx excessive retries and invalid misc errors for some unknown reason, resulting in a lot of packet loss and keep disconnecting, sometimes instantly. Following tips might be helpful.
+There are a few things to try if you are experiencing excessive transmission retries, errors, packet loss, and/or disconnects.
 
 #### Lowering the rate
 
@@ -701,47 +641,42 @@ Fixed option should ensure that the driver does not change the rate on its own, 
 
 #### Lowering the txpower
 
-You can try lowering the transmit power as well. This may save power as well:
+You can try lowering the transmit power. This may save power as well:
 
 ```
-# iwconfig wlan0 txpower 5
-
-```
-
-Valid settings are from `0` to `20`, `auto` and `off`.
-
-#### Setting rts and fragmentation thresholds
-
-Default iwconfig options have rts and fragmentation thresholds off. These options are particularly useful when there are many adjacent APs or in a noisy environment.
-
-The minimum value for fragmentation value is 256 and maximum is 2346\. In many windows drivers the maximum is the default value:
-
-```
-# iwconfig wlan0 frag 2346
+# iw phy0 set txpower fixed 500
 
 ```
 
-For rts minimum is 0, maximum is 2347\. Once again windows drivers often use maximum as the default:
+Valid settings are from 0 to 2000, though certain values may be restricted by your card's regulatory domain.
+
+#### Setting RTS and fragmentation thresholds
+
+Wireless hardware disables RTS and fragmentation by default. These are two different methods of increasing throughput at the expense of bandwidth (i.e. reliability at the expense of speed). These are useful in environments with wireless noise or many adjacent access points.
+
+Packet fragmentation improves throughput by splitting up packets with size exceeding the fragmentation threshold. The maximum value (2346) effectively disables fragmentation since no packet can exceed it. The minimum value (256) maximizes throughput, but may carry a significant bandwidth cost.
 
 ```
-# iwconfig wlan0 rts 2347
+# iw phy0 set frag 512
 
 ```
+
+[RTS](https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS "wikipedia:IEEE 802.11 RTS/CTS") improves throughput by performing a handshake with the access point before transmitting packets with size exceeding the RTS threshold. The maximum threshold (2347) effectively disables RTS since no packet can exceed it. The minimum threshold (0) enables RTS for all packets, which is probably excessive for most situations.
+
+```
+# iw phy0 set rts 500
+
+```
+
+**Note:** `phy0` is the name of the wireless device as listed by `$ iw phy`.
 
 ### Random disconnections
 
 #### Cause #1
 
-If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[1]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's power-saving features:
+If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[1]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
-```
-# iwconfig wlan0 power off
-
-```
-
-See [Power saving](/index.php/Power_saving "Power saving") for tips on how to make it permanent (just specify `off` instead of `on`).
-
-If your card does not support `iwconfig wlan0 power off`, check the **BIOS** for power management options. Disabling PCI-Express power management in the BIOS of a Lenovo W520 resolved this issue.
+If your card does not support enabling/disabling power save mode, check the BIOS for power management options. Disabling PCI-Express power management in the BIOS of a Lenovo W520 resolved this issue.
 
 #### Cause #2
 
@@ -754,6 +689,20 @@ try changing the channel bandwidth to `20MHz` through your router's settings pag
 #### Cause #3
 
 On some laptop models with hardware rfkill switches (e.g., Thinkpad X200 series), due to wear or bad design, the switch (or its connection to the mainboard) might become loose over time resulting in seemingly random hardblocks/disconnects when you accidentally touch the switch or move the laptop. There is no software solution to this, unless your switch is electrical and the BIOS offers the option to disable the switch. If your switch is mechanical (most are), there are lots of possible solutions, most of which aim to disable the switch: Soldering the contact point on the mainboard/wifi-card, glueing or blocking the switch, using a screw nut to tighten the switch or removing it altogether.
+
+#### Cause #4
+
+Another cause for frequent disconnects or a complete failure to connect may also be a sub-standard router, incomplete settings of the router, or interference by other wireless devices.
+
+To troubleshoot, first best try to connect to the router with no authentication.
+
+If that works, enable WPA/WPA2 again but choose fixed and/or limited router settings. For example:
+
+*   If the router is considerably older than the wireless device you use for the client, test if it works with setting the router to one wireless mode
+*   Disable mixed-mode authentication (e.g. only WPA2 with AES, or TKIP if the router is old)
+*   Try a fixed/free channel rather than "auto" channel (maybe the router next door is old and interfering)
+*   Disable `40Mhz` channel bandwidth (lower throughput but less likely collisions)
+*   If the router has quality of service settings, check completeness of settings (e.g. Wi-Fi Multimedia (WMM) is part of optional QoS flow control. An erroneous router firmware may advertise its existence although the setting is not enabled)
 
 ## Troubleshooting drivers and firmware
 
@@ -830,59 +779,19 @@ r8169 0000:03:00.0: eth0: link down
 
 #### rtl8188eu
 
-Some dongles, like the TP-Link TL-WN725N v2 (not sure, but it seems that uses the rtl8179 chipset), use chipsets compatible with this driver. In order to use it you have to install the [dkms-8188eu](https://aur.archlinux.org/packages/dkms-8188eu/) package in the AUR.
+Some dongles, like the TP-Link TL-WN725N v2 (not sure, but it seems that uses the rtl8179 chipset), use chipsets compatible with this driver. In Linux 3.12 the driver [has been moved](http://lwn.net/Articles/564798/) to kernel staging source tree. For older kernels use out-of-tree driver sources built with [dkms](/index.php/Dkms "Dkms") - install [8188eu-dkms](https://aur.archlinux.org/packages/8188eu-dkms/). At the times of 3.15 kernel rtl8188eu driver is buggy and has many stability issues.
 
-#### rtl8723be
+#### rtl8723ae/rtl8723be
 
-The driver for this card is designated to be entered into the Linux kernel as a part of version 3.15\. Until version 3.15 is released, the kernel module for the card can be downloaded from [lwfinger's github](https://github.com/lwfinger/rtl8723be). If git is not installed, please install it.
+The new `rtl8723ae` module is included in the mainline Linux kernel since version 3.6, the `rtl8723be` module since 3.15.
 
-```
-$ cd ~/temp
-$ git clone [https://github.com/lwfinger/rtl8723be.git](https://github.com/lwfinger/rtl8723be.git)
-$ cd rtl8723be
-$ make
-# make install
-# modprobe rtl8723be
+Some users may encounter errors with powersave on this card. This is shown with occasional disconnects that are not recognized by high level network managers ([netctl](/index.php/Netctl "Netctl"), [NetworkManager](/index.php/NetworkManager "NetworkManager")). This error can be confirmed by running `dmesg -w` or `journalctl -f` and looking for output related to powersave and the `rtl8723ae`/`rtl8723be` module. If you are having this issue, use the `fwlps=0` kernel option, which should prevent the WiFi card from automatically sleeping and halting connection.
 
-```
+ `/etc/modprobe.d/rtl8723ae.conf`  `options rtl8723ae fwlps=0` 
 
-When running `make`, some users may encounter a compile error based on the kernel version. If, and only if you encounter a compile error:
+or
 
-```
-$ nano rtl8723be/trx.c
-
-```
-
-On line 621, change the line
-
-```
-if ((_ieee80211_is_robust_mgmt_frame(hdr)) &&
-
-```
-
-to
-
-```
-if ((ieee80211_is_robust_mgmt_frame(hdr)) &&
-
-```
-
-Save, then cd back to the main rtl8723be directory and continue from `make install` Additionally, some users may encounter errors with powersave on this card. This is shown with occasional disconnects that are not recognized by high level network managers (netctl, NetworkManager). This error can be confirmed by running `$ dmesg -w` or `$ journalctl -f` and looking for output related to powersave and the rtl8723be module. If you are having this issue, you need to add a kernel option:
-
-```
-# nano /etc/modprobe.d/rtl8723be.conf
-
-```
-
-Add this line to the new file:
-
-```
-#Prevents the WiFi card from automatically sleeping and halting connection
-options rtl8723be fwlps=0
-
-```
-
-That should rectify any issues with firmware powersaving.
+ `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
 
 ### Atheros
 
@@ -934,7 +843,32 @@ External resources:
 *   [http://wireless.kernel.org/en/users/Drivers/ath9k](http://wireless.kernel.org/en/users/Drivers/ath9k)
 *   [http://wiki.debian.org/ath9k](http://wiki.debian.org/ath9k)
 
-In the unlikely event that you have stability issues that trouble you, you could try using the [compat-wireless](http://wireless.kernel.org/en/users/Download) package. An [ath9k mailing list](https://lists.ath9k.org/mailman/listinfo/ath9k-devel) exists for support and development related discussions.
+As of Linux 3.15.1, some users have been experiencing a decrease in bandwidth. In some cases this can fixed by editing `/etc/modprobe.d/ath9k.conf` and adding the line:
+
+```
+options ath9k nohwcrypt=1
+
+```
+
+**Note:** Check with the command lsmod what module(-name) is in use and change it if named otherwise (e.g. ath9k_htc).
+
+In the unlikely event that you have stability issues that trouble you, you could try using the [backports-patched](https://aur.archlinux.org/packages/backports-patched/) package. An [ath9k mailing list](https://lists.ath9k.org/mailman/listinfo/ath9k-devel) exists for support and development related discussions.
+
+##### Power saving
+
+Although [Linux Wireless](http://wireless.kernel.org/en/users/Documentation/dynamic-power-save) says that dynamic power saving is enabled for Atheros ath9k single-chips newer than AR9280, for some devices (e.g. AR9285) [powertop](https://www.archlinux.org/packages/?name=powertop) might still report that power saving is disabled. In this case enable it manually.
+
+On some devices (e.g. AR9285), enabling the power saving might result in the following error:
+
+ `# iw dev wlan0 set power_save on` 
+```
+command failed: Operation not supported (-95)
+
+```
+
+The solution is to set the `ps_enable=1` option for the `ath9k` module:
+
+ `/etc/modprobe.d/ath9k.conf`  `options ath9k ps_enable=1` 
 
 ##### ASUS
 
@@ -964,6 +898,10 @@ You can also try to blacklist the module asus_nb_wmi (tested with ASUSPRO P550C)
 
 [udev](/index.php/Udev "Udev") should load the driver automatically, otherwise load `iwl3945` or `iwl4965` manually. See [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules") for details.
 
+If you have problems connecting to networks in general or your link quality is very poor, try to disable 802.11n:
+
+ `/etc/modprobe.d/iwl4965.conf`  `options iwl4965 11n_disable=1` 
+
 #### iwlwifi
 
 [iwlwifi](http://wireless.kernel.org/en/users/Drivers/iwlwifi) is the wireless driver for Intel's current wireless chips, such as 5100AGN, 5300AGN, and 5350AGN. See the [full list of supported devices](http://wireless.kernel.org/en/users/Drivers/iwlwifi#Supported_Devices). The firmware is included in the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
@@ -976,9 +914,19 @@ options iwlwifi 11n_disable=1
 options iwlwifi swcrypto=1
 ```
 
+If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps, try to enable antenna aggregation:
+
+ `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
+
+Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[2]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[3]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+
 In case this does not work for you, you may try disabling power saving for your wireless adapter. For a permanent solution, add a new udev rule:
 
  `/etc/udev/rules.d/80-iwlwifi.rules`  `ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="<your_mac_address>", RUN+="/usr/bin/iw dev %k set power_save off"` 
+
+[Some](http://ubuntuforums.org/showthread.php?t=2183486&p=12845473#post12845473) have never gotten this to work. [Others](http://ubuntuforums.org/showthread.php?t=2205733&p=12935783#post12935783) found salvation by disabling N in their router settings after trying everything. This is known to have be the only solution on more than one occasion. The second link there mentions a 5ghz option that might be worth exploring.
+
+**Note:** The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)-3.14 kernel may take several minutes to load the firmware and make the wireless card ready for use. The issue is reported to be fixed in [linux](https://www.archlinux.org/packages/?name=linux)-3.17 kernel.[[4]](https://bbs.archlinux.org/viewtopic.php?id=190757)
 
 ##### 禁用 LED 闪烁
 
@@ -1038,7 +986,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) 是ZyDAS ZD1211 802.11b/g USB WLAN芯片的驱动，最近的版本的内核已经包括了。[zd1211rw](http://zd1211.wiki.sourceforge.net/) [[2]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices｜这里)有被支持的设备列表。 你只需要这样安装固件[zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware)。
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) 是ZyDAS ZD1211 802.11b/g USB WLAN芯片的驱动，最近的版本的内核已经包括了。[zd1211rw](http://zd1211.wiki.sourceforge.net/) [[5]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices｜这里)有被支持的设备列表。 你只需要这样安装固件[zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware)。
 
 #### hostap_cs
 
@@ -1048,25 +996,27 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 ### ndiswrapper
 
-Ndiswrapper并不是一个真正的驱动,但是如果你无法找到适合你的无线网卡驱动的适合, 它就派上用场了.有的时候, 它是非常有用的.为了使用Ndiswrapper, 你需要Windows驱动中的*.inf文件(*.sys文件应该和*.info在同一个目录中)。确保使用合适架构(也就是32/64位)的驱动。如果你需要从 `*.exe` 文件解压缩，你可以使用 [cabextract](https://www.archlinux.org/packages/?name=cabextract).
+Ndiswrapper并不是一个真正的驱动,但是如果你无法找到适合你的无线网卡驱动的适合, 它就派上用场了.有的时候, 它是非常有用的.为了使用Ndiswrapper, 你需要Windows驱动中的*.inf文件(*.sys文件应该和*.info在同一个目录中)。如果你需要从 `*.exe` 文件解压缩，你可以使用 [cabextract](https://www.archlinux.org/packages/?name=cabextract).
+
+**警告:** 确保使用合适架构(也就是32/64位)的驱动。
 
 下面是安装ndiswrapper的几个步骤:
 
-1\. 安装驱动到 `/etc/ndiswrapper/*`
+1\. 安装 [ndiswrapper-dkms](https://www.archlinux.org/packages/?name=ndiswrapper-dkms) 2\. 安装驱动到 `/etc/ndiswrapper/*`
 
 ```
 ndiswrapper -i filename.inf
 
 ```
 
-2\. 列出所有的安装的驱动
+3\. 列出所有的安装的驱动
 
 ```
 ndiswrapper -l
 
 ```
 
-3\. 书写配置文件到 `/etc/modprobe.d/ndiswrapper.conf`
+4\. 配置文件写到 `/etc/modprobe.d/ndiswrapper.conf`
 
 ```
 ndiswrapper -m
@@ -1082,7 +1032,36 @@ iwconfig
 
 ```
 
-如果正常的话, 你应该可以看到wlan0接口了. 如果有问题的话, 你可以从 [Ndiswrapper 安装 wiki](http://ndiswrapper.sourceforge.net/joomla/index.php?/component/option,com_openwiki/Itemid,33/id,installation/)上面得到更多的信息.
+如果正常的话, 你应该可以看到wlan0接口了. 如果有问题的话, 你可以阅读： [Ndiswrapper installation wiki](http://ndiswrapper.sourceforge.net/joomla/index.php?/component/option,com_openwiki/Itemid,33/id,installation/). [ndiswrapper howto](http://sourceforge.net/p/ndiswrapper/ndiswrapper/HowTos/) 和 [ndiswrapper FAQ](http://sourceforge.net/p/ndiswrapper/ndiswrapper/FAQ/).
+
+### compat-drivers-patched
+
+Patched compat wireless drivers correct the "fixed-channel -1" issue, whilst providing better injection. Install the [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) package.
+
+[compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) does not conflict with any other package and the modules built reside in `/usr/lib/modules/*your_kernel_version*/updates`.
+
+These patched drivers come from the [Linux Wireless project](http://wireless.kernel.org/) and support many of the above mentioned chips such as:
+
+```
+ath5k ath9k_htc carl9170 b43 zd1211rw rt2x00 wl1251 wl12xx ath6kl brcm80211
+
+```
+
+Supported groups:
+
+```
+atheros ath iwlagn rtl818x rtlwifi wl12xx atlxx bt
+
+```
+
+It is also possible to build a specific module/driver or a group of drivers by editing the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), particularly uncommenting the **line #46**. Here is an example of building the atheros group:
+
+```
+scripts/driver-select atheros
+
+```
+
+Please read the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for any other possible modifications prior to compilation and installation.
 
 ## 参见
 

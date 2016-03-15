@@ -231,15 +231,15 @@ See the man page of systemd-cryptsetup-generator(8) for available kernel command
 
 ### COMPRESSION
 
-The kernel supports several formats for compression of the initramfs - gzip, bzip2, lzma, xz (also known as lzma2), lzo, and lz4\. For most use cases, gzip, lzop, and lz4 provide the best balance of compressed image size and decompression speed.
+The kernel supports several formats for compression of the initramfs - [gzip](https://www.archlinux.org/packages/?name=gzip), [bzip2](https://www.archlinux.org/packages/?name=bzip2), lzma, [xz](https://www.archlinux.org/packages/?name=xz) (also known as lzma2), [lzo](https://www.archlinux.org/packages/?name=lzo), and [lz4](https://www.archlinux.org/packages/?name=lz4). For most use cases, gzip, lzop, and lz4 provide the best balance of compressed image size and decompression speed.
 
 ```
 COMPRESSION="gzip"
-COMPRESSION="bzip2"  # since kernel 2.6.30
-COMPRESSION="lzma"   # since kernel 2.6.30
-COMPRESSION="lzop"   # since kernel 2.6.34
-COMPRESSION="xz"     # since kernel 2.6.38
-COMPRESSION="lz4"    # since kernel 3.11; also **requires** [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio)>=16-2
+COMPRESSION="bzip2
+COMPRESSION="lzma"
+COMPRESSION="lzop"
+COMPRESSION="xz"
+COMPRESSION="lz4"
 
 ```
 

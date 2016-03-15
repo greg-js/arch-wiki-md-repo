@@ -19,7 +19,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
     *   [3.5 Changing the Steam friends notification placement](#Changing_the_Steam_friends_notification_placement)
         *   [3.5.1 Use a skin](#Use_a_skin)
         *   [3.5.2 On-the-fly patch](#On-the-fly_patch)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -282,6 +283,10 @@ And the launch options should be something like the following.
 ```
 
 There is another file in the same folder as **gameoverlay.style** folder called **steam.style** which has an entry with the exact same function as the file we patched and will change the notification corner for the desktop only (not in-game), but for editing this file to actually work it has to be set before steam is launched and the folder set to read-only so steam cannot re-write the file. Therefore the only two ways to modify that file is to make the directory read only so steam cannot change it when it is launched (can break updates) or making a skin like in method 1.
+
+## Troubleshooting
+
+See [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting").
 
 ## See also
 

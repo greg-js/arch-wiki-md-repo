@@ -41,12 +41,13 @@ Redmine is written using the [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on R
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 RMagick gem without support for High Dynamic Range in ImageMagick](#RMagick_gem_without_support_for_High_Dynamic_Range_in_ImageMagick)
     *   [5.2 Runtime error complaining that RMagick was configured with older version](#Runtime_error_complaining_that_RMagick_was_configured_with_older_version)
-    *   [5.3 Error when installing gems: Cannot load such file -- mysql2/mysql2](#Error_when_installing_gems:_Cannot_load_such_file_--_mysql2.2Fmysql2)
-    *   [5.4 Apache 2.4 Updating](#Apache_2.4_Updating)
-    *   [5.5 Checkout SVN Source](#Checkout_SVN_Source)
-    *   [5.6 Automating The Update Process](#Automating_The_Update_Process)
-    *   [5.7 Creating a Systemd Unit](#Creating_a_Systemd_Unit)
-    *   [5.8 Complaints about psych](#Complaints_about_psych)
+    *   [5.3 OpenSSL error about "SSLv3_client"](#OpenSSL_error_about_.22SSLv3_client.22)
+    *   [5.4 Error when installing gems: Cannot load such file -- mysql2/mysql2](#Error_when_installing_gems:_Cannot_load_such_file_--_mysql2.2Fmysql2)
+    *   [5.5 Apache 2.4 Updating](#Apache_2.4_Updating)
+    *   [5.6 Checkout SVN Source](#Checkout_SVN_Source)
+    *   [5.7 Automating The Update Process](#Automating_The_Update_Process)
+    *   [5.8 Creating a Systemd Unit](#Creating_a_Systemd_Unit)
+    *   [5.9 Complaints about psych](#Complaints_about_psych)
 *   [6 See also](#See_also)
 
 ## Prerequisites
@@ -360,11 +361,11 @@ Although [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) is 
 Now you must generate a random key that will be used by Rails to encode cookies that stores session data thus preventing their tampering:
 
 ```
-# rake generate_secret_token
+# bundle exec rake generate_secret_token
 
 ```
 
-**Note:** For Redmine prior to 2.x this step is done by executing `# rake generate_session_store`.
+**Note:** For Redmine prior to 2.x this step is done by executing `# bundle exec rake generate_session_store`.
 
 **Warning:** Generating a new secret token invalidates all existing sessions after restart.
 
@@ -374,7 +375,7 @@ With the database created and the access configured for Redmine, now it is time 
 
 ```
 # cd /usr/share/webapps/redmine
-# RAILS_ENV=production rake db:migrate
+# RAILS_ENV=production bundle exec rake db:migrate
 
 ```
 
@@ -385,14 +386,14 @@ These command will create tables by running all migrations one by one then creat
 Now you may want to insert the default configuration data in database, like basic types of task, task states, groups, etc. To do so execute the following:
 
 ```
-# RAILS_ENV=production rake redmine:load_default_data
+# RAILS_ENV=production bundle exec rake redmine:load_default_data
 
 ```
 
 Redmine will prompt for the data set language that should be loaded; you can also define the REDMINE_LANG environment variable before running the command to a value which will be automatically and silently picked up by the task:
 
 ```
-# RAILS_ENV=production REDMINE_LANG=pt-BR rake redmine:load_default_data
+# RAILS_ENV=production REDMINE_LANG=pt-BR bundle exec rake redmine:load_default_data
 
 ```
 
@@ -562,7 +563,7 @@ Regenerate the secret token:
 
 ```
 # cd /usr/share/webapps/redmine
-# rake generate_secret_token
+# bundle exec rake generate_secret_token
 
 ```
 
@@ -573,22 +574,21 @@ Check for any themes that you may have installed in the `public/themes` director
 Update the database. This step is the one that could change the contents of your database. Go to your new redmine directory, then migrate your database:
 
 ```
-# RAILS_ENV=production REDMINE_LANG=pt-BR rake db:migrate
+# RAILS_ENV=production REDMINE_LANG=pt-BR bundle exec rake db:migrate
 
 ```
 
 If you have installed any plugins, you should also run their database migrations:
 
 ```
-# RAILS_ENV=production REDMINE_LANG=pt-BR rake redmine:plugins:migrate
+# RAILS_ENV=production REDMINE_LANG=pt-BR bundle exec rake redmine:plugins:migrate
 
 ```
 
 Now, it is time to clean the cache and the existing sessions:
 
 ```
-# rake tmp:cache:clear
-# rake tmp:sessions:clear
+# RAILS_ENV=production bundle exec rake tmp:cache:clear tmp:sessions:clear
 
 ```
 
@@ -631,6 +631,20 @@ And finally install it:
 If you get the following runtime error after upgrading ImageMagick `This installation of RMagick was configured with ImageMagick 6.8.7 but ImageMagick 6.8.8-1 is in use.` then you only need to reinstall (or rebuild as shown above if is the case).
 
 **Note:** This is due to that when you install the RMagick gem it compiles some native extensions and they may need to be rebuilt after some ImageMagick upgrades.
+
+### OpenSSL error about "SSLv3_client"
+
+After thel latest OpenSSL release (version 1.0.2.g-3) the ruby stop to work and you cannot build some ruby versions. You have two way to fix it:
+
+1\. Use ruby-head (if using RVM) or 2.3.0or above (if using arhc package).
+
+2\. Use this patch as noted in [Issue 3529](https://github.com/rvm/rvm/issues/3529#issuecomment-157205030) and [Issue 3548](https://github.com/rvm/rvm/issues/3548)
+
+```
+# curl [https://github.com/ruby/ruby/commit/801e1fe46d83c856844ba18ae4751478c59af0d1.diff](https://github.com/ruby/ruby/commit/801e1fe46d83c856844ba18ae4751478c59af0d1.diff) > openssl.patch
+# rvm install --patch ./openssl.patch 2.0.0 /*or another ruby version*/
+
+```
 
 ### Error when installing gems: Cannot load such file -- mysql2/mysql2
 

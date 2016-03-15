@@ -144,7 +144,7 @@ There are lots of reasons to patch your kernel, the major ones are for performan
 
 However, it is important to note that the best way to increase the speed of your system is to first tailor your kernel to your system, especially the architecture and processor type. For this reason using pre-packaged versions of custom kernels with generic architecture settings is not recommended or really worth it. A further benefit is that you can reduce the size of your kernel (and therefore build time) by not including support for things you do not have or use. For example, you might start with the stock kernel config when a new kernel version is released and remove support for things like bluetooth, video4linux, 1000Mbit ethernet, etc.; functionality you know you will not require for your specific machine. Although this page is not about customizing your kernel config, it is recommended as a first step--before moving on to using a patchset once you have grasped the fundamentals involved.
 
-The config files for the Arch kernel packages can be used as a starting point. They are in the Arch package source files, for example [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux) linked from [linux](https://www.archlinux.org/packages/?name=linux). The config file of your currently running kernel is also always available in your file system at `/proc/config.gz`.
+The config files for the Arch kernel packages can be used as a starting point. They are in the Arch package source files, for example [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux) linked from [linux](https://www.archlinux.org/packages/?name=linux). The config file of your currently running kernel may also be available in your file system at `/proc/config.gz` if the `CONFIG_IKCONFIG_PROC` kernel option is enabled.
 
 ### How to install
 
@@ -160,9 +160,9 @@ See [#Compilation](#Compilation).
 
 First of all it is important to note that patchsets are developed by a variety of people. Some of these people are actually involved in the production of the linux kernel and others are hobbyists, which may reflect its level of reliability and stability.
 
-It is also worth noting that some patchsets are built on the back of other patchsets (which may or may not be reflected in the title of the patch). Patchsets (and kernel updates) can be released **very** frequently and often it is not worth keeping up with ALL of them so do not go crazy, unless you make it your hobby!
+It is also worth noting that some patchsets are built on the back of other patchsets (which may or may not be reflected in the title of the patch). Patchsets (and kernel updates) can be released **very** frequently and often it is not worth keeping up with ALL of them; so, do not go crazy, unless you make it your hobby!
 
-You can search google for more sets - remember to use quotes `"-nitro"` for example otherwise google will deliberately **NOT** show the results you want!
+You can search Google for more sets, but remember to use quotes (`"-nitro"`, for example); otherwise, Google will deliberately **NOT** show the results you want!
 
 **Note:** This section is for **information only** - clearly no guarantees of stability or reliability are implied by inclusion on this page.
 

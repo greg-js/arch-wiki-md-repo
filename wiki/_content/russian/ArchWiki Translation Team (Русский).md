@@ -145,6 +145,7 @@
 | 1 | [Sshfs (Русский)](/index.php/Sshfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sshfs (Русский)") | 5/7 (1 - 5) | - |
 | 1 | [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)") | 0 | - |
 | 1 | [xrandr (Русский)](/index.php/Xrandr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xrandr (Русский)") | 5/5 | - |
+| 1 | [Help:Чтение](/index.php/Help:%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5 "Help:Чтение") | 0 | - |
 | 1 | [LightDM (Русский)](/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LightDM (Русский)") | 4/7 (1 - 4) | - |
 
 ## Список страниц с сопроводителем

@@ -341,7 +341,7 @@ $ gsettings set org.gnome.desktop.background draw-background false
 
 Для еще большей легковесности системы можно использовать For even lighter options, consider [Gentoo](http://www.obsession.se/gentoo/) или [emelFM2.](http://emelfm2.net/). Эти программы реализованы в классическом двухпанельном виде. Другие менеджеры: [xfe](http://sourceforge.net/projects/xfe/) и [muCommander.](http://www.mucommander.com/)
 
-Как альтернативу, вы можете использовать Nautilus из окружения GNOME. Этот менеджер тяжелее и медленней чем вышеназванные менеджеры, но Nautilus поддерживает [виртуальные файловые системы,](https://en.wikipedia.org/wiki/Virtual_file_system "wikipedia:Virtual file system") и умеет реализовывать доступ к папкам по средствам SSH, FTP и Samba. Ето его преимущество, перед другими менеджерами файлов.
+Как альтернативу, вы можете использовать Nautilus из окружения GNOME. Этот менеджер тяжелее и медленней чем вышеназванные менеджеры, но Nautilus поддерживает [виртуальные файловые системы,](https://en.wikipedia.org/wiki/Virtual_file_system "wikipedia:Virtual file system") и умеет реализовывать доступ к папкам по средствам SSH, FTP и Samba. Это его преимущество, перед другими менеджерами файлов.
 
 ### Быстрый запуск приложения (Application launchers)
 

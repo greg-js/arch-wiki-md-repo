@@ -59,8 +59,8 @@ For a table of core and product series, see [Wikipedia:Radeon](https://en.wikipe
 ## Overview
 
 *   For the latest Fiji and Tonga based graphics cards (Volcanic Islands/GCN 1.2), see the [AMDGPU](/index.php/AMDGPU "AMDGPU") page.
-*   Radeons in the Rx 200 and Rx 300 (except for R9 380) series (Sea/Southern Islands or GCN 1.1/1.0) have almost complete feature coverage and offer best performance.
-*   Radeons up to the HD 7xxx series have full 2D and 3D acceleration, but might not support all the features that the proprietary driver provides. Performance varies from medicore for some cards to excellent for others.
+*   Radeons in the Rx 200 and Rx 300 (except for Radeon R9 285, R9 380, Radeon R9 Fury, Radeon R9 Nano) series (Sea/Southern Islands or GCN 1.1/1.0) have almost complete feature coverage and offer best performance.
+*   Radeons up to the HD 8xxx series have full 2D and 3D acceleration, but might not support all the features that the proprietary driver provides. Performance varies from medicore for some cards to excellent for others.
 *   Support of DRI1, RandR 1.2/1.3/1.4, Glamor, EXA acceleration and [kernel mode-setting](/index.php/KMS "KMS")/DRI2.
 
 Check the [feature matrix](http://www.x.org/wiki/RadeonFeature) for more details.

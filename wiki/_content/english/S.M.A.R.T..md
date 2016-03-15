@@ -187,6 +187,21 @@ If you use a computer under control of power management, you should instruct sma
 
 More info on [smartmontools wiki](http://www.smartmontools.org/wiki/Powermode).
 
+On some devices the -n does not work. You get the following error message in syslog:
+
+ `journalctl -u smartd` 
+```
+CHECK POWER MODE: incomplete response, ATA output registers missing
+Device: /dev/sdb [SAT], no ATA CHECK POWER STATUS support, ignoring -n Directive
+
+```
+
+As an alternative you can user -i option of smartd. It controls how often smartd spins the disks up to check their status. Default is 30 minutes. To change it create and edit /etc/default/smartmontools.
+
+ `/etc/default/smartmontools`  `SMARTD_ARGS="-i 21600"  Check status every 21600 seconds (3 hours)` 
+
+Mori info on [smartd manpage](http://www.smartmontools.org/browser/trunk/smartmontools/smartd.8.in)
+
 #### Schedule self-tests
 
 smartd can tell disks to perform self-tests on a schedule. The following `/etc/smartd.conf` configuration will start a short self-test every day between 2-3am, and an extended self test weekly on Saturdays between 3-4am:

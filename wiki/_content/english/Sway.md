@@ -125,7 +125,7 @@ swaymsg -t get_inputs
 
 ### Custom keybindings
 
-Special keys on your keyboard can be used to execute commands, for example to control your volume or your monitor brightness:
+[Special keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") on your keyboard can be used to execute commands, for example to control your volume or your monitor brightness:
 
  `~/.config/sway/config` 
 ```

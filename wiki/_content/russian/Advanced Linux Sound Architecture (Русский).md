@@ -1,6 +1,6 @@
 [Advanced Linux Sound Architecture](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture "wikipedia:Advanced Linux Sound Architecture") (**ALSA**) это компонент ядра Linux, что заменил оригинальную Open Sound System (OSSv3) в обеспечении драверов для звуковых карт. В отличие от драйверов звуковых карт, **ALSA** также содержит пользовательские библиотеки для разработчиков приложений, которые хотят использовать возможности драйвера для высокоуровневых API, что напрямую связаны с драйверами ядра.
 
-**Обратите внимание:** Для альтернативного звукового окружения, обратитесь к статье [Open Sound System](/index.php/Open_Sound_System "Open Sound System").
+**Примечание:** Для альтернативного звукового окружения, обратитесь к статье [Open Sound System](/index.php/Open_Sound_System "Open Sound System").
 
 Этот документ описывает процесс **настройки ALSA**, в частности, для ядра версии 2.6.
 
@@ -73,7 +73,7 @@ ALSA включена в стандартную сборку ядра Arch Linux
 
 Загрузите [модули ядра](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel modules (Русский)") `snd_seq_oss`, `snd_pcm_oss` и `snd_mixer_oss` для эмуляции OSS.
 
-**Обратите внимание:** Начиная с udev>=171, OSS-модули, по-умолчанию, автоматически не загружаются. При необходимости загрузите вручную: sudo modprobe snd-mixer-oss и добавьте в /etc/rc.conf, в секцию модулей: MODULES=(... snd-mixer-oss). Например, TVtime использует snd-mixer-oss для программного управления звуком
+**Примечание:** Начиная с udev>=171, OSS-модули, по-умолчанию, автоматически не загружаются. При необходимости загрузите вручную: sudo modprobe snd-mixer-oss и добавьте в /etc/rc.conf, в секцию модулей: MODULES=(... snd-mixer-oss). Например, TVtime использует snd-mixer-oss для программного управления звуком
 
 У всех alsa программ в качестве зависимости есть alsa-lib.
 
@@ -97,7 +97,7 @@ $ alsamixer
 
 Пролистайте до каналов `Master` и `PCM`при помощи клавиш `←` и `→` и включите звук на них, нажав клавишу `m`. Используйте клавишу `↑` для увеличения звука и достижения уровня в `0` dB (Децибел). Уровень может быть найден в верхнем левом поле, следующим за `Item:`.
 
-**Обратите внимание:** Если уровень выставить более 0 dB может быть слышен хрип из колонок.
+**Примечание:** Если уровень выставить более 0 dB может быть слышен хрип из колонок.
 
 Что бы получить полноценный 5.1 или 7.1 *surround sound* вам скорее всего понадобится включить каналы `Front`, `Surround`, `Center`, `LFE` (сабвуфер) и `Side` (это названия каналов, характерные для Intel HD Audio, они могут отличатся на различных устройствах). Стоит отметить, что это не даёт автоматического разложения на каналы стерео звука (каким является большинство музыки). Что бы задействовать такие возможности, смотрите [Разложение/сведение каналов](#.D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.2F.D1.81.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.B0.D0.BD.D0.B0.D0.BB.D0.BE.D0.B2).
 
@@ -105,7 +105,7 @@ $ alsamixer
 
 Для выхода из *alsamixer*, нажмите `Esc`.
 
-**Обратите внимание:**
+**Примечание:**
 
 *   На некоторых картах нужно заглушить цифровой выход, что бы слышать аналоговый звук. Для Soundblaster Audigy LS заглушите канал, подписанный `IEC958`.
 *   На некоторых машинах, (как Thinkpad T61), есть канал `Speaker`, который должен быть включён и на нём поднят уровень.
@@ -273,7 +273,7 @@ defaults.ctl.!card "SB"; # различные типы значений.
 
 Использование двойных кавычек тут автоматически устанавливает значения данных в "строку (string)", так в примере выше установка defaults.pcm.!card "2" приведёт к результату удерживания последнего устройства по умолчанию, в данном случае карты 0\. Использование двойных кавычек для строк не обязательно, пока не используются спецсимволы,что в идеале никогда не должно произойти. Это может быть недействительным для других назначений.
 
-**Обратите внимание:** С точки зрения настройки, не равнозначна установка связи устройства "default" pcm, поскольку большинство пользователей так же указывают тип адресации тут, что почти тоже самое, но назначение само по себе отличается. Так же defaults.pcm.card упоминается много раз в файлах настройки alsa, обычно как резервное назначение, где различные переменные окружения имеют приоритет.
+**Примечание:** С точки зрения настройки, не равнозначна установка связи устройства "default" pcm, поскольку большинство пользователей так же указывают тип адресации тут, что почти тоже самое, но назначение само по себе отличается. Так же defaults.pcm.card упоминается много раз в файлах настройки alsa, обычно как резервное назначение, где различные переменные окружения имеют приоритет.
 
 #### Гнездование
 
@@ -372,7 +372,7 @@ ALSA_RAWMIDI_CARD # rawmidi.default rawmidi.hw
 ALSA_RAWMIDI_DEVICE # rawmidi.default rawmidi.hw
 ```
 
-**Обратите внимание:** Обратите внимание на тип адресации по умолчанию.
+**Примечание:** Обратите внимание на тип адресации по умолчанию.
 
 #### Другой способ
 
@@ -414,7 +414,7 @@ ctl.!default {
 
 ```
 
-**Обратите внимание:** For the Asus U32U serie it seems that card should be set to 1 for both pcm and ctl.
+**Примечание:** For the Asus U32U serie it seems that card should be set to 1 for both pcm and ctl.
 
 In most cases it is recommended to use sound card names instead of number references, which also solves boot order problem. Therefore the following would be correct for the above example.
 
@@ -448,7 +448,7 @@ ThinkPadEC
 
 ```
 
-**Обратите внимание:** This method could be problematic if your system has several cards of the same (ALSA)name.
+**Примечание:** This method could be problematic if your system has several cards of the same (ALSA)name.
 
 The 'pcm' options affect which card and device will be used for audio playback while the 'ctl' option affects which card is used by control utilities like alsamixer .
 
@@ -463,7 +463,7 @@ If you receive an error regarding your asound configuration, check the [upstream
 
 ### Проверка на правильность загруженных модулей
 
-Вы можете предполагать, что udev правильно определил ваш звук правильно. Проверить это можно, используя командную строку.
+Вы можете предполагать, что udev определил ваш звук правильно. Проверить это можно, используя командную строку.
 
  `$ lsmod | grep '^snd' | column -t` 
 ```
@@ -480,7 +480,7 @@ snd_page_alloc         7017    2  snd_hda_intel,snd_pcm
 
 Если вывод выглядит похожим, ваш звуковой драйвер был успешно автоопределен.
 
-**Обратите внимание:** Начиная с `udev>=171`, модули эмуляции OSS (`snd_seq_oss, snd_pcm_oss, snd_mixer_oss`) не загружаются по умолчанию: [Загрузите их вручную](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Loading "Kernel modules (Русский)") если это требуется.
+**Примечание:** Начиная с `udev>=171`, модули эмуляции OSS (`snd_seq_oss, snd_pcm_oss, snd_mixer_oss`) не загружаются по умолчанию: [Загрузите их вручную](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Loading "Kernel modules (Русский)") если это требуется.
 
 Вы также можете проверить директорию `/dev/snd/` на правильность файлов устройств:
 
@@ -498,7 +498,7 @@ crw-rw----  1 root audio 116,  1 Apr  8 14:17 seq
 crw-rw----  1 root audio 116, 33 Apr  8 14:17 timer
 ```
 
-**Обратите внимание:** Если нужна помощь в IRC или на форуме, пожалуйста отправляйте вывод выше указанных команд, если попросят.
+**Примечание:** Если нужна помощь в IRC или на форуме, пожалуйста отправляйте вывод выше указанных команд, если попросят.
 
 Если вы имеете устройства **controlC0** и **pcmC0D0p** или аналогичные, тогда ваш звуковой модуль был обнаружен и загружен правильно.
 
@@ -513,7 +513,7 @@ crw-rw----  1 root audio 116, 33 Apr  8 14:17 timer
 
 [S/PDIF](https://en.wikipedia.org/wiki/S/PDIF "wikipedia:S/PDIF") is a digital audio interface often used to connect a computer to a digital amplifier (such as a home theatre with 5.1/7.1 surround sound).
 
-**Обратите внимание:** With some soundcards this disables analog sound output (eg. Audigy2).
+**Примечание:** With some soundcards this disables analog sound output (eg. Audigy2).
 
 Depending on what [shell](/index.php/Shell "Shell") you use, add the following line to your shell's configuration file:
 
@@ -535,7 +535,7 @@ $ amixer scontrols
 
 Install the [alsaequal](https://aur.archlinux.org/packages/alsaequal/) package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
-**Обратите внимание:** If you have a x86_64-system and are using a 32bit-flashplugin the sound in flash will not work. You have to disable alsaequal or build alsaequal for 32bit.
+**Примечание:** If you have a x86_64-system and are using a 32bit-flashplugin the sound in flash will not work. You have to disable alsaequal or build alsaequal for 32bit.
 
 After installing the package, add the following to your ALSA configuration file:
 
@@ -613,7 +613,7 @@ See the [project page](http://xyne.archlinux.ca/projects/alsaequal-mgr/) and the
 
 #### Using mbeq
 
-**Обратите внимание:** This method requires the use of a [LADSPA](https://en.wikipedia.org/wiki/LADSPA "wikipedia:LADSPA") plugin which might be CPU intensive during playback. In addition, this was made with stereophonic sound (e.g. headphones) in mind.
+**Примечание:** This method requires the use of a [LADSPA](https://en.wikipedia.org/wiki/LADSPA "wikipedia:LADSPA") plugin which might be CPU intensive during playback. In addition, this was made with stereophonic sound (e.g. headphones) in mind.
 
 Install the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins), [ladspa](https://www.archlinux.org/packages/?name=ladspa) and [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins) packages if you do not already have them.
 
@@ -748,7 +748,7 @@ crw-rw----  1 root audio 116, 33 Apr  8 14:17 timer
 
 ```
 
-**Обратите внимание:** на некоторых карточках (как минимум, на Soundblaster Audigy LS) требуется отключить или заглушить цифровой выход, чтобы слушать аналоговый звук.
+**Примечание:** на некоторых карточках (как минимум, на Soundblaster Audigy LS) требуется отключить или заглушить цифровой выход, чтобы слушать аналоговый звук.
 
 ### Настройка прав
 
@@ -836,9 +836,9 @@ defaults.pcm.rate_converter "speexrate_medium"
 
 ```
 
-**Обратите внимание:** Так же возможно использовать конвертер [libsamplerate](https://www.archlinux.org/packages/?name=libsamplerate), который в два раза медленее конвертеров *speexrate*, но даёт небольшой прирост в качестве. Смотрите [обсуждение](/index.php/Talk:Advanced_Linux_Sound_Architecture#On_high_quality_resampling "Talk:Advanced Linux Sound Architecture").
+**Примечание:** Так же возможно использовать конвертер [libsamplerate](https://www.archlinux.org/packages/?name=libsamplerate), который в два раза медленее конвертеров *speexrate*, но даёт небольшой прирост в качестве. Смотрите [обсуждение](/index.php/Talk:Advanced_Linux_Sound_Architecture#On_high_quality_resampling "Talk:Advanced Linux Sound Architecture").
 
-**Обратите внимание:** Некоторые приложения (как MPlayer и его ответвления) настроены по умолчанию на собственную передискретизацию. Поскольку некоторые драйвера ALSA неправильно сообщают задержки, когда передискретизация включена (что ведет к рассинхронизации AV), изменение данных настроек не возымеет эффекта, пока вы не настроете их использовать передискретизацию от ALSA.
+**Примечание:** Некоторые приложения (как MPlayer и его ответвления) настроены по умолчанию на собственную передискретизацию. Поскольку некоторые драйвера ALSA неправильно сообщают задержки, когда передискретизация включена (что ведет к рассинхронизации AV), изменение данных настроек не возымеет эффекта, пока вы не настроете их использовать передискретизацию от ALSA.
 
 ## Разложение/сведение каналов
 
@@ -902,7 +902,7 @@ pcm.!surround40 {
 }
 ```
 
-**Обратите внимание:** Этого может быть не достаточно для работы сведения каналов, смотри [баг](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=541786). Так что, вам может потребоваться добавить `pcm.!default "plug:surround51"` или `pcm.!default "plug:surround40"`. Только одно подключение `vdownmix` может быть использовано; если у вас 7.1-канальная система, вам потребуется использовать `surround71` вместо настроек, указанных выше. Хороший пример, показывающий работающие настройки для `vdownmix` и `dmix`, может быть найден [тут](https://bbs.archlinux.org/viewtopic.php?id=167275).
+**Примечание:** Этого может быть не достаточно для работы сведения каналов, смотри [баг](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=541786). Так что, вам может потребоваться добавить `pcm.!default "plug:surround51"` или `pcm.!default "plug:surround40"`. Только одно подключение `vdownmix` может быть использовано; если у вас 7.1-канальная система, вам потребуется использовать `surround71` вместо настроек, указанных выше. Хороший пример, показывающий работающие настройки для `vdownmix` и `dmix`, может быть найден [тут](https://bbs.archlinux.org/viewtopic.php?id=167275).
 
 Пример конфига взятого [отсюда](https://bbs.archlinux.org/viewtopic.php?id=167275), но с включенным сведением и поддержкой внутрисистемного микшера alsaequal.
 

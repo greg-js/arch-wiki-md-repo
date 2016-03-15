@@ -4,6 +4,8 @@
 
 ***systemd** 是 Linux 下的一款系统和服务管理器，兼容 SysV 和 LSB 的启动脚本。systemd 的特性有：支持并行化任务；同时采用 socket 式与 [D-Bus](/index.php/D-Bus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "D-Bus (简体中文)") 总线式激活服务；按需启动守护进程（daemon）；利用 Linux 的 [cgroups](/index.php/Cgroups "Cgroups") 监视进程；支持快照和系统恢复；维护挂载点和自动挂载点；各服务间基于依赖关系进行精密控制。*
 
+**Note:** [Arch Linux 论坛的这篇帖子](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530) 详细的解释了 Arch Linux 迁移到 systemd 的原因.
+
 ## Contents
 
 *   [1 systemd 基本工具](#systemd_.E5.9F.BA.E6.9C.AC.E5.B7.A5.E5.85.B7)
@@ -26,7 +28,10 @@
     *   [6.1 过滤输出](#.E8.BF.87.E6.BB.A4.E8.BE.93.E5.87.BA)
     *   [6.2 日志大小限制](#.E6.97.A5.E5.BF.97.E5.A4.A7.E5.B0.8F.E9.99.90.E5.88.B6)
     *   [6.3 配合 syslog 使用](#.E9.85.8D.E5.90.88_syslog_.E4.BD.BF.E7.94.A8)
-    *   [6.4 Forward journald to /dev/tty12](#Forward_journald_to_.2Fdev.2Ftty12)
+    *   [6.4 手动清理日志](#.E6.89.8B.E5.8A.A8.E6.B8.85.E7.90.86.E6.97.A5.E5.BF.97)
+    *   [6.5 Journald in conjunction with syslog](#Journald_in_conjunction_with_syslog)
+    *   [6.6 转发 journald 到 /dev/tty12](#.E8.BD.AC.E5.8F.91_journald_.E5.88.B0_.2Fdev.2Ftty12)
+    *   [6.7 查看特定位置的日志](#.E6.9F.A5.E7.9C.8B.E7.89.B9.E5.AE.9A.E4.BD.8D.E7.BD.AE.E7.9A.84.E6.97.A5.E5.BF.97)
 *   [7 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [7.1 Investigating systemd errors](#Investigating_systemd_errors)
     *   [7.2 诊断启动问题](#.E8.AF.8A.E6.96.AD.E5.90.AF.E5.8A.A8.E9.97.AE.E9.A2.98)
@@ -38,6 +43,8 @@
         *   [7.7.1 cgroup : option or name mismatch, new: 0x0 "", old: 0x4 "systemd"](#cgroup_:_option_or_name_mismatch.2C_new:_0x0_.22.22.2C_old:_0x4_.22systemd.22)
         *   [7.7.2 watchdog watchdog0: watchdog did not stop!](#watchdog_watchdog0:_watchdog_did_not_stop.21)
     *   [7.8 Boot time increasing over time](#Boot_time_increasing_over_time)
+    *   [7.9 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
+    *   [7.10 systemctl enable fails for symlinks in /etc/systemd/system](#systemctl_enable_fails_for_symlinks_in_.2Fetc.2Fsystemd.2Fsystem)
 *   [8 相关资源](#.E7.9B.B8.E5.85.B3.E8.B5.84.E6.BA.90)
 
 ## systemd 基本工具
@@ -423,13 +430,13 @@ systemd 提供了自己日志系统（logging system），称为 journal. 使用
 *   `journalctl -b -1` 显示上次启动的信息
 *   `journalctl -b -2` 显示上上次启动的信息 `journalctl -b -2`
 
-*   Show all messages from date (and optional time): `# journalctl --since="2012-10-30 18:17:16"` 
-*   Show all messages since 20 minutes ago: `# journalctl --since "20 min ago"` 
+*   显示从某个日期 ( 或时间 ) 开始的消息: `# journalctl --since="2012-10-30 18:17:16"` 
+*   显示从某个时间 ( 例如 20分钟前 ) 的消息: `# journalctl --since "20 min ago"` 
 *   显示最新信息 `# journalctl -f` 
 *   显示特定程序的所有消息: `# journalctl /usr/lib/systemd/systemd` 
 *   显示特定进程的所有消息: `# journalctl _PID=1` 
 *   显示指定单元的所有消息： `# journalctl -u netcfg` 
-*   Show kernel ring buffer: `# journalctl -k` 
+*   显示内核环缓存消息r: `# journalctl -k` 
 *   Show auth.log equivalent by filtering on syslog facility: `# journalctl -f -l SYSLOG_FACILITY=10` 
 
 详情参阅`man journalctl`、`man systemd.journal-fields`，以及 Lennert 的这篇[博文](http://0pointer.de/blog/projects/journalctl.html)。
@@ -449,9 +456,9 @@ SystemMaxUse=50M
 
 systemd 提供了 socket `/run/systemd/journal/syslog`，以兼容传统日志服务。所有系统信息都会被传入。要使传统日志服务工作，需要让服务链接该 socket，而非 `/dev/log`（[官方说明](http://lwn.net/Articles/474968/)）。Arch 软件仓库中的 [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng) 已经包含了需要的配置。
 
-As of *systemd* 216 the default `journald.conf` for forwarding to the socket is `no`. This means you will need to set the option `ForwardToSyslog=yes` in `/etc/systemd/journald.conf` to actually use *syslog-ng* with *journald*. See [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") for details.
+*systemd* 216 开始,`journald.conf` 使用 `no` 转发socket . 为了使 *syslog-ng* 配合 *journald* , 你需要在 `/etc/systemd/journald.conf` 中设置 `ForwardToSyslog=yes` . 参阅 [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") 了解更多细节.
 
-If you use [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) instead, it is not necessary to change the option because [rsyslog](/index.php/Rsyslog "Rsyslog") pulls the messages from the journal by [itself](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
+如果你选择使用 [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) , 因为 [rsyslog](/index.php/Rsyslog "Rsyslog") 从日志中 [直接](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald) 传出消息,所以不再必要改变那个选项..
 
 设置开机启动 syslog-ng：
 
@@ -462,21 +469,47 @@ If you use [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) instead, 
 
 [这里](http://0pointer.de/blog/projects/)有一份很不错的 `journalctl` 指南。
 
-### Forward journald to /dev/tty12
+### 手动清理日志
 
-In `/etc/systemd/journald.conf` enable the following:
+`/var/log/journal` 存放着日志, `rm` 应该能工作. 或者使用`journalctl`,
 
+例如:
+
+*   清理日志使总大小小于 100M: `# journalctl --vacuum-size=100M` 
+*   清理最早两周前的日志. `# journalctl --vacuum-time=2weeks` 
+
+参阅 `man journalctl` 获得更多信息.
+
+### Journald in conjunction with syslog
+
+Compatibility with a classic, non-journald aware [syslog](/index.php/Syslog-ng "Syslog-ng") implementation can be provided by letting *systemd* forward all messages via the socket `/run/systemd/journal/syslog`. To make the syslog daemon work with the journal, it has to bind to this socket instead of `/dev/log` ([official announcement](http://lwn.net/Articles/474968/)).
+
+As of *systemd* 216 the default `journald.conf` for forwarding to the socket was changed to `ForwardToSyslog=no` to avoid system overhead, because [rsyslog](/index.php/Rsyslog "Rsyslog") or [syslog-ng](/index.php/Syslog-ng "Syslog-ng") (since 3.6) pull the messages from the journal by [itself](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
+
+See [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") and [Syslog-ng#syslog-ng and systemd journal](/index.php/Syslog-ng#syslog-ng_and_systemd_journal "Syslog-ng"), or [rsyslog](/index.php/Rsyslog "Rsyslog") respectively, for details on configuration.
+
+### 转发 journald 到 /dev/tty12
+
+建立一个 [drop-in directory](#Editing_provided_units) `/etc/systemd/journald.conf.d` 然后在其中建立 `fw-tty12.conf` :
+
+ `/etc/systemd/journald.conf.d/fw-tty12.conf` 
 ```
+[Journal]
 ForwardToConsole=yes
 TTYPath=/dev/tty12
 MaxLevelConsole=info
-
 ```
 
-Restart journald with:
+然后重新启动 systemd-journald.
+
+### 查看特定位置的日志
+
+有时你希望查看另一个系统上的日志.例如从 Live 环境修复现存的系统.
+
+这种情况下你可以挂载目标系统 ( 例如挂载到 `/mnt` ),然后用 `-D`/`--directory` 参数指定目录,像这样:
 
 ```
-# systemctl restart systemd-journald
+$ journalctl -D */mnt*/var/log/journal -xe
 
 ```
 
@@ -637,6 +670,28 @@ See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1372562#p1372562) 
 After using `systemd-analyze` a number of users have noticed that their boot time has increased significantly in comparison with what it used to be. After using `systemd-analyze blame` [NetworkManager](/index.php/NetworkManager "NetworkManager") is being reported as taking an unusually large amount of time to start.
 
 The problem for some users has been due to `/var/log/journal` becoming too large. This may have other impacts on performance, such as for `systemctl status` or `journalctl`. As such the solution is to remove every file within the folder (ideally making a backup of it somewhere, at least temporarily) and then setting a journal file size limit as described in [#Journal size limit](#Journal_size_limit).
+
+### systemd-tmpfiles-setup.service fails to start at boot
+
+Starting with systemd 219, `/usr/lib/tmpfiles.d/systemd.conf` specifies ACL attributes for directories under `/var/log/journal` and, therefore, requires ACL support to be enabled for the filesystem the journal resides on.
+
+See [Access Control Lists#Enabling ACL](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") for instructions on how to enable ACL on the filesystem that houses `/var/log/journal`.
+
+### systemctl enable fails for symlinks in /etc/systemd/system
+
+If `/etc/systemd/system/*foo*.service` is a symlink and `systemctl enable *foo*.service` is run, it will fail with this error:
+
+```
+Failed to issue method call: No such file or directory
+
+```
+
+This is a [design choice](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14) of systemd. As a workaround, enabling by absolute path works:
+
+```
+# systemctl enable */absolute/path/foo*.service
+
+```
 
 ## 相关资源
 

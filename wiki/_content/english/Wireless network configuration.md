@@ -889,9 +889,7 @@ If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps
 
 Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[4]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[5]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
-In case this does not work for you, you may try disabling power saving for your wireless adapter. For a permanent solution, add a new udev rule:
-
- `/etc/udev/rules.d/80-iwlwifi.rules`  `ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="*your_mac_address*", RUN+="/usr/bin/iw dev %k set power_save off"` 
+In case this does not work for you, you may try disabling [power saving](/index.php/Power_saving#Network_interfaces "Power saving") for your wireless adapter.
 
 [Some](http://ubuntuforums.org/showthread.php?t=2183486&p=12845473#post12845473) have never gotten this to work. [Others](http://ubuntuforums.org/showthread.php?t=2205733&p=12935783#post12935783) found salvation by disabling N in their router settings after trying everything. This is known to have be the only solution on more than one occasion. The second link there mentions a 5ghz option that might be worth exploring.
 

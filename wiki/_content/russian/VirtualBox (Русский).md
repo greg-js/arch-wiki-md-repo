@@ -96,7 +96,12 @@
 
 ### Установка базовых пакетов
 
-Сначала установите пакет [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) из [официального репозитория](/index.php/Official_Repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official Repositories (Русский)"), содержащий набор VirtualBox с SDL и инструменты для работы через консоль. Пакет [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) устанавливается с модулем [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) в качестве необходимой зависимости.
+Установите пакет [virtualbox](https://www.archlinux.org/packages/?name=virtualbox). [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) будет установлен в качестве необходимой зависимости. Также необходимо установить пакеты с заголовками для установленных ядер [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html):
+
+*   [linux](https://www.archlinux.org/packages/?name=linux) kernel: [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)
+*   [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel: [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)
+*   [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel: [linux-zen-headers](https://www.archlinux.org/packages/?name=linux-zen-headers)
+*   [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) kernel: [linux-grsec-headers](https://www.archlinux.org/packages/?name=linux-grsec-headers)
 
 Вы можете установить [qt4](https://www.archlinux.org/packages/?name=qt4) в качестве опциональной зависимости для использования графического интерфейса, который базируется на [Qt](/index.php/Qt "Qt"). Это не обязательно, если вы хотите использовать VirtualBox только через консоль. [Смотрите ниже, чтобы узнать различия](#.D0.9F.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2_.D1.84.D1.80.D0.BE.D0.BD.D1.82-.D1.8D.D0.BD.D0.B4.D0.B5).
 
@@ -1240,7 +1245,7 @@ options snd-intel8x0 ac97_clock=48000
 
 ### Гостевая ОС зависает после запуска Xorg
 
-Неисправные или отсутствующие драйверы могут привести к остановке после запуска Xorg, см., например, [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) и [[2]](https://bbs.archlinux.org/viewtopic.PHP?ID=156079). Попробуйте отключить 3D-ускорение в *Настройки> Дисплей*, и проверьте, все ли драйверы [Xorg](/index.php/Xorg "Xorg") установлены.
+Неисправные или отсутствующие драйверы могут привести к остановке после запуска Xorg, см., например, [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) и [[3]](https://bbs.archlinux.org/viewtopic.PHP?ID=156079). Попробуйте отключить 3D-ускорение в *Настройки> Дисплей*, и проверьте, все ли драйверы [Xorg](/index.php/Xorg "Xorg") установлены.
 
 ### Исчезновение пунктов меню и ошибка "NS_ERROR_FAILURE"
 

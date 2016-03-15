@@ -989,7 +989,7 @@ El abecedario del inglés está formado por veintiseis letras. Las tablas de aba
 | `**poll:**` | sondeo |
 | `**poll (v):**` | sondear, consultar |
 | `**polling:**` | sondeo |
-| `**pool:**` | banco, grupo |
+| `**pool:**` | banco, grupo. Voz inglesa usada con cierta frecuencia en español con los sentidos de ‘asociación de personas o entidades que operan en un mismo sector para cooperar en beneficio mutuo’(...). Se recomienda sustituirlo por equivalentes españoles como consorcio, agrupación, cooperativa, grupo o equipo, según convenga. (Diccionario panhispánico de dudas) |
 | `**pop-up:**` | ventana emergente |
 | `**pop-up (v):**` | emerger |
 | `**popup menu:**` | menú emergente |

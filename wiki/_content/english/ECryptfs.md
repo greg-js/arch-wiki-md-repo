@@ -2,8 +2,6 @@ This article describes basic usage of [eCryptfs](https://launchpad.net/ecryptfs)
 
 In implementation eCryptfs differs from [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), which provides a *block device encryption layer*, while eCryptfs is an actual file-system – a [stacked cryptographic file system](https://en.wikipedia.org/wiki/Cryptographic_filesystems "wikipedia:Cryptographic filesystems"). For comparison of the two you can refer to [this table](http://ksouedu.com/doc/ecryptfs-utils/ecryptfs-faq.html#compare) and the [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption"). One distinguished feature is that the encryption is stacked on an existing filesystem; eCryptfs can be mounted onto any single existing directory and does not require a separate partition (or size pre-allocation).
 
-**Note:** The article is in the process of being re-structured. If you need to find information that might not be in its place yet again, the revision before the restructuring is [here](https://wiki.archlinux.org/index.php?title=ECryptfs&oldid=291214).
-
 ## Contents
 
 *   [1 Basics](#Basics)

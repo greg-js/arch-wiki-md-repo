@@ -94,6 +94,8 @@ $ git bisect good
 
 Then do as described at the beginning of this section again and repeat until git bisect names the troublesome commit.
 
+**Warning:** You MAY need to run a make clean after issuing the git bisect command.
+
 **Note:** It will actually count down the number of steps all the way down to zero, so it is important not to stop until it actually names the first bad commit.
 
 ## Speeding up builds

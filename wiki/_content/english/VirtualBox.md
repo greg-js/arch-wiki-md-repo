@@ -109,8 +109,6 @@ In order to launch VirtualBox virtual machines on your Arch Linux box, follow th
 
 You can also install the [qt4](https://www.archlinux.org/packages/?name=qt4) optional dependency in order to use the graphical interface which is based on [Qt](/index.php/Qt "Qt"). This is not required if you intend to use VirtualBox in command-line only. [See below to learn the differences](#Use_the_right_front-end).
 
-**Note:** if you do not have the header package installed, dkms will silently do nothing after a kernel upgrade, and you will be left wondering where your Virtualbox kernel modules are. Fortunately, installing the header package after the fact will automatically trigger a dkms run.
-
 ### Install the VirtualBox kernel modules
 
 Next, to fully virtualize your guest installation, VirtualBox provides the following [kernel modules](/index.php/Kernel_modules "Kernel modules"): `vboxdrv`, `vboxnetadp`, `vboxnetflt`, and `vboxpci`. These must be added to your host kernel.
@@ -140,7 +138,11 @@ To automatically recompile the VirtualBox kernel modules when their sources get 
 
 ### Load the VirtualBox kernel modules
 
-Among the [kernel modules](/index.php/Kernel_modules "Kernel modules") VirtualBox uses, there is a mandatory module named `vboxdrv`, which must be loaded before any virtual machines can run. It can be automatically loaded when Arch Linux starts up, or it can be loaded manually when necessary.
+Since version 5.0.16, [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) and [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) use **systemd-modules-load** service to load their modules at boot time.
+
+**Note:** If you don't want the VirtualBox modules to be loaded at boot time, you have to use the classic systemd logic to mask modules by putting an empty files (or symlink to `/dev/null`) in `/etc/modules-load.d`
+
+Among the [kernel modules](/index.php/Kernel_modules "Kernel modules") VirtualBox uses, there is a mandatory module named `vboxdrv`, which must be loaded before any virtual machines can run.
 
 To load the module manually:
 
@@ -148,10 +150,6 @@ To load the module manually:
 # modprobe vboxdrv
 
 ```
-
-To load the VirtualBox module at boot time, refer to [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") and create a `*.conf` file (e.g. `virtualbox.conf`) in `/etc/modules-load.d/` with the line:
-
- `/etc/modules-load.d/virtualbox.conf`  `vboxdrv` 
 
 The following modules are optional but are recommended if you do not want to be bothered in some advanced configurations (precised here after): `vboxnetadp`, `vboxnetflt` and `vboxpci`.
 

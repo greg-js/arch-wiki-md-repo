@@ -102,7 +102,7 @@ The `-o` switch can also be used to save the private key in the new OpenSSH form
 
 OpenSSH supports several key exchange algorithms which can be divided in two groups depending on the mathematical properties they exploit:
 
-1.  [DSA](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm "wikipedia:Digital Signature Algorithm") and [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem) "wikipedia:RSA (cryptosystem)"), which rely on the [practical difficulty](https://en.wikipedia.org/wiki/Integer_factorization#Difficulty_and_complexity) of factoring the product of two large prime numbers,
+1.  [DSA](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm "wikipedia:Digital Signature Algorithm") and [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem) "wikipedia:RSA (cryptosystem)"), which rely on the [practical difficulty](https://en.wikipedia.org/wiki/Integer_factorization#Difficulty_and_complexity "wikipedia:Integer factorization") of factoring the product of two large prime numbers,
 2.  [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "wikipedia:Elliptic Curve Digital Signature Algorithm") and [Ed25519](https://en.wikipedia.org/wiki/Curve25519 "wikipedia:Curve25519"), which rely on the elliptic curve [discrete logarithm](https://en.wikipedia.org/wiki/Discrete_logarithm "wikipedia:Discrete logarithm") problem. ([example](https://www.certicom.com/index.php/52-the-elliptic-curve-discrete-logarithm-problem))
 
 [Elliptic curve cryptography](https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/) (ECC) algorithms are a [more recent addition](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography#History "wikipedia:Elliptic curve cryptography") to public key cryptosystems. One of their main advantages is their ability to provide [the same level of security with smaller keys](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography#Rationale "wikipedia:Elliptic curve cryptography"), which makes for less computationally intensive operations (*i.e.* faster key creation, encryption and decryption) and reduced storage and transmission requirements.
@@ -111,9 +111,10 @@ OpenSSH 7.0 [deprecated and disabled support for DSA keys](https://www.archlinux
 
 [#RSA](#RSA) keys will give you the greatest portability, while [#Ed25519](#Ed25519) will give you the best security but requires recent versions of client & server[[3]](https://www.gentoo.org/support/news-items/2015-08-13-openssh-weak-keys.html). [#ECDSA](#ECDSA) is likely more compatible than Ed25519 (though still less than RSA), but suspicions exist about its security (see below).
 
-**Note:** [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") does not handle ECDSA[[4]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[5]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. Users will have to turn to other [SSH agents](#SSH_agents) or stick to RSA keys.
+**Note:**
 
-**Note:** These keys are used only to authenticate you; choosing stronger keys will not increase CPU load when transferring data over SSH.
+*   As of July 10, 2015, [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") does not handle ECDSA[[4]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[5]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. Users will have to turn to other [SSH agents](#SSH_agents) or stick to RSA keys.
+*   These keys are used only to authenticate you; choosing stronger keys will not increase CPU load when transferring data over SSH.
 
 #### RSA
 
@@ -463,8 +464,7 @@ If the key is `~/.ssh/id_rsa`, `~/.ssh/id_dsa`, `~/.ssh/id_ecdsa`, or `~/.ssh/id
 
 If you have long passphrases for your SSH keys, remembering them can be a pain. So let us tell kwallet to store them! Along with [envoy](https://www.archlinux.org/packages/?name=envoy), install [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) and [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) from the [official repositories](/index.php/Official_repositories "Official repositories"). Next, enable the envoy socket in systemd (see above).
 
-**Note:**
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
+**Note:** As of April 30, 2015, if after installation [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) keeps asking for access to your wallet even after having submitted the password, you might have [this](https://bbs.archlinux.org/viewtopic.php?id=192862) problem. The proposed solution is to install [ksshaskpass4](https://aur.archlinux.org/packages/ksshaskpass4/), though this might break your login.
 
 First, you will add this script to `~/.kde4/Autostart/ssh-agent.sh`:
 

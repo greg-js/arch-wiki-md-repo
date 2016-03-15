@@ -5,22 +5,14 @@ The Oculus Rift is a virtual reality head-mounted display developed by [Oculus V
 *   [1 Basic Setup](#Basic_Setup)
     *   [1.1 Hardware](#Hardware)
     *   [1.2 SDK](#SDK)
-        *   [1.2.1 Package](#Package)
-        *   [1.2.2 From official source](#From_official_source)
     *   [1.3 Video Mode](#Video_Mode)
         *   [1.3.1 xrandrift](#xrandrift)
         *   [1.3.2 Manually, using xrandr](#Manually.2C_using_xrandr)
 *   [2 Working applications](#Working_applications)
-    *   [2.1 Dolphin VR (Gamecube Emulator)](#Dolphin_VR_.28Gamecube_Emulator.29)
-    *   [2.2 Oculus-wine-wrapper](#Oculus-wine-wrapper)
-    *   [2.3 Unity games (in wine)](#Unity_games_.28in_wine.29)
-    *   [2.4 Minecrift (Minecraft VR)](#Minecrift_.28Minecraft_VR.29)
-    *   [2.5 JanusVR](#JanusVR)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Kernel log spamming by DK2 camera](#Kernel_log_spamming_by_DK2_camera)
     *   [3.2 Camera misbehaving after suspend/resume](#Camera_misbehaving_after_suspend.2Fresume)
     *   [3.3 Inaccurate latency readings for legacy applications](#Inaccurate_latency_readings_for_legacy_applications)
-    *   [3.4 OpenVR/SteamVR not working](#OpenVR.2FSteamVR_not_working)
 
 ## Basic Setup
 
@@ -32,25 +24,9 @@ You also need to be in the `input` and `video` groups to have full permission, `
 
 ### SDK
 
-#### Package
-
 The official Oculus Rift SDK is available on the AUR as [oculus-rift-sdk](https://aur.archlinux.org/packages/oculus-rift-sdk/), or a modified version with CMake build support and other features is available as [oculus-rift-sdk-jherico-git](https://aur.archlinux.org/packages/oculus-rift-sdk-jherico-git/).
 
 This package will set up the `oculusd` daemon to run when you start an X session, so it should be running in the background after you've installed it and restarted X (or started it manually).
-
-#### From official source
-
-The SDK is available through the [Oculus VR Developer Center](https://developer.oculusvr.com/) after free registration.
-
-Run a sanity check by compiling the SDK and running the WorldDemo:
-
-```
-$ tar zxvf ovr_sdk_linux_4.0.3.tar.gz
-$ cd OculusSDK
-$ make
-$ ./Samples/OculusWorldDemo/Release/OculusWorldDemo_x86_64_Release
-
-```
 
 ### Video Mode
 
@@ -112,42 +88,7 @@ The above video modes can have some havoc on your display if you simply use xran
 
 ## Working applications
 
-Currently there are a handful of apps which work well on the Rift and Linux, with several of them being in the AUR.
-
-### Dolphin VR (Gamecube Emulator)
-
-[dolphin-emu-vr-git](https://aur.archlinux.org/packages/dolphin-emu-vr-git/) is an emulator for Gamecube, with patches to allow it to have full headtracking stereoscopic rendering, as well as a number of customizations to make games work well out of the box in VR (for example, disabling culling functions to let you view the entire world).
-
-**Note:** This application works correctly with Portrait (Direct) Mode, and should be run with the Rift un-rotated.
-
-### Oculus-wine-wrapper
-
-[oculus-wine-wrapper-git](https://aur.archlinux.org/packages/oculus-wine-wrapper-git/) is a utility to patch up the differences between the Linux and Windows versions of the SDK when running Wine. It creates a shared memory context for the Wine application to use, letting the app access the native Oculus SDK. No installation of the SDK to the wineprefix appears to be neccesary.
-
-### Unity games (in wine)
-
-To get the best performance in Unity based games, ideally you should force them into OpenGL mode with the `-force-opengl`. However this is not currently possible with an unpatched wine, as the WGL context it tries to force has some differences from a typical GLX context, [as described here](http://wiki.unity3d.com/index.php/Running_Unity_on_Linux_through_Wine#.22-force-opengl.22_option_crashing_Unity_.28Experimental_fix.29). Using the [wine-unity3d-git](https://aur.archlinux.org/packages/wine-unity3d-git/) package will allow you to run these games with native OpenGL, wrapped in the oculus-wine-wrapper layer, allowing you to play them with decent performance on your machine. Unfortunately they often try to change the video mode or mess with other settings, so supplying default screen settings may be neccesary. Additionally, since it's using native OpenGL, nvidia's __GL_THREADED_OPTIMIZATIONS may be Overall, your command should look something like
-
-```
-   env __GL_THREADED_OPTIMIZATIONS=1 oculus-wine-wrapper UnityGame.exe -screen-height 1080 -screen-width 1920 -popupwindow -force-opengl
-
-```
-
-### Minecrift (Minecraft VR)
-
-Though Linux support should be in the main pipeline very soon, the project itself hasn't released an update which includes totally functioning Linux support, although it exists. A guide is available [here](https://www.reddit.com/r/oculus_linux/comments/2shnbk/minecrift_linuxmac_support_coming_soon_steps_to/) to run an existing Minecrift version with the very latest JRift (native java rift runtime) build.
-
-Additionally, many users have reported much better performance with JRE8, rather than JRE7.
-
-**Note:** This application works correctly with Portrait (Direct) Mode, and should be run with the Rift un-rotated. Unfortunately, as of 5/12/15 the ingame GUI will display as an elongated 9:16 rectangle, as opposed to staying at the screen ratio. This is usable but not ideal.
-
-### JanusVR
-
-"janusVR: an immersive, collaborative, multi-dimensional internet." JanusVR is an application that lets you explore 3D websites in a multiplayer experience. An AUR package is available: [janus-vr-browser-bin](https://aur.archlinux.org/packages/janus-vr-browser-bin/)
-
-The AUR package does not automatically update when JanusVR does, but the application will tell you when a new version is available. Simply re-build the package when this happens.
-
-**Note:** This application works correctly with Portrait (Direct) Mode (as of 42.3), and should be run with the Rift un-rotated.
+See [Virtual Reality#Working Applications](/index.php/Virtual_Reality#Working_Applications "Virtual Reality").
 
 ## Troubleshooting
 
@@ -169,7 +110,3 @@ If you try to suspend/resume and then use the Rift, the camera will have issues 
 ### Inaccurate latency readings for legacy applications
 
 For some reason, it seems that using `ovrd > 0.5.0` with applications compiled against 0.4.4 and below gives a latency reading of many millions of milliseconds (most likely a signed/unsigned change). This means timewarp is always clamped at maximum, and gives a 'swimming' view when using legacy applications. There isn't an ideal fix for this yet, although it is possible to install an old version of the SDK and use that instead.
-
-### OpenVR/SteamVR not working
-
-SteamVR/OpenVR create a config directory ~/.openvr that can get misconfigured over the various versions. Delete that directory and completely uninstall/reinstall SteamVR.

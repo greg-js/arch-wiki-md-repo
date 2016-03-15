@@ -17,6 +17,8 @@
 
 Add the [repo-ck](/index.php/Unofficial_user_repositories#repo-ck "Unofficial user repositories") repository to `pacman.conf` and [sign](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key") [Graysky](http://repo-ck.com/)'s key.
 
+**Note:** Recent changes have made the virtualbox modules within the AUR and repo redundant since a hard dependency in virtualbox itself will result in pacman building the modules via a hook. Therefore, the precompiled virtualbox modules have been temporarily removed from the repo until Arch upstream fixes this.
+
 ## Kernels and related packages
 
 **Note:** LTS packages are not included.
@@ -100,7 +102,6 @@ Use the **ck-X** group and select the desired packages for installation. There a
 :: There are 8 members in group ck-generic:
 :: Repository repo-ck
    1) broadcom-wl-ck  2) linux-ck  3) linux-ck-headers  4) nvidia-304xx-ck  5) nvidia-340xx-ck  6) nvidia-ck
-   7) virtualbox-ck-guest-modules  8) virtualbox-ck-host-modules
 
 Enter a selection (default=all):
 ```

@@ -30,7 +30,7 @@ It is highly recommended to update the board BIOS prior to installation. See [of
 
 Intel NUCs support NVMe drives connected to the PCIe M.2 connector. See [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe").
 
-**Note:** In latest BIOS version 0033, M.2 is disabled by default due to a bug.
+**Note:** In latest BIOS version 0033 (and possibly in later versions as well), M.2 is disabled by default due to a bug.
 
 ### Graphics
 

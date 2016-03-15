@@ -23,7 +23,6 @@ For general methods to improve the flexibility of the provided tips or pacman it
     *   [2.6 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
     *   [2.7 Listing changed backup files](#Listing_changed_backup_files)
     *   [2.8 Back-up the pacman database](#Back-up_the_pacman_database)
-        *   [2.8.1 Using systemd](#Using_systemd)
     *   [2.9 Check changelogs easily](#Check_changelogs_easily)
 *   [3 Installation and recovery](#Installation_and_recovery)
     *   [3.1 Installing packages from a CD/DVD or USB stick](#Installing_packages_from_a_CD.2FDVD_or_USB_stick)
@@ -346,7 +345,7 @@ $ tar -cjf pacman_database.tar.bz2 /var/lib/pacman/local
 
 ```
 
-Store the backup pacman database file on one or more offline media, such as a USB stick, external hard drive, or CD-R. See also [Pacman tips#Backing up Local database with systemd](/index.php/Pacman_tips#Backing_up_Local_database_with_systemd "Pacman tips") for an alternative method.
+Store the backup pacman database file on one or more offline media, such as a USB stick, external hard drive, or CD-R.
 
 The database can be restored by moving the `pacman_database.tar.bz2` file into the `/` directory and executing the following command:
 
@@ -357,43 +356,7 @@ The database can be restored by moving the `pacman_database.tar.bz2` file into t
 
 **Note:** If the pacman database files are corrupted, and there is no backup file available, there exists some hope of rebuilding the pacman database. Consult [Pacman tips#Restore pacman's local database](/index.php/Pacman_tips#Restore_pacman.27s_local_database "Pacman tips").
 
-#### Using systemd
-
-[systemd](/index.php/Systemd "Systemd") can take snapshots of the pacman local database, each time it is modified.
-
-**Tip:** For a more configurable version, use: [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/)
-
-Use the following scripts, changing the value of `$pakbak` for the backup location accordingly. The `pakbak.service` can also automaticall be [enabled](/index.php/Enable "Enable") on boot:
-
- `/usr/lib/systemd/scripts/pakbak_script` 
-```
-#!/bin/bash
-
-declare -r pakbak=*"/pakbak.tar.xz"*;  ## set backup location
-tar -cJf "$pakbak" "/var/lib/pacman/local";  ## compress & store pacman local database in $pakbak
-```
- `/usr/lib/systemd/system/pakbak.service` 
-```
-[Unit]
-Description=Back up pacman database
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash /usr/lib/systemd/scripts/pakbak_script
-RemainAfterExit=no
-```
- `/usr/lib/systemd/system/pakbak.path` 
-```
-[Unit]
-Description=Back up pacman database
-
-[Path]
-PathChanged=/var/lib/pacman/local
-Unit=pakbak.service
-
-[Install]
-WantedBy=multi-user.target
-```
+**Tip:** The [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) package provides a script and a [systemd](/index.php/Systemd "Systemd") service to automate the task. Configuration is possible in `/etc/pakbak.conf`.
 
 ### Check changelogs easily
 

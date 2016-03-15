@@ -291,15 +291,15 @@ $ git push origin master
 
 ### Altri tipi di richieste
 
-*   Le richieste di disconoscimento e di rimozione vanno inviate ad Aur General Mailing List dove i TU ed altri utenti decideranno.
-*   **Includere il nome del pacchetto e l'URL alla pagina AUR**, preferibilmente con una nota [1].
-*   Le richieste di disconoscimento saranno concesse due settimane dopo che l'attuale responsabile sia stato contattato via e-mail e non abbia risposto.
-*   **La rinomina pacchetti non è ancora implementata**, così gli utenti devono ripresentare un pacchetto con un nuovo nome e richiedere la rimozione della vecchia versione alla mailing list.
+*   Le richieste di disconoscimento e di rimozione dei pacchetti possono essere create cliccando su "Invia la richiesta" sotto "Azioni del pacchetto", sulla destra. Questo manda automaticamente una email di notifica all'attuale responsabile del pacchetto e alla [aur-requests mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-requests) per discuterne. I [Trusted Users](/index.php/Trusted_Users "Trusted Users") dunque accetteranno o respingeranno la richiesta.
+*   Le richieste di disconoscimento saranno concesse dopo due settimane, se l'attuale responsabile del pacchetto non ha risposto.
+*   E' stata implementata l'**unione dei pacchetti**, gli utenti devono ancora ripresentare un pacchetto con un nuovo nome e possono richiedere l'unione dei commenti e dei voti della vecchia versione.
 *   Le richieste di rimozione necessitano delle seguenti informazioni:
     *   Nome del pacchetto e URL alla pagina AUR.
     *   Motivo della cancellazione, almeno una breve nota
-        **Notice:** Anche se i commenti di un pacchetto sono motivo sufficiente per la cancellazione di un pacchetto. Non appena interviene un TU, l'unico luogo in cui tali informazioni possono essere ottenute è la aur generale mailing list.
+        **Attenzione:** I commenti di un pacchetto non fanno notare in modo sufficiente le ragioni per la cancellazione del pacchetto. Infatti, non appena interviene un TU, l'unico luogo in cui tali informazioni possono essere ottenute è la aur-requests mailing list.
     *   Includere dettagli informativi, ad esempio se il pacchetto è incluso da qualche altra parte, se si è il manutentore, se il pacchetto è rinominato e il proprietario originale è d'accordo, ecc.
+    *   Per le richieste di unione: il nome del pacchetto base con cui unirlo.
 
 Le richieste di rimozione possono essere disapprovate, nel qual caso probabilmente verrà consigliato di abbandonare il pacchetto per riferimento futuro.
 

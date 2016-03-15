@@ -578,7 +578,7 @@ Power key and lid switch events will still be logged to journald by logind. See 
 
 ### Syslinux
 
-Follow Syslinux installation instructions carefully. Try manual installation to see where the problem comes from. If you see [Missing Operation System](/index.php/Syslinux#Missing_operating_system "Syslinux") then it may be because you need to use correct bootloader binary. If syslinux does not work try other bootloader such as GRUB.
+Follow Syslinux installation instructions carefully. Try manual installation to see where the problem comes from. If you see [Missing Operation System](/index.php/Syslinux#Missing_operating_system "Syslinux") then it may be because you need to use correct bootloader binary. If syslinux does not work try another [bootloader](/index.php/Bootloader "Bootloader") such as [GRUB](/index.php/GRUB "GRUB").
 
 ## See also
 

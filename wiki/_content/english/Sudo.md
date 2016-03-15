@@ -375,6 +375,24 @@ admin% screen
 
 The format for entries in these drop-in files is the same as for `/etc/sudoers` itself. To edit them directly, use `visudo -f */path/to/file*`. See the **Including other files from within sudoers** section from `man sudoers` for details.
 
+Be carefull, that the order of entries is still important even that each entry of the following example is in a separate (drop-in) file! E.g.:
+
+```
+%wheel ALL=(ALL) ALL
+%someothergroup ALL=(root) NOPASSWD: /usr/bin/some-command
+
+```
+
+or
+
+```
+%someothergroup ALL=(root) NOPASSWD: /usr/bin/some-command
+%wheel ALL=(ALL) ALL
+
+```
+
+The latter case will not work and sudo will still require a password for some-command. That said, sudo simply concatenates the drop-in files to the end of /etc/sudoers file. The order of the drop-in files is therefore dependent on both filenames and LC_COLLATE setting.
+
 ## Troubleshooting
 
 ### SSH TTY Problems

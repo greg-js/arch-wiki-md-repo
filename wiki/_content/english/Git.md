@@ -369,7 +369,7 @@ $ git push origin master
 
 ```
 
-If the `--set-upstream` option is used, the location is recorded so the next time just a `git push` is necessary.
+If the `-u` (`--set-upstream-to`) option is used, the location is recorded so the next time just a `git push` is necessary.
 
 #### Dealing with merges
 

@@ -1,6 +1,6 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [LightDM](/index.php/LightDM "LightDM"). Дата последней синхронизации: 13 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=LightDM&diff=0&oldid=425490).
 
-[LightDM](http://www.freedesktop.org/wiki/Software/LightDM) это кросс-десктопный [[оконный менеджер]. Главные особенности:
+[LightDM](http://www.freedesktop.org/wiki/Software/LightDM) это кросс-десктопный [Экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер"). Главные особенности:
 
 *   Кросс-десктопный - поддерживает различные технологии рабочего стола.
 *   Поддерживает различные технологии отображения (X, Wayland, Mir, ...).
@@ -21,26 +21,26 @@
 *   [4 Тестирование](#.D0.A2.D0.B5.D1.81.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
 *   [5 Дополнительные настройки и твики](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D0.B8_.D1.82.D0.B2.D0.B8.D0.BA.D0.B8)
     *   [5.1 Изменение фонового изображения/цветов](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.84.D0.BE.D0.BD.D0.BE.D0.B2.D0.BE.D0.B3.D0.BE_.D0.B8.D0.B7.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.2F.D1.86.D0.B2.D0.B5.D1.82.D0.BE.D0.B2)
-        *   [5.1.1 GTK+ greeter](#GTK.2B_greeter)
-        *   [5.1.2 Unity greeter](#Unity_greeter)
-        *   [5.1.3 KDE greeter](#KDE_greeter)
+        *   [5.1.1 Экран преветствия GTK+](#.D0.AD.D0.BA.D1.80.D0.B0.D0.BD_.D0.BF.D1.80.D0.B5.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D0.B8.D1.8F_GTK.2B)
+        *   [5.1.2 Экран приветствия Unity](#.D0.AD.D0.BA.D1.80.D0.B0.D0.BD_.D0.BF.D1.80.D0.B8.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D0.B8.D1.8F_Unity)
+        *   [5.1.3 Экран приветствия KDE](#.D0.AD.D0.BA.D1.80.D0.B0.D0.BD_.D0.BF.D1.80.D0.B8.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D0.B8.D1.8F_KDE)
     *   [5.2 Изменение вашего аватара](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D0.B0.D1.88.D0.B5.D0.B3.D0.BE_.D0.B0.D0.B2.D0.B0.D1.82.D0.B0.D1.80.D0.B0)
     *   [5.3 Внедрение Arch-ориентированных 64x64 иконок](#.D0.92.D0.BD.D0.B5.D0.B4.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_Arch-.D0.BE.D1.80.D0.B8.D0.B5.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_64x64_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BE.D0.BA)
     *   [5.4 Включение автовхода](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D0.B2.D1.82.D0.BE.D0.B2.D1.85.D0.BE.D0.B4.D0.B0)
-    *   [5.5 Включение интерактивного безпарольного входа в систему](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.B0.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B1.D0.B5.D0.B7.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
+    *   [5.5 Включение интерактивного без парольного входа в систему](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.B0.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B1.D0.B5.D0.B7_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
     *   [5.6 Скрытие пользователей служб и системы](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_.D1.81.D0.BB.D1.83.D0.B6.D0.B1_.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
     *   [5.7 Миграция с SLiM](#.D0.9C.D0.B8.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D1.81_SLiM)
     *   [5.8 NumLock включен по умолчанию](#NumLock_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
     *   [5.9 Переключение пользователя при Xfce4](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8_Xfce4)
     *   [5.10 Сессия по умолчанию](#.D0.A1.D0.B5.D1.81.D1.81.D0.B8.D1.8F_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
     *   [5.11 Adjusting the login window's position](#Adjusting_the_login_window.27s_position)
-        *   [5.11.1 GTK+ greeter](#GTK.2B_greeter_2)
+        *   [5.11.1 Экран приветствия GTK+](#.D0.AD.D0.BA.D1.80.D0.B0.D0.BD_.D0.BF.D1.80.D0.B8.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D0.B8.D1.8F_GTK.2B)
 *   [6 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [6.1 Локаль неправильно отображается](#.D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C_.D0.BD.D0.B5.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F)
     *   [6.2 Ресурсы X не корректно распознаны](#.D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81.D1.8B_X_.D0.BD.D0.B5_.D0.BA.D0.BE.D1.80.D1.80.D0.B5.D0.BA.D1.82.D0.BD.D0.BE_.D1.80.D0.B0.D1.81.D0.BF.D0.BE.D0.B7.D0.BD.D0.B0.D0.BD.D1.8B)
-    *   [6.3 Отсутствующие иконки с GTK greeter](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_.D1.81_GTK_greeter)
+    *   [6.3 Отсутствуют иконки в Экране приветствия GTK](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.82_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_.D0.B2_.D0.AD.D0.BA.D1.80.D0.B0.D0.BD.D0.B5_.D0.BF.D1.80.D0.B8.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D0.B8.D1.8F_GTK)
     *   [6.4 LightDM зависает при попытке входа в систему](#LightDM_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.B5.D1.82_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
-    *   [6.5 LightDM отображаетсяв неправильном мониторе](#LightDM_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F.D0.B2_.D0.BD.D0.B5.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B5)
+    *   [6.5 LightDM отображается в неправильном мониторе](#LightDM_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.B2_.D0.BD.D0.B5.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B5)
     *   [6.6 LightDM не отображается](#LightDM_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F)
     *   [6.7 Pulseaudio не запускается автоматически](#Pulseaudio_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8)
 *   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
@@ -108,42 +108,42 @@ $ lightdm --test-mode --debug
 
 ## Дополнительные настройки и твики
 
-Some greeters have their own configuration files. For example, [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) has:
+Некоторые Экраны приветствия имеют свои собственные файлы настроек. Например [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) имеет:
 
 ```
 /etc/lightdm/lightdm-gtk-greeter.conf
 
 ```
 
-and [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter) has:
+и [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter) has:
 
 ```
 /etc/lightdm/lightdm-kde-greeter.conf
 
 ```
 
-as well as a section in KDE's System Settings (recommended).
+а также раздел в системных настройках KDE (рекомендуется).
 
-LightDM can be configured by modifying its configuration script, `/etc/lightdm/lightdm.conf`.
+LightDM может быть настроен путём изменения его скрипта настроек, `/etc/lightdm/lightdm.conf`.
 
 ### Изменение фонового изображения/цветов
 
-Users wishing to have a flat color (no image) may simply set the `background` variable to a hex color.
+Пользователи, желающие иметь плоский цвет (без изображения) могут установить шестнадцатеричное значение `background` цвета.
 
-Example:
+Пример:
 
 ```
 background=#000000
 
 ```
 
-If you want to use an image instead, see below.
+Если вы хотите вместо этого использовать изображение, смотрите ниже.
 
-#### GTK+ greeter
+#### Экран преветствия GTK+
 
-You can use the [lightdm-gtk-greeter-settings](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter-settings) gui.
+Можете воспользоваться программой с графическим интерфейсом [lightdm-gtk-greeter-settings](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter-settings).
 
-Users wishing to customize the wallpaper on the greeter screen need to edit `/etc/lightdm/lightdm-gtk-greeter.conf` and define the `background` variable under the `[greeter]` section. For example:
+Пользователям, желающим настроить обои на экране приветствия необходимо отредактировать `/etc/lightdm/lightdm-gtk-greeter.conf` и определить переменную `background` под секцией `[greeter]`. Например:
 
  `/etc/lightdm/lightdm-gtk-greeter.conf` 
 ```
@@ -151,24 +151,24 @@ Users wishing to customize the wallpaper on the greeter screen need to edit `/et
 background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jpg
 ```
 
-**Note:** It is recommended to place the PNG or JPG file in `/usr/share/pixmaps` since the LightDM user needs read access to the wallpaper file.
+**Примечание:** Рекомендуется поместить PNG или JPG-файл в `/usr/share/pixmaps` т.к. пользователю LightDM нужен доступ на чтение файла обоев рабочего стола.
 
-#### Unity greeter
+#### Экран приветствия Unity
 
-Users using the [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/) must edit the `/usr/share/glib-2.0/schemas/com.canonical.unity-greeter.gschema.xml` file and then execute:
+Пользователи, использующие [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/) должны отредактировать `/usr/share/glib-2.0/schemas/com.canonical.unity-greeter.gschema.xml` файл, а затем выполнить:
 
 ```
 # glib-compile-schemas /usr/share/glib-2.0/schemas/
 
 ```
 
-According to [this](https://bbs.archlinux.org/viewtopic.php?id=149945) page.
+В соответствии с [этой](https://bbs.archlinux.org/viewtopic.php?id=149945) страницей.
 
-#### KDE greeter
+#### Экран приветствия KDE
 
-Go to *System Settings > Login Screen (LightDM)* and change the background image for your theme.
+Зайдите в *System Settings > Login Screen (LightDM)* и измените фоновое изображение для вашей темы.
 
-Alternatively, you can edit the `Background` variable in `lightdm-kde-greeter.conf` :
+Как вариант, можете отредактировать переменную `Background` в `lightdm-kde-greeter.conf` :
 
  `/etc/lightdm/lightdm-kde-greeter.conf` 
 ```
@@ -183,11 +183,11 @@ GreetMessage=Welcome to %hostname%
 
 ### Изменение вашего аватара
 
-**Совет:** If you are using KDE, you can change your avatar in KDE System Settings.
+**Совет:** Если вы используете KDE, вы можете изменить свой аватар в Системных Настройках KDE.
 
-First, make sure the [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) package from the [official repositories](/index.php/Official_repositories "Official repositories") is installed, then set it up as follows, replacing `*username*` with the desired user's login name. The *.png* file extension should not be included in the filename.
+Во-первых, убедитесь, что пакет [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) из [Официальных репозиториев](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории") установлен, затем установите его следующим образом, заменив `*username*` на регистрационное именем нужного пользователя. Расширение файла *.png* не должно быть включено в имя файла.
 
-*   Edit or create the file `/var/lib/AccountsService/users/*username*`, and add the lines
+*   Отредактируйте или создайте файл `/var/lib/AccountsService/users/*username*`, и добавьте строки
 
 ```
 [User]
@@ -195,24 +195,24 @@ Icon=/var/lib/AccountsService/icons/*username*
 
 ```
 
-*   Create the file `/var/lib/AccountsService/icons/*username*` using a 96x96 PNG image file.
+*   Создайте файл `/var/lib/AccountsService/icons/*username*` используя файл изображения 96x96 PNG.
 
-**Примечание:** Make sure that both created files have 644 permissions, use [chmod](/index.php/Chmod "Chmod") to correct them.
+**Примечание:** Убедитесь, что оба созданных файлы имеют права 644, используйте [Chmod](/index.php/Chmod "Chmod"), чтобы исправить права, при необходимости.
 
 ### Внедрение Arch-ориентированных 64x64 иконок
 
-The [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/) package from the [AUR](/index.php/AUR "AUR") contains some nice examples that install to `/usr/share/archlinux/icons` and that can be copied to `/usr/share/icons/hicolor/64x64/devices` as follows:
+Пакет [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/) из [AUR](/index.php/AUR "AUR") содержит некоторые интересные примеры, которые устанавливаются в `/usr/share/archlinux/icons` и которые могут быть скопированы в `/usr/share/icons/hicolor/64x64/devices` следующим образом:
 
 ```
 # find /usr/share/archlinux/icons -name "*64*" -exec cp {} /usr/share/icons/hicolor/64x64/devices \;
 
 ```
 
-After copying, the [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/) package can be removed.
+После копирования, пакет [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/) может быть удалён.
 
 ### Включение автовхода
 
-Edit the LightDM configuration file and ensure these lines are uncommented and correctly configured:
+Отредактируйте файл настроек LightDM, расскомментируйте эти строки и правильно настройте:
 
  `/etc/lightdm/lightdm.conf` 
 ```
@@ -224,7 +224,7 @@ autologin-user-timeout=0
 session-wrapper=/etc/lightdm/Xsession
 ```
 
-LightDM goes through PAM even when `autologin` is enabled. You must be part of the `autologin` group to be able to login automatically without entering your password:
+LightDM проходит через PAM даже когда включен `autologin`. Вы должны быть в группе `autologin` чтобы входить в систему автоматически без вода пароля:
 
 ```
 # groupadd -r autologin
@@ -234,9 +234,9 @@ LightDM goes through PAM even when `autologin` is enabled. You must be part of t
 
 **Примечание:** GNOME users, and by extension any gnome-keyring user will have to set up a blank password to their keyring for it to be unlocked automatically.
 
-### Включение интерактивного безпарольного входа в систему
+### Включение интерактивного без парольного входа в систему
 
-LightDM goes through PAM so you must configure the lightdm configuration of PAM:
+LightDM проходит через PAM, так что вы должны сконфигурировать lightdm настройки PAM:
 
  `/etc/pam.d/lightdm` 
 ```
@@ -246,7 +246,7 @@ auth        include     system-login
 ...
 ```
 
-You must then also be part of the `nopasswdlogin` group to be able to login interactively without entering your password:
+Вы также должны входить в группу `nopasswdlogin` чтобы получить возможность входа в систему в интерактивном режиме без ввода пароля:
 
 ```
 # groupadd -r nopasswdlogin
@@ -254,9 +254,9 @@ You must then also be part of the `nopasswdlogin` group to be able to login inte
 
 ```
 
-**Примечание:** GNOME users, and by extension any gnome-keyring user may have to follow the instructions at the end of the previous section on enabling autologin.
+**Примечание:** Пользователям GNOME, и расширениям любого пользовательского Gnome-брелка, возможно, придётся следовать инструкциям в конце предыдущего раздела о включении автоматического логина.
 
-To create a new user account that logs in automatically and additionally able to login again without a password the user can be created with supplementary membership of both groups, e.g.:
+Для того, чтобы создать новую учетную запись пользователя, которая входит в систему автоматически и дополнительно имеет возможность снова войти в систему без пароля, пользователь может быть создан с помощью дополнительного участия в обеих группах и т.д .:
 
 ```
 # useradd -mG autologin,nopasswdlogin -s /bin/bash *username*
@@ -273,7 +273,7 @@ Move the contents of [xinitrc](/index.php/Xinitrc "Xinitrc") to [xprofile](/inde
 
 ### NumLock включен по умолчанию
 
-Install the [numlockx](https://www.archlinux.org/packages/?name=numlockx) package and the edit `/etc/lightdm/lightdm.conf` adding the following line:
+Установите пакет [numlockx](https://www.archlinux.org/packages/?name=numlockx) и отредактируйте `/etc/lightdm/lightdm.conf` добавив следующие строки:
 
 ```
 greeter-setup-script=/usr/bin/numlockx on
@@ -290,28 +290,28 @@ If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functiona
 
 ```
 
-then user switching in Xfce should work with Lightdm.
+то переключение пользователей в Xfce должно работать с LightDM.
 
-Alternatively, if you use the Whisker Menu, you can go to Properties -> Commands and change the "Switch Users" command directly to:
+В качестве альтернативы, если вы используете меню Whisker, пройдите Properties -> Commands и измените команду "Switch Users" непосредственно на:
 
 ```
  dm-tool switch-to-greeter
 
 ```
 
-You can also switch users from the [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") lock screen - see [XScreenSaver#LightDM](/index.php/XScreenSaver#LightDM "XScreenSaver").
+Кроме того, можно переключать пользователей с экрана блокировки [XScreenSaver](/index.php/XScreenSaver "XScreenSaver"), - смотрите [XScreenSaver#LightDM](/index.php/XScreenSaver#LightDM "XScreenSaver").
 
 ### Сессия по умолчанию
 
-Lightdm, like other DMs, stores the last-selected xsession in `~/.dmrc`. See [Display manager#Session list](/index.php/Display_manager#Session_list "Display manager") for more info.
+Lightdm, как и другие Экранные менеджеры, хранит последнюю выбранную xsession в `~/.dmrc`. Для подробностей смотрите [Экранный менеджер#Список сеансов](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.81.D0.B5.D0.B0.D0.BD.D1.81.D0.BE.D0.B2 "Экранный менеджер").
 
 ### Adjusting the login window's position
 
-#### GTK+ greeter
+#### Экран приветствия GTK+
 
-Users need to edit `/etc/lightdm/lightdm-gtk-greeter.conf` and enter a value for the `position` variable. It accepts `x` and `y` values, either absolute (in pixels) or relative (in percent). Each value can also have an additional anchor location for the window, `start`, `center` and `end` separated from the value by a comma.
+Пользователям нужно отредактировать `/etc/lightdm/lightdm-gtk-greeter.conf` и ввести значение в переменную `position`. Оно принимает значения `x` и `y`, абсолютные (в пикселях) или относительные (в процентах). Каждое значение может иметь дополнительное местоположение для привязки окна, `start`, `center` и `end`. Значения отделяются запятой.
 
-Example:
+Пример:
 
 ```
 position=200,start 50%,center
@@ -333,10 +333,10 @@ This example sets the session "xfce" as default for the user 1000.
 
 ### Локаль неправильно отображается
 
-In case of your locale not being displayed correctly in Lightdm add your locale to `/etc/environment`
+Если ваша локаль не отображается правильно LightDM, добавьте свой языковой стандарт в `/etc/environment`
 
 ```
- LANG=pt_PT.utf8
+ LANG=ru_RU.utf8
 
 ```
 
@@ -358,9 +358,9 @@ xrdb -merge "$file"
 
 Your Xresources will now be pre-processed so that variables are correctly expanded.
 
-### Отсутствующие иконки с GTK greeter
+### Отсутствуют иконки в Экране приветствия GTK
 
-If you're using [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) as a greeter and it shows placeholder images as icons, make sure valid icon themes and themes are installed and configured. Check the following file:
+Если вы используете [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) как Экран приветствия и видите "заполнитель изображений" в виде иконок, убедитесь что действующая тема значков установлена и задействована. Проверьте следующий файл:
 
  `/etc/lightdm/lightdm-gtk-greeter.conf` 
 ```
@@ -373,17 +373,17 @@ icon-theme-name=mate # this should be the name of a fully featured icons set dir
 
 You may find that after entering the correct username and password and attempting to log in, LightDM freezes and you are unable to continue to the desktop. To fix the issue, reinstall the [gdk-pixbuf2](https://www.archlinux.org/packages/?name=gdk-pixbuf2) package. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=179031).
 
-### LightDM отображаетсяв неправильном мониторе
+### LightDM отображается в неправильном мониторе
 
-If you are using multiple monitors, LightDM may display in the wrong one (e.g. if your primary monitor is on the right). To force the LightDM login screen to display on a specific monitor, edit `/etc/lightdm/lightdm.conf` and change the *display-setup-script* parameter like this:
+Если вы используете несколько мониторов, LightDM может отображаться в неправильном (например, если ваш основной монитор находится справа). Чтобы заставить экран LightDM отображаться на конкретном мониторе, отредактируйте `/etc/lightdm/lightdm.conf` и измените *display-setup-script* параметр, например:
 
  `/etc/lightdm/lightdm.conf`  `display-setup-script=xrandr --output *HDMI1* --primary` 
 
-Replace *HDMI1* with your real monitor ID, which you can find from **xrandr** command output.
+Замените *HDMI1* на ваш настоящий ID монитора, который можно найти с помощью результата вывода команды **xrandr**.
 
 ### LightDM не отображается
 
-It may happen that your system boots so fast that LightDM service is started before your graphics drivers are properly loaded. If this is your case, you'll want to add the following config to your lightdm.conf file:
+Может случиться так, что ваша система загружается так быстро, что служба LightDM запускается перед загрузкой вашего графического драйвера. Если это ваш случай, добавьте следующие настройки в ваш файл lightdm.conf:
 
 ```
    [LightDM]
@@ -391,7 +391,7 @@ It may happen that your system boots so fast that LightDM service is started bef
 
 ```
 
-This setting will tell LightDM to wait until graphics devices are ready before spawning greeters/autostarting sessions on them.
+Этот параметр прикажет LightDM ждать, пока графический драйвер не будет готов перед запуском сессии Экранного приветствия/автозапуска.
 
 ### Pulseaudio не запускается автоматически
 
