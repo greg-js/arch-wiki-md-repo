@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [TrackPoint](/index.php/TrackPoint "TrackPoint") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-17，点击[这里](https://wiki.archlinux.org/index.php?title=TrackPoint&diff=0&oldid=425743)可以查看翻译后英文页面的改动。
+
 小红点(TrackPoint)是联想所有的键盘中间的指点杆的商标。[xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) 和 [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) 都支持它。evdev是 [Xorg](/index.php/Xorg "Xorg") 的默认驱动。
 
 在默认设置中，[Xorg](/index.php/Xorg "Xorg") 支持点击和指点, 但是用中键做滚轮需要更多的配置。

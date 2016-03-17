@@ -316,7 +316,9 @@ If running off a slow writing medium (USB, spinning HDDs) and storage requiremen
 
 ### Zram or zswap
 
-The [zram](https://www.kernel.org/doc/Documentation/blockdev/zram.txt) kernel module (previously called **compcache**) provides a compressed block device in RAM. If you use it as swap device, the RAM can hold much more information but uses more CPU. Still, it is much quicker than swapping to a hard drive. If a system often falls back to swap, this could improve responsiveness.
+The [zram](https://www.kernel.org/doc/Documentation/blockdev/zram.txt) kernel module (previously called **compcache**) provides a compressed block device in RAM. If you use it as swap device, the RAM can hold much more information but uses more CPU. Still, it is much quicker than swapping to a hard drive. If a system often falls back to swap, this could improve responsiveness. Using zram is also a good way to reduce disk read/write cycles due to swap on SSDs.
+
+Similar benefits (at similar costs) can be achieved using [zswap](/index.php/Zswap "Zswap") rather than zram. The two are generally similar in intent although not operation: zswap operates as a compressed RAM cache and neither requires (nor permits) extensive userspace configuration.
 
 Example: To set up one lz4 compressed zram device with 32GiB capacity and a higher-than-normal priority (only for the current session):
 
@@ -337,17 +339,11 @@ To disable it again, either reboot or run
 
 ```
 
-If you want to automatically initialize zram on every boot, consider writing a [systemd](/index.php/Systemd "Systemd") service for it.
-
 A detailed explanation of all steps, options and potential problems is provided in the official documentation of the module [here](https://www.kernel.org/doc/Documentation/blockdev/zram.txt).
 
-The AUR package [zramswap](https://aur.archlinux.org/packages/zramswap/) provides an automated script for setting up such swap devices with optimal settings for your system (such as RAM size and CPU core number). The script creates one zram device per CPU core with a total space equivalent to the RAM available. To do this automatically on every boot, [enable](/index.php/Enable "Enable") `zramswap.service`.
+The [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package provides a `systemd-swap.service` unit to automatically initialize zram devices. Configuration is possible in `/etc/systemd-swap.conf`.
 
-You will have a compressed swap with higher priority than your regular swap which will utilize multiple CPU cores for compessing data.
-
-**Tip:** Using zram is also a good way to reduce disk read/write cycles due to swap on SSDs.
-
-Similar benefits (at similar costs) can be achieved using [zswap](/index.php/Zswap "Zswap") rather than zram. The two are generally similar in intent although not operation: zswap operates as a compressed RAM cache and neither requires (nor permits) extensive userspace configuration.
+The package [zramswap](https://aur.archlinux.org/packages/zramswap/) provides an automated script for setting up such swap devices with optimal settings for your system (such as RAM size and CPU core number). The script creates one zram device per CPU core with a total space equivalent to the RAM available, so you will have a compressed swap with higher priority than regular swap, which will utilize multiple CPU cores for compessing data. To do this automatically on every boot, [enable](/index.php/Enable "Enable") `zramswap.service`.
 
 #### Swap on zRAM using a udev rule
 

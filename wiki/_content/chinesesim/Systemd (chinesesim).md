@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Systemd](/index.php/Systemd "Systemd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-15，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=417725)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd](/index.php/Systemd "Systemd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-16，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=417725)可以查看翻译后英文页面的改动。
 
 摘自[项目主页](http://freedesktop.org/wiki/Software/systemd):
 
@@ -39,12 +39,9 @@
     *   [7.4 关机/重启十分缓慢](#.E5.85.B3.E6.9C.BA.2F.E9.87.8D.E5.90.AF.E5.8D.81.E5.88.86.E7.BC.93.E6.85.A2)
     *   [7.5 短时进程无日志记录](#.E7.9F.AD.E6.97.B6.E8.BF.9B.E7.A8.8B.E6.97.A0.E6.97.A5.E5.BF.97.E8.AE.B0.E5.BD.95)
     *   [7.6 禁止在程序崩溃时转储内存](#.E7.A6.81.E6.AD.A2.E5.9C.A8.E7.A8.8B.E5.BA.8F.E5.B4.A9.E6.BA.83.E6.97.B6.E8.BD.AC.E5.82.A8.E5.86.85.E5.AD.98)
-    *   [7.7 关机/重启时输出了错误消息](#.E5.85.B3.E6.9C.BA.2F.E9.87.8D.E5.90.AF.E6.97.B6.E8.BE.93.E5.87.BA.E4.BA.86.E9.94.99.E8.AF.AF.E6.B6.88.E6.81.AF)
-        *   [7.7.1 cgroup : option or name mismatch, new: 0x0 "", old: 0x4 "systemd"](#cgroup_:_option_or_name_mismatch.2C_new:_0x0_.22.22.2C_old:_0x4_.22systemd.22)
-        *   [7.7.2 watchdog watchdog0: watchdog did not stop!](#watchdog_watchdog0:_watchdog_did_not_stop.21)
-    *   [7.8 启动的时间太长](#.E5.90.AF.E5.8A.A8.E7.9A.84.E6.97.B6.E9.97.B4.E5.A4.AA.E9.95.BF)
-    *   [7.9 systemd-tmpfiles-setup.service 在启动时启动失败](#systemd-tmpfiles-setup.service_.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
-    *   [7.10 不能设定在开机时启动软链接到 /etc/systemd/system 的服务](#.E4.B8.8D.E8.83.BD.E8.AE.BE.E5.AE.9A.E5.9C.A8.E5.BC.80.E6.9C.BA.E6.97.B6.E5.90.AF.E5.8A.A8.E8.BD.AF.E9.93.BE.E6.8E.A5.E5.88.B0_.2Fetc.2Fsystemd.2Fsystem_.E7.9A.84.E6.9C.8D.E5.8A.A1)
+    *   [7.7 启动的时间太长](#.E5.90.AF.E5.8A.A8.E7.9A.84.E6.97.B6.E9.97.B4.E5.A4.AA.E9.95.BF)
+    *   [7.8 systemd-tmpfiles-setup.service 在启动时启动失败](#systemd-tmpfiles-setup.service_.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
+    *   [7.9 不能设定在开机时启动软链接到 /etc/systemd/system 的服务](#.E4.B8.8D.E8.83.BD.E8.AE.BE.E5.AE.9A.E5.9C.A8.E5.BC.80.E6.9C.BA.E6.97.B6.E5.90.AF.E5.8A.A8.E8.BD.AF.E9.93.BE.E6.8E.A5.E5.88.B0_.2Fetc.2Fsystemd.2Fsystem_.E7.9A.84.E6.9C.8D.E5.8A.A1)
 *   [8 相关资源](#.E7.9B.B8.E5.85.B3.E8.B5.84.E6.BA.90)
 
 ## systemd 基本工具
@@ -54,9 +51,17 @@
 **小贴士:**
 
 *   在 `systemctl` 参数中添加 `-H <用户名>@<主机名>` 可以实现对其他机器的远程控制。该过程使用 [SSH](/index.php/SSH_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH (简体中文)")连接。
-*   `systemadm` 是 systemd 的官方图形前端。[官方软件仓库](/index.php/Official_repositories "Official repositories") 提供了稳定版本 [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui)，[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)") 中的软件包 [systemd-ui-git](https://aur.archlinux.org/packages/systemd-ui-git/) 提供了开发版本。
+*   `systemadm` 是 systemd 的官方图形前端。[官方软件仓库](/index.php/Official_repositories "Official repositories") 提供了稳定版本 [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui)。
+*   [Plasma](/index.php/Plasma "Plasma") 用户可以安装 *systemctl* 图形前端 [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm)。安装后可以在 *System administration* 下找到
 
 ### 分析系统状态
+
+显示 **系统状态**:
+
+```
+$ systemctl status
+
+```
 
 输出激活的单元：
 
@@ -238,7 +243,8 @@ $ systemctl hybrid-sleep
 *   `/usr/lib/systemd/system/`: 软件包安装的单元
 *   `/etc/systemd/system/`: 系统管理员安装的单元
 
-**Note:** 当`systemd`运行在[用户模式](/index.php/Systemd/User#How_it_works "Systemd/User")下时，使用的加载路径是完全不同的。
+*   当`systemd`运行在[用户模式](/index.php/Systemd/User#How_it_works "Systemd/User")下时，使用的加载路径是完全不同的。
+*   systemd 单元名仅能包含 ASCII 字符, 下划线和点号. 其它字符需要用 C-style "\x2d" 替换. 参阅 `man systemd.unit` 和 `man systemd-escape`.}}
 
 单元文件的语法，可以参考系统已经安装的单元，也可以参考`man systemd.service`中的[EXAMPLES章节](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)。
 
@@ -259,13 +265,13 @@ $ systemctl hybrid-sleep
 *   `Type=oneshot`：这一选项适用于只执行一项任务、随后立即退出的服务。可能需要同时设置 `RemainAfterExit=yes` 使得 systemd 在服务进程退出之后仍然认为服务处于激活状态。
 *   `Type=notify`：与 `Type=simple` 相同，但约定服务会在就绪后向 systemd 发送一个信号。这一通知的实现由 `libsystemd-daemon.so` 提供。
 *   `Type=dbus`：若以此方式启动，当指定的 `BusName` 出现在DBus系统总线上时，systemd认为服务就绪。
-*   `Type=idle`: `systemd`会等待所有任务(Jobs)处理完成后，才开始执行`idle`类型的单元。除此之外，其他行为和`Type=simple` 类似。
+*   `Type=idle`: `systemd`会等待所有任务处理完成后，才开始执行`idle`类型的单元。其他行为和`Type=simple` 类似。
 
 `type`的更多解释可以参考 [systemd.service(5)](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=)。
 
 ### 修改现存单元文件
 
-要更改由软件包提供的单元文件，先创建名为 `/etc/systemd/system/<单元名>.d/` 的目录（如 `/etc/systemd/system/httpd.service.d/`），然后放入 `*.conf` 文件，其中可以添加或重置参数。这里设置的参数优先级高于原来的单元文件。例如，如果想添加一个额外的依赖，创建这么一个文件即可：
+为了避免和 pacman 冲突，不应该直接编辑软件包提供的文件. 要更改由软件包提供的单元文件，先创建名为 `/etc/systemd/system/<单元名>.d/` 的目录（如 `/etc/systemd/system/httpd.service.d/`），然后放入 `*.conf` 文件，其中可以添加或重置参数。这里设置的参数优先级高于原来的单元文件。例如，如果想添加一个额外的依赖，创建这么一个文件即可：
 
  `/etc/systemd/system/<unit>.d/customdependency.conf` 
 ```
@@ -306,7 +312,7 @@ RestartSec=30
 
 **小贴士:** 用 `systemd-delta` 命令来查看哪些单元文件被覆盖、哪些被修改。系统维护的时候需要及时了解哪些单元已经有了更新。
 
-可从 [官方仓库](/index.php/Official_repositories "Official repositories") 安装 [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) 软件包，可以使 unit 配置文件在 [Vim](/index.php/Vim "Vim") 下支持语法高亮。
+安装 [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) 软件包，可以使 unit 配置文件在 [Vim](/index.php/Vim "Vim") 下支持语法高亮。
 
 ## 目标（target）
 
@@ -443,12 +449,9 @@ systemd 提供了自己日志系统（logging system），称为 journal. 使用
 
 ### 日志大小限制
 
-如果按上面的操作保留日志的话，默认日志最大限制为所在文件系统容量的 10%，即：如果 `/var/log/journal` 储存在 50GiB 的根分区中，那么日志最多存储 5GiB 数据。可以修改 `/etc/systemd/journald.conf` 中的 `SystemMaxUse` 来指定该最大限制。如限制日志最大 50MiB：
+如果按上面的操作保留日志的话，默认日志最大限制为所在文件系统容量的 10%，即：如果 `/var/log/journal` 储存在 50GiB 的根分区中，那么日志最多存储 5GiB 数据。可以修改配置文件指定最大限制。如限制日志最大 50MiB：
 
-```
-SystemMaxUse=50M
-
-```
+ `/etc/systemd/journald.conf`  `SystemMaxUse=50M` 
 
 详情参见 `man journald.conf`.
 
@@ -654,16 +657,6 @@ $ ulimit -c unlimited
 ```
 
 更多信息请参阅 [sysctl.d](http://www.freedesktop.org/software/systemd/man/sysctl.d.html) 和 [/proc/sys/kernel 文档](https://www.kernel.org/doc/Documentation/sysctl/kernel.txt)。
-
-### 关机/重启时输出了错误消息
-
-#### cgroup : option or name mismatch, new: 0x0 "", old: 0x4 "systemd"
-
-[这个帖子](https://bbs.archlinux.org/viewtopic.php?pid=1372562#p1372562) 有关于这个问题的详细信息.
-
-#### watchdog watchdog0: watchdog did not stop!
-
-[这个帖子](https://bbs.archlinux.org/viewtopic.php?pid=1372562#p1372562) 有关于这个问题的详细信息.
 
 ### 启动的时间太长
 

@@ -378,7 +378,7 @@ From the Mosh [website](http://mosh.mit.edu/):
 
 Mosh has an undocumented command line option `--predict=experimental` which produces more aggressive echoing of local keystrokes. Users interested in low-latency visual confirmation of keyboard input may prefer this prediction mode.
 
-**Tip:** Since Mosh, by design, does not let you access session history, consider installing a terminal multiplexer such as [tmux](/index.php/Tmux "Tmux") or [screen](/index.php/Screen "Screen").
+**Note:** Mosh by design does not let you access session history, consider installing a terminal multiplexer such as [tmux](/index.php/Tmux "Tmux") or [screen](/index.php/Screen "Screen").
 
 ## Tips and tricks
 

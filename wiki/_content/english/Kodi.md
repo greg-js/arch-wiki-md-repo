@@ -95,7 +95,7 @@ Socket activation can be used to start Kodi when the user starts a remote contro
 
 The [kodi-standalone-socket-activation](https://aur.archlinux.org/packages/kodi-standalone-socket-activation/) package provides `kodi@.service` and `kodi@.socket` which can be used to run Kodi in standalone mode listening on port 8082. Depending on the setup, one may want to change the port in *kodi@.socket*. This can be done by manually using the following systemd files.
 
- `/etc/systemd/system/kodi@.service` 
+ `/usr/lib/systemd/system/kodi@.service` 
 ```
 [Unit]
 Description=Launch Kodi on main display
@@ -110,7 +110,7 @@ ExecStartPost=/usr/bin/bash -c "sleep 15 && systemctl start kodi@%i.socket"
 [Install]
 WantedBy=multi-user.target
 ```
- `/etc/systemd/system/kodi@.socket` 
+ `/usr/lib/systemd/system/kodi@.socket` 
 ```
 [Unit]
 Conflicts=kodi@%i.service

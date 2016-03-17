@@ -16,7 +16,7 @@ This article aims on providing information on flashing your system BIOS under Li
     *   [3.3 Prebuilt images](#Prebuilt_images)
     *   [3.4 Images that are too large for a floppy](#Images_that_are_too_large_for_a_floppy)
     *   [3.5 Usage](#Usage_3)
-*   [4 Geteltorito.pl](#Geteltorito.pl)
+*   [4 Bootable optical disk emulation](#Bootable_optical_disk_emulation)
     *   [4.1 Installation](#Installation_3)
     *   [4.2 Usage](#Usage_4)
 
@@ -265,9 +265,9 @@ LABEL flashbios
 
 Finally reboot your machine, making sure the CD drive is first in the boot sequence, and run the BIOS upgrade procedure when the CD boots. If using the GRUB method, choose the new entry on the list, and it should boot into FreeDOS.
 
-## Geteltorito.pl
+## Bootable optical disk emulation
 
-This perl script will extract the El Torito boot image. It has worked on Lenovo laptops like X220 X230, and W540\. It may work for other vendors as well.
+The script Geteltorito.pl will extract the [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) boot image. It has worked on Lenovo laptops like X220 X230, and W540\. It may work for other vendors as well.
 
 ### Installation
 

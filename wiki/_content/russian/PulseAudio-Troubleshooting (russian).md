@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting"). Дата последней синхронизации: 31 декабря 2015‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&diff=0&oldid=411367).
+**Состояние перевода:** На этой странице представлен перевод статьи [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting"). Дата последней синхронизации: 16 марта 2016‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&diff=0&oldid=425976).
 
 Смотрите основную статью [PulseAudio (Русский)](/index.php/PulseAudio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PulseAudio (Русский)").
 
@@ -7,16 +7,17 @@
 *   [1 Звук](#.D0.97.D0.B2.D1.83.D0.BA)
     *   [1.1 Автоматический бесшумный режим](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.B1.D0.B5.D1.81.D1.88.D1.83.D0.BC.D0.BD.D1.8B.D0.B9_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC)
     *   [1.2 Аудиоустройство с отключенным звуком](#.D0.90.D1.83.D0.B4.D0.B8.D0.BE.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D1.81_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.BC)
-    *   [1.3 Приложение с отключенным звуком](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.BC)
-    *   [1.4 Настройка громкости не работает должным образом](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B3.D1.80.D0.BE.D0.BC.D0.BA.D0.BE.D1.81.D1.82.D0.B8_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.B4.D0.BE.D0.BB.D0.B6.D0.BD.D1.8B.D0.BC_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.BE.D0.BC)
-    *   [1.5 Громкость приложений меняется, когда регулируется Общая громкость](#.D0.93.D1.80.D0.BE.D0.BC.D0.BA.D0.BE.D1.81.D1.82.D1.8C_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BC.D0.B5.D0.BD.D1.8F.D0.B5.D1.82.D1.81.D1.8F.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_.D1.80.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D1.83.D0.B5.D1.82.D1.81.D1.8F_.D0.9E.D0.B1.D1.89.D0.B0.D1.8F_.D0.B3.D1.80.D0.BE.D0.BC.D0.BA.D0.BE.D1.81.D1.82.D1.8C)
-    *   [1.6 Звук становится каждый раз громче, как только запускается новое приложение](#.D0.97.D0.B2.D1.83.D0.BA_.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.B8.D1.82.D1.81.D1.8F_.D0.BA.D0.B0.D0.B6.D0.B4.D1.8B.D0.B9_.D1.80.D0.B0.D0.B7_.D0.B3.D1.80.D0.BE.D0.BC.D1.87.D0.B5.2C_.D0.BA.D0.B0.D0.BA_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D0.BE.D0.B2.D0.BE.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5)
-    *   [1.7 На звуковой карте M-Audio Audiophile 2 496 звук только Mono](#.D0.9D.D0.B0_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.B2.D0.BE.D0.B9_.D0.BA.D0.B0.D1.80.D1.82.D0.B5_M-Audio_Audiophile_2_496_.D0.B7.D0.B2.D1.83.D0.BA_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_Mono)
-    *   [1.8 Нет звука ниже определённого уровня](#.D0.9D.D0.B5.D1.82_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D0.BD.D0.B8.D0.B6.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D1.8F)
-    *   [1.9 Тихая громкость внутреннего микрофона](#.D0.A2.D0.B8.D1.85.D0.B0.D1.8F_.D0.B3.D1.80.D0.BE.D0.BC.D0.BA.D0.BE.D1.81.D1.82.D1.8C_.D0.B2.D0.BD.D1.83.D1.82.D1.80.D0.B5.D0.BD.D0.BD.D0.B5.D0.B3.D0.BE_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D1.84.D0.BE.D0.BD.D0.B0)
-    *   [1.10 Клиенты изменяют основной выход звука (т. е. переход громкости к 100% после запущенного приложения)](#.D0.9A.D0.BB.D0.B8.D0.B5.D0.BD.D1.82.D1.8B_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D1.8F.D1.8E.D1.82_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.BD.D0.BE.D0.B9_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.28.D1.82._.D0.B5._.D0.BF.D0.B5.D1.80.D0.B5.D1.85.D0.BE.D0.B4_.D0.B3.D1.80.D0.BE.D0.BC.D0.BA.D0.BE.D1.81.D1.82.D0.B8_.D0.BA_100.25_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.89.D0.B5.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.29)
-    *   [1.11 Нет звука после возобновления из спящего режима](#.D0.9D.D0.B5.D1.82_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.B2.D0.BE.D0.B7.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B8.D0.B7_.D1.81.D0.BF.D1.8F.D1.89.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B0)
-    *   [1.12 Каналы ALSA отключены, когда наушники подсоединены/отсоединены неправильно](#.D0.9A.D0.B0.D0.BD.D0.B0.D0.BB.D1.8B_ALSA_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D1.8B.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_.D0.BD.D0.B0.D1.83.D1.88.D0.BD.D0.B8.D0.BA.D0.B8_.D0.BF.D0.BE.D0.B4.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D1.8B.2F.D0.BE.D1.82.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D1.8B_.D0.BD.D0.B5.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE)
+    *   [1.3 Output stuck muted while Master is toggled](#Output_stuck_muted_while_Master_is_toggled)
+    *   [1.4 Приложение с отключенным звуком](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.BC)
+    *   [1.5 Настройка громкости не работает должным образом](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B3.D1.80.D0.BE.D0.BC.D0.BA.D0.BE.D1.81.D1.82.D0.B8_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.B4.D0.BE.D0.BB.D0.B6.D0.BD.D1.8B.D0.BC_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.BE.D0.BC)
+    *   [1.6 Громкость приложений меняется, когда регулируется Общая громкость](#.D0.93.D1.80.D0.BE.D0.BC.D0.BA.D0.BE.D1.81.D1.82.D1.8C_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BC.D0.B5.D0.BD.D1.8F.D0.B5.D1.82.D1.81.D1.8F.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_.D1.80.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D1.83.D0.B5.D1.82.D1.81.D1.8F_.D0.9E.D0.B1.D1.89.D0.B0.D1.8F_.D0.B3.D1.80.D0.BE.D0.BC.D0.BA.D0.BE.D1.81.D1.82.D1.8C)
+    *   [1.7 Звук становится каждый раз громче, как только запускается новое приложение](#.D0.97.D0.B2.D1.83.D0.BA_.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.B8.D1.82.D1.81.D1.8F_.D0.BA.D0.B0.D0.B6.D0.B4.D1.8B.D0.B9_.D1.80.D0.B0.D0.B7_.D0.B3.D1.80.D0.BE.D0.BC.D1.87.D0.B5.2C_.D0.BA.D0.B0.D0.BA_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D0.BE.D0.B2.D0.BE.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5)
+    *   [1.8 На звуковой карте M-Audio Audiophile 2 496 звук только Mono](#.D0.9D.D0.B0_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.B2.D0.BE.D0.B9_.D0.BA.D0.B0.D1.80.D1.82.D0.B5_M-Audio_Audiophile_2_496_.D0.B7.D0.B2.D1.83.D0.BA_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_Mono)
+    *   [1.9 Нет звука ниже определённого уровня](#.D0.9D.D0.B5.D1.82_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D0.BD.D0.B8.D0.B6.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D1.8F)
+    *   [1.10 Тихая громкость внутреннего микрофона](#.D0.A2.D0.B8.D1.85.D0.B0.D1.8F_.D0.B3.D1.80.D0.BE.D0.BC.D0.BA.D0.BE.D1.81.D1.82.D1.8C_.D0.B2.D0.BD.D1.83.D1.82.D1.80.D0.B5.D0.BD.D0.BD.D0.B5.D0.B3.D0.BE_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D1.84.D0.BE.D0.BD.D0.B0)
+    *   [1.11 Клиенты изменяют основной выход звука (т. е. переход громкости к 100% после запущенного приложения)](#.D0.9A.D0.BB.D0.B8.D0.B5.D0.BD.D1.82.D1.8B_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D1.8F.D1.8E.D1.82_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.BD.D0.BE.D0.B9_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.28.D1.82._.D0.B5._.D0.BF.D0.B5.D1.80.D0.B5.D1.85.D0.BE.D0.B4_.D0.B3.D1.80.D0.BE.D0.BC.D0.BA.D0.BE.D1.81.D1.82.D0.B8_.D0.BA_100.25_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.89.D0.B5.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.29)
+    *   [1.12 Нет звука после возобновления из спящего режима](#.D0.9D.D0.B5.D1.82_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.B2.D0.BE.D0.B7.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B8.D0.B7_.D1.81.D0.BF.D1.8F.D1.89.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B0)
+    *   [1.13 Каналы ALSA отключены, когда наушники подсоединены/отсоединены неправильно](#.D0.9A.D0.B0.D0.BD.D0.B0.D0.BB.D1.8B_ALSA_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D1.8B.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_.D0.BD.D0.B0.D1.83.D1.88.D0.BD.D0.B8.D0.BA.D0.B8_.D0.BF.D0.BE.D0.B4.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D1.8B.2F.D0.BE.D1.82.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D1.8B_.D0.BD.D0.B5.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE)
 *   [2 Микрофон](#.D0.9C.D0.B8.D0.BA.D1.80.D0.BE.D1.84.D0.BE.D0.BD)
     *   [2.1 PulseAudio не обнаруживает микрофон](#PulseAudio_.D0.BD.D0.B5_.D0.BE.D0.B1.D0.BD.D0.B0.D1.80.D1.83.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D1.82_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D1.84.D0.BE.D0.BD)
     *   [2.2 PulseAudio использует неправильный микрофон](#PulseAudio_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D1.82_.D0.BD.D0.B5.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D1.84.D0.BE.D0.BD)
@@ -29,6 +30,7 @@
         *   [2.5.4 Перезапустите PulseAudio для применения новых настроек (4/5)](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D1.82.D0.B8.D1.82.D0.B5_PulseAudio_.D0.B4.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BD.D0.BE.D0.B2.D1.8B.D1.85_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_.284.2F5.29)
         *   [2.5.5 Наконец, проверьте запись и её воспроизведение (5/5)](#.D0.9D.D0.B0.D0.BA.D0.BE.D0.BD.D0.B5.D1.86.2C_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D1.8C.D1.82.D0.B5_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D1.8C_.D0.B8_.D0.B5.D1.91_.D0.B2.D0.BE.D1.81.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.285.2F5.29)
     *   [2.6 Нет микрофона в Steam или Skype с enable-remixing = no](#.D0.9D.D0.B5.D1.82_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D1.84.D0.BE.D0.BD.D0.B0_.D0.B2_Steam_.D0.B8.D0.BB.D0.B8_Skype_.D1.81_enable-remixing_.3D_no)
+    *   [2.7 Искажение микрофона из-за автоматической регулировки](#.D0.98.D1.81.D0.BA.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D1.84.D0.BE.D0.BD.D0.B0_.D0.B8.D0.B7-.D0.B7.D0.B0_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B9_.D1.80.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8)
 *   [3 Качество звука](#.D0.9A.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.BE_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0)
     *   [3.1 Включить отмену Эха/Шума](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D0.BE.D1.82.D0.BC.D0.B5.D0.BD.D1.83_.D0.AD.D1.85.D0.B0.2F.D0.A8.D1.83.D0.BC.D0.B0)
     *   [3.2 Глюки, пропуски или потрескивания](#.D0.93.D0.BB.D1.8E.D0.BA.D0.B8.2C_.D0.BF.D1.80.D0.BE.D0.BF.D1.83.D1.81.D0.BA.D0.B8_.D0.B8.D0.BB.D0.B8_.D0.BF.D0.BE.D1.82.D1.80.D0.B5.D1.81.D0.BA.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
@@ -40,39 +42,39 @@
     *   [3.4 Прерывистый звук с аналогового объемного звучания](#.D0.9F.D1.80.D0.B5.D1.80.D1.8B.D0.B2.D0.B8.D1.81.D1.82.D1.8B.D0.B9_.D0.B7.D0.B2.D1.83.D0.BA_.D1.81_.D0.B0.D0.BD.D0.B0.D0.BB.D0.BE.D0.B3.D0.BE.D0.B2.D0.BE.D0.B3.D0.BE_.D0.BE.D0.B1.D1.8A.D0.B5.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B7.D0.B2.D1.83.D1.87.D0.B0.D0.BD.D0.B8.D1.8F)
     *   [3.5 Тормозит звук](#.D0.A2.D0.BE.D1.80.D0.BC.D0.BE.D0.B7.D0.B8.D1.82_.D0.B7.D0.B2.D1.83.D0.BA)
     *   [3.6 Искажённый звук](#.D0.98.D1.81.D0.BA.D0.B0.D0.B6.D1.91.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B7.D0.B2.D1.83.D0.BA)
-*   [4 Hardware and Cards](#Hardware_and_Cards)
-    *   [4.1 No HDMI sound output after some time with the monitor turned off](#No_HDMI_sound_output_after_some_time_with_the_monitor_turned_off)
-    *   [4.2 No cards](#No_cards)
-    *   [4.3 Starting an application interrupts other app's sound](#Starting_an_application_interrupts_other_app.27s_sound)
-    *   [4.4 The only device shown is "dummy output" or newly connected cards aren't detected](#The_only_device_shown_is_.22dummy_output.22_or_newly_connected_cards_aren.27t_detected)
-    *   [4.5 No HDMI 5/7.1 Selection for Device](#No_HDMI_5.2F7.1_Selection_for_Device)
-    *   [4.6 Failed to create sink input: sink is suspended](#Failed_to_create_sink_input:_sink_is_suspended)
-    *   [4.7 Simultaneous output to multiple sound cards / devices](#Simultaneous_output_to_multiple_sound_cards_.2F_devices)
-    *   [4.8 Simultaneous output to multiple sinks on the same sound card not working](#Simultaneous_output_to_multiple_sinks_on_the_same_sound_card_not_working)
-    *   [4.9 Some profiles like SPDIF are not enabled by default on the card](#Some_profiles_like_SPDIF_are_not_enabled_by_default_on_the_card)
+*   [4 Аппаратные средства и карты](#.D0.90.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D1.8B.D0.B5_.D1.81.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B2.D0.B0_.D0.B8_.D0.BA.D0.B0.D1.80.D1.82.D1.8B)
+    *   [4.1 Спустя некоторое время, при выключенном мониторе отсутствует звук на выходе HDMI](#.D0.A1.D0.BF.D1.83.D1.81.D1.82.D1.8F_.D0.BD.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D0.BE.D0.B5_.D0.B2.D1.80.D0.B5.D0.BC.D1.8F.2C_.D0.BF.D1.80.D0.B8_.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B5_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.D0.B7.D0.B2.D1.83.D0.BA_.D0.BD.D0.B0_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.B5_HDMI)
+    *   [4.2 Нет карты](#.D0.9D.D0.B5.D1.82_.D0.BA.D0.B0.D1.80.D1.82.D1.8B)
+    *   [4.3 Запуск приложения прерывает звук другого приложения](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.B5.D1.80.D1.8B.D0.B2.D0.B0.D0.B5.D1.82_.D0.B7.D0.B2.D1.83.D0.BA_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.B3.D0.BE_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [4.4 Единственное указанное устройство является "фиктивным выходом" или вновь подключенные карты не определяются](#.D0.95.D0.B4.D0.B8.D0.BD.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.83.D0.BA.D0.B0.D0.B7.D0.B0.D0.BD.D0.BD.D0.BE.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D1.8F.D0.B2.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F_.22.D1.84.D0.B8.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D1.8B.D0.BC_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BE.D0.BC.22_.D0.B8.D0.BB.D0.B8_.D0.B2.D0.BD.D0.BE.D0.B2.D1.8C_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BA.D0.B0.D1.80.D1.82.D1.8B_.D0.BD.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.8F.D1.8E.D1.82.D1.81.D1.8F)
+    *   [4.5 Не возможно выбрать устройства HDMI 5/7.1](#.D0.9D.D0.B5_.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B2.D1.8B.D0.B1.D1.80.D0.B0.D1.82.D1.8C_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_HDMI_5.2F7.1)
+    *   [4.6 Не удалось создать устройство входа: устройство приостановлено](#.D0.9D.D0.B5_.D1.83.D0.B4.D0.B0.D0.BB.D0.BE.D1.81.D1.8C_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0:_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D0.BF.D1.80.D0.B8.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BE)
+    *   [4.7 Одновременный вывод на несколько звуковых карт / устройств](#.D0.9E.D0.B4.D0.BD.D0.BE.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4_.D0.BD.D0.B0_.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.B2.D1.8B.D1.85_.D0.BA.D0.B0.D1.80.D1.82_.2F_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2)
+    *   [4.8 Одновременный вывод на несколько устройств вывода на одной звуковой карте не работает](#.D0.9E.D0.B4.D0.BD.D0.BE.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4_.D0.BD.D0.B0_.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0_.D0.BD.D0.B0_.D0.BE.D0.B4.D0.BD.D0.BE.D0.B9_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.B2.D0.BE.D0.B9_.D0.BA.D0.B0.D1.80.D1.82.D0.B5_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82)
+    *   [4.9 Некоторые профили, такие как SPDIF не задействованы по умолчанию на карте](#.D0.9D.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.BF.D1.80.D0.BE.D1.84.D0.B8.D0.BB.D0.B8.2C_.D1.82.D0.B0.D0.BA.D0.B8.D0.B5_.D0.BA.D0.B0.D0.BA_SPDIF_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.B4.D0.B5.D0.B9.D1.81.D1.82.D0.B2.D0.BE.D0.B2.D0.B0.D0.BD.D1.8B_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E_.D0.BD.D0.B0_.D0.BA.D0.B0.D1.80.D1.82.D0.B5)
 *   [5 Bluetooth](#Bluetooth)
     *   [5.1 Отключение поддержки Bluetooth](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_Bluetooth)
-    *   [5.2 Bluetooth headset replay problems](#Bluetooth_headset_replay_problems)
+    *   [5.2 Проблемы воспроизведения гарнитуры Bluetooth](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D0.B2.D0.BE.D1.81.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B3.D0.B0.D1.80.D0.BD.D0.B8.D1.82.D1.83.D1.80.D1.8B_Bluetooth)
     *   [5.3 Автоматическое переключение на Bluetooth или USB-гарнитуру](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BF.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B0_Bluetooth_.D0.B8.D0.BB.D0.B8_USB-.D0.B3.D0.B0.D1.80.D0.BD.D0.B8.D1.82.D1.83.D1.80.D1.83)
     *   [5.4 Устройство сопряжено, но не проигрывает звук](#.D0.A3.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D1.81.D0.BE.D0.BF.D1.80.D1.8F.D0.B6.D0.B5.D0.BD.D0.BE.2C_.D0.BD.D0.BE_.D0.BD.D0.B5_.D0.BF.D1.80.D0.BE.D0.B8.D0.B3.D1.80.D1.8B.D0.B2.D0.B0.D0.B5.D1.82_.D0.B7.D0.B2.D1.83.D0.BA)
-*   [6 Applications](#Applications)
-    *   [6.1 Flash content](#Flash_content)
+*   [6 Приложения](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [6.1 Содержащие Flash](#.D0.A1.D0.BE.D0.B4.D0.B5.D1.80.D0.B6.D0.B0.D1.89.D0.B8.D0.B5_Flash)
     *   [6.2 Ошибка с правами доступа](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D1.81_.D0.BF.D1.80.D0.B0.D0.B2.D0.B0.D0.BC.D0.B8_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0)
     *   [6.3 Audacity](#Audacity)
-*   [7 Other Issues](#Other_Issues)
-    *   [7.1 Bad configuration files](#Bad_configuration_files)
-    *   [7.2 Can't update configuration of sound device in pavucontrol](#Can.27t_update_configuration_of_sound_device_in_pavucontrol)
-    *   [7.3 Failed to create sink input: sink is suspended](#Failed_to_create_sink_input:_sink_is_suspended_2)
-    *   [7.4 Pulse overwrites ALSA settings](#Pulse_overwrites_ALSA_settings)
-    *   [7.5 Prevent Pulse from restarting after being killed](#Prevent_Pulse_from_restarting_after_being_killed)
-    *   [7.6 Daemon startup failed](#Daemon_startup_failed)
-        *   [7.6.1 Outputs by PulseAudio error status check utilities](#Outputs_by_PulseAudio_error_status_check_utilities)
-    *   [7.7 Daemon already running](#Daemon_already_running)
-    *   [7.8 Subwoofer stops working after end of every song](#Subwoofer_stops_working_after_end_of_every_song)
-    *   [7.9 Unable to select surround configuration other than "Surround 4.0"](#Unable_to_select_surround_configuration_other_than_.22Surround_4.0.22)
-    *   [7.10 Realtime scheduling](#Realtime_scheduling)
-    *   [7.11 pactl "invalid option" error with negative percentage arguments](#pactl_.22invalid_option.22_error_with_negative_percentage_arguments)
-    *   [7.12 Fallback device is not respected](#Fallback_device_is_not_respected)
+*   [7 Другие проблемы](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B)
+    *   [7.1 Плохой файл настроек](#.D0.9F.D0.BB.D0.BE.D1.85.D0.BE.D0.B9_.D1.84.D0.B0.D0.B9.D0.BB_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA)
+    *   [7.2 Невозможно обновить настройки звукового устройства в pavucontrol](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.B8.D1.82.D1.8C_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.B2.D0.BE.D0.B3.D0.BE_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B2_pavucontrol)
+    *   [7.3 Не удалось создать устройство вывода: устройство вывода приостановлено](#.D0.9D.D0.B5_.D1.83.D0.B4.D0.B0.D0.BB.D0.BE.D1.81.D1.8C_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0:_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0_.D0.BF.D1.80.D0.B8.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BE)
+    *   [7.4 Pulse переписывает настройки ALSA](#Pulse_.D0.BF.D0.B5.D1.80.D0.B5.D0.BF.D0.B8.D1.81.D1.8B.D0.B2.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_ALSA)
+    *   [7.5 Предотвращение перезагрузки Pulse, после того как процесс был убит (kill)](#.D0.9F.D1.80.D0.B5.D0.B4.D0.BE.D1.82.D0.B2.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_Pulse.2C_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D1.82.D0.BE.D0.B3.D0.BE_.D0.BA.D0.B0.D0.BA_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81_.D0.B1.D1.8B.D0.BB_.D1.83.D0.B1.D0.B8.D1.82_.28kill.29)
+    *   [7.6 Не удаётся запустить Демон](#.D0.9D.D0.B5_.D1.83.D0.B4.D0.B0.D1.91.D1.82.D1.81.D1.8F_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D1.82.D0.B8.D1.82.D1.8C_.D0.94.D0.B5.D0.BC.D0.BE.D0.BD)
+        *   [7.6.1 Вывод статуса ошибок PulseAudio утилитами проверки](#.D0.92.D1.8B.D0.B2.D0.BE.D0.B4_.D1.81.D1.82.D0.B0.D1.82.D1.83.D1.81.D0.B0_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_PulseAudio_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D0.B0.D0.BC.D0.B8_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8)
+    *   [7.7 Демон уже запущен](#.D0.94.D0.B5.D0.BC.D0.BE.D0.BD_.D1.83.D0.B6.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.89.D0.B5.D0.BD)
+    *   [7.8 Сабвуфер перестает работать после окончания каждой песни](#.D0.A1.D0.B0.D0.B1.D0.B2.D1.83.D1.84.D0.B5.D1.80_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.B5.D1.82_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BE.D0.BA.D0.BE.D0.BD.D1.87.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BA.D0.B0.D0.B6.D0.B4.D0.BE.D0.B9_.D0.BF.D0.B5.D1.81.D0.BD.D0.B8)
+    *   [7.9 Невозможно выбрать настройку объемного звучания, кроме "Surround 4.0"](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B2.D1.8B.D0.B1.D1.80.D0.B0.D1.82.D1.8C_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D1.83_.D0.BE.D0.B1.D1.8A.D0.B5.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B7.D0.B2.D1.83.D1.87.D0.B0.D0.BD.D0.B8.D1.8F.2C_.D0.BA.D1.80.D0.BE.D0.BC.D0.B5_.22Surround_4.0.22)
+    *   [7.10 Планировщик в реальном времени](#.D0.9F.D0.BB.D0.B0.D0.BD.D0.B8.D1.80.D0.BE.D0.B2.D1.89.D0.B8.D0.BA_.D0.B2_.D1.80.D0.B5.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8)
+    *   [7.11 Ошибка pactl "неверный параметр" с отрицательным процентным аргументом](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_pactl_.22.D0.BD.D0.B5.D0.B2.D0.B5.D1.80.D0.BD.D1.8B.D0.B9_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.22_.D1.81_.D0.BE.D1.82.D1.80.D0.B8.D1.86.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.BC_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D0.BD.D1.82.D0.BD.D1.8B.D0.BC_.D0.B0.D1.80.D0.B3.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D0.BE.D0.BC)
+    *   [7.12 Резервное устройство не определяется](#.D0.A0.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D0.BD.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F)
 
 ## Звук
 
@@ -93,6 +95,17 @@
 $ alsamixer-c 0
 
 **Примечание:** alsamixer не скажет Вам, какое устройство вывода установлено как значение по умолчанию. Одна из возможных причин отсутствия звука после установки состоит в том, что PulseAudio обнаруживает неправильное устройство вывода как значение по умолчанию. Установите [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) и проверьте, существует ли какой-нибудь вывод на панели pavucontrol, например, при проигрывании файла *.wav*.
+
+### Output stuck muted while Master is toggled
+
+In setups with multiple outputs (e.g. 'Headphone' and 'Speaker') using plain amixer to toggle Master can trigger PulseAudio to mute the active output too, but it does not necessarily unmute it when Master is toggled back to be unmuted. To resolve this, amixer must have the device flag set to 'pulse':
+
+```
+$ amixer -D pulse sset Master toggle
+
+```
+
+This will cause amixer to ask PulseAudio to do the toggling rather than toggling it directly. Because of this, PulseAudio will correctly unmute Master as well as any applicable output.
 
 ### Приложение с отключенным звуком
 
@@ -451,6 +464,23 @@ load-module module-remap-source master=alsa_input.pci-0000_00_14.2.analog-stereo
 
 ```
 
+### Искажение микрофона из-за автоматической регулировки
+
+Если громкость микрофона повышается автоматически и вызывает искажение звука, вы можете это исправить путем отключения импульса микрофона:
+
+В `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.conf` и `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-mic.conf`,
+
+*   Под `[Element Internal Mic Boost]` установите `volume` в `zero (ноль)`.
+*   Под `[Element Int Mic Boost]` установите `volume` в `zero`.
+*   Под `[Element Mic Boost]` установите `volume` в `zero`.
+
+Затем перезапустите PulseAudio:
+
+```
+# pulseaudio -k
+
+```
+
 ## Качество звука
 
 ### Включить отмену Эха/Шума
@@ -506,35 +536,70 @@ pulseaudio --start
 
 #### Поиск параметров вашего аудиоустройства (1/4)
 
-Чтобы узнать какие настройки буферизации имеет ваша звуковая карта, выполните:
+Чтобы выяснить настройки буфера звуковой карты, используйте следующую команду, пока не найдете правильную запись выходного канала:
+
+ `$ pactl list sinks` 
+```
+Sink #1
+	State: RUNNING
+	Name: alsa_output.pci-0000_00_1b.0.analog-stereo
+	Description: Built-in Audio Analog Stereo
+	Driver: module-alsa-card.c
+	Sample Specification: s16le 2ch 44100Hz
+	Channel Map: front-left,front-right
+	Owner Module: 7
+	Mute: no
+	Volume: front-left: 42600 /  65% / -11.22 dB,   front-right: 42600 /  65% / -11.22 dB
+	        balance 0.00
+	Base Volume: 65536 / 100% / 0.00 dB
+	Monitor Source: alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+	Latency: 70662 usec, configured 85000 usec
+	Flags: HARDWARE HW_MUTE_CTRL HW_VOLUME_CTRL DECIBEL_VOLUME LATENCY 
+	Properties:
+		alsa.resolution_bits = "16"
+		device.api = "alsa"
+		device.class = "sound"
+		alsa.class = "generic"
+		alsa.subclass = "generic-mix"
+		alsa.name = "ALC283 Analog"
+		alsa.id = "ALC283 Analog"
+		alsa.subdevice = "0"
+		alsa.subdevice_name = "subdevice #0"
+		alsa.device = "0"
+		alsa.card = "1"
+		alsa.card_name = "HDA Intel PCH"
+		alsa.long_card_name = "HDA Intel PCH at 0xe111c000 irq 43"
+		alsa.driver_name = "snd_hda_intel"
+		device.bus_path = "pci-0000:00:1b.0"
+		sysfs.path = "/devices/pci0000:00/0000:00:1b.0/sound/card1"
+		device.bus = "pci"
+		device.vendor.id = "8086"
+		device.vendor.name = "Intel Corporation"
+		device.product.id = "9ca0"
+		device.product.name = "Wildcat Point-LP High Definition Audio Controller"
+		device.form_factor = "internal"
+		device.string = "front:1"
+		device.buffering.buffer_size = "352800"
+		device.buffering.fragment_size = "176400"
+		device.access_mode = "mmap+timer"
+		device.profile.name = "analog-stereo"
+		device.profile.description = "Analog Stereo"
+		device.description = "Built-in Audio Analog Stereo"
+		alsa.mixer_name = "Realtek ALC283"
+		alsa.components = "HDA:10ec0283,10ec0283,00100003"
+		module-udev-detect.discovered = "1"
+		device.icon_name = "audio-card-pci"
+	Ports:
+		analog-output-speaker: Speakers (priority: 10000, not available)
+		analog-output-headphones: Headphones (priority: 9000, available)
+	Active Port: analog-output-headphones
+	Formats:
+		pcm
+...
 
 ```
-$ echo autospawn = no >> ~/.config/pulse/client.conf
-$ pulseaudio -k
-$ LANG=C timeout --foreground -k 10 -s kill 10 pulseaudio -vvvv 2>&1 | grep device.buffering -B 10
-$ sed -i '$d' ~/.config/pulse/client.conf
 
-```
-
-Вы увидите примерно следующий вывод для каждой звуковой карты, обнаруженной PulseAudio:
-
-```
-I: [pulseaudio] source.c:     alsa.long_card_name = "HDA Intel at 0xfa200000 irq 46"
-I: [pulseaudio] source.c:     alsa.driver_name = "snd_hda_intel"
-I: [pulseaudio] source.c:     device.bus_path = "pci-0000:00:1b.0"
-I: [pulseaudio] source.c:     sysfs.path = "/devices/pci0000:00/0000:00:1b.0/sound/card0"
-I: [pulseaudio] source.c:     device.bus = "pci"
-I: [pulseaudio] source.c:     device.vendor.id = "8086"
-I: [pulseaudio] source.c:     device.vendor.name = "Intel Corporation"
-I: [pulseaudio] source.c:     device.product.name = "82801I (ICH9 Family) HD Audio Controller"
-I: [pulseaudio] source.c:     device.form_factor = "internal"
-I: [pulseaudio] source.c:     device.string = "front:0"
-I: [pulseaudio] source.c:     device.buffering.buffer_size = "768000"
-I: [pulseaudio] source.c:     device.buffering.fragment_size = "384000"
-
-```
-
-Обратите внимание на то, что значения buffer_size и fragment_size релевантны соответствующей звуковой карте.
+Обратите внимание на то, что значения `buffer_size` и `fragment_size` релевантны соответствующей звуковой карте.
 
 #### Вычисление размера вашего фрагмента в миллисекундах и количества фрагментов (2/4)
 
@@ -545,8 +610,8 @@ I: [pulseaudio] source.c:     device.buffering.fragment_size = "384000"
 Давайте взглянем на параметры, которые мы нашли в предыдущем шаге:
 
 ```
-device.buffering.buffer_size = "768000" => 768000/1411200 = 0.544217687075s = 544 msecs
-device.buffering.fragment_size = "384000" => 384000/1411200 = 0.272108843537s = 272 msecs
+device.buffering.buffer_size = "352800" => 352800/1411200 = 0.25 s = 250 ms
+device.buffering.fragment_size = "176400" => 176400/1411200 = 0.125 s = 125 ms
 
 ```
 
@@ -559,12 +624,12 @@ device.buffering.fragment_size = "384000" => 384000/1411200 = 0.272108843537s = 
 
 ```
 
-В предыдущем шаге мы рассчитали размер фрагмента. Узнать количество фрагментов также просто: buffer_size/fragment_size. Ответ в нашем случае будет равен (`544/272`) `2`:
+В предыдущем шаге мы рассчитали размер фрагмента. Узнать количество фрагментов также просто: buffer_size/fragment_size. Ответ в нашем случае будет равен (`250/125`) `2`:
 
  `/etc/pulse/daemon.conf` 
 ```
 ; default-fragments = **2**
-; default-fragment-size-msec = **272**
+; default-fragment-size-msec = **125**
 ```
 
 #### Перезапуск демона PulseAudio (4/4)
@@ -615,11 +680,11 @@ default-fragment-size-msec = 2
 
 и перезапустите сервер PulseAudio. Смотрите также [#No sound below a volume cutoff](#No_sound_below_a_volume_cutoff).
 
-## Hardware and Cards
+## Аппаратные средства и карты
 
-### No HDMI sound output after some time with the monitor turned off
+### Спустя некоторое время, при выключенном мониторе отсутствует звук на выходе HDMI
 
-The monitor is connected via HDMI/DisplayPort, and the audio jack is plugged in the headphone jack of the monitor, but PulseAudio insists that it is unplugged:
+Монитор подключается через HDMI / DisplayPort, а аудио разъем подключен к разъему для наушников монитора, но PulseAudio настаивает на том, что он отключен:
 
  `pactl list sinks` 
 ```
@@ -629,11 +694,11 @@ hdmi-output-0: HDMI / DisplayPort (priority: 5900, not available)
 
 ```
 
-This leads to no sound coming from HDMI output. A workaround for this is to switch to another VT and back again. If that doesn't work, try: turn off your monitor, switch to another VT, turn on your monitor, and switch back. This problem has been reported by ATI/Nvidia/Intel users.
+Это приводит к отсутствию звука, из выхода HDMI. Чтобы это обойти, переключитесь на другой VT и обратно. Если это не сработает, попробуйте: выключить монитор, переключиться на другой VT, включить монитор, а затем обратно. Эта проблема была обнаружена пользователями ATI / Nvidia / Intel.
 
-### No cards
+### Нет карты
 
-If PulseAudio starts, run `pacmd list`. If no cards are reported, make sure that the ALSA devices are not in use:
+Если PulseAudio запускается, а выполнение `pacmd list` говорит что нет карт, убедитесь что они не используются устройствами ALSA:
 
 ```
 $ fuser -v /dev/snd/*
@@ -641,11 +706,11 @@ $ fuser -v /dev/dsp
 
 ```
 
-Make sure any applications using the pcm or dsp files are shut down before restarting PulseAudio.
+Убедитесь, что все приложения, использующие файлы pcm или dspзакрыты перед перезапуском PulseAudio.
 
-### Starting an application interrupts other app's sound
+### Запуск приложения прерывает звук другого приложения
 
-If you have trouble with some applications (eg. Teamspeak, Mumble) interrupting sound output of already running applications (eg. Deadbeaf), you can solve this by commenting out the line `load-module module-role-cork` in `/etc/pulse/default.pa` like shown below:
+Если у вас есть проблемы с некоторыми приложениями (например Teamspeak, Mumble) прерывающих звук уже запущенных приложений (например Deadbeaf), вы можете решить эту проблему закомментировав строку `load-module module-role-cork` в `/etc/pulse/default.pa` как показано ниже:
 
  `/etc/pulse/default.pa` 
 ```
@@ -654,7 +719,7 @@ If you have trouble with some applications (eg. Teamspeak, Mumble) interrupting 
 
 ```
 
-Then restart pulseaudo by using your normal user account with
+Затем перезагрузите PulseAudio, используя обычную учетную запись пользователя
 
 ```
 pulseaudio -k
@@ -662,34 +727,7 @@ pulseaudio --start
 
 ```
 
-### The only device shown is "dummy output" or newly connected cards aren't detected
-
-This may be caused by settings in `~/.asoundrc` overriding the system wide settings in `/etc/asound.conf`. This can be prevented by commenting out the last line of `~/.asoundrc` like so:
-
- `~/.asoundrc` 
-```
-# </home/*yourusername*/.asoundrc.asoundconf>
-
-```
-
-Maybe some program is monopolizing the audio device:
-
- `# fuser -v /dev/snd/*` 
-```
-                     USER       PID  ACCESS COMMAND
-/dev/snd/controlC0:  root        931 F....  timidity
-                     bob        1195 F....  panel-6-mixer
-/dev/snd/controlC1:  bob        1195 F....  panel-6-mixer
-                     bob        1215 F....  pulseaudio
-/dev/snd/pcmC0D0p:   root        931 F...m  timidity
-/dev/snd/seq:        root        931 F....  timidity
-/dev/snd/timer:      root        931 f....  timidity
-
-```
-
-That means timidity blocks PulseAudio from accessing the audio devices. Just killing timidity will make the sound work again.
-
-If it doesn't help or you see nothing in the output, deleting the [timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B) package and restarting your system will help to get rid of the "dummy output".
+### Единственное указанное устройство является "фиктивным выходом" или вновь подключенные карты не определяются
 
 Another reason is [FluidSynth](/index.php/FluidSynth "FluidSynth") conflicting with PulseAudio as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=154002). One solution is to remove the package [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth).
 
@@ -701,28 +739,30 @@ AUDIO_DRIVER=pulseaudio
 OTHER_OPTS='-m alsa_seq-r 48000'
 ```
 
-### No HDMI 5/7.1 Selection for Device
+It is also possible there is an issue with logind giving permissions, see [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") for more information.
 
-If you are unable to select 5/7.1 channel output for a working HDMI device, then turning off "stream device reading" in `/etc/pulse/default.pa` might help.
+### Не возможно выбрать устройства HDMI 5/7.1
 
-See [#Fallback device is not respected](#Fallback_device_is_not_respected).
+Если вы не можете выбрать каналы выхода 5/7.1 для работающего устройства HDMI, вам может помоч выключение "stream device reading" в `/etc/pulse/default.pa`.
 
-### Failed to create sink input: sink is suspended
+Смотрите [#Резервное устройство не определяется](#.D0.A0.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D0.BD.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F).
 
-If you do not have any output sound and receive dozens of errors related to a suspended sink in your `journalctl -b` log, then backup first and then delete your user-specific pulse folders:
+### Не удалось создать устройство входа: устройство приостановлено
+
+Если у вас нет вывода звука и получаете десятки ошибок связанных с зависанием устройства в вашем журнале `journalctl -b`, сделайте резервную копию, а затем удалите в своём домашнем каталоге папки Pulse:
 
 ```
 $ rm -r ~/.pulse ~/.pulse-cookie ~/.config/pulse
 
 ```
 
-### Simultaneous output to multiple sound cards / devices
+### Одновременный вывод на несколько звуковых карт / устройств
 
-Simultaneous output to two different devices can be very useful. For example, being able to send audio to your A/V receiver via your graphics card's HDMI output, while also sending the same audio through the analogue output of your motherboard's built-in audio. This is much less hassle than it used to be (in this example, we are using GNOME desktop).
+Одновременный вывод двух различных устройств может быть очень полезным. Например, отправить звук на ваш A / V ресивер через HDMI выход видеокарты, и также отправить один и тот же звук через аналоговый выход вашей материнской платы встроенного аудио. Теперь это менее хлопотно, чем раньше (в этом примере, мы используем рабочий стол GNOME).
 
-Using [paprefs](https://www.archlinux.org/packages/?name=paprefs), simply select "Add virtual output device for simultaneous output on all local sound cards" from under the "Simultaneous Output" tab. Then, under GNOME's "sound settings", select the simultaneous output you have just created.
+Используя [paprefs](https://www.archlinux.org/packages/?name=paprefs), просто выберите "Добавить устройство виртуального выхода для одновременного вывода на всех локальных звуковых картах (Add virtual output device for simultaneous output on all local sound cards)" из вкладки "Одновременный вывод (Simultaneous Output)" . Затем в "Настройках Звука" GNOME, выберите одновременный вывод, который вы только что создали.
 
-If this doesn't work, try adding the following to `~/.asoundrc`:
+Если это не сработает, попробуйте добавить следующее `~/.asoundrc`:
 
 ```
 pcm.dsp {
@@ -732,24 +772,24 @@ pcm.dsp {
 
 ```
 
-**Tip:** Simultaneous output can also be achieved manually using alsamixer. Disable "auto mute" item, then unmute other output sources you want to hear and increase their volume.
+**Совет:** Одновременный вывод также может быть достигнуто вручную с помощью alsamixer. Отключите пункт "автоматическое отключение звука (auto mute)", затем включите другие источники вывода которые хотите услышать, и увеличте их громкость.
 
-### Simultaneous output to multiple sinks on the same sound card not working
+### Одновременный вывод на несколько устройств вывода на одной звуковой карте не работает
 
-This can be useful for users who have multiple sound sources and want to play them on different sinks/outputs. An example use-case for this would be if you play music and also voice chat and want to output music to speakers (in this case Digital S/PDIF) and voice to headphones. (Analog)
+Это будет полезно для пользователей, у которых несколько источников звука, и они хотят воспроизводить их на разных устройствах вывода/выходах. Пример того как это использовать: допустим вы слушаете музыку и общаетесь в голосовом чате, и хотите выводить музыку на колонки (в данном случае цифровой S/PDIF) а голос в наушники (Аналог).
 
-This is sometimes auto detected by PulseAudio but not always. If you know that your sound card can output to both Analog and S/PDIF at the same time and PulseAudio does not have this option in it's profiles in pavucontrol, or veromix then you probably need to create a configuration file for your sound card.
+Иногда, но не всегда, PulseAudio автоматически это обнаруживает. Если вы знаете что ваша звуковая карта может выводить звук на Аналоговый выход и S/PDIF, в то время как у PulseAudio нет этой опции в своих профилях на pavucontrol или veromix, то вам нужно будет создать файл настроек для вашей звуковой карты.
 
-More in detail you need to create a profile-set for your specific sound card. This is done in two steps mostly.
+Вам нужно создать более подробный профиль для конкретной звуковой карты. Это, в основном, делается в два этапа.
 
-*   Create udev rule to make PulseAudio choose your PulseAudio configuration file specific to the sound card.
-*   Create the actual configuration.
+*   Создать правило Udev для выбора PulseAudio, вашего специфичного файла настроек PulseAudio для звуковой карты
+*   Создать актуальные настройки
 
-Create a pulseadio udev rule.
+Создать правило pulseadio udev.
 
-**Note:** This is only an example for Asus Xonar Essence STX. Read [udev](/index.php/Udev "Udev") to find out the correct values.
+**Примечание:** Этот пример только для Asus Xonar Essence STX. Читайте [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") чтобы узнать праивльные значения.
 
-**Note:** Your configuration file should have lower number than the original PulseAudio rule to take effect.
+**Примечание:** Ваш файл настроек должен иметь меньшее число, чем исходное правило PulseAudio вступающее в силу.
  `/usr/lib/udev/rules.d/90-pulseaudio-Xonar-STX.rules` 
 ```
 ACTION=="change", SUBSYSTEM=="sound", KERNEL=="card*", \
@@ -757,11 +797,11 @@ ATTRS{subsystem_vendor}=="0x1043", ATTRS{subsystem_device}=="0x835c", ENV{PULSE_
 
 ```
 
-Now, create a configuration file. If you bother, you can start from scratch and make it saucy. However you can also use the default configuration file, rename it, and then add your profile there that you know works. Less pretty but also faster.
+Теперь создайте файл настроек. Если потрудиться, вы можете написать его с нуля и сделать его красивым. Однако можете воспользоватся файлом настроек по умолчанию, переименовать его, а затем добавить в свой профиль то что будет там работать. Это менее красиво, зато быстро.
 
-To enable multiple sinks for Asus Xonar Essence STX you need only to add this in.
+Чтобы включить несколько устройств вывода для Asus Xonar Essence STX, нужно только добавить это.
 
-**Note:** `asus-xonar-essence-stx.conf` also includes all code/mappings from `default.conf`.
+**Примечание:** `asus-xonar-essence-stx.conf` также содержит все коды/инструкции из `default.conf`.
  `/usr/share/pulseaudio/alsa-mixer/profile-sets/asus-xonar-essence-stx.conf` 
 ```
 [Profile analog-stereo+iec958-stereo]
@@ -772,31 +812,31 @@ skip-probe = yes
 
 ```
 
-This will auto-profile your Asus Xonar Essence STX with default profiles and add your own profile so you can have multiple sinks.
+Это будет авто-профилем Asus Xonar Essence STX с профилями по умолчанию и добавит свой собственный профиль, так что вы можете иметь несколько устройств вывода.
 
-You need to create another profile in the configuration file if you want to have the same functionality with AC3 Digital 5.1 output.
+Вам нужно создать еще один профиль в файле настроек, если вы хотите получить такую же функциональность с выходом AC3 Digital 5.1.
 
-[See PulseAudio article about profiles](http://www.freedesktop.org/wiki/Software/PulseAudio/Backends/ALSA/Profiles/)
+[смотрите статью о профилях PulseAudio](http://www.freedesktop.org/wiki/Software/PulseAudio/Backends/ALSA/Profiles/)
 
-### Some profiles like SPDIF are not enabled by default on the card
+### Некоторые профили, такие как SPDIF не задействованы по умолчанию на карте
 
-Some profiles like IEC-958 (i.e. S/PDIF) may not be enabled by default on the selected sink. Each time the system starts up, the card profile is disabled and the pulseaudio daemon cannot select it. You have to add the profile selection to you default.pa file. Verify the card and profile name with :
+Некоторые профили, такие как IEC-958 (т.е. S/PDIF) не могут быть задействованы на выбранном устройстве. Каждый раз когда система запускается, профиль карт будет заблокирован, и демон PulseAudio не может его выбрать. Вы должны добавить выбор профиля в ваш файл default.pa. Проверьте имя карты и профиль:
 
 ```
 $ pacmd list-cards
 
 ```
 
-Then edit the config to add the profile
+Затем отредактируйте файл настроек, чтобы добавить профиль
 
  `~/.config/pulse/default.pa` 
 ```
-## Replace with your card name and the profile you want to activate
+## Замените на ваши имена карты и профиля, которые вы хотите активировать
 set-card-profile alsa_card.pci-0000_00_1b.0 output:iec958-stereo+input:analog-stereo
 
 ```
 
-Pulse audio will add this profile the pool of available profiles
+Pulseaudio добавит этот профиль, в пул доступных профилей
 
 ## Bluetooth
 
@@ -824,7 +864,7 @@ bluez5-util.c: GetManagedObjects() failed: org.freedesktop.DBus.Error.ServiceUnk
 
 ```
 
-### Bluetooth headset replay problems
+### Проблемы воспроизведения гарнитуры Bluetooth
 
 Некоторые пользователи [сообщают](https://bbs.archlinux.org/viewtopic.php?id=117420) о больших задержках или даже отсутствии звука, когда по Bluetooth-соединению не передаются никакие данные. Это вызвано модулем `module-suspend-on-idle`, который автоматически приостанавливает устройства ввода/вывода при простое. Так как это может вызвать проблемы с гарнитурой, можно отключить соответствующий модуль.
 
@@ -865,13 +905,13 @@ Enable=Socket
 
 Если вы имеете проблемы с A2DP и PA 2.99, убедитесь, что у вас установлена библиотека [sbc](https://www.archlinux.org/packages/?name=sbc).
 
-## Applications
+## Приложения
 
-### Flash content
+### Содержащие Flash
 
-Since Adobe Flash does not directly support PulseAudio, the recommended way is to [configure ALSA to use the virtual PulseAudio sound card](/index.php/PulseAudio#ALSA "PulseAudio").
+Поскольку Adobe Flash напрямую не поддерживает PulseAudio, рекомендуется [настроить ALSA использовать виртуальную звуковую карту PulseAudio](/index.php/PulseAudio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#ALSA "PulseAudio (Русский)").
 
-If Flash audio is lagging, you may try to have Flash access ALSA directly. See [PulseAudio#ALSA/dmix without grabbing hardware device](/index.php/PulseAudio#ALSA.2Fdmix_without_grabbing_hardware_device "PulseAudio") for details.
+Если звук Flash заикается, можете попробовать использовать Flash через ALSA напрямую. Подробно смотрите [ALSA/dmix без захвата аппаратного устройства](/index.php/PulseAudio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#ALSA.2Fdmix_.D0.B1.D0.B5.D0.B7_.D0.B7.D0.B0.D1.85.D0.B2.D0.B0.D1.82.D0.B0_.D0.B0.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B3.D0.BE_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0 "PulseAudio (Русский)").
 
 ### Ошибка с правами доступа
 
@@ -891,52 +931,52 @@ E: [pulseaudio] main.c: Failed to acquire autospawn lock
 
 ### Audacity
 
-When starting Audacity you may find that your headphones no longer work. This can be because Audacity is trying to use them as a recording device. To fix this, open Audacity, then set its recording device to `pulse:Internal Mic:0`.
+При запуске Audacity вы можете обнаружить, что ваши наушники не работаую. Это может быть потому, что Audacity пытается использовать их в качестве записывающего устройства. Чтобы исправить это, откройте Audacity, затем установите его записывающее устройство `pulse:Internal Mic:0`.
 
-Under some circumstances, playback may be distorted, very fast, or freeze, as discussed in the [Audacity Wiki's Linux Issues page](http://wiki.audacityteam.org/wiki/Linux_Issues#ALSA_and_other_sound_systems).
+В некоторых случаях, воспроизведение может быть искажено, ускорятся , или зависть, как описано в [Audacity Wiki's Linux Issues page](http://wiki.audacityteam.org/wiki/Linux_Issues#ALSA_and_other_sound_systems).
 
-The solution proposed in this page may work: start Audacity with:
+Решение, предложенное на этой странице может работать: запустите Audacity с опцией:
 
 ```
 $ env PULSE_LATENCY_MSEC=30 audacity
 
 ```
 
-If the solution above does not fix this issue, one may wish to temporarily disable pulseaudio while running Audacity by using the `pasuspender` command:
+Если указанное выше решение, не решает эту проблему, то можно временно отключить pulseaudio, во время работы Audacity при помощи команды `pasuspender`:
 
 ```
 $ pasuspender -- audacity
 
 ```
 
-Then, be sure to select the appropriate ALSA input and output devices in Audacity.
+Затем, не забудьте выбрать соответствующие устройства ввода и вывода ALSA в Audacity.
 
-See also [#Setting the default fragment number and buffer size in PulseAudio](#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio).
+Смотрите также [#Определение номера фрагмента по умолчанию и размера буфера в PulseAudio](#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.BE.D0.BC.D0.B5.D1.80.D0.B0_.D1.84.D1.80.D0.B0.D0.B3.D0.BC.D0.B5.D0.BD.D1.82.D0.B0_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E_.D0.B8_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.B0_.D0.B1.D1.83.D1.84.D0.B5.D1.80.D0.B0_.D0.B2_PulseAudio).
 
-## Other Issues
+## Другие проблемы
 
-### Bad configuration files
+### Плохой файл настроек
 
-After starting PulseAudio, if the system outputs no sound, it may be necessary to delete the contents of `~/.config/pulse` and/or `~/.pulse`. PulseAudio will automatically create new configuration files on its next start.
+Если после запуска PulseAudio в системе нету звука, возможно необходимо удалить содержимое папки `~/.config/pulse` и/или `~/.pulse`. PulseAudio автоматически создаст новые файлы настроек при своём следующем запуске.
 
-### Can't update configuration of sound device in pavucontrol
+### Невозможно обновить настройки звукового устройства в pavucontrol
 
-[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) is a handy GUI utility for configuring PulseAudio. Under its 'Configuration' tab, you can select different profiles for each of your sound devices e.g. analogue stereo, digital output (IEC958), HDMI 5.1 Surround etc.
+[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) представляет собой удобную утилиту с графическим интерфейсом для настройки PulseAudio. На вкладке 'Настройки', вы можете выбрать различные профили для каждого из ваших звуковых устройств, например: аналоговое стерео, цифровой выход (IEC958), HDMI 5.1 Surround и т.д.
 
-However, you may run into an instance where selecting a different profile for a card results in the pulse daemon crashing and auto restarting without the new selection "sticking". If this occurs, use the other useful GUI tool, [paprefs](https://www.archlinux.org/packages/?name=paprefs), to check under the "Simultaneous Output" tab for a virtual simultaneous device. If this setting is active (checked), it will prevent you changing any card's profile in pavucontrol. Uncheck this setting, then adjust your profile in pavucontrol prior to re-enabling simultaneous output in paprefs.
+Тем не менее, вы можете столкнуться с случаем, когда выбрать другой профиль для карты приведёт к сбою демона Pulse и "зависнет" автоматическое повторное включение без нового выбора. Если это происходит, используйте другой полезный инструмент с графическим интерфейсом, [paprefs](https://www.archlinux.org/packages/?name=paprefs), чтобы проверить на вкладке "Одновременный вывод" для виртуального "одновременного устройства". Если этот параметр активен (флажок установлен), то это будет препятствовать вам изменению профиля любой карты в pavucontrol. Снимите флажок этого параметра, а затем настройте свой профиль в pavucontrol до повторного включения одновременного вывода в paprefs.
 
-### Failed to create sink input: sink is suspended
+### Не удалось создать устройство вывода: устройство вывода приостановлено
 
-If you do not have any output sound and receive dozens of errors related to a suspended sink in your `journalctl -b` log, then backup first and then delete your user-specific pulse folders:
+Если у вас нету звука, и вы получаете десятки ошибок связанных с приостановкой устройства вывода в вашем журнале `journalctl -b`, сначала создайте резервную копию, а потом удалите папки pulse в вашем домашнем каталоге:
 
 ```
 $ rm -r ~/.pulse ~/.pulse-cookie ~/.config/pulse
 
 ```
 
-### Pulse overwrites ALSA settings
+### Pulse переписывает настройки ALSA
 
-PulseAudio usually overwrites the ALSA settings — for example set with alsamixer — at start-up, even when the ALSA daemon is loaded. Since there seems to be no other way to restrict this behaviour, a workaround is to restore the ALSA settings again after PulseAudio has started. Add the following command to `.xinitrc` or `.bash_profile` or any other [autostart](/index.php/Autostart "Autostart") file:
+PulseAudio обычно переписывает настройки ALSA — например устанавливает alsamixer при загрузке, даже когда демон ALSA загружен. Так как нет иного способа избежать такого поведения, чтобы восстановить настройки ALSA после запуска PulseAudio. Добавьте следующую команду в `.xinitrc` или `.bash_profile` или другой файл [Автоматической загрузки](/index.php/Autostarting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Autostarting (Русский)"):
 
 ```
 restore_alsa() {
@@ -949,9 +989,9 @@ restore_alsa &
 
 ```
 
-### Prevent Pulse from restarting after being killed
+### Предотвращение перезагрузки Pulse, после того как процесс был убит (kill)
 
-Sometimes you may wish to temporarily disable Pulse. In order to do so you will have to prevent Pulse from restarting after being killed.
+Иногда вы можете временно отключить Pulse. Для того чтобы сделать это, вы должны предотвратить Pulse от повторного запуска, после того как процесс был убит.
 
  `~/.config/pulse/client.conf` 
 ```
@@ -959,9 +999,9 @@ Sometimes you may wish to temporarily disable Pulse. In order to do so you will 
 autospawn = no
 ```
 
-### Daemon startup failed
+### Не удаётся запустить Демон
 
-Try resetting PulseAudio:
+Попробуйте сбросить PulseAudio:
 
 ```
 $ rm -rf /tmp/pulse* ~/.pulse* ~/.config/pulse
@@ -970,44 +1010,42 @@ $ pulseaudio --start
 
 ```
 
-*   Check that options for sinks are set up correctly.
+*   Убедитесь, что параметры для устройств вывода настроены правильно.
 
-*   If you configured in default.pa to load and use the OSS modules then check with [lsof](https://www.archlinux.org/packages/?name=lsof) that `/dev/dsp` device is not used by another application.
+*   Если вы настроили default.pa для загрузки и использования модулей OSS проверьте [lsof](https://www.archlinux.org/packages/?name=lsof) что устройство `/dev/dsp` не используется другим приложением.
 
-*   LXDE may have a problem with closing all applications after the user logged out to fix it look [Incorrect logout handling](/index.php/LXDM#Incorrect_logout_handling "LXDM").
+*   Установите предпочтительный метод работы передискретизации. Используйте `pulseaudio --dump-resample-methods` чтобы увидеть список всех доступных методов ресэмплинга (resample) которые вы можете использовать.
 
-*   Set a preferred working resample method. Use `pulseaudio --dump-resample-methods` to see a list with all available resample methods you can use.
+*   Чтобы получить подробную информацию о недавно появившихся незаписанных ошибок или просто получить статус демона, используйте команду `pax11publish -d` и `pulseaudio -v` где `v` опция может быть использована для многократно установления подробности вывода журнала, равное `--log-level[=LEVEL]` опции где LEVEL от 0 до 4\. Смотрите раздел [#Вывод статуса ошибок PulseAudio утилитами проверки](#.D0.92.D1.8B.D0.B2.D0.BE.D0.B4_.D1.81.D1.82.D0.B0.D1.82.D1.83.D1.81.D0.B0_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_PulseAudio_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D0.B0.D0.BC.D0.B8_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8).
 
-*   To get details about currently appeared unfixed errors or just get status of daemon use commands like `pax11publish -d` and `pulseaudio -v` where `v` option can be used multiple time to set verbosity of log output equal to the `--log-level[=LEVEL]` option where LEVEL is from 0 to 4\. See the [Outputs by PulseAudio error status check utilities](/index.php/PulseAudio#Outputs_by_PulseAudio_error_status_check_utilities "PulseAudio") section.
+Для больших подробностей смотрите страницу справки [pax11publish](http://linux.die.net/man/1/pax11publish) и [pulseaudio](http://linux.die.net/man/1/pulseaudio).
 
-See also man pages for [pax11publish](http://linux.die.net/man/1/pax11publish) and [pulseaudio](http://linux.die.net/man/1/pulseaudio) for more details.
+#### Вывод статуса ошибок PulseAudio утилитами проверки
 
-#### Outputs by PulseAudio error status check utilities
-
-If the `pax11publish -d` shows error like:
+Если `pax11publish -d` показывает ошибку как:
 
 ```
 N: [pulseaudio] main.c: User-configured server at "user", refusing to start/autospawn.
 
 ```
 
-then run `pax11publish -r` command then could be also good to logout and login again. This manual cleanup is always required when using LXDM because it does not restart the X server on logout; see [LXDM#PulseAudio](/index.php/LXDM#PulseAudio "LXDM").
+затем запустите команду `pax11publish -r` и будет хорошо если вы выйдите из системы и войдёте снова. Это всегда требуется при использовании LXDM, поскольку он не перезапускает сервер X при завершении сеанса; смотрите [LXDM#PulseAudio](/index.php/LXDM#PulseAudio "LXDM").
 
-If the `pulseaudio -vvvv` command shows error like:
+Если команда `pulseaudio -vvvv` показывает ошибку:
 
 ```
 E: [pulseaudio] module-udev-detect.c: You apparently ran out of inotify watches, probably because Tracker/Beagle took them all away. I wished people would do their homework first and fix inotify before using it for watching whole directory trees which is something the current inotify is certainly not useful for. Please make sure to drop the Tracker/Beagle guys a line complaining about their broken use of inotify.
 
 ```
 
-This can be resolved temporary by:
+Эту проблему можно временно решить с помощью:
 
 ```
 $ echo 100000 > /proc/sys/fs/inotify/max_user_watches
 
 ```
 
-For permanent use save settings in the *99-sysctl.conf* file:
+Для постоянного использования сохраните настройки в файл *99-sysctl.conf*:
 
  `/etc/sysctl.d/99-sysctl.conf` 
 ```
@@ -1015,36 +1053,36 @@ For permanent use save settings in the *99-sysctl.conf* file:
 fs.inotify.max_user_watches = 100000
 ```
 
-**Warning:** It may cause much bigger consumption of memory by kernel.
+**Важно:** Это может привести к гораздо большему потреблению памяти ядром.
 
-**See also**
+**Смотрите также**
 
 *   [proc_sys_fs_inotify](http://www.linuxinsight.com/proc_sys_fs_inotify.html) and [dnotify, inotify](http://lwn.net/Articles/604686/)- more details about *inotify/max_user_watches*
 *   [reasonable amount of inotify watches with Linux](http://stackoverflow.com/questions/535768/what-is-a-reasonable-amount-of-inotify-watches-with-linux?answertab=votes#tab-top)
 *   [inotify](http://linux.die.net/man/7/inotify) - man page
 
-### Daemon already running
+### Демон уже запущен
 
-On some systems, PulseAudio may be started multiple times. journalctl will report:
+В некоторых системах, PulseAudio может быть запущен несколько раз. В таком случае journalctl сообщит:
 
 ```
 [pulseaudio] pid.c: Daemon already running.
 
 ```
 
-Make sure to use only one method of autostarting applications. [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) includes these files:
+Убедитесь в том, что используете только один метод автоматического запуска приложений. [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) содержит следующие файлы:
 
 *   `/etc/X11/xinit/xinitrc.d/pulseaudio`
 *   `/etc/xdg/autostart/pulseaudio.desktop`
 *   `/etc/xdg/autostart/pulseaudio-kde.desktop`
 
-Also check user autostart files and directories, such as [xinitrc](/index.php/Xinitrc "Xinitrc"), `~/.config/autostart/` etc.
+Также проверьте пользовательские файлы и каталоги автозапуска, такие как [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"), `~/.config/autostart/` и т.п..
 
-### Subwoofer stops working after end of every song
+### Сабвуфер перестает работать после окончания каждой песни
 
-Known issue: [https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099)
+Известные проблемы: [https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099)
 
-To fix this, must edit: `/etc/pulse/daemon.conf` and enable `enable-lfe-remixing` :
+Чтобы это исправить, необходимо изменить: `/etc/pulse/daemon.conf` и включить `enable-lfe-remixing` :
 
  `/etc/pulse/daemon.conf` 
 ```
@@ -1052,13 +1090,13 @@ enable-lfe-remixing = yes
 
 ```
 
-### Unable to select surround configuration other than "Surround 4.0"
+### Невозможно выбрать настройку объемного звучания, кроме "Surround 4.0"
 
-If you're unable to set 5.1 surround output in pavucontrol because it only shows "Analog Surround 4.0 Output", open the ALSA mixer and change the output configuration there to 6 channels. Then restart pulseaudio, and pavucontrol will list many more options.
+Если вам не удается установить 5.1-канальный вывод объемного звучания в pavucontrol, поскольку он показывает только "Analog Surround 4.0 Output", откройте микшер ALSA и измените настройку вывода на 6 каналов. Затем перезагрузите PulseAudio и pavucontrol покажет много вариантов.
 
-### Realtime scheduling
+### Планировщик в реальном времени
 
-If rtkit does not work, you can manually set up your system to run PulseAudio with real-time scheduling, which can help performance. To do this, add the following lines to `/etc/security/limits.conf`:
+Если rtkit не работает, вы можете вручную настроить систему для запуска PulseAudio с планировщиком в реальном времени, который может помочь в производительности. Чтобы сделать это, добавьте следующие строки в `/etc/security/limits.conf`:
 
 ```
 @pulse-rt - rtprio 9
@@ -1066,28 +1104,28 @@ If rtkit does not work, you can manually set up your system to run PulseAudio wi
 
 ```
 
-Afterwards, you need to add your user to the `pulse-rt` group:
+После этого вам нужно добавить пользователя в группу `pulse-rt`:
 
 ```
 # gpasswd -a <user> pulse-rt
 
 ```
 
-### pactl "invalid option" error with negative percentage arguments
+### Ошибка pactl "неверный параметр" с отрицательным процентным аргументом
 
-`pactl` commands that take negative percentage arguments will fail with an 'invalid option' error. Use the standard shell '--' pseudo argument to disable argument parsing before the negative argument. *e.g.* `pactl set-sink-volume 1 -- -5%`.
+Команды `pactl`, которые принимают отрицательные процентные аргументов, терпят крах с ошибкой 'недопустимый параметр/опция'. Используйте стандартную оболочку '--' псевдо аргумента отключите парсинг аргумента перед отрицательным элиментом. *Например* `pactl set-sink-volume 1 -- -5%`.
 
-### Fallback device is not respected
+### Резервное устройство не определяется
 
-PulseAudio does not have a true default device. Instead it uses a ["fallback"](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/DefaultDevice/), which only applies to new sound streams. This means previously run applications are not affected by the newly set fallback device.
+По умолчанию PulseAudio не использует настоящее устройство. Вместо этого он использует ["резервный вариант"](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/DefaultDevice/), который применяется только к новым звуковым потокам. Это означает, что ранее запущенные приложения не зависят от вновь установленного резервного устройства.
 
-[gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), [mate-media-pulseaudio](https://www.archlinux.org/packages/?name=mate-media-pulseaudio) and [paswitch](https://aur.archlinux.org/packages/paswitch/) handle this gracefully. Alternatively:
+[gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), [mate-media](https://www.archlinux.org/packages/?name=mate-media) и [paswitch](https://aur.archlinux.org/packages/paswitch/) справятся с этим. Альтернативно:
 
-1\. Move the old streams in [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) manually to the new sound card.
+1\. Переместите старые потоки вручную в [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) на новую звуковую карту.
 
-2\. Stop Pulse, erase the "stream-volumes" in `~/.config/pulse` and/or `~/.pulse` and restart Pulse. This also resets application volumes.
+2\. Остановить Pulse, стереть "stream-volumes" в `~/.config/pulse` и/или `~/.pulse` и перезапустить Pulse. Это также сбросит громкость у приложений.
 
-3\. Disable stream device reading. This may be not wanted when using different soundcards with different applications.
+3\. Отключите устройства чтения потока. Это может понадобиться если не хотите чтобы искались различные звуковые карты с различными приложениями.
 
  `/etc/pulse/default.pa` 
 ```

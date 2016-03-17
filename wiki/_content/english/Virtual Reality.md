@@ -4,7 +4,7 @@ A number of peripherals have been released or are about to be released recently 
 
 ## Contents
 
-*   [1 Compatibility Matrix](#Compatibility_Matrix)
+*   [1 Compatibility matrix](#Compatibility_matrix)
 *   [2 Peripherals and toolkits](#Peripherals_and_toolkits)
     *   [2.1 Oculus Rift](#Oculus_Rift)
     *   [2.2 OpenVR](#OpenVR)
@@ -15,7 +15,7 @@ A number of peripherals have been released or are about to be released recently 
         *   [2.3.1 Setting up](#Setting_up_2)
     *   [2.4 Leap Motion](#Leap_Motion)
         *   [2.4.1 Setting up](#Setting_up_3)
-*   [3 Supported Software](#Supported_Software)
+*   [3 Supported software](#Supported_software)
     *   [3.1 Dolphin (original VR fork)](#Dolphin_.28original_VR_fork.29)
     *   [3.2 Dolphin (official OSVR support)](#Dolphin_.28official_OSVR_support.29)
     *   [3.3 Games/Programs in Wine](#Games.2FPrograms_in_Wine)
@@ -23,12 +23,18 @@ A number of peripherals have been released or are about to be released recently 
     *   [3.4 Minecrift (Minecraft VR)](#Minecrift_.28Minecraft_VR.29)
     *   [3.5 JanusVR](#JanusVR)
         *   [3.5.1 Leap Motion support](#Leap_Motion_support)
-*   [4 Other Notes](#Other_Notes)
+*   [4 Other notes](#Other_notes)
     *   [4.1 Enable OpenAL's binaural sound support](#Enable_OpenAL.27s_binaural_sound_support)
 
-## Compatibility Matrix
+## Compatibility matrix
 
-<caption style="caption-side:bottom;">*Native support: green. Partial support or via toolkit: yellow. Broken support: red. No known or unfinished support: uncolored.*</caption>
+**Legend:**
+
+*   Green: natively supported
+*   Yellow: support via toolkit or partial support
+*   Red: broken support
+*   Uncolored: unknown/unfinished/planned support
+
  Oculus Rift | OSVR | OpenVR | Leap Motion | Razer Hydra |
 | Dolphin (original VR fork) | Partially complete |
 | Dolphin (official OSVR support) | Via OSVR | Via OSVR | Via OSVR |
@@ -99,7 +105,7 @@ Install [leap-motion-driver](https://aur.archlinux.org/packages/leap-motion-driv
 
 To configure, enable and start `leapd.service` and run `LeapControlPanel`. To test that tracking works, run the `Playground` demo included with the installation.
 
-## Supported Software
+## Supported software
 
 Currently there are a handful of apps which work well on the Rift and Linux, with several of them being in the AUR.
 
@@ -113,7 +119,7 @@ Support has for the most part been discontinued, in light of the Dolphin project
 
 ### Dolphin (official OSVR support)
 
-The Dolphin project has begun to work on adding support for VR officially using OSVR, available through the package [dolphin-emu-osvr-git](https://aur.archlinux.org/packages/dolphin-emu-osvr-git/). It can even use OSVR's path tree inputs as controller inputs, such that you can use a pinch or sixaxis controller input as a wiimote input. Support is limited in places however, as the fork isn't as far along as the original Oculus-only fork was.
+The Dolphin project has begun to work on adding support for VR officially using OSVR, available through the package [dolphin-emu-osvr-git](https://aur.archlinux.org/packages/dolphin-emu-osvr-git/). It can even use OSVR's path tree inputs as controller inputs, such that you can use a pinch or sixaxis controller input as a wiimote input. Support is limited in places however, as the fork is not as far along as the original Oculus-only fork was.
 
 ### Games/Programs in Wine
 
@@ -123,7 +129,7 @@ A number of applications have some level of compatibility when using Wine, but o
 
 #### Unity games
 
-To get the best performance in Unity based games, ideally you should force them into OpenGL mode with the `-force-opengl`. However this is not currently possible with an unpatched wine, as the WGL context it tries to force has some differences from a typical GLX context, [as described here](http://wiki.unity3d.com/index.php/Running_Unity_on_Linux_through_Wine#.22-force-opengl.22_option_crashing_Unity_.28Experimental_fix.29). Using the [wine-unity3d-git](https://aur.archlinux.org/packages/wine-unity3d-git/) package will allow you to run these games with native OpenGL, allowing you to play them with decent performance on your machine. Unfortunately they often try to change the video mode or mess with other settings, so supplying default screen settings may be neccesary. Additionally, since it's using native OpenGL, nvidia's __GL_THREADED_OPTIMIZATIONS may give a significant performance gain. Overall, the command should look something like this:
+To get the best performance in Unity based games, ideally you should force them into OpenGL mode with the `-force-opengl`. However this is not currently possible with an unpatched wine, as the WGL context it tries to force has some differences from a typical GLX context, [as described here](http://wiki.unity3d.com/index.php/Running_Unity_on_Linux_through_Wine#.22-force-opengl.22_option_crashing_Unity_.28Experimental_fix.29). Using the [wine-unity3d-git](https://aur.archlinux.org/packages/wine-unity3d-git/) package will allow you to run these games with native OpenGL, allowing you to play them with decent performance on your machine. Unfortunately they often try to change the video mode or mess with other settings, so supplying default screen settings may be neccesary. Additionally, since it is using native OpenGL, nvidia's __GL_THREADED_OPTIMIZATIONS may give a significant performance gain. Overall, the command should look something like this:
 
 ```
    env __GL_THREADED_OPTIMIZATIONS=1 wine UnityGame.exe -screen-height 1080 -screen-width 1920 -popupwindow -force-opengl
@@ -155,9 +161,9 @@ The AUR package does not automatically update when JanusVR does, but the applica
 
 #### Leap Motion support
 
-The Leap Motion allows you to be more expressive with gesture input, seen by other people within the world. You will want to mount your Leap to the front of your HMD and ensure that you're using the default avatar.
+The Leap Motion allows you to be more expressive with gesture input, seen by other people within the world. You will want to mount your Leap to the front of your HMD and ensure that you are using the default avatar.
 
-## Other Notes
+## Other notes
 
 ### Enable OpenAL's binaural sound support
 

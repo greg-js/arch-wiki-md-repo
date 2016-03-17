@@ -88,6 +88,7 @@ Section "InputClass"
         Option "CoastingSpeed" "0"
         Option "FingerLow" "30"
         Option "FingerHigh" "50"
+        Option "MaxTapTime" "125"
         ...
 EndSection
 
@@ -140,6 +141,10 @@ EndSection
 	**FingerHigh**
 
 	(integer) when finger pressure goes above this value, the driver counts it as a touch.
+
+	**MaxTapTime**
+
+	Determines how "crisp" a tap must be to be considered a real tap. Decrease the value to require a more crisp tap. Properly adjusting this parameter can really help make the touchpad behave better, cutting down false positives when the hands hover over or lightly touch the pad.
 
 	**VertScrollDelta** and **HorizScrollDelta**
 

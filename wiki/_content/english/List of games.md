@@ -1018,7 +1018,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://widelands.org](http://widelands.org) || [widelands](https://www.archlinux.org/packages/?name=widelands)
 
-*   **[Warzone 2100 - 2.*](https://en.wikipedia.org/wiki/Warzone_2100 "wikipedia:Warzone 2100")** — You command the forces of The Project in a battle to rebuild the world after mankind has almost been destroyed by nuclear missiles. The game offers campaign, multi-player, and single-player skirmish modes. An extensive tech tree with over 400 different technologies, combined with the unit design system, allows for a wide variety of possible units and tactics.
+*   **[Warzone 2100](/index.php/Warzone_2100 "Warzone 2100")** — You command the forces of The Project in a battle to rebuild the world after mankind has almost been destroyed by nuclear missiles. The game offers campaign, multi-player, and single-player skirmish modes. An extensive tech tree with over 400 different technologies, combined with the unit design system, allows for a wide variety of possible units and tactics.
 
 	[http://wz2100.net/](http://wz2100.net/) || [warzone2100](https://www.archlinux.org/packages/?name=warzone2100)
 

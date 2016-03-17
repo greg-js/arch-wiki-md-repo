@@ -183,7 +183,7 @@ Icons can be automatically downloaded from [openiconlibrary](http://openiconlibr
 
 ### lsdsk
 
-The [lsdsk](https://aur.archlinux.org/packages/lsdsk/) bash script searching for content in "Categories" or "Exec", if "Categories" doesn't exist then it uses content of "Name". It's main purpose to get a quick overview in console of the available programs with their command lines and categories in *.desktop. It shows coloured existing base path defined in "DskPath" array.
+The [lsdsk](https://aur.archlinux.org/packages/lsdsk/) bash script searching for content in "Categories" or "Exec", if "Categories" doesn't exist then it uses content of "Name" or you can use custom options to search only for a preferred content. It's main purpose to get a quick overview in console of the available programs with their command lines and categories in *.desktop. It shows coloured existing base path defined in "ADskPath" array. From version 3.0.0 it supports more command line options but multiple options can't be used at once, to list all supported options use option *--help*. Option *--var* and *--var-sys* passing all options to [grep](http://www.gnu.org/software/grep/manual/grep.html), it means that you can use additional options supported by grep but only after first two --var text.
 
 Examples
 
@@ -191,6 +191,21 @@ Examples
 # lsdsk
 # lsdsk game
 # lsdsk gtk
+
+```
+
+To search only for content of variable names use
+
+```
+# lsdsk --var Name= -e ^Exec= -e Comment= -i
+# lsdsk --var-sys Name= -e ^Exec
+
+```
+
+To show all available base name of the variables that can be used with option *--var* you can use option *--sud* to search only in a predefined path in "ADskPath" variable. The *--ssu* option show variables that can be used with *--var-sys*, both are looking for content only in /usr /etc /opt folders.
+
+```
+# lsdsk --sud
 
 ```
 

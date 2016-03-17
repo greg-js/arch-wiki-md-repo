@@ -9,19 +9,19 @@
         *   [2.2.1 Apache](#Apache)
         *   [2.2.2 Lighttpd](#Lighttpd)
         *   [2.2.3 Nginx](#Nginx)
-    *   [2.3 Instalation Wizard](#Instalation_Wizard)
+    *   [2.3 Installation wizard](#Installation_wizard)
 *   [3 Localization](#Localization)
 *   [4 See also](#See_also)
 
 ## Installation
 
-Install [invoiceplane](https://aur.archlinux.org/packages/invoiceplane/) from the [AUR](/index.php/AUR "AUR").
+Install the [invoiceplane](https://aur.archlinux.org/packages/invoiceplane/) package.
 
 ## Configuration
 
 ### Database
 
-Here's an example on how you could setup a database for Invoiceplane with [MariaDB](/index.php/MariaDB "MariaDB") called `invoiceplane` for the user `invoiceplane` identified by the password `password`:
+Here is an example on how you could setup a database for Invoiceplane with [MariaDB](/index.php/MariaDB "MariaDB") called `invoiceplane` for the user `invoiceplane` identified by the password `password`:
 
 ```
 CREATE DATABASE invoiceplane;
@@ -34,7 +34,7 @@ FLUSH PRIVILEGES;
 
 #### Apache
 
-Create the Apache configuration file:
+Create the [Apache](/index.php/Apache "Apache") configuration file:
 
  `/etc/httpd/conf/extra/invoiceplane.conf` 
 ```
@@ -58,7 +58,7 @@ Include conf/extra/invoiceplane.conf
 
 #### Lighttpd
 
-Make an alias for invoiceplane in your Lighttpd config.
+Make an alias for invoiceplane in your [Lighttpd](/index.php/Lighttpd "Lighttpd") configuration.
 
 ```
  alias.url = ( "/invoiceplane" => "/usr/share/webapps/invoiceplane/")
@@ -76,13 +76,13 @@ To get invoiceplane working with your [nginx](/index.php/Nginx "Nginx") setup, f
 
 ```
 
-### Instalation Wizard
+### Installation wizard
 
 Once database and webserver have been setup, visit the installation wizard page at [http://yourdomain/invoiceplane/setup](http://yourdomain/invoiceplane/setup) and follow the instructions.
 
 ## Localization
 
-If you want to choose a different language than English visit here: [https://wiki.invoiceplane.com/en/1.0/system/translation-localization](https://wiki.invoiceplane.com/en/1.0/system/translation-localization)
+If you want to choose a different language than English visit [Translation / Localization](https://wiki.invoiceplane.com/en/1.0/system/translation-localization).
 
 ## See also
 

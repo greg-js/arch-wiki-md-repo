@@ -50,7 +50,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 *   **aurutils** — Helper tools for the AUR.
 
-	[https://github.com/AladW/aurutils](https://github.com/AladW/aurutils) ||
+	[https://github.com/AladW/aurutils](https://github.com/AladW/aurutils) || [aurutils-git](https://aur.archlinux.org/packages/aurutils-git/)
 
 *   **bauerbill** — Powerpill/pacman extension with support for building packages from ABS and AUR.
 
@@ -162,6 +162,7 @@ The columns have the following meaning:
 | aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | No | No [[2]](https://github.com/aurapm/aura/issues/353) | No | bash/zsh | Pacman-like | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support, multilingual |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | Specific | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[3]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | Pacman-like | - |
+| aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | None | Specific | [tsort](https://en.wikipedia.org/wiki/Topological_sorting "w:Topological sorting"), PCRE, local repository, [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
 | bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | No | bash/zsh | Pacman-like/Specific | Trust management, ABS support, extends Powerpill |
 | burgaur | Python3 | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | Pacman-like | Wrapper for *cower* |
 | cower | C | Yes | N/A | Yes | N/A | N/A | No | bash/zsh | Specific | No automatic builds, regex support |

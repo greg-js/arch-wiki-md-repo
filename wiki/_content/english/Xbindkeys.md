@@ -92,7 +92,7 @@ amixer -c 1 set Master toggle
 
 ### GUI method
 
-If you installed the [xbindkeys_config](https://aur.archlinux.org/packages/xbindkeys_config/) package, just run:
+If you installed the [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) package, just run:
 
 ```
 $ xbindkeys_config

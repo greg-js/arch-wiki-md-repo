@@ -149,8 +149,8 @@ In order to run `nm-applet` without a systray, you can use [trayer](https://www.
  `nmgui` 
 ```
 #!/bin/sh
-nm-applet    2>&1 /dev/null &
-stalonetray  2>&1 /dev/null
+nm-applet    2>&1 > /dev/null &
+stalonetray  2>&1 > /dev/null
 killall nm-applet
 
 ```

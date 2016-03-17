@@ -1,4 +1,4 @@
-Timers are [systemd](/index.php/Systemd "Systemd") unit files whose name ends in `.timer` that control `.service` files or events. Timers have the ability to be an alternative to [cron](/index.php/Cron "Cron") (read [#As a cron replacement](#As_a_cron_replacement)). Timers have built-in support for calendar time events, monotonic time events, and have the ability to run asynchronously.
+Timers are [systemd](/index.php/Systemd "Systemd") unit files whose name ends in `.timer` that control `.service` files or events. Timers can be used as an alternative to [cron](/index.php/Cron "Cron") (read [#As a cron replacement](#As_a_cron_replacement)). Timers have built-in support for calendar time events, monotonic time events, and can be run asynchronously.
 
 ## Contents
 
@@ -30,7 +30,7 @@ For each `.timer` file, a matching `.service` file exists (e.g. `foo.timer` and 
 
 ## Management
 
-To use a *timer* unit [enable](/index.php/Enable "Enable") and start it like any other unit (remember to add the `.timer` suffix). To view all started timers, run:
+To use a *timer* unit [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") it like any other unit (remember to add the `.timer` suffix). To view all started timers, run:
 
  `$ systemctl list-timers` 
 ```
@@ -85,9 +85,7 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-**Tip:** Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. Consider manually staggering such timers using specific events e.g. `OnCalendar=Wed 23:15`. See [#Caveats](#Caveats).
-
-**Tip:** If you have many timers at the same time, you can use the `RandomizedDelaySec` option (`systemd.timer (5)`) to get a crontab-like behavoir to stretch the start-time, instead of running them all at one
+**Tip:** Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. The `RandomizedDelaySec` option avoids this problem by randomly staggering the start time of each timer. See `systemd.timer (5)`.
 
 ## As a cron replacement
 
@@ -105,7 +103,7 @@ The main benefits of using timers come from each job having its own *systemd* se
 
 ### Caveats
 
-Some things that are easy to do with cron are difficult or impossible to do with timer units alone.
+Some things that are easy to do with cron are difficult to do with timer units alone.
 
 *   Complexity: to set up a timed job with *systemd* you create two files and run a couple `systemctl` commands. Compare that to adding a single line to a crontab.
 *   Emails: there is no built-in equivalent to cron's `MAILTO` for sending emails on job failure. See the next section for an example of setting up an equivalent using `OnFailure=`.
@@ -131,14 +129,14 @@ ERRMAIL
 
 Whatever executable you use, it should probably take at least two arguments as this shell script does: the address to send to and the unit file to get the status of. The *.service* we create will pass these arguments:
 
- `/etc/systemd/system/status-email-user1@.service` 
+ `/etc/systemd/system/status-email-**user1**@.service` 
 ```
 [Unit]
-Description=status email for %I to user1
+Description=status email for %I to **user1**
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/systemd-email user1@mailhost %i
+ExecStart=/usr/local/bin/systemd-email **user1@mailhost** %i
 User=nobody
 Group=systemd-journal
 
@@ -148,7 +146,7 @@ First notice that the unit to send email about is an instance parameter, so this
 
  `# systemctl start status-email-user1@dbus.service` 
 
-Then simply add `OnFailure=status-email-user1@%n.service` to the `[Unit]` section of any unit you want emails for. `%n` passes the unit's name to the template.
+Then simply [edit](/index.php/Systemd#Editing_provided_units "Systemd") the service you want emails for and add `OnFailure=status-email-user1@%n.service` to the `[Unit]` section. `%n` passes the unit's name to the template.
 
 **Note:** If you set up SSMTP security according to [SSMTP#Security](/index.php/SSMTP#Security "SSMTP") the user `nobody` will not have access to `/etc/ssmtp/ssmtp.conf`, and the `systemctl start status-email-user1@dbus.service` command will fail. One solution is to use `root` as the User in the `status-email-user1@.service` module.
 

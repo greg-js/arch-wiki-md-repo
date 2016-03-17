@@ -36,7 +36,7 @@ To get a list of options when using *fdisk* you can list the help information:
 To list partition tables and partitions on a device, you can run the following, where device is a name like `/dev/sda`:
 
 ```
-# fdisk [options] -l <device>
+# fdisk -l /dev/sda
 
 ```
 

@@ -93,7 +93,7 @@ To communicate with the device, you can use any of the following, to name a few:
 *   `picocom`
 
 ```
-# picocom -b 115200 -p n -d 8 /dev/buspirate
+# picocom -b 115200 /dev/buspirate
 
 ```
 

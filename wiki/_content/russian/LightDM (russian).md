@@ -28,12 +28,12 @@
     *   [5.3 Внедрение Arch-ориентированных 64x64 иконок](#.D0.92.D0.BD.D0.B5.D0.B4.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_Arch-.D0.BE.D1.80.D0.B8.D0.B5.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_64x64_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BE.D0.BA)
     *   [5.4 Включение автовхода](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D0.B2.D1.82.D0.BE.D0.B2.D1.85.D0.BE.D0.B4.D0.B0)
     *   [5.5 Включение интерактивного без парольного входа в систему](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.B0.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B1.D0.B5.D0.B7_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
-    *   [5.6 Скрытие пользователей служб и системы](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_.D1.81.D0.BB.D1.83.D0.B6.D0.B1_.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+    *   [5.6 Скрытие пользователей системы и служб](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D0.B8_.D1.81.D0.BB.D1.83.D0.B6.D0.B1)
     *   [5.7 Миграция с SLiM](#.D0.9C.D0.B8.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D1.81_SLiM)
     *   [5.8 NumLock включен по умолчанию](#NumLock_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
     *   [5.9 Переключение пользователя при Xfce4](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8_Xfce4)
     *   [5.10 Сессия по умолчанию](#.D0.A1.D0.B5.D1.81.D1.81.D0.B8.D1.8F_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
-    *   [5.11 Adjusting the login window's position](#Adjusting_the_login_window.27s_position)
+    *   [5.11 Регулировка положения входа окна](#.D0.A0.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.BE.D0.BA.D0.BD.D0.B0)
         *   [5.11.1 Экран приветствия GTK+](#.D0.AD.D0.BA.D1.80.D0.B0.D0.BD_.D0.BF.D1.80.D0.B8.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D0.B8.D1.8F_GTK.2B)
 *   [6 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [6.1 Локаль неправильно отображается](#.D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C_.D0.BD.D0.B5.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F)
@@ -61,7 +61,7 @@
 Другие альтернативные Экраны приветствия доступны в [AUR](/index.php/AUR "AUR").
 
 *   [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): Экран приветствия, который использует Webkit2 для тем. Он заменяет [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
-*   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): Экран приветствия использующися в Ubuntu [Unity](/index.php/Unity "Unity").
+*   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): Экран приветствия использующийся в Ubuntu [Unity](/index.php/Unity "Unity").
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): Экран приветствия из проекта elementary OS.
 
 Вы можете установить Экран приветствия по умолчанию, путём изменения раздела `[Seat:*]` в файле настроек LightDM, например:
@@ -115,7 +115,7 @@ $ lightdm --test-mode --debug
 
 ```
 
-и [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter) has:
+и [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter) имеет:
 
 ```
 /etc/lightdm/lightdm-kde-greeter.conf
@@ -124,7 +124,7 @@ $ lightdm --test-mode --debug
 
 а также раздел в системных настройках KDE (рекомендуется).
 
-LightDM может быть настроен путём изменения его скрипта настроек, `/etc/lightdm/lightdm.conf`.
+LightDM может быть настроен путём изменения его скрипта настроек `/etc/lightdm/lightdm.conf`.
 
 ### Изменение фонового изображения/цветов
 
@@ -185,7 +185,7 @@ GreetMessage=Welcome to %hostname%
 
 **Совет:** Если вы используете KDE, вы можете изменить свой аватар в Системных Настройках KDE.
 
-Во-первых, убедитесь, что пакет [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) из [Официальных репозиториев](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории") установлен, затем установите его следующим образом, заменив `*username*` на регистрационное именем нужного пользователя. Расширение файла *.png* не должно быть включено в имя файла.
+Во-первых, убедитесь, что пакет [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) из [Официальных репозиториев](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории") установлен, затем установите его следующим образом, заменив `*username*` на регистрационное имя нужного пользователя. Расширение файла *.png* не должно содержатся в имени файла.
 
 *   Отредактируйте или создайте файл `/var/lib/AccountsService/users/*username*`, и добавьте строки
 
@@ -232,7 +232,7 @@ LightDM проходит через PAM даже когда включен `auto
 
 ```
 
-**Примечание:** GNOME users, and by extension any gnome-keyring user will have to set up a blank password to their keyring for it to be unlocked automatically.
+**Примечание:** Пользователи GNOME, использующие расширение gnome-keyring должны установить пустой пароль для своего gnome-keyring, чтобы он разблокировался автоматически.
 
 ### Включение интерактивного без парольного входа в систему
 
@@ -254,7 +254,7 @@ auth        include     system-login
 
 ```
 
-**Примечание:** Пользователям GNOME, и расширениям любого пользовательского Gnome-брелка, возможно, придётся следовать инструкциям в конце предыдущего раздела о включении автоматического логина.
+**Примечание:** Пользователям GNOME, и пользователям Gnome-keyring, возможно, придётся следовать инструкциям в конце предыдущего раздела о включении автоматического логина.
 
 Для того, чтобы создать новую учетную запись пользователя, которая входит в систему автоматически и дополнительно имеет возможность снова войти в систему без пароля, пользователь может быть создан с помощью дополнительного участия в обеих группах и т.д .:
 
@@ -263,13 +263,13 @@ auth        include     system-login
 
 ```
 
-### Скрытие пользователей служб и системы
+### Скрытие пользователей системы и служб
 
-To prevent system users from showing-up in the login, install the optional dependency [accountsservice](https://www.archlinux.org/packages/?name=accountsservice), or add the user names to `/etc/lightdm/users.conf` under `hidden-users`. The first option has the advantage of not needing to update the list when more users are added or removed.
+Чтобы запретить системным пользователям отображаться в начале при входе в систему, установите дополнительную зависимость [accountsservice](https://www.archlinux.org/packages/?name=accountsservice), или добавьте имя пользователя в `/etc/lightdm/users.conf` под `hidden-users`. Первый вариант предпочтительнее, - не нужно будет обновлять список при многократном добавлении или удалении пользователей.
 
 ### Миграция с SLiM
 
-Move the contents of [xinitrc](/index.php/Xinitrc "Xinitrc") to [xprofile](/index.php/Xprofile "Xprofile"), removing the call to start the [window manager](/index.php/Window_manager "Window manager") or [desktop environment](/index.php/Desktop_environment "Desktop environment").
+Переместите содержимое [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") в [xprofile](/index.php/Xprofile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xprofile (Русский)"), удалите вызов запуска [Оконного менеджера](/index.php/Window_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Window manager (Русский)") или [Среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)").
 
 ### NumLock включен по умолчанию
 
@@ -282,7 +282,7 @@ greeter-setup-script=/usr/bin/numlockx on
 
 ### Переключение пользователя при Xfce4
 
-If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functionality of the Action Button found in your Application Launcher specifically looks for the *gdmflexiserver* executable in order to enable itself. If you provide it with an executable shell script `/usr/bin/gdmflexiserver` consisting of
+Если вы используете рабочий стол [Xfce](/index.php/Xfce_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xfce (Русский)"), то кнопка действия Функции Переключения Пользователей ищет в вашем Запуске Приложений специальный исполняемый файл *gdmflexiserver*, для того чтобы задействовать себя. Если вы предоставите исполняемый сценарий оболочки `/usr/bin/gdmflexiserver` состоящий из
 
 ```
 #!/bin/sh
@@ -305,7 +305,7 @@ If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functiona
 
 Lightdm, как и другие Экранные менеджеры, хранит последнюю выбранную xsession в `~/.dmrc`. Для подробностей смотрите [Экранный менеджер#Список сеансов](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.81.D0.B5.D0.B0.D0.BD.D1.81.D0.BE.D0.B2 "Экранный менеджер").
 
-### Adjusting the login window's position
+### Регулировка положения входа окна
 
 #### Экран приветствия GTK+
 
@@ -320,16 +320,16 @@ position=200,start 50%,center
 
 ## Решение проблем
 
-If you encounter consistent screen flashing and ultimately no LightDM on boot, ensure that you have defined the greeter correctly in LightDM's config file. And if you have correctly defined the GTK greeter, make sure the `xsessions-directory` (default: `/usr/share/xsessions`) exists and contains at least one .desktop file.
+Если вы столкнулись с миганием экрана, и в итоге LightDM не запускается, проверьте что вы определили Экран приветствия правильно, в файле настроек LightDM. И если вы правильно задали Экран приветствия GTK, убедитесь что `xsessions-directory` (по умолчанию: `/usr/share/xsessions`) существует и содержит по меньшей мере один файл .desktop.
 
-The same error can happen on lightdm startup if the last used session is not available anymore (eg. you last used gnome and then removed the gnome-session package): the easiest workaround is to temporarily restore the removed package. Another solution might be:
+Та же ошибка может произойти при запуске Lightdm, когда последняя запускаемая сессия больше не доступна (например, когда вы последний раз использовали Gnome, а потом удалили пакет gnome-session): самый простой способ, - временно восстановить удалённый пакет. Другое решение:
 
 ```
 # dbus-send --system --type=method_call --print-reply --dest=org.freedesktop.Accounts /org/freedesktop/Accounts/User1000 org.freedesktop.Accounts.User.SetXSession string:xfce
 
 ```
 
-This example sets the session "xfce" as default for the user 1000.
+В этом примере устанавливается сессия по умолчанию "xfce" для пользователя 1000.
 
 ### Локаль неправильно отображается
 
@@ -342,21 +342,21 @@ This example sets the session "xfce" as default for the user 1000.
 
 ### Ресурсы X не корректно распознаны
 
-LightDM has an [upstream bug](https://bugs.launchpad.net/lightdm/+bug/1084885) where your [Xresources](/index.php/Xresources "Xresources") file will not be loaded with a pre-processor. In practical terms, this means that variables set with `#define` are not expanded when called later. You may see this reflected as an all-pink screen if using a custom color set with urxvt. To fix it, edit `/etc/lightdm/Xsession` and search for the line:
+В LightDM есть [ошибка](https://bugs.launchpad.net/lightdm/+bug/1084885) при которой ваш файл [Xresources](/index.php/X_resources_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "X resources (Русский)") не будет загружен на предварительную обработку. В практическом плане это означает, что набор переменных `#define` не определится при последующих вызовах. Вы можете увидеть как экран отображается розовым цветом, при использовании пользовательского набора цветов в urxvt. Чтобы исправить это, отредактируйте `/etc/lightdm/Xsession` и найдите эту строку:
 
 ```
 xrdb -nocpp -merge "$file"
 
 ```
 
-Change it to read:
+Измените её для чтения:
 
 ```
 xrdb -merge "$file"
 
 ```
 
-Your Xresources will now be pre-processed so that variables are correctly expanded.
+Теперь ваш Xresources будет предварительно обработан таким образом, чтобы переменные правильно определялись.
 
 ### Отсутствуют иконки в Экране приветствия GTK
 
@@ -371,7 +371,7 @@ icon-theme-name=mate # this should be the name of a fully featured icons set dir
 
 ### LightDM зависает при попытке входа в систему
 
-You may find that after entering the correct username and password and attempting to log in, LightDM freezes and you are unable to continue to the desktop. To fix the issue, reinstall the [gdk-pixbuf2](https://www.archlinux.org/packages/?name=gdk-pixbuf2) package. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=179031).
+После ввода правильного имени пользователя и пароля, при попытке войти в систему, вы обнаруживаете что LightDM завис и вы не можете продолжить загрузу до Рабочего стола. Чтобы устранить эту проблему, переустановите пакет [gdk-pixbuf2](https://www.archlinux.org/packages/?name=gdk-pixbuf2). Смотрите [эту тему на форуме (Англ.)](https://bbs.archlinux.org/viewtopic.php?id=179031).
 
 ### LightDM отображается в неправильном мониторе
 
@@ -399,8 +399,8 @@ You may find that after entering the correct username and password and attemptin
 
 ## Смотрите также
 
-*   [light-locker](https://www.archlinux.org/packages/?name=light-locker), a screen locker using LightDM.
-*   [Ubuntu Wiki article](https://wiki.ubuntu.com/LightDM)
-*   [Gentoo Wiki article](http://wiki.gentoo.org/wiki/LightDM)
+*   [light-locker](https://www.archlinux.org/packages/?name=light-locker), блокировщик экрана с помощью LightDM.
+*   [статья Wiki Ubuntu](http://help.ubuntu.ru/wiki/lightdm)
+*   [статья Wiki Gentoo](https://wiki.gentoo.org/wiki/LightDM/ru)
 *   [Launchpad Page](https://launchpad.net/lightdm)
-*   [LightDM blog](http://www.mattfischer.com/blog/?tag=lightdm)
+*   [Блог LightDM (Англ.)](http://www.mattfischer.com/blog/?tag=lightdm)

@@ -1019,7 +1019,7 @@ $ pulseaudio --start
 
 *   Set a preferred working resample method. Use `pulseaudio --dump-resample-methods` to see a list with all available resample methods you can use.
 
-*   To get details about currently appeared unfixed errors or just get status of daemon use commands like `pax11publish -d` and `pulseaudio -v` where `v` option can be used multiple time to set verbosity of log output equal to the `--log-level[=LEVEL]` option where LEVEL is from 0 to 4\. See the [Outputs by PulseAudio error status check utilities](/index.php/PulseAudio#Outputs_by_PulseAudio_error_status_check_utilities "PulseAudio") section.
+*   To get details about currently appeared unfixed errors or just get status of daemon use commands like `pax11publish -d` and `pulseaudio -v` where `v` option can be used multiple time to set verbosity of log output equal to the `--log-level[=LEVEL]` option where LEVEL is from 0 to 4\. See the [#Outputs by PulseAudio error status check utilities](#Outputs_by_PulseAudio_error_status_check_utilities) section.
 
 See also man pages for [pax11publish](http://linux.die.net/man/1/pax11publish) and [pulseaudio](http://linux.die.net/man/1/pulseaudio) for more details.
 

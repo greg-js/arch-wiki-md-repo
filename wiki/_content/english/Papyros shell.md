@@ -1,4 +1,6 @@
-**Papyros** is a desktop environment based on Google's Material Design guidelines, created in 2014\. The operating system, desktop shell, and material design framework is still in active development and is in a pre-alpha state.
+**Papyros** is a desktop environment based on Google's Material Design guidelines, created in 2014.
+
+**Warning:** The desktop shell and material design framework are still in active development and are in a pre-alpha state.
 
 ## Installation
 

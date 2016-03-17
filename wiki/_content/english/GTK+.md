@@ -173,23 +173,17 @@ Other GUI tools generally overwrite the [configuration files](#Configuration).
 
 **Both GTK+ 2 and GTK+ 3 are supported:**
 
-*   **KDE GTK Configurator** — Application that allows you to change style and font of GTK+2 and Gtk+3 applications.
+*   **KDE GTK Configurator** — Application that allows you to change style and font of GTK+ 2 and Gtk+ 3 applications.
 
 	[https://projects.kde.org/kde-gtk-config](https://projects.kde.org/kde-gtk-config) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
 	After installation, `kde-gtk-config` can also be found in *System Settings > Application Style > GTK*.
 
-*   **LXAppearance** — Desktop independent GTK+2 and GTK+3 style configuration tool from the LXDE project (it does not require other parts of the LXDE desktop).
+*   **LXAppearance** — Desktop independent GTK+ 2 and GTK+ 3 style configuration tool from the LXDE project (it does not require other parts of the LXDE desktop).
 
 	[http://wiki.lxde.org/en/LXAppearance](http://wiki.lxde.org/en/LXAppearance) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
 
 **Only GTK+ 2 is supported:**
-
-*   **GTK-KDE4** — Application that allows you to change style and font of GTK+2 applications in KDE4.
-
-	[http://kde-look.org/content/show.php?content=74689](http://kde-look.org/content/show.php?content=74689) || [gtk-kde4](https://aur.archlinux.org/packages/gtk-kde4/)
-
-	After installation, `gtk-kde4` can also be found in *System Settings > Lost and Found > GTK style*.
 
 *   **GTK+ Change Theme** — Little program that lets you change your GTK+ 2.0 theme (considered a better alternative to *switch2*).
 

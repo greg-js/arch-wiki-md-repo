@@ -4,7 +4,7 @@ This page is intended to be a page to demystify common terms used among the Arch
 
 *   [1 Arch Linux](#Arch_Linux)
 *   [2 ABS](#ABS)
-*   [3 ARM](#ARM)
+*   [3 Arch Linux Archive](#Arch_Linux_Archive)
 *   [4 AUR](#AUR)
 *   [5 PKGBUILD](#PKGBUILD)
 *   [6 TU, Trusted User](#TU.2C_Trusted_User)
@@ -16,18 +16,20 @@ This page is intended to be a page to demystify common terms used among the Arch
 *   [12 extra/[extra]](#extra.2F.5Bextra.5D)
 *   [13 initramfs](#initramfs)
 *   [14 initrd](#initrd)
-*   [15 makepkg](#makepkg)
-*   [16 namcap](#namcap)
-*   [17 package](#package)
-*   [18 Package maintainer](#Package_maintainer)
-*   [19 pacman](#pacman)
-*   [20 pacman.conf](#pacman.conf)
-*   [21 repository/repo](#repository.2Frepo)
-*   [22 RTFM](#RTFM)
-*   [23 taurball](#taurball)
-*   [24 testing/[testing]](#testing.2F.5Btesting.5D)
-*   [25 udev](#udev)
-*   [26 wiki](#wiki)
+*   [15 KISS](#KISS)
+*   [16 makepkg](#makepkg)
+*   [17 namcap](#namcap)
+*   [18 package](#package)
+*   [19 Package maintainer](#Package_maintainer)
+*   [20 pacman](#pacman)
+*   [21 pacman.conf](#pacman.conf)
+*   [22 repository/repo](#repository.2Frepo)
+*   [23 RTFM](#RTFM)
+*   [24 taurball](#taurball)
+*   [25 testing/[testing]](#testing.2F.5Btesting.5D)
+*   [26 The Arch Way](#The_Arch_Way)
+*   [27 udev](#udev)
+*   [28 wiki](#wiki)
 
 ## Arch Linux
 
@@ -52,15 +54,15 @@ The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") (ABS) 
 
 ABS is not necessary to use Arch Linux, but it is useful.
 
-## ARM
+## Arch Linux Archive
 
-The [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine") is a mirror that does not remove old versions of the packages and is thus very useful if you need to downgrade your system.
+The [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") (a.k.a ALA), formerly known as Arch Linux Rollback Machine (a.k.a ARM), stores official repositories snapshots, iso images and bootstrap tarballs across time.
 
 ## AUR
 
-The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) is a community driven repository for Arch users. The AUR was initially conceived to organize the sharing of [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") amongst the wider community and to expedite the inclusion of popular user-contributed packages into the [core] and [extra] repositories via the AUR [community] repository.
+The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) is a community-driven repository for Arch users. It contains package descriptions ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) that allow you to compile a package from source with [makepkg](/index.php/Makepkg "Makepkg") and then install it via [pacman](/index.php/Pacman#Additional_commands "Pacman"). The AUR was created to organize and share new packages from the community and to help expedite popular packages' inclusion into the [community](/index.php/Community "Community") repository. This document explains how users can access and utilize the AUR.
 
-The AUR is the birthplace of new Arch packages. Users contribute their own packages to the AUR. The AUR community votes for their favourite packages and eventually, once a package has garnered enough votes, an AUR Trusted User may take it to the [community] repository, which is accessible via [pacman](/index.php/Pacman "Pacman") and the [ABS](/index.php/ABS "ABS").
+A good number of new packages that enter the official repositories start in the AUR. In the AUR, users are able to contribute their own package builds (PKGBUILD and related files). The AUR community has the ability to vote for or against packages in the AUR. If a package becomes popular enough — provided it has a compatible license and good packaging technique — it may be entered into the *community* repository (directly accessible by [pacman](/index.php/Pacman "Pacman") or [abs](/index.php/Abs "Abs")).
 
 You can access the Arch Linux User Community Repository [here](https://aur.archlinux.org).
 
@@ -110,6 +112,10 @@ See [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio").
 
 Obsolete. Nowadays often used as a synonym for initramfs.
 
+## KISS
+
+Acronym of Keep It Simple, Stupid. [Simplicity](/index.php/Arch_Linux#Simplicity "Arch Linux") is a main principle Arch Linux try to archive.
+
 ## makepkg
 
 [makepkg](/index.php/Makepkg "Makepkg") will build packages for you. makepkg will read the metadata required from a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file. All it needs is a build-capable Linux platform, [wget](https://www.archlinux.org/packages/?name=wget), and some build scripts. The advantage to a script-based build is that you only really do the work once. Once you have the build script for a package, you just need to run makepkg and it will do the rest: download and validate source files, check dependencies, configure the build time settings, build the package, install the package into a temporary root, make customizations, generate meta-info, and package the whole thing up for [pacman](/index.php/Pacman "Pacman") to use.
@@ -149,30 +155,19 @@ The maintainer of a package is the person currently responsible for the package.
 
 ## pacman
 
-The [pacman](/index.php/Pacman "Pacman") package manager is one of the great highlights of Arch Linux. It combines a simple binary package format with an easy-to-use build system (see [ABS](/index.php/ABS "ABS")). Pacman makes it possible to easily manage and customize packages, whether they be from the official Arch repositories or the user's own creations. The repository system allows users to build and maintain their own custom package repositories, which encourages community growth and contribution (see [AUR](/index.php/AUR "AUR")).
+The [pacman](/index.php/Pacman "Pacman") [package manager](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") is one of the major distinguishing features of Arch Linux. It combines a simple binary package format with an easy-to-use [build system](/index.php/Arch_Build_System "Arch Build System"). The goal of *pacman* is to make it possible to easily manage packages, whether they are from the [official repositories](/index.php/Official_repositories "Official repositories") or the user's own builds.
 
-Pacman can keep a system up to date by synchronizing package lists with the master server, making it a breeze for the security-conscious system administrator to maintain. This server/client model also allows you to download/install packages with a simple command, complete with all required dependencies (similar to Debian's apt-get).
+*pacman* keeps the system up to date by synchronizing package lists with the master server. This server/client model also allows the user to download/install packages with a simple command, complete with all required dependencies.
 
 NB: Pacman was written by Judd Vinet, the creator of Arch Linux. It is used as a package management tool by other distributions as well, such as FrugalWare, Rubix, UfficioZero (in Italy, based on Ubuntu), and, of course, [Arch based distributions](/index.php/Arch_based_distributions_(active) "Arch based distributions (active)") such as Archie and AEGIS.
 
 ## pacman.conf
 
-This is the configuration file of [pacman](/index.php/Pacman "Pacman"). It is located in `/etc`. For a full explanation of its powers, type this at the command line:
-
-```
-man pacman.conf
-
-```
+This is the configuration file of [pacman](/index.php/Pacman "Pacman"). It is located in `/etc`. For a full explanation of its powers, type this at the command `man pacman.conf`.
 
 ## repository/repo
 
-The repository has the pre-compiled packages of one or (usually) more [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). Official repositories are
-
-*   [core]: containing the latest version of packages required for a full CLI system
-*   [extra]: containing the latest version of packages not needed for a working system but are needed for an enjoyable system ;)
-*   [community]: containing packages that came from [AUR](/index.php/AUR "AUR") and got enough user votes
-
-Pacman uses these repositories to search for packages and install them. A repository can be local (i.e. on your own computer) or remote (i.e. the packages are downloaded before they are installed).
+The repository has the pre-compiled packages of one or (usually) more [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). [Official repositories](/index.php/Official_repositories "Official repositories") is splited into different parts for easy maintaince. Pacman uses these repositories to search for packages and install them. A repository can be local (i.e. on your own computer) or remote (i.e. the packages are downloaded before they are installed).
 
 ## [RTFM](https://en.wikipedia.org/wiki/RTFM "wikipedia:RTFM")
 
@@ -182,14 +177,7 @@ It is often used when a user fails to make any attempt to find a solution to the
 
 The best thing to do if you are told to do this is to read the manual page.
 
-*   To read the program manual page for a particular program, type this at the command line:
-
-```
-man PROGRAM-NAME
-
-```
-
-where PROGRAM-NAME is the name of the program you need more information about.
+*   To read the program manual page for a particular program named as PROGRAM-NAME, type this at the command line: `man PROGRAM-NAME`.
 
 If you do not find the answer to your question in the program manual, there are more ways to find the answer. You can:
 
@@ -205,6 +193,10 @@ The tarballed [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and local source files 
 ## testing/[testing]
 
 This is the repository where major packages/updates to packages are kept prior to release into the main repositories, so they can be bug tested and upgrade issues can be found. It is disabled by default but can be enabled in `/etc/pacman.conf`
+
+## The Arch Way
+
+The unofficial term traditionally used to refer to the main [Arch Linux principles](/index.php/Arch_Linux#Principles "Arch Linux").
 
 ## udev
 

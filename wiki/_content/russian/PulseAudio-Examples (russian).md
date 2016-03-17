@@ -26,9 +26,9 @@
         *   [9.3.1 QjackCtl с скриптами загрузки/выключения](#QjackCtl_.D1.81_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82.D0.B0.D0.BC.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8.2F.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F)
 *   [10 PulseAudio через OSS](#PulseAudio_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_OSS)
 *   [11 Запуск PulseAudio из chroot (напр. 32-бит chroot в 64-битной истеме)](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_PulseAudio_.D0.B8.D0.B7_chroot_.28.D0.BD.D0.B0.D0.BF.D1.80._32-.D0.B1.D0.B8.D1.82_chroot_.D0.B2_64-.D0.B1.D0.B8.D1.82.D0.BD.D0.BE.D0.B9_.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B5.29)
-*   [12 Disabling automatic spawning of PulseAudio server](#Disabling_automatic_spawning_of_PulseAudio_server)
-*   [13 Remap stereo to mono](#Remap_stereo_to_mono)
-*   [14 Swap left/right channels](#Swap_left.2Fright_channels)
+*   [12 Отключение автоматического запуска сервера PulseAudio](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B0_PulseAudio)
+*   [13 Изменить стерео на моно](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D1.81.D1.82.D0.B5.D1.80.D0.B5.D0.BE_.D0.BD.D0.B0_.D0.BC.D0.BE.D0.BD.D0.BE)
+*   [14 Поменять левый/правый каналы](#.D0.9F.D0.BE.D0.BC.D0.B5.D0.BD.D1.8F.D1.82.D1.8C_.D0.BB.D0.B5.D0.B2.D1.8B.D0.B9.2F.D0.BF.D1.80.D0.B0.D0.B2.D1.8B.D0.B9_.D0.BA.D0.B0.D0.BD.D0.B0.D0.BB.D1.8B)
 *   [15 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
 
 ## Настройка стандартных устройств ввода
@@ -672,9 +672,9 @@ PulseAduio выбирет путь к сокету через XDG_RUNTIME_DIR, �
 
 Также обратите внимание на [additional section](/index.php/Install_bundled_32-bit_system_in_Arch64#Allow_32-bit_applications_access_to_64-bit_PulseAudio "Install bundled 32-bit system in Arch64")
 
-## Disabling automatic spawning of PulseAudio server
+## Отключение автоматического запуска сервера PulseAudio
 
-Some users may prefer to manually start the PulseAudio server before running certain programs and then stop the PulseAudio server when they are finished. A simple way to accomplish this is to edit `/etc/pulse/client.conf` and change `autospawn = yes` to `autospawn = no`, and set `daemon-binary = /bin/true`. Make sure the two lines are uncommented as well.
+Некоторые пользователи предпочитают вручную запускать сервер PulseAudio, перед запуском определенных программ, а затем останавливать сервер PulseAudio, когда они завершены. Для достижения такого результата, отредактируйте `/etc/pulse/client.conf` и измените `autospawn = yes` на `autospawn = no`, и установите `daemon-binary = /bin/true`. Убедитесь что обе строки не закомментированы.
 
  `/etc/pulse/client.conf` 
 ```
@@ -683,25 +683,25 @@ daemon-binary = /bin/true
 
 ```
 
-Now you can manually start the pulseaudio server with
+Теперь вы можете вручную запустить PulseAudio сервер командой
 
 ```
 $ pulseaudio --start
 
 ```
 
-and stop it with
+И остановить его
 
 ```
 $ pulseaudio --kill
 
 ```
 
-You may also have to move or delete a .desktop file in `/etc/xdg/autostart` if it exists.
+Также можете переместить или удалить файл .desktop в `/etc/xdg/autostart` если он существует.
 
-## Remap stereo to mono
+## Изменить стерео на моно
 
-Remap a stereo input-sink to a mono sink by creating a virtual sink. It would be useful if you only have one speaker. Add to `/etc/pulse/default.pa`:
+Изменить стерео устройство вывода на моно устройство вывода можно путём создания виртуального устройства вывода. Это будет полезно если у вас только один динамик. Добавьте в `/etc/pulse/default.pa`:
 
 ```
 load-module module-remap-sink master=alsa_output.pci-0000_00_1f.5.analog-stereo sink_name=mono channels=2 channel_map=mono,mono
@@ -710,13 +710,13 @@ set-default-sink mono
 
 ```
 
-(replace alsa_output.pci-0000_00_1f.5.analog-stereo in the sound card name shown from `pacmd list-sinks`)
+(замените имя звуковой карты alsa_output.pci-0000_00_1f.5.analog-stereo показанным в `pacmd list-sinks`)
 
-Switch player between virtual mono sink and real stereo sink.
+Переключайтесь между виртуальным моно устройством и настоящим стерео устройством.
 
-## Swap left/right channels
+## Поменять левый/правый каналы
 
-Swap/reverse stereo channels by creating a virtual sink. Add to `/etc/pulse/default.pa`:
+Поменять местами стерео каналы путём создания виртуального устройства. Добавьте в `/etc/pulse/default.pa`:
 
 ```
 load-module module-remap-sink sink_name=reverse-stereo master=alsa_output.pci-0000_00_1f.5.analog-stereo channels=2 master_channel_map=front-right,front-left channel_map=front-left,front-right
@@ -724,9 +724,9 @@ set-default-sink reverse-stereo
 
 ```
 
-(replace alsa_output.pci-0000_00_1f.5.analog-stereo in the sound card name shown from `pacmd list-sinks`)
+(замените alsa_output.pci-0000_00_1f.5.analog-stereo на имя звуковой карты показанной из `pacmd list-sinks`)
 
-[module-remap-sink documentation](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index12h3)
+[Документация переназначения модуля устройства](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index12h3)
 
 ## PulseAudio as a minimal unintrusive dumb pipe to ALSA
 

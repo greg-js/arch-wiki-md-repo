@@ -691,7 +691,7 @@ The fast method is creating a PV (if necessary) on the fast disk and add it to t
 Create a cache pool with automatic meta data on sdb, and convert the existing logical volume (dataLV) to a cached volume, all in one step:
 
 ```
-# lvcreate –type cache -L 19.9G -n dataLV_cachepool dataVG/dataLV /dev/sdx
+# lvcreate --type cache -L 19.9G -n dataLV_cachepool dataVG/dataLV /dev/sdx
 
 ```
 

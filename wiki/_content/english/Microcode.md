@@ -91,7 +91,7 @@ Users employing manual stanzas in `/boot/refind.conf` to define the kernels shou
 
 ### Syslinux
 
-**Note:** There must be no spaces between the `intel-ucode` and `initramfs-linux` initrd files. The period signs also do not signify any shorthand or missing code; the amendment must be made exactly as illustrated below.
+**Note:** There must be no spaces between the `intel-ucode` and `initramfs-linux` initrd files. The period signs also do not signify any shorthand or missing code; the `INITRD` line must be exactly as illustrated below.
 
 Multiple initrd's can be separated by commas in `/boot/syslinux/syslinux.cfg`:
 
@@ -100,7 +100,7 @@ LABEL arch
     MENU LABEL Arch Linux
     LINUX ../vmlinuz-linux
     INITRD ../intel-ucode.img,../initramfs-linux.img
-    APPEND ...
+    APPEND *<your kernel parameters>*
 
 ```
 

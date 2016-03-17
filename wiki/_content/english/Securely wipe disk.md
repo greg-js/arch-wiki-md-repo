@@ -82,7 +82,6 @@ For more information see:
 
 *   [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing")
 *   [Reliably Erasing Data From Flash-Based Solid State Drives](http://www.usenix.org/events/fast11/tech/full_papers/Wei.pdf).
-*   [SSD Data Wiping](http://www.kingston.com/us/community/articledetail?ArticleId=10)
 *   [#Select a target](#Select_a_target)
 
 #### Marked Bad Sectors

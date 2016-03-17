@@ -5,10 +5,10 @@
 *   [1 Overview](#Overview)
 *   [2 Theme engines](#Theme_engines)
     *   [2.1 QGtkStyle](#QGtkStyle)
+    *   [2.2 QGnomePlatform](#QGnomePlatform)
 *   [3 Styles for both Qt and GTK+](#Styles_for_both_Qt_and_GTK.2B)
     *   [3.1 Breeze](#Breeze)
     *   [3.2 Adwaita](#Adwaita)
-    *   [3.3 Qt Appearance](#Qt_Appearance)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 KDE file dialogs for GTK+ applications](#KDE_file_dialogs_for_GTK.2B_applications)
     *   [4.2 Using a GTK+ icon theme in Qt apps](#Using_a_GTK.2B_icon_theme_in_Qt_apps)
@@ -37,6 +37,8 @@ A *theme engine* can be thought of as a thin layer API which translates themes (
 
 ### QGtkStyle
 
+**Note:** QGtkStyle will be removed from [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) 5.7 [[1]](https://github.com/qtproject/qtbase/commit/899a815414e95da8d9429a4a4f4d7094e49cfc55). and added to qtstyleplugins as name gtk2 [[2]](https://github.com/qtproject/qtstyleplugins/commit/102da7d50231fc5723dba6e72340bef3d29471aa)
+
 **Warning:** Depending on GTK+ 2 theme, this style may cause rendering issues such as transparent fonts or inconsistent widgets.
 
 This Qt style uses GTK+ 2 to render all components to blend in with [GNOME](/index.php/GNOME "GNOME") and similar GTK+ based environments. Beginning with Qt 4.5, this style is included in Qt. It requires [gtk2](https://www.archlinux.org/packages/?name=gtk2) to be installed and configured.
@@ -57,6 +59,12 @@ style=GTK+
 
 For full uniformity, make sure that the configured [GTK+ theme](/index.php/GTK%2B#Themes "GTK+") supports both GTK+ 2 and GTK+ 3.
 
+### QGnomePlatform
+
+This Qt 5 platform theme applies the appearance settings of GNOME for Qt applications. It can be installed with the [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/) package. It does not provide a Qt style itself, instead it requires a [style that support both Qt and GTK+](#Styles_for_both_Qt_and_GTK.2B).
+
+This platform theme is enabled automatically in GNOME since version 3.20\. For other systems, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform`.
+
 ## Styles for both Qt and GTK+
 
 There are widget style sets available for the purpose of integration, where builds are written and provided for both Qt and GTK+, all major versions included. With these, you can have one look for all applications regardless of the toolkit they had been written with.
@@ -71,11 +79,21 @@ Once installed, you can use one of the many [GTK+ configuration tools](/index.ph
 
 ### Adwaita
 
-Adwaita is the default GNOME theme. It can be installed with the [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) package, which contains the GTK+ 2 and 3 themes. [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is an unofficial Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimic the GTK+ 2 theme, it provides a native Qt style made to look like the GTK+ 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/) package for the Qt5 version, and [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) for the Qt 4 version.
+Adwaita is the default GNOME theme. It can be installed with the [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) package, which contains the GTK+ 2 and 3 themes. [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is a Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimic the GTK+ 2 theme, it provides a native Qt style made to look like the GTK+ 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/) package for the Qt5 version, and [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) for the Qt 4 version.
 
-### Qt Appearance
+To set the Qt style as default:
 
-To set a style as default, you can use [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) for Qt 5, or `qtconfig-qt4` (part of the [qt4](https://www.archlinux.org/packages/?name=qt4) package) for Qt 4.
+*   For Qt4, it can be enabled with *Qt Configuration* (`qtconfig-qt4`), choose *adwaita* under *Appearance > GUI Style*. Alternatively, edit the `/etc/xdg/Trolltech.conf` (system-wide) or `~/.config/Trolltech.conf` (user-specific) file:
+
+ `~/.config/Trolltech.conf` 
+```
+...
+[Qt]
+style=adwaita
+...
+```
+
+*   For Qt 5, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_STYLE_OVERRIDE=adwaita`.
 
 ## Tips and tricks
 

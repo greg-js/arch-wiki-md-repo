@@ -71,7 +71,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 ### Unofficially supported
 
-*   **[CDE](/index.php/Common_Desktop_Environment "Common Desktop Environment")** — The Common Desktop Environment (CDE) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations.
+*   **[CDE](/index.php/Common_Desktop_Environment "Common Desktop Environment")** — The Common Desktop Environment (CDE) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations. Highly experimental.
 
 	[https://sourceforge.net/projects/cdesktopenv/](https://sourceforge.net/projects/cdesktopenv/) || [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/)
 
@@ -85,7 +85,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Hawaii](/index.php/Hawaii "Hawaii")** — Hawaii is a lightweight, coherent and fast desktop environment that relies on Qt 5, QtQuick and Wayland and is designed to offer the best UX for the device where it is running.
 
-	[http://www.maui-project.org/](http://www.maui-project.org/) || [hawaii-meta-git](https://aur.archlinux.org/packages/hawaii-meta-git/)
+	[http://www.maui-project.org/](http://www.maui-project.org/) || [hawaii-shell](https://aur.archlinux.org/packages/hawaii-shell/)
 
 *   **[Lumina](/index.php/Lumina "Lumina")** — Lumina is a lightweight desktop environment written in Qt 5 for FreeBSD that uses Fluxbox for window management.
 
@@ -99,7 +99,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 	[https://elementary.io/](https://elementary.io/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)
 
-*   **[Papyros](/index.php/Papyros_shell "Papyros shell")** — Papyros shell is a modern desktop shell which adheres to Google's Material Design guidelines.
+*   **[Papyros](/index.php/Papyros_shell "Papyros shell")** — Papyros shell is a modern desktop shell which adheres to Google's Material Design guidelines. Highly experimental.
 
 	[http://papyros.io/](http://papyros.io/) || [papyros-shell](https://aur.archlinux.org/packages/papyros-shell/)
 
@@ -221,13 +221,13 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
 | [Hawaii](/index.php/Hawaii "Hawaii") | [Qt](/index.php/Qt "Qt") 5
 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Green Island
-[greenisland-git](https://aur.archlinux.org/packages/greenisland-git/) | Hawaii Shell
-[hawaii-shell-git](https://aur.archlinux.org/packages/hawaii-shell-git/) | Terminal
-[hawaii-terminal-git](https://aur.archlinux.org/packages/hawaii-terminal-git/) | Swordfish
+[greenisland](https://aur.archlinux.org/packages/greenisland/) | Hawaii Shell
+[hawaii-shell](https://aur.archlinux.org/packages/hawaii-shell/) | Terminal
+[hawaii-terminal](https://aur.archlinux.org/packages/hawaii-terminal/) | Swordfish
 [swordfish-git](https://aur.archlinux.org/packages/swordfish-git/) | [SpeedCrunch](http://speedcrunch.org/)
 [speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/) | JuffEd
 [juffed-qt5-git](https://aur.archlinux.org/packages/juffed-qt5-git/) | EyeSight
-[eyesight-git](https://aur.archlinux.org/packages/eyesight-git/) | SMPlayer
+[eyesight](https://aur.archlinux.org/packages/eyesight/) | SMPlayer
 [smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
 [qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
@@ -315,6 +315,18 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [audience](https://www.archlinux.org/packages/?name=audience) | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
 [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) |
+| [Papyros](/index.php/Papyros "Papyros") | [Qt](/index.php/Qt "Qt") 5
+[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Green Island
+[greenisland](https://aur.archlinux.org/packages/greenisland/) | Papyros Shell
+[papyros-shell](https://aur.archlinux.org/packages/papyros-shell/) | Papyros Terminal
+[papyros-terminal](https://www.archlinux.org/packages/?name=papyros-terminal) | Papyros Files
+[papyros-files](https://www.archlinux.org/packages/?name=papyros-files) | Liri Calculator
+<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-calculator-git)</small> | Liri Text
+<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-text-git)</small> | Liri Browser
+[liri-browser](https://aur.archlinux.org/packages/liri-browser/) | Liri Player
+[liri-player-git](https://aur.archlinux.org/packages/liri-player-git/) | Liri Browser
+[liri-browser](https://aur.archlinux.org/packages/liri-browser/) | SDDM
+[sddm](https://www.archlinux.org/packages/?name=sddm) |
 | [Sugar](/index.php/Sugar "Sugar") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")
 [metacity](https://www.archlinux.org/packages/?name=metacity) | Sugar

@@ -1,6 +1,6 @@
-Budgie is the default desktop of Solus Operating System, written from scratch. Besides a more modern design, Budgie can emulate the look and feel of the GNOME 2 desktop.
+Budgie написанный с нуля рабочий стол, который используется по умолчанию в Операционной Системе Solus. К тому же, более современный дизайн Budgie может имитировать внешний вид рабочего стола GNOME 2.
 
-At this time Budgie is heavily under development, so you can expect minor bugs and new features to be added as time goes on.
+Сейчас Budgie находится в стадии разработки, так что могут появляться ошибки и добавляться новые возможности.
 
 ## Contents
 
@@ -11,11 +11,11 @@ At this time Budgie is heavily under development, so you can expect minor bugs a
 
 ## Установка
 
-[Install](/index.php/Install "Install") the [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) package for the latest stable or [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) for current git master. It's recommended to install its optional dependencies also to get a more complete desktop environment. It's recommended also to install the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group, which contains applications required for the standard GNOME experience.
+[Установите](/index.php/Help:%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Help:Чтение") последний стабильный пакет [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) или текущую разрабатываемую версию [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/). Также рекомендуется установить необязательные зависимости, чтобы получить более полную рабочую среду. Также рекомендуется установить группу [gnome](https://www.archlinux.org/groups/x86_64/gnome/), которая содержит приложения для стандартной работы GNOME.
 
 ### Запуск
 
-Choose *Budgie Desktop* session from a [display manager](/index.php/Display_manager "Display manager") of choice, or modify [xinitrc](/index.php/Xinitrc "Xinitrc") to include Budgie Desktop:
+Выберите сессию *Budgie Desktop* [Экранного менеджера](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер"), или измените [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") добавив Budgie Desktop:
 
  `~/.xinitrc` 
 ```
@@ -26,10 +26,10 @@ exec budgie-desktop
 
 ## Использование
 
-You can see the notification messages, set volume, and modify the look and feel of the desktop with the sidebar called "Raven". It can be accessed with `Super+N` key or by clicking on the Status Indicator applet.
+Вы можете видеть уведомления сообщений, устанавливать громкость, и изменять внешний вид рабочего стола при поомщи боковой панели, под названием "Raven". Доступ к ней осуществляется нажатием `Super+N` или щелчком по Апплету Индикатора Состояния.
 
 ## Смотрите также
 
 *   [Официальный сайт проекта Solus (Англ.)](https://solus-project.com/)
-*   [Official git repositories for Solus development](https://git.solus-project.com/)
+*   [Официальный git-репозиторий для разработки Solus (Англ.)](https://git.solus-project.com/)
 *   [Build status for Solus projects](https://build.solus-project.com/)

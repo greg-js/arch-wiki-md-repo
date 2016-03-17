@@ -150,8 +150,6 @@ The following styles are included in Qt5: *GTK+*, *Fusion*, *Windows*. Others ca
 
 	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)
 
-Like with `qtconfig-qt4` for Qt4 apps, [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) can be used to customize the look and feel of Qt5 apps.
-
 ### Qt Style Sheets
 
 An interesting way of customizing the look and feel of a Qt application is using Style Sheets, which are just simple CSS files. Using Style Sheets, one can modify the appearance of every widget in the application.
