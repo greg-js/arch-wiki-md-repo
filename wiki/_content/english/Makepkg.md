@@ -60,65 +60,11 @@ Configure the following `makepkg.conf` variables if needed:
 
 ### Signature checking
 
-If a signature file in the form of `.sig` or `.asc` is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, *makepkg* validates the authenticity of source files. For example, the signature `*pkgname*-*pkgver*.tar.gz.sig` is used to check the integrity of the file `*pkgname*-*pkgver*.tar.gz` with the *gpg* program.
+If a signature file in the form of `.sig` or `.asc` is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, `makepkg` automatically attempts to [verify](/index.php/Gnupg#Verify_a_signature "Gnupg") it. In case the user's keyring does not contain the needed public key for signature verification, `makepkg` will abort the installation with a message that the PGP key could not be verified.
 
-If desired, signatures by other developers can be manually added to the GPG keyring. See [GnuPG](/index.php/GnuPG "GnuPG") article for details. To temporarily disable signature checking, call the *makepkg* command with the `--skippgpcheck` option.
+If a needed public key is missing, or if you want to add public keys by other developers, you can [import](/index.php/Gnupg#Import_a_key "Gnupg") it manually, or you can find it [on a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG") and import it from there. Alternatively, you can temporarily disable `makepkg`'s signature checking, by calling `makepkg` with the `--skippgpcheck` option.
 
-**Note:** The signature checking implemented in *makepkg* does not use pacman's keyring, relying on the user's keyring and the `validpgpkeys()` array instead. [[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
-
-To show the current list of GPG keys, use the *gpg* command:
-
-```
-$ gpg --list-keys
-
-```
-
-If the `pubring.gpg` file does not exist, it will be created for you immediately.
-
-The GPG keys are expected to be stored in the user's `~/.gnupg/pubring.gpg` file. In case it does not contain the given signature, *makepkg* will abort the installation:
-
- `$ makepkg` 
-```
-[...]
-==> Verifying source file signatures with gpg...
-pkgname-pkgver.tar.gz ... FAILED (unknown public key *1234567890*)
-==> ERROR: One or more PGP signatures could not be verified!
-```
-
-Make sure that a keyserver is configured in `dirmngr.conf`, for example:
-
- `~/.gnupg/dirmngr.conf` 
-```
-keyserver hkp://keys.gnupg.net
-
-```
-
-If `hkp://keys.gnupg.net` does not work, try `hkp://pool.sks-keyservers.net`.
-
-Now you can inspect the missing key using:
-
-```
-$ gpg --search-keys *1234567890*
-
-```
-
-If the key seems to be trustworthy, you can import it from the server using:
-
-```
-$ gpg --recv-keys *1234567890*
-
-```
-
-To automate the process, duplicate the keyserver line from `dirmngr.conf`, and add the following option. Once this [gpg bug](https://bugs.gnupg.org/gnupg/issue2147) is fixed, you should move the keyserver-options line to `dirmngr.conf`, and remove the keyserver line.
-
- `~/.gnupg/gpg.conf` 
-```
-keyserver hkp://keys.gnupg.net
-keyserver-options auto-key-retrieve
-
-```
-
-**Note:** The bug has been fixed in GnuPG version 2.1.11 [[2]](https://bugs.gnupg.org/gnupg/msg7736).
+**Note:** The signature checking implemented in `makepkg` does not use pacman's keyring, instead relying on the user's keyring. [[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
 
 ## Usage
 
@@ -127,7 +73,7 @@ Before continuing, [install](/index.php/Install "Install") the [base-devel](http
 **Note:**
 
 *   Make sure [sudo](/index.php/Sudo "Sudo") is configured properly for commands passed to [pacman](/index.php/Pacman "Pacman").
-*   Running *makepkg* itself as root is [disallowed](https://lists.archlinux.org/pipermail/pacman-dev/2014-March/018911.html).[[3]](https://projects.archlinux.org/pacman.git/tree/NEWS) Besides how a `PKGBUILD` may contain arbitrary commands, building as root is generally considered unsafe.[[4]](https://bbs.archlinux.org/viewtopic.php?id=67561) Users who have no access to a regular user account should run makepkg as the [nobody user](http://allanmcrae.com/2015/01/replacing-makepkg-asroot/).
+*   Running *makepkg* itself as root is [disallowed](https://lists.archlinux.org/pipermail/pacman-dev/2014-March/018911.html).[[2]](https://projects.archlinux.org/pacman.git/tree/NEWS) Besides how a `PKGBUILD` may contain arbitrary commands, building as root is generally considered unsafe.[[3]](https://bbs.archlinux.org/viewtopic.php?id=67561) Users who have no access to a regular user account should run makepkg as the [nobody user](http://allanmcrae.com/2015/01/replacing-makepkg-asroot/).
 
 To build a package, one must first create a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), or build script, as described in [Creating packages](/index.php/Creating_packages "Creating packages"). Existing scripts are available from the [ABS tree](/index.php/Arch_Build_System "Arch Build System") or the [AUR](/index.php/AUR "AUR"). Once in possession of a `PKGBUILD`, change to the directory where it is saved and issue the following command to build the package described by said `PKGBUILD`:
 
@@ -148,7 +94,7 @@ Adding the `-r`/`--rmdeps` flag causes *makepkg* to remove the make dependencies
 **Note:**
 
 *   These dependencies must be available in the configured repositories; see [pacman#Repositories](/index.php/Pacman#Repositories "Pacman") for details. Alternatively, one can manually install dependencies prior to building (`pacman -S --asdeps *dep1* *dep2*`).
-*   Only global values are used when installing dependencies, i.e any override done in a split package's packaging function will not be used. [[5]](https://patchwork.archlinux.org/patch/2271/)
+*   Only global values are used when installing dependencies, i.e any override done in a split package's packaging function will not be used. [[4]](https://patchwork.archlinux.org/patch/2271/)
 
 Once all dependencies are satisfied and the package builds successfully, a package file (`*pkgname*-*pkgver*.pkg.tar.xz`) will be created in the working directory. To install, use `-i`/`--install` (same as `pacman -U *pkgname*-*pkgver*.pkg.tar.xz`):
 

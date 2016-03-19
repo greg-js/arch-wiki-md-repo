@@ -338,7 +338,7 @@ Initialization problem, exiting.
 
 ```
 
-There are two solutions to solve this problem. The first involves downgrading the Package (probably via the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")). The second and more elegant solution involves replacing the old freetype version for ModelSim only without withholding updates on the whole system (originally proposed at the now-dead link [http://communities.mentor.com/mgcx/message/46770](http://communities.mentor.com/mgcx/message/46770)):
+There are two solutions to solve this problem. The first involves downgrading the Package (probably via the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")). If you are using the 32-bit version, it is sufficient to downgrade [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2). The second and more elegant solution involves replacing the old freetype version for ModelSim only without withholding updates on the whole system (originally proposed at the now-dead link [http://communities.mentor.com/mgcx/message/46770](http://communities.mentor.com/mgcx/message/46770)):
 
 *   Copy the freetype library and symlinks somewhere in the altera folder, eg: `$HOME/altera/xx.x/lib32/`
 

@@ -35,6 +35,15 @@ Then, as instructed, press Enter when the program is fully loaded. This will add
 
 To disable the loading of a program, remove the appropriate list in `/usr/share/gopreload/enabled` or move it to `/usr/share/gopreload/disabled`.
 
+It is advised to run gopreload-prepare after system upgrades to refresh the file lists. For the task, the following batch tool come handy:
+
+```
+# gopreload-batch-refresh.sh
+
+```
+
+Just let it run without using the system.
+
 ## Preload
 
 **preload** is a program written by Behdad Esfahbod which runs as a [daemon](/index.php/Daemon "Daemon") and records statistics about usage of programs using Markov chains; files of more frequently-used programs are, during a computer's spare time, loaded into memory. This results in faster startup times as less data needs to be fetched from disk. *preload* is often paired with [prelink](/index.php/Prelink "Prelink").

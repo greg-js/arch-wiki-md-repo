@@ -192,6 +192,8 @@ Install CD Version
 
 Wireless needs [linux](https://www.archlinux.org/packages/?name=linux) >= 4.3 and latest [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware), both packages are currently in testing. Copy one of the firmware blobs `eeprom_ar6320_2p1_NFA345i.bin` or `eeprom_ar6320_2p1_NFA345i_highTX.bin` from the windows driver to `/usr/lib/firmware/ath10k/QCA6174/hw2.1/board-pci-168c:0041:17aa:3545.bin`.
 
+Wireless with firmware blobs from windows driver may no longer work on [linux](https://www.archlinux.org/packages/?name=linux) >= 4.4\. Download firmware blob [https://github.com/kvalo/ath10k-firmware/blob/f428f53b36b144971c9c4c3d2ebd5fa8cae86c89/QCA6174/hw2.1/board-2.bin](https://github.com/kvalo/ath10k-firmware/blob/f428f53b36b144971c9c4c3d2ebd5fa8cae86c89/QCA6174/hw2.1/board-2.bin) and copy it to `/usr/lib/firmware/ath10k/QCA6174/hw2.1/board-2.bin`. Tested with [linux](https://www.archlinux.org/packages/?name=linux) 4.4.5-1 and [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) 20160113.40e9ae8-1.
+
 ### Lenovo B50-70
 
 *   UEFI:

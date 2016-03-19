@@ -134,7 +134,7 @@ Alternatively, or in addition, you can share your key [on a keyserver](#Use_a_ke
 
 ### Import a key
 
-In order to encrypt messages to others, you need their public key. To import a public key to your public key ring:
+In order to encrypt messages to others, as well as verify their signatures, you need their public key. To import a public key to your public key ring:
 
 ```
 $ gpg --import public.key
@@ -149,6 +149,13 @@ You can register your key with a public PGP key server, so that others can retri
 
 ```
 $ gpg --send-keys *<key-id>*
+
+```
+
+To find out details of a key on the keyserver, without importing it, do:
+
+```
+$ gpg --search-keys *<key-id>*
 
 ```
 

@@ -157,8 +157,6 @@ RouteMetric=20
 
 #### IPv6 privacy extensions
 
-**Note:** Broken on v228 [https://github.com/systemd/systemd/issues/2242](https://github.com/systemd/systemd/issues/2242)
-
 If you are using IPv6 you might also want to set the `IPv6PrivacyExtensions` option as settings placed in `/etc/sysctl.d/40-ipv6.conf` are not honored.
 
  `/etc/systemd/network/*wireless*.network` 

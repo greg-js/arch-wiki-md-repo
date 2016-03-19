@@ -81,9 +81,9 @@ A comprehensive list of features are documented at the [official Openbox website
 
 ### Standalone
 
-[display managers](/index.php/Display_manager "Display manager") will automatically detect Openbox, allowing for it to be run as a standalone session.
+[Display managers](/index.php/Display_manager "Display manager") will automatically detect Openbox, allowing for it to be run as a standalone session.
 
-When using [Xinitrc](/index.php/Xinitrc "Xinitrc") or [SLiM](/index.php/SLiM "SLiM"), add the following line:
+To start openbox with [Xinitrc](/index.php/Xinitrc "Xinitrc"), add the following line:
 
 ```
 exec openbox-session

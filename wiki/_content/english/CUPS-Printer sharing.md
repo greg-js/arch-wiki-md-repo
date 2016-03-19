@@ -110,7 +110,10 @@ which will work in a web-browser but **not** in the add printer dialogue. (At le
 http://host_ip_address:631/printers/printer_name
 
 ```
+
 **will** work.
+
+**Note**: If you are using **proxy** - check used proxy **exclusions** twice - it may result in failing to add a printer until reboot even if you will disable proxy at all afterwards (actual for Windows 7).
 
 After this, install the native printer drivers for your printer on the Windows computer. If the CUPS server is set up to use its own printer drivers, then you can just select a generic postscript printer for the Windows client(e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2'). Then test the print setup by printing a test page.
 

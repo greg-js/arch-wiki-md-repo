@@ -150,8 +150,6 @@ method=auto
 
 ### systemd-networkd
 
-**Note:** Broken on v228 [https://github.com/systemd/systemd/issues/2242](https://github.com/systemd/systemd/issues/2242)
-
 Systemd-networkd also does not honour the settings placed in `/etc/sysctl.d/40-ipv6.conf` and needs the option `IPv6PrivacyExtensions` to be set.
 
 See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [systemd.network(5) man page](http://www.freedesktop.org/software/systemd/man/systemd.network.html) for details.

@@ -77,7 +77,7 @@ To enable OpenGL OMTC go to `about:config` and set:
 *   layers.acceleration.force-enabled true
 *   layers.offmainthreadcomposition.enabled true (default)
 
-Restart Firefox for changes to take effect.
+Restart Firefox for changes to take effect. If the above changes do not enable GPU acceleration, try setting the environment variable as follows: `export MOZ_USE_OMTC=1`. Then run Firefox [[1]](http://featherweightmusings.blogspot.se/2013/11/no-more-main-thread-opengl-in-firefox.html).
 
 For more information on OMTC in Firefox read here: [https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing](https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing)
 
@@ -556,7 +556,7 @@ x-scheme-handler/magnet=kde4-ktorrent.desktop
 
 ```
 
-See [[1]](http://superuser.com/questions/44072/how-do-i-associate-magnet-links-with-ktorrent-in-firefox)
+See [[2]](http://superuser.com/questions/44072/how-do-i-associate-magnet-links-with-ktorrent-in-firefox)
 
 ### Prevent accidental closing
 

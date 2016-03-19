@@ -895,13 +895,13 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://code.google.com/p/inxi](https://code.google.com/p/inxi) || [inxi](https://www.archlinux.org/packages/?name=inxi)
 
+*   **neofetch** — A fast, highly customizable system info script that supports displaying images with w3m.
+
+	[https://github.com/dylanaraps/neofetch](https://github.com/dylanaraps/neofetch) || [neofetch](https://aur.archlinux.org/packages/neofetch/), [neofetch-git](https://aur.archlinux.org/packages/neofetch-git/)
+
 *   **screenfetch** — Similar to archey but has an option to take a screenshot. Written in bash.
 
 	[https://github.com/KittyKatt/screenFetch](https://github.com/KittyKatt/screenFetch) || [screenfetch](https://www.archlinux.org/packages/?name=screenfetch)
-
-*   **neofetch** — A fast, highly customizable system info script that supports displaying images with w3m.
-
-	[https://github.com/dylanaraps/neofetch](https://github.com/dylanaraps/neofetch) || [neofetch-git](https://aur.archlinux.org/packages/neofetch-git/)
 
 #### Graphical
 

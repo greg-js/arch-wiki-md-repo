@@ -402,6 +402,10 @@ See the main article [Speech recognition](/index.php/Speech_recognition "Speech 
 
 See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/wiki/Comparison_of_accounting_software "wikipedia:Comparison of accounting software").
 
+*   **Beancount** — Beancount is a Ledger-like CLI double-entry accounting system. It is written in Python and has more features, like multi-currency support, than Ledger.
+
+	[http://furius.ca/beancount/](http://furius.ca/beancount/) || [beancount-hg](https://aur.archlinux.org/packages/beancount-hg/)
+
 *   **esniper** — Simple, lightweight tool for [sniping](https://en.wikipedia.org/wiki/Auction_sniping "wikipedia:Auction sniping") eBay auctions.
 
 	[http://esniper.sourceforge.net/](http://esniper.sourceforge.net/) || [esniper](https://aur.archlinux.org/packages/esniper/)

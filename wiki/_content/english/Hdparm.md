@@ -14,6 +14,7 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
     *   [3.1 KDE => 4.4.4 and hdparm](#KDE_.3D.3E_4.4.4_and_hdparm)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 APM level reset after suspend](#APM_level_reset_after_suspend)
+    *   [4.2 Drive is not supported](#Drive_is_not_supported)
 
 ## Installation
 
@@ -122,3 +123,7 @@ And make it executable:
 chmod +x /usr/lib/systemd/system-sleep/hdparm_set
 
 ```
+
+### Drive is not supported
+
+In this case you could consider using a different approach and the tool [hd-idle](http://hd-idle.sourceforge.net/).

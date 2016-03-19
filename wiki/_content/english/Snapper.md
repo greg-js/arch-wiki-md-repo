@@ -149,7 +149,7 @@ To list snapshots taken for a given configuration *config* do:
 
 ## List configurations
 
-To list all [configurations](#Create_a_new_configuration) you've created do:
+To list all [configurations](#Create_a_new_configuration) you have created do:
 
 ```
  # snapper list-configs
@@ -233,6 +233,8 @@ There are a couple of packages used for automatically creating snapshots upon a 
 
 The [snap-pac](https://aur.archlinux.org/packages/snap-pac/) package provides [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman") for snapper [#Pre/post snapshots](#Pre.2Fpost_snapshots), wrapping a pacman transaction with them, similar to the behavior used by openSUSE's YaST. After installation, simply continue to use pacman as normal and pre/post snapshots will be created automatically. Snapshots are only created if an actual change occurs.
 
+Additionally a hook is provided for automatically regenerating your GRUB configuration after each pacman transaction. This is for use if one has [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/) installed.
+
 See [the package homepage](https://github.com/wesbarnett/snap-pac) for more details.
 
 #### pacupg bash script
@@ -268,7 +270,7 @@ subvolid=5
 
 ```
 
-Where `/.snapshots` is a mountpoint for `subvol_snapshots`. `subvol_...` are subvolumes that you want to keep separate from the subvolume you'll be mounting as `/` (`subvol_root`). When taking a snapshot of `/`, these other subvolumes are not included. However, you can still snapshot these other subvolumes separately by creating other snapper configurations for them. Additionally, if you were to restore your system to a previous snapshots of `/`, these other subvolumes will remain unaffected.
+Where `/.snapshots` is a mountpoint for `subvol_snapshots`. `subvol_...` are subvolumes that you want to keep separate from the subvolume you will be mounting as `/` (`subvol_root`). When taking a snapshot of `/`, these other subvolumes are not included. However, you can still snapshot these other subvolumes separately by creating other snapper configurations for them. Additionally, if you were to restore your system to a previous snapshots of `/`, these other subvolumes will remain unaffected.
 
 For example if you want to be able restore `/` to a previous snapshot but keep your `/home` intact, you should create a subvolume that will be mounted at `/home`. See [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
 
@@ -363,7 +365,7 @@ If you have issues with hourly/daily/weekly snapshots, the most common cause for
 
 If you get an 'IO Error' when trying to create a snapshot please make sure that the [.snapshots](https://bbs.archlinux.org/viewtopic.php?id=164404) directory associated to the subvolume you are trying to snapshot is a subvolume by itself.
 
-Another possible cause is that .snapshots directory doesn't have root as an owner (You will find `Btrfs.cc(openInfosDir):219 - .snapshots must have owner root` in the `/var/log/snapper.log`).
+Another possible cause is that .snapshots directory does not have root as an owner (You will find `Btrfs.cc(openInfosDir):219 - .snapshots must have owner root` in the `/var/log/snapper.log`).
 
 ## See also
 

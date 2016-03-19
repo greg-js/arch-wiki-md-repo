@@ -21,6 +21,7 @@
     *   [7.6 OTR](#OTR)
     *   [7.7 Slack IRC gateway](#Slack_IRC_gateway)
         *   [7.7.1 Upload file](#Upload_file)
+    *   [7.8 Desktop notifications](#Desktop_notifications)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Errors loading plugins](#Errors_loading_plugins)
 *   [9 Getting Help](#Getting_Help)
@@ -280,6 +281,21 @@ where:
 
 *   **CHAN** is the channel ID as provided on the Gateways page of your slack team
 *   **XXX** is the team token as provided on the Gateways page of your slack team
+
+### Desktop notifications
+
+To receive desktop notifications for mentions or private messages, the [weechat-notify-send](https://github.com/s3rvac/weechat-notify-send) script by Petr Zemek can be used.
+
+To install, use:
+
+```
+cd ~/.weechat/python
+curl -O https://raw.githubusercontent.com/s3rvac/weechat-notify-send/master/notify_send.py
+ln -s ../notify_send.py autoload/
+
+```
+
+The script uses [libnotify](https://www.archlinux.org/packages/?name=libnotify) and is known to work with both KDE and Gnome.
 
 ## Troubleshooting
 

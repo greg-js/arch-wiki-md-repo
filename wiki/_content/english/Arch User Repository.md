@@ -185,6 +185,8 @@ Host aur.archlinux.org
 
 You should [create a new key pair](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") rather than use an existing one, so that you can selectively revoke the keys should something happen.
 
+**Note:** You can add multiple public keys to your profile by seperating them with a newline in the input field.
+
 #### Creating a new package
 
 In order to create a new, empty, local Git repository for a package, simply `git clone` the remote repository with the corresponding name. If the package does not exist on AUR yet, you will see the following warning:

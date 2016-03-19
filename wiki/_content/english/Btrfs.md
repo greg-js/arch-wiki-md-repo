@@ -271,7 +271,7 @@ Subvolumes can be mounted like file system partitions using the `subvol=*/path/t
 
 **Tip:** Changing subvolume layouts is made simpler by not using the toplevel subvolume (ID=5) as "/" (which is done by default). Instead, consider creating a subvolume to house your actual data and mounting it as "/".
 
-See [Snapper#Suggested_Filesystem_Layout](/index.php/Snapper#Suggested_Filesystem_Layout "Snapper"), [Btrfs SysadminGuide#Managing Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Managing_Snapshots), and [Btrfs SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout) for example file system layouts using subvolumes.
+See [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper"), [Btrfs SysadminGuide#Managing Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Managing_Snapshots), and [Btrfs SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout) for example file system layouts using subvolumes.
 
 #### Changing the default sub-volume
 
@@ -461,7 +461,7 @@ A subvolume can be sent to stdout or a file using the `send` command. This is us
 
 The snapshot that is sent *must* be readonly. The above command is useful for copying a subvolume to an external device (*e.g.*, a USB disk mounted at `/backup` above).
 
-You can also send only the difference between two snapshots. For example, let's say you've already sent a copy of `root_backup` above and have made a new readonly snapshot on your system named `root_backup_new`. To send only the incremental difference to `/backup` do:
+You can also send only the difference between two snapshots. For example, let us say you have already sent a copy of `root_backup` above and have made a new readonly snapshot on your system named `root_backup_new`. To send only the incremental difference to `/backup` do:
 
 ```
  # btrfs send -p /root_backup /root_backup_new | btrfs send /backup
@@ -484,7 +484,7 @@ Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "Enc
 
 ### Swap file
 
-Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs doesn't have for possibility of file system corruption [[3]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[4]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) from the [official repositories](/index.php/Official_repositories "Official repositories") to automate this.
+Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs does not have for possibility of file system corruption [[3]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[4]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) from the [official repositories](/index.php/Official_repositories "Official repositories") to automate this.
 
 ### Linux-rt kernel
 

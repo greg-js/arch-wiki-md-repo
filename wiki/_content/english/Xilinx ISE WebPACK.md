@@ -33,7 +33,8 @@ While Arch Linux is not one of the officially supported distributions, many feat
 
 If you plan to develop software for an embedded ARM core (e.g. for Xilinx Zynq SoC devices), you will want to install the GCC cross-compiler bundled included with the Xilinx Embedded Development Kit (EDK). This compiler requires the [glibc](https://www.archlinux.org/packages/?name=glibc) and [ncurses](https://www.archlinux.org/packages/?name=ncurses) packages. For i686 installations, these will most likely be already present.
 
-If you are on a 64-bit Arch installation, you need to install them from the [multilib](/index.php/Multilib "Multilib") repository ([lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) and [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses)).
+If you are on a 64-bit Arch installation, you need to install [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) from the [multilib](/index.php/Multilib "Multilib") repository. Since the [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) is now version 6, the [ncurses pkgbuild](https://gist.githubusercontent.com/strayArch/cbfbb87a4d0f41f8c5ba/raw/fa063cee8c28e4174e81c670204b18b110337505/ncurses5-PKGBUILD) must be installed manually --- `makepkg -s` and `pacman -U *xz`.
+**Note:** the required gpg can be fetched via `gpg --keyserver [http://pgp.mit.edu/](http://pgp.mit.edu/) --search 0x702353e0f7e48edb`
 
 ### Default Shell
 

@@ -255,6 +255,13 @@ $ hp-systray
 
 ```
 
+To generate a URI for a given ip address:
+
+```
+# hp-makeuri <ip_address>
+
+```
+
 PPD files are in `/usr/share/ppd/HP/`.
 
 For printers that require the proprietary HP plugin (like the Laserjet Pro P1102w or 1020), install the [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) package from [AUR](/index.php/AUR "AUR").

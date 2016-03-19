@@ -2,7 +2,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Raspberry_Pi "wikipedia:Raspberry
 
 	"*The Raspberry Pi is a series of credit card-sized single-board computers developed in the UK by the Raspberry Pi Foundation with the intention of promoting the teaching of basic computer science in schools.*"
 
-The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([ARM11 architecture](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")). The Raspberry Pi 2, released in 2015, is shipped with a BCM2836 SoC (quad-core [ARM Cortex-A7 architecture](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")). In February 2016, the Pi 3 was launched which contains a BCM2837 SoC (quad-core [ARM Cortex-A53 architectue](https://en.wikipedia.org/wiki/ARM_Cortex-A53 "wikipedia:ARM Cortex-A53")) and built in WiFi and Bluetooth.
+The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([ARM11 architecture](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")). The Raspberry Pi 2, released in 2015, is shipped with a BCM2836 SoC (quad-core [ARM Cortex-A7 architecture](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")). In February 2016, the Pi 3 was launched which contains a BCM2837 SoC (quad-core [ARM Cortex-A53 architecture](https://en.wikipedia.org/wiki/ARM_Cortex-A53 "wikipedia:ARM Cortex-A53")) and built in WiFi and Bluetooth.
 
 ## Contents
 
@@ -467,4 +467,4 @@ Finally chroot into the SD card root as described in [Change root#Using chroot](
 *   [RPi Config](http://elinux.org/RPiconfig) - Excellent source of info relating to under-the-hood tweaks.
 *   [RPi vcgencmd usage](http://elinux.org/RPI_vcgencmd_usage) - Overview of firmware command vcgencmd.
 *   [Arch Linux ARM on Raspberry PI](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Arch Linux on the RPi
-*   [[2]](https://github.com/phortx/Raspberry-Pi-Setup-Guide) - A really opionionated guide how to setup a RPi with Arch Linux
+*   [[2]](https://github.com/phortx/Raspberry-Pi-Setup-Guide) - A really opinionated guide how to setup a RPi with Arch Linux

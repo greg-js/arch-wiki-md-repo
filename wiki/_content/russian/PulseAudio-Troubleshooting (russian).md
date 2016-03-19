@@ -353,7 +353,7 @@ arecord -l
 
 Для этого потребуются установленые и необходимые пакеты [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils):
 
- `$ arecord —list-devices` 
+ `$ arecord --list-devices` 
 ```
 
 **** List of CAPTURE Hardware Devices ****

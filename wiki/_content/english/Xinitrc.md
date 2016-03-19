@@ -18,7 +18,7 @@ Most DMs also source the similar [xprofile](/index.php/Xprofile "Xprofile") befo
 
 ## Installation
 
-[Install](/index.php/Install "Install") [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit), which provides both *xinit* and *startx*.
+[Install](/index.php/Install "Install") the [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit) package, which provides both `xinit`，`startx`, and a default xinitrc configuration file.
 
 ## Configuration
 

@@ -5,7 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuring the GUI version](#Configuring_the_GUI_version)
     *   [2.1 GTK+ temporary cosmetic fix](#GTK.2B_temporary_cosmetic_fix)
-*   [3 Transmission-daemon and CLI](#Transmission-daemon_and_CLI)
+*   [3 Transmission daemon and CLI](#Transmission_daemon_and_CLI)
     *   [3.1 Starting and stopping the daemon](#Starting_and_stopping_the_daemon)
         *   [3.1.1 Autostart at boot](#Autostart_at_boot)
         *   [3.1.2 Run only while connected to network](#Run_only_while_connected_to_network)
@@ -52,7 +52,7 @@ With GTK+ 3.18, transmission-gtk shows black borders in random places; these can
 
 ```
 
-## Transmission-daemon and CLI
+## Transmission daemon and CLI
 
 The commands for *transmission-cli* are:
 
@@ -62,7 +62,7 @@ The commands for *transmission-cli* are:
 
 	*transmission-remote-cli*: (requires [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli)) starts the [curses](https://en.wikipedia.org/wiki/curses_(programming_library) interface for the daemon, whether local or remote.
 
-	*transmission-cli*: starts a non-daemonized local instance of *transmission*, for manually downloading a torrent.
+	*transmission-cli*: (deprecated) starts a non-daemonized local instance of *transmission*, for manually downloading a torrent.
 
 	*transmission-show*: returns information on a given torrent file.
 

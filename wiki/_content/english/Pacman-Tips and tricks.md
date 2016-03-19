@@ -717,6 +717,28 @@ If it does not exist, it is *not* possible to continue with this method. You may
 
 **Warning:** If for some reason your [pacman](/index.php/Pacman "Pacman") cache or [makepkg](/index.php/Makepkg "Makepkg") package destination contain packages for other architectures, remove them before continuation.
 
+Create the log filter script and make it executable:
+
+ `pacrecover` 
+```
+#!/bin/bash -e
+
+. /etc/makepkg.conf
+
+PKGCACHE=$((grep -m 1 '^CacheDir' /etc/pacman.conf || echo 'CacheDir = /var/cache/pacman/pkg') | sed 's/CacheDir = //')
+
+pkgdirs=("$@" "$PKGDEST" "$PKGCACHE")
+
+while read -r -a parampart; do
+  pkgname="${parampart[0]}-${parampart[1]}-*.pkg.tar.xz"
+  for pkgdir in ${pkgdirs[@]}; do
+    pkgpath="$pkgdir"/$pkgname
+    [ -f $pkgpath ] && { echo $pkgpath; break; };
+  done || echo ${parampart[0]} 1>&2
+done
+
+```
+
 Run the script (optionally passing additional directories with packages as parameters):
 
 ```

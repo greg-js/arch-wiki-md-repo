@@ -92,7 +92,7 @@ The themes installed will be shown in the `xfwm4-settings` window.
 
 Go to `Accessibility` and check `Hide title of windows when maximized`.
 
-**Note:** It's recommend to install [xfce4-windowck-plugin](https://aur.archlinux.org/packages/xfce4-windowck-plugin/) if you want to put the titlebar of current maximized window on you panel.
+**Note:** It is recommend to install [xfce4-windowck-plugin](https://aur.archlinux.org/packages/xfce4-windowck-plugin/) if you want to put the titlebar of current maximized window on you panel.
 
 ## Troubleshooting
 
@@ -125,7 +125,7 @@ See also: [Logout alters workspaces](http://forum.xfce.org/viewtopic.php?id=6056
 
 ### Video tearing
 
-If you experience video tearing whilst using Xfwm, open *xfwm4-tweaks-settings*, navigate to the compositor tab and tick the *Synchronize drawing to the vertical blank* option.
+If you experience video tearing whilst using Xfwm, open *xfwm4-tweaks-settings*, navigate to the compositor tab and tick the *Synchronize drawing to the vertical blank* option. If you use Intel graphics and you have already enabled "TearFree" option in Xorg config as described in [Intel_graphics#Tear-free_video](/index.php/Intel_graphics#Tear-free_video "Intel graphics"), then disable *Synchronize drawing to the vertical blank* option.
 
 If this does not fix the tearing, consider disabling Xfwm's composite manager and using an alternative [composite manager](/index.php/Composite_manager "Composite manager").
 

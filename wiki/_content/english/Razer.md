@@ -7,7 +7,7 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
     *   [1.2 Installation](#Installation)
     *   [1.3 Using the Razer Configuration Tool](#Using_the_Razer_Configuration_Tool)
 *   [2 Razer Blade](#Razer_Blade)
-    *   [2.1 2015 version (Razer Blade Stealth)](#2015_version_.28Razer_Blade_Stealth.29)
+    *   [2.1 2016 version (Razer Blade Stealth)](#2016_version_.28Razer_Blade_Stealth.29)
         *   [2.1.1 Killer Wireless Network Adapter](#Killer_Wireless_Network_Adapter)
         *   [2.1.2 Touchpad](#Touchpad)
         *   [2.1.3 Graphics Drivers](#Graphics_Drivers)
@@ -82,7 +82,7 @@ From the tool you can use the 5 profiles, change the DPI, change mouse frequency
 
 Razer Blade is Razer's line of gaming laptops. There is currently a 14" model, and a 17" model. Due to the proprietary SBUI trackpad on the 17" model, it will be extremely difficult to get it to work without extensive USB protocol reversing.
 
-### 2015 version (Razer Blade Stealth)
+### 2016 version (Razer Blade Stealth)
 
 The normal installation process works in general with the exceptions enumerated below.
 

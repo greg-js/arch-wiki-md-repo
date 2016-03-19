@@ -8,7 +8,7 @@
     *   [2.2 Rules](#Rules)
     *   [2.3 Panels](#Panels)
     *   [2.4 Scratchpad](#Scratchpad)
-    *   [2.5 Different monitor conifgurations for different machines](#Different_monitor_conifgurations_for_different_machines)
+    *   [2.5 Different monitor configurations for different machines](#Different_monitor_configurations_for_different_machines)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Help! I get a blank screen and my keybindings don't work!](#Help.21_I_get_a_blank_screen_and_my_keybindings_don.27t_work.21)
     *   [3.2 Window box larger than the actual application!](#Window_box_larger_than_the_actual_application.21)
@@ -139,7 +139,7 @@ For a scratch-pad which can use any window type without pre-defined rules, see: 
 
 For a more sophisticated scratchpad script that supports many terminals out of the box and has flags for doing things like optionally starting a tmuxinator/tmux session, turning any window into a scratchpad on the fly, and automatically resizing a scratchpad to fit the current monitor see [tdrop-git](https://aur.archlinux.org/packages/tdrop-git/).
 
-### Different monitor conifgurations for different machines
+### Different monitor configurations for different machines
 
 Since the `bspwmrc` is a shell script, it allows you to do things like these:
 

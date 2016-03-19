@@ -190,4 +190,4 @@ Single stroke to access command line
 
 ### Non-vim Users
 
-`vifm` assumes that you are using `vim` and will throw errors if it doesn't find it. If you are using {`vi`, you need to edit your `~/.vifm/vifmrc` file. Comment out the line `set vicmd=vim` and replace it with `set vicmd=vi`. Note that, just like `.exrc`, comment lines are introduced by double quotes.
+`vifm` assumes that you are using `vim` and will throw errors if it doesn't find it. If you are using `vi`, you need to edit your `~/.vifm/vifmrc` file. Comment out the line `set vicmd=vim` and replace it with `set vicmd=vi`. Note that, just like `.exrc`, comment lines are introduced by double quotes.

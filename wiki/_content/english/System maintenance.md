@@ -7,10 +7,9 @@ Regular system maintenance is necessary for the proper function of Arch over a p
     *   [1.2 Logfiles](#Logfiles)
 *   [2 Backup](#Backup)
     *   [2.1 Configuration files](#Configuration_files)
-    *   [2.2 Important data](#Important_data)
-    *   [2.3 List of installed packages](#List_of_installed_packages)
-    *   [2.4 Pacman database](#Pacman_database)
-    *   [2.5 LUKS headers](#LUKS_headers)
+    *   [2.2 List of installed packages](#List_of_installed_packages)
+    *   [2.3 Pacman database](#Pacman_database)
+    *   [2.4 LUKS headers](#LUKS_headers)
 *   [3 Upgrading the system](#Upgrading_the_system)
     *   [3.1 Avoid certain pacman commands](#Avoid_certain_pacman_commands)
     *   [3.2 Partial upgrades are unsupported](#Partial_upgrades_are_unsupported)
@@ -60,17 +59,15 @@ See [Xorg#Troubleshooting](/index.php/Xorg#Troubleshooting "Xorg") for informati
 
 ## Backup
 
+Create backups of important data at regular intervals. Those data include configuration files, installed packages and directories such as `/etc`, `/home`, `/var` and for server installations, also `/srv`.
+
+See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for many alternative applications that may better suit your case. See [Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") for other articles of interest.
+
 Backups may be automated with [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
 
 ### Configuration files
 
 Before editing any configuration files, create a backup. This way, you can revert to a working version in case of problems. Editors like [vim](/index.php/Vim "Vim") and [emacs](/index.php/Emacs "Emacs") can do this automatically, as well as tools like [etckeeper](/index.php/Etckeeper "Etckeeper") which keep `/etc` in a version control system (VCS).
-
-### Important data
-
-Create backups of important data at regular intervals. Directories to consider are `/etc`, `/home` and `/var`, and, for server installations, also `/srv`.
-
-See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for many alternative applications that may better suit your case. See [Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") for other articles of interest.
 
 ### List of installed packages
 

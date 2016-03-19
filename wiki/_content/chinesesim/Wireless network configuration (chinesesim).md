@@ -12,7 +12,7 @@
         *   [2.1.1 获取有用信息](#.E8.8E.B7.E5.8F.96.E6.9C.89.E7.94.A8.E4.BF.A1.E6.81.AF)
         *   [2.1.2 激活内核接口](#.E6.BF.80.E6.B4.BB.E5.86.85.E6.A0.B8.E6.8E.A5.E5.8F.A3)
         *   [2.1.3 查看接入点](#.E6.9F.A5.E7.9C.8B.E6.8E.A5.E5.85.A5.E7.82.B9)
-        *   [2.1.4 操作模式](#.E6.93.8D.E4.BD.9C.E6.A8.A1.E5.BC.8F)
+        *   [2.1.4 运行模式](#.E8.BF.90.E8.A1.8C.E6.A8.A1.E5.BC.8F)
         *   [2.1.5 关联](#.E5.85.B3.E8.81.94)
         *   [2.1.6 获取 IP 地址](#.E8.8E.B7.E5.8F.96_IP_.E5.9C.B0.E5.9D.80)
         *   [2.1.7 Example](#Example)
@@ -28,18 +28,17 @@
     *   [3.2 Rfkill caveat](#Rfkill_caveat)
     *   [3.3 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
     *   [3.4 Observing Logs](#Observing_Logs)
-    *   [3.5 Power saving](#Power_saving_2)
-    *   [3.6 Failed to get IP address](#Failed_to_get_IP_address)
-    *   [3.7 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
-    *   [3.8 Connection always times out](#Connection_always_times_out)
-        *   [3.8.1 Lowering the rate](#Lowering_the_rate)
-        *   [3.8.2 Lowering the txpower](#Lowering_the_txpower)
-        *   [3.8.3 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
-    *   [3.9 Random disconnections](#Random_disconnections)
-        *   [3.9.1 Cause #1](#Cause_.231)
-        *   [3.9.2 Cause #2](#Cause_.232)
-        *   [3.9.3 Cause #3](#Cause_.233)
-        *   [3.9.4 Cause #4](#Cause_.234)
+    *   [3.5 Failed to get IP address](#Failed_to_get_IP_address)
+    *   [3.6 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
+    *   [3.7 Connection always times out](#Connection_always_times_out)
+        *   [3.7.1 Lowering the rate](#Lowering_the_rate)
+        *   [3.7.2 Lowering the txpower](#Lowering_the_txpower)
+        *   [3.7.3 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
+    *   [3.8 Random disconnections](#Random_disconnections)
+        *   [3.8.1 Cause #1](#Cause_.231)
+        *   [3.8.2 Cause #2](#Cause_.232)
+        *   [3.8.3 Cause #3](#Cause_.233)
+        *   [3.8.4 Cause #4](#Cause_.234)
 *   [4 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
     *   [4.1 Ralink](#Ralink)
         *   [4.1.1 rt2x00](#rt2x00)
@@ -56,7 +55,7 @@
         *   [4.3.1 ath5k](#ath5k)
         *   [4.3.2 ath9k](#ath9k)
         *   [4.3.3 ath9k](#ath9k_2)
-            *   [4.3.3.1 Power saving](#Power_saving_3)
+            *   [4.3.3.1 Power saving](#Power_saving_2)
             *   [4.3.3.2 ASUS](#ASUS)
     *   [4.4 Intel](#Intel)
         *   [4.4.1 ipw2100 与 ipw2200](#ipw2100_.E4.B8.8E_ipw2200)
@@ -311,16 +310,16 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 *   **SSID:** 网络的名称.
 *   **Signal:** 用 dbm (-100 to 0) 报告的无线信号强度。数值越接近零，信号越好。观察高质量连接和低质量连接的数值差异可以了解设备的信号范围。
-*   **Security:** it is not reported directly, check the line starting with `capability`. If there is `Privacy`, for example `capability: ESS Privacy ShortSlotTime (0x0411)`, then the network is protected somehow.
-    *   If you see an `RSN` information block, then the network is protected by [Robust Security Network](https://en.wikipedia.org/wiki/IEEE_802.11i-2004 "wikipedia:IEEE 802.11i-2004") protocol, also known as WPA2.
-    *   If you see an `WPA` information block, then the network is protected by [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access") protocol.
-    *   In the `RSN` and `WPA` blocks you may find the following information:
-        *   **Group cipher:** value in TKIP, CCMP, both, others.
-        *   **Pairwise ciphers:** value in TKIP, CCMP, both, others. Not necessarily the same value than Group cipher.
-        *   **Authentication suites:** value in PSK, 802.1x, others. For home router, you'll usually find PSK (*i.e.* passphrase). In universities, you are more likely to find 802.1x suite which requires login and password. Then you will need to know which key management is in use (e.g. EAP), and what encapsulation it uses (e.g. PEAP). Find more details at [Wikipedia:Authentication protocol](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol") and the sub-articles.
-    *   If you do not see neither `RSN` nor `WPA` blocks but there is `Privacy`, then WEP is used.
+*   **Security:** 没有直接报告, 检查 `capability` 开头的行，如果有 `Privacy` 信息，例如 `capability: ESS Privacy ShortSlotTime (0x0411)`, 表示网络具有某种程度的保护，
+    *   如果有 `RSN` 信息，网络被 [Robust Security Network](https://en.wikipedia.org/wiki/IEEE_802.11i-2004 "wikipedia:IEEE 802.11i-2004")(WPA2) 协议保护。
+    *   如果有 `WPA` 信息，网络被 [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access") 协议保护。
+    *   在 `RSN` 和 `WPA` 信息块中，可能看到如下信息：
+        *   **Group cipher:** 数值包括 TKIP, CCMP, both, others.
+        *   **Pairwise ciphers:** 数值包括 TKIP, CCMP, both, others. 可能和 Group cipher 数值不同.
+        *   **Authentication suites:** 数值包括 PSK, 802.1x, others. 家用路由器通常可以看到 PSK (*i.e.* 密码). 在大学中，通常会链接到需要登录名和密码的 802.1x 网络。需要知道其使用的密码管理方式(例如 EAP), 封装方法 (例如 PEAP). 详情请参考 [Wikipedia:Authentication protocol](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol").
+    *   如果没有看到 `RSN` 或 `WPA`，但是看到了 `Privacy`, 表示使用的是 WEP.
 
-#### 操作模式
+#### 运行模式
 
 设置无线网卡的操作模式，如果连接到漫游网络，需要设置操作模式为 **ibss**
 
@@ -395,7 +394,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 ```
 
-**Tip:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") provides a [hook](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd"), which can be enabled to automatically launch [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces.
+**Tip:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 提供了 [钩子](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd"), 可以使用它自动在无线接口上启动 [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")。
 
 #### Example
 
@@ -477,7 +476,7 @@ WiFi Radar是 一个Python/PyGTK2 的管理无线配置的程序（**只有**无
 
 ### Power saving
 
-参阅[Power saving](/index.php/Power_saving "Power saving").
+参阅 [Power management#Network interfaces](/index.php/Power_management#Network_interfaces "Power management").
 
 ## Troubleshooting
 
@@ -595,10 +594,6 @@ wlan0: deauthenticating from XX:XX:XX:XX:XX:XX by local choice (reason=3)
 Looking up [the reason code](http://www.aboutcher.co.uk/2012/07/linux-wifi-deauthenticated-reason-codes/) might give a first hint. Maybe it also helps you to look at the control message [flowchart](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211/auth-assoc-deauth), the journal messages will follow it.
 
 The individual tools used in this article further provide options for more detailed debugging output, which can be used in a second step of the analysis, if required.
-
-### Power saving
-
-See [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces "Power saving").
 
 ### Failed to get IP address
 

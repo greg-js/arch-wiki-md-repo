@@ -65,7 +65,7 @@
 
 #### Установка
 
-Установка состоит из добавления выбранных репозиториев в `pacman.conf` и [установки](/index.php/Installing "Installing") пакетов из соответствующих групп или мета-пакетов. Не забудьте перезапустить сервер X после установки, чтобы увидеть изменения.
+Установка состоит из добавления выбранных репозиториев в `pacman.conf` и [установки](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакетов из соответствующих групп или мета-пакетов. Не забудьте перезапустить сервер X после установки, чтобы увидеть изменения.
 
 *   [infinality-bundle](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories") содержит базовые пакеты собранные в группе *infinality-bundle*.
 *   [infinality-bundle-multilib](/index.php/Unofficial_user_repositories#infinality-bundle-multilib "Unofficial user repositories") репозиторий содержит дополнительные мультибиблиотечные библиотеки для архитектуры x86_64 собранные в группе *infinality-bundle-multilib*.

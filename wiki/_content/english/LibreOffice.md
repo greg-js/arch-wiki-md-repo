@@ -28,6 +28,7 @@ From [Home - LibreOffice](http://www.libreoffice.org/):
     *   [8.7 Exit while pushing the save button](#Exit_while_pushing_the_save_button)
     *   [8.8 Media support](#Media_support)
     *   [8.9 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
+    *   [8.10 Libreoffice toolbars unreadable with gtk3 Dark theme](#Libreoffice_toolbars_unreadable_with_gtk3_Dark_theme)
 
 ## LibreOffice in Arch Linux
 
@@ -239,3 +240,11 @@ If embedded videos are just gray boxes, make sure to have installed the [GStream
 If the default paper size in blank Writer and Draw documents is persistently incorrect for your locale, try installing the [libpaper](https://www.archlinux.org/packages/?name=libpaper) optional dependency and either updating `/etc/papersize` (for a system-wide change) or exporting the `PAPERSIZE` environment variable (for a user change) with your preferred paper size.
 
 **Note:** [libpaper](https://www.archlinux.org/packages/?name=libpaper) defaults to **Letter** paper size if nothing else has been set.
+
+### Libreoffice toolbars unreadable with gtk3 Dark theme
+
+This issue can be solved by copying the `/usr/share/applications/libreoffice-*.desktop` files to `~/.local/share/applications` and modifying the Exec lines like the following example:
+
+From `Exec=libreoffice --writer %U` to `Exec=env GTK_THEME=Adwaita:light libreoffice --writer %U`
+
+Then make the .desktop files executable. Restart Gnome-shell (`Alt-F2 r`) to make sure the changes are immediately available.

@@ -11,8 +11,7 @@ I installed arch using Antergos.
 *   [3 GPU](#GPU)
     *   [3.1 Bumblebee and NVIDIA proprietary driver](#Bumblebee_and_NVIDIA_proprietary_driver)
 *   [4 Networking](#Networking)
-    *   [4.1 Ethernet](#Ethernet)
-    *   [4.2 Wireless](#Wireless)
+    *   [4.1 Wireless](#Wireless)
 
 ## CPU
 
@@ -53,21 +52,6 @@ Install NVIDIA proprietary driver
 [primus](https://www.archlinux.org/packages/?name=primus)
 
 ## Networking
-
-### Ethernet
-
-Install [r8168](https://www.archlinux.org/packages/?name=r8168) kernel module.
-
-Then blacklist the r8169:
-
- `/etc/modprobe.d/blacklist.conf`  `blacklist r8169` 
-
-Restart or unload r8169:
-
-```
-# modprobe -r r8169
-
-```
 
 ### Wireless
 

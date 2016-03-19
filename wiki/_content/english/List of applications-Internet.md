@@ -19,20 +19,21 @@
                 *   [1.3.2.3.1 Browsers based on webkitgtk/webkitgtk2/qtwebkit](#Browsers_based_on_webkitgtk.2Fwebkitgtk2.2Fqtwebkit)
             *   [1.3.2.4 Other](#Other)
     *   [1.4 File sharing](#File_sharing)
-        *   [1.4.1 FTP](#FTP)
-            *   [1.4.1.1 FTP clients](#FTP_clients)
-            *   [1.4.1.2 FTP servers](#FTP_servers)
-        *   [1.4.2 Distributed file systems](#Distributed_file_systems)
-        *   [1.4.3 BitTorrent clients](#BitTorrent_clients)
-            *   [1.4.3.1 Console](#Console_2)
-                *   [1.4.3.1.1 Command line / backend](#Command_line_.2F_backend)
-                *   [1.4.3.1.2 Console Interface](#Console_Interface)
-            *   [1.4.3.2 Graphical Interface](#Graphical_Interface)
-                *   [1.4.3.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
-                *   [1.4.3.2.2 libktorrent backend](#libktorrent_backend)
-                *   [1.4.3.2.3 others](#others)
-        *   [1.4.4 Other P2P networks](#Other_P2P_networks)
-        *   [1.4.5 Video downloaders](#Video_downloaders)
+        *   [1.4.1 Download managers](#Download_managers)
+        *   [1.4.2 FTP](#FTP)
+            *   [1.4.2.1 FTP clients](#FTP_clients)
+            *   [1.4.2.2 FTP servers](#FTP_servers)
+        *   [1.4.3 Distributed file systems](#Distributed_file_systems)
+        *   [1.4.4 BitTorrent clients](#BitTorrent_clients)
+            *   [1.4.4.1 Console](#Console_2)
+                *   [1.4.4.1.1 Command line / backend](#Command_line_.2F_backend)
+                *   [1.4.4.1.2 Console Interface](#Console_Interface)
+            *   [1.4.4.2 Graphical Interface](#Graphical_Interface)
+                *   [1.4.4.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
+                *   [1.4.4.2.2 libktorrent backend](#libktorrent_backend)
+                *   [1.4.4.2.3 others](#others)
+        *   [1.4.5 Other P2P networks](#Other_P2P_networks)
+        *   [1.4.6 Video downloaders](#Video_downloaders)
     *   [1.5 Communication](#Communication)
         *   [1.5.1 Email clients](#Email_clients)
             *   [1.5.1.1 Console](#Console_3)
@@ -310,6 +311,20 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 ### File sharing
 
+#### Download managers
+
+*   **[Gwget](https://en.wikipedia.org/wiki/Wget#GWget "wikipedia:Wget")** — Download manager for GNOME.
+
+	[https://projects.gnome.org/gwget/](https://projects.gnome.org/gwget/) || [gwget](https://www.archlinux.org/packages/?name=gwget)
+
+*   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Download manager for KDE that supports HTTP(S), FTP and BitTorrent. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
+
+	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
+
+*   **uGet** — GTK+ download manager featuring download classification and HTML import.
+
+	[http://ugetdm.com/](http://ugetdm.com/) || [uget](https://www.archlinux.org/packages/?name=uget)
+
 #### FTP
 
 ##### FTP clients
@@ -447,10 +462,6 @@ Can be used as-is via command line, but all have a choice of front-end options a
 	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
 
 ###### libktorrent backend
-
-*   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Download manager for KDE that supports HTTP(S), FTP and BitTorrent. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
-
-	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
 
 *   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — Feature-rich BitTorrent client for KDE.
 

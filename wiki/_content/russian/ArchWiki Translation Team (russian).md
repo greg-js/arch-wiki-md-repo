@@ -90,6 +90,7 @@
 | Backend | Бэкенд | - |
 | Binary (n.) | Двоичный файл | Бинарный файл |
 | Bug report | Отчет об ошибке | Отчет об ошибке (баг-репорт) |
+| Crash (ing) | Рушить/Нарушить | Нарушать работу |
 | Desktop entry | Ярлык приложения | Ярлык приложения (*.desktop*) |
 | Directory | Каталог | Директория |
 | Port forwarding | Перенаправление порта | Проброс порта |
@@ -141,13 +142,13 @@
 
 | Количество голосов | Страница | Степень готовности | Заметки |
 | 1 | [PulseAudio/Решение проблем](/index.php/PulseAudio/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC "PulseAudio/Решение проблем") | 7/7 | Синхронизация с Англ. статьёй 16.03.16\. Подзаголовки "переместить в другую статью" и "вырезать из этой статьи" не переведены в связи с возможной миграцией. -- [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([talk](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")) 13:53, 17 марта 2016 |
-| 1 | [PulseAudio/Примеры](/index.php/PulseAudio/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B "PulseAudio/Примеры") | 14/15 (1 - 14) | - |
+| 1 | [PulseAudio/Примеры](/index.php/PulseAudio/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B "PulseAudio/Примеры") | 16/16 |
 | 1 | [Sshfs (Русский)](/index.php/Sshfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sshfs (Русский)") | 7/7 | - |
 | 1 | [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)") | 0 | Сначала нужно синхронизировать с Англ. |
 | 1 | [xrandr (Русский)](/index.php/Xrandr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xrandr (Русский)") | 5/5 | - |
-| 1 | [Help:Чтение](/index.php/Help:%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5 "Help:Чтение") | 3/7 (2, 3, 4) | - |
+| 1 | [Help:Чтение](/index.php/Help:%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5 "Help:Чтение") | 7/7 | Нужно перевести пару предложений, проверить стилистику. -- [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([talk](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")) 13:46, 19 марта 2016 |
 | 1 | [LightDM (Русский)](/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LightDM (Русский)") | 7/7 | - |
-| 1 | [xterm (Русский)](/index.php/Xterm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xterm (Русский)") | 0 | Сначала нужно синхронизировать с Англ. |
+| 1 | [xterm (Русский)](/index.php/Xterm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xterm (Русский)") | 0/6 | Синхронизирована с Англ. статьёй, исправлены некоторые ссылки на Рус. -- [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([talk](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")) 12:43, 19 марта 2016 |
 
 ## Список страниц с сопроводителем
 
@@ -160,6 +161,7 @@
 | Страница | Локализованный заголовок | Сопроводитель | Заметки |
 | [Arch Build System (Русский)](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)") | [Система сборки Arch](/index.php/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8_Arch "Система сборки Arch") | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |
 | [Aria2 (Русский)](/index.php/Aria2_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Aria2 (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
+| [awesome (Русский)](/index.php/Awesome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Awesome (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Autostarting (Русский)](/index.php/Autostarting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Autostarting (Русский)") | [Автозапуск](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA "Автозапуск") | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Backup programs (Русский)](/index.php/Backup_programs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Backup programs (Русский)") | [Программы резервного копирования](/index.php/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F "Программы резервного копирования") | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Bluetooth (Русский)](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)") | Не требуется | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |

@@ -177,8 +177,8 @@ OnlyShowIn=Unity;XFCE;GNOME;Pantheon;
 
 **Note:**
 
-*   Indicator support itself is a complex issue, due to standards discrepancies between Ubuntu and Gnome's implementation of KDE's status notification indicators.
-*   The pantheon devs are working on [a number of their own indicators](https://launchpad.net/~wingpanel-devs) for wingpanel.
+*   Indicator support itself is a complex issue, due to discrepancies between Ubuntu and Gnome's differing implementations of KDE's status notification indicators.
+*   The pantheon devs now have [their own standard indicators](https://launchpad.net/~wingpanel-devs) for wingpanel.
 
 ### Indicator-session menus not working
 

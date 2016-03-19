@@ -38,6 +38,7 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
     *   [3.8 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
     *   [3.9 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
     *   [3.10 Raspberry Pi](#Raspberry_Pi)
+        *   [3.10.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -533,6 +534,28 @@ Kodi runs smoothly on both the Raspberry Pi (RPi) and the RPi 2\. Some helpful t
 *   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase this value via a simple edit to the `gpu_mem` tag in `/boot/config.txt`. A value of at least 128 MB is recommended.
 *   Install *omxplayer-git*, *xorg-xrefresh* and *xorg-xset* to get hardware acceleration working.
 *   Add the udev rule `SUBSYSTEM=="tty", KERNEL=="tty0", GROUP="tty", MODE="0666"` to `/etc/udev/rules.d/raspberrypi.rules` to enable typing with a physical keyboard.
+
+#### Run kodi in a window manager
+
+If you run kodi in a [Window_manager](/index.php/Window_manager "Window manager") you may come across a black screen at exit, to fix you have to switch tty, a possible solution is to run kodi with this script (if you use [sudo](/index.php/Sudo "Sudo")):
+
+ `~/bin/kodi.sh` 
+```
+#!/bin/bash
+kodi-standalone
+sudo chvt 2 
+sleep 1
+sudo chvt 1
+
+```
+
+To make sure that [sudo](/index.php/Sudo "Sudo") does not ask for password for `chvt` add this line to `sudoers` file:
+
+ `/etc/sudoers` 
+```
+*UserNameHere* ALL=NOPASSWD: /usr/bin/chvt
+
+```
 
 ## See also
 

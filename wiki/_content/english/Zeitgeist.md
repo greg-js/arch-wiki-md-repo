@@ -6,21 +6,18 @@ Install [zeitgeist](https://www.archlinux.org/packages/?name=zeitgeist) from the
 
 To configure what gets logged by Zeitgeist, install [activity-log-manager](https://www.archlinux.org/packages/?name=activity-log-manager) which provides a graphical user interface where you can filter out specific folders, file types, and applications. The GNOME Control Center also has a Privacy module where you can make similar adjustments.
 
-To monitor and inspect Zeitgeist's log at a low level, install [zeitgeist-explorer](https://aur.archlinux.org/packages/zeitgeist-explorer/) which provides a graphical user interface where you can see the events logged in real-time just like wireshark.
+To monitor and inspect Zeitgeist's log at a low level, install [zeitgeist-explorer](https://www.archlinux.org/packages/?name=zeitgeist-explorer) which provides a graphical user interface where you can see the events logged in real-time just like wireshark.
 
 ### Data providers
 
 The following applications are just some of the apps which are able to send metadata to Zeitgeist. In some cases this functionality must be enabled manually.
 
 *   [bijiben](https://www.archlinux.org/packages/?name=bijiben)
-*   [gedit](https://www.archlinux.org/packages/?name=gedit)
+*   [gedit-plugins](https://www.archlinux.org/packages/?name=gedit-plugins)
 *   [midori](https://www.archlinux.org/packages/?name=midori)
 *   [quodlibet](https://www.archlinux.org/packages/?name=quodlibet)
-*   [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox)
 *   [totem](https://www.archlinux.org/packages/?name=totem)
 *   [zim](https://www.archlinux.org/packages/?name=zim)
-
-[zeitgeist-datasources](https://aur.archlinux.org/packages/zeitgeist-datasources/) can be also installed from the [AUR](/index.php/AUR "AUR"), which provides some third party plugins for other applcations.
 
 ### Applications
 
@@ -30,6 +27,5 @@ The following applications can be used to browse or search for recent activity u
 *   [catfish](https://www.archlinux.org/packages/?name=catfish)
 *   [gnome-activity-journal](https://www.archlinux.org/packages/?name=gnome-activity-journal)
 *   [synapse](https://www.archlinux.org/packages/?name=synapse)
-*   [unity](https://aur.archlinux.org/packages/unity/)
 
 For more information see [http://zeitgeist-project.com/experience/](http://zeitgeist-project.com/experience/)

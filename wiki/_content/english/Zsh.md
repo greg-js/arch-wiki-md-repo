@@ -331,9 +331,8 @@ See [Prompt Expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.h
 
 Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). Add `autoload -U colors && colors` before `PROMPT=` in `.zshrc` to use them. Usually you will want to put these inside `%{ [...] %}` so the cursor does not move.
 
-`$fg[color]` will set the text color (red, green, blue, etc. - defaults to whatever format set prior to text)
-
 | Command | Description |
+| `$fg[color]` | will set the text color (red, green, blue, etc. - defaults to whatever format set prior to text) |
 | `%F{color} [...] %f` | effectively the same as the previous, but with less typing. Can also prefix F with a number instead. |
 | `$fg_no_bold[color]` | will set text to non-bold and set the text color |
 | `$fg_bold[color]` | will set the text to bold and set the text color |

@@ -44,7 +44,7 @@ A number of peripherals have been released or are about to be released recently 
 | Half Life 2 | Displays one black eye, one solid color eye | Via OSVR-SteamVR | Displays one black eye, one solid color eye | Via OSVR | Via OSVR |
 | VRUI VR Toolkit and demos |
 | 4089: The Ghost Within | Via OpenVR | Via OSVR-SteamVR | Broken until Valve fixes the compositor on Linux | Via OSVR | Via OSVR |
-| Games/Programs in Wine | On OVRSDK versions <=0.5.0.0, with [oculus-wine-wrapper-git](https://aur.archlinux.org/packages/oculus-wine-wrapper-git/) and [wine-unity3d-git](https://aur.archlinux.org/packages/wine-unity3d-git/) | OSVRTrackerView works perfectly, but Unity demos crash at start |
+| Games/Programs in Wine | On OVRSDK versions <=0.5.0.0, with [oculus-wine-wrapper-git](https://aur.archlinux.org/packages/oculus-wine-wrapper-git/) and [wine-unity3d-git](https://aur.archlinux.org/packages/wine-unity3d-git/) | Trackers work perfectly. Unity demos without Render Manager 'work' but are buggy, ones using the Render Manager display a white or black screen. |
 
 ## Peripherals and toolkits
 

@@ -68,7 +68,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [4.6.5 zd1211rw](#zd1211rw)
         *   [4.6.6 hostap_cs](#hostap_cs)
     *   [4.7 ndiswrapper](#ndiswrapper)
-    *   [4.8 compat-drivers-patched](#compat-drivers-patched)
+    *   [4.8 backports-patched](#backports-patched)
 *   [5 See also](#See_also)
 
 ## Device driver
@@ -1004,34 +1004,11 @@ The important part is making sure that ndiswrapper exists on this line, so just 
 
 and *wlan0* should now exist. If you have problems, some help is available at: [ndiswrapper howto](http://sourceforge.net/p/ndiswrapper/ndiswrapper/HowTos/) and [ndiswrapper FAQ](http://sourceforge.net/p/ndiswrapper/ndiswrapper/FAQ/).
 
-### compat-drivers-patched
+### backports-patched
 
-Patched compat wireless drivers correct the "fixed-channel -1" issue, whilst providing better injection. Install the [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) package.
+[backports-patched](https://aur.archlinux.org/packages/backports-patched/) provide drivers released on newer kernels backported for usage on older kernels. The project started since 2007 and was originally known as compat-wireless, evolved to compat-drivers and was recently renamed simply to backports.
 
-[compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) does not conflict with any other package and the modules built reside in `/usr/lib/modules/*your_kernel_version*/updates`.
-
-These patched drivers come from the [Linux Wireless project](http://wireless.kernel.org/) and support many of the above mentioned chips such as:
-
-```
-ath5k ath9k_htc carl9170 b43 zd1211rw rt2x00 wl1251 wl12xx ath6kl brcm80211
-
-```
-
-Supported groups:
-
-```
-atheros ath iwlagn rtl818x rtlwifi wl12xx atlxx bt
-
-```
-
-It is also possible to build a specific module/driver or a group of drivers by editing the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), particularly uncommenting the **line #46**. Here is an example of building the atheros group:
-
-```
-scripts/driver-select atheros
-
-```
-
-Please read the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for any other possible modifications prior to compilation and installation.
+If you are using old kernel and have wireless issue, drivers in this package may help.
 
 ## See also
 

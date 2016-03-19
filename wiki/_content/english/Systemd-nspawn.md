@@ -11,8 +11,9 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
 *   [1 Installation](#Installation)
 *   [2 Examples](#Examples)
     *   [2.1 Create and boot a minimal Arch Linux distribution in a container](#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container)
-    *   [2.2 Enable Container on boot](#Enable_Container_on_boot)
-    *   [2.3 Building and Testing packages](#Building_and_Testing_packages)
+    *   [2.2 Create a Debian or Ubuntu environment](#Create_a_Debian_or_Ubuntu_environment)
+    *   [2.3 Enable Container on boot](#Enable_Container_on_boot)
+    *   [2.4 Building and Testing packages](#Building_and_Testing_packages)
 *   [3 Management](#Management)
     *   [3.1 machinectl](#machinectl)
     *   [3.2 systemd toolchain](#systemd_toolchain)
@@ -66,6 +67,31 @@ After the container starts, log in as "root" with no password.
 The container can be powered off by running `poweroff` from within the container. From the host, containers can be controlled by the [machinectl](#machinectl) tool.
 
 **Note:** To terminate the *session* from within the container, hold `Ctrl` and rapidly press `]` three times. Non US keyboard will use `%` instead of `]`
+
+### Create a Debian or Ubuntu environment
+
+Install [debootstrap](https://aur.archlinux.org/packages/debootstrap/), [gnupg1](https://aur.archlinux.org/packages/gnupg1/), and one or both of [debian-archive-keyring](https://aur.archlinux.org/packages/debian-archive-keyring/) and [ubuntu-keyring](https://aur.archlinux.org/packages/ubuntu-keyring/) (obviously install the keyrings for the distros you want).
+
+**NOTE For Ubuntu:** systemd-nspawn requires that the os in the container has systemd running as PID 1, this means Ubuntu before 15.04 will not work out of the box and requires additional configuration to switch from upstart to systemd.
+
+From there it's rather easy to setup Debian or Ubuntu environments:
+
+```
+# cd /var/lib/machines
+# debootstrap <codename> myContainer <repository>
+
+```
+
+For Debian valid code names are either the rolling names like "stable" and "testing" or release names like "stretch" and "sid", for Ubuntu the code name like "wily" or "hardy" should be used. A complete list is in /usr/share/debootstrap/scripts
+
+Unlike Archm Debian and Ubuntu will not let you login without a password on first login. To set the root password login without the '-b' option and set a password:
+
+```
+# systemd-nspawn -D myContainer
+# passwd
+# logout
+
+```
 
 ### Enable Container on boot
 

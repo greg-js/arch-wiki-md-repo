@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Awesome](/index.php/Awesome "Awesome"). Дата последней синхронизации: 17 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Awesome&diff=0&oldid=426148).
+
 С официального сайта:
 
 "*[awesome](http://awesome.naquadah.org/) - это полностью настраиваемый современный оконный менеджер для X. Он очень быстрый, расширяемый и распространяется под GNU GPLv2 лицензией.*
@@ -7,73 +9,53 @@
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Запуск awesome](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_awesome)
-    *   [2.1 Без использования менеджера входа в систему](#.D0.91.D0.B5.D0.B7_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
-    *   [2.2 С использованием менеджера входа в систему](#.D0.A1_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5.D0.BC_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
-        *   [2.2.1 GDM, LightDM и другие, использующие /usr/share/xsessions/](#GDM.2C_LightDM_.D0.B8_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D0.B5.2C_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.2Fusr.2Fshare.2Fxsessions.2F)
-        *   [2.2.2 KDM](#KDM)
-*   [3 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
-    *   [3.1 Создание файла конфигурации](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.B8)
-    *   [3.2 Источники для файлов конфигурации](#.D0.98.D1.81.D1.82.D0.BE.D1.87.D0.BD.D0.B8.D0.BA.D0.B8_.D0.B4.D0.BB.D1.8F_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.B8)
-    *   [3.3 Отладка файла rc.lua при помощи Xephyr](#.D0.9E.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B0_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_rc.lua_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D0.B8_Xephyr)
-*   [4 Темы оформления](#.D0.A2.D0.B5.D0.BC.D1.8B_.D0.BE.D1.84.D0.BE.D1.80.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F)
-    *   [4.1 Установка обоев рабочего стола](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.B1.D0.BE.D0.B5.D0.B2_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0)
-        *   [4.1.1 Случайные фоновые изображения](#.D0.A1.D0.BB.D1.83.D1.87.D0.B0.D0.B9.D0.BD.D1.8B.D0.B5_.D1.84.D0.BE.D0.BD.D0.BE.D0.B2.D1.8B.D0.B5_.D0.B8.D0.B7.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
-*   [5 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
-    *   [5.1 Использование awesome в GNOME в качестве оконного менеджера](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_awesome_.D0.B2_GNOME_.D0.B2_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5_.D0.BE.D0.BA.D0.BE.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0)
-    *   [5.2 Эффект развертывания окон как в compiz](#.D0.AD.D1.84.D1.84.D0.B5.D0.BA.D1.82_.D1.80.D0.B0.D0.B7.D0.B2.D0.B5.D1.80.D1.82.D1.8B.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BE.D0.BA.D0.BE.D0.BD_.D0.BA.D0.B0.D0.BA_.D0.B2_compiz)
-    *   [5.3 Скрыть/показать wibox в awesome](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D1.8C.2F.D0.BF.D0.BE.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C_wibox_.D0.B2_awesome)
-    *   [5.4 Снимки рабочего стола](#.D0.A1.D0.BD.D0.B8.D0.BC.D0.BA.D0.B8_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0)
-    *   [5.5 Динамические теги](#.D0.94.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.82.D0.B5.D0.B3.D0.B8)
-    *   [5.6 Space Invaders](#Space_Invaders)
-    *   [5.7 Naughty для всплывающих уведомлений](#Naughty_.D0.B4.D0.BB.D1.8F_.D0.B2.D1.81.D0.BF.D0.BB.D1.8B.D0.B2.D0.B0.D1.8E.D1.89.D0.B8.D1.85_.D1.83.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9)
-    *   [5.8 Контекстное меню](#.D0.9A.D0.BE.D0.BD.D1.82.D0.B5.D0.BA.D1.81.D1.82.D0.BD.D0.BE.D0.B5_.D0.BC.D0.B5.D0.BD.D1.8E)
-    *   [5.9 Еще виджеты для awesome](#.D0.95.D1.89.D0.B5_.D0.B2.D0.B8.D0.B4.D0.B6.D0.B5.D1.82.D1.8B_.D0.B4.D0.BB.D1.8F_awesome)
-    *   [5.10 Прозрачность](#.D0.9F.D1.80.D0.BE.D0.B7.D1.80.D0.B0.D1.87.D0.BD.D0.BE.D1.81.D1.82.D1.8C)
-        *   [5.10.1 ImageMagick](#ImageMagick)
-    *   [5.11 Автозапуск программ](#.D0.90.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC)
-    *   [5.12 Передача информации виджетам при помощи awesome-client](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B4.D0.B0.D1.87.D0.B0_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.B8_.D0.B2.D0.B8.D0.B4.D0.B6.D0.B5.D1.82.D0.B0.D0.BC_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D0.B8_awesome-client)
-    *   [5.13 Использование другой панели в awesome](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.B9_.D0.BF.D0.B0.D0.BD.D0.B5.D0.BB.D0.B8_.D0.B2_awesome)
-    *   [5.14 Запретить Nautilus'у отображать рабочий стол (Gnome3)](#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82.D0.B8.D1.82.D1.8C_Nautilus.27.D1.83_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D1.82.D1.8C_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B8.D0.B9_.D1.81.D1.82.D0.BE.D0.BB_.28Gnome3.29)
-    *   [5.15 Переход с GNOME 3](#.D0.9F.D0.B5.D1.80.D0.B5.D1.85.D0.BE.D0.B4_.D1.81_GNOME_3)
-    *   [5.16 Не менять теги колесом мыши](#.D0.9D.D0.B5_.D0.BC.D0.B5.D0.BD.D1.8F.D1.82.D1.8C_.D1.82.D0.B5.D0.B3.D0.B8_.D0.BA.D0.BE.D0.BB.D0.B5.D1.81.D0.BE.D0.BC_.D0.BC.D1.8B.D1.88.D0.B8)
-*   [6 Устранение неисправностей](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.B8.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D0.B5.D0.B9)
-    *   [6.1 Кнопка Mod4](#.D0.9A.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0_Mod4)
-        *   [6.1.1 Mod4 кнопка против пользователей IBM ThinkPad](#Mod4_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D1.82.D0.B8.D0.B2_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_IBM_ThinkPad)
-    *   [6.2 Исправление для Java приложений (серый интерфейс)](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BB.D1.8F_Java_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.28.D1.81.D0.B5.D1.80.D1.8B.D0.B9_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.29)
-    *   [6.3 Курсор мыши остается в режиме ожидания](#.D0.9A.D1.83.D1.80.D1.81.D0.BE.D1.80_.D0.BC.D1.8B.D1.88.D0.B8_.D0.BE.D1.81.D1.82.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_.D0.BE.D0.B6.D0.B8.D0.B4.D0.B0.D0.BD.D0.B8.D1.8F)
-*   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+    *   [1.1 KDM](#KDM)
+    *   [1.2 GNOME](#GNOME)
+*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+    *   [2.1 Создание файла настроек](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA)
+        *   [2.1.1 Примеры](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B)
+    *   [2.2 Расширения](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [2.3 Автозапуск программ](#.D0.90.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC)
+    *   [2.4 Выбор раскладки клавиатуры](#.D0.92.D1.8B.D0.B1.D0.BE.D1.80_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [2.5 Темы оформления](#.D0.A2.D0.B5.D0.BC.D1.8B_.D0.BE.D1.84.D0.BE.D1.80.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F)
+        *   [2.5.1 Обои рабочего стола](#.D0.9E.D0.B1.D0.BE.D0.B8_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0)
+*   [3 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
+    *   [3.1 Скрыть / показать wibox](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D1.8C_.2F_.D0.BF.D0.BE.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C_wibox)
+    *   [3.2 Скриншот (снимок экрана)](#.D0.A1.D0.BA.D1.80.D0.B8.D0.BD.D1.88.D0.BE.D1.82_.28.D1.81.D0.BD.D0.B8.D0.BC.D0.BE.D0.BA_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0.29)
+    *   [3.3 Удаление пробелов окна](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.B5.D0.BB.D0.BE.D0.B2_.D0.BE.D0.BA.D0.BD.D0.B0)
+    *   [3.4 Прозрачность](#.D0.9F.D1.80.D0.BE.D0.B7.D1.80.D0.B0.D1.87.D0.BD.D0.BE.D1.81.D1.82.D1.8C)
+        *   [3.4.1 Conky](#Conky)
+        *   [3.4.2 wibox'ы](#wibox.27.D1.8B)
+        *   [3.4.3 ImageMagick](#ImageMagick)
+    *   [3.5 Передача информации виджетам при помощи awesome-client](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B4.D0.B0.D1.87.D0.B0_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.B8_.D0.B2.D0.B8.D0.B4.D0.B6.D0.B5.D1.82.D0.B0.D0.BC_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D0.B8_awesome-client)
+    *   [3.6 Использование другой панели с awesome](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.B9_.D0.BF.D0.B0.D0.BD.D0.B5.D0.BB.D0.B8_.D1.81_awesome)
+    *   [3.7 Каталоги приложений в строке меню](#.D0.9A.D0.B0.D1.82.D0.B0.D0.BB.D0.BE.D0.B3.D0.B8_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B2_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D0.B5_.D0.BC.D0.B5.D0.BD.D1.8E)
+    *   [3.8 Всплывающие меню](#.D0.92.D1.81.D0.BF.D0.BB.D1.8B.D0.B2.D0.B0.D1.8E.D1.89.D0.B8.D0.B5_.D0.BC.D0.B5.D0.BD.D1.8E)
+    *   [3.9 Меню приложений](#.D0.9C.D0.B5.D0.BD.D1.8E_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
+    *   [3.10 Заголовки окон (titlebars )](#.D0.97.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B8_.D0.BE.D0.BA.D0.BE.D0.BD_.28titlebars_.29)
+    *   [3.11 Уведомление состояния батареи](#.D0.A3.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D1.8F_.D0.B1.D0.B0.D1.82.D0.B0.D1.80.D0.B5.D0.B8)
+*   [4 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [4.1 Нахождение и устранение ошибок rc.lua](#.D0.9D.D0.B0.D1.85.D0.BE.D0.B6.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8_.D1.83.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_rc.lua)
+        *   [4.1.1 awmtt](#awmtt)
+    *   [4.2 Файл журналов](#.D0.A4.D0.B0.D0.B9.D0.BB_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.BE.D0.B2)
+    *   [4.3 Клавиша Mod4](#.D0.9A.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B0_Mod4)
+        *   [4.3.1 Клавиша Mod4 против пользователей IBM ThinkPad](#.D0.9A.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B0_Mod4_.D0.BF.D1.80.D0.BE.D1.82.D0.B8.D0.B2_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_IBM_ThinkPad)
+    *   [4.4 Исправление для Java приложений (серый интерфейс)](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BB.D1.8F_Java_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.28.D1.81.D0.B5.D1.80.D1.8B.D0.B9_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.29)
+    *   [4.5 Eclipse: невозможно изменить размер/переместить главное окно](#Eclipse:_.D0.BD.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.2F.D0.BF.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D1.81.D1.82.D0.B8.D1.82.D1.8C_.D0.B3.D0.BB.D0.B0.D0.B2.D0.BD.D0.BE.D0.B5_.D0.BE.D0.BA.D0.BD.D0.BE)
+    *   [4.6 YouTube: полноэкранный режим показывает как в фоновом режиме](#YouTube:_.D0.BF.D0.BE.D0.BB.D0.BD.D0.BE.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D1.8B.D0.B9_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC_.D0.BF.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D0.B5.D1.82_.D0.BA.D0.B0.D0.BA_.D0.B2_.D1.84.D0.BE.D0.BD.D0.BE.D0.B2.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5)
+    *   [4.7 Запретить колесу прокрутки мыши менять теги](#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82.D0.B8.D1.82.D1.8C_.D0.BA.D0.BE.D0.BB.D0.B5.D1.81.D1.83_.D0.BF.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.82.D0.BA.D0.B8_.D0.BC.D1.8B.D1.88.D0.B8_.D0.BC.D0.B5.D0.BD.D1.8F.D1.82.D1.8C_.D1.82.D0.B5.D0.B3.D0.B8)
+    *   [4.8 Запуск консольных клиентов на определённом теге](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D0.BA.D0.BB.D0.B8.D0.B5.D0.BD.D1.82.D0.BE.D0.B2_.D0.BD.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.BC_.D1.82.D0.B5.D0.B3.D0.B5)
+*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
-Awesome доступен в community:
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [awesome](https://www.archlinux.org/packages/?name=awesome). Разрабатываемая версия [awesome-git](https://aur.archlinux.org/packages/awesome-git/), считается нестабильной и может иметь различные настройки API.
 
-```
-pacman -S awesome
+Для запуска awesome из [Xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"), добавьте `exec awesome` в `~/.xinitrc`. Для того, чтобы использовать входящий в комплект файл [xsession](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.81.D0.B5.D0.B0.D0.BD.D1.81.D0.BE.D0.B2 "Экранный менеджер"), смотрите [Экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер").
 
-```
+### KDM
 
-Git-based версия также доступна в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"), смотрите [awesome-git](https://aur.archlinux.org/packages/awesome-git/).
-
-## Запуск awesome
-
-### Без использования менеджера входа в систему
-
-Для запуска awesome без логин менеджера просто добавьте `exec awesome` в ваш скрипт запуска графического окружения (например в ~/.xinitrc.) Подробнее смотрите [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)").
-
-Также возможен автозапуск awesome после авторизации пользователя из виртуальной консоли. Смотрите [Запуск X при входе](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA_X_%D0%BF%D1%80%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%B5 "Запуск X при входе").
-
-### С использованием менеджера входа в систему
-
-Для запуска awesome из логин менеджера смотрите [эту статью](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер").
-
-#### GDM, LightDM и другие, использующие /usr/share/xsessions/
-
-После установки awesome автоматически создаст конфигурационный файл для этих оконных менеджеров, дающий возможность выбрать awesome при входе в систему.
-
-#### KDM
-
-Создайте следующий файл:
+Создайте от суперпользователя:
 
  `/usr/share/apps/kdm/sessions/awesome.desktop` 
 ```
@@ -85,135 +67,125 @@ Exec=/usr/bin/awesome
 TryExec=/usr/bin/awesome
 ```
 
-## Конфигурация
+### GNOME
 
-Awesome неплохо работает «из коробки», но рано или поздно вы захотите изменить что-нибудь. Конфигурация на языке Lua находится в `~/.config/awesome/rc.lua`.
+Вы можете настроить [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") использовать awesome как визуальный интерфейс, но держать GNOME работющем в фоновом режиме. Для подробностей смотрите [awesome wiki](https://awesomewm.org/wiki/Quickly_Setting_up_Awesome_with_Gnome/ru).
 
-### Создание файла конфигурации
+## Настройка
 
-Во-первых, создайте новый каталог. В нем будет храниться файл конфигурации.
+Основанный на языке программирования lua, файл настроек находится в `~/.config/awesome/rc.lua`.
+
+### Создание файла настроек
+
+Во-первых, создайте новый каталог, необходимый в следующем шаге:
 
 ```
 $ mkdir -p ~/.config/awesome/
 
 ```
 
-Awesome попытается использовать конфигурацию, которая содержится в файле ~/.config/awesome/rc.lua. Он не создается автоматически, поэтому скопируйте шаблон:
+Awesome попытается использовать настройки, которые содержится в файле ~/.config/awesome/rc.lua. Он не создается автоматически, поэтому скопируйте шаблон:
 
 ```
-$ cp /etc/xdg/awesome/rc.lua ~/.config/awesome/rc.lua
+$ cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
 
 ```
 
-Синтаксис файла конфигурации часто изменяется при обновлении awesome. Поэтому повторите эту команду, если с awesome произошло что-то непонятное или же вы хотите изменить конфигурацию.
+Синтаксис файла настроек часто изменяется при обновлении awesome. Поэтому повторите эту команду, если с awesome произошло что-то непонятное или же вы хотите изменить настройки.
 
 Чтобы получить дополнительную информацию о настройке awesome, посмотрите [Awesome 3 configuration wiki](https://awesome.naquadah.org/wiki/Awesome_3_configuration/ru)
 
-### Источники для файлов конфигурации
+#### Примеры
 
 **Примечание:** Синтаксис конфигурации awesome регулярно меняется, поэтому Вам скорее всего придется изменить файл, который Вы скачаете.
 
 Отличные примеры файлов rc.lua можно найти по следующим ссылкам:
 
-*   [http://git.sysphere.org/awesome-configs/tree/](http://git.sysphere.org/awesome-configs/tree/) - конфигурации Awesome 3.4 от Adrian C. (anrxc)
-*   [http://pastebin.com/f6e4b064e](http://pastebin.com/f6e4b064e) - конфигурация Darthlukan'а для awesome 3.4\.
-*   [http://www.calmar.ws/dotfiles/dotfiledir/dot_awesomerc.lua](http://www.calmar.ws/dotfiles/dotfiledir/dot_awesomerc.lua)
-*   [http://www.ugolnik.info/downloads/awesome/rc.lua](http://www.ugolnik.info/downloads/awesome/rc.lua) (screen) - Awesome 3 с маленькими строками заголовка и состояния.
-*   [http://github.com/nblock/config/blob/master/.config/awesome/rc.lua](http://github.com/nblock/config/blob/master/.config/awesome/rc.lua)
-*   Пользовательские конфигурационные файлы на [http://awesome.naquadah.org/wiki/User_Configuration_Files](http://awesome.naquadah.org/wiki/User_Configuration_Files)
+*   [https://github.com/setkeh/Awesome-3.5](https://github.com/setkeh/Awesome-3.5) - [Setkeh](/index.php/User:Setkeh "User:Setkeh")'а 3.5 Настройки.
+*   [https://awesomewm.org/wiki/User_Configuration_Files/ru](https://awesomewm.org/wiki/User_Configuration_Files/ru) - Коллекция пользовательских настроек на домашней странице awesome.
 
-### Отладка файла rc.lua при помощи Xephyr
+### Расширения
 
-Этот способ редактирования конфигурации предпочтителен, потому что он не изменяет текущий рабочий стол. Для начала скопируйте файл rc.lua в другой файл:
+Несколько расширений доступных для awesome (3.5+):
 
-```
-$ cp ~/.config/awesome/rc.lua ~/.config/awesome/rc.lua.new
+| Расширение | Функционал |
+| 
 
-```
+*   [Revelation](http://awesome.naquadah.org/wiki/Revelation)
 
-Затем можете изменить его как Вам необходимо. Теперь запускайте новый экземпляр awesome в Xephyr (эта программа позволяет запускать вложенный Х-сервер, [screenshot](http://upload.wikimedia.org/wikipedia/commons/d/d7/Xephyr-IceWM-Fluxbox-LinuxMint.png)), используя файл конфигурации rc.lua.new:
+ | Поверхностный просмотр всех открытых клиентов |
+| 
 
-```
-$ Xephyr -ac -br -noreset -screen 1152x720 :1 &
-$ DISPLAY=:1.0 awesome -c ~/.config/awesome/rc.lua.new
+*   [Shifty](http://awesome.naquadah.org/wiki/Shifty)
 
-```
+ | Динамические тэги |
+| 
 
-Преимущество такого подхода в том, что если изменить rc.lua.new, то не нарушится работа текущего экземпляра рабочего стола awesome (а также не потеряются все несохраненные данные, не закроются все экземпляры приложений и т.п.). Как только новые настройки Вас устроят, просто переместите новый файл с конфигурацией на место rc.lua:
+*   [Naughty](http://awesome.naquadah.org/wiki/Naughty)
 
-```
-$ cp ~/.config/awesome/rc.lua.new ~/.config/awesome/rc.lua
+ | Всплывающие уведомления |
+| 
 
-```
+*   [Vicious](http://awesome.naquadah.org/wiki/Vicious) ([README](http://git.sysphere.org/vicious/tree/README))
+*   [Obvious](http://awesome.naquadah.org/wiki/Obvious)
+*   [Bashets](http://awesome.naquadah.org/wiki/Bashets)
 
-и перезапустите оконный менеджер.
+ | Дополнительные [виджеты](https://awesomewm.org/wiki/Widgets_in_awesome/ru) |
+| 
 
-## Темы оформления
+*   [Run or raise](http://awesome.naquadah.org/wiki/Run_or_raise)
 
-[Beautiful](http://awesome.naquadah.org/wiki/Beautiful) — это библиотека lua, которая позволяет Вам задавать темы оформления для awesome из внешних файлов. С ее помощью весьма легко изменить «на лету» цвета или обои awesome без внесения изменений в файл rc.lua.
+ | Запустит программу если она не запущена, иначе перейдёт на неё |
 
-Тема по-умолчанию содержится в /usr/share/awesome/themes/default. Скопируйте ее и другие темы:
+### Автозапуск программ
 
-```
-$ cp -r /usr/share/awesome/themes/ ~/.config/awesome/themes/
+Смотрите [[1]](https://awesomewm.org/wiki/Autostart/ru) и [Автозапуск](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA "Автозапуск").
 
-```
+### Выбор раскладки клавиатуры
 
-Затем измените путь к теме оформления в файле rc.lua:
+Смотрите [awesome wiki](http://awesome.naquadah.org/wiki/Change_keyboard_maps#Display.2Fchange_keyboard_map) и [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
 
-```
-$ nano ~/.config/awesome/rc.lua
+### Темы оформления
 
-```
+[Beautiful](http://awesome.naquadah.org/wiki/Beautiful) библиотека lua, которая позволяет Вам задавать темы оформления для awesome из внешних файлов. С ее помощью весьма легко изменить «на лету» цвета или обои awesome без внесения изменений в файл `rc.lua`.
 
-Найдите строку beautiful.init('/usr/share/awesome/themes/default/theme.lua')
-
-и замените путь на /home/$USER/.config/awesome/themes/default/theme.lua.
-
-Подробности [здесь](http://awesome.naquadah.org/wiki/Beautiful).
-
-Примеры тем [здесь](http://awesome.naquadah.org/wiki/Beautiful_themes).
-
-### Установка обоев рабочего стола
-
-Beautiful может управлять обоями рабочего стола. Это позволяет задать различные для каждой темы обои. Настройки темы содержатся в файле theme.lua.
-
-Например, вы можете задать обои, изменив путь в строке
-
-theme.wallpaper_cmd = { "awsetbg -f .config/awesome/themes/awesome-wallpaper.png" }
-
-**Примечание:** Чтобы команда awsetbg сработала, вам потребуется программа для установки обоев, например, **[Feh](/index.php/Feh "Feh")**.
-
-#### Случайные фоновые изображения
-
-Чтобы случайно менять фоновые изображения, просто закомментируйте строку из пункта выше и добавьте следующие строки в .xinitrc:
+Тема по-умолчанию содержится в `/usr/share/awesome/themes/default`. Скопируйте её `~/.config/awesome/themes/default` и измените `theme_path` в `rc.lua`.
 
 ```
-while true;
-do
-  awsetbg -r <path/to/the/directory/of/your/wallpapers>
-  sleep 15m
-done &
+beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
 
 ```
+
+Смотрите также [[2]](https://awesomewm.org/wiki/Beautiful/ru) и [[3]](https://awesomewm.org/wiki/Beautiful_themes/ru).
+
+#### Обои рабочего стола
+
+Beautiful может обрабатывать ваши обои, поэтому вам не нужно устанавливать их в ваших файлах `.xinitrc` или `.xsession`. Это позволяет иметь конкретные обои для каждой темы.
+
+Начиная с версии Awesome 3.5 больше не поддерживает команду awsetbg, вместо этого он имеет модуль gears. Вы можете установить обои внутри `theme.lua` при помощи
+
+```
+theme.wallpaper = "~/.config/awesome/themes/awesome-wallpaper.png" 
+
+```
+
+Чтобы загрузить обои, убедитесь, что ваш `rc.lua` содержит
+
+```
+beautiful.init("~/.config/awesome/themes/default/theme.lua")
+for s = 1, screen.count() do
+	gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+end
+
+```
+
+Для случаных обоев, добавьте [[4]](https://gist.github.com/anonymous/37f3b1c58d6616cab756) в `rc.lua` (v3.5+). Вместо этого, для автоматического извлечения изображений из данного контекста каталога [[5]](https://gist.github.com/anonymous/9072154f03247ab6e28c).
 
 ## Советы и хитрости
 
-Не стесняйтесь добавлять советы и хитрости, которыми бы Вы хотели поделиться с другими пользователями.
+### Скрыть / показать wibox
 
-### Использование awesome в GNOME в качестве оконного менеджера
-
-Преимущество GNOME в том, что он сразу работает как нужно. Вы можете использовать awesome для отрисовки окон, а GNOME оставить всю "теневую" работу. За подробностями - в [awesome wiki](https://awesome.naquadah.org/wiki/Quickly_Setting_up_Awesome_with_Gnome).
-
-### Эффект развертывания окон как в compiz
-
-Развертывание представляет возможность увидеть все открытые в данный момент рабочие столы.
-
-Подробная информация [здесь](http://awesome.naquadah.org/wiki/Revelation/ru).
-
-### Скрыть/показать wibox в awesome
-
-Чтобы привязать комбинацию Modkey + b для показа/скрытия строки состояния на активном рабочем столе (как в awesome 2.3), добавьте сочетание клавиш в rc.lua:
+Чтобы привязать комбинацию Modkey + b для показа/скрытия строки состояния на активном рабочем столе (как в awesome 2.3), добавьте в ваш *globalkeys* в rc.lua:
 
 ```
 awful.key({ modkey }, "b", function ()
@@ -222,150 +194,49 @@ end),
 
 ```
 
-### Снимки рабочего стола
+### Скриншот (снимок экрана)
 
-Чтобы активировать функцию снимков рабочего стола в awesome, Вам нужна программа для захвата экрана. Для этой цели подойдет scrot - легкая в использовании утилита, которая доступна в репозиториях Arch.
+Смотрите [Дополнительные клавиши](/index.php/%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8 "Дополнительные клавиши") для правильного назначения кнопки `PrtSc`. Затем установите [программу создания скриншота](/index.php/Taking_a_screenshot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Taking a screenshot (Русский)") например [scrot](/index.php/Taking_a_screenshot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#scrot "Taking a screenshot (Русский)")
 
-Достаточно выполнить:
-
-```
-# pacman -S scrot
-
-```
-
-Также Вы можете установить необязательные пакеты, идущие вместе с этим пакетом, если необходимо.
-
-Затем нужно узнать название клавиши PtrScr, обычно это "Print", но лучше убедиться в этом.
-
-Запускаем:
-
-```
-# xev
-
-```
-
-Нажмите кнопку PtrScr, вывод программы будет выглядеть примерно так:
-
-```
- KeyPress event ....
-     root 0x25c, subw 0x0, ...
-     state 0x0, keycode 107 (keysym 0xff61, **Print**), same_screen YES,
-     ....
-
-```
-
-В нашем случае кнопка называется Print.
-
-Теперь приступим к конфигурации awesome.
-
-В блоке с назначениями клавиш (globalkeys) наберите:
+Добавьте в массив `globalkeys`:
 
 ```
  awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end),
 
 ```
 
-Неплохой идеей будет разместить эту строку ниже сочетания для открытия терминала.
+Эта функция сохраняет скриншоты внутри `~/screenshots/`, измените путь/папку при необходимости.
+
+### Удаление пробелов окна
+
+Начиная с версии awesome 3.4, можно удалить небольшие зазоры между окнами; в *awful.rules.rules* таблице есть раздел *properties*, добавьте к нему
 
 ```
- awful.util.spawn(terminal)
+ size_hints_honor = false
 
 ```
-
-Эта функция сохраняет снимки рабочего стола в каталог ~/screenshots/, поэтому измените путь, если необходимо.
-
-### Динамические теги
-
-[Eminent](http://awesome.naquadah.org/wiki/Eminent/ru) - это маленькая lua библиотека, которая позволяет быстро привязывать окна к тегам в стиле оконного менеджера wmii. Однако, eminent нацелен на то, чтобы сделать привязку к тегам максимально простой. В действительности, Вам даже не придется менять ваш rc.lua файл, eminent сделает это за Вас.
-
-[Shifty](http://awesome.naquadah.org/wiki/Shifty/ru) - это расширение для awesome 3, которое также осуществляет динамическую привязку к тегам. Вместе с самим расширением поставляется конфигурация, позволяющая ВАМ быть хозяином своего рабочего стола, изменив всего-то пару переменных в конфигурации и поменяв сочетания клавиш.
-
-### Space Invaders
-
-[Space Invaders](http://awesome.naquadah.org/wiki/Space_Invaders) - программа-демонстрация для иллюстрации возможностей Awesome Lua API.
-
-Учтите, что этот пакет не поставляется вместе с пакетом Awesome с релиза 3.4-rc1.
-
-### Naughty для всплывающих уведомлений
-
-См. [awesome wiki](https://awesome.naquadah.org/wiki/Naughty).
-
-### Контекстное меню
-
-По-умолчанию, в awesome3 есть контектсное меню, и настроить его очень просто. Но если вы используете awesome версии 2.x, взгляните на *[awful.menu](http://awesome.naquadah.org/wiki/index.php?title=Awful.menu)*.
-
-Пример конфигурации меню для awesome3:
-
-```
-myawesomemenu = {
-   { "lock", "xscreensaver-command -activate" },
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
-
-mycommons = {
-   { "pidgin", "pidgin" },
-   { "OpenOffice", "soffice-dev" },
-   { "Graphic", "gimp" }
-}
-
-mymainmenu = awful.menu.new({ items = { 
-                                        { "terminal", terminal },
-                                        { "icecat", "icecat" },
-                                        { "Editor", "gvim" },
-                                        { "File Manager", "pcmanfm" },
-                                        { "VirtualBox", "VirtualBox" },
-                                        { "Common App", mycommons, beautiful.awesome_icon },
-                                        { "awesome", myawesomemenu, beautiful.awesome_icon }
-                                       }
-                             })
-```
-
-### Еще виджеты для awesome
-
-*Виджеты в Awesome - это объекты, которые можно размещать на панелях и в заголовках окон, они могут предоставлять различную информацию о системе и очень полезны для получения доступа к этой информации прямо из оконного менеджера. Виджеты легко использовать и они обладают большой гибкостью.* -- источник [Wiki:Widgets(rus)](https://awesome.naquadah.org/wiki/Widgets_in_awesome/ru)
-
-Библиотека виджетов **Wicked** (совместима с awesome вплоть до версии 3.4) добавляет новые виджеты, такие как [MPD](/index.php/Music_Player_Daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Music Player Daemon (Русский)") виджет, загрузка ЦП, использование оперативной памяти и т.д. Дополнительная информация на странице [Wicked](http://awesome.naquadah.org/wiki/index.php?title=Wicked).
-
-В качестве альтернативы Wicked в awesome 3.4 можно использовать:
-
-*   **[Vicious](http://awesome.naquadah.org/wiki/Vicious)**. Для vicious есть отличная [документация](http://git.sysphere.org/vicious/tree/README).
-*   **[Obvious](http://awesome.naquadah.org/wiki/Obvious)**
-*   **[Bashets](http://awesome.naquadah.org/wiki/Bashets)**
-*   **[Blingbling](http://awesome.naquadah.org/wiki/Blingbling)**
 
 ### Прозрачность
 
-У awesome есть поддержка эффекта прозрачности через xcompmgr. Учтите, что Вам вероятно понадобится git-версия xcompmgr, которую можно найти на [AUR](https://aur.archlinux.org/packages.php?ID=16554).
+Смотрите [composite manager](/index.php/Composite_manager "Composite manager").
 
-Добавьте эту строчку в ~/.xinitrc
-
-```
-exec xcompmgr &
+В awesome 3.5, прозрачность окна можно установить динамически с помощью сигналов . Например, `rc.lua` будет содержать следующее:
 
 ```
-
-Посмотрите *man xcompmgr* или [xcompmgr](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)") для дополнительной информации.
-
-В awesome версии 3.4, прозрачность окна можно установить динамически, используя сигналы. Например, файл rc.lua может содержать следующие строки:
-
-```
-client.add_signal("focus", function(c)
+client.connect_signal("focus", function(c)
                               c.border_color = beautiful.border_focus
                               c.opacity = 1
                            end)
-client.add_signal("unfocus", function(c)
+client.connect_signal("unfocus", function(c)
                                 c.border_color = beautiful.border_normal
                                 c.opacity = 0.7
                              end)
 
 ```
 
-**Если возникнет ошибка про add_signal, замените его на connect_signal.**
+#### Conky
 
-Учтите, что при использовании [conky](/index.php/Conky_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Conky (Русский)"), Вы должны указать, что он должен создавать собственное окно, а не использовать рабочий стол. Чтобы сделать это, отредкактируйте ~/.conkyrc:
+If using conky, you must set it to create its own window instead of using the desktop. To do so, edit `~/.conkyrc` to contain
 
 ```
 own_window yes
@@ -374,172 +245,173 @@ own_window_type desktop
 
 ```
 
-В противном случае можно пронаблюдать, как все окна станут полностью прозрачными.
+Otherwise strange behavior may be observed, such as all windows becoming fully transparent. Note also that since conky will be creating a transparent window on your desktop, any actions defined in awesome's `rc.lua` for the desktop will not work where conky is.
 
-Начиная с версии awesome 3.1, имеется встроенная поддержка псевдопрозрачности для wibox'ов. Чтобы ее включить, добавьте 2 шестнадцатеричные цифры к цветам в файле конфигурации Вашей темы (~/.config/awesome/themes/default ,обычно является копией /usr/share/awesome/themes/default), как показано в примере:
+#### wibox'ы
+
+Начиная с версии Awesome 3.1, есть встроенная поддержка псевдо-прозрачности. Чтобы задействовать её, добавьте 2 шестнадцатеричные цифры к цветам в вашем файле темы (`~/.config/awesome/themes/default`, который, как правило, копия `/usr/share/awesome/themes/default`), как показано здесь:
 
 ```
 bg_normal = #000000AA
 
 ```
 
-где "AA" - это значение прозрачности.
+где "AA" это значение прозрачности.
+
+Чтобы изменить прозрачность для фактического выбранного окна, нажмите `Modkey + PgUp/PgDown`вы также можете использовать [transset-df](https://www.archlinux.org/packages/?name=transset-df) и следующие изменения в вашем `rc.lua`:
+
+```
+globalkeys = awful.util.table.join(
+    -- Ваше сочетание клавиш
+    [...]
+    awful.key({ modkey }, "Next", function (c)
+        awful.util.spawn("transset-df --actual --inc 0.1")
+    end),
+    awful.key({ modkey }, "Prior", function (c)
+        awful.util.spawn("transset-df --actual --dec 0.1")
+    end),
+    -- Другое ваше сочетание клавиш
+    [...]
+)
+
+```
 
 #### ImageMagick
 
-У вас может возникнуть проблема при попытке установить обои командой *display* из пакета imagemagick (не очень хорошо работает с xcompmgr). awsetbg будет использовать *display*, если не найдет ничего более подходящего. Установите habak, feh, hsetroot или что-нибудь другое (список можно посмотреть командой *grep -A 1 wpsetters /usr/bin/awsetbg*).
-
-### Автозапуск программ
-
-*См. также [страница автозапуска на Awesome wiki](https://awesome.naquadah.org/wiki/Autostart/ru).*
-
-В awesome есть несколько функций для запуска программ (в качестве дополнения к стандартной библиотеке Lua `os.execute`). Чтобы иметь возможность запускать программы при старте, как в GNOME или KDE, установите [dex](https://www.archlinux.org/packages/?name=dex) из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"), а затем включите строку в Ваш файл rc.lua:
-
-```
-os.execute"dex -a"
-
-```
-
-Если Вам нужно просто задать список программ для запуска при старте awesome, создайте таблицу со всеми командами:
-
-```
-do
-  local cmds = 
-  { 
-    "swiftfox",
-    "mutt",
-    "consonance",
-    "linux-fetion",
-    "weechat-curses",
-    --and so on...
-  }
-
-  for _,i in pairs(cmds) do
-    awful.util.spawn(i)
-  end
-end
-
-```
-
-(Вы также можете запускать программы с помощью `os.execute` с окончанием '`&`', но рациональней будет задать функцию для запуска.)
-
-Чтобы запустить программу, если она еще не запущена, воспользуйтесь командой оболочки `pgrep`, которая запустит программу только в том случае, если не обнаружит процесса с таким же именем:
-
-```
-function run_once(prg)
-  awful.util.spawn_with_shell("pgrep -u $USER -x " .. prg .. " || (" .. prg .. ")")
-end
-
-```
-
-Таким образом, для запуска, например, `parcellite`, только если он уже не запущен:
-
-```
-run_once("parcellite")
-
-```
+You may have problems if you set your wallpaper with imagemagick's *display* command. It does not work well with xcompmgr. Please note that awsetbg may be using *display* if it does not have any other options. Installing habak, feh, hsetroot or whatever should fix the problem (*grep -A 1 wpsetters /usr/bin/awsetbg* to see your options).
 
 ### Передача информации виджетам при помощи awesome-client
 
 Вы можете легко передать текст виджету. Для этого создайте новый виджет:
 
 ```
- mywidget = widget({ type = "textbox", name = "mywidget" })
- mywidget.text = "initial text"
+mywidget = widget({ type = "textbox", name = "mywidget" })
+mywidget.text = "initial text"
 
 ```
 
 Для обновления текста из внешнего источника, используйте awesome-client:
 
 ```
- echo -e 'mywidget.text = "new text"' | awesome-client
+echo -e 'mywidget.text = "new text"' | awesome-client
 
 ```
 
-Не забудьте добавить виджет в раздел wibox Вашей конфигурации.
+Не забудьте добавить виджет в раздел wibox Вашего файла настроек.
 
-### Использование другой панели в awesome
+### Использование другой панели с awesome
 
-Если вам нравится в awesome все, кроме того, как выглядит стандартная панель, то пришло время установить другую, например xfce4-panel:
-
-```
-sudo pacman -S xfce4-panel
+Если вам нравится в awesome все, кроме того, как выглядит стандартная панель, то пришло время установить другую, например [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel). Конечно, другие панели тоже подойдут. Затем добавьте его в [секцию autorun](#.D0.90.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9) вашего `rc.lua`. Вы можете также закомментировать секцию, которая создает wibox'ы для каждого экрана (начиная с `mywibox[s] = awful.wibox({ position = "top", screen = s })`) но это не так необходимо. Не забудьте проверить ваш `rc.lua` на наличие ошибок, введя:
 
 ```
-
-Конечно, другие панели тоже подойдут. После установки добавьте в автозапуск в rc.lua (прочтите выше, как это сделать). Также можно закомментировать секцию, которая создает wibox'ы для каждого экрана (начинается с "mywibox[s] = awful.wibox({ position = "top", screen = s })"), однако это не обязательно. Не забудьте проверить rc.lua на наличие ошибок командой
-
-```
-awesome -k rc.lua
+$ awesome -k rc.lua
 
 ```
 
-Если нужна сторонняя программа запуска, например, Xfrun4, bashrun, посмотрите секцию оконного менеджера [Openbox](/index.php/Openbox_Themes_and_Apps#Application_launchers "Openbox Themes and Apps"). Можно также сменить сочетание клавиш для него на "modkey+R". Не забудьте добавить
+Вы должны также изменить `*modkey*+R` данное сочетание клавиш, чтобы запустить другое приложение запуска вместо встроенного в awesome. Для примеров смотрите [List of applications#Application launchers](/index.php/List_of_applications#Application_launchers "List of applications"). Не забудьте добавить:
 
 ```
       properties = { floating = true } },
-    { rule = { instance = "$yourapplicationlauncher" },
+    { rule = { instance = "$ваше_запускаемое_приложение" },
 
 ```
 
-в rc.lua.
+в ваш `rc.lua`.
 
-### Запретить Nautilus'у отображать рабочий стол (Gnome3)
+### Каталоги приложений в строке меню
 
-Запустите dconf-editor. В разделе org->background снимите галочку с "draw-background" и "show-desktop-icons". Все.
+[awesome](https://www.archlinux.org/packages/?name=awesome) содержит [menubar](http://awesome.naquadah.org/wiki/Menubar/3.5). По умолчанию, нажав `*Mod*+p` откроется меню приложений, подобно dmenu в верхней части экрана. Тем не менее, это меню только ищет файлы `.desktop` в `/usr/share/applications` и `/usr/local/share/applications`.
 
-Стоит также слинковать /usr/bin/nautilus со скриптом, который выполняет 'nautilus --no-desktop', пропуская все аргументы.
-
-### Переход с GNOME 3
-
-Запустите 'gnome-session-properties' и удалите ненужный программы (Bluetooth Manager, Login Sounds и т.д.).
-
-Если вы хотите избавиться от GDM, убедитесь, что в /etc/rc.conf в секции DAEMONS есть "dbus" (и "cupsd", если у вас есть принтер). Рекомендуется поставить другой логин менеджер ([SLiM](/index.php/SLiM "SLiM")). Если не хотите этого делать, убедитесь, что верно отредактировали [.xinitrc](/index.php/Udev "Udev") и поставьте что-нибудь типа devmon ([AUR](https://aur.archlinux.org/packages.php?ID=45842)).
-
-Чтобы сохранить удобные апплеты в системном лотке, а также тему оформления GTK, добавьте в rc.lua:
+Чтобы изменить это, добавьте следующую строку в `rc.lua`, в идеале, в разделе *Menubar configuration*:
 
 ```
-function start_daemon(dae)
-	daeCheck = os.execute("ps -eF | grep -v grep | grep -w " .. dae)
-	if (daeCheck ~= 0) then
-		os.execute(dae .. " &")
-	end
-end
+app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
 
 ```
 
-```
-procs = {"gnome-settings-daemon", "nm-applet", "kupfer", "gnome-sound-applet", "gnome-power-manager"}
-for k = 1, #procs do
-	start_daemon(procs[k])
-end
+Следует заметить что файлы `.desktop` перечитываются каждый раз, при запуске awesome, тем самым замедляя запуск. IЕсли вы предпочитаете другие средства запуска программ, то строка меню может быть отключена в `rc.lua` путём удаления `local menubar = require("menubar")` и дургих ссылок на переменную `menubar`.
+
+### Всплывающие меню
+
+Существует простое меню в awesome 3, - упрощённое пользовательское меню. [[6]](http://awesome.naquadah.org/wiki/Awful.menu) Если вы хотите меню freedesktop.org, смотрите тут *[awesome-freedesktop](https://github.com/terceiro/awesome-freedesktop)*. Смотрите примеры для awesome3 [[7]](https://gist.github.com/anonymous/5a5ea49638662cefdb3b).
+
+### Меню приложений
+
+Если вы предпочитаете видеть более традиционное меню приложений, когда вы щёлкаете по иконке Awesome, или делаете щелчёк правой кнопкой мышки по пустому участку рабочего стола, вы можете воспользоваться инструкциями приведёнными в [Xdg-menu#Awesome](/index.php/Xdg-menu#Awesome "Xdg-menu"). Однако это меню не обновляется при добавлении или удалении программ. Поэтому не забывайте выполнять команду для обновления вашего меню. Она может выглядеть примерно так:
 
 ```
-
-### Не менять теги колесом мыши
-
-В файле rc.lua, секцию Mouse Bindings замените на
-
-```
--- {{{ Mouse bindings
-root.buttons(awful.util.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end)))
--- }}} 
+ xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu >~/.config/awesome/archmenu.lua
 
 ```
 
-## Устранение неисправностей
+### Заголовки окон (titlebars )
 
-### Кнопка Mod4
-
-По-умолчанию, кнопкой Mod4 является **Win**. Если по каким-то причинам она не работает, проверьте код Вашей кнопки Mod4:
+Включить заголовки окон в awesome легко, просто установите в файле настроек переменную titlebars_enabled в true. Тем не менее, вы можете захотеть иметь возможность включения или отключения заголовков окон. Для этого вы можете назначить горячие клавиши:
 
 ```
-$ xev
+awful.key({ modkey, "Control" }, "t",
+   function (c)
+       -- toggle titlebar
+       awful.titlebar.toggle(c)
+   end)
 
 ```
 
-Должно быть 115 для левой кнопки Win. Затем включите строку в файл ~/.xinitrc:
+Сначала скройте строки заголовков. Для этого добавьте сразу после создания строки заголовка:
+
+```
+awful.titlebar.hide(c)
+
+```
+
+### Уведомление состояния батареи
+
+Смотрите [[8]](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) простое уведомление о состоянии батареи в `rc.lua`. Заметьте что этому способу нужны *возможности* для уведомлений (установленные по умолчанию в версии3.5). Другой пример доступен в [wiki awesome](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4)
+
+## Решение проблем
+
+### Нахождение и устранение ошибок rc.lua
+
+[Xephyr](https://www.archlinux.org/packages/?q=xephyr) позволяет запускать X вложенный в окно клиента другого Х. Это позволяет отлаживать rc.lua не нарушая текущего рабочего стола. Начните с копирования rc.lua в новый файл (например rc.lua.new), и изменяйте его по мере необходимости. Затем запустите новый экземпляр awesome в Xephyr, подставляя файл настроек rc.lua.new как тут:
+
+```
+$ Xephyr :1 -ac -br -noreset -screen 1152x720 &
+$ DISPLAY=:1.0 awesome -c ~/.config/awesome/rc.lua.new
+
+```
+
+Преимущество такого способа заключается в том, что вы не нарушите работу текущего рабочего стола awesome, избежите потенциальный сбой приложений X и потерю работоспособности. После того, как вы удовлетворены новыми настройками, скопируйте rc.lua.new в rc.lua и перезапустите awesome.
+
+#### awmtt
+
+[awmtt](https://aur.archlinux.org/packages/awmtt/) (Awesome WM Testing Tool - Утилита тестирования Awesome WM) представляет собой простую оболочку скрипта Xephyr. По умолчанию, он будет использовать ~/.config/awesome/rc.lua.test. Если он не может найти тестовый файл,он будет использовать ваш фактический rc.lua. Вы также можете указать местоположение файла настроек, который вы хотите проверить:
+
+```
+$ awmtt start -C ~/.config/awesome/rc.lua.new
+
+```
+
+Когда вы закончите тестирование, закройте окно:
+
+```
+$ awmtt stop
+
+```
+
+Или сразу смотрите изменения, которые вы делаете в файл настроек с помощью следующей команды:
+
+```
+$ awmtt restart
+
+```
+
+### Файл журналов
+
+Если вы используете [LightDM](/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LightDM (Русский)"), awesome будет записывать ошибки в `$HOME/.xsession-errors`. Если вы используете `.xinitrc` для запуска awesome, эта [запись FAQ](https://awesomewm.org/wiki/FAQ/ru#.D0.93.D0.B4.D0.B5_.D1.80.D0.B0.D1.81.D0.BF.D0.BE.D0.BB.D0.B0.D0.B3.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BB.D0.BE.D0.B3.D0.B8.2C_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BE_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B0.D1.85_.D0.B8.D0.BB.D0.B8_.D1.87.D1.82.D0.BE-.D1.82.D0.BE_.D0.BF.D0.BE.D0.B4.D0.BE.D0.B1.D0.BD.D0.BE.D0.B5.3F) будет полезной.
+
+### Клавиша Mod4
+
+Awesome рекомендует переназначить `mod4`, которой по умолчанию является **Win key**. Если по какой-то причине она не распознаётся как `mod4`, используйте [xmodmap](/index.php/Xmodmap_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xmodmap (Русский)") чтобы узнать её. Для того чтобы изменить назначение, воспользуйтесь `xev`, чтобы найти код клавиши и имя клавиши для сопоставления. Затем добавьте нечто похожее в `~/.xinitrc`
 
 ```
 xmodmap -e "keycode 115 = Super_L" -e "add mod4 = Super_L"
@@ -547,7 +419,23 @@ exec awesome
 
 ```
 
-#### Mod4 кнопка против пользователей IBM ThinkPad
+В этом случае проблемой является то, что иногда xorg распознаёт код клавиши 115 неправильно, как клавишу 'Select'. Приведенная выше команда явно перераспределяет код ключа 115 на корректную клавишу 'Super_L'.
+
+Для того, чтобы переназначить `mod4` с помощью `setxkbmap` (конфликтует с `xmodmap`) смотрите:
+
+```
+tail -50 /usr/share/X11/xkb/rules/evdev
+
+```
+
+Для установки клавиши caps lock как `mod4` добавьте следующую строку в `~/.xinitrc`:
+
+```
+setxkbmap -option caps:hyper
+
+```
+
+#### Клавиша Mod4 против пользователей IBM ThinkPad
 
 IBM ThinkPad не поставлялись с кнопкой Win (хотя компания Lenovo уже изменила этой традиции). Кнопка Alt по-умолчанию не используется в комбинациях, описанных в rc.lua. Это позволит Вам заменить ею кнопку Win. Чтобы сделать это, необходимо отредактировать rc.lua, заменив:
 
@@ -575,27 +463,71 @@ add mod4 = Caps_Lock
 
 и [(пере)загрузите](/index.php/Extra_keyboard_keys_in_Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Extra keyboard keys in Xorg (Русский)") файл. Это действие изменит Caps Lock на кнопку Mod4 и Вы сможете воспользоваться стандартными настройками awesome. Вдобавок, это позволит использовать Caps Lock как Mod4 и в других X-приложениях.
 
+Recent updates of xorg related packages break mentioned remapping the second line can be replaced by (tested on a DasKeyboard and IBM Model M and xorg-server 1.14.5-2):
+
+```
+keysym Caps_Lock = Super_L Caps_Lock
+
+```
+
 ### Исправление для Java приложений (серый интерфейс)
 
-Взято с [[1]](https://bbs.archlinux.org/viewtopic.php?pid=450870).
+Смотрите [awesome wiki](http://awesome.naquadah.org/wiki/Problems_with_Java) и [[9]](https://bbs.archlinux.org/viewtopic.php?pid=450870).
 
-1.  Установите [wmname](https://www.archlinux.org/packages/?name=wmname).
-2.  Выполните следующую команду или добавьте ее в {Filename|.xinitrc}}: `wmname LG3D` 
+### Eclipse: невозможно изменить размер/переместить главное окно
 
-### Курсор мыши остается в режиме ожидания
+Если главное окно "прилипло" и вы не можете переместить его или изменить размер (используя mod4 + левую/правую клавишу мыши) отредактируйте `workbench.xml` и установите fullscreen/maximized в значение false (если оно установлено), уменьшите цифру ширины и высоты на меньшую, чем размер одного вашего экрана рабочего стола.
 
-Иногда, после запуска программы с помощью *awful.util.spawn* курсор мыши остаётся в занятом режиме/режиме часов. Такое может наблюдаться, например при создании скриншота программой scrot используя клаившу PrintScreen. Чтобы отключить такое поведение глобально, добавьте в конец вашего `~/.rc.lua` следующий код:
+`workbench.xml` можно найти в `*eclipse_workspace*/.metadata/.plugins/org.eclipse.ui.workbench/`. Отредактируйте строку:
 
 ```
--- отключить уведомление загрузки глобально
-local oldspawn = awful.util.spawn
-awful.util.spawn = function (s)
-  oldspawn(s, false)
-end
+<window height="xx" maximized="true" width="xx" x="xx" y="xx"
 
 ```
 
-Для подробностей, смотрите [отключение уведомлений запуска](http://awesome.naquadah.org/wiki/Disable_startup-notification_globally/ru%7CГлобальное)
+### YouTube: полноэкранный режим показывает как в фоновом режиме
+
+Если видео с YouTube появляется под вашим браузером в полноэкранном режиме, или скрывается под панелью управления, то добавьте в `rc.lua`
+
+```
+{ rule = { instance = "plugin-container" },
+  properties = { floating = true } },
+
+```
+
+Для Chromium
+
+```
+{ rule = { instance = "exe" },
+  properties = { floating = true } },
+
+```
+
+или:
+
+```
+{ rule = { role = "_NET_WM_STATE_FULLSCREEN" },
+  properties = { floating = true } },
+
+```
+
+Смотрите [[10]](https://bbs.archlinux.org/viewtopic.php?pid=1085494#p1085494).
+
+### Запретить колесу прокрутки мыши менять теги
+
+В вашем rc.lua, измените раздел Mouse Bindings на следующий;
+
+```
+-- {{{ Mouse bindings
+root.buttons(awful.util.table.join(
+    awful.button({ }, 3, function () mymainmenu:toggle() end)))
+-- }}}
+
+```
+
+### Запуск консольных клиентов на определённом теге
+
+Это не работает, когда консольное приложение запускается из терминала GTK (например LXTerminal). [URxvt](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)") как известно работает.
 
 ## Смотрите также
 

@@ -23,7 +23,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [acpid](https://www.archlinux.org/packages/?name=acpid) package and [start](/index.php/Systemd "Systemd") and/or [enable](/index.php/Enable "Enable") `acpid.service`.
+[Install](/index.php/Install "Install") the [acpid](https://www.archlinux.org/packages/?name=acpid) package. Then [start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") `acpid.service`.
 
 ## Configuration
 

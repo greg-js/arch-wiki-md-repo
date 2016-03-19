@@ -7,44 +7,35 @@ The goal of this article is to setup Postfix and explain what the basic configur
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 DNS records](#DNS_records)
 *   [2 Configuration](#Configuration)
     *   [2.1 master.cf](#master.cf)
     *   [2.2 main.cf](#main.cf)
         *   [2.2.1 Default message and mailbox size limits](#Default_message_and_mailbox_size_limits)
-    *   [2.3 aliases](#aliases)
-*   [3 Local mail](#Local_mail)
-*   [4 Virtual mail](#Virtual_mail)
-*   [5 Postfix check](#Postfix_check)
-*   [6 Start and test Postfix](#Start_and_test_Postfix)
-    *   [6.1 Error response](#Error_response)
-    *   [6.2 See that you have received a email](#See_that_you_have_received_a_email)
-*   [7 Extra](#Extra)
-    *   [7.1 PostfixAdmin](#PostfixAdmin)
-    *   [7.2 Secure SMTP](#Secure_SMTP)
-        *   [7.2.1 STARTTLS over SMTP (port 587)](#STARTTLS_over_SMTP_.28port_587.29)
-        *   [7.2.2 SMTPS (port 465)](#SMTPS_.28port_465.29)
-    *   [7.3 SpamAssassin](#SpamAssassin)
-        *   [7.3.1 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
-        *   [7.3.2 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
-    *   [7.4 Using Razor](#Using_Razor)
-    *   [7.5 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
-    *   [7.6 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
-*   [8 See also](#See_also)
+    *   [2.3 Aliases](#Aliases)
+    *   [2.4 Local mail](#Local_mail)
+    *   [2.5 Virtual mail](#Virtual_mail)
+    *   [2.6 DNS records](#DNS_records)
+    *   [2.7 Check configuration](#Check_configuration)
+*   [3 Start Postfix](#Start_Postfix)
+*   [4 Testing](#Testing)
+    *   [4.1 Error response](#Error_response)
+    *   [4.2 See that you have received a email](#See_that_you_have_received_a_email)
+*   [5 Extra](#Extra)
+    *   [5.1 PostfixAdmin](#PostfixAdmin)
+    *   [5.2 Secure SMTP](#Secure_SMTP)
+        *   [5.2.1 STARTTLS over SMTP (port 587)](#STARTTLS_over_SMTP_.28port_587.29)
+        *   [5.2.2 SMTPS (port 465)](#SMTPS_.28port_465.29)
+    *   [5.3 SpamAssassin](#SpamAssassin)
+        *   [5.3.1 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
+        *   [5.3.2 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
+    *   [5.4 Using Razor](#Using_Razor)
+    *   [5.5 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
+    *   [5.6 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
+*   [6 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [postfix](https://www.archlinux.org/packages/?name=postfix) package.
-
-### DNS records
-
-An MX record should point to the mail host. Usually this is done from configuration interface of your domain provider.
-
-A mail exchanger record (MX record) is a type of resource record in the Domain Name System that specifies a mail server responsible for accepting email messages on behalf of a recipient's domain.
-
-When an e-mail message is sent through the Internet, the sending mail transfer agent queries the Domain Name System for MX records of each recipient's domain name. This query returns a list of host names of mail exchange servers accepting incoming mail for that domain and their preferences. The sending agent then attempts to establish an SMTP connection to one of these servers, starting with the one with the smallest preference number, delivering the message to the first server with which a connection can be made.
-
-**Note:** Some mail servers will not deliver mail to you if your MX record points to a CNAME. For best results, always point an MX record to an A record definition. For more information, see e.g. [Wikipedia's List of DNS Record Types](https://en.wikipedia.org/wiki/List_of_DNS_record_types "wikipedia:List of DNS record types").
 
 ## Configuration
 
@@ -123,7 +114,7 @@ message_size_limit = 10240000
 
 ```
 
-### aliases
+### Aliases
 
 You can specify aliases (also known as forwarders) in `/etc/postfix/aliases`.
 
@@ -156,34 +147,50 @@ user@localhost
 
 ```
 
-## Local mail
+### Local mail
 
-To only deliver mail to local system users (that are in `/etc/passwd`), you only need to change the following lines in `/etc/postfix/main.cf`. Uncomment them and modify them to the specifics listed below. Everything else can be left as installed.
+To only deliver mail to local system users (that are in `/etc/passwd`) update `/etc/postfix/main.cf` to reflect the following configuration. Uncomment, change, or add the following lines:
 
 ```
+mydomain = localdomain
 mydestination = $myhostname, localhost.$mydomain, localhost
-inet_interfaces = loopback-only
+inet_interfaces = $myhostname, localhost
 mynetworks_style = host
-append_dot_mydomain = no
-default_transport = error: Local delivery only!
+default_transport = error: outside mail is not deliverable
 
 ```
 
-## Virtual mail
+All other settings may remain unchanged. After setting up the above configuration file, you may wish to set up some [#Aliases](#Aliases) and then [#Start Postfix](#Start_Postfix).
+
+### Virtual mail
 
 Virtual mail is mail that does not map to a user account (`/etc/passwd`).
 
 See [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system") for a comprehensive guide how to set it up.
 
-## Postfix check
+### DNS records
+
+An MX record should point to the mail host. Usually this is done from configuration interface of your domain provider.
+
+A mail exchanger record (MX record) is a type of resource record in the Domain Name System that specifies a mail server responsible for accepting email messages on behalf of a recipient's domain.
+
+When an e-mail message is sent through the Internet, the sending mail transfer agent queries the Domain Name System for MX records of each recipient's domain name. This query returns a list of host names of mail exchange servers accepting incoming mail for that domain and their preferences. The sending agent then attempts to establish an SMTP connection to one of these servers, starting with the one with the smallest preference number, delivering the message to the first server with which a connection can be made.
+
+**Note:** Some mail servers will not deliver mail to you if your MX record points to a CNAME. For best results, always point an MX record to an A record definition. For more information, see e.g. [Wikipedia's List of DNS Record Types](https://en.wikipedia.org/wiki/List_of_DNS_record_types "wikipedia:List of DNS record types").
+
+### Check configuration
 
 Run the `postfix check` command. It should output anything that you might have done wrong in a config file.
 
 To see all of your configs, type `postconf`. To see how you differ from the defaults, try `postconf -n`.
 
-## Start and test Postfix
+## Start Postfix
 
-[Start/enable](/index.php/Start/enable "Start/enable") `postfix.service`.
+**Note:** You must run `newaliases` at least once for postfix to run, even if you did not set up any [#Aliases](#Aliases).
+
+[Start/enable](/index.php/Start/enable "Start/enable") the `postfix.service`.
+
+## Testing
 
 Now lets see if Postfix is going to deliver mail for our test user.
 

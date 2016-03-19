@@ -553,7 +553,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) package. To se
 Install the bootloader to the *drive* Arch was installed to:
 
 ```
-# grub-install */dev/sda*
+# grub-install --target=i386-pc --recheck */dev/sda*
 
 ```
 

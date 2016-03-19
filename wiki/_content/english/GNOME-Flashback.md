@@ -32,7 +32,7 @@ You can also install the following packages which provide some additional applet
 
 	[https://github.com/porridge/command-runner-applet](https://github.com/porridge/command-runner-applet) || [command-runner-applet](https://aur.archlinux.org/packages/command-runner-applet/)
 
-*   **Pomodoro Applet** — GNOME Panel applet for timing the intervals used in the Pomodoro Techinique(tm)
+*   **Pomodoro Applet** — GNOME Panel applet for timing the intervals used in the Pomodoro Technique(tm)
 
 	[https://github.com/stump/pomodoro-applet](https://github.com/stump/pomodoro-applet) || [pomodoro-applet](https://aur.archlinux.org/packages/pomodoro-applet/)
 

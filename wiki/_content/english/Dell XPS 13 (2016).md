@@ -6,7 +6,7 @@
 | Touchpad | Works after configuration |  ? |
 | Webcam | Working | uvcvideo |
 | Card Reader | Working | rtsx_pci |
-| Wireless switch | Not supported yet |  ? |
+| Wireless switch | Will work in Linux 4.6 | intel-hid |
 | Function/Multimedia Keys | Working |  ? |
 
 The Dell XPS 13 2016 (9350) is the third-generation model of the XPS 13 line. Unlike its predecessor, it has no official Linux support yet. Just like the older versions ([Dell XPS 13](/index.php/Dell_XPS_13 "Dell XPS 13") and [Dell XPS 13 (2015)](/index.php/Dell_XPS_13_(2015) "Dell XPS 13 (2015)")) it can be bought in different hardware configurations.

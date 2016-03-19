@@ -128,7 +128,7 @@
 
 Следующее небольшое руководство описывает процесс создания собственного пакета драйвера NVIDIA, используя [ABS](/index.php/ABS "ABS"):
 
-Установите (см. [Install](/index.php/Install "Install")) пакет [abs](https://www.archlinux.org/packages/?name=abs) и сгенерируйте дерево:
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [abs](https://www.archlinux.org/packages/?name=abs) и сгенерируйте дерево:
 
 ```
 # abs

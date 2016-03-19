@@ -334,7 +334,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **The Mana World** — Serious effort to create an innovative free and open source MMORPG
 
-	[http://themanaworld.org](http://themanaworld.org) || [manaplus](https://aur.archlinux.org/packages/manaplus/)
+	[http://themanaworld.org](http://themanaworld.org) || [manaplus](https://www.archlinux.org/packages/?name=manaplus)
 
 *   **Vendetta Online** — 3D space combat MMORPG for Windows, Mac, Linux and Android. This MMO permits thousands of players to interact as the pilots of spaceships in a vast universe
 
@@ -895,6 +895,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **[Minetest](/index.php/Minetest "Minetest")** — Voxel-based sandbox game engine and game.
 
 	[http://www.minetest.net/](http://www.minetest.net/) || [minetest](https://www.archlinux.org/packages/?name=minetest)
+
+*   **[openBVE](https://en.wikipedia.org/wiki/BVE_Trainsim#openBVE "wikipedia:BVE Trainsim")** — Free-as-in-freedom train simulator placed in the public domain.
+
+	[http://web.archive.org/web/odakyufan.zxq.net/openbve/](http://web.archive.org/web/odakyufan.zxq.net/openbve/) || [openbve](https://aur.archlinux.org/packages/openbve/)
 
 *   **Powder Toy** — Physics and chemistry simulation sandbox game.
 

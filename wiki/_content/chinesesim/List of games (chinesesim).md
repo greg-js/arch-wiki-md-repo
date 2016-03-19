@@ -329,7 +329,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **The Mana World** — Serious effort to create an innovative free and open source MMORPG
 
-	[http://themanaworld.org](http://themanaworld.org) || [manaplus](https://aur.archlinux.org/packages/manaplus/)
+	[http://themanaworld.org](http://themanaworld.org) || [manaplus](https://www.archlinux.org/packages/?name=manaplus)
 
 *   **Vendetta Online** — 3D space combat MMORPG for Windows, Mac, Linux and Android. This MMO permits thousands of players to interact as the pilots of spaceships in a vast universe
 

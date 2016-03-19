@@ -187,7 +187,7 @@ Below is a sample config file of `/etc/X11/xorg.conf.d/**20-radeon.conf**`:
 Section "Device"
 	Identifier  "Radeon"
 	Driver "radeon"
-	Option "AccelMethod" "Glamor"
+	Option "AccelMethod" "glamor"
         Option "DRI" "3"
         Option "TearFree" "on"
 EndSection

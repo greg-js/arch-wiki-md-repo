@@ -15,6 +15,8 @@ The goal of this article is to teach the configuration of procmail. This article
     *   [3.1 Spamassassin](#Spamassassin)
     *   [3.2 ClamAV](#ClamAV)
     *   [3.3 Filtering mail to a different mailbox](#Filtering_mail_to_a_different_mailbox)
+    *   [3.4 Postfix Piping](#Postfix_Piping)
+    *   [3.5 Sending to Dovecot](#Sending_to_Dovecot)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -80,13 +82,16 @@ An action can be something as simple as
 
  `work` 
 
-in that case, the mail that complies with the condition will be saved on the `work` inbox.
+in that case, the mail that complies with the condition will be saved in the `work` inbox.
 
-It could also start with a pipe, which means the message is going to be passed to the standard input of the command following the pipe. A line like that could be something like this:
+An action can also start with a pipe, which means the message is going to be passed to the standard input of the command following the pipe. For example:
 
- `| /usr/bin/vendor_perl/spamc` 
+```
+| /usr/bin/vendor_perl/spamc 
 
-By default, once a recipe's action is used, the processing is over.
+```
+
+By default, once a recipe's action is done, the processing is over.
 
 If the **f** flag was used, the command can alter the message and keep reading recipes. In this example, the spamassassin command will add headers to the mail, with its spam status level, which later can be used by **another recipe** to block it, or store it on a different mailbox.
 
@@ -154,6 +159,48 @@ If a coworker keeps using *forward* to send you jokes and other non serious stuf
 $HOME/mail/jokes
 
 ```
+
+### Postfix Piping
+
+To pipe from [postfix](/index.php/Postfix "Postfix") open `/etc/postfix/main.cf` then add
+
+```
+mailbox_command = /usr/bin/procmail -a "$EXTENSION"
+
+```
+
+After [reloading](/index.php/Reload "Reload") `postfix.service`, email will be send to procmail for filtering and delivery.
+
+### Sending to Dovecot
+
+To forward to [dovecot](/index.php/Dovecot "Dovecot") change the following assignments
+
+The deliver will be the first attempt then Default will be the back up.
+
+```
+DELIVER="/usr/lib/dovecot/deliver -d $LOGNAME"
+DEFAULT="$HOME/Maildir/"
+MAILDIR="$HOME/Maildir/"
+
+```
+
+The advantage is the dovecot will have its databases up to date at all times.
+
+Then to spam mail and deliver for example
+
+```
+# deliver spam to spam folder
+:0 w
+* ^X-Spam-Status: Yes
+| $DELIVER -m Spam
+
+# deliver to INBOX and stop
+:0 w
+| $DELIVER
+
+```
+
+Further information can be found here [http://wiki2.dovecot.org/procmail](http://wiki2.dovecot.org/procmail)
 
 ## See also
 

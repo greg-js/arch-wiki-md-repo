@@ -728,6 +728,8 @@ Once `/etc/default/grub` has been amended, it will then be necessary to [#Genera
 
 For further information about bootloader configuration for encrypted devices, see [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
 
+**Note:** If you wish to encrypt `/boot` either as a separate partition or part of the `/` partition, further setup is required. See [#Boot partition](#Boot_partition).
+
 **Tip:** If you are upgrading from a working GRUB Legacy configuration, check `/boot/grub/menu.lst.pacsave` for the correct device/label to add. Look for them after the text `kernel /vmlinuz-linux`.
 
 #### Boot partition
@@ -747,7 +749,7 @@ to `/etc/default/grub`. After this configuration a subsequent run of *grub-mkcon
 
 Depending on the system's setup, note the following:
 
-*   For the feature to work it is not required that `/boot` is kept in a separate partition, it may also stay under the system's root `/` directory tree.
+*   `/boot` is *not* required to be kept in a separate partition; it may also stay under the system's root `/` directory tree.
 
 *   Without further changes you will be prompted twice for a passhrase: the first for GRUB to unlock the `/boot` mount point in early boot, the second to unlock the root filesystem itself as described in [#Root partition](#Root_partition).
     **Tip:** See [Dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for a workaround.

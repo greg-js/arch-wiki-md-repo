@@ -288,7 +288,7 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 
 ### Hangouts
 
-Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package . It is a messenger by Google, that allows you to do many things. For example, it is possible to do the following: watching YouTube, making diagrams, editing documents, playing games. It is possible to make video call between 15 people simultaneously.
+Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package. Installing this plugin is not necessary for fresh version of chromium browser. Hangouts is a messenger by Google, that allows you to make video call between 15 people simultaneously. While using "new" version, you can share your screen with others like in Skype, but if you switch to "old" version, it will be possible to do the following things together: watching YouTube, making diagrams, editing documents, playing games and other things.
 
 ### MozPlugger
 
