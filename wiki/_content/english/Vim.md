@@ -220,6 +220,7 @@ A plugin manager allows to install and manage Vim plugins in a similar way indep
 *   [Vundle](https://github.com/gmarik/Vundle.vim) is currently the most popular plugin manager for Vim.
 *   [Vim-plug](https://github.com/junegunn/vim-plug) is a minimalist Vim plugin manager with many features like on-demand plugin loading and parallel updating.
 *   [pathogen.vim](https://github.com/tpope/vim-pathogen) is a simple plugin for managing Vim's runtimepath.
+*   [Dein.vim](https://github.com/Shougo/dein.vim) is a fairly new and fast Vim/[Neovim](/index.php/Neovim "Neovim") plugin manager replacing [NeoBundle](https://github.com/Shougo/neobundle.vim), available as [vim-dein-git](https://aur.archlinux.org/packages/vim-dein-git/).
 
 #### From Arch repositories
 

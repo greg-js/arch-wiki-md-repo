@@ -48,8 +48,8 @@ Now [start](/index.php/Start "Start") the `nginx.service`.
 Install [Ghost](https://aur.archlinux.org/packages/Ghost/) or grab the latest version of Ghost from Ghost.org, install it manually and change into the extraction directory::
 
 ```
-$ curl -L [https://ghost.org/zip/ghost-latest.zip](https://ghost.org/zip/ghost-latest.zip)
-$ unzip ghost-latest.zip -d /srv/http/example.org
+$ curl -L [https://ghost.org/zip/ghost-latest.zip](https://ghost.org/zip/ghost-latest.zip) -o ghost.zip
+$ unzip ghost.zip -d /srv/http/example.org
 $ cd /srv/http/example.org
 
 ```

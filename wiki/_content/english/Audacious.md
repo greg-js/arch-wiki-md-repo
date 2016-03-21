@@ -15,7 +15,7 @@
 
 ## Installation
 
-[audacious](https://www.archlinux.org/packages/?name=audacious) is available from [official repositories](/index.php/Official_repositories "Official repositories"). Install it with [pacman](/index.php/Pacman "Pacman"). If you want audio CD support, install [libcdio](https://www.archlinux.org/packages/?name=libcdio).
+[Install](/index.php/Install "Install") the [audacious](https://www.archlinux.org/packages/?name=audacious) package. If you want audio CD support, install [libcdio](https://www.archlinux.org/packages/?name=libcdio).
 
 ## Configuration
 

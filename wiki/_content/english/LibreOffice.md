@@ -243,8 +243,4 @@ If the default paper size in blank Writer and Draw documents is persistently inc
 
 ### Libreoffice toolbars unreadable with gtk3 Dark theme
 
-This issue can be solved by copying the `/usr/share/applications/libreoffice-*.desktop` files to `~/.local/share/applications` and modifying the Exec lines like the following example:
-
-From `Exec=libreoffice --writer %U` to `Exec=env GTK_THEME=Adwaita:light libreoffice --writer %U`
-
-Then make the .desktop files executable. Restart Gnome-shell (`Alt-F2 r`) to make sure the changes are immediately available.
+See [[2]](https://bugzilla.redhat.com/show_bug.cgi?id=1287593). As a workaround, run *libreoffice* with the `GTK_THEME=Adwaita:light` [environment variable](/index.php/Environment_variable "Environment variable").

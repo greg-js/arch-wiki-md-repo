@@ -772,6 +772,8 @@ or you should create a group and user to start the php-cgi:
 
 ```
 
+5\. If you are running php-fpm with chrooted nginx ensure `chroot` is set correctly within `/etc/php-fpm/php-fpm.d/www.conf` (or `/etc/php-fpm/php-fpm.conf` if working on older version)
+
 ### Error: "File not found" in browser or "Primary script unknown" in log file
 
 Ensure you have specified a `root` and `index` in your `server` or `location` directive:

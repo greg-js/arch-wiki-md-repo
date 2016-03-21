@@ -92,7 +92,7 @@ END APC  : Sat SOMETIME 2005
 
 To fully test your setup:
 
-1.  Change `TIMEOUT` form `0` to `1` in the `/etc/apcupsd/apcupsd.conf` file.
+1.  Change `TIMEOUT` from `0` to `1` in the `/etc/apcupsd/apcupsd.conf` file.
 2.  Remove wall power from the UPS.
 3.  Observe that your Linux box powers down, in short order.
 4.  Plug the UPS back into the wall.

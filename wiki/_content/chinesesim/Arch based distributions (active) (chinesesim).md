@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Arch_Based_Distributions_(Active)](/index.php/Arch_Based_Distributions_(Active) "Arch Based Distributions (Active)") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-20，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Based_Distributions_(Active)&diff=0&oldid=401757)可以查看翻译后英文页面的改动。
 
-[非活跃发行版页面](/index.php/Arch_Based_Distributions_(Inactive)_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Based Distributions (Inactive) (简体中文)") 包含了已经不再维护的发行版。
+[基于Arch的发行版（不活跃）](/index.php/%E5%9F%BA%E4%BA%8EArch%E7%9A%84%E5%8F%91%E8%A1%8C%E7%89%88%EF%BC%88%E4%B8%8D%E6%B4%BB%E8%B7%83%EF%BC%89 "基于Arch的发行版（不活跃）") 包含了已经不再维护的发行版。
 
 ## Contents
 

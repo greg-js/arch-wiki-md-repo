@@ -234,7 +234,7 @@ You would need other plugins for JavaScript support and DB query.
 
 ### Komodo
 
-[Komodo](http://komodoide.com/) is an IDE with good integration for PHP+HTML+JavaScript. [Komodo Edit](http://komodoide.com/komodo-edit/) is a free editor-only variant.
+[Komodo](http://komodoide.com/) is an IDE with good integration for PHP+HTML+JavaScript. [Komodo Edit](http://komodoide.com/komodo-edit/) is a free editor-only variant and installable with the [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/) package.
 
 ### Netbeans
 

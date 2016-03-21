@@ -1,8 +1,6 @@
-From [GnomeKeyring](https://live.gnome.org/GnomeKeyring/):
+[Gnome Keyring](https://wiki.gnome.org/action/show/Projects/GnomeKeyring) is "a collection of components in GNOME that store secrets, passwords, keys, certificates and make them available to applications."
 
-	*GNOME Keyring is a collection of components in GNOME that store secrets, passwords, keys, certificates and make them available to applications.*
-
-**Note:** As of July 10, 2015, GNOME Keyring does not handle ECDSA[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. You can turn to other [SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys") if you need support for those.
+**Note:** There are some [#Known issues](#Known_issues).
 
 ## Contents
 
@@ -24,12 +22,14 @@ From [GnomeKeyring](https://live.gnome.org/GnomeKeyring/):
     *   [5.3 GNOME Keyring and Git](#GNOME_Keyring_and_Git)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Passwords are not remembered](#Passwords_are_not_remembered)
+*   [7 Known issues](#Known_issues)
+    *   [7.1 Cannot handle ECDSA and Ed25519 keys](#Cannot_handle_ECDSA_and_Ed25519_keys)
 
 ## Installation
 
-When using GNOME, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) is installed automatically as a part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group. Otherwise install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) from the [official repositories](/index.php/Official_repositories "Official repositories").
+When using GNOME, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) is installed automatically as a part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group. Otherwise [install](/index.php/Install "Install") the [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) package.
 
-Extra utilities:
+Extra utilities related to GNOME keyring include:
 
 *   **secret-tool** — Access the GNOME keyring (and any other service implementing the [DBus Secret Service API](http://standards.freedesktop.org/secret-service/)) from the command line.
 
@@ -45,7 +45,7 @@ Extra utilities:
 
 ## Manage using GUI
 
-You can manage the contents of GNOME Keyring using Seahorse. Install it with the package [seahorse](https://www.archlinux.org/packages/?name=seahorse) from the official repositories.
+You can manage the contents of GNOME Keyring using Seahorse. [Install](/index.php/Install "Install") it with the package [seahorse](https://www.archlinux.org/packages/?name=seahorse).
 
 It is possible to leave the GNOME keyring password blank or change it. In seahorse, in the "View" drop-down menu, select "By Keyring". On the Passwords tab, right click on "Passwords: login" and pick "Change password." Enter the old password and leave empty the new password. You will be warned about using unencrypted storage; continue by pushing "Use Unsafe Storage."
 
@@ -116,15 +116,15 @@ See [Xfce#SSH agents](/index.php/Xfce#SSH_agents "Xfce") for use in Xfce.
 
 When using a display manager, the keyring works out of the box for most cases. The following display managers automatically unlock the keyring once you log in:
 
-*   GNOME's login manager [gdm](https://www.archlinux.org/packages/?name=gdm)
-*   Slim [slim](https://www.archlinux.org/packages/?name=slim)
-*   LightDM [lightdm](https://www.archlinux.org/packages/?name=lightdm)
+*   [GDM](/index.php/GDM "GDM")
+*   [SLiM](/index.php/SLiM "SLiM")
+*   [LightDM](/index.php/LightDM "LightDM")
 
 **Note:** You may need to install [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring)
 
 For KDM, see [KDM#KDM and Gnome-keyring](/index.php/KDM#KDM_and_Gnome-keyring "KDM").
 
-For SDDM, follow the KDM guidelines, but modify `/etc/pam.d/sddm` instead of `/etc/pam.d/kde`.
+For [SDDM](/index.php/SDDM "SDDM"), follow the KDM guidelines, but modify `/etc/pam.d/sddm` instead of `/etc/pam.d/kde`.
 
 To enable the keyring for applications run through the terminal, such as SSH, add the following to your `~/.bash_profile`, `~/.zshenv`, or similar:
 
@@ -240,3 +240,9 @@ Next time you do a *git push*, you are asked to unlock your keyring, if not unlo
 If you get a password prompt every time you login, and you find that passwords are not saved, you might need to create/set a default keyring.
 
 Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) package is installed, open it ("Passwords and Keys" in system settings) and select *View* > *By Keyring* If there is no keyring in the left column (it will be marked with a lock icon), go to *File* > *New* > *Password Keyring* and give it a name. You will be asked to enter a password. If you do not give the keyring a password it will be unlocked automatically, even when using autologin, but passwords will not be stored securely. Finally, right-click on the keyring you just created and select "Set as default".
+
+## Known issues
+
+### Cannot handle ECDSA and Ed25519 keys
+
+As of March 20, 2016, GNOME Keyring does not handle ECDSA[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. You can turn to other [SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys") if you need support for those.

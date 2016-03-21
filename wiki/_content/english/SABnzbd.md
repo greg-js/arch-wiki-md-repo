@@ -6,28 +6,66 @@ SABnzbd is an Open Source Binary Newsreader written in Python.
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Global configuration](#Global_configuration)
-    *   [2.2 Local configuration](#Local_configuration)
-        *   [2.2.1 Running as user without systemd user instance](#Running_as_user_without_systemd_user_instance)
-    *   [2.3 Initial setup](#Initial_setup)
-    *   [2.4 enabling https](#enabling_https)
-    *   [2.5 using a custom port](#using_a_custom_port)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 SABnzbd redirects to localhost on remote access when only https is enabled](#SABnzbd_redirects_to_localhost_on_remote_access_when_only_https_is_enabled)
-    *   [3.2 SABnzbd shows error 503 when trying to access the WEB Interface](#SABnzbd_shows_error_503_when_trying_to_access_the_WEB_Interface)
+    *   [2.1 Starting SABnzbd](#Starting_SABnzbd)
+    *   [2.2 Running as daemon](#Running_as_daemon)
+    *   [2.3 Stopping SABnzbd](#Stopping_SABnzbd)
+    *   [2.4 Accessing the web-interface](#Accessing_the_web-interface)
+    *   [2.5 Local configuration](#Local_configuration)
+        *   [2.5.1 Running as user without systemd user instance](#Running_as_user_without_systemd_user_instance)
+*   [3 Tips & Tricks](#Tips_.26_Tricks)
+    *   [3.1 Enabling HTTPS](#Enabling_HTTPS)
+    *   [3.2 Using a custom port](#Using_a_custom_port)
 *   [4 External Links](#External_Links)
 
 ## Installation
 
-Install [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) or [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Configuration
 
-SABnzbd is able to run globally (settings apply to all users) and locally (per user settings). The way of setting up SABnzbd depends on the way it is intended to be used. A local configuration may prove more useful on a desktop system than on a system that is used by several people simultaneously.
+SABnzbd is able to run globally (settings apply to all users) and locally (per user settings). The way of setting up SABnzbd depends on the way it is intended to be used. A local configuration may prove more useful on a desktop system when used by several people simultaneously.
 
-### Global configuration
+### Starting SABnzbd
 
-SABnzbd is controlled by the *sabnzbd* [daemon](/index.php/Daemon "Daemon").
+The [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) package provides a `sabnzbd` [systemd](/index.php/Systemd "Systemd") service.
+
+It's however possible to start SABnzbd using the following command:
+
+```
+$ sudo -u sabnzbd -H /opt/sabnzbd/SABnzbd.py -f /opt/sabnzbd/sabnzbd.ini
+
+```
+
+### Running as daemon
+
+Append the `-d` parameter to start SABnzbd as [daemon](/index.php/Daemon "Daemon"):
+
+```
+$ sudo -u sabnzbd -H /opt/sabnzbd/SABnzbd.py -f /opt/sabnzbd/sabnzbd.ini -d
+
+```
+
+### Stopping SABnzbd
+
+**Note:** SABnzbd can be easily shutdown by opening the main menu from the web-interface.
+
+You need to know the `host`, `port` and `API-key`, which can all be found using the WebUI or by searching through `/opt/sabnzbd/sabnzbd.ini`.
+
+Execute the following command to shutdown SABnzbd:
+
+```
+$ curl "[http://host:port/sabnzbd/api?mode=shutdown&apikey=API-key](http://host:port/sabnzbd/api?mode=shutdown&apikey=API-key)"
+
+```
+
+### Accessing the web-interface
+
+**Tip:**
+
+*   SABnzbd can only be accessed on the running computer. Change `host = 127.0.0.1` in `/opt/sabnzbd/sabnzbd.ini` to `host = 0.0.0.0` (or the host IP-address) to allow access from another computer.
+*   SABnzbd listens on port `8080`. Change `port = 8080` in `/opt/sabnzbd/sabnzbd.ini` to the preferred port.
+
+After starting SABnzbd, access the web-interface by browsing to [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
 ### Local configuration
 
@@ -120,17 +158,11 @@ Group = desired_group_name
 WantedBy = default.target
 ```
 
-### Initial setup
+## Tips & Tricks
 
-It is recommended to run through the initial setup wizard after starting the service by going to 127.0.0.1:8080 in your favourite web-browser. This initial setup should be enough to get SABnzbd working correctly for regular users. Users wanting HTTPS access are recommended to read further on in [#enabling https](#enabling_https).
+### Enabling HTTPS
 
-Sabnzbd can be further configured through the web-interface or in `/opt/sabnzbd/sabnzbd.ini`.
-
-**Tip:** By default, sabnzbd will only allow access from the same computer. Change the `host` line in `sabnzbd.ini` to `0.0.0.0` to be able to access the initial setup from another computer.
-
-### enabling https
-
-enabling https is a threefold process.
+Enabling https is a threefold process.
 
 For global configuration:
 
@@ -150,7 +182,7 @@ For local configuration:
 
 You should now be able to start sabnzbd with SSL support.
 
-### using a custom port
+### Using a custom port
 
 Using a custom port is similar to using https.
 
@@ -175,39 +207,6 @@ For local configuration:
 *   reload systemd with `$ systemctl --user daemon-reload`
 
 You should now be able to start sabnzbd with a custom port.
-
-## Troubleshooting
-
-### SABnzbd redirects to localhost on remote access when only https is enabled
-
-This strange issue seems to appear, when you have no https port configured (so it will use the configured http port for http) and your `/etc/conf.d/sabnzbd[_systemd]` says
-
-```
-SABNZBD_PROTOCOL=https
-
-```
-
-instead of:
-
-```
-SABNZBD_PROTOCOL=http
-
-```
-
-You might need to restart your clientside browser.
-
-### SABnzbd shows error 503 when trying to access the WEB Interface
-
-Simply go to /etc/systemd/system/multi-user.target.wants/ and edit "sabnzbd.service". Something like this might appear :
-
-```
-ExecStart=/bin/sh -c "python2 /opt/sabnzbd/SABnzbd.py -l0"
-
-```
-
-Simply remove "-l0" and restart the daemon (`sudo systemctl restart sabnzbd.service`).
-
-It should be working great now :).
 
 ## External Links
 

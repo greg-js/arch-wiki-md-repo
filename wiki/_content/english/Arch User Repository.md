@@ -191,12 +191,22 @@ You should [create a new key pair](/index.php/SSH_keys#Generating_an_SSH_key_pai
 
 In order to create a new, empty, local Git repository for a package, simply `git clone` the remote repository with the corresponding name. If the package does not exist on AUR yet, you will see the following warning:
 
- `$ git clone ssh://aur@aur.archlinux.org/*package_name*.git` 
+ `$ git clone git+ssh://aur@aur.archlinux.org/*package_name*.git` 
 ```
 Cloning into '*package_name*'...
 warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
 ```
+
+If you have already created a git repository, you can simply create a remote for the AUR git repository and then fetch it:
+
+```
+$ git remote add *remote_name* git+ssh://aur@aur.archlinux.org/*package_name*.git
+$ git fetch *remote_name*
+
+```
+
+where `*remote_name*` is the name of the remote to create (*e.g.,* "origin"). See [Git#Using remotes](/index.php/Git#Using_remotes "Git") for more information.
 
 The new package will appear on AUR after you *push* the first commit. You can now add the source files to the local copy of the Git repository. See [#Uploading packages](#Uploading_packages).
 
@@ -214,7 +224,7 @@ For example:
 $ makepkg --printsrcinfo > .SRCINFO
 $ git add PKGBUILD .SRCINFO
 $ git commit -m "*useful commit message*"
-$ git push origin master
+$ git push
 
 ```
 

@@ -35,6 +35,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### Mars 2016
 
+*   [20 March 2016] [ASA-201603-21](https://lists.archlinux.org/pipermail/arch-security/2016-March/000586.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) multiple issues
+*   [20 March 2016] [ASA-201603-20](https://lists.archlinux.org/pipermail/arch-security/2016-March/000585.html) [git](https://www.archlinux.org/packages/?name=git) remote command execution
 *   [14 March 2016] [ASA-201603-19](https://lists.archlinux.org/pipermail/arch-security/2016-March/000584.html) [dropbear](https://www.archlinux.org/packages/?name=dropbear) command injection
 *   [12 March 2016] [ASA-201603-18](https://lists.archlinux.org/pipermail/arch-security/2016-March/000583.html) [pcre](https://www.archlinux.org/packages/?name=pcre) arbitrary code execution
 *   [12 March 2016] [ASA-201603-17](https://lists.archlinux.org/pipermail/arch-security/2016-March/000582.html) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) denial of service

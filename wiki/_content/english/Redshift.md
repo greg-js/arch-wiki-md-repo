@@ -13,6 +13,7 @@ The project is developed on [GitHub](https://github.com/jonls/redshift).
     *   [2.1 Quick start](#Quick_start)
     *   [2.2 Automatic location based on GPS](#Automatic_location_based_on_GPS)
     *   [2.3 Manual setup](#Manual_setup)
+    *   [2.4 Use real screen brightness](#Use_real_screen_brightness)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
     *   [3.2 redshift-gtk will not start](#redshift-gtk_will_not_start)
@@ -126,6 +127,43 @@ lon=11.6
 ; Note that the numbering starts from 0, so this is actually the second screen.
 [randr]
 screen=1
+```
+
+### Use real screen brightness
+
+Redshift has a brightness adjustment setting, but it does not work the way most people might expect. In fact it is a fake brightness adjustment obtained by manipulating the gamma ramps, which means that it does not reduce the backlight of the screen. [[1]](http://jonls.dk/redshift/#known-bugs-and-limitations)
+
+Changing screen backlight is possible with redshift hooks and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr). You need to create a file in `~/.config/redshift/hooks` and make it executable. You can use and edit this example.
+
+ `~/.config/redshift/hooks/brightness.sh` 
+```
+#!/bin/sh
+
+# Set brihtness via xbrightness when redshift status changes
+
+# Set brightness values for each status.
+# Range from 1 to 100 is valid
+brightness_day="100"
+brightness_transition="50"
+brightness_night="10"
+# Set fade time for changes to one minute
+fade_time=6000
+
+case $1 in
+	period-changed)
+		case $3 in
+			night)
+				xbacklight -set $brightness_night -time $fade_time
+				;;
+			transition)
+				xbacklight -set $brightness_transition -time $fade_time
+				;;
+			day)
+				xbacklight -set $brightness_day -time $fade_time
+				;;
+		esac
+		;;
+esac
 ```
 
 ## Troubleshooting

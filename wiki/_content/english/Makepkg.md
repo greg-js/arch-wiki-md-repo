@@ -9,7 +9,7 @@
     *   [1.2 Package output](#Package_output)
     *   [1.3 Signature checking](#Signature_checking)
 *   [2 Usage](#Usage)
-*   [3 Tips and Tricks](#Tips_and_Tricks)
+*   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Creating optimized packages](#Creating_optimized_packages)
         *   [3.1.1 MAKEFLAGS](#MAKEFLAGS)
     *   [3.2 Improving compile times](#Improving_compile_times)
@@ -60,11 +60,11 @@ Configure the following `makepkg.conf` variables if needed:
 
 ### Signature checking
 
-If a signature file in the form of `.sig` or `.asc` is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, `makepkg` automatically attempts to [verify](/index.php/Gnupg#Verify_a_signature "Gnupg") it. In case the user's keyring does not contain the needed public key for signature verification, `makepkg` will abort the installation with a message that the PGP key could not be verified.
+If a signature file in the form of `.sig` or `.asc` is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, *makepkg* automatically attempts to [verify](/index.php/Gnupg#Verify_a_signature "Gnupg") it. In case the user's keyring does not contain the needed public key for signature verification, *makepkg* will abort the installation with a message that the PGP key could not be verified.
 
-If a needed public key is missing, or if you want to add public keys by other developers, you can [import](/index.php/Gnupg#Import_a_key "Gnupg") it manually, or you can find it [on a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG") and import it from there. Alternatively, you can temporarily disable `makepkg`'s signature checking, by calling `makepkg` with the `--skippgpcheck` option.
+If a needed public key is missing, or if you want to add public keys by other developers, you can [import](/index.php/Gnupg#Import_a_key "Gnupg") it manually, or you can find it [on a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG") and import it from there. Alternatively, you can temporarily disable *makepkg'*s signature checking, by calling `makepkg` with the `--skippgpcheck` option.
 
-**Note:** The signature checking implemented in `makepkg` does not use pacman's keyring, instead relying on the user's keyring. [[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
+**Note:** The signature checking implemented in *makepkg* does not use pacman's keyring, instead relying on the user's keyring. [[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
 
 ## Usage
 
@@ -112,7 +112,7 @@ $ makepkg -c
 
 For more, see [makepkg(8)](https://www.archlinux.org/pacman/makepkg.8.html).
 
-## Tips and Tricks
+## Tips and tricks
 
 ### Creating optimized packages
 

@@ -29,7 +29,7 @@ The following sections will roughly explain how these are created and validated.
 *   [3 Tools](#Tools)
     *   [3.1 gendesk](#gendesk)
         *   [3.1.1 How to use](#How_to_use)
-    *   [3.2 lsdsk](#lsdsk)
+    *   [3.2 List or search in available *.desktop files](#List_or_search_in_available_.2A.desktop_files)
     *   [3.3 fbrokendesktop](#fbrokendesktop)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Hide desktop entries](#Hide_desktop_entries)
@@ -181,33 +181,35 @@ Icons can be automatically downloaded from [openiconlibrary](http://openiconlibr
 
 *   See the [gendesk project](https://github.com/xyproto/gendesk) for more information.
 
-### lsdsk
+### List or search in available *.desktop files
 
-The [lsdsk](https://aur.archlinux.org/packages/lsdsk/) bash script searching for content in "Categories" or "Exec", if "Categories" doesn't exist then it uses content of "Name" or you can use custom options to search only for a preferred content. It's main purpose to get a quick overview in console of the available programs with their command lines and categories in *.desktop. It shows coloured existing base path defined in "ADskPath" array. From version 3.0.0 it supports more command line options but multiple options can't be used at once, to list all supported options use option *--help*. Option *--var* and *--var-sys* passing all options to [grep](http://www.gnu.org/software/grep/manual/grep.html), it means that you can use additional options supported by grep but only after first two --var text.
+The [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) bash script searching for content in "Categories" or "Exec", if "Categories" doesn't exist then it uses content of "Name" or you can use custom options to search only for a preferred content. It's main purpose is to get a quick overview in console of the available programs with their command lines and categories in *.desktop. It shows colored existing base path. To list all supported options use option *--help*. Option *--var* and *--var-sys* passing all options to [grep](http://www.gnu.org/software/grep/manual/grep.html), it means that you can use additional options supported by grep but only after first two *--var text*.
 
 Examples
 
 ```
-# lsdsk
-# lsdsk game
-# lsdsk gtk
+# lsdesktopf
+# lsdesktopf game
+# lsdesktopf gtk
 
 ```
 
 To search only for content of variable names use
 
 ```
-# lsdsk --var Name= -e ^Exec= -e Comment= -i
-# lsdsk --var-sys Name= -e ^Exec
+# lsdesktopf --var Name= -e ^Exec= -e Comment= -i
+# lsdesktopf --var-sys Name= -e ^Exec
 
 ```
 
 To show all available base name of the variables that can be used with option *--var* you can use option *--sud* to search only in a predefined path in "ADskPath" variable. The *--ssu* option show variables that can be used with *--var-sys*, both are looking for content only in /usr /etc /opt folders.
 
 ```
-# lsdsk --sud
+# lsdesktopf --sud
 
 ```
+
+It is possible to create own list of folders to check with warriors commands or added manually to `/opt/share/list-desktop-files/sorted.test` or `~/.list-desktop-path/custom-path/sorted.test`. You can use even wildcards as * in path names stored in configuration files because it is using command `file` to get all available path names while population an array before starting search or list.
 
 ### fbrokendesktop
 

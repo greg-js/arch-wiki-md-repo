@@ -1,14 +1,14 @@
-From [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs")
+From [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs"):
 
-	*Btrfs (B-tree file system, pronounced as "butter F S", "better F S", "b-tree F S", or simply by spelling it out) is a file system based on the copy-on-write (COW) principle, initially designed at Oracle Corporation for use in Linux. The development of Btrfs began in 2007, and by August 2014, the file system's on-disk format has been marked as stable.*
+	Btrfs (B-tree file system, pronounced as "butter F S", "better F S", "b-tree F S", or simply by spelling it out) is a file system based on the copy-on-write (COW) principle, initially designed at Oracle Corporation for use in Linux. The development of Btrfs began in 2007, and by August 2014, the file system's on-disk format has been marked as stable.
 
-From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page)
+From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 
-	*Btrfs is a new copy on write (CoW) filesystem for Linux aimed at implementing advanced features while focusing on fault tolerance, repair and easy administration. Jointly developed at Oracle, Red Hat, Fujitsu, Intel, SUSE, STRATO and many others, Btrfs is licensed under the GPL and open for contribution from anyone.*
+	Btrfs is a new copy on write (CoW) filesystem for Linux aimed at implementing advanced features while focusing on fault tolerance, repair and easy administration. Jointly developed at Oracle, Red Hat, Fujitsu, Intel, SUSE, STRATO and many others, Btrfs is licensed under the GPL and open for contribution from anyone.
 
 **Warning:**
 
-*   Btrfs has some features that are considered experimental. See the Btrfs Wiki's [Stability status,](https://btrfs.wiki.kernel.org/index.php/Main_Page#Stability_status) [Is Btrfs stable,](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) and [Getting started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for more detailed information.
+*   Btrfs has some features that are considered experimental. See the Btrfs Wiki's [Stability status](https://btrfs.wiki.kernel.org/index.php/Main_Page#Stability_status), [Is Btrfs stable?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) and [Getting started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for more detailed information.
 *   Beware of the [limitations](#Limitations).
 
 ## Contents
@@ -85,7 +85,7 @@ Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would f
 
 ```
 
-**Warning:** Using the `btrfs subvolume set-default` command to change the default sub-volume from anything other than the top level (ID 0) may break Grub. See [#Setting a default sub-volume](#Setting_a_default_sub-volume) to reset.
+**Warning:** Using the `btrfs subvolume set-default` command to change the default sub-volume from anything other than the top level (ID 5) may break Grub. See [#Setting a default sub-volume](#Setting_a_default_sub-volume) to reset.
 
 ## File system creation
 
@@ -226,7 +226,7 @@ When installing Arch to an empty Btrfs partition, use the `compress` option when
 
 ### Subvolumes
 
-*A btrfs subvolume is not a block device (and cannot be treated as one) instead, a btrfs subvolume can be thought of as a POSIX file namespace. This namespace can be accessed via the top-level subvolume of the filesystem, or it can be mounted in its own right.*[[1]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Subvolumes)
+"A btrfs subvolume is not a block device (and cannot be treated as one) instead, a btrfs subvolume can be thought of as a POSIX file namespace. This namespace can be accessed via the top-level subvolume of the filesystem, or it can be mounted in its own right." [[1]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Subvolumes)
 
 Each Btrfs file system has a top-level subvolume with ID 5\. It can be mounted itself as "/" (by default), or another subvolume can be [mounted](#Mounting_subvolumes).
 
@@ -247,10 +247,10 @@ To create a subvolume:
 
 #### Listing subvolumes
 
-To see a list of current subvolumes:
+To see a list of current subvolumes under `*path*`:
 
 ```
-# btrfs subvolume list -p .
+# btrfs subvolume list -p *path*
 
 ```
 
@@ -263,13 +263,13 @@ To delete a subvolume:
 
 ```
 
-Attempting to remove the directory */path/to/subvolume* without using the above command will not delete the subvolume.
+Attempting to remove the directory `*/path/to/subvolume*` without using the above command will not delete the subvolume.
 
 #### Mounting subvolumes
 
-Subvolumes can be mounted like file system partitions using the `subvol=*/path/to/subvolume*` or `subvolid=*objectid*` mount flags. For example, you could have a subvolume named 'subvol_root' and mount it as '/'. One can mimic traditional file system partitions by creating various subvolumes under the top level of the file system and then mounting them at the appropriate mount points. Thus one can easily restore a file system (or part of it) to a previous state easily using [#Snapshots](#Snapshots).
+Subvolumes can be mounted like file system partitions using the `subvol=*/path/to/subvolume*` or `subvolid=*objectid*` mount flags. For example, you could have a subvolume named `subvol_root` and mount it as `/`. One can mimic traditional file system partitions by creating various subvolumes under the top level of the file system and then mounting them at the appropriate mount points. Thus one can easily restore a file system (or part of it) to a previous state easily using [#Snapshots](#Snapshots).
 
-**Tip:** Changing subvolume layouts is made simpler by not using the toplevel subvolume (ID=5) as "/" (which is done by default). Instead, consider creating a subvolume to house your actual data and mounting it as "/".
+**Tip:** Changing subvolume layouts is made simpler by not using the toplevel subvolume (ID=5) as `/` (which is done by default). Instead, consider creating a subvolume to house your actual data and mounting it as `/`.
 
 See [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper"), [Btrfs SysadminGuide#Managing Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Managing_Snapshots), and [Btrfs SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout) for example file system layouts using subvolumes.
 
@@ -387,7 +387,7 @@ To defragment the entire file system verbosely:
 
 ### Scrub
 
-The [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary) says that Btrfs scrub is *[a]n online filesystem checking tool. Reads all the data and metadata on the filesystem, and uses checksums and the duplicate copies from RAID storage to identify and repair any corrupt data.*
+The [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary) says that Btrfs scrub is "[a]n online filesystem checking tool. Reads all the data and metadata on the filesystem, and uses checksums and the duplicate copies from RAID storage to identify and repair any corrupt data."
 
 ```
 # btrfs scrub start /
@@ -403,7 +403,7 @@ You can also run the scrub manually by [starting](/index.php/Starting "Starting"
 
 ### Balance
 
-*A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed.* [[2]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
+"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[2]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
 
 ```
 # btrfs balance start /
@@ -437,7 +437,7 @@ Btrfs uses a round-robin scheme to decide how block-pairs are spread among disks
 
 ### Snapshots
 
-*A snapshot is simply a subvolume that shares its data (and metadata) with some other subvolume, using btrfs's COW capabilities.* See [Btrfs Wiki SysadminGuide#Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Snapshots) for details.
+"A snapshot is simply a subvolume that shares its data (and metadata) with some other subvolume, using btrfs's COW capabilities." See [Btrfs Wiki SysadminGuide#Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Snapshots) for details.
 
 To create a snapshot:
 
@@ -461,7 +461,7 @@ A subvolume can be sent to stdout or a file using the `send` command. This is us
 
 The snapshot that is sent *must* be readonly. The above command is useful for copying a subvolume to an external device (*e.g.*, a USB disk mounted at `/backup` above).
 
-You can also send only the difference between two snapshots. For example, let us say you have already sent a copy of `root_backup` above and have made a new readonly snapshot on your system named `root_backup_new`. To send only the incremental difference to `/backup` do:
+You can also send only the difference between two snapshots. For example, if you have already sent a copy of `root_backup` above and have made a new readonly snapshot on your system named `root_backup_new`, then to send only the incremental difference to `/backup` do:
 
 ```
  # btrfs send -p /root_backup /root_backup_new | btrfs send /backup

@@ -113,9 +113,9 @@ After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` com
 
 Currently, by default, GNOME applications will be run as traditional X applications through Xwayland. To test GNOME applications with Wayland, use the command line to run the application and prefix the command with `env GDK_BACKEND='wayland,x11' <command>`.
 
-**Note:** Setting a global Wayland environment, by running `env GDK_BACKEND=wayland gnome-session --session=gnome-wayland`, currently does not work - *gnome-session* will exit immediately. Instead, use `export GDK_BACKEND='wayland,x11'` in your bash profile, or use `env GDK_BACKEND='wayland,x11' gnome-session --session=gnome-wayland` on the command line. But in general, neither of these environment settings are necessary, and running `gnome-session` with the `--session=gnome-wayland` switch is sufficient. Without the `GDK_BACKEND` environment variable, the GNOME Application must be "Wayland aware" to run as a Wayland application, or default to running on Xwayland otherwise. See also `GDK_BACKEND` under GNOME [Environment variables](https://developer.gnome.org/gtk3/stable/gtk-running.html).
+**Note:** Setting a global Wayland environment, by running `env GDK_BACKEND=wayland gnome-session --session=gnome-wayland`, currently does not work. For workarounds, see [GNOME/Troubleshooting#Setting global Wayland environment with an environment variable](/index.php/GNOME/Troubleshooting#Setting_global_Wayland_environment_with_an_environment_variable "GNOME/Troubleshooting").
 
-See the following page for the status of [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/).
+See the the current status of Wayland on GNOME at [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/).
 
 ## Navigation
 

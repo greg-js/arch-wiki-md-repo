@@ -100,7 +100,7 @@ In case the above commands return nothing, you need to [load](/index.php/Kernel_
 
 ## 如何使用KVM
 
-请参考[QEMU](/index.php/QEMU "QEMU")条目。
+请参考[QEMU](/index.php/QEMU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "QEMU (简体中文)")条目。
 
 ## 小贴士与小技巧
 

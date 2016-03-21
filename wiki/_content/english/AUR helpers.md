@@ -1,6 +1,6 @@
 **Warning:** None of these tools are [officially](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) supported by Arch Linux. It is recommended to become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems on one's own.
 
-AUR Helpers are written to make using the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") more comfortable.
+AUR helpers are written to make using the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") more comfortable.
 
 ## Contents
 
@@ -142,10 +142,6 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/jjk-jacky/kalu](https://github.com/jjk-jacky/kalu) || [kalu](https://aur.archlinux.org/packages/kalu/) (or [kalu-kde](https://aur.archlinux.org/packages/kalu-kde/) for auto-hide in KDE's panel)
 
-*   **Yapan** — Written in C++ and Qt. It shows an icon in the system tray and popup notifications for new packages and supports AUR helpers.
-
-	[https://github.com/fluxer/arch-yapan](https://github.com/fluxer/arch-yapan) || [yapan](https://aur.archlinux.org/packages/yapan/)
-
 ## Comparison table
 
 The columns have the following meaning:
@@ -164,7 +160,7 @@ The columns have the following meaning:
 | aurget | Bash | Optional | Yes | No | No | No [[3]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | Pacman-like | - |
 | aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | None | Specific | [tsort](https://en.wikipedia.org/wiki/Topological_sorting "w:Topological sorting"), PCRE, local repository, [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
 | bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | No | bash/zsh | Pacman-like/Specific | Trust management, ABS support, extends Powerpill |
-| burgaur | Python3 | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | Pacman-like | Wrapper for *cower* |
+| burgaur | Python3/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | Pacman-like | Wrapper for *cower* |
 | cower | C | Yes | N/A | Yes | N/A | N/A | No | bash/zsh | Specific | No automatic builds, regex support |
 | pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | Pacman-like/specific | Minimizes user interaction, multilingual |
 | packer | Bash | No | Yes | No | No | No | No | None | Pacman-like | - |

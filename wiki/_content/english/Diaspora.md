@@ -19,7 +19,7 @@ Since August 27, 2012 Diaspora is ruled by the community ([announcement](http://
 *   Since Diaspora can run on [MySQL](/index.php/MySQL "MySQL") and [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") you need to decide which one you want to use. Install one of them and set it up.
 *   Diaspora starts a so called appserver, on port 3000 by default, which serves the dynamic contents. You need a reverse proxy to handle the static content and that forwards requests it can't handle to the appserver. Typical tools for that are [Apache](/index.php/Apache "Apache") or [Nginx](/index.php/Nginx "Nginx").
 *   You'll also need the usual tools to build packages from the AUR.
-*   And [ruby2.1](https://aur.archlinux.org/packages/ruby2.1/) and [ruby2.1-bundler](https://aur.archlinux.org/packages/ruby2.1-bundler/) from the AUR.
+*   And [ruby2.2](https://aur.archlinux.org/packages/ruby2.2/) and [ruby2.2-bundler](https://aur.archlinux.org/packages/ruby2.2-bundler/) from the AUR.
 
 ## Installation
 

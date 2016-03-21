@@ -19,8 +19,11 @@
     *   [7.4 Key Bindings](#Key_Bindings)
     *   [7.5 SSH connection lost when idle](#SSH_connection_lost_when_idle)
     *   [7.6 OTR](#OTR)
-    *   [7.7 Slack IRC gateway](#Slack_IRC_gateway)
-        *   [7.7.1 Upload file](#Upload_file)
+    *   [7.7 Slack](#Slack)
+        *   [7.7.1 IRC gateway](#IRC_gateway)
+            *   [7.7.1.1 Upload file](#Upload_file)
+        *   [7.7.2 Native client](#Native_client)
+            *   [7.7.2.1 Upload file](#Upload_file_2)
     *   [7.8 Desktop notifications](#Desktop_notifications)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Errors loading plugins](#Errors_loading_plugins)
@@ -255,9 +258,11 @@ Get help on the plugin with:
 
 ```
 
-### Slack IRC gateway
+### Slack
 
 [Slack](https://slack.com/) is a platform for team communication; an IRC on steroids. Thanks to its open API, it is possible to connect to your slack team using weechat.
+
+#### IRC gateway
 
 Once weechat is running, all you have to is add a new server this way:
 
@@ -271,7 +276,7 @@ where:
 *   **USERNAME** is the User as provided on the Gateways page of your slack team
 *   **NICK** is your Slack username.
 
-#### Upload file
+##### Upload file
 
 To upload a file, run this following command from your shell :
 
@@ -281,6 +286,36 @@ where:
 
 *   **CHAN** is the channel ID as provided on the Gateways page of your slack team
 *   **XXX** is the team token as provided on the Gateways page of your slack team
+
+#### Native client
+
+There is a native client for slack: [wee-slack](https://github.com/rawdigits/wee-slack)
+
+You need to install the python2 librairy websocket-client:
+
+`pacman -S python2-websocket-client`
+
+Then install the wee-chat plugin into the weechat configuration folder
+
+`curl -O ~/.weechat/pyhton/autoload/wee_slack.py https://raw.githubusercontent.com/rawdigits/wee-slack/master/wee_slack.py`
+
+You will need an acces token. You can grab one at [here](https://api.slack.com/docs/oauth-test-tokens)
+
+Once weechat is running, register your token into weechat:
+
+`/set plugins.var.python.slack_extension.slack_api_token [YOUR_SLACK_TOKEN]`
+
+And finally:
+
+`/save`
+
+`/python reload`
+
+##### Upload file
+
+To upload a file enter the following command into weechat:
+
+`/slack upload [file_path]`
 
 ### Desktop notifications
 

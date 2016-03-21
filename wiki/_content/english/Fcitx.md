@@ -99,11 +99,9 @@ Add the following lines to your desktop start up script files to register the in
 
 *   Re-login to make these environment changes effective.
 
-**Warning:** Do NOT use `.bashrc` to do this. It is used for initializing an interactive bash session. It is not designed for non-interactive shell, nor for X session initialization. Moreover, setting environment variables in it can confuse diagnostic tools which are generally executed from command line so that these environment will appear as being set correctly for them even if they are not for the X session.
+**Note:** Avoid `.bashrc` for this, see [DotFiles](http://mywiki.wooledge.org/DotFiles)
 
 **Note:** If all Qt apps have problem with fcitx, run qtconfig (qtconfig-qt4), and go to the third tab, make sure fcitx is in the "Default Input Method" combo-box.
-
-**Note:** It currently appears Qt5 applications + fcitx work only with above exported variables added to .bashrc file, too. (At least for startxed Plasma 5, and qt5 applications in gnome-shell)
 
 ### Xim
 

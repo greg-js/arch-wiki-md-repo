@@ -12,6 +12,7 @@ The configuration file allows to change colors and set some options. Termite sup
 *   [4 Transparency](#Transparency)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Ctrl+Shift+t](#Ctrl.2BShift.2Bt)
+    *   [5.2 URL hints mode removes text](#URL_hints_mode_removes_text)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -73,6 +74,10 @@ opacity-rule = [
 ### Ctrl+Shift+t
 
 If opening a new tab through `Ctrl+Shift+t` fails with `no directory uri set`, [source](/index.php/Source "Source") `/etc/profile.d/vte.sh`. See [GNOME#New terminals adopt current directory](/index.php/GNOME#New_terminals_adopt_current_directory "GNOME").
+
+### URL hints mode removes text
+
+This happens with `GTK_IM_MODULE=xim`. [[2]](https://github.com/thestinger/termite/issues/320) As a workaround, use a different input method such as `uim`.
 
 ## See also
 

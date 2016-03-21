@@ -24,7 +24,7 @@
 
 ### BIOS
 
-所谓 BIOS 或 Basic Input-Output System, 就是开机时第一个被执行的程序，又名固件。一般来说它被储存在主板上的一块闪存，与硬盘彼此独立。BIOS 被启动后，它接着会执行第一个硬盘上的前 440 字节代码，即 [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"), 由于代码的储存空间实在太小了，所以实际代码常常是某个启动引导器，像 [GRUB (简体中文)](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)"), [Syslinux (简体中文)](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 和 [LILO](/index.php/LILO "LILO") 之类的。最后启动引导器又通过「链式引导」，或是直接加载内核，以加载一个操作系统
+所谓 BIOS 或 Basic Input-Output System, 就是开机时第一个被执行的程序，又名固件。一般来说它储存在主板上的一块闪存中，与硬盘彼此独立。BIOS 被启动后，它接着会执行第一个硬盘上的前 440 字节代码，即 [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"), 由于代码的储存空间实在太小了，所以实际代码常常是某个启动引导器，像 [GRUB (简体中文)](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)"), [Syslinux (简体中文)](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 和 [LILO](/index.php/LILO "LILO") 之类的。最后启动引导器又通过「链式引导」，或是直接加载内核，以加载一个操作系统
 
 ### UEFI
 

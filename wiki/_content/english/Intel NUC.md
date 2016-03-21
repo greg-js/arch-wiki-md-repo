@@ -74,7 +74,7 @@ The [PulseAudio#Switch on connect](/index.php/PulseAudio#Switch_on_connect "Puls
 
 ### TPM
 
-NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently blocked due to a few bugs in `tpm_crb`[[4]](https://bugzilla.kernel.org/show_bug.cgi?id=98181)[[5]](https://bugzilla.kernel.org/show_bug.cgi?id=111511). Patches are expected to land in 4.5.x Linux kernel.
+NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently blocked due to a few bugs in `tpm_crb`[[4]](https://bugzilla.kernel.org/show_bug.cgi?id=98181)[[5]](https://bugzilla.kernel.org/show_bug.cgi?id=111511).
 
 ### Poweroff
 

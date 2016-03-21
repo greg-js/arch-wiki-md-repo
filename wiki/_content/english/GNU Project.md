@@ -1,12 +1,6 @@
-From [http://www.gnu.org/](http://www.gnu.org/)
+From [http://www.gnu.org/](http://www.gnu.org/):
 
-	*The GNU Project was launched in 1984 to develop the GNU operating system, a complete Unix-like operating system which is free software—software which respects your freedom.*
-
-	*Unix-like operating systems are built from a software collection of applications, libraries, and developer tools—plus a program to allocate resources and talk to the hardware, known as a kernel. [...]*
-
-	*The combination of GNU and Linux is the GNU/Linux operating system, now used by millions and sometimes incorrectly called simply “Linux”.*
-
-	*The name “GNU” is a recursive acronym for “GNU's Not Unix!”*
+	The GNU Project was launched in 1984 to develop the GNU operating system, a complete Unix-like operating system which is free software—software which respects your freedom. Unix-like operating systems are built from a software collection of applications, libraries, and developer tools—plus a program to allocate resources and talk to the hardware, known as a kernel. [...] The combination of GNU and Linux is the GNU/Linux operating system, now used by millions and sometimes incorrectly called simply “Linux”. The name “GNU” is a recursive acronym for “GNU's Not Unix!”
 
 The aim of the GNU Project is to produce a totally free operating system. While the GNU kernel has not reached a stable version, the project has resulted in the creation of many tools that power most Unix-like operating systems. [Arch Linux](/index.php/Arch_Linux "Arch Linux") is such a system, using GNU software like the [GRUB](/index.php/GRUB "GRUB") bootloader, [Bash](/index.php/Bash "Bash") shell, and numerous other utilities and libraries.
 
@@ -17,7 +11,7 @@ The aim of the GNU Project is to produce a totally free operating system. While 
     *   [1.2 Software Collection](#Software_Collection)
 *   [2 Development Tools](#Development_Tools)
 *   [3 Other Tools](#Other_Tools)
-*   [4 Links](#Links)
+*   [4 See also](#See_also)
 
 ## The Base System
 
@@ -29,17 +23,33 @@ While [Hurd](http://www.gnu.org/s/hurd/hurd.html), the GNU Kernel, is under acti
 
 ### Software Collection
 
-**bootloader:** [GRUB](/index.php/GRUB "GRUB") is the standard bootloader for Arch Linux, which is now maintained by [GNU](http://www.gnu.org/software/grub/).
+*   **[GRUB](/index.php/GRUB "GRUB")** — bootloader
 
-[C library](http://www.gnu.org/software/libc/): [glibc](https://www.archlinux.org/packages/?name=glibc) is *"the library which defines the `system calls' and other basic facilities such as open, malloc, printf, exit..."*
+	[http://www.gnu.org/software/grub/](http://www.gnu.org/software/grub/) || [grub](https://www.archlinux.org/packages/?name=grub)
 
-[binary utilities](https://en.wikipedia.org/wiki/GNU_Binutils "wikipedia:GNU Binutils"): [binutils](https://www.archlinux.org/packages/?name=binutils) provides the *"collection of programming tools for the manipulation of object code in various object file formats"*.
+*   **[glibc](https://en.wikipedia.org/wiki/glibc "wikipedia:glibc")** — C library. "defines the 'system calls' and other basic facilities such as open, malloc, printf, exit..."
 
-[shell](http://www.gnu.org/software/bash/): [Bash](/index.php/Bash "Bash"), another GNU based application, is the default shell.
+	[http://www.gnu.org/software/libc/](http://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc)
 
-[core utilities](http://www.gnu.org/software/coreutils/): The [coreutils](https://www.archlinux.org/packages/?name=coreutils) package contains *"the basic file, shell and text manipulation utilities"*.
+*   **[binutils](https://en.wikipedia.org/wiki/binutils "wikipedia:binutils")** — "a collection of binary tools"
 
-**compression:** [gzip](https://www.archlinux.org/packages/?name=gzip) and [Tar](/index.php/Tar "Tar") handle many packages for GNU/Linux systems. For example, those from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") come as [Gzipped](http://www.gnu.org/software/gzip/) [tarballs](http://www.gnu.org/software/tar/).
+	[https://www.gnu.org/software/binutils/](https://www.gnu.org/software/binutils/) || [binutils](https://www.archlinux.org/packages/?name=binutils)
+
+*   **[bash](/index.php/Bash "Bash")** — "an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh)"
+
+	[https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/) || [bash](https://www.archlinux.org/packages/?name=bash)
+
+*   **[coreutils](/index.php/Coreutils "Coreutils")** — "the basic file, shell and text manipulation utilities of the GNU operating system."
+
+	[https://www.gnu.org/software/coreutils/](https://www.gnu.org/software/coreutils/) || [coreutils](https://www.archlinux.org/packages/?name=coreutils)
+
+*   **[gzip](https://en.wikipedia.org/wiki/gzip "wikipedia:gzip")** — "popular data compression program"
+
+	[https://www.gnu.org/software/gzip/](https://www.gnu.org/software/gzip/) || [gzip](https://www.archlinux.org/packages/?name=gzip)
+
+*   **[tar](/index.php/Tar "Tar")** — "provides the ability to create tar archives, as well as various other kinds of manipulation"
+
+	[https://www.gnu.org/software/tar/](https://www.gnu.org/software/tar/) || [tar](https://www.archlinux.org/packages/?name=tar)
 
 ## Development Tools
 
@@ -77,10 +87,10 @@ Many other optional GNU tools are available in the [official repositories](/inde
 
 **spreadsheet:** [Gnumeric](/index.php/Gnumeric "Gnumeric")
 
-**image editor:** [GIMP](/index.php/Multimedia#GIMP "Multimedia")
+**image editor:** [GIMP](/index.php/List_of_applications/Multimedia#Raster_editors "List of applications/Multimedia")
 
 **full-screen window manager:** [GNU Screen](/index.php/GNU_Screen "GNU Screen")
 
-## Links
+## See also
 
-For a list of all current GNU projects, see [All GNU Packages](http://www.gnu.org/software/software.html#allgnupkgs)
+For a list of all current GNU projects, see [All GNU Packages](http://www.gnu.org/software/software.html#allgnupkgs).

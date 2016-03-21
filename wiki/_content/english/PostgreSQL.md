@@ -410,6 +410,8 @@ If the `pg_upgrade` step fails with the following messages,
 
 	Make sure you are in a directory that the postgres user has enough rights to write the log file to (`/tmp` for example), or use `su - postgres` instead of `sudo -u postgres`.
 
+	If you are in a directory that postgres user has enough rights to write the log file to however you still get this error then make sure `/var/lib/postgres` is owned by postgres
+
 	LC_COLLATE error that says that old and new values are different
 
 	Figure out what the old locale was, `C` or `en_US.UTF-8` for example, and force it when calling `initdb`.

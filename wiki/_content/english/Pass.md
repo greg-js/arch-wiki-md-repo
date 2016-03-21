@@ -14,23 +14,23 @@
 
 ## Basic usage
 
-**Note:** To be able to use pass, set up gnupg as described in [GnuPG#Basic keys management](/index.php/GnuPG#Basic_keys_management "GnuPG")
+**Note:** To be able to use pass, set up [GnuPG](/index.php/GnuPG "GnuPG").
 
-*   Initialize the password store
-
-```
-$ pass init <gpg-id or email>
+To initialize the password store:
 
 ```
+$ pass init *<gpg-id or email>*
 
-*   Insert password, providing a descriptive hierarchical name
+```
+
+To create a new password, first provide a descriptive hierarchical name. In this example, this is *archlinux.org/wiki/username*.
 
 ```
 $ pass insert archlinux.org/wiki/username
 
 ```
 
-*   Get a view of the password store
+To get a view of the password store do the following. Not the example output which shows the hiearchy we just created.
 
  `$ pass` 
 ```
@@ -41,21 +41,21 @@ Password Store
 
 ```
 
-*   Generate a new random password, where `<n>` is the desired password length as a number.
+To generate a new random password for the above example, do the following, where `*n*` is the desired password length as a number:
 
 ```
-$ pass generate archlinux.org/wiki/username <n>
+$ pass generate archlinux.org/wiki/username *n*
 
 ```
 
-*   Retrieve password, enter the gpg passphrase at the prompt
+To retreive a password, enter the gpg passphrase at the following prompt, again using the same hierarchical example name from above:
 
 ```
 $ pass archlinux.org/wiki/username
 
 ```
 
-*   Users of Xorg with [xclip](https://www.archlinux.org/packages/?name=xclip) installed can retrieve the password directly onto the clipboard temporarily to paste into web forms via:
+Users of Xorg with [xclip](https://www.archlinux.org/packages/?name=xclip) installed can retrieve the password directly onto the clipboard temporarily (*e.g.,* to paste into web forms). To do so, do the following (again with the same example hierarchical name from above):
 
 ```
 $ pass -c archlinux.org/wiki/username

@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Network_Configuration](/index.php/Network_Configuration "Network Configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-10-25，点击[这里](https://wiki.archlinux.org/index.php?title=Network_Configuration&diff=0&oldid=279517)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Network_configuration](/index.php/Network_configuration "Network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-19，点击[这里](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=424907)可以查看翻译后英文页面的改动。
 
-本页解释了如何配置 **有线** 网络连接。如果你需要设置 **无线** 网络，参见[无线配置](/index.php/Wireless_Setup "Wireless Setup")页面。
+本页解释了如何配置 **有线** 网络连接。如果你需要设置 **无线** 网络，参见[无线配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")页面。
 
 ## Contents
 
@@ -11,98 +11,79 @@
     *   [3.2 加载设备模块](#.E5.8A.A0.E8.BD.BD.E8.AE.BE.E5.A4.87.E6.A8.A1.E5.9D.97)
 *   [4 网络接口](#.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3)
     *   [4.1 设备名称](#.E8.AE.BE.E5.A4.87.E5.90.8D.E7.A7.B0)
-        *   [4.1.1 更改设备名称](#.E6.9B.B4.E6.94.B9.E8.AE.BE.E5.A4.87.E5.90.8D.E7.A7.B0)
-    *   [4.2 设定设备的 MTU 和队列长度](#.E8.AE.BE.E5.AE.9A.E8.AE.BE.E5.A4.87.E7.9A.84_MTU_.E5.92.8C.E9.98.9F.E5.88.97.E9.95.BF.E5.BA.A6)
-    *   [4.3 获取当前网络名](#.E8.8E.B7.E5.8F.96.E5.BD.93.E5.89.8D.E7.BD.91.E7.BB.9C.E5.90.8D)
+    *   [4.2 获取当前网络名](#.E8.8E.B7.E5.8F.96.E5.BD.93.E5.89.8D.E7.BD.91.E7.BB.9C.E5.90.8D)
+        *   [4.2.1 更改设备名称](#.E6.9B.B4.E6.94.B9.E8.AE.BE.E5.A4.87.E5.90.8D.E7.A7.B0)
+        *   [4.2.2 使用传统网络命名规则](#.E4.BD.BF.E7.94.A8.E4.BC.A0.E7.BB.9F.E7.BD.91.E7.BB.9C.E5.91.BD.E5.90.8D.E8.A7.84.E5.88.99)
+    *   [4.3 设定设备的 MTU 和队列长度](#.E8.AE.BE.E5.AE.9A.E8.AE.BE.E5.A4.87.E7.9A.84_MTU_.E5.92.8C.E9.98.9F.E5.88.97.E9.95.BF.E5.BA.A6)
     *   [4.4 启用和禁用网络接口](#.E5.90.AF.E7.94.A8.E5.92.8C.E7.A6.81.E7.94.A8.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3)
 *   [5 配置 IP 地址](#.E9.85.8D.E7.BD.AE_IP_.E5.9C.B0.E5.9D.80)
     *   [5.1 动态 IP 地址](#.E5.8A.A8.E6.80.81_IP_.E5.9C.B0.E5.9D.80)
         *   [5.1.1 systemd-networkd](#systemd-networkd)
-        *   [5.1.2 netctl](#netctl)
-        *   [5.1.3 手工运行 DHCP 客户端守护进程](#.E6.89.8B.E5.B7.A5.E8.BF.90.E8.A1.8C_DHCP_.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
-        *   [5.1.4 启动时运行 DHCP](#.E5.90.AF.E5.8A.A8.E6.97.B6.E8.BF.90.E8.A1.8C_DHCP)
+        *   [5.1.2 dhcpcd](#dhcpcd)
+        *   [5.1.3 netctl](#netctl)
     *   [5.2 静态 IP 地址](#.E9.9D.99.E6.80.81_IP_.E5.9C.B0.E5.9D.80)
-        *   [5.2.1 systemd-networkd](#systemd-networkd_2)
-        *   [5.2.2 dhcpcd](#dhcpcd)
-        *   [5.2.3 手动指定](#.E6.89.8B.E5.8A.A8.E6.8C.87.E5.AE.9A)
-        *   [5.2.4 启动时使用 systemd 手动连接](#.E5.90.AF.E5.8A.A8.E6.97.B6.E4.BD.BF.E7.94.A8_systemd_.E6.89.8B.E5.8A.A8.E8.BF.9E.E6.8E.A5)
-            *   [5.2.4.1 使用静态 IP 地址](#.E4.BD.BF.E7.94.A8.E9.9D.99.E6.80.81_IP_.E5.9C.B0.E5.9D.80)
+        *   [5.2.1 netctl](#netctl_2)
+        *   [5.2.2 systemd-networkd](#systemd-networkd_2)
+        *   [5.2.3 dhcpcd](#dhcpcd_2)
+        *   [5.2.4 手动指定](#.E6.89.8B.E5.8A.A8.E6.8C.87.E5.AE.9A)
         *   [5.2.5 计算地址](#.E8.AE.A1.E7.AE.97.E5.9C.B0.E5.9D.80)
-*   [6 载入设置](#.E8.BD.BD.E5.85.A5.E8.AE.BE.E7.BD.AE)
-*   [7 更多设置](#.E6.9B.B4.E5.A4.9A.E8.AE.BE.E7.BD.AE)
-    *   [7.1 笔记本电脑使用 Ifplugd](#.E7.AC.94.E8.AE.B0.E6.9C.AC.E7.94.B5.E8.84.91.E4.BD.BF.E7.94.A8_Ifplugd)
-    *   [7.2 绑定和链路聚合](#.E7.BB.91.E5.AE.9A.E5.92.8C.E9.93.BE.E8.B7.AF.E8.81.9A.E5.90.88)
-    *   [7.3 IP 别名](#IP_.E5.88.AB.E5.90.8D)
-        *   [7.3.1 示例](#.E7.A4.BA.E4.BE.8B)
-    *   [7.4 更改 MAC/硬件地址](#.E6.9B.B4.E6.94.B9_MAC.2F.E7.A1.AC.E4.BB.B6.E5.9C.B0.E5.9D.80)
-    *   [7.5 共享网络连接](#.E5.85.B1.E4.BA.AB.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5)
-    *   [7.6 路由配置](#.E8.B7.AF.E7.94.B1.E9.85.8D.E7.BD.AE)
-    *   [7.7 局域网主机的名称解析](#.E5.B1.80.E5.9F.9F.E7.BD.91.E4.B8.BB.E6.9C.BA.E7.9A.84.E5.90.8D.E7.A7.B0.E8.A7.A3.E6.9E.90)
-*   [8 疑难排解](#.E7.96.91.E9.9A.BE.E6.8E.92.E8.A7.A3)
-    *   [8.1 更换了连接cable modem的计算机](#.E6.9B.B4.E6.8D.A2.E4.BA.86.E8.BF.9E.E6.8E.A5cable_modem.E7.9A.84.E8.AE.A1.E7.AE.97.E6.9C.BA)
-    *   [8.2 TCP窗口扩缩（window scaling）故障](#TCP.E7.AA.97.E5.8F.A3.E6.89.A9.E7.BC.A9.EF.BC.88window_scaling.EF.BC.89.E6.95.85.E9.9A.9C)
-        *   [8.2.1 如何诊断故障](#.E5.A6.82.E4.BD.95.E8.AF.8A.E6.96.AD.E6.95.85.E9.9A.9C)
-        *   [8.2.2 如何修复（糟糕的方法）](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.EF.BC.88.E7.B3.9F.E7.B3.95.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.89)
-        *   [8.2.3 如何修复（好点的方法）](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.EF.BC.88.E5.A5.BD.E7.82.B9.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.89)
-        *   [8.2.4 如何修复（最佳的方法）](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.EF.BC.88.E6.9C.80.E4.BD.B3.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.89)
-        *   [8.2.5 更多](#.E6.9B.B4.E5.A4.9A)
-    *   [8.3 Realtek 没有连接/网络唤醒故障](#Realtek_.E6.B2.A1.E6.9C.89.E8.BF.9E.E6.8E.A5.2F.E7.BD.91.E7.BB.9C.E5.94.A4.E9.86.92.E6.95.85.E9.9A.9C)
-        *   [8.3.1 方法一 还原/变更Win驱动](#.E6.96.B9.E6.B3.95.E4.B8.80_.E8.BF.98.E5.8E.9F.2F.E5.8F.98.E6.9B.B4Win.E9.A9.B1.E5.8A.A8)
-        *   [8.3.2 方法二 启动Windows驱动里的网络唤醒功能](#.E6.96.B9.E6.B3.95.E4.BA.8C_.E5.90.AF.E5.8A.A8Windows.E9.A9.B1.E5.8A.A8.E9.87.8C.E7.9A.84.E7.BD.91.E7.BB.9C.E5.94.A4.E9.86.92.E5.8A.9F.E8.83.BD)
-        *   [8.3.3 方法三 更新Realtek Linux驱动](#.E6.96.B9.E6.B3.95.E4.B8.89_.E6.9B.B4.E6.96.B0Realtek_Linux.E9.A9.B1.E5.8A.A8)
-        *   [8.3.4 方法四 在 BIOS/CMOS 中启用 *LAN Boot ROM*](#.E6.96.B9.E6.B3.95.E5.9B.9B_.E5.9C.A8_BIOS.2FCMOS_.E4.B8.AD.E5.90.AF.E7.94.A8_LAN_Boot_ROM)
-    *   [8.4 DLink G604T/DLink G502T DNS 故障](#DLink_G604T.2FDLink_G502T_DNS_.E6.95.85.E9.9A.9C)
-        *   [8.4.1 如何诊断故障](#.E5.A6.82.E4.BD.95.E8.AF.8A.E6.96.AD.E6.95.85.E9.9A.9C_2)
-        *   [8.4.2 如何修复](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D)
-        *   [8.4.3 更多](#.E6.9B.B4.E5.A4.9A_2)
-    *   [8.5 检查 DHCP 问题先释放 IP 地址](#.E6.A3.80.E6.9F.A5_DHCP_.E9.97.AE.E9.A2.98.E5.85.88.E9.87.8A.E6.94.BE_IP_.E5.9C.B0.E5.9D.80)
-    *   [8.6 Atheros AR8161 没有 eth0](#Atheros_AR8161_.E6.B2.A1.E6.9C.89_eth0)
-    *   [8.7 Atheros AR9485 没有 eth0](#Atheros_AR9485_.E6.B2.A1.E6.9C.89_eth0)
-    *   [8.8 待机后未接线缆 / 无连接](#.E5.BE.85.E6.9C.BA.E5.90.8E.E6.9C.AA.E6.8E.A5.E7.BA.BF.E7.BC.86_.2F_.E6.97.A0.E8.BF.9E.E6.8E.A5)
-    *   [8.9 Broadcom BCM57780](#Broadcom_BCM57780)
+*   [6 更多设置](#.E6.9B.B4.E5.A4.9A.E8.AE.BE.E7.BD.AE)
+    *   [6.1 笔记本电脑使用 Ifplugd](#.E7.AC.94.E8.AE.B0.E6.9C.AC.E7.94.B5.E8.84.91.E4.BD.BF.E7.94.A8_Ifplugd)
+    *   [6.2 绑定和链路聚合](#.E7.BB.91.E5.AE.9A.E5.92.8C.E9.93.BE.E8.B7.AF.E8.81.9A.E5.90.88)
+    *   [6.3 IP 别名](#IP_.E5.88.AB.E5.90.8D)
+        *   [6.3.1 示例](#.E7.A4.BA.E4.BE.8B)
+    *   [6.4 更改 MAC/硬件地址](#.E6.9B.B4.E6.94.B9_MAC.2F.E7.A1.AC.E4.BB.B6.E5.9C.B0.E5.9D.80)
+    *   [6.5 共享网络连接](#.E5.85.B1.E4.BA.AB.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5)
+    *   [6.6 路由配置](#.E8.B7.AF.E7.94.B1.E9.85.8D.E7.BD.AE)
+    *   [6.7 局域网主机的名称解析](#.E5.B1.80.E5.9F.9F.E7.BD.91.E4.B8.BB.E6.9C.BA.E7.9A.84.E5.90.8D.E7.A7.B0.E8.A7.A3.E6.9E.90)
+*   [7 疑难排解](#.E7.96.91.E9.9A.BE.E6.8E.92.E8.A7.A3)
+    *   [7.1 更换了连接cable modem的计算机](#.E6.9B.B4.E6.8D.A2.E4.BA.86.E8.BF.9E.E6.8E.A5cable_modem.E7.9A.84.E8.AE.A1.E7.AE.97.E6.9C.BA)
+    *   [7.2 TCP窗口扩缩（window scaling）故障](#TCP.E7.AA.97.E5.8F.A3.E6.89.A9.E7.BC.A9.EF.BC.88window_scaling.EF.BC.89.E6.95.85.E9.9A.9C)
+        *   [7.2.1 如何诊断故障](#.E5.A6.82.E4.BD.95.E8.AF.8A.E6.96.AD.E6.95.85.E9.9A.9C)
+        *   [7.2.2 如何修复（糟糕的方法）](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.EF.BC.88.E7.B3.9F.E7.B3.95.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.89)
+        *   [7.2.3 如何修复（好点的方法）](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.EF.BC.88.E5.A5.BD.E7.82.B9.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.89)
+        *   [7.2.4 如何修复（最佳的方法）](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.EF.BC.88.E6.9C.80.E4.BD.B3.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.89)
+        *   [7.2.5 更多](#.E6.9B.B4.E5.A4.9A)
+    *   [7.3 Realtek 没有连接/网络唤醒故障](#Realtek_.E6.B2.A1.E6.9C.89.E8.BF.9E.E6.8E.A5.2F.E7.BD.91.E7.BB.9C.E5.94.A4.E9.86.92.E6.95.85.E9.9A.9C)
+        *   [7.3.1 方法一 还原/变更Win驱动](#.E6.96.B9.E6.B3.95.E4.B8.80_.E8.BF.98.E5.8E.9F.2F.E5.8F.98.E6.9B.B4Win.E9.A9.B1.E5.8A.A8)
+        *   [7.3.2 方法二 启动Windows驱动里的网络唤醒功能](#.E6.96.B9.E6.B3.95.E4.BA.8C_.E5.90.AF.E5.8A.A8Windows.E9.A9.B1.E5.8A.A8.E9.87.8C.E7.9A.84.E7.BD.91.E7.BB.9C.E5.94.A4.E9.86.92.E5.8A.9F.E8.83.BD)
+        *   [7.3.3 方法三 更新Realtek Linux驱动](#.E6.96.B9.E6.B3.95.E4.B8.89_.E6.9B.B4.E6.96.B0Realtek_Linux.E9.A9.B1.E5.8A.A8)
+        *   [7.3.4 方法四 在 BIOS/CMOS 中启用 *LAN Boot ROM*](#.E6.96.B9.E6.B3.95.E5.9B.9B_.E5.9C.A8_BIOS.2FCMOS_.E4.B8.AD.E5.90.AF.E7.94.A8_LAN_Boot_ROM)
+    *   [7.4 DLink G604T/DLink G502T DNS 故障](#DLink_G604T.2FDLink_G502T_DNS_.E6.95.85.E9.9A.9C)
+        *   [7.4.1 如何诊断故障](#.E5.A6.82.E4.BD.95.E8.AF.8A.E6.96.AD.E6.95.85.E9.9A.9C_2)
+        *   [7.4.2 如何修复](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D)
+        *   [7.4.3 更多](#.E6.9B.B4.E5.A4.9A_2)
+    *   [7.5 检查 DHCP 问题先释放 IP 地址](#.E6.A3.80.E6.9F.A5_DHCP_.E9.97.AE.E9.A2.98.E5.85.88.E9.87.8A.E6.94.BE_IP_.E5.9C.B0.E5.9D.80)
+    *   [7.6 Atheros AR8161 没有 eth0](#Atheros_AR8161_.E6.B2.A1.E6.9C.89_eth0)
+    *   [7.7 Atheros AR9485 没有 eth0](#Atheros_AR9485_.E6.B2.A1.E6.9C.89_eth0)
+    *   [7.8 待机后未接线缆 / 无连接](#.E5.BE.85.E6.9C.BA.E5.90.8E.E6.9C.AA.E6.8E.A5.E7.BA.BF.E7.BC.86_.2F_.E6.97.A0.E8.BF.9E.E6.8E.A5)
+    *   [7.9 Broadcom BCM57780](#Broadcom_BCM57780)
 
 ## 检查连接
 
-**注意:** 如果你在执行 ping 的时候碰到像 `ping: icmp open socket: Operation not permitted` 这样的错误，尝试重新安装 `iputils` 软件包。
-
-大多数情况下，基本的安装过程已经创建了正确的网络配置。通过运行以下命令来检查：
+基本的安装过程已经创建了正确的网络配置。通过*ping*检查：
 
  `$ ping -c 3 www.google.com` 
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 64 bytes from 74.125.224.146: icmp_req=1 ttl=50 time=437 ms
-64 bytes from 74.125.224.146: icmp_req=2 ttl=50 time=385 ms
-64 bytes from 74.125.224.146: icmp_req=3 ttl=50 time=298 ms
-
---- www.l.google.com ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 1999ms
-rtt min/avg/max/mdev = 298.107/373.642/437.202/57.415 ms
 
 ```
 
+成功时会收到类似上面的 64 bytes 信息，按 `Control-C` 可以停止ping.
+
 **小贴士:** 参数 `-c 3` 表示执行命令 `ping` 3次 。 参见 `man ping`。
 
-如果像上面这样成功运行,那么你只需要进行下面这些个人配置。
+如果上面的命令说 unknown hosts，意思是你的机器无法进行域名解析。这可能和你的服务提供商或者你的路由器/网关有关。你可以尝试 ping `8.8.8.8` 来验证你的电脑是否能访问 Internet。它是 Google 的主 DNS 服务器，因此它可以视为可信的，通常不会被过滤系统或代理屏蔽。
 
-如果上面的命令说 unknown hosts，意思是你的机器无法进行域名解析。这可能和你的服务提供商或者你的路由器/网关有关。你可以尝试 ping 一个静态的 IP 地址来验证你的电脑是否能访问 Internet。
-
-**注意:** 选项 `-c 3` 表示发送三次。参见 `man ping` 获得更多信息。
  `$ ping -c 3 8.8.8.8` 
 ```
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_req=1 ttl=53 time=52.9 ms
-64 bytes from 8.8.8.8: icmp_req=2 ttl=53 time=72.5 ms
-64 bytes from 8.8.8.8: icmp_req=3 ttl=53 time=70.6 ms
-
---- 8.8.8.8 ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 2002ms
-rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 
 ```
 
-**注意:** `8.8.8.8` 是一个容易记忆的静态地址。它是 Google 的主 DNS 服务器，因此它可以视为可信的，通常不会被过滤系统或代理屏蔽。
-
-如果你能够 ping 通这个地址，你可以尝试把这个域名服务器添加到 `/etc/resolv.conf` 文件中。
+如果可以 ping `8.8.8.8` 但是不能 ping `www.google.com`, 参考 [resolv.conf](/index.php/Resolv.conf "Resolv.conf") 检查 DNS 配置。还需要查下 `/etc/nsswitch.conf` 中的 `hosts` 行。如果不能 ping 通，请检查网线问题。
 
 ## 设置计算机名
 
@@ -113,16 +94,22 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 
 ```
 
-这将会把 **myhostname** 写入 `/etc/hostname`。
+这将会把 **myhostname** 写入 `/etc/hostname`。详情参见 `man 5 hostname` 和 `man 1 hostnamectl`。
 
-详情参见 `man 5 hostname` 和 `man 1 hostnamectl`。
+建议同时在 `/etc/hosts` 中设置 hostname：
 
-**注意:**
+ `/etc/hosts` 
 ```
-* `hostnamectl` 支持 FQDNs
+#
+# /etc/hosts: static lookup table for host names
+#
 
+#<ip-address>	<hostname.domain.org>	<hostname>
+127.0.0.1	localhost.localdomain	localhost	 *myhostname*
+::1		localhost.localdomain	localhost	 *myhostname*
 ```
-* 你不再需要编辑 `/etc/hosts`， [systemd](https://www.archlinux.org/packages/?name=systemd) 提供了主机名称的解析，它默认安装在所有系统上。
+
+**注意:** [systemd](https://www.archlinux.org/packages/?name=systemd) 通过 `myhostname` nss 模块(在 `/etc/nsswitch.conf` 中默认启用)进行主机名解析，所以大部分情况下都不需要在 `/etc/hosts` 中设置主机名。但是有些用户反馈如果不设置，某些依赖网络的程序会碰到延迟问题。参考 [#Local network hostname resolution](#Local_network_hostname_resolution)。
 
 要临时设置主机名（直到下次重启为止），使用 [inetutils](https://www.archlinux.org/packages/?name=inetutils) 中的 `hostname` 命令：
 
@@ -169,20 +156,30 @@ $ dmesg |grep atl1
 
 对于有多块网卡的电脑，固定设备名称很重要。许多配置问题都是由于网络接口名称变化引起的。
 
-[udev](/index.php/Udev "Udev") 负责给设备命名。Systemd v197 引入了[可预测的网络接口名称](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames)自动给网络设备分配静态名称，网络接口现在是以前缀 `en`（以太网）、`wl`（WLAN）、或者 `ww`（WWAN）附上一个自动生成的标识符，产生了一个类似于 `enp0s25` 的条目。
-
-可以添加一个链接来禁用这个行为：
-
-```
-# ln -s /dev/null /etc/udev/rules.d/80-net-name-slot.rules
-
-```
-
-从以前版本的 systemd 升级的用户会有一份自动创建的空规则文件。因此，如果你想使用固定的设备名称，删除这个文件即可。
-
-**小贴士:** 你可以运行 `ip link` 或者 `ls /sys/class/net` 列出所有接口。
+[udev](/index.php/Udev "Udev") 负责给设备命名。Systemd v197 引入了[可预测的网络接口名称](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames)自动给网络设备分配静态名称，网络接口现在是以前缀 `en`（以太网）、`wl`（WLAN）、或者 `ww`（WWAN）附上一个自动生成的标识符，产生了一个类似于 `enp0s25` 的条目。在 [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") 中添加 `net.ifnames=0` 可以禁用此功能.
 
 **注意:** 当你改变接口命名规则时，不要忘记更新所有与网络相关的配置文件和自定义的 systemd unit 文件以反映变化。特别是当你启用了 [netctl 静态配置](/index.php/Netctl#Basic_method "Netctl") 时，要运行 `netctl reenable *profile*` 来更新生成的服务文件。
+
+### 获取当前网络名
+
+可以通过 sysfs 或 `ip link` 找到。
+
+ `$ ls /sys/class/net` 
+```
+
+lo eth0 eth1 firewire0
+
+```
+ `$ ip link` 
+```
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:23:6f:3a brd ff:ff:ff:ff:ff:ff
+
+```
+
+无线设备名称也可以通过 `iw dev` 查看，请参考 [Wireless network configuration#Getting some useful information](/index.php/Wireless_network_configuration#Getting_some_useful_information "Wireless network configuration").
 
 #### 更改设备名称
 
@@ -202,6 +199,12 @@ SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
 
 **注意:** 选择静态名称时，**应该避免使用形如 "eth*X*" 或 "wlan*X*" 的名称**，因为这可能在引导时导致内核与 udev 之间的竞争状态。相反，最好用内核默认不会使用的接口名称，例如：`net0`、`net1`、`wifi0`、`wifi1`。更多细节请查看 [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) 文档。
 
+#### 使用传统网络命名规则
+
+如果希望使用传统的命名方法 eth0,可以通过下面方法禁用 [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames):
+
+1.  ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+
 ### 设定设备的 MTU 和队列长度
 
 你可以手动定义一条 udev 规则来改变队列的 MTU（最大传输单元）和队列长度You can change the device MTU and queue length by defining manually with an udev-rule。举例来说：
@@ -209,17 +212,6 @@ SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
  `/etc/udev/rules.d/10-network.rules` 
 ```
 ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_len}="2000"
-
-```
-
-### 获取当前网络名
-
-可以通过 sysfs 找到当前的 NIC 名称：
-
- `$ ls /sys/class/net` 
-```
-
-lo eth0 eth1 firewire0
 
 ```
 
@@ -242,9 +234,13 @@ lo eth0 eth1 firewire0
 
 ```
 
+**Note:** 如果默认路由是通过 `eth0` 建立，禁用接口同时也会删除路由，再次启用也不会自动重新建立路由，要重新建立，请参考 [#手动分配](#.E6.89.8B.E5.8A.A8.E5.88.86.E9.85.8D).
+
 ## 配置 IP 地址
 
 有两种配置方式：通过 [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol")，或者不变的*静态*地址。
+
+**Tip:** In addition to the methods described below one can also use a [network manager](/index.php/List_of_applications#Network_managers "List of applications"). Network managers are especially useful for dynamic network connections and wifi networking.
 
 ### 动态 IP 地址
 
@@ -252,108 +248,20 @@ lo eth0 eth1 firewire0
 
 一种DHCP的简单配置方法是利用systemd提供的[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")服务。参见[systemd-networkd#Basic DHCP network](/index.php/Systemd-networkd#Basic_DHCP_network "Systemd-networkd")。
 
+#### dhcpcd
+
+[dhcpcd](/index.php/Dhcpcd "Dhcpcd") is the default client in Arch Linux to setup DHCP on the installation ISO. It is a powerful tool with many configurable DHCP client options. See [dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd") on how to activate it for an interface.
+
 #### netctl
 
 [netctl](/index.php/Netctl "Netctl")是利用用户创建的profiles进行网络配置的CTI-based工具，如何创建profile参见[netctl#Example profiles](/index.php/Netctl#Example_profiles "Netctl")，激活参见[netctl#Basic method](/index.php/Netctl#Basic_method "Netctl")。
 
-#### 手工运行 DHCP 客户端守护进程
-
-请注意，`dhcpcd`（DHCP *客户端* 守护进程）与 `dhcpd`（DHCP *（服务端）* 守护进程）的不同。
-
- `# dhcpcd eth0` 
-```
- dhcpcd: version 5.1.1 starting
- dhcpcd: eth0: broadcasting for a lease
- ...
- dhcpcd: eth0: leased 192.168.1.70 for 86400 seconds
-
-```
-
-现在，`ip addr show dev eth0` 将列出你的网络地址。
-
-对一些人来说，`dhcpcd` 失败时，`dhclient`（位于软件包 [dhclient](https://www.archlinux.org/packages/?name=dhclient) 中）会有用。
-
-#### 启动时运行 DHCP
-
-如果你只想在你的以太网连接上使用 DHCP，你可以使用 `dhcpcd@.service` （由软件包 [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) 提供）。
-
-```
-`eth0` 上启用 DHCP，只要调用：
-
-```
-
-```
-# systemctl start dhcpcd@eth0.service
-
-```
-
-你能这样来使这个服务在启动时自动启用：
-
-```
-# systemctl enable dhcpcd@eth0.service
-
-```
-
-如果 dhcpd 服务在你的网卡模块之前启动（[FS#30235](https://bugs.archlinux.org/task/30235)），手动地把你的网卡添加到 `/etc/modules-load.d/*.conf` 中。例如，如果你的 Realtek 网卡需要载入 `r8169`，创建：
-
- `/etc/modules-load.d/realtek.conf` 
-```
-r8169
-
-```
-
-**小贴士:** 使用 `lspci -k` 来找出你的网卡需要什么模块。
-
-如果你使用 DHCP 自动获取 IP 地址，但是**不**想每次启动网络的时候让 DHCP 更改你的 DNS 服务器（域名服务器），在 `dhcpcd.conf` 的最后一部分中添加：
-
- `/etc/dhcpcd.conf` 
-```
-nohook resolv.conf
-
-```
-
-此外，如果你在一个使用基于 MAC 地址的 Client ID 来过滤的 DHCPv4 网络中，你可能需要把以下这行：
-
- `/etc/dhcpcd.conf` 
-```
-# Use the same DUID + IAID as set in DHCPv6 for DHCPv4 Client ID as per RFC4361\. 
-duid
-
-```
-
-改为：
-
- `/etc/dhcpcd.conf` 
-```
-# Use the hardware address of the interface for the Client ID (DHCPv4).
-clientid
-
-```
-
-否则，你可能得不到租凭，因为 DHCP 服务器可能无法正确读取你的 [DHCPv6-style](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") Client ID。更多信息可参见[RFC 4361](http://tools.ietf.org/html/rfc4361)。
-
-在 `/etc/dhcpcd.conf` 中使用 nooption 选项来阻止 dhcpcd 向 `/etc/resolv.conf` 添加域名服务器：
-
- `/etc/dhcpcd.conf` 
-```
-nooption domain_name_servers
-
-```
-
-然后把你自己的 DNS 服务器添加到 `/etc/resolv.conf`.
-
-如果多个不同进程都会更改`/etc/resolv.conf` (例如，[dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) 和 VPN 客户端)，请安装 [openresolv](https://www.archlinux.org/packages/?name=openresolv) 软件包，使用它不需要额外地配置[dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd)。
-
 ### 静态 IP 地址
 
-使用静态 IP 地址有多种原因，例如通过不变的IP地址获得一定程度的可预测性，或者你没有可用的 DHCP 服务器。
-
-**注意:** 在不使用路由器的情况下和一台安装 Windows 的电脑分享你的网络连接，请确保两台电脑都使用静态 IP ，否则你的局域网将会有问题。
-
-需要确定：
+不管用什么方法设置静态 IP，都需要确定：
 
 *   静态IP地址，
-*   [子网掩码](https://en.wikipedia.org/wiki/Subnetwork "wikipedia:Subnetwork")，
+*   [子网掩码](https://en.wikipedia.org/wiki/Subnetwork "wikipedia:Subnetwork")，使用 [CIDR 表示法](https://en.wikipedia.org/wiki/CIDR_notation "wikipedia:CIDR notation")
 *   Subnet mask in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing"), for example `/24` is the CIDR notation of `255.255.255.0` netmask
 *   [广播地址](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address")，
 *   [网关](https://en.wikipedia.org/wiki/Default_gateway "wikipedia:Default gateway")的IP地址
@@ -364,7 +272,11 @@ nooption domain_name_servers
 **Warning:**
 
 *   Make sure manually assigned IP addresses do not conflict with DHCP assigned ones. See [this forum thread](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797)
-*   If you share your Internet connection from a Windows machine without a router, be sure to use static IP addresses on both computers to avoid LAN problems.
+*   在不使用路由器的情况下和一台安装 Windows 的电脑分享你的网络连接，请确保两台电脑都使用静态 IP ，否则你的局域网将会有问题。
+
+#### netctl
+
+To create a [netctl](/index.php/Netctl "Netctl") profile with a static IP, set the `IP=static` option as well as `Address`, `Gateway`, and `DNS`. See [netctl#Wired](/index.php/Netctl#Wired "Netctl").
 
 #### systemd-networkd
 
@@ -376,23 +288,19 @@ See [dhcpcd#Static profile](/index.php/Dhcpcd#Static_profile "Dhcpcd").
 
 #### 手动指定
 
-你可以在终端中指定一个静态 IP：
+It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection will not persist across reboots. First enable the [network interface](#Network_interfaces):
 
 ```
-# ip addr add <IP 地址>/<子网掩码> dev <interface>
-
-```
-
-例如：
-
-```
-# ip addr add 192.168.1.2/24 dev eth0
+ # ip link set *interface* up
 
 ```
 
-**注意:** 子网掩码使用 [CIDR 表示法](https://en.wikipedia.org/wiki/CIDR_notation "wikipedia:CIDR notation")。
+在终端中指定一个静态 IP：
 
-更多选项参见：`man ip`
+```
+# ip addr add *IP_address*/*subnet_mask* broadcast *broadcast_address* dev *interface*
+
+```
 
 如此添加你的网关（用你的网关 IP 替换）：
 
@@ -404,103 +312,31 @@ See [dhcpcd#Static profile](/index.php/Dhcpcd#Static_profile "Dhcpcd").
 例如：
 
 ```
+# ip link set eth0 up
+# ip addr add 192.168.1.2/24 dev eth0
 # ip route add default via 192.168.1.1
 
 ```
 
-如要你看到 "No such process" 的错误，这意味着你必须以root权限运行`ip link set dev eth0 up`。
+To undo these steps (e.g. before switching to a dynamic IP), first remove any assigned IP address:
 
-#### 启动时使用 systemd 手动连接
-
-首先为创建 [systemd](/index.php/Systemd "Systemd") 服务的配置文件，使用适当的接口名称替换 `<interface>`：
-
- `/etc/conf.d/network@<interface>` 
 ```
-address=192.168.0.15
-netmask=24
-broadcast=192.168.0.255
-gateway=192.168.0.1
+# ip addr flush dev *interface*
 
 ```
 
-创建一个 systemd unit 文件：
+然后删除指定的网关：
 
- `/etc/systemd/system/network@.service` 
 ```
-[Unit]
-Description=Network connectivity (%i)
-Wants=network.target
-Before=network.target
-BindsTo=sys-subsystem-net-devices-%i.device
-After=sys-subsystem-net-devices-%i.device
-
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-EnvironmentFile=/etc/conf.d/network@%i
-
-ExecStart=/usr/bin/ip link set dev %i up
-ExecStart=/usr/bin/ip addr add ${address}/${netmask} broadcast ${broadcast} dev %i
-ExecStart=/usr/bin/ip route add default via ${gateway}
-
-ExecStop=/usr/bin/ip addr flush dev %i
-ExecStop=/usr/bin/ip link set dev %i down
-
-[Install]
-WantedBy=multi-user.target
+# ip route flush dev *interface*
 
 ```
 
-启用并启动此 unit， 传入接口的名称：
+最后禁用接口：
 
-```
-# systemctl enable network@eth0.service
-# systemctl start network@eth0.service
+1.  ip link set *interface* down
 
-```
-
-##### 使用静态 IP 地址
-
-用编辑器创建文件 `/etc/systemd/system/network.service`。这份示例中使用一个静态 IP 地址和 [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")。
-
- `/etc/systemd/system/network.service` 
-```
-[Unit]
-Description=Network Connectivity
-Wants=network.target
-Before=network.target
-BindsTo=sys-subsystem-net-devices-net0.device
-After=sys-subsystem-net-devices-net0.device
-
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-ExecStart=/usr/bin/ip link set dev net0 up
-ExecStart=/usr/bin/wpa_supplicant -B -i net0 -c /etc/wpa_supplicant.conf # Remove this for wired connections
-ExecStart=/usr/bin/ip addr add 192.168.0.10/24 dev net0
-ExecStart=/usr/bin/ip route add default via 192.168.0.1
-
-ExecStop=/usr/bin/ip addr flush dev net0
-ExecStop=/usr/bin/ip link set dev net0 down
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-不要忘记启用它！
-
-```
-# systemctl enable network
-
-```
-
-要进行测试，重启或保证所有其它网络的守护进程已经停止，并以 root 权限执行：
-
-```
-# systemctl start network
-
-```
+更多选项参见：`man ip`，这些命令可以用 systemd 服务自动启动，请参考[systemd units](/index.php/Systemd#Writing_unit_files "Systemd").
 
 #### 计算地址
 
@@ -519,25 +355,11 @@ Hosts/Net: 2                     Class A, Private Internet
 
 ```
 
-## 载入设置
-
-想测试你的设置，可以重启计算机或者重新加载相关的 systemd 服务：
-
-```
- # systemctl restart dhcpcd@eth0
-
-```
-
-试着按照这个顺序 ping 一些网络地址：你的网关， DNS 服务器（域名服务器）， ISP 服务提供商，以及其他的网络地址。这样可以检查你的网络连接在哪里出了问题。如：
-
-```
-$ ping -c 3 www.google.com
-
-```
-
 ## 更多设置
 
 ### 笔记本电脑使用 Ifplugd
+
+**Tip:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 也提供了同样的功能。
 
 [官方仓库](/index.php/%E5%AE%98%E6%96%B9%E4%BB%93%E5%BA%93 "官方仓库") 中的 [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) 是一个守护进程，当网络适配器插入的时候自动配置网络，当网络断开的时候自动取消配置（比如某些3G的usb网络适配器）。这对于笔记本电脑这样的使用移动式的网络适配器的情况很有用，因为他只会在网络实际接入的时候才会配置网络接口。另外一个可能会用得着它的情况是，你需要重启你的网络，可是你既不想重启电脑也不想在 shell 中配置。
 
@@ -549,7 +371,7 @@ $ ping -c 3 www.google.com
 
 ### 绑定和链路聚合
 
-参见 [netctl (简体中文)#Bonding（绑定）](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Bonding.EF.BC.88.E7.BB.91.E5.AE.9A.EF.BC.89 "Netctl (简体中文)")。
+参见 [netctl (简体中文)#Bonding（绑定）](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Bonding.EF.BC.88.E7.BB.91.E5.AE.9A.EF.BC.89 "Netctl (简体中文)") 或 [Wireless bonding](/index.php/Wireless_bonding "Wireless bonding").
 
 ### IP 别名
 

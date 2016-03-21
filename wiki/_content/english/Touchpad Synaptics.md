@@ -144,7 +144,7 @@ EndSection
 
 	**MaxTapTime**
 
-	Determines how "crisp" a tap must be to be considered a real tap. Decrease the value to require a more crisp tap. Properly adjusting this parameter can really help make the touchpad behave better, cutting down false positives when the hands hover over or lightly touch the pad.
+	Determines how "crisp" a tap must be to be considered a real tap. Decrease the value to require a more crisp tap. Properly adjusting this parameter can reduce false positives when the hands hover over or lightly touch the pad.
 
 	**VertScrollDelta** and **HorizScrollDelta**
 

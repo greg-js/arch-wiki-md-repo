@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [File manager functionality](/index.php/File_manager_functionality "File manager functionality"). Дата последней синхронизации: 8 октября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=File_manager_functionality&diff=0&oldid=403776).
+**Состояние перевода:** На этой странице представлен перевод статьи [File manager functionality](/index.php/File_manager_functionality "File manager functionality"). Дата последней синхронизации: 20 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=File_manager_functionality&diff=0&oldid=421403).
 
 В этой статье описываются дополнительные программные пакеты, необходимые для расширения возможностей и функций файловых менеджеров, в частности, где используются [оконные менеджеры](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер") такие как [Openbox](/index.php/Openbox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Openbox (Русский)"). Если необходимо, также предусмотрена возможность доступа к разделам и съемным носителям информации (например флешкам) без пароля.
 
@@ -18,9 +18,11 @@
     *   [2.4 Запакованные файлы](#.D0.97.D0.B0.D0.BF.D0.B0.D0.BA.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B)
     *   [2.5 Поддержка чтения/записи NTFS](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D1.87.D1.82.D0.B5.D0.BD.D0.B8.D1.8F.2F.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B8_NTFS)
     *   [2.6 Настольные уведомления](#.D0.9D.D0.B0.D1.81.D1.82.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.83.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [2.7 Включение функции корзины на разных файловых системах (внешние диски)](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8_.D0.BA.D0.BE.D1.80.D0.B7.D0.B8.D0.BD.D1.8B_.D0.BD.D0.B0_.D1.80.D0.B0.D0.B7.D0.BD.D1.8B.D1.85_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0.D1.85_.28.D0.B2.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B8.D1.81.D0.BA.D0.B8.29)
 *   [3 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [3.1 При попытке монтирования дисков выдаётся "Not Authorized" (нет авторизации)](#.D0.9F.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B4.D0.B8.D1.81.D0.BA.D0.BE.D0.B2_.D0.B2.D1.8B.D0.B4.D0.B0.D1.91.D1.82.D1.81.D1.8F_.22Not_Authorized.22_.28.D0.BD.D0.B5.D1.82_.D0.B0.D0.B2.D1.82.D0.BE.D1.80.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8.29)
     *   [3.2 Для доступа к разделам требуется пароль](#.D0.94.D0.BB.D1.8F_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0_.D0.BA_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0.D0.BC_.D1.82.D1.80.D0.B5.D0.B1.D1.83.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D1.8C)
+    *   [3.3 Каталоги не открываются в файловом менеджере](#.D0.9A.D0.B0.D1.82.D0.B0.D0.BB.D0.BE.D0.B3.D0.B8_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.B2_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.BE.D0.BC_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B5)
 
 ## Обзор
 
@@ -54,9 +56,9 @@
 
 Дополнительные пакеты для установки обычно следуют из этого [gvfs-* шаблона](https://www.archlinux.org/packages/?q=gvfs-), например:
 
-*   [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc): съёмные носители (такие как USB-флешки, оптические диски, и цифровые камеры)
-*   [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp): телефоны и медиаплееры, которые требуют [MTP](/index.php/MTP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MTP (Русский)")
-*   [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2): автоматическая передача контента с многих цифровых камер
+*   [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp): медиа-плееры и мобильные устройства, которые используют [MTP](/index.php/MTP "MTP")
+*   [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2): цифровые фотоаппараты и мобильные устройства, которые используют [PTP](https://en.wikipedia.org/wiki/Picture_Transfer_Protocol "wikipedia:Picture Transfer Protocol")
+*   [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc): мобильные устройства Apple
 
 #### Демон файлового менеджера
 
@@ -100,7 +102,7 @@ smb://<server name>/<share name>
 
 #### Доступ к Apple
 
-При использовании [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc), для доступа к файлам AFP начала откройте файловый менеджер, и введите следующую команду в адресной строке, изменяя <sever name> и <share name> в соответствующих случаях:
+Поддержка AFP включена в [gvfs](https://www.archlinux.org/packages/?name=gvfs), для доступа к файлам AFP начала откройте файловый менеджер, и введите следующую команду в адресной строке, изменяя <sever name> и <share name> в соответствующих случаях:
 
 ```
 afp://<server name>/<share name>
@@ -149,6 +151,24 @@ afp://<server name>/<share name>
 
 Некоторые файловые менеджеры используют [настольные уведомления](/index.php/Desktop_notifications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop notifications (Русский)") для подтверждения различных событий и состояний, например: монтирование, размонтирование и отсоединение съемных носителей.
 
+### Включение функции корзины на разных файловых системах (внешние диски)
+
+Создайте [каталог Корзины](http://www.ramendik.ru/docs/trashspec.html) `.Trash-*<uid>*` для всех пользователей на верхнем уровне файловой системы:
+
+Например (точка монтирования: /media/sdc1, uid: 1000, gid: 1000):
+
+```
+# mkdir /media/sdc1/.Trash-1000
+
+```
+
+и `chown` (смените владельца):
+
+```
+# chown 1000:1000 /media/sdc1/.Trash-1000
+
+```
+
 ## Решение проблем
 
 ### При попытке монтирования дисков выдаётся "Not Authorized" (нет авторизации)
@@ -158,3 +178,27 @@ afp://<server name>/<share name>
 ### Для доступа к разделам требуется пароль
 
 Необходимость ввода пароля для доступа к другим разделам или монтирования съемных носителей, вероятно, будет из-за настроек разрешения по умолчанию в [udisks2](https://www.archlinux.org/packages/?name=udisks2). Более конкретно разрешение может быть установлен только в учетной записи администратора, а не учетной записи пользователя. Для подробностей смотрите [Udisks#Настройка](/index.php/Udisks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "Udisks (Русский)").
+
+### Каталоги не открываются в файловом менеджере
+
+Вы можете обнаружить, что приложение, которое не является файловым менеджером, например [Audacious](/index.php/Audacious "Audacious") устанавливается в качестве приложения по умолчанию для открытия каталогов — приложение указывает MIME тип `inode/directory` в его desktop записи по умолчанию. Вы можете запросить приложение по умолчанию для открытия каталогов с помощью следующей команды:
+
+```
+$ xdg-mime query default inode/directory
+
+```
+
+Для того, чтобы убедиться, что каталоги открываются в файловом менеджере, выполните следующую команду:
+
+```
+$ xdg-mime default *my-file-manager.desktop* inode/directory
+
+```
+
+где `*my-file-manager.desktop*` запись desktop является вашим файловым менеджером — например `*org.gnome.Nautilus.desktop*`.
+
+**Совет:** Если вы хотите поменять общесистемные настройки, запустите вышеуказанную команду от имени суперпользователя, или создайте / отредактируйте следующий файл: `/usr/share/applications/mimeapps.list` 
+```
+[Default Applications]
+inode/directory=*my-file-manager.desktop*
+```

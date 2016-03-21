@@ -75,6 +75,8 @@ If you want to use a graphical frontend or program that integrates with GnuPG, s
 
 The default configuration files are `~/.gnupg/gpg.conf` and `~/.gnupg/dirmngr.conf`. To change the default location, either run gpg this way `$ gpg --homedir *path/to/file*` or use the `$GNUPGHOME` environment variable. Append to these files any long options you want. Do not write the two dashes, but simply the name of the option and required arguments. You will find skeleton files in `/usr/share/gnupg`. These files are copied to `~/.gnupg` the first time gpg is run if they do not exist there. Other examples are found in [#See also](#See_also).
 
+Additionally, [pacman](/index.php/Pacman "Pacman") uses a different set of configuration files for package signature verification. See [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing") for details.
+
 ## Usage
 
 **Note:**
@@ -109,7 +111,7 @@ The command will prompt for answers to several questions. For general use most p
 To backup your private key do the following:
 
 ```
-$ gpg --export-secret-keys --armor *<user-id>* > privkey.asc
+$ gpg --export-secret-keys --armor *<user-id>* > *privkey.asc*
 
 ```
 
@@ -124,7 +126,7 @@ In order for others to send encrypted messages to you, they need your public key
 To generate an ASCII version of your public key (*e.g.* to distribute it by e-mail):
 
 ```
-$ gpg --armor --output public.key --export *<user-id>*
+$ gpg --armor --output *public.key* --export *<user-id>*
 
 ```
 
@@ -134,10 +136,10 @@ Alternatively, or in addition, you can share your key [on a keyserver](#Use_a_ke
 
 ### Import a key
 
-In order to encrypt messages to others, as well as verify their signatures, you need their public key. To import a public key to your public key ring:
+In order to encrypt messages to others, as well as verify their signatures, you need their public key. To import a public key with file name `*public.key*` to your public key ring:
 
 ```
-$ gpg --import public.key
+$ gpg --import *public.key*
 
 ```
 
@@ -178,10 +180,10 @@ $ gpg --recv-keys *<key-id>*
 
 When encrypting or decrypting it is possible to have more than one private key in use. If this occurs you need to select the active key by using the option `-u *<user-id>*` or `--local-user *<user-id>*`.
 
-To encrypt a file using ASCII armor (suitable for copying and pasting a message in text format), use:
+To encrypt a file named `*doc*` using ASCII armor (suitable for copying and pasting a message in text format), use:
 
 ```
-$ gpg --encrypt --armor secret.txt
+$ gpg --encrypt --armor *doc*
 
 ```
 
@@ -198,7 +200,7 @@ If you want to just encrypt a file, exclude `--armor`.
 To decrypt a file, use:
 
 ```
-$ gpg --decrypt secret.txt.asc
+$ gpg --decrypt *doc.asc*
 
 ```
 
@@ -319,7 +321,7 @@ Signatures certify and timestamp documents. If the document is modified, verific
 To sign a file use the `--sign` or `-s` flag:
 
 ```
- $ gpg --output doc.sig --sign doc
+ $ gpg --output *doc.sig* --sign *doc*
 
 ```
 
@@ -330,7 +332,7 @@ The above also encrypts the file and stores it in binary format.
 To sign a file without compressing it into binary format use:
 
 ```
- $ gpg --clearsign doc
+ $ gpg --clearsign *doc*
 
 ```
 
@@ -341,7 +343,7 @@ This wraps the document into an ASCII-armored signature, but does not modify the
 To create a separate signature file to be distributed separately from the document or file itself, use the `--detach-sig` flag:
 
 ```
- $ gpg --output doc.sig --detach-sig doc
+ $ gpg --output *doc.sig* --detach-sig *doc*
 
 ```
 
@@ -352,20 +354,22 @@ This method is often used in distributing software projects to allow users to ve
 To verify a signature use the `--verify` flag:
 
 ```
- $ gpg --verify doc.sig
+ $ gpg --verify *doc.sig*
 
 ```
+
+where `*doc.sig*` is the signature you wish to verify.
 
 To verify and decrypt a file at the same time, use the `--decrypt` flag as you normally would in decrypting a file.
 
 If you are verifying a detached signature, both the file and the signature must be present when verifying. For example, to verify Arch Linux's latest iso you would do:
 
 ```
- $ gpg --verify archlinux-<version>-dual.iso.sig
+ $ gpg --verify *archlinux-<version>-dual.iso.sig*
 
 ```
 
-where `archlinux-<version>-dual.iso` must be located in the same directory.
+where `*archlinux-<version>-dual.iso*` must be located in the same directory.
 
 ## gpg-agent
 

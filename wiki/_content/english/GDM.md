@@ -8,7 +8,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM):
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Autostarting](#Autostarting)
+    *   [2.1 Autostarting applications with GDM](#Autostarting_applications_with_GDM)
     *   [2.2 Log-in screen background image](#Log-in_screen_background_image)
     *   [2.3 DConf configuration](#DConf_configuration)
         *   [2.3.1 Log-in screen logo](#Log-in_screen_logo)
@@ -51,7 +51,7 @@ You might also wish to install the following:
 
 ## Configuration
 
-### Autostarting
+### Autostarting applications with GDM
 
 See [Display manager#Autostarting](/index.php/Display_manager#Autostarting "Display manager"). Note that adding scripts to `/etc/gdm/Init` no longer works, see the [upstream bug report](https://bugzilla.gnome.org/show_bug.cgi?id=751602).
 

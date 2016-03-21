@@ -2,10 +2,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/binfmt_misc "wikipedia:binfmt mis
 
 	"*binfmt_misc is a capability of the Linux kernel which allows arbitrary executable file formats to be recognized and passed to certain user space applications, such as emulators and virtual machines.*"
 
-In plain language, this allows you to take a [Java](/index.php/Java "Java") jar file that you would ordinarily run via a line such as
+In plain language, this allows you to take a file such as a [Java](/index.php/Java "Java") jar or [Mono](/index.php/Mono "Mono") exe that you would ordinarily run via a line such as
 
 ```
 java -jar /path/to/MyProgram.jar
+mono /path/to/MyProgram.exe
 
 ```
 
@@ -13,6 +14,13 @@ and instead run it simply with
 
 ```
 MyProgram.jar
+
+```
+
+or
+
+```
+MyProgram.exe
 
 ```
 
@@ -52,19 +60,25 @@ none  /proc/sys/fs/binfmt_misc binfmt_misc defaults 0 0
 
 ### Registering the file type with binfmt_misc
 
-This is done by echoing a specially formatted line to **/proc/sys/fs/binfmt_misc/register**. The contents of the line is explained in the **Documentation/binfmt_misc.txt** file. To make the file registrations automatic at boot you can add the appropriate lines to your **rc.local** file, for example:
+Filetype registration on Arch is handled by **systemd-binfmt**.
+
+Binfmt registration lines can be placed in a file in `/etc/binfmt.d`.
+
+The contents of the line is explained in the **Documentation/binfmt_misc.txt** file.
+
+The following lines will create registration files for running Java binaries without having to explicitly call the java command (you still need to have it installed). The first two work by redirecting Java class and jar files to a set of 'wrapper' scripts described in the next section. The final entry runs Java applets in the usual way.
 
 ```
 # binfmt_misc support for Java applications:
-echo ':Java:M::\xca\xfe\xba\xbe::/usr/local/bin/javawrapper:' > /proc/sys/fs/binfmt_misc/register
+echo ':Java:M::\xca\xfe\xba\xbe::/usr/local/bin/javawrapper:' > /etc/binfmt.d/Java.conf
 # binfmt_misc support for executable Jar files:
-echo ':ExecutableJAR:E::jar::/usr/local/bin/jarwrapper:' > /proc/sys/fs/binfmt_misc/register
+echo ':ExecutableJAR:E::jar::/usr/local/bin/jarwrapper:' > /etc/binfmt.d/ExecutableJAR.conf
 # binfmt_misc support for Java Applets:
-echo ':Applet:E::html::/opt/java/bin/appletviewer:' > /proc/sys/fs/binfmt_misc/register
+echo ':Applet:E::html::/opt/java/bin/appletviewer:' > /etc/binfmt.d/Applet.conf
 
 ```
 
-The first two of the above entries run Java class and jar files via 'wrapper' scripts describe in the next section. The final entry runs Java applets in the usual way. You may reboot or run the file to put the registrations into effect immediately.
+Restart `systemd-binfmt` to register the new handlers. Registered binfmt handlers show up as files in `/proc/sys/fs/binfmt_misc`. Viewing this file should show the name of the registered wrapper script and either the magic bytes or file extension used to recognize that file type.
 
 ### The wrapper scripts
 

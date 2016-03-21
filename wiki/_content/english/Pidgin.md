@@ -155,6 +155,10 @@ Facebook XMPP is not working since April 30th, 2015\. See [[1]](https://develope
 
 An alternative is to use a ThirdPartyPlugin that uses Facebook IM, see [[2]](https://github.com/jgeboski/purple-facebook)
 
+You can get the plugin from either [purple-facebook](https://aur.archlinux.org/packages/purple-facebook/) or [purple-facebook-git](https://aur.archlinux.org/packages/purple-facebook-git/)
+
+Then add a new account, select Facebook as the protocol, enter your [Facebook username](https://www.facebook.com/help/211813265517027) and password and login.
+
 ## Security
 
 Pidgin uses Libpurple 2 which stores passwords unencrypted (in plaintext) in $HOME/.purple/account.xml, see [[3]](https://developer.pidgin.im/wiki/PlainTextPasswords). You can store them in a keyring by using a plugin like:

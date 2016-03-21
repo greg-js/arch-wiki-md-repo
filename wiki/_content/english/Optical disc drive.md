@@ -695,6 +695,10 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
 
+*   **shnsplit** — Splits .wav and .flac files according to a CUE sheet and encodes the resulting pieces. A useful companion to ABCDE.
+
+	[http://www.etree.org/shnutils/shntool/](http://www.etree.org/shnutils/shntool/) || [shntool](https://www.archlinux.org/packages/?name=shntool)
+
 *   **[Sound Juicer](https://en.wikipedia.org/wiki/Sound_Juicer "wikipedia:Sound Juicer")** — CD ripper for GNOME.
 
 	[http://burtonini.com/blog/computers/sound-juicer](http://burtonini.com/blog/computers/sound-juicer) || [sound-juicer](https://www.archlinux.org/packages/?name=sound-juicer)

@@ -27,7 +27,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Budgie](/index.php/Budgie_Desktop "Budgie Desktop")** — Budgie is a desktop environment designed with the modern user in mind, it focuses on simplicity and elegance.
 
-	[https://solus-project.com/budgie/](https://solus-project.com/budgie/) || [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/)
+	[https://solus-project.com/budgie/](https://solus-project.com/budgie/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
 
 *   **[Cinnamon](/index.php/Cinnamon "Cinnamon")** — Cinnamon strives to provide a traditional user experience. Cinnamon is a fork of GNOME 3.
 
@@ -125,8 +125,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 | Desktop environment | Widget toolkit | Window manager | Taskbar | Terminal emulator | File manager | Calculator | Text editor | Image viewer | Media player | Web browser | Display manager |
 | [Budgie](/index.php/Budgie_Desktop "Budgie Desktop") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | budgie-wm
-[budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) | budgie-panel
-[budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
+[budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) | budgie-panel
+[budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
 [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
 [nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
 [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")

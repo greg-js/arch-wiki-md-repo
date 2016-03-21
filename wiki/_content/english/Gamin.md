@@ -4,14 +4,9 @@ Gamin re-implements the [FAM](/index.php/FAM "FAM") specification with [inotify]
 
 ## Installation
 
-If FAM is installed, first [disable](/index.php/Disable "Disable") `fam.service`; then remove the [fam](https://aur.archlinux.org/packages/fam/) package, ignoring any reverse dependencies:
+Install the [gamin](https://www.archlinux.org/packages/?name=gamin) package.
 
-```
-# pacman -Rdd fam
-
-```
-
-Now you can install the [gamin](https://www.archlinux.org/packages/?name=gamin) package.
+If FAM is installed, first [disable](/index.php/Disable "Disable") `fam.service` and then install [gamin](https://www.archlinux.org/packages/?name=gamin); you will be prompted to remove the [fam](https://aur.archlinux.org/packages/fam/) package during the installation.
 
 ## External links
 

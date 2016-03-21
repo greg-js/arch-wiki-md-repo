@@ -7,16 +7,15 @@
     *   [2.1 GTK+ temporary cosmetic fix](#GTK.2B_temporary_cosmetic_fix)
 *   [3 Transmission daemon and CLI](#Transmission_daemon_and_CLI)
     *   [3.1 Starting and stopping the daemon](#Starting_and_stopping_the_daemon)
-        *   [3.1.1 Autostart at boot](#Autostart_at_boot)
-        *   [3.1.2 Run only while connected to network](#Run_only_while_connected_to_network)
-            *   [3.1.2.1 Netctl](#Netctl)
-            *   [3.1.2.2 Wicd](#Wicd)
-            *   [3.1.2.3 NetworkManager](#NetworkManager)
-    *   [3.2 Choosing a user](#Choosing_a_user)
-    *   [3.3 Configuring the daemon](#Configuring_the_daemon)
-        *   [3.3.1 Watch dir](#Watch_dir)
+    *   [3.2 Run only while connected to network](#Run_only_while_connected_to_network)
+        *   [3.2.1 Netctl](#Netctl)
+        *   [3.2.2 Wicd](#Wicd)
+    *   [3.3 Choosing a user](#Choosing_a_user)
+    *   [3.4 Configuring the daemon](#Configuring_the_daemon)
+        *   [3.4.1 Watch dir](#Watch_dir)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 UDP Failed to set receive/sent buffer](#UDP_Failed_to_set_receive.2Fsent_buffer)
+    *   [4.1 Cannot access the daemon over the network](#Cannot_access_the_daemon_over_the_network)
+    *   [4.2 UDP Failed to set receive/sent buffer](#UDP_Failed_to_set_receive.2Fsent_buffer)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -72,13 +71,13 @@ The commands for *transmission-cli* are:
 
 ### Starting and stopping the daemon
 
-As explained in [#Choosing a user](#Choosing_a_user), the `transmission` daemon can be run:
+As explained in [#Choosing a user](#Choosing_a_user), the transmission daemon can be run:
 
-*   As the user *transmission*, by running as root: `# systemctl start transmission` The daemon can then be stopped with: `# systemctl stop transmission` 
+*   As the user *transmission*, by starting/enabling `transmission.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
+
+	you can change the user as explained in [#Choosing a user](#Choosing_a_user)
 
 *   As your own user, by running under your user name: `$ transmission-daemon` The daemon can then be stopped with: `$ killall transmission-daemon` 
-
-*   Starting (and stopping) `transmission.service` with [systemctl](/index.php/Systemd#Using_units "Systemd") will use the user set in [#Choosing a user](#Choosing_a_user). Note that the name of the systemd service is `transmission.service`, not `transmission-daemon.service`.
 
 Starting the daemon will create an initial *transmission* configuration file. See [#Configuring the daemon](#Configuring_the_daemon).
 
@@ -89,21 +88,9 @@ $ transmission-remote --exit
 
 ```
 
-#### Autostart at boot
+### Run only while connected to network
 
-[Enable](/index.php/Enable "Enable") `transmission.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
-
-The daemon is started after `network.service` was initialised. However, if you enable the service `dhcpcd` as opposed to the device-specific service, such as `dhcpcd@enp1s0.service` for example, it may happen that Transmission is started too early and cannot bind to the network interface. Thus, the web interface is unreachable. A possible solution is to add the `Requires` line to the unit's [configuration file](/index.php/Systemd#Editing_provided_units "Systemd"):
-
- `/etc/systemd/system/transmission.service.d/fixdep.conf` 
-```
-[Unit]
-Requires=network.target
-```
-
-#### Run only while connected to network
-
-##### Netctl
+#### Netctl
 
 It may only be desirable to run transmission on certain networks. The following script checks that the connection is to a list of authorized networks and then proceeds to launch transmission-daemon.
 
@@ -132,7 +119,7 @@ fi
 
 ```
 
-##### Wicd
+#### Wicd
 
 Create a [start script](#Starting_and_stopping_the_daemon) in folder `/etc/wicd/scripts/postconnect`, and a [stop script](#Starting_and_stopping_the_daemon) in folder `/etc/wicd/scripts/predisconnect`. Remember to make them executable. For example:
 
@@ -148,8 +135,6 @@ systemctl start transmission
 
 systemctl stop transmission
 ```
-
-##### NetworkManager
 
 ### Choosing a user
 
@@ -207,6 +192,16 @@ If you want to *Automatically add .torrent files from a folder*, but you find th
 If you're using systemd, edit the unit file located at `/etc/systemd/system/transmission.service`.
 
 ## Troubleshooting
+
+#### Cannot access the daemon over the network
+
+The daemon is started after `network.service` was initialised. However, if you enable the service `dhcpcd` as opposed to the device-specific service, such as `dhcpcd@enp1s0.service` for example, it may happen that Transmission is started too early and cannot bind to the network interface. Thus, the web interface is unreachable. A possible solution is to add the `Requires` line to the unit's [configuration file](/index.php/Systemd#Editing_provided_units "Systemd"):
+
+ `/etc/systemd/system/transmission.service.d/fixdep.conf` 
+```
+[Unit]
+Requires=network.target
+```
 
 ### UDP Failed to set receive/sent buffer
 

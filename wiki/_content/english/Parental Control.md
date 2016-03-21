@@ -1,5 +1,15 @@
 Several methods exist to protect and limit child activity on a computer.
 
+**Note:** Any security features will be effective only on the level you enforce them. For example, even after installing a parental control application in the operating system, the child may bypass it by downloading and booting any Linux distribution live image.
+
+## Contents
+
+*   [1 Applications](#Applications)
+*   [2 Whitelist with Tinyproxy and Firehol](#Whitelist_with_Tinyproxy_and_Firehol)
+*   [3 OpenDNS Parental Control](#OpenDNS_Parental_Control)
+*   [4 Editing /etc/hosts](#Editing_.2Fetc.2Fhosts)
+*   [5 Browser add-ons](#Browser_add-ons)
+
 ## Applications
 
 *   **timekpr** — A program controlling use of user accounts. It can limit by access duration with the daemon *timed*, and configure at what time users can log in. A client in the traybar warns the users about their time running out, while administration is done in a graphical GTK GUI.
@@ -13,6 +23,8 @@ Several methods exist to protect and limit child activity on a computer.
 *   **logkeys** — A daemon that logs keypresses into a logfile for later inspection. The log file resides by default in `/var/log`, but it is recommended to move it to an encrypted partition; it will for example contain every password entered in the system. Use the --keymap option if using a localized, non-US keyboard. For supervision purposes, the `--no-func-keys` option is recommended.
 
 	[https://github.com/kernc/logkeys](https://github.com/kernc/logkeys) || [logkeys-git](https://aur.archlinux.org/packages/logkeys-git/)
+
+*   [DansGuardian](/index.php/DansGuardian "DansGuardian"). If you wish, you might even set up an Arch based router running DansGuardian and enforce all other devices in your physical network to connect to the internet through this router.
 
 ## Whitelist with Tinyproxy and Firehol
 
@@ -60,3 +72,13 @@ password=myopendnspassword
 myhostname
 
 ```
+
+You may sometimes even set up your router to use OpenDNS, therefore allowing protection spanning on all devices connected to that router.
+
+## Editing /etc/hosts
+
+You may configure your [/etc/hosts](https://en.wikipedia.org/wiki/Hosts_(file) file to block access to certain domains. A more draconian approach is to only allow domains explicitly stated in /etc/hosts, as described [here](https://help.ubuntu.com/community/ParentalControls#Do_It_Yourself_Whitelisting). If you do this, please remember that this will affect your whole system, so for example pacman may be unable to connect to the update server unless you make a proper binding in your /etc/hosts.
+
+## Browser add-ons
+
+Several add-ons exist for web browsers to filter web content. Some of them can even block out pages examining on their body, not only on their URL. Be warned, however, that this is not a very secure way. Starting Firefox in safe mode, messing with the Firefox profile directory or Firefox profile manager are obvious ways to attempt to shut down Firefox-based add-ons. If all else fails, the kid may simply use a different browser.

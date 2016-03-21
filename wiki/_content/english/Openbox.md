@@ -125,6 +125,8 @@ $ cp -R /etc/xdg/openbox ~/.config/
 
 This file is also pre-configured, meaning that it will only be necessary to amend existing content in order to customise behaviour to suit personal preference.
 
+**Note:** Per-application settings pertaining to fixed placement of applications per monitor will only work if the x & y position have also been defined.
+
 ### menu.xml
 
 `~/.config/openbox/menu.xml` defines the type and behaviour of the desktop menu, accessable by right-clicking the background. Although the default provided is a **static menu** (meaning that it will not automatically update when new applications are installed), it is possible to employ the use of **dynamic menus** that will automatically update as well.

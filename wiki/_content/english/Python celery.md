@@ -20,6 +20,7 @@ Quoting authors of the [project](http://www.celeryproject.org/):
     *   [4.4 Your package within chroot](#Your_package_within_chroot)
     *   [4.5 Test chroot](#Test_chroot)
     *   [4.6 systemd chroot unit](#systemd_chroot_unit)
+*   [5 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
@@ -471,3 +472,9 @@ At this stage following should work:
 # systemctl start celery
 
 ```
+
+## Troubleshooting
+
+1.  celery systemd script does not report issues however celery service is not running
+
+    	Try running celery from console and study resulting logs `/usr/bin/chroot --userspec=root:root /srv/http /usr/bin/env -i HOME=/ /usr/bin/python -m celery worker -A package_name --uid=33 --gid=33 --pidfile=/run/celery.pid --logfile=/var/log/celery/celery.log --loglevel="INFO"`

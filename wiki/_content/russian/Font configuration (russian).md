@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Font configuration](/index.php/Font_configuration "Font configuration"). Дата последней синхронизации: 2 октября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Font_configuration&diff=0&oldid=402644).
+**Состояние перевода:** На этой странице представлен перевод статьи [Font configuration](/index.php/Font_configuration "Font configuration"). Дата последней синхронизации: 18 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Font_configuration&diff=0&oldid=426368).
 
 [Fontconfig](http://www.freedesktop.org/wiki/Software/fontconfig/) - это библиотека, разработанная для предоставления списка доступных [шрифтов](/index.php/Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fonts (Русский)") приложениям, а также для настройки того, как шрифты будут отображены: смотрите [Wikipedia:Fontconfig](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig"). Библиотека FreeType [freetype2](https://www.archlinux.org/packages/?name=freetype2) отображает (рендерит) шрифты, основываясь на этих настройках.
 
@@ -27,18 +27,15 @@
     *   [2.10 Создать стили для жирных и курсивных «некомплектных» шрифтов](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D1.81.D1.82.D0.B8.D0.BB.D0.B8_.D0.B4.D0.BB.D1.8F_.D0.B6.D0.B8.D1.80.D0.BD.D1.8B.D1.85_.D0.B8_.D0.BA.D1.83.D1.80.D1.81.D0.B8.D0.B2.D0.BD.D1.8B.D1.85_.C2.AB.D0.BD.D0.B5.D0.BA.D0.BE.D0.BC.D0.BF.D0.BB.D0.B5.D0.BA.D1.82.D0.BD.D1.8B.D1.85.C2.BB_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2)
     *   [2.11 Изменение главного правила](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B3.D0.BB.D0.B0.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.B0)
     *   [2.12 Запрос текущих настроек](#.D0.97.D0.B0.D0.BF.D1.80.D0.BE.D1.81_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B8.D1.85_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA)
-*   [3 Патченные пакеты](#.D0.9F.D0.B0.D1.82.D1.87.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
-    *   [3.1 Infinality](#Infinality)
-    *   [3.2 Ubuntu](#Ubuntu)
-    *   [3.3 Возвращение к непатченым пакетам](#.D0.92.D0.BE.D0.B7.D0.B2.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA_.D0.BD.D0.B5.D0.BF.D0.B0.D1.82.D1.87.D0.B5.D0.BD.D1.8B.D0.BC_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0.D0.BC)
-*   [4 Приложения без поддержки fontconfig](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B1.D0.B5.D0.B7_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_fontconfig)
-*   [5 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [5.1 Искаженные шрифты](#.D0.98.D1.81.D0.BA.D0.B0.D0.B6.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D1.88.D1.80.D0.B8.D1.84.D1.82.D1.8B)
-    *   [5.2 Calibri, Cambria, Monaco, и т. д. не отображаются правильно](#Calibri.2C_Cambria.2C_Monaco.2C_.D0.B8_.D1.82._.D0.B4._.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE)
-    *   [5.3 Приложения переопределяют hinting](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D0.B5.D1.80.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.8F.D1.8E.D1.82_hinting)
-    *   [5.4 Приложения не используют hinting из настроек DE](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BD.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8E.D1.82_hinting_.D0.B8.D0.B7_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_DE)
-    *   [5.5 Неправильный hinting в приложениях GTK на НЕ-Gnome системах](#.D0.9D.D0.B5.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_hinting_.D0.B2_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.D1.85_GTK_.D0.BD.D0.B0_.D0.9D.D0.95-Gnome_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0.D1.85)
-*   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [3 Приложения без поддержки fontconfig](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B1.D0.B5.D0.B7_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_fontconfig)
+*   [4 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [4.1 Искаженные шрифты](#.D0.98.D1.81.D0.BA.D0.B0.D0.B6.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D1.88.D1.80.D0.B8.D1.84.D1.82.D1.8B)
+    *   [4.2 Calibri, Cambria, Monaco, и т. д. не отображаются правильно](#Calibri.2C_Cambria.2C_Monaco.2C_.D0.B8_.D1.82._.D0.B4._.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE)
+    *   [4.3 Приложения переопределяют hinting](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D0.B5.D1.80.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.8F.D1.8E.D1.82_hinting)
+    *   [4.4 Приложения не используют hinting из настроек DE](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BD.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8E.D1.82_hinting_.D0.B8.D0.B7_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_DE)
+    *   [4.5 Неправильный hinting в приложениях GTK на НЕ-Gnome системах](#.D0.9D.D0.B5.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_hinting_.D0.B2_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.D1.85_GTK_.D0.BD.D0.B0_.D0.9D.D0.95-Gnome_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0.D1.85)
+    *   [4.6 Проблема шрифтов в Сгенерированных файлах PDF](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2_.D0.B2_.D0.A1.D0.B3.D0.B5.D0.BD.D0.B5.D1.80.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0.D1.85_PDF)
+*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Пути шрифтов
 
@@ -62,7 +59,10 @@ $ grep /fonts /var/log/Xorg.0.log
 
 ```
 
-**Совет:** Вы также можете проверить список [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)")'а на наличие известных путей шрифтов с помощью команды `xset q`.
+**Совет:**
+
+*   Вы также можете проверить список [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)")'а на наличие известных путей шрифтов с помощью команды `xset q`.
+*   Используйте `/var/log/Xorg.0.log` если Xorg запускается с правами суперпользователя.
 
 Имейте в виду, что Xorg не ищет рекурсивно в каталоге `/usr/share/fonts/` как это делает Fontconfig. Чтобы добавить путь, нужно указать полный путь:
 
@@ -205,7 +205,7 @@ Hintstyle это сумма изменений шрифта, сделанных 
 
 ```
 
-**Примечание:** Субпиксельное отображение эффективно утраивает горизонтальное (или вертикальное) разрешение для шрифтов путем использования субпикселей. Авто Хинтинг и Субпиксельное Отоброжение не предназначены для совместной работы и не должны использоваться в сочетании без набора патчей [Infinality](/index.php/Infinality_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Infinality (Русский)").
+**Примечание:** Субпиксельное отображение эффективно утраивает горизонтальное (или вертикальное) разрешение для шрифтов путем использования субпикселей. По умолчанию, автохинтинг и субпиксельное отображение не предназначены для совместной работы, следовательно, вы захотите включить субпиксельный автохинтинг Infinality и др. собранный Freetype2 с [the <tt>TT_CONFIG_OPTION_SUBPIXEL_HINTING</tt> macro](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/0003-Enable-subpixel-hinting.patch?h=9867afd). Тем не менее, оно должно быть включено путем установки любого значения FT2_SUBPIXEL_HINTING в [переменных окружениях](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F "Переменные окружения") [FS#35274](https://bugs.archlinux.org/task/35274)
 
 #### LCD filter (ЖК-фильтр)
 
@@ -355,63 +355,9 @@ $ makepkg -e
 
 Чтобы отключить растровые шрифты (которые иногда используются в качестве «резерва» вместо отсутствующих шрифтов, в результате чего текст будет отображён некачественно), используйте `70-no-bitmaps.conf` (который не размещается в FontConfig по умолчанию):
 
-```
-# cd /etc/fonts/conf.d
-# rm 70-yes-bitmaps.conf
-# ln -s ../conf.avail/70-no-bitmaps.conf
+Растровые шрифты иногда используются в качестве резервных шрифтов, заместо отсутствующих/недоступных шрифтов, которые могут делать текст пиксельным (со ступеньками), или слишком большим. Чтобы отключить такое поведение, используйте `70-no-bitmaps.conf` [#Предварительные установки](#.D0.9F.D1.80.D0.B5.D0.B4.D0.B2.D0.B0.D1.80.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8).
 
-```
-
-Эта одна строка должна работать:
-
-```
-# ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-
-```
-
-Вам не нужно удалять `70-yes-bitmaps.conf` если он не существует. Вы можете выбрать какие растровые шрифты (Helvetica, Courier и Times), заменить на TTF шрифты, согласно:
-
- `~/.config/fontconfig/conf.d/29-replace-bitmap-fonts.conf` 
-```
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-    <!-- Заменить общие имена растровых шрифтов, на общие шрифты семейства TTF-->
-    <match target="pattern">
-        <test name="family" qual="any">
-            <string>Helvetica</string>
-        </test>
-        <edit mode="assign" name="family">
-            <string>Arial</string>
-            <string>Liberation Sans</string>
-            <string>sans-serif</string>
-        </edit>
-    </match>
-    <match target="pattern">
-        <test name="family" qual="any">
-            <string>Courier</string>
-        </test>
-        <edit mode="assign" name="family">
-            <string>Courier New</string>
-            <string>Liberation Mono</string>
-            <string>monospace</string>
-        </edit>
-    </match>
-    <match target="pattern">
-        <test name="family" qual="any">
-            <string>Times</string>
-        </test>
-        <edit mode="assign" name="family">
-            <string>Times New Roman</string>
-            <string>Liberation Serif</string>
-            <string>serif</string>
-        </edit>
-    </match>
-</fontconfig>
-
-```
-
-Чтобы отключить внедренный растр, для всех шрифтов:
+Чтобы отключить встроенные растровые шрифты у всех шрифтов:
  `~/.config/fontconfig/conf.d/20-no-embedded.conf` 
 ```
 <?xml version="1.0"?>
@@ -426,7 +372,7 @@ $ makepkg -e
 
 ```
 
-Чтобы отключить встроенные растровые шрифты для конкретного шрифта:
+Чтобы отключить встроенные растровые шрифты для определенного шрифта:
 
 ```
 <match target="font">
@@ -526,43 +472,15 @@ hinting: True(s)
 
 Посмотрите значения чисел в [http://www.freedesktop.org/software/fontconfig/fontconfig-user.html](http://www.freedesktop.org/software/fontconfig/fontconfig-user.html). Например. 'hintstyle: 3' означает 'hintfull'
 
-## Патченные пакеты
-
-Эти пакеты с применением патчей доступны в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"). Несколько рекомендаций:
-
-*   Как правило, необходима настройка.
-*   Новое отображение шрифтов не начнется, пока не перезагрузите приложения.
-*   Приложения которые [статически ссылаются](https://en.wikipedia.org/wiki/Static_library "wikipedia:Static library") на библиотеку, не будут использовать патчи принятые к системной библиотеке.
-
-### Infinality
-
-Смотрите [Infinality](/index.php/Infinality_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Infinality (Русский)").
-
-### Ubuntu
-
-Ubuntu добавляет дополнительные настройки, а иногда и патчи к библиотекам отображения шрифтов:
-
-*   [freetype2-ubuntu](https://aur.archlinux.org/packages/freetype2-ubuntu/) - Отображение шрифтов TrueType
-*   [fontconfig-ubuntu](https://aur.archlinux.org/packages/fontconfig-ubuntu/) - Для настройки и применения доступных шрифтов
-*   [cairo-ubuntu](https://aur.archlinux.org/packages/cairo-ubuntu/) — Библиотека векторной графики Cairo
-
-Должна быть добавлена общая настройка. Как отправную точку, смотрите [#Настройка Fontconfig](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Fontconfig). Отображение шрифтов с патчами Ubuntu работает лучше всего с вариантом *hintslight*.
-
-**Важно:** Пакеты AUR поддерживаются отдельно от приложений из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Вся графическая система может выйти из строя, если установленные пользователем основные графические библиотеки станут несовместимыми.
-
-### Возвращение к непатченым пакетам
-
-Для восстановления непатченых пакетов, установите оригинальные пакеты [freetype2](https://www.archlinux.org/packages/?name=freetype2), [cairo](https://www.archlinux.org/packages/?name=cairo), и [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) в качестве зависимостей (используя флаг `--asdeps` при переустановки с помощью pacman). Включите [lib32-cairo](https://www.archlinux.org/packages/?name=lib32-cairo), [lib32-fontconfig](https://www.archlinux.org/packages/?name=lib32-fontconfig), и [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2) если вы также устанавливали 32-разрядные версии.
-
 ## Приложения без поддержки fontconfig
 
-Некоторые приложения, как [Urxvt](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)") игнорируют настройки fontconfig. Это очень видно, когда используются патчи infinality, которые в значительной степени зависят от правильных настроек. Вы можете обойти это, используя `~/.Xresources`, но это не такой гибкий как fontconfig. Как пример (смотрите [#Настройка Fontconfig](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Fontconfig)), и для объяснения вариантов :
+Некоторые приложения, как [Urxvt](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)") игнорируют настройки fontconfig. Вы можете обойти эту проблему с помощью `~/.Xresources`, который такой же гибкий как fontconfig. Как пример (смотрите [#Настройка Fontconfig](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Fontconfig)), и для объяснения вариантов :
 
  `~/.Xresources` 
 ```
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
+Xft.hintstyle:  hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
@@ -614,7 +532,7 @@ Xft.dpi:	102
 
 ### Приложения переопределяют hinting
 
-Некоторые приложения или окружения рабочего стола, по умолчанию, могут переопределять настройки fontconfig, такие как хинтинг и сглаживание. Это может случится с [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") 3, например когда вы используете приложения Qt, как [vlc](https://www.archlinux.org/packages/?name=vlc) или [smplayer](https://www.archlinux.org/packages/?name=smplayer). В таких случаях используйте специальную программу для применения настроек. Для GNOME, попробуйте [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) и установите сглаживание в `Rgba` вместо установленного по умолчанию `Grayscale`, при использовании infinality.
+Некоторые приложения или окружения рабочего стола, по умолчанию, могут переопределять настройки fontconfig, такие как хинтинг и сглаживание. Это может случится с [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") 3, например когда вы используете приложения Qt, как [vlc](https://www.archlinux.org/packages/?name=vlc) или [smplayer](https://www.archlinux.org/packages/?name=smplayer). В таких случаях используйте специальную программу для применения настроек. Для GNOME, попробуйте [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) и установите сглаживание в `Rgba` вместо установленного по умолчанию `Grayscale`.
 
 ### Приложения не используют hinting из настроек DE
 
@@ -651,6 +569,26 @@ Xft/Antialias 1
 ```
 
 Или вы можете написать настройки шрифтов, как директивы `Xft.*` в `~/.Xresources` без использования настроек демона.
+
+### Проблема шрифтов в Сгенерированных файлах PDF
+
+Если следующая команда
+
+```
+fc-match helvetica
+
+```
+
+создаёт
+
+```
+helvR12-ISO8859-1.pcf.gz: "Helvetica" "Regular"
+
+```
+
+то, скорее всего, растровый шрифт обеспечивается [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi), шрифт будет встроен в PDF сгенерированный каким-либо приложением с помощью "Печать в файл" или "Экспорт". Скорее всего растровый шрифт был установлен в результате установки всей группы [xorg](https://www.archlinux.org/groups/x86_64/xorg/) (что обычно НЕ рекомендуется). Чтобы решить проблему растровых шрифтов, вы можете удлить пакет. Установите [gsfonts](https://www.archlinux.org/packages/?name=gsfonts) (Type 1) или [tex-gyre-fonts](https://www.archlinux.org/packages/?name=tex-gyre-fonts) (OpenType) для соответствующей свободной замены Helvetica (и других шрифтоф на основе PostScript/PDF).
+
+Также эта проблема может появится при открытии PDF, которому требуется Helvetica, и он не встроен для просмотра.
 
 ## Смотрите также
 

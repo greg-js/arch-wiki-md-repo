@@ -261,9 +261,10 @@ The bootloader will look for either `syslinux.cfg` (preferred) or `extlinux.conf
 
 ### Examples
 
-**Note:** Any configuration file found in the examples needs to be edited to set the proper kernel parameters. See section [#Kernel parameters](#Kernel_parameters).
+**Note:**
 
-**Note:** Please, pay close attention to the paths. The examples may not be suitable for your installation, especially when using UEFI.
+*   Any configuration file found in the examples needs to be edited to set the proper kernel parameters. See section [#Kernel parameters](#Kernel_parameters).
+*   Please, pay close attention to the paths. The examples may not be suitable for your installation, especially when using UEFI.
 
 #### Boot prompt
 

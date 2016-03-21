@@ -522,6 +522,10 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 	[https://wiki.gnome.org/Apps/Calendar](https://wiki.gnome.org/Apps/Calendar) || [gnome-calendar](https://www.archlinux.org/packages/?name=gnome-calendar)
 
+*   **Clocks** — Clocks application for GNOME.
+
+	[https://wiki.gnome.org/Apps/Clocks](https://wiki.gnome.org/Apps/Clocks) || [gnome-clocks](https://www.archlinux.org/packages/?name=gnome-clocks)
+
 *   **Day Planner** — Program designed to help you easily plan and manage your time. It can manage appointments, birthdays and more.
 
 	[http://www.day-planner.org/](http://www.day-planner.org/) || [dayplanner](https://aur.archlinux.org/packages/dayplanner/)
@@ -533,6 +537,10 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 *   **Glista** — Simple GTK+ To-do list manager with notes support.
 
 	[http://arr.gr/glista/](http://arr.gr/glista/) || [glista](https://aur.archlinux.org/packages/glista/)
+
+*   **GNOME Break Timer** — Keeps track of how much you are using the computer, and it reminds you to take regular breaks.
+
+	[https://wiki.gnome.org/Apps/GnomeBreakTimer](https://wiki.gnome.org/Apps/GnomeBreakTimer) || [gnome-break-timer](https://aur.archlinux.org/packages/gnome-break-timer/)
 
 *   **GTG (Getting Things GNOME!)** — Personal tasks and To-do list items organizer for the GNOME desktop.
 
@@ -585,6 +593,10 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 *   **TkRemind** — Sophisticated calendar and alarm program.
 
 	[http://www.roaringpenguin.com/products/remind](http://www.roaringpenguin.com/products/remind) || [remind](https://www.archlinux.org/packages/?name=remind)
+
+*   **[Workrave](https://en.wikipedia.org/wiki/Workrave "wikipedia:Workrave")** — A tool to help RSI.
+
+	[http://www.workrave.org/](http://www.workrave.org/) || [workrave](https://www.archlinux.org/packages/?name=workrave)
 
 *   **wxRemind** — Python text and graphical frontend to Remind.
 

@@ -90,8 +90,8 @@ objectClass: top
 objectClass: organizationalUnit
 
 # Groups, example.org
-dn: ou=Groups,dc=example,dc=org
-ou: Groups
+dn: ou=Group,dc=example,dc=org
+ou: Group
 objectClass: top
 objectClass: organizationalUnit
 

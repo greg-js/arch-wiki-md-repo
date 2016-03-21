@@ -36,6 +36,7 @@ The community-maintained [ArchWiki](/index.php/Main_page "Main page") is the pri
         *   [5.7.1 Hostname](#Hostname)
         *   [5.7.2 Wired](#Wired)
         *   [5.7.3 Wireless](#Wireless)
+    *   [5.8 Root password](#Root_password)
 *   [6 Unmount the partitions and reboot](#Unmount_the_partitions_and_reboot)
 *   [7 Post-installation](#Post-installation)
 
@@ -68,9 +69,9 @@ See [UEFI#UEFI Variables](/index.php/UEFI#UEFI_Variables "UEFI") for details.
 
 ### Set the keyboard layout
 
-The default [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") is set to [us](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Available choices can be listed with `localectl list-keymaps`.
+The default [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") is set to [us](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Available choices can be listed with `ls /usr/share/kbd/keymaps/**/*.map.gz`.
 
-**Note:** `localectl list-keymaps` will not work with any ISO released after September 2015, due to a bug in [Overlayfs](/index.php/Overlay_filesystem "Overlay filesystem") ([FS#46725](https://bugs.archlinux.org/task/46725)). Available layouts are located inside the `/usr/share/kbd/keymaps` folder.
+**Note:** `localectl list-keymaps` does not work due to bug [FS#46725](https://bugs.archlinux.org/task/46725).
 
 For example, to change the layout to `de-latin1`, run:
 
@@ -553,7 +554,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) package. To se
 Install the bootloader to the *drive* Arch was installed to:
 
 ```
-# grub-install --target=i386-pc --recheck */dev/sda*
+# grub-install --target=i386-pc */dev/sda*
 
 ```
 
@@ -606,7 +607,7 @@ If you used *wifi-menu* priorly, repeat the steps **after** finishing the rest o
 
 See [Netctl](/index.php/Netctl "Netctl") and [Wireless#Wireless management](/index.php/Wireless#Wireless_management "Wireless") for more information.
 
-## Unmount the partitions and reboot
+### Root password
 
 Set the root [password](/index.php/Password "Password") with:
 
@@ -614,6 +615,8 @@ Set the root [password](/index.php/Password "Password") with:
 # passwd
 
 ```
+
+## Unmount the partitions and reboot
 
 Exit from the chroot environment by running `exit` or pressing `Ctrl+D`.
 

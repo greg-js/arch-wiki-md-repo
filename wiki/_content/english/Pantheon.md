@@ -248,7 +248,7 @@ Either drag and drop a desktop file on it, or right click on a running applicati
 
 ### How can I change the default appearance such as GTK theme, font size, etc?
 
-Use [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) or see [GTK+](/index.php/GTK%2B "GTK+").
+Install [switchboard-plug-elementary-tweaks-bzr](https://aur.archlinux.org/packages/switchboard-plug-elementary-tweaks-bzr/). Alternatively, use [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) or see [GTK+](/index.php/GTK%2B "GTK+").
 
 ### I do not have any mouse cursor
 

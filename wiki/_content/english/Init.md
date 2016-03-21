@@ -80,11 +80,11 @@ These components combine to the init *system*. Some inits include the service ma
 
 *   **spark-rc** — A simple rc script to kickstart your system.
 
-	[https://github.com/fbt/spark-rc](https://github.com/fbt/spark-rc) || [spark-rc](https://aur.archlinux.org/packages/spark-rc/)
+	[https://gitlab.com/fbt/spark-rc](https://gitlab.com/fbt/spark-rc) || [spark-rc](https://aur.archlinux.org/packages/spark-rc/)
 
 *   **watchman-sm-services** — Examples of services for watchman.
 
-	[https://github.com/fbt/watchman-services](https://github.com/fbt/watchman-services) || [watchman-sm-services-git](https://aur.archlinux.org/packages/watchman-sm-services-git/)
+	[https://gitlab.com/fbt/watchman-services](https://gitlab.com/fbt/watchman-services) || [watchman-sm-services-git](https://aur.archlinux.org/packages/watchman-sm-services-git/)
 
 ## Service managers
 
@@ -114,7 +114,7 @@ These components combine to the init *system*. Some inits include the service ma
 
 *   **watchman** — A not-so-simple service manager for Linux.
 
-	[https://github.com/fbt/watchman](https://github.com/fbt/watchman) || [watchman-sm](https://aur.archlinux.org/packages/watchman-sm/)
+	[https://gitlab.com/fbt/watchman](https://gitlab.com/fbt/watchman) || [watchman-sm](https://aur.archlinux.org/packages/watchman-sm/)
 
 ## Configuration
 

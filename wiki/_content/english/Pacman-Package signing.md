@@ -213,14 +213,9 @@ This might actually be the solution if you get a message like `error: linux: sig
 
 ### Updating keys via proxy
 
-There was a [bug](https://bugs.g10code.com/gnupg/issue1786) in [GnuPG](/index.php/GnuPG "GnuPG") which prevents updating keys via http proxies. As of v.2.1.9, the bug is fixed, but to make it work, dirmngr (part of gnupg) needs to have "honor-http-proxy" set. As that's a non default option of dirmngr, and gpg uses it in the background, there's a need to add the files `/etc/gnupg/dirmngr.conf` and `/etc/pacman.d/gnupg/dirmngr.conf`, and include in them the line:
+In order to use a proxy when updating keys the `honor-http-proxy` option must be set in both `/etc/gnupg/dirmngr.conf` and `/etc/pacman.d/gnupg/dirmngr.conf`. See [GnuPG#Use a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG") for more information.
 
-```
-honor-http-proxy
-
-```
-
-According to the dirmngr man, home or /etc are used depending on being a daemon or not. If pacman-key was used without "honor-http-proxy" and failed, it seems a reboot is required for it take effect.
+**Note:** If *pacman-key* is used without the `honor-http-proxy` option and fails, a reboot may solve the issue.
 
 ## See also
 

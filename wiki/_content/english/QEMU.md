@@ -1070,6 +1070,8 @@ Virtio disks are recognized with the prefix `**v**` (e.g. `**v**da`, `**v**db`, 
 
 Further information on paravirtualization with KVM can be found [here](http://www.linux-kvm.org/page/Boot_from_virtio_block_device).
 
+You might also want to install [qemu-guest-agent](https://www.archlinux.org/packages/?name=qemu-guest-agent) to implement support for QMP commands that will enhance the hypervisor management capabilities. After installing the package you can enable and start the `qemu-ga.service`.
+
 ### Preparing a Windows guest
 
 **Note:** The only (reliable) way to upgrade a Windows 8.1 guest to Windows 10 seems to be to temporarily choose cpu core2duo,nx for the install [[4]](http://ubuntuforums.org/showthread.php?t=2289210). After the install, you may revert to other cpu settings (8/8/2015).

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Libvirt](/index.php/Libvirt "Libvirt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-01-23，点击[这里](https://wiki.archlinux.org/index.php?title=Libvirt&diff=0&oldid=413990)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Libvirt](/index.php/Libvirt "Libvirt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-10，点击[这里](https://wiki.archlinux.org/index.php?title=Libvirt&diff=0&oldid=413990)可以查看翻译后英文页面的改动。
 
 Libvirt 是一组软件的汇集，提供了管理虚拟机和其它虚拟化功能（如：存储和网络接口等）的便利途径。这些软件包括：一个长期稳定的 C 语言 API、一个守护进程（libvirtd）和一个命令行工具（virsh）。Libvirt 的主要目标是提供一个单一途径以管理多种不同虚拟化方案以及虚拟化主机，包括：[KVM/QEMU](/index.php/QEMU "QEMU")，[Xen](/index.php/Xen "Xen")，[LXC](/index.php/LXC "LXC")，[OpenVZ](http://openvz.org) 或 [VirtualBox](/index.php/VirtualBox "VirtualBox") [hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") （[详见这里](http://libvirt.org/drivers.html)）。
 
@@ -90,24 +90,24 @@ Libvirt 的一些主要功能如下：
 
 	Libvirt 守护进程允许管理员分别为客户端连接的每个网络 socket 选择不同授权机制。这主要是通过 libvirt 守护进程的主配置文件 `/etc/libvirt/libvirtd.conf` 来实现的。每个 libvirt socket 可以有独立的授权机制配置。目前的可选项有 `none`、`polkit` 和 `sasl`。
 
-由于 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 在安装时将把 [polkit](https://www.archlinux.org/packages/?name=polkit) 作为依赖一并安装， [polkit](#.E4.BD.BF.E7.94.A8_polkit) 通常是 `unix_sock_auth` 参数的默认值（[来源](http://libvirt.org/auth.html#ACL_server_polkit)）。[基于文件的权限](#.E5.9F.BA.E4.BA.8E.E6.96.87.E4.BB.B6.E7.9A.84.E6.9D.83.E9.99.90.E6.8E.88.E6.9D.83) 仍然有效。
+由于 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 在安装时将把 [polkit](https://www.archlinux.org/packages/?name=polkit) 作为依赖一并安装，所以 [polkit](#.E4.BD.BF.E7.94.A8_polkit) 通常是 `unix_sock_auth` 参数的默认值（[来源](http://libvirt.org/auth.html#ACL_server_polkit)）。但[基于文件的权限](#.E5.9F.BA.E4.BA.8E.E6.96.87.E4.BB.B6.E7.9A.84.E6.9D.83.E9.99.90.E6.8E.88.E6.9D.83)仍然可用。
 
 #### 使用 polkit
 
 **注意:** 为使 `polkit` 认证工作正常，应该重启一次系统。
 
-*libvirt* 守护进程在 polkit 策略配置文件（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了两种[polkit 动作策略](/index.php/Polkit#Actions "Polkit")：
+*libvirt* 守护进程在 polkit 策略配置文件（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了两种 [行为](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.A1.8C.E4.B8.BA "Polkit (简体中文)") 策略：
 
 *   `org.libvirt.unix.manage` 面向完全的管理访问（读写模式后台 socket），以及
 *   `org.libvirt.unix.monitor` 面向仅监视察看访问（只读 socket）。
 
-默认的面向读写模式后台 socket 的策略将请求认证为管理员。这点类似于 [sudo](/index.php/Sudo "Sudo") 认证，但它并不要求客户应用最终以 root 身份运行。默认策略下也仍然允许任何应用连接到只读 socket。
+默认的面向读写模式后台 socket 的策略将请求认证为管理员。这点类似于 [sudo](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)") 认证，但它并不要求客户应用最终以 root 身份运行。默认策略下也仍然允许任何应用连接到只读 socket。
 
-Arch Linux 默认 `wheel` 组的所有用户都是管理员身份：定义于 `/etc/polkit-1/rules.d/50-default.rules`（参阅 [Polkit#Administrator identities](/index.php/Polkit#Administrator_identities "Polkit")）。这样就不必新建组和规则文件。 **如果用户是 `wheel` 组的成员**：只要连接到了读写模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就会被提示输入该用户的口令。
+Arch Linux 默认 `wheel` 组的所有用户都是管理员身份：定义于 `/etc/polkit-1/rules.d/50-default.rules`（参阅 [管理员标识](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.AE.A1.E7.90.86.E5.91.98.E6.A0.87.E8.AF.86 "Polkit (简体中文)")）。这样就不必新建组和规则文件。 **如果用户是 `wheel` 组的成员**：只要连接到了读写模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就会被提示输入该用户的口令。
 
-**注意:** 要求口令的提示由系统中的[认证代理](/index.php/Polkit#Authentication_agents "Polkit")给出。文本控制台默认的认证代理是 `pkttyagent` 它可能因工作不正常而导致各种问题。
+**注意:** 要求口令的提示由系统中的 [认证代理](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.A4.E8.AF.81.E4.BB.A3.E7.90.86 "Polkit (简体中文)") 给出。文本控制台默认的认证代理是 `pkttyagent` 它可能因工作不正常而导致各种问题。
 
-**提示:** 如果要配置无口令认证，参阅[跳过口令提示](/index.php/Polkit#Bypass_password_prompt "Polkit")。
+**提示:** 如果要配置无口令认证，参阅 [跳过口令提示](/index.php/Polkit#Bypass_password_prompt "Polkit")。
 
 从 libvirt 1.2.16 版开始（提案见：[[1]](http://libvirt.org/git/?p=libvirt.git;a=commit;h=e94979e901517af9fdde358d7b7c92cc055dd50c)），`libvirt` 组的成员用户默认可以无口令访问读写模式 socket。最简单的判断方法就是看 libvirt 组是否存在并且用户是否该组成员。如果要把 kvm 组访问读写模式后台 socket 的认证策略改为免认证模式，可创建下面的文件：
 
@@ -124,7 +124,7 @@ polkit.addRule(function(action, subject) {
 
 ```
 
-然后[添加用户](/index.php/Users_and_groups#Other_examples_of_user_management "Users and groups")到 `kvm` 组并重新登录。*kvm* 也可以是任何其它存在的组并且用户是该组成员（详阅[用户和用户组](/index.php/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84 "用户和用户组")）。
+然后 [添加用户](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.85.B6.E5.AE.83.E7.94.A8.E6.88.B7.E7.AE.A1.E7.90.86.E7.A4.BA.E4.BE.8B "Users and groups (简体中文)") 到 `kvm` 组并重新登录。*kvm* 也可以是任何其它存在的组并且用户是该组成员（详阅 [用户和用户组](/index.php/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84 "用户和用户组")）。
 
 修改组之后别忘了重新登录才能生效。
 
@@ -146,7 +146,7 @@ While some guides mention changed permissions of certain libvirt directories to 
 
 ### 守护进程
 
-[Start](/index.php/Start "Start") both `libvirtd.service` and `virtlogd.service`. Optionally [enable](/index.php/Enable "Enable") `libvirtd.service`. There is no need to enable `virtlogd.service`, since `libvirtd.service`, when enabled, also enables the `virtlogd.socket` and `virtlockd.socket` [units](/index.php/Systemd#Using_units "Systemd").
+`libvirtd.service` 和 `virtlogd.service`这两个服务单元都要 [启动](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")。可以把 `libvirtd.service` 设置为 [启用](/index.php/Enable "Enable")，这时系统将同时启用 `virtlogd.service` 和 `virtlockd.socket` 两个服务 [单元](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")，因此后二者不必再设置启用。
 
 ### 非加密的 TCP/IP sockets
 

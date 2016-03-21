@@ -768,17 +768,34 @@ Switch player between virtual mono sink and real stereo sink.
 
 ## Swap left/right channels
 
-Swap/reverse stereo channels by creating a virtual sink. Add to `/etc/pulse/default.pa`:
+This is the same as "reverse stereo", where the left and right channels are to be swapped.
+
+First, identify the card you want its channels swapped:
 
 ```
-load-module module-remap-sink sink_name=reverse-stereo master=alsa_output.pci-0000_00_1f.5.analog-stereo channels=2 master_channel_map=front-right,front-left channel_map=front-left,front-right
-set-default-sink reverse-stereo
+$ cat /proc/asound/cards
 
 ```
 
-(replace alsa_output.pci-0000_00_1f.5.analog-stereo in the sound card name shown from `pacmd list-sinks`)
+and use the name string for the device you wish to use (the one in square brackets, e.g. [Intel]).
 
-[module-remap-sink documentation](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index12h3)
+Edit `/etc/pulse/default.pa` and comment out module-hal-detect and module-detect lines.
+
+Search for the commented-out line that starts "#load-module module-alsa-sink", uncomment it and change it to
+
+```
+load-module module-alsa-sink device=hw:[device name] channel_map=right,left
+
+```
+
+Restart the pulseaudio deamon by running
+
+```
+pulseaudio -k; pulseaudio -D
+
+```
+
+[Pulseaudio FAQ: How can I reverse my left and right speaker channels?](https://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index34h3)
 
 ## PulseAudio as a minimal unintrusive dumb pipe to ALSA
 

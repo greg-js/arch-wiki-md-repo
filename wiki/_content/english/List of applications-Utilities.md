@@ -855,9 +855,9 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://goodies.xfce.org/projects/applications/xfce4-taskmanager](http://goodies.xfce.org/projects/applications/xfce4-taskmanager) || [xfce4-taskmanager](https://www.archlinux.org/packages/?name=xfce4-taskmanager)
 
-*   **[Paramano](/index.php/Paramano "Paramano")** — A light battery monitor and a CPU frequency scaler. Forked from trayfreq
+*   **[Paramano](/index.php/Paramano "Paramano")** — A light battery monitor and a CPU frequency scaler. Forked from [trayfreq](http://trayfreq.sourceforge.net/)
 
-	[http://batchbin.ueuo.com/projects/trayfreq-archlinux/](http://batchbin.ueuo.com/projects/trayfreq-archlinux/) || [paramano](https://aur.archlinux.org/packages/paramano/)
+	[https://github.com/phillid/paramano](https://github.com/phillid/paramano) || [paramano](https://aur.archlinux.org/packages/paramano/)
 
 *   **Sysstat** — A collection of resource monitoring tools: iostat, isag, mpstat, pidstat, sadf, sar.
 

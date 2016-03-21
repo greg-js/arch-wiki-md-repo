@@ -1,18 +1,8 @@
-S-nail is a mail processing system with a command syntax reminiscent of ed with lines replaced by messages. It is intended to provide the functionality of the POSIX mailx command and offers (mostly optional) extensions for line editing, IDNA, MIME, S/MIME, SMTP and POP3 (and IMAP). It is usable as a mail batch language.
+S-nail is a mail processing system with a command syntax similar to ed, with lines replaced by messages. It is intended to provide the functionality of the POSIX mailx command and offers (mostly optional) extensions for line editing, IDNA, MIME, S/MIME, SMTP and POP3 (and IMAP). It is usable as a mail batch language.
 
-This overview page was updated for version **v14.8.6** of S-nail. Excerpt of latest *NEWS*: bug fixes. *NEWS* of older **v14.8.x** releases: [RFC 2231](//tools.ietf.org/html/rfc2231) support, mailing-list support (*followup-to*, *followup-to-honour*, *reply-to-honour*, **Lreply**, **mlist**, **mlsubscribe**), simple builtin HTML viewer, freely configurable spam-checker hooks, command line and addressee hardening (new **-.** option, *expandargv* and *expandaddr* variables), improved -t support, *expandaddr* fine-tuning, new *smime-sign-message-digest* variable, *-d* / *debug* offers real dry-run send tests, extended **@** message specification, new **source_if** command, many bug fixes and small improvements.
+S-nail is thus the *user side* of the Unix mail system, whereas the *system side* was traditionally taken by [sendmail](/index.php/Sendmail "Sendmail").
 
-S-nail is a direct descendant of the BSD Mail program that was introduced in 1978 (itself superseding the simpler UNIX mail program) and used to introduce itself (in the Mail reference manual) as follows:
-
-	*Mail provides a simple and friendly environment for sending and receiving mail.*
-
-	*It divides incoming mail into its constituent messages and allows the user to deal with them in any order.*
-
-	*In addition, it provides a set of ed‐like commands for manipulating messages and sending mail.*
-
-	*Mail offers the user simple editing capabilities to ease the composition of outgoing messages, as well as providing the ability to define and send to names which address groups of users.*
-
-S-nail is thus the *user side* of the Unix mail system, whereas the *system side* was traditionally taken by [sendmail](/index.php/Sendmail "Sendmail"). In Arch Linux S-nail supports direct mail delivery via SMTP, so that messages can be send directly to external SMTP servers: In this very mode of operation no local mail-transfer-agent (MTA) is necessary on the *system side*. (Note however that S-nail does not (yet) include a mail-queue mechanism and thus simply tries to send the message over SMTP, directly and immediately.)
+In Arch Linux S-nail supports direct mail delivery via SMTP, so that messages can be send directly to external SMTP servers: In this very mode of operation no local mail-transfer-agent (MTA) is necessary on the *system side*. Note, however, that S-nail does not (yet) include a mail-queue mechanism; it simply tries to send the message over SMTP directly and immediately.
 
 ## Contents
 
@@ -28,7 +18,9 @@ S-nail is thus the *user side* of the Unix mail system, whereas the *system side
 
 ## Quick shot
 
-Because the systemwide Arch Linux configuration file (`/etc/mail.rc`) brings in some useful standard settings, sending mail over a local mail-transfer-agent (MTA), such as [sendmail](/index.php/Sendmail "Sendmail") or [postfix](/index.php/Postfix "Postfix"), can be as easy as follows:
+The [s-nail](https://www.archlinux.org/packages/?name=s-nail) package is part of the Arch Linux [base](https://www.archlinux.org/groups/x86_64/base/) group and therefore hopefully installed already.
+
+Because its systemwide Arch Linux configuration file (`/etc/mail.rc`) brings in some useful standard settings, sending mail over a local mail-transfer-agent (MTA), such as [sendmail](/index.php/Sendmail "Sendmail") or [postfix](/index.php/Postfix "Postfix"), can be as easy as follows:
 
 ```
 # echo 'Message body' | mailx -d -s 'A subject' -a an_attachment.txt foo1@bar.example 'Foo2 <foo2@bar.example>'
@@ -331,7 +323,7 @@ When starting into interactive mode a summary of the content of the initially op
 
 By default the current message (dot) is printed, but just like with many other commands it is possible to specify lists of messages, as is documented in the manual section "Specifying messages"; e.g., **p:u** will display all unread messages, **p.** will print the dot, **p 1 5** will print the messages 1 and 5 and **p-** and **p+** will print the last and the next message, respectively. Note that simply typing RETURN in an empty line acts like **next** (**n**), and thus prints the next message.
 
-The command **from** (**f**) is nice for an overview, e.g., **f '@<@arch linux'** will print the header summary of all messages that contain the string "arch linux" in some message header, whereas **f '@arch linux'** will only match those with "arch linux" in their subject; finally, the regular expression **f @^A[^[:space:]]+** finds... well, a complaint of the ArchWiki maintainer about the content of this page, ugh; that is, be aware that quoting may be necessary when there is whitespace in search expressions etc.
+The command **from** (**f**) is nice for an overview, e.g., **f '@<@arch linux'** will print the header summary of all messages that contain the string "arch linux" in some message header, whereas **f '@arch linux'** will only match those with "arch linux" in their subject; finally, the regular expression **f @^A[^[:space:]]+** finds... that is, be aware that quoting may be necessary when there is whitespace in search expressions etc.
 
 *   **file** and **File** open a new mailbox, the latter in readonly mode (which can be handy to avoid flag updates etc.)
 *   **newmail** (dependent on the mailbox, checks for new mail and) prints a listing of new messages

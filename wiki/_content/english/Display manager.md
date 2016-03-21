@@ -136,7 +136,7 @@ See also [xinitrc#Starting applications without a window manager](/index.php/Xin
 
 ### Autostarting
 
-Most of display managers sources `/etc/xprofile`, `~/.xprofile` and `/etc/X11/xinit/xinitrc.d/`. For more details, see [xprofile](/index.php/Xprofile "Xprofile").
+Most display managers source `/etc/xprofile`, `~/.xprofile` and `/etc/X11/xinit/xinitrc.d/`. For more details, see [xprofile](/index.php/Xprofile "Xprofile").
 
 ### Set the language
 

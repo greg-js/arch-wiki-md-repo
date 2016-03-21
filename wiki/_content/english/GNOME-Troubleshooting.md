@@ -24,6 +24,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [20 No restart button in session menu when screen is locked](#No_restart_button_in_session_menu_when_screen_is_locked)
 *   [21 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
 *   [22 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
+*   [23 Setting global Wayland environment with an environment variable](#Setting_global_Wayland_environment_with_an_environment_variable)
 
 ## Shell freezes
 
@@ -244,3 +245,7 @@ If you are running [PulseAudio](/index.php/PulseAudio "PulseAudio") in system-wi
 ## GNOME crashes when trying to reorder applications in the GNOME Shell Dash
 
 The dash is the "toolbar" that appears, by default, [on the left](https://en.wikipedia.org/wiki/GNOME_Shell#Design_components "wikipedia:GNOME Shell") when you click Activities. Applications can be reordered in the dash by dragging and dropping. If this fails, and/or causes GNOME to crash, try [changing your icon theme](https://bbs.archlinux.org/viewtopic.php?id=171689).
+
+## Setting global Wayland environment with an environment variable
+
+Setting a global Wayland environment, by running `env GDK_BACKEND=wayland gnome-session --session=gnome-wayland`, currently does not work - *gnome-session* will exit immediately. Instead, use `export GDK_BACKEND='wayland,x11'` in your bash profile, or use `env GDK_BACKEND='wayland,x11' gnome-session --session=gnome-wayland` on the command line. But in general, neither of these environment settings are necessary, and running `gnome-session` with the `--session=gnome-wayland` switch is sufficient. Without the `GDK_BACKEND` environment variable, the GNOME Application must be "Wayland aware" to run as a Wayland application, or default to running on Xwayland otherwise. See also `GDK_BACKEND` under GNOME [Environment variables](https://developer.gnome.org/gtk3/stable/gtk-running.html).

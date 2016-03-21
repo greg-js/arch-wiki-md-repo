@@ -10,9 +10,10 @@ The driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devi
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-*   [3 Troubleshooting](#Troubleshooting)
+*   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Touchpad configuration](#Touchpad_configuration)
-    *   [3.2 Debugging](#Debugging)
+    *   [3.2 Mouse button re-mapping](#Mouse_button_re-mapping)
+    *   [3.3 Debugging](#Debugging)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -70,7 +71,7 @@ is a notebok without any configuration files in `/etc/X11/xorg.conf.d/`, i.e. de
 
 Of course you can elect to use an alternative driver for one device and libinput for others. A number of factors may influence which driver to use. For example, in comparison to [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") the libinput driver has fewer options to customize touchpad behaviour to one's own taste, but far more programmatic logic to process multitouch events (e.g. palm detection as well). Hence, it makes sense to try the alternative, if you are experiencing problems on your hardware with one driver or the other.
 
-## Troubleshooting
+## Tips and tricks
 
 ### Touchpad configuration
 
@@ -84,6 +85,39 @@ Section "InputClass"
         Driver "libinput"
         Option "Tapping" "on"
 EndSection
+```
+
+### Mouse button re-mapping
+
+For some devices it is desirable to change the button mapping. A common example is the use of a thumb button instead of the middle button (used in X11 for pasting) on mice where the middle button is part of the mouse wheel. You can query the current button mapping via:
+
+```
+$ xinput get-button-map *device*
+
+```
+
+You can freely permutate the button numbers and write them back. Example:
+
+```
+$ xinput set-button-map *device* 1 6 3 4 5 0 7
+
+```
+
+In this example, we mapped button 6 to be the middle button and disabled the original middle button by assigning it to button 0.
+
+**Note:** You can use *xev* to find out which physical button is currently mapped to which id.
+
+Some devices occur several times under the same device name, with a different amount of buttons exposed. The following shell script is an example for reliably changing the button mapping for a Logitech Revolution MX mouse:
+
+ `remap-revolution.sh` 
+```
+#!/usr/bin/bash
+for i in `xinput list | grep "Logitech USB Receiver" | perl -n -e'/id=(\d+)/ && print "$1
+"'`
+	do if xinput get-button-map "$i" 2>/dev/null| grep -q 20; then
+		xinput set-button-map "$i" 1 17 3 4 5 8 7 6 9 10 11 12 13 14 15 16 2 18 19 20
+	fi
+done
 ```
 
 ### Debugging

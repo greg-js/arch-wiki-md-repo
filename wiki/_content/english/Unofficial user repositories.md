@@ -90,31 +90,30 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.2 ashleyis](#ashleyis)
         *   [5.1.3 atom](#atom)
         *   [5.1.4 bioinformatics](#bioinformatics)
-        *   [5.1.5 blackleg](#blackleg)
-        *   [5.1.6 boyska64](#boyska64)
-        *   [5.1.7 coderkun-aur](#coderkun-aur)
-        *   [5.1.8 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [5.1.9 eatabrick](#eatabrick)
-        *   [5.1.10 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.11 gustawho](#gustawho)
-        *   [5.1.12 holo](#holo)
-        *   [5.1.13 Linux-pf](#Linux-pf)
-        *   [5.1.14 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.15 kc9ydn](#kc9ydn)
-        *   [5.1.16 linux-lts-ck](#linux-lts-ck)
-        *   [5.1.17 linux-lts31x](#linux-lts31x)
-        *   [5.1.18 linux-lts31x-ck](#linux-lts31x-ck)
-        *   [5.1.19 linux-ck-pax](#linux-ck-pax)
-        *   [5.1.20 linux-tresor](#linux-tresor)
-        *   [5.1.21 markzz](#markzz)
-        *   [5.1.22 openrc](#openrc)
-        *   [5.1.23 qt-debug](#qt-debug)
-        *   [5.1.24 quarry](#quarry)
-        *   [5.1.25 rstudio](#rstudio)
-        *   [5.1.26 siosm-aur](#siosm-aur)
-        *   [5.1.27 siosm-selinux](#siosm-selinux)
-        *   [5.1.28 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.29 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.5 boyska64](#boyska64)
+        *   [5.1.6 coderkun-aur](#coderkun-aur)
+        *   [5.1.7 coderkun-aur-audio](#coderkun-aur-audio)
+        *   [5.1.8 eatabrick](#eatabrick)
+        *   [5.1.9 freifunk-rheinland](#freifunk-rheinland)
+        *   [5.1.10 gustawho](#gustawho)
+        *   [5.1.11 holo](#holo)
+        *   [5.1.12 Linux-pf](#Linux-pf)
+        *   [5.1.13 infinality-bundle-multilib](#infinality-bundle-multilib)
+        *   [5.1.14 kc9ydn](#kc9ydn)
+        *   [5.1.15 linux-lts-ck](#linux-lts-ck)
+        *   [5.1.16 linux-lts31x](#linux-lts31x)
+        *   [5.1.17 linux-lts31x-ck](#linux-lts31x-ck)
+        *   [5.1.18 linux-ck-pax](#linux-ck-pax)
+        *   [5.1.19 linux-tresor](#linux-tresor)
+        *   [5.1.20 markzz](#markzz)
+        *   [5.1.21 openrc](#openrc)
+        *   [5.1.22 qt-debug](#qt-debug)
+        *   [5.1.23 quarry](#quarry)
+        *   [5.1.24 rstudio](#rstudio)
+        *   [5.1.25 siosm-aur](#siosm-aur)
+        *   [5.1.26 siosm-selinux](#siosm-selinux)
+        *   [5.1.27 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.28 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -971,20 +970,6 @@ Server = http://noaxiom.org/$repo/$arch
 ```
 [bioinformatics]
 Server = http://decryptedepsilon.bl.ee/repo/x86_64
-
-```
-
-#### blackleg
-
-*   **Maintainer:** Blackleg ([blackleg](https://aur.archlinux.org/account/blackleg))
-*   **Upstream page:** [www.blackleg.es](http://www.blackleg.es)
-*   **Description:** My AUR's packages and some like: linux-w110er, nvidia-dkms, android-studio, odoo (OpenErp).
-*   **Package list:** [Blackleg x86_64 packages](http://www.blackleg.es/x86_64/index.html)
-*   **Key-ID:** 611BFDE1
-
-```
-[blackleg]
-Server = ftp://ftp.blackleg.es/archlinux/$repo/$arch/
 
 ```
 

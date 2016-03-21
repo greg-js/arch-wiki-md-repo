@@ -1,4 +1,6 @@
-**Note:** This page strives to list all games known to run under GNU/Linux. Some of them are freely accessible via [official repositories](/index.php/Official_repositories "Official repositories") and [AUR](/index.php/AUR "AUR"). For more about running games, related system configuration tips, see [Gaming](/index.php/Gaming "Gaming"). For possibly more up to date selection of games available in the AUR, try checking the [AUR 'game' keyword](https://aur.archlinux.org/packages/?SeB=k&K=game).
+This page strives to list all games which have a package available in the [official repositories](/index.php/Official_repositories "Official repositories") or the [AUR](/index.php/AUR "AUR"). There are many more Linux games available, which are not packaged. See [Gaming#Getting games](/index.php/Gaming#Getting_games "Gaming") for ways to obtain them.
+
+For more about running games, related system configuration tips, see [Gaming](/index.php/Gaming "Gaming"). For an up to date selection of games available in the AUR, try checking the [AUR 'game' keyword](https://aur.archlinux.org/packages/?SeB=k&K=game).
 
 ## Contents
 
@@ -8,16 +10,16 @@
 *   [4 Chess simulators](#Chess_simulators)
 *   [5 Education](#Education)
 *   [6 Interactive fiction](#Interactive_fiction)
-*   [7 Massively Multiplayer Online Games (MMO)](#Massively_Multiplayer_Online_Games_.28MMO.29)
+*   [7 Massively multiplayer online games (MMO)](#Massively_multiplayer_online_games_.28MMO.29)
 *   [8 Platformer](#Platformer)
 *   [9 Puzzle](#Puzzle)
 *   [10 Racing](#Racing)
 *   [11 Rogue-like](#Rogue-like)
-*   [12 Role-Playing Game (RPG)](#Role-Playing_Game_.28RPG.29)
-*   [13 Shooters (FPS, Third Person)](#Shooters_.28FPS.2C_Third_Person.29)
+*   [12 Role-playing games (RPG)](#Role-playing_games_.28RPG.29)
+*   [13 Shooters (FPS, third person)](#Shooters_.28FPS.2C_third_person.29)
 *   [14 Simulation](#Simulation)
 *   [15 Strategy](#Strategy)
-*   [16 Tycoon/Management Games](#Tycoon.2FManagement_Games)
+*   [16 Tycoon/management games](#Tycoon.2Fmanagement_games)
 *   [17 Visual novels](#Visual_novels)
 *   [18 Other](#Other)
 *   [19 See also](#See_also)
@@ -72,6 +74,10 @@
 
 *   A rewrite of the game program, now adopted as a GNU project: [liquidwar6](https://aur.archlinux.org/packages/liquidwar6/), homepage: [| Liquid War 6](http://www.gnu.org/software/liquidwar6/)
 
+*   **[Minecraft](/index.php/Minecraft "Minecraft")** — Java based sandbox game. Very addictive game, big community, lots of updates, do not miss this one.
+
+	[http://minecraft.net](http://minecraft.net) || [minecraft](https://aur.archlinux.org/packages/minecraft/)
+
 *   **[Neverball](https://en.wikipedia.org/wiki/Neverball "wikipedia:Neverball")** — 3D game to guide a ball through a maze.
 
 	[http://neverball.org/](http://neverball.org/) || [neverball](https://www.archlinux.org/packages/?name=neverball)
@@ -121,10 +127,6 @@
 *   **[Frozen Bubble](https://en.wikipedia.org/wiki/Frozen_Bubble "wikipedia:Frozen Bubble")** — Arcade game with colorful animated penguin eyecandy
 
 	[http://frozen-bubble.org](http://frozen-bubble.org) || [frozen-bubble](https://www.archlinux.org/packages/?name=frozen-bubble)
-
-*   **games2d** — Collection of fun and addictive games for GNU/Linux (pong, simon, sokoban, snake)
-
-	[http://xojoc.itch.io/games2d](http://xojoc.itch.io/games2d) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[Hedgewars](https://en.wikipedia.org/wiki/Hedgewars "wikipedia:Hedgewars")** — Yet another Worms clone, considered to be better than its predecessor by many. Take turns to blast your opponents into oblivion with comedic results! Best in Multiplayer.
 
@@ -190,7 +192,7 @@
 
 	[http://performous.org/](http://performous.org/) || [ultrastardx-svn](https://aur.archlinux.org/packages/ultrastardx-svn/)
 
-*   **[Wormux (now Warmux)](https://en.wikipedia.org/wiki/Warmux "wikipedia:Warmux")** — Somewhat similar to Worms 2/Worms Armageddon
+*   **[Warmux](https://en.wikipedia.org/wiki/Warmux "wikipedia:Warmux") (previously *Wormux*)** — Somewhat similar to Worms 2/Worms Armageddon
 
 	[http://sourceforge.net/projects/warmux.mirror/](http://sourceforge.net/projects/warmux.mirror/) || [warmux](https://aur.archlinux.org/packages/warmux/)
 
@@ -238,6 +240,14 @@
 
 	[http://pychess.org/](http://pychess.org/) || [pychess](https://www.archlinux.org/packages/?name=pychess)
 
+*   **[GNOME Chess](https://en.wikipedia.org/wiki/GNOME_Chess "wikipedia:GNOME Chess")** — A 2D chess game which can use third party chess engines.
+
+	[https://wiki.gnome.org/Apps/Chess](https://wiki.gnome.org/Apps/Chess) || [gnome-chess](https://www.archlinux.org/packages/?name=gnome-chess)
+
+*   **glChess** — 3D Chess Frontend.
+
+	[https://wiki.gnome.org/Apps/Chess](https://wiki.gnome.org/Apps/Chess) || [glchess](https://aur.archlinux.org/packages/glchess/)
+
 ## Education
 
 *   **GCompris** — Educational software suite comprising of numerous activities for children aged 2 to 10.
@@ -272,61 +282,45 @@ See also [Wikipedia:Interactive fiction#Development systems](https://en.wikipedi
 
 	[http://tads.org](http://tads.org) || [frobtads](https://aur.archlinux.org/packages/frobtads/)
 
-## Massively Multiplayer Online Games (MMO)
+## Massively multiplayer online games (MMO)
 
-See also [Wikipedia:List of massively multiplayer online games](https://en.wikipedia.org/wiki/List_of_massively_multiplayer_online_games "wikipedia:List of massively multiplayer online games").
-
-**Note:** All games listed here should be pure [massive multiplayer online games](https://en.wikipedia.org/wiki/MMOG "wikipedia:MMOG") without LAN mode and single player.
-
-See also [Wikipedia:Comparison of massively multiplayer online role-playing games](https://en.wikipedia.org/wiki/Comparison_of_massively_multiplayer_online_role-playing_games "wikipedia:Comparison of massively multiplayer online role-playing games").
+See also [Wikipedia:List of massively multiplayer online games](https://en.wikipedia.org/wiki/List_of_massively_multiplayer_online_games "wikipedia:List of massively multiplayer online games") and [Wikipedia:Comparison of massively multiplayer online role-playing games](https://en.wikipedia.org/wiki/Comparison_of_massively_multiplayer_online_role-playing_games "wikipedia:Comparison of massively multiplayer online role-playing games").
 
 *   **[Dofus](/index.php/Dofus "Dofus")** — Free, manga inspired, Massively Multiplayer Online Role-playing Game (MMORPG) for Adobe AIR
 
 	[http://www.dofus.com](http://www.dofus.com) || [dofus](https://aur.archlinux.org/packages/dofus/)
 
-*   **Heroes of Newerth** — Online, multi-player strategy game that is based upon DoTA (Defense of the Ancients). Free-to-own (gameplay free; pay for cosmetic upgrades only)
-
-	[http://heroesofnewerth.com/](http://heroesofnewerth.com/) || [hon](https://aur.archlinux.org/packages/hon/)
-
-*   **Landes Eternelles** — 3D fantasy online role playing game
+*   **[Eternal Lands](https://en.wikipedia.org/wiki/Eternal_Lands "wikipedia:Eternal Lands")** — 3D fantasy online role playing game
 
 	[http://www.eternal-lands.com](http://www.eternal-lands.com) || [eternallands](https://aur.archlinux.org/packages/eternallands/)
 
-*   **[Minecraft](/index.php/Minecraft "Minecraft")** — Java based sandbox game. Very addictive game, big community, lots of updates, do not miss this one.
-
-	[http://minecraft.net](http://minecraft.net) || [minecraft](https://aur.archlinux.org/packages/minecraft/)
-
-*   **Planeshift** — Role Playing Game immersed into a 3D virtual fantasy world which is FULLY FREE to play. Fully free means you will have no surprises of premium content which will limit your gameplay or unbalance the game. There are no limitations in skills, ranks, abilities, items you can gain with your free account
+*   **[Planeshift](https://en.wikipedia.org/wiki/PlaneShift_(video_game) "wikipedia:PlaneShift (video game)")** — Role Playing Game immersed into a 3D virtual fantasy world which is FULLY FREE to play. Fully free means you will have no surprises of premium content which will limit your gameplay or unbalance the game. There are no limitations in skills, ranks, abilities, items you can gain with your free account
 
 	[http://www.planeshift.it](http://www.planeshift.it) || [planeshift](https://aur.archlinux.org/packages/planeshift/)
-
-*   **Regnum Online** — Cross-platform 3D Massively Multiplayer Online Role-playing Game
-
-	[http://www.regnumonline.com.ar](http://www.regnumonline.com.ar) || [regnum-online](https://aur.archlinux.org/packages/regnum-online/)
 
 *   **[RuneScape](/index.php/RuneScape "RuneScape")** — Massive online adventure game by Jagex
 
 	[http://www.runescape.com](http://www.runescape.com) || [unix-runescape-client](https://aur.archlinux.org/packages/unix-runescape-client/)
 
-*   **Ryzom** — 3D Fantasy MMORPG
+*   **[Ryzom](https://en.wikipedia.org/wiki/Ryzom "wikipedia:Ryzom")** — 3D Fantasy MMORPG
 
 	[http://www.ryzom.com](http://www.ryzom.com) || [ryzom-client](https://aur.archlinux.org/packages/ryzom-client/)
 
-*   **Savage - The Battle For Newerth** — Online multiplayer team-based FPS/RTS hybrid. Open-sourced in September 2006\. Savage XR, the most improved continuation (including SFE patches), is completely free (no purchasing/ads whatsoever) however closed-source to reduce cheating.
+*   **[Savage: The Battle for Newerth](https://en.wikipedia.org/wiki/Savage:_The_Battle_for_Newerth "wikipedia:Savage: The Battle for Newerth")** — Online multiplayer team-based FPS/RTS hybrid. Open-sourced in September 2006\. Savage XR, the most improved continuation (including SFE patches), is completely free (no purchasing/ads whatsoever) however closed-source to reduce cheating.
 
-	[http://www.s2games.com/savage/](http://www.s2games.com/savage/) || [savage](https://aur.archlinux.org/packages/savage/)
+	[http://www.newerth.com/](http://www.newerth.com/) || [savage](https://aur.archlinux.org/packages/savage/)
 
-*   **Savage2 - A tortured soul** — Fantasy themed online multiplayer team-based FPS/RTS/RPG hybrid. Free-to-play as of December 2008\. Pay for premium accounts providing crucial game elements such as extra inventory slots, access to clans and removal of the Hellbourne unit restrictions (per-account), as well as access to replays and stats.
+*   **[Savage 2: A Tortured Soul](https://en.wikipedia.org/wiki/Savage_2:_A_Tortured_Soul "wikipedia:Savage 2: A Tortured Soul")** — Fantasy themed online multiplayer team-based FPS/RTS/RPG hybrid. Free-to-play as of December 2008\. Pay for premium accounts providing crucial game elements such as extra inventory slots, access to clans and removal of the Hellbourne unit restrictions (per-account), as well as access to replays and stats.
 
 	[http://savage2.com](http://savage2.com) || [savage2](https://aur.archlinux.org/packages/savage2/)
 
-*   **Second Life** — Online, 3D virtual world imagined and created by its residents
+*   **[Second Life](https://en.wikipedia.org/wiki/Second_Life "wikipedia:Second Life")** — Online, 3D virtual world imagined and created by its residents
 
 	[http://secondlife.com/](http://secondlife.com/) || [secondlife-bin](https://aur.archlinux.org/packages/secondlife-bin/)
 
-*   **Spiral Knights** — Free to play Java game developed by Three Rings Design and published by Sega.
+*   **[Spiral Knights](https://en.wikipedia.org/wiki/Spiral_Knights "wikipedia:Spiral Knights")** — Free to play Java game developed by Three Rings Design and published by Sega.
 
-	[Play in browser](http://www.spiralknights.com/play.xhtml) [http://www.spiralknights.com/](http://www.spiralknights.com/) || [spiral-knights](https://aur.archlinux.org/packages/spiral-knights/)
+	[http://www.spiralknights.com/](http://www.spiralknights.com/) || [Play in browser](http://www.spiralknights.com/play.xhtml)
 
 *   **Stendhal** — Fully fledged multiplayer online adventure game developed using the Arianne game development system
 
@@ -335,14 +329,6 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 *   **The Mana World** — Serious effort to create an innovative free and open source MMORPG
 
 	[http://themanaworld.org](http://themanaworld.org) || [manaplus](https://www.archlinux.org/packages/?name=manaplus)
-
-*   **Vendetta Online** — 3D space combat MMORPG for Windows, Mac, Linux and Android. This MMO permits thousands of players to interact as the pilots of spaceships in a vast universe
-
-	[http://www.vendetta-online.com](http://www.vendetta-online.com) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=Vendetta+Online)</small>
-
-*   **Wurm Online** — 3D MMO produced by Code Club AB in Sweden that allows players to choose between a PvP game and a non-PvP game based on different servers.
-
-	[Play via Web Start](http://www.wurmonline.com/client/wurmclient.jnlp) [http://www.wurmonline.com](http://www.wurmonline.com) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=Wurm+Online)</small>
 
 ## Platformer
 
@@ -384,14 +370,6 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 	[http://www.aluminumangel.org/attack/](http://www.aluminumangel.org/attack/) || [crack-attack](https://aur.archlinux.org/packages/crack-attack/)
 
-*   **glChess** — 3D Chess Frontend.
-
-	[https://wiki.gnome.org/Apps/Chess](https://wiki.gnome.org/Apps/Chess) || [glchess](https://aur.archlinux.org/packages/glchess/)
-
-*   **Gnono** — GNOME version of the classic card game UNO.
-
-	[http://sourceforge.net/projects/gnono/](http://sourceforge.net/projects/gnono/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=gnono)</small>
-
 *   **Hitori** — Small application written to allow one to play the eponymous puzzle game, which is similar in theme to more popular puzzles such as Sudoku.
 
 	[https://wiki.gnome.org/Apps/Hitori](https://wiki.gnome.org/Apps/Hitori) || [hitori](https://www.archlinux.org/packages/?name=hitori)
@@ -407,10 +385,6 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 *   **Pingus** — Lemmings clone, i.e. a level-based puzzle game.
 
 	[http://pingus.seul.org/](http://pingus.seul.org/) || [pingus](https://www.archlinux.org/packages/?name=pingus)
-
-*   **Portal** — Original puzzle game by Valve. Using Source Engine.
-
-	[http://store.steampowered.com/app/400/](http://store.steampowered.com/app/400/) || Steam
 
 *   **Ri-li** — Toy wood engine GPL game
 
@@ -536,7 +510,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://e271.net/~marina/wanderer.html](http://e271.net/~marina/wanderer.html) || [wanderer](https://aur.archlinux.org/packages/wanderer/) [wanderer-git](https://aur.archlinux.org/packages/wanderer-git/)
 
-## Role-Playing Game (RPG)
+## Role-playing games (RPG)
 
 *   **Arx Libertatis** — This project is a fully working, open source port of Arx Fatalis, a 2002 first-person role-playing game developed by Arkane Studios. It features some improvements over the original engine like bug fixes and wide screen support.
 
@@ -574,12 +548,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://openmw.org](http://openmw.org) || [openmw](https://www.archlinux.org/packages/?name=openmw)
 
-*   **[Sacred Gold](https://en.wikipedia.org/wiki/Sacred_(video_game) "wikipedia:Sacred (video game)")** — Hack'n Slay Roleplay Game like Diablo.
-
-**Tip:** If running on a low resolution (netbook etc) either play it on external monitor, but you can't see the skill/action bar. You can move the Window pressing `Alt+left_mouse`. You can see the action bar, but then you can't see the health bar anymore. Email Michael from linuxgamepublishing.com and ask for a fix - would be really great if we could fully enjoy this game on Linux netbooks
-
-	[http://forum.sacred2.com](http://forum.sacred2.com) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=Sacred)</small>
-
 *   **VCMI** — Attempt to reimplement [Heroes of Might and Magic III](https://en.wikipedia.org/wiki/Heroes_of_Might_and_Magic_III "wikipedia:Heroes of Might and Magic III").
 
 	[http://forum.vcmi.eu/portal.php](http://forum.vcmi.eu/portal.php) || [vcmi](https://aur.archlinux.org/packages/vcmi/) [vcmi-git](https://aur.archlinux.org/packages/vcmi-git/)
@@ -588,7 +556,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.darkarts.co.za/vulture](http://www.darkarts.co.za/vulture) || [vulture](https://aur.archlinux.org/packages/vulture/)
 
-## Shooters (FPS, Third Person)
+## Shooters (FPS, third person)
 
 *   **[Alien Arena](https://en.wikipedia.org/wiki/CodeRED:_Alien_Arena "wikipedia:CodeRED: Alien Arena")** — Free, standalone FPS focused mainly on online multiplayer, but can also be played singleplayer against bots.
 
@@ -602,14 +570,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://acr.victorz.ca](http://acr.victorz.ca) || [assaultcube-reloaded](https://aur.archlinux.org/packages/assaultcube-reloaded/)
 
-*   **[Counter-Strike](https://en.wikipedia.org/wiki/Counter-Strike "wikipedia:Counter-Strike")** — Team-based, semi-realistic FPS. Condition Zero is also available.
-
-	[http://store.steampowered.com/app/10/](http://store.steampowered.com/app/10/) || Steam
-
-*   **[Counter-Strike: Source](https://en.wikipedia.org/wiki/Counter-Strike:_Source "wikipedia:Counter-Strike: Source")** — Team-based, semi-realistic FPS using Source Engine.
-
-	[http://store.steampowered.com/app/240/](http://store.steampowered.com/app/240/) || Steam
-
 *   **[Cube](https://en.wikipedia.org/wiki/Cube_(video_game) "wikipedia:Cube (video game)")** — Open source multiplayer and singleplayer first person shooter game.
 
 	[http://cubeengine.com/](http://cubeengine.com/) || [cube](https://aur.archlinux.org/packages/cube/)
@@ -617,18 +577,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **[Cube 2: Sauerbraten](https://en.wikipedia.org/wiki/Cube_2:_Sauerbraten "wikipedia:Cube 2: Sauerbraten")** — Improved version of the Cube engine.
 
 	[http://sauerbraten.org/](http://sauerbraten.org/) || [sauerbraten](https://www.archlinux.org/packages/?name=sauerbraten)
-
-*   **[Day of Defeat](https://en.wikipedia.org/wiki/Day_of_Defeat "wikipedia:Day of Defeat")** — WWII online FPS.
-
-	[http://store.steampowered.com/app/30/](http://store.steampowered.com/app/30/) || Steam
-
-*   **[Day of Defeat: Source](https://en.wikipedia.org/wiki/Day_of_Defeat:_Source "wikipedia:Day of Defeat: Source")** — WWII online FPS. Using Source Engine.
-
-	[http://store.steampowered.com/app/300/](http://store.steampowered.com/app/300/) || Steam
-
-*   **[Deathmatch Classic](https://en.wikipedia.org/wiki/Deathmatch_Classic "wikipedia:Deathmatch Classic")** — Half-Life modification of the multiplayer deathmatch mode.
-
-	[http://store.steampowered.com/app/40/](http://store.steampowered.com/app/40/) || Steam
 
 *   Doom: the famous shooter from ID Software has several ports for Linux. None of the id-engine games have copyleft game resources, only the game engine code was open sourced. See [[1]](http://doom.wikia.com/wiki/Source_port) for details.
 
@@ -677,10 +625,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.idsoftware.com](http://www.idsoftware.com) || [doom3](https://aur.archlinux.org/packages/doom3/)
 
-*   **iodoom3** — Doom 3 engine revamping, à-la-ioquake
-
-	[http://www.iodoom3.org](http://www.iodoom3.org) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=iodoom3)</small>
-
 *   **dhemw3** — Fork of iodoom3
 
 	[https://github.com/dhewm/dhewm3](https://github.com/dhewm/dhewm3) || [dhewm3](https://aur.archlinux.org/packages/dhewm3/)
@@ -689,7 +633,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[https://github.com/RobertBeckebans/RBDOOM-3-BFG](https://github.com/RobertBeckebans/RBDOOM-3-BFG) || [rbdoom-3-bfg](https://aur.archlinux.org/packages/rbdoom-3-bfg/)
 
-*   **ezQuake** — Fast paced multiplayer FPS focusing on movement and trick jumps. The popular, modern and maintained Quake/QuakeWorld client. Manual post-installation setup required. Can play on-line for free
+*   **ezQuake** — Fast paced multiplayer FPS focusing on movement and trick jumps. The popular, modern and maintained Quake/QuakeWorld client. Can play on-line for free
 
 	[http://ezquake.sourceforge.net/](http://ezquake.sourceforge.net/) || [ezquake](https://aur.archlinux.org/packages/ezquake/)
 
@@ -707,14 +651,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://zerowing.idsoftware.com/linux/etqw/](http://zerowing.idsoftware.com/linux/etqw/) || [etqw](https://aur.archlinux.org/packages/etqw/)
 
-*   **[Half-Life](https://en.wikipedia.org/wiki/Half-Life_(video_game) "wikipedia:Half-Life (video game)")** — Science-fiction FPS. The two extensions, *Opposing Force* and *Blue Shift*, are also available.
-
-	[http://store.steampowered.com/app/70/](http://store.steampowered.com/app/70/) || Steam
-
-*   **[Half-Life 2](https://en.wikipedia.org/wiki/Half-Life_2 "wikipedia:Half-Life 2")** — Science-fiction FPS. Lost Coast, Episode One and Episode Two are also available. In beta as of July 2013
-
-	[http://store.steampowered.com/app/220/](http://store.steampowered.com/app/220/) || Steam
-
 *   **HHeretic** — Linux port of Raven Game's old shooter, Heretic.
 
 	[http://hhexen.sourceforge.net/hheretic.html](http://hhexen.sourceforge.net/hheretic.html) || [hheretic](https://aur.archlinux.org/packages/hheretic/)
@@ -730,17 +666,13 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   Hexen 1 Demo game data – [hexen1-wad](https://aur.archlinux.org/packages/hexen1-wad/)
 
-*   **[Left 4 Dead 2](https://en.wikipedia.org/wiki/Left_4_Dead_2 "wikipedia:Left 4 Dead 2")** — Coop survival horror. Using Source Engine.
-
-	[http://store.steampowered.com/app/550/](http://store.steampowered.com/app/550/) || Steam
-
 *   **[Nexuiz](https://en.wikipedia.org/wiki/Nexuiz "wikipedia:Nexuiz")** — Free, open-source first person shooter. Development ceased, most of the developers moved to project [Xonotic](http://xonotic.org/).
 
 	[http://alientrap.org/nexuiz](http://alientrap.org/nexuiz) || [nexuiz](https://aur.archlinux.org/packages/nexuiz/)
 
-*   **nQuake** — Fast paced multiplayer FPS focusing on movement and trick jumps. This is the popular Quake / QuakeWorld package, including ezQuake client, 24bit textures, maps, bots and more. Automatic post-installation set up. Can play on-line for free.
+*   **nQuake** — Fast paced multiplayer FPS focusing on movement and trick jumps. This is the popular Quake / QuakeWorld package, including ezQuake client, 24bit textures, maps, bots and more. Can play on-line for free.
 
-	[http://nquake.sourceforge.net/](http://nquake.sourceforge.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=nquake)</small>
+	[http://nquake.sourceforge.net/](http://nquake.sourceforge.net/) || [nquake-arena](https://aur.archlinux.org/packages/nquake-arena/)
 
 *   **[OpenArena](https://en.wikipedia.org/wiki/OpenArena "wikipedia:OpenArena")** — Fast multiplayer shooter based on the quake3-engine.
 
@@ -781,34 +713,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://redeclipse.net](http://redeclipse.net) || [redeclipse](https://aur.archlinux.org/packages/redeclipse/)
 
-*   **[Ricochet](https://en.wikipedia.org/wiki/Ricochet_(2000_video_game) "wikipedia:Ricochet (2000 video game)")** — Futuristic arena battles.
-
-	[http://store.steampowered.com/app/60/](http://store.steampowered.com/app/60/) || Steam
-
-*   **[Serious Sam: The First Encounter](https://en.wikipedia.org/wiki/Serious_Sam "wikipedia:Serious Sam")** — Fast-paced and frenetic FPS where the player must face huge waves of enemies.
-
-	[Linux Installers for Linux Gamers](http://liflg.org/?catid=6&gameid=71) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=serioussam)</small>
-
-*   **[Serious Sam: The Second Encounter](https://en.wikipedia.org/wiki/Serious_Sam "wikipedia:Serious Sam")** — Fast-paced and frenetic FPS where the player must face huge waves of enemies.
-
-	[Linux Installers for Linux Gamers](http://liflg.org/?catid=6&gameid=71) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=serioussam)</small>
-
-*   **[Serious Sam II](https://en.wikipedia.org/wiki/Serious_Sam_II "wikipedia:Serious Sam II")** — Fast-paced and frenetic FPS where the player must face huge waves of enemies.
-
-	[Linux Installers for Linux Gamers](http://liflg.org/?catid=6&gameid=83) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=serioussam2)</small>
-
-*   **[Serious Sam 3: BFE](https://en.wikipedia.org/wiki/Serious_Sam_3:_BFE "wikipedia:Serious Sam 3: BFE")** — Fast-paced and frenetic FPS where the player must face huge waves of enemies.
-
-	[http://www.serioussam.com](http://www.serioussam.com) || Steam
-
-*   **[Team Fortress Classic](https://en.wikipedia.org/wiki/Team_Fortress_Classic "wikipedia:Team Fortress Classic")** — Class-based online FPS.
-
-	[http://store.steampowered.com/app/20/](http://store.steampowered.com/app/20/) || Steam
-
-*   **[Team Fortress 2](https://en.wikipedia.org/wiki/Team_Fortress_2 "wikipedia:Team Fortress 2")** — Class-based online FPS with cartoonish style. Using Source Engine.
-
-	[http://store.steampowered.com/app/440/](http://store.steampowered.com/app/440/) || Steam
-
 *   **Tesseract** — Smooth FPS with map editing, instagib, DM and CTF.
 
 	[http://tesseract.gg/](http://tesseract.gg/) || [tesseract-game](https://www.archlinux.org/packages/?name=tesseract-game)
@@ -816,18 +720,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **[Tremulous](https://en.wikipedia.org/wiki/Tremulous "wikipedia:Tremulous")** — FPS with elements of real time strategy, featuring humans and aliens.
 
 	[http://tremulous.net/](http://tremulous.net/) || [tremulous](https://aur.archlinux.org/packages/tremulous/)
-
-*   **[Unreal Tournament (1999)](https://en.wikipedia.org/wiki/Unreal_Tournament "wikipedia:Unreal Tournament")** — Fast-paced first person shooter featuring arena combat.
-
-	|| [ut1999](https://aur.archlinux.org/packages/ut1999/)
-
-*   **[Unreal Tournament 2003](https://en.wikipedia.org/wiki/Unreal_Tournament_2003 "wikipedia:Unreal Tournament 2003")** — Fast-paced first person shooter featuring arena combat.
-
-	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=ut2003)</small>
-
-*   **[Unreal Tournament 2004](https://en.wikipedia.org/wiki/Unreal_Tournament_2004 "wikipedia:Unreal Tournament 2004")** — Fast-paced first person shooter featuring arena combat. UT2004 is almost a superset of UT2003.
-
-	|| [ut2004](https://aur.archlinux.org/packages/ut2004/) for the retail version, [ut2004-anthology](https://aur.archlinux.org/packages/ut2004-anthology/) for the anthology version
 
 *   **[Unreal Tournament (upcoming)](https://en.wikipedia.org/wiki/Unreal_Tournament_(upcoming_video_game) "wikipedia:Unreal Tournament (upcoming video game)")** — Free and open-source remake of the original using Unreal Engine 4
 
@@ -906,7 +798,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **Pydance** — Python Dance Dance Revolution style game.
 
-	[http://icculus.org/pyddr/](http://icculus.org/pyddr/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=pydance)</small>
+	[http://icculus.org/pyddr/](http://icculus.org/pyddr/) || [pydance](https://aur.archlinux.org/packages/pydance/)
 
 *   **[Stepmania](https://en.wikipedia.org/wiki/Stepmania "wikipedia:Stepmania")** — Advanced dance simulation game.
 
@@ -926,37 +818,17 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.asc-hq.org/](http://www.asc-hq.org/) || [asc](https://aur.archlinux.org/packages/asc/)
 
-*   **Boson** — OpenGL real-time strategy game, with the feeling of Command&Conquer(tm) or StarCraft(tm).
-
-	[http://boson.sourceforge.net/](http://boson.sourceforge.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=boson)</small>
-
-*   **Civilization V** — Famous turn-based strategy game.
-
-	[http://store.steampowered.com/app/8930/](http://store.steampowered.com/app/8930/) || Steam
-
 *   **Crimson Fields** — Tactical war game in the tradition of Battle Isle.
 
 	[http://crimson.seul.org/](http://crimson.seul.org/) || [crimson](https://aur.archlinux.org/packages/crimson/)
-
-*   **Crusader Kings II** — A grand strategy game set in the Middle Ages.
-
-	[http://store.steampowered.com/app/203770/](http://store.steampowered.com/app/203770/) || Steam
 
 *   **Dark Oberon** — Open source real-time strategy game similar to Warcraft II.
 
 	[http://dark-oberon.sourceforge.net/](http://dark-oberon.sourceforge.net/) || [dark-oberon](https://aur.archlinux.org/packages/dark-oberon/)
 
-*   **Dota 2** — The sequel to the famous *Defense of the Ancient* map for WarCraft III, which itself was based on the popular *Aeon of Strife* StarCraft map.
-
-	[http://store.steampowered.com/app/570/](http://store.steampowered.com/app/570/) || Steam
-
 *   **[Endgame Singularity](https://en.wikipedia.org/wiki/Endgame:_Singularity "wikipedia:Endgame: Singularity")** — Turn based single player strategy/simulation about a AI hiding, growing and evolving.
 
 	[http://www.emhsoft.com/singularity/](http://www.emhsoft.com/singularity/) || [singularity](https://www.archlinux.org/packages/?name=singularity)
-
-*   **Europa Universalis IV** — A grand strategy video game where player controls a nation during the Late Middle Ages until the Early Modern Period (1444 to 1821).
-
-	[http://store.steampowered.com/app/236850/](http://store.steampowered.com/app/236850/) || Steam
 
 *   **Factorio** — A game about mining resources, planning and building factories, automating production and fighting alien enemies.
 
@@ -985,6 +857,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **Globulation 2** — Multiplayer RTS with some "economic" elements minimizing the amount of micromanagement.
 
 	[http://globulation2.org/wiki/Main_Page](http://globulation2.org/wiki/Main_Page) || [glob2](https://www.archlinux.org/packages/?name=glob2)
+
+*   **[Heroes of Newerth](https://en.wikipedia.org/wiki/Heroes_of_Newerth "wikipedia:Heroes of Newerth")** — Online, multi-player strategy game that is based upon DoTA (Defense of the Ancients). Free-to-own (gameplay free; pay for cosmetic upgrades only)
+
+	[http://heroesofnewerth.com/](http://heroesofnewerth.com/) || [hon](https://aur.archlinux.org/packages/hon/)
 
 *   **Lgeneral** — Turn-based strategy engine heavily inspired by Panzer General.
 
@@ -1026,11 +902,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://wz2100.net/](http://wz2100.net/) || [warzone2100](https://www.archlinux.org/packages/?name=warzone2100)
 
-*   **[Zero-K](https://en.wikipedia.org/wiki/Zero-K "wikipedia:Zero-K")** — Zero-K is a free multi-platform open source real-time strategy computer game. Initially based on content from Total Annihilation on the open source Spring Engine, it was forked and all proprietary content replaced, and evolved into a completely new game with unique features. It can be easily installed by installing mono and downloading and running the Zero-K lobby from the official website at [http://zero-k.info/](http://zero-k.info/)
-
-	{{{3}}} || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-## Tycoon/Management Games
+## Tycoon/management games
 
 *   **Lincity-ng** — City simulation game in which you are required to build and maintain a city. You can win the game either by building a sustainable economy or by evacuating all citizens with spaceships.
 

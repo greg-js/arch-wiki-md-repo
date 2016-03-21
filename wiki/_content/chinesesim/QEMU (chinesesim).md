@@ -4,7 +4,7 @@
 
 当作为仿真器时，可以在一种架构(如PC机)下运行另一种架构(如ARM)下的操作系统和程序。通过动态转化，可以获得很高的运行效率。
 
-当 QEME 作为虚拟机时，可以使用 [xen](/index.php/Xen "Xen") 或 [kvm](/index.php/Kvm "Kvm") 访问 CPU 的扩展功能([HVM](https://en.wikipedia.org/wiki/Hardware-assisted_virtualization "wikipedia:Hardware-assisted virtualization"))，在主机 CPU 上直接执行虚拟客户端的代码，获得接近于真机的性能表现。
+当 QEME 作为虚拟机时，可以使用 [xen](/index.php/Xen_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xen (简体中文)") 或 [kvm](/index.php/KVM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KVM (简体中文)") 访问 CPU 的扩展功能([HVM](https://en.wikipedia.org/wiki/Hardware-assisted_virtualization "wikipedia:Hardware-assisted virtualization"))，在主机 CPU 上直接执行虚拟客户端的代码，获得接近于真机的性能表现。
 
 ## Contents
 
