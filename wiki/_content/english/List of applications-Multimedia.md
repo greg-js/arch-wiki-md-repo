@@ -877,7 +877,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 	[https://wiki.gnome.org/Projects/Istanbul](https://wiki.gnome.org/Projects/Istanbul) || [istanbul](https://aur.archlinux.org/packages/istanbul/)
 
-*   **Kazam** — Screencasting program with design in mind.
+*   **Kazam** — Screencasting program with design in mind. Handles multiscreen setups.
 
 	[https://launchpad.net/kazam](https://launchpad.net/kazam) || [kazam](https://aur.archlinux.org/packages/kazam/)
 

@@ -1006,5 +1006,6 @@ You can use the following website to get your device's coordinates along with a 
 52.5134438, 13.4263034 "XenGi" # Berlin, Germany
 50.207419, 9.536354 "c-korn" # Hessen, Germany
 52.468271, 4.837296 "hmhdiswiss" # Zaandam, The Netherlands
+23.1344342,-82.3871747,"Uranio-235" # Havana, Cuba
 
 ```

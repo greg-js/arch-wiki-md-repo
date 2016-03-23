@@ -45,7 +45,7 @@
 	imágenes de network labeled no se incluyen en el repositorio [core].
 
 *   Por favor, revise md5sum antes de usarlo.
-*   [Download 2014.11 „2k14-R5“](https://downloads.archlinux.de/iso/archboot/2014.11) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2014.11-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
+*   [Download 2015.09](http://ftp.u-strasbg.fr/linux/distributions/archlinux/iso/archboot/2015.09/) / [Changelog](http://ftp.u-strasbg.fr/linux/distributions/archlinux/iso/archboot/Changelog-2015.09-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
 
 	kernel: 3.17.3-1
 

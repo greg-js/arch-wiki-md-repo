@@ -18,8 +18,6 @@
 *   [7 Access for non-root users](#Access_for_non-root_users)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Wrapping pacman transactions in snapshots](#Wrapping_pacman_transactions_in_snapshots)
-        *   [8.1.1 snap-pac pacman hooks](#snap-pac_pacman_hooks)
-        *   [8.1.2 pacupg bash script](#pacupg_bash_script)
     *   [8.2 Suggested filesystem layout](#Suggested_filesystem_layout)
         *   [8.2.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
         *   [8.2.2 Restoring / to a previous snapshot of subvol_root](#Restoring_.2F_to_a_previous_snapshot_of_subvol_root)
@@ -233,23 +231,15 @@ Eventually, you want to be able to browse the `.snapshots` directory with a user
 
 ### Wrapping pacman transactions in snapshots
 
-There are a couple of packages used for automatically creating snapshots upon a pacman transaction.
+There are a couple of packages used for automatically creating snapshots upon a pacman transaction:
 
-#### snap-pac pacman hooks
+*   **snap-pac** — "Makes pacman automatically use snapper to create [#Pre/post snapshots](#Pre.2Fpost_snapshots) like openSUSE's YaST". Uses [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
 
-The [snap-pac](https://aur.archlinux.org/packages/snap-pac/) package provides [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman") for snapper [#Pre/post snapshots](#Pre.2Fpost_snapshots), wrapping a pacman transaction with them, similar to the behavior used by openSUSE's YaST. After installation, simply continue to use pacman as normal and pre/post snapshots will be created automatically. Snapshots are only created if an actual change occurs.
+	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://aur.archlinux.org/packages/snap-pac/)
 
-Additionally a hook is provided for automatically regenerating your GRUB configuration after each pacman transaction. This is for use if one has [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/) installed.
+*   **pacupg** — "Script that wraps package and AUR upgrades in btrfs snapshots and provides an easy way to roll them back."
 
-See [the package homepage](https://github.com/wesbarnett/snap-pac) for more details.
-
-#### pacupg bash script
-
-The [pacupg](https://aur.archlinux.org/packages/pacupg/) package is a bash script specifically designed to wrap a system upgrade in [#Pre/post snapshots](#Pre.2Fpost_snapshots). It downloads the packages first (`pacman -Syuw`) and then only wraps the upgrade (`pacman -Su`) in snapshots so as to keep the differences between the pre and post snapshots to a minimum. It also detects if the user's `/boot` directory is on a separate partition and automatically makes a copy of it when it detects an upgrade to the Linux kernel. Additionally, it will avoid taking snapshots if there is nothing to upgrade and log all upgraded packages (with changed version numbers) to `/var/local/log/pacupg`.
-
-If [pacaur](https://aur.archlinux.org/packages/pacaur/) is installed, the script can also upgrade AUR packages. It builds them first, then takes a snapshot when they are ready to be installed thus keeping the pre-post snapshot differences minimal. As with regular packages, it logs all upgraded packages and will avoid taking snapshots if no packages are available to upgrade. The script now integrates with [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/). If it is installed, `pacupg` will automatically regenerate your grub.cfg after every upgrade to include your snapshots as boot options.
-
-The script also allows for the easy rollback of snapshots. Running `pacupg -r` will bring up a menu that allows the user to rollback both pre-post snapshots (upgrades) or single snapshots (timeline snapshots).
+	[https://github.com/crossroads1112/bin/tree/master/pacupg](https://github.com/crossroads1112/bin/tree/master/pacupg) || [pacupg](https://aur.archlinux.org/packages/pacupg/)
 
 ### Suggested filesystem layout
 

@@ -2,7 +2,7 @@ Kernel [Mode Setting](https://en.wikipedia.org/wiki/Mode-setting "wikipedia:Mode
 
 The Linux kernel's implementation of KMS enables native resolution in the framebuffer and allows for instant console (tty) switching. KMS also enables newer technologies (such as DRI2) which will help reduce artifacts and increase 3D performance, even kernel space power-saving.
 
-**Note:** The proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") and [catalyst](/index.php/Catalyst "Catalyst") drivers also implement kernel mode-setting, but as they do not use the built-in kernel implementation, they lack an fbdev driver for the high-resolution console.
+**Note:** The proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver (since 364.12) also implements kernel mode-setting, but it does not use the built-in kernel implementation and it lacks an fbdev driver for the high-resolution console.
 
 ## Contents
 
@@ -34,7 +34,9 @@ At first, note that for *any* method you use, you should *always* disable:
 
 [Intel](/index.php/Intel "Intel"), [Nouveau](/index.php/Nouveau "Nouveau"), [ATI](/index.php/ATI "ATI") and [AMDGPU](/index.php/AMDGPU "AMDGPU") drivers already enable KMS automatically for all chipsets, so you need not install it manually.
 
-The proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") and [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") drivers do not support KMS. In order to use KMS you should replace them with open source drivers.
+The proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver supports KMS (since 364.12). However, it lacks an fbdev driver for the high-resolution console.
+
+The proprietary [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver does not support KMS. In order to use KMS you should replace it with the open-source [ATI](/index.php/ATI "ATI") driver.
 
 ### Early KMS start
 

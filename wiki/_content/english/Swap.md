@@ -29,7 +29,7 @@ Swap space will usually be a disk partition but can also be a file. Users may cr
 To check swap status, use:
 
 ```
-$ swapon -s
+$ swapon --show
 
 ```
 

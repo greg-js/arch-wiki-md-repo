@@ -672,7 +672,12 @@ SUBSYSTEM=="pci", KERNEL=="0000:00:14.0", ATTR{power/wakeup}="disabled"
 
 ```
 
-If this does not work, check that ARPT is disabled, and add the corresponding rule to udev.
+If this does not work, check that ARPT is disabled, and add a corresponding rule to udev, like this:
+
+```
+SUBSYSTEM=="pci", KERNEL=="0000:03:00.0", ATTR{power/wakeup}="disabled"
+
+```
 
 If this still does not work, try disabling LID0. This way suspending via lid-closing should be made impossible, so you might want to follow the instructions in [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1556046#p1556046) to make suspending via both lid-closing and systemd possible, by using systemd services.
 

@@ -1,6 +1,8 @@
-SABnzbd is an Open Source Binary Newsreader written in Python.
+SABnzbd is an open-source binary newsreader written in Python.
 
-*It's totally free, incredibly easy to use, and works practically everywhere. SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction.*
+From [sabnzbd.org](http://sabnzbd.org/):
+
+	It's totally free, incredibly easy to use, and works practically everywhere. SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction.
 
 ## Contents
 
@@ -12,14 +14,14 @@ SABnzbd is an Open Source Binary Newsreader written in Python.
     *   [2.4 Accessing the web-interface](#Accessing_the_web-interface)
     *   [2.5 Local configuration](#Local_configuration)
         *   [2.5.1 Running as user without systemd user instance](#Running_as_user_without_systemd_user_instance)
-*   [3 Tips & Tricks](#Tips_.26_Tricks)
+*   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Enabling HTTPS](#Enabling_HTTPS)
     *   [3.2 Using a custom port](#Using_a_custom_port)
-*   [4 External Links](#External_Links)
+*   [4 See also](#See_also)
 
 ## Installation
 
-Install [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) or [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install the [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) or [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) package.
 
 ## Configuration
 
@@ -29,7 +31,7 @@ SABnzbd is able to run globally (settings apply to all users) and locally (per u
 
 The [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) package provides a `sabnzbd` [systemd](/index.php/Systemd "Systemd") service.
 
-It's however possible to start SABnzbd using the following command:
+It is however possible to start SABnzbd using the following command:
 
 ```
 $ sudo -u sabnzbd -H /opt/sabnzbd/SABnzbd.py -f /opt/sabnzbd/sabnzbd.ini
@@ -158,7 +160,7 @@ Group = desired_group_name
 WantedBy = default.target
 ```
 
-## Tips & Tricks
+## Tips and tricks
 
 ### Enabling HTTPS
 
@@ -208,7 +210,7 @@ For local configuration:
 
 You should now be able to start sabnzbd with a custom port.
 
-## External Links
+## See also
 
 *   [SABnzbd homepage](http://sabnzbd.org/)
 *   [SABnzbd wiki](http://wiki.sabnzbd.org/)

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Chromium](/index.php/Chromium "Chromium") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-03-10，点击[这里](https://wiki.archlinux.org/index.php?title=Chromium&diff=0&oldid=362695)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Chromium](/index.php/Chromium "Chromium") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-22，点击[这里](https://wiki.archlinux.org/index.php?title=Chromium&diff=0&oldid=362695)可以查看翻译后英文页面的改动。
 
 [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) 是一款来自Google的开源图形网络浏览器，基于 [WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit")渲染引擎。
 
@@ -17,12 +17,11 @@
     *   [3.1 杂音](#.E6.9D.82.E9.9F.B3)
     *   [3.2 卡顿](#.E5.8D.A1.E9.A1.BF)
     *   [3.3 PDF 插件中的字体问题](#PDF_.E6.8F.92.E4.BB.B6.E4.B8.AD.E7.9A.84.E5.AD.97.E4.BD.93.E9.97.AE.E9.A2.98)
-    *   [3.4 Force 3D acceleration in Flash Player and the browser](#Force_3D_acceleration_in_Flash_Player_and_the_browser)
+    *   [3.4 在浏览器和Flash播放器插件强制使用3D加速功能](#.E5.9C.A8.E6.B5.8F.E8.A7.88.E5.99.A8.E5.92.8CFlash.E6.92.AD.E6.94.BE.E5.99.A8.E6.8F.92.E4.BB.B6.E5.BC.BA.E5.88.B6.E4.BD.BF.E7.94.A83D.E5.8A.A0.E9.80.9F.E5.8A.9F.E8.83.BD)
     *   [3.5 代理设置](#.E4.BB.A3.E7.90.86.E8.AE.BE.E7.BD.AE)
     *   [3.6 WebGL](#WebGL)
-    *   [3.7 Google Play and Flash](#Google_Play_and_Flash)
-    *   [3.8 Force 3D acceleration in Pepper Flash Player and i.g. the browser with radeon driver](#Force_3D_acceleration_in_Pepper_Flash_Player_and_i.g._the_browser_with_radeon_driver)
-    *   [3.9 Asian characters not displayed with language set to English](#Asian_characters_not_displayed_with_language_set_to_English)
+    *   [3.7 Google Play 与 Flash](#Google_Play_.E4.B8.8E_Flash)
+    *   [3.8 当语言被设置为英语时，亚洲字符不能正确的被显示的问题](#.E5.BD.93.E8.AF.AD.E8.A8.80.E8.A2.AB.E8.AE.BE.E7.BD.AE.E4.B8.BA.E8.8B.B1.E8.AF.AD.E6.97.B6.EF.BC.8C.E4.BA.9A.E6.B4.B2.E5.AD.97.E7.AC.A6.E4.B8.8D.E8.83.BD.E6.AD.A3.E7.A1.AE.E7.9A.84.E8.A2.AB.E6.98.BE.E7.A4.BA.E7.9A.84.E9.97.AE.E9.A2.98)
 *   [4 资源](#.E8.B5.84.E6.BA.90)
 
 ## 安装
@@ -103,11 +102,11 @@ chrome 及 chromium 在中文环境下使用可能会极其卡顿，原因在于
 
 安装软件包 [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) 可以解决一些 PDF 的字体显示问题，不然的话替代字体会显示成其他的文字。[reported on the chromium bug 报告](https://code.google.com/p/chromium/issues/detail?id=369991).
 
-### Force 3D acceleration in Flash Player and the browser
+### 在浏览器和Flash播放器插件强制使用3D加速功能
 
-**Warning:** Disabling the rendering list may cause unstable behaviour, including crashes of the host. See the bug reports in `chrome://gpu`.
+**警告:** 禁用渲染列表可能会导致包括主机崩溃在内的不稳定的行为。你可以在这里看到Bug报告`chrome://gpu`.
 
-First, make sure you have all the required packages as explained in [VDPAU](/index.php/VDPAU "VDPAU"). Then, to force 3D rendering *enable* the flag "Override software rendering list" in `chrome://flags`. Check if it is working in `chrome://gpu`. This may also alleviate tearing issues with the [radeon](/index.php/Radeon "Radeon") driver.
+首先，确认你已经安装了所有已经在 [VDPAU](/index.php/VDPAU "VDPAU") 中列出的包。然后，在 `chrome://flags` 中将 "Override software rendering list" 设置为 *enable*。你可以在 `chrome://gpu` 中检查设置是否起效。这也可能会减少 [radeon](/index.php/Radeon "Radeon") 驱动的画面撕裂问题。
 
 ### 代理设置
 
@@ -119,17 +118,13 @@ First, make sure you have all the required packages as explained in [VDPAU](/ind
 
 有可能 Chromium 把你的显卡列入了黑名单，如果是这样，可以通过`--ignore-gpu-blacklist`选项禁用黑名单。或者在`about:flags` 中启用 *Override software rendering list*.
 
-### Google Play and Flash
+### Google Play 与 Flash
 
-DRM content on Flash still requires HAL to play. This is readily apparent with Google Play Movies. If one attempts to play a Google Play movie without HAL, they will receive a YouTube-like screen, but the video will not play. See [Flash DRM content](/index.php/Flash_DRM_content "Flash DRM content") for more information.
+Flash 中的 DRM 内容需要 HAL 才能够正常播放。 通过 Google Play Movies 可以很快体现出这一点. 如果有人尝试在没有HAL的情况下播放一个 Google Play 上的电影，那么他就会见到一个类似于 YouTube 的播放界面，但是视频却并不会被播放。查看 [Flash DRM content](/index.php/Flash_DRM_content "Flash DRM content") 以获取更多信息。
 
-### Force 3D acceleration in Pepper Flash Player and i.g. the browser with radeon driver
+### 当语言被设置为英语时，亚洲字符不能正确的被显示的问题
 
-First, make sure you have all the required packages as explained in [VDPAU](/index.php/VDPAU "VDPAU"). Then, to force 3D rendering *enable* the flag "Override software rendering list" in `chrome://flags`. Check if it is working in `chrome://gpu`.
-
-### Asian characters not displayed with language set to English
-
-This is a known issue with all Chromium versions up to v42\. [[1]](https://code.google.com/p/chromium/issues/detail?id=7160) As a workaround, install fonts separately: [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) and [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/). [[2]](http://superuser.com/questions/192704/why-cant-my-chromium-display-japanese-characters)
+这是一个已知的存在于 Chromium v42版本之前的问题。 [[1]](https://code.google.com/p/chromium/issues/detail?id=7160) 为了解决这个问题, 请分别安装字体: [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai)， [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) 和 [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/)。 [[2]](http://superuser.com/questions/192704/why-cant-my-chromium-display-japanese-characters)
 
 ## 资源
 

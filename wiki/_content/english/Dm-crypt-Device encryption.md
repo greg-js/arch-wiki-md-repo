@@ -139,6 +139,10 @@ Defaults are compared with a cryptographically higher specification example in t
 | --use-{u,}random | `--use-urandom` | `--use-random` | Selects which [random number generator](/index.php/Random_number_generator "Random number generator") to use. Quoting the cryptsetup manual page: "In a low-entropy situation (e.g. in an embedded system), both selections are problematic. Using /dev/urandom can lead to weak keys. Using /dev/random can block a long time, potentially forever, if not enough entropy can be harvested by the kernel." |
 | --verify-passphrase, -y | Yes | - | Default only for luksFormat and luksAddKey. No need to type for Arch Linux with LUKS mode at the moment. |
 
+If you want to deep-dive into cryptographic features of LUKS, the [LUKS specification](https://gitlab.com/cryptsetup/cryptsetup/wikis/Specification) (e.g. its appendices) is a resource.
+
+**Tip:** It is anticipated that the LUKS header receives another major revision in due course. If you are interested in the plans, the developers' [devconfcz2016](https://mbroz.fedorapeople.org/talks/DevConf2016/devconf2016-luks2.pdf) (pdf) presentation summarizes.
+
 ### Encryption options for plain mode
 
 In dm-crypt *plain* mode, there is no master-key on the device, hence, there is no need to set it up. Instead the encryption options to be employed are used directly to create the mapping between an encrypted disk and a named device. The mapping can be created against a partition or a full device. In the latter case not even a partition table is needed.

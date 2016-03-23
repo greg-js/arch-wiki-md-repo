@@ -61,7 +61,6 @@ In order to integrate functions of the host system to the guests, including shar
         *   [5.6.3 Create a VM configuration to boot from the physical drive](#Create_a_VM_configuration_to_boot_from_the_physical_drive)
             *   [5.6.3.1 Create a raw disk .vmdk image](#Create_a_raw_disk_.vmdk_image)
             *   [5.6.3.2 Create the VM configuration file](#Create_the_VM_configuration_file)
-        *   [5.6.4 Install the Guest Additions](#Install_the_Guest_Additions_2)
     *   [5.7 Install a native Arch Linux system from VirtualBox](#Install_a_native_Arch_Linux_system_from_VirtualBox)
     *   [5.8 Move a native Windows installation to a virtual machine](#Move_a_native_Windows_installation_to_a_virtual_machine)
         *   [5.8.1 Tasks on Windows](#Tasks_on_Windows)
@@ -71,27 +70,28 @@ In order to integrate functions of the host system to the guests, including shar
         *   [5.8.5 Known limitations](#Known_limitations)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 VERR_ACCESS_DENIED](#VERR_ACCESS_DENIED)
-    *   [6.2 Keyboard and mouse are blocked in my virtual machine](#Keyboard_and_mouse_are_blocked_in_my_virtual_machine)
-    *   [6.3 Cannot send CTRL+ALT+Fn key to my virtual machine](#Cannot_send_CTRL.2BALT.2BFn_key_to_my_virtual_machine)
-    *   [6.4 Fix ISO images problems](#Fix_ISO_images_problems)
-    *   [6.5 VirtualBox GUI does not match my GTK Theme](#VirtualBox_GUI_does_not_match_my_GTK_Theme)
-    *   [6.6 OpenBSD unusable when virtualisation instructions unavailable](#OpenBSD_unusable_when_virtualisation_instructions_unavailable)
-    *   [6.7 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_.280x80BB0007.29)
-    *   [6.8 USB subsystem is not working on the host or guest](#USB_subsystem_is_not_working_on_the_host_or_guest)
-    *   [6.9 Failed to create the host-only network interface](#Failed_to_create_the_host-only_network_interface)
-    *   [6.10 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
-    *   [6.11 Use serial port in guest OS](#Use_serial_port_in_guest_OS)
-    *   [6.12 Windows 8.x Error Code 0x000000C4](#Windows_8.x_Error_Code_0x000000C4)
-    *   [6.13 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8.2C_8.1_or_10_fails_to_install.2C_boot_or_has_error_.22ERR_DISK_FULL.22)
-    *   [6.14 Linux guests have slow/distorted audio](#Linux_guests_have_slow.2Fdistorted_audio)
-    *   [6.15 Guest freezes after starting Xorg](#Guest_freezes_after_starting_Xorg)
-    *   [6.16 "NS_ERROR_FAILURE" and missing menu items](#.22NS_ERROR_FAILURE.22_and_missing_menu_items)
-    *   [6.17 USB modem](#USB_modem)
-    *   [6.18 "The specified path does not exist. Check the path and then try again." error in Windows guests](#.22The_specified_path_does_not_exist._Check_the_path_and_then_try_again..22_error_in_Windows_guests)
-    *   [6.19 No 64-bit OS client options](#No_64-bit_OS_client_options)
-    *   [6.20 Host OS freezes on Virtual Machine start](#Host_OS_freezes_on_Virtual_Machine_start)
-    *   [6.21 The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)](#The_virtual_machine_has_terminated_unexpectedly_during_startup_with_exit_code_1_.280x1.29)
-    *   [6.22 Analog microphone not working in guest](#Analog_microphone_not_working_in_guest)
+    *   [6.2 pacstrap script fails](#pacstrap_script_fails)
+    *   [6.3 Keyboard and mouse are blocked in my virtual machine](#Keyboard_and_mouse_are_blocked_in_my_virtual_machine)
+    *   [6.4 Cannot send CTRL+ALT+Fn key to my virtual machine](#Cannot_send_CTRL.2BALT.2BFn_key_to_my_virtual_machine)
+    *   [6.5 Fix ISO images problems](#Fix_ISO_images_problems)
+    *   [6.6 VirtualBox GUI does not match my GTK Theme](#VirtualBox_GUI_does_not_match_my_GTK_Theme)
+    *   [6.7 OpenBSD unusable when virtualisation instructions unavailable](#OpenBSD_unusable_when_virtualisation_instructions_unavailable)
+    *   [6.8 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_.280x80BB0007.29)
+    *   [6.9 USB subsystem is not working on the host or guest](#USB_subsystem_is_not_working_on_the_host_or_guest)
+    *   [6.10 Failed to create the host-only network interface](#Failed_to_create_the_host-only_network_interface)
+    *   [6.11 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
+    *   [6.12 Use serial port in guest OS](#Use_serial_port_in_guest_OS)
+    *   [6.13 Windows 8.x Error Code 0x000000C4](#Windows_8.x_Error_Code_0x000000C4)
+    *   [6.14 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8.2C_8.1_or_10_fails_to_install.2C_boot_or_has_error_.22ERR_DISK_FULL.22)
+    *   [6.15 Linux guests have slow/distorted audio](#Linux_guests_have_slow.2Fdistorted_audio)
+    *   [6.16 Guest freezes after starting Xorg](#Guest_freezes_after_starting_Xorg)
+    *   [6.17 "NS_ERROR_FAILURE" and missing menu items](#.22NS_ERROR_FAILURE.22_and_missing_menu_items)
+    *   [6.18 USB modem](#USB_modem)
+    *   [6.19 "The specified path does not exist. Check the path and then try again." error in Windows guests](#.22The_specified_path_does_not_exist._Check_the_path_and_then_try_again..22_error_in_Windows_guests)
+    *   [6.20 No 64-bit OS client options](#No_64-bit_OS_client_options)
+    *   [6.21 Host OS freezes on Virtual Machine start](#Host_OS_freezes_on_Virtual_Machine_start)
+    *   [6.22 The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)](#The_virtual_machine_has_terminated_unexpectedly_during_startup_with_exit_code_1_.280x1.29)
+    *   [6.23 Analog microphone not working in guest](#Analog_microphone_not_working_in_guest)
 *   [7 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
@@ -1048,8 +1048,6 @@ $ VBoxManage storageattach *VM_name* --storagectl "SATA Controller" --port 0 --d
 
 While you continue using the CLI, it is recommended to use the VirtualBox GUI, to personalise the virtual machine configuration. Indeed, you must specify its hardware configuration as close as possible as your native machine: turning on the 3D acceleration, increasing video memory, setting the network interface, etc.
 
-#### Install the Guest Additions
-
 Finally, you may want to seamlessly integrate your Arch Linux with your host operating system and allow copy pasting between both OSes. Please refer to [#Install the Guest Additions](#Install_the_Guest_Additions) for that, since this Arch Linux virtual machine is basically an Arch Linux guest.
 
 **Warning:** For [Xorg](/index.php/Xorg "Xorg") to work in natively and in the virtual machine, since obviously it will be using different drivers, it is best if there is no `/etc/X11/xorg.conf`, so Xorg will pick up everything it needs on the fly. However, if you really do need your own Xorg configuration, maybe is it worth to set your default systemd target to `multi-user.target` with `systemctl isolate graphical.target` as root (more details at [Systemd#Targets table](/index.php/Systemd#Targets_table "Systemd") and [Systemd#Change current target](/index.php/Systemd#Change_current_target "Systemd")). In that way, the graphical interface is disabled (i.e. Xorg is not launched) and after you logged in, you can `startx`} manually with a custom `xorg.conf`.
@@ -1167,6 +1165,10 @@ Partition number (''1-3'', default ''3''): ''1''
 ### VERR_ACCESS_DENIED
 
 To access the raw vmdk image on a windows host, run the VirtualBox GUI as administrator.
+
+### pacstrap script fails
+
+If you used *pacstrap* in the [#Installation steps for Arch Linux guests](#Installation_steps_for_Arch_Linux_guests) to also [#Install the Guest Additions](#Install_the_Guest_Additions) **before** performing a first boot into the new guest, you will need to `umount -l /mnt/dev` as root before using *pacstrap* again; a failure to do this will render it unusable.
 
 ### Keyboard and mouse are blocked in my virtual machine
 

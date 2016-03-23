@@ -10,6 +10,7 @@
     *   [2.2 Starting and stopping vncserver via systemd](#Starting_and_stopping_vncserver_via_systemd)
         *   [2.2.1 User mode](#User_mode)
         *   [2.2.2 System mode](#System_mode)
+        *   [2.2.3 Multi-user mode](#Multi-user_mode)
 *   [3 Running vncserver to directly control the local display](#Running_vncserver_to_directly_control_the_local_display)
     *   [3.1 Using tigervnc's x0vncserver](#Using_tigervnc.27s_x0vncserver)
     *   [3.2 Using x11vnc](#Using_x11vnc)
@@ -172,6 +173,50 @@ WantedBy=multi-user.target
 ```
 
 [Start](/index.php/Start "Start") `vncserver@:1.service` and optionally [enable](/index.php/Enable "Enable") it to run at boot time/shutdown.
+
+#### Multi-user mode
+
+You can use systemd socket activation in combination with [XDMCP](/index.php/Xdmcp "Xdmcp") to automatically spawn VNC servers for each user who attempts to login, so there is no need to set up one server/port per user. It uses your display manager to authenticate users and login, so there is no need for VNC passwords. The downside is that you cannot leave a session running on the server and reconnect to it later. To get this running, first set up [XDMCP](/index.php/Xdmcp "Xdmcp") and make sure whichever display manager you're using is running. Then create:
+
+ `/etc/systemd/system/xvnc.socket` 
+```
+
+[Unit]
+Description=XVNC Server
+
+[Socket]
+ListenStream=5900
+Accept=yes
+
+[Install]
+WantedBy=sockets.target
+
+```
+ `/etc/systemd/system/xvnc@.service` 
+```
+
+[Unit]
+Description=XVNC Per-Connection Daemon
+
+[Service]
+ExecStart=-/usr/bin/Xvnc -inetd -query localhost -geometry 1920x1080 -once -SecurityTypes=None
+User=nobody
+StandardInput=socket
+StandardError=syslog
+
+```
+
+Use systemctl to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `xvnc.socket`. Now any number of users can get unique desktops by connecting to port 5900.
+
+If your VNC server is exposed to the internet, add the `-localhost` option to `Xvnc` in `xvnc@.service` and follow the instructions below about connecting over SSH (Note that the 'localhost' in `-query localhost` is not `-localhost`). Since we only select a user after connecting, the VNC server runs as user 'nobody' and uses xvnc directly instead of the 'vncserver' script, so any options in ~/.vnc are ignored. You might want to [autostart](/index.php/Autostart "Autostart") `vncconfig` so that the clipboard works (`vncconfig` exits immediately in non-VNC sessions). One way is to create:
+
+ `/etc/X11/xinit/xinitrc.d/99-vncconfig.sh` 
+```
+
+#!/bin/sh
+vncconfig -nowin &
+
+```
 
 ## Running vncserver to directly control the local display
 

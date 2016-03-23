@@ -219,6 +219,7 @@ set guiheadroom=0
 *   [Vundle](https://github.com/gmarik/Vundle.vim) — в настоящее время наиболее популярный менеджер плагинов Vim.
 *   [Vim-plug](https://github.com/junegunn/vim-plug) - минималистичный менеджер плагинов для Vim, который имеет много особенностей, например, загрузка плагинов по запросу и параллельное обновление.
 *   [pathogen.vim](https://github.com/tpope/vim-pathogen) — простой плагин для управления переменной runtimepath.
+*   [Dein.vim](https://github.com/Shougo/dein.vim) - новый, быстрый и простой менеджер плагинов для Vim/[Neovim](/index.php/Neovim "Neovim") [NeoBundle](https://github.com/Shougo/neobundle.vim), доступен как [vim-dein-git](https://aur.archlinux.org/packages/vim-dein-git/).
 
 #### Из репозиториев Arch
 

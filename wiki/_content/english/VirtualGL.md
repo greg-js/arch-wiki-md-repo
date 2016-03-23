@@ -17,10 +17,14 @@ The main use-case is to enable server-side hardware-accelerated 3D rendering for
     *   [5.1 Problem: vglrun aborts with "Could not open display"](#Problem:_vglrun_aborts_with_.22Could_not_open_display.22)
     *   [5.2 Problem: vglrun seems to have no effect at all](#Problem:_vglrun_seems_to_have_no_effect_at_all)
     *   [5.3 Problem: vglrun fails with ld.so errors](#Problem:_vglrun_fails_with_ld.so_errors)
-    *   [5.4 Problem: rendering glitches, unusually poor performance, or application errors](#Problem:_rendering_glitches.2C_unusually_poor_performance.2C_or_application_errors)
+    *   [5.4 Problem: vglrun fails with ERROR: Could not connect to VGL client.](#Problem:_vglrun_fails_with_ERROR:_Could_not_connect_to_VGL_client.)
+    *   [5.5 Problem: Error messages about /etc/opt/VirtualGL/vgl_xauth_key not existing](#Problem:_Error_messages_about_.2Fetc.2Fopt.2FVirtualGL.2Fvgl_xauth_key_not_existing)
+    *   [5.6 Problem: rendering glitches, unusually poor performance, or application errors](#Problem:_rendering_glitches.2C_unusually_poor_performance.2C_or_application_errors)
 *   [6 See also](#See_also)
 
 ## Installation and setup
+
+Install the virtualgl package using pacman, then follow the instructions [here](https://cdn.rawgit.com/VirtualGL/virtualgl/2.5/doc/index.html#hd006) to configure it. On arch, /opt/VirtualGL/bin/vglserver_config is just vglserver_config and /opt/VirtualGL/bin/glxinfo is vglxinfo.
 
 ## Using VirtualGL with X11 forwarding
 
@@ -103,6 +107,8 @@ You do not need to restrict yourself to the shell that `vglconnect` opened for y
 After setting up VirtualGL on the remote server [as described above](#Installation_and_setup), and establishing a working remote desktop connection using the [VNC client/server](/index.php/Vncserver "Vncserver") implementation of your choice, no further configuration should be needed.
 
 Inside the VNC session (e.g. in a terminal emulator within the VNC desktop or even directly in `~/.vnc/xstartup`), simply run selected applications with `vglrun` as described in [Running Applications](#Running_applications) below.
+
+You can also run your entire session with `vglrun`, so that all opengl applications work by default. For example, if you use xfce, you can run `vglrun startxfce4` instead of `startxfce4` in your X startup scripts (`~/.vnc/xstartup`, `.xinitrc` or equivalent), or copy and edit a .desktop file in /usr/share/xsessions if you're using a display manager.
 
 ### Choosing an appropriate VNC package
 
@@ -235,6 +241,34 @@ $ chmod u+s /usr/lib32/lib{rr,dl}faker.so  # for the multilib versions provided 
 ```
 
 	However, make sure you fully understand the security implications of [setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid") before deciding to do this in a server environment where security is critical.
+
+### Problem: vglrun fails with ERROR: Could not connect to VGL client.
+
+If your 'client' program is running on the same server as virtualGL (e.g. if you're using virtualGL for VNC), try using `vglrun -c proxy`.
+
+### Problem: Error messages about /etc/opt/VirtualGL/vgl_xauth_key not existing
+
+This means that `vglgenkey` is either not being run at all for your virtualGL X server, or that it is being run again by another X server. For me, lightdm was running `vglgenkey` on the wrong (vnc remote) X servers, because `vglserver_config` adds the following:
+
+ `/etc/lightdm/lightdm.conf` 
+```
+...
+[SeatDefaults]
+display-setup-script=/usr/bin/vglgenkey
+
+```
+
+Changing it to
+
+ `/etc/lightdm/lightdm.conf` 
+```
+...
+[Seat:seat0]
+display-setup-script=/usr/bin/vglgenkey
+
+```
+
+so it only runs on the first X server fixed my problem.
 
 ### Problem: rendering glitches, unusually poor performance, or application errors
 

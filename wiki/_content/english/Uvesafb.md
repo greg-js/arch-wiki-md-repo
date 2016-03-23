@@ -1,4 +1,4 @@
-In contrast with other framebuffer drivers, uvesafb needs a userspace virtualizing daemon, called v86d. It may seem foolish to emulate x86 code on a x86, but this is important if one wants to use the framebuffer code on other architectures (notably non-x86 ones). A new framebuffer driver has been added to kernel 2.6.24\. It has many more features than the standard vesafb, including:
+In contrast with other framebuffer drivers, uvesafb needs a userspace virtualizing daemon, called v86d. It may seem foolish to emulate x86 code on a x86, but this is important if one wants to use the framebuffer code on other architectures (notably non-x86 ones). It was added in kernel 2.6.24 and has many more features than the standard vesafb, including:
 
 1.  Proper blanking and hardware suspension after delay
 2.  Support for custom resolutions as in the system BIOS.
@@ -29,7 +29,7 @@ It should support as much hardware as vesafb.
 
 ## Installation
 
-[Install](/index.php/Install "Install") [v86d](https://aur.archlinux.org/packages/v86d/) from [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [v86d](https://aur.archlinux.org/packages/v86d/) package.
 
 ## Prepare the system
 

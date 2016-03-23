@@ -1,17 +1,17 @@
-**翻译状态：** 本文是英文页面 [Arch_Linux_System_Maintenance](/index.php/Arch_Linux_System_Maintenance "Arch Linux System Maintenance") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-10，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux_System_Maintenance&diff=0&oldid=408000)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [System_maintenance](/index.php/System_maintenance "System maintenance") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-23，点击[这里](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=426303)可以查看翻译后英文页面的改动。
 
-Regular system maintenance is necessary for the proper function of Arch over a period of time. Timely-maintenance is a practice many users get accustomed to.
+要持续使用 Arch linux，需要进行系统日常维护，每个用户都应该及时维护系统。
 
 ## Contents
 
-*   [1 Check for errors](#Check_for_errors)
-    *   [1.1 Failed systemd services](#Failed_systemd_services)
-    *   [1.2 Logfiles](#Logfiles)
-*   [2 Backup](#Backup)
+*   [1 检查错误](#.E6.A3.80.E6.9F.A5.E9.94.99.E8.AF.AF)
+    *   [1.1 systemd 服务问题](#systemd_.E6.9C.8D.E5.8A.A1.E9.97.AE.E9.A2.98)
+    *   [1.2 日志文件](#.E6.97.A5.E5.BF.97.E6.96.87.E4.BB.B6)
+*   [2 备份](#.E5.A4.87.E4.BB.BD)
     *   [2.1 Configuration files](#Configuration_files)
-    *   [2.2 Important data](#Important_data)
-    *   [2.3 List of installed packages](#List_of_installed_packages)
-    *   [2.4 Pacman database](#Pacman_database)
+    *   [2.2 List of installed packages](#List_of_installed_packages)
+    *   [2.3 Pacman database](#Pacman_database)
+    *   [2.4 LUKS headers](#LUKS_headers)
 *   [3 Upgrading the system](#Upgrading_the_system)
     *   [3.1 Avoid certain pacman commands](#Avoid_certain_pacman_commands)
     *   [3.2 不支持部分升级](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)
@@ -31,44 +31,45 @@ Regular system maintenance is necessary for the proper function of Arch over a p
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 使用经过验证的软件包](#.E4.BD.BF.E7.94.A8.E7.BB.8F.E8.BF.87.E9.AA.8C.E8.AF.81.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [5.2 安装内核的长期支持版本](#.E5.AE.89.E8.A3.85.E5.86.85.E6.A0.B8.E7.9A.84.E9.95.BF.E6.9C.9F.E6.94.AF.E6.8C.81.E7.89.88.E6.9C.AC)
+*   [6 参阅](#.E5.8F.82.E9.98.85)
 
-## Check for errors
+## 检查错误
 
-### Failed systemd services
+### systemd 服务问题
 
-Check if any systemd services have entered in a failed state:
+检查是否有 systemd 服务失败:
 
 ```
 $ systemctl --failed
 
 ```
 
-See [Systemd#Analyzing the system state](/index.php/Systemd#Analyzing_the_system_state "Systemd") for more information.
+更多信息请参考 [Systemd#Analyzing the system state](/index.php/Systemd#Analyzing_the_system_state "Systemd").
 
-### Logfiles
+### 日志文件
 
-Look for errors in the log files located at `/var/log`, as well as high priority errors in the systemd journal:
-
-```
-# journalctl -p 0..3 -xn
+检查 `/var/log` 日志文件中是否存在错误, 检查 systemd 日志中的高优先级错误：
 
 ```
+ # journalctl -p 3 -xb
 
-See [Systemd#Journal](/index.php/Systemd#Journal "Systemd") for more information.
+```
 
-## Backup
+更多信息请参考 [Systemd#Journal](/index.php/Systemd#Journal "Systemd").
 
-Backups may be automated with [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
+See [Xorg#Troubleshooting](/index.php/Xorg#Troubleshooting "Xorg") for information on where and how [Xorg](/index.php/Xorg "Xorg") logs errors.
+
+## 备份
+
+Create backups of important data at regular intervals. Those data include configuration files, installed packages and directories such as `/etc`, `/home`, `/var` and for server installations, also `/srv`.
+
+See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for many alternative applications that may better suit your case. See [Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") for other articles of interest.
+
+可以通过 [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") 自动备份.
 
 ### Configuration files
 
 Before editing any configuration files, create a backup. This way, you can revert to a working version in case of problems. Editors like [vim](/index.php/Vim "Vim") and [emacs](/index.php/Emacs "Emacs") can do this automatically, as well as tools like [etckeeper](/index.php/Etckeeper "Etckeeper") which keep `/etc` in a version control system (VCS).
-
-### Important data
-
-Create backups of important data at regular intervals. Directories to consider are `/etc`, `/home` and `/var`, and, for server installations, also `/srv`.
-
-See [Backup programs](/index.php/Backup_programs "Backup programs") for many alternative applications that may better suit your case. See [Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") for other articles of interest.
 
 ### List of installed packages
 
@@ -79,6 +80,10 @@ See [Pacman tips#Backing up and retrieving a list of installed packages](/index.
 ### Pacman database
 
 See [Pacman tips#Back-up the pacman database](/index.php/Pacman_tips#Back-up_the_pacman_database "Pacman tips").
+
+### LUKS headers
+
+It can make sense to periodically check and synchronize the backups of LUKS-encrypted partition headers, especially if passphrases have been revoked. See [Dm-crypt/Device encryption#Backup and restore](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
 
 ## Upgrading the system
 
@@ -217,3 +222,7 @@ Arch's rolling releases can be a boon for users who want to try the latest featu
 [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) 是 Arch 官方提供的 Linux kernel 的长期支持版本。内核上游开发者针对此版本提供了长期支持，包括安全补丁和功能 backports。适用于需要长期支持的用户，也可以将此内核作为新内核升级的后备内核。
 
 需要编辑 [bootloader](/index.php/Bootloader "Bootloader") 的启动加载项，启动到 `vmlinuz-linux-lts` 和 `initramfs-linux-lts.img`。
+
+## 参阅
+
+*   [Arch News Bash Script](https://bbs.archlinux.org/viewtopic.php?id=146850)

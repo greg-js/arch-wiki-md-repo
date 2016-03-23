@@ -80,7 +80,7 @@ If `/query` happens to not work in your client you can try using either `/quote 
 4.  Do not spam the channel, use a pastebin to share something longer than three lines. `program &> program-output.txt` in combination with [pastebin clients](/index.php/Pastebin_Clients "Pastebin Clients") can ease this step.
 5.  Do not abuse phrik (the channel bot). If you want to try out commands or look through the help function, then do it in a `/query` or `/msg`. Example: `/query phrik help <command>`.
 6.  Do not ask whether anyone is alive or uses your software, just state your question.
-7.  [Ask smart questions](http://www.catb.org/~esr/faqs/smart-questions.html). It is easier for us to help you when you ask good/smart questions.
+7.  [Please follow the standard litany when giving a problem report](http://www.co.kerr.tx.us/it/howtoreport.html). It is easier for us to help you when you [ask good/smart questions](http://www.catb.org/~esr/faqs/smart-questions.html).
 8.  Do not demand help, ask for it. Wait for a few minutes before restating questions. Most questions get answered by 'just another user', like you.
 9.  Do not be shy, feel free to help others, every user has something to contribute. The channel is a community effort to provide support, and depends on volunteers.
 10.  Help yourself before you ask. Use [wiki search](/index.php/Special:Search "Special:Search"), use [forum search](https://bbs.archlinux.org/search.php), read [man pages](/index.php/Man_page "Man page") and try [Google](http://www.google.com). This method will often get you an answer faster, and will teach you more.

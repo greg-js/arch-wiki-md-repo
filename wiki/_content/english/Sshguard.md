@@ -20,6 +20,7 @@ sshguard is not vulnerable to most (or maybe any) of the log analysis [vulnerabi
     *   [4.2 Aggressive banning](#Aggressive_banning)
 *   [5 Tips and Tricks](#Tips_and_Tricks)
     *   [5.1 Unbanning](#Unbanning)
+    *   [5.2 Logging](#Logging)
 
 ## Installation
 
@@ -95,6 +96,8 @@ To finish saving your iptables configuration. Repeat above steps with `ip6tables
 
 For more information on using iptables to create powerful firewalls, see [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
 
+The sshguard setup page, [here](http://www.sshguard.net/docs/setup/#netfilter-iptables), under "Here is a sample ruleset that makes sense", lists a slightly more elaborate, slightly more efficient ruleset that only allows services the host supports to even enter the sshguard rule chain.
+
 ## Usage
 
 ### systemd
@@ -155,9 +158,30 @@ If you get banned, you can wait to get unbanned automatically or use iptables to
 
 ```
 
+Or this, which is a lot faster as it returns packet/byte counts and ip addresses instead of names (saves a lot of DNS lookups of probably bogus sites).
+
+```
+# iptables -L sshguard -v -n --line-numbers -v
+
+```
+
 Then use the following command to unban, with the line-number as identified in the former command:
 
 ```
 # iptables -D sshguard <line-number>
 
 ```
+
+### Logging
+
+If you aren't sure what is being passed to sshguard, you can add a tee command to the script in /usr/lib/system/scripts/sshguard-journalctl:
+
+```
+#!/bin/sh
+SSHGUARD_OPTS=$1
+shift
+LANG=C /usr/bin/journalctl -afb -p info -n1 -o cat "$@" | tee -a /var/log/sshguard.log | /usr/bin/sshguard $SSHGUARD_OPTS
+
+```
+
+but use this with care, remember the warning about how a bad-guy can flood your system and potentially lock you out? This makes it a lot easier to do so.

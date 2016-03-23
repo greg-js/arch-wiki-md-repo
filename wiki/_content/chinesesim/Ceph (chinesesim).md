@@ -68,10 +68,8 @@ As an example, for a monitor named `node1` start and enable `ceph-mon@node1.serv
 ## 参阅
 
 *   官方网站
-    *   [Homepage](https://ceph.com)
-    *   [Documentation](http://ceph.com/docs/master/)
+    *   [主页](https://ceph.com)
+    *   [文档](http://ceph.com/docs/master/)
 *   官方源码下载
     *   [GitHub organization](https://github.com/ceph)
     *   [Ceph](https://github.com/ceph/ceph)
-*   官方文档非官方中文版
-    *   [[1]](http://mirrors.myccdn.info/ceph/doc/docs_zh/output/html/)

@@ -196,7 +196,7 @@ If *cinnamon-settings* does not start with the message that it cannot find a cer
 
 ### Video tearing
 
-Because [muffin](https://www.archlinux.org/packages/?name=muffin) is based upon [mutter](https://www.archlinux.org/packages/?name=mutter), video tearing fixes for [GNOME](/index.php/GNOME "GNOME") should also work in Cinnamon. See [GNOME#Tear-free video with Intel HD Graphics](/index.php/GNOME#Tear-free_video_with_Intel_HD_Graphics "GNOME") for more information.
+Because [muffin](https://www.archlinux.org/packages/?name=muffin) is based upon [mutter](https://www.archlinux.org/packages/?name=mutter), video tearing fixes for [GNOME](/index.php/GNOME "GNOME") should also work in Cinnamon. See [GNOME/Troubleshooting#Tear-free video with Intel HD Graphics](/index.php/GNOME/Troubleshooting#Tear-free_video_with_Intel_HD_Graphics "GNOME/Troubleshooting") for more information.
 
 ### Disable the NetworkManager applet
 

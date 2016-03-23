@@ -230,9 +230,9 @@ Then we will have to make sure that the `fglrx` module gets auto-loaded. Either 
 
 #### Disable kernel mode setting
 
-**Note:** Do not do this if you are using powerXpress technology (or hybrid amd-intel graphics) because intel driver needs it.
+**Note:** Do not do this if you are using powerXpress technology (or hybrid AMD-Intel graphics) because Intel driver needs it.
 
-Disabling kernel mode setting is important, as the driver does not take advantage of [KMS](/index.php/KMS "KMS") yet. If you do not deactivate KMS, your system might freeze when trying to switch to a TTY or even when shutting down via your DE.
+Disabling kernel mode setting is important, as the Catalyst driver does not take advantage of [KMS](/index.php/KMS "KMS"). If you do not deactivate KMS, your system might freeze when trying to switch to a TTY or even when shutting down via your DE.
 
 To disable kernel mode setting, add `nomodeset` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 

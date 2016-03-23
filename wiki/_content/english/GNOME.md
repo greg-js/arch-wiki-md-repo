@@ -319,7 +319,7 @@ Various Desktop settings can be applied.
 
 ##### Icons on the Desktop
 
-See [GNOME Files#Desktop Icons](/index.php/GNOME_Files#Desktop_Icons "GNOME Files").
+See [GNOME/Files#Desktop Icons](/index.php/GNOME/Files#Desktop_Icons "GNOME/Files").
 
 ##### Lock screen and background
 
@@ -341,7 +341,7 @@ $ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/pi
 
 #### Extensions
 
-**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) is not compatible with Chrome/Chromium versions 35 and over. Users wishing to install extensions from the webpage will have to use a compatible browser such as [Firefox](/index.php/Firefox "Firefox") or [GNOME Web](/index.php/GNOME_Web "GNOME Web").
+**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) is not compatible with Chrome/Chromium versions 35 and over. Users wishing to install extensions from the webpage will have to use a compatible browser such as [Firefox](/index.php/Firefox "Firefox") or [GNOME/Web](/index.php/GNOME/Web "GNOME/Web").
 
 GNOME Shell can be customized with extensions per user or system-wide.
 

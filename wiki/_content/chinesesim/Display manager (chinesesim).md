@@ -16,7 +16,7 @@
     *   [4.1 自动启动](#.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8)
     *   [4.2 设置语言](#.E8.AE.BE.E7.BD.AE.E8.AF.AD.E8.A8.80)
 *   [5 已知问题](#.E5.B7.B2.E7.9F.A5.E9.97.AE.E9.A2.98)
-    *   [5.1 不兼容在systemd](#.E4.B8.8D.E5.85.BC.E5.AE.B9.E5.9C.A8systemd)
+    *   [5.1 与systemd 不兼容](#.E4.B8.8Esystemd_.E4.B8.8D.E5.85.BC.E5.AE.B9)
 
 ## 显示管理器列表
 
@@ -125,11 +125,11 @@ Icon=google-chrome
 
 ### 自动启动
 
-Most of display managers sources `/etc/xprofile`, `~/.xprofile` and `/etc/X11/xinit/xinitrc.d/`. For more details, see [xprofile](/index.php/Xprofile "Xprofile").
+许多显示管理器都查询配置文件 `/etc/xprofile`, `~/.xprofile` 和`/etc/X11/xinit/xinitrc.d/`。 更多细节，见[xprofile](/index.php/Xprofile "Xprofile")。
 
 ### 设置语言
 
-For display manager's that use [AccountsService](http://freedesktop.org/wiki/Software/AccountsService/) the display manager [locale](/index.php/Locale "Locale") can be set by editing `/var/lib/AccountsService/users/$USER`:
+显示管理器使用[AccountsService](http://freedesktop.org/wiki/Software/AccountsService/)设置 [locale](/index.php/Locale "Locale") ，设置位置是 `/var/lib/AccountsService/users/$USER`:
 
 ```
 [User]
@@ -137,18 +137,16 @@ Language=*your_locale*
 
 ```
 
-where *your_locale* is a value such as `en_GB.UTF-8`.
-
-Restart your display manager for the changes to take effect.
+*your_locale* 位置替换为locale变量,例如: `en_GB.UTF-8`. 重启显示管理器使变更生效。
 
 ## 已知问题
 
-### 不兼容在systemd
+### 与systemd 不兼容
 
-*Affected DMs: Entrance, MDM*
+受影响的有DMs, MDM
 
-Some display managers are not fully compatible with systemd, because they reuse the PAM session process. It causes various problems on second login, e.g.:
+一些显示管理器与systemd不兼容，因为它们会重复使用PAM会话进程，这在二次登录时会引起很多问题，例如:
 
-*   NetworkManager applet does not work,
-*   PulseAudio volume cannot be adjusted,
-*   login failed into GNOME with another user.
+*   网络管理程序不工作，
+*   音量不能调节，
+*   其它用户登录GNOME失败。

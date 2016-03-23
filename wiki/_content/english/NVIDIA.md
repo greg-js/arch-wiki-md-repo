@@ -53,7 +53,7 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 5\. Reboot. The [nvidia](https://www.archlinux.org/packages/?name=nvidia) package contains a file which blacklists the *nouveau* module, so rebooting is necessary.
 
-Once the driver has been installed, continue to [#Configuring](#Configuring).
+Once the driver has been installed, continue to [#Configuration](#Configuration).
 
 ### Unsupported drivers
 

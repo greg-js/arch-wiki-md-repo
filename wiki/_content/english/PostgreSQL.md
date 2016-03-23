@@ -460,6 +460,22 @@ $ sudo -u postgres mv /var/lib/postgres/data-9.X/postmaster.pid /tmp
 
 	Retrieve `postgis-2.0.so` from [postgis](https://www.archlinux.org/packages/?name=postgis) for version postgresql 9.X () and copy it to `/opt/pgsql-9.X/lib` and make sure the privileges are readable by postgres user.
 
+	Your installation references loadable libraries that are missing from the new installation.
+
+	You can add these libraries to the new installation, or remove the functions using them from the old installation.
+
+	A list of problem libraries is in the file
+
+	loadable_libraries.txt
+
+	Could not load library "$libdir/pg_upgrade_support"
+
+	ERROR: could not access file "$libdir/pg_upgrade_support": No such file or directory
+
+	It means you have leftovers from old failed pg_upgrade attempts that you never completed. So you'll need to start postgres with old data and
+
+	in each database execute `DROP SCHEMA IF EXISTS binary_upgrade CASCADE;`
+
 ### Detailed instructions
 
 **Note:** Official PostgreSQL [upgrade documentation](http://www.postgresql.org/docs/current/static/upgrading.html) should be followed.

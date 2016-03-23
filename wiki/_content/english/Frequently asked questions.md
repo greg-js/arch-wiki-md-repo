@@ -66,7 +66,7 @@ Arch supports the i686 and x86_64 (sometimes called amd64) architectures.
 
 ### Does Arch support ARM CPUs?
 
-No, but the [Arch Linux ARM](http://archlinuxarm.org/) project provides a port of Arch Linux to several ARM platforms.
+No, but the [Arch Linux ARM](http://archlinuxarm.org/) project provides a port of Arch Linux to several ARM platforms. See [[1]](http://ix.io/73w/irc).
 
 ### I am a complete GNU/Linux beginner. Should I use Arch?
 

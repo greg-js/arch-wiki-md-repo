@@ -13,6 +13,7 @@ Quoting authors of the [project](http://www.celeryproject.org/):
     *   [3.1 Celery application](#Celery_application)
     *   [3.2 Test run](#Test_run)
     *   [3.3 Prepare module for Celery service](#Prepare_module_for_Celery_service)
+    *   [3.4 Run tasks periodically](#Run_tasks_periodically)
 *   [4 Run Celery in chroot (experimental)](#Run_Celery_in_chroot_.28experimental.29)
     *   [4.1 Create chroot directory and devices](#Create_chroot_directory_and_devices)
     *   [4.2 Create necessary directories](#Create_necessary_directories)
@@ -190,6 +191,12 @@ CELERY_APP="test_task"
 ```
 
 [Restart](/index.php/Restart "Restart") the `celery@*celery*.service`.
+
+### Run tasks periodically
+
+Tasks can be ran periodicaly through Celery Beat, basic setup is described within relevant [Celery documentation pages](http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html). An example:
+
+If you want to specify `CELERYBEAT_SCHEDULE` within your `celery.py`, then you need to add the `app.conf` prefix to make celery recognise your scheduled tasks. After that you need to add the `--beat --schedule=/var/lib/celery/celerybeat-schedule` parameters when you start the celery daemon. Further, the `/var/lib/celery` directory must exist within the celery-relevant environment and be owned by the user that runs celery.
 
 ## Run Celery in chroot (experimental)
 
@@ -475,6 +482,9 @@ At this stage following should work:
 
 ## Troubleshooting
 
-1.  celery systemd script does not report issues however celery service is not running
+If the [#systemd chroot unit](#systemd_chroot_unit) does not report issues but the celery service is not running, you can start the chrooted celery from console and add a more detailed log level. For example:
 
-    	Try running celery from console and study resulting logs `/usr/bin/chroot --userspec=root:root /srv/http /usr/bin/env -i HOME=/ /usr/bin/python -m celery worker -A package_name --uid=33 --gid=33 --pidfile=/run/celery.pid --logfile=/var/log/celery/celery.log --loglevel="INFO"`
+```
+# /usr/bin/chroot --userspec=root:root /srv/http/apps/celery /usr/bin/env -i HOME=/ /usr/bin/python -m celery worker -A package_name --uid=33 --gid=33 --pidfile=/run/celery.pid --logfile=/var/log/celery/celery.log --loglevel="INFO"
+
+```

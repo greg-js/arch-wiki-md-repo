@@ -1,4 +1,4 @@
-[Let’s Encrypt](https://letsencrypt.org/) is a free, automated, and open certificate authority. It provides tools to request valid ssl certificates straight from the command line.
+[Let’s Encrypt](https://letsencrypt.org/) is a free, automated, and open certificate authority utilizing the ACME protocol. It provides tools to request valid ssl certificates straight from the command line.
 
 ## Contents
 
@@ -6,12 +6,15 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Manual](#Manual)
     *   [2.2 Webroot](#Webroot)
+*   [3 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [letsencrypt](https://www.archlinux.org/packages/?name=letsencrypt) package.
+To obtain the official client [install](/index.php/Install "Install") [letsencrypt](https://www.archlinux.org/packages/?name=letsencrypt) package.
 
-Automated configuration and installation of the issued certificates in web servers is provided by plugins:
+A minimal client with manual CSR creation is available at [acme-tiny](https://aur.archlinux.org/packages/acme-tiny/). More integrated clients suitable for scripts are e.g. [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) and [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
+
+The official client provides plugins for automated configuration and installation of the issued certificates in web servers:
 
 *   The experimental plugin for [Nginx](/index.php/Nginx "Nginx") is provided with the [letsencrypt-nginx](https://www.archlinux.org/packages/?name=letsencrypt-nginx) package.
 *   Although a package [letsencrypt-apache](https://www.archlinux.org/packages/?name=letsencrypt-apache) exists, automated installation using the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") is currently only supported on Debian and derivatives.
@@ -74,3 +77,7 @@ You'll probably want your web server to be restarted after each certificate rene
 
 *   Apache: `ExecStartPost=/usr/sbin/systemctl restart httpd.service`
 *   nginx: `ExecStartPost=/usr/sbin/systemctl restart nginx.service`
+
+## See also
+
+*   [List of ACME clients](https://community.letsencrypt.org/t/list-of-client-implementations/2103)

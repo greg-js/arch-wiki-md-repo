@@ -29,8 +29,6 @@ Unlocking (for runtime decryption) of the drive takes place via either a softwar
 
 **Tip:** "Encryption" in the context of this page refers to hardware-based encryption. See [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") and [Disk encryption#Stacked filesystem encryption](/index.php/Disk_encryption#Stacked_filesystem_encryption "Disk encryption") for software-based encryption.
 
-This is full-disk-encryption, which includes the MBR & Partition Table. It is not possible to partially encrypt the drive (e.g. a specific partition). If you would like to do this, you will have to use software-based encryption (see [Disk encryption](/index.php/Disk_encryption "Disk encryption")).
-
 Refer to the [#Advantages](#Advantages) and [#Disadvantages](#Disadvantages) sections to better understand and decide if hardware-based FDE is what you want.
 
 ### Key management technical implementation
@@ -58,10 +56,7 @@ In fact; in drives featuring FDE, data is *always* encrypted with the DEK when s
 *   Increased performance (cpu is freed up from encryption/decryption calculations)
 *   Increased security due to reduced attack vectors (the main cpu & memory are eliminated as possible attack targets)
 *   Optimally fast and [#Secure Disk Erasure](#Secure_Disk_Erasure) (sanitation) (regardless of disk size)
-*   Protection from alternative boot methods
-    *   Recent drives boot into a special (ultra lightweight) proprietary operating system for the encryption management system (known as the pre-boot authorization, provided by the SED's firmware), and will not allow decryption if booted any other way. Thus; even the MBR for the OS can be encrypted, improving security.
-*   SSD Controller Write-Optimisation: Many modern SSDs feature transparent built-in fast data compression. This reduces the amount of data that *actually* gets written to disk, & thus optimises wear-leveling & increases the lifetime of the drive.
-    *   Conversely, if data is encrypted in user-space within the OS *before* it is sent to the drive, due to the random nature of the encrypted data-stream, it will be poorly compressable, resulting in more actual writes to the SSD (increasing wear & reducing the overall lifetime of the drive)
+*   Protection from alternative boot methods due to the possibility to encrypt the MBR, rendering the drive inaccessible before pre-boot authentication
 
 ### Disadvantages
 

@@ -16,11 +16,12 @@
         *   [1.4.1 GTK+](#GTK.2B)
     *   [1.5 Modules and Gadgets](#Modules_and_Gadgets)
         *   [1.5.1 "Extra" modules](#.22Extra.22_modules)
-    *   [1.6 Troubleshooting](#Troubleshooting)
-        *   [1.6.1 Compositing](#Compositing)
-        *   [1.6.2 Unreadable fonts](#Unreadable_fonts)
-        *   [1.6.3 Backlight always dimmed](#Backlight_always_dimmed)
-        *   [1.6.4 Inconsistent cursor theme](#Inconsistent_cursor_theme)
+    *   [1.6 Default Keybindings](#Default_Keybindings)
+    *   [1.7 Troubleshooting](#Troubleshooting)
+        *   [1.7.1 Compositing](#Compositing)
+        *   [1.7.2 Unreadable fonts](#Unreadable_fonts)
+        *   [1.7.3 Backlight always dimmed](#Backlight_always_dimmed)
+        *   [1.7.4 Inconsistent cursor theme](#Inconsistent_cursor_theme)
 *   [2 Enlightenment DR16](#Enlightenment_DR16)
     *   [2.1 To install E16](#To_install_E16)
     *   [2.2 Basic Configuration](#Basic_Configuration)
@@ -102,6 +103,17 @@ Enlightenment has a sophisticated configuration system that can be accessed from
 Enlightenment's preferred network manager is [ConnMan](/index.php/Connman "Connman") which can be installed from the [connman](https://www.archlinux.org/packages/?name=connman) package. Follow the instructions on [Connman](/index.php/Connman "Connman") to do the configuration.
 
 For extended configuration, you may also install Econnman (available in AUR as [econnman](https://aur.archlinux.org/packages/econnman/) or [econnman-git](https://aur.archlinux.org/packages/econnman-git/)) and its associated dependencies.
+
+**Adding the ConnMan Gadget to the Shelf**
+
+1.  Settings -> Extensions -> Modules
+2.  under System
+3.  Connection Manager
+4.  Load that (select then hit *Load*).
+5.  Right-click on the shelf at the bottom of the screen.
+6.  Go to Shelf -> Contents
+7.  Then, just scroll around and find *ConnMan*.
+8.  and hit *Add*.
 
 **NetworkManager**
 
@@ -201,6 +213,33 @@ To replace the window selection key binding functionality with Scale Windows, sc
 
 Available from [comp-scale-git](https://aur.archlinux.org/packages/comp-scale-git/).
 
+### Default Keybindings
+
+<caption>Some default Enlightenment keybindings</caption>
+| Shift + F10 | Maximize Vertically |
+| Ctrl + Menu | Show "Clients" (windows) Menu |
+| Alt + Escape | Show "Everything Launcher" (apps, windows, etc) |
+| Win + Left | Maximize Left |
+| Win + Right | Maximize Right |
+| Alt + Shift + F10 | Maximize Horizontally |
+| Alt + Shift + Left | Flip to the Desktop on the Left |
+| Alt + Shift + Right | Flip to the Desktop on the Right |
+| Ctrl + Alt + D | Show the desktop |
+| Ctrl + Alt + F | Toggle Fullscreen |
+| Ctrl + Alt + I | Toggle iconic mode |
+| Ctrl + Alt + K | Kill window |
+| Ctrl + Alt + L | Lock the desktop |
+| Ctrl + Alt + N | Maximize Window |
+| Ctrl + Alt + R | Toggle Shade up |
+| Ctrl + Alt + W | Window menu |
+| Ctrl + Alt + X | Close a window |
+| Ctrl + Alt + Down | Lower |
+| Ctrl + Alt + Up | Raise |
+| Ctrl + Alt + Left | Flip to desktop on left |
+| Ctrl + Alt + Right | Flip to desktop on right |
+| Ctrl + Alt + Delete | End session dialog |
+| Ctrl + Alt + Insert | Launch the default terminal |
+
 ### Troubleshooting
 
 If you find some unexpected behavior, there are a few things you can do:
@@ -213,7 +252,7 @@ If you are sure you found a bug please report it [directly upstream](https://pha
 
 #### Compositing
 
-When the configuration is messed up and the settings windows can no longer be approached, configuration for the compositor can be reset by the hardcoded keybinding `Ctrl + Alt + Shift + Home`.
+When the configuration needs to be reset and the settings windows can no longer be approached, configuration for the compositor can be reset using the hardcoded keybinding `Ctrl + Alt + Shift + Home`.
 
 #### Unreadable fonts
 

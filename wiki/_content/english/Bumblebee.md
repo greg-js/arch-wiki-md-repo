@@ -786,21 +786,7 @@ $ vblank_mode=0 primusrun glxgears
 
 ```
 
-If you want to use it instead of `primusrun`, create new file:
-
- `/usr/bin/optiprime` 
-```
-#!/bin/sh
-vblank_mode=0 primusrun "$@"
-
-```
-
-Make it executable:
-
-```
-# chmod +x /usr/bin/optiprime
-
-```
+If you want to use it, install [optiprime](https://aur.archlinux.org/packages/optiprime/) package.
 
 Usage:
 

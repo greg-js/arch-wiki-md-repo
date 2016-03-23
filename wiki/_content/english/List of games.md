@@ -816,7 +816,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **Advanced Strategic Command** — Turn based strategy game in the tradition of the Battle Isle series.
 
-	[http://www.asc-hq.org/](http://www.asc-hq.org/) || [asc](https://aur.archlinux.org/packages/asc/)
+	[http://www.asc-hq.org/](http://www.asc-hq.org/) || [advanced-strategic-command](https://aur.archlinux.org/packages/advanced-strategic-command/)
 
 *   **Crimson Fields** — Tactical war game in the tradition of Battle Isle.
 
@@ -901,6 +901,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **[Warzone 2100](/index.php/Warzone_2100 "Warzone 2100")** — You command the forces of The Project in a battle to rebuild the world after mankind has almost been destroyed by nuclear missiles. The game offers campaign, multi-player, and single-player skirmish modes. An extensive tech tree with over 400 different technologies, combined with the unit design system, allows for a wide variety of possible units and tactics.
 
 	[http://wz2100.net/](http://wz2100.net/) || [warzone2100](https://www.archlinux.org/packages/?name=warzone2100)
+
+*   **[Zero-K](https://en.wikipedia.org/wiki/Zero-K "wikipedia:Zero-K")** — Zero-K is a free multi-platform open source real-time strategy computer game. Initially based on content from Total Annihilation on the open source Spring Engine, it was forked and all proprietary content replaced, and evolved into a completely new game with unique features. It can be easily installed by installing the flobby client from the AUR or alternatively (and preferably) by installing the official mono package and downloading and running the Zero-K lobby from the official website.
+
+	[http://zero-k.info/](http://zero-k.info/) || [flobby-git](https://aur.archlinux.org/packages/flobby-git/)
 
 ## Tycoon/management games
 

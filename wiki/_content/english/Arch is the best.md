@@ -610,12 +610,12 @@ writeln("Arch is the best!");
 
 ```
 
-	Nasm(x86_64) (or yasm)
+	Nasm(i686) (or yasm)
 
 	Notice that the string is in the .text section, which feels superior.
 
 ```
-;nasm -f elf64 arch.asm
+;nasm -f elf32 arch.asm
 ;ld -o arch arch.o
 ;./arch
 
@@ -632,6 +632,32 @@ mov eax,1
 int 0x80
 msg: db "Arch is the best!",10
 len equ $-msg
+
+```
+
+	nasm/yasm x86_64
+
+	Includes AMD's sexy new instruction, *syscall*.
+
+```
+;nasm -f elf64 arch.asm
+;ld -o arch arch.o
+;./arch
+
+section .text
+global _start
+s:
+    db 'Arch is the best!',0ah
+l equ $-s
+_start:
+    mov rax,1
+    mov rdi,1
+    mov rsi,s
+    mov rdx,l
+    syscall
+    mov rax,60
+    xor rdi,rdi
+    syscall
 
 ```
 

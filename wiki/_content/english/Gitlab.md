@@ -1,6 +1,6 @@
 From [GitLab's homepage:](https://about.gitlab.com/)
 
-	*GitLab offers git repository management, code reviews, issue tracking, activity feeds and wikis. Enterprises install GitLab on-premise and connect it with LDAP and Active Directory servers for secure authentication and authorization. A single GitLab server can handle more than 25,000 users but it is also possible to create a high availability setup with multiple active servers.*
+	GitLab offers git repository management, code reviews, issue tracking, activity feeds and wikis. Enterprises install GitLab on-premise and connect it with LDAP and Active Directory servers for secure authentication and authorization. A single GitLab server can handle more than 25,000 users but it is also possible to create a high availability setup with multiple active servers.
 
 An example live version can be found at [GitLab.com](https://gitlab.com/).
 
@@ -26,6 +26,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [4.1 Custom SSH Connection](#Custom_SSH_Connection)
     *   [4.2 HTTPS/SSL](#HTTPS.2FSSL)
         *   [4.2.1 Change GitLab configs](#Change_GitLab_configs)
+        *   [4.2.2 Let's Encrypt](#Let.27s_Encrypt)
     *   [4.3 Web server configuration](#Web_server_configuration)
         *   [4.3.1 Node.js](#Node.js)
         *   [4.3.2 Nginx and unicorn](#Nginx_and_unicorn)
@@ -520,6 +521,23 @@ You also need to change the corresponding options (e.g. ssh_user, ssh_host, admi
 #### Change GitLab configs
 
 Modify `/etc/webapps/gitlab/shell.yml` so the url to your GitLab site starts with `https://`. Modify `/etc/webapps/gitlab/gitlab.yml` so that `https:` setting is set to `true`.
+
+See also [Apache HTTP Server#TLS/SSL](/index.php/Apache_HTTP_Server#TLS.2FSSL "Apache HTTP Server") and [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt").
+
+#### Let's Encrypt
+
+To validate your URL, the Let's Encrypt process will try to access your gitlab server with something like `https://gitlab.*YOUR_SERVER_FQDN*/.well-known/*A_LONG_ID*`. But, due to gitlab configuration, every request to `gitlab.*YOUR_SERVER_FQDN*` will be redirected to a proxy (gitlab-workhorse) that will not be able to deal with this URL.
+
+To bypass this issue, you can use the Let's Encrypt webroot configuration, setting the webroot at `/srv/http/letsencrypt/`.
+
+Additionally, force the Let's Encrypt request for gitlab to be redirected to this webroot by adding the following:
+
+ `/etc/http/conf/extra/gitlab.conf` 
+```
+Alias "/.well-known"  "/srv/http/letsencrypt/.well-known"
+RewriteCond   %{REQUEST_URI}  !/\.well-known/.*
+
+```
 
 ### Web server configuration
 

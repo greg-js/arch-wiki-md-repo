@@ -228,7 +228,7 @@ $ git push
 
 ```
 
-**Tip:** If you initially forgot to commit the `.SRCINFO` and added it in a later commit, the AUR will still reject your pushes because the `.SRCINFO` must exist for *every* commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
+**Tip:** If you initially forgot to commit the `.SRCINFO` and added it in a later commit, the AUR will not alow you to push a new repository because the `.SRCINFO` must exist for *every* commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
 
 ### Maintaining packages
 
@@ -240,7 +240,7 @@ $ git push
 
 ### Other requests
 
-*   Disownment requests and removal requests can be created by clicking on the "File Request" link under "Package actions" on the right hand side. This automatically sends a notification email to the current package maintainer and to the [aur-requests mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-requests) for discussion. [Trusted Users](/index.php/Trusted_Users "Trusted Users") will then either accept or reject the request.
+*   Disownment requests and removal requests can be created by clicking on the "Submit Request" link under "Package Actions" on the right hand side. This automatically sends a notification email to the current package maintainer and to the [aur-requests mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-requests) for discussion. [Trusted Users](/index.php/Trusted_Users "Trusted Users") will then either accept or reject the request.
 *   Disownment requests will be granted after two weeks if the current maintainer did not react.
 *   **Package merging has been implemented**, users still have to resubmit a package under a new name and may request merging of the old version's comments and votes.
 *   Removal requests require the following information:
@@ -338,7 +338,7 @@ If you frequently compile code that uses GCC - say, a Git or SVN package - you m
 
 Many AUR packages are presented in regular ("stable") and development versions ("unstable"). A development package usually has a suffix such as `-cvs`, `-svn`, `-git`, `-hg`, `-bzr` or `-darcs`. While development packages are not intended for regular use, they may offer new features or bugfixes. Because these packages download the latest available source when you execute `makepkg`, a package version to track possible updates is not directly available for these. Likewise, these packages cannot perform an authenticity checksum, instead it is relied on the maintainer(s) of the Git repository.
 
-See also [Enhancing Arch Linux Stability#Avoid development packages](/index.php/Enhancing_Arch_Linux_Stability#Avoid_development_packages "Enhancing Arch Linux Stability").
+See also [System maintenance#Use proven software packages](/index.php/System_maintenance#Use_proven_software_packages "System maintenance").
 
 ### Why has foo disappeared from the AUR?
 
@@ -348,14 +348,18 @@ If the package used to exist in AUR3, it might not have been [migrated to AUR4](
 
 ### How do I find out if any of my installed packages disappeared from AUR?
 
-You can use the following script:
+The simplest way is to check the HTTP status of the package's AUR page:
 
 ```
-$ for pkg in $(pacman -Qqm); do cower -s $pkg &>/dev/null || echo "$pkg not in AUR"; done
-
+#!/bin/bash
+for pkg in $(pacman -Qqm); do
+    if ! curl -sILfo /dev/null -w '%{http_code}' "https://aur.archlinux.org/packages/$pkg" | grep -q '^2'; then
+        echo "$pkg is missing!"
+    fi
+done
 ```
 
-(retrieved from [https://bbs.archlinux.org/viewtopic.php?id=202160](https://bbs.archlinux.org/viewtopic.php?id=202160))
+If you use an [AUR helper](/index.php/AUR_helper "AUR helper"), you can shorten this script by replacing the curl command with whatever command queries the AUR for a package.
 
 ## See also
 

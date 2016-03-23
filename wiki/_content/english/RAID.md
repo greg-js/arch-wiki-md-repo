@@ -228,7 +228,7 @@ The following example shows building a RAID10,far2 array with 2 devices:
 
 ```
 
-**Tip:** See [Chunks: the hidden key to RAID performance](http://www.zdnet.com/article/chunks-the-hidden-key-to-raid-performance/) for determining a good chunk size.
+**Tip:** The `--homehost` and `--name` options can be used for a custom raid device name. They are delimited by a colon in the resulting name.
 
 The array is created under the virtual device `/dev/mdX`, assembled and ready to use (in degraded mode). One can directly start using it while mdadm resyncs the array in the background. It can take a long time to restore parity. Check the progress with:
 
@@ -291,11 +291,24 @@ The array will have an entry in
 
 (where mdX is the name of your array). It will give the stripe-width in bytes. Divide by the block size to get the stripe width in blocks, then divide by number of data disks to get the stride. The following calculations should match this.
 
-Stride = (chunk size/block size).
+```
+Stride = (*chunk size*/block size)
 
-**Note:** Arch's default block size for many filesystems is 4096, see: `/etc/mke2fs.conf` for details.
+```
 
-Stripe-width = (# of physical **data** disks * stride).
+To calculate the best stride, consider the following:
+
+*   Arch's default block size for many filesystems is 4096, see: `/etc/mke2fs.conf` for details.
+*   *chunk size* is a user provided value between 4K (1 block)(512-bytes on Non-Advanced Format disks) and 64K or more. The predominant default chunk size chosen is 64K. If your normal average request is for larger files (such as video editing, graphics processing, etc.) you can reduce the chunk size to one or two blocks to provide more bandwidth for larger files.
+
+**Tip:** See also [Chunks: the hidden key to RAID performance](http://www.zdnet.com/article/chunks-the-hidden-key-to-raid-performance/).
+
+Next, calculate:
+
+```
+Stripe-width = (# of physical **data** disks * stride)
+
+```
 
 ##### Example 1\. RAID0
 

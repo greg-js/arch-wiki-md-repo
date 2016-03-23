@@ -432,9 +432,9 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 ### Configuration Frameworks
 
+*   [Antigen](https://github.com/zsh-users/antigen) (available as [antigen-git](https://aur.archlinux.org/packages/antigen-git/)) - A plugin manager for zsh, inspired by oh-my-zsh and vundle.
 *   [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) is a popular, community-driven framework for managing your Zsh configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes.
 *   [Prezto - Instantly Awesome Zsh](https://github.com/sorin-ionescu/prezto) (available as [prezto-git](https://aur.archlinux.org/packages/prezto-git/)) is a configuration framework for Zsh. It comes with modules, enriching the command line interface environment with sane defaults, aliases, functions, auto completion, and prompt themes.
-*   [Antigen](https://github.com/zsh-users/antigen) (available as [antigen-git](https://aur.archlinux.org/packages/antigen-git/)) - A plugin manager for zsh, inspired by oh-my-zsh and vundle.
 
 ### Autostarting applications
 

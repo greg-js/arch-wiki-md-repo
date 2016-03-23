@@ -32,7 +32,7 @@ The *negative effect* of using DKMS is that DKMS breaks the Pacman database. The
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dkms](https://www.archlinux.org/packages/?name=dkms) package.
+[Install](/index.php/Install "Install") the [dkms](https://www.archlinux.org/packages/?name=dkms) package and the headers for your kernel (for the standard kernel this would be [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)).
 
 A good number of modules that lie outside the kernel source tree have a DKMS variant; a few are hosted in the [official repositories](https://www.archlinux.org/packages/?&q=dkms), most are found in the [AUR](https://aur.archlinux.org/packages/?SeB=n&K=dkms). Listed below are a few of the software packages that have a DKMS variant with additional links to dedicated sections where available:
 
