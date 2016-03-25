@@ -93,9 +93,7 @@ Then build and install the package as usual.
 
 #### Automatic re-compilation of the NVIDIA module with kernel update
 
-This is possible with [DKMS](/index.php/DKMS "DKMS"). Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)) and make sure that the `dkms.service` systemd unit is enabled.
-
-See [Dynamic Kernel Module Support#Usage](/index.php/Dynamic_Kernel_Module_Support#Usage "Dynamic Kernel Module Support") for more information on how to use DKMS.
+This is possible with [DKMS](/index.php/DKMS "DKMS"). Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). The [dkms](https://www.archlinux.org/packages/?name=dkms) package doesn't use [Systemd](/index.php/Systemd "Systemd") anymore, it uses pacman/alpm hooks. See [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman") for more information. See [Dynamic Kernel Module Support#Usage](/index.php/Dynamic_Kernel_Module_Support#Usage "Dynamic Kernel Module Support") for more information on how to use [DKMS](/index.php/DKMS "DKMS").
 
 ### Pure Video HD (VDPAU/VAAPI)
 

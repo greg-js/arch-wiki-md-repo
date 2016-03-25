@@ -21,7 +21,7 @@ OpenConnect can be used with NetworkManager, or manually via the command line.
 
 ### NetworkManager
 
-[Install](/index.php/Install "Install") the [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) package. Then configure and connect with `nm-applet` (network manager's tray icon) or similar utility. After installation, [restart](/index.php/Restart "Restart") the `NetworkManager.service`.
+[Install](/index.php/Install "Install") the [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) package. Then configure and connect with *nm-applet* (network manager's tray icon utility from [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)) or similar utility. After installation, [restart](/index.php/Restart "Restart") the `NetworkManager.service`.
 
 See [NetworkManager](/index.php/NetworkManager "NetworkManager") for details.
 

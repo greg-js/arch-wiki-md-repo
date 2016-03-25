@@ -16,26 +16,28 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 *   [4 GUI toolkits](#GUI_toolkits)
     *   [4.1 Qt 5](#Qt_5)
     *   [4.2 GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)
-*   [5 Applications](#Applications)
-    *   [5.1 Browsers](#Browsers)
-        *   [5.1.1 Firefox](#Firefox)
-        *   [5.1.2 Chromium / Google Chrome](#Chromium_.2F_Google_Chrome)
-        *   [5.1.3 Opera](#Opera)
-    *   [5.2 Thunderbird](#Thunderbird)
-    *   [5.3 Wine applications](#Wine_applications)
-    *   [5.4 Skype](#Skype)
-    *   [5.5 Spotify](#Spotify)
-    *   [5.6 IntelliJ IDEA](#IntelliJ_IDEA)
-    *   [5.7 NetBeans](#NetBeans)
-    *   [5.8 Gimp 2.8](#Gimp_2.8)
-    *   [5.9 VLC](#VLC)
-    *   [5.10 Steam](#Steam)
-    *   [5.11 Unsupported applications](#Unsupported_applications)
-*   [6 Multiple displays](#Multiple_displays)
-    *   [6.1 Side display](#Side_display)
-    *   [6.2 Mirroring](#Mirroring)
-*   [7 Linux console](#Linux_console)
-*   [8 See also](#See_also)
+*   [5 Display managers](#Display_managers)
+    *   [5.1 SDDM](#SDDM)
+*   [6 Applications](#Applications)
+    *   [6.1 Browsers](#Browsers)
+        *   [6.1.1 Firefox](#Firefox)
+        *   [6.1.2 Chromium / Google Chrome](#Chromium_.2F_Google_Chrome)
+        *   [6.1.3 Opera](#Opera)
+    *   [6.2 Thunderbird](#Thunderbird)
+    *   [6.3 Wine applications](#Wine_applications)
+    *   [6.4 Skype](#Skype)
+    *   [6.5 Spotify](#Spotify)
+    *   [6.6 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [6.7 NetBeans](#NetBeans)
+    *   [6.8 Gimp 2.8](#Gimp_2.8)
+    *   [6.9 VLC](#VLC)
+    *   [6.10 Steam](#Steam)
+    *   [6.11 Unsupported applications](#Unsupported_applications)
+*   [7 Multiple displays](#Multiple_displays)
+    *   [7.1 Side display](#Side_display)
+    *   [7.2 Mirroring](#Mirroring)
+*   [8 Linux console](#Linux_console)
+*   [9 See also](#See_also)
 
 ## Desktop environments
 
@@ -176,6 +178,19 @@ To undo scaling of text:
 
 ```
 export GDK_DPI_SCALE=0.5
+
+```
+
+## Display managers
+
+### SDDM
+
+To scale SDDM you have to change the following properties in `/etc/sddm.conf`. It is recommended to make a backup of your config before editing it.
+
+```
+[XDisplay]
+# X server arguments
+ServerArguments=-dpi 144
 
 ```
 

@@ -10,9 +10,10 @@
         *   [2.1.2 dhcpcd](#dhcpcd)
         *   [2.1.3 dhclient](#dhclient)
     *   [2.2 NetworkManager](#NetworkManager)
-        *   [2.2.1 Custom Configuration](#Custom_Configuration)
-        *   [2.2.2 IPv6](#IPv6)
-        *   [2.2.3 Other methods](#Other_methods)
+        *   [2.2.1 Usage with libvirt](#Usage_with_libvirt)
+        *   [2.2.2 Custom Configuration](#Custom_Configuration)
+        *   [2.2.3 IPv6](#IPv6)
+        *   [2.2.4 Other methods](#Other_methods)
 *   [3 DHCP server setup](#DHCP_server_setup)
 *   [4 Start the daemon](#Start_the_daemon)
 *   [5 Test](#Test)
@@ -23,6 +24,9 @@
     *   [6.2 View leases](#View_leases)
     *   [6.3 Adding a custom domain](#Adding_a_custom_domain)
     *   [6.4 Override addresses](#Override_addresses)
+    *   [6.5 More than one instance](#More_than_one_instance)
+        *   [6.5.1 Static](#Static)
+        *   [6.5.2 Dynamic](#Dynamic)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -141,6 +145,60 @@ dns=dnsmasq
 ```
 
 Now restart NetworkManager or reboot. NetworkManager will automatically start dnsmasq and add 127.0.0.1 to `/etc/resolv.conf`. The actual DNS servers can be found in `/var/run/NetworkManager/dnsmasq.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ dig example.com` that can be installed with [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) and verifying the server and query times.
+
+#### Usage with libvirt
+
+Network-manager think if there is one running libvirt that he run this before. To fix conflicts between other dnsmasq, eg: used in [libvirt](/index.php/Libvirt "Libvirt"), you must run it externally.
+
+We do **not** want change our resolv.conf automaticly.
+
+ `/etc/NetworkManager/NetworkManager.conf` 
+```
+[main]
+plugins=keyfile
+dhcp=dhclient
+dns=none
+
+```
+
+We put it manually here.
+
+ `/etc/resolv.conf.head`  `nameserver 127.0.0.1` 
+
+The interface to bind and bind it even if there is second dnsmasq runned on computer.
+
+ `/etc/NetworkManager/dnsmasq.d/bind-interface.conf` 
+```
+interface=lo
+bind-interface
+```
+
+This start service if interface is up. This service can start only once before stop which will be initiate by systemd on restart/shutdown.
+
+ `/etc/NetworkManager/dispatcher.d/10_dnsmasq` 
+```
+#!/bin/sh
+if [ -n "$2" ] && [ "$2" = "up" ]; then # $INTERFACE is up
+	systemctl start NetworkManager-dnsmasq.service
+fi
+```
+
+Systemd service.
+
+ `/etc/systemd/system/NetworkManager-dnsmasq.service` 
+```
+[Unit]
+Description=A lightweight DHCP and caching DNS server
+After=network.target
+Documentation=man:dnsmasq(8)
+
+[Service]
+Type=dbus
+BusName=uk.org.thekelleys.dnsmasq
+ExecStartPre=/usr/bin/dnsmasq --test
+ExecStart=/usr/bin/dnsmasq -k --enable-dbus --user=dnsmasq --pid-file --conf-dir=/etc/NetworkManager/dnsmasq.d/
+ExecReload=/bin/kill -HUP $MAINPID
+```
 
 #### Custom Configuration
 
@@ -276,6 +334,26 @@ Furthermore, it's possible to return a specific address for all domain names tha
 address=/#/1.2.3.4
 
 ```
+
+### More than one instance
+
+If we want two or more dnsmasq servers works per interface(s).
+
+#### Static
+
+To do this staticly, server per interface, use `interface` and `bind-interface` options. This enforce start second dnsmasq.
+
+#### Dynamic
+
+In this case we can exclude per interface and bind any others:
+
+```
+except-interface=lo
+bind-dynamic
+
+```
+
+**Note:** This is default in libvirt.
 
 ## See also
 

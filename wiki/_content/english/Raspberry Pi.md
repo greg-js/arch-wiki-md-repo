@@ -396,6 +396,8 @@ Reboot the Raspberry Pi and issue the following command to get the hardware addr
 
 ```
 
+**Note:** If you use the I2C1 port instead of I2C0, you will need to run `i2cdetect -y 1` instead and replace `i2c-0` with `i2c-1` in the following steps.
+
 Now we need to tell Linux to instantiate the device. Change the hardware address to the address found in the previous step with '0x' as prefix (e.g. 0x48) and choose a device name:
 
 ```

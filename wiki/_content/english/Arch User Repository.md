@@ -228,7 +228,7 @@ $ git push
 
 ```
 
-**Tip:** If you initially forgot to commit the `.SRCINFO` and added it in a later commit, the AUR will not alow you to push a new repository because the `.SRCINFO` must exist for *every* commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
+**Tip:** If you initially forgot to commit the `.SRCINFO` and added it in a later commit, the AUR will still reject your pushes because the `.SRCINFO` must exist for *every* commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
 
 ### Maintaining packages
 

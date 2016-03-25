@@ -119,7 +119,7 @@ When upgrading the system, be sure to pay attention to the alert notices provide
 
 ### Deal promptly with new configuration files
 
-When pacman is invoked `.pacnew`, `.pacsave`, and `.pacorig` files can be created. Pacman provides notice when this happens and users must deal with these files promptly. Users are referred to the [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files") wiki page for detailed instructions.
+When pacman is invoked, `.pacnew` and `.pacsave` files can be created. Pacman provides notice when this happens and users must deal with these files promptly. Users are referred to the [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files") wiki page for detailed instructions.
 
 Also, think about other configuration files you may have copied or created. If a package had an example configuration that you copied to your home directory, check to see if a new one has been created.
 

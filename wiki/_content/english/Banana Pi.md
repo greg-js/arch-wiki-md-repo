@@ -64,7 +64,38 @@ Download and extract the root filesystem:
 ```
 # wget [http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz](http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz)
 # bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C /mnt/
-# wget [http://pkgbuild.com/~jelle/bananapi/boot.scr](http://pkgbuild.com/~jelle/bananapi/boot.scr) -O /mnt/boot/boot.scr
+
+```
+
+Create a file with the following boot script
+
+ `boot.cmd` 
+```
+part uuid ${devtype} ${devnum}:${bootpart} uuid
+setenv bootargs console=${console} root=PARTUUID=${uuid} rw rootwait
+
+if load ${devtype} ${devnum}:${bootpart} ${kernel_addr_r} /boot/zImage; then
+  if load ${devtype} ${devnum}:${bootpart} ${fdt_addr_r} /boot/dtbs/${fdtfile}; then
+    if load ${devtype} ${devnum}:${bootpart} ${ramdisk_addr_r} /boot/initramfs-linux.img; then
+      bootz ${kernel_addr_r} ${ramdisk_addr_r}:${filesize} ${fdt_addr_r};
+    else
+      bootz ${kernel_addr_r} - ${fdt_addr_r};
+    fi;
+  fi;
+fi
+
+if load ${devtype} ${devnum}:${bootpart} 0x48000000 /boot/uImage; then
+  if load ${devtype} ${devnum}:${bootpart} 0x43000000 /boot/script.bin; then
+    setenv bootm_boot_mode sec;
+    bootm 0x48000000;
+  fi;
+fi
+```
+
+Compile it and write it to the SD-card using the package [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools)
+
+```
+# mkimage -A arm -O linux -T script -C none -a 0 -e 0 -n "BananPI boot script" -d boot.cmd /mnt/boot/boot.scr
 # umount /mnt
 
 ```

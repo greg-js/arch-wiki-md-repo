@@ -48,7 +48,7 @@
 *   Рекомендуется установить часовой пояс ([список часовых поясов](http://www.php.net/manual/en/timezones.php)) в `/etc/php/php.ini`:
 
 ```
-date.timezone = Europe/Moskow
+date.timezone = Europe/Moscow
 
 ```
 

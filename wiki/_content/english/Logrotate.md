@@ -10,6 +10,7 @@ By default, logrotate's *rotation* consists of renaming existing log files with 
 *   [2 Configuration](#Configuration)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 exim log not rotated](#exim_log_not_rotated)
+    *   [3.2 Check logrotate status](#Check_logrotate_status)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -32,6 +33,18 @@ If you have set the `olddir` variable in `/etc/logrotate.conf`, you will get a m
 
 To fix this, add the user `exim` to the group `log`. Then change the group of the `olddir`, usually `/var/log/old`, to `log` instead of the default `root`.
 
+### Check logrotate status
+
+Run `cat /var/lib/logrotate.status` to se which logrotate files were rotated.
+
+```
+"/var/log/mysql/query.log" 2016-3-20-5:0:0
+"/var/log/samba/samba-smbd.log" 2016-3-21-5:0:0
+"/var/log/httpd/access_log" 2016-3-20-5:0:0
+
+```
+
 ## See also
 
 *   [Logrotate on Gentoo Linux Wiki](http://wiki.gentoo.org/wiki/Logrotate)
+*   [logrotate(8) Manual page](http://linux.die.net/man/8/logrotate)

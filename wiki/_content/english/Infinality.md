@@ -25,7 +25,7 @@ The [infinality](http://www.infinality.net/) patchset aims to greatly improve fr
 
 ## Features
 
-Infinality's settings are all configurable at runtime via environment variables in `/etc/X11/xinit/xinitrc.d/xft-settings.sh`, and include the following:
+Infinality's settings are all configurable at runtime via environment variables and include the following:
 
 *   **Emboldening Enhancement**: Disables Y emboldening, producing a much nicer result on fonts without bold versions. Works on native TT hinter and autohinter.
 *   **Auto-Autohint**: Automatically forces autohint on fonts that contain no TT instructions.
@@ -40,6 +40,8 @@ Infinality's settings are all configurable at runtime via environment variables 
 See the [README](http://www.infinality.net/forum/viewtopic.php?f=2&t=18) for details.
 
 A number of presets are included and can be used by setting the USE_STYLE variable in `/etc/X11/xinit/xinitrc.d/xft-settings.sh`.
+
+Variables should be set in `/etc/profile.d/infinality-settings.sh`. See [infinality-settings.sh](https://github.com/bohoomil/fontconfig-ultimate/blob/master/freetype/infinality-settings.sh) for a template.
 
 ## Installation
 

@@ -13,37 +13,25 @@ Depending on requirements, different methods may be used to encrypt the [swap](/
 
 ## Without suspend-to-disk support
 
-In systems where suspend-to-disk is not a desired feature, it is possible to encrypt the swap partition with a random key at boot-time, thus destroying the contents of the named partition during every boot. This is accomplished by using plain dm-crypt and configuring `/etc/crypttab` to call `mkswap`: see [point cryptsetup FAQ 2.3](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup) and on "swap" option described in `man (5) crypttab`.
+In systems where suspend-to-disk (*i.e..,* hibernation) is not a desired feature, `/etc/crypttab` can be set up to decrypt the swap partition with a random password with plain dm-crypt at boot-time. The random password is discarded on shutdown, leaving behind only encrypted, inaccessible data in the swap device.
 
-Default `/etc/crypttab` already contains a line for swap encryption so you can basically just uncomment it and change the `<device>` parameter to the [persistent name](/index.php/Persistent_block_device_naming "Persistent block device naming") of your swap device.
+To enable this feature, simply uncomment the line beginning with `swap` in `/etc/crypttab`. Change the `<device>` parameter to the name of your swap device. For example, it will look something like this:
 
  `/etc/crypttab` 
 ```
 # <name>       <device>         <password>              <options>
-# swap         /dev/sdaX        /dev/urandom            swap,cipher=aes-cbc-essiv:sha256,size=256
+  swap         /dev/sd*X#*        /dev/urandom            swap,cipher=aes-cbc-essiv:sha256,size=256
 ```
 
-Where:
+This will map `/dev/sd*X#*` to `/dev/mapper/swap` as a swap partition that can be added in `/etc/fstab` like a normal swap. If you had a non-encrypted swap partition before, do not forget to disable it - or re-use its [fstab](/index.php/Fstab "Fstab") entry by changing the device to `/dev/mapper/swap`. The default options should be sufficient for most usage. For other options see and an explanation of each column, see `man 5 crypttab` as well as [point cryptsetup FAQ 2.3](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup).
 
-	<name>
+**Warning:** All contents of the named device will be permanently **deleted**. It is dangerous to use the kernel's simple naming for a swap device, since their naming order (*e.g.* `/dev/sda`, `/dev/sdb`) changes upon each boot. Options are:
 
-	Represents the name to state in the first column of `/etc/fstab` (as "`/dev/mapper/<name>`").
+*   Use `by-id` and `by-path` paths. However, these are both are susceptible to hardware changes. See [Persistent block device naming#by-id and by-path](/index.php/Persistent_block_device_naming#by-id_and_by-path "Persistent block device naming").
+*   Use an [LVM](/index.php/LVM "LVM") logical volume's name.
+*   Use the method described in [#UUID_and_LABEL](#UUID_and_LABEL). Labels and [UUIDS](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming") **cannot** be used directly because of the recreation and re-encryption of the swap device on every boot with `mkswap` [[1]](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup).
 
-	<device>
-
-	Should be the persistent device name for the swap device.
-
-	<password>
-
-	`/dev/urandom` sets the dm-crypt master key to be randomized on every volume recreation.
-
-	<options>
-
-	The `swap` option runs mkswap after cryptographic's are setup.
-
-**Warning:** Make sure to use either `by-id`, `by-path` or [LVM](/index.php/LVM "LVM") logical volumes' [persistent device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for the `<device>` array (especially if there are multiple storage drives in the system), as it might happen that their usual kernel naming order (sda, sdb,...) changes upon boots and thus the swap would be created over a valuable file system, destroying all its content. Because of the recreation and re-encryption of the swap device on every boot with `mkswap`, labels and UUIDs cannot be used (see [naming by UUID](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming") and [cryptsetup FAQ 2.3](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup)).
-
-For example, `by-id` persistent device naming is first identified for the chosen device:
+To use a `by-id` persistent device naming instead of kernel simple naming, first identify the swap device:
 
  `# ls -l /dev/disk/*/* | grep sdaX` 
 ```
@@ -52,7 +40,7 @@ lrwxrwxrwx 1 root root 10 Oct 12 16:54 /dev/disk/by-id/wwn-0x60015ee0000b237f-pa
 
 ```
 
-and then used as a persistent reference for the `/dev/sdaX` example partition (if two results are returned as above, choose either one of them):
+Then use as a persistent reference for the `/dev/sd*X#*` example partition (if two results are returned as above, choose either one of them):
 
  `/etc/crypttab` 
 ```
@@ -60,42 +48,32 @@ and then used as a persistent reference for the `/dev/sdaX` example partition (i
   swap  /dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-partX  /dev/urandom   swap,cipher=aes-cbc-essiv:sha256,size=256
 ```
 
-This will map `/dev/sdaX` to `/dev/mapper/swap` as a swap partition that can be added in `/etc/fstab` like a normal swap. If you had a non-encrypted swap partition before, do not forget to disable it - or re-use its [fstab](/index.php/Fstab "Fstab") entry by changing the device to `/dev/mapper/swap`.
-
 After a reboot to activate the encrypted swap, you will note that running `swapon -s` shows an arbitrary device mapper entry (e.g. `/dev/dm-1`) for it, while the `lsblk` command shows **crypt** in the `FSTYPE` column. Due to fresh encryption each boot, the UUID for `/dev/mapper/swap` will change every time.
 
-If the partition chosen for swap was previously a LUKS partition, crypttab will not overwrite the partition to create a swap partition. This is a safety measure to prevent data loss from accidental mis-identification of the swap partition in crypttab. In order to use such a partition the [LUKS header must be overwritten](/index.php/Dm-crypt/Drive_preparation#Wipe_LUKS_header "Dm-crypt/Drive preparation") once.
+**Note:** If the partition chosen for swap was previously a LUKS partition, crypttab will not overwrite the partition to create a swap partition. This is a safety measure to prevent data loss from accidental mis-identification of the swap partition in crypttab. In order to use such a partition the [LUKS header must be overwritten](/index.php/Dm-crypt/Drive_preparation#Wipe_LUKS_header "Dm-crypt/Drive preparation") once.
 
 ### UUID and LABEL
 
-It is very dangerous to use crypttab swap with `/dev/sdx4` or even `/dev/disk/by-id/ata-SERIAL-partX`. A small change in your device names or partitioning layout and `/etc/crypttab` will see your valuable data formatted on the next boot. It is more reliable to identify the correct partition by giving it a UUID or LABEL. By default that does not work because dm-crypt and `mkswap` would simply overwrite any content on that partition; however, it is possible to specify an offset. This allows you to create a very small, empty, bogus filesystem (with no other purpose than providing a UUID or LABEL), which survives the swap encryptions.
+As stated above, it is very dangerous to use crypttab swap with the kernel's simple naming or even with the device's ID, since these can easily change and the contents of the swap partition are deleted on every boot. To get around the changing of UUID's and label's of the swap partition on every boot, one can label a partition preceding the swap partition on the disk, and the swap partition can use the `offset` option to indicate its location. The preceding partition's label and UUID will not change upon every boot.
 
-Create a filesystem with label of your choice:
-
-```
-# mkfs.ext2 -L cryptswap /dev/sdx4 1M
+In this example, a smaller partition is created explicitly for this purpose, although any existing partition preceding the swap partition can be used. To do this, first create a smaller filesystem with the label of your choice:
 
 ```
+# mkfs.ext2 -L *mylabel* /dev/sd*X#* 1M
 
-The unusual parameter after the device name limits the filesystem size to 1 MiB.
+```
 
- `# blkid /dev/sdx4`  `/dev/sdx4: LABEL="cryptswap" UUID="b72c384e-bd3c-49aa-b7a7-a28ea81a2605" TYPE="ext2"` 
+where the *`#`* is the partition number that will be before the swap partition, and `*mylabel*` is the label you want to give the partition. The `1M` indicates a size of 1 MiB for this smaller partition.
 
-With this, `/dev/sdx4` now can easily be identified either by UUID or LABEL, regardless of how its device name or even partition number might change in the future. All that's left is the `/etc/crypttab` and `/etc/fstab` entries:
+Now, in `/etc/crypttab`, change `<device>` to either the label of UUID of the preceding partition. Additionally add the `offset` option. In this example, the swap partition is offset from the beginning of the smaller partition by 2048 sectors (1 MiB) and the label is used:
 
  `/etc/crypttab` 
 ```
 # <name>       <device>         <password>              <options>
-cryptswap      LABEL=cryptswap  /dev/urandom            swap,offset=2048,cipher=aes-xts-plain64,size=512
+  swap      LABEL=*mylabel*  /dev/urandom            swap,offset=2048,cipher=aes-cbc-essiv:sha256,size=256
 ```
 
-Note the offset: it's 2048 sectors of 512 bytes, thus 1 MiB. This way the filesystem LABEL/UUID remains intact, and data alignment works out as well.
-
- `/etc/fstab` 
-```
-# <filesystem>         <dir>  <type>  <options>  <dump>  <pass>
-/dev/mapper/cryptswap  none   swap    defaults   0       0
-```
+**Warning:** An incorrect label or offset option in crypttab can cause irrevocable data loss.
 
 ## With suspend-to-disk support
 
@@ -132,7 +110,7 @@ Also make sure you remove any line in `/etc/crypttab` pointing to this device.
 
 The following setup has the disadvantage of having to insert an additional passphrase for the swap partition manually on every boot.
 
-**Warning:** Do not use this setup with a key file. Please read about the issue reported [here](https://wiki.archlinux.org/index.php?title=Talk:Dm-crypt&oldid=255742#Suspend_to_disk_instructions_are_insecure). Alternatively, use a gnupg-encrypted keyfile as per [https://bbs.archlinux.org/viewtopic.php?id=120181](https://bbs.archlinux.org/viewtopic.php?id=120181)
+**Warning:** Do not use this setup with a key file if `/boot` is unencrypted. Please read about the issue reported [here](https://wiki.archlinux.org/index.php?title=Talk:Dm-crypt&oldid=255742#Suspend_to_disk_instructions_are_insecure). Alternatively, use a gnupg-encrypted keyfile as per [https://bbs.archlinux.org/viewtopic.php?id=120181](https://bbs.archlinux.org/viewtopic.php?id=120181)
 
 To format the encrypted container for the swap partition, create a keyslot for a user-memorizable passphrase.
 

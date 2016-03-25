@@ -85,6 +85,6 @@ end
 
 ## Автоматические обновления
 
-**pkgfile** поставляется вместе со службой и [таймером](/index.php/Systemd/Timers "Systemd/Timers") [systemd](/index.php/Systemd "Systemd") для автоматической синхронизации базы данных. Для включения автоматического обновления [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") таймер `pkgfile-update.timer`.
+**pkgfile** поставляется вместе со службой и [таймером](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры") [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") для автоматической синхронизации базы данных. Для включения автоматического обновления [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") таймер `pkgfile-update.timer`.
 
 По умолчанию, база данных обновляется ежедневно. Чтобы это изменить, скопируйте `/usr/lib/systemd/system/pkgfile-update.timer` в `/etc/systemd/system/pkgfile-update.timer` и отредактируйте копию файла под ваши нужды.

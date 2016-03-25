@@ -36,7 +36,7 @@ At first, note that for *any* method you use, you should *always* disable:
 
 The proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver supports KMS (since 364.12). However, it lacks an fbdev driver for the high-resolution console.
 
-The proprietary [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver does not support KMS. In order to use KMS you should replace it with the open-source [ATI](/index.php/ATI "ATI") driver.
+The proprietary [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver does not support KMS. In order to use KMS you have to replace it with the open-source [ATI](/index.php/ATI "ATI") driver.
 
 ### Early KMS start
 

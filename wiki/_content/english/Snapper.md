@@ -20,7 +20,7 @@
     *   [8.1 Wrapping pacman transactions in snapshots](#Wrapping_pacman_transactions_in_snapshots)
     *   [8.2 Suggested filesystem layout](#Suggested_filesystem_layout)
         *   [8.2.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
-        *   [8.2.2 Restoring / to a previous snapshot of subvol_root](#Restoring_.2F_to_a_previous_snapshot_of_subvol_root)
+        *   [8.2.2 Restoring / to a previous snapshot of @](#Restoring_.2F_to_a_previous_snapshot_of_.40)
     *   [8.3 Deleting files from snapshots](#Deleting_files_from_snapshots)
     *   [8.4 Preventing slowdowns](#Preventing_slowdowns)
         *   [8.4.1 updatedb](#updatedb)
@@ -250,7 +250,7 @@ Here is a suggested file system layout for easily restoring your `/` to a previo
 ```
 subvolid=5
    |
-   ├── subvol_root
+   ├── @
    |       |
    |       ├── /usr
    |       |
@@ -260,13 +260,13 @@ subvolid=5
    |       |
    |       ├── ...
    |
-   ├── subvol_snapshots
+   ├── @snapshots
    |
-   └── subvol_...
+   └── @...
 
 ```
 
-Where `/.snapshots` is a mountpoint for `subvol_snapshots`. `subvol_...` are subvolumes that you want to keep separate from the subvolume you will be mounting as `/` (`subvol_root`). When taking a snapshot of `/`, these other subvolumes are not included. However, you can still snapshot these other subvolumes separately by creating other snapper configurations for them. Additionally, if you were to restore your system to a previous snapshots of `/`, these other subvolumes will remain unaffected.
+Where `/.snapshots` is a mountpoint for `@snapshots`. `@...` are subvolumes that you want to keep separate from the subvolume you will be mounting as `/` (`@`). When taking a snapshot of `/`, these other subvolumes are not included. However, you can still snapshot these other subvolumes separately by creating other snapper configurations for them. Additionally, if you were to restore your system to a previous snapshots of `/`, these other subvolumes will remain unaffected.
 
 For example if you want to be able restore `/` to a previous snapshot but keep your `/home` intact, you should create a subvolume that will be mounted at `/home`. See [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
 
@@ -274,7 +274,7 @@ This layout allows the snapper utility to take regular snapshots of `/`, while a
 
 In this sceneario, after the initial setup, snapper needs no changes, and will work as expected.
 
-**Note:** Even if a subvolume is nested below `subvol_root`, a snapshot of `/` will *not* include it. Be sure to set up snapper for any additional subvolumes you want to keep snapshots of besides the one mounted at `/`.
+**Note:** Even if a subvolume is nested below `@`, a snapshot of `/` will *not* include it. Be sure to set up snapper for any additional subvolumes you want to keep snapshots of besides the one mounted at `/`.
 
 #### Configuration of snapper and mount point
 
@@ -289,40 +289,40 @@ Now that snapper is happy, delete the `/.snapshots` subvolume:
 
 Create the `/.snapshots` folder to use as a mount point. Give the folder `750` [permissions](/index.php/Permissions#Numeric_method "Permissions").
 
-Now [mount](/index.php/Mount "Mount") `subvol_snapshots` to `/.snapshots`. For example, for a file system located on `/dev/sda1`:
+Now [mount](/index.php/Mount "Mount") `@snapshots` to `/.snapshots`. For example, for a file system located on `/dev/sda1`:
 
 ```
- # mount -o subvol=subvol_snapshots /dev/sda1 /.snapshots
+ # mount -o subvol=@snapshots /dev/sda1 /.snapshots
 
 ```
 
 To make this mount permanent, add an entry to your [fstab](/index.php/Fstab "Fstab").
 
-This will make all snapshots that snapper creates be stored outside of the `subvol_root` subvolume, so that `subvol_root` can easily be replaced anytime without losing the snapper snapshots.
+This will make all snapshots that snapper creates be stored outside of the `@` subvolume, so that `@` can easily be replaced anytime without losing the snapper snapshots.
 
-#### Restoring `/` to a previous snapshot of `subvol_root`
+#### Restoring `/` to a previous snapshot of `@`
 
 If you ever want to restore `/` using one of snapper's snapshots, first boot into a live Arch Linux USB/CD.
 
 [Mount](/index.php/Mount "Mount") the toplevel subvolume (subvolid=5). That is, omit any `subvolid` mount flags.
 
-Find the snapshot you want to recover in `/mnt/subvol_snapshots/*/info.xml`.
+Find the snapshot you want to recover in `/mnt/@snapshots/*/info.xml`.
 
 **Tip:** You can use `vi` to easily browse through each file:
 ```
- # vi /mnt/subvol_snapshots/*/info.xml
+ # vi /mnt/@snapshots/*/info.xml
 
 ```
 Use `:n` to see the next file and `:rew` to go back to the first file.
 
 Browse through the `<description>` tags and the `<date>` tags, and when you find the snapshot you wish to restore, remember the `<num>` number.
 
-Now, move `subvol_root` to another location (*e.g.* `/subvol_root.broken`) to save a copy of the current system. Alternatively, simply delete `subvol_root` using `btrfs subvolume delete`.
+Now, move `@` to another location (*e.g.* `/@.broken`) to save a copy of the current system. Alternatively, simply delete `@` using `btrfs subvolume delete`.
 
 Create a read-write snapshot of the read-only snapshot snapper took:
 
 ```
- # btrfs subvol snapshot /mnt/subvol_snapshots/*#*/snapshot /mnt/subvol_root
+ # btrfs subvol snapshot /mnt/@snapshots/*#*/snapshot /mnt/@
 
 ```
 

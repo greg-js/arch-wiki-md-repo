@@ -178,7 +178,7 @@ Then, repeat this process in the `/opt/Xilinx/14.7/ISE_DS/common/lib/lin64` dire
 
 ### Digilent USB-JTAG Drivers
 
-To use Digilent Adept USB-JTAG adapters (e.g. the onboard JTAG adapter on the [ZedBoard](http://www.zedboard.org)) from within the Xilinx design tools, you need to install the Digilent [Adept Runtime](http://www.digilentinc.com/Products/Detail.cfm?Prod=ADEPT2) and [Plugin](http://www.digilentinc.com/Products/Detail.cfm?Prod=DIGILENT-PLUGIN).
+To use Digilent Adept USB-JTAG adapters (e.g. the onboard JTAG adapter on the [ZedBoard](http://www.zedboard.org)) from within the Xilinx design tools, you need to install the Digilent [Adept Runtime](http://store.digilentinc.com/digilent-adept-2-download-only/) and [Plugin](http://store.digilentinc.com/digilent-plugin-for-xilinx-tools-download-only/).
 
 Make sure you have installed [fxload](https://aur.archlinux.org/packages/fxload/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") .
 

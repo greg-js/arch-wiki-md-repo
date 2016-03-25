@@ -7,7 +7,7 @@ Another tool to be used for the same purpose is [RVM](/index.php/RVM "RVM").
 *   [1 Installation](#Installation)
 *   [2 Plugins](#Plugins)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Ruby 2.2.3](#Ruby_2.2.3)
+    *   [3.1 Ruby 2.x.x](#Ruby_2.x.x)
 *   [4 External links](#External_links)
 
 ## Installation
@@ -20,9 +20,9 @@ rbenv can be extended via a plugin system, and the rbenv wiki includes a [list o
 
 ## Troubleshooting
 
-### Ruby 2.2.3
+### Ruby 2.x.x
 
-Installation of Ruby 2.2.3 may show this error
+Installation of Ruby 2.1.6, 2.1.7, and 2.2.3 may show this error
 
 ```
  ossl_ssl.c:141:27: error: ‘SSLv3_method’ undeclared here (not in a function)

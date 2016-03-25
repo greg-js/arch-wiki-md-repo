@@ -80,7 +80,7 @@
 | <small>4.15.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(20)</small> |
 | <small>4.15.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
 | <small>4.16.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
-| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(71)</small> |
+| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(70)</small> |
 | <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(12)</small> |
 | <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(9)</small> |
@@ -121,7 +121,7 @@
 | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(80)</small> |
 | <small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(15)</small> |
 | <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(40)</small> |
-| <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
+| <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
 | <small>6.9.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(3) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(21)</small> |
 | <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |

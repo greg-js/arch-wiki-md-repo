@@ -8,27 +8,27 @@
     *   [1.1 systemd 服务问题](#systemd_.E6.9C.8D.E5.8A.A1.E9.97.AE.E9.A2.98)
     *   [1.2 日志文件](#.E6.97.A5.E5.BF.97.E6.96.87.E4.BB.B6)
 *   [2 备份](#.E5.A4.87.E4.BB.BD)
-    *   [2.1 Configuration files](#Configuration_files)
-    *   [2.2 List of installed packages](#List_of_installed_packages)
-    *   [2.3 Pacman database](#Pacman_database)
+    *   [2.1 配置文件](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
+    *   [2.2 安装的软件包](#.E5.AE.89.E8.A3.85.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [2.3 Pacman 数据库](#Pacman_.E6.95.B0.E6.8D.AE.E5.BA.93)
     *   [2.4 LUKS headers](#LUKS_headers)
-*   [3 Upgrading the system](#Upgrading_the_system)
-    *   [3.1 Avoid certain pacman commands](#Avoid_certain_pacman_commands)
+*   [3 更新系统](#.E6.9B.B4.E6.96.B0.E7.B3.BB.E7.BB.9F)
+    *   [3.1 避免某些 Pacman 命令](#.E9.81.BF.E5.85.8D.E6.9F.90.E4.BA.9B_Pacman_.E5.91.BD.E4.BB.A4)
     *   [3.2 不支持部分升级](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)
-    *   [3.3 Read before upgrading the system](#Read_before_upgrading_the_system)
-    *   [3.4 Act on alerts during an upgrade](#Act_on_alerts_during_an_upgrade)
-    *   [3.5 Deal promptly with new configuration files](#Deal_promptly_with_new_configuration_files)
-    *   [3.6 Revert broken updates](#Revert_broken_updates)
+    *   [3.3 更新系统前检查消息](#.E6.9B.B4.E6.96.B0.E7.B3.BB.E7.BB.9F.E5.89.8D.E6.A3.80.E6.9F.A5.E6.B6.88.E6.81.AF)
+    *   [3.4 注意更新时的提醒](#.E6.B3.A8.E6.84.8F.E6.9B.B4.E6.96.B0.E6.97.B6.E7.9A.84.E6.8F.90.E9.86.92)
+    *   [3.5 处理配置文件更新](#.E5.A4.84.E7.90.86.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E6.9B.B4.E6.96.B0)
+    *   [3.6 回退有问题的更新](#.E5.9B.9E.E9.80.80.E6.9C.89.E9.97.AE.E9.A2.98.E7.9A.84.E6.9B.B4.E6.96.B0)
     *   [3.7 使用包管理器安装软件](#.E4.BD.BF.E7.94.A8.E5.8C.85.E7.AE.A1.E7.90.86.E5.99.A8.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6)
     *   [3.8 选择开源驱动](#.E9.80.89.E6.8B.A9.E5.BC.80.E6.BA.90.E9.A9.B1.E5.8A.A8)
     *   [3.9 谨慎使用非官方或测试不足的软件包](#.E8.B0.A8.E6.85.8E.E4.BD.BF.E7.94.A8.E9.9D.9E.E5.AE.98.E6.96.B9.E6.88.96.E6.B5.8B.E8.AF.95.E4.B8.8D.E8.B6.B3.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [3.10 Update the mirrorlist](#Update_the_mirrorlist)
-*   [4 Clean the filesystem](#Clean_the_filesystem)
-    *   [4.1 Old configuration files](#Old_configuration_files)
-    *   [4.2 Unused packages](#Unused_packages)
-    *   [4.3 Package cache](#Package_cache)
-    *   [4.4 Broken symlinks](#Broken_symlinks)
-*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [3.10 更新镜像列表](#.E6.9B.B4.E6.96.B0.E9.95.9C.E5.83.8F.E5.88.97.E8.A1.A8)
+*   [4 清理文件系统](#.E6.B8.85.E7.90.86.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+    *   [4.1 旧配置文件s](#.E6.97.A7.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6s)
+    *   [4.2 不需要的软件包](#.E4.B8.8D.E9.9C.80.E8.A6.81.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [4.3 软件包缓存](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BC.93.E5.AD.98)
+    *   [4.4 破损的软链接](#.E7.A0.B4.E6.8D.9F.E7.9A.84.E8.BD.AF.E9.93.BE.E6.8E.A5)
+*   [5 技巧](#.E6.8A.80.E5.B7.A7)
     *   [5.1 使用经过验证的软件包](#.E4.BD.BF.E7.94.A8.E7.BB.8F.E8.BF.87.E9.AA.8C.E8.AF.81.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [5.2 安装内核的长期支持版本](#.E5.AE.89.E8.A3.85.E5.86.85.E6.A0.B8.E7.9A.84.E9.95.BF.E6.9C.9F.E6.94.AF.E6.8C.81.E7.89.88.E6.9C.AC)
 *   [6 参阅](#.E5.8F.82.E9.98.85)
@@ -48,58 +48,56 @@ $ systemctl --failed
 
 ### 日志文件
 
-检查 `/var/log` 日志文件中是否存在错误, 检查 systemd 日志中的高优先级错误：
+检查 `/var/log` 日志文件中是否存在错误, 检查[systemd 日志](/index.php/Systemd#Journal "Systemd")中的高优先级错误：
 
 ```
  # journalctl -p 3 -xb
 
 ```
 
-更多信息请参考 [Systemd#Journal](/index.php/Systemd#Journal "Systemd").
-
-See [Xorg#Troubleshooting](/index.php/Xorg#Troubleshooting "Xorg") for information on where and how [Xorg](/index.php/Xorg "Xorg") logs errors.
+Xorg 的相关错误可以查看 [Xorg#Troubleshooting](/index.php/Xorg#Troubleshooting "Xorg")。
 
 ## 备份
 
-Create backups of important data at regular intervals. Those data include configuration files, installed packages and directories such as `/etc`, `/home`, `/var` and for server installations, also `/srv`.
+把重要数据的备份作为日常维护任务。这些数据包括配置文件，安装的软件包和重要的目录例如 `/etc`, `/home`, `/var` 和 服务器使用的 `/srv`.
 
-See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for many alternative applications that may better suit your case. See [Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") for other articles of interest.
+其它备份方案可以参考 [同步和备份程序页面](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")，[Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") 包含其它相关文章。
 
 可以通过 [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") 自动备份.
 
-### Configuration files
+### 配置文件
 
-Before editing any configuration files, create a backup. This way, you can revert to a working version in case of problems. Editors like [vim](/index.php/Vim "Vim") and [emacs](/index.php/Emacs "Emacs") can do this automatically, as well as tools like [etckeeper](/index.php/Etckeeper "Etckeeper") which keep `/etc` in a version control system (VCS).
+在编辑任何配置文件前，先保留备份。这样出问题是可以直接还原。[vim](/index.php/Vim "Vim") 和 [emacs](/index.php/Emacs "Emacs") 编辑器会自动备份，[etckeeper](/index.php/Etckeeper "Etckeeper") 可以将 `/etc` 纳入版本控制系统。
 
-### List of installed packages
+### 安装的软件包
 
-Maintain a list of all installed packages, so that if a complete re-installation is inevitable, it is easier to re-create the original environment.
+维护一个所有安装软件包的列表，这样在不得己进行系统重装时，可以很快恢复到初始环境。
 
-See [Pacman tips#Backing up and retrieving a list of installed packages](/index.php/Pacman_tips#Backing_up_and_retrieving_a_list_of_installed_packages "Pacman tips") for details.
+详情参考 [Pacman tips#Backing up and retrieving a list of installed packages](/index.php/Pacman_tips#Backing_up_and_retrieving_a_list_of_installed_packages "Pacman tips")。
 
-### Pacman database
+### Pacman 数据库
 
-See [Pacman tips#Back-up the pacman database](/index.php/Pacman_tips#Back-up_the_pacman_database "Pacman tips").
+参考 [Pacman tips#Back-up the pacman database](/index.php/Pacman_tips#Back-up_the_pacman_database "Pacman tips").
 
 ### LUKS headers
 
-It can make sense to periodically check and synchronize the backups of LUKS-encrypted partition headers, especially if passphrases have been revoked. See [Dm-crypt/Device encryption#Backup and restore](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
+如果 LUKS 使用密码加密，建议定期检查和同步 LUKS 加密分区的头部数据。参考 [Dm-crypt/Device encryption#Backup and restore](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
 
-## Upgrading the system
+## 更新系统
 
-It is recommended to perform full system upgrades regularly, to enjoy both the latest bug fixes and security updates, and also to avoid having to deal with too many package upgrades that require manual intervention at once. See [Pacman#Upgrading packages](/index.php/Pacman#Upgrading_packages "Pacman") for details.
+建议日常进行系统完整更新，这样既能享受到最新的问题修复和安全更新，还可以避免一次更新太多的软件包，手动处理是分批进行的。参考[Pacman#Upgrading packages](/index.php/Pacman#Upgrading_packages "Pacman").
 
-Make sure to have the Arch install media or another Linux "live" CD/USB available so you can easily rescue your system if there is a problem after updating. If you are running Arch in a production environment, or cannot afford downtime for any reason, test changes to configuration files, as well as updates to software packages, on a non-critical duplicate system first. Then, if no problems arise, roll out the changes to the production system.
+手头上保留 Arch 安装盘或其它 Linux "Live" 环境，这样有问题是可以进行修正。如果在生产环境使用 Arch，无法接受任何的停机，那么在更新前请在非关键系统上测试新配置文件和软件包，没有问题的时候再部署到生产环境。
 
-If the system has packages from the [AUR](/index.php/AUR "AUR"), carefully upgrade all of them.
+如果软件包来自 [AUR](/index.php/AUR "AUR"), 请注意更新完整.
 
-### Avoid certain pacman commands
+### 避免某些 Pacman 命令
 
-Avoid doing [partial upgrades](#Partial_upgrades_are_unsupported), i.e. never run `pacman -Sy` and instead use `pacman -Syu`.
+避免 [部分更新](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E6.9B.B4.E6.96.B0)，不要运行 `pacman -Sy` 而是运行 `pacman -Syu`.
 
-Avoid using the `--force` option with pacman, **especially** in commands such as `pacman -Syu --force` involving more than one package. The `--force` option ignores file conflicts and can even cause file loss when files are relocated between different packages! In a properly maintained system, it should only be used when explicitly recommended by the Arch developers (see [#Read before upgrading the system](#Read_before_upgrading_the_system)).
+避免 pacman 的 `--force` 选项，**尤其是** `pacman -Syu --force` 这种可能更新多个软件包的时候。`--force` 忽略文件冲突，可能导致文件丢失！如果系统按正常维护，这个选项仅应该在 Arch 开发者明确指导的情况下使用，在 Arch 主页会有通知。
 
-Avoid using the `-d` option with pacman. `pacman -Rdd package` skips dependency checks during package removal. As a result, a package providing a critical dependency could be removed, resulting in a broken system.
+避免使用 `-d` 选项，`pacman -Rdd package` 会在删除软件包时跳过依赖关系检查。如果删除了系统必要的依赖关系，可能导致系统损坏。
 
 ### 不支持部分升级
 
@@ -111,31 +109,27 @@ Arch Linux 是滚动发行版，新[库](https://en.wikipedia.org/wiki/Library_(
 
 如果进行了部分升级，二进制包因为找不到链接库而损坏，**不要通过简单的符号链接进行修正**。库升级 [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") 是因为它们**不再向前兼容**。只要 *pacman* 可以运行，使用更新的源进行 `pacman -Syu` 就能修复这些问题。
 
-The bash script *checkupdates*, included with the pacman package, provides a safe way to check for upgrades to installed packages without running a system update at the same time. See also [BBS##1563725](https://bbs.archlinux.org/viewtopic.php?pid=1563725#p1563725).
+pacman 软件包提供的 *checkupdates* 脚本可以检查更新但不进行实际安装，参考 [BBS##1563725](https://bbs.archlinux.org/viewtopic.php?pid=1563725#p1563725).
 
-### Read before upgrading the system
+### 更新系统前检查消息
 
-Before upgrading Arch, always read the latest [Arch News](https://www.archlinux.org/news/) to find out if there are any major software or configuration changes with the latest packages. Before upgrading fundamental software (such as the [kernel](/index.php/Kernel "Kernel"), [xorg](/index.php/Xorg "Xorg"), [systemd](/index.php/Systemd "Systemd"), or [glibc](https://www.archlinux.org/packages/?name=glibc)) to a new version, look over the appropriate [forum](https://bbs.archlinux.org/) to see if there have been any reported problems.
+在升级Arch前, 一定要阅读[Arch News](https://www.archlinux.org/news/)来确认是否有重要的软件更改，最新的软件包是否有配置文件更改. 在更新[kernel](/index.php/Kernel "Kernel"), [xorg](/index.php/Xorg "Xorg"), [systemd](/index.php/Systemd "Systemd") 和 [glibc](https://www.archlinux.org/packages/?name=glibc)等重要软件之前, 查看[论坛](https://bbs.archlinux.org/)看是否有被报告的出错等问题.
 
-在升级Arch前, 一定要阅读[Arch News](https://www.archlinux.org/news/)来查看是否有主要的软件更改和最新软件包的是否配置文件的更改. 在更新如：内核，xorg和库文件到一个新版本等重要软件之前, 仔细查看[论坛](https://bbs.archlinux.org/)看是否有被报告的出错等问题.
+### 注意更新时的提醒
 
-### Act on alerts during an upgrade
+当升级系统时， 请一定要注意[pacman](/index.php/Pacman "Pacman")输出的注意信息。 如果有需要用户手动操作的，请一定要立即搞定。 如果不明白 pacman 输出的信息， 请去论坛搜索或者看Arch Linux首页的新闻。
 
-When upgrading the system, be sure to pay attention to the alert notices provided by [pacman](/index.php/Pacman "Pacman"). If any additional actions are required by the user, be sure to take care of them right away. If a pacman alert is confusing, search the forums and the recent news posts for more detailed instructions.
+### 处理配置文件更新
 
-当升级系统时， 请一定要注意pacman输出的注意信息。 如果有需要用户手动操作的，请一定要立即搞定。 如果不明白pacman输出的信息， 请去论坛搜索或者看Arch Linux首页的新闻。
+pacman 可能会创建 `.pacnew`, `.pacsave` 和 `.pacorig` 文件，这是 pacman 会通知用户，而用户需要主动处理这些文件。详细的操作说明请参考：[Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files").
 
-### Deal promptly with new configuration files
+同样，注意所有你可能会复制或创建的配置文件。如果软件包提供了一个空配置文件，这个文件被复制到主目录，请注意查看示例文件是否有更新。
 
-When pacman is invoked `.pacnew`, `.pacsave`, and `.pacorig` files can be created. Pacman provides notice when this happens and users must deal with these files promptly. Users are referred to the [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files") wiki page for detailed instructions.
+### 回退有问题的更新
 
-Also, think about other configuration files you may have copied or created. If a package had an example configuration that you copied to your home directory, check to see if a new one has been created.
+如果软件包可能导致问题，软件包维护者会在更新时给出提示信息。在更新后遇到问题，请先确认 `/var/log/pacman.log` 中有没有提醒信息.然后看看 [https://www.archlinux.org/](https://www.archlinux.org/) 中有没有新闻，然后再到论坛上查找类似的问题，如果都没有找到，可用到 [论坛](https://bbs.archlinux.org), [IRC](/index.php/IRC "IRC") 中发帖求助。
 
-### Revert broken updates
-
-If a package update is expected/known to cause problems, packagers will ensure that pacman displays an appropriate message when the package is updated. If experiencing trouble after an update, double-check pacman's output by looking at `/var/log/pacman.log`.
-
-At this point, only after ensuring there is no information available through pacman, there is no relative news on [https://www.archlinux.org/](https://www.archlinux.org/), and there are no forum posts regarding the update, consider seeking help on the [forum](https://bbs.archlinux.org), over [IRC](/index.php/IRC "IRC"), or by [downgrading](/index.php/Downgrading_packages "Downgrading packages") the offending package.
+[降级](/index.php/Downgrading_packages "Downgrading packages") 是最后的解决方案。
 
 ### 使用包管理器安装软件
 
@@ -153,67 +147,55 @@ At this point, only after ensuring there is no information available through pac
 
 只在绝对必要的情况下使用第三方的软件仓库.[pacman/Tips and tricks#Maintenance](/index.php/Pacman/Tips_and_tricks#Maintenance "Pacman/Tips and tricks")提供了清理软件的方法。
 
-### Update the mirrorlist
+### 更新镜像列表
 
-Update pacman's mirrorlist, as the quality of mirrors can vary over time, and some might go offline or their download rate might degrade.
+镜像的质量会随着时间而变化，有些镜像会下线或者同步和下载出问题，所以请注意更新 pacman 的镜像列表，详情参考 [mirrors](/index.php/Mirrors "Mirrors")。
 
-See [mirrors](/index.php/Mirrors "Mirrors") for details.
+## 清理文件系统
 
-## Clean the filesystem
-
-When looking for files to remove, it is important to find the files that take up the most disk space. Programs that help with this are found in:
+检查磁盘空间的使用状况，删除占用空间较大的无用文件：
 
 *   [List of applications#Disk usage display](/index.php/List_of_applications#Disk_usage_display "List of applications").
 *   [List of applications#Disk cleaning](/index.php/List_of_applications#Disk_cleaning "List of applications").
 
-### Old configuration files
+### 旧配置文件s
 
-Old configuration files may conflict with newer software versions, or corrupt over time. Remove unneeded configurations periodically, particularly in your home folder and `~/.config`. For similar reasons, be careful when sharing home folders between installations.
+旧的配置文件可能和新软件版本不兼容，所以请定期清理和更新配置文件，尤其是主目录和 `~/.config`. 在重新安装或共享 /home 时，注意下面文件夹：
 
-Look for the following folders:
+*   `~/.config/` -- 软件保存配置文件的地方
+*   `~/.cache/` -- 程序缓存大小可能持续增加
+*   `~/.local/share/` -- 可能有旧文件
 
-*   `~/.config/` -- where apps stores their configuration
-*   `~/.cache/` -- cache of some programs may grow in size
-*   `~/.local/share/` -- old files may be lying there
+参考 [XDG Base Directory support](/index.php/XDG_Base_Directory_support "XDG Base Directory support").
 
-See [XDG Base Directory support](/index.php/XDG_Base_Directory_support "XDG Base Directory support") for more information.
+为了帮助清理 home 目录，建议维护一份不需要的文件列表并定期清理，例如使用 [rmshit.py](https://github.com/lahwaacz/Scripts/blob/master/rmshit.py).
 
-To keep the home directory clean from temporary files created at the wrong place, it is a good idea to manage a list of unwanted files and remove them regularly, for example with [rmshit.py](https://github.com/lahwaacz/Scripts/blob/master/rmshit.py).
+[rmlint](https://www.archlinux.org/packages/?name=rmlint) 也可以用来查找不需要的重复文件，空文件和损坏的软链接。
 
-[rmlint](https://www.archlinux.org/packages/?name=rmlint) can be used to find and optionally remove duplicate files, empty files, recursive empty directories and broken symlinks.
+### 不需要的软件包
 
-### Unused packages
+从系统里面删除不需要的软件包可以减少空间占用和维护难度。详情参考 [Pacman/Tips and tricks#Removing unused packages](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages "Pacman/Tips and tricks").
 
-Remove unused packages from the system to free up disk space and simplify maintenance.
+### 软件包缓存
 
-See [Pacman/Tips and tricks#Removing unused packages](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages "Pacman/Tips and tricks") for details.
+从 `/var/cache/pacman/pkg/` 删除不需要的 `.pkg` 可以减少空间占用。详情参考 [Pacman#Cleaning the package cache](/index.php/Pacman#Cleaning_the_package_cache "Pacman").
 
-### Package cache
+### 破损的软链接
 
-Remove unwanted `.pkg` files from `/var/cache/pacman/pkg/`to free up disk space.
+系统中可能存在老的，损坏的软链接，应该删除它们。方法可以参考 [here](https://unix.stackexchange.com/questions/34248/how-can-i-find-broken-symlinks) 和 [here](http://www.commandlinefu.com/commands/view/8260/find-broken-symlinks).
 
-See [Pacman#Cleaning the package cache](/index.php/Pacman#Cleaning_the_package_cache "Pacman") for more information.
-
-### Broken symlinks
-
-Old, broken symbolic links might be sitting around your system; you should remove them. Examples on achieving this can be found [here](https://unix.stackexchange.com/questions/34248/how-can-i-find-broken-symlinks) and [here](http://www.commandlinefu.com/commands/view/8260/find-broken-symlinks).
-
-To quickly list all the broken symlinks of your system, use:
+下面命令可以列出所有有问题的软链接，可以检查并删除列表中的文件。
 
 ```
- # find . -type l -! -exec test -e {} \; -print
+# find . -type l -! -exec test -e {} \; -print
 
 ```
 
-Then inspect and remove unnecessary entries from this list.
-
-## Tips and tricks
-
-The following tips are generally not required, but certain users may find them useful.
+## 技巧
 
 ### 使用经过验证的软件包
 
-Arch's rolling releases can be a boon for users who want to try the latest features and get upstream updates as soon as possible, but they can also make system maintenance more difficult. To simplify maintenance and improve stability, try to avoid cutting edge software and install only mature and proven software. Such packages are less likely to receive difficult upgrades such as major configuration changes or feature removals. Prefer software that has a strong and active development community, as well as a high number of competent users, in order to simplify support in the event of a problem.
+Arch 的滚动发行让用户可以使用最新的功能和上游更新，但是这也增加了系统维护的难度。为了增加稳定性，可以尽量使用经过验证的稳定版本。这些软件包不太容易在升级时遇到问题。选用具有活跃开发社区的软件，选用用户能力更出众的软件，这样在出问题是更容易获得帮助。
 
 避免使用测试仓库，这些软件包都是实验性质，不适合安装到稳定系统。因此对于[AUR](/index.php/AUR "AUR")中的包以及部分 community 中的包需要一些谨慎，这些开发中的包是直接从上游开发版分支中获取到的，通常会在包的名字上注有：dev, devel, svn, cvs, git, hg, 或是 darcs 的信息。
 

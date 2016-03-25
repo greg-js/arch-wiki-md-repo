@@ -8,7 +8,10 @@ ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE
     *   [2.1 Vivado and SDK](#Vivado_and_SDK)
     *   [2.2 Update patch](#Update_patch)
     *   [2.3 Licensing](#Licensing)
+    *   [2.4 Digilent USB-JTAG Drivers](#Digilent_USB-JTAG_Drivers)
 *   [3 Launching programs](#Launching_programs)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 libncurses.so.5 not found](#libncurses.so.5_not_found)
 
 ## Prerequisites
 
@@ -72,6 +75,16 @@ $ /opt/Xilinx/Vivado/2015.4/bin/vlm
 
 If you try obtaining a WebPack license, your default browser should open, and the license should be generated normally. If Vivado License Manager fails to automatically load the generated license, download the .lic file, and manually load it.
 
+### Digilent USB-JTAG Drivers
+
+To use Digilent Adept USB-JTAG adapters (e.g. the onboard JTAG adapter on the [ZedBoard](http://www.zedboard.org)) from Vivado, you need to install the Digilent [Adept Runtime](http://store.digilentinc.com/digilent-adept-2-download-only/).
+
+Make sure you have installed [fxload](https://aur.archlinux.org/packages/fxload/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") .
+
+To install the Digilent Adept Runtime, it is recommended to install [digilent.adept.runtime](https://aur.archlinux.org/packages/digilent.adept.runtime/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+
+In addition, installing [digilent.adept.utilities](https://aur.archlinux.org/packages/digilent.adept.utilities/) may do good to configuring your board.
+
 ## Launching programs
 
 To ease launching programs, you can create the following .desktop files for Vivado IDE, SDK and DocNav:
@@ -112,3 +125,20 @@ Icon=/opt/Xilinx/DocNav/resources/doc_nav_application_48.png
 Categories=Development;
 Comment=Xilinx Documentation Navigator
 ```
+
+## Troubleshooting
+
+### libncurses.so.5 not found
+
+Xilinx Vivado requires version 5 of ncurses while ArchLinux has already updated to a newer version.
+
+To obtain this library, you can either search in your pacman cache to see if you already have a local copy:
+
+```
+$ ls /var/cache/pacman/pkg/ | grep ncurses
+
+```
+
+or download it from the [Arch Linux Archive](https://archive.archlinux.org/packages/n/ncurses/)
+
+After obtaining the package, simply extract `/usr/lib/libncurses.*` to `/opt/Xilinx/Vivado/<version>/lib/lnx64.o/`

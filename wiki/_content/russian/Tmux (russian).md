@@ -280,7 +280,7 @@ WantedBy=multi-user.target
 
 **Совет:** You may want to add `WorkingDirectory=*custom_path*` to customize working directory.
 
-Кроме того, вы можете разместить этот файл в ваш [пользовательский](/index.php/Systemd/User "Systemd/User") каталог, например в `~/.config/systemd/user/tmux.service`. Таким образом, служба tmux запустится сразу после входа в систему.
+Кроме того, вы можете разместить этот файл в ваш [пользовательский](/index.php/Systemd/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C "Systemd/Пользователь") каталог, например в `~/.config/systemd/user/tmux.service`. Таким образом, служба tmux запустится сразу после входа в систему.
 
 ## Инициализация сеансов
 

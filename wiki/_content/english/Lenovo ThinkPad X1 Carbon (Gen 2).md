@@ -274,7 +274,7 @@ options snd_hda_intel index=1
 
 #### Wired
 
-There is a small port on the right side for Ethernet. An adaptor is required.
+There is a small port on the right side for Ethernet. An adaptor is required. In case of loss of the adaptor, the part number is for ordering is 04X6435.
 
 #### Wireless
 

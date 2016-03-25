@@ -447,14 +447,23 @@ If you would like to connect a client to an OpenVPN server through Gnome's built
 By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server.conf`) [[1]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
 
 ```
-push "redirect-gateway def1"
+push "redirect-gateway def1 bypass-dhcp"
 push "dhcp-option DNS 10.8.0.1"
+#push "dhcp-option DOMAIN domain.lan" # push intern domain
 
 ```
 
 Change "10.8.0.1" to your preferred DNS IP address.
 
 If you have problems with non responsive DNS after connecting to server, install [BIND](/index.php/BIND "BIND") as simple DNS forwarder and push the IP address of the OpenVPN server as DNS to clients.
+
+If you want to allow clients reaching other (private) subnets behinds the server, you may want to use the `push "route <address pool> <subnet>"` option:
+
+```
+push "route 172.10.142.0 255.255.255.0"
+push "route 172.20.142.0 255.255.255.0"
+
+```
 
 Now you need to [enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") on the server.
 

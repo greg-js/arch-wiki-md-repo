@@ -428,7 +428,7 @@ $ xorriso -as mkisofs -iso-level 3 \
 You can install [ovmf](https://www.archlinux.org/packages/?name=ovmf) from the extra repository and run it as follows:
 
 ```
-$ qemu-system-x86_64 -enable-kvm -net none -m 1024 -drive file=/usr/share/ovmf/x86_64/bios.bin,format=raw,if=pflash,readonly
+$ qemu-system-x86_64 -enable-kvm -net none -m 1024 -drive file=/usr/share/ovmf/ovmf_x64.bin,format=raw,if=pflash,readonly
 
 ```
 

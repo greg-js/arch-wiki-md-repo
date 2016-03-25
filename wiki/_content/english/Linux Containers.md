@@ -105,7 +105,7 @@ The remaining steps are similar, except for one thing: for the container, the ga
 
 Select a template from `/usr/share/lxc/templates` that matches the target distro to containerize. Users wishing to containerize non-Arch distros will need additional packages on the host depending on the target distro:
 
-*   Debian-based: [debootstrap](https://aur.archlinux.org/packages/debootstrap/)
+*   Debian-based: [debootstrap](https://www.archlinux.org/packages/?name=debootstrap)
 *   Fedora-based: [yum](https://aur.archlinux.org/packages/yum/)
 
 Run `lxc-create` to create the container, which installs the root filesystem of the LXC to `/var/lib/lxc/CONTAINER_NAME/rootfs` by default. Example creating an Arch Linux LXC named "playtime":

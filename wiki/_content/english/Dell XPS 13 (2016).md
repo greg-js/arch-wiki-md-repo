@@ -78,23 +78,6 @@ An answer from [Intel Communities](https://communities.intel.com/thread/75161?st
 
 The built-in Broadcom BCM4350 is now supported in the current [linux](https://www.archlinux.org/packages/?name=linux) kernel (as of version 4.4.1-1). The wireless module `brcmfmac` also needs the firmware `brcmfmac4350-pcie.bin` from the related [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
 
-If you have not already done so, enable the testing repository to retrieve the package in `/etc/pacman.conf`:
-
-```
- # The testing repositories are disabled by default. To enable, uncomment the
- # repo name header and Include lines. You can add preferred servers immediately
- # after the header, and they will be used before the default mirrors.
-
- [core]
- Include = /etc/pacman.d/mirrorlist
-
- [testing]
- Include = /etc/pacman.d/mirrorlist
-
-```
-
-The order matters. If you put the `[testing]` repository before `[core]` you are setting `pacman` to default to the *testing* repository for all packages. Otherwise only packages that you install with `# pacman -S testing/*package-name*` will be pulled from the *testing* repository. This way is preferred if you only need the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) from *testing* and want to keep on *core* for others. You might want to install `testing/linux` as well, but it is not mandatory if both the core and testing versions are on the same major version.
-
 ## Bluetooth
 
 **Note:** **Intel WiFi users:** If your WiFi card supports Bluetooth, then the BT interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).

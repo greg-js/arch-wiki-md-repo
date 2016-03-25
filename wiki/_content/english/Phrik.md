@@ -10,13 +10,14 @@ Phrik is the friendly IRC bot in Arch Linux's [IRC channels](/index.php/IRC_chan
         *   [1.3.2 Removing a hostmask](#Removing_a_hostmask)
         *   [1.3.3 Listing hostmasks](#Listing_hostmasks)
 *   [2 Factoids](#Factoids)
-    *   [2.1 Finding out info about factoids](#Finding_out_info_about_factoids)
-    *   [2.2 Creating new factoids](#Creating_new_factoids)
-    *   [2.3 Factoid locking](#Factoid_locking)
-    *   [2.4 Modifying factoids](#Modifying_factoids)
-        *   [2.4.1 Regex substitute](#Regex_substitute)
-        *   [2.4.2 Replacing a factoid](#Replacing_a_factoid)
-    *   [2.5 Deleting factoids](#Deleting_factoids)
+    *   [2.1 Searching factoids](#Searching_factoids)
+    *   [2.2 Finding out info about factoids](#Finding_out_info_about_factoids)
+    *   [2.3 Creating new factoids](#Creating_new_factoids)
+    *   [2.4 Factoid locking](#Factoid_locking)
+    *   [2.5 Modifying factoids](#Modifying_factoids)
+        *   [2.5.1 Regex substitute](#Regex_substitute)
+        *   [2.5.2 Replacing a factoid](#Replacing_a_factoid)
+    *   [2.6 Deleting factoids](#Deleting_factoids)
 *   [3 Quotes](#Quotes)
     *   [3.1 Grab](#Grab)
     *   [3.2 Quote](#Quote)
@@ -77,6 +78,16 @@ Phrik has the MoobotFactoids plugins means that users can create, recall and giv
 To make phrik recall a factoid you can either send the key of the factoid prefixed with an exclamation mark either to a channel where he is in or in private, like this:
 
  `!welcome` 
+
+### Searching factoids
+
+To search existing factoids, you can use the listkeys and listvalues commands:
+
+ `!listkeys welcome` 
+
+or
+
+ `!listvalues welcome` 
 
 ### Finding out info about factoids
 

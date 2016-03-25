@@ -25,9 +25,8 @@
     *   [6.5 登出后清空屏幕](#.E7.99.BB.E5.87.BA.E5.90.8E.E6.B8.85.E7.A9.BA.E5.B1.8F.E5.B9.95)
     *   [6.6 ASCII的艺术, fortunes和cowsay](#ASCII.E7.9A.84.E8.89.BA.E6.9C.AF.2C_fortunes.E5.92.8Ccowsay)
     *   [6.7 ASCII历史日历](#ASCII.E5.8E.86.E5.8F.B2.E6.97.A5.E5.8E.86)
-    *   [6.8 定制标题](#.E5.AE.9A.E5.88.B6.E6.A0.87.E9.A2.98)
-    *   [6.9 修正窗口大小调整时的换行](#.E4.BF.AE.E6.AD.A3.E7.AA.97.E5.8F.A3.E5.A4.A7.E5.B0.8F.E8.B0.83.E6.95.B4.E6.97.B6.E7.9A.84.E6.8D.A2.E8.A1.8C)
-    *   [6.10 Bash历史补全](#Bash.E5.8E.86.E5.8F.B2.E8.A1.A5.E5.85.A8)
+    *   [6.8 修正窗口大小调整时的换行](#.E4.BF.AE.E6.AD.A3.E7.AA.97.E5.8F.A3.E5.A4.A7.E5.B0.8F.E8.B0.83.E6.95.B4.E6.97.B6.E7.9A.84.E6.8D.A2.E8.A1.8C)
+    *   [6.9 Bash历史补全](#Bash.E5.8E.86.E5.8F.B2.E8.A1.A5.E5.85.A8)
 *   [7 资源](#.E8.B5.84.E6.BA.90)
 
 ## 调用
@@ -440,24 +439,6 @@ $ rpm2cpio calendar.rpm | bsdtar -C ~/.calendar --strip-components=4 -xf - ./usr
 
 ```
 $ sed -n "/$(date +%m\\/%d\\\|%b\*\ %d)/p" $(find ~/.calendar /usr/share/calendar -maxdepth 1 -type f -name 'c*' 2>/dev/null);
-
-```
-
-### 定制标题
-
-变量`$PROMPT_COMMAND`允许你在提示符前执行一个命令。比如说，下面的命令会改变标题为整个当前目录名：
-
-```
-export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
-
-```
-
-下面的命令会改变你的标题为上一个运行的命令，并且保证你的历史文件总为最新：
-
-```
-export HISTCONTROL=ignoreboth
-export HISTIGNORE='history*'
-export PROMPT_COMMAND='history -a;echo -en "\e]2;";history 1|sed "s/^[ \t]*[0-9]\{1,\}  //g";echo -en "\e\\";
 
 ```
 

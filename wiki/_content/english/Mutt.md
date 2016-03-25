@@ -500,10 +500,7 @@ source "gpg2 -dq $HOME/.my-pwds.gpg |"
 
 ```
 
-**Note:**
-
-*   At the end of the line above, there is no space between the pipe and the double quote.
-*   Make sure that you use single quotes instead of double quotes when using your password variable inside of a string. For example: The line `account-hook $folder "set imap_user=user@gmail.com imap_pass=$my_pw_personal"` will **not** work.
+**Note:** At the end of the line above, there is no space between the pipe and the double quote.
 
 *   The `-q` parameter makes gpg2 quiet which prevents gpg2 output messing with Mutt interface.
 *   The pipe `|` at the end of a string is the Mutt syntax to tell that you want the result of what is preceeding.

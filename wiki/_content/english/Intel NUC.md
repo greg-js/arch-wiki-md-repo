@@ -40,7 +40,7 @@ Most NUCs use integrated [Intel graphics](/index.php/Intel_graphics "Intel graph
 
 **Warning:** The `i915` Intel DRM driver suffers from various bugs that can result in kernel errors, GPU crashes and even complete system freezes.
 
-There are no pending fixes for DRM bugs in latest kernel versions (last tested on `4.5-rc2`). See [Intel graphics#Skylake Support](/index.php/Intel_graphics#Skylake_Support "Intel graphics") for useful workarounds.
+There are no pending fixes for DRM bugs in latest kernel versions (last tested on `4.5`). See [Intel graphics#Skylake Support](/index.php/Intel_graphics#Skylake_Support "Intel graphics") for useful workarounds.
 
 ### Wireless
 

@@ -91,7 +91,7 @@ evdev is an Xorg driver which can make use of the kernel event devices, which yo
 
 ## Attaching devices to a seat
 
-Systemd's loginctl lets you assing devices to seats by creating udev rules.
+Systemd's loginctl lets you assign devices to seats by creating udev rules.
 
 ### Identify devices
 

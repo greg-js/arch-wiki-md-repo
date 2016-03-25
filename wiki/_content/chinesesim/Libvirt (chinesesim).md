@@ -374,10 +374,10 @@ $ virt-install  \
 
 #### 用 virt-manager 新建虚拟机
 
-First, connect to the hypervisor (e.g. QEMU/KVM *system* or user *session*), right click on a connection and select *New*, and follow the wizard.
+首先，连接到虚拟机超级管理器（例如 QEMU/KVM *system* 或用户 *session*，在连接上右击并选择 *新建*，然后跟随向导完成。
 
-*   On the *fourth step*, de-selecting *Allocate entire disk now* will make setup quicker and can save disk space in the interum; *however*, it may cause volume fragmentation over time.
-*   On the *fifth step*, open *Advanced options* and make sure that *Virt Type* is set to *kvm* (this is usually the preferred method). If additional hardware setup is required, select the *Customize configuration before install* option.
+*   在**第四步**中取消选中**立即分配全部虚拟磁盘空间**会加快创建过程并节省实际虚拟磁盘空间占用；**然而**，这将导致将来花费额外的磁盘整理时间。
+*   在**第五步**中打开**高级选项**并确认**虚拟化类型**设为 **kvm**（这通常是首选模式）。如果要求附加的硬件配置，选中**安装前定制**选项。
 
 #### 管理虚拟机
 
@@ -420,18 +420,18 @@ $ virsh edit *domain*
 
 ### 网络
 
-A [decent overview of libvirt networking](https://jamielinux.com/docs/libvirt-networking-handbook/).
+[这里](https://jamielinux.com/docs/libvirt-networking-handbook/)是有关 libvirt 网络的一个正宗的概述。
 
-By default, when the `libvird` systemd service is started, a NAT bridge is created called *default* to allow external network connectivity (warning see: [#"default" network bug](#.22default.22_network_bug)). For other network connectivity needs, four network types exist that can be created to connect a domain to:
+默认情况下，当 `libvird` 服务启动后，即创建了一个名为 *default* 的 NAT 网桥与外部网络联通（警告：参阅 [#"default" 网络的 bug](#.22default.22_.E7.BD.91.E7.BB.9C.E7.9A.84_bug)）。对于其他的网络连接需求，可创建下列四种类型的网络以连接到虚拟机：
 
-*   bridge — a virtual device; shares data directly with a physical interface. Use this if the host has *static* networking, it does not need to connect other domains, the domain requires full inbound and outbound trafficing, and the domain is running on a *system*-level. See [Network bridge](/index.php/Network_bridge "Network bridge") on how to add a bridge additional to the default one. After creation, it needs to be specified in the respective guest's `.xml` configuration file.
-*   network — a virtual network; has ability to share with other domains. Use a virtual network if the host has *dynamic* networking (e.g. NetworkManager), or using wireless.
-*   macvtap — connect directly to a host physical interface.
-*   user — local ability networking. Use this only for a user *session*.
+*   bridge — 这是一个虚拟设备，它通过一个物理接口直接共享数据。使用场景为：宿主机有 *静态* 网络、虚拟机不需与其它虚拟机连接、虚拟机要占用全部进出流量，并且虚拟机运行于 *系统* 层级。有关如何在现有默认网桥时增加另一个网桥的方法，请参阅 [网桥](/index.php/%E7%BD%91%E6%A1%A5 "网桥")。网桥创建后，需要将它指定到相应客户机的 `.xml` 配置文件中。
+*   network — 这是一个虚拟网络，它可以与其它虚拟机共用。使用场景为：宿主机有 *动态* 网络（例如：NetworkManager）或使用无线网络。
+*   macvtap — 直接连接到宿主机的一个物理网络接口。
+*   user — 本地网络，仅用于用户 *会话*。
 
-`virsh` has the ability to create networking with numerous options for most users, however, it is easier to create network connectivity with a graphic user interface (like `virt-manager`), or to do so on [creation with virt-install](#Create_a_new_domain_using_virt-install).
+绝大多数用户都可以通过 `virsh` 的各种可选项创建具有各种功能的网络，一般来说比通过 GUI 程序（像 `virt-manager` 之类）更容易做到。也可以按 [#用 virt-install 新建虚拟机](#.E7.94.A8_virt-install_.E6.96.B0.E5.BB.BA.E8.99.9A.E6.8B.9F.E6.9C.BA) 所述实现。
 
-**Note:** libvirt handles DHCP and DNS with [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq), launching a separate instance for every virtual network. It also adds iptables rules for proper routing, and enables the `ip_forward` kernel parameter.
+**注意:** libvirt 通过 [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) 处理 DHCP 和 DNS 请求，以启动每个虚拟网络的不同实例。也会为特定的路由添加 iptables 规则并启用 `ip_forward` 内核参数。
 
 ### 快照
 

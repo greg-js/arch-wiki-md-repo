@@ -1,3 +1,5 @@
+**Note:** Currently the base Trinity packages can be built and installed on Arch using the PKGBUILD files on [https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD](https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD). Most components seem to work fine except arts and tdm are a bit bugged (least on VMWare) but is a work in progress. Once a stable build can be developed binary files will be released. You are all welcome to improve the PKGBUILD files.
+
 The [Trinity Desktop Environment](http://trinitydesktop.org/) (TDE) project is a feature rich desktop environment for Unix-like operating systems with a primary goal of retaining the overall KDE 3.5 computing style. TDE is a fast, stable and mature desktop for Linux.
 
 ## Contents

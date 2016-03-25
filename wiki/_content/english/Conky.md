@@ -5,7 +5,7 @@
 *   [1 Installation and configuration](#Installation_and_configuration)
     *   [1.1 AUR packages](#AUR_packages)
 *   [2 Tips and tricks](#Tips_and_tricks)
-    *   [2.1 Configuration notice](#Configuration_notice)
+    *   [2.1 Config file syntax changed](#Config_file_syntax_changed)
     *   [2.2 Enable real transparency in KDE4 and Xfce4](#Enable_real_transparency_in_KDE4_and_Xfce4)
     *   [2.3 Autostart with Xfce4](#Autostart_with_Xfce4)
     *   [2.4 Prevent flickering](#Prevent_flickering)
@@ -13,24 +13,23 @@
     *   [2.6 Dual Screen](#Dual_Screen)
     *   [2.7 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
     *   [2.8 Integrate with GNOME](#Integrate_with_GNOME)
-    *   [2.9 Integrate with KDE 4](#Integrate_with_KDE_4)
-    *   [2.10 Integrate with Razor-qt](#Integrate_with_Razor-qt)
-    *   [2.11 Display package update information](#Display_package_update_information)
-    *   [2.12 Display weather forecast](#Display_weather_forecast)
-    *   [2.13 Display a countdown timer](#Display_a_countdown_timer)
-    *   [2.14 Display RSS feeds](#Display_RSS_feeds)
-    *   [2.15 Display rTorrent stats](#Display_rTorrent_stats)
-    *   [2.16 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
-    *   [2.17 Display number of new emails](#Display_number_of_new_emails)
-        *   [2.17.1 Gmail](#Gmail)
-            *   [2.17.1.1 method 1](#method_1)
-            *   [2.17.1.2 method 2](#method_2)
-            *   [2.17.1.3 method 3](#method_3)
-            *   [2.17.1.4 method 4](#method_4)
-        *   [2.17.2 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
-        *   [2.17.3 IMAP using PHP](#IMAP_using_PHP)
-    *   [2.18 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
-    *   [2.19 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
+    *   [2.9 Integrate with Razor-qt](#Integrate_with_Razor-qt)
+    *   [2.10 Display package update information](#Display_package_update_information)
+    *   [2.11 Display weather forecast](#Display_weather_forecast)
+    *   [2.12 Display a countdown timer](#Display_a_countdown_timer)
+    *   [2.13 Display RSS feeds](#Display_RSS_feeds)
+    *   [2.14 Display rTorrent stats](#Display_rTorrent_stats)
+    *   [2.15 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
+    *   [2.16 Display number of new emails](#Display_number_of_new_emails)
+        *   [2.16.1 Gmail](#Gmail)
+            *   [2.16.1.1 method 1](#method_1)
+            *   [2.16.1.2 method 2](#method_2)
+            *   [2.16.1.3 method 3](#method_3)
+            *   [2.16.1.4 method 4](#method_4)
+        *   [2.16.2 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
+        *   [2.16.3 IMAP using PHP](#IMAP_using_PHP)
+    *   [2.17 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
+    *   [2.18 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
 *   [3 User-contributed configuration examples](#User-contributed_configuration_examples)
     *   [3.1 A sample rings script with nvidia support](#A_sample_rings_script_with_nvidia_support)
 *   [4 A note about symbolic fonts](#A_note_about_symbolic_fonts)
@@ -83,20 +82,46 @@ In addition to the basic *conky* package, there are various [AUR](/index.php/AUR
 
 ## Tips and tricks
 
-### Configuration notice
+### Config file syntax changed
 
-Take note that settings below say something like setting_x yes | no. however, if you copy the default config from system folder, you will see that syntax there is different.
+Since Conky 1.10, configuration files have been written with Lua syntax, like so:
 
-Instead of writing setting_x y, do " setting_x = true | false | 'string' "
+```
+ conky.config = {
+   -- Comments start with a double dash
+   bool_value = true,
+   string_value = 'foo',
+   int_value = 42,
+ }
+ conky.text = [[
+ $variable
+ ${evaluated variable}
+ ]]
 
-For example: own_window_transparent = true.
+```
+
+Some examples below may still use the old syntax, which looks like this:
+
+```
+ bool_value yes
+ string_value 'foo'
+ int_value 42
+
+```
+
+If in doubt, or something doesn't work at all, you can start with the default config file:
+
+```
+ $ conky -C > conky.conf.default
+
+```
 
 ### Enable real transparency in KDE4 and Xfce4
 
 Since version 1.8.0 *conky* supports real transparency. To enable it add this line to `conky.conf`:
 
 ```
-own_window_transparent yes
+own_window_transparent = true,
 
 ```
 
@@ -109,19 +134,19 @@ The above option is not desired with the `OWN_WINDOW_ARGB_VISUAL yes` option. Th
 In `conky.conf` file:
 
 ```
-background yes
+background = yes,
 
 ```
 
 This variable will fork *conky* to your background. If you want to make your window always visible on your desktop, sticky across all workspaces and not showing in your taskbar, add these arguments:
 
 ```
-own_window yes
-own_window_type override
+own_window = true,
+own_window_type = 'override',
 
 ```
 
-The `override` option makes your window out of control of your window manager.
+The `override` takes *conky* out of the control of your window manager.
 
 Add a `~/.config/autostart/conky.desktop`:
 
@@ -143,16 +168,22 @@ Hidden=false
 
 *Conky* needs Double Buffer Extension (DBE) support from the X server to prevent flickering because it cannot update the window fast enough without it. It can be enabled in `/etc/X11/xorg.conf` with `Load "dbe"` line in `"Module"` section. The `xorg.conf` file has been replaced (1.8.x patch upwards) by `/etc/X11/xorg.conf.d` which contains the particular configuration files. *DBE* is loaded automatically.
 
-To enable double buffering add `double_buffer yes` option to your `conky.conf`.
+To enable double buffering, add the option
+
+```
+ double_buffer = true,
+
+```
+
+to your `conky.conf`.
 
 ### Custom colors
 
 Aside the classic preset colors (white, black, yellow...), you can set your own custom color using the color name code. To determine the code of a color, use a color selector app. The basic [gcolor2](https://www.archlinux.org/packages/?name=gcolor2) package in the [official repositories](/index.php/Official_repositories "Official repositories") will give you the color name. It is made of six hexadecimal digits (0-9, A-F). Add this line in your configuration file for a custom color:
 
 ```
-color1     Colorname1
-color2     Colorname2
-color3     C0CAF6
+ color0 = 'white', --convention for standard named colors
+ color1 = '00CC00', --convention for hex colors: no pound sign
 
 ```
 
@@ -163,8 +194,8 @@ Then, when editing the `TEXT` section, use custom color number previously define
 When using a dual screen configuration, you will need to play with two options to place your *conky* window. Let's say you are running a 1680X1050 pixels resolution, and you want the window on middle top of your left monitor, you will use this:
 
 ```
-alignment top_left
-gap_X 840
+alignment = 'top_left',
+gap_X = 840,
 
 ```
 
@@ -177,14 +208,14 @@ The `alignment` option is trivial, and `gap_X` option is the distance, in pixels
 If you do not use Compiz, try editing `conky.conf` and adding/changing the following line:
 
 ```
-own_window_type override
+own_window_type = 'override',
 
 ```
 
 or
 
 ```
-own_window_type desktop
+own_window_type = 'desktop',
 
 ```
 
@@ -209,60 +240,6 @@ If you still experience problems with transparency. You could add these lines.
 ```
 own_window_argb_visual yes
 own_window_argb_value 255
-
-```
-
-### Integrate with KDE 4
-
-*Conky* with screenshot configuration generate problems with icons visualization. So there are some steps to follow:
-
-*   Add these lines to `conky.conf`:
-
-```
-own_window yes
-own_window_type normal
-own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-
-```
-
-*   If this setting is on, comment it out or delete the line:
-
-```
-minimum_size
-
-```
-
-*   To automatically start *conky*, create this symlink:
-
-```
-$ ln -s /usr/bin/conky ~/.kde4/Autostart/conkylink
-
-```
-
-*   Install the [feh](https://www.archlinux.org/packages/?name=feh) package.
-
-*   Make a script to allow transparency with the desktop:
-
- `~/.kde4/Autostart/fehconky` 
-```
-#!/bin/bash
-feh --bg-scale "$(sed -n 's/wallpaper=//p' ~/.kde4/share/config/plasma-desktop-appletsrc)"
-```
-
-use `--bg-center` if you use a centered wallpaper.
-
-*   Make it executable:
-
-```
-$ chmod +x ~/.kde4/Autostart/fehconky
-
-```
-
-*   Instead of using a script, you can add the corresponding line to the bottom of `conky.conf`
-
-```
-${exec feh --bg-scale "$(sed -n 's/wallpaper=//p' ~/.kde4/share/config/plasma-desktop-appletsrc)"}
 
 ```
 

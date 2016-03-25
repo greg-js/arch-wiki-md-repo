@@ -162,7 +162,7 @@ $ sed -i 's/timeout 60/timeout 120/' mkimage-arch.sh
 
 ### Debian
 
-Build Debian image with [debootstrap](https://aur.archlinux.org/packages/debootstrap/) from the [AUR](/index.php/AUR "AUR"):
+Build Debian image with [debootstrap](https://www.archlinux.org/packages/?name=debootstrap):
 
 ```
 # mkdir wheezy-chroot

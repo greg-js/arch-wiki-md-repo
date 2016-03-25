@@ -62,7 +62,7 @@ xterm*termName: xterm-256color
 
 #### UTF-8
 
-Make certain your locale settings are correct for UTF-8\. Adding the following line to your resource file will then make xterm interpret all incoming data as UTF-8 encoded:
+Make certain your [locale settings](/index.php/Locale#Setting_the_locale "Locale") are correct for UTF-8\. Adding the following line to your resource file will then make xterm interpret all incoming data as UTF-8 encoded:
 
 ```
 XTerm*locale: true

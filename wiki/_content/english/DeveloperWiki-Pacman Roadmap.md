@@ -5,31 +5,21 @@ Instead, this page provides a brief overview of major features being discussed f
 ## Contents
 
 *   [1 Potential Release Schedule](#Potential_Release_Schedule)
-    *   [1.1 Pacman 5.0](#Pacman_5.0)
+    *   [1.1 Pacman 5.1](#Pacman_5.1)
 *   [2 New Feature Ideas](#New_Feature_Ideas)
     *   [2.1 Package Signing - Polishing](#Package_Signing_-_Polishing)
-    *   [2.2 Hooks](#Hooks)
-    *   [2.3 Optdepend Handling](#Optdepend_Handling)
-    *   [2.4 Parallel operations](#Parallel_operations)
-    *   [2.5 Iterator interface for databases](#Iterator_interface_for_databases)
+    *   [2.2 Optdepend Handling](#Optdepend_Handling)
+    *   [2.3 Parallel operations](#Parallel_operations)
+    *   [2.4 Iterator interface for databases](#Iterator_interface_for_databases)
 *   [3 Future Release Plans](#Future_Release_Plans)
 
 ## Potential Release Schedule
 
 This is **not** a for sure list by any means. This is simply to keep the main development team focused on a given release and what needs to be polished before we can push a major version out the door.
 
-### Pacman 5.0
+### Pacman 5.1
 
 Applied:
-
-*   Extendable/libified makepkg (still more to do)
-*   Files sync database operations (search, list, etc)
-*   Hooks
-
-Delayed:
-
-*   Parallel operations (checksum verification, ...)
-*   Source package repositories
 
 ## New Feature Ideas
 
@@ -38,20 +28,6 @@ Delayed:
 **Idea:** Tidy up our current implementation of package signing.
 
 **Flyspray:** [FS#28014](https://bugs.archlinux.org/task/28014) [FS#34741](https://bugs.archlinux.org/task/34741)
-
-### Hooks
-
-**Idea:** Pacman should have hooks to perform common tasks. See [here](/index.php/User:Allan/Pacman_Hooks "User:Allan/Pacman Hooks") for a more detailed description.
-
-**Flyspray:** [FS#2985](https://bugs.archlinux.org/task/2985)
-
-**Mailing List:**
-
-*   [https://mailman.archlinux.org/pipermail/pacman-dev/2010-July/011441.html](https://mailman.archlinux.org/pipermail/pacman-dev/2010-July/011441.html) (first of set of four)
-*   [https://mailman.archlinux.org/pipermail/pacman-dev/2011-January/012313.html](https://mailman.archlinux.org/pipermail/pacman-dev/2011-January/012313.html)
-*   [https://mailman.archlinux.org/pipermail/pacman-dev/2011-January/012335.html](https://mailman.archlinux.org/pipermail/pacman-dev/2011-January/012335.html)
-
-**Development branch:** Not started
 
 ### Optdepend Handling
 

@@ -720,11 +720,13 @@ For tips on managing multiple GRUB entries, for example when using both [linux](
 
 #### Root partition
 
-For an encrypted root filesystem, it is necessary to edit `/etc/default/grub` with the parameters required to unlock the encrypted filesystem during boot. For example, if the [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") `encrypt` hook is used, the `cryptdevice` parameter must be added to `GRUB_CMDLINE_LINUX=""` command. In the example below, the `sda2` partition has been encrypted as `/dev/mapper/cryptroot`:
+To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [Dm-crypt/System_configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
+
+Then add `cryptdevice` to `/etc/default/grub`: In the example below, the `sda2` partition has been encrypted as `/dev/mapper/cryptroot`:
 
  `/etc/default/grub`  `GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:cryptroot"` 
 
-Once `/etc/default/grub` has been amended, it will then be necessary to [#Generate the main configuration file](#Generate_the_main_configuration_file).
+Be sure to [#Generate the main configuration file](#Generate_the_main_configuration_file) when done.
 
 For further information about bootloader configuration for encrypted devices, see [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
 
@@ -734,36 +736,24 @@ For further information about bootloader configuration for encrypted devices, se
 
 #### Boot partition
 
-The GRUB [parameter](https://www.gnu.org/software/grub/manual/grub.html#Simple-configuration) `GRUB_ENABLE_CRYPTODISK` can be used to enable GRUB to ask for a password to open a [LUKS](/index.php/LUKS "LUKS") blockdevice in order to read its configuration and load any [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") from it. This option tries to solve the issue of having an [unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
+GRUB can be set to ask for a password to open a [LUKS](/index.php/LUKS "LUKS") blockdevice in order to read its configuration and load any [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") from it. This option tries to solve the issue of having an [unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties"). `/boot` is **not** required to be kept in a separate partition; it may also stay under the system's root `/` directory tree.
 
-The feature is enabled by adding:
+To enable this feature encrypt the partition with `/boot` residing on it using [LUKS](/index.php/LUKS "LUKS") as normal. Then add the following option to `/etc/default/grub`:
 
-```
-GRUB_ENABLE_CRYPTODISK=y
-
-```
-
-to `/etc/default/grub`. After this configuration a subsequent run of *grub-mkconfig* to [#Generate the main configuration file](#Generate_the_main_configuration_file) is required while the encrypted `/boot` is mounted.
-
+ `/etc/default/grub`  `GRUB_ENABLE_CRYPTODISK=y` 
 **Note:** `GRUB_ENABLE_CRYPTODISK=1` [will not work](https://savannah.gnu.org/bugs/?41524) as opposed to the request shown in GRUB 2.02-beta2.
 
-Depending on the system's setup, note the following:
+Be sure to [#Generate the main configuration file](#Generate_the_main_configuration_file) while the partition containing `/boot` is mounted.
 
-*   `/boot` is *not* required to be kept in a separate partition; it may also stay under the system's root `/` directory tree.
+Without further changes you will be prompted twice for a passhrase: the first for GRUB to unlock the `/boot` mount point in early boot, the second to unlock the root filesystem itself as described in [#Root partition](#Root_partition). You can use a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") to avoid this.
 
-*   Without further changes you will be prompted twice for a passhrase: the first for GRUB to unlock the `/boot` mount point in early boot, the second to unlock the root filesystem itself as described in [#Root partition](#Root_partition).
-    **Tip:** See [Dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for a workaround.
-
-*   In order to perform system updates involving the `/boot` mount point, it must be ensured that the encrypted `/boot` is unlocked to be re-mounted by the initramfs and kernel during boot. With a separate `/boot` partition, this may be accomplished by adding an entry to `/etc/crypttab` with a keyfile. See [Dm-crypt/System configuration#crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration").
+**Note:**
 
 *   If you use a special keymap, a default GRUB installation will not know it. This is relevant for how to enter the passphrase to unlock the LUKS blockdevice.
-
+*   In order to perform system updates involving the `/boot` mount point, ensure that the encrypted `/boot` is unlocked and mounted before performing an update. With a separate `/boot` partition, this may be accomplished automatically on boot by using [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration") with a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
 *   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub as below appending the following to the end of your installation command:
 
-```
- grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--modules="part_gpt part_msdos"**
-
-```
+ `# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--modules="part_gpt part_msdos"**` 
 
 ## Using the command shell
 

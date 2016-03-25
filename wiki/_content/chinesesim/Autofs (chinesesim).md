@@ -1,11 +1,14 @@
+**翻译状态：** 本文是英文页面 [Autofs](/index.php/Autofs "Autofs") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-25，点击[这里](https://wiki.archlinux.org/index.php?title=Autofs&diff=0&oldid=419560)可以查看翻译后英文页面的改动。
+
 本文将概述AutoFS的配置方法,当未被挂载的可移除文件系统或是网络共享的文件系统被用户访问时，这个软件包可以提供的自动挂载的支持。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 Configuration](#Configuration)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 Removable media](#Removable_media)
     *   [2.2 NFS network mounts](#NFS_network_mounts)
+        *   [2.2.1 Manual NFS configuration](#Manual_NFS_configuration)
     *   [2.3 Samba](#Samba)
     *   [2.4 FTP and SSH (with FUSE)](#FTP_and_SSH_.28with_FUSE.29)
         *   [2.4.1 Remote FTP](#Remote_FTP)
@@ -17,16 +20,17 @@
     *   [4.3 Identify multiple devices](#Identify_multiple_devices)
     *   [4.4 AutoFS permissions](#AutoFS_permissions)
     *   [4.5 fusermount problems](#fusermount_problems)
+    *   [4.6 Debugging auto mount issues](#Debugging_auto_mount_issues)
 *   [5 Alternatives to AutoFS](#Alternatives_to_AutoFS)
 *   [6 See also](#See_also)
 
 ## 安装
 
-[autofs](https://www.archlinux.org/packages/?name=autofs) 可以从[官方源](/index.php/Official_repositories "Official repositories")中[安装](/index.php/Pacman "Pacman").
+[安装](/index.php/Pacman "Pacman") 软件包 [autofs](https://www.archlinux.org/packages/?name=autofs)。
 
 **提示:** 你将不再需要载入`autofs4` 模式.
 
-## Configuration
+## 配置
 
 AutoFS uses template files for configuration which are located in `/etc/autofs` The main template is called `auto.master`, which can point to one or more other templates for specific media types.
 
@@ -42,7 +46,7 @@ The first value on each line determines the base directory under which all the m
 /media/net      /etc/autofs/auto.net      --timeout=60
 ```
 
-**Note:** Make sure there is an empty line on the end of template files (press `ENTER` after last word). If there is no correct EOF (end of file) line, the AutoFS daemon won't properly load.
+**Note:** Make sure there is an empty line on the end of template files (press `ENTER` after last word). If there is no correct EOF (end of file) line, the AutoFS daemon will not properly load.
 
 The optional parameter `timeout` sets the amount of seconds after which to unmount directories.
 
@@ -63,7 +67,7 @@ Alternatively, you can have autofs mount your media to a specific folder, rather
 /home/user/usbstick  -fstype=auto,async,nodev,nosuid,umask=000  :/dev/sdb1
 ```
 
-**Note:** This can cause problems with resources getting locked if the connection to the share is lost. When trying to access the folder, programs will get locked into waiting for a response, and either the connection has to be restored or the process has to be forcibly killed before unmounting is possible. To mitigate this, only use if you will always be connected to the share, and don't use your home folder or other commonly used folders lest your file browser reads ahead into the disconnected folder
+**Note:** This can cause problems with resources getting locked if the connection to the share is lost. When trying to access the folder, programs will get locked into waiting for a response, and either the connection has to be restored or the process has to be forcibly killed before unmounting is possible. To mitigate this, only use if you will always be connected to the share, and do not use your home folder or other commonly used folders lest your file browser reads ahead into the disconnected folder
 
 *   Open the file `/etc/nsswitch.conf` and add an entry for automount:
 
@@ -72,19 +76,7 @@ automount: files
 
 ```
 
-*   When you are done configuring your templates (see below), launch the AutoFS daemon as root:
-
-```
-# systemctl start autofs
-
-```
-
-To start the daemon on boot:
-
-```
-# systemctl enable autofs
-
-```
+*   When you are done configuring your templates (see below), launch the AutoFS daemon as root by [enabling](/index.php/Enabling "Enabling") and starting the `autofs.service`.
 
 Devices are now automatically mounted when they are accessed, they will remain mounted as long as you access them.
 
@@ -106,16 +98,16 @@ If you have a CD/DVD combo-drive you can change the `cdrom` line with `-fstype=a
 
 ### NFS network mounts
 
-AutoFS provides a new way of automatically discovering and mounting [NFS](/index.php/NFS "NFS")-shares on remote servers (the AutoFS network template in `/etc/autofs/auto.net` has been removed in autofs5). To enable automagic discovery and mounting of network shares from all accessible servers without any further configuration, you'll need to add the following to the `/etc/autofs/auto.master` file:
+AutoFS provides a new way of automatically discovering and mounting [NFS](/index.php/NFS "NFS")-shares on remote servers (the AutoFS network template in `/etc/autofs/auto.net` has been removed in autofs5). To enable automatic discovery and mounting of network shares from all accessible servers without any further configuration, you will need to add the following to the `/etc/autofs/auto.master` file:
 
 ```
 /net -hosts --timeout=60
 
 ```
 
-**Each host name needs to be resolveable, e.g. the name an IP address in `/etc/hosts` or via [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") and please make sure you have at least [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) installed and working. You also have to enable RPC (systemctl start|enable rpcbind) to browse shared Folders.**
+**Each host name needs to be resolveable, e.g. the name an IP address in `/etc/hosts` or via [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") and please make sure you have [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) installed and working. You also have to enable RPC (systemctl start|enable rpcbind) to browse shared Folders.**
 
-For instance, if you have a remote server *fileserver* with an NFS share named */home/share*, you can just access the share by typing:
+For instance, if you have a remote server *fileserver* (the name of the directory is the hostname of the server) with an NFS share named */home/share*, you can just access the share by typing:
 
 ```
 # cd /net/fileserver/home/share
@@ -133,25 +125,35 @@ The `-hosts` option uses a similar mechanism as the `showmount` command to detec
 
 Replacing *<servername>* with the name of your own server.
 
+An alternative Way is to use the automount-service from Systemd, see [NFS with systemd-automount](/index.php/NFS#Mount_using_.2Fetc.2Ffstab_with_systemd "NFS")
+
+#### Manual NFS configuration
+
+To mount a NFS share on server_name called /srv/shared_dir to another computer named client_pc at location /mnt/foo, edit auto.master and create a config file for the share (auto.server_name):
+
+ `/etc/autofs/auto.master`  `/mnt   /etc/autofs/auto.server_name --timeout 60`  `/etc/autofs/auto.server_name`  `foo  -rw,soft,intr,rsize=8192,wsize=8192 server_name:/srv/shared_dir` 
+
 ### Samba
 
 The Arch package does not provide any [Samba](/index.php/Samba "Samba") or CIFS templates/scripts (23.07.2009), but the following should work for single shares:
 
-add the following to `/etc/autofs/auto.master`
+Add the following to `/etc/autofs/auto.master`:
 
 ```
-/media/[my_server] /etc/autofs/auto.[my_server]
+/media/[my_server] /etc/autofs/auto.[my_server] --timeout=60 --ghost
 
 ```
 
-and then create a file `/etc/autofs/auto.[my_server]`
+where `--timeout` defines how many seconds to wait before the file system is unmounted. The `--ghost` option creates empty folders for each mount-point in the file in order to prevent timeouts, if a network share cannot be contacted.
+
+Next create a file `/etc/autofs/auto.[my_server]`
 
 ```
 [any_name] -fstype=cifs,[other_options] ://[remote_server]/[remote_share_name]
 
 ```
 
-You can specify a user name and password to use with the share in the other_options section
+You can specify a user name and password to use with the share in the `other_options` section:
 
 ```
 [any_name] -fstype=cifs,username=[username],password=[password],[other_options] ://[remote_server]/[remote_share_name]
@@ -212,7 +214,7 @@ Create the file `/sbin/mount.curl` with this code:
  `/sbin/mount.curl` 
 ```
  #! /bin/sh
- curlftpfs $1 $2 -o $5,disable_eprt
+ curlftpfs $1 $2 -o $4,disable_eprt
 
 ```
 
@@ -239,7 +241,7 @@ After a restart your new FTP server should be accessible through `/media/ftp/ser
 
 These are basic instructions to access a remote filesystem over [SSH](/index.php/SSH "SSH") with AutoFS.
 
-**Note:** The example below does not use an ssh-passphrase to simplify the installation procedure, please note that this may be a security risk in case your local system gets compromised.
+**Note:** Password-less authentication may be convenient but also has security implications. See [SSH keypair](/index.php/Using_SSH_Keys "Using SSH Keys") for more details
 
 Install the [sshfs](https://www.archlinux.org/packages/?name=sshfs) package.
 
@@ -257,7 +259,7 @@ Install [openssh](https://www.archlinux.org/packages/?name=openssh).
 Generate an [SSH keypair](/index.php/Using_SSH_Keys "Using SSH Keys"):
 
 ```
-# ssh-keygen -t dsa
+$ ssh-keygen
 
 ```
 
@@ -266,18 +268,18 @@ When the generator ask for a passphrase, just press `ENTER`. Using SSH keys with
 Next, copy the public key to the remote SSH server:
 
 ```
-# ssh-copy-id -i /home/username/.ssh/id_dsa.pub username@remotehost
+$ ssh-copy-id username@remotehost
 
 ```
 
-See that you can login to the remote server without entering a password:
+**As root**, see that you can login to the remote server without entering a password:
 
 ```
-# sudo ssh -i /home/username/.ssh/id_dsa username@remotehost
+# ssh username@remotehost
 
 ```
 
-**Note:** The above command is needed to add the remote server to the root's list of `known_hosts`. Alternatively, hosts can be added to `/etc/ssh/ssh_known_hosts`.
+**Note:** This will add the remote server to root's list of `known_hosts`. Hosts can be also be manually added to `/etc/ssh/ssh_known_hosts`.
 
 Create a new entry for SSH servers in `/etc/autofs/auto.master`:
 
@@ -288,7 +290,7 @@ Create a new entry for SSH servers in `/etc/autofs/auto.master`:
 
 Create the file `/etc/autofs/auto.ssh` and add an SSH server:
 
- `/etc/autofs/auto.ssh`  `servername     -fstype=fuse,rw,allow_other,IdentityFile=/home/username/.ssh/id_dsa :sshfs\#username@host\:/` 
+ `/etc/autofs/auto.ssh`  `servername     -fstype=fuse,rw,allow_other,IdentityFile=/home/username/.ssh/id_rsa :sshfs\#username@host\:/` 
 
 After a restart your SSH server should be accessible through `/media/ssh/servername`.
 
@@ -329,23 +331,23 @@ automount: files nis
 
 ### Optional parameters
 
-You can set parameters like `timeout` systemwide for all AutoFS media in `/etc/conf.d/autofs`:
+You can set parameters like `timeout` systemwide for all AutoFS media in `/etc/default/autofs`:
 
-*   Open the `/etc/conf.d/autofs` file and edit the `daemonoptions` line:
-
-```
-daemonoptions='--timeout=5'
+*   Open the `/etc/default/autofs` file and edit the `OPTIONS` line:
 
 ```
-
-*   To enable logging (default is no logging at all), add `--verbose` to the `daemonoptions` line in `/etc/conf.d/autofs` e.g.:
-
-```
-daemonoptions='--verbose --timeout=5'
+OPTIONS='--timeout=5'
 
 ```
 
-After restarting the `autofs` daemon, verbose output is visible in `/var/log/daemon.log`.
+*   To enable logging (default is no logging at all), uncomment and add `--verbose` to the `OPTIONS` line in `/etc/default/autofs` e.g.:
+
+```
+OPTIONS='--verbose --timeout=5'
+
+```
+
+After restarting the `autofs` daemon, verbose output is visible in `systemctl status` or in `journalctl`.
 
 ### Identify multiple devices
 
@@ -353,14 +355,14 @@ If you use multiple USB drives/sticks and want to easily tell them apart, you ca
 
 ### AutoFS permissions
 
-If AutoFS isn't working for you, make sure that the permissions of the templates files are correct, otherwise AutoFS will not start. This may happen if you backed up your configuration files in a manner which did not preserve file modes. Here are what the modes should be on the configuration files:
+If AutoFS is not working for you, make sure that the permissions of the templates files are correct, otherwise AutoFS will not start. This may happen if you backed up your configuration files in a manner which did not preserve file modes. Here are what the modes should be on the configuration files:
 
 *   0644 - /etc/autofs/auto.master
 *   0644 - /etc/autofs/auto.media
 *   0644 - /etc/autofs/auto.misc
 *   0644 - /etc/conf.d/autofs
 
-In general, scripts (like previous `auto.net`) should have executable (`chown a+x filename`) bits set and lists of mounts shouldn't.
+In general, scripts (like previous `auto.net`) should have executable (`chmod a+x filename`) bits set and lists of mounts should not.
 
 If you are getting errors in `/var/log/daemon.log` similar to this, you have a permissions problem:
 
@@ -374,16 +376,34 @@ May  7 19:44:16 peterix automount[15218]: failed to mount /media/cifs/petr
 
 With certain versions of util-linux, you may not be able to unmount a fuse file system drive mounted by autofs, even if you use the "user=" option. See the discussion here: [http://fuse.996288.n3.nabble.com/Cannot-umount-as-non-root-user-anymore-tp689p697.html](http://fuse.996288.n3.nabble.com/Cannot-umount-as-non-root-user-anymore-tp689p697.html)
 
+### Debugging auto mount issues
+
+For better debugging you might try running automount in foreground.
+
+```
+# systemctl stop autofs.service
+# automount -f -v
+
+```
+
+Of if you want more debug info than try:
+
+```
+# automount -f --debug
+
+```
+
 ## Alternatives to AutoFS
 
-*   [Systemd](/index.php/Systemd "Systemd") can automount filesystems upon demand; see [here](/index.php/Systemd#Automount "Systemd") for the description and the article on [sshfs](/index.php/Sshfs#On_demand "Sshfs") for an example.
-*   [Thunar Volume Manager](/index.php/Thunar#Thunar_Volume_Manager "Thunar") is an automount system for users of the [Thunar](/index.php/Thunar "Thunar") file manager.
-*   Pcmanfm-fuse is a lightweight file manager with built-in support for accessing remote shares: [https://aur.archlinux.org/packages.php?ID=22992](https://aur.archlinux.org/packages.php?ID=22992)
-*   [udiskie](/index.php/Udiskie "Udiskie") is a minimalistic automatic disk mounting service using udisks
+*   [Systemd](/index.php/Systemd "Systemd") can automount filesystems upon demand; see [here](/index.php/Fstab#Automount_with_systemd "Fstab") for the description and the article on [sshfs](/index.php/Sshfs#On_demand "Sshfs") for an example.
+*   [Thunar Volume Manager](/index.php/Thunar_Volume_Manager "Thunar Volume Manager") is an automount system for users of the [Thunar](/index.php/Thunar "Thunar") file manager.
+*   [PCManFM](/index.php/PCManFM "PCManFM") is a lightweight file manager with built-in support for accessing remote shares
+*   [Udisks](/index.php/Udisks "Udisks") is a minimalistic automatic disk mounting service
 
 ## See also
 
-*   AutoFS configuration cookbook: [http://www.autofs.org/](http://www.autofs.org/)
-*   An Ubuntu-based walk though of AutoFS with some useful info: [http://blogging.dragon.org.uk/index.php/howtos/howto-setup-and-configure-autofs](http://blogging.dragon.org.uk/index.php/howtos/howto-setup-and-configure-autofs)
-*   FTP and SFTP usage with AutoFS is based on this Gentoo Wiki article: [http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares](http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares)
+*   FTP and SFTP usage with AutoFS is based on this Gentoo Wiki article: [https://web.archive.org/web/20130414074212/http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares](https://web.archive.org/web/20130414074212/http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares)
 *   More information on SSH can be found on the [SSH](/index.php/SSH "SSH") and [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") pages of this wiki.
+*   Ubuntu's Autofs help wiki is at [https://help.ubuntu.com/community/Autofs](https://help.ubuntu.com/community/Autofs)
+*   For filesystem specific mount options check [http://manpages.ubuntu.com/manpages/natty/en/man8/mount.8.html#contenttoc5](http://manpages.ubuntu.com/manpages/natty/en/man8/mount.8.html#contenttoc5)
+*   For fuse specific mount options check [http://manpages.ubuntu.com/manpages/precise/man8/mount.fuse.8.html](http://manpages.ubuntu.com/manpages/precise/man8/mount.fuse.8.html)

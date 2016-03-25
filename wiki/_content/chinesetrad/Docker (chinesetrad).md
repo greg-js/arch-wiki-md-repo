@@ -163,7 +163,7 @@ $ sed -i 's/timeout 60/timeout 120/' mkimage-arch.sh
 
 ### Debian
 
-從 [AUR](/index.php/AUR "AUR") 下載 [debootstrap](https://aur.archlinux.org/packages/debootstrap/) 以建置 Debain 的映像檔。
+從 [AUR](/index.php/AUR "AUR") 下載 [debootstrap](https://www.archlinux.org/packages/?name=debootstrap) 以建置 Debain 的映像檔。
 
 ```
 # mkdir wheezy-chroot

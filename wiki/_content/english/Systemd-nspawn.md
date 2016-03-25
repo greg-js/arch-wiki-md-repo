@@ -70,7 +70,7 @@ The container can be powered off by running `poweroff` from within the container
 
 ### Create a Debian or Ubuntu environment
 
-Install [debootstrap](https://aur.archlinux.org/packages/debootstrap/), [gnupg1](https://aur.archlinux.org/packages/gnupg1/), and one or both of [debian-archive-keyring](https://aur.archlinux.org/packages/debian-archive-keyring/) and [ubuntu-keyring](https://aur.archlinux.org/packages/ubuntu-keyring/) (obviously install the keyrings for the distros you want).
+Install [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [gnupg1](https://aur.archlinux.org/packages/gnupg1/), and one or both of [debian-archive-keyring](https://aur.archlinux.org/packages/debian-archive-keyring/) and [ubuntu-keyring](https://aur.archlinux.org/packages/ubuntu-keyring/) (obviously install the keyrings for the distros you want).
 
 **NOTE For Ubuntu:** systemd-nspawn requires that the os in the container has systemd running as PID 1, this means Ubuntu before 15.04 will not work out of the box and requires additional configuration to switch from upstart to systemd.
 
@@ -84,7 +84,7 @@ From there it's rather easy to setup Debian or Ubuntu environments:
 
 For Debian valid code names are either the rolling names like "stable" and "testing" or release names like "stretch" and "sid", for Ubuntu the code name like "wily" or "hardy" should be used. A complete list is in /usr/share/debootstrap/scripts
 
-Unlike Archm Debian and Ubuntu will not let you login without a password on first login. To set the root password login without the '-b' option and set a password:
+Unlike Arch, Debian and Ubuntu will not let you login without a password on first login. To set the root password login without the '-b' option and set a password:
 
 ```
 # systemd-nspawn -D myContainer

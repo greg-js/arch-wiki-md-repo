@@ -109,7 +109,7 @@ $ sed -i 's/timeout 60/timeout 120/' mkimage-arch.sh
 
 ### Образ Debian
 
-Собрать образ Debian можно с помощью [debootstrap](https://aur.archlinux.org/packages/debootstrap/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"):
+Собрать образ Debian можно с помощью [debootstrap](https://www.archlinux.org/packages/?name=debootstrap) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"):
 
 ```
 $ mkdir wheezy-chroot

@@ -366,7 +366,7 @@ $ pgrep gpg-agent
 
 ### Запуск с помощью systemd
 
-Также вы можете использовать [systemd в пользовательском режиме](/index.php/Systemd/User "Systemd/User") для запуска агента. Это имеет смысл и при [gnupg](https://www.archlinux.org/packages/?name=gnupg) >= 2.1, поскольку так он будет запускаться вне пользовательских сессий и под контролем systemd.
+Также вы можете использовать [systemd в пользовательском режиме](/index.php/Systemd/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C "Systemd/Пользователь") для запуска агента. Это имеет смысл и при [gnupg](https://www.archlinux.org/packages/?name=gnupg) >= 2.1, поскольку так он будет запускаться вне пользовательских сессий и под контролем systemd.
 
 Создайте файл юнита для gpg-agent:
 

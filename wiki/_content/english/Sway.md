@@ -39,31 +39,31 @@ If you want to start *sway* in an X session for testing purposes it is possible 
 
 ### Keymap
 
-By default, sway starts with the US keymap. You can override this behaviour by starting sway with
+By default, sway starts with the US QWERTY keymap. You can override this behaviour by starting sway with
 
 ```
-$ XKB_DEFAULT_LAYOUT=de sway
+$ XKB_DEFAULT_LAYOUT=gb XKB_DEFAULT_VARIANT=colemak XKB_DEFAULT_MODEL=pc101 sway
 
 ```
 
-to get a German keyboard layout, for example.
+This will launch sway with the keyboard set to the Colemak variant of the British keymap with the 101-key keyboard model.
 
 If you are using a display manager, you can not simply prepend the above line to the `sway.desktop` file. As root, create the following file:
 
- `/usr/bin/sway-de` 
+ `/usr/bin/sway-gb-ck` 
 ```
 #!/bin/sh
-XKB_DEFAULT_LAYOUT=de sway
+XKB_DEFAULT_LAYOUT=gb XKB_DEFAULT_VARIANT=colemak XKB_DEFAULT_MODEL=pc101 sway
 ```
 
-Then, create a `sway-de.desktop` file that starts the above script:
+Then, create a `sway-gb-ck.desktop` file that starts the above script:
 
  `/usr/share/wayland-sessions/sway.desktop` 
 ```
 [Desktop Entry]
-Name=Sway (German keymap)
-Comment=SirCmpwn's Wayland window manager with German keymap
-Exec=sway-de
+Name=Sway British(Colemak)
+Comment=SirCmpwn's Wayland window manager with the British Colemak keyboard layout
+Exec=sway-gb-ck
 Type=Application
 ```
 

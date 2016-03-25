@@ -1,162 +1,79 @@
-For now, this is just some notes on the Asus EeePC S101.
-
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 boot loader setup of Kernel](#boot_loader_setup_of_Kernel)
-*   [2 Wireless](#Wireless)
-*   [3 Xorg](#Xorg)
-*   [4 Touchpad](#Touchpad)
-*   [5 ACPI](#ACPI)
-    *   [5.1 Touchpad toggle - Silver Button](#Touchpad_toggle_-_Silver_Button)
-    *   [5.2 Sleep Fn+F1](#Sleep_Fn.2BF1)
-    *   [5.3 Wifi Fn+F2](#Wifi_Fn.2BF2)
-    *   [5.4 Brightness Fn+F5/F6](#Brightness_Fn.2BF5.2FF6)
-    *   [5.5 Camera Fn+F7](#Camera_Fn.2BF7)
-*   [6 extend battery life](#extend_battery_life)
-    *   [6.1 Notes](#Notes)
+*   [2 Xorg](#Xorg)
+*   [3 Touchpad](#Touchpad)
+*   [4 Camera](#Camera)
+*   [5 Wireless](#Wireless)
+*   [6 Hot keys](#Hot_keys)
 *   [7 Hardware](#Hardware)
     *   [7.1 lspci](#lspci)
     *   [7.2 lsusb](#lsusb)
 
-# Installation
+## Installation
 
-*   Download from [https://www.archlinux.org/download/](https://www.archlinux.org/download/), (ex. archlinux-2010.05-netinstall-i686.iso because EEE PC is 32 bit machine.
-*   Refer [Install from a USB flash drive](/index.php/Install_from_a_USB_flash_drive "Install from a USB flash drive") to write iso file into USB stick.(ex. UNetBootin under windows)
-*   Disable **boost boot** in BIOS Setup to allow USB stick bootable at boot time.
-*   Follow [Installation guide](/index.php/Installation_guide "Installation guide") to install till reboot.
-*   Follow [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") to install your hardware driver and desktop.
-*   remember to add **hal** in DAEMONS line of /etc/rc.conf , it will automatic detect all hardware.
+To boot from a USB stick, disable **boot booster** in BIOS Setup.
 
-```
-/etc/rc.d/hal start  # detect and install all hardware
+## Xorg
 
-```
+[Install](/index.php/Install "Install") the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package.
 
-## boot loader setup of Kernel
+## Touchpad
 
-I just use standard kernel. eeepc_wmi module will be loaded. Note: add acpi_osi=Linux line in kernel boot loader, to let eeepc_laptop module loading. Otherwise Fn+F2 won't workable.
+See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
-# Wireless
+## Camera
 
-The card is a Atheros Communications Inc. AR928X Wireless Network Adapter (module: ath9k) It is automatic detected by **hal**.
+Supported by stock kernel, see [Webcam Software](/index.php/Webcam_setup#Webcam_configuration "Webcam setup")
 
-# Xorg
+## Wireless
 
-About the Video(Intel 945GME), It is automatic detected by **hal**.
+*   AR9281/PCIe Full MiniCard 91, Single band 1x2 configuration
 
-# Touchpad
+## Hot keys
 
-It is automatic detected by **hal**.
+| Hotkey | Action | Notes |
+| Fn+F1 | Sleep |
+| Fn+F2 | Wifi | *Atheros Communications Inc. AR928X Wireless Network Adapter* (uses the [ath9k](/index.php/Wireless_network_configuration#ath9k "Wireless network configuration") module) |
+| Fn+F5/F6 | Brightness | BIOS v1504 has controlled it. |
+| Fn+F10/F11/F21 | Volume Mute/Lower/Raise | Setup required, see [Acpid](/index.php/Acpid "Acpid") |
 
-*   install **xf86-input-synaptics**
+## Hardware
 
-# ACPI
-
-big_gie created a acpi package to support the acpi events: [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/). This package was inspired by many others.
-
-## Touchpad toggle - Silver Button
-
-edit /etc/conf.d/acpi-eeepc-generic.conf
-
-```
-COMMANDS_BUTTON_BLANK=("/etc/acpi/eeepc/acpi-eeepc-generic-toggle-touchpad.sh")
-
-```
-
-## Sleep Fn+F1
-
-Fn+F1 or closing lid should put the eee pc to sleep. It calls "acpi-eeepc-generic-suspend2ram.sh".
-
-## Wifi Fn+F2
-
-Pressing Fn+F2 will call "acpi-eeepc-generic-wifi-toggle.sh" which will toggle the wireless card. Be sure to load "rfkill" module for this to work. edit /etc/conf.d/acpi-eeepc-generic.conf
-
-```
-WIFI_DRIVERS=("ath9k")
-
-```
-
-## Brightness Fn+F5/F6
-
-BIOS v1504 has controlled it.
-
-## Camera Fn+F7
-
-edit /etc/conf.d/acpi-eeepc-generic.conf:
-
-```
-COMMANDS_SCREEN_OFF=(/etc/acpi/eeepc/acpi-eeepc-generic-toggle-webcam.sh)
-
-```
-
-To use the camera, install mplayer or luvcview.
-
-```
-luvcview -f yuv
-mplayer -vf screenshot -fps 30 tv://  # press 's' to capture
-
-```
-
-# extend battery life
-
-*   install **cpufreq**
-*   edit /etc/rc.conf
-
-```
-MODULES=(... acpi-cpufreq cpufreq_ondemand cpufreq_powersave)
-DAEMONS=(... cpufreq)
-
-```
-
-*   edit /etc/conf.d/cpufreq
-
-```
-governor="ondemand"
-min_freq="800MHz"
-max_freq="1.5GHz"
-
-```
-
-ref: [cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils")
-
-## Notes
-
-# Hardware
-
-## lspci
+### lspci
 
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 945GME Express Memory Controller Hub (rev 03)
-00:02.0 VGA compatible controller: Intel Corporation Mobile 945GME Express Integrated Graphics Controller (rev  03)
+00:02.0 VGA compatible controller: Intel Corporation Mobile 945GME Express Integrated Graphics Controller (rev  03)00:00.0 Host bridge: Intel Corporation Mobile 945GSE Express Memory Controller Hub (rev 03)
+00:02.0 VGA compatible controller: Intel Corporation Mobile 945GSE Express Integrated Graphics Controller (rev 03)
 00:02.1 Display controller: Intel Corporation Mobile 945GM/GMS/GME, 943/940GML Express Integrated Graphics Controller (rev 03)
-00:1b.0 Audio device: Intel Corporation N10/ICH 7 Family High Definition Audio Controller (rev 02)
-00:1c.0 PCI bridge: Intel Corporation N10/ICH 7 Family PCI Express Port 1 (rev 02)
-00:1c.1 PCI bridge: Intel Corporation N10/ICH 7 Family PCI Express Port 2 (rev 02)
-00:1c.2 PCI bridge: Intel Corporation N10/ICH 7 Family PCI Express Port 3 (rev 02)
-00:1d.0 USB Controller: Intel Corporation N10/ICH 7 Family USB UHCI Controller #1 (rev 02)
-00:1d.1 USB Controller: Intel Corporation N10/ICH 7 Family USB UHCI Controller #2 (rev 02)
-00:1d.2 USB Controller: Intel Corporation N10/ICH 7 Family USB UHCI Controller #3 (rev 02)
-00:1d.3 USB Controller: Intel Corporation N10/ICH 7 Family USB UHCI Controller #4 (rev 02)
-00:1d.7 USB Controller: Intel Corporation N10/ICH 7 Family USB2 EHCI Controller (rev 02)
+00:1b.0 Audio device: Intel Corporation NM10/ICH7 Family High Definition Audio Controller (rev 02)
+00:1c.0 PCI bridge: Intel Corporation NM10/ICH7 Family PCI Express Port 1 (rev 02)
+00:1c.1 PCI bridge: Intel Corporation NM10/ICH7 Family PCI Express Port 2 (rev 02)
+00:1c.2 PCI bridge: Intel Corporation NM10/ICH7 Family PCI Express Port 3 (rev 02)
+00:1d.0 USB controller: Intel Corporation NM10/ICH7 Family USB UHCI Controller #1 (rev 02)
+00:1d.1 USB controller: Intel Corporation NM10/ICH7 Family USB UHCI Controller #2 (rev 02)
+00:1d.2 USB controller: Intel Corporation NM10/ICH7 Family USB UHCI Controller #3 (rev 02)
+00:1d.3 USB controller: Intel Corporation NM10/ICH7 Family USB UHCI Controller #4 (rev 02)
+00:1d.7 USB controller: Intel Corporation NM10/ICH7 Family USB2 EHCI Controller (rev 02)
 00:1e.0 PCI bridge: Intel Corporation 82801 Mobile PCI Bridge (rev e2)
 00:1f.0 ISA bridge: Intel Corporation 82801GBM (ICH7-M) LPC Interface Bridge (rev 02)
-00:1f.2 IDE interface: Intel Corporation 82801GBM/GHM (ICH7 Family) SATA IDE Controller (rev 02)
-00:1f.3 SMBus: Intel Corporation N10/ICH 7 Family SMBus Controller (rev 02)
-01:00.0 Network controller: Atheros Communications Inc. AR928X Wireless Network Adapter (PCI-Express) (rev 01)
-02:00.0 Ethernet controller: Atheros Communications AR8121/AR8113/AR8114 Gigabit or Fast Ethernet (rev b0)
+00:1f.2 IDE interface: Intel Corporation 82801GBM/GHM (ICH7-M Family) SATA Controller [IDE mode] (rev 02)
+00:1f.3 SMBus: Intel Corporation NM10/ICH7 Family SMBus Controller (rev 02)
+01:00.0 Network controller: Qualcomm Atheros AR928X Wireless Network Adapter (PCI-Express) (rev 01)
+02:00.0 Ethernet controller: Qualcomm Atheros AR8121/AR8113/AR8114 Gigabit or Fast Ethernet (rev b0)
 
 ```
 
-## lsusb
+### lsusb
 
 ```
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 001 Device 004: ID 04f2:b036 Chicony Electronics Co., Ltd Asus Integrated 0.3M UVC Webcam
 Bus 001 Device 002: ID 058f:6366 Alcor Micro Corp. Multi Flash Reader
-Bus 001 Device 003: ID 04f2:b036 Chicony Electronics Co., Ltd Asus Integrated 0.3M UVC Webcam
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 
 ```

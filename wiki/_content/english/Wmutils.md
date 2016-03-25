@@ -2,6 +2,6 @@ Using [wmutils](https://github.com/wmutils) (*window manipulation utilities*), y
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [wmutils-git](https://aur.archlinux.org/packages/wmutils-git/) package for the core functionality. For optional addons, use this [PKGBUILD](https://gist.githubusercontent.com/anonymous/0aae159561780f0eeec7/raw) instead.
+[Install](/index.php/Install "Install") the [wmutils-git](https://aur.archlinux.org/packages/wmutils-git/) package for the core functionality.
 
 *wmutils*, however, is only a windows manipulation utility. A [window manager](/index.php/Window_manager "Window manager") and a keybinding controller ([sxhkd](/index.php/Sxhkd "Sxhkd"), [xbindkeys](/index.php/Xbindkeys "Xbindkeys") and others) are also required. In the following sections, [swm-git](https://aur.archlinux.org/packages/swm-git/) and *sxhkd* will be used.

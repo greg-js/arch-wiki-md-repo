@@ -284,7 +284,7 @@ Now, you should have a working Arch Linux guest. Note that features like clipboa
 
 ### Hardware acceleration
 
-Hardware acceleration can be activated from the VirtualBox options on the host computer. Note that when the gdm display manager 3.16+ is known to break hardware acceleration support[[3]](https://bbs.archlinux.org/viewtopic.php?id=200025), so if you get issues with hardware acceleration it might be a good idea to try out another display manager (lightdm seems to work fine).
+Hardware acceleration can be activated from the VirtualBox options on the host computer. Note the [GDM](/index.php/GDM "GDM") display manager 3.16+ is known to [break](https://bugzilla.gnome.org/show_bug.cgi?id=749390) hardware acceleration support. So if you get issues with hardware acceleration, try out another display manager (lightdm seems to work fine).[[3]](https://bbs.archlinux.org/viewtopic.php?id=200025) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1607593#p1607593)
 
 If you want to share folders between your host and your Arch Linux guest, read on.
 
@@ -1284,7 +1284,7 @@ options snd-intel8x0 ac97_clock=48000
 
 ### Guest freezes after starting Xorg
 
-Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[5]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
+Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[6]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
 
 ### "NS_ERROR_FAILURE" and missing menu items
 
@@ -1350,7 +1350,7 @@ This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Inte
 Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
 
 *   Various Kernel bugs
-    *   Fuse mounted partitions (like ntfs) [[6]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[7]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
+    *   Fuse mounted partitions (like ntfs) [[7]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[8]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
 
 Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
 

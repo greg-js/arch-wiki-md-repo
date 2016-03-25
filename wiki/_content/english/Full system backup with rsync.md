@@ -108,7 +108,7 @@ If the one you found from lsblk is not found by grep, then grub-mkconfig did not
 
 ```
 
-After exiting, generate grub.cfg again and verify the new UUID is included.
+After exiting, verify the new UUID is included.
 
 ## First boot
 

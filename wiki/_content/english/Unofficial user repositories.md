@@ -68,10 +68,11 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.2.17 pietma](#pietma)
         *   [3.2.18 pfkernel](#pfkernel)
         *   [3.2.19 suckless](#suckless)
-        *   [3.2.20 Unity-for-Arch](#Unity-for-Arch)
-        *   [3.2.21 Unity-for-Arch-Extra](#Unity-for-Arch-Extra)
-        *   [3.2.22 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.23 QOwnNotes](#QOwnNotes)
+        *   [3.2.20 trinity](#trinity)
+        *   [3.2.21 Unity-for-Arch](#Unity-for-Arch)
+        *   [3.2.22 Unity-for-Arch-Extra](#Unity-for-Arch-Extra)
+        *   [3.2.23 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.24 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 eee-ck](#eee-ck)
@@ -755,6 +756,17 @@ Server = http://dl.dropbox.com/u/11734958/$arch
 ```
 [suckless]
 Server = http://dl.suckless.org/arch/$arch
+
+```
+
+#### trinity
+
+*   **Maintainer:** [Michael Manley](/index.php?title=User:Mmanley&action=edit&redlink=1 "User:Mmanley (page does not exist)")
+*   **Description:** [Trinity](/index.php/Trinity "Trinity") Desktop Environment
+
+```
+[trinity]
+Server = http://repo.nasutek.com/arch/contrib/trinity/$arch
 
 ```
 

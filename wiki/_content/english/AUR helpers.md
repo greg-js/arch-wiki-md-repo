@@ -167,7 +167,7 @@ The columns have the following meaning:
 | pbget | Python3 | Yes | N/A | Yes | N/A | N/A | No | None | Specific | No automatic builds |
 | PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[4]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | Pacman-like | Automatic builds by default, use -F to disable; multilingual |
 | prm | Bash | Yes [[5]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | Specific | No automatic builds, ABS support |
-| trizen | Perl | Yes | Yes | No | No | No | No | None | Pacman-like | - |
+| trizen | Perl | Yes | Yes | Yes [[6]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | No | No | No | None | Pacman-like | AUR comments |
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | Specific | Mirror updates, print news and AUR comments |
 | yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | bash | Specific | No automatic builds |
-| yaourt | Bash/C | No [[6]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) | No [[7]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[8]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[9]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | Pacman-like | Backup, ABS support, AUR comments, multilingual |
+| yaourt | Bash/C | No [[7]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) | No [[8]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[9]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[10]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | Pacman-like | Backup, ABS support, AUR comments, multilingual |

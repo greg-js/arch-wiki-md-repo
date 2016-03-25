@@ -38,9 +38,9 @@
 | <small>3.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
 | <small>3.2.</small> [编程语言](/index.php/Category:Programming_languages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Programming languages (简体中文)") <small>(3)</small> |
 | <small>3.3.</small> [版本控制系统](/index.php/Category:Version_Control_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Version Control System (简体中文)") <small>(3)</small> |
-| <small>3.4.</small> [Widget toolkits](/index.php/Category:Widget_toolkits_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Widget toolkits (简体中文)") <small>(1)</small> |
+| <small>3.4.</small> [部件工具](/index.php/Category:Widget_toolkits_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Widget toolkits (简体中文)") <small>(1)</small> |
 | <small>4.</small> [硬件](/index.php/Category:Hardware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware (简体中文)") <small>(1)</small> |
-| <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ARM architecture (简体中文)") <small>(1)</small> |
+| <small>4.1.</small> [ARM 架构](/index.php/Category:ARM_architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ARM architecture (简体中文)") <small>(1)</small> |
 | <small>4.2.</small> [蓝牙](/index.php/Category:Bluetooth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bluetooth (简体中文)") <small>(2)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:CPU (简体中文)") <small>(3)</small> |
 | <small>4.4.</small> [图形](/index.php/Category:Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics (简体中文)") <small>(14)</small> |
@@ -61,8 +61,8 @@
 | <small>4.13.</small> [声音](/index.php/Category:Sound_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Sound (简体中文)") <small>(6)</small> |
 | <small>4.14.</small> [存储设备](/index.php/Category:Storage_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Storage (简体中文)") <small>(6)</small> |
 | <small>4.14.1.</small> [光存储设备](/index.php/Category:Optical_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Optical (简体中文)") <small>(2)</small> |
-| <small>5.</small> [帮助](/index.php/Category:Help_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Help (简体中文)") <small>(9)</small> |
-| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(29)</small> |
+| <small>5.</small> [帮助](/index.php/Category:Help_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Help (简体中文)") <small>(10)</small> |
+| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(30)</small> |
 | <small>6.1.</small> [域名解析](/index.php/Category:Domain_Name_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Domain Name System (简体中文)") <small>(5)</small> |
 | <small>6.2.</small> [FTP](/index.php/Category:File_Transfer_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File Transfer Protocol (简体中文)") <small>(2)</small> |
 | <small>6.3.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(2) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
@@ -70,9 +70,9 @@
 | <small>6.4.1.</small> [邮件客户端](/index.php/Category:Email_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Email clients (简体中文)") <small>(1)</small> |
 | <small>6.4.2.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(2)</small> |
 | <small>6.4.3.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(4)</small> |
-| <small>6.5.</small> [Mail server](/index.php/Category:Mail_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mail server (简体中文)") <small>(1)</small> |
+| <small>6.5.</small> [邮件服务器](/index.php/Category:Mail_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mail server (简体中文)") <small>(1)</small> |
 | <small>6.6.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(3) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
-| <small>6.7.</small> [Remote desktop](/index.php/Category:Remote_desktop_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Remote desktop (简体中文)") <small>(2)</small> |
+| <small>6.7.</small> [远程桌面](/index.php/Category:Remote_desktop_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Remote desktop (简体中文)") <small>(2)</small> |
 | <small>6.8.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(3) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
 | <small>6.9.</small> [虚拟网络计算 (VNC)](/index.php/Category:Virtual_Network_Computing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtual Network Computing (简体中文)") <small>(1)</small> |
 | <small>6.10.</small> [虚拟专用网络 (VPN)](/index.php/Category:Virtual_Private_Network_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtual Private Network (简体中文)") <small>(4)</small> |
@@ -106,7 +106,7 @@
 | <small>8.4.</small> [内核](/index.php/Category:Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Kernel (简体中文)") <small>(14)</small> |
 | <small>8.5.</small> [脚本](/index.php/Category:Scripts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Scripts (简体中文)") <small>(2)</small> |
 | <small>8.6.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(13)</small> |
-| <small>8.6.1.</small> [Encryption](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(1)</small> |
+| <small>8.6.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(1)</small> |
 | <small>8.6.2.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(2) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>8.6.3.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(3) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>8.6.4.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(3) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |

@@ -11,7 +11,7 @@ Budgie написанный с нуля рабочий стол, который 
 
 ## Установка
 
-[Установите](/index.php/Help:%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Help:Чтение") последний стабильный пакет [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) или текущую разрабатываемую версию [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/). Также рекомендуется установить необязательные зависимости, чтобы получить более полную рабочую среду. Также рекомендуется установить группу [gnome](https://www.archlinux.org/groups/x86_64/gnome/), которая содержит приложения для стандартной работы GNOME.
+[Установите](/index.php/Help:%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Help:Чтение") последний стабильный пакет [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) или текущую разрабатываемую версию [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/). Также рекомендуется установить необязательные зависимости, чтобы получить более полную рабочую среду. Также рекомендуется установить группу [gnome](https://www.archlinux.org/groups/x86_64/gnome/), которая содержит приложения для стандартной работы GNOME.
 
 ### Запуск
 

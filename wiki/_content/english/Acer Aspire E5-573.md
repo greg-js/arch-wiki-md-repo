@@ -11,7 +11,7 @@ This laptop features an Intel Core I7 processor and comes with 8 or 16G of RAM m
 
 There is a bios bug (version 1.25) which prevents any Linux version from working (either 64 or 32 bits, UEFI or legacy). The system freezes as soon as the kernel boots, usually after the message "ACPI: unable to load the system description tables".
 
-As of today (December, 2015), the only viable fix is to downgrade the BIOS: follow the steps described here -- [http://community.acer.com/t5/E-and-M-Series/Acer-Aspire-e5-573g-You-can-not-install-any-one-Linux/td-p/386009](http://community.acer.com/t5/E-and-M-Series/Acer-Aspire-e5-573g-You-can-not-install-any-one-Linux/td-p/386009) -- which guides you on how to downgrade to version 1.15, which will allow Arch (and any other linux) to run fine.
+This can be fixed by upgrading the BIOS to version 1.31 or later.
 
 ## Hardware Identification
 

@@ -125,7 +125,7 @@ PulseAudio работает как демон сервера, который м�
 
 ## Выполнение
 
-Начиная с [версии 7.0](http://www.freedesktop.org/wiki/Software/PulseAudio/Notes/7.0/) PulseAudio на Arch использует активацию сокета. [По умолчанию](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/pulseaudio&id=419bd740dc8), `pulseaudio.socket` включен для экземпляра [systemd/User](/index.php/Systemd/User "Systemd/User").
+Начиная с [версии 7.0](http://www.freedesktop.org/wiki/Software/PulseAudio/Notes/7.0/) PulseAudio на Arch использует активацию сокета. [По умолчанию](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/pulseaudio&id=419bd740dc8), `pulseaudio.socket` включен для экземпляра [systemd/Пользователь](/index.php/Systemd/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C "Systemd/Пользователь").
 
 **Примечание:**
 
