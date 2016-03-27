@@ -35,7 +35,7 @@ The *.hwdb* file can contain multiple blocks of mappings for different keyboards
 *   AT keyboard DMI data matches: `evdev:atkbd:dmi:bvn*:bvr*:bd*:svn*<vendor>*:pn*<product>*:pvr*` where `*<vendor>*` and `*<product>*` are the firmware-provided strings exported by the kernel DMI modalias.
 *   Input driver device name and DMI data match: `evdev:name:*<input device name>*:dmi:bvn*:bvr*:bd*:svn*<vendor>*:pn*` where `*<input_device_name>*` is the name device specified by the driver and `*<vendor>*` is the firmware-provided string exported by the kernel DMI modalias.
 
-The format of each line in the block body is `KEYBOARD_KEY_*<scancode>*=*<keycode>*`. The value of `*<scancode>*` is hexadecimal, but without the leading `0x` (i.e. specify `a0` instead of `0xa0`), whereas the value of `*<keycode>*` is the lower-case keycode name string as listed in `/usr/include/linux/input.h` (see the `KEY_*<KEYCODE>*` variables), a sorted list is available at [[1]](http://hal.freedesktop.org/quirk/quirk-keymap-list.txt). It is not possible to specify decimal value in `*<keycode>*`.
+The format of each line in the block body is `KEYBOARD_KEY_*<scancode>*=*<keycode>*`. The value of `*<scancode>*` is hexadecimal, but without the leading `0x` (i.e. specify `a0` instead of `0xa0`), whereas the value of `*<keycode>*` is the lower-case keycode name string as listed in `/usr/include/linux/input-event-codes.h` (see the `KEY_*<KEYCODE>*` variables), a sorted list is available at [[1]](http://hal.freedesktop.org/quirk/quirk-keymap-list.txt). It is not possible to specify decimal value in `*<keycode>*`.
 
 ### Example for custom hwdb
 

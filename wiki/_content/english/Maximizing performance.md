@@ -240,7 +240,7 @@ When dealing with traditional rotational disks (HDD's) you may want to [lower or
 
 ### RAM disks
 
-See [[2]](https://bbs.archlinux.org/viewtopic.php?pid=493773#p493773).
+See [tmpfs](/index.php/Tmpfs "Tmpfs").
 
 ### USB storage devices
 
@@ -254,7 +254,7 @@ w /sys/kernel/mm/transparent_hugepage/khugepaged/defrag - - - - 0
 
 ```
 
-See also [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl"), [[3]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive) and [[4]](http://lwn.net/Articles/572911/).
+See also [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl"), [[2]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive) and [[3]](http://lwn.net/Articles/572911/).
 
 ## CPU
 

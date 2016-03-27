@@ -15,31 +15,35 @@
 
 ## Использование
 
-Some directories where tmpfs is commonly used are [/tmp](http://www.pathname.com/fhs/2.2/fhs-3.15.html), [/var/lock](http://www.pathname.com/fhs/2.2/fhs-5.9.html) and [/var/run](http://www.pathname.com/fhs/2.2/fhs-5.13.html). Do **not** use it on [/var/tmp](http://www.pathname.com/fhs/2.2/fhs-5.15.html), because that folder is meant for temporary files that are preserved across reboots.
+Некоторые каталоги, где TMPFS обычно используются: [/tmp](http://www.pathname.com/fhs/2.2/fhs-3.15.html), [/var/lock](http://www.pathname.com/fhs/2.2/fhs-5.9.html) и [/var/run](http://www.pathname.com/fhs/2.2/fhs-5.13.html). **Не** используйте его на [/var/tmp](http://www.pathname.com/fhs/2.2/fhs-5.15.html), так как этот каталог предназначен для временных файлов, которые сохраняются после перезагрузки.
 
-Arch uses a tmpfs `/run` directory, with `/var/run` and `/var/lock` simply existing as symlinks for compatibility. It is also used for `/tmp` by the default systemd setup and does not require an entry in [fstab](/index.php/Fstab "Fstab") unless a specific configuration is needed.
+Arch использует tmpfs в каталоге `/run`, с симлинками для совместимости `/var/run` и `/var/lock`. Он также используется для `/tmp` в настройках по умолчанию Systemd и не требует записи в [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)"), если не требуется конкрентная настройка.
 
-[glibc](https://www.archlinux.org/packages/?name=glibc) 2.2 and above expects tmpfs to be mounted at `/dev/shm` for [POSIX shared memory](https://en.wikipedia.org/wiki/Shared_memory_(interprocess_communication)#Support_on_UNIX_platforms "wikipedia:Shared memory (interprocess communication)"). Mounting tmpfs at `/dev/shm` is handled automatically by [systemd](/index.php/Systemd "Systemd"), so manual configuration in [fstab](/index.php/Fstab "Fstab") is no longer necessary.
+[glibc](https://www.archlinux.org/packages/?name=glibc) 2.2 и выше ожидает что `/dev/shm` будет смонтирован tmpfs для [POSIX разделяемой памяти](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D1%8F%D0%B5%D0%BC%D0%B0%D1%8F_%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C#.D0.92_UNIX-.D0.BF.D0.BE.D0.B4.D0.BE.D0.B1.D0.BD.D1.8B.D1.85_.D0.BE.D0.BF.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0.D1.85 больше не требуется.
 
-Generally, I/O intensive tasks and programs that run frequent read/write operations can benefit from using a tmpfs folder. Some applications can even receive a substantial gain by offloading some (or all) of their data onto the shared memory. For example, [relocating the Firefox profile into RAM](/index.php/Firefox_on_RAM "Firefox on RAM") shows a significant improvement in performance.
+Как правило, интенсивные задачи и программы ввода/вывода, которые выполняют частые операции чтения/записи могут получить пользу используя каталог TMPFS. Некоторые приложения могут даже получить существенную выгоду, снимая нагрузку некоторых (или всех) своих данных на общую память. Например, [перемещение профиля Firefox в оперативную память](/index.php/Firefox_on_RAM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox on RAM (Русский)") показывает значительное улучшение производительности.
 
 ## Примеры
 
-By default, a tmpfs partition has its maximum size set to half your total RAM, but this can be customized. Note that the actual memory/swap consumption depends on how much you fill it up, as tmpfs partitions do not consume any memory until it is actually needed.
+По умолчанию раздел TMPFS имеет максимальный размер устанавленный от половины всей вашей оперативной памяти, но это можно настроить. Обратите внимание, что фактическое потребление памяти/подкачки зависит от того, на сколько вы заполните её, так как разделы TMPFS не потребляют память до тех пор, пока это будет на самом деле необходимо.
 
-To explicitly set a maximum size, in this example to override the default `/tmp` mount, use the `size` mount option:
+Чтобы точно установить максимальный размер, в данном примере, чтобы переопределить значение по умолчанию для монтирования `/tmp`, используем опцию монтирования `size`:
 
  `/etc/fstab`  `tmpfs   /tmp         tmpfs   nodev,nosuid,size=2G          0  0` 
+```
+Limiting the size, and specifying uid and gid + mode is very secure. For more information on this subject, follow the links listed in the [#Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5) section.
 
-Here is a more advanced example showing how to add tmpfs mounts for users. This is useful for websites, mysql tmp files, `~/.vim/`, and more. It's important to try and get the ideal mount options for what you are trying to accomplish. The goal is to have as secure settings as possible to prevent abuse. Limiting the size, and specifying uid and gid + mode is very secure. For more information on this subject, follow the links listed in the [#See also](#See_also) section.
+```
+
+Вот более сложный пример, показывающий, как добавить монтирование TMPFS для пользователей. Это полезно для веб-сайтов, MySQL TMP файлов, `~/.vim/`, и многое другое. Очень важно, попытаться получить идеальные параметры монтирования для того, что вы пытаетесь достичь. Цель состоит в том, чтобы получить безопасные параметры, насколько это возможно, чтобы предотвратить повышенное использование. Будет безопасным ограничить размер, указать Uid и GID + mode. Для получения дополнительной информации по этому вопросу, пройдите по ссылкам перечисленным в секции [#Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5).
 
  `/etc/fstab`  `tmpfs   /www/cache    tmpfs  rw,size=1G,nr_inodes=5k,noexec,nodev,nosuid,uid=648,gid=648,mode=1700   0  0` 
 
-See the `mount` command man page for more information. One useful mount option in the man page is the `default` option. At least understand that.
+Смотрите справочную страницу `mount` для получения дополнительной информации. Полезная опция монтирования из справочной страницы является опция `default`. По крайней мере понятная.
 
-Reboot for the changes to take effect. Note that although it may be tempting to simply run `mount -a` to make the changes effective immediately, this will make any files currently residing in these directories inaccessible (this is especially problematic for running programs with lockfiles, for example). However, if all of them are empty, it should be safe to run `mount -a` instead of rebooting (or mount them individually).
+Перезагрузитесь, для того чтобы изменения вступили в силу. Обратите внимание, что может быть заманчивым, выполнить `mount -a`, чтобы сделанные изменения вступили в силу немедленно, это сделает недоступными какие-либо файлы, которые в настоящее время находятся в этих каталогах (например, особенно проблематично для запуска программ с файлами блокировки). Тем не менее, если все они пусты, она должна быть безопасной для запуска `mount -a`, вместо перезагрузки (или смонтируйте их в индивидуальном порядке).
 
-After applying changes, you may want to verify that they took effect by looking at `/proc/mounts` and using `findmnt`:
+После применения изменений, вы можете убедиться в том, что они вступили в силу, посмотрев в `/proc/mounts` и используя `findmnt`:
 
  `$ findmnt --target /tmp` 
 ```
@@ -47,7 +51,7 @@ TARGET SOURCE FSTYPE OPTIONS
 /tmp   tmpfs  tmpfs  rw,nosuid,nodev,relatime
 ```
 
-The tmpfs can also be temporarily resized without the need to reboot, for example when a large compile job needs to run soon. In this case, you can run:
+TMPFS также может быть временно изменен, без необходимости в перезагрузке, например, когда в ближайшее время необходимо выполнить большую работу компиляции. В этом случае вы можете запустить:
 
 ```
 # mount -o remount,size=4G,noatime /tmp
@@ -56,24 +60,24 @@ The tmpfs can also be temporarily resized without the need to reboot, for exampl
 
 ## Отключить автоматическое монтирование
 
-Under [systemd](/index.php/Systemd "Systemd"), `/tmp` may be automatically mounted as a tmpfs even though you have no entry for that in your `/etc/fstab`.
+[Systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), может автоматически устанавливать `/tmp` как tmpfs, даже если у вас нет записи в вашем `/etc/fstab`.
 
-To disable the automatic mount, run:
+Для отключения автоматического монтирования, выполните следующую команду:
 
 ```
 # systemctl mask tmp.mount
 
 ```
 
-Files will no longer be stored in a tmpfs, but your block device instead. The `/tmp` contents will now be preserved between reboots, which you might not want. To regain the previous behavior and clean the `/tmp` folder automatically when restarting your machine, consider using `tmpfiles.d(5)`:
+Файлы больше не будут хранится в tmpfs, но будут на вашем блочном устройстве. Содержание `/tmp` теперь будет сохранятся между перезагрузками, чего вам бы не хотелось. Чтобы сохранить прежнее поведение и очищать каталог `/tmp` атоматически когда вы перезагружаете машину, рассмотрите возможность использования `tmpfiles.d(5)`:
 
  `/etc/tmpfiles.d/tmp.conf` 
 ```
-# see tmpfiles.d(5)
-# always enable /tmp folder cleaning
+# смотрите tmpfiles.d(5)
+# очистка каталога /tmp всегда включена
 D! /tmp 1777 root root 0
 
-# remove files in /var/tmp older than 10 days
+# удалить файлы в каталоге /var/tmp старше 10 дней
 D /var/tmp 1777 root root 10d
 
 # namespace mountpoints (PrivateTmp=yes) are excluded from removal
@@ -87,11 +91,11 @@ X /var/tmp/systemd-private-*/tmp
 
 ### Не получается открытие символьных ссылок в tmpfs от root
 
-Considering `/tmp` is using tmpfs, change the current directory to `/tmp`, then create a file and create a symlink to that file in the same `/tmp` directory. If you try to open the file you created via the symlink, you will get a permission denied error. This is expected as `/tmp` [has the sticky bit set](https://wiki.ubuntu.com/Security/Features#Symlink_restrictions).
+Учитывая что `/tmp` использует TMPFS, измените текущую директорию на `/tmp`, а затем создайте файл и создайте символическую ссылку на этот файл в том же каталог `/tmp`. При попытке открыть файл, созданный с помощью символической ссылки, вы получите ошибку "доступ запрещён". Ожидается, что это как `/tmp` [содержит "прилипший" набор битов](https://wiki.ubuntu.com/Security/Features#Symlink_restrictions).
 
-This behaviour can be controlled via `/proc/sys/fs/protected_symlinks` or simply via sysctl: `sysctl -w fs.protected_symlinks=0`. See [Sysctl#Configuration](/index.php/Sysctl#Configuration "Sysctl") to make this permanent.
+Такое поведение можно контролировать с помощью `/proc/sys/fs/protected_symlinks` или просто через SYSCTL: `sysctl -w fs.protected_symlinks=0`. Чтобы это работало постоянно, смотрите [Sysctl#Configuration](/index.php/Sysctl#Configuration "Sysctl").
 
-**Важно:** Changing this behaviour can lead to security issues! Disable it only if you know what you are doing.
+**Важно:** Изменение этого поведения может привести к проблемам безопасности! Отключите это, только если вы знаете что делаете.
 
 ## Смотрите также
 

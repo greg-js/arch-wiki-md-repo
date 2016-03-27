@@ -12,6 +12,7 @@ This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s
     *   [2.1 Minimal configuration](#Minimal_configuration)
     *   [2.2 Automatic configuration](#Automatic_configuration)
     *   [2.3 NVIDIA Settings](#NVIDIA_Settings)
+        *   [2.3.1 CLI Configuration](#CLI_Configuration)
     *   [2.4 Multiple monitors](#Multiple_monitors)
         *   [2.4.1 Using NVIDIA Settings](#Using_NVIDIA_Settings)
         *   [2.4.2 ConnectedMonitor](#ConnectedMonitor)
@@ -158,6 +159,22 @@ The [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) 
 Alternatively, you can run the GUI as a normal user and save the settings to `~/.nvidia-settings-rc`. Then you can load the settings using `$ nvidia-settings --load-config-only` (for example in your [xinitrc](/index.php/Xinitrc "Xinitrc")).
 
 **Tip:** If your X server is crashing on startup, it may be because the GUI-generated settings are corrupt. Try deleting the generated file and starting from scratch.
+
+#### CLI Configuration
+
+[nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) can configure your displays from the command line (without restarting or reloading X, and with flaky XRandR support). First, configure your displays using `nvidia-settings`'s GUI. Then get the `CurrentMetaMode` by running:
+
+```
+ $ nvidia-settings -q all | grep -A 2 "Attribute 'CurrentMetaMode'"
+   Attribute 'CurrentMetaMode' (hostnmae:0.0): id=50, switchable=no, source=nv-control :: DPY-1: 2880x1620 @2880x1620 +0+0 {ViewPortIn=2880x1620,
+   ViewPortOut=2880x1620+0+0} 
+     'CurrentMetaMode' is a string attribute.
+
+```
+
+Save everything after the `::` to the end of the attribute (in this case: `DPY-1: 2880x1620 @2880x1620 +0+0 {ViewPortIn=2880x1620, ViewPortOut=2880x1620+0+0}`) and use reconfigure your displays with `nvidia-settings --assign "CurrentMetaMode=<YOUR_META_MODE_HERE>"`
+
+The author has shell aliases for the different the monitor and resolutions configurations they use regularly.
 
 ### Multiple monitors
 

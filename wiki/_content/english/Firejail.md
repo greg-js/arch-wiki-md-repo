@@ -60,7 +60,7 @@ Some applications use non standard paths. For these you will want to copy the `.
 
 #### Daemons
 
-For daemons, you will have to edit the initscripts directly to call them with firejail.
+For a daemon, you will need to overwrite the systemd unit file for that daemon to call firejail, see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd").
 
 #### Notes
 

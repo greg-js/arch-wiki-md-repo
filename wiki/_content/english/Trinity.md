@@ -1,4 +1,6 @@
-**Note:** Currently the base Trinity packages can be built and installed on Arch using the PKGBUILD files on [https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD](https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD). Most components seem to work fine except arts and tdm are a bit bugged (least on VMWare) but is a work in progress. Once a stable build can be developed binary files will be released. You are all welcome to improve the PKGBUILD files.
+**Note:** Currently the base Trinity packages can be built and installed on Arch using the PKGBUILD files on [https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD](https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD). Most components seem to work fine except arts is a bit bugged (least on VMWare) but is a work in progress. Binary packages are available for x86_64 at the moment but will provide i686 as built (See [Unofficial_User_Repositories#trinity](/index.php/Unofficial_User_Repositories#trinity "Unofficial User Repositories")). You are all welcome to improve the PKGBUILD files.
+
+**Note:** Michael's PKGBUILD files were added 2016 March 23, after a long time without any Trinity package repository being available. They seem to build successfully on a system with the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) package group installed, despite the warning below about building without [KDE4](/index.php/KDE4 "KDE4") being present. Michael's PKGBUILD files include the ten "required" Trinity core packages described in [How_to_Build_TDE_Core_Modules#Suggested_Build_Order](https://wiki.trinitydesktop.org/How_to_Build_TDE_Core_Modules#Suggested_Build_Order), and also tdeaccessibility, tdebindings, and tdeutils. Please contribute additional Trinity core package PKGBUILD files if you are able. Also note, these Trinity applications and applets can be run just fine under other Desktop Environments, including KDE Plasma5.
 
 The [Trinity Desktop Environment](http://trinitydesktop.org/) (TDE) project is a feature rich desktop environment for Unix-like operating systems with a primary goal of retaining the overall KDE 3.5 computing style. TDE is a fast, stable and mature desktop for Linux.
 
@@ -6,15 +8,17 @@ The [Trinity Desktop Environment](http://trinitydesktop.org/) (TDE) project is a
 
 *   [1 About TDE](#About_TDE)
 *   [2 Build from source](#Build_from_source)
-    *   [2.1 Building on Arch](#Building_on_Arch)
-*   [3 Start and configuration](#Start_and_configuration)
-    *   [3.1 Enable tdm.service in systemd to start tdm at boot](#Enable_tdm.service_in_systemd_to_start_tdm_at_boot)
-    *   [3.2 Configure to work with startx](#Configure_to_work_with_startx)
-*   [4 See also](#See_also)
+*   [3 Building with Michael's PKGBUILD files](#Building_with_Michael.27s_PKGBUILD_files)
+*   [4 Building on Arch](#Building_on_Arch)
+*   [5 Start and configuration](#Start_and_configuration)
+    *   [5.1 Enable tdm.service in systemd to start tdm at boot](#Enable_tdm.service_in_systemd_to_start_tdm_at_boot)
+    *   [5.2 Configure to work with startx](#Configure_to_work_with_startx)
+*   [6 Refusing to give up the Trinity "Kicker" panel](#Refusing_to_give_up_the_Trinity_.22Kicker.22_panel)
+*   [7 See also](#See_also)
 
 ## About TDE
 
-The current stable release of TDE (14.0.0) was released December 16 2014\. Current development is on 14.1.0\.
+The current stable release of TDE (14.0.3) was released 2016 February 28\. Current development is on 14.1.0\.
 
 Trinity is an independent fork of KDE 3.5 using a separate developer community. Continued development by the Trinity Project has polished off many rough edges that were present in the final release of KDE 3.5.10\. Many new and useful features have been added to keep the environment up-to-date.
 
@@ -30,7 +34,22 @@ The sources are in a git repo. More info on cloning it is at their [GIT informat
 
 The suggested build order is specified in the [How to Build TDE](https://wiki.trinitydesktop.org/How_to_Build_TDE) page.
 
-### Building on Arch
+## Building with Michael's PKGBUILD files
+
+Try something like this:
+
+```
+$ git clone https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD.git trinity
+$ cd trinity/R14.0.3
+$ dir=`pwd`;for i in \
+ tqt3 tqtinterface arts dbus-tqt dbus-1-tqt tqca-tls libart-lgpl avahi-tqt tdelibs tdebase \
+ tdebindings tdeaccessibility tdeutils;\
+ do cd $dir/tde-$i;makepkg --syncdeps --install --noconfirm --log --clean ;done;cd ..;unset dir i
+```
+
+Then also, consider your preference for path ordering, whether /opt/trinity/bin should come before or after /usr/bin. This will give priority to one or the other of the KDE applications available through both Trinity and Plasma, if Plasma is also installed. The PATH environment variable may need to be modified in `~/.bash_profile` and/or `/etc/profile.d/trinity.sh`.
+
+## Building on Arch
 
 **Warning:** Trinity on Arch must be built in a clean environment without [KDE4](/index.php/KDE4 "KDE4") present.
 
@@ -67,6 +86,28 @@ Trinity provides a normal `starttde`. If you've followed the Arch packaging guid
  `~/.xinitrc`  `exec starttde` 
 
 Then from the command line, just type `startx`. More about [xinitrc](/index.php/Xinitrc "Xinitrc").
+
+## Refusing to give up the Trinity "Kicker" panel
+
+If you simply must have the Trinity "kicker" Desktop Panel and Applets while running Plasma5 or some other Desktop Environment, create this script and activate it. For Plasma5, use "System Settings -> Startup and Shutdown -> Autostart -> Add Script".
+
+ `panelstart` 
+```
+#!/bin/bash
+/opt/trinity/bin/tdeinit
+/opt/trinity/bin/kicker
+/opt/trinity/bin/tdebuildsycoca --noincremental
+
+```
+
+and
+
+```
+# chmod 755 panelstart
+
+```
+
+Yum!
 
 ## See also
 

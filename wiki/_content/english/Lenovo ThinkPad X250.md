@@ -48,6 +48,8 @@ The fingerprint reader works out of the box with [fprintd](https://www.archlinux
 
 In order to get the backlight to work, I added `options thinkpad_acpi force-load=1` to `/etc/modprobe.d/x250.conf`. This forces the thinkpad_acpi module to load, which is needed for controlling the backlight vPkgia [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) as well as enable some of the extra media keys.
 
+**Note:** Not all X250 keyboards have backlight
+
 #### Sound and Volume Control
 
 With [acpid](https://www.archlinux.org/packages/?name=acpid) and [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) installed, you can map the volume buttons to change the volume. Here are some samples:
@@ -88,4 +90,4 @@ action=amixer -c 1 sset Mic toggle -q
 
 #### Bluetooth
 
-Bluetooth was not tested.
+Bluetooth works out of the box with [bluez](https://www.archlinux.org/packages/?name=bluez) and [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth).

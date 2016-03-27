@@ -449,15 +449,14 @@ By default only traffic directly to and from an OpenVPN server passes through th
 ```
 push "redirect-gateway def1 bypass-dhcp"
 push "dhcp-option DNS 10.8.0.1"
-#push "dhcp-option DOMAIN domain.lan" # push intern domain
 
 ```
 
-Change "10.8.0.1" to your preferred DNS IP address.
+Change `10.8.0.1` to your preferred DNS IP address.
 
 If you have problems with non responsive DNS after connecting to server, install [BIND](/index.php/BIND "BIND") as simple DNS forwarder and push the IP address of the OpenVPN server as DNS to clients.
 
-If you want to allow clients reaching other (private) subnets behinds the server, you may want to use the `push "route <address pool> <subnet>"` option:
+Additionally, if you want to allow clients to be able to reach other (private) subnets behind the server, you may want to use the `push "route <address pool> <subnet>"` option:
 
 ```
 push "route 172.10.142.0 255.255.255.0"
@@ -465,9 +464,7 @@ push "route 172.20.142.0 255.255.255.0"
 
 ```
 
-Now you need to [enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") on the server.
-
-In addition to above, your server's firewall will need to be set up to allow VPN traffic through it, which is described below for both [ufw](/index.php/Ufw "Ufw") and [iptables](/index.php/Iptables "Iptables").
+After setting up your configuration file, you need to [enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") on the server. Additionally, your server's firewall will need to be set up to allow VPN traffic through it, which is described below for both [ufw](/index.php/Ufw "Ufw") and [iptables](/index.php/Iptables "Iptables").
 
 ### Firewall configuration
 

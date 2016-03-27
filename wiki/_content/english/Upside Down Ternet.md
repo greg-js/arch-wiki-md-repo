@@ -10,7 +10,7 @@ This article explains how to create a transparent Squid proxy server using mogri
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [squid](https://www.archlinux.org/packages/?name=squid), [apache](https://www.archlinux.org/packages/?name=apache), and [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) packages from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [squid](https://www.archlinux.org/packages/?name=squid), [apache](https://www.archlinux.org/packages/?name=apache), [wget](https://www.archlinux.org/packages/?name=wget) and [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) packages from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -73,7 +73,7 @@ url_rewrite_program /usr/local/bin/flip.pl
 
 Also find the line for `http_port` and make it now read
 
- `squid.conf`  `http_port 3128 transparent` 
+ `squid.conf`  `http_port 3128 intercept` 
 
 Finally, we have to create the folders for the images to be flipped in and set their permissions
 
@@ -92,11 +92,11 @@ Finally, add the http user to the proxy group
 
 Verify that the http user is a member of the proxy group
 
- `# groups proxy` 
+ `# groups http` 
 
 or
 
- `# id -Gn proxy` 
+ `# id -Gn http` 
 
 ### Router Setup
 

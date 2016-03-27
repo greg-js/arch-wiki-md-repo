@@ -85,7 +85,7 @@ The next few steps will begin the process of configuring the Host. You will need
 [Install](/index.php/Install "Install") the following packages:
 
 *   [samba](https://www.archlinux.org/packages/?name=samba), see also [Samba](/index.php/Samba "Samba")
-*   [pam-krb5](https://aur.archlinux.org/packages/pam-krb5/) from the [AUR](/index.php/AUR "AUR")
+*   [pam-krb5](https://www.archlinux.org/packages/?name=pam-krb5)
 *   [ntp](https://www.archlinux.org/packages/?name=ntp) or [openntpd](https://www.archlinux.org/packages/?name=openntpd), see also [NTPd](/index.php/NTPd "NTPd") or [OpenNTPD](/index.php/OpenNTPD "OpenNTPD")
 
 ### Updating DNS
@@ -487,7 +487,7 @@ objectSid: S-1-5-21-719106045-3766251393-3909931865-1105
 
 Now we will change various rules in PAM to allow Active Directory users to use the system for things like login and sudo access. When changing the rules, note the order of these items and whether they are marked as **required** or **sufficient** is critical to things working as expected. You should not deviate from these rules unless you know how to write PAM rules.
 
-In case of logins, PAM should first ask for AD accounts, and for local accounts if no matching AD account was found. Therefore, we add entries to include `pam_winbindd.so` into the authentication process.
+In case of logins, PAM should first ask for AD accounts, and for local accounts if no matching AD account was found. Therefore, we add entries to include `pam_winbind.so` into the authentication process.
 
 The Arch Linux PAM configuration keeps the central auth process in `/etc/pam.d/system-auth`. Starting with the stock configuration from `pambase`, change it like this:
 

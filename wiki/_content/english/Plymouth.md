@@ -39,6 +39,8 @@ Add `plymouth` to the HOOKS array in [mkinitcpio.conf](/index.php/Mkinitcpio.con
  `/etc/mkinitcpio.conf`  `HOOKS="base udev plymouth [...] "` 
 **Warning:** If you use [hard drive encryption](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") with the `encrypt` hook, you **must** replace the `encrypt` hook with `plymouth-encrypt` in order to get to the TTY password prompts.
 
+**Warning:** Using PARTUUID in `cryptdevice=` parameter does **not** work with `plymouth-encrypt` hook.
+
 For early KMS start (if you are using the open drivers) add the module [radeon](/index.php/Radeon "Radeon") (for radeon cards), [i915](/index.php/I915 "I915") (for intel cards) or [nouveau](/index.php/Nouveau "Nouveau") (for nvidia cards) to the MODULES line in `/etc/mkinitcpio.conf`:
 
  `/etc/mkinitcpio.conf` 

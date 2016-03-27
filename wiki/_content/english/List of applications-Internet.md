@@ -1249,6 +1249,10 @@ Pastebin services are often used to quote text or images while collaborating and
 
 	[https://ptpb.pw](https://ptpb.pw) || [ptpb](https://aur.archlinux.org/packages/ptpb/)
 
+*   **pbpst** — A small tool to interact with pb instances (eg [ptpb.pw](https://ptpb.pw)).
+
+	[https://github.com/HalosGhost/pbpst](https://github.com/HalosGhost/pbpst) || [pbpst](https://www.archlinux.org/packages/?name=pbpst)
+
 *   **ruby-haste** — Client for [hastebin.com](http://hastebin.com/).
 
 	[https://github.com/seejohnrun/haste-client](https://github.com/seejohnrun/haste-client) || [ruby-haste](https://aur.archlinux.org/packages/ruby-haste/) [ruby-haste-git](https://aur.archlinux.org/packages/ruby-haste-git/)

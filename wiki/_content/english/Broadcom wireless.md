@@ -11,13 +11,14 @@ This article details how to install and setup a Broadcom wireless network device
         *   [3.3.1 Offline installation](#Offline_installation)
         *   [3.3.2 Manually](#Manually)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Device inaccessible after kernel upgrade](#Device_inaccessible_after_kernel_upgrade)
-    *   [4.2 Device with broadcom-wl driver not working/showing](#Device_with_broadcom-wl_driver_not_working.2Fshowing)
-    *   [4.3 Interfaces swapped with broadcom-wl](#Interfaces_swapped_with_broadcom-wl)
-    *   [4.4 Interface is showing but not allowing connections](#Interface_is_showing_but_not_allowing_connections)
-    *   [4.5 Suppressing console messages](#Suppressing_console_messages)
-    *   [4.6 Device BCM43241 non-detected](#Device_BCM43241_non-detected)
-    *   [4.7 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
+    *   [4.1 Setting broadcom-wl in monitor mode](#Setting_broadcom-wl_in_monitor_mode)
+    *   [4.2 Device inaccessible after kernel upgrade](#Device_inaccessible_after_kernel_upgrade)
+    *   [4.3 Device with broadcom-wl driver not working/showing](#Device_with_broadcom-wl_driver_not_working.2Fshowing)
+    *   [4.4 Interfaces swapped with broadcom-wl](#Interfaces_swapped_with_broadcom-wl)
+    *   [4.5 Interface is showing but not allowing connections](#Interface_is_showing_but_not_allowing_connections)
+    *   [4.6 Suppressing console messages](#Suppressing_console_messages)
+    *   [4.7 Device BCM43241 non-detected](#Device_BCM43241_non-detected)
+    *   [4.8 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
 
 ## History
 
@@ -95,6 +96,19 @@ If the driver does not work at this point, you may need to update dependencies:
 To make the module load at boot, refer to [Kernel modules](/index.php/Kernel_modules "Kernel modules"). It is recommending that you [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") conflicting modules.
 
 ## Troubleshooting
+
+### Setting broadcom-wl in monitor mode
+
+To set broadcom-wl in monitor mode you have to set 1 to `/proc/brcm_monitor0)`:
+
+```
+# echo 1 > /proc/brcm_monitor0
+
+```
+
+It will create a new network interface called `prism0`.
+
+To work in monitor mode, use this newly created network interface.
 
 ### Device inaccessible after kernel upgrade
 

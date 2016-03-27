@@ -1255,7 +1255,7 @@ To view all flagged messages, use
 To view all unread messages that are either of size ≥1MB or from johndoe, use
 
 ```
-~U (~z 1- | ~f johndoe)
+~U (~z 1M- | ~f johndoe)
 
 ```
 

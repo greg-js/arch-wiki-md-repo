@@ -211,6 +211,14 @@ To show all available base name of the variables that can be used with option *-
 
 It is possible to create own list of folders to check with warriors commands or added manually to `/opt/share/list-desktop-files/sorted.test` or `~/.list-desktop-path/custom-path/sorted.test`. You can use even wildcards as * in path names stored in configuration files because it is using command `file` to get all available path names while population an array before starting search or list.
 
+The script has a self-debug options *--show-me* or short *--sm* to show the whole script code or search for a specific content in it.
+
+```
+# lsdesktopf --sm
+# lsdesktopf --sm grep
+
+```
+
 ### fbrokendesktop
 
 The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) bash script using command "which" to detect broken Exec that points to not existing path. Without any parameters it uses preset folders in "DskPath" array. It shows only broken *.desktop with full path and filename that is missing.

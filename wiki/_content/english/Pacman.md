@@ -479,7 +479,7 @@ The order of repositories in the configuration files matters; repositories liste
 
 ### Hooks
 
-*pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`.
+*pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`, which defaults to `/etc/pacman.d/hooks`.
 
 For more information on the alpm hooks, see the alpm-hooks(5) man page.
 

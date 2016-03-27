@@ -1,10 +1,3 @@
-## Contents
-
-*   [1 Share files without a username and password](#Share_files_without_a_username_and_password)
-    *   [1.1 Sample Passwordless Configuration](#Sample_Passwordless_Configuration)
-*   [2 Samba 4.* : Password Complexity](#Samba_4..2A_:_Password_Complexity)
-*   [3 Build Samba without CUPS](#Build_Samba_without_CUPS)
-
 ## Share files without a username and password
 
 Edit `/etc/samba/smb.conf` and add the following line:
@@ -88,14 +81,6 @@ This is the configuration I use with samba 4 for easy passwordless filesharing w
    public = yes
    only guest = yes
    writable = yes
-
-```
-
-## Samba 4.* : Password Complexity
-
-Samba 4 requires strong password when adding new user with pdbedit. If you want to disable the complexity check, just use the follwing command:
-```
-# samba-tool domain passwordsettings set --complexity=off
 
 ```
 

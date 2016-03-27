@@ -35,6 +35,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### Mars 2016
 
+*   [26 March 2016] [ASA-201603-24](https://lists.archlinux.org/pipermail/arch-security/2016-March/000589.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
 *   [24 March 2016] [ASA-201603-23](https://lists.archlinux.org/pipermail/arch-security/2016-March/000588.html) [expat](https://www.archlinux.org/packages/?name=expat) arbitrary code execution
 *   [24 March 2016] [ASA-201603-22](https://lists.archlinux.org/pipermail/arch-security/2016-March/000587.html) [botan](https://www.archlinux.org/packages/?name=botan) multiple issues
 *   [20 March 2016] [ASA-201603-21](https://lists.archlinux.org/pipermail/arch-security/2016-March/000586.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) multiple issues

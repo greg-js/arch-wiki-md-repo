@@ -50,7 +50,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 *   **aurutils** — Helper tools for the AUR.
 
-	[https://github.com/AladW/aurutils](https://github.com/AladW/aurutils) || [aurutils-git](https://aur.archlinux.org/packages/aurutils-git/)
+	[https://github.com/AladW/aurutils](https://github.com/AladW/aurutils) || [aurutils](https://aur.archlinux.org/packages/aurutils/)
 
 *   **bauerbill** — Powerpill/pacman extension with support for building packages from ABS and AUR.
 

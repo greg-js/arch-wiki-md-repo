@@ -13,7 +13,7 @@ Polkit works by delimiting distinct actions, e.g. running GParted, and delimitin
 *   [1 安装](#.E5.AE.89.E8.A3.85)
     *   [1.1 认证代理](#.E8.AE.A4.E8.AF.81.E4.BB.A3.E7.90.86)
 *   [2 架构](#.E6.9E.B6.E6.9E.84)
-    *   [2.1 行为](#.E8.A1.8C.E4.B8.BA)
+    *   [2.1 操作](#.E6.93.8D.E4.BD.9C)
     *   [2.2 认证规则](#.E8.AE.A4.E8.AF.81.E8.A7.84.E5.88.99)
         *   [2.2.1 管理员标识](#.E7.AE.A1.E7.90.86.E5.91.98.E6.A0.87.E8.AF.86)
 *   [3 界限](#.E7.95.8C.E9.99.90)
@@ -32,30 +32,30 @@ Polkit works by delimiting distinct actions, e.g. running GParted, and delimitin
 
 ### 认证代理
 
-An authentication agent is used to make the user of a session prove that the user of the session really is the user (by authenticating as the user) or an administrative user (by authenticating as an administrator). The [polkit](https://www.archlinux.org/packages/?name=polkit) package contains a textual authentication agent called 'pkttyagent', which is used as a general fallback.
+认证代理的作用是使会话用户证实自身的身份。[polkit](https://www.archlinux.org/packages/?name=polkit) 软件包提供了一个名为“pkttyagent”的基于文本方式的认证代理，一般用于最基本的应用。
 
-If you are using a graphical environment, make sure that a graphical authentication agent is installed and [autostarted](/index.php/Autostarting "Autostarting") on login.
+如果使用图形化环境，需确认安装了图形化的认证代理并且在登录时它能 [自动启动](/index.php/Autostarting "Autostarting")。
 
-[Cinnamon](/index.php/Cinnamon "Cinnamon"), [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment"), [GNOME](/index.php/GNOME "GNOME"), [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), [LXQt](/index.php/LXQt "LXQt"), [MATE](/index.php/MATE "MATE") and [Xfce](/index.php/Xfce "Xfce") have an authentication agent already. In other desktop environments, you have to choose one of the following implementations:
+[Cinnamon](/index.php/Cinnamon "Cinnamon")、[Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment")、[GNOME](/index.php/GNOME "GNOME")、[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")、[KDE](/index.php/KDE "KDE")、[LXDE](/index.php/LXDE "LXDE")、[LXQt](/index.php/LXQt "LXQt")、[MATE](/index.php/MATE "MATE") 和 [Xfce](/index.php/Xfce "Xfce") 各自都已有认证代理。 对于其他桌面环境，你需要从下列实现中选用一种：
 
-*   [lxqt-policykit](https://www.archlinux.org/packages/?name=lxqt-policykit), which provides `/usr/bin/lxqt-policykit-agent`
-*   [lxsession](https://www.archlinux.org/packages/?name=lxsession), which provides `/usr/bin/lxpolkit`
-*   [mate-polkit](https://www.archlinux.org/packages/?name=mate-polkit), which provides `/usr/lib/mate-polkit/polkit-mate-authentication-agent-1`
-*   [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/), which provides `/usr/bin/polkit-efl-authentication-agent-1`
-*   [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome), which provides `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1`
-*   [polkit-kde-agent](https://www.archlinux.org/packages/?name=polkit-kde-agent), which provides `/usr/lib/polkit-kde/polkit-kde-authentication-agent-1`
-*   [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/), which provides `/usr/lib/xfce-polkit/xfce-polkit`
+*   [lxqt-policykit](https://www.archlinux.org/packages/?name=lxqt-policykit)，提供了 `/usr/bin/lxqt-policykit-agent`
+*   [lxsession](https://www.archlinux.org/packages/?name=lxsession)，提供了 `/usr/bin/lxpolkit`
+*   [mate-polkit](https://www.archlinux.org/packages/?name=mate-polkit)，提供了 `/usr/lib/mate-polkit/polkit-mate-authentication-agent-1`
+*   [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/)，提供了 `/usr/bin/polkit-efl-authentication-agent-1`
+*   [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)，提供了 `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1`
+*   [polkit-kde-agent](https://www.archlinux.org/packages/?name=polkit-kde-agent)，提供了 `/usr/lib/polkit-kde/polkit-kde-authentication-agent-1`
+*   [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/)，提供了 `/usr/lib/xfce-polkit/xfce-polkit`
 
 ## 架构
 
-**Warning:** Do not amend the default permission files of packages, as these may be be overwritten on package upgrades.
+**警告:** 不要更改包文件的默认权限，因其可能在包更新时被覆盖。
 
-Polkit definitions can be divided into two kinds:
+Polkit 策略的定义可以分为两类：
 
-*   **Actions** are defined in XML `.policy` files located in `/usr/share/polkit-1/actions`. Each action has a set of default permissions attached to it (e.g. you need to identify as an administrator to use the GParted action). The defaults can be overruled but editing the actions files is NOT the correct way.
-*   **Authorization rules** are defined in JavaScript `.rules` files. They are found in two places: 3rd party packages can use `/usr/share/polkit-1/rules.d` (though few if any do) and `/etc/polkit-1/rules.d` is for local configuration. The .rules files designate a subset of users, refer to one (or more) of the actions specified in the actions files and determine with what restrictions these actions can be taken by that/those user(s). As an example, a rules file could overrule the default requirement for all users to authenticate as an admin when using GParted, determining that some specific user doesn't need to. Or isn't allowed to use GParted at all.
+*   **操作（Actions）** 定义在位于 `/usr/share/polkit-1/actions` 中的 XML 格式的 `.policy` 文件中。每个**操作**附带着一个默认的权限集合（例如，你需要标识为管理员以使用 GParted 操作）。The defaults can be overruled but editing the actions files is NOT the correct way.
+*   **认证规则（Authorization rules）** 定义在 JavaScript 格式的 `.rules` 文件中。其位置可位于两处：第三方的包位于 `/usr/share/polkit-1/rules.d`（尽管很少见），以及 `/etc/polkit-1/rules.d` 中的本地配置。这些 **.rules** 文件指定了一个用户的子集合，涉及到一个或多个**操作**文件中指定的操作，并确定那个或那些用户执行这些操作时有哪些限制。举例来说，某个规则文件可以驳回所有认证为 admin 的用户使用 GParted 的默认请求，而确认某些指定用户的请求；或者完全不允许使用 GParted 。
 
-### 行为
+### 操作
 
 **Tip:** To display Policykit actions in a graphical interface, install the [polkit-explorer](https://aur.archlinux.org/packages/polkit-explorer/) package.
 

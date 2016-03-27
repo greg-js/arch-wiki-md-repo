@@ -85,8 +85,6 @@ Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would f
 
 ```
 
-**Warning:** Using the `btrfs subvolume set-default` command to change the default sub-volume from anything other than the top level (ID 5) may break Grub. See [#Setting a default sub-volume](#Setting_a_default_sub-volume) to reset.
-
 ## File system creation
 
 A Btrfs file system can either be newly created or have one converted.
@@ -307,6 +305,8 @@ ID 261 gen 9512 top level 258 path usr
 
 ```
 
+**Note:** After changing the default subvolume on a system with [GRUB](/index.php/GRUB "GRUB"), you should run `grub-install` again to notify the bootloader of the changes. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1615373).
+
 ### Commit interval settings
 
 The resolution at which data are written to the filesystem is dictated by Btrfs itself and by system-wide settings. Btrfs defaults to a 30 seconds checkpoint interval in which new data are committed to the filesystem. This is tuneable using mount options (see below)
@@ -478,7 +478,7 @@ A few limitations should be known before trying.
 
 ### Encryption
 
-Btrfs has no built-in encryption support, but this may come in future. Users can encrypt the partition before running `mkfs.btrfs`. See [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
+Btrfs has no built-in encryption support, but this may come in future. Users can encrypt the partition before running `mkfs.btrfs`. See [dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap](/index.php/Dm-crypt/Encrypting_an_entire_system#Btrfs_subvolumes_with_swap "Dm-crypt/Encrypting an entire system").
 
 Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "EncFS") or [TrueCrypt](/index.php/TrueCrypt "TrueCrypt"), though perhaps without some of Btrfs' features.
 

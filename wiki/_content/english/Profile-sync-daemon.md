@@ -194,9 +194,9 @@ The package provided re-sync timer triggers once per hour. Users may optionally 
 --------------------------------------------------------
 [Unit]
 Description=Timer for Profile-sync-daemon
-PartOf=psd.service
 
 [Timer]
+OnUnitActiveSec=
 OnUnitActiveSec=10m
 
 ```

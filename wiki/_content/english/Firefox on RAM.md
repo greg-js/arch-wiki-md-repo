@@ -145,4 +145,4 @@ $ echo '*~/bin/firefox-sync*' | tee -a ~/.bash_logout ~/.bash_login >/dev/null
 
 ## See also
 
-*   [Fstab#tmpfs](/index.php/Fstab#tmpfs "Fstab")
+*   [tmpfs](/index.php/Tmpfs "Tmpfs")

@@ -51,6 +51,21 @@ Batteries can jump to a lower value instead of discharging continuously, therefo
 
 Other rules can be added to perform different actions depending on power supply status and/or capacity.
 
+If your system has no or missing ACPI events, use [cron](/index.php/Cron "Cron") with the following script:
+
+```
+#!/bin/sh
+acpi -b | awk -F'[,:%]' '{print $2, $3}' | {
+	read -r status capacity
+
+	if [ "$status" = Discharging -a "$capacity" -lt 5 ]; then
+		logger "Critical battery threshold"
+		systemctl hibernate
+	fi
+}
+
+```
+
 ##### Testing events
 
 One way to test udev rules is to have them create a file when they are run. For example:

@@ -31,7 +31,6 @@
     *   [6.1 笔记本电脑使用 Ifplugd](#.E7.AC.94.E8.AE.B0.E6.9C.AC.E7.94.B5.E8.84.91.E4.BD.BF.E7.94.A8_Ifplugd)
     *   [6.2 绑定和链路聚合](#.E7.BB.91.E5.AE.9A.E5.92.8C.E9.93.BE.E8.B7.AF.E8.81.9A.E5.90.88)
     *   [6.3 IP 别名](#IP_.E5.88.AB.E5.90.8D)
-        *   [6.3.1 示例](#.E7.A4.BA.E4.BE.8B)
     *   [6.4 更改 MAC/硬件地址](#.E6.9B.B4.E6.94.B9_MAC.2F.E7.A1.AC.E4.BB.B6.E5.9C.B0.E5.9D.80)
     *   [6.5 共享网络连接](#.E5.85.B1.E4.BA.AB.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5)
     *   [6.6 路由配置](#.E8.B7.AF.E7.94.B1.E9.85.8D.E7.BD.AE)
@@ -377,31 +376,21 @@ Hosts/Net: 2                     Class A, Private Internet
 
 IP 别名是指给同一个网络接口分配多个 IP 地址。这样一个网络节点可以有多个网络连接，每个实现不同的作用。Typical uses are virtual hosting of Web and FTP servers, or reorganizing servers without having to update any other machines (this is especially useful for nameservers).
 
-#### 示例
+要手动设置别名，可以使用 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 执行：
 
-你需要使用[官方仓库](/index.php/%E5%AE%98%E6%96%B9%E4%BB%93%E5%BA%93 "官方仓库")中的[netctl](https://www.archlinux.org/packages/?name=netctl)。
-
-准备配置文件
-
- `/etc/netctl/mynetwork` 
 ```
-
-Connection='ethernet'
-Description='Five different addresses on the same NIC.'
-Interface='eth0'
-IP='static'
-Address=('192.168.1.10' '192.168.178.11' '192.168.1.12' '192.168.1.13' '192.168.1.14' '192.168.1.15')
-Gateway='192.168.1.1'
-DNS=('192.168.1.1')
+# ip addr add 192.168.2.101/24 dev eth0 label eth0:1
 
 ```
 
-然后只要执行：
+要删除别名：
 
 ```
-$ netctl start mynetwork
+# ip addr del 192.168.2.101/24 dev eth0:1
 
 ```
+
+发送到一个子网的软件不会使用主别名，如果目标 IP 属于子别名，原始 IP 也会被相应设置。如果有多个网卡，可以通过 `ip route` 查看默认路由。
 
 ### 更改 MAC/硬件地址
 
@@ -417,7 +406,35 @@ $ netctl start mynetwork
 
 ### 局域网主机的名称解析
 
-When setting up a DNS server such as [BIND](/index.php/BIND "BIND") or [Unbound](/index.php/Unbound "Unbound") is overkill, manually editing your `/etc/hosts` is too cumbersome, or when you want more flexibility with dynamic leaving and joining of hosts to the network, it is possible to handle hostname resolution on your local network using zero-configuration networking. 你有两个选择：
+首先需要设置好主机名。
+
+ `$ ping *myhostname*` 
+```
+PING myhostname (192.168.1.2) 56(84) bytes of data.
+64 bytes from myhostname (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
+```
+
+如果希望其他机器通过主机名访问到这台机器，可以手动修改 `/etc/hosts` 文件或通过一个服务解析此主机名。使用 systemd 时，主机名解析可以通过 `myhostname` nss 模块提供。但是并不是所有的网络服务都被支持 (例如: [[1]](https://bbs.archlinux.org/viewtopic.php?id=176761), [[2]](https://bbs.archlinux.org/viewtopic.php?id=186967))，或者其它客户端使用不同的操作系统解析主机名，这个也无法被 systemd 支持。
+
+第一个解决方法是修改 `/etc/hosts`:
+
+```
+127.0.1.1	*myhostname*.localdomain	*myhostname*	
+
+```
+
+这样系统可以同时解析两个主机名:
+
+```
+$ getent hosts 
+127.0.0.1       localhost
+127.0.1.1       myhostname.localdomain myhostname
+
+```
+
+如果使用固定 IP 地址，请用 IP 地址替换 `127.0.1.1`.
+
+还有一个方法是架设 DNS 服务器例如 [BIND](/index.php/BIND "BIND") or [Unbound](/index.php/Unbound "Unbound"), 但是这些方法有点小提大作。小的网络可以使用 [zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") 服务。有两个选择：
 
 *   [Samba](/index.php/Samba "Samba") 通过 Microsoft's **NetBIOS** 提供主机名称解析。这只需要安装 [samba](https://www.archlinux.org/packages/?name=samba) 并启用 `nmbd.service` 服务。运行 Windows、 OS X、或者运行着 `nmbd` 的 Linux，将能找到你的机器。
 

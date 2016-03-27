@@ -20,6 +20,7 @@ This article explains how to setup a new Active Directory Domain Controller. It 
     *   [5.1 DNS](#DNS_3)
     *   [5.2 SSL](#SSL)
     *   [5.3 DHCP](#DHCP)
+    *   [5.4 Password Complexity](#Password_Complexity)
 
 ## Installation
 
@@ -537,3 +538,9 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 ```
 
 Finally, enable and start (or restart) the `dhcpd4` service.
+
+### Password Complexity
+
+By default, Samba 4 requires strong passwords. To disable the complexity check, issue the following command:
+
+ `# samba-tool domain passwordsettings set --complexity=off`

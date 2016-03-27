@@ -139,7 +139,7 @@ If you are migrating from 32 bits to 64 bits, now is the time to install 32-bit 
 
 Edit the */etc/pacman.conf* file and change *Architecture* from `auto` to the new value. These *sed* commands may be used:
 
-For x86_64:
+Migrating to x86_64:
 
 ```
 # sed -i  '/^Architecture =/s/auto/x86_64/' /etc/pacman.conf

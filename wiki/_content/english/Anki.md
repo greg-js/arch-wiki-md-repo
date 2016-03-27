@@ -20,7 +20,7 @@ If you prefer to use Anki version 1, install [anki12](https://aur.archlinux.org/
 
 ### Kanji Stroke Support
 
-Install [ttf-kanjistrokeorders](https://aur.archlinux.org/packages/ttf-kanjistrokeorders/) from the [AUR](/index.php/AUR "AUR") if you want to display kanji stroke orders in anki. You have to select this font inside anki in your deck properties after installation.
+Install [kanjistrokeorders-ttf](https://aur.archlinux.org/packages/kanjistrokeorders-ttf/) from the [AUR](/index.php/AUR "AUR") if you want to display kanji stroke orders in Anki. You have to select this font inside Anki in your deck properties after installation.
 
 ### Asian Language Support
 
@@ -28,7 +28,7 @@ Install [mecab-ipadic](https://aur.archlinux.org/packages/mecab-ipadic/) from th
 
 Install [kakasi](https://www.archlinux.org/packages/?name=kakasi) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
-Launch anki, and inside anki use "File->Download->Shared Plugin" to download and install the "Japanese Support" plugin, restart.
+Launch Anki, and inside Anki use "File->Download->Shared Plugin" to download and install the "Japanese Support" plugin, restart.
 
 After creating a new deck, you need to select "Japanese" as the deck model in "deck properties" to have Japanese support. Make sure that the Japanese Support plugin is installed, otherwise you cannot select "Japanese" as the model.
 

@@ -673,7 +673,9 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 | **Philips SHB7100** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume is flaky (sometimes works in VLC, not at all in Audacious). Tested only A2DP and Handsfree audio out, built-in mic was broken. | Limited |
 | **Philips SHB7150** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume work in VLC. Tested only A2DP profile. | Yes |
 | **Philips SHB5500BK/00** | bluez 5.28, PulseAudio 6.0 | Pause and resume is not working. | Limited |
-| **Parrot Zik** | Firmware 1.04\. The microphone is detected, but does not work. Sometimes it lags (but does not stutter); usually this is not noticeable unless playing games, in which case you may switch to a wired connection. | Limited |
+| **Parrot Zik** | Microphone detected but does not work (HSP profile unavailable). If the Bluetooth connection cuts, there will be a noticeable delay in audio. Work around by reinitializing the Bluetooth connection. | Limited |
+| **Parrot Zik 2.0** | Microphone detected but does not work (HSP profile unavailable). If the Bluetooth connection cuts, there will be a noticeable delay in audio. Work around by reinitializing the Bluetooth connection. | Limited |
+| **Parrot Zik 3.0** | Microphone detected but does not work (HSP profile unavailable). No delay issues. | Limited |
 | **Sony DR-BT50** | bluez{4,5} | Works for a2dp, see [[3]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html)). Adapter: D-Link DBT-120 USB dongle. | Yes |
 | **Sony SBH50** | bluez5 | Works for a2dp, Adapter: Broadcom Bluetooth 2.1 Device (Vendor=0a5c ProdID=219b Rev=03.43). Requires the `btusb` [module](/index.php/Modprobe "Modprobe"). | Yes |
 | **Sony MDR-XB950BT** | pulseaudio | Tested a2dp. Adapter: Grand-X BT40G. Doesn't auto-connect, need to connect manually. Other functionality works fine. | Limited |
@@ -710,6 +712,7 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 | **JBL Everest 300** | bluez 5.37, pulseaudio 8.0 | Everything works correctly. Headphones connected with HSP/HFP profile and sound quality was bad, but after switching profile in **pavucontrol** to A2DP sink sound quality went way up (as expected). Pairing went without issues. | Yes |
 | **Logitech UE9000** | bluez 5.37, pulseaudio 7.1, gnome 3.18.2 | Audio playback works correctly after gnome/gdm fix [here](#Connecting_works.2C_but_I_cannot_play_sound). Audio profile defaults to HSP/HFP. Microphone works in both HSP/HFP and A2DP profiles. Play/Pause and Fwd/Back functions work correctly in Spotify and VLC | Yes |
 | **Bose AE2 SoundLink** | bluez 5.36, pulseaudio 7.1 | Pause and resume does not work. Microphone does not work. | Limited |
+| **Jawbone Jambox** | bluez 5.38, pulseaudio 8.0 | Yes |
 
 ## See also
 

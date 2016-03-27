@@ -48,6 +48,8 @@ OpenGL renderer string: Mesa DRI Intel(R) Ivybridge Mobile
 
 ### Closed Source Drivers
 
+[Nvidia's documentation for their 319.12 Linux driver](http://us.download.nvidia.com/XFree86/Linux-x86/319.12/README/randr14.html) gives similar information to the [#Discrete Card as Primary GPU](#Discrete_Card_as_Primary_GPU) section of this article.
+
 ## PRIME GPU offloading
 
 GPU-intensive applications should be rendered on the more powerful discrete card. The command `xrandr --setprovideroffloadsink provider sink` can be used to make a render offload provider send its output to the sink provider (the provider which has a display connected). The provider and sink identifiers can be numeric (0x7d, 0x56) or a case-sensitive name (Intel, radeon).

@@ -20,7 +20,7 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
         *   [2.3.1 What works](#What_works)
         *   [2.3.2 Problems](#Problems_2)
         *   [2.3.3 Possible trackpad solution](#Possible_trackpad_solution_2)
-*   [3 Razer Keyboards](#Razer_Keyboards)
+*   [3 Razer keyboards](#Razer_keyboards)
 
 ## Razer Peripherals
 
@@ -204,16 +204,16 @@ Feature still not working: pinch to zoom, 3rd mouse button
 
 ```
 
-## Razer Keyboards
+## Razer keyboards
 
 There are currently two Python scripts available to enable macro keys under Linux:
 
 *   [blackwidowcontrol](https://aur.archlinux.org/packages/blackwidowcontrol/)
-    *   Should work with regular BlackWidow and might work with BlackWidow Ultimate / 2013
+    *   works with regular BlackWidow and might work with BlackWidow Ultimate / 2013
     *   uses Python 3
     *   does not bundle any scripts to create macros (use hot key configuration tool from your desktop environment)
-    *   allows to controls the status of the LED
+    *   allows to control the status of the LED
 *   [razer-blackwidow-macro-scripts](https://aur.archlinux.org/packages/razer-blackwidow-macro-scripts/)
-    *   Should work with BlackWidow Ultimate 2013
+    *   works with BlackWidow Ultimate 2013
     *   uses Python 2
     *   also bundles scripts to create and execute macros

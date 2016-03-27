@@ -22,15 +22,16 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [5.8 Setting brightness and gamma](#Setting_brightness_and_gamma)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 SNA issues](#SNA_issues)
-    *   [6.2 Blank screen during boot, when "Loading modules"](#Blank_screen_during_boot.2C_when_.22Loading_modules.22)
-    *   [6.3 X freeze/crash with intel driver](#X_freeze.2Fcrash_with_intel_driver)
-    *   [6.4 Adding undetected resolutions](#Adding_undetected_resolutions)
-    *   [6.5 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
-    *   [6.6 Backlight is not adjustable](#Backlight_is_not_adjustable)
-    *   [6.7 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
-    *   [6.8 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
-    *   [6.9 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
-    *   [6.10 Skylake Support](#Skylake_Support)
+    *   [6.2 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
+    *   [6.3 Blank screen during boot, when "Loading modules"](#Blank_screen_during_boot.2C_when_.22Loading_modules.22)
+    *   [6.4 X freeze/crash with intel driver](#X_freeze.2Fcrash_with_intel_driver)
+    *   [6.5 Adding undetected resolutions](#Adding_undetected_resolutions)
+    *   [6.6 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
+    *   [6.7 Backlight is not adjustable](#Backlight_is_not_adjustable)
+    *   [6.8 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
+    *   [6.9 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
+    *   [6.10 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
+    *   [6.11 Skylake Support](#Skylake_Support)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -253,6 +254,14 @@ From `man 4 intel`:
 Option      "AccelMethod"  "uxa"
 
 ```
+
+### Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)
+
+Should you experience missing font glyphs in GTK+ applications, the following workaround might help. [Edit](/index.php/Edit#Append.2C_add.2C_create.2C_edit "Edit") `/etc/environment` to add the following line:
+
+ `/etc/environment`  `COGL_ATLAS_DEFAULT_BLIT_MODE=framebuffer` 
+
+See also [FreeDesktop bug 88584](https://bugs.freedesktop.org/show_bug.cgi?id=88584).
 
 ### Blank screen during boot, when "Loading modules"
 
