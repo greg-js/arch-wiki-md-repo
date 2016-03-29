@@ -90,10 +90,36 @@ Run `go help gopath` for more information.
 
 ### Enable cross compilation for other platforms
 
-The official package only supports Linux amd64, 386 and arm architectures. To support cross compilation for Darwin, FreeBSD and MS Windows, run the commands below.
+The official package only supports Linux amd64, 386 and arm architectures. To support cross compilation for Darwin, FreeBSD and MS Windows, follow along as below.
+
+You can not build `/usr/lib/go/src` of itself, ie if you set `$GOROOT_BOOTSTRAP` to `/usr/lib/go` you will get a warning like this.
 
 ```
- $ cd /usr/lib/go/src; for os in darwin freebsd windows; do for arch in amd64 386; do sudo GOROOT_BOOTSTRAP=/usr/lib/go GOOS=$os GOARCH=$arch ./make.bash --no-clean; done; done
+ $ cd /usr/lib/go/src
+ $ GOROOT_BOOTSTRAP=/usr/lib/go GOOS=darwin GOARCH=amd64 ./make.bash --no-clean 
+ ##### Building Go bootstrap tool.
+ cmd/dist
+ ERROR: $GOROOT_BOOTSTRAP must not be set to $GOROOT
+ Set $GOROOT_BOOTSTRAP to a working Go tree >= Go 1.4.
+
+```
+
+To get around this, grab a source copy of Go from [https://golang.org/](https://golang.org/).
+
+**Note:** Commands below will assume you extracted your download of Go to `~/downloads/go`.
+
+Build your downloaded Go with your system GO.
+
+```
+ $ cd ~/downloads/go/src
+ $ GOROOT_BOOTSTRAP=/usr/lib/go GOOS=linux GOARCH=amd64 ./make.bash --no-clean
+
+```
+
+You can now build your system Go using the downloaded Go as bootstrap with this command.
+
+```
+ $ cd /usr/lib/go/src; for os in darwin freebsd windows; do for arch in amd64 386; do sudo GOROOT_BOOTSTRAP="$HOME/downloads/go" GOOS=$os GOARCH=$arch ./make.bash --no-clean; done; done
 
 ```
 
@@ -108,3 +134,4 @@ For more information, see [FS#30287](https://bugs.archlinux.org/task/30287).
 *   [Examples with small descriptions](https://gobyexample.com/)
 *   [Interactive Go training tour](http://tour.golang.org)
 *   [IDEs and Plugins for Go](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins)
+*   [Go 1.5 Bootstrap Plan](https://docs.google.com/document/d/1OaatvGhEAq7VseQ9kkavxKNAfepWy2yhPUBs96FGV28/edit)

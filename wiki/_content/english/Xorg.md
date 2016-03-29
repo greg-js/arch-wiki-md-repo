@@ -118,6 +118,8 @@ Xorg uses a configuration file called `xorg.conf` and files ending in the suffix
 
 The `/etc/X11/xorg.conf.d/` directory stores host-specific configuration. You are free to add configuration files there, but they must have a `.conf` suffix: the files are read in ASCII order, and by convention their names start with `*XX*-` (two digits and a hyphen, so that for example 10 is read before 20). These files are parsed by the X server upon startup and are treated like part of the traditional `xorg.conf` configuration file. The X server essentially treats the collection of configuration files as one big file with entries from `xorg.conf` at the end.
 
+For option examples to set, see also the [fedora wiki](http://fedoraproject.org/wiki/Input_device_configuration#xorg.conf.d).
+
 ### Using xorg.conf
 
 Xorg can also be configured via `/etc/X11/xorg.conf` or `/etc/xorg.conf`. You can also generate a skeleton for `xorg.conf` with:

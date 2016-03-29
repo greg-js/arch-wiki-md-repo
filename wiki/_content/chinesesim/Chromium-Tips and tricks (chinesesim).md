@@ -26,7 +26,7 @@
 *   chrome://version - 显示版本和启动 `/usr/bin/chromium` 时使用的开关
 *   chrome://plugins - 查看、启用和禁用当前使用的插件。
 
-[[这里](http://peter.sh/experiments/chromium-command-line-switches/)]包含一个不停更新的 chromium 开关列表。
+[这里](http://peter.sh/experiments/chromium-command-line-switches/)包含一个不停更新的 chromium 开关列表。
 
 ### 下载标签图标错误
 

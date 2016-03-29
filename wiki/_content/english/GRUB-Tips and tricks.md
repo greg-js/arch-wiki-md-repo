@@ -226,7 +226,7 @@ menuentry "Arch Linux, session texte" {
 
 ## Password protection of GRUB menu
 
-**Warning:** If someone has physical access to your machine and is able to boot a live USB/disk (*i.e.*, BIOS allows booting from an external disk), it's fairly trivial for one to modify GRUB configuration files to bypass this if `/boot` resides on an unencrypted partition. See [Grub#Encryption](/index.php/Grub#Encryption "Grub") and [Security#Disk_encryption](/index.php/Security#Disk_encryption "Security").
+**Warning:** If someone has physical access to your machine and is able to boot a live USB/disk (*i.e.*, BIOS allows booting from an external disk), it's fairly trivial for one to modify GRUB configuration files to bypass this if `/boot` resides on an unencrypted partition. See [GRUB#Encryption](/index.php/GRUB#Encryption "GRUB") and [Security#Disk encryption](/index.php/Security#Disk_encryption "Security").
 
 If you want to secure GRUB so it is not possible for anyone to change boot parameters or use the command line, you can add a user/password combination to GRUB's configuration files. To do this, run the command `grub-mkpasswd-pbkdf2`. Enter a password and confirm it:
 

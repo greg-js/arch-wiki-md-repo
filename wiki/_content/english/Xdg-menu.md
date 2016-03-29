@@ -72,11 +72,11 @@ KDE, Gnome, Xfce, Enlightenment are already XDG compatible.
 
 Xdg_menu relies on three sets of information to generate menus: a root menu or in other words an XML menu template generally passed on the command line, information cached when it was last run, and a series of configuration files.
 
-*   You can find some XML menu templates in /etc/xdg/menus.
-*   If altering the code in xdg_menu to change layout, make sure you delete everything in ~/.xdg_menu_cache or you will spend hours trying to figure out why your changes to the perl script don't take.
-*   You can find individual application configurations in /usr/share/applications
+*   You can find some XML menu templates in `/etc/xdg/menus`.
+*   If altering the code in xdg_menu to change layout, make sure you delete everything in `~/.xdg_menu_cache` or you will spend hours trying to figure out why your changes to the perl script don't take.
+*   You can find individual application configurations in /usr/share/applications}}
 
-Other configuration file directories can be found under /usr/share. In most cases you will not need to touch these. However if you want to change how your menu is layed out you can alter the menu template for minor changes. Major changes require tweaking the actual xdg_menu perl script. If you find that applications do not appear or that they are called strange things, then you will need to look at the .desktop file in /usr/share/applications. Check this [standards file](http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html) .
+Other configuration file directories can be found under `/usr/share`. In most cases you will not need to touch these. However if you want to change how your menu is layed out you can alter the menu template for minor changes. Major changes require tweaking the actual xdg_menu perl script. If you find that applications do not appear or that they are called strange things, then you will need to look at the .desktop file in `/usr/share/applications`. Check this [standards file](http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html) .
 
 ### Adding desktop entries from other directories
 
@@ -140,13 +140,13 @@ xdg_menu [--format <format>] [--desktop <desktop>]
 
 **update-menus** updates WMs menus from XDG stuff and can do it automaticaly using config.
 
-This is a script wrapper around xdg_menu that relies on /etc/update-menus.conf
+This is a script wrapper around xdg_menu that relies on `/etc/update-menus.conf`
 
-You need to install package: archlinux-xdg-menu (xdg_menu)
+You need to install package [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu) (xdg_menu)
 
-/etc/update-menus.conf selects from a list of window managers for which the menu should be generated. Comments with # are allowed.
+/`etc/update-menus.conf` selects from a list of window managers for which the menu should be generated. Comments with # are allowed.
 
-All generated menus placed in /var/cache/xdg-menu/. See wm-specific Examples section of this page to get more information.
+All generated menus placed in `/var/cache/xdg-menu/`. See wm-specific Examples section of this page to get more information.
 
 ## Examples
 

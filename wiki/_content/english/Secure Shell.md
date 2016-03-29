@@ -834,11 +834,13 @@ One possible cause for this is the need of certain SSH clients to find an absolu
 
 If you receive the above errors upon logging in, this means the server does not recognize your terminal. Ncurses applications like nano may fail with the message "Error opening terminal".
 
-The correct solution is to install the client terminal's terminfo file on the server. This tells console programs on the server how to correctly interact with your terminal. If you cannot [install](/index.php/Install "Install") it normally, you can copy your terminfo to your home directory on the server:
+The correct solution is to install the client terminal's terminfo file on the server. This tells console programs on the server how to correctly interact with your terminal. You can get info about current terminfo using `$ infocmp` and then find out [which package owns it](/index.php/Pacman#Querying_package_databases "Pacman").
+
+If you cannot [install](/index.php/Install "Install") it normally, you can copy your terminfo to your home directory on the server:
 
 ```
 $ ssh myserver mkdir -p  ~/.terminfo/${TERM:0:1}
-$ scp /usr/share/terminfo/*/$TERM myserver:~/.terminfo/*/
+$ scp /usr/share/terminfo/${TERM:0:1}/$TERM myserver:~/.terminfo/${TERM:0:1}/
 
 ```
 

@@ -32,7 +32,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **[Aquaria](https://en.wikipedia.org/wiki/Aquaria_(video_game) "wikipedia:Aquaria (video game)")** — 2D sidescrolling action-adventure game, heavily focused on exploration and puzzle-solving, with non-linear gameplay. The game engine is open source.
 
-	[http://www.bit-blot.com/aquaria](http://www.bit-blot.com/aquaria) || [aquaria-git](https://aur.archlinux.org/packages/aquaria-git/)
+	[http://www.bit-blot.com/aquaria](http://www.bit-blot.com/aquaria) || [aquaria-ose](https://aur.archlinux.org/packages/aquaria-ose/), [aquaria-hib](https://aur.archlinux.org/packages/aquaria-hib/)
 
 *   **Astromenace** — Modern 3D scrolling space shooter with ship upgrade possibilities.
 
@@ -190,7 +190,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **Ultrastar-ng** — Clone of SingStar, a music video game.
 
-	[http://performous.org/](http://performous.org/) || [ultrastardx-svn](https://aur.archlinux.org/packages/ultrastardx-svn/)
+	[http://performous.org/](http://performous.org/) || [ultrastardx-git](https://aur.archlinux.org/packages/ultrastardx-git/)
 
 *   **[Warmux](https://en.wikipedia.org/wiki/Warmux "wikipedia:Warmux") (previously *Wormux*)** — Somewhat similar to Worms 2/Worms Armageddon
 
@@ -504,7 +504,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Tales of Maj'Eyal](https://en.wikipedia.org/wiki/Tales_of_Maj%27Eyal "wikipedia:Tales of Maj'Eyal") (previously *Troubles of Middle Earth*)** — A dungeon crawler similar to Angband, based on the works of Tolkien.
 
-	[http://te4.org/](http://te4.org/) || [tome2](https://aur.archlinux.org/packages/tome2/) [tome3](https://aur.archlinux.org/packages/tome3/) [tome4](https://aur.archlinux.org/packages/tome4/)
+	[http://te4.org/](http://te4.org/) || [tome2](https://aur.archlinux.org/packages/tome2/), [tome4](https://aur.archlinux.org/packages/tome4/)
 
 *   **wanderer** — Wanderer is a game similar to Boulderdash, Repton, XOR and others.
 
@@ -578,7 +578,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://sauerbraten.org/](http://sauerbraten.org/) || [sauerbraten](https://www.archlinux.org/packages/?name=sauerbraten)
 
-*   Doom: the famous shooter from ID Software has several ports for Linux. None of the id-engine games have copyleft game resources, only the game engine code was open sourced. See [[1]](http://doom.wikia.com/wiki/Source_port) for details.
+*   [Doom](https://en.wikipedia.org/wiki/Doom_(1993_video_game) "wikipedia:Doom (1993 video game)"): the famous shooter from ID Software has several ports for Linux. None of the id-engine games have copyleft game resources, only the game engine code was open sourced. See [[1]](http://doom.wikia.com/wiki/Source_port) for details.
 
 *   Doom 1 Demo data – [doom1-wad](https://aur.archlinux.org/packages/doom1-wad/)
 *   **Freedoom** — Project aimed at creation of free Doom data files.
@@ -617,6 +617,8 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.zdoom.org/](http://www.zdoom.org/) || [zdoom](https://aur.archlinux.org/packages/zdoom/)
 
+*   [Doom 3](https://en.wikipedia.org/wiki/Doom_3 "wikipedia:Doom 3")
+
 *   **Doom 3** — Stock Doom 3 binaries
 
 	[http://www.idsoftware.com](http://www.idsoftware.com) || [doom3-bin](https://aur.archlinux.org/packages/doom3-bin/)
@@ -637,7 +639,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://ezquake.sourceforge.net/](http://ezquake.sourceforge.net/) || [ezquake](https://aur.archlinux.org/packages/ezquake/)
 
-*   Duke Nukem 3D
+*   [Duke Nukem 3D](https://en.wikipedia.org/wiki/Duke_Nukem_3D "wikipedia:Duke Nukem 3D")
 
 *   **Duke 3D** — Original port.
 
@@ -682,11 +684,13 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.3drealms.com/prey/index.html](http://www.3drealms.com/prey/index.html) || [prey](https://aur.archlinux.org/packages/prey/)
 
-*   Quake
+*   [Quake](https://en.wikipedia.org/wiki/Quake_(video_game) "wikipedia:Quake (video game)")
 
 *   Advanced Quake 1 game engine – [darkplaces](https://aur.archlinux.org/packages/darkplaces/)
 *   Free content replacement project for Quake 1 – [oqplus-svn](https://aur.archlinux.org/packages/oqplus-svn/)
 *   High quality textures for Quake from the Quake Revitalization Project – [quake-qrp-textures](https://aur.archlinux.org/packages/quake-qrp-textures/)
+
+*   [Quake II](https://en.wikipedia.org/wiki/Quake_II "wikipedia:Quake II")
 
 *   **Quake 2** — Built by Icculus
 
@@ -697,14 +701,14 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   A true color retexture pak for Quetoo and other Quake2 engines supporting 32bpp tga textures – [quake2-retexture](https://aur.archlinux.org/packages/quake2-retexture/)
 *   Quake 2 engine focused on single player and 64bits. [yamagi-quake2](https://aur.archlinux.org/packages/yamagi-quake2/)
 
-*   Quake III Arena
+*   [Quake III Arena](https://en.wikipedia.org/wiki/Quake_III_Arena "wikipedia:Quake III Arena")
 
 *   Quake III Arena binaries – [quake3](https://aur.archlinux.org/packages/quake3/)
 *   **ioquake3** — De-facto FOSS Quake 3 distribution.
 
 	[http://ioquake3.org/](http://ioquake3.org/) || [ioquake3](https://aur.archlinux.org/packages/ioquake3/)
 
-*   Quake 4
+*   [Quake 4](https://en.wikipedia.org/wiki/Quake_4 "wikipedia:Quake 4")
 
 *   Demo version – [quake4-demo](https://aur.archlinux.org/packages/quake4-demo/)
 *   Quake 4 engine – [quake4](https://aur.archlinux.org/packages/quake4/)

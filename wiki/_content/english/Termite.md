@@ -77,7 +77,7 @@ If opening a new tab through `Ctrl+Shift+t` fails with `no directory uri set`, [
 
 ### URL hints mode removes text
 
-This happens with `GTK_IM_MODULE=xim`. [[2]](https://github.com/thestinger/termite/issues/320) As a workaround, use a different input method such as `uim`.
+This happens with `GTK_IM_MODULE=xim`. [[2]](https://github.com/thestinger/termite/issues/320) As a workaround, use a different input method such as [uim](/index.php/Input_Japanese_using_uim#Settings "Input Japanese using uim").
 
 ## See also
 

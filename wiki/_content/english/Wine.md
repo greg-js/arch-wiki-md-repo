@@ -139,7 +139,7 @@ By default sound issues may arise when running Wine applications. Ensure only on
 *   If you want to use the [PulseAudio](/index.php/PulseAudio "PulseAudio") driver in Wine, you will need to install the [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) package.
 *   If you want to use the [OSS](/index.php/OSS "OSS") driver in Wine, you will need to install the [lib32-alsa-oss](https://www.archlinux.org/packages/?name=lib32-alsa-oss) package. The OSS driver in the kernel will not suffice.
 
-If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)), [configure it via the registry](http://wine-wiki.org/index.php/Wine_Registry#Configuring_Sound). Also, if you are using a 64-bit Arch, it may help to [recreate the prefix](/index.php/Wine#WINEARCH "Wine")
+If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)), [configure it via the registry](http://wine-wiki.org/index.php/Wine_Registry#Configuring_Sound). Also, if you are using a 64-bit Arch, it may help to [recreate the prefix](#WINEARCH)
 
 Games that use advanced sound systems may require installations of [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal).
 

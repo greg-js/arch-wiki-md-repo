@@ -30,7 +30,7 @@ Other styles in /usr/share/abiword-3.0/templates/ can be modified as well.
 
 ## Grammar Checking
 
-Install the [abiword-plugins](https://www.archlinux.org/packages/?name=abiword-plugins) package and enable grammar checking from *Edit>Preferences>Spell Checking>Automatic grammar checking*.
+Enable grammar checking from *Edit>Preferences>Spell Checking>Automatic grammar checking*.
 
 ## Change keybindings
 
@@ -40,7 +40,7 @@ If such method does not work, add `KeyBindings="viEdit"` to `/usr/share/abiword-
 
 ## LaTeX fonts
 
-The package [abiword-plugins](https://www.archlinux.org/packages/?name=abiword-plugins) comes with a function which allows user to insert LaTeX codes in a document. To display mathematics symbols properly, one needs to download [latex-xft-fonts](http://movementarian.org/latex-xft-fonts-0.1.tar.gz) and save it to the directory `/usr/share/fonts`. To install the font, extract the tarball and then run the following:
+The package [abiword](https://www.archlinux.org/packages/?name=abiword) comes with a function which allows user to insert LaTeX codes in a document. To display mathematics symbols properly, one needs to download [latex-xft-fonts](http://movementarian.org/latex-xft-fonts-0.1.tar.gz) and save it to the directory `/usr/share/fonts`. To install the font, extract the tarball and then run the following:
 
 ```
 # fc-cache -fv

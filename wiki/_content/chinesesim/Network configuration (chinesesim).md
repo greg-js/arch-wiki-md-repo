@@ -35,6 +35,7 @@
     *   [6.5 共享网络连接](#.E5.85.B1.E4.BA.AB.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5)
     *   [6.6 路由配置](#.E8.B7.AF.E7.94.B1.E9.85.8D.E7.BD.AE)
     *   [6.7 局域网主机的名称解析](#.E5.B1.80.E5.9F.9F.E7.BD.91.E4.B8.BB.E6.9C.BA.E7.9A.84.E5.90.8D.E7.A7.B0.E8.A7.A3.E6.9E.90)
+    *   [6.8 全接收模式](#.E5.85.A8.E6.8E.A5.E6.94.B6.E6.A8.A1.E5.BC.8F)
 *   [7 疑难排解](#.E7.96.91.E9.9A.BE.E6.8E.92.E8.A7.A3)
     *   [7.1 更换了连接cable modem的计算机](#.E6.9B.B4.E6.8D.A2.E4.BA.86.E8.BF.9E.E6.8E.A5cable_modem.E7.9A.84.E8.AE.A1.E7.AE.97.E6.9C.BA)
     *   [7.2 TCP窗口扩缩（window scaling）故障](#TCP.E7.AA.97.E5.8F.A3.E6.89.A9.E7.BC.A9.EF.BC.88window_scaling.EF.BC.89.E6.95.85.E9.9A.9C)
@@ -44,19 +45,16 @@
         *   [7.2.4 如何修复（最佳的方法）](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.EF.BC.88.E6.9C.80.E4.BD.B3.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.89)
         *   [7.2.5 更多](#.E6.9B.B4.E5.A4.9A)
     *   [7.3 Realtek 没有连接/网络唤醒故障](#Realtek_.E6.B2.A1.E6.9C.89.E8.BF.9E.E6.8E.A5.2F.E7.BD.91.E7.BB.9C.E5.94.A4.E9.86.92.E6.95.85.E9.9A.9C)
-        *   [7.3.1 方法一 还原/变更Win驱动](#.E6.96.B9.E6.B3.95.E4.B8.80_.E8.BF.98.E5.8E.9F.2F.E5.8F.98.E6.9B.B4Win.E9.A9.B1.E5.8A.A8)
-        *   [7.3.2 方法二 启动Windows驱动里的网络唤醒功能](#.E6.96.B9.E6.B3.95.E4.BA.8C_.E5.90.AF.E5.8A.A8Windows.E9.A9.B1.E5.8A.A8.E9.87.8C.E7.9A.84.E7.BD.91.E7.BB.9C.E5.94.A4.E9.86.92.E5.8A.9F.E8.83.BD)
-        *   [7.3.3 方法三 更新Realtek Linux驱动](#.E6.96.B9.E6.B3.95.E4.B8.89_.E6.9B.B4.E6.96.B0Realtek_Linux.E9.A9.B1.E5.8A.A8)
-        *   [7.3.4 方法四 在 BIOS/CMOS 中启用 *LAN Boot ROM*](#.E6.96.B9.E6.B3.95.E5.9B.9B_.E5.9C.A8_BIOS.2FCMOS_.E4.B8.AD.E5.90.AF.E7.94.A8_LAN_Boot_ROM)
-    *   [7.4 DLink G604T/DLink G502T DNS 故障](#DLink_G604T.2FDLink_G502T_DNS_.E6.95.85.E9.9A.9C)
-        *   [7.4.1 如何诊断故障](#.E5.A6.82.E4.BD.95.E8.AF.8A.E6.96.AD.E6.95.85.E9.9A.9C_2)
-        *   [7.4.2 如何修复](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D)
-        *   [7.4.3 更多](#.E6.9B.B4.E5.A4.9A_2)
-    *   [7.5 检查 DHCP 问题先释放 IP 地址](#.E6.A3.80.E6.9F.A5_DHCP_.E9.97.AE.E9.A2.98.E5.85.88.E9.87.8A.E6.94.BE_IP_.E5.9C.B0.E5.9D.80)
-    *   [7.6 Atheros AR8161 没有 eth0](#Atheros_AR8161_.E6.B2.A1.E6.9C.89_eth0)
-    *   [7.7 Atheros AR9485 没有 eth0](#Atheros_AR9485_.E6.B2.A1.E6.9C.89_eth0)
-    *   [7.8 待机后未接线缆 / 无连接](#.E5.BE.85.E6.9C.BA.E5.90.8E.E6.9C.AA.E6.8E.A5.E7.BA.BF.E7.BC.86_.2F_.E6.97.A0.E8.BF.9E.E6.8E.A5)
-    *   [7.9 Broadcom BCM57780](#Broadcom_BCM57780)
+        *   [7.3.1 在 Linux 中启用网卡](#.E5.9C.A8_Linux_.E4.B8.AD.E5.90.AF.E7.94.A8.E7.BD.91.E5.8D.A1)
+        *   [7.3.2 方法一 还原/变更Win驱动](#.E6.96.B9.E6.B3.95.E4.B8.80_.E8.BF.98.E5.8E.9F.2F.E5.8F.98.E6.9B.B4Win.E9.A9.B1.E5.8A.A8)
+        *   [7.3.3 方法二 启动Windows驱动里的网络唤醒功能](#.E6.96.B9.E6.B3.95.E4.BA.8C_.E5.90.AF.E5.8A.A8Windows.E9.A9.B1.E5.8A.A8.E9.87.8C.E7.9A.84.E7.BD.91.E7.BB.9C.E5.94.A4.E9.86.92.E5.8A.9F.E8.83.BD)
+        *   [7.3.4 方法三 更新Realtek Linux驱动](#.E6.96.B9.E6.B3.95.E4.B8.89_.E6.9B.B4.E6.96.B0Realtek_Linux.E9.A9.B1.E5.8A.A8)
+        *   [7.3.5 方法四 在 BIOS/CMOS 中启用 *LAN Boot ROM*](#.E6.96.B9.E6.B3.95.E5.9B.9B_.E5.9C.A8_BIOS.2FCMOS_.E4.B8.AD.E5.90.AF.E7.94.A8_LAN_Boot_ROM)
+    *   [7.4 检查 DHCP 问题先释放 IP 地址](#.E6.A3.80.E6.9F.A5_DHCP_.E9.97.AE.E9.A2.98.E5.85.88.E9.87.8A.E6.94.BE_IP_.E5.9C.B0.E5.9D.80)
+    *   [7.5 Atheros 芯片组找不到网卡](#Atheros_.E8.8A.AF.E7.89.87.E7.BB.84.E6.89.BE.E4.B8.8D.E5.88.B0.E7.BD.91.E5.8D.A1)
+    *   [7.6 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [7.7 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
+    *   [7.8 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
 
 ## 检查连接
 
@@ -440,6 +438,28 @@ $ getent hosts
 
 *   [Avahi](/index.php/Avahi "Avahi") 通过 **zeroconf**，提供主机名称解析, 它也被称称作 Avahi 或者 Bonjour。这需要比 Samba 再稍微复杂一点的配置：详细信息参见 [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi")。运行 OS X 的电脑，或者运行着 Avahi 守护进程的 Linux，将能找到你的机器。Windows 没有内置的 Avahi 客户端或者守护进程。
 
+### 全接收模式
+
+切换网卡到 [全接收模式](https://en.wikipedia.org/wiki/Promiscuous_mode "wikipedia:Promiscuous mode") 可以让网卡接收所有数据然后转交给操作系统处理。而正常模式下，网卡会丢掉不是不发给自己的数据。通常用来检查网络问题或进行 [数据包嗅探](https://en.wikipedia.org/wiki/Packet_sniffing "wikipedia:Packet sniffing").
+
+ `/etc/systemd/system/promiscuous@.service` 
+```
+[Unit]
+Description=Set %i interface in promiscuous mode
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ip link set dev %i promisc on
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+如果要在 `eth0` 上启用全接收模式，只需要 [启用](/index.php/Enable "Enable") `promiscuous@eth0.service`.
+
 ## 疑难排解
 
 ### 更换了连接cable modem的计算机
@@ -483,7 +503,7 @@ Linux内核2.6.17引入了新的计算方式生成更高的缩放因子，间接
 
 #### 如何修复（好点的方法）
 
-只需要禁止窗口缩放。虽然窗口缩放是个不错的TCP特性，但它也可能令人不安，特别是当你没法修改除了问题的路由器的时候。有几种方法可以禁止窗口缩放，而看来最可靠的（适用于大部分内核）将下面一行加入到你的`/etc/sysctl.d/99-sysctl.conf`中 （见 [sysctl](/index.php/Sysctl "Sysctl")）
+只需要禁止窗口缩放。虽然窗口缩放是个不错的TCP特性，但它也可能令人不安，特别是当你没法修改除了问题的路由器的时候。有几种方法可以禁止窗口缩放，而看来最可靠的（适用于大部分内核）将下面一行加入到你的`/etc/sysctl.d/99-disable_window_scaling.conf` 中 （见 [sysctl](/index.php/Sysctl "Sysctl")）
 
 ```
 net.ipv4.tcp_window_scaling = 0
@@ -503,6 +523,10 @@ net.ipv4.tcp_window_scaling = 0
 ### Realtek 没有连接/网络唤醒故障
 
 使用基于Realtek 8168 8169 8101 8111芯片网卡（独立网卡和板载）的用户也许会发现这个故障，启动时网卡不可用，网卡上的连接指示灯不亮。这通常会发生在安装了Windows的双启动系统上。在windows下使用realtek官方驱动（2007年5月后的版本）会引发故障。新驱动通过在Windows关机时禁止网卡来关闭网络唤醒功能，直到下一次Windows启动前网卡都会一直不可用。通过观察连接指示灯在Windows启动前一直熄灭，而Windows关机时也会熄灭，你可以发现它。正常操作应该是只要系统一直开着，即使在POST加电过程中，连接指示灯也应该一直亮着的。这个故障也会影响其它没有安装新驱动的操作系统（例如Live CD等）。这里给出几种解决方案：
+
+#### 在 Linux 中启用网卡
+
+参考上面的启用和禁用网络接口段落。
 
 #### 方法一 还原/变更Win驱动
 
@@ -530,82 +554,6 @@ net.ipv4.tcp_window_scaling = 0
 
 **注意:** 这个方法多次在 GIGABYTE GA-G31M-ES2L 主板，2009/02/05 发布的 BIOS 版本 F8 上测试成功。YMMV。
 
-### DLink G604T/DLink G502T DNS 故障
-
-使用 DLink G604T/DLink G502T 路由器和DHCP，并且固件是 v2.00+（通常是使用 AUS 固件）的用户可能会碰到的某些程序不同解析 DNS 的问题。不幸的是，pacman 就是这些程序其中之一。故障基本上是因为路由器在某些情况下不正确地发送 DNS 给 DHCP，导致程序尝试连接 IP 地址是 1.0.0.0 的服务器，然后因超时错误而失败。
-
-#### 如何诊断故障
-
-最好的诊断问题方法是使用 Firefox/Konqueror/links/seamonkey，并用 wget 作为 pacman 下载工具。如果问题发生在全新安装的 Arch Linux上，那么你可能要通过 live CD 来安装 `links`。
-
-首先，用 wget 作为 pacman下载工具，它可以提供 pacman 下载软件包时的信息。 使用你喜欢的编辑器打开 `/etc/pacman.conf` 并取消下面这行的注释（如果前面有#的话，就移除它）
-
-```
-XferCommand=/usr/bin/wget --passive-ftp -c -O %o %u
-
-```
-
-当你编辑 `/etc/pacman.conf` 时，检查 pacman 用来下载软件包的默认镜像。
-
-现在用网络浏览器打开默认镜像，检查镜像确实在工作。如果它很正常，那么运行 `pacman -Syy` （否则就选取另一个正常运行的镜像，并把它设置为 pacman 的默认镜像）。如果你看到类似于下面这样的信息（注意 1.0.0.0），
-
-```
-ftp://mirror.pacific.net.au/linux/archlinux/extra/os/i686/extra.db.tar.gz                                                            
-            => '/var/lib/pacman/community.db.tar.gz.part'
-Resolving mirror.pacific.net.au... 1.0.0.0
-
-```
-
-那么你很有可能有这个问题。 1.0.0.0 表示不能解析 DNS，因此我们必须把它添加到 `/etc/resolv.conf` 中。
-
-#### 如何修复
-
-基本上我们需要做的就是手动地在 `/etc/resolv.conf` 文件中添加 DNS 服务器。问题是 DHCP 会在启动时自动地删除和替换这个文件，所以我们需要编辑 `/etc/conf.d/dhcpcd` 并修改标志，阻止 DHCP 这么做。
-
-当你打开 `/etc/conf.d/dhcpcd`，你应该看见类似下面的内容：
-
-```
-DHCPCD_ARGS="-t 30 -h $HOSTNAME"
-
-```
-
-在参数中添加 -R 参数，即，
-
-```
-DHCPCD_ARGS="-R -t 30 -h $HOSTNAME"
-
-```
-
-**注意:** 如果你使用的 [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) >= 4.0.2，标志 `-R` 已被弃用。请参考 [Dhcpcd](/index.php/Dhcpcd "Dhcpcd") 中关于怎样使用自定义的 `/etc/resolv.conf` 文件的信息。
-
-保存并关闭文件；现在打开 `/etc/resolv.conf`。你应该看到一行 nameserver（最有可能是 10.1.1.1）。这是你的路由器的网关，我们需要连接它来获取你的 ISP 的 DNS 服务器。在你的浏览器地址栏中粘贴这个IP地址，并登录你的路由器。转到 DNS 部分，然后你将在 Primary DNS Server 一栏中看到一个 IP 地址；复制并粘贴它，作为一行 nameserver 放在现有网关那行的 **上面**。
-
-例如，`/etc/resolv.conf` 应该看上去是像这样的
-
-```
-nameserver 10.1.1.1
-
-```
-
-如果我的主 DNS 服务器是 211.29.132.12，那么修改 `/etc/resolv.conf` 为
-
-```
-nameserver 211.29.132.12
-nameserver 10.1.1.1
-
-```
-
-现在执行`systemctl restart dhcpcd@<interface>`重启 network 守护进程并执行 `pacman -Syy`。如果它与服务器正常地同步了，那么问题就解决了。
-
-#### 更多
-
-这是 whirlpool 论坛（Australian ISP community）中对这个问题的讨论并给出了相同的解决办法。
-
-```
-[http://forums.whirlpool.net.au/forum-replies-archive.cfm/461625.html](http://forums.whirlpool.net.au/forum-replies-archive.cfm/461625.html)
-
-```
-
 ### 检查 DHCP 问题先释放 IP 地址
 
 当 DHCP 获得了错误的 IP 分配就可能产生这个问题。举例来说，当两个路由器通过VPN相连，通过VPN与我相连的路由器可能分配IP地址。要修复这个问题，在终端中以 root 权限释放 IP 地址：
@@ -624,77 +572,9 @@ nameserver 10.1.1.1
 
 可能你必须运行这两个命令好几次。
 
-### Atheros AR8161 没有 eth0
+### Atheros 芯片组找不到网卡
 
-对于 Atheros AR8161 Gigabit 以太网卡，以太网连接不能立即使用（2013年3月的安装介质）。它需要加载模块 "alx"，但其并不存在。
-
-你需要安装 [compat-drives](https://backports.wiki.kernel.org/index.php/Releases) 中的驱动。后缀 "-u" 说明 Qualcomm 可以使用通用的 Driver 模块。
-
-```
-$ wget [https://www.kernel.org/pub/linux/kernel/projects/backports/2013/03/28/compat-drivers-2013-03-28-5-u.tar.bz2](https://www.kernel.org/pub/linux/kernel/projects/backports/2013/03/28/compat-drivers-2013-03-28-5-u.tar.bz2)
-$ tar xjf compat*
-$ cd compat*
-$ ./scripts/driver-select alx
-$ make
-$ sudo make install
-$ sudo modprobe alx
-
-```
-
-alx 驱动由于各种问题且不同内核版本之间的兼容性不佳而没有被加入 Linux 内核。要获得更好的支持，访问 [邮件列表](http://lists.infradead.org/mailman/listinfo/unified-drivers) 和 [alx 页面](http://www.linuxfoundation.org/collaborate/workgroups/networking/alx) 获得最新的 alx 可行方案。
-
-每次内核发生变化时，这个驱动都必须重新编译和安装。
-
-另外，你可以使用 [compat 驱动](https://aur.archlinux.org/packages/compat-drivers-patched/)的 AUR 软件包，它还会安装许多其它驱动。
-
-### Atheros AR9485 没有 eth0
-
-**注意:** 3.10.2-1-ARCH 内核更新的软件包中包括了 alx 以太网驱动模块。
-
-Atheros AR9485 的以太网连接（eth0）不能立即使用（2013年3月的安装介质）。一个可行的解决方法是从 AUR 中安装 [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) 软件包。
-
-### 待机后未接线缆 / 无连接
-
-待机以后，接入网络电缆后仍找不到连接。这可能是由于 PCI 电源管理引起的。以下命令的输出
-
-```
-# ip link show eth0
-
-```
-
-如果网线接入 eth0 端口之后这一行仍含有，那么可能 the device was auto-suspended and the media sense feature doesn't work。要解决这个问题，首先你需要找到网卡控制器的 PCI 地址，通过
-
-```
-# lspci
-
-```
-
-结果应该类似于这样：
-
-```
-...
-00:19.0 Ethernet controller: Intel Corporation 82577LM Gigabit Network Connection (rev 06)
-...
-
-```
-
-所以这里的地址是 00:19.0。 现在这样检查设备的电源状态：
-
-```
-# cat "/sys/bus/pci/devices/0000:00:19.0/power/control"
-
-```
-
-使用从 lspci 中获得的地址替换 00:19.0。 如果输出结果为 "auto"，你可以尝试让设备不再待机，输入
-
-```
-# echo on > "/sys/bus/pci/devices/0000:00:19.0/power/control"
-
-```
-
-不要忘记再一次替换地址。
-
-**注意:** 这是内核 3.8.4.1 的缺陷：[论坛讨论](https://bbs.archlinux.org/viewtopic.php?id=159837&p=2)。在 3.9 中应该会 [修复](https://lkml.org/lkml/2013/1/18/147)。在更新内核前，可以使用上述方法。
+有些用户的 Atheros 芯片无法正常工作 (至少在 2014.2 月的安装中). 可以通过安装 [backports-patched](https://aur.archlinux.org/packages/backports-patched/) 解决。
 
 ### Broadcom BCM57780
 
@@ -731,4 +611,29 @@ MODULES=".. broadcom tg3 .."
 
 ```
 
+*   还有一种方法是创建 `/etc/modprobe.d/broadcom.conf`:
+
+```
+ softdep tg3 pre: broadcom
+
+```
+
 **注意:** 这些方法可能也适用于其它芯片，例如 BCM57760。
+
+### Realtek RTL8111/8168B
+
+ `# lspci | grep Ethernet` 
+```
+03:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168B PCI Express Gigabit Ethernet controller (rev 02)
+
+```
+
+The adapter should be recognized by the `r8169` module. However, with some chip revisions the connection may go off and on all the time. The alternative [r8168](https://www.archlinux.org/packages/?name=r8168) can be found in the [official repositories](/index.php/Official_repositories "Official repositories") and should be used for a reliable connection in this case. [Blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") `r8169`, if [r8168](https://www.archlinux.org/packages/?name=r8168) is not automatically loaded by [udev](/index.php/Udev "Udev") add it to your list of user specified [modules](/index.php/Kernel_modules#Loading "Kernel modules").
+
+Another fault in the drivers for some revisions of this adapter is poor IPv6 support. [IPv6#Disable functionality](/index.php/IPv6#Disable_functionality "IPv6") can be helpful if you encounter issues such as hanging webpages and slow speeds.
+
+### Gigabyte Motherboard with Realtek 8111/8168/8411
+
+With motherboards such as the Gigabyte GA-990FXA-UD3, booting with IOMMU off (which can be the default) will cause the network interface to be unreliable, often failing to connect or connecting but allowing no throughput. This will apply not only to the onboard NIC, but any other pci-NIC you put in the box because the IOMMU setting affects the entire network interface on the board. Enabling IOMMU and booting with the install media will throw AMD I-10/xhci page faults for a second, but then boot normally, resulting in a fully functional onboard NIC (even with the r8169 module).
+
+When configuring the boot process for your installation, add `iommu=soft` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to eliminate the error messages on boot and restore USB3.0 functionality.

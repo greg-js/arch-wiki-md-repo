@@ -37,7 +37,7 @@ Extract that archive to /usr:
 
 Ensure /usr/share/edk2.git/ovmf-x64 contains these files:
 
- `$ ls /usr/share/edk2.git/ovmf-x64/*pure*.fd` 
+ `$ ls -l /usr/share/edk2.git/ovmf-x64/*pure*.fd` 
 ```
 /usr/share/edk2.git/ovmf-x64/OVMF-pure-efi.fd
 /usr/share/edk2.git/ovmf-x64/OVMF_VARS-pure-efi.fd

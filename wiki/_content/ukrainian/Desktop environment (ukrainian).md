@@ -172,7 +172,7 @@ Enlightenment має дві версії:
 
 ```
 
-Здається E16 лише віконний менеджер, а не ціле Оточення робочого столу; Дивись [Window Manager](/index.php/Window_Manager_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Window Manager (Українська)") для деталей.
+Здається E16 лише віконний менеджер, а не ціле Оточення робочого столу; Дивись [Window Manager](/index.php/Window_manager_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Window manager (Українська)") для деталей.
 
 #### Enlightenment розробницький випуск 17
 
@@ -234,4 +234,4 @@ Enlightenment DR17 має групи пакетів подібно до KDE, GNO
 
 ## Зовнішні ресурси
 
-*   [Вікіпедія:Оточення робочого столу](http://uk.wikipedia.org/wiki/Робоче_середовище)
+*   [Вікіпедія:Оточення робочого столу](https://uk.wikipedia.org/wiki/Робоче_середовище)

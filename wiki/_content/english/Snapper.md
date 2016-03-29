@@ -38,7 +38,7 @@ Additionally, a GUI is available with [snapper-gui-git](https://aur.archlinux.or
 
 ## Create a new configuration
 
-Before creating a snapper configuration for a btrfs subvolume, the subvolume must already exist. If it does not, you should [create](/index.php/Btrfs#Creating_sub-volumes "Btrfs") it before generating a snapper configuration.
+Before creating a snapper configuration for a btrfs subvolume, the subvolume must already exist. If it does not, you should [create](/index.php/Btrfs#Creating_a_subvolume "Btrfs") it before generating a snapper configuration.
 
 To create a new snapper configuration named `*config*` for the btrfs subvolume at `*/path/to/subvolume*` do:
 
@@ -116,7 +116,7 @@ OnUnitActiveSec=1h
 
 ```
 
-See [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") and [Systemd#Drop-in_snippets](/index.php/Systemd#Drop-in_snippets "Systemd").
+See [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") and [Systemd#Drop-in snippets](/index.php/Systemd#Drop-in_snippets "Systemd").
 
 ### Manual snapshots
 

@@ -78,9 +78,9 @@ La idea de crear un equipo tiene como objetivo fundamental implementar, mediante
 ### Unirse al equipo
 
 *   En este espacio cada usuario que lo desee puede incluir o quitar su propio nombre de usuario.
-*   Siéntase libre de participar o no en el grupo de traducción cuya inclusión, por otro lado, no implica la sujeción a ningún tipo de disciplina, es tan solo un intento de coordinar y optimizar el esfuerzo colectivo de los interesados para prestar un mejor servicio a la comunidad.
-*   La participación en el grupo de traductores implica eso sí, al menos, el compromiso de realizar alguna tarea de mantenimiento, como etiquetar el estado de las traducciones, redirigir páginas..., o, más concretamente, mantener lo más al día posible uno o varios artículos de los elegidos para su seguimiento.
-*   Por motivos de organización, si un miembro del grupo no da muestras de actividad durante un periodo de seis meses ininterrumpidos se le pasará a la lista de miembros inactivos a la espera de que pueda reintegrarse.
+*   Siéntase libre de participar o no en el grupo de traducción, cuya inclusión, por otro lado, no implica la sujeción a ningún tipo de disciplina, es tan solo un intento de coordinar y optimizar el esfuerzo colectivo de los interesados para prestar un mejor servicio a la comunidad.
+*   La participación en el grupo de traductores implica, eso sí, al menos, el compromiso de realizar alguna tarea de mantenimiento, como etiquetar el estado de las traducciones, redirigir páginas..., o, más concretamente, mantener lo más al día posible uno o varios artículos de los elegidos para su seguimiento.
+*   Por motivos de organización, si un miembro del grupo no da muestras de actividad (en tareas de traducción al español) durante un período de seis meses ininterrumpidos, se le pasará a la lista de miembros inactivos, a la espera de que pueda reintegrarse más adelante.
 
 ### Activos
 

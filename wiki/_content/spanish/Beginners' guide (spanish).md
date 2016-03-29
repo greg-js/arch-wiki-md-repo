@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"). Fecha de la última traducción/revisión: **2016-01-14**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&diff=0&oldid=415063).
+**Estado de la traducción:** este artículo es una versión traducida de [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"). Fecha de la última traducción/revisión: **2016-03-27**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&diff=0&oldid=428160).
 
 Este documento le guiará a través del proceso de instalación de [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") usando los [Scripts de Instalación de Arch](https://github.com/falconindy/arch-install-scripts). Antes de proceder a la instalación, es recomendable la lectura del artículo sobre las preguntas más frecuentes ([FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)")).
 
@@ -38,6 +38,7 @@ La [wiki de Arch](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)"), m
         *   [5.7.1 Nombre del equipo](#Nombre_del_equipo)
         *   [5.7.2 Red cableada](#Red_cableada)
         *   [5.7.3 Red inalámbrica](#Red_inal.C3.A1mbrica)
+    *   [5.8 Contraseña de root](#Contrase.C3.B1a_de_root)
 *   [6 Desmontar las particiones y reiniciar](#Desmontar_las_particiones_y_reiniciar)
 *   [7 Posinstalación](#Posinstalaci.C3.B3n)
 
@@ -174,7 +175,7 @@ sda               8:0    0    80G  0 disk
 
 La convención `sd*xY*` será utilizada en los ejemplos que figuran a continuación para las tablas de particionado, particiones y sistemas de archivos. Como son solo ejemplos, es importante que se asegure de realizar los cambios necesarios en los nombres de sus dispositivos, números y/o tamaño de sus particiones, etc. Es decir, no copie y pegue sin más las órdenes de abajo.
 
-Si el esquema de particionado existente no necesita ser cambiado, vaya a [#Sistemas de archivos y swap](#Sistemas_de_archivos_y_swap), de lo contrario continúe leyendo la siguiente sección.
+Si el esquema de particionado existente no necesita ser cambiado, vaya a [#Formatear con un sistemas de archivos y activar swap](#Formatear_con_un_sistemas_de_archivos_y_activar_swap), de lo contrario continúe leyendo la siguiente sección.
 
 ### Tipos de tablas de particiones
 
@@ -182,8 +183,8 @@ Si va a instalar Arch junto a otra instalación ya presente (es decir, hablamos 
 
 Hay dos tipos de tabla de particiones:
 
-*   [MBR](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")
 *   [GPT](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")
+*   [MBR](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")
 
 Cualquier tabla de particionado existente puede identificarse con la siguiente orden invocada respecto a cada dispositivo:
 
@@ -198,8 +199,8 @@ Cualquier tabla de particionado existente puede identificarse con la siguiente o
 
 Para cada dispositivo que va a particionar, debe elegir una herramienta apropiada de acuerdo a la tabla de particiones que se piensa usar. Existen distintas herramientas de particionado que se proporcionan por el soporte de instalación de Arch, que son:
 
-*   [parted](/index.php/Parted "Parted"): para MBR y GPT
-*   [fdisk](/index.php/Partitioning_(Espa%C3%B1ol)#Resumen_del_uso_de_fdisk "Partitioning (Español)"), **cfdisk**, **sfdisk**: para MBR y GPT
+*   [parted](/index.php/Parted "Parted"): para GPT y MBR
+*   [fdisk](/index.php/Partitioning_(Espa%C3%B1ol)#Resumen_del_uso_de_fdisk "Partitioning (Español)"), **cfdisk**, **sfdisk**: para GPT y MBR
 *   [gdisk](/index.php/Partitioning_(Espa%C3%B1ol)#Resumen_del_uso_de_gdisk "Partitioning (Español)"), **cgdisk**, **sgdisk**: para GPT
 
 Los dispositivos también puede ser particionados antes de arrancar el soporte de instalación, por ejemplo, utilizando herramientas como [GParted](/index.php/GParted "GParted") (que además se ofrece como un [CD live](http://gparted.sourceforge.net/livecd.php)).
@@ -244,17 +245,17 @@ Abra cada dispositivo cuya tabla de particiones desea (re)crear con:
 
 ```
 
-Para crear, una vez iniciada sesión con *parted*, una nueva tabla de particiones MBR/msdos para sistemas BIOS, utilice la siguiente orden:
-
-```
-(parted) mklabel msdos
-
-```
-
-Para crear una nueva tabla de particiones GPT para sistemas UEFI en su lugar, utilice:
+Para crear, una vez iniciada sesión con *parted*, una nueva tabla de particiones GPT para sistemas UEFI, utilice la siguiente orden:
 
 ```
 (parted) mklabel gpt
+
+```
+
+Para crear una nueva tabla de particiones MBR/msdos para sistemas BIOS en cambio, utilice:
+
+```
+(parted) mklabel msdos
 
 ```
 
@@ -315,7 +316,7 @@ En todos los casos, es necesario crear una partición especial llamada [EFI Syst
 Si crea una nueva EFI System Partition, utilice la orden siguiente (el tamaño recomendado es 512MiB):
 
 ```
-(parted) mkpart ESP fat32 1M 513M
+(parted) mkpart ESP fat32 1MiB 513MiB
 (parted) set 1 boot on
 
 ```
@@ -323,24 +324,24 @@ Si crea una nueva EFI System Partition, utilice la orden siguiente (el tamaño r
 El esquema de partición restante es de creación totalmente libre. Para crear otra partición utilizando el 100% del espacio restante, escriba:
 
 ```
-(parted) mkpart primary ext3 513M 100%
+(parted) mkpart primary ext4 513MiB 100%
 
 ```
 
 Para crear una partición `/` (20GiB) y otra `/home` (todo el espacio restante), escriba:
 
 ```
-(parted) mkpart primary ext3 513M 20.5G
-(parted) mkpart primary ext3 20.5G 100%
+(parted) mkpart primary ext4 513MiB 20.5GiB
+(parted) mkpart primary ext4 20.5GiB 100%
 
 ```
 
 Y, para crear una partición `/` (20GiB), otra swap (4Gib) y otra `/home` (todo el espacio restante), escriba:
 
 ```
-(parted) mkpart primary ext3 513M 20.5G
-(parted) mkpart primary linux-swap 20.5G 24.5G
-(parted) mkpart primary ext3 24.5G 100%
+(parted) mkpart primary ext4 513MiB 20.5GiB
+(parted) mkpart primary linux-swap 20.5GiB 24.5GiB
+(parted) mkpart primary ext4 24.5GiB 100%
 
 ```
 
@@ -349,7 +350,7 @@ Y, para crear una partición `/` (20GiB), otra swap (4Gib) y otra `/home` (todo 
 Para una única partición primaria, utilizando todo el espacio disponible, se utilizaría la siguiente orden:
 
 ```
-(parted) mkpart primary ext3 1M 100%
+(parted) mkpart primary ext4 1MiB 100%
 (parted) set 1 boot on
 
 ```
@@ -357,20 +358,20 @@ Para una única partición primaria, utilizando todo el espacio disponible, se u
 En el siguiente ejemplo, se creará una partición `/` de 20Gib, seguida por una partición `/home` para todo el espacio restante:
 
 ```
-(parted) mkpart primary ext3 1M 20G
+(parted) mkpart primary ext4 1MiB 20GiB
 (parted) set 1 boot on
-(parted) mkpart primary ext3 20G 100%
+(parted) mkpart primary ext4 20GiB 100%
 
 ```
 
 En el último ejemplo, se creará una partición separada `/boot` (100MiB), seguida de otra `/` (20Gib), otra swap (4GiB), y una última `/home` (para todo el espacio restante):
 
 ```
-(parted) mkpart primary ext3 1M 100M
+(parted) mkpart primary ext4 1MiB 100MiB
 (parted) set 1 boot on
-(parted) mkpart primary ext3 100M 20G
-(parted) mkpart primary linux-swap 20G 24G
-(parted) mkpart primary ext3 24G 100%
+(parted) mkpart primary ext4 100MiB 20GiB
+(parted) mkpart primary linux-swap 20GiB 24GiB
+(parted) mkpart primary ext4 24GiB 100%
 
 ```
 
@@ -429,6 +430,8 @@ Se recomienda también utilizar `/boot` para montar la partición EFI del sistem
 Los paquetes que se van a instalar deben descargarse desde los servidores de réplicas, los cuales se definen en el archivo `/etc/pacman.d/mirrorlist`. En el entorno live del sistema de instalación, todos los mirrors están activados y ordenados por su estado de sincronización y velocidad en el momento de creación de la imagen de instalación.
 
 Cuanto más arriba se coloca un servidor de réplica en la lista del archivo, más prioridad que se le da a la hora de descargar un paquete. Es posible que desee modificar el archivo mirrorlist en consecuencia y colocar el servidor de réplica preferido por encima de los demás, aunque debe tener en cuenta que existen otros criterios (además del de la proximidad geográfica). Vea [Mirrors](/index.php/Mirrors "Mirrors") para más detalles.
+
+*pacstrap* instalará también una copia de este archivo en el nuevo sistema, por lo que vale la pena tenerlo bien.
 
 ### Instalar los paquetes del grupo base
 
@@ -553,7 +556,7 @@ Instale el paquete [grub](https://www.archlinux.org/packages/?name=grub). Para h
 Instale el gestor de arranque en la *unidad* donde se haya instalado Arch:
 
 ```
-# grub-install --recheck */dev/sda*
+# grub-install --target=i386-pc */dev/sda*
 
 ```
 
@@ -606,14 +609,18 @@ Si ha utilizado *wifi-menu* previamente (dentro del entorno live), repita **post
 
 Vea [Netctl](/index.php/Netctl "Netctl") y [Wireless#Wireless management](/index.php/Wireless#Wireless_management "Wireless") para obtener más información.
 
+### Contraseña de root
+
+Defina la [contraseña](/index.php/Password "Password") de root con:
+
+```
+# passwd
+
+```
+
 ## Desmontar las particiones y reiniciar
 
-Salga del entorno chroot:
-
-```
-# exit
-
-```
+Salga del entorno chroot con la orden `exit` o tecleando `Ctrl+D`.
 
 Las particiones se desmontan automáticamente por *systemd* durante el apagado. No obstante, puede hacerlo de forma manual como medida de seguridad:
 
@@ -622,14 +629,14 @@ Las particiones se desmontan automáticamente por *systemd* durante el apagado. 
 
 ```
 
-Si la partición está «busy» (*ocupada*), puede encontrar la causa con [fuser](https://en.wikipedia.org/wiki/fuser_(Unix) "wikipedia:fuser (Unix)"). Reinicie el equipo:
+Si la partición está «busy» (*ocupada*), puede encontrar la causa con [fuser](/index.php/Fuser "Fuser"). Reinicie el equipo:
 
 ```
 # reboot
 
 ```
 
-Retire el soporte de instalación, o puede que arranque de nuevo desde el mismo. Puede acceder a su sistema recién instalado como *root*, utilizando la contraseña especificada con *passwd*.
+Retire el soporte de instalación, o puede que arranque de nuevo desde el mismo. Puede acceder a su sistema recién instalado, como *root*, utilizando la contraseña especificada con la orden *passwd*.
 
 ## Posinstalación
 

@@ -537,7 +537,7 @@ Kodi runs smoothly on both the Raspberry Pi (RPi) and the RPi 2\. Some helpful t
 
 #### Run kodi in a window manager
 
-If you run kodi in a [Window_manager](/index.php/Window_manager "Window manager") you may come across a black screen at exit, to fix you have to switch tty, a possible solution is to run kodi with this script (if you use [sudo](/index.php/Sudo "Sudo")):
+If you run kodi in a [Window manager](/index.php/Window_manager "Window manager") you may come across a black screen at exit, to fix you have to switch tty, a possible solution is to run kodi with this script (if you use [sudo](/index.php/Sudo "Sudo")):
 
  `~/bin/kodi.sh` 
 ```

@@ -12,7 +12,7 @@ The first generation of Chromebooks: Google Cr-48, Samsung Series 5 500 and Acer
 
 ## Hardware Comparisons
 
-**Warning:** The availability of SeaBIOS doesn't promise device compatibility for Linux or that the pre-installed SeaBIOS works properly. Before purchasing a device visit its page on the ArchWiki and look for Linux users' posts about that model.
+**Warning:** The availability of SeaBIOS does not promise device compatibility for Linux or that the pre-installed SeaBIOS works properly. Before purchasing a device visit its page on the ArchWiki and look for Linux users' posts about that model.
 
 <center>
 

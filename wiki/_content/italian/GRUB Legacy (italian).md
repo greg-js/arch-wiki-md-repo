@@ -62,7 +62,7 @@ La risposta breve è no. GRUB legacy non sarà rimosso dal sistema e continuerà
 
 D'altra parte però, come ogni pacchetto non più supportato dall'upstream, eventuali bug non verranno risolti. Per questo motivo è necessario prendere in considerazione l'idea di aggiornare GRUB alla versione 2.x, o un altro [Boot Loader](/index.php/Boot_Loader "Boot Loader") supportato.
 
-GRUB Legacy non supporta partizioni [GPT](/index.php/GUID_Partition_Table "GUID Partition Table"), il filesystem [Btrfs](/index.php/Btrfs "Btrfs") e il firmware [UEFI](/index.php?title=UEFI_(Italiano)&action=edit&redlink=1 "UEFI (Italiano) (page does not exist)").
+GRUB Legacy non supporta partizioni [GPT](/index.php/GPT "GPT"), il filesystem [Btrfs](/index.php/Btrfs "Btrfs") e il firmware [UEFI](/index.php?title=UEFI_(Italiano)&action=edit&redlink=1 "UEFI (Italiano) (page does not exist)").
 
 ### Come effettuare l'aggiornamento
 
@@ -451,7 +451,7 @@ kernel /boot/vmlinuz-linux root=/dev/disk/by-label/Arch_Linux ro
 
 #### Per UUID
 
-Gli [UUID](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming") (Universally Unique IDentifier) di una partizione possono essere scoperti con il comando `blkid` o `ls -l /dev/disk/by-uuid`. Possono essere definiti in `menu.lst` così:
+Gli [UUID](/index.php/UUID "UUID") (Universally Unique IDentifier) di una partizione possono essere scoperti con il comando `blkid` o `ls -l /dev/disk/by-uuid`. Possono essere definiti in `menu.lst` così:
 
 ```
 kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/<uuid number>
@@ -623,7 +623,7 @@ hiddenmenu
 
 ## Modalità debug avanzata
 
-L'intera sezione è in [Boot_Debugging (Italiano)](/index.php/Boot_Debugging_(Italiano) "Boot Debugging (Italiano)")
+L'intera sezione è in [Boot debugging (Italiano)](/index.php/Boot_debugging_(Italiano) "Boot debugging (Italiano)")
 
 ## Risoluzione dei problemi
 
@@ -662,7 +662,7 @@ grub> quit
 
 ```
 
-Consultare [[questa pagina](http://stringofthoughts.wordpress.com/2009/05/24/grub-error-17-debianubuntu)] per una sintesi più approfondita di questa sezione.
+Consultare [questa pagina](http://stringofthoughts.wordpress.com/2009/05/24/grub-error-17-debianubuntu) per una sintesi più approfondita di questa sezione.
 
 ### /boot/grub/stage1 not read correctly
 
@@ -688,7 +688,7 @@ Se si cambia l'Id di sistema di qualche partizione, bisognerebbe [v]erificare la
 
 Ora si può provare a installare grub di nuovo.
 
-[[Qui](https://bbs.archlinux.org/viewtopic.php?pid=799930)] c'è un post nel forum che riporta il problema.
+[Qui](https://bbs.archlinux.org/viewtopic.php?pid=799930) c'è un post nel forum che riporta il problema.
 
 ### Installazione accidentale in una partizione Windows
 
@@ -770,4 +770,4 @@ quit
 *   [GNU GRUB](http://www.gnu.org/software/grub/)
 *   [GRUB Grotto](http://www.troubleshooters.com/linux/grub/index.htm)
 *   [Guida agli errori di GRUB](http://linuxmx.it/guide-linux/14-generiche/222-analizziamo-gli-errori-di-grub.html)
-*   [Boot Debug](/index.php/Boot_Debugging_(Italiano) "Boot Debugging (Italiano)") - Debug con GRUB.
+*   [Boot Debug](/index.php/Boot_debugging_(Italiano) "Boot debugging (Italiano)") - Debug con GRUB.

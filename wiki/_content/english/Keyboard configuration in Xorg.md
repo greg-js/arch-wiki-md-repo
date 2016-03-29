@@ -89,11 +89,11 @@ The layout name is usually a [2-letter country code](https://en.wikipedia.org/wi
 *   `localectl list-x11-keymap-variants [*layout*]`
 *   `localectl list-x11-keymap-options`
 
-Examples in the following subsections will have the same effect, they will set `pc104` model, `cz` as primary layout, `us` as secondary layout, `dvorak` variant for `us` layout and the `Alt+Shift` combination for switching between layouts.
+Examples in the following subsections will have the same effect, they will set `pc104` model, `cz` as primary layout, `us` as secondary layout, `dvorak` variant for `us` layout and the `Alt+Shift` combination for switching between layouts. See `man xkeyboard-config` for more detailed information.
 
 ### Using setxkbmap
 
-*setxkbmap* sets the keyboard layout for the current X session only, but can be made persistent in [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc"). This overrides system-wide configuration specified by [X configuration files](#Using_X_configuration_files).
+*setxkbmap* sets the keyboard layout for the current X session only, but can be made persistent in [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc"). This overrides system-wide configuration specified following [#Using X configuration files](#Using_X_configuration_files).
 
 The usage is as follows (see `man 1 setxkbmap`):
 
@@ -116,9 +116,11 @@ $ setxkbmap -model pc104 -layout cz,us -variant ,dvorak -option grp:alt_shift_to
 
 ```
 
+**Tip:** To extend even more xkb options, see [#Frequently used XKB options](#Frequently_used_XKB_options) and also the [Madduck guide](http://madduck.net/docs/extending-xkb/).
+
 ### Using X configuration files
 
-**Note:** `xorg.conf` is parsed by the X server at start-up. To apply changes, restart X. [[1]](http://fedoraproject.org/wiki/Input_device_configuration#xorg.conf.d).
+**Note:** `xorg.conf` is parsed by the X server at start-up. To apply changes, restart X.
 
 The syntax of X configuration files is explained in [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg"). This method creates system-wide configuration which is persistent across reboots.
 
@@ -222,7 +224,7 @@ The Rupee sign (₹) can be used the same way with `rupeesign:4`.
 
 Those who prefer typing capital letters with the Caps Lock key may experience a short delay when Caps Lock state is switched, resulting in two or more capital letters (e.g. *THe*, *ARch LInux*). This behaviour [stems from typewriters](https://en.wikipedia.org/wiki/Caps_lock#History "wikipedia:Caps lock").
 
-Some more popular operating systems have removed this behaviour, either voluntarily (as it can be confusing to some) or by mistake, however this is a question of preference. Bug reports have been filed on the Xserver bug tracker, as there is currently no easy way to switch to the behaviour reflected by those other operating systems. For anyone who would like to follow up the issue, bug reports and latest working progress can be found at [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=27903) and [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=56491).
+Some more popular operating systems have removed this behaviour, either voluntarily (as it can be confusing to some) or by mistake, however this is a question of preference. Bug reports have been filed on the Xserver bug tracker, as there is currently no easy way to switch to the behaviour reflected by those other operating systems. For anyone who would like to follow up the issue, bug reports and latest working progress can be found at [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=27903) and [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=56491).
 
 #### Workaround
 

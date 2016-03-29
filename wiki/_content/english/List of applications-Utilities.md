@@ -263,10 +263,6 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 	[http://eterm.org](http://eterm.org) || [eterm](https://aur.archlinux.org/packages/eterm/)
 
-*   **Final Term** — A new breed of terminal emulator. Project is dead.
-
-	[http://finalterm.org/](http://finalterm.org/) || [finalterm-git](https://aur.archlinux.org/packages/finalterm-git/)
-
 *   **Gate One** — Web-based terminal emulator and SSH client.
 
 	[https://github.com/liftoff/GateOne](https://github.com/liftoff/GateOne) || [gateone-git](https://aur.archlinux.org/packages/gateone-git/)
@@ -520,10 +516,6 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 *   **[PCManFM](/index.php/PCManFM "PCManFM")** — Lightweight file manager which features tabbed and dual pane browsing; also it can optionally manage the desktop icons and background.
 
 	[http://wiki.lxde.org/en/PCManFM](http://wiki.lxde.org/en/PCManFM) || [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm)
-
-*   **QtFileMan** — File manager similar to PCManFM from LXDE.
-
-	[http://gitorious.org/qtfileman](http://gitorious.org/qtfileman) || [qtfileman-git](https://aur.archlinux.org/packages/qtfileman-git/)
 
 *   **qtFM** — Small, lightweight filemanager for Linux desktops based on pure Qt.
 

@@ -55,7 +55,7 @@ In fact; in drives featuring FDE, data is *always* encrypted with the DEK when s
 *   Data-at-Rest protection
 *   Increased performance (cpu is freed up from encryption/decryption calculations)
 *   Increased security due to reduced attack vectors (the main cpu & memory are eliminated as possible attack targets)
-*   Optimally fast and [#Secure Disk Erasure](#Secure_Disk_Erasure) (sanitation) (regardless of disk size)
+*   Optimally fast and [#Secure disk erasure](#Secure_disk_erasure) (sanitation) (regardless of disk size)
 *   Protection from alternative boot methods due to the possibility to encrypt the MBR, rendering the drive inaccessible before pre-boot authentication
 
 ### Disadvantages
@@ -121,7 +121,7 @@ Use the output of `lsblk --fs` to help identify the correct drive.
 ### Enable locking
 
 ```
-# sedutil-cli –-enableLockingRange 0 <password> <drive>
+# sedutil-cli --enableLockingRange 0 <password> <drive>
 
 ```
 
@@ -134,8 +134,8 @@ When the computer is next powered on, the PBA should ask for your password; then
 If you want to turn off Locking and the PBA:
 
 ```
-# sedutil-cli -–disableLockingRange 0 <password> <drive>
-# sedutil-cli –-setMBREnable off <password> <drive>
+# sedutil-cli --disableLockingRange 0 <password> <drive>
+# sedutil-cli --setMBREnable off <password> <drive>
 
 ```
 
@@ -144,9 +144,9 @@ If you want to turn off Locking and the PBA:
 You can later re-enable locking and the PBA using this command sequence
 
 ```
-# sedutil-cli -–enableLockingRange 0 <password> <drive>
-# sedutil-cli –-setMBRDone on <password> <drive>
-# sedutil-cli –-setMBREnable on <password> <drive>
+# sedutil-cli --enableLockingRange 0 <password> <drive>
+# sedutil-cli --setMBRDone on <password> <drive>
+# sedutil-cli --setMBREnable on <password> <drive>
 
 ```
 
@@ -155,7 +155,7 @@ You can later re-enable locking and the PBA using this command sequence
 A non-root drive does not require loading a PBA. So, activating the encryption is as simple as running:
 
 ```
-# sedutil-cli -–initialsetup <password> <drive>
+# sedutil-cli --initialsetup <password> <drive>
 
 ```
 
@@ -164,18 +164,18 @@ A non-root drive does not require loading a PBA. So, activating the encryption i
 Changing the passphrase does *not* lose existing data on the drive, and does not require re-encryption of data.
 
 ```
-# sedutil-cli -–setSIDPwd <password> <newpassword> <device>
-# sedutil-cli -–setAdmin1Pwd <password> <newpassword> <device>
+# sedutil-cli --setSIDPwd <password> <newpassword> <device>
+# sedutil-cli --setAdmin1Pwd <password> <newpassword> <device>
 
 ```
 
-Read the [#Key Management Technical Implementation](#Key_Management_Technical_Implementation) section above to learn about how this is implemented securely within the drive, and why it is possible to change the passphrase *without* losing the existing encrypted data on the drive.
+Read the [#Key management technical implementation](#Key_management_technical_implementation) section above to learn about how this is implemented securely within the drive, and why it is possible to change the passphrase *without* losing the existing encrypted data on the drive.
 
 ## Secure disk erasure
 
 Whole disk erasure is very fast, and remarkably simple for a SED. Simply passing a cryptographic disk erasure (or crypto erase) command (after providing the correct authentication credentials) will have the drive self-generate a new random encryption key (DEK) internally. This will permanently discard the old key, thus rendering the encrypted data irrevocably un-decryptable. The drive will now be in a 'new drive' state.
 
-Read the [#Key Management Technical Implementation](#Key_Management_Technical_Implementation) section above to learn more about how this is implemented securely within the drive.
+Read the [#Key management technical implementation](#Key_management_technical_implementation) section above to learn more about how this is implemented securely within the drive.
 
 ## BIOS based ATA-password
 

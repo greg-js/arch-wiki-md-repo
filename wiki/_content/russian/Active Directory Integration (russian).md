@@ -84,7 +84,7 @@
 [Установите](/index.php/Pacman "Pacman") следующие пакеты:
 
 *   [samba](https://www.archlinux.org/packages/?name=samba), см. [Samba](/index.php/Samba "Samba")
-*   [pam-krb5](https://aur.archlinux.org/packages/pam-krb5/) из [AUR](/index.php/AUR "AUR")
+*   [pam-krb5](https://www.archlinux.org/packages/?name=pam-krb5) из [AUR](/index.php/AUR "AUR")
 *   [ntp](https://www.archlinux.org/packages/?name=ntp) или [openntpd](https://www.archlinux.org/packages/?name=openntpd), см. также [NTPd](/index.php/NTPd "NTPd") или [OpenNTPD](/index.php/OpenNTPD "OpenNTPD")
 
 ### Обновление DNS

@@ -101,7 +101,7 @@ Se le applicazioni di gnome risultano lente e gnome si blocca allo start-up dopo
 
 Eseguire poi "`/bin/hostname YOURHOSTNAME`" e "`/sbin/ifconfig lo up`" da **root**.
 
-Consultare inoltre [Configuring_network](/index.php/Configuring_network "Configuring network")
+Consultare inoltre [Configuring network](/index.php/Configuring_network "Configuring network")
 
 ### Prestazioni basse
 
@@ -419,9 +419,10 @@ StartupNotify=true
 
 #### Cambiare l'icona predefinita del menu Gnome con l'icona di Arch
 
-**Nota:** Grazie a arkham che ha pubblicato questo metodo su [[questo post](https://bbs.archlinux.org/viewtopic.php?id=74881)] e che noi riportiamo qui.
+**Nota:**
+**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
 
-*   Scaricare [[questa icona Arch](http://img23.imageshack.us/img23/9679/starthere.png)] (il nome del file è `starthere.png`)
+*   Scaricare [questa icona Arch](http://img23.imageshack.us/img23/9679/starthere.png) (il nome del file è `starthere.png`)
 *   In alternativa scaricare il pacchetto artwork usando "pacman -S archlinux-artwork", che sistemerà il pacchetto in /usr/share/archlinux directory, e ridimensionerà il logo desiderato a 24x24px
 *   Verificare quale set di icone è in uso (click destro su Desktop>Cambiare l'immagine di Sfondo>Temi>Personalizza>Icone). Per esempio, Crux, *GNOME, High Contrast, High Contrast Inverse, Mist, ecc.)
 *   Ora fare un backup dell'icona gnome corrente nella cartella corretta. Nell'esempio sotto, si stanno usando le icone gnome, ma nel caso, correggere la struttura ed il percorso delle cartelle con quella corrispondente:

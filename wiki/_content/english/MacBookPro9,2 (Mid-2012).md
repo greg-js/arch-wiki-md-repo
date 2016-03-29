@@ -75,7 +75,7 @@ partition  mountpoint  size       type  label
 
 ```
 
-For sharing files between OSX and Linux, a number of filesystem options exist. FAT32 is natively supported on all systems - however, it lacks support for filesystems larger than 2TB or files larger than 4GB. Journaled HFS+ partitions, such as the Macintosh HD partition, will only mount read-only in Linux. Full read-write support is available for unjournaled HFS+ filesystems. ExFAT support can be made available by installing [fuse-exfat](https://www.archlinux.org/packages/?name=fuse-exfat) and [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils).
+For sharing files between OSX and Linux, a number of filesystem options exist. FAT32 is natively supported on all systems - however, it lacks support for filesystems larger than 2TB or files larger than 4GB. Journaled HFS+ partitions, such as the Macintosh HD partition, will only mount read-only in Linux. Full read-write support is available for unjournaled HFS+ filesystems. ExFAT support can be made available by installing [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils).
 
 #### Install Bootloader
 

@@ -18,6 +18,7 @@ This article contains instruction on sharing printers between systems, be it bet
         *   [2.2.3 Sharing via Samba](#Sharing_via_Samba_2)
             *   [2.2.3.1 Configuration using the web interface](#Configuration_using_the_web_interface)
             *   [2.2.3.2 Manual configuration](#Manual_configuration)
+            *   [2.2.3.3 Finding URIs for Windows print servers](#Finding_URIs_for_Windows_print_servers)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Cannot print with GTK applications](#Cannot_print_with_GTK_applications)
     *   [3.2 Unable to add/modify a printer via SAMBA](#Unable_to_add.2Fmodify_a_printer_via_SAMBA)
@@ -207,7 +208,7 @@ Before adding the printer, you will most likely have to install an appropriate p
 
 As above, IPP is also the **preferred** protocol for printer sharing. However this way might be a bit **more difficult** than the native Samba approach below, since you need a greater effort to set up an IPP-Server on Windows. The commonly chosen server software is Microsoft's Internet Information Services (IIS).
 
-**Note:** This section is incomplete. Here is a description how to set up ISS in Windows XP and Windows 2000, unfortunately in German [[1]](http://www.heise.de/netze/artikel/Ueberall-drucken-221652.html)
+**Note:** This section is incomplete. Here is a description how to set up IIS in Windows XP and Windows 2000, unfortunately in German [[1]](http://www.heise.de/netze/artikel/Ueberall-drucken-221652.html)
 
 #### Sharing via Samba
 
@@ -242,14 +243,12 @@ smb://username@hostname/printer_name
 
 ```
 
-Make sure that the user actually has access to the printer on the Windows computer and select the appropriate drivers. If the computer is located on a domain, make sure the user-name includes the domain:
+Make sure that the user actually has access to the printer on the Windows computer and select the appropriate drivers. If the computer is located on a domain, make sure the URI includes the domain:
 
 ```
 smb://username:password@domain/hostname/printer_name
 
 ```
-
-If the network contains many printers you might want to set a preferred printer. To do so use the web interface, go into the printer tab, choose the desired printer and select 'Set as default' from the drop-down list.
 
 ##### Manual configuration
 
@@ -277,7 +276,37 @@ ErrorPolicy stop-printer
 </Printer>
 ```
 
-Then restart the CUPS daemon an try to print a test page.
+Then restart the CUPS daemon and try to print a test page.
+
+##### Finding URIs for Windows print servers
+
+Sometimes Windows is a little less than forthcoming about exact device URIs (device locations). If having trouble specifying the correct device location in CUPS, run the following command to list all shares available to a certain windows username:
+
+```
+$ smbtree -U *windowsusername*
+
+```
+
+This will list every share available to a certain Windows username on the local area network subnet, as long as Samba is set up and running properly. It should return something like this:
+
+```
+ WORKGROUP
+	\\REGULATOR-PC   		
+		\\REGULATOR-PC\Z              	
+		\\REGULATOR-PC\Public         	
+		\\REGULATOR-PC\print$         	Printer Drivers
+		\\REGULATOR-PC\G              	
+		\\REGULATOR-PC\EPSON Stylus CX8400 Series	EPSON Stylus CX8400 Series
+```
+
+What is needed here is first part of the last line, the resource matching the printer description. So to print to the EPSON Stylus printer, one would enter:
+
+```
+smb://username.password@REGULATOR-PC/EPSON Stylus CX8400 Series
+
+```
+
+as the URI into CUPS.
 
 ## Troubleshooting
 

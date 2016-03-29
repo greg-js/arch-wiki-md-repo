@@ -515,7 +515,7 @@ One or more of followings might help solving audio related issues, setting `snd_
 
 #### xkeyboard configuration
 
-[xkeyboard-config 2.16-1](https://www.archlinux.org/packages/extra/any/xkeyboard-config/) added a <tt>chromebook</tt> model that enables the Chrome OS style functions for the function keys. You can, for example, set this using <tt>localectl set-x11-keymap us chromebook</tt>. See the <tt>chromebook</tt> definition in <tt>/usr/share/X11/xkb/symbols/inet</tt> for the full mappings.
+[xkeyboard-config 2.16-1](https://www.archlinux.org/packages/extra/any/xkeyboard-config/) added a `chromebook` model that enables the Chrome OS style functions for the function keys. You can, for example, set this using `localectl set-x11-keymap us chromebook`. See the `chromebook` definition in `/usr/share/X11/xkb/symbols/inet` for the full mappings.
 
 #### Sxhkd configuration
 

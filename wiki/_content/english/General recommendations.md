@@ -90,7 +90,7 @@ Arch is a rolling release system and has rapid package turnover, so users have t
 
 ## Package management
 
-This section contains helpful information related to package management. For more, please see [FAQ#Package Management](/index.php/FAQ#Package_Management "FAQ") and [Category:Package management](/index.php/Category:Package_management "Category:Package management").
+This section contains helpful information related to package management. For more, please see [FAQ#Package management](/index.php/FAQ#Package_management "FAQ") and [Category:Package management](/index.php/Category:Package_management "Category:Package management").
 
 **Note:** It is imperative to keep up to date with changes in Arch Linux that require manual intervention **before** upgrading your system. Subscribe to the [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) or check the front page [Arch news](https://www.archlinux.org/) every time before you update. Alternatively, you may find it useful to subscribe to [this RSS feed](https://www.archlinux.org/feeds/news/) or follow [@archlinux](https://twitter.com/archlinux) on Twitter.
 

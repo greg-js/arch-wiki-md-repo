@@ -12,7 +12,6 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [2.4 The PPD version is not compatible with gutenprint](#The_PPD_version_is_not_compatible_with_gutenprint)
 *   [3 Networking issues](#Networking_issues)
     *   [3.1 CUPS identifies printer but cannot connect to it](#CUPS_identifies_printer_but_cannot_connect_to_it)
-    *   [3.2 Finding URIs for Windows print servers](#Finding_URIs_for_Windows_print_servers)
 *   [4 USB printers](#USB_printers)
 *   [5 HP issues](#HP_issues)
     *   [5.1 HPLIP printer sends "/usr/lib/cups/backend/hp failed" error](#HPLIP_printer_sends_.22.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.22_error)
@@ -126,52 +125,6 @@ And restart CUPS (as pointed out in gutenprint's post-install message)
 Enable debug logging. If you see `Executing backend "/usr/lib/cups/backend/dnssd"...` over and over switch from dnssd to socket in the printer configuration.
 
 Example: `socket://192.168.11.6:9100`. The port number can be confirmed via [nmap](/index.php/Nmap "Nmap") or `telnet *your-printer-ip* 9100`.
-
-### Finding URIs for Windows print servers
-
-Sometimes Windows is a little less than forthcoming about exact device URIs (device locations). If having trouble specifying the correct device location in CUPS, run the following command to list all shares available to a certain windows username:
-
-```
-$ smbtree -U *windowsusername*
-
-```
-
-This will list every share available to a certain Windows username on the local area network subnet, as long as Samba is set up and running properly. It should return something like this:
-
-```
- WORKGROUP
-	\\REGULATOR-PC   		
-		\\REGULATOR-PC\Z              	
-		\\REGULATOR-PC\Public         	
-		\\REGULATOR-PC\print$         	Printer Drivers
-		\\REGULATOR-PC\G              	
-		\\REGULATOR-PC\EPSON Stylus CX8400 Series	EPSON Stylus CX8400 Series
-```
-
-What is needed here is first part of the last line, the resource matching the printer description. So to print to the EPSON Stylus printer, one would enter:
-
-```
-smb://username.password@REGULATOR-PC/EPSON Stylus CX8400 Series
-
-```
-
-as the URI into CUPS.
-
-If you have special characters (eg *, \) in your username, password or server address, you need to urlencode them. For example,
-
-```
- smb://WIN-DOMAIN.COM\username:passw*rd@WIN-DOMAIN.COM/domain.com/printer
-
-```
-
-must be written as
-
-```
- smb://WIN-DOMAIN.COM%5Cusername:passw%2Ard@WIN-DOMAIN.COM/domain.com/printer
-
-```
-
-To encode the URI, one can use [an online service](http://www.url-encode-decode.com/), [python](https://docs.python.org/2/library/urllib.html#urllib.urlencode) or something else.
 
 ## USB printers
 

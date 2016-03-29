@@ -56,7 +56,23 @@ access to attrs=userPassword
         by * none
 
 access to *
+        by self write       
+        by dn.base="cn=Manager,dc=example,dc=org" write
+        by * read
+```
+
+The above lines are good enough to test your OpenLDAP server, take care with ACL's granting write access to self, your users could change attributes like uidNumber, gidNumber or other system attributes. Consider to allow write privileges only on userPassword and attributes related to personal information. A more secure setting would be:
+
+ `slapd.conf` 
+```
+access to attrs=userPassword,givenName,sn,photo
         by self write
+        by anonymous auth
+        by dn.base="cn=Manager,dc=example,dc=org" write
+        by * none
+
+access to *
+        by self read       
         by dn.base="cn=Manager,dc=example,dc=org" write
         by * read
 ```

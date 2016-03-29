@@ -147,6 +147,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
         *   [39.1.1 Bad sound](#Bad_sound)
 *   [40 Multiwinia](#Multiwinia)
     *   [40.1 Dependencies](#Dependencies_18)
+    *   [40.2 Crash on startup](#Crash_on_startup)
 *   [41 Natural Selection 2](#Natural_Selection_2)
     *   [41.1 No Sound](#No_Sound_4)
 *   [42 Penumbra: Overture](#Penumbra:_Overture)
@@ -1127,6 +1128,18 @@ LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" %command%
 
 *   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
 
+### Crash on startup
+
+If Multiwinia crashes on startup on X64 systems, force launching the 32-bit executable by replacing `~/.local/share/Steam/steamapps/common/Multiwinia/run_steam.sh` with the following script:
+
+```
+#!/bin/sh
+./multiwinia.bin.x86	
+
+```
+
+See [[6]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
+
 ## Natural Selection 2
 
 Game mostly works out of the box.
@@ -1475,9 +1488,9 @@ LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:
 
 This will force Steam to do the fix whenever Transistor is started, but allows Steam to be launched normally.
 
-Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed there [[6]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
+Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed there [[7]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
 
-Also, check out this thread [[7]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/)
+Also, check out this thread [[8]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/)
 
 ## Trine 2
 
@@ -1556,7 +1569,7 @@ Try running:
 
 ### Troubleshooting
 
-If having a green or blank screen at game start, set the `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` [environment variable](/index.php/Environment_variable "Environment variable"). [[8]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[9]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
+If having a green or blank screen at game start, set the `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` [environment variable](/index.php/Environment_variable "Environment variable"). [[9]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[10]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
 
 ## Witcher 2: Assassin of Kings
 
@@ -1631,7 +1644,7 @@ exec dosbox -conf dosbox_wiz6.conf -conf dosbox_wiz6_launch_linux.conf -noconsol
 
 ### Hangs on startup
 
-Steam ships its own versions of some libraries, and they sometimes are too old to work with archlinux system libraries. Removing the library supplied by Steam means Steam has to use the newer arch-specific version. [[10]](https://bbs.archlinux.org/viewtopic.php?pid=1428375#p1428375).
+Steam ships its own versions of some libraries, and they sometimes are too old to work with archlinux system libraries. Removing the library supplied by Steam means Steam has to use the newer arch-specific version. [[11]](https://bbs.archlinux.org/viewtopic.php?pid=1428375#p1428375).
 
 ```
 rm ~.local/share/Steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libgcc_s.so.1

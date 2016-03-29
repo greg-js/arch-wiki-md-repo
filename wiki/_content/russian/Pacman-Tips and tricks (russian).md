@@ -338,7 +338,7 @@ If you want to backup your system configuration files you could copy all files i
 
 Running this command with root permissions will ensure that files readable only by root (such as `/etc/sudoers`) are included in the output.
 
-**Tip:** See [#Listing all changed files from packages](#Listing_all_changed_files_from_packages) to list all changed files pacman knows, not only backup files.
+**Совет:** See [#Listing all changed files from packages](#Listing_all_changed_files_from_packages) to list all changed files pacman knows, not only backup files.
 
 ### Создание резервной копии базы данных pacman
 
@@ -358,9 +358,9 @@ The database can be restored by moving the `pacman_database.tar.bz2` file into t
 
 ```
 
-**Note:** If the pacman database files are corrupted, and there is no backup file available, there exists some hope of rebuilding the pacman database. Consult [Pacman tips#Restore pacman's local database](/index.php/Pacman_tips#Restore_pacman.27s_local_database "Pacman tips").
+**Примечание:** If the pacman database files are corrupted, and there is no backup file available, there exists some hope of rebuilding the pacman database. Consult [Pacman tips#Restore pacman's local database](/index.php/Pacman_tips#Restore_pacman.27s_local_database "Pacman tips").
 
-**Tip:** The [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) package provides a script and a [systemd](/index.php/Systemd "Systemd") service to automate the task. Configuration is possible in `/etc/pakbak.conf`.
+**Совет:** The [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) package provides a script and a [systemd](/index.php/Systemd "Systemd") service to automate the task. Configuration is possible in `/etc/pakbak.conf`.
 
 ### Check changelogs easily
 
@@ -419,7 +419,7 @@ $ repo-add /path/to/repo.db.tar.gz /path/to/*.pkg.tar.xz
 
 ```
 
-**Note:** A package database is a tar file, optionally compressed. Valid extensions are “.db” or “.files” followed by an archive extension of “.tar”, “.tar.gz”, “.tar.bz2”, “.tar.xz”, or “.tar.Z”. The file does not need to exist, but all parent directories must exist. Furthermore when using `repo-add` keep in mind that the database and the packages do not need to be in the same directory. But when using pacman with that database, they should be together.
+**Примечание:** A package database is a tar file, optionally compressed. Valid extensions are “.db” or “.files” followed by an archive extension of “.tar”, “.tar.gz”, “.tar.bz2”, “.tar.xz”, or “.tar.Z”. The file does not need to exist, but all parent directories must exist. Furthermore when using `repo-add` keep in mind that the database and the packages do not need to be in the same directory. But when using pacman with that database, they should be together.
 
 To add a new package to the database, or to replace the old version of an existing package in the database, run:
 
@@ -444,13 +444,13 @@ If you are looking for a quick and dirty solution, you can simply run a standalo
 
 #### Read-write cache
 
-**Tip:** See [pacserve](/index.php/Pacserve "Pacserve") for an alternative (and probably simpler) solution than what follows.
+**Совет:** See [pacserve](/index.php/Pacserve "Pacserve") for an alternative (and probably simpler) solution than what follows.
 
 In order to share packages between multiple computers, simply share `/var/cache/pacman/` using any network-based mount protocol. This section shows how to use shfs or sshfs to share a package cache plus the related library-directories between multiple computers on the same local network. Keep in mind that a network shared cache can be slow depending on the file-system choice, among other factors.
 
 First, install any network-supporting filesystem; for example [sshfs](/index.php/Sshfs "Sshfs"), [shfs](/index.php/Shfs "Shfs"), ftpfs, [smbfs](/index.php/Smbfs "Smbfs") or [nfs](/index.php/Nfs "Nfs").
 
-**Tip:** To use sshfs or shfs, consider reading [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
+**Совет:** To use sshfs or shfs, consider reading [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
 
 Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the server to `/var/cache/pacman/pkg` on every client machine.
 
@@ -458,7 +458,7 @@ Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the serve
 
 [nginx](/index.php/Nginx "Nginx") can be used to proxy requests to official upstream mirrors and cache the results to local disk. All subsequent requests for that file will be served directly from the local cache, minimizing the amount of internet traffic needed to update a large number of servers with minimal effort.
 
-**Warning:** This method has a limitation. You must use mirrors that use the same relative path to package files and you must configure your cache to use that same path. In this example, we are using mirrors that use the relative path `/archlinux/$repo/os/$arch` and our cache's `Server` setting in `mirrorlist` is configured similarly.
+**Важно:** This method has a limitation. You must use mirrors that use the same relative path to package files and you must configure your cache to use that same path. In this example, we are using mirrors that use the relative path `/archlinux/$repo/os/$arch` and our cache's `Server` setting in `mirrorlist` is configured similarly.
 
 In this example, we will run the cache server on `http://cache.domain.local:8080/` and storing the packages in `/srv/http/pacman-cache/`.
 
@@ -569,7 +569,7 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 
 ```
 
-**Note:** You will need to create a method to clear old packages, as this directory will continue to grow over time. `paccache` (which is included with `pacman`) can be used to automate this using retention criteria of your choosing. For example, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` will keep the last 2 versions of packages in your cache directory.
+**Примечание:** You will need to create a method to clear old packages, as this directory will continue to grow over time. `paccache` (which is included with `pacman`) can be used to automate this using retention criteria of your choosing. For example, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` will keep the last 2 versions of packages in your cache directory.
 
 #### Synchronize pacman package cache using BitTorrent Sync
 
@@ -600,13 +600,13 @@ CleanMethod = KeepCurrent
 
 To recreate a package from the file system, use *bacman* (included with pacman). Files from the system are taken as they are, hence any modifications will be present in the assembled package. Distributing the recreated package is therefore discouraged; see [ABS](/index.php/ABS "ABS") and [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine") for alternatives.
 
-**Tip:** *bacman* honours the `PACKAGER`, `PKGDEST` and `PKGEXT` options from `makepkg.conf`. Custom options for the compression tools can be configured by exporting the relevant environment variable, for example `XZ_OPT="-T 0"` will enable parallel compression for *xz*.
+**Совет:** *bacman* honours the `PACKAGER`, `PKGDEST` and `PKGEXT` options from `makepkg.conf`. Custom options for the compression tools can be configured by exporting the relevant environment variable, for example `XZ_OPT="-T 0"` will enable parallel compression for *xz*.
 
 An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepkg/). It supports parallelization and can handle multiple input packages in one command, which *bacman* both does not support.
 
 ### Резервное копирование и извлечение списка установленных пакетов
 
-**Tip:** You may want to use [plist-gist](https://aur.archlinux.org/packages/plist-gist/) or [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) to automatise the below tasks.
+**Совет:** You may want to use [plist-gist](https://aur.archlinux.org/packages/plist-gist/) or [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) to automatise the below tasks.
 
 It is good practice to keep periodic backups of all pacman-installed packages. In the event of a system crash which is unrecoverable by other means, pacman can then easily reinstall the very same packages onto a new installation.
 
@@ -636,7 +636,7 @@ Explanation:
 
 Finally, you may want to remove all the packages on your system that are not mentioned in the list.
 
-**Warning:** Use this command wisely, and always check the result prompted by pacman.
+**Важно:** Use this command wisely, and always check the result prompted by pacman.
 
 ```
 # pacman -Rsu $(comm -23 <(pacman -Qq|sort) <(sort pkglist))
@@ -649,7 +649,7 @@ If you are suspecting file corruption (e.g. by software / hardware failure), but
 
 The script depends on the accuracy of pacman's database in `/var/lib/pacman/local/` and the used programs such as *bash*, *grep* and so on. For recovery of the database see [#Restore pacman's local database](#Restore_pacman.27s_local_database). The `mtree` files can also be [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
 
-**Note:**
+**Примечание:**
 
 *   This should **not** be used as is when suspecting malicious changes! In this case security precautions such as using a live medium and an independent source for the hash sums are advised.
 *   This could take a long time, depending on the hardware and installed packages.
@@ -719,7 +719,7 @@ If it does not exist, it is *not* possible to continue with this method. You may
 
 #### Generating the package recovery list
 
-**Warning:** If for some reason your [pacman](/index.php/Pacman "Pacman") cache or [makepkg](/index.php/Makepkg "Makepkg") package destination contain packages for other architectures, remove them before continuation.
+**Важно:** If for some reason your [pacman](/index.php/Pacman "Pacman") cache or [makepkg](/index.php/Makepkg "Makepkg") package destination contain packages for other architectures, remove them before continuation.
 
 Create the log filter script and make it executable:
 

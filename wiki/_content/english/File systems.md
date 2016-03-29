@@ -53,7 +53,7 @@ The other filesystems provide ordered-mode journaling, which only logs meta-data
 
 *   **exfat-utils** — exFAT support.
 
-	[https://github.com/relan/exfat](https://github.com/relan/exfat) || [fuse-exfat](https://www.archlinux.org/packages/?name=fuse-exfat), [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
+	[https://github.com/relan/exfat](https://github.com/relan/exfat) || [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
 
 *   **f2fs-tools** — [F2FS](/index.php/F2FS "F2FS") support.
 
@@ -112,10 +112,6 @@ Some FUSE-based file systems:
 *   **cddfs** — Mount audio CDs.
 
 	[http://castet.matthieu.free.fr/](http://castet.matthieu.free.fr/) || [cddfs](https://aur.archlinux.org/packages/cddfs/)
-
-*   **fuse-exfat** — exFAT mount support.
-
-	[http://code.google.com/p/exfat/](http://code.google.com/p/exfat/) || [fuse-exfat](https://www.archlinux.org/packages/?name=fuse-exfat)
 
 *   **fuseiso** — Mount an ISO as a regular user.
 

@@ -72,7 +72,7 @@ SuspendDevice swap:/dev/sda3
 
 **Note:** Auto-detection as mentioned previously does not seem to work with swap files, you will still need to manually set the kernel resume parameter.
 
-If you use a [swap file](/index.php/Swap#Swap_file "Swap") instead of a swap partition, you will need to pass the location of its header to TuxOnIce. TuxOnIce can list all available swap headers.
+If you use a [swap file](/index.php/Swap_file "Swap file") instead of a swap partition, you will need to pass the location of its header to TuxOnIce. TuxOnIce can list all available swap headers.
 
 **Note:** If you have just created, or intend to create, a swap file for this purpose, you will need to reboot once for tuxonice to be aware of it.
 

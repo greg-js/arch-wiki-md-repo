@@ -11,11 +11,11 @@ Packages in the official repositories are constantly upgraded: when a package is
     *   [1.2 extra](#extra)
     *   [1.3 community](#community)
     *   [1.4 multilib](#multilib)
-        *   [1.4.1 gnome-unstable](#gnome-unstable)
     *   [1.5 testing](#testing)
         *   [1.5.1 community-testing](#community-testing)
         *   [1.5.2 multilib-testing](#multilib-testing)
-        *   [1.5.3 Disabling testing repositories](#Disabling_testing_repositories)
+        *   [1.5.3 gnome-unstable](#gnome-unstable)
+        *   [1.5.4 Disabling testing repositories](#Disabling_testing_repositories)
 *   [2 Historical background](#Historical_background)
 
 ## Repositories
@@ -58,25 +58,9 @@ This repository can be found in `.../multilib/os/` on your favorite mirror.
 
 For more information, see [Multilib](/index.php/Multilib "Multilib").
 
-#### gnome-unstable
-
-**Warning:** Be careful when enabling the *gnome-unstable* repository. Your system may break after performing an update. Only experienced users who know how to deal with potential system breakage should use it.
-
-This repository contains the latest version of the [Gnome](/index.php/Gnome "Gnome") desktop environment. It can be enabled by adding the lines below to your `/etc/pacman.conf` file as top repository.
-
-```
- [gnome-unstable]
- Include = /etc/pacman.d/mirrorlist
-
-```
-
-Please report packaging related bugs in our [bugtracker](https://bugs.archlinux.org/), while anything else should be reported upstream to [GNOME Bugzilla](https://bugzilla.gnome.org/).
-
-Before opening new bug tickets, please check if the issue already has been reported and take a look at the [Testing Repo Forum](https://bbs.archlinux.org/viewforum.php?id=49) first.
-
 ### testing
 
-**Warning:** Be careful when enabling the *testing* repository. Your system may break after performing an update. Only experienced users who know how to deal with potential system breakage should use it.
+**Warning:** Be careful when enabling the *testing* repositories. Your system may break after performing an update. Only experienced users who know how to deal with potential system breakage should use it.
 
 This repository can be found in `.../testing/os/` on your favorite mirror.
 
@@ -105,6 +89,18 @@ If you enable it, you must also enable *testing*.
 This repository is like the *testing* repository, but for packages that are candidates for the *multilib* repository.
 
 If you enable it, you must also enable *testing*.
+
+#### gnome-unstable
+
+This repository contains the latest version of the [GNOME](/index.php/GNOME "GNOME") desktop environment. It can be enabled by adding the lines below to your `/etc/pacman.conf` file as top repository.
+
+```
+[gnome-unstable]
+Include = /etc/pacman.d/mirrorlist
+
+```
+
+Please report packaging related bugs in our [bug tracker](https://bugs.archlinux.org/), while anything else should be reported upstream to [GNOME Bugzilla](https://bugzilla.gnome.org/).
 
 #### Disabling testing repositories
 

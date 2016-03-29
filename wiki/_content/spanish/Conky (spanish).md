@@ -405,9 +405,9 @@ Alternativamente, se puede usar stunnel como se muestra en: [Conky#How to displa
 
 ### Graysky
 
-[[Screen shot](http://img9.imageshack.us/img9/3153/imageffj.jpg)]
+[Screen shot](http://img9.imageshack.us/img9/3153/imageffj.jpg)
 
-[[Aquí](https://github.com/graysky2/dotfiles/blob/master/.conkyrc)] esto es - modificado para ajustarse a tu pantalla. Optimizado para un chip Quad Core con varios discos de almacenamiento (HDDs) (aunque uno de ellos no esta conectado para este screenshot) y una tarjeta de video nVidia. Se puede modificar fácilmente esto para un sistema dual-o-single core con cualquier numero de discos de almacenamiento (HHDs).
+[Aquí](https://github.com/graysky2/dotfiles/blob/master/.conkyrc) esto es - modificado para ajustarse a tu pantalla. Optimizado para un chip Quad Core con varios discos de almacenamiento (HDDs) (aunque uno de ellos no esta conectado para este screenshot) y una tarjeta de video nVidia. Se puede modificar fácilmente esto para un sistema dual-o-single core con cualquier numero de discos de almacenamiento (HHDs).
 
 ## Un ejemplo de los anillos con soporte nVidia
 

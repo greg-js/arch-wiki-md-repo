@@ -4,7 +4,7 @@
 
 The init *scripts* (or *rc*) are launched by the init process to guarantee basic functionality on system start and shutdown. This includes (un)mounting of [file systems](/index.php/File_system "File system") and launching of [daemons](/index.php/Daemons "Daemons"). A *service manager* takes this one step further by providing active control over launched processes, or [process supervision](https://en.wikipedia.org/wiki/Process_Supervision "wikipedia:Process Supervision"). An example is to monitor for crashes and restart processes accordingly.
 
-These components combine to the init *system*. Some inits include the service manager in the init process, or have init scripts in close relation to them. These inits are below referred to as *integrated*, though entries in different categories may explicitely depend on each other.
+These components combine to the init *system*. Some inits include the service manager in the init process, or have init scripts in close relation to them. These inits are below referred to as *integrated*, though entries in different categories may explicitly depend on each other.
 
 ## Contents
 

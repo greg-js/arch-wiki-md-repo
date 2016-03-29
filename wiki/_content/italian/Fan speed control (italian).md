@@ -141,7 +141,7 @@ Dovrebbe avviarsi e probabilmente si sentirà rallentare la ventola della CPU.
 
 Se tutto funziona correttamente, per ottenere l'avvio al boot basta aggiungere `fancontrol` a DAEMONS in `/etc/rc.conf`, dato che uno script init per `fancontrol` è ora fornito di default!
 
-*La maggior parte di questi howto è tratta da [[Forum di ubuntu](http://ubuntuforums.org/)] e dalla [[Guida di ubuntu](http://ubuntuguide.org/)].*
+*La maggior parte di questi howto è tratta da [Forum di ubuntu](http://ubuntuforums.org/) e dalla [Guida di ubuntu](http://ubuntuguide.org/).*
 
 **Note:** Per i portatili Dell Latitude/Inspiron, si consiglia di utilizzare [i8kutils](https://aur.archlinux.org/packages/i8kutils/)/[i8kmonitor](https://aur.archlinux.org/packages/i8kmonitor/). Tenere conto che questi due pacchetti non funzionano su Ispiron 1764
 

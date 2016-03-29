@@ -167,4 +167,4 @@ The Leap Motion allows you to be more expressive with gesture input, seen by oth
 
 ### Enable OpenAL's binaural sound support
 
-See [Gaming#Binaural_Audio_with_OpenAL](/index.php/Gaming#Binaural_Audio_with_OpenAL "Gaming").
+See [Gaming#Binaural Audio with OpenAL](/index.php/Gaming#Binaural_Audio_with_OpenAL "Gaming").

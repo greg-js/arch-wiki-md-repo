@@ -123,6 +123,15 @@ swaymsg -t get_inputs
 
 ```
 
+Output from the command, sometimes has "\" to escape some symbols like "/" (ie `"2:14:ETPS\/2_Elantech_Touchpad"`) and need to be removed
+
+More documentation and options like acceleration profiles can be found with
+
+```
+man sway-input
+
+```
+
 ### Custom keybindings
 
 [Special keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") on your keyboard can be used to execute commands, for example to control your volume or your monitor brightness:

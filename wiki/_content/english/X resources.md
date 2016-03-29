@@ -234,11 +234,11 @@ See [man page#Colored man pages on xterm or rxvt-unicode](/index.php/Man_page#Co
 
 ### Xcursor
 
-See [Cursor_themes#X_resources](/index.php/Cursor_themes#X_resources "Cursor themes").
+See [Cursor themes#X resources](/index.php/Cursor_themes#X_resources "Cursor themes").
 
 ### Xft
 
-See [Font_configuration#Applications_without_fontconfig_support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration").
+See [Font configuration#Applications without fontconfig support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration").
 
 ### Xterm
 

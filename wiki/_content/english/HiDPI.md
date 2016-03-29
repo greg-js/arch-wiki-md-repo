@@ -152,18 +152,19 @@ This will make the font render properly in most toolkits and applications, it wi
 
 ### Qt 5
 
-Qt5 applications can often be run at higher dpi by setting the QT_DEVICE_PIXEL_RATIO environment variable. Note that the variable has to be set to a whole integer, so setting it to 1.5 will not work.
+Qt5 applications can honor screen dpi by setting the `QT_AUTO_SCREEN_SCALE_FACTOR` environment variable. However applications built against older Qt5 versions won't support it so it's necessary to scale it manually via `QT_DEVICE_PIXEL_RATIO` env var.
 
 This can for instance be enabled by creating a file `/etc/profile.d/qt-hidpi.sh`
 
 ```
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_DEVICE_PIXEL_RATIO=2
 
 ```
 
 And set the executable bit on it.
 
-**Note:** `QT_DEVICE_PIXEL_RATIO` will be deprecated in Qt 5.6, see [[1]](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/).
+If for some reason Qt can't detect dpi correctly scaling can be set manually per-screen (`QT_SCREEN_SCALE_FACTORS`) or globally (`QT_SCALE_FACTOR`). For more details see [[1]](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/)
 
 ### GDK 3 (GTK+ 3)
 

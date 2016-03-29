@@ -87,7 +87,7 @@ Many other optional GNU tools are available in the [official repositories](/inde
 
 **spreadsheet:** [Gnumeric](/index.php/Gnumeric "Gnumeric")
 
-**image editor:** [GIMP](/index.php/List_of_applications/Multimedia#Raster_editors "List of applications/Multimedia")
+**image editor:** [GIMP](/index.php/GIMP "GIMP")
 
 **full-screen window manager:** [GNU Screen](/index.php/GNU_Screen "GNU Screen")
 

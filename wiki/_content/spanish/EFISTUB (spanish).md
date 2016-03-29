@@ -133,7 +133,8 @@ echo "Kernel sincronizado con ESP"
 
 En lugar de montar la propia ESP en `/boot`, se puede montar un directorio de ESP en `/boot` usando un montaje con bind (véase `mount(8)`). Esto permite a pacman actualizar el kernel directamente, manteniendo la ESP organizada a su gusto. Si funciona en su caso, este método es mucho más simple que los otros enfoques que necesitan copiar los archivos.
 
-**Nota:** Esto requiere un kernel y un gestor de arranque compatibles con FAT32\. Esto no es un problema para una instalación normal de Arch, pero podría ser problemático para otras distribuciones (a saber, las que requieren enlaces simbólicos en `/boot`). Post del foro [[aquí](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867)].
+**Nota:**
+**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
 
 Como se hizo [anteriormente](#Alternative_ESP_Mount_Points), copie todos los archivos de /boot a un directorio en la ESP, pero monte ESP **fuera** de `/boot` (por ejemplo, `/esp`). A continuación, monte en bind el directorio:
 

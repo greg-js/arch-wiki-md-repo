@@ -46,7 +46,7 @@ To use the rollback features of Btrfs, create a `__snapshot` directory for snaps
 
 You can create separate sub-volumes for important directories. This would additionally enable the ability to monitor and adjust the size allocations for each sub-volume using `btrfs quota`.
 
-See [Btrfs#Sub-volumes](/index.php/Btrfs#Sub-volumes "Btrfs")
+See [Btrfs#Subvolumes](/index.php/Btrfs#Subvolumes "Btrfs")
 
 **Note:** For mkinitcpio-btrfs compatibility, set the default sub-volume to `__active`.
 

@@ -306,7 +306,7 @@ Afterwards, you can continue in normal installation instructions with the [creat
 
 **Tip:** The `lvm2` hook is installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running *mkinitcpio* in an *arch-chroot* for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the *arch-chroot* for *mkinitcpio* to find the `lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the *arch-chroot*, *mkinitcpio* will output `Error: Hook 'lvm2' cannot be found`.
 
-**Warning:** When using the `systemd` mkinitcpio hook you should use the `sd-lvm2` hook instead of the `lvm2` hook. Otherwise your system might not boot. See [Mkinitcpio#Common_hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio")
+**Warning:** When using the `systemd` mkinitcpio hook you should use the `sd-lvm2` hook instead of the `lvm2` hook. Otherwise your system might not boot. See [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio")
 
 ### Special preparations for root on thinly-provisioned volume
 

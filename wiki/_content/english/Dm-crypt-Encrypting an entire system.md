@@ -966,7 +966,7 @@ In order for GRUB to open the LUKS partition without having the user enter his p
 
 ```
 
-See [Dm-crypt/Device_encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for more details.
+See [dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for more details.
 
 Add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
@@ -1001,7 +1001,7 @@ GRUB_ENABLE_CRYPTODISK=y
 
 where `*UUID*` is the UUID of the system partition (the UUID of `/dev/sda*X*`, **not** the UUID of `/dev/mapper/cryptroot`).
 
-See [Grub#Encryption](/index.php/Grub#Encryption "Grub") for more details and options.
+See [GRUB#Encryption](/index.php/GRUB#Encryption "GRUB") for more details and options.
 
 **BIOS**. If you are using a traditional BIOS (not UEFI) do:
 
@@ -1011,7 +1011,7 @@ See [Grub#Encryption](/index.php/Grub#Encryption "Grub") for more details and op
 
 ```
 
-See [Grub#Install to disk](/index.php/Grub#Install_to_disk "Grub") for more details and options.
+See [GRUB#Install to disk](/index.php/GRUB#Install_to_disk "GRUB") for more details and options.
 
 **UEFI**. If you are using UEFI do:
 
@@ -1021,7 +1021,7 @@ See [Grub#Install to disk](/index.php/Grub#Install_to_disk "Grub") for more deta
 
 ```
 
-See [Grub#Installation 2](/index.php/Grub#Installation_2 "Grub") for more details and options.
+See [GRUB#Installation 2](/index.php/GRUB#Installation_2 "GRUB") for more details and options.
 
 ### Configuring swap
 

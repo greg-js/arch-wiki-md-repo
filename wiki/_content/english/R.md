@@ -21,7 +21,7 @@
     *   [4.3 Rstudio IDE](#Rstudio_IDE)
     *   [4.4 Rstudio server](#Rstudio_server)
     *   [4.5 Emacs Speaks Statistics](#Emacs_Speaks_Statistics)
-    *   [4.6 Vim-R](#Vim-R)
+    *   [4.6 Nvim-R](#Nvim-R)
 *   [5 Optimized packages](#Optimized_packages)
     *   [5.1 OpenBLAS](#OpenBLAS)
     *   [5.2 Intel MKL](#Intel_MKL)
@@ -242,9 +242,9 @@ To start the server, please [enable and start](/index.php/Systemd#Using_units "S
 
 [emacs](https://www.archlinux.org/packages/?name=emacs) users can interact with R via the [emacs-ess](https://aur.archlinux.org/packages/emacs-ess/) package.
 
-### Vim-R
+### Nvim-R
 
-The [vim-r](https://aur.archlinux.org/packages/vim-r/) package allows [vim](https://www.archlinux.org/packages/?name=vim) users to code in R, including editing and rendering of R markdown (Rmd) files, execution of R code in a separate pane, inspection of variables, and integrated help panes.
+The [nvim-r](https://aur.archlinux.org/packages/nvim-r/) package allows [vim](https://www.archlinux.org/packages/?name=vim) and [neovim](https://www.archlinux.org/packages/?name=neovim) users to code in R, including editing and rendering of R markdown (Rmd) files, execution of R code in a separate pane, inspection of variables, and integrated help panes.
 
 ## Optimized packages
 

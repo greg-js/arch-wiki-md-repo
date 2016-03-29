@@ -286,7 +286,7 @@ All the created keys and certificates have been stored in /root/easy-rsa/keys. I
 
 ### Creating certificates on the client
 
-It might be desirable for the clients to generate their private keys on their own machine, removing the need to trust that the CA operator not keep the client's private key stored remotely (or other nefarious intentions). To do so, the client needs to create the private key locally, and create a [Signing Request](https://en.wikipedia.org/wiki/Certificate_signing_request%7CCertificate) (which is a `.csr` file) to the key-signing machine, run by the CA. The operator will then sign the request and return a signed certificate (a `.crt` file) which is then transferred back to the client.
+It might be desirable for the clients to generate their private keys on their own machine, removing the need to trust that the CA operator not keep the client's private key stored remotely (or other nefarious intentions). To do so, the client needs to create the private key locally, and create a [certificate signing request](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request") (which is a `.csr` file) to the key-signing machine, run by the CA. The operator will then sign the request and return a signed certificate (a `.crt` file) which is then transferred back to the client.
 
 #### Creating a certificate signing request
 

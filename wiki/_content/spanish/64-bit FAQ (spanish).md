@@ -37,7 +37,7 @@ $ grep "^flags.*\blm\b" /proc/cpuinfo
 
 ## ¿Cuál versión de Arch debería usar: 32 o 64 bit?
 
-Si su procesador es compatible con [x86_64](http://es.wikipedia.org/wiki/X86-64), debería usar Arch64 a menos que piense usar programas [sin soporte](#.C2.BFQu.C3.A9_perder.C3.A9_con_Arch64.3F). Es importante notar que Arch32 por defecto no soporta más de 3GB de RAM: tiene que usar Arch64 si tiene más de 3GB de RAM.
+Si su procesador es compatible con [x86_64](https://es.wikipedia.org/wiki/X86-64), debería usar Arch64 a menos que piense usar programas [sin soporte](#.C2.BFQu.C3.A9_perder.C3.A9_con_Arch64.3F). Es importante notar que Arch32 por defecto no soporta más de 3GB de RAM: tiene que usar Arch64 si tiene más de 3GB de RAM.
 
 ## ¿Cómo puedo instalar Arch64?
 

@@ -72,17 +72,17 @@
 
 ## Настройка
 
-Xdg_menu relies on three sets of information to generate menus: a root menu or in other words an XML menu template generally passed on the command line, information cached when it was last run, and a series of configuration files.
+Xdg_menu опирается на сведения для генерации меню из трёх источников: root menu (главное меню) или другими словами, шаблон меню XML, как правило передающихся в командной строке, информация и ряд конфигурационных файлов кэшируются, после последнего запуска.
 
-*   You can find some XML menu templates in /etc/xdg/menus.
-*   If altering the code in xdg_menu to change layout, make sure you delete everything in ~/.xdg_menu_cache or you will spend hours trying to figure out why your changes to the perl script don't take.
-*   You can find individual application configurations in /usr/share/applications
+*   Вы можете найти несколько шаблонов меню в `/etc/xdg/menus`.
+*   После изменения кода в xdg_menu, чтобы изменить схему, убедитесь, что вы удалили всё в `~/.xdg_menu_cache`, иначе вы потратите много времени, пытаясь выяснить, почему ваши изменения в скрипатх Perl не принимаются.
+*   Вы можете найти индивидуальные конфигурации приложений в `/usr/share/applications`
 
-Other configuration file directories can be found under /usr/share. In most cases you will not need to touch these. However if you want to change how your menu is layed out you can alter the menu template for minor changes. Major changes require tweaking the actual xdg_menu perl script. If you find that applications do not appear or that they are called strange things, then you will need to look at the .desktop file in /usr/share/applications. Check this [standards file](http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html) .
+Другие каталоги файлов конфигурации можно найти в каталоге /usr/share. В большинстве случаев вам не нужно трогать их. Если вы хотите, изменить то, как ваше меню располагается, вы можете изменить шаблон меню. Основные изменения требуют тонкой настройки скрипта perl xdg_menu. Если вы обнаружили, что приложения не отображаются или что они вызывают что-то не то, то вам нужно будет посмотреть в файл .desktop в `/usr/share/applications`. Проверьте этот [файл стандартов](http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html).
 
 ### Добавление записей рабочего стола из других каталогов
 
-By default, the Xdg-menu will be populated with applications which install their desktop entries to `/usr/share/applications`. To add applications to the menu which install their desktop entry to a user folder such as `~/.local/share/applications`, edit the `/etc/xdg/menus/arch-applications.menu` file and add an `<AppDir>` tag for the relevant directory, see below:
+Изначально, меню XDG будет заполняться приложениями которые устанавливают свои Desktop entries в `/usr/share/applications`. Для добавления приложений в меню которое устанавливает их desktop entry из пользовательского каталога, такого как `~/.local/share/applications`, отредактируйте файл `/etc/xdg/menus/arch-applications.menu` и добавьте тэг `<AppDir>` для соответствующего каталога, смотрите ниже:
 
  `/etc/xdg/menus/arch-applications.menu` 
 ```
@@ -91,7 +91,7 @@ By default, the Xdg-menu will be populated with applications which install their
   <Name>Applications</Name>
   <Directory>Arch-Applications.directory</Directory>
   <DefaultAppDirs/>
-  **<AppDir>/home/*username*/.local/share/applications</AppDir>**
+  **<AppDir>/home/*Ваш логин*/.local/share/applications</AppDir>**
   <DefaultDirectoryDirs/>
   <DefaultMergeDirs/>
   ...
@@ -140,15 +140,15 @@ xdg_menu [--format <format>] [--desktop <desktop>]
 
 ### Обновление меню
 
-**update-menus** updates WMs menus from XDG stuff and can do it automaticaly using config.
+Обновление меню XDG в Оконных Менеджерах можно сделать автоматически, при помощи настроек **update-menus**.
 
-This is a script wrapper around xdg_menu that relies on /etc/update-menus.conf
+Скрипт-оболочка xdg_menu, опирается на `/etc/update-menus.conf`
 
-You need to install package: archlinux-xdg-menu (xdg_menu)
+Вам надо установить [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu) (xdg_menu)
 
-/etc/update-menus.conf selects from a list of window managers for which the menu should be generated. Comments with # are allowed.
+`/etc/update-menus.conf` - выберите из списка Оконные Менеджеры, для которых меню должно быть сгенерировано. Комментарии с # разрешены.
 
-All generated menus placed in /var/cache/xdg-menu/. See wm-specific Examples section of this page to get more information.
+Все сгенерированные меню, находятся в `/var/cache/xdg-menu/`. Для получения дополнительной информации смотрите разделы этой страницы, в которых говорится о специфичных примерах для Оконных Менеджеров.
 
 ## Примеры
 
@@ -161,10 +161,10 @@ $ xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu >~
 
 ```
 
-Then edit your rc.lua as shown below
+Затем измените `rc.lua` как показано ниже
 
-*   Add a require statment for your new menu.lua file
-*   Add an entry to your awful.menu object for your new menu which calls xdgmenu
+*   Добавьте требуемый оператор для вашего нового файла `menu.lua`
+*   Добавьте запись в свой объект awful.menu для нового меню, которое вызывает xdgmenu
 
 ```
 ...
@@ -192,9 +192,9 @@ $ xdg_menu --format icewm --fullmenu --root-menu /etc/xdg/menus/arch-application
 
 #### С update-menus
 
-*   Uncomment icewm in /etc/update-menus.conf
-*   run update-menus as root
-*   make symlink to /var/cache/xdg-menu/icewm/programs in ~/.icewm/programs
+*   Раскоментируйте icewm в /etc/update-menus.conf
+*   Выполните update-menus от суперпользователя (root)
+*   Сделайте символьную ссылку в /var/cache/xdg-menu/icewm/programs на ~/.icewm/programs
 
 ### Ion3
 
@@ -205,7 +205,7 @@ $ xdg_menu --format ion3  --root-menu /etc/xdg/menus/arch-applications.menu >~/.
 
 ```
 
-After that, change your cfg_menus.lua to include _xdg-menu.lua file and add menu into mainmenu. For example:
+После этого измените cfg_menus.lua включите файл _xdg-menu.lua и добавьте меню в mainmenu. Например:
 
 ```
 ...
@@ -229,11 +229,11 @@ defmenu("mainmenu", {
 
 #### С update-menus
 
-*   Uncomment ion3 in /etc/update-menus.conf
-*   run update-menus as root
-*   change your cfg_menus.lua to include xdg-menu.lua file and add menu into mainmenu.
+*   Расскомментируйте ion3 в /etc/update-menus.conf
+*   Выполните update-menus от имени суперпользователя (root)
+*   Измените ваш cfg_menus.lua включенный файл xdg-menu.lua и добавьте меню в mainmenu.
 
-For example:
+Например:
 
 ```
 ...
@@ -264,9 +264,9 @@ $ xdg_menu --format fluxbox  --root-menu /etc/xdg/menus/arch-applications.menu >
 
 ```
 
-Change your menu file to include generated menu.
+Измените файл меню, чтобы включить сгенерированное меню.
 
-For example add line:
+Например добавьте строку:
 
 ```
       [include] (my-menu)
@@ -275,11 +275,11 @@ For example add line:
 
 #### С update-menus
 
-*   Uncomment fluxbox in /etc/update-menus.conf
-*   run update-menus as root
-*   change your menu file to include generated menu.
+*   Расскоментируйте fluxbox in /etc/update-menus.conf
+*   Выполните update-menus от имени суперпользователя (root)
+*   измените файл меню, чтобы включить сгенерированное меню.
 
-For example add line:
+Например добавьте строку:
 
 ```
       [include] (/var/cache/xdg-menu/fluxbox/boxrc)
@@ -290,34 +290,34 @@ For example add line:
 
 #### С xdg_menu
 
-Generate menu with
+Сгенерируйте меню
 
 ```
 $ xdg_menu --format openbox3 --root-menu /etc/xdg/menus/arch-applications.menu > xdg-menu.xml
 
 ```
 
-and manually add it into your menu.xml. For example, put xdg-menu.xml into menu.xml and add:
+и вручную добавьте его в свой menu.xml. Например, положите xdg-menu.xml в menu.xml и добавьте:
 
 ```
 <menu id="Applications" />
 
 ```
 
-into root-menu.
+в root-menu.
 
 #### Как pipe menu
 
-Using xdg_open as a pipe menu gives you the added benefit of having a menu that automatically updates when you install new applications.
+Использование xdg_open как pipe menu, дает дополнительное преимущество получить меню, которое автоматически обновляется при установке новых приложений.
 
-Add the following somewhere inside your menu.xml between your root menu tags
+Добавьте следующее, где-то, внутри вашего menu.xml между вашими тэгами root menu
 
 ```
 <menu id="applications" label="Applications" execute="xdg_menu --format openbox3-pipe --root-menu /etc/xdg/menus/arch-applications.menu" />
 
 ```
 
-A very basic example:
+Очень простой пример:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -340,11 +340,11 @@ A very basic example:
 
 #### С update-menus
 
-*   Uncomment openbox in /etc/update-menus.conf
-*   run update-menus as root
-*   change your menu.xml file to include generated menu.
+*   Расcкоментируйте openbox in /etc/update-menus.conf
+*   Выполните update-menus от имени суперпользователя (root)
+*   измените ваш файл menu.xml чтобы включить сгенерированное меню.
 
-For example, add following to root-menu:
+Например, добавить следующее в root-menu:
 
 ```
 <menu id="xdg-menu" label="XDG Menu" execute="cat /var/cache/xdg-menu/openbox/menu.xml"/>
@@ -355,86 +355,86 @@ For example, add following to root-menu:
 
 #### С xdg_menu
 
-Use
+Используйте
 
 ```
 $ xdg_menu --format twm --root-menu /etc/xdg/menus/arch-applications.menu >my-twm-menu
 
 ```
 
-and add it into twmrc manually. In the case of twm derivatives with m4 preprocessing such as vtwm or ctwm it can be included by adding
+и добавить его в twmrc вручную. В случае с производным twm препроцессингом m4 таким как vtwm или ctwm он может быть включен путем добавления
 
 ```
 sinclude(`/PATH/TO/my-twm-menu')
 
 ```
 
-to *twmrc.
+в *twmrc.
 
 #### С update-menus
 
-*   Uncomment twm in /etc/update-menus.conf
-*   Add into /etc/X11/twm/system.twmrc file applications menu (add following line:
+*   Расcкоментируйте twm in /etc/update-menus.conf
+*   Добавьте в файл меню приложений /etc/X11/twm/system.twmrc (добавьте следующую строку:
 
 ```
  "apps"          f.menu "Applications"
 
 ```
 
-into defops menu)
+в defops menu)
 
-*   run update-menus as root
-*   run twm -f /var/cache/xdg-menu/twm/twmrc
+*   Выполните update-menus от имени суперпользователя (root)
+*   Выполните twm -f /var/cache/xdg-menu/twm/twmrc
 
-(You will also want to add your other customizations to /etc/X11/twm/system.twmrc.)
+(Вы также можете добавить другие настройки в /etc/X11/twm/system.twmrc.)
 
 ### WindowMaker
 
 #### С xdg_menu
 
-Use
+Используйте
 
 ```
 $ xdg_menu --format WindowMaker --root-menu /etc/xdg/menus/arch-applications.menu >my-wm-menu
 
 ```
 
-and add
+и добавьте
 
 ```
 #include "my-wm-menu"
 
 ```
 
-into your WindowMaker menu file.
+в ваш файл меню WindowMaker.
 
-You can also use the WPrefs "Application Menu Definitions", and add the xdg command as a parameter in a "Generated Submenu" object.
+Вы можете также использовать WPrefs "Application Menu Definitions", и добавить команду XDG в качестве параметра в объект "Generated Submenu".
 
 #### С update-menus
 
-*   Uncomment WindowMaker in /etc/update-menus.conf
-*   run update-menus as root
-*   add
+*   Расcкоментируйте WindowMaker in /etc/update-menus.conf
+*   Выполните update-menus от имени суперпользователя (root)
+*   Добавьте
 
 ```
 #include "/var/cache/xdg-menu/WindowMaker/wmrc"
 
 ```
 
-into your menu file.
+в ваш файл меню.
 
 ### Fvwm2
 
 #### С xdg_menu
 
-Generate menu
+Сгенерируйте меню
 
 ```
 $ xdg_menu --format fvwm2 --root-menu /etc/xdg/menus/arch-applications.menu >fvwm2-menu
 
 ```
 
-and add menu into root menu
+и добавить меню в главное меню
 
 ```
 read fvwm2-menu
@@ -446,9 +446,9 @@ AddToMenu MenuFvwmRoot  "Root Menu"             Title
 
 #### С update-menus
 
-*   Uncomment fvwm2 in /etc/update-menus.conf
-*   run update-menus as root
-*   change your .fvwm2rc file to include generated menu. For example:
+*   Расcкоментируйте fvwm2 in /etc/update-menus.conf
+*   Выполните update-menus от имени суперпользователя (root)
+*   измените ваш файл .fvwm2rc чтобы включить сгенерированное меню. Например:
 
 ```
 AddToMenu MenuFvwmRoot  "Root Menu"             Title
@@ -470,9 +470,9 @@ $ xdg_menu --format blackbox  --root-menu /etc/xdg/menus/arch-applications.menu 
 
 ```
 
-Change your menu file to include generated menu.
+Измените файл меню, чтобы включить сгенерированное меню.
 
-For example add line:
+Например добавьте строку:
 
 ```
 [include] (my-menu)
@@ -481,11 +481,11 @@ For example add line:
 
 #### С update-menus
 
-*   Uncomment blackbox in /etc/update-menus.conf
-*   run update-menus as root
-*   change your menu file to include generated menu.
+*   Расcкоментируйте blackbox in /etc/update-menus.conf
+*   Выполните update-menus от имени суперпользователя (root)
+*   Измените файл меню, чтобы включить сгенерированное меню.
 
-For example add line:
+Например добавьте строку:
 
 ```
 [include] (/var/cache/xdg-menu/blackbox/boxrc)

@@ -115,7 +115,7 @@ The pen buttons might not work out of the box. [Install](/index.php/Install "Ins
 
 ### Virtual Keboard
 
-Depending on the desktop environment you are using, you might want to use different virtual keyboard. [onboard](https://www.archlinux.org/packages/?name=onboard) provides a reliable and comfortable experience. A guide for optical tweaking is provided [here](https://github.com/Vistaus/surface3-arch-antergoslinux/issues/5). If you are using [GNOME](https://wiki.archlinux.org/index.php/GNOME), these two extension ([1](https://extensions.gnome.org/extension/992/onboard-integration/), [2](https://extensions.gnome.org/extension/993/slide-for-keyboard/)) provide a better integration.
+Depending on the desktop environment you are using, you might want to use different virtual keyboard. [onboard](https://www.archlinux.org/packages/?name=onboard) provides a reliable and comfortable experience. A guide for optical tweaking is provided [here](https://github.com/Vistaus/surface3-arch-antergoslinux/issues/5). If you are using [GNOME](/index.php/GNOME "GNOME"), these two extension ([1](https://extensions.gnome.org/extension/992/onboard-integration/), [2](https://extensions.gnome.org/extension/993/slide-for-keyboard/)) provide a better integration.
 
 ### Booting with Secure Boot Enabled
 

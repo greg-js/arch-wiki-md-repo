@@ -145,7 +145,7 @@ The only special consideration is the MacBook firmware boot sound. To ensure tha
 
 **Note:**
 
-*   The swap partition is optional, on machines with a RAM of size 4GB or more, good performance can be expected without a swap partition. Also, a **swap file** can be created later, see [Swap file](/index.php/Swap#Swap_file "Swap"). You'll need a swap partition/file if you expect to [Hibernate](/index.php/Hibernate "Hibernate") your machine in future.
+*   The swap partition is optional, on machines with a RAM of size 4GB or more, good performance can be expected without a swap partition. Also, a **swap file** can be created later, see [Swap file](/index.php/Swap_file "Swap file"). You'll need a swap partition/file if you expect to [Hibernate](/index.php/Hibernate "Hibernate") your machine in future.
 *   For more information on partitioning, see [Partitioning hard disks: General information](/index.php/Beginners%27_guide#Partitioning_hard_disks:_General_information "Beginners' guide").
 *   As of Aug 2014 [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) has a bug that does not allow to run `refind-install` if EFI partition is mounted to `/boot`. Other bootloaders (like [gummiboot](https://www.archlinux.org/packages/?name=gummiboot)) have no such problem and thus there is no need to split `/boot/efi` from `/boot`.
 
@@ -206,7 +206,7 @@ The easiest way to partition your hard drive, so that OS X and Arch Linux will c
 
 **Note:**
 
-*   The swap partition is optional on machines with 4GB of RAM or more. A **[swap file](/index.php/Swap#Swap_file "Swap")** can be created later.
+*   The swap partition is optional on machines with 4GB of RAM or more. A **[swap file](/index.php/Swap_file "Swap file")** can be created later.
 *   The easiest dual-boot option is to install rEFInd from inside OS X, to its root directory (default for `install.sh`). Following that, copy the driver folder from the installation tarball into the new rEFInd location, and uncomment the lines *"scan_all_linux_kernels"* and *"also_scan_dirs"* options in `refind.conf`. Configuration of boot options can then be done from a `refind_linux.conf` in Arch's `/boot` directory.
 *   If you want to be able to boot GRUB from the Apple boot loader, you can create a small hfs+ partition (for convenience, use OS X to format it in *Disk Utility.app* afterwards). Follow the GRUB EFI install procedure, and mount your `/boot/efi` directory to the hfs+ partition you created. Finally, finish up again in OS X by blessing the partition. This will set GRUB as the default boot option (holding alt at startup goes to the mac boot options screen still. See [http://mjg59.dreamwidth.org/7468.html](http://mjg59.dreamwidth.org/7468.html)).,
 *   OS X's EFI partition can be shared with Arch Linux, making the creation of an additional EFI partition dedicated to Arch completely optional.

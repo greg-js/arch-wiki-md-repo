@@ -90,7 +90,7 @@ drwxr-xr-x 2 root root  4096 Aug 29 23:59 apei
 
 ### DSDT 修正
 
-如果装入模块后电源管理问题仍然存在，可能是 Linux 兼容性较差的[DSDT](http://en.wikipedia.org/wiki/DSDT#ACPI_Tables)导致。请参阅[DSDT](/index.php/DSDT "DSDT")Wiki 文档。
+如果装入模块后电源管理问题仍然存在，可能是 Linux 兼容性较差的[DSDT](https://en.wikipedia.org/wiki/DSDT#ACPI_Tables "wikipedia:DSDT")导致。请参阅[DSDT](/index.php/DSDT "DSDT")Wiki 文档。
 
 ### 笔记本 ACPI 修正
 

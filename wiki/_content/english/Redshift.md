@@ -1,6 +1,6 @@
 From the [redshift project web page](http://jonls.dk/redshift/):
 
-	*Redshift adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com) [...].*
+	Redshift adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com)....
 
 The project is developed on [GitHub](https://github.com/jonls/redshift).
 

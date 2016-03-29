@@ -74,7 +74,7 @@ While there are several solutions to this problem one of these should be most pr
 
 ```
 
-*   put your music collection to a different path (a) by moving it entirely, (b) with a bind mount or (c) with a [Btrfs subvolume](/index.php/Btrfs#Sub-volumes "Btrfs") (you should make this change persistent with an entry to `/etc/fstab` ). Permissions of alternate directories can be adjusted with [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists").
+*   put your music collection to a different path (a) by moving it entirely, (b) with a bind mount or (c) with a [Btrfs subvolume](/index.php/Btrfs#Subvolumes "Btrfs") (you should make this change persistent with an entry to `/etc/fstab` ). Permissions of alternate directories can be adjusted with [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists").
 
 The MPD config must contain only one music directory. If the music collection is contained under multiple directories, create symbolic links under the main music directory in `/var/lib/mpd`. Remember to set permissions accordingly on the directories being linked.
 

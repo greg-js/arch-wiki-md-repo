@@ -19,12 +19,12 @@
 
 ## Юниты таймера
 
-Timers are *systemd* unit files with a suffix of `.timer`. Timers are like other [unit configuration files](/index.php/Systemd#Writing_unit_files "Systemd") and are loaded from the same paths but include a `[Timer]` section. The `[Timer]` section defines when and how the timer activates. Timers are defined as one of two types:
+Таймеры *systemd* это файлы юнитов с суфиксом `.timer`. Таймеры, как и другие файлы [файлы настроек юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") и загружаются по одному и тому же пути, но включают в себя секцию `[Timer]`. Секция `[Timer]` определяет, когда и как таймер активизируется. Таймеры определяются в качестве одного из двух типов:
 
-*   **Monotonic timers** activate after a time span relative to a varying starting point. There are number of different monotonic timers but all have the form of: `On*Type*Sec=`. `OnBootSec` and `OnActiveSec` are common monotonic timers.
-*   **Realtime timers** (a.k.a. wallclock timers) activate on a calendar event (like cronjobs). The option `OnCalendar=` is used to define them.
+*   **Монотонный таймер** активируется после определенного промежутка времени по отношению к той или иной отправной точки. Есть несколько различных монотонных таймеров, но все они имеют вид: `On*Type*Sec=`. `OnBootSec` и `OnActiveSec` являются общими монотонными таймерами.
+*   **Таймер реального времени** (также известный как таймер настенный часы) активируется на события календаря (как cronjobs). Для их определения используется опция `OnCalendar=`.
 
-For a full explanation of timer options, see the `systemd.timer(5)` [man page](/index.php/Man_page "Man page"). The argument syntax for calendar events and time spans is defined on the `systemd.time(7)` [man page](/index.php/Man_page "Man page").
+Для полного объяснения опций таймера смотрите `systemd.timer(5)` [странице справочного руководства](/index.php/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0_%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0 "Страница справочного руководства"). Синтаксис аргументов для событий календаря и промежутка времени определяется на `systemd.time(7)` [странице справочного руководства](/index.php/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0_%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0 "Страница справочного руководства").
 
 ## Служба юнита
 
@@ -160,13 +160,13 @@ If you like crontabs just because they provide a unified view of all scheduled j
 
 ## Смотрите также
 
-*   [systemd.timer man page](http://www.freedesktop.org/software/systemd/man/systemd.timer.html) on freedesktop.org
-*   [Fedora Project wiki page](https://fedoraproject.org/wiki/Features/SystemdCalendarTimers) on *systemd* calendar timers
-*   [Gentoo wiki section](https://wiki.gentoo.org/wiki/Systemd#Timer_services) on *systemd* timer services
-*   **systemd-cron-next** — tool to generate timers/services from crontab and anacrontab files
+*   [systemd.timer man page](http://www.freedesktop.org/software/systemd/man/systemd.timer.html) на freedesktop.org (Англ.)
+*   [Fedora Project wiki page](https://fedoraproject.org/wiki/Features/SystemdCalendarTimers) on *systemd* calendar timers (Англ.)
+*   [Раздел Gentoo wiki](https://wiki.gentoo.org/wiki/Systemd/ru#.D0.A1.D0.B5.D1.80.D0.B2.D0.B8.D1.81.D1.8B_.D1.82.D0.B0.D0.B9.D0.BC.D0.B5.D1.80.D0.BE.D0.B2) Сервисы таймеров *systemd*
+*   **systemd-cron-next** — утилита для создания таймеров/служб из файлов crontab и anacrontab
 
 	[https://github.com/kstep/systemd-cron-next](https://github.com/kstep/systemd-cron-next) || [systemd-cron-next](https://aur.archlinux.org/packages/systemd-cron-next/)
 
-*   **systemd-cron** — provides systemd units to run cron scripts; using *systemd-crontab-generator* to convert crontabs
+*   **systemd-cron** — предоставляет юнитам systemd запускать скрипты cron; используя *systemd-crontab-generator* для конвертации crontab'ов
 
 	[https://github.com/systemd-cron/systemd-cron](https://github.com/systemd-cron/systemd-cron) || [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/)

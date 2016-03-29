@@ -63,7 +63,7 @@ User space utilities are available by [installing](/index.php/Installing "Instal
 
 ## Partitioning
 
-Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes; however, this is not required to simply [create a Btrfs filesystem](#Creating_a_new_file_system) on an existing [partition](/index.php/Partition "Partition") that was created using another method. If using Btrfs for partitioning, one can use [subvolumes](#Sub-volumes) to simulate partitions. There are some limitations to this approach in single disk setups:
+Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes; however, this is not required to simply [create a Btrfs filesystem](#Creating_a_new_file_system) on an existing [partition](/index.php/Partition "Partition") that was created using another method. If using Btrfs for partitioning, one can use [subvolumes](#Subvolumes) to simulate partitions. There are some limitations to this approach in single disk setups:
 
 *   Cannot use different [file systems](/index.php/File_systems "File systems") for different [mount points](/index.php/Fstab "Fstab").
 *   Cannot use [swap area](/index.php/Swap "Swap") as Btrfs does not support [swap files](/index.php/Swap#Swap_file "Swap") and there is no place to create [swap partition](/index.php/Swap#Swap_partition "Swap"). This also limits the use of hibernation/resume, which needs a swap area to store the hibernation image.

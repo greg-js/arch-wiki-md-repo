@@ -70,7 +70,7 @@ GRUB Legacy 已从[官方源](/index.php/%E5%AE%98%E6%96%B9%E6%BA%90 "官方源"
 
 然而，和其它不被支持的软件包一样，后续的 bug 将无人修复。所以建议所有的用户抽时间升级到 [GRUB version 2.x](/index.php/GRUB "GRUB"), 或其它支持的 [Boot Loader](/index.php/Boot_Loader "Boot Loader").
 
-GRUB legacy 不支持 [GPT](/index.php/GUID_Partition_Table "GUID Partition Table") 硬盘，[Btrfs](/index.php/Btrfs "Btrfs") 文件系统和 [UEFI](/index.php/UEFI "UEFI") 固件。
+GRUB legacy 不支持 [GPT](/index.php/GPT "GPT") 硬盘，[Btrfs](/index.php/Btrfs "Btrfs") 文件系统和 [UEFI](/index.php/UEFI "UEFI") 固件。
 
 ### 如何升级
 
@@ -612,7 +612,7 @@ kernel /boot/vmlinuz-linux root=/dev/disk/by-label/Arch_Linux ro
 
 #### 按 UUID
 
-可使用 `blkid` 或 `ls -l /dev/disk/by-uuid` 来获取分区的 [UUID](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming") (Universally Unique IDentifier, 通用唯一标识符). 在 `menu.lst` 里如下设置:
+可使用 `blkid` 或 `ls -l /dev/disk/by-uuid` 来获取分区的 [UUID](/index.php/UUID "UUID") (Universally Unique IDentifier, 通用唯一标识符). 在 `menu.lst` 里如下设置:
 
 ```
 kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/*uuid_number*
@@ -830,7 +830,7 @@ grub> quit
 
 ```
 
-更深入的总结见[[这个页面](http://stringofthoughts.wordpress.com/2009/05/24/grub-error-17-debianubuntu)]。
+更深入的总结见[这个页面](http://stringofthoughts.wordpress.com/2009/05/24/grub-error-17-debianubuntu)。
 
 ### /boot/grub/stage1 not read correctly
 
@@ -856,7 +856,7 @@ grub> quit
 
 现在尝试重新设置 GRUB.
 
-[[这里](https://bbs.archlinux.org/viewtopic.php?pid=799930)]是报告该问题的论坛帖子。
+[这里](https://bbs.archlinux.org/viewtopic.php?pid=799930)是报告该问题的论坛帖子。
 
 ### 意外安装到了 Windows 分区
 

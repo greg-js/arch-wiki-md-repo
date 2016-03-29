@@ -160,7 +160,7 @@ The order of the items in `serverkey.pem` is important. The order has to be as f
 
 #### Let's Encrypt
 
-If you want to use Let's Encrypt with Hiawatha follow [Let’s_Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") (the manual way is recommended). Read Let's Encrypt [Getting Started](https://letsencrypt.org/getting-started/) for detailed instructions. Afterwards, create a Hiawatha certificate bundle:
+If you want to use Let's Encrypt with Hiawatha follow [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") (the manual way is recommended). Read Let's Encrypt [Getting Started](https://letsencrypt.org/getting-started/) for detailed instructions. Afterwards, create a Hiawatha certificate bundle:
 
 ```
 # cd /etc/letsencrypt/live/domain.tld/

@@ -42,7 +42,7 @@ resume device = /dev/disk/by-label/swap
 
 where `/dev/disk/by-label/swap` must be replaced with the correct block device containing the swap partition.
 
-*   If using a [swap file](/index.php/Swap#Swap_file "Swap"):
+*   If using a [swap file](/index.php/Swap_file "Swap file"):
 
 ```
 resume device = /dev/sdXN  # the partition which contains swapfile 

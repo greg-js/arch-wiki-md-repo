@@ -64,7 +64,7 @@ You add `username` to the `log group`. Now `username` can read log files, and yo
 
 ## AUR 软件包
 
-除了 [官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") 上的 [conky](https://www.archlinux.org/packages/?name=conky) 软件包, 在 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 上还有很多关于conky的软件包。
+除了 [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") 上的 [conky](https://www.archlinux.org/packages/?name=conky) 软件包, 在 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 上还有很多关于conky的软件包。
 
 *   Conky基本包，没有X11依赖 [conky-cli](https://aur.archlinux.org/packages/conky-cli/)
 *   Nvidia支持： [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/)
@@ -517,9 +517,9 @@ The current version of conky (1.9.0) suffers from a bug ([http://sourceforge.net
 
 ### Graysky
 
-[[Screenshot](http://img9.imageshack.us/img9/3153/imageffj.jpg)].
+[Screenshot](http://img9.imageshack.us/img9/3153/imageffj.jpg).
 
-[[Here](https://raw.github.com/graysky2/configs/5fbe513918dfe8066f87e670108318464902afae/dotfiles/.conkyrc)] it is - modify to fit your system. Optimized for a quad core chip w/ several hdds (although one of them is not connected for this screenshot) and an nvidia graphics card. You can easily modify this to a dual or single core system with one or whatever number of hdds.
+[Here](https://raw.github.com/graysky2/configs/5fbe513918dfe8066f87e670108318464902afae/dotfiles/.conkyrc) it is - modify to fit your system. Optimized for a quad core chip w/ several hdds (although one of them is not connected for this screenshot) and an nvidia graphics card. You can easily modify this to a dual or single core system with one or whatever number of hdds.
 
 ### A sample rings script with nvidia support
 

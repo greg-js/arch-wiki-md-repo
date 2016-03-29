@@ -52,6 +52,17 @@ end HelloWorld;
 
 ```
 
+	ArnoldC
+
+	Programming language based on the one-liners of Arnold Schwarzenegger.
+
+```
+IT'S SHOWTIME
+TALK TO THE HAND "Arch is the best!"
+YOU HAVE BEEN TERMINATED
+
+```
+
 	ATS
 
 	A functional programming language that uses dependent types to improve programs' reliability.
@@ -306,6 +317,27 @@ Pick a language:
 
 ```
 
+	CSS
+
+	A stylesheet language, heavily used for styling web pages.
+
+```
+body * {
+    display: none;
+}
+
+body::before {
+    content: "Arch is the best!";
+    font-family: monospace;
+    font-size: 2.7rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+```
+
 	D
 
 	A C-style language. The benefits of hindsight, with modern conveniences.
@@ -347,6 +379,20 @@ Pick a language:
 
 ```
  (message "Arch is the best!")
+
+```
+
+	Emojicode
+
+	A delimiter-less, object oriented, imperative, high-level, hybrid language with emojis as fix points and methods.
+
+```
+🐇 🐼 🍇
+    🐇🐖 🏁 ➡️ 🚂 🍇
+        😀 🔤Arch is the best!🔤
+        🍎 0
+    🍉
+🍉
 
 ```
 
@@ -610,7 +656,7 @@ writeln("Arch is the best!");
 
 ```
 
-	Nasm(i686) (or yasm)
+	NASM / Yasm (i686)
 
 	Notice that the string is in the .text section, which feels superior.
 
@@ -635,9 +681,9 @@ len equ $-msg
 
 ```
 
-	nasm/yasm x86_64
+	NASM / Yasm (x86_64)
 
-	Includes AMD's sexy new instruction, *syscall*.
+	Featuring AMD's sexy new instruction, *syscall*.
 
 ```
 ;nasm -f elf64 arch.asm

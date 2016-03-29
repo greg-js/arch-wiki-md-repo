@@ -168,7 +168,7 @@ The `hard` limit is stricter, so to speak; a user can never write more data once
 
 **Warning:** The `hard` limit applies to all files written by and for the respective user/group, including temporary files by started applications, which may crash at this point.
 
-**Tip:** If a problem is encountered with the defined quotas, you should first try to correct them with `edquota *user1*` from a root console. Alternatively, `quotaoff -a` as root disables all quotas at runtime and the `quotacheck.mode=skip` [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") can be used at boot to temporarily disable the `systemd-quotacheck.service`.
+**Tip:** If a problem is encountered with the defined quotas, you should first try to correct them with `edquota *user1*` from a root console. Alternatively, `quotaoff -a` as root disables all quotas at runtime and the `quotacheck.mode=skip` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") can be used at boot to temporarily disable the `systemd-quotacheck.service`.
 
 ## Managing
 

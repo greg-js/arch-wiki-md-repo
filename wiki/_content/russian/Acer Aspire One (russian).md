@@ -92,7 +92,7 @@
 
 Открываем Мой компьютер и кликаем правую кнопку мышки над флешкой. Выбираем Форматировать.
 
-Скачиваем программу [unetbootin](http://ru.wikipedia.org/wiki/UNetbootin). Текущая версия, на момент написания руководства, [http://downloads.sourceforge.net/unetbootin/unetbootin-windows-312.exe](http://downloads.sourceforge.net/unetbootin/unetbootin-windows-312.exe)
+Скачиваем программу [unetbootin](https://ru.wikipedia.org/wiki/UNetbootin). Текущая версия, на момент написания руководства, [http://downloads.sourceforge.net/unetbootin/unetbootin-windows-312.exe](http://downloads.sourceforge.net/unetbootin/unetbootin-windows-312.exe)
 
 Запускаем unetbootin. Ставим галочку **Образ**. Справа кликаем по кнопке и находим образ дистрибутива ArchLinux.
 

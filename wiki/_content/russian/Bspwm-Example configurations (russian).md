@@ -1,6 +1,6 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [bspwm/Example configurations](/index.php/Bspwm/Example_configurations "Bspwm/Example configurations"). Дата последней синхронизации: 27 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Bspwm/Example_configurations&diff=0&oldid=428031).
 
-The [bspwm](/index.php/Bspwm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bspwm (Русский)") configurations below will get you up to speed quickly.
+Получите настройки [bspwm](/index.php/Bspwm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bspwm (Русский)") быстро, из списка ниже.
 
 ## Аннотированный пример настроек, на основе одного значения по умолчанию
 
@@ -40,7 +40,7 @@ super + t
 
 ```
 
-**Примечание:** There are two tiling modes in bspwm at the moment. The default one is the usual b-tree based tiling, the other mode is the monocle mode that puts the focused window on fullscreen.
+**Примечание:** На данный момент в bspwm есть два тайловых режима. По умолчанию, один обычный b-древовидный тайлинг, другой режим монокля, который ставит сфокусированное окно на весь экран.
 
 Баланс области рабочего стола:
 
@@ -58,19 +58,18 @@ super + {s,f}
 
 ```
 
-**Примечание:** This shows an interesting bit of sxhkd syntax where the the first item "s" in the input array corresponds to the first entry "floating" in the command array and so on.
+**Примечание:** Это показывает интересный бит синтаксиса sxhkd, где первый элемент "s" во входном массиве соответствует первому элементу "плавающего" в командной массива и так далее.
 
-Move (with `Super+hjkl`) changes the window focus and preselect (with `Super+Ctrl+hjkl`) marks the given edge of the focused window for modification (this is called preselection):
+Перемещение (с помощью `Super+hjkl`) изменяет фокус окна и предварительно выбирать (с `Super+Ctrl+hjkl`) отмечает данный край сфокусированного окна для модификации (это называется предварительный выбор):
 
 ```
-super + {_,ctrl + }{h,j,k,l}
     bspc window -{f,p} {left,down,up,right}
 
 ```
 
-**Примечание:** Shows another interesting bit of sxhkd syntax where "_" means that no other key is necessary to trigger the command.
+**Примечание:** Показывает еще один интересный бит синтаксиса sxhkd где "_" означает, что никакой другой ключ не требуется, чтобы вызвать команду.
 
-Swap (with `Super+Shift+hjkl`) allows you to swap the focused window with another window while transplant (with `Super+Shift+hjkl`) will move the window into another preselection:
+Swap (с помощью`Super+Shift+hjkl`) позволяет поменять сфокусированное окно с другим окном во время трансплантации (с помощью `Super+Shift+hjkl`) переместит окно в другой предварительный отбор:
 
 ```
 super + {shift,alt} + {h,j,k,l}
@@ -78,7 +77,7 @@ super + {shift,alt} + {h,j,k,l}
 
 ```
 
-**Примечание:** To play with transplantation, preselect an edge of an adjacent window, then transplant into the adjacent window.
+**Примечание:** Для того, чтобы поиграть с трансплантацией, предварительно выберите край соседнего окна, а затем трансплантируйте в соседнее окно.
 
 Цикл вперед/назад:
 
@@ -88,7 +87,7 @@ super + {_,shift + }c
 
 ```
 
-Circulate leaves backward/forward:
+Circulate leaves назад/вперёд:
 
 ```
 super + {comma,period}
@@ -112,7 +111,7 @@ super + bracket{left,right}
 
 ```
 
-Cancel window/desktop preselection:
+Отменить предварительный выбор окна/рабочего стола:
 
 ```
 super + ctrl + {_,shift + }space
@@ -120,7 +119,7 @@ super + ctrl + {_,shift + }space
 
 ```
 
-Preselection amount:
+Количество предварительного выбора:
 
 ```
 super + ctrl + {1-9}
@@ -144,7 +143,7 @@ super + {_,shift + }{1-9,0}
 
 ```
 
-Мышь переместить/изменить размер стороны/изменить размер сторон (за уголок):
+Мышкой: переместить/изменить размер стороны/сторон (за уголок):
 
 ```
 super + button{1-3}

@@ -138,4 +138,4 @@ MINSTOP=hwmon0/device/pwm1=105
 
 либо к массиву DAEMONS в `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` если вы используете init, чтобы это происходило при старте системы.
 
-*Большая часть материала для этого howto взята с [[Ubuntu forums](http://ubuntuforums.org/)] и [[Ubuntu guide](http://ubuntuguide.org/)].*
+*Большая часть материала для этого howto взята с [Ubuntu forums](http://ubuntuforums.org/) и [Ubuntu guide](http://ubuntuguide.org/).*

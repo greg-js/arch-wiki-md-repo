@@ -35,6 +35,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM):
     *   [3.2 Failure on logout](#Failure_on_logout)
     *   [3.3 Xorg 1.16](#Xorg_1.16)
     *   [3.4 Use Xorg backend](#Use_Xorg_backend)
+    *   [3.5 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -517,6 +518,25 @@ The [Wayland](/index.php/Wayland "Wayland") backend is used by default and the [
 #WaylandEnable=false
 
 ```
+
+### Incomplete removal of gdm
+
+After removing gdm (say it was a build dependancy), systemd may report the following:
+
+```
+user 'gdm': directory '/var/lib/gdm' does not exist
+
+```
+
+To remove this warning, login as root and delete the primary user "gdm" and then delete the group "gdm":
+
+```
+#userdel gdm
+#groupdel gdm
+
+```
+
+Verify that gdm is successfully removed via `pwck` and `grpck`
 
 ## See also
 

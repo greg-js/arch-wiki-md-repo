@@ -27,13 +27,12 @@ Spotify also offers free users the ability to create playlist which can be shuff
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Blinking images and improper rendering while using Spotify Linux with DWM](#Blinking_images_and_improper_rendering_while_using_Spotify_Linux_with_DWM)
     *   [4.2 Broken search, browsing or radio](#Broken_search.2C_browsing_or_radio)
-    *   [4.3 Spotify will not play local files](#Spotify_will_not_play_local_files)
-    *   [4.4 SpotifyHelper.exe crashes (Windows client)](#SpotifyHelper.exe_crashes_.28Windows_client.29)
-    *   [4.5 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
-    *   [4.6 Deadlock GUI Thread](#Deadlock_GUI_Thread)
-    *   [4.7 Pulseaudio](#Pulseaudio)
-    *   [4.8 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
-    *   [4.9 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
+    *   [4.3 SpotifyHelper.exe crashes (Windows client)](#SpotifyHelper.exe_crashes_.28Windows_client.29)
+    *   [4.4 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
+    *   [4.5 Deadlock GUI Thread](#Deadlock_GUI_Thread)
+    *   [4.6 Pulseaudio](#Pulseaudio)
+    *   [4.7 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
+    *   [4.8 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
 *   [5 See also](#See_also)
 
 ## Client installation
@@ -42,7 +41,7 @@ Choose which client you would prefer. The Linux client is receiving good reviews
 
 ### Linux
 
-[spotify](https://aur.archlinux.org/packages/spotify/) from the [AUR](/index.php/AUR "AUR") will automatically download the software. If you wish to play local files you will need to install [ffmpeg-compat](https://www.archlinux.org/packages/?name=ffmpeg-compat) as well.
+[spotify](https://aur.archlinux.org/packages/spotify/) from the [AUR](/index.php/AUR "AUR") will automatically download the software. If you wish to play local files you will need to install [ffmpeg0.10](https://www.archlinux.org/packages/?name=ffmpeg0.10) as well.
 
 ### Windows (Wine)
 
@@ -383,12 +382,6 @@ This will tell dwm to start spotify as a floating window associated with the tag
 If various tabs like browsing only show a blank screen, the search field doesn't seem to do anything or the radio page is broken (stuck when starting and unsresponsive to input) you might be using a custom locale.
 
 Try setting the environment variable `LC_NUMERIC` to `en_US.utf8` before starting Spotify.
-
-### Spotify will not play local files
-
-This can manifest in a very unusual manner like some songs not playing when you try to stream them because the player attempts to play them from the hard drive.
-
-Try installing [ffmpeg-compat](https://www.archlinux.org/packages/?name=ffmpeg-compat), as per [this forum discussion](https://bbs.archlinux.org/viewtopic.php?pid=1383240).
 
 ### SpotifyHelper.exe crashes (Windows client)
 

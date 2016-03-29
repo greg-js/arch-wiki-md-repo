@@ -101,7 +101,7 @@ The command will prompt for answers to several questions. For general use most p
 *   a keysize of the default value (2048). A larger keysize of 4096 "gives us almost nothing, while costing us quite a lot"[[1]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096).
 *   an expiration date. A period of a year is good enough for the average user. This way even if access is lost to the keyring, it will allow others to know that it is no longer valid. Later, if necessary, the expiration date can be extended without having to re-issue a new key.
 *   your name and email address. You can add multiple identities to the same key later (*e.g.*, if you have multiple email addresses you want to associate with this key).
-*   *no* optional comment. They only serve to confuse people. Leave the comment empty.
+*   *no* optional comment. Since the semantics of the comment field are [not well-defined](https://lists.gnupg.org/pipermail/gnupg-devel/2015-July/030150.html), it has limited value for identification.
 *   [a secure passphrase](/index.php/Security#Choosing_secure_passwords "Security").
 
 **Note:** The name and email address you enter here will be seen by anybody who imports your key.

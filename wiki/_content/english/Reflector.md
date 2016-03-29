@@ -17,7 +17,7 @@
 
 **Warning:**
 
-*   `/etc/pacman/mirrorlist` will be overwritten by default. Make a backup before running reflector.
+*   `/etc/pacman.d/mirrorlist` will be overwritten by default. Make a backup before running reflector.
 *   Make sure the resulting `/etc/pacman.d/mirrorlist` does not contain entries that you consider untrustworthy before syncing or updating with [Pacman](/index.php/Pacman "Pacman").
 
 To see all of the available commands, run the following command:

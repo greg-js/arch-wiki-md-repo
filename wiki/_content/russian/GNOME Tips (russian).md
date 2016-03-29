@@ -123,7 +123,7 @@ image/jpeg=eog.desktop
 
 ### Шрифты кажутся перекошенным
 
-Вы можете изменять [DPI](http://ru.wikipedia.org/wiki/Dpi) ваших шрифтов в GNOME c помощью [ПКМ](http://ru.wikipedia.org/wiki/%D0%9F%D0%9A%D0%9C) щелкните на Рабочем столе->Изменить фон рабочего стола->Шрифты->Подробнее...->Разрешение
+Вы можете изменять [DPI](https://ru.wikipedia.org/wiki/Dpi) ваших шрифтов в GNOME c помощью [ПКМ](https://ru.wikipedia.org/wiki/%D0%9F%D0%9A%D0%9C) щелкните на Рабочем столе->Изменить фон рабочего стола->Шрифты->Подробнее...->Разрешение
 
 ```
 Разрешение: [96] точек на дюм
@@ -228,7 +228,7 @@ Control + L
 
 Затем, из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"), [python-nautilus](https://aur.archlinux.org/packages/python-nautilus/)
 
-Теперь, создайте директорию под названием *python-extensions* в `~/.nautilus`. Положите следующий скрипт, с названием `bsc.py`, в только что созданную папку. Вы можете скачать скрипт тут: [[bsc.py](http://stefanwilkens.eu/bsc.py)] (пожалуйста, бросьте пару строк --[stefanwilkens](/index.php/User:Stefanwilkens "User:Stefanwilkens") если файл будет не доступен)
+Теперь, создайте директорию под названием *python-extensions* в `~/.nautilus`. Положите следующий скрипт, с названием `bsc.py`, в только что созданную папку. Вы можете скачать скрипт тут: [bsc.py](http://stefanwilkens.eu/bsc.py) (пожалуйста, бросьте пару строк --[stefanwilkens](/index.php/User:Stefanwilkens "User:Stefanwilkens") если файл будет не доступен)
 
 Перезапустите файловый менеджер, теперь вы сможете настроить отображение метаданных в Правка -> Параметры -> List Columns
 
@@ -300,9 +300,10 @@ StartupNotify=true
 
 #### Изменение логотипа Gnome на Arch
 
-**Примечание:** Благодарность arkham, кто запостил данный способ в [[этот форум](https://bbs.archlinux.org/viewtopic.php?id=74881)]
+**Примечание:**
+**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
 
-*   Скачайте [[this Arch icon](http://img23.imageshack.us/img23/9679/starthere.png)] (имя файла `starthere.png`)
+*   Скачайте [this Arch icon](http://img23.imageshack.us/img23/9679/starthere.png) (имя файла `starthere.png`)
 *   Или можете установить пакет artwork используя команду "pacman -S archlinux-artwork", что добавит новые файлы в каталог/usr/share/archlinux , и измените размер выбранного вами логотипа к 24х24px
 *   Создайте в папке .icons домашней директории папку gnome
 
@@ -570,4 +571,4 @@ CD-рипер, интегрированный в rhythmbox.
 
 ## См. также
 
-*   [GNOME_(Русский)](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)")
+*   [GNOME (Русский)](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)")

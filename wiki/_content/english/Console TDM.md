@@ -1,4 +1,4 @@
-[Console TDM](http://code.google.com/p/t-display-manager/) is an extension for xorg-xinit written in pure bash. It is inspired by CDM, which aimed to be a replacement of display managers such as GDM.
+[Console TDM](http://github.com/dopsi/console-tdm) is an extension for xorg-xinit written in pure bash. It is inspired by CDM, which aimed to be a replacement of display managers such as GDM.
 
 ## Installation
 

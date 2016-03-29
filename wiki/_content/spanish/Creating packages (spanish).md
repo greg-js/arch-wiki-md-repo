@@ -121,7 +121,7 @@ Una explicación de posibles variables del `PKGBUILD` se encuentra en la wiki de
 
 ### La función `build()`
 
-Ahora hay que implementar la función `build()` en el archivo `PKGBUILD`. Esta función utiliza sintaxis de comandos comunes de [Bash](http://es.wikipedia.org/wiki/Bash) para compilar automáticamente el software y también crear el directorio `pkg` para instalar el software. Esto permite a `makepkg` empaquetar los archivos sin envegar entre directorios de su filesystem.
+Ahora hay que implementar la función `build()` en el archivo `PKGBUILD`. Esta función utiliza sintaxis de comandos comunes de [Bash](https://es.wikipedia.org/wiki/Bash) para compilar automáticamente el software y también crear el directorio `pkg` para instalar el software. Esto permite a `makepkg` empaquetar los archivos sin envegar entre directorios de su filesystem.
 
 El primer paso de la función `build()` es entrar al directorio creado al descomprimir el archivo fuente. En la mayoría de los casos ese comando se vera como este:
 

@@ -246,7 +246,7 @@ If for some reason the root partition has been improperly mounted read only, rem
 
 ### bind mounts
 
-**Note:** Binding a directory to a different location is not recognised by almost any program, so for instance careless commands like `rm -r *` will also erase any content from the original location. So softlinks should be the preferable way in most cases. If you need permission to a directory on a Btrfs and softlinks are not sufficient its [subvolumes](/index.php/Btrfs#Sub-volumes "Btrfs") faciliate extended capabilities like mount options compared to bind mounting
+**Note:** Binding a directory to a different location is not recognised by almost any program, so for instance careless commands like `rm -r *` will also erase any content from the original location. So softlinks should be the preferable way in most cases. If you need permission to a directory on a Btrfs and softlinks are not sufficient its [subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") faciliate extended capabilities like mount options compared to bind mounting
 
 Sometimes programs or users cannot access one specific directory due to insufficient permissions. One feasable possibility to give the program access to this directory is bind mounting it to a location the program can access. If a program has permission to access directory bar but not to directory foo, under some circumstances the access can be granted without any permission hassle by adding an entry to `/etc/fstab`:
 

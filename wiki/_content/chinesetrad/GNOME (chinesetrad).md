@@ -13,7 +13,7 @@
     *   [6.1 系統設定](#.E7.B3.BB.E7.B5.B1.E8.A8.AD.E5.AE.9A)
         *   [6.1.1 顏色](#.E9.A1.8F.E8.89.B2)
         *   [6.1.2 日期 & 時間](#.E6.97.A5.E6.9C.9F_.26_.E6.99.82.E9.96.93)
-        *   [6.1.3 Default applications](#Default_applications)
+        *   [6.1.3 預設應用程式](#.E9.A0.90.E8.A8.AD.E6.87.89.E7.94.A8.E7.A8.8B.E5.BC.8F)
         *   [6.1.4 Mouse and touchpad](#Mouse_and_touchpad)
         *   [6.1.5 Network](#Network)
         *   [6.1.6 Online accounts](#Online_accounts)
@@ -242,11 +242,9 @@ $ gsettings set org.gnome.shell.calendar show-weekdate true
 
 ```
 
-#### Default applications
+#### 預設應用程式
 
-Upon installing GNOME for the first time, you may find that the wrong applications are handling certain protocols. For example, *totem* opens videos instead of a previously used [VLC](/index.php/VLC "VLC"). Some of the associations can be set from system settings via: *System* > *Details* > *Default applications*.
-
-For other protocols and methods see [Default applications](/index.php/Default_applications "Default applications") for configuration.
+安裝完gnome完之後可能發現一些錯置的預設應用程式，例如：*totem*開源播放器取代常見的[VLC](/index.php/VLC "VLC")，這些設定可以透過：*System*>*Details*>*Default applications*來修改。 其他的協定與方法可看[Default appliactions](/index.php?title=Default_appliactions&action=edit&redlink=1 "Default appliactions (page does not exist)")來設定。
 
 #### Mouse and touchpad
 

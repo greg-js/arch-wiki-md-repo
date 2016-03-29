@@ -75,11 +75,12 @@
 
 ## Preface
 
-*   A *bootloader* is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system.
-*   The name *GRUB* officially refers to version *2* of the software, see [[2]](https://www.gnu.org/software/grub/). If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
-*   GRUB supports [Btrfs](/index.php/Btrfs "Btrfs") as root (without a separate `/boot` file system) compressed with either zlib or LZO
-    *   GRUB currently (Sep 2015) supports booting from [Btrfs](/index.php/Btrfs "Btrfs") RAID 0/1/10, but *not* RAID 5/6\. You may use [mdadm](/index.php/Mdadm "Mdadm") for RAID 5/6, which is supported by GRUB.
-*   GRUB does not support [F2FS](/index.php/F2FS "F2FS") as root so you will need a separate `/boot` with a supported file system.
+A *bootloader* is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system. The name *GRUB* officially refers to version *2* of the software, see [[2]](https://www.gnu.org/software/grub/). If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
+
+**Note:**
+
+*   GRUB supports [Btrfs](/index.php/Btrfs "Btrfs") as root (without a separate `/boot` file system needed), only compressed with either zlib (the btrfs default) or LZO.
+*   GRUB does not support [F2FS](/index.php/F2FS "F2FS") as root ,so you will need a separate `/boot` with a supported file system.
 
 ## BIOS systems
 
@@ -712,6 +713,8 @@ To install grub when using RAID1 as the `/boot` partition (or using `/boot` hous
 
 Where the RAID 1 array housing `/boot` is housed on `/dev/sda` and `/dev/sdb`.
 
+**Note:** GRUB currently (Sep 2015) supports booting from [Btrfs](/index.php/Btrfs "Btrfs") RAID 0/1/10, but *not* RAID 5/6\. You may use [mdadm](/index.php/Mdadm "Mdadm") for RAID 5/6, which is supported by GRUB.
+
 ### Multiple entries
 
 For tips on managing multiple GRUB entries, for example when using both [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, see [GRUB/Tips and tricks#Multiple entries](/index.php/GRUB/Tips_and_tricks#Multiple_entries "GRUB/Tips and tricks").
@@ -720,7 +723,7 @@ For tips on managing multiple GRUB entries, for example when using both [linux](
 
 #### Root partition
 
-To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [Dm-crypt/System_configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
+To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
 
 Then add `cryptdevice` to `/etc/default/grub`: In the example below, the `sda2` partition has been encrypted as `/dev/mapper/cryptroot`:
 

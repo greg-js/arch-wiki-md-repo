@@ -94,6 +94,13 @@ $ xwiishow 1
 
 This will display a picture of the Wii Remote and notify you if buttons are pressed. You can use the `'r'` key to enable/disable the rumble motor. Press `'q'` to quit the application. You might need to be root to use these tools.
 
+If the Wii Remote is showing button presses in the `xwiishow` tool but not registering otherwise, it is likely you need to add your user to the `input` group.
+
+```
+# usermod -aG input *username*
+
+```
+
 ### X.Org Input Driver
 
 There is an X.Org input driver [[2]](http://github.com/dvdhrm/xf86-input-xwiimote) available in AUR [xf86-input-xwiimote](https://aur.archlinux.org/packages/xf86-input-xwiimote/) which automatically provides an input device to your X clients. Install it and read the related man-page for more information:

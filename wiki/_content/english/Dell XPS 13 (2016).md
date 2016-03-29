@@ -118,7 +118,7 @@ If you have the newer i7-6560 CPU with Iris 540 graphics, the GPU hangs every fe
 
 or by adding `i915.enable_rc6=0` to the kernel boot parameters.
 
-See also [Intel_graphics#X_freeze.2Fcrash_with_intel_driver](/index.php/Intel_graphics#X_freeze.2Fcrash_with_intel_driver "Intel graphics")
+See also [Intel graphics#X freeze/crash with intel driver](/index.php/Intel_graphics#X_freeze.2Fcrash_with_intel_driver "Intel graphics")
 
 ## Touchpad
 

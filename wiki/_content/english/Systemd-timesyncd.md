@@ -24,11 +24,9 @@ NTP synchronized: yes
 RTC in local TZ: no
 ```
 
-**Tip:** Before systemd 216 *systemd-timesyncd* required [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") to be started (without further configuration) for notification of network up-/down events. This is reportedly not universally the case anymore, for example it now receives the events from [dhcpcd](/index.php/Dhcpcd "Dhcpcd") and [NetworkManager](/index.php/NetworkManager "NetworkManager") as well, but may still be required depending on network configuration or used network management tool.
-
 ## Configuration
 
-When starting, *systemd-timesyncd* will read the configuration file from `/etc/systemd/timesyncd.conf`. As of [systemd](/index.php/Systemd "Systemd") 217 it looks like this:
+When starting, *systemd-timesyncd* will read the configuration file from `/etc/systemd/timesyncd.conf`. As of [systemd](/index.php/Systemd "Systemd") 229 it looks like this:
 
  `/etc/systemd/timesyncd.conf` 
 ```

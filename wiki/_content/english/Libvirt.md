@@ -37,7 +37,8 @@ Some of the major libvirt features are:
         *   [4.6.1 Create a snapshot](#Create_a_snapshot)
     *   [4.7 Other management](#Other_management)
 *   [5 Python connectivity code](#Python_connectivity_code)
-*   [6 See also](#See_also)
+*   [6 UEFI Support](#UEFI_Support)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -558,6 +559,35 @@ if (__name__ == "__main__"):
            print "Found shared node on xxx with ID " + str(domainID)
            domServ = domConnect
            break
+
+```
+
+## UEFI Support
+
+For UEFI support you need to install the OVMF packages [Gerd Hoffman's repository](https://www.kraxel.org/repos/jenkins/edk2/).
+
+Download and extract edk2.git-ovmf-x64 to /usr.
+
+[Install](/index.php/Install "Install") [rpmextract](https://www.archlinux.org/packages/?name=rpmextract).
+
+```
+# rpmextract.sh edk2.git-ovmf-x64-0-20150223.b877.ga8577b3.noarch.rpm
+# cp -R ./usr/share/* /usr/share
+```
+
+Then you will have to source the OVMF files in `/etc/libvirt/qemu.conf`. Set the following details:
+
+```
+nvram = [
+  "/usr/share/edk2.git/ovmf-x64/OVMF_CODE-pure-efi.fd:/usr/share/edk2.git/ovmf-x64/OVMF_VARS-pure-efi.fd",
+]
+
+```
+
+Then restart libvirtd:
+
+```
+systemctl restart libvirtd.service
 
 ```
 

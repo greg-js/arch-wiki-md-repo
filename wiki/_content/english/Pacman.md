@@ -469,7 +469,7 @@ where `/path/to/common/settings` file contains the same options for both configu
 
 ### Repositories
 
-This section defines which [repositories](/index.php/Official_repositories "Official repositories") to use, as referred to in `/etc/pacman.conf`. They can be stated here directly or included from another file (such as `/etc/pacman.d/mirrorlist`), thus making it necessary to maintain only one list. See [Mirrors](/index.php/Mirrors "Mirrors") article for mirror configuration.
+This section defines which [Official repositories](/index.php/Official_repositories "Official repositories") and possible [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") to use, as referred to in `/etc/pacman.conf`. They can be stated here directly or included from another file (such as `/etc/pacman.d/mirrorlist`), thus making it necessary to maintain only one list. See [Mirrors](/index.php/Mirrors "Mirrors") article for mirror configuration.
 
 The order of repositories in the configuration files matters; repositories listed first will take precedence over those listed later in the file when packages in two repositories have identical names, regardless of version number.
 

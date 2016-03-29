@@ -148,9 +148,16 @@ inactive-dim = 0.2;
 
 ```
 
-Alternatively, you may try to exclude slock by its window id.
+Alternatively, you may try to exclude slock by its window id, or by excluding all windows with no name.
 
 **Note:** Some programs change their id for every new instance, but slock's appears to be static. Someone more knowledgeable will have to confirm that slock's id is in fact static- until then, use at your own risk.
+
+Exclude all windows with no name from compton using the following options:
+
+```
+$ compton <other arguments> --focus-exclude "! name~=*"*
+
+```
 
 Find your slock's window id by running the command:
 
