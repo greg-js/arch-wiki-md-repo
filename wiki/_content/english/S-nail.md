@@ -2,7 +2,7 @@ S-nail is a mail processing system with a command syntax similar to ed, with lin
 
 S-nail is thus the *user side* of the Unix mail system, whereas the *system side* was traditionally taken by [sendmail](/index.php/Sendmail "Sendmail").
 
-In Arch Linux S-nail supports direct mail delivery via SMTP, so that messages can be send directly to external SMTP servers: In this very mode of operation no local mail-transfer-agent (MTA) is necessary on the *system side*. Note, however, that S-nail does not (yet) include a mail-queue mechanism; it simply tries to send the message over SMTP directly and immediately.
+In Arch Linux S-nail supports direct mail delivery via SMTP, so that messages can be sent directly to external SMTP servers: In this very mode of operation no local mail-transfer-agent (MTA) is necessary on the *system side*. Note, however, that S-nail does not (yet) include a mail-queue mechanism; it simply tries to send the message over SMTP directly and immediately.
 
 ## Contents
 

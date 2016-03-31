@@ -5,19 +5,20 @@ In order to boot Arch Linux, a Linux-capable [boot loader](/index.php/Boot_loade
 *   [1 Firmware types](#Firmware_types)
     *   [1.1 BIOS](#BIOS)
     *   [1.2 UEFI](#UEFI)
-*   [2 Boot process](#Boot_process)
+*   [2 System initialization](#System_initialization)
     *   [2.1 Under BIOS](#Under_BIOS)
     *   [2.2 Under UEFI](#Under_UEFI)
-*   [3 Kernel](#Kernel)
-*   [4 initramfs](#initramfs)
-*   [5 Init process](#Init_process)
-*   [6 Getty](#Getty)
-*   [7 Display Manager](#Display_Manager)
-*   [8 Login](#Login)
-    *   [8.1 Message of the day](#Message_of_the_day)
-*   [9 Shell](#Shell)
-*   [10 xinit](#xinit)
-*   [11 See also](#See_also)
+*   [3 Boot loader](#Boot_loader)
+*   [4 Kernel](#Kernel)
+*   [5 initramfs](#initramfs)
+*   [6 Init process](#Init_process)
+*   [7 Getty](#Getty)
+*   [8 Display Manager](#Display_Manager)
+*   [9 Login](#Login)
+    *   [9.1 Message of the day](#Message_of_the_day)
+*   [10 Shell](#Shell)
+*   [11 xinit](#xinit)
+*   [12 See also](#See_also)
 
 ## Firmware types
 
@@ -35,11 +36,7 @@ The commonly used UEFI firmwares support both MBR and GPT partition table. EFI i
 
 UEFI does not launch any boot code in the MBR whether it exists or not. Instead it uses a special partition in the partition table called **EFI System Partition** in which files required to be launched by the firmware are stored. Each vendor can store its files under `<EFI SYSTEM PARTITION>/EFI/<VENDOR NAME>/` folder and can use the firmware or its shell (UEFI shell) to launch the boot program. An EFI System Partition is usually formatted as FAT32 or (less commonly) FAT16.
 
-Under UEFI, every program whether it is an OS loader or a utility (e.g. a memory testing app or recovery tool), should be a UEFI Application corresponding to the EFI firmware bitness/architecture. The vast majority of UEFI firmwares, including recent Apple Macs, use x86_64 EFI firmware. The only known devices that use IA32 (32-bit) EFI are older (pre 2008) Apple Macs, some Intel Cloverfield ultrabooks and some older Intel Server boards that are known to operate on Intel EFI 1.10 firmware.
-
-An x86_64 EFI firmware does not include support for launching 32-bit EFI apps (unlike x86_64 Linux and Windows versions which include such support). Therefore the UEFI application must be compiled for that specific firmware processor bitness/architecture.
-
-## Boot process
+## System initialization
 
 ### Under BIOS
 
@@ -47,12 +44,15 @@ An x86_64 EFI firmware does not include support for launching 32-bit EFI apps (u
 2.  After POST, BIOS initializes the necessary system hardware for booting (disk, keyboard controllers etc.)
 3.  BIOS launches the first 440 bytes ([Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")) of the first disk in the BIOS disk order
 4.  The MBR boot code then takes control from BIOS and launches its next stage code (if any) (mostly [boot loader](/index.php/Boot_loader "Boot loader") code)
-5.  The launched (2nd stage) code (actual boot loader) then reads its support and config files
-6.  Based on the data in its config files, the boot loader loads the kernel and initramfs into system memory (RAM) and launches the kernel
+5.  The launched actual boot loader
 
 ### Under UEFI
 
 See the main page: [Unified Extensible Firmware Interface#Boot Process under UEFI](/index.php/Unified_Extensible_Firmware_Interface#Boot_Process_under_UEFI "Unified Extensible Firmware Interface").
+
+## Boot loader
+
+The boot loader is the first piece of software started by the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI"). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on config files.
 
 ## Kernel
 

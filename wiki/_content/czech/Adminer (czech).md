@@ -1,4 +1,4 @@
-[Adminer](http://www.adminer.org/) je nástroj pro jednoduchou správu databází [MySQL](/index.php/MySQL_(%C4%8Cesky) "MySQL (Česky)"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [Sqlite](/index.php/Sqlite "Sqlite"), MS SQL a [Oracle](/index.php/Oracle "Oracle"). Je to jednodušší alternativa k [PhpMyAdminu](/index.php/PhpMyAdmin_(%C4%8Cesky) "PhpMyAdmin (Česky)"). Více informací o projektu lze nalézt na jeho [oficiálních stránkách](http://www.adminer.org/cs/) nebo [wikipedii](https://en.wikipedia.org/wiki/Adminer "wikipedia:Adminer").
+[Adminer](http://www.adminer.org/) je nástroj pro jednoduchou správu databází [MySQL](/index.php/MySQL_(%C4%8Cesky) "MySQL (Česky)"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [SQLite](/index.php/SQLite "SQLite"), MS SQL a [Oracle](/index.php/Oracle "Oracle"). Je to jednodušší alternativa k [PhpMyAdminu](/index.php/PhpMyAdmin_(%C4%8Cesky) "PhpMyAdmin (Česky)"). Více informací o projektu lze nalézt na jeho [oficiálních stránkách](http://www.adminer.org/cs/) nebo [wikipedii](https://en.wikipedia.org/wiki/Adminer "wikipedia:Adminer").
 
 ## Instalace pod Apache
 
@@ -44,4 +44,4 @@ $ /etc/rc.d/httpd restart
 *   [Oficiální stránka Admineru](http://www.adminer.org/cs/)
 *   [Adminer na AURu](https://aur.archlinux.org/packages.php?ID=41492)
 *   [Weblog autora projektu](http://php.vrana.cz/)
-*   [Adminer na Wikipedii](http://cs.wikipedia.org/wiki/Adminer)
+*   [Adminer na Wikipedii](https://cs.wikipedia.org/wiki/Adminer)

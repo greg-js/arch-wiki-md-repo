@@ -86,6 +86,20 @@ Sometimes there are multiple versions of a package in different repositories, e.
 
 ```
 
+To install a number of packages sharing similar patterns in their names -- not the entire group nor all matching packages; eg. [plasma](https://www.archlinux.org/groups/x86_64/plasma/):
+
+```
+# pacman -S plasma-{desktop,mediacenter,nm}
+
+```
+
+Of course, that is not limited and can be expanded to however many levels needed:
+
+```
+# pacman -S plasma-{workspace{,-wallpapers},pa}
+
+```
+
 #### Installing package groups
 
 Some packages belong to a [group of packages](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages") that can all be installed simultaneously. For example, issuing the command:
@@ -209,6 +223,13 @@ $ pacman -S --help
 
 ```
 $ pacman -Ss *string1* *string2* ...
+
+```
+
+Sometimes, `-s`'s builtin ERE can cause a lot of unwanted results, so it has to be limited to match the package name only; not the description nor any other field:
+
+```
+# pacman -Ss '^vim-'
 
 ```
 

@@ -135,8 +135,7 @@ EndSection
 
 ## Procesor
 
-Intel Celeron M430 podle specifikace získané z intel.com bohužel NEUMOŹŇUJE škálování frekvence.
-V případě Intel Centrino to možné je. Stačí zavést modul speedstep_centrino nebo p4_clockmod a naistalovat `cpufreq-utils` a `cpufreqd` a spustit `/etc/rc.d/cpufreqd`.
+See [Cpufreq](/index.php/Cpufreq "Cpufreq").
 
 ## Wi-fi
 

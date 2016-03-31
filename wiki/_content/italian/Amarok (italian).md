@@ -32,7 +32,7 @@ Amarok ora dipende da Phonon, quindi si dovrà avere un back-end funzionante sel
 
 ### Integrazione con Gnome
 
-Si veda [questo articolo](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(Italiano) "Uniform Look for QT and GTK Applications (Italiano)") per un'integrazione grafica nella GUI principale.
+Si veda [questo articolo](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Italiano) "Uniform look for Qt and GTK applications (Italiano)") per un'integrazione grafica nella GUI principale.
 
 ### Script e applet
 

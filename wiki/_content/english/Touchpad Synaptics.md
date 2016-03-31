@@ -50,8 +50,7 @@ This article details the installation and configuration process of the ***Synapt
     *   [4.14 Synaptics loses multitouch detection after rebooting from Windows](#Synaptics_loses_multitouch_detection_after_rebooting_from_Windows)
     *   [4.15 Touchpad not recognized after shutdown from Arch](#Touchpad_not_recognized_after_shutdown_from_Arch)
     *   [4.16 Trackpoint and Clickpad](#Trackpoint_and_Clickpad)
-    *   [4.17 Clickpad/Forcepad: double-click, click-and-drag](#Clickpad.2FForcepad:_double-click.2C_click-and-drag)
-    *   [4.18 ASUS Touchpads only recognised as PS/2 FocalTech emulated mouse](#ASUS_Touchpads_only_recognised_as_PS.2F2_FocalTech_emulated_mouse)
+    *   [4.17 ASUS Touchpads only recognised as PS/2 FocalTech emulated mouse](#ASUS_Touchpads_only_recognised_as_PS.2F2_FocalTech_emulated_mouse)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -715,7 +714,7 @@ This can happen with some laptops with an Elantech touchpad, for example the ASU
 
 #### Laptops with touchscreen & touchpad
 
-There also seems to be a problem with laptops which have both a touchscreen & a touchpad, such as the Dell XPS 12 or Dell XPS 13\. To fix this, you can [blacklist](/index.php/Blacklisting "Blacklisting") the `i2c_hid` driver, this does have the side-effect of disabeling the touchscreen though.
+There also seems to be a problem with laptops which have both a touchscreen & a touchpad, such as the Dell XPS 12 or Dell XPS 13\. To fix this, you can [blacklist](/index.php/Blacklisting "Blacklisting") the `i2c_hid` driver, this does have the side-effect of disabling the touchscreen though.
 
 This [seems to be a known problem](http://www.spinics.net/lists/linux-input/msg27768.html). Also see [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1419078).
 
@@ -882,10 +881,6 @@ Certain touchpads (elantech in particular) will fail to be recognized as a devic
 ### Trackpoint and Clickpad
 
 Newer Thinkpads do not have physical buttons for their Trackpoint anymore and instead use the upper area of the Clickpad for buttons (Left, Middle, Right). Apart from the ergonomic viewpoint this works quite well with current Xorg. Unfortunately mouse wheel emulation using the middle button is not supported yet. Install [xf86-input-evdev-trackpoint](https://aur.archlinux.org/packages/xf86-input-evdev-trackpoint/) from the AUR for a patched and properly configured version if you intend to use the Trackpoint.
-
-### Clickpad/Forcepad: double-click, click-and-drag
-
-On newer laptops such as the HP Envy 15 x360 a `ButtonRelease` event is not sent when releasing the physical button, but only when moving all fingers off the Clickpad. [[3]](http://permalink.gmane.org/gmane.linux.kernel.input/38497) This is due to a kernel bug in `drivers/media/input/synaptics.c` [[4]](https://lkml.org/lkml/2014/9/30/719); see [[5]](http://www.linuxquestions.org/questions/showthread.php?p=5276920&posted=1#post5276920) for a temporary workaround.
 
 ### ASUS Touchpads only recognised as PS/2 FocalTech emulated mouse
 

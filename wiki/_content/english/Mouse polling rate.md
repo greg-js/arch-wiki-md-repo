@@ -130,6 +130,8 @@ You may have to unplug the mouse and plug it back in for the change to take effe
 
 **Note:** If the usbhid module is included on your initramfs image you may need to add `/etc/modprobe.d/usbhid.conf` to the image also. See the note at [Kernel modules#Using files in /etc/modprobe.d/](/index.php/Kernel_modules#Using_files_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules"). Alternatively, you can add `usbhid.mousepoll=X` to your kernel command line. See [Kernel modules#Using kernel command line](/index.php/Kernel_modules#Using_kernel_command_line "Kernel modules").
 
+**Tip:** When using a smaller than default interval you may want to adjust the [Mouse acceleration](/index.php/Mouse_acceleration "Mouse acceleration") option [VelocityScale](http://xorg.freedesktop.org/wiki/Development/Documentation/PointerAcceleration/#VelocityScale) to match.
+
 ## See also
 
 *   [CS:S Mouse Optimization Guide](http://www.overclock.net/computer-peripherals/173255-cs-s-mouse-optimization-guide.html) -- largely aimed at Windows users, though the same principles apply for Linux.

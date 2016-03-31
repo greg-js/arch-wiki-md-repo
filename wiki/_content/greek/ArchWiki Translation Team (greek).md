@@ -78,18 +78,18 @@ H οργάνωση της μετάφρασης γίνεται στην πλατ�
 ### Ενότητες που μεταφράζονται
 
 | Ενότητα | Συμμετέχοντες | Ποσοστό |
-| [Systemd_(Ελληνικά)](/index.php/Systemd_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Systemd (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 15% |
-| [Openbox_(Ελληνικά)](/index.php/Openbox_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Openbox (Ελληνικά)") | [Goldenbeetle](/index.php/User:Goldenbeetle "User:Goldenbeetle") | 20% |
-| [Iptables_(Ελληνικά)](/index.php/Iptables_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Iptables (Ελληνικά)") | [Maevius](/index.php/User:Maevius "User:Maevius") | 5% |
-| [GRUB_(Ελληνικά)](/index.php/GRUB_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "GRUB (Ελληνικά)") | [alex.theoto](/index.php?title=User:Alex.theoto&action=edit&redlink=1 "User:Alex.theoto (page does not exist)") | 2% |
+| [systemd (Ελληνικά)](/index.php/Systemd_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Systemd (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 15% |
+| [Openbox (Ελληνικά)](/index.php/Openbox_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Openbox (Ελληνικά)") | [Goldenbeetle](/index.php/User:Goldenbeetle "User:Goldenbeetle") | 20% |
+| [iptables (Ελληνικά)](/index.php/Iptables_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Iptables (Ελληνικά)") | [Maevius](/index.php/User:Maevius "User:Maevius") | 5% |
+| [GRUB (Ελληνικά)](/index.php/GRUB_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "GRUB (Ελληνικά)") | [alex.theoto](/index.php?title=User:Alex.theoto&action=edit&redlink=1 "User:Alex.theoto (page does not exist)") | 2% |
 
 ### Ενότητες που έχουν μεταφραστεί
 
 | Ενότητα | Συμμετέχοντες | Ποσοστό |
-| [Beginners'_Guide_(Ελληνικά)](/index.php/Beginners%27_Guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Beginners' Guide (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") - [Opanos](/index.php/User:Opanos "User:Opanos") - [Helix](/index.php/User:Helix "User:Helix") | 100% |
-| [Pacman_(Ελληνικά)](/index.php/Pacman_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Pacman (Ελληνικά)") | [Opanos](/index.php/User:Opanos "User:Opanos") | 100% |
-| [Configuring_Network_(Ελληνικά)](/index.php/Configuring_Network_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Configuring Network (Ελληνικά)") | [Opanos](/index.php/User:Opanos "User:Opanos") | 100% |
-| [VirtualBox_(Ελληνικά)](/index.php/VirtualBox_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "VirtualBox (Ελληνικά)") | [augmonk](/index.php?title=User:Augmonk&action=edit&redlink=1 "User:Augmonk (page does not exist)") | 100% |
+| [Beginners' guide (Ελληνικά)](/index.php/Beginners%27_guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Beginners' guide (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") - [Opanos](/index.php/User:Opanos "User:Opanos") - [Helix](/index.php/User:Helix "User:Helix") | 100% |
+| [Pacman (Ελληνικά)](/index.php/Pacman_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Pacman (Ελληνικά)") | [Opanos](/index.php/User:Opanos "User:Opanos") | 100% |
+| [Configuring Network (Ελληνικά)](/index.php/Configuring_Network_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Configuring Network (Ελληνικά)") | [Opanos](/index.php/User:Opanos "User:Opanos") | 100% |
+| [VirtualBox (Ελληνικά)](/index.php/VirtualBox_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "VirtualBox (Ελληνικά)") | [augmonk](/index.php?title=User:Augmonk&action=edit&redlink=1 "User:Augmonk (page does not exist)") | 100% |
 
 ### Templates που έχουν μεταφραστεί
 

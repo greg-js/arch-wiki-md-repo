@@ -7,8 +7,7 @@
         *   [1.1.3 systemd unit file](#systemd_unit_file)
     *   [1.2 Booting into snapshots](#Booting_into_snapshots)
         *   [1.2.1 GRUB](#GRUB)
-*   [2 Backup solutions](#Backup_solutions)
-*   [3 Corruption Recovery](#Corruption_Recovery)
+*   [2 Corruption Recovery](#Corruption_Recovery)
 
 ## Snapshots
 
@@ -183,67 +182,22 @@ The unit file has to be symlinked by systemd:
 
 ### Booting into snapshots
 
-In order to boot into a subvolume the *rootflags=subvol=* option has to be used on the kernel line. The *subvol=* mount options in `/etc/fstab` of the snapshot to boot into also have to be specified correctly.
-
-**Note:** If using the example [script above](#Snapshot_script), the `/etc/fstab` of the snapshot of the root subvolume is set automatically.
+In order to boot into a subvolume the `rootflags=subvol=` option has to be used on the kernel line. The `subvol=` mount options in `/etc/fstab` of the snapshot to boot into also have to be specified correctly.
 
 #### GRUB
 
-*   Example menue entry `/etc/grub.d/40_custom`:
-
-```
-# ....
-menuentry "Arch Linux --- state at last successfull boot (nonpersistent)" {
-  linux /vmlinuz-linux root=/dev/disk/by-uuid/<UUID of btrfs-root> rootflags=subvol=__snapshot/__state_at_last_successful_boot/__current/ROOT init=/usr/lib/systemd/systemd ro quiet
-  initrd /initramfs-linux.img
-}
-# ...
-
-```
-
-`/etc/grub.d/40_custom` has to be executable:
-
-```
-# chmod 700 /etc/grub.d/40_custom
-
-```
-
-`/boot/grub/grub.cfg` has to be recreated:
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-## Backup solutions
-
-*   [Snapper](/index.php/Snapper "Snapper") is a command-line program for filesystem snapshot management. It can create and compare snapshots, revert between snapshots, and supports automatic snapshots timelines.
-
-More tools are available, see [official btrfs wiki](https://btrfs.wiki.kernel.org/index.php/UseCases#How_can_I_use_btrfs_for_backups.2Ftime-machine.3F).
+You can manually create a [Grub#GNU/Linux menu entry](/index.php/Grub#GNU.2FLinux_menu_entry "Grub") with the `rootflags=subvol=` argument. Alternatively, you can automatically populate your GRUB menu with btrfs snapshots when regenerating the GRUB configuration file by using [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/).
 
 ## Corruption Recovery
 
-Btrfs does not usually need to do fsck, but in the event that it does the file-system must not be mounted, not even read-only. This makes it difficult to fix! One solution is to use a boot disk to run `btrfsck --repair /dev/<whatever>`, but with a little prior thought, there is an easier way:
+*btrfs-check* cannot be used on a mounted file system. To be able to use *btrfs-check* without booting from a live USB, add it to the initial ramdisk:
 
-Before anything breaks, edit `/etc/mkinitcpio.conf` so it has `btrfsck`:
+ `/etc/mkinitcpio.conf`  `BINARIES="/usr/bin/btrfsck"` 
 
-```
-BINARIES="/usr/bin/btrfsck"
+Regenerate the initial ramdisk using [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio").
 
-```
-
-Regenerate the initramfs:
-
-```
-# mkinitcpio -p linux
-
-```
-
-Then, when the worst happens, use `grub`, or whatever, to add "break" to the kernel command line, and boot. The system should stop at a shell in the initramfs, before the btrfs partition has been mounted, and `btrfsck` should be installed ready. You can then repair the system like this:
-
-```
-# btrfsck --repair /dev/<whatever>
-
-```
+Then if there is a problem booting, the utility is available for repair.
 
 **Note:** If the fsck process has to invalidate the space cache (and/or other caches?) then it is normal for a subsequent boot to hang up for a while (it may give console messages about btrfs-transaction being hung). The system should recover from this after a while.
+
+See the [Btrfs Wiki page](https://btrfs.wiki.kernel.org/index.php/Btrfsck) for more information.

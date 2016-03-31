@@ -27,7 +27,9 @@
     *   [3.12 Automatically mount your encrypted /home on login](#Automatically_mount_your_encrypted_.2Fhome_on_login)
     *   [3.13 Change Keyboard Layout](#Change_Keyboard_Layout)
 *   [4 All Slim Options](#All_Slim_Options)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Shutdown or Reboot Stalled](#Shutdown_or_Reboot_Stalled)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -202,7 +204,7 @@ You may shutdown, reboot, suspend, exit or even launch a terminal from the SLiM 
 
 ### Power-off error with Splashy
 
-If you use Splashy and SLiM, sometimes you can't power-off or reboot from menu in GNOME, Xfce, LXDE or others. Check your `/etc/slim.conf` and `/etc/splash.conf`; set the `DEFAULT_TTY=7` same as `xserver_arguments vt07`.
+If you use Splashy and SLiM, sometimes you cannot power-off or reboot from menu in GNOME, Xfce, LXDE or others. Check your `/etc/slim.conf` and `/etc/splash.conf`; set the `DEFAULT_TTY=7` same as `xserver_arguments vt07`.
 
 ### Power-off tray icon fails
 
@@ -250,7 +252,7 @@ See [GNOME Keyring#Use without GNOME, and without a display manager](/index.php/
 
 ### Setting DPI with SLiM
 
-The Xorg server generally picks up the DPI but if it doesn't you can specify it to SLiM. If you set the DPI with the argument -dpi 96 in `/etc/X11/xinit/xserverrc` it will not work with SLiM. To fix this change your `slim.conf` from:
+The Xorg server generally picks up the DPI but if it does not you can specify it to SLiM. If you set the DPI with the argument -dpi 96 in `/etc/X11/xinit/xserverrc` it will not work with SLiM. To fix this change your `slim.conf` from:
 
 ```
  xserver_arguments   -nolisten tcp vt07 
@@ -391,6 +393,26 @@ Here is a list of all the slim configuration options and their default values.
 | session_shadow_xoffset | `0` |
 | session_shadow_yoffset | `0` |
 | session_shadow_color | `#FFFFFF` |
+
+## Troubleshooting
+
+### Shutdown or Reboot Stalled
+
+There is a bug or known issue with the combination of SLiM, Xfce and systemd that does not let the system to properly shutdown and systemd waits for the SLiM service to end, but eventually is terminated.
+
+To accelerate the shutdown process these lines might help when added to /usr/lib/systemd/system/slim.service:
+
+```
+[Service]
+ExecStart=/usr/bin/slim -nodaemon
+Restart=on-failure
+TimeoutStopSec=5s
+IgnoreSIGPIPE=no
+ExecStop=/bin/kill -TERM -${MAINPID}
+
+```
+
+See [FS#32380](https://bugs.archlinux.org/task/32380).
 
 ## See also
 

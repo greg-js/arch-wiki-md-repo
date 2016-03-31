@@ -12,16 +12,15 @@ Dell XPS M1330 works quite well out of the box with Arch and GNU/Linux in genera
 *   [5 nVidia Graphics](#nVidia_Graphics)
     *   [5.1 Compiz Fusion](#Compiz_Fusion)
     *   [5.2 GPU Temperature](#GPU_Temperature)
-*   [6 Suspend](#Suspend)
-*   [7 Hard Drive](#Hard_Drive)
-*   [8 SD Card Reader](#SD_Card_Reader)
-*   [9 Webcam](#Webcam)
-*   [10 Sensors / Hardware info](#Sensors_.2F_Hardware_info)
-*   [11 Extra media keys](#Extra_media_keys)
-*   [12 BIOS](#BIOS)
-    *   [12.1 History of BIOS Revisions](#History_of_BIOS_Revisions)
-*   [13 Battery Usage](#Battery_Usage)
-*   [14 External Resources](#External_Resources)
+*   [6 Hard Drive](#Hard_Drive)
+*   [7 SD Card Reader](#SD_Card_Reader)
+*   [8 Webcam](#Webcam)
+*   [9 Sensors / Hardware info](#Sensors_.2F_Hardware_info)
+*   [10 Extra media keys](#Extra_media_keys)
+*   [11 BIOS](#BIOS)
+    *   [11.1 History of BIOS Revisions](#History_of_BIOS_Revisions)
+*   [12 Battery Usage](#Battery_Usage)
+*   [13 External Resources](#External_Resources)
 
 ## Sound
 
@@ -103,42 +102,6 @@ To have better performance with nVidia drivers, you should try "loose binding" i
 #### GPU Temperature
 
 Starting with drives > 256.53 the reported GPU Temperature is about 10° higher then before. It *may* be a driver problem resulting in higher battery usage, as higher Temperature = More Power, but it also may be something else. Hope that it doesn't shorten the life of the card. Using the 256.53 driver with Kernels newer X-Servers > 1.10 does not work, so there is a problem.
-
-## Suspend
-
-**Note:** If you have suspend problems, try [nvidia-prerelease driver 180.25](ftp://download.nvidia.com/XFree86/Linux-x86/180.25/), it seems to solve the problem described below.
-
-With 180.x series of proprietary NVidia driver, suspend does not work properly, using 177.x series helps but it's slower in 2d rendering. Hibernate also works with 180.x series.
-
-**Note:** This only works since kernel 2.6.25.x (stock Arch kernel). In former versions, force unloading modules is not provided and you have to recompile your kernel with this option.
-
-With acpi-freq running, you might notice that CPU1 is deactivated after using pm-suspend. To fix this you have to unload acpi-freq module each time pm-suspend is called.
-
-Put this in `/etc/pm/sleep.d/66dummy`:
-
-```
-#!/bin/bash
-case $1 in
-    suspend)
-        rmmod -f acpi_cpufreq
-        ;;
-    resume)
-        modprobe acpi_cpufreq
-        ;;
-    *)  echo "somebody is calling me totally wrong."
-        ;;
-esac
-
-```
-
-Then make it executable :
-
-```
-# chmod +x /etc/pm/sleep.d/66dummy
-
-```
-
-Solution was provided by this [forum topic](https://bbs.archlinux.org/viewtopic.php?id=44500).
 
 ## Hard Drive
 

@@ -1,15 +1,16 @@
-Из [the official site](http://www.offensive-security.com/metasploit-unleashed/Introduction):
+С [официального сайта](http://www.offensive-security.com/metasploit-unleashed/Introduction):
 
 	*Consider the MSF to be one of the single most useful auditing tools freely available to security professionals today. From a wide array of commercial grade exploits and an extensive exploit development environment, all the way to network information gathering tools and web vulnerability plugins. The Metasploit Framework provides a truly impressive work environment. The MSF is far more than just a collection of exploits, it's an infrastructure that you can build upon and utilize for your custom needs. This allows you to concentrate on your unique environment, and not have to reinvent the wheel.*
 
-В настоящее время метасплоит нуждается в установке и настройке Postgresqlr на целевой системе для работы. В этой статье описывается, как установить метасплоит и заставить использовать его Postgresql.
+На данный момент Metasploit нуждается в установленном и настроенном Postgresql на целевой системе для работы. В данной статье будет описана установка и настройка Metasploit и Postgresql.
 
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 RVM](#RVM)
-*   [2 Setting up the databaseНастраиваем базу данных](#Setting_up_the_database.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.B0.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC_.D0.B1.D0.B0.D0.B7.D1.83_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85)
-*   [3 Usage](#Usage)
+    *   [1.1 Armitage](#Armitage)
+    *   [1.2 RVM](#RVM)
+*   [2 Настройка базы данных](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B1.D0.B0.D0.B7.D1.8B_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85)
+*   [3 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
     *   [3.1 Module types](#Module_types)
     *   [3.2 Searching for exploits](#Searching_for_exploits)
     *   [3.3 Using an exploit](#Using_an_exploit)
@@ -29,24 +30,32 @@
 
 ## Установка
 
-Установите пакет [metasploit](https://aur.archlinux.org/packages/metasploit/).
+Установите пакет [metasploit](https://aur.archlinux.org/packages/metasploit/) из [AUR](/index.php/AUR "AUR").
 
-Чтобы установить последнюю разрабатываемую версию (возможны баги, недочёты, отсутствие совместимости), установите пакет [metasploit-git](https://aur.archlinux.org/packages/metasploit-git/) вместо обычного.
+Для использования нестабильной версии установите [metasploit-git](https://aur.archlinux.org/packages/metasploit-git/).
+
+### Armitage
+
+[Armitage](http://www.fastandeasyhacking.com/) - GUI для Metasploit, написанный на Java. Для использования установите пакет [armitage](https://aur.archlinux.org/packages/armitage/).
+
+Для использования Armitage необходима [#Настройка базы данных](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B1.D0.B0.D0.B7.D1.8B_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85). Также обязательно использование файла `~/.msf4/database.yml`.
+
+Примером файла `database.yml` является `/usr/share/metasploit/database.yml.sample`.
 
 ### RVM
 
-Msfconsole требует [Ruby](/index.php/Ruby "Ruby") и некоторые [Ruby#RubyGems](/index.php/Ruby#RubyGems "Ruby") для работы.
+Msfconsole нуждается в [Ruby](/index.php/Ruby "Ruby") и некоторых [Ruby#RubyGems](/index.php/Ruby#RubyGems "Ruby").
 
-Следуйте инструкциям в [RVM#Installing RVM](/index.php/RVM#Installing_RVM "RVM") и [RVM#Using RVM](/index.php/RVM#Using_RVM "RVM"), чтобы установить Ruby 2.1.5 и настроить использование по умолчанию.
+Используя статьи [RVM#Installing RVM](/index.php/RVM#Installing_RVM "RVM") и [RVM#Using RVM](/index.php/RVM#Using_RVM "RVM"), установите Ruby версии 2.1.5 и сделайте её стандартной. (прим.ред.: если честно, пакет metasploit при установке сам делает эти операции. Не знаю точно, необходимо это делать или нет, но, используя этот гайд, мне пришлось переустанавливать всё 3-4 раза, чтобы оно заработало. Возможно, фреймворк заработает и без выполнения этого пункта инструкции)
 
-После завершения, подключим только что установленную RVM:
+Завершите установку RVM:
 
 ```
 $ source ~/.rvm/scripts/rvm
 
 ```
 
-И установим все гемы, необходимые для запуска msfconsole с помощью [Ruby#Bundler](/index.php/Ruby#Bundler "Ruby"):
+и установите все гемы Msfconsole, используя [Ruby#Bundler](/index.php/Ruby#Bundler "Ruby"):
 
 ```
 $ gem install bundler
@@ -58,46 +67,50 @@ $ bundle install
 
 ```
 
-**Note:** Использование Ruby версии старше, чем 2.1.5, приведёт к ошибке установки гема `metasploit-concern`.
+(прим.ред.: лично я в гемфайле указал стандартные гемы и metasploit-concern)
 
-## Setting up the databaseНастраиваем базу данных
+**Примечание:** Использование версии Ruby старше чем 2.1.5 приведёт к ошибке установки гема `metasploit-concern`.
 
-**Note:** Commands which must be run from `msfconsole` will be prefixed with `msf >` in this article.
+## Настройка базы данных
 
-Metasploit can be used without a database, but cache operations like searching would be very slow. This section shows how to set up Metasploit with *Postgresql* database server.
+**Примечание:** Команды, которые должны быть запущены из `msfconsole`, имеют префикс `msf >`.
 
-Follow the [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") article and create a new database called `msf`. Any database name can be used, but this article will follow `msf`.
+Metasploit можно использовать и без базы данных, но операции, использующие кэш (например, поиск), будут занимать очень много времени.
 
-Start `msfconsole` and type:
+**Примечание:** Если вы собираетесь использовать [#Armitage](#Armitage), база данных обязательна.
+
+Используя статью [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), создайте БД под именем `msf`. Можно назвать её иначе, на в этой статье мы будем ласково её называть `msf`.
+
+Запустите `msfconsole` и напишите:
 
 ```
 msf > db_connect *user*@msf
 
 ```
 
-where *user* is the database owner's name (usually your linux user's name).
+Где *user* - имя пользователя БД (обычно имя пользователя, под которым вы работаете) (прим.ред.: но я-то знаю, что Вы действовали по инструкции и именем пользователя будет postgres).
 
-Rebuild the database cache:
+Обновите кэш БД:
 
 ```
 msf > db_rebuild_cache
 
 ```
 
-Metasploit will rebuild the cache in the background, and you can continue running commands meanwhile.
+Metasploit обновит кэш БД в фоне, это не помешает Вам использовать фреймворк в это же время.
 
-**Tip:** It might take a few minutes to rebuild the cache the first time. Run `top` or [htop](https://www.archlinux.org/packages/?name=htop) to monitor the status of cache building. During the process, Ruby/Postgres/Metasploit processes will eat up 50% of CPU time.
+[Template:Подсказка](/index.php?title=Template:%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B0&action=edit&redlink=1 "Template:Подсказка (page does not exist)")
 
-Currently Metasploit requires running the `db_connect` command every time `msfconsole` is started. To avoid typing that command every time, simply put this alias in your shell startup file, for example `~/.bashrc`:
+Metasploit нуждается в команде `db_connect` при каждом запуске `msfconsole`. Чтобы избежать этих манипуляций при каждом запуске, просто используйте этот alias в вашем файле автозапуска, например, `~/.bashrc`:
 
 ```
 alias msfconsole="msfconsole --quiet -x \"db_connect ${USER}@msf\""
 
 ```
 
-where the `quiet` option will [#Disable the ASCII banner on startup](#Disable_the_ASCII_banner_on_startup), and the `-x` command runs the given command right after startup.
+где опция `quiet` отключит баннер MSF при запуске, а команда `-x` произведёт операцию прямо после запуска.
 
-Another workaround for this is to create a `database.yml` file in the `.msf4` directory. For example:
+Другой способ - создание файла `database.yml` в каталоге `.msf4`. Например:
 
  `~/.msf4/database.yml` 
 ```
@@ -113,9 +126,9 @@ production:
 
 ```
 
-**Note:** The database cache needs to be built only once. Later on upon startup, `msfconsole` will say `[*] Rebuilding the module cache in the background...`, but it will actually only update the changes. If no changes are made to the database, it will take only half a second.
+**Примечание:** Кэш БД нуждается в создании лишь однажды. После этого, во время запуска `msfconsole` будет писать `[*] Rebuilding the module cache in the background...`, но на самом деле он будет просто добавлять изменения. Если никаких изменений не было, процесс займёт около 0.5 секунды.
 
-Run `db_status` to verify that database connection is properly established:
+Выполните `db_status`, чтобы проверить статус соединения с БД:
 
  `msf > db_status` 
 ```
@@ -123,11 +136,11 @@ Run `db_status` to verify that database connection is properly established:
 
 ```
 
-## Usage
+## Использование
 
 There are several interfaces available for Metasploit. This section will explain how to use `msfconsole`, the interface that provides the most features available in MSF.
 
-To start it, simply type `msfconsole`. The prompt will change to `msf >` to indicate it's waiting for commands.
+To start it, simply type `msfconsole`. The prompt will change to `msf >` to indicate it is waiting for commands.
 
 **Tip:** Besides additional Metasploit commands explained below, all the regular shell commands and scripts found in `$PATH` are available too! (except for aliases)
 
@@ -155,7 +168,7 @@ msf > search platform:linux type:exploit name:Novell
 
 ```
 
-To search for specific field, type it's name, followed by column and the phrase. The following search fields are available:
+To search for specific field, type its name, followed by column and the phrase. The following search fields are available:
 
 | Search field | Matches | Possible values | DB table & column |
 | `app` | Passive (client) or Active (server) exploits | `client`, `server` | `module_details.stance` |
@@ -170,7 +183,7 @@ See [#Searching from the database](#Searching_from_the_database) and [#Database 
 
 ### Using an exploit
 
-After choosing an appropriate exploit, it's time to start hacking!
+After choosing an appropriate exploit, it is time to start hacking!
 
 First, select an exploit using the `use` command:
 
@@ -272,7 +285,7 @@ See [#Searching from the database](#Searching_from_the_database) for a workaroun
 
 ### Searching from the database
 
-Since everything in Metasploit is stored in a database, it's easy to make powerful search queries without the need of the `search` frontend command.
+Since everything in Metasploit is stored in a database, it is easy to make powerful search queries without the need of the `search` frontend command.
 
 To start the database interface, run:
 
@@ -401,7 +414,7 @@ $ msfconsole --quiet
 
 ### Preserve variable values between sessions
 
-If you don't want the variables to reset when selecting another module and when rerunning `msfconsole` then set it globally via `setg`, for example:
+If you do not want the variables to reset when selecting another module and when rerunning `msfconsole` then set it globally via `setg`, for example:
 
 ```
 msf > setg RHOST 192.168.56.102

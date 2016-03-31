@@ -14,7 +14,7 @@
 12.  Jeśli chcemy stworzyć stronę ArchWiki ale ze zlokalizowaną nazwą odwiedź `https://wiki.archlinux.org/index.php/*Zlokalizowana nazwa przetłumaczonej strony*`.
 13.  Stwórz nową stronę i wrzuć tam ten kod: `#REDIRECT [[Moja_Strona_(język)]]` 
 
-Na przykład: Stworzyłem tą **ArchWiki Translation Team (Polski)** stronę, wrzuciłem do niej tłumaczenie tej strony [ArchWiki_Translation_Team](/index.php/ArchWiki_Translation_Team "ArchWiki Translation Team") i dodałem stronę [Zespół_tłumaczy_ArchWiki](/index.php/Zesp%C3%B3%C5%82_t%C5%82umaczy_ArchWiki "Zespół tłumaczy ArchWiki") z przetłumaczonym tytułem, która *tylko* przekierowuje.
+Na przykład: Stworzyłem tą **ArchWiki Translation Team (Polski)** stronę, wrzuciłem do niej tłumaczenie tej strony [ArchWiki Translation Team](/index.php/ArchWiki_Translation_Team "ArchWiki Translation Team") i dodałem stronę [Zespół tłumaczy ArchWiki](/index.php/Zesp%C3%B3%C5%82_t%C5%82umaczy_ArchWiki "Zespół tłumaczy ArchWiki") z przetłumaczonym tytułem, która *tylko* przekierowuje.
 
 ## Lista stron
 
@@ -31,7 +31,7 @@ Poniżej znajduje się lista artykułów, które istnieją tylko w nieanglojęzy
 | [Palm Pre (Italiano)](/index.php/Palm_Pre_(Italiano) "Palm Pre (Italiano)") | włoski |
 | [Small Business Server (Italiano)](/index.php/Small_Business_Server_(Italiano) "Small Business Server (Italiano)") | włoski | Sprawdź również [Category:Small Business Server (Italiano)](/index.php/Category:Small_Business_Server_(Italiano) "Category:Small Business Server (Italiano)") |
 | [Tavolette Trust Aiptek (Italiano)](/index.php/Tavolette_Trust_Aiptek_(Italiano) "Tavolette Trust Aiptek (Italiano)") | włoski |
-| [Vim (Italiano)#Controllo ortografico](/index.php/Vim_(Italiano)#Controllo_ortografico "Vim (Italiano)") | włoski | [Vim#Spell Checking](/index.php/Vim#Spell_Checking "Vim") ma mniej treści |
+| [Vim (Italiano)#Controllo ortografico](/index.php/Vim_(Italiano)#Controllo_ortografico "Vim (Italiano)") | włoski | [Vim#Spell checking](/index.php/Vim#Spell_checking "Vim") ma mniej treści |
 
 ## Sprawdź również
 

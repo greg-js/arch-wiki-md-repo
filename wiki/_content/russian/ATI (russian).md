@@ -78,7 +78,7 @@
 
 Если проприетарный драйвер `catalyst` был установлен ранее, удалите его по [этой инструкции (англ.)](/index.php/ATI_Catalyst#Uninstallation "ATI Catalyst")
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") пакет [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), доступный в [официальном репозитории](/index.php/Official_Repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official Repositories (Русский)").
+[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") пакет [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), доступный в [официальном репозитории](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
 -git версия драйвера и других необходимых пакетов (linux-git, и т.д.) можно найти в [репозитории radeon](https://bbs.archlinux.org/viewtopic.php?id=79509&p=1) или в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)").
 
@@ -100,7 +100,7 @@ EndSection
 
 ## Kernel mode-setting (KMS)
 
-**Tip:** Если у вас имеются проблемы с разрешением, посмотрите [эту страницу (англ.)](/index.php/Kernel_Mode_Setting#Forcing_modes_and_EDID "Kernel Mode Setting").
+**Tip:** Если у вас имеются проблемы с разрешением, посмотрите [эту страницу (англ.)](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting").
 
 **Установщик видеорежимов ядра (kernel mode-setting)** — это технология смены видеорежимов в пространстве ядра, на стадии загрузки модулей (до загрузки X). Он написан практически с нуля и позволяет переключать терминалы (Ctrl+Alt+F1 и др.) практически мгновенно. Как следствие, вы будете иметь полноэкранный фрэймбуфер, который удобен в консольном режиме для дисплеев с высоким разрешением.
 

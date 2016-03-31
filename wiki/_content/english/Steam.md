@@ -46,7 +46,9 @@ Steam is not supported on this distribution. As such some fixes are needed on th
 
 ### Big Picture Mode (with a Display Manager)
 
-To start Steam in Big Picture Mode from a Display Manager (such as LightDM), create a `/usr/share/xsessions/steam-big-picture.desktop` file with the following content:
+To start Steam in Big Picture Mode from a Display Manager (such as GDM), install [steam-session-git](https://aur.archlinux.org/packages/steam-session-git/). This will set up the necessary session files to launch Steam from xfwm4, along with shutting down Steam cleanly on exit. Launching from xfwm4 may also help those having issues with mouse/keyboard/controller input.
+
+Alternatively, you can create a `/usr/share/xsessions/steam-big-picture.desktop` file with the following content:
 
  `/usr/share/xsessions/steam-big-picture.desktop` 
 ```
@@ -58,8 +60,6 @@ TryExec=/usr/bin/steam
 Icon=
 Type=Application
 ```
-
-Alternatively, under Steam > Settings > Interface, check 'Start Steam in Big Picture Mode' and start Steam normally. This can behave slightly better with certain window managers than the command line option.
 
 ### Silent Mode
 
@@ -165,6 +165,14 @@ $ < /proc/$(pidof steam)/maps|sed '/\.local/!d;s/.*  //g'|sort|uniq
 The unofficial [alucryd-multilib](/index.php/Unofficial_user_repositories#alucryd-multilib "Unofficial user repositories") repository contains all libraries needed to run native steam on x86_64\. Please note that, for some reason, steam does not pick up sdl2 or libav* even if you have them installed. It will still use the ones it ships with.
 
 All you need to install is the meta-package `steam-libs`, it will pull all the libs for you. Please report if there is any missing library, the maintainer already had some lib32 packages installed so a library may have been overlooked.
+
+**Satisfacing dependencies with pacman and AUR without the aur meta-package (For x86_64)**
+
+Steam with native runtimes needs from AUR this packages with his dependencies [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) [lib32-dbus-glib](https://aur.archlinux.org/packages/lib32-dbus-glib/) [lib32-libnm-glib](https://aur.archlinux.org/packages/lib32-libnm-glib/) [lib32-libudev.so.0](https://aur.archlinux.org/packages/lib32-libudev.so.0/)
+
+Apart, from pacman [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) [lib32-nss](https://www.archlinux.org/packages/?name=lib32-nss) [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2) and [lib32-gtk3](https://www.archlinux.org/packages/?name=lib32-gtk3) (enable the [multilib](/index.php/Multilib "Multilib") repository first)
+
+And, if it show errors of libcanberra-gtk3 install [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra)
 
 ### Skins for Steam
 

@@ -21,7 +21,7 @@ Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来�
 1.  如果还不知道如何编辑 wiki，请阅读 [编辑帮助](/index.php/Help:Editing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Editing (简体中文)")。
 2.  阅读 [i18n帮助](/index.php/Help:I18n_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:I18n (简体中文)")，文章给出了 ArchWiki 国际化和本地化的指南。
 3.  [登录](/index.php/Special:UserLogin "Special:UserLogin") 以进行编辑。
-4.  选择要翻译的页面，例如从 [随机页面](/index.php/Special:Random "Special:Random") 或 [页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8) 中选择一个未翻译完成的页面。假设要翻译 [Some Page](/index.php?title=Some_Page&action=edit&redlink=1 "Some Page (page does not exist)").
+4.  选择要翻译的页面，例如从 [随机页面](/index.php/Special:Random "Special:Random") 或[页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8) 中选择一个未翻译完成的页面。假设要翻译 [Some Page](/index.php?title=Some_Page&action=edit&redlink=1 "Some Page (page does not exist)").
 5.  进入选择的英文页面，点击页面顶部的 **编辑**。
 6.  添加要翻译文件的语言间链接, 中文的话加入[[zh-CN:Some Page]]，其它语言参见[Help:i18n#Interlanguage links](/index.php/Help:I18n#Interlanguage_links "Help:I18n"))。
 7.  复制所有页面代码。
@@ -101,7 +101,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 
 *   为用户提供翻译状况，包括翻译时间、英文页面的最后版本等
 *   用户可以点击查看翻译后，英文页面的改动，这样英文不是很好的用户可以只查看很小一部分英文内容，并判断出是否影响操作。
-*   翻译人员可以跟踪页面状况，通过[模板的反向链接](https://wiki.archlinux.org/index.php/Special:WhatLinksHere/Template:TranslationStatus_(简体中文))可以查找到所有标记页面，查看需要更新翻译的部分。
+*   翻译人员可以跟踪页面状况，通过[模板的反向链接](/index.php/Special:WhatLinksHere/Template:TranslationStatus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Special:WhatLinksHere/Template:TranslationStatus (简体中文)")可以查找到所有标记页面，查看需要更新翻译的部分。
 
 [模板页面](/index.php/Template:TranslationStatus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:TranslationStatus (简体中文)")有详细的使用方法。
 
@@ -127,9 +127,9 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [AMD Catalyst (简体中文)](/index.php/AMD_Catalyst_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AMD Catalyst (简体中文)") | 过期 | Shibao Zhao | 无 |
 | [acpid (简体中文)](/index.php/Acpid_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Acpid (简体中文)") | 过期 | Cael |
 | [Advanced Linux Sound Architecture (简体中文)](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Advanced Linux Sound Architecture (简体中文)") | 翻译中 | ihonliu | 无 |
-| [Arch Based Distributions (Active) (简体中文)](/index.php/Arch_Based_Distributions_(Active)_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Based Distributions (Active) (简体中文)") | 完成 | Joshua | 勘误中 |
+| [Arch based distributions (active) (简体中文)](/index.php/Arch_based_distributions_(active)_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch based distributions (active) (简体中文)") | 完成 | Joshua | 勘误中 |
 | [ATI (简体中文)](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)") | 完成 | skysailing | 无 |
-| [AUR Helpers (简体中文)](/index.php/AUR_Helpers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR Helpers (简体中文)") | 进行中 | Stonex | 无 |
+| [AUR helpers (简体中文)](/index.php/AUR_helpers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helpers (简体中文)") | 进行中 | Stonex | 无 |
 | [awesome (简体中文)](/index.php/Awesome_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Awesome (简体中文)") | 进行中 | Cael | 无 |
 | [BIND (简体中文)](/index.php/BIND_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "BIND (简体中文)") | 翻译中 | SteamedFish | 无 |
 | [Bumblebee (简体中文)](/index.php/Bumblebee_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bumblebee (简体中文)") | 完成 | Peter | 无 |
@@ -139,12 +139,12 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Common Applications (简体中文)](/index.php/Common_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Common Applications (简体中文)") | 部分翻译 | DavidChen | 翻译中 |
 | [Common Applications/Science (简体中文)](/index.php/Common_Applications/Science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Common Applications/Science (简体中文)") | drop maintain | 更新，翻译中 |
 | [Compiz (简体中文)](/index.php/Compiz_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Compiz (简体中文)") | 翻译中 | xiii_1991 | 20140813开始 |
-| [Core Utilities (简体中文)](/index.php/Core_Utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core Utilities (简体中文)") | 翻译中 | rentaro | 同步翻译至2014年7月23日08:13英文页面，完善中 |
-| [Disk Cloning (简体中文)](/index.php/Disk_Cloning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Disk Cloning (简体中文)") | 翻译中 | _spaike97 | 无 |
+| [Core utilities (简体中文)](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core utilities (简体中文)") | 翻译中 | rentaro | 同步翻译至2014年7月23日08:13英文页面，完善中 |
+| [Disk cloning (简体中文)](/index.php/Disk_cloning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Disk cloning (简体中文)") | 翻译中 | _spaike97 | 无 |
 | [Dynamic Kernel Module Support (简体中文)](/index.php/Dynamic_Kernel_Module_Support_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dynamic Kernel Module Support (简体中文)") | 完成 | Mithrandir | 完善中 |
 | [Emacs (简体中文)](/index.php/Emacs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Emacs (简体中文)") | 翻译中 | Jaurung yuanhang | 未完成 |
 | [File recovery (简体中文)](/index.php/File_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File recovery (简体中文)") | 翻译中 | _spaike97 | 无 |
-| [Font Configuration (简体中文)](/index.php/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Font Configuration (简体中文)") | 翻译中 | Jaurung | 完善中 |
+| [Font configuration (简体中文)](/index.php/Font_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Font configuration (简体中文)") | 翻译中 | Jaurung | 完善中 |
 | [Fonts (简体中文)](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)") | 翻译中 | qqbzg | 无 |
 | [KDE (简体中文)](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)") | 翻译中 | Mithrandir | 未完成 |
 | [LAMP (简体中文)](/index.php/LAMP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LAMP (简体中文)") | 完成 | Liuzhengyi | 勘误中 |
@@ -159,7 +159,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Plasma (简体中文)](/index.php/Plasma_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Plasma (简体中文)") | 未翻译 | 无 | 无 |
 | [ranger (简体中文)](/index.php/Ranger_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ranger (简体中文)") | 完成 | Jason Zhang | 完善中 |
 | [Raspberry Pi (简体中文)](/index.php/Raspberry_Pi_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Raspberry Pi (简体中文)") | 翻译中 | Mithrandir |
-| [Reporting_Bug_Guidelines_(简体中文)](/index.php/Reporting_Bug_Guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reporting Bug Guidelines (简体中文)") | 翻译中 | Jason Zhang |
+| [Reporting bug guidelines (简体中文)](/index.php/Reporting_bug_guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reporting bug guidelines (简体中文)") | 翻译中 | Jason Zhang |
 | [Secure Shell (简体中文)](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") | 完成 | HelloCode | 完成 |
 | [Smart Common Input Method platform (简体中文)](/index.php/Smart_Common_Input_Method_platform_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Smart Common Input Method platform (简体中文)") | 过期 | 无 | 无 |
 | [Systemd-timesyncd (简体中文)‎‎](/index.php/Systemd-timesyncd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-timesyncd (简体中文)") | 完成 | Peter |

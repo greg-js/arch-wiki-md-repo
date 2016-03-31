@@ -101,7 +101,7 @@ There are several Bitcoin miners in the [AUR](/index.php/AUR "AUR"):
 
 *   **cpuminer** — Multi-threaded CPU Miner.
 
-	[http://yyz.us/bitcoin/](http://yyz.us/bitcoin/) || [cpuminer-git](https://aur.archlinux.org/packages/cpuminer-git/)
+	[http://yyz.us/bitcoin/](http://yyz.us/bitcoin/) || [cpuminer](https://aur.archlinux.org/packages/cpuminer/)
 
 *   **MiningBeast** — Multi-platform mining software.
 

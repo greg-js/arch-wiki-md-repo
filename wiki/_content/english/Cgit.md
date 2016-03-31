@@ -299,6 +299,8 @@ source-filter=/usr/lib/cgit/filters/syntax-highlighting.py
 
 ```
 
+If you want to be able to properly color markdown files, (often called README.md), install [python-pygments-markdown-lexer](https://aur.archlinux.org/packages/python-pygments-markdown-lexer/)
+
 #### Using highlight
 
 Install the [highlight](https://www.archlinux.org/packages/?name=highlight) package.

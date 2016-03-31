@@ -7,6 +7,7 @@ Support of a various streaming services is provided by a plugins, which can be e
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
     *   [2.1 Twitch](#Twitch)
+        *   [2.1.1 Authenticating With OAuth](#Authenticating_With_OAuth)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -50,6 +51,24 @@ For example:
 ```
 
 Available stream qualities are: `source`, `high`, `medium`, `low` and `mobile`.
+
+#### Authenticating With OAuth
+
+```
+ $ livestreamer --twitch-oauth-authenticate
+
+```
+
+This command will open a web browser with further instructions on authenticating with twitch.
+
+The instructions only offer documentation for a configuration file, if you prefer not to use a configuration file, you can use:
+
+```
+ $ livestreamer twitch.tv/*channel* --twitch-oauth-token *YourOAuthToken*
+
+```
+
+Where *YourOAuthToken* is the OAuth token you received in the previous step.
 
 ## See also
 

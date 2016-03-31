@@ -69,7 +69,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **fim** — Highly customizable and scriptable framebuffer image viewer based on fbi.
 
-	[http://www.autistici.org/dezperado/fim/](http://www.autistici.org/dezperado/fim/) || [fim](https://aur.archlinux.org/packages/fim/)
+	[http://www.nongnu.org/fbi-improved/](http://www.nongnu.org/fbi-improved/) || [fim](https://aur.archlinux.org/packages/fim/)
 
 *   **jfbview** — Framebuffer PDF and image viewer based on Imlib2\. Features include Vim-like controls, rotation and zoom, zoom-to-fit, and fast multi-threaded rendering.
 

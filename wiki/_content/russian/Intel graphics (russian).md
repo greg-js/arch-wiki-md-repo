@@ -21,16 +21,17 @@
     *   [5.6 Управление яркостью и гаммой](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D1.8C.D1.8E_.D0.B8_.D0.B3.D0.B0.D0.BC.D0.BC.D0.BE.D0.B9)
 *   [6 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [6.1 Проблемы SNA](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_SNA)
-    *   [6.2 Пустой экран во время загрузки системы на этапе "Loading modules"](#.D0.9F.D1.83.D1.81.D1.82.D0.BE.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.B2.D0.BE_.D0.B2.D1.80.D0.B5.D0.BC.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D0.BD.D0.B0_.D1.8D.D1.82.D0.B0.D0.BF.D0.B5_.22Loading_modules.22)
-    *   [6.3 X зависает/падает с драйверами intel](#X_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.B5.D1.82.2F.D0.BF.D0.B0.D0.B4.D0.B0.D0.B5.D1.82_.D1.81_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0.D0.BC.D0.B8_intel)
-    *   [6.4 Добавление неопределённых разрешений](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D1.8B.D1.85_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B9)
-    *   [6.5 Проблема цвета](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.86.D0.B2.D0.B5.D1.82.D0.B0)
-    *   [6.6 Подсветка не регулируется](#.D0.9F.D0.BE.D0.B4.D1.81.D0.B2.D0.B5.D1.82.D0.BA.D0.B0_.D0.BD.D0.B5_.D1.80.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D1.83.D0.B5.D1.82.D1.81.D1.8F)
-    *   [6.7 Отключение сжатия буфера кадров](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.B6.D0.B0.D1.82.D0.B8.D1.8F_.D0.B1.D1.83.D1.84.D0.B5.D1.80.D0.B0_.D0.BA.D0.B0.D0.B4.D1.80.D0.BE.D0.B2)
-    *   [6.8 Искажение/Зависание в Chromium и Firefox](#.D0.98.D1.81.D0.BA.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.2F.D0.97.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2_Chromium_.D0.B8_Firefox)
-    *   [6.9 Розовые и зелёные артефакты на видео или выводе Веб-камеры](#.D0.A0.D0.BE.D0.B7.D0.BE.D0.B2.D1.8B.D0.B5_.D0.B8_.D0.B7.D0.B5.D0.BB.D1.91.D0.BD.D1.8B.D0.B5_.D0.B0.D1.80.D1.82.D0.B5.D1.84.D0.B0.D0.BA.D1.82.D1.8B_.D0.BD.D0.B0_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE_.D0.B8.D0.BB.D0.B8_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B5_.D0.92.D0.B5.D0.B1-.D0.BA.D0.B0.D0.BC.D0.B5.D1.80.D1.8B)
-    *   [6.10 Ядро сбоит с ядрами 4.0+ на чипах Broadwell/Core-M](#.D0.AF.D0.B4.D1.80.D0.BE_.D1.81.D0.B1.D0.BE.D0.B8.D1.82_.D1.81_.D1.8F.D0.B4.D1.80.D0.B0.D0.BC.D0.B8_4.0.2B_.D0.BD.D0.B0_.D1.87.D0.B8.D0.BF.D0.B0.D1.85_Broadwell.2FCore-M)
-    *   [6.11 Драйвер не работает на чипах Intel Skylake](#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0_.D1.87.D0.B8.D0.BF.D0.B0.D1.85_Intel_Skylake)
+    *   [6.2 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
+    *   [6.3 Пустой экран во время загрузки системы на этапе "Loading modules"](#.D0.9F.D1.83.D1.81.D1.82.D0.BE.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.B2.D0.BE_.D0.B2.D1.80.D0.B5.D0.BC.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D0.BD.D0.B0_.D1.8D.D1.82.D0.B0.D0.BF.D0.B5_.22Loading_modules.22)
+    *   [6.4 X зависает/падает с драйверами intel](#X_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.B5.D1.82.2F.D0.BF.D0.B0.D0.B4.D0.B0.D0.B5.D1.82_.D1.81_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0.D0.BC.D0.B8_intel)
+    *   [6.5 Добавление неопределённых разрешений](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D1.8B.D1.85_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B9)
+    *   [6.6 Проблема цвета](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.86.D0.B2.D0.B5.D1.82.D0.B0)
+    *   [6.7 Подсветка не регулируется](#.D0.9F.D0.BE.D0.B4.D1.81.D0.B2.D0.B5.D1.82.D0.BA.D0.B0_.D0.BD.D0.B5_.D1.80.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D1.83.D0.B5.D1.82.D1.81.D1.8F)
+    *   [6.8 Отключение сжатия буфера кадров](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.B6.D0.B0.D1.82.D0.B8.D1.8F_.D0.B1.D1.83.D1.84.D0.B5.D1.80.D0.B0_.D0.BA.D0.B0.D0.B4.D1.80.D0.BE.D0.B2)
+    *   [6.9 Искажение/Зависание в Chromium и Firefox](#.D0.98.D1.81.D0.BA.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.2F.D0.97.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2_Chromium_.D0.B8_Firefox)
+    *   [6.10 Розовые и зелёные артефакты на видео или выводе Веб-камеры](#.D0.A0.D0.BE.D0.B7.D0.BE.D0.B2.D1.8B.D0.B5_.D0.B8_.D0.B7.D0.B5.D0.BB.D1.91.D0.BD.D1.8B.D0.B5_.D0.B0.D1.80.D1.82.D0.B5.D1.84.D0.B0.D0.BA.D1.82.D1.8B_.D0.BD.D0.B0_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE_.D0.B8.D0.BB.D0.B8_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B5_.D0.92.D0.B5.D0.B1-.D0.BA.D0.B0.D0.BC.D0.B5.D1.80.D1.8B)
+    *   [6.11 Ядро сбоит с ядрами 4.0+ на чипах Broadwell/Core-M](#.D0.AF.D0.B4.D1.80.D0.BE_.D1.81.D0.B1.D0.BE.D0.B8.D1.82_.D1.81_.D1.8F.D0.B4.D1.80.D0.B0.D0.BC.D0.B8_4.0.2B_.D0.BD.D0.B0_.D1.87.D0.B8.D0.BF.D0.B0.D1.85_Broadwell.2FCore-M)
+    *   [6.12 Драйвер не работает на чипах Intel Skylake](#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0_.D1.87.D0.B8.D0.BF.D0.B0.D1.85_Intel_Skylake)
 *   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
@@ -252,6 +253,14 @@ Section "Device"
 EndSection
 
 ```
+
+### Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)
+
+Should you experience missing font glyphs in GTK+ applications, the following workaround might help. [Edit](/index.php/Edit#Append.2C_add.2C_create.2C_edit "Edit") `/etc/environment` to add the following line:
+
+ `/etc/environment`  `COGL_ATLAS_DEFAULT_BLIT_MODE=framebuffer` 
+
+See also [FreeDesktop bug 88584](https://bugs.freedesktop.org/show_bug.cgi?id=88584).
 
 ### Пустой экран во время загрузки системы на этапе "Loading modules"
 

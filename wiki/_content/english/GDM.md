@@ -536,7 +536,7 @@ To remove this warning, login as root and delete the primary user "gdm" and then
 
 ```
 
-Verify that gdm is successfully removed via `pwck` and `grpck`
+Verify that gdm is successfully removed via `pwck` and `grpck`. To round it off, you may want to double-check no [unowned files](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks") for gdm remain.
 
 ## See also
 

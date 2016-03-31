@@ -7,7 +7,7 @@
 
 **Note:**
 
-*   [ambienti desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)"), come [GNOME](/index.php/GNOME "GNOME"), [systemd](/index.php/Systemd#ACPI_power_management "Systemd") login manager e alcuni demoni di[gestione dei tasti extra](/index.php/Extra_keyboard_keys "Extra keyboard keys") potrebbero implementare degli schemi per la gestione degli eventi propri, in maniera indipendente da acpid. Eseguendo più di un sistema alla volta, potrebbe provocare comportamenti inaspettati, come una sospensione doppia, due volte in fila dopo una pressione del pulsante per la sospensione. Si dovrebbe essere consapevoli di ciò, e abilitare solamente i gestori desiderati.
+*   [ambienti desktop](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)"), come [GNOME](/index.php/GNOME "GNOME"), [systemd](/index.php/Systemd#Power_management "Systemd") login manager e alcuni demoni di[gestione dei tasti extra](/index.php/Extra_keyboard_keys "Extra keyboard keys") potrebbero implementare degli schemi per la gestione degli eventi propri, in maniera indipendente da acpid. Eseguendo più di un sistema alla volta, potrebbe provocare comportamenti inaspettati, come una sospensione doppia, due volte in fila dopo una pressione del pulsante per la sospensione. Si dovrebbe essere consapevoli di ciò, e abilitare solamente i gestori desiderati.
 *   Siccome di default lo script installato da acpid, **/etc/acpi/handler.sh**, sovrascriverà la funzionalità alla pressione del pulsante di accensione del tuo ambiente desktop, probabilmente vorrai cambiare la routine di acpid, per evitare di spegnere il sistema alla pressione inavvertita del pulsante di accensione.(leggi le istruzioni sotto).
 
 ## Contents
@@ -27,7 +27,7 @@
 
 ## Installazione
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [acpid](https://www.archlinux.org/packages/?name=acpid) reperibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [acpid](https://www.archlinux.org/packages/?name=acpid) reperibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Per avere acpid avviato automaticamente, [abilitare](/index.php/Systemd#Using_units "Systemd") `acpid.service`.
 
@@ -288,7 +288,7 @@ esac
 
 ### Spegnere l'alimentazione del monitor di un laptop
 
-Tratto dal [Wiki di Gentoo](http://en.gentoo-wiki.com/wiki/ACPI/Configuration) arriva questo piccolo gioiello. Aggiungendo queste stringhe al fondo del file `/etc/acpi/actions/lm_lid.sh` o alla sezione *button/lid* di `/etc/acpi/handler.sh`, si ottiene lo spegnimento della reto-illuminazione del display LCD quando il coperchio è chiuso, e lo riaccende quando il coperchio si riapre.
+Tratto dal [Wiki di Gentoo](http://www.gentoo-wiki.info/ACPI/Configuration) arriva questo piccolo gioiello. Aggiungendo queste stringhe al fondo del file `/etc/acpi/actions/lm_lid.sh` o alla sezione *button/lid* di `/etc/acpi/handler.sh`, si ottiene lo spegnimento della reto-illuminazione del display LCD quando il coperchio è chiuso, e lo riaccende quando il coperchio si riapre.
 
 ```
 case $(cat /proc/acpi/button/lid/LID0/state | awk '{print $2}') in
@@ -300,7 +300,7 @@ esac
 
 Se volete aumentare o diminuire la luminosità o qualcosa dipendente da X, è necessario specificare il display X così come il file *MIT magic cookie* (via XAUTHORITY). L'ultima parte è una credenziale di sicurezza che fornisce la lettura e scrittura al server X, il display e tutti i dispositivi di input.
 
-Con alcune combinazioni di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") e hardware problematico, `xset dpms force off` genera un display bianco lasciando la retroilluminazione attiva. Questo può essere risolto utilizzando [vbetool](https://www.archlinux.org/packages/?name=vbetool) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). Modificare la sezione LCD come segue:
+Con alcune combinazioni di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") e hardware problematico, `xset dpms force off` genera un display bianco lasciando la retroilluminazione attiva. Questo può essere risolto utilizzando [vbetool](https://www.archlinux.org/packages/?name=vbetool) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"). Modificare la sezione LCD come segue:
 
 ```
 case $(cat /proc/acpi/button/lid/LID0/state | awk '{print $2}') in
@@ -402,4 +402,4 @@ per esempio, altrimenti non verrà rilevato il programma a livello utente e ne v
 ## Altre risorse
 
 *   [acpid homepage](http://acpid.sourceforge.net/)
-*   [RIP Gentoo wiki entry - New Gentoo Wiki Archives](http://www.gentoo-wiki.info/ACPI/Configuration)
+*   [Gentoo wiki](http://www.gentoo-wiki.info/ACPI/Configuration)

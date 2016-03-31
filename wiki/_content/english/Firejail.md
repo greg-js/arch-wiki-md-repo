@@ -12,6 +12,7 @@
         *   [3.2.2 Daemons](#Daemons)
         *   [3.2.3 Notes](#Notes)
 *   [4 Firetools](#Firetools)
+*   [5 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
@@ -71,3 +72,11 @@ Other configurations exist; it is suggested you check out the man page for firej
 ## Firetools
 
 A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/).
+
+## Troubleshooting
+
+**PulseAudio**
+
+If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://firejail.wordpress.com/support/known-problems/) A temporary workaround:
+
+ `cp /etc/pulse/client.conf ~/.config/pulse/`  `echo "enable-shm = no" >> ~/.config/pulse/client.conf`

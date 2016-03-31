@@ -60,7 +60,7 @@ Finally, wipe it with pseudorandom (because encrypted) data. A use of `if=/dev/u
 *   Using *dd* with the `bs=` option, e.g. `bs=1M`, is frequently used to increase disk throughput of the operation.
 *   If you want to perform a check of the operation, zero the partition before creating the wipe container. After the wipe command `blockdev --getsize64 */dev/mapper/container*` can be used to get the exact container size as root. Now *od* can be used to spotcheck whether the wipe overwrote the zeroed sectors, e.g. `od -j *containersize - blocksize*` to view the wipe completed to the end.
 
-Now the next step is [#Partitioning](#Partitioning).
+If you are encrypting an entire system, the next step is [#Partitioning](#Partitioning). If you are just encrypting a partition, continue [dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system").
 
 #### dm-crypt wipe free space after installation
 

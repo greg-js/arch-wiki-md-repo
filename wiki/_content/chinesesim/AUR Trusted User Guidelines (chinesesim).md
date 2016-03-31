@@ -133,4 +133,4 @@ ssh nymeria.archlinux.org /srv/repos/svn-community/dbscripts/db-move community-t
 
 ### 另见
 
-*   [DeveloperWiki#Packaging_Guidelines](/index.php/DeveloperWiki#Packaging_Guidelines "DeveloperWiki")
+*   [DeveloperWiki#Packaging Guidelines](/index.php/DeveloperWiki#Packaging_Guidelines "DeveloperWiki")

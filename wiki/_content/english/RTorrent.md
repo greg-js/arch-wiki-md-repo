@@ -16,7 +16,7 @@
     *   [4.3 Pre-allocation](#Pre-allocation)
     *   [4.4 Manage completed files](#Manage_completed_files)
         *   [4.4.1 Notification with Google Mail](#Notification_with_Google_Mail)
-    *   [4.5 Displaying active torrents](#Displaying_active_torrents)
+    *   [4.5 UI Tricks](#UI_Tricks)
     *   [4.6 Manually adding trackers to torrents](#Manually_adding_trackers_to_torrents)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 CA certificates](#CA_certificates)
@@ -560,9 +560,9 @@ All Live Nudibranches: Done
 
 ```
 
-### Displaying active torrents
+### UI Tricks
 
-The rtorrent does not list the active tab properly by default, add this line to your `.rtorrent.rc` to show only active torrents
+rTorrent does not list the active tab properly by default, add this line to your `.rtorrent.rc` to show only active torrents
 
 ```
 schedule = filter_active,30,30,"view_filter = active,\"or={d.get_up_rate=,d.get_down_rate=}\""
@@ -570,6 +570,28 @@ schedule = filter_active,30,30,"view_filter = active,\"or={d.get_up_rate=,d.get_
 ```
 
 Then press `9` in your rTorrent client to see the changes in action.
+
+To sort the seeding view by the upload rate and only show torrents with peers:
+
+```
+# Sort the seeding view by the upload rate and only show torrents with peers
+view.sort_current = seeding,greater=d.get_up_rate=
+view.filter = seeding,"and=d.get_complete=,d.get_peers_connected="
+view.sort_new = seeding,less=d.get_up_rate=
+view.sort = seeding
+
+```
+
+To sort the complete view by the upload rate:
+
+```
+# Sort the complete view by the upload rate
+view.sort_current = complete,greater=d.get_up_rate=
+view.filter = seeding,"and=d.get_complete="
+view.sort_new = seeding,less=d.get_up_rate=
+view.sort = seeding
+
+```
 
 ### Manually adding trackers to torrents
 
@@ -632,7 +654,7 @@ This is caused by there being spaces in your system.method.* lines. Remove the s
 There are numerous web interfaces and front ends for rTorrent including:
 
 *   [WTorrent](/index.php/WTorrent "WTorrent") is a web interface to rtorrent programmed in php using Smarty templates and XMLRPC for PHP library.
-*   [nTorrent](http://code.google.com/p/ntorrent/) is a graphical user interface client to rtorrent (a cli torrent client) written in Java.
+*   [nTorrent](http://code.google.com/p/ntorrent/) is a graphical user interface client to rtorrent written in Java.
 *   [rTWi](https://rtwi.jmk.hu/) is a simple rTorrent web interface written in PHP.
 *   [Rtgui](/index.php/Rtgui "Rtgui") is a web based front end for rTorrent written in PHP and uses XML-RPC to communicate with the rTorrent client.
 *   [rutorrent](https://github.com/Novik/ruTorrent) and [Forum](http://forums.rutorrent.org/) - A web-based front-end with an interface very similar to uTorrent which supports many plugins and advanced features (see also: [ruTorrent](/index.php/RuTorrent "RuTorrent") and [Guide on forum](https://bbs.archlinux.org/viewtopic.php?pid=897577#p897577)).
@@ -705,7 +727,7 @@ $ magnet2torrent <magnet link> [torrent file]
 
 ## rtorrent-pyro
 
-[rtorrent-pyro](https://aur.archlinux.org/packages/rtorrent-pyro/) from the [AUR](/index.php/AUR "AUR") comes with an extended rtorrent console interface. It does not contain the pyroscope tools yet though. If you also need the pyroscope tools see [#PyroScope](#PyroScope) .
+[rtorrent-pyro-git](https://aur.archlinux.org/packages/rtorrent-pyro-git/) from the [AUR](/index.php/AUR "AUR") comes with an extended rtorrent console interface. It does not contain the pyroscope tools yet though. If you also need the pyroscope tools see [#PyroScope](#PyroScope) .
 
 Make sure you add following command to ~/.rtorrent.rc, which makes the asterisk key * to a shortcut for toggling between extended and collapsed view within rtorrent's interface:
 
@@ -776,14 +798,14 @@ Deletes all torrents older than 48 hours:
 
 ## See also
 
-*   [Manpage for rtorrent](http://libtorrent.rakshasa.no/rtorrent/rtorrent.1.html)
+*   [Manpage for rtorrent](http://linux.die.net/man/1/rtorrent)
 *   [Screen Tips](/index.php/Screen_Tips "Screen Tips")
 *   [Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients") on Wikipedia
 *   [rTorrent Community Wiki](http://community.rutorrent.org/) - Public place for information on rTorrent and any project related to rTorrent, regarding setup, configuration, operations, and development.
 *   [PyroScope](http://code.google.com/p/pyroscope/) - Collection of command line tools for rTorrent. It provides commands for creating and modifying torrent files, moving data on completion without having multiple watch folders, and mass-controlling download items via rTorrent's XML-RPC interface: searching, start/stop, deleting items with or without their data, etc. It also offers a documented [Python](/index.php/Python "Python") API.
 *   [ruTorrent with Lighttpd](/index.php/Rutorrent_with_lighttpd "Rutorrent with lighttpd")
 *   [How-to install rTorrent and Hellanzb on CentOS 5 64-bit VPS](http://wiki.theaveragegeek.com/howto/installing_rtorrent_and_hellanzb_on_centos5_64-bit_vps)
-*   [Installation guide for rTorrent and Pryoscope on Debian](http://code.google.com/p/pyroscope/wiki/DebianInstallFromSource) - Collection of tools for the BitTorrent protocol and especially the rTorrent client
+*   [Installation guide for rTorrent and Pyroscope on Debian](http://code.google.com/p/pyroscope/wiki/DebianInstallFromSource) - Collection of tools for the BitTorrent protocol and especially the rTorrent client
 *   [mktorrent](http://mktorrent.sourceforge.net/) - Command line application used to generate torrent files, which is available as [mktorrent](https://www.archlinux.org/packages/?name=mktorrent) in the [official repositories](/index.php/Official_repositories "Official repositories").
 *   [docktorrent](https://github.com/kfei/docktorrent) - Using Docker, rTorrent and ruTorrent to run a full-featured BitTorrent box.
 *   [reptyr](https://github.com/nelhage/reptyr) - another tool to take over a program's TTY (it is in the standard repos). The process may have started being attached to a terminal or to a socket in tmux, screen or dtach.

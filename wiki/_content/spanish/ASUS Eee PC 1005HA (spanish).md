@@ -44,7 +44,7 @@ El kernel por defecto (actualmente 2.6.34) soporta todo el hardware de la 1005HA
 
 # Instalación
 
-Para una guía completa de instalación de Arch, vea la [Guía de Principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)").
+Para una guía completa de instalación de Arch, vea la [Guía de Principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)").
 
 # Pantalla y dispositivos de ingreso
 

@@ -1,6 +1,6 @@
 See [pacman](/index.php/Pacman "Pacman") for the main article.
 
-When *pacman* removes a package that has a configuration file, it normally creates a backup copy of that config file and appends *.pacsave* to the name of the file. Likewise, when *pacman* upgrades a package which includes a new config file created by the maintainer differing from the currently installed file, it writes a *.pacnew* config file. Occasionally, under special circumstances, a *.pacorig* file is created. *pacman* provides notice when these files are written.
+When *pacman* removes a package that has a configuration file, it normally creates a backup copy of that config file and appends *.pacsave* to the name of the file. Likewise, when *pacman* upgrades a package which includes a new config file created by the maintainer differing from the currently installed file, it writes a *.pacnew* config file. *pacman* provides notice when these files are written.
 
 ## Contents
 
@@ -9,7 +9,6 @@ When *pacman* removes a package that has a configuration file, it normally creat
 *   [3 Types explained](#Types_explained)
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
-    *   [3.3 .pacorig](#.pacorig)
 *   [4 Locating .pac* files](#Locating_.pac.2A_files)
 *   [5 Managing .pacnew files](#Managing_.pacnew_files)
 *   [6 See also](#See_also)
@@ -75,23 +74,17 @@ If the user has modified one of the files specified in `backup` then that file w
 
 **Note:** Use of the `-n` option with `pacman -R` will result in complete removal of *all* files in the specified package, therefore no *.pacsave* files will be created.
 
-### .pacorig
-
-When a file (usually a configuration found in `/etc`) is encountered during package installation or upgrade that does not belong to any installed package but is listed in `backup` for the package in the current operation, it will be saved with a *.pacorig* extension and replaced with the version of the file from the package. Usually this happens when a configuration file has been moved from one package to another. If such a file were not listed in `backup`, pacman would abort with a file conflict error.
-
-**Note:** Because *.pacorig* files tend to be created for special circumstances, there is no universal method for handling them. It may be helpful to consult the [Arch News](https://www.archlinux.org/news/) for handling instructions if it is a known case.
-
 ## Locating .pac* files
 
 Pacman does not deal with *.pacnew* files automatically: you will need to maintain these yourself. A few tools are presented in the next section. To do this manually, first you will need to locate them. When upgrading or removing a large number of packages, updated `*.pac*` files may be missed. To discover whether any `*.pac*` files have been installed, use one of the following:
 
-*   To just search where most global configurations are stored: `$ find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null` or the entire disk: `$ find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null` 
-*   Use [locate](/index.php/Locate "Locate") if you have installed it. First re-index the database: `# updatedb` Then: `$ locate -e --regex "\.pac(new|orig|save)$"` 
-*   Use pacman's log to find them: `$ egrep "pac(new|orig|save)" /var/log/pacman.log` Note that the log does not keep track of which files are currently in the filesystem nor of which files have already been removed
+*   To just search where most global configurations are stored: `$ find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` or the entire disk: `$ find / -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` 
+*   Use [locate](/index.php/Locate "Locate") if you have installed it. First re-index the database: `# updatedb` Then: `$ locate -e --regex "\.pac(new|save)$"` 
+*   Use pacman's log to find them: `$ egrep "pac(new|save)" /var/log/pacman.log` Note that the log does not keep track of which files are currently in the filesystem nor of which files have already been removed
 
 ## Managing .pacnew files
 
-Pacman includes the simple *pacdiff* tool for managing pacnew/pacorig/pacsave files. It will search all `pacnew` and `pacsave` files and ask for any actions on them. It uses [vimdiff](/index.php/Vim#Merging_files "Vim") by default, but you may specify a different tool with `DIFFPROG=your_editor pacdiff`. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") for other common comparison tools.
+Pacman includes the simple *pacdiff* tool for managing pacnew/pacsave files. It will search all `pacnew` and `pacsave` files and ask for any actions on them. It uses [vimdiff](/index.php/Vim#Merging_files "Vim") by default, but you may specify a different tool with `DIFFPROG=your_editor pacdiff`. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") for other common comparison tools.
 
 A few third-party utilities providing various levels of automation for these tasks are available from the [AUR](/index.php/AUR "AUR").
 

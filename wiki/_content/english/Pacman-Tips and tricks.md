@@ -5,20 +5,17 @@ For general methods to improve the flexibility of the provided tips or pacman it
 ## Contents
 
 *   [1 Cosmetic and convenience](#Cosmetic_and_convenience)
-    *   [1.1 Operations and Bash syntax](#Operations_and_Bash_syntax)
-    *   [1.2 Graphical front-ends](#Graphical_front-ends)
-    *   [1.3 Utilities](#Utilities)
+    *   [1.1 Graphical front-ends](#Graphical_front-ends)
+    *   [1.2 Utilities](#Utilities)
 *   [2 Maintenance](#Maintenance)
     *   [2.1 Listing packages](#Listing_packages)
         *   [2.1.1 With size](#With_size)
-        *   [2.1.2 Latest installed packages](#Latest_installed_packages)
-        *   [2.1.3 All packages that nothing else depends on](#All_packages_that_nothing_else_depends_on)
-        *   [2.1.4 Installed packages that are not in a specified group or repository](#Installed_packages_that_are_not_in_a_specified_group_or_repository)
+        *   [2.1.2 By date](#By_date)
+        *   [2.1.3 Not in a specified group or repository](#Not_in_a_specified_group_or_repository)
     *   [2.2 Listing files owned by a package with size](#Listing_files_owned_by_a_package_with_size)
     *   [2.3 Identify files not owned by any package](#Identify_files_not_owned_by_any_package)
     *   [2.4 Removing unused packages](#Removing_unused_packages)
         *   [2.4.1 Orphans](#Orphans)
-        *   [2.4.2 Explicitly installed](#Explicitly_installed)
     *   [2.5 Removing everything but base group](#Removing_everything_but_base_group)
     *   [2.6 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
     *   [2.7 Listing changed backup files](#Listing_changed_backup_files)
@@ -34,16 +31,13 @@ For general methods to improve the flexibility of the provided tips or pacman it
         *   [3.3.4 Synchronize pacman package cache using BitTorrent Sync](#Synchronize_pacman_package_cache_using_BitTorrent_Sync)
         *   [3.3.5 Preventing unwanted cache purges](#Preventing_unwanted_cache_purges)
     *   [3.4 Recreate a package from the file system](#Recreate_a_package_from_the_file_system)
-    *   [3.5 Backing up and retrieving a list of installed packages](#Backing_up_and_retrieving_a_list_of_installed_packages)
+    *   [3.5 List of installed packages](#List_of_installed_packages)
     *   [3.6 Listing all changed files from packages](#Listing_all_changed_files_from_packages)
     *   [3.7 Reinstalling all packages](#Reinstalling_all_packages)
     *   [3.8 Restore pacman's local database](#Restore_pacman.27s_local_database)
-        *   [3.8.1 Generating the package recovery list](#Generating_the_package_recovery_list)
-        *   [3.8.2 Performing the recovery](#Performing_the_recovery)
     *   [3.9 Recovering a USB key from existing install](#Recovering_a_USB_key_from_existing_install)
-    *   [3.10 Extracting contents of a .pkg file](#Extracting_contents_of_a_.pkg_file)
-    *   [3.11 Viewing a single file inside a .pkg file](#Viewing_a_single_file_inside_a_.pkg_file)
-    *   [3.12 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
+    *   [3.10 Viewing a single file inside a .pkg file](#Viewing_a_single_file_inside_a_.pkg_file)
+    *   [3.11 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
 *   [4 Performance](#Performance)
     *   [4.1 Database access speeds](#Database_access_speeds)
     *   [4.2 Download speeds](#Download_speeds)
@@ -53,38 +47,6 @@ For general methods to improve the flexibility of the provided tips or pacman it
         *   [4.2.4 Other applications](#Other_applications)
 
 ## Cosmetic and convenience
-
-### Operations and Bash syntax
-
-In addition to pacman's standard set of features, there are ways to extend its usability through rudimentary [Bash](/index.php/Bash "Bash") commands/syntax.
-
-To install a number of packages sharing similar patterns in their names -- not the entire group nor all matching packages; eg. [plasma](https://www.archlinux.org/groups/x86_64/plasma/):
-
-```
-# pacman -S plasma-{desktop,mediacenter,nm}
-
-```
-
-Of course, that is not limited and can be expanded to however many levels needed:
-
-```
-# pacman -S plasma-{workspace{,-wallpapers},pa}
-
-```
-
-Sometimes, `-s`'s builtin ERE can cause a lot of unwanted results, so it has to be limited to match the package name only; not the description nor any other field:
-
-```
-# pacman -Ss '^vim-'
-
-```
-
-pacman has the `-q` operand to hide the version column, so it is possible to query and reinstall packages with "compiz" as part of their name:
-
-```
-# pacman -S $(pacman -Qq | grep compiz)
-
-```
 
 ### Graphical front-ends
 
@@ -104,7 +66,7 @@ pacman has the `-q` operand to hide the version column, so it is possible to que
 
 	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
 
-*   **tkPacman** — GUI front-end for pacman. Depends on Tcl/Tk and X11 but neither on GTK+, nor on QT. It only interacts with the package database via the CLI of 'pacman'. So, installing and removing packages with tkPacman or with pacman leads to exactly the same result.
+*   **tkPacman** — Depends only on Tcl/Tk and X11, and interacts with the package database via the CLI of *pacman*.
 
 	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)
 
@@ -117,6 +79,10 @@ pacman has the `-q` operand to hide the version column, so it is possible to que
 *   **[Pacmatic](/index.php/Pacmatic "Pacmatic")** — Pacman wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
 
 	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
+
+*   **pacutils** — Helper library for libalpm based programs.
+
+	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils-git](https://aur.archlinux.org/packages/pacutils-git/)
 
 *   **[pkgfile](/index.php/Pkgfile "Pkgfile")** — Tool that finds what package owns a file.
 
@@ -136,6 +102,8 @@ pacman has the `-q` operand to hide the version column, so it is possible to que
 
 ## Maintenance
 
+**Note:** Instead of using *comm* (which requires sorted input with *sort*) in the sections below, you may also use `grep -Fxf` or `grep -Fxvf`.
+
 See also [System maintenance](/index.php/System_maintenance "System maintenance").
 
 ### Listing packages
@@ -154,7 +122,6 @@ To get a list of installed packages sorted by size, which may be useful when fre
 
 *   Install [expac](https://www.archlinux.org/packages/?name=expac) and run `expac -H M '%m\t%n' | sort -h`.
 *   Run [pacgraph](https://www.archlinux.org/packages/?name=pacgraph) with the `-c` option.
-*   Run [apacman](https://aur.archlinux.org/packages/apacman/) with the `-L` option.
 
 To list the download size of several packages (leave `*packages*` blank to list all packages):
 
@@ -166,53 +133,59 @@ $ expac -S -H M '%k\t%n' *packages*
 To list explicitly installed packages not in [base](https://www.archlinux.org/groups/x86_64/base/) nor [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) with size and description:
 
 ```
-$ expac -H M "%011m\t%-20n\t%10d" $( comm -23 <(pacman -Qqen|sort) <(pacman -Qqg base base-devel|sort) ) | sort -n
+$ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n
 
 ```
 
-#### Latest installed packages
+#### By date
 
-Install [expac](https://www.archlinux.org/packages/?name=expac) and run `expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -20` or `expac --timefmt=%s '%l\t%n' | sort -n | tail -20`
-
-#### All packages that nothing else depends on
-
-If you want to generate a list of all installed packages that nothing else depends on, you can use the following script. This is very helpful if you are trying to free hard drive space and have installed a lot of packages that you may not remember. You can browse through the output to find packages which you no longer need.
-
-**Note:** This script will show all packages that nothing else depends on, including those explicitly installed. To get a list of packages installed as dependencies but no longer required by any installed package, see [#Orphans](#Orphans).
+To list the 20 last installed packages with [expac](https://www.archlinux.org/packages/?name=expac), run:
 
 ```
-ignoregrp="base base-devel"
-ignorepkg=""
-
-comm -23 <(pacman -Qqt | sort) <(echo $ignorepkg | tr ' ' '
-' | cat <(pacman -Sqg $ignoregrp) - | sort -u)
+$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -20
 
 ```
 
-For list with descriptions for packages:
+or, with seconds since the epoch (1970-01-01 UTC):
 
 ```
-expac -HM "%-20n\t%10d" $( comm -23 <(pacman -Qqt|sort) <(pacman -Qqg base base-devel|sort) )
+$ expac --timefmt=%s '%l\t%n' | sort -n | tail -20
 
 ```
 
-#### Installed packages that are not in a specified group or repository
+#### Not in a specified group or repository
 
-The following command will list any installed packages that are not in either [base](https://www.archlinux.org/groups/x86_64/base/) or [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), and as such were likely installed manually by the user:
+**Note:** To get a list of packages installed as dependencies but no longer required by any installed package, see [#Orphans](#Orphans).
+
+List explicitely installed packages not in the [base](https://www.archlinux.org/groups/x86_64/base/) or [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) groups:
 
 ```
 $ comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)
 
 ```
 
-List all installed packages that are not in specified repository (`*repo_name*` in example):
+List all installed packages unrequired by other packages, and which are not in the [base](https://www.archlinux.org/groups/x86_64/base/) or [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) groups:
+
+```
+$ comm -23 <(pacman -Qqt | sort) <(pacman -Sqg base base-devel | sort)
+
+```
+
+As above, but with descriptions:
+
+```
+$ expac -HM '%-20n\t%10d' $(comm -23 <(pacman -Qqt | sort) <(pacman -Qqg base base-devel | sort))
+
+```
+
+List all installed packages that are *not* in the specified repository *repo_name*
 
 ```
 $ comm -23 <(pacman -Qtq | sort) <(pacman -Slq *repo_name* | sort)
 
 ```
 
-List all installed packages that are in the `*repo_name*` repository:
+List all installed packages that are in the *repo_name* repository:
 
 ```
 $ comm -12 <(pacman -Qtq | sort) <(pacman -Slq *repo_name* | sort)
@@ -253,75 +226,37 @@ For *recursively* removing orphans and their configuration files:
 
 If no orphans were found, pacman errors with `error: no targets specified`. This is expected as no arguments were passed to `pacman -Rns`.
 
-**Note:** Since pacman version 4.2.0 only true orphans are listed. To make pacman also list packages which are only optionally required by another package, pass the `-t`/`--unrequired` flag twice:
-```
-$ pacman -Qdttq
-
-```
-Use this carefully, as it is not taken into account whether the package is an optional dependency and therefore bears the risk to remove packages which actually are not real orphans.
-
-#### Explicitly installed
-
-Because a lighter system is easier to maintain, occasionally looking through explicitly installed packages and *manually* selecting unused packages to be removed can be helpful.
-
-To list explicitly installed packages available in the official repositories:
-
-```
-$ pacman -Qen
-
-```
-
-To list explicitly installed packages not available in official repositories:
-
-```
-$ pacman -Qem
-
-```
+**Note:** As of [pacman](https://www.archlinux.org/packages/?name=pacman) 4.2.0, only true orphans are listed. To also list packages which are *optionally* required by another package, pass the `-t` flag twice with `pacman -Qdttq`.
 
 ### Removing everything but base group
 
 If it is ever necessary to remove all packages except the base group, try this one liner:
 
 ```
-# pacman -R $(comm -23 <(pacman -Qq|sort) <((for i in $(pacman -Qqg base); do pactree -ul $i; done)|sort -u|cut -d ' ' -f 1))
+# pacman -R $(comm -23 <(pacman -Qq | sort) <((for i in $(pacman -Qqg base); do pactree -ul "$i"; done) | sort -u))
 
 ```
 
 The one-liner was originally devised in [this discussion](https://bbs.archlinux.org/viewtopic.php?id=130176), and later improved in this article.
 
-Notes:
-
-1.  `comm` requires sorted input otherwise you get e.g. `comm: file 1 is not in sorted order`.
-2.  `pactree` prints the package name followed by what it provides. For example:
-
- `$ pactree -lu logrotate` 
-```
-logrotate
-popt
-glibc
-linux-api-headers
-tzdata
-dcron cron
-bash
-readline
-ncurses
-gzip
-```
-
-The `dcron cron` line seems to cause problems, that is why `cut -d ' ' -f 1` is needed - to keep just the package name.
-
 ### Getting the dependencies list of several packages
 
-Dependencies are alphabetically sorted and doubles are removed. Note that you can use `pacman -Qi` to improve response time a little. But you will not be able to query as many packages. Unfound packages are simply skipped (hence the `2>/dev/null`).
+Dependencies are alphabetically sorted and doubles are removed.
+
+**Note:** To only show the tree of local installed packages, use `pacman -Qi`.
 
 ```
-$ pacman -Si $@ 2>/dev/null | awk -F ": " -v filter="^Depends" \ '$0 ~ filter {gsub(/[>=<][^ ]*/,"",$2) ; gsub(/ +/,"
-",$2) ; print $2}' | sort -u
+$ pacman -Si *packages* | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | sort -u
 
 ```
 
-Alternatively, you can use `expac`: `expac -l '
-' %E -S $@ | sort -u`.
+Alternatively, with [expac](https://www.archlinux.org/packages/?name=expac):
+
+```
+$ expac -l '
+' %E -S *packages* | sort -u
+
+```
 
 ### Listing changed backup files
 
@@ -466,95 +401,7 @@ Create the directory for the cache and adjust the permissions so nginx can write
 
 ```
 
-Next, configure nginx as our dynamic cache (read the comments for an explanation of the commands):
-
- `/etc/nginx/nginx.conf` 
-```
-http
-{
-    ...
-
-    # nginx may need to resolve domain names at run time
-    resolver 8.8.8.8 8.8.4.4;
-
-    # Pacman Cache
-    server
-    {
-        listen      8080;
-        server_name cache.domain.local;
-        root        /srv/http/pacman-cache;
-        autoindex   on;
-
-        # Requests for package db and signature files should redirect upstream without caching
-        location ~ \.(db|sig)$ {
-            proxy_pass http://mirrors$request_uri;
-        }
-
-        # Requests for actual packages should be served directly from cache if available.
-        #   If not available, retrieve and save the package from an upstream mirror.
-        location ~ \.tar\.xz$ {
-            try_files $uri @pkg_mirror;
-        }
-
-        # Retrieve package from upstream mirrors and cache for future requests
-        location @pkg_mirror {
-            proxy_store    on;
-            proxy_redirect off;
-            proxy_store_access  user:rw group:rw all:r;
-            proxy_next_upstream error timeout http_404;
-            proxy_pass          http://mirrors$request_uri;
-        }
-    }
-
-    # Upstream Arch Linux Mirrors
-    # - Configure as many backend mirrors as you want in the blocks below
-    # - Servers are used in a round-robin fashion by nginx
-    # - Add "backup" if you want to only use the mirror upon failure of the other mirrors
-    # - Separate "server" configurations are required for each upstream mirror so we can set the "Host" header appropriately
-    upstream mirrors {
-        server localhost:8001;
-        server localhost:8002 backup;
-        server localhost:8003 backup;
-    }
-
-    # Arch Mirror 1 Proxy Configuration
-    server
-    {
-        listen      8001;
-        server_name localhost;
-
-        location / {
-            proxy_pass       http://mirror.rit.edu$request_uri;
-            proxy_set_header Host mirror.rit.edu;
-        }
-    }
-
-    # Arch Mirror 2 Proxy Configuration
-    server
-    {
-        listen      8002;
-        server_name localhost;
-
-        location / {
-            proxy_pass       http://mirrors.acm.wpi.edu$request_uri;
-            proxy_set_header Host mirrors.acm.wpi.edu;
-        }
-    }
-
-    # Arch Mirror 3 Proxy Configuration
-    server
-    {
-        listen      8003;
-        server_name localhost;
-
-        location / {
-            proxy_pass       http://lug.mtu.edu$request_uri;
-            proxy_set_header Host lug.mtu.edu;
-        }
-    }
-}
-
-```
+Next, configure nginx as the [dynamic cache](https://gist.github.com/anonymous/97ec4148f643de925e433bed3dc7ee7d) (read the comments for an explanation of the commands).
 
 Finally, update your other Arch Linux servers to use this new cache by adding the following line to the `mirrorlist` file:
 
@@ -600,86 +447,53 @@ To recreate a package from the file system, use *bacman* (included with pacman).
 
 An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepkg/). It supports parallelization and can handle multiple input packages in one command, which *bacman* both does not support.
 
-### Backing up and retrieving a list of installed packages
+### List of installed packages
 
-**Tip:** You may want to use [plist-gist](https://aur.archlinux.org/packages/plist-gist/) or [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) to automatise the below tasks.
+**Tip:**
 
-It is good practice to keep periodic backups of all pacman-installed packages. In the event of a system crash which is unrecoverable by other means, pacman can then easily reinstall the very same packages onto a new installation.
+*   These tasks can be automated, see [plist-gist](https://aur.archlinux.org/packages/plist-gist/) or [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) for examples.
+*   To skip already installed packages, use `--needed`.
 
-*   First, backup the current list of non-local packages: `$ pacman -Qqen > pkglist.txt`
-
-*   Store the `pkglist.txt` on a USB key or other convenient medium or gist.github.com or Evernote, Dropbox, etc.
-
-*   Copy the `pkglist.txt` file to the new installation, and navigate to the directory containing it.
-
-*   Issue the following command to install from the backup list: `# pacman -S $(< pkglist.txt)`
-
-In the case you have a list which was not generated like mentioned above, there may be foreign packages in it (i.e. packages not belonging to any repos you have configured, or packages from the AUR).
-
-In such a case, you may still want to install all available packages from that list:
+Keeping a list of native, explicitly installed packages can be useful to speed up installation on a new system.
 
 ```
-# pacman -S --needed $(comm -12 <(pacman -Slq|sort) <(sort badpkdlist) )
+$ pacman -Qqen > pkglist.txt
 
 ```
 
-Explanation:
-
-*   `pacman -Slq` lists all available softwares, but the list is sorted by repository first, hence the `sort` command.
-*   Sorted files are required in order to make the `comm` command work.
-*   The `-12` parameter display lines common to both entries.
-*   The `--needed` switch is used to skip already installed packages.
-
-Finally, you may want to remove all the packages on your system that are not mentioned in the list.
-
-**Warning:** Use this command wisely, and always check the result prompted by pacman.
+To install packages from the list backup, run:
 
 ```
-# pacman -Rsu $(comm -23 <(pacman -Qq|sort) <(sort pkglist))
+# pacman -S - < pkglist.txt
+
+```
+
+In case the list includes foreign packages, such as [AUR](/index.php/AUR "AUR") packages, remove them first:
+
+```
+# pacman -S $(comm -12 <(pacman -Slq | sort) <(sort pkglist))
+
+```
+
+To remove all the packages on your system that are not mentioned in the list.
+
+```
+# pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist))
 
 ```
 
 ### Listing all changed files from packages
 
-If you are suspecting file corruption (e.g. by software / hardware failure), but don't know for sure whether / which files really got corrupted, you might want to compare with the hash sums in the packages. This can be done with the following script.
-
-The script depends on the accuracy of pacman's database in `/var/lib/pacman/local/` and the used programs such as *bash*, *grep* and so on. For recovery of the database see [#Restore pacman's local database](#Restore_pacman.27s_local_database). The `mtree` files can also be [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
-
-**Note:**
-
-*   This should **not** be used as is when suspecting malicious changes! In this case security precautions such as using a live medium and an independent source for the hash sums are advised.
-*   This could take a long time, depending on the hardware and installed packages.
+If you are suspecting file corruption (e.g. by software/hardware failure), but are unsure if files were got corrupted, you might want to compare with the hash sums in the packages. This can be done with [pacutils](https://aur.archlinux.org/packages/pacutils/):
 
 ```
-#!/bin/bash -e
-
-# Select the hash algorithm. Currently available (see mtree files and mtree(5)):
-# md5, sha256
-algo="md5"
-
-for package in /var/lib/pacman/local/*; do
-    [ "$package" = "/var/lib/pacman/local/ALPM_DB_VERSION" ] && continue
-
-    # get files and hash sums
-    zgrep " ${algo}digest=" "$package/mtree" | grep -Ev '^\./\.[A-Z]+' | \
-        sed 's/^\([^ ]*\).*'"${algo}"'digest=\([a-f0-9]*\).*/\1 \2/' | \
-        while read -r file hash
-    do
-        # expand "
-nn" (in mtree) / "\0nnn" (for echo) escapes of ASCII
-        # characters (octal representation)
-        for ascii in $(grep -Eo '\\[0-9]{1,3}' <<< "$file"); do
-            file="$(sed "s/\\$ascii/$(echo -e "\0${ascii:1}")/" <<< "$file")"
-        done
-
-        # check file hash
-        if [ "$("${algo}sum" /"$file" | awk '{ print $1; }')" != "$hash" ]; then
-            echo "$(basename "$package")" /"$file"
-        fi
-    done
-done
+# paccheck --md5sum --quiet
 
 ```
+
+For recovery of the database see [#Restore pacman's local database](#Restore_pacman.27s_local_database). The `mtree` files can also be [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
+
+**Note:** This should **not** be used as is when suspecting malicious changes! In this case security precautions such as using a live medium and an independent source for the hash sums are advised.
 
 ### Reinstalling all packages
 
@@ -696,138 +510,7 @@ Pacman preserves the installation reason by default.
 
 ### Restore pacman's local database
 
-Signs that pacman needs a local database restoration:
-
-*   `pacman -Q` gives absolutely no output, and `pacman -Syu` erroneously reports that the system is up to date.
-*   When trying to install a package using `pacman -S package`, and it outputs a list of already satisfied dependencies.
-*   When `testdb` (part of [pacman](https://www.archlinux.org/packages/?name=pacman)) reports database inconsistency.
-
-Most likely, pacman's database of installed software, `/var/lib/pacman/local`, has been corrupted or deleted. While this is a serious problem, it can be restored by following the instructions below.
-
-Firstly, make sure pacman's log file is present:
-
-```
-$ ls /var/log/pacman.log
-
-```
-
-If it does not exist, it is *not* possible to continue with this method. You may be able to use [Xyne's package detection script](https://bbs.archlinux.org/viewtopic.php?pid=670876) to recreate the database. If not, then the likely solution is to re-install the entire system.
-
-#### Generating the package recovery list
-
-**Warning:** If for some reason your [pacman](/index.php/Pacman "Pacman") cache or [makepkg](/index.php/Makepkg "Makepkg") package destination contain packages for other architectures, remove them before continuation.
-
-Create the log filter script and make it executable:
-
- `pacrecover` 
-```
-#!/bin/bash -e
-
-. /etc/makepkg.conf
-
-PKGCACHE=$((grep -m 1 '^CacheDir' /etc/pacman.conf || echo 'CacheDir = /var/cache/pacman/pkg') | sed 's/CacheDir = //')
-
-pkgdirs=("$@" "$PKGDEST" "$PKGCACHE")
-
-while read -r -a parampart; do
-  pkgname="${parampart[0]}-${parampart[1]}-*.pkg.tar.xz"
-  for pkgdir in ${pkgdirs[@]}; do
-    pkgpath="$pkgdir"/$pkgname
-    [ -f $pkgpath ] && { echo $pkgpath; break; };
-  done || echo ${parampart[0]} 1>&2
-done
-
-```
-
-Run the script (optionally passing additional directories with packages as parameters):
-
-```
-$ paclog-pkglist /var/log/pacman.log | ./pacrecover >files.list 2>pkglist.orig
-
-```
-
-This way two files will be created: `files.list` with package files, still present on machine and `pkglist.orig`, packages from which should be downloaded. Later operation may result in mismatch between files of older versions of package, still present on machine, and files, found in new version. Such mismatches will have to be fixed manually.
-
-Here is a way to automatically restrict second list to packages available in a repository:
-
-```
-$ { cat pkglist.orig; pacman -Slq; } | sort | uniq -d > pkglist
-
-```
-
-Check if some important *base* package are missing, and add them to the list:
-
-```
-$ comm -23 <(pacman -Sgq base) pkglist.orig >> pkglist
-
-```
-
-Proceed once the contents of both lists are satisfactory, since they will be used to restore pacman's installed package database; `/var/lib/pacman/local/`.
-
-#### Performing the recovery
-
-Define bash alias for recovery purposes:
-
-```
-# recovery-pacman() {
-    pacman "$@"       \
-    --log /dev/null   \
-    --noscriptlet     \
-    --dbonly          \
-    --force           \
-    --nodeps          \
-    --needed          \
-    #
-}
-
-```
-
-`--log /dev/null` allows to avoid needless pollution of pacman log, `--needed` will save some time by skipping packages, already present in database, `--nodeps` will allow installation of cached packages, even if packages being installed depend on newer versions. Rest of options will allow **pacman** to operate without reading/writing filesystem.
-
-Populate the sync database:
-
-```
-# pacman -Sy
-
-```
-
-Start database generation by installing locally available package files from `files.list`:
-
-```
-# recovery-pacman -U $(< files.list)
-
-```
-
-Install the rest from `pkglist`:
-
-```
-# recovery-pacman -S $(< pkglist)
-
-```
-
-Update the local database so that packages that are not required by any other package are marked as explicitly installed and the other as dependences. You will need be extra careful in the future when removing packages, but with the original database lost is the best we can do.
-
-```
-# pacman -D --asdeps $(pacman -Qq)
-# pacman -D --asexplicit $(pacman -Qtq)
-
-```
-
-Optionally check all installed packages for corruption:
-
-```
-# pacman -Qk
-
-```
-
-Optionally [#Identify files not owned by any package](#Identify_files_not_owned_by_any_package).
-
-Update all packages:
-
-```
-# pacman -Su
-
-```
+See [Pacman/Restore_local_database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database").
 
 ### Recovering a USB key from existing install
 
@@ -837,17 +520,6 @@ If you have Arch installed on a USB key and manage to mess it up (e.g. removing 
 # pacman -S $(pacman -Qq --dbpath /newarch/var/lib/pacman) --root /newarch --dbpath /newarch/var/lib/pacman
 
 ```
-
-### Extracting contents of a .pkg file
-
-The `.pkg` files ending in `.xz` are simply tar'ed archives that can be decompressed with:
-
-```
-$ tar xvf package.tar.xz
-
-```
-
-If you want to extract a couple of files out of a `.pkg` file, this would be a way to do it.
 
 ### Viewing a single file inside a .pkg file
 
@@ -913,9 +585,7 @@ In all cases, make sure you have the latest Pacman before doing any modification
 
 #### Powerpill
 
-Powerpill is a full wrapper for Pacman that uses parallel and segmented downloads to speed up the download process. Normally Pacman will download one package at a time, waiting for it to complete before beginning the next download. Powerpill takes a different approach: it tries to download as many packages as possible at once.
-
-The [Powerpill wiki page](/index.php/Powerpill "Powerpill") provides basic configuration and usage examples along with package and upstream links.
+See [Powerpill](/index.php/Powerpill "Powerpill").
 
 #### wget
 
@@ -947,21 +617,10 @@ XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allo
 
 See [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) in `man aria2c` for used aria2c options.
 
-`-d, --dir`
-
-	The directory to store the downloaded file(s) as specified by [pacman](/index.php/Pacman "Pacman").
-
-`-o, --out`
-
-	The output file name(s) of the downloaded file(s).
-
-`%o`
-
-	Variable which represents the local filename(s) as specified by pacman.
-
-`%u`
-
-	Variable which represents the download URL as specified by pacman.
+*   `-d, --dir` :The directory to store the downloaded file(s) as specified by [pacman](/index.php/Pacman "Pacman").
+*   `-o, --out`: The output file name(s) of the downloaded file(s).
+*   `%o`: Variable which represents the local filename(s) as specified by pacman.
+*   `%u`: Variable which represents the download URL as specified by pacman.
 
 #### Other applications
 

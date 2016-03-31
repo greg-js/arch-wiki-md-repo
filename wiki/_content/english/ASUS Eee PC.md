@@ -391,19 +391,7 @@ This enabled you to trigger devices in /sys/devices/platform/eeepc/.
 
 ### Modules
 
-In order to get CPU frequency scaling as well as the proper special-purpose Eee PC module loaded, you can use the following MODULES statement in /etc/rc.conf:
-
-```
- MODULES=( acpi-cpufreq cpufreq_ondemand eeepc-wmi )
-
-```
-
-If you get double keypresses for with your function keys (like the mute key, etc.), add the following into `/etc/modprobe.d/blacklist.conf` (Create this file if it isn't present)
-
- `blacklist eeepc-laptop` 
-**Note:** As long as you do not add acpi_osi-Linux to menu.lst, the eeepc modules load automagically and are not required in MODULES
-
-**Note:** As of [kernel](http://kernel.org) 3.3.7-1, no extra modules are **required** in order for full usage of Arch Linux on this laptop.
+As of [kernel](http://kernel.org) 3.3.7-1, no extra modules are **required** in order for full usage of Arch Linux on this laptop.
 
 # Eee 1015 PN
 

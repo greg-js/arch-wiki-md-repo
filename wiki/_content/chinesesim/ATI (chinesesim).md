@@ -100,16 +100,16 @@ radeon模块应该在启动时被正常载入.
 
 要是没有的话...
 
-*   确保 [内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)") 中**没有** `nomodeset` 或 `vga=`,因为现在 radeon 需要 [KMS](/index.php/Kernel_Mode_Setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel Mode Setting (简体中文)").
+*   确保 [内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)") 中**没有** `nomodeset` 或 `vga=`,因为现在 radeon 需要 [KMS](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel mode setting (简体中文)").
 *   另外,检查 `/etc/modprobe.d/` 或 `/usr/lib/modprobe.d/` 以确保radeon模块没有被禁用.
 
 ### 早启动KMS
 
-**小贴士:** 若分辨率有问题,试试[强设模式](/index.php/Kernel_Mode_Setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F "Kernel Mode Setting (简体中文)")也许可以解决.
+**小贴士:** 若分辨率有问题,试试[强设模式](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F "Kernel mode setting (简体中文)")也许可以解决.
 
-radeon支持(并且现在强制需要)[Kernel Mode Setting](/index.php/Kernel_Mode_Setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel Mode Setting (简体中文)")(KMS).KMS默认启用.
+radeon支持(并且现在强制需要)[Kernel Mode Setting](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel mode setting (简体中文)")(KMS).KMS默认启用.
 
-KMS一般在[载入initramfs](/index.php/Arch_Boot_Process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#initramfs "Arch Boot Process (简体中文)")后初始化.不过,也可以在载入initramfs时启用KMS:将 `radeon` 模块添加到 `/etc/mkinitcpio.conf` 的 `MODULES` 列:
+KMS一般在[载入initramfs](/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#initramfs "Arch boot process (简体中文)")后初始化.不过,也可以在载入initramfs时启用KMS:将 `radeon` 模块添加到 `/etc/mkinitcpio.conf` 的 `MODULES` 列:
 
 ```
 MODULES="... radeon ..."
@@ -180,7 +180,7 @@ EndSection
 
 这些[内核参数](/index.php/Kernel_parameters "Kernel parameters")可能会有用：`radeon.bapm=1` [[1]](https://www.phoronix.com/scan.php?page=news_item&px=MTczMzI), `radeon.disp_priority=2` [[2]](http://lists.freedesktop.org/pipermail/xorg/2013-February/055477.html), `radeon.hw_i2c=1` [[3]](https://superuser.com/questions/723760/does-radeon-hw-i2c-1-has-any-thing-to-do-with-temperature-readings), `radeon.mst=1` [[4]](https://www.phoronix.com/scan.php?page=news_item&px=Linux-4.1-Radeon-DP-MST), `radeon.msi=1` (强制启用 MSI 支持), `radeon.audio=0` (强制禁用 GPU 音频) 和/或 `radeon.tv=0` (禁用 TV-out).
 
-使用 `systool` 来调试模块参数，参阅 [Kernel_modules#Obtaining_information](/index.php/Kernel_modules#Obtaining_information "Kernel modules")：
+使用 `systool` 来调试模块参数，参阅 [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_information "Kernel modules")：
 
  `$ systool -v -m radeon` 
 ```

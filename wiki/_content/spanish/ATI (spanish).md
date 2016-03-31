@@ -1,6 +1,6 @@
 Los poseedores de tarjetas gráficas **ATI/AMD** pueden elegir entre el [controlador privativo](/index.php/ATI_Catalyst_(Espa%C3%B1ol) "ATI Catalyst (Español)") de AMD ([catalyst](https://aur.archlinux.org/packages/catalyst/)) y el controlador de código abierto ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). Este artículo trata sobre el controlador de código abierto.
 
-El controlador libre no está *a la par* con el controlador propietario en términos de rendimiento 3D en las nuevas tarjetas ni tiene soporte tan fiable para la salida de TV. Sin embargo, ofrece un mejor apoyo dual-head, aceleración 2D excelente, y proporciona suficiente aceleración 3D necesaria para algunos [gestores de ventanas](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)") que aprovechan la aceleración OpenGl, tal como [Compiz](/index.php/Compiz "Compiz") o KWin.
+El controlador libre no está *a la par* con el controlador propietario en términos de rendimiento 3D en las nuevas tarjetas ni tiene soporte tan fiable para la salida de TV. Sin embargo, ofrece un mejor apoyo dual-head, aceleración 2D excelente, y proporciona suficiente aceleración 3D necesaria para algunos [gestores de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") que aprovechan la aceleración OpenGl, tal como [Compiz](/index.php/Compiz "Compiz") o KWin.
 
 Si tiene dudas sobre cuál elegir, pruebe primero el controlador de código abierto, dado que, por regla general, se adaptará perfectamente a la mayoría de sus necesidades y es menos problemático (consulte la [tabla de características](http://www.x.org/wiki/RadeonFeature) para más detalles).
 
@@ -58,7 +58,7 @@ El controlador `xf86-video-ati` (radeon):
     *   Las tarjetas Radeon de la serie HD 77xx (Southern Islands) son parcialmente compatibles. Compruebe [feature matrix](http://www.x.org/wiki/RadeonFeature) para determinar las características no compatibles.
     *   Las tarjetas Radeon hasta la serie X1xxx son totalmente compatibles, estables y proporcionan una completa aceleración 2D y 3D.
     *   Las tarjetas Radeon HD de las series 2xxx a 6xxx tienen pleno soporte para una aceleración 2D y una aceleración 3D funcional, pero no son compatibles con todas las características que ofrece el controlador propietario.
-*   Soporta DRI1, RandR 1.2/1.3, aceleración EXA y [kernel mode-setting](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol) "Kernel Mode Setting (Español)")/DRI2.
+*   Soporta DRI1, RandR 1.2/1.3, aceleración EXA y [kernel mode-setting](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)")/DRI2.
 
 Generalmente, **xf86-video-ati** debe ser su primera opción, independientemente de la tarjeta ATI que se posea. En caso de que sea necesario utilizar un controlador para las nuevas tarjetas ATI, es preferible el controlador privativo **catalyst**.
 
@@ -68,7 +68,7 @@ Generalmente, **xf86-video-ati** debe ser su primera opción, independientemente
 
 **Nota:** Si Catalyst/`fglrx` ha sido instalado previamente, véase [ATI Catalyst (Español)#Desinstalación](/index.php/ATI_Catalyst_(Espa%C3%B1ol)#Desinstalaci.C3.B3n "ATI Catalyst (Español)").
 
-[Instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), disponible en los [Repositorios Oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+[Instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), disponible en los [Repositorios Oficiales](/index.php/Repositorios_Oficiales "Repositorios Oficiales").
 
 ## Configuración
 
@@ -88,9 +88,9 @@ Con esta sección, puede habilitar posteriormente algunas características y aju
 
 ## Kernel mode-setting (KMS)
 
-**Sugerencia:** Si tiene problemas con la resolución, compruebe [esta página](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol)#Forzar_modos_y_EDID "Kernel Mode Setting (Español)").
+**Sugerencia:** Si tiene problemas con la resolución, compruebe [esta página](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Forzar_modos_y_EDID "Kernel mode setting (Español)").
 
-[KMS](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol) "Kernel Mode Setting (Español)") permite la resolución nativa en el framebuffer y permite la conmutación instantánea de la consola (tty). KMS permite también nuevas tecnologías (como DRI2) que ayudarán a reducir eventuales anomalías y aumentará el rendimiento 3D, incluyendo el ahorro de enegía en el kernel-space.
+[KMS](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)") permite la resolución nativa en el framebuffer y permite la conmutación instantánea de la consola (tty). KMS permite también nuevas tecnologías (como DRI2) que ayudarán a reducir eventuales anomalías y aumentará el rendimiento 3D, incluyendo el ahorro de enegía en el kernel-space.
 
 KMS para tarjetas de vídeo ATI exige el controlador de código abierto de [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) versión 6.12.4 o posterior.
 
@@ -438,7 +438,7 @@ El kernel puede reconocer el parámetro `video=` con el siguiente formato:
 
 ```
 
-(Consulte [KMS](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol) "Kernel Mode Setting (Español)"))
+(Consulte [KMS](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"))
 
 Por ejemplo:
 
@@ -483,11 +483,11 @@ LABEL arch
 
 ```
 
-Si el audio HDMI no funciona después de instalar el controlador, compruebe la configuración con el procedimiento [Advanced_Linux_Sound_Architecture/Troubleshooting#HDMI_Output_does_not_work](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#HDMI_Output_does_not_work "Advanced Linux Sound Architecture/Troubleshooting").
+Si el audio HDMI no funciona después de instalar el controlador, compruebe la configuración con el procedimiento [Advanced Linux Sound Architecture/Troubleshooting#HDMI Output does not work](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#HDMI_Output_does_not_work "Advanced Linux Sound Architecture/Troubleshooting").
 
 **Nota:** Al escribir estas líneas (2013-05-20), los controladores de las tarjetas [Southern Islands](http://www.x.org/wiki/RadeonFeature#Decoder_ring_for_engineering_vs_marketing_names) no son compatibles con el audio HDMI.
 
-*   El módulo del kernel `radeon.audio` solo funciona si [KMS](/index.php/ATI_(Espa%C3%B1ol)#Kernel_mode-setting_.28KMS.29 "ATI (Español)") está activado. Por defecto, **xf86-video-ati** permite KMS.
+*   El módulo del kernel `radeon.audio` solo funciona si [KMS](#Kernel_mode-setting_.28KMS.29) está activado. Por defecto, **xf86-video-ati** permite KMS.
 *   Si el sonido se distorsiona pruebe [ajustando `tsched=0`](/index.php/PulseAudio#Glitches.2C_skips_or_crackling "PulseAudio") y asegúrese que el demonio `rtkit` está ejecutándose.
 
 ## Configuración Dual Head
@@ -551,7 +551,7 @@ Si encuentra fallos gráficos cuando efectúa el login en su Entorno de Escritor
 
 Con el fin de funcionar sin un archivo de configuración, se recomienda que el grupo de paquetes `xorg-input-drivers` esté instalado.
 
-Los fallos también pueden estar relacionados con el [Kernel Mode Setting](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol) "Kernel Mode Setting (Español)"). Considere la posibilidad de [deshabilitar KMS.](#Desactivar_KMS)
+Los fallos también pueden estar relacionados con el [Kernel Mode Setting](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Considere la posibilidad de [deshabilitar KMS.](#Desactivar_KMS)
 
 Se puede también intentar desactivar la opción `EXAPixmaps` en el archivo `/etc/X11/xorg.conf.d/20-radeon.conf`:
 

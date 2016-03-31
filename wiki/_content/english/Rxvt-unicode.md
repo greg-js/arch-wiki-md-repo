@@ -175,11 +175,11 @@ Please take note that there **should not** be any spacing between extension name
 
 ### Clickable URLs
 
-You can make URLs in the terminal clickable using the matcher extension. For example, to open links in [Firefox](/index.php/Firefox "Firefox") add the following to `.Xresources`:
+You can make URLs in the terminal clickable using the matcher extension. For example, to open links in the default web browser with the left mouse button, add the following to `.Xresources`:
 
 ```
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
 ```

@@ -29,7 +29,7 @@ Ptáte se proč? Protože my všichni Arch používáme a máme ho rádi. Použ�
 
 *   Pokud nejste zaregistrovaní zde na ArchWiki, zaregistrujte se.
 *   [Přihlašte se](/index.php/Special:UserLogin "Special:UserLogin"), abyste mohli editovat wiki.
-*   Zvolte si stránku, kterou chcete přeložit. Pokud ještě nevíte, kterou stránku budete překládat, můžete využít [náhodný výběr](/index.php/Special:Random "Special:Random") nebo začít překládat některou ze stránek uvedených [zde](/index.php/Arch_Translation_Day_(%C4%8Cesky)#Seznam_prioritn.C3.ADch_str.C3.A1nek "Arch Translation Day (Česky)"). Zvolíme si tedy stránku `Some Page`.
+*   Zvolte si stránku, kterou chcete přeložit. Pokud ještě nevíte, kterou stránku budete překládat, můžete využít [náhodný výběr](/index.php/Special:Random "Special:Random") nebo začít překládat některou ze stránek uvedených [zde](#Seznam_prioritn.C3.ADch_str.C3.A1nek). Zvolíme si tedy stránku `Some Page`.
 *   Přejdeme na ni a v horním horizontálním menu zvolíme položku *editovat*.
 *   Zkopírujte si kompletní zdrojový text stránky.
 *   Následně přejdeme na stránku `Some Page (Jazyk)`, a to tak, že zadáte následující URL ve svém prohlížeči (lze zadat bez podtržítek). *Jazyk* je zde název [jazyka](/index.php/Help:I18n#Languages "Help:I18n"), do kterého stránku překládáme. `https://wiki.archlinux.org/index.php/Some_Page_(Jazyk)` 
@@ -50,13 +50,13 @@ Pokud nevíte, jak správně editovat, přečtěte si [ArchWiki tutorial](/index
 Zde je seznam stránek, jejichž překlad je nejnutnější. Tento seznam volně spravujte. Přidávejte sem další stránky o kterých si myslíte, že by bylo dobré je mít i v češtině. Jakmile je daná stránka kompletně přeložena, odstraňte ji, prosím, z tohoto seznamu.
 
 | Anglická verze | Česká verze | Poznámka |
-| [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") | [Beginners' Guide (Česky)](/index.php/Beginners%27_Guide_(%C4%8Cesky) "Beginners' Guide (Česky)") | Aktualizovat |
-| [General recommendations](/index.php/General_recommendations "General recommendations") | [General Recommendations (Česky)](/index.php/General_Recommendations_(%C4%8Cesky) "General Recommendations (Česky)") | Aktualizovat |
-| [Network configuration](/index.php/Network_configuration "Network configuration") | [Network Configuration (Česky)](/index.php/Network_Configuration_(%C4%8Cesky) "Network Configuration (Česky)") | Aktualizovat |
+| [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") | [Beginners' guide (Česky)](/index.php/Beginners%27_guide_(%C4%8Cesky) "Beginners' guide (Česky)") | Aktualizovat |
+| [General recommendations](/index.php/General_recommendations "General recommendations") | [General recommendations (Česky)](/index.php/General_recommendations_(%C4%8Cesky) "General recommendations (Česky)") | Aktualizovat |
+| [Network configuration](/index.php/Network_configuration "Network configuration") | [Network configuration (Česky)](/index.php/Network_configuration_(%C4%8Cesky) "Network configuration (Česky)") | Aktualizovat |
 | [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") | [Wireless Setup (Česky)](/index.php/Wireless_Setup_(%C4%8Cesky) "Wireless Setup (Česky)") | Aktualizovat |
 | [Arch Build System](/index.php/Arch_Build_System "Arch Build System") | [Arch Build System (Česky)](/index.php/Arch_Build_System_(%C4%8Cesky) "Arch Build System (Česky)") | Aktualizovat |
 | [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") | [Arch User Repository (Česky)](/index.php/Arch_User_Repository_(%C4%8Cesky) "Arch User Repository (Česky)") | Aktualizovat |
-| [Creating packages](/index.php/Creating_packages "Creating packages") | [Creating Packages (Česky)](/index.php/Creating_Packages_(%C4%8Cesky) "Creating Packages (Česky)") | Aktualizovat |
+| [Creating packages](/index.php/Creating_packages "Creating packages") | [Creating packages (Česky)](/index.php/Creating_packages_(%C4%8Cesky) "Creating packages (Česky)") | Aktualizovat |
 | [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") | Přeložit |
 | [systemd](/index.php/Systemd "Systemd") | Přeložit |
 | [Getting involved](/index.php/Getting_involved "Getting involved") | Přeložit |

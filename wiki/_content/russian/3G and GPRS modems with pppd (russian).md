@@ -29,7 +29,7 @@
 
 **Примечание:** Описание настройки pppd в [оригинальной статье](/index.php/3G_and_GPRS_modems_with_pppd_alone "3G and GPRS modems with pppd alone") содержит подробные листинги конфигурационных файлов. Здесь же описывается краткий вариант для настройки на единственного оператора.
 
-**Важно:** Дальнейшие действия предполагают, что ваш модем установлен и успешно опознан. Более подробную информацию по установке и настройке 3G/GPRS модема вы можете получить в статье [USB 3G Модем](/index.php/USB_3G_Modem_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "USB 3G Modem (Русский)").
+**Важно:** Дальнейшие действия предполагают, что ваш модем установлен и успешно опознан. Более подробную информацию по установке и настройке 3G/GPRS модема вы можете получить в статье [USB 3G Модем](/index.php/USB_3G_%D0%9C%D0%BE%D0%B4%D0%B5%D0%BC "USB 3G Модем").
 
 **Tip:** Вам нужно будет создать несоклько файлов в `/etc/ppp`, и для этого понадобятся права root.
 
@@ -258,6 +258,6 @@ $srvDomain
 
 ## Связанные статьи
 
-*   [Dialup_without_a_dialer_HOWTO (Русский)](/index.php/Dialup_without_a_dialer_HOWTO_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dialup without a dialer HOWTO (Русский)")
+*   [Dialup without a dialer HOWTO (Русский)](/index.php/Dialup_without_a_dialer_HOWTO_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dialup without a dialer HOWTO (Русский)")
 *   [Huawei E220](/index.php/Huawei_E220 "Huawei E220")
 *   [USB 3G Modem (Русский)](/index.php/USB_3G_Modem_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "USB 3G Modem (Русский)")

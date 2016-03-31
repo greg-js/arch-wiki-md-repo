@@ -14,8 +14,6 @@ You may also be interested in [XWiki](/index.php/XWiki "XWiki"), which caters to
 *   [3 Nginx](#Nginx)
 *   [4 After Installation](#After_Installation)
 *   [5 Upgrade](#Upgrade)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Argument "5.8.1" is not numeric in numeric lt (<) ... when accessing configure](#Argument_.225.8.1.22_is_not_numeric_in_numeric_lt_.28.3C.29_..._when_accessing_configure)
 
 ## Installation
 
@@ -228,11 +226,3 @@ You can find the script here: [https://github.com/giddie/bits-n-pieces/blob/mast
     *   The **<topic>.txt,v** file containing the revision data if you are simply clobbering the new topic with the old one.
     *   The **pub** folder of any topic you are merging manually, if it exists.
     *   The **data/.htpasswd** file, which contains the users' password hashes.
-
-## Troubleshooting
-
-### Argument "5.8.1" is not numeric in numeric lt (<) ... when accessing configure
-
-This is caused by a [bug in Foswiki](http://foswiki.org/Tasks/Item11937). A workaround is to downgrade to **RCS 5.8**. The configure script cannot handle the third digit in the version number.
-
-Since this is really just a lazy programming mistake (basically "5.8" is a number while "5.8.1" is not), you can safely comment out line 505-513 of {Foswiki_root}/lib/Foswiki/Configure/Checker.pm.

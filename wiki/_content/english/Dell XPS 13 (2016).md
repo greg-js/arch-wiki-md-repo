@@ -65,14 +65,7 @@ where `linux` is the name of the image loaded on boot. If you installed [linux-m
 
 ### Note on Mount Options
 
-As reported by a few users on [the forum](https://bbs.archlinux.org/viewtopic.php?pid=1593544#p1593544) using the `discard` mount option for your filesystem is not recommended by Intel in [the reference guide of the driver](https://downloadmirror.intel.com/23929/eng/Intel_Linux_NVMe_Driver_Reference_Guide_330602-002.pdf).
-
-An answer from [Intel Communities](https://communities.intel.com/thread/75161?start=0&tstart=0) suggests that the best option is to use the `fstrim` timer which is provided by [util-linux](https://www.archlinux.org/packages/?name=util-linux) and can be enabled simply through:
-
-```
-# systemctl enable fstrim.timer
-
-```
+Using the `discard` mount option for your filesystem is not recommended, as mentioned in [this warning](/index.php/Solid_State_Drives#Enable_continuous_TRIM_by_mount_flag "Solid State Drives") and [the forum](https://bbs.archlinux.org/viewtopic.php?pid=1593544#p1593544). See also [Solid State Drives/NVMe#Discards](/index.php/Solid_State_Drives/NVMe#Discards "Solid State Drives/NVMe") for further information.
 
 ## Wireless
 

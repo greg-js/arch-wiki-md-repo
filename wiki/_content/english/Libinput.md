@@ -105,7 +105,7 @@ $ xinput set-button-map *device* 1 6 3 4 5 0 7
 
 In this example, we mapped button 6 to be the middle button and disabled the original middle button by assigning it to button 0.
 
-**Note:** You can use *xev* to find out which physical button is currently mapped to which id.
+**Tip:** You can use *xev* (from the [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) package) to find out which physical button is currently mapped to which ID.
 
 Some devices occur several times under the same device name, with a different amount of buttons exposed. The following shell script is an example for reliably changing the button mapping for a Logitech Revolution MX mouse:
 
@@ -129,4 +129,4 @@ Compare the output of [software supported input trackpad driver](http://ix.io/m6
 ## See also
 
 *   [FOSDEM 2015 - libinput](https://archive.fosdem.org/2015/schedule/event/libinput/attachments/slides/591/export/events/attachments/libinput/slides/591/libinput_xorg.pdf) - Hans de Goede on goals and plans of the project
-*   [Peter Hutterer's Blog](http://who-t.blogspot.com.au/) - numerous posts on libinput from one of the project's hackers.
+*   [Peter Hutterer's Blog](http://who-t.blogspot.com.au/) - numerous posts on libinput from one of the project's hackers

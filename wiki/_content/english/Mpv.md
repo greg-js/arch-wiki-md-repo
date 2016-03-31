@@ -19,6 +19,7 @@
     *   [3.10 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
     *   [3.11 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
     *   [3.12 youtube-dl audio with search](#youtube-dl_audio_with_search)
+    *   [3.13 Use mpv with a compositor](#Use_mpv_with_a_compositor)
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
 
@@ -156,6 +157,10 @@ To find and play audio straight from your terminal with `mm ' *SEARCH* '` put th
 mm () { youtube-dl ytsearch:"$@" -q -f bestaudio --ignore-config --console-title --print-traffic --max-downloads 1 --no-call-home --no-playlist -o - | mpv --no-terminal --no-video --cache=256 -; }
 
 ```
+
+### Use mpv with a compositor
+
+If you're using a compositor (e.g. in KDE Plasma 5) and find that composition is disabled (e.g. in Plasma this would make you unable to present windows or see window thumbnails in the default app switcher) when mpv is playing a video, try `x11-bypass-compositor=no`
 
 ## Vapoursynth
 

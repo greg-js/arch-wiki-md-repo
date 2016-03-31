@@ -2,7 +2,7 @@ I possessori di schede video **ATI/AMD** possono scegliere tra i driver propriet
 
 Conosciuti precedentemente come *fglrx*(**F**ire**GL** and **R**adeon **X**), ATI ha ribattezzato i suoi driver proprietari Linux, che sono ora noti come *Catalyst*. Attualmente solo il nome dei pacchetti è cambiato, mentre il modulo del kernel mantiene il nome originale *fglrx.ko*, perciò ogni riferimento a fglrx da qui in poi sarà specificatamente riferito al modulo del kernel, **non al pacchetto**.
 
-Un tempo, catalyst era un pacchetto precompilato scaricabile dal repostory [extra] di Arch Linux, ma da Marzo 2009, il [supporto ufficiale è stato abbandonato](https://www.archlinux.org/news/ati-catalyst-support-dropped/) a causa della poco soddisfacente qualità e velocità in termini di sviluppo di questo driver proprietario. Da ottobre 2012, tali driver sono rientrati nei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), più precisamente in [community]. Ad aprile 2013, i *catalyst* sono di nuovo usciti dai repositories ufficiale e, probabilmente, non ci rientreranno più.
+Un tempo, catalyst era un pacchetto precompilato scaricabile dal repostory [extra] di Arch Linux, ma da Marzo 2009, il [supporto ufficiale è stato abbandonato](https://www.archlinux.org/news/ati-catalyst-support-dropped/) a causa della poco soddisfacente qualità e velocità in termini di sviluppo di questo driver proprietario. Da ottobre 2012, tali driver sono rientrati nei [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), più precisamente in [community]. Ad aprile 2013, i *catalyst* sono di nuovo usciti dai repositories ufficiale e, probabilmente, non ci rientreranno più.
 
 Comparando i Catalyst con i driver open source, si nota che i driver open source hanno performance 2D migliori. Le parti si invertono se si passa a considerare l'accelerazione 3D, dove i Catalyst hanno la meglio.Nella versione [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon"), ATI ha rielaborato lo schema identificativo per collegare ogni prodotto ad un determinato segmento di mercato. Dalla versione **9.4**, i drivers proprietari ATI **supportano solo schede R600 o più recenti** (il che significa, **HD2xxx** o **più nuove**). Per schede video più datate è disponibile solo il driver open source[xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati). In questa guida, i lettori avranno modo di vedere sia i nomi del *product* (es. HD 4850, X1900) sia i nomi *code* o *core* (es. RV770, R580). Per ulteriori informazioni sui prodotti ATI consultare [Wikipedia:Comparison of AMD graphics processing units](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units"). Vedere anche la [wiki di Xorg](http://www.x.org/wiki/RadeonFeature#Decoder_ring_for_engineering_vs_marketing_names).
 
@@ -77,7 +77,7 @@ I repositories sono tre:
 *   *catalyst-stable*; contiene l'ultima release stabile dei Catalyst per schede HD 5xxx.
 *   [catalyst-hd234k](/index.php/Unofficial_user_repositories#catalyst-hd234k "Unofficial user repositories"); per schede Radeon HD <= 4xxx.
 
-Per abilitare uno di questi, seguire le istruzioni di [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"). Ricordarsi che ogni repository non ufficiale, va aggiunto DOPO i [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") nel file `/etc/pacman.conf`.
+Per abilitare uno di questi, seguire le istruzioni di [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"). Ricordarsi che ogni repository non ufficiale, va aggiunto DOPO i [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") nel file `/etc/pacman.conf`.
 
 **Nota:** I repositories *catalyst* e *catalyst-stable* condividono lo stesso link, quindi, per abilitare *catalyst-stable*, seguire le istruzioni per abilitare *catalyst* e rimpiazzare `catalyst` con `[catalyst-stable]` in `pacman.conf`. Se si ha la necessità di usare un driver più vecchio, si può usare un repository con il numero di versione del driver necessario, con lo stesso URL, ad esempio: *catalyst-stable-13.4*.
 
@@ -125,7 +125,7 @@ AUR inoltre contiene pacchetti che **non** si trovano su alcun repositories. Que
 *   [Catalyst-test](https://aur.archlinux.org/packages/Catalyst-test/)
 *   [Catalyst-total-pxp](https://aur.archlinux.org/packages/Catalyst-total-pxp/)
 
-Il pacchetto [catalyst-total](https://aur.archlinux.org/packages/catalyst-total/) serve a semplificare il più possibile la vita all'utente in quanto un solo pacchetto fornisce: driver, kernel utilities, utilities 32 bit. Tale pacchetto, compila anche [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/), come descritto in [#strumenti](#strumenti).
+Il pacchetto [catalyst-total](https://aur.archlinux.org/packages/catalyst-total/) serve a semplificare il più possibile la vita all'utente in quanto un solo pacchetto fornisce: driver, kernel utilities, utilities 32 bit. Tale pacchetto, compila anche [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/), come descritto in [#Strumenti](#Strumenti).
 
 [Catalyst-total-pxp](https://aur.archlinux.org/packages/Catalyst-total-pxp/) serve per compilare Catalyst con il supporto sperimentale a powerXpress.
 
@@ -749,7 +749,7 @@ kernel /vmlinuz-linux root=/dev/sda3 resume=/dev/sda2 ro ***vga=0***
 
 *   I driver del framebuffer `radeonfb` erano noti per causare problemi di questa natura. Se il kernel è stato compilato con il supporto per radeonfb, può essere utile provare un kernel diverso per vedere se i problemi si risolvono.
 
-*   Se si notano freeze del sistema durante spegnimento, riavvio, passaggio a tty o altre operazioni in cui si "esce" dal DE, attivare il [KMS](/index.php/KMS "KMS") come indicato nella sezione [ATI Catalyst (Italiano)#Configurazione](/index.php/ATI_Catalyst_(Italiano)#Configurazione "ATI Catalyst (Italiano)").
+*   Se si notano freeze del sistema durante spegnimento, riavvio, passaggio a tty o altre operazioni in cui si "esce" dal DE, attivare il [KMS](/index.php/KMS "KMS") come indicato nella sezione [#Configurazione](#Configurazione).
 
 ### Conflitti hardware
 

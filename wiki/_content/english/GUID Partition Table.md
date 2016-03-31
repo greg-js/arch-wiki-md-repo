@@ -1,48 +1,27 @@
-GUID Partition Table (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses a [globally unique identifier](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") for qualifying devices. It is the next generation partitioning scheme designed to succeed the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") partitioning scheme method. It evolved to deal with several shortcomings of the MBR partitioning scheme method and offers additional advantages.
+GUID Partition Table (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses a [globally unique identifier](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") for qualifying devices. It is the next generation partitioning scheme designed to succeed the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") partitioning scheme method. It evolved to deal with [several shortcomings](/index.php/Master_Boot_Record#Problems_with_MBR "Master Boot Record") of the MBR partitioning scheme method and offers additional advantages.
 
 ## Contents
 
-*   [1 About the Master Boot Record](#About_the_Master_Boot_Record)
-    *   [1.1 Problems with MBR](#Problems_with_MBR)
-*   [2 About the GUID Partition Table](#About_the_GUID_Partition_Table)
-    *   [2.1 Advantages of GPT](#Advantages_of_GPT)
-    *   [2.2 Kernel Support](#Kernel_Support)
-*   [3 Bootloader Support](#Bootloader_Support)
-    *   [3.1 UEFI systems](#UEFI_systems)
-    *   [3.2 BIOS systems](#BIOS_systems)
-        *   [3.2.1 Workarounds](#Workarounds)
-*   [4 Partitioning Utilities](#Partitioning_Utilities)
-    *   [4.1 GPT fdisk](#GPT_fdisk)
-    *   [4.2 GNU Parted](#GNU_Parted)
-    *   [4.3 Util-linux fdisk](#Util-linux_fdisk)
-*   [5 Partitioning examples](#Partitioning_examples)
-    *   [5.1 gdisk basic](#gdisk_basic)
-    *   [5.2 gdisk basic (with hybrid MBR)](#gdisk_basic_.28with_hybrid_MBR.29)
-    *   [5.3 parted basic (via command line options)](#parted_basic_.28via_command_line_options.29)
-    *   [5.4 sgdisk basic (auto discover)](#sgdisk_basic_.28auto_discover.29)
-    *   [5.5 Convert from MBR to GPT](#Convert_from_MBR_to_GPT)
-    *   [5.6 Resize a partition](#Resize_a_partition)
-    *   [5.7 Sort the partitions](#Sort_the_partitions)
-*   [6 See also](#See_also)
-
-## About the Master Boot Record
-
-To understand GPT it is important to understand what MBR is and what its disadvantages are. The MBR partition table stores the partitions info in the first sector of a hard disk as follows:
-
-| Location in the HDD | Purpose of the Code |
-| `001-440 bytes` | MBR boot code that is launched by the BIOS. |
-| `441-446 bytes` | MBR disk signature. |
-| `447-510 bytes` | Partition table (of primary and extended partitions, not logical). |
-| `511-512 bytes` | MBR boot signature 0xAA55. |
-
-The entire information about the primary partitions is limited to the 64 bytes allotted. To extend this, extended partitions were used. An extended partition is simply a primary partition in the MBR which acts like a container for other partitions called logical partitions. So one is limited to either 4 primary partitions, or 3 primary and 1 extended partitions with many logical partitions inside it.
-
-### Problems with MBR
-
-1.  Only 4 primary partitions or 3 primary + 1 extended partitions (with arbitrary number of logical partitions within the extended partition) can be defined. If you have 3 primary + 1 extended partitions, and you have some free space outside the extended partition area, you cannot create a new partition over that free space.
-2.  Within the extended partition, the logical partitions' meta-data is stored in a linked-list structure. If one link is lost, all the logical partitions following that metadata are lost.
-3.  MBR supports only 1 byte partition type codes which leads to many collisions.
-4.  MBR stores partition sector information using 32-bit LBA values. This LBA length along with 512 byte sector size (more commonly used) limits the maximum addressable size of the disk to be 2 [TiB](https://en.wikipedia.org/wiki/TiB "wikipedia:TiB"). Any space beyond 2 TiB cannot be defined as a partition if MBR partitioning is used.
+*   [1 About the GUID Partition Table](#About_the_GUID_Partition_Table)
+    *   [1.1 Advantages of GPT](#Advantages_of_GPT)
+    *   [1.2 Kernel Support](#Kernel_Support)
+*   [2 Bootloader Support](#Bootloader_Support)
+    *   [2.1 UEFI systems](#UEFI_systems)
+    *   [2.2 BIOS systems](#BIOS_systems)
+        *   [2.2.1 Workarounds](#Workarounds)
+*   [3 Partitioning Utilities](#Partitioning_Utilities)
+    *   [3.1 GPT fdisk](#GPT_fdisk)
+    *   [3.2 GNU Parted](#GNU_Parted)
+    *   [3.3 Util-linux fdisk](#Util-linux_fdisk)
+*   [4 Partitioning examples](#Partitioning_examples)
+    *   [4.1 gdisk basic](#gdisk_basic)
+    *   [4.2 gdisk basic (with hybrid MBR)](#gdisk_basic_.28with_hybrid_MBR.29)
+    *   [4.3 parted basic (via command line options)](#parted_basic_.28via_command_line_options.29)
+    *   [4.4 sgdisk basic (auto discover)](#sgdisk_basic_.28auto_discover.29)
+    *   [4.5 Convert from MBR to GPT](#Convert_from_MBR_to_GPT)
+    *   [4.6 Resize a partition](#Resize_a_partition)
+    *   [4.7 Sort the partitions](#Sort_the_partitions)
+*   [5 See also](#See_also)
 
 ## About the GUID Partition Table
 

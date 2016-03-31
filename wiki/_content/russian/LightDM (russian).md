@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [LightDM](/index.php/LightDM "LightDM"). Дата последней синхронизации: 13 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=LightDM&diff=0&oldid=425490).
+**Состояние перевода:** На этой странице представлен перевод статьи [LightDM](/index.php/LightDM "LightDM"). Дата последней синхронизации: 29 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=LightDM&diff=0&oldid=428540).
 
 [LightDM](http://www.freedesktop.org/wiki/Software/LightDM) это кросс-десктопный [Экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер"). Главные особенности:
 
@@ -270,6 +270,8 @@ auth        include     system-login
 ### Миграция с SLiM
 
 Переместите содержимое [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") в [xprofile](/index.php/Xprofile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xprofile (Русский)"), удалите вызов запуска [Оконного менеджера](/index.php/Window_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Window manager (Русский)") или [Среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)").
+
+Также удалите содержимое ~/.dmrc, и выберите на иконке Сессий (в правом верхнем углу экрана по умолчанию), сессию которую вы хотите запустить.
 
 ### NumLock включен по умолчанию
 

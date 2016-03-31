@@ -40,7 +40,7 @@ ACPI works with BIOS v1.18 and higher.
 
 [BIOS v1.19 for 3820tg](http://global-download.acer.com/GDFiles/BIOS/BIOS/BIOS_Acer_1.19_A_A.zip?acerid=634308246297660203&Step1=Notebook&Step2=Aspire&Step3=Aspire%203820TG&OS=722&LC=en&BC=Acer&SC=PA_6)
 
-If you do not have Windows installed, you can flash with a [FreeDOS thumb drive](http://en.gentoo-wiki.com/wiki/FreeDOS_Flash_Drive).
+If you do not have Windows installed, you can flash with a [FreeDOS thumb drive](http://www.freedos.org/).
 
 ## Hardware
 

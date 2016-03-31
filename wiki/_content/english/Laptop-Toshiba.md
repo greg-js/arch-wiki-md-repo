@@ -78,7 +78,7 @@ RAM: works
 Disk: not tested
 Battery: 3h/5h with power saving
 Dimming of display: brightness control only works with intel_backlight from intel-gpu-tools-git
-Frequency scaling of CPU: OK (need to load cpufreq)
+Frequency scaling of CPU: OK
 Fan control: no (noisy fan fixed with 1.6 bios update; instructions [here](http://benobs.blogspot.fr/2012/04/toshiba-z835-p330-bios-update-from.html)) | NA | Camera works
 Microphone works (need to change options in skype) | NA |
 | Portege z930-S9311 | Current | Intel® Ivybridge Mobile | Sound works. Also the keyboard shortcuts | works | works. | Not tested | Suspend to

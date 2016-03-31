@@ -4,14 +4,11 @@ This is based on my experience with arch on my Dell Inspiron 5100 laptop. Most o
 
 *   [1 Hardware](#Hardware)
 *   [2 Kernel](#Kernel)
-    *   [2.1 Initrd](#Initrd)
 *   [3 Networking](#Networking)
     *   [3.1 Wired](#Wired)
     *   [3.2 Wireless](#Wireless)
     *   [3.3 Modem](#Modem)
 *   [4 Power Management](#Power_Management)
-    *   [4.1 ACPI](#ACPI)
-    *   [4.2 CPU frequency scaling](#CPU_frequency_scaling)
 *   [5 Xorg](#Xorg)
 *   [6 See also](#See_also)
 
@@ -31,48 +28,6 @@ Wireless NIC: Intel IPW 2200 (*note most of these laptops came with a Dell Truem
 
 The stock arch kernel contains everything you need to get this laptop running.
 
-### Initrd
-
-Initrd will soon be part of current. Luckily there are no problems setting up this laptop with initrd. The following is my mkinitrd.conf, this is all you need if your root file system is formated ext3.
-
-```
-# Initial Ramdisk setup
-# Attention:
-# You need only the stuff to be able to mount your root device!
-# USB/FW are only needed if you boot from such devices!
-# Disable whole subsystems by setting to "1"
-REMOVE_IDE=
-REMOVE_SCSI=1
-REMOVE_SATA=1
-REMOVE_CDROM=1
-REMOVE_USB=1
-REMOVE_FW=1
-REMOVE_RAID=1
-REMOVE_DM=1
-REMOVE_FS=
-
-# Define which modules are needed by adding "moduleX moduleY"
-# If left empty, all modules are included if they are not disabled above
-HOSTCONTROLLER_IDE=piix
-HOSTCONTROLLER_SCSI=
-HOSTCONTROLLER_SATA=
-HOSTCONTROLLER_USB=
-FILESYSTEMS=ext3
-
-# If you have an encrypted root filesystem, set it here
-CRYPT_DEVICE=
-
-# If you use software RAID for your root device (must be /dev/md0) then
-# list all the devices that belong to your /dev/md0 array here
-#    eg, RAID_DEVICES="/dev/hda3 /dev/hdc3"
-RAID_DEVICES=
-
-# Define additional modules here
-ADD_MODULE=
-REMOVE_MODULE=
-
-```
-
 ## Networking
 
 ### Wired
@@ -90,44 +45,6 @@ The Truemobile 1300 card requires ndiswrapper I believe.
 The modem is believed to be a Broadcom BCM v.92 56k WinModem. The FCC sticker on the bottom of my laptop labels is as a BCM9415M. Its a winmodem and is on an intel AC'97 AMR interface. I do not use is and I do not plan to. A quick google search says the best way to get this modem working is buy a different one.
 
 ## Power Management
-
-### ACPI
-
-This laptop seems to have the same acpi issues that plague most dell laptops running linux. The i8k driver works for this laptop as it does for most dell laptops. Add i8k to your modules array in rc.conf to enable it.
-
-```
-MODULES=(!usbserial !ide-scsi p4_clockmod ***i8k*** evdev)
-
-```
-
-You'll probably also want to run the i8kmon daemon since the bios doesn't turn the cooling fan on until the cpu is about 70°C. [Install](/index.php/Install "Install") the [i8kmon](https://www.archlinux.org/packages/?name=i8kmon) package. Then add i8kmon to your daemons array to start it at boot.
-
-```
-DAEMONS=(syslog-ng network portmap !netfs crond alsa acpid cupsd cpufreq ***i8kmon***)
-
-```
-
-The 5100 only has one fan where the original i8k had 2 and the driver is looking to control both fans. It probably doesn't make a difference but I disable the second fan in the i8kmon config file /etc/i8kutils/i8kmon.conf
-
-```
-# Temperature thresholds: {fan_speeds low_ac high_ac low_batt high_batt}
-set config(0)   {{- 0}  -1  60  -1  65}
-set config(1)   {{- 1}  50  70  55  75}
-set config(2)   {{- 2}  60  80  65  85}
-set config(3)   {{- 2}  70 128  75 128}
-
-```
-
-i8kmon sees the fan as the right fan. The - in the left fan position means it will leave that fan alone.
-
-### CPU frequency scaling
-
-These laptops use a standard desktop p4 processor, no wonder they get so hot. The processor supports throttling by way of the p4_clockmod module. Add p4_clockmod to your modules array to enable it.
-
-```
-MODULES=(!usbserial !ide-scsi ***p4_clockmod*** i8k evdev)
-
-```
 
 See the main [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") article.
 

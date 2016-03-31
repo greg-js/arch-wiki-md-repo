@@ -47,40 +47,41 @@
 | <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(7)</small> |
 | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(8)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(9)</small> |
-| <small>4.4.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(33)</small> |
-| <small>4.5.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting") <small>(9)</small> |
-| <small>4.6.</small> [Imaging](/index.php/Category:Imaging "Category:Imaging") <small>(6)</small> |
-| <small>4.7.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(14)</small> |
-| <small>4.7.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet "Category:Graphics tablet") <small>(1)</small> |
-| <small>4.7.2.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(22)</small> |
-| <small>4.7.3.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(14)</small> |
-| <small>4.8.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(18)</small> |
-| <small>4.8.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(34)</small> |
-| <small>4.8.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
-| <small>4.8.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(13)</small> |
-| <small>4.8.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(61)</small> |
-| <small>4.8.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
-| <small>4.8.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(1)</small> |
-| <small>4.8.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(49)</small> |
-| <small>4.8.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(7)</small> |
-| <small>4.8.9.</small> [HP](/index.php/Category:HP "Category:HP") <small>(44)</small> |
-| <small>4.8.10.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small> |
-| <small>4.8.11.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(67)</small> |
-| <small>4.8.12.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(3)</small> |
-| <small>4.8.13.</small> [Nokia](/index.php/Category:Nokia "Category:Nokia") <small>(1)</small> |
-| <small>4.8.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(11)</small> |
-| <small>4.8.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(12)</small> |
-| <small>4.8.16.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(17)</small> |
-| <small>4.9.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(5)</small> |
-| <small>4.10.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(15)</small> |
-| <small>4.11.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
-| <small>4.12.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(22)</small> |
-| <small>4.13.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small> |
-| <small>4.14.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(20)</small> |
-| <small>4.15.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(20)</small> |
-| <small>4.15.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
-| <small>4.16.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
-| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(70)</small> |
+| <small>4.4.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
+| <small>4.5.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(33)</small> |
+| <small>4.6.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting") <small>(9)</small> |
+| <small>4.7.</small> [Imaging](/index.php/Category:Imaging "Category:Imaging") <small>(6)</small> |
+| <small>4.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(14)</small> |
+| <small>4.8.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet "Category:Graphics tablet") <small>(1)</small> |
+| <small>4.8.2.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(22)</small> |
+| <small>4.8.3.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(14)</small> |
+| <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(18)</small> |
+| <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(34)</small> |
+| <small>4.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
+| <small>4.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(13)</small> |
+| <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(61)</small> |
+| <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
+| <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(1)</small> |
+| <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(49)</small> |
+| <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(7)</small> |
+| <small>4.9.9.</small> [HP](/index.php/Category:HP "Category:HP") <small>(44)</small> |
+| <small>4.9.10.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small> |
+| <small>4.9.11.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(67)</small> |
+| <small>4.9.12.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(3)</small> |
+| <small>4.9.13.</small> [Nokia](/index.php/Category:Nokia "Category:Nokia") <small>(1)</small> |
+| <small>4.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(11)</small> |
+| <small>4.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(12)</small> |
+| <small>4.9.16.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(17)</small> |
+| <small>4.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(5)</small> |
+| <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(15)</small> |
+| <small>4.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+| <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(20)</small> |
+| <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small> |
+| <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(20)</small> |
+| <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(20)</small> |
+| <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
+| <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
+| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(71)</small> |
 | <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(12)</small> |
 | <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(8)</small> |
@@ -124,7 +125,7 @@
 | <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
 | <small>6.9.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(3) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(21)</small> |
-| <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
+| <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(72)</small> |
 | <small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(26)</small> |
 | <small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(10) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |

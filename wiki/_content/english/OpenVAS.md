@@ -53,7 +53,7 @@ Rebuild the database:
 
 ```
 
-Add an administrator user account:
+Add an administrator user account, be sure to copy the password:
 
 ```
 # openvasmd --create-user=admin --role=Admin
@@ -78,6 +78,13 @@ kb_location = /var/lib/redis/redis.sock
 
 ```
 
+Finally restart `redis`
+
+```
+# systemctl restart redis
+
+```
+
 ## Getting Started
 
 Start the `openvasmd` daemon
@@ -90,13 +97,13 @@ Start the `openvasmd` daemon
 Start the [Greenbone Security Assistant](http://www.greenbone.net/technology/openvas.html) WebUI (optional)
 
 ```
-# gsad
+# gsad -f --listen=127.0.0.1 --mlisten=127.0.0.1 --mport=9390
 
 ```
 
 Point your web browser to [http://127.0.0.1](http://127.0.0.1) and login with your admin crendentials
 
-**Note:** By default, `gsad` will bind to port 80\. If you are already running a webserver, this will obviously cause problems. Pass the `-p` switch to `gsad` for an alternate port. Read the `gsad` man page for options like `--http-only`, `--no-redirect`, and more.
+**Note:** By default, `gsad` will bind to port 80\. If you are already running a webserver, this will obviously cause problems. Pass the `--port` switch to `gsad` for an alternate port. Read the `gsad` man page for options like `--http-only`, `--no-redirect`, and more.
 
 ## Systemd
 

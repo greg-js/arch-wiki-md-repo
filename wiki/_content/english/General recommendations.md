@@ -232,7 +232,7 @@ A [firewall](/index.php/Firewall "Firewall") can provide an extra layer of prote
 
 ### Resource sharing
 
-To share files among the machines in a network, follow the [NFS](/index.php/NFS "NFS") or the [sshfs](/index.php/Sshfs "Sshfs") article.
+To share files among the machines in a network, follow the [NFS](/index.php/NFS "NFS") or the [SSHFS](/index.php/SSHFS "SSHFS") article.
 
 Use [Samba](/index.php/Samba "Samba") to join a Windows network. To configure the machine to use Active Directory for authentication, read [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration").
 

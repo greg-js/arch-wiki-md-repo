@@ -164,7 +164,7 @@ export QT_DEVICE_PIXEL_RATIO=2
 
 And set the executable bit on it.
 
-If for some reason Qt can't detect dpi correctly scaling can be set manually per-screen (`QT_SCREEN_SCALE_FACTORS`) or globally (`QT_SCALE_FACTOR`). For more details see [[1]](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/)
+If for some reason Qt can't detect dpi correctly scaling can be set manually per-screen (`QT_SCREEN_SCALE_FACTORS`) or globally (`QT_SCALE_FACTOR`). For more details see the [QT blog post](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/).
 
 ### GDK 3 (GTK+ 3)
 
@@ -205,7 +205,7 @@ Open Firefox advanced preferences page (`about:config`) and set parameter `layou
 
 If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen.
 
-From Firefox version 38 onwards, your system (GTK+ 3.10) settings should be taken into account.[[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=975919)
+From Firefox version 38 onwards, your system (GTK+ 3.10) settings should be taken into account.[[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=975919)
 
 #### Chromium / Google Chrome
 
@@ -251,7 +251,7 @@ $ spotify --force-device-scale-factor=1.5
 
 ### IntelliJ IDEA
 
-IntelliJ IDEA 15 and above should include HiDPI support.[[3]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
+IntelliJ IDEA 15 and above should include HiDPI support.[[2]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
 
 	*File -> Settings -> Behaviour & Appearance -> Appearance*
 
@@ -259,7 +259,7 @@ The addition of `-Dhidpi=true` to the vmoptions file in either `$HOME/.IdeaC14/`
 
 ### NetBeans
 
-NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[4]](http://wiki.netbeans.org/FaqFontSize)
+NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[3]](http://wiki.netbeans.org/FaqFontSize)
 
 The editor fontsize can be controlled from Tools → Option → Fonts & Colors.
 

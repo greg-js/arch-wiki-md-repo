@@ -575,7 +575,7 @@ $ qemu-system-i386 -net nic -net bridge,br=*bridge0* -net nic,vlan=1 -net bridge
 
 The following describes how to bridge a virtual machine to a host interface such as `eth0`, which is probably the most common configuration. This configuration makes it appear that the virtual machine is located directly on the external network, on the same Ethernet segment as the physical host machine.
 
-We will replace the normal Ethernet adapter with a bridge adapter and bind the normal Ethernet adapter to it. See [http://en.gentoo-wiki.com/wiki/KVM#Networking_2](http://en.gentoo-wiki.com/wiki/KVM#Networking_2).
+We will replace the normal Ethernet adapter with a bridge adapter and bind the normal Ethernet adapter to it.
 
 *   Install [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), which provides `brctl` to manipulate bridges.
 

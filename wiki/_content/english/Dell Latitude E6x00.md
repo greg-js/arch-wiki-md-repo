@@ -29,7 +29,6 @@ For more information see the following links:
 
 *   [http://forum.notebookreview.com/dell-latitude-vostro-precision/348221-e6400-overheating-throttling.html](http://forum.notebookreview.com/dell-latitude-vostro-precision/348221-e6400-overheating-throttling.html)
 *   [http://en.community.dell.com/support-forums/laptop/f/3518/t/19247293.aspx](http://en.community.dell.com/support-forums/laptop/f/3518/t/19247293.aspx)
-*   [http://en.gentoo-wiki.com/wiki/Dell_Latitude_E6x00#CPU_overheating_throttling](http://en.gentoo-wiki.com/wiki/Dell_Latitude_E6x00#CPU_overheating_throttling)
 
 The following is a simple script that overwrites any throttling the BIOS attempts to do. This makes the CPU run at full speed and as such may lead to very high temperatures. A clean fan and heatsink however should be capable of keeping the temperature within acceptable levels.
 
@@ -194,90 +193,4 @@ Kernel 3.12.33 - Try model=hp-hdx to get the internal mic and the digital sound 
 
 ### Video
 
-Intel MHD4500
-
-```
-xf86-video-intel 2.4.3-1
-
-```
-
-Config for current xorg-server v1.5.x:
-
-```
-$ cat /etc/X11/xorg.conf
-
-```
-
-```
- Section "ServerLayout"
-   Identifier     "X.org Configured"
-   Screen      0  "Screen0" 0 0
-   Option "StandbyTime" "5"
-   Option "SuspendTime" "10"
-   Option "OffTime" "30"
- EndSection
-
- Section "Files"
-    ModulePath   "/usr/lib/xorg/modules"
-    FontPath     "/usr/share/fonts/misc"
-    FontPath     "/usr/share/fonts/100dpi:unscaled"
-    FontPath     "/usr/share/fonts/75dpi:unscaled"
-    FontPath     "/usr/share/fonts/TTF"
-    FontPath     "/usr/share/fonts/Type1"
- EndSection
- Section "Module"
-    Load  "glx"
-    Load  "extmod"
-    Load  "xtrap"
-    Load  "dbe"
-    Load  "dri"
-    Load  "freetype"
- EndSection
- Section "Monitor"
-    #DisplaySize	  330   210	# mm
-    Identifier   "Monitor0"
-    VendorName   "SEC"
-    ModelName    "5441" 
-    Option "DPMS" "true"
- EndSection
- Section "Device"
-    Identifier  "Card0"
-    Driver      "intel"
-    VendorName  "Intel Corporation"
-    BoardName   "Mobile 4 Series Chipset Integrated Graphics Controller"
-    BusID       "PCI:0:2:0"
- EndSection
- Section "Screen"
-    Identifier "Screen0"
-    Device     "Card0"
-    Monitor    "Monitor0"
-   SubSection "Display"
-     Viewport   0 0
-     Depth     1
-   EndSubSection
-   SubSection "Display"
-     Viewport   0 0
-     Depth     4
-   EndSubSection
-   SubSection "Display"
-         Viewport   0 0
-       Depth     8
-    EndSubSection
-    SubSection "Display"
-	  Viewport   0 0
-	  Depth     15
-  EndSubSection
-  SubSection "Display"
-	  Viewport   0 0
-	  Depth     16
-  EndSubSection
-  SubSection "Display"
-	  Viewport   0 0
-	  Depth     24
-  EndSubSection
- EndSection
- Section "DRI"
-  Mode        0666
- EndSection
-
-```
+See [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics").

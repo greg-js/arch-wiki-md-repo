@@ -89,7 +89,7 @@ Vi0L0 tiene tres repositorios Catalyst diferentes, cada uno de los cuales tiene 
 
 **Advertencia:** El controlador legacy Catalyst no es compatible con Xorg 1.13\. Si desea utilizar este controlador, consulte [#Repositorios Xorg](#Repositorios_Xorg) para obtener instrucciones sobre cómo volver a utilizar o mantener Xorg 1.12.
 
-**Advertencia:** Catalyst no es compatible con el servidor Xorg 1.15, consulte [#Repositorios de Xorg](#Repositorios_de_Xorg) y elija el repositorio xorg que desea utilizar.
+**Advertencia:** Catalyst no es compatible con el servidor Xorg 1.15, consulte [#Repositorios Xorg](#Repositorios_Xorg) y elija el repositorio xorg que desea utilizar.
 
 Para activar uno de estos, tendrá que editar `/etc/pacman.conf` y añadir el repositorio de su elección **por encima de todos los demás repositorios** en `/etc/pacman.conf`:
 
@@ -318,7 +318,7 @@ $ fgl_glxgears
 
 como test alternativo de fglrx para `glxgears`.
 
-**Advertencia:** En las últimas versiones de Xorg, las rutas de las bibliotecas han cambiado. De modo que, a veces `libGL.so` no se puede cargar correctamente incluso si está instalado. No descarte esta opción si su GL no está funcionando. Por favor, lea [#Solución de problema](#Soluci.C3.B3n_de_problema) para obtener más detalles.
+**Advertencia:** En las últimas versiones de Xorg, las rutas de las bibliotecas han cambiado. De modo que, a veces `libGL.so` no se puede cargar correctamente incluso si está instalado. No descarte esta opción si su GL no está funcionando. Por favor, lea [#Solución de problemas](#Soluci.C3.B3n_de_problemas) para obtener más detalles.
 
 ### Kernels personalizados
 
@@ -743,7 +743,7 @@ Se puede utilizar XRender si la prestación con OpenGL es lenta. Sin embargo, XR
 
 Asegúrese de que ha añadido la opción **nomodeset** a la línea de opciones del kernel en el gestor de arranque (consulte [esta sección](#Desactivar_kernel_mode_setting)).
 
-Si se está utilizando el controlador legacy (`catalyst-hd234k`) y obtener una pantalla en negro, pruebe haciendo downgrading de xorg-server a 1.11 usando el repositorio [#xorg111](/index.php/AMD_Catalyst_(Espa%C3%B1ol)#.5Bxorg111.5D "AMD Catalyst (Español)").
+Si se está utilizando el controlador legacy (`catalyst-hd234k`) y obtener una pantalla en negro, pruebe haciendo downgrading de xorg-server a 1.11 usando el repositorio [#xorg111](#.5Bxorg111.5D).
 
 #### Llamadas hardware ACPI defectuosa
 

@@ -2,7 +2,7 @@
 
 An IBSS (Independent Basic Service Set) network, often called an ad-hoc network, is a way to have a group of devices talk to each other wirelessly, without a central controller. It is an example of an peer-to-peer network, in which all devices talk directly to each other, with no inherent relaying.
 
-For example, ad-hoc networking may be used to [share an internet connection](/index.php/Internet_Sharing "Internet Sharing").
+For example, ad-hoc networking may be used to [share an internet connection](/index.php/Internet_sharing "Internet sharing").
 
 ## Contents
 

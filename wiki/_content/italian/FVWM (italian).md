@@ -44,15 +44,13 @@ Al primo avvio di fvwm, ci si troverà con una configurazione inesistente, un de
 
 *   Anche se è superata, il guida per principianti Zensites FVWM [[1]](http://zensites.net/fvwm/guide/), aiuta a capire come funziona FVWM e come costruire la **vostra** configurazione di base.
 
-*   La Wiki di Gentoo Linux ha una utile guida alla configurazione.[[2]](http://en.gentoo-wiki.com/wiki/FVWM/Configuration)
+*   La homepage FVWM[[2]](http://fvwm.org/) include una documentazione[[3]](http://fvwm.org/documentation/), una FAQ [[4]](http://fvwm.org/documentation/faq/), collegamenti a un Wiki[[5]](http://fvwmwiki.xteddy.org/)) e al forum di FVWM [[6]](http://www.fvwmforums.org).
 
-*   La homepage FVWM[[3]](http://fvwm.org/) include una documentazione[[4]](http://fvwm.org/documentation/), una FAQ [[5]](http://fvwm.org/documentation/faq/), collegamenti a un Wiki[[6]](http://fvwmwiki.xteddy.org/)) e al forum di FVWM [[7]](http://www.fvwmforums.org).
+*   Il modo migliore per ottenere con il desktop che si desidera, è probabilmente quello di controllare le configurazioni del forum di FVWM [[7]](http://www.fvwmforums.org/phpBB3/viewforum.php?f=39&sid=468469f95f9a2a90cd9d5a0819d26eec) o su Box-Look.org,[[8]](http://www.box-look.org), dove si può scegliete quello che vi piace, installarlo, e modificarlo a piacere.
 
-*   Il modo migliore per ottenere con il desktop che si desidera, è probabilmente quello di controllare le configurazioni del forum di FVWM [[8]](http://www.fvwmforums.org/phpBB3/viewforum.php?f=39&sid=468469f95f9a2a90cd9d5a0819d26eec) o su Box-Look.org,[[9]](http://www.box-look.org), dove si può scegliete quello che vi piace, installarlo, e modificarlo a piacere.
+*   Per come lavorare sulle configurazioni che gli altri hanno fatto, può essere utile guardare i suggerimenti sui file di configurazione di Thomas Adam, lo sviluppatore FVWM più attivo.[[9]](http://www.fvwmforums.org/phpBB3/viewtopic.php?f=40&t=1505)
 
-*   Per come lavorare sulle configurazioni che gli altri hanno fatto, può essere utile guardare i suggerimenti sui file di configurazione di Thomas Adam, lo sviluppatore FVWM più attivo.[[10]](http://www.fvwmforums.org/phpBB3/viewtopic.php?f=40&t=1505)
-
-*   La pagina [[11]](http://web.archive.org/web/20070912061152/abdn.ac.uk/~u15dm4/fvwm/) sull'[Archivio Internet Archive](http://archive.org/) è obsoleta, ma sembra essere l'unica documentazione significativa online per fvwm-patched.
+*   La pagina [[10]](http://web.archive.org/web/20070912061152/abdn.ac.uk/~u15dm4/fvwm/) sull'[Archivio Internet Archive](http://archive.org/) è obsoleta, ma sembra essere l'unica documentazione significativa online per fvwm-patched.
 
 *   [FVWM-Crystal](/index.php?title=FVWM-Crystal&action=edit&redlink=1 "FVWM-Crystal (page does not exist)"), che è anche nei [repository di Arch](https://www.archlinux.org/packages/extra/any/fvwm-crystal/), è un add-on che rende FVWM molto più facile da configurare, anche se una configurazione più semplice incide su una flessibilità molto più limitata rispetto ad una di modifica diretta dei file di configurazione.
 
@@ -67,13 +65,12 @@ Al primo avvio di fvwm, ci si troverà con una configurazione inesistente, un de
 Links usati in questo tutorial:
 
 1.  Zensites [FVWM guida per principianti](http://zensites.net/fvwm/guide/).
-2.  Gentoo Wiki [guida di configurazione](http://en.gentoo-wiki.com/wiki/FVWM/Configuration).
-3.  [FVWM Homepage](http://fvwm.org/).
-4.  FVWM Homepage [documentazione](http://fvwm.org/documentation/).
-5.  FVWM Homepage [FAQ](http://fvwm.org/documentation/faq/).
-6.  [FVWM Wiki](http://fvwmwiki.xteddy.org/).
-7.  [FVWM Forums](http://www.fvwmforums.org).
-8.  [Configurazioni](http://www.fvwmforums.org/phpBB3/viewforum.php?f=39&sid=468469f95f9a2a90cd9d5a0819d26eec) presenti nel forum di FVWM.
-9.  [Box-Look](http://www.box-look.org/).
-10.  Thomas Adam su [errori comuni nella configurazione dei file](http://www.fvwmforums.org/phpBB3/viewtopic.php?f=40&t=1505).
-11.  [Fvwm Patches](http://web.archive.org/web/20070912061152/abdn.ac.uk/~u15dm4/fvwm/) nell'[Archivio Internet](http://archive.org/).
+2.  [FVWM Homepage](http://fvwm.org/).
+3.  FVWM Homepage [documentazione](http://fvwm.org/documentation/).
+4.  FVWM Homepage [FAQ](http://fvwm.org/documentation/faq/).
+5.  [FVWM Wiki](http://fvwmwiki.xteddy.org/).
+6.  [FVWM Forums](http://www.fvwmforums.org).
+7.  [Configurazioni](http://www.fvwmforums.org/phpBB3/viewforum.php?f=39&sid=468469f95f9a2a90cd9d5a0819d26eec) presenti nel forum di FVWM.
+8.  [Box-Look](http://www.box-look.org/).
+9.  Thomas Adam su [errori comuni nella configurazione dei file](http://www.fvwmforums.org/phpBB3/viewtopic.php?f=40&t=1505).
+10.  [Fvwm Patches](http://web.archive.org/web/20070912061152/abdn.ac.uk/~u15dm4/fvwm/) nell'[Archivio Internet](http://archive.org/).

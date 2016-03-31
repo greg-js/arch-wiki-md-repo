@@ -269,6 +269,8 @@ To prevent system users from showing-up in the login, install the optional depen
 
 Move the contents of [xinitrc](/index.php/Xinitrc "Xinitrc") to [xprofile](/index.php/Xprofile "Xprofile"), removing the call to start the [window manager](/index.php/Window_manager "Window manager") or [desktop environment](/index.php/Desktop_environment "Desktop environment").
 
+Also, remove the contents of ~/.dmrc, and select on the Sessions icon (at the top right corner by default) the session you want to run.
+
 ### NumLock on by default
 
 Install the [numlockx](https://www.archlinux.org/packages/?name=numlockx) package and the edit `/etc/lightdm/lightdm.conf` adding the following line:

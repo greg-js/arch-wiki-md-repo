@@ -225,7 +225,7 @@ The `noatime` and `relatime` options avoid writes to the file system when files 
 
 To write on a FAT32 partition, you must make a few changes to your `/etc/fstab` file.
 
- `/etc/fstab`  `/dev/sdxY    /mnt/some_folder  vfat   user,rw,umask=000              0  0` 
+ `/etc/fstab`  `/dev/sdxY    /mnt/some_folder  vfat   **user**,rw,umask=000              0  0` 
 
 The `user` flag means that any user (even non-root) can mount and unmount the partition `/dev/sdX`. `rw` gives read-write access; `umask` option removes selected rights - for example `umask=111` remove executable rights. The problem is that this entry removes executable rights from directories too, so we must correct it by `dmask=000`. See also [Umask](/index.php/Umask "Umask").
 
@@ -233,7 +233,21 @@ Without these options, all files will be executable. You can use the option `sho
 
 For example, if your FAT32 partition is on `/dev/sda9`, and you wish to mount it to `/mnt/fat32`, then you would use:
 
- `/etc/fstab`  `/dev/sda9    /mnt/fat32        vfat   user,rw,umask=111,dmask=000    0  0` 
+ `/etc/fstab`  `/dev/sda9    /mnt/fat32        vfat   **user**,rw,umask=111,dmask=000    0  0` 
+
+Now, any user can mount it with:
+
+```
+$ mount /mnt/fat32
+
+```
+
+And unmount it with:
+
+```
+$ umount /mnt/fat32
+
+```
 
 ### Remounting the root partition
 

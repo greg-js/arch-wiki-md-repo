@@ -7,7 +7,7 @@
 *   合上笔记本盖子
 *   拔下/插上笔记本外接电源
 
-**警告:** 请注意[桌面环境](/index.php/Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop Environment (简体中文)")比如[GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")倾向于使用自己的电源事件管理方法（独立于acpid）,[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")的登陆管理器也有它自己的一套管理方法。同时运行多套系统可能产生意想不到的结果，比如，当按下电源键时电脑同时执行挂起和关机；或者当按下睡眠按钮时电脑执行了两次挂起操作。所以，使用多套系统时你应只激活一套系统的电源事件管理方法，以免引起冲突。
+**警告:** 请注意[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")比如[GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")倾向于使用自己的电源事件管理方法（独立于acpid）,[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")的登陆管理器也有它自己的一套管理方法。同时运行多套系统可能产生意想不到的结果，比如，当按下电源键时电脑同时执行挂起和关机；或者当按下睡眠按钮时电脑执行了两次挂起操作。所以，使用多套系统时你应只激活一套系统的电源事件管理方法，以免引起冲突。
 
 ## Contents
 
@@ -94,7 +94,7 @@ $4 00000b31
 
 像你看到的那样，在这个例子中睡眠按钮被识别为*SBTN*，而不是*SLPB*（这是`/etc/acpi/handler.sh`中默认定义的标识符）。所以，要想让你的睡眠按钮正常工作的话，你需要编辑`/etc/acpi/handler.sh`把*SLPB)*替换为*SBTN)*。
 
-参照上面的例子，你应该可以很容易的通过定制`/etc/acpi/handler.sh`来根据侦测到的电源时间来执行不同的命令。更多例子可参考下面的 [小技巧](/index.php/Acpid_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.B0.8F.E6.8A.80.E5.B7.A7 "Acpid (简体中文)")部分。
+参照上面的例子，你应该可以很容易的通过定制`/etc/acpi/handler.sh`来根据侦测到的电源时间来执行不同的命令。更多例子可参考下面的[小技巧](#.E5.B0.8F.E6.8A.80.E5.B7.A7)部分。
 
 ### 其它配置方案
 
@@ -233,7 +233,7 @@ ac_adapter)
 
 ### 关闭笔记本显示器
 
-下面这个小技巧修改自[Gentoo Wiki](http://en.gentoo-wiki.com/wiki/ACPI/Configuration)。把下面的内容添加到`/etc/acpi/actions/lm_lid.sh`最后，或者添加到`/etc/acpi/handler.sh`的*button/lid*部分。这个配置会实现当合上笔记本盖子时自动切断LCD背光，揭开盖子时自动打开LCD背光。
+下面这个小技巧修改自 [Gentoo wiki](http://www.gentoo-wiki.info/ACPI/Configuration)。把下面的内容添加到`/etc/acpi/actions/lm_lid.sh`最后，或者添加到`/etc/acpi/handler.sh`的*button/lid*部分。这个配置会实现当合上笔记本盖子时自动切断LCD背光，揭开盖子时自动打开LCD背光。
 
 ```
 case $(cat /proc/acpi/button/lid/LID0/state | awk '{print $2}') in
@@ -353,5 +353,5 @@ sudo -u (用户名) exaile
 ## 参考
 
 *   [http://acpid.sourceforge.net/](http://acpid.sourceforge.net/) - acpid homepage
-*   [http://www.gentoo-wiki.info/ACPI/Configuration](http://www.gentoo-wiki.info/ACPI/Configuration) - RIP Gentoo wiki entry - New Gentoo Wiki Archives
+*   [Gentoo wiki](http://www.gentoo-wiki.info/ACPI/Configuration)
 *   [ACPI hotkeys](/index.php/ACPI_hotkeys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ACPI hotkeys (简体中文)")

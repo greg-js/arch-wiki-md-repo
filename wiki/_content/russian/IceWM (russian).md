@@ -97,6 +97,5 @@ $ xdg_menu --format icewm --fullmenu --root-menu /etc/xdg/menus/arch-application
 
 *   [Xinitrc](/index.php/Xinitrc "Xinitrc")
 *   [Official IceWM website](http://www.icewm.org/)
-*   [IceWM - Gentoo Linux Wiki](http://en.gentoo-wiki.com/wiki/IceWM)
 *   [IceWM - The Cool Window Manager](http://www.osnews.com/story.php/7774/IceWM--The-Cool-Window-Manager/) - Подробное вступление на OSNews
 *   [IceWM - A desktop for Windows emigrants](http://polishlinux.org/apps/window-managers/icewm-a-desktop-for-windows-emmigrants/) - Обзор и руководство от polishlinux.org

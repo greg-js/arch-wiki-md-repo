@@ -21,11 +21,11 @@ The Acer C720 Chromebook (and newer Chromebooks in general) features a "legacy b
 
 ## Installation
 
-Go to the [Chromebook](/index.php/Chromebook "Chromebook") page, read the [Introduction](/index.php/Chromebook#Introduction "Chromebook") and continue by following the [Installation](/index.php/Chromebook#Installation "Chromebook") guide.
+Go to the [Chrome OS devices](/index.php/Chrome_OS_devices "Chrome OS devices") page, read the [Introduction](/index.php/Chrome_OS_devices#Introduction "Chrome OS devices") and continue by following the [Installation](/index.php/Chrome_OS_devices#Installation "Chrome OS devices") guide.
 
 ## Configuration
 
-For information on general Chromebook post installation configuration (hotkeys, power key handling ...) see the [Post installation configuration](/index.php/Chromebook#Post_installation_configuration "Chromebook") on the [Chromebook](/index.php/Chromebook "Chromebook") page.
+For information on general Chromebook post installation configuration (hotkeys, power key handling ...) see the [Post installation configuration](/index.php/Chrome_OS_devices#Post_installation_configuration "Chrome OS devices") on the [Chrome OS devices](/index.php/Chrome_OS_devices "Chrome OS devices") page.
 
 ### Touchpad Configuration
 
@@ -126,7 +126,7 @@ Additionally see [SSD#Troubleshooting](/index.php/SSD#Troubleshooting "SSD") if 
 
 If your internal microphone is not working (for example, in Skype), select "Microphone (unplugged)" as your input source in the PulseAudio Volume Control. Your internal microphone should now work. [[1]](http://forums.bodhilinux.com/index.php?/topic/9975-microphone-support-on-acer-c720/)
 
-See also [Chromebook#Fixing audio](/index.php/Chromebook#Fixing_audio "Chromebook") for another possible solution.
+See also [Chrome OS devices#Fixing audio](/index.php/Chrome_OS_devices#Fixing_audio "Chrome OS devices") for another possible solution.
 
 ## See also
 

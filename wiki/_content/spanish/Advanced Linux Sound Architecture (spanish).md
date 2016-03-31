@@ -1048,7 +1048,7 @@ También puede poner esta orden en un servicio de [systemd](/index.php/Systemd_(
 
 El procedimiento descrito a continuación se puede utilizar para una prueba de audio HDMI. Antes de continuar, asegúrese de que ha activado y quitado el silencio de la salida con `alsamixer`.
 
-**Nota:** Si utiliza una tarjeta ATI y el kernel de linux >=3.0, tendrá desactivado, por defecto, un módulo del kernel necesario. Consulte [ATI#HDMI_Audio](/index.php/ATI#HDMI_Audio "ATI").
+**Nota:** Si utiliza una tarjeta ATI y el kernel de linux >=3.0, tendrá desactivado, por defecto, un módulo del kernel necesario. Consulte [ATI#HDMI audio](/index.php/ATI#HDMI_audio "ATI").
 
 Conecte el PC a la pantalla mediante un cable HDMI y active la pantalla con una herramienta como `xrandr` o `arandr`. Por ejemplo:
 
@@ -1245,7 +1245,7 @@ Después que los cambios se carguen correctamente, aparecerá una nueva sección
 **Nota:**
 
 *   Establecer un valor alto para `Pre-Amp` puede causar distorsión del sonido, por lo que ajustelo de acuerdo al nivel más adecuado.
-*   Algunos códecs de audio pueden necesitar ajustes en el HDA Analyzer ([véase arriba](#HDA_analyzer)) a fin de lograr un volumen adecuado y sin distorsión. Comprobar la opción HP con el control del widget en el interruptor del Playback (Node[0x14] PIN en el códec ALC892, por ejemplo) puede, a veces, mejorar la calidad del audio y del volumen significativamente.
+*   Algunos códecs de audio pueden necesitar ajustes en el HDA Analyzer ([véase arriba](#HDA_Analyzer)) a fin de lograr un volumen adecuado y sin distorsión. Comprobar la opción HP con el control del widget en el interruptor del Playback (Node[0x14] PIN en el códec ALC892, por ejemplo) puede, a veces, mejorar la calidad del audio y del volumen significativamente.
 
 ### Sonido abrupto después de reanudar la suspensión
 

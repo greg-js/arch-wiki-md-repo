@@ -13,13 +13,12 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 *   [4 Module-based Powersaving Options](#Module-based_Powersaving_Options)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Enable Glamor Acceleration Method](#Enable_Glamor_Acceleration_Method)
-    *   [5.2 Direct Rendering Infrastructure 3 (DRI3)](#Direct_Rendering_Infrastructure_3_.28DRI3.29)
-    *   [5.3 Tear-free video](#Tear-free_video)
-    *   [5.4 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_.28VSYNC.29)
-    *   [5.5 Setting scaling mode](#Setting_scaling_mode)
-    *   [5.6 KMS Issue: console is limited to small area](#KMS_Issue:_console_is_limited_to_small_area)
-    *   [5.7 H.264 decoding on GMA 4500](#H.264_decoding_on_GMA_4500)
-    *   [5.8 Setting brightness and gamma](#Setting_brightness_and_gamma)
+    *   [5.2 Tear-free video](#Tear-free_video)
+    *   [5.3 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_.28VSYNC.29)
+    *   [5.4 Setting scaling mode](#Setting_scaling_mode)
+    *   [5.5 KMS Issue: console is limited to small area](#KMS_Issue:_console_is_limited_to_small_area)
+    *   [5.6 H.264 decoding on GMA 4500](#H.264_decoding_on_GMA_4500)
+    *   [5.7 Setting brightness and gamma](#Setting_brightness_and_gamma)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 SNA issues](#SNA_issues)
     *   [6.2 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
@@ -157,17 +156,6 @@ Option      "AccelMethod"  "glamor"
 ```
 
 **Note:** This acceleration method is experimental and may not be stable for your system.
-
-### Direct Rendering Infrastructure 3 (DRI3)
-
-By default Direct Rendering Infrastructure 2 (DRI2) is used. To enable the next generation of DRI, [DRI3](https://en.wikipedia.org/wiki/Direct_Rendering_Infrastructure#DRI3 "wikipedia:Direct Rendering Infrastructure"), which contains several improvements, add the following line to your [configuration file](#Configuration):
-
-```
-Option      "DRI"    "3"
-
-```
-
-To verify that DRI3 is enabled you can check the [Xorg](/index.php/Xorg "Xorg") log files after restarting.
 
 ### Tear-free video
 

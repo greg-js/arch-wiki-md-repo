@@ -60,7 +60,9 @@ Arch users with the same laptop as you are: a minority of a minority of a minori
 
 ## Recompiling it yourself
 
-Your best resources in this endeavor are going to be [The Gentoo wiki article](http://en.gentoo-wiki.com/wiki/ACPI/Fix_common_problems), [ACPI Spec homepage](http://www.acpi.info), and [Linux ACPI Project](http://www.lesswatts.org/projects/acpi/) which supercedes the activity that occurred at *acpi.sourceforge.net*. In a nutshell, you can use Intel's ASL compiler to turn your systems DSDT table into source code, locate/fix the errors, and recompile. This process is detailed more comprehensively at the [Gentoo wiki](http://en.gentoo-wiki.com/wiki/ACPI/Fix_common_problems). You'll need to install [iasl](https://www.archlinux.org/packages/?name=iasl) to modify code, and be familiar with [Kernel Compilation#Compilation](/index.php/Kernel_Compilation#Compilation "Kernel Compilation") to install it.
+Your best resources in this endeavor are going to be [ACPI Spec homepage](http://www.acpi.info), and [Linux ACPI Project](http://www.lesswatts.org/projects/acpi/) which supercedes the activity that occurred at *acpi.sourceforge.net*. In a nutshell, you can use Intel's ASL compiler to turn your systems DSDT table into source code, locate/fix the errors, and recompile.
+
+You'll need to install [iasl](https://www.archlinux.org/packages/?name=iasl) to modify code, and be familiar with [Kernel Compilation#Compilation](/index.php/Kernel_Compilation#Compilation "Kernel Compilation") to install it.
 
 **What compiled the original code?** Check if your system's DSDT was compiled using Intel or Microsoft compiler:
 

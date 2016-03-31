@@ -422,7 +422,7 @@ Set up the LMTP and Sieve as described in [Dovecot#Sieve](/index.php/Dovecot#Sie
 Edit `/etc/dovecot/conf.d/90-sieve.conf` and add:
 
 ```
- sieve_before = /etc/dovecot/sieve.d/
+ sieve_before = /etc/dovecot/sieve.before.d/
  sieve_extensions = +vnd.dovecot.filter
  sieve_plugins = sieve_extprograms
 
@@ -435,18 +435,18 @@ Create the directory:
 
 ```
 
-Create a new file, `/etc/dovecot/sieve.d/spamassassin.sieve` which contains:
+Create a new file, `/etc/dovecot/sieve.before.d/spamassassin.sieve` which contains:
 
 ```
  require [ "vnd.dovecot.filter" ];
- filter "spamc" [ "--no-safe-fallback" ];
+ filter "spamc" [ "-d", "127.0.0.1', "--no-safe-fallback" ];
 
 ```
 
 Compile the sieve rules `spamassassin.svbin`:
 
 ```
- # cd /etc/dovecot/sieve.d
+ # cd /etc/dovecot/sieve.before.d
  # sievec spamassassin.sieve
 
 ```

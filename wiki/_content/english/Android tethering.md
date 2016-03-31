@@ -206,6 +206,6 @@ Clockworkmod Tether is a tethering app for android, but also requires software i
 
 *   Create a temporary symlink in `/usr/local/bin/python` to `/usr/bin/python2`, as multiple files refer to python2\. Then follow the instructions in the README file.
 
-*   The included *adb* binary requires [Multilib](/index.php/Multilib "Multilib") and [installation](/index.php/Install "Install") of the [lib32-stdc++5](https://www.archlinux.org/packages/?name=lib32-stdc%2B%2B5) and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) packages. Use *ldd* to find any other missing libraries.
+*   The included *adb* binary requires [Multilib](/index.php/Multilib "Multilib") and [installation](/index.php/Install "Install") of the [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) packages. Use *ldd* to find any other missing libraries.
 
 When *adb* is working, the command line will repeated say "Checking phone status...". Make sure you launch the android app as well.

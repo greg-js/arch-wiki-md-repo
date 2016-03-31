@@ -1,77 +1,32 @@
 ## Contents
 
-*   [1 Q: 在 Xorg 或是 XFree86 中，我該如何設定並啟用滑鼠的滾輪功能?](#Q:_.E5.9C.A8_Xorg_.E6.88.96.E6.98.AF_XFree86_.E4.B8.AD.EF.BC.8C.E6.88.91.E8.A9.B2.E5.A6.82.E4.BD.95.E8.A8.AD.E5.AE.9A.E4.B8.A6.E5.95.9F.E7.94.A8.E6.BB.91.E9.BC.A0.E7.9A.84.E6.BB.BE.E8.BC.AA.E5.8A.9F.E8.83.BD.3F)
-*   [2 About / Prerequisites](#About_.2F_Prerequisites)
-*   [3 Installing the evdev Drivers](#Installing_the_evdev_Drivers)
-*   [4 Finding the Mouse Name](#Finding_the_Mouse_Name)
-*   [5 Configuring Xorg](#Configuring_Xorg)
-*   [6 Post Configuration](#Post_Configuration)
-    *   [6.1 Google Chrome](#Google_Chrome)
-    *   [6.2 Opera](#Opera)
-    *   [6.3 Firefox](#Firefox)
-        *   [6.3.1 Horizontal Scroll](#Horizontal_Scroll)
-    *   [6.4 Firefox3](#Firefox3)
-        *   [6.4.1 Thumb Buttons - Forward and Back](#Thumb_Buttons_-_Forward_and_Back)
-    *   [6.5 xmodmap tweaking](#xmodmap_tweaking)
-*   [7 Alternate Methods](#Alternate_Methods)
-    *   [7.1 Method 1 - IMPS/2](#Method_1_-_IMPS.2F2)
-    *   [7.2 Method 2 - ExplorerPS/2](#Method_2_-_ExplorerPS.2F2)
-    *   [7.3 Method 3 - Auto](#Method_3_-_Auto)
-    *   [7.4 Method 4 - btnx (DEPRECATED!!)](#Method_4_-_btnx_.28DEPRECATED.21.21.29)
-    *   [7.5 Method 5 - easystroke](#Method_5_-_easystroke)
-    *   [7.6 Firefox 3 button 6 + 7 correction:](#Firefox_3_button_6_.2B_7_correction:)
-*   [8 Binding keyboard to mouse buttons](#Binding_keyboard_to_mouse_buttons)
-    *   [8.1 xvkbd and xbindkeys](#xvkbd_and_xbindkeys)
-    *   [8.2 Why standard methods are not enough?](#Why_standard_methods_are_not_enough.3F)
-    *   [8.3 kbde](#kbde)
-    *   [8.4 evrouter](#evrouter)
-    *   [8.5 Binding + and - in Logitech G5 mouse](#Binding_.2B_and_-_in_Logitech_G5_mouse)
-    *   [8.6 Startup scripts](#Startup_scripts)
-*   [9 User Tools](#User_Tools)
-*   [10 Credits](#Credits)
-
-#### Q: 在 Xorg 或是 XFree86 中，我該如何設定並啟用滑鼠的滾輪功能?
-
-**A:** 要啟用滑鼠的滾輪功能，你必須依照使用的 X 伺服器，分別修改 `/etc/X11/xorg.conf 或是 /etc/X11/XF86Config` 這個設定檔。對決大部分包含滾輪功能的滑鼠，你只需要在滑鼠 (Mouse) 的設定區段加上
-
-```
-Option "ZAxisMapping" "4 5"
-
-```
-
-這一行，例如:
-
-```
-  Section "InputDevice"
-    Identifier "Mouse"
-    Driver "mouse"
-    Option "Protocol" "ExplorerPS/2"
-    Option "Device" "/dev/input/mice"
-    Option "ZAxisMapping" "4 5"
-  EndSection
-
-```
-
-對於一些比較特別的滑鼠 (例如多滾輪式，超過三個以上的按鈕的，有滾輪摹擬功能的，等等)，你可能需要先搜尋一下，使用 [[Google Linux](http://www.google.com/linux)] 找一下 `滑鼠的名稱 configuration`，看看有沒有你的滑鼠相關的教學文件。有時候，你可能需要加上 Option "Buttons" "#" 這個設定，然後把滾輪對應到其他除了 4 和 5 以外的按鈕上。
-
-例如，一個4個按鈕的滑鼠，並且不含滾輪:
-
-```
-  Section "InputDevice"
-    Identifier  "Mouse"
-    Driver "mouse"
-    Option "Protocol" "ExplorerPS/2"
-    Option "Device" "/dev/input/mouse0"
-    Option "Buttons" "6"
-    Option "ZAxisMapping" "5 6"
-    Option "Emulate3Buttons" "off"
-    Option "EmulateWheel" "on"
-    Option "EmulateWheelButton" "4"
-  EndSection
-
-```
-
-請參閱 : [Xorg 的安裝與設定](/index.php/Xorg_%E7%9A%84%E5%AE%89%E8%A3%9D%E8%88%87%E8%A8%AD%E5%AE%9A "Xorg 的安裝與設定")
+*   [1 About / Prerequisites](#About_.2F_Prerequisites)
+*   [2 Finding the Mouse Name](#Finding_the_Mouse_Name)
+*   [3 Configuring Xorg](#Configuring_Xorg)
+*   [4 Post Configuration](#Post_Configuration)
+    *   [4.1 Google Chrome](#Google_Chrome)
+    *   [4.2 Opera](#Opera)
+    *   [4.3 Firefox](#Firefox)
+        *   [4.3.1 Horizontal Scroll](#Horizontal_Scroll)
+    *   [4.4 Firefox3](#Firefox3)
+        *   [4.4.1 Thumb Buttons - Forward and Back](#Thumb_Buttons_-_Forward_and_Back)
+    *   [4.5 xmodmap tweaking](#xmodmap_tweaking)
+*   [5 Alternate Methods](#Alternate_Methods)
+    *   [5.1 Method 1 - IMPS/2](#Method_1_-_IMPS.2F2)
+    *   [5.2 Method 2 - ExplorerPS/2](#Method_2_-_ExplorerPS.2F2)
+    *   [5.3 Method 3 - Auto](#Method_3_-_Auto)
+    *   [5.4 Method 4 - btnx (DEPRECATED!!)](#Method_4_-_btnx_.28DEPRECATED.21.21.29)
+    *   [5.5 Method 5 - easystroke](#Method_5_-_easystroke)
+    *   [5.6 Firefox 3 button 6 + 7 correction:](#Firefox_3_button_6_.2B_7_correction:)
+*   [6 Binding keyboard to mouse buttons](#Binding_keyboard_to_mouse_buttons)
+    *   [6.1 xvkbd and xbindkeys](#xvkbd_and_xbindkeys)
+    *   [6.2 Why standard methods are not enough?](#Why_standard_methods_are_not_enough.3F)
+    *   [6.3 kbde](#kbde)
+    *   [6.4 evrouter](#evrouter)
+    *   [6.5 Binding + and - in Logitech G5 mouse](#Binding_.2B_and_-_in_Logitech_G5_mouse)
+    *   [6.6 Startup scripts](#Startup_scripts)
+*   [7 User Tools](#User_Tools)
+*   [8 Credits](#Credits)
 
 ### About / Prerequisites
 
@@ -84,26 +39,6 @@ We will be using the <tt>evdev</tt> driver for Xorg. EVentDEVice is an advanced 
 *   Note that <tt>evdev</tt> is both a kernel module and an Xorg input driver. All the Arch kernels come with the <tt>evdev</tt> module.
 
 With the newer xorg 11R7.0 it seems only the following changes to /etc/X11/xorg.conf need to be made with nothing else needing to be done.
-
-### Installing the evdev Drivers
-
-**Note:** As of Xorg 7.4 which is now in the repositories, the following three sections are no longer required as long as you are using the input device auto-detection. I shall leave it here for people who are not using auto-detection for some reason, but those who are can skip to [Post Configuration](/index.php/Get_All_Mouse_Buttons_Working#Post_Configuration "Get All Mouse Buttons Working").
-
-The first thing you need to do is install Xorg evdev package. The package can be found in `[Extra]` and is named [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev).
-
-```
-# pacman -S xf86-input-evdev
-
-```
-
-After it has been installed, modprobe the evdev module:
-
-```
-#modprobe evdev
-
-```
-
-Now check the output of <tt>dmesg</tt> and make sure that evdev didn't have any errors. If everything worked, move on to the next section.
 
 ### Finding the Mouse Name
 
@@ -354,7 +289,7 @@ xbindkeys
 
 ```
 
-The above info and more help may be found in the [MX1000_Buttons](/index.php/MX1000_Buttons "MX1000 Buttons") wiki.
+The above info and more help may be found in the [MX1000 Buttons](/index.php/MX1000_Buttons "MX1000 Buttons") wiki.
 
 #### xmodmap tweaking
 

@@ -47,22 +47,22 @@ Qui è presente una tabella dove sono inserite le pagine da tradurre suddivisa i
 *   **Traduttore** - Qui si immette il nome dell'utente che si è preso carico della pagina da tradurre, serve ad avvisare agli altri utenti che è già sotto revisione.
 *   **Stato** - L'ultima voce della tabella serve a descrivere semplicemente l'andamento della traduzione che può essere: **In Corso** o **Completata**.
 
-L'apposizione dello stato "*Completata*" fa sì che il responsabile di turno sposti il wiki tradotto completamente nella sezione [Revisioni](/index.php/Traduzioni#Revisioni "Traduzioni"), **non sta al traduttore prendersi carico di questo onere**.
+L'apposizione dello stato "*Completata*" fa sì che il responsabile di turno sposti il wiki tradotto completamente nella sezione [Revisioni](#Revisioni), **non sta al traduttore prendersi carico di questo onere**.
 
 **Nota:** Ricordarsi di tradurre sia il sommario, sia i link relativi alle categorie.
 
 | Pagina - Paragrafi | Note | Traduttore | Stato |
 | [dm-crypt with LUKS (Italiano)](/index.php/Dm-crypt_with_LUKS_(Italiano) "Dm-crypt with LUKS (Italiano)") | Pagina da allineare e tradurre | maveloth | in corso |
-| [Disk_Encryption (Italiano)](/index.php/Disk_Encryption_(Italiano) "Disk Encryption (Italiano)") | Pagina da completare la traduzione | n/a | traduzione incompleta |
+| [Disk encryption (Italiano)](/index.php/Disk_encryption_(Italiano) "Disk encryption (Italiano)") | Pagina da completare la traduzione | n/a | traduzione incompleta |
 | [Android (Italiano)](/index.php/Android_(Italiano) "Android (Italiano)") | n/a | SirX | In corso |
 | [Eclipse (Italiano)](/index.php/Eclipse_(Italiano) "Eclipse (Italiano)") | Pagina da tradurre allineata il 09/10/2011 | n/a | n/a |
 | [Larch (Italiano)](/index.php/Larch_(Italiano) "Larch (Italiano)") | Pagina creata il 10 gennaio | n/a | n/a |
 | [Plasma (Italiano)](/index.php/Plasma_(Italiano) "Plasma (Italiano)") | Pagina allineata il 27/12/2010 | Trapanator | In corso |
 | [PostgreSQL (Italiano)](/index.php/PostgreSQL_(Italiano) "PostgreSQL (Italiano)") | Traduzione incompleta | n/a | n/a |
-| [Python Package Guidelines (Italiano)](/index.php/Python_Package_Guidelines_(Italiano) "Python Package Guidelines (Italiano)") | Pagina da riallineare | NoMore | In corso |
-| [Ruby Gem Package Guidelines (Italiano)](/index.php/Ruby_Gem_Package_Guidelines_(Italiano) "Ruby Gem Package Guidelines (Italiano)") | Pagina da riallineare | n/a | n/a |
+| [Python package guidelines (Italiano)](/index.php/Python_package_guidelines_(Italiano) "Python package guidelines (Italiano)") | Pagina da riallineare | NoMore | In corso |
+| [Ruby Gem package guidelines (Italiano)](/index.php/Ruby_Gem_package_guidelines_(Italiano) "Ruby Gem package guidelines (Italiano)") | Pagina da riallineare | n/a | n/a |
 | [System Encryption with eCryptfs (Italiano)](/index.php/System_Encryption_with_eCryptfs_(Italiano) "System Encryption with eCryptfs (Italiano)") | Pagina da riallineare | n/a | n/a |
-| [User:Maveloth#Pagine_con_riferimenti_a_kernel26](/index.php/User:Maveloth#Pagine_con_riferimenti_a_kernel26 "User:Maveloth") | Lista delle pagine che utilizzano ancora la dicitura al kernel26 invece che a **linux** | n/a | n/a |
+| [User:Maveloth#Pagine con riferimenti a kernel26](/index.php/User:Maveloth#Pagine_con_riferimenti_a_kernel26 "User:Maveloth") | Lista delle pagine che utilizzano ancora la dicitura al kernel26 invece che a **linux** | n/a | n/a |
 
 **Nota:** É importante segnare la data di ultimo allineamento con l'articolo inglese, questo serve a tenerne traccia nel tempo.
 
@@ -78,13 +78,13 @@ In questa sezione vengono messi i vari articoli del wiki presenti in lingua ital
 
 Alcuni accorgimenti prima di procedere all'adozione di una pagina:
 
-*   Controllare le [preferenze del vostro profilo](https://wiki.archlinux.org/index.php/Special:Preferences) sul wiki e selezionare l'opzione (disattivata di default) per essere avvisati via e-mail dei cambiamenti nelle pagine da voi messe sotto osservazione. In particolare devono essere spuntate tutte le seguenti opzioni:
+*   Controllare le [preferenze del vostro profilo](/index.php/Special:Preferences "Special:Preferences") sul wiki e selezionare l'opzione (disattivata di default) per essere avvisati via e-mail dei cambiamenti nelle pagine da voi messe sotto osservazione. In particolare devono essere spuntate tutte le seguenti opzioni:
 
 	Segnalami via e-mail le modifiche alle pagine osservate <br\> Segnalami via e-mail le modifiche alla mia pagina di discussione <br\> Segnalami via e-mail anche le modifiche minori
 
-*   Andando sul wiki da seguire e premendo sul link **Segui** situato affianco a "Cronologia", è possibile aggiungere la pagina desiderata tra i propri [Osservati Speciali](https://wiki.archlinux.org/index.php/Special:Watchlist), accessibile nel menu del proprio profilo. È possibile aggiungere le pagine anche manualmente cliccando su [Modifica la lista in formato testo](https://wiki.archlinux.org/index.php/Special:Watchlist/raw) (fate attenzione all'ortografia e in caso di più pagine aggiungetele una sotto l'altra). Facoltativamente è consigliabile aggiungere anche la propria pagina italiana tra quelle da "seguire", in modo che si venga avvistati di eventuali modifiche da parte di altri utenti, evitando anche eventuali errori.
+*   Andando sul wiki da seguire e premendo sul link **Segui** situato affianco a "Cronologia", è possibile aggiungere la pagina desiderata tra i propri [Osservati Speciali](/index.php/Special:Watchlist "Special:Watchlist"), accessibile nel menu del proprio profilo. È possibile aggiungere le pagine anche manualmente cliccando su [Modifica la lista in formato testo](/index.php/Special:Watchlist/raw "Special:Watchlist/raw") (fate attenzione all'ortografia e in caso di più pagine aggiungetele una sotto l'altra). Facoltativamente è consigliabile aggiungere anche la propria pagina italiana tra quelle da "seguire", in modo che si venga avvistati di eventuali modifiche da parte di altri utenti, evitando anche eventuali errori.
 
-Dalla pagina [Osservati Speciali](https://wiki.archlinux.org/index.php/Special:Watchlist) e possibile seguire tutte le variazioni delle pagine da noi adottate in un unico resoconto. Se avete seguito attentamente la procedura indicata, verrete contattati via email nel caso di cambiamenti anche minori delle pagine adottate.
+Dalla pagina [Osservati Speciali](/index.php/Special:Watchlist "Special:Watchlist") e possibile seguire tutte le variazioni delle pagine da noi adottate in un unico resoconto. Se avete seguito attentamente la procedura indicata, verrete contattati via email nel caso di cambiamenti anche minori delle pagine adottate.
 
 **Nota:** Nella email che vi viene mandata come avviso, vi sarà anche un link diretto alla Diff della cronologia dell'articolo preso in esame (è il secondo link in ordine). **Fate attenzione**, non sempre le modifiche mostrate sono complete, soprattutto nel caso di molte modifiche ravvicinate. É preferibile, una volta ricevuto l'avviso di revisione, procedere con un Diff personalizzato, impostando una data antecedente all'ultima revisione nella scheda *cronologia*. Un'altra peculiarità osservata, è che visitando le pagine senza aver effettuato il login, dopo aver ricevuto le email, o modificandole in un momento successivo, il sistema smette di inviare le notifiche, in quanto considera l'utente non più interessato a riceverle. Meglio quindi, per sicurezza, dare una controllata "manuale" alle proprie pagine ogni tanto.
 
@@ -92,11 +92,11 @@ Facoltativo:
 
 *   Atom feeds: è anche possibile ricevere notifiche sull'attività di tutte le pagine wiki aggiungendo il seguente link [Archwiki Atom feed](https://wiki.archlinux.org/index.php?title=Special:RecentChanges&feed=atom) al proprio lettore Feed preferito (akregator, liferea, ecc).
 
-**Suggerimento:** Può risultare utile avere un *feed Atom personalizzato* per le sole pagine che state seguendo. Per ottenerlo basta andare nella pagina dei vostri [Osservati Speciali](https://wiki.archlinux.org/index.php/Special:Watchlist) (bisogna aver effettuato il login al wiki per raggiungerlo), successivamente seguire il link **Feed Atom** sulla sinistra nel menu *strumenti* e aggiungerlo al proprio lettore Feed.
+**Suggerimento:** Può risultare utile avere un *feed Atom personalizzato* per le sole pagine che state seguendo. Per ottenerlo basta andare nella pagina dei vostri [Osservati Speciali](/index.php/Special:Watchlist "Special:Watchlist") (bisogna aver effettuato il login al wiki per raggiungerlo), successivamente seguire il link **Feed Atom** sulla sinistra nel menu *strumenti* e aggiungerlo al proprio lettore Feed.
 
 ### Tabella riassuntiva dei wiki revisionati e adottati
 
-Vengono presentati tutti gli articoli suddivisi in due tabelle a seconda delle priorità ([Articoli Princpali](/index.php/ArchWiki_Translation_Team_(Italiano)#Articoli_principali "ArchWiki Translation Team (Italiano)") e [Articoli Secondari](/index.php/ArchWiki_Translation_Team_(Italiano)#Articoli_secondari "ArchWiki Translation Team (Italiano)")). Teoricamente sarebbe consono adottare prima tutte le pagine presenti nella prima tabella. Il contenuto delle tabelle viene discusso sul [froum](http://www.archlinux.it/forum/viewtopic.php?f=19&t=8483) e può variare in base alle esigenze della comunità.
+Vengono presentati tutti gli articoli suddivisi in due tabelle a seconda delle priorità ([Articoli Princpali](#Articoli_principali) e [Articoli Secondari](#Articoli_secondari)). Teoricamente sarebbe consono adottare prima tutte le pagine presenti nella prima tabella. Il contenuto delle tabelle viene discusso sul [froum](http://www.archlinux.it/forum/viewtopic.php?f=19&t=8483) e può variare in base alle esigenze della comunità.
 
 Le tabelle contengono cinque voci:
 
@@ -113,13 +113,13 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | Pagina | Ultima revisione | Revisore | Redirect Ita | Note |
 | [Advanced Linux Sound Architecture (Italiano)](/index.php/Advanced_Linux_Sound_Architecture_(Italiano) "Advanced Linux Sound Architecture (Italiano)") | 2013-07-20 | 4javier | n/a | n/a |
 | [AMD Catalyst (Italiano)](/index.php/AMD_Catalyst_(Italiano) "AMD Catalyst (Italiano)") | 2013-02-27 | umby213 | n/a | n/a |
-| [Arch Boot Process (Italiano)](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)") | 2014-01-05 | Kynikos | n/a | Cedibile |
+| [Arch boot process (Italiano)](/index.php/Arch_boot_process_(Italiano) "Arch boot process (Italiano)") | 2014-01-05 | Kynikos | n/a | Cedibile |
 | [Arch Build System (Italiano)](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)") | 2013-07-21 | 4javier | n/a | n/a |
 | [Arch Linux (Italiano)](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") | 2012-11-06 | icetux | n/a | n/a |
 | [Arch User Repository (Italiano)](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)") | 2014-01-05 | Kynikos | n/a | Cedibile |
 | [Arch64 FAQ (Italiano)](/index.php/Arch64_FAQ_(Italiano) "Arch64 FAQ (Italiano)") | 2014-03-03 | Veleno77 | n/a | n/a |
 | [ATI (Italiano)](/index.php/ATI_(Italiano) "ATI (Italiano)") | 2013-07-22 | 4javier | n/a | n/a |
-| [Beginners' Guide (Italiano)](/index.php/Beginners%27_Guide_(Italiano) "Beginners' Guide (Italiano)") | 2014-03-09 | Veleno77 | [Guida per Principianti](/index.php/Guida_per_Principianti "Guida per Principianti") | n/a |
+| [Beginners' guide (Italiano)](/index.php/Beginners%27_guide_(Italiano) "Beginners' guide (Italiano)") | 2014-03-09 | Veleno77 | [Guida per Principianti](/index.php/Guida_per_Principianti "Guida per Principianti") | n/a |
 | [Configuring Network (Italiano)](/index.php/Configuring_Network_(Italiano) "Configuring Network (Italiano)") | 2012-10-04 | icetux | [Configurazione della Rete](/index.php/Configurazione_della_Rete "Configurazione della Rete") | n/a |
 | [CUPS (Italiano)](/index.php/CUPS_(Italiano) "CUPS (Italiano)") | 2013-02-27 | umby213 | n/a | n/a |
 | [FAQ (Italiano)](/index.php/FAQ_(Italiano) "FAQ (Italiano)") | 2012-08-20 | umby213 | [Domande Frequenti](/index.php/Domande_Frequenti "Domande Frequenti") | in allineamento --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 09:46, 15 December 2012 (UTC) |
@@ -127,16 +127,16 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [GNOME (Italiano)](/index.php/GNOME_(Italiano) "GNOME (Italiano)") | 2011-12-3 | Cylon | n/a | In allineamento |
 | [GRUB2 (Italiano)](/index.php/GRUB2_(Italiano) "GRUB2 (Italiano)") | 2012-01-19 | Hilinus | n/a | n/a |
 | [Help:Style (Italiano)](/index.php/Help:Style_(Italiano) "Help:Style (Italiano)") | 2014-01-12 | Kynikos | n/a | Cedibile |
-| [Installation Guide (Italiano)](/index.php/Installation_Guide_(Italiano) "Installation Guide (Italiano)") | 2014-03-03 | Veleno77 | [Guida all'installazione](/index.php/Guida_all%27installazione "Guida all'installazione") | n/a |
+| [Installation guide (Italiano)](/index.php/Installation_guide_(Italiano) "Installation guide (Italiano)") | 2014-03-03 | Veleno77 | [Guida all'installazione](/index.php/Guida_all%27installazione "Guida all'installazione") | n/a |
 | [Intel (Italiano)](/index.php/Intel_(Italiano) "Intel (Italiano)") | 2014-03-09 | Veleno77 | n/a | n/a |
 | [KDE (Italiano)](/index.php/KDE_(Italiano) "KDE (Italiano)") | 2014-03-06 | Veleno77 | n/a | n/a |
 | [Laptop (Italiano)](/index.php/Laptop_(Italiano) "Laptop (Italiano)") | 2013-09-22 | Nierro | n/a | n/a |
 | [Locale (Italiano)](/index.php/Locale_(Italiano) "Locale (Italiano)") | 2014-03-09 | Veleno77 | n/a | n/a |
-| [Main Page (Italiano)](/index.php/Main_Page_(Italiano) "Main Page (Italiano)") | 2014-03-03 | Veleno77 | n/a | n/a |
+| [Main page (Italiano)](/index.php/Main_page_(Italiano) "Main page (Italiano)") | 2014-03-03 | Veleno77 | n/a | n/a |
 | [Makepkg (Italiano)](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)") | 2012-11-29 | icetux | n/a | n/a |
 | [Nouveau (Italiano)](/index.php/Nouveau_(Italiano) "Nouveau (Italiano)") | 2014-03-03 | Veleno77 | n/a | n/a |
 | [NVIDIA (Italiano)](/index.php/NVIDIA_(Italiano) "NVIDIA (Italiano)") | 2014-03-03 | Veleno77 | n/a | n/a |
-| [Official Repositories (Italiano)](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") | 2012-10-04 | icetux | [Repository Ufficiali](/index.php/Repository_Ufficiali "Repository Ufficiali") | n/a |
+| [Official repositories (Italiano)](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") | 2012-10-04 | icetux | [Repository Ufficiali](/index.php/Repository_Ufficiali "Repository Ufficiali") | n/a |
 | [Openbox (Italiano)](/index.php/Openbox_(Italiano) "Openbox (Italiano)") | 2013-07-21 | 4javier | n/a | n/a |
 | [Pacman (Italiano)](/index.php/Pacman_(Italiano) "Pacman (Italiano)") | 2014-01-12 | Kynikos | n/a | Cedibile |
 | [Pacman-key (Italiano)](/index.php/Pacman-key_(Italiano) "Pacman-key (Italiano)") | 2012-01-19 | Hilinus | n/a | n/a |
@@ -156,9 +156,9 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Udev (Italiano)](/index.php/Udev_(Italiano) "Udev (Italiano)") | 2011-12-08 | ninquitassar | n/a | n/a |
 | [Unified Extensible Firmware Interface (Italiano)](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)") | 2013-03-03 | maveloth | n/a | n/a |
 | [USB Installation Media (Italiano)](/index.php/USB_Installation_Media_(Italiano) "USB Installation Media (Italiano)") | 2013-05-02 | umby213 | [Installare da supporto USB](/index.php/Installare_da_supporto_USB "Installare da supporto USB") | n/a |
-| [Users and Groups (Italiano)](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") | 2014-03-03 | Veleno77 | [Utenti e Gruppi](/index.php/Utenti_e_Gruppi "Utenti e Gruppi") | n/a |
+| [Users and groups (Italiano)](/index.php/Users_and_groups_(Italiano) "Users and groups (Italiano)") | 2014-03-03 | Veleno77 | [Utenti e Gruppi](/index.php/Utenti_e_Gruppi "Utenti e Gruppi") | n/a |
 | [Wireless Setup (Italiano)](/index.php/Wireless_Setup_(Italiano) "Wireless Setup (Italiano)") | 2012-02-13 | Hilinus | [Configurazione Wireless](/index.php/Configurazione_Wireless "Configurazione Wireless") | n/a |
-| [WPA Supplicant (Italiano)](/index.php/WPA_Supplicant_(Italiano) "WPA Supplicant (Italiano)") | 2012-02-07 | Hilinus | n/a | n/a |
+| [WPA supplicant (Italiano)](/index.php/WPA_supplicant_(Italiano) "WPA supplicant (Italiano)") | 2012-02-07 | Hilinus | n/a | n/a |
 | [Xfce (Italiano)](/index.php/Xfce_(Italiano) "Xfce (Italiano)") | 2014-03-03 | Veleno77 | n/a | n/a |
 | [Xinitrc (Italiano)](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)") | 2013-05-02 | umby213 | n/a | n/a |
 | [Xorg (Italiano)](/index.php/Xorg_(Italiano) "Xorg (Italiano)") | 2014-03-06 | Veleno77 | n/a | n/a |
@@ -170,10 +170,10 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Acpid (Italiano)](/index.php/Acpid_(Italiano) "Acpid (Italiano)") | 2013-08-03 | Nierro | n/a | n/a |
 | [Activating Numlock on Bootup (Italiano)](/index.php/Activating_Numlock_on_Bootup_(Italiano) "Activating Numlock on Bootup (Italiano)") | n/a | n/a | [Attivare Numlock all'Avvio](/index.php/Attivare_Numlock_all%27Avvio "Attivare Numlock all'Avvio") | Out of date |
 | [Advanced Linux Sound Architecture/Example Configurations (Italiano)](/index.php/Advanced_Linux_Sound_Architecture/Example_Configurations_(Italiano) "Advanced Linux Sound Architecture/Example Configurations (Italiano)") | 2012-02-07 | 4javier | n/a | n/a |
-| [Allow Users to Shutdown (Italiano)](/index.php/Allow_Users_to_Shutdown_(Italiano) "Allow Users to Shutdown (Italiano)") | 2012-12-16 | umby213 | [Permettere Spegnimento agli Utenti](/index.php/Permettere_Spegnimento_agli_Utenti "Permettere Spegnimento agli Utenti") | n/a |
+| [Allow users to shutdown (Italiano)](/index.php/Allow_users_to_shutdown_(Italiano) "Allow users to shutdown (Italiano)") | 2012-12-16 | umby213 | [Permettere Spegnimento agli Utenti](/index.php/Permettere_Spegnimento_agli_Utenti "Permettere Spegnimento agli Utenti") | n/a |
 | [Amarok 2 (Italiano)](/index.php/Amarok_2_(Italiano) "Amarok 2 (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
-| [Android Notifier (Italiano)](/index.php/Android_Notifier_(Italiano) "Android Notifier (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
-| [Arch Compared to Other Distributions (Italiano)](/index.php/Arch_Compared_to_Other_Distributions_(Italiano) "Arch Compared to Other Distributions (Italiano)") | 2012-01-19 | Toketin | [Arch Comparato con altre Distribuzioni](/index.php/Arch_Comparato_con_altre_Distribuzioni "Arch Comparato con altre Distribuzioni") | Da controllare la formattazzione Html [Veleno](/index.php/User:Veleno77 "User:Veleno77") 11:17, 19 January 2012 (EST) |
+| [Android notifier (Italiano)](/index.php/Android_notifier_(Italiano) "Android notifier (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
+| [Arch compared to other distributions (Italiano)](/index.php/Arch_compared_to_other_distributions_(Italiano) "Arch compared to other distributions (Italiano)") | 2012-01-19 | Toketin | [Arch Comparato con altre Distribuzioni](/index.php/Arch_Comparato_con_altre_Distribuzioni "Arch Comparato con altre Distribuzioni") | Da controllare la formattazzione Html [Veleno](/index.php/User:Veleno77 "User:Veleno77") 11:17, 19 January 2012 (EST) |
 | [Arch wine PKGBUILD guidelines (Italiano)](/index.php/Arch_wine_PKGBUILD_guidelines_(Italiano) "Arch wine PKGBUILD guidelines (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
 | [Archiso (Italiano)](/index.php/Archiso_(Italiano) "Archiso (Italiano)") | 2012-02-05 | n/a | n/a | **da riallineare** -- [Kynikos](/index.php/User:Kynikos "User:Kynikos") 07:06, 24 March 2012 (EDT) |
 | [ArchWiki:About (Italiano)](/index.php/ArchWiki:About_(Italiano) "ArchWiki:About (Italiano)") | n/a | n/a | n/a | **Controllare allineamento** [Veleno](/index.php/User:Veleno77 "User:Veleno77") 18:02, 10 March 2012 (EST) |
@@ -184,7 +184,7 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Bash (Italiano)](/index.php/Bash_(Italiano) "Bash (Italiano)") | 2012-02-01 | n/a | n/a | n/a |
 | [Bluetooth (Italiano)](/index.php/Bluetooth_(Italiano) "Bluetooth (Italiano)") | 2012-10-14 | icetux | n/a | n/a |
 | [BOINC (Italiano)](/index.php/BOINC_(Italiano) "BOINC (Italiano)") | n/a | n/a | n/a | out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:39, 24 September 2012 (UTC) |
-| [Boot Debugging (Italiano)](/index.php/Boot_Debugging_(Italiano) "Boot Debugging (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
+| [Boot debugging (Italiano)](/index.php/Boot_debugging_(Italiano) "Boot debugging (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
 | [Bootchart (Italiano)](/index.php/Bootchart_(Italiano) "Bootchart (Italiano)") | n/a | n/a | n/a | Out of date; versione inglese segnata a sua volta come Out of Date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:39, 24 September 2012 (UTC) |
 | [Bumblebee (Italiano)](/index.php/Bumblebee_(Italiano) "Bumblebee (Italiano)") | 2014-03-09 | Veleno77 | n/a | n/a |
 | [Burg (Italiano)](/index.php/Burg_(Italiano) "Burg (Italiano)") | 2011-09-21 | Toketin | n/a | n/a |
@@ -197,22 +197,22 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Compiz Troubleshooting (Italiano)](/index.php/Compiz_Troubleshooting_(Italiano) "Compiz Troubleshooting (Italiano)") | 2012-01-19 | NoMore | n/a | n/a |
 | [Conky (Italiano)](/index.php/Conky_(Italiano) "Conky (Italiano)") | 2011-09-21 | Ninquitassar | n/a | **Da Ri-allineare** [Veleno](/index.php/User:Veleno77 "User:Veleno77") 11:17, 19 January 2012 (EST) |
 | [Connman (Italiano)](/index.php/Connman_(Italiano) "Connman (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
-| [Console Mouse Support (Italiano)](/index.php/Console_Mouse_Support_(Italiano) "Console Mouse Support (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
+| [Console mouse support (Italiano)](/index.php/Console_mouse_support_(Italiano) "Console mouse support (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
 | [ConsoleKit (Italiano)](/index.php/ConsoleKit_(Italiano) "ConsoleKit (Italiano)") | 2012-12-16 | umby213 | n/a | n/a |
-| [CPU Frequency Scaling (Italiano)](/index.php/CPU_Frequency_Scaling_(Italiano) "CPU Frequency Scaling (Italiano)") | 2014-03-07 | Veleno77 | [Variazione di frequenza CPU](/index.php/Variazione_di_frequenza_CPU "Variazione di frequenza CPU") | n/a |
-| [Creating Packages (Italiano)](/index.php/Creating_Packages_(Italiano) "Creating Packages (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
+| [CPU frequency scaling (Italiano)](/index.php/CPU_frequency_scaling_(Italiano) "CPU frequency scaling (Italiano)") | 2014-03-07 | Veleno77 | [Variazione di frequenza CPU](/index.php/Variazione_di_frequenza_CPU "Variazione di frequenza CPU") | n/a |
+| [Creating packages (Italiano)](/index.php/Creating_packages_(Italiano) "Creating packages (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
 | [Cwm (Italiano)](/index.php/Cwm_(Italiano) "Cwm (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
 | [Daemon (Italiano)](/index.php/Daemon_(Italiano) "Daemon (Italiano)") | 2012-11-06 | n/a | [Demoni](/index.php/Demoni "Demoni") | n/a |
 | [Deltup (Italiano)](/index.php/Deltup_(Italiano) "Deltup (Italiano)") | n/a | n/a | n/a | out of date; versione inglese "need expansions" --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
-| [Desktop Environment (Italiano)](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") | 2014-03-09 | Veleno77 | n/a | n/a |
+| [Desktop environment (Italiano)](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") | 2014-03-09 | Veleno77 | n/a | n/a |
 | [Digital Cameras (Italiano)](/index.php/Digital_Cameras_(Italiano) "Digital Cameras (Italiano)") | 2012-01-19 | n/a | [Fotocamere Digitali](/index.php/Fotocamere_Digitali "Fotocamere Digitali") | n/a |
-| [Disk Cloning (Italiano)](/index.php/Disk_Cloning_(Italiano) "Disk Cloning (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
-| [Display Manager (Italiano)](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") | 2012-01-19 | Hilinus | [Avviare automaticamente un gestore login grafico all'avvio](/index.php/Avviare_automaticamente_un_gestore_login_grafico_all%27avvio "Avviare automaticamente un gestore login grafico all'avvio") | n/a |
+| [Disk cloning (Italiano)](/index.php/Disk_cloning_(Italiano) "Disk cloning (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
+| [Display manager (Italiano)](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") | 2012-01-19 | Hilinus | [Avviare automaticamente un gestore login grafico all'avvio](/index.php/Avviare_automaticamente_un_gestore_login_grafico_all%27avvio "Avviare automaticamente un gestore login grafico all'avvio") | n/a |
 | [Dnsmasq (Italiano)](/index.php/Dnsmasq_(Italiano) "Dnsmasq (Italiano)") | 2012-11-20 | maveloth | n/a | n/a |
-| [Downgrading Packages (Italiano)](/index.php/Downgrading_Packages_(Italiano) "Downgrading Packages (Italiano)") | 2012-11-06 | icetux | n/a | n/a |
+| [Downgrading packages (Italiano)](/index.php/Downgrading_packages_(Italiano) "Downgrading packages (Italiano)") | 2012-11-06 | icetux | n/a | n/a |
 | [Dropbox (Italiano)](/index.php/Dropbox_(Italiano) "Dropbox (Italiano)") | 2013-02-27 | umby213 | n/a | n/a |
 | [Drupal (Italiano)](/index.php/Drupal_(Italiano) "Drupal (Italiano)") | n/a | n/a | n/a | Out of Date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:39, 24 September 2012 (UTC) |
-| [Eclipse Plugin Package Guidelines (Italiano)](/index.php/Eclipse_Plugin_Package_Guidelines_(Italiano) "Eclipse Plugin Package Guidelines (Italiano)") | 2012-09-04 | n/a | n/a | n/a |
+| [Eclipse plugin package guidelines (Italiano)](/index.php/Eclipse_plugin_package_guidelines_(Italiano) "Eclipse plugin package guidelines (Italiano)") | 2012-09-04 | n/a | n/a | n/a |
 | [Enlightenment (Italiano)](/index.php/Enlightenment_(Italiano) "Enlightenment (Italiano)") | 2014-03-09 | Veleno77 | n/a | n/a |
 | [Evilwm (Italiano)](/index.php/Evilwm_(Italiano) "Evilwm (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
 | [Exaile (Italiano)](/index.php/Exaile_(Italiano) "Exaile (Italiano)") | n/a | n/a | n/a | Out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:39, 24 September 2012 (UTC) |
@@ -220,23 +220,23 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Ext3 (Italiano)](/index.php/Ext3_(Italiano) "Ext3 (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
 | [Ext4 (Italiano)](/index.php/Ext4_(Italiano) "Ext4 (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
 | [FAM (Italiano)](/index.php/FAM_(Italiano) "FAM (Italiano)") | n/a | n/a | n/a | Out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:39, 24 September 2012 (UTC) |
-| [Fan Speed Control (Italiano)](/index.php/Fan_Speed_Control_(Italiano) "Fan Speed Control (Italiano)") | 2012-01-26 | n/a | [Controllo ventola CPU](/index.php/Controllo_ventola_CPU "Controllo ventola CPU") | n/a |
+| [Fan speed control (Italiano)](/index.php/Fan_speed_control_(Italiano) "Fan speed control (Italiano)") | 2012-01-26 | n/a | [Controllo ventola CPU](/index.php/Controllo_ventola_CPU "Controllo ventola CPU") | n/a |
 | [Fbsplash (Italiano)](/index.php/Fbsplash_(Italiano) "Fbsplash (Italiano)") | 2012-01-19 | Cylon | n/a | n/a |
 | [Feh (Italiano)](/index.php/Feh_(Italiano) "Feh (Italiano)") | 2013-01-26 | umby213 | n/a | n/a |
-| [File Systems (Italiano)](/index.php/File_Systems_(Italiano) "File Systems (Italiano)") | 2014-03-09 | Veleno77 | [Formattare una Periferica](/index.php/Formattare_una_Periferica "Formattare una Periferica"), [Format a device (Italiano)](/index.php/Format_a_device_(Italiano) "Format a device (Italiano)") è un redirect | n/a |
+| [File systems (Italiano)](/index.php/File_systems_(Italiano) "File systems (Italiano)") | 2014-03-09 | Veleno77 | [Formattare una Periferica](/index.php/Formattare_una_Periferica "Formattare una Periferica"), [Format a device (Italiano)](/index.php/Format_a_device_(Italiano) "Format a device (Italiano)") è un redirect | n/a |
 | [Filesystem Hierarchy Standard (Italiano)](/index.php/Filesystem_Hierarchy_Standard_(Italiano) "Filesystem Hierarchy Standard (Italiano)") | 2012-01-19 | n/a | n/a | Versione inglese rinominata in [Arch filesystem hierarchy](/index.php/Arch_filesystem_hierarchy "Arch filesystem hierarchy") [Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:39, 24 September 2012 (UTC) |
 | [Firefox (Italiano)](/index.php/Firefox_(Italiano) "Firefox (Italiano)") | n/a | n/a | n/a | Out of Date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:39, 24 September 2012 (UTC) |
 | [Firewalls (Italiano)](/index.php/Firewalls_(Italiano) "Firewalls (Italiano)") | 2012-12-08 | maveloth | n/a | n/a |
 | [Fluxbox (Italiano)](/index.php/Fluxbox_(Italiano) "Fluxbox (Italiano)") | 2013-02-24 | umby213 | n/a | n/a |
 | [Fluxbox Style Guide (Italiano)](/index.php/Fluxbox_Style_Guide_(Italiano) "Fluxbox Style Guide (Italiano)") | 2012-12-16 | umby213 | n/a | n/a |
-| [Font Configuration (Italiano)](/index.php/Font_Configuration_(Italiano) "Font Configuration (Italiano)") | 2012-09-11 | icetux | n/a | n/a |
+| [Font configuration (Italiano)](/index.php/Font_configuration_(Italiano) "Font configuration (Italiano)") | 2012-09-11 | icetux | n/a | n/a |
 | [Fonts (Italiano)](/index.php/Fonts_(Italiano) "Fonts (Italiano)") | 2012-01-26 | n/a | n/a | n/a |
 | [FVWM (Italiano)](/index.php/FVWM_(Italiano) "FVWM (Italiano)") | 2012-10-30 | Veleno77 | n/a | n/a |
 | [Gamin (Italiano)](/index.php/Gamin_(Italiano) "Gamin (Italiano)") | n/a | n/a | n/a | Versione inglese segnata come "stub"; out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:39, 24 September 2012 (UTC) |
-| [General Recommendations (Italiano)](/index.php/General_Recommendations_(Italiano) "General Recommendations (Italiano)") | 2012-01-19 | asa | [Raccomandazioni Generali](/index.php/Raccomandazioni_Generali "Raccomandazioni Generali") [Suggerimenti Post Installazione](/index.php/Suggerimenti_Post_Installazione "Suggerimenti Post Installazione") | **da allineare** [Umby213](/index.php/User:Umby213 "User:Umby213") 15:36, 26 January 2012 (EST) |
-| [Getting Involved (Italiano)](/index.php/Getting_Involved_(Italiano) "Getting Involved (Italiano)") | 2012-03-12 | Kynikos | [Come contribuire](/index.php/Come_contribuire "Come contribuire") | **Cedibile**, **da riallineare** -- [Kynikos](/index.php/User:Kynikos "User:Kynikos") 06:51, 13 March 2012 (EDT) |
-| [Gnome package guidelines (Italiano)](/index.php/Gnome_package_guidelines_(Italiano) "Gnome package guidelines (Italiano)") | 2012-02-07 | 4javier | n/a | n/a |
-| [Gnome Tips (Italiano)](/index.php/Gnome_Tips_(Italiano) "Gnome Tips (Italiano)") | 2011-03-22 | n/a | n/a | n/a |
+| [General recommendations (Italiano)](/index.php/General_recommendations_(Italiano) "General recommendations (Italiano)") | 2012-01-19 | asa | [Raccomandazioni Generali](/index.php/Raccomandazioni_Generali "Raccomandazioni Generali") [Suggerimenti Post Installazione](/index.php/Suggerimenti_Post_Installazione "Suggerimenti Post Installazione") | **da allineare** [Umby213](/index.php/User:Umby213 "User:Umby213") 15:36, 26 January 2012 (EST) |
+| [Getting involved (Italiano)](/index.php/Getting_involved_(Italiano) "Getting involved (Italiano)") | 2012-03-12 | Kynikos | [Come contribuire](/index.php/Come_contribuire "Come contribuire") | **Cedibile**, **da riallineare** -- [Kynikos](/index.php/User:Kynikos "User:Kynikos") 06:51, 13 March 2012 (EDT) |
+| [GNOME package guidelines (Italiano)](/index.php/GNOME_package_guidelines_(Italiano) "GNOME package guidelines (Italiano)") | 2012-02-07 | 4javier | n/a | n/a |
+| [GNOME Tips (Italiano)](/index.php/GNOME_Tips_(Italiano) "GNOME Tips (Italiano)") | 2011-03-22 | n/a | n/a | n/a |
 | [Google Earth (Italiano)](/index.php/Google_Earth_(Italiano) "Google Earth (Italiano)") | n/a | n/a | n/a | Versione italiana più completa di quella inglese; credo che comunque sia da rivedere e aggiornare --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:39, 24 September 2012 (UTC) |
 | [Grub-gfx (Italiano)](/index.php/Grub-gfx_(Italiano) "Grub-gfx (Italiano)") | n/a | n/a | n/a | Out of Date; versione inglese a sua volta out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:39, 24 September 2012 (UTC) |
 | [GRUB Legacy (Italiano)](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)") | 2013-05-02 | umby213 | n/a | n/a |
@@ -246,8 +246,8 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Help:Editing (Italiano)](/index.php/Help:Editing_(Italiano) "Help:Editing (Italiano)") | n/a | n/a | n/a | Out of Date |
 | [High Performance Firewall (Italiano)](/index.php/High_Performance_Firewall_(Italiano) "High Performance Firewall (Italiano)") | n/a | n/a | n/a | Versione inglese segnata come: poorly written, merging in [Router](/index.php/Router "Router"); out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:39, 24 September 2012 (UTC) |
 | [IceWM (Italiano)](/index.php/IceWM_(Italiano) "IceWM (Italiano)") | 2012-12-16 | umby213 | n/a | n/a |
-| [Improve Pacman Performance (Italiano)](/index.php/Improve_Pacman_Performance_(Italiano) "Improve Pacman Performance (Italiano)") | 2012-02-04 | Hilinus | n/a | n/a |
-| [Install from Existing Linux (Italiano)](/index.php/Install_from_Existing_Linux_(Italiano) "Install from Existing Linux (Italiano)") | 2012-02-02 | Stele | n/a | n/a |
+| [Improve pacman performance (Italiano)](/index.php/Improve_pacman_performance_(Italiano) "Improve pacman performance (Italiano)") | 2012-02-04 | Hilinus | n/a | n/a |
+| [Install from existing Linux (Italiano)](/index.php/Install_from_existing_Linux_(Italiano) "Install from existing Linux (Italiano)") | 2012-02-02 | Stele | n/a | n/a |
 | [Install from SSH (Italiano)](/index.php/Install_from_SSH_(Italiano) "Install from SSH (Italiano)") | 2012-06-15 | Stele | n/a | n/a |
 | [Installing Arch Linux on a USB key (Italiano)](/index.php/Installing_Arch_Linux_on_a_USB_key_(Italiano) "Installing Arch Linux on a USB key (Italiano)") | 2012-02-26 | n/a | n/a | n/a |
 | [Internet key Momo Design (Italiano)](/index.php/Internet_key_Momo_Design_(Italiano) "Internet key Momo Design (Italiano)") | n/a | n/a | n/a | la versione inglese è scritta in italiano **Controllare allineamento** [Veleno](/index.php/User:Veleno77 "User:Veleno77") 18:02, 10 March 2012 (EST) |
@@ -255,10 +255,10 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Intel C++ (Italiano)](/index.php/Intel_C%2B%2B_(Italiano) "Intel C++ (Italiano)") | 2012-09-16 | bred | n/a | n/a |
 | [Iptables (Italiano)](/index.php/Iptables_(Italiano) "Iptables (Italiano)") | 2012-11-13 | maveloth | n/a | n/a |
 | [Java (Italiano)](/index.php/Java_(Italiano) "Java (Italiano)") | 2014-04-10 | thewall | n/a | n/a |
-| [Java Package Guidelines (Italiano)](/index.php/Java_Package_Guidelines_(Italiano) "Java Package Guidelines (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
+| [Java package guidelines (Italiano)](/index.php/Java_package_guidelines_(Italiano) "Java package guidelines (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
 | [JWM (Italiano)](/index.php/JWM_(Italiano) "JWM (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
 | [KDM (Italiano)](/index.php/KDM_(Italiano) "KDM (Italiano)") | 2012-11-06 | icetux | n/a | n/a |
-| [Kernel Module Package Guidelines (Italiano)](/index.php/Kernel_Module_Package_Guidelines_(Italiano) "Kernel Module Package Guidelines (Italiano)") | 2010-12-30 | n/a | n/a | Versione inglese "need expansions"; entrambe le pagine puntano a kernel26 |
+| [Kernel module package guidelines (Italiano)](/index.php/Kernel_module_package_guidelines_(Italiano) "Kernel module package guidelines (Italiano)") | 2010-12-30 | n/a | n/a | Versione inglese "need expansions"; entrambe le pagine puntano a kernel26 |
 | [Kernel modules (Italiano)](/index.php/Kernel_modules_(Italiano) "Kernel modules (Italiano)") | 2014-01-12 | Kynikos | n/a | Cedibile |
 | [Kernel Panics (Italiano)](/index.php/Kernel_Panics_(Italiano) "Kernel Panics (Italiano)") | n/a | n/a | n/a | out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
 | [Kernels (Italiano)](/index.php/Kernels_(Italiano) "Kernels (Italiano)") | 2012-04-01 | n/a | n/a | n/a |
@@ -268,8 +268,8 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [KVM (Italiano)](/index.php/KVM_(Italiano) "KVM (Italiano)") | 2012-02-07 | 4javier | n/a | n/a |
 | [LAMP (Italiano)](/index.php/LAMP_(Italiano) "LAMP (Italiano)") | 2012-01-26 | n/a | n/a | n/a |
 | [Laptop Mode Tools (Italiano)](/index.php/Laptop_Mode_Tools_(Italiano) "Laptop Mode Tools (Italiano)") | 2012-11-05 | veleno77 | n/a | n/a |
-| [Lisp Package Guidelines (Italiano)](/index.php/Lisp_Package_Guidelines_(Italiano) "Lisp Package Guidelines (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
-| [List of Applications (Italiano)](/index.php/List_of_Applications_(Italiano) "List of Applications (Italiano)") | 2013-09-08 | Veleno77 | n/a | n/a |
+| [Lisp package guidelines (Italiano)](/index.php/Lisp_package_guidelines_(Italiano) "Lisp package guidelines (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
+| [List of applications (Italiano)](/index.php/List_of_applications_(Italiano) "List of applications (Italiano)") | 2013-09-08 | Veleno77 | n/a | n/a |
 | [LVM (Italiano)](/index.php/LVM_(Italiano) "LVM (Italiano)") | 2013-02-25 | maveloth | n/a | n/a |
 | [LXDE (Italiano)](/index.php/LXDE_(Italiano) "LXDE (Italiano)") | 2011-01-06 | xaber | n/a | La pagina non è allineata alla versione inglese. [Veleno](/index.php/User:Veleno77 "User:Veleno77") 07:50, 21 October 2011 (EDT) |
 | [MacBook (Italiano)](/index.php/MacBook_(Italiano) "MacBook (Italiano)") | 2014-03-11 | Deid | n/a | out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
@@ -294,12 +294,12 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Notify OSD (Italiano)](/index.php/Notify_OSD_(Italiano) "Notify OSD (Italiano)") | n/a | n/a | n/a | Versione inglese è redirect a [Unity](/index.php/Unity "Unity") --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
 | [NTFS-3G (Italiano)](/index.php/NTFS-3G_(Italiano) "NTFS-3G (Italiano)") | 2012-01-19 | n/a | n/a | n/a |
 | [Ntop (Italiano)](/index.php/Ntop_(Italiano) "Ntop (Italiano)") | n/a | n/a | n/a | out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
-| [OCaml Package Guidelines (Italiano)](/index.php/OCaml_Package_Guidelines_(Italiano) "OCaml Package Guidelines (Italiano)") | 2012-01-31 | n/a | n/a | n/a |
+| [OCaml package guidelines (Italiano)](/index.php/OCaml_package_guidelines_(Italiano) "OCaml package guidelines (Italiano)") | 2012-01-31 | n/a | n/a | n/a |
 | [Openbox Themes and Apps (Italiano)](/index.php/Openbox_Themes_and_Apps_(Italiano) "Openbox Themes and Apps (Italiano)") | 2012-02-07 | 4javier | n/a | n/a |
 | [OpenNTPD (Italiano)](/index.php/OpenNTPD_(Italiano) "OpenNTPD (Italiano)") | 2012-01-19 | Toketin | n/a | n/a |
 | [OpenOffice (Italiano)](/index.php/OpenOffice_(Italiano) "OpenOffice (Italiano)") | n/a | n/a | n/a | Scritta in inglese e Out of Date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
 | [Opera (Italiano)](/index.php/Opera_(Italiano) "Opera (Italiano)") | n/a | n/a | n/a | Out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
-| [Optical Disc Drive (Italiano)](/index.php/Optical_Disc_Drive_(Italiano) "Optical Disc Drive (Italiano)") | 2013-09-02 | Veleno77 | n/a | n/a |
+| [Optical disc drive (Italiano)](/index.php/Optical_disc_drive_(Italiano) "Optical disc drive (Italiano)") | 2013-09-02 | Veleno77 | n/a | n/a |
 | [Osiris (Italiano)](/index.php/Osiris_(Italiano) "Osiris (Italiano)") | n/a | n/a | n/a | Versione inglese non esiste --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
 | [OSS (Italiano)](/index.php/OSS_(Italiano) "OSS (Italiano)") | 2012-01-19 | asa | n/a | **da allineare** [Umby213](/index.php/User:Umby213 "User:Umby213") 15:36, 26 January 2012 (EST) |
 | [Pacman GUI Frontends (Italiano)](/index.php/Pacman_GUI_Frontends_(Italiano) "Pacman GUI Frontends (Italiano)") | n/a | n/a | [Interfacce Grafiche per Pacman](/index.php/Interfacce_Grafiche_per_Pacman "Interfacce Grafiche per Pacman") | out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
@@ -310,7 +310,7 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Password Recovery (Italiano)](/index.php/Password_Recovery_(Italiano) "Password Recovery (Italiano)") | 2011-10-11 | n/a | n/a | n/a |
 | [Pawm (Italiano)](/index.php/Pawm_(Italiano) "Pawm (Italiano)") | 2012-11-01 | Veleno77 | n/a | n/a |
 | [PekWM (Italiano)](/index.php/PekWM_(Italiano) "PekWM (Italiano)") | 2013-08-25 | Veleno77 | n/a | n/a |
-| [Perl Package Guidelines (Italiano)](/index.php/Perl_Package_Guidelines_(Italiano) "Perl Package Guidelines (Italiano)") | 2011-09-23 | Hilinus | n/a | n/a |
+| [Perl package guidelines (Italiano)](/index.php/Perl_package_guidelines_(Italiano) "Perl package guidelines (Italiano)") | 2011-09-23 | Hilinus | n/a | n/a |
 | [Persistent block device naming (Italiano)](/index.php/Persistent_block_device_naming_(Italiano) "Persistent block device naming (Italiano)") | 2011-12-08 | n/a | n/a | n/a |
 | [Plymouth (Italiano)](/index.php/Plymouth_(Italiano) "Plymouth (Italiano)") | n/a | n/a | n/a | Out of Date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
 | [Pm-utils (Italiano)](/index.php/Pm-utils_(Italiano) "Pm-utils (Italiano)") | 2013-09-22 | Nierro | n/a | n/a |
@@ -325,21 +325,21 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Small Business Server (Italiano)](/index.php/Small_Business_Server_(Italiano) "Small Business Server (Italiano)") | n/a | n/a | n/a | **Pagina italiana più aggiornata, contiene sottopagine** [Veleno](/index.php/User:Veleno77 "User:Veleno77") 18:02, 10 March 2012 (EST) |
 | [Solid State Drives (Italiano)](/index.php/Solid_State_Drives_(Italiano) "Solid State Drives (Italiano)") | 2011-09-05 | n/a | n/a | **Da riallineare** --[Ninquitassar](/index.php/User:Ninquitassar "User:Ninquitassar") 07:46, 19 January 2012 (EST) |
 | [Sound (Italiano)](/index.php/Sound_(Italiano) "Sound (Italiano)") | 2011-02-21 | asa | n/a | n/a |
-| [SSH Keys (Italiano)](/index.php/SSH_Keys_(Italiano) "SSH Keys (Italiano)") | 2011-12-17 | n/a | n/a | **Da riallineare** --[Kynikos](/index.php/User:Kynikos "User:Kynikos") 09:50, 19 January 2012 (EST) |
+| [SSH keys (Italiano)](/index.php/SSH_keys_(Italiano) "SSH keys (Italiano)") | 2011-12-17 | n/a | n/a | **Da riallineare** --[Kynikos](/index.php/User:Kynikos "User:Kynikos") 09:50, 19 January 2012 (EST) |
 | [Sshfs (Italiano)](/index.php/Sshfs_(Italiano) "Sshfs (Italiano)") | 2011-11-13 | n/a | n/a | n/a |
 | [Sudo (Italiano)](/index.php/Sudo_(Italiano) "Sudo (Italiano)") | 2011-12-06 | n/a | n/a | n/a |
 | [Sugar (Italiano)](/index.php/Sugar_(Italiano) "Sugar (Italiano)") | 2013-06-06 | Veleno77 | n/a | n/a |
 | [swap (Italiano)](/index.php/Swap_(Italiano) "Swap (Italiano)") | 2012-09-17 | n/a | n/a | n/a |
 | [Synergy (Italiano)](/index.php/Synergy_(Italiano) "Synergy (Italiano)") | 2012-09-04 | n/a | n/a | n/a |
-| [Table of Contents (Italiano)](/index.php/Table_of_Contents_(Italiano) "Table of Contents (Italiano)") | settimanale | Kynikos | n/a | La struttura della lista viene aggiornata automaticamente e periodicamente da [Kynikos.bot](/index.php/User:Kynikos.bot "User:Kynikos.bot") |
+| [Table of contents (Italiano)](/index.php/Table_of_contents_(Italiano) "Table of contents (Italiano)") | settimanale | Kynikos | n/a | La struttura della lista viene aggiornata automaticamente e periodicamente da [Kynikos.bot](/index.php/User:Kynikos.bot "User:Kynikos.bot") |
 | [TeXLive (Italiano)](/index.php/TeXLive_(Italiano) "TeXLive (Italiano)") | n/a | n/a | n/a | Out of Date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
 | [Thunar (Italiano)](/index.php/Thunar_(Italiano) "Thunar (Italiano)") | 2013-02-24 | umby213 | n/a | n/a |
 | [Thunderbird (Italiano)](/index.php/Thunderbird_(Italiano) "Thunderbird (Italiano)") | 2014-01-08 | Cyberpunk | n/a | n/a |
 | [Trayfreq (Italiano)](/index.php/Trayfreq_(Italiano) "Trayfreq (Italiano)") | 2011-10-09 | n/a | n/a | n/a |
 | [TuxOnIce (Italiano)](/index.php/TuxOnIce_(Italiano) "TuxOnIce (Italiano)") | 2012-02-26 | n/a | n/a | n/a |
 | [Twm (Italiano)](/index.php/Twm_(Italiano) "Twm (Italiano)") | 2013-08-25 | Veleno77 | n/a | n/a |
-| [Uniform Look for QT and GTK Applications (Italiano)](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(Italiano) "Uniform Look for QT and GTK Applications (Italiano)") | 2011-06-02 | Ninquitassar | n/a | **Da riallineare** --[Ninquitassar](/index.php/User:Ninquitassar "User:Ninquitassar") 07:46, 19 January 2012 (EST) |
-| [USB Storage Devices (Italiano)](/index.php/USB_Storage_Devices_(Italiano) "USB Storage Devices (Italiano)") | n/a | n/a | n/a | Out of date |
+| [Uniform look for Qt and GTK applications (Italiano)](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Italiano) "Uniform look for Qt and GTK applications (Italiano)") | 2011-06-02 | Ninquitassar | n/a | **Da riallineare** --[Ninquitassar](/index.php/User:Ninquitassar "User:Ninquitassar") 07:46, 19 January 2012 (EST) |
+| [USB storage devices (Italiano)](/index.php/USB_storage_devices_(Italiano) "USB storage devices (Italiano)") | n/a | n/a | n/a | Out of date |
 | [Uvesafb (Italiano)](/index.php/Uvesafb_(Italiano) "Uvesafb (Italiano)") | 2011-10-17 | n/a | n/a | n/a |
 | [VCS PKGBUILD Guidelines (Italiano)](/index.php/VCS_PKGBUILD_Guidelines_(Italiano) "VCS PKGBUILD Guidelines (Italiano)") | 2012-02-07 | 4javier | n/a | n/a |
 | [Very Secure FTP Daemon (Italiano)](/index.php/Very_Secure_FTP_Daemon_(Italiano) "Very Secure FTP Daemon (Italiano)") | 2011-09-28 | n/a | n/a | n/a |
@@ -350,13 +350,13 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Webmin (Italiano)](/index.php/Webmin_(Italiano) "Webmin (Italiano)") | 2011-08-10 | n/a | n/a | n/a |
 | [Wicd (Italiano)](/index.php/Wicd_(Italiano) "Wicd (Italiano)") | 2011-12-08 | n/a | n/a | n/a |
 | [Window Maker (Italiano)](/index.php/Window_Maker_(Italiano) "Window Maker (Italiano)") | 2013-05-03 | Veleno77 | n/a | n/a |
-| [Window Manager (Italiano)](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") | 2012-02-02 | n/a | n/a | n/a |
+| [Window manager (Italiano)](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") | 2012-02-02 | n/a | n/a | n/a |
 | [Wine (Italiano)](/index.php/Wine_(Italiano) "Wine (Italiano)") | n/a | Cyberpunk | n/a | out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
 | [X11 Cursors (Italiano)](/index.php/X11_Cursors_(Italiano) "X11 Cursors (Italiano)") | 2011-10-11 | n/a | n/a | n/a |
 | [Xampp (Italiano)](/index.php/Xampp_(Italiano) "Xampp (Italiano)") | n/a | n/a | n/a | out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
 | [xf86-video-sis (Italiano)](/index.php/Xf86-video-sis_(Italiano) "Xf86-video-sis (Italiano)") | 2012-10-06 | n/a | n/a | n/a |
 | [XFS (Italiano)](/index.php/XFS_(Italiano) "XFS (Italiano)") | n/a | n/a | n/a | out of date; versione inglese segnata come "stub" --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
-| [Xscreensaver (Italiano)](/index.php/Xscreensaver_(Italiano) "Xscreensaver (Italiano)") | 2012-12-16 | umby213 | n/a | n/a |
+| [XScreenSaver (Italiano)](/index.php/XScreenSaver_(Italiano) "XScreenSaver (Italiano)") | 2012-12-16 | umby213 | n/a | n/a |
 | [Yaourt (Italiano)](/index.php/Yaourt_(Italiano) "Yaourt (Italiano)") | 2013-05-02 | umby213 | n/a | n/a |
 
 ## Linee guida

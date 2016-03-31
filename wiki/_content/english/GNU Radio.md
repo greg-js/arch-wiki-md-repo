@@ -9,7 +9,9 @@
 
 ## Packages
 
-The latest stable GNU Radio version can be installed with [gnuradio](https://www.archlinux.org/packages/?name=gnuradio) from the [official repositories](/index.php/Official_repositories "Official repositories"). Bleeding edge is on [gnuradio-git](https://aur.archlinux.org/packages/gnuradio-git/) in the [AUR](/index.php/AUR "AUR").
+The latest stable GNU Radio version can be installed with [gnuradio](https://www.archlinux.org/packages/?name=gnuradio) from the [official repositories](/index.php/Official_repositories "Official repositories").
+
+Bleeding edge is [gnuradio-git](https://aur.archlinux.org/packages/gnuradio-git/) in the [AUR](/index.php/AUR "AUR"), and in some cases VOLK may need to be built separately from [libvolk-git](https://aur.archlinux.org/packages/libvolk-git/).
 
 If you want `gnuradio-companion`, just install the [gnuradio-companion](https://www.archlinux.org/packages/?name=gnuradio-companion) package which will install GNU Radio, as well as some additional required packages.
 

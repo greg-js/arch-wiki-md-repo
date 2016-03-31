@@ -23,7 +23,7 @@ Most of the article can also be applied to eeepc-models which are similar to the
         *   [3.7.2 Mouse and Synaptics driver](#Mouse_and_Synaptics_driver)
         *   [3.7.3 Miscellaneous](#Miscellaneous)
 *   [4 Performance tips](#Performance_tips)
-    *   [4.1 Speedstep](#Speedstep)
+    *   [4.1 Cpu frequency](#Cpu_frequency)
     *   [4.2 Boot Booster](#Boot_Booster)
     *   [4.3 Hardware overview for 901](#Hardware_overview_for_901)
 
@@ -406,23 +406,9 @@ xset m 2 1
 
 The following tweaks can be used to improve performance and/or power consumption.
 
-### Speedstep
+### Cpu frequency
 
-Speedstep is included by default in the Linux 2.6.x kernel.
-
-The **zen-eee901** kernels contain the Speedstep modules. Create a proper module file in `/etc/module.d` to load `acpi-cpufreq` at boot:
-
- `/etc/module.d/acpi-cpufreq.conf` 
-```
-acpi-cpufreq
-
-```
-
-See [here](http://rffr.de/acpi) for more information.
-
-For more information on overclocking the Asus EEE PC line, see [http://wiki.eeeuser.com/howto:overclockfsb](http://wiki.eeeuser.com/howto:overclockfsb)
-
-**Note:** Speedstep is applicable to the 901 as it's CPU is of the Intel Atom family. The eee 900 and 904 use an Intel Celeron M CPU and so should use the p4-clockmod module instead.
+See [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling").
 
 ### Boot Booster
 

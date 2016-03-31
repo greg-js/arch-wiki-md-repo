@@ -46,7 +46,7 @@ More implementations are provided in the [Arch User Repository](/index.php/Arch_
 Change the default shell for the current user:
 
 ```
-$ chsh -s /usr/bin/mksh
+$ chsh -s /bin/mksh
 
 ```
 

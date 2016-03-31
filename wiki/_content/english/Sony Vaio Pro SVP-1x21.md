@@ -115,7 +115,7 @@ defaults.pcm.card 1
 
 ### Touch screen
 
-Tapping works out of the box. Multitouch gestures work after installing the driver [Multitouch Displays#eGalax](/index.php/Multitouch_Displays#eGalax "Multitouch Displays") and using touchegg [Multitouch Displays#Gestures](/index.php/Multitouch_Displays#Gestures "Multitouch Displays").
+Tapping works out of the box. Multitouch gestures work after installing the driver [Multitouch displays#eGalax](/index.php/Multitouch_displays#eGalax "Multitouch displays") and using touchegg [Multitouch displays#Gestures](/index.php/Multitouch_displays#Gestures "Multitouch displays").
 
 Note: touchegg is no longer required in Gnome 3.14 for multitouch gestures.
 

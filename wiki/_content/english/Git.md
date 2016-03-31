@@ -1,3 +1,6 @@
+> <font color="grey">*I've met people who thought that git is a front-end for Github. They were wrong, git is a front-end for AUR.*</font>
+> — Linus Torvalds
+
 [Git](https://en.wikipedia.org/wiki/Git_(software) is the version control system (VCS) designed and developed by Linus Torvalds, the creator of the Linux kernel. Git is now used to maintain sources for the Linux kernel, as well as many other projects, including a number of Arch Linux projects.
 
 ## Contents
@@ -64,7 +67,7 @@ Git is a distributed version control system, which means that the entire history
 
 See `man gitglossary` for more complete definitions of the terms used in this tutorial.
 
-A typical Git workflow is generally:
+A typical Git work-flow is:
 
 1.  Create a new project or clone a remote one.
 2.  Create a branch to make changes; then commit those changes.

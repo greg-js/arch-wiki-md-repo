@@ -1,47 +1,49 @@
 **Warning:** While the choice to install in EFI mode is forward looking, early vendor UEFI implementations may carry more bugs than their BIOS counterparts. It is advised to do a search relating to your particular mainboard model before proceeding.
 
-**Unified Extensible Firmware Interface** (or UEFI for short) is a new type of firmware. It introduces new ways of booting an OS that is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process#Firmware types](/index.php/Arch_boot_process#Firmware_types "Arch boot process") for their differences. This page explains **What is UEFI** and **UEFI support in Linux kernel**. To set up UEFI Boot Loaders, see [Boot loaders](/index.php/Boot_loaders "Boot loaders").
+The [Unified Extensible Firmware Interface](http://www.uefi.org/)(or UEFI for short) defines a new model for the interface between personal-computer operating systems and platform firmware. The interface consists of data tables that contain platform-related information, plus boot and runtime service calls that are available to the operating system and its loader. Together, these provide a standard environment for booting an operating system and running pre-boot applications.
+
+It is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process#Firmware types](/index.php/Arch_boot_process#Firmware_types "Arch boot process") for their differences. This page explains **What is UEFI** and **UEFI support in Linux kernel**. To set up UEFI Boot Loaders, see [Boot loaders](/index.php/Boot_loaders "Boot loaders").
 
 ## Contents
 
 *   [1 UEFI versions](#UEFI_versions)
 *   [2 Boot Process under UEFI](#Boot_Process_under_UEFI)
     *   [2.1 Multibooting in UEFI](#Multibooting_in_UEFI)
-    *   [2.2 Detecting UEFI Firmware bitness](#Detecting_UEFI_Firmware_bitness)
-        *   [2.2.1 Non Macs](#Non_Macs)
-        *   [2.2.2 Apple Macs](#Apple_Macs)
-*   [3 Linux Kernel Config options for UEFI](#Linux_Kernel_Config_options_for_UEFI)
-*   [4 UEFI Variables](#UEFI_Variables)
-    *   [4.1 UEFI Variables Support in Linux Kernel](#UEFI_Variables_Support_in_Linux_Kernel)
-    *   [4.2 Requirements for UEFI variable support](#Requirements_for_UEFI_variable_support)
-        *   [4.2.1 Mount efivarfs](#Mount_efivarfs)
-    *   [4.3 Userspace tools](#Userspace_tools)
-        *   [4.3.1 efibootmgr](#efibootmgr)
-*   [5 EFI System Partition](#EFI_System_Partition)
-    *   [5.1 GPT partitioned disks](#GPT_partitioned_disks)
-    *   [5.2 MBR partitioned disks](#MBR_partitioned_disks)
-    *   [5.3 ESP on RAID](#ESP_on_RAID)
-*   [6 UEFI Shell](#UEFI_Shell)
-    *   [6.1 Obtaining UEFI Shell](#Obtaining_UEFI_Shell)
-    *   [6.2 Launching UEFI Shell](#Launching_UEFI_Shell)
-    *   [6.3 Important UEFI Shell Commands](#Important_UEFI_Shell_Commands)
-        *   [6.3.1 bcfg](#bcfg)
-        *   [6.3.2 map](#map)
-        *   [6.3.3 edit](#edit)
-*   [7 UEFI Linux Hardware Compatibility](#UEFI_Linux_Hardware_Compatibility)
-*   [8 UEFI Bootable Media](#UEFI_Bootable_Media)
-    *   [8.1 Create UEFI bootable USB from ISO](#Create_UEFI_bootable_USB_from_ISO)
-    *   [8.2 Remove UEFI boot support from Optical Media](#Remove_UEFI_boot_support_from_Optical_Media)
-*   [9 Testing UEFI in systems without native support](#Testing_UEFI_in_systems_without_native_support)
-    *   [9.1 OVMF for Virtual Machines](#OVMF_for_Virtual_Machines)
-    *   [9.2 DUET for BIOS only systems](#DUET_for_BIOS_only_systems)
-*   [10 Troubleshooting](#Troubleshooting)
-    *   [10.1 Windows 7 will not boot in UEFI Mode](#Windows_7_will_not_boot_in_UEFI_Mode)
-    *   [10.2 Windows changes boot order](#Windows_changes_boot_order)
-    *   [10.3 USB media gets struck with black screen](#USB_media_gets_struck_with_black_screen)
-        *   [10.3.1 Using GRUB](#Using_GRUB)
-    *   [10.4 UEFI boot loader does not show up in firmware menu](#UEFI_boot_loader_does_not_show_up_in_firmware_menu)
-*   [11 See also](#See_also)
+*   [3 UEFI Firmware bitness](#UEFI_Firmware_bitness)
+    *   [3.1 Non Macs](#Non_Macs)
+    *   [3.2 Apple Macs](#Apple_Macs)
+*   [4 Linux Kernel Config options for UEFI](#Linux_Kernel_Config_options_for_UEFI)
+*   [5 UEFI Variables](#UEFI_Variables)
+    *   [5.1 UEFI Variables Support in Linux Kernel](#UEFI_Variables_Support_in_Linux_Kernel)
+    *   [5.2 Requirements for UEFI variable support](#Requirements_for_UEFI_variable_support)
+        *   [5.2.1 Mount efivarfs](#Mount_efivarfs)
+    *   [5.3 Userspace tools](#Userspace_tools)
+        *   [5.3.1 efibootmgr](#efibootmgr)
+*   [6 EFI System Partition](#EFI_System_Partition)
+    *   [6.1 GPT partitioned disks](#GPT_partitioned_disks)
+    *   [6.2 MBR partitioned disks](#MBR_partitioned_disks)
+    *   [6.3 ESP on RAID](#ESP_on_RAID)
+*   [7 UEFI Shell](#UEFI_Shell)
+    *   [7.1 Obtaining UEFI Shell](#Obtaining_UEFI_Shell)
+    *   [7.2 Launching UEFI Shell](#Launching_UEFI_Shell)
+    *   [7.3 Important UEFI Shell Commands](#Important_UEFI_Shell_Commands)
+        *   [7.3.1 bcfg](#bcfg)
+        *   [7.3.2 map](#map)
+        *   [7.3.3 edit](#edit)
+*   [8 UEFI Linux Hardware Compatibility](#UEFI_Linux_Hardware_Compatibility)
+*   [9 UEFI Bootable Media](#UEFI_Bootable_Media)
+    *   [9.1 Create UEFI bootable USB from ISO](#Create_UEFI_bootable_USB_from_ISO)
+    *   [9.2 Remove UEFI boot support from Optical Media](#Remove_UEFI_boot_support_from_Optical_Media)
+*   [10 Testing UEFI in systems without native support](#Testing_UEFI_in_systems_without_native_support)
+    *   [10.1 OVMF for Virtual Machines](#OVMF_for_Virtual_Machines)
+    *   [10.2 DUET for BIOS only systems](#DUET_for_BIOS_only_systems)
+*   [11 Troubleshooting](#Troubleshooting)
+    *   [11.1 Windows 7 will not boot in UEFI Mode](#Windows_7_will_not_boot_in_UEFI_Mode)
+    *   [11.2 Windows changes boot order](#Windows_changes_boot_order)
+    *   [11.3 USB media gets struck with black screen](#USB_media_gets_struck_with_black_screen)
+        *   [11.3.1 Using GRUB](#Using_GRUB)
+    *   [11.4 UEFI boot loader does not show up in firmware menu](#UEFI_boot_loader_does_not_show_up_in_firmware_menu)
+*   [12 See also](#See_also)
 
 ## UEFI versions
 
@@ -71,15 +73,21 @@ Since each OS or vendor can maintain its own files within the EFI System Partiti
 
 See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
 
-### Detecting UEFI Firmware bitness
+## UEFI Firmware bitness
 
-#### Non Macs
+Under UEFI, every program whether it is an OS loader or a utility (e.g. a memory testing app or recovery tool), should be a UEFI Application corresponding to the EFI firmware bitness/architecture.
+
+The vast majority of UEFI firmwares, including recent Apple Macs, use x86_64 EFI firmware. The only known devices that use IA32 (32-bit) EFI are older (pre 2008) Apple Macs, some Intel Cloverfield ultrabooks and some older Intel Server boards that are known to operate on Intel EFI 1.10 firmware.
+
+An x86_64 EFI firmware does not include support for launching 32-bit EFI apps (unlike x86_64 Linux and Windows versions which include such support). Therefore the UEFI application must be compiled for that specific firmware processor bitness/architecture.
+
+### Non Macs
 
 Check whether the dir `/sys/firmware/efi` exists, if it exists it means the kernel has booted in EFI mode. In that case the UEFI bitness is same as kernel bitness. (ie. i686 or x86_64)
 
 **Note:** Intel Atom System-on-Chip systems ship with 32-bit UEFI (as on 2 November 2013). See [#Using GRUB](#Using_GRUB) for more info.
 
-#### Apple Macs
+### Apple Macs
 
 Pre-2008 Macs mostly have i386-efi firmware while >=2008 Macs have mostly x86_64-efi. All Macs capable of running Mac OS X Snow Leopard 64-bit Kernel have x86_64 EFI 1.x firmware.
 

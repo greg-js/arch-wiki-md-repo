@@ -47,13 +47,13 @@ These are queues that do basic management of traffic by reordering, slowing or d
 
 #### fifo_fast
 
-This was the default qdisc up until systemd 217\. In every network device where no custom qdisc configuration has been applied, fifo_fast is the qdisc set on the root. fifo means *First In First Out*, that is, the first package to get in, is going to be the first to be sent. This way, no package get special treatment.
+This was the default qdisc up until systemd 217\. In every network device where no custom qdisc configuration has been applied, fifo_fast is the qdisc set on the root. fifo means *First In First Out*, that is, the first package to get in, is going to be the first to be sent. This way, no package gets special treatment.
 
 #### Token Bucket Filter (TBF)
 
 This qdisc allows bytes to pass, as long certain rate limit is not passed.
 
-It works by creating a virtual bucket and then dropping tokens at certain speed, filling that bucket. Each package takes a virtual token from the bucket, and uses it to get a permission to pass. If too many packages arrive, the bucket will have no more tokens left and the remaining packages are going to wait certain time for new tokens. If the tokens do not arrive fast enough, the packages are going to be dropped. On the opposite case (too little packages to be sent), the tokens can be used to allow some burst (uploading pikes) to happen.
+It works by creating a virtual bucket and then dropping tokens at certain speed, filling that bucket. Each package takes a virtual token from the bucket, and uses it to get a permission to pass. If too many packages arrive, the bucket will have no more tokens left and the remaining packages are going to wait certain time for new tokens. If the tokens do not arrive fast enough, the packages are going to be dropped. On the opposite case (too few packages sent), the tokens can be used to allow some burst (uploading spikes) to happen.
 
 That means this qdisc is useful to slow down an interface.
 

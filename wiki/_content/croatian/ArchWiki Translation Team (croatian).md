@@ -16,7 +16,7 @@ Ovdje trenutno nema puno informacija jer se s poslom tek krenulo. Ukoliko želi�
 Ukoliko stvoriš novu važnu stranicu na hrvatskom jeziku, svakako je nadodaj na ovaj popis. To će nam pomoći u održavanju svježeg sadržaja.
 
 | Naziv stranice | Tko je održava | Stupanj prijevoda |
-| [Beginners' Guide (Hrvatski)](/index.php/Beginners%27_Guide_(Hrvatski) "Beginners' Guide (Hrvatski)") | [homagetocatalonia](/index.php/User:Homagetocatalonia "User:Homagetocatalonia") | 15% |
-| [Main Page (Hrvatski)](/index.php/Main_Page_(Hrvatski) "Main Page (Hrvatski)") | [homagetocatalonia](/index.php/User:Homagetocatalonia "User:Homagetocatalonia") | Potpun, 1.10.2011. |
+| [Beginners' guide (Hrvatski)](/index.php/Beginners%27_guide_(Hrvatski) "Beginners' guide (Hrvatski)") | [homagetocatalonia](/index.php/User:Homagetocatalonia "User:Homagetocatalonia") | 15% |
+| [Main page (Hrvatski)](/index.php/Main_page_(Hrvatski) "Main page (Hrvatski)") | [homagetocatalonia](/index.php/User:Homagetocatalonia "User:Homagetocatalonia") | Potpun, 1.10.2011. |
 | [The Arch Way (Hrvatski)](/index.php/The_Arch_Way_(Hrvatski) "The Arch Way (Hrvatski)") | [xskydevilx](/index.php/User:Xskydevilx "User:Xskydevilx") | Potpun, 10.4.2012. |
 | [FAQ (Hrvatski)](/index.php/FAQ_(Hrvatski) "FAQ (Hrvatski)") | [xskydevilx](/index.php/User:Xskydevilx "User:Xskydevilx") | 6% |

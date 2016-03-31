@@ -925,7 +925,6 @@ In /etc/makepkg.conf, set `-march=atom` and `-mtune=atom`
 *   [Arch Forum](https://bbs.archlinux.org/viewtopic.php?id=51796)
 *   [Install Ubuntu Hardy Heron (8.04.1) on Acer Aspire One](https://help.ubuntu.com/community/AspireOne)
 *   [Installing Debian on Acer Aspire One](http://wiki.debian.org/DebianAcerOne)
-*   [Gentoo on Acer Aspire One](http://en.gentoo-wiki.com/wiki/Acer_Aspire_One)
 *   [AspireOneUser Forum](http://www.aspireoneuser.com/forum/viewforum.php?f=5&sid=29c7eef18d2d6477d7f9db91195fb31a)
 *   [Moblin on Acer Aspire One](http://moblin.org/search/node/acer%20aspire%20one)
 *   [Macles Blog](http://macles.blogspot.com)

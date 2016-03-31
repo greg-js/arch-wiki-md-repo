@@ -69,7 +69,7 @@ Gli utenti con un login locale (su terminale virtuale o tramite display manager)
 
 ### Utility
 
-Installare dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") il pacchetto [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), contenente lo strumento `alsamixer`, che consente la configurazione delle periferiche audio tramite console o terminale. Installare anche il pacchetto [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) se si necessità del [ricampionamento in alta qualità](#Ricampionamento_in_alta_qualit.C3.A0), dell'[upmixing/downmixing](#Upmixing.2FDownmixing) e di altre funzionalità avanzate. Se si vuole che le applicazioni basate su [OSS](/index.php/Open_Sound_System_(Italiano) "Open Sound System (Italiano)") funzionino tramite dmix (mixaggio software) installare anche il pacchetto [alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss). Caricare i [moduli del kernel](/index.php/Kernel_modules_(Italiano) "Kernel modules (Italiano)") `snd_seq_oss`, `snd_pcm_oss` e `snd_mixer_oss` per abilitare i componenti di emulazione di OSS.
+Installare dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") il pacchetto [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), contenente lo strumento `alsamixer`, che consente la configurazione delle periferiche audio tramite console o terminale. Installare anche il pacchetto [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) se si necessità del [ricampionamento in alta qualità](#Ricampionamento_in_alta_qualit.C3.A0), dell'[upmixing/downmixing](#Upmixing.2FDownmixing) e di altre funzionalità avanzate. Se si vuole che le applicazioni basate su [OSS](/index.php/Open_Sound_System_(Italiano) "Open Sound System (Italiano)") funzionino tramite dmix (mixaggio software) installare anche il pacchetto [alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss). Caricare i [moduli del kernel](/index.php/Kernel_modules_(Italiano) "Kernel modules (Italiano)") `snd_seq_oss`, `snd_pcm_oss` e `snd_mixer_oss` per abilitare i componenti di emulazione di OSS.
 
 ## Togliere il muto ai canali
 
@@ -551,7 +551,7 @@ $ echo "et.x86 0 0 disable" > /proc/asound/card0/pcm0c/oss
 
 ### Suono che salta utilizzando Dynamic Frequency Scaling
 
-Alcune combinazioni di determinati driver ALSA e chipset, possono causare dei "salti" nel suono da tutte le sorgenti se utilizzati in combinazione con un governor dinamico della frequenza della cpu come `ondemand` o `conservative`. Attualmente, l'unica soluzione è di passare al governor `performance`. Fare riferimento alla pagina [CPU Frequency Scaling (Italiano)](/index.php/CPU_Frequency_Scaling_(Italiano) "CPU Frequency Scaling (Italiano)") per ulteriori informazioni.
+Alcune combinazioni di determinati driver ALSA e chipset, possono causare dei "salti" nel suono da tutte le sorgenti se utilizzati in combinazione con un governor dinamico della frequenza della cpu come `ondemand` o `conservative`. Attualmente, l'unica soluzione è di passare al governor `performance`. Fare riferimento alla pagina [CPU frequency scaling (Italiano)](/index.php/CPU_frequency_scaling_(Italiano) "CPU frequency scaling (Italiano)") per ulteriori informazioni.
 
 ### Problemi con la disponibilità del mixaggio software per più di un utente per volta
 
@@ -625,7 +625,7 @@ Playback open error: -16
 Device or resource busy
 ```
 
-Se non si ottiene alcun suono all'avvio del sistema, può darsi che sul proprio sistema siano presenti più schede audio, e che il loro ordine cambi ad ogni avvio. Se fosse questo il caso, seguire [#Impostare la scheda audio predefinita questo paragrafo](#Impostare_la_scheda_audio_predefinita_questo_paragrafo)
+Se non si ottiene alcun suono all'avvio del sistema, può darsi che sul proprio sistema siano presenti più schede audio, e che il loro ordine cambi ad ogni avvio. Se fosse questo il caso, seguire [#Impostare la scheda audio predefinita](#Impostare_la_scheda_audio_predefinita)
 
 Se si utilizza mpd ed il consiglio precedente non dovesse funzionare provare [[questa soluzione](http://mpd.wikia.com/wiki/Configuration#ALSA_MPD_software_volume_control)
 
@@ -927,7 +927,7 @@ da utente root.
 
 La procedura esposta di seguito consente di testare il funzionamento dell'uscita audio HDMI. Prima di procede, accertarsi di aver abilitato e levato il muto all'output corrispondente tramite `alsamixer`.
 
-**Note:** Se si utilizza una scheda video ATI ed un kernel linux >=3.0, un modulo del kernel necessario risulterà disabilitato. Consultare [ATI#HDMI_Audio](/index.php/ATI#HDMI_Audio "ATI").
+**Note:** Se si utilizza una scheda video ATI ed un kernel linux >=3.0, un modulo del kernel necessario risulterà disabilitato. Consultare [ATI#HDMI audio](/index.php/ATI#HDMI_audio "ATI").
 
 Collegare il pc al monitor tramite cavo HDMI ed abilitare il display con un tool come `xrandr` o `arandr`. Ad esempio
 

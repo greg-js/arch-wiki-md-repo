@@ -9,14 +9,16 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
 *   [1 Installation](#Installation)
     *   [1.1 Python 3](#Python_3)
     *   [1.2 Python 2](#Python_2)
-*   [2 Dealing with version problem in build scripts](#Dealing_with_version_problem_in_build_scripts)
-*   [3 Getting completion in Python shell](#Getting_completion_in_Python_shell)
-*   [4 Widget bindings](#Widget_bindings)
-*   [5 Old versions](#Old_versions)
-*   [6 Tips and tricks](#Tips_and_tricks)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Python, ViM and UTF-8](#Python.2C_ViM_and_UTF-8)
-*   [8 See also](#See_also)
+    *   [1.3 Old versions](#Old_versions)
+*   [2 Widget bindings](#Widget_bindings)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 IPython](#IPython)
+    *   [3.2 virtualenv](#virtualenv)
+    *   [3.3 Getting completion in Python2 shell](#Getting_completion_in_Python2_shell)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Dealing with version problem in build scripts](#Dealing_with_version_problem_in_build_scripts)
+    *   [4.2 Python, ViM and UTF-8](#Python.2C_ViM_and_UTF-8)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -27,15 +29,6 @@ Python 3 is the latest version of the language, and is incompatible with Python 
 To install the latest version of Python 3, [install](/index.php/Install "Install") the [python](https://www.archlinux.org/packages/?name=python) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 If you would like to build the latest RC/betas from source, visit [Python Downloads](http://www.python.org/download/). The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") also contains good [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). If you do decide to build the RC, note that the binary (by default) installs to `/usr/local/bin/python3.x`.
-
-Starting a new project inside a VirtualEnv is as simple as running:
-
-```
-$ python -m venv newproj
-$ source newproj/bin/activate
-(newproj)$ pip install <dependency>
-
-```
 
 ### Python 2
 
@@ -101,48 +94,23 @@ $ which python
 
 A similar approach in tricking the environment, which also relies on `#!/usr/bin/env python` to be called by the script in question, is to use a [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv").
 
-## Dealing with version problem in build scripts
+### Old versions
 
-Many projects' build scripts assume `python` to be Python 2, and that would eventually result in an error — typically complaining that `print 'foo'` is invalid syntax. Luckily, many of them call `python` from the `PATH` instead of hardcoding `#!/usr/bin/python` in the shebang line, and the Python scripts are all contained within the project tree. So, instead of modifying the build scripts manually, there is an easy workaround. Just create `/usr/local/bin/python` with content like this:
+Old versions of Python are available via the [AUR](/index.php/AUR "AUR") and may be useful for historical curiosity, old applications that do not run on current versions, or for testing Python programs intended to run on a distribution that comes with an older version (e.g. RHEL 5.x has Python 2.4, or Ubuntu 12.04 has Python 3.1):
 
- `/usr/local/bin/python` 
-```
-#!/bin/bash
-script=$(readlink -f -- "$1")
-case "$script" in (/path/to/project1/*|/path/to/project2/*|/path/to/project3*)
-    exec python2 "$@"
-    ;;
-esac
+*   [python15](https://aur.archlinux.org/packages/python15/): Python 1.5.2
+*   [python24](https://aur.archlinux.org/packages/python24/): Python 2.4.6
+*   [python25](https://aur.archlinux.org/packages/python25/): Python 2.5.6
+*   [python26](https://aur.archlinux.org/packages/python26/): Python 2.6.9
+*   [python30](https://aur.archlinux.org/packages/python30/): Python 3.0.1
+*   [python31](https://aur.archlinux.org/packages/python31/): Python 3.1.5
+*   [python32](https://aur.archlinux.org/packages/python32/): Python 3.2.5
+*   [python33](https://aur.archlinux.org/packages/python33/): Python 3.3.5
+*   [python34](https://aur.archlinux.org/packages/python34/): Python 3.4.3
 
-exec python3 "$@"
+As of July 2014, Python upstream only supports Python 2.7, 3.2, 3.3, and 3.4 for security fixes. Using older versions for Internet-facing applications or untrusted code may be dangerous and is not recommended.
 
-```
-
-Where `/path/to/project1/*|/path/to/project2/*|/path/to/project3*` is a list of patterns separated by `|` matching all project trees.
-
-Do not forget to make it executable:
-
-```
-# chmod +x /usr/local/bin/python
-
-```
-
-Afterwards scripts within the specified project trees will be run with Python 2.
-
-## Getting completion in Python shell
-
-**Note:** This is relevant only for Python 2, [tab completion](https://docs.python.org/3/tutorial/interactive.html) is enabled by default since Python 3.4.
-
-Copy this into Python's interactive shell:
-
- `/usr/bin/python` 
-```
-import rlcompleter
-import readline
-readline.parse_and_bind("tab: complete")
-```
-
-Source: [http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html](http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html).
+Extra modules/libraries for old versions of Python may be found on the AUR by searching for `python<*version without period*>`, e.g. searching for "python26" for 2.6 modules.
 
 ## Widget bindings
 
@@ -174,25 +142,9 @@ The following [widget toolkit](https://en.wikipedia.org/wiki/Widget_toolkit "wik
 
 To use these with Python, you may need to install the associated widget kits.
 
-## Old versions
-
-Old versions of Python are available via the [AUR](/index.php/AUR "AUR") and may be useful for historical curiosity, old applications that do not run on current versions, or for testing Python programs intended to run on a distribution that comes with an older version (e.g. RHEL 5.x has Python 2.4, or Ubuntu 12.04 has Python 3.1):
-
-*   [python15](https://aur.archlinux.org/packages/python15/): Python 1.5.2
-*   [python24](https://aur.archlinux.org/packages/python24/): Python 2.4.6
-*   [python25](https://aur.archlinux.org/packages/python25/): Python 2.5.6
-*   [python26](https://aur.archlinux.org/packages/python26/): Python 2.6.9
-*   [python30](https://aur.archlinux.org/packages/python30/): Python 3.0.1
-*   [python31](https://aur.archlinux.org/packages/python31/): Python 3.1.5
-*   [python32](https://aur.archlinux.org/packages/python32/): Python 3.2.5
-*   [python33](https://aur.archlinux.org/packages/python33/): Python 3.3.5
-*   [python34](https://aur.archlinux.org/packages/python34/): Python 3.4.3
-
-As of July 2014, Python upstream only supports Python 2.7, 3.2, 3.3, and 3.4 for security fixes. Using older versions for Internet-facing applications or untrusted code may be dangerous and is not recommended.
-
-Extra modules/libraries for old versions of Python may be found on the AUR by searching for `python<*version without period*>`, e.g. searching for "python26" for 2.6 modules.
-
 ## Tips and tricks
+
+### IPython
 
 [IPython](http://ipython.org/) is an enhanced Python command line available in the official repositories as [ipython](https://www.archlinux.org/packages/?name=ipython) and [ipython2](https://www.archlinux.org/packages/?name=ipython2). If you want the IPython notebook, install [jupyter](https://www.archlinux.org/packages/?name=jupyter) for the IPython3 notebook and [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) for the IPython2 notebook. Run
 
@@ -205,7 +157,56 @@ to autostart the browser and run the IPython kernel. You can select the python v
 
 [bpython](http://bpython-interpreter.org/) is a ncurses interface to the Python interpreter, available in the official repositories as [bpython](https://www.archlinux.org/packages/?name=bpython) and [bpython2](https://www.archlinux.org/packages/?name=bpython2).
 
+### virtualenv
+
+[virtualenv](https://www.archlinux.org/packages/?name=virtualenv) is a Python tool written by Ian Bicking and used to create isolated environments for Python in which you can install packages without interfering with the other virtualenvs nor with the system Python's packages. It could change the python interpreter used for a specific application.
+
+See [Python/Virtualenv](/index.php/Python/Virtualenv "Python/Virtualenv") for details.
+
+### Getting completion in Python2 shell
+
+**Note:** This is relevant only for Python 2, [tab completion](https://docs.python.org/3/tutorial/interactive.html) is enabled by default since Python 3.4.
+
+Copy this into Python's interactive shell:
+
+ `/usr/bin/python` 
+```
+import rlcompleter
+import readline
+readline.parse_and_bind("tab: complete")
+```
+
+Source: [http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html](http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html).
+
 ## Troubleshooting
+
+### Dealing with version problem in build scripts
+
+Many projects' build scripts assume `python` to be Python 2, and that would eventually result in an error — typically complaining that `print 'foo'` is invalid syntax. Luckily, many of them call `python` from the `PATH` instead of hardcoding `#!/usr/bin/python` in the shebang line, and the Python scripts are all contained within the project tree. So, instead of modifying the build scripts manually, there is an easy workaround. Just create `/usr/local/bin/python` with content like this:
+
+ `/usr/local/bin/python` 
+```
+#!/bin/bash
+script=$(readlink -f -- "$1")
+case "$script" in (/path/to/project1/*|/path/to/project2/*|/path/to/project3*)
+    exec python2 "$@"
+    ;;
+esac
+
+exec python3 "$@"
+
+```
+
+Where `/path/to/project1/*|/path/to/project2/*|/path/to/project3*` is a list of patterns separated by `|` matching all project trees.
+
+Do not forget to make it executable:
+
+```
+# chmod +x /usr/local/bin/python
+
+```
+
+Afterwards scripts within the specified project trees will be run with Python 2.
 
 ### Python, ViM and UTF-8
 
@@ -213,12 +214,12 @@ When executing `:!python -c "import sys; print(sys.stdout.encoding)"` in ViM, th
 
 ## See also
 
-*   [Learning Python](http://shop.oreilly.com/product/9780596158071.do) is one of the most comprehensive, up to date, and well-written books on Python available today.
-*   [Dive Into Python](http://www.diveintopython.net/) is an excellent (free) resource, but perhaps for more advanced readers and [has been updated for Python 3](http://getpython3.com/diveintopython3/).
-*   [A Byte of Python](http://www.swaroopch.com/notes/Python) is a book suitable for users new to Python (and scripting in general).
-*   [Learn Python The Hard Way](http://learnpythonthehardway.org) the best intro to programming.
-*   [Learn Python](http://learnpython.org) nice site to learn python.
-*   [Crash into Python](http://stephensugden.com/crash_into_python/) Also known as *Python for Programmers with 3 Hours*, this guide gives experienced developers from other languages a crash course on Python.
-*   [Beginning Game Development with Python and Pygame: From Novice to Professional](http://www.apress.com/book/view/9781590598726) for games.
-*   [Think Python: How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/) A great introduction to Python programming for beginners.
-*   [Pythonspot](https://pythonspot.com) Great Python programming tutorials.
+*   [Learning Python, 4th edition](http://shop.oreilly.com/product/9780596158071.do)
+*   [Dive Into Python](http://www.diveintopython.net/), [Dive Into Python3](http://getpython3.com/diveintopython3/)
+*   [A Byte of Python](http://www.swaroopch.com/notes/Python)
+*   [Learn Python The Hard Way](http://learnpythonthehardway.org)
+*   [Learn Python](http://learnpython.org)
+*   [Crash into Python](http://stephensugden.com/crash_into_python/) (assumes familiarity with other programming languages)
+*   [Beginning Game Development with Python and Pygame](http://www.apress.com/book/view/9781590598726)
+*   [Think Python](http://www.greenteapress.com/thinkpython/)
+*   [Pythonspot](https://pythonspot.com)

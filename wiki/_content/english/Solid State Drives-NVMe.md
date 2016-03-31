@@ -28,9 +28,11 @@ Partitions should be aligned to 4096 bytes.
 
 Discards are disabled by default on typical setups that use [ext4](/index.php/Ext4 "Ext4") and [LVM](/index.php/LVM "LVM"), but other filesystems might need discards to be disabled explicitly.
 
+Intel, as one device manufacturer, recommends not to enable discards at the filesystem level, but suggests the [Solid State Drives#Apply periodic TRIM via fstrim](/index.php/Solid_State_Drives#Apply_periodic_TRIM_via_fstrim "Solid State Drives") method, or apply *fstrim* manually.[[1]](https://communities.intel.com/thread/75161?start=0&tstart=0)
+
 ### Airflow
 
-NVMe SSDs are known to be affected by high operating temperatures and will throttle performance over certain thresholds.[[1]](http://www.legitreviews.com/samsung-ssd-950-pro-512gb-nvme-pcie-ssd-review_174096/3)
+NVMe SSDs are known to be affected by high operating temperatures and will throttle performance over certain thresholds.[[2]](http://www.legitreviews.com/samsung-ssd-950-pro-512gb-nvme-pcie-ssd-review_174096/3)
 
 ### Testing
 

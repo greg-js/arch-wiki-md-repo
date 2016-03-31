@@ -48,7 +48,7 @@
 *   Дополнительно: графические интерефейсы GTK: [paprefs](https://www.archlinux.org/packages/?name=paprefs) и [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
 *   Дополнительно: регулировка звука с помощью мультимедиа клавиш на клавиатуре: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/)
 *   Дополнительно: консольные (CLI) микшеры: [ponymix](https://www.archlinux.org/packages/?name=ponymix) и [pamixer-git](https://aur.archlinux.org/packages/pamixer-git/)
-*   Дополнительно: консольный (с поддержкой курсора) микшер: [pulsemixer-git](https://aur.archlinux.org/packages/pulsemixer-git/)
+*   Дополнительно: консольный (с поддержкой курсора) микшер: [pulsemixer](https://aur.archlinux.org/packages/pulsemixer/)
 *   Дополнительно: web-интерфейс для регулировка звука: [PaWebControl](https://github.com/Siot/PaWebControl)
 *   Дополнительно: иконка в системном трее: [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)
 *   Дополнительно: апплет KDE4 плазма: [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) и [kdeplasma-applets-veromix](https://aur.archlinux.org/packages/kdeplasma-applets-veromix/) (Если KMix/Veromix не удается подключиться к PulseAudio при загрузке, вы можете отредактировать `/etc/pulse/client.conf` включив `autospawn = yes` вместо `autospawn = no`.)

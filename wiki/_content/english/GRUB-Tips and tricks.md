@@ -326,7 +326,7 @@ A basic GRUB config file uses the following options:
 If you have multiple kernels installed, say linux and linux-lts, by default `grub-mkconfig` groups them in a submenu. If you do not like this behaviour you can go back to one single menu by adding the following line to `/etc/default/grub`:
 
 ```
- GRUB_DISABLE_SUBMENU=y
+ GRUB_DISABLE_SUBMENU="y"
 
 ```
 

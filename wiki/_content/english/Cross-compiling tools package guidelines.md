@@ -43,7 +43,6 @@ The following strategies allows you to select compatible vesions of gcc, binutil
 *   [Official repositories](/index.php/Official_repositories "Official repositories"): you may have to apply additional fixes and hacks, but versions used by Arch Linux (or it's architecture-specific forks) most probably can be made to work together;
 *   Software documentation: all GNU software have `README` and `NEWS` files, documenting things like minimal required versions of dependencies;
 *   Other distributions: they too do cross-compilation
-    *   Gentoo crossdev [lists](http://en.gentoo-wiki.com/wiki/Crossdev#Known%20Workingn%20Architecturen%20Matrix) some working combinations.
 *   [http://cross-lfs.org](http://cross-lfs.org) covers steps, necessary for building cross-compiler and mentions somewhat up-to-date versions of dependencies.
 
 ## Building a cross compiler

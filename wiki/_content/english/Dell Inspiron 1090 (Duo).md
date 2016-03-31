@@ -163,7 +163,7 @@ Bus 004 Device 002: ID 0eef:725e D-WAV Scientific Co., Ltd
 
 ```
 
-For configuration, see [Multitouch Displays](/index.php/Multitouch_Displays "Multitouch Displays").
+For configuration, see [Multitouch displays](/index.php/Multitouch_displays "Multitouch displays").
 
 ### Docking Station
 

@@ -82,7 +82,7 @@ Arch 默认的内核已经通过一套模块提供了 ALSA，不必特别安装�
 
 [udev](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")会在系统启动时自动检测硬件，并加载相应的声音设备驱动模块。这时，你的声卡已经可以工作了，只是所有声道默认都被设置成静音了。
 
-在本地登录（通过虚拟终端或登录管理器）的用户，都有权限播放音频并调整音量。要让远程登录的用户拥有这些权限，必须把用户[加入](/index.php/Users_and_Groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.94.A8.E6.88.B7.E7.BB.84.E7.AE.A1.E7.90.86 "Users and Groups (简体中文)") `audio` 用户组。该组的成员可以直接访问声音设备，会导致某些程序独占音频输出（破坏软件混音），还可能影响用户快速切换和拖机（multiseat）。因此，除非真的有某些[特殊需求](https://wiki.ubuntu.com/Audio/TheAudioGroup)，**不建议**把用户加入 `audio` 用户组。
+在本地登录（通过虚拟终端或登录管理器）的用户，都有权限播放音频并调整音量。要让远程登录的用户拥有这些权限，必须把用户[加入](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.94.A8.E6.88.B7.E7.BB.84.E7.AE.A1.E7.90.86 "Users and groups (简体中文)") `audio` 用户组。该组的成员可以直接访问声音设备，会导致某些程序独占音频输出（破坏软件混音），还可能影响用户快速切换和拖机（multiseat）。因此，除非真的有某些[特殊需求](https://wiki.ubuntu.com/Audio/TheAudioGroup)，**不建议**把用户加入 `audio` 用户组。
 
 ### 用户权限
 
@@ -141,7 +141,7 @@ $ amixer sset Master unmute
 *   有一些声卡，需要关闭数字输出或将其调成静音，才能输出模拟音频信号。对于 Soundblaster Audigy LS 声卡，需要把 IEC958 通道设成静音。
 *   有些机器（如 Thinkpad T61），有一个 Speaker 通道，必须按照上述方法打开调整。
 *   有些机器（如 Dell E6400），可能还需要把 `Front` 和 `Headphone` 声道打开调整。
-*   华硕Asus上网本在xfce4等桌面环境设置请参考[Asus Eee PC](/index.php/Asus_Eee_PC "Asus Eee PC")
+*   华硕Asus上网本在xfce4等桌面环境设置请参考[ASUS Eee PC](/index.php/ASUS_Eee_PC "ASUS Eee PC")
 
 ### 测试你改变的设置
 
@@ -935,7 +935,7 @@ Hardware is initialized using a generic method
 
 使用 `ondemand` 或 `conservative` 频率策略、启用CPU频率动态调整时，某些声卡和某些 ALSA 驱动会出现声音跳跃的情况。目前，唯一的解决方案是使用固定的频率，如 `performance` 性能策略。
 
-详情参见 [CPU Frequency Scaling (简体中文)](/index.php/CPU_Frequency_Scaling_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "CPU Frequency Scaling (简体中文)")。
+详情参见 [CPU frequency scaling (简体中文)](/index.php/CPU_frequency_scaling_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "CPU frequency scaling (简体中文)")。
 
 ### 同时只能有一个用户播放音频
 
@@ -1336,7 +1336,7 @@ options snd_hda_intel power_save=0 power_save_controller=N
 
 内核模块文档：[[3]](https://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt)
 
-对于笔记本，即使在 `/etc/modprobe.d` 设置了 `power_save` 参数，当切换电池时 pm-utils 仍会将该值重置为1。需要禁用相关的脚步才行（详情参见：[Pm-utils#Disabling_a_hook](/index.php/Pm-utils#Disabling_a_hook "Pm-utils")）：
+对于笔记本，即使在 `/etc/modprobe.d` 设置了 `power_save` 参数，当切换电池时 pm-utils 仍会将该值重置为1。需要禁用相关的脚步才行（详情参见：[Pm-utils#Disabling a hook](/index.php/Pm-utils#Disabling_a_hook "Pm-utils")）：
 
 ```
 # touch /etc/pm/power.d/intel-audio-powersave

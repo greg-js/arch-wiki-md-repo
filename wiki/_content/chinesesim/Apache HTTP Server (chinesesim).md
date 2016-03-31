@@ -367,7 +367,7 @@ httpd.service: control process exited, code=exited status=1
 
  `LoadModule mpm_prefork_module modules/mod_mpm_prefork.so` 
 
-另一种选择, 你可以使用`mod_proxy_fcgi` ( [使用php-fpm和mod_proxy_fcgi](/index.php/Apache_HTTP_Server#Using_php5_with_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server") ).
+另一种选择, 你可以使用`mod_proxy_fcgi` ( [使用php-fpm和mod_proxy_fcgi](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server") ).
 
 *   如果你的`文件根目录`不是`/srv/http`，将其添加到`/etc/php/php.ini`的`open_basedir`部分，如下：
 

@@ -5,11 +5,11 @@
 *   (Des)conectar un adaptador de Corriente Alterna a un portátil.
 *   (Des)conectar un jack de un teléfono, etc.
 
-acpid puede ser usado asi mismo, o combinado con un sistema más robusto como [pm-utils](/index.php?title=Pm-utils_(Espa%C3%B1ol)&action=edit&redlink=1 "Pm-utils (Español) (page does not exist)") y [cpufrequtils](/index.php/CPU_Frequency_Scaling_(Espa%C3%B1ol) "CPU Frequency Scaling (Español)") para una mayor solución del control de energía.
+acpid puede ser usado asi mismo, o combinado con un sistema más robusto como [pm-utils](/index.php?title=Pm-utils_(Espa%C3%B1ol)&action=edit&redlink=1 "Pm-utils (Español) (page does not exist)") y [cpufrequtils](/index.php/CPU_frequency_scaling_(Espa%C3%B1ol) "CPU frequency scaling (Español)") para una mayor solución del control de energía.
 
 **Nota:**
 
-*   [Entornos de escritorio](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)"), como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), gestor de inicio de sesión de [systemd](/index.php/Systemd_(Espa%C3%B1ol)#ACPI_administraci.C3.B3n_de_la_energ.C3.ADa "Systemd (Español)") y algunos demonios [manejadores de teclas extra](/index.php?title=Extra_Keyboard_Keys_(Espa%C3%B1ol)&action=edit&redlink=1 "Extra Keyboard Keys (Español) (page does not exist)") pueden implementar métodos propios de manejo de eventos, independientemente de acpid. Usar más de un sistema a la vez puede provocar un comportamiento inesperado, como suspenderse dos veces de una, tras apretar una vez el botón de hibernar. Ten esto en cuenta y activa solo manejadores deseados.
+*   [Entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"), como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), gestor de inicio de sesión de [systemd](/index.php/Systemd_(Espa%C3%B1ol)#ACPI_administraci.C3.B3n_de_la_energ.C3.ADa "Systemd (Español)") y algunos demonios [manejadores de teclas extra](/index.php?title=Extra_Keyboard_Keys_(Espa%C3%B1ol)&action=edit&redlink=1 "Extra Keyboard Keys (Español) (page does not exist)") pueden implementar métodos propios de manejo de eventos, independientemente de acpid. Usar más de un sistema a la vez puede provocar un comportamiento inesperado, como suspenderse dos veces de una, tras apretar una vez el botón de hibernar. Ten esto en cuenta y activa solo manejadores deseados.
 *   Ya que por defecto el script que provee acpid, **/etc/acpi/handler.sh**, sobreescribirá la funcionalidad del botón de encendido/apagado de tu entorno de escritorio, seguramente querrás cambiar la rutina de apagado de acpid para evitar apagar el ordenador cuando apretes de golpe cuando apretes el botón de encendido/apagado (ver instrucciones a continuación).
 
 ## Contents
@@ -29,7 +29,7 @@ acpid puede ser usado asi mismo, o combinado con un sistema más robusto como [p
 
 ## Instalación
 
-[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [acpid](https://www.archlinux.org/packages/?name=acpid), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [acpid](https://www.archlinux.org/packages/?name=acpid), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Para que inicie al arranque :
 
@@ -308,7 +308,7 @@ esac
 
 ### Apagar la pantalla del portátil
 
-Adaptado del [de Gentoo](http://en.gentoo-wiki.com/wiki/ACPI/Configuration%7CWiki), viene esta pequeña perla. Añade esto al final de `/etc/acpi/actions/lm_lid.sh` o a la sección *button/lid* `/etc/acpi/handler.sh`. Esto apagará la luz de la pantalla cuando la tapa esté cerrada, y la encenderá cuando la tapa se abra.
+Adaptado del [de Gentoo](http://www.gentoo-wiki.info/ACPI/Configuration%7CWiki), viene esta pequeña perla. Añade esto al final de `/etc/acpi/actions/lm_lid.sh` o a la sección *button/lid* `/etc/acpi/handler.sh`. Esto apagará la luz de la pantalla cuando la tapa esté cerrada, y la encenderá cuando la tapa se abra.
 
 ```
 case $(cat /proc/acpi/button/lid/LID0/state | awk '{print $2}') in
@@ -330,7 +330,7 @@ esac
 
 ```
 
-Con ciertas combinaciones de [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") y hardware problemático, `xset dpms force off` solo deja en blanco la pantalla dejando la luz encendida. Esto puede ser corregido usando [vbetool](https://www.archlinux.org/packages/?name=vbetool) de los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Cambia la sección LCD a:
+Con ciertas combinaciones de [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") y hardware problemático, `xset dpms force off` solo deja en blanco la pantalla dejando la luz encendida. Esto puede ser corregido usando [vbetool](https://www.archlinux.org/packages/?name=vbetool) de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Cambia la sección LCD a:
 
 ```
 case $(cat /proc/acpi/button/lid/LID0/state | awk '{print $2}') in
@@ -378,5 +378,5 @@ En sistemas más nuevos usando systemd, los accesos a X11 no son necesariamente 
 ## Ver también
 
 *   [http://acpid.sourceforge.net/](http://acpid.sourceforge.net/) - página de acpid
-*   [http://www.gentoo-wiki.info/ACPI/Configuration](http://www.gentoo-wiki.info/ACPI/Configuration)
+*   [Gentoo wiki](http://www.gentoo-wiki.info/ACPI/Configuration)
 *   [ACPI hotkeys](/index.php?title=ACPI_hotkeys_(Espa%C3%B1ol)&action=edit&redlink=1 "ACPI hotkeys (Español) (page does not exist)")

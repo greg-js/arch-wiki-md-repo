@@ -87,7 +87,7 @@ ABS 並非 Arch Linux 下必需功能，但它是相當好用的原始碼編譯�
 
 ### 安裝工具
 
-要使用 ABS，首先需要從[官方軟體庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")[安裝](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") [abs](https://www.archlinux.org/packages/?name=abs)。
+要使用 ABS，首先需要從[官方軟體庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")[安裝](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") [abs](https://www.archlinux.org/packages/?name=abs)。
 
 將會抓取 abs 同步腳本、各種組建腳本以及 [rsync](/index.php/Rsync "Rsync") (若沒有的話會以相依軟體安裝)。
 

@@ -92,6 +92,5 @@ Se debe señalar que IceWM es un gestor de ventanas y por lo tanto no incluye un
 
 *   [Xinitrc](/index.php/Xinitrc "Xinitrc")
 *   [Sitio Oficial de IceWM](http://www.icewm.org/)
-*   [IceWM - Gentoo Linux Wiki](http://en.gentoo-wiki.com/wiki/IceWM)
 *   [IceWM - The Cool Window Manager](http://www.osnews.com/story.php/7774/IceWM--The-Cool-Window-Manager/) - Detallada introducción en OSNews
 *   [IceWM - A desktop for Windows emigrants](http://polishlinux.org/apps/window-managers/icewm-a-desktop-for-windows-emmigrants/) - Intoducción y tutorial en polishlinux.org

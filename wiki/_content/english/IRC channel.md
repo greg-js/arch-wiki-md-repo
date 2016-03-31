@@ -52,9 +52,9 @@ If `/query` happens to not work in your client you can try using either `/quote 
 
 *   **Follow the guidelines**
 
-	[Freenode network policy](http://freenode.net/policy.shtml)
+	[Freenode network policy](http://freenode.net/policies)
 
-	[Freenode channel guidelines](http://freenode.net/channel_guidelines.shtml)
+	[Freenode channel guidelines](http://freenode.net/changuide)
 
 	[#archlinux channel guidelines](#.23archlinux_guidelines)
 

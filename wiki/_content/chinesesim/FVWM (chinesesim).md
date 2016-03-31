@@ -32,15 +32,13 @@ When you start FVWM for the first time, you will get something that looks very b
 
 *   虽然它很过时，但是它对理解FVWM的工作原理和怎么样建立你自己的基本设置很有帮助. [FVWM beginners guide](http://www.zensites.net/fvwm/guide/)
 
-*   The Gentoo Linux Wiki has a useful guide on configuration.[[1]](http://en.gentoo-wiki.com/wiki/FVWM/Configuration)
+*   The FVWM homepage[[1]](http://fvwm.org/) includes documentation[[2]](http://fvwm.org/documentation/), a FAQ [[3]](http://fvwm.org/documentation/faq/), and links to a Wiki[[4]](http://fvwmwiki.xteddy.org/)) and the FVWM forums[[5]](http://www.fvwmforums.org).
 
-*   The FVWM homepage[[2]](http://fvwm.org/) includes documentation[[3]](http://fvwm.org/documentation/), a FAQ [[4]](http://fvwm.org/documentation/faq/), and links to a Wiki[[5]](http://fvwmwiki.xteddy.org/)) and the FVWM forums[[6]](http://www.fvwmforums.org).
+*   The best way to come up with the desktop you want is probably to check out the configurations in the FVWM forum[[6]](http://www.fvwmforums.org/phpBB3/viewforum.php?f=39&sid=468469f95f9a2a90cd9d5a0819d26eec) or at Box-Look.org,[[7]](http://www.box-look.org) choose one you like, install it, and modify it to taste.
 
-*   The best way to come up with the desktop you want is probably to check out the configurations in the FVWM forum[[7]](http://www.fvwmforums.org/phpBB3/viewforum.php?f=39&sid=468469f95f9a2a90cd9d5a0819d26eec) or at Box-Look.org,[[8]](http://www.box-look.org) choose one you like, install it, and modify it to taste.
+*   As you work with what other people have done, you may find it helpful to look at the tips on configuration files by Thomas Adam, the most active FVWM developer.[[8]](http://www.fvwmforums.org/phpBB3/viewtopic.php?f=40&t=1505)
 
-*   As you work with what other people have done, you may find it helpful to look at the tips on configuration files by Thomas Adam, the most active FVWM developer.[[9]](http://www.fvwmforums.org/phpBB3/viewtopic.php?f=40&t=1505)
-
-*   A page[[10]](http://web.archive.org/web/20070912061152/abdn.ac.uk/~u15dm4/fvwm/) in the [Internet Archive](http://archive.org/) is outdated, but seems to be the only significant online documentation for fvwm-patched.
+*   A page[[9]](http://web.archive.org/web/20070912061152/abdn.ac.uk/~u15dm4/fvwm/) in the [Internet Archive](http://archive.org/) is outdated, but seems to be the only significant online documentation for fvwm-patched.
 
 *   FVWM-Crystal, which is also in the Arch repositories as package [fvwm-crystal](https://www.archlinux.org/packages/?name=fvwm-crystal), is an add-on that makes FVWM much easier to configure, although the easier configuration allows much less flexibility than direct editing of configuration files.
 
@@ -53,14 +51,13 @@ When you start FVWM for the first time, you will get something that looks very b
 ## 参考
 
 1.  Zensites [FVWM beginners guide](http://zensites.net/fvwm/guide/).
-2.  Gentoo Wiki [configuration guide](http://en.gentoo-wiki.com/wiki/FVWM/Configuration).
-3.  [FVWM Homepage](http://fvwm.org/).
-4.  FVWM Homepage [documentation](http://fvwm.org/documentation/).
-5.  FVWM Homepage [FAQ](http://fvwm.org/documentation/faq/).
-6.  [FVWM Wiki](http://fvwmwiki.xteddy.org/).
-7.  [FVWM Forums](http://www.fvwmforums.org).
-8.  [Configurations](http://www.fvwmforums.org/phpBB3/viewforum.php?f=39&sid=468469f95f9a2a90cd9d5a0819d26eec) in the FVWM forum.
-9.  [Box-Look](http://www.box-look.org/).
-10.  Thomas Adam on [common mistakes in configuration files](http://www.fvwmforums.org/phpBB3/viewtopic.php?f=40&t=1505).
-11.  [Fvwm Patches](http://web.archive.org/web/20070912061152/abdn.ac.uk/~u15dm4/fvwm/) in the [Internet Archive](http://archive.org/).
-12.  [An example of a Fvwm module written in Perl](http://petermblair.com/2009/02/my-first-fvwm-module/)
+2.  [FVWM Homepage](http://fvwm.org/).
+3.  FVWM Homepage [documentation](http://fvwm.org/documentation/).
+4.  FVWM Homepage [FAQ](http://fvwm.org/documentation/faq/).
+5.  [FVWM Wiki](http://fvwmwiki.xteddy.org/).
+6.  [FVWM Forums](http://www.fvwmforums.org).
+7.  [Configurations](http://www.fvwmforums.org/phpBB3/viewforum.php?f=39&sid=468469f95f9a2a90cd9d5a0819d26eec) in the FVWM forum.
+8.  [Box-Look](http://www.box-look.org/).
+9.  Thomas Adam on [common mistakes in configuration files](http://www.fvwmforums.org/phpBB3/viewtopic.php?f=40&t=1505).
+10.  [Fvwm Patches](http://web.archive.org/web/20070912061152/abdn.ac.uk/~u15dm4/fvwm/) in the [Internet Archive](http://archive.org/).
+11.  [An example of a Fvwm module written in Perl](http://petermblair.com/2009/02/my-first-fvwm-module/)

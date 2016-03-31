@@ -35,6 +35,9 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### Mars 2016
 
+*   [29 March 2016] [ASA-201603-27](https://lists.archlinux.org/pipermail/arch-security/2016-March/000592.html) [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) sandbox escape
+*   [29 March 2016] [ASA-201603-26](https://lists.archlinux.org/pipermail/arch-security/2016-March/000591.html) [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) sandbox escape
+*   [29 March 2016] [ASA-201603-25](https://lists.archlinux.org/pipermail/arch-security/2016-March/000590.html) [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) sandbox escape
 *   [26 March 2016] [ASA-201603-24](https://lists.archlinux.org/pipermail/arch-security/2016-March/000589.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
 *   [24 March 2016] [ASA-201603-23](https://lists.archlinux.org/pipermail/arch-security/2016-March/000588.html) [expat](https://www.archlinux.org/packages/?name=expat) arbitrary code execution
 *   [24 March 2016] [ASA-201603-22](https://lists.archlinux.org/pipermail/arch-security/2016-March/000587.html) [botan](https://www.archlinux.org/packages/?name=botan) multiple issues

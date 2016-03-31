@@ -81,6 +81,10 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 	[http://winshares.sourceforge.net/](http://winshares.sourceforge.net/) || [ws](https://aur.archlinux.org/packages/ws/)
 
+*   **zulucrypt** — A GUI frontend for cryptsetup to create, manage and mount encrypted volumes; supports encfs as well
+
+	[http://mhogomchungu.github.io/zuluCrypt/](http://mhogomchungu.github.io/zuluCrypt/) || [zulucrypt](https://aur.archlinux.org/packages/zulucrypt/)
+
 #### Udisks
 
 *   **bashmount** — A bash script to mount and manage removable media as a regular user with udisks.

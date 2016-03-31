@@ -646,7 +646,10 @@ With that volume, you may modify less than 100M of data, before the snapshot vol
 
 Reverting the modified 'pv' logical volume to the state when the 'snap01' snapshot was taken can be done with
 
-`# lvconvert --merge /dev/vg0/snap01`
+```
+# lvconvert --merge /dev/vg0/snap01
+
+```
 
 In case the origin logical volume is active, merging will occur on the next reboot.(Merging can be done even from a LiveCD)
 
@@ -659,7 +662,7 @@ The snapshot can be mounted and backed up with **dd** or **tar**. The size of th
 It is important to have the *dm_snapshot* module listed in the MODULES variable of `/etc/mkinitcpio.conf`, otherwise the system will not boot. If you do this on an already installed system, make sure to rebuild the image with
 
 ```
-# mkinitcpio -g /boot/initramfs-linux.img
+# mkinitcpio -p linux
 
 ```
 

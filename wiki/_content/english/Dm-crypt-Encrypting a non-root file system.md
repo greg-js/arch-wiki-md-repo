@@ -26,7 +26,7 @@ This example covers the encryption of the `/home` partition, but it can be appli
 
 **Tip:** You can either have a single user's `/home` directory on a partition, or create a common partition for all user's `/home` partitions.
 
-First, prepare the partition by securely erasing it, see [Dm-crypt/Drive preparation#Secure erasure of the hard disk drive](/index.php/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive "Dm-crypt/Drive preparation").
+First make sure the partition is empty(has no file system attached to it). Delete the partition and create an empty one if it has a file system. Then prepare the partition by securely erasing it, see [Dm-crypt/Drive preparation#Secure erasure of the hard disk drive](/index.php/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive "Dm-crypt/Drive preparation").
 
 Then setup the LUKS header with:
 
@@ -72,6 +72,8 @@ To unmount it:
 # cryptsetup close *name*
 
 ```
+
+**Tip:** [GVFS](/index.php/GVFS "GVFS") can also mount encrypted partitions. One can use a file manager with gvfs support (i.e. [Thunar](/index.php/Thunar "Thunar")) to mount the partition, and a password dialog will pop-up. For other desktops, [zulucrypt](https://aur.archlinux.org/packages/zulucrypt/) also provides a GUI.
 
 ### Automated unlocking and mounting
 

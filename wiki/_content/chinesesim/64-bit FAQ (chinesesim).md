@@ -13,7 +13,7 @@
 *   [7 Arch64缺少什么？](#Arch64.E7.BC.BA.E5.B0.91.E4.BB.80.E4.B9.88.EF.BC.9F)
 *   [8 我能否在Arch64里运行32-bit应用程序？](#.E6.88.91.E8.83.BD.E5.90.A6.E5.9C.A8Arch64.E9.87.8C.E8.BF.90.E8.A1.8C32-bit.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.EF.BC.9F)
 *   [9 我可以在Arch64下编译给i686用的32-bit软件包吗？](#.E6.88.91.E5.8F.AF.E4.BB.A5.E5.9C.A8Arch64.E4.B8.8B.E7.BC.96.E8.AF.91.E7.BB.99i686.E7.94.A8.E7.9A.8432-bit.E8.BD.AF.E4.BB.B6.E5.8C.85.E5.90.97.EF.BC.9F)
-    *   [9.1 Multilib 仓库 - Multilib_Project](#Multilib_.E4.BB.93.E5.BA.93_-_Multilib_Project)
+    *   [9.1 Multilib 仓库 - Multilib Project](#Multilib_.E4.BB.93.E5.BA.93_-_Multilib_Project)
     *   [9.2 Chroot](#Chroot)
 *   [10 我可以无需重新安装将我的系统从i686升级/切换到x86_64吗？](#.E6.88.91.E5.8F.AF.E4.BB.A5.E6.97.A0.E9.9C.80.E9.87.8D.E6.96.B0.E5.AE.89.E8.A3.85.E5.B0.86.E6.88.91.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BB.8Ei686.E5.8D.87.E7.BA.A7.2F.E5.88.87.E6.8D.A2.E5.88.B0x86_64.E5.90.97.EF.BC.9F)
 
@@ -140,7 +140,7 @@ $ sudo chroot /mnt/arch32 su your32bitusername /opt/openoffice/program/soffice
 *   从multilibC仓库中使用相关包的 multilib 版本，或者
 *   一个 i686 chroot。
 
-### Multilib 仓库 - [Multilib_Project](/index.php/Multilib_Project "Multilib Project")
+### Multilib 仓库 - [Multilib Project](/index.php/Multilib_Project "Multilib Project")
 
 想要使用 multilib 仓库，编辑 `/etc/pacman.conf` 添加下面内容：
 

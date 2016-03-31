@@ -1,6 +1,6 @@
 According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"):
 
-	*Compiz is a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") for the [X Window System](/index.php/X_Window_System "X Window System"), using 3D graphics hardware to create fast compositing desktop effects for window management. Effects, such as a minimization animation or a cube workspace, are implemented as loadable plugins.*
+	Compiz is a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") for the [X Window System](/index.php/X_Window_System "X Window System"), using 3D graphics hardware to create fast compositing desktop effects for window management. Effects, such as a minimization animation or a cube workspace, are implemented as loadable plugins.
 
 ## Contents
 
@@ -401,7 +401,7 @@ the problem is with the permission on `~/.config/compiz/`. To fix it, use:
 
 ### Alt+F4 keybinding not working (Xfce)
 
-If Compiz directly replaces Xfwm4 (in other words, if `compiz --replace` is executed whilst Xfwm4 is running), then the `Alt-F4` key combination will become non-functional. In this instance, run `compiz --replace` again. This will mean that Compiz replaces itself and so regains control of the `Alt-F4` key combination. For this reason, if you wish to use Compiz in the [Xfce](/index.php/Xfce "Xfce") desktop, it is a good idea to *not* autostart `compiz --replace` at login but instead to set `compiz` as the default window manager in *xfconf* - see [Xfce#Default window manager](/index.php/Xfce#Default_window_manager "Xfce").
+If Compiz replaces Xfwm4 at login, this can cause the `Alt+F4` keybinding to become non-functional. To avoid this issue, ensure that only Compiz is started at login - see [Xfce#Default window manager](/index.php/Xfce#Default_window_manager "Xfce").
 
 ### Emerald crashes when selecting a theme
 

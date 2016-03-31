@@ -1,6 +1,6 @@
 I possessori di schede video **AMD** possono scegliere tra i [driver proprietari](/index.php/AMD_Catalyst_(Italiano) "AMD Catalyst (Italiano)") ATI/AMD ([catalyst](https://aur.archlinux.org/packages/catalyst/)) e i driver open source([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)).
 
-Attualmente, le performance dei driver open source non sono *alla pari* con i driver proprietari in termini di prestazioni 3D e mancano di alcune caratteristiche, come il supporto TV-out. Tuttavia, offrono un miglior supporto dual-head, un'eccellente accelerazione 2D, e forniscono l'accelerazione 3D necessaria ai vari [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") che sfruttano le accelerazioni OpenGL, come [Compiz](/index.php/Compiz_(Italiano) "Compiz (Italiano)") o KWin.
+Attualmente, le performance dei driver open source non sono *alla pari* con i driver proprietari in termini di prestazioni 3D e mancano di alcune caratteristiche, come il supporto TV-out. Tuttavia, offrono un miglior supporto dual-head, un'eccellente accelerazione 2D, e forniscono l'accelerazione 3D necessaria ai vari [Window Manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") che sfruttano le accelerazioni OpenGL, come [Compiz](/index.php/Compiz_(Italiano) "Compiz (Italiano)") o KWin.
 
 In caso si incertezza, provare in primo luogo i driver open source; sono adatti alla maggior parte delle necessità e sono generalmente più flessibili e meno problematici. (vedere la [tabella delle caratteristiche](http://www.x.org/wiki/RadeonFeature) per i dettagli.) Per una panoramica riservata ai driver proprietari ATI "Catalyst" e la loro configurazione, consultare [ATI Catalyst](/index.php/ATI_Catalyst "ATI Catalyst"); questo articolo copre solamente i driver open source. I driver [ATI Catalyst non sono ufficialmente supportati](https://www.archlinux.org/news/439/) in Arch Linux.
 
@@ -68,7 +68,7 @@ Generalmente ,**xf86-video-ati** dovrebbe essere la prima scelta, indipendenteme
 
 ### Installazione di xf86-video-ati
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"):
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"):
 
 La versione GIT di questi drivers più pacchetti aggiuntivi (linux-git, etc.) possono essere scaricati dai [repository radeon](https://bbs.archlinux.org/viewtopic.php?id=79509&p=1) o da [AUR](/index.php/AUR "AUR")
 
@@ -90,7 +90,7 @@ Utilizzando questa sezione, è possibile attivare ulteriori funzioni e ottimizza
 
 ## Kernel mode-setting (KMS)
 
-**Tip:** Se si hanno problemi con la risoluzione, consultare [questa pagina](/index.php/Kernel_Mode_Setting#Forcing_modes_and_EDID "Kernel Mode Setting").
+**Tip:** Se si hanno problemi con la risoluzione, consultare [questa pagina](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting").
 
 [KMS](/index.php/KMS "KMS") abilita la risoluzione nativa nel framebuffer e permette l'interscambio istantaneo tra console (tty). KMS abilita inoltre le più recenti tecnologie (come ad esempio DRI2) riducendone eventuali anomalie ed incrementando le prestazioni 3D, oltre al risparmio energetico in kernel-space.
 
@@ -516,7 +516,7 @@ Se si riscontrano artefatti grafici, per prima cosa provare ad avviare X senza l
 
 Per poter funzionare senza un file di configurazione, si raccomanda che il pacchetto del gruppo `xorg-input-drivers` sia installato.
 
-È possibile che questi problemi siano legati a KMS. Se questo è il problema, vedi [Disabilitare KMS.](/index.php/ATI_(Italiano)#Disabilitare_KMS "ATI (Italiano)")
+È possibile che questi problemi siano legati a KMS. Se questo è il problema, vedi [Disabilitare KMS.](#Disabilitare_KMS)
 
 Si può anche provare a disabilitare EXAPixmaps nella sezione "Device" di `/etc/X11/xorg.conf.d/20-radeon.conf`::
 

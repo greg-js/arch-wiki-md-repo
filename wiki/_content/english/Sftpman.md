@@ -1,4 +1,4 @@
-You can use sftpman (an [sshfs](/index.php/Sshfs "Sshfs") helper) to mount a remote system - accessible via [SSH](/index.php/SSH "SSH") - to a local folder.
+You can use sftpman (an [SSHFS](/index.php/SSHFS "SSHFS") helper) to mount a remote system - accessible via [SSH](/index.php/SSH "SSH") - to a local folder.
 
 sftpman offers both a command-line tool (*sftpman*) and a GTK frontend (*sftpman-gtk*, see [screenshot](https://github.com/spantaleev/sftpman-gtk/raw/master/sftpman-gui.png)), each packaged separately.
 
@@ -18,9 +18,9 @@ With sftpman, you first setup (define) your remote filesystems and then you moun
 
 ## Prerequisite
 
-In order to use *sftpman* or it's GTK frontend *sftpman-gtk*, you'll first need to have a working [sshfs](/index.php/Sshfs "Sshfs") setup.
+In order to use *sftpman* or it's GTK frontend *sftpman-gtk*, you'll first need to have a working [SSHFS](/index.php/SSHFS "SSHFS") setup.
 
-[sshfs](/index.php/Sshfs "Sshfs") and fuse are installed as dependencies, so you may just need to add *fuse* to your module-list in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` to auto-load at boot.
+[SSHFS](/index.php/SSHFS "SSHFS") and fuse are installed as dependencies, so you may just need to add *fuse* to your module-list in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` to auto-load at boot.
 
 ## Installation
 
@@ -116,7 +116,7 @@ If the GUI application does not ask you for a password while mounting (when usin
 
 When doing authentication using keys, start small and make sure SSHing actually works by trying it manually, before trying to use sshfs. Some common problems can be solved by consulting [Using SSH Keys#Troubleshooting](/index.php/Using_SSH_Keys#Troubleshooting "Using SSH Keys").
 
-Also see [Sshfs#Troubleshooting](/index.php/Sshfs#Troubleshooting "Sshfs").
+Also see [SSHFS#Troubleshooting](/index.php/SSHFS#Troubleshooting "SSHFS").
 
 ## Other Resources
 
@@ -129,4 +129,4 @@ Also see [Sshfs#Troubleshooting](/index.php/Sshfs#Troubleshooting "Sshfs").
 ## See also
 
 *   [SSH](/index.php/SSH "SSH")
-*   [sshfs](/index.php/Sshfs "Sshfs")
+*   [SSHFS](/index.php/SSHFS "SSHFS")

@@ -10,8 +10,6 @@ Spectrwm is written in C and configured with a text configuration file. It was p
 *   [2 Configuration](#Configuration)
     *   [2.1 Keybindings configuration](#Keybindings_configuration)
 *   [3 Starting spectrwm](#Starting_spectrwm)
-    *   [3.1 Starting spectrwm with XDM](#Starting_spectrwm_with_XDM)
-    *   [3.2 Starting spectrwm with KDM](#Starting_spectrwm_with_KDM)
 *   [4 Multiple monitors (Xinerama)](#Multiple_monitors_.28Xinerama.29)
 *   [5 Statusbar configuration](#Statusbar_configuration)
     *   [5.1 Bash scripts](#Bash_scripts)
@@ -53,64 +51,12 @@ Default keybindings are in `/etc/spectrwm/spectrwm_<<keyboard layout>>.conf`. In
 
 ## Starting spectrwm
 
-To start spectrwm via `startx` or the [SLiM](/index.php/SLiM "SLiM") login manager, append the following to `~/.xinitrc`:
+Select *spectrwm* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
+
+Alternatively, to start spectrwm with `startx` or the [SLiM](/index.php/SLiM "SLiM") login manager, simply append the following to `~/.xinitrc`:
 
 ```
 exec spectrwm
-
-```
-
-### Starting spectrwm with XDM
-
-For [XDM](/index.php/XDM "XDM"), create `~/.xsession` with the following contents:
-
-```
-# .xsession
-# This file is sourced by xdm
-spectrwm
-
-```
-
-Make sure `~/.xsession` is executable:
-
-```
-$ chmod a+x ~/.xsession
-
-```
-
-**Note:** If you do not create `~/.xsession`, then `~/.xinitrc` will be used, but you might want different settings depending on if you use `startx` or XDM. Remember to make `~/.xinitrc` executable, or XDM won't start, if you use that method.
-
-**Tip:** For a nice simple Arch themed xdm, try [xdm-arch-theme](https://aur.archlinux.org/packages/xdm-arch-theme/).
-
-### Starting spectrwm with KDM
-
-For [KDM](/index.php/KDM "KDM"), make sure `/usr/share/xsessions` is listed in SessionDirs in `/usr/share/config/kdm/kdmrc` as described [here](/index.php/KDM#SessionsDirs "KDM"). SpectrWM will then be available as an option in the Session Type menu in KDM.
-
-To start other tasks when the session is launched, for example to launch xscreensaver and set the background image, copy `/usr/share/config/kdm/Xsession` to a custom version as described [here](/index.php/KDM#Session "KDM"), and then edit it, for example like this:
-
-```
-case $session in
-  "")
-    exec xmessage -center -buttons OK:0 -default OK "Sorry, $DESKTOP_SESSION is no valid session."
-    ;;
-  failsafe)
-    exec xterm -geometry 80x24-0-0
-    ;;
-  custom)
-    exec $HOME/.xsession
-    ;;
-  default)
-    exec /usr/bin/startkde
-    ;;
-  '''/usr/bin/spectrwm'''|otherwm''')'''
-    '''feh --bg-scale /usr/share/wallpapers/Plasmalicious/contents/images/1280x1024.jpg'''
-    '''xscreensaver -no-splash &'''
-    '''eval exec "$session"'''
-    ''';;'''
-  *)
-    eval exec "$session"
-    ;;
-esac
 
 ```
 

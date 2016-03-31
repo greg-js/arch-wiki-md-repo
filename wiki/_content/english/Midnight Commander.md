@@ -21,7 +21,8 @@ As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works
     *   [5.3 Opening files](#Opening_files)
     *   [5.4 Find file shows no results](#Find_file_shows_no_results)
     *   [5.5 Terminfo](#Terminfo)
-        *   [5.5.1 Shift+F6 not working](#Shift.2BF6_not_working)
+        *   [5.5.1 No bold text in urxvt](#No_bold_text_in_urxvt)
+        *   [5.5.2 Shift+F6 not working](#Shift.2BF6_not_working)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -33,6 +34,10 @@ As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works
 *   **mc-solarized-git** — Solarized color scheme for Midnight Commander
 
 	[https://github.com/nkulikov/mc-solarized-skin](https://github.com/nkulikov/mc-solarized-skin) || [mc-solarized-git](https://aur.archlinux.org/packages/mc-solarized-git/)
+
+*   **mc-skin-modarin-debian** — Thin versions of the modarin theme
+
+	[https://launchpad.net/debian/+source/mc/3:4.8.13-3](https://launchpad.net/debian/+source/mc/3:4.8.13-3) || [mc-skin-modarin-debian](https://aur.archlinux.org/packages/mc-skin-modarin-debian/)
 
 *   **mc-skin-candy** — Candy color scheme (256color)
 
@@ -176,6 +181,25 @@ export MC_XDG_OPEN=~/bin/nohup-open
 If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. Find file does not follow symbolic links, so use bind mounts (see `man mount`) instead, or the *External panelize* command.
 
 ### Terminfo
+
+#### No bold text in urxvt
+
+If started under [urxvt](/index.php/Rxvt-unicode "Rxvt-unicode") with the default `TERM` setting, text that is usually bold in many other terminals will not appear so. The root of the issue is because xterm couples bright text color with the bold attribute (thus, bright colors will always appear as bold in xterm).
+
+urxvt does not have this limitation, which Slang (the library mc uses for text display by default) honors. Because Slang can decouple the bold attribute from bright colors on urxvt, mc would need to explicitly specify the bold attribute as appropriate ([which it does not](https://bugzilla.redhat.com/show_bug.cgi?id=474108#c3)).
+
+The solution is to configure mc to explicitly use bold colors as desired, e.g. by editing the default skin as follows:
+
+```
+mkdir ~/.local/share/mc/skins 
+cp /usr/share/mc/skins/default.ini ~/.local/share/mc/skins/
+sed -i -E 's/^(.* = (gray|brightred|brightgreen|yellow|brightblue|brightmagenta|brightcyan|white);.*)$/\0;bold/' ~/.local/share/mc/skins/default.ini
+
+```
+
+The above will create a copy of the default skin, but with all bright colors having an explicit bold attribute added.
+
+Another common workaround is to set `TERM=xterm`, however this causes other issues due to mismatching termcap/terminfo, such as certain keys not working.
 
 #### Shift+F6 not working
 

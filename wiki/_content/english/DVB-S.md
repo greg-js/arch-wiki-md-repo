@@ -8,24 +8,24 @@ This article describes the setup and use of DVB-S (sat TV) cards on Arch Linux.
     *   [1.1 Pinnacle PCTV Sat](#Pinnacle_PCTV_Sat)
     *   [1.2 Additional modules: S2-liplianin](#Additional_modules:_S2-liplianin)
         *   [1.2.1 Setup](#Setup)
-*   [2 Setup Permissions](#Setup_Permissions)
-*   [3 Scanning channels](#Scanning_channels)
-    *   [3.1 Using scan](#Using_scan)
-    *   [3.2 Using w_scan](#Using_w_scan)
-        *   [3.2.1 DiSEqC switch scanning (AKA multiple satellite LNB)](#DiSEqC_switch_scanning_.28AKA_multiple_satellite_LNB.29)
-*   [4 Switching channels](#Switching_channels)
-*   [5 Software](#Software)
-    *   [5.1 Kaffeine](#Kaffeine)
-        *   [5.1.1 Importing channel list](#Importing_channel_list)
-    *   [5.2 Me-tv](#Me-tv)
-    *   [5.3 Klear](#Klear)
-    *   [5.4 Xine](#Xine)
-*   [6 Additional Resources](#Additional_Resources)
-    *   [6.1 TV Cards in general](#TV_Cards_in_general)
+*   [2 Additional firmware: OpenELEC DVB-firmware](#Additional_firmware:_OpenELEC_DVB-firmware)
+*   [3 Setup Permissions](#Setup_Permissions)
+*   [4 Scanning channels](#Scanning_channels)
+    *   [4.1 Using scan](#Using_scan)
+    *   [4.2 Using w_scan](#Using_w_scan)
+        *   [4.2.1 DiSEqC switch scanning (AKA multiple satellite LNB)](#DiSEqC_switch_scanning_.28AKA_multiple_satellite_LNB.29)
+*   [5 Switching channels](#Switching_channels)
+*   [6 Software](#Software)
+    *   [6.1 Kaffeine](#Kaffeine)
+        *   [6.1.1 Importing channel list](#Importing_channel_list)
+    *   [6.2 Me-tv](#Me-tv)
+    *   [6.3 Klear](#Klear)
+    *   [6.4 Xine](#Xine)
+*   [7 Additional Resources](#Additional_Resources)
 
 ## Load required Modules
 
-You have to lookup the chipset of your specific card; tools like **lshwd** may help you.
+You have to lookup the chipset of your specific card; tools like [lshwd](https://aur.archlinux.org/packages/lshwd/) may help you.
 
 ### Pinnacle PCTV Sat
 
@@ -95,6 +95,10 @@ If all configured modules were compiled successfully, you can install the module
 ```
 
 After that, reboot your machine.
+
+## Additional firmware: OpenELEC DVB-firmware
+
+The [OpenELEC project](http://openelec.tv/) provides additional firmware files for various DVB devices, eg. TechniSat SkyStar S2. To use these firmware files you can install either [openelec-dvb-firmware](https://aur.archlinux.org/packages/openelec-dvb-firmware/) or [openelec-dvb-firmware-git](https://aur.archlinux.org/packages/openelec-dvb-firmware-git/).
 
 ## Setup Permissions
 
@@ -255,6 +259,5 @@ or use the playlist editor in Xine
 
 ## Additional Resources
 
-### TV Cards in general
-
-*   [Ubuntuusers.de-Wiki](http://wiki.ubuntuusers.de/TV-Karten) (german)
+*   TV Cards in general: [Ubuntuusers.de-Wiki](http://wiki.ubuntuusers.de/TV-Karten) (German)
+*   List of supported [DVB-S](https://www.linuxtv.org/wiki/index.php/DVB-S_Devices)/[DVB-S2](https://www.linuxtv.org/wiki/index.php/DVB-S2_Devices) devices

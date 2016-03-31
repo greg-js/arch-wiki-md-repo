@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Master_Boot_Record](/index.php/Master_Boot_Record "Master Boot Record") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-2-28，点击[这里](https://wiki.archlinux.org/index.php?title=Master_Boot_Record&diff=0&oldid=362836)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Master_Boot_Record](/index.php/Master_Boot_Record "Master Boot Record") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-30，点击[这里](https://wiki.archlinux.org/index.php?title=Master_Boot_Record&diff=0&oldid=425504)可以查看翻译后英文页面的改动。
 
 主引导记录 (Master Boot Record, MBR) 是指一个存储设备的头512B. 它包含操作系统的引导器和存储设备的分区表。
 
@@ -51,6 +51,8 @@ MBR 由几片汇编码 (初始化引导器 – 446B), 四个主分区的分区�
 # dd if=/dev/zero of=/dev/sda bs=446 count=1
 
 ```
+
+请参考 [fdisk#Backup and restore](/index.php/Fdisk#Backup_and_restore "Fdisk").
 
 ## 恢复 Windows 引导记录
 

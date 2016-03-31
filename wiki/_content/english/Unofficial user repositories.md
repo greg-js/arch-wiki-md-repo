@@ -1447,7 +1447,7 @@ Server = http://nightsnack.cf/~mark/arch-pkgs
 #### mingw-w64
 
 *   **Maintainer:** [Philip](https://aur.archlinux.org/account/ant32) and [Jeromy](https://aur.archlinux.org/account/nic96) Reimer
-*   **Description:** Almost all mingw-w64 packages in the AUR updated every 8 hours.
+*   **Description:** Almost all mingw-w64 packages in the AUR.
 
 ```
 [mingw-w64]

@@ -23,15 +23,7 @@ This is the easiest and most frequently used method. It is used by many [desktop
 
 ### Getting a kernel that supports usb_storage
 
-If you do not use a custom-made kernel, you are ready to go, for all Arch Linux stock kernels are properly configured. If you do use a custom-made kernel, ensure it is compiled with SCSI-Support, SCSI-Disk-Support and usb_storage. If you use the latest [udev](/index.php/Udev "Udev"), you may just plug your device in and the system will automatically load all necessary kernel modules. Older releases of udev would need hotplug installed too. Otherwise, you can do the same thing manually:
-
-```
-# modprobe usb_storage
-# modprobe sd_mod      (only for non SCSI kernels)
-
-```
-
-**Tip:** In case of manually loading modules, you may also need to load the `sg` module (SCSI generic driver).
+If you do not use a custom-made kernel, you are ready to go, for all Arch Linux stock kernels are properly configured. If you do use a custom-made kernel, ensure it is compiled with SCSI-Support, SCSI-Disk-Support and usb_storage. If you use the latest [udev](/index.php/Udev "Udev"), you may just plug your device in and the system will automatically load all necessary kernel modules.
 
 ### Identifying device
 
@@ -82,34 +74,4 @@ If you want non-root users to be able to write to the USB stick, you can issue t
 
 #### As normal user with fstab
 
-If you want non-root users to be able to mount a USB memory stick via [fstab](/index.php/Fstab "Fstab"), add the following line to your `/etc/fstab` file:
-
-```
-/dev/sdXY /mnt/usbstick vfat **user**,noauto,noatime,flush 0 0
-
-```
-
-or better:
-
-```
-UUID=E8F1-5438 /mnt/usbstick vfat **user**,noauto,noatime,flush 0 0
-
-```
-
-(see description of **user** and other options in the [main article](/index.php/Fstab "Fstab"))
-
-**Note:** Where `/dev/sdXY` is replaced with the path to your own usbstick, see [Mounting USB memory](#Mounting_USB_memory).
-
-Now, any user can mount it with:
-
-```
-$ mount /mnt/usbstick
-
-```
-
-And unmount it with:
-
-```
-$ umount /mnt/usbstick
-
-```
+See [Fstab#Writing to FAT32 as Normal User](/index.php/Fstab#Writing_to_FAT32_as_Normal_User "Fstab") if you want normal user to do the mount/unmount action.

@@ -334,7 +334,7 @@ The following describes how to bridge a virtual machine to a host interface such
 
 **Warning:** Beware that since your virtual machines will appear directly on the external network, this may expose them to attack. Depending on what resources your virtual machines have access to, you may need to take all the precautions you normally would take in securing a computer to secure your virtual machines.
 
-We will replace the normal Ethernet adapter with a bridge adapter and bind the normal Ethernet adapter to it. See [http://en.gentoo-wiki.com/wiki/KVM#Networking_2](http://en.gentoo-wiki.com/wiki/KVM#Networking_2) .
+We will replace the normal Ethernet adapter with a bridge adapter and bind the normal Ethernet adapter to it.
 
 *   Make sure that the following package is installed:
     *   [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) (provides `brctl`, to manipulate bridges)

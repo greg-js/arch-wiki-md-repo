@@ -20,7 +20,7 @@ Subsystem sftp /usr/lib/ssh/sftp-server
 
 [Restart](/index.php/Restart "Restart") the `sshd.service` daemon and it should work.
 
-You can access your files with the *sftp* program or [sshfs](/index.php/Sshfs "Sshfs"). Many standard FTP programs should work as well.
+You can access your files with the *sftp* program or [SSHFS](/index.php/SSHFS "SSHFS"). Many standard FTP programs should work as well.
 
 ## Secure copy protocol (SCP)
 

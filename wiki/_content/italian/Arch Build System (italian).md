@@ -48,7 +48,7 @@ ABS è l'acronimo di "**A**rch **B**uild **S**ystem", cioè *Sistema di costruzi
 
 	[Makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)")
 
-	Il comando da shell di ABS che legge il PKGBUILD, scarica e compila il sorgente e crea il `.pkg.tar.gz or .pkg.tar.xz`, in accordo con l'array `PKGEXT` all'interno di `makepkg.conf`. È anche possibile utilizzare makepkg per compilare i propri pacchetti da [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)") o da fonti esterne. (Consultare l'articolo [Creating Packages (Italiano)](/index.php/Creating_Packages_(Italiano) "Creating Packages (Italiano)"))
+	Il comando da shell di ABS che legge il PKGBUILD, scarica e compila il sorgente e crea il `.pkg.tar.gz or .pkg.tar.xz`, in accordo con l'array `PKGEXT` all'interno di `makepkg.conf`. È anche possibile utilizzare makepkg per compilare i propri pacchetti da [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)") o da fonti esterne. (Consultare l'articolo [Creating packages (Italiano)](/index.php/Creating_packages_(Italiano) "Creating packages (Italiano)"))
 
 **Strumenti correlati**
 
@@ -65,7 +65,7 @@ ABS è l'acronimo di "**A**rch **B**uild **S**ystem", cioè *Sistema di costruzi
 L'Arch Build System (abbreviato con ABS) è usato per:
 
 *   Compilare o ri-compilare un pacchetto per qualsiasi motivo
-*   Creare nuovi pacchetti da codice sorgente, di software per i quali non sono ancora disponibili pacchetti (Vedi anche [Creating Packages](/index.php/Creating_Packages_(Italiano) "Creating Packages (Italiano)"))
+*   Creare nuovi pacchetti da codice sorgente, di software per i quali non sono ancora disponibili pacchetti (Vedi anche [Creating Packages](/index.php/Creating_packages_(Italiano) "Creating packages (Italiano)"))
 *   Modificare pacchetti esistenti per adattarli ai propri bisogni (abilitando o disabilitando opzioni, applicando patch)
 *   Ricompilare il tuo intero sistema utilizzando flag di compilazione "a la FreeBSD" (ad esempio con [pacbuilder](/index.php/Pacbuilder "Pacbuilder"))
 *   Pacchettizzare e installare in modo pulito il proprio kernel personalizzato. (Consultare [Kernel Compilation](/index.php/Kernel_Compilation "Kernel Compilation") così come [Custom Kernel Compilation with ABS](/index.php/Custom_Kernel_Compilation_with_ABS "Custom Kernel Compilation with ABS"))

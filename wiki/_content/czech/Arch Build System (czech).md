@@ -92,7 +92,7 @@ Zde si vysvětleme jednotlivé pojmy :
 *   **pkgver** : verze balíčku
 *   **pkgrel** : číslo vydání Arch balíčku. V základu je to číslo verze změněné pokud je PKGBUILD modifikován. To se může přihodit z mnoha důvodů pro příklad pokud povolíte compile-time pro něco.
 *   **pkgdesc** : výstižný popis balíčku. Toto je co uvidíte pokud se podíváte na [databázi balíčků](https://archlinux.org/packages/)
-*   **arch** : ukazuje na jakou architektutu je tvořen a odskoušen [Arch64_FAQ](/index.php/Arch64_FAQ "Arch64 FAQ") pro portování.
+*   **arch** : ukazuje na jakou architektutu je tvořen a odskoušen [Arch64 FAQ](/index.php/Arch64_FAQ "Arch64 FAQ") pro portování.
 *   **url** : domovská stránka softwaru (objevíse pokud kliknete na balíček v databázi balíčků)
 *   **groups** : je užívané ve skupinách balíčků: například když zkusíte nainstalovat kde, nainstalujete všechny balíčky obsažené ve skupině kde.
 *   **provides** : pokud balíček poskytuje jiný balíček, pro příklad kernel-scsi poskytuje kernel

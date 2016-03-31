@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Compton](/index.php/Compton "Compton"). Дата последней синхронизации: 19 сентября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Compton&diff=0&oldid=400530).
+
 Compton - это легкий, автономный композитный менеджер. Он подходит для использования с [оконными менеджерами](/index.php/Window_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Window manager (Русский)"), которые изначально не обеспечивают функциональность композитинга. Compton является форком [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/), который, в свою очередь, является форком [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr). Для дополнительной информации смотрите [страницу compton на github](https://github.com/chjj/compton).
 
 В Compton исправлены многочисленные ошибки, найденные у его предшественников, и, как следствие, он является популярным из-за своей надежности и стабильности. Были реализованы многочисленные улучшения и опции настройки, в том числе быстрый бакэнд GLX (OpenGL) (отключен по умолчанию), непрозрачность активного/неактивного окна, прозрачность рамки окна, размытие фона окна, цветная инверсия окна, painting rate throttling, VSync, "из коробки" хорошо настраиваемое управление, чтение файла настроек и управление D-Bus.
@@ -125,8 +127,6 @@ seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 
 ### Slock (Затухание)
 
-**Примечание:** Чистое решение, используя аргумент `--focus-exclude`.
-
 Где для неактивного окна прозрачность была включен (запущено с командным аргументом `-i`), это может вызвать проблемы, когда также используется [slock](/index.php/Slock "Slock"). Решение заключается внесением изменений в прозрачности `0.2`. Например, когда работает compton аргументы в команде:
 
 ```
@@ -138,6 +138,45 @@ compton <any other arguments> -i 0.2
 
 ```
 inactive-dim = 0.2;
+
+```
+
+Alternatively, you may try to exclude slock by its window id, or by excluding all windows with no name.
+
+**Примечание:** Some programs change their id for every new instance, but slock's appears to be static. Someone more knowledgeable will have to confirm that slock's id is in fact static- until then, use at your own risk.
+
+Exclude all windows with no name from compton using the following options:
+
+```
+$ compton <other arguments> --focus-exclude "! name~=*"*
+
+```
+
+Find your slock's window id by running the command:
+
+```
+$ xwininfo & slock
+
+```
+
+Quickly click anywhere on the screen (before slock exits), then type your password to unlock. You should see the window id in the output:
+
+```
+xwininfo: Window id: 0x1800001 (has no name)
+
+```
+
+Take the window id and exclude it from compton with:
+
+```
+$ compton <any other arguments> --focus-exclude 'id = 0x1800001'
+
+```
+
+Otherwise, where using a configuration file:
+
+```
+focus-exclude = "id = 0x1800001";
 
 ```
 

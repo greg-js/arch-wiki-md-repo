@@ -92,7 +92,7 @@ If you enable it, you must also enable *testing*.
 
 #### gnome-unstable
 
-This repository contains the latest version of the [GNOME](/index.php/GNOME "GNOME") desktop environment. It can be enabled by adding the lines below to your `/etc/pacman.conf` file as top repository.
+This repository contains the latest version of the [GNOME](/index.php/GNOME "GNOME") desktop environment. To enable it, add the following lines to `/etc/pacman.conf`. The *gnome-unstable* entry should be first in the list of repositories (*i.e.*, above the *testing* entry).
 
 ```
 [gnome-unstable]
