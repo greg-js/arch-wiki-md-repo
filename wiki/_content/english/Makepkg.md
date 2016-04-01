@@ -118,11 +118,11 @@ For more, see [makepkg(8)](https://www.archlinux.org/pacman/makepkg.8.html).
 
 A performance improvement of the packaged software can be achieved by enabling compiler optimizations for the host machine. The downside is that packages compiled for a specific processor architecture will not run correctly on other machines. On x86_64 machines, there are rarely significant enough real world performance gains that would warrant investing the time to rebuild official packages.
 
+However, it is very easy to reduce performance by using "nonstandard" compiler flags. Many compiler optimizations are only useful in certain situations and should not be indiscriminately applied to every package. Unless you can verify/benchmark that something is faster, there is a very good chance it is not! The Gentoo [Compilation Optimization Guide](http://www.gentoo.org/doc/en/gcc-optimization.xml) and [Safe CFLAGS](http://wiki.gentoo.org/wiki/Safe_CFLAGS) wiki article provide more in-depth information about compiler optimization.
+
 The options passed to a C/C++ compiler (e.g. [gcc](https://www.archlinux.org/packages/?name=gcc) or [clang](https://www.archlinux.org/packages/?name=clang)) are controlled by the `CFLAGS`, `CXXFLAGS`, and `CPPFLAGS` environment variables. Similarly, the [make](https://www.archlinux.org/packages/?name=make) build system uses `MAKEFLAGS`. For use in the Arch build system, *makepkg* exposes these environment variables as configuration options in `makepkg.conf`. The default values are configured to produce generic packages that can be installed on a wide range of machines.
 
 **Note:** Keep in mind that not all build systems use the variables configured in `makepkg.conf`. For example, *cmake* disregards the preprocessor options environment variable, `CPPFLAGS`. Consequently, many [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") contain workarounds with options specific to the build system used by the packaged software.
-
-However, it is very easy to reduce performance by using "nonstandard" compiler flags. Many compiler optimizations are only useful in certain situations and should not be indiscriminately applied to every package. Unless you can verify/benchmark that something is faster, there is a very good chance it is not! The Gentoo [Compilation Optimization Guide](http://www.gentoo.org/doc/en/gcc-optimization.xml) and [Safe CFLAGS](http://wiki.gentoo.org/wiki/Safe_CFLAGS) wiki article provide more in-depth information about compiler optimization.
 
 As of version 4.3.0, GCC can automatically detect and enable safe architecture-specific optimizations. To use this feature, first remove any `-march` and `-mtune` flags, then add `-march=native`. For example,
 
@@ -139,9 +139,10 @@ $ gcc -march=native -v -Q --help=target
 
 ```
 
-**Note:** To see what architecture GCC detects on your system (rather than which specific flags `-march=native` sets) you can use the script [gcccpuopt](https://github.com/pixelb/scripts/blob/master/scripts/gcccpuopt).
+**Note:**
 
-Optimizing for CPU type may enhance performance because `-march=native` enables all available instruction sets and improves scheduling for a particular CPU. This could be noticeable with applications that take advantage of newer instructions sets not enabled with the default options provided by Arch Linux (e.g. audio/video encoding tools, scientific applications, math-heavy programs, etc.).
+*   If you specify different value than `-march=native`, then `-Q --help=target` **will not** work as expected.[[5]](https://bbs.archlinux.org/viewtopic.php?pid=1616694#p1616694) You need to go through a compilation phase to find out which options are really enabled. See [Find CPU-specific options](https://wiki.gentoo.org/wiki/Safe_CFLAGS#Find_CPU-specific_options) on Gentoo wiki for instructions.
+*   To find out the optimal options for a **32 bit** x86 architecture, you can use the script [gcccpuopt](https://github.com/pixelb/scripts/blob/master/scripts/gcccpuopt).
 
 #### MAKEFLAGS
 

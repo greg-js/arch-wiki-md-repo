@@ -226,7 +226,7 @@ For *recursively* removing orphans and their configuration files:
 
 If no orphans were found, pacman errors with `error: no targets specified`. This is expected as no arguments were passed to `pacman -Rns`.
 
-**Note:** As of [pacman](https://www.archlinux.org/packages/?name=pacman) 4.2.0, only true orphans are listed. To also list packages which are *optionally* required by another package, pass the `-t` flag twice with `pacman -Qdttq`.
+**Note:** As of [pacman](https://www.archlinux.org/packages/?name=pacman) 4.2.0, `-Qt` lists only true orphans. To include packages which are *optionally* required by another package, pass the `-t` flag twice (*i.e.*, `-Qtt`).
 
 ### Removing everything but base group
 

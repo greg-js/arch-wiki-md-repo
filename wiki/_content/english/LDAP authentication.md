@@ -356,10 +356,10 @@ Edit `/etc/nsswitch.conf` as follows.
 ```
 # Begin /etc/nsswitch.conf
 
-passwd: files sss
-group: files sss
-shadow: files sss
-sudoers: files sss
+passwd: files **sss**
+group: files **sss**
+shadow: files **sss**
+**sudoers: files sss**
 
 publickey: files
 
@@ -385,23 +385,23 @@ The first step is to edit `/etc/pam.d/system-auth` as follows.
 ```
 #%PAM-1.0
 
-auth sufficient pam_sss.so forward_pass
+**auth sufficient pam_sss.so forward_pass**
 auth required pam_unix.so try_first_pass nullok
 auth optional pam_permit.so
 auth required pam_env.so
 
-account [default=bad success=ok user_unknown=ignore] pam_sss.so
+**account [default=bad success=ok user_unknown=ignore] pam_sss.so**
 account required pam_unix.so
 account optional pam_permit.so
 account required pam_time.so
 
-password sufficient pam_sss.so use_authtok
+**password sufficient pam_sss.so use_authtok**
 password required pam_unix.so try_first_pass nullok sha512 shadow
 password optional pam_permit.so
 
 session required pam_limits.so
 session required pam_unix.so
-session optional pam_sss.so
+**session optional pam_sss.so**
 session optional pam_permit.so
 ```
 
@@ -412,7 +412,7 @@ Edit `/etc/pam.d/sudo` as follows.
  `/etc/pam.d/sudo` 
 ```
 #%PAM-1.0
-auth           sufficient      pam_sss.so
+**auth           sufficient      pam_sss.so**
 auth           required        pam_unix.so try_first_pass
 auth           required        pam_nologin.so
 
@@ -425,7 +425,7 @@ In order to enable users to change their passwords using `passwd` edit `/etc/pam
  `/etc/pam.d/passwd` 
 ```
 #%PAM-1.0
-password        sufficient      pam_sss.so
+**password        sufficient      pam_sss.so**
 #password       required        pam_cracklib.so difok=2 minlen=8 dcredit=2 ocredit=2 retry=3
 #password       required        pam_unix.so sha512 shadow use_authtok
 password        required        pam_unix.so sha512 shadow nullok

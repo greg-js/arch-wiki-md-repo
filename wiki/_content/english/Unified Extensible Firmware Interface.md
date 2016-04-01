@@ -1,6 +1,6 @@
-**Warning:** While the choice to install in EFI mode is forward looking, early vendor UEFI implementations may carry more bugs than their BIOS counterparts. It is advised to do a search relating to your particular mainboard model before proceeding.
+**Warning:** While the choice to install in UEFI mode is forward looking, early vendor UEFI implementations may carry more bugs than their BIOS counterparts. It is advised to do a search relating to your particular mainboard model before proceeding.
 
-The [Unified Extensible Firmware Interface](http://www.uefi.org/)(or UEFI for short) defines a new model for the interface between personal-computer operating systems and platform firmware. The interface consists of data tables that contain platform-related information, plus boot and runtime service calls that are available to the operating system and its loader. Together, these provide a standard environment for booting an operating system and running pre-boot applications.
+The [Unified Extensible Firmware Interface](http://www.uefi.org/) (EFI or UEFI for short) is a new model for the interface between operating systems and firmware. It provides a standard environment for booting an operating system and running pre-boot applications.
 
 It is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process#Firmware types](/index.php/Arch_boot_process#Firmware_types "Arch boot process") for their differences. This page explains **What is UEFI** and **UEFI support in Linux kernel**. To set up UEFI Boot Loaders, see [Boot loaders](/index.php/Boot_loaders "Boot loaders").
 

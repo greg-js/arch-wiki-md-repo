@@ -1,6 +1,6 @@
 From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
-	*The X.Org project provides an open source implementation of the X Window System. The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work.*
+	The X.Org project provides an open source implementation of the X Window System. The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work.
 
 **Xorg** is the most popular display server among Linux users. Its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](http://www.x.org/wiki/) for more details.
 
@@ -77,7 +77,7 @@ $ pacman -Ss xf86-video
 
 ```
 
-The default graphics driver is [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), which handles a large number of chipsets but does not include any 2D or 3D acceleration. If a better driver cannot be found or fails to load, Xorg will fall back to *vesa*.
+Xorg searches for installed drivers automatically. If it cannot find the specific driver installed for the hardware (listed below), it first searches for *fbdev* ([xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev)). If that is not found, it searches for *vesa* ([xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), the generic driver, which handles a large number of chipsets but does not include any 2D or 3D acceleration. If *vesa* is not found, Xorg will fall back to kernel mode setting, which includes GLAMOR acceleration (see `man modesetting`).
 
 In order for video acceleration to work, and often to expose all the modes that the GPU can set, a proper video driver is required:
 

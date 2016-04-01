@@ -28,13 +28,15 @@ Support for [accelerated video decoding](#Enabling_video_acceleration) is provid
 
 ### AMDGPU PRO
 
-**Warning:** This is still highly experimental, no Arch Linux package exists yet
+**Warning:** This is still highly experimental, no official Arch Linux package exists yet
 
 AMD provides a binary driver userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. This hybrid approach allows the in-kernel component to be recompiled by the Arch Linux maintainers when required (e.g. on a kernel or Xorg update), while keeping the same binary userspace part. This should remedy the problem where the driver provided by AMD is out of date and incompatible with newer kernels or Xorg versions (a problem that was very common with the old [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver). For an detailed overview of the hybrid system, see [this article](http://www.phoronix.com/scan.php?page=news_item&px=MTgwODA).
 
 The AMDGPU PRO driver provides OpenGL, OpenCL, Vulkan and VDPAU support. It aims to provide better performance than the open-source driver.
 
 See the [initial release notes](http://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Beta-Driver-for-Vulkan-Release-Notes.aspx) and the [announcement at the Phoronix forum](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/amd-linux/855699-amd-representative-says-their-vulkan-linux-driver-will-be-here-soon/page6) for more information.
+
+There are packages for the amdgpu-pro components in the [AUR](/index.php/AUR "AUR") ([amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/)), visit [https://github.com/LEW21/archlinux-amdgpu](https://github.com/LEW21/archlinux-amdgpu) for issues or pull requests.
 
 ## Configuration
 

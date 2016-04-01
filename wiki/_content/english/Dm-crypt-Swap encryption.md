@@ -29,7 +29,7 @@ This will map `/dev/sd*X#*` to `/dev/mapper/swap` as a swap partition that can b
 
 *   Use `by-id` and `by-path` paths. However, these are both are susceptible to hardware changes. See [Persistent block device naming#by-id and by-path](/index.php/Persistent_block_device_naming#by-id_and_by-path "Persistent block device naming").
 *   Use an [LVM](/index.php/LVM "LVM") logical volume's name.
-*   Use the method described in [#UUID_and_LABEL](#UUID_and_LABEL). Labels and [UUIDS](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming") **cannot** be used directly because of the recreation and re-encryption of the swap device on every boot with `mkswap` [[1]](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup).
+*   Use the method described in [#UUID and LABEL](#UUID_and_LABEL). Labels and [UUIDS](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming") **cannot** be used directly because of the recreation and re-encryption of the swap device on every boot with `mkswap` [[1]](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup).
 
 To use a `by-id` persistent device naming instead of kernel simple naming, first identify the swap device:
 
@@ -69,8 +69,8 @@ Now, in `/etc/crypttab`, change `<device>` to either the label of UUID of the pr
 
  `/etc/crypttab` 
 ```
-# <name>       <device>         <password>              <options>
-  swap      LABEL=*mylabel*  /dev/urandom            swap,offset=2048,cipher=aes-cbc-essiv:sha256,size=256
+# <name> <device>       <password>    <options>
+swap     LABEL=*mylabel*  /dev/urandom  swap,offset=2048,cipher=aes-cbc-essiv:sha256,size=256
 ```
 
 **Warning:** An incorrect label or offset option in crypttab can cause irrevocable data loss.

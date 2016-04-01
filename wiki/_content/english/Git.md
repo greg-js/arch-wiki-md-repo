@@ -1,7 +1,7 @@
 > <font color="grey">*I've met people who thought that git is a front-end for Github. They were wrong, git is a front-end for AUR.*</font>
 > — Linus Torvalds
 
-[Git](https://en.wikipedia.org/wiki/Git_(software) is the version control system (VCS) designed and developed by Linus Torvalds, the creator of the Linux kernel. Git is now used to maintain sources for the Linux kernel, as well as many other projects, including a number of Arch Linux projects.
+[Git](https://en.wikipedia.org/wiki/Git_(software) is the version control system (VCS) designed and developed by Linus Torvalds, the creator of the Linux kernel. Git is now used to maintain [AUR](/index.php/AUR "AUR") packages, as well as many other projects, including sources for the Linux kernel.
 
 ## Contents
 

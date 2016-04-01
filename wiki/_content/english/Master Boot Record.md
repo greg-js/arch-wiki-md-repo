@@ -1,17 +1,14 @@
-The Master Boot Record (MBR) is the first 512 bytes of a storage device. It contains an operating system bootloader and the storage device's partition table.
-
-**Note:** As a newer partitioning scheme, the [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification) can be used also on BIOS systems via a [protective MBR](https://en.wikipedia.org/wiki/GUID_Partition_Table#Legacy_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table"). GPT solves some legacy problems with MBR but also may have compatibility problems. Read more on [GUID Partition Table#About the Master Boot Record](/index.php/GUID_Partition_Table#About_the_Master_Boot_Record "GUID Partition Table").
+The [Master Boot Record](https://en.wikipedia.org/wiki/Master_Boot_Record "w:Master Boot Record") (MBR) is the first 512 bytes of a storage device. It contains an operating system bootloader and the storage device's partition table. It plays an important role in the [boot process](/index.php/Boot_process "Boot process") under [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems.
 
 ## Contents
 
 *   [1 Introduction](#Introduction)
     *   [1.1 Problems with MBR](#Problems_with_MBR)
-*   [2 Boot process](#Boot_process)
-*   [3 History](#History)
-*   [4 Backup and restoration](#Backup_and_restoration)
-*   [5 Restoring a Windows boot record](#Restoring_a_Windows_boot_record)
-*   [6 TestDisk MBRCode](#TestDisk_MBRCode)
-*   [7 See also](#See_also)
+*   [2 History](#History)
+*   [3 Backup and restoration](#Backup_and_restoration)
+*   [4 Restoring a Windows boot record](#Restoring_a_Windows_boot_record)
+*   [5 TestDisk MBRCode](#TestDisk_MBRCode)
+*   [6 See also](#See_also)
 
 ## Introduction
 
@@ -33,10 +30,6 @@ The entire information about the primary partitions is limited to the 64 bytes a
 4.  MBR stores partition sector information using 32-bit LBA values. This LBA length along with 512 byte sector size (more commonly used) limits the maximum addressable size of the disk to be 2 [TiB](https://en.wikipedia.org/wiki/TiB "wikipedia:TiB"). Any space beyond 2 TiB cannot be defined as a partition if MBR partitioning is used.
 
 [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") is the next generation partitioning scheme designed to succeed the Master Boot Record partitioning scheme method to fix above problems.
-
-## Boot process
-
-Booting is a multi-stage process. Most PCs today initialize system devices with firmware called the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") (Basic Input/Output System), which is typically stored in a dedicated ROM chip on the system board. After system devices have been initialized, the BIOS looks for the bootloader on the MBR of the first recognized storage device (hard disk drive, solid state drive, CD/DVD drive, USB drive...) or the first partition of the device. It then executes that program. The bootloader reads the partition table, and is then capable of loading the operating system(s). Common GNU/Linux bootloaders include [GRUB](/index.php/GRUB "GRUB") and [Syslinux](/index.php/Syslinux "Syslinux").
 
 ## History
 
@@ -112,5 +105,4 @@ Then, write the new boot sector (boot record):
 
 ## See also
 
-*   Wikipedia article: [Master boot record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record")
 *   [What is a Master Boot Record (MBR)?](http://kb.iu.edu/data/aijw.html)

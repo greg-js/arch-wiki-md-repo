@@ -42,7 +42,7 @@ extension=soap.so
 
 ```
 
-Application initialization can done either automatically or manually.
+Application initialization can be done either automatically or manually.
 
 Automatic way:
 

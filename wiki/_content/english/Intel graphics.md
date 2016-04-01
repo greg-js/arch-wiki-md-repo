@@ -2,7 +2,10 @@ Since Intel provides and supports open source drivers, Intel graphics are now es
 
 For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs, see [this comparison on Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
 
-**Note:** PowerVR-based graphics ([GMA 500](/index.php/GMA_500 "GMA 500") and [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600") series) are not supported by open source drivers.
+**Note:**
+
+*   Some recommend not installing the Intel driver, and instead falling back on the modesetting driver. See [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel) and [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/).
+*   PowerVR-based graphics ([GMA 500](/index.php/GMA_500 "GMA 500") and [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600") series) are not supported by open source drivers.
 
 ## Contents
 
@@ -12,13 +15,12 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [3.1 Enable early KMS](#Enable_early_KMS)
 *   [4 Module-based Powersaving Options](#Module-based_Powersaving_Options)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Enable Glamor Acceleration Method](#Enable_Glamor_Acceleration_Method)
-    *   [5.2 Tear-free video](#Tear-free_video)
-    *   [5.3 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_.28VSYNC.29)
-    *   [5.4 Setting scaling mode](#Setting_scaling_mode)
-    *   [5.5 KMS Issue: console is limited to small area](#KMS_Issue:_console_is_limited_to_small_area)
-    *   [5.6 H.264 decoding on GMA 4500](#H.264_decoding_on_GMA_4500)
-    *   [5.7 Setting brightness and gamma](#Setting_brightness_and_gamma)
+    *   [5.1 Tear-free video](#Tear-free_video)
+    *   [5.2 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_.28VSYNC.29)
+    *   [5.3 Setting scaling mode](#Setting_scaling_mode)
+    *   [5.4 KMS Issue: console is limited to small area](#KMS_Issue:_console_is_limited_to_small_area)
+    *   [5.5 H.264 decoding on GMA 4500](#H.264_decoding_on_GMA_4500)
+    *   [5.6 Setting brightness and gamma](#Setting_brightness_and_gamma)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 SNA issues](#SNA_issues)
     *   [6.2 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
@@ -135,7 +137,7 @@ options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1 semaphores=1
 
 ```
 
-You can experiment with higher values for `enable_rc6`, but your GPU may not support them or the activation of the other options [[1]](https://wiki.archlinux.org/index.php?title=Talk:Intel_Graphics&oldid=327547#Kernel_Module_options).
+You can experiment with higher values for `enable_rc6`, but your GPU may not support them or the activation of the other options [[3]](https://wiki.archlinux.org/index.php?title=Talk:Intel_Graphics&oldid=327547#Kernel_Module_options).
 
 Framebuffer compression, for example, may be unreliable or unavailable on Intel GPU generations before Sandy Bridge (generation 6). This results in messages logged to the system journal similar to this one:
 
@@ -145,17 +147,6 @@ kernel: drm: not enough stolen space for compressed buffer, disabling.
 ```
 
 ## Tips and tricks
-
-### Enable Glamor Acceleration Method
-
-[Glamor](https://wiki.freedesktop.org/www/Software/Glamor/) is Intel's experimental OpenGL 2D acceleration method and is not documented in the manpages. To use it, add the following line to your [configuration file](#Configuration):
-
-```
-Option      "AccelMethod"  "glamor"
-
-```
-
-**Note:** This acceleration method is experimental and may not be stable for your system.
 
 ### Tear-free video
 
@@ -222,7 +213,7 @@ If that does not work, try disabling TV1 or VGA1 instead of SVIDEO-1.
 
 ### H.264 decoding on GMA 4500
 
-The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package provides MPEG-2 decoding only for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[2]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[3]](http://www.emmolution.org/?p=192&cpage=1#comment-12292).
+The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package provides MPEG-2 decoding only for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[4]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[5]](http://www.emmolution.org/?p=192&cpage=1#comment-12292).
 
 ### Setting brightness and gamma
 
@@ -325,7 +316,7 @@ One can force mode e.g. `xrandr --output <HDMI> --set "Broadcast RGB" "Full"` (r
 
 **Note:** Some TVs can handle signal in limited range only. Setting Broadcast RGB to "Full" will cause color clipping. You may need to set it to "Limited 16:235" manually to avoid the clipping.
 
-Also there are other related problems which can be fixed editing GPU registers. More information can be found [[4]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[5]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
+Also there are other related problems which can be fixed editing GPU registers. More information can be found [[6]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[7]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
 
 Unfortunately, the Intel driver does not support setting the color range through an `xorg.conf.d` configuration file.
 

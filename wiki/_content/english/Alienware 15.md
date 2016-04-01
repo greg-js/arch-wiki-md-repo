@@ -13,9 +13,12 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 ## Contents
 
 *   [1 Hardware overview](#Hardware_overview)
+    *   [1.1 Alienware 15 R2](#Alienware_15_R2)
 *   [2 Networking](#Networking)
+    *   [2.1 Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter](#Qualcomm_Atheros_QCA6174_802.11ac_Wireless_Network_Adapter)
 *   [3 Input](#Input)
 *   [4 Video](#Video)
+    *   [4.1 NVIDIA Corporation GM204M [GeForce GTX 965M]](#NVIDIA_Corporation_GM204M_.5BGeForce_GTX_965M.5D)
 *   [5 Alien FX](#Alien_FX)
 *   [6 Issues](#Issues)
 
@@ -64,6 +67,46 @@ Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 
+### Alienware 15 R2
+
+lspci:
+
+```
+00:00.0 Host bridge: Intel Corporation Skylake Host Bridge/DRAM Registers (rev 07)
+00:01.0 PCI bridge: Intel Corporation Skylake PCIe Controller (x16) (rev 07)
+00:02.0 VGA compatible controller: Intel Corporation Skylake Integrated Graphics (rev 06)
+00:04.0 Signal processing controller: Intel Corporation Skylake Processor Thermal Subsystem (rev 07)
+00:14.0 USB controller: Intel Corporation Sunrise Point-H USB 3.0 xHCI Controller (rev 31)
+00:14.2 Signal processing controller: Intel Corporation Sunrise Point-H Thermal subsystem (rev 31)
+00:16.0 Communication controller: Intel Corporation Sunrise Point-H CSME HECI #1 (rev 31)
+00:17.0 RAID bus controller: Intel Corporation 82801 Mobile SATA Controller [RAID mode] (rev 31)
+00:1c.0 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #1 (rev f1)
+00:1c.4 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #5 (rev f1)
+00:1c.5 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #6 (rev f1)
+00:1c.6 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #7 (rev f1)
+00:1f.0 ISA bridge: Intel Corporation Sunrise Point-H LPC Controller (rev 31)
+00:1f.2 Memory controller: Intel Corporation Sunrise Point-H PMC (rev 31)
+00:1f.3 Audio device: Intel Corporation Sunrise Point-H HD Audio (rev 31)
+00:1f.4 SMBus: Intel Corporation Sunrise Point-H SMBus (rev 31)
+01:00.0 3D controller: NVIDIA Corporation GM204M [GeForce GTX 965M] (rev a1)
+3b:00.0 Ethernet controller: Qualcomm Atheros Killer E2400 Gigabit Ethernet Controller (rev 10)
+3c:00.0 Network controller: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter (rev 32)
+3d:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. RTS5227 PCI Express Card Reader (rev 01)
+
+```
+
+lsusb:
+
+```
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 004: ID 1bcf:2b8c Sunplus Innovation Technology Inc. 
+Bus 001 Device 003: ID 0cf3:e300 Atheros Communications, Inc. 
+Bus 001 Device 002: ID 187c:0528 Alienware Corporation 
+Bus 001 Device 005: ID 04d9:a070 Holtek Semiconductor, Inc. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
 ## Networking
 
 Wi-Fi & Bluetooth:
@@ -80,6 +123,29 @@ Qualcomm Atheros Killer E220x Gigabit Ethernet Controller
 
 ```
 
+### Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter
+
+As of the main website you can install the supported driver for [QCA6174 802.11ac Wireless Network Adapter](http://www.killernetworking.com/support/knowledge-base/17-linux/20-killer-wireless-ac-in-linux-ubuntu-debian).
+
+First download the **board.bin** file via wget and put it into your firmware library:
+
+```
+wget [http://www.killernetworking.com/support/board.bin](http://www.killernetworking.com/support/board.bin)
+sudo mkdir -p /lib/firmware/ath10k/QCA6174/hw3.0/
+sudo mv board.bin /lib/firmware/ath10k/QCA6174/hw3.0/
+
+```
+
+and then download the specific firmware binary and move it into your firmware library:
+
+```
+wget [https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/firmware-4.bin_WLAN.RM.2.0-00180-QCARMSWPZ-1](https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/firmware-4.bin_WLAN.RM.2.0-00180-QCARMSWPZ-1)
+sudo mv firmware-4.bin_WLAN.RM.2.0-00180-QCARMSWPZ-1 /lib/firmware/ath10k/QCA6174/hw3.0/firmware-4.bin
+
+```
+
+then reboot and you are good to go.
+
 ## Input
 
 Suported out-of-the-box
@@ -93,6 +159,10 @@ NOTE: Keyboard doesn't have Menu key.
 ## Video
 
 Nvidia & Intel video card configuration: [Bumblebee](/index.php/Bumblebee "Bumblebee")
+
+### NVIDIA Corporation GM204M [GeForce GTX 965M]
+
+Currently not supported by [Bumblebee](/index.php/Bumblebee "Bumblebee") (Tested on Alienware 15 R2) Please install only [Intel](/index.php/Intel "Intel") driver via [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel)
 
 ## Alien FX
 

@@ -93,12 +93,13 @@ If you for some reason need the help of an op, do not be shy to `/query` or `/ms
 
 *   [demize](/index.php/User:Kyrias "User:Kyrias")
 *   brain0
-*   escondida
 *   falconindy
 *   grawity
 *   heftig
 *   jelle
 *   MrElendig / Mion
+*   Namarrgon
+*   pid1
 *   tigrmesh / tigr
 *   vodik
 *   wonder / ioni

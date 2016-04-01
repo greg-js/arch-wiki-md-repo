@@ -33,7 +33,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 
 ## BIOS updates
 
-[BIOS update 1.2.3](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=T0R1K) was released on 2016-01-29\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
+[BIOS update 1.3.3](http://downloads.dell.com/FOLDER03596893M/1/XPS_9350_1.3.3.exe) was released on 2016-03-30\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
 
 ## SATA controller
 

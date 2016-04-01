@@ -63,7 +63,8 @@ Bootloaders that support GPT/BIOS partitioning scheme bootloading:
 
 *   [GRUB](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB")
 *   [Syslinux](/index.php/Syslinux#GUID_partition_table "Syslinux")
-*   Not suported: [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") and [LILO](/index.php/LILO "LILO")
+
+Not suported: [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") and [LILO](/index.php/LILO "LILO").
 
 #### Workarounds
 

@@ -13,6 +13,8 @@
     *   [4.5 Card reader](#Card_reader)
     *   [4.6 Bluetooth](#Bluetooth)
 *   [5 Hardware information](#Hardware_information)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 High CPU usage in idle](#High_CPU_usage_in_idle)
 
 ## Overview
 
@@ -81,7 +83,9 @@ Touchscreen works with the Wacom driver (package: [xf86-input-wacom](https://www
 
 ### Video
 
-The kernel supports HD Graphics 520 from version 4.3\. With default configuration, tearing is apparent when playing videos. DRI3 and glamor are supported. To solve tearing and use DRI3 and glamor, create the file `/etc/X11/xorg.conf.d/20-intel.conf` with the following content:
+Video works out of the box without [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) in X and Wayland (tested with GNOME 3.18).
+
+But if it doesn't for some reason, the kernel supports HD Graphics 520 from version 4.3\. With default configuration, tearing is apparent when playing videos. DRI3 and glamor are supported. To solve tearing and use DRI3 and glamor, create the file `/etc/X11/xorg.conf.d/20-intel.conf` with the following content:
 
 ```
 Section "Device"
@@ -139,5 +143,58 @@ Bus 001 Device 003: ID 13d3:5248 IMC Networks
 Bus 001 Device 002: ID 8087:0a2b Intel Corp. 
 Bus 001 Device 005: ID 056a:5048 Wacom Co., Ltd 
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
+## Troubleshooting
+
+### High CPU usage in idle
+
+If the Thinkpad has unusually high CPU usage in idle then it might be an acpi firmware issue. On Windows this behaviour stops after a regular update. On Linux you can workaround by disabling whatever device is interrupting excessively.
+
+Find the interrupting source:
+
+```
+grep . -r /sys/firmware/acpi/interrupts
+
+```
+
+This might output something like this:
+
+```
+...
+/sys/firmware/acpi/interrupts/gpe34:   30289   enabled  <-- this causes many interrupts
+/sys/firmware/acpi/interrupts/gpe35:       3   enabled
+...
+
+```
+
+Disable it (as root, not just sudo):
+
+```
+echo "disable" > /sys/firmware/acpi/interrupts/gpe34
+
+```
+
+Now the CPU should idle at 0-2% usage.
+
+Unfortunately you have to do that on every startup. A systemd service can do that automatically for you.
+
+Create `/etc/systemd/system/disable-interrupts.service`:
+
+```
+[Unit]
+Description=Disable acpi interrupts
+[Service]
+ExecStart=/usr/bin/bash -c 'echo "disable" > /sys/firmware/acpi/interrupts/gpe34'
+[Install]
+WantedBy=multi-user.target
+
+```
+
+Then enable the service (it will be active on the next boot):
+
+```
+sudo systemctl enable disable-interrupts.service
 
 ```

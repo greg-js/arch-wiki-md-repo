@@ -163,7 +163,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **[Viewnior](https://en.wikipedia.org/wiki/Viewnior "wikipedia:Viewnior")** — Minimalistic GTK+ image viewer featuring support for flipping, rotating, animations and configurable mouse actions.
 
-	[http://xsisqox.github.com/Viewnior/](http://xsisqox.github.com/Viewnior/) || [viewnior](https://www.archlinux.org/packages/?name=viewnior)
+	[http://siyanpanayotov.com/project/viewnior/](http://siyanpanayotov.com/project/viewnior/) || [viewnior](https://www.archlinux.org/packages/?name=viewnior)
 
 *   **Xloadimage** — Classic X image viewer.
 

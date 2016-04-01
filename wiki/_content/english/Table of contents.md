@@ -63,7 +63,7 @@
 | <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(1)</small> |
 | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(49)</small> |
-| <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(7)</small> |
+| <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(6)</small> |
 | <small>4.9.9.</small> [HP](/index.php/Category:HP "Category:HP") <small>(44)</small> |
 | <small>4.9.10.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small> |
 | <small>4.9.11.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(67)</small> |
@@ -122,7 +122,7 @@
 | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(79)</small> |
 | <small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(15)</small> |
 | <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(40)</small> |
-| <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
+| <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
 | <small>6.9.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(3) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(21)</small> |
 | <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(72)</small> |

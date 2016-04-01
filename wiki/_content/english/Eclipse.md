@@ -255,6 +255,23 @@ SWT_GTK3=0 eclipse
 
 ```
 
+Another option to achieve the same effect is to add the follwoing to `/usr/lib/eclipse/eclipse.ini`.
+
+```
+--launcher.GTK_version
+2
+
+```
+
+Those two lines must be added **before**:
+
+```
+--launcher.appendVmargs
+
+```
+
+Also note that if you do this, the Javadoc pop ups do not get rendered properly anymore if the package [webkitgtk2](https://www.archlinux.org/packages/?name=webkitgtk2) is not installed.
+
 ## See also
 
 *   [How to use Subversion with Eclipse](https://www.ibm.com/developerworks/library/os-ecl-subversion/)

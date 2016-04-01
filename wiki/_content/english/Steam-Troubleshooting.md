@@ -39,6 +39,8 @@ A bug was introduced in nvidia 361.28 that prevents some games from launching wi
 
  `"Missing basic OpenGL v1.0 -> v2.0 required OpenGL functionality."` 
 
+You can update to 361.42 drivers
+
 To workaround this until NVIDIA fixes this issue, use this line for the launch options for every game that fails:
 
  `__GLVND_DISALLOW_PATCHING=1 %command%` 
@@ -166,6 +168,10 @@ The only proposed workaround is copying Steam's packaged 32-bit versions of libu
 ```
 
 Notice that the workaround is necessary because the bug affects systems with lib32-libgudev and lib32-libusb installed.
+
+Alternatively it has been successful to prioritize the loading of the libudev.so.1 (see [comment on the same issue](https://github.com/ValveSoftware/steam-for-linux/issues/3863#issuecomment-203929113)):
+
+ `$ LD_PRELOAD=/usr/lib32/libudev.so.1 STEAM_RUNTIME=0 steam` 
 
 ### The close button only minimizes the window
 

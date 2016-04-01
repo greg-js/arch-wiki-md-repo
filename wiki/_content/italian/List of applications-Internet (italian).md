@@ -551,7 +551,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **Geary** — Semplice client email per il desktop scritto in [Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) "wikipedia:Vala (programming language)").
 
-	[http://redmine.yorba.org/projects/geary/wiki](http://redmine.yorba.org/projects/geary/wiki) || [geary](https://www.archlinux.org/packages/?name=geary)
+	[http://wiki.gnome.org/Apps/Geary/](http://wiki.gnome.org/Apps/Geary/) || [geary](https://www.archlinux.org/packages/?name=geary)
 
 *   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — Client mail maturo e ricco di funzioni parte di KDE Software Compilation. Parte di [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
