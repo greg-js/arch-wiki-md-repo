@@ -1,4 +1,4 @@
-**Tip:** Ez az oldal a teljes Beginners' Guide (Magyar) útmutató egyik részoldala. Ha az útmutatót teljes egészében akarod olvasni, akkor **[kattints ide](/index.php/Beginners%27_Guide_(Magyar) "Beginners' Guide (Magyar)")**.
+**Tip:** Ez az oldal a teljes Beginners' Guide (Magyar) útmutató egyik részoldala. Ha az útmutatót teljes egészében akarod olvasni, akkor **[kattints ide](/index.php/Beginners%27_guide_(Magyar) "Beginners' guide (Magyar)")**.
 
 ## Contents
 
@@ -263,7 +263,7 @@ Ha kernel frissítés esetén újra kell indítani a rendszert.
 
 **Note:** Néha, a beéllítások módosításához a felhasználó is jelen kell legyen a frissítésnél; olvasd a pacman kimenetét az erre vonatkozó információkért. További információért lásd a [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files") oldalt.
 
-A pacman kimenete lementődik automatikusan a `/var/log/pacman.log` fájlba. Lásd a [Package Management FAQ](/index.php/FAQ#Package_Management "FAQ") oldalt a GYIK-ért a rendszerfrissítéssel és szoftverkezeléssel kapcsolatban.
+A pacman kimenete lementődik automatikusan a `/var/log/pacman.log` fájlba. Lásd a [Package Management FAQ](/index.php/FAQ#Package_management "FAQ") oldalt a GYIK-ért a rendszerfrissítéssel és szoftverkezeléssel kapcsolatban.
 
 ##### Ignoring Packages
 

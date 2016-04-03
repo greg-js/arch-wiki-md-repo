@@ -103,7 +103,7 @@ Btrfs 已经包含在[linux](https://www.archlinux.org/packages/?name=linux)和[
 
 ```
 
-挂载转换后的分区并修改`/etc/fstab`文件，指定分区类型(**type** 为 btrfs，**fs_passno** [最后一列] 修改为0，Btrfs在启动时并不进行磁盘检查). 还要注意的是分区的UUID将有改变，所以使用UUID时，更新fstab中相应的。 `chroot` 到系统并重建 GRUB 条目（如果对此过程不熟悉，参考[Install from Existing Linux](/index.php/Install_from_Existing_Linux "Install from Existing Linux")和[GRUB](/index.php/GRUB "GRUB")）。 If converting a root filesystem, while still chrooted run `mkinitcpio -p linux` to regenerate the initramfs or the system will not successfully boot. If you get stuck in grub with 'unknown filesystem' try reinstalling grub with `grub-install /dev/*partition*` and regenerate the config as well `grub-mkconfig -o /boot/grub/grub.cfg`.
+挂载转换后的分区并修改`/etc/fstab`文件，指定分区类型(**type** 为 btrfs，**fs_passno** [最后一列] 修改为0，Btrfs在启动时并不进行磁盘检查). 还要注意的是分区的UUID将有改变，所以使用UUID时，更新fstab中相应的。 `chroot` 到系统并重建 GRUB 条目（如果对此过程不熟悉，参考[Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux")和[GRUB](/index.php/GRUB "GRUB")）。 If converting a root filesystem, while still chrooted run `mkinitcpio -p linux` to regenerate the initramfs or the system will not successfully boot. If you get stuck in grub with 'unknown filesystem' try reinstalling grub with `grub-install /dev/*partition*` and regenerate the config as well `grub-mkconfig -o /boot/grub/grub.cfg`.
 
 确认没有问题后,完成转换通过删除备份`ext2_saved`子卷，请注意，如果没了它(备份子卷)，你将没办法还原回 ext3/4 文件系统。
 

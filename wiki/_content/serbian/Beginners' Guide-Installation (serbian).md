@@ -1,4 +1,4 @@
-**Note:** Ovo je deo visestranog clanka za Uputstvo za pocetnike.**[Kliknite ovde](/index.php/Beginners%27_Guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' Guide (Српски)")** ako biste pre zeleli da citate uputstvo u celosti.
+**Note:** Ovo je deo visestranog clanka za Uputstvo za pocetnike.**[Kliknite ovde](/index.php/Beginners%27_guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' guide (Српски)")** ako biste pre zeleli da citate uputstvo u celosti.
 
 ## Contents
 

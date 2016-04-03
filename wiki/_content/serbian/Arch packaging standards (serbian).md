@@ -236,7 +236,7 @@ Please see the [Eclipse plugin package guidelines](/index.php/Eclipse_plugin_pac
 
 #### Gnome Paketi
 
-Please see the [Gnome package guidelines](/index.php/Gnome_package_guidelines "Gnome package guidelines")
+Please see the [GNOME package guidelines](/index.php/GNOME_package_guidelines "GNOME package guidelines")
 
 #### Haskell Paketi
 
@@ -244,31 +244,31 @@ Please see the [Haskell package guidelines](/index.php/Haskell_package_guideline
 
 #### Java Paketi
 
-Please see the [Java Package Guidelines](/index.php/Java_Package_Guidelines "Java Package Guidelines")
+Please see the [Java package guidelines](/index.php/Java_package_guidelines "Java package guidelines")
 
 #### Kernel Module Paketi
 
-Please see the [Kernel Module Package Guidelines](/index.php/Kernel_Module_Package_Guidelines "Kernel Module Package Guidelines")
+Please see the [Kernel module package guidelines](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines")
 
 #### Lisp Paketi
 
-Please see the [Lisp Package Guidelines](/index.php/Lisp_Package_Guidelines "Lisp Package Guidelines")
+Please see the [Lisp package guidelines](/index.php/Lisp_package_guidelines "Lisp package guidelines")
 
 #### OCaml Paketi
 
-Please see the [OCaml_Package_Guidelines](/index.php/OCaml_Package_Guidelines "OCaml Package Guidelines")
+Please see the [OCaml package guidelines](/index.php/OCaml_package_guidelines "OCaml package guidelines")
 
 #### Perl Paketi
 
-Please see the [Perl Package Guidelines](/index.php/Perl_Package_Guidelines "Perl Package Guidelines")
+Please see the [Perl package guidelines](/index.php/Perl_package_guidelines "Perl package guidelines")
 
 #### Python Paketi
 
-Please see the [Python Package Guidelines](/index.php/Python_Package_Guidelines "Python Package Guidelines")
+Please see the [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines")
 
 #### Ruby Gem Paketi
 
-Please see the [Ruby Gem Package Guidelines](/index.php/Ruby_Gem_Package_Guidelines "Ruby Gem Package Guidelines")
+Please see the [Ruby Gem package guidelines](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines")
 
 #### Wine Paketi
 

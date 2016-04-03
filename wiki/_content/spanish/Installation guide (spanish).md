@@ -6,7 +6,7 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 ## Contents
 
-*   [1 Preinstalación](#Preinstalaci.C3.B3n)
+*   [1 Pre-Instalación](#Pre-Instalaci.C3.B3n)
     *   [1.1 Distribución del teclado en el entorno live](#Distribuci.C3.B3n_del_teclado_en_el_entorno_live)
     *   [1.2 Conectarse a Internet](#Conectarse_a_Internet)
     *   [1.3 Actualizar el reloj del sistema](#Actualizar_el_reloj_del_sistema)
@@ -19,9 +19,9 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
     *   [2.3 Configurar el sistema](#Configurar_el_sistema)
     *   [2.4 Instalar un gestor de arranque](#Instalar_un_gestor_de_arranque)
     *   [2.5 Reiniciar](#Reiniciar)
-*   [3 Posinstalación](#Posinstalaci.C3.B3n)
+*   [3 Pos-Instalación](#Pos-Instalaci.C3.B3n)
 
-## Preinstalación
+## Pre-Instalación
 
 *   Descargue e inicie el soporte de instalación como se explica en [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"), y, a continuación, siga con el resto de esta guía.
 
@@ -80,7 +80,7 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 *   Configurar el [nombre del equipo](/index.php/Configuring_Network_(Espa%C3%B1ol)#Establecer_el_nombre_del_equipo "Configuring Network (Español)"): `# echo *nombre_equipo* > /etc/hostname` 
 
-*   Configurar el [huso horario](/index.php/Time_(Espa%C3%B1ol)#Uso_horario "Time (Español)"): `# ln -sf /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime` 
+*   Configurar el [huso horario](/index.php/Time_(Espa%C3%B1ol)#Uso_horario "Time (Español)"): `# ln -s /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime` 
 
 *   Configurar el [idioma del sistema](/index.php/Locale_(Espa%C3%B1ol) "Locale (Español)") descomentando el locale necesario en el archivo `/etc/locale.gen`, y después generarlo con la orden: `# locale-gen` 
 
@@ -106,7 +106,7 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 *   Por último, reiniciar el equipo escribiendo `reboot`: cualquier partición que todavía siga montada será desmontada automáticamente por *systemd*. Recuerde que debe retirar el soporte de instalación y, luego, iniciar sesión en el nuevo sistema con la cuenta de root.
 
-## Posinstalación
+## Pos-Instalación
 
 *   Véase el artículo [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") para obtener indicaciones sobre cómo gestionar el sistema, así como tutoriales sobre qué hacer después de la instalación del sistema base (como pueden ser temas relativos a la instalación y configuración de una interfaz gráfica de usuario, la del sonido o la del panel táctil).
 

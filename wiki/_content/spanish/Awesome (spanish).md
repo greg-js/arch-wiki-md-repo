@@ -51,7 +51,7 @@ Sin embargo, se puede también iniciar awesome como usuario preestablecido sin n
 
 ### Iniciando Awesome con un Gestor de Inicio
 
-Para iniciar awesome desde un manejador de sesión, vea [este artículo](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)").
+Para iniciar awesome desde un manejador de sesión, vea [este artículo](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)").
 
 ## Configuración
 

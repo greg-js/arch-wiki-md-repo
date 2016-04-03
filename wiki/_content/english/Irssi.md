@@ -336,4 +336,4 @@ Another way would be to set your hostname (vhost) with the 'set' command which w
 *   [IRC notifications with dzen2](http://jasonwryan.com/blog/2011/11/07/irc-dzen/) by Jason Ryan
 *   [Irssi’s /channel, /network, /server and /connect – What it means](http://pthree.org/2010/02/02/irssis-channel-network-server-and-connect-what-it-means/) by Aaron Toponce
 *   [awesome Wiki Irssi tips](http://awesome.naquadah.org/wiki/Irssi_tips)
-*   [irssi systemd unit](https://github.com/GutenYe/systemd-units/tree/master/irssi)
+*   [irssi systemd unit](https://gist.github.com/drye/5520101)

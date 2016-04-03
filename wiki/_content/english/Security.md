@@ -271,7 +271,7 @@ Once [sudo](/index.php/Sudo "Sudo") is properly configured, full root access can
 
 #### Allow only certain users
 
-The [PAM](https://en.wikipedia.org/wiki/Pluggable_authentication_module "wikipedia:Pluggable authentication module") `pam_wheel.so` lets you allow only users in the group `wheel` to login using `su`. Edit both `/etc/pam.d/su` and `/etc/pam.d/su-l`, then uncomment the line:
+The [PAM](/index.php/PAM "PAM") `pam_wheel.so` lets you allow only users in the group `wheel` to login using `su`. Edit both `/etc/pam.d/su` and `/etc/pam.d/su-l`, then uncomment the line:
 
 ```
 # Uncomment the following line to require a user to be in the "wheel" group.

@@ -476,7 +476,7 @@ or wherever you saved the file.
 
 If you use Gmail you might need to [generate](http://www.google.com/accounts/IssuedAuthSubTokens?hide_authsub=1) an application specific password.
 
-Alternatively, you can use stunnel as shown above: [#Display number of new emails (Gmail)](#Display_number_of_new_emails_.28Gmail.29)
+Alternatively, you can use stunnel as shown above: [#Gmail](#Gmail)
 
 #### IMAP using PHP
 

@@ -22,7 +22,7 @@
 
 **Nota:** El script es para ser utilizado en una máquina x86_64.
 
-Antes de empezar, necesitamos hacernos con los scripts de archiso que llevan a cabo gran parte del trabajo, para ello [instalaremos](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [archiso](https://www.archlinux.org/packages/?name=archiso) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Alternativamente, la versión GIT ([archiso-git](https://aur.archlinux.org/packages/archiso-git/)) puede ser construída e instalada desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
+Antes de empezar, necesitamos hacernos con los scripts de archiso que llevan a cabo gran parte del trabajo, para ello [instalaremos](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [archiso](https://www.archlinux.org/packages/?name=archiso) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Alternativamente, la versión GIT ([archiso-git](https://aur.archlinux.org/packages/archiso-git/)) puede ser construída e instalada desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
 
 Crea un directorio para trabajar con el, aquí es donde todas las modificaciones de la imagen live tendrán lugar: `/home/tuusuario/**archlive**` está bien (y es el ejemplo que se utilizará a lo largo de esta guía):
 
@@ -44,9 +44,9 @@ De manera que, dependiendo de tus necesidades, ejecuta lo siguiente, sustituyend
 
 ```
 
-Si estás utilizando el perfil *releng* para hacer una imagen totalmente personalizada, puedes hacerlo en [Configurar nuestro medio live](/index.php/Archiso_(Espa%C3%B1ol)#Configurar_nuestro_medio_live "Archiso (Español)").
+Si estás utilizando el perfil *releng* para hacer una imagen totalmente personalizada, puedes hacerlo en [Configurar nuestro medio live](#Configurar_nuestro_medio_live).
 
-Si estás usando el perfil *baseline* para crear una imagen de instalación mínima, no necesitarás hacer ninguna personalización y puedes ir directamente a [Construir la ISO](/index.php/Archiso_(Espa%C3%B1ol)#Construir_la_ISO "Archiso (Español)")
+Si estás usando el perfil *baseline* para crear una imagen de instalación mínima, no necesitarás hacer ninguna personalización y puedes ir directamente a [Construir la ISO](#Construir_la_ISO)
 
 ## Configurar nuestro medio live
 

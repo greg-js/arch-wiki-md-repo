@@ -9,6 +9,7 @@ Besides the sound device drivers, ALSA also bundles a user space driven library 
     *   [1.2 ALSA Utilities](#ALSA_Utilities)
     *   [1.3 OSS compatibility](#OSS_compatibility)
     *   [1.4 ALSA and Systemd](#ALSA_and_Systemd)
+    *   [1.5 ALSA Firmware](#ALSA_Firmware)
 *   [2 Unmuting the channels](#Unmuting_the_channels)
     *   [2.1 Unmute with amixer](#Unmute_with_amixer)
     *   [2.2 Unmute with alsamixer](#Unmute_with_alsamixer)
@@ -79,6 +80,10 @@ The [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package co
 These are automatically installed and activated during installation. Therefore, there is no further action needed. Though, you can check their status using `systemctl`.
 
 **Note:** For reference, ALSA stores its settings in `/var/lib/alsa/asound.state`
+
+### ALSA Firmware
+
+The [alsa-firmware](https://www.archlinux.org/packages/?name=alsa-firmware) package contains firmware that may be required for certain sound cards (e.g. Creative SB0400 Audigy2).
 
 ## Unmuting the channels
 

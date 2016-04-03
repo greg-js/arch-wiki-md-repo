@@ -182,9 +182,9 @@ See also [CUPS/Printer-specific problems#HP](/index.php/CUPS/Printer-specific_pr
 
 Make sure dbus is installed and running. If the error persists, try starting avahi-daemon.
 
-Try adding the printer as a Network Printer using the http:// protocol. Generate the printer URI with `hp-makeuri`.
+Try adding the printer as a Network Printer using the http:// protocol.
 
-**Note:** There might need to set permissions issues right. Follow indications here: [CUPS#Device node permissions](/index.php/CUPS#Device_node_permissions "CUPS").
+**Note:** There might need to set permissions issues right.
 
 ### HPLIP printer claims job is complete but printer does nothing
 
@@ -237,11 +237,11 @@ Filter "foomatic-rip" for printer *printer_name* not available: No such file or 
 or:
 
 ```
-PID 5771 (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
+PID *pid* (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 
 ```
 
-make sure [hplip](https://www.archlinux.org/packages/?name=hplip) has been [installed](/index.php/Pacman "Pacman"), in addition to packages mentioned in [CUPS#HP](/index.php/CUPS#HP "CUPS"). See [this forum post](https://bbs.archlinux.org/viewtopic.php?id=65615) for more information.
+make sure [hplip](https://www.archlinux.org/packages/?name=hplip) has been [installed](/index.php/Installed "Installed").
 
 ### HPLIP 3.13: Plugin is installed, but HP Device Manager complains it is not
 
@@ -270,7 +270,7 @@ Each system may vary, so consult [udev#List attributes of a device](/index.php/U
 
 #### Avahi not enabled
 
-Start, enable, and restart the `avahi-daemon` service.
+[Start](/index.php/Start "Start"), and [enable](/index.php/Enable "Enable") the `avahi-daemon` service.
 
 #### Out-of-date plugin
 

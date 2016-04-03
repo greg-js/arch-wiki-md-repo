@@ -163,8 +163,7 @@ Or add an udev rule:
 
  `/etc/udev/rules.d/10-trackpoint.rules` 
 ```
-SUBSYSTEM=="serio", DRIVERS=="psmouse", WAIT_FOR="speed", WAIT_FOR="sensitivity", \
-ATTR{sensitivity}="200", ATTR{speed}="180"
+ACTION=="add",DEVPATH=="/devices/platform/i8042/serio4/serio5",ATTR{sensitivity}="128",ATTR{speed}="200"
 
 ```
 

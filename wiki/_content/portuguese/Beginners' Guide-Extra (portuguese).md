@@ -1,4 +1,4 @@
-**Dica:** Esta é parte de um artigo multi-páginas do "The Beginners' Guide" ("O Guia para Iniciantes"). **[Clique aqui](/index.php/Beginners%27_Guide_(Portugu%C3%AAs) "Beginners' Guide (Português)")** se preferir ler o artigo completo.
+**Dica:** Esta é parte de um artigo multi-páginas do "The Beginners' Guide" ("O Guia para Iniciantes"). **[Clique aqui](/index.php/Beginners%27_guide_(Portugu%C3%AAs) "Beginners' guide (Português)")** se preferir ler o artigo completo.
 
 ## Contents
 
@@ -28,7 +28,7 @@ Vá em frente e logue com sua conta de usuário.
 
 ### Gerenciamento de pacotes
 
-Veja [pacman](/index.php/Pacman "Pacman") e [gerenciamento de pacotes](/index.php/FAQ#Package_Management "FAQ") para respostas sobre instalação, atualização e gerenciamento de pacotes.
+Veja [pacman](/index.php/Pacman "Pacman") e [gerenciamento de pacotes](/index.php/FAQ#Package_management "FAQ") para respostas sobre instalação, atualização e gerenciamento de pacotes.
 
 ### Gerenciamento de serviços
 

@@ -1,4 +1,4 @@
-**Tip:** Ovo je deo Uputstva za pocetnike koji se sastoji iz vise strana. **[Kliknite ovde](/index.php/Beginners%27_Guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' Guide (Српски)")** ako zelite da citate uputstvo u celosti.
+**Tip:** Ovo je deo Uputstva za pocetnike koji se sastoji iz vise strana. **[Kliknite ovde](/index.php/Beginners%27_guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' guide (Српски)")** ako zelite da citate uputstvo u celosti.
 
 ## Contents
 
@@ -20,7 +20,7 @@
 
 ## Priprema
 
-**Note:** Ukoliko zelite da instalirate na drugu particiju iz vec postojece distribucije ili LiveCD-a, molim vas pogledajte [ovaj wiki clanak](/index.php/Install_from_Existing_Linux "Install from Existing Linux") za neophodne korake. Ovo moze biti korisno, pogotovo ako planirate da instalirate Arch na udaljeni nacin preko [VNC](/index.php/VNC "VNC")-a ili [SSH](/index.php/SSH "SSH")-a. Uputstvo koje sledi pretpostavlja instalaciju na konvencionalan nacin.
+**Note:** Ukoliko zelite da instalirate na drugu particiju iz vec postojece distribucije ili LiveCD-a, molim vas pogledajte [ovaj wiki clanak](/index.php/Install_from_existing_Linux "Install from existing Linux") za neophodne korake. Ovo moze biti korisno, pogotovo ako planirate da instalirate Arch na udaljeni nacin preko [VNC](/index.php/VNC "VNC")-a ili [SSH](/index.php/SSH "SSH")-a. Uputstvo koje sledi pretpostavlja instalaciju na konvencionalan nacin.
 
 ### Preuzimanje najskorijeg instalacionog medija
 

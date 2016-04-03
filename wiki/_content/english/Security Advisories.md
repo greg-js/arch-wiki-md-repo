@@ -4,25 +4,26 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 *   [1 Scheduled Advisories](#Scheduled_Advisories)
 *   [2 Recent Advisories](#Recent_Advisories)
-    *   [2.1 Mars 2016](#Mars_2016)
-    *   [2.2 February 2016](#February_2016)
-    *   [2.3 January 2016](#January_2016)
-    *   [2.4 December 2015](#December_2015)
-    *   [2.5 November 2015](#November_2015)
-    *   [2.6 October 2015](#October_2015)
-    *   [2.7 September 2015](#September_2015)
-    *   [2.8 August 2015](#August_2015)
-    *   [2.9 July 2015](#July_2015)
-    *   [2.10 June 2015](#June_2015)
-    *   [2.11 May 2015](#May_2015)
-    *   [2.12 Apr 2015](#Apr_2015)
-    *   [2.13 Mar 2015](#Mar_2015)
-    *   [2.14 Feb 2015](#Feb_2015)
-    *   [2.15 Jan 2015](#Jan_2015)
-    *   [2.16 Dec 2014](#Dec_2014)
-    *   [2.17 Nov 2014](#Nov_2014)
-    *   [2.18 Oct 2014](#Oct_2014)
-    *   [2.19 Sep 2014](#Sep_2014)
+    *   [2.1 April 2016](#April_2016)
+    *   [2.2 March 2016](#March_2016)
+    *   [2.3 February 2016](#February_2016)
+    *   [2.4 January 2016](#January_2016)
+    *   [2.5 December 2015](#December_2015)
+    *   [2.6 November 2015](#November_2015)
+    *   [2.7 October 2015](#October_2015)
+    *   [2.8 September 2015](#September_2015)
+    *   [2.9 August 2015](#August_2015)
+    *   [2.10 July 2015](#July_2015)
+    *   [2.11 June 2015](#June_2015)
+    *   [2.12 May 2015](#May_2015)
+    *   [2.13 Apr 2015](#Apr_2015)
+    *   [2.14 Mar 2015](#Mar_2015)
+    *   [2.15 Feb 2015](#Feb_2015)
+    *   [2.16 Jan 2015](#Jan_2015)
+    *   [2.17 Dec 2014](#Dec_2014)
+    *   [2.18 Nov 2014](#Nov_2014)
+    *   [2.19 Oct 2014](#Oct_2014)
+    *   [2.20 Sep 2014](#Sep_2014)
 *   [3 Publishing a new advisory](#Publishing_a_new_advisory)
     *   [3.1 Templates](#Templates)
     *   [3.2 Vim-Snippet](#Vim-Snippet)
@@ -33,7 +34,14 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
 
-### Mars 2016
+### April 2016
+
+*   [02 April 2016] [ ASA-201604-4] [squid](https://www.archlinux.org/packages/?name=squid) denial of service
+*   [01 April 2016] [ASA-201604-3](https://lists.archlinux.org/pipermail/arch-security/2016-April/000595.html) [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) sandbox escape
+*   [01 April 2016] [ASA-201604-2](https://lists.archlinux.org/pipermail/arch-security/2016-April/000594.html) [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) sandbox escape
+*   [01 April 2016] [ASA-201604-1](https://lists.archlinux.org/pipermail/arch-security/2016-April/000593.html) [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) sandbox escape
+
+### March 2016
 
 *   [29 March 2016] [ASA-201603-27](https://lists.archlinux.org/pipermail/arch-security/2016-March/000592.html) [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) sandbox escape
 *   [29 March 2016] [ASA-201603-26](https://lists.archlinux.org/pipermail/arch-security/2016-March/000591.html) [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) sandbox escape

@@ -21,7 +21,7 @@ dnsmasq fornisce un servizio di cache DNS e di server DHCP. Come Domain Name Ser
 
 ## Installazione
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ## Configurazione della cache DNS
 

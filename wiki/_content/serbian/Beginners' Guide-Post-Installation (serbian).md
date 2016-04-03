@@ -1,4 +1,4 @@
-**Note:** Ovo je deo visestranog clanka za Uputstvo za pocetnike.**[Kliknite ovde](/index.php/Beginners%27_Guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' Guide (Српски)")** ako biste pre zeleli da citate uputstvo u celosti.
+**Note:** Ovo je deo visestranog clanka za Uputstvo za pocetnike.**[Kliknite ovde](/index.php/Beginners%27_guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' guide (Српски)")** ako biste pre zeleli da citate uputstvo u celosti.
 
 ## Contents
 
@@ -715,7 +715,7 @@ X prozor sistem pruza osnovni frejmvork za izgradnju grafickog korisnickog inter
 
 	Desktop okruzenje (DE)
 
-	Radi povrh i u saradnji sa X-om da obezbedi kompletno funkcionalan i dinamicki GUI. DE tipicno obezbedjuje prozor menadzer, ikone, aplete, prozore, toolbar-ove, foldere, pozadine (wallpaper-e), skup aplikacija i mogucnosti poput prevuci i ispusti (drag and drop). Kada razmisljate o licnom desktopu, obicno je DE ono sto zelite. **See [Desktop okruzenja](/index.php/Desktop_environment#Desktop_environments "Desktop environment") za vise informacija.**
+	Radi povrh i u saradnji sa X-om da obezbedi kompletno funkcionalan i dinamicki GUI. DE tipicno obezbedjuje prozor menadzer, ikone, aplete, prozore, toolbar-ove, foldere, pozadine (wallpaper-e), skup aplikacija i mogucnosti poput prevuci i ispusti (drag and drop). Kada razmisljate o licnom desktopu, obicno je DE ono sto zelite. **See [Desktop okruzenja](/index.php/Desktop_environment "Desktop environment") za vise informacija.**
 
 Mozete izgraditi vas licni DE koriscenjem WM-a i aplikacija prema vasem izboru.
 
@@ -731,6 +731,6 @@ Mozda cete vise voleti da startujete X rucno iz vaseg terminala pre nego da star
 
 Mozda cete zeleti da imate desktop koji startuje automatski tokom butovanja umesto da startujete X rucno. Pogledajte [Display manager](/index.php/Display_manager "Display manager") za instrukcije za upotrebu menadzera za prijavljivanje ili [Startovanje X-a prilikom butovanja](/index.php/Start_X_at_Boot "Start X at Boot") za dve lagane metode koje se ne oslanjaju na displej menadzer-a.
 
-**[Beginners' Guide (Српски)](/index.php/Beginners%27_Guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' Guide (Српски)") stranice:**
+**[Beginners' guide (Српски)](/index.php/Beginners%27_guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' guide (Српски)") stranice:**
 
 [Predgovor](/index.php/Beginners%27_Guide/Preface_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' Guide/Preface (Српски)") >> **[Priprema za instalaciju](/index.php/Beginners%27_Guide/Preparation_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' Guide/Preparation (Српски)")** >> [Instalacija osnovnog sistema](/index.php/Beginners%27_Guide/Installation_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' Guide/Installation (Српски)") >> **Nakon instalacije** >> [Dalje citanje](/index.php/Beginners%27_Guide/Extra_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' Guide/Extra (Српски)")

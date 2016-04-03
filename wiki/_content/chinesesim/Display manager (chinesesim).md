@@ -58,7 +58,7 @@
 
 ## 加载显示管理器
 
-通过启动登录管理器（或称显示管理器），即可进行图形界面登录。目前，Arch 提供了 [GDM](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)")、[KDM](/index.php/KDM "KDM")、[SLiM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)")、[XDM](/index.php/XDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "XDM (简体中文)")、[LXDM](/index.php/LXDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDM (简体中文)")、[LightDM](/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LightDM (简体中文)") 和 [sddm](https://www.archlinux.org/packages/?name=sddm) 的 systemd 服务文件。以 [Sddm](/index.php/Sddm "Sddm") 为例，配置开机启动：
+通过启动登录管理器（或称显示管理器），即可进行图形界面登录。目前，Arch 提供了 [GDM](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)")、[KDM](/index.php/KDM "KDM")、[SLiM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)")、[XDM](/index.php/XDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "XDM (简体中文)")、[LXDM](/index.php/LXDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDM (简体中文)")、[LightDM](/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LightDM (简体中文)") 和 [sddm](https://www.archlinux.org/packages/?name=sddm) 的 systemd 服务文件。以 [SDDM](/index.php/SDDM "SDDM") 为例，配置开机启动：
 
 ```
 # systemctl enable sddm.service

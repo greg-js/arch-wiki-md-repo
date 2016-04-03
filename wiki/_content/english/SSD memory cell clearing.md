@@ -74,7 +74,7 @@ The final step is to issue the secure erase command, instructing the device's bi
 
 ```
 
-As per ATA specification the *enhanced* security erase (`--enhanced-security-erase`) performs a more elaborate wipe. If the estimated completion time for both commands is equal, it indicates the drive manufacturer shortcut the specification and uses the same erase function for both. A short time (like 2 minutes) in turn indicates the device is self-encrypting and its bios function will wipe the internal encryption key instead of overwriting all data cells.[[3]](http://security.stackexchange.com/questions/62253/what-is-the-difference-between-ata-secure-erase-and-security-erase-how-can-i-en)
+As per ATA specification the *enhanced* security erase (`--security-erase-enhanced`) performs a more elaborate wipe. If the estimated completion time for both commands is equal, it indicates the drive manufacturer shortcut the specification and uses the same erase function for both. A short time (like 2 minutes) in turn indicates the device is self-encrypting and its bios function will wipe the internal encryption key instead of overwriting all data cells.[[3]](http://security.stackexchange.com/questions/62253/what-is-the-difference-between-ata-secure-erase-and-security-erase-how-can-i-en)
 
 **Warning:** Triple check that the correct drive designation is used. There is **no turning back** once the command is confirmed. You have been warned.
 

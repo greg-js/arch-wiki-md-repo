@@ -79,7 +79,7 @@ $ ~/.dropbox-dist/dropboxd
 
 对于 [KDE](/index.php/KDE "KDE") 用户来说，在注销用户或者是重启机器后，之前正在运行的程序将会自动重新启动。[Xfce](/index.php/Xfce "Xfce") 稍有不同，将 `dropbox.desktop` 放置在 {ic|~/.config/autostart}} 下，Dropbox 在下次启动时就会自动启动了。
 
-如果这些都不能正常的工作，那您也可以将 `~/.dropbox-dist/dropboxd &` 添加到 `~/.xinitrc` 来让窗口管理器控制它的启动（也有可能在 `~/.config/openbox/autostart`,看你的设置了）。当然，您也可以将 Dropbox [作为服务启动](#Run_as_daemon_with_systemd).
+如果这些都不能正常的工作，那您也可以将 `~/.dropbox-dist/dropboxd &` 添加到 `~/.xinitrc` 来让窗口管理器控制它的启动（也有可能在 `~/.config/openbox/autostart`,看你的设置了）。当然，您也可以将 Dropbox [作为服务启动](#Run_as_a_daemon_with_systemd_user).
 
 ### 作为 systemd 的服务启动
 
@@ -259,7 +259,7 @@ systemctl stop dropbox@<user>
 
 ### Dropbox keeps saying Downloading files
 
-But in fact now files are synced with your box. This problem is likely to appear when your Dropbox folder is located on a NTFS partition whose mount path contains spaces, or permissions are not set for that partition. See more in the [[forums](https://bbs.archlinux.org/viewtopic.php?id=153368)]. To resolve the problem pay attention to your entry in `/etc/fstab`. Avoid spaces in the mount path and set write permissions with the "default_permissions" option:
+But in fact now files are synced with your box. This problem is likely to appear when your Dropbox folder is located on a NTFS partition whose mount path contains spaces, or permissions are not set for that partition. See more in the [forums](https://bbs.archlinux.org/viewtopic.php?id=153368). To resolve the problem pay attention to your entry in `/etc/fstab`. Avoid spaces in the mount path and set write permissions with the "default_permissions" option:
 
 ```
 UUID=01CD2ABB65E17DE0 /run/media/username/Windows ntfs-3g uid=username,gid=users,default_permissions 0 0

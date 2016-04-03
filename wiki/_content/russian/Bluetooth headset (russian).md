@@ -370,7 +370,7 @@ Bluez5 has a regression causing HSP/HFP Telephone profile to not be available. T
 
 ### Install Software Packages
 
-The core software components are [ALSA](/index.php/ALSA "ALSA"), Bluez5, [Pulseaudio](/index.php/Pulseaudio "Pulseaudio"). However there are additional libraries which are required. As well as a player which can play audio files. The following section lists the software packages installed in order to connect the headset and play audio over the headset.
+The core software components are [ALSA](/index.php/ALSA "ALSA"), Bluez5, [PulseAudio](/index.php/PulseAudio "PulseAudio"). However there are additional libraries which are required. As well as a player which can play audio files. The following section lists the software packages installed in order to connect the headset and play audio over the headset.
 
 #### Install ALSA and associated libraries
 

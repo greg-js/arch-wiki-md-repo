@@ -395,7 +395,7 @@ Of if you want more debug info than try:
 
 ## Alternatives to AutoFS
 
-*   [Systemd](/index.php/Systemd "Systemd") can automount filesystems upon demand; see [here](/index.php/Fstab#Automount_with_systemd "Fstab") for the description and the article on [sshfs](/index.php/Sshfs#On_demand "Sshfs") for an example.
+*   [Systemd](/index.php/Systemd "Systemd") can automount filesystems upon demand; see [here](/index.php/Fstab#Automount_with_systemd "Fstab") for the description and the article on [sshfs](/index.php/SSHFS#On_demand "SSHFS") for an example.
 *   [Thunar Volume Manager](/index.php/Thunar_Volume_Manager "Thunar Volume Manager") is an automount system for users of the [Thunar](/index.php/Thunar "Thunar") file manager.
 *   [PCManFM](/index.php/PCManFM "PCManFM") is a lightweight file manager with built-in support for accessing remote shares
 *   [Udisks](/index.php/Udisks "Udisks") is a minimalistic automatic disk mounting service

@@ -111,7 +111,7 @@ EndSection
 
 ### Tuning the Pen
 
-The pen buttons might not work out of the box. [Install](/index.php/Install "Install") the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) package and comment the `MatchIsTablet` section in `/usr/share/X11/xorg.conf.d/10-evdev.conf`. Furthermore add in the `MatchProduct` line of N-Trig in `/usr/share/X11/xorg.conf.d/50-wacom.conf`. Note that the purple bluetooth button is recognized but able to be bound to an action. Ref:[Reddit](https://www.reddit.com/r/SurfaceLinux/comments/3mu28a/sp3_pen_tip_button_working/)
+The pen buttons might not work out of the box. [Install](/index.php/Install "Install") the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) package and comment the `MatchIsTablet` section in `/usr/share/X11/xorg.conf.d/10-evdev.conf`. Furthermore add `1B96:1B05 Pen` in the `MatchProduct` line of N-Trig in `/usr/share/X11/xorg.conf.d/50-wacom.conf`. Note that the purple bluetooth button is recognized but able to be bound to an action. Ref:[Reddit](https://www.reddit.com/r/SurfaceLinux/comments/3mu28a/sp3_pen_tip_button_working/)
 
 ### Virtual Keboard
 

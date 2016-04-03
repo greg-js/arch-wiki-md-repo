@@ -1,4 +1,4 @@
-**Dica:** Esta é parte de um artigo multi-páginas do "The Beginners' Guide" ("O Guia para Iniciantes"). **[Clique aqui](/index.php/Beginners%27_Guide_(Portugu%C3%AAs) "Beginners' Guide (Português)")** se preferir ler o artigo completo.
+**Dica:** Esta é parte de um artigo multi-páginas do "The Beginners' Guide" ("O Guia para Iniciantes"). **[Clique aqui](/index.php/Beginners%27_guide_(Portugu%C3%AAs) "Beginners' guide (Português)")** se preferir ler o artigo completo.
 
 ## Contents
 
@@ -14,7 +14,7 @@
 
 ## Preparar a Instalação
 
-**Nota:** Se você desejar instalar em outra partição a partir de uma distribuição GNU/Linux já existente ou o LiveCD, por favor veja [este artigo de wiki](/index.php/Install_from_Existing_Linux_(Portugu%C3%AAs) "Install from Existing Linux (Português)") para obter as etapas para fazer isso. Isso pode ser útil especialmente se você planeja instalar o Arch via VNC ou SSH remotamente. O seguinte artigo assume que a instalação ocorrerá por meios convencionais.
+**Nota:** Se você desejar instalar em outra partição a partir de uma distribuição GNU/Linux já existente ou o LiveCD, por favor veja [este artigo de wiki](/index.php/Install_from_existing_Linux_(Portugu%C3%AAs) "Install from existing Linux (Português)") para obter as etapas para fazer isso. Isso pode ser útil especialmente se você planeja instalar o Arch via VNC ou SSH remotamente. O seguinte artigo assume que a instalação ocorrerá por meios convencionais.
 
 ### Obtendo a última mídia de instalação
 

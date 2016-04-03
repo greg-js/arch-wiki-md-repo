@@ -1,4 +1,4 @@
-**Bemærk:** Dette er en del af en flersides artikel til Begynderguiden. **[Klik her](/index.php/Beginners%27_Guide_(Dansk) "Beginners' Guide (Dansk)")** hvis du hellere vil læse guiden i sin helhed.
+**Bemærk:** Dette er en del af en flersides artikel til Begynderguiden. **[Klik her](/index.php/Beginners%27_guide_(Dansk) "Beginners' guide (Dansk)")** hvis du hellere vil læse guiden i sin helhed.
 
 ## Contents
 
@@ -41,7 +41,7 @@ Arch Linux, Pacman, dokumentationen og scripts er copyright ©2002-2007 Judd Vin
 
 ### Om denne guide
 
-Den fællesdrevne [Arch wiki](/index.php/Main_Page_(Dansk) "Main Page (Dansk)") er en glimrende ressource og bør konsulteres først ved problemer. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanalen ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), og [forum](https://bbs.archlinux.org/) er også tilgængelige hvis svaret ikke kan findes andre steder. Derudover bør du tjekke `man`-siden til enhver kommando du ikke kender.
+Den fællesdrevne [Arch wiki](/index.php/Main_page_(Dansk) "Main page (Dansk)") er en glimrende ressource og bør konsulteres først ved problemer. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanalen ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), og [forum](https://bbs.archlinux.org/) er også tilgængelige hvis svaret ikke kan findes andre steder. Derudover bør du tjekke `man`-siden til enhver kommando du ikke kender.
 
 **Bemærk:** At følge denne guide er essentielt for at installere et rigtigt konfigureret Arch Linux system, så læs den *venligst* grundigt. Det er stærkt anbefalet at læse hver sektion helt <u>før</u> du udfører opgaverne deri.
 

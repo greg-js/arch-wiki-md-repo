@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Arch_User_Repository](/index.php/Arch_User_Repository "Arch User Repository") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-03，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=419534)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_User_Repository](/index.php/Arch_User_Repository "Arch User Repository") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-02，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=429247)可以查看翻译后英文页面的改动。
 
 [Arch用户软件仓库](https://aur.archlinux.org)（Arch User Repository，AUR）是为用户而建、由用户主导的Arch软件仓库。AUR中的软件包以软件包生成脚本（[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")）的形式提供，用户自己通过[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")生成包，再由[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")安装。创建AUR的初衷是方便用户维护和分享新软件包，并由官方定期从中挑选软件包进入[community](/index.php/Community "Community")仓库。本文介绍用户访问和使用AUR的方法。
 
@@ -10,37 +10,37 @@
 *   [2 历史](#.E5.8E.86.E5.8F.B2)
 *   [3 搜索](#.E6.90.9C.E7.B4.A2)
 *   [4 安装软件包](#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [4.1 基础环境](#.E5.9F.BA.E7.A1.80.E7.8E.AF.E5.A2.83)
+    *   [4.1 准备](#.E5.87.86.E5.A4.87)
     *   [4.2 获取软件包构建所需文件](#.E8.8E.B7.E5.8F.96.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.9E.84.E5.BB.BA.E6.89.80.E9.9C.80.E6.96.87.E4.BB.B6)
     *   [4.3 构建和安装软件包](#.E6.9E.84.E5.BB.BA.E5.92.8C.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
 *   [5 反馈](#.E5.8F.8D.E9.A6.88)
 *   [6 分享和维护软件包](#.E5.88.86.E4.BA.AB.E5.92.8C.E7.BB.B4.E6.8A.A4.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [6.1 提交软件包](#.E6.8F.90.E4.BA.A4.E8.BD.AF.E4.BB.B6.E5.8C.85)
         *   [6.1.1 提交软件包的规则](#.E6.8F.90.E4.BA.A4.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84.E8.A7.84.E5.88.99)
-        *   [6.1.2 创建软件包](#.E5.88.9B.E5.BB.BA.E8.BD.AF.E4.BB.B6.E5.8C.85)
-        *   [6.1.3 提交和更新软件包](#.E6.8F.90.E4.BA.A4.E5.92.8C.E6.9B.B4.E6.96.B0.E8.BD.AF.E4.BB.B6.E5.8C.85)
+        *   [6.1.2 认证](#.E8.AE.A4.E8.AF.81)
+        *   [6.1.3 创建软件包](#.E5.88.9B.E5.BB.BA.E8.BD.AF.E4.BB.B6.E5.8C.85)
+        *   [6.1.4 提交和更新软件包](#.E6.8F.90.E4.BA.A4.E5.92.8C.E6.9B.B4.E6.96.B0.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [6.2 维护软件包](#.E7.BB.B4.E6.8A.A4.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [6.3 其他事项](#.E5.85.B6.E4.BB.96.E4.BA.8B.E9.A1.B9)
 *   [7 AUR3 软件包的Git仓库](#AUR3_.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84Git.E4.BB.93.E5.BA.93)
-*   [8 AUR 元数据](#AUR_.E5.85.83.E6.95.B0.E6.8D.AE)
-    *   [8.1 工作原理](#.E5.B7.A5.E4.BD.9C.E5.8E.9F.E7.90.86)
-*   [9 AUR translation](#AUR_translation)
-*   [10 FAQ](#FAQ)
-    *   [10.1 AUR是什么？](#AUR.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
-    *   [10.2 什么样的软件包能被放到 AUR?](#.E4.BB.80.E4.B9.88.E6.A0.B7.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.E8.83.BD.E8.A2.AB.E6.94.BE.E5.88.B0_AUR.3F)
-    *   [10.3 如何给 AUR 中的软件包投票?](#.E5.A6.82.E4.BD.95.E7.BB.99_AUR_.E4.B8.AD.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.8A.95.E7.A5.A8.3F)
-    *   [10.4 受信用户（或TU）是什么？](#.E5.8F.97.E4.BF.A1.E7.94.A8.E6.88.B7.EF.BC.88.E6.88.96TU.EF.BC.89.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
-    *   [10.5 Arch User Repository和[community]仓库有何区别？](#Arch_User_Repository.E5.92.8C.5Bcommunity.5D.E4.BB.93.E5.BA.93.E6.9C.89.E4.BD.95.E5.8C.BA.E5.88.AB.EF.BC.9F)
-    *   [10.6 AUR的某个软件包过时了，该怎么办？](#AUR.E7.9A.84.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E8.BF.87.E6.97.B6.E4.BA.86.EF.BC.8C.E8.AF.A5.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
-    *   [10.7 makepkg无法构建某个软件包怎么办？](#makepkg.E6.97.A0.E6.B3.95.E6.9E.84.E5.BB.BA.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
-    *   [10.8 如何编写PKGBUILD？](#.E5.A6.82.E4.BD.95.E7.BC.96.E5.86.99PKGBUILD.EF.BC.9F)
-    *   [10.9 我想提交一个PKGBUILD，希望别人帮忙检查错误。](#.E6.88.91.E6.83.B3.E6.8F.90.E4.BA.A4.E4.B8.80.E4.B8.AAPKGBUILD.EF.BC.8C.E5.B8.8C.E6.9C.9B.E5.88.AB.E4.BA.BA.E5.B8.AE.E5.BF.99.E6.A3.80.E6.9F.A5.E9.94.99.E8.AF.AF.E3.80.82)
-    *   [10.10 PKGBUILD（AUR软件包）怎样才能被收录到community软件仓库？](#PKGBUILD.EF.BC.88AUR.E8.BD.AF.E4.BB.B6.E5.8C.85.EF.BC.89.E6.80.8E.E6.A0.B7.E6.89.8D.E8.83.BD.E8.A2.AB.E6.94.B6.E5.BD.95.E5.88.B0community.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93.EF.BC.9F)
-    *   [10.11 如何加速编译？](#.E5.A6.82.E4.BD.95.E5.8A.A0.E9.80.9F.E7.BC.96.E8.AF.91.EF.BC.9F)
-    *   [10.12 foo 和 foo-git 的区别是什么?](#foo_.E5.92.8C_foo-git_.E7.9A.84.E5.8C.BA.E5.88.AB.E6.98.AF.E4.BB.80.E4.B9.88.3F)
-    *   [10.13 为啥某个软件包从AUR消失了?](#.E4.B8.BA.E5.95.A5.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BB.8EAUR.E6.B6.88.E5.A4.B1.E4.BA.86.3F)
-    *   [10.14 我要咋找出从AUR里消失的软件包?](#.E6.88.91.E8.A6.81.E5.92.8B.E6.89.BE.E5.87.BA.E4.BB.8EAUR.E9.87.8C.E6.B6.88.E5.A4.B1.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.3F)
-*   [11 另请参阅](#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85)
+*   [8 AUR translation](#AUR_translation)
+*   [9 FAQ](#FAQ)
+    *   [9.1 AUR是什么？](#AUR.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
+    *   [9.2 什么样的软件包能被放到 AUR?](#.E4.BB.80.E4.B9.88.E6.A0.B7.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.E8.83.BD.E8.A2.AB.E6.94.BE.E5.88.B0_AUR.3F)
+    *   [9.3 如何给 AUR 中的软件包投票?](#.E5.A6.82.E4.BD.95.E7.BB.99_AUR_.E4.B8.AD.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.8A.95.E7.A5.A8.3F)
+    *   [9.4 受信用户（或TU）是什么？](#.E5.8F.97.E4.BF.A1.E7.94.A8.E6.88.B7.EF.BC.88.E6.88.96TU.EF.BC.89.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
+    *   [9.5 Arch User Repository和[community]仓库有何区别？](#Arch_User_Repository.E5.92.8C.5Bcommunity.5D.E4.BB.93.E5.BA.93.E6.9C.89.E4.BD.95.E5.8C.BA.E5.88.AB.EF.BC.9F)
+    *   [9.6 AUR的某个软件包过时了，该怎么办？](#AUR.E7.9A.84.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E8.BF.87.E6.97.B6.E4.BA.86.EF.BC.8C.E8.AF.A5.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
+    *   [9.7 makepkg无法构建某个软件包怎么办？](#makepkg.E6.97.A0.E6.B3.95.E6.9E.84.E5.BB.BA.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
+    *   [9.8 如何编写PKGBUILD？](#.E5.A6.82.E4.BD.95.E7.BC.96.E5.86.99PKGBUILD.EF.BC.9F)
+    *   [9.9 我想提交一个PKGBUILD，希望别人帮忙检查错误。](#.E6.88.91.E6.83.B3.E6.8F.90.E4.BA.A4.E4.B8.80.E4.B8.AAPKGBUILD.EF.BC.8C.E5.B8.8C.E6.9C.9B.E5.88.AB.E4.BA.BA.E5.B8.AE.E5.BF.99.E6.A3.80.E6.9F.A5.E9.94.99.E8.AF.AF.E3.80.82)
+    *   [9.10 PKGBUILD（AUR软件包）怎样才能被收录到community软件仓库？](#PKGBUILD.EF.BC.88AUR.E8.BD.AF.E4.BB.B6.E5.8C.85.EF.BC.89.E6.80.8E.E6.A0.B7.E6.89.8D.E8.83.BD.E8.A2.AB.E6.94.B6.E5.BD.95.E5.88.B0community.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93.EF.BC.9F)
+    *   [9.11 如何加速编译？](#.E5.A6.82.E4.BD.95.E5.8A.A0.E9.80.9F.E7.BC.96.E8.AF.91.EF.BC.9F)
+    *   [9.12 foo 和 foo-git 的区别是什么?](#foo_.E5.92.8C_foo-git_.E7.9A.84.E5.8C.BA.E5.88.AB.E6.98.AF.E4.BB.80.E4.B9.88.3F)
+    *   [9.13 为啥某个软件包从AUR消失了?](#.E4.B8.BA.E5.95.A5.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BB.8EAUR.E6.B6.88.E5.A4.B1.E4.BA.86.3F)
+    *   [9.14 我要咋找出从AUR里消失的软件包?](#.E6.88.91.E8.A6.81.E5.92.8B.E6.89.BE.E5.87.BA.E4.BB.8EAUR.E9.87.8C.E6.B6.88.E5.A4.B1.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.3F)
+    *   [9.15 如何查找已经安装但是从 AUR 消失的软件包](#.E5.A6.82.E4.BD.95.E6.9F.A5.E6.89.BE.E5.B7.B2.E7.BB.8F.E5.AE.89.E8.A3.85.E4.BD.86.E6.98.AF.E4.BB.8E_AUR_.E6.B6.88.E5.A4.B1.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
+*   [10 另请参阅](#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85)
 
 ## 导读
 
@@ -66,16 +66,14 @@ AUR提供了方便人们访问的[网页接口](https://aur.archlinux.org/)，�
 
 ## 安装软件包
 
-**注意:** Arch官方永远不会提供安装AUR（和其他不受支持）软件包的便利工具，**AUR用户应当对软件编译有一定了解**。
-
 从AUR（即[unsupported]仓库）安装软件包并不很困难。步骤如下：
 
-1.  从AUR下载包含[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")和其他安装文件（比如 systemd-units 和补丁，通常不是实际代码）的tar包。
+1.  从AUR下载包含[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")和其他安装文件（比如 [systemd](/index.php/Systemd "Systemd") 和补丁，通常不是实际代码）的tar包。
 2.  用命令 `tar -xvf packagename.tar.gz` 解包到一个仅用于编译AUR的空闲文件夹。
-3.  验证和其它相关文件,确保其中不含有恶意代码.
+3.  验证[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")和其它相关文件,确保其中不含有恶意代码.
 4.  在上述文件夹中运行 `makepkg -sri`. 命令会自动调用[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")解决依赖关系，然后下载代码、编译并打包. 然后安装软件包，然后删除仅在编译时才需要的软件包。
 
-### 基础环境
+### 准备
 
 首先确定必要的软件包组已经安装:
 
@@ -168,14 +166,14 @@ AUR不包含任何编译过的二进制包，用户上传[PKGBUILD](/index.php/P
 
 *   检查[官方仓库](https://www.archlinux.org/packages/)，如果存在该软件包的 **任何版本**，就**不要**重复提交。如果认为官方仓库的软件包已过期，请标记它。如果它有问题或者缺少功能，请反馈[bug 报告](https://bugs.archlinux.org/)。
 *   查看AUR中是否已有相同软件包。如果已经有人维护某软件包，其他用户的提交将以评论形式报告给维护人员。如果软件包无人维护或不存在，用户提交的软件包将被收录,别创建重复的包.
-*   仔细检查上传的文件。编写PKGBUILD前务必阅读[Arch软件打包标准](/index.php/Arch_Packaging_Standards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Packaging Standards (简体中文)")。劣质的PKGBUILD会影响软件的正常使用，不要指望别人会因为你糟糕的PKGBUILD浪费了他们的时间而收到感谢。
+*   仔细检查上传的文件。编写PKGBUILD前务必阅读[Arch软件打包标准](/index.php/Arch_packaging_standards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch packaging standards (简体中文)")。劣质的PKGBUILD会影响软件的正常使用，不要指望别人会因为你糟糕的PKGBUILD浪费了他们的时间而收到感谢。
 *   包含二进制文件或质量差的PKGBUILD有可能无提醒地被直接删除。
 *   如果对自己的PKGBUILD缺乏信心，可以先把它贴到[AUR邮件列表](https://mailman.archlinux.org/mailman/listinfo/aur-general)或[论坛AUR版](https://bbs.archlinux.org/viewforum.php?id=4)，让大家帮你检查。
 *   确保你的软件包有人需要，有人会用这个软件包吗?它非常特别吗?如果有一些人觉得它有用,就提交它.
 *   AUR 官方软件仓库中放置通用软件和软件相关内容，包括：可执行文件、配置文件、软件的在线文档和软件直接使用的数据。
 *   上传软件包之前务必掌握打包过程，自己打几个包练练手。
 
-#### 创建软件包
+#### 认证
 
 要向AUR间写入软件包,用户需要创建一个[SSH key](/index.php/SSH_keys "SSH keys").将公钥 `.ssh/foo.pub` 导入到用户账户的 *我的帐号*一节,然后为 `aur.archlinux.org` 指定私钥的位置,例如:
 
@@ -186,31 +184,46 @@ Host aur.archlinux.org
   User aur
 ```
 
-建议为 AUR 创建一个新的密钥(而不是用旧的)，这样出问题时可以直接废除密钥。
+建议为 AUR 创建一个新的密钥(而不是用旧的)，这样出问题时可以直接废除密钥。在输入密钥时可以导入多个公钥，每行一个。
 
-要提交软件包，先用软件包名对应的地址克隆镜像：
+#### 创建软件包
+
+要创建新的空本地 Git 仓库，可以用 `git clone` 相同名称的远程仓库，如果 AUR 中还不存在软件包，将会看到下面警告：
+
+ `$ git clone git+ssh://aur@aur.archlinux.org/*package_name*.git` 
+```
+Cloning into '*package_name*'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
 
 ```
-$ git clone ssh://aur@aur.archlinux.org/*foobar*.git
+
+如果已经有了 git 仓库，可以远程创建 AUR git 并获取它：
+
+```
+$ git remote add *remote_name* git+ssh://aur@aur.archlinux.org/*package_name*.git
+$ git fetch *remote_name*
 
 ```
 
-用你希望的软件包名替换`foobar`.从不存在的仓库中克隆或推送，将会自动创建此仓库。
+`*remote_name*` 是需要创建的仓库，参考 [Git#Using remotes](/index.php/Git#Using_remotes "Git")。
 
-然后将需要提交的源代码加入 Git 镜像。注意要确保每次更新都包含顶层目录的 `PKGBUILD` 和 `.SRCINFO`。可以用 [pkgbuild-introspection](https://www.archlinux.org/packages/?name=pkgbuild-introspection) 软件包提供的 `mksrcinfo` 创建 `.SRCINFO`。
+第一次 *push* 之后，AUR 上就会出现软件包。可以将源代码加入本地 Git 仓库，参考 [#上传软件包](#.E4.B8.8A.E4.BC.A0.E8.BD.AF.E4.BB.B6.E5.8C.85).
 
-**Note:** ".SRCINFO" 包含了软件代码的元数据，详情参阅[#AUR metadata](#AUR_metadata).
+**Warning:** AUR 提交会通过 git 用户名和邮件定义作者，一旦提交很难改变。如果需要修改用户名和密码，请通过 `git config user.name [...]` 和 `git config user.email [...]` 修改。请一定在推送前进行检查。
 
 #### 提交和更新软件包
 
-要创建软件包,通过 `git add` 把新的`PKGBUILD`, `.SRCINFO` 和其它需要的文件 (例如 `.install` 和像 `.patch` 一类的源码文件)添加到工作区域("staging area"),用 `git commit` 提交更改,最后用 `git push` 上传到AUR.
+要更新软件包的方法和创建类似，注意要确保每次推送都包含顶层目录的 `PKGBUILD` 和 [.SRCINFO](/index.php/.SRCINFO_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) ".SRCINFO (简体中文)")。
 
-下面的例子演示了一次创建软件包:
+用 `git add` 将它们和其它需要的文件 (例如 `.install` 和像 `.patch` 一类的源码文件)添加到工作区域("staging area"),用 `git commit` 提交更改,最后用 `git push` 上传到AUR.
+
+例如:
 
 ```
-$ mksrcinfo
-$ git add *PKGBUILD .SRCINFO*
-$ git commit -m 'Initial import'
+$ makepkg --printsrcinfo > .SRCINFO
+$ git add PKGBUILD .SRCINFO
+$ git commit -m 'Useful commit message'
 $ git push origin master
 
 ```
@@ -228,7 +241,7 @@ $ git push
 
 参阅 [Git](/index.php/Git "Git") 获得更多信息.
 
-**Tip:** 如果你忘记在提交中包含`.SRCINFO`,即使你稍后补上AUR也会拒绝你的提交(因为每一次提交中都包含`.SRCINFO`) 要解决这个问题,你可以使用[git rebase](https://git-scm.com/docs/git-rebase) 中的 `--root` 选项或是 [git filter-branch](https://git-scm.com/docs/git-filter-branch) 中的 `--tree-filter` 选项.
+**Tip:** 如果你忘记在提交中包含`.SRCINFO`,即使你稍后补上AUR也会拒绝你的提交(因为每一次提交中都包含[.SRCINFO](/index.php/.SRCINFO ".SRCINFO")) 要解决这个问题,你可以使用[git rebase](https://git-scm.com/docs/git-rebase) 中的 `--root` 选项或是 [git filter-branch](https://git-scm.com/docs/git-filter-branch) 中的 `--tree-filter` 选项.
 
 ### 维护软件包
 
@@ -268,49 +281,6 @@ $ git clone --depth=1 git://pkgbuild.com/aur-mirror.git
 阅读下论文章了解更多细节: [Git Web interface](http://pkgbuild.com/git/aur-mirror.git/), [forum thread](https://bbs.archlinux.org/viewtopic.php?id=113099).
 
 也可以在Github上找到AUR3软件包归档: [AUR Archive](https://github.com/aur-archive)
-
-## AUR 元数据
-
-为了在[AUR](/index.php/AUR "AUR") Web界面上显示软件包的相关信息,AUR的后端需要解析[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")文件来获得像软件包的名称,版本和相关的信息.`PKGBUILD`是 [Bash](/index.php/Bash "Bash") 脚本.要正确的解析Bash脚本而不运行它是个大挑战.[makepkg](/index.php/Makepkg "Makepkg")也是Bash脚本,它会通过`source`从源代码路径插入PKGBUILD文件.因此AUR元数据应运而生,它被AUR软件包维护者用来解决web界面上不能正确解析软件包的问题,另请参阅 [FS#25210](https://bugs.archlinux.org/task/25210), [FS#15043](https://bugs.archlinux.org/task/15043), 和 [FS#16394](https://bugs.archlinux.org/task/16394).
-
-### 工作原理
-
-通过像源代码tarball中添加名为 `.SRCINFO` 的文件覆盖PKGBUILD的特定字段来实现. `.SRCINFO` 按行解析,每一行由像`key[_arch] = value`一样的键值对组成.
-
-等号两边一定要有一个空格(即使值为空)而且值之间不能包含逗号.
-
-每一个键都是一个字段,键的值基于对应的[PKGBUILD Variables](/index.php/PKGBUILD_Variables "PKGBUILD Variables").有些字段可能会有体系结构作为后缀.字段按节分组.:
-
-*   pkgbase:只在AUR3需要的字段,不然会发生“only lowercase letters are allowed”错误.(现在Pacman会在没有'pkgbase'属性时使用'pkgname'第一个部分作为pkgbase.),拿不准的话还是重复pkgname一遍吧.
-*   pkgname: 可能会有多个部分.
-
-这些字段会组成一个值的某一部分: The following field names are associated with a single value for the section:
-
-*   epoch
-*   pkgver: 软件包版本号,如果epoch字段没有提供的话版本号会被格式化成[*epoch*:]*pkgver*
-*   pkgrel: Arch Linux 特定的发行号
-*   pkgdesc
-*   url
-
-下列的字段名可能会在多个部分重复:
-
-*   license: 例如有以空格区分的多个值
-*   groups
-
-下列的字段名称会重复出现,也许会有体系结构作为后缀:
-
-*   depends: 依赖的软件包,一行一个
-*   makedepends
-*   checkdepends
-*   optdepends
-*   conflicts
-*   provides
-*   replaces
-*   source
-
-其它字段名称,换行和带有"#"的行会被忽略.它的格式和`.PKGINFO`有些相近(.PKGINFO用于 [pacman](/index.php/Pacman "Pacman")/libalpm 的二进制包中).
-
-`.SRCINFO` 可以通过利用 [pkgbuild-introspection](https://www.archlinux.org/packages/?name=pkgbuild-introspection)软件包中的 `mksrcinfo` 分析 `PKGBUILD`来生成.
 
 ## AUR translation
 
@@ -400,6 +370,19 @@ $ for pkg in $(pacman -Qqm); do cower -s $pkg &>/dev/null || echo "$pkg not in A
 ```
 
 (来自 [https://bbs.archlinux.org/viewtopic.php?id=202160](https://bbs.archlinux.org/viewtopic.php?id=202160))
+
+### 如何查找已经安装但是从 AUR 消失的软件包
+
+通过网络访问检查：:
+
+```
+#!/bin/bash
+for pkg in $(pacman -Qqm); do
+    if ! curl -sILfo /dev/null -w '%{http_code}' "https://aur.archlinux.org/packages/$pkg" | grep -q '^2'; then
+        echo "$pkg is missing!"
+    fi
+done
+```
 
 ## 另请参阅
 

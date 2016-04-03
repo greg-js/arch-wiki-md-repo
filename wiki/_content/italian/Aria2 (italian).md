@@ -27,7 +27,7 @@
 
 ## Installazione
 
-Installate [aria2](https://www.archlinux.org/packages/?name=aria2) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Installate [aria2](https://www.archlinux.org/packages/?name=aria2) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Potreste trovare utile installare [aria2-systemd](https://github.com/GutenYe/systemd-units/tree/master/aria2).
 

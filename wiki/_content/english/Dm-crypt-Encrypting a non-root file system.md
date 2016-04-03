@@ -73,7 +73,7 @@ To unmount it:
 
 ```
 
-**Tip:** [GVFS](/index.php/GVFS "GVFS") can also mount encrypted partitions. One can use a file manager with gvfs support (i.e. [Thunar](/index.php/Thunar "Thunar")) to mount the partition, and a password dialog will pop-up. For other desktops, [zulucrypt](https://aur.archlinux.org/packages/zulucrypt/) also provides a GUI.
+**Tip:** [GVFS](/index.php/GVFS "GVFS") can also mount encrypted partitions. One can use a file manager with gvfs support (e.g. [Thunar](/index.php/Thunar "Thunar")) to mount the partition, and a password dialog will pop-up. For other desktops, [zulucrypt](https://aur.archlinux.org/packages/zulucrypt/) also provides a GUI.
 
 ### Automated unlocking and mounting
 

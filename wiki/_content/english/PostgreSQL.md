@@ -196,7 +196,7 @@ $ journalctl -u postgresql
 
 ### Configure PostgreSQL authenticate against PAM
 
-PostgreSQL offers a number of authentication methods. If you would like to allow users to authenticate with their system password, additional steps are necessary. First you need to enable PAM for the connection.
+PostgreSQL offers a number of authentication methods. If you would like to allow users to authenticate with their system password, additional steps are necessary. First you need to enable [PAM](/index.php/PAM "PAM") for the connection.
 
 For example, the same configuration as above, but with PAM enabled:
 

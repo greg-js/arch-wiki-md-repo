@@ -14,7 +14,7 @@ It is lightweight, highly extensible, and is designed to look similar to uTorren
 
 ## Installation
 
-Install [rutorrent](https://aur.archlinux.org/packages/rutorrent/) from the AUR.
+Install [rutorrent](https://aur.archlinux.org/packages/rutorrent/) from the AUR. If you want to use the development version install [rutorrent-git](https://aur.archlinux.org/packages/rutorrent-git/).
 
 ## Web Server Configuration
 

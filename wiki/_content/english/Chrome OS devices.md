@@ -85,7 +85,7 @@ For more details see [Firmware write protection](/index.php/Custom_firmware_for_
 
 *   You should claim your free 100GB-1TB of Google Drive space before you install Arch. This needs to happen from ChromeOS(version > 23), not linux. This will sync/backup ChromeOS, as designed
 *   Visit the ArchWiki page for your [Chrome OS device](#Chrome_OS_devices).
-*   If there is no ArchWiki page for your device then before proceeding, gather information about the device and if you succeed in installing Arch Linux, then consider adding a new ArchWiki page for your model (you can use the [Acer C720](/index.php/Acer_C720_Chromebook "Acer C720 Chromebook") as an example for device shipped with SeaBios or the [Acer C710](/index.php/Acer_C710_Chromebook "Acer C710 Chromebook") as device that did not shipped with it).
+*   If there is no ArchWiki page for your device then before proceeding, gather information about the device and if you succeed in installing Arch Linux, then consider adding a new ArchWiki page for your model (you can use the [Acer C720](/index.php/Acer_C720 "Acer C720") as an example for device shipped with SeaBios or the [Acer C710](/index.php/Acer_C710_Chromebook "Acer C710 Chromebook") as device that did not shipped with it).
 *   Read this guide completely and make sure you understand all the steps before making any changes.
 
 ## Chrome OS devices

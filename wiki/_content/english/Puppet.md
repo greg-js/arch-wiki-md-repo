@@ -33,7 +33,7 @@ Bare minimum of settings are:
 
 Puppet will look for node configuration in `/etc/puppetlabs/code/environments/production/manifests/site.pp`.
 
-After starting puppet by daemon/cron/standalone, it will generate certificates in `/etc/puppetlabs/puppet/ssl/` directory. And you need to accept this certificaten the puppet master with: `sudo puppet cert sign <name>`.
+After starting puppet by daemon/cron/standalone, it will generate certificates in `/etc/puppetlabs/puppet/ssl/` directory. You need to accept this certificate in the puppet master with: `sudo puppet cert sign <name>`.
 
 ## Facter
 

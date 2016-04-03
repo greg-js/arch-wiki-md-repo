@@ -239,7 +239,7 @@ $ cat /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 
 **注意:** systemd引入了logind来处理consolekit和policykit行为。以下代码不再工作。
 
-[GNOME_(简体中文)](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")有一个不错的小工具来在线修改调速器。如果想在不需要root密码的情况下就能使用它，只需要建立一个文件`/var/lib/polkit-1/localauthority/50-local.d/org.gnome.cpufreqselector.pkla`然后录入以下内容：
+[GNOME (简体中文)](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")有一个不错的小工具来在线修改调速器。如果想在不需要root密码的情况下就能使用它，只需要建立一个文件`/var/lib/polkit-1/localauthority/50-local.d/org.gnome.cpufreqselector.pkla`然后录入以下内容：
 
 ```
 [org.gnome.cpufreqselector]
@@ -252,7 +252,7 @@ ResultActive=yes
 
 其中`USER`替换为期望的用户名。
 
-[AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中的软件包[desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/)包含一个类似的`.pkla`文件为所有`power` [用户组](/index.php/Users_and_Groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and Groups (简体中文)")中的用户授权修改调速器。
+[AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中的软件包[desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/)包含一个类似的`.pkla`文件为所有`power` [用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and groups (简体中文)")中的用户授权修改调速器。
 
 ## 疑难解答
 

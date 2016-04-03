@@ -4,6 +4,7 @@
 
 *   [1 Installation](#Installation)
     *   [1.1 Desktop clients](#Desktop_clients)
+        *   [1.1.1 Notes](#Notes)
 *   [2 Usage](#Usage)
     *   [2.1 Wired](#Wired)
     *   [2.2 Wi-Fi](#Wi-Fi)
@@ -67,6 +68,8 @@ Before [enabling](/index.php/Enabling "Enabling") `connman.service`, ensure any 
 *   **gnome-extension-connman** — Gnome3 extension for connman.
 
 	[https://github.com/jgke/gnome-extension-connman](https://github.com/jgke/gnome-extension-connman) || [https://extensions.gnome.org/extension/981/connman-extension/](https://extensions.gnome.org/extension/981/connman-extension/)
+
+#### Notes
 
 gnome-extension-connman: contains only some of the functionality without installing connman-gtk.
 

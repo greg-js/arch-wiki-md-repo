@@ -116,7 +116,7 @@ $ pacman-key -v archlinux-*версия*-dual.iso.sig
 
 *   [VirtualBox#Installation steps for Arch Linux guests](/index.php/VirtualBox#Installation_steps_for_Arch_Linux_guests "VirtualBox")
 *   [VirtualBox#Install a native Arch Linux system from VirtualBox](/index.php/VirtualBox#Install_a_native_Arch_Linux_system_from_VirtualBox "VirtualBox")
-*   [Virtualbox#Run a native Arch Linux installation inside VirtualBox](/index.php/Virtualbox#Run_a_native_Arch_Linux_installation_inside_VirtualBox "Virtualbox")
+*   [VirtualBox#Run a native Arch Linux installation inside VirtualBox](/index.php/VirtualBox#Run_a_native_Arch_Linux_installation_inside_VirtualBox "VirtualBox")
 *   [Arch Linux as VMware guest](/index.php/Installing_Arch_Linux_in_VMware "Installing Arch Linux in VMware")
 *   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
 

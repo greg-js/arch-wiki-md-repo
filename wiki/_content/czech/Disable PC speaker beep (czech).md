@@ -1,6 +1,6 @@
 # Globálně
 
-**Note:** [Kernel_modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules")
+**Note:** [Kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules")
 
 *   Kompletně zakázat modul repráčku při startu přidáním `pcspkr` do pole `MODULES` v `/etc/rc.conf`:
 

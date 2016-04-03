@@ -39,7 +39,7 @@ Véase también [Wikipedia:Unix shell#Configuration files for shells](https://en
 
 ## Gráfica
 
-Se pueden iniciar programas automáticamente al abrir su [Gestor de Ventanas](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)") o [Entorno de Escritorio](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)").
+Se pueden iniciar programas automáticamente al abrir su [Gestor de Ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") o [Entorno de Escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)").
 
 ### Inicio de sesión de X
 

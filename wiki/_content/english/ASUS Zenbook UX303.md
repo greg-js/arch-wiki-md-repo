@@ -214,11 +214,23 @@ Microphone works out of the box. If you cannot record or use VoIP, make sure the
 
 ## Function Keys
 
-All function keys except the backlight and "plane" mode seem to work out of the box (as of kernel 3.17). To fix, add `acpi_osi=` as a kernel parameter. Example line from `/etc/default/grub`:
+All function keys except the backlight and "plane" mode seem to work out of the box (as of kernel 3.17). To fix, add `acpi_osi=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Example line from `/etc/default/grub`:
 
  `GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi="` 
 
 On UX303LA (kernel 4.1.13) xev does not return any events for the standard brightness keys, but F3 and F4 seem to be detected as XF86KbdBrightnessDown and XF86KbdBrightnessUp, respectively.
+
+On UX303UB (kernel 4.4.5-1), add the kernel parameter, and create the file `/usr/share/X11/xorg.conf.d/20-intel.conf` with the following content:
+
+```
+ Section "Device"
+   Identifier  "card0"
+   Driver      "intel"
+   Option      "Backlight"  "intel_backlight"
+   BusID       "PCI:0:2:0"
+ EndSection
+
+```
 
 ## Troubleshooting
 

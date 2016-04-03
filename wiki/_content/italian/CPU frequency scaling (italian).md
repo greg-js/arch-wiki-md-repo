@@ -1,6 +1,6 @@
 [Cpufreq](https://www.kernel.org/doc/Documentation/cpu-freq/index.txt) consente al sistema operativo di scalare la velocità della CPU verso l'alto o verso il basso in modo da risparmiare energia. Le frequenze della CPU possono essere scalati automaticamente a seconda del carico del sistema, in risposta agli eventi ACPI, o manualmente da programmi userspace. Gestori della variazione
 
-CPU frequency scaling è implementato nel kernel Linux, l'infrastruttura è chiamata *cpufreq*. Dalla versione del kernel 3.4 i moduli necessari sono caricati automaticamente e il governatore raccomandato [ondemand](/index.php/CPU_Frequency_Scaling_(Italiano)#Gestori_della_variazione "CPU Frequency Scaling (Italiano)") è abilitato in maniera predefinita. Tuttavia gli strumenti a livello utente come [cpupower](https://www.archlinux.org/packages/?name=cpupower), [acpid](/index.php/Acpid_(Italiano) "Acpid (Italiano)") , [laptop-mode-tools](/index.php/Laptop_Mode_Tools_(Italiano) "Laptop Mode Tools (Italiano)") o le GUI fornite dagli ambienti desktop possono essere ancora utilizzati per la configurazione avanzata.
+CPU frequency scaling è implementato nel kernel Linux, l'infrastruttura è chiamata *cpufreq*. Dalla versione del kernel 3.4 i moduli necessari sono caricati automaticamente e il governatore raccomandato [ondemand](#Gestori_della_variazione) è abilitato in maniera predefinita. Tuttavia gli strumenti a livello utente come [cpupower](https://www.archlinux.org/packages/?name=cpupower), [acpid](/index.php/Acpid_(Italiano) "Acpid (Italiano)") , [laptop-mode-tools](/index.php/Laptop_Mode_Tools_(Italiano) "Laptop Mode Tools (Italiano)") o le GUI fornite dagli ambienti desktop possono essere ancora utilizzati per la configurazione avanzata.
 
 ## Contents
 
@@ -228,7 +228,7 @@ Gli eventi sono definiti in `/etc/acpi/handler.sh`. Se il pacchetto [acpid](http
 
 **Nota:** Systemd ha introdotto logind, che gestisce le azioni consolekit e policykit. di conseguenza il seguente codice qui sotto non funziona. Con logind, si editi semplicemente nel file `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` la voce *defaults* con ciò che si necessita, in base alle direttive del manuale di polkit [[1]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html)
 
-[GNOME](/index.php/Gnome_(Italiano) "Gnome (Italiano)") include un gradevole applet per cambiare il governatore al volo. Per usarlo senza la necessità di inserire la password di root bisogna creare il file :
+[GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") include un gradevole applet per cambiare il governatore al volo. Per usarlo senza la necessità di inserire la password di root bisogna creare il file :
 
  `/var/lib/polkit-1/localauthority/50-local.d/org.gnome.cpufreqselector.pkla` 
 ```
@@ -242,7 +242,7 @@ ResultActive=yes
 
 Dove la parola *utente* deve essere rimpiazzata con il proprio nome utente.
 
-Il pacchetto [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/) contenuto in [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)") contiene un file .pkla simile, per autorizzare tutti gli utenti del [gruppo](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") `power` di cambiare il governatore.
+Il pacchetto [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/) contenuto in [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)") contiene un file .pkla simile, per autorizzare tutti gli utenti del [gruppo](/index.php/Users_and_groups_(Italiano) "Users and groups (Italiano)") `power` di cambiare il governatore.
 
 ## Risoluzione dei problemi
 
@@ -272,7 +272,7 @@ Un speciale parametro deve essere passato al modulo del processore.
 
 Per effetuare una prova temporanea, modificare il valore in `/sys/module/processor/parameters/ignore_ppc` da 0 a 1.
 
-Per impostarlo in maniera permanente, si faccia riferimento alla pagina [Kernel_parameters](/index.php/Kernel_parameters "Kernel parameters") o continuare a leggere. Aggiungere `processor.ignore_ppc=1` alla linea di caricamento del kernel o creare :
+Per impostarlo in maniera permanente, si faccia riferimento alla pagina [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") o continuare a leggere. Aggiungere `processor.ignore_ppc=1` alla linea di caricamento del kernel o creare :
 
  `/etc/modprobe.d/ignore_ppc.conf` 
 ```

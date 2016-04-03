@@ -1,10 +1,10 @@
 **翻譯狀態：** 本文章是 [Beginners'_Guide/Preparation](/index.php/Beginners%27_Guide/Preparation "Beginners' Guide/Preparation") 的翻譯版本。最近一次的翻譯時間：2014-01-26。點擊[本連結](https://wiki.archlinux.org/index.php?title=Beginners'_Guide/Preparation&diff=0&oldid=294181)查看英文頁面之後的變更。
 
-**提示:** 本文是新手教學的多頁版本。若您希望閱讀完整的指南，請**[點擊這裡](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' Guide (正體中文)")**。
+**提示:** 本文是新手教學的多頁版本。若您希望閱讀完整的指南，請**[點擊這裡](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")**。
 
 本文件將指導您使用 [Arch 安裝腳本](https://projects.archlinux.org/arch-install-scripts.git/)完成 [Arch Linux](/index.php/Arch_Linux_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Linux (正體中文)") 的安裝。開始之前建議您大略瀏覽一下 [FAQ](/index.php/FAQ_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "FAQ (正體中文)")。
 
-若您碰到任何問題，社群維護的 [Arch 維基](/index.php/Main_Page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main Page (正體中文)")是主要的資料來源，請多加利用。若無法自行解決，也歡迎到 [IRC 頻道](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) 和[論壇](https://bbs.archlinux.org/)問問。根據 [Arch 的設計哲學](/index.php/The_Arch_Way_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "The Arch Way (正體中文)")，我們鼓勵所有使用者在碰到任何不熟悉的指令時，先呼叫 `man **指令**` 查看 `man` 說明文件。
+若您碰到任何問題，社群維護的 [Arch 維基](/index.php/Main_page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main page (正體中文)")是主要的資料來源，請多加利用。若無法自行解決，也歡迎到 [IRC 頻道](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) 和[論壇](https://bbs.archlinux.org/)問問。根據 [Arch 的設計哲學](/index.php/The_Arch_Way_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "The Arch Way (正體中文)")，我們鼓勵所有使用者在碰到任何不熟悉的指令時，先呼叫 `man **指令**` 查看 `man` 說明文件。
 
 ## Contents
 
@@ -20,7 +20,7 @@
 
 ## 準備
 
-**註記:** 如果您打算在既存的 GNU/Linux 發行版本下安裝 Arch，請參閱[這篇文章](/index.php/Install_from_Existing_Linux "Install from Existing Linux")，對透過 [VNC](/index.php/VNC "VNC") 或 [SSH](/index.php/SSH "SSH") 遠端安裝 Arch 的使用者而言會有幫助。欲透過 [SSH](/index.php/SSH "SSH") 連線遠端安裝 Arch Linux 的使用者，應閱讀[從 SSH 安裝](/index.php/Install_from_SSH "Install from SSH")提到的額外提示。
+**註記:** 如果您打算在既存的 GNU/Linux 發行版本下安裝 Arch，請參閱[這篇文章](/index.php/Install_from_existing_Linux "Install from existing Linux")，對透過 [VNC](/index.php/VNC "VNC") 或 [SSH](/index.php/SSH "SSH") 遠端安裝 Arch 的使用者而言會有幫助。欲透過 [SSH](/index.php/SSH "SSH") 連線遠端安裝 Arch Linux 的使用者，應閱讀[從 SSH 安裝](/index.php/Install_from_SSH "Install from SSH")提到的額外提示。
 
 ### 系統需求
 
@@ -44,7 +44,7 @@ Arch Linux 在任何 [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture)
 
 #### 從既存的 Linux 系統安裝
 
-在一個正在運行的 Linux 系統上安裝 Arch 是可行的。請參閱[從既存 Linux 安裝](/index.php/Install_from_Existing_Linux "Install from Existing Linux")。
+在一個正在運行的 Linux 系統上安裝 Arch 是可行的。請參閱[從既存 Linux 安裝](/index.php/Install_from_existing_Linux "Install from existing Linux")。
 
 #### 在虛擬機器上安裝
 

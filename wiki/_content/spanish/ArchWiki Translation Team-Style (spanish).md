@@ -255,7 +255,7 @@ En todo artículo que traduzca o actualice deberá prestar atención a los sigui
 
 ## Referencias
 
-1.  [*ArchWiki: Help*](https://wiki.archlinux.org/index.php/Category:Help_%28Espa%C3%B1ol%29)
+1.  [*ArchWiki: Help*](/index.php/Category:Help_(Espa%C3%B1ol) "Category:Help (Español)")
 2.  [*Diccionario panhispánico de dudas de la RAE*](http://lema.rae.es/dpd/).
 3.  [*Guía de estilo de GNOME*](https://mail.gnome.org/archives/gnome-es-list/2011-October/pdfm6xxph1jsZ.pdf)
 4.  [*Guía de estilo de openSUSE*](http://es.opensuse.org/Traduccion/Guia_de_Estilo)
@@ -265,4 +265,4 @@ En todo artículo que traduzca o actualice deberá prestar atención a los sigui
 8.  [*Reglas de estilo para la traducción de ImpressCMS*](http://code.google.com/p/impresscms-hispano/downloads/detail?name=reglas%20de%20estilo.pdf)
 9.  [*Reglas de traducción de la wiki de Mandriva*](http://wiki.mandriva.com/es/Reglas_de_traducci%C3%B3n)
 10.  [*Wikilengua del español de Fundéu BBVA*](http://www.wikilengua.org/index.php/Portada)
-11.  [*Wikipedia: manual de estilo*](http://es.wikipedia.org/wiki/Wikipedia:Manual_de_estilo)
+11.  [*Wikipedia: manual de estilo*](https://es.wikipedia.org/wiki/Wikipedia:Manual_de_estilo)

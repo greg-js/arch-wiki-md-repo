@@ -2,34 +2,45 @@ This page is intended to be a page to demystify common terms used among the Arch
 
 ## Contents
 
-*   [1 Arch Linux](#Arch_Linux)
-*   [2 ABS](#ABS)
+*   [1 ABS](#ABS)
+*   [2 Arch Linux](#Arch_Linux)
 *   [3 Arch Linux Archive](#Arch_Linux_Archive)
 *   [4 AUR](#AUR)
-*   [5 PKGBUILD](#PKGBUILD)
-*   [6 TU, Trusted User](#TU.2C_Trusted_User)
-*   [7 bbs](#bbs)
-*   [8 community/[community]](#community.2F.5Bcommunity.5D)
-*   [9 core/[core]](#core.2F.5Bcore.5D)
-*   [10 custom/user repository](#custom.2Fuser_repository)
-*   [11 Developer](#Developer)
-*   [12 extra/[extra]](#extra.2F.5Bextra.5D)
-*   [13 initramfs](#initramfs)
-*   [14 initrd](#initrd)
-*   [15 KISS](#KISS)
-*   [16 makepkg](#makepkg)
-*   [17 namcap](#namcap)
-*   [18 package](#package)
-*   [19 Package maintainer](#Package_maintainer)
-*   [20 pacman](#pacman)
-*   [21 pacman.conf](#pacman.conf)
-*   [22 repository/repo](#repository.2Frepo)
-*   [23 RTFM](#RTFM)
-*   [24 taurball](#taurball)
-*   [25 testing/[testing]](#testing.2F.5Btesting.5D)
-*   [26 The Arch Way](#The_Arch_Way)
+*   [5 bbs](#bbs)
+*   [6 community/[community]](#community.2F.5Bcommunity.5D)
+*   [7 core/[core]](#core.2F.5Bcore.5D)
+*   [8 custom/user repository](#custom.2Fuser_repository)
+*   [9 Developer](#Developer)
+*   [10 extra/[extra]](#extra.2F.5Bextra.5D)
+*   [11 initramfs](#initramfs)
+*   [12 initrd](#initrd)
+*   [13 KISS](#KISS)
+*   [14 makepkg](#makepkg)
+*   [15 namcap](#namcap)
+*   [16 package](#package)
+*   [17 Package maintainer](#Package_maintainer)
+*   [18 pacman](#pacman)
+*   [19 pacman.conf](#pacman.conf)
+*   [20 PKGBUILD](#PKGBUILD)
+*   [21 repository/repo](#repository.2Frepo)
+*   [22 RTFM](#RTFM)
+*   [23 taurball](#taurball)
+*   [24 testing/[testing]](#testing.2F.5Btesting.5D)
+*   [25 The Arch Way](#The_Arch_Way)
+*   [26 TU, Trusted User](#TU.2C_Trusted_User)
 *   [27 udev](#udev)
 *   [28 wiki](#wiki)
+
+## ABS
+
+The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") (ABS) is useful to:
+
+*   Make new packages of software for which no packages are yet available
+*   Customize/modify existing packages to fit your needs (enabling or disabling options)
+*   Re-build your entire system using your compiler flags, "a la Gentoo"
+*   Getting kernel modules working with your custom kernel
+
+ABS is not necessary to use Arch Linux, but it is useful.
 
 ## Arch Linux
 
@@ -43,17 +54,6 @@ Archlinux, ArchLinux, archLinux, aRcHlInUx, etc. are all weird, and weirder muta
 
 Officially, the 'Arch' in "Arch Linux" is pronounced /ˈɑrtʃ/ as in an "archer"/bowman, or "arch-nemesis", and not as in "ark" or "archangel".
 
-## ABS
-
-The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") (ABS) is useful to:
-
-*   Make new packages of software for which no packages are yet available
-*   Customize/modify existing packages to fit your needs (enabling or disabling options)
-*   Re-build your entire system using your compiler flags, "a la Gentoo"
-*   Getting kernel modules working with your custom kernel
-
-ABS is not necessary to use Arch Linux, but it is useful.
-
 ## Arch Linux Archive
 
 The [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") (a.k.a ALA), formerly known as Arch Linux Rollback Machine (a.k.a ARM), stores official repositories snapshots, iso images and bootstrap tarballs across time.
@@ -65,16 +65,6 @@ The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository
 A good number of new packages that enter the official repositories start in the AUR. In the AUR, users are able to contribute their own package builds (PKGBUILD and related files). The AUR community has the ability to vote for or against packages in the AUR. If a package becomes popular enough — provided it has a compatible license and good packaging technique — it may be entered into the *community* repository (directly accessible by [pacman](/index.php/Pacman "Pacman") or [abs](/index.php/Abs "Abs")).
 
 You can access the Arch Linux User Community Repository [here](https://aur.archlinux.org).
-
-## PKGBUILD
-
-[PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") are small scripts that are used to build Arch Linux packages. See [Creating packages](/index.php/Creating_packages "Creating packages") for more detail.
-
-## TU, Trusted User
-
-A [trusted user](/index.php/Trusted_user "Trusted user") is someone who maintains the AUR and the [community] repository. Trusted Users may move a package into the [community] repository if it has been voted as popular. TUs are appointed by a majority vote by the existing TUs.
-
-Trusted users follow the [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") and [TU by-laws](https://aur.archlinux.org/trusted-user/TUbylaws.html)
 
 ## bbs
 
@@ -165,6 +155,10 @@ NB: Pacman was written by Judd Vinet, the creator of Arch Linux. It is used as a
 
 This is the configuration file of [pacman](/index.php/Pacman "Pacman"). It is located in `/etc`. For a full explanation of its powers, type this at the command `man pacman.conf`.
 
+## PKGBUILD
+
+[PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") are small scripts that are used to build Arch Linux packages. See [Creating packages](/index.php/Creating_packages "Creating packages") for more detail.
+
 ## repository/repo
 
 The repository has the pre-compiled packages of one or (usually) more [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). [Official repositories](/index.php/Official_repositories "Official repositories") is splited into different parts for easy maintaince. Pacman uses these repositories to search for packages and install them. A repository can be local (i.e. on your own computer) or remote (i.e. the packages are downloaded before they are installed).
@@ -197,6 +191,12 @@ This is the repository where major packages/updates to packages are kept prior t
 ## The Arch Way
 
 The unofficial term traditionally used to refer to the main [Arch Linux principles](/index.php/Arch_Linux#Principles "Arch Linux").
+
+## TU, Trusted User
+
+A [trusted user](/index.php/Trusted_user "Trusted user") is someone who maintains the AUR and the [community] repository. Trusted Users may move a package into the [community] repository if it has been voted as popular. TUs are appointed by a majority vote by the existing TUs.
+
+Trusted users follow the [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") and [TU by-laws](https://aur.archlinux.org/trusted-user/TUbylaws.html)
 
 ## udev
 

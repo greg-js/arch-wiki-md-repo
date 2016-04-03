@@ -1,4 +1,4 @@
-**Tip:** Ovo je dio višestraničnog vodiča za početnike. **[Klikni ovdje](/index.php/Beginners%27_Guide_(Hrvatski) "Beginners' Guide (Hrvatski)")** ako želiš čitati vodič u cijelosti.
+**Tip:** Ovo je dio višestraničnog vodiča za početnike. **[Klikni ovdje](/index.php/Beginners%27_guide_(Hrvatski) "Beginners' guide (Hrvatski)")** ako želiš čitati vodič u cijelosti.
 
 ## Contents
 
@@ -245,7 +245,7 @@ Reboot if a kernel upgrade has occurred.
 
 Pacman output is saved in `/var/log/pacman.log`.
 
-See [Package Management FAQ](/index.php/FAQ#Package_Management "FAQ") for answers to frequently asked questions regarding updating and managing your packages.
+See [Package Management FAQ](/index.php/FAQ#Package_management "FAQ") for answers to frequently asked questions regarding updating and managing your packages.
 
 ##### Ignoring Packages
 
@@ -618,7 +618,7 @@ The X Window System provides the basic framework for building a graphical user i
 
 	Desktop Environment (DE)
 
-	Works atop and in conjunction with X, to provide a completely functional and dynamic GUI. A DE typically provides a window manager, icons, applets, windows, toolbars, folders, wallpapers, a suite of applications and abilities like drag and drop. **See [Desktop environments](/index.php/Desktop_environment#Desktop_environments "Desktop environment") for more information.**
+	Works atop and in conjunction with X, to provide a completely functional and dynamic GUI. A DE typically provides a window manager, icons, applets, windows, toolbars, folders, wallpapers, a suite of applications and abilities like drag and drop. **See [Desktop environments](/index.php/Desktop_environments "Desktop environments") for more information.**
 
 **Note:** You can build your own DE by using a WM and the applications of your choice.
 

@@ -96,7 +96,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 	[https://projects.archlinux.org/srcpac.git](https://projects.archlinux.org/srcpac.git) || [srcpac](https://www.archlinux.org/packages/?name=srcpac)
 
-*   **[snap-pac](/index.php/Snapper#snap-pac_pacman_hooks "Snapper")** — Make pacman automatically use snapper to create pre/post snapshots like openSUSE's YaST.
+*   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Make pacman automatically use snapper to create pre/post snapshots like openSUSE's YaST.
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://aur.archlinux.org/packages/snap-pac/)
 
@@ -500,11 +500,11 @@ For recovery of the database see [#Restore pacman's local database](#Restore_pac
 To reinstall all native packages, use:
 
 ```
-# pacman -Qenq | pacman -S -
+# pacman -Qnq | pacman -S -
 
 ```
 
-Foreign (AUR) packages must be reinstalled separately; you can list them with `pacman -Qemq`.
+Foreign (AUR) packages must be reinstalled separately; you can list them with `pacman -Qmq`.
 
 Pacman preserves the installation reason by default.
 
@@ -530,7 +530,7 @@ $ tar -xOf /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz etc/systemd/log
 
 ```
 
-Or you can use [vim](https://www.archlinux.org/packages/?name=vim), then browse the archive:
+Or you can use [vim](https://www.archlinux.org/packages/?name=vim) to browse the archive:
 
 ```
 $ vim /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz

@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Creating_Packages](/index.php/Creating_Packages "Creating Packages") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-04-23，点击[这里](https://wiki.archlinux.org/index.php?title=Creating_Packages&diff=0&oldid=363482)可以查看翻译后英文页面的改动。
 
-本文旨在帮助用户利用 Arch Linux 的类似 ports 的软件包构建系统创建自己的软件包。包含了创建 [PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)") – 一个包创建描述文件，由 `makepkg` 使用来从源代码创建二进制包。[Arch 软件包标准](/index.php/Arch_Packaging_Standards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Packaging Standards (简体中文)")包含当前规则和提高软件包质量的方法。如果已经有了 `PKGBUILD` 文件，请参考 [makepkg (简体中文)](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)").
+本文旨在帮助用户利用 Arch Linux 的类似 ports 的软件包构建系统创建自己的软件包。包含了创建 [PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)") – 一个包创建描述文件，由 `makepkg` 使用来从源代码创建二进制包。[Arch 软件包标准](/index.php/Arch_packaging_standards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch packaging standards (简体中文)")包含当前规则和提高软件包质量的方法。如果已经有了 `PKGBUILD` 文件，请参考 [makepkg (简体中文)](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)").
 
 ## Contents
 

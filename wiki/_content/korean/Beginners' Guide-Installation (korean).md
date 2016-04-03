@@ -1,4 +1,4 @@
-**도움말:** 이 문서는 초보자 안내서 전체 문서의 일부입니다. 초보자 안내서 전체를 보려면 **[여기](/index.php/Beginners%27_Guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' Guide (한국어)")**를 클릭하십시오.
+**도움말:** 이 문서는 초보자 안내서 전체 문서의 일부입니다. 초보자 안내서 전체를 보려면 **[여기](/index.php/Beginners%27_guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' guide (한국어)")**를 클릭하십시오.
 
 ## Contents
 
@@ -62,7 +62,7 @@
 
 ```
 
-과 같은 명령을 사용하면 됩니다. 선택된 폰트에 포함된 글자들을 모두 보고 싶다면, `showconsolefont` 명령을 실행하십시오. 폰트 이름에는 대소문자가 구분된다는 점에 유의하십시오. [Fonts#Console Fonts](/index.php/Fonts#Console_Fonts "Fonts")에서 더 자세한 정보를 찾을 수 있습니다.
+과 같은 명령을 사용하면 됩니다. 선택된 폰트에 포함된 글자들을 모두 보고 싶다면, `showconsolefont` 명령을 실행하십시오. 폰트 이름에는 대소문자가 구분된다는 점에 유의하십시오. [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts")에서 더 자세한 정보를 찾을 수 있습니다.
 
 기본 언어는 미국 영어로 설정되어 있습니다. 언어를 바꾸고 싶으면 `/etc/locale.gen`에서 en_US와 함께 사용할 언어인 한국어 ko_KR 앞의 `#`을 제거하세요. 그리고 `Ctrl+X`를 누른 후 `Y`를 누르고 `Enter`를 눌러 같은 파일이름으로 저장하세요. (ko_KR.EUC_KR 보다는 ko_KR.UTF-8을 선택하는 것이 좋습니다)
 

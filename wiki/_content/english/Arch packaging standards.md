@@ -179,19 +179,7 @@ Note the following before submitting any packages to the AUR:
 4.  Verify the package **dependencies** (eg, run `ldd` on dynamic executables, check tools required by scripts, etc). The TU team **strongly** recommend the use of the `namcap` utility, written by Jason Chu (jason@archlinux.org), to analyze the sanity of packages. `namcap` will warn you about bad permissions, missing dependencies, un-needed dependencies, and other common mistakes. You can install the `namcap` package with `pacman`. Remember `namcap` can be used to check both pkg.tar.gz files and PKGBUILDs
 5.  **Dependencies** are the most common packaging error. Namcap can help detect them, but it is not always correct. Verify dependencies by looking at source documentation and the program website.
 6.  **Do not use `replaces`** in a PKGBUILD unless the package is to be renamed, for example when *Ethereal* became *Wireshark*. If the package is an alternate version of an already existing package, use `conflicts` (and `provides` if that package is required by others). The main difference is: after syncing (-Sy) pacman immediately wants to replace an installed, 'offending' package upon encountering a package with the matching `replaces` anywhere in its repositories; `conflicts` on the other hand is only evaluated when actually installing the package, which is usually the desired behavior because it is less invasive.
-7.  All files uploaded to the AUR should be contained in a **compressed tar** file **containing a directory with the** `PKGBUILD` **and** additional build files **(patches, install, ...) in it.**
-    ```
-    foo/PKGBUILD
-    foo/foo.install
-    foo/foo_bar.diff
-    foo/foo.rc.conf
-    ```
-
-    The archive name should contain the name of the package e.g. foo.tar.gz.
-
-    One can easily build a tarball containing all the required files by using `makepkg --source`. This makes a tarball named `$pkgname-$pkgver-$pkgrel.src.tar.gz`, which can then be uploaded to the AUR.
-
-    The tarball **should not** contain the binary tarball created by makepkg, nor should it contain the filelist
+7.  Read [Arch User Repository#Submitting packages](/index.php/Arch_User_Repository#Submitting_packages "Arch User Repository") for a detailed description of the submission process. The repository **should not** contain the binary tarball created by makepkg, nor should it contain the filelist
 
 ## Additional guidelines
 

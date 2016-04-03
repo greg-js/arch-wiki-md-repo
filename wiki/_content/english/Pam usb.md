@@ -1,6 +1,6 @@
 pam_usb provides hardware authentication for Linux using ordinary USB Flash Drives.
 
-It works with any application supporting PAM, such as [su](/index.php/Su "Su") and login managers ([GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM")).
+It works with any application supporting [PAM](/index.php/PAM "PAM"), such as [su](/index.php/Su "Su") and login managers ([GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM")).
 
 ## Contents
 

@@ -233,11 +233,11 @@ Por favor, ver as [diretrizes de pacotes de plug-ins do Eclipse](/index.php/Ecli
 
 ### Pacotes de GNOME
 
-Por favor, ver as [diretrizes de pacotes do GNOME](/index.php/GNOME_Package_Guidelines "GNOME Package Guidelines")
+Por favor, ver as [diretrizes de pacotes do GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines")
 
 ### Pacotes de Go
 
-Por favor, ver as [diretrizes de pacotes de Go](/index.php/Go_Package_Guidelines "Go Package Guidelines")
+Por favor, ver as [diretrizes de pacotes de Go](/index.php/Go_package_guidelines "Go package guidelines")
 
 ### Pacotes de Haskell
 
@@ -245,35 +245,35 @@ Por favor, ver as [diretrizes de pacotes de Haskell](/index.php/Haskell_package_
 
 ### Pacotes de Java
 
-Por favor, ver as [diretrizes de pacotes de Java](/index.php/Java_Package_Guidelines "Java Package Guidelines")
+Por favor, ver as [diretrizes de pacotes de Java](/index.php/Java_package_guidelines "Java package guidelines")
 
 ### Pacotes do KDE
 
-Por favor, ver as [diretrizes de pacotes do KDE](/index.php/KDE_Package_Guidelines "KDE Package Guidelines")
+Por favor, ver as [diretrizes de pacotes do KDE](/index.php/KDE_package_guidelines "KDE package guidelines")
 
 ### Pacotes de módulos de kernel
 
-Por favor, ver as [diretrizes de pacotes de módulos do kernel](/index.php/Kernel_Module_Package_Guidelines "Kernel Module Package Guidelines")
+Por favor, ver as [diretrizes de pacotes de módulos do kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines")
 
 ### Pacotes de Lisp
 
-Por favor, ver as [diretrizes de pacotes de Lisp](/index.php/Lisp_Package_Guidelines "Lisp Package Guidelines")
+Por favor, ver as [diretrizes de pacotes de Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines")
 
 ### Pacotes de OCaml
 
-Por favor, ver as [diretrizes de pacotes de Ocaml](/index.php/OCaml_Package_Guidelines "OCaml Package Guidelines")
+Por favor, ver as [diretrizes de pacotes de Ocaml](/index.php/OCaml_package_guidelines "OCaml package guidelines")
 
 ### Pacotes de Perl
 
-Por favor, ver as [diretrizes de pacotes de Perl](/index.php/Perl_Package_Guidelines "Perl Package Guidelines")
+Por favor, ver as [diretrizes de pacotes de Perl](/index.php/Perl_package_guidelines "Perl package guidelines")
 
 ### Pacotes de Python
 
-Por favor, ver as [diretrizes de pacotes de Python](/index.php/Python_Package_Guidelines "Python Package Guidelines")
+Por favor, ver as [diretrizes de pacotes de Python](/index.php/Python_package_guidelines "Python package guidelines")
 
 ### Pacotes de Ruby Gem
 
-Por favor, ver as [diretrizes de pacotes de Ruby Gem](/index.php/Ruby_Gem_Package_Guidelines "Ruby Gem Package Guidelines")
+Por favor, ver as [diretrizes de pacotes de Ruby Gem](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines")
 
 ### Pacotes de Wine
 

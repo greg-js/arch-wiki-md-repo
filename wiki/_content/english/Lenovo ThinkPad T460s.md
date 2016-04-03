@@ -6,7 +6,8 @@ This article covers the installation and configuration of Arch Linux on a Lenovo
     *   [1.1 Support](#Support)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Touchpad](#Touchpad)
-    *   [2.2 Fingerprint Sensor](#Fingerprint_Sensor)
+    *   [2.2 Suspend / Resume](#Suspend_.2F_Resume)
+    *   [2.3 Fingerprint Sensor](#Fingerprint_Sensor)
 
 ## Model Description
 
@@ -23,13 +24,17 @@ Lenovo ThinkPad T460s
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | Fingerprint Sensor | No |
 | Mobile Broadband |  ? |
-| Bluetooth |  ? |
+| Bluetooth | Yes |
 
 ## Troubleshooting
 
 ### Touchpad
 
 There is an open [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=114321) which causes the physical mouse button (belonging to the TrackPoint) to report release events immediately even when pressing and holding the button. This prevents drag and drop and similar actions from working.
+
+### Suspend / Resume
+
+Suspending the T460s by closing the lid when running on battery causes the machine to freeze up entirely. This can be worked around by setting the "intel_pstate=no_hwp" kernel parameter or by compiling the kernel with the patch attached to the [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=113551) tracking this issue.
 
 ### Fingerprint Sensor
 

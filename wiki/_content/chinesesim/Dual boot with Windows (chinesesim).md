@@ -106,7 +106,7 @@ For information on this method see [http://www.geocities.com/epark/linux/grub-w2
 
 Both [Gummiboot](/index.php/Gummiboot "Gummiboot") and [rEFInd](/index.php/REFInd "REFInd") autodetect **Windows Boot Manager** `\EFI\Microsoft\Boot\bootmgfw.efi` and show it in their boot menu, so there is no manual config required.
 
-For [GRUB](/index.php/GRUB "GRUB")(2) follow [GRUB#Windows_Installed_in_UEFI-GPT_Mode_menu_entry](/index.php/GRUB#Windows_Installed_in_UEFI-GPT_Mode_menu_entry "GRUB").
+For [GRUB](/index.php/GRUB "GRUB")(2) follow [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB").
 
 Syslinux (as of version 6.01) and ELILO do not support chainloading other EFI applications, so they cannot be used to chainload `\EFI\Microsoft\Boot\bootmgfw.efi` .
 

@@ -1,8 +1,8 @@
 **翻译状态：** 本文是英文页面 [Compiz](/index.php/Compiz "Compiz") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-08-14，点击[这里](https://wiki.archlinux.org/index.php?title=Compiz&diff=0&oldid=328840)可以查看翻译后英文页面的改动。
 
-来源于维基百科[Compiz条目](http://zh.wikipedia.org/wiki/Compiz)的解释:
+来源于维基百科[Compiz条目](https://zh.wikipedia.org/wiki/Compiz)的解释:
 
-	*Compiz 是第一个由 [OpenGL](http://zh.wikipedia.org/wiki/OpenGL) 驱动的运行于 [X Window System](http://zh.wikipedia.org/wiki/X_Window_System) 上的混合窗口管理器 。Compiz的混合渲染能力使其可以在窗口管理过程中实现多种视觉效果，比如在矩形虚拟桌面上的窗口最小化。*
+	*Compiz 是第一个由 [OpenGL](https://zh.wikipedia.org/wiki/OpenGL) 驱动的运行于 [X Window System](https://zh.wikipedia.org/wiki/X_Window_System) 上的混合窗口管理器 。Compiz的混合渲染能力使其可以在窗口管理过程中实现多种视觉效果，比如在矩形虚拟桌面上的窗口最小化。*
 
 ## Contents
 
@@ -302,7 +302,7 @@ $ export KDEWM="/usr/local/bin/startcompiz"
 
 请确保 Compiz 以及 Cairo Dock (Taskbar或Panel) 已经正确的设置好了。
 
-在CCSM里面，确保选择了窗口装饰器，已经启用了窗口管理需要的必要插件。详见 [Compiz (简体中文)#启用重要的插件](/index.php/Compiz_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.90.AF.E7.94.A8.E9.87.8D.E8.A6.81.E7.9A.84.E6.8F.92.E4.BB.B6 "Compiz (简体中文)").
+在CCSM里面，确保选择了窗口装饰器，已经启用了窗口管理需要的必要插件。详见 [#启用重要的插件](#.E5.90.AF.E7.94.A8.E9.87.8D.E8.A6.81.E7.9A.84.E6.8F.92.E4.BB.B6).
 
 下面是一些建议的Cairo Dock的设置：
 
@@ -731,7 +731,7 @@ Emerald should now start successfully.
 
 You may find that the system bell (such as the drip sound played when pressing backspace at the beginning of a line in GNOME or MATE Terminal) will not sound if Compiz is running. See the following [upstream bug report](https://bugs.launchpad.net/ubuntu/+source/compiz/+bug/537703).
 
-For [Pulseaudio](/index.php/Pulseaudio "Pulseaudio") users the following workaround is available:
+For [PulseAudio](/index.php/PulseAudio "PulseAudio") users the following workaround is available:
 
 Append the following lines
 

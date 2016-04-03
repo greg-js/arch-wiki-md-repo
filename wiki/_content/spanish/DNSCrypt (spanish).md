@@ -22,14 +22,14 @@ Cuando `dnscrypt-proxy.socket` esta activado. Acepta las peticiones entrantes en
 
 Para cambiar el valor por defecto editar `dnscrypt-proxy.service`. Se recomienda elegis un proveedor creca de su ubicacion.
 
-Modificar el archivo [Resolv.conf_(Español)](/index.php/Resolv.conf_(Espa%C3%B1ol) "Resolv.conf (Español)") y reemplazar el conjunto actual de direcciones del *resolver* con *localhost*:
+Modificar el archivo [Resolv.conf (Español)](/index.php/Resolv.conf_(Espa%C3%B1ol) "Resolv.conf (Español)") y reemplazar el conjunto actual de direcciones del *resolver* con *localhost*:
 
 ```
 nameserver 127.0.0.1
 
 ```
 
-Otros programas pueden sobreescribir este ajuste; consulte [Resolv.conf_(Español)#Conservar_las_configuraciones_de_DNS](/index.php/Resolv.conf_(Espa%C3%B1ol)#Conservar_las_configuraciones_de_DNS "Resolv.conf (Español)") para mas detalles.
+Otros programas pueden sobreescribir este ajuste; consulte [Resolv.conf (Español)#Conservar las configuraciones de DNS](/index.php/Resolv.conf_(Espa%C3%B1ol)#Conservar_las_configuraciones_de_DNS "Resolv.conf (Español)") para mas detalles.
 
 ## Iniciar dnscrypt
 

@@ -76,7 +76,7 @@ The drivers are included in the kernel since 2.6.24.
 
 #### Loading the b43/b43legacy kernel module
 
-Verify which module you need by looking up your device [here](http://wireless.kernel.org/en/users/Drivers/b43#Known_PCI_devices). You can also check by computer model [here](http://linuxwireless.org/en/users/Drivers/b43/devices). Blacklist the other module (either `b43` or `b43legacy`) to prevent possible problems/confusion. For instructions, see [Kernel_modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules").
+Verify which module you need by looking up your device [here](http://wireless.kernel.org/en/users/Drivers/b43#Known_PCI_devices). You can also check by computer model [here](http://linuxwireless.org/en/users/Drivers/b43/devices). Blacklist the other module (either `b43` or `b43legacy`) to prevent possible problems/confusion. For instructions, see [Kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules").
 
 Install the appropriate [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) or [b43-firmware-legacy](https://aur.archlinux.org/packages/b43-firmware-legacy/) package from the [AUR](/index.php/AUR "AUR").
 

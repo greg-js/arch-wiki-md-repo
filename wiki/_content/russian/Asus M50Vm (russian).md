@@ -188,7 +188,7 @@ sudo pam_fprint_enroll
 
 ```
 
-Дальше идем сюда: [Thinkfinger](/index.php/Thinkfinger "Thinkfinger"), ищем секции по включению аутентификации по пальцам и имя модуля везде с pam_thinkfinger заменяем на pam_fprint. Все!
+Дальше идем сюда: [ThinkFinger](/index.php/ThinkFinger "ThinkFinger"), ищем секции по включению аутентификации по пальцам и имя модуля везде с pam_thinkfinger заменяем на pam_fprint. Все!
 
 ## Полезные ссылки
 

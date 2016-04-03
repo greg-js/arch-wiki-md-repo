@@ -22,7 +22,7 @@ The simple solution is to give the audio and video processes a **higher priority
 
 ## Configuration
 
-By default, real-time prioritizing is enabled on Arch, however its configuration is simplistic and open to editing by the user. For example, in order to allow users to set nice priorities below 0, we need to tweak the default hard limit provided by PAM.
+By default, real-time prioritizing is enabled on Arch, however its configuration is simplistic and open to editing by the user. For example, in order to allow users to set nice priorities below 0, we need to tweak the default hard limit provided by [PAM](/index.php/PAM "PAM").
 
 ### pam
 

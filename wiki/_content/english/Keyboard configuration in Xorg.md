@@ -1,4 +1,4 @@
-This article's purpose is to detail basic Xorg server keyboard configuration. For advanced topics such as keyboard layout modification or additional key mappings, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys").
+This article's purpose is to detail basic Xorg server keyboard configuration. For advanced topics such as keyboard layout modification or additional key mappings, see [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") or [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") respectively.
 
 ## Contents
 
@@ -24,6 +24,7 @@ This article's purpose is to detail basic Xorg server keyboard configuration. Fo
         *   [5.1.1 Using xset](#Using_xset)
         *   [5.1.2 Using XServer startup options](#Using_XServer_startup_options)
         *   [5.1.3 Using XServer options](#Using_XServer_options)
+*   [6 See also](#See_also)
 
 ## Overview
 
@@ -78,7 +79,7 @@ Keyboard layout in Xorg can be set in multiple ways. Here is an explanation of u
 *   `XkbModel` selects the keyboard model. This has an influence only for some extra keys your keyboard might have. The safe fallback are `pc104` or `pc105`. But for instance laptops usually have some extra keys, and sometimes you can make them work by simply setting a proper model.
 *   `XkbLayout` selects the keyboard layout. Multiple layouts may be specified in a comma-separated list, e.g. if you want to quickly switch between layouts.
 *   `XkbVariant` selects a specific layout variant. For instance, the default `sk` variant is `qwertz`, but you can manually specify `qwerty`, etc.
-*   `XkbOptions` contains some extra options. Used for specifying layout switching, notification LED, compose mode etc.
+*   `XkbOptions` contains some extra options. Used for specifying layout switching, notification LED, compose mode etc. See the [#Frequently used XKB options](#Frequently_used_XKB_options) section for examples.
 
 **Note:** You must specify as many variants as the number of specified layouts. If you want the default variant, specify an empty string as the variant (the comma must stay). For example, to have the default `us` layout as primary and the `dvorak` variant of `us` layout as secondary, specify `us,us` as `XkbLayout` and `,dvorak` as `XkbVariant`.
 
@@ -115,8 +116,6 @@ For multiple customizations:
 $ setxkbmap -model pc104 -layout cz,us -variant ,dvorak -option grp:alt_shift_toggle
 
 ```
-
-**Tip:** To extend even more xkb options, see [#Frequently used XKB options](#Frequently_used_XKB_options) and also the [Madduck guide](http://madduck.net/docs/extending-xkb/).
 
 ### Using X configuration files
 
@@ -174,7 +173,7 @@ $ grep "grp:.*toggle" /usr/share/X11/xkb/rules/base.lst
 
 ### Terminating Xorg with Ctrl+Alt+Backspace
 
-By default, the key combination `Ctrl+Alt+Backspace` is disabled. You can enable it by passing `terminate:ctrl_alt_bksp` to `XkbOptions` in `xorg.conf`, or to `setxkbmap -option` on the command line. This can also be done by binding a key to `Terminate_Server` in `xmodmap` (which undoes any existing `XkbOptions` setting). In order for either method to work, one also needs to have `DontZap` set to "off" in `ServerFlags`; however, this is now the default.
+By default, the key combination `Ctrl+Alt+Backspace` is disabled. You can enable it by passing `terminate:ctrl_alt_bksp` to `XkbOptions`. This can also be done by binding a key to `Terminate_Server` in `xmodmap` (which undoes any existing `XkbOptions` setting). In order for either method to work, one also needs to have `DontZap` set to "off" in `ServerFlags`; however, this is now the default.
 
 ### Swapping Caps Lock with Left Control
 
@@ -311,3 +310,7 @@ Add this line to `/etc/X11/xorg.conf.d/00-keyboard.conf`:
 Option "AutoRepeat" "*delay* *rate*"
 
 ```
+
+## See also
+
+*   [Madduck guide](http://madduck.net/docs/extending-xkb/) on extending XKB

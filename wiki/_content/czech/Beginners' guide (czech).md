@@ -141,13 +141,13 @@ V případě jakýchkoli problémů hledejte řešení na komounitou udržované
 Tento průvodce je rozdělen na 4 části:
 
 *   [Část I: Příprava na instalaci](#P.C5.99.C3.ADprava_na_instalaci)
-*   [Část II: Instalace systému](#Instalace_z.C3.A1kladn.C3.ADho_syst.C3.A9mu)
+*   [Část II: Instalace systému](#Instalace)
 *   [Část III: Po instalaci](#Po_instalaci)
 *   [Část IV: Extra](#Extra)
 
 ## Příprava na instalaci
 
-**Note:** Pokud chcete instalovat z již existující instalace GNU/Linuxu postupujte podle [tohoto návodu](/index.php/Install_from_Existing_Linux "Install from Existing Linux") (anglicky). To se vám může hodit zejména pokud chcete instalovat Arch vzdáleně pomocí [VNC](/index.php/VNC "VNC") nebo [SSH](/index.php/SSH "SSH").
+**Note:** Pokud chcete instalovat z již existující instalace GNU/Linuxu postupujte podle [tohoto návodu](/index.php/Install_from_existing_Linux "Install from existing Linux") (anglicky). To se vám může hodit zejména pokud chcete instalovat Arch vzdáleně pomocí [VNC](/index.php/VNC "VNC") nebo [SSH](/index.php/SSH "SSH").
 
 ### Získání instalačního média
 

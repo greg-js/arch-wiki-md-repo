@@ -97,7 +97,7 @@ Per maggiori dettagli sui paragoni tra dm-crypt+LUKS e gli altri metodi di critt
 
 ### Panoramica e preparazione
 
-Il supporto di installazione di Arch comprende gli strumenti necessari per la crittografia del sistema. L’installazione di un sistema crittografato è in gran parte simile ad una normale installazione, sarà quindi possibile seguire la [Guida all’installazione di Arch Linux](/index.php/Official_Arch_Linux_Install_Guide_(Italiano) "Official Arch Linux Install Guide (Italiano)") oppure la [Beginners' Guide](/index.php/Beginners%27_Guide_(Italiano) "Beginners' Guide (Italiano)") dopo aver configurato le partizioni crittografate. Sarà necessario sistemare la configurazione del sistema per far si che possa avviarsi dai volumi Luks.
+Il supporto di installazione di Arch comprende gli strumenti necessari per la crittografia del sistema. L’installazione di un sistema crittografato è in gran parte simile ad una normale installazione, sarà quindi possibile seguire la [Guida all’installazione di Arch Linux](/index.php/Official_Arch_Linux_Install_Guide_(Italiano) "Official Arch Linux Install Guide (Italiano)") oppure la [Beginners' Guide](/index.php/Beginners%27_guide_(Italiano) "Beginners' guide (Italiano)") dopo aver configurato le partizioni crittografate. Sarà necessario sistemare la configurazione del sistema per far si che possa avviarsi dai volumi Luks.
 
 La routine di creazione di un sistema criptato segue questi passaggi generali:
 

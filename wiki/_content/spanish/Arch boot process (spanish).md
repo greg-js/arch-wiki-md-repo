@@ -71,7 +71,7 @@ En la etapa final del *«early userspace»*, el verdadero sistema de archivos ro
 
 ## Gestor de pantallas
 
-Si hay un [gestor de pantallas (o gestor de inicio de sesión)](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") instalado, este se ejecutará en la tty configurada, reemplazando el prompt de inicio de la getty. En su defecto, si no hay un gestor de pantallas, se mostrará el prompt de getty que pedirá en modo texto al usuario las credenciales, para poder realizar [inicio de sesión](#Login).
+Si hay un [gestor de pantallas (o gestor de inicio de sesión)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") instalado, este se ejecutará en la tty configurada, reemplazando el prompt de inicio de la getty. En su defecto, si no hay un gestor de pantallas, se mostrará el prompt de getty que pedirá en modo texto al usuario las credenciales, para poder realizar [inicio de sesión](#Login).
 
 ## Login
 
@@ -79,11 +79,11 @@ El programa *login* inicia una sesión para el usuario mediante el establecimien
 
 ## Shell
 
-Una vez que la [shell](/index.php/Shell "Shell") del usuario se inicia, normalmente ejecuta un archivo de configuración runtime, como por ejemplo [.bashrc](/index.php/.bashrc ".bashrc"), antes de presentar un prompt para el usuario. Si la cuenta está configurada para [iniciar X al iniciar sesión](/index.php/Start_X_at_Login_(Espa%C3%B1ol) "Start X at Login (Español)"), el archivo de configuración mencionado llamará a [startx](/index.php/Startx "Startx") o [xinit](/index.php/Xinit "Xinit").
+Una vez que la [shell](/index.php/Shell "Shell") del usuario se inicia, normalmente ejecuta un archivo de configuración runtime, como por ejemplo [.bashrc](/index.php/.bashrc ".bashrc"), antes de presentar un prompt para el usuario. Si la cuenta está configurada para [iniciar X al iniciar sesión](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)"), el archivo de configuración mencionado llamará a [startx](/index.php/Startx "Startx") o [xinit](/index.php/Xinit "Xinit").
 
 ## xinit
 
-[xinit](/index.php/Xinit "Xinit") ejecuta el archivo de configuración del usuario [.xinitrc](/index.php/.xinitrc ".xinitrc"), que normalmente arrancará un [gestor de ventanas](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)"). Cuando el usuario ha terminado y sale del gestor de ventanas, xinit, startx, la shell, y el programa login terminarán en ese orden, devolviéndonos a getty.
+[xinit](/index.php/Xinit "Xinit") ejecuta el archivo de configuración del usuario [.xinitrc](/index.php/.xinitrc ".xinitrc"), que normalmente arrancará un [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)"). Cuando el usuario ha terminado y sale del gestor de ventanas, xinit, startx, la shell, y el programa login terminarán en ese orden, devolviéndonos a getty.
 
 ## Véase también
 

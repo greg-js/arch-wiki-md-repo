@@ -271,7 +271,7 @@ Data Base Updated
 
 This generates a client certificate (`bugs.crt`) and a client private key (`bugs.key`) which need to be transferred to the client through a secure channel.
 
-Generate a secret [Hash-based Message Authentication Code (HMAC)](https://en.wikipedia.org/wiki/HMAC "wikipedia:HMAC") by running: `# openvpn --genkey --secret /root/easy-rsa/keys/ta.key` (This is no typo -- the command generates a ta.key file)
+Generate a secret [Hash-based Message Authentication Code (HMAC)](https://en.wikipedia.org/wiki/HMAC "wikipedia:HMAC") by running: `# openvpn --genkey --secret /root/easy-rsa/keys/ta.key`
 
 This will be used to add an additional HMAC signature to all SSL/TLS handshake packets. In addition any UDP packet not having the correct HMAC signature will be immediately dropped, protecting against:
 

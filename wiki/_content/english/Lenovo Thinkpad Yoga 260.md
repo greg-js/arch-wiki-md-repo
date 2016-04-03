@@ -83,9 +83,7 @@ Touchscreen works with the Wacom driver (package: [xf86-input-wacom](https://www
 
 ### Video
 
-Video works out of the box without [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) in X and Wayland (tested with GNOME 3.18).
-
-But if it doesn't for some reason, the kernel supports HD Graphics 520 from version 4.3\. With default configuration, tearing is apparent when playing videos. DRI3 and glamor are supported. To solve tearing and use DRI3 and glamor, create the file `/etc/X11/xorg.conf.d/20-intel.conf` with the following content:
+The kernel supports HD Graphics 520 from version 4.3\. With default configuration, tearing is apparent when playing videos. DRI3 and glamor are supported. To solve tearing and use DRI3 and glamor, create the file `/etc/X11/xorg.conf.d/20-intel.conf` with the following content:
 
 ```
 Section "Device"

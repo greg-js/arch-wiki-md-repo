@@ -46,7 +46,7 @@ OSError: [Errno 13] Permission denied: '//gitosis'
 
 ```
 
-The cause of this might be that the git home directory was not set properly. Fix it by setting it manally:
+The cause of this might be that the git home directory was not set properly. Fix it by setting it manually:
 
 ```
 # usermod -d /srv/gitosis git

@@ -222,7 +222,7 @@ autologin-user-timeout=0
 session-wrapper=/etc/lightdm/Xsession
 ```
 
-LightDM goes through PAM even when `autologin` is enabled. You must be part of the `autologin` group to be able to login automatically without entering your password:
+LightDM goes through [PAM](/index.php/PAM "PAM") even when `autologin` is enabled. You must be part of the `autologin` group to be able to login automatically without entering your password:
 
 ```
 # groupadd -r autologin
@@ -268,8 +268,6 @@ To prevent system users from showing-up in the login, install the optional depen
 ### Migrating from SLiM
 
 Move the contents of [xinitrc](/index.php/Xinitrc "Xinitrc") to [xprofile](/index.php/Xprofile "Xprofile"), removing the call to start the [window manager](/index.php/Window_manager "Window manager") or [desktop environment](/index.php/Desktop_environment "Desktop environment").
-
-Also, remove the contents of ~/.dmrc, and select on the Sessions icon (at the top right corner by default) the session you want to run.
 
 ### NumLock on by default
 

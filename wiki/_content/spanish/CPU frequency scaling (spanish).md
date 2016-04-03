@@ -16,7 +16,7 @@ Cuando es usado en conjunción com [pm-utils](/index.php/Pm-utils "Pm-utils"), l
 
 ## Instalación
 
-El paquete [cpufrequtils](https://www.archlinux.org/packages/?name=cpufrequtils) está disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+El paquete [cpufrequtils](https://www.archlinux.org/packages/?name=cpufrequtils) está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Configuración
 

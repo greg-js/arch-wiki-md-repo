@@ -1,4 +1,4 @@
-**Tip:** Ovo je dio višestraničnog članka vodiča za početnike. **[Klikni ovdje](/index.php/Beginners%27_Guide_(Hrvatski) "Beginners' Guide (Hrvatski)")** ukoliko želiš pročitati vodič u cijelosti.
+**Tip:** Ovo je dio višestraničnog članka vodiča za početnike. **[Klikni ovdje](/index.php/Beginners%27_guide_(Hrvatski) "Beginners' guide (Hrvatski)")** ukoliko želiš pročitati vodič u cijelosti.
 
 ## Contents
 

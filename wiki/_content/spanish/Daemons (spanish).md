@@ -6,7 +6,7 @@ Desde la perspectiva del usuario, la distinción no suele ser significativa, a m
 
 ## Gestionar los demonios
 
-En Arch Linux, los demonios son administrados por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). La orden [systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") es la interfaz de usuario que se utiliza para su gestión. Los archivos se leen como *<nombre_servicio>*.service que contienen información acerca de cómo y cuándo iniciar el demonio asociado. Los archivos de servicios se guardan en `/{etc,usr/lib,run}/systemd/system`. Véase [Systemd_(Español)#Usar_las_unidades](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") para obtener información completa acerca del uso systemctl para gestionar los demonios.
+En Arch Linux, los demonios son administrados por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). La orden [systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") es la interfaz de usuario que se utiliza para su gestión. Los archivos se leen como *<nombre_servicio>*.service que contienen información acerca de cómo y cuándo iniciar el demonio asociado. Los archivos de servicios se guardan en `/{etc,usr/lib,run}/systemd/system`. Véase [systemd (Español)#Usar las unidades](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") para obtener información completa acerca del uso systemctl para gestionar los demonios.
 
 ## Lista de demonios
 

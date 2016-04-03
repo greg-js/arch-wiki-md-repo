@@ -1,4 +1,4 @@
-**Tip:** Ez az oldal a teljes Beginners' Guide (Magyar) útmutató egyik részoldala. Ha az útmutatót teljes egészében akarod olvasni, akkor **[kattints ide](/index.php/Beginners%27_Guide_(Magyar) "Beginners' Guide (Magyar)")**.
+**Tip:** Ez az oldal a teljes Beginners' Guide (Magyar) útmutató egyik részoldala. Ha az útmutatót teljes egészében akarod olvasni, akkor **[kattints ide](/index.php/Beginners%27_guide_(Magyar) "Beginners' guide (Magyar)")**.
 
 ## Contents
 
@@ -18,7 +18,7 @@
 
 ## Előkészületek
 
-**Megjegyzés:** Ha egy másik partición lévi már meglévő GNU/Linux disztribúció vagy LiveCD mellé szeretnéd telepíteni, akkor kérlek nézd meg [ezt a wiki bejegyzést](/index.php/Install_from_Existing_Linux "Install from Existing Linux") a teendőid lépéseiről. Ez különösen hasznos tud lenni, ha az Arch-odat [VNC](/index.php/VNC "VNC") vagy [SSH](/index.php/SSH "SSH") segítségével távolról szeretnéd feltenni. Ez az útmutató a hagyományos módon történő telepítést mutatja be.
+**Megjegyzés:** Ha egy másik partición lévi már meglévő GNU/Linux disztribúció vagy LiveCD mellé szeretnéd telepíteni, akkor kérlek nézd meg [ezt a wiki bejegyzést](/index.php/Install_from_existing_Linux "Install from existing Linux") a teendőid lépéseiről. Ez különösen hasznos tud lenni, ha az Arch-odat [VNC](/index.php/VNC "VNC") vagy [SSH](/index.php/SSH "SSH") segítségével távolról szeretnéd feltenni. Ez az útmutató a hagyományos módon történő telepítést mutatja be.
 
 ### Szerezzük be a legfrissebb telepítőt
 

@@ -38,7 +38,7 @@ freshclamd.service
 | [gdm](/index.php/GDM "GDM") | gdm.service | Gnome 显示管理器 (登陆屏幕) |
 | [gensplash](/index.php/Fbsplash "Fbsplash") | 未实现 | (参见 fbsplash) |
 | [git-daemon](/index.php/Git "Git") | git-daemon.socket |
-| [gpm](/index.php/Console_Mouse_Support "Console Mouse Support") | gpm.service | 控制台鼠标支持 |
+| [gpm](/index.php/Console_mouse_support "Console mouse support") | gpm.service | 控制台鼠标支持 |
 | [hal](/index.php/HAL "HAL") | 以过时 | 硬件守护进程.(已过时) |
 | hddtemp | hddtemp.service | 硬盘温度监控进程 |
 | healthd | healthd.service | 在硬件健康有问题时给出警报，lm_sensors 的一部分. |

@@ -56,7 +56,7 @@ Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i l
 
 	[http://lxde.org/](http://lxde.org/) || [lxde](https://www.archlinux.org/groups/x86_64/lxde/)
 
-*   **[Mate](/index.php/Mate "Mate")** — Mate è un fork di Gnome 2\. Mate fornisce un desktop intuitivo e attraente per gli utenti Linux che utilizzano metafore tradizionali.
+*   **[MATE](/index.php/MATE "MATE")** — Mate è un fork di Gnome 2\. Mate fornisce un desktop intuitivo e attraente per gli utenti Linux che utilizzano metafore tradizionali.
 
 	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
 
@@ -82,7 +82,7 @@ Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i l
 
 	[http://www.maui-project.org/](http://www.maui-project.org/) || [hawaii-meta-git](https://aur.archlinux.org/packages/hawaii-meta-git/)
 
-*   **[Lxqt](/index.php/Lxqt "Lxqt")** — Lxqt è la versione di sviluppo di un nuovo ambiente desktop LXDE, scritto dagli sviluppatori di Razor-qt. Si basa su tecnologie Qt.
+*   **[LXQt](/index.php/LXQt "LXQt")** — Lxqt è la versione di sviluppo di un nuovo ambiente desktop LXDE, scritto dagli sviluppatori di Razor-qt. Si basa su tecnologie Qt.
 
 	||
 
@@ -338,4 +338,4 @@ Molti utenti descrivono KDE come ambiente *simile a Windows* e GNOME come *Simil
 
 ## Ambienti Personalizzati
 
-Gli ambienti desktop rappresentano il mezzo più semplice di installare un*ambiente*grafico completo. Tuttavia, gli utenti sono liberi di costruire e personalizzare il proprio ambiente grafico in molti modi, se nessuno dei più diffusi ambienti desktop soddisfano le proprie esigenze. In generale, la costruzione di un ambiente personalizzato comporta la selezione di un idoneo [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") un [List of Applications#Taskbars / Panels / Docks|taskbar]], e un numero di applicazioni leggere (una scelta minimalista di solito comprende un [emulatore di terminale](/index.php/List_of_Applications_(Italiano)#Emulatori_di_terminale "List of Applications (Italiano)"), un [file manager](/index.php/List_of_Applications_(Italiano)#File_manager "List of Applications (Italiano)") e un [editor di testi](/index.php/List_of_Applications_(Italiano)#Editor_di_Testi "List of Applications (Italiano)")).
+Gli ambienti desktop rappresentano il mezzo più semplice di installare un*ambiente*grafico completo. Tuttavia, gli utenti sono liberi di costruire e personalizzare il proprio ambiente grafico in molti modi, se nessuno dei più diffusi ambienti desktop soddisfano le proprie esigenze. In generale, la costruzione di un ambiente personalizzato comporta la selezione di un idoneo [Window Manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") un [List of Applications#Taskbars / Panels / Docks|taskbar]], e un numero di applicazioni leggere (una scelta minimalista di solito comprende un [emulatore di terminale](/index.php/List_of_applications_(Italiano)#Emulatori_di_terminale "List of applications (Italiano)"), un [file manager](/index.php/List_of_applications_(Italiano)#File_manager "List of applications (Italiano)") e un [editor di testi](/index.php/List_of_applications_(Italiano)#Editor_di_Testi "List of applications (Italiano)")).

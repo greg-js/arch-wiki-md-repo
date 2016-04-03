@@ -679,7 +679,7 @@ pacman -S geany gnome-terminal
 
 ```
 
-Išsamios instrukcijos anglų kalba [čia](/index.php/Gnome "Gnome")
+Išsamios instrukcijos anglų kalba [čia](/index.php/GNOME "GNOME")
 
 #### pagražinimas
 
@@ -1046,4 +1046,4 @@ pacman -Ss paieškos_žodis
 
 ## Tolesnė informacija
 
-Daugiau informacijos galite rasti [namų puslapis](https://www.archlinux.org), [wiki](/index.php/Main_Page_(Lietuvi%C5%A1kai) "Main Page (Lietuviškai)"), [forumas](https://bbs.archlinux.org), [IRC](/index.php/ArchChannel "ArchChannel") ar [pašto sąrašas](https://www.archlinux.org/mailman/listinfo/).
+Daugiau informacijos galite rasti [namų puslapis](https://www.archlinux.org), [wiki](/index.php/Main_page_(Lietuvi%C5%A1kai) "Main page (Lietuviškai)"), [forumas](https://bbs.archlinux.org), [IRC](/index.php/ArchChannel "ArchChannel") ar [pašto sąrašas](https://www.archlinux.org/mailman/listinfo/).

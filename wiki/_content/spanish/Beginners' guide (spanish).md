@@ -2,7 +2,7 @@
 
 Este documento le guiará a través del proceso de instalación de [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") usando los [Scripts de Instalación de Arch](https://github.com/falconindy/arch-install-scripts). Antes de proceder a la instalación, es recomendable la lectura del artículo sobre las preguntas más frecuentes ([FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)")).
 
-La [wiki de Arch](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)"), mantenida por la comunidad, es un recurso excelente que debería ser consultada para realizar los primeros pasos. También están disponibles el canal [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat "wikipedia:es:Internet Relay Chat") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) y el [fórum](https://bbs.archlinux.org/) los cuales son igualmente buenos recursos si no ha podido encontrar la respuesta en otro lugar. Siguiendo [el método de Arch](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)"), se le aconseja que escriba `man *orden*` para leer la página del manual ([man page (Español)](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)")), respecto de cualquier orden con la que no esté familiarizado.
+La [wiki de Arch](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)"), mantenida por la comunidad, es un recurso excelente que debería ser consultada para realizar los primeros pasos. También están disponibles el canal [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat "wikipedia:es:Internet Relay Chat") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) y el [fórum](https://bbs.archlinux.org/) los cuales son igualmente buenos recursos si no ha podido encontrar la respuesta en otro lugar. Siguiendo [el método de Arch](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)"), se le aconseja que escriba `man *orden*` para leer la página del manual ([man page (Español)](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)")), respecto de cualquier orden con la que no esté familiarizado.
 
 ## Contents
 
@@ -91,7 +91,7 @@ Si algunos caracteres se muestran como cuadrados blancos u otros símbolos, pued
 
 	Conexión de red cableada
 
-El demonio de red [dhcpcd](/index.php/Dhcpcd "Dhcpcd") se inicia automáticamente en el arranque e intenta establecer una conexión cableada, si está disponible. Para acceder a los formularios de inicio de sesión de un [portal cautivo](https://en.wikipedia.org/wiki/es:Portal_cautivo "wikipedia:es:Portal cautivo"), utilice el navegador web [Elinks](/index.php/Elinks "Elinks").
+El demonio de red [dhcpcd](/index.php/Dhcpcd "Dhcpcd") se inicia automáticamente en el arranque e intenta establecer una conexión cableada, si está disponible. Para acceder a los formularios de inicio de sesión de un [portal cautivo](https://en.wikipedia.org/wiki/es:Portal_cautivo "wikipedia:es:Portal cautivo"), utilice el navegador web [ELinks](/index.php/ELinks "ELinks").
 
 Compruebe que se ha establecido una conexión, por ejemplo con la utilidad *ping*. Si no arroja resultado positivo, detenga el servicio *dhcpcd* y [configure la conexión de red](/index.php/Network_configuration "Network configuration") manualmente. En el siguiente ejemplo se utiliza [netctl](/index.php/Netctl "Netctl") para este propósito. Para evitar conflictos, detenga el servicio *dhcp* (sustituya `enp0s25` con el nombre correcto de la interfaz de red cableada):
 

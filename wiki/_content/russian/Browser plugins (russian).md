@@ -362,7 +362,7 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 
 	[https://sites.google.com/site/kdekorte2/gecko-mediaplayer](https://sites.google.com/site/kdekorte2/gecko-mediaplayer) || [gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer)
 
-*   **Totem Plugin** — Browser plugin based on the [Totem](https://en.wikipedia.org/wiki/Totem_(software) media player for [Gnome](/index.php/Gnome "Gnome") which uses [Gstreamer](/index.php/Gstreamer "Gstreamer").
+*   **Totem Plugin** — Browser plugin based on the [Totem](https://en.wikipedia.org/wiki/Totem_(software) media player for [GNOME](/index.php/GNOME "GNOME") which uses [GStreamer](/index.php/GStreamer "GStreamer").
 
 	[http://projects.gnome.org/totem/](http://projects.gnome.org/totem/) || [totem](https://www.archlinux.org/packages/?name=totem)
 

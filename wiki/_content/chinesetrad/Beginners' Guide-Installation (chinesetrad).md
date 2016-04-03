@@ -1,6 +1,6 @@
 **翻譯狀態：** 本文章是 [Beginners'_Guide/Installation](/index.php/Beginners%27_Guide/Installation "Beginners' Guide/Installation") 的翻譯版本。最近一次的翻譯時間：2014-01-26。點擊[本連結](https://wiki.archlinux.org/index.php?title=Beginners'_Guide/Installation&diff=0&oldid=294339)查看英文頁面之後的變更。
 
-**提示:** 本文是新手教學的多頁版本。若您希望閱讀完整的指南，請**[點擊這裡](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' Guide (正體中文)")**。
+**提示:** 本文是新手教學的多頁版本。若您希望閱讀完整的指南，請**[點擊這裡](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")**。
 
 ## Contents
 

@@ -10,7 +10,7 @@
 
 ## 安装
 
-从[官方仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)") [安装](/index.php/Pacman "Pacman") [dosbox](https://www.archlinux.org/packages/?name=dosbox)
+从[官方仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") [安装](/index.php/Pacman "Pacman") [dosbox](https://www.archlinux.org/packages/?name=dosbox)
 
 ## 配置
 

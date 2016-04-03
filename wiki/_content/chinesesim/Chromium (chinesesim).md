@@ -46,7 +46,7 @@
 
 ### 设置成默认浏览器
 
-默认浏览器通过[xdg-open](/index.php/Xdg-open "Xdg-open")设置，详情请参阅[xdg-open#set the default browser](/index.php/Xdg-open#set_the_default_browser "Xdg-open") 和 [Default applications](/index.php/Default_applications "Default applications")。
+默认浏览器通过[xdg-open](/index.php/Xdg-open "Xdg-open")设置，详情请参阅[xdg-open#Set the default browser](/index.php/Xdg-open#Set_the_default_browser "Xdg-open") 和 [Default applications](/index.php/Default_applications "Default applications")。
 
 更多信息请阅读 [Xdg-open](/index.php/Xdg-open "Xdg-open")。
 

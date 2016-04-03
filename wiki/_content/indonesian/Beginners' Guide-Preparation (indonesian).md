@@ -1,4 +1,4 @@
-**Tip:** This is part of a multi-page article for The Beginners' Guide. **[Click here](/index.php/Beginners%27_Guide_(Indonesia) "Beginners' Guide (Indonesia)")** if you would rather read the guide in its entirety.
+**Tip:** This is part of a multi-page article for The Beginners' Guide. **[Click here](/index.php/Beginners%27_guide_(Indonesia) "Beginners' guide (Indonesia)")** if you would rather read the guide in its entirety.
 
 ## Contents
 

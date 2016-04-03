@@ -1,4 +1,4 @@
-**Tip:** Ovo je deo Uputstva za pocetnike koji se sastoji iz vise strana. **[Kliknite ovde](/index.php/Beginners%27_Guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' Guide (Српски)")** ako zelite da citate uputstvo u celosti.
+**Tip:** Ovo je deo Uputstva za pocetnike koji se sastoji iz vise strana. **[Kliknite ovde](/index.php/Beginners%27_guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' guide (Српски)")** ako zelite da citate uputstvo u celosti.
 
 ## Contents
 
@@ -45,7 +45,7 @@ Arch Linux, pacman, dokumentacija i skripte su Copyright © 2002-2007 by Judd Vi
 
 ### O ovom uputstvu
 
-Odrzavan od strane zajednice, [Arch wiki](/index.php/Main_Page_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Main Page (Српски)") je odlican izvor za resavanje problema. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanali ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i ([irc://irc.freenode.net/#archlinux-rs](irc://irc.freenode.net/#archlinux-rs)), i [forumi](https://bbs.archlinux.org/) su takodje na raspolaganju ukoliko ne mozete da pronadjete odgovor. Posetite i `man` stranice za komande sa kojima niste upoznati; to mozete uciniti sa `man "komandom`*.*
+Odrzavan od strane zajednice, [Arch wiki](/index.php/Main_page_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Main page (Српски)") je odlican izvor za resavanje problema. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanali ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i ([irc://irc.freenode.net/#archlinux-rs](irc://irc.freenode.net/#archlinux-rs)), i [forumi](https://bbs.archlinux.org/) su takodje na raspolaganju ukoliko ne mozete da pronadjete odgovor. Posetite i `man` stranice za komande sa kojima niste upoznati; to mozete uciniti sa `man "komandom`*.*
 
 **Note:** Pazljivo pracenje ovog uputstva je od kljucnog znacaja kako bi ste uspesno instalirali i podesili Arch Linux sistem, pa vas "molimo" da ga detaljno procitate. Jako je preporucljivo da procitate svaku sekciju u celosti <u>pre</u> obavljanja posla koji sekcija opisuje.
 

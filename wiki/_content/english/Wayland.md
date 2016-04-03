@@ -32,13 +32,13 @@ Currently Wayland will only work on systems utilizing [KMS](/index.php/KMS "KMS"
 
 ## Installation
 
-**Note:** Wayland is most likely installed on your system already, as it is an indirect dependency of [gtk2](https://www.archlinux.org/packages/?name=gtk2) and [gtk3](https://www.archlinux.org/packages/?name=gtk3).
+**Note:** Wayland is most likely installed on your system already, since it is an indirect dependency of [gtk2](https://www.archlinux.org/packages/?name=gtk2) and [gtk3](https://www.archlinux.org/packages/?name=gtk3).
 
 [Install](/index.php/Install "Install") the [wayland](https://www.archlinux.org/packages/?name=wayland) package.
 
 ## Usage
 
-As Wayland is only a library, it is useless on its own. To replace X Server, you need a compositor (like Weston).
+As Wayland is only a library, it is useless on its own. To replace X Server, you need a compositor (like [#Weston](#Weston)).
 
 ## Weston
 

@@ -2,7 +2,7 @@
 
 Tento článek Vás provede procesem instalace [Arch Linuxu](/index.php/Arch_Linux_(%C4%8Cesky) "Arch Linux (Česky)") pomocí [Arch Install Scripts](https://github.com/falconindy/arch-install-scripts). Před instalací si prosím pročtěte [často kladené otázky](/index.php/FAQ_(%C4%8Cesky) "FAQ (Česky)").
 
-Komunitou spravovaná [ArchWiki](/index.php/Main_Page_(%C4%8Cesky) "Main Page (Česky)") je primárním zdrojem, na který byste se měli obrátit v případě problémů. [IRC kanál](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) a [fórum](https://bbs.archlinux.org/) jsou také výbornými zdroji, pokud odpověď nelze najít jinde. V souladu s [Arch Way](/index.php/The_Arch_Way_(%C4%8Cesky) "The Arch Way (Česky)") Vás nabádáme, abyste použili příkaz `man *příkaz*` pro přečtení manuálové stránky jakéhokoliv příkazu, se kterým nejste obeznámeni.
+Komunitou spravovaná [ArchWiki](/index.php/Main_page_(%C4%8Cesky) "Main page (Česky)") je primárním zdrojem, na který byste se měli obrátit v případě problémů. [IRC kanál](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) a [fórum](https://bbs.archlinux.org/) jsou také výbornými zdroji, pokud odpověď nelze najít jinde. V souladu s [Arch Way](/index.php/The_Arch_Way_(%C4%8Cesky) "The Arch Way (Česky)") Vás nabádáme, abyste použili příkaz `man *příkaz*` pro přečtení manuálové stránky jakéhokoliv příkazu, se kterým nejste obeznámeni.
 
 ## Contents
 
@@ -17,7 +17,7 @@ Komunitou spravovaná [ArchWiki](/index.php/Main_Page_(%C4%8Cesky) "Main Page (�
 
 ## Příprava
 
-**Note:** Pokud chcete instalovat z existující instalace libovolné GNU/Linux distribuce, přečtěte si prosím [tento článek](/index.php/Install_from_Existing_Linux "Install from Existing Linux"). Tohle může být užitečné obzvláště pokud plánujete instalovat Arch vzdáleně pomocí [VNC](/index.php/VNC "VNC") nebo [SSH](/index.php/SSH "SSH"). Pokud plánujete vzdálenou instalaci pomocí SSH, přečtěte si prosím [Install from SSH](/index.php/Install_from_SSH "Install from SSH") pro dodatečné tipy.
+**Note:** Pokud chcete instalovat z existující instalace libovolné GNU/Linux distribuce, přečtěte si prosím [tento článek](/index.php/Install_from_existing_Linux "Install from existing Linux"). Tohle může být užitečné obzvláště pokud plánujete instalovat Arch vzdáleně pomocí [VNC](/index.php/VNC "VNC") nebo [SSH](/index.php/SSH "SSH"). Pokud plánujete vzdálenou instalaci pomocí SSH, přečtěte si prosím [Install from SSH](/index.php/Install_from_SSH "Install from SSH") pro dodatečné tipy.
 
 ### Systémové požadavky
 

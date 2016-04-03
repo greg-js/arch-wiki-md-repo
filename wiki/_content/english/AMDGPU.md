@@ -15,6 +15,8 @@ Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/inde
     *   [4.1 Enabling video acceleration](#Enabling_video_acceleration)
 *   [5 Enable amdgpu for Sea Islands Cards](#Enable_amdgpu_for_Sea_Islands_Cards)
 *   [6 Disable radeon driver](#Disable_radeon_driver)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
 
 ## Installation
 
@@ -111,4 +113,23 @@ It may also be needed to use the `amdgpu.exp_hw_support=1` [[2]](https://www.pho
 
 To prevent `radeon` from loading, you can disable it in the Kconfig or [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `radeon` module.
 
- `/etc/modprobe.d/radeon.conf`  `blacklist radeon`
+ `/etc/modprobe.d/radeon.conf`  `blacklist radeon` 
+
+## Troubleshooting
+
+### Xorg or applications won't start
+
+*   "(EE) AMDGPU(0): [DRI2] DRI2SwapBuffers: drawable has no back or front?" error after opening glxgears, can open Xorg server but OpenGL apps crash.
+*   "(EE) AMDGPU(0): Given depth (32) is not supported by amdgpu driver" error, Xorg won't start.
+
+Setting the screen's depth under Xorg to 16 or 32 will cause problems/crash. To avoid that, you should use a standard screen depth of 24 by adding this to your "screen" section (assuming you have one, assuming you don't add this to `/etc/X11/xorg.conf.d/10-screen.conf`).
+
+```
+Section "Screen"
+       DefaultDepth    24
+       SubSection      "Display"
+               Depth   24
+       EndSubSection
+EndSection
+
+```

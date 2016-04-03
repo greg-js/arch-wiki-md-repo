@@ -51,7 +51,7 @@ or, to additionally enable the group quota mount option:
 
 ```
 
-For journaled quota the fstab options vary, see [#Journaled quota](#Journaled_quota).
+Note: these quota options are possibly obsolete. See [#Journaled quota](#Journaled_quota).
 
 After adding the options remount
 
@@ -93,21 +93,23 @@ After this configuration the systemd units `quotaon.service` and `systemd-quotac
 
 ### Journaled quota
 
-Enabling journaling for disk quota adds the same benefits journaled file systems do for forced shutdowns, meaning that data is less likely to become corrupt.
+Enabling journaling for disk quota adds the same benefits journalled file systems do for forced shutdowns, meaning that data is less likely to become corrupt.
 
 Setting up journaled quota is the same as above, except for the mount options:
 
 ```
-/dev/sda1 /home ext4 defaults**,usrjquota=aquota.user,jqfmt=vfsv0** 1 1
+/dev/sda1 /home ext4 defaults**,usrjquota=aquota.user,jqfmt=vfsv1** 1 1
 
 ```
 
 or additionally, enable the group quota mount option;
 
 ```
-/dev/sda1 /home ext4 defaults**,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0** 1 1
+/dev/sda1 /home ext4 defaults**,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv1** 1 1
 
 ```
+
+The vfsv1 format is necessary for supporting quotas more than 4TB. You need at least kernel 2.6.33 for quota_v2 support. If your kernel is older, you have to use vfsv0.
 
 ## Configuring
 

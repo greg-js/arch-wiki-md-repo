@@ -210,9 +210,9 @@ Artiklen er delt op i 5 hovedafsnit:
 
 *   [Del II: Installation](#Installation)
 
-*   [TRIN 2 - Installation af X og konfiguration af ALSA](/index.php/Dansk_Begynderguide#TRIN_2:_Installation_af_X_og_konfiguration_af_ALSA "Dansk Begynderguide")
+*   [TRIN 2 - Installation af X og konfiguration af ALSA](#TRIN_2:_Installation_af_X_og_konfiguration_af_ALSA)
 
-*   [TRIN 3 - Installation af dit skrivebord](/index.php/Dansk_Begynderguide#TRIN_3:_Installation_og_konfiguration_af_dit_skrivebord "Dansk Begynderguide")
+*   [TRIN 3 - Installation af dit skrivebord](#TRIN_3:_Installation_og_konfiguration_af_dit_skrivebord)
 
 ### DON'T PANIC!
 
@@ -226,7 +226,7 @@ Bemærk at ordet 'enkelt' i denne kontekst ikke nødvendigvis er ensbetydende me
 
 ## Forberedelse
 
-**Note:** Hvis du ønsker at installere på en anden partition fra en eksisterende GNU/Linux distribution eller LiveCD, læs [denne wiki-artikel](/index.php/Install_from_Existing_Linux "Install from Existing Linux") for vejledning. Dette kan være brugbart især hvis du ønsker at fjern-installere Arch via [VNC](/index.php/VNC "VNC") eller [SSH](/index.php/SSH "SSH"). Følgende gælder installation på traditionel vis.
+**Note:** Hvis du ønsker at installere på en anden partition fra en eksisterende GNU/Linux distribution eller LiveCD, læs [denne wiki-artikel](/index.php/Install_from_existing_Linux "Install from existing Linux") for vejledning. Dette kan være brugbart især hvis du ønsker at fjern-installere Arch via [VNC](/index.php/VNC "VNC") eller [SSH](/index.php/SSH "SSH"). Følgende gælder installation på traditionel vis.
 
 ### Skaf det seneste installationsmedie
 

@@ -1,4 +1,4 @@
-**Tip:** Ovo je dio višestraničnog članka vodiča za početnike. **[Klikni ovdje](/index.php/Beginners%27_Guide_(Hrvatski) "Beginners' Guide (Hrvatski)")** ukoliko želiš pročitati vodič u cijelosti.
+**Tip:** Ovo je dio višestraničnog članka vodiča za početnike. **[Klikni ovdje](/index.php/Beginners%27_guide_(Hrvatski) "Beginners' guide (Hrvatski)")** ukoliko želiš pročitati vodič u cijelosti.
 
 ## Contents
 
@@ -44,7 +44,7 @@ Arch Linux, pacman, documentation, and scripts are Copyright © 2002-2007 by Jud
 
 ### O ovom vodiču
 
-[Arch wiki](/index.php/Main_Page_(Hrvatski) "Main Page (Hrvatski)") je održavan putem zajednice te je odličan izvor s kojim se uvijek može pokušati konzultirati pri prvim suočavanjem s nekim problemom. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanal ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i [forumi](https://bbs.archlinux.org/) su isto dostupni ukoliko se traženi odgovor ne može naći igdje drugdje. Svakako provjeri i `man` stranice bilo koje naredbe s kojom imaš problema; to se obično može učiniti pozivanjem `man *naredbe*`.
+[Arch wiki](/index.php/Main_page_(Hrvatski) "Main page (Hrvatski)") je održavan putem zajednice te je odličan izvor s kojim se uvijek može pokušati konzultirati pri prvim suočavanjem s nekim problemom. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanal ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i [forumi](https://bbs.archlinux.org/) su isto dostupni ukoliko se traženi odgovor ne može naći igdje drugdje. Svakako provjeri i `man` stranice bilo koje naredbe s kojom imaš problema; to se obično može učiniti pozivanjem `man *naredbe*`.
 
 **Note:** Usko pratiti ovaj vodič od ključne je važnosti kako bi se moglo doći do ispravno konfiguriranog sustava Arch Linux, tako da ga valja pročitati temeljito. Preporuča se pročitati svaki sekciju u potpunosti <u>prije</u> implementacije koraka navedenih u njoj.
 

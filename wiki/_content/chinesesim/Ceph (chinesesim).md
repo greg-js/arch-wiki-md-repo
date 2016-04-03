@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Ceph](/index.php/Ceph "Ceph") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-13，点击[这里](https://wiki.archlinux.org/index.php?title=Ceph&diff=0&oldid=419278)可以查看翻译后英文页面的改动。
 
-Ceph 是一个专注于分布式的、弹性可扩展的、高可靠的、性能优异的存储系统平台，可用于为[虚拟机](https://en.wikipedia.org/wiki/Virtual_Machine "wikipedia:Virtual Machine")提供块存储方案或通过 [FUSE](/index.php/File_Systems#FUSE-based_file_systems "File Systems") 提供常规的文件系统。Ceph 是个高度可配置的系统，管理者可以控制系统的各个方面。它提供了一个命令行界面用于监视和控制其存储集群。Ceph 也包含鉴证和授权功能，可兼容多种存储网关接口如 [OpenStack Swift](https://en.wikipedia.org/wiki/OpenStack#Swift "wikipedia:OpenStack") 和 [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3 "wikipedia:Amazon S3").
+Ceph 是一个专注于分布式的、弹性可扩展的、高可靠的、性能优异的存储系统平台，可用于为[虚拟机](https://en.wikipedia.org/wiki/Virtual_Machine "wikipedia:Virtual Machine")提供块存储方案或通过 [FUSE](/index.php/File_systems#FUSE-based_file_systems "File systems") 提供常规的文件系统。Ceph 是个高度可配置的系统，管理者可以控制系统的各个方面。它提供了一个命令行界面用于监视和控制其存储集群。Ceph 也包含鉴证和授权功能，可兼容多种存储网关接口如 [OpenStack Swift](https://en.wikipedia.org/wiki/OpenStack#Swift "wikipedia:OpenStack") 和 [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3 "wikipedia:Amazon S3").
 
 引自 [Wikipedia: Ceph (software)](https://en.wikipedia.org/wiki/Ceph_(software) "wikipedia:Ceph (software)"):
 
@@ -47,9 +47,9 @@ The official documentation [states](http://ceph.com/docs/master/install/#deploy-
 
 ### NTP 客户端
 
-**警告:** 应当同步监视器节点的时钟以避免时钟偏移(详见 [Time_(简体中文)#时间偏移](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.97.B6.E9.97.B4.E5.81.8F.E7.A7.BB "Time (简体中文)"))，否则将导致集群性能下降甚至停止工作。[官方文档](http://docs.ceph.com/docs/master/rados/configuration/mon-config-ref/#clock:) 建议所有节点都应采取某种方式同步时钟。
+**警告:** 应当同步监视器节点的时钟以避免时钟偏移(详见 [Time (简体中文)#时间偏移](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.97.B6.E9.97.B4.E5.81.8F.E7.A7.BB "Time (简体中文)"))，否则将导致集群性能下降甚至停止工作。[官方文档](http://docs.ceph.com/docs/master/rados/configuration/mon-config-ref/#clock:) 建议所有节点都应采取某种方式同步时钟。
 
-在节点上安装并运行时钟同步客户端，可参阅 [Time_(简体中文)#时间同步](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.97.B6.E9.97.B4.E5.90.8C.E6.AD.A5 "Time (简体中文)")。
+在节点上安装并运行时钟同步客户端，可参阅 [Time (简体中文)#时间同步](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.97.B6.E9.97.B4.E5.90.8C.E6.AD.A5 "Time (简体中文)")。
 
 ## 启动一个存储集群
 

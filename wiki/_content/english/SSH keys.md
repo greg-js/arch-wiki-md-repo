@@ -544,7 +544,7 @@ There are other passphrase dialog programs which can be used instead of *x11-ssh
 
 ### pam_ssh
 
-The [pam_ssh](http://pam-ssh.sourceforge.net/) project exists to provide a [Pluggable Authentication Module](https://en.wikipedia.org/wiki/Pluggable_authentication_module "wikipedia:Pluggable authentication module") (PAM) for SSH private keys. This module can provide single sign-on behavior for your SSH connections. On login, your SSH private key passphrase can be entered in place of, or in addition to, your traditional system password. Once you have been authenticated, the pam_ssh module spawns ssh-agent to store your decrypted private key for the duration of the session.
+The [pam_ssh](http://pam-ssh.sourceforge.net/) project exists to provide a [Pluggable Authentication Module](/index.php/Pluggable_Authentication_Module "Pluggable Authentication Module") (PAM) for SSH private keys. This module can provide single sign-on behavior for your SSH connections. On login, your SSH private key passphrase can be entered in place of, or in addition to, your traditional system password. Once you have been authenticated, the pam_ssh module spawns ssh-agent to store your decrypted private key for the duration of the session.
 
 To enable single sign-on behavior at the tty login prompt, install the unofficial [pam_ssh](https://aur.archlinux.org/packages/pam_ssh/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 

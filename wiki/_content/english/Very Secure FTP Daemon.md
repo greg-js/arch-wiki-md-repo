@@ -284,7 +284,7 @@ options nf_conntrack_ftp ports=2211
 
 ### PAM with virtual users (updated)
 
-Since PAM no longer provides pam_userdb.so another easy method is to use [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/). For environments with many users another option could be [pam_mysql](https://aur.archlinux.org/packages/pam_mysql/). This section is however limited to explain how to configure a chroot environment and authentication by pam_pwdfile.so.
+Since [PAM](/index.php/PAM "PAM") no longer provides pam_userdb.so another easy method is to use [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/). For environments with many users another option could be [pam_mysql](https://aur.archlinux.org/packages/pam_mysql/). This section is however limited to explain how to configure a chroot environment and authentication by pam_pwdfile.so.
 
 In this example we create the directory `vsftpd`:
 

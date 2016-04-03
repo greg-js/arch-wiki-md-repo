@@ -286,7 +286,7 @@ options root=/dev/sda2 ro selinux=1 security=selinux
 
 ### Checking PAM
 
-A correctly set-up PAM is important to get the proper security context after login. Check for the presence of the following lines in `/etc/pam.d/system-login`:
+A correctly set-up [PAM](/index.php/PAM "PAM") is important to get the proper security context after login. Check for the presence of the following lines in `/etc/pam.d/system-login`:
 
 ```
 # pam_selinux.so close should be the first session rule

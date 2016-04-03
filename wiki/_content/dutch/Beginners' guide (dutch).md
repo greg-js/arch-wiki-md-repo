@@ -68,7 +68,7 @@ To verify you are booted in UEFI mode, run:
 
 ```
 
-See [UEFI#UEFI_Variables](/index.php/UEFI#UEFI_Variables "UEFI") for details.
+See [UEFI#UEFI Variables](/index.php/UEFI#UEFI_Variables "UEFI") for details.
 
 ### Keyboard layout
 

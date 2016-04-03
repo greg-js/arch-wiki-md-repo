@@ -123,8 +123,8 @@ Available backends are:
 *   `/etc/passwd`
 *   [MySQL](/index.php/MySQL "MySQL")
 *   [LDAP](/index.php/LDAP "LDAP")
-*   [PostgreSQL](http://www.postgresql.org/)
-*   [PAM](https://en.wikipedia.org/wiki/Linux_PAM "wikipedia:Linux PAM")
+*   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
+*   [PAM](/index.php/PAM "PAM")
 *   PureDB
 *   Or you can write [your own](http://download.pureftpd.org/pub/pure-ftpd/doc/README.Authentication-Modules)
 

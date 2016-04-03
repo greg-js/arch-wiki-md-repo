@@ -61,7 +61,7 @@ If you are using automatic login, then you can disable the keyring manager by se
 
 #### Console login
 
-When using console-based login, the keyring daemon can be started by either [PAM](https://en.wikipedia.org/wiki/Pluggable_authentication_module "wikipedia:Pluggable authentication module") or [xinitrc](/index.php/Xinitrc "Xinitrc"). PAM can also unlock the keyring automatically at login.
+When using console-based login, the keyring daemon can be started by either [PAM](/index.php/PAM "PAM") or [xinitrc](/index.php/Xinitrc "Xinitrc"). PAM can also unlock the keyring automatically at login.
 
 ##### PAM method
 

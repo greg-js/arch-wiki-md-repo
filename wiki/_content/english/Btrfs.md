@@ -21,19 +21,20 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
         *   [3.1.2 Multi-device file system](#Multi-device_file_system)
     *   [3.2 Converting a file system from Ext3/4](#Converting_a_file_system_from_Ext3.2F4)
 *   [4 Configuring the file system](#Configuring_the_file_system)
-    *   [4.1 Mount options](#Mount_options)
-        *   [4.1.1 Examples](#Examples)
-    *   [4.2 Copy-On-Write (CoW)](#Copy-On-Write_.28CoW.29)
-    *   [4.3 Compression](#Compression)
-    *   [4.4 Subvolumes](#Subvolumes)
-        *   [4.4.1 Creating a subvolume](#Creating_a_subvolume)
-        *   [4.4.2 Listing subvolumes](#Listing_subvolumes)
-        *   [4.4.3 Deleting a subvolume](#Deleting_a_subvolume)
-        *   [4.4.4 Mounting subvolumes](#Mounting_subvolumes)
-        *   [4.4.5 Changing the default sub-volume](#Changing_the_default_sub-volume)
-    *   [4.5 Commit interval settings](#Commit_interval_settings)
-    *   [4.6 Checkpoint interval](#Checkpoint_interval)
-    *   [4.7 SSD TRIM](#SSD_TRIM)
+    *   [4.1 Copy-On-Write (CoW)](#Copy-On-Write_.28CoW.29)
+        *   [4.1.1 Disabling CoW](#Disabling_CoW)
+        *   [4.1.2 Forcing CoW](#Forcing_CoW)
+    *   [4.2 Compression](#Compression)
+    *   [4.3 Subvolumes](#Subvolumes)
+        *   [4.3.1 Creating a subvolume](#Creating_a_subvolume)
+        *   [4.3.2 Listing subvolumes](#Listing_subvolumes)
+        *   [4.3.3 Deleting a subvolume](#Deleting_a_subvolume)
+        *   [4.3.4 Mounting subvolumes](#Mounting_subvolumes)
+            *   [4.3.4.1 Mount options](#Mount_options)
+        *   [4.3.5 Changing the default sub-volume](#Changing_the_default_sub-volume)
+    *   [4.4 Commit interval settings](#Commit_interval_settings)
+    *   [4.5 Checkpoint interval](#Checkpoint_interval)
+    *   [4.6 SSD TRIM](#SSD_TRIM)
 *   [5 Usage](#Usage)
     *   [5.1 Displaying used/free space](#Displaying_used.2Ffree_space)
     *   [5.2 Defragmentation](#Defragmentation)
@@ -144,36 +145,13 @@ Finally [balance](#Balance) the file system to reclaim the space.
 
 ## Configuring the file system
 
-### Mount options
-
-**Warning:** Specific mount options can disable safety features and increase the risk of complete file system corruption.
-
-See [Btrfs Wiki Mount options](https://btrfs.wiki.kernel.org/index.php/Mount_options) and [Btrfs Wiki Gotchas](https://btrfs.wiki.kernel.org/index.php/Gotchas) for more information.
-
-In addition to configurations that can be made during or after file system creation, the various mount options for Btrfs can drastically change its performance characteristics.
-
-As this is a file system that is still in active development, changes and regressions should be expected. See links in the [#See also](#See_also) section for some benchmarks.
-
-#### Examples
-
-*   **Linux 3.15**
-    *   Btrfs on a SSD for system installation and an emphasis on maximizing performance (also read [#SSD TRIM](#SSD_TRIM))
-
-    	 `noatime,discard,ssd,compress=lzo,space_cache` 
-
-    *   Btrfs on a HDD for archival purposes with an emphasis on maximizing space.
-
-    	 `noatime,autodefrag,compress-force=lzo,space_cache` 
-
 ### Copy-On-Write (CoW)
 
-By default, Btrfs performs copy-on-write for all files, at all times: If you write a file that did not exist before, then the data is written to empty space, and some of the metadata blocks that make up the filesystem are copied-on-write. In a traditional filesystem, if you then go back and overwrite a piece of that file, then the piece you are writing is put directly over the data it is replacing. In a CoW filesystem, the new data is written to a piece of free space on the disk, and only then is the file's metadata changed to refer to the new data. The old data that was replaced can then be freed up if nothing points to it any more.
+By default, Btrfs uses [Wikipedia:copy-on-write](https://en.wikipedia.org/wiki/copy-on-write "wikipedia:copy-on-write") for all files all the time. See [the Btrfs Sysadmin Guide section](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Copy_on_Write_.28CoW.29)] for implementation details, as well as advantages and disadvantages.
 
-Copy-on-write comes with some advantages, but can negatively affect performance with large files that have small random writes because it will fragment them (even if no "copy" is ever performed!). It is recommended to disable copy-on-write for database files and virtual machine images.
+#### Disabling CoW
 
-One can disable copy-on-write for the entire block device by mounting it with `nodatacow` option. However, this will disable copy-on-write for the entire file system.
-
-**Note:** `nodatacow` will only affect newly created files. Copy-on-write may still happen for existing files.
+To disable copy-on-write for newly created files in a mounted subvolume, use the `nodatacow` mount option. This will only affect newly created files. Copy-on-write will still happen for existing files.
 
 To disable copy-on-write for single files/directories do:
 
@@ -184,7 +162,7 @@ $ chattr +C */dir/file*
 
 This will disable copy-on-write for those operation in which there is only one reference to the file. If there is more than one reference (e.g. through `cp --reflink=always` or because of a filesystem snapshot), copy-on-write still occurs.
 
-**Note:** From chattr man page: For Btrfs, the 'C' flag should be set on new or empty files. If it is set on a file which already has data blocks, it is undefined when the blocks assigned to the file will be fully stable. If the 'C' flag is set on a directory, it will have no effect on the directory, but new files created in that directory will have the `No_COW` attribute.
+**Note:** From chattr man page: "For btrfs, the 'C' flag should be set on new or empty files. If it is set on a file which already has data blocks, it is undefined when the blocks assigned to the file will be fully stable. If the 'C' flag is set on a directory, it will have no effect on the directory, but new files created in that directory will have the No_COW attribute."
 
 **Tip:** In accordance with the note above, you can use the following trick to disable copy-on-write on existing files in a directory:
 ```
@@ -198,14 +176,16 @@ $ rm -rf */path/to/dir*_old
 
 Make sure that the data are not used during this process. Also note that `mv` or `cp --reflink` as described below will not work.
 
-Likewise, to save space by forcing copy-on-write when copying files use:
+#### Forcing CoW
+
+To force copy-on-write when copying files use:
 
 ```
 $ cp --reflink *source* *dest* 
 
 ```
 
-As `*dest*` file is changed, only those blocks that are changed from source will be written to the disk. One might consider aliasing *cp* to `cp --reflink=auto`.
+This would only be required if CoW was disabled for the file to be copied (as implemented above). See the man page on `cp` for more details on the `--reflink` flag.
 
 ### Compression
 
@@ -226,7 +206,7 @@ When installing Arch to an empty Btrfs partition, use the `compress` option when
 
 "A btrfs subvolume is not a block device (and cannot be treated as one) instead, a btrfs subvolume can be thought of as a POSIX file namespace. This namespace can be accessed via the top-level subvolume of the filesystem, or it can be mounted in its own right." [[1]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Subvolumes)
 
-Each Btrfs file system has a top-level subvolume with ID 5\. It can be mounted itself as "/" (by default), or another subvolume can be [mounted](#Mounting_subvolumes).
+Each Btrfs file system has a top-level subvolume with ID 5\. It can be mounted as `/` (by default), or another subvolume can be [mounted](#Mounting_subvolumes) instead.
 
 See the following links for more details:
 
@@ -271,41 +251,28 @@ Subvolumes can be mounted like file system partitions using the `subvol=*/path/t
 
 See [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper"), [Btrfs SysadminGuide#Managing Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Managing_Snapshots), and [Btrfs SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout) for example file system layouts using subvolumes.
 
+##### Mount options
+
+When mounting subvolumes with `subvol=` several mount options are available. For example, mount options that affect [#Compression](#Compression) or [#Copy-On-Write (CoW)](#Copy-On-Write_.28CoW.29) can be used.
+
+See [Btrfs Wiki Mount options](https://btrfs.wiki.kernel.org/index.php/Mount_options) and [Btrfs Wiki Gotchas](https://btrfs.wiki.kernel.org/index.php/Gotchas) for more information. In addition to configurations that can be made during or after file system creation, the various mount options for Btrfs can drastically change its performance characteristics. As this is a file system that is still in active development, changes and regressions should be expected. See links in the [#See also](#See_also) section for some benchmarks.
+
+**Warning:** Specific mount options can disable safety features and increase the risk of complete file system corruption.
+
 #### Changing the default sub-volume
 
-**Warning:** Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible, except by use of the `subvolid=5` mount option. Reference: [Btrfs Wiki Sysadmin Guide](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
-
-The default sub-volume is mounted if no `subvol=` mount option is provided.
+The default sub-volume is mounted if no `subvol=` mount option is provided. To change the default subvolume, do:
 
 ```
-# btrfs subvolume set-default *subvolume-id* /.
+# btrfs subvolume set-default *subvolume-id* /
 
 ```
 
-**Example:**
-
- `# btrfs subvolume list .` 
-```
-ID 258 gen 9512 top level 5 path root_subvolume
-ID 259 gen 9512 top level 258 path home
-ID 260 gen 9512 top level 258 path var
-ID 261 gen 9512 top level 258 path usr
-
-```
-
-```
-# btrfs subvolume set-default 258 .
-
-```
-
-**Reset:**
-
-```
-# btrfs subvolume set-default 5 .
-
-```
+where *subvolume-id* can be found by [listing](#Listing_subvolumes).
 
 **Note:** After changing the default subvolume on a system with [GRUB](/index.php/GRUB "GRUB"), you should run `grub-install` again to notify the bootloader of the changes. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1615373).
+
+**Warning:** Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible when the default subvolume is mounted . Reference: [Btrfs Wiki Sysadmin Guide](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
 
 ### Commit interval settings
 
@@ -413,27 +380,7 @@ You can also run the scrub manually by [starting](/index.php/Starting "Starting"
 
 ### RAID
 
-Btrfs works in block-pairs for raid0, raid1, and raid10\. This means:
-
-raid0 - block-pair striped across 2 devices
-
-raid1 - block-pair written to 2 devices
-
-The RAID level can be changed while the disks are online using the `btrfs balance` command:
-
-```
-# btrfs balance start -mconvert=RAIDLEVEL -dconvert=RAIDLEVEL /path/to/mount
-
-```
-
-For 2 disk sets, this matches raid levels as defined in md-raid (mdadm). For 3+ disk-sets, the result is entirely different than md-raid.
-
-For example:
-
-*   Three 1TB disks in an md based raid1 yields a `/dev/md0` with 1TB free space and the ability to safely lose 2 disks without losing data.
-*   Three 1TB disks in a Btrfs volume with data=raid1 will allow the storage of approximately 1.5TB of data before reporting full. Only 1 disk can safely be lost without losing data.
-
-Btrfs uses a round-robin scheme to decide how block-pairs are spread among disks. As of Linux 3.0, a quasi-round-robin scheme is used which prefers larger disks when distributing block pairs. This allows raid0 and raid1 to take advantage of most (and sometimes all) space in a disk set made of multiple disks. For example, a set consisting of a 1TB disk and 2 500GB disks with data=raid1 will place a copy of every block on the 1TB disk and alternate (round-robin) placing blocks on each of the 500GB disks. Full space utilization will be made. A set made from a 1TB disk, a 750GB disk, and a 500GB disk will work the same, but the filesystem will report full with 250GB unusable on the 750GB disk. To always take advantage of the full space (even in the last example), use data=single. (data=single is akin to JBOD defined by some raid controllers) See [the Btrfs FAQ](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_space_do_I_get_with_unequal_devices_in_RAID-1_mode.3F) for more info.
+Btrfs offers native "RAID" for [#Multi-device file systems](#Multi-device_file_system). Notable features which set btrfs RAID apart from [mdadm](/index.php/Mdadm "Mdadm") are self-healing redundant arrays and online balancing. See [the Btrfs wiki page](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) for more information. The Btrfs sysadmin page also [has a section](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#RAID_and_data_replication) with some more technical background.
 
 ### Snapshots
 

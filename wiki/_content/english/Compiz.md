@@ -105,9 +105,9 @@ Highly recommended:
 
 Optional:
 
-*   **Compiz Fusion Plugins Unsupported** — Unsupported Compiz plugins.
+*   **Compiz Fusion Plugins Experimental** — Experimental Compiz plugins.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-unsupported](https://aur.archlinux.org/packages/compiz-fusion-plugins-unsupported/)
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-experimental-git](https://aur.archlinux.org/packages/compiz-fusion-plugins-experimental-git/)
 
 *   **Emerald** — A standalone window decorator for Compiz.
 
@@ -134,8 +134,6 @@ Before starting Compiz, you should activate some plugins to provide basic window
 *   Resize Window.
 *   Place Windows - configure window placement options.
 *   Application Switcher - provides an `Alt+Tab` switcher - there are numerous alternative application switcher plugins, for example: Shift Switcher, Static Application Switcher and more. Not all of them use the `Alt+Tab` keybinding.
-*   OpenGL - only visible in CCSM 0.9.
-*   Composite - only visible in CCSM 0.9.
 
 To be able to switch to different [viewports](/index.php/Compiz_configuration#Workspaces_and_Viewports "Compiz configuration") you will need to enable one of the following:
 
@@ -151,11 +149,13 @@ The window decorator is the program which provides windows with borders. Unlike 
 
 	Choosing the decorator
 
-In most versions of Compiz, the decorator is started with the *compiz-decorator* script. This will first try to detect a GNOME or KDE session and start the appropriate decorator for that session and then, if this fails, it will search for the *emerald*, *gtk-window-decorator* and *kde4-window-decorator* executables in that order and start the first decorator it finds. For this reason, it should not usually be necessary to change the decorator command. However, in cases where the *compiz-decorator* script is not available, not being used or is not starting the desired decorator, the decorator command can be changed under CCSM -> *Effects* -> *Window Decoration* -> *Command*. If just specifying the decorator executable does not cause the decorator to be started, use the `--replace` switch as well.
+The window decorator that will be started is specified under CCSM -> *Effects* -> *Window Decoration* -> *Command*. The command can be one of the following executables: *emerald*, *gtk-window-decorator*, *kde4-window-decorator*. Use the `--replace` switch, e.g. `emerald --replace`, if specifying the decorator executable on its own is not sufficient.
+
+**Tip:** In Compiz 0.9, the decorator command is set to *compiz-decorator* by default. This is a script which will search for the *emerald*, *gtk-window-decorator* and *kde4-window-decorator* executables in that order and start the first one that it finds.
 
 ### Compiz startup
 
-**Note:** It should no longer be necessary to use the `ccp` switch with the `compiz --replace` command in order to load Compiz plugins. This bug was fixed downstream in Compiz packaging and then fixed upstream in Compiz 0.9.12 with [revision 3951](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3951). Older Compiz versions might still need to be started with the following: `compiz --replace ccp`.
+**Note:** Some Compiz versions may require you to manually load the CCP plugin on startup: `compiz --replace ccp` [[1]](http://blog.northfield.ws/compiz-release-announcement-0-8-12/)
 
 You can start Compiz using the following command:
 
@@ -192,8 +192,6 @@ A standalone Compiz session can be started from a [display manager](/index.php/D
 #### Autostarting programs when using a display manager
 
 One way in which you could start programs with your Compiz session, when it is started from a [display manager](/index.php/Display_manager "Display manager"), is to use an [xprofile](/index.php/Xprofile "Xprofile") file. Another option is for the `.desktop` file in `/usr/share/xsessions` to not execute *compiz* directly but to execute a script which starts the programs you wish to start and also starts Compiz.
-
-Alternatively, you could use Compiz's *Session Management* plugin. This plugin will save running programs on exit and restore them when the session is next started. Simply enable the *Session Management* plugin in CCSM.
 
 ### Starting the session with startx
 

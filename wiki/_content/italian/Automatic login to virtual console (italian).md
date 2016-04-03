@@ -1,4 +1,4 @@
-Questo articolo descrive come accedere automaticamente a una “console virtuale” o tty alla fine del [processo di boot](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)"). Questo articolo tratta solamente dell'accesso alla console; i metodi per avviare [il server X](/index.php/Xorg_(Italiano) "Xorg (Italiano)") sono descritti in [Start X at Login](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)").
+Questo articolo descrive come accedere automaticamente a una “console virtuale” o tty alla fine del [processo di boot](/index.php/Arch_boot_process_(Italiano) "Arch boot process (Italiano)"). Questo articolo tratta solamente dell'accesso alla console; i metodi per avviare [il server X](/index.php/Xorg_(Italiano) "Xorg (Italiano)") sono descritti in [Start X at Login](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)").
 
 ## Service
 
@@ -59,4 +59,4 @@ Per killare X e prevenirne l'immediato ricaricamento, stoppare il servizio `auto
 
 ### Vedere anche
 
-*   [Cambiare il runlevel/target predefinito all'avvio](/index.php/Systemd_(Italiano)#Cambiare_il_runlevel.2Ftarget_predefinito_all.27avvio "Systemd (Italiano)").)
+*   [Cambiare il runlevel/target predefinito all'avvio](/index.php/Systemd_(Italiano)#Cambiare_il_target_predefinito_all.27avvio "Systemd (Italiano)").)

@@ -147,7 +147,7 @@ bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protoc
 
 ```
 
-这是因为没有安装[pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) 包导致的。 如果确实没有安装，安装一下这个包，然后重启一下[pulseaudio](/index.php/Pulseaudio "Pulseaudio")。
+这是因为没有安装[pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) 包导致的。 如果确实没有安装，安装一下这个包，然后重启一下[PulseAudio](/index.php/PulseAudio "PulseAudio")。
 
 如果不是因为缺失包导致的， 很可能是PulseAudio没收到消息，一般重启一下PulseAudio就可以解决问题。 注意*bluetoothctl*和PulseAudio不需要在相同的用户下运行，*bluetooth*在root环境下运行，而PulseAudio在用户环境下运行也可以很好的工作。 重启PulseAudio后，不需要重新配对，直接重连即可。
 
@@ -234,15 +234,15 @@ daemon-binary = /bin/true
 
 ## Legacy method: ALSA-BTSCO
 
-bluez4相关，不翻译，直接参考英文版本[Bluetooth Headset#Legacy method: ALSA-BTSCO](/index.php/Bluetooth_Headset#Legacy_method:_ALSA-BTSCO "Bluetooth Headset")
+bluez4相关，不翻译，直接参考英文版本[Bluetooth headset#Legacy method: ALSA-BTSCO](/index.php/Bluetooth_headset#Legacy_method:_ALSA-BTSCO "Bluetooth headset")
 
 ## Legacy method: PulseAudio
 
-bluez4相关，不翻译，直接参考英文版本[Bluetooth Headset#Legacy method: PulseAudio](/index.php/Bluetooth_Headset#Legacy_method:_PulseAudio "Bluetooth Headset")
+bluez4相关，不翻译，直接参考英文版本[Bluetooth headset#Legacy method: PulseAudio](/index.php/Bluetooth_headset#Legacy_method:_PulseAudio "Bluetooth headset")
 
 ## Legacy documentation: ALSA, bluez5 and PulseAudio method
 
-争议章节，不翻译，直接参考英文版本[Bluetooth Headset#Legacy documentation: ALSA, bluez5 and PulseAudio method](/index.php/Bluetooth_Headset#Legacy_documentation:_ALSA.2C_bluez5_and_PulseAudio_method "Bluetooth Headset")
+争议章节，不翻译，直接参考英文版本[Bluetooth headset#Legacy documentation: ALSA, bluez5 and PulseAudio method](/index.php/Bluetooth_headset#Legacy_documentation:_ALSA.2C_bluez5_and_PulseAudio_method "Bluetooth headset")
 
 ## 在 HSV 和 A2DP 配置间切换
 

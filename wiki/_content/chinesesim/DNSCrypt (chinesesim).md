@@ -23,7 +23,7 @@
 
 When `dnscrypt-proxy.socket` is [enabled](/index.php/Enable "Enable"), *dnscrypt-proxy* accepts incoming requests on `127.0.0.1:53` to a DNS resolver. The default DNS resolver for `dnscrypt-proxy.service` is *dnscrypt.eu-nl*. Compatible resolver names are visible in the first column of `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv`.
 
-To change the default, [edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") `dnscrypt-proxy.service`. It is recommended to choose a provider close to your location.
+To change the default, [edit](/index.php/Systemd#Editing_provided_units "Systemd") `dnscrypt-proxy.service`. It is recommended to choose a provider close to your location.
 
 Modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with *localhost*:
 
@@ -51,13 +51,13 @@ ListenStream=127.0.0.1:40
 ListenDatagram=127.0.0.1:40
 ```
 
-**Note:** The `ListenStream` and `ListenDatagram` options need to be cleared with empty assignment before overriding, otherwise the new address would be *added* to the list of sockets. See [systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd") for details.
+**Note:** The `ListenStream` and `ListenDatagram` options need to be cleared with empty assignment before overriding, otherwise the new address would be *added* to the list of sockets. See [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") for details.
 
 Then restart `dnscrypt-proxy.socket` and *stop* `dnscrypt-proxy.service` if already running to let it be started by the *.socket* unit.
 
 #### 示例: 配置 Unbound
 
-配置 [Unbound_(简体中文)](/index.php/Unbound_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unbound (简体中文)") to your liking (remember to [set /etc/resolv.conf to use the local DNS server](/index.php/Unbound#Set_.2Fetc.2Fresolv.conf_to_use_the_local_DNS_server "Unbound")) and add the following lines to the end of the `server` section in `/etc/unbound/unbound.conf`:
+配置 [Unbound (简体中文)](/index.php/Unbound_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unbound (简体中文)") to your liking (remember to [set /etc/resolv.conf to use the local DNS server](/index.php/Unbound#Set_.2Fetc.2Fresolv.conf_to_use_the_local_DNS_server "Unbound")) and add the following lines to the end of the `server` section in `/etc/unbound/unbound.conf`:
 
 ```
 do-not-query-localhost: no

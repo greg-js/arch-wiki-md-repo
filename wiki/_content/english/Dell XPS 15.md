@@ -211,7 +211,7 @@ Install the Intel video driver using the [xf86-video-intel](https://www.archlinu
 To make sure nvidia module will not load into your system:
 
 *   Remove nouveau and/or nvidia drivers
-*   Use acpi_call (compile [acpi_call](http://github.com/mkottman/acpi_call) or use the [AUR package](https://aur.archlinux.org/packages.php?ID=39470) ) to disable the nvidia card
+*   Use acpi_call (compile [acpi_call](http://github.com/mkottman/acpi_call) or use one of the [AUR packages](https://aur.archlinux.org/packages/?K=acpi_call)) to disable the nvidia card
 
 ##### acpi_call usage
 

@@ -12,7 +12,6 @@ This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s
     *   [2.1 Minimal configuration](#Minimal_configuration)
     *   [2.2 Automatic configuration](#Automatic_configuration)
     *   [2.3 NVIDIA Settings](#NVIDIA_Settings)
-        *   [2.3.1 CLI Configuration](#CLI_Configuration)
     *   [2.4 Multiple monitors](#Multiple_monitors)
         *   [2.4.1 Using NVIDIA Settings](#Using_NVIDIA_Settings)
         *   [2.4.2 ConnectedMonitor](#ConnectedMonitor)
@@ -154,35 +153,27 @@ Double check your `/etc/X11/xorg.conf` to make sure your default depth, horizont
 
 ### NVIDIA Settings
 
-The [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) tool lets you configure many options using a GUI. Run `nvidia-settings` as root, configure as you wish, and then save the configuration to `/etc/X11/xorg.conf.d/` as usual.
+The [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) tool lets you configure many options using either CLI or GUI. Running `nvidia-settings` without any options launches the GUI, for CLI options see `nvidia-settings(1)`.
 
-Alternatively, you can run the GUI as a normal user and save the settings to `~/.nvidia-settings-rc`. Then you can load the settings using `$ nvidia-settings --load-config-only` (for example in your [xinitrc](/index.php/Xinitrc "Xinitrc")).
+You can run the GUI as a normal user and save the settings to `~/.nvidia-settings-rc`. Then you can load the settings using `$ nvidia-settings --load-config-only` (for example in your [xinitrc](/index.php/Xinitrc "Xinitrc")). Alternatively, run `nvidia-settings` as root, and then save the configuration to `/etc/X11/xorg.conf.d/` as usual.
 
 **Tip:** If your X server is crashing on startup, it may be because the GUI-generated settings are corrupt. Try deleting the generated file and starting from scratch.
 
-#### CLI Configuration
-
-[nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) can configure your displays (*e.g.*, set resolution, position, or view port) from the command line (without restarting or reloading X, and with flaky XRandR support). First, configure your displays using `nvidia-settings`'s GUI. Then get the `CurrentMetaMode` by running:
-
-```
- $ nvidia-settings -q all | grep -A 2 "Attribute 'CurrentMetaMode'"
-   Attribute 'CurrentMetaMode' (hostnmae:0.0): id=50, switchable=no, source=nv-control :: DPY-1: 2880x1620 @2880x1620 +0+0 {ViewPortIn=2880x1620,
-   ViewPortOut=2880x1620+0+0} 
-     'CurrentMetaMode' is a string attribute.
-
-```
-
-Save everything after the `::` to the end of the attribute (in this case: `DPY-1: 2880x1620 @2880x1620 +0+0 {ViewPortIn=2880x1620, ViewPortOut=2880x1620+0+0}`) and use to reconfigure your displays with `nvidia-settings --assign "CurrentMetaMode=<YOUR_META_MODE_HERE>"`
-
-**Tip:** You can create shell aliases for the different monitor and resolution configurations you use.
-
 ### Multiple monitors
 
-	*See [Multihead](/index.php/Multihead "Multihead") for more general information*
+See [Multihead](/index.php/Multihead "Multihead") for more general information.
 
 #### Using NVIDIA Settings
 
 The [nvidia-settings](#NVIDIA_Settings) tool can configure multiple monitors.
+
+For CLI configuration, first get the `CurrentMetaMode` by running:
+
+ `$ nvidia-settings -q CurrentMetaMode`  `Attribute 'CurrentMetaMode' (hostnmae:0.0): id=50, switchable=no, source=nv-control :: DPY-1: 2880x1620 @2880x1620 +0+0 {ViewPortIn=2880x1620, ViewPortOut=2880x1620+0+0}` 
+
+Save everything after the `::` to the end of the attribute (in this case: `DPY-1: 2880x1620 @2880x1620 +0+0 {ViewPortIn=2880x1620, ViewPortOut=2880x1620+0+0}`) and use to reconfigure your displays with `nvidia-settings --assign "CurrentMetaMode=*your_meta_mode*"`.
+
+**Tip:** You can create shell aliases for the different monitor and resolution configurations you use.
 
 #### ConnectedMonitor
 

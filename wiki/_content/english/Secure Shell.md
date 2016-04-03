@@ -215,7 +215,7 @@ Since OpenSSH 6.2, you can add your own chain to authenticate with using the `Au
 
 See [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") to set up Google Authenticator.
 
-To use PAM with OpenSSH, edit the following files:
+To use [PAM](/index.php/PAM "PAM") with OpenSSH, edit the following files:
 
  `/etc/ssh/sshd_config` 
 ```

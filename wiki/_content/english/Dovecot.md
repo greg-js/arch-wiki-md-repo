@@ -24,7 +24,7 @@ This article describes how to set up a mail server suitable for personal or smal
 ### Assumptions
 
 *   Each mail account served by Dovecot, has a local user account defined on the server.
-*   The server uses [PAM](https://en.wikipedia.org/wiki/Pluggable_authentication_module "wikipedia:Pluggable authentication module") to authenticate the user against the local user database (/etc/passwd).
+*   The server uses [PAM](/index.php/PAM "PAM") to authenticate the user against the local user database (/etc/passwd).
 *   [SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security "wikipedia:Transport Layer Security") is used to encrypt the authentication password.
 *   The common [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir") format is used to store the mail in the user's home directory.
 *   A [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") has already been set up to deliver mail to the local users.

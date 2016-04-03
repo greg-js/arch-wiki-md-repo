@@ -33,7 +33,7 @@ The guide is divided into two parts. The first part deals with how to setup an [
 
 NSS (which stands for Name Service Switch) is a system mechanism to configure different sources for common configuration databases. For example, `/etc/passwd` is a `file` type source for the `passwd` database.
 
-PAM (which stands for Pluggable Authentication Module) is a mechanism used by Linux (and most *nixes) to extend its authentication schemes based on different plugins.
+[PAM](/index.php/PAM "PAM") (which stands for Pluggable Authentication Module) is a mechanism used by Linux (and most *nixes) to extend its authentication schemes based on different plugins.
 
 So to summarize, we need to configure NSS to use the OpenLDAP server as a source for the `passwd`, `shadow` and other configuration databases and then configure PAM to use these sources to authenticate its users.
 

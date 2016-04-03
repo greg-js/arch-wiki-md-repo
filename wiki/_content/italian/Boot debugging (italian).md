@@ -157,7 +157,7 @@ Un paio di elementi chiave tra le voci di grub sono **sysrq_always_enabled**, ch
 
 #### Pausa di init
 
-Per esempio, se si aggiunge **break=y** nella riga del kernel, init si interrompe all'inizio del [boot process](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)") (dopo il caricamento dei moduli) e lancia una shell interattiva sh che può essere utilizzata per la risoluzione dei problemi. (Il boot normale continua dopo il logout.) Questo è molto simile alla shell che presenta se il computer viene spento prima di essere in grado di farlo correttamente. L'tilizzo di questo parametro permette di entrare in questa modalità in modo diverso.
+Per esempio, se si aggiunge **break=y** nella riga del kernel, init si interrompe all'inizio del [boot process](/index.php/Arch_boot_process_(Italiano) "Arch boot process (Italiano)") (dopo il caricamento dei moduli) e lancia una shell interattiva sh che può essere utilizzata per la risoluzione dei problemi. (Il boot normale continua dopo il logout.) Questo è molto simile alla shell che presenta se il computer viene spento prima di essere in grado di farlo correttamente. L'tilizzo di questo parametro permette di entrare in questa modalità in modo diverso.
 
 ```
 title  Arch Linux Init Break

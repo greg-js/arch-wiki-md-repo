@@ -193,4 +193,4 @@ Kernel 3.12.33 - Try model=hp-hdx to get the internal mic and the digital sound 
 
 ### Video
 
-See [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics").
+See [Intel graphics](/index.php/Intel_graphics "Intel graphics").

@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Beginners'_Guide](/index.php/Beginners%27_Guide "Beginners' Guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-1-17，点击[这里](https://wiki.archlinux.org/index.php?title=Beginners'_Guide&diff=0&oldid=421315)可以查看翻译后英文页面的改动。
 
-欢迎，本向导写给 Arch 新用户，但是会尽量做到成为所有用户的参考和信息库。 本文档指导您使用[Arch安装脚本](https://projects.archlinux.org/arch-install-scripts.git/)来安装[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")：一个简单、轻量级、适合计算机水平较高用户使用的发行版。建议在安装前先浏览一下[FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。 社区维护的 [ArchWiki](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")应该有办法解决遇到的疑难。若在其它地方找不到解决办法，[IRC 频道](/index.php/IRC_channel "IRC channel")([irc://irc.freenode.net/#archlinux-cn](irc://irc.freenode.net/#archlinux-cn)) 和[论坛](https://bbs.archlinux.org/)都是求助的好地方。为了贯彻[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，如遇陌生的命令，可输入`man *command*`以查询相关`man`手册页。
+欢迎，本向导写给 Arch 新用户，但是会尽量做到成为所有用户的参考和信息库。 本文档指导您使用[Arch安装脚本](https://projects.archlinux.org/arch-install-scripts.git/)来安装[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")：一个简单、轻量级、适合计算机水平较高用户使用的发行版。建议在安装前先浏览一下[FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。 社区维护的[ArchWiki](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")应该有办法解决遇到的疑难。若在其它地方找不到解决办法，[IRC 频道](/index.php/IRC_channel "IRC channel")([irc://irc.freenode.net/#archlinux-cn](irc://irc.freenode.net/#archlinux-cn)) 和[论坛](https://bbs.archlinux.org/)都是求助的好地方。为了贯彻[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，如遇陌生的命令，可输入`man *command*`以查询相关`man`手册页。
 
 ## Contents
 
@@ -85,7 +85,7 @@
 
 安装程序会在启动时自动运行 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 守护进程以尝试有线连接。需要网页验证的网络可以通过[ELinks](/index.php/ELinks "ELinks")浏览器进行登录。
 
-可以用 [ping 命令检查网络是否正常](/index.php/Network_configuration#Check_the_connection "Network configuration")，如果网络不可用，需要 [手动配置网络](/index.php/Network_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Configuration (简体中文)")。下面用 [netctl](/index.php/Netctl "Netctl") 做示例。
+可以用 [ping 命令检查网络是否正常](/index.php/Network_configuration#Check_the_connection "Network configuration")，如果网络不可用，需要 [手动配置网络](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")。下面用 [netctl](/index.php/Netctl "Netctl") 做示例。
 
 为了防止冲突，首先停用 *dhcpcd* 服务，将 `enp0s25` 替换为正确的有线接口：
 
@@ -113,7 +113,7 @@
 
 	其它
 
-有其它配置示例， [静态 IP 地址](/index.php/Network_configuration#Static_IP_address "Network configuration")，将 *netctl* 示例文件复制到 `/etc/netctl`：
+有其它配置示例，[静态 IP 地址](/index.php/Network_configuration#Static_IP_address "Network configuration")，将 *netctl* 示例文件复制到 `/etc/netctl`：
 
 ```
 # cp /etc/netctl/examples/ethernet-static /etc/netctl
@@ -163,7 +163,7 @@
 
 ### 分区工具
 
-硬盘首先要[分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")，接着将分区格式化为需要的[文件系统](/index.php/File_Systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File Systems (简体中文)")。
+硬盘首先要[分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")，接着将分区格式化为需要的[文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)")。
 
 有两种分区类型：
 
@@ -327,7 +327,7 @@ Ignore/Cancel?
 
 ### 格式化文件系统并使用swap
 
-仅仅分区是不够的，还需要 `mkfs` 将分区格式化为指定的[文件系统](/index.php/File_Systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File Systems (简体中文)")。
+仅仅分区是不够的，还需要 `mkfs` 将分区格式化为指定的[文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)")。
 
 先查看所有分区：
 
@@ -399,7 +399,7 @@ Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 ...
 ```
 
-如果您愿意，您可以只使用一个镜像并全删光其他行，但为保险，还是留其他几个离您较近的镜像作备用好。 更改镜像列表后请务必使用 `pacman -Syy` 强制刷新，详见 [Mirrors_(简体中文)](/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mirrors (简体中文)").
+如果您愿意，您可以只使用一个镜像并全删光其他行，但为保险，还是留其他几个离您较近的镜像作备用好。 更改镜像列表后请务必使用 `pacman -Syy` 强制刷新，详见 [Mirrors (简体中文)](/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mirrors (简体中文)").
 
 ### 安装基本软件包
 
@@ -427,7 +427,7 @@ Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 
 ### chroot
 
-将配置文件复制到`/mnt`的新系统 (例如 netctl 配置文件在 `/etc/netctl`), 然后 [chroot](/index.php/Change_Root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change Root (简体中文)") 到新系统：
+将配置文件复制到`/mnt`的新系统 (例如 netctl 配置文件在 `/etc/netctl`), 然后 [chroot](/index.php/Change_root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change root (简体中文)") 到新系统：
 
 ```
 # arch-chroot /mnt /bin/bash
@@ -567,7 +567,7 @@ FONT=lat9w-16
 
 该过程与[#建立网络连接](#.E5.BB.BA.E7.AB.8B.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5)基本一致，只不过该配置在新系统每次开机时都会自动生效。
 
-**注意:** 了解更多网络配置相关信息，请访问 [Network_Configuration_(简体中文)](/index.php/Network_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Configuration (简体中文)") 及 [Wireless network configuration (简体中文)](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)").
+**注意:** 了解更多网络配置相关信息，请访问 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)") 及 [Wireless network configuration (简体中文)](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)").
 
 #### 主机名
 
@@ -642,6 +642,6 @@ FONT=lat9w-16
 
 请继续阅读 [General recommendations (简体中文)](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)") 的剩余页面，它包含了安装后的众多教程，包括设置图形用户界面，声卡和触摸板等等。
 
-如果想捣鼓一大堆应用程序，详见 [List of Applications (简体中文)](/index.php/List_of_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications (简体中文)").
+如果想捣鼓一大堆应用程序，详见 [List of applications (简体中文)](/index.php/List_of_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of applications (简体中文)").
 
 [Arch Linux 中文化](/index.php/Arch_Linux_%E4%B8%AD%E6%96%87%E5%8C%96 "Arch Linux 中文化") 页面还包含了关于系统、软件中文支持的内容。

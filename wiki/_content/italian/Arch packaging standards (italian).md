@@ -233,7 +233,7 @@ Si prega di consultare [Eclipse plugin package guidelines](/index.php/Eclipse_pl
 
 #### Gnome Packages
 
-Si prega di consultare [Gnome package guidelines](/index.php/Gnome_package_guidelines "Gnome package guidelines")
+Si prega di consultare [GNOME package guidelines](/index.php/GNOME_package_guidelines "GNOME package guidelines")
 
 #### Haskell Packages
 
@@ -241,31 +241,31 @@ Si prega di consultare [Haskell package guidelines](/index.php/Haskell_package_g
 
 #### Java Packages
 
-Si prega di consultare [Java Package Guidelines](/index.php/Java_Package_Guidelines "Java Package Guidelines")
+Si prega di consultare [Java package guidelines](/index.php/Java_package_guidelines "Java package guidelines")
 
 #### Kernel Module Packages
 
-Si prega di consultare [Kernel Module Package Guidelines](/index.php/Kernel_Module_Package_Guidelines "Kernel Module Package Guidelines")
+Si prega di consultare [Kernel module package guidelines](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines")
 
 #### Lisp Packages
 
-Si prega di consultare [Lisp Package Guidelines](/index.php/Lisp_Package_Guidelines "Lisp Package Guidelines")
+Si prega di consultare [Lisp package guidelines](/index.php/Lisp_package_guidelines "Lisp package guidelines")
 
 #### OCaml Packages
 
-Si prega di consultare [OCaml_Package_Guidelines](/index.php/OCaml_Package_Guidelines "OCaml Package Guidelines")
+Si prega di consultare [OCaml package guidelines](/index.php/OCaml_package_guidelines "OCaml package guidelines")
 
 #### Perl Packages
 
-Si prega di consultare [Perl Package Guidelines](/index.php/Perl_Package_Guidelines "Perl Package Guidelines")
+Si prega di consultare [Perl package guidelines](/index.php/Perl_package_guidelines "Perl package guidelines")
 
 #### Python Packages
 
-Si prega di consultare [Python Package Guidelines](/index.php/Python_Package_Guidelines "Python Package Guidelines")
+Si prega di consultare [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines")
 
 #### Ruby Gem Packages
 
-Si prega di consultare [Ruby Gem Package Guidelines](/index.php/Ruby_Gem_Package_Guidelines "Ruby Gem Package Guidelines")
+Si prega di consultare [Ruby Gem package guidelines](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines")
 
 #### Wine Packages
 

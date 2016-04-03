@@ -142,7 +142,7 @@ fontconfig是字体选择的接口，你可以用它去控制单个字体或者�
 
 fontconfig的设置文件是`~/.fonts.conf`（用户）或者`/etc/fonts/conf.d`（全局）。推荐修改前者。
 
-关于中文字体设置，参见：[Fonts (简体中文)](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)")、[Font Configuration (简体中文)](/index.php/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Font Configuration (简体中文)")。
+关于中文字体设置，参见：[Fonts (简体中文)](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)")、[Font configuration (简体中文)](/index.php/Font_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Font configuration (简体中文)")。
 
 [Font Configuration (简体中文)/中文字体配置范例](/index.php/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE%E8%8C%83%E4%BE%8B "Font Configuration (简体中文)/中文字体配置范例")提供了中文字体fontconfig示范。
 

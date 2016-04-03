@@ -284,7 +284,7 @@ enable-git-config=1
 
 ```
 
-For detailed documentation about the available settings in this configuration file, please see the manpage ({{ic|man cgitrc}).
+For detailed documentation about the available settings in this configuration file, please see the manpage (`man cgitrc`).
 
 ### Syntax highlighting
 

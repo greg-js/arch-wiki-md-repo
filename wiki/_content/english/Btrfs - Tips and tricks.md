@@ -186,7 +186,7 @@ In order to boot into a subvolume the `rootflags=subvol=` option has to be used 
 
 #### GRUB
 
-You can manually create a [Grub#GNU/Linux menu entry](/index.php/Grub#GNU.2FLinux_menu_entry "Grub") with the `rootflags=subvol=` argument. Alternatively, you can automatically populate your GRUB menu with btrfs snapshots when regenerating the GRUB configuration file by using [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/).
+You can manually create a [GRUB#GNU/Linux menu entry](/index.php/GRUB#GNU.2FLinux_menu_entry "GRUB") with the `rootflags=subvol=` argument. Alternatively, you can automatically populate your GRUB menu with btrfs snapshots when regenerating the GRUB configuration file by using [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/).
 
 ## Corruption Recovery
 

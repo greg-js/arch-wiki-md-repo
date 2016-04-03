@@ -56,7 +56,7 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 
 ## 安装
 
-安装 Bumblebee 之前，检查你的 BIOS 并尽可能激活 Optimus (老式电脑称之为"可切换显卡"，BISO有可能没有提供此项设置)，并且为次要显卡安装 [Intel 驱动](/index.php/Intel_Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel Graphics (简体中文)")。
+安装 Bumblebee 之前，检查你的 BIOS 并尽可能激活 Optimus (老式电脑称之为"可切换显卡"，BISO有可能没有提供此项设置)，并且为次要显卡安装 [Intel 驱动](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)")。
 
 **提示:** 不要安装下列任何软件包，请跳至后文以寻求帮助。
 
@@ -97,7 +97,7 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 
 并 [启用](/index.php/Enable "Enable") `bumblebeed.service`.重启系统并使用 `[optirun](#Usage)` 开启 Optimus NVIDIA 渲染。
 
-**提示:** 如果你想改善Bumblebee性能的话，请跳至 [speed optimization](/index.php/Bumblebee#Optimizing_speed "Bumblebee").
+**提示:** 如果你想改善Bumblebee性能的话，请跳至[speed optimization](/index.php/Bumblebee#Optimizing_speed "Bumblebee").
 
 ### 为 Intel/Nouveau 安装 Bumblebee
 
@@ -244,7 +244,7 @@ $ primusrun glxgears
 
 ```
 
-**提示:** 如果你想禁用 `VSYNC`参见 [Bumblebee#Primusrun_mouse_delay.2Fdisable_VSYNC](/index.php/Bumblebee#Primusrun_mouse_delay.2Fdisable_VSYNC "Bumblebee"). 这也能降低输入延迟并稍微提升性能。
+**提示:** 如果你想禁用 `VSYNC`参见 [Bumblebee#Primusrun mouse delay/disable VSYNC](/index.php/Bumblebee#Primusrun_mouse_delay.2Fdisable_VSYNC "Bumblebee"). 这也能降低输入延迟并稍微提升性能。
 
 ### 电源管理
 
@@ -698,7 +698,7 @@ $ optirun nvidia-settings -c :8
 
 `X Server XVideo Settings -> Sync to VBlank` 以及 `OpenGL Settings -> Sync to VBlank` 应该都是已经启用状态。 Intel 显卡通常有比较少的撕裂，所以应该作为视频回放设备。特别是使用 VA-API 编码视频的时候（比如：`mplayer-vaapi` 以及 `-vsync` 参数）。
 
-参考[Intel](/index.php/Intel_Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.92.AD.E6.94.BE.E8.A7.86.E9.A2.91.E6.97.B6.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82 "Intel Graphics (简体中文)")了解如何修复 Intel 显卡的视频撕裂。
+参考[Intel](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.92.AD.E6.94.BE.E8.A7.86.E9.A2.91.E6.97.B6.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82 "Intel graphics (简体中文)")了解如何修复 Intel 显卡的视频撕裂。
 
 如果仍然无效，尝试从桌面环境禁用 compositing。同时可尝试禁用 triple buffering.
 

@@ -1,8 +1,8 @@
-**Note:** *xmodmap* settings are reset by *setxkbmap*, which not only alters the alphanumeric keys to the values given in the map, but also resets all other keys to the startup default. [[1]](http://wiki.linuxquestions.org/wiki/Configuring_keyboards)
-
 *xmodmap* is a utility for modifying keymaps and pointer button mappings in [Xorg](/index.php/Xorg "Xorg").
 
 *xmodmap* is not directly related to [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB), as it uses different (pre-XKB) ideas on how *keycodes* are processed within X. Generally, it is only recommended for the simplest tasks. See [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") for advanced layout configuration.
+
+**Note:** *xmodmap* settings are reset by *setxkbmap*, which not only alters the alphanumeric keys to the values given in the map, but also resets all other keys to the startup default. [[1]](http://wiki.linuxquestions.org/wiki/Configuring_keyboards)
 
 ## Contents
 

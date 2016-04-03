@@ -105,12 +105,12 @@ Here is a short overview of image formats commonly used for icons.
 
 <caption>Support for image formats for icons as specified by the [freedesktop.org standard](http://standards.freedesktop.org/icon-theme-spec/latest/ar01s02.html).</caption>
 | Extension | Full Name and/or Description | Graphics Type | Container Format | Supported |
-| .[png](https://en.wikipedia.org/wiki/Portable_Network_Graphics "wikipedia:Portable Network Graphics") | Portable Network Graphics | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | no | yes |
-| .[svg(z)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics "wikipedia:Scalable Vector Graphics") | Scalable Vector Graphics | [Vector](https://en.wikipedia.org/wiki/Vector_graphics "wikipedia:Vector graphics") | no | yes (optional) |
-| .[xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap") | X PixMap | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | no | yes (deprecated) |
-| .[gif](https://en.wikipedia.org/wiki/Graphics_Interchange_Format "wikipedia:Graphics Interchange Format") | Graphics Interchange Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | no | no |
-| .[ico](https://en.wikipedia.org/wiki/ICO_(icon_image_file_format) | MS Windows Icon Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | yes | no |
-| .[icns](https://en.wikipedia.org/wiki/Apple_Icon_Image "wikipedia:Apple Icon Image") | Apple Icon Image | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | yes | no |
+| .[png](https://en.wikipedia.org/wiki/Portable_Network_Graphics "wikipedia:Portable Network Graphics") | Portable Network Graphics | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | Yes |
+| .[svg(z)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics "wikipedia:Scalable Vector Graphics") | Scalable Vector Graphics | [Vector](https://en.wikipedia.org/wiki/Vector_graphics "wikipedia:Vector graphics") | No | Yes (optional) |
+| .[xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap") | X PixMap | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | Yes (deprecated) |
+| .[gif](https://en.wikipedia.org/wiki/Graphics_Interchange_Format "wikipedia:Graphics Interchange Format") | Graphics Interchange Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | No |
+| .[ico](https://en.wikipedia.org/wiki/ICO_(icon_image_file_format) | MS Windows Icon Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | Yes | No |
+| .[icns](https://en.wikipedia.org/wiki/Apple_Icon_Image "wikipedia:Apple Icon Image") | Apple Icon Image | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | Yes | No |
 
 ### Converting icons
 
@@ -183,7 +183,7 @@ Icons can be automatically downloaded from [openiconlibrary](http://openiconlibr
 
 ### List or search in *.desktop files
 
-The [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) script is listing available *.desktop files or searching in their content. It's main purpose is to get a quick overview in console of the available programs with their command lines and categories in *.desktop.
+The [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) script is listing available `*.desktop` files or searching in their content. Its main purpose is to get a quick overview in console of the available programs with their command lines and categories set in the `*.desktop` files.
 
 Examples
 
@@ -194,7 +194,7 @@ Examples
 
 ```
 
-Exactly same functionality as above but outputs text vertically including associated variable names for a more easy reading of the content.
+Exactly same functionality as above, but with vertical text output for readability and including associated variable names:
 
 ```
 # lsdesktopf --more
@@ -202,7 +202,9 @@ Exactly same functionality as above but outputs text vertically including associ
 
 ```
 
-For more options use `lsdesktopf --help`
+For more options use `lsdesktopf --help`.
+
+**Note:** This project is under active development. If you have any suggestions about improvements or new features please write in AUR - [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/).
 
 ### fbrokendesktop
 

@@ -1,4 +1,4 @@
-**Tip:** To część wielostronicowego artykułu Przewodnik Początkującego. **[Kliknij tutaj](/index.php/Beginners%27_Guide_(Polski) "Beginners' Guide (Polski)")** jeśli wolisz czytać przewodnik w całości.
+**Tip:** To część wielostronicowego artykułu Przewodnik Początkującego. **[Kliknij tutaj](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)")** jeśli wolisz czytać przewodnik w całości.
 
 ## Contents
 

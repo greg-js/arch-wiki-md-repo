@@ -37,7 +37,7 @@
 
 ## Installazione
 
-Per utilizzare il Bluetooth, [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [bluez](https://www.archlinux.org/packages/?name=bluez), disponibile nei [Repository Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). Una volta che il pacchetto è stato installato, i [demoni](/index.php/Daemon_(Italiano) "Daemon (Italiano)") `dbus` ed `bluetooth` devono essere, **nell'ordine** avviati.
+Per utilizzare il Bluetooth, [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [bluez](https://www.archlinux.org/packages/?name=bluez), disponibile nei [Repository Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"). Una volta che il pacchetto è stato installato, i [demoni](/index.php/Daemon_(Italiano) "Daemon (Italiano)") `dbus` ed `bluetooth` devono essere, **nell'ordine** avviati.
 
 **Nota:** E' importante che `dbus` sia avviato **prima** di `bluetooth`.
 
@@ -64,7 +64,7 @@ I seguenti pacchetti includono delle interfacce grafiche per la personalizzazion
 
 ### Blueman
 
-[Blueman](http://blueman-project.org) è un manager completo e dotato di tutte le funzionalità per il Bluetooth, scritto in [GTK+](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)") e, come tale, raccomandabile per [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") o [Xfce](/index.php/Xfce_(Italiano) "Xfce (Italiano)"). E' possibile installare Blueman con il pacchetto [blueman](https://www.archlinux.org/packages/?name=blueman), disponibile nei [Repository Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Blueman](http://blueman-project.org) è un manager completo e dotato di tutte le funzionalità per il Bluetooth, scritto in [GTK+](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)") e, come tale, raccomandabile per [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") o [Xfce](/index.php/Xfce_(Italiano) "Xfce (Italiano)"). E' possibile installare Blueman con il pacchetto [blueman](https://www.archlinux.org/packages/?name=blueman), disponibile nei [Repository Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Assicurarsi che il demone `bluetooth` sia avviato come descritto sopra (aggiunto in rc.conf dopo dbus) ed avviare `blueman-applet`. Per avviare l'applet al login aggiungere `blueman-applet` in *System -> Preferences -> Startup Applications* (GNOME) o *Xfce Menu -> Settings -> Session and Startup* (Xfce).
 

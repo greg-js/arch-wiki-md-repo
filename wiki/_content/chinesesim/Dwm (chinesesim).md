@@ -138,7 +138,7 @@ $ makepkg -efi --skipinteg
 
 ## 启动dwm
 
-可以用`startx`或者[SLIM](/index.php/SLIM "SLIM")登陆管理器来启动dwm，只需要在`~/.xinitrc`添加:
+可以用`startx`或者[SLiM](/index.php/SLiM "SLiM")登陆管理器来启动dwm，只需要在`~/.xinitrc`添加:
 
 ```
 exec dwm

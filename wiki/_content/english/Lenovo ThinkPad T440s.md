@@ -10,6 +10,7 @@ This article covers the installation and configuration of Arch Linux on a Lenovo
     *   [2.1 Screen resolution](#Screen_resolution)
     *   [2.2 Backlight](#Backlight)
     *   [2.3 Touchpad](#Touchpad)
+*   [3 Updating the BIOS](#Updating_the_BIOS)
 
 ## Installation
 
@@ -54,3 +55,9 @@ See [Backlight](/index.php/Backlight "Backlight").
 ### Touchpad
 
 *   [Good configuration for touchpad](http://rscircus.org/post/72978821261/t440s-clickpad-fix-which-feels-good)
+
+## Updating the BIOS
+
+**Warning:** Flashing motherboard BIOS is a dangerous activity that can render your motherboard inoperable!
+
+See [Flashing BIOS from_Linux#Bootable_optical disk emulation](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux") and [Updating the BIOS on my ThinkPad T440](http://www.lenzg.net/archives/358-Updating-the-BIOS-on-my-ThinkPad-T440-without-Windows-or-a-DVD-Drive.html)

@@ -1182,7 +1182,7 @@ Server = http://dl.dropbox.com/u/298301785/arch/linux-ck-pax/$arch
 *   **Upstream page**: [https://kalterfive.github.io/linux-kalterfx/about.html](https://kalterfive.github.io/linux-kalterfx/about.html)
 *   **Description**: A custom kernel with applied pf patchset and compiled fs/reiser4.
 *   **Key-ID**: A0C04F15
-*   **Keyfile**: [https://kalterfive.github.io/linux-kalterfx/linux-kalterfx.asc](https://kalterfive.github.io/linux-kalterfx/linux-kalterfx.asc)
+*   **Keyfile**: [https://keybase.io/kalterfive/key.asc](https://keybase.io/kalterfive/key.asc)
 
 ```
 [linux-kalterfx]

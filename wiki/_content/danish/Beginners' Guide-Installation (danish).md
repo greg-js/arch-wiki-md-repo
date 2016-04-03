@@ -1,4 +1,4 @@
-**Bemærk:** Dette er en del af en flersides artikel til Begynderguiden. **[Klik her](/index.php/Beginners%27_Guide_(Dansk) "Beginners' Guide (Dansk)")** hvis du hellere vil læse guiden i sin helhed.
+**Bemærk:** Dette er en del af en flersides artikel til Begynderguiden. **[Klik her](/index.php/Beginners%27_guide_(Dansk) "Beginners' guide (Dansk)")** hvis du hellere vil læse guiden i sin helhed.
 
 ## Contents
 

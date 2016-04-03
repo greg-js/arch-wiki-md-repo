@@ -330,7 +330,7 @@ Start "Autostarted Applications"
 
 *   σιγουρευτείτε ότι η environmental variable $XLIB_SKIP_ARGB_VISUALS δεν έχει ορισθεί
 
-Δείτε [Compiz_Troubleshooting](/index.php/Compiz_Troubleshooting "Compiz Troubleshooting")
+Δείτε [Compiz Troubleshooting](/index.php/Compiz_Troubleshooting "Compiz Troubleshooting")
 
 # Πρόσθετες πληροφορίες
 

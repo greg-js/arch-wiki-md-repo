@@ -29,7 +29,7 @@ Bash 有四个可以定制的提示符:
 
 *   `PS1` 是在每个命令前都显示的主要提示符，大部分用户都是定制这个值。
 *   `PS2` 命令需要输入时的第二提示符(比如多行命令).
-*   `PS3` 不常用，Bash　的内置 `select` 显示交互菜单时使用. 和其它提示符不一样，它不扩展 [Bash escape sequences](#Bash_escape_sequences). 通常在使用包含 `select` 的脚本时会需要定制此提示符。
+*   `PS3` 不常用，Bash　的内置 `select` 显示交互菜单时使用. 和其它提示符不一样，它不扩展 [Bash escape sequences](#ANSI_escape_sequences). 通常在使用包含 `select` 的脚本时会需要定制此提示符。
 *   `PS4` 也不常用，在调试　bash 脚本时显示缩进级别。第一个字符的重复次数表示缩进级别。
 
 所有提示符都可以通过设置变量到需要的数值进行定义(通常在 `~/.bashrc`), 例如：
@@ -297,7 +297,7 @@ $ tput cup $((LINES - 11)) $((COLUMNS - 6))
 
 ### Customizing the terminal window title
 
-The terminal window title can be customized in much the same way as the prompt: by printing escape sequences in the shell. Thus it is common for users to include window title customizations in their prompt. Although this is technically a feature of xterm, many modern terminals support it. The escape sequence to use is `**ESC**]2;*new title***BEL**` where `**ESC**` and `**BEL**` are the escape and bell characters. Using [Bash escape sequences](#Bash_escape_sequences), changing the title in your prompt looks like
+The terminal window title can be customized in much the same way as the prompt: by printing escape sequences in the shell. Thus it is common for users to include window title customizations in their prompt. Although this is technically a feature of xterm, many modern terminals support it. The escape sequence to use is `**ESC**]2;*new title***BEL**` where `**ESC**` and `**BEL**` are the escape and bell characters. Using [Bash escape sequences](#ANSI_escape_sequences), changing the title in your prompt looks like
 
 ```
 export PS1='\[\e]2;*new title*\a\]prompt > '

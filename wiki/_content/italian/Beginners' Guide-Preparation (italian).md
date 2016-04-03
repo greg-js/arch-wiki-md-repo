@@ -2,7 +2,7 @@
 
 Questa pagina servirà da guida nel processo di installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando gli [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Prima di procedere, si consiglia di leggere velocemente le [FAQ](/index.php/FAQ_(Italiano) "FAQ (Italiano)").
 
-Il [wiki di Arch](/index.php/Main_Page_(Italiano) "Main Page (Italiano)"), mantenuto dalla comunità, è la risorsa primaria che deve essere consultato in caso di problemi. Sono disponibili anche dei canali [IRC Channel](/index.php/IRC_Channel "IRC Channel") (per la comunità italiana: [irc://irc.azzurra.org/archlinux](irc://irc.azzurra.org/archlinux) o [irc://irc.freenode.net/#archlinux.it](irc://irc.freenode.net/#archlinux.it), mentre per il supporto internazionale: [irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/), che sono eccellenti risorse, nel caso la risposta non possa essere trovata altrove. Seguendo il [metodo Arch](/index.php/The_Arch_Way_(Italiano) "The Arch Way (Italiano)"), si consiglia di digitare `man *comando*` per leggere la pagina `man` pagina di un qualsiasi comando che non si conosce.
+Il [wiki di Arch](/index.php/Main_page_(Italiano) "Main page (Italiano)"), mantenuto dalla comunità, è la risorsa primaria che deve essere consultato in caso di problemi. Sono disponibili anche dei canali [IRC channel](/index.php/IRC_channel "IRC channel") (per la comunità italiana: [irc://irc.azzurra.org/archlinux](irc://irc.azzurra.org/archlinux) o [irc://irc.freenode.net/#archlinux.it](irc://irc.freenode.net/#archlinux.it), mentre per il supporto internazionale: [irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/), che sono eccellenti risorse, nel caso la risposta non possa essere trovata altrove. Seguendo il [metodo Arch](/index.php/The_Arch_Way_(Italiano) "The Arch Way (Italiano)"), si consiglia di digitare `man *comando*` per leggere la pagina `man` pagina di un qualsiasi comando che non si conosce.
 
 ## Contents
 
@@ -18,7 +18,7 @@ Il [wiki di Arch](/index.php/Main_Page_(Italiano) "Main Page (Italiano)"), mante
 
 ## Preparazione
 
-**Nota:** Se si desidera installare da una distribuzione GNU/Linux esistente, si legga [questo articolo](/index.php/Install_from_Existing_Linux_(Italiano) "Install from Existing Linux (Italiano)"). Ciò può essere utile soprattutto se si prevede di installare Arch Linux tramite [VNC](/index.php/VNC "VNC") o [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") remoto. Gli utenti che cercano di eseguire l'installazione di Arch Linux da remoto tramite un connessione [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)"), dovrebbero leggere [Installare tramite SSH](/index.php/Install_from_SSH_(Italiano) "Install from SSH (Italiano)") per ulteriori suggerimenti.
+**Nota:** Se si desidera installare da una distribuzione GNU/Linux esistente, si legga [questo articolo](/index.php/Install_from_existing_Linux_(Italiano) "Install from existing Linux (Italiano)"). Ciò può essere utile soprattutto se si prevede di installare Arch Linux tramite [VNC](/index.php/VNC "VNC") o [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") remoto. Gli utenti che cercano di eseguire l'installazione di Arch Linux da remoto tramite un connessione [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)"), dovrebbero leggere [Installare tramite SSH](/index.php/Install_from_SSH_(Italiano) "Install from SSH (Italiano)") per ulteriori suggerimenti.
 
 ### Requisiti di Sistema
 
@@ -32,7 +32,7 @@ L'ultima versione del supporto di installazione può essere ottenuta dalla pagin
 
 **Nota:** La verifica gpg2 fallirà se non avete scaricato la corrispondente chiave pubblica per l'ID della chiave RSA. Vedere [http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/](http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/) per i dettagli.
 
-*   Masterizzare l'immagine ISO su un CD o DVD tramite il vostro software preferito. Su Arch questo può essere fatto seguendo [Optical_Disc_Drive_(Italiano)#Masterizzare](/index.php/Optical_Disc_Drive_(Italiano)#Masterizzare "Optical Disc Drive (Italiano)")
+*   Masterizzare l'immagine ISO su un CD o DVD tramite il vostro software preferito. Su Arch questo può essere fatto seguendo [Optical disc drive (Italiano)#Masterizzare](/index.php/Optical_disc_drive_(Italiano)#Masterizzare "Optical disc drive (Italiano)")
 
 **Nota:** La qualità delle unità ottiche e degli stessi dischi può variare. In generale, per masterizzazioni affidabili è raccomandata una velocità bassa. Se si verifica un comportamento imprevisto del CD, provare a masterizzarne un altro usando la velocità minima.
 
@@ -40,11 +40,11 @@ L'ultima versione del supporto di installazione può essere ottenuta dalla pagin
 
 #### Installazione tramite Rete
 
-Invece di scrivere i supporti di avvio di un'unità ottica o USB, è possibile, in alternativa, avviare un'immagine ISO in rete. Questo funziona bene quando si dispone già di un server configurato. Si prega di consultare l'articolo [PXE](/index.php/PXE "PXE") per ulteriori informazioni e quindi continuare l'avvio di [avviare il supporto di installazione di Arch Linux](#Avviare_il_supporto_di_installazione_di_Arch_Linux).
+Invece di scrivere i supporti di avvio di un'unità ottica o USB, è possibile, in alternativa, avviare un'immagine ISO in rete. Questo funziona bene quando si dispone già di un server configurato. Si prega di consultare l'articolo [PXE](/index.php/PXE "PXE") per ulteriori informazioni e quindi continuare l'avvio di [avviare il supporto di installazione di Arch Linux](#Avviare_il_supporto_di_installazione).
 
 #### Installazione da un sistema Linux esistente
 
-In alternativa, è possibile installare da un sistema Linux già in esecuzione. Vedere [Install from Existing Linux (Italiano)](/index.php/Install_from_Existing_Linux_(Italiano) "Install from Existing Linux (Italiano)").
+In alternativa, è possibile installare da un sistema Linux già in esecuzione. Vedere [Install from existing Linux (Italiano)](/index.php/Install_from_existing_Linux_(Italiano) "Install from existing Linux (Italiano)").
 
 #### Installazione su Macchina Virtuale
 
@@ -57,7 +57,7 @@ La procedura esatta per la preparazione di una macchina virtuale dipende dal sof
 1.  Creare l'immagine disco virtuale che ospiterà il sistema operativo.
 2.  Configurare correttamente i parametri della macchina virtuale.
 3.  Avviare l'Immagine ISO scaricata con un drive CD virtuale.
-4.  Continuare con [Avviare il supporto di installazione di Arch Linux](#Avviare_il_supporto_di_installazione_di_Arch_Linux).
+4.  Continuare con [Avviare il supporto di installazione di Arch Linux](#Avviare_il_supporto_di_installazione).
 
 Gli articoli seguenti possono risultare utili:
 
@@ -88,7 +88,7 @@ Se efivar elenca le variabili UEFI correttamente, allora il boot in modalità UE
 
 #### Risoluzione dei problemi di avvio
 
-*   Se siete in possesso di una scheda grafica Intel e lo schermo rimane vuoto durante il processo di boot, il problema è dovuto probabilmente all'impostazione in modalità [Kernel Mode Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting"). Una possibile soluzione è quella di riavviare e premere il tasto `e` sulla voce che si sta tentando di eseguire all'avvio ( i686 o x86_64 ). Inserire alla fine della stringa delle opzioni del kernel `nomodeset` e premere `Invio`. In alternativa aggiungere `video=SVIDEO-1:d`, che dovrebbe permettere di poter funzionare senza disattivare il kernel mode setting (KMS). Si può anche provare `i915.modeset=0`. Consultare l'articolo [Intel](/index.php/Intel_(Italiano) "Intel (Italiano)") per ulteriori informazioni.
+*   Se siete in possesso di una scheda grafica Intel e lo schermo rimane vuoto durante il processo di boot, il problema è dovuto probabilmente all'impostazione in modalità [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Una possibile soluzione è quella di riavviare e premere il tasto `e` sulla voce che si sta tentando di eseguire all'avvio ( i686 o x86_64 ). Inserire alla fine della stringa delle opzioni del kernel `nomodeset` e premere `Invio`. In alternativa aggiungere `video=SVIDEO-1:d`, che dovrebbe permettere di poter funzionare senza disattivare il kernel mode setting (KMS). Si può anche provare `i915.modeset=0`. Consultare l'articolo [Intel](/index.php/Intel_(Italiano) "Intel (Italiano)") per ulteriori informazioni.
 
 *   Se lo schermo non si spegne ed il processo di avvio si blocca durante il tentativo di caricare il kernel, riavviare e premere `Tab` sulla voce che si sta tentando di eseguire all'avvio, ed inserire alla fine della stringa delle opzioni del kernel `acpi=off` e premere `Invio`.
 

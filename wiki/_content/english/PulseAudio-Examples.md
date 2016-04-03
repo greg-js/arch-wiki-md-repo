@@ -61,14 +61,14 @@ Or
 Make ALSA default
 
 ```
-set-default-source set-default-source alsa_output.pci-0000_04_01.0.analog-stereo.monitor
+set-default-source alsa_output.pci-0000_04_01.0.analog-stereo.monitor
 
 ```
 
 For temporary use
 
 ```
-$ pacmd "set-default-source set-default-source alsa_output.pci-0000_04_01.0.analog-stereo.monitor"
+$ pacmd "set-default-source alsa_output.pci-0000_04_01.0.analog-stereo.monitor"
 
 ```
 

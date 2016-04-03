@@ -1,26 +1,41 @@
-This is a guide on how to do PCI VGA Passthrough on QEMU. Since kernel 3.9 and a change in QEMU, it is now possible to passthrough a graphics card, offering the VM native graphics performance which is useful when doing graphic-intensive tasks such as gaming. To do this, you need two graphics cards, one for the host and one for the VM; it is possible to use integrated graphics for the host. Your processor and motherboard also need to support AMD-VI/VT-D.
+Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passthrough a graphics card, offering the VM native graphics performance which is useful when doing graphic-intensive tasks such as gaming. Provided you have a desktop computer with a spare gpu you can dedicate ot the host (be it an integrated GPU or an old OEM card, the brands don't even need to match) and that your hardware supports it (see below), it's possible to have a VM of any OS with its own dedicated GPU and near-native performance.
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Setting up libvirt](#Setting_up_libvirt)
-*   [3 Enabling IOMMU](#Enabling_IOMMU)
-*   [4 User-level access to devices](#User-level_access_to_devices)
-*   [5 Isolating the GPU](#Isolating_the_GPU)
-    *   [5.1 vfio-pci](#vfio-pci)
-    *   [5.2 pci-stub](#pci-stub)
-    *   [5.3 Blacklisting modules](#Blacklisting_modules)
-    *   [5.4 Binding to VFIO](#Binding_to_VFIO)
-*   [6 IOMMU groups](#IOMMU_groups)
-    *   [6.1 ACS Override Patch](#ACS_Override_Patch)
-*   [7 QEMU permissions](#QEMU_permissions)
-*   [8 QEMU commands](#QEMU_commands)
-*   [9 Create and configure VM for OVMF](#Create_and_configure_VM_for_OVMF)
-*   [10 Complete example for QEMU (CLI-based) without libvirtd](#Complete_example_for_QEMU_.28CLI-based.29_without_libvirtd)
-*   [11 Control VM via Synergy](#Control_VM_via_Synergy)
-*   [12 Operating system](#Operating_system)
-*   [13 Make Nvidia's GeForce Experience work](#Make_Nvidia.27s_GeForce_Experience_work)
-*   [14 See also](#See_also)
+*   [1 Prerequisites](#Prerequisites)
+*   [2 Installation](#Installation)
+*   [3 Setting up libvirt](#Setting_up_libvirt)
+*   [4 Enabling IOMMU](#Enabling_IOMMU)
+*   [5 User-level access to devices](#User-level_access_to_devices)
+*   [6 Isolating the GPU](#Isolating_the_GPU)
+    *   [6.1 vfio-pci](#vfio-pci)
+    *   [6.2 pci-stub](#pci-stub)
+    *   [6.3 Blacklisting modules](#Blacklisting_modules)
+    *   [6.4 Binding to VFIO](#Binding_to_VFIO)
+*   [7 IOMMU groups](#IOMMU_groups)
+    *   [7.1 ACS Override Patch](#ACS_Override_Patch)
+*   [8 QEMU permissions](#QEMU_permissions)
+*   [9 QEMU commands](#QEMU_commands)
+*   [10 Create and configure VM for OVMF](#Create_and_configure_VM_for_OVMF)
+*   [11 Complete example for QEMU (CLI-based) without libvirtd](#Complete_example_for_QEMU_.28CLI-based.29_without_libvirtd)
+*   [12 Control VM via Synergy](#Control_VM_via_Synergy)
+*   [13 Operating system](#Operating_system)
+*   [14 Make Nvidia's GeForce Experience work](#Make_Nvidia.27s_GeForce_Experience_work)
+*   [15 See also](#See_also)
+
+## Prerequisites
+
+A VGA Passthrough relies on a number of technologies that aren't ubiquitous as of today and might not be available on your hardware. You will not be able to do this on your machine unless the following requirements are met :
+
+*   Your CPU must support hardware virtualization (for kvm) and IOMMU (for the passthrough itself)
+    *   [List of compatible Intel CPUs (Intel VT-x and Intel VT-d)](http://ark.intel.com/search/advanced?s=t&VTX=true&VTD=true)
+    *   [List of compatible AMD CPUs (AMD-V and AMD-Vi)](http://support.amd.com/en-us/kb-articles/Pages/GPU120AMDRVICPUsHyperVWin8.aspx)
+*   Your motherboard must also support IOMMU
+    *   Both the chipset and the BIOS must support it. It's not always easy to tell at a glance whether or not this is the case, but there's a [fairly comprehensive list on the matter on the Xen wiki](http://wiki.xen.org/wiki/VTdHowTo) as well as [another one on Wikipedia](https://wiki.archlinux.org/index.php/List_of_IOMMU-supporting_hardware "en:List of IOMMU-supporting hardware").
+*   Your guest GPU ROM must support UEFI
+    *   If you can find [any ROM in this list](https://www.techpowerup.com/vgabios/) that applies to your specific GPU and is said to support UEFI, you're generally in the clear. If not, you might want to try anyway if you have a recent GPU.
+
+You'll probably want to have a spare monitor (the GPU won't display anything if there's no screen plugged it and using a VNC or Spice connection won't help your performance), as well as a mouse and a keyboard you can pass to your VM. If anything goes wrong, you'll at least have a way to control your host machine this way.
 
 ## Installation
 

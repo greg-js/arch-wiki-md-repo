@@ -1,4 +1,4 @@
-Un [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_type) e [gestori di finestre](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)"). Solitamente è possibile, entro certi limiti, personalizzare il loro aspetto.
+Un [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_type) e [gestori di finestre](/index.php/Window_manager_(Italiano) "Window manager (Italiano)"). Solitamente è possibile, entro certi limiti, personalizzare il loro aspetto.
 
 ## Contents
 

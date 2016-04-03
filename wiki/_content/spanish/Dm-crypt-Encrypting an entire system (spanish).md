@@ -181,9 +181,9 @@ Compruebe que el mapeado funciona según lo previsto:
 
 ```
 
-Si ha creado particiones separadas (por ejemplo, `/home`), estos pasos tienen que ser adaptados y repetidos para todas ellas, a *excepción* de `/boot`. Véase [Dm-crypt/Encrypting_a_non-root_file_system#Automated_unlocking_and_mounting](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Automated_unlocking_and_mounting "Dm-crypt/Encrypting a non-root file system") para saber cómo manejar particiones adicionales en el arranque.
+Si ha creado particiones separadas (por ejemplo, `/home`), estos pasos tienen que ser adaptados y repetidos para todas ellas, a *excepción* de `/boot`. Véase [dm-crypt/Encrypting a non-root file system#Automated unlocking and mounting](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Automated_unlocking_and_mounting "Dm-crypt/Encrypting a non-root file system") para saber cómo manejar particiones adicionales en el arranque.
 
-Tenga en cuenta que cada dispositivo de bloque requiere su propia contraseña. Esto puede ser un inconveniente, porque da lugar a una frase de acceso separada para cada uno, que hay que introducir durante el inicio. Una alternativa es utilizar un archivo de claves almacenada en la partición del sistema para desbloquear la partición separada mediante `crypttab`. Vease [Dm-crypt/Device encryption#Using LUKS to Format Partitions_with a Keyfile](/index.php/Dm-crypt/Device_encryption#Using_LUKS_to_Format_Partitions_with_a_Keyfile "Dm-crypt/Device encryption") para obtener instrucciones.
+Tenga en cuenta que cada dispositivo de bloque requiere su propia contraseña. Esto puede ser un inconveniente, porque da lugar a una frase de acceso separada para cada uno, que hay que introducir durante el inicio. Una alternativa es utilizar un archivo de claves almacenada en la partición del sistema para desbloquear la partición separada mediante `crypttab`. Vease [Dm-crypt/Device encryption#Using LUKS to Format Partitions with a Keyfile](/index.php/Dm-crypt/Device_encryption#Using_LUKS_to_Format_Partitions_with_a_Keyfile "Dm-crypt/Device encryption") para obtener instrucciones.
 
 ### Preparar la partición de arranque
 
@@ -399,7 +399,7 @@ mount /dev/mapper/root /mnt
 
 ```
 
-Más información acerca de las opciones de cifrado se puede encontrar en [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Tenga en cuenta que `/home` será cifrada en [#Cifrar el volumen lógico /home](#Cifrar_el_volumen_l.C3.B3gico_.2Fhome). Además, observe que si alguna vez tiene que acceder a la raíz cifrada desde la ISO de Arch, la anterior acción `open` le permitirá a continuación [mostrar los volúmenes de LVM](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
+Más información acerca de las opciones de cifrado se puede encontrar en [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Tenga en cuenta que `/home` será cifrada en [#Cifrar el volúmen lógico /home](#Cifrar_el_vol.C3.BAmen_l.C3.B3gico_.2Fhome). Además, observe que si alguna vez tiene que acceder a la raíz cifrada desde la ISO de Arch, la anterior acción `open` le permitirá a continuación [mostrar los volúmenes de LVM](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
 
 ### Preparar la partición de arranque
 
@@ -521,7 +521,7 @@ Este escenario también utiliza un archivo de clave, suponiendo que se almacena 
 
 Es de vital importancia que el dispositivo mapeado está lleno de datos. En particular, esto se aplica al caso que nos afecta.
 
-Véase [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") y [Dm-crypt/Drive preparation#dm-crypt_specific_methods](/index.php/Dm-crypt/Drive_preparation#dm-crypt_specific_methods "Dm-crypt/Drive preparation")
+Véase [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") y [Dm-crypt/Drive preparation#dm-crypt specific methods](/index.php/Dm-crypt/Drive_preparation#dm-crypt_specific_methods "Dm-crypt/Drive preparation")
 
 ### Preparar las particiones que no son boot
 
@@ -540,7 +540,7 @@ Ahora podemos comprobar que la entrada del mapeado se ha hecho para `/dev/mapper
 
 ```
 
-A continuación, configure los volúmenes lógicos de [LVM](/index.php/LVM "LVM") sobre el dispositivo mapeado, véase [Lvm#Installing_Arch_Linux_on_LVM](/index.php/Lvm#Installing_Arch_Linux_on_LVM "Lvm") para más detalles:
+A continuación, configure los volúmenes lógicos de [LVM](/index.php/LVM "LVM") sobre el dispositivo mapeado, véase [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") para más detalles:
 
 ```
 # pvcreate /dev/mapper/enc

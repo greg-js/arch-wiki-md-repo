@@ -34,7 +34,7 @@ freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
  ftpd | ftpd.service | Demonio de ftp Inetutils. |
 | [GDM](/index.php/GDM "GDM") | gdm | gdm.service | Gestor de pantalla de Gnome. |
 | [Git](/index.php/Git "Git") | git-daemon | git-daemon.socket | Demonio de GIT. |
-| [gpm](/index.php/Console_Mouse_Support "Console Mouse Support") | gpm | gpm.service | Soporte para el ratón de consola. |
+| [gpm](/index.php/Console_mouse_support "Console mouse support") | gpm | gpm.service | Soporte para el ratón de consola. |
 | [hddtemp](/index.php/Hddtemp "Hddtemp") | hddtemp | hddtemp.service | Demonio para monitorizar la temperatura del disco duro. |
  healthd | healthd.service | Un demonio que se puede utilizar para que le avise cuando detecte el mal estado de un hardware (parte de lm_sensors). |
 | [apache](/index.php/Apache "Apache") | httpd | httpd.service | Servidor HTTP Apache (Servidor Web). |
@@ -90,9 +90,9 @@ rfkill-unblock@.service | (Un)blocks radio devices. |
 | [samba](/index.php/Samba "Samba") | samba | smbd.service
 nmbd.service
 winbindd.service | Servicios de archivos e impresión para los clientes de Microsoft Windows. |
-| [Sane](/index.php/Sane "Sane") | saned | saned@.service | Demonio de red de SANE. |
+| [SANE](/index.php/SANE "SANE") | saned | saned@.service | Demonio de red de SANE. |
  saslauthd | saslauthd.service | Demonio de autenticación SASL. |
-| [Lm sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Demonio para el registro de la información de los sensores. |
+| [lm_sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Demonio para el registro de la información de los sensores. |
 | sensors | lm_sensors.service | Inicialización de los sensores que monitorizan el hardware (cargados necesariamente por lo módulos del kernel). |
 | [SLiM](/index.php/SLiM "SLiM") | slim | slim.service | Sencillo gestor de inicio de sesión. |
 | [SMART](/index.php/SMART "SMART") | smartd | smartd.service | Autoanálisis, análisis e información técnica (S.M.A.R.T) tras monitorizar el disco duro. |

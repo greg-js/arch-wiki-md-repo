@@ -97,7 +97,7 @@ Creating your swap files on a separate disk can also help quite a bit, especiall
 
 ### RAID
 
-If you have multiple disks available, you can set them up as a software [RAID](/index.php/RAID "RAID") for serious speed improvements. In a RAID 0 array there is no redundancy in case of drive failure, but for each additional disk you add to the array, the speed of the disk becomes that much faster.
+If you have multiple disks available, you can set them up as a software [RAID](/index.php/RAID "RAID") for serious speed improvements.
 
 ### Multiple hardware paths
 

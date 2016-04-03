@@ -103,7 +103,7 @@ Successivamente scegliere una cartella appropriata per la compilazione. Una cart
 
 ```
 
-oppure se si utilizza ABS ( [Arch Build System](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)") ):
+oppure se si utilizza ABS ([Arch Build System](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)") ):
 
 ```
 /var/abs/local
@@ -207,7 +207,7 @@ Gli utenti possono **condividere** i PKGBUILD usando l'interfaccia di AUR. L'Arc
 
 ### Aggiungere pacchetti
 
-**Attenzione:** Prima di sottomettere un pacchetto ci si aspetta che tu abbia familiarizzato con [Arch Packaging Standards (Italiano)](/index.php/Arch_Packaging_Standards_(Italiano) "Arch Packaging Standards (Italiano)").
+**Attenzione:** Prima di sottomettere un pacchetto ci si aspetta che tu abbia familiarizzato con [Arch packaging standards (Italiano)](/index.php/Arch_packaging_standards_(Italiano) "Arch packaging standards (Italiano)").
 
 Dopo aver effettuato l'accesso sul sito di AUR, un utente può [spedire](https://aur.archlinux.org/pkgsubmit.php) un archivio tar compresso con gzip (`.tar.gz`) di una directory contenente i file necessari alla compilazione del pacchetto. La directory all'interno dell'archivio deve contenere un `PKGBUILD`, eventuali file `.install`, le patch, eccetera (**assolutamente** nessun file compilato). Un esempio di come questa cartella dovrebbe essere può essere trovato all'interno di `/var/abs` nel caso in cui sia stato installato [ABS](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)").
 
@@ -233,13 +233,13 @@ Quando si invia un pacchetto, attenersi alle seguenti regole:
 
 *   Cercare il pacchetto nel [database ufficiale](https://www.archlinux.org/packages/). Se **una qualunque versione** è già presente, **non** inviare il pacchetto. Se il pacchetto ufficiale non è aggiornato, marcarlo con l'apposito link. Se il pacchetto ufficiale è danneggiato o privo di alcune funzionalità è raccomandato aprire un [bug report](https://bugs.archlinux.org/).
 *   Controllare **AUR** alla ricerca del pacchetto. Nel caso in cui sia già mantenuto da un utente, lo si può contattare lasciando un commento. Se il pacchetto è orfano allora può essere adottato ed aggiornato se necessario. Non creare pacchetti "doppioni".
-*   Verificare accuratamente che il file spedito sia quello giusto. Tutti gli utenti nello scrivere un PKGBUILD devono aver letto ed attenersi agli [standard di pacchettizazione di Arch](/index.php/Arch_Packaging_Standards_(Italiano) "Arch Packaging Standards (Italiano)"). Tutto questo è essenziale per il corretto funzionamento e per il successo di AUR. Ricordare che non si guadagnano né credito né rispetto dagli utenti facendo loro perdere tempo con pessimi PKGBUILD.
+*   Verificare accuratamente che il file spedito sia quello giusto. Tutti gli utenti nello scrivere un PKGBUILD devono aver letto ed attenersi agli [standard di pacchettizazione di Arch](/index.php/Arch_packaging_standards_(Italiano) "Arch packaging standards (Italiano)"). Tutto questo è essenziale per il corretto funzionamento e per il successo di AUR. Ricordare che non si guadagnano né credito né rispetto dagli utenti facendo loro perdere tempo con pessimi PKGBUILD.
 *   I pacchetti che contengono file compilati o scritti poco accuratamente possono essere cancellati senza preavviso.
 *   Se non si è sicuri riguardo al pacchetto (oppure al processo di compilazione o di spedizione), inviare il PKGBUILD sulla [Mailing List di AUR](https://mailman.archlinux.org/mailman/listinfo/) o postarlo nelle apposite [sezioni di AUR](https://bbs.archlinux.org/viewforum.php?id=4) dei forum per ottenere consigli, prima di inviare il pacchetto su AUR.
 *   Assicurarsi che il pacchetto abbia una utilità. Qualcun'altro vorrà usare questo pacchetto? Se un buon numero di utenti possono trovare utile il paccehtto, allora è appropriato per la spedizione.
 *   L'AUR e i repository ufficiali sono concepiti per pacchetti che installano generalmente software e contenuti correlati, compresi uno o più tra i seguenti: eseguibili; file di configurazione; dcumentazione online o offline per software specifici o per la distribuzione Arch Linux intera; file multimediali utilizzati direttamente dal software.
 *   Accumulare esperienza prima di spedire pacchetti. Compilare alcuni pacchetti per imparare il meccanismo ed allora spedirlo.
-*   Se si spedisce `pacchetto.tar.gz` con all'interno un file di nome `pacchetto` si otterrà un errore: "Could not change to directory `/home/aur/unsupported/pacchetto/pacchetto`". Per evitare questo errore rinominare il file chiamato `pacchetto` ad esempio in `pacchetto.rc` o simili. Quando sarà estratto nella cartella `pkg` sarà possibile rinominarlo nuovamente come `pacchetto`. Assicurarsi di leggere anche [Arch Packaging Standards (Italiano)#Invio di pacchetti ad AUR](/index.php/Arch_Packaging_Standards_(Italiano)#Invio_di_pacchetti_ad_AUR "Arch Packaging Standards (Italiano)").
+*   Se si spedisce `pacchetto.tar.gz` con all'interno un file di nome `pacchetto` si otterrà un errore: "Could not change to directory `/home/aur/unsupported/pacchetto/pacchetto`". Per evitare questo errore rinominare il file chiamato `pacchetto` ad esempio in `pacchetto.rc` o simili. Quando sarà estratto nella cartella `pkg` sarà possibile rinominarlo nuovamente come `pacchetto`. Assicurarsi di leggere anche [Arch packaging standards (Italiano)#Invio di pacchetti ad AUR](/index.php/Arch_packaging_standards_(Italiano)#Invio_di_pacchetti_ad_AUR "Arch packaging standards (Italiano)").
 
 #### Autenticazione
 
@@ -362,7 +362,7 @@ Di solito, sono richiesti almeno 10 voti per spostare qualcosa in *community*. C
 
 ### Come si fa un PKGBUILD?
 
-Guarda la voce [Creating Packages (Italiano)](/index.php/Creating_Packages_(Italiano) "Creating Packages (Italiano)"). Ricorda di guardare su AUR se c'è già il PKGBUILD che cerchi.
+Guarda la voce [Creating packages (Italiano)](/index.php/Creating_packages_(Italiano) "Creating packages (Italiano)"). Ricorda di guardare su AUR se c'è già il PKGBUILD che cerchi.
 
 ### Ho dato il comando "pacman -S foo"; non funziona, ma sono sicuro che si trova in community
 
@@ -424,7 +424,7 @@ User aur
 
 ### Inviare i pacchetti ad aur4.archlinux.org
 
-**Attenzione:** Prima di inviare un pacchetto è opportuno familiarizzare con l'[Arch Packaging Standards](/index.php/Arch_Packaging_Standards_(Italiano) "Arch Packaging Standards (Italiano)") e leggere tutti gli articoli in esso menzionati
+**Attenzione:** Prima di inviare un pacchetto è opportuno familiarizzare con l'[Arch Packaging Standards](/index.php/Arch_packaging_standards_(Italiano) "Arch packaging standards (Italiano)") e leggere tutti gli articoli in esso menzionati
 
 Per inviare un pacchetto, basta semplicemente clonare il repository Git con il nome corrispondente:
 

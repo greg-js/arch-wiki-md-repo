@@ -285,7 +285,7 @@ Then [restart](/index.php/Restart "Restart") `slapd.service`. If it was enabled 
 
 ## Next Steps
 
-You now have a basic LDAP installation. The next step is to design your directory. The design is heavily dependent on what you are using it for. If you are new to LDAP, consider starting with a directory design recommended by the specific client services that will use the directory (PAM, [Postfix](/index.php/Postfix "Postfix"), etc).
+You now have a basic LDAP installation. The next step is to design your directory. The design is heavily dependent on what you are using it for. If you are new to LDAP, consider starting with a directory design recommended by the specific client services that will use the directory ([PAM](/index.php/PAM "PAM"), [Postfix](/index.php/Postfix "Postfix"), etc).
 
 A directory for system authentication is the [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication") article.
 

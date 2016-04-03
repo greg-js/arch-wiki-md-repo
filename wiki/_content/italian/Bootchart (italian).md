@@ -22,7 +22,7 @@ Bootchart è un programma utilizzato per l'analisi dei processi d'avvio (ad esem
 
 # Installare bootchart
 
-[Installare](/index.php/Pacman "Pacman") [bootchart](https://www.archlinux.org/packages/?name=bootchart), pacchetto disponibile nel [repository ufficiale](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman "Pacman") [bootchart](https://www.archlinux.org/packages/?name=bootchart), pacchetto disponibile nel [repository ufficiale](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 # Eseguire Bootchart
 
@@ -136,7 +136,7 @@ bootchart-render non può generare un'immagine 'bootchart.png' e mostra il segue
 
 ```
 
-Probabilmente significa che bootchartd non è stato in grado di determinare quando il processo d'avvio è finito. Questo può succedere se si stanno usando gestori di accesso diversi da [GDM](/index.php/GDM "GDM") o [KDM](/index.php/KDM "KDM"), come [SLIM](/index.php/SLIM "SLIM") od altri. Occorre aprire lo script `/usr/bin/bootchartd` ed aggiungere quelle applicazioni alla variabile `exit_proc`, ad esempio:
+Probabilmente significa che bootchartd non è stato in grado di determinare quando il processo d'avvio è finito. Questo può succedere se si stanno usando gestori di accesso diversi da [GDM](/index.php/GDM "GDM") o [KDM](/index.php/KDM "KDM"), come [SLiM](/index.php/SLiM "SLiM") od altri. Occorre aprire lo script `/usr/bin/bootchartd` ed aggiungere quelle applicazioni alla variabile `exit_proc`, ad esempio:
 
 ```
 # The processes we have to wait for

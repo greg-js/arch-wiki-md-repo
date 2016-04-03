@@ -100,7 +100,7 @@ In order to launch VirtualBox virtual machines on your Arch Linux box, follow th
 
 ### Install the core packages
 
-[install](/index.php/Install "Install") the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package. [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) will also be installed as a required dependency. To compile the virtualbox modules provided by `virtualbox-host-dkms`, it will also be necessary to install the appropriate headers package(s) for your installed kernel(s)[[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html):
+[Install](/index.php/Install "Install") the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package. [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) will also be installed as a required dependency. To compile the virtualbox modules provided by `virtualbox-host-dkms`, it will also be necessary to install the appropriate headers package(s) for your installed kernel(s)[[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html):
 
 *   [linux](https://www.archlinux.org/packages/?name=linux) kernel: [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)
 *   [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel: [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)

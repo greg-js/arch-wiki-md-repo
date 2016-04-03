@@ -98,7 +98,7 @@ $ > w'
 
 ```
 
-**ملاحظة** `kpartx` هو جزء من [multipath-tools-git](https://aur.archlinux.org/packages/multipath-tools-git/) المُقدم من [AUR](/index.php/Arch_User_Repository "Arch User Repository"). يمكنك الرجوع الى[QEMU#Mounting_a_partition_inside_a_raw_disk_image](/index.php/QEMU#Mounting_a_partition_inside_a_raw_disk_image "QEMU") لمعرفة الطرق الاخرى لكي يتم وصل قطاع داخل صورة قرص وهمي , لكن كن حذراً , حيث لا يتم تنصيب GRUB2 بشكل صحيح الى صورة القرص إذا لم يتم إنشاء القرص القابل للإسترجاع باستخدام (`kpartx`).
+**ملاحظة** `kpartx` هو جزء من [multipath-tools-git](https://aur.archlinux.org/packages/multipath-tools-git/) المُقدم من [AUR](/index.php/Arch_User_Repository "Arch User Repository"). يمكنك الرجوع الى[QEMU#Mounting a partition inside a raw disk image](/index.php/QEMU#Mounting_a_partition_inside_a_raw_disk_image "QEMU") لمعرفة الطرق الاخرى لكي يتم وصل قطاع داخل صورة قرص وهمي , لكن كن حذراً , حيث لا يتم تنصيب GRUB2 بشكل صحيح الى صورة القرص إذا لم يتم إنشاء القرص القابل للإسترجاع باستخدام (`kpartx`).
 
 *   قم بإنشاء انظمة الأقراص في القطاعات التي قمت بإنشائها.
 
@@ -266,4 +266,4 @@ menuentry "Arch Linux" {
 
 *   يمكنك إنشاء عدة نسخ من صورة القرص الذي قُمت بإنشاء و تشغيل أكثر من آلة إفتراضية تعمل على Arch linux في آن واحد .
 
-*   See [Install from Existing Linux](/index.php/Install_from_Existing_Linux "Install from Existing Linux") for some more general tips about installing Arch Linux from an existing Linux installation that doesn't necessarily have to be Arch Linux.
+*   See [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux") for some more general tips about installing Arch Linux from an existing Linux installation that doesn't necessarily have to be Arch Linux.

@@ -42,7 +42,7 @@ Arch Linux, pacman, dokumentácia, a skripty sú chránené copyrightom ©2002-2
 
 ### O tomto sprievodcovi
 
-Komunitou spravovaná [Arch Wiki](/index.php/Main_Page_(Slovensk%C3%BD) "Main Page (Slovenský)") je vynikajúci zdroj informácií a mala by byť prvým miestom kde hľadať odpovede. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), a [[1]](https://bbs.archlinux.org/forums) sú taktiež dostupné ak riešenie problému nie je dostupné inde. Taktiež určite používajte `man` stránky pre akýkoľvek príkaz, ktorý dobre nepoznáte; tieto obvykle zobrazí príkaz `man *príkaz*`.
+Komunitou spravovaná [Arch Wiki](/index.php/Main_page_(Slovensk%C3%BD) "Main page (Slovenský)") je vynikajúci zdroj informácií a mala by byť prvým miestom kde hľadať odpovede. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), a [[1]](https://bbs.archlinux.org/forums) sú taktiež dostupné ak riešenie problému nie je dostupné inde. Taktiež určite používajte `man` stránky pre akýkoľvek príkaz, ktorý dobre nepoznáte; tieto obvykle zobrazí príkaz `man *príkaz*`.
 
 **Note:** Presné nasledovanie tohto sprievodcu je potrebné pre úspešnú inštaláciu Arch Linux-u, takže *prosím* prečítajte si ho poriadne. Je odporúčané kompletne prečítať celú sekciu <u>predtým</u> ako vykonáte obsiahnuté inštrukcie.
 

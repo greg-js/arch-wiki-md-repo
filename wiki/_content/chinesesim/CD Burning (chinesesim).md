@@ -235,7 +235,7 @@ chmod 777 /dev/cd*
 
 ### Gnomebaker
 
-Gnomebaker是一个[GNOME](/index.php/GNOME "GNOME")桌面环境下的光盘刻录解决方案。 **如其作者所述，Gnomebaker不再开发维护了。考虑改用 [Brasero](/index.php/%E5%85%89%E7%9B%98%E5%88%BB%E5%BD%95%E6%8A%80%E5%B7%A7#Brasero "光盘刻录技巧") 。**
+Gnomebaker是一个[GNOME](/index.php/GNOME "GNOME")桌面环境下的光盘刻录解决方案。 **如其作者所述，Gnomebaker不再开发维护了。考虑改用 [Brasero](#Brasero) 。**
 
 *   使用pacman来安装gnomebaker
 

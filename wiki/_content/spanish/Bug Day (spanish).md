@@ -19,7 +19,7 @@ El Bug Day se realiza cuando un desarrollador se aburre.
 
 Los bugs se hayan documentados en el [bug tracker](https://bugs.archlinux.org)
 
-La discusión sobre los bugs debe tener lugar en **#archlinux-bugs** en el [IRC](/index.php/IRC_Channel_(Espa%C3%B1ol) "IRC Channel (Español)"). Intentaremos que haya al menos un desarrollador activo durante el bug day.
+La discusión sobre los bugs debe tener lugar en **#archlinux-bugs** en el [IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)"). Intentaremos que haya al menos un desarrollador activo durante el bug day.
 
 ### ¿Quién?
 

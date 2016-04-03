@@ -126,7 +126,7 @@ prepend domain-name-servers 127.0.0.1;
 
 ### 使用NetworkManager
 
-[Networkmanager](/index.php/Networkmanager "Networkmanager") 可以靠自身配置文件的设置项启动 *dnsmasq* 。在 `NetworkManager.conf` 文件的 `[main]` 节段添加 `dns=dnsmasq` 配置语句，然后禁用由 [systemd](/index.php/Systemd "Systemd") 启动的 `dnsmasq.service`:
+[NetworkManager](/index.php/NetworkManager "NetworkManager") 可以靠自身配置文件的设置项启动 *dnsmasq* 。在 `NetworkManager.conf` 文件的 `[main]` 节段添加 `dns=dnsmasq` 配置语句，然后禁用由 [systemd](/index.php/Systemd "Systemd") 启动的 `dnsmasq.service`:
 
  `/etc/NetworkManager/NetworkManager.conf` 
 ```

@@ -30,7 +30,7 @@
 | [Archboot (Español)](/index.php/Archboot_(Espa%C3%B1ol) "Archboot (Español)") | Instalación | `2014-26` |
 | [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") | Gestión de paquetes | `2013-09` |
 | [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)") | Información/Arch | `2014-11` |
-| [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") | Información/Arch | `2014-04` |
+| [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") | Información/Arch | `2016-04` |
 | [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") | Repositorios | `2013-09` |
 | [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") | Proceso de arranque | `2013-09` |
 | [Archiso (Español)](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)") | Instalación | `2013-09` |
@@ -96,7 +96,7 @@
 | [List of games (Español)](/index.php/List_of_games_(Espa%C3%B1ol) "List of games (Español)") | Aplicaciones/juegos | `2013-10` | Página desgajada de [List of applications](/index.php/List_of_applications "List of applications") |
 | [Locale (Español)](/index.php/Locale_(Espa%C3%B1ol) "Locale (Español)") | Configuración del sistema/Idioma sistema | `2013-09` |
 | [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") | Sistema archivos/Particionado | `2015-06` |
-| [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") | Portada wiki | `2016-03` | [Pedro](/index.php/User:Pedro "User:Pedro") | Hay una pequeña adición con respecto a la versión original, al incluir una sección sobre el equipo de traducción |
+| [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") | Portada wiki | `2016-04` | [Pedro](/index.php/User:Pedro "User:Pedro") | Hay una pequeña adición con respecto a la versión original, al incluir una sección sobre el equipo de traducción |
 | [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") | Tabla de particionado | `2013-09` |
 | [Mirrors (Español)](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") | Servidores de réplica | `2013-09` |
 | [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") | Configuración del sistema | `2013-09` |

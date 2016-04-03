@@ -94,7 +94,7 @@ Tutte le modifiche che faremo all'immagine live verranno effettuate all'interno 
 
 ```
 
-adesso passa a [Archiso_(Italiano)#Configurare_il_live_media](/index.php/Archiso_(Italiano)#Configurare_il_live_media "Archiso (Italiano)").
+adesso passa a [#Configurare il live media](#Configurare_il_live_media).
 
 ## Creare il live media di Arch Linux base. (configs/baseline)
 

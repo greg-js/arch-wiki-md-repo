@@ -24,7 +24,7 @@ Il nuovo sistema di base Arch Linux è ora un funzionale sistema operativo GNU/L
 
 ### Gestione Utenti
 
-Aggiungere gli account utente che si desiderano, oltre a root, come descritto in [Gestione degli utenti](/index.php/Users_and_Groups_(Italiano)#Gestione_degli_utenti "Users and Groups (Italiano)"). Non è consigliabile utilizzare l'account di root per un uso regolare, o esporlo tramite [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") su un server. L'account di root deve essere utilizzato solo per le attività amministrative.
+Aggiungere gli account utente che si desiderano, oltre a root, come descritto in [Gestione degli utenti](/index.php/Users_and_groups_(Italiano)#Gestione_degli_utenti "Users and groups (Italiano)"). Non è consigliabile utilizzare l'account di root per un uso regolare, o esporlo tramite [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") su un server. L'account di root deve essere utilizzato solo per le attività amministrative.
 
 In un tipico sistema desktop per aggiungere un nuovo utente denominato *archie* specificando [bash](/index.php/Bash_(Italiano) "Bash (Italiano)") come shell di login
 
@@ -35,7 +35,7 @@ In un tipico sistema desktop per aggiungere un nuovo utente denominato *archie* 
 
 Questo comando creerà automaticamente un gruppo denominato `archie` con lo stesso GID pari all' UID dell'utente `archie` e ne fa di questo il gruppo predefinito dell'utente `archie` al login.
 
-Altri scenari sono possibili, si veda [Utenti e gruppi](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") per maggiori dettagli e potenziali rischi per la sicurezza.
+Altri scenari sono possibili, si veda [Utenti e gruppi](/index.php/Users_and_groups_(Italiano) "Users and groups (Italiano)") per maggiori dettagli e potenziali rischi per la sicurezza.
 
 ### Gestione dei pacchetti
 
@@ -45,7 +45,7 @@ Poichè il metodo Arch prevede la [correttezza del codice oltre la convenienza](
 
 Se si è installato Arch Linux x86_64, si consiglia di [abilitare il deposito [multilib]](/index.php/Multilib "Multilib") , se si pensa di utilizzare le applicazioni a 32 bit .
 
-Si veda [Repositories Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") per dettagli maggiori su ogni deposito.
+Si veda [Repositories Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") per dettagli maggiori su ogni deposito.
 
 ### Gestione dei servizi
 
@@ -104,7 +104,7 @@ Il driver `vesa` è un generico mode-setting driver che funziona con quasi tutte
 
 ```
 
-Al fine di poter usufruire dell'accelerazione video per lavorare, e spesso per poter usufruire di tutte le modalità che la GPU può impostare, è necessario un driver video corretto. Si veda [Xorg_(Italiano)#Installazione_dei_Driver](/index.php/Xorg_(Italiano)#Installazione_dei_Driver "Xorg (Italiano)") per una tabella dei driver video più frequentemente utilizzati.
+Al fine di poter usufruire dell'accelerazione video per lavorare, e spesso per poter usufruire di tutte le modalità che la GPU può impostare, è necessario un driver video corretto. Si veda [Xorg (Italiano)#Installazione dei Driver](/index.php/Xorg_(Italiano)#Installazione_dei_Driver "Xorg (Italiano)") per una tabella dei driver video più frequentemente utilizzati.
 
 #### Installare driver di input
 
@@ -209,14 +209,14 @@ $ wgetpaste /var/log/Xorg.0.log
 
 #### Font
 
-Si potrebbe desiderare di installare un set di caratteri TrueType, in quanto solo font bitmap non scalabili sono inclusi di default. Tuttavia, se si utilizza un [Ambiente Desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") completo come [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), questo passaggio potrebbe non essere necessario. Dejavu è un font di uso generico di alta qualità e con una buona copertura [Unicode](https://en.wikipedia.org/wiki/it:Unicode "wikipedia:it:Unicode") :
+Si potrebbe desiderare di installare un set di caratteri TrueType, in quanto solo font bitmap non scalabili sono inclusi di default. Tuttavia, se si utilizza un [Ambiente Desktop](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") completo come [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), questo passaggio potrebbe non essere necessario. Dejavu è un font di uso generico di alta qualità e con una buona copertura [Unicode](https://en.wikipedia.org/wiki/it:Unicode "wikipedia:it:Unicode") :
 
 ```
 # pacman -S ttf-dejavu
 
 ```
 
-Fare riferimento a [Font Configuration](/index.php/Font_Configuration_(Italiano) "Font Configuration (Italiano)") per sapere come configurare il rendering dei font e a [Fonts](/index.php/Fonts_(Italiano) "Fonts (Italiano)") per i suggerimenti sui tipi di caratteri e le istruzioni di installazione.
+Fare riferimento a [Font Configuration](/index.php/Font_configuration_(Italiano) "Font configuration (Italiano)") per sapere come configurare il rendering dei font e a [Fonts](/index.php/Fonts_(Italiano) "Fonts (Italiano)") per i suggerimenti sui tipi di caratteri e le istruzioni di installazione.
 
 #### Scegliere ed installare una interfaccia grafica
 
@@ -224,15 +224,15 @@ Mentre il sistema **X** Window fornisce il quadro di base per la costruzione di 
 
 **Nota:** La scelta di un DE o WM è una decisione molto soggettiva e personale. Si scelga l'ambiente migliore in base alle *proprie* esigenze. É possibile costruire il proprio ambiente desktop (DE) utilizzando un Window Manager (WM) e le applicazioni di propria scelta.
 
-*   Un [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") (Gestore delle finestre) controlla il posizionamento e l'aspetto delle finestre dell'applicazione in combinazione con il sistema X Window.
+*   Un [Window Manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") (Gestore delle finestre) controlla il posizionamento e l'aspetto delle finestre dell'applicazione in combinazione con il sistema X Window.
 
-*   Un [Desktop Environment](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") (Ambiente desktop), lavora in cima e in collaborazione con **X**, per fornire una completa interfaccia grafica funzionale e dinamica. Un ambiente desktop contiene in genere un gestore di finestre, icone, applets, finestre, barre degli strumenti, cartelle, wallpapers, una suite di applicazioni e capacità come il drag and drop.
+*   Un [Desktop Environment](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") (Ambiente desktop), lavora in cima e in collaborazione con **X**, per fornire una completa interfaccia grafica funzionale e dinamica. Un ambiente desktop contiene in genere un gestore di finestre, icone, applets, finestre, barre degli strumenti, cartelle, wallpapers, una suite di applicazioni e capacità come il drag and drop.
 
-Al posto di lanciare X manualmente tramite `startx` da [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit), si veda [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") per le istruzioni su come utilizzare un gestore grafico delle sessioni, oppure si veda [Far partire X al boot](/index.php/Far_partire_X_al_boot "Far partire X al boot") per l'utilizzo di un terminale virtuale esistente come equivalente ad un display manager ..
+Al posto di lanciare X manualmente tramite `startx` da [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit), si veda [Display Manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") per le istruzioni su come utilizzare un gestore grafico delle sessioni, oppure si veda [Far partire X al boot](/index.php/Far_partire_X_al_boot "Far partire X al boot") per l'utilizzo di un terminale virtuale esistente come equivalente ad un display manager ..
 
 ## Appendice
 
-Per un elenco dei programmi maggiormente utilizzati e si veda l'articolo [Lista delle Applicazioni](/index.php/List_of_Applications_(Italiano) "List of Applications (Italiano)").
+Per un elenco dei programmi maggiormente utilizzati e si veda l'articolo [Lista delle Applicazioni](/index.php/List_of_applications_(Italiano) "List of applications (Italiano)").
 
 Si veda anche [Raccomandazioni Generali](/index.php/Raccomandazioni_Generali "Raccomandazioni Generali") per consigli post-installazione, come la configurazione del touchpad o il rendering dei font.
 

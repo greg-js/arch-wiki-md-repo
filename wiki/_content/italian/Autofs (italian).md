@@ -140,7 +140,7 @@ I server FTP ed [SSH](/index.php/SSH_(Italiano) "SSH (Italiano)") sono accessibi
 
 #### Server remoti FTP
 
-Per prima cosa, installare [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Per prima cosa, installare [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Caricare il [modulo](/index.php/Kernel_modules_(Italiano) "Kernel modules (Italiano)") `fuse`.
 
@@ -206,17 +206,17 @@ Dopo un riavvio sarà possibile accedere ai server FTP in `/media/ftp/servername
 
 #### Server remoti SSH
 
-Queste sono le istruzioni base per accedere al [filesystem remoto](/index.php/Sshfs "Sshfs") tramite [SSH](/index.php/SSH_(Italiano) "SSH (Italiano)") usando AutoFS.
+Queste sono le istruzioni base per accedere al [filesystem remoto](/index.php/SSHFS "SSHFS") tramite [SSH](/index.php/SSH_(Italiano) "SSH (Italiano)") usando AutoFS.
 
 **Nota:** L'esempio seguente non contempla l'uso di ssh-passphrase, per semplificare la procedura di installazione, notare che può essere un rischio sotto il punto di vista della sicurezza dell'integrità del sistema.
 
-Installare [sshfs](https://www.archlinux.org/packages/?name=sshfs) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Installare [sshfs](https://www.archlinux.org/packages/?name=sshfs) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Caricare il modulo `fuse`.
 
 Aggiungere il `fuse` all'interno dell'array `MODULES` nel file `/etc/rc.conf` così verrà caricato ad ogni avvio del sistema:
 
-Installare [openssh](https://www.archlinux.org/packages/?name=openssh). Generare dunque una coppia di [chiavi SSH](/index.php/SSH_Keys_(Italiano) "SSH Keys (Italiano)"):
+Installare [openssh](https://www.archlinux.org/packages/?name=openssh). Generare dunque una coppia di [chiavi SSH](/index.php/SSH_keys_(Italiano) "SSH keys (Italiano)"):
 
 ```
 $ ssh-keygen -t dsa
@@ -326,7 +326,7 @@ May  7 19:44:16 peterix automount[15218]: failed to mount /media/cifs/petr
 
 *   Le informazioni originali di questa pagina sono basate su [questo topic](https://bbs.archlinux.org/viewtopic.php?t=7630), con informazioni aggiuntive prese da [questa pagina](http://libranet.com/support/2.8/0381)
 *   L'uso dei server FTP ed SSH con AutoFS è basato su [questo articolo](http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares) del Wiki di Gentoo.
-*   Maggiori informazioni riguardo a SSH possono essere trovate nelle pagine del wiki [SSH](/index.php/SSH_(Italiano) "SSH (Italiano)") ed [Uso delle chiavi SSH](/index.php/SSH_Keys_(Italiano) "SSH Keys (Italiano)").
+*   Maggiori informazioni riguardo a SSH possono essere trovate nelle pagine del wiki [SSH](/index.php/SSH_(Italiano) "SSH (Italiano)") ed [Uso delle chiavi SSH](/index.php/SSH_keys_(Italiano) "SSH keys (Italiano)").
 *   Le informazioni per configurare NFS possono essere trovate nella pagina di wiki [NFS](/index.php/NFS_(Italiano) "NFS (Italiano)").
 
 ## Alternative ad AutoFS

@@ -158,7 +158,7 @@ Restart your display manager for the changes to take effect.
 
 *Affected DMs: Entrance, MDM*
 
-Some display managers are not fully compatible with systemd, because they reuse the PAM session process. It causes various problems on second login, e.g.:
+Some display managers are not fully compatible with systemd, because they reuse the [PAM](/index.php/PAM "PAM") session process. It causes various problems on second login, e.g.:
 
 *   NetworkManager applet does not work,
 *   PulseAudio volume cannot be adjusted,

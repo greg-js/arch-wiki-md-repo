@@ -8,9 +8,9 @@ Visite la [tabla de contenidos](/index.php/Table_of_Contents_(Espa%C3%B1ol) "Tab
 
 	Un breve resumen de Arch Linux donde se describe qué esperar de un sistema Arch Linux.
 
-	[El método de Arch](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)")
+	[Preguntas de uso frecuente](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)")
 
-	Ilustra sobre los principios y la filosofía de Arch Linux.
+	Un listado de las preguntas más comunes y frecuentes.
 
 	[Arch comparada con otras distribuciones](/index.php/Arch_Compared_to_Other_Distributions_(Espa%C3%B1ol) "Arch Compared to Other Distributions (Español)")
 
@@ -32,9 +32,9 @@ Visite la [tabla de contenidos](/index.php/Table_of_Contents_(Espa%C3%B1ol) "Tab
 
 	Un índice con anotaciones a otros articulos conocidos y a información de referencia común.
 
-	[Preguntas de uso frecuente](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)")
+	[Lista de aplicaciones](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)")
 
-	Un listado de las preguntas más comunes y frecuentes.
+	Presentación por categorías de los paquetes oficiales y de AUR más comunes.
 
 ## Nuestra comunidad
 

@@ -1,4 +1,4 @@
-[One-time password components](http://www.nongnu.org/oath-toolkit/pam_oath.html) provides a two-step authentication procedure using one-time passcodes (OTP). The OTP generator application is available for iOS, Android and Blackberry. Similar to [Google_Authenticator](/index.php/Google_Authenticator "Google Authenticator") the authentication mechanism integrates into the Linux PAM system. This guide shows the installation and configuration of this mechanism.
+The [OATH Toolkit](http://www.nongnu.org/oath-toolkit/index.html) provides a two-step authentication procedure using one-time passcodes (OTP). It complies to two OTP method RFC standards ([HTOP](https://en.wikipedia.org/wiki/HMAC-based_One-time_Password_Algorithm "w:HMAC-based One-time Password Algorithm"), [TOTP](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm "w:Time-based One-time Password Algorithm")). The OTP generator applications are available for iOS, Android, Blackberry and other devices. Similar to [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") the authentication mechanism integrates into the Linux [PAM](/index.php/PAM "PAM") system. This guide shows the installation and configuration of this mechanism.
 
 ## Contents
 
@@ -14,22 +14,23 @@ Install the [oath-toolkit](https://www.archlinux.org/packages/?name=oath-toolkit
 
 ## Setting up the oath
 
-While being root create the file /etc/users.oath :
+The oath seed is an hexadecimal number that should be unique per user. To generate a new seed for a user, you could use the following command line:
 
 ```
- # Option User Prefix Seed
- HOTP/T30/6 *user* - *1ab4321412aebcw*
-
-```
-
-The seed is an hexadecimal number that should be unique per user (To avoid your configuration to work with the above example seed that you should not use, there is on purpose an incorrect *w*). To properly generate a new seed for a user, you could use the following command line :
-
-```
- head -10 /dev/urandom | sha512sum | cut -b 1-30
+$ head -10 /dev/urandom | sha512sum | cut -b 1-30
+1ab4321412aebcw
 
 ```
 
-There is a need to have one line per user. Make sure that this file can only be accessed by root with the following command :
+Note the above output seed is used as example seed in this article and **must not** be used. There needs to be one oath per user and link to it in a configuration file `/etc/users.oath`. While being root create the file and insert the user seed:
+
+ `/etc/users.oath` 
+```
+# Option User Prefix Seed
+HOTP/T30/6 *user* - *1ab4321412aebcw*
+```
+
+Make sure that the file can only be accessed by root:
 
 ```
  # chmod 600 /etc/users.oath
@@ -91,5 +92,5 @@ Of course change *user*, *machine* and *DK2DEFASV26A====* accordingly. Once done
 
 ## See also
 
-*   [[Two-factor time based (TOTP) SSH authentication with pam_oath and Google Authenticator](http://spod.cx/blog/two-factor-ssh-auth-with-pam_oath-google-authenticator.shtml)]
-*   [[pam_oath man page](http://www.nongnu.org/oath-toolkit/pam_oath.html)]
+*   [Two-factor time based (TOTP) SSH authentication with pam_oath and Google Authenticator](http://spod.cx/blog/two-factor-ssh-auth-with-pam_oath-google-authenticator.shtml)
+*   [pam_oath man page](http://www.nongnu.org/oath-toolkit/pam_oath.html)

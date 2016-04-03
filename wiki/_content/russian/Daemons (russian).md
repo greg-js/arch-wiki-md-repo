@@ -42,7 +42,7 @@ freshclamd.service | Антивирус для Unix. |
 | [Git](/index.php/Git "Git") | git-daemon | git-daemon.socket | Git daemon. |
 | [gpm](/index.php/Console_mouse_support "Console mouse support") | gpm | gpm.service | Console mouse support. |
 | [hddtemp](/index.php/Hddtemp "Hddtemp") | hddtemp | hddtemp.service | Hard drive temperature monitor daemon. |
- healthd | healthd.service | A daemon which can be used to alert you in the event of a hardware health monitoring alarm (part of [lm sensors](/index.php/Lm_sensors "Lm sensors")). |
+ healthd | healthd.service | A daemon which can be used to alert you in the event of a hardware health monitoring alarm (part of [lm_sensors](/index.php/Lm_sensors "Lm sensors")). |
 | [apache](/index.php/Apache "Apache") | httpd | httpd.service | Apache HTTP Server (Web Server). |
  i8kmon | i8kmon.service | Monitor the CPU temperature and fan status on Dell Inspiron laptops. |
  ifplugd | ifplugd@.service | Start/stop network on network cable plugged in/out. |
@@ -99,7 +99,7 @@ nmbd.service
 winbindd.service | Служба Файлов и принтеров для клиентов Microsoft Windows. |
 | [SANE](/index.php/SANE "SANE") | saned | saned@.service | Сетевой демон SANE. |
  saslauthd | saslauthd.service | SASL authentication daemon. |
-| [Lm sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Sensor information logging daemon. |
+| [lm_sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Sensor information logging daemon. |
 | sensors | lm_sensors.service | Initialize hardware monitoring sensors (load necessary kernel modules). |
 | [SLiM](/index.php/SLiM "SLiM") | slim | slim.service | Simple Login Manager. |
 | [SMART](/index.php/SMART "SMART") | smartd | smartd.service | Self-Monitoring, Analysis, and Reporting Technology (S.M.A.R.T.) Hard Disk Monitoring. |

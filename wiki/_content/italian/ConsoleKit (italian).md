@@ -34,7 +34,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 ```
 
-## ConsoleKit e i [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)")
+## ConsoleKit e i [Display Manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)")
 
 ### ck-launch-session
 
@@ -47,7 +47,7 @@ exec ck-launch-session openbox-session
 
 Questo lancerà una sessione di [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)") con le variabili d'ambiente appropriate in modo tale da abilitare ConsoleKit a tutti i processi conseguenti.
 
-[Display managers](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") come [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)"), [GDM](/index.php/GDM "GDM"), [SLiM](/index.php/SLiM_(Italiano) "SLiM (Italiano)") e [LXDM](/index.php/LXDM "LXDM") lanciano ConsoleKit automaticamente con ogni sessione di X.
+[Display managers](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") come [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)"), [GDM](/index.php/GDM "GDM"), [SLiM](/index.php/SLiM_(Italiano) "SLiM (Italiano)") e [LXDM](/index.php/LXDM "LXDM") lanciano ConsoleKit automaticamente con ogni sessione di X.
 
 **Nota:**
 
@@ -114,7 +114,7 @@ Session18:
 
 ### No display manager
 
-Se non si usa un [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)"), ma si avvia X con `startx`, o da `/etc/inittab` e si nota che consolekit non è avviato (il comando `ck-list-sessions` mostrerà `active = FALSE`), sarà necessario usare il metodo: "[Bash_profile](/index.php/Start_X_at_Boot_(Italiano)#bash_profile "Start X at Boot (Italiano)")".
+Se non si usa un [Display Manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)"), ma si avvia X con `startx`, o da `/etc/inittab` e si nota che consolekit non è avviato (il comando `ck-list-sessions` mostrerà `active = FALSE`), sarà necessario usare il metodo: "[Bash_profile](/index.php/Start_X_at_Boot_(Italiano)#bash_profile "Start X at Boot (Italiano)")".
 
 Vedere [xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)") per ulteriori informazioni.
 

@@ -713,6 +713,7 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 | **Logitech UE9000** | bluez 5.37, pulseaudio 7.1, gnome 3.18.2 | Audio playback works correctly after gnome/gdm fix [here](#Connecting_works.2C_but_I_cannot_play_sound). Audio profile defaults to HSP/HFP. Microphone works in both HSP/HFP and A2DP profiles. Play/Pause and Fwd/Back functions work correctly in Spotify and VLC | Yes |
 | **Bose AE2 SoundLink** | bluez 5.36, pulseaudio 7.1 | Pause and resume does not work. Microphone does not work. | Limited |
 | **Jawbone Jambox** | bluez 5.38, pulseaudio 8.0 | Yes |
+| **Plantronics BackBeat FIT** | bluez5, pulseaudio 8.0 | Fully working on both headset and a2dp profiles. Pause button pauses the player. (Tested in mpv.) | Yes |
 
 ## See also
 

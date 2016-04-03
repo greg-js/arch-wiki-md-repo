@@ -1,4 +1,4 @@
-El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager y de [entornos de escritorios](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)"). Estos gestores suelen proporcionar un cierto grado de personalización y disponibilidad de temas con cada uno.
+El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager y de [entornos de escritorios](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"). Estos gestores suelen proporcionar un cierto grado de personalización y disponibilidad de temas con cada uno.
 
 ## Contents
 
@@ -61,7 +61,7 @@ El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager y de 
 
 ## Cargar el gestor de inicio de sesión
 
-Para activar el acceso gráfico, ejecute el demonio del [gestor de pantallas](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") preferido (por ejemplo, [KDM](/index.php/KDM "KDM")).
+Para activar el acceso gráfico, ejecute el demonio del **gestor de pantallas** preferido (por ejemplo, [KDM](/index.php/KDM "KDM")).
 
 ```
 # systemctl enable kdm

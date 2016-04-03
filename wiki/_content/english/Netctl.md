@@ -173,7 +173,7 @@ Interface=enp1s0
 Connection=ethernet
 IP=static
 Address=('10.1.10.2/24')
-Gateway='10.1.10.1'
+Gateway=('10.1.10.1')
 DNS=('10.1.10.1')
 
 ```

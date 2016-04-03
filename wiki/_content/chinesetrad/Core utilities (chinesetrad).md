@@ -124,7 +124,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
 
 help 指令對所有物件有效。舉例來說，輸入 `ip addr help` 將顯示針對位址物件使用的指令語法。
 
-[網路設定](/index.php/Network_Configuration "Network Configuration")文章顯示在各種常見情境下如何在實際使用 *ip* 指令。
+[網路設定](/index.php/Network_configuration "Network configuration")文章顯示在各種常見情境下如何在實際使用 *ip* 指令。
 
 **註記:** 您或許比較熟知的是 [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") 指令，在舊版本的 Linux 上它被用來做介面設定。現在該指令不宜在 Arch Linux 上使用，您應該改使用 *ip* 。
 

@@ -151,7 +151,7 @@ X11LIB = /usr/lib/X11
 
 ## Iniciando dwm
 
-Para iniciar dwm con `startx` o con el gestor de inicio de sesión [SLIM](/index.php/SLIM "SLIM"), simplemente agregue las siguientes líneas al archivo `~/.xinitrc`:
+Para iniciar dwm con `startx` o con el gestor de inicio de sesión [SLiM](/index.php/SLiM "SLiM"), simplemente agregue las siguientes líneas al archivo `~/.xinitrc`:
 
 ```
 exec dwm

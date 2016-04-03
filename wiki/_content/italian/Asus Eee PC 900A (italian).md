@@ -310,7 +310,7 @@ Quando avete completato tutto riavviate X. Notate che potrebbe essere necessario
 
 Potete dare un'occhiata a questi wiki per informazioni più generali di Arch su Eee PC.
 
-*   [Asus_Eee_PC](/index.php/Asus_Eee_PC "Asus Eee PC")
-*   [Installing_Arch_Linux_on_the_Asus_EEE_PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC")
-*   [Asus_Eee_PC_901](/index.php/Asus_Eee_PC_901 "Asus Eee PC 901")
+*   [ASUS Eee PC](/index.php/ASUS_Eee_PC "ASUS Eee PC")
+*   [Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC")
+*   [ASUS Eee PC 901](/index.php/ASUS_Eee_PC_901 "ASUS Eee PC 901")
 *   [[1]](http://ugaciaka.wordpress.com/2008/10/13/tmpfs-ramdisk-perfetta/)

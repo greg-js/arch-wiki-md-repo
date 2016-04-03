@@ -403,7 +403,7 @@ If the above does not work, try installing [ncurses5-compat-libs](https://aur.ar
 
 ### Incorrect login/password when trying to access VMware remotely
 
-VMware Workstation provides the possibility to remotely manage Shared VMs through the `vmware-workstation-server` service. However, this will fail with the error `"incorrect username/password"` due to incorrect PAM configuration of the `vmware-authd` service. To fix it, edit `/etc/pam.d/vmware-authd` like this:
+VMware Workstation provides the possibility to remotely manage Shared VMs through the `vmware-workstation-server` service. However, this will fail with the error `"incorrect username/password"` due to incorrect [PAM](/index.php/PAM "PAM") configuration of the `vmware-authd` service. To fix it, edit `/etc/pam.d/vmware-authd` like this:
 
  `/etc/pam.d/vmware-authd` 
 ```

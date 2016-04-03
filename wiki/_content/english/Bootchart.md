@@ -21,7 +21,7 @@
 
 ## Installing Bootchart
 
-Bootchart can be found in extra [bootchart](https://www.archlinux.org/packages/?name=bootchart).
+Install the [bootchart](https://www.archlinux.org/packages/?name=bootchart) package.
 
 ## Running Bootchart
 
@@ -83,13 +83,13 @@ This article is really awesome and along with a bunch of bootcharts provides som
 
 #### Boot loader setup
 
-This generally involves making a copy of the boot option you want to profile and adding `initcall_debug printk.time=y init=/usr/bin/bootchartd` to it. See [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for instructions. When started from the boot loader, bootchart2 will stop after either a default 120 seconds, or when you get to the login prompt (as opposite). Note that Bootchart2-git can also be run as a **systemd** service, as described in [Improve boot performance#Using bootchart2](/index.php/Improve_boot_performance#Using_bootchart2 "Improve boot performance")
+This generally involves making a copy of the boot option you want to profile and adding `initcall_debug printk.time=y init=/usr/bin/bootchartd2` to it. See [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for instructions. When started from the boot loader, bootchart2 will stop after either a default 120 seconds, or when you get to the login prompt (as opposite). Note that Bootchart2-git can also be run as a **systemd** service, as described in [Improve boot performance#Using bootchart2](/index.php/Improve_boot_performance#Using_bootchart2 "Improve boot performance")
 
 #### Configure Bootchart2
 
 ##### Stop Bootchartd2 after login
 
-Bootchart2 **/etc/bootchartd.conf**
+Bootchart2 **/etc/bootchartd2.conf**
 
 ```
 EXIT_PROC="kdm_greet xterm konsole gnome-terminal metacity mutter compiz ldm icewm-session enlightenment"

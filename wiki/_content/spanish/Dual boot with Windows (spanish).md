@@ -117,7 +117,7 @@ La siguiente sección contiene extractos de [http://www.iceflatline.com/2009/09/
 Para posibilitar que el cargador de arranque de Windows pueda detectar las particiones de Linux, al menos una de las particiones debe tener el formato FAT32 (en el caso del artículo, `/dev/sda3`). l resto de la configuración es similar a una instalación típica. Algunos documentos refieren que la partición que es cargada por el cargador de arranque de Windows debe ser primaria, pero se ha reportado que se puede utilizar una partición extendida sin mayor problema.
 
 *   Al instalar el cargador de arranque GRUB, debe instalarlo en la partición `/boot` en vez de en el MBR.
-    **Note:** por ejemplo, la partición `/boot` es `/dev/sda5`. Por lo que se instalo GRUB en `/dev/sda5` y no en `/dev/sda`. Para obtener ayuda, vea [GRUB#Install to partition or partitionless disk (Español)](/index.php/GRUB#Install_to_partition_or_partitionless_disk_.28Espa.C3.B1ol.29 "GRUB")
+    **Note:** por ejemplo, la partición `/boot` es `/dev/sda5`. Por lo que se instalo GRUB en `/dev/sda5` y no en `/dev/sda`. Para obtener ayuda, vea [GRUB#Install to partition or partitionless disk](/index.php/GRUB#Install_to_partition_or_partitionless_disk "GRUB")
 
 *   Bajo Linux, realice una copia de la información de arranque tipeando los siguiente en la linea de comando:
 
