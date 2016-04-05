@@ -1,25 +1,14 @@
-**bftpd** is a Small, easy-to-configure FTP server for UNIX-like systems.
-
-## Contents
-
-*   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-*   [3 Using xinetd](#Using_xinetd)
-*   [4 See also](#See_also)
+**bftpd** is a small, easy-to-configure FTP server for UNIX-like systems.
 
 ## Installation
 
 [Install](/index.php/Install "Install") [bftpd](https://www.archlinux.org/packages/?name=bftpd).
 
-[Start/Enable](/index.php/Systemd#Using_units "Systemd") the `bftpd.service` daemon.
-
-See [#Using xinetd](#Using_xinetd) for procedures to use vsftpd with xinetd.
+[Start/Enable](/index.php/Systemd#Using_units "Systemd") the `bftpd.service` daemon. An alternative `bftpd.socket` and `bftpd@.service` are also available.
 
 ## Configuration
 
-Most of the settings in bftpd are done by editing the file `/etc/bftpd.conf`.
-
-## Using xinetd
+Most of the settings in bftpd are done by editing the file `/etc/bftpd.conf`. A default `/etc/xinetd.d/bftpd` configuration is provided as well.
 
 ## See also
 

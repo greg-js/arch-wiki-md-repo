@@ -4,7 +4,6 @@
 
 *   [1 Installation](#Installation)
     *   [1.1 Desktop clients](#Desktop_clients)
-        *   [1.1.1 Notes](#Notes)
 *   [2 Usage](#Usage)
     *   [2.1 Wired](#Wired)
     *   [2.2 Wi-Fi](#Wi-Fi)
@@ -33,7 +32,7 @@ Before [enabling](/index.php/Enabling "Enabling") `connman.service`, ensure any 
 
 	[https://github.com/andrew-bibb/cmst](https://github.com/andrew-bibb/cmst) || [cmst](https://aur.archlinux.org/packages/cmst/)
 
-*   **connman-ncurses** — Simple ncurses UI for ConnMan
+*   **connman-ncurses** — Simple ncurses UI for ConnMan; not all of connman functionality is implemented, but usable (with X or from terminal without X), see the [wiki](https://github.com/eurogiciel-oss/connman-json-client/wiki).
 
 	[https://github.com/eurogiciel-oss/connman-json-client](https://github.com/eurogiciel-oss/connman-json-client) || [connman-ncurses-git](https://aur.archlinux.org/packages/connman-ncurses-git/)
 
@@ -65,15 +64,9 @@ Before [enabling](/index.php/Enabling "Enabling") `connman.service`, ensure any 
 
 	[https://github.com/jgke/connman-gtk](https://github.com/jgke/connman-gtk) || [connman-gtk](https://aur.archlinux.org/packages/connman-gtk/)
 
-*   **gnome-extension-connman** — Gnome3 extension for connman.
+*   **gnome-extension-connman** — Gnome3 extension for connman; it contains only some of the functionality without installing connman-gtk.
 
 	[https://github.com/jgke/gnome-extension-connman](https://github.com/jgke/gnome-extension-connman) || [https://extensions.gnome.org/extension/981/connman-extension/](https://extensions.gnome.org/extension/981/connman-extension/)
-
-#### Notes
-
-gnome-extension-connman: contains only some of the functionality without installing connman-gtk.
-
-connman-ncurses: not all of connman functionality is implemented; but usable (with X or from terminal without X). See [wiki](https://github.com/eurogiciel-oss/connman-json-client/wiki).
 
 ## Usage
 

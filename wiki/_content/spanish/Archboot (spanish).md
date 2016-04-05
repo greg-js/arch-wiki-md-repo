@@ -1,8 +1,12 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Archboot](/index.php/Archboot "Archboot"). Fecha de la última traducción/revisión: **2014-12-26**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Archboot&diff=0&oldid=345108).
+**Estado de la traducción:** este artículo es una versión traducida de [Archboot](/index.php/Archboot "Archboot"). Fecha de la última traducción/revisión: **2016-04-04**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Archboot&diff=0&oldid=410240).
+
+Archboot es un conjunto de scripts para generar medios de almacenamiento booteables en CD/USB/PXE.
+
+Solo funciona en la memoria RAM, sin ningún tipo de sistemas de archivos especial del tipo squashfs, por lo que se limita al alcance de la memoria RAM que esté instalada en su sistema. [Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [archboot](https://www.archlinux.org/packages/?name=archboot) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Contents
 
-*   [1 ¿Qué es Archboot?](#.C2.BFQu.C3.A9_es_Archboot.3F)
+*   [1 Instalación](#Instalaci.C3.B3n)
 *   [2 Diferencias con el soporte de instalación de archiso](#Diferencias_con_el_soporte_de_instalaci.C3.B3n_de_archiso)
 *   [3 Lanzamientos de la ISO de Archboot](#Lanzamientos_de_la_ISO_de_Archboot)
     *   [3.1 Grabar lanzamiento](#Grabar_lanzamiento)
@@ -21,13 +25,9 @@
     *   [6.3 Instalar archboot y actualizar a los últimos paquetes](#Instalar_archboot_y_actualizar_a_los_.C3.BAltimos_paquetes)
     *   [6.4 Generar imágenes](#Generar_im.C3.A1genes)
 
-## ¿Qué es Archboot?
+## Instalación
 
-*   Archboot es un conjunto de scripts para generar medios de almacenamiento booteables en CD/USB/PXE.
-*   Está diseñado para operaciones de instalación o de rescate.
-*   Solo funciona en la memoria RAM, sin ningún tipo de sistemas de archivos especiales del tipo squashfs, por lo que se limita al alcance de la memoria RAM que esté instalada en su sistema.
-
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [archboot](https://www.archlinux.org/packages/?name=archboot) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [archboot](https://www.archlinux.org/packages/?name=archboot).
 
 ## Diferencias con el soporte de instalación de archiso
 
@@ -45,15 +45,15 @@
 	imágenes de network labeled no se incluyen en el repositorio [core].
 
 *   Por favor, revise md5sum antes de usarlo.
-*   [Download 2015.09](http://ftp.u-strasbg.fr/linux/distributions/archlinux/iso/archboot/2015.09/) / [Changelog](http://ftp.u-strasbg.fr/linux/distributions/archlinux/iso/archboot/Changelog-2015.09-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
+*   [Download 2015.09 „2k15-R3“](https://downloads.archlinux.de/iso/archboot/2015.09) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2015.09-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
 
-	kernel: 3.17.3-1
+	kernel: 4.2.0-3
 
-	pacman: 4.1.2-6
+	pacman: 4.2.1-3
 
-	systemd: 217-6
+	systemd: 226-1
 
-	RAM recomendada: 640 MB
+	RAM recomendada: 600 MB
 
 ### Grabar lanzamiento
 
@@ -66,7 +66,7 @@ El archivo de imagen híbrida es una imagen de CD grabable estándar y también 
 
 ### Arrancar PXE/sistema de rescate
 
-[Descargue 2014.11 „2k14-R5“](https://downloads.archlinux.de/iso/archboot/2014.11/boot) los archivos necesarios del directorio.
+[Download 2015.09 „2k15-R3“](https://downloads.archlinux.de/iso/archboot/2015.09/boot) los archivos necesarios del directorio.
 
 *   vmlinuz_i686 + initramfs_i686.img (i686)
 *   vmlinuz_x86_64 + initramfs_x86_64.img(x86_64)
@@ -194,37 +194,50 @@ El historial de versiones antiguas se puede encontrar [aquí](ftp://ftp.archlinu
 
 ### Crear entornos chroot para archboot
 
-```
-# Instalar archboot
-pacman -S archboot
-mkdir <x86_64_chroot>
-pacman --root "<x86_64_chroot>" -S base --noconfirm --noprogressbar
-mkdir <i686_chroot>
-linux32 pacman --root "<i686_chroot>" -S base --noconfirm --noprogressbar
+*   Instalar archboot:
 
 ```
-
-*   Entrar en el contenedor 86_64 de archboot:
-
-```
-systemd-nspawn --capability=CAP_MKNOD --register=no -M $1-$(uname -m) -D <x86_64_chroot>
+# pacman -S archboot
+# mkdir -p *x86_64_chroot*/var/lib/pacman
+# pacman --root "*x86_64_chroot*" -Sy base --noconfirm --noprogressbar
 
 ```
 
-*   Entrar en el contenedor i686 de archboot:
+*   Para contenedores i686:
 
 ```
-linux32 systemd-nspawn --capability=CAP_MKNOD --register=no -M $1-$(uname -m) -D <i686_chroot>
+# mkdir -p *i686_chroot*/var/lib/pacman
+# linux32 pacman --root "*i686_chroot*" -Sy base --noconfirm --noprogressbar
+
+```
+
+*   Entrar en contenedor x86_64 de archboot:
+
+```
+# systemd-nspawn --capability=CAP_MKNOD --register=no -M $(uname -m) -D *x86_64_chroot*
+
+```
+
+*   Entrar en contenedor i686 de archboot:
+
+```
+# linux32 systemd-nspawn --capability=CAP_MKNOD --register=no -M $(uname -m) -D *i686_chroot*
 
 ```
 
 ### Instalar archboot y actualizar a los últimos paquetes
 
+Instalar para ambas arquitecturas en entornos enjaulados de archboot:
+
 ```
-# Instalar para ambas arquitecturas en entornos enjaulados de archboot:
-pacman -S archboot
-# Actualizar para ambas arquitecturas en entornos enjaulados los paquetes más recientes disponibles
-pacman -Syu
+# pacman -S archboot
+
+```
+
+Actualizar para ambas arquitecturas en entornos enjaulados los paquetes más recientes disponibles:
+
+```
+# pacman -Syu
 
 ```
 

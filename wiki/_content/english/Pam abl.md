@@ -1,4 +1,4 @@
-**pam_abl** provides another layer of security against brute-force SSH password guessing. It allows you to set a maximum number of unsuccessful login attempts within a given time period, after which a host and/or user is blacklisted. Once a host/user is blacklisted, all authentication attempts will fail even if the correct password is given. Hosts/users which stop attempting to login for a specified period of time will be removed from the blacklist.
+[pam_abl](http://pam-abl.sourceforge.net/) provides another layer of security against brute-force SSH password guessing. It allows you to set a maximum number of unsuccessful login attempts within a given time period, after which a host and/or user is blacklisted. Once a host/user is blacklisted, all authentication attempts will fail even if the correct password is given. Hosts/users which stop attempting to login for a specified period of time will be removed from the blacklist.
 
 ## Contents
 

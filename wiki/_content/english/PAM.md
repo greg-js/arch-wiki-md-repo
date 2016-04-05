@@ -52,7 +52,7 @@ For a different application, a different path may apply. For example, [sshd](htt
 
 Consequently, the choice of the configuration file in the stack matters. For the above example, a special authentication method could be required for `sshd` only, or all remote logins by changing `system-remote-login`; both changes would not affect local logins. Applying the change to `system-login` or `system-auth` instead would affect local and remote logins.
 
-Like the example of `sshd`, any **pam-aware** application is required to install its policy to `/etc/pam.d` in order to integrate and rely on the PAM stack appropriately. If an application fails to do it, the `/etc/pam.d/other` policy is applied per default.
+Like the example of `sshd`, any **pam-aware** application is required to install its policy to `/etc/pam.d` in order to integrate and rely on the PAM stack appropriately. If an application fails to do it, the `/etc/pam.d/other` policy is applied per default. A permissive policy for it is installed per default ([FS#48650](https://bugs.archlinux.org/task/48650)).
 
 **Tip:** PAM is dynamically linked at runtime. For example: `$ ldd /usr/bin/login |grep pam` 
 ```
@@ -171,6 +171,10 @@ PAM modules from the [Arch User Repository](/index.php/Arch_User_Repository "Arc
 *   [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator")
 
 	shows how to set up two-factor authentication with `pam_google_authenticator.so`.
+
+*   [Very Secure FTP Daemon#PAM with virtual users](/index.php/Very_Secure_FTP_Daemon#PAM_with_virtual_users "Very Secure FTP Daemon")
+
+	explains how to configure a FTP chroot with `pam_pwdfile.so` to authenticate users without a local system account.
 
 ## Further PAM packages
 

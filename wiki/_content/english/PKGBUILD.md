@@ -134,7 +134,7 @@ The [group](/index.php/Creating_packages#Meta_packages_and_groups "Creating pack
 
 ## Dependencies
 
-**Note:** Additional architecture-specific arrays can be used by appending an underscore and the architecture name, e.g. `depends_x86_64=()`, `optdepends_x86_64=()`.
+**Note:** Additional architecture-specific arrays can be added by appending an underscore and the architecture name, e.g. `depends_i686=()`, `optdepends_x86_64=()`.
 
 ### depends
 
@@ -179,7 +179,7 @@ An array of packages that the software depends on to run its test suite, but are
 
 ## Package relations
 
-**Note:** Additional architecture-specific arrays can be used by appending an underscore and the architecture name, e.g. `provides_x86_64=()`, `conflicts_x86_64=()`.
+**Note:** Additional architecture-specific arrays can be added by appending an underscore and the architecture name, e.g. `provides_i686=()`, `conflicts_x86_64=()`.
 
 ### provides
 
@@ -243,7 +243,7 @@ $ pacman -Qc *pkgname*
 
 ### source
 
-**Note:** Additional architecture-specific arrays can be added by appending an underscore and the architecture name, e.g. `source_x86_64=()`. There must be a corresponding integrity array with checksums, e.g. `sha256sums_x86_64=()`.
+**Note:** Additional architecture-specific arrays can be added by appending an underscore and the architecture name, e.g. `source_i686=()`. There must be a corresponding integrity array with checksums, e.g. `sha256sums_x86_64=()`.
 
 An array of files needed to build the package. It must contain the location of the software source, which in most cases is a full HTTP or FTP URL. The previously set variables `pkgname` and `pkgver` can be used effectively here (e.g. `source=("https://example.com/$pkgname-$pkgver.tar.gz")`).
 
@@ -290,6 +290,8 @@ Only full fingerprints are accepted. They must be uppercase and must not contain
 **Note:** You can use `gpg --list-keys --fingerprint <KEYID>` to find out the fingerprint of the appropriate key.
 
 ## Integrity
+
+**Note:** Additional architecture-specific arrays can be added by appending an underscore and the architecture name, e.g. `md5sums_i686=()`, `sha256sums_x86_64=()`.
 
 These variables are arrays whose items are checksum strings that will be used to verify the integrity of the respective files in the [source](#source) array. You can also insert `SKIP` for a particular file, and its checksum will not be tested.
 

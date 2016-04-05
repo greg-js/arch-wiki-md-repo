@@ -77,7 +77,12 @@ Breeze is the default Qt style of KDE Plasma. It can be installed with the [bree
 
 Once installed, you can use one of the many [GTK+ configuration tools](/index.php/GTK%2B#Configuration_tools "GTK+") to change the GTK+ theme.
 
-**Note:** You must set the GTK theme for both root and non-root users to ensure gtk apps started as root/non-root respect the theme
+**Note:** You must set the GTK theme for both root and non-root users to ensure GTK apps started as root/non-root respect the theme. A solution is by using symlinks that uses the user defined settings:
+```
+# ln -s /home/user/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
+# ln -s /home/user/.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
+
+```
 
 ### Adwaita
 

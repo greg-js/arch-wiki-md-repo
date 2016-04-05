@@ -1,4 +1,4 @@
-The *fuseiso* command line program is a simple tool that uses [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") and helps for a regular user to mount [ISO](https://en.wikipedia.org/wiki/ISO_9660 "wikipedia:ISO 9660") disk images. The *fuseiso* tool does not create an automatically generated destination by a pattern and is specialized on mounting of the optical disk image formats as .iso, .nrg, .bin, .mdf and .img.
+The *fuseiso* command line program is a simple tool that uses [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") and helps for a regular user to mount [ISO](https://en.wikipedia.org/wiki/ISO_9660 "wikipedia:ISO 9660") disk images. The *fuseiso* tool does not create an automatically generated destination by a pattern and is specialized on mounting of the optical disk image formats as `.iso`, `.nrg`, `.bin`, `.mdf` and `.img`.
 
 ## Contents
 
@@ -33,7 +33,7 @@ To unmount the image, use `fusermount -u *mountpoint*`, it works fine even with 
 
 ## Using with GNOME Files
 
-For users of GNOME there is an easy way of using fuseiso from the nautilus-context menu. First you will need the [nautilus-actions](https://www.archlinux.org/packages/?name=nautilus-actions) package, then you need to save the following scripts to a folder of your choice (eg. `/usr/bin`):
+For users of GNOME there is an easy way of using fuseiso from the nautilus-context menu. First you will need the [nautilus-actions](https://www.archlinux.org/packages/?name=nautilus-actions) package, then you need to save the following scripts to a folder of your choice (eg. `/usr/local/bin`):
 
  `nautilus-actions-iso-mount.sh` 
 ```

@@ -1,6 +1,6 @@
 rEFInd is a [UEFI](/index.php/UEFI "UEFI") boot manager. It is a fork of the no-longer-maintained [rEFIt](http://refit.sourceforge.net/) and fixes many issues with respect to non-Mac UEFI booting. It is designed to be platform-neutral and to simplify booting multiple OSes.
 
-**Note:** In the entire article `$esp` denotes the mountpoint of the [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") aka ESP.
+**Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") aka ESP.
 
 ## Contents
 
@@ -81,7 +81,7 @@ If the `refind-install` script does not work for you, rEFInd can be set up manua
 First, copy the executable to the ESP:
 
 ```
-# cp /usr/share/refind/refind_x64.efi $esp/EFI/refind/
+# cp /usr/share/refind/refind_x64.efi *esp*/EFI/refind/
 
 ```
 
@@ -95,22 +95,22 @@ Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry 
 At this point, you should be able to reboot into rEFInd but it will not be able to boot your kernel. If your kernel does not reside on your ESP, rEFInd can mount your partitions to find it - provided it has the right drivers:
 
 ```
-# mkdir $esp/EFI/refind/drivers_x64
-# cp /usr/share/refind/drivers_x64/**drivername**_x64.efi $esp/EFI/refind/drivers_x64/
+# mkdir *esp*/EFI/refind/drivers_x64
+# cp /usr/share/refind/drivers_x64/**drivername**_x64.efi *esp*/EFI/refind/drivers_x64/
 
 ```
 
 rEFInd automatically loads all drivers from the subdirectories `drivers` and `drivers_*arch*` (e.g. `drivers_x64`) in its install directory.
 
 ```
-# cp /usr/share/refind/drivers_x64/**drivername**_x64.efi $esp/EFI/refind/drivers_x64/
+# cp /usr/share/refind/drivers_x64/**drivername**_x64.efi *esp*/EFI/refind/drivers_x64/
 
 ```
 
 Now rEFInd should have a boot entry for your kernel, but it will not pass the correct kernel parameters. Set up [#Passing kernel parameters](#Passing_kernel_parameters). You should now be able to boot your kernel using rEFInd. If you are still unable to boot or if you want to tweak rEFInd's settings, many options can be changed with a config file:
 
 ```
-# cp /usr/share/refind/refind.conf-sample $esp/EFI/refind/refind.conf
+# cp /usr/share/refind/refind.conf-sample *esp*/EFI/refind/refind.conf
 
 ```
 
@@ -119,14 +119,14 @@ The sample config is well commented and self-explanatory.
 Unless you have set `textonly` in the config file, you should copy rEFInd's icons to get rid of the ugly placeholders:
 
 ```
-# cp -r /usr/share/refind/icons $esp/EFI/refind/
+# cp -r /usr/share/refind/icons *esp*/EFI/refind/
 
 ```
 
 You can try out different fonts by copying them and changing the `font` setting in `refind.conf`:
 
 ```
-# cp -r /usr/share/refind/fonts $esp/EFI/refind/
+# cp -r /usr/share/refind/fonts *esp*/EFI/refind/
 
 ```
 
@@ -167,7 +167,7 @@ Then [enable](/index.php/Enable "Enable") `refind_update.path`.
 
 ## Configuration
 
-The rEFInd configuration `refind.conf` is located in the same directory as the rEFInd EFI application (usually `$esp/EFI/refind` or `$esp/EFI/BOOT`). The default config contains extensive comments explaining all its options.
+The rEFInd configuration `refind.conf` is located in the same directory as the rEFInd EFI application (usually `*esp*/EFI/refind` or `*esp*/EFI/BOOT`). The default config contains extensive comments explaining all its options.
 
 ### Passing kernel parameters
 
@@ -200,7 +200,7 @@ If you do not specify an `initrd=` parameter, rEFInd will automatically add it b
 
 If your kernel is not autodetected, or if you simply want more control over the options for a menu entry, you can manually create boot entries using stanzas in `refind.conf`. Ensure that `scanfor` includes `manual` or these entries will not appear in rEFInd's menu. Kernel parameters are set with the `options` keyword. rEFInd will append the `initrd=` parameter using the file specified by the `initrd` keyword in the stanza. If you need additional initrds (e.g. for [Microcode](/index.php/Microcode "Microcode")), you can specify them in `options` (and the one specified by the `initrd` keyword will be added to the end).
 
- `$esp/EFI/refind/refind.conf` 
+ `*esp*/EFI/refind/refind.conf` 
 ```
 ...
 
@@ -232,7 +232,7 @@ rEFInd is compatible with the EFI system partition created by a UEFI Windows ins
 
 rEFInd supports running various 3rd-party tools. Tools need to be installed separately. Edit `showtools` in `refind.conf` to choose which ones to show.
 
- `$esp/EFI/refind/refind.conf` 
+ `*esp*/EFI/refind/refind.conf` 
 ```
 ...
 showtools **shell**, **memtest**, **gdisk**, **netboot**, ...
@@ -248,10 +248,10 @@ Copy `shellx64.efi` to the root of the [EFI System Partition](/index.php/Unified
 
 ### Memtest86
 
-Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/) and copy it to `$esp/EFI/tools/`.
+Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/) and copy it to `*esp*/EFI/tools/`.
 
 ```
-# cp /usr/share/memtest86-efi/bootx64.efi $esp/EFI/tools/memtest86.efi
+# cp /usr/share/memtest86-efi/bootx64.efi *esp*/EFI/tools/memtest86.efi
 
 ```
 
@@ -259,17 +259,17 @@ Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/) and c
 
 There is no package for the EFI version of gdisk, but you can download a binary from gdisk's author.
 
-Download `gdisk-efi-*.zip` from [SourceForge](http://sourceforge.net/projects/gptfdisk/files/gptfdisk/), extract the archive, and copy `gdisk_x64.efi` to `$esp/EFI/tools`.
+Download `gdisk-efi-*.zip` from [SourceForge](http://sourceforge.net/projects/gptfdisk/files/gptfdisk/), extract the archive, and copy `gdisk_x64.efi` to `*esp*/EFI/tools`.
 
 ### iPXE
 
 **Note:** PXE support in rEFInd is **experimental**.
 
-[refind-efi](https://www.archlinux.org/packages/?name=refind-efi) contains the iPXE UEFI binaries, you just need to copy them to `$esp/EFI/tools/`.
+[refind-efi](https://www.archlinux.org/packages/?name=refind-efi) contains the iPXE UEFI binaries, you just need to copy them to `*esp*/EFI/tools/`.
 
 ```
-# cp /usr/share/refind/tools_x64/ipxe_discovery_x64.efi $esp/EFI/tools/ipxe_discovery.efi
-# cp /usr/share/refind/tools_x64/ipxe_x64.efi $esp/EFI/tools/ipxe.efi
+# cp /usr/share/refind/tools_x64/ipxe_discovery_x64.efi *esp*/EFI/tools/ipxe_discovery.efi
+# cp /usr/share/refind/tools_x64/ipxe_x64.efi *esp*/EFI/tools/ipxe.efi
 
 ```
 
@@ -291,7 +291,7 @@ Now you can access your file system from UEFI shell.
 
 If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `options` line with `rootflags=subvol=<root subvolume>`. In the example below, root has been mounted as a btrfs subvolume called 'ROOT' (e.g. `mount -o subvol=ROOT /dev/sdxY /mnt`):
 
- `$esp/EFI/refind/refind.conf` 
+ `*esp*/EFI/refind/refind.conf` 
 ```
 ...
 

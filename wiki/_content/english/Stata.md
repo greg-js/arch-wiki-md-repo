@@ -13,6 +13,8 @@ You need to install a series of libraries to run Stata. Stata uses the GTK+ fram
 
 If you use GNOME, [install](/index.php/AUR "AUR") [libgtksourceviewmm](https://aur.archlinux.org/packages/libgtksourceviewmm/) and [libgnomeprint](https://aur.archlinux.org/packages/libgnomeprint/).
 
+If you are running STATA 14 and get a message about missing libncurses.so.5 [install](/index.php/AUR "AUR") [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/).
+
 ## Installing Stata
 
 After you have installed these packages, you need to insert your STATA DVD and mount it.

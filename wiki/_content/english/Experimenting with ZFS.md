@@ -41,7 +41,7 @@ Management of ZFS is pretty simplistic with only two utils needed:
 
 ### Mirror
 
-For zpools with just two drives, it is recommended to use ZFS in *mirror* mode which functions like a RAID1 mirroring the data. While this configuration is fine, higher RAIDZ levels are recommended.
+For zpools with just two drives with redundancy, it is recommended to use ZFS in *mirror* mode which functions like a RAID1 mirroring the data. Mirroring can also be used as an alternative to Raidz setups with surprising results. See more on vdev mirroring [here](http://jrs-s.net/2015/02/06/zfs-you-should-use-mirror-vdevs-not-raidz/).
 
 ### RAIDZ1
 

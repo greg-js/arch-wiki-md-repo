@@ -13,6 +13,7 @@ LXDM is a lightweight [display manager](/index.php/Display_manager "Display mana
     *   [3.1 Adding face icons](#Adding_face_icons)
     *   [3.2 Simultaneous users and switching users](#Simultaneous_users_and_switching_users)
     *   [3.3 Themes](#Themes)
+    *   [3.4 Advanced Session Configuration](#Advanced_Session_Configuration)
 *   [4 Known issues](#Known_issues)
     *   [4.1 XDMCP](#XDMCP)
 
@@ -164,6 +165,28 @@ You can configure them on `/etc/lxdm/lxdm.conf`:
 theme=theme_name
 
 ```
+
+### Advanced Session Configuration
+
+After a user logs on, LXDM sources *all* of the following files, in order:
+
+*   /etc/profile
+*   ~/.profile
+*   /etc/xprofile
+*   ~/.xprofile
+
+These files can be used to set session environment variables and to start services which must set certain environment variables in order for clients in the session to be able to use the service, like ssh-agent. *xprofile can be used for any settings that should not get included in non-graphical login sessions. For example, add the following line to ~/.xprofile to start a session-wide SSH agent only for X11 sessions and only for your particular user:
+
+```
+eval `ssh-agent`
+
+```
+
+All spawned processes are automatically terminated at the end of a session, so it isn't necessary to track the agent's PID.
+
+Note that LXDM does *not* source ~/.xinitrc, so those migrating from a DM that *does* use this file, like slim, will have to move their settings from it to somewhere else—probably ~/.xprofile. Also note LXDM does not source ~/.bash_profile.
+
+LXDM also makes use of .Xresources, .Xkbmap, and .Xmodmap. See /etc/lxdm/Xsession for details on how LXDM uses system-wide and per-user configuration files to configure the session.
 
 ## Known issues
 

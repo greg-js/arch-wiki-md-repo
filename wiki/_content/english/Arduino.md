@@ -29,7 +29,7 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
     *   [5.4 Permissions to open serial port and create lockfile](#Permissions_to_open_serial_port_and_create_lockfile)
     *   [5.5 Missing twi.o](#Missing_twi.o)
     *   [5.6 Working with Uno/Mega2560](#Working_with_Uno.2FMega2560)
-    *   [5.7 error compiling](#error_compiling)
+    *   [5.7 Error compiling](#Error_compiling)
     *   [5.8 avrdude missing libtinfo.so.5](#avrdude_missing_libtinfo.so.5)
     *   [5.9 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
 *   [6 See also](#See_also)
@@ -312,9 +312,9 @@ The 8U2 firmware may need an update to ease serial communications. See [[1]](htt
 
 You can perform a general function test of the Uno by putting it in loopback mode and typing characters into the arduino serial monitor at 115200 baud. It should echo the characters back to you. To put it in loopback, short pins 0 -> 1 on the digital side and either hold the reset button or short the GND -> RESET pins while you type.
 
-### error compiling
+### Error compiling
 
-if you get following message (in verbose mode)
+If you get following message (in verbose mode)
 
 ```
 /usr/share/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/../../../avr/bin/ld: cannot find -lm

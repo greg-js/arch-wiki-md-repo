@@ -29,7 +29,10 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 *   [8 Sound](#Sound)
     *   [8.1 PulseAudio Workaround](#PulseAudio_Workaround)
 *   [9 Microphone](#Microphone)
-*   [10 Links](#Links)
+*   [10 Diverting models](#Diverting_models)
+    *   [10.1 XPS 12](#XPS_12)
+*   [11 lspci and lsusb](#lspci_and_lsusb)
+*   [12 See also](#See_also)
 
 ## BIOS updates
 
@@ -204,6 +207,12 @@ This will prevent PulseAudio to fiddle with the gain setting at all. However, yo
 
 For ALSA, increase "Digital" channel for microphone to work.
 
-## Links
+## Diverting models
 
-General Discussion Thread on Arch Forum [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
+### XPS 12
+
+## lspci and lsusb
+
+## See also
+
+*   [Arch Forum thread for XPS 13](https://bbs.archlinux.org/viewtopic.php?pid=1579113)

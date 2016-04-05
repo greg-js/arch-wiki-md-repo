@@ -1,4 +1,4 @@
-**Bioperl** is a set of scripts in Perl language to aid researchers in [Computational Biology](https://en.wikipedia.org/wiki/Computational_biology "wikipedia:Computational biology") and [Bioinformatics](https://en.wikipedia.org/wiki/Bioinformatics "wikipedia:Bioinformatics").
+[Bioperl](http://www.bioperl.org/wiki/Main_Page) is a set of scripts in the Perl programming language to aid researchers in [Computational Biology](https://en.wikipedia.org/wiki/Computational_biology "wikipedia:Computational biology") and [Bioinformatics](https://en.wikipedia.org/wiki/Bioinformatics "wikipedia:Bioinformatics").
 
 ## Contents
 
@@ -6,7 +6,7 @@
 *   [2 Configuration](#Configuration)
 *   [3 Extras](#Extras)
 *   [4 Troubleshooting](#Troubleshooting)
-*   [5 More Resources](#More_Resources)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -14,10 +14,10 @@ Install [bioperl](https://aur.archlinux.org/packages/bioperl/) from the [AUR](/i
 
 ## Configuration
 
-If you installed from the AUR to the /usr folder (default), the path to bioperl should be added to the @INC array of perl. This is easily done editing the PERL5LIB variable in your .bashrc file, like this:
+If you installed from the AUR to the `/usr` path (default), the path to bioperl should be added to the @INC array of perl. This is easily done editing the PERL5LIB variable in your .bashrc file, like this:
 
 ```
-nano ~/.bashrc
+$ nano ~/.bashrc
 
 ```
 
@@ -28,12 +28,12 @@ export PERL5LIB=$PERL5LIB:/usr/share/perl5/site_perl/5.10.0
 
 ```
 
-Note: Please take a look to the folder /usr/share/perl5/site_perl/ to see if the version is the same, the folder 5.10.0 (or a new version) should contain a folder named BIO. If nor 5.10.0 neither other version is found, look for the Bio folder in vendor_perl or any other perl5 folder where the Bio folder may have been installed, add the path where the Bio folder is to the bash file.
+Note: Please take a look at folder `/usr/share/perl5/site_perl/` to see if the version is the same, the folder 5.10.0 (or a newer version) should contain a folder named BIO. If nor 5.10.0 neither other version is found, look for the Bio folder in `vendor_perl` or any other perl5 folder where the Bio folder may have been installed, add the path where the Bio folder is to the bash file.
 
-After saving the file, for the $PERL5LIB variable to be updated, bash must be reloaded in terminal:
+After saving the file, for the `$PERL5LIB` variable to be updated, bash must be reloaded in terminal:
 
 ```
-bash
+$ bash
 
 ```
 
@@ -42,7 +42,7 @@ It is adviced to install extra modules from CPAN, to avoid having dependencies e
 *   Upgrade CPAN
 
 ```
-sudo perl -MCPAN -e shell
+# perl -MCPAN -e shell
 install Bundle::CPAN
 q
 
@@ -51,7 +51,7 @@ q
 *   Install/upgrade Module::Build, and make it your preferred installer
 
 ```
-sudo cpan
+# cpan
 install Module::Build
 o conf prefer_installer MB
 o conf commit
@@ -64,7 +64,7 @@ q
 The package Bioperl-run, which provides wrapper modules around many common bioinformatics applications and tools, is not installed by default.
 
 ```
-sudo cpan
+# cpan
 d /bioperl/
 
 ```
@@ -101,15 +101,15 @@ q
 
 ## Troubleshooting
 
-If you run into trouble while compiling your perl scripts, with an error like "Can't locate (Name of the Module) in @INC", Install the missing Modules like this:
+If you run into trouble while compiling your perl scripts, with an error like `Can't locate (Name of the Module) in @INC`, install the missing modules like this:
 
 ```
-sudo cpan
+# cpan
 install Module::Name
 q
 
 ```
 
-## More Resources
+## See also
 
-[http://www.bioperl.org/wiki/Installing_Bioperl_for_Unix](http://www.bioperl.org/wiki/Installing_Bioperl_for_Unix)
+*   [Installing Bioperl for Unix](http://www.bioperl.org/wiki/Installing)

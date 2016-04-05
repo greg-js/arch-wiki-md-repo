@@ -31,12 +31,12 @@ Configuring wireless is a two-part process; the first part is to identify and en
     *   [3.8 Connection always times out](#Connection_always_times_out)
         *   [3.8.1 Lowering the rate](#Lowering_the_rate)
         *   [3.8.2 Lowering the txpower](#Lowering_the_txpower)
-        *   [3.8.3 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
-    *   [3.9 Random disconnections](#Random_disconnections)
-        *   [3.9.1 Cause #1](#Cause_.231)
-        *   [3.9.2 Cause #2](#Cause_.232)
-        *   [3.9.3 Cause #3](#Cause_.233)
-        *   [3.9.4 Cause #4](#Cause_.234)
+    *   [3.9 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
+    *   [3.10 Random disconnections](#Random_disconnections)
+        *   [3.10.1 Cause #1](#Cause_.231)
+        *   [3.10.2 Cause #2](#Cause_.232)
+        *   [3.10.3 Cause #3](#Cause_.233)
+        *   [3.10.4 Cause #4](#Cause_.234)
 *   [4 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
     *   [4.1 Ralink](#Ralink)
         *   [4.1.1 rt2x00](#rt2x00)
@@ -632,9 +632,9 @@ You can try lowering the transmit power. This may save power as well:
 
 Valid settings are from 0 to 2000, though certain values may be restricted by your card's regulatory domain.
 
-#### Setting RTS and fragmentation thresholds
+### Setting RTS and fragmentation thresholds
 
-Wireless hardware disables RTS and fragmentation by default. These are two different methods of increasing throughput at the expense of bandwidth (i.e. reliability at the expense of speed). These are useful in environments with wireless noise or many adjacent access points.
+Wireless hardware disables RTS and fragmentation by default. These are two different methods of increasing throughput at the expense of bandwidth (i.e. reliability at the expense of speed). These are useful in environments with wireless noise or many adjacent access points, which may create interference leading to timeouts or failing connections.
 
 Packet fragmentation improves throughput by splitting up packets with size exceeding the fragmentation threshold. The maximum value (2346) effectively disables fragmentation since no packet can exceed it. The minimum value (256) maximizes throughput, but may carry a significant bandwidth cost.
 

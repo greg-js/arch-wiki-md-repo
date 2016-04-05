@@ -43,17 +43,17 @@ Hello, Arch!
 
 ```
 
-Compilation with standard *gc* compiler (same as `go build -compiler=gc test.go`):
+Compilation with standard *gc* compiler (same as `go build -compiler=gc hello.go`):
 
 ```
-$ go build test.go
+$ go build hello.go
 
 ```
 
-Compilation with *gccgo* (same as `go build -compiler=gccgo test.go`):
+Compilation with *gccgo* (same as `go build -compiler=gccgo hello.go`):
 
 ```
-$ gccgo test.go -o test
+$ gccgo hello.go -o hello
 
 ```
 

@@ -1,4 +1,11 @@
-This page should contain links to pages needed for configuring a laptop for the best experience. Setting up a laptop is in many ways the same as setting up a desktop. However, there are a few key differences. Arch Linux provides all the tools and programs necessary to take complete control of your laptop. These programs and utilities are highlighted below, with appropriate tips tutorials.
+This **Laptop main page** contains links to article (sections) needed for configuring a laptop for the best experience. Setting up a laptop is in many ways the same as setting up a desktop. However, there are a few key differences. Arch Linux provides all the tools and programs necessary to take complete control of your laptop. These programs and utilities are highlighted below, with appropriate tips tutorials.
+
+To gain an overview of the reported/achieved Linux hardware compatibility of a particular laptop model, see the results per vendor of below subpages.
+
+| **Laptop main page** |
+| [Acer](/index.php/Laptop/Acer "Laptop/Acer") - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - [HP](/index.php/Laptop/HP "Laptop/HP") - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") - [Other](/index.php/Laptop/Other "Laptop/Other") |
+
+If there are laptop model specific instructions, the respective article is crosslinked in the first column of the vendor subpages. In case the model is not listed in the vendor table, existing instructions of similar models via the [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") vendor subcategory may help.
 
 ## Contents
 

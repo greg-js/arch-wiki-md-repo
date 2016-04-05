@@ -16,7 +16,7 @@ Support of a various streaming services is provided by a plugins, which can be e
 
 ## Usage
 
-Package provides a *livestreamer* command-line utility, which is a quite easy to use:
+The package provides a *livestreamer* command-line utility, which is quite easy to use:
 
 ```
 $ livestreamer -p *your_player* *url* *stream*

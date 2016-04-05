@@ -18,6 +18,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
         *   [1.4.1 Database structure](#Database_structure)
     *   [1.5 Cleaning the package cache](#Cleaning_the_package_cache)
     *   [1.6 Additional commands](#Additional_commands)
+    *   [1.7 Installation reason](#Installation_reason)
 *   [2 Configuration](#Configuration)
     *   [2.1 General options](#General_options)
         *   [2.1.1 Color output](#Color_output)
@@ -406,6 +407,33 @@ Install a 'remote' package (not from a repository stated in *pacman'*s configura
 To inhibit the `-S`, `-U` and `-R` actions, `-p` can be used.
 
 *pacman* always lists packages to be installed or removed and asks for permission before it takes action.
+
+### Installation reason
+
+The *pacman* database distinguishes the installed packages in two groups according to the reason why they were installed:
+
+*   **explicitly-installed**: the packages that were literally passed to a generic *pacman* `-S` or `-U` command;
+*   **dependencies**: the packages that, despite never (in general) having been passed to a *pacman* installation command, were implicitly installed because [required](/index.php/Dependency "Dependency") by another package that was explicitly installed.
+
+When installing a package, it is possible to force its installation reason to *dependency* with:
+
+```
+# pacman -S --asdeps *package_name*
+
+```
+
+When **re**installing a package, though, the current installation reason is preserved by default.
+
+The list of explicitly-installed packages can be shown with `pacman -Qe`, while the complementary list of dependencies can be shown with `pacman -Qd`.
+
+To change the installation reason of an already installed package, execute:
+
+```
+# pacman -D --asdeps *package_name*
+
+```
+
+Use `--asexplicit` to do the opposite operation.
 
 ## Configuration
 

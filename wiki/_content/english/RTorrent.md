@@ -283,6 +283,13 @@ tmux attach -t rt
 
 ```
 
+Or if you use screen:
+
+```
+screen -D -r rtorrent
+
+```
+
 Detach:
 
 ```

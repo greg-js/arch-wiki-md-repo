@@ -506,7 +506,7 @@ To reinstall all native packages, use:
 
 Foreign (AUR) packages must be reinstalled separately; you can list them with `pacman -Qmq`.
 
-Pacman preserves the installation reason by default.
+Pacman preserves the [installation reason](/index.php/Installation_reason "Installation reason") by default.
 
 ### Restore pacman's local database
 

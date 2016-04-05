@@ -267,7 +267,7 @@ Finally reboot your machine, making sure the CD drive is first in the boot seque
 
 ## Bootable optical disk emulation
 
-The script Geteltorito.pl will extract the [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) boot image. It has worked on Lenovo laptops like X220 X230, and W540\. It may work for other vendors as well.
+The script Geteltorito.pl will extract the [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) boot image. It has worked on Lenovo laptops like X220, X230, W540 and T450s. It may work for other vendors as well.
 
 ### Installation
 
@@ -278,7 +278,7 @@ Install the [geteltorito](https://aur.archlinux.org/packages/geteltorito/) packa
 Get the bios update iso from the vendor support site. Run the *geteltorito* image extraction:
 
 ```
-# geteltorito.pl -o <image>.img <image>.iso
+$ geteltorito.pl -o <image>.img <image>.iso
 
 ```
 
@@ -290,3 +290,5 @@ Copy the image to the usb thumbdrive:
 ```
 
 Reboot and boot from the USB drive, follow vendor directions.
+
+**Note:** If you get the message "Secure Flash Authentication failed!", it means that some security check did not allow the flash to happen. It can help to go to the BIOS options page "Security" > "UEFI BIOS Update Option" and disable "Secure RollBack Prevention" and enable "Flash BIOS Updating by End-Users". You can set them to what you want after flashing.

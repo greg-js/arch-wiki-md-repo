@@ -65,7 +65,7 @@ Then start the **ptal-init** daemon.
 
 ### For Brother hardware
 
-In order to install a Brother Scanner or Printer/Scanner Combo you need the right driver (which can be found in the AUR). There are only four drivers to choose from (brscan1-4). In order to find the right one you should search for your model at the [brother linux scanner page](http://welcome.solutions.brother.com/bsc/public_s/id/linux/en/download_scn.html).
+In order to install a Brother Scanner or Printer/Scanner Combo you need the right driver (which can be found in the AUR). There are only four drivers to choose from (brscan1-4). In order to find the right one you should search for your model at the [brother linux scanner page](http://support.brother.com/g/s/id/linux/en/download_scn.html).
 
 After you installed the driver you need to run
 

@@ -31,13 +31,13 @@ It is simple to configure, but can only start EFI executables, such as the Linux
 
 1.  Make sure you are booted in UEFI mode.
 2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
-3.  Mount your [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI")(ESP) properly. `$esp` is used to denote the mountpoint in this article.
+3.  Mount your [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI")(ESP) properly. `*esp*` is used to denote the mountpoint in this article.
     **Note:** systemd-boot cannot load EFI binaries from other partitions. It is therefore recommended to mount your ESP to `/boot`. See [#Updating](#Updating) for more information and work-around, in case you want to separate `/boot` from the ESP.
 
 4.  Copy your kernel and initramfs onto that ESP.
     **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted.
 
-5.  Finally, Type the following command to install systemd-boot: `# bootctl --path=*$esp* install` It will copy the systemd-boot binary to your EFI System Partition (`$esp/EFI/systemd/systemd-bootx64.efi` and `$esp/EFI/Boot/BOOTX64.EFI` - both of which are identical - on x64 systems) and add systemd-boot itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
+5.  Finally, Type the following command to install systemd-boot: `# bootctl --path=*esp* install` It will copy the systemd-boot binary to your EFI System Partition (`*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/Boot/BOOTX64.EFI` - both of which are identical - on x64 systems) and add systemd-boot itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
 ### Legacy boot
 
@@ -50,7 +50,7 @@ You can also successfully install systemd-boot if booted with a legacy OS. Howev
 
 **Note:** E.g. on Dell's Latitude series, the firmware interface provides everything you need to setup EFI boot, and the EFI Shell won't be able to write to the computer's ROM.
 
-If you can do so, the installation is easier: go into your EFI shell or your firmware configuration interface, and change your machine's default EFI file to `$esp/EFI/systemd/systemd-bootx64.efi` (`systemd-bootia32.efi` on i686 systems).
+If you can do so, the installation is easier: go into your EFI shell or your firmware configuration interface, and change your machine's default EFI file to `*esp*/EFI/systemd/systemd-bootx64.efi` (`systemd-bootia32.efi` on i686 systems).
 
 ### Updating
 
@@ -64,7 +64,7 @@ systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) assumes that your EFI S
 If the ESP is not mounted on `/boot`, the `--path=` option can pass it. For example:
 
 ```
-# bootctl --path=/boot/$esp update
+# bootctl --path=*esp* update
 
 ```
 
@@ -72,7 +72,7 @@ If the ESP is not mounted on `/boot`, the `--path=` option can pass it. For exam
 
 ### Basic configuration
 
-The basic configuration is kept in `$esp/loader/loader.conf`, with three possible configuration options:
+The basic configuration is kept in `*esp*/loader/loader.conf`, with three possible configuration options:
 
 *   `default` – default entry to select (without the `.conf` suffix); can be a wildcard like `arch-*`
 
@@ -82,7 +82,7 @@ The basic configuration is kept in `$esp/loader/loader.conf`, with three possibl
 
 Example:
 
- `$esp/loader/loader.conf` 
+ `*esp*/loader/loader.conf` 
 ```
 default  arch
 timeout  4
@@ -96,9 +96,9 @@ Note that the first 2 options can be changed in the boot menu itself, which will
 
 **Note:** bootctl will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`). Where detected, entries will also automatically be generated for them as well. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the kernel, manual configuration entries must be created. If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
 
-**Tip:** You can find the PARTUUID for your Root partition with the command `blkid -s PARTUUID -o value /dev/sdxY`, where 'x' is the device letter and 'Y' is the partition number. This is required only for your Root partition, not $esp.
+**Tip:** You can find the PARTUUID for your Root partition with the command `blkid -s PARTUUID -o value /dev/sdxY`, where 'x' is the device letter and 'Y' is the partition number. This is required only for your Root partition, not `*esp*`.
 
-bootctl searches for boot menu items in `$esp/loader/entries/*.conf` – each file found must contain exactly one boot entry. The possible options are:
+bootctl searches for boot menu items in `*esp*/loader/entries/*.conf` – each file found must contain exactly one boot entry. The possible options are:
 
 *   `title` – operating system name. **Required.**
 
@@ -106,7 +106,7 @@ bootctl searches for boot menu items in `$esp/loader/entries/*.conf` – each fi
 
 *   `machine-id` – machine identifier from `/etc/machine-id`, shown only when multiple entries with same title and version exist. Optional.
 
-*   `efi` – EFI program to start, relative to your ESP (`$esp`); e.g. `/vmlinuz-linux`. Either this or `linux` (see below) is **required.**
+*   `efi` – EFI program to start, relative to your ESP (`*esp*`); e.g. `/vmlinuz-linux`. Either this or `linux` (see below) is **required.**
 
 *   `options` – command line options to pass to the EFI program or Kernel Boot Parameters. Optional, but you will need at least `initrd=*efipath*` and `root=*dev*` if booting Linux.
 
@@ -116,7 +116,7 @@ For Linux, you can specify `linux *path-to-vmlinuz*` and `initrd *path-to-initra
 
 Here is an example entry for a root partition without LVM or LUKS:
 
- `$esp/loader/entries/arch.conf` 
+ `*esp*/loader/entries/arch.conf` 
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -132,7 +132,7 @@ Please note in the example above that PARTUUID/PARTLABEL identifies a GPT partit
 
 Here is an example for a root partition using [Logical Volume Management](/index.php/LVM "LVM"):
 
- `$esp/loader/entries/arch-lvm.conf` 
+ `*esp*/loader/entries/arch-lvm.conf` 
 ```
 title          Arch Linux (LVM)
 linux          /vmlinuz-linux
@@ -154,7 +154,7 @@ Note that `root=**UUID**=` is used instead of `root=**PARTUUID**=`, which is use
 
 Here is an example configuration file for an encrypted root partition ([DM-Crypt / LUKS](/index.php/Dm-crypt "Dm-crypt")):
 
- `$esp/loader/entries/arch-encrypted.conf` 
+ `*esp*/loader/entries/arch-encrypted.conf` 
 ```
 title Arch Linux Encrypted
 linux /vmlinuz-linux
@@ -170,7 +170,7 @@ You can also add other EFI programs such as `\EFI\arch\grub.efi`.
 
 If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `options` line with `rootflags=subvol=<root subvolume>`. In the example below, root has been mounted as a btrfs subvolume called 'ROOT' (e.g. `mount -o subvol=ROOT /dev/sdxY /mnt`):
 
- `$esp/loader/entries/arch-btrfs-subvol.conf` 
+ `*esp*/loader/entries/arch-btrfs-subvol.conf` 
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -184,12 +184,12 @@ A failure to do so will otherwise result in the following error message: `ERROR:
 
 In case you installed EFI shells and other EFI application into the ESP, you can use the following snippets:
 
- `$esp/loader/entries/uefi-shell-v1-x86_64.conf` 
+ `*esp*/loader/entries/uefi-shell-v1-x86_64.conf` 
 ```
 title  UEFI Shell x86_64 v1
 efi    /EFI/shellx64_v1.efi
 ```
- `$esp/loader/entries/uefi-shell-v2-x86_64.conf` 
+ `*esp*/loader/entries/uefi-shell-v2-x86_64.conf` 
 ```
 title  UEFI Shell x86_64 v2
 efi    /EFI/shellx64_v2.efi

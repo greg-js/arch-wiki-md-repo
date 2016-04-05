@@ -16,7 +16,7 @@
     *   [2.10 Port configurations](#Port_configurations)
     *   [2.11 Configuring iptables](#Configuring_iptables)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 PAM with virtual users (updated)](#PAM_with_virtual_users_.28updated.29)
+    *   [3.1 PAM with virtual users](#PAM_with_virtual_users)
         *   [3.1.1 Adding private folders for the virtual users](#Adding_private_folders_for_the_virtual_users)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 vsftpd: no connection (Error 500) with recent kernels (3.5 and newer) and .service](#vsftpd:_no_connection_.28Error_500.29_with_recent_kernels_.283.5_and_newer.29_and_.service)
@@ -282,9 +282,9 @@ options nf_conntrack_ftp ports=2211
 
 ## Tips and tricks
 
-### PAM with virtual users (updated)
+### PAM with virtual users
 
-Since [PAM](/index.php/PAM "PAM") no longer provides pam_userdb.so another easy method is to use [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/). For environments with many users another option could be [pam_mysql](https://aur.archlinux.org/packages/pam_mysql/). This section is however limited to explain how to configure a chroot environment and authentication by pam_pwdfile.so.
+Since [PAM](/index.php/PAM "PAM") no longer provides `pam_userdb.so` another easy method is to use [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/). For environments with many users another option could be [pam_mysql](https://aur.archlinux.org/packages/pam_mysql/). This section is however limited to explain how to configure a chroot environment and authentication by `pam_pwdfile.so`.
 
 In this example we create the directory `vsftpd`:
 
@@ -316,12 +316,12 @@ username2:hashed_password2
 
 ```
 
-Next you need to create a PAM service using pam_pwdfile.so and the generated `/etc/vsftpd/.passwd` file. In this example we create a file in the /etc/pam.d directory named vsftpd with the following content:
+Next you need to create a PAM service using `pam_pwdfile.so` and the generated `/etc/vsftpd/.passwd` file. In this example we create a PAM policy for *vsftpd* with the following content:
 
+ `/etc/pam.d/vsftp` 
 ```
 auth required pam_pwdfile.so pwdfile /etc/vsftpd/.passwd
 account required pam_permit.so
-
 ```
 
 Now it is time to create a home for the virtual users. In the example `/srv/ftp` is decided to host data for virtual users, which also reflects the default directory structure of Arch. First create the general user virtual and make `/srv/ftp` its home:

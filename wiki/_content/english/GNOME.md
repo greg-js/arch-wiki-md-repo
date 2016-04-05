@@ -408,7 +408,15 @@ If you do not want the system to suspend or do nothing on lid close, you will ne
 
 ##### Change critical battery level action
 
-The System Settings panel only allows the user to choose between *Suspend* or *Hibernate*. To choose another option such as *Do Nothing* open the `dconf-editor` and navigate to `org.gnome.settings-daemon.plugins.power`. Edit the `"critical-battery-action"` value to `"nothing"`.
+The settings panel does not provide an option for changing the critical battery level action. These settings have been removed from dconf as well. They are now managed by upower. Edit the upower settings in `/etc/UPower/UPower.conf`. Find these settings and adjust to your needs.
+
+ `/etc/UPower/UPower.conf` 
+```
+PercentageLow=10
+PercentageCritical=3
+PercentageAction=2
+CriticalPowerAction=HybridSleep
+```
 
 #### Sort applications into application (app) folders
 

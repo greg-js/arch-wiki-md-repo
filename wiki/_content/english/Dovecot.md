@@ -93,13 +93,6 @@ session sufficient      pam_ldap.so
 
 In this way both LDAP and system users have their mailbox.
 
-*   Change the name of the following file so it can be read by dovecot:
-
-```
-# mv /etc/dovecot/conf.d/auth-system.conf{.ext,}
-
-```
-
 *   Edit `/etc/dovecot/conf.d/auth-system.conf` by changing the `passdb` directive, like this:
 
 ```

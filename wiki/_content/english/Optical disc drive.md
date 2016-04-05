@@ -49,6 +49,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
         *   [4.8.1 Special case: medium error / write error](#Special_case:_medium_error_.2F_write_error)
     *   [4.9 AHCI](#AHCI)
     *   [4.10 BD-R DL 50GB errors on trying to burn second layer](#BD-R_DL_50GB_errors_on_trying_to_burn_second_layer)
+    *   [4.11 Disc tray autocloses](#Disc_tray_autocloses)
 *   [5 See also](#See_also)
 
 ## Burning
@@ -938,6 +939,19 @@ I: -input-charset not specified, using utf-8 (detected in locale settings)
 ```
 
 This happened at the 25GB boundary when starting to write the second layer. Using *cdrecord* from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) works with no problems. Tested with a 'HL-DT-ST BD-RE WH16NS40' LG burner, and Verbatim BD-R DL 6x discs (#96911).
+
+### Disc tray autocloses
+
+If after ejecting a cd, either by using the `eject` command, or pushing the drive button, the drive disc tray autocloses before being able to remove the disc, try the following command:
+
+```
+# sysctl -w dev.cdrom.autoclose=0
+
+```
+
+If that solves the problem, make the change permanent:
+
+ `/etc/sysctl.d/60-cdrom-autoclose.conf`  `dev.cdrom.autoclose = 0` 
 
 ## See also
 

@@ -24,15 +24,17 @@ After creating the [EFI System Partition](/index.php/Unified_Extensible_Firmware
 
 ### Alternative ESP Mount Points
 
-If you mount the EFI System Partition elsewhere (such as `/boot/efi`), you will need to copy boot files to that location (referred to hereafter as `$esp`).
+If you do not mount the EFI System Partition to `/boot`, you will need to copy your boot files to its location (referred to hereafter as `*esp*`).
 
 ```
-# mkdir -p $esp/EFI/arch
-# cp /boot/vmlinuz-linux $esp/EFI/arch/vmlinuz-linux
-# cp /boot/initramfs-linux.img $esp/EFI/arch/initramfs-linux.img
-# cp /boot/initramfs-linux-fallback.img $esp/EFI/arch/initramfs-linux-fallback.img
+# mkdir -p *esp*/EFI/arch
+# cp /boot/vmlinuz-linux *esp*/EFI/arch/vmlinuz-linux
+# cp /boot/initramfs-linux.img *esp*/EFI/arch/initramfs-linux.img
+# cp /boot/initramfs-linux-fallback.img *esp*/EFI/arch/initramfs-linux-fallback.img
 
 ```
+
+**Note:** When using an Intel CPU, you may need to copy the [Microcode](/index.php/Microcode "Microcode") to the boot-entry location.
 
 Furthermore, you will need to keep the files on the ESP up-to-date with later kernel updates. Failure to do so could result in an unbootable system. The following sections discuss several mechanisms for automating it.
 
@@ -62,13 +64,12 @@ Description=Copy EFISTUB Kernel to UEFISYS Partition
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/cp -f /boot/vmlinuz-linux $esp/EFI/arch/vmlinuz-linux
-ExecStart=/usr/bin/cp -f /boot/initramfs-linux.img $esp/EFI/arch/initramfs-linux.img
-ExecStart=/usr/bin/cp -f /boot/initramfs-linux-fallback.img $esp/EFI/arch/initramfs-linux-fallback.img
-
+ExecStart=/usr/bin/cp -f /boot/vmlinuz-linux *esp*/EFI/arch/vmlinuz-linux
+ExecStart=/usr/bin/cp -f /boot/initramfs-linux.img *esp*/EFI/arch/initramfs-linux.img
+ExecStart=/usr/bin/cp -f /boot/initramfs-linux-fallback.img *esp*/EFI/arch/initramfs-linux-fallback.img
 ```
 
-**Tip:** For [Secure Boot](/index.php/Secure_Boot "Secure Boot") (with your own keys), you can set up the service to also sign the image (using [sbsigntools](https://aur.archlinux.org/packages/sbsigntools/)): `ExecStart=/usr/bin/sbsign --key <PATH TO DB.key> --cert <PATH TO DB.crt> --output $esp/EFI/arch/vmlinuz-linux $esp/EFI/arch/vmlinuz_linux` 
+**Tip:** For [Secure Boot](/index.php/Secure_Boot "Secure Boot") (with your own keys), you can set up the service to also sign the image (using [sbsigntools](https://aur.archlinux.org/packages/sbsigntools/)): `ExecStart=/usr/bin/sbsign --key */path/to/db.key* --cert */path/to/db.crt* --output *esp*/EFI/arch/vmlinuz-linux *esp*/EFI/arch/vmlinuz_linux` 
 
 Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `efistub-update.path`.
 
@@ -79,9 +80,9 @@ Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") 
  `/usr/local/bin/efistub-update.sh` 
 ```
 #!/usr/bin/env bash
-/usr/bin/cp -f /boot/vmlinuz-linux $esp/EFI/arch/vmlinuz-linux
-/usr/bin/cp -f /boot/initramfs-linux.img $esp/EFI/arch/initramfs-linux.img
-/usr/bin/cp -f /boot/initramfs-linux-fallback.img $esp/EFI/arch/initramfs-linux-fallback.img
+/usr/bin/cp -f /boot/vmlinuz-linux *esp*/EFI/arch/vmlinuz-linux
+/usr/bin/cp -f /boot/initramfs-linux.img *esp*/EFI/arch/initramfs-linux.img
+/usr/bin/cp -f /boot/initramfs-linux-fallback.img *esp*/EFI/arch/initramfs-linux-fallback.img
 ```
 
 **Note:** The first parameter `/boot/initramfs-linux-fallback.img` is the file to watch. The second parameter `IN_CLOSE_WRITE` is the action to watch for. The third parameter `/usr/local/bin/efistub-update.sh` is the script to execute.
@@ -121,9 +122,9 @@ while [[ -d "/proc/$PPID" ]]; do
 	sleep 1
 done
 
-/usr/bin/cp -f /boot/vmlinuz-linux $esp/EFI/arch/vmlinuz-linux
-/usr/bin/cp -f /boot/initramfs-linux.img $esp/EFI/arch/initramfs-linux.img
-/usr/bin/cp -f /boot/initramfs-linux-fallback.img $esp/EFI/arch/initramfs-linux-fallback.img
+/usr/bin/cp -f /boot/vmlinuz-linux *esp*/EFI/arch/vmlinuz-linux
+/usr/bin/cp -f /boot/initramfs-linux.img *esp*/EFI/arch/initramfs-linux.img
+/usr/bin/cp -f /boot/initramfs-linux-fallback.img *esp*/EFI/arch/initramfs-linux-fallback.img
 
 echo "Synced kernel with ESP"
 ```

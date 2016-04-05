@@ -89,12 +89,14 @@ xrandr --output eDP1 --panning 2304x1296
 
 ### KDE
 
-Though some issues still prevail , KDE plasma 5 provides a decent support for HiDPI screens.
+Though some issues still prevail, KDE plasma 5 provides a decent support for HiDPI screens.
 
 Please follow these guidelines for HiDPI support in KDE plasma 5
 
 1.  Increase font dpi (System Settings → Font → Force font dpi, enter a number such as 125, 144 or 150 etc)
-2.  Change Scale ( System Settings → Display and Monitor → Display Configuration → Scale Display , scroll to value 2 )
+2.  If necessary, follow the instructions in the [Qt 5](#Qt_5) section to make Qt honor this setting
+
+**Note:** You may have previously forced a scale factor, which may result in Qt applications appearing too large when a high DPI is set now that Qt 5.6 honors DPI settings. In this case, you will need to reset the scale factor (System Settings → Display and Monitor → Display Configuration → Scale Display, scroll value to 1).
 
 ### Xfce
 
@@ -144,7 +146,7 @@ Xft.rgba: rgb
 
 ```
 
-Make sure the settings are loaded properly when X starts, for instance in your `~/.xinitrc`` with `xrdb -merge ~/.Xresources` (see [Xresources](/index.php/Xresources "Xresources") for more information).
+Make sure the settings are loaded properly when X starts, for instance in your `~/.xinitrc` with `xrdb -merge ~/.Xresources` (see [Xresources](/index.php/Xresources "Xresources") for more information).
 
 This will make the font render properly in most toolkits and applications, it will however not affect things such as icon size! Setting `Xft.dpi` at the same time as toolkit scale (e.g. `GDK_SCALE`) may cause interface elements to be much larger than intended in some programs like firefox.
 

@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Installation guide](/index.php/Installation_guide "Installation guide"). Fecha de la última traducción/revisión: **2015-10-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=404204).
+**Estado de la traducción:** este artículo es una versión traducida de [Installation guide](/index.php/Installation_guide "Installation guide"). Fecha de la última traducción/revisión: **2016-04-04**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=429627).
 
 Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que le eche un vistazo a [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)"). Si lo que busca es una guía de instalación detallada y altamente explicativa remítase a la [Guía para principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)"), o a la categoría [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") para conocer casos específicos de instalación.
 
@@ -6,7 +6,7 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 ## Contents
 
-*   [1 Pre-Instalación](#Pre-Instalaci.C3.B3n)
+*   [1 Preinstalación](#Preinstalaci.C3.B3n)
     *   [1.1 Distribución del teclado en el entorno live](#Distribuci.C3.B3n_del_teclado_en_el_entorno_live)
     *   [1.2 Conectarse a Internet](#Conectarse_a_Internet)
     *   [1.3 Actualizar el reloj del sistema](#Actualizar_el_reloj_del_sistema)
@@ -19,9 +19,9 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
     *   [2.3 Configurar el sistema](#Configurar_el_sistema)
     *   [2.4 Instalar un gestor de arranque](#Instalar_un_gestor_de_arranque)
     *   [2.5 Reiniciar](#Reiniciar)
-*   [3 Pos-Instalación](#Pos-Instalaci.C3.B3n)
+*   [3 Posinstalación](#Posinstalaci.C3.B3n)
 
-## Pre-Instalación
+## Preinstalación
 
 *   Descargue e inicie el soporte de instalación como se explica en [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"), y, a continuación, siga con el resto de esta guía.
 
@@ -106,7 +106,7 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 *   Por último, reiniciar el equipo escribiendo `reboot`: cualquier partición que todavía siga montada será desmontada automáticamente por *systemd*. Recuerde que debe retirar el soporte de instalación y, luego, iniciar sesión en el nuevo sistema con la cuenta de root.
 
-## Pos-Instalación
+## Posinstalación
 
 *   Véase el artículo [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") para obtener indicaciones sobre cómo gestionar el sistema, así como tutoriales sobre qué hacer después de la instalación del sistema base (como pueden ser temas relativos a la instalación y configuración de una interfaz gráfica de usuario, la del sonido o la del panel táctil).
 

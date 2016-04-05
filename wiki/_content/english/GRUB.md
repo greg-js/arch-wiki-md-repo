@@ -274,16 +274,16 @@ Make sure you are in a [bash](/index.php/Bash "Bash") shell. For example, when b
 
 [Install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr). *GRUB* is the bootloader, *efibootmgr* creates bootable `.efi` stub entries used by the GRUB installation script.
 
-The following steps install the GRUB UEFI application to `**$esp**/EFI/grub`, install its modules to `/boot/grub/x86_64-efi`, and place the bootable `grubx64.efi` stub in `**$esp**/EFI/grub`.
+The following steps install the GRUB UEFI application to `*esp*/EFI/grub`, install its modules to `/boot/grub/x86_64-efi`, and place the bootable `grubx64.efi` stub in `*esp*/EFI/grub`.
 
-First, tell GRUB to use UEFI, set the boot directory and set the bootloader ID. Mount the ESP partition to e.g. `/boot` or `/boot/efi` and in the following change `$esp` to that mount point (usually `/boot`):
-
-```
-# grub-install --target=x86_64-efi --efi-directory=**$esp** --bootloader-id=**grub**
+First, tell GRUB to use UEFI, set the boot directory and set the bootloader ID. Mount the ESP partition to e.g. `/boot` or `/boot/efi` and in the following change `*esp*` to that mount point (usually `/boot`):
 
 ```
+# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=**grub**
 
-The `--bootloader-id` is what appears in the boot options to identify the GRUB EFI boot option; make sure this is something you will recognize later. The install will create a directory of the same name under `$esp/EFI/` where the EFI binary bootloader will be placed.
+```
+
+The `--bootloader-id` is what appears in the boot options to identify the GRUB EFI boot option; make sure this is something you will recognize later. The install will create a directory of the same name under `*esp*/EFI/` where the EFI binary bootloader will be placed.
 
 After the above install finished the main GRUB directory is located at `/boot/grub/`.
 
@@ -305,17 +305,17 @@ Below is other relevant information regarding installing Arch via UEFI
 
 Usually, GRUB keeps all files, including configuration files, in `/boot`, regardless of where the EFI System Partition is mounted.
 
-If you want to keep these files inside the EFI System Partition itself, add `--boot-directory=$esp` to the grub-install command:
+If you want to keep these files inside the EFI System Partition itself, add `--boot-directory=*esp*` to the grub-install command:
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub --boot-directory=$esp --debug
+# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=grub --boot-directory=*esp* --debug
 
 ```
 
-This puts all GRUB files in `$esp/grub`, instead of in `/boot/grub`. When using this method, make sure you have *grub-mkconfig* put the configuration file in the same place:
+This puts all GRUB files in `*esp*/grub`, instead of in `/boot/grub`. When using this method, make sure you have *grub-mkconfig* put the configuration file in the same place:
 
 ```
-# grub-mkconfig -o $esp/grub/grub.cfg
+# grub-mkconfig -o *esp*/grub/grub.cfg
 
 ```
 
@@ -323,13 +323,13 @@ Configuration is otherwise the same.
 
 #### UEFI firmware workaround
 
-Some UEFI firmware requires that the bootable `.efi` stub have a specific name and be placed in a specific location: `$esp/EFI/boot/bootx64.efi` (where `$esp` is the UEFI partition mountpoint). Failure to do so in such instances will result in an unbootable installation. Fortunately, this will not cause any problems with other firmware that does not require this.
+Some UEFI firmware requires that the bootable `.efi` stub have a specific name and be placed in a specific location: `*esp*/EFI/boot/bootx64.efi` (where `*esp*` is the UEFI partition mountpoint). Failure to do so in such instances will result in an unbootable installation. Fortunately, this will not cause any problems with other firmware that does not require this.
 
 To do so, first create the necessary directory, and then copy across the grub `.efi` stub, renaming it in the process:
 
 ```
-# mkdir $esp/EFI/boot
-# cp $esp/EFI/grub_uefi/grubx64.efi  $esp/EFI/boot/bootx64.efi
+# mkdir *esp*/EFI/boot
+# cp *esp*/EFI/grub_uefi/grubx64.efi *esp*/EFI/boot/bootx64.efi
 
 ```
 
@@ -345,11 +345,11 @@ It is possible to create a `grubx64_standalone.efi` application which has all th
 
 ```
 # echo 'configfile ${cmdpath}/grub.cfg' > /tmp/grub.cfg
-# grub-mkstandalone -d /usr/lib/grub/x86_64-efi/ -O x86_64-efi --modules="part_gpt part_msdos" --fonts="unicode" --locales="en@quot" --themes="" -o "$esp/EFI/grub/grubx64_standalone.efi"  "boot/grub/grub.cfg=/tmp/grub.cfg" -v
+# grub-mkstandalone -d /usr/lib/grub/x86_64-efi/ -O x86_64-efi --modules="part_gpt part_msdos" --fonts="unicode" --locales="en@quot" --themes="" -o "*esp*/EFI/grub/grubx64_standalone.efi"  "boot/grub/grub.cfg=/tmp/grub.cfg" -v
 
 ```
 
-Then copy the GRUB config file to `$esp/EFI/grub/grub.cfg` and create a UEFI Boot Manager entry for `$esp/EFI/grub/grubx64_standalone.efi` using [efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
+Then copy the GRUB config file to `*esp*/EFI/grub/grub.cfg` and create a UEFI Boot Manager entry for `*esp*/EFI/grub/grubx64_standalone.efi` using [efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
 
 **Note:**
 

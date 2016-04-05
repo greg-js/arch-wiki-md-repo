@@ -378,7 +378,9 @@ To build Android 6+, you need to install these additional packages:
 
 **Note:** You must now also install [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) & [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) since ncurses was updated to ncurses6 and android's prebuilt clang still depends on ncurses5\. You can check what libs are still needed: `ldd prebuilts/clang/linux-x86/host/3.6/bin/clang` 
 
-**Note:** You need to install [maven](https://www.archlinux.org/packages/?name=maven) to build CyanogenMod since, starting from cm-13.0, is using maven artifacts for some packages
+**Note:** You must now also install [maven](https://www.archlinux.org/packages/?name=maven) to build CyanogenMod since, from cm-13.0, they are using maven artifacts
+
+**Note:** You may want to install [make3](https://aur.archlinux.org/packages/make3/) to build Android since make-4 has parallelism issues
 
 ### Java Development Kit
 

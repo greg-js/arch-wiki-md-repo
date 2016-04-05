@@ -1,24 +1,19 @@
-**InspIRCd** (Inspire IRC daemon) is a modular and lightweight IRC daemon written in C++. As it is one of the few IRCd projects written from scratch, it avoids a number of design flaws and speed issues that plague other more established IRCd projects with the same or less features, such as UnrealIRCd 3\. It's the IRCd used by the [Chatspike IRC network](http://www.chatspike.net/).
+[InspIRCd](http://www.inspircd.org/) (Inspire IRC daemon) is a modular and lightweight IRC daemon written in C++. As it is one of the few IRCd projects written from scratch, it avoids a number of design flaws and speed issues that plague other more established IRCd projects with the same or less features, such as UnrealIRCd 3\. It's the IRCd used by the [Chatspike IRC network](http://www.chatspike.net/).
 
 ## Contents
 
-*   [1 Installing InspIRCd](#Installing_InspIRCd)
+*   [1 Installing](#Installing)
 *   [2 Configuring (mandatory)](#Configuring_.28mandatory.29)
 *   [3 Loading modules](#Loading_modules)
     *   [3.1 Third-party modules](#Third-party_modules)
 *   [4 Starting/Stopping the daemon](#Starting.2FStopping_the_daemon)
 *   [5 External links](#External_links)
 
-## Installing InspIRCd
+## Installing
 
 **Note:** Before you begin, check that you do not have any user or group named `inspired` as the package will create and run using this user privileges (for security reasons).
 
-Install [inspircd](https://aur.archlinux.org/packages.php?ID=22429) from the [AUR](/index.php/AUR "AUR"). Alternatively if your architecture is x86_64 you can use the binary package available [here](https://s3.amazonaws.com/sector5d/inspircd-2.0.5-1-x86_64.pkg.tar.xz). This can be installed via the following:
-
-```
-pacman -U [https://s3.amazonaws.com/sector5d/inspircd-2.0.5-1-x86_64.pkg.tar.xz](https://s3.amazonaws.com/sector5d/inspircd-2.0.5-1-x86_64.pkg.tar.xz)
-
-```
+[Install](/index.php/Install "Install") the [inspircd](https://aur.archlinux.org/packages/inspircd/) package.
 
 ## Configuring (mandatory)
 

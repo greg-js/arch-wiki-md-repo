@@ -28,9 +28,11 @@ Lenovo ThinkPad T460s
 
 ## Troubleshooting
 
+The [linux-t460s](https://aur.archlinux.org/packages/linux-t460s/) package includes kernel patches that fix the mouse and suspend issues described below. Rumors are that these patches are included upstream for linux 4.6.
+
 ### Touchpad
 
-There is an open [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=114321) which causes the physical mouse button (belonging to the TrackPoint) to report release events immediately even when pressing and holding the button. This prevents drag and drop and similar actions from working.
+There is an open [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=114321) which causes the physical mouse button (belonging to the TrackPoint) to report release events immediately even when pressing and holding the button. This prevents drag and drop and similar actions from working. The patch provided in that thread fixes the issue.
 
 ### Suspend / Resume
 

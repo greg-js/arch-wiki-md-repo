@@ -27,7 +27,7 @@
 | Nombre del artículo | Área de conocimiento | Última revisión | Mantenedor | Observaciones |
 | [Advanced Linux Sound Architecture (Español)](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") | Sonido | `2013-09` |
 | [AMD Catalyst (Español)](/index.php/AMD_Catalyst_(Espa%C3%B1ol) "AMD Catalyst (Español)") | Tarjeta gráfica | `2013-09` |
-| [Archboot (Español)](/index.php/Archboot_(Espa%C3%B1ol) "Archboot (Español)") | Instalación | `2014-26` |
+| [Archboot (Español)](/index.php/Archboot_(Espa%C3%B1ol) "Archboot (Español)") | Instalación | `2016-04` |
 | [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") | Gestión de paquetes | `2013-09` |
 | [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)") | Información/Arch | `2014-11` |
 | [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") | Información/Arch | `2016-04` |
@@ -59,6 +59,7 @@
 | [Fonts (Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)") | Tipos de letras | `2008-06` |
 | [Forum etiquette (Español)](/index.php/Forum_etiquette_(Espa%C3%B1ol) "Forum etiquette (Español)") | Información/Foro | `2014-04` |
 | [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") | Configuración del sistema/Sistema archivos | `2013-09` |
+| [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | Información | `2016-04` |
 | [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | Información/Posinstalación | `2014-11` |
 | [Getting involved (Español)](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") | Ayuda/Colaboración | `2014-04` |
 | [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | Gestor de arranque | `2015-06` |
@@ -76,7 +77,7 @@
 | [Improve pacman performance (Español)](/index.php/Improve_pacman_performance_(Espa%C3%B1ol) "Improve pacman performance (Español)") | Gestión de paquetes | `2013-09` |
 | [Install from existing Linux (Español)](/index.php/Install_from_existing_Linux_(Espa%C3%B1ol) "Install from existing Linux (Español)") | Instalación | `2013-11` |
 | [Install from SSH (Español)](/index.php/Install_from_SSH_(Espa%C3%B1ol) "Install from SSH (Español)") | Instalación | `2014-12` |
-| [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") | Información/Guía/Instalación | `2015-10` | [Pedro](/index.php/User:Pedro "User:Pedro") |
+| [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") | Información/Guía/Instalación | `2016-04` | [Pedro](/index.php/User:Pedro "User:Pedro") |
 | [Installing Arch Linux on a USB key (Español)](/index.php/Installing_Arch_Linux_on_a_USB_key_(Espa%C3%B1ol) "Installing Arch Linux on a USB key (Español)") | Instalación | `2013-11` |
 | [Intel graphics (Español)](/index.php/Intel_graphics_(Espa%C3%B1ol) "Intel graphics (Español)") | Tarjeta gráfica | `2013-09` |
 | [Iptables (Español)](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)") | Seguridad/Cortaguegos | `2013-09` |

@@ -18,10 +18,11 @@ Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passt
 *   [9 QEMU commands](#QEMU_commands)
 *   [10 Create and configure VM for OVMF](#Create_and_configure_VM_for_OVMF)
 *   [11 Complete example for QEMU (CLI-based) without libvirtd](#Complete_example_for_QEMU_.28CLI-based.29_without_libvirtd)
-*   [12 Control VM via Synergy](#Control_VM_via_Synergy)
-*   [13 Operating system](#Operating_system)
-*   [14 Make Nvidia's GeForce Experience work](#Make_Nvidia.27s_GeForce_Experience_work)
-*   [15 See also](#See_also)
+*   [12 Complete example for QEMU with libvirtd](#Complete_example_for_QEMU_with_libvirtd)
+*   [13 Control VM via Synergy](#Control_VM_via_Synergy)
+*   [14 Operating system](#Operating_system)
+*   [15 Make Nvidia's GeForce Experience work](#Make_Nvidia.27s_GeForce_Experience_work)
+*   [16 See also](#See_also)
 
 ## Prerequisites
 
@@ -501,6 +502,91 @@ sudo systemctl stop nmbd.service
 ```
 
 For more information regarding this example see [this email at Red Hat's vfio-users list](https://www.redhat.com/archives/vfio-users/2015-August/msg00020.html).
+
+## Complete example for QEMU with libvirtd
+
+```
+<domain type='kvm' xmlns:qemu='[http://libvirt.org/schemas/domain/qemu/1.0'](http://libvirt.org/schemas/domain/qemu/1.0')>
+  <name>win7</name>
+  <uuid>a3bf6450-d26b-4815-b564-b1c9b098a740</uuid>
+  <memory unit='KiB'>8388608</memory>
+  <currentMemory unit='KiB'>8388608</currentMemory>
+  <vcpu placement='static'>8</vcpu>
+  <os>
+    <type arch='x86_64' machine='pc-i440fx-2.4'>hvm</type>
+    <boot dev='hd'/>
+    <bootmenu enable='yes'/>
+  </os>
+  <features>
+    <acpi/>
+    <kvm>
+      <hidden state='on'/>
+    </kvm>
+  </features>
+  <cpu mode='host-passthrough'>
+    <topology sockets='1' cores='8' threads='1'/>
+  </cpu>
+  <clock offset='utc'/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/sbin/qemu-system-x86_64</emulator>
+    <disk type='block' device='disk'>
+      <driver name='qemu' type='raw' cache='none' io='native'/>
+      <source dev='/dev/rootvg/win7'/>
+      <target dev='vda' bus='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
+    </disk>
+    <disk type='block' device='disk'>
+      <driver name='qemu' type='raw' cache='none' io='native'/>
+      <source dev='/dev/rootvg/windane'/>
+      <target dev='vdb' bus='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+    </disk>
+    <disk type='block' device='cdrom'>
+      <driver name='qemu' type='raw' cache='none' io='native'/>
+      <target dev='hdb' bus='ide'/>
+      <readonly/>
+      <address type='drive' controller='0' bus='0' target='0' unit='1'/>
+    </disk>
+    <controller type='usb' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x2'/>
+    </controller>
+    <controller type='pci' index='0' model='pci-root'/>
+    <controller type='ide' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x1'/>
+    </controller>
+    <controller type='sata' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </controller>
+    <interface type='network'>
+      <mac address='52:54:00:fa:59:92'/>
+      <source network='default'/>
+      <model type='rtl8139'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
+    </interface>
+    <input type='mouse' bus='ps2'/>
+    <input type='keyboard' bus='ps2'/>
+    <sound model='ac97'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
+    </sound>
+    <memballoon model='virtio'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x0'/>
+    </memballoon>
+  </devices>
+  <qemu:commandline>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='vfio-pci,host=02:00.0,multifunction=on,x-vga=on'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='vfio-pci,host=02:00.1'/>
+    <qemu:env name='QEMU_PA_SAMPLES' value='1024'/>
+    <qemu:env name='QEMU_AUDIO_DRV' value='pa'/>
+    <qemu:env name='QEMU_PA_SERVER' value='/run/user/1000/pulse/native'/>
+  </qemu:commandline>
+</domain>
+
+```
 
 ## Control VM via Synergy
 

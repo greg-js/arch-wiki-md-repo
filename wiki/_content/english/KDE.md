@@ -671,7 +671,7 @@ Then go to *system-settings > Startup and Shutdown > Autostart* and *Check/Add* 
 
 #### Applications don't refresh properly
 
-If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), you might find that the Plasma panel and other applications don't refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Try to set Plasma 5's *OpenGL interface* setting to GLX instead (in System Settings under *Display and Monitor* -> *Compositor*). If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
+If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), you might find that the Plasma panel and other applications don't refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Go to System Settings under *Display and Monitor* -> *Compositor*. Set *OpenGL interface* to OpenGL 3.1\. If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
 
 #### Low 2D desktop performance (or) artifacts appear when on 2D
 

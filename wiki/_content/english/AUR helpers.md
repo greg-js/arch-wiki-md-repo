@@ -1,6 +1,6 @@
 **Warning:** None of these tools are [officially](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) supported by Arch Linux. It is recommended to become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems on one's own.
 
-AUR helpers are written to make using the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") more comfortable.
+AUR helpers are written to automate certain tasks for the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Contents
 
@@ -108,7 +108,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 *   **pkgbuildup** — Helps AUR package maintainers automatically update PKGBUILD files. Supports a template variable syntax.
 
-	Repository: [GitHub](https://github.com/fasheng/pkgbuildup) || [pkgbuildup-git](https://aur.archlinux.org/packages/pkgbuildup-git/)
+	[https://github.com/fasheng/pkgbuildup](https://github.com/fasheng/pkgbuildup) || [pkgbuildup-git](https://aur.archlinux.org/packages/pkgbuildup-git/)
 
 *   **pkgcheck** — Uses rules in PKGBUILDs to parse upstream version information or looks for changes by checksumming the web page
 
@@ -116,7 +116,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 *   **pkgoutofdate** — Parses the source URL from PKGBUILDs and tries to find new versions of packages by incrementing the version number and sending requests to the web server
 
-	Repository: [GitHub](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-git](https://aur.archlinux.org/packages/pkgoutofdate-git/)
+	[https://github.com/anatol/pkgoutofdate](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-git](https://aur.archlinux.org/packages/pkgoutofdate-git/)
 
 ## Libraries
 
@@ -152,22 +152,24 @@ The columns have the following meaning:
 *   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
 *   *Split packages*: ability to correctly build and install split packages independently, such as [python-nikola](https://aur.archlinux.org/packages/python-nikola/).
 *   *Git clone*: uses git clones instead of downloading tarballs (deprecated since AUR 4).
+*   *Multiarch*: ability to handle architecture-specific dependencies, introduced with [Pacman](/index.php/Pacman "Pacman") 4.2\. See also [FS#48796](https://bugs.archlinux.org/task/48796).
+*   *Syntax*: P stands for [Pacman](/index.php/Pacman "Pacman")-like, S for specific.
 
-| Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Shell completion | Syntax | Specificity |
-| apacman | Bash | No | Yes | No | No | No | No | None | Pacman-like | Fork of *packer* |
-| aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | No | No [[2]](https://github.com/aurapm/aura/issues/353) | No | bash/zsh | Pacman-like | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support, multilingual |
-| aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | Specific | Emacs integration, no automatic builds |
-| aurget | Bash | Optional | Yes | No | No | No [[3]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | Pacman-like | - |
-| aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | None | Specific | [tsort](https://en.wikipedia.org/wiki/Topological_sorting "w:Topological sorting"), PCRE, local repository, [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
-| bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | No | bash/zsh | Pacman-like/Specific | Trust management, ABS support, extends Powerpill |
-| burgaur | Python3/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | Pacman-like | Wrapper for *cower* |
-| cower | C | Yes | N/A | Yes | N/A | N/A | No | bash/zsh | Specific | No automatic builds, regex support |
-| pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | Pacman-like/specific | Minimizes user interaction, multilingual |
-| packer | Bash | No | Yes | No | No | No | No | None | Pacman-like | - |
-| pbget | Python3 | Yes | N/A | Yes | N/A | N/A | No | None | Specific | No automatic builds |
-| PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[4]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | Pacman-like | Automatic builds by default, use -F to disable; multilingual |
-| prm | Bash | Yes [[5]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | Specific | No automatic builds, ABS support |
-| trizen | Perl | Yes | Yes | Yes [[6]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | No | No | No | None | Pacman-like | AUR comments |
-| wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | Specific | Mirror updates, print news and AUR comments |
-| yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | bash | Specific | No automatic builds |
-| yaourt | Bash/C | No [[7]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) | No [[8]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[9]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[10]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | Pacman-like | Backup, ABS support, AUR comments, multilingual |
+| Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Multiarch | Shell completion | Syntax | Specificity |
+| apacman | Bash | No | Yes | No | No | No | No | No | None | P | Fork of *packer* |
+| aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | No | No [[2]](https://github.com/aurapm/aura/issues/353) | No | No | bash/zsh | P | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support, multilingual |
+| aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No |  ? | N/A | S | Emacs integration, no automatic builds |
+| aurget | Bash | Optional | Yes | No | No | No [[3]](https://github.com/pbrisbin/aurget/issues/40) | No | No | bash/zsh | P | - |
+| aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | Partial [[4]](https://github.com/AladW/aurutils/issues/80) | None | S | [tsort](https://en.wikipedia.org/wiki/Topological_sorting "w:Topological sorting"), PCRE, local repository, [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
+| bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | Yes | Yes [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1617235#p1617235) | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
+| burgaur | Python3/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No |  ? | None | P | Wrapper for *cower* |
+| cower | C | Yes | N/A | Yes | N/A | N/A | No |  ? | bash/zsh | S | No automatic builds, regex support |
+| pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | Partial [[6]](https://github.com/rmarquis/pacaur/issues/465) | bash/zsh | P/S | Minimizes user interaction, multilingual |
+| packer | Bash | No | Yes | No | No | No | No | No | None | P | - |
+| pbget | Python3 | Yes | N/A | Yes | N/A | N/A | No |  ? | None | S | No automatic builds |
+| PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[7]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | Yes [[8]](https://github.com/Kwpolska/pkgbuilder/blob/65d9d74ef05f8996b81afb1cd005e3c337afa8b2/pkgbuilder/build.py#L198) | None | P | Automatic builds by default, use -F to disable; multilingual |
+| prm | Bash | Yes [[9]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes |  ? | None | S | No automatic builds, ABS support |
+| trizen | Perl | Yes | Yes | Yes [[10]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | No | No | No |  ? | None | P | AUR comments |
+| wrapaur | Bash | Yes | Yes | No | No | No | Yes |  ? | None | S | Mirror updates, print news and AUR comments |
+| yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional |  ? | bash | S | No automatic builds |
+| yaourt | Bash/C | No [[11]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) | No [[12]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[13]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[14]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional |  ? | bash/zsh/fish | P | Backup, ABS support, AUR comments, multilingual |

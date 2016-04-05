@@ -45,7 +45,7 @@ Source-based distributions are highly portable, giving the advantage of controll
 *   Both Arch Linux and Gentoo Linux are rolling release systems, making packages available to the distribution a short time after they are released upstream.
 *   The Gentoo packages and base system are built directly from source code according to user-specified *USE flags*. Arch provides a ports-like system for building packages from source, though the Arch base system is designed to be installed as pre-built i686/x86_64 binary. This generally makes Arch quicker to build and update, and allows Gentoo to be more systemically customizable.
 *   Arch supports i686 and x86_64 while Gentoo officially supports x86 (i486/i686), x86_64, PPC/PPC64, SPARC, Alpha, ARM, MIPS, HPPA, S/390 and Itanium architectures.
-*   Gentoo's official package and system management tools tend to be rather more complex and "powerful" than those provided by Arch, and certain features which are at the very heart of Gentoo *([USE flags](http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&chap=2), [SLOTs](http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&chap=1#doc_chap5), etc.)* do not have any direct Arch Linux equivalent. Some of that is due to the fact that Arch is primarily a binary distro, but differences in [design philosophy](/index.php/Arch_Linux#Principles "Arch Linux") also play a big role, with Arch taking a more principled stance in favor of architectural simplicity and avoiding over-engineering.
+*   Gentoo's official package and system management tools tend to be rather more complex and "powerful" than those provided by Arch, and certain features which are at the very heart of Gentoo *([USE flags](https://wiki.gentoo.org/wiki/Handbook:X86/Working/USE), [SLOTs](https://wiki.gentoo.org/wiki/Handbook:X86/Working/Portage#Terminology), etc.)* do not have any direct Arch Linux equivalent. Some of that is due to the fact that Arch is primarily a binary distro, but differences in [design philosophy](/index.php/Arch_Linux#Principles "Arch Linux") also play a big role, with Arch taking a more principled stance in favor of architectural simplicity and avoiding over-engineering.
 *   Because both the Gentoo and Arch installations only include a base system, both are considered to be highly customizable. Gentoo users will generally feel quite comfortable with most aspects of Arch.
 
 ## General
@@ -54,9 +54,9 @@ These distributions offer a broad range of advantages and strengths, and can be 
 
 ### Debian GNU/Linux
 
-*   Debian is the largest upstream Linux distribution with a bigger community and features stable, testing, and unstable branches, offering over 30,000 binary packages. The available number of Arch binary packages is more modest. However, when including the AUR, the quantities are very comparable.
+*   Debian is the largest upstream Linux distribution with a bigger community and features stable, testing, and unstable branches, offering over 43,000 packages. The available number of Arch binary packages is more modest. However, when including the AUR, the quantities are very comparable.
 
-*   Debian has a more vehement stance on free software but still includes non-free software in its non-free repos. Arch is more lenient, and therefore inclusive, concerning *non-free packages* as defined by GNU, thereby leaving the choice to the users.
+*   Debian has a more vehement stance on free software but still includes non-free software in its non-free repos. Arch is more lenient, and therefore inclusive, concerning *non-free packages* as defined by GNU.
 
 *   Debian focuses on stringent testing of the Stable branch, which is "frozen" and supported up to [five years](https://wiki.debian.org/LTS). Arch packages are more current than Debian Stable and Testing, being more comparable to the Debian Unstable branch, and has no fixed release schedule.
 

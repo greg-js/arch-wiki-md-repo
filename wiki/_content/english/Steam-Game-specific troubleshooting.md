@@ -200,6 +200,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
         *   [57.3.1 Loading screen freeze](#Loading_screen_freeze)
         *   [57.3.2 No audio](#No_audio_4)
         *   [57.3.3 Slow loading textures](#Slow_loading_textures)
+        *   [57.3.4 NVIDIA drivers](#NVIDIA_drivers)
 *   [58 Terraria](#Terraria)
 *   [59 The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales)
     *   [59.1 Dependencies](#Dependencies_31)
@@ -1397,6 +1398,17 @@ If it still does not work, you may also need to set the environment variable AUD
 #### Slow loading textures
 
 If you are using Chris' FPS Configs or any other FPS config, you may have set `mat_picmip` to `2`. This spawns multiple threads for texture loading, which may cause more jittering and lag on Linux, especially on alternative kernels. Try setting it to `-1`, the default.
+
+#### NVIDIA drivers
+
+**Note:** This is fixed in [nvidia](https://www.archlinux.org/packages/?name=nvidia) 361.42-1
+
+Some modern [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers do not seem to go well with Team Fortress 2\. If you have some startup error complaining that a GL function is not available, you can fix this by putting your driver in compatibility mode. To do this, you need to change the launch options to:
+
+```
+   __GLVND_DISALLOW_PATCHING=1 %command%
+
+```
 
 ## Terraria
 

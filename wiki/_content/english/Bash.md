@@ -165,7 +165,7 @@ Zsh can invoke the manual for the written command pushing `Alt+h`. A similar beh
 
 [alias](https://en.wikipedia.org/wiki/Alias_(command) is a command, which enables a replacement of a word with another string. It is often used for abbreviating a system command, or for adding default arguments to a regularly used command.
 
-Personal aliases are preferably stored in `~/.bashrc`, and system-wide aliases (which affect all users) belong in `/etc/bash.bashrc`. See [[4]](https://gist.github.com/anonymous/a9055e30f97bd19645c2) and [Pacman tips#Shortcuts](/index.php/Pacman_tips#Shortcuts "Pacman tips") for example aliases.
+Personal aliases are preferably stored in `~/.bashrc`, and system-wide aliases (which affect all users) belong in `/etc/bash.bashrc`. See [[4]](https://gist.github.com/anonymous/a9055e30f97bd19645c2) for example aliases.
 
 For functions, see [Bash/Functions](/index.php/Bash/Functions "Bash/Functions").
 

@@ -6,7 +6,8 @@
 *   [2 Configuration](#Configuration)
 *   [3 Use Inotify](#Use_Inotify)
 *   [4 Run a Relay](#Run_a_Relay)
-*   [5 Troubleshooting](#Troubleshooting)
+*   [5 Discovery Server](#Discovery_Server)
+*   [6 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
@@ -54,6 +55,38 @@ ExecStart=/usr/bin/syncthing-relaysrv FLAGS
 ```
 
 A traffic statistics page is available at port 22070, e.g. [http://78.47.248.86:22070/status](http://78.47.248.86:22070/status).
+
+## Discovery Server
+
+The Syncthing Discovery Server is available in the AUR under [syncthing-discosrv](https://aur.archlinux.org/packages/syncthing-discosrv/). Documentation is provided [here](https://docs.syncthing.net/users/discosrv.html).
+
+Note, that the discovery server requires certificates to run, which should ideally be placed in `/var/discosrv`, and the user/group `syncthing` needs permissions to able to read the certificate files. Currently, you will need to edit the systemd unit file to correctly point to the certificates (as well as any other configuration changes you want to undertake, see [list](https://docs.syncthing.net/users/discosrv.html#configuring)).
+
+ `/usr/lib/systemd/system/syncthing-discosrv.service` 
+```
+[Unit]
+Description=Syncthing discovery server
+After=network.target
+
+[Service]
+User=syncthing
+Group=syncthing
+ExecStart=/bin/sh -c "/usr/bin/syncthing-discosrv -db-dsn='file:///var/discosrv/discosrv.db' -cert /var/discosrv/chain.pem -key /var/discosrv/key.pem"
+Restart=on-failure
+SuccessExitStatus=2
+
+PrivateDevices=true
+ProtectSystem=full
+ProtectHome=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
+```
+
+To point the client at your discovery server, change the `Global Discovery Servers` variable under Settings, to point to `https://yourserver:8443/` (default port) or whatever port you have reconfigured to. The variable takes a comma-seperated list of discovery servers, it is possible to include multiple ones, including the default one.
+
+If you are using self-signed certificates, the client will refuse to connect unless you append the discovery server ID to its domain. The ID is printed to stdout upon launching the discovery server. Amend the Global Discovery Servers entry to add the ID: `https://yourserver.com:8443/?id=AAAAAAA-BBBBBBB-CCCCCCC-DDDDDDD-EEEEEEE-FFFFFFF-GGGGGGG-HHHHHHH`.
 
 ## Troubleshooting
 

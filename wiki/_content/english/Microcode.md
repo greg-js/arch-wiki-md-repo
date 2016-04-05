@@ -54,7 +54,7 @@ Repeat it for each menu entry.
 
 ### systemd-boot
 
-Use the `initrd` option twice in `/boot/loader/entries/*.conf`:
+Use the `initrd` option twice in `/boot/loader/entries/*entry*.conf`:
 
 ```
 title   Arch Linux
@@ -64,6 +64,10 @@ initrd  /initramfs-linux.img
 options ...
 
 ```
+
+Copy `/boot/intel-ucode.img` to `$esp/EFI/*entry*/intel-ucode.img`.
+
+See [EFISTUB](/index.php/EFISTUB "EFISTUB") for more information and mechanisms for automatic managing.
 
 ### EFI boot stub / EFI handover
 

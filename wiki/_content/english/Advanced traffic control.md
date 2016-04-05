@@ -1,4 +1,4 @@
-One of the advanced and least known network features from the linux kernel, is the ability to control and shape the traffic. While most users know the basic use of iproute2 by using the `ip` command, they often ignore other powerful features like the ones offered by the `tc` command.
+The Linux kernel's network stack has network traffic control and shaping features. The `iproute2` package installs the `tc` command to control these via the command line.
 
 The goal of this article is to show how to shape the traffic by using queueing disciplines. For instance, if you ever had to forbid downloads or torrents on a network that you admin, and not because you were against those services, but because users were "abusing" the bandwidth, then you could use queueing disciplines to allow that kind of traffic and, at the same time, be sure that one user cannot slowdown the entire network.
 
@@ -37,7 +37,7 @@ Classless qdiscs do not allow to add more qdiscs to it.
 Before starting to configure qdiscs, first we need to remove any existing qdisc from the root. This will remove any qdisc from the eth0 device:
 
 ```
-tc qdisc del root dev eth0 
+# tc qdisc del root dev eth0 
 
 ```
 
@@ -62,11 +62,11 @@ Example:
 Uploading can fill a modem's queue and, as result, while you are uploading a huge file, the interactivity is destroyed.
 
 ```
-tc qdisc add dev ppp0 root tbf rate 220kbit latency 50ms burst 1540         # The upload speed should be changed to your upload speed minus a small few percent (to be the slowest link of the chain)
+# tc qdisc add dev ppp0 root tbf rate 220kbit latency 50ms burst 1540
 
 ```
 
-This configuration sets a TBF for the ppp0 device, limiting the upload speed to 220k, setting a latency of 50ms for a package before being dropped, and a burst of 1540. It works by keeping the queueing on the linux machine (where it can be shaped) instead of the modem.
+Note the above upload speed should be changed to your upload speed minus a small few percent (to be the slowest link of the chain). This configuration sets a TBF for the `ppp0` device, limiting the upload speed to 220k, setting a latency of 50ms for a package before being dropped, and a burst of 1540. It works by keeping the queueing on the Linux machine (where it can be shaped) instead of the modem.
 
 #### Stochastic Fairness Queueing (SFQ)
 
@@ -77,19 +77,15 @@ Example:
 This configuration sets SFQ on the root on the eth0 device, configuring it to perturb (alter) its hashing algorithm every 10 seconds.
 
 ```
-tc qdisc add dev eth0 root sfq perturb 10
+# tc qdisc add dev eth0 root sfq perturb 10
 
 ```
 
 #### CoDel and Fair Queueing CoDel
 
-Since systemd 217, fq_codel is the default. [CoDel](https://en.wikipedia.org/wiki/CoDel "wikipedia:CoDel") (Controlled Delay) is an attempt to limit buffer bloating and minimize latency in saturated network links by distinguishing good queues (that empty quickly) from bad queues that stay saturated and slow. The [fair queueing](https://en.wikipedia.org/wiki/Fair_queueing "wikipedia:Fair queueing") Codel utilizes fair queues to more readily distribute available bandwidth between Codel flows. The configuration options are limited intentionally, since the algorithm is designed to work with dynamic networks, and there are some corner cases to consider that are discussed on the [bufferbloat wiki concerning Codel](http://www.bufferbloat.net/projects/codel/wiki), including issues on very large switches and sub megabit connections. Additional information is available in:
+Since systemd 217, fq_codel is the default. [CoDel](https://en.wikipedia.org/wiki/CoDel "wikipedia:CoDel") (Controlled Delay) is an attempt to limit buffer bloating and minimize latency in saturated network links by distinguishing good queues (that empty quickly) from bad queues that stay saturated and slow. The [fair queueing](https://en.wikipedia.org/wiki/Fair_queueing "wikipedia:Fair queueing") Codel utilizes fair queues to more readily distribute available bandwidth between Codel flows. The configuration options are limited intentionally, since the algorithm is designed to work with dynamic networks, and there are some corner cases to consider that are discussed on the [bufferbloat wiki concerning Codel](http://www.bufferbloat.net/projects/codel/wiki), including issues on very large switches and sub megabit connections.
 
-```
- man tc-codel
- man tc-fq_codel
-
-```
+Additional information is available via the `man tc-codel` and `man tc-fq_codel`.
 
 **Warning:** Make sure your ethernet driver supports Byte Queue Limits before using CoDel. [Here is a list of drivers supported as of kernel 3.6](http://www.bufferbloat.net/projects/bloat/wiki/BQL_enabled_drivers)
 
@@ -103,7 +99,7 @@ All the names should be set as `x:y` where `x` is the name of the root, and `y` 
 
 #### Hierarchical Token Bucket (HTB)
 
-HTB is well suited for setups where you have a fixed amount of bandwidth which you want to divide for different purposes, giving each purpose a guaranteed bandwidth, with the possibility of specifying how much bandwidth can be borrowed. Here is an example with comments explaining what does each line:
+HTB is well suited for setups where you have a fixed amount of bandwidth which you want to divide for different purposes, giving each purpose a guaranteed bandwidth, with the possibility of specifying how much bandwidth can be borrowed. Here is an example with comments explaining what each line does:
 
 ```
 # This line sets a HTB qdisc on the root of eth0, and it specifies that the class 1:30 is used by default. It sets the name of the root as 1:, for future references.
@@ -124,15 +120,15 @@ tc class add dev eth0 parent 1:1 classid 1:20 htb rate 3mbit ceil 6mbit burst 15
 tc class add dev eth0 parent 1:1 classid 1:30 htb rate 1kbit ceil 6mbit burst 15k
 
 # Martin Devera, author of HTB, then recommends SFQ for beneath these classes:
-tc qdisc add dev eth0 parent 1:10 handle 10: sfq perturb 10 
-tc qdisc add dev eth0 parent 1:20 handle 20: sfq perturb 10 
-tc qdisc add dev eth0 parent 1:30 handle 30: sfq perturb 10 
+tc qdisc add dev eth0 parent 1:10 handle 10: sfq perturb 10
+tc qdisc add dev eth0 parent 1:20 handle 20: sfq perturb 10
+tc qdisc add dev eth0 parent 1:30 handle 30: sfq perturb 10
 
 ```
 
 ## Filters
 
-Once a classful qdisc is set on root (which may contain classes with more classful qdiscs), is necessary to use filters to indicate which package should be processed by which class.
+Once a classful qdisc is set on root (which may contain classes with more classful qdiscs), it is necessary to use filters to indicate which package should be processed by which class.
 
 On a classless-only environment, filters are not necessary.
 
@@ -164,14 +160,14 @@ iptables has a method called fwmark, which can be used to add a mark to packages
 First, this makes packages marked with 6, to be processed by the 1:30 class
 
 ```
-tc filter add dev eth0 protocol ip parent 1: prio 1 handle 6 fw flowid 1:30 
+# tc filter add dev eth0 protocol ip parent 1: prio 1 handle 6 fw flowid 1:30
 
 ```
 
 This sets that mark 6, using iptables
 
 ```
-iptables -A PREROUTING -t mangle -i eth0 -j MARK --set-mark 6
+# iptables -A PREROUTING -t mangle -i eth0 -j MARK --set-mark 6
 
 ```
 
@@ -179,7 +175,7 @@ You can then use the regular way of iptables to match packages and then use fwma
 
 ## Example of ingress traffic shaping with SNAT
 
-Qdiscs on ingress traffic provide only policing with no shaping. In order to shape ingress, the IFB device has to be used. However, another problem arises if SNAT or MASQUERADE is in use, as all incoming traffic has the same destination address. The Qdisc intercepts the incoming traffic on the external interface before reverse NAT translation so it can only see the router's IP as destination of the packets.
+Qdiscs on ingress traffic provide only policing with no shaping. In order to shape ingress, the IFB (Intermediate Functional Block) device has to be used. However, another problem arises if SNAT or MASQUERADE is in use, as all incoming traffic has the same destination address. The Qdisc intercepts the incoming traffic on the external interface before reverse NAT translation so it can only see the router's IP as destination of the packets.
 
 The following solution is implemented on OpenWRT and can be applied to Archlinux: First the outgoing packets are marked with MARK and the corresponding connections (and related connections) with CONNMARK. On the incoming packets an ingress u32 filter redirects the traffic to IFB (action mirred), and also retrieves the mark of the packet from CONNTRACK (action connmark) thus providing information as to which IP behind the NAT initiated the traffic).
 

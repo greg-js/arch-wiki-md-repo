@@ -75,25 +75,17 @@ You can set the `parent` parameter to whichever bridge you want LXD to attach th
 
 ### First steps
 
-LXD has two parts, the daemon (the lxd binary), and the client (the lxc binary). Now that the daemon is all configured and running, you can import an image:
+LXD has two parts, the daemon (the lxd binary), and the client (the lxc binary). Now that the daemon is all configured and running, you can create a container:
 
 ```
-$ lxd-images import ubuntu --alias ubuntu
-
-```
-
-With that image imported into LXD, you can now start containers:
-
-```
-$ lxc launch ubuntu
+$ lxc launch ubuntu:14.04
 
 ```
 
-Alternatively, you can also use a remote LXD host as a source of images. Those will be automatically cached for you for up at container startup time:
+Alternatively, you can also use a remote LXD host as a source of images. One comes pre-configured in LXD, called "images" (images.linuxcontainers.org)
 
 ```
-$ remote add images images.linuxcontainers.org
-$ launch images:centos/7/amd64 centos
+$ lxc launch images:centos/7/amd64 centos
 
 ```
 
