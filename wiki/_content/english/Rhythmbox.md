@@ -65,19 +65,7 @@ hosts: files myhostname mdns_minimal [NOTFOUND=return] dns
 
 ```
 
-c) start it Set avahi-daemon to start at boot:
-
-```
-systemctl enable avahi-daemon.service
-
-```
-
-or start it manually
-
-```
-systemctl start avahi-daemon.service
-
-```
+c) start it [Start/enable](/index.php/Start/enable "Start/enable") `avahi-daemon.service`.
 
 ## Troubleshooting
 

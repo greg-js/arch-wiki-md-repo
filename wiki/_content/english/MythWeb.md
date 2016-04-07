@@ -107,12 +107,7 @@ ln -s /var/lib/mythtv/mythweb /srv/http/
 
 ## Using MythWeb
 
-You can now start the Apache daemon, *mythbackend* must already be running.
-
-```
-systemctl start httpd.service
-
-```
+You can now start the Apache daemon by [starting](/index.php/Start "Start") the `httpd.service` systemd unit. *mythbackend* must already be running.
 
 Open MythWeb in your browser.
 

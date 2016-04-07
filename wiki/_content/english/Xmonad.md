@@ -206,12 +206,34 @@ There are number of complementary utilities that work well with xmonad. The most
 
 ### Increase the number of workspaces
 
-By default, xmonad uses 9 workspaces. You can increase this to 14 by extending the following line like this:
+By default, xmonad uses 9 workspaces. You can increase this by using something like this:
 
  `xmonad.hs` 
 ```
--- (i, k) <- zip (XMonad.workspaces conf) [xK_1, xK_2, xK_3, xK_4, xK_5, xK_6, xK_7, xK_8, xK_9]
-(i, k) <- zip (XMonad.workspaces conf) [xK_grave, xK_1, xK_2, xK_3, xK_4, xK_5, xK_6, xK_7, xK_8, xK_9, xK_0, xK_minus, xK_equal, xK_BackSpace]
+import XMonad
+import XMonad.Util.EZConfig (additionalKeys)
+
+main=do
+  xmonad $ defaultConfig
+    { ...
+    , workspaces = myWorkspaces
+    , ...
+    } `additionalKeys` myAdditionalKeys
+
+myWorkspaces = ["1","2","3","4","5","6","7","8","9"] ++ (map snd myExtraWorkspaces) -- you can customize the names of the default workspaces by changing the list
+
+myExtraWorkspaces = [(xK_0, "0")] -- list of (key, name)
+
+myAdditionalKeys =
+    [ -- ... your other hotkeys ...
+    ] ++ [
+        ((myModMask, key), (windows $ W.greedyView ws))
+        | (key, ws) <- myExtraWorkspaces
+    ] ++ [
+        ((myModMask .|. shiftMask, key), (windows $ W.shift ws))
+        | (key, ws) <- myExtraWorkspaces
+    ]
+
 ```
 
 ### Making room for Conky or tray apps

@@ -13,30 +13,37 @@ For general instructions see [Laptop](/index.php/Laptop "Laptop") and comparable
 
 ## Kernel Options
 
-*   To prevent random lock ups just before or as X loads, add the following option to your boot loader config:
+To prevent random lock ups just before or as X loads, add the following option to your boot loader config:
 
 ```
 i915.enable_execlists=0
 
 ```
 
+To get brightness media keys and brightness adjustment working, add the following:
+
+```
+acpi_osi= acpi_backlight=native
+
+```
+
 ## Module Configuration
 
-*   To fix noise headphone noise create `/etc/modprobe.d/alsa-base.conf` containing:
+To fix noise headphone noise create `/etc/modprobe.d/alsa-base.conf` containing:
 
 ```
 options snd-hda-intel model=dell-headset-multi
 
 ```
 
-*   To enable power saving functionality for the audio card create `/etc/modprobe.d/audio_powersave.conf` containing:
+To enable power saving functionality for the audio card create `/etc/modprobe.d/audio_powersave.conf` containing:
 
 ```
 options snd_hda_intel power_save=1
 
 ```
 
-*   To enable power-saving functionality for the Intel graphics card create `/etc/modprobe.d/i915.conf` containing:
+To enable power-saving functionality for the Intel graphics card create `/etc/modprobe.d/i915.conf` containing:
 
 ```
 options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1 semaphores=1
@@ -86,4 +93,4 @@ FONT=ter-v28b
 
 ## See also
 
-*   **[Bumblebee](https://wiki.archlinux.org/index.php/Bumblebee)** - To configure intel/nvidia hybrid graphics ([This patch](https://github.com/arafey/Bumblebee/commit/5636b24fa86a005a5d2e30bd794516db13ccba56.patch) was required for module unloading to work as of April 3, 2016)
+*   **[Bumblebee](https://wiki.archlinux.org/index.php/Bumblebee)** - To configure intel/nvidia hybrid graphics

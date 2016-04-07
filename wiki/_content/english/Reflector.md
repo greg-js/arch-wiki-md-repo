@@ -70,7 +70,7 @@ ExecStart=/usr/bin/reflector --protocol http --latest 30 --number 20 --sort rate
 
 ```
 
-Then `# systemctl start reflector` will update your mirrorlist.
+Then [starting](/index.php/Start "Start") `reflector.service` will update your mirrorlist.
 
 To update your mirrorlist every time your computer boots you can enable the following service definition.
 

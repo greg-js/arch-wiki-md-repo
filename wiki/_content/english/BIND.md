@@ -205,7 +205,7 @@ we need to edit how the service calls bind.
 ```
 }
 
-Now, reload systemd `systemctl daemon-reload`, then start the service `systemctl start named-chroot.service`
+Now, reload systemd `systemctl daemon-reload`. Then [start](/index.php/Start "Start") `named-chroot.service`
 
 ## BIND Resources
 

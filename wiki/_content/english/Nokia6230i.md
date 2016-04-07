@@ -11,12 +11,7 @@
 
 ## Common settings
 
-Install gnokii
-
-```
- pacman -S gnokii
-
-```
+[Install](/index.php/Install "Install") the [gnokii](https://www.archlinux.org/packages/?name=gnokii) package.
 
 ### DKU2 cable
 

@@ -49,6 +49,6 @@ Configuration is done through an xml file `config.plist` under path `EFI/CLOVER`
 
 ```
 
-## References
+## See also
 
 *   [http://sourceforge.net/projects/cloverefiboot/](http://sourceforge.net/projects/cloverefiboot/)

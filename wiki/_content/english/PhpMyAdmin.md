@@ -234,7 +234,7 @@ ERROR: The configuration file now needs a secret passphrase (blowfish_secret)
 
 ```
 
-You need to add a unique password for the blowfish algorithm (which is used by phpMyAdmin to secure the authentication procedure) between the following `''`. You can use any password generator for that matter, a key lenght of 32 is recommended.
+You need to add a unique password for the blowfish algorithm (which is used by phpMyAdmin to secure the authentication procedure) between the following `''`. You can use any password generator for that matter, a key length of 32 is recommended.
 
  `/etc/webapps/phpmyadmin/config.inc.php`  `$cfg['blowfish_secret'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */` 
 

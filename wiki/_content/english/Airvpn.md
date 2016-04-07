@@ -1,3 +1,5 @@
+A VPN based on OpenVPN and operated by activists and hacktivists in defence of net neutrality, privacy and against censorship.
+
 ## Configuring OpenVPN to connect as a client to an AirVPN server
 
 [OpenVPN](/index.php/OpenVPN "OpenVPN") describes configuration from scratch for both servers and clients, including generating keys and certificates.

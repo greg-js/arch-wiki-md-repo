@@ -73,6 +73,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [7.10 Realtime scheduling](#Realtime_scheduling)
     *   [7.11 pactl "invalid option" error with negative percentage arguments](#pactl_.22invalid_option.22_error_with_negative_percentage_arguments)
     *   [7.12 Fallback device is not respected](#Fallback_device_is_not_respected)
+    *   [7.13 RTP/UDP packet flood](#RTP.2FUDP_packet_flood)
 
 ## Volume
 
@@ -1135,3 +1136,7 @@ PulseAudio does not have a true default device. Instead it uses a ["fallback"](h
 load-module module-stream-restore restore_device=false
 
 ```
+
+### RTP/UDP packet flood
+
+In some cases the default configuration might flood the network with UDP packets.[[2]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[3]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)

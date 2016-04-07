@@ -712,12 +712,14 @@ chainloader +1
 
 Arch is the default (0). We want to restart in to Windows. Change `default 0` to `default saved` -- this will record the current default in a `default` file in the GRUB directory whenever the **savedefault** command is used. Now add the line `savedefault 0` to the bottom of the Windows entry. Whenever Windows is booted, it will reset the default to Arch, thus making changing the default to Windows temporary.
 
-Now all that is needed is a way to easily change the default manually. This can be accomplished using the command `grub-set-default`. So, to reboot into Windows, enter the following command:
+Now all that is needed is a way to easily change the default manually. This can be accomplished using the command `grub-set-default`. So, to reboot into Windows, enter the following commands:
 
 ```
-# grub-set-default 1 && sudo shutdown -r now
+# grub-set-default 1
 
 ```
+
+Then reboot.
 
 For ease of use, you might to wish to implement the "[Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown") fix" (including `/sbin/grub-set-default` amongst the commands the user is allowed to issue without supplying a password).
 

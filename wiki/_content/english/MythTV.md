@@ -224,10 +224,7 @@ This should populate your mysql database with TV listings for the next two weeks
 
 #### Enable the mythbackend daemon
 
-```
-# systemctl enable mythbackend.service
-
-```
+[Enable](/index.php/Enable "Enable") the `mythbackend.service` systemd unit.
 
 ### Troubleshooting
 

@@ -45,7 +45,7 @@ Optionally, spectrwm can call `baraction.sh` (in the user's path), which should 
 
 Default keybindings are in `/etc/spectrwm/spectrwm_<<keyboard layout>>.conf`. In order to customize keybingings:
 
-*   Set `keyboard_mapping` to /dev/null in your `~/.spectrwm.com`
+*   Set `keyboard_mapping` to /dev/null in your `~/.spectrwm.conf`
 
 *   Copy-paste the contents of `/etc/spectrwm/spectrwm_<<keyboard layout>>.conf` to the end of your `~/.spectrwm.conf`.
 

@@ -131,6 +131,6 @@ If more flexibility is needed, though, dm-crypt can coexist with other stacked b
 
 ### Btrfs subvolumes
 
-[Btrfs](/index.php/Btrfs "Btrfs")'s built-in [subvolumes feature](/index.php/Btrfs#Subvolumes "Btrfs") can be used with dm-crypt, fully replacing the need for LVM if no other file systems are required. However, note that an encrypted swap is not possible this way and swap files are [not supported](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) by btrfs up to now.
+[Btrfs](/index.php/Btrfs "Btrfs")'s built-in [subvolumes feature](/index.php/Btrfs#Subvolumes "Btrfs") can be used with dm-crypt, fully replacing the need for LVM if no other file systems are required. However note that swap files are [not supported](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) by brtrfs, so an [encrypted swap](/index.php/Encrypted_swap "Encrypted swap") partition is necessary if [swap](/index.php/Swap "Swap") is desired. See also [Dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap](/index.php/Dm-crypt/Encrypting_an_entire_system#Btrfs_subvolumes_with_swap "Dm-crypt/Encrypting an entire system").
 
 ### Boot partition (GRUB)

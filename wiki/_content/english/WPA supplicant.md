@@ -248,19 +248,9 @@ The *wpa_supplicant* package provides multiple [systemd](/index.php/Systemd "Sys
 *   `wpa_supplicant-nl80211@.service` - also interface specific, but explicitly forces the `nl80211` driver (see below). The configuration file path is `/etc/wpa_supplicant/wpa_supplicant-nl80211-*interface*.conf`.
 *   `wpa_supplicant-wired@.service` - also interface specific, uses the `wired` driver. The configuration file path is `/etc/wpa_supplicant/wpa_supplicant-wired-*interface*.conf`.
 
-To enable wireless at boot, enable one of the services above on a particular wireless interface. For example:
+To enable wireless at boot, enable one of the services above on a particular wireless interface. For example, [enable](/index.php/Enable "Enable") the `wpa_supplicant@*interface*` systemd unit.
 
-```
-# systemctl enable wpa_supplicant@*interface*
-
-```
-
-Now choose and [enable](/index.php/Enable "Enable") a service to obtain an ip address for the particular *interface* as indicated in the [#Overview](#Overview), for example:
-
-```
-# systemctl enable dhcpcd@*interface*
-
-```
+Now choose and [enable](/index.php/Enable "Enable") a service to obtain an ip address for the particular *interface* as indicated in the [#Overview](#Overview). For example, [enable](/index.php/Enable "Enable") the `dhcpcd@*interface*` systemd unit.
 
 **Tip:** *dhcpcd* has a hook that can lauch *wpa_supplicant* implicitly, see [dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd").
 

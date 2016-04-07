@@ -77,13 +77,6 @@ Breeze is the default Qt style of KDE Plasma. It can be installed with the [bree
 
 Once installed, you can use one of the many [GTK+ configuration tools](/index.php/GTK%2B#Configuration_tools "GTK+") to change the GTK+ theme.
 
-**Note:** You must set the GTK theme for both root and non-root users to ensure GTK apps started as root/non-root respect the theme. A solution is by using symlinks that uses the user defined settings:
-```
-# ln -s /home/user/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
-# ln -s /home/user/.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
-
-```
-
 ### Adwaita
 
 Adwaita is the default GNOME theme. It can be installed with the [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) package, which contains the GTK+ 2 and 3 themes. [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is a Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimic the GTK+ 2 theme, it provides a native Qt style made to look like the GTK+ 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/) package for the Qt5 version, and [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) for the Qt 4 version.

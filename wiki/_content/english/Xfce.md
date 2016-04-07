@@ -210,9 +210,19 @@ sh -c "sleep 3 && command"
 
 #### Lock the screen
 
-To lock an Xfce4 session through the *xflock4* script one of [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore) packages needs to be installed. If you are using the Whisker Menu and your screen locker is not specified in *xflock4*, you can change the lock command using *Properties > Behavior > Lock Screen*.
+To lock an Xfce4 session through the *xflock4* script one of [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore) packages needs to be installed. Alternatively you can set a lock command with
 
-Bear in mind that if you want Xfce Power Manager to lock the screen on events such as lid close or suspend, your screen locker must be specified in *xflock4*. If it is not, you can create a local copy of *xflock4*, for example `/usr/local/bin/xflock4`, which specifies another screen locker of choice.
+```
+$ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l" --create -t string
+
+```
+
+If you want to update the command, you can use
+
+```
+$ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l"
+
+```
 
 See [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") for a comprehensive list of screen lockers.
 

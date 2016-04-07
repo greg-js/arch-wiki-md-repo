@@ -48,6 +48,8 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 ### AUR packages
 
+Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages are (usually) maintained, tested and verified to be working. Some of the listed packages may also be available as binary packages via [Unofficial repositories](/index.php/Unofficial_repositories "Unofficial repositories").
+
 	[linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)
 
 	The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").

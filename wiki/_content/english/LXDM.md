@@ -170,23 +170,16 @@ theme=theme_name
 
 After a user logs on, LXDM sources *all* of the following files, in order:
 
-*   /etc/profile
-*   ~/.profile
-*   /etc/xprofile
-*   ~/.xprofile
+1.  `/etc/profile`
+2.  `~/.profile`
+3.  `/etc/xprofile`
+4.  `~/.xprofile`
 
-These files can be used to set session environment variables and to start services which must set certain environment variables in order for clients in the session to be able to use the service, like ssh-agent. *xprofile can be used for any settings that should not get included in non-graphical login sessions. For example, add the following line to ~/.xprofile to start a session-wide SSH agent only for X11 sessions and only for your particular user:
+These files can be used to set session environment variables and to start services which must set certain environment variables in order for clients in the session to be able to use the service, like ssh-agent. See [Xprofile](/index.php/Xprofile "Xprofile") for details.
 
-```
-eval `ssh-agent`
+Note that LXDM does *not* source `~/.xinitrc`, so those migrating from a DM that *does* use this file, like [slim](/index.php/Slim "Slim"), will have to move their settings from it to somewhere else — probably `~/.xprofile`. Also note LXDM does not source `~/.bash_profile`.
 
-```
-
-All spawned processes are automatically terminated at the end of a session, so it isn't necessary to track the agent's PID.
-
-Note that LXDM does *not* source ~/.xinitrc, so those migrating from a DM that *does* use this file, like slim, will have to move their settings from it to somewhere else—probably ~/.xprofile. Also note LXDM does not source ~/.bash_profile.
-
-LXDM also makes use of .Xresources, .Xkbmap, and .Xmodmap. See /etc/lxdm/Xsession for details on how LXDM uses system-wide and per-user configuration files to configure the session.
+LXDM also makes use of .[Xresources](/index.php/Xresources "Xresources"), .[Xkbmap](/index.php/Xkbmap "Xkbmap"), and .[Xmodmap](/index.php/Xmodmap "Xmodmap"). See `/etc/lxdm/Xsession` for details on how LXDM uses system-wide and per-user configuration files to configure the session.[[1]](https://projects.archlinux.org/svntogit/community.git/tree/trunk/Xsession?h=packages/lxdm)
 
 ## Known issues
 

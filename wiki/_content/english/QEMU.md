@@ -1,6 +1,4 @@
-From the [QEMU about page](http://wiki.qemu.org/Main_Page):
-
-	*QEMU is a generic and open source machine emulator and virtualizer.*
+According to the [QEMU about page](http://wiki.qemu.org/Main_Page), "QEMU is a generic and open source machine emulator and virtualizer."
 
 When used as a machine emulator, QEMU can run OSes and programs made for one machine (e.g. an ARM board) on a different machine (e.g. your x86 PC). By using dynamic translation, it achieves very good performance.
 
@@ -1241,13 +1239,7 @@ haltcmd="echo 'system_powerdown' | nc localhost 7101"
 
 ```
 
-To set which virtual machines will start on boot-up, use
-
-```
-# systemctl enable qemu@*vm_name*
-# systemctl disable qemu@*vm_name*
-
-```
+To set which virtual machines will start on boot-up, [enable](/index.php/Enable "Enable") the `qemu@*vm_name*.service` systemd unit.
 
 ### Mouse integration
 

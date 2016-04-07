@@ -14,12 +14,7 @@ Here's an easy way to burn a gapless audio CD from the shell using cdrdao.
 
 ## Setup
 
-We'll be using a few programs for this.
-
-```
-pacman -S lame cdrdao
-
-```
+[Install](/index.php/Install "Install") the [lame](https://www.archlinux.org/packages/?name=lame) and [cdrdao](https://www.archlinux.org/packages/?name=cdrdao) packages.
 
 Optional: Let's configure cdrdao to use our CD burner. Open up `/etc/cdrdao.conf` (as root), and enter the /dev entry for your burner in this format:
 

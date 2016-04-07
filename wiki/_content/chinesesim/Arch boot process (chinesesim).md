@@ -28,13 +28,13 @@
 
 ### UEFI
 
-UEFI 不光能读取分区表，还能自动支持文件系统。所以它不像 BIOS, 已经没有只能执行 440 字节代码即 MBR 的限制了，它完全用不到 MBR.
+UEFI 不仅能读取分区表，还能自动支持文件系统。所以它不像 BIOS，已经没有仅仅 440 字节可执行代码即 MBR 的限制了，它完全用不到 MBR。
 
-UEFI 主流都支持 MBR 和 GPT 分区表。Apple-Intel Macs 上的 EFI 还支持 Apple 专用分区表。绝大部分 UEFI 固件支持软盘上的 FAT12, 硬盘上的 FAT16, FAT32 文件系统，以及 CD/DVDs 的 IS09660 和 UDF. Intel Macs 的 EFI 还额外支持 HFS/HFS+ 文件系统。
+UEFI 主流都支持 MBR 和 GPT 分区表。Apple-Intel Macs 上的 EFI 还支持 Apple 专用分区表。绝大部分 UEFI 固件支持软盘上的 FAT12，硬盘上的 FAT16、FAT32 文件系统，以及 CD/DVDs 的 IS09660 和 UDF。Intel Macs 的 EFI 还额外支持 HFS/HFS+ 文件系统。
 
-不管第一块上有没有 MBR, UEFI 都不会执行它。相反，它依赖分区表上的一个特殊分区，叫 EFI 系统分区，里面有 UEFI 所要用到的一些文件。计算机供应商可以在 `<EFI 系统分区>/EFI/<VENDOR NAME>/` 文件夹里放官方指定的文件，还能用固件或它的 shell, 即 UEFI shell, 来启动引导程序。EFI 系统分区一般被格式化成 FAT32, 或比较非主流的 FAT16.
+不管第一块上有没有 MBR，UEFI 都不会执行它。相反，它依赖分区表上的一个特殊分区，叫 EFI 系统分区，里面有 UEFI 所要用到的一些文件。计算机供应商可以在 `<EFI 系统分区>/EFI/<VENDOR NAME>/` 文件夹里放官方指定的文件，还能用固件或它的 shell，即 UEFI shell，来启动引导程序。EFI 系统分区一般被格式化成 FAT32，或比较非主流的 FAT16。
 
-UEFI 下每一个程序，无论它是某个 OS 引导器还是某个内存测试或数据恢复的工具，都要兼容于 EFI 固件位数或体系结构。目前主流的 UEFI 固件，包括近期的 Apple Macs, 都采用了 x86_64 EFI 固件。目前还在用 IA32 即 32 位的 EFI 的已知设备只有于 2008 年前生产的 Apple Macs, 一些 Intel Cloverfield 超级本和采用 EFI 1.10 固件的 Intel 服务器主板。
+UEFI 下每一个程序，无论它是某个 OS 引导器还是某个内存测试或数据恢复的工具，都要兼容于 EFI 固件位数或体系结构。目前主流的 UEFI 固件，包括近期的 Apple Macs，都采用了 x86_64 EFI 固件。目前还在用 IA32 即 32 位的 EFI 的已知设备只有于 2008 年前生产的 Apple Macs，一些 Intel Cloverfield 超级本和采用 EFI 1.10 固件的 Intel 服务器主板。
 
 不像 x86_64 Linux 和 Windows 操作系统，x86_64 EFI 不能兼容 32 位 EFI 程序。所以 UEFI 应用程序必须依固件处理器位数／体系结构编译而成。
 
@@ -44,10 +44,10 @@ UEFI 下每一个程序，无论它是某个 OS 引导器还是某个内存测�
 
 1.  开机时[加电自检](https://en.wikipedia.org/wiki/Power-on_self-test "wikipedia:Power-on self-test")。
 2.  加电自检后，BIOS 初始化一些必要的硬件以准备引导，比如硬盘和键盘等。
-3.  BIOS 执行在「BIOS 硬盘顺序」中的第一块硬盘上的前 440 字节代码，即 [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record").
+3.  BIOS 执行在「BIOS 硬盘顺序」中的第一块硬盘上的前 440 字节代码，即 [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")。
 4.  MBR 接管后，执行它之后的第二阶段代码，如果后者存在的话，它一般就是[启动引导器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")。
-5.  被执行的第二阶段代码会读取它的支持以及配置文件。
-6.  启动引导器按着配置文件，加载内核和 initramfs 进内存并启动前者。
+5.  被执行的第二阶段代码会读取它的支持文件和配置文件。
+6.  启动引导器按照配置文件，加载内核和 initramfs 进内存并启动前者。
 
 ### UEFI
 

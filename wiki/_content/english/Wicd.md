@@ -85,12 +85,7 @@ If you added your user to a new group, log out and then log in.
 
 If you have installed the [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) and entered the desktop environment. Open a virtual terminal to run one of the following commands.
 
-*   To start Wicd as system service, run:
-
-```
-# systemctl start wicd
-
-```
+*   To start Wicd as system service, [start](/index.php/Start "Start") the `wicd.service` systemd unit.
 
 *   To load Wicd, run:
 
@@ -132,12 +127,7 @@ $ wicd-curses
 
 ### Autostart
 
-The [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) package puts a file in `/etc/xdg/autostart/wicd-tray.desktop`, which will autostart `wicd-client` upon login to your DE/WM. If so, enabling the wicd system service is enough:
-
-```
-# systemctl enable wicd
-
-```
+The [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) package puts a file in `/etc/xdg/autostart/wicd-tray.desktop`, which will autostart `wicd-client` upon login to your DE/WM. If so, [enable](/index.php/Enable "Enable") the `wicd` systemd unit.
 
 If `/etc/xdg/autostart/wicd-tray.desktop` does not exist, you can add **wicd-client** to your DE/WM startup to have the application start when you log in.
 
@@ -246,16 +236,14 @@ In case the [python2-notify](https://www.archlinux.org/packages/?name=python2-no
 
 ### D-Bus connection error message
 
-If wicd suddenly stopped working and it complains about D-Bus, it is quite likely that you just need to remove wicd fully, including and all its configuration files, and re-install it from scratch:
+If wicd suddenly stopped working and it complains about D-Bus, it is quite likely that you just need to remove wicd fully, including and all its configuration files, and re-install it from scratch by first removing [wicd](https://www.archlinux.org/packages/?name=wicd). Then remove its configuration files:
 
 ```
-# pacman -R wicd
 # rm -rf /etc/wicd /var/log/wicd /etc/dbus-1/system.d/wicd*
-# pacman -S wicd
 
 ```
 
-Check this link for more details: [https://bbs.archlinux.org/viewtopic.php?pid=577141#p577141](https://bbs.archlinux.org/viewtopic.php?pid=577141#p577141)
+Then reinstall the package. Check this link for more details: [https://bbs.archlinux.org/viewtopic.php?pid=577141#p577141](https://bbs.archlinux.org/viewtopic.php?pid=577141#p577141)
 
 Wicd-client also throws a D-Bus connection error message ("Could not connect to wicd's D-Bus interface.") when wicd is not running due to a problem with a config file. It seems that sometimes an empty account gets added to `/etc/wicd/wired-settings.conf` in which case you simply have to remove the
 
@@ -318,12 +306,7 @@ This can be caused by dhcpcd running alongside wicd as systemd service. A soluti
 
 ### dhcpcd not running
 
-Normally it should not be required, nor recommended to run the dhcpcd service next to wicd. However, if you encounter the error message that dhcpcd is not running, then you can try running dhcpcd and see if you encounter any incompatibilities when using both services at the same time.
-
-```
-# systemctl start dhcpcd
-
-```
+Normally it should not be required, nor recommended to run the dhcpcd service next to wicd. However, if you encounter the error message that dhcpcd is not running, then you can try [starting](/index.php/Start "Start") the `dhcpcd` systemd unit and see if you encounter any incompatibilities when using both services at the same time.
 
 Alternatively, as a workaround you might consider switching to [dhclient](https://www.archlinux.org/packages/?name=dhclient) in the Wicd settings.
 

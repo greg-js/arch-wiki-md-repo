@@ -10,8 +10,9 @@
         *   [1.1.3 L series](#L_series)
         *   [1.1.4 R series](#R_series)
         *   [1.1.5 T series](#T_series)
-        *   [1.1.6 X series](#X_series)
-        *   [1.1.7 P series](#P_series)
+        *   [1.1.6 W series](#W_series)
+        *   [1.1.7 X series](#X_series)
+        *   [1.1.8 P series](#P_series)
 *   [2 Lenovo](#Lenovo)
     *   [2.1 IdeaPad](#IdeaPad)
     *   [2.2 B series](#B_series)
@@ -107,6 +108,14 @@ Install CD Version
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad T550](/index.php/Lenovo_ThinkPad_T550 "Lenovo ThinkPad T550") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | DisplayPort |
+
+#### W series
+
+| Model Version | Arch Linux
+Install CD Version
+ | Hardware Support | Remark |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Lenovo ThinkPad W550s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Not tested), Webcam (Yes), Fingeprint Reader (Yes) |
 
 #### X series
 

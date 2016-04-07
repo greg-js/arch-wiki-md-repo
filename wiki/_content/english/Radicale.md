@@ -53,4 +53,4 @@ The next step is to set up a virtual host for radicale. An example:
 
 ## Client support
 
-Since it uses the CalDav and CardDav protocals, it should support most clients. Currently, the officially supported list is this: Mozilla Lightning GNOME Evolution KDE KOrganizer aCal, ContactSync, CalendarSync, CalDAV-Sync CardDAV-Sync and DAVdroid for Google Android InfCloud, CalDavZAP, CardDavMATE Apple iOS Mac OSX Calendar/Contacts syncEvolution
+Since it uses the CalDav and CardDav protocols, it should support most clients. Currently, the officially supported list is this: Mozilla Lightning GNOME Evolution KDE KOrganizer aCal, ContactSync, CalendarSync, CalDAV-Sync CardDAV-Sync and DAVdroid for Google Android InfCloud, CalDavZAP, CardDavMATE Apple iOS Mac OSX Calendar/Contacts syncEvolution

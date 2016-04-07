@@ -122,7 +122,7 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.2.3 andrwe](#andrwe_2)
         *   [5.2.4 archstudio](#archstudio)
         *   [5.2.5 brtln](#brtln)
-        *   [5.2.6 kps](#kps)
+        *   [5.2.6 jkanetwork64](#jkanetwork64)
         *   [5.2.7 mazdlc](#mazdlc)
         *   [5.2.8 mazdlc-deadbeef-plugins](#mazdlc-deadbeef-plugins)
         *   [5.2.9 mazdlc-kde-frameworks-5](#mazdlc-kde-frameworks-5)
@@ -1386,14 +1386,16 @@ Server = http://pkgbuild.com/~barthalion/brtln/$arch/
 
 ```
 
-#### kps
+#### jkanetwork64
 
-*   **Maintainer:** kps
-*   **Description:** gmt, catalyst-test, ttf-ms-win8, rstudio, meshlab, gcc-gcj, vlc-git, ffmpeg-git (k10 & intel opt.), docear, maperitive, libressl, bkchem ...
+*   **Maintainer:** kprkpr <kevin01010 at gmail dot com>
+*   **Maintainer:** Joselucross <jlgarrido97 at gmail dot com>
+*   **Description:** Various packages of AUR like pimagizer,stepmania, linux-mainline, grub-customizer.. Open for all that wants to contribute
+*   **Upstream page:** [http://repo.jkanetwork.com/](http://repo.jkanetwork.com/)
 
 ```
-[kps]
-Server = http://kps.bplaced.net/repo/$arch
+[jkanetwork64]
+Server = http://repo.jkanetwork.com/repo/$repo/
 
 ```
 
@@ -1440,7 +1442,7 @@ Server = http://download.opensuse.org/repositories/home:/mazdlc:/kde-frameworks-
 
 ```
 [mikroskeem]
-Server = http://nightsnack.cf/~mark/arch-pkgs
+Server = https://nightsnack.cf/~mark/arch-pkgs
 
 ```
 

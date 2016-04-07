@@ -613,12 +613,7 @@ use_group 0
 
 Skype is now sandboxed.
 
-Please note that this config is generated on 64-bit Arch system, and some of your ioctls and library paths may differ from mentioned above. So in order to fine-tune TOMOYO config for your Skype load `tomoyo-auditd` daemon:
-
-```
-# systemctl start tomoyo-auditd
-
-```
+Please note that this config is generated on 64-bit Arch system, and some of your ioctls and library paths may differ from mentioned above. So in order to fine-tune TOMOYO config for your Skype [start](/index.php/Start "Start") `tomoyo-auditd.service`.
 
 Then go to `/var/log/tomoyo` folder and start watching `reject_003.log`:
 

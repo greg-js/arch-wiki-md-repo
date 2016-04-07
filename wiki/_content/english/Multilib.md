@@ -1,4 +1,4 @@
-Enabling the *multilib* repository allows the user to run and build 32-bit applications on 64-bit installations of Arch Linux. *multilib* creates a directory containing 32-bit instruction set libraries inside `/usr/lib32/`, which 32-bit binary applications may need when executed.
+Enabling the *multilib* repository allows the user to run and build 32-bit applications on 64-bit installations of Arch Linux.
 
 ## Contents
 

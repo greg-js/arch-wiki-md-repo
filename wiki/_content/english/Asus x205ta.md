@@ -201,7 +201,7 @@ Proceed as usual.
 
 ### Sound
 
-There is currently no sound driver for the the x205ta's Realtek RT5648\. Keep your eye on [this](https://bugzilla.kernel.org/show_bug.cgi?id=95681) for updates. Note that while the sound does not work at the moment, it does work using an external USB audio adapter.
+There is currently no sound driver for the the x205ta's Realtek RT5648\. Keep your eye on [this](https://bugzilla.kernel.org/show_bug.cgi?id=95681) for updates. Note that while the sound does not work at the moment, it does work using an external USB audio adapter. [Here](http://ubuntuforums.org/showthread.php?t=2254322) is another thread showing progress being made to get the sound and other hardware working for the X205TA.
 
 ### Power level information (ACPI)
 

@@ -129,27 +129,26 @@ ERRMAIL
 
 Whatever executable you use, it should probably take at least two arguments as this shell script does: the address to send to and the unit file to get the status of. The *.service* we create will pass these arguments:
 
- `/etc/systemd/system/status-email-**user1**@.service` 
+ `/etc/systemd/system/status-email-*user*@.service` 
 ```
 [Unit]
-Description=status email for %I to **user1**
+Description=status email for %I to *user*
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/systemd-email **user1@mailhost** %i
+ExecStart=/usr/local/bin/systemd-email *address* %i
 User=nobody
 Group=systemd-journal
-
 ```
 
-First notice that the unit to send email about is an instance parameter, so this one service can be used to send email for many other units. However the recipient is hard-coded (since unit templates can only take a single parameter) so you will need to create multiple services if you want to send emails to different sets of recipients. At this point you should test the service to verify that you can receive the emails by [starting](/index.php/Start "Start") `status-email-user1@dbus.service`.
+Where `*user*` is the user being emailed and `*address*` is that user's email address. Although the recipient is hard-coded, the unit file to report on is passed as an instance parameter, so this one service can send email for many other units. At this point you can [start](/index.php/Start "Start") `status-email-*user*@dbus.service` to verify that you can receive the emails.
 
-Then simply [edit](/index.php/Systemd#Editing_provided_units "Systemd") the service you want emails for and add `OnFailure=status-email-user1@%n.service` to the `[Unit]` section. `%n` passes the unit's name to the template.
+Then simply [edit](/index.php/Systemd#Editing_provided_units "Systemd") the service you want emails for and add `OnFailure=status-email-*user*@%n.service` to the `[Unit]` section. `%n` passes the unit's name to the template.
 
 **Note:**
 
-*   If you set up SSMTP security according to [SSMTP#Security](/index.php/SSMTP#Security "SSMTP") the user `nobody` will not have access to `/etc/ssmtp/ssmtp.conf`, and the `systemctl start status-email-user1@dbus.service` command will fail. One solution is to use `root` as the User in the `status-email-user1@.service` module.
-*   If you try to use `mail -s somelogs me@mail.com` in your email script, `mail` will fork and systemd will kill the mail process when it sees your script exit. Make the mail non-forking by doing `mail -Ssendwait -s somelogs me@mail.com`.
+*   If you set up SSMTP security according to [SSMTP#Security](/index.php/SSMTP#Security "SSMTP") the user `nobody` will not have access to `/etc/ssmtp/ssmtp.conf`, and the `systemctl start status-email-*user*@dbus.service` command will fail. One solution is to use `root` as the User in the `status-email-*user*@.service` unit.
+*   If you try to use `mail -s somelogs *address*` in your email script, `mail` will fork and systemd will kill the mail process when it sees your script exit. Make the mail non-forking by doing `mail -Ssendwait -s somelogs *address*`.
 
 ### Using a crontab
 

@@ -193,12 +193,7 @@ This tells `groff` to make adjustments when it is passed a man page for formatti
 
 ### Using most (Not recommended)
 
-The basic function of 'most' is similar to `less` and `more`, but it has a smaller feature set. Configuring most to use colors is easier than using less, but additional configuration is necessary to make most behave like less. Install [most](https://www.archlinux.org/packages/?name=most) using [pacman](/index.php/Pacman "Pacman"):
-
-```
-# pacman -S most
-
-```
+The basic function of 'most' is similar to `less` and `more`, but it has a smaller feature set. Configuring most to use colors is easier than using less, but additional configuration is necessary to make most behave like less. Install the [most](https://www.archlinux.org/packages/?name=most) package.
 
 Edit `/etc/man_db.conf`, uncomment the pager definition and change it to:
 

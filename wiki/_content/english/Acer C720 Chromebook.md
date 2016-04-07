@@ -65,6 +65,12 @@ EndSection
 
 The C720 comes with Atheros AR9462 WLAN and Bluetooth chip which supported by `ath9k` kernel module, the following options to the `ath9k` module can help to affect the performance, quality and power consumption of the chip.
 
+To add the desired module options, just create a `ath9k.conf` file as shown here with some example settings:
+
+ `/etc/modprobe.d/ath9k.conf`  `options ath9k bt_ant_diversity=1 ps_enable=0` 
+
+Details of possible settings are below.
+
 #### Bluetooth coexistence
 
 Both Bluetooth and WiFi can use 2.4 GHz, which can cause interference. You can enable Bluetooth coexistence to improve the performance of the card with the option `btcoex_enable=1`.
@@ -76,10 +82,6 @@ You can enable power savings with the option `ps_enable=1` to reduce power usage
 #### Improving signal quality
 
 Enable antenna diversity with the option `bt_ant_diversity=1` to improve the signal quality and boost performance. However, keep in mind that [this disables the bluetooth interface](https://wireless.wiki.kernel.org/en/users/drivers/ath9k/antennadiversity) and, as such, bluetooth coexistence must not be loaded at the same time.
-
-To add the desired module options, just create a `ath9k.conf` file as shown here:.
-
- `/etc/modprobe.d/ath9k.conf`  `options ath9k bt_ant_diversity=1 ps_enable=0` 
 
 ### Fix wakeup from suspend on lid close
 

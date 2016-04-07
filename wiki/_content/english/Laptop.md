@@ -47,6 +47,7 @@ Battery state can be read using ACPI utilities from the terminal. ACPI command l
 
 If your battery sends events to [udev](/index.php/Udev "Udev") whenever it (dis)charges by 1%, you can use this udev rule to automatically hibernate the system when battery level is critical, and thus prevent all unsaved work from being lost.
 
+**Note:** This rule will be repeated whenever the condition is set. As such, when resuming from hibernate when the battery is critical, the computer will hibernate directly. Some laptops do not boot beyond a certain battery level, so the rule below could be adjusted accordingly.
  `/etc/udev/rules.d/99-lowbat.rules` 
 ```
 # Suspend the system when battery level drops to 5% or lower

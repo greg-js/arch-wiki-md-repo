@@ -190,9 +190,4 @@ WantedBy=multi-user.target
 
 ```
 
-Then enable the service (it will be active on the next boot):
-
-```
-sudo systemctl enable disable-interrupts.service
-
-```
+Then [enable](/index.php/Enable "Enable") the `disable-interrupts.service` systemd unit.

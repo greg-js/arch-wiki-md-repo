@@ -165,7 +165,7 @@ For the operation of the scanner S300M a firmware file `/usr/share/sane/epjitsu/
 
 ## HP
 
-For HP hardware you may also need to [install](/index.php/Install "Install") the [hplip](https://www.archlinux.org/packages/?name=hplip) package (see [hplib supported devices](http://hplipopensource.com/hplip-web/supported_devices/index.html)) and/or [hpoj](https://aur.archlinux.org/packages/hpoj/) (see [hpoj supported devices](http://hpoj.sourceforge.net/suplist.shtml)).
+For HP hardware you may also need to [install](/index.php/Install "Install") the [hplip](https://www.archlinux.org/packages/?name=hplip) package (see [hplip supported devices](http://hplipopensource.com/hplip-web/supported_devices/index.html)) and/or [hpoj](https://aur.archlinux.org/packages/hpoj/) (see [hpoj supported devices](http://hpoj.sourceforge.net/suplist.shtml)).
 
 *   Uncomment or add `hpaio` and `hpoj` to a new line in `/etc/sane.d/dll.conf`.
 *   Running `hp-setup` as root may help you add your device.

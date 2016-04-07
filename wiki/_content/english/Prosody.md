@@ -75,13 +75,7 @@ The Arch Linux Prosody package is pre-configured to log to syslog. Thus, by defa
 
 ## Operation
 
-You can start Prosody through the included Systemd script:
-
-`# systemctl start prosody`
-
-To automatically start Prosody at boot execute:
-
-`# systemctl enable prosody`
+[Start/enable](/index.php/Start/enable "Start/enable") `prosody.service`.
 
 Prosody uses the default XMPP ports, 5222 and 5269, for client-to-server and server-to-server communications respectively. Configure your firewall as necessary.
 

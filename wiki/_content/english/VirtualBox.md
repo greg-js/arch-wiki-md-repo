@@ -762,19 +762,7 @@ WantedBy=multi-user.target
 
 **Note:** If you have multiple virtual machines managed by Systemd and they are not stopping properly, try to add `RemainAfterExit=true` and `KillMode=none` at the end of `[Service]` section.
 
-To enable the service that will launch the virtual machine at next boot, use:
-
-```
-# systemctl enable vboxvmservice@*your_virtual_machine_name*
-
-```
-
-To start the service that will launch directly the virtual machine, use:
-
-```
-# systemctl start vboxvmservice@*your_virtual_machine_name*
-
-```
+[Enable](/index.php/Enable "Enable") the `vboxvmservice@*your_virtual_machine_name*` systemd unit in order to launch the virtual machine at next boot. To launch it directly, simply [start](/index.php/Start "Start") the systemd unit.
 
 VirtualBox 4.2 introduces [a new way](http://lifeofageekadmin.com/how-to-set-your-virtualbox-vm-to-automatically-startup/) for UNIX-like systems to have virtual machines started automatically, other than using a systemd service.
 

@@ -135,12 +135,7 @@ Server = http://pst.brankovukelic.com/$arch
 
 ```
 
-Then install the package using pacman:
-
-```
-pacman -S gimp-plugin-separate+
-
-```
+Then install the [gimp-plugin-separate+](https://aur.archlinux.org/packages/gimp-plugin-separate%2B/) package.
 
 #### Installing using AUR
 

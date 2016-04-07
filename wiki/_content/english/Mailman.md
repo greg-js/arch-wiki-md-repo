@@ -356,12 +356,7 @@ Mailman 3 was designed in a modular fashion:
 
 In order to deploy postorius and/or hyperkitty django is needed. [mailman-suite-git](https://aur.archlinux.org/packages/mailman-suite-git/) provides a django project skeleton that can be used to deploy them. It also includes a README.md with instructions on how to deploy postorius and/or hyperkitty.
 
-mailman-core can be configured using `/var/lib/mailman/var/etc/mailman.cfg` and started using:
-
-```
-# systemctl start mailman.service
-
-```
+mailman-core can be configured using `/var/lib/mailman/var/etc/mailman.cfg`. Then [start](/index.php/Start "Start") `mailman.service`.
 
 Refer to the official documentation of the projects for more information.
 

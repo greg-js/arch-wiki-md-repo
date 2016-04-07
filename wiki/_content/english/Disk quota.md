@@ -21,12 +21,7 @@ This article covers the installation and setup of disk quota.
 
 ## Installing
 
-Disk quota only requires one package:
-
-```
-# pacman -S quota-tools
-
-```
+Disk quota only requires the [quota-tools](https://www.archlinux.org/packages/?name=quota-tools) package to be [installed](/index.php/Install "Install").
 
 ## Enabling
 

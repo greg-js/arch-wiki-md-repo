@@ -5,6 +5,7 @@
 *   [1 Overview](#Overview)
 *   [2 Installation](#Installation)
 *   [3 Image creation and activation](#Image_creation_and_activation)
+    *   [3.1 Generate customized manual initcpio](#Generate_customized_manual_initcpio)
 *   [4 Configuration](#Configuration)
     *   [4.1 MODULES](#MODULES)
     *   [4.2 BINARIES and FILES](#BINARIES_and_FILES)
@@ -26,7 +27,8 @@
     *   [6.2 "/dev must be mounted" when it already is](#.22.2Fdev_must_be_mounted.22_when_it_already_is)
     *   [6.3 Using systemd HOOKS in a LUKS/LVM/resume setup](#Using_systemd_HOOKS_in_a_LUKS.2FLVM.2Fresume_setup)
     *   [6.4 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
-    *   [6.5 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
+    *   [6.5 Standard rescue procedures](#Standard_rescue_procedures)
+        *   [6.5.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
 *   [7 See also](#See_also)
 
 ## Overview
@@ -55,12 +57,7 @@ mkinitcpio has been developed by the Arch Linux developers and from community co
 
 The [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio) package is available in the [official repositories](/index.php/Official_repositories "Official repositories") and is a dependency of the [linux](https://www.archlinux.org/packages/?name=linux) package.
 
-Advanced users may wish to install the latest development version of mkinitcpio from Git:
-
-```
-$ git clone git://projects.archlinux.org/mkinitcpio.git
-
-```
+Advanced users may wish to install the latest development version of mkinitcpio from Git with the [mkinitcpio-git](https://aur.archlinux.org/packages/mkinitcpio-git/) package.
 
 **Note:** It is **highly** recommended that you follow the [arch-projects mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-projects) if you use mkinitcpio from Git!
 
@@ -79,17 +76,19 @@ The `-p` switch specifies a *preset* to utilize; most kernel packages provide a 
 
 **Warning:** *preset* files are used to automatically regenerate the initramfs after a kernel update; be careful when editing them.
 
-Users can manually create an image using an alternative configuration file. For example, the following will generate an initramfs image according to the directions in `/etc/mkinitcpio-custom.conf` and save it at `/boot/linux-custom.img`.
+### Generate customized manual initcpio
+
+Users can generate an image using an alternative configuration file. For example, the following will generate an initramfs image according to the directions in `/etc/mkinitcpio-custom.conf` and save it at `/boot/linux-custom.img`.
 
 ```
 # mkinitcpio -c /etc/mkinitcpio-custom.conf -g /boot/linux-custom.img
 
 ```
 
-If creating an image for a kernel other than the one currently running, add the kernel version to the command line. You can see available kernel versions in `/usr/lib/modules`.
+If generating an image for a kernel other than the one currently running, add the kernel version to the command line. You can see available kernel versions in `/usr/lib/modules`.
 
 ```
-# mkinitcpio -g /boot/linux.img -k 3.3.0-ARCH
+# mkinitcpio -g /boot/linux-custom2.img -k 3.3.0-ARCH
 
 ```
 
@@ -99,9 +98,11 @@ The primary configuration file for **mkinitcpio** is `/etc/mkinitcpio.conf`. Add
 
 **Warning:** **lvm2**, **mdadm**, and **encrypt** are **NOT** enabled by default. Please read this section carefully for instructions if these hooks are required.
 
-**Note:** Users with multiple hardware disk controllers that use the same node names but different kernel modules (e.g. two SCSI/SATA or two IDE controllers) should ensure the correct order of modules is specified in `/etc/mkinitcpio.conf`. Otherwise, the root device location may change between boots, resulting in kernel panics. A more elegant alternative is to use [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") to ensure that the right devices are mounted.
+**Note:**
 
-**Note:** **PS/2 keyboard users**: In order to get keyboard input during early init, if you do not have it already, add the **keyboard** hook to the `HOOKS`. On some motherboards (mostly ancient ones, but also a few new ones), the i8042 controller cannot be automatically detected. It is rare, but some people will surely be without keyboard. You can detect this situation in advance. If you have a PS/2 port and get `i8042: PNP: No PS/2 controller found. Probing ports directly` message, add **atkbd** to the `MODULES`.
+*   Users with multiple hardware disk controllers that use the same node names but different kernel modules (e.g. two SCSI/SATA or two IDE controllers) should ensure the correct order of modules is specified in `/etc/mkinitcpio.conf`. Otherwise, the root device location may change between boots, resulting in kernel panics. A more elegant alternative is to use [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") to ensure that the right devices are mounted.
+
+*   **PS/2 keyboard users**: In order to get keyboard input during early init, if you do not have it already, add the **keyboard** hook to the `HOOKS`. On some motherboards (mostly ancient ones, but also a few new ones), the i8042 controller cannot be automatically detected. It is rare, but some people will surely be without keyboard. You can detect this situation in advance. If you have a PS/2 port and get `i8042: PNP: No PS/2 controller found. Probing ports directly` message, add **atkbd** to the `MODULES`.
 
 Users can modify six variables within the configuration file:
 
@@ -135,9 +136,10 @@ The MODULES array is used to specify modules to load before anything else is don
 
 Modules suffixed with a `?` will not throw errors if they are not found. This might be useful for custom kernels that compile in modules which are listed explicitly in a hook or config file.
 
-**Note:** If using **reiser4**, it *must* be added to the modules list. Additionally, if you will be needing any file system during the boot process that is not live when you run mkinitcpio — for example, if your LUKS encryption key file is on an **ext2** file system but no **ext2** file systems are mounted when you run mkinitcpio — that file system module must also be added to the MODULES list. See [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") for more details.
+**Note:**
 
-**Note:** Beginning with Linux 4.4, you may need to add **nvme** to the modules list if your root is on an NVME device.
+*   If using **reiser4**, it *must* be added to the modules list. Additionally, if you will be needing any file system during the boot process that is not live when you run mkinitcpio — for example, if your LUKS encryption key file is on an **ext2** file system but no **ext2** file systems are mounted when you run mkinitcpio — that file system module must also be added to the MODULES list. See [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") for more details.
+*   Beginning with Linux 4.4, you may need to add **nvme** to the modules list if your root is on an NVME device.
 
 ### BINARIES and FILES
 
@@ -461,7 +463,11 @@ When initramfs are being rebuild after a kernel update, you might get these two 
 
 These appear to any Arch Linux users, especially those who have not installed these firmware modules. If you do not use hardware which uses these firmwares you can safely ignore this message.
 
-### Boot succeeds on one machine and fails on another
+### Standard rescue procedures
+
+With an improper initial ram-disk a system often is unbootable. So follow a system rescue procedure like below:
+
+#### Boot succeeds on one machine and fails on another
 
 *mkinitcpio'*s `autodetect` hook filters unneeded [kernel modules](/index.php/Kernel_modules "Kernel modules") in the primary initramfs scanning `/sys` and the modules loaded at the time it is run. If you transfer your `/boot` directory to another machine and the boot sequence fails during early userspace, it may be because the new hardware is not detected due to missing kernel modules.
 

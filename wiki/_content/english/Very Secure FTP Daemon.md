@@ -367,12 +367,7 @@ allow_writeable_chroot=YES
 
 Otherwise vsftpd because of default security settings will complain if it detects that chroot is writable.
 
-Start the vsftpd daemon:
-
-```
-# systemctl start vsftpd
-
-```
+[Start](/index.php/Start "Start") `vsftpd.service`.
 
 You should now be able to login from a ftp-client with any of the users and passwords stored in `/etc/vsftpd/.passwd`.
 

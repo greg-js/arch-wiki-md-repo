@@ -64,12 +64,7 @@ You should see three renditions of **ttyUSB**. If not, we will get to that later
 *   ttyUSB1 - USB?
 *   ttyUSB2 - Nothing
 
-Now you need a dialler. Most convenient of all would be [wvdial](/index.php/Wvdial "Wvdial"), so install it. You should have *ppp* already, if not just pull them both in.
-
-```
-# pacman -S wvdial ppp
-
-```
+Now you need a dialler. Most convenient of all would be [wvdial](/index.php/Wvdial "Wvdial"), so install it. You should have *ppp* already, if not just pull them both in by [installing](/index.php/Install "Install") the [wvdial](https://www.archlinux.org/packages/?name=wvdial) and [ppp](https://www.archlinux.org/packages/?name=ppp) packages.
 
 ### Configure n' Dial
 
@@ -161,12 +156,7 @@ Now it is easier.
 
 ## Port Testing
 
-To check if the device is functioning alright on a particular serial port, there is a program for probing serial devices.
-
-```
-# pacman -S minicom
-
-```
+To check if the device is functioning alright on a particular serial port, there is a program for probing serial devices. [Install](/index.php/Install "Install") the [minicom](https://www.archlinux.org/packages/?name=minicom).
 
 Now run it.
 

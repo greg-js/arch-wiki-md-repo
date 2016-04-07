@@ -224,9 +224,7 @@ These are the steps I follow:
 
 I have firefox and sun java jre installed. I assume the system is 64 bit Arch linux.
 
-1.) install xterm:
-
-pacman -S xterm
+1.) [install](/index.php/Install "Install") the [xterm](https://www.archlinux.org/packages/?name=xterm) package
 
 2.) install a custom 64 bit java
 

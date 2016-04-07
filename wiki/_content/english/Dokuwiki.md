@@ -22,7 +22,7 @@ In other words, DokuWiki is a wiki written in PHP and requires no database.
 
 ## Initial Notes
 
-DokuWiki should work on any web server which supports PHP 5.1.2 or later. As the requirements may change over time, you should consult the [requirements page](http://www.dokuwiki.org/requirements) for DokuWiki for additional details.
+DokuWiki should work on any web server which supports PHP 5.3.3 or later. As the requirements may change over time, you should consult the [requirements page](http://www.dokuwiki.org/requirements) for DokuWiki for additional details.
 
 It is strongly recommend to read through the appropriate sections of [DokuWiki's security page](http://www.dokuwiki.org/security) for your web server. Most popular web servers are covered but there are generic instructions as well.
 

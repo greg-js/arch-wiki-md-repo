@@ -68,7 +68,7 @@ A very strong disk encryption setup (e.g. full system encryption with authentici
 	In modern computing systems, there are many background processes that may cache/store information about user data or parts of the data itself in non-encrypted areas of the hard drive, like:
 
 *   swap partitions
-    *   (potential remedies: disable swapping, or use [encrypted swap](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") as well)
+    *   (potential remedies: disable swapping, or use [encrypted swap](/index.php/Encrypted_swap "Encrypted swap") as well)
 *   `/tmp` (temporary files created by user applications)
     *   (potential remedies: avoid such applications; mount `/tmp` inside a [ramdisk](/index.php/Ramdisk "Ramdisk"))
 *   `/var` (log files and databases and such; for example, mlocate stores an index of all file names in `/var/lib/mlocate/mlocate.db`)

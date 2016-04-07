@@ -3,24 +3,23 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Printers](#Printers)
-    *   [2.1 Detecting the printer](#Detecting_the_printer)
-        *   [2.1.1 USB](#USB)
-        *   [2.1.2 Parallel port](#Parallel_port)
-        *   [2.1.3 Local Network](#Local_Network)
-    *   [2.2 Installing the best driver](#Installing_the_best_driver)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Local printers](#Local_printers)
-        *   [3.1.1 Test the printer](#Test_the_printer)
-    *   [3.2 Remote printers](#Remote_printers)
-        *   [3.2.1 Local CUPS server](#Local_CUPS_server)
-        *   [3.2.2 Without a local CUPS server](#Without_a_local_CUPS_server)
-    *   [3.3 Printer sharing](#Printer_sharing)
-    *   [3.4 Remote administration](#Remote_administration)
-*   [4 Printing related applications](#Printing_related_applications)
-*   [5 Usage](#Usage)
-*   [6 Troubleshooting](#Troubleshooting)
-*   [7 See also](#See_also)
+    *   [1.1 Connection Interfaces](#Connection_Interfaces)
+        *   [1.1.1 USB](#USB)
+        *   [1.1.2 Parallel port](#Parallel_port)
+        *   [1.1.3 Local Network](#Local_Network)
+    *   [1.2 Printer Drivers](#Printer_Drivers)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Local printers](#Local_printers)
+        *   [2.1.1 Test the printer](#Test_the_printer)
+    *   [2.2 Remote printers](#Remote_printers)
+        *   [2.2.1 Local CUPS server](#Local_CUPS_server)
+        *   [2.2.2 Without a local CUPS server](#Without_a_local_CUPS_server)
+    *   [2.3 Printer sharing](#Printer_sharing)
+    *   [2.4 Remote administration](#Remote_administration)
+*   [3 Printing related applications](#Printing_related_applications)
+*   [4 Usage](#Usage)
+*   [5 Troubleshooting](#Troubleshooting)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -32,9 +31,9 @@ If you intend to "print" into a PDF document, also install the [cups-pdf](https:
 
 [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `org.cups.cupsd.service`. Optionally, CUPS can use [Avahi](/index.php/Avahi "Avahi") browsing to discover unknown shared printers in your network. This can be useful in large setups where the server is unknown. To use this feature, start `cups-browsed.service`.
 
-## Printers
+### Connection Interfaces
 
-### Detecting the printer
+Before CUPS can attempt to use a printer, it must be able to detect the printer. Additional steps for printer detection are listed below for various connection interfaces.
 
 #### USB
 
@@ -67,12 +66,7 @@ DeviceID = parallel:/dev/usb/lp0
 
 #### Local Network
 
-Newer versions of cups tend to be good at detecting printers, and tend to pick the right hostname, but unless you have added the host to your /etc/hosts will fail to resolve for normal printer activities. Unless you want to make your printer ip static, avahi-daemon can help autoresolve your printer hostname. Install and start [Avahi](/index.php/Avahi "Avahi") then restart cups:
-
-```
-systemctl restart org.cups.cupsd.service
-
-```
+Newer versions of cups tend to be good at detecting printers, and tend to pick the right hostname, but unless you have added the printer to your /etc/hosts, cups will fail to resolve for normal printer activities. Unless you want to make your printer ip static, avahi-daemon can help autoresolve your printer hostname. Install and start [Avahi](/index.php/Avahi "Avahi") then restart cups by [restarting](/index.php/Restart "Restart") the `org.cups.cupsd.service` systemd unit.
 
 You can use avahi-discover find the name of your printer and its address (ex. Address: BRN30055C6B4C7A.local/10.10.0.155:631) or just add .local to the hostname cups was using (ex. BRN30055C6B4C7A.local). Double check that everything is working with ping:
 
@@ -83,13 +77,25 @@ ping XXXXXX.local
 
 should work, if it doesn't go back and make sure that avahi is running and that you have the right hostname. After this, make sure that the hostname in the cups web interface is the .local hostname.
 
-### Installing the best driver
+### Printer Drivers
+
+The drivers for a printer may come from any of the sources shown below. See [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems") for a non-comprehensive list of drivers that others have gotten to work.
+
+	CUPS Native Drivers
 
 CUPS already includes a few printer drivers. In that case you can just select it in the list and your printer will likely work.
 
-If there is no driver for your printer included with CUPS, there might be a PPD available at the [OpenPrinting Printer List](http://www.openprinting.org/printers). Select the brand and type/model of the printer to find out what driver the site recommends. Download the PPD file from the site. When the CUPS web interface asks for a printer driver/PPD, select "Or Provide a PPD File: Choose file".
+	OpenPrinting.org
 
-The website will also suggest a driver. For instance, for the HP LaserJet 5P, the site recommends the `ljet4` driver. It is possible that this driver is already included with CUPS, otherwise you will need to install it. If so, you can try out Foomatic or Gutenprint, or else find the driver in [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems").
+There might be a PPD available at the [OpenPrinting Printer List](http://www.openprinting.org/printers).
+
+Select the brand and type/model of the printer to find out what driver the site recommends. Download the PPD file from the site. When the CUPS web interface asks for a printer driver/PPD, select "Or Provide a PPD File: Choose file".
+
+The website will also suggest a driver. For instance, for the HP LaserJet 5P, the site recommends the `ljet4` driver. It is possible that this driver is already included with CUPS, otherwise you will need to install it through another source listed in this section.
+
+	Manufacturer-specific drivers
+
+Many printer manufacturers supply their own Linux drivers. These are often available in the official Arch repositories or in the AUR.
 
 	Foomatic
 
@@ -98,10 +104,6 @@ The website will also suggest a driver. For instance, for the HP LaserJet 5P, th
 	Gutenprint
 
 The [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) drivers are high-quality, open source printer drivers for various Canon, Epson, HP, Lexmark, Sony, Olympus and PCL printers supporting CUPS. They also support ghostscript, The GIMP, and other applications.
-
-	Manufacturer-specific drivers
-
-A lot of printer manufacturers supply their own Linux drivers. Many are available in the official repositories or in the AUR. See [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems") for a list of drivers.
 
 ## Configuration
 

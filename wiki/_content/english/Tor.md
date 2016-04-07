@@ -796,12 +796,7 @@ ln -s /etc/iptables/iptables.rules /etc/iptables/ip6tables.rules
 
 ```
 
-Then make sure Tor is running, and start iptables and ip6tables:
-
-```
-systemctl {enable,start} tor iptables ip6tables
-
-```
+Then make sure Tor is running, and [start/enable](/index.php/Start/enable "Start/enable") the `iptables` and `ip6tables` systemd units.
 
 You may want to add `Requires=iptables.service` and `Requires=ip6tables.service` to whatever systemd unit logs your user in (most likely a [display manager](/index.php/Display_manager "Display manager")), to prevent any user processes from being started before the firewall up. See [systemd](/index.php/Systemd "Systemd").
 
@@ -874,13 +869,14 @@ The process will be run as tor user. For this purpose change user and group ID t
 
 ```
 
-Now save changes and run the daemon:
+Now save changes:
 
 ```
 # systemctl --system daemon-reload
-# systemctl start tor.service
 
 ```
+
+Then [start](/index.php/Start "Start") `tor.service`.
 
 ## See also
 

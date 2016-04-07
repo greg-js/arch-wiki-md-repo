@@ -244,13 +244,7 @@ dhcp-host=aa:bb:cc:dd:ee:ff,192.168.111.50
 
 ## Start the daemon
 
-To have dnsmasq load upon startup:
-
- `# systemctl enable dnsmasq` 
-
-To start dnsmasq immediately:
-
- `# systemctl start dnsmasq` 
+[Start/enable](/index.php/Start/enable "Start/enable") `dnsmasq.service`.
 
 To see if dnsmasq started properly, check the system's journal:
 

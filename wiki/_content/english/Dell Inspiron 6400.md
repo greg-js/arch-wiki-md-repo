@@ -116,12 +116,7 @@ Please refer to the [ATI](/index.php/ATI "ATI") wiki for more information.
 
 ##### Open Source Intel Driver
 
-Install the driver:
-
-```
-# pacman -S xf86-video-intel
-
-```
+[Install](/index.php/Install "Install") the driver, available in the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package.
 
 Use ***gft*** to generate the Xorg *Modeline* values and then edit */etc/X11/xorg.conf* and add these values to the *Monitor* section, for example:
 

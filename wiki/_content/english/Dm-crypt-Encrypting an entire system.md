@@ -972,8 +972,6 @@ Add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcp
 
  `/etc/mkinitcpio.conf`  `HOOKS="... **encrypt** ... filesystems ..."` 
 
-Also remove the `fsck` hook, since this is not useful for btrfs.
-
 Add `/usr/bin/btrfsck` to `BINARIES`, so that it is available if there is a problem booting the system later:
 
  `/etc/mkinitcpio.conf`  `BINARIES="/usr/bin/btrfsck"` 

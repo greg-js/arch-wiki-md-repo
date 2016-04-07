@@ -105,7 +105,7 @@ make nconfig # new CLI menu for configuration
 
 Si ya tenias un archivo de configuración para el kernel. Te sugiero descomentar una de las herramientas de configuración interactiva, como nconfig, y cargar tu configuración desde allí. Eso evitará problemas con el nombre del kernel.
 
-**Note:** Si descomentas *return 1*, podes cambiar el directoria principal del kernel luego de que makepkg termine las extracciones y luego hacer la configuración con nconfig. Esto te permitirá configurar tu kernel en varias sesiones. Cuando estés listo para compilar, copia el archivo .config sobre el .config que se haya generado automáticamente, o sobre el config.x86_64 (esto dependerá de la arquitectura del procesador), comenta *return 1* y usa **makepkg -i**.
+**Note:** Si descomentas *return 1*, podes cambiar el directorio principal del kernel luego de que makepkg termine las extracciones y luego hacer la configuración con nconfig. Esto te permitirá configurar tu kernel en varias sesiones. Cuando estés listo para compilar, copia el archivo .config sobre el .config que se haya generado automáticamente, o sobre el config.x86_64 (esto dependerá de la arquitectura del procesador), comenta *return 1* y usa **makepkg -i**.
 
 #### Cambiando la función package_kernel26()
 

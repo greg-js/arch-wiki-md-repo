@@ -19,12 +19,7 @@ There are multiple ways to set bridging up. The dynamic method is where OpenVPN 
 
 ## Dynamic Bridge Installation
 
-You will need to install OpenVPN and Linux bridging utilities
-
-```
-pacman -S openvpn bridge-utils
-
-```
+You will need to [install](/index.php/Install "Install") OpenVPN and Linux bridging utilities which are available in the [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) packages.
 
 ## Dynamic Bridge Configuration
 

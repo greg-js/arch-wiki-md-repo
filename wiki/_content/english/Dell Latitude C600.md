@@ -16,7 +16,7 @@ Much of this information has been based off of the wiki page for the [Dell Latit
 *   [6 Touchpad](#Touchpad)
 *   [7 External Links](#External_Links)
 
-# Known Hardware
+## Known Hardware
 
 **Cardbus:** 2 slots, Texas Instruments PCI1420
 **Audio:** 3Com Corporation 3c556 Hurricane CardBus [Cyclone] (rev 10)
@@ -24,16 +24,11 @@ Much of this information has been based off of the wiki page for the [Dell Latit
 **Ethernet:** 3Com Corporation 3c556 Hurricane CardBus [Cyclone] (rev 10)
 **Modem:** 3Com Corporation Mini PCI 56k Winmodem (rev 10)
 
-# PCMCIA Cardbus
+## PCMCIA Cardbus
 
 After some configuration changes I know personally that this cardbus works perfectly.
 
-First install pcmciautils as root with
-
-```
-pacman -S pcmciautils
-
-```
+First [install](/index.php/Install "Install") the [pcmciautils](https://www.archlinux.org/packages/?name=pcmciautils) package.
 
 Once installed to stop boot freezes you have to edit /etc/pcmcia/config.opts and find the line
 
@@ -47,11 +42,11 @@ and comment it out. Dell likes to be special for some reason and if that range i
 If you're compiling your own kernel remember that this is a yenta-compatible cardbus and that should be enabled in the pccard section of the kernel config.
 
 ```
-<M>   CardBus yenta-compatible bridge support 
+<M>   CardBus yenta-compatible bridge support
 
 ```
 
-# Audio
+## Audio
 
 I've had absolutely no problems with audio for this laptop, if you're using the Arch stock kernel it should work straight out of the box after it is enabled like a regular sound card.
 
@@ -62,9 +57,9 @@ If you're compiling your own kernel you should enable this card in the sound pci
 
 ```
 
-# Video
+## Video
 
-## Framebuffer
+### Framebuffer
 
 If you're using a stock kernel I can confirm that you can get a high resolution framebuffer by simply adding
 
@@ -79,13 +74,13 @@ Using the beyond kernel it is also quite easy to achieve extras like a backgroun
 
 If you're compiling your own kernel then you're out of luck with getting a framebuffer to work with this guide, I've not been able to find the right options and the rage128 driver causes a freeze, that being said it has to be possible some how and feel free to add your solution here.
 
-## Xorg
+### Xorg
 
 I always use xorgconfig to generate my xorg config and it's quite easy to get xorg going at first, a general rule is to use the ati and rage128 drivers for it. The Gentoo wiki article has links to [this](http://rserve.biz/gentoo/kilrathi/xorg.conf) xorg.conf which has some great additions you can add for your video sections. One thing to add is that contrary what the config says this laptop can get a top resolution of 1400x1050 for me at least.
 
-# Network
+## Network
 
-## Ethernet
+### Ethernet
 
 This works perfectly straight out of the box without any configuration using any of the stock kernels. Not much to say about it.
 
@@ -96,22 +91,17 @@ If you're compiling your own kernel remember to enable this card in the net devi
 
 ```
 
-## Winmodem
+### Winmodem
 
 Apparently this laptop has a 3Com Corporation Mini PCI 56k Winmodem but I'm yet to get it working and doubt it would. I also have no need or desire to get it working anyway.
 
 Please anyone feel free to add to this section how you got it working if you have.
 
-# Touchpad
+## Touchpad
 
-This laptop has a great touchpad and has lots of features if used in conjunction with the synaptics driver for xorg. You can install it with
+This laptop has a great touchpad and has lots of features if used in conjunction with the synaptics driver for xorg.
 
-```
-pacman -S synaptics
-
-```
-
-and use this in your xorg config's mouse section
+[Install](/index.php/Install "Install") the [synaptics](https://www.archlinux.org/packages/?name=synaptics) package and use this in your xorg config's mouse section
 
 ```
 Driver          "synaptics"
@@ -126,6 +116,6 @@ This adds all sorts neat features like a "scroll wheel" on the right, tap-to-cli
 
 The little joystick in the center of the keyboard also works perfectly.
 
-# External Links
+## External Links
 
 *   This document is listed at the [TuxMobil Linux laptop and notebook installation guides survey (DELL)](http://tuxmobil.org/dell.html).

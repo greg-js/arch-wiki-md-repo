@@ -152,7 +152,7 @@ See [Flash DRM content](/index.php/Flash_DRM_content "Flash DRM content").
 
 ### Shumway
 
-[Shumway](http://mozilla.github.io/shumway/) is an HTML5 technology experiment that explores building a faithful and efficient renderer for the SWF file format without native code assistance. As of 2013-01-01, the plugin may be installed directly from [Mozilla's github.io site](http://mozilla.github.io/shumway/). According to the [Shumway wiki](https://github.com/mozilla/shumway/wiki), "Integration with Firefox is a possibility if the experiment proves successful."
+[Shumway](http://mozilla.github.io/shumway/) is an HTML5 technology experiment that explores building a faithful and efficient renderer for the SWF file format without native code assistance. The plugin may be installed directly from [Mozilla's github.io site](http://mozilla.github.io/shumway/). According to the [Shumway wiki](https://github.com/mozilla/shumway/wiki), "Integration with Firefox is a possibility if the experiment proves successful."
 
 Shumway is also embedded in Firefox Nightly/Aurora builds.
 

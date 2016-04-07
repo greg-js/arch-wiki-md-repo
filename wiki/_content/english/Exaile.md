@@ -15,7 +15,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [exaile](https://aur.archlinux.org/packages/exaile/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [exaile](https://aur.archlinux.org/packages/exaile/) package.
 
 If you use [ALSA](/index.php/ALSA "ALSA") and want to use alsasink instead of the default one, [install](/index.php/Install "Install") [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins) available in the [Official repositories](/index.php/Official_repositories "Official repositories"). This may solve problem if no sound is heard after installation and also when trying to play several sources simultaneously.
 
@@ -41,11 +41,11 @@ Finally, in Exaile, go to *Edit > Preferences > Plugins*, and enable the XKeys p
 
 First, make sure there are no problems with your sound architecture ([ALSA](/index.php/ALSA "ALSA"), [OSS](/index.php/OSS "OSS"), etc.). And your *playback sink* in Exaile is set correctly. Try setting it to automatic first.
 
-If you're trying to listen to an MP3 file, try playing an audio file encoded in a different format, such as .ogg or .flac. If these play correctly then try installing [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins).
+If you are trying to listen to an MP3 file, try playing an audio file encoded in a different format, such as .ogg or .flac. If these play correctly then try installing [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins).
 
 ### "Playback error encountered! Configured audiosink bin0 is not working"
 
-If you're getting a message like this, or "Configured audiosink bin1 is not working" (or with another number after 'bin'), it may be because Flash is blocking the use of ALSA by Exaile. You can fix this by running
+If you are getting a message like this, or "Configured audiosink bin1 is not working" (or with another number after 'bin'), it may be because Flash is blocking the use of ALSA by Exaile. You can fix this by running
 
 ```
 killall npviewer.bin

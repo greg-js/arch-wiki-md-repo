@@ -11,9 +11,9 @@ STATA is a general-purpose statistical software package for *nix, Windows and Ma
 
 You need to install a series of libraries to run Stata. Stata uses the GTK+ framework.
 
-If you use GNOME, [install](/index.php/AUR "AUR") [libgtksourceviewmm](https://aur.archlinux.org/packages/libgtksourceviewmm/) and [libgnomeprint](https://aur.archlinux.org/packages/libgnomeprint/).
+If you use GNOME, [install](/index.php/Install "Install") [libgtksourceviewmm](https://aur.archlinux.org/packages/libgtksourceviewmm/) and [libgnomeprint](https://aur.archlinux.org/packages/libgnomeprint/).
 
-If you are running STATA 14 and get a message about missing libncurses.so.5 [install](/index.php/AUR "AUR") [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/).
+If you are running STATA 14 and get a message about missing libncurses.so.5 [install](/index.php/Install "Install") [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/).
 
 ## Installing Stata
 

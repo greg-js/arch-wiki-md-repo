@@ -1,6 +1,6 @@
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the [ASUS Zenbook UX303](http://www.asus.com/Notebooks_Ultrabooks/UX303LN/) Ultrabook.
 
-There is a lot a models but 2 main models, UX303LN with 2 graphic cards (intel & nvidia) and UX303LA with only an intel graphic card.
+There is a lot a models but 2 main models, UX303LN with 2 graphic cards (intel & nvidia) and UX303LA with only an intel graphic card. The previous models UX32LN and UX32LA share a lot hardware with minor differences, e.g. the touchpad (Elantech).
 
 ## Contents
 
@@ -62,7 +62,7 @@ and update the systemd hdparm service:
 
 ### Touchpad
 
-The touchpad is a FocalTech model, that is supported by the arch reference kernel since 4.0.1-1 update.
+The touchpad is a FocalTech model, that is supported by the Linux kernel since 4.0.1-1.
 
 ```
  dmesg | grep FLT01                                                            
@@ -83,9 +83,9 @@ The touchpad is a FocalTech model, that is supported by the arch reference kerne
 
 ```
 
-To get full functionality, you will need to configure the touchpad. See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") for more information.
+The touchpad is supported by [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") and, alternatively, [libinput](/index.php/Libinput "Libinput").
 
-The sensitivity settings may need to be adjusted. If touchpad is not responsive, try changing the settings:
+If you use [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") the sensitivity settings may need to be adjusted, because of the large touchpad area. If touchpad is not responsive, try changing the settings:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
 ```
@@ -158,7 +158,7 @@ On kernel 3.17, max value seems to be 187
 
 ### Ambient Light Sensor (ALS)
 
-The included Ambient Light Sensor can accessed using the [als-driver-git](https://aur.archlinux.org/packages/als-driver-git/) kernel module. There is also a userspace program [als-controller-git](https://aur.archlinux.org/packages/als-controller-git/), which has the purpose of automatically adjusting the keyboard and screen backlight. Usage of the Ambient Light Sensor is described in more detail on the wiki page for the [ASUS Zenbook Prime UX31A](/index.php/ASUS_Zenbook_Prime_UX31A "ASUS Zenbook Prime UX31A").
+The included Ambient Light Sensor can be accessed using the [als-driver-git](https://aur.archlinux.org/packages/als-driver-git/) kernel module. There is also a userspace program [als-controller-git](https://aur.archlinux.org/packages/als-controller-git/), which has the purpose of automatically adjusting the keyboard and screen backlight. Usage of the Ambient Light Sensor is described in more detail on the wiki page for the [ASUS Zenbook Prime UX31A](/index.php/ASUS_Zenbook_Prime_UX31A "ASUS Zenbook Prime UX31A").
 
 Note that the userspace program currently does not work correctly on the UX303 as the reported brightness values differ from the Zenbook Prime.
 
@@ -173,6 +173,8 @@ Gnome3 is able to work out the correct font size on this display, but other envi
 Prior to Linux 4.0.1-1, this laptop had problems resuming from suspend-to-ram, and could not reliably power off. Since Linux 4.0.1-1, these issues no longer exist and suspending/resuming as well as powering off work reliably. Suspend key (Fn+F1) works out of the box with expected behavior.
 
 On resume, the Intel GPU might hang and needs to be restarted. This happens automatically but delays the resume by quite a bit. If your resume takes a long time check `dmesg` for a message starting with `GPU HANG`. If it is present, try passing `i915.enable_execlists=0` to the linux image.
+
+If suspend fails sometimes (kernel crashes when trying to suspend), it might be due to a [bios/kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=102091). Try [blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules") the kernel modules `mei_me` and `mei` meanwhile.
 
 ### Battery
 

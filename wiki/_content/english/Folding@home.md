@@ -25,11 +25,10 @@ Run `/opt/fah/FAHClient --configure` as root to generate a configuration file at
 ```
 $ cd /opt/fah
 # ./FAHClient --configure
-# systemctl start foldingathome
-$ systemctl status foldingathome
-# systemctl enable foldingathome
 
 ```
+
+Then [start/enable](/index.php/Start/enable "Start/enable") the `foldingathome.service` systemd unit.
 
 ### The graphical way
 

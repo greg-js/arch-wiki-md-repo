@@ -1,4 +1,4 @@
-*GpsDrive is a car (bike, ship, plane) navigation system. GpsDrive displays your position provided from your GPS receiver on a zoomable map. The maps are autoselected for best resolution depending of your position and can be downloaded from the Internet. Speech output is supported via the "speech dispatcher" software. All GPS receivers supported by gpsd should be usable.*
+*GpsDrive is a vehicular (car, bike, plane, etc.) navigation system. GpsDrive displays your position provided from your GPS receiver on a zoomable map. The maps are auto-selected for best resolution depending on your position and can be downloaded from the Internet. Speech output is supported via the "speech dispatcher" software. All GPS receivers supported by gpsd should be usable.*
 
 *GpsDrive is written in C with use of the GTK+ toolkit under the GPL license, and runs with Linux, Mac OSX, and FreeBSD.*
 
@@ -32,30 +32,13 @@ GpsDrive 2.11 features OpenStreetMap/Mapnik vector/offline rendering support, wh
 
 ## Installing Packages
 
-Install the following packages and dependencies:
-
-```
-   sudo pacman -S gpsdrive mapnik openstreetmap-map-icons-svn
-
-```
-
-From AUR:
-
-```
-   osm2pgsql-git osm2poidb-svn
-
-```
+[Install](/index.php/Install "Install") the following packages and dependencies: [gpsdrive](https://aur.archlinux.org/packages/gpsdrive/), [mapnik](https://www.archlinux.org/packages/?name=mapnik), [openstreetmap-map-icons-svn](https://www.archlinux.org/packages/?name=openstreetmap-map-icons-svn), [osm2pgsql-git](https://aur.archlinux.org/packages/osm2pgsql-git/), and [osm2poidb-svn](https://aur.archlinux.org/packages/osm2poidb-svn/).
 
 The PostgreSQL installation/setup is described below.
 
 ## Installing PostgreSQL
 
-First postgresql needs to be installed:
-
-```
-   sudo pacman -S postgresql
-
-```
+First, [install](/index.php/Install "Install") [postgresql](https://www.archlinux.org/packages/?name=postgresql).
 
 Upon startup, the `/etc/rc.d/postgresql` script will check for and create the `postgres` user and group, and call the postgresql `initdb` process if the `"/var/lib/postgres/"` directory does not exist. The `initdb` process, among other things, checks the permissions on `"/var/lib/postgres/"`, initializes the template database encoding according to the current user's locale, and sets a default authentication method.
 

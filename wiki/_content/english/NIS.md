@@ -29,12 +29,7 @@ Network Information Service (NIS) is a protocol developed by Sun to allow one to
 
 ### Install Packages
 
-Make sure packages ypbind-mt, ypserv, yp-tools and make are installed:
-
-```
-# pacman -S ypbind-mt yp-tools ypserv make
-
-```
+[Install](/index.php/Install "Install") the [ypbind-mt](https://www.archlinux.org/packages/?name=ypbind-mt), [ypserv](https://www.archlinux.org/packages/?name=ypserv), and [yp-tools](https://www.archlinux.org/packages/?name=yp-tools) packages.
 
 ### Configuration
 
@@ -158,28 +153,11 @@ ypserver nis_server
 
 **Note:** The daemons MUST be started in this order.
 
-Start rpcbind if it isn't already started:
+[Start/enable](/index.php/Start/enable "Start/enable") the following systemd units:
 
-```
-# systemctl start rpcbind
-
-```
-
-Start ypbind:
-
-```
-# systemctl start ypbind
-
-```
-
-Start ypserv:
-
-```
-# systemctl start ypserv
-
-```
-
-Use systemctl enable instead of start to make the daemons load at every boot.
+*   `rpcbind.service`
+*   `ypbind.service`
+*   `ypserv.service`
 
 ## NIS Client
 
@@ -228,15 +206,7 @@ It may be a good idea to add your NIS server to /etc/hosts
 
 **Note:** The daemons MUST be started in this order.
 
-Start the rpcbind and ypbind daemons.
-
-```
-# systemctl start rpcbind
-# systemctl start ypbind
-
-```
-
-Use systemctl enable instead of start to make the daemons load at every boot.
+[Start/enable](/index.php/Start/enable "Start/enable") the `rpcbind.service` and `ypbind.service` systemd units.
 
 #### Early testing
 

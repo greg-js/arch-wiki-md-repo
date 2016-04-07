@@ -36,7 +36,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### April 2016
 
-*   [01 April 2016] [ASA-201604-5](https://lists.archlinux.org/pipermail/arch-security/2016-April/000597.html) [optipng](https://www.archlinux.org/packages/?name=optipng) arbitrary code execution
+*   [06 April 2016] [ASA-201604-6](https://lists.archlinux.org/pipermail/arch-security/2016-April/000598.html) [mercurial](https://www.archlinux.org/packages/?name=mercurial) arbitrary code execution
+*   [04 April 2016] [ASA-201604-5](https://lists.archlinux.org/pipermail/arch-security/2016-April/000597.html) [optipng](https://www.archlinux.org/packages/?name=optipng) arbitrary code execution
 *   [02 April 2016] [ASA-201604-4](https://lists.archlinux.org/pipermail/arch-security/2016-April/000596.html) [squid](https://www.archlinux.org/packages/?name=squid) denial of service
 *   [01 April 2016] [ASA-201604-3](https://lists.archlinux.org/pipermail/arch-security/2016-April/000595.html) [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) sandbox escape
 *   [01 April 2016] [ASA-201604-2](https://lists.archlinux.org/pipermail/arch-security/2016-April/000594.html) [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) sandbox escape

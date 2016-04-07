@@ -546,12 +546,7 @@ Cannot run in framebuffer mode. Please specify busIDs for all framebuffer device
 
 ```
 
-uninstall fbdev:
-
-```
-# pacman -R xf86-video-fbdev
-
-```
+[Uninstall](/index.php/Uninstall "Uninstall") the [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) package.
 
 ### Launching multiple X sessions with proprietary NVIDIA on Xorg 1.16
 

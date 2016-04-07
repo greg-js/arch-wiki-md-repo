@@ -2,29 +2,39 @@ Every first day of April, the Arch Linux website traditionally features an [Apri
 
 ## Contents
 
-*   [1 2014](#2014)
-*   [2 2013: Pacman depends on systemd](#2013:_Pacman_depends_on_systemd)
-*   [3 2012](#2012)
-*   [4 2011: Canterbury](#2011:_Canterbury)
-    *   [4.1 History](#History)
-    *   [4.2 Goal](#Goal)
-    *   [4.3 Features](#Features)
-*   [5 2010: April Fools Challenge](#2010:_April_Fools_Challenge)
-    *   [5.1 About the april fools challenge joke](#About_the_april_fools_challenge_joke)
-*   [6 2009: Dropping i686 Support](#2009:_Dropping_i686_Support)
-    *   [6.1 About the dropping i686 support joke](#About_the_dropping_i686_support_joke)
-    *   [6.2 After-action Report](#After-action_Report)
-*   [7 2008: Arch in German](#2008:_Arch_in_German)
-    *   [7.1 About the German Arch joke](#About_the_German_Arch_joke)
-*   [8 2007: Arch Ark](#2007:_Arch_Ark)
-    *   [8.1 Ark Linux](#Ark_Linux)
-*   [9 2006: Judd goes to Google](#2006:_Judd_goes_to_Google)
-    *   [9.1 Judd's actual goodbye to Arch project](#Judd.27s_actual_goodbye_to_Arch_project)
-    *   [9.2 Arch Linux and its release system](#Arch_Linux_and_its_release_system)
-*   [10 2005: Arch against Wombats](#2005:_Arch_against_Wombats)
-    *   [10.1 Wombats](#Wombats)
-*   [11 2004: GNOME 2.6](#2004:_GNOME_2.6)
-    *   [11.1 GNOME version history](#GNOME_version_history)
+*   [1 2016](#2016)
+*   [2 2015](#2015)
+*   [3 2014](#2014)
+*   [4 2013: Pacman depends on systemd](#2013:_Pacman_depends_on_systemd)
+*   [5 2012](#2012)
+*   [6 2011: Canterbury](#2011:_Canterbury)
+    *   [6.1 History](#History)
+    *   [6.2 Goal](#Goal)
+    *   [6.3 Features](#Features)
+*   [7 2010: April Fools Challenge](#2010:_April_Fools_Challenge)
+    *   [7.1 About the april fools challenge joke](#About_the_april_fools_challenge_joke)
+*   [8 2009: Dropping i686 Support](#2009:_Dropping_i686_Support)
+    *   [8.1 About the dropping i686 support joke](#About_the_dropping_i686_support_joke)
+    *   [8.2 After-action Report](#After-action_Report)
+*   [9 2008: Arch in German](#2008:_Arch_in_German)
+    *   [9.1 About the German Arch joke](#About_the_German_Arch_joke)
+*   [10 2007: Arch Ark](#2007:_Arch_Ark)
+    *   [10.1 Ark Linux](#Ark_Linux)
+*   [11 2006: Judd goes to Google](#2006:_Judd_goes_to_Google)
+    *   [11.1 Judd's actual goodbye to Arch project](#Judd.27s_actual_goodbye_to_Arch_project)
+    *   [11.2 Arch Linux and its release system](#Arch_Linux_and_its_release_system)
+*   [12 2005: Arch against Wombats](#2005:_Arch_against_Wombats)
+    *   [12.1 Wombats](#Wombats)
+*   [13 2004: GNOME 2.6](#2004:_GNOME_2.6)
+    *   [13.1 GNOME version history](#GNOME_version_history)
+
+## 2016
+
+There does not seem to have been an April Fools' Day joke for 2016.
+
+## 2015
+
+There does not seem to have been an April Fools' Day joke for 2015.
 
 ## 2014
 

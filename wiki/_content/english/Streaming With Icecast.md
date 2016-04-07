@@ -63,19 +63,9 @@ You can start icecast as a single user by executing:
 
 If you want icecast to remain in the foreground of your terminal, remove the -b flag.
 
-To run icecast as a system daemon:
+To run icecast as a system daemon, [start](/index.php/Start "Start") the `icecast.service` systemd unit.
 
-```
-# systemctl start icecast
-
-```
-
-To run icecast at system boot:
-
-```
-# systemctl enable icecast
-
-```
+To run icecast at system boot, [enable](/index.php/Enable "Enable") the systemd unit.
 
 *   Test it.
 
@@ -179,13 +169,7 @@ You can then play the stream as if it was a song belonging to your local mpd ins
 
 ### Sonata
 
-*   Install Sonata:
-
-```
-# pacman -S sonata
-
-```
-
+*   [Install](/index.php/Install "Install") the [sonata](https://www.archlinux.org/packages/?name=sonata) package.
 *   Start it up and you should be greeted by Sonata's preferences.
 *   Set 'Name' to the name of your server.
 *   Set 'Host' to the IP address of your server.
@@ -197,13 +181,7 @@ You can then play the stream as if it was a song belonging to your local mpd ins
 
 ### MPlayer
 
-*   Install mplayer
-
-```
-# pacman -S mplayer
-
-```
-
+*   [Install](/index.php/Install "Install") the [mplayer](https://www.archlinux.org/packages/?name=mplayer) package.
 *   Start it, telling it to play the playlist that icecast places in the icecast root directory (the playlist redirects mplayer to mpd.ogg)
 
 ```
@@ -226,26 +204,16 @@ $ mpc play
 
 If you want to stream a single track, for example, you can use this method instead of changing your mpd setup.
 
-*   Install ffmpeg2theora from community and [oggfwd](https://aur.archlinux.org/packages/oggfwd/) from the [AUR](/index.php/AUR "AUR").
+*   [Install](/index.php/Install "Install") the [ffmpeg2theora](https://www.archlinux.org/packages/?name=ffmpeg2theora) and [oggfwd](https://aur.archlinux.org/packages/oggfwd/) packages.
 
-```
-# pacman -S ffmpeg2theora
-
-```
-
-*   Start icecast using a previously setup config file
+*   Start icecast using a previously setup config file using
 
 ```
 $ icecast -c path/to/config.xml
 
 ```
 
-or
-
-```
-# systemctl start icecast
-
-```
+or [start](/index.php/Start "Start") the systemd unit `icecast` instead.
 
 *   Start ffmpeg2theora, sending its output to oggfwd, which forwards to the icecast server for you.
 

@@ -49,12 +49,7 @@ There are five options for installing World of Warcraft.
 
 The most straightforward way of installing World of Warcraft on Linux is usually this method, while it may not be the fastest. On slower connections, however, you may not wish to use this method due to the fact that you will have to download the entire game, including patches.
 
-It is known to work with Wine 1.1.39 which can be downloaded off [Wine's website](http://www.winehq.org/) and compiled. However, you may wish to try with the newest version from the extra section, installed via Pacman like so:
-
-```
-# pacman -S wine
-
-```
+It is known to work with Wine 1.1.39 which can be downloaded off [Wine's website](http://www.winehq.org/) and compiled. However, you may wish to try with the newest version from the extra section. Wine is available by [installing](/index.php/Install "Install") the [wine](https://www.archlinux.org/packages/?name=wine) package.
 
 #### Downloading the Client
 
@@ -75,12 +70,7 @@ wine World-of-Warcraft-Setup-enGB.exe
 
 In case you can not see the license text, you probably have to install gecko, since the license is rendered as HTML.
 
-To install it (on 64 bit enable [multilib])
-
-```
-pacman -S wine_gecko
-
-```
+To install it (on 64 bit enable [multilib]), [install](/index.php/Install "Install") the [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) package.
 
 In some versions of Wine, you can not agree to the terms even though you scrolled down. Try to compile the latest Wine from source. Or use a version of Wine it is known to work with, i.e. 1.1.39, **1.7.10** (please add more here).
 
@@ -90,12 +80,7 @@ Wine crashes as soon as the terms which must be agreed to install the game opens
 
 ##### Battle.net cannot connect
 
-The new (V5) battle.net installer will not be able to connect without libldap. To install:
-
-```
- pacman -S lib32-libldap
-
-```
+The new (V5) battle.net installer will not be able to connect without libldap. To obtain it, [install](/index.php/Install "Install") the [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap) package.
 
 ##### Error Message: This application failed to start because it could not find or load the qt platform plugin windows
 

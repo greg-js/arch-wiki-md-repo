@@ -578,21 +578,21 @@ Do not forget to reenable your profile:
 
 ### Problems with netctl-auto on resume
 
-Sometimes *netctl-auto* fails to reconnect when the system resumes from suspend. An easy solution is to restart the service for *netctl-auto*. This can be automated with an additional service like the following:
+Sometimes *netctl-auto* fails to reconnect when the system resumes from suspend, hibernate or hybrid-sleep. An easy solution is to restart the service for *netctl-auto*. This can be automated with an additional service like the following:
 
  `/etc/systemd/system/netctl-auto-resume@.service` 
 ```
 [Unit]
 Description=restart netctl-auto on resume.
 Requisite=netctl-auto@%i.service
-After=suspend.target
+After=sleep.target
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/systemctl restart netctl-auto@%i.service
 
 [Install]
-WantedBy=suspend.target
+WantedBy=sleep.target
 
 ```
 
@@ -603,7 +603,7 @@ If the device is not yet running on resume when the unit is started, this will f
  `/etc/systemd/system/netctl-auto-resume@.service` 
 ```
 ...
-After=suspend.target sys-subsystem-net-devices-%i.device
+After=sleep.target sys-subsystem-net-devices-%i.device
 ...
 
 ```

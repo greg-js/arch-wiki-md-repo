@@ -78,7 +78,7 @@ The brightness can be set by writing a number to `brightness`. Attempting to set
 
 ### Kernel command-line options
 
-Sometimes, ACPI does not work well due to different motherboard implementations and ACPI quirks. This includes some laptops with dual graphics (e.g. Nvidia/Radeon dedicated GPU with Intel/AMD integrated GPU). On Nvidia Optimus laptops, the kernel parameter nomodeset can interfere with the ability to adjust the backlight. If you find that changing the `acpi_video0` backlight does not actually change the brightness, you may need to use `acpi_backlight=none`. Additionally, ACPI sometimes needs to register its own `acpi_video0` backlight even if one already exists (such as `intel_backlight`), which can be done by adding one of the following kernel parameters in your [bootloader](/index.php/Bootloader "Bootloader"):
+Sometimes, ACPI does not work well due to different motherboard implementations and ACPI quirks. This includes some laptops with dual graphics (e.g. Nvidia/Radeon dedicated GPU with Intel/AMD integrated GPU). On Nvidia Optimus laptops, the kernel parameter nomodeset can interfere with the ability to adjust the backlight. Additionally, ACPI sometimes needs to register its own `acpi_video0` backlight even if one already exists (such as `intel_backlight`), which can be done by adding one of the following kernel parameters in your [bootloader](/index.php/Bootloader "Bootloader"):
 
 ```
 acpi_backlight=video
@@ -88,9 +88,11 @@ acpi_backlight=none
 
 ```
 
-**Tip:** On an Asus notebooks you might also need to do: `# modprobe asus-nb-wmi` 
+**Note:**
 
-**Note:** Disabling legacy boot on Dell XPS13 breaks backlight support.
+*   If you find that changing the `acpi_video0` backlight does not actually change the brightness, you may need to use `acpi_backlight=none`.
+*   On an Asus notebooks you might also need to do: `# modprobe asus-nb-wmi` 
+*   Disabling legacy boot on Dell XPS13 breaks backlight support.
 
 ### Udev rule
 

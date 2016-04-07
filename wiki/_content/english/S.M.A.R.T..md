@@ -100,15 +100,7 @@ The smartd daemon monitors SMART statuses and emits notifications when something
 
 #### daemon management
 
-To start the daemon, check its status, make it auto-start on system boot and read recent log file entries:
-
-```
-# systemctl start smartd
-# systemctl status smartd
-# systemctl enable smartd
-# journalctl -u smartd
-
-```
+To start the daemon, check its status, make it auto-start on system boot and read recent log file entries, simply [start/enable](/index.php/Start/enable "Start/enable") the `smartd.service` systemd unit.
 
 smartd respects all the usual systemctl and journalctl commands. For more information on using systemctl and journalctl, see [Systemd#Using units](/index.php/Systemd#Using_units "Systemd") and [Systemd#Journal](/index.php/Systemd#Journal "Systemd").
 

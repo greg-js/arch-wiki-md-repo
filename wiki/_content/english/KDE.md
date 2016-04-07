@@ -104,12 +104,12 @@ Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 
 
 ### Upgrading from Plasma 4 to 5
 
-1.  Isolate `multi-user.target` `# systemctl isolate multi-user.target` 
-2.  If you use KDM as display manager, disable it `# systemctl disable kdm` 
-3.  [Uninstall](/index.php/Pacman "Pacman") the kdebase-workspace package `# pacman -Rc kdebase-workspace` 
+1.  Isolate `multi-user.target`: `# systemctl isolate multi-user.target` 
+2.  If you use KDM as display manager, [disable](/index.php/Disable "Disable") the `kdm.service` systemd unit.
+3.  [Uninstall](/index.php/Install "Install") the [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/) package.
 4.  [Install](/index.php/Install "Install") the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group.
-5.  Enable [SDDM](/index.php/SDDM "SDDM") `# systemctl enable sddm` or install and enable any other [display manager](/index.php/Display_manager "Display manager").
-6.  Reboot or simply run `# systemctl start sddm` 
+5.  [Enable](/index.php/Enable "Enable") the `sddm.service` systemd unit, or install and enable any other [display manager](/index.php/Display_manager "Display manager").
+6.  Reboot or simply [start](/index.php/Start "Start") the systemd `sddm.service` unit.
 
 **Note:** The Plasma 4 configuration is not automatically migrated to Plasma 5, so you will have to configure your desktop from scratch.
 
@@ -788,10 +788,10 @@ You can add *kde-unstable* with:
 Include = /etc/pacman.d/mirrorlist
 ```
 
-**Warning:** Make sure to add these lines **before** the *extra* repository. Adding the section after *extra* will cause [pacman](/index.php/Pacman "Pacman") to prefer the older packages in the extra repository. `pacman -Syu` will not install them, and will warn that they are "too new" if installed manually. Also, some of the libraries will stay at the older versions, which may cause file conflicts and/or instability!
+**Warning:** Make sure to add these lines **before** the *extra* repository. Adding the section after *extra* will cause [pacman](/index.php/Pacman "Pacman") to prefer the older packages in the extra repository. Upgrading with *pacman* will not install them, and will warn that they are "too new" if installed manually. Also, some of the libraries will stay at the older versions, which may cause file conflicts and/or instability!
 
 1.  *kde-unstable* is based upon *testing*. Therefore, you need to enable the repositories in the following order: *kde-unstable*, *testing*, *core*, *extra*, *community-testing*, *community*.
-2.  To update from a previous KDE installation, run: `# pacman -Syu` or `# pacman -S kde-unstable/kde`
+2.  To update from a previous KDE installation, use *pacman* to update your system, or [install](/index.php/Install "Install") `kde-unstable/kde`.
 3.  If you do not have KDE installed, you might have difficulties to install it by using groups (limitation of pacman)
 4.  **Subscribe and read the [arch-dev-public](https://mailman.archlinux.org/pipermail/arch-dev-public/) mailing list**
 5.  Make sure [you make bug reports](#Bugs) if you find any problems.

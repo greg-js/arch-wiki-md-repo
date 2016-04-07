@@ -2,7 +2,7 @@ pkgstatus envía un listado de todos los paquetes instalados, [kernel modules](h
 
 ## Instalación
 
-[Instalar](/index.php?title=Instalar&action=edit&redlink=1 "Instalar (page does not exist)") el paquete [pkgstats](https://www.archlinux.org/packages/?name=pkgstats).
+[Instalar](/index.php/Install "Install") el paquete [pkgstats](https://www.archlinux.org/packages/?name=pkgstats).
 
 ## Uso
 

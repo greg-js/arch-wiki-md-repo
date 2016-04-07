@@ -14,8 +14,9 @@ This article overviews some useful extensions which enhance security and privacy
 *   [10 RefControl](#RefControl)
 *   [11 RequestPolicy](#RequestPolicy)
 *   [12 Configuration Tweaks](#Configuration_Tweaks)
-    *   [12.1 Change browser time zone](#Change_browser_time_zone)
-    *   [12.2 Change user agent and platform](#Change_user_agent_and_platform)
+    *   [12.1 Enable Tracking Protection](#Enable_Tracking_Protection)
+    *   [12.2 Change browser time zone](#Change_browser_time_zone)
+    *   [12.3 Change user agent and platform](#Change_user_agent_and_platform)
 
 ## HTTPS Everywhere
 
@@ -59,27 +60,23 @@ Disconnect can also stop side-jacking, which utilizes stolen cookies to steal pe
 
 ## Ghostery
 
-[Ghostery](https://www.ghostery.com/) is similar to Disconnect, but is a proprietary project to track businesses which employ the use of website trackers. From the website:
+[Ghostery](https://www.ghostery.com/) is similar to Disconnect, but is a proprietary project which employ the use of website trackers to track businesses. There is controversy due to Ghostery, Inc. being formerly known as The Better Advertising Project, and being in the business of online-advertising and market intelligence in addition to internet privacy. From the website:
 
 *Ghostery tracks over 1,000 trackers and gives you a roll-call of the ad networks, behavioural data providers, web publishers, and other companies interested in your activity.*
 
-Ghostery can be installed from the [official website](https://www.ghostery.com/download). Once installed Ghostery can be configured from:
+Ghostery can be installed from the Firefox add-on manager or from the [official website](https://www.ghostery.com/download). Once installed, Ghostery can be configured by selecting preferences from the Add-ons Manager in `Firefox` which will bring you to the configuration page. It may also be configured from:
 
 ```
- chrome://ghostery/content/options.html
+ [https://extension.ghostery.com/settings](https://extension.ghostery.com/settings)
 
 ```
-
-Or by selecting preferences from the Add-ons Manager in Firefox which will bring you to the configuration page.
 
 Alternatively you can configure Ghostery through the included wizard:
 
 ```
- chrome://ghostery/content/wizard.html
+ [https://extension.ghostery.com/intro#start](https://extension.ghostery.com/intro#start)
 
 ```
-
-From the configuration page you can configure what 3rd party elements(3pes) Ghostery should block. When navigating the categories you can click on the individual profiles for more information about that specific company. You can also choose to clear Flash and Silverlight cookies on exit. Also, you can enable the cookie protection feature which prevents selected websites from setting cookies in your browser.
 
 ## NoScript
 
@@ -115,7 +112,18 @@ For more information on cross-site requests and RequestPolicy visit [here](https
 
 ## Configuration Tweaks
 
-The following are privacy-focused configuration tweaks to prevent [browser fingerprinting](https://panopticlick.eff.org/).
+The following are privacy-focused configuration tweaks to prevent [browser fingerprinting](https://panopticlick.eff.org/) and tracking.
+
+### Enable Tracking Protection
+
+Mozilla's built-in tracking protection may be enabled in `about:config` by setting the following preference to `true`:
+
+```
+ privacy.trackingprotection.enabled
+
+```
+
+Note that this is not a replacement for extensions such as UBlock Origin and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet "List of applications/Internet").
 
 ### Change browser time zone
 

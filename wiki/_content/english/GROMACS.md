@@ -2,9 +2,9 @@
 
 According to the [official website](http://www.gromacs.org/), GROMACS is:
 
-	*a versatile package to perform [molecular dynamics](https://en.wikipedia.org/wiki/Molecular_dynamics "wikipedia:Molecular dynamics"), i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.*
+	a versatile package to perform [molecular dynamics](https://en.wikipedia.org/wiki/Molecular_dynamics "wikipedia:Molecular dynamics"), i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.
 
-	*It is primarily designed for biochemical molecules like proteins, lipids and nucleic acids that have a lot of complicated bonded interactions, but since GROMACS is extremely fast at calculating the nonbonded interactions (that usually dominate simulations) many groups are also using it for research on non-biological systems, e.g. polymers.*
+	It is primarily designed for biochemical molecules like proteins, lipids and nucleic acids that have a lot of complicated bonded interactions, but since GROMACS is extremely fast at calculating the nonbonded interactions (that usually dominate simulations) many groups are also using it for research on non-biological systems, e.g. polymers.
 
 ## Contents
 
@@ -76,7 +76,7 @@ By default the top-level force field directory is located at `/usr/share/gromacs
 
 Below is a basic workflow with most of the major commands mentioned. Every command should begin with `gmx`. In the current version, 5.0, this is optional, but beginning in 5.1 this will be required. For more details on using GROMACS [find a good tutorial and read the manual](#See_also). A helpful flow chart is [here](http://manual.gromacs.org/online/flow.html).
 
-**Tip:** Each command has it's own [man page](/index.php/Man_page "Man page"), with a hyphen substituted for the space in between `gmx` and the command. For example, the man page for *gmx pdb2gmx* is located at `gmx-pdb2gmx`.
+**Tip:** Each command has its own [man page](/index.php/Man_page "Man page"), with a hyphen substituted for the space in between `gmx` and the command. For example, the man page for *gmx pdb2gmx* is located at `gmx-pdb2gmx`.
 
 ### Setup
 

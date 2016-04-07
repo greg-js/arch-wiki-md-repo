@@ -150,19 +150,7 @@ Then create your cache directories:
 
 ```
 
-Then you can start Squid!
-
-```
-# systemctl start squid
-
-```
-
-To start squid on boot use this command:
-
-```
-# systemctl enable squid
-
-```
+Then you can [start/enable](/index.php/Start/enable "Start/enable") `squid.service`.
 
 ## Content Filtering
 
@@ -260,21 +248,7 @@ Make sure your port in your /etc/havp/havp.config matches the cache_peer port in
 
 ### Testing
 
-Reload your squid and start HAVP:
-
-```
-systemctl restart squid
-systemctl start havp
-
-```
-
-Don't forget to add HAVP to your rc.conf if your want it to launch on boot :
-
-```
-systemctl enable squid
-systemctl enable havp
-
-```
+[Restart](/index.php/Restart "Restart") the `squid.service` systemd unit and [start](/index.php/Start "Start") the `havp.service` systemd unit. [Enable](/index.php/Enable "Enable") both systemd units to have them launch at boot.
 
 You can try the antivirus capabilities with a test virus (not a real virus) available [here](http://www.eicar.org/anti_virus_test_file.htm).
 
@@ -299,12 +273,7 @@ From a terminal with root privileges, run:
 
 ```
 
-Then start Iptables:
-
-```
-# systemctl start iptables.service
-
-```
+Then [start](/index.php/Start "Start") the `iptables.service` systemd unit.
 
 Replace SQUIDIP with the public IP(s) which squid may use for its listening port and outbound connections.
 
@@ -320,10 +289,7 @@ ACCEPT		$FW	net	tcp	www # allow Squid to fetch the www content
 
 ```
 
-```
-systemctl restart shorewall
-
-```
+Restart the `shorewall` systemd unit.
 
 ## HTTP Authentication
 
@@ -395,12 +361,12 @@ or use the 'dns_nameservers' option in squid.conf.
 
 You can:
 
-*   Enable [NetworkManager-wait-online.service](/index.php/NetworkManager#Enable_NetworkManager_Wait_Online "NetworkManager") `sudo systemctl enable NetworkManager-wait-online.service`
+*   Enable [NetworkManager-wait-online.service](/index.php/NetworkManager#Enable_NetworkManager_Wait_Online "NetworkManager") systemd unit.
 *   Using [NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") instead of systemd to start squid
 
-`sudo systemctl disable squid.service`
+[Disable](/index.php/Disable "Disable") the `squid.service` systemd unit.
 
- `sudo nano /etc/NetworkManager/dispatcher.d/10_squid` 
+ `/etc/NetworkManager/dispatcher.d/10_squid` 
 ```
 if [ $1 == 'wlp2s0' ]
 then

@@ -23,14 +23,7 @@ Server = http://linux.shikadi.net/arch/$repo/$arch/
 
 ```
 
-Then synchronise and view the newly available packages:
-
-```
-$ pacman -Sys oracle
-
-```
-
-After [upgrading](/index.php/Pacman "Pacman") your system, install **oracle-instantclient-basic**; then you will need to re-source the profile script in any open shells, in order to pick up the newly added environment variables. Without this, some programs will complain that they cannot find the Oracle client.
+[Upgrade](/index.php/Pacman "Pacman") your system. The newly available packages will be prefixed with `oracle`. Then, [install](/index.php/Install "Install") **oracle-instantclient-basic**; then you will need to re-source the profile script in any open shells, in order to pick up the newly added environment variables. Without this, some programs will complain that they cannot find the Oracle client.
 
 ```
 source /etc/profile
