@@ -31,7 +31,7 @@ Fluxbox è un gestore di finestre per X. È basato sul codice di Blackbox 0.61.1
 
 ## Installazione
 
-Il pacchetto [fluxbox](https://www.archlinux.org/packages/?name=fluxbox) è presente nei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). Installarlo quindi con [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
+Il pacchetto [fluxbox](https://www.archlinux.org/packages/?name=fluxbox) è presente nei [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"). Installarlo quindi con [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
 
 Se non si ha ancora installaro [xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"), farlo ora.
 
@@ -39,7 +39,7 @@ Se non si ha ancora installaro [xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano
 
 ### Metodo 1: KDM/GDM
 
-Gli utenti di [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)"), [GDM](/index.php/GDM "GDM") o [Lightdm](/index.php/Lightdm "Lightdm") troveranno una nuova voce di fluxbox aggiunta automaticamente al loro menù di sessione. Si scelga semplicemente l'opzione fluxbox durante la fase del login.
+Gli utenti di [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)"), [GDM](/index.php/GDM "GDM") o [LightDM](/index.php/LightDM "LightDM") troveranno una nuova voce di fluxbox aggiunta automaticamente al loro menù di sessione. Si scelga semplicemente l'opzione fluxbox durante la fase del login.
 
 ### Metodo 2: ~/.xinitrc
 
@@ -357,7 +357,7 @@ In the "Menu Management" section (above) we were discussing the main "Applicatio
 
 ### Vera trasparenza
 
-Per abilitare la vera trasparenza in fluxbox è necessario un compositor per X come [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Per abilitare la vera trasparenza in fluxbox è necessario un compositor per X come [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ### Notifiche
 

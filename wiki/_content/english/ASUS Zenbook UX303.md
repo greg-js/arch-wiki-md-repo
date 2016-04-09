@@ -174,7 +174,7 @@ Prior to Linux 4.0.1-1, this laptop had problems resuming from suspend-to-ram, a
 
 On resume, the Intel GPU might hang and needs to be restarted. This happens automatically but delays the resume by quite a bit. If your resume takes a long time check `dmesg` for a message starting with `GPU HANG`. If it is present, try passing `i915.enable_execlists=0` to the linux image.
 
-If suspend fails sometimes (kernel crashes when trying to suspend), it might be due to a [bios/kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=102091). Try [blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules") the kernel modules `mei_me` and `mei` meanwhile.
+If suspend fails sometimes (kernel crashes when trying to suspend), it might be due to a [bios/kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=102091). Try [blacklisting](/index.php/Blacklisting "Blacklisting") the kernel modules `mei_me` and `mei` meanwhile.
 
 ### Battery
 

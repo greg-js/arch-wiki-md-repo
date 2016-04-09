@@ -1,4 +1,4 @@
-Este documento describe el proceso de [bootstrapping](https://en.wikipedia.org/wiki/es:Bootstrapping_(inform%C3%A1tica) necesario para instalar Arch Linux desde un sistema anfitrión de Linux en ejecución. Después del bootstrapping, la instalación continúa como se describe en la [guía de instalación](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)").
+Este documento describe el proceso de [bootstrapping](https://en.wikipedia.org/wiki/es:Bootstrapping_(inform%C3%A1tica) necesario para instalar Arch Linux desde un sistema anfitrión de Linux en ejecución. Después del bootstrapping, la instalación continúa como se describe en la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)").
 
 La instalación de Arch Linux desde un sistema Linux en ejecución es útil para:
 
@@ -212,7 +212,7 @@ Antes de iniciar la instalación, las claves de pacman deben ser configuradas. A
 
 #### Instalación
 
-Siga la [guía para principiantes](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)") sobre [Montar las particiones](/index.php/Installation_Guide_(Espa%C3%B1ol)#Montar_las_particiones "Installation Guide (Español)") e [Instalar el sistema base](/index.php/Installation_Guide_(Espa%C3%B1ol)#Instalaci.C3.B3n_del_sistema_base "Installation Guide (Español)").
+Siga la [guía para principiantes](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") sobre [Montar las particiones](/index.php/Installation_guide_(Espa%C3%B1ol)#Montar_las_particiones "Installation guide (Español)") e [Instalar el sistema base](/index.php/Installation_guide_(Espa%C3%B1ol)#Instalaci.C3.B3n_del_sistema_base "Installation guide (Español)").
 
 ##### Anfitrión basado en Debian
 
@@ -235,7 +235,7 @@ En Debian, los puntos de /dev/shm a /run/shm. Sin embargo, en el chroot basado e
 
 #### Configurar el sistema
 
-A partír de aquí, basta con seguir la [guía para principiantes](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)") desde [Montar las particiones](/index.php/Installation_Guide_(Espa%C3%B1ol)#Montar_las_particiones "Installation Guide (Español)").
+A partír de aquí, basta con seguir la [guía para principiantes](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") desde [Montar las particiones](/index.php/Installation_guide_(Espa%C3%B1ol)#Montar_las_particiones "Installation guide (Español)").
 
 ## Sustituir el sistema existente sin un LiveCD
 

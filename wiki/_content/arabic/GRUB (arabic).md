@@ -290,7 +290,7 @@ Installation finished. No error reported.
 
 **ملاحظة:** مسار الملف هو `/boot/grub/grub.cfg`, وليس `/boot/grub/i386-pc/grub.cfg`.
 
-إذا كان GRUB يعاني من رسالة "no suitable mode found" أثناء الإقلاع ، اذهب إلى [#تصحيح الخطأ No Suitable Mode Found](#.D8.AA.D8.B5.D8.AD.D9.8A.D8.AD_.D8.A7.D9.84.D8.AE.D8.B7.D8.A3_No_Suitable_Mode_Found) . إذا فشل الأمر `grub-mkconfig` قم بوضع الملف `/boot/grub/grub.cfg` بدلا من ملف `/boot/grub/menu.lst` باستخدام الأمر:
+إذا كان GRUB يعاني من رسالة "no suitable mode found" أثناء الإقلاع ، اذهب إلى [#تصحيح الخطأ No Suitable Mode Found](#.D8.AA.D8.B5.D8.AD.D9.8A.D8.AD_.D8.A7.D9.84.D8.AE.D8.B7.D8.A3_No_Suitable_Mode_Found). إذا فشل الأمر `grub-mkconfig` قم بوضع الملف `/boot/grub/grub.cfg` بدلا من ملف `/boot/grub/menu.lst` باستخدام الأمر:
 
 ```
 # grub-menulst2cfg /boot/grub/menu.lst /boot/grub/grub.cfg

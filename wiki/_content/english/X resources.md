@@ -55,29 +55,29 @@ The file `~/.Xresources` does not exist by default. It is a plain-text file, so 
 
 The resources will be stored in the X server, so the file does not need to be read every time an app is started. The file can be reread to make any changes take effect.
 
-To reread the .Xresources file and throw away the old resources:
+To reread the `.Xresources` file and throw away the old resources:
 
 ```
 xrdb ~/.Xresources
 
 ```
 
-To reread the .Xresources file and keep the old resources:
+To reread the `.Xresources` file and keep the old resources:
 
 ```
 xrdb -merge ~/.Xresources
 
 ```
 
-**Tip:** `~/.Xresources` is just a naming convention; xrdb can load any file. If you use xrdb manually, you can put such a file anywhere you want (for example, `~/.config/Xresources`).
+**Tip:** `~/.Xresources` is just a naming convention; `xrdb` can load any file. If you use `xrdb` manually, you can put such a file anywhere you want (for example, `~/.config/Xresources`).
 
-**Note:** Resources loaded with xrdb are also accessible to *remote* X11 clients (such as those forwarded over SSH).
+**Note:** Resources loaded with `xrdb` are also accessible to *remote* X11 clients (such as those forwarded over SSH).
 
 **Warning:** The older and deprecated `~/.Xdefaults` file is read every time you start an X11 program such as `xterm`, but **only** if `xrdb` has not **ever** been used in the current X session. [[1]](https://groups.google.com/forum/#!msg/comp.windows.x/hQBEdql8l-Q/hF3DETcIHGwJ)
 
 ### Adding to xinitrc
 
-If you are using a copy of the default [xinitrc](/index.php/Xinitrc "Xinitrc") as your `.xinitrc` it already merges ~/.Xresources.
+If you are using a copy of the default [xinitrc](/index.php/Xinitrc "Xinitrc") as your `.xinitrc` it already merges `~/.Xresources`.
 
 If you are using a custom `.xinitrc` add the following line:
 

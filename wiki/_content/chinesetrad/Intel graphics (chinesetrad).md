@@ -31,7 +31,7 @@ Intel顯示卡及晶片資訊. *在終端機下使用(不使用X視窗)，請參
 
 "i810"(主機板晶片，非GPU)是非常舊的晶片，其製造時間比9xx主機板晶片系列還早。相同的，910, 915, 945晶片的名字可能會在前面加個"i"
 
-列表詳見 [Intel_GMA表](https://en.wikipedia.org/wiki/Intel_GMA#Table_of_GMA_graphics_cores_and_chipsets "wikipedia:Intel GMA")
+列表詳見[Intel_GMA表](https://en.wikipedia.org/wiki/Intel_GMA#Table_of_GMA_graphics_cores_and_chipsets "wikipedia:Intel GMA")
 
 ### 驅動程式
 

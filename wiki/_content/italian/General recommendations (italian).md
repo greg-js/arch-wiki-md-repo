@@ -1,4 +1,4 @@
-Questa pagina è un indice ragionato di altri articoli e di informazioni rilevanti. Diverse pagine qui elencate richiedono l'utilizzo di [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)") per installare pacchetti addizionali presenti nei [repositori ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), e di altri non ufficiali da [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") per mezzo di [makepkg](/index.php/Makepkg "Makepkg") con l'aiuto opzionale di un [AUR helper](/index.php/AUR_helper "AUR helper"). Quindi il concetto di gestione dei pacchetti deve essere perfettamente compreso prima di continuare.
+Questa pagina è un indice ragionato di altri articoli e di informazioni rilevanti. Diverse pagine qui elencate richiedono l'utilizzo di [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)") per installare pacchetti addizionali presenti nei [repositori ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), e di altri non ufficiali da [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") per mezzo di [makepkg](/index.php/Makepkg "Makepkg") con l'aiuto opzionale di un [AUR helper](/index.php/AUR_helper "AUR helper"). Quindi il concetto di gestione dei pacchetti deve essere perfettamente compreso prima di continuare.
 
 Si assume che i lettori abbiano letto e seguito la [Guida per Principianti](/index.php/Guida_per_Principianti "Guida per Principianti") oppure la [Guida Ufficiale all'Installazione](/index.php/Guida_Ufficiale_all%27Installazione "Guida Ufficiale all'Installazione") per installare un sistema Arch Linux base. Inoltre ci sono diversi altri pacchetti software normalmente considerati fondamentali per un sistema completo e funzionale. Ad esempio, qualora si desideri un interfaccia grafica, si legga prima la pagina dedicata a [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"), mentre chi fosse interessato alla possibilità di stampare consideri di leggere anche la pagina su [Cups](/index.php/CUPS_(Italiano) "CUPS (Italiano)"). Tutti gli utenti possono familiarizzare con la struttura del file system leggendo [Filesystem Hierarchy Standard](/index.php/Filesystem_Hierarchy_Standard_(Italiano) "Filesystem Hierarchy Standard (Italiano)").
 
@@ -89,7 +89,7 @@ Le pagine di man sono una tra le risorse più utili disponibili per gli utenti d
 
 ### Caratteri
 
-Informazioni sull'argomento possono essere trovati alle pagine [Fonts (Italiano)](/index.php/Fonts_(Italiano) "Fonts (Italiano)") e [Configurazione dei font](/index.php/Font_Configuration_(Italiano) "Font Configuration (Italiano)").
+Informazioni sull'argomento possono essere trovati alle pagine [Fonts (Italiano)](/index.php/Fonts_(Italiano) "Fonts (Italiano)") e [Configurazione dei font](/index.php/Font_configuration_(Italiano) "Font configuration (Italiano)").
 
 #### Caratteri per la console
 
@@ -97,7 +97,7 @@ Se si passa molto tempo lavorando in una console virtuale (cioè al di fuori del
 
 #### Patch per la visualizzazione dei font
 
-Le librerie che gestiscono i font possono essere compilate con patch per migliorare la rappresentazione dei caratteri rispetto ai pacchetti standard; si veda [Font Configuration (Italiano)#Pacchetti con patch](/index.php/Font_Configuration_(Italiano)#Pacchetti_con_patch "Font Configuration (Italiano)").
+Le librerie che gestiscono i font possono essere compilate con patch per migliorare la rappresentazione dei caratteri rispetto ai pacchetti standard; si veda [Font configuration (Italiano)#Pacchetti con patch](/index.php/Font_configuration_(Italiano)#Pacchetti_con_patch "Font configuration (Italiano)").
 
 ## Audio/video
 
@@ -113,7 +113,7 @@ I [codecs](/index.php/Codecs_(Italiano) "Codecs (Italiano)") vengono utilizzati 
 
 ## Fase di *boot*
 
-*Questa sezione contiene informazioni riguardanti il processo di boot (avvio). Una spiegazione del processo di boot di Arch si può trovare alla pagina [Arch Boot Process (Italiano)](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)"). Per altro, si guardi [Category:Boot process (Italiano)](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)").*
+*Questa sezione contiene informazioni riguardanti il processo di boot (avvio). Una spiegazione del processo di boot di Arch si può trovare alla pagina [Arch boot process (Italiano)](/index.php/Arch_boot_process_(Italiano) "Arch boot process (Italiano)"). Per altro, si guardi [Category:Boot process (Italiano)](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)").*
 
 ### Avviare i *daemons* in background
 
@@ -133,7 +133,7 @@ Una volta che il processo di boot conclude, lo schermo viene pulito per visualiz
 
 ### Lanciare X all'avvio
 
-Se si utilizza un server [X](/index.php/X "X") per avere un interfaccia grafica, l'utente potrebbe desiderare di lanciare questo server durante il processo di avvio anzichè manualmente dopo il login. Si veda [Display Manager (Italiano)](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") se si desidera un login grafico oppure [Start X at boot (Italiano)](/index.php/Start_X_at_boot_(Italiano) "Start X at boot (Italiano)") per metodi che non richiedono un display manager.
+Se si utilizza un server [X](/index.php/X "X") per avere un interfaccia grafica, l'utente potrebbe desiderare di lanciare questo server durante il processo di avvio anzichè manualmente dopo il login. Si veda [Display manager (Italiano)](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") se si desidera un login grafico oppure [Start X at boot (Italiano)](/index.php/Start_X_at_boot_(Italiano) "Start X at boot (Italiano)") per metodi che non richiedono un display manager.
 
 ## Migliorie per la console
 
@@ -145,7 +145,7 @@ Gli utenti possono definire delle scorciatoie tramite un comando della shell per
 
 ### Complementi per Bash
 
-Un elenco di vari settaggi per Bash, inclusi autocompletamento e ricerca nello storico è disponibile alla voce [Bash (Italiano)#Trucchi e consigli](/index.php/Bash_(Italiano)#Trucchi_e_consigli "Bash (Italiano)").
+Un elenco di vari settaggi per Bash, inclusi autocompletamento e ricerca nello storico è disponibile alla voce [Bash (Italiano)#Trucchi e Consigli](/index.php/Bash_(Italiano)#Trucchi_e_Consigli "Bash (Italiano)").
 
 ### File compressi
 
@@ -153,7 +153,7 @@ I file compressi, o archivi, si trovano di frequente nell'utilizzo di un sistema
 
 ### Supporto per il mouse
 
-Usare il mouse per le operazioni di copia e incolla nella console può essere preferibile alla tradizionale modalità di copia di GNU [screen](/index.php/Screen "Screen"). Si guardi [Console Mouse Support (Italiano)](/index.php/Console_Mouse_Support_(Italiano) "Console Mouse Support (Italiano)") per istruzioni a riguardo.
+Usare il mouse per le operazioni di copia e incolla nella console può essere preferibile alla tradizionale modalità di copia di GNU [screen](/index.php/Screen "Screen"). Si guardi [Console mouse support (Italiano)](/index.php/Console_mouse_support_(Italiano) "Console mouse support (Italiano)") per istruzioni a riguardo.
 
 ### Scrollback buffer
 

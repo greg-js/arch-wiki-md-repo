@@ -93,7 +93,7 @@ Last login: Thu Dec 23 08:33:02 2010 from 10.1.10.200
 
 ## Следующие шаги
 
-Предел - небо. Если Вы хотите просто установить Arch, выполните `/arch/setup`. Если Вы намереваетесь исправить уже установленный, но по каким-то причинам сломавшийся Linux, следуйте [Install from Existing Linux](/index.php/Install_from_Existing_Linux "Install from Existing Linux") вики-статье.
+Предел - небо. Если Вы хотите просто установить Arch, выполните `/arch/setup`. Если Вы намереваетесь исправить уже установленный, но по каким-то причинам сломавшийся Linux, следуйте [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux") вики-статье.
 
 Хотите [grub2](/index.php/Grub2 "Grub2") или возможность использовать [GPT](/index.php/GPT "GPT") HDD?
 

@@ -1,8 +1,13 @@
+Lenovo ThinkPad X1 Carbon (X1C). There is also a touch version. Comes without optical drive. Has UEFI BIOS with BIOS-legacy fallback mode.
+
+**Tip:** A great resource for thinkpads is [http://www.thinkwiki.org/wiki/ThinkWiki](http://www.thinkwiki.org/wiki/ThinkWiki)
+
 ## Contents
 
-*   [1 Model description](#Model_description)
+*   [1 Booting](#Booting)
     *   [1.1 Legacy-BIOS](#Legacy-BIOS)
     *   [1.2 UEFI](#UEFI)
+    *   [1.3 Hanging on "HWP enabled" message](#Hanging_on_.22HWP_enabled.22_message)
 *   [2 Hardware](#Hardware)
     *   [2.1 Audio](#Audio)
         *   [2.1.1 Xbindkeys](#Xbindkeys)
@@ -11,7 +16,7 @@
     *   [2.4 Video](#Video)
         *   [2.4.1 Brightness control](#Brightness_control)
             *   [2.4.1.1 Xbindkeys](#Xbindkeys_2)
-        *   [2.4.2 EDID bug](#EDID_bug)
+        *   [2.4.2 Wrong EDID for external display](#Wrong_EDID_for_external_display)
     *   [2.5 KMS](#KMS)
     *   [2.6 Webcam](#Webcam)
     *   [2.7 Fingerprint Reader](#Fingerprint_Reader)
@@ -20,20 +25,15 @@
     *   [2.10 Keyboard backlight](#Keyboard_backlight)
     *   [2.11 Bluetooth](#Bluetooth)
     *   [2.12 Mouse/Touchpad](#Mouse.2FTouchpad)
-*   [3 Other hardware](#Other_hardware)
-    *   [3.1 Docking](#Docking)
+    *   [2.13 Docking](#Docking)
 
-## Model description
-
-Lenovo ThinkPad X1 Carbon (X1C). There is also a touch version. Comes without optical drive. Has UEFI BIOS with BIOS-legacy fallback mode.
-
-**Tip:** A great resource for thinkpads is [http://www.thinkwiki.org/wiki/ThinkWiki](http://www.thinkwiki.org/wiki/ThinkWiki)
+## Booting
 
 ### Legacy-BIOS
 
 This procedure is far less involved than UEFI and works perfectly.
 
-In order to turn off UEFI booting you will need to boot into your BIOS and change the boot mode to Legacy. Afterward, follow the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for standard installation instructions.
+Boot into your BIOS and change the boot mode to Legacy. Then simply follow the normal [installation guide](/index.php/Installation_guide "Installation guide").
 
 ### UEFI
 
@@ -98,6 +98,10 @@ $ mv /boot/efi/EFI/arch_grub/grubx64.efi /mnt/efi/EFI/boot/bootx64.efi
 
 Success. Somethings are implied, like GPT partitiontable etc.
 
+### Hanging on "HWP enabled" message
+
+This is due to a [bug](https://bugzilla.kernel.org/show_bug.cgi?id=110941) introduced in Linux 4.4\. To work around it, add `intel_pstate=no_hwp` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
 ## Hardware
 
 Almost everything works out of the box.
@@ -155,52 +159,28 @@ For alternative window managers (Fluxbox, etc..), try installing [xbindkeys](/in
 
 ```
 
-#### EDID bug
+#### Wrong EDID for external display
 
-**Note:** Update: This is due to the use of a mini-DP->VGA-adapter. Tested without bugs with a mini-DP->DP-cable.
-
-There is a bug getting EDID for the external screen when connected at bootup.
-
-I get this error message
+With certain connectors (e.g. MiniDP to VGA), there is a bug getting EDID for the external screen while booting:
 
 ```
 [ 93.736330] [drm:intel_dp_i2c_aux_ch] *ERROR* too many retries, giving up
 
 ```
 
-If external screen is connected after bootup everything works fine.
+This does not occur if the external screen is connected after booting.
 
-I had to manually add a modeline and set the preferred resolution with this script.
-
- `/usr/local/bin/dp-output` 
-```
-# Monitor setup
-EXTERNAL_OUTPUT="DP1"
-INTERNAL_OUTPUT="LVDS1"
-
-xrandr |grep $EXTERNAL_OUTPUT | grep " connected " | if [ $? -eq 0 ]; then
-        xrandr --newmode 1920x1200_60 154 1920 1968 2000 2080 1200 1203 1209 1235 -hsync +vsync
-        xrandr --addmode DP1 1920x1200_60
-        xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --mode 1920x1200_60
-fi
+The correct mode can be added per [xrandr#Adding undetected resolutions](/index.php/Xrandr#Adding_undetected_resolutions "Xrandr"):
 
 ```
-
-And add the script to startup at X-session start. Since I use [SLiM](/index.php/SLiM "SLiM") it`s done with this setting in slim.conf
-
- `/etc/slim.conf`  `sessionstart_cmd dp-output` 
+xrandr --newmode 1920x1200_60 154 1920 1968 2000 2080 1200 1203 1209 1235 -hsync +vsync
+xrandr --addmode DP1 1920x1200_60
+xrandr --output DP1 --mode 1920x1200_60
+```
 
 ### KMS
 
-Get [KMS](/index.php/KMS "KMS") working by adding i915 to the modules line
-
- `/etc/mkinitcpio.conf`  `MODULES="i915"` 
-```
-$ mkinitcpio -p linux
-
-```
-
-You also have to enable VT in BIOS.
+Enable [KMS](/index.php/KMS "KMS") using the `i915` module and by enabling VT in BIOS.
 
 ### Webcam
 
@@ -288,18 +268,16 @@ You need to manually install the proprietary firmware. The slackware wiki descri
 
 Works out of the box. See [TrackPoint](/index.php/TrackPoint "TrackPoint") for details.
 
-## Other hardware
-
 ### Docking
 
-This model comes without a docking port.
+This model has no docking port.
 
-Since the video for USB 3 Docking Stations currently is not supported[[1]](http://www.displaylink.org/forum/showthread.php?t=1748), I had to go for [USB Port Replicator with Digital Video (USB 2.0)](http://www.thinkwiki.org/wiki/USB_Port_Replicator_with_Digital_Video)
+Video for USB 3 Docking Stations currently is [not supported](http://www.displaylink.org/forum/showthread.php?t=1748), so you must use a [USB Port Replicator with Digital Video (USB 2.0)](http://www.thinkwiki.org/wiki/USB_Port_Replicator_with_Digital_Video)
 
-This works:
+This supports:
 
 *   USB-devices connected to dock
 *   Audio
 *   Microphone
 *   Ethernet
-*   Video (follow [DisplayLink](/index.php/DisplayLink "DisplayLink") guide)
+*   Video (see [DisplayLink](/index.php/DisplayLink "DisplayLink"))

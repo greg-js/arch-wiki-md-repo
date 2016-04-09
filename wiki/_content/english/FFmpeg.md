@@ -127,7 +127,7 @@ Both examples will provide the same quality output.
 
 In encoding x265 files, you may need to specify the aspect ratio of the file via `-aspect <width:height>`. Example :
 
- ` ffmpeg -i input -c:v libx265 -aspect 1920:1080 -preset veryslow -x265-params crf 20 output` 
+ ` ffmpeg -i input -c:v libx265 -aspect 1920:1080 -preset veryslow -x265-params crf=20 output` 
 
 ### Single-pass MPEG-2 (near lossless)
 

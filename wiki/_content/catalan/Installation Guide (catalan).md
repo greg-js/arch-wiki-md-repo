@@ -125,7 +125,7 @@ Add any user accounts you require besides root, as described in [User management
 
 ### Package management
 
-See [pacman](/index.php/Pacman "Pacman") and [FAQ#Package Management](/index.php/FAQ#Package_Management "FAQ") for answers regarding installing, updating, and managing packages.
+See [pacman](/index.php/Pacman "Pacman") and [FAQ#Package management](/index.php/FAQ#Package_management "FAQ") for answers regarding installing, updating, and managing packages.
 
 ### Service management
 

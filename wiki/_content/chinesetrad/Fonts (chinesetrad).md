@@ -413,7 +413,7 @@ FONT_MAP=8859-2
 
 若要為早期的使用者空間套用指定字型，在 `/etc/mkinitcpio.conf` 使用 `keymap` 勾子。更多資訊請參閱 [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio")。
 
-如果開機時字型沒有任何變化，或只變化一下就回復原樣，則有可能是因為圖形驅動啟動時字型被重設，然後終端機被切至幀緩衝 (framebuffer)。提早載入圖形驅動可以避免這個問題。若要在套用 `/etc/vconsole.conf` 之前將幀緩衝準備好，請參閱[核心模式設定#提早啟動 KMS](/index.php/Kernel_Mode_Setting#Early_KMS_start "Kernel Mode Setting")、[[1]](https://bbs.archlinux.org/viewtopic.php?id=145765) 或其它方式。
+如果開機時字型沒有任何變化，或只變化一下就回復原樣，則有可能是因為圖形驅動啟動時字型被重設，然後終端機被切至幀緩衝 (framebuffer)。提早載入圖形驅動可以避免這個問題。若要在套用 `/etc/vconsole.conf` 之前將幀緩衝準備好，請參閱[核心模式設定#提早啟動 KMS](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")、[[1]](https://bbs.archlinux.org/viewtopic.php?id=145765) 或其它方式。
 
 ## 字型軟體包
 

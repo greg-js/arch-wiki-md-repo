@@ -1,4 +1,4 @@
-Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux "Arch Linux") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ_(Português)](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Consulte [Beginners'_Guide_(Português)](/index.php/Beginners%27_Guide_(Portugu%C3%AAs) "Beginners' Guide (Português)") para um guia de instalação mais detalhado.
+Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux "Arch Linux") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ (Português)](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Consulte [Beginners' guide (Português)](/index.php/Beginners%27_guide_(Portugu%C3%AAs) "Beginners' guide (Português)") para um guia de instalação mais detalhado.
 
 [Arch wiki](/index.php/Main_page "Main page") é um excelente recurso e deve ser consultado para as primeiras questões. O canal [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), e o [[1]](http://forum.archlinux-br.org/index.php) também estão disponíveis se a resposta não puder ser encontrada em outro lugar. Além disso, não esqueça de verificar as páginas `man` para qualquer comando não familiarizado, o que normalmente pode ser invocado com `man *command*`.
 
@@ -125,7 +125,7 @@ Você pode escolher entre [GRUB](/index.php/GRUB "GRUB") ou [Syslinux](/index.ph
 
 ```
 
-*   Instale o GRUB antes de executar o chroot (sessão [Configurando o Sistema](#Configurando_o_Sistema)).
+*   Instale o GRUB antes de executar o chroot (sessão [Configurando o Sistema](#Configurar_o_sistema)).
 
 *Syslinux*
 
@@ -165,11 +165,11 @@ Adicione as contas de usuário que você precisa além do conta root, como descr
 
 ### Gerenciamento de pacotes
 
-Consulte [pacman](/index.php/Pacman "Pacman") e [FAQ#Package Management](/index.php/FAQ#Package_Management "FAQ") para respostas sobre a instalação, atualização e gerenciamento de pacotes.
+Consulte [pacman](/index.php/Pacman "Pacman") e [FAQ#Package management](/index.php/FAQ#Package_management "FAQ") para respostas sobre a instalação, atualização e gerenciamento de pacotes.
 
 ### Gerenciamento de serviços
 
-Arch Linux usa [Systemd_(Português)](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") como init, que é um sistema e gerenciador de serviços para Linux. Para manter sua instalação do Arch Linux, é recomendável aprender o básico sobre o assunto. Interação com systemd é feito via comando `systemctl`. Leia [Uso_básico_systemctl](/index.php/Systemd_(Portugu%C3%AAs)#Uso_b.C3.A1sico_systemctl "Systemd (Português)") para maiores informações.
+Arch Linux usa [systemd (Português)](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") como init, que é um sistema e gerenciador de serviços para Linux. Para manter sua instalação do Arch Linux, é recomendável aprender o básico sobre o assunto. Interação com systemd é feito via comando `systemctl`. Leia [Uso_básico_systemctl](/index.php/Systemd_(Portugu%C3%AAs)#Uso_b.C3.A1sico_systemctl "Systemd (Português)") para maiores informações.
 
 ### Som
 

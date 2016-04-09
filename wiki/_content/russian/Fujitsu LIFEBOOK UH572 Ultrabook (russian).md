@@ -71,11 +71,11 @@
 
 В разработке.
 
-Установка Arch Linux происходит штатным образом, согласно [Installation_Guide_(Русский)](/index.php/Installation_Guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Installation Guide (Русский)").
+Установка Arch Linux происходит штатным образом, согласно [Installation guide (Русский)](/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Installation guide (Русский)").
 
 Рекомендации основываются на следующих статьях:
 
-1.  [Solid_State_Drives_(Русский)](/index.php/Solid_State_Drives_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Solid State Drives (Русский)")
+1.  [Solid State Drives (Русский)](/index.php/Solid_State_Drives_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Solid State Drives (Русский)")
 
 При форматировании использовать параметр **-E discard**:
 
@@ -116,7 +116,7 @@ WiFi работает "из коробки" и легко запускается
 
 В разработке.
 
-Тут самое веселое и без бубна не работает. Драйвер для данного touchpad устанавливается xf86-input-synaptics. Для работы touchpad необходимо добавить в настройки [Grub](/index.php/Grub "Grub") следующие параметры загрузки ядра: **i8042.notimeout** и **i8042.nomux**.
+Тут самое веселое и без бубна не работает. Драйвер для данного touchpad устанавливается xf86-input-synaptics. Для работы touchpad необходимо добавить в настройки [GRUB](/index.php/GRUB "GRUB") следующие параметры загрузки ядра: **i8042.notimeout** и **i8042.nomux**.
 
 И при выходе из спящего режима (при открытии крышки) он выключается и включить его можно при помощи перезагрузки драйвера:
 

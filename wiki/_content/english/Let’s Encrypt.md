@@ -6,11 +6,12 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Manual](#Manual)
     *   [2.2 Webroot](#Webroot)
+        *   [2.2.1 Automatic renewal](#Automatic_renewal)
 *   [3 See also](#See_also)
 
 ## Installation
 
-To obtain the official client [install](/index.php/Install "Install") [letsencrypt](https://www.archlinux.org/packages/?name=letsencrypt) package.
+To obtain the official client [install](/index.php/Install "Install") the [letsencrypt](https://www.archlinux.org/packages/?name=letsencrypt) package.
 
 A minimal client with manual CSR creation is available at [acme-tiny](https://aur.archlinux.org/packages/acme-tiny/). More integrated clients suitable for scripts are e.g. [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) and [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
 
@@ -40,7 +41,35 @@ You can then manually configure your web server to use the key and certificate i
 
 ### Webroot
 
-You can use the webroot method to get/renew certificates with a running webserver (e.g. Apache/nginx).
+The webroot method lets the client place a challenge response at `yourdomain.tld/.well-known/acme-challenge/`. You can use it to get/renew certificates with a running webserver (e.g. Apache/nginx).
+
+```
+# letsencrypt certonly --email *email@example.com* --webroot -w */path/to/html/* -d *your.domain*
+
+```
+
+Make sure the server configuration for the certificates points to `/etc/letsencrypt/live/*your.domain*/`.
+
+If you use more than one domain or subdomains, the webroot has to be given for every domain. If no new webroot is given, the previous is taken.
+
+Management of this can be made much easier, if you instruct you map all http requests for `/.well-known/acme-challenge/` to a single folder, e.g. `/var/lib/letsencrypt`. For nginx you can achieve this with a location block, placed e.g. in `ssl.conf`:
+
+ `ssl.conf` 
+```
+location /.well-known/acme-challenge {
+  alias /var/lib/letsencrypt;
+  default_type "text/plain";
+  try_files $uri =404;
+}
+```
+
+The chosen path has then to be writable for the chosen letsencrypt client.
+
+#### Automatic renewal
+
+When running `letsencrypt certonly`, letsencrypt stores the domains and webroot directories in `/etc/letsencrypt/renewal`, so the certificates can be renewed later automatically by running `letsencrypt renew`.
+
+You can fully automate this by creating the following systemd service file:
 
  `/etc/systemd/system/letsencrypt.service` 
 ```
@@ -49,12 +78,10 @@ Description=Let's Encrypt renewal
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/letsencrypt certonly --agree-tos --renew-by-default --email *email@example.com* --webroot -w */path/to/html/* -d *your.domain*
+ExecStart=/usr/bin/letsencrypt renew
 ```
 
-Make sure the server configuration for the certificates points to `/etc/letsencrypt/live/*your.domain*/`.
-
-Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and not trying to prompt anything.
+Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and is not trying to prompt anything.
 
 Then, you can add a timer to renew the certificates monthly.
 
@@ -71,7 +98,7 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `letsencrypt.timer`. Also [start](/index.php/Start "Start") `letsencrypt.service` if you want to renew the certificates right now.
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `letsencrypt.timer`.
 
 You'll probably want your web server to be restarted after each certificate renewal. You can realize that by adding one of these lines to the `letsencrypt.service` file:
 

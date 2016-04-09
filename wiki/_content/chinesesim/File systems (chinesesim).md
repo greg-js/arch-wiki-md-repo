@@ -54,7 +54,7 @@ Arch Linux支持许多文件系统类型，我们可以为每个磁盘分区设�
 
 	[http://code.google.com/p/exfat/](http://code.google.com/p/exfat/) || [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
 
-*   **f2fs-tools** — [F2FS](/index.php/F2fs "F2fs") support.
+*   **f2fs-tools** — [F2FS](/index.php/F2FS "F2FS") support.
 
 	[https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git](https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git) || [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools)
 

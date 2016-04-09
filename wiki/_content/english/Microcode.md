@@ -65,9 +65,7 @@ options ...
 
 ```
 
-Copy `/boot/intel-ucode.img` to `$esp/EFI/*entry*/intel-ucode.img`.
-
-See [EFISTUB](/index.php/EFISTUB "EFISTUB") for more information and mechanisms for automatic managing.
+If you do not mount the ESP to `/boot`, copy `/boot/intel-ucode.img` to your [Unified Extensible Firmware Interface#EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface").
 
 ### EFI boot stub / EFI handover
 

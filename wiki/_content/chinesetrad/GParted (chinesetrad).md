@@ -19,7 +19,7 @@
 
 ## 安裝到 Arch
 
-從[官方軟體庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")[安裝](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") [gparted](https://www.archlinux.org/packages/?name=gparted)。
+從[官方軟體庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")[安裝](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") [gparted](https://www.archlinux.org/packages/?name=gparted)。
 
 ### 選用相依性
 
@@ -32,7 +32,7 @@ GParted 軟體包本身並不支援所有檔案系統。以下列舉了不同檔
 | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | fat16/32 |
 | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | ext2/[ext3](/index.php/Ext3 "Ext3")/[ext4](/index.php/Ext4 "Ext4") (v1.41+) |
 | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | exfat |
-| [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | [F2FS](/index.php/F2fs "F2fs") |
+| [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | [F2FS](/index.php/F2FS "F2FS") |
 | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | [JFS](/index.php/JFS "JFS") |
 | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | [NTFS](/index.php/NTFS "NTFS") |
 | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | [Reiser4](/index.php/Reiser4 "Reiser4") |

@@ -438,7 +438,7 @@ Using this SuperUser receipt [[3]](http://superuser.com/questions/217615/how-to-
 
 #### input-mtrack
 
-Another method is to use xf86-input-mtrack-git [[4]](https://aur.archlinux.org/packages/xf86-input-mtrack-git/). If you like to have a thumb resting on the touchpad, this driver is the right choice, because it has an option for IgnoreThumb.
+Another method is to use [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/). If you like to have a thumb resting on the touchpad, this driver is the right choice, because it has an option for IgnoreThumb.
 
 With this config the touchpad behavior becomes more osx-like.
 

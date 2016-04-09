@@ -36,6 +36,13 @@ Sudo can also be used to run commands as other users; additionally, sudo logs al
 
 To begin using `sudo` as a non-privileged user, it must be properly configured. See [#Configuration](#Configuration).
 
+To use *sudo*, simply prefix a command and its arguments with `sudo` and a space:
+
+```
+$ sudo *cmd*
+
+```
+
 For example, to use pacman:
 
 ```

@@ -16,7 +16,7 @@
 
 El canal [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat "wikipedia:es:Internet Relay Chat") oficial de Arch Linux es **#archlinux** en la red [Freenode](http://www.freenode.net/).
 
-También hay una serie de canales dedicados a Arch Linux mantenidos por miembros de la comunidad. Mira [IRC Channels (Español)](/index.php/IRC_Channels_(Espa%C3%B1ol) "IRC Channels (Español)") para ver una lista.
+También hay una serie de canales dedicados a Arch Linux mantenidos por miembros de la comunidad. Mira [IRC channels (Español)](/index.php/IRC_channels_(Espa%C3%B1ol) "IRC channels (Español)") para ver una lista.
 
 ### Uso
 
@@ -48,7 +48,7 @@ El canal actualmente está +q $~a. Esto significa que tienes que registrarte e i
 
 	[Freenode channel guidelines](http://freenode.net/channel_guidelines.shtml)
 
-	[Directrices del canal #archlinux](/index.php/IRC_Channel_(Espa%C3%B1ol)#Directrices_de_.23archlinux "IRC Channel (Español)")
+	[Directrices del canal #archlinux](#Directrices_de_.23archlinux)
 
 *   **Configuración del cliente y bots**
     *   Si quieres meter un bot en el canal, pregunta a un operador *antes* de hacerlo.
@@ -66,10 +66,10 @@ El canal actualmente está +q $~a. Esto significa que tienes que registrarte e i
 
 ### Directrices de #archlinux
 
-1.  El idioma del canal es inglés. Si necesitas ayuda en otro idioma busca [canales internacionales de arch](/index.php/IRC_Channels_(Espa%C3%B1ol)#Canales_internacionales_de_IRC "IRC Channels (Español)").
+1.  El idioma del canal es inglés. Si necesitas ayuda en otro idioma busca [canales internacionales de arch](/index.php/IRC_channels_(Espa%C3%B1ol)#Canales_internacionales_de_IRC "IRC channels (Español)").
 2.  Lee el `/tema` con regularidad. Normalmente contiene información importante.
 3.  No participes en [*flamewars*](https://en.wikipedia.org/wiki/es:Flame#Flame_wars "wikipedia:es:Flame"), reporta instantaneamente a los que violen esta norma y a los trolls a los [operadores de canales](#Operadores_de_.23archlinux).
-4.  No hagas spam en el canal, usa pastebin para compartir algo mayor de tres líneas. `comando &> salida del comando.txt` en combinación con [clientes pastebin](/index.php/List_of_Applications_(Espa%C3%B1ol)#Clientes_pastebin "List of Applications (Español)") pueden hacer más sencillo este proceso.
+4.  No hagas spam en el canal, usa pastebin para compartir algo mayor de tres líneas. `comando &> salida del comando.txt` en combinación con [clientes pastebin](/index.php/List_of_applications_(Espa%C3%B1ol)#Clientes_pastebin "List of applications (Español)") pueden hacer más sencillo este proceso.
 5.  No abuses de phrik (el canal bot). Si quieres probar comandos o buscar en la función help, hazlo con `/query` o `/msg`. Ejemplo: `/query phrik help <comando>`.
 6.  No pregunte si hay alguien o si alguien usa el programa, solo haz tu pregunta.
 7.  [Haz preguntas inteligentes](http://www.catb.org/~esr/faqs/smart-questions.html). Es más fácil para nosotros ayudar cuando haces preguntas buenas/inteligentes.
@@ -151,7 +151,7 @@ Recuerdo que en los canales el idioma oficial es el inglés:
 
 	[{core,extra,testing, ...}] 
 
-	normalmente denota un [repositorio](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Ejemplo: "los drivers nvidia están en [extra]"
+	normalmente denota un [repositorio](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Ejemplo: "los drivers nvidia están en [extra]"
 
 	AUR 
 

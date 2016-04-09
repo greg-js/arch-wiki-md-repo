@@ -138,7 +138,7 @@ If installing a remote printer, the URL to the printer will be queried:
 *   An HP JetDirect printer requires a `socket://hostname` syntax.
 *   An IPP printer requires a `ipp://hostname/printers/printername` or `http://hostname:631/printers/printername` syntax.
 
-Next, select the printer manufacturer in the adjoining screen along with the model type and number in the subsequent screen. For many printers multiple drivers will be available. Select one now or search on [OpenPrinting Printer List](http://www.openprinting.org/printer_list.cgi) for a good driver. Drivers are easily able to be changed later.
+On the next screen, you can select the printer manufacturer along with the model type and number. Remember that you need to have downloaded/installed the correct printer driver in order to see your printer type among the others in the list. See the previous section on "Printer Drivers" to do this.
 
 Once the driver is selected, CUPS will inform that the printer has been added successfully to the system. Navigate to the printer management page on the administration interface and select Configure Printer to change the printer's settings (resolution, page format, ...).
 

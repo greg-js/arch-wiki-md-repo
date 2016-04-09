@@ -75,7 +75,7 @@ Ne, bet [Arch Linux ARM](http://archlinuxarm.org/) projektas teikia Arch Linux p
 
 Šis klausimas susilaukia daugybės debatų. Arch nukreipta į labiau patyrusius GNU/Linux vartotojus, bet kai kurie mano, jog Arch puiki vieta motyvuotam naujokui. Jeigu esate naujokas ir norite naudotis Arch, turite žinoti, jog prireiks daug laiko norint įsisavinti naują sistemą, taip pat priimti tą faktą, kad Arch iš pagrindų yra "pasidaryk-viską-pats" distribucija. Tai vartotojas surenka sistemą ir kontroliuoja kuo ji taps. Prieš prašydami pagalbos, atlikite savo nepriklausomą paiešką su Google, atlikite paiešką forume (taip pat perskaitykite DUK'us kaip šis) ir nuostabioje dokumentacijoje kurią suteikia Arch wiki. *Visa tai juk ir buvo sukurta šiam tikslui.* Praleista tūkstančiai valandų renkant šią informaciją.
 
-Rekomendacija skaitymui: The Arch Linux [Pradedančiojo Vedlys](/index.php/Beginners%27_Guide_(Lietuvi%C5%A1kai) "Beginners' Guide (Lietuviškai)").
+Rekomendacija skaitymui: The Arch Linux [Pradedančiojo Vedlys](/index.php/Beginners%27_guide_(Lietuvi%C5%A1kai) "Beginners' guide (Lietuviškai)").
 
 ### Arch įdiegimas ir naudojimas užima per daug laiko ir pastangų.Taip pat bendruomenė vis liepia man RTFM
 
@@ -209,7 +209,7 @@ Tai galite padaryti [čia](https://www.archlinux.org/download/)
 
 ### Arch reikalingas įdiegiklis. Galbūt GUI įdiegiklis?
 
-Kadangi diegimas dažnai nepasitaiko, tai nėra aukščiausios svarbos dalykas nei kūrėjams, nei vartotojams. [Installation guide](/index.php/Installation_guide "Installation guide") ir [Pradedančiojo Vedlys](/index.php/Beginners%27_Guide_(Lietuvi%C5%A1kai) "Beginners' Guide (Lietuviškai)") buvo pilnai atnaujinti naudojimuisi komandinės eilutės metodu. Jeigu vis dar domina įdiegiklis, pagalvokite apie [Archboot](/index.php/Archboot "Archboot").
+Kadangi diegimas dažnai nepasitaiko, tai nėra aukščiausios svarbos dalykas nei kūrėjams, nei vartotojams. [Installation guide](/index.php/Installation_guide "Installation guide") ir [Pradedančiojo Vedlys](/index.php/Beginners%27_guide_(Lietuvi%C5%A1kai) "Beginners' guide (Lietuviškai)") buvo pilnai atnaujinti naudojimuisi komandinės eilutės metodu. Jeigu vis dar domina įdiegiklis, pagalvokite apie [Archboot](/index.php/Archboot "Archboot").
 
 ### Įsidiegiau Arch Linux, ką daryti toliau?
 

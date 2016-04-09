@@ -50,7 +50,7 @@ GTK+，或称 GIMP Toolkit，最初由[GNU项目](/index.php/GNU_Project "GNU Pr
 
 ```
 
-另见：[为不同图形库分别设置外观](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.80.8E.E6.A0.B7.E4.B8.BA.E6.AF.8F.E4.B8.80.E4.B8.AA.E5.B7.A5.E5.85.B7.E8.AE.BE.E7.BD.AE.E9.A3.8E.E6.A0.BC.3F "Uniform Look for QT and GTK Applications (简体中文)")。
+另见：[为不同图形库分别设置外观](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.80.8E.E6.A0.B7.E4.B8.BA.E6.AF.8F.E4.B8.80.E4.B8.AA.E5.B7.A5.E5.85.B7.E8.AE.BE.E7.BD.AE.E9.A3.8E.E6.A0.BC.3F "Uniform look for Qt and GTK applications (简体中文)")。
 
 ## 主题
 
@@ -143,7 +143,7 @@ cp -r /usr/share/themes/Zukitwo/gtk-3.0/ ~/.config/
 
 ### GTK+ 与 QT
 
-同时在系统上安装GTK+和QT（通常是[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")组件）程序的人都知道，两者的外观并不怎么协调。关于两者外观统一的问题，参见：[协调QT和GTK+程序的外观](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform Look for QT and GTK Applications (简体中文)")。
+同时在系统上安装GTK+和QT（通常是[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")组件）程序的人都知道，两者的外观并不怎么协调。关于两者外观统一的问题，参见：[协调QT和GTK+程序的外观](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform look for Qt and GTK applications (简体中文)")。
 
 ## 配置文件
 

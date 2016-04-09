@@ -332,7 +332,7 @@ Para solucionar de momento este escollo, debe crear primero el directorio necesa
 
 #### Crear una entrada de GRUB en el gestor de arranque del firmware
 
-`grub-install` intentará crear automáticamente una entrada de menú en el gestor de arranque. Si no es así, véase [Unified Extensible Firmware Interface (Español)#efibootmgr](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#efibootmgr "Unified Extensible Firmware Interface (Español)") para obtener instrucciones sobre cómo usar `efibootmgr` a fin de crear una entrada en el menú. De todas formas, el problema probablemente sea que no se ha arrancado el CD/USB en la modalidad UEFI, como se indica en [Unified Extensible Firmware Interface (Español)#Crear un USB booteable de UEFI desde la ISO](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Crear_un_USB_booteable_de_UEFI_desde_la_ISO "Unified Extensible Firmware Interface (Español)")
+`grub-install` intentará crear automáticamente una entrada de menú en el gestor de arranque. Si no es así, véase [Unified Extensible Firmware Interface (Español)#efibootmgr](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#efibootmgr "Unified Extensible Firmware Interface (Español)") para obtener instrucciones sobre cómo usar `efibootmgr` a fin de crear una entrada en el menú. De todas formas, el problema probablemente sea que no se ha arrancado el CD/USB en la modalidad UEFI, como se indica en [Unified Extensible Firmware Interface (Español)#Crear un USB arrancable con UEFI desde la ISO](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Crear_un_USB_arrancable_con_UEFI_desde_la_ISO "Unified Extensible Firmware Interface (Español)")
 
 #### GRUB Standalone
 
@@ -737,7 +737,7 @@ Para cifrar el sistema de archivos root, es necesario editar `/etc/default/grub`
 
 Una vez que `/etc/default/grub` ha sido enmendado, entonces será necesario [#Generar el archivo de configuración principal](#Generar_el_archivo_de_configuraci.C3.B3n_principal).
 
-Para más información sobre la configuración del gestor de arranque para los dispositivos cifrados, ver [Dm-crypt/System Configuration#Boot loader](/index.php/Dm-crypt/System_Configuration#Boot_loader "Dm-crypt/System Configuration").
+Para más información sobre la configuración del gestor de arranque para los dispositivos cifrados, ver [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
 
 **Sugerencia:** Si está actualizando la configuración GRUB Legacy a GRUB, compruebe `/boot/grub/menu.lst.pacsave` para la correcta identificación del dispositivo/etiqueta a añadir. Búsquelos después del texto `kernel /vmlinuz-linux`.
 
@@ -1078,7 +1078,7 @@ Si el arranque se bloquea sin ningún mensaje de error, después de que GRUB car
 
 ### Arch no es detectado por otros sistemas operativos
 
-Algunos usuarios han informado que otras distribuciones tienen problemas para encontrar Arch Linux automáticamente con `os-prober`. Si surge este problema, es posible mejorar la detección con la creación del archivo `/etc/lsb-release`. Este archivo y las herramientas de actualización están disponibles con el paquete [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) de los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Algunos usuarios han informado que otras distribuciones tienen problemas para encontrar Arch Linux automáticamente con `os-prober`. Si surge este problema, es posible mejorar la detección con la creación del archivo `/etc/lsb-release`. Este archivo y las herramientas de actualización están disponibles con el paquete [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ### Advertencias cuando se instala en entorno chroot
 

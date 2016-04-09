@@ -50,7 +50,7 @@ Chipset (płyty głównej; nie GPU) "i810" jest bardzo stary i był produkowany 
 
 ## Instalacja
 
-Wymagany jest: [Xorg_(Polski)](/index.php/Xorg_(Polski) "Xorg (Polski)")
+Wymagany jest: [Xorg (Polski)](/index.php/Xorg_(Polski) "Xorg (Polski)")
 
 [Zainstaluj](/index.php/Pacman_(Polski) "Pacman (Polski)") pakiet [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), który jest dostępny w [oficjalnych repozytoriach](/index.php?title=Official_Repositories_(Polski)&action=edit&redlink=1 "Official Repositories (Polski) (page does not exist)"). Pozwala on na wybranie pożądanej metody akceleracji. Zalecaną metodą jest od teraz SNA. Zobacz testy przeprowadzone przez Phoronix [[1]](http://www.phoronix.com/scan.php?page=news_item&px=MTEzOTE). Mogą być znalezione [tutaj](http://www.phoronix.com/scan.php?page=article&item=intel_glamor_first&num=1) dla Sandy Bridge i [tutaj](http://www.phoronix.com/scan.php?page=article&item=intel_ivy_glamor&num=1) dla Ivy Bridge. UXA jest dobrą alternatywą, jeśli SNA sprawia problemy z Twoją konfiguracją. Dodaj to do `/etc/X11/xorg.conf` lub stwórz `/etc/X11/xorg.conf.d/20-intel.conf` :
 
@@ -207,7 +207,7 @@ Innym sposobem jest ustawienie `vblank_mode` na `0` w pliku `~/.drirc` i upewnie
 
 ### Pusty ekran podczas startu systemu, w czasie "Loading modules"
 
-Jeśli używasz "późnego startu" KMS i ekran staje się pusty w czasie "Loading modules", dodanie `i915` i `intel_agp` do initramfs może pomóc. Zobacz paragraf [KMS](/index.php/Intel_(Polski)#KMS_.28Kernel_Mode_Setting.29 "Intel (Polski)") powyżej.
+Jeśli używasz "późnego startu" KMS i ekran staje się pusty w czasie "Loading modules", dodanie `i915` i `intel_agp` do initramfs może pomóc. Zobacz paragraf [KMS](#KMS_.28Kernel_Mode_Setting.29) powyżej.
 
 Dodanie poniższego parametru do linii parametrów jądra też może pomóc:
 

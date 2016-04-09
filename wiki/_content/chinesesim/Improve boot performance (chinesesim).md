@@ -72,7 +72,7 @@ initcall_debug printk.time=y init=/usr/lib/systemd/systemd-bootchart
 
 ## 自己编译内核
 
-自己编译内核、关闭不需要的功能，恐怕是加速系统启动的最有效方法了。 更多信息参见：[Kernel_Compilation_From_Source](/index.php/Kernel_Compilation_From_Source "Kernel Compilation From Source")
+自己编译内核、关闭不需要的功能，恐怕是加速系统启动的最有效方法了。 更多信息参见：[Kernel Compilation From Source](/index.php/Kernel_Compilation_From_Source "Kernel Compilation From Source")
 
 ## Early start for services
 

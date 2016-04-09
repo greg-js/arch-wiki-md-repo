@@ -55,7 +55,10 @@ As of May 2013, Compiz is [no longer available](https://mailman.archlinux.org/pi
 
 ### Installing the 0.9 series
 
-**Note:** From Compiz 0.9.8 onwards, all Compiz components are developed and distributed as a single project. This means that a single package can provide all of the Compiz components.
+**Note:**
+
+*   From Compiz 0.9.8 onwards, all Compiz components are developed and distributed as a single project. This means that a single package can provide all of the Compiz components.
+*   To have *emerald-themes* with *emerald0.9*, first install [emerald0.9](https://aur.archlinux.org/packages/emerald0.9/) and then install [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/). Doing the opposite will resolve the wrong dependencies and cause conflicts.
 
 Required:
 
@@ -64,8 +67,6 @@ Required:
 	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/)
 
 Optional:
-
-**Note:** To have *emerald-themes* with *emerald0.9*, first install [emerald0.9](https://aur.archlinux.org/packages/emerald0.9/) and then install [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/). Doing the opposite will resolve the wrong dependencies and cause conflicts.
 
 *   **Emerald** — A standalone window decorator for Compiz.
 

@@ -18,7 +18,7 @@ Installazione e uso di Intel® C++ Composer XE (formerly Intel® C++ Compiler Pr
 
 ## Creazione del pacchetto e installazione
 
-[intel-parallel-studio-xe](https://aur.archlinux.org/packages/intel-parallel-studio-xe/) è disponibile su [AUR](/index.php/AUR "AUR"). Per poter costruire questo pacchetto è necessario ottenere una licenza per uso non commerciale direttamente dal sito di Intel [[registration](https://registrationcenter.intel.com/RegCenter/AutoGen.aspx?ProductID=1517&AccountID=&EmailID=&ProgramID=&RequestDt=&rm=NCOM&lang=)] che dovrà essere copiata nella $startdir prima di eseguire il makepkg. L'attuale PKGBUILD assembla 8 pachetti:
+[intel-parallel-studio-xe](https://aur.archlinux.org/packages/intel-parallel-studio-xe/) è disponibile su [AUR](/index.php/AUR "AUR"). Per poter costruire questo pacchetto è necessario ottenere una licenza per uso non commerciale direttamente dal sito di Intel [registration](https://registrationcenter.intel.com/RegCenter/AutoGen.aspx?ProductID=1517&AccountID=&EmailID=&ProgramID=&RequestDt=&rm=NCOM&lang=) che dovrà essere copiata nella $startdir prima di eseguire il makepkg. L'attuale PKGBUILD assembla 8 pachetti:
 
 *   **intel-compiler-base** - Intel C/C++ compiler and base libs
 *   **intel-fortran-compiler** - Intel fortran compiler and base libs (only Parallel Studio XE)
@@ -120,10 +120,10 @@ Come con gcc:
 Qui sotto riporto una lista di applicativi che si è tentato di compilare con Intel compiler, la compilazione in genere va fatta usando i PKGBUILD presenti in ABS.
 
 | Applicativo | Compilazione | Note |
-| **Gimp 2.8** | OK | Funziona col [Metodo 1](/index.php/Intel_C%2B%2B_(Italiano)#Metodo_1 "Intel C++ (Italiano)") |
-| **MySql** | OK | Funziona col [Metodo 1](/index.php/Intel_C%2B%2B_(Italiano)#Metodo_1 "Intel C++ (Italiano)") |
-| **SqlLite** | OK | Funziona col [Metodo 1](/index.php/Intel_C%2B%2B_(Italiano)#Metodo_1 "Intel C++ (Italiano)") |
-| **xaos** | OK | Funziona col [Metodo 1](/index.php/Intel_C%2B%2B_(Italiano)#Metodo_1 "Intel C++ (Italiano)") |
+| **Gimp 2.8** | OK | Funziona col [Metodo 1](#Metodo_1) |
+| **MySql** | OK | Funziona col [Metodo 1](#Metodo_1) |
+| **SqlLite** | OK | Funziona col [Metodo 1](#Metodo_1) |
+| **xaos** | OK | Funziona col [Metodo 1](#Metodo_1) |
 | **mplayer** | Fallita | Tipo di compilatore non riconosciuto |
 | **VLC** | Non riuscita | Ci sono problemi con le opzioni di compilazione |
 | **python-numpy** | OK | si deve modificare il PKGBUILD. [python-numpy-mkl](https://aur.archlinux.org/packages/python-numpy-mkl/) |

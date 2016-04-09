@@ -1390,7 +1390,7 @@ Server = http://pkgbuild.com/~barthalion/brtln/$arch/
 
 *   **Maintainer:** kprkpr <kevin01010 at gmail dot com>
 *   **Maintainer:** Joselucross <jlgarrido97 at gmail dot com>
-*   **Description:** Various packages of AUR like pimagizer,stepmania, linux-mainline, grub-customizer.. Open for all that wants to contribute
+*   **Description:** Packages of AUR like pimagizer,stepmania, linux-mainline, brackets, wps-office, grub-customizer.. Open for all that wants to contribute
 *   **Upstream page:** [http://repo.jkanetwork.com/](http://repo.jkanetwork.com/)
 
 ```
@@ -1438,7 +1438,7 @@ Server = http://download.opensuse.org/repositories/home:/mazdlc:/kde-frameworks-
 #### mikroskeem
 
 *   **Maintainer:** mikroskeem <mikroskeem@mikroskeem.eu>
-*   **Description:** Openarena and i3 wm-related packages
+*   **Description:** Openarena, i3 wm, and neovim-related packages (do *pacman -Ql mikroskeem*)
 
 ```
 [mikroskeem]

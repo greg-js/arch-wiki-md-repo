@@ -13,7 +13,7 @@ This page aims to document all relevant information on getting Arch Linux workin
         *   [3.1.1 Surface Pro 3 Linux Kernel Hardware Patches](#Surface_Pro_3_Linux_Kernel_Hardware_Patches)
     *   [3.2 Enabling Touchpad](#Enabling_Touchpad)
     *   [3.3 Tuning the Pen](#Tuning_the_Pen)
-    *   [3.4 Virtual Keboard](#Virtual_Keboard)
+    *   [3.4 Virtual Keyboard](#Virtual_Keyboard)
     *   [3.5 Booting with Secure Boot Enabled](#Booting_with_Secure_Boot_Enabled)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Invalid signature detected check secure boot policy in setup](#Invalid_signature_detected_check_secure_boot_policy_in_setup)
@@ -113,7 +113,7 @@ EndSection
 
 The pen buttons might not work out of the box. [Install](/index.php/Install "Install") the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) package and comment the `MatchIsTablet` section in `/usr/share/X11/xorg.conf.d/10-evdev.conf`. Furthermore add `1B96:1B05 Pen` in the `MatchProduct` line of N-Trig in `/usr/share/X11/xorg.conf.d/50-wacom.conf`. Note that the purple bluetooth button is recognized but able to be bound to an action. Ref:[Reddit](https://www.reddit.com/r/SurfaceLinux/comments/3mu28a/sp3_pen_tip_button_working/)
 
-### Virtual Keboard
+### Virtual Keyboard
 
 Depending on the desktop environment you are using, you might want to use different virtual keyboard. [onboard](https://www.archlinux.org/packages/?name=onboard) provides a reliable and comfortable experience. A guide for optical tweaking is provided [here](https://github.com/Vistaus/surface3-arch-antergoslinux/issues/5). If you are using [GNOME](/index.php/GNOME "GNOME"), these two extension ([1](https://extensions.gnome.org/extension/992/onboard-integration/), [2](https://extensions.gnome.org/extension/993/slide-for-keyboard/)) provide a better integration.
 

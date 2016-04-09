@@ -74,7 +74,7 @@ Firefox 广为人知的一点是它的大量的附加组件，可以用来添加
 
 ## 插件
 
-*参见： [浏览器插件](/index.php/Browser_Plugins_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Browser Plugins (简体中文)")*
+*参见： [浏览器插件](/index.php/Browser_plugins_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Browser plugins (简体中文)")*
 
 要查看插件使用情况，在Firefox地址栏输入：
 

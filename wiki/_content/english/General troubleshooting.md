@@ -4,7 +4,7 @@ This article explains some methods for general troubleshooting. For application 
 
 *   [1 General procedures](#General_procedures)
     *   [1.1 Attention to detail](#Attention_to_detail)
-    *   [1.2 Questions / checklist](#Questions_.2F_checklist)
+    *   [1.2 Questions/checklist](#Questions.2Fchecklist)
     *   [1.3 Be more specific](#Be_more_specific)
     *   [1.4 Additional support](#Additional_support)
 *   [2 Boot problems](#Boot_problems)
@@ -18,17 +18,16 @@ This article explains some methods for general troubleshooting. For application 
 *   [5 Session permissions](#Session_permissions)
 *   [6 error while loading shared libraries](#error_while_loading_shared_libraries)
 *   [7 file: could not find any magic files!](#file:_could_not_find_any_magic_files.21)
-*   [8 Why I can't write on NTFS partitions?](#Why_I_can.27t_write_on_NTFS_partitions.3F)
-*   [9 Spellcheck is marking all of my text as incorrect!](#Spellcheck_is_marking_all_of_my_text_as_incorrect.21)
-*   [10 See also](#See_also)
+*   [8 Spellcheck is marking all of my text as incorrect!](#Spellcheck_is_marking_all_of_my_text_as_incorrect.21)
+*   [9 See also](#See_also)
 
 ## General procedures
 
 ### Attention to detail
 
-In order to resolve an issue that you are having, it is *absolutely crucial* to have a firm understanding of how that specific system functions. How it works, and what does it need to run without error? If you cannot comfortably answer these question then it is strongly advised that you review the [Archwiki](/index.php/Table_of_contents "Table of contents") article for the function that you are having troubles with. Once you feel like you've understood the specific system, it will be easier for you to pin-point the problem.
+In order to resolve an issue that you are having, it is *absolutely crucial* to have a firm basic understanding of how that specific subsystem functions. How it works, and what does it need to run without error? If you cannot comfortably answer these question then you would best review the [Archwiki](/index.php/Table_of_contents "Table of contents") article for the subsystem that you are having trouble with. Once you feel like you've understood it, it will be easier for you to pinpoint the cause of the problem.
 
-### Questions / checklist
+### Questions/checklist
 
 The following gives a number of questions for you whenever dealing with a malfunctioning system. Under each question there are notes explaining how you should be answering each question, followed by some light examples on how to easily gather data output and what tools can be used to review logs and the journal.
 
@@ -190,10 +189,6 @@ Typically a previously installed application had placed a configuration file wit
 # pacman -S <package>
 
 ```
-
-## Why I can't write on NTFS partitions?
-
-In clear system you can only read from NTFS file system. If you want to write, install [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) package.
 
 ## Spellcheck is marking all of my text as incorrect!
 

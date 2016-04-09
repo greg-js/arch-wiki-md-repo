@@ -30,7 +30,7 @@
 *   选择分区类型 ID。默认值 `Linux filesystem`（代码 `8300`）在大多数情况下适用。输入 `L` 会打印出所有分区类型代码的列表。如果想要使用 LVM，选择`Linux LVM`（`8e00`）。
 *   其他分区的处理方式类似。
 *   使用 `w` 命令将分区表写入磁盘并退出。
-*   将新分区格式化为[文件系统](/index.php/File_Systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File Systems (简体中文)")。
+*   将新分区格式化为[文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)")。
 
 **注意:**
 
@@ -60,7 +60,7 @@
 *   使用`t` 命令将分区的 ID 从默认值修改为 Linux（`type 83`）。这是一个可选步骤。如果用户想创建其他类型的分区，如swap，NTFS，LVM 等也可以。注意，完整的可用分区类型列表可以通过 `l` 命令获取。
 *   其他分区的处理方式类似。
 *   使用 `w` 命令将分区表写入磁盘并退出。
-*   将新分区格式化为[文件系统](/index.php/File_Systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File Systems (简体中文)")。
+*   将新分区格式化为[文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)")。
 
 ##### 用 cgdisk 创建 GPT 分区
 

@@ -66,7 +66,7 @@ Kromě otázek probíraných níže můžete zkusit články [The Arch Way](/ind
 
 **A)** Tato otázka byla dost diskutovaná. Arch je zaměřený spíše na pokročilejší uživatele Linuxu, ale někteří lidé cítí, že Arch je dobré místo pro motivované začátečníky. Pokud jste začátečník a chcete používat Arch, varujeme vás, že **musíte** mít vůli učit se a akceptovat fakt, že Arch je založen na myšlence 'udělej si sám'. Je to právě uživatel, kdo si sestavuje systém a kontroluje jeho vývoj. Dříve, než budete klást jakékoliv otázky, pokuste se odpověď najít na Google, prohledejte Wiki a fórum (a dočtěte zbytek těchto otázek). *Za tímto účelem vám byly tyto zdroje poskytnuty.* Sestavení těchto skvělých informací zabralo mnoho tísíc hodin *dobrovolné* práce.
 
-Doporučené čtení: [Průvodce začátečníka](/index.php/Beginners%27_Guide_(%C4%8Cesky) "Beginners' Guide (Česky)").
+Doporučené čtení: [Průvodce začátečníka](/index.php/Beginners%27_guide_(%C4%8Cesky) "Beginners' guide (Česky)").
 
 ### Q) Je Arch navržen pro použití jako server? Jako desktop? Jako pracovní stanice?
 
@@ -100,9 +100,9 @@ Model průběžných aktualizací udržuje každý Arch Linux systém aktuální
 
 ### Q) Proč je můj internet tak pomalý ve srovnání s ostatními operačními systémy?
 
-**A)** Je vaše připojení správně nastaveno? Podívejte se na stránku [Konfigurace sítě](/index.php/Network_Configuration_(%C4%8Cesky) "Network Configuration (Česky)") a na stránku [Konfigurace sítě](/index.php/Beginners%27_Guide_(%C4%8Cesky)#Configure_the_network "Beginners' Guide (Česky)") z Průvodce začátečníka.
+**A)** Je vaše připojení správně nastaveno? Podívejte se na stránku [Konfigurace sítě](/index.php/Network_configuration_(%C4%8Cesky) "Network configuration (Česky)") a na stránku [Konfigurace sítě](/index.php/Beginners%27_guide_(%C4%8Cesky)#Configure_the_network "Beginners' guide (Česky)") z Průvodce začátečníka.
 
-Poznamenejme, že Arch Linux nemá ve výchozím stavu povoleno [řízení provozu](http://cs.wikipedia.org/wiki/Traffic_shaping). Proto je možné, že když program nějakým způsobem využije plnou rychlost vašeho připojení (nehledě na to, jestli se jedná o P2P provoz nebo o klasická klient-server spojení), dojde k ucpání, což vede ke znatelným zpožděním a timeoutům. Úlevu mohou poskytnout firewally, např. Shorewall nebo Vuurmuur; také existují statické skripty pro [iproute2](https://www.archlinux.org/packages/?name=iproute2) (např. [tento derivát](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) Wondershaper), které povolí řízení provozu na síťové vrstvě.
+Poznamenejme, že Arch Linux nemá ve výchozím stavu povoleno [řízení provozu](https://cs.wikipedia.org/wiki/Traffic_shaping). Proto je možné, že když program nějakým způsobem využije plnou rychlost vašeho připojení (nehledě na to, jestli se jedná o P2P provoz nebo o klasická klient-server spojení), dojde k ucpání, což vede ke znatelným zpožděním a timeoutům. Úlevu mohou poskytnout firewally, např. Shorewall nebo Vuurmuur; také existují statické skripty pro [iproute2](https://www.archlinux.org/packages/?name=iproute2) (např. [tento derivát](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) Wondershaper), které povolí řízení provozu na síťové vrstvě.
 
 ### Q) Proč Arch využívá celou moji RAM?
 
@@ -171,7 +171,7 @@ Poznamenejme, že nejlepším způsobem, jak přidat do pacmana novou funkci, je
 
 ### Q) Jaký je rozdíl mezi všemi repozitáři?
 
-**A)** Viz článek [Oficiální repozitáře](/index.php/Official_Repositories_(%C4%8Cesky) "Official Repositories (Česky)").
+**A)** Viz článek [Oficiální repozitáře](/index.php/Official_repositories_(%C4%8Cesky) "Official repositories (Česky)").
 
 ### Q) Nainstaloval jsem balíček XY. Jak ho mám spustit?
 
@@ -190,11 +190,11 @@ $ pacman -Qlq *jmeno_balicku* | grep bin
 
 ### Q) Arch potřebuje instalátor. Možná grafický (GUI) instalátor.
 
-**A)** Jelikož instalace neprobíhá příliš často (přečtěte si prosím zbytek tohoto článku, abyste pochopili význam *rolling release* modelu), nemá tato záležitost vysokou prioritu u vývojářů ani u uživatelů. Stránky [Instalační průvodce](/index.php/Installation_Guide_(%C4%8Cesky) "Installation Guide (Česky)") a [Příručka začátečníka](/index.php/Beginners%27_Guide_(%C4%8Cesky) "Beginners' Guide (Česky)") byly plně aktualizovány pro aktuálně používané [instalační skripty](https://projects.archlinux.org/arch-install-scripts.git/). Pokud stále chcete použít instalátor, zvažte použití [Archboot](/index.php/Archboot "Archboot").
+**A)** Jelikož instalace neprobíhá příliš často (přečtěte si prosím zbytek tohoto článku, abyste pochopili význam *rolling release* modelu), nemá tato záležitost vysokou prioritu u vývojářů ani u uživatelů. Stránky [Instalační průvodce](/index.php/Installation_guide_(%C4%8Cesky) "Installation guide (Česky)") a [Příručka začátečníka](/index.php/Beginners%27_guide_(%C4%8Cesky) "Beginners' guide (Česky)") byly plně aktualizovány pro aktuálně používané [instalační skripty](https://projects.archlinux.org/arch-install-scripts.git/). Pokud stále chcete použít instalátor, zvažte použití [Archboot](/index.php/Archboot "Archboot").
 
 ### Q) Nainstaloval jsem Arch a teď jsem příkazové řádce. Co teď?
 
-**A)** Přečtěte si [Průvodce začátečníka](/index.php/Beginners%27_Guide_(%C4%8Cesky) "Beginners' Guide (Česky)").
+**A)** Přečtěte si [Průvodce začátečníka](/index.php/Beginners%27_guide_(%C4%8Cesky) "Beginners' guide (Česky)").
 
 ### Q) Které desktopové prostředí nebo správce oken bych měl použít?
 

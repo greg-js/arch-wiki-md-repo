@@ -1,8 +1,8 @@
-Secondo [Wikipedia](http://it.wikipedia.org/wiki/Icewm):
+Secondo [Wikipedia](https://it.wikipedia.org/wiki/Icewm):
 
 	*Negli ambienti Unix, IceWM è un Window manager per l'infrastruttura grafica dell'X Window System, scritto da Marko Maček. È stato creato da zero in C++ ed è rilasciato sotto i termini della GNU Lesser General Public License. È relativamente leggero in termini di consumo di memoria e di CPU, e si presenta con temi che gli consentono di imitare l'interfaccia utente di Windows 95, OS/2, Motif e altre GUI. IceWM è l'ideale per avere un look e atmosfera speciale senza dimenticare aspetti fondamentali come la leggerezza e la personalizzazione.*
 
-IceWM è estremamente configurabile ed è quasi equiparabile ad una via di mezzo tra un semplicissimo [DE](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") e un [WM](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") molto ricco di features.
+IceWM è estremamente configurabile ed è quasi equiparabile ad una via di mezzo tra un semplicissimo [DE](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") e un [WM](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") molto ricco di features.
 
 ## Contents
 
@@ -17,7 +17,7 @@ IceWM è estremamente configurabile ed è quasi equiparabile ad una via di mezzo
 
 ## Installazione
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [icewm](https://www.archlinux.org/packages/?name=icewm) dai [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [icewm](https://www.archlinux.org/packages/?name=icewm) dai [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 In alternativa, l'ultima versione del branch testing ([icewm-testing](https://aur.archlinux.org/packages/icewm-testing/)) e la versione CVS ([icewm-cvs](https://aur.archlinux.org/packages/icewm-cvs/)) sono disponibili in [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)"). Questa versioni aggiungono nuove caratteristiche come il supporto a RandR.
 

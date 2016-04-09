@@ -14,6 +14,7 @@ The driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devi
     *   [3.1 Touchpad configuration](#Touchpad_configuration)
     *   [3.2 Mouse button re-mapping](#Mouse_button_re-mapping)
     *   [3.3 Debugging](#Debugging)
+    *   [3.4 Multitouch events](#Multitouch_events)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -125,6 +126,14 @@ done
 Some inputs require kernel support. The tool *evemu-describe* from the [evemu](https://www.archlinux.org/packages/?name=evemu) package can be used to check:
 
 Compare the output of [software supported input trackpad driver](http://ix.io/m6b) with [a supported trackpad](https://github.com/whot/evemu-devices/blob/master/touchpads/SynPS2%20Synaptics%20TouchPad-with-scrollbuttons.events). i.e. a couple of ABS_ axes, a couple of ABS_MT axes and no REL_X/Y axis. For a clickpad the `INPUT_PROP_BUTTONPAD` property should also be set, if it is supported.
+
+### Multitouch events
+
+While the libinput driver already contains logic to process advanced multitouch events like swipe and pinch, the [Desktop environment](/index.php/Desktop_environment "Desktop environment") or [Window manager](/index.php/Window_manager "Window manager") might not have implemented actions for all of them yet.
+
+For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile.
+
+The utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file. An [AUR](/index.php/AUR "AUR") package is not available yet.[[2]](https://github.com/bulletmark/libinput-gestures/issues/6)
 
 ## See also
 

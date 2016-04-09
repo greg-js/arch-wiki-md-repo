@@ -215,4 +215,4 @@ To je způsobeno nikoliv regresí ve výkonu ale tím, že grafická karta použ
 
 ### Prázdná obrazovka během bootu při "Loading modules"
 
-Pokud používáte KMS s "pozdním startem" a obrazovka se během "Loading modules" vypne, může pomoci přidat i915 a intel_agp do initramfs. Viz [KMS](/index.php/Intel_(%C4%8Cesky)#KMS_.28Kernel_Mode_Setting.29 "Intel (Česky)") výše.
+Pokud používáte KMS s "pozdním startem" a obrazovka se během "Loading modules" vypne, může pomoci přidat i915 a intel_agp do initramfs. Viz [KMS](#KMS_.28Kernel_Mode_Setting.29) výše.

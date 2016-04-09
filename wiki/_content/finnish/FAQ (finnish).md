@@ -78,7 +78,7 @@ Samaan tapaan kehitysmalli ei rajoita luonnollista kasvua. Enemmän käyttäjiä
 
 ## Q) Miksei Pacmanilla ole virallista graafista käyttöliittymää?
 
-**A)** Luitko jo Wikitekstin aiheesta [The Arch Way](/index.php/Arch_Linux_(Suomi) "Arch Linux (Suomi)")? Varsinainen kehitystiimi ei aio sellaista toteuttaa, mutta voit vapaasti käyttää muiden Arch-käyttäjien tekemiä graafisia käyttölittymiä. Englanninkieliseltä Wikisivulta [Pacman_GUI_Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends") löytyy listattuna näitä.
+**A)** Luitko jo Wikitekstin aiheesta [The Arch Way](/index.php/Arch_Linux_(Suomi) "Arch Linux (Suomi)")? Varsinainen kehitystiimi ei aio sellaista toteuttaa, mutta voit vapaasti käyttää muiden Arch-käyttäjien tekemiä graafisia käyttölittymiä. Englanninkieliseltä Wikisivulta [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends") löytyy listattuna näitä.
 
 ## Q) Pacman tarvitsee Ominaisuuden X!
 

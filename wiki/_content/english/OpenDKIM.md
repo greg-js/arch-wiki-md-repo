@@ -50,12 +50,16 @@ opendkim-genkey -r -s myselector -d example.com
 
 ```
 
-*   Add a **DNS TXT** record with your selector and public key. The correct record is generated with the private key and can be found in `myselector.txt` in the same location as the private key. Example:
+*   Add a **DNS TXT** record with your selector and public key. The correct record is generated with the private key and can be found in `myselector.txt` in the same location as the private key.
+
+Example:
 
 ```
 myselector._domainkey   IN	 TXT	"v=DKIM1; k=rsa; s=email; p=...................."
 
 ```
+
+There are several other switches available for the record (see [here](http://www.dkim.org/specs/rfc4871-dkimbase.html#key-text)), the most interesting might be the `t=y` which enables testing mode, signaling a checking receiver that the mail must not be treated differently from an unsigned mail, regardless of the state of the signature.
 
 Check that your DNS record has been correctly updated:
 

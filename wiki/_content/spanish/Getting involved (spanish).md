@@ -36,7 +36,7 @@ Por favor familiarícese con [Forum etiquette](/index.php/Forum_etiquette "Forum
 
 ### Unirse a la sala de chat
 
-Usted puede ayudar a otros usuarios a resolver problemas a través del canal [IRC](/index.php/IRC_Channel "IRC Channel"). Es muy importante, sin embargo, que lea las secciones dedicadas a las [reglas](/index.php/IRC_Channel#.23archlinux_rules "IRC Channel") y a las [directrices](/index.php/IRC_Channel#.23archlinux_guidelines "IRC Channel") antes de participar. Hay [más canales](/index.php/IRC_channels "IRC channels") disponibles para temas específicos.
+Usted puede ayudar a otros usuarios a resolver problemas a través del canal [IRC](/index.php/IRC_channel "IRC channel"). Es muy importante, sin embargo, que lea las secciones dedicadas a las [reglas](/index.php/IRC_channel#.23archlinux_rules "IRC channel") y a las [directrices](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel") antes de participar. Hay [más canales](/index.php/IRC_channels "IRC channels") disponibles para temas específicos.
 
 ### Informar sobre los paquetes instalados
 

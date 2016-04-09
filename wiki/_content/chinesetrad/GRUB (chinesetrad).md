@@ -92,7 +92,7 @@
 
 *   從 1.99-6版起, GRUB2 支援 [Btrfs](/index.php/Btrfs "Btrfs") as root (without a separate `/boot` filesystem) compressed with either zlib or LZO.
 
-*   For GRUB2 UEFI info, it is recommended to read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages before reading this page.
+*   For GRUB2 UEFI info, it is recommended to read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages before reading this page.
 
 ### 給 GRUB 舊版的使用者
 

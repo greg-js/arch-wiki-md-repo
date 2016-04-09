@@ -1,8 +1,8 @@
 **翻譯狀態：** 本文章是 [Installation_guide](/index.php/Installation_guide "Installation guide") 的翻譯版本。最近一次的翻譯時間：2015-05-13。點擊[本連結](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=310158)查看英文頁面之後的變更。
 
-這份文件是[Arch Linux](/index.php/Arch_Linux_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Linux (正體中文)")從官方安裝映像檔啟動Live系統後的安裝指南。 開始之前建議您大略瀏覽一下 [FAQ](/index.php/FAQ_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "FAQ (正體中文)") 。 如果需要更詳細、更清楚的安裝指南，可以參考[新手教學](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' Guide (正體中文)") 。 [獲取並安裝 Arch](/index.php/Category:Getting_and_installing_Arch_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (正體中文)") 分類下也有幾份針對特殊狀況的安裝指南。
+這份文件是[Arch Linux](/index.php/Arch_Linux_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Linux (正體中文)")從官方安裝映像檔啟動Live系統後的安裝指南。 開始之前建議您大略瀏覽一下 [FAQ](/index.php/FAQ_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "FAQ (正體中文)") 。 如果需要更詳細、更清楚的安裝指南，可以參考[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)") 。 [獲取並安裝 Arch](/index.php/Category:Getting_and_installing_Arch_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (正體中文)") 分類下也有幾份針對特殊狀況的安裝指南。
 
-若您碰到任何問題，社群維護的 [Arch 維基](/index.php/Main_Page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main Page (正體中文)")是主要的資料來源，請多加利用。若無法自行解決，也歡迎到 [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") 頻道 ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) 和[論壇](https://bbs.archlinux.org/) 還有 [Arch Linux 臺灣社群](http://archlinux.tw/) 問問。 若您碰到不熟悉的指令，可以呼叫 `man **指令**` 查看該指令的 `man` 說明文件。
+若您碰到任何問題，社群維護的 [Arch 維基](/index.php/Main_page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main page (正體中文)")是主要的資料來源，請多加利用。若無法自行解決，也歡迎到 [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") 頻道 ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) 和[論壇](https://bbs.archlinux.org/) 還有 [Arch Linux 臺灣社群](http://archlinux.tw/) 問問。 若您碰到不熟悉的指令，可以呼叫 `man **指令**` 查看該指令的 `man` 說明文件。
 
 ## Contents
 
@@ -50,7 +50,7 @@
 
 ### 連接網路
 
-預設對所有可用的裝置啟用了 DHCP 服務。若您需要設定固定 IP，或是使用 [Netctl](/index.php/Netctl "Netctl") ，都應該先暫停此服務：`systemctl stop dhcpcd.service`。更多資訊請參閱[網路設定](/index.php/Network_Configuration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Network Configuration (正體中文)")。
+預設對所有可用的裝置啟用了 DHCP 服務。若您需要設定固定 IP，或是使用 [Netctl](/index.php/Netctl "Netctl") ，都應該先暫停此服務：`systemctl stop dhcpcd.service`。更多資訊請參閱[網路設定](/index.php/Network_configuration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Network configuration (正體中文)")。
 
 ### 無線網路
 
@@ -93,7 +93,7 @@
 	 `# mkinitcpio -p linux` 
 
 *   用 `passwd` 設定 root 帳號的密碼。
-*   為新安裝的系統設定網路。參閱[網路設定](/index.php/Network_Configuration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Network Configuration (正體中文)")和[無線網路設定](/index.php/Wireless_Setup "Wireless Setup")。
+*   為新安裝的系統設定網路。參閱[網路設定](/index.php/Network_configuration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Network configuration (正體中文)")和[無線網路設定](/index.php/Wireless_Setup "Wireless Setup")。
 
 ### 安裝並設定開機載入程式
 
@@ -112,6 +112,6 @@
 
 ## 安裝完成後
 
-安裝好 Arch 以後，也請參考[一般建議](/index.php/General_Recommendations_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "General Recommendations (正體中文)")內的設定教學，例如設定圖形界面、音效、觸控板等等。
+安裝好 Arch 以後，也請參考[一般建議](/index.php/General_recommendations_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "General recommendations (正體中文)")內的設定教學，例如設定圖形界面、音效、觸控板等等。
 
 好奇 Arch 下有什麼吸引人的應用程式嗎？請參考[應用程式清單](/index.php/List_of_applications "List of applications")。

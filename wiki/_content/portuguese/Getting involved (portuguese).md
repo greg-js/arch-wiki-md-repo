@@ -35,7 +35,7 @@ A [ArchWiki](/index.php/AboutWiki "AboutWiki") é colaborativa e todos os usuár
 
 ### Ingresse nas salas de chat
 
-Você pode ajudar outros usuários a resolver problemas através do [canal do IRC](/index.php/IRC_Channel "IRC Channel"). É de importância vital que você leia as [regras](/index.php/IRC_Channel#.23archlinux_rules "IRC Channel") e as [guias de conduta](/index.php/IRC_Channel#.23archlinux_guidelines "IRC Channel") antes de participar. [Canais especiais](/index.php/IRC_channels "IRC channels") estão disponíveis para tópicos específicos.
+Você pode ajudar outros usuários a resolver problemas através do [canal do IRC](/index.php/IRC_channel "IRC channel"). É de importância vital que você leia as [regras](/index.php/IRC_channel#.23archlinux_rules "IRC channel") e as [guias de conduta](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel") antes de participar. [Canais especiais](/index.php/IRC_channels "IRC channels") estão disponíveis para tópicos específicos.
 
 ### Corrija e reporte novos bugs
 

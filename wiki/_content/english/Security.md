@@ -267,7 +267,7 @@ Alternatively, use an editor like `rvim` which has restricted capabilities in or
 
 ### Restricting root login
 
-Once [sudo](/index.php/Sudo "Sudo") is properly configured, full root access can be heavily restricted or denied without losing much usability.
+Once [sudo](/index.php/Sudo "Sudo") is properly configured, full root access can be heavily restricted or denied without losing much usability. To disable root, but still allowing to use [sudo](/index.php/Sudo "Sudo"), you can use `passwd -l root`.
 
 #### Allow only certain users
 

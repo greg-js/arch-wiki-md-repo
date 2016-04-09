@@ -38,7 +38,7 @@
 
 Необходимое условие: [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") пакет [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) из [официальных репозиториев](/index.php/Official_Repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official Repositories (Русский)"). Пакет предоставляет драйвер DDX для 2D ускорения и устанавливает пакет [intel-dri](https://www.archlinux.org/packages/?name=intel-dri) как зависимость, который предоставляет драйвер DRI для 3D ускорения.
+[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") пакет [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Пакет предоставляет драйвер DDX для 2D ускорения и устанавливает пакет [intel-dri](https://www.archlinux.org/packages/?name=intel-dri) как зависимость, который предоставляет драйвер DRI для 3D ускорения.
 
 Для поддержи 32-битного 3D ускорения на x86_64, установите [lib32-intel-dri](https://www.archlinux.org/packages/?name=lib32-intel-dri) из репозитория [multilib](/index.php/Multilib "Multilib").
 
@@ -52,7 +52,7 @@
 
 ## Kernel Mode Setting
 
-**Совет:** Если вы наблюдаете проблемы с разрешением экрана, обратитесь к [этой странице](/index.php/Kernel_Mode_Setting#Forcing_modes_and_EDID "Kernel Mode Setting").
+**Совет:** Если вы наблюдаете проблемы с разрешением экрана, обратитесь к [этой странице](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting").
 
 [Kernel Mode Setting](/index.php/KMS "KMS") (KMS) необходим для запуска X и [среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)"). KMS поддерживается чипсетами Intel, которые используют драйвер i915 DRM включенный по умолчанию. Версии драйвера [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) 2.10 и новее больше не поддерживают UMS (за исключением очень старых чипсетов 810 серии), что делает использование KMS обязательным. KMS обычно инициализируется сразу после [стадии initramfs](/index.php/Arch_boot_process#initramfs "Arch boot process"). Однако, есть возможность активировать KSM во время стадии initramfs.
 

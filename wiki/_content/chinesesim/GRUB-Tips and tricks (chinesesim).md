@@ -107,7 +107,7 @@ GRUB_FONT="/path/to/font.pf2"
 
 **Note:** If you have installed GRUB on a separate partition, `/boot/grub/myimage` becomes `/grub/myimage`.
 
-[Re-generate](/index.php/GRUB#Generating_main_configuration_file "GRUB") `grub.cfg` to apply the changes. If adding the splash image was successful, the user will see `"Found background image..."` in the terminal as the command is executed. If this phrase is not seen, the image information was probably not incorporated into the `grub.cfg` file.
+[Re-generate](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") `grub.cfg` to apply the changes. If adding the splash image was successful, the user will see `"Found background image..."` in the terminal as the command is executed. If this phrase is not seen, the image information was probably not incorporated into the `grub.cfg` file.
 
 If the image is not displayed, check:
 

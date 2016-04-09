@@ -68,7 +68,7 @@ done
 
 ```
 
-1.  If installing from Ubuntu 9.10's LiveCD (perhaps other versions), you will need more than just the pacman files (shared libs) to use pacman at all. Use Lucky's script described in [[this thread](https://bbs.archlinux.org/viewtopic.php?pid=759166)] to get/install them for you!
+1.  If installing from Ubuntu 9.10's LiveCD (perhaps other versions), you will need more than just the pacman files (shared libs) to use pacman at all. Use Lucky's script described in [this thread](https://bbs.archlinux.org/viewtopic.php?pid=759166) to get/install them for you!
 
 2.  Alternatively, you can instead turn these tarballs into packages for your distribution with the [alien](http://kitenet.net/~joey/code/alien/) tool. See the man page of the tool for instructions. The packages created that way may be installed into your host distribution using the usual package management tools available there. This approach offers the best integration into the host linux environment. For a debian package based system this is done with the following commands:
     ```

@@ -33,7 +33,7 @@
 | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | fat16/32 |
 | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | ext2/[ext3](/index.php/Ext3 "Ext3")/[ext4](/index.php/Ext4 "Ext4") (v1.41+) |
 | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | exfat |
-| [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | [F2FS](/index.php/F2fs "F2fs") |
+| [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | [F2FS](/index.php/F2FS "F2FS") |
 | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | [JFS](/index.php/JFS "JFS") |
 | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | [NTFS](/index.php/NTFS "NTFS") |
 | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | [Reiser4](/index.php/Reiser4 "Reiser4") |

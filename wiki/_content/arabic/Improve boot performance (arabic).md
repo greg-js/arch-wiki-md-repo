@@ -64,6 +64,6 @@ $ dmesg | grep SSS
 *   [udev](/index.php/Udev "Udev")
 *   [Daemon](/index.php/Daemon "Daemon")
 *   برنامج [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
-*   [تعظيم أداء النظام](/index.php/Maximizing_Performance_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Maximizing Performance (العربية)")
+*   [تعظيم أداء النظام](/index.php/Maximizing_performance_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Maximizing performance (العربية)")
 *   [Bootchart](/index.php/Bootchart "Bootchart")-أداة مساعدة لجمع وتنميط بيانات عملية الإقلاع
 *   [Kexec](/index.php/Kexec "Kexec") أداة لإعادة التشغيل بشكل فائق السرعة دون انتظار انتهاء لكافة عمليات الإقلاع الخاصة بنظام BIOS

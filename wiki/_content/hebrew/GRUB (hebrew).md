@@ -57,7 +57,7 @@ For those who like eye-candy, there is [Graphical GRUB](/index.php/Graphical_GRU
 
 ## LiLO and GRUB interaction
 
-If you once had used [lilo](/index.php/Lilo "Lilo") Don't forget to remove it from master boot record with
+If you once had used [LILO](/index.php/LILO "LILO") Don't forget to remove it from master boot record with
 
 ```
 pacman -R lilo

@@ -44,7 +44,7 @@
 
 ### 방법 1: KDM/GDM/LightDM 로그인 관리자
 
-[KDM](/index.php/KDM "KDM"), [GDM](/index.php/GDM "GDM"), [Lightdm](/index.php/Lightdm "Lightdm") 로그인 관리자를 사용한다면 세션 목록에 플럭스박스가 자동으로 추가된다. 로그인할 때 세션 목록에서 플럭스박스를 선택하라.
+[KDM](/index.php/KDM "KDM"), [GDM](/index.php/GDM "GDM"), [LightDM](/index.php/LightDM "LightDM") 로그인 관리자를 사용한다면 세션 목록에 플럭스박스가 자동으로 추가된다. 로그인할 때 세션 목록에서 플럭스박스를 선택하라.
 
 ### 방법 2: ~/.xinitrc
 
@@ -268,7 +268,7 @@ To install a fluxbox theme extract the theme archive file to a styles directory.
 
 The ArchLinux [AUR](/index.php/AUR "AUR") currently contains a compilation of good looking fluxbox themes called "fluxbox-styles". Get it [here](https://aur.archlinux.org/packages.php?ID=28743) and install this package for more themes than you could possibly use. When installed correctly they will appear in the Fluxbox, Styles section of your Fluxbox menu.
 
-To create your own Fluxbox styles read [Fluxbox_Style_Guide](/index.php/Fluxbox_Style_Guide "Fluxbox Style Guide") and this [style guide](http://tenr.de/howto/style_fluxbox/style_fluxbox.html).
+To create your own Fluxbox styles read [Fluxbox Style Guide](/index.php/Fluxbox_Style_Guide "Fluxbox Style Guide") and this [style guide](http://tenr.de/howto/style_fluxbox/style_fluxbox.html).
 
 ### 슬릿
 

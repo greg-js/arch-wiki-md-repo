@@ -51,4 +51,4 @@ gtk-icon-theme-name = "Tango"
 
 # GTK con QT
 
-Si tiene en su escritorio aplicaciones GTK y QT (KDE) sabrá que su aspecto no enaja bien. Si desea hacer que coincidan los estilos GTK y QT lea por favor [Uniform Look for QT and GTK Applications](/index.php/Uniform_Look_for_QT_and_GTK_Applications "Uniform Look for QT and GTK Applications").
+Si tiene en su escritorio aplicaciones GTK y QT (KDE) sabrá que su aspecto no enaja bien. Si desea hacer que coincidan los estilos GTK y QT lea por favor [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").

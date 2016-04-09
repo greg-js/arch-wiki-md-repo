@@ -12,8 +12,9 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
 *   [3 Known Problems](#Known_Problems)
     *   [3.1 Wrong device (pairing tool only)](#Wrong_device_.28pairing_tool_only.29)
     *   [3.2 Keyboard layout via xorg.conf](#Keyboard_layout_via_xorg.conf)
-    *   [3.3 Solaar 'Permission denied'](#Solaar_.27Permission_denied.27)
-    *   [3.4 Wireless Keyboard doesn't work while booting (can't enter luks passphrase)](#Wireless_Keyboard_doesn.27t_work_while_booting_.28can.27t_enter_luks_passphrase.29)
+    *   [3.3 Logitech touchpad keyboard K400r with unifying receiver M325](#Logitech_touchpad_keyboard_K400r_with_unifying_receiver_M325)
+    *   [3.4 Solaar 'Permission denied'](#Solaar_.27Permission_denied.27)
+    *   [3.5 Wireless Keyboard doesn't work while booting (can't enter luks passphrase)](#Wireless_Keyboard_doesn.27t_work_while_booting_.28can.27t_enter_luks_passphrase.29)
 
 ## Installation
 
@@ -104,7 +105,27 @@ $ setxkbmap -layout de -variant nodeadkeys
 
 ```
 
-To automate this process one could add this line to [xinitrc](/index.php/Xinitrc "Xinitrc").
+To automate this process one could add this line to [xinitrc](/index.php/Xinitrc "Xinitrc") or the according [autostart](/index.php/Autostart "Autostart") file of your windows manager respectively desktop environment.
+
+### Logitech touchpad keyboard K400r with unifying receiver M325
+
+The Logitech keyboard K400r with integrated touchpad comes with Logitech unifying receiver M325 so the above mentioned about the keyboard layout will apply here too.
+
+Also the integrated touchpad is recognized as 'pointer' instead of 'touchpad' so you cannot use the [Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") drivers. Two finger horizontal scrolling and tapclick will work but in order to have a middle mouse button emulated you will have to add
+
+ `/etc/X11/xorg.conf.d/10-evdev.conf` 
+```
+Section "InputClass"
+        Identifier "evdev pointer catchall"
+        MatchIsPointer "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "evdev"
+        Option "Emulate3Buttons" "true"
+EndSection
+
+```
+
+to your evdev.conf. Now third button is emulated by pressing both buttons simultaneously.
 
 ### Solaar 'Permission denied'
 

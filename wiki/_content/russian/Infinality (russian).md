@@ -43,7 +43,7 @@
 
 Ряд предустановок включено, и может быть использовано, путем установки переменной USE_STYLE в `/etc/X11/xinit/xinitrc.d/xft-settings.sh`.
 
-**Примечание:** Файл `/etc/X11/xinit/xinitrc.d/infinality-settings.sh` часто меняет своё содержимое, в зависимости от версии. Все стили отображения, и перечисленные настройки параметров, смотрите [[в файле настроек с примерами и описанием](https://github.com/bohoomil/fontconfig-ultimate/blob/master/freetype/generic_settings/infinality-settings.sh)]. Можете скопировать его себе полностью, взяв за основу.
+**Примечание:** Файл `/etc/X11/xinit/xinitrc.d/infinality-settings.sh` часто меняет своё содержимое, в зависимости от версии. Все стили отображения, и перечисленные настройки параметров, смотрите [в файле настроек с примерами и описанием](https://github.com/bohoomil/fontconfig-ultimate/blob/master/freetype/generic_settings/infinality-settings.sh). Можете скопировать его себе полностью, взяв за основу.
 
 ## Установка
 

@@ -408,14 +408,15 @@ find $(find ~/.themes /usr/share/themes/ -wholename "*/gtk-3.0" | sed -e "s/^\(.
 
 As user theme files (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, `~/.gtkrc-2.0`) are not read by other accounts, the selected theme will not apply to [X applications run as root](/index.php/Running_X_apps_as_root "Running X apps as root"). Possible solutions include:
 
-*   Configure system-wide theme files: `/etc/gtk-3.0/settings.ini` (GTK+ 3) or `/etc/gtk-2.0/gtkrc` (GTK+ 2)
 *   Create symlinks, e.g
 
 ```
-# ln -s /home/[username]/.gtkrc-2.0 /root/.gtkrc-2.0
+# ln -s /home/[username]/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
+# ln -s /home/[username]/.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
 
 ```
 
+*   Configure system-wide theme files: `/etc/gtk-3.0/settings.ini` (GTK+ 3) or `/etc/gtk-2.0/gtkrc` (GTK+ 2)
 *   Adjust the theme as root
 
 ```

@@ -63,7 +63,7 @@ Invece di inserire i parametri di wget in `/etc/pacman.conf`, è possibile modif
 
 [aria2](/index.php/Aria2 "Aria2") è una utility per il download molto leggera che supporta i download per parti, oltre a consentire la ripresa del download di un file interrotto. Tra I protocolli supportati ci sono HTTP/HTTPS e FTP. aria2 consente inoltre di stabilire più connessioni HTTP/HTTPS o FTP ad un mirror Arch linux, il che dovrebbe consentire un aumento della velocià di download, sia per i file che per i pacchetti.
 
-**Nota:** Inserire `aria2c` in `XferCommand` nel file di configurazione `/etc/pacman.conf` **non** comporta il download parallelo di più pacchetti. Pacman invoca `XferCommand` ad ogni pacchetto e aspetta che il download sia terminato prima di scaricare il successivo. Per scaricare più pacchetti contemporaneamente, si veda la sezione dedicata a [powerpill](/index.php/Improve_Pacman_Performance_(Italiano)#Usando_Powerpill "Improve Pacman Performance (Italiano)").
+**Nota:** Inserire `aria2c` in `XferCommand` nel file di configurazione `/etc/pacman.conf` **non** comporta il download parallelo di più pacchetti. Pacman invoca `XferCommand` ad ogni pacchetto e aspetta che il download sia terminato prima di scaricare il successivo. Per scaricare più pacchetti contemporaneamente, si veda la sezione dedicata a [powerpill](#Usando_Powerpill).
 
 Si installi [aria2](https://www.archlinux.org/packages/?name=aria2), quindi si modifichi `/etc/pacman.conf` aggiungendo la seguente linea alla sezione `[options]`:
 

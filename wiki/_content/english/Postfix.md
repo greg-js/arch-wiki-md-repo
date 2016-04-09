@@ -152,6 +152,7 @@ user@localhost
 To only deliver mail to local system users (that are in `/etc/passwd`) update `/etc/postfix/main.cf` to reflect the following configuration. Uncomment, change, or add the following lines:
 
 ```
+myhostname = localhost
 mydomain = localdomain
 mydestination = $myhostname, localhost.$mydomain, localhost
 inet_interfaces = $myhostname, localhost

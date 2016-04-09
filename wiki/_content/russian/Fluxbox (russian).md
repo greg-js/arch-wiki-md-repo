@@ -344,7 +344,7 @@ session.screen0.rootCommand:	~/.fehbg
 
 На данный момент в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") по запросу "fluxbox-styles" можно найти множество красивых тем оформления. Расположены он здесь [[2]](https://aur.archlinux.org/packages.php?ID=28743). Просто установите этот пакет. При правильной установке новые темы появятся в разделе Styles меню Fluxbox.
 
-Для создания собственных тем оформления ознакомьтесь с [Fluxbox_Style_Guide](/index.php/Fluxbox_Style_Guide "Fluxbox Style Guide") и с этим руководством [[3]](http://tenr.de/howto/style_fluxbox/style_fluxbox.html).
+Для создания собственных тем оформления ознакомьтесь с [Fluxbox Style Guide](/index.php/Fluxbox_Style_Guide "Fluxbox Style Guide") и с этим руководством [[3]](http://tenr.de/howto/style_fluxbox/style_fluxbox.html).
 
 ### Автозапуск программ
 

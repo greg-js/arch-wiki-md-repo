@@ -125,7 +125,9 @@ When starting Zsh, it'll source the following files in this order by default:
 **Note:**
 
 *   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page")
-*   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `~/.zshenv`. To prevent this, please set the `$PATH` variable in `~/.zshrc` (it is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something other, it'll break the integrality of other packages which provide some scripts in `/etc/profile.d`)
+*   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `~/.zshenv`. To prevent this, please set the `$PATH` variable in `~/.zprofile`
+
+**Warning:** It is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something other, it'll break the integrality of other packages which provide some scripts in `/etc/profile.d`
 
 ### Global configuration files
 
@@ -149,7 +151,7 @@ Here is a simple `.zshrc`:
 
  `~/.zshrc` 
 ```
-autoload -U compinit promptinit
+autoload -Uz compinit promptinit
 compinit
 promptinit
 
@@ -159,9 +161,11 @@ prompt walters
 
 ### Configuring $PATH
 
-In short, put the following in `~/.zshenv`:
+Normally, the path should be set in `~/.zshenv`, but Arch Linux sources `/etc/profile` after sourcing `~/.zshenv`.
 
- `~/.zshenv` 
+To prevent your $PATH being overwritten, set it in `~/.zprofile`.
+
+ `~/.zprofile` 
 ```
 typeset -U path
 path=(~/bin /other/things/in/path $path[@])
@@ -175,7 +179,7 @@ Perhaps the most compelling feature of Zsh is its advanced autocompletion abilit
 
  `~/.zshrc` 
 ```
-autoload -U compinit
+autoload -Uz compinit
 compinit
 
 ```
@@ -194,7 +198,7 @@ For autocompletion with an arrow-key driven interface, add the following to:
 
 For autocompletion of command line switches for aliases, add the following to:
 
- `~/.zshrc`  `setopt completealiases` 
+ `~/.zshrc`  `setopt COMPLETE_ALIASES` 
 
 ### The "command not found" hook
 
@@ -295,7 +299,7 @@ There is a quick and easy way to set up a colored prompt in Zsh. Make sure that 
 
  `~/.zshrc` 
 ```
-autoload -U promptinit
+autoload -Uz promptinit
 promptinit
 
 ```
@@ -329,7 +333,7 @@ See [Prompt Expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.h
 
 #### Colors
 
-Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). Add `autoload -U colors && colors` before `PROMPT=` in `.zshrc` to use them. Usually you will want to put these inside `%{ [...] %}` so the cursor does not move.
+Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). Add `autoload -Uz colors && colors` before `PROMPT=` in `.zshrc` to use them. Usually you will want to put these inside `%{ [...] %}` so the cursor does not move.
 
 | Command | Description |
 | `$fg[color]` | will set the text color (red, green, blue, etc. - defaults to whatever format set prior to text) |
@@ -381,13 +385,13 @@ chpwd() {
 
 DIRSTACKSIZE=20
 
-setopt autopushd pushdsilent pushdtohome
+setopt AUTO_PUSHD PUSHD_SILENT PUSHD_TO_HOME
 
 ## Remove duplicate entries
-setopt pushdignoredups
+setopt PUSHD_IGNORE_DUPS
 
 ## This reverts the +/- operators.
-setopt pushdminus
+setopt PUSHD_MINUS
 
 ```
 
@@ -407,10 +411,10 @@ to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autoc
 Unlike [bash](/index.php/Bash "Bash"), *zsh* does not enable a built in `help` command. To use `help` in zsh, add following to your `zshrc`:
 
 ```
-autoload -U run-help
-autoload run-help-git
-autoload run-help-svn
-autoload run-help-svk
+autoload -Uz run-help
+autoload -Uz run-help-git
+autoload -Uz run-help-svn
+autoload -Uz run-help-svk
 unalias run-help
 alias help=run-help
 ```

@@ -31,7 +31,7 @@
 
 ### 连接到因特网
 
-所有有线网络连接都启用了 `dhcpcd`。如果您希望使用静态 IP，或使用 [Netctl](/index.php/Netctl "Netctl") 等管理工具，请先运行`systemctl stop dhcpcd.service`停止该服务。获取更多信息请访问[Network Configuration (简体中文)](/index.php/Network_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Configuration (简体中文)")。
+所有有线网络连接都启用了 `dhcpcd`。如果您希望使用静态 IP，或使用 [Netctl](/index.php/Netctl "Netctl") 等管理工具，请先运行`systemctl stop dhcpcd.service`停止该服务。获取更多信息请访问[Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")。
 
 运行 `wifi-menu` 设置无线网络。详情参见 [Wireless network configuration (简体中文)](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)") 和 [Netctl (简体中文)](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Netctl (简体中文)")。
 
@@ -118,7 +118,7 @@
 
 在 `/etc/vconsole.conf` 中加入[控制台键盘映射](/index.php/KEYMAP "KEYMAP")和[字体](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.BB.88.E7.AB.AF.E5.AD.97.E4.BD.93 "Fonts (简体中文)")偏好。
 
-对新安装的系统，需要再次设置网络。具体请参考 [Network Configuration (简体中文)](/index.php/Network_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Configuration (简体中文)") 和 [Wireless network configuration (简体中文)](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")。
+对新安装的系统，需要再次设置网络。具体请参考 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)") 和 [Wireless network configuration (简体中文)](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")。
 
 必要时配置 `/etc/mkinitcpio.conf` （参见 [mkinitcpio (简体中文)](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)")），然后用以下命令创建一个初始 RAM disk：
 
@@ -155,4 +155,4 @@
 
 系统管理引导，图形用户界面的安装、声音管理、触摸板支持等后期工作参见 [General recommendations (简体中文)](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")。
 
-感兴趣的各类程序，请参见[List of Applications (简体中文)](/index.php/List_of_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications (简体中文)")。
+感兴趣的各类程序，请参见[List of applications (简体中文)](/index.php/List_of_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of applications (简体中文)")。

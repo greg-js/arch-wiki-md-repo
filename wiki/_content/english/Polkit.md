@@ -22,6 +22,7 @@ Polkit works by delimiting distinct actions, e.g. running GParted, and delimitin
         *   [4.2.2 Udisks](#Udisks)
         *   [4.2.3 Globally](#Globally)
     *   [4.3 Ask for root password](#Ask_for_root_password)
+    *   [4.4 Allow management of individual systemd units by regular users](#Allow_management_of_individual_systemd_units_by_regular_users)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -230,6 +231,25 @@ A rule like this will have polkit ask for the root password instead of the users
  */
 polkit.addAdminRule(function(action, subject) {
     return ["unix-user:root"];
+});
+
+```
+
+### Allow management of individual systemd units by regular users
+
+By checking for certain values passed to the polkit policy check, you can give specific users or groups the ability to manage specific units. As an example, you might want regular users to start and stop [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"):
+
+ `/etc/polkit-1/rules.d/10-wifimanagement.rules` 
+```
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.freedesktop.systemd1.manage-units") {
+        if (action.lookup("unit") == "wpa_supplicant.service") {
+            var verb = action.lookup("verb");
+            if (verb == "start" || verb == "stop" || verb == "restart") {
+                return polkit.Result.YES;
+            }
+        }
+    }
 });
 
 ```

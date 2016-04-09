@@ -1,19 +1,15 @@
-Remmina is a remote desktop client written in GTK+. It supports the following protocols:
-
-*   SSH
-*   VNC
-*   RDP
-*   NX
-*   SFTP
-*   XDMCP
+[Remmina](http://www.remmina.org/wp/) is a remote desktop client written in GTK+ from the [freerdp](http://www.freerdp.com/) project. It supports the protocols SSH, VNC, RDP, NX and XDMCP.
 
 ## Installation
 
-Install the [remmina](https://www.archlinux.org/packages/?name=remmina) package. If you need RDP support, you could install [freerdp](https://www.archlinux.org/packages/?name=freerdp) but it is recommended you install [remmina-plugin-rdesktop](https://aur.archlinux.org/packages/remmina-plugin-rdesktop/). As of Remmina 1.2.0, RDP connections using freerdp suffer from frequent unrequested disconnections but rdesktop RDP connections are much more reliable.
+Install the [remmina](https://www.archlinux.org/packages/?name=remmina) package.
 
-**Note:** If the RDP option is not available in the Remmina dropdown menu after installing [freerdp](https://www.archlinux.org/packages/?name=freerdp), make sure to completely quit Remmina first: run `killall remmina`. When you restart Remmina, RDP should be available.
+If you need RDP support, also install the optional [freerdp](https://www.archlinux.org/packages/?name=freerdp) or [remmina-plugin-rdesktop](https://aur.archlinux.org/packages/remmina-plugin-rdesktop/). For these note:
 
-## Using from command line
+*   If the RDP option is not available in the Remmina dropdown menu after installing [freerdp](https://www.archlinux.org/packages/?name=freerdp), make sure to completely quit Remmina first: run `killall remmina`. When you restart Remmina, RDP should be available.
+*   As of Remmina 1.2.0, some users report RDP connections using freerdp suffer from frequent unrequested disconnections, but rdesktop RDP connections being more reliable.
+
+## Usage
 
 To open previously saved connection profile you can do:
 
@@ -35,3 +31,8 @@ done
 ```
 
 To minimize to tray on startup, use `-i` option.
+
+## See also
+
+*   [Bugtracker](https://github.com/FreeRDP/Remmina/issues) - for the application
+*   [Project wiki](https://github.com/FreeRDP/FreeRDP/wiki) - with extensive resources

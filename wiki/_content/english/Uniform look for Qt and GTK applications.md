@@ -69,6 +69,8 @@ This platform theme is enabled automatically in GNOME since version 3.20\. For o
 
 There are widget style sets available for the purpose of integration, where builds are written and provided for both Qt and GTK+, all major versions included. With these, you can have one look for all applications regardless of the toolkit they had been written with.
 
+**Tip:** You may want to apply user defined styles to root applications, see [GTK#Theme not applied to root applications](/index.php/GTK#Theme_not_applied_to_root_applications "GTK").
+
 **Note:** Since version 3.16, GTK+ 3 [does not support](https://bbs.archlinux.org/viewtopic.php?pid=1518404#p1518404) non-CSS themes, hence previous solutions such as Oxygen-Gtk are [no longer viable](https://bugs.kde.org/show_bug.cgi?id=340288) options.
 
 ### Breeze

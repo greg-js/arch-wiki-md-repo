@@ -203,6 +203,8 @@ Last, unmount the temporary filesystems and the root partition:
 
 ```
 
+**Note:** If you are running systemd (which arch does by default) you might need to change the binded mount points to slaves (e.g. dev and sys) this can be done with `mount --make-rslave /mnt/arch`. If this is not done there is a risk that subfolders of /dev and /sys are unmounted which might affect your system.
+
 **Note:** If there is an error mentioning something like: `umount: /path: device is busy` this usually means that either: a program (even a shell) was left running in the chroot or that a sub-mount still exists. Quit the program and use `mount` to find and `umount` sub-mounts). It may be tricky to `umount` some things and one can hopefully have `umount --force` work, as a last resort use `umount --lazy` which just releases them. In either case to be safe, `reboot` as soon as possible if these are unresolved to avoid future, possible conflicts.
 
 ## Without root privileges

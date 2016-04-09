@@ -257,7 +257,7 @@ Para instalar temas en Fluxbox, descomprime los archivos en la carpeta styles. L
 
 Actualmente en [AUR](/index.php/AUR "AUR") hay varias compilaciones de buenos temas para Fluxbox llamados "fluxbox-styles". Descarga uno desde [aquí](https://aur.archlinux.org/packages.php?ID=28743) e instala el paquete para obtener varios temas. Una vez instalados correctamente aparecerán en la sección Styles dentro de Fluxbox en el menú .
 
-Para crear tus temas de Fluxbox lee [Fluxbox_Style_Guide](/index.php/Fluxbox_Style_Guide "Fluxbox Style Guide") y esto [guía de estilo](http://tenr.de/howto/style_fluxbox/style_fluxbox.html).
+Para crear tus temas de Fluxbox lee [Fluxbox Style Guide](/index.php/Fluxbox_Style_Guide "Fluxbox Style Guide") y esto [guía de estilo](http://tenr.de/howto/style_fluxbox/style_fluxbox.html).
 
 ### La Slit
 

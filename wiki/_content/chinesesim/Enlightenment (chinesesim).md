@@ -33,7 +33,7 @@
 
 ## Enlightenment Desktop Shell (之前的 E17)
 
-包括 Enlightment [窗口管理器](/index.php/Window_Manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window Manager (简体中文)")和提供了如工具包、对象画布和抽象对象等额外的桌面环境特性的 Enlightenment Foundation Libraries(EFL) 。从 2005 年开始开发，并在 2011 年 2 月发布第一个稳定的 1.0 发行版。Enlightenment 窗口管理器已于 2012 年 12 月 21 日发布，EFL 库的 1.7.4 版也同期发布。目前很多人可以毫无障碍地将 Enlightenment 作为日常桌面环境使用。
+包括 Enlightment [窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")和提供了如工具包、对象画布和抽象对象等额外的桌面环境特性的 Enlightenment Foundation Libraries(EFL) 。从 2005 年开始开发，并在 2011 年 2 月发布第一个稳定的 1.0 发行版。Enlightenment 窗口管理器已于 2012 年 12 月 21 日发布，EFL 库的 1.7.4 版也同期发布。目前很多人可以毫无障碍地将 Enlightenment 作为日常桌面环境使用。
 
 **Warning:** This page refers to both stable and development packages. Any PKGBUILD which ends with -svn or -git will use unstable development code. Use them at your own risk. Since the release of the EFL libraries and Enlightenment itself, it's no longer necessary and even discouraged to build the core programs from SVN or GIT. "Unless you're developing E or willing to live bleeding edge, stay away from trunk."([source](http://sourceforge.net/mailarchive/message.php?msg_id=30310890)) Unfortunately, many of the additional software packages have not been released and building from SVN or GIT is the only way to use them.
 

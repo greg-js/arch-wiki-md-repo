@@ -35,7 +35,8 @@ According to the [official website](http://www.gnupg.org):
     *   [6.6 SSH agent](#SSH_agent)
 *   [7 Smartcards](#Smartcards)
     *   [7.1 GnuPG only setups](#GnuPG_only_setups)
-    *   [7.2 GnuPG together with OpenSC](#GnuPG_together_with_OpenSC)
+    *   [7.2 GnuPG with PSCD-Lite](#GnuPG_with_PSCD-Lite)
+        *   [7.2.1 Always use PSCD-Light](#Always_use_PSCD-Light)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Different algorithm](#Different_algorithm)
     *   [8.2 Encrypt a password](#Encrypt_a_password)
@@ -187,7 +188,7 @@ $ gpg --recv-keys *<key-id>*
 
 **Tip:**
 
-*   Adding `keyserver-option auto-key-retrieve` to `gnupg.conf` will automatically fetch keys from the key server as needed.
+*   Adding `keyserver-options auto-key-retrieve` to `gnupg.conf` will automatically fetch keys from the key server as needed.
 *   An alternative key server is `pool.sks-keyservers.net` and can be specified with `keyserver` in `dirmngr.conf`.; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
 *   You can connect to the keyserver over [Tor](/index.php/Tor "Tor") using `--use-tor`. `hkp://jijrk5u4osbsr34t5.onion` is the onion address for the sks-keyservers pool. [See this GnuPG blog post](https://gnupg.org/blog/20151224-gnupg-in-november-and-december.html) for more information.
 *   You can connect to a keyserver using a proxy by setting the `http_proxy` environment variable and setting `honor-http-proxy` in `dirmngr.conf`. Alternatively, set `http-proxy *host[:port]*` in `dirmngr.conf`, overriding the `http_proxy` environment variable.
@@ -546,15 +547,21 @@ default-cache-ttl-ssh 10800
 
 ## Smartcards
 
-**Note:** [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) and [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) have to be installed, and the contained [systemd](/index.php/Systemd#Using_units "Systemd") service `pcscd.service` has to be running.
-
 GnuPG uses *scdaemon* as an interface to your smartcard reader, please refer to the [man page](/index.php/Man_page "Man page") for details.
 
 ### GnuPG only setups
 
+**Note:** To allow scdaemon direct access to USB smarcard readers the optional dependency [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) have to be installed
+
 If you do not plan to use other cards but those based on GnuPG, you should check the `reader-port` parameter in `~/.gnupg/scdaemon.conf`. The value '0' refers to the first available serial port reader and a value of '32768' (default) refers to the first USB reader.
 
-### GnuPG together with OpenSC
+### GnuPG with PSCD-Lite
+
+**Note:** [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) and [ccid](https://www.archlinux.org/packages/?name=ccid) have to be installed, and the contained [systemd](/index.php/Systemd#Using_units "Systemd") service `pcscd.service` has to be running, or the socket `pscd.socket` has to be listening.
+
+PSCD-Lite is a daemon which handles access to smartcard (SCard API). If GnuPG's scdaemon fails to connect the smartcard directly (e.g. by using its integrated CCID support), it will fallback and try to find a smartcard using the PSCD-Lite driver.
+
+#### Always use PSCD-Light
 
 If you are using any smartcard with an opensc driver (e.g.: ID cards from some countries) you should pay some attention to GnuPG configuration. Out of the box you might receive a message like this when using `gpg --card-status`
 

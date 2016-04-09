@@ -7,38 +7,39 @@ A multiboot USB flash drive allows booting multiple ISO files from a single devi
     *   [1.2 Installing GRUB](#Installing_GRUB)
     *   [1.3 Configuring GRUB](#Configuring_GRUB)
     *   [1.4 Boot entries](#Boot_entries)
-        *   [1.4.1 Alt Linux](#Alt_Linux)
-        *   [1.4.2 Arch Linux](#Arch_Linux)
-            *   [1.4.2.1 monthly release](#monthly_release)
-            *   [1.4.2.2 archboot](#archboot)
-        *   [1.4.3 CentOS](#CentOS)
-            *   [1.4.3.1 Stock installation medium](#Stock_installation_medium)
-            *   [1.4.3.2 Desktop live medium](#Desktop_live_medium)
-        *   [1.4.4 Clonezilla Live](#Clonezilla_Live)
-        *   [1.4.5 Debian](#Debian)
-            *   [1.4.5.1 Stock install medium](#Stock_install_medium)
-            *   [1.4.5.2 Live install medium](#Live_install_medium)
-        *   [1.4.6 Elementary OS](#Elementary_OS)
-        *   [1.4.7 Fedora](#Fedora)
-            *   [1.4.7.1 Stock installation medium](#Stock_installation_medium_2)
-            *   [1.4.7.2 Workstation live medium](#Workstation_live_medium)
-        *   [1.4.8 Gentoo](#Gentoo)
-            *   [1.4.8.1 Desktop LiveDVD](#Desktop_LiveDVD)
-        *   [1.4.9 GParted Live](#GParted_Live)
-        *   [1.4.10 Kali Linux](#Kali_Linux)
-        *   [1.4.11 Knoppix](#Knoppix)
-        *   [1.4.12 Linux Mint](#Linux_Mint)
-        *   [1.4.13 openSUSE](#openSUSE)
-            *   [1.4.13.1 Stock installation medium](#Stock_installation_medium_3)
-            *   [1.4.13.2 Desktop Live medium](#Desktop_Live_medium_2)
-        *   [1.4.14 Parabola GNU/Linux-libre](#Parabola_GNU.2FLinux-libre)
-        *   [1.4.15 Sabayon](#Sabayon)
-        *   [1.4.16 Slackware Linux](#Slackware_Linux)
-        *   [1.4.17 SystemRescueCD](#SystemRescueCD)
-        *   [1.4.18 Ubuntu](#Ubuntu)
+        *   [1.4.1 Alpine Linux](#Alpine_Linux)
+        *   [1.4.2 Alt Linux](#Alt_Linux)
+        *   [1.4.3 Arch Linux](#Arch_Linux)
+            *   [1.4.3.1 monthly release](#monthly_release)
+            *   [1.4.3.2 archboot](#archboot)
+        *   [1.4.4 CentOS](#CentOS)
+            *   [1.4.4.1 Stock installation medium](#Stock_installation_medium)
+            *   [1.4.4.2 Desktop live medium](#Desktop_live_medium)
+        *   [1.4.5 Clonezilla Live](#Clonezilla_Live)
+        *   [1.4.6 Debian](#Debian)
+            *   [1.4.6.1 Stock install medium](#Stock_install_medium)
+            *   [1.4.6.2 Live install medium](#Live_install_medium)
+        *   [1.4.7 Elementary OS](#Elementary_OS)
+        *   [1.4.8 Fedora](#Fedora)
+            *   [1.4.8.1 Stock installation medium](#Stock_installation_medium_2)
+            *   [1.4.8.2 Workstation live medium](#Workstation_live_medium)
+        *   [1.4.9 Gentoo](#Gentoo)
+            *   [1.4.9.1 Desktop LiveDVD](#Desktop_LiveDVD)
+        *   [1.4.10 GParted Live](#GParted_Live)
+        *   [1.4.11 Kali Linux](#Kali_Linux)
+        *   [1.4.12 Knoppix](#Knoppix)
+        *   [1.4.13 Linux Mint](#Linux_Mint)
+        *   [1.4.14 openSUSE](#openSUSE)
+            *   [1.4.14.1 Stock installation medium](#Stock_installation_medium_3)
+            *   [1.4.14.2 Desktop Live medium](#Desktop_Live_medium_2)
+        *   [1.4.15 Parabola GNU/Linux-libre](#Parabola_GNU.2FLinux-libre)
+        *   [1.4.16 Sabayon](#Sabayon)
+        *   [1.4.17 Slackware Linux](#Slackware_Linux)
+        *   [1.4.18 SystemRescueCD](#SystemRescueCD)
         *   [1.4.19 Slitaz](#Slitaz)
         *   [1.4.20 Slax](#Slax)
         *   [1.4.21 Tails](#Tails)
+        *   [1.4.22 Ubuntu](#Ubuntu)
 *   [2 Chainloading Windows](#Chainloading_Windows)
 *   [3 Using Syslinux and memdisk](#Using_Syslinux_and_memdisk)
     *   [3.1 Preparation](#Preparation_2)
@@ -145,6 +146,23 @@ loopback loop **($isopart)**$isofile
 ```
 
 **Tip:** For a list of kernel parameters, see [https://www.kernel.org/doc/Documentation/kernel-parameters.txt](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) (still incomplete)
+
+#### Alpine Linux
+
+**Tip:** If you want to boot into a 32-bit system, replace `x86_64` with `i686`.
+
+*   Initramfs framework: ???
+*   Live framework: ???
+*   Init system: [OpenRC](http://wiki.alpinelinux.org/wiki/Alpine_Linux_Init_System) (cmdline: *RFD*)
+
+```
+menuentry '[loopback]alpine x86_64' {
+        set isofile='/boot/iso/alpine-3.3.3-x86_64.iso'
+        loopback loop $isofile
+        linux (loop)/boot/vmlinuz-grsec alpine_dev=usbdisk:vfat modloop=/boot/modloop-grsec modules=loop,squashfs,sd-mod,usb-storage quiet
+        initrd (loop)/boot/initramfs-grsec
+}
+```
 
 #### Alt Linux
 
@@ -531,21 +549,6 @@ menuentry '[loopback]systemrescuecd-x86-4.5.2' {
 }
 ```
 
-#### Ubuntu
-
-*   Initramfs framework: *RFD*
-*   Live framework or installation program: *RFD*
-*   Init system: upstart (cmdline: *RFD*)
-
-```
-menuentry '[loopback]ubuntu-14.04.1-desktop-amd64' {
-	set isofile='/boot/iso/ubuntu-14.04.1-desktop-amd64.iso'
-	loopback loop $isofile
-	linux (loop)/casper/vmlinuz.efi boot=casper iso-scan/filename=$isofile locale=**en_US.UTF-8**
-	initrd (loop)/casper/initrd.lz
-}
-```
-
 #### Slitaz
 
 *   Initramfs framework: *RFD*
@@ -602,6 +605,21 @@ menuentry "[loopback]tails-i386-1.5.iso" {
 **Warning:** Emergency memory erasure does not seem to work when booting this way.
 
 Remove the `live-media=removable` option if the iso file is not on removable media.
+
+#### Ubuntu
+
+*   Initramfs framework: *RFD*
+*   Live framework or installation program: *RFD*
+*   Init system: upstart (cmdline: *RFD*)
+
+```
+menuentry '[loopback]ubuntu-14.04.1-desktop-amd64' {
+	set isofile='/boot/iso/ubuntu-14.04.1-desktop-amd64.iso'
+	loopback loop $isofile
+	linux (loop)/casper/vmlinuz.efi boot=casper iso-scan/filename=$isofile locale=**en_US.UTF-8**
+	initrd (loop)/casper/initrd.lz
+}
+```
 
 ## Chainloading Windows
 

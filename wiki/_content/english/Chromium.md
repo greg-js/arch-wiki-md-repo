@@ -95,7 +95,7 @@ See the main article: [Chromium tweaks](/index.php/Chromium_tweaks "Chromium twe
 
 ### Constant freezes under KDE
 
-[Uninstall](/index.php/Pacman#Removing_packages "Pacman") [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse). See: [BBS#1228558](https://bbs.archlinux.org/viewtopic.php?pid=1228558).
+[Uninstall](/index.php/Uninstall "Uninstall") [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse). See: [BBS#1228558](https://bbs.archlinux.org/viewtopic.php?pid=1228558).
 
 ### Fonts
 

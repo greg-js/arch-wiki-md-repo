@@ -63,7 +63,7 @@ Questi potrebbero essere lo stesso computer. Non è necessario che l'host sia un
 
 ## Setup del sistema host
 
-È necessario installare il pacchetto pacman di Archlinux nel proprio ambiente linux (host).Inoltre si dovrà recuperare la lista dei mirrors site [[1]](https://www.archlinux.org/mirrorlist/) che pacman utilizzerà per scaricare i pacchetti del sistema. Se sei già utilizzando Arch, saltare questo passaggio e andare a [Install from Existing Linux (Italiano)#Installazione del sistema di destinazione](/index.php/Install_from_Existing_Linux_(Italiano)#Installazione_del_sistema_di_destinazione "Install from Existing Linux (Italiano)")
+È necessario installare il pacchetto pacman di Archlinux nel proprio ambiente linux (host).Inoltre si dovrà recuperare la lista dei mirrors site [[1]](https://www.archlinux.org/mirrorlist/) che pacman utilizzerà per scaricare i pacchetti del sistema. Se sei già utilizzando Arch, saltare questo passaggio e andare a [#Installazione del sistema di destinazione](#Installazione_del_sistema_di_destinazione)
 
 ### Ottenere i pacchetti necessari
 
@@ -157,7 +157,7 @@ done
 
 Tuttavia, tenere presente che questa operazione potrebbe cancellare alcuni file, e danneggiare il sistema.
 
-1.  Se si sta installando da Ubuntu 9.10 LiveCD (o forse anche da altre versioni), saranno necessari non solo i file di pacman (shared libs) per usarlo. Usare lo script di Lucky descritto in [[questo thread](https://bbs.archlinux.org/viewtopic.php?pid=759166)] per scaricarli!
+1.  Se si sta installando da Ubuntu 9.10 LiveCD (o forse anche da altre versioni), saranno necessari non solo i file di pacman (shared libs) per usarlo. Usare lo script di Lucky descritto in [questo thread](https://bbs.archlinux.org/viewtopic.php?pid=759166) per scaricarli!
 
 2.  n alternativa, si possono trasformare questi archivi in pacchetti per la propria distribuzione con il tool [alien](http://kitenet.net/~joey/code/alien/). Vedere la man page dello strumento per le istruzioni. I pacchetti creati in questo modo possono essere installati nella distribuzione host utilizzando i soliti strumenti di gestione dei pacchetti disponibili. Questo approccio offre una migliore integrazione nell'ambiente Linux host. Per un sistema basato pacchetto debian questo è fatto con i seguenti comandi:
     ```
@@ -476,7 +476,7 @@ mkinitcpio -p linux
 
 ```
 
-Scegliere un bootloader. Si possono trovare le istruzioni di installazione nelle pagine dedicate. ([Syslinux](/index.php/Syslinux "Syslinux"), [Grub](/index.php/Grub "Grub"), [Grub2](/index.php/Grub2 "Grub2"), etc.).
+Scegliere un bootloader. Si possono trovare le istruzioni di installazione nelle pagine dedicate. ([Syslinux](/index.php/Syslinux "Syslinux"), [GRUB](/index.php/GRUB "GRUB"), [Grub2](/index.php/Grub2 "Grub2"), etc.).
 
 **Ricorda:** C'è ancora bisogno di fare la configurazioni finali come in una normale installazione Arch.
 

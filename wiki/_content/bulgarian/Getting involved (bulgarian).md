@@ -44,7 +44,7 @@ If you feel capable of [editing wiki pages](/index.php/Help:Editing "Help:Editin
 3.  [Add](/index.php/Special:WhatLinksHere/Template:Translateme "Special:WhatLinksHere/Template:Translateme") or [improve](/index.php/Special:WhatLinksHere/Template:Bad_translation "Special:WhatLinksHere/Template:Bad translation") translations; ensure that translations are in sync with each other.
 4.  Reduce and [combine](/index.php/Special:WhatLinksHere/Template:Merge "Special:WhatLinksHere/Template:Merge") duplicate pages.
 5.  Correct [inaccurate](/index.php/Special:WhatLinksHere/Template:Accuracy "Special:WhatLinksHere/Template:Accuracy") or [outdated](/index.php/Special:WhatLinksHere/Template:Out_of_date "Special:WhatLinksHere/Template:Out of date") content, spelling, grammar, language, and [style](/index.php/Help:Style "Help:Style").
-6.  Reduce the number of [categories](/index.php/Special:Categories "Special:Categories"). Scan the wiki for similar categories that should be combined; improve wiki [navigation](/index.php/Table_of_Contents "Table of Contents").
+6.  Reduce the number of [categories](/index.php/Special:Categories "Special:Categories"). Scan the wiki for similar categories that should be combined; improve wiki [navigation](/index.php/Table_of_contents "Table of contents").
 7.  [Categorize uncategorized pages](/index.php/Special:UncategorizedPages "Special:UncategorizedPages").
 8.  Add [article summary](/index.php/Writing_Article_Overviews "Writing Article Overviews") boxes to all articles.
 9.  Update the [FAQ](/index.php/FAQ "FAQ") with relevant questions from the forum and remove obsolete questions.

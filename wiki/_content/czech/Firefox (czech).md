@@ -172,7 +172,7 @@ Pro další podrobnější informace ohledně konfigurace fontů čtěte prosím
 
 # Alternativy Firefoxu
 
-Viz [List of Applications (Česky)#Prohlížeče](/index.php/List_of_Applications_(%C4%8Cesky)#Prohl.C3.AD.C5.BEe.C4.8De "List of Applications (Česky)").
+Viz [List of applications (Česky)#Prohlížeče](/index.php/List_of_applications_(%C4%8Cesky)#Prohl.C3.AD.C5.BEe.C4.8De "List of applications (Česky)").
 
 # Externí odkazy
 

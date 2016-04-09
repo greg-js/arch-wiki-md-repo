@@ -53,3 +53,5 @@ Implement a pacman:// URI as an option to quickly let users quickly install pack
 ### Focus in Search
 
 Is it possible to make ArchWiki to automatically focus on search box? It is common behavior. Look for example to [youtube](https://youtube.com) or [wikipedia](https://wikipedia.org). I feel uncomfortable, when I go to wiki.archlinux.org and additionally need to use mouse to focus on search field. I know about `Alt + Shift + f`, but it is not working, because alt+shift changes keyboard layout. — [Agent0](/index.php/User:Agent0 "User:Agent0") ([talk](/index.php/User_talk:Agent0 "User talk:Agent0")|[contribs](/index.php/Special:Contributions/Agent0 "Special:Contributions/Agent0")) 12:29, 17 November 2015 (UTC)
+
+	On HTML5 you just have to add the "autofocus" attribute to the input (in this case the element with id="searchInput"). -- **nucularJohn**

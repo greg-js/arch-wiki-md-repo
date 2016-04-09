@@ -77,7 +77,7 @@ nano mysession.desktop
 
 注意到最后面的 *YOURHOSTNAME* 吗？你需要在这添加上你的主机名，主机名可以通过运行 /bin/hostname 命令查看。
 
-更多的信息可以查看： [Configuring_network](/index.php/Configuring_network "Configuring network")
+更多的信息可以查看： [Configuring network](/index.php/Configuring_network "Configuring network")
 
 ## Misc Tips
 
@@ -376,4 +376,4 @@ A very useful application that can be run as a daemon within gnome. It manipulat
 
 ## See also
 
-*   [GNOME_(简体中文)](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")
+*   [GNOME (简体中文)](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")

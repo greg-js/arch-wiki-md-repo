@@ -54,7 +54,7 @@ A naplózó-technikák nem egyformák. Csak az ext3 és ext4 használ adatmódú
 
 	[http://code.google.com/p/exfat/](http://code.google.com/p/exfat/) || [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
 
-*   **f2fs-tools** — [F2FS](/index.php/F2fs "F2fs") támogatás.
+*   **f2fs-tools** — [F2FS](/index.php/F2FS "F2FS") támogatás.
 
 	[https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git](https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git) || [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools)
 
@@ -159,7 +159,7 @@ Ha cserehelyet akarunk létrehozni, a **mkswap**-t használjuk:
 
 Több grafikus eszköz is szolgálhat a fájlrendszerek karbantartására:
 
-*   **[Gparted](/index.php/Gparted "Gparted")** — GTK+ Partition Magic klón, a GNU Parted grafikus frontendje.
+*   **[GParted](/index.php/GParted "GParted")** — GTK+ Partition Magic klón, a GNU Parted grafikus frontendje.
 
 	[http://gparted.sourceforge.net](http://gparted.sourceforge.net) || [gparted](https://www.archlinux.org/packages/?name=gparted)
 

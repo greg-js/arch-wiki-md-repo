@@ -21,7 +21,7 @@ Configuración de Arch sobre...
 
 ## Arrancar desde el soporte de instalación
 
-Arranque en un entorno live de Arch a través de un [CD live/imagen USB](/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Preparar_el_soporte_de_instalaci.C3.B3n_m.C3.A1s_reciente "Beginners' Guide (Español)").
+Arranque en un entorno live de Arch a través de un [CD live/imagen USB](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Preparar_el_soporte_de_instalaci.C3.B3n_m.C3.A1s_reciente "Beginners' guide (Español)").
 
 ## Configurar el entorno live para usar SSH
 
@@ -74,7 +74,7 @@ Last login: Thu Dec 23 08:33:02 2010 from 10.1.10.200
 
 ## Siguientes pasos
 
-El cielo es el límite. Si la intención es simplemente instalar Arch desde el soporte live, siga la [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Si la intención es modificar la instalación de un Linux existente que se rompió, siga el artículo de la wiki [Install from Existing Linux (Español)](/index.php/Install_from_Existing_Linux_(Espa%C3%B1ol) "Install from Existing Linux (Español)").
+El cielo es el límite. Si la intención es simplemente instalar Arch desde el soporte live, siga la [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Si la intención es modificar la instalación de un Linux existente que se rompió, siga el artículo de la wiki [Install from existing Linux (Español)](/index.php/Install_from_existing_Linux_(Espa%C3%B1ol) "Install from existing Linux (Español)").
 
 ¿Quiere [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") o la capacidad de utilizar discos duros con [GPT](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")?
 

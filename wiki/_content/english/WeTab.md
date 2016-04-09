@@ -1,4 +1,4 @@
-[The WeTab is a tablet-PC by 4tiitoo and Neofonie.](https://en.wikipedia.org/wiki/WeTab "wikipedia:WeTab")
+The [WeTab](https://en.wikipedia.org/wiki/WeTab "wikipedia:WeTab") is a tablet-PC by 4tiitoo and Neofonie.
 
 ## BIOS Update
 

@@ -146,7 +146,7 @@ To use these with Python, you may need to install the associated widget kits.
 
 ### IPython
 
-[IPython](http://ipython.org/) is an enhanced Python command line available in the official repositories as [ipython](https://www.archlinux.org/packages/?name=ipython) and [ipython2](https://www.archlinux.org/packages/?name=ipython2). If you want the IPython notebook, install [jupyter](https://www.archlinux.org/packages/?name=jupyter) for the IPython3 notebook and [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) for the IPython2 notebook. Run
+[IPython](http://ipython.org/) is an enhanced Python command line available in the official repositories as [ipython](https://www.archlinux.org/packages/?name=ipython) and [ipython2](https://www.archlinux.org/packages/?name=ipython2). If you want the IPython notebook, install [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) for the IPython3 notebook and [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) for the IPython2 notebook. Run
 
 ```
 $ jupyter notebook
@@ -159,7 +159,7 @@ to autostart the browser and run the IPython kernel. You can select the python v
 
 ### virtualenv
 
-[virtualenv](https://www.archlinux.org/packages/?name=virtualenv) is a Python tool written by Ian Bicking and used to create isolated environments for Python in which you can install packages without interfering with the other virtualenvs nor with the system Python's packages. It could change the python interpreter used for a specific application.
+[python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv) is a Python tool written by Ian Bicking and used to create isolated environments for Python in which you can install packages without interfering with the other virtualenvs nor with the system Python's packages. It could change the python interpreter used for a specific application.
 
 See [Python/Virtualenv](/index.php/Python/Virtualenv "Python/Virtualenv") for details.
 

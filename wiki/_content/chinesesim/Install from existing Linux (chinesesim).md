@@ -158,7 +158,7 @@ Two methods to setup and enter the chroot are presented below, from the easiest 
 
 #### 初始化 pacman 密匙环
 
-开始安装前，需要设置 pacman 密匙。执行以下命令前请阅读[pacman-key_(简体中文)#初始化密匙环](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AF.86.E5.8C.99.E7.8E.AF "Pacman-key (简体中文)")以理解其对熵的要求：
+开始安装前，需要设置 pacman 密匙。执行以下命令前请阅读[Pacman-key (简体中文)#初始化密钥环](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AF.86.E9.92.A5.E7.8E.AF "Pacman-key (简体中文)")以理解其对熵的要求：
 
 ```
 # pacman-key --init

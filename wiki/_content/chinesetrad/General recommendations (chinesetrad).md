@@ -1,6 +1,6 @@
 **翻譯狀態：** 本文章是 [General_Recommendations](/index.php/General_Recommendations "General Recommendations") 的翻譯版本。最近一次的翻譯時間：2014-01-22。點擊[本連結](https://wiki.archlinux.org/index.php?title=General_Recommendations&diff=0&oldid=283108)查看英文頁面之後的變更。
 
-這份註釋索引文件列舉了其他熱門文章和重要資訊，善用這些資源可以幫您新安裝的 Arch 系統提升和新增功能。這裡所列出的頁面需要使用 [pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 從[官方倉庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")安裝額外的軟體包，至於來自非官方的 [Arch 使用者倉庫](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)")的軟體包，需要配置 [makepkg](/index.php/Makepkg "Makepkg")，另外可搭配 [AUR 幫助程式](/index.php/AUR_helper "AUR helper")使用。因此在繼續之前，應該徹底瞭解軟體包的管理概念。這裡假設讀者已經閱讀[新手教學](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' Guide (正體中文)")或[安裝指南](/index.php/Installation_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation Guide (正體中文)")，按照步驟安裝一個基本的 Arch Linux 系統。
+這份註釋索引文件列舉了其他熱門文章和重要資訊，善用這些資源可以幫您新安裝的 Arch 系統提升和新增功能。這裡所列出的頁面需要使用 [pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 從[官方倉庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")安裝額外的軟體包，至於來自非官方的 [Arch 使用者倉庫](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)")的軟體包，需要配置 [makepkg](/index.php/Makepkg "Makepkg")，另外可搭配 [AUR 幫助程式](/index.php/AUR_helper "AUR helper")使用。因此在繼續之前，應該徹底瞭解軟體包的管理概念。這裡假設讀者已經閱讀[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")或[安裝指南](/index.php/Installation_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation guide (正體中文)")，按照步驟安裝一個基本的 Arch Linux 系統。
 
 ## Contents
 
@@ -82,7 +82,7 @@
 
 #### 核心工具
 
-特定核心工具 (如 `grep` 和 `ls`)的彩色輸出，在[核心工具](/index.php/Core_Utilities_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Core Utilities (正體中文)")一文中提及。
+特定核心工具 (如 `grep` 和 `ls`)的彩色輸出，在[核心工具](/index.php/Core_utilities_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Core utilities (正體中文)")一文中提及。
 
 #### Emacs shell
 
@@ -138,7 +138,7 @@ Num Lock 是多數鍵盤都有的切換鍵。若要在系統開機時啟用 Num 
 
 ### 開機啟動 X
 
-若圖形介面需要利用 [X](/index.php/X "X") 伺服器，可以考慮在開機階段啟動 X 伺服器，而非登入後再手動啟動。若需要圖形登入介面，請參閱[顯示管理員](/index.php/Display_Manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Display Manager (正體中文)")，或者參閱不需要顯示管理員的方式：[開機時啟動 X](/index.php/Start_X_at_Boot "Start X at Boot")。
+若圖形介面需要利用 [X](/index.php/X "X") 伺服器，可以考慮在開機階段啟動 X 伺服器，而非登入後再手動啟動。若需要圖形登入介面，請參閱[顯示管理員](/index.php/Display_manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Display manager (正體中文)")，或者參閱不需要顯示管理員的方式：[開機時啟動 X](/index.php/Start_X_at_Boot "Start X at Boot")。
 
 ## 改進終端機
 
@@ -194,7 +194,7 @@ Num Lock 是多數鍵盤都有的切換鍵。若要在系統開機時啟用 Num 
 
 ## 網路
 
-這一節限定於小型的網路問題。完整指南請前往[網路設定](/index.php/Network_Configuration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Network Configuration (正體中文)")。更多資訊請參閱[網路分類](/index.php/Category:Networking "Category:Networking")。
+這一節限定於小型的網路問題。完整指南請前往[網路設定](/index.php/Network_configuration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Network configuration (正體中文)")。更多資訊請參閱[網路分類](/index.php/Category:Networking "Category:Networking")。
 
 ### 時鐘同步
 
@@ -286,7 +286,7 @@ Num Lock 是多數鍵盤都有的切換鍵。若要在系統開機時啟用 Num 
 
 ### 使用者與群組
 
-GNU/Linux 利用[使用者與群組](/index.php/Users_and_Groups_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Users and Groups (正體中文)")達到「存取控制」；管理者可藉由調整群組成員與擁有權，以准許 / 禁止使用者和服務存取系統資源。通常您需要將帳號加入對應群組，才能存取某些週邊裝置 (如 CD/DVD 光碟機和音效硬體)。
+GNU/Linux 利用[使用者與群組](/index.php/Users_and_groups_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Users and groups (正體中文)")達到「存取控制」；管理者可藉由調整群組成員與擁有權，以准許 / 禁止使用者和服務存取系統資源。通常您需要將帳號加入對應群組，才能存取某些週邊裝置 (如 CD/DVD 光碟機和音效硬體)。
 
 ### Windows 網路
 

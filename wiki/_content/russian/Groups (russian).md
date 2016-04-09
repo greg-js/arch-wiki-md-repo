@@ -50,7 +50,7 @@
 | lp | /etc/cups, /var/log/cups, /var/cache/cups, /var/spool/cups | Доступ к принтерам |
 | mem |
 | mail | /usr/bin/mail |
-| network | Права на изменение настроек сети, например, когда используется [Networkmanager](/index.php/Networkmanager "Networkmanager"). |
+| network | Права на изменение настроек сети, например, когда используется [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
 | nobody | непривелегированный пользователь. |
 | ntp |
 | optical | /dev/sr[0-9], /dev/sg[0-9] | Доступ с оптическим дискам, таким как CD,CD-R,DVD,DVD-R. |

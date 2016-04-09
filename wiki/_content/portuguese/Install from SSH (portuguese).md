@@ -21,7 +21,7 @@ Instalando o Arch em um...
 
 ## Boot através da midia
 
-Inicie um ambiente [Live CD/USB](/index.php/Beginners%27_Guide_(Portugu%C3%AAs)#Obtendo_a_.C3.BAltima_m.C3.ADdia_de_Instala.C3.A7.C3.A3o "Beginners' Guide (Português)") do Arch Linux
+Inicie um ambiente [Live CD/USB](/index.php/Beginners%27_guide_(Portugu%C3%AAs)#Obtendo_a_.C3.BAltima_m.C3.ADdia_de_Instala.C3.A7.C3.A3o "Beginners' guide (Português)") do Arch Linux
 
 ## Configure o SSH no ambiente Live
 
@@ -78,7 +78,7 @@ Last login: Thu Dec 23 08:33:02 2010 from 10.1.10.200
 
 ## Próximos Passos
 
-O céu é o limite. Se você pretende apenas instalar o Arch, siga o [guia de instalação](/index.php/Installation_Guide_(Portugu%C3%AAs) "Installation Guide (Português)"). Já se o objetivo é editar/manipular uma instalação Linux que está com problemas, siga o artigo [Instalando em um Linux já configurado](/index.php/Install_from_Existing_Linux "Install from Existing Linux").
+O céu é o limite. Se você pretende apenas instalar o Arch, siga o [guia de instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)"). Já se o objetivo é editar/manipular uma instalação Linux que está com problemas, siga o artigo [Instalando em um Linux já configurado](/index.php/Install_from_existing_Linux "Install from existing Linux").
 
 Deseja que o [grub2](/index.php/Grub2 "Grub2") utilize disco rígido [GPT](/index.php/GPT "GPT")?
 

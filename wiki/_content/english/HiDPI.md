@@ -94,7 +94,7 @@ Though some issues still prevail, KDE plasma 5 provides a decent support for HiD
 Please follow these guidelines for HiDPI support in KDE plasma 5
 
 1.  Increase font dpi (System Settings → Font → Force font dpi, enter a number such as 125, 144 or 150 etc)
-2.  If necessary, follow the instructions in the [Qt 5](#Qt_5) section to make Qt honor this setting
+2.  If using QT<5.6, follow the instructions in the [Qt 5](#Qt_5) section to make Qt honor this setting.
 
 **Note:** You may have previously forced a scale factor, which may result in Qt applications appearing too large when a high DPI is set now that Qt 5.6 honors DPI settings. In this case, you will need to reset the scale factor (System Settings → Display and Monitor → Display Configuration → Scale Display, scroll value to 1).
 

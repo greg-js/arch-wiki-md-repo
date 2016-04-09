@@ -31,7 +31,7 @@
 
 ### 论坛发帖
 
-参与我们的一个最简单的方法，就是逛 [Arch Linux 官方论坛](https://bbs.archlinux.org/)。请先阅读[论坛规章](/index.php/Forum_Etiquette "Forum Etiquette")，然后您就可以尽情发表您的高见、帮助菜鸟或是结交新友了。如果在论坛发现他人的违规行为，请使用论坛页面底部的 Report 功能举报。
+参与我们的一个最简单的方法，就是逛 [Arch Linux 官方论坛](https://bbs.archlinux.org/)。请先阅读[论坛规章](/index.php/Forum_etiquette "Forum etiquette")，然后您就可以尽情发表您的高见、帮助菜鸟或是结交新友了。如果在论坛发现他人的违规行为，请使用论坛页面底部的 Report 功能举报。
 
 ### 完善维基
 
@@ -39,7 +39,7 @@
 
 ### 加入聊天室
 
-可以在 [IRC 频道](/index.php/IRC_Channel "IRC Channel") 中帮助新人解决问题。进入前请先阅读[规则](/index.php/IRC_Channel#archlinux_rules "IRC Channel")和[指南](/index.php/IRC_Channel#archlinux_guidelines "IRC Channel")。[有许多频道](/index.php/IRC_Channels "IRC Channels")专门用来讨论不同的问题。
+可以在 [IRC 频道](/index.php/IRC_channel "IRC channel") 中帮助新人解决问题。进入前请先阅读[规则](/index.php/IRC_channel#archlinux_rules "IRC channel")和[指南](/index.php/IRC_channel#archlinux_guidelines "IRC channel")。[有许多频道](/index.php/IRC_channels "IRC channels")专门用来讨论不同的问题。
 
 ### 报告安装的软件
 
@@ -49,7 +49,7 @@
 
 您还可以通过到 [Arch Linux Bugtracker](https://bugs.archlinux.org/) 汇报 bug 来帮忙。
 
-但若汇报的问题无意义时，反而会浪费大家的时间。如有意参与其中，请先阅读 [Bug 汇报指南](/index.php/Reporting_Bug_Guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reporting Bug Guidelines (简体中文)")。
+但若汇报的问题无意义时，反而会浪费大家的时间。如有意参与其中，请先阅读 [Bug 汇报指南](/index.php/Reporting_bug_guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reporting bug guidelines (简体中文)")。
 
 ### 创建或维护 AUR 软件包
 
@@ -105,7 +105,7 @@ Arch 拥有一个充满活力的用户社区。如果您的项目想参与到社
 
 	一家由 Arch Linux 用户推动的大规模民间仓库。
 
-	[Unofficial User Repositories](/index.php/Unofficial_User_Repositories "Unofficial User Repositories")
+	[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
 
 	由社群成员维护的非官方二进制仓库。
 

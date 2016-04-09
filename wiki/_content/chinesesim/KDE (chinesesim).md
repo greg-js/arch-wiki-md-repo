@@ -111,7 +111,7 @@ KDE 上游维护了一份 [UserBase Wiki](http://userbase.kde.org/)。用户能�
 
 在安装Plasma之前，请确保[Xorg](/index.php/Xorg "Xorg")已经被安装到您的系统中
 
-安装基础包 [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 或者 完整的[plasma](https://www.archlinux.org/groups/x86_64/plasma/)。 For differences between [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) and [plasma](https://www.archlinux.org/groups/x86_64/plasma/) reference [KDE Packages](/index.php/KDE_Packages "KDE Packages"). Alternatively, for a more minimal Plasma installation, install the [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) package.
+安装基础包 [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 或者 完整的[plasma](https://www.archlinux.org/groups/x86_64/plasma/)。 关于 [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 和 [plasma](https://www.archlinux.org/groups/x86_64/plasma/)两者的不同请参阅这里 [KDE Packages](/index.php/KDE_Packages "KDE Packages")。如果想要最小化安装Plasma，可以安装 [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) 包。
 
 ### 升级KDE 4到Plasma 5
 
@@ -127,13 +127,13 @@ KDE 上游维护了一份 [UserBase Wiki](http://userbase.kde.org/)。用户能�
 
 你能够通过安装[kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/)或者安装[kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta)基础包具体模块来安装全部的KDE Applications（应用）。 请注意这仅仅安装applications（应用），并没有安装 Plasma 桌面。
 
-如果你需要语言文件，你需要安装通用语言包`kde-l10n-**yourlanguagehere**` (e.g. [kde-l10n-zh_cn](https://www.archlinux.org/packages/?name=kde-l10n-zh_cn) 。你能够参考全部的语言包列表[this link](https://www.archlinux.org/packages/extra/any/kde-l10n/).
+如果你需要语言文件，你需要安装语言包`kde-l10n-**yourlanguagehere**` (e.g. [kde-l10n-zh_cn](https://www.archlinux.org/packages/?name=kde-l10n-zh_cn) 。你可以在这里[this link](https://www.archlinux.org/packages/extra/any/kde-l10n/)查阅所有可用的语言)
 
 ## 启动 Plasma
 
 **Tip:**
 
-*   Plasma 5不支持 [KDM](/index.php/KDM "KDM"). KDE 团队 [recommends](http://blog.davidedmundson.co.uk/blog/display_managers_finale)推荐使用 [SDDM](/index.php/SDDM "SDDM") 显示管理，因为他和Plasma 5桌面主题能够很好的整合。
+*   Plasma 5不支持 [KDM](/index.php/KDM "KDM"). KDE 团队 [recommends](http://blog.davidedmundson.co.uk/blog/display_managers_finale)推荐使用 [SDDM](/index.php/SDDM "SDDM") 显示管理，因为它和Plasma 5桌面主题能够很好的整合。
 *   推荐编辑`/etc/sddm.conf`使用微风主题，这样能够更好的和Plasma5整合。 参考 [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM")
 
 在你的 [display manager](/index.php/Display_manager "Display manager") 菜单选择“Plasma”启动 Plasma 5 会话 。

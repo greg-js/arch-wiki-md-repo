@@ -40,4 +40,4 @@ Discussões internacionais estão disponíveis nos seguintes canais, também loc
 ## Páginas relacionadas
 
 *   [International communities](/index.php/International_communities "International communities")
-*   [IRC Channel](/index.php/IRC_Channel "IRC Channel")
+*   [IRC channel](/index.php/IRC_channel "IRC channel")

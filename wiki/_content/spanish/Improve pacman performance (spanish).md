@@ -294,4 +294,4 @@ Cuando pacman descarga paquetes utiliza los mirrors en el orden en que aparecen 
 
 Si se dispone de más de una máquina con Arch Linux conectadas a una red local, se pueden compartir paquetes para disminuir los tiempos de descarga. Tenga presente que no se pueden compartir paquetes entre diferentes arquitecturas (es decir, i686 y x86_64) o generarán problemas.
 
-Véase [Pacman tips#Network_shared_pacman_cache](/index.php/Pacman_tips#Network_shared_pacman_cache "Pacman tips").
+Véase [Pacman tips#Network shared pacman cache](/index.php/Pacman_tips#Network_shared_pacman_cache "Pacman tips").

@@ -18,7 +18,7 @@ Antes de começar assegure-se que faz o seguinte:
 1.  Verifique que não tem nenhum utilizador ou grupo chamado "irc" pois o daemon vai criar e correr usando os privilégios deste utilizador (por questões de segurança).
 2.  Leia como compilar pacotes do [AUR](/index.php/AUR "AUR") (veja [ABS](/index.php/ABS "ABS")) ou instale o [yaourt](/index.php/Yaourt "Yaourt") (**recomendado**) que automatiza todo o processo.
 
-Agora que já instalou o [yaourt](/index.php/Yaourt "Yaourt") pode instalar o [inspircd](/index.php/Inspircd "Inspircd") correndo o seguinte comando:
+Agora que já instalou o [yaourt](/index.php/Yaourt "Yaourt") pode instalar o [InspIRCd](/index.php/InspIRCd "InspIRCd") correndo o seguinte comando:
 
 ```
 yaourt inspircd

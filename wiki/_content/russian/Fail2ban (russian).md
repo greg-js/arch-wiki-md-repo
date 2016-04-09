@@ -30,7 +30,7 @@ Currently, fail2ban requires to run as root, therefore you may wish to consider 
 
 ### Capabilities
 
-For added security consider limiting fail2ban capabilities by specifying `CapabilityBoundingSet` in the [drop-in configuration file](/index.php/Systemd#Editing_provided_unit_files "Systemd") for the provided `fail2ban.service`:
+For added security consider limiting fail2ban capabilities by specifying `CapabilityBoundingSet` in the [drop-in configuration file](/index.php/Systemd#Editing_provided_units "Systemd") for the provided `fail2ban.service`:
 
  `/etc/systemd/system/fail2ban.service.d/capabilities.conf` 
 ```

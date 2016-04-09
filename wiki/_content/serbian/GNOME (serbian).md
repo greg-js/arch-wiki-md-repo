@@ -308,7 +308,7 @@ Za vise detalja pogledajte man stranicu za pklocalauthority.
 
 ### Privilegije za skaliranje procesora
 
-Pogledajte [cpufrequtils clanak](/index.php/Cpufreq#Privilege_Granting_Under_Gnome "Cpufreq").
+Pogledajte [cpufrequtils clanak](/index.php/Cpufreq#Privilege_granting_under_GNOME "Cpufreq").
 
 ## GDM (GNOM menadzer ekrana)
 

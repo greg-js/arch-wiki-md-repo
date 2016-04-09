@@ -43,7 +43,7 @@ Un comando d'installazione d'esempio:
 
 ```
 
-Può essere utile guardare anche [Uniformare il look di applicazioni QT e GTK - Come posso configurare lo stile per ogni toolkit](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(Italiano)#Come_posso_configurare_lo_stile_per_ogni_toolkit.3F "Uniform Look for QT and GTK Applications (Italiano)")
+Può essere utile guardare anche [Uniformare il look di applicazioni QT e GTK - Come posso configurare lo stile per ogni toolkit](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Italiano)#Come_posso_configurare_lo_stile_per_ogni_toolkit.3F "Uniform look for Qt and GTK applications (Italiano)")
 
 ## Temi
 
@@ -60,7 +60,7 @@ Per cambiare il tema è possibile usare *gtk-theme-switch2*. Per avviarlo basta 
 
 ### GTK+ 2.x
 
-I maggiori [ambienti desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") muniscono l'utente di strumenti per configurare il tema GTK+, le icone, il font e la sua dimensione. In alternativa, si possono usare programmi come quelli appena menzionati.
+I maggiori [ambienti desktop](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") muniscono l'utente di strumenti per configurare il tema GTK+, le icone, il font e la sua dimensione. In alternativa, si possono usare programmi come quelli appena menzionati.
 
 È raccomandato anche [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") alcuni temi GTK+ 2\. Il famoso tema *Clearlooks* è incluso al pacchetto [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines).
 
@@ -87,7 +87,7 @@ gtk-theme-name = "Murrine-Gray"
 gtk-font-name = "DejaVu Sans 8"
 ```
 
-**Note:** L'esempio appena riportato richiede i pacchetti [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu), [tango-icon-theme](https://aur.archlinux.org/packages/tango-icon-theme/), [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine) da [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), e [murrine-themes-collection](https://aur.archlinux.org/packages/murrine-themes-collection/) da [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)").
+**Note:** L'esempio appena riportato richiede i pacchetti [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu), [tango-icon-theme](https://aur.archlinux.org/packages/tango-icon-theme/), [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine) da [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), e [murrine-themes-collection](https://aur.archlinux.org/packages/murrine-themes-collection/) da [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)").
 
 ### GTK+ 3.x
 
@@ -136,7 +136,7 @@ find $(find ~/.themes /usr/share/themes/ -wholename "*/gtk-3.0" | sed -e "s/^\(.
 
 ### GTK+ e QT
 
-Se avete applicazioni sia in GTK+ che QT (KDE) allora dovreste sapere che i loro look non vanno molto daccordo. Potete seguire questa guida per uniformarli [Uniform Look for QT and GTK Applications](/index.php/Uniform_Look_for_QT_and_GTK_Applications "Uniform Look for QT and GTK Applications").
+Se avete applicazioni sia in GTK+ che QT (KDE) allora dovreste sapere che i loro look non vanno molto daccordo. Potete seguire questa guida per uniformarli [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
 ## Configuration file
 

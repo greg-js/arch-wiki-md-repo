@@ -129,18 +129,6 @@ Install the desired Android SDK Platform package from the [AUR](/index.php/AUR "
 *   [android-platform-16](https://aur.archlinux.org/packages/android-platform-16/)
 *   [android-platform-15](https://aur.archlinux.org/packages/android-platform-15/)
 *   [android-platform-14](https://aur.archlinux.org/packages/android-platform-14/)
-*   [android-platform-13](https://aur.archlinux.org/packages/android-platform-13/)
-*   [android-platform-12](https://aur.archlinux.org/packages/android-platform-12/)
-*   [android-platform-11](https://aur.archlinux.org/packages/android-platform-11/)
-*   [android-platform-10](https://aur.archlinux.org/packages/android-platform-10/)
-*   [android-platform-9](https://aur.archlinux.org/packages/android-platform-9/)
-*   [android-platform-8](https://aur.archlinux.org/packages/android-platform-8/)
-*   [android-platform-7](https://aur.archlinux.org/packages/android-platform-7/)
-*   [android-platform-6](https://aur.archlinux.org/packages/android-platform-6/)
-*   [android-platform-5](https://aur.archlinux.org/packages/android-platform-5/)
-*   [android-platform-4](https://aur.archlinux.org/packages/android-platform-4/)
-*   [android-platform-3](https://aur.archlinux.org/packages/android-platform-3/)
-*   [android-platform-2](https://aur.archlinux.org/packages/android-platform-2/)
 
 ### Development environment
 
@@ -169,17 +157,7 @@ export ANDROID_HOME=/opt/android-sdk
 
 **Note:** Since 2014-12-08, the ADT plugin is officially considered deprecated and Android Studio is now the official IDE.
 
-Most stuff required for Android development in Eclipse is already packaged in AUR:
-
-Official plugin by Google – [Eclipse ADT](http://developer.android.com/sdk/eclipse-adt.html):
-
-1.  [eclipse-android](https://aur.archlinux.org/packages/eclipse-android/)
-
-Dependencies:
-
-1.  [eclipse-emf](https://aur.archlinux.org/packages/eclipse-emf/)
-2.  [eclipse-gef](https://aur.archlinux.org/packages/eclipse-gef/)
-3.  [eclipse-wtp](https://aur.archlinux.org/packages/eclipse-wtp/)
+The official, but deprecated, [Eclipse ADT](http://developer.android.com/sdk/eclipse-adt.html) plugin can be installed with the [eclipse-android](https://aur.archlinux.org/packages/eclipse-android/) package.
 
 **Note:**
 

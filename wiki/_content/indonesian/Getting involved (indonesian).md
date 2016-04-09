@@ -45,7 +45,7 @@ Jika Anda merasa sanggup untuk [mengedit halaman wiki](/index.php/Help:Editing "
 3.  [Tambahkan](/index.php/Special:WhatLinksHere/Template:Translateme "Special:WhatLinksHere/Template:Translateme") atau [tingkatkan](/index.php/Special:WhatLinksHere/Template:Bad_translation "Special:WhatLinksHere/Template:Bad translation") kualitas terjemahan dari sebuah artikel dan pastikan semuanya tetap sinkron.
 4.  Kurangi dan [gabungkan](/index.php/Special:WhatLinksHere/Template:Merge "Special:WhatLinksHere/Template:Merge") artikel yang duplikat.
 5.  Perbaiki [ketidakakurattan](/index.php/Special:WhatLinksHere/Template:Accuracy "Special:WhatLinksHere/Template:Accuracy") atau [artikel kadaluarsa](/index.php/Special:WhatLinksHere/Template:Out_of_date "Special:WhatLinksHere/Template:Out of date") serta [gaya penulisan](/index.php/Help:Style "Help:Style") yang sesuai dengan EYD (ejaan yang disempurnakan).
-6.  Kurangi jumlah [kategori](/index.php/Special:Categories "Special:Categories") dengan cara menggabungkan kategori yang bermakna sama serta tingkatkan [menu navigasi](/index.php/Table_of_Contents "Table of Contents") dari wiki.
+6.  Kurangi jumlah [kategori](/index.php/Special:Categories "Special:Categories") dengan cara menggabungkan kategori yang bermakna sama serta tingkatkan [menu navigasi](/index.php/Table_of_contents "Table of contents") dari wiki.
 7.  [Mengkategorikan artikel yang tidak memiliki kategori.](/index.php/Special:UncategorizedPages "Special:UncategorizedPages").
 8.  Tambahkan [ringkasan artikel](/index.php/Writing_Article_Overviews "Writing Article Overviews") dibagian *summary* disemua artikel.
 9.  Perbarui halaman [FAQ](/index.php/FAQ "FAQ") dengan pertanyaan yang lebih relevan dari forum dan hapus pertanyaan yang kurang berguna lainnya.

@@ -1,6 +1,6 @@
-이 문서는 공식 설치 매체를 이용한 [아치 리눅스](/index.php/Arch_Linux_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Arch Linux (한국어)") 설치 방법을 안내합니다. 설치를 시작하기 전에 [FAQ](/index.php/FAQ "FAQ") 문서를 확인하는 것이 좋습니다. 더 자세하고 긴 설치 안내서를 원한다면 [초보자 안내서](/index.php/Beginners%27_Guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' Guide (한국어)")로 이동하십시오. 특수한 설치를 원하는 경우 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")의 문서들을 확인하십시오.
+이 문서는 공식 설치 매체를 이용한 [아치 리눅스](/index.php/Arch_Linux_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Arch Linux (한국어)") 설치 방법을 안내합니다. 설치를 시작하기 전에 [FAQ](/index.php/FAQ "FAQ") 문서를 확인하는 것이 좋습니다. 더 자세하고 긴 설치 안내서를 원한다면 [초보자 안내서](/index.php/Beginners%27_guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' guide (한국어)")로 이동하십시오. 특수한 설치를 원하는 경우 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")의 문서들을 확인하십시오.
 
-대개의 경우, 커뮤니티가 관리하는 이 위키나 각 프로그램의 [man page](/index.php/Man_page "Man page")를 통해 정보와 도움을 얻을 수 있습니다. 다른 사람들과 대화하며 도움을 얻고 싶다면, [IRC 채널](/index.php/IRC_Channel "IRC Channel")이나 [포럼](https://bbs.archlinux.org/)을 사용하십시오.
+대개의 경우, 커뮤니티가 관리하는 이 위키나 각 프로그램의 [man page](/index.php/Man_page "Man page")를 통해 정보와 도움을 얻을 수 있습니다. 다른 사람들과 대화하며 도움을 얻고 싶다면, [IRC 채널](/index.php/IRC_channel "IRC channel")이나 [포럼](https://bbs.archlinux.org/)을 사용하십시오.
 
 ## Contents
 
@@ -39,7 +39,7 @@ ISO 이미지를 다운로드받은 후에는 반드시 전자서명 키를 이�
 
 ### 디스크 파티션 설정
 
-자세한 사항은 [partitioning](/index.php/Partitioning "Partitioning")을 보십시오. 몇가지 특수한 파티션을 만들어야 할 수 있습니다. [UEFI#EFI System Partion](/index.php/UEFI#EFI_System_Partion "UEFI")문서와 [GRUB BIOS 부트 파티션](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") 문서를 참고하십시오. [LVM](/index.php/LVM "LVM"), [드라이브 암호화](/index.php/Disk_encryption "Disk encryption"), [RAID](/index.php/RAID "RAID")를 위하여 스택 블록 장치를 만들고자 한다면, 이 단계에서 만들도록 하십시오.
+자세한 사항은 [partitioning](/index.php/Partitioning "Partitioning")을 보십시오. 몇가지 특수한 파티션을 만들어야 할 수 있습니다. [UEFI#EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI")문서와 [GRUB BIOS 부트 파티션](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") 문서를 참고하십시오. [LVM](/index.php/LVM "LVM"), [드라이브 암호화](/index.php/Disk_encryption "Disk encryption"), [RAID](/index.php/RAID "RAID")를 위하여 스택 블록 장치를 만들고자 한다면, 이 단계에서 만들도록 하십시오.
 
 ### 파티션 포맷
 
@@ -51,7 +51,7 @@ ISO 이미지를 다운로드받은 후에는 반드시 전자서명 키를 이�
 
 ### 인터넷에 연결
 
-유선 연결을 사용할 경우, DHCP Discovery를 이용하여 자동으로 인터넷에 연결될 것입니다. [Network Configuration](/index.php/Network_Configuration "Network Configuration")문서에서 더 자세한 내용을 읽으십시오. 지원되는 무선 네트워크 장치를 사용하고 있다면, `wifi-menu` 명령을 내려 네트워크에 연결하십시오. [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")문서에 더 자세한 내용이 있습니다. 고정 IP나 네트워크 관리 도구를 사용해야 한다면, `systemctl stop dhcpcd.service` 명령으로 DHCP Discovery 서비스를 종료하고, [Netctl](/index.php/Netctl "Netctl")문서를 읽으십시오.
+유선 연결을 사용할 경우, DHCP Discovery를 이용하여 자동으로 인터넷에 연결될 것입니다. [Network configuration](/index.php/Network_configuration "Network configuration")문서에서 더 자세한 내용을 읽으십시오. 지원되는 무선 네트워크 장치를 사용하고 있다면, `wifi-menu` 명령을 내려 네트워크에 연결하십시오. [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")문서에 더 자세한 내용이 있습니다. 고정 IP나 네트워크 관리 도구를 사용해야 한다면, `systemctl stop dhcpcd.service` 명령으로 DHCP Discovery 서비스를 종료하고, [Netctl](/index.php/Netctl "Netctl")문서를 읽으십시오.
 
 ## 설치하기
 
@@ -111,7 +111,7 @@ ISO 이미지를 다운로드받은 후에는 반드시 전자서명 키를 이�
 
 콘솔 [키맵](/index.php/Keymap "Keymap") 및 [글꼴](/index.php/Fonts#Console_fonts "Fonts") 설정을 `/etc/vconsole.conf`에 추가합니다.
 
-새로 설치한 시스템에 다시 한번 네트워크를 설정합니다. [네트워크 설정](/index.php/Network_Configuration "Network Configuration")과 [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")문서를 보십시오.
+새로 설치한 시스템에 다시 한번 네트워크를 설정합니다. [네트워크 설정](/index.php/Network_configuration "Network configuration")과 [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")문서를 보십시오.
 
 자신의 필요에 따라 `/etc/mkinitcpio.conf`([mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 참조)를 편집하고 다음의 명령어로 초기 램 디스크를 만듭니다.
 
@@ -136,6 +136,6 @@ ISO 이미지를 다운로드받은 후에는 반드시 전자서명 키를 이�
 
 ## 설치 후
 
-시스템 관리에 대한 안내나 GUI 환경 설정, 소리, 터치패드 등 설치 완료 후 할 일에 대한 안내가 필요하다면 [General Recommendations (한국어)](/index.php/General_Recommendations_(%ED%95%9C%EA%B5%AD%EC%96%B4) "General Recommendations (한국어)") 문서를 참고하십시오.
+시스템 관리에 대한 안내나 GUI 환경 설정, 소리, 터치패드 등 설치 완료 후 할 일에 대한 안내가 필요하다면 [General recommendations (한국어)](/index.php/General_recommendations_(%ED%95%9C%EA%B5%AD%EC%96%B4) "General recommendations (한국어)") 문서를 참고하십시오.
 
 [Common Applications](/index.php/Common_Applications "Common Applications")는 여러분이 관심을 가질 만한 프로그램 목록을 다룹니다.

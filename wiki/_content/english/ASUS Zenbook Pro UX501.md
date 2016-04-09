@@ -93,4 +93,4 @@ FONT=ter-v28b
 
 ## See also
 
-*   **[Bumblebee](https://wiki.archlinux.org/index.php/Bumblebee)** - To configure intel/nvidia hybrid graphics
+*   **[Bumblebee](/index.php/Bumblebee "Bumblebee")** - To configure intel/nvidia hybrid graphics

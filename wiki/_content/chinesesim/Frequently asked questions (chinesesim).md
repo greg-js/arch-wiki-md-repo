@@ -44,12 +44,10 @@
     *   [4.2 Q) 拼写检查说所有文本都是错误的！](#Q.29_.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5.E8.AF.B4.E6.89.80.E6.9C.89.E6.96.87.E6.9C.AC.E9.83.BD.E6.98.AF.E9.94.99.E8.AF.AF.E7.9A.84.EF.BC.81)
 *   [5 64-bit](#64-bit)
     *   [5.1 我如何确定我的处理器是否支持 x86_64?](#.E6.88.91.E5.A6.82.E4.BD.95.E7.A1.AE.E5.AE.9A.E6.88.91.E7.9A.84.E5.A4.84.E7.90.86.E5.99.A8.E6.98.AF.E5.90.A6.E6.94.AF.E6.8C.81_x86_64.3F)
-*   [6 为什么使用64位?](#.E4.B8.BA.E4.BB.80.E4.B9.88.E4.BD.BF.E7.94.A864.E4.BD.8D.3F)
-*   [7 我能否在Arch64里运行32-bit应用程序？](#.E6.88.91.E8.83.BD.E5.90.A6.E5.9C.A8Arch64.E9.87.8C.E8.BF.90.E8.A1.8C32-bit.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.EF.BC.9F)
-*   [8 我可以在Arch64下编译给i686用的32-bit软件包吗？](#.E6.88.91.E5.8F.AF.E4.BB.A5.E5.9C.A8Arch64.E4.B8.8B.E7.BC.96.E8.AF.91.E7.BB.99i686.E7.94.A8.E7.9A.8432-bit.E8.BD.AF.E4.BB.B6.E5.8C.85.E5.90.97.EF.BC.9F)
-    *   [8.1 Multilib 仓库 - Multilib Project](#Multilib_.E4.BB.93.E5.BA.93_-_Multilib_Project)
-    *   [8.2 Chroot](#Chroot)
-    *   [8.3 我可以无需重新安装将我的系统从i686升级/切换到x86_64吗？](#.E6.88.91.E5.8F.AF.E4.BB.A5.E6.97.A0.E9.9C.80.E9.87.8D.E6.96.B0.E5.AE.89.E8.A3.85.E5.B0.86.E6.88.91.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BB.8Ei686.E5.8D.87.E7.BA.A7.2F.E5.88.87.E6.8D.A2.E5.88.B0x86_64.E5.90.97.EF.BC.9F)
+    *   [5.2 32-bit Arch 中的所有软件包都有 64bit 版本吗?](#32-bit_Arch_.E4.B8.AD.E7.9A.84.E6.89.80.E6.9C.89.E8.BD.AF.E4.BB.B6.E5.8C.85.E9.83.BD.E6.9C.89_64bit_.E7.89.88.E6.9C.AC.E5.90.97.3F)
+    *   [5.3 为什么使用64位?](#.E4.B8.BA.E4.BB.80.E4.B9.88.E4.BD.BF.E7.94.A864.E4.BD.8D.3F)
+    *   [5.4 我可以在Arch64下编译给i686用的32-bit软件包吗？](#.E6.88.91.E5.8F.AF.E4.BB.A5.E5.9C.A8Arch64.E4.B8.8B.E7.BC.96.E8.AF.91.E7.BB.99i686.E7.94.A8.E7.9A.8432-bit.E8.BD.AF.E4.BB.B6.E5.8C.85.E5.90.97.EF.BC.9F)
+    *   [5.5 我可以无需重新安装将我的系统从i686升级/切换到x86_64吗？](#.E6.88.91.E5.8F.AF.E4.BB.A5.E6.97.A0.E9.9C.80.E9.87.8D.E6.96.B0.E5.AE.89.E8.A3.85.E5.B0.86.E6.88.91.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BB.8Ei686.E5.8D.87.E7.BA.A7.2F.E5.88.87.E6.8D.A2.E5.88.B0x86_64.E5.90.97.EF.BC.9F)
 
 ## 一般问题
 
@@ -118,7 +116,7 @@ Arch使用滚动升级模式，只需执行一条命令，便可升级系统到�
 
 ### Q) 为什么Arch下网速比其他系统慢？
 
-**A)**网络是否正确配置，读一读新手指南中的[网络配置](/index.php/Beginners_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.BB.9F "Beginners Guide (简体中文)")。
+**A)**网络是否正确配置，读一读新手指南中的[网络配置](/index.php/Beginners_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE.E7.BD.91.E7.BB.9C "Beginners Guide (简体中文)")。
 
 ### Q) Arch为什么用了我的所有内存？
 
@@ -237,7 +235,7 @@ libbaz=1.5
 
 ### Q) Arch需要安装程序，比如带图形界面的。
 
-**A)** 由于Arch通常不需要多次安装（采取滚动升级），安装程序并不是开发者和用户关注的重点。[Installation Guide (简体中文)](/index.php/Installation_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation Guide (简体中文)") 和 [Beginners' Guide (简体中文)](/index.php/Beginners%27_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' Guide (简体中文)") 已经完全更新到使用命令行的版本。如果想使用安装程序，可以试试[Archboot](/index.php/Archboot "Archboot").
+**A)** 由于Arch通常不需要多次安装（采取滚动升级），安装程序并不是开发者和用户关注的重点。[Installation guide (简体中文)](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)") 和 [Beginners' guide (简体中文)](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' guide (简体中文)") 已经完全更新到使用命令行的版本。如果想使用安装程序，可以试试[Archboot](/index.php/Archboot "Archboot").
 
 ### 我安装了Arch，现在正面对一个命令行登陆界面，怎么办？
 
@@ -245,7 +243,7 @@ libbaz=1.5
 
 ### Q) 哪个桌面环境或窗口管理器比较好？
 
-**A)** 有很多选项，选择最适合你的即可。参见：[桌面环境](/index.php/Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop Environment (简体中文)")。
+**A)** 有很多选项，选择最适合你的即可。参见：[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")。
 
 ### Arch比起其他“小型”发行版，有何独特之处？
 
@@ -290,14 +288,17 @@ $ less /proc/cpuinfo
 
 查找 `flags` 条目。如果你看见 `lm` 标志，那么你的处理器是支持 x86_64 的。
 
-或者你可以运行以下命令：
+Windows 用户可以使用免费软件 [CPU-Z](http://www.cpuid.com/cpuz.php)，可以确定CPU是否支持64位。
 
-```
-$ grep "^flags.*\blm\b" /proc/cpuinfo
+带有 AMD 的 "AMD64" 指令集或者英特尔的 "EM64T" 指令集的 CPU 兼容 x86_64 发行版和二进制包。
 
-```
+### 32-bit Arch 中的所有软件包都有 64bit 版本吗?
 
-## 为什么使用64位?
+绝大部分官方软件包都有 64-bit 版本，但是有些 32bit 程序需要启用 [multilib](/index.php/Multilib "Multilib") 仓库才能使用。 [软件包差异页面](https://www.archlinux.org/packages/differences/) 列出了 multilib 软件包和 32bit 原始编译软件包的一些差异。
+
+有很少部分 [AUR](/index.php/AUR "AUR") 中的包只列出了 `'i686'`，但是大部分包都可以在64位环境工作，只需要添加 `'x86_64'` 到 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")。
+
+### 为什么使用64位?
 
 64位系统(大多数情况下)更快，而且更安全。更安全是由于拥有 [Address space layout randomization (ASLR)](https://en.wikipedia.org/wiki/Address_space_layout_randomization "wikipedia:Address space layout randomization") 、 [Position-independent code (PIC)](https://en.wikipedia.org/wiki/Position-independent_code "wikipedia:Position-independent code") 特性，以及 [NX Bit](https://en.wikipedia.org/wiki/NX_Bit "wikipedia:NX Bit") (它在i686内核中由于禁用了PAE而无法使用)。如果你的计算机在运行4GB或者更多的内容，应该使用64位系统，因为多余的内存无法被32位系统分配。
 
@@ -305,165 +306,14 @@ $ grep "^flags.*\blm\b" /proc/cpuinfo
 
 还有许多其他的理由让我们不使用32位系统，但是在内核、用户空间和单独的程序中我们没有办法列出所有的64位比32位做得好的地方。
 
-## 我能否在Arch64里运行32-bit应用程序？
+### 我可以在Arch64下编译给i686用的32-bit软件包吗？
 
-可以！
-
-*   你可使用 multilib 软件仓库中的 `lib32-*` 库。添加下面几行到 `/etc/pacman.conf` 启用该软件仓库：
-
-```
-[multilib]
-Include = /etc/pacman.d/mirrorlist
-
-```
-
-现在(2011年12月)，它包含 wine 和 skype。另外，还包含一个 multilib 编译器。
-
-*   或者你可以创建另一个使用32位系统的 chroot (参考 [Arch64 Install bundled 32bit system](/index.php/Arch64_Install_bundled_32bit_system "Arch64 Install bundled 32bit system")):
-
-启动到Arch64，startx，打开一个终端：
-
-```
-$ xhost +local:
-$ su
-# mount /dev/sda1 /mnt/arch32
-# mount --bind /proc /mnt/arch32/proc
-# chroot /mnt/arch32
-# su your32bitusername
-$ /usr/bin/command-you want # or eg: /opt/mozilla/bin/firefox
-
-```
-
-某些32-bit应用程序（例如OpenOffice）可能需要其它绑定。下面几行可以放到rc.local里以确保满足所有32-bit应用程序的需要（假设fstab里已经挂载/mnt/arch32于）：
-
-```
-mount --bind /dev /mnt/arch32/dev
-mount --bind /dev/pts /mnt/arch32/dev/pts
-mount --bind /dev/shm /mnt/arch32/dev/shm
-mount --bind /proc /mnt/arch32/proc
-mount --bind /proc/bus/usb /mnt/arch32/proc/bus/usb
-mount --bind /sys /mnt/arch32/sys
-mount --bind /tmp /mnt/arch32/tmp
-#如果你不使用同一个home文件夹的话，可以注释掉下面这行
-mount --bind /home /mnt/arch32/home
-
-```
-
-然后在终端里输入：
-
-```
-$ xhost +localhost
-$ sudo chroot /mnt/arch32 su your32bitusername /opt/openoffice/program/soffice
-
-```
-
-## 我可以在Arch64下编译给i686用的32-bit软件包吗？
-
-可以。你可以使用：
-
-*   从multilibC仓库中使用相关包的 multilib 版本，或者
-*   一个 i686 chroot。
-
-### Multilib 仓库 - [Multilib Project](/index.php/Multilib_Project "Multilib Project")
-
-想要使用 multilib 仓库，编辑 `/etc/pacman.conf` 添加下面内容：
-
-```
-[multilib]
-Include = /etc/pacman.d/mirrorlist
-
-```
-
-升级系统：
-
-```
-# pacman -Syu
-
-```
-
-然后安装 [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) 及其依赖。
-
-```
-pacman -S gcc-multilib gcc-libs-multilib binutils-multilib libtool-multilib lib32-glibc
-
-```
-
-**注意:** 如果系统安装了 `base-devel` ，用户必须按照下面的说明用 [multilib] 版本替换 [extra] 版本。
-
-**注意:** [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) 能够编译32位和64位代码。你可以在 x86_64 系统中安全的安装 `multilib-devel` 然后移除 `base-devel`。参见 [https://bbs.archlinux.org/viewtopic.php?id=102828](https://bbs.archlinux.org/viewtopic.php?id=102828) 获取更多信息。
-
-```
-# pacman -S gcc-multilib gcc-libs-multilib binutils-multilib libtool-multilib lib32-glibc
-resolving dependencies...
-warning: dependency cycle detected:
-warning: lib32-gcc-libs will be installed before its gcc-libs-multilib dependency
-looking for inter-conflicts...
-:: gcc-libs-multilib and gcc-libs are in conflict. Remove gcc-libs? [y/N] y
-:: binutils-multilib and binutils are in conflict. Remove binutils? [y/N] y
-:: gcc-multilib and gcc are in conflict. Remove gcc? [y/N] y
-:: libtool-multilib and libtool are in conflict. Remove libtool? [y/N] y
-
-Remove (4): gcc-libs-4.6.1-1  binutils-2.21.1-1  gcc-4.6.1-1  libtool-2.4-4
-
-Total Removed Size:   87.65 MB
-
-Targets (7): lib32-glibc-2.14-4  lib32-gcc-libs-4.6.1-1  gcc-libs-multilib-4.6.1-1  binutils-multilib-2.21.1-1
-             gcc-multilib-4.6.1-1  lib32-libtool-2.4-2  libtool-multilib-2.4-2
-
-Total Download Size:    25.04 MB
-Total Installed Size:   108.27 MB
-
-Proceed with installation? [Y/n]
-
-```
-
-在 x86_64 系统上编译 i686 程序，只需要简单的添加下面的几行到 `~/.makepkg.conf`
-
-```
-CARCH="i686"
-CHOST="i686-pc-linux-gnu"
-CFLAGS="-m32 -march=i686 -mtune=generic -O2 -pipe -fstack-protector --param=ssp-buffer-size=4 -D_FORTIFY_SOURCE=2"
-CXXFLAGS="${CFLAGS}"
-
-```
-
-然后通过下面的命令调用 makepkg
-
-```
-$ linux32 makepkg -src
-
-```
-
-记得编译完成 i686 包之后移除或更改 `~/.makepkg.conf`。
-
-### Chroot
-
-想要使用 i686 chroot (推荐在Arch64里使用i686 iso的"quickinstall"来安装，或者参考 [Arch64 Install bundled 32bit system](/index.php/Arch64_Install_bundled_32bit_system "Arch64 Install bundled 32bit system"))。从current仓库安装"linux32" 封装包，使得chroot象一个真正的i686系统。然后用这个脚本以root身份登录到chroot环境：
-
-```
-#!/bin/bash
-mount --bind /dev /path-to-your-chroot/dev
-mount --bind /dev/pts /path-to-your-chroot/dev/pts
-mount --bind /dev/shm /path-to-your-chroot/dev/shm
-mount -t proc none /path-to-your-chroot/proc
-mount -t sysfs none /path-to-your-chroot/sys
-linux32 chroot /path-to-your-chroot
-
-```
-
-如果你在x86_64宿主系统里保留了源码，你可以在脚本里再加入
-
-```
-"mount --bind /path-to-your-stored-sources /path-to-your-chroot/path-to-your-stored-sources" 
-
-```
-
-使得宿主可以共享源码给chroot系统，使得可以在 `/etc/makepkg.conf` 中用来创建软件包。
+可以使用 [multilib](/index.php/Multilib "Multilib") 仓库并设置 [makepkg config](/index.php/Makepkg#Build_32-bit_packages_on_a_64-bit_system "Makepkg") 进行编译或者 [在 64-bit 系统中安装一个 32-bit 系统](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system").
 
 ### 我可以无需重新安装将我的系统从i686升级/切换到x86_64吗？
 
-不可以。但是有一个[帖子](https://bbs.archlinux.org/viewtopic.php?id=64485)说明了如果成功的从32位迁移到64位而不损失任何配置/设置/数据。注意：需要用一个大的外置硬盘来完成迁移
+不可以。所有软件包都需要重新安装，有些配置文件也需要修改。但是重新安装时不需要重新分区和格式化磁盘，所以有机会导入所有的旧数据。
 
-然而，你也可以用Arch64安装光盘启动系统，挂载磁盘，备份所有你希望保留的非32-bit二进制文件（例如/home和/etc，然后开始安装。
+可以用Arch64安装光盘启动系统，挂载磁盘，备份所有希望保留的非32-bit二进制文件（例如/home和/etc)，然后开始安装。
 
-你也许需要阅读 [Migrating Between Architectures Without Reinstalling](/index.php/Migrating_Between_Architectures_Without_Reinstalling "Migrating Between Architectures Without Reinstalling")。
+参考：[Migrating Between Architectures Without Reinstalling](/index.php/Migrating_Between_Architectures_Without_Reinstalling "Migrating Between Architectures Without Reinstalling")。

@@ -18,7 +18,7 @@
 
 ## 设置和安装
 
-[intel-parallel-studio-xe](https://aur.archlinux.org/packages/intel-parallel-studio-xe/) 位于 [AUR](/index.php/AUR "AUR"). 为了构建这个包，用户必须有一个许可文件，这个许可文件对个人和非商业用途免费。 这份许可文件可以通过电子邮件发送给用户 [[注册](https://registrationcenter.intel.com/RegCenter/AutoGen.aspx?ProductID=1517&AccountID=&EmailID=&ProgramID=&RequestDt=&rm=NCOM&lang=)] 并且应该在运行mkaepkg前复制到 $startdir 里. 当前的PKGBUILD需要7到8个包:
+[intel-parallel-studio-xe](https://aur.archlinux.org/packages/intel-parallel-studio-xe/) 位于 [AUR](/index.php/AUR "AUR"). 为了构建这个包，用户必须有一个许可文件，这个许可文件对个人和非商业用途免费。 这份许可文件可以通过电子邮件发送给用户 [注册](https://registrationcenter.intel.com/RegCenter/AutoGen.aspx?ProductID=1517&AccountID=&EmailID=&ProgramID=&RequestDt=&rm=NCOM&lang=) 并且应该在运行mkaepkg前复制到 $startdir 里. 当前的PKGBUILD需要7到8个包:
 
 *   **intel-compiler-base** - Intel C/C++ 编译器和基本库
 *   **intel-fortran-compiler** - Intel fortran 编译器和基本库 (仅 Parallel Studio XE)
@@ -146,4 +146,4 @@ pdcm sse4_1 lahf_lm dts tpr_shadow vnmi flexpriority
 | Unsuccessful | 可以编译，但有错误 |
 | Not recommended | 可以编译，但不推荐 |
 | Fail | 无法使用ICC编译这个包 |
-| Out of date | 用以前的CFLAGS不成功，你可以试试新的 [方法1](/index.php/Intel_C%2B%2B_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Method_1 "Intel C++ (简体中文)")，别忘了把结果贴上来！ |
+| Out of date | 用以前的CFLAGS不成功，你可以试试新的[方法1](#Method_1)，别忘了把结果贴上来！ |

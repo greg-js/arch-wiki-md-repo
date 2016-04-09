@@ -3,26 +3,29 @@ Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passt
 ## Contents
 
 *   [1 Prerequisites](#Prerequisites)
-*   [2 Installation](#Installation)
-*   [3 Setting up libvirt](#Setting_up_libvirt)
-*   [4 Enabling IOMMU](#Enabling_IOMMU)
+*   [2 Setting up IOMMU](#Setting_up_IOMMU)
+    *   [2.1 Enabling IOMMU](#Enabling_IOMMU)
+    *   [2.2 Ensuring that the groups are valid](#Ensuring_that_the_groups_are_valid)
+    *   [2.3 Gotchas](#Gotchas)
+        *   [2.3.1 Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot)
+*   [3 Installation](#Installation)
+*   [4 Setting up libvirt](#Setting_up_libvirt)
 *   [5 User-level access to devices](#User-level_access_to_devices)
 *   [6 Isolating the GPU](#Isolating_the_GPU)
     *   [6.1 vfio-pci](#vfio-pci)
     *   [6.2 pci-stub](#pci-stub)
     *   [6.3 Blacklisting modules](#Blacklisting_modules)
     *   [6.4 Binding to VFIO](#Binding_to_VFIO)
-*   [7 IOMMU groups](#IOMMU_groups)
-    *   [7.1 ACS Override Patch](#ACS_Override_Patch)
-*   [8 QEMU permissions](#QEMU_permissions)
-*   [9 QEMU commands](#QEMU_commands)
-*   [10 Create and configure VM for OVMF](#Create_and_configure_VM_for_OVMF)
-*   [11 Complete example for QEMU (CLI-based) without libvirtd](#Complete_example_for_QEMU_.28CLI-based.29_without_libvirtd)
-*   [12 Complete example for QEMU with libvirtd](#Complete_example_for_QEMU_with_libvirtd)
-*   [13 Control VM via Synergy](#Control_VM_via_Synergy)
-*   [14 Operating system](#Operating_system)
-*   [15 Make Nvidia's GeForce Experience work](#Make_Nvidia.27s_GeForce_Experience_work)
-*   [16 See also](#See_also)
+    *   [6.5 ACS Override Patch](#ACS_Override_Patch)
+*   [7 QEMU permissions](#QEMU_permissions)
+*   [8 QEMU commands](#QEMU_commands)
+*   [9 Create and configure VM for OVMF](#Create_and_configure_VM_for_OVMF)
+*   [10 Complete example for QEMU (CLI-based) without libvirtd](#Complete_example_for_QEMU_.28CLI-based.29_without_libvirtd)
+*   [11 Complete example for QEMU with libvirtd](#Complete_example_for_QEMU_with_libvirtd)
+*   [12 Control VM via Synergy](#Control_VM_via_Synergy)
+*   [13 Operating system](#Operating_system)
+*   [14 Make Nvidia's GeForce Experience work](#Make_Nvidia.27s_GeForce_Experience_work)
+*   [15 See also](#See_also)
 
 ## Prerequisites
 
@@ -37,6 +40,76 @@ A VGA Passthrough relies on a number of technologies that aren't ubiquitous as o
     *   If you can find [any ROM in this list](https://www.techpowerup.com/vgabios/) that applies to your specific GPU and is said to support UEFI, you're generally in the clear. If not, you might want to try anyway if you have a recent GPU.
 
 You'll probably want to have a spare monitor (the GPU won't display anything if there's no screen plugged it and using a VNC or Spice connection won't help your performance), as well as a mouse and a keyboard you can pass to your VM. If anything goes wrong, you'll at least have a way to control your host machine this way.
+
+## Setting up IOMMU
+
+### Enabling IOMMU
+
+Ensure that AMD-VI/VT-d is enabled in your BIOS settings. Both normally show up alongside other CPU features (meaning they could be in an overclocking-related menu) either with their actual names ("Vt-d" or "AMD-VI"), legacy names ("Vanderpool" for Vt-x, "Pacifica" for AMD-V) or in more ambiguous terms such as "Virtualization technology", which may or may not be explained in the manual.
+
+You'll also have to enable iommu support in the kernel itself through a [bootloader kernel option](/index.php/Kernel_parameters "Kernel parameters"). Depending on your type of CPU, use either `intel_iommu=on` for Intel CPUs (VT-d) or `amd_iommu=on` for AMD CPUs (AMD-Vi).
+
+After rebooting, check dmesg to confirm that IOMMU has been correctly enabled:
+
+ `dmesg|grep -e DMAR -e IOMMU` 
+```
+[    0.000000] ACPI: DMAR 0x00000000BDCB1CB0 0000B8 (v01 INTEL  BDW      00000001 INTL 00000001)
+[    0.000000] Intel-IOMMU: enabled
+[    0.028879] dmar: IOMMU 0: reg_base_addr fed90000 ver 1:0 cap c0000020660462 ecap f0101a
+[    0.028883] dmar: IOMMU 1: reg_base_addr fed91000 ver 1:0 cap d2008c20660462 ecap f010da
+[    0.028950] IOAPIC id 8 under DRHD base  0xfed91000 IOMMU 1
+[    0.536212] DMAR: No ATSR found
+[    0.536229] IOMMU 0 0xfed90000: using Queued invalidation
+[    0.536230] IOMMU 1 0xfed91000: using Queued invalidation
+[    0.536231] IOMMU: Setting RMRR:
+[    0.536241] IOMMU: Setting identity map for device 0000:00:02.0 [0xbf000000 - 0xcf1fffff]
+[    0.537490] IOMMU: Setting identity map for device 0000:00:14.0 [0xbdea8000 - 0xbdeb6fff]
+[    0.537512] IOMMU: Setting identity map for device 0000:00:1a.0 [0xbdea8000 - 0xbdeb6fff]
+[    0.537530] IOMMU: Setting identity map for device 0000:00:1d.0 [0xbdea8000 - 0xbdeb6fff]
+[    0.537543] IOMMU: Prepare 0-16MiB unity mapping for LPC
+[    0.537549] IOMMU: Setting identity map for device 0000:00:1f.0 [0x0 - 0xffffff]
+[    2.182790] [drm] DMAR active, disabling use of stolen memory
+```
+
+### Ensuring that the groups are valid
+
+The following command will allow you to see how your various PCI devices are mapped to IOMMU groups. If it does not return anything, you either haven't enabled IOMMU support properly or your hardware does not support it.
+
+ `$ for iommu_group in $(find /sys/kernel/iommu_groups/ -maxdepth 1 -mindepth 1 -type d); do echo "IOMMU group $(basename "$iommu_group")"; for device in $(ls -1 "$iommu_group"/devices/); do echo -n $'\t'; lspci -nns "$device"; done; done` 
+```
+IOMMU group 0
+	00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v2/Ivy Bridge DRAM Controller [8086:0158] (rev 09)
+IOMMU group 1
+	00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor PCI Express Root Port [8086:0151] (rev 09)
+IOMMU group 2
+	00:14.0 USB controller: Intel Corporation 7 Series/C210 Series Chipset Family USB xHCI Host Controller [8086:0e31] (rev 04)
+IOMMU group 4
+	00:1a.0 USB controller: Intel Corporation 7 Series/C210 Series Chipset Family USB Enhanced Host Controller #2 [8086:0e2d] (rev 04)
+IOMMU group 5
+	00:1b.0 Audio device: Intel Corporation 7 Series/C210 Series Chipset Family High Definition Audio Controller [8086:0e20] (rev 04)
+IOMMU group 10
+	00:1d.0 USB controller: Intel Corporation 7 Series/C210 Series Chipset Family USB Enhanced Host Controller #1 [8086:0e26] (rev 04)
+IOMMU group 13
+	06:00.0 VGA compatible controller: NVIDIA Corporation GM204 [GeForce GTX 970] [10de:13c2] (rev a1)
+	06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Audio Controller [10de:0fbb] (rev a1)
+```
+
+An IOMMU group is the smallest set of physical devices that can be passed to a virtual machine. For instance, in the example above, both the GPU in 06:00.0 and its audio controller in 6:00.1 belong to IOMMU group 13 and can only be passed be passed together. The frontal USB controller, however, has its own group (group 2) which is separate from both the USB expansion controller (group 10) and the rear USB controller (group 4), meaning that any of them could be passed to a VM without affecting the others.
+
+### Gotchas
+
+#### Plugging your guest GPU in an unisolated CPU-based PCIe slot
+
+Not all PCI-E slots are the same. Most motherboards have PCIe slots provided by both the CPU and the PCH. Depending on your CPU, it's possible that your processor-based PCIe slot (there's generally only one) doesn't support isolation properly, in which case the PCI slot itself will be appear to be grouped with the device that's connected to it.
+
+```
+IOMMU group 1
+	00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor PCI Express Root Port (rev 09)
+	01:00.0 VGA compatible controller: NVIDIA Corporation GM107 [GeForce GTX 750] (rev a2)
+	01:00.1 Audio device: NVIDIA Corporation Device 0fbc (rev a1)
+```
+
+This constitutes an improper grouping (the GPU is **not** properly isolated), which will lead to complications if you try to pass it to a guest OS and will most likely require you to install the ACS override patch, which comes with its own drawbacks. Unless you have a specific reason to keep your guest GPU plugged this way, such as physical space concerns or simply not having PCH-based PCIe slots on your motherboard, you may want to switch to one of your PCH-based slot instead. It is, however, completely fine to use said GPU on the host since it's not affected by those groups and is supposed to remain in control of the PCI root port anyway.
 
 ## Installation
 
@@ -67,34 +140,6 @@ This will be the BIOS that the VM will use. Non-UEFI users may need to use i440f
 See [Polkit#Bypass password prompt](/index.php/Polkit#Bypass_password_prompt "Polkit") to bypass the password prompt, install [libvirt](https://www.archlinux.org/packages/?name=libvirt), then [enable](/index.php/Enable "Enable") and start `libvirtd.service`.
 
 Start *virt-manager* and configure the hypervisor. Virtmanager should connect to the qemu session.
-
-## Enabling IOMMU
-
-Ensure that AMD-VI/VT-D is enabled in your BIOS settings.
-
-If your processor is Intel, add `intel_iommu=on` to your [bootloader kernel options](/index.php/Kernel_parameters "Kernel parameters"). Simlarly, if you have an AMD processor, add `amd_iommu=on`.
-
-After rebooting, check dmesg to confirm IOMMU is enabled:
-
- `dmesg|grep -e DMAR -e IOMMU` 
-```
-[    0.000000] ACPI: DMAR 0x00000000BDCB1CB0 0000B8 (v01 INTEL  BDW      00000001 INTL 00000001)
-[    0.000000] Intel-IOMMU: enabled
-[    0.028879] dmar: IOMMU 0: reg_base_addr fed90000 ver 1:0 cap c0000020660462 ecap f0101a
-[    0.028883] dmar: IOMMU 1: reg_base_addr fed91000 ver 1:0 cap d2008c20660462 ecap f010da
-[    0.028950] IOAPIC id 8 under DRHD base  0xfed91000 IOMMU 1
-[    0.536212] DMAR: No ATSR found
-[    0.536229] IOMMU 0 0xfed90000: using Queued invalidation
-[    0.536230] IOMMU 1 0xfed91000: using Queued invalidation
-[    0.536231] IOMMU: Setting RMRR:
-[    0.536241] IOMMU: Setting identity map for device 0000:00:02.0 [0xbf000000 - 0xcf1fffff]
-[    0.537490] IOMMU: Setting identity map for device 0000:00:14.0 [0xbdea8000 - 0xbdeb6fff]
-[    0.537512] IOMMU: Setting identity map for device 0000:00:1a.0 [0xbdea8000 - 0xbdeb6fff]
-[    0.537530] IOMMU: Setting identity map for device 0000:00:1d.0 [0xbdea8000 - 0xbdeb6fff]
-[    0.537543] IOMMU: Prepare 0-16MiB unity mapping for LPC
-[    0.537549] IOMMU: Setting identity map for device 0000:00:1f.0 [0x0 - 0xffffff]
-[    2.182790] [drm] DMAR active, disabling use of stolen memory
-```
 
 ## User-level access to devices
 
@@ -251,35 +296,6 @@ Example, blacklisting the opensource radeon module:
 There are many methods to bind the card to vfio, here is one example:
 
 *   [firewing1 webpage](http://www.firewing1.com/howtos/fedora-20/create-gaming-virtual-machine-using-vfio-pci-passthrough-kvm). Check the part after grub2-mkconfig.
-
-## IOMMU groups
-
-Only complete IOMMU groups can be attached to the guest VM. To see which groups each of your PCI devices are assigned to:
-
- `# find /sys/kernel/iommu_groups/ -type l` 
-```
-/sys/kernel/iommu_groups/0/devices/0000:00:00.0
-/sys/kernel/iommu_groups/1/devices/0000:00:01.0
-/sys/kernel/iommu_groups/1/devices/0000:01:00.0
-/sys/kernel/iommu_groups/1/devices/0000:01:00.1
-/sys/kernel/iommu_groups/2/devices/0000:00:02.0
-/sys/kernel/iommu_groups/3/devices/0000:00:16.0
-/sys/kernel/iommu_groups/4/devices/0000:00:1a.0
-/sys/kernel/iommu_groups/5/devices/0000:00:1b.0
-/sys/kernel/iommu_groups/6/devices/0000:00:1c.0
-/sys/kernel/iommu_groups/7/devices/0000:00:1c.5
-/sys/kernel/iommu_groups/8/devices/0000:00:1c.6
-/sys/kernel/iommu_groups/9/devices/0000:00:1c.7
-/sys/kernel/iommu_groups/9/devices/0000:05:00.0
-/sys/kernel/iommu_groups/10/devices/0000:00:1d.0
-/sys/kernel/iommu_groups/11/devices/0000:00:1f.0
-/sys/kernel/iommu_groups/11/devices/0000:00:1f.2
-/sys/kernel/iommu_groups/11/devices/0000:00:1f.3
-/sys/kernel/iommu_groups/12/devices/0000:02:00.0
-/sys/kernel/iommu_groups/12/devices/0000:02:00.1
-/sys/kernel/iommu_groups/13/devices/0000:03:00.0
-/sys/kernel/iommu_groups/14/devices/0000:04:00.0
-```
 
 ### ACS Override Patch
 

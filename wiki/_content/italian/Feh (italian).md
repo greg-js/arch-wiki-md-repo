@@ -17,7 +17,7 @@
 
 ## Installazione
 
-[feh](https://www.archlinux.org/packages/?name=feh) è disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[feh](https://www.archlinux.org/packages/?name=feh) è disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ## Utilizzo
 

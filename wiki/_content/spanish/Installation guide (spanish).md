@@ -2,7 +2,7 @@
 
 Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que le eche un vistazo a [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)"). Si lo que busca es una guía de instalación detallada y altamente explicativa remítase a la [Guía para principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)"), o a la categoría [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") para conocer casos específicos de instalación.
 
-La mayoría de la ayuda se puede encontrar en la wiki o a través de las [páginas del manual](/index.php/Man_page "Man page") de los distintos programas; consulte [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para una descripción general de la configuración. Para obtener ayuda interactiva, el [canal IRC](/index.php/IRC_Channel_(Espa%C3%B1ol) "IRC Channel (Español)") y los [foros](https://bbs.archlinux.org/) también los tiene disponibles.
+La mayoría de la ayuda se puede encontrar en la wiki o a través de las [páginas del manual](/index.php/Man_page "Man page") de los distintos programas; consulte [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para una descripción general de la configuración. Para obtener ayuda interactiva, el [canal IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") y los [foros](https://bbs.archlinux.org/) también los tiene disponibles.
 
 ## Contents
 
@@ -80,7 +80,7 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 *   Configurar el [nombre del equipo](/index.php/Configuring_Network_(Espa%C3%B1ol)#Establecer_el_nombre_del_equipo "Configuring Network (Español)"): `# echo *nombre_equipo* > /etc/hostname` 
 
-*   Configurar el [huso horario](/index.php/Time_(Espa%C3%B1ol)#Uso_horario "Time (Español)"): `# ln -s /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime` 
+*   Configurar el [huso horario](/index.php/Time_(Espa%C3%B1ol)#Huso_horario "Time (Español)"): `# ln -s /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime` 
 
 *   Configurar el [idioma del sistema](/index.php/Locale_(Espa%C3%B1ol) "Locale (Español)") descomentando el locale necesario en el archivo `/etc/locale.gen`, y después generarlo con la orden: `# locale-gen` 
 
@@ -110,4 +110,4 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 *   Véase el artículo [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") para obtener indicaciones sobre cómo gestionar el sistema, así como tutoriales sobre qué hacer después de la instalación del sistema base (como pueden ser temas relativos a la instalación y configuración de una interfaz gráfica de usuario, la del sonido o la del panel táctil).
 
-*   Para obtener una lista de las aplicaciones que pueden ser de su interés, consulte [List of Applications (Español)](/index.php/List_of_Applications_(Espa%C3%B1ol) "List of Applications (Español)").
+*   Para obtener una lista de las aplicaciones que pueden ser de su interés, consulte [List of applications (Español)](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)").

@@ -85,7 +85,7 @@ Il [Shoreline Firewall](http://www.shorewall.net/), più comunemente conosciuto 
 
 ### ufw
 
-[ufw](https://www.archlinux.org/packages/?name=ufw) (uncomplicated firewall) è un semplice front-end per `iptablesis` ed è disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[ufw](https://www.archlinux.org/packages/?name=ufw) (uncomplicated firewall) è un semplice front-end per `iptablesis` ed è disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Consultare [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall") per maggiori informazioni.
 
@@ -125,7 +125,7 @@ Le modalità di configurazione sono abbastanza semplici per essere adatto ai pri
 
 [Firewall Builder](http://www.fwbuilder.org/) è "una interfaccia di configurazione e gestione che supporta iptables (netfilter), ipfilter, pf, ipfw, Cisco PIX (FWSM, ASA) ed l'extended access list dei router. [...] Questo programma è disponibile per Linux, FreeBSD, OpenBSD, Windows e Mac OS X e può gestire sia firewall locali che remoti." Da: [http://www.fwbuilder.org/](http://www.fwbuilder.org/)
 
-[fwbuilder](https://www.archlinux.org/packages/?name=fwbuilder) è disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[fwbuilder](https://www.archlinux.org/packages/?name=fwbuilder) è disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ## Altri
 

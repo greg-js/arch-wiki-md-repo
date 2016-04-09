@@ -5,7 +5,7 @@
 | [Help:Editing (Українська)](/index.php/Help:Editing_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Help:Editing (Українська)") |
 | [Help:Style (Українська)](/index.php?title=Help:Style_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)&action=edit&redlink=1 "Help:Style (Українська) (page does not exist)") |
 
-В біології, [мутулізм](http://uk.wikipedia.org/wiki/Мутулізм) - взаємокорисний механізм співіснування декількох організмів. Даний принцип можна застосувати і по відношенню до активних і мотивованих учасників спільноти Arch, які бажають прийняти участь у її розвитку та внести свій вклад в улюблений дистрибутив GNU/Linux. Така діяльність приносить користь не лише учасникам спільноти Arch, а й, потенційно, всім фанам [вільного програмного забезпечення](http://uk.wikipedia.org/wiki/Вільне_та_відкрите_програмне_забезпечення).
+В біології, [мутулізм](https://uk.wikipedia.org/wiki/Мутулізм) - взаємокорисний механізм співіснування декількох організмів. Даний принцип можна застосувати і по відношенню до активних і мотивованих учасників спільноти Arch, які бажають прийняти участь у її розвитку та внести свій вклад в улюблений дистрибутив GNU/Linux. Така діяльність приносить користь не лише учасникам спільноти Arch, а й, потенційно, всім фанам [вільного програмного забезпечення](https://uk.wikipedia.org/wiki/Вільне_та_відкрите_програмне_забезпечення).
 
 ## Contents
 
@@ -56,7 +56,7 @@ If you feel capable of [editing wiki pages](/index.php/Help:Editing "Help:Editin
 3.  [Add](/index.php/Special:WhatLinksHere/Template:Translateme "Special:WhatLinksHere/Template:Translateme") or [improve](/index.php/Special:WhatLinksHere/Template:Bad_translation "Special:WhatLinksHere/Template:Bad translation") translations; ensure that translations are in sync with each other.
 4.  Reduce and [combine](/index.php/Special:WhatLinksHere/Template:Merge "Special:WhatLinksHere/Template:Merge") duplicate pages.
 5.  Correct [inaccurate](/index.php/Special:WhatLinksHere/Template:Accuracy "Special:WhatLinksHere/Template:Accuracy") or [outdated](/index.php/Special:WhatLinksHere/Template:Out_of_date "Special:WhatLinksHere/Template:Out of date") content, spelling, grammar, language, and [style](/index.php/Help:Style "Help:Style").
-6.  Reduce the number of [categories](/index.php/Special:Categories "Special:Categories"). Scan the wiki for similar categories that should be combined; improve wiki [navigation](/index.php/Table_of_Contents "Table of Contents").
+6.  Reduce the number of [categories](/index.php/Special:Categories "Special:Categories"). Scan the wiki for similar categories that should be combined; improve wiki [navigation](/index.php/Table_of_contents "Table of contents").
 7.  [Categorize uncategorized pages](/index.php/Special:UncategorizedPages "Special:UncategorizedPages").
 8.  Add [article summary](/index.php/Writing_Article_Overviews "Writing Article Overviews") boxes to all articles.
 9.  Update the [FAQ](/index.php/FAQ "FAQ") with relevant questions from the forum and remove obsolete questions.

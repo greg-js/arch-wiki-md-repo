@@ -82,7 +82,7 @@ Ako ste početnik i želite koristiti Arch, smatrajte se upozorenim da ćete bit
 
 *Postoji razlog što vam su ovi resursi i informacije dostupni.* Tisuće *volontiranih* sati je potrošeno da biste vi dobili najbolje informacije.
 
-Preporučeno za čitanje: [Vodič za početnike](/index.php/Beginners%27_Guide_(Hrvatski) "Beginners' Guide (Hrvatski)")
+Preporučeno za čitanje: [Vodič za početnike](/index.php/Beginners%27_guide_(Hrvatski) "Beginners' guide (Hrvatski)")
 
 ### Q) Arch requires too much time and effort to install and use. Also, the community keeps telling me to RTFM in so many words.
 

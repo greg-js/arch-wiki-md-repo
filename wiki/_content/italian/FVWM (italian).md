@@ -9,7 +9,7 @@ FVWM è stabile, potente, efficiente e basato su standard ICCCM e con supporto a
 
 ## Installazione di FVWM
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [fvwm](https://www.archlinux.org/packages/?name=fvwm) reperibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [fvwm](https://www.archlinux.org/packages/?name=fvwm) reperibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Si può installare una versione pacthata [fvwm-patched](https://aur.archlinux.org/packages/fvwm-patched/) da [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)") o se avete aggiunto il repositorio archlinuxfr (vedere [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")) al vostro `/etc/pacman.conf`, è possibile installarlo regolarmente tramite [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
 

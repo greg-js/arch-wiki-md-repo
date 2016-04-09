@@ -9,9 +9,9 @@ Este guia é direcionado a qualquer um que deseja instalar o Arch Linux em outro
 
 Este guia tem como pré-requisito a existência de um ambiente capaz de executar os programas compilados para a arquitetura escolhida no Arch Linux. Neste caso, um host x86_64 é capaz de utilizar o i686-pacman para construir um ambiente de chroot de 32-bits. Veja [Arch64 Install bundled 32bit system](/index.php/Arch64_Install_bundled_32bit_system "Arch64 Install bundled 32bit system"). Contudo, não é algo trivial criar um ambiente 64-bit quando o host em execução está utilizando programas 32-bit.
 
-**Nota:** Se você já está utilizando o Arch, ao invés de seguir este guia apenas instale o pacote [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) dos repositórios oficiais e siga o [Guia de Instalação](/index.php/Installation_Guide_(Portugu%C3%AAs) "Installation Guide (Português)")
+**Nota:** Se você já está utilizando o Arch, ao invés de seguir este guia apenas instale o pacote [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) dos repositórios oficiais e siga o [Guia de Instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)")
 
-**Este guia adiciona passos ao [Guia de Instalação](/index.php/Installation_Guide_(Portugu%C3%AAs) "Installation Guide (Português)"). Os passos já descridos no guia de instalação devem ser seguidos sempre que necessários.**
+**Este guia adiciona passos ao [Guia de Instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)"). Os passos já descridos no guia de instalação devem ser seguidos sempre que necessários.**
 
 ## Contents
 
@@ -32,7 +32,7 @@ Este guia tem como pré-requisito a existência de um ambiente capaz de executar
 
 ## Preparar o sistema
 
-Siga as instruções no [Guia de Instalação](/index.php/Installation_Guide_(Portugu%C3%AAs) "Installation Guide (Português)") até que você tenha ajustado partições, teclado e conexão com a internet.
+Siga as instruções no [Guia de Instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)") até que você tenha ajustado partições, teclado e conexão com a internet.
 
 ## Configurar o ambiente do Pacman
 
@@ -214,7 +214,7 @@ Execute
 
 ```
 
-**Contudo**, quando conectado através de SSH você pode sofrer de falta de [entropia](http://pt.wikipedia.org/wiki/Entropia). Neste caso, tente algo similar a:
+**Contudo**, quando conectado através de SSH você pode sofrer de falta de [entropia](https://pt.wikipedia.org/wiki/Entropia). Neste caso, tente algo similar a:
 
 ```
 # cat /usr/bin/* > /dev/null &
@@ -233,7 +233,7 @@ Pode levar um tempo. Caso estas opções acima não funcionem, instale o pacote 
 
 ## Configure o sistema alvo
 
-Neste ponto, apenas siga os passos do [Guia de Instalação](/index.php/Installation_Guide_(Portugu%C3%AAs) "Installation Guide (Português)"). Lembre de montar o sistema destino do chroot em `/mnt`.
+Neste ponto, apenas siga os passos do [Guia de Instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)"). Lembre de montar o sistema destino do chroot em `/mnt`.
 
 ```
 # pacstrap /mnt base base-devel

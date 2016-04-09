@@ -102,11 +102,11 @@ Arch obtiene mucha publicidad tal como es. El objetivo de Arch Linux no es ser g
 
 ### Arch necesita más programadores
 
-Posiblemente sea así. ¡No dude en ofrecer su tiempo! Visite los [foros](https://bbs.archlinux.org), [canales IRC](/index.php/IRC_Channel "IRC Channel") y [listas de correo](https://mailman.archlinux.org/mailman/listinfo/), y vea lo que hay pendiente por hacer. Comenzar a involucarse en el subforo de la *Community Contributions* es una buena manera de empezar.
+Posiblemente sea así. ¡No dude en ofrecer su tiempo! Visite los [foros](https://bbs.archlinux.org), [canales IRC](/index.php/IRC_channel "IRC channel") y [listas de correo](https://mailman.archlinux.org/mailman/listinfo/), y vea lo que hay pendiente por hacer. Comenzar a involucarse en el subforo de la *Community Contributions* es una buena manera de empezar.
 
 ### ¿Por qué va mi internet tan lento en comparación con otros sistemas operativos?
 
-¿Está su red configurada correctamente? Eche un vistazo a [nombre del equipo](/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Nombre_del_equipo "Beginners' Guide (Español)") y [Configurar la red](/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Configurar_la_red "Beginners' Guide (Español)") de la Guía para principiantes.
+¿Está su red configurada correctamente? Eche un vistazo a [nombre del equipo](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Nombre_del_equipo "Beginners' guide (Español)") y [Configurar la red](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Configurar_la_red "Beginners' guide (Español)") de la Guía para principiantes.
 
 También tenga en cuenta que Arch Linux no viene con [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping") habilitado. Por lo tanto, es posible que si un programa, de alguna manera, utiliza su conexión de Internet al máximo –sin importar si se trata de P2P o de conexiones de un clásico client-server– otras conexiones locales se encontrarán obstruidas, traduciéndose en retrasos graves y tiempos de espera. El auxilio puede venir instalando un [firewalls](/index.php/Firewalls "Firewalls") como Shorewall o Vuurmuur; también hay scripts estáticos para [iproute2](https://www.archlinux.org/packages/?name=iproute2) (como por ejemplo [este derivado](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) de Wondershaper), que realiza precisamente esta tarea.
 
@@ -171,7 +171,7 @@ Sin embargo, la mejor manera de obtener una característica adicional a pacman o
 
 ### ¿Cuál es la diferencia entre los distintos repositorios?
 
-Consulte [Repositorios Oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Consulte [Repositorios Oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ### Acabo de instalar el paquete X. ¿Cómo empiezo?
 
@@ -214,15 +214,15 @@ Los servidores de réplicas de *pacman* no se sincronizan inmediatamente. Puede 
 
 ### Arch necesita un instalador. ¿Tal vez una instalación a través de GUI?
 
-Dado que la instalación no se produce con frecuencia (léase el resto de este artículo para saber más acerca de lo que significa *rolling release*), no es una alta prioridad para los desarrolladores o usuarios. La [Guía de instalación](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)") y la [Guía para principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)") han sido completamente actualizadas para utilizar el método de línea de órdenes. Si todavía está interesado en usar un instalador, considere el uso de [Archboot](/index.php/Archboot "Archboot").
+Dado que la instalación no se produce con frecuencia (léase el resto de este artículo para saber más acerca de lo que significa *rolling release*), no es una alta prioridad para los desarrolladores o usuarios. La [Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") y la [Guía para principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") han sido completamente actualizadas para utilizar el método de línea de órdenes. Si todavía está interesado en usar un instalador, considere el uso de [Archboot](/index.php/Archboot "Archboot").
 
 ### He instalado Arch, ¡y estoy en una shell! ¿Y ahora qué?
 
-Véase la [Guía para principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)") de Arch Linux.
+Véase la [Guía para principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") de Arch Linux.
 
 ### ¿Qué entorno de escritorio o gestor de ventanas debo usar?
 
-Ya que hay una gran variedad disponibles, use el que más se ajuste a sus necesidades. Véanse los artículos [Desktop Environment (Español)](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)") y [Window Manager (Español)](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)").
+Ya que hay una gran variedad disponibles, use el que más se ajuste a sus necesidades. Véanse los artículos [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") y [Window manager (Español)](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)").
 
 ### ¿Qué hace único a Arch respecto de otras distribuciones «minimalistas»?
 

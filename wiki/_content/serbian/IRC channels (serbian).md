@@ -36,4 +36,4 @@ Međunarodna diskusija preko irc-a , se takođe nalazi na **[irc.freenode.net](i
 
 *   [Arch Around the World](/index.php/Arch_Around_the_World "Arch Around the World")
 *   [International communities](/index.php/International_communities "International communities")
-*   [IRC_Channel](/index.php/IRC_Channel "IRC Channel")
+*   [IRC channel](/index.php/IRC_channel "IRC channel")

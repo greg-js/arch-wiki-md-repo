@@ -345,7 +345,7 @@ COMMIT
 
 ```
 
-*   关于iptables的设定，请参考[Iptables_(简体中文)](/index.php/Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Iptables (简体中文)")
+*   关于iptables的设定，请参考[Iptables (简体中文)](/index.php/Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Iptables (简体中文)")
 
 #### (可选)自动添加FORWARD到iptables
 
@@ -402,4 +402,4 @@ config setup
 
 ```
 
-显示进程打印的信息，你会看到和[直接启动](#.E7.9B.B4.E6.8E.A5.E5.90.AF.E5.8A.A8)一样的信息。 具体参见[Systemd_(简体中文)#过滤输出](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BF.87.E6.BB.A4.E8.BE.93.E5.87.BA "Systemd (简体中文)")
+显示进程打印的信息，你会看到和[直接启动](#.E7.9B.B4.E6.8E.A5.E5.90.AF.E5.8A.A8)一样的信息。 具体参见[systemd (简体中文)#过滤输出](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BF.87.E6.BB.A4.E8.BE.93.E5.87.BA "Systemd (简体中文)")

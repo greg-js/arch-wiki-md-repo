@@ -77,7 +77,7 @@
 
 **A)** 對於這個問題，各方有諸多見解。Arch 較偏向於經驗豐富的 Linux 使用者，但也有部分人認為：Arch 對企圖心旺盛的新手而言不失為一個好開始。假如您是一名打算使用 Arch 的新手，在此提醒您！您必須願意花上大量的時間學習一套新系統，並認清一個事實：Arch 是一套自己徒手打造的 DIY 發行版。從系統的組裝、控制到裝點，全部都要靠使用者一手包辦。有很多問題想問嗎？請試著先 Google 一下、讀完本 FAQ 後面的內容、搜尋論壇和 Arch Wiki 內豐富的文件，自己先好好研究一下問題的根源與處置方式。*這也就是為什麼我們為您創建了這些第一手的資料來源。*截至目前為止，已經有數千小時被*貢獻*於編纂這些優良的資訊。
 
-建議閱讀：Arch Linux [新手教學](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' Guide (正體中文)")
+建議閱讀：Arch Linux [新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")
 
 ### Q) 安裝 Arch 真的很浪費時間跟力氣，到論壇發問還被一直噹「不會看手冊啊」
 
@@ -115,7 +115,7 @@
 
 ### Q) 我的網路連線跟其他作業系統比起來慢上不少，這是為什麼啊？
 
-**A)** 您的網路有設定正確嗎？檢查一下新手指南的[網域名稱](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E5.9F.9F.E5.90.8D "Beginners' Guide (正體中文)")和[設定網路](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E8.A8.AD.E5.AE.9A.E7.B6.B2.E8.B7.AF "Beginners' Guide (正體中文)")。
+**A)** 您的網路有設定正確嗎？檢查一下新手指南的[網域名稱](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E5.9F.9F.E5.90.8D "Beginners' guide (正體中文)")和[設定網路](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E8.A8.AD.E5.AE.9A.E7.B6.B2.E8.B7.AF "Beginners' guide (正體中文)")。
 
 要注意的是 Arch Linux 並沒有啟用[流量整形](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping")功能。因此，只要有一個程式(無論是 P2P 或基本的主從式連線)因為某些原因佔滿了您的網路連線頻寬，您的網路就會堵塞，拖慢其他程式的執行，甚至出現逾時錯誤。解決方案之一是使用[防火牆](/index.php/Firewalls "Firewalls")(Shorewall 或 Vuurmuur)；[iproute2](https://www.archlinux.org/packages/?name=iproute2) 也有一些現成腳本(如[這份 Wondershaper 的衍生](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos))也可以幫忙為網路層塑身。
 
@@ -192,7 +192,7 @@ $ pkgfile [檔案名稱]
 
 ### Q) Arch 底下這幾個軟體倉庫有什麼不同？
 
-**A)** 請參閱[官方軟體倉庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")。
+**A)** 請參閱[官方軟體倉庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")。
 
 ### Q) 我剛才安裝了某某軟體包。我該如何啟動它？
 
@@ -231,11 +231,11 @@ $ pacman -Qlq **軟體包名稱** | grep /usr/bin/
 
 ### Q) 我覺得 Arch 需要一個 GUI 安裝程式
 
-**A)** 安裝程式並未被開發人員/使用者排在高優先順序，畢竟安裝不是每天都要做的事(可以參考其他有關「無縫發行」的文章)。[安裝指南](/index.php/Installation_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation Guide (正體中文)")和[新手教學](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' Guide (正體中文)")內已經更新了完整的指令安裝方式。若您還時對安裝程式有興趣的話，可以考慮使用 [Archboot](/index.php/Archboot "Archboot")。
+**A)** 安裝程式並未被開發人員/使用者排在高優先順序，畢竟安裝不是每天都要做的事(可以參考其他有關「無縫發行」的文章)。[安裝指南](/index.php/Installation_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation guide (正體中文)")和[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")內已經更新了完整的指令安裝方式。若您還時對安裝程式有興趣的話，可以考慮使用 [Archboot](/index.php/Archboot "Archboot")。
 
 ### Q) 我已經安裝好 Arch，現在正在文字介面 (shell)，我該怎麼辦呢？
 
-**A)** 請參閱 Arch Linux 的[新手教學](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' Guide (正體中文)")。
+**A)** 請參閱 Arch Linux 的[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")。
 
 ### Q) 我該使用什麼桌面環境和視窗管理員呢？
 

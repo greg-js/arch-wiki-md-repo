@@ -275,7 +275,7 @@ Para instalar um novo tema no fluxbox basta extrair o arquivo de tema ao diretó
 
 O [AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") atualmente contém uma compilação de temas de fluxbox bastante bonitos, chamados de "fluxbox-stiles". Adquira-os [aqui](https://aur.archlinux.org/packages.php?ID=28743) e instale este pacote para uma maior gama de temas disponíveis. QUando instalado corretamente, eles aparecerão no Fluxbox, na sessão "Styles" do menu do Fluxbox.
 
-Para criar seus próprios estilos no fluxbox, leia o artigo [Fluxbox_Style_Guide](/index.php/Fluxbox_Style_Guide "Fluxbox Style Guide") e este [guia de estilos](http://tenr.de/howto/style_fluxbox/style_fluxbox.html).
+Para criar seus próprios estilos no fluxbox, leia o artigo [Fluxbox Style Guide](/index.php/Fluxbox_Style_Guide "Fluxbox Style Guide") e este [guia de estilos](http://tenr.de/howto/style_fluxbox/style_fluxbox.html).
 
 ### Iniciando automaticamente aplicativos
 

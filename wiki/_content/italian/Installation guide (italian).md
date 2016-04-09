@@ -2,7 +2,7 @@ Questo documento vi guiderà attraverso il processo di installazione di [Arch Li
 
 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") contiene diverse altre guide all'installazione per casi specifici.
 
-L'[Arch wiki](/index.php/Main_Page_(Italiano) "Main Page (Italiano)") mantenuto dalla community è una risorsa eccellente e deve essere la prima risorsa da consultare in caso di problemi. Sono disponibili anche il canale [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") (per la comunità italiana: [irc://irc.azzurra.org/archlinux](irc://irc.azzurra.org/archlinux) o [irc://irc.freenode.net/#archlinux.it](irc://irc.freenode.net/#archlinux.it), mentre per il supporto internazionale: [irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/) per ricercare ulteriori risposte. Inoltre, assicurarsi di leggere le pagine `man` per qualsiasi comando sconosciuto; di solito può essere invocato tramite `man "command"`.
+L'[Arch wiki](/index.php/Main_page_(Italiano) "Main page (Italiano)") mantenuto dalla community è una risorsa eccellente e deve essere la prima risorsa da consultare in caso di problemi. Sono disponibili anche il canale [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") (per la comunità italiana: [irc://irc.azzurra.org/archlinux](irc://irc.azzurra.org/archlinux) o [irc://irc.freenode.net/#archlinux.it](irc://irc.freenode.net/#archlinux.it), mentre per il supporto internazionale: [irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/) per ricercare ulteriori risposte. Inoltre, assicurarsi di leggere le pagine `man` per qualsiasi comando sconosciuto; di solito può essere invocato tramite `man "command"`.
 
 ## Contents
 
@@ -56,7 +56,7 @@ Ricordarsi di creare tutti i dispositivi a blocchi accatastati per [LVM](/index.
 
 ### Formattare le partizioni
 
-Si legga [file system](/index.php/File_Systems_(Italiano)#Step_2:_creare_il_nuovo_file_system "File Systems (Italiano)") e opzionalmente [Swap](/index.php/Swap_(Italiano) "Swap (Italiano)") per maggiori dettagli.
+Si legga [file system](/index.php/File_systems_(Italiano)#Step_2:_creare_il_nuovo_file_system "File systems (Italiano)") e opzionalmente [Swap](/index.php/Swap_(Italiano) "Swap (Italiano)") per maggiori dettagli.
 
 Se si sta utilizzando (U) EFI avrete probabilmente bisogno di un'altra partizione per ospitare la partizione di sistema UEFI. Si legga [questo articolo](/index.php/Unified_Extensible_Firmware_Interface_(Italiano)#Creare_una_partizione_di_sistema_UEFI_con_Linux "Unified Extensible Firmware Interface (Italiano)").
 
@@ -129,7 +129,7 @@ Si riavvii il sistema e si prosegua nella configurazione del proprio sistema.
 
 ### Gestione Utenti
 
-Aggiungere gli account utente che si richiedono come come descritto in [Gestione degli utenti](/index.php/Users_and_Groups_(Italiano)#Gestione_degli_utenti "Users and Groups (Italiano)"). Non è consigliabile utilizzare l'account di root per un uso regolare, o esporlo tramite [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") su un server. L'account di root deve essere utilizzato solo per le attività amministrative.
+Aggiungere gli account utente che si richiedono come come descritto in [Gestione degli utenti](/index.php/Users_and_groups_(Italiano)#Gestione_degli_utenti "Users and groups (Italiano)"). Non è consigliabile utilizzare l'account di root per un uso regolare, o esporlo tramite [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") su un server. L'account di root deve essere utilizzato solo per le attività amministrative.
 
 ### Gestione dei Pacchetti
 
@@ -160,10 +160,10 @@ Si potrebbe desiderare di installare un set di caratteri TrueType, in quanto sol
 
 ```
 
-Fare riferimento a [Font Configuration](/index.php/Font_Configuration_(Italiano) "Font Configuration (Italiano)") per sapere come configurare il rendering dei font e a [Fonts](/index.php/Fonts_(Italiano) "Fonts (Italiano)") per i suggerimenti sui tipi di caratteri e le istruzioni di installazione.
+Fare riferimento a [Font Configuration](/index.php/Font_configuration_(Italiano) "Font configuration (Italiano)") per sapere come configurare il rendering dei font e a [Fonts](/index.php/Fonts_(Italiano) "Fonts (Italiano)") per i suggerimenti sui tipi di caratteri e le istruzioni di installazione.
 
 ## Appendice
 
-Per un elenco dei programmi maggiormente utilizzati e si veda l'articolo [applicazioni comuni](/index.php/List_of_Applications_(Italiano) "List of Applications (Italiano)").
+Per un elenco dei programmi maggiormente utilizzati e si veda l'articolo [applicazioni comuni](/index.php/List_of_applications_(Italiano) "List of applications (Italiano)").
 
 Si veda anche [Raccomandazioni Generali](/index.php/Raccomandazioni_Generali "Raccomandazioni Generali") per consigli post-installazione, come la configurazione del touchpad o il rendering dei font.

@@ -170,7 +170,7 @@ tmpfs        /tmp          tmpfs     nodev,nosuid             0   0
 
 現在你可以重新編輯 `/etc/fstab` 來去增加之前被你移除掉的磁區和掛載點。
 
-如果你將資料從 HDD 轉換到 SSD (固態硬碟)，別忘了啟動 TRIM。也別忘了使用 HDD 和 tmpfs 掛載點來降低 SSD 損害。- 可參考 [Relocate files to tmpfs](/index.php/Maximizing_performance#Relocate_files_to_tmpfs "Maximizing performance") 與 [Tips for Minimizing SSD Read & Writes](/index.php/Solid_State_Drives#Tips_for_Minimizing_SSD_Read.2FWrites "Solid State Drives").
+如果你將資料從 HDD 轉換到 SSD (固態硬碟)，別忘了啟動 TRIM。也別忘了使用 HDD 和 tmpfs 掛載點來降低 SSD 損害。- 可參考 [Relocate files to tmpfs](/index.php/Maximizing_performance#Relocate_files_to_tmpfs "Maximizing performance") 與 [Tips for Minimizing SSD Read & Writes](/index.php/Solid_State_Drives#Tips_for_minimizing_disk_reads.2Fwrites "Solid State Drives").
 
 **Note:** 你可能需要再次重開機來讓服務可以被正常的運作。 如果你的 pulseaudio沒有辦法被正常的載入。 可以嘗試 restart dbus.service 來讓它正常。
 

@@ -2,7 +2,7 @@ De [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
 
 	*GDM, el gestor de pantallas de GNOME, es un pequeño programa que se ejecuta en segundo plano, dirige las sesiones de X, le presenta una pantalla de inicio de sesión y, luego, le impide el acceso hasta tanto le sea suministrada la contraseña. Hace casi prácticamente todo lo que desearía hacer con xdm, pero sin los problemas de este último. GDM no utiliza ningún código de xdm. Es compatible con XDMCP, y, de hecho, extiende XDMCP a aspectos a los que no llegaba xdm (pero sigue siendo compatible con XDMCP de xdm).*
 
-Los [gestores de pantallas](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") proporcionan a los usuarios de [X Window System](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") un inicio de sesión gráfico.
+Los [gestores de pantallas](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") proporcionan a los usuarios de [X Window System](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") un inicio de sesión gráfico.
 
 ## Contents
 
@@ -30,7 +30,7 @@ Los [gestores de pantallas](/index.php/Display_Manager_(Espa%C3%B1ol) "Display M
 
 ## Instalación
 
-GDM (que también forma parte de [gnome](https://www.archlinux.org/groups/x86_64/gnome/)) puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con el paquete [gdm](https://www.archlinux.org/packages/?name=gdm), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+GDM (que también forma parte de [gnome](https://www.archlinux.org/groups/x86_64/gnome/)) puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con el paquete [gdm](https://www.archlinux.org/packages/?name=gdm), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ### GDM como la pantalla de bienvenida predeterminada
 
@@ -150,7 +150,7 @@ auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
 
 Asegúrese de que esta línea va a la derecha **antes** de la línea `pam_unix.so` `auth`.
 
-A continuación, agregue el grupo `nopasswdlogin` a su sistema. Véase [Users and Groups](/index.php/Users_and_Groups_(Espa%C3%B1ol) "Users and Groups (Español)") para conocer una descripción de los grupos y su gestión.
+A continuación, agregue el grupo `nopasswdlogin` a su sistema. Véase [Users and Groups](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") para conocer una descripción de los grupos y su gestión.
 
 Ahora, agregue el usuario al grupo `nopasswdlogin` y entonces bastará hacer clic en el nombre de usuario para iniciar sesión.
 

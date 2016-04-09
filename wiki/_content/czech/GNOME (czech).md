@@ -139,7 +139,7 @@ GNOME pro svůj běh vyžaduje [D-Bus](/index.php/D-Bus_(%C4%8Cesky) "D-Bus (Če
 
 ### Spouštění GNOME
 
-Pro nejlepší integraci prostředí je doporučen správce přihlášení **GDM**. Nic vám ale nebrání v tom nainstalovat si místo GDM třeba [SLiM](/index.php/SLiM_(%C4%8Cesky) "SLiM (Česky)") nebo cokoliv jiného. Pro další informace o spouštění pracovního prostředí navštivte [článek o správcích displeje](/index.php/Display_Manager_(%C4%8Cesky) "Display Manager (Česky)").
+Pro nejlepší integraci prostředí je doporučen správce přihlášení **GDM**. Nic vám ale nebrání v tom nainstalovat si místo GDM třeba [SLiM](/index.php/SLiM_(%C4%8Cesky) "SLiM (Česky)") nebo cokoliv jiného. Pro další informace o spouštění pracovního prostředí navštivte [článek o správcích displeje](/index.php/Display_manager_(%C4%8Cesky) "Display manager (Česky)").
 
 ```
 # pacman -S gdm
@@ -495,7 +495,7 @@ The default installation sets the power button to suspend the system. ***Power o
 
 #### Rozložení klávesnice v GDM
 
-GDM neví o vašem nastavení klávesnice v GNOME 3\. Pro změnu nastavení klávesnice v GDM nastavte požadované rozložení v Xorg konfiguraci. Viz [Beginner's Guide.](/index.php/Beginners%27_Guide_(%C4%8Cesky)#.C3.9Aprava_rozlo.C5.BEen.C3.AD_kl.C3.A1vesnice "Beginners' Guide (Česky)")
+GDM neví o vašem nastavení klávesnice v GNOME 3\. Pro změnu nastavení klávesnice v GDM nastavte požadované rozložení v Xorg konfiguraci. Viz [Beginner's Guide.](/index.php/Beginners%27_guide_(%C4%8Cesky)#.C3.9Aprava_rozlo.C5.BEen.C3.AD_kl.C3.A1vesnice "Beginners' guide (Česky)")
 
 ### Další tipy
 

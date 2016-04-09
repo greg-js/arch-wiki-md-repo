@@ -37,7 +37,7 @@
 
 ## Instalación
 
-[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [gnupg](https://www.archlinux.org/packages/?name=gnupg), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [gnupg](https://www.archlinux.org/packages/?name=gnupg), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Esto instalará también [pinentry](https://www.archlinux.org/packages/?name=pinentry), una colección de diálogos sencillos para introducción de PINs o contraseñas que GnuPG utiliza para la introducción de frases de acceso. *pinenetry* está señalado por el enlace simbólico `/usr/bin/pinentry`, que por defecto apunta a `/usr/bin/pinentry-gtk-2`.
 
@@ -484,7 +484,7 @@ y después cámbialo de nuevo tras usar gpg la primera vez. Es probable que haya
 
 El programa pinentry por defecto es pinentry-gtk-2, que necesita una sesión de DBus para funcionar correctamente. Ver [permisos de sesión](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Compruebe_los_permisos_de_sesi.C3.B3n "General troubleshooting (Español)") para más detalles.
 
-En su lugar, puedes usar `pinentry-qt`. Ver [#Pinentry](#Pinentry).
+En su lugar, puedes usar `pinentry-qt`. Ver [#pinentry](#pinentry).
 
 ### Permisos de configuración de KGpg
 

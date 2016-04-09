@@ -93,7 +93,7 @@
 *   引导程序是计算机启动时第一个运行的程序。它负责加载并将控制权转移到Linux内核。内核作为回报，将初始化操作系统剩余部分
 *   官方所称的GRUB代表的是本软件的第二版,即GRUB2,请参考[[2]](https://www.gnu.org/software/grub/).如果你是在找有关Grub Legacy的文章,请参考[GRUB Legacy](/index.php/GRUB_Legacy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB Legacy (简体中文)") .
 *   GRUB2支持由zlib或者LZO压缩过的[Btrfs](/index.php/Btrfs "Btrfs")格式的根目录,如果使用Btrfs,不需要单独的`/boot`分区.
-*   GRUB2 不支持[F2fs](/index.php/F2fs "F2fs")格式的根目录,所以你需要为`/boot`分区单独设置一个支持的文件系统.
+*   GRUB2 不支持[F2FS](/index.php/F2FS "F2FS")格式的根目录,所以你需要为`/boot`分区单独设置一个支持的文件系统.
 
 ## BIOS 系统
 
@@ -584,7 +584,7 @@ menuentry "Arch Linux" {
 
 这样会更新`grub.cfg`
 
-一个典型`/etc/grub.d/40_custom`文件类似于下面这个为[HP Pavilion 15-e056sl Notebook PC|预装WIN8的HP Pavilion 15-e056sl Notebook PC](http://h10025.www1.hp.com/ewfrf/wc/product?cc=us&destPage=product&lc=en&product=5402703&tmp_docname=)而作的配置.每个启动项的结构都应该和下面的类似.请注意UEFI分区`/dev/sda2` 被命名为`hd0,gpt2` 和`ahci0,gpt2`(请参考[here](/index.php/GRUB#Windows_Installed_in_UEFI-GPT_Mode_menu_entry "GRUB")获取更多信息)
+一个典型`/etc/grub.d/40_custom`文件类似于下面这个为[HP Pavilion 15-e056sl Notebook PC|预装WIN8的HP Pavilion 15-e056sl Notebook PC](http://h10025.www1.hp.com/ewfrf/wc/product?cc=us&destPage=product&lc=en&product=5402703&tmp_docname=)而作的配置.每个启动项的结构都应该和下面的类似.请注意UEFI分区`/dev/sda2` 被命名为`hd0,gpt2` 和`ahci0,gpt2`(请参考[here](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB")获取更多信息)
 
 **/etc/grub.d/40_custom**:
 

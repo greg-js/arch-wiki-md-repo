@@ -141,7 +141,7 @@ AUR에 들어있는 패키지들 뿐 아니라 아치 저장소에 포함되어 
 
 ### 디스플레이 서버
 
-[Xorg](/index.php/Xorg "Xorg")는 [X 윈도 시스템](http://ko.wikipedia.org/wiki/X_%EC%9C%88%EB%8F%84_%EC%8B%9C%EC%8A%A4%ED%85%9C)의 대표적인 오픈소스 구현판(implementation)입니다. GUI 어플리케이션을 사용하기 위하 필요하며, 대부분의 사용자들은 Xorg를 설치하는 것이 좋습니다.
+[Xorg](/index.php/Xorg "Xorg")는 [X 윈도 시스템](https://ko.wikipedia.org/wiki/X_%EC%9C%88%EB%8F%84_%EC%8B%9C%EC%8A%A4%ED%85%9C)의 대표적인 오픈소스 구현판(implementation)입니다. GUI 어플리케이션을 사용하기 위하 필요하며, 대부분의 사용자들은 Xorg를 설치하는 것이 좋습니다.
 
 [Wayland](/index.php/Wayland "Wayland")는 Xorg를 대체하기 위한 새로운 디스플레이 서버 프로토콜입니다. Wayland의 참조 구현판(reference implementation)으로 Weston이 있습니다. 아직 이른 개발 단계에 있어 어플리케션 지원이 거의 없는 상태입니다.
 
@@ -203,7 +203,7 @@ DNS 캐싱을 통해 웹페이지들을 더 빨리 로드되게 할 수 있습�
 
 윈도와 아치 리눅스 사이의 네트워크 커뮤니케이션을 위해서는 SMB/CIFS 네트워킹 프로토콜을 재구현(reimplement)한 [Samba](/index.php/Samba "Samba")를 사용하실 수 있습니다.
 
-인증을 위해 Active Dictionary에 가입하고 사용하도록 아치 리눅스를 설정하기 위해서는[Active_Directory_Integration](/index.php/Active_Directory_Integration "Active Directory Integration") 문서를 읽으십시오.
+인증을 위해 Active Dictionary에 가입하고 사용하도록 아치 리눅스를 설정하기 위해서는[Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration") 문서를 읽으십시오.
 
 ## 부팅
 
@@ -315,7 +315,7 @@ Trackpoint 장치를 설정하려면 다음 [ThinkWiki](http://www.thinkwiki.org
 
 ### GTK 및 QT 테마
 
-리눅스의 GUI 어플리케이션들은 [GTK+](/index.php/GTK%2B "GTK+")나 [Qt](/index.php/Qt "Qt")와 같은 툴킷을 사용하는 것이 많습니다. GTK+ 와 QT 문서 및 [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications") 항목을 참조하여 프로그램들의 외양을 향상시키세요.
+리눅스의 GUI 어플리케이션들은 [GTK+](/index.php/GTK%2B "GTK+")나 [Qt](/index.php/Qt "Qt")와 같은 툴킷을 사용하는 것이 많습니다. GTK+ 와 QT 문서 및 [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") 항목을 참조하여 프로그램들의 외양을 향상시키세요.
 
 ## 콘솔 향상시키기
 

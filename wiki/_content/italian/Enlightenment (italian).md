@@ -30,11 +30,11 @@ Tratto dalla [documentazione di Enlightenment](http://trac.enlightenment.org/e/w
 
 ## Enlightenment
 
-Enlightenment comprende sia il [window manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") che le librerie Enlightenment Foundation Libraries ( EFL), le quali forniscono ulteriori funzionalità desktop dell'ambiente, così come una serie di strumenti, come un toolkit, e gli oggetti astratti. E 'stato in fase di sviluppo dal 2005, ma nel mese di febbraio 2011 le principali librerie EFL videro la loro prima versione stabile 1.0\.
+Enlightenment comprende sia il [window manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") che le librerie Enlightenment Foundation Libraries ( EFL), le quali forniscono ulteriori funzionalità desktop dell'ambiente, così come una serie di strumenti, come un toolkit, e gli oggetti astratti. E 'stato in fase di sviluppo dal 2005, ma nel mese di febbraio 2011 le principali librerie EFL videro la loro prima versione stabile 1.0\.
 
 ### Installazione
 
-Enlightenment può essere [installato](/index.php/Pacman "Pacman") con il pacchetto [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) , disponibile nei [depositi ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Enlightenment può essere [installato](/index.php/Pacman "Pacman") con il pacchetto [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) , disponibile nei [depositi ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Si potrebbe anche voler installare [terminology](https://www.archlinux.org/packages/?name=terminology), che è un emulatore di terminale basato su EFL, e si integra bene con Enlightenment.
 
@@ -65,7 +65,7 @@ Le applicazioni seguenti sono basate su EFL, la maggior parte di loro è in fase
 
 #### Log-in grafico
 
-Basta scegliere la sessione *enlightenment* dal proprio [gestore delle sessioni](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") preferito.
+Basta scegliere la sessione *enlightenment* dal proprio [gestore delle sessioni](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") preferito.
 
 **Entrance**
 
@@ -93,7 +93,7 @@ Enlightenment ha un sistema di configurazione sofisticato che si può accedere d
 
 **ConnMan**
 
-Il gestore di rete predefinito di Enlightenment è [ConnMan](/index.php/ConnMan_(Italiano) "ConnMan (Italiano)"), che è reperibile nel [deposito ufficiale](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") con il pacchetto [connman](https://www.archlinux.org/packages/?name=connman). Seguire le istruzioni presenti nella pagina [ConnMan](/index.php/ConnMan_(Italiano) "ConnMan (Italiano)"), per la sua configurazione.
+Il gestore di rete predefinito di Enlightenment è [ConnMan](/index.php/Connman_(Italiano) "Connman (Italiano)"), che è reperibile nel [deposito ufficiale](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") con il pacchetto [connman](https://www.archlinux.org/packages/?name=connman). Seguire le istruzioni presenti nella pagina [ConnMan](/index.php/Connman_(Italiano) "Connman (Italiano)"), per la sua configurazione.
 
 Per la configurazione estesa con il modulo predefinito Enlightenment di Rete, si può anche installare EConnman ( disponibile in AUR come [econnman](https://aur.archlinux.org/packages/econnman/) o [econnman-git](https://aur.archlinux.org/packages/econnman-git/)), ed è associato come dipendenza.
 
@@ -127,7 +127,7 @@ Successivamente si dovrebbe modificare il file `~/.profile` e aggiungere quanto 
 
 Questo dovrebbe esportare le variabili necessarie per la gestione delle chiavi al vostro prossimo login. Un ringraziamento particolare va a [[1]](http://dingyichen.wordpress.com/2013/11/20/properly-use-gnome-keyring-daemon-enlightenment-e-17-with-ssh-agent-support/) per aver torvato il sistema adatto per farlo funzionare.
 
-Ulteriori informazioni su questo argomento li potete nell'articolo [GNOME_Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
+Ulteriori informazioni su questo argomento li potete nell'articolo [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
 
 ### Temi
 

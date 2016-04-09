@@ -175,7 +175,7 @@ $ fc-cache -vf
 *   只要观察主字体目录下的内容，就能够确定系统上有哪种格式的字体集可供应用程序使用。您不需要复杂、占用大量资源的字体管理程序；[gtk2fontsel](https://www.archlinux.org/packages/?name=gtk2fontsel) 和基本的指令工具 (如 [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) 软件包下的 `fc-query`) 就可以将这件差事办得又快又好。
 *   当您安装或升级单一字体，所有应用程序都可以使用新版本字体，包括 LaTeX 相关软件。
 *   有必要的话，可以快速启用 / 停用某个字体集，因为您知道它们在哪个目录下（调试时很好用）。
-*   不需担心有任何多余的 `/etc/fonts/conf.avail/nn-foo.conf` fontconfig 文件会可能与您的渲染设置起冲突 (特别是当您使用[自定的字体设置与修补过的函式库](/index.php/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.A1.A5.E4.B8.81.E5.8C.85 "Font Configuration (简体中文)")时)。
+*   不需担心有任何多余的 `/etc/fonts/conf.avail/nn-foo.conf` fontconfig 文件会可能与您的渲染设置起冲突 (特别是当您使用[自定的字体设置与修补过的函式库](/index.php/Font_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.A1.A5.E4.B8.81.E5.8C.85 "Font configuration (简体中文)")时)。
 *   长远来看，可以省下那些因软件包管理器的失误，解决问题和清除冲突所浪费的宝贵时间。
 
 实际操作上有几种方式，有必要的话可任由软件包管理员采用。以下所举出的操作方式相当有效率，即使字体数目众多也相当安全。
@@ -390,7 +390,7 @@ FONT=lat2-16
 
 若要为早期的用户空间套用指定字体，请在 `/etc/mkinitcpio.conf` 使用 `consolefont` 勾子。更多信息请参阅 [Mkinitcpio (简体中文)#钩子(HOOKS)](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.92.A9.E5.AD.90.28HOOKS.29 "Mkinitcpio (简体中文)")。
 
-如果开机时字体没有任何变化，或只变化一下就恢复原样，则有可能是因为显卡驱动引导时字体被复位，然后终端被切至帧缓冲 (framebuffer)。提早装入图形驱动可以避免这个问题。若要在套用 `/etc/vconsole.conf` 之前将帧缓冲准备好，请参阅[核心模式设置#提早引导 KMS](/index.php/Kernel_Mode_Setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#KMS_.E6.97.A9.E5.90.AF.E5.8A.A8 "Kernel Mode Setting (简体中文)")、[[2]](https://bbs.archlinux.org/viewtopic.php?id=145765) 或其它方式。
+如果开机时字体没有任何变化，或只变化一下就恢复原样，则有可能是因为显卡驱动引导时字体被复位，然后终端被切至帧缓冲 (framebuffer)。提早装入图形驱动可以避免这个问题。若要在套用 `/etc/vconsole.conf` 之前将帧缓冲准备好，请参阅[核心模式设置#提早引导 KMS](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#KMS_.E6.97.A9.E5.90.AF.E5.8A.A8 "Kernel mode setting (简体中文)")、[[2]](https://bbs.archlinux.org/viewtopic.php?id=145765) 或其它方式。
 
 ## 字体包
 

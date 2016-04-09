@@ -60,4 +60,4 @@ Debates internacionales estan disponibles en los siguientes canales, también si
 ## Páginas relacionadas
 
 *   [International communities](/index.php/International_communities "International communities")
-*   [IRC Channel (Español)](/index.php/IRC_Channel_(Espa%C3%B1ol) "IRC Channel (Español)")
+*   [IRC channel (Español)](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)")

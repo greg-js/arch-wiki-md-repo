@@ -132,7 +132,7 @@ Allo stesso modo, non provare a limitare la sua naturale crescita. Più utenti p
 
 **R)** La rete è configurata correttamente? Controllare bene i file `/etc/rc.conf`, `/etc/hosts` e `/etc/resolv.conf` dando particolare attenzione alla sintassi della variabile *localhost*.
 
-Si noti inoltre che Arch Linux non applica alcun controllo sull'utilizzo del traffico internet (traffic shaping). È quindi possibile che un programma utilizzi completamente la banda disponibile (ad esempio client P2P o classiche connessioni client-server) causando lag, timeout e ping molto elevati. In ausilio può essere installato un [firewall](/index.php/Firewalls_(Italiano) "Firewalls (Italiano)") come Shorewall o Vuurmuur; si noti che esistono anche degli script statici per iproute2 (come ad esempio [[questo](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos)]) che svolgono proprio questo compito.
+Si noti inoltre che Arch Linux non applica alcun controllo sull'utilizzo del traffico internet (traffic shaping). È quindi possibile che un programma utilizzi completamente la banda disponibile (ad esempio client P2P o classiche connessioni client-server) causando lag, timeout e ping molto elevati. In ausilio può essere installato un [firewall](/index.php/Firewalls_(Italiano) "Firewalls (Italiano)") come Shorewall o Vuurmuur; si noti che esistono anche degli script statici per iproute2 (come ad esempio [questo](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos)) che svolgono proprio questo compito.
 
 ### D) Perchè Arch utilizza tutta la mia RAM?
 
@@ -171,7 +171,7 @@ Vedi [questo articolo](http://www.linuxjournal.com/article/2770) ( in inglese) s
 
 ### D)Il pacchetto X in quale è contenuto?
 
-**R** È possibile eseguire questo tipo di ricerca con [pkgfile](/index.php/Pkgfile "Pkgfile"). Ad esempio: `$ pkgfile glxinfo` restituirà come output: `extra/mesademos` ad indicare che `glxinfo` è contenuto nel pacchetto [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) prensente nel [repository](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") [extra].
+**R** È possibile eseguire questo tipo di ricerca con [pkgfile](/index.php/Pkgfile "Pkgfile"). Ad esempio: `$ pkgfile glxinfo` restituirà come output: `extra/mesademos` ad indicare che `glxinfo` è contenuto nel pacchetto [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) prensente nel [repository](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") [extra].
 
 ### D) Ho trovato un errore nel pacchetto X. Che dovrei fare?
 
@@ -207,7 +207,7 @@ Comunque il miglior modo di ottenere una caratteristiche aggiuntiva per Pacman o
 
 ### D) Qual è la differenza fra tutti questi repository?
 
-**R)** Leggi [Official Repositories](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+**R)** Leggi [Official Repositories](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ### D) Ho appena installato il pacchetto X. Come lo avvio?
 
@@ -217,7 +217,7 @@ Comunque il miglior modo di ottenere una caratteristiche aggiuntiva per Pacman o
 
 **R)** Molte distribuzioni, come ad esempio Debian, mantengono nei propri repositories più versioni dello stesso pacchetto, ad esempio `libfool1`, `libfool2`, `libfool3` ecc. In questo modo è possibile compilare il proprio sistema in modo differente in base alla versione di libreria installata.
 
-A differenza di Debian però, Arch è una distribuzione rolling-release cutting-edge. Questo significa che nei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") si trovi **solo** l'ultima versione della libreria in questione e quindi solo quest ultima versione risulta essere ufficialmente supportata. Ogni volta che lo sviluppo in upstream *sforna* una nuova libreria, questa entra immediatamente nei repositories facendo *uscire* la versione precedente. Ne consegue che tutti i pacchetti che si trovano ufficiali vengano ricompilati dai developers ogni qualvolta c'è un aggiornamento delle librerie comuni.
+A differenza di Debian però, Arch è una distribuzione rolling-release cutting-edge. Questo significa che nei [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") si trovi **solo** l'ultima versione della libreria in questione e quindi solo quest ultima versione risulta essere ufficialmente supportata. Ogni volta che lo sviluppo in upstream *sforna* una nuova libreria, questa entra immediatamente nei repositories facendo *uscire* la versione precedente. Ne consegue che tutti i pacchetti che si trovano ufficiali vengano ricompilati dai developers ogni qualvolta c'è un aggiornamento delle librerie comuni.
 
 ### D) Cosa succede se aggiornando il sistema ricevo aggiornamenti per una libreria e non per le sue dipendenze?
 
@@ -252,7 +252,7 @@ Se `foobaz` è invece un pacchetto compilato da [AUR](/index.php/AUR_(Italiano) 
 
 ### D) Quali desktop environment e window manager posso usare su Arch?
 
-**R)** Arch supporta e pacchettizza praticamente tutti gli "ambienti grafici" opensource. Per maggiori informazioni visitare [Desktop Environment](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") o [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)").
+**R)** Arch supporta e pacchettizza praticamente tutti gli "ambienti grafici" opensource. Per maggiori informazioni visitare [Desktop Environment](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") o [Window Manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)").
 
 ### D) Cosa rende Arch diversa da altre distribuzioni "minimaliste"?
 

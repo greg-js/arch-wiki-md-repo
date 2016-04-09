@@ -63,7 +63,7 @@ splashimage /grub/arch.xpm.gz
 
 ## (Пере)Установка Grub
 
-Теперь нам нужно будет установить Grub для перезаписи текущего Grub или другого загрузчика. Пожалуйста, ознакомьтесь с вики-страницами [Grub](/index.php/Grub "Grub") и [reinstalling GRUB](/index.php?title=Reinstalling_GRUB&action=edit&redlink=1 "Reinstalling GRUB (page does not exist)"), если Вы не делали этого раньше. "Стандартная" установка выполняется так:
+Теперь нам нужно будет установить Grub для перезаписи текущего Grub или другого загрузчика. Пожалуйста, ознакомьтесь с вики-страницами [GRUB](/index.php/GRUB "GRUB") и [reinstalling GRUB](/index.php?title=Reinstalling_GRUB&action=edit&redlink=1 "Reinstalling GRUB (page does not exist)"), если Вы не делали этого раньше. "Стандартная" установка выполняется так:
 
 ```
 grub-install /dev/sda

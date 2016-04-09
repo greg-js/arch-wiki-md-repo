@@ -2,7 +2,7 @@ Da quando Intel fornisce e sviluppa driver open source, le schede video Intel so
 
 Per un elenco completo dei modelli GPU-Intel e dei corrispondenti chipset e CPU, si veda [questo confronto su wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
 
-**Nota:** Le schede basate su chip PowerVR (serie [GMA 500](/index.php/Poulsbo "Poulsbo") e [GMA 3600](/index.php/Intel_gma3600 "Intel gma3600")) non sono supportate dai driver opensource
+**Nota:** Le schede basate su chip PowerVR (serie [GMA 500](/index.php/Poulsbo "Poulsbo") e [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600")) non sono supportate dai driver opensource
 
 ## Contents
 
@@ -32,7 +32,7 @@ Per un elenco completo dei modelli GPU-Intel e dei corrispondenti chipset e CPU,
 
 Prerequisiti: [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)")
 
-[installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) che è reperibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). Esso fornisce il driver DDX per l'accelerazione 2D e il driver per [XvMC](/index.php/XvMC "XvMC") la decodifica video sulle vecchie GPU. Inoltre ha come dipendenza il pacchetto [mesa](https://www.archlinux.org/packages/?name=mesa), che fornisce il driver DRI per l'accelerazione 3D.
+[installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) che è reperibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"). Esso fornisce il driver DDX per l'accelerazione 2D e il driver per [XvMC](/index.php/XvMC "XvMC") la decodifica video sulle vecchie GPU. Inoltre ha come dipendenza il pacchetto [mesa](https://www.archlinux.org/packages/?name=mesa), che fornisce il driver DRI per l'accelerazione 3D.
 
 Per il supporto 3D a 32-bit sui sistemi x86_64, installare il pacchetto [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) dal deposito [multilib](/index.php/Multilib "Multilib").
 
@@ -46,9 +46,9 @@ Per una lista delle opzioni eseguire `man intel`.
 
 ## KMS (Kernel Mode Setting)
 
-**Suggerimento:** Se avete problemi con la risoluzione , controllare [questa pagina](/index.php/Kernel_Mode_Setting#Forcing_modes_and_EDID "Kernel Mode Setting").
+**Suggerimento:** Se avete problemi con la risoluzione , controllare [questa pagina](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting").
 
-[KMS](/index.php/KMS "KMS") è necessario per eseguire X e gli ambienti desktop come [GNOME](/index.php/Gnome_(Italiano) "Gnome (Italiano)"), [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), [XFCE](/index.php/Xfce_(Italiano) "Xfce (Italiano)"), [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)"), etc. KMS è supportato dai chipset Intel i915 che utilizzano il driver DRM ed è ora abilitato di default dal kernel v2.6.32\. Le versioni 2.10 e le più recenti di [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) non supportano più UMS (ad eccezione delle vecchie famiglie di chipset 810), rendendo necessario l’utilizzo di KMS indispensabile. KMS è tipicamente inizializzato dopo che si è avviato il kernel. E' possibile comunque abilitare KMS durante la fase di avvio del kernel, permettendo all'intero processo di boot di funzionare alla risoluzione nativa.
+[KMS](/index.php/KMS "KMS") è necessario per eseguire X e gli ambienti desktop come [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)"), [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), [XFCE](/index.php/Xfce_(Italiano) "Xfce (Italiano)"), [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)"), etc. KMS è supportato dai chipset Intel i915 che utilizzano il driver DRM ed è ora abilitato di default dal kernel v2.6.32\. Le versioni 2.10 e le più recenti di [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) non supportano più UMS (ad eccezione delle vecchie famiglie di chipset 810), rendendo necessario l’utilizzo di KMS indispensabile. KMS è tipicamente inizializzato dopo che si è avviato il kernel. E' possibile comunque abilitare KMS durante la fase di avvio del kernel, permettendo all'intero processo di boot di funzionare alla risoluzione nativa.
 
 **Nota:** É **necessario** rimuovere ogni riferimento deprecato a `vga` o `nomodeset` dalla propria configurazione di boot.
 
@@ -214,7 +214,7 @@ $ xrandr --output VGA1 --brightness 1.0
 
 ### Schermo vuoto durante l’avvio, alla fase "Loading modules"
 
-Se si sta utilizzando "late start" KMS e lo schermo diventa vuoto alla fase "Loading modules", potrebbe essere d’aiuto aggiungere `i915` e `intel_agp` all’initramfs. Vedere la sezione KMS [precedente](/index.php/Intel_(Italiano)#KMS_.28Kernel_Mode_Setting.29 "Intel (Italiano)").
+Se si sta utilizzando "late start" KMS e lo schermo diventa vuoto alla fase "Loading modules", potrebbe essere d’aiuto aggiungere `i915` e `intel_agp` all’initramfs. Vedere la sezione KMS [precedente](#KMS_.28Kernel_Mode_Setting.29).
 
 In alternativa, si potrebbe risolvere aggiungendo ai [parametri del kernel](/index.php/Kernel_parameters "Kernel parameters") quanto segue:
 

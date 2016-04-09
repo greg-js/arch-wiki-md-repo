@@ -41,7 +41,7 @@
 
 ### انضمّ لغرفة المحادثة
 
-تستطيع مساعدة المستخدمين الآخرين لحلّ مشاكلهم على [IRC Channel](/index.php/IRC_Channel "IRC Channel"). إنها أهمّيّة حيويّة على أية حال، عليك قراءة [rules](/index.php/IRC_Channel#.23archlinux_rules "IRC Channel") و [guidelines](/index.php/IRC_Channel#.23archlinux_guidelines "IRC Channel") قبل المشاركة. [Further channels](/index.php/IRC_channels "IRC channels") متوفّرة لمواضيع معيّنة.
+تستطيع مساعدة المستخدمين الآخرين لحلّ مشاكلهم على [IRC channel](/index.php/IRC_channel "IRC channel"). إنها أهمّيّة حيويّة على أية حال، عليك قراءة [rules](/index.php/IRC_channel#.23archlinux_rules "IRC channel") و [guidelines](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel") قبل المشاركة. [Further channels](/index.php/IRC_channels "IRC channels") متوفّرة لمواضيع معيّنة.
 
 ### إعداد التقارير بالحزم المثبّتة
 

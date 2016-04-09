@@ -148,7 +148,7 @@ Per una migliore integrazione col desktop, è consigliato l'uso di **GDM**.
 
  `# pacman -S gdm` 
 
-Consultare la pagina [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") per capire come eseguirlo correttamente.
+Consultare la pagina [Display Manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") per capire come eseguirlo correttamente.
 
 Se si preferisce eseguirlo da console, aggiungere la seguente righe a `~/.xinitrc`, accertandosi che sia l'ultima del file e che sia l'unica ad iniziare con *exec*(Consultare la pagina [xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)")):
 

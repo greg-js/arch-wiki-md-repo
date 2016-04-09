@@ -40,7 +40,7 @@ Jeśli czujesz się na siłach w [editing wiki pages](/index.php/Help:Editing "H
 
 ### Przyłącz się do czatu
 
-Jako zaawansowany użytkownik Linuksa zawsze możesz pomóc młodym użytkownikom w rozwiązywaniu ich problemów na [IRC Channel](/index.php/IRC_Channel "IRC Channel"). Zanim jednak rozpoczniesz przygodę zalecanym jest zapoznanie się z [rules](/index.php/IRC_Channel#archlinux_rules "IRC Channel") oraz [guidelines](/index.php/IRC_Channel#archlinux_guidelines "IRC Channel"). [Further channels](/index.php/IRC_channels "IRC channels") dostępne są dla poszczególnych tematów.
+Jako zaawansowany użytkownik Linuksa zawsze możesz pomóc młodym użytkownikom w rozwiązywaniu ich problemów na [IRC channel](/index.php/IRC_channel "IRC channel"). Zanim jednak rozpoczniesz przygodę zalecanym jest zapoznanie się z [rules](/index.php/IRC_channel#archlinux_rules "IRC channel") oraz [guidelines](/index.php/IRC_channel#archlinux_guidelines "IRC channel"). [Further channels](/index.php/IRC_channels "IRC channels") dostępne są dla poszczególnych tematów.
 
 ### Naprawa i zgłaszanie błędów
 

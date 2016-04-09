@@ -61,7 +61,7 @@ Naast de behandelde vragen hieronder, vind je [The Arch Way](/index.php/The_Arch
 
 **A)** Er is een discussie rond deze vraag. De doelgroep voor Arch is voor meer gevorderde GNU/Linux gebruikers, maar andere vinden dat "Arch een goede plek is om te beginnen". Als je een beginner bent en Arch wilt gebruiken, wees dan gewaarschuwd dat je bereid moet zijn om te leren. Ook moet je er vrede mee hebben dat Arch met name een 'doe-het-zelf' distributie is. De gebruiker moet zelf het systeem assembleren, en heeft volledige controle over hoe dat dan word. Het is belangrijk dat je bij vragen eerst zelf 'googled' en op het forum en wiki zoekt. Wees ervan bewust dat je jezelf blootstelt aan een group mensen die niet keer op keer dezelfde basis vragen willen beantwoorden. *Er is niet voor niets een wiki en forum, waar duizenden vrijwilligers vele uren aan besteed hebben, om jou van informatie te voorzien*.
 
-Aanbevolen artikel: De Arch Linux [Beginners' Guide](/index.php/Beginners%27_Guide_(Nederlands) "Beginners' Guide (Nederlands)")
+Aanbevolen artikel: De Arch Linux [Beginners' Guide](/index.php/Beginners%27_guide_(Nederlands) "Beginners' guide (Nederlands)")
 
 ## V) Ik ken enkel Nederlands. Waarom is er zo weinig in het Nederlands te vinden?
 
@@ -115,7 +115,7 @@ Een sysV init zou daarintegen gebruik maken van meerdere bestandsmappen (normaal
 
 ## V) Waarom is Arch Linux zo traag? Programma's openen langzaam of zelfs helemaal niet!
 
-**A)** Zorg ervoor dat je 'hostname' correct is geconfigureerd in `/etc/hosts`, deze moeten hetzelfde zijn als in `/etc/rc.conf`. Kijk ook even in [Beginners' Guide](/index.php/Beginners%27_Guide_(Nederlands) "Beginners' Guide (Nederlands)").
+**A)** Zorg ervoor dat je 'hostname' correct is geconfigureerd in `/etc/hosts`, deze moeten hetzelfde zijn als in `/etc/rc.conf`. Kijk ook even in [Beginners' Guide](/index.php/Beginners%27_guide_(Nederlands) "Beginners' guide (Nederlands)").
 
 ## V) Waarom gebruikt Arch al mijn RAM?
 
@@ -182,4 +182,4 @@ Voorbeeld:
 
 ## V) Ik heb Arch geïnstalleerd en zit nu in een bash login! Wat nu?
 
-**A)** Kijk even naar [Beginners' Guide](/index.php/Beginners%27_Guide_(Nederlands) "Beginners' Guide (Nederlands)").
+**A)** Kijk even naar [Beginners' Guide](/index.php/Beginners%27_guide_(Nederlands) "Beginners' guide (Nederlands)").

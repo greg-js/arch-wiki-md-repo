@@ -1,4 +1,4 @@
-El presente documento contiene un índice con anotaciones a otros artículos de divulgación e información importantes para mejorar y añadir funcionalidades al sistema Arch instalado. Se presume que los lectores han leído y seguido la [Guía para principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)") o la [Guía de instalación](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)") para instalar un sistema básico de Arch Linux. Es *necesario* en primer lugar haber leído y comprendido los conceptos explicados en [#Administrar el sistema](#Administrar_el_sistema) y [#Gestionar los paquetes](#Gestionar_los_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.
+El presente documento contiene un índice con anotaciones a otros artículos de divulgación e información importantes para mejorar y añadir funcionalidades al sistema Arch instalado. Se presume que los lectores han leído y seguido la [Guía para principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") o la [Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") para instalar un sistema básico de Arch Linux. Es *necesario* en primer lugar haber leído y comprendido los conceptos explicados en [#Administrar el sistema](#Administrar_el_sistema) y [#Gestionar los paquetes](#Gestionar_los_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.
 
 ## Contents
 
@@ -95,7 +95,7 @@ Arch es un sistema «rolling release» y tiene una rápida actualización de paq
 
 ## Gestionar los paquetes
 
-Esta sección contiene información útil relacionada con la gestión de los paquetes. Para más información, vea [FAQ#Package Management](/index.php/FAQ#Package_Management "FAQ") y [Category:Package management](/index.php/Category:Package_management "Category:Package management").
+Esta sección contiene información útil relacionada con la gestión de los paquetes. Para más información, vea [FAQ#Package management](/index.php/FAQ#Package_management "FAQ") y [Category:Package management](/index.php/Category:Package_management "Category:Package management").
 
 **Nota:** Debido al principio [Precisión del código por encima de la comodidad](/index.php/The_Arch_Way_(Espa%C3%B1ol)#Precisi.C3.B3n_del_c.C3.B3digo_por_encima_de_la_comodidad "The Arch Way (Español)") que inspira el método Arch, es imprescindible mantenerse al día de los cambios en Arch Linux para conocer aquellos que requieren una intervención manual, **antes** de actualizar su sistema. Compruebe la página principal de [Arch news](https://www.archlinux.org/) y suscríbase a la [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/). Alternativamente, puede encontrar útil suscribirse a este [RSS feed](https://www.archlinux.org/feeds/news/) o seguir [@archlinux](https://twitter.com/archlinux) en Twitter.
 
@@ -151,11 +151,11 @@ En lugar de iniciar X manualmente, vea [Display manager](/index.php/Display_mana
 
 ### Entornos de escritorio
 
-Mientras [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") proporciona el marco básico para la construcción de un entorno gráfico, hay componentes adicionales que pueden ser considerados necesarios para una experiencia completa del usuario. Los [Entornos de Escritorios](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)") como [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), y [Xfce](/index.php/Xfce "Xfce") vienen acompañados de una amplia gama de clientes de *X*, como gestores de ventanas, paneles, administradores de archivos, emuladores de terminal, editores de texto, iconos y otras utilidades. Véase [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") para una lista completa y recursos adicionales.
+Mientras [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") proporciona el marco básico para la construcción de un entorno gráfico, hay componentes adicionales que pueden ser considerados necesarios para una experiencia completa del usuario. Los [Entornos de Escritorios](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") como [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), y [Xfce](/index.php/Xfce "Xfce") vienen acompañados de una amplia gama de clientes de *X*, como gestores de ventanas, paneles, administradores de archivos, emuladores de terminal, editores de texto, iconos y otras utilidades. Véase [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") para una lista completa y recursos adicionales.
 
 ### Gestores de ventanas
 
-Un completo [entorno de escritorio](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)") proporciona una interfaz gráfica de usuario funcional y consistente, pero también tiende a consumir una cantidad considerable de recursos del sistema. Los usuarios que buscan maximizar el rendimiento o, de otra manera, simplificar su entorno, la opción a instalar es un [window manager](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)") en su lugar y añadir manualmente los extras deseados. Alternativamente, un gestor de ventanas también se puede utilizar conjuntamente con la mayoría de los entornos de escritorio. Los gestores de ventanas difieren en el manejo de la colocación de las ventanas: [dinámicas](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs"), [apiladas](/index.php/Category:Stacking_WMs "Category:Stacking WMs"), y [en mosaico](/index.php/Category:Tiling_WMs "Category:Tiling WMs").
+Un completo [entorno de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") proporciona una interfaz gráfica de usuario funcional y consistente, pero también tiende a consumir una cantidad considerable de recursos del sistema. Los usuarios que buscan maximizar el rendimiento o, de otra manera, simplificar su entorno, la opción a instalar es un [window manager](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") en su lugar y añadir manualmente los extras deseados. Alternativamente, un gestor de ventanas también se puede utilizar conjuntamente con la mayoría de los entornos de escritorio. Los gestores de ventanas difieren en el manejo de la colocación de las ventanas: [dinámicas](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs"), [apiladas](/index.php/Category:Stacking_WMs "Category:Stacking WMs"), y [en mosaico](/index.php/Category:Tiling_WMs "Category:Tiling WMs").
 
 ## Multimedia
 
@@ -207,7 +207,7 @@ Para configurar una máquina Arch Linux a unirse y utilizar Active Directory par
 
 ## Fase de arranque
 
-Esta sección contiene información relacionada con el proceso de arranque. Una visión general del proceso de arranque de Arch se puede encontrar en [Arch Boot Process](/index.php/Arch_Boot_Process_(Espa%C3%B1ol) "Arch Boot Process (Español)"). Para más información, consulte [Category:Boot process](/index.php/Category:Boot_process "Category:Boot process").
+Esta sección contiene información relacionada con el proceso de arranque. Una visión general del proceso de arranque de Arch se puede encontrar en [Arch Boot Process](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)"). Para más información, consulte [Category:Boot process](/index.php/Category:Boot_process "Category:Boot process").
 
 ### Autorreconocimiento del hardware
 
@@ -223,7 +223,7 @@ Una vez que se termina de arrancar el sistema, la pantalla se borra y aparece la
 
 ### Comenzar X al arrancar
 
-Si se utiliza un servidor [X](/index.php/X "X") para proporcionar una interfaz gráfica, los usuarios pueden desear que este servidor se inicie durante el proceso de arranque, en lugar de iniciarlo de forma manual después de arrancar. Consulte [Display Manager](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") si desea una conexión gráfica o [Start X at Boot](/index.php/Start_X_at_Boot_(Espa%C3%B1ol) "Start X at Boot (Español)") para los métodos que no impliquen un gestor de ventanas.
+Si se utiliza un servidor [X](/index.php/X "X") para proporcionar una interfaz gráfica, los usuarios pueden desear que este servidor se inicie durante el proceso de arranque, en lugar de iniciarlo de forma manual después de arrancar. Consulte [Display Manager](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") si desea una conexión gráfica o [Start X at Boot](/index.php/Start_X_at_Boot_(Espa%C3%B1ol) "Start X at Boot (Español)") para los métodos que no impliquen un gestor de ventanas.
 
 ## Administrar la energía
 
@@ -233,7 +233,7 @@ See [Power management](/index.php/Power_management "Power management") for more 
 
 ### Eventos de ACPI
 
-Los usuarios pueden configurar la forma en que el sistema reacciona a los eventos ACPI como al pulsar el botón de encendido o al cerrar la tapa del portátil. Para el método nuevo (recomendado) usando [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), véase el artículo sobre la[gestión de energía con systemd](/index.php/Power_Management_(Espa%C3%B1ol)#Gesti.C3.B3n_de_energ.C3.ADa_con_systemd "Power Management (Español)"). Para el método antiguo, véase [acpid](/index.php/Acpid "Acpid").
+Los usuarios pueden configurar la forma en que el sistema reacciona a los eventos ACPI como al pulsar el botón de encendido o al cerrar la tapa del portátil. Para el método nuevo (recomendado) usando [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), véase el artículo sobre la[gestión de energía con systemd](/index.php/Power_management_(Espa%C3%B1ol)#Gesti.C3.B3n_de_energ.C3.ADa_con_systemd "Power management (Español)"). Para el método antiguo, véase [acpid](/index.php/Acpid "Acpid").
 
 ### Regulación de la frecuencia de la CPU
 
@@ -319,7 +319,7 @@ Las bibliotecas que gestionan las fuentes pueden ser compiladas con parches para
 
 ### Temas GTK y Qt
 
-Gran parte de las aplicaciones que disponen de una interfaz gráfica en los sistemas Linux se basan en herramientas [GTK+](/index.php/GTK%2B "GTK+") o [Qt](/index.php/Qt "Qt"). Vea estos artículos, así como [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications") para obtener ideas de cómo mejorar la apariencia de los programas instalados y adaptarlos a su gusto.
+Gran parte de las aplicaciones que disponen de una interfaz gráfica en los sistemas Linux se basan en herramientas [GTK+](/index.php/GTK%2B "GTK+") o [Qt](/index.php/Qt "Qt"). Vea estos artículos, así como [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") para obtener ideas de cómo mejorar la apariencia de los programas instalados y adaptarlos a su gusto.
 
 ## Mejoras para la consola
 
@@ -371,4 +371,4 @@ Para poder guardar, fuera de la pantalla, y ver posteriormente el texto que sali
 
 ### Gestionar las sesiones
 
-Utilizando terminales [multiplexores](http://es.wikipedia.org/wiki/Multiplexor) como [tmux](/index.php/Tmux "Tmux") o [screen](/index.php/Screen "Screen"), los programas pueden ejecutarse en sesiones compuestas por pestañas y paneles que pueden ser separadas a voluntad, por lo que cuando el usuario cierra el emulador de terminal, termina [X](/index.php/X "X") o se cierra la sesión, los programas asociados a la sesión continuarán funcionando en segundo plano mientras el servidor del terminal multiplexor esté activo. Para poder interactuar con los programas se requiere volver a conectarse a la sesión.
+Utilizando terminales [multiplexores](https://es.wikipedia.org/wiki/Multiplexor) como [tmux](/index.php/Tmux "Tmux") o [screen](/index.php/Screen "Screen"), los programas pueden ejecutarse en sesiones compuestas por pestañas y paneles que pueden ser separadas a voluntad, por lo que cuando el usuario cierra el emulador de terminal, termina [X](/index.php/X "X") o se cierra la sesión, los programas asociados a la sesión continuarán funcionando en segundo plano mientras el servidor del terminal multiplexor esté activo. Para poder interactuar con los programas se requiere volver a conectarse a la sesión.

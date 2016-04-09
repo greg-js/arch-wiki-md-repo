@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Makepkg](/index.php/Makepkg "Makepkg") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-02，点击[这里](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=389580)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Makepkg](/index.php/Makepkg "Makepkg") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-07，点击[这里](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=428988)可以查看翻译后英文页面的改动。
 
 [makepkg](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in)是一个软件包自动编译脚本。使用时需要一个 Unix 环境和 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
@@ -7,10 +7,10 @@ makepkg 是由 [pacman](https://www.archlinux.org/packages/?name=pacman) 包提�
 ## Contents
 
 *   [1 配置](#.E9.85.8D.E7.BD.AE)
-    *   [1.1 包信息](#.E5.8C.85.E4.BF.A1.E6.81.AF)
+    *   [1.1 打包人信息](#.E6.89.93.E5.8C.85.E4.BA.BA.E4.BF.A1.E6.81.AF)
     *   [1.2 包输出](#.E5.8C.85.E8.BE.93.E5.87.BA)
     *   [1.3 验证签名](#.E9.AA.8C.E8.AF.81.E7.AD.BE.E5.90.8D)
-*   [2 使用方法](#.E4.BD.BF.E7.94.A8.E6.96.B9.E6.B3.95)
+*   [2 使用](#.E4.BD.BF.E7.94.A8)
 *   [3 使用技巧](#.E4.BD.BF.E7.94.A8.E6.8A.80.E5.B7.A7)
     *   [3.1 体系结构，编译标志](#.E4.BD.93.E7.B3.BB.E7.BB.93.E6.9E.84.EF.BC.8C.E7.BC.96.E8.AF.91.E6.A0.87.E5.BF.97)
         *   [3.1.1 MAKEFLAGS](#MAKEFLAGS)
@@ -21,10 +21,12 @@ makepkg 是由 [pacman](https://www.archlinux.org/packages/?name=pacman) 包提�
     *   [3.4 生成新校验和](#.E7.94.9F.E6.88.90.E6.96.B0.E6.A0.A1.E9.AA.8C.E5.92.8C)
     *   [3.5 创建非压缩软件包](#.E5.88.9B.E5.BB.BA.E9.9D.9E.E5.8E.8B.E7.BC.A9.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [3.6 Utilizing multiple cores on compression](#Utilizing_multiple_cores_on_compression)
+    *   [3.7 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
 *   [4 问题处理](#.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86)
     *   [4.1 Makepkg sometimes fails to sign a package without asking for signature passphrase](#Makepkg_sometimes_fails_to_sign_a_package_without_asking_for_signature_passphrase)
     *   [4.2 CFLAGS/CXXFLAGS/CPPFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS.2FCXXFLAGS.2FCPPFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
-    *   [4.3 WARNING:Referencing $srcdir in PKGBUILD](#WARNING:Referencing_.24srcdir_in_PKGBUILD)
+    *   [4.3 Specifying install directory for QMAKE based packages](#Specifying_install_directory_for_QMAKE_based_packages)
+    *   [4.4 WARNING:Referencing $srcdir in PKGBUILD](#WARNING:Referencing_.24srcdir_in_PKGBUILD)
 *   [5 参阅](#.E5.8F.82.E9.98.85)
 
 ## 配置
@@ -33,20 +35,11 @@ makepkg 的详细配置选项可以通过 `man makepkg.conf` 查询。
 
 `/etc/makepkg.conf` 是 makepkg 的主配置文件。用户的自定义配置位于 `$XDG_CONFIG_HOME/pacman/makepkg.conf` 或 `~/.makepkg.conf`. 建议用户在编译软件包之前检查 makepkg 配置。
 
-### 包信息
+### 打包人信息
 
-配置源文件和包的输出路径，以及打包者的信息。这一步是可选的；默认情况下包会在 makepkg 运行的工作路径下创建。
+每个软件包都会有元数据信息，其中就包含 *packager*. 默认情况下，用户自己打包的软件标记为 `Unknown Packager`. 如果多个用户会在系统上编译，或者需要发布软件包给其他人，最好提供真实的联系人。可以通过 `makepkg.conf` 中的 `PACKAGER` 变量设置。
 
-例如，创建目录：
-
-```
-$ mkdir /home/$USER/packages
-
-```
-
-然后照此修改 `/etc/makepkg.conf` 中的`PKGDEST` 变量。
-
-`PACKAGER` 变量会设置包的`.PKGINFO` 元数据文件中的 `packager` 值。默认情况下，用户编译的包会显示：
+检查安装软件包的打包人：
 
  `pacman -Qi package` 
 ```
@@ -66,11 +59,11 @@ Packager       : John Doe <john@doe.com>
 
 ```
 
-这对于多个用户在一个系统上编译软件包时，以及将包给其他用户时很有用。
+要自动签名过程，请同时在 `makepkg.conf` 中设置 `GPGKEY` 变量.
 
 ### 包输出
 
-By default, *makepkg* creates the package tarballs in the working directory and downloads source data directly to the `src/` directory. Custom paths can be configured, for example to keep all built packages in `~/build/packages/` and all sources in `~/build/sources/`.
+*makepkg* 默认会在工作目录创建软件包，并把源代码下载到 `src/` 目录。可以配置到自定义的路径，比如所有安装的软件包放到 `~/build/packages/`，所有源代码放到 `~/build/sources/`.
 
 配置以下`makepkg.conf`,如果需要配置变量:
 
@@ -80,46 +73,13 @@ By default, *makepkg* creates the package tarballs in the working directory and 
 
 ### 验证签名
 
-编译时并不需要下面操作，首次配置，请查看用法部分。要临时禁用签名检查请在执行 makepkg 命令时加上 `--skippgpcheck` 选项。
+如果签名文件是以 `.sig` 或 `.asc` 形式作为 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 代码的一部分，makepkg 会自动[验证](/index.php/GnuPG#Verify_a_signature "GnuPG") 软件包. 如果用户未提供需要的签名公钥，*makepkg* 会停止安装过程并提示用户说无法验证 PGP 密钥。
 
-如果 .sig 签名文件是 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 代码的一部分，makepkg 会验证源代码。例如 pkgname-pkgver.tar.gz.sig 会被 gpg 用来验证 pkgname-pkgver.tar.gz 的完整性。如果需要，其它开发者的签名也能手动添加到 gpg 密钥环，方法参阅[GnuPG](/index.php/GnuPG "GnuPG")。
+如果缺少公钥或希望其他开发者进行签名，可以手动 [导入](/index.php/GnuPG#Import_a_key "GnuPG")或通过 [密钥服务器](/index.php/GnuPG#Use_a_keyserver "GnuPG") 导入。要临时禁用签名检查请在执行 makepkg 命令时加上 `--skippgpcheck` 选项。
 
-**注意:** makepkg 中的签名验证并不使用 pacman 的密钥环。用如下方法配置 makepkg 就可以读取 pacman 的密钥环。
+**注意:** makepkg 中的签名验证并不使用 pacman 的密钥环, 而是使用用户的密钥。
 
-gpg 密钥应该保存在`~/.gnupg/pubring.gpg`文件中，如果其中不包含需要的签名，makepkg 会显示警告.
-
- `$ makepkg` 
-```
-...
-==> Verifying source file signatures with gpg...
-pkgname-pkgver.tar.gz ... FAILED (unknown public key 1234567890)
-==> WARNING: Warnings have occurred while verifying the signatures.
-    Please make sure you really trust them.
-...
-
-```
-
-要显示当前使用的密钥：
-
-```
-$ gpg --list-keys
-
-```
-
-如果 pubring.gpg 文件不存在，会被立即创建。
-
-要让 gpg 验证 Arch 开发者提交的 AUR 软件包。将如下内容加到 gpg 配置文件的末尾：
-
- `~/.gnupg/gpg.conf` 
-```
-...
-keyring /etc/pacman.d/gnupg/pubring.gpg
-
-```
-
-`gpg --list-keys`的输出就会包含开发者的密钥。
-
-## 使用方法
+## 使用
 
 继续之前，确保 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 软件组已经安装。属于这个组的软件包不会列在 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 文件的依赖中。输入以下命令安装 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 软件包组 (用 root 运行)：
 
@@ -164,13 +124,6 @@ $ makepkg -c
 
 ```
 
-Arch Linux 软件包可以通过 makepkg 自动签名:
-
-```
-$ makepkg --sign --key <key-id>
-
-```
-
 更多信息请阅读[makepkg(8)](https://www.archlinux.org/pacman/makepkg.8.html).
 
 ## 使用技巧
@@ -206,28 +159,28 @@ LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro"
 
 默认的 makepkg.conf `CFLAGS` 和 `CXXFLAGS` 是与所有机器各自的体系结构兼容的。
 
-在 x86_64 机器上，不要花费时间进行编译选项优化，绝大部分情况下优化效果都不明显。
+在 x86_64 机器上，不要花费时间进行编译选项优化，绝大部分情况下优化效果都不明显。使用非标准的 CFLAGS 非常容易降低性能，因为编译器倾向于快速增大生成的文件，例如解开循环、错误的向量化和非理性的内联函数。除非通过测评得出性能提升的结论，否则最好不要做优化。
 
-从 4.3.0 版本开始, GCC 提供了 `-march=native` 开关，可以进行 CPU 自动检测，可以在编译时自动选择本地机器支持的优化。要使用它，只需修改默认设置，将 `CFLAGS` 和 `CXXFLAGS` 修改为：
+GCC 的手册页面有完整的选项列表。Gentoo [编译器优化指南](http://www.gentoo.org/doc/en/gcc-optimization.xml) 和 [安全 Cflags](http://wiki.gentoo.org/wiki/Safe_CFLAGS) wiki 文章提供了深入信息。
+
+从 4.3.0 版本开始, GCC 可以进行 CPU 自动检测，可以在编译时自动选择本地机器支持的优化。要使用它，删除所有 `-march` 和 `-mtune`，然后添加 `-march=native`. 例如：
 
 ```
-# -march=native also sets the correct -mtune=
-CFLAGS="-march=native -O2 -pipe -fstack-protector --param=ssp-buffer-size=4 -D_FORTIFY_SOURCE=2"
+CFLAGS="-march=native -O2 -pipe -fstack-protector-strong"
 CXXFLAGS="${CFLAGS}"
 
 ```
 
-**Tip:** 要查看`march=native`启用的选项，运行：
-```
-$ gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
+要查看`march=native`启用的选项，运行：
 
 ```
+ $ gcc -march=native -v -Q --help=target
 
-理论上，根据 CPU 做进一步优化可以提高性能，因为 `-march=native` 启用了所有的指令集，提高了某些 CPU 的调度效率。特别是重新编译比较依赖 Arch Linux 默认没有打开指令集的程序，音频视频编码、科学计算和具有大量运算的程序等。
+```
 
-然而，使用非标准的 CFLAGS 非常容易降低性能，因为编译器倾向于快速增大生成的文件，例如解开循环、错误的向量化和非理性的内联函数。除非通过测评得出性能提升的结论，否则最好不要做优化。
+*   If you specify different value than `-march=native`, then `-Q --help=target` **will not** work as expected.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1616694#p1616694) You need to go through a compilation phase to find out which options are really enabled. See [Find CPU-specific options](https://wiki.gentoo.org/wiki/Safe_CFLAGS#Find_CPU-specific_options) on Gentoo wiki for instructions.
 
-GCC 的手册页面有完整的选项列表。Gentoo [编译器优化指南](http://www.gentoo.org/doc/en/gcc-optimization.xml) 和 [安全 Cflags](http://wiki.gentoo.org/wiki/Safe_CFLAGS) wiki 文章提供了深入信息。
+*   To find out the optimal options for a **32 bit** x86 architecture, you can use the script [gcccpuopt](https://github.com/pixelb/scripts/blob/master/scripts/gcccpuopt).
 
 #### MAKEFLAGS
 
@@ -298,8 +251,33 @@ PKGEXT='.pkg.tar'
  `/etc/makepkg.conf` 
 ```
 [...]
-COMPRESSXZ=(xz -T 0 -c -z -)
+ COMPRESSXZ=(xz -c -z - **--threads=0**)
 [...]
+```
+
+### Build 32-bit packages on a 64-bit system
+
+**Warning:** Errors have been reported when using this method to build the [linux](https://www.archlinux.org/packages/?name=linux) package. The [chroot method](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system") is preferred and has been verified to work for building the kernel packages.
+
+First, enable the [multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/). Reply yes when asked about removing the conflicting `gcc` and `gcc-libs` packages; gcc-multilib is capable of building both 64-bit and 32-bit software.
+
+Then create a 32-bit configuration file
+
+ `~/.makepkg.i686.conf` 
+```
+
+CARCH="i686"
+CHOST="i686-unknown-linux-gnu"
+CFLAGS="-m32 -march=i686 -mtune=generic -O2 -pipe -fstack-protector-strong"
+CXXFLAGS="${CFLAGS}"
+LDFLAGS="-m32 -Wl,-O1,--sort-common,--as-needed,-z,relro"
+```
+
+and invoke makepkg as such
+
+```
+$ linux32 makepkg --config ~/.makepkg.i686.conf
+
 ```
 
 ## 问题处理
@@ -338,6 +316,36 @@ build() {
 
 Alternatively, for a system wide configuration, you can create your own `qmake.conf` and set the [QMAKESPEC](http://doc.qt.io/qt-5/qmake-environment-reference.html#qmakespec) environment variable.
 
+### Specifying install directory for QMAKE based packages
+
+The makefile generated by qmake uses the environment variable INSTALL_ROOT to specify where the program should be installed. Thus this package function should work:
+
+ `PKGBUILD` 
+```
+...
+
+package() {
+	cd "$srcdir/${pkgname%-git}"
+	make INSTALL_ROOT="$pkgdir" install
+}
+
+...
+
+```
+
+Note, that qmake also has to be configured appropriately. For example put this in your .pro file:
+
+ `YourProject.pro` 
+```
+...
+
+target.path = /usr/local/bin
+INSTALLS += target
+
+...
+
+```
+
 ### WARNING:Referencing $srcdir in PKGBUILD
 
 有时 `$pkgdir` 或 `$srcdir` 进入了软件包中的文件，用下面命令检查：
@@ -355,3 +363,4 @@ grep -R "$(pwd)/src" pkg/
 *   [makepkg.conf(5) Manual Page](https://www.archlinux.org/pacman/makepkg.conf.5.html)
 *   [A Brief Tour of the Makepkg Process](https://gist.github.com/Earnestly/bebad057f40a662b5cc3)
 *   [gcccpuopt](https://github.com/pixelb/scripts/blob/master/scripts/gcccpuopt): 一个根据当前 CPU，输出 cpu 专有选项的脚本
+*   [makepkg source code](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in)

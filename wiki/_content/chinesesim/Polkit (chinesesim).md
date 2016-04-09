@@ -2,16 +2,16 @@
 
 来自 [polkit 主页](http://www.freedesktop.org/wiki/Software/polkit/)：
 
-	*polkit is an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes: It is a framework for centralizing the decision making process with respect to granting access to privileged operations for unprivileged applications.*
+	*polkit 一个应用程序级别的工具集，通过定义和审核权限规则，实现低优先级进程和高优先级进程的通讯：这个框架集中处理低优先级进程对高优先级进程的访问授权。.*
 
-Polkit is used for controlling system-wide privileges. It provides an organized way for non-privileged processes to communicate with privileged ones. In contrast to systems such as sudo, it does not grant root permission to an entire process, but rather allows a finer level of control of centralized system policy.
+Polkit 控制系统级别的权限，提供了一个低优先级进程和高优先级进程进行通讯的系统。和 sudo 等程序不同，进程并没有获得完全的 root 权限，而是通过一个集中的策略系统得到更精细的控制授权。
 
-Polkit works by delimiting distinct actions, e.g. running GParted, and delimiting users by group or by name, e.g. members of the wheel group. It then defines how – if at all – those users are allowed those actions, e.g. by identifying as members of the group by typing in their passwords.
+Polkit 先定义出不同的操作，例如运行 GParted, 然后将用户划分为群组和用户名，例如 wheel 群组用户. 然后定义每个动作是不是可以由某些用户执行，定义是不是执行操作前需要一些额外的确认，例如通过输入密码确认用户是不是属于某个群组。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 认证代理](#.E8.AE.A4.E8.AF.81.E4.BB.A3.E7.90.86)
+    *   [1.1 认证确认组件](#.E8.AE.A4.E8.AF.81.E7.A1.AE.E8.AE.A4.E7.BB.84.E4.BB.B6)
 *   [2 架构](#.E6.9E.B6.E6.9E.84)
     *   [2.1 操作](#.E6.93.8D.E4.BD.9C)
     *   [2.2 认证规则](#.E8.AE.A4.E8.AF.81.E8.A7.84.E5.88.99)
@@ -30,13 +30,13 @@ Polkit works by delimiting distinct actions, e.g. running GParted, and delimitin
 
 安装 [polkit](https://www.archlinux.org/packages/?name=polkit) 包。
 
-### 认证代理
+### 认证确认组件
 
-认证代理的作用是使会话用户证实自身的身份。[polkit](https://www.archlinux.org/packages/?name=polkit) 软件包提供了一个名为“pkttyagent”的基于文本方式的认证代理，一般用于最基本的应用。
+认证确认组件让会话的用户证实自身的身份。[polkit](https://www.archlinux.org/packages/?name=polkit) 软件包提供了一个名为“pkttyagent”的基于文本方式的认证代理，作为后备方案。
 
-如果使用图形化环境，需确认安装了图形化的认证代理并且在登录时它能 [自动启动](/index.php/Autostarting "Autostarting")。
+如果使用图形化环境，需确认安装了图形化的认证确认组件并且在登录时 [自动启动](/index.php/Autostarting "Autostarting")。
 
-[Cinnamon](/index.php/Cinnamon "Cinnamon")、[Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment")、[GNOME](/index.php/GNOME "GNOME")、[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")、[KDE](/index.php/KDE "KDE")、[LXDE](/index.php/LXDE "LXDE")、[LXQt](/index.php/LXQt "LXQt")、[MATE](/index.php/MATE "MATE") 和 [Xfce](/index.php/Xfce "Xfce") 各自都已有认证代理。 对于其他桌面环境，你需要从下列实现中选用一种：
+[Cinnamon](/index.php/Cinnamon "Cinnamon")、[Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment")、[GNOME](/index.php/GNOME "GNOME")、[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")、[KDE](/index.php/KDE "KDE")、[LXDE](/index.php/LXDE "LXDE")、[LXQt](/index.php/LXQt "LXQt")、[MATE](/index.php/MATE "MATE") 和 [Xfce](/index.php/Xfce "Xfce") 各自都已有认证组件。 对于其他桌面环境，你需要从下列实现中选用一种：
 
 *   [lxqt-policykit](https://www.archlinux.org/packages/?name=lxqt-policykit)，提供了 `/usr/bin/lxqt-policykit-agent`
 *   [lxsession](https://www.archlinux.org/packages/?name=lxsession)，提供了 `/usr/bin/lxpolkit`
@@ -52,7 +52,7 @@ Polkit works by delimiting distinct actions, e.g. running GParted, and delimitin
 
 Polkit 策略的定义可以分为两类：
 
-*   **操作（Actions）** 定义在位于 `/usr/share/polkit-1/actions` 中的 XML 格式的 `.policy` 文件中。每个**操作**附带着一个默认的权限集合（例如，你需要标识为管理员以使用 GParted 操作）。The defaults can be overruled but editing the actions files is NOT the correct way.
+*   **操作（Actions）** 定义在 `/usr/share/polkit-1/actions` 中，XML 格式，以 `.policy` 结尾的文件。每个**操作**具有个默认的权限集合（例如，你需要标识为管理员以使用 GParted 操作）。The defaults can be overruled but editing the actions files is NOT the correct way.
 *   **认证规则（Authorization rules）** 定义在 JavaScript 格式的 `.rules` 文件中。其位置可位于两处：第三方的包位于 `/usr/share/polkit-1/rules.d`（尽管很少见），以及 `/etc/polkit-1/rules.d` 中的本地配置。这些 **.rules** 文件指定了一个用户的子集合，涉及到一个或多个**操作**文件中指定的操作，并确定那个或那些用户执行这些操作时有哪些限制。举例来说，某个规则文件可以驳回所有认证为 admin 的用户使用 GParted 的默认请求，而确认某些指定用户的请求；或者完全不允许使用 GParted 。
 
 ### 操作

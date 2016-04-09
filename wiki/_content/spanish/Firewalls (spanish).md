@@ -22,7 +22,7 @@ Hay muchos posts en los foros sobre las diferentes aplicaciones y scripts de cor
 
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall") — Página de ArchWiki sobre la interfaz simple de [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)"), [**ufw**](https://en.wikipedia.org/wiki/es:Uncomplicated_Firewall "wikipedia:es:Uncomplicated Firewall") — Proporciona un buen tutorial para una configuración básica.
 
-*   Guía de configuración del [Router](/index.php/Router "Router") — Un tutorial para convertir un ordenador en una [puesta de enlace](https://en.wikipedia.org/wiki/es:Puerta_de_enlace "wikipedia:es:Puerta de enlace")/[router](https://en.wikipedia.org/wiki/es:Router "wikipedia:es:Router") de Internet. Se centra en la [seguridad](/index.php/Security "Security") y la configuración de la puerta de enlace (*gateway*) para tener el menor número de agujeros de seguridad posibles en Internet.
+*   Guía de configuración del [Router](/index.php/Router "Router") — Un tutorial para convertir un ordenador en una [puesta de enlace](https://en.wikipedia.org/wiki/es:Puerta_de_enlace "wikipedia:es:Puerta de enlace")/[router](https://en.wikipedia.org/wiki/es:Router "wikipedia:es:Router") de Internet. Se centra en la[seguridad](/index.php/Security "Security") y la configuración de la puerta de enlace (*gateway*) para tener el menor número de agujeros de seguridad posibles en Internet.
 
 #### Tutoriales de cortafuegos externos
 

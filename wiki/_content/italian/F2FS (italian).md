@@ -2,7 +2,7 @@
 
 ## Creare una partizione F2FS
 
-Per creare una partizione F2FS, [installate](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Per creare una partizione F2FS, [installate](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Dopo di che date il comando:
 
@@ -33,11 +33,11 @@ Ora siete pronti a montare:
 
 Dall'immagine di installazione di Arch Linux 2013.04.01, è possibile installare il sistema su una partizione F2FS:
 
-1.  Avviate l'immagine e installate [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
-2.  Caricate il modulo `f2fs` come [descritto](/index.php/F2fs_(Italiano)#Montare_una_partizione_F2FS "F2fs (Italiano)").
-3.  Create la partizione radice formattata in F2FS come [descritto](/index.php/F2fs_(Italiano)#Creare_una_partizione_F2FS "F2fs (Italiano)").
+1.  Avviate l'immagine e installate [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
+2.  Caricate il modulo `f2fs` come [descritto](#Montare_una_partizione_F2FS).
+3.  Create la partizione radice formattata in F2FS come [descritto](#Creare_una_partizione_F2FS).
 4.  Create la partizione di avvio (*/boot*) formattata in ext4 (o un altro file system supportato).
-5.  Montate, installate e cambiate radice come [descritto](/index.php/Beginners%27_Guide_(Italiano)#Montare_le_partizioni "Beginners' Guide (Italiano)").
+5.  Montate, installate e cambiate radice come [descritto](/index.php/Beginners%27_guide_(Italiano)#Montare_le_partizioni "Beginners' guide (Italiano)").
 6.  Sul sistema installato aggiungete `f2fs` alla sezione moduli del file `/etc/mkinitcpio.conf` e rimuovete `fsck` dalla sezione hooks perchè F2FS non dispone ancora di un *fsck*.
 7.  Rigenerate l'immagine compressa del kernel:
 

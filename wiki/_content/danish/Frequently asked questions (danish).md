@@ -133,6 +133,6 @@ Et almindeligt problem for pakker som Firefox og OpenOffice er, at de installere
 
 ## Arch har brug for et bedre eller et grafisk installationsprogram!
 
-Diskussionen om et bedre installationsprogram er en subjektiv mening. Den bedste måde at komme om ved dette er, at tilpasse installationsprogrammet til [filosofien](/index.php/The_Arch_Way_(Dansk) "The Arch Way (Dansk)") bag Arch Linux. Hvis opfattelsen af et bedre installationsprogram understøttes af mere konkrete argumenter, kan yderligere udvikling tages op til debat. Da der ikke skal installeres særligt ofte (Se afsnittet ovenfor om [rullende udgivelser](/index.php/FAQ_(Dansk)#Hvorn.C3.A5r_kommer_der_en_ny_udgave.3F "FAQ (Dansk)")), er det ikke særligt højt prioriteret af hverken brugere eller udviklere.
+Diskussionen om et bedre installationsprogram er en subjektiv mening. Den bedste måde at komme om ved dette er, at tilpasse installationsprogrammet til [filosofien](/index.php/The_Arch_Way_(Dansk) "The Arch Way (Dansk)") bag Arch Linux. Hvis opfattelsen af et bedre installationsprogram understøttes af mere konkrete argumenter, kan yderligere udvikling tages op til debat. Da der ikke skal installeres særligt ofte (Se afsnittet ovenfor om [rullende udgivelser](#Hvorn.C3.A5r_kommer_der_en_ny_udgave.3F)), er det ikke særligt højt prioriteret af hverken brugere eller udviklere.
 Der er dog to uofficielle metoder:
 [Archie Live CD](http://archie.dotsrc.org/) med XFCE (Flere er under udvikling) og [Arch_Linux_Office_Install_CD](http://user-contributions.org/wikis/userwiki/index.php?) med KDE.

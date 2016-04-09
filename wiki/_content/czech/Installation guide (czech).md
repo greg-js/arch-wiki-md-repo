@@ -1,6 +1,6 @@
-Tato stránka vás provede procesem instalace [Arch Linuxu](/index.php/Arch_Linux_(%C4%8Cesky) "Arch Linux (Česky)") pomocí [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Před instalací si prosím pročtěte [často kladené otázky](/index.php/FAQ_(%C4%8Cesky) "FAQ (Česky)"). Pokud hledáte podrobnější a více vysvětlující příručku, navštivte [příručku začátečníka](/index.php/Beginners%27_Guide_(%C4%8Cesky) "Beginners' Guide (Česky)").
+Tato stránka vás provede procesem instalace [Arch Linuxu](/index.php/Arch_Linux_(%C4%8Cesky) "Arch Linux (Česky)") pomocí [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Před instalací si prosím pročtěte [často kladené otázky](/index.php/FAQ_(%C4%8Cesky) "FAQ (Česky)"). Pokud hledáte podrobnější a více vysvětlující příručku, navštivte [příručku začátečníka](/index.php/Beginners%27_guide_(%C4%8Cesky) "Beginners' guide (Česky)").
 
-Komunitou spravovaná [ArchWiki](/index.php/Main_Page_(%C4%8Cesky) "Main Page (Česky)") je výborným zdrojem dokumentace, řešení problémů hledejte nejdříve zde. Pokud nemůžete nalézt řešení problému, jsou vám k dispozici [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanál ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) a [fórum](https://bbs.archlinux.org/). Určitě také pročtěte manuálové stránky jakéhokoli příkazu, který vám není povědomý; manuálové stránky se obvykle prohlíží příkazem `man *command*`.
+Komunitou spravovaná [ArchWiki](/index.php/Main_page_(%C4%8Cesky) "Main page (Česky)") je výborným zdrojem dokumentace, řešení problémů hledejte nejdříve zde. Pokud nemůžete nalézt řešení problému, jsou vám k dispozici [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanál ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) a [fórum](https://bbs.archlinux.org/). Určitě také pročtěte manuálové stránky jakéhokoli příkazu, který vám není povědomý; manuálové stránky se obvykle prohlíží příkazem `man *command*`.
 
 ## Contents
 
@@ -229,6 +229,6 @@ Pro instalační instrukce a návrhy fontů vizte [Fonts](/index.php/Fonts "Font
 
 ## Závěr
 
-Navštivte [seznam aplikací](/index.php/List_of_Applications_(%C4%8Cesky) "List of Applications (Česky)"), které by vás mohly zajímat.
+Navštivte [seznam aplikací](/index.php/List_of_applications_(%C4%8Cesky) "List of applications (Česky)"), které by vás mohly zajímat.
 
-Navštivte [poinstalačního průvodce](/index.php/General_Recommendations_(%C4%8Cesky) "General Recommendations (Česky)") obsahující informace o nastavení touchpadu, vykreslování fontů apod.
+Navštivte [poinstalačního průvodce](/index.php/General_recommendations_(%C4%8Cesky) "General recommendations (Česky)") obsahující informace o nastavení touchpadu, vykreslování fontů apod.

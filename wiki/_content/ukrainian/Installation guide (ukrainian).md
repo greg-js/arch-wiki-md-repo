@@ -185,7 +185,7 @@
 
 ### Керування пакунками
 
-Читайте [pacman](/index.php/Pacman_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Pacman (Українська)") та [FAQ#Package Management](/index.php/FAQ#Package_Management "FAQ") для отримання інформації про встановлення, оновлення та керування пакунками.
+Читайте [pacman](/index.php/Pacman_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Pacman (Українська)") та [FAQ#Package management](/index.php/FAQ#Package_management "FAQ") для отримання інформації про встановлення, оновлення та керування пакунками.
 
 ### Керування службами
 

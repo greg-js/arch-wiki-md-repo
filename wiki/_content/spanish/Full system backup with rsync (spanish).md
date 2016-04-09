@@ -41,7 +41,7 @@ Puede que quiera incluir algunas opciones más de [rsync](/index.php/Rsync_(Espa
 
 ## Automatizado
 
-Vea [Backup_programs#Rsync-type_backups](/index.php/Backup_programs#Rsync-type_backups "Backup programs").
+Vea [Backup programs#Rsync-type_backups](/index.php/Backup_programs#Rsync-type_backups "Backup programs").
 
 ## Requerimientos en el arranque
 
@@ -118,7 +118,7 @@ Reinicie el ordenador y seleccione la entrada correcta en el gestor de arranque.
 
 Ahora puede editar `/etc/fstab` para añadir las particiones y puntos de montajes eliminados anteriormente.
 
-Si transfirió los datos de un HDD a un SDD (disco de estado solido), no olvide activar el TRIM. Considere además usar disco HDD y puntos de montajes tmpfs para reducir el desgaste del disco SSD - véase [Montando /tmp en RAM](/index.php/Maximizing_performance_(Espa%C3%B1ol)#Montando_.2Ftmp_en_RAM "Maximizing performance (Español)") y [Consejo para minimizar las L/E en discos SSD](/index.php/Solid_State_Drives#Tips_for_Minimizing_SSD_Read.2FWrites "Solid State Drives").
+Si transfirió los datos de un HDD a un SDD (disco de estado solido), no olvide activar el TRIM. Considere además usar disco HDD y puntos de montajes tmpfs para reducir el desgaste del disco SSD - véase [Montando /tmp en RAM](/index.php/Maximizing_performance_(Espa%C3%B1ol)#Montando_.2Ftmp_en_RAM "Maximizing performance (Español)") y [Consejo para minimizar las L/E en discos SSD](/index.php/Solid_State_Drives#Tips_for_minimizing_disk_reads.2Fwrites "Solid State Drives").
 
 **Nota:** Puede que tenga que reiniciar para que todos los servicios y demonios funcionen correctamente. En mi caso, pulseaudio no inicializaba por un error al cargar un modulo. Reinicié el servicio dbus.service para hacerlo funcionar.
 

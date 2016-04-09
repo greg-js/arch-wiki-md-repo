@@ -130,7 +130,7 @@ Qt5 decides the style to use based on what desktop environment is used:
 *   In Cinnamon, GNOME, MATE, LXDE, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
 *   In other desktop environments, it uses Fusion.
 
-To force a specific style, you can set the `QT_STYLE_OVERRIDE` environment variable. Specifically, set it to `GTK+` if you want to use the gtk theme. Qt5 applications also support the `-style` flag, which you can use to launch a Qt5 application with a specific style.
+To force a specific style, you can set the `QT_STYLE_OVERRIDE` [environment variable](/index.php/Environment_variable "Environment variable"). Specifically, set it to `GTK+` if you want to use the [GTK+](/index.php/GTK%2B "GTK+") theme. Qt5 applications also support the `-style` flag, which you can use to launch a Qt5 application with a specific style.
 
 The following styles are included in Qt5: *GTK+*, *Fusion*, *Windows*. Others can be installed from the official repositories:
 

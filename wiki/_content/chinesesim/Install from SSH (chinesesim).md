@@ -21,7 +21,7 @@
 
 ## 从安装媒体启动
 
-使用[最新的安装媒介](/index.php/Beginners%27_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.8E.B7.E5.BE.97.E6.9C.80.E6.96.B0.E7.9A.84.E5.AE.89.E8.A3.85.E5.AA.92.E4.BB.8B "Beginners' Guide (简体中文)")启动PC到Arch的live环境，并且以**root**登陆。
+使用[最新的安装媒介](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.8E.B7.E5.BE.97.E6.9C.80.E6.96.B0.E7.9A.84.E5.AE.89.E8.A3.85.E5.AA.92.E4.BB.8B "Beginners' guide (简体中文)")启动PC到Arch的live环境，并且以**root**登陆。
 
 ## 为使用SSH设置live安装环境
 
@@ -93,7 +93,7 @@ Last login: Thu Dec 23 08:33:02 2010 from 10.1.10.200
 
 ## 下一步
 
-没有限制。如果只是想从这个安装介质安装Arch，只需要运行 `/arch/setup`。如果想编辑一个已有的损坏的安装，参见[Install from Existing Linux](/index.php/Install_from_Existing_Linux "Install from Existing Linux")的wiki文章。
+没有限制。如果只是想从这个安装介质安装Arch，只需要运行 `/arch/setup`。如果想编辑一个已有的损坏的安装，参见[Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux")的wiki文章。
 
 想要[grub2](/index.php/Grub2 "Grub2")或者使用[GPT](/index.php/GPT "GPT")硬盘?
 

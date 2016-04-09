@@ -96,7 +96,7 @@ Last login: Thu Dec 23 08:33:02 2010 from 10.1.10.200
 
 ## Passi successivi
 
-Il cielo è l'unico limite. Se il proposito è quello di installare semplicemente Arch dal supporto live, eseguire il comando `/arch/setup`. Se il proposito è invece quello di apportare delle modifiche su un'installazione Linux difettosa, seguire l'articolo wiki [Install from Existing Linux](/index.php/Install_from_Existing_Linux "Install from Existing Linux").
+Il cielo è l'unico limite. Se il proposito è quello di installare semplicemente Arch dal supporto live, eseguire il comando `/arch/setup`. Se il proposito è invece quello di apportare delle modifiche su un'installazione Linux difettosa, seguire l'articolo wiki [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux").
 
 Si vuole optare per [grub2](/index.php/Grub2 "Grub2") o la possibilità di utilizzare supporti [GPT](/index.php/GPT "GPT")?
 

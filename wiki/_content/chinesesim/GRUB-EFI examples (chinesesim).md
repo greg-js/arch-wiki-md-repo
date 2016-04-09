@@ -55,14 +55,14 @@
 
 ```
 
-从 UEFI 设置/菜单启动 UEFI Shell 之后 (在华硕 UEFI BIOS 中切换到高级模式，按下位于右上角的 Exit 并选择"Launch EFI shell from filesystem device"). GRUB2 菜单会出现然后可以进入系统。之后，可以使用 efibootmgr 来设置菜单条目，例如 UEFI 分区是 /dev/sda1: (参见 [Unified_Extensible_Firmware_Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"))
+从 UEFI 设置/菜单启动 UEFI Shell 之后 (在华硕 UEFI BIOS 中切换到高级模式，按下位于右上角的 Exit 并选择"Launch EFI shell from filesystem device"). GRUB2 菜单会出现然后可以进入系统。之后，可以使用 efibootmgr 来设置菜单条目，例如 UEFI 分区是 /dev/sda1: (参见 [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"))
 
 ```
 efibootmgr -c -g -d /dev/sda -p 1 -w -L "Arch Linux (GRUB)" -l /EFI/arch_grub/grubx64.efi
 
 ```
 
-如果你的主板没有这个选项 (就算它有), 你也可以使用 UEFI shell ([Unified_Extensible_Firmware_Interface#UEFI_Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface")) 来临时为 Arch 分区创建 UEFI 启动选项。
+如果你的主板没有这个选项 (就算它有), 你也可以使用 UEFI shell ([Unified Extensible Firmware Interface#UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface")) 来临时为 Arch 分区创建 UEFI 启动选项。
 
 进入 EFI shell 之后，添加 UEFI 启动菜单条目:
 
@@ -73,7 +73,7 @@ Shell> bcfg boot add 0 fs1:\EFI\arch_grub\grubx64.efi "Arch Linux (GRUB2)"
 
 此处 `fs1` 映射到 UEFI 系统分区，`\EFI\arch_grub\grubx64.efi` 来源于上面 `grub-install` 命令含有的 `--bootloader-id`.
 
-这会临时添加 UEFI 启动选项以在下一次重启时进入 Arch. 进入之后，输入命令 `modprobe efivars` 并确证 `efibootmgr` 没有错误 (没有错误意味着你成功地进入了 UEFI 模式). 然后 [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems_2 "GRUB") 会再次运行并能成功地往 UEFI 菜单永久性地添加启动条目。
+这会临时添加 UEFI 启动选项以在下一次重启时进入 Arch. 进入之后，输入命令 `modprobe efivars` 并确证 `efibootmgr` 没有错误 (没有错误意味着你成功地进入了 UEFI 模式). 然后 [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") 会再次运行并能成功地往 UEFI 菜单永久性地添加启动条目。
 
 ### ux32vd
 
@@ -135,7 +135,7 @@ Shell> exit
 
 完成标准 Arch 安装流程，确保已安装 [grub](https://www.archlinux.org/packages/?name=grub) 并且硬盘是 GPT 格式。
 
-来自 [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems_2 "GRUB"):
+来自 [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB"):
 
 UEFI 系统分区需要挂载到 `/boot/efi/` 以便 GRUB 安装脚本探测到:
 
@@ -182,7 +182,7 @@ Shell> bcfg boot add 3 fs0:\EFI\Arch_Grub\grubx64.efi "Arch_Grub"
 
 此处 `fs0` 映射到 UEFI 系统分区，`3` 是0启动项目录。
 
-**注意:** UEFI Shell 命令通常支持 `-b` 选项，它用来在每页输出完后暂停。`map` 列出识别的文件系统 (`fs0`, ...) 和数据存储设备 (`blk0`, ...). 运行 `help -b` 以列出可用命令。 [Unified_Extensible_Firmware_Interface#Important_UEFI_Shell_Commands](/index.php/Unified_Extensible_Firmware_Interface#Important_UEFI_Shell_Commands "Unified Extensible Firmware Interface")
+**注意:** UEFI Shell 命令通常支持 `-b` 选项，它用来在每页输出完后暂停。`map` 列出识别的文件系统 (`fs0`, ...) 和数据存储设备 (`blk0`, ...). 运行 `help -b` 以列出可用命令。 [Unified Extensible Firmware Interface#Important UEFI Shell Commands](/index.php/Unified_Extensible_Firmware_Interface#Important_UEFI_Shell_Commands "Unified Extensible Firmware Interface")
 
 列出目前启动条目，运行:
 
@@ -195,7 +195,7 @@ Shell> bcfg boot dump -v
 
 ### EliteBook 840 G1
 
-详见 [HP_EliteBook_840_G1#UEFI_Setup](/index.php/HP_EliteBook_840_G1#UEFI_Setup "HP EliteBook 840 G1").
+详见 [HP EliteBook 840 G1#UEFI Setup](/index.php/HP_EliteBook_840_G1#UEFI_Setup "HP EliteBook 840 G1").
 
 **注意:** 上面的流程对一些 HP 其他型号也有用。
 

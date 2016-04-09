@@ -53,7 +53,7 @@ No todas las técnicas de journaling son iguales. Solo ext3 y ext4 proporcionan 
 
 	[http://code.google.com/e/exfat/](http://code.google.com/e/exfat/) || [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
 
-*   **f2fs-tools** — Soporte técnico para [F2FS](/index.php/F2fs "F2fs").
+*   **f2fs-tools** — Soporte técnico para [F2FS](/index.php/F2FS "F2FS").
 
 	[https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git](https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git) || [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools)
 

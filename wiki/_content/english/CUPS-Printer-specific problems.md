@@ -42,6 +42,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | DCP-7020 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or Brother's driver. |
 | DCP-7030 | [brother-dcp7030](https://aur.archlinux.org/packages/brother-dcp7030/) |
 | DCP-7065DN | [brother-dcp7065dn](https://aur.archlinux.org/packages/brother-dcp7065dn/) |
+| FAX-2820 | [brother-cups-wrapper-laser](https://aur.archlinux.org/packages/brother-cups-wrapper-laser/) |
 | HL-2030 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/) |
 | HL-2035 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Should be compatible with any drivers for the HL-2030. |
 | HL-2040 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or [brother-hl2040](https://aur.archlinux.org/packages/brother-hl2040/) |

@@ -38,7 +38,7 @@
 
 ### Συμμετοχή στο chatroom
 
-Μπορείτε να βοηθήσετε άλλους χρήστες στην επίλυση των προβλημάτων τους στο [IRC Κανάλι](/index.php/IRC_Channel "IRC Channel"). Είναι ζωτικής σημασίας ωστόσο,να διαβάσετε τους [κανόνες](/index.php/IRC_Channel#.23archlinux_rules "IRC Channel") και τις [κατευθυντήριες γραμμές](/index.php/IRC_Channel#.23archlinux_guidelines "IRC Channel") πριν από τη συμμετοχή.[Περαιτέρω κανάλια](/index.php/IRC_channels "IRC channels") είναι διαθέσιμα για συγκεκριμένα θέματα.
+Μπορείτε να βοηθήσετε άλλους χρήστες στην επίλυση των προβλημάτων τους στο [IRC Κανάλι](/index.php/IRC_channel "IRC channel"). Είναι ζωτικής σημασίας ωστόσο,να διαβάσετε τους [κανόνες](/index.php/IRC_channel#.23archlinux_rules "IRC channel") και τις [κατευθυντήριες γραμμές](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel") πριν από τη συμμετοχή.[Περαιτέρω κανάλια](/index.php/IRC_channels "IRC channels") είναι διαθέσιμα για συγκεκριμένα θέματα.
 
 ### Αναφορά εγκατεστημένων πακέτων
 

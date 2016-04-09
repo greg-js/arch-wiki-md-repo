@@ -1,4 +1,4 @@
-**[PyTyle](http://code.google.com/p/pytyle/)** is a tiling manager that works with EWMH-compliant window managers (like [Openbox](/index.php/Openbox "Openbox") and KWin) to provide functions for tiling windows. Both Xmonad and Musca have influenced the feature set.
+**[PyTyle](http://code.google.com/p/pytyle/)** is a tiling manager that works with EWMH-compliant [window managers](/index.php/Window_manager "Window manager") (like [Openbox](/index.php/Openbox "Openbox") and KWin) to provide functions for tiling windows. Both Xmonad and Musca have influenced the feature set.
 
 ## Contents
 

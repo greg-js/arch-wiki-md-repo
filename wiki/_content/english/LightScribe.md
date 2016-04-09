@@ -1,17 +1,17 @@
-From [lightscribe.com](http://www.lightscribe.com/):
+From [w:LightScribe](https://en.wikipedia.org/wiki/LightScribe "w:LightScribe"):
 
-	*LightScribe is an innovative technology that uses a special disc drive, special media, and label-making software to burn labels directly onto CDs and DVDs.*
+	LightScribe is an optical disc recording technology, created by the Hewlett-Packard Company, that uses specially coated recordable CD and DVD media to produce laser-etched labels with text or graphics, as opposed to stick-on labels and printable discs.
 
 Labels burnt using LightScribe are monochromatic, as it works by making a chemical in the media react with the laser beam and change color.
 
 ## Installation
 
-To use LightScribe, regardless of which operating system you're using, you need two pieces of software: the LightScribe System Software and another LightScribe label making software.
+To use LightScribe, regardless of which operating system you are using, you need two pieces of software: the LightScribe System Software and another LightScribe label making software.
 
 On Arch, the LightScribe System Software is available from the [AUR](/index.php/AUR "AUR"):
 
 *   **i686**: [lightscribe](https://aur.archlinux.org/packages/lightscribe/)
-*   **x86_64**: [bin32-lightscribe](https://aur.archlinux.org/packages/bin32-lightscribe/)
+*   [Multilib](/index.php/Multilib "Multilib") **x86_64**: [bin32-lightscribe](https://aur.archlinux.org/packages/bin32-lightscribe/)
 
 ## Labelers
 
@@ -35,4 +35,4 @@ To adjust the contrast which is often too light, run:
 
 ```
 
-then hit 1 to use the enhanced contrast setting or 2 to reset it. Note that some programs (like LaCie 4L) have this option built-in and it can be changed at runtime.
+then hit `1` to use the enhanced contrast setting or `2` to reset it. Note that some programs (e.g. LaCie 4L) have this option built-in and it can be changed at runtime.

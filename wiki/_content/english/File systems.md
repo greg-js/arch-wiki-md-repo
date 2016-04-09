@@ -166,19 +166,21 @@ To unmount it, you can use *umount* on the directory where the filesystem was mo
 
 ```
 
-To create a new file system of type ext4 on a partition do:
+To create a new file system of type *fstype* on a partition do:
 
 **Warning:** After creating a new filesystem, data previously stored on this partition can likely not be recovered. Make a backup of any data you want to keep.
 
 ```
+# mkfs.*fstype* /dev/*partition*
+
+```
+
+See the article in [#Types of file systems](#Types_of_file_systems) corresponding to file system you wish to create for the exact command as well as userspace utilities you may wish to install for a particular file system.
+
+For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") on a partition do:
+
+```
 # mkfs.ext4 /dev/*partition*
-
-```
-
-Alternatively, you can use `mkfs` which is just a unified front-end for the different `mkfs.*fstype*` tools.
-
-```
-# mkfs -t ext4 /dev/*partition*
 
 ```
 

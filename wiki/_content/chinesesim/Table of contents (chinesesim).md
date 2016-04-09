@@ -3,7 +3,7 @@
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
 | [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(147)</small> |
-| <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(23)</small> |
+| <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(22)</small> |
 | <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
 | <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(17)</small> |
 | <small>1.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
@@ -25,7 +25,7 @@
 | <small>2.8.2.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(2)</small> |
 | <small>2.8.3.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(4)</small> |
 | <small>2.9.</small> [数学和自然科学](/index.php/Category:Mathematics_and_science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mathematics and science (简体中文)") <small>(5)</small> |
-| <small>2.10.</small> [播放器](/index.php/Category:Multimedia_players_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Multimedia players (简体中文)") <small>(4)</small> |
+| <small>2.10.</small> [播放器](/index.php/Category:Multimedia_players_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Multimedia players (简体中文)") <small>(5)</small> |
 | <small>2.11.</small> [办公](/index.php/Category:Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Office (简体中文)") <small>(3)</small> |
 | <small>2.11.1.</small> [TeX](/index.php/Category:TeX_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:TeX (简体中文)") <small>(1)</small> |
 | <small>2.12.</small> [系统监视和信息通知](/index.php/Category:Status_monitoring_and_notification_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Status monitoring and notification (简体中文)") <small>(1)</small> |
@@ -92,7 +92,7 @@
 | <small>7.4.5.</small> [平铺窗口管理器](/index.php/Category:Tiling_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Tiling WMs (简体中文)") <small>(5)</small> |
 | <small>7.5.</small> [Dotfiles](/index.php/Category:Dotfiles_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dotfiles (简体中文)") <small>(1)</small> |
 | <small>7.6.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(20)</small> |
-| <small>7.7.</small> [软件包管理](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)") <small>(22)</small> |
+| <small>7.7.</small> [软件包管理](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)") <small>(23)</small> |
 | <small>7.7.1.</small> [Arch用户软件库 (AUR)](/index.php/Category:Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch User Repository (简体中文)") <small>(3)</small> |
 | <small>7.8.</small> [电源管理](/index.php/Category:Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Power management (简体中文)") <small>(7)</small> |
 | <small>7.9.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(25)</small> |
@@ -106,7 +106,7 @@
 | <small>8.4.</small> [内核](/index.php/Category:Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Kernel (简体中文)") <small>(14)</small> |
 | <small>8.5.</small> [脚本](/index.php/Category:Scripts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Scripts (简体中文)") <small>(2)</small> |
 | <small>8.6.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(13)</small> |
-| <small>8.6.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(1)</small> |
+| <small>8.6.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(2)</small> |
 | <small>8.6.2.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(2) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>8.6.3.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(3) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>8.6.4.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(3) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |

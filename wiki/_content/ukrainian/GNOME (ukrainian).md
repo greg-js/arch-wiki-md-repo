@@ -81,7 +81,7 @@ GNOME 3 має два режима **Gnome-Shell** (Новий, стандарт
 
 ```
 
-Щоб gdm став вашим способом авторизації за замовчуванням, змініть файл `/etc/inittab`, або ж пропишіть демона "gdm" в секцію DAEMONS файлу `/etc/[rc.conf](/index.php/Rc.conf_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Rc.conf (Українська)")`. Обидва способи описані в [цієї статті](/index.php/Display_Manager_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Display Manager (Українська)")
+Щоб gdm став вашим способом авторизації за замовчуванням, змініть файл `/etc/inittab`, або ж пропишіть демона "gdm" в секцію DAEMONS файлу `/etc/[rc.conf](/index.php/Rc.conf_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Rc.conf (Українська)")`. Обидва способи описані в [цієї статті](/index.php/Display_manager_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Display manager (Українська)")
 
 Або якщо ви віддаєте перевагу запускати X з консолі, додасте наступний рядок в файл `~/.xinitrc`
 
@@ -162,7 +162,7 @@ $ GSETTINGS_BACKEND=dconf gsettings set org.gnome.desktop.sound event-sounds fal
 
 ### Видалення піктограми універсального доступу
 
-По-перше приберіть сервіс з автозапуску [GNOME 3 (Українська)#Керування автозапуском в GNOME 3](/index.php/GNOME_3_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)#.D0.9A.D0.B5.D1.80.D1.83.D0.B2.D0.B0.D0.BD.D0.BD.D1.8F_.D0.B0.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.BE.D0.BC_.D0.B2_GNOME_3 "GNOME 3 (Українська)")
+По-перше приберіть сервіс з автозапуску [#Керування автозапуском в GNOME 3](#.D0.9A.D0.B5.D1.80.D1.83.D0.B2.D0.B0.D0.BD.D0.BD.D1.8F_.D0.B0.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.BE.D0.BC_.D0.B2_GNOME_3)
 
 Потім створіть теку **noa11y.icon@panel.ui** в **$HOME/.local/share/gnome-shell/extensions**. У цій папці створіть два файли. Перший назвіть **extension.js** і внесіть в нього наступне:
 
@@ -193,7 +193,7 @@ const Panel = imports.ui.panel;
 
 ### Видалення піктограми Bluetooth
 
-По-перше приберіть сервіс з автозапуску [GNOME 3 (Українська)#Керування автозапуском в GNOME 3](/index.php/GNOME_3_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)#.D0.9A.D0.B5.D1.80.D1.83.D0.B2.D0.B0.D0.BD.D0.BD.D1.8F_.D0.B0.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.BE.D0.BC_.D0.B2_GNOME_3 "GNOME 3 (Українська)")
+По-перше приберіть сервіс з автозапуску [#Керування автозапуском в GNOME 3](#.D0.9A.D0.B5.D1.80.D1.83.D0.B2.D0.B0.D0.BD.D0.BD.D1.8F_.D0.B0.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.BE.D0.BC_.D0.B2_GNOME_3)
 
 Потім створіть теку **nobluetooth.icon@panel.ui** в **$HOME/.local/share/gnome-shell/extensions**. У цій папці створіть два файли. Перший назвіть **extension.js** і внесіть в нього наступне:
 

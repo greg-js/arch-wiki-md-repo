@@ -56,7 +56,7 @@ Non tutte le tecniche di journaling sono uguali: in particolare, solo ext3 ed ex
 
 	[http://code.google.com/p/exfat/](http://code.google.com/p/exfat/) || [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
 
-*   **f2fs-tools** — Supporto [F2FS](/index.php/F2fs "F2fs").
+*   **f2fs-tools** — Supporto [F2FS](/index.php/F2FS "F2FS").
 
 	[https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git](https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git) || [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools)
 
@@ -161,7 +161,7 @@ Per creare un file di swap, utilizzare il comando **mkswap**:
 
 Esistono diverse GUI per la gestione del partizionamento:
 
-*   **[Gparted](/index.php/Gparted "Gparted")** — Clone GTK+ di Partition Magic, frontend di GNU Parted.
+*   **[GParted](/index.php/GParted "GParted")** — Clone GTK+ di Partition Magic, frontend di GNU Parted.
 
 	[http://gparted.sourceforge.net](http://gparted.sourceforge.net) || [gparted](https://www.archlinux.org/packages/?name=gparted)
 

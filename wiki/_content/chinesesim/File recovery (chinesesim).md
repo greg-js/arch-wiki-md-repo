@@ -184,7 +184,7 @@ To mount a complete disk image to the next free loop device, use the `losetup` c
 
 ### Mounting partitions
 
-In order to be able to mount a partiton of a whole disk image, follow [the steps above](/index.php/File_recovery#Mount_the_Entire_Disk "File recovery").
+In order to be able to mount a partiton of a whole disk image, follow [the steps above](/index.php/File_recovery#Mount_the_entire_disk "File recovery").
 
 Once the whole disk image is mounted, a normal `mount` command can be used on the loop device:
 

@@ -73,7 +73,7 @@
 
 **A)** 이 문제는 많은 논쟁이 있었습니다. 아치는 고급 GNU/리눅스 사용자를 대상으로 하고 있지만, 어떤 사람들은 열정적인 초보자에게 권할 만 하다고 생각합니다. 만약 당신이 초보자로서 아치를 사용하길 원한다면, 아치는 do-it-yourself 배포본이라는 사실을 숙지하고 있어야 할 뿐만 아니라 새로운 시스템을 배우는 데 많은 시간을 할애할 의지가 있어야 합니다. 사용자는 시스템을 조립하고 어떻게 만들어나갈지 결정하는 사람입니다. 질문하기 전에 구글링, 위키 검색, 포럼 검색(그리고 과거의 FAQ 읽기) 등을 통해 혼자서 연구를 해 봐야 합니다. *이런 자료들은 애초에 이런 목적으로 공개된 것이기 때문입니다.* 수천명이 이런 우수한 정보를 모으는데 많은 시간을 투자했습니다.
 
-추천 문서: 아치 리눅스 [초보자 안내서](/index.php/Beginners%27_Guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' Guide (한국어)").
+추천 문서: 아치 리눅스 [초보자 안내서](/index.php/Beginners%27_guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' guide (한국어)").
 
 ### Q) 저는 개발 팀이 *X*라는 기능을 구현했으면 좋겠는데요.
 
@@ -111,7 +111,7 @@
 
 ### Q) 어째서 다른 운영체제에 비해 인터넷이 굉장히 느리죠?
 
-**A)** 네트워크 설정이 올바르게 되어 있습니까? [인터넷 연결 설정하기](/index.php/Beginners%27_Guide_(%ED%95%9C%EA%B5%AD%EC%96%B4)#.EC.9D.B8.ED.84.B0.EB.84.B7_.EC.97.B0.EA.B2.B0_.EC.84.A4.EC.A0.95.ED.95.98.EA.B8.B0 "Beginners' Guide (한국어)")를 살펴봅니다.
+**A)** 네트워크 설정이 올바르게 되어 있습니까? [인터넷 연결 설정하기](/index.php/Beginners%27_guide_(%ED%95%9C%EA%B5%AD%EC%96%B4)#.EC.9D.B8.ED.84.B0.EB.84.B7_.EC.97.B0.EA.B2.B0_.EC.84.A4.EC.A0.95.ED.95.98.EA.B8.B0 "Beginners' guide (한국어)")를 살펴봅니다.
 
 한 가지 알아둬야 할 것은, 아치는 트래픽 셰이핑이 적용되지 않은 상태로 설치된다는 것입니다. 그러므로 인터넷을 최대한으로 사용하는 프로그램 — 예를 들어 P2P든 오래된 클라이언트-서버 연결이든 — 이 있다면 인터넷 연결이 꽉 차버려서 다른 인터넷 프로그램에 심각한 랙이나 연결시간초과를 일으킬 수 있습니다. Shorewall이나 Vuurmuur와 같은 [방화벽](/index.php/Firewall "Firewall")을 통해 이 현상을 완화시킬 수 있습니다. 네트워크 계층의 셰이핑을 해 주는 iproute2의 정적 스크립트(예를 들면 Wondershaper의 [파생작](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos))도 있습니다.
 
@@ -215,11 +215,11 @@ Swap:         1537          0       1537
 
 ### Q) 아치는 (GUI) 설치 프로그램이 필요합니다.
 
-**A)**아치를 자주 설치하지는 않기 때문에(위의 롤링 릴리스에 대한 질문을 보세요), 설치 문제는 개발자나 사용자에게 우선순위가 높지 않습니다. [초보자 안내서](/index.php/Beginners%27_Guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' Guide (한국어)")가 전면적으로 갱신되어 CUI(명령줄 입력 방식)를 사용하여 설치하는 방법을 설명합니다. 설치 프로그램을 사용하고자 하면 [Archboot](/index.php/Archboot "Archboot")를 고려해 보세요.
+**A)**아치를 자주 설치하지는 않기 때문에(위의 롤링 릴리스에 대한 질문을 보세요), 설치 문제는 개발자나 사용자에게 우선순위가 높지 않습니다. [초보자 안내서](/index.php/Beginners%27_guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' guide (한국어)")가 전면적으로 갱신되어 CUI(명령줄 입력 방식)를 사용하여 설치하는 방법을 설명합니다. 설치 프로그램을 사용하고자 하면 [Archboot](/index.php/Archboot "Archboot")를 고려해 보세요.
 
 ### Q) 아치를 설치했는데 쉘 로그인만 뜨네요. 이제 어떻게 해야하죠?
 
-**A)** 아치 리눅스 [초보자 안내서](/index.php/Beginners%27_Guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' Guide (한국어)")를 봅니다.
+**A)** 아치 리눅스 [초보자 안내서](/index.php/Beginners%27_guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' guide (한국어)")를 봅니다.
 
 ### Q) 어떤 데스크탑 환경이나 창 관리자를 사용하는 게 좋을까요?
 
