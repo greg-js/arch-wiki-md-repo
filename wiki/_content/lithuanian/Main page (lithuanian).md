@@ -1,6 +1,6 @@
 **Sveiki apsilankę [ArchWiki](/index.php/AboutWiki "AboutWiki") puslapyje: jūsų Arch Linux dokumentacijos šaltinį internete.**
 
-Apsilankykite **[Table of Contents (Lietuviškai)](/index.php/Table_of_Contents_(Lietuvi%C5%A1kai) "Table of Contents (Lietuviškai)")** norėdami peržiūrėti ArchWiki kategorijas.
+Apsilankykite **[Table of contents (Lietuviškai)](/index.php/Table_of_contents_(Lietuvi%C5%A1kai) "Table of contents (Lietuviškai)")** norėdami peržiūrėti ArchWiki kategorijas.
 
 ## Pradžia
 
@@ -14,11 +14,11 @@ Sekančios nuorodos yra naudingos pradedantiems dirbti su Arch Linux.
 
 	Aprašoma Arch Linux principus ir filosofiją.
 
-	[Arch Compared to Other Distributions (Lietuviškai)](/index.php/Arch_Compared_to_Other_Distributions_(Lietuvi%C5%A1kai) "Arch Compared to Other Distributions (Lietuviškai)")
+	[Arch compared to other distributions (Lietuviškai)](/index.php/Arch_compared_to_other_distributions_(Lietuvi%C5%A1kai) "Arch compared to other distributions (Lietuviškai)")
 
 	Apibendrinami panašumai ir skirtumai tarp Arch ir kitų distribucijų.
 
-	[Getting Involved (Lietuviškai)](/index.php/Getting_Involved_(Lietuvi%C5%A1kai) "Getting Involved (Lietuviškai)")
+	[Getting involved (Lietuviškai)](/index.php/Getting_involved_(Lietuvi%C5%A1kai) "Getting involved (Lietuviškai)")
 
 	Aprašomi įvairūs būdai kaip archeriams (pradedantys ir pažengusieji vartotojai) galima prisidėti prie Arch bendruomenės.
 
@@ -30,7 +30,7 @@ Sekančios nuorodos yra naudingos pradedantiems dirbti su Arch Linux.
 
 	Trumpas vadovas kaip redaguoti ir prisidėti prie Arch Linux wiki.
 
-	[Beginners' Guide (Lietuviškai)](/index.php/Beginners%27_Guide_(Lietuvi%C5%A1kai) "Beginners' Guide (Lietuviškai)")
+	[Beginners' guide (Lietuviškai)](/index.php/Beginners%27_guide_(Lietuvi%C5%A1kai) "Beginners' guide (Lietuviškai)")
 
 	Arch Linux vadovas per visus įdiegimo ir konfigūravimo žingsnius; parašytas naujiems, nepatyrusiems vartotojams.
 

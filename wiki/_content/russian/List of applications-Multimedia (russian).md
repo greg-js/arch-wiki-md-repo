@@ -187,7 +187,7 @@
 
 	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
 
-*   **[GIMP](https://en.wikipedia.org/wiki/ru:GIMP "wikipedia:ru:GIMP")** — Программа редактирования изображений в духе проприетарных редакторов, таких как [Adobe Photoshop](https://en.wikipedia.org/wiki/ru:Adobe_Photoshop "wikipedia:ru:Adobe Photoshop"). Разработка GIMP ( [GNU](/index.php/GNU_Project "GNU Project") Image Manipulation Program) началась в середине 1990-х, и с тех пор в программе появилось большое количество [плагинов](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") и дополнительных утилит
+*   **[GIMP](https://en.wikipedia.org/wiki/ru:GIMP "wikipedia:ru:GIMP")** — Программа редактирования изображений в духе проприетарных редакторов, таких как [Adobe Photoshop](https://en.wikipedia.org/wiki/ru:Adobe_Photoshop "wikipedia:ru:Adobe Photoshop"). Разработка GIMP ([GNU](/index.php/GNU_Project "GNU Project") Image Manipulation Program) началась в середине 1990-х, и с тех пор в программе появилось большое количество [плагинов](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") и дополнительных утилит
 
 	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
 
@@ -337,7 +337,7 @@
 
 #### Создание скриншотов
 
-Смотрите статью [Создание скриншотов](/index.php/Taking_a_Screenshot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Taking a Screenshot (Русский)").
+Смотрите статью [Создание скриншотов](/index.php/Taking_a_screenshot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Taking a screenshot (Русский)").
 
 ### Аудио
 

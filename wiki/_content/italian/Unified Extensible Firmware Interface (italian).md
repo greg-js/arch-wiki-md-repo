@@ -357,7 +357,7 @@ Digitare `Ctrl-E` per aiuto.
 
 ## Compatibilità hardware
 
-Pagina principale [HCL/Firmwares/UEFI](/index.php?title=HCL/Firmwares/UEFI&action=edit&redlink=1 "HCL/Firmwares/UEFI (page does not exist)")
+Pagina principale [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware")
 
 ## Creare un dispositivo USB avviabile con UEFI dalla ISO
 

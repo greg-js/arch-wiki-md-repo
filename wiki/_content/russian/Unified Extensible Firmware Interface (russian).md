@@ -80,7 +80,7 @@ This limitation does not exist in Linux Kernel but rather depends on the bootloa
 
 Если каталог `/sys/firmware/efi` существует, то ядро загружено в режиме EFI. В этом случае UEFI имеет такую же разрядность, как у ядра. (т.е. i686 или x86_64)
 
-**Примечание:** Системы с SoC (System-on-a-Chip) Intel Atom поставляются с 32-битным UEFI (по состоянию на 2 ноября 2013). Дополнительную информацию можно получить на [этой странице](/index.php?title=HCL/Firmwares/UEFI&action=edit&redlink=1 "HCL/Firmwares/UEFI (page does not exist)").
+**Примечание:** Системы с SoC (System-on-a-Chip) Intel Atom поставляются с 32-битным UEFI (по состоянию на 2 ноября 2013). Дополнительную информацию можно получить на [этой странице](/index.php/Unified_Extensible_Firmware_Interface/Hardware#Intel_Atom_System-on-Chip "Unified Extensible Firmware Interface/Hardware").
 
 #### Apple Mac
 
@@ -345,7 +345,7 @@ FS0:\efi\grub\> edit grub.cfg
 
 ## Совместимое оборудование
 
-Main page [HCL/Firmwares/UEFI](/index.php?title=HCL/Firmwares/UEFI&action=edit&redlink=1 "HCL/Firmwares/UEFI (page does not exist)")
+Main page [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware")
 
 ## См. также
 

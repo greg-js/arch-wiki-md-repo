@@ -34,7 +34,7 @@
 
 ### 科學文件
 
-參閱主文：[List of Applications/Documents (正體中文)#科學文件](/index.php/List_of_Applications/Documents_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E7.A7.91.E5.AD.B8.E6.96.87.E4.BB.B6 "List of Applications/Documents (正體中文)").
+參閱主文：[List of applications/Documents (正體中文)#科學文件](/index.php/List_of_applications/Documents_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E7.A7.91.E5.AD.B8.E6.96.87.E4.BB.B6 "List of applications/Documents (正體中文)").
 
 ### 數學
 

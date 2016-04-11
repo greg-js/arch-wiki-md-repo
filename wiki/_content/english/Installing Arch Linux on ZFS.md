@@ -34,6 +34,8 @@ Review [Beginners' guide#Prepare the storage devices](/index.php/Beginners%27_gu
 
 ZFS manages its own partitions, so only a basic partition table scheme is required. The partition that will contain the ZFS filesystem should be of the type `bf00`, or "Solaris Root".
 
+When using GRUB on a BIOS machine there is no need for a boot partition.
+
 ### Partition scheme
 
 Here is an example, using MBR, of a basic partition scheme that could be employed for your ZFS root setup:
@@ -41,8 +43,7 @@ Here is an example, using MBR, of a basic partition scheme that could be employe
 ```
 Part     Size   Type
 ----     ----   -------------------------
-   1     512M   Ext boot partition (8300)
-   2     XXXG   Solaris Root (bf00)
+   1     XXXG   Solaris Root (bf00)
 
 ```
 
@@ -61,11 +62,11 @@ An additional partition may be required depending on your hardware and chosen bo
 
 **Tip:** Bootloaders with support for ZFS are described in [#Install and configure the bootloader](#Install_and_configure_the_bootloader).
 
-**Warning:** Several GRUB bugs ([bug #42861](https://savannah.gnu.org/bugs/?42861), [zfsonlinux/grub/issues/5](https://github.com/zfsonlinux/grub/issues/5)) prevent or complicate installing it on ZFS partitions, use of a separate boot partition is recommended
+**Warning:** Several GRUB bugs ([bug #42861](https://savannah.gnu.org/bugs/?42861), [zfsonlinux/grub/issues/5](https://github.com/zfsonlinux/grub/issues/5)) complicate installing it on ZFS partitions, see [Installing_Arch_Linux_on_ZFS#Install_and_configure_the_bootloader](/index.php/Installing_Arch_Linux_on_ZFS#Install_and_configure_the_bootloader "Installing Arch Linux on ZFS") for a workaround
 
 ## Format the destination disk
 
-Format the boot partition as well as any other system partitions. Do not do anything to the Solaris partition nor to the BIOS boot partition. ZFS will manage the first, and your bootloader the second.
+If you have opted for a boot partition as well as any other non-ZFS system partitions then format them. Do not do anything to the Solaris partition nor to the BIOS boot partition. ZFS will manage the first, and your bootloader the second.
 
 ## Setup the ZFS filesystem
 
@@ -79,7 +80,7 @@ First, make sure the ZFS modules are loaded,
 ### Create the root zpool
 
 ```
-# zpool create zroot /dev/disk/by-id/*id-to-partition*
+# zpool create -f zroot /dev/disk/by-id/*id-to-partition-partx*
 
 ```
 
@@ -106,7 +107,14 @@ See [ZFS#Swap volume](/index.php/ZFS#Swap_volume "ZFS").
 
 ### Configure the root filesystem
 
-First, set the mount point of the root filesystem:
+If you have just created your zpool, it will be mounted in a dir at the root of your tree named after the pool (ie /zroot) so first we need to unmount it:
+
+```
+# zfs umount -a
+
+```
+
+Now set the mount point of the root filesystem:
 
 ```
 # zfs set mountpoint=/ zroot
@@ -202,7 +210,7 @@ Follow the following steps using the [Beginners' guide](/index.php/Beginners%27_
 *   The procedure described in [Beginners' guide#Generate an fstab](/index.php/Beginners%27_guide#Generate_an_fstab "Beginners' guide") is usually overkill for ZFS. ZFS usually auto mounts its own partitions, so we do not need ZFS partitions in `fstab` file, unless the user made datasets of system directories. To generate the `fstab` for filesystems, use:
 
 ```
-# genfstab -U -p /mnt | grep boot >> /mnt/etc/fstab
+# genfstab -U -p /mnt >> /mnt/etc/fstab
 
 ```
 
@@ -212,6 +220,8 @@ Follow the following steps using the [Beginners' guide](/index.php/Beginners%27_
 
 *   If you chose to create datasets for system directories, keep them in this `fstab`! Comment out the lines for the '`/`, `/root`, and `/home` mountpoints, rather than deleting them. You may need those UUIDs later if something goes wrong.
 *   Anyone who just stuck with the guide's directions can delete everything except for the swap file and the boot/EFI partition. It seems convention to replace the swap's uuid with `/dev/zvol/zroot/swap`.
+
+*   You need to add the Arch ZFS repo, sign its key and install zfs-git within the arch-chroot before you can update the ramdisk with ZFS support
 
 *   When creating the initial ramdisk, first edit `/etc/mkinitcpio.conf` and add `zfs` before filesystems. Also, move `keyboard` hook before `zfs` so you can type in console if something goes wrong. You may also remove fsck (if you are not using Ext3 or Ext4). Your `HOOKS` line should look something like this:
 
@@ -250,7 +260,7 @@ menuentry "Arch Linux" {
 
 ```
 
-if you did not create a separate /boot participation, kernel and initrd paths have to be in the following format:
+if you did not create a separate /boot partition, kernel and initrd paths have to be in the following format:
 
 ```
  /dataset/@/actual/path  
@@ -270,6 +280,20 @@ Example with Arch installed on separator dataset zroot/OS/root
 ```
    linux /OS/root/@/boot/vmlinuz-linux zfs=zroot/OS/root rw 
    initrd /OS/root/@/boot/initramfs-linux.img
+
+```
+
+When you come to installing GRUB, you are likely to get an error like:
+
+```
+Failed to get canonical path of /dev/ata-yourdriveid-partx
+
+```
+
+Until this gets fixed, the easiest workaround is to create a symbolic link from the regular Linux device name of the partition to the device name GRUB is looking for:
+
+```
+# ln -s /dev/sdax /dev/ata-yourdriveid-partx
 
 ```
 

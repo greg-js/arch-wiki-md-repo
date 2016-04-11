@@ -36,6 +36,8 @@ The derived browser, **Google Chrome**, bundled with Flash Player and Widevine [
 *   [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/) - the beta version
 *   [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/) - the development version
 
+**Note:** Google Chrome revoked 32 bits support, and only supports 64 bits installation
+
 **Tip:** See these [two](https://chromium.googlesource.com/chromium/src/+/master/docs/chromium_browser_vs_google_chrome.md) [articles](http://news.softpedia.com/news/Google-Chrome-vs-Chromium-Understanding-Stable-Beta-Dev-Releases-and-Version-No-140060.shtml) for an explanation of the differences between Stable/Beta/Dev, as well as Chromium vs. Chrome and an explanation of the version numbering.
 
 ### Inox

@@ -107,7 +107,7 @@ LVM的基本组成块（building blocks）如下：
 
 ## 在LVM上安装Arch Linux
 
-你应该在安装过程的[分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")和[创建文件系统](/index.php/File_Systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Step_2:_create_the_new_file_system "File Systems (简体中文)")步骤中间创建LVM卷， 而且根（root）分区不再通过直接格式化硬盘来创建，而是创建在LVM逻辑卷（LV）上。
+你应该在安装过程的[分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")和[创建文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Step_2:_create_the_new_file_system "File systems (简体中文)")步骤中间创建LVM卷， 而且根（root）分区不再通过直接格式化硬盘来创建，而是创建在LVM逻辑卷（LV）上。
 
 快速导览：
 
@@ -115,8 +115,8 @@ LVM的基本组成块（building blocks）如下：
 *   创建物理卷（PV）。如果你只有一个硬盘，那么你最好只创建一个分区一个物理卷；如果你有多个硬盘，你可以创建多个分区，在每个分区上分别创建一个物理卷。
 *   创建卷组（VG），并把所有物理卷加进卷组。
 *   在卷组上创建逻辑卷（LV）。
-*   继续[Beginners' Guide (简体中文)](/index.php/Beginners%27_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' Guide (简体中文)")中的格式化分区步骤。
-*   当你做到Beginners' Guide中的[创建初始 ramdisk 环境](/index.php/Beginners%27_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E5.88.9D.E5.A7.8B_ramdisk_.E7.8E.AF.E5.A2.83 "Beginners' Guide (简体中文)")时，把 `lvm`加入到 `mkinitcpio.conf`文件中（请参考下文）。
+*   继续[Beginners' guide (简体中文)](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' guide (简体中文)")中的格式化分区步骤。
+*   当你做到Beginners' Guide中的[创建初始 ramdisk 环境](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E5.88.9D.E5.A7.8B_ramdisk_.E7.8E.AF.E5.A2.83 "Beginners' guide (简体中文)")时，把 `lvm`加入到 `mkinitcpio.conf`文件中（请参考下文）。
 
 **警告:** 如果你的启动引导程序使用的是[GRUB Legacy](/index.php/GRUB_Legacy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB Legacy (简体中文)")，那么由于GRUB Legacy不支持LVM，因而你将无法在LVM上创建`/boot`分区。[GRUB](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)")用户则不会有这个限制。如果你必须使用GRUB Legacy，那么请单独创建并在硬盘上直接格式化`/boot`分区。
 
@@ -267,7 +267,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ```
 
-现在你可以在逻辑卷上创建文件系统并像普通分区一样挂载它了（如果你正在安装Arch linux，需要更详细的信息，请参考[挂载分区](/index.php/Beginners%27_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.8C.82.E8.BD.BD.E5.88.86.E5.8C.BA "Beginners' Guide (简体中文)")）：
+现在你可以在逻辑卷上创建文件系统并像普通分区一样挂载它了（如果你正在安装Arch linux，需要更详细的信息，请参考[挂载分区](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.8C.82.E8.BD.BD.E5.88.86.E5.8C.BA "Beginners' guide (简体中文)")）：
 
 ```
 # mkfs.<*fstype*> /dev/mapper/<*volume_group*>-<*logical_volume*>
@@ -343,7 +343,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ```
 
-即该物理卷已分配物理区域超过了命令指定的新大小边界，`pvresize`会拒绝将物理卷缩小。若磁盘空间足够，可通过[pvmove](/index.php/LVM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.A7.BB.E5.8A.A8.E7.89.A9.E7.90.86.E5.8C.BA.E5.9F.9F "LVM (简体中文)")将物理区域重新分配至别的卷组来解决这个问题。
+即该物理卷已分配物理区域超过了命令指定的新大小边界，`pvresize`会拒绝将物理卷缩小。若磁盘空间足够，可通过[pvmove](#.E7.A7.BB.E5.8A.A8.E7.89.A9.E7.90.86.E5.8C.BA.E5.9F.9F)将物理区域重新分配至别的卷组来解决这个问题。
 
 ###### 移动物理区域
 

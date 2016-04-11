@@ -16,7 +16,7 @@ Assumiamo che la rete sia cosi' connessa:
 
 ```
 
-i computer dovranno essere connessi tra loro tramite un cavo [crossover](http://it.wikipedia.org/wiki/Cavo_ethernet_incrociato) o uno switch
+i computer dovranno essere connessi tra loro tramite un cavo [crossover](https://it.wikipedia.org/wiki/Cavo_ethernet_incrociato) o uno switch
 
 il *pc1* dovra' possedere due schede di rete: una connessa ad internet (in questo esempio **eth0**) e una connessa al *pc2* (in questo esempio **eth1**)
 

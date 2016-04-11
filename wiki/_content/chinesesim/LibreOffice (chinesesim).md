@@ -52,7 +52,7 @@
 
 ## 主题
 
-对于 [Qt](/index.php/Qt "Qt") 用户, 请安装 [libreoffice-still-kde4](https://www.archlinux.org/packages/?name=libreoffice-still-kde4), 对于[GTK+](/index.php/GTK%2B "GTK+") 请安装 [libreoffice-still-gnome](https://www.archlinux.org/packages/?name=libreoffice-still-gnome)。详情请参考 [Uniform_Look_for_Qt_and_GTK_Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications").
+对于 [Qt](/index.php/Qt "Qt") 用户, 请安装 [libreoffice-still-kde4](https://www.archlinux.org/packages/?name=libreoffice-still-kde4), 对于[GTK+](/index.php/GTK%2B "GTK+") 请安装 [libreoffice-still-gnome](https://www.archlinux.org/packages/?name=libreoffice-still-gnome)。详情请参考 [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
 LibreOffice v3.5.x 工具包的库按照以下的顺序来检查:
 

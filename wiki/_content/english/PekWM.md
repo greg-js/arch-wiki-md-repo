@@ -268,5 +268,4 @@ Try setting the [environment variable](/index.php/Environment_variable "Environm
 ## See also
 
 *   [Pekwm Homepage](http://pekwm.org/)
-*   [Gentoo wiki PekWM page](http://en.gentoo-wiki.com/wiki/PekWM)
 *   [Howto: Install and configure Pekwm](http://ubuntuforums.org/showthread.php?t=662204)

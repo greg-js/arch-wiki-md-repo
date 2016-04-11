@@ -268,7 +268,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 
 `awt.useSystemAAFontSettings=on`, `swing.aatext=true`
 
-Смотрите также [Шрифты в исполняемой среде Java](/index.php/Java_Runtime_Environment_Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Java Runtime Environment Fonts (Русский)") для получения подробной информации.
+Смотрите также [Шрифты в исполняемой среде Java](/index.php/Java_Runtime_Environment_fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Java Runtime Environment fonts (Русский)") для получения подробной информации.
 
 ### Оформление GTK
 

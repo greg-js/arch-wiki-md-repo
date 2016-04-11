@@ -150,7 +150,7 @@ Cree un volumen físico en ellos:
 
 ```
 
-Esta orden crea una cabecera en cada dispositivo para que se pueda utilizar para LVM. Tal como se define en [LVM (Español)#Bloques para construir LVM](/index.php/LVM_(Espa%C3%B1ol)#Bloques_para_construir_LVM "LVM (Español)"), el *DISPOSITIVO* puede ser un disco (por ejemplo, `/dev/sda`), una partición (por ejemplo, `/dev/sda2`) o un dispositivo loop back.
+Esta orden crea una cabecera en cada dispositivo para que se pueda utilizar para LVM. Tal como se define en [#Bloques para construir LVM](#Bloques_para_construir_LVM), el *DISPOSITIVO* puede ser un disco (por ejemplo, `/dev/sda`), una partición (por ejemplo, `/dev/sda2`) o un dispositivo loop back.
 
 Por ejemplo:
 
@@ -277,7 +277,7 @@ Sus volúmenes lógicos deberian encontrarse en `/dev/mapper/` y `/dev/Nombredel
 
 ```
 
-Ahora puede crear el sistema de archivos en los volúmenes lógicos, y montarlos como particiones normales (si está instalando Arch, remítase a [montar las particiones](/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Montar_las_particiones "Beginners' Guide (Español)") para obtener información adicional):
+Ahora puede crear el sistema de archivos en los volúmenes lógicos, y montarlos como particiones normales (si está instalando Arch, remítase a [montar las particiones](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Montar_las_particiones "Beginners' guide (Español)") para obtener información adicional):
 
 ```
 # mkfs.<*tipo_sistema_archivos*> /dev/mapper/<*grupo_volúmenes*>-<*volumen_lógico*>

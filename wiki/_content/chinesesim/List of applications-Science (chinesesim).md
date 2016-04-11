@@ -35,7 +35,7 @@
 
 ### 学术文档
 
-参见主条目 [List of Applications/Documents#Scientific documents](/index.php/List_of_Applications/Documents#Scientific_documents "List of Applications/Documents").
+参见主条目 [List of applications/Documents#Scientific documents](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents").
 
 ### 数学
 

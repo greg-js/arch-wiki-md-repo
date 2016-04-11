@@ -242,7 +242,7 @@ At this point it would be good to reboot the machine to ensure that the ZFS pool
 By default, *zpool* will enable all features on a pool. If `/boot` resides on ZFS and when using [GRUB](/index.php/GRUB "GRUB"), you must only enable read-only, or non-read-only features supported by GRUB (`lz4_compress` as of version 2.02.beta2). Otherwise GRUB will not be able to read the pool.
 
 ```
- # zpool create -d \
+ # zpool create -f -d \
                 -o feature@async_destroy=enabled \
                 -o feature@empty_bpobj=enabled \
                 -o feature@lz4_compress=enabled \

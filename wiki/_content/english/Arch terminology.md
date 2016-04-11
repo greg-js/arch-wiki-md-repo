@@ -104,7 +104,7 @@ Obsolete. Nowadays often used as a synonym for initramfs.
 
 ## KISS
 
-Acronym of Keep It Simple, Stupid. [Simplicity](/index.php/Arch_Linux#Simplicity "Arch Linux") is a main principle Arch Linux try to archive.
+Acronym of Keep It Simple, Stupid. [Simplicity](/index.php/Arch_Linux#Simplicity "Arch Linux") is a main principle Arch Linux tries to achieve.
 
 ## makepkg
 

@@ -98,7 +98,7 @@ pacman -S mousepad xarchiver obconf epdfview
 
 ```
 
-Další programy jsou uvedeny v článku [Lightweight_Applications](/index.php/Lightweight_Applications "Lightweight Applications").
+Další programy jsou uvedeny v článku [Lightweight Applications](/index.php/Lightweight_Applications "Lightweight Applications").
 
 ## Spuštění desktopu
 
@@ -319,7 +319,7 @@ Nastavení ikon a kurzorů.
 
 #### Kurzory
 
-LXDE nemá program pro nastavení kurzoru myši. Je třeba nadefinovat nový kurzor v souboru `~/.Xdefaults`. Viz [X11_Cursors#Configuring_Cursor_Themes](/index.php/X11_Cursors#Configuring_Cursor_Themes "X11 Cursors").
+LXDE nemá program pro nastavení kurzoru myši. Je třeba nadefinovat nový kurzor v souboru `~/.Xdefaults`. Viz [X11 Cursors#Configuring_Cursor_Themes](/index.php/X11_Cursors#Configuring_Cursor_Themes "X11 Cursors").
 
 Nejjednodušším způsobem je přidat kurzor do defaultního tématu. Vytvoříme adresář:
 

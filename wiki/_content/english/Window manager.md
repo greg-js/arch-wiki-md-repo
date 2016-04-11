@@ -48,7 +48,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 	[http://www.afterstep.org/](http://www.afterstep.org/) || [afterstep](https://aur.archlinux.org/packages/afterstep/)
 
-*   **[Blackbox](https://en.wikipedia.org/wiki/Blackbox "wikipedia:Blackbox")** — Fast, lightweight window manager for the X Window System, without all those annoying library dependencies. Blackbox is built with C++ and contains completely original code (even though the graphics implementation is similar to that of WindowMaker).
+*   **[Blackbox](/index.php/Blackbox "Blackbox")** — Fast, lightweight window manager for the X Window System, without all those annoying library dependencies. Blackbox is built with C++ and contains completely original code (even though the graphics implementation is similar to that of WindowMaker).
 
 	[http://blackboxwm.sourceforge.net/](http://blackboxwm.sourceforge.net/) || [blackbox](https://www.archlinux.org/packages/?name=blackbox)
 

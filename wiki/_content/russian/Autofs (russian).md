@@ -352,7 +352,7 @@ May  7 19:44:16 peterix automount[15218]: failed to mount /media/cifs/petr
 ## Ссылки на внешние источники
 
 *   Оригинальная информация на этой странице основана на теме: [https://bbs.archlinux.org/viewtopic.php?t=7630](https://bbs.archlinux.org/viewtopic.php?t=7630), с дополнительной информацией, найденной здесь: [http://libranet.com/support/2.8/0381](http://libranet.com/support/2.8/0381)
-*   Информация об использовании FTP и SFTP с AutoFS основана на этой статье из Gentoo Wiki: [http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares](http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares)
+*   Информация об использовании FTP и SFTP с AutoFS основана на этой статье из Gentoo Wiki: [https://web.archive.org/web/20130414074212/http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares](https://web.archive.org/web/20130414074212/http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares)
 *   Больше информации о SSH можно найти на страницах [SSH](/index.php/Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Secure Shell (Русский)") и [SSH Keys](/index.php/SSH_keys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH keys (Русский)") этого wiki.
 
 ## Альтернативы для AutoFS

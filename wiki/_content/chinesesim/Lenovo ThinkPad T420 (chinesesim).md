@@ -133,7 +133,7 @@ DAEMONS=(...@thinkfan...)
 
 使用[Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")时未发现任何问题。
 
-可能的Bug[Lenovo_ThinkPad_T420_(简体中文)#使用电池时关机](/index.php/Lenovo_ThinkPad_T420_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E7.94.B5.E6.B1.A0.E6.97.B6.E5.85.B3.E6.9C.BA "Lenovo ThinkPad T420 (简体中文)")
+可能的Bug[#使用电池时关机](#.E4.BD.BF.E7.94.A8.E7.94.B5.E6.B1.A0.E6.97.B6.E5.85.B3.E6.9C.BA)
 
 [AUR](/index.php/Arch_User_Repository "Arch User Repository")中的[tlp](https://www.archlinux.org/packages/?name=tlp)是另一个可选的可替换Laptop Mode Tools的工具。
 
@@ -215,7 +215,7 @@ i915.semaphores=1
 
 开箱不可直接使用的媒体键：
 
-*   [音量键](/index.php/Lenovo_ThinkPad_T420_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.9F.B3.E9.87.8F.E6.8F.90.E5.8D.87.2F.E9.99.8D.E4.BD.8E.E9.94.AE.E6.97.A0.E6.B3.95.E6.94.B9.E5.8F.98.E9.9F.B3.E9.87.8F "Lenovo ThinkPad T420 (简体中文)") （在[Gnome](/index.php/Gnome "Gnome")中开箱即可使用）
+*   [音量键](#.E9.9F.B3.E9.87.8F.E6.8F.90.E5.8D.87.2F.E9.99.8D.E4.BD.8E.E9.94.AE.E6.97.A0.E6.B3.95.E6.94.B9.E5.8F.98.E9.9F.B3.E9.87.8F) （在[GNOME](/index.php/GNOME "GNOME")中开箱即可使用）
 *   麦克风静音（很可能需要自定义内核补丁）
 
 你必须找到变通方案并且自己绑定剩下的键。
@@ -299,7 +299,7 @@ keysym XF86AudioPrev = Home
 
 有用户汇报T420在使用电池时关机变为重启。有一些办法能够尝试修复这个问题，以下展示了三种。
 
-一种办法是禁用模块`ehci_hcd`。查看[Kernel_modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules")以获得更多信息。
+一种办法是禁用模块`ehci_hcd`。查看[Kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules")以获得更多信息。
 
 或者是禁用Laptop Mode Tools 把`!laptop-mode`添加到`DAEMONS`数组，它位于文件`/etc/rc.conf`：
 

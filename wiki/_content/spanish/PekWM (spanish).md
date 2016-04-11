@@ -280,7 +280,6 @@ Un ejemplo de un script devilspie estableciendo la transparencia a cada ventana 
 ## Enlaces Externos
 
 *   [Pekwm Homepage](http://pekwm.org/)
-*   [gentoo-wiki PekWM page](http://en.gentoo-wiki.com/wiki/PekWM)
 *   [Box-Look PekWM Themes](http://box-look.org/index.php?xcontentmode=7403)
 *   [Hewphoria PekWM Themes](http://hewphoria.com/?p=submission&type=theme&cat=1)
 *   [Freshmeat PekWM Themes](http://themes.freshmeat.net/search/?q=pekwm&section=projects)

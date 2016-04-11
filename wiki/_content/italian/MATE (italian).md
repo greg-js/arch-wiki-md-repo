@@ -111,7 +111,7 @@ $ startx
 
 ### Automaticamente all'avvio
 
-È consigliata la lettura di [Display Manager (Italiano)](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") e [Start X at Boot (Italiano)](/index.php/Start_X_at_Boot_(Italiano) "Start X at Boot (Italiano)") per maggiori dettagli.
+È consigliata la lettura di [Display manager (Italiano)](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") e [Start X at Boot (Italiano)](/index.php/Start_X_at_Boot_(Italiano) "Start X at Boot (Italiano)") per maggiori dettagli.
 
 #### GDM (vecchio)
 
@@ -209,7 +209,7 @@ Le applicazioni Qt4 potrebbero non ereditare il tema GTK2\. Questo problema si p
 
 ### Evolution Email non funziona
 
-si guardi [Evolution#Using_Evolution_Outside_Of_Gnome](/index.php/Evolution#Using_Evolution_Outside_Of_Gnome "Evolution").
+si guardi [Evolution#Using Evolution Outside Of Gnome](/index.php/Evolution#Using_Evolution_Outside_Of_Gnome "Evolution").
 
 ### Sticky Notes persi durante riavvio
 

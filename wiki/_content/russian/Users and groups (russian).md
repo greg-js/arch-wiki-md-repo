@@ -26,7 +26,7 @@ From [In UNIX Everything is a File](http://ph7spot.com/musings/in-unix-everythin
 
 	*ОС семейства UNIX созданы следуя нескольким единым идеям и концептам, которые отразились в их дизайне, интерфейсе, культуре и эволюции. Одна из важнейших таких идей: "все - это файл"*
 
-	*Этот ключевой принцип состоит в предоставлении единой парадигмы для доступа к широкому кругу устройств ввода/вывода: документы, директории, жесткие диски, CD-диски, модемы, клавиотуры, принтеры, мониторы, терминалы и даже некоторые межпроцессовые взаимодействия и сетевые соединения. Фокус в том, чтобы предоставить простые абстракции для всех этих ресурсов, каждую из которых отцы UNIX назвали "файлом". Так как доступ к любому "файлу" можно получить через один и тот же интерфейс(API, не путать с GUI), вы можете использовать один и тот же набор базовых команд для чтения/записи диска, клавиатуры документа или сетевого устройства.*
+	*Этот ключевой принцип состоит в предоставлении единой парадигмы для доступа к широкому кругу устройств ввода/вывода: документы, директории, жесткие диски, CD-диски, модемы, клавиатуры, принтеры, мониторы, терминалы и даже некоторые межпроцессовые взаимодействия и сетевые соединения. Фокус в том, чтобы предоставить простые абстракции для всех этих ресурсов, каждую из которых отцы UNIX назвали "файлом". Так как доступ к любому "файлу" можно получить через один и тот же интерфейс(API, не путать с GUI), вы можете использовать один и тот же набор базовых команд для чтения/записи диска, клавиатуры, документа или сетевого устройства.*
 
 ```
 [Extending UNIX File Abstraction for General-Purpose Networking](http://www.intel-research.net/Publications/Pittsburgh/101220041324_277.pdf):
@@ -35,7 +35,7 @@ From [In UNIX Everything is a File](http://ph7spot.com/musings/in-unix-everythin
 
 	*A fundamental and very powerful, consistent abstraction provided in UNIX and compatible operating systems is the file abstraction. Many OS services and device interfaces are implemented to provide a file or file system metaphor to applications. This enables new uses for, and greatly increases the power of, existing applications — simple tools designed with specific uses in mind can, with UNIX file abstractions, be used in novel ways. A simple tool, such as cat, designed to read one or more files and output the contents to standard output, can be used to read from I/O devices through special device files, typically found under the `/dev` directory. On many systems, audio recording and playback can be done simply with the commands, "`cat /dev/audio > myfile`" and "`cat myfile > /dev/audio`," respectively.*
 
-Каждый файл в системе GNU/Linux принадлежит определённому пользователю и группе. Также следует отметить, что существует три типа доступа к файлу: чтение, запись, и выполнение. Различные типы доступа могут быть применены к пользователю и группе, владеющими файлом, а так же всем остальным (не являющимся владельцами файла). Владельнцев файлов, а также права доступа можно определить с помощью команды `ls`:
+Каждый файл в системе GNU/Linux принадлежит определённому пользователю и группе. Также следует отметить, что существует три типа доступа к файлу: чтение, запись, и выполнение. Различные типы доступа могут быть применены к пользователю и группе, владеющими файлом, а так же всем остальным (не являющимся владельцами файла). Владельцев файлов, а также права доступа можно определить с помощью команды `ls`:
 
  `$ ls -l /boot/` 
 ```

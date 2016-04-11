@@ -29,7 +29,7 @@ For information on general Chromebook post installation configuration (hotkeys, 
 
 ### Touchpad Configuration
 
-[Add](/index.php/Edit "Edit") the Xorg touchpad configuration below for better usability (increases touchpad sensitivity).
+[Add](/index.php/Edit "Edit") the Xorg touchpad configuration below for better usability (increases touchpad sensitivity). These options are not available for all touchpad drivers (e.g. [libinput](/index.php/Libinput "Libinput")).
 
  `/etc/X11/xorg.conf.d/50-cros-touchpad.conf` 
 ```

@@ -34,7 +34,7 @@
 
 ### Documentos científicos
 
-Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [List of_Applications/Documents (Español)#Documentos científicos](/index.php/List_of_Applications/Documents_(Espa%C3%B1ol)#Documentos_cient.C3.ADficos "List of Applications/Documents (Español)").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [List of applications/Documents (Español)#Documentos científicos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol)#Documentos_cient.C3.ADficos "List of applications/Documents (Español)").
 
 ### Matemáticas
 
@@ -203,7 +203,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	[http://scidavis.sourceforge.net/](http://scidavis.sourceforge.net/) || [scidavis](https://aur.archlinux.org/packages/scidavis/)
 
-Véase también el apartado: [Hojas de cálculo](/index.php/List_of_Applications_(Espa%C3%B1ol)#Hojas_de_c.C3.A1lculo "List of Applications (Español)")
+Véase también el apartado: [Hojas de cálculo](/index.php/List_of_applications_(Espa%C3%B1ol)#Hojas_de_c.C3.A1lculo "List of applications (Español)")
 
 ### Química y biología
 

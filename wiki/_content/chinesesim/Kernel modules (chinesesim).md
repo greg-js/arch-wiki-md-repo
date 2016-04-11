@@ -277,4 +277,4 @@ function aa_mod_parameters ()
 
 *   [http://linuxmanpages.com/man5/modprobe.conf.5.php](http://linuxmanpages.com/man5/modprobe.conf.5.php)
 *   [禁用 IPv6](/index.php/Disabling_IPv6_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Disabling IPv6 (简体中文)")
-*   [禁用 PC喇叭](/index.php/Disable_PC_Speaker_Beep_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Disable PC Speaker Beep (简体中文)")
+*   [禁用 PC喇叭](/index.php/Disable_PC_speaker_beep_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Disable PC speaker beep (简体中文)")

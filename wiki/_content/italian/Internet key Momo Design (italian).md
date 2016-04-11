@@ -310,7 +310,7 @@ ${color lightgrey}Network ppp0: ${exec cat "/var/log/monitorconn.log" | head --l
 
 # Links
 
-*   [Huawei_E220](/index.php/Huawei_E220 "Huawei E220")
-*   [PPPoE_Setup_with_pppd](/index.php/PPPoE_Setup_with_pppd "PPPoE Setup with pppd")
+*   [Huawei E220](/index.php/Huawei_E220 "Huawei E220")
+*   [PPPoE Setup with pppd](/index.php/PPPoE_Setup_with_pppd "PPPoE Setup with pppd")
 *   [http://www.gentoo-wiki.info/Mobile_Phone](http://www.gentoo-wiki.info/Mobile_Phone)
-*   [Speeding_up_DNS_with_dnsmasq#Conserve_DNS_settings](/index.php/Speeding_up_DNS_with_dnsmasq#Conserve_DNS_settings "Speeding up DNS with dnsmasq")
+*   [Speeding up DNS with dnsmasq#Conserve_DNS_settings](/index.php/Speeding_up_DNS_with_dnsmasq#Conserve_DNS_settings "Speeding up DNS with dnsmasq")

@@ -230,7 +230,7 @@ See the main article: [Command shell](/index.php/Command_shell "Command shell").
 
 See also [Wikipedia:Comparison of X Window System desktop environments](https://en.wikipedia.org/wiki/Comparison_of_X_Window_System_desktop_environments "wikipedia:Comparison of X Window System desktop environments").
 
-Si veda l'articolo principale: [Lista degli Ambienti Desktop](/index.php/Desktop_Environment_(Italiano)#Lista_degli_Ambienti_Desktop "Desktop Environment (Italiano)").
+Si veda l'articolo principale: [Lista degli Ambienti Desktop](/index.php/Desktop_environment_(Italiano)#Lista_degli_Ambienti_Desktop "Desktop environment (Italiano)").
 
 #### Gestori delle finestre (Wm)
 
@@ -244,13 +244,13 @@ Si veda l'articolo principale: [Lista degli Ambienti Desktop](/index.php/Desktop
 
 See also [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wiki/Comparison_of_X_window_managers "wikipedia:Comparison of X window managers").
 
-Si veda l'articolo principale: [Elenco dei gestori delle finestre](/index.php/Window_Manager_(Italiano)#Elenco_dei_gestori_di_finestre "Window Manager (Italiano)").
+Si veda l'articolo principale: [Elenco dei gestori delle finestre](/index.php/Window_manager_(Italiano)#Elenco_dei_gestori_di_finestre "Window manager (Italiano)").
 
 #### Applicazioni supportate
 
 ##### Login managers
 
-Si veda l'articolo principale: [Lista dei Gestori di Login disponibili](/index.php/Display_Manager_(Italiano)#Lista_dei_display_manager_disponibili "Display Manager (Italiano)").
+Si veda l'articolo principale: [Lista dei Gestori di Login disponibili](/index.php/Display_manager_(Italiano)#Lista_dei_display_manager_disponibili "Display manager (Italiano)").
 
 ##### Terminal multiplexers etc
 
@@ -656,7 +656,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
 
-Si veda l'articolo principale: [Amateur Radio#Software list](/index.php/Amateur_Radio#Software_list "Amateur Radio").
+Si veda l'articolo principale: [Amateur radio#Software list](/index.php/Amateur_radio#Software_list "Amateur radio").
 
 ### Finanza
 

@@ -3,25 +3,56 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-*   [3 Use Inotify](#Use_Inotify)
-*   [4 Run a Relay](#Run_a_Relay)
-*   [5 Discovery Server](#Discovery_Server)
-*   [6 Troubleshooting](#Troubleshooting)
+*   [2 Starting Syncthing](#Starting_Syncthing)
+    *   [2.1 System service](#System_service)
+    *   [2.2 User service](#User_service)
+*   [3 Accessing the web-interface](#Accessing_the_web-interface)
+*   [4 Configuration](#Configuration)
+*   [5 Use Inotify](#Use_Inotify)
+    *   [5.1 Custom Settings](#Custom_Settings)
+*   [6 Run a Relay](#Run_a_Relay)
+*   [7 Discovery Server](#Discovery_Server)
+*   [8 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
 Syncthing can be [installed](/index.php/Install "Install") with the [syncthing](https://www.archlinux.org/packages/?name=syncthing) or the [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) package. This latter includes additional features such as synchronization by inotify, desktop notifications and integration with Nautilus, Nemo and Caja.
 
-After installing, you can either run the *syncthing* binary manually from a terminal, or start it as a [systemd/User](/index.php/Systemd/User "Systemd/User") instance using the provided `syncthing.service`. Alternatively, you can [utilize](/index.php/Systemctl#Using_units "Systemctl") the `syncthing@.service` if you require it to run without an active user session.
+After installing, you can either run the *syncthing* binary manually from a terminal, or start it as a [systemd/User](/index.php/Systemd/User "Systemd/User") instance using the provided `syncthing.service`. The systemd services need to be started for a specific user in any case, see [Autostart-syncthing with systemd](http://docs.syncthing.net/users/autostart.html#using-systemd) for detailed information on the services.
 
-The systemd services need to be started for a specific user in any case. To do this run `systemctl --user start syncthing.service` to start the service or `systemctl --user enable syncthing.service` to activate the service. See [Autostart-syncthing with systemd](http://docs.syncthing.net/users/autostart.html#using-systemd) for detailed information on the services.
-
-When syncthing is started, a web interface will be provided by default on [localhost port 8384](http://localhost:8384). If you started syncthing manually, it should open the admin page in your browser.
-
-**Note:** In syncthing releases before 0.11 (or when you have updated from 0.10) the web interface is available at port 8080\. Since port 8080 often conflicts with web development utilities [the default port has been changed to port 8384](https://github.com/syncthing/syncthing/commit/960c0cbddf8802ae440f2f9ae33bced4e2d72e44) ('ST' in ASCII). Custom port number can be configured under "GUI Listen Addresses" in the settings, configuration from versions prior to 0.11 were **not** adjusted automatically.
+## Starting Syncthing
 
 **Tip:** You can run multiple copies of syncthing, but only one instance per user as syncthing locks the database to it. Check logs for errors related to locked database.
+
+### System service
+
+Running Syncthing as a system service ensures that it is running at startup even if the user has no active session, it is intended to be used on a server.
+
+Enable and start the service. Replace *myuser* with the actual Syncthing user after the @:
+
+```
+# systemctl enable syncthing@myuser.service
+# systemctl start syncthing@myuser.service 
+
+```
+
+### User service
+
+Running Syncthing as a user service ensures that Syncthing only starts after the user has logged into the sytem (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a (multiuser) desktop computer. It avoids unnecessarily running Syncthing instances:
+
+```
+$ systemctl --user enable syncthing.service
+$ systemctl --user start syncthing.service
+
+```
+
+## Accessing the web-interface
+
+**Tip:** Syncthing can only be accessed on the running computer. Change `<address>127.0.0.1:8384</address>` in `~/config/syncthing/config.xml` to `<address>0.0.0.0:8384</address>` and restart the [systemd](/index.php/Systemd "Systemd") service to allow access from another computer.
+
+When Syncthing is started, a web interface will be provided by default on [localhost port 8384](http://localhost:8384). If you started syncthing manually, it should open the admin page in your browser.
+
+**Note:** In syncthing releases before 0.11 (or when you have updated from 0.10) the web interface is available at port 8080\. Since port 8080 often conflicts with web development utilities [the default port has been changed to port 8384](https://github.com/syncthing/syncthing/commit/960c0cbddf8802ae440f2f9ae33bced4e2d72e44) ('ST' in ASCII). Custom port number can be configured under "GUI Listen Addresses" in the settings, configuration from versions prior to 0.11 were **not** adjusted automatically.
 
 ## Configuration
 
@@ -38,6 +69,20 @@ Next, you can either change the configuration of the default node (click its nam
 ## Use Inotify
 
 Inotify (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support Inotify yet but there is an official extension module which talks to the Syncthing REST API. The usage of Inotify avoids expensive rescans every minute. The rescan interval of each folder is automatically increased to avoid expensive, regular rescans. Syncthing-inotify can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. If Syncthing is managed through systemd, it is ensured by systemd dependencies that `syncthing-inotify.service` is started and stopped automatically.
+
+### Custom Settings
+
+Run `$ syncthing-inotify -help` for available options, such as setting the API key.
+
+To set options for syncthing-inotify service, create a `.conf` file in `/etc/systemd/user/syncthing-inotify.service.d/` (When running as [#User service](#User_service)) and/or `/etc/systemd/system/syncthing-inotify@**user**.service.d/` ([#System service](#System_service)), e.g.:
+
+ `/etc/systemd/user/syncthing-inotify.service.d/start.conf` 
+```
+[Unit]
+ExecStart=
+ExecStart=/usr/bin/syncthing-inotify -logflags=0 -api="0M6ubcgtcy7KBLucu0jeXrgqB8U7YKp9"
+RuntimeDirectory=syncthing-inotify
+```
 
 ## Run a Relay
 

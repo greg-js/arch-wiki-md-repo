@@ -29,7 +29,7 @@
 
 *   屏幕亮度。如何调节屏幕亮度？
 *   无线网络。如何配置和连接无线网络？无线网络问题参见[Wireless Setup (简体中文)](/index.php/Wireless_Setup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless Setup (简体中文)").
-*   多功能键。配置详见[Extra Keyboard Keys (简体中文)](/index.php/Extra_Keyboard_Keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Extra Keyboard Keys (简体中文)").
+*   多功能键。配置详见[Extra keyboard keys (简体中文)](/index.php/Extra_keyboard_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Extra keyboard keys (简体中文)").
 *   [#触摸板](#.E8.A7.A6.E6.91.B8.E6.9D.BF)。如何配置触摸板（Synaptics或Alps）的灵敏度、加速、键位功能、滚动条？
 *   [#硬盘冲击保护](#.E7.A1.AC.E7.9B.98.E5.86.B2.E5.87.BB.E4.BF.9D.E6.8A.A4)
 

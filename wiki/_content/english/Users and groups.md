@@ -131,12 +131,14 @@ When the login shell is intended to be non-functional, for example when the user
 
 ### Example adding a user
 
-On a typical desktop system, use the following command to add a new user named `archie`, specify Bash as their login shell and add them to the `wheel` group (see the entry in [#User groups](#User_groups) for details):
+On a typical desktop system, use the following command to add a new user named `archie`, specify Bash as their login shell and add them to the [wheel](#User_groups) group:
 
 ```
 # useradd -m -G wheel -s /bin/bash archie
 
 ```
+
+**Tip:** Do not worry about adding the user to other groups now. If later on you will install a particular application, or perform a specific configuration, that requires explicitly adding the user to a group, the wiki will remind you to do it in the specific article that you will be following.
 
 Although it is not required to protect the newly user `archie` with a password, it is highly recommend to do so:
 
@@ -149,14 +151,14 @@ Although it is not required to protect the newly user `archie` with a password, 
 
 This command will also automatically create a group called `archie` with the same GID as the UID of the user `archie` and makes this the default group for `archie` on login. Making each user have their own group (with group name same as user name and GID same as UID) is the preferred way to add users.
 
-You could also make the default group something else, e.g. `users`:
+You could also make the default group something else, e.g. `study`:
 
 ```
-# useradd -m -g users -G wheel archie
+# useradd -m -g study -G wheel -s /bin/bash archie
 
 ```
 
-However, using a single default group (`users` in the example above) is not recommended for multi-user systems. The reason is that typically, the method for facilitating shared write access for specific groups of users is setting user [umask](/index.php/Umask "Umask") value to `002`, which means that the default group will by default always have write access to any file you create. See also [User Private Groups](https://security.ias.edu/how-and-why-user-private-groups-unix).
+Note that, in multi-user systems, using a single default group (e.g. `users`) for every user is not recommended. The reason is that typically, the method for facilitating shared write access for specific groups of users is setting user [umask](/index.php/Umask "Umask") value to `002`, which means that the default group will by default always have write access to any file you create. See also [User Private Groups](https://security.ias.edu/how-and-why-user-private-groups-unix).
 
 In the recommended scenario, where the default group has the same name as the user name, all files are by default writeable only for the user who created them. To allow write access to a specific group, shared files/folders can be made writeable by default for everyone in this group and the owning group can be automatically fixed to the group which owns the parent directory by setting the setgid bit on this directory:
 

@@ -97,7 +97,7 @@ It is convenient to save `SAL_USE_VCLPLUGIN` variable in your shell configuratio
 
 ## إدارة الامتدادات
 
-الامتدادات الإضافية التالية متوفّرة من [المستودعات الرسمية](/index.php/Official_Repositories_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Official Repositories (العربية)"):
+الامتدادات الإضافية التالية متوفّرة من [المستودعات الرسمية](/index.php/Official_repositories_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Official repositories (العربية)"):
 
 *   [libreoffice-still-extension-nlpsolver](https://www.archlinux.org/packages/?name=libreoffice-still-extension-nlpsolver)
 *   [libreoffice-still-extension-wiki-publisher](https://www.archlinux.org/packages/?name=libreoffice-still-extension-wiki-publisher)

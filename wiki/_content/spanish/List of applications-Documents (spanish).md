@@ -282,4 +282,4 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of optical character recognition software](https://en.wikipedia.org/wiki/Comparison_of_optical_character_recognition_software "wikipedia:Comparison of optical character recognition software").
 
-Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [Optical Character Recognition#OCR software](/index.php/Optical_Character_Recognition#OCR_software "Optical Character Recognition").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [Optical Character Recognition#OCR software](/index.php/Optical_Character_Recognition#OCR_software "Optical Character Recognition").

@@ -20,8 +20,9 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 *   [5 Optional configuration and tweaks](#Optional_configuration_and_tweaks)
     *   [5.1 Changing background images/colors](#Changing_background_images.2Fcolors)
         *   [5.1.1 GTK+ greeter](#GTK.2B_greeter)
-        *   [5.1.2 Unity greeter](#Unity_greeter)
-        *   [5.1.3 KDE greeter](#KDE_greeter)
+        *   [5.1.2 Webkit2 greeter](#Webkit2_greeter)
+        *   [5.1.3 Unity greeter](#Unity_greeter)
+        *   [5.1.4 KDE greeter](#KDE_greeter)
     *   [5.2 Changing your avatar](#Changing_your_avatar)
     *   [5.3 Sources of Arch-centric 64x64 icons](#Sources_of_Arch-centric_64x64_icons)
     *   [5.4 Enabling autologin](#Enabling_autologin)
@@ -106,36 +107,19 @@ $ lightdm --test-mode --debug
 
 ## Optional configuration and tweaks
 
-Some greeters have their own configuration files. For example, [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) has:
+LightDM can be configured by modifying its config file, `/etc/lightdm/lightdm.conf`.
 
-```
-/etc/lightdm/lightdm-gtk-greeter.conf
+Some greeters have their own configuration files. For example:
 
-```
+[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter): `/etc/lightdm/lightdm-gtk-greeter.conf`
 
-and [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter) has:
+[lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): `/etc/lightdm/lightdm-webkit2-greeter.conf`
 
-```
-/etc/lightdm/lightdm-kde-greeter.conf
-
-```
-
-as well as a section in KDE's System Settings (recommended).
-
-LightDM can be configured by modifying its configuration script, `/etc/lightdm/lightdm.conf`.
+[lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): `/etc/lightdm/lightdm-kde-greeter.conf`
 
 ### Changing background images/colors
 
-Users wishing to have a flat color (no image) may simply set the `background` variable to a hex color.
-
-Example:
-
-```
-background=#000000
-
-```
-
-If you want to use an image instead, see below.
+You can set the background to a hex color or an image. Some greeters offer more robust background options like background selection from the login screen, random backgrounds, etc.
 
 #### GTK+ greeter
 
@@ -150,6 +134,18 @@ background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jp
 ```
 
 **Note:** It is recommended to place the PNG or JPG file in `/usr/share/pixmaps` since the LightDM user needs read access to the wallpaper file.
+
+#### Webkit2 greeter
+
+The [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/) allows you to choose a background image directly on the login screen. It also offers an option to display a random image each time it starts. By default, images are sourced from `/usr/share/backgrounds`. You can change the background images directory by editing `lightdm-webkit2-greeter.conf`. For example:
+
+ `/etc/lightdm/lightdm-webkit2-greeter.conf` 
+```
+[branding]
+background_images = /usr/share/backgrounds
+```
+
+**Note:** The background images directory must be accessible to the LightDM user so it should not be located anywhere under `/home`.
 
 #### Unity greeter
 

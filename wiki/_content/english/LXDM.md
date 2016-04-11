@@ -177,7 +177,7 @@ After a user logs on, LXDM sources *all* of the following files, in order:
 
 These files can be used to set session environment variables and to start services which must set certain environment variables in order for clients in the session to be able to use the service, like ssh-agent. See [Xprofile](/index.php/Xprofile "Xprofile") for details.
 
-Note that LXDM does *not* source `~/.xinitrc`, so those migrating from a DM that *does* use this file, like [slim](/index.php/Slim "Slim"), will have to move their settings from it to somewhere else — probably `~/.xprofile`. Also note LXDM does not source `~/.bash_profile`.
+Note that LXDM does *not* source `~/.xinitrc`, so those migrating from a DM that *does* use this file, like [SLiM](/index.php/SLiM "SLiM"), will have to move their settings elsewhere — probably `~/.xprofile`. Also note LXDM does not source `~/.bash_profile`.
 
 LXDM also makes use of .[Xresources](/index.php/Xresources "Xresources"), .[Xkbmap](/index.php/Xkbmap "Xkbmap"), and .[Xmodmap](/index.php/Xmodmap "Xmodmap"). See `/etc/lxdm/Xsession` for details on how LXDM uses system-wide and per-user configuration files to configure the session.[[1]](https://projects.archlinux.org/svntogit/community.git/tree/trunk/Xsession?h=packages/lxdm)
 

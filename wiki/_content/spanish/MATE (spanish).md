@@ -20,7 +20,7 @@ Tomado de la [pagina de MATE](http://mate-desktop.org/):
 
 ## Instalación
 
-MATE está disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") y puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con dos grupos de paquetes:
+MATE está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con dos grupos de paquetes:
 
 *   [mate](https://www.archlinux.org/groups/x86_64/mate/) contiene el entorno de escritorio básico y aplicaciones necesarias para la experiencia estándar de MATE.
 
@@ -86,7 +86,7 @@ MATE puede iniciarse mediante un gestor de pantalla o manualmente.
 
 ### Acceso grafico
 
-Seleccione *MATE* en el menú del [gestor de pantalla](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") que ha elegido. El equipo de MATE recomienda [LightDM](/index.php/LightDM "LightDM") con el greeter GTK como el gestor de pantalla, que puede ser instalado con el paquete [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter).
+Seleccione *MATE* en el menú del [gestor de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") que ha elegido. El equipo de MATE recomienda [LightDM](/index.php/LightDM "LightDM") con el greeter GTK como el gestor de pantalla, que puede ser instalado con el paquete [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter).
 
 ### Manualmente
 

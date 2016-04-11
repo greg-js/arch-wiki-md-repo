@@ -22,7 +22,7 @@
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of firewalls](https://en.wikipedia.org/wiki/Comparison_of_firewalls "wikipedia:Comparison of firewalls").
 
-Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [Firewalls](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [Firewalls](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)").
 
 #### Seguridad de la red
 
@@ -98,7 +98,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software").
 
-Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [Backup programs](/index.php/Backup_programs "Backup programs").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [Backup programs](/index.php/Backup_programs "Backup programs").
 
 #### Aplicaciones para bloquear la pantalla
 

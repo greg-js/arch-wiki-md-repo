@@ -7,7 +7,8 @@ This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s
     *   [1.2 Alternate install: custom kernel](#Alternate_install:_custom_kernel)
         *   [1.2.1 Automatic re-compilation of the NVIDIA module with kernel update](#Automatic_re-compilation_of_the_NVIDIA_module_with_kernel_update)
     *   [1.3 Pure Video HD (VDPAU/VAAPI)](#Pure_Video_HD_.28VDPAU.2FVAAPI.29)
-    *   [1.4 Hardware accelerated video decoding with XvMC](#Hardware_accelerated_video_decoding_with_XvMC)
+    *   [1.4 DRM kernel mode setting](#DRM_kernel_mode_setting)
+    *   [1.5 Hardware accelerated video decoding with XvMC](#Hardware_accelerated_video_decoding_with_XvMC)
 *   [2 Configuration](#Configuration)
     *   [2.1 Minimal configuration](#Minimal_configuration)
     *   [2.2 Automatic configuration](#Automatic_configuration)
@@ -98,6 +99,12 @@ This is possible with [DKMS](/index.php/DKMS "DKMS"). Install the [nvidia-dkms](
 ### Pure Video HD (VDPAU/VAAPI)
 
 At least a video card with second generation [PureVideo HD](https://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_GPUs_containing_a_PureVideo_SIP_block "wikipedia:Nvidia PureVideo") is required to use [VDPAU](/index.php/VDPAU "VDPAU") and [VA-API](/index.php/VA-API "VA-API").
+
+### DRM kernel mode setting
+
+[nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) adds support for DRM [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). To enable this feature, add the `nvidia-drm.modeset=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), and add nvidia, nvidia_modeset, nvidia_uvm and nvidia_drm modules to [initramfs](/index.php/Initramfs "Initramfs").
+
+**Warning:** Do not forget to run mkinitcpio every time you update driver.
 
 ### Hardware accelerated video decoding with XvMC
 

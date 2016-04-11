@@ -724,7 +724,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 #### Interfaz gráfica
 
-Véanse los artículos de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [MPlayer frontends](/index.php/MPlayer#Frontends.2FGUIs "MPlayer") y [mpv](/index.php/Mpv "Mpv").
+Véanse los artículos de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [MPlayer frontends](/index.php/MPlayer#Frontends.2FGUIs "MPlayer") y [mpv](/index.php/Mpv "Mpv").
 
 *   **[Dragon Player](https://en.wikipedia.org/wiki/Kdemultimedia#Dragon_Player "wikipedia:Kdemultimedia")** — Reproductor de vídeo sencillo para KDE. Parte de los grupos [kde](https://www.archlinux.org/groups/x86_64/kde/) y [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/).
 

@@ -140,4 +140,4 @@ You may find that Qt4 applications are not inheriting the GTK2 theme like they s
 
 ### Evolution Email 不工作
 
-请看 [Evolution#Using_Evolution_Outside_Of_Gnome](/index.php/Evolution#Using_Evolution_Outside_Of_Gnome "Evolution").
+请看 [Evolution#Using Evolution Outside Of Gnome](/index.php/Evolution#Using_Evolution_Outside_Of_Gnome "Evolution").

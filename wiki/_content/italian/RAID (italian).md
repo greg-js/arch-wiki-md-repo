@@ -471,8 +471,6 @@ Ci sono diversi strumenti per misurare le prestazioni di un RAID. Il miglioramen
 
 ## Ulteriori riferimenti
 
-*   [RAID/Software](http://en.gentoo-wiki.com/wiki/RAID/Software) sul Wiki di Gentoo
-*   [Software RAID Install](http://en.gentoo-wiki.com/wiki/Software_RAID_Install) sul Wiki di Gentoo
 *   [Software RAID in the new Linux 2.4 kernel, Part 1](http://www.gentoo.org/doc/en/articles/software-raid-p1.xml) e [Part 2](http://www.gentoo.org/doc/en/articles/software-raid-p2.xml) nella documentazione di Gentoo
 *   [Linux RAID wiki entry](http://raid.wiki.kernel.org/index.php/Linux_Raid) negli archivi del Linux Kernel
 *   [Arch Linux software RAID installation guide](http://linux-101.org/howto/arch-linux-software-raid-installation-guide) su Linux 101

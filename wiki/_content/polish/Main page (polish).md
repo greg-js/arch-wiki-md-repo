@@ -1,6 +1,6 @@
 **Witaj na [ArchWiki](/index.php/AboutWiki "AboutWiki"): twoim największym źródle wiedzy na temat dystrybucji Arch Linux w sieci.**
 
-Odwiedź **[Spis treści](/index.php/Table_of_Contents_(Polski) "Table of Contents (Polski)")** aby zobaczyć listę kategorii ArchWiki.
+Odwiedź **[Spis treści](/index.php/Table_of_contents_(Polski) "Table of contents (Polski)")** aby zobaczyć listę kategorii ArchWiki.
 
 ## Podstawowe informacje
 
@@ -12,11 +12,11 @@ Odwiedź **[Spis treści](/index.php/Table_of_Contents_(Polski) "Table of Conten
 
 	Opis filozofii i zasad dystrybucji Arch Linuksa.
 
-	[Porównanie Archa z innymi dystrybucjami](/index.php/Arch_Compared_to_Other_Distributions_(Polski) "Arch Compared to Other Distributions (Polski)")
+	[Porównanie Archa z innymi dystrybucjami](/index.php/Arch_compared_to_other_distributions_(Polski) "Arch compared to other distributions (Polski)")
 
 	Krótkie porównanie Archa z różnymi systemami operacyjnymi oraz innnymi dystrybucjami Linuksa.
 
-	[Jak pomóc?](/index.php/Getting_Involved_(Polski) "Getting Involved (Polski)")
+	[Jak pomóc?](/index.php/Getting_involved_(Polski) "Getting involved (Polski)")
 
 	Instrukcja ukazująca, jak użytkownicy mogą pomóc w tworzeniu i rozwijaniu dystrybucji Arch Linuksa.
 
@@ -24,11 +24,11 @@ Odwiedź **[Spis treści](/index.php/Table_of_Contents_(Polski) "Table of Conten
 
 	Wskazówki dla użytkowników forum.
 
-	[Poradnik początkującego](/index.php/Beginners%27_Guide_(Polski) "Beginners' Guide (Polski)")
+	[Poradnik początkującego](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)")
 
 	Przewodnik opisujący szczegółowo proces instalacji oraz podstawowej konfiguracji Arch Linuksa.
 
-	[Oficialny Przewodnik Instalacyjny](/index.php/Installation_Guide_(Polski) "Installation Guide (Polski)")
+	[Oficialny Przewodnik Instalacyjny](/index.php/Installation_guide_(Polski) "Installation guide (Polski)")
 
 	Tłumaczenie oficjalnej instrukcji instalacji systemu.
 
@@ -48,7 +48,7 @@ Odwiedź **[Spis treści](/index.php/Table_of_Contents_(Polski) "Table of Conten
 
 Sprawdź [Nowości Wiki](/index.php?title=Wiki_News_(Polski)&action=edit&redlink=1 "Wiki News (Polski) (page does not exist)") po najnowsze wieści dotyczące ArchWiki.
 
-Jeżeli chcesz pomóc społeczności Archa w edycji ArchWiki wejdź na tą [stronę](/index.php/Getting_Involved_(Polski)#Wiki "Getting Involved (Polski)").
+Jeżeli chcesz pomóc społeczności Archa w edycji ArchWiki wejdź na tą [stronę](/index.php/Getting_involved_(Polski)#Wiki "Getting involved (Polski)").
 
 ## Tłumaczenia
 

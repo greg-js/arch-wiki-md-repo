@@ -129,7 +129,7 @@ Qt4 프로그램은 GTK2 테마가 적용되지 않을 수 있을 것이다. 이
 
 ### Evolution 이메일 미작동
 
-[Evolution#Using_Evolution_Outside_Of_Gnome](/index.php/Evolution#Using_Evolution_Outside_Of_Gnome "Evolution")을 보라.
+[Evolution#Using Evolution Outside Of Gnome](/index.php/Evolution#Using_Evolution_Outside_Of_Gnome "Evolution")을 보라.
 
 ### GTK3 프로그램 스타일 적용
 

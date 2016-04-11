@@ -108,9 +108,7 @@ See [ATI](/index.php/ATI "ATI") for the open-source driver or [AMD Catalyst](/in
 
 ### Switchable Graphics
 
-Is currently not supported by the kernel. You can enable switchable-graphics in the BIOS and make Xorg do the switching, but then both cards will always use power and generate lots of heat. See the [gentoo-wiki](http://en.gentoo-wiki.com/wiki/Lenovo_ThinkPad_T400#Getting_both_to_work%7C) to keep up too date on the issue.
-
-You can also try David Arlile's patch to power off the unused card. See [http://airlied.livejournal.com/71434.html](http://airlied.livejournal.com/71434.html) and [http://linux-hybrid-graphics.blogspot.com/](http://linux-hybrid-graphics.blogspot.com/).
+[ATI#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics](/index.php/ATI#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics "ATI")
 
 ### Synaptic, UltraNav
 

@@ -14,7 +14,7 @@ Berikut adalah daftar artikel yang dapat Anda baca agar lebih paham tentang Arch
 
 	Berisi tentang prinsip-prinsip serta filosofi Archlinux yang harus Anda ikuti dan pahami.
 
-**[Perbandingan Archlinux dengan distro GNU/Linux dan OS lain.](/index.php/Arch_Compared_to_Other_Distributions_(Indonesia) "Arch Compared to Other Distributions (Indonesia)")**
+**[Perbandingan Archlinux dengan distro GNU/Linux dan OS lain.](/index.php/Arch_compared_to_other_distributions_(Indonesia) "Arch compared to other distributions (Indonesia)")**
 
 	Berisi rangkuman tentang persamaan dan perbedaan Archlinux dengan distro/OS lain.
 
@@ -24,7 +24,7 @@ Berikut adalah daftar artikel yang dapat Anda baca agar lebih paham tentang Arch
 
 ## Mulai menginstall Archlinux
 
-**[Panduan Archlinux (untuk pengguna pemula)](/index.php/Beginners%27_Guide_(Indonesia) "Beginners' Guide (Indonesia)")**
+**[Panduan Archlinux (untuk pengguna pemula)](/index.php/Beginners%27_guide_(Indonesia) "Beginners' guide (Indonesia)")**
 
 	Panduan yang meliputi seluruh proses instalasi dan konfigurasi Archlinux diperuntukkan bagi **pemula**.
 

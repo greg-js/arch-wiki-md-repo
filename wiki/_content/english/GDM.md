@@ -1,6 +1,6 @@
 From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM):
 
-	*The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins.*
+	The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins.
 
 [Display managers](/index.php/Display_manager "Display manager") provide [X Window System](/index.php/X_Window_System "X Window System") users with a graphical login prompt.
 

@@ -92,7 +92,7 @@ Para obtener más información sobre la configuración de LILO, consulte el art�
 
 **Nota:** Si no tiene establecido un tiempo de espera del menú, necesitará mantener pulsada la barra `Espaciadora` durante el arranque para que el menú de Gummiboot aparezca.
 
-*   Para hacer que los cambios permanezcan tras el reinicio, edite `/boot/loader/entries/arch.conf` (suponiendo que haya establecido la [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#EFI_System_Partition "Unified Extensible Firmware Interface (Español)") y configurado lo archivos de acuerdo a las instrucciones de la [guía para principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Gummiboot "Beginners' Guide (Español)")) y añada lo siguiente a la línea `options`:
+*   Para hacer que los cambios permanezcan tras el reinicio, edite `/boot/loader/entries/arch.conf` (suponiendo que haya establecido la [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#EFI_System_Partition "Unified Extensible Firmware Interface (Español)") y configurado lo archivos de acuerdo a las instrucciones de la [guía para principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Gummiboot "Beginners' guide (Español)")) y añada lo siguiente a la línea `options`:
 
 	 `options root=/dev/sda2 rw *quiet splash*` 
 
@@ -133,7 +133,7 @@ Los parámetros siempre vienen como `parameter` o `parameter=value`. Todos estos
 | `systemd.unit=` |
 | `systemd.unit=multi-user` | Arranca en el runlevel especificado. |
 | `systemd.unit=rescue` | Arranca en modo usuario único (root). |
-| `nomodeset` | Desactiva [Kernel Mode Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting"). |
+| `nomodeset` | Desactiva [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). |
 
 Para obtener una lista completa de todas las opciones, consulte la [documentación del núcleo Linux](https://www.kernel.org/doc/Documentation/kernel-parameters.txt).
 

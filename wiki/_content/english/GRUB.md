@@ -38,12 +38,13 @@
             *   [5.2.1.6 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
         *   [5.2.2 With Windows via EasyBCD and NeoGRUB](#With_Windows_via_EasyBCD_and_NeoGRUB)
         *   [5.2.3 parttool for hide/unhide](#parttool_for_hide.2Funhide)
-    *   [5.3 LVM](#LVM)
-    *   [5.4 RAID](#RAID)
-    *   [5.5 Multiple entries](#Multiple_entries)
-    *   [5.6 Encryption](#Encryption)
-        *   [5.6.1 Root partition](#Root_partition)
-        *   [5.6.2 Boot partition](#Boot_partition)
+    *   [5.3 Suspend to disk](#Suspend_to_disk)
+    *   [5.4 LVM](#LVM)
+    *   [5.5 RAID](#RAID)
+    *   [5.6 Multiple entries](#Multiple_entries)
+    *   [5.7 Encryption](#Encryption)
+        *   [5.7.1 Root partition](#Root_partition)
+        *   [5.7.2 Boot partition](#Boot_partition)
 *   [6 Using the command shell](#Using_the_command_shell)
     *   [6.1 Pager support](#Pager_support)
     *   [6.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
@@ -81,6 +82,7 @@ A *bootloader* is the first software program that runs when a computer starts. I
 
 *   GRUB supports [Btrfs](/index.php/Btrfs "Btrfs") as root (without a separate `/boot` file system needed), only compressed with either zlib (the btrfs default) or LZO.
 *   GRUB does not support [F2FS](/index.php/F2FS "F2FS") as root ,so you will need a separate `/boot` with a supported file system.
+*   For GRUB's XFS support, see [XFS#Installation](/index.php/XFS#Installation "XFS") with the linked [FS#46856](https://bugs.archlinux.org/task/46856).
 
 ## BIOS systems
 
@@ -680,6 +682,28 @@ chainloader +1
 boot
 
 ```
+
+### Suspend to disk
+
+By default, GRUB will not add a [resume](/index.php/Power_management/Suspend_and_hibernate#Required_kernel_parameters "Power management/Suspend and hibernate") parameter to the kernel command line. If you want GRUB to add it to every linux kernel entry in the `/boot/grub/grub.cfg` file when running *grub-mkconfig*, you can edit `/etc/grub.d/10_linux` file and replace the following line (around line 140 as of 2016/04/10):
+
+```
+linux  ${rel_dirname}/${basename} root=${linux_root_device_thisversion} rw ${args}
+
+```
+
+with:
+
+```
+linux   ${rel_dirname}/${basename} root=${linux_root_device_thisversion} rw ${args} resume=UUID=`swapon --show=UUID | tail -1`
+
+```
+
+his will add the *last* found swap partition to all found linux entries. If you only have one swap partition, then you do not have to worry since it will add the only available swap partition.
+
+Do not forget to [#Generate the main configuration file](#Generate_the_main_configuration_file). Also, if the `initrd` has not been updated, follow the instructions as told in [Power management/Suspend and hibernate#Configure the initramfs](/index.php/Power_management/Suspend_and_hibernate#Configure_the_initramfs "Power management/Suspend and hibernate").
+
+Source: [the Debian wiki](https://wiki.debian.org/Grub#Dual_Boot).
 
 ### LVM
 

@@ -2,7 +2,7 @@
 
 *Bemærk: De fleste artikler er på engelsk. De artikler, der er oversat til dansk, vil være markerede.* Er du kun interesseret i de danske artikler, kan du klikke på [Category:Dansk](/index.php/Category:Dansk "Category:Dansk").
 
-[Indholdsfortegnelsen](/index.php/Table_of_Contents_(Dansk) "Table of Contents (Dansk)") giver dig en mere detaljeret oversig over artiklerne her på wiki.
+[Indholdsfortegnelsen](/index.php/Table_of_contents_(Dansk) "Table of contents (Dansk)") giver dig en mere detaljeret oversig over artiklerne her på wiki.
 
 ## Godt begyndt
 
@@ -16,7 +16,7 @@ De følgende links er nyttige til at få godt begyndt med Arch Linux.
 
 	Beskriver principperne og filosofien bag Arch Linux.
 
-	[Arch sammenlignet med andre distributioner](/index.php/Arch_Compared_to_Other_Distributions_(Dansk) "Arch Compared to Other Distributions (Dansk)")
+	[Arch sammenlignet med andre distributioner](/index.php/Arch_compared_to_other_distributions_(Dansk) "Arch compared to other distributions (Dansk)")
 
 	Summerer ligheder og forskelligheder mellem Arch og andre distributioner.
 
@@ -28,7 +28,7 @@ De følgende links er nyttige til at få godt begyndt med Arch Linux.
 
 	En kort vejledning til redigering og bidrag til wikien.
 
-	[Begynderguiden](/index.php/Beginners%27_Guide_(Dansk) "Beginners' Guide (Dansk)")
+	[Begynderguiden](/index.php/Beginners%27_guide_(Dansk) "Beginners' guide (Dansk)")
 
 	En guide gennem en komplet installation og konfiguration af Arch Linux; skrevet for nye eller uerfarne brugere.
 

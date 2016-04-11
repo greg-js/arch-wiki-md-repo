@@ -295,5 +295,5 @@ Exec=gmplayer %F
 ## Ссылки
 
 *   [Официальный сайт MPlayer](http://www.mplayerhq.hu/)
-*   [MPlayer на википедии](http://ru.wikipedia.org/wiki/Mplayer)
+*   [MPlayer на википедии](https://ru.wikipedia.org/wiki/Mplayer)
 *   [Список горячих клавиш MPlayer](http://www.keyxl.com/aaa2fa5/302/MPlayer-keyboard-shortcuts.htm)

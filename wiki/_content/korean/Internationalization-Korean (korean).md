@@ -24,7 +24,7 @@
 
 ## 한글 입력기 고르기
 
-입력기 프레임워크들은 여러가지 입력기와 입력 라이브러리를 포함하여 사용중인 입력기를 쉽게 전환할 수 있도록 해줍니다. [ibus](/index.php/Ibus "Ibus"), [uim](/index.php/UIM "UIM"), [fcitx](/index.php/Fcitx "Fcitx"), [scim](/index.php/Scim "Scim") 등의 입력기 프레임워크들이 한국어 입력을 지원합니다. 덧붙여, [nabi](https://aur.archlinux.org/packages/nabi/)는 독립적인 한글 입력기로서, 다른 프레임워크를 사용하지 않습니다. 이 항목에서는 한글 입력기 선택을 돕기 위한 정보를 제공합니다.
+입력기 프레임워크들은 여러가지 입력기와 입력 라이브러리를 포함하여 사용중인 입력기를 쉽게 전환할 수 있도록 해줍니다. [IBus](/index.php/IBus "IBus"), [uim](/index.php/UIM "UIM"), [fcitx](/index.php/Fcitx "Fcitx"), [scim](/index.php/Scim "Scim") 등의 입력기 프레임워크들이 한국어 입력을 지원합니다. 덧붙여, [nabi](https://aur.archlinux.org/packages/nabi/)는 독립적인 한글 입력기로서, 다른 프레임워크를 사용하지 않습니다. 이 항목에서는 한글 입력기 선택을 돕기 위한 정보를 제공합니다.
 
 **참고:** 각 입력기나 입력기 프레임워크에서 나타나는 문제들을 반드시 확인한 후에 입력기를 고르십시오.
 
@@ -32,7 +32,7 @@
 
 	ibus
 
-	[ibus](/index.php/Ibus "Ibus")는 [Gnome](/index.php/Gnome "Gnome")과 우분투의 기본 입력기 프레임워크입니다. 가장 널리 지원을 받으며, 대부분의 어플리케이션에서 문제 없이 한글 입력을 할 수 있습니다. 그러나 문제가 없는 것은 아닙니다.
+	[IBus](/index.php/IBus "IBus")는 [GNOME](/index.php/GNOME "GNOME")과 우분투의 기본 입력기 프레임워크입니다. 가장 널리 지원을 받으며, 대부분의 어플리케이션에서 문제 없이 한글 입력을 할 수 있습니다. 그러나 문제가 없는 것은 아닙니다.
 
 *   2014년 11월 현재, ibus에서 입력기 전환 단축키를 무시하는 현상이 발생합니다. 이 경우, 한글에서 영어 등 다른 입력기로 전환하기 위해서는 시스템 트레이의 ibus 아이콘을 클릭해야 합니다.
 
@@ -62,7 +62,7 @@
 
 ### ibus-hangul
 
-[ibus](/index.php/Ibus "Ibus") 문서를 보십시오.
+[IBus](/index.php/IBus "IBus") 문서를 보십시오.
 
 ### uim-byeoru
 
@@ -155,7 +155,7 @@ dasom-indicator
 
 ```
 
-만약, [Gnome](/index.php/Gnome "Gnome") 데스크탑을 사용한다면, 다음을 추가적으로 실행하십시오.
+만약, [GNOME](/index.php/GNOME "GNOME") 데스크탑을 사용한다면, 다음을 추가적으로 실행하십시오.
 
 ```
 gsettings set org.gnome.settings-daemon.plugins.keyboard active false

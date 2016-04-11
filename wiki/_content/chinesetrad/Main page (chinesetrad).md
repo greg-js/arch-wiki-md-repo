@@ -1,6 +1,6 @@
 **歡迎來到正體中文版的 [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About")：您的 Arch Linux 網路知識庫！**
 
-**[正體中文版目錄](/index.php/Table_of_Contents_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Table of Contents (正體中文)")**列舉了目前有正體中文翻譯的 ArchWiki 文章分類。
+**[正體中文版目錄](/index.php/Table_of_contents_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Table of contents (正體中文)")**列舉了目前有正體中文翻譯的 ArchWiki 文章分類。
 
 也請參考 (較為完整的) **[英文版目錄](/index.php/Table_of_contents "Table of contents")**。
 
@@ -14,23 +14,23 @@
 
 	闡明 Arch Linux 的設計準則與哲學。
 
-	[Arch 與其他發行版本的比較](/index.php/Arch_Compared_to_Other_Distributions_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Compared to Other Distributions (正體中文)")
+	[Arch 與其他發行版本的比較](/index.php/Arch_compared_to_other_distributions_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch compared to other distributions (正體中文)")
 
 	總結 Arch 和其他發行版本的類似與相異之處。
 
-	[Arch Linux 相關報導(英)](/index.php/Arch_Linux_Press_Coverage "Arch Linux Press Coverage")
+	[Arch Linux 相關報導(英)](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
 
 	別人對我們有何看法。
 
-	[新手教學](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' Guide (正體中文)")
+	[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")
 
 	安裝與設定 Arch Linux 的全過程詳盡教學。
 
-	[安裝指南](/index.php/Installation_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation Guide (正體中文)")
+	[安裝指南](/index.php/Installation_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation guide (正體中文)")
 
 	進階 Arch 使用者適用的簡明安裝指南。
 
-	[一般建議](/index.php/General_Recommendations_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "General Recommendations (正體中文)")
+	[一般建議](/index.php/General_recommendations_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "General recommendations (正體中文)")
 
 	一些熱門文章與資訊的註釋索引。
 
@@ -40,7 +40,7 @@
 
 ## 我們的社群
 
-	[參與我們](/index.php/Getting_Involved_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Getting Involved (正體中文)")
+	[參與我們](/index.php/Getting_involved_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Getting involved (正體中文)")
 
 	想幫 Arch 社群一個忙嗎？這裡有各種 Arch 玩家的貢獻管道。
 

@@ -9,7 +9,7 @@
 
 ## 簡介
 
-[irssi](http://www.irssi.org/) 是一個可模組化，基於文字模式(ncurses)的IRC客戶端。 更詳細的內容,可參考[Wikipedia:Irssi](http://zh.wikipedia.org/zh-hk/Irssi)
+[irssi](http://www.irssi.org/) 是一個可模組化，基於文字模式(ncurses)的IRC客戶端。 更詳細的內容,可參考[Wikipedia:Irssi](https://zh.wikipedia.org/zh-hk/Irssi)
 
 ## 安裝
 

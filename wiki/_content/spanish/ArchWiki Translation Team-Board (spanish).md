@@ -232,7 +232,7 @@ Versión inglesa propuesta para su eliminación. |
 | [Fluxbox Style Guide (Español)](/index.php/Fluxbox_Style_Guide_(Espa%C3%B1ol) "Fluxbox Style Guide (Español)") | Complementos de fluxbox | `2011-09` | Parcialmente sin traducir |
 | [Gamin (Español)](/index.php/Gamin_(Espa%C3%B1ol) "Gamin (Español)") | Monitorización del sistema | `2008-01` | Versión inglesa propuesta para su fusión con [File manager functionality](/index.php/File_manager_functionality "File manager functionality") |
 | [GDM (Español)](/index.php/GDM_(Espa%C3%B1ol) "GDM (Español)") | Gestor de pantallas | `2013-09` |
-| [General troubleshooting (Español)](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)") | Información/General | `2014-12` |
+| [General troubleshooting (Español)](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)") | Información/General | `2016-04` |
 | [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") | Entorno escritorio | `2013-09` |
 | [GNU Project (Español)](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") | Información | `2012-03` | Versión inglesa propuesta para su eliminación |
 | [GStreamer (Español)](/index.php/GStreamer_(Espa%C3%B1ol) "GStreamer (Español)") | Códecs audio/vídeo | `2013-11` |

@@ -1,4 +1,4 @@
-Enabling the *multilib* repository allows the user to run and build 32-bit applications on 64-bit installations of Arch Linux.
+The *multilib* repository is an [official repository](/index.php/Official_repositories "Official repositories") which allows the user to run and build 32-bit applications on 64-bit installations of Arch Linux.
 
 ## Contents
 
@@ -27,7 +27,7 @@ Then update the package list and upgrade with `pacman -Syu`.
 
 ## Disabling
 
-To revert to a pure 64-bit system, uninstalling *multilib*:
+To revert to a pure 64-bit system:
 
 Execute the following command to remove all packages that were installed from *multilib*:
 

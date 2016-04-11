@@ -146,7 +146,7 @@ See also [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wi
 
 See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
 
-*   **bbpager** — Dockable pager for [blackbox](/index.php?title=Blackbox&action=edit&redlink=1 "Blackbox (page does not exist)") and other window managers.
+*   **bbpager** — Dockable pager for [blackbox](/index.php/Blackbox "Blackbox") and other window managers.
 
 	[http://bbtools.sourceforge.net/download.php?file=6](http://bbtools.sourceforge.net/download.php?file=6) || [bbpager](https://www.archlinux.org/packages/?name=bbpager)
 
@@ -663,7 +663,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **Mupen64Plus** — Highly compatible Nintendo 64 emulator with plugin system.
 
-	[http://code.google.com/p/mupen64plus/](http://code.google.com/p/mupen64plus/) || [mupen64plus](https://www.archlinux.org/packages/?name=mupen64plus) or a graphical front-end, such as [m64py](https://aur.archlinux.org/packages/m64py/) or [cutemupen](https://aur.archlinux.org/packages/cutemupen/).
+	[http://www.mupen64plus.org/](http://www.mupen64plus.org/) || [mupen64plus](https://www.archlinux.org/packages/?name=mupen64plus) or a graphical front-end, such as [m64py](https://aur.archlinux.org/packages/m64py/) or [cutemupen](https://aur.archlinux.org/packages/cutemupen/).
 
 *   **pSX** — A not plugin-based PlayStation emulator with fairly high compatibility.
 

@@ -1,6 +1,6 @@
 **Vítejte na české [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"): vašem webovém zdroji dokumentace pro Arch Linux.**
 
-Navštivte **[obsah](/index.php/Table_of_Contents_(%C4%8Cesky) "Table of Contents (Česky)")** pro seznam kategorií na ArchWiki.
+Navštivte **[obsah](/index.php/Table_of_contents_(%C4%8Cesky) "Table of contents (Česky)")** pro seznam kategorií na ArchWiki.
 
 ## Začínáme
 
@@ -14,7 +14,7 @@ Následující odkazy jsou užitečné pro ty, kteří začínají s Arch Linuxe
 
 	Popisuje principy a filozofii Arch Linuxu.
 
-	[Arch vs ostatní linuxové distribuce](/index.php/Arch_Compared_to_Other_Distributions_(%C4%8Cesky) "Arch Compared to Other Distributions (Česky)")
+	[Arch vs ostatní linuxové distribuce](/index.php/Arch_compared_to_other_distributions_(%C4%8Cesky) "Arch compared to other distributions (Česky)")
 
 	Shrnuje podobnosti a rozdíly mezi Archem a ostatními distribucemi.
 
@@ -26,11 +26,11 @@ Následující odkazy jsou užitečné pro ty, kteří začínají s Arch Linuxe
 
 	Řád pro členy Arch fóra.
 
-	[Průvodce začátečníka](/index.php/Beginners%27_Guide_(%C4%8Cesky) "Beginners' Guide (Česky)")
+	[Průvodce začátečníka](/index.php/Beginners%27_guide_(%C4%8Cesky) "Beginners' guide (Česky)")
 
 	Kompletní průvodce instalačním a konfiguračním procesem; psáno pro nové a nezkušené uživatele.
 
-	[Instalační příručka](/index.php/Installation_Guide_(%C4%8Cesky) "Installation Guide (Česky)")
+	[Instalační příručka](/index.php/Installation_guide_(%C4%8Cesky) "Installation guide (Česky)")
 
 	Stručný průvodce instalací; psáno pro zběhlé uživatele Archu.
 
@@ -38,7 +38,7 @@ Následující odkazy jsou užitečné pro ty, kteří začínají s Arch Linuxe
 
 	Seznam běžných a často kladených otázek.
 
-	[Obecná doporučení](/index.php/General_Recommendations_(%C4%8Cesky) "General Recommendations (Česky)")
+	[Obecná doporučení](/index.php/General_recommendations_(%C4%8Cesky) "General recommendations (Česky)")
 
 	Komentovaný rejstřík ostatních populárních článků a často odkazovaných informací.
 

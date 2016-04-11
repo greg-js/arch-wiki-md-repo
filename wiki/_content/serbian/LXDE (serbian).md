@@ -98,13 +98,13 @@ pacman -S leafpad xarchiver obconf epdfview
 
 ```
 
-Za više informacija pogledajte na [Lightweight_Applications](/index.php/Lightweight_Applications "Lightweight Applications").
+Za više informacija pogledajte na [Lightweight Applications](/index.php/Lightweight_Applications "Lightweight Applications").
 
 ## Startovanje desktopa
 
 Možete startovati LXDE na nekoliko različitih načina. Ako koristite displej menadžere poput [SLiM](/index.php/SLiM "SLiM"), [GDM](/index.php/GDM "GDM"), ili [KDM](/index.php/KDM "KDM"), otvorite sesija opciju i izaberite. Da bi ste bili u mogućnosti da uradite ovo iz konzole, nekoliko drugih opcija postoji.
 
-Da bi ste koristili **startx** neophodno je da definišete LXDE u Vašem [`~/.xinitrc`](/index.php/Beginners%27_Guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8)#Jednostavan_X_test "Beginners' Guide (Српски)") fajlu:
+Da bi ste koristili **startx** neophodno je da definišete LXDE u Vašem [`~/.xinitrc`](/index.php/Beginners%27_guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8)#Jednostavan_X_test "Beginners' guide (Српски)") fajlu:
 
 ```
 exec startlxde

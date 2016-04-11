@@ -225,4 +225,4 @@ Per l'interfaccia grafica eseguite:
 
 *   Il sito di [TuxOnIce](http://www.tuxonice.net) e la sua [wiki](http://wiki.tuxonice.net) sono un ottima fonte di informazioni.
 *   Altre informazioni generali sulla sospensione/ibernazione con gli hibernate-script si possono trovare nella pagina [Suspend to Disk](/index.php/Suspend_to_Disk "Suspend to Disk") di questa wiki. Questa tratta argomenti avanzati come problemi con certe configurazioni hardware.
-*   Un'altra buona fonte di informazioni è la [wiki di Gentoo](http://en.gentoo-wiki.com/wiki/TuxOnIce).
+*   Un'altra buona fonte di informazioni è la [wiki di Gentoo](http://www.gentoo-wiki.info/TuxOnIce).

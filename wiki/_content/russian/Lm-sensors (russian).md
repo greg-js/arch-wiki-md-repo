@@ -37,7 +37,7 @@ sensors-detect
 
 ```
 
-**Важно:** Если вы не уверены,то не выбирайте значения, отличные от предложенных (просто жмите `Enter`). Смотрите [#Laptop_Screen_issues_after_running_sensors-detect](#Laptop_Screen_issues_after_running_sensors-detect).
+**Важно:** Если вы не уверены,то не выбирайте значения, отличные от предложенных (просто жмите `Enter`). Смотрите [#Laptop Screen issues after running sensors-detect](#Laptop_Screen_issues_after_running_sensors-detect).
 
 В результате будет создан конфигурационный файл `/etc/conf.d/lm_sensors`, используемый демоном `sensors`, который автоматически активируется ядром при загрузке. Программа будет задавать вопросы по различному железу. "Безопасные" ответы предусмотрены по умолчанию, так что слепое нажатие `Enter` на все вопросы не должно вызвать никаких проблем.
 
@@ -195,7 +195,7 @@ Part Number                                     OCZ3G1600LV2G
 
 ### sensord
 
-Существует дополнительный демон sensord (включен в пакет [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors)), позволяющий записывать данные с сенсоров в [кольцевые базы данных](http://ru.wikipedia.org/wiki/Кольцевая_база_данных) (rrd) для последующей визуализации. Смотрите sensord для уточнения деталей.
+Существует дополнительный демон sensord (включен в пакет [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors)), позволяющий записывать данные с сенсоров в [кольцевые базы данных](https://ru.wikipedia.org/wiki/Кольцевая_база_данных) (rrd) для последующей визуализации. Смотрите sensord для уточнения деталей.
 
 ## Советы и рекомендации
 

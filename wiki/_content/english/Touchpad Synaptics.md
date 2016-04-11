@@ -8,7 +8,7 @@ This article details the installation and configuration process of the ***Synapt
     *   [2.2 Configuration on the fly](#Configuration_on_the_fly)
         *   [2.2.1 Console tools](#Console_tools)
         *   [2.2.2 Graphical tools](#Graphical_tools)
-    *   [2.3 GNOME/Xfce4/Cinnamon](#GNOME.2FXfce4.2FCinnamon)
+    *   [2.3 Xfce4/Cinnamon](#Xfce4.2FCinnamon)
     *   [2.4 MATE](#MATE)
 *   [3 Advanced configuration](#Advanced_configuration)
     *   [3.1 Using xinput to determine touchpad capabilities](#Using_xinput_to_determine_touchpad_capabilities)
@@ -51,6 +51,7 @@ This article details the installation and configuration process of the ***Synapt
     *   [4.15 Touchpad not recognized after shutdown from Arch](#Touchpad_not_recognized_after_shutdown_from_Arch)
     *   [4.16 Trackpoint and Clickpad](#Trackpoint_and_Clickpad)
     *   [4.17 ASUS Touchpads only recognised as PS/2 FocalTech emulated mouse](#ASUS_Touchpads_only_recognised_as_PS.2F2_FocalTech_emulated_mouse)
+    *   [4.18 Trouble with touchpad settings under GNOME](#Trouble_with_touchpad_settings_under_GNOME)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -181,11 +182,9 @@ Next to the traditional method of configuration, the Synaptics driver also suppo
 
 	[https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository](https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository) || [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)
 
-### GNOME/Xfce4/Cinnamon
+### Xfce4/Cinnamon
 
-Users of [GNOME](/index.php/GNOME "GNOME") may have to edit its configuration as well, because in default it is set to disable tapping to click, horizontal scrolling and not to allow touchpad disabling while typing.
-
-To change these settings in **GNOME 3** or **XFCE 4**:
+To change these settings in *XFCE 4'*:
 
 1.  Open *System Settings*.
 2.  Click *Mouse and Touchpad*.
@@ -197,19 +196,9 @@ To change these settings in **Cinnamon**:
 2.  Click *Mouse and Touchpad*.
 3.  Change the settings on the *Touchpad* tab.
 
-GNOME settings daemon may override existing settings (for example ones set in `xorg.conf.d`) for which there is no equivalent in any of the graphical configuration utilities. It is possible to stop GNOME from touching mouse settings at all:
-
-1.  Run `dconf-editor`
-2.  Edit `/org/gnome/settings-daemon/plugins/mouse/` (or `/org/cinnamon/settings-daemon/plugins/mouse/` for cinnamon)
-3.  Uncheck the **active** setting
-
-It will now respect your system's existing synaptics configuration.
-
-**Remember**: Since GNOME works on a user by user basis, when you run *dconf-editor* this should be done in your current user session. Repeat this procedure for each and every user you have for this computer.
-
 ### MATE
 
-As with [GNOME](/index.php/GNOME "GNOME"), it is possible configure the way MATE handles the touchpad:
+It is possible configure the way MATE handles the touchpad:
 
 1.  Run `dconf-editor`
 2.  Edit the keys in the `org.mate.peripherals-touchpad` folder.
@@ -888,6 +877,10 @@ Newer Thinkpads do not have physical buttons for their Trackpoint anymore and in
 2.  Install the focaltech-dkms from [https://github.com/hanipouspilot/focaltech-dkms](https://github.com/hanipouspilot/focaltech-dkms)
 3.  Restart your computer
 4.  Edit your settings in the "Mouse and Trackpad" settings.
+
+### Trouble with touchpad settings under GNOME
+
+Synaptics is no longer supported under GNOME. Migrate to [libinput](/index.php/Libinput "Libinput"). See [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
 
 ## See also
 

@@ -47,21 +47,10 @@ name: <alsa_output.pci-0000_04_01.0.analog-stereo.monitor>
 name: <combined.monitor>
 ```
 
-For permanent store in the *default.pa* file.
-
-Make OSS default
+To set it as the system wide default, add your source name to /etc/pulse/default.pa
 
 ```
-set-default-source alsa_output.pci-0000_04_01.0.analog-stereo.monitor
-
-```
-
-Or
-
-Make ALSA default
-
-```
-set-default-source alsa_output.pci-0000_04_01.0.analog-stereo.monitor
+set-default-source *alsa_output.pci-0000_04_01.0.analog-stereo.monitor*
 
 ```
 
@@ -85,7 +74,7 @@ Determine the name of the new source, which has a * in front of index:
 
 ```
 
-For setting it as default in the *default.pa* you can use
+To set it as the system wide default, add the following to */etc/pulse/default.pa*
 
 ```
 set-default-sink alsa_output.pci-0000_04_01.0.analog-stereo

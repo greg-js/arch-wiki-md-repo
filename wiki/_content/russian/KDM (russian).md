@@ -15,7 +15,7 @@ KDM (KDE Display Manager) это менеджер входа в систему �
 
 ## Установка
 
-*Смотрите [Display Manager (Русский)](/index.php/Display_Manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display Manager (Русский)").*
+*Смотрите [Display manager (Русский)](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)").*
 
 ## Настройка
 

@@ -1,6 +1,6 @@
 ### Arch Linux Wiki
 
-Welkom op de [Arch Linux](/index.php/Main_Page_(Nederlands) "Main Page (Nederlands)") Wiki.
+Welkom op de **Arch Linux** Wiki.
 
 #### Wiki-nieuws
 

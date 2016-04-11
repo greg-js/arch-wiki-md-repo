@@ -204,8 +204,6 @@ Exactly same functionality as above, but with vertical text output for readabili
 
 For more options use `lsdesktopf --help`.
 
-**Note:** This project is under active development. If you have any suggestions about improvements or new features please write in AUR - [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/).
-
 ### fbrokendesktop
 
 The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) bash script using command "which" to detect broken Exec that points to not existing path. Without any parameters it uses preset folders in "DskPath" array. It shows only broken *.desktop with full path and filename that is missing.

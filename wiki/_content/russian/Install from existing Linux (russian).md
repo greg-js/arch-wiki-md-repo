@@ -44,22 +44,24 @@
 Образ x86_64:
 
 ```
- $ curl -O [https://mirrors.kernel.org/archlinux/iso/2015.04.01/archlinux-bootstrap-2015.04.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/2015.04.01/archlinux-bootstrap-2015.04.01-x86_64.tar.gz)
+ $ curl -O [https://mirrors.kernel.org/archlinux/iso/2016.04.01/archlinux-bootstrap-2016.04.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/2016.04.01/archlinux-bootstrap-2016.04.01-x86_64.tar.gz)
 
 ```
 
 Образ i686:
 
 ```
- $ curl -O [https://mirrors.kernel.org/archlinux/iso/2015.04.01/archlinux-bootstrap-2015.04.01-i686.tar.gz](https://mirrors.kernel.org/archlinux/iso/2015.04.01/archlinux-bootstrap-2015.04.01-i686.tar.gz)
+ $ curl -O [https://mirrors.kernel.org/archlinux/iso/2016.04.01/archlinux-bootstrap-2016.04.01-i686.tar.gz](https://mirrors.kernel.org/archlinux/iso/2016.04.01/archlinux-bootstrap-2016.04.01-i686.tar.gz)
 
 ```
+
+Внимание! Ссылки могут оказаться нерабочими. В этом случае перейдите по адресу [https://mirrors.kernel.org/archlinux/iso/](https://mirrors.kernel.org/archlinux/iso/) и найдите образ там
 
 Распаковываем его:
 
 ```
  # cd /tmp
- # tar xzf <путь-к-каталогу-где-образ>/archlinux-bootstrap-2015.02.01-*.tar.gz
+ # tar xzf <путь-к-каталогу-где-образ>/archlinux-bootstrap-2016.04.01-*.tar.gz
 
 ```
 

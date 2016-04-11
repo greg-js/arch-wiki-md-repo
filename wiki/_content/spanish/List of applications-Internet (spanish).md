@@ -219,7 +219,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — Cliente de mensajería de KDE que usa [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Se entiende como un reemplazo de Kopete.
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — Cliente de mensajería de KDE que usa [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Se entiende como un reemplazo de Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -479,7 +479,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 [Wikipedia:es:Pastebin](https://en.wikipedia.org/wiki/es:Pastebin "wikipedia:es:Pastebin")
 
-Pastebin es un servicio que permite pegar información dentro de los [canales IRC](/index.php/IRC_Channel "IRC Channel") para solicitar ayuda en la resolución de problemas. Hay servicios, tanto para textos (por ejemplo, [sprunge.org](http://sprunge.us/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) como para imágenes (por ejemplo, [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Los clientes pastebin permiten envios directamente desde el intérprete de línea de órdenes (consola) sin necesidad de utilizar navegadores web.
+Pastebin es un servicio que permite pegar información dentro de los [canales IRC](/index.php/IRC_channel "IRC channel") para solicitar ayuda en la resolución de problemas. Hay servicios, tanto para textos (por ejemplo, [sprunge.org](http://sprunge.us/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) como para imágenes (por ejemplo, [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Los clientes pastebin permiten envios directamente desde el intérprete de línea de órdenes (consola) sin necesidad de utilizar navegadores web.
 
 **Sugerencia:** El cliente pastebin «sprunge» permite acceder directamente a través de curl: `<orden> | curl -F 'sprunge=<-' http://sprunge.us` También hay un [plugin de sprunge](https://github.com/robbyrussell/oh-my-zsh/wiki/Usage-of-the-%22sprunge%22-command) para [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki) (una herramienta de configuración para la shell de órdenes [Zsh](/index.php/Zsh "Zsh")).
 

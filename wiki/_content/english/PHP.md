@@ -15,6 +15,7 @@
     *   [4.7 PostgreSQL](#PostgreSQL)
     *   [4.8 Sqlite](#Sqlite)
     *   [4.9 XDebug](#XDebug)
+    *   [4.10 IMAP](#IMAP)
 *   [5 Caching](#Caching)
     *   [5.1 OPCache](#OPCache)
     *   [5.2 APCu](#APCu)
@@ -181,6 +182,15 @@ xdebug.remote_enable=on
 xdebug.remote_host=127.0.0.1
 xdebug.remote_port=9000
 xdebug.remote_handler=dbgp
+
+```
+
+### IMAP
+
+Install [php-imap](https://www.archlinux.org/packages/?name=php-imap) and uncomment the line at `/etc/php/php.ini`:
+
+```
+extension=imap.so
 
 ```
 

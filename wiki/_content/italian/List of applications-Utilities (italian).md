@@ -67,7 +67,7 @@ Si veda anche: [AUR helpers](/index.php/AUR_helpers "AUR helpers") and [Pacman G
 
 ### Tool per masterizzare CD/DVD
 
-Consultare: [Masterizzare CD/DVD con una interfaccia grafica](/index.php/Optical_Disc_Drive_(Italiano)#Masterizzare_CD.2FDVD_con_una_interfaccia_grafica "Optical Disc Drive (Italiano)").
+Consultare: [Masterizzare CD/DVD con una interfaccia grafica](/index.php/Optical_disc_drive_(Italiano)#Masterizzare_CD.2FDVD_con_una_interfaccia_grafica "Optical disc drive (Italiano)").
 
 ### Gestore degli appunti
 

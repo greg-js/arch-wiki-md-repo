@@ -4,20 +4,19 @@
 
 *   [1 什么是"fake RAID"](#.E4.BB.80.E4.B9.88.E6.98.AF.22fake_RAID.22)
 *   [2 历史](#.E5.8E.86.E5.8F.B2)
-*   [3 支持硬件](#.E6.94.AF.E6.8C.81.E7.A1.AC.E4.BB.B6)
-*   [4 备份](#.E5.A4.87.E4.BB.BD)
-*   [5 提纲](#.E6.8F.90.E7.BA.B2)
-*   [6 准备](#.E5.87.86.E5.A4.87)
-    *   [6.1 配置RAID](#.E9.85.8D.E7.BD.AERAID)
-*   [7 从安装盘启动](#.E4.BB.8E.E5.AE.89.E8.A3.85.E7.9B.98.E5.90.AF.E5.8A.A8)
-*   [8 加载dmraid](#.E5.8A.A0.E8.BD.BDdmraid)
-*   [9 执行传统安装](#.E6.89.A7.E8.A1.8C.E4.BC.A0.E7.BB.9F.E5.AE.89.E8.A3.85)
-    *   [9.1 RAID分区](#RAID.E5.88.86.E5.8C.BA)
-    *   [9.2 加载文件系统](#.E5.8A.A0.E8.BD.BD.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-    *   [9.3 安装和配置Archlinux](#.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AEArchlinux)
-*   [10 安装 GRUB](#.E5.AE.89.E8.A3.85_GRUB)
-*   [11 Troubleshooting](#Troubleshooting)
-    *   [11.1 Booting with degraded array](#Booting_with_degraded_array)
+*   [3 备份](#.E5.A4.87.E4.BB.BD)
+*   [4 提纲](#.E6.8F.90.E7.BA.B2)
+*   [5 准备](#.E5.87.86.E5.A4.87)
+    *   [5.1 配置RAID](#.E9.85.8D.E7.BD.AERAID)
+*   [6 从安装盘启动](#.E4.BB.8E.E5.AE.89.E8.A3.85.E7.9B.98.E5.90.AF.E5.8A.A8)
+*   [7 加载dmraid](#.E5.8A.A0.E8.BD.BDdmraid)
+*   [8 执行传统安装](#.E6.89.A7.E8.A1.8C.E4.BC.A0.E7.BB.9F.E5.AE.89.E8.A3.85)
+    *   [8.1 RAID分区](#RAID.E5.88.86.E5.8C.BA)
+    *   [8.2 加载文件系统](#.E5.8A.A0.E8.BD.BD.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+    *   [8.3 安装和配置Archlinux](#.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AEArchlinux)
+*   [9 安装 GRUB](#.E5.AE.89.E8.A3.85_GRUB)
+*   [10 Troubleshooting](#Troubleshooting)
+    *   [10.1 Booting with degraded array](#Booting_with_degraded_array)
 
 ## 什么是"fake RAID"
 
@@ -36,15 +35,6 @@
 在Linux 2.4中,　ATARAID kernel framework提供了对fake RAID (由BIOS协助的软RAID)的支持. Linux 2.6中，device-mapper framework ，包括其它的如[LVM](/index.php/LVM "LVM")和EVMS, 可以做ATARAID在2.4中做的事.虽然新的代码中处理RAID的I/O仍然在内核中运行时，device-mapper通常是由一个用户空间应用程序配置。很明显，当使用RAID的device-mapper，检测会在用户空间。
 
 Heinz Maulshagen开发了dmraid工具来检测RAID和创建它们的映射.支持的硬件是带BIOS功能的fake RAID IDE/SATA. 常见的如: Promise FastTrak controllers; HighPoint HPT37x; Intel Matrix RAID; Silicon Image Medley; 和 NVIDIA nForce.
-
-## 支持硬件
-
-*   测试ICH10R在*2009.08* (x86_64) -- [pointone](/index.php/User:Pointone "User:Pointone") 23:10, 29 November 2009 (EST)
-*   测试Sil3124在*2009.02* (i686) -- [loosec](/index.php/User:Loosec "User:Loosec")
-*   测试nForce4在*Core Dump* (i686 and x86_64) -- [loosec](/index.php/User:Loosec "User:Loosec")
-*   测试Sil3512在*Overlord* (x86_64) -- [loosec](/index.php/User:Loosec "User:Loosec")
-
-要获得更多支持的硬件信息,请参阅[RAID/Onboard @ Gentoo Linux Wiki](http://en.gentoo-wiki.com/wiki/RAID/Onboard)
 
 ## 备份
 

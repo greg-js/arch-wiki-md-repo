@@ -404,7 +404,7 @@ See also [Wikipedia:Comparison of text editors](https://en.wikipedia.org/wiki/Co
 
 ##### 書本管理員
 
-for more collection apps, see also [Multimedia#Collection_managers](/index.php/Multimedia#Collection_managers "Multimedia")
+for more collection apps, see also [Multimedia#Collection managers](/index.php/Multimedia#Collection_managers "Multimedia")
 
 *   **[Alexandria](https://en.wikipedia.org/wiki/Alexandria_(software) "wikipedia:Alexandria (software)")** — GNOME application to help manage your book collection.
 

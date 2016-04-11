@@ -41,7 +41,7 @@ Tras reiniciar el equipo, tu cartera debería desbloquearse automáticamente si 
 
 ## Usar KDE Wallet para almacenar claves de ssh
 
-Instala [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Instala [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Crea el archivo `~/.kde4/Autostart/ssh-add.sh` con este contenido:
 

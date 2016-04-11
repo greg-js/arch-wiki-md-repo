@@ -181,7 +181,7 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — IM klient z prostředí KDE používající [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Míněn jako náhrada za Kopete.
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — IM klient z prostředí KDE používající [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Míněn jako náhrada za Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 

@@ -205,7 +205,7 @@ Og putte følgende i /etc/rc.conf `MYTHCONFDIR=/home/mythtv`
 ## Tricks til et stabilt MythTV System
 
 *   Kør ntpd eller openntpd på din backend for at sikre dig den rigtige tid hver gang.
-*   [LIRC](/index.php/Lirc "Lirc") på din frontend tillader at du kan bruge en fjerntbetjening til dit MythTV system.
+*   [LIRC](/index.php/LIRC "LIRC") på din frontend tillader at du kan bruge en fjerntbetjening til dit MythTV system.
 *   Brug gdm,kdm eller xdm for automatisk indlogning på systemet.og derefter brug .xinetrc til at starte mythfrontend hver gang.
 *   Indstil "mythfilldatabase" til at køre automatisk på en af dine frontends for at sikre dig du har info fra kanalerne
 *   Glem ikke at bruge verbose og logningsparametrene - så du kan se hvornår tingene fejler og ikke fungerer korrekt i myhtbackend

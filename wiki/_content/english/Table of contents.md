@@ -59,7 +59,7 @@
 | <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(34)</small> |
 | <small>4.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
 | <small>4.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(13)</small> |
-| <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(62)</small> |
+| <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(63)</small> |
 | <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(1)</small> |
 | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(49)</small> |

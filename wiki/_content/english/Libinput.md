@@ -1,10 +1,8 @@
-From the [libinput](http://wayland.freedesktop.org/libinput/doc/latest/index.html) project:
+From the [libinput](https://freedesktop.org/wiki/Software/libinput/) wiki page:
 
-	libinput is a library that handles input devices for display servers and other applications that need to directly deal with input devices.
+	libinput is a library to handle input devices in Wayland compositors and to provide a generic X.Org input driver. It provides device detection, device handling, input device event processing and abstraction so minimize the amount of custom input code compositors need to provide the common set of functionality that users expect.
 
-	libinput originates from weston, the [Wayland](/index.php/Wayland "Wayland") reference compositor.
-
-The driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg"). Particularly notable is the project's goal to provide advanced support for touch (multitouch and gesture) features of touchpads and touchscreens. See the [project documentation](http://wayland.freedesktop.org/libinput/doc/latest/pages.html) for more information.
+The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg"). Particularly notable is the project's goal to provide advanced support for touch (multitouch and gesture) features of touchpads and touchscreens. See the [project documentation](http://wayland.freedesktop.org/libinput/doc/latest/pages.html) for more information.
 
 ## Contents
 
@@ -19,7 +17,11 @@ The driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devi
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package. If it does not pull the [libinput](https://www.archlinux.org/packages/?name=libinput) driver, it will already be installed as a dependency of a graphical environment. You may also want to install [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) to be able to change settings at runtime.
+If you wish to use *libinput* under [Wayland](/index.php/Wayland "Wayland"), there is nothing to do for installation. The [libinput](https://www.archlinux.org/packages/?name=libinput) package should already be installed as a dependency of any graphical environment you use that has Wayland, and no additional driver is needed.
+
+If you wish to use *libinput* with [Xorg](/index.php/Xorg "Xorg"), [install](/index.php/Install "Install") the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package, which is "a thin wrapper around libinput and allows for libinput to be used for input devices in X. This driver can be used as as drop-in replacement for evdev and synaptics." [[1]](https://freedesktop.org/wiki/Software/libinput/) In other words, other packages used for input with X (i.e., those prefixed with `xf86-input-`) can be replaced with this driver.
+
+You may also want to install [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) to be able to change settings at runtime.
 
 ## Configuration
 
@@ -133,9 +135,10 @@ While the libinput driver already contains logic to process advanced multitouch 
 
 For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile.
 
-The utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file. An [AUR](/index.php/AUR "AUR") package is not available yet.[[2]](https://github.com/bulletmark/libinput-gestures/issues/6)
+The utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file. An [AUR](/index.php/AUR "AUR") package is not available yet.[[3]](https://github.com/bulletmark/libinput-gestures/issues/6)
 
 ## See also
 
+*   [libinput Wayland documentation](https://wayland.freedesktop.org/libinput/doc/latest/index.html)
 *   [FOSDEM 2015 - libinput](https://archive.fosdem.org/2015/schedule/event/libinput/attachments/slides/591/export/events/attachments/libinput/slides/591/libinput_xorg.pdf) - Hans de Goede on goals and plans of the project
 *   [Peter Hutterer's Blog](http://who-t.blogspot.com.au/) - numerous posts on libinput from one of the project's hackers

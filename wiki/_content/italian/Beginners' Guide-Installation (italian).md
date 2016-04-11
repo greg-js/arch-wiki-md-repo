@@ -1056,20 +1056,20 @@ Per ulteriori informazioni su come configurare ed utilizzare gummiboot, consulta
 Installare i pacchetti [grub](https://www.archlinux.org/packages/?name=grub) e [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr), ed eseguire `grub-install` per installare il bootloader :
 
 ```
-# mount -t efivarfs efivarfs /sys/firmware/efi/efivars              # ignora se già montato
+# mount -t efivarfs efivarfs /sys/firmware/efi/efivars              [ignora se già montato]
 # pacman -S grub efibootmgr
 # grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck
 
 ```
 
-Poi, creare manualmente un file `grub.cfg` è assolutamente indicato, si raccomanda che i principianti ne generino automaticamente uno:
-
-{{Suggerimento|Per la ricerca automatica di altri sistemi operativi sul computer, installare [os-prober](https://www.archlinux.org/packages/?name=os-prober), tuttavia os-prober è noto per non riuscire a rilevare correttamente tutti i sistemi operativi in ambiente UEFI.
+Poi, creare manualmente un file `grub.cfg` è assolutamente indicato. Si raccomanda per i principianti che si può generare automaticamente uno:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
+
+**Suggerimento:** Per la ricerca automatica di altri sistemi operativi sul computer, installare [os-prober](https://www.archlinux.org/packages/?name=os-prober), tuttavia os-prober è noto per non riuscire a rilevare correttamente tutti i sistemi operativi in ambiente UEFI.
 
 Per ulteriori informazioni sulla configurazione e l'utilizzo di GRUB, vedere [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)").
 

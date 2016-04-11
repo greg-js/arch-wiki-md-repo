@@ -328,4 +328,4 @@ function show_mod_parameter_info ()
 ## Altre risorse
 
 *   [modprobe man page](http://linuxmanpages.com/man5/modprobe.conf.5.php)
-*   [Disable PC Speaker Beep](/index.php/Disable_PC_Speaker_Beep "Disable PC Speaker Beep")
+*   [Disable PC speaker beep](/index.php/Disable_PC_speaker_beep "Disable PC speaker beep")

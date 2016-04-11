@@ -33,9 +33,7 @@ By default, it monitors CPU temperature using available CPU digital temperature 
 
 ### i7z
 
-[i7z](https://www.archlinux.org/packages/?name=i7z) is an i7 (and now i3, i5) (CPU) reporting tool for Linux. It can be launched from a Terminal with the command `i7z` or as GUI with `i7z-gui`
-
-**Note:** [i7z](https://www.archlinux.org/packages/?name=i7z)-0.27.2 has been released on September 2012\. It is recommended to use [i7z-git](https://aur.archlinux.org/packages/i7z-git/) instead, particularly with newer hardware.
+[i7z](https://www.archlinux.org/packages/?name=i7z) is an i7 (and now i3, i5) (CPU) reporting tool for Linux. It can be launched from a Terminal with the command `i7z` or as GUI with `i7z-gui`.
 
 ### cpupower
 

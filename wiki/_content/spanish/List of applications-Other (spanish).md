@@ -142,7 +142,7 @@ Vea también [Comparación de gestores de ventanas de X (en Inglés)](https://en
 
 Vea también [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
 
-*   **bbpager** — Paginador acoplable a paneles para [blackbox](/index.php?title=Blackbox&action=edit&redlink=1 "Blackbox (page does not exist)") y otros gestores de ventanas.
+*   **bbpager** — Paginador acoplable a paneles para [blackbox](/index.php/Blackbox "Blackbox") y otros gestores de ventanas.
 
 	[http://bbtools.sourceforge.net/download.php?file=6](http://bbtools.sourceforge.net/download.php?file=6) || [bbpager](https://www.archlinux.org/packages/?name=bbpager)
 

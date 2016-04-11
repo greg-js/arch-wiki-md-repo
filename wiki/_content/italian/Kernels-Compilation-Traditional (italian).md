@@ -1,6 +1,6 @@
 Il riepilogo in basso è utile per compilare kernel personalizzati da **kernel.org sources**. Questo metodo di compilazione dei kernel è un metodo tradizionale comune a tutte le distribuzioni; comunque è anche presente un metodo per installare in modo pulito il kernel personalizzato con makepkg.
 
-Alternativamente, si puù usare ABS per compilare ed installare il proprio kernel; vedere: [Kernels_(Italiano)#Compilazione](/index.php/Kernels_(Italiano)#Compilazione "Kernels (Italiano)"). Usare l'esistente PKGBUILD di [linux](https://www.archlinux.org/packages/?name=linux) automatizzerà quasi tutto il processo e si otterrà un pacchetto. Tuttavia, alcuni utenti Arch preferiscono la via *tradizionale*.
+Alternativamente, si puù usare ABS per compilare ed installare il proprio kernel; vedere: [Kernels (Italiano)#Compilazione](/index.php/Kernels_(Italiano)#Compilazione "Kernels (Italiano)"). Usare l'esistente PKGBUILD di [linux](https://www.archlinux.org/packages/?name=linux) automatizzerà quasi tutto il processo e si otterrà un pacchetto. Tuttavia, alcuni utenti Arch preferiscono la via *tradizionale*.
 
 ## Contents
 

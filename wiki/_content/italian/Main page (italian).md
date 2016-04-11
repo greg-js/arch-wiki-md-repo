@@ -1,6 +1,6 @@
 **Benvenuti su [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"): la fonte della documentazione di Arch Linux sul web.**
 
-Visitare la [Tabella dei Contenuti](/index.php/Table_of_Contents_(Italiano) "Table of Contents (Italiano)") per una lista delle categorie.
+Visitare la [Tabella dei Contenuti](/index.php/Table_of_contents_(Italiano) "Table of contents (Italiano)") per una lista delle categorie.
 
 ## La Distribuzione
 

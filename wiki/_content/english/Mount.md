@@ -54,7 +54,7 @@ See [/etc/fstab](/index.php//etc/fstab "/etc/fstab"), `man fstab` and `man mount
 
 ## Seeing what's been mounted
 
-You can see what's been mounted by looking at the `/etc/mtab` and /`/proc/mounts` files.
+You can see what's been mounted by looking at the `/etc/mtab` and `/proc/mounts` files.
 
 ### mtab
 

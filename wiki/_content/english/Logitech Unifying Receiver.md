@@ -111,7 +111,7 @@ To automate this process one could add this line to [xinitrc](/index.php/Xinitrc
 
 The Logitech keyboard K400r with integrated touchpad comes with Logitech unifying receiver M325 so the above mentioned about the keyboard layout will apply here too.
 
-Also the integrated touchpad is recognized as 'pointer' instead of 'touchpad' so you cannot use the [Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") drivers. Two finger horizontal scrolling and tapclick will work but in order to have a middle mouse button emulated you will have to add
+Also the integrated touchpad is recognized as 'pointer' instead of 'touchpad' so you cannot use the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") drivers. Two finger horizontal scrolling and tapclick will work but in order to have a middle mouse button emulated you will have to add
 
  `/etc/X11/xorg.conf.d/10-evdev.conf` 
 ```

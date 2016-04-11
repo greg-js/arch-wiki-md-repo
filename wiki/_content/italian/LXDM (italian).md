@@ -142,7 +142,7 @@ Se si utilizza il desktop [Xfce](/index.php/Xfce_(Italiano) "Xfce (Italiano)"), 
 
 così il cambio utente su Xfce dovrebbe funzionare bene anche con LXDM.
 
-[Xscreensaver](/index.php/Xscreensaver_(Italiano) "Xscreensaver (Italiano)") può anche eseguire questa operazione. Per ulteriori informazioni, vedere [questa sezione](/index.php/Xscreensaver_(Italiano)#LXDM "Xscreensaver (Italiano)") della pagina di Xscreensaver.
+[Xscreensaver](/index.php/XScreenSaver_(Italiano) "XScreenSaver (Italiano)") può anche eseguire questa operazione. Per ulteriori informazioni, vedere [questa sezione](/index.php/XScreenSaver_(Italiano)#LXDM "XScreenSaver (Italiano)") della pagina di Xscreensaver.
 
 ### Temi
 

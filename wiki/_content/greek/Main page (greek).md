@@ -1,6 +1,6 @@
 **Καλώς ήλθατε στο [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"): την πηγή σας για την τεκμηρίωση του Arch Linux στο διαδίκτυο.**
 
-Επισκεφτείτε το **[Table of contents](/index.php/Table_of_Contents_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Table of Contents (Ελληνικά)")** για να δείτε την λίστα με τις ενότητες του ArchWiki (στα Ελληνικά). Εναλλακτικά επισκευτείτε το [Table of contents](/index.php/Table_of_contents "Table of contents") στην αγγλική έκδοση.
+Επισκεφτείτε το **[Table of contents](/index.php/Table_of_contents_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Table of contents (Ελληνικά)")** για να δείτε την λίστα με τις ενότητες του ArchWiki (στα Ελληνικά). Εναλλακτικά επισκευτείτε το [Table of contents](/index.php/Table_of_contents "Table of contents") στην αγγλική έκδοση.
 
 ## Ξεκινήστε
 
@@ -14,11 +14,11 @@
 
 	Περιγράφει τις αρχές και την φιλοσοφία του Arch Linux.
 
-	[Arch Compared to Other Distributions](/index.php/Arch_Compared_to_Other_Distributions_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Arch Compared to Other Distributions (Ελληνικά)")
+	[Arch Compared to Other Distributions](/index.php/Arch_compared_to_other_distributions_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Arch compared to other distributions (Ελληνικά)")
 
 	Συνοψίζει τις ομοιότητες και τις διαφορές μεταξύ του Arch Linux και άλλων Linux διανομών.
 
-	[Getting Involved](/index.php/Getting_Involved_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Getting Involved (Ελληνικά)")
+	[Getting Involved](/index.php/Getting_involved_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Getting involved (Ελληνικά)")
 
 	Περιγράφει διάφορους τρόπους όπου οι χρήστες του Arch (είτε αρχάριοι, είτε έμπειροι) μπορούν να συνεισφέρουν στην κοινότητα του Arch.
 
@@ -26,11 +26,11 @@
 
 	Οδηγίες για τα μέλη του φόρουμ του Arch Linux.
 
-	[Beginners' Guide](/index.php/Beginners%27_Guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Beginners' Guide (Ελληνικά)")
+	[Beginners' Guide](/index.php/Beginners%27_guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Beginners' guide (Ελληνικά)")
 
 	Ένας οδηγός για την πλήρη διαδικασία της εγκατάστασης και της ρύθμισης του Arch Linux. Έχει γραφτεί για αρχάριους και νέους χρήστες.
 
-	[Installation Guide](/index.php/Installation_Guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Installation Guide (Ελληνικά)")
+	[Installation Guide](/index.php/Installation_guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Installation guide (Ελληνικά)")
 
 	Ένας συνοπτικός οδηγός εγκατάστασης. Απευθύνεται σε πεπειραμένους χρήστες του Arch.
 
@@ -38,7 +38,7 @@
 
 	Μια λίστα με τις συνήθεις ερωτήσεις.
 
-	[General Recommendations](/index.php/General_Recommendations_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "General Recommendations (Ελληνικά)")
+	[General Recommendations](/index.php/General_recommendations_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "General recommendations (Ελληνικά)")
 
 	Ένα ευρετήριο άλλων δημοφιλών άρθρων και συχνά-αναφερόμενων πληροφοριών.
 

@@ -319,7 +319,7 @@ snd_seq_midi
 
 ```
 
-To work with MIDI you can it is highly recommended that you install a2j ([a2jmidid](https://www.archlinux.org/packages/?name=a2jmidid)), a bridge between alsa midi and jack midi. It allows you to connect applications that only communicate with alsa midi to applications that only use jack midi. Laditray can also start/stop a2j.
+To work with MIDI, it is highly recommended that you install a2j ([a2jmidid](https://www.archlinux.org/packages/?name=a2jmidid)), a bridge between alsa midi and jack midi. It allows you to connect applications that only communicate with alsa midi to applications that only use jack midi. Laditray can also start/stop a2j.
 
 	*See: [JACK#MIDI](/index.php/JACK#MIDI "JACK")*
 

@@ -1,4 +1,4 @@
-*Este documento describe como configurar un menú gráfico de arranque utilizando [lilo](/index.php/Lilo "Lilo"). Se esboza una manera genérica de hacerlo por usted mismo, y se le proporcionan además algunos valores que hacen que quede bonito en Arch.*
+*Este documento describe como configurar un menú gráfico de arranque utilizando [LILO](/index.php/LILO "LILO"). Se esboza una manera genérica de hacerlo por usted mismo, y se le proporcionan además algunos valores que hacen que quede bonito en Arch.*
 
 ## Prepare su imagen
 

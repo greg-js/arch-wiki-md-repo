@@ -574,7 +574,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — Программа обмена мгновенными сообщениями в KDE, использующая фреймворк [Telepathy](https://en.wikipedia.org/wiki/ru:Telepathy "wikipedia:ru:Telepathy"). Предназначена для замены Kopete
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — Программа обмена мгновенными сообщениями в KDE, использующая фреймворк [Telepathy](https://en.wikipedia.org/wiki/ru:Telepathy "wikipedia:ru:Telepathy"). Предназначена для замены Kopete
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -924,7 +924,7 @@ eDonkey по-прежнему является второй по величин�
 
 #### Чтение и сбор новостей Usenet
 
-Некоторые [клиенты электронной почты](/index.php/List_of_applications/Internet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.AD.D0.BB.D0.B5.D0.BA.D1.82.D1.80.D0.BE.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BF.D0.BE.D1.87.D1.82.D0.B0 "List of applications/Internet (Русский)") также поддерживают NNTP. Этот раздел описывает только клиенты NNTP.
+Некоторые [клиенты электронной почты](#.D0.AD.D0.BB.D0.B5.D0.BA.D1.82.D1.80.D0.BE.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BF.D0.BE.D1.87.D1.82.D0.B0) также поддерживают NNTP. Этот раздел описывает только клиенты NNTP.
 
 Смотрите также: [Список программ для чтения новостей Usenet](https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders "wikipedia:List of Usenet newsreaders"), [Сравнение программ для чтения новостей Usenet](https://en.wikipedia.org/wiki/Comparison_of_Usenet_newsreaders "wikipedia:Comparison of Usenet newsreaders").
 
@@ -1044,7 +1044,7 @@ eDonkey по-прежнему является второй по величин�
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Pastebin](https://en.wikipedia.org/wiki/ru:Pastebin "wikipedia:ru:Pastebin").
 
-Сервисы pastebin часто используются для вставки информации в [каналы IRC](/index.php/IRC_Channel "IRC Channel"), для получения помощи в решении проблем. Существуют сервисы как для текста (например, [bpaste.net](http://bpaste.net/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)), так и для изображений (например, [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Клиенты pastebin позволяют вам извлекать необходимую информацию прямо из командной строки, без необходимости запуска веб-браузера.
+Сервисы pastebin часто используются для вставки информации в [каналы IRC](/index.php/IRC_channel "IRC channel"), для получения помощи в решении проблем. Существуют сервисы как для текста (например, [bpaste.net](http://bpaste.net/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)), так и для изображений (например, [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Клиенты pastebin позволяют вам извлекать необходимую информацию прямо из командной строки, без необходимости запуска веб-браузера.
 
 **Tip:** Доступ к sprunge и ix pastebins можно получить напрямую, при помощи curl, который вернет ссылку для вставки:
 ```

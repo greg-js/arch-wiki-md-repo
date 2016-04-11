@@ -10,20 +10,18 @@ Polkit works by delimiting distinct actions, e.g. running GParted, and delimitin
 
 *   [1 Installation](#Installation)
     *   [1.1 Authentication agents](#Authentication_agents)
-*   [2 Structure](#Structure)
+*   [2 Configuration](#Configuration)
     *   [2.1 Actions](#Actions)
     *   [2.2 Authorization rules](#Authorization_rules)
-        *   [2.2.1 Administrator identities](#Administrator_identities)
-*   [3 Limitations](#Limitations)
-*   [4 Examples](#Examples)
-    *   [4.1 Disable suspend and hibernate](#Disable_suspend_and_hibernate)
-    *   [4.2 Bypass password prompt](#Bypass_password_prompt)
-        *   [4.2.1 For specific actions](#For_specific_actions)
-        *   [4.2.2 Udisks](#Udisks)
-        *   [4.2.3 Globally](#Globally)
-    *   [4.3 Ask for root password](#Ask_for_root_password)
-    *   [4.4 Allow management of individual systemd units by regular users](#Allow_management_of_individual_systemd_units_by_regular_users)
-*   [5 See also](#See_also)
+    *   [2.3 Administrator identities](#Administrator_identities)
+*   [3 Examples](#Examples)
+    *   [3.1 Disable suspend and hibernate](#Disable_suspend_and_hibernate)
+    *   [3.2 Bypass password prompt](#Bypass_password_prompt)
+        *   [3.2.1 Globally](#Globally)
+        *   [3.2.2 For specific actions](#For_specific_actions)
+        *   [3.2.3 Udisks](#Udisks)
+    *   [3.3 Allow management of individual systemd units by regular users](#Allow_management_of_individual_systemd_units_by_regular_users)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -45,14 +43,18 @@ If you are using a graphical environment, make sure that a graphical authenticat
 *   [polkit-kde-agent](https://www.archlinux.org/packages/?name=polkit-kde-agent), which provides `/usr/lib/polkit-kde/polkit-kde-authentication-agent-1`
 *   [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/), which provides `/usr/lib/xfce-polkit/xfce-polkit`
 
-## Structure
+## Configuration
 
 **Warning:** Do not amend the default permission files of packages, as these may be be overwritten on package upgrades.
 
 Polkit definitions can be divided into two kinds:
 
 *   **Actions** are defined in XML `.policy` files located in `/usr/share/polkit-1/actions`. Each action has a set of default permissions attached to it (e.g. you need to identify as an administrator to use the GParted action). The defaults can be overruled but editing the actions files is NOT the correct way.
-*   **Authorization rules** are defined in JavaScript `.rules` files. They are found in two places: 3rd party packages can use `/usr/share/polkit-1/rules.d` (though few if any do) and `/etc/polkit-1/rules.d` is for local configuration. The .rules files designate a subset of users, refer to one (or more) of the actions specified in the actions files and determine with what restrictions these actions can be taken by that/those user(s). As an example, a rules file could overrule the default requirement for all users to authenticate as an admin when using GParted, determining that some specific user doesn't need to. Or isn't allowed to use GParted at all.
+*   **Authorization rules** are defined in JavaScript `.rules` files. They are found in two places: 3rd party packages can use `/usr/share/polkit-1/rules.d` (though few if any do) and `/etc/polkit-1/rules.d` is for local configuration.
+
+Polkit operates on top of the existing permissions systems in Linux – group membership, administrator status – it does not replace them. The .rules files designate a subset of users, refer to one (or more) of the actions specified in the actions files and determine with what restrictions these actions can be taken by that/those user(s). As an example, a rules file could overrule the default requirement for all users to authenticate as an admin when using GParted, determining that some specific user doesn't need to. Or isn't allowed to use GParted at all.
+
+**Note:** it does not preclude him running GParted by some means that do not respect polkit, e.g. the command line. Therefore it's probably better to use polkit to expand access to privileged services for unprivileged users, rather than to try using it to curtail the rights of (semi-)privileged users. For security purposes, the [sudoers file](/index.php/Sudo "Sudo") is still the way to go.
 
 ### Actions
 
@@ -129,7 +131,7 @@ polkit.addRule(function(action, subject) {
 
 Inside the function, we check for the specified action ID *(org.archlinux.pkexec.gparted)* and for the user's group *(admin)*, then return a value "yes".
 
-#### Administrator identities
+### Administrator identities
 
 The `addAdminRule()` method is used for adding a function that may be called whenever administrator authentication is required. The function is used to specify what identities may be used for administrator authentication for the authorization check identified by action and subject. Functions added are called in the order they have been added until one of the functions returns a value.
 
@@ -142,11 +144,20 @@ polkit.addAdminRule(function(action, subject) {
 });
 ```
 
-The only part to edit (once copied) is the return array of the function: as whom should a user authenticate when asked to authenticate as an administrative user? If she herself is a member of the group designated as admins, she only need enter her own password. If some other user, e.g. root, is the only admin identity, she would need to enter in root's password. The format of the user identification is the same as the one used in designating authorities. The Arch default is to make all members of the group **wheel** administrators.
+The only part to edit (once copied) is the return array of the function: as whom should a user authenticate when asked to authenticate as an administrative user? If she herself is a member of the group designated as admins, she only need enter her own password. If some other user, e.g. root, is the only admin identity, she would need to enter in root's password. The format of the user identification is the same as the one used in designating authorities.
 
-## Limitations
+The Arch default is to make all members of the group **wheel** administrators. A rule like below will have polkit ask for the root password instead of the users password for Admin authentication.
 
-Polkit operates on top of the existing permissions systems in Linux – group membership, administrator status – it does not replace them. The example above prohibited the user *jack* from using the GParted action, but it does not preclude him running GParted by some means that do not respect polkit, e.g. the command line. Therefore it's probably better to use polkit to expand access to privileged services for unprivileged users, rather than to try using it to curtail the rights of (semi-)privileged users. For security purposes, the [sudoers file](/index.php/Sudo "Sudo") is still the way to go.
+ `/etc/polkit-1/rules.d/49-rootpw_global.rules` 
+```
+/* Always authenticate Admins by prompting for the root
+ * password, similar to the rootpw option in sudo
+ */
+polkit.addAdminRule(function(action, subject) {
+    return ["unix-user:root"];
+});
+
+```
 
 ## Examples
 
@@ -170,6 +181,27 @@ polkit.addRule(function(action, subject) {
 ### Bypass password prompt
 
 To achieve something similar to the [sudo](/index.php/Sudo "Sudo") `NOPASSWD` option and get authorized solely based on [user/group](/index.php/Users_and_groups "Users and groups") identity, you can create custom rules in `/etc/polkit-1/rules.d/`. This allows you to override password authentication either [only for specific actions](#For_specific_actions) or [globally](#Globally). See [[1]](https://gist.github.com/4013294/ccacedd69d54de7f2fd5881b546d5192d6a2bddb) for an example rule set.
+
+#### Globally
+
+Create the following file as root:
+
+ `/etc/polkit-1/rules.d/49-nopasswd_global.rules` 
+```
+/* Allow members of the wheel group to execute any actions
+ * without password authentication, similar to "sudo NOPASSWD:"
+ */
+polkit.addRule(function(action, subject) {
+    if (subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+    }
+});
+
+```
+
+Replace `wheel` by any group of your preference.
+
+This will result in automatic authentication for **any** action requiring admin rights via Polkit. As such, be careful with the group you choose to give such rights to.
 
 #### For specific actions
 
@@ -198,42 +230,6 @@ The `||` operator is used to delimit actions (logical OR), and `&&` means logica
 #### Udisks
 
 [File managers](/index.php/File_manager "File manager") may ask for a password when trying to mount a storage device, or yield a *Not authorized* or similar error. See [Udisks#Configuration](/index.php/Udisks#Configuration "Udisks") for details.
-
-#### Globally
-
-Create the following file as root:
-
- `/etc/polkit-1/rules.d/49-nopasswd_global.rules` 
-```
-/* Allow members of the wheel group to execute any actions
- * without password authentication, similar to "sudo NOPASSWD:"
- */
-polkit.addRule(function(action, subject) {
-    if (subject.isInGroup("wheel")) {
-        return polkit.Result.YES;
-    }
-});
-
-```
-
-Replace `wheel` by any group of your preference.
-
-This will result in automatic authentication for **any** action requiring admin rights via Polkit. As such, be careful with the group you choose to give such rights to.
-
-### Ask for root password
-
-A rule like this will have polkit ask for the root password instead of the users password for Admin authentication.
-
- `/etc/polkit-1/rules.d/49-rootpw_global.rules` 
-```
-/* Always authenticate Admins by prompting for the root
- * password, similar to the rootpw option in sudo
- */
-polkit.addAdminRule(function(action, subject) {
-    return ["unix-user:root"];
-});
-
-```
 
 ### Allow management of individual systemd units by regular users
 

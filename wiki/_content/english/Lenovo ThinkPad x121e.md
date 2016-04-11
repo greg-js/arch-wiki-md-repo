@@ -28,7 +28,7 @@ Working out of the box:
 
 Working but not out of the box:
 
-*   boot from GPT partitioned disk in UEFI mode (with hack to work around buggy firmware - see [here](/index.php?title=HCL/Firmwares/UEFI&action=edit&redlink=1 "HCL/Firmwares/UEFI (page does not exist)") and forum links [below](#Arch_Forums_x121e_related_threads))
+*   boot from GPT partitioned disk in UEFI mode (with hack to work around buggy firmware - see [here](/index.php/Unified_Extensible_Firmware_Interface/Hardware#Lenovo_ThinkPad_x121e "Unified Extensible Firmware Interface/Hardware") and forum links [below](#Arch_Forums_x121e_related_threads))
 *   bluetooth (with BIOS upgrade - see below)
 
 Partly working:

@@ -49,7 +49,7 @@ On the server computer (the one directly connected to the printer), allow access
 
 ```
 
-Also make sure the server is listening on the IP address the client will be addressing:
+Also make sure the server is listening on the IP address the client will use:
 
  `/etc/cups/cupsd.conf` 
 ```

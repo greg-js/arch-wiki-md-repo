@@ -108,7 +108,7 @@ FilewriterLocation /suspend_file 1000
 
 1000 is the amount of disk space reserved for the hibernation file, in this case 1000 megabytes. Usually an amount of 50% - 75% of your total amount of RAM will suffice.
 
-Next, we need to create the file, something like [[2]](http://en.gentoo-wiki.com/wiki/TuxOnIce#Alternative:_Using_a_Dedicated_File):
+Next, we need to create the file, something like [[2]](http://www.gentoo-wiki.info/TuxOnIce#Alternative:_Using_a_Dedicated_File):
 
 ```
 # echo TuxOnIce > /suspend_file
@@ -202,4 +202,4 @@ For the graphical interface run:
 
 *   The [TuxOnIce website](http://www.tuxonice.net) and [TuxOnIce wiki](http://wiki.tuxonice.net/) are excellent sources of documentation.
 *   More general information about suspend/hibernate with hibernate-script can be found on the [Suspend to Disk](/index.php/Suspend_to_Disk "Suspend to Disk") page of this wiki. This also covers some advanced topics like problems with specific hardware and configurations.
-*   Another good source of information is the [Gentoo wiki](http://en.gentoo-wiki.com/wiki/TuxOnIce)
+*   Another good source of information is the [Gentoo wiki](http://www.gentoo-wiki.info/TuxOnIce)

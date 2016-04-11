@@ -1,6 +1,6 @@
 **Dobrodošli na [ArchWiki](/index.php?title=AboutWiki_(Hrvatski)&action=edit&redlink=1 "AboutWiki (Hrvatski) (page does not exist)"): vaš izvor dokumentacije Arch Linuxa na webu.**
 
-Posjetite **[Sadržaj](/index.php/Table_of_Contents_(Hrvatski) "Table of Contents (Hrvatski)")** za pregled ArchWiki kategorija stranica.
+Posjetite **[Sadržaj](/index.php/Table_of_contents_(Hrvatski) "Table of contents (Hrvatski)")** za pregled ArchWiki kategorija stranica.
 
 ## Za početak
 
@@ -18,7 +18,7 @@ Idući su linkovi korisni za one koji se kreću upoznavati s Arch Linuxom.
 
 	Sažima sličnosti i razlike između Archa i ostalih distribucija.
 
-	[Uključi se](/index.php/Getting_Involved_(Hrvatski) "Getting Involved (Hrvatski)")
+	[Uključi se](/index.php/Getting_involved_(Hrvatski) "Getting involved (Hrvatski)")
 
 	Opisuje različite načine na koje Arčeri, bilo početnici ili stručnjaci, mogu doprinijeti Arch-zajednici.
 
@@ -26,7 +26,7 @@ Idući su linkovi korisni za one koji se kreću upoznavati s Arch Linuxom.
 
 	Upute za korisnike foruma Arch Linuxa.
 
-	[Vodič za početnike](/index.php/Beginners%27_Guide_(Hrvatski) "Beginners' Guide (Hrvatski)")
+	[Vodič za početnike](/index.php/Beginners%27_guide_(Hrvatski) "Beginners' guide (Hrvatski)")
 
 	Vodič kroz potpuni proces instalacije i konfiguracije Arch Linuxa; pisan za nove i neupućene korisnike.
 
@@ -50,7 +50,7 @@ Idući su linkovi korisni za one koji se kreću upoznavati s Arch Linuxom.
 
 Posjetite stranicu [Novosti wikija](/index.php/Wiki_News "Wiki News") za najnovije informacije o wikiju.
 
-Ukoliko poželiš i možeš pridonijeti wikiju, potraži kroz [ovaj popis](/index.php/Getting_Involved_(Hrvatski)#Wiki "Getting Involved (Hrvatski)") za ideje kako to ostvariti.
+Ukoliko poželiš i možeš pridonijeti wikiju, potraži kroz [ovaj popis](/index.php/Getting_involved_(Hrvatski)#Wiki "Getting involved (Hrvatski)") za ideje kako to ostvariti.
 
 ## Internacionalizacija
 

@@ -145,7 +145,7 @@
 
 ##### Менеджеры входа в систему
 
-Смотрите основную статью: [Display Manager (Русский)#Список экранных менеджеров](/index.php/Display_Manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.BE.D0.B2 "Display Manager (Русский)").
+Смотрите основную статью: [Display manager (Русский)#Список экранных менеджеров](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.BE.D0.B2 "Display manager (Русский)").
 
 ##### Композитные менеджеры
 
@@ -491,7 +491,7 @@
 
 	[http://desmume.org/](http://desmume.org/) || [desmume](https://www.archlinux.org/packages/?name=desmume)
 
-*   **[Dolphin](/index.php/Dolphin_Emulator "Dolphin Emulator")** — Очень умный эмулятор GameCube и Wii
+*   **[Dolphin](/index.php/Dolphin_emulator "Dolphin emulator")** — Очень умный эмулятор GameCube и Wii
 
 	[http://dolphin-emu.org/](http://dolphin-emu.org/) || [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu)
 
@@ -590,6 +590,6 @@
 
 ### Любительское радио
 
-Смотрите основную статью: [Список программного обеспечения для любительского радио](/index.php/Amateur_Radio#Software_list "Amateur Radio").
+Смотрите основную статью: [Список программного обеспечения для любительского радио](/index.php/Amateur_radio#Software_list "Amateur radio").
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Списко программно-определяемых радиосистем](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").

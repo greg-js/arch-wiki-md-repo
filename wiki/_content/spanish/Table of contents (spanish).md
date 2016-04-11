@@ -93,7 +93,7 @@
 | <small>6.6.</small> [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)") <small>(19)</small> |
 | <small>6.7.</small> [Internacionalización](/index.php/Category:Internationalization_(Espa%C3%B1ol) "Category:Internationalization (Español)") <small>(1)</small> |
 | <small>6.8.</small> [Kernel](/index.php/Category:Kernel_(Espa%C3%B1ol) "Category:Kernel (Español)") <small>(9)</small> |
-| <small>6.9.</small> [Gestión de paquetes](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)") <small>(20)</small> |
+| <small>6.9.</small> [Gestión de paquetes](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)") <small>(21)</small> |
 | <small>6.9.1.</small> [Arch User Repository (AUR)](/index.php/Category:Arch_User_Repository_(Espa%C3%B1ol) "Category:Arch User Repository (Español)") <small>(2) (también en [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)"))</small> |
 | <small>6.10.</small> [Gestión de energía](/index.php/Category:Power_management_(Espa%C3%B1ol) "Category:Power management (Español)") <small>(3)</small> |
 | <small>6.11.</small> [Scripts](/index.php/Category:Scripts_(Espa%C3%B1ol) "Category:Scripts (Español)") <small>(1)</small> |

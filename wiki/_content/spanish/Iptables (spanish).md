@@ -25,7 +25,7 @@ Iptables es un poderoso [firewall](/index.php/Firewalls_(Espa%C3%B1ol) "Firewall
 
 ## Instalación
 
-Todos los kernels de serie de Arch Linux son compatibles con iptables. Solo necesita [instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") las herramientas en el [espacio de usuario](https://en.wikipedia.org/wiki/es:Espacio_de_usuario "wikipedia:es:Espacio de usuario"), que son proporcionadas por el paquete [iptables](https://www.archlinux.org/packages/?name=iptables) presente en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Todos los kernels de serie de Arch Linux son compatibles con iptables. Solo necesita [instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") las herramientas en el [espacio de usuario](https://en.wikipedia.org/wiki/es:Espacio_de_usuario "wikipedia:es:Espacio de usuario"), que son proporcionadas por el paquete [iptables](https://www.archlinux.org/packages/?name=iptables) presente en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Conceptos básicos
 

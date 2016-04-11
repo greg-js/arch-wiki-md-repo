@@ -43,7 +43,7 @@ Abaixo estão listados os pacotes disponíveis no [official repositories](/index
 
 ### Sem suporte Oficial([AUR](/index.php/AUR "AUR"))
 
-Veja mais detalhes em [Instalando Pacotes do AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)").
+Veja mais detalhes em[Instalando Pacotes do AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)").
 
 #### JAVA SE (Oracle)
 

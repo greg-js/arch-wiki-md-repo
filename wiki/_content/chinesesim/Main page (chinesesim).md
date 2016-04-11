@@ -1,6 +1,6 @@
 **欢迎访问 [ArchWiki](/index.php/AboutWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AboutWiki (简体中文)")： 您的在线 Arch Linux 中文文档库。**
 
-浏览 ArchWiki 的完整目录 —— [目录表](/index.php/Table_of_Contents_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Table of Contents (简体中文)")
+浏览 ArchWiki 的完整目录 —— [目录表](/index.php/Table_of_contents_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Table of contents (简体中文)")
 
 ## 关于发行版
 
@@ -12,7 +12,7 @@
 
 	常见问题解答，解决您的疑问。
 
-	[Arch 和其他发行版的比较](/index.php/Arch_Compared_to_Other_Distributions_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Compared to Other Distributions (简体中文)")
+	[Arch 和其他发行版的比较](/index.php/Arch_compared_to_other_distributions_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch compared to other distributions (简体中文)")
 
 	Arch 和其他发行版的相似点和不同点。
 
@@ -28,17 +28,17 @@
 
 	更加简明的安装指南，为有经验的 UNIX/GNU/Linux 用户提供。
 
-	[建议阅读](/index.php/General_Recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General Recommendations (简体中文)")
+	[建议阅读](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")
 
 	常用文章的索引，特别是包含了国人常用软件的介绍。安装完系统，不知道玩些什么？读一读此文吧！
 
-	[软件列表](/index.php/List_of_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications (简体中文)")
+	[软件列表](/index.php/List_of_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of applications (简体中文)")
 
 	官方和 AUR 中常用软件的分类描述列表。
 
 ## 社区
 
-	[参与贡献](/index.php/Getting_Involved_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Getting Involved (简体中文)")
+	[参与贡献](/index.php/Getting_involved_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Getting involved (简体中文)")
 
 	无论新手或专家，您都可以参与我们，为 Arch 社区做出贡献。
 

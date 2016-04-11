@@ -1,6 +1,6 @@
 **[아치위키](/index.php/AboutWiki "AboutWiki")에 오신 것을 환영합니다.**
 
-여기는 아치 리눅스 관련 문서를 찾아보는 곳입니다. [목차](/index.php/Table_of_Contents_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Table of Contents (한국어)")에서 아치위키의 분류 목록을 보실 수 있습니다.
+여기는 아치 리눅스 관련 문서를 찾아보는 곳입니다. [목차](/index.php/Table_of_contents_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Table of contents (한국어)")에서 아치위키의 분류 목록을 보실 수 있습니다.
 
 ## 시작하기
 
@@ -14,7 +14,7 @@
 
 	아치 리눅스의 원칙 및 철학을 설명합니다.
 
-	[다른 리눅스 배포판과의 비교](/index.php/Arch_Compared_to_Other_Distributions_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Arch Compared to Other Distributions (한국어)")
+	[다른 리눅스 배포판과의 비교](/index.php/Arch_compared_to_other_distributions_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Arch compared to other distributions (한국어)")
 
 	다른 배포판과의 유사점과 차이점을 요약합니다.
 
@@ -26,17 +26,17 @@
 
 	포럼 회원이 따라야 할 지침입니다.
 
-	[초보자 안내서](/index.php/Beginners%27_Guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' Guide (한국어)")
+	[초보자 안내서](/index.php/Beginners%27_guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' guide (한국어)")
 
 	아치 리눅스를 설치하고 설정하는 전 과정을 설명하는 안내서로 초보자나 익숙한 사용자 모두를 대상으로 합니다.
 
-	[설치 안내서](/index.php/Installation_Guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Installation Guide (한국어)")
+	[설치 안내서](/index.php/Installation_guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Installation guide (한국어)")
 
 	아치 리눅스를 설치하는 방법을 간략하게 설명합니다. 아치 리눅스를 경험한 사용자를 대상으로 합니다.
 
 	[자주 묻는 질문](/index.php/FAQ_(%ED%95%9C%EA%B5%AD%EC%96%B4) "FAQ (한국어)")
 
-	[일반 추천 문서](/index.php/General_Recommendations_(%ED%95%9C%EA%B5%AD%EC%96%B4) "General Recommendations (한국어)")
+	[일반 추천 문서](/index.php/General_recommendations_(%ED%95%9C%EA%B5%AD%EC%96%B4) "General recommendations (한국어)")
 
 	다른 인기 있는 문서와 자주 참고하는 정보의 목록을 설명과 함께 보여 줍니다.
 

@@ -12,7 +12,7 @@ Os links abaixo são úteis para os iniciantes no Arch Linux.
 
 	Descreve os princípios e a filosofia do Arch Linux.
 
-	[Arch vs Outras Distribuições](/index.php/Arch_Compared_to_Other_Distributions_(Portugu%C3%AAs) "Arch Compared to Other Distributions (Português)")
+	[Arch vs Outras Distribuições](/index.php/Arch_compared_to_other_distributions_(Portugu%C3%AAs) "Arch compared to other distributions (Português)")
 
 	Resume as semelhanças e diferenças entre o Arch e outras distribuições.
 
@@ -24,11 +24,11 @@ Os links abaixo são úteis para os iniciantes no Arch Linux.
 
 	Gerenciador de pacote do pacman
 
-	[Guia para Iniciantes](/index.php/Beginners%27_Guide_(Portugu%C3%AAs) "Beginners' Guide (Português)")
+	[Guia para Iniciantes](/index.php/Beginners%27_guide_(Portugu%C3%AAs) "Beginners' guide (Português)")
 
 	Um guia através de todo o processo de instalação e configuração do Arch Linux, escrito para usuários novos ou inexperientes.
 
-	[Guia de instalação](/index.php/Installation_Guide_(Portugu%C3%AAs) "Installation Guide (Português)")
+	[Guia de instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)")
 
 	Um guia de instalação resumido, dirigido aos usuários experientes do Arch.
 

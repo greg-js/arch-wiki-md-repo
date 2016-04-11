@@ -191,6 +191,8 @@ To help reduce touchpad interference you may wish to implement the settings belo
 *   Disable scrolling
 *   Disable tap-to-click
 
+**Note:** The [synaptics](/index.php/Synaptics "Synaptics") driver is not supported by GNOME. Instead, you should use [libinput](/index.php/Libinput "Libinput"). See [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
+
 #### Network
 
 [NetworkManager](/index.php/NetworkManager "NetworkManager") is the native tool of the GNOME project to control network settings from the shell. It is installed by default as a dependency for [tracker](https://www.archlinux.org/packages/?name=tracker) package, which is a part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group, and just needs to be [enabled](/index.php/NetworkManager#Enable_NetworkManager "NetworkManager").

@@ -60,4 +60,4 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 **Warning:** Flashing motherboard BIOS is a dangerous activity that can render your motherboard inoperable!
 
-See [Flashing BIOS from_Linux#Bootable_optical disk emulation](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux") and [Updating the BIOS on my ThinkPad T440](http://www.lenzg.net/archives/358-Updating-the-BIOS-on-my-ThinkPad-T440-without-Windows-or-a-DVD-Drive.html)
+See [Flashing BIOS from Linux#Bootable optical disk emulation](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux") and [Updating the BIOS on my ThinkPad T440](http://www.lenzg.net/archives/358-Updating-the-BIOS-on-my-ThinkPad-T440-without-Windows-or-a-DVD-Drive.html)

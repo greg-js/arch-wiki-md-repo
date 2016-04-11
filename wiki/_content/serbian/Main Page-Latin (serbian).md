@@ -1,8 +1,8 @@
-## [Sadržaj(en)](/index.php/Table_of_Contents_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Table of Contents (Српски)")
+## [Sadržaj(en)](/index.php/Table_of_contents_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Table of contents (Српски)")
 
 ## [Počnimo](/index.php?title=Po%C4%8Dnimo&action=edit&redlink=1 "Počnimo (page does not exist)")
 
-**Ukoliko do sada niste koristili Arch Linux, [Uputstvo za početnike](/index.php/Beginners%27_Guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' Guide (Српски)") može biti najbolje za početak,** ili pogledajte **[Zvanični vodič za instalaciju](/index.php?title=Official_Arch_Linux_Install_Guide_(Srpski)&action=edit&redlink=1 "Official Arch Linux Install Guide (Srpski) (page does not exist)");**
+**Ukoliko do sada niste koristili Arch Linux, [Uputstvo za početnike](/index.php/Beginners%27_guide_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Beginners' guide (Српски)") može biti najbolje za početak,** ili pogledajte **[Zvanični vodič za instalaciju](/index.php?title=Official_Arch_Linux_Install_Guide_(Srpski)&action=edit&redlink=1 "Official Arch Linux Install Guide (Srpski) (page does not exist)");**
 
 Takođe će vas možda zanimati i: [Saveti nakon instalacije (en)](/index.php/Post_Installation_Tips "Post Installation Tips") :: [Podešavanje mreže (en)](/index.php/Configuring_network "Configuring network")
 

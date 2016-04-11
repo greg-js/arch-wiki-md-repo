@@ -1,6 +1,6 @@
 *[Laptop Mode Tools](http://samwel.tk/laptop_mode/) è un pacchetto per il risparmio energetico dei computer portatile per i sistemi Linux. E 'il modo principale per attivare la funzionalità Laptop Mode del kernel Linux, che consente llo spin down dei dischi rigidi. Inoltre, permette di ottimizzare una serie di altre impostazioni relative al risparmio energetico utilizzando un semplice file di configurazione.*
 
-In combinazione con [acipd](/index.php/Acpid_(Italiano) "Acpid (Italiano)"), [CPU Frequency Scaling](/index.php/CPU_Frequency_Scaling_(Italiano) "CPU Frequency Scaling (Italiano)") e [pm-utils](/index.php/Pm-utils_(Italiano) "Pm-utils (Italiano)"), LMT fornisce alla maggior parte degli utenti una completa suite di gestione energetica del notebook.
+In combinazione con [acipd](/index.php/Acpid_(Italiano) "Acpid (Italiano)"), [CPU Frequency Scaling](/index.php/CPU_frequency_scaling_(Italiano) "CPU frequency scaling (Italiano)") e [pm-utils](/index.php/Pm-utils_(Italiano) "Pm-utils (Italiano)"), LMT fornisce alla maggior parte degli utenti una completa suite di gestione energetica del notebook.
 
 ## Contents
 
@@ -91,7 +91,7 @@ Essi possono essere rilevanti, perché (A) una modalità laptop ridurrà il nume
 
 ### Frequenza della CPU
 
-Per gestire le frequenze della CPU è necessario aver installato il driver appropriato. Si veda [CPU Frequency Scaling](/index.php/CPU_Frequency_Scaling_(Italiano) "CPU Frequency Scaling (Italiano)").
+Per gestire le frequenze della CPU è necessario aver installato il driver appropriato. Si veda [CPU Frequency Scaling](/index.php/CPU_frequency_scaling_(Italiano) "CPU frequency scaling (Italiano)").
 
 ```
 # cpufreq.conf

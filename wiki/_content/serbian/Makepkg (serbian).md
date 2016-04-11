@@ -235,4 +235,4 @@ grep -R "$(pwd)/src" pkg/
 
 ```
 
-[[Link](http://www.mail-archive.com/arch-general@archlinux.org/msg15561.html)] to discussion thread.
+[Link](http://www.mail-archive.com/arch-general@archlinux.org/msg15561.html) to discussion thread.

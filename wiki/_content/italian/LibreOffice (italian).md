@@ -48,7 +48,7 @@ Verificate le dipendenze raccomandate. Per esempio, Java Runtime Environment (op
 
 ### Fonts Microsoft
 
-I fonts Microsoft sono utili a evitare problemi di impaginazione. Per informazioni consultate la pagina [MS_Fonts](/index.php/MS_Fonts "MS Fonts").
+I fonts Microsoft sono utili a evitare problemi di impaginazione. Per informazioni consultate la pagina [MS Fonts](/index.php/MS_Fonts "MS Fonts").
 
 ## Temi
 
@@ -115,7 +115,7 @@ Le possibili alternative si trovano nella [pagina delle estensioni](http://libre
 
 ## Installare macro
 
-Se si vuole usare macro occorre un Java Runtime Environment. Si può abilitarlo dal menu a prezzo di perdere [velocità di avvio](/index.php/LibreOffice_(Italiano)#Speed_up_LibreOffice "LibreOffice (Italiano)"). Il percorso predefinito per le macro su Arch Linux è diverso da quello di molte altre distribuzioni ed è:
+Se si vuole usare macro occorre un Java Runtime Environment. Si può abilitarlo dal menu a prezzo di perdere [velocità di avvio](#Speed_up_LibreOffice). Il percorso predefinito per le macro su Arch Linux è diverso da quello di molte altre distribuzioni ed è:
 
 ```
 ~/.config/libreoffice/4/user/Scripts/

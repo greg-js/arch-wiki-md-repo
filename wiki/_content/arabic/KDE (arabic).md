@@ -79,7 +79,7 @@ The KDE upstream has a well maintained [UserBase wiki](http://userbase.kde.org/)
 
 ### التثبيت الكامل
 
-[ثبّت](/index.php/Pacman_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Pacman (العربية)") [kde](https://www.archlinux.org/groups/x86_64/kde/) أو [kde-meta](https://www.archlinux.org/groups/x86_64/kde-meta/) المتوفّرتان في [المستودعات الرسمية](/index.php/Official_Repositories_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Official Repositories (العربية)"). للفروق بين [kde](https://www.archlinux.org/groups/x86_64/kde/) و [kde-meta](https://www.archlinux.org/groups/x86_64/kde-meta/) طالع مقالة [KDE Packages](/index.php/KDE_Packages "KDE Packages").
+[ثبّت](/index.php/Pacman_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Pacman (العربية)") [kde](https://www.archlinux.org/groups/x86_64/kde/) أو [kde-meta](https://www.archlinux.org/groups/x86_64/kde-meta/) المتوفّرتان في [المستودعات الرسمية](/index.php/Official_repositories_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Official repositories (العربية)"). للفروق بين [kde](https://www.archlinux.org/groups/x86_64/kde/) و [kde-meta](https://www.archlinux.org/groups/x86_64/kde-meta/) طالع مقالة [KDE Packages](/index.php/KDE_Packages "KDE Packages").
 
 ### التثبيت الأدنى
 
@@ -106,7 +106,7 @@ The KDE upstream has a well maintained [UserBase wiki](http://userbase.kde.org/)
 
 ### استخدام مدير عرض
 
-[مدير العرض](/index.php/Display_Manager_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Display Manager (العربية)") أو مدير الولوج، يكون عادةً واجهة مستخدم رسومية تُعرض في نهاية تقدّم الإقلاع بدلًا من الصدفة الافتراضية. يَلِج المدير إلى كدي مباشرة بسهولة دائمًا. لِكدي مدير عرض خاص بها، KDM.
+[مدير العرض](/index.php/Display_manager_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Display manager (العربية)") أو مدير الولوج، يكون عادةً واجهة مستخدم رسومية تُعرض في نهاية تقدّم الإقلاع بدلًا من الصدفة الافتراضية. يَلِج المدير إلى كدي مباشرة بسهولة دائمًا. لِكدي مدير عرض خاص بها، KDM.
 
 #### KDM (مدير عرض كدي)
 
@@ -336,7 +336,7 @@ System Settings > Input Devices > Keyboard > Advanced (tab) > "Key Sequence to k
 
 ## بحث سطح المكتب وسطح المكتب الدلالي (Semantic desktop)
 
-وِفقَ [ويكيبيديا](http://ar.wikipedia.org/wiki/%D8%B3%D8%B7%D8%AD_%D9%85%D9%83%D8%AA%D8%A8_%D8%AF%D9%84%D8%A7%D9%84%D9%8A)، *"سطح المكتب الدلالي هو مصطلح يشير إلى عدة أفكار تهدف إلى تغيير واجهة المستخدم للحاسوب، وتغيير قدرات التعامل مع البيانات، بحيث يمكن مشاركة هذه البيانات بسهولة بين التطبيقات، مما يولد علاقات جديدة بين هذه البيانات لم تكن معروفة للحاسوب من قبل."*
+وِفقَ [ويكيبيديا](https://ar.wikipedia.org/wiki/%D8%B3%D8%B7%D8%AD_%D9%85%D9%83%D8%AA%D8%A8_%D8%AF%D9%84%D8%A7%D9%84%D9%8A)، *"سطح المكتب الدلالي هو مصطلح يشير إلى عدة أفكار تهدف إلى تغيير واجهة المستخدم للحاسوب، وتغيير قدرات التعامل مع البيانات، بحيث يمكن مشاركة هذه البيانات بسهولة بين التطبيقات، مما يولد علاقات جديدة بين هذه البيانات لم تكن معروفة للحاسوب من قبل."*
 
 إنجاز كدي لهذا المفهوم مرتبط بقطعتين برمجيتين رئيسيتين (من كدي 4.10)، أكوندا ونبومك. هذان البرنامجان يبحثان في بياناتك ويصنعا فهرس سهل البحث فيه عنها. الفكرة وراء قطع البرمجيات هذه هي لجعل نظامك *على علمٍ* ببياناتك وإعطائها سياق باستخدام البيانات الوصفية ووسوم المُستخدم المُورَدة.
 
@@ -344,7 +344,7 @@ Soprano و Virtuoso اعتماديّتان لسطح مكتب نبومك الدل
 
 ### Virtuoso و Soprano
 
-قاعدة البيانات المُستخدَمة لتخزين البيانات الوصفية التي يستخدمها سطح المكتب الدلالي هي قاعدة بيانات *[إطار توصيف الموارد](http://ar.wikipedia.org/wiki/%D8%A5%D8%B7%D8%A7%D8%B1_%D8%AA%D9%88%D8%B5%D9%8A%D9%81_%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B1%D8%AF)* وتُدعى Virtuoso. داخليًّا، , Virtuoso يبدو وكأنه قاعدة بيانات علاقيّة. ( [قاعدة البيانات العلاقيّة](https://en.wikipedia.org/wiki/Relational_model "wikipedia:Relational model") تختلف عن قاعدة البيانات مُفرَدة الجدول التقليدية بمعنى أنها تستخدم عدّة جداول مُرتبِطَة بمفتاح واحد لتخزين البيانات.) تُديرها حاليًّا OpenLink وهي متوفّرة تحت رخصة تجارية وأخرى مفتوحة المصدر.
+قاعدة البيانات المُستخدَمة لتخزين البيانات الوصفية التي يستخدمها سطح المكتب الدلالي هي قاعدة بيانات *[إطار توصيف الموارد](https://ar.wikipedia.org/wiki/%D8%A5%D8%B7%D8%A7%D8%B1_%D8%AA%D9%88%D8%B5%D9%8A%D9%81_%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B1%D8%AF)* وتُدعى Virtuoso. داخليًّا، , Virtuoso يبدو وكأنه قاعدة بيانات علاقيّة. ( [قاعدة البيانات العلاقيّة](https://en.wikipedia.org/wiki/Relational_model "wikipedia:Relational model") تختلف عن قاعدة البيانات مُفرَدة الجدول التقليدية بمعنى أنها تستخدم عدّة جداول مُرتبِطَة بمفتاح واحد لتخزين البيانات.) تُديرها حاليًّا OpenLink وهي متوفّرة تحت رخصة تجارية وأخرى مفتوحة المصدر.
 
 من [قاعدة بيانات كدي التعليميّة](http://techbase.kde.org/Projects/Nepomuk/ComponentOverview#Soprano)، *Soprano is a Qt abstraction over databases. It provides a friendly Qt-based API for accessing different RDF stores. It currently supports 3 database backends - Sesame, Redland and Virtuoso. The KDE Semantic Stack only works with Virtuoso. Soprano also provides additional features such as serializing, parsing RDF data, and a client server architecture that is heavily used in Nepomuk.*
 

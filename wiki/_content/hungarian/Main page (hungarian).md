@@ -1,6 +1,6 @@
 **Üdvözlünk az [ArchWikin](/index.php/ArchWiki:About_(Magyar) "ArchWiki:About (Magyar)"): az Arch Linux dokumentációd forrása a weben.**
 
-Az ArchWiki kategóriák listájáért látogasd meg a **[Tartalomjegyzéket](/index.php/Table_of_Contents "Table of Contents").**
+Az ArchWiki kategóriák listájáért látogasd meg a **[Tartalomjegyzéket](/index.php/Table_of_contents "Table of contents").**
 
 ## A disztribúció
 
@@ -12,19 +12,19 @@ Az ArchWiki kategóriák listájáért látogasd meg a **[Tartalomjegyzéket](/i
 
 	Szemlélteti az Arch Linux alapelveit és filozófiáját.
 
-	[Az Arch más disztribúciókkal összehasonlítva](/index.php/Arch_Compared_to_Other_Distributions_(Magyar) "Arch Compared to Other Distributions (Magyar)")
+	[Az Arch más disztribúciókkal összehasonlítva](/index.php/Arch_compared_to_other_distributions_(Magyar) "Arch compared to other distributions (Magyar)")
 
 	Összefoglalja az Arch Linux és más disztribúciók közti hasonlóságokat és különbségeket.
 
-	[Az Arch Linux sajtóvisszhangja](/index.php/Arch_Linux_Press_Coverage "Arch Linux Press Coverage")
+	[Az Arch Linux sajtóvisszhangja](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
 
 	Mit mondanak rólunk.
 
-	[Útmutató kezdőknek](/index.php/Beginners%27_Guide_(Magyar) "Beginners' Guide (Magyar)")
+	[Útmutató kezdőknek](/index.php/Beginners%27_guide_(Magyar) "Beginners' guide (Magyar)")
 
 	Részletes kalauz, mely végigvezet az Arch Linux teljes telepítési és beállítási folyamatán.
 
-	[Telepítési útmutató](/index.php/Installation_Guide_(Magyar) "Installation Guide (Magyar)")
+	[Telepítési útmutató](/index.php/Installation_guide_(Magyar) "Installation guide (Magyar)")
 
 	Egy tömör telepítési útmutató, amely a tapasztalt Arch felhasználókat célozza.
 

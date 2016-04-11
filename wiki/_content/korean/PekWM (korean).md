@@ -248,7 +248,6 @@ transset-df로 모든 창의 투명도를 .999로 설정하는 devilspie 스크�
 ## 바깥 고리
 
 *   [Pekwm 홈페이지](http://pekwm.org/)
-*   [젠투 위키 PekWM 문서](http://en.gentoo-wiki.com/wiki/PekWM)
 *   [Box-Look PekWM 테마](http://box-look.org/index.php?xcontentmode=7403)
 *   [Hewphoria PekWM 테마](http://hewphoria.com/?p=submission&type=theme&cat=1)
 *   [Freshmeat PekWM 테마](http://themes.freshmeat.net/search/?q=pekwm&section=projects)

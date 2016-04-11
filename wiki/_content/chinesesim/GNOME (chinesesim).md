@@ -42,7 +42,7 @@ GNOME (pronounced *gah-nohm* or *nohm*)是一个简单易用的[桌面环境](/i
         *   [5.2.6 启动应用程序](#.E5.90.AF.E5.8A.A8.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
         *   [5.2.7 电源](#.E7.94.B5.E6.BA.90)
             *   [5.2.7.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
-            *   [5.2.7.2 Change critical battery level action](#Change_critical_battery_level_action)
+            *   [5.2.7.2 修改电池电量严重不足时的行为](#.E4.BF.AE.E6.94.B9.E7.94.B5.E6.B1.A0.E7.94.B5.E9.87.8F.E4.B8.A5.E9.87.8D.E4.B8.8D.E8.B6.B3.E6.97.B6.E7.9A.84.E8.A1.8C.E4.B8.BA)
         *   [5.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
 *   [6 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [6.1 键盘](#.E9.94.AE.E7.9B.98)
@@ -490,7 +490,7 @@ The GNOME Tweak Tool, as of version 3.17.1, can optionally *inhibit* the *system
 
 If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 
-##### Change critical battery level action
+##### 修改电池电量严重不足时的行为
 
 The System Settings panel only allows the user to choose between *Suspend* or *Hibernate*. To choose another option such as *Do Nothing* open the `dconf-editor` and navigate to `org.gnome.settings-daemon.plugins.power`. Edit the `"critical-battery-action"` value to `"nothing"`.
 

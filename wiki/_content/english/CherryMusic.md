@@ -19,6 +19,7 @@ The project is developed on [GitHub](https://github.com/devsnd/cherrymusic).
     *   [3.2 Systemd service file](#Systemd_service_file)
     *   [3.3 Running in a GNU Screen session](#Running_in_a_GNU_Screen_session)
     *   [3.4 Manually adjust the search parameters of the search algorithm](#Manually_adjust_the_search_parameters_of_the_search_algorithm)
+    *   [3.5 Bind CherryMusic to ports less than 1024 (without root access)](#Bind_CherryMusic_to_ports_less_than_1024_.28without_root_access.29)
 *   [4 3rd Party Extensions](#3rd_Party_Extensions)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Missing module `wsgiserver2` when using pip for installation](#Missing_module_.60wsgiserver2.60_when_using_pip_for_installation)
@@ -180,6 +181,20 @@ To finally enable and start the service, see [systemd service file](#Systemd_ser
 The search parameters of the search algorithm can be adjusted manually via the file `cherrymusicserver/tweak.py` within your CherryMusic installation.
 
 **Warning:** Changing this file can potentially break CherryMusic's search function. Only proceed if you know what you are doing. It might also be a good idea to backup the file before editing.
+
+### Bind CherryMusic to ports less than 1024 (without root access)
+
+To bind CherryMusic (or any other application) to a port less than 1024 you normally need root access. However, you should **never run CherryMusic as root!** There are several ways around this:
+
+*   Use a firewall ([iptables](/index.php/Iptables "Iptables") or similar) for a port redirect
+*   Use [authbind](https://en.wikipedia.org/wiki/Authbind "wikipedia:Authbind")
+*   Use [Capabilities](/index.php/Capabilities "Capabilities") (more exactly [setcap](/index.php/Capabilities#Other_programs_that_benefit_from_capabilities "Capabilities"))
+
+For more information, see these references:
+
+[https://serverfault.com/questions/268099/bind-to-ports-less-than-1024-without-root-access](https://serverfault.com/questions/268099/bind-to-ports-less-than-1024-without-root-access)
+[https://www.debian-administration.org/article/386/Running_network_services_as_a_non-root_user](https://www.debian-administration.org/article/386/Running_network_services_as_a_non-root_user)
+[https://stackoverflow.com/questions/413807/is-there-a-way-for-non-root-processes-to-bind-to-privileged-ports-1024-on-l](https://stackoverflow.com/questions/413807/is-there-a-way-for-non-root-processes-to-bind-to-privileged-ports-1024-on-l)
 
 ## 3rd Party Extensions
 

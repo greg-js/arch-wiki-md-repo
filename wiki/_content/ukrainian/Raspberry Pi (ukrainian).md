@@ -31,7 +31,8 @@
     *   [13.1 SPI](#SPI)
     *   [13.2 Python](#Python)
 *   [14 I2C](#I2C)
-*   [15 Дивіться також](#.D0.94.D0.B8.D0.B2.D1.96.D1.82.D1.8C.D1.81.D1.8F_.D1.82.D0.B0.D0.BA.D0.BE.D0.B6)
+*   [15 QEMU](#QEMU)
+*   [16 Дивіться також](#.D0.94.D0.B8.D0.B2.D1.96.D1.82.D1.8C.D1.81.D1.8F_.D1.82.D0.B0.D0.BA.D0.BE.D0.B6)
 
 ## Передмова
 
@@ -348,7 +349,7 @@ RNGD_OPTS="-o /dev/random -r /dev/hwrng"
 
 ### SPI
 
-Для ввімкнення пристроїв `/dev/spidev*` закоментуйте наступну стрічку:
+Для ввімкнення пристроїв `/dev/spidev*` розкоментуйте наступну стрічку:
 
  `/boot/config.txt`  `device_tree_param=spi=on` 
 
@@ -400,6 +401,51 @@ i2c-bcm2708
 
 ```
  sensors
+
+```
+
+## QEMU
+
+Іноді легше працювати безпосередньо в образі диска замість реальної Raspberry Pi. Це може бути досягнуто за допомогою монтування SD-картки, що містить кореневий розділ RPi і зміні кореневого каталогу. Зі зміненого оточення буде можливо запустити Pacman і встановити більше пакунків, компілювати великі бібліотеки і т.д. Так як виконувані файли для архітектури ARM, переклад на x86 необхідно виконати за допомогою QEMU.
+
+**Note:** Станом на січень 2016 року, [make](https://www.archlinux.org/packages/?name=make) не працюватиме в QEMU для ARM, тому неможливо побудувати пакети таким чином. Дивіться [guide on the Arch Linux ARM website](https://archlinuxarm.org/wiki/Distcc_Cross-Compiling) для побудови крос-компілятора якщо є необхідність збирати ARM-пакунки.
+
+Встановіть [binfmt-support](https://aur.archlinux.org/packages/binfmt-support/) та [qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/) з [AUR](/index.php/AUR "AUR").
+
+Переконайтеся що ARM - x86 трансляція активна:
+
+```
+# update-binfmts --importdir /var/lib/binfmts/ --import
+# update-binfmts --display qemu-arm
+
+```
+
+Якщо трансляція ARM - x86 не активна, увімкніть її, скориставшись update-binfmts:
+
+```
+# update-binfmts --enable qemu-arm
+
+```
+
+Змонтуйте SD-картку до `mnt/` (назва пристрою може відрізнятися).
+
+```
+# mkdir mnt
+# mount /dev/mmcblk0p2 mnt
+
+```
+
+Скопіюйте виконуваний файл QEMU, який буде обробляти переклад з ARM, в корінь SD-картки:
+
+```
+# cp /usr/bin/qemu-arm-static mnt/usr/bin
+
+```
+
+Нарешті змініть кореневу файлову систему в кореневому каталогу SD-карти, як описано в [Change root#Using chroot](/index.php/Change_root#Using_chroot "Change root"), маючи на увазі, що `qemu-arm-static` повинен бути викликаний командою `chroot` тобто:
+
+```
+# chroot /mnt/arch /usr/bin/qemu-arm-static /bin/bash
 
 ```
 

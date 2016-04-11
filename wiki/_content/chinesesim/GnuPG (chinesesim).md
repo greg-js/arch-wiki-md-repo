@@ -1,24 +1,24 @@
-**翻译状态：** 本文是英文页面 [GnuPG](/index.php/GnuPG "GnuPG") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-07，点击[这里](https://wiki.archlinux.org/index.php?title=GnuPG&diff=0&oldid=429991)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GnuPG](/index.php/GnuPG "GnuPG") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-11，点击[这里](https://wiki.archlinux.org/index.php?title=GnuPG&diff=0&oldid=430354)可以查看翻译后英文页面的改动。
 
-According to the [official website](http://www.gnupg.org):
+根据 [官方网站](http://www.gnupg.org):
 
-	GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as [PGP](https://en.wikipedia.org/wiki/PGP "wikipedia:PGP")). GnuPG allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).
+	GnuPG 是 RFC4880 OpenPGP 标准([PGP](https://en.wikipedia.org/wiki/PGP "wikipedia:PGP")) 的完整实现，自由软件。GnuPG 可以加密和签名数据和信息传递，包含一个通用的密钥管理系统，包含的访问模块可以访问各种公钥目录。 GnuPG, 简称 GPG, 是命令行工具，很方便和其它程序进行整合，具有很多前端程序和函数库。 GnuPG V2 还支持 S/MIME 和 Secure Shell (ssh).
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 Directory location](#Directory_location)
     *   [2.2 Configuration files](#Configuration_files)
     *   [2.3 Default options for new users](#Default_options_for_new_users)
-*   [3 Usage](#Usage)
+*   [3 用法](#.E7.94.A8.E6.B3.95)
     *   [3.1 Create key pair](#Create_key_pair)
     *   [3.2 Backup your private key](#Backup_your_private_key)
     *   [3.3 Export your public key](#Export_your_public_key)
     *   [3.4 Import a key](#Import_a_key)
     *   [3.5 Use a keyserver](#Use_a_keyserver)
     *   [3.6 Encrypt and decrypt](#Encrypt_and_decrypt)
-*   [4 Key maintenance](#Key_maintenance)
+*   [4 密钥维护](#.E5.AF.86.E9.92.A5.E7.BB.B4.E6.8A.A4)
     *   [4.1 Edit your key](#Edit_your_key)
     *   [4.2 Exporting subkey](#Exporting_subkey)
     *   [4.3 Rotating subkeys](#Rotating_subkeys)
@@ -29,7 +29,7 @@ According to the [official website](http://www.gnupg.org):
     *   [5.3 Make a detached signature](#Make_a_detached_signature)
     *   [5.4 Verify a signature](#Verify_a_signature)
 *   [6 gpg-agent](#gpg-agent)
-    *   [6.1 Configuration](#Configuration_2)
+    *   [6.1 Configuration](#Configuration)
     *   [6.2 Reload the agent](#Reload_the_agent)
     *   [6.3 pinentry](#pinentry)
     *   [6.4 Start gpg-agent with systemd user](#Start_gpg-agent_with_systemd_user)
@@ -37,8 +37,9 @@ According to the [official website](http://www.gnupg.org):
     *   [6.6 SSH agent](#SSH_agent)
 *   [7 Smartcards](#Smartcards)
     *   [7.1 GnuPG only setups](#GnuPG_only_setups)
-    *   [7.2 GnuPG together with OpenSC](#GnuPG_together_with_OpenSC)
-*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [7.2 GnuPG with PSCD-Lite](#GnuPG_with_PSCD-Lite)
+        *   [7.2.1 Always use PSCD-Light](#Always_use_PSCD-Light)
+*   [8 使用技巧](#.E4.BD.BF.E7.94.A8.E6.8A.80.E5.B7.A7)
     *   [8.1 Different algorithm](#Different_algorithm)
     *   [8.2 Encrypt a password](#Encrypt_a_password)
     *   [8.3 Revoking a key](#Revoking_a_key)
@@ -55,9 +56,9 @@ According to the [official website](http://www.gnupg.org):
     *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
     *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
     *   [9.9 Smartcard not detected](#Smartcard_not_detected)
-*   [10 See also](#See_also)
+*   [10 参阅](#.E5.8F.82.E9.98.85)
 
-## Installation
+## 安装
 
 [Install](/index.php/Install "Install") the [gnupg](https://www.archlinux.org/packages/?name=gnupg) package.
 
@@ -65,7 +66,7 @@ This will also install [pinentry](https://www.archlinux.org/packages/?name=pinen
 
 If you want to use a graphical frontend or program that integrates with GnuPG, see [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
 
-## Configuration
+## 配置
 
 ### Directory location
 
@@ -94,7 +95,7 @@ If you want to setup some default options for new users, put configuration files
 
 This will add the respective `/home/user1/.gnupg` and `/home/user2/.gnupg` and copy the files from the skeleton directory to it. Users with existing GnuPG home directory are simply skipped.
 
-## Usage
+## 用法
 
 **Note:**
 
@@ -189,7 +190,7 @@ $ gpg --recv-keys *<key-id>*
 
 **Tip:**
 
-*   Adding `keyserver-option auto-key-retrieve` to `gnupg.conf` will automatically fetch keys from the key server as needed.
+*   Adding `keyserver-options auto-key-retrieve` to `gnupg.conf` will automatically fetch keys from the key server as needed.
 *   An alternative key server is `pool.sks-keyservers.net` and can be specified with `keyserver` in `dirmngr.conf`.; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
 *   You can connect to the keyserver over [Tor](/index.php/Tor "Tor") using `--use-tor`. `hkp://jijrk5u4osbsr34t5.onion` is the onion address for the sks-keyservers pool. [See this GnuPG blog post](https://gnupg.org/blog/20151224-gnupg-in-november-and-december.html) for more information.
 *   You can connect to a keyserver using a proxy by setting the `http_proxy` environment variable and setting `honor-http-proxy` in `dirmngr.conf`. Alternatively, set `http-proxy *host[:port]*` in `dirmngr.conf`, overriding the `http_proxy` environment variable.
@@ -224,7 +225,7 @@ $ gpg --decrypt *doc.asc*
 
 You will be prompted to enter your passphrase. You will need to have already [imported](#Import_a_key) the sender's public key to decrypt a file or message from them.
 
-## Key maintenance
+## 密钥维护
 
 ### Edit your key
 
@@ -548,15 +549,21 @@ default-cache-ttl-ssh 10800
 
 ## Smartcards
 
-**Note:** [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) and [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) have to be installed, and the contained [systemd](/index.php/Systemd#Using_units "Systemd") service `pcscd.service` has to be running.
-
 GnuPG uses *scdaemon* as an interface to your smartcard reader, please refer to the [man page](/index.php/Man_page "Man page") for details.
 
 ### GnuPG only setups
 
+**Note:** To allow scdaemon direct access to USB smarcard readers the optional dependency [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) have to be installed
+
 If you do not plan to use other cards but those based on GnuPG, you should check the `reader-port` parameter in `~/.gnupg/scdaemon.conf`. The value '0' refers to the first available serial port reader and a value of '32768' (default) refers to the first USB reader.
 
-### GnuPG together with OpenSC
+### GnuPG with PSCD-Lite
+
+**Note:** [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) and [ccid](https://www.archlinux.org/packages/?name=ccid) have to be installed, and the contained [systemd](/index.php/Systemd#Using_units "Systemd") service `pcscd.service` has to be running, or the socket `pscd.socket` has to be listening.
+
+PSCD-Lite is a daemon which handles access to smartcard (SCard API). If GnuPG's scdaemon fails to connect the smartcard directly (e.g. by using its integrated CCID support), it will fallback and try to find a smartcard using the PSCD-Lite driver.
+
+#### Always use PSCD-Light
 
 If you are using any smartcard with an opensc driver (e.g.: ID cards from some countries) you should pay some attention to GnuPG configuration. Out of the box you might receive a message like this when using `gpg --card-status`
 
@@ -577,7 +584,7 @@ disable-ccid
 
 Please check `man scdaemon` if you do not use OpenSC.
 
-## Tips and tricks
+## 使用技巧
 
 ### Different algorithm
 
@@ -760,7 +767,7 @@ ACTION=="add", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0
 
 One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above example is for a YubikeyNEO.
 
-## See also
+## 参阅
 
 *   [GNU Privacy Guard Homepage](https://gnupg.org/)
 *   [Creating GPG Keys (Fedora)](https://fedoraproject.org/wiki/Creating_GPG_Keys)

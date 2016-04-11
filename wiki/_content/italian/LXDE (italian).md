@@ -75,7 +75,7 @@ Sarà inoltre necessario installare [Gamin](/index.php/Gamin "Gamin"), un sistem
 
 ```
 
-Alcune [applicazioni leggere](/index.php/List_of_Applications_(Italiano) "List of Applications (Italiano)") che si potrebbero voler installare sono:
+Alcune [applicazioni leggere](/index.php/List_of_applications_(Italiano) "List of applications (Italiano)") che si potrebbero voler installare sono:
 
 ```
 # pacman -S leafpad xarchiver obconf epdfview
@@ -438,7 +438,7 @@ Per poter eseguire lo spegnimento, il riavvio e la sospensione da lxde è necess
 
 ```
 
-Assicurarsi di avere il proprio file `~/.xinitrc` configurato come mostrato nella sezione [Avviare LXDE](/index.php/LXDE_(Italiano)#Avviare_LXDE "LXDE (Italiano)") e di avere il supporto HAL:
+Assicurarsi di avere il proprio file `~/.xinitrc` configurato come mostrato nella sezione [Avviare LXDE](#Avviare_LXDE) e di avere il supporto HAL:
 
 ```
 exec startlxde

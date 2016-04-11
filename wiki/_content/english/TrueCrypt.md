@@ -703,6 +703,6 @@ If you cannot modify the filesystem, although permissions seem to be correct, th
 ## See also
 
 *   [TrueCrypt homepage](http://www.truecrypt.org/)
-*   [HOWTO: Truecrypt Gentoo wiki](http://en.gentoo-wiki.com/wiki/TrueCrypt)
+*   [HOWTO: Truecrypt Gentoo wiki](http://www.gentoo-wiki.info/HOWTO_Truecrypt)
 *   [Truecrypt tutorial on HowToForge](http://www.howtoforge.com/truecrypt_data_encryption)
 *   [There is a good chance the CIA has a backdoor?](http://www.privacylover.com/encryption/analysis-is-there-a-backdoor-in-truecrypt-is-truecrypt-a-cia-honeypot/) (via [wp](https://secure.wikimedia.org/wikipedia/en/wiki/Truecrypt))

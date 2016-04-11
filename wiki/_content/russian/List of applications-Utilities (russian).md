@@ -858,7 +858,7 @@
 
 ### Управление пакетами
 
-Смотрите также: [AUR Helpers](/index.php/AUR_Helpers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR Helpers (Русский)") и [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman GUI Frontends (Русский)").
+Смотрите также: [AUR Helpers](/index.php/AUR_helpers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR helpers (Русский)") и [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman GUI Frontends (Русский)").
 
 *   **[Lostfiles](/index.php/Lostfiles "Lostfiles")** — Скрипт для обнаружения файлов, не принадлежащих ни одному пакету
 

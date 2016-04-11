@@ -10,6 +10,7 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
     *   [2.2 Benchmarking](#Benchmarking)
     *   [2.3 Power management configuration](#Power_management_configuration)
         *   [2.3.1 Persistent configuration using udev rule](#Persistent_configuration_using_udev_rule)
+        *   [2.3.2 Putting a drive to sleep directly after boot](#Putting_a_drive_to_sleep_directly_after_boot)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 KDE => 4.4.4 and hdparm](#KDE_.3D.3E_4.4.4_and_hdparm)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -18,7 +19,7 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
 
 ## Installation
 
-[hdparm](https://www.archlinux.org/packages/?name=hdparm) can be installed from the [official repositories](/index.php/Official_repositories "Official repositories"). For use with SCSI devices, install [sdparm](https://www.archlinux.org/packages/?name=sdparm).
+[Install](/index.php/Install "Install") the [hdparm](https://www.archlinux.org/packages/?name=hdparm) package. For use with SCSI devices, install the [sdparm](https://www.archlinux.org/packages/?name=sdparm) package.
 
 ## Usage
 
@@ -75,6 +76,32 @@ If you have more than one hard drive you could make the rule more flexible. For 
  `/etc/udev/rules.d/50-hdparm.rules` 
 ```
 ACTION=="add|change", KERNEL=="sd[b-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hdparm -B 127 -S 12 /dev/%k"
+
+```
+
+#### Putting a drive to sleep directly after boot
+
+A device which is rarely needed can be put to sleep directly at the end of the boot process. Just create a [systemd](/index.php/Systemd "Systemd") service.
+
+ `/etc/systemd/system/hdparm.service` 
+```
+[Unit]
+Description=Hdparm HDD
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hdparm -q -S 120 -y /dev/sdb ; /usr/bin/hdparm -q -S 120 -y /dev/sdc
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+Then enable it:
+
+```
+systemctl enable hdparm.service
 
 ```
 

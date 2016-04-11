@@ -65,7 +65,7 @@ Jednoduchý monitor baterie sídlící v tray je [batterymon](https://aur.archli
 
 ## Lapsus
 
-[Lapsus](/index.php/Asus_G1#The_Lapsus_daemon_.26_KDE_applet "Asus G1") je soubor programů poskytujících jednoduchý přístup k mnoha různým funkcím notebooků. Momentálně podporuje nejvíce funkcí poskytovaných modulem jádra asus-laptop z projektu ACPI4Asus, jedná se například o přídavné LED diody, změna podsícení atd. Má například podporu i pro některé funkce notebooků IBM poskytovaných ovladačem IBM ThinkPad ACPI Extras a ovladačem zařízení VRAM.
+[Lapsus](/index.php/ASUS_G1#The_Lapsus_daemon_.26_KDE_applet "ASUS G1") je soubor programů poskytujících jednoduchý přístup k mnoha různým funkcím notebooků. Momentálně podporuje nejvíce funkcí poskytovaných modulem jádra asus-laptop z projektu ACPI4Asus, jedná se například o přídavné LED diody, změna podsícení atd. Má například podporu i pro některé funkce notebooků IBM poskytovaných ovladačem IBM ThinkPad ACPI Extras a ovladačem zařízení VRAM.
 
 ## Instalace powertopu
 

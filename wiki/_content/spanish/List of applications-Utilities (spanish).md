@@ -32,7 +32,7 @@
 
 ### Gestores de paquetes
 
-Véanse los artículos de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [AUR helpers](/index.php/AUR_helpers "AUR helpers") y [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends").
+Véanse los artículos de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [AUR helpers](/index.php/AUR_helpers "AUR helpers") y [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends").
 
 *   **[Pacmatic](/index.php/Pacmatic "Pacmatic")** — Wrapper de pacman para comprobar noticias de Arch antes de actualizar, evitar las actualizaciones parciales y alertar sobre cambios en los archivos de configuración.
 
@@ -74,7 +74,7 @@ Véanse los artículos de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main P
 
 ### Herramientas de grabación de CD/DVD
 
-Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [Burning CD/DVD with GUI](/index.php/Optical_disc_drive#Burning_CD.2FDVD.2FBD_with_a_GUI "Optical disc drive").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [Burning CD/DVD with GUI](/index.php/Optical_disc_drive#Burning_CD.2FDVD.2FBD_with_a_GUI "Optical disc drive").
 
 ### Gestores de portapapeles
 

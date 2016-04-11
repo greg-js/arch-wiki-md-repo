@@ -79,7 +79,7 @@ Las versiones de Windows de 32-bit únicamente soportan el arranque en sistemas 
 
 Compruebe si el directorio `/sys/firmware/efi` existe; si existe, significa que el kernel ha arrancado en modalidad EFI. En ese caso, significa que la arquitectura de UEFI coincide con la del kernel (es decir, i686 o x86_64)
 
-**Nota:** El chip del sistema Atom de Intel es entregado con UEFI de 32 bit (desde el 2 de noviembre de 2013). Véase [esta página](/index.php?title=HCL/Firmwares/UEFI&action=edit&redlink=1 "HCL/Firmwares/UEFI (page does not exist)") para obtener más información.
+**Nota:** El chip del sistema Atom de Intel es entregado con UEFI de 32 bit (desde el 2 de noviembre de 2013). Véase [esta página](/index.php/Unified_Extensible_Firmware_Interface/Hardware#Intel_Atom_System-on-Chip "Unified Extensible Firmware Interface/Hardware") para obtener más información.
 
 #### Mac de Apple
 
@@ -409,7 +409,7 @@ Escriba `Ctrl-E` para obtener ayuda.
 
 ## Compatibilidad de hardware
 
-Véase el artículo [HCL/Firmwares/UEFI](/index.php?title=HCL/Firmwares/UEFI&action=edit&redlink=1 "HCL/Firmwares/UEFI (page does not exist)")
+Véase el artículo [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware")
 
 ## Soporte para arrancar UEFI
 

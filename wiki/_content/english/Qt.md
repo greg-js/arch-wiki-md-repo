@@ -35,7 +35,8 @@ The Qt framework is emerging as a major development platform and is the basis of
         *   [4.3.9 Lua](#Lua)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Icon theme is not applied](#Icon_theme_is_not_applied)
-    *   [5.2 Qt4 style not respected](#Qt4_style_not_respected)
+    *   [5.2 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
+    *   [5.3 Qt4 style not respected](#Qt4_style_not_respected)
 *   [6 Resources](#Resources)
 
 ## Installation
@@ -470,6 +471,20 @@ label:show()
 ### Icon theme is not applied
 
 Since Qt 5.1 SVG support has moved into a module. Since [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) does not depend on [qt5-svg](https://www.archlinux.org/packages/?name=qt5-svg) it may happen that the [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) is installed but not [qt5-svg](https://www.archlinux.org/packages/?name=qt5-svg). This results in deceptive icon theme behaviour. Since SVG is not supported the icons are silently skipped and the icon theme may seem to be unused. Installing [qt5-svg](https://www.archlinux.org/packages/?name=qt5-svg) explicitly solves the problem.
+
+### Theme not applied to root applications
+
+As the user theme file (`$XDG_CONFIG_HOME/Trolltech.conf`), are not read by other accounts, the selected theme will not apply to [X applications run as root](/index.php/Running_X_apps_as_root "Running X apps as root"). Possible solutions include:
+
+*   Create symlinks, e.g
+
+```
+# ln -s /home/[username]/.config/Trolltech.conf /etc/xdg/Trolltech.conf
+
+```
+
+*   Configure system-wide theme file: `/etc/xdg/Trolltech.conf`
+*   Adjust the theme as root
 
 ### Qt4 style not respected
 

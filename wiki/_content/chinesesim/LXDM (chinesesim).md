@@ -202,7 +202,7 @@ $ lxdm -c USER_SWITCH
 
 **注意:** 当新用户登陆是，使用的是下一个tty。例如 tty7 上的用户甲登陆并使用 USER_SWITCH 命令后，新登陆的用户乙将会位于 tty8。
 
-[Xscreensaver](/index.php/Xscreensaver "Xscreensaver") 也支持此功能，参见 [Xscreensaver#LXDM](/index.php/Xscreensaver#LXDM "Xscreensaver").
+[XScreenSaver](/index.php/XScreenSaver "XScreenSaver") 也支持此功能，参见 [XScreenSaver#LXDM](/index.php/XScreenSaver#LXDM "XScreenSaver").
 
 If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functionality of its Action Button panel item specifically looks for the *gdmflexiserver* executable in order to enable itself. If you provide it with an executable shell script `/usr/bin/gdmflexiserver` consisting of
 

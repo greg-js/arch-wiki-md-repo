@@ -43,7 +43,7 @@ Se non viene restituito alcun output, il proprio processore *non* supporta la vi
 
 KVM necessita inoltre di una versione modificata di QEMU per poter lanciare e gestire le macchine virtuali. È possibile sceglierne una tra le seguenti in base alle proprie esigenze:
 
-1.  Il pacchetto [qemu-kvm](https://www.archlinux.org/packages/?name=qemu-kvm) è disponibile nei [Repository Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") *(scelta raccomandata)*
+1.  Il pacchetto [qemu-kvm](https://www.archlinux.org/packages/?name=qemu-kvm) è disponibile nei [Repository Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") *(scelta raccomandata)*
 
 1.  Se è necessario anche l'uso di QEMU, si può scegliere di installare una versione di [qemu](https://www.archlinux.org/packages/?name=qemu) superiore alla 0.9.0, che va in conflitto con il pacchetto [qemu-kvm](https://www.archlinux.org/packages/?name=qemu-kvm). Comunque oramai anche il pacchetto [qemu](https://www.archlinux.org/packages/?name=qemu) fornisce un eseguibile (`qemu -enable-kvm`) che si avvantaggia di tale tecnologia.
 
@@ -237,7 +237,7 @@ Con virt-manager è altrettanto semplice, avendo la possibilità di spuntare la 
 
 **Nota:** VMs avviate da QEMU e KVM da linea di comando non sono gestibile da virt-manager
 
-Consultare [QEMU#Starting_qemu_virtual_machines_on_boot](/index.php/QEMU#Starting_qemu_virtual_machines_on_boot "QEMU")
+Consultare [QEMU#Starting QEMU virtual machines on boot](/index.php/QEMU#Starting_QEMU_virtual_machines_on_boot "QEMU")
 
 ## Trucchi e Consigli
 

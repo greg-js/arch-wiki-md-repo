@@ -8,6 +8,8 @@ Caso não saiba editar uma página, clique [aqui](/index.php?title=Como_Editar_P
 *   [2 Man pages](#Man_pages)
 *   [3 Pacman (libalpm, makepkg e repo-add)](#Pacman_.28libalpm.2C_makepkg_e_repo-add.29)
 *   [4 Wiki](#Wiki)
+*   [5 Equipe de Traducão:](#Equipe_de_Traduc.C3.A3o:)
+*   [6 Equipe de Revisão:](#Equipe_de_Revis.C3.A3o:)
 
 ## AUR
 
@@ -18,8 +20,6 @@ Instruções sobre como traduzir o AUR podem ser vistas [aqui](/index.php/AUR_Tr
 **Revisores:**
 
 ## Man pages
-
-Revisores: **Nenhum**
 
 | Título | Descrição | Responsável | Status |
 | Man:abs | Manpage do ABS | Não Alocado | Não iniciado |
@@ -34,15 +34,15 @@ Informações [aqui](https://dev.archlinux.org/~hugo/arch-i18n/) e [aqui](https:
 
 **Tradutores:**
 
-**Revisores:**
-
-[Tomas Schertel](/index.php?title=User:Tschertel&action=edit&redlink=1 "User:Tschertel (page does not exist)")
+**Revisadores:**
 
 ## Wiki
 
 Você quer que alguma documentação do wiki internacional seja traduzida? Envie o link para ***documentacao@archlinux-br.org***.
 
 **OBS: Favor colocar a URL do documento original.**
+
+* * *
 
 | Título | Descrição | Responsável | Status |
 | [pacman](/index.php/Pacman "Pacman") | Documento mostrando como usar o pacman | [Hugo Doria](/index.php?title=User:HugoDoria&action=edit&redlink=1 "User:HugoDoria (page does not exist)") | Concluído |
@@ -93,7 +93,9 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 | [Installing with Fake RAID](/index.php/Installing_with_Fake_RAID "Installing with Fake RAID") | Tradução do [Documento original](/index.php/Installing_with_Fake_RAID "Installing with Fake RAID") | [Jeremias Alves Queiroz](/index.php/User:Jere2001 "User:Jere2001") | Concluído |
 | [Help:i18n](/index.php/Help:I18n "Help:I18n") | Tradução do [Help:i18n](/index.php/Help:I18n "Help:I18n") | [Jeremias Alves Queiroz](/index.php/User:Jere2001 "User:Jere2001") | Concluído |
 | [Opera](/index.php/Opera "Opera") | Tradução do [Documento original](/index.php/Opera "Opera") | [Marcos Ferreira](/index.php/User:M4rQu1Nh0S "User:M4rQu1Nh0S") | Concluído |
+| [Contribuiting](/index.php/ArchWiki:Contribuiting_(Portugu%C3%AAs) "ArchWiki:Contribuiting (Português)") | Tradução do [Documento original](/index.php/ArchWiki:Contributing "ArchWiki:Contributing") | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Concluído |
 | [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") | GDM - [Documento Original](/index.php/GDM "GDM") | [Albino Biasutti Neto](/index.php/User:Bino28 "User:Bino28") | Revisão |
+| [List of Aplications Internet](/index.php/List_of_applications/Internet_(Portugu%C3%AAs) "List of applications/Internet (Português)") | Tradução do [Documento original](/index.php/List_of_applications/Internet "List of applications/Internet") | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Em andamento |
 | [Daemon](https://wiki.archlinux.org/index.php?title=Daemon_(Português)) | Tradução do [Documento original](https://wiki.archlinux.org/index.php?title=Daemon) | [Victor Viana](/index.php?title=User:Victor&action=edit&redlink=1 "User:Victor (page does not exist)") | Em andamento |
 | [Openbox](/index.php/Openbox "Openbox") | Tradução do [Documento original](/index.php/Openbox "Openbox") | [Robson Cardoso](/index.php?title=User:Cylax&action=edit&redlink=1 "User:Cylax (page does not exist)") | Em andamento |
 | [QEMU](/index.php/QEMU "QEMU") | Guia de instalação e utilização do Qemu. [Documento Original](/index.php/QEMU "QEMU") | [Eduardo Lopes](/index.php?title=User:Duca&action=edit&redlink=1 "User:Duca (page does not exist)") | Em andamento |
@@ -106,3 +108,11 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 | [Wmii](/index.php/Wmii "Wmii") | Guia de instalação e utilização do Wmii. [Documento Original](/index.php/Wmii "Wmii") | [Cainã Costa](/index.php?title=User:CainaCosta&action=edit&redlink=1 "User:CainaCosta (page does not exist)") | Não iniciada |
 | [KDE](/index.php/KDE "KDE") | Tradução do guia do ambiente KDE | [Fabiano de Melo](/index.php?title=User:FabianoMelo&action=edit&redlink=1 "User:FabianoMelo (page does not exist)") | Não iniciado |
 | [ATI Catalyst](/index.php/ATI_Catalyst "ATI Catalyst") | Tradução do [Documento original](/index.php/ATI_Catalyst "ATI Catalyst") | [Robson Berthelsen](/index.php?title=User:Nosbor868&action=edit&redlink=1 "User:Nosbor868 (page does not exist)") | Não iniciado |
+
+## Equipe de Traducão:
+
+[Dione Batista](/index.php/User:StrykeONE "User:StrykeONE")
+
+## Equipe de Revisão:
+
+[Tomas Schertel](/index.php?title=User:Tschertel&action=edit&redlink=1 "User:Tschertel (page does not exist)")

@@ -201,7 +201,7 @@ Alcuni client elencati in seguito (incluso Pidgin e tutti i suoi forks) supporta
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/KDE_(Italiano)#Telepathy "KDE (Italiano)")** — Client di messaggistica istantanea per KDE, che utilizza il framework [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Inteso come un sostituto di Kopete.
+*   **[KDE Telepathy](/index.php/KDE_(Italiano)#KDE_Telepathy "KDE (Italiano)")** — Client di messaggistica istantanea per KDE, che utilizza il framework [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Inteso come un sostituto di Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -451,7 +451,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 ### Client Pastebin
 
-See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:Pastebin"). Pastebin è un servizio che permette di incollare delle informazioni all'interno di [Canali IRC](/index.php/IRC_Channel "IRC Channel") per essere aiutati nella risoluzione dei problemi. Vi sono sia servizi testuali (es. [sprunge.org](http://sprunge.us/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) che di immagini (es. [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). I client Pastebin permettono di postare direttamente da cli senza utilizzare il browser.
+See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:Pastebin"). Pastebin è un servizio che permette di incollare delle informazioni all'interno di [Canali IRC](/index.php/IRC_channel "IRC channel") per essere aiutati nella risoluzione dei problemi. Vi sono sia servizi testuali (es. [sprunge.org](http://sprunge.us/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) che di immagini (es. [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). I client Pastebin permettono di postare direttamente da cli senza utilizzare il browser.
 
 **Suggerimento:** Al servizio pastebin "sprunge" si può accedere direttamente via curl: `<command> | curl -F 'sprunge=<-' http://sprunge.us` Vi sono anche dei [sprunge plugin](https://github.com/robbyrussell/oh-my-zsh/wiki/Usage-of-the-%22sprunge%22-command) per [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki) (un tool di configurazione per la shell [Zsh](/index.php?title=Zsh_(Italiano)&action=edit&redlink=1 "Zsh (Italiano) (page does not exist)")).
 

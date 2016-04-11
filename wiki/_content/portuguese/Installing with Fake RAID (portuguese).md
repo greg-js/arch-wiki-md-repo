@@ -3,21 +3,20 @@ O objetivo deste guia é permitir a utilização de um arranjo RAID criado atrav
 ## Contents
 
 *   [1 O que é "Fake RAID"](#O_que_.C3.A9_.22Fake_RAID.22)
-*   [2 Hardware Suportado](#Hardware_Suportado)
-*   [3 Instalação](#Instala.C3.A7.C3.A3o)
-    *   [3.1 Prepare a instalação](#Prepare_a_instala.C3.A7.C3.A3o)
-        *   [3.1.1 Configure os arranjos RAID](#Configure_os_arranjos_RAID)
-    *   [3.2 Inicie com o CD do Arch](#Inicie_com_o_CD_do_Arch)
-    *   [3.3 Inicie o dmraid](#Inicie_o_dmraid)
-    *   [3.4 Continue com a instalação normal](#Continue_com_a_instala.C3.A7.C3.A3o_normal)
-        *   [3.4.1 Particionamento do arranjo RAID](#Particionamento_do_arranjo_RAID)
-        *   [3.4.2 Monte o sistema de arquivos](#Monte_o_sistema_de_arquivos)
-        *   [3.4.3 Instale e configure o Arch](#Instale_e_configure_o_Arch)
-        *   [3.4.4 Instalação do GRUB](#Instala.C3.A7.C3.A3o_do_GRUB)
-        *   [3.4.5 Toques finais e término da instalação](#Toques_finais_e_t.C3.A9rmino_da_instala.C3.A7.C3.A3o)
-*   [4 Resolução de problemas](#Resolu.C3.A7.C3.A3o_de_problemas)
-    *   [4.1 Iniciando com um arranjo corrompido](#Iniciando_com_um_arranjo_corrompido)
-*   [5 Resources](#Resources)
+*   [2 Instalação](#Instala.C3.A7.C3.A3o)
+    *   [2.1 Prepare a instalação](#Prepare_a_instala.C3.A7.C3.A3o)
+        *   [2.1.1 Configure os arranjos RAID](#Configure_os_arranjos_RAID)
+    *   [2.2 Inicie com o CD do Arch](#Inicie_com_o_CD_do_Arch)
+    *   [2.3 Inicie o dmraid](#Inicie_o_dmraid)
+    *   [2.4 Continue com a instalação normal](#Continue_com_a_instala.C3.A7.C3.A3o_normal)
+        *   [2.4.1 Particionamento do arranjo RAID](#Particionamento_do_arranjo_RAID)
+        *   [2.4.2 Monte o sistema de arquivos](#Monte_o_sistema_de_arquivos)
+        *   [2.4.3 Instale e configure o Arch](#Instale_e_configure_o_Arch)
+        *   [2.4.4 Instalação do GRUB](#Instala.C3.A7.C3.A3o_do_GRUB)
+        *   [2.4.5 Toques finais e término da instalação](#Toques_finais_e_t.C3.A9rmino_da_instala.C3.A7.C3.A3o)
+*   [3 Resolução de problemas](#Resolu.C3.A7.C3.A3o_de_problemas)
+    *   [3.1 Iniciando com um arranjo corrompido](#Iniciando_com_um_arranjo_corrompido)
+*   [4 Resources](#Resources)
 
 ## O que é "Fake RAID"
 
@@ -28,18 +27,6 @@ Segundo a [Wikipedia](http://pt.wikipedia.org/):
 Veja [Wikipedia:pt:RAID](https://en.wikipedia.org/wiki/pt:RAID "wikipedia:pt:RAID") ou [Guia do Hardware:RAID](http://www.hardware.com.br/livros/hardware/raid.html)para mais informações.
 
 Apesar da terminologia, "Fake RAID" via dmraid é uma implementação RAID via software robusta que oferece um solido sistema de mirror ou stripe para multiplos discos com sobrecarga insignificante para qualquer sistema moderno. O dmraid é comparável a mdraid (software RAID puro para GNU/L*i*nux) com a vantagem de ser capaz de reconstruir completamente um arranjo.
-
-## Hardware Suportado
-
-Esses são alguns exemplos de hardwares que suportam Fake RAID através do dmraid:
-
-*   Testado com ICH10R em *2009.08* (x86_64) -- [pointone](/index.php/User:Pointone "User:Pointone")
-*   Testado com Sil3124 em *2009.02* (i686) -- [loosec](/index.php/User:Loosec "User:Loosec")
-*   Testado com nForce4 (i686 e x86_64) -- [loosec](/index.php/User:Loosec "User:Loosec")
-*   Testado com Sil3512 (x86_64) -- [loosec](/index.php/User:Loosec "User:Loosec")
-*   Testado com nForce2 *2011.05* (i686) -- [Jere2001](/index.php/User:Jere2001 "User:Jere2001")
-
-Para mais informações sobre hardware suportados veja [RAID/Onboard @ Gentoo Linux Wiki](http://en.gentoo-wiki.com/wiki/RAID/Onboard)
 
 ## Instalação
 
@@ -279,5 +266,4 @@ Alternativamente, se você estiver utilizando um arranjo de espelhamento (mirror
 
 ## Resources
 
-*   [RAID/Onboard @ Gentoo Linux Wiki](http://en.gentoo-wiki.com/wiki/RAID/Onboard)
 *   [Related forum thread](https://bbs.archlinux.org/viewtopic.php?id=22038)

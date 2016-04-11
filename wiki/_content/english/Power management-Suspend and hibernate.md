@@ -89,7 +89,7 @@ The kernel parameter `resume=*swap_partition*` has to be used. Either the name t
 
 Generally, the naming method used for the `resume` parameter should be the same as used for the `root` parameter.
 
-The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot loader"), refer to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for details.
+The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot loader"), refer to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for details. See also [GRUB#Suspend to disk](/index.php/GRUB#Suspend_to_disk "GRUB").
 
 #### Hibernation into swap file
 

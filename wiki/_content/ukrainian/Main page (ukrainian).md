@@ -2,7 +2,7 @@
 
 **Ласкаво просимо до [ArchWiki](/index.php/ArchWiki:About_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "ArchWiki:About (Українська)"): вашого джерела документації по Arch Linux у мережі.**
 
-Перегляньте [Зміст](/index.php/Table_of_Contents_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Table of Contents (Українська)") для огляду категорій ArchWiki.
+Перегляньте [Зміст](/index.php/Table_of_contents_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Table of contents (Українська)") для огляду категорій ArchWiki.
 
 ## Дистрибутив
 

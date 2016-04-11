@@ -73,7 +73,7 @@ ServerArgsLocal=-dpi 96 -nolisten tcp
 
 #### SessionsDirs
 
-Questa variabile memorizza un elenco di cartelle contenenti le definizioni dei tipi di sessione in formato `.desktop` classificate in ordine di priorità. In Arch Linux alcuni [window managers](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") installano tali file in `/usr/share/xsessions`. Aggiungere questo percorso alla lista in modo da essere in grado di poter poi selezionare le relative sessioni in KDM.
+Questa variabile memorizza un elenco di cartelle contenenti le definizioni dei tipi di sessione in formato `.desktop` classificate in ordine di priorità. In Arch Linux alcuni [window managers](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") installano tali file in `/usr/share/xsessions`. Aggiungere questo percorso alla lista in modo da essere in grado di poter poi selezionare le relative sessioni in KDM.
 
 ```
 SessionsDirs=/usr/share/config/kdm/sessions,/usr/share/apps/kdm/sessions,/usr/share/xsessions

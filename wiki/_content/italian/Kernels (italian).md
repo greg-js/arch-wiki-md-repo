@@ -102,7 +102,7 @@ Comunque è importante notare che il modo migliore per aumentare la velocità de
 
 ### Come installare
 
-Il processo d'installazione dei pacchetti del kernel personalizzato si affida all'Arch Build System (ABS). Riguardo la creazione di pacchetti personalizzati, consultare i seguenti articoli: [Arch Build System (Italiano)](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)") e [Creating Packages (Italiano)](/index.php/Creating_Packages_(Italiano) "Creating Packages (Italiano)").
+Il processo d'installazione dei pacchetti del kernel personalizzato si affida all'Arch Build System (ABS). Riguardo la creazione di pacchetti personalizzati, consultare i seguenti articoli: [Arch Build System (Italiano)](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)") e [Creating packages (Italiano)](/index.php/Creating_packages_(Italiano) "Creating packages (Italiano)").
 
 Applicare patch o personalizzare un kernel non è così complicato come può apparire, ed esistono molti PKGBUILD nel forum per singoli patchset. In ogni caso, è raccomandato cominciare dalle basi facendo ricerche sui vantaggi di ogni patchset piuttosto che installare il primo che capita: in questo modo si acquisiranno molte più conoscenze sulle differenze tra i vari kernel.
 
@@ -176,7 +176,7 @@ Arch Linux fornisce metodi diversi per la compilazione del kernel.
 
 Usare l'[Arch Build System](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)") è consigliato per poter trarre vantaggio dall'alta qualità del [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)") [linux](https://www.archlinux.org/packages/?name=linux) esistente ed avere i benefici della [sistema di gestione dei pacchetti](https://en.wikipedia.org/wiki/Sistema_di_gestione_dei_pacchetti "wikipedia:Sistema di gestione dei pacchetti"). Il PKGBUILD è strutturato in modo da poter fermare la compilazione appena i sorgenti sono stati scaricati e configurare il kernel.
 
-Vedere [Kernels/Arch_Build_System_(Italiano)](/index.php/Kernels/Arch_Build_System_(Italiano) "Kernels/Arch Build System (Italiano)").
+Vedere [Kernels/Arch Build System (Italiano)](/index.php/Kernels/Arch_Build_System_(Italiano) "Kernels/Arch Build System (Italiano)").
 
 ### Tradizionale
 
@@ -190,7 +190,7 @@ Vedere [Kernels/Compilation/Traditional](/index.php/Kernels/Compilation/Traditio
 
 ### Driver proprietari NVIDIA
 
-Consultare [NVIDIA_(Italiano)#Installazione alternativa: kernel personalizzato](/index.php/NVIDIA_(Italiano)#Installazione_alternativa:_kernel_personalizzato "NVIDIA (Italiano)") per istruzioni riguardo l'utilizzo dei driver proprietari NVIDIA con un kernel personalizzato
+Consultare [NVIDIA (Italiano)#Installazione alternativa: kernel personalizzato](/index.php/NVIDIA_(Italiano)#Installazione_alternativa:_kernel_personalizzato "NVIDIA (Italiano)") per istruzioni riguardo l'utilizzo dei driver proprietari NVIDIA con un kernel personalizzato
 
 ## Vedere anche
 

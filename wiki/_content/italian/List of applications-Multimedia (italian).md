@@ -289,7 +289,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 #### Cattura dello schermo
 
-Si veda |[Taking a Screenshot](/index.php/Taking_a_Screenshot "Taking a Screenshot").
+Si veda |[Taking a screenshot](/index.php/Taking_a_screenshot "Taking a screenshot").
 
 #### Screencast
 

@@ -34,7 +34,7 @@
 
 ### Documenti scientifici
 
-Si veda l'articolo principale: [List_of_Applications/Documents_(Italiano)#Documenti_scientifici](/index.php/List_of_Applications/Documents_(Italiano)#Documenti_scientifici "List of Applications/Documents (Italiano)").
+Si veda l'articolo principale: [List of applications/Documents (Italiano)#Documenti scientifici](/index.php/List_of_applications/Documents_(Italiano)#Documenti_scientifici "List of applications/Documents (Italiano)").
 
 ### Matematica
 
@@ -190,7 +190,7 @@ Si veda l'articolo principale: [List_of_Applications/Documents_(Italiano)#Docume
 
 	[http://scidavis.sourceforge.net/](http://scidavis.sourceforge.net/) || [scidavis](https://aur.archlinux.org/packages/scidavis/)
 
-Vedi anche [List of Applications (Italiano)#Fogli di calcolo](/index.php/List_of_Applications_(Italiano)#Fogli_di_calcolo "List of Applications (Italiano)").
+Vedi anche [List of applications (Italiano)#Fogli di calcolo](/index.php/List_of_applications_(Italiano)#Fogli_di_calcolo "List of applications (Italiano)").
 
 ### Chimica e Biologia
 

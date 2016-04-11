@@ -483,7 +483,7 @@ Many clients listed here (including Pidgin and all it's forks) support multiple 
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Meant as a replacement for Kopete.
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Meant as a replacement for Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -867,7 +867,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:Pastebin").
 
-Pastebin services are often used to paste information into [IRC channels](/index.php/IRC_Channel "IRC Channel") to help with troubleshooting. There are services for both text (e.g. [bpaste.net](http://bpaste.net/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) and images (e.g. [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Pastebin clients allow you to post directy from the cli without using a web browser.
+Pastebin services are often used to paste information into [IRC channels](/index.php/IRC_channel "IRC channel") to help with troubleshooting. There are services for both text (e.g. [bpaste.net](http://bpaste.net/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) and images (e.g. [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Pastebin clients allow you to post directy from the cli without using a web browser.
 
 **Tip:** The sprunge and ix pastebins can be accessed directly via curl, which should return a link to the paste:
 ```

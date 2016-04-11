@@ -40,7 +40,7 @@ Additionally you should change where taskd logs to, since the default is /tmp/lo
 
 ```
 touch /var/log/taskd.log
-chmod taskd:taskd /var/log/taskd.log
+chown taskd:taskd /var/log/taskd.log
 taskd config --force log /var/log/taskd.log
 ```
 

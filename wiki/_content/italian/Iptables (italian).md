@@ -22,7 +22,7 @@ Iptables è un potente [firewall](/index.php/Firewalls_(Italiano) "Firewalls (It
 
 **Nota:** Il proprio kernel dovrà essere compilato con il supporto per iptables. Tutti i kernel stock di Arch Linux hanno il supporto per iptables.
 
-Per prima cosa, installare il pacchetto [iptables](https://www.archlinux.org/packages/?name=iptables) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"):
+Per prima cosa, installare il pacchetto [iptables](https://www.archlinux.org/packages/?name=iptables) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"):
 
 Successivamente, abilitare ed avviare il file service di `iptables` per systemd:
 

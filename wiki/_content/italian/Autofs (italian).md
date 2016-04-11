@@ -325,7 +325,7 @@ May  7 19:44:16 peterix automount[15218]: failed to mount /media/cifs/petr
 ## Altre risorse
 
 *   Le informazioni originali di questa pagina sono basate su [questo topic](https://bbs.archlinux.org/viewtopic.php?t=7630), con informazioni aggiuntive prese da [questa pagina](http://libranet.com/support/2.8/0381)
-*   L'uso dei server FTP ed SSH con AutoFS è basato su [questo articolo](http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares) del Wiki di Gentoo.
+*   L'uso dei server FTP ed SSH con AutoFS è basato su [questo articolo](https://web.archive.org/web/20130414074212/http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares) del Wiki di Gentoo.
 *   Maggiori informazioni riguardo a SSH possono essere trovate nelle pagine del wiki [SSH](/index.php/SSH_(Italiano) "SSH (Italiano)") ed [Uso delle chiavi SSH](/index.php/SSH_keys_(Italiano) "SSH keys (Italiano)").
 *   Le informazioni per configurare NFS possono essere trovate nella pagina di wiki [NFS](/index.php/NFS_(Italiano) "NFS (Italiano)").
 

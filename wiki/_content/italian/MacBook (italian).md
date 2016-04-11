@@ -40,7 +40,7 @@ Nel dettaglio, la procedura per installare Arch Linux su un MacBook è:
 2.  **[Aggiornamento firmware](#Installazione_di_Mac_OS_X_e_aggiornamento_firmware)**: Riduce la probabilità di errori ed apporta nuove funzioni all'hardware.
 3.  **[Partizionamento](#Partizionamento)**: Ridimensiona o elimina la partizione di OS X e crea la partizione per Arch Linux.
 4.  **[Installare Arch Linux](#Installazione)**: L'installazione effettiva di Arch Linux
-5.  **[Configurazione Post-installazione](#Configurazione_Post-Installazione)**: Configura l'hardware del MacBook.
+5.  **[Configurazione Post-installazione](#Configurazione_post-installazione)**: Configura l'hardware del MacBook.
 
 **Tip:** rEFIt è un famoso bootloader per computers con firmware EFI (Mac inclusi). Può essere installato in qualsiasi momento durante l'installazione. Per informazioni, vedere [rEFIt](/index.php/MacBook#rEFIt "MacBook").
 
@@ -82,7 +82,7 @@ Il passaggio successivo della procedura d'installazione è il ri-partizionamento
 Le modalità per il partizionamento vanno scelte in base al numero di sistemi operativi che si vogliono installare. In questo wiki verranno illustrate:
 
 *   [Solo Arch Linux](#Solo_Arch_Linux) in boot singolo.
-*   [Mac OS X e Arch Linux](#Mac_OS_X_e_Arch_Linux) in dual boot.
+*   [Mac OS X e Arch Linux](#Mac_OS_X_con_Arch_Linux) in dual boot.
 
 Se non si è sicuri sulla modalità da scegliere, consigliamo un dualboot, per poter ritornare a OS X in seguito.
 
@@ -218,12 +218,12 @@ boot: arch noapic irqpoll acpi=force
 ```
 
 *   Procedi per l'installazione come descritto nell' [Installation guide](/index.php/Installation_guide "Installation guide"), eccetto questi passaggi:
-    *   Nel passaggio per la [preparazione degli hard drives](/index.php/Installation_guide#Prepare_Hard_Drive "Installation guide") esegui solo " [set filesystem mountpoints](/index.php/Installation_guide#Set_Filesystem_Mountpoints "Installation guide")" stando attento ad assegnare le giuste partizioni.
-    *   Durante l' [installazione del boot loader](/index.php/Installation_guide#Install_Bootloader "Installation guide") modifica il file menu.lst e aggiungi **reboot=pci** alla fine delle linee **kernel** lines, per esempio: `kernel /vmlinuz26 root=/dev/sda5 ro reboot=pci` Questo ti consentirà di riavviare correttamente da Arch.
-    *   Durante l' [installazione del boot loader](/index.php/Installation_guide#Install_Bootloader "Installation guide") installa GRUB nella partizione con <tt>/boot</tt>.
+    *   Nel passaggio per la [preparazione degli hard drives](/index.php/Installation_guide#Prepare_Hard_Drive "Installation guide") esegui solo "[set filesystem mountpoints](/index.php/Installation_guide#Set_Filesystem_Mountpoints "Installation guide")" stando attento ad assegnare le giuste partizioni.
+    *   Durante l'[installazione del boot loader](/index.php/Installation_guide#Install_a_boot_loader "Installation guide") modifica il file menu.lst e aggiungi **reboot=pci** alla fine delle linee **kernel** lines, per esempio: `kernel /vmlinuz26 root=/dev/sda5 ro reboot=pci` Questo ti consentirà di riavviare correttamente da Arch.
+    *   Durante l'[installazione del boot loader](/index.php/Installation_guide#Install_a_boot_loader "Installation guide") installa GRUB nella partizione con <tt>/boot</tt>.
         **Attenzione:** Non installare GRUB in */dev/sda* !!! Facendolo rischi di avere un ambiente post-configurazione instabile!!.
 
-    *   Nella [configurazione del sistema](/index.php/Installation_guide#Configure_System "Installation guide"), modifica /etc/mkinitcpio.conf e aggiungi l'hook **usbinput** nella riga degli**HOOKS** line in qualsiasi posizione dopo l'hook **autodetect**. Questo caricherà i drivers della tastiera nel caso che ti serva prima del boot di Arch Linux.
+    *   Nella [configurazione del sistema](/index.php/Installation_guide#Configure_the_system "Installation guide"), modifica /etc/mkinitcpio.conf e aggiungi l'hook **usbinput** nella riga degli**HOOKS** line in qualsiasi posizione dopo l'hook **autodetect**. Questo caricherà i drivers della tastiera nel caso che ti serva prima del boot di Arch Linux.
 
 *   Quando hai completato l'installazione, riavvia il sistema.
 
@@ -400,7 +400,7 @@ Se non funziona, prova ad eseguire un aggiornamento del sistema:
 
 ### Sensori della Temperatura
 
-Per fare riconoscere i sensori ad Arch Linux, basta installare e configurare **lm_sensors**. vedi [Lm sensors](/index.php/Lm_sensors "Lm sensors").
+Per fare riconoscere i sensori ad Arch Linux, basta installare e configurare **lm_sensors**. vedi [lm_sensors](/index.php/Lm_sensors "Lm sensors").
 
 ### Profilo Colore
 
@@ -436,7 +436,7 @@ Ora puoi attivarlo eseguendo;
 
 ### Apple Remote
 
-Prima di tutto, installa a configura il software **lirc** , per informazioni vedi [Lirc](/index.php/Lirc "Lirc").
+Prima di tutto, installa a configura il software **lirc** , per informazioni vedi [LIRC](/index.php/LIRC "LIRC").
 
 Ora configura LIRC per utilizzare **/dev/usb/hiddev0** (o **/dev/hiddev0**), modificando **/etc/conf.d/lircd**.
 

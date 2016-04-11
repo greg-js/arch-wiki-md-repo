@@ -1,6 +1,6 @@
 **Bienvenido a [ArchWiki](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)"): la fuente de documentación de Arch Linux en la web.**
 
-Visite la [tabla de contenidos](/index.php/Table_of_Contents_(Espa%C3%B1ol) "Table of Contents (Español)") para conocer un listado de las categorías de los artículos.
+Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Table of contents (Español)") para conocer un listado de las categorías de los artículos.
 
 ## La distribución
 
@@ -12,23 +12,23 @@ Visite la [tabla de contenidos](/index.php/Table_of_Contents_(Espa%C3%B1ol) "Tab
 
 	Un listado de las preguntas más comunes y frecuentes.
 
-	[Arch comparada con otras distribuciones](/index.php/Arch_Compared_to_Other_Distributions_(Espa%C3%B1ol) "Arch Compared to Other Distributions (Español)")
+	[Arch comparada con otras distribuciones](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)")
 
 	Resume algunas de las similitudes y diferencias entre Arch y otras distribuciones.
 
-	[Noticias de prensa sobre Arch Linux](/index.php/Arch_Linux_Press_Coverage "Arch Linux Press Coverage")
+	[Noticias de prensa sobre Arch Linux](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
 
 	Lo que dicen de nosotros.
 
-	[Guía para principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)")
+	[Guía para principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)")
 
 	Una guía detallada cuyo seguimiento le permitirá completar el proceso de instalación y configuración de Arch Linux.
 
-	[Guía de instalación](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)")
+	[Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)")
 
 	Una guía de instalación concisa dirigida a usuarios con cierta experiencia en Arch.
 
-	[Recomendaciones generales](/index.php/General_Recommendations_(Espa%C3%B1ol) "General Recommendations (Español)")
+	[Recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
 
 	Un índice con anotaciones a otros articulos conocidos y a información de referencia común.
 
@@ -38,7 +38,7 @@ Visite la [tabla de contenidos](/index.php/Table_of_Contents_(Espa%C3%B1ol) "Tab
 
 ## Nuestra comunidad
 
-	[Colaborar con la comunidad](/index.php/Getting_Involved_(Espa%C3%B1ol) "Getting Involved (Español)")
+	[Colaborar con la comunidad](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)")
 
 	Describe diversas formas mediante las cuales los usuarios pueden colaborar con la comunidad de Arch.
 
@@ -54,11 +54,11 @@ Visite la [tabla de contenidos](/index.php/Table_of_Contents_(Espa%C3%B1ol) "Tab
 
 	Recolección de enlaces a las comunidades de Arch Linux del resto del mundo.
 
-	[Etiqueta del fórum](/index.php/Forum_Etiquette_(Espa%C3%B1ol) "Forum Etiquette (Español)")
+	[Etiqueta del fórum](/index.php/Forum_etiquette_(Espa%C3%B1ol) "Forum etiquette (Español)")
 
 	Conozca las normas de conducta para los miembros del foro de Arch.
 
-	[Canales IRC](/index.php/IRC_Channels_(Espa%C3%B1ol) "IRC Channels (Español)")
+	[Canales IRC](/index.php/IRC_channels_(Espa%C3%B1ol) "IRC channels (Español)")
 
 	Para reunirse con sus compañeros *«Archers»* y mantener una buena charla, visite estos canales.
 

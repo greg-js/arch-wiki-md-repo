@@ -207,7 +207,7 @@ Adesso i volumi logici dovrebbero essere situati in `/dev/mapper/` e `/dev/NomeG
 
 ```
 
-Adesso sarà possibile creare i filesystem sui volumi logici ed effettuarne il mount come per le normali partizioni (se si sta installando Arch Linux, fare riferimento al paragrafo [montare le partizioni](/index.php/Beginners%27_Guide_(Italiano)#Montare_le_partizioni "Beginners' Guide (Italiano)") per maggiori dettagli):
+Adesso sarà possibile creare i filesystem sui volumi logici ed effettuarne il mount come per le normali partizioni (se si sta installando Arch Linux, fare riferimento al paragrafo [montare le partizioni](/index.php/Beginners%27_guide_(Italiano)#Montare_le_partizioni "Beginners' guide (Italiano)") per maggiori dettagli):
 
 ```
 # mkfs.ext3 /dev/mapper/VolGroup00-lvolhome

@@ -423,7 +423,7 @@ FS0:\EFI\arch\refind\> edit refind.conf
 
 ## UEFI Linux 硬件兼容性
 
-主要文章见 [HCL/Firmwares/UEFI](/index.php?title=HCL/Firmwares/UEFI&action=edit&redlink=1 "HCL/Firmwares/UEFI (page does not exist)").
+主要文章见 [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware").
 
 ## UEFI 可启动介质
 

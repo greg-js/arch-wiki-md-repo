@@ -118,7 +118,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 ##### 登入管理員
 
-參閱主文：[顯示管理員#顯示管理員清單](/index.php/Display_Manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E9.A1.AF.E7.A4.BA.E7.AE.A1.E7.90.86.E5.93.A1.E6.B8.85.E5.96.AE "Display Manager (正體中文)").
+參閱主文：[顯示管理員#顯示管理員清單](/index.php/Display_manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E9.A1.AF.E7.A4.BA.E7.AE.A1.E7.90.86.E5.93.A1.E6.B8.85.E5.96.AE "Display manager (正體中文)").
 
 ##### 任務欄 / 面板 / Dock
 

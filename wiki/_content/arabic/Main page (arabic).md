@@ -1,6 +1,6 @@
 **مرحبا بك في [موسوعة أرتش](/index.php/ArchWiki:About "ArchWiki:About") : مصدرك لوثائق أرتش لينكس على شبكة الانترنت.**
 
-قم بزيارة **[قائمة المحتويات](/index.php/Table_of_Contents_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Table of Contents (العربية)")** لقائمة أقسام موسوعة أرتش.
+قم بزيارة **[قائمة المحتويات](/index.php/Table_of_contents_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Table of contents (العربية)")** لقائمة أقسام موسوعة أرتش.
 
 ## بداية العمل
 
@@ -14,19 +14,19 @@
 
 	وصف مبادئ وفلسفة توزيعة آرتش لينكس.
 
-	[مقارنة بين أرتش لينكس وتوزيعات لينكس اﻷخرى](/index.php/Arch_Compared_to_Other_Distributions "Arch Compared to Other Distributions").
+	[مقارنة بين أرتش لينكس وتوزيعات لينكس اﻷخرى](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions").
 
 ملخص ﻷوجه الشبه والاختلاف بين آرتش لينكس والتوزيعات اﻷخرى
 
-	[الحصول على المساعدة](/index.php/Getting_Involved_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Getting Involved (العربية)")
+	[الحصول على المساعدة](/index.php/Getting_involved_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Getting involved (العربية)")
 
 يصف الطرق المتعددة التي ينتهجها مستخدمو آرتش (المستخدمين الجدد وذوي الخبرة على حد سواء للمساهمة في مجتمع آرتش.
 
-	[دليل المبتدئين](/index.php/Beginners%27_Guide_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Beginners' Guide (العربية)")
+	[دليل المبتدئين](/index.php/Beginners%27_guide_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Beginners' guide (العربية)")
 
 	دليل ياخذك عبر كل العمليات لاعداد وتثبيت ارك لينكس ومكتوب للمستخدمين المبتدئين وقليلي الخبرة.
 
-	[دليل التثبيت](/index.php/Installation_Guide_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Installation Guide (العربية)")
+	[دليل التثبيت](/index.php/Installation_guide_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Installation guide (العربية)")
 
 	دليل تثبيت موجز، مُوجَّه إلى مستخدمي آرتش المتمرّسين
 

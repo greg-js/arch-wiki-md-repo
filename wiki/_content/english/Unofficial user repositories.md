@@ -96,26 +96,25 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.7 coderkun-aur-audio](#coderkun-aur-audio)
         *   [5.1.8 eatabrick](#eatabrick)
         *   [5.1.9 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.10 gustawho](#gustawho)
-        *   [5.1.11 holo](#holo)
-        *   [5.1.12 Linux-pf](#Linux-pf)
-        *   [5.1.13 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.14 kc9ydn](#kc9ydn)
-        *   [5.1.15 linux-lts-ck](#linux-lts-ck)
-        *   [5.1.16 linux-lts31x](#linux-lts31x)
-        *   [5.1.17 linux-lts31x-ck](#linux-lts31x-ck)
-        *   [5.1.18 linux-ck-pax](#linux-ck-pax)
-        *   [5.1.19 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.20 linux-tresor](#linux-tresor)
-        *   [5.1.21 markzz](#markzz)
-        *   [5.1.22 openrc](#openrc)
-        *   [5.1.23 qt-debug](#qt-debug)
-        *   [5.1.24 quarry](#quarry)
-        *   [5.1.25 rstudio](#rstudio)
-        *   [5.1.26 siosm-aur](#siosm-aur)
-        *   [5.1.27 siosm-selinux](#siosm-selinux)
-        *   [5.1.28 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.29 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.10 holo](#holo)
+        *   [5.1.11 Linux-pf](#Linux-pf)
+        *   [5.1.12 infinality-bundle-multilib](#infinality-bundle-multilib)
+        *   [5.1.13 kc9ydn](#kc9ydn)
+        *   [5.1.14 linux-lts-ck](#linux-lts-ck)
+        *   [5.1.15 linux-lts31x](#linux-lts31x)
+        *   [5.1.16 linux-lts31x-ck](#linux-lts31x-ck)
+        *   [5.1.17 linux-ck-pax](#linux-ck-pax)
+        *   [5.1.18 linux-kalterfx](#linux-kalterfx)
+        *   [5.1.19 linux-tresor](#linux-tresor)
+        *   [5.1.20 markzz](#markzz)
+        *   [5.1.21 openrc](#openrc)
+        *   [5.1.22 qt-debug](#qt-debug)
+        *   [5.1.23 quarry](#quarry)
+        *   [5.1.24 rstudio](#rstudio)
+        *   [5.1.25 siosm-aur](#siosm-aur)
+        *   [5.1.26 siosm-selinux](#siosm-selinux)
+        *   [5.1.27 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.28 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -1049,29 +1048,6 @@ Server = http://mirror.fluxent.de/archlinux-custom/$repo/os/$arch
 
 ```
 
-#### gustawho
-
-*   **Maintainer:** [Gustavo Castro](https://twitter.com/gustawho) <gustawho@gmail.com>
-*   **Description:** Scientific tools (mostly physics/math) and AUR packages that would take long to build.
-*   **Package list:** [http://gustawho.x10.mx/repo/x86_64](http://gustawho.x10.mx/repo/x86_64)
-*   **Upstream page:** [http://gustawho.x10.mx](http://gustawho.x10.mx)
-*   **Key-ID:** 2C575D76
-
-```
-[gustawho]
-Server = http://gustawho.x10.mx/repo/x86_64
-
-```
-
-*   **Note:** If you need firefox-kde-opensuse for i686 and/or the unsigned x86_64 package, try this repo instead:
-
-```
-[home_gustawho_Arch_Extra]
-SigLevel = Never
-Server = http://download.opensuse.org/repositories/home:/gustawho/Arch_Extra/$arch
-
-```
-
 #### holo
 
 *   **Maintainer:** Stefan Majewsky <holo-pacman@posteo.de> (please prefer to report issues at [Github](https://github.com/majewsky/holo-pacman-repo/issues))
@@ -1438,7 +1414,7 @@ Server = http://download.opensuse.org/repositories/home:/mazdlc:/kde-frameworks-
 #### mikroskeem
 
 *   **Maintainer:** mikroskeem <mikroskeem@mikroskeem.eu>
-*   **Description:** Openarena, i3 wm, and neovim-related packages (do *pacman -Ql mikroskeem*)
+*   **Description:** Openarena, i3 wm, and neovim-related packages (do *pacman -Sl mikroskeem*)
 
 ```
 [mikroskeem]

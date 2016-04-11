@@ -32,7 +32,11 @@ Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i l
 
 #### Supportati ufficialmente
 
-*   **[Cinnamon](/index.php/Cinnamon "Cinnamon")** — Cinnamon è un fork di Gnome 3\. Cinnamon si sforza di fornire un esperienza utente tradizionale , simile a Gnome 2.
+*   **[Budgie](/index.php/Budgie_Desktop_(Italiano) "Budgie Desktop (Italiano)")** — Budgie è un'interfaccia utente disegnata per l'utente moderno, è basato sulla semplicità ed eleganza.
+
+	[https://solus-project.com/budgie/](https://solus-project.com/budgie/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
+
+*   **[Cinnamon](/index.php/Cinnamon "Cinnamon")** — Cinnamon è un fork di Gnome 3\. Cinnamon si sforza di fornire un esperienza utente tradizionale, simile a Gnome 2.
 
 	[http://cinnamon.linuxmint.com/](http://cinnamon.linuxmint.com/) || [cinnamon](https://www.archlinux.org/packages/?name=cinnamon)
 

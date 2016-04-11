@@ -79,8 +79,8 @@ If the user has modified one of the files specified in `backup` then that file w
 Pacman does not deal with *.pacnew* files automatically: you will need to maintain these yourself. A few tools are presented in the next section. To do this manually, first you will need to locate them. When upgrading or removing a large number of packages, updated `*.pac*` files may be missed. To discover whether any `*.pac*` files have been installed, use one of the following:
 
 *   To just search where most global configurations are stored: `$ find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` or the entire disk: `$ find / -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` 
-*   Use [locate](/index.php/Locate "Locate") if you have installed it. First re-index the database: `# updatedb` Then: `$ locate -e --regex "\.pac(new|save)$"` 
-*   Use pacman's log to find them: `$ egrep "pac(new|save)" /var/log/pacman.log` Note that the log does not keep track of which files are currently in the filesystem nor of which files have already been removed
+*   Use [locate](/index.php/Locate "Locate") if you have installed it. First re-index the database: `# updatedb` Then: `$ locate --existing --regex "\.pac(new|save)$"` 
+*   Use pacman's log to find them: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log` Note that the log does not keep track of which files are currently in the filesystem nor of which files have already been removed; the above command will list all `*.pac*` files that have ever existed on your system. Use the `tail` command to get the 10 most recent `*.pac*` files: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log | tail` 
 
 ## Managing .pacnew files
 

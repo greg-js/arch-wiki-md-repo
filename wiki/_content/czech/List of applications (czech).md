@@ -232,7 +232,7 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — IM klient z prostředí KDE používající [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Míněn jako náhrada za Kopete.
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — IM klient z prostředí KDE používající [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Míněn jako náhrada za Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -609,7 +609,7 @@ MPlayer je multimediální přehrávač pro Linux. Abyste ho nainstalovali, jedn
 
 Také má Mozilla plugin pro videa a přenosy vložené ve webových stránkách. Abyste ho nainstalovali, jednoduše zadejte následující příkaz:
 
-**Poznámka**: mplayer-plugin je považován za zastaralý, vizte prosím výše [Gecko Media Player](/index.php/List_of_Applications_(%C4%8Cesky)#Gecko_Media_Player "List of Applications (Česky)").
+**Poznámka**: mplayer-plugin je považován za zastaralý, vizte prosím výše [Gecko Media Player](#Gecko_Media_Player).
 
 ```
 # pacman -S mplayer-plugin
@@ -913,7 +913,7 @@ USB klíčenky a pevné disky jsou přímo podporovány ovladačem zařízení U
 *   [Fluxbox](/index.php/Fluxbox_(%C4%8Cesky) "Fluxbox (Česky)") — Odlehčený snadno konfigurovatelný okenní správce s podporou panelů a uživatelským rozhraním se záložkami. [http://www.fluxbox.org](http://www.fluxbox.org)
 *   [JWM](/index.php/JWM "JWM") (anglicky) — Jednoduchý a stabilní okenní správce s podporou panelů a tlačítek. Má konfiguraci založenou na XML. [http://joewing.net/programs/jwm/](http://joewing.net/programs/jwm/)
 *   [Openbox](/index.php/Openbox_(%C4%8Cesky) "Openbox (Česky)") — Odlehčený okenní správce s mnohačetnými možnostmi úprav a vyzrálým kódem. Má konfiguraci založenou na XML. [http://icculus.org/openbox](http://icculus.org/openbox)
-*   [pekwm](/index.php/Pekwm "Pekwm") (anglicky) — Odlehčený okenní správce. Umožňuje změnu témat. Konfiguruje se pomocí intuitivního jazyka podobného Perlu. [http://pekwm.org/projects/pekwm](http://pekwm.org/projects/pekwm)
+*   [PekWM](/index.php/PekWM "PekWM") (anglicky) — Odlehčený okenní správce. Umožňuje změnu témat. Konfiguruje se pomocí intuitivního jazyka podobného Perlu. [http://pekwm.org/projects/pekwm](http://pekwm.org/projects/pekwm)
 *   [Sawfish](/index.php/Sawfish "Sawfish") (anglicky) — Středně velký okenní správce, dříve byl tím výchozím v GNOME (následně nahrazen za Metacity). [http://sawfish.wikia.com](http://sawfish.wikia.com)
 *   [Twm](/index.php/Twm "Twm") (anglicky) — Klasický upravitelný a velmi odlehčený okenní správce; možná ten vůbec první navržený pro X11.
 *   [Xfwm4](/index.php/Xfwm4 "Xfwm4") (anglicky) — Středně velký kompozitní okenní správce, je výchozím okenním správcem v [Xfce](/index.php/Xfce_(%C4%8Cesky) "Xfce (Česky)"). [http://www.xfce.org/documentation/4.2/manuals/xfwm4](http://www.xfce.org/documentation/4.2/manuals/xfwm4)

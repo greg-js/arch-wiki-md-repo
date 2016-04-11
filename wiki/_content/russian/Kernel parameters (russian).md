@@ -146,7 +146,7 @@ Parameters always come in `parameter` or `parameter=value`. All of these paramet
 | systemd.unit= |
 | systemd.unit=multi-user | Boot to a specified runlevel. |
 | systemd.unit=rescue | Загрузка в однопользовательском режиме (root). |
-| nomodeset | Disable [Kernel Mode Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting"). |
+| nomodeset | Disable [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). |
 | zswap.enabled | Enable [Zswap](/index.php/Zswap "Zswap"). |
 
  [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") uses `ro` as default value when neither `rw` or `ro` is set by the [boot loader](/index.php/Boot_loaders "Boot loaders"). Boot loaders may set the value to use, for example GRUB uses `rw` by default (see [FS#36275](https://bugs.archlinux.org/task/36275) as a reference).
