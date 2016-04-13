@@ -2,7 +2,7 @@
 
 rEFInd - это менеджер загрузки для [UEFI](/index.php/UEFI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "UEFI (Русский)"). Является форком более неподдерживаемого [rEFIt](http://refit.sourceforge.net/) и исправляет многие проблемы, связанные с UEFI загрузкой на не-Mac системах. Он является платформонезависимым и облегчает загрузку нескольких ОС.
 
-**Примечание:** В этой статье под `$esp` будем подразумевать точку монтирования [системного раздела EFI](/index.php/UEFI#EFI_System_Partition "UEFI") также называемого ESP.
+**Примечание:** В этой статье под `$esp` будем подразумевать точку монтирования [системного раздела EFI](/index.php/EFI_System_Partition "EFI System Partition") также называемого ESP.
 
 ## Contents
 
@@ -39,7 +39,7 @@ rEFInd - это менеджер загрузки для [UEFI](/index.php/UEFI_
 
 ```
 
-Он попытается найти и смонтировать ваш [ESP раздел](/index.php/UEFI#EFI_System_Partition "UEFI"), скопировать файлы rEFInd'а в `/EFI/refind/` на ESP и добавить rEFInd как загрузочную EFI запись по умолчанию с помощью [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
+Он попытается найти и смонтировать ваш [ESP раздел](/index.php/EFI_System_Partition "EFI System Partition"), скопировать файлы rEFInd'а в `/EFI/refind/` на ESP и добавить rEFInd как загрузочную EFI запись по умолчанию с помощью [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
 
 **Примечание:** По умолчанию `refind-install` устанавливает только драйвер для вашей корневой файловой системы, если вы хотите установить дополнительные драйвера, перейдите к разделу [#Драйвера файловых систем](#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC).
 

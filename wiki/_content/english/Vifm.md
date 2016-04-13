@@ -90,6 +90,15 @@ highlight Border cterm=none ctermfg=black ctermbg=white
 
 ```
 
+You can also highlight different filetypes using regular expressions:
+
+```
+highlight /^.*\.(mp3|ogg|oga|flac|m4a)$/ ctermfg=magenta
+highlight /^.*\.(jpg|jpeg|png|gif|tiff|webp|bmp|svg|svgz)$/ ctermfg=yellow
+highlight /^.*\.(zip|gz|bz2|xz|tar|tgz|tbz2|7z|rar|iso|rpm|deb)$/ ctermfg=red
+
+```
+
 ### Key mapping
 
 As of 0.6.2 you can customize key bindings in Vifm. These can be set from the command mode using the map command, like so:

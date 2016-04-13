@@ -108,7 +108,7 @@ The `/boot` directory contains the kernel and ramdisk images as well as the boot
 
 A separate `/boot` partition is needed if installing a software RAID0 (stripe) system.
 
-**Note:** It is recommended to mount [ESP](/index.php/UEFI#EFI_System_Partition "UEFI") to `/boot` if booting using UEFI boot loaders that do not contain drivers for other filesystems. Such loaders are for example [EFISTUB](/index.php/EFISTUB "EFISTUB") and [systemd-boot](/index.php/Systemd-boot "Systemd-boot").
+**Note:** It is recommended to mount [ESP](/index.php/ESP "ESP") to `/boot` if booting using UEFI boot loaders that do not contain drivers for other filesystems. Such loaders are for example [EFISTUB](/index.php/EFISTUB "EFISTUB") and [systemd-boot](/index.php/Systemd-boot "Systemd-boot").
 
 #### /home
 

@@ -149,7 +149,7 @@ Changing screen backlight is possible with redshift hooks and [xorg-xrandr](http
 ```
 #!/bin/sh
 
-# Set brihtness via xbrightness when redshift status changes
+# Set brightness via xbrightness when redshift status changes
 
 # Set brightness values for each status.
 # Range from 1 to 100 is valid
@@ -157,7 +157,7 @@ brightness_day="100"
 brightness_transition="50"
 brightness_night="10"
 # Set fade time for changes to one minute
-fade_time=6000
+fade_time=60000
 
 case $1 in
 	period-changed)

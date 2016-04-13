@@ -248,7 +248,7 @@ You can then chainload GRUB's `core.img` from GRUB Legacy or syslinux as a Linux
 
 ### Check if you have GPT and an ESP
 
-An EFI System Partition (ESP) is needed on every disc you want to boot using EFI. GPT is not strictly necessary, but it is highly recommended and is the only method currently supported in this article. If you are installing Arch Linux on an EFI-capable computer with an already-working operating system, like Windows 8 for example, it is very likely that you already have an ESP. To check for GPT and for an ESP, use `parted` as root to print the partition table of the disk you want to boot from. (We are calling it `/dev/sda`.)
+An [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is needed on every disc you want to boot using EFI. GPT is not strictly necessary, but it is highly recommended and is the only method currently supported in this article. If you are installing Arch Linux on an EFI-capable computer with an already-working operating system, like Windows 8 for example, it is very likely that you already have an ESP. To check for GPT and for an ESP, use `parted` as root to print the partition table of the disk you want to boot from. (We are calling it `/dev/sda`.)
 
 ```
 # parted /dev/sda print
@@ -259,7 +259,7 @@ For GPT, you are looking for "Partition Table: GPT". For EFI, you are looking fo
 
 ### Create an ESP
 
-If you do not have an ESP, you will need to create one. See [UEFI#EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI")
+If you do not have an ESP, you will need to create one. See [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")
 
 ### Installation
 
@@ -685,7 +685,7 @@ boot
 
 ### Suspend to disk
 
-By default, GRUB will not add a [resume](/index.php/Power_management/Suspend_and_hibernate#Required_kernel_parameters "Power management/Suspend and hibernate") parameter to the kernel command line. If you want GRUB to add it to every linux kernel entry in the `/boot/grub/grub.cfg` file when running *grub-mkconfig*, you can edit `/etc/grub.d/10_linux` file and replace the following line (around line 140 as of 2016/04/10):
+By default, GRUB will not add a [resume](/index.php/Power_management/Suspend_and_hibernate#Required_kernel_parameters "Power management/Suspend and hibernate") parameter to the kernel command line. If you do not want to use [#Additional arguments](#Additional_arguments) and want GRUB to automatically add it to every linux kernel entry in the `/boot/grub/grub.cfg` file when running *grub-mkconfig*, you can edit `/etc/grub.d/10_linux` file and replace the following line (around line 140 as of 2016/04/10):
 
 ```
 linux  ${rel_dirname}/${basename} root=${linux_root_device_thisversion} rw ${args}
@@ -699,7 +699,7 @@ linux   ${rel_dirname}/${basename} root=${linux_root_device_thisversion} rw ${ar
 
 ```
 
-his will add the *last* found swap partition to all found linux entries. If you only have one swap partition, then you do not have to worry since it will add the only available swap partition.
+This will add the *last* found swap partition to all found linux entries. If you only have one swap partition, then you do not have to worry since it will add the only available swap partition.
 
 Do not forget to [#Generate the main configuration file](#Generate_the_main_configuration_file). Also, if the `initrd` has not been updated, follow the instructions as told in [Power management/Suspend and hibernate#Configure the initramfs](/index.php/Power_management/Suspend_and_hibernate#Configure_the_initramfs "Power management/Suspend and hibernate").
 

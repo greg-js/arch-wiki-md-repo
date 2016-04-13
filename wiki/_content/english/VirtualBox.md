@@ -205,7 +205,7 @@ Boot the Arch installation media through one of the virtual machine's virtual dr
 
 If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings of the virtual machine, choose *System* item from the panel on the left and *Motherboard* tab from the right panel, and check the checkbox *Enable EFI (special OSes only)*. After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
 
-Once the system and the boot loader are installed, VirtualBox will first attempt to run `/EFI/BOOT/BOOTX64.EFI` from the ESP. If that first option fails, VirtualBox will then try the EFI shell script `startup.nsh` from the root of the ESP. This means that in order to boot the system you have the following options:
+Once the system and the boot loader are installed, VirtualBox will first attempt to run `/EFI/BOOT/BOOTX64.EFI` from the [ESP](/index.php/ESP "ESP"). If that first option fails, VirtualBox will then try the EFI shell script `startup.nsh` from the root of the ESP. This means that in order to boot the system you have the following options:
 
 *   [Launch the bootloader manually](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") from the EFI shell every time;
 *   Move the bootloader to the default `/EFI/BOOT/BOOTX64.EFI` path;
@@ -1314,12 +1314,12 @@ If you have a USB modem which is being used by the guest OS, killing the guest O
 
 This error message often appears when running an .exe file which requires administrator priviliges from a shared folder in windows guests. See [the bug report](https://www.virtualbox.org/ticket/5732) for details.
 
-There are several workarounds:
+There are two workarounds:
 
 1.  Disable UAC from Control Panel -> Action Center -> "Change User Account Control settings" from left side pane -> set slider to "Never notify" -> OK and reboot
 2.  Copy the file from the shared folder to the guest and run from there
-3.  Control Panel -> Network and Internet -> Internet Options -> Security -> Trusted Sites -> Sites -> Add "VBOXSVR" as a website
-4.  Start -> type "gpedit.msc" and press Enter -> Computer Configuration -> Administrative Templates -> Windows Components -> Internet Explorer -> Internet Control Panel -> Security Page -> Size to Zone Assignment List -> Add "VBOXSVR" to "2" and reboot
+
+Other threads on the internet suggest to add VBOXSVR to the list of trusted sites, but this doesn't work with Windows 7 or newer.
 
 ### No 64-bit OS client options
 

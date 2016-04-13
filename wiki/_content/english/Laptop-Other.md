@@ -3,10 +3,10 @@
 
 ## Model List
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Clevo M350 | Noodle | Yes | AC'97 with [ALSA](/index.php/ALSA "ALSA") | Yes | N/A | N/A | Suspend-to-RAM: Yes
 Suspend-to-disk: No | Yes, with slmodem | IEEE-1394 not tested | Front panel keys does not work |
 | Clevo W150HRM | 2011.08.19 | Intel 950GMA and Nvidia Optimus (Bumblebee works) | Intel HDA (OK) | Yes | Yes | Not tested | -- | -- | -- | -- |
@@ -83,3 +83,5 @@ BIOS says touchscreen is enabled but unsure of what drivers would work.
 * * *
 
 OSD and some Fn buttons work - brightness, volume control, battery check. | Pentium II, 300MHz, 320MB RAM, 30GB drive, DVD-ROM, USB 1.0 (untested) |
+| Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
+| Hardware support |

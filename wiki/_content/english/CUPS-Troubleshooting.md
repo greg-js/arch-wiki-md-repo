@@ -14,19 +14,22 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [3.1 CUPS identifies printer but cannot connect to it](#CUPS_identifies_printer_but_cannot_connect_to_it)
 *   [4 USB printers](#USB_printers)
 *   [5 HP issues](#HP_issues)
-    *   [5.1 HPLIP printer sends "/usr/lib/cups/backend/hp failed" error](#HPLIP_printer_sends_.22.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.22_error)
-    *   [5.2 HPLIP printer claims job is complete but printer does nothing](#HPLIP_printer_claims_job_is_complete_but_printer_does_nothing)
-    *   [5.3 hp-setup asks to specify the PPD file for the discovered printer](#hp-setup_asks_to_specify_the_PPD_file_for_the_discovered_printer)
-    *   [5.4 I have installed Qt, but hp-setup reports "Qt/PyQt 4 initialization failed"](#I_have_installed_Qt.2C_but_hp-setup_reports_.22Qt.2FPyQt_4_initialization_failed.22)
-    *   [5.5 hp-setup finds the printer automatically but reports "Unable to communicate with device" when printing test page immediately afterwards](#hp-setup_finds_the_printer_automatically_but_reports_.22Unable_to_communicate_with_device.22_when_printing_test_page_immediately_afterwards)
-    *   [5.6 hp-toolbox sends an error, "Unable to communicate with device"](#hp-toolbox_sends_an_error.2C_.22Unable_to_communicate_with_device.22)
-    *   [5.7 CUPS returns '"foomatic-rip" not available/stopped with status 3' with a HP printer](#CUPS_returns_.27.22foomatic-rip.22_not_available.2Fstopped_with_status_3.27_with_a_HP_printer)
-    *   [5.8 HPLIP 3.13: Plugin is installed, but HP Device Manager complains it is not](#HPLIP_3.13:_Plugin_is_installed.2C_but_HP_Device_Manager_complains_it_is_not)
-    *   [5.9 Printer does not print with an "Filter failed" message on CUPS web interface (HP printer)](#Printer_does_not_print_with_an_.22Filter_failed.22_message_on_CUPS_web_interface_.28HP_printer.29)
-        *   [5.9.1 Bad permissions](#Bad_permissions)
-        *   [5.9.2 Avahi not enabled](#Avahi_not_enabled)
-        *   [5.9.3 Out-of-date plugin](#Out-of-date_plugin)
-    *   [5.10 CUPS prints only an empty and an error-message page on HP LaserJet](#CUPS_prints_only_an_empty_and_an_error-message_page_on_HP_LaserJet)
+    *   [5.1 CUPS: "/usr/lib/cups/backend/hp failed"](#CUPS:_.22.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.22)
+    *   [5.2 CUPS: job is shown as complete but the printer does nothing](#CUPS:_job_is_shown_as_complete_but_the_printer_does_nothing)
+    *   [5.3 CUPS: '"foomatic-rip" not available/stopped with status 3'](#CUPS:_.27.22foomatic-rip.22_not_available.2Fstopped_with_status_3.27)
+    *   [5.4 CUPS: "Filter failed"](#CUPS:_.22Filter_failed.22)
+        *   [5.4.1 Bad permissions](#Bad_permissions)
+        *   [5.4.2 Avahi not enabled](#Avahi_not_enabled)
+        *   [5.4.3 Out-of-date plugin](#Out-of-date_plugin)
+    *   [5.5 CUPS: prints only an empty and an error-message page on HP LaserJet](#CUPS:_prints_only_an_empty_and_an_error-message_page_on_HP_LaserJet)
+    *   [5.6 HPLIP 3.13: Plugin is installed, but HP Device Manager complains it is not](#HPLIP_3.13:_Plugin_is_installed.2C_but_HP_Device_Manager_complains_it_is_not)
+    *   [5.7 hp-toolbox: "Unable to communicate with device"](#hp-toolbox:_.22Unable_to_communicate_with_device.22)
+        *   [5.7.1 Permission problem](#Permission_problem)
+        *   [5.7.2 Virtual CDROM printers](#Virtual_CDROM_printers)
+        *   [5.7.3 Networked printers](#Networked_printers)
+    *   [5.8 hp-setup asks to specify the PPD file for the discovered printer](#hp-setup_asks_to_specify_the_PPD_file_for_the_discovered_printer)
+    *   [5.9 hp-setup: "Qt/PyQt 4 initialization failed"](#hp-setup:_.22Qt.2FPyQt_4_initialization_failed.22)
+    *   [5.10 hp-setup: finds the printer automatically but reports "Unable to communicate with device" when printing test page immediately afterwards](#hp-setup:_finds_the_printer_automatically_but_reports_.22Unable_to_communicate_with_device.22_when_printing_test_page_immediately_afterwards)
 *   [6 Other](#Other)
     *   [6.1 Printer "Paused" or "Stopped" with Status "Rendering completed"](#Printer_.22Paused.22_or_.22Stopped.22_with_Status_.22Rendering_completed.22)
         *   [6.1.1 Explanation of the GID issue](#Explanation_of_the_GID_issue)
@@ -178,7 +181,7 @@ usb 3-2: configuration #1 chosen from 1 choice
 
 See also [CUPS/Printer-specific problems#HP](/index.php/CUPS/Printer-specific_problems#HP "CUPS/Printer-specific problems").
 
-### HPLIP printer sends "/usr/lib/cups/backend/hp failed" error
+### CUPS: "/usr/lib/cups/backend/hp failed"
 
 Make sure dbus is installed and running. If the error persists, try starting avahi-daemon.
 
@@ -186,7 +189,7 @@ Try adding the printer as a Network Printer using the http:// protocol.
 
 **Note:** There might need to set permissions issues right.
 
-### HPLIP printer claims job is complete but printer does nothing
+### CUPS: job is shown as complete but the printer does nothing
 
 This happens on HP printers when you select the (old) hpijs driver (e.g. the Deskjet D1600 series). Instead, use the hpcups driver when adding the printer.
 
@@ -197,35 +200,7 @@ hp-firmware -n
 
 ```
 
-### hp-setup asks to specify the PPD file for the discovered printer
-
-Install CUPS before running hp-setup.
-
-### I have installed Qt, but hp-setup reports "Qt/PyQt 4 initialization failed"
-
-"hp-check -t" will not give you useful information to find the required package. You have to install all the "Dependent Packages" prefixed with "python2" in [hplip](https://www.archlinux.org/packages/?name=hplip)
-
-### hp-setup finds the printer automatically but reports "Unable to communicate with device" when printing test page immediately afterwards
-
-This at least happens to hplip 3.13.5-2 for HP Officejet 6500A through local network connection. To solve the problem, specify the IP address of the HP printer for hp-setup to locate the printer.
-
-### hp-toolbox sends an error, "Unable to communicate with device"
-
-If running hp-toolbox as a regular user results in:
-
-```
-# hp-toolbox
-# error: Unable to communicate with device (code=12): hp:/usb/*printer id*
-
-```
-
-or, "`Unable to communicate with device"`", then it may be needed to [add the user to the lp and sys groups](/index.php/Groups#Group_management "Groups").
-
-This can also be caused by printers such as the P1102 that provide a virtual CD-ROM drive for MS Windows drivers. The lp dev appears and then disappears. In that case, try the **usb-modeswitch** and **usb-modeswitch-data** packages, that lets one switch off the "Smart Drive" (udev rules included in said packages).
-
-This can also occur with network attached printers if the [avahi-daemon](/index.php/Avahi "Avahi") is not running. Another possibility is the specification of the printer's IP address in *hp-setup* fails to locate the printer because the IP address of the the printer changed due to DHCP. If this is the case, consider adding a DHCP reservation for the printer in the DHCP server's configuration.
-
-### CUPS returns '"foomatic-rip" not available/stopped with status 3' with a HP printer
+### CUPS: '"foomatic-rip" not available/stopped with status 3'
 
 If receiving any of the following error messages in `/var/log/cups/error_log` while using a HP printer, with jobs appearing to be processed while they all end up not being completed with their status set to 'stopped':
 
@@ -243,11 +218,7 @@ PID *pid* (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 
 make sure [hplip](https://www.archlinux.org/packages/?name=hplip) has been [installed](/index.php/Installed "Installed").
 
-### HPLIP 3.13: Plugin is installed, but HP Device Manager complains it is not
-
-The issue might have to do with the file permission change that had been made to `/var/lib/hp/hplip.state`. To correct the issue, a simple `chmod 644 /var/lib/hp/hplip.state` and `chmod 755 /var/lib/hp` should be sufficient. For further information, please read this [link](https://bugs.launchpad.net/hplip/+bug/1131596).
-
-### Printer does not print with an "Filter failed" message on CUPS web interface (HP printer)
+### CUPS: "Filter failed"
 
 #### Bad permissions
 
@@ -276,7 +247,7 @@ Each system may vary, so consult [udev#List attributes of a device](/index.php/U
 
 This error can also indicate that the plugin is out of date (version is mismatched). If you have installed [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/), you will need to update the package.
 
-### CUPS prints only an empty and an error-message page on HP LaserJet
+### CUPS: prints only an empty and an error-message page on HP LaserJet
 
 There is a bug that causes CUPS to fail when printing images on HP LaserJet (in my case 3380). The bug has been reported and fixed by [Ubuntu](https://bugs.launchpad.net/ubuntu/+source/cups-filters/+bug/998087). The first page is empty, the second page contains the following error message:
 
@@ -298,6 +269,42 @@ In order to fix the issue, run the following command as root:
 # lpadmin -p *printer* -o pdftops-renderer-default=pdftops
 
 ```
+
+### HPLIP 3.13: Plugin is installed, but HP Device Manager complains it is not
+
+The issue might have to do with the file permission change that had been made to `/var/lib/hp/hplip.state`. To correct the issue, a simple `chmod 644 /var/lib/hp/hplip.state` and `chmod 755 /var/lib/hp` should be sufficient. For further information, please read this [link](https://bugs.launchpad.net/hplip/+bug/1131596).
+
+### hp-toolbox: "Unable to communicate with device"
+
+```
+# hp-toolbox
+# error: Unable to communicate with device (code=12): hp:/usb/*printer id*
+
+```
+
+#### Permission problem
+
+It may be needed to [add the user to the lp and sys groups](/index.php/Groups#Group_management "Groups").
+
+#### Virtual CDROM printers
+
+This can also be caused by printers such as the P1102 that provide a virtual CD-ROM drive for MS Windows drivers. The lp dev appears and then disappears. In that case, try the **usb-modeswitch** and **usb-modeswitch-data** packages, that lets one switch off the "Smart Drive" (udev rules included in said packages).
+
+#### Networked printers
+
+This can also occur with network attached printers if the [avahi-daemon](/index.php/Avahi "Avahi") is not running. Another possibility is the specification of the printer's IP address in *hp-setup* fails to locate the printer because the IP address of the the printer changed due to DHCP. If this is the case, consider adding a DHCP reservation for the printer in the DHCP server's configuration.
+
+### hp-setup asks to specify the PPD file for the discovered printer
+
+Install CUPS before running hp-setup.
+
+### hp-setup: "Qt/PyQt 4 initialization failed"
+
+You need to [install](/index.php/Install "Install") [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4), which is an optdepend of [hplip](https://www.archlinux.org/packages/?name=hplip). Alternatively, to run hp-setup with the command line interface, use the `-i` flag.
+
+### hp-setup: finds the printer automatically but reports "Unable to communicate with device" when printing test page immediately afterwards
+
+This at least happens to hplip 3.13.5-2 for HP Officejet 6500A through local network connection. To solve the problem, specify the IP address of the HP printer for hp-setup to locate the printer.
 
 ## Other
 

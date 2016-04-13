@@ -8,6 +8,7 @@ In order to boot Arch Linux, a Linux-capable [boot loader](/index.php/Boot_loade
 *   [2 System initialization](#System_initialization)
     *   [2.1 Under BIOS](#Under_BIOS)
     *   [2.2 Under UEFI](#Under_UEFI)
+    *   [2.3 Multibooting in UEFI](#Multibooting_in_UEFI)
 *   [3 Boot loader](#Boot_loader)
 *   [4 Kernel](#Kernel)
 *   [5 initramfs](#initramfs)
@@ -48,7 +49,23 @@ UEFI does not launch any boot code in the MBR whether it exists or not. Instead 
 
 ### Under UEFI
 
-See the main page: [Unified Extensible Firmware Interface#Boot Process under UEFI](/index.php/Unified_Extensible_Firmware_Interface#Boot_Process_under_UEFI "Unified Extensible Firmware Interface").
+1.  System switched on. The Power On Self Test (POST) is executed.
+2.  UEFI firmware is loaded. Firmware initializes the hardware required for booting.
+3.  Firmware reads the boot entries in the firmware's boot manager to determine which UEFI application to be launched and from where (i.e. from which disk and partition).
+4.  Firmware launches the UEFI application.
+    *   This could be the Arch kernel itself (since [EFISTUB](/index.php/EFISTUB "EFISTUB") is enabled by default).
+    *   It could be some other application such as a shell or a graphical boot manager.
+    *   Or the boot entry could simply be a disk. In this case the firmware looks for an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") on that disk and tries to run the fallback UEFI application `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` on 32-bit systems). This is how UEFI bootable thumb drives work.
+
+If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enabled, the boot process will verify authenticity of the EFI binary by signature.
+
+**Note:** On some (poorly-designed) UEFI systems the only way to boot is using a disk boot entry with the fallback UEFI application path.
+
+### Multibooting in UEFI
+
+Since each OS or vendor can maintain its own files within the EFI System Partition without affecting the other, multi-booting using UEFI is just a matter of launching a different UEFI application corresponding to the particular OS's bootloader. This removes the need for relying on chainloading mechanisms of one [boot loader](/index.php/Boot_loader "Boot loader") to load another to switch OSes.
+
+See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
 
 ## Boot loader
 

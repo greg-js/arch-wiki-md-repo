@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Mpv](/index.php/Mpv "Mpv") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-13，点击[这里](https://wiki.archlinux.org/index.php?title=Mpv&diff=0&oldid=429916)可以查看翻译后英文页面的改动。
+
 [mpv](http://mpv.io/) 是一个基于 [MPlayer](/index.php/MPlayer "MPlayer") 和 MPlayer2 的多媒体播放器。 它支持多种视频文件格式、音频和视频编解码器和字幕类型。 在[这里](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst)可以找到mpv播放器与上述播放器之间的区别的综合列表（可能不是完全统计）。
 
 ## Contents

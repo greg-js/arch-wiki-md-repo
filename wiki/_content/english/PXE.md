@@ -17,8 +17,9 @@ In this guide, PXE is used to boot the installation media with an appropriate op
 *   [4 Alternate Methods](#Alternate_Methods)
     *   [4.1 NFS](#NFS)
     *   [4.2 NBD](#NBD)
-    *   [4.3 DHCP interface rename bug](#DHCP_interface_rename_bug)
-    *   [4.4 Low memory systems](#Low_memory_systems)
+    *   [4.3 Existing PXE Server](#Existing_PXE_Server)
+    *   [4.4 DHCP interface rename bug](#DHCP_interface_rename_bug)
+    *   [4.5 Low memory systems](#Low_memory_systems)
 
 ## Preparation
 
@@ -177,6 +178,25 @@ Install [nbd](https://www.archlinux.org/packages/?name=nbd) and configure it:
 ```
 
 Start the `nbd` [systemd service](/index.php/Systemctl#Using_units "Systemctl").
+
+### Existing PXE Server
+
+If you have an existing PXE server with a syslinux system setup (e.g. a combination of BIND+DHCPd+TFTPd), you can add the following menu items to your pxelinux.cfg file in order to boot Arch via your preferred method:
+
+ `# vim /srv/tftp/arch.menu` 
+```
+LABEL 2
+        MENU LABEL Arch Linux x86_64
+        LINUX /path/to/extracted/Arch/ISO/arch/boot/x86_64/vmlinuz
+        INITRD /path/to/extracted/Arch/ISO/arch/boot/intel_ucode.img,/path/to/extracted/Arch/ISO/arch/boot/x86_64/archiso.img
+        APPEND archisobasedir=arch archiso_nfs_srv=${nfsserver}:/path/to/extracted/Arch/ISO/ ip=:::::eth0:dhcp
+        SYSAPPEND 3
+        TEXT HELP
+        Arch Linux 2016.03 x86_64
+        ENDTEXT
+```
+
+Replace x86_64 with i686 to boot the 32-bit variant. You can also replace archiso_nfs_srv with any of the supported methods listed above (HTTP, NBD). Adding the ip= instruction is necessary to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network.
 
 ### DHCP interface rename bug
 

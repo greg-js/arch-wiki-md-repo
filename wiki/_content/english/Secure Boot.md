@@ -54,7 +54,7 @@ Finally, create a new NVRAM entry to boot `PreLoader.efi`:
 
 ```
 
-Replace `X` with the drive letter and replace `Y` with the partition number of the EFI system partition.
+Replace `X` with the drive letter and replace `Y` with the partition number of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
 This entry should be added to the list as the first to boot; check with the `efibootmgr` command and adjust the bootorder if necessary.
 

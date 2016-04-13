@@ -3,10 +3,10 @@
 
 ## Model List
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | TravelMate 2413NLC | Gimmick 0.7.2 | Intel GMA 915 driver: *i810* | Intel 82801FB with internal microphone | OK | -- | -- | Suspend to RAM: Yes
 Disk: Yes
 Battery: Yes
@@ -68,4 +68,6 @@ CPU frequency scaling: untested | Untested | Hot keys: OK (except Bluetooth: unt
 Synaptic Touchpad: OK |
 | TravelMate TimelineX 8473T | archlinux-2016.02.01-dual | Intel HD 3000 | OK | Untested | OK | Untested | Untested | Untested | Hot keys: Display/No Backlight/Disable Trackpad work
 Sound, sleep, wireless, brightness not working out of box
-Synaptic Touchpad: OK | Live Media boots in Gummiboot and attempts to load EFI media, even though MOBO supports legacy boot ONLY. Delete the /EFI partition on the boot media to force Grub (this may cause other problems)} |
+Synaptic Touchpad: OK | Live Media boots in Gummiboot and attempts to load EFI media, even though MOBO supports legacy boot ONLY. Delete the /EFI partition on the boot media to force Grub (this may cause other problems) |
+| Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
+| Hardware support |

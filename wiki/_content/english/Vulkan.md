@@ -20,3 +20,18 @@ The other drivers are not packaged yet, so you will have to install them manuall
 To develop a Vulkan application, you will also need the [vulkan-headers](https://www.archlinux.org/packages/?name=vulkan-headers), and you will probably want the [vulkan-validation-layers](https://www.archlinux.org/packages/?name=vulkan-validation-layers).
 
 Once this is done, it would really be appreciated it you would share the specs of your GPU/driver combination to [vulkan.gpuinfo.org](http://vulkan.gpuinfo.org/) by running [vulkan-caps-viewer](https://aur.archlinux.org/packages/vulkan-caps-viewer/). Thank you!
+
+## Troubleshooting
+
+### Error - vulkan: No DRI3 support
+
+If you get the above message, make sure to create the following file with the given content and restart your X. It should not be necessary on Wayland.
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option      "DRI"    "3"
+EndSection
+```

@@ -76,7 +76,7 @@ Leave <section> blank if you have not added a section or if `/etc/wvdial.conf` i
 
 ### Using suid
 
-This is arguable the easiest setup but has major impact on system security since it means that *every user can run wvdial as root*. Please consider using one of the other solutions instead.
+**Warning:** This is arguable the easiest setup but has major impact on system security since it means that **every user can run `wvdial` as root**. Please consider using one of the other solutions instead.
 
 As normal users cannot use wvdial to dial a ppp connection by default, change permissions:
 

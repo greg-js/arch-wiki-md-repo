@@ -164,11 +164,11 @@ $ < /proc/$(pidof steam)/maps|sed '/\.local/!d;s/.*  //g'|sort|uniq
 
 The unofficial [alucryd-multilib](/index.php/Unofficial_user_repositories#alucryd-multilib "Unofficial user repositories") repository contains all libraries needed to run native steam on x86_64\. Please note that, for some reason, steam does not pick up sdl2 or libav* even if you have them installed. It will still use the ones it ships with.
 
-All you need to install is the meta-package `steam-libs`, it will pull all the libs for you. Please report if there is any missing library, the maintainer already had some lib32 packages installed so a library may have been overlooked.
+All you need to install is the meta-package [steam-libs](https://aur.archlinux.org/packages/steam-libs/), it will pull all the libs for you. Please report if there is any missing library, the maintainer already had some lib32 packages installed so a library may have been overlooked.
 
 **Satisfacing dependencies with pacman and AUR without the aur meta-package (For x86_64)**
 
-Steam with native runtimes needs from AUR this packages with his dependencies [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) [lib32-dbus-glib](https://aur.archlinux.org/packages/lib32-dbus-glib/) [lib32-libnm-glib](https://aur.archlinux.org/packages/lib32-libnm-glib/) [lib32-libudev.so.0](https://aur.archlinux.org/packages/lib32-libudev.so.0/)
+Steam with native runtimes needs from AUR this packages with his dependencies [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) [lib32-dbus-glib](https://aur.archlinux.org/packages/lib32-dbus-glib/) [lib32-libnm-glib](https://aur.archlinux.org/packages/lib32-libnm-glib/) [lib32-libudev0](https://ptpb.pw/Y9re)
 
 Apart, from pacman [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) [lib32-nss](https://www.archlinux.org/packages/?name=lib32-nss) [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2) and [lib32-gtk3](https://www.archlinux.org/packages/?name=lib32-gtk3) (enable the [multilib](/index.php/Multilib "Multilib") repository first)
 

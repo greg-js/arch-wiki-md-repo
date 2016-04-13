@@ -201,7 +201,7 @@ If this does not work you can also try:
 
 **Note:**
 
-*   `$esp` is the mountpoint of the ESP (EFI System Partition) in the below commands.
+*   `$esp` is the mountpoint of the [ESP](/index.php/ESP "ESP") (EFI System Partition) in the below commands.
 
 *   `efi64` denotes x86_64 UEFI systems, for IA32 (32-bit) EFI replace `efi64` with `efi32` in the below commands.
 

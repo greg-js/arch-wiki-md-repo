@@ -1,6 +1,6 @@
 rEFInd is a [UEFI](/index.php/UEFI "UEFI") boot manager. It is a fork of the no-longer-maintained [rEFIt](http://refit.sourceforge.net/) and fixes many issues with respect to non-Mac UEFI booting. It is designed to be platform-neutral and to simplify booting multiple OSes.
 
-**Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") aka ESP.
+**Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") aka ESP.
 
 ## Contents
 
@@ -45,7 +45,7 @@ The rEFInd package includes the `/usr/bin/refind-install` script to simplify the
 
 ```
 
-This will attempt to find and mount your [ESP](/index.php/UEFI#EFI_System_Partition "UEFI"), copy rEFInd's files to `/EFI/refind/` on the ESP, and use `efibootmgr` to make rEFInd the default EFI boot application.
+This will attempt to find and mount your [ESP](/index.php/ESP "ESP"), copy rEFInd's files to `/EFI/refind/` on the ESP, and use `efibootmgr` to make rEFInd the default EFI boot application.
 
 Alternatively you can install rEFInd to the default/fallback boot path `/EFI/BOOT/BOOT*.EFI`. This is helpful for bootable USB flash drives or on systems that have issues with the NVRAM changes made by efibootmgr:
 

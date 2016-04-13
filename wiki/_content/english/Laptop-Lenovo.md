@@ -42,18 +42,18 @@
 
 #### 300 series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | IBM ThinkPad 380ED | NA | NA | NA | NA | No | NA | NA | NA |
 
 #### Edge series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | [Lenovo ThinkPad Edge E330](/index.php/Lenovo_ThinkPad_Edge_E330 "Lenovo ThinkPad Edge E330") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad Edge E335](/index.php/Lenovo_ThinkPad_Edge_E335 "Lenovo ThinkPad Edge E335") | NA | Yes | Yes | Yes | Yes | NA | Yes | NA |
 | Lenovo ThinkPad Edge E420s | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA | SDcard (Yes), Webcam (Yes), Trackpoint (No) |
@@ -64,30 +64,30 @@ Install CD Version
 
 #### L series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo ThinkPad L420 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA |
 | Lenovo ThinkPad L430 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint* |
 | Lenovo ThinkPad L530 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint*, Fingerprint reader |
 
 #### R series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | IBM ThinkPad R50 | Yes | Yes | Yes | Yes | NA | Yes | Yes | Infrared* |
 | IBM ThinkPad R52 | Yes | Yes | Yes | Yes | NA | Yes | Yes | Infrared* |
 | Lenovo ThinkPad R60 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 
 #### T series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | [IBM ThinkPad T21](/index.php/IBM_ThinkPad_T21 "IBM ThinkPad T21") | Yes* | Yes | Yes | NA | NA | Yes* | NA | NA | See below |
 | [IBM ThinkPad T23](/index.php/IBM_ThinkPad_T23 "IBM ThinkPad T23") | Yes | Yes | Yes | NA | NA | Yes | NA | NA |
 | [IBM ThinkPad T42](/index.php/IBM_ThinkPad_T42 "IBM ThinkPad T42") | Yes | Yes | Yes | Yes | NA | Yes | NA | NA |
@@ -108,21 +108,23 @@ Install CD Version
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad T550](/index.php/Lenovo_ThinkPad_T550 "Lenovo ThinkPad T550") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | DisplayPort |
+| Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
+| Hardware support |
 
 #### W series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo ThinkPad W550s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Not tested), Webcam (Yes), Fingeprint Reader (Yes) |
 
 #### X series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | IBM ThinkPad X23 | Yes | Yes | Yes | NA | NA | Yes | NA | NA |
 | [IBM ThinkPad X60s](/index.php/IBM_ThinkPad_X60s "IBM ThinkPad X60s") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | Lenovo ThinkPad X61s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD slot |
@@ -133,10 +135,10 @@ Install CD Version
 
 #### P series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo ThinkPad P50 | Untested | Yes | Yes | Yes | Yes | Yes | Suspend/Hibernate not working | NA | SD card (Yes), Webcam (Yes), Fingeprint Reader (No), | Wifi requires Kernel 4.3.3+ |
 | Lenovo ThinkPad P70 | Untested | Yes | Yes | Yes | Yes | Yes | Suspend/Hibernate not working | NA | SD card (Yes), Webcam (Yes), Fingeprint Reader (No), | Wifi requires Kernel 4.3.3+ |
 
@@ -144,10 +146,10 @@ Install CD Version
 
 ### IdeaPad
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | [Lenovo IdeaPad Flex 10](/index.php/Lenovo_IdeaPad_Flex_10 "Lenovo IdeaPad Flex 10") | Yes | Yes* | Yes | NA | Yes | Yes | Yes | NA | Touchscreen* |
 | [Lenovo IdeaPad S10](/index.php/Lenovo_IdeaPad_S10 "Lenovo IdeaPad S10") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo IdeaPad S400 Touch](/index.php/Lenovo_IdeaPad_S400_Touch "Lenovo IdeaPad S400 Touch") | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA |
@@ -156,43 +158,43 @@ Install CD Version
 
 ### B series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo B50 | NA | Yes | Yes | Yes | Yes | Not tested | Not tested | Not tested |
 | Lenovo B50-70 | Yes | Yes* | Yes | Yes | Yes | Yes | Not tested | NA | See below* |
 
 ### K series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo K450e | NA | Yes | Yes | Yes | Yes | Not tested | Yes | Not tested |
 
 ### N series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo N200 (3000) | Yes | Yes* | Yes | Yes | Yes | Yes* | NA | NA | See below |
 
 ### S series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo S21e-20 | 2015.07.01 | Yes | Yes | NA | Yes* |  ? | Yes | NA | SD Card (Yes), USB 3.0 (Yes), HDMI Out (?), Touchpad (Yes*) |
 
 ### U Series
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo U31-70 | 2015.10.01 | Yes | Yes | Yes | Yes* | Yes | Yes | NA | SD Card (Yes), USB 3.0 (Yes), HDMI Out (Yes), Touchpad (Yes), Webcam (Yes) |
 
 ## Special Notes (*):

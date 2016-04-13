@@ -27,11 +27,12 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
     *   [5.2 Consistent naming of Arduino devices](#Consistent_naming_of_Arduino_devices)
     *   [5.3 Error opening serial port](#Error_opening_serial_port)
     *   [5.4 Permissions to open serial port and create lockfile](#Permissions_to_open_serial_port_and_create_lockfile)
-    *   [5.5 Missing twi.o](#Missing_twi.o)
-    *   [5.6 Working with Uno/Mega2560](#Working_with_Uno.2FMega2560)
-    *   [5.7 Error compiling](#Error_compiling)
-    *   [5.8 avrdude missing libtinfo.so.5](#avrdude_missing_libtinfo.so.5)
-    *   [5.9 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
+    *   [5.5 avrdude Permission denied error](#avrdude_Permission_denied_error)
+    *   [5.6 Missing twi.o](#Missing_twi.o)
+    *   [5.7 Working with Uno/Mega2560](#Working_with_Uno.2FMega2560)
+    *   [5.8 Error compiling](#Error_compiling)
+    *   [5.9 avrdude missing libtinfo.so.5](#avrdude_missing_libtinfo.so.5)
+    *   [5.10 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -299,6 +300,15 @@ You may see the serial port initially when the IDE starts, but the TX/RX leds do
 ### Permissions to open serial port and create lockfile
 
 Arduino uses java-rxtx to do the serial communications. It expects to create lock files in `/var/lock/lockdev`, so you need to be in the <tt>lock</tt> group. USB serial devices such as /dev/ttyUSB0 or /dev/ttyACM0 will often be assigned to the <tt>uucp</tt> group, so as long as you are adding yourself to groups, you should add that one too.
+
+### avrdude Permission denied error
+
+If you try to upload code to your Arduino, have the correct udev rules in place and still get an error like: `avrdude: ser_open(): can't open device "/dev/ACM0": Permission denied`, execute `avrdude` with root permissions:
+
+```
+sudo /usr/bin/avrdude
+
+```
 
 ### Missing twi.o
 

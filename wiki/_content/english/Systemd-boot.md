@@ -31,7 +31,7 @@ It is simple to configure, but can only start EFI executables, such as the Linux
 
 1.  Make sure you are booted in UEFI mode.
 2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
-3.  Mount your [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI")(ESP) properly. `*esp*` is used to denote the mountpoint in this article.
+3.  Mount your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")(ESP) properly. `*esp*` is used to denote the mountpoint in this article.
     **Note:** systemd-boot cannot load EFI binaries from other partitions. It is therefore recommended to mount your ESP to `/boot`. See [#Updating](#Updating) for more information and work-around, in case you want to separate `/boot` from the ESP.
 
 4.  Copy your kernel and initramfs onto that ESP.

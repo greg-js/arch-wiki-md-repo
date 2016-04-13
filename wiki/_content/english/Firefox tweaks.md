@@ -641,7 +641,7 @@ Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger
 
 ```
 
-Then consider checking [how your SSL is](https://www.howsmyssl.com/).
+Then consider checking your SSL configuration at [https://www.howsmyssl.com/](https://www.howsmyssl.com/).
 
 ### Show search matches in scroll bar
 

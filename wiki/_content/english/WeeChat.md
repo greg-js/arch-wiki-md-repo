@@ -297,9 +297,11 @@ You need to install the python2 librairy websocket-client:
 
 Then install the wee-chat plugin into the weechat configuration folder
 
-`curl -O ~/.weechat/pyhton/autoload/wee_slack.py https://raw.githubusercontent.com/rawdigits/wee-slack/master/wee_slack.py`
+`curl -o ~/.weechat/python/autoload/wee_slack.py https://raw.githubusercontent.com/rawdigits/wee-slack/master/wee_slack.py`
 
-You will need an acces token. You can grab one at [here](https://api.slack.com/docs/oauth-test-tokens)
+Run `/python reload` to load the new plugin
+
+You will need an access token. You can grab one at [here](https://api.slack.com/docs/oauth-test-tokens)
 
 Once weechat is running, register your token into weechat:
 

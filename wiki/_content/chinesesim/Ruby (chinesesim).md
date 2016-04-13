@@ -85,7 +85,15 @@ $ gem update
 
 作为普通用户安装 *gem* 的时候, gem 默认被安装在 `~/.gem` 而不是在系统全局. 这在 Arch 上被认为是做回的管理 gem 的方案. 不巧的是并非所有 gem 都乐意被安装在这, 甚至可能坚持要以 root 身份安装, 特别是模块含有本地扩展(从 C 编译的代码). 每个用户的方案被配置在 `/etc/gemrc` 文件里, 可以通过配置 `~/.gemrc` 文件来改变.
 
-为了使用一些安装了可执行文件的 gem, 需要把 `~/.gem/ruby/2.0.0/bin` 添加到你的 `$PATH` 环境变量里.
+为了使用一些安装了可执行文件的 gem, 需要把 `$(ruby -e 'print Gem.user_dir')/bin` 添加到你的 `$PATH` 环境变量里.如果以上命令无法生效, 可以使用下面命令代替:
+
+```
+ #Setting the GEM_PATH and GEM_HOME variables may not be necessary, check 'gem env' output to verify whether both variables already exist 
+ GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
+ GEM_PATH=$GEM_HOME
+ export PATH=$PATH:$GEM_HOME/bin
+
+```
 
 ### 以 root 身份运行
 

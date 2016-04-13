@@ -14,8 +14,9 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
         *   [2.2.1 xrandr](#xrandr)
         *   [2.2.2 Enabling DVI output on startup](#Enabling_DVI_output_on_startup)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Screen redraw is broken](#Screen_redraw_is_broken)
-    *   [3.2 DisplayLink refresh rate is extremely slow with gnome 3](#DisplayLink_refresh_rate_is_extremely_slow_with_gnome_3)
+    *   [3.1 Not working configuration](#Not_working_configuration)
+    *   [3.2 Screen redraw is broken](#Screen_redraw_is_broken)
+    *   [3.3 DisplayLink refresh rate is extremely slow with gnome 3](#DisplayLink_refresh_rate_is_extremely_slow_with_gnome_3)
 *   [4 See Also](#See_Also)
 
 ## Installation
@@ -30,13 +31,14 @@ First, the setup and installation:
 
 ### USB 3.0 DL-5xxx, DL-41xx, DL-3x00 Devices
 
-Install the [displaylink](https://aur.archlinux.org/packages/displaylink/) driver from the AUR. It allows configuring DisplayLink monitors using [Xrandr](/index.php/Xrandr "Xrandr") in the same manner as the `udl` driver. Use systemctl to enable and start `displaylink.service`.
+1.  Install the [displaylink](https://aur.archlinux.org/packages/displaylink/) driver. It allows configuring DisplayLink monitors using [Xrandr](/index.php/Xrandr "Xrandr") in the same manner as the `udl` driver.
+2.  Enable `displaylink.service`.
 
 ### Setting up X Displays
 
 After that, run:
 
- `# xrandr --listproviders` 
+ `$ xrandr --listproviders` 
 ```
 Providers: number : 2
 Provider 0: id: 0x49 cap: 0xb, Source Output, Sink Output, Sink Offload crtcs: 2 outputs: 8 associated providers: 0 name:Intel
@@ -47,7 +49,7 @@ Provider 1: id: 0x13c cap: 0x2, Sink Output crtcs: 1 outputs: 1 associated provi
 In the above output, we can see that provider 0 is the system's regular graphics provider (Intel), and provider 1 (modesetting) is the DisplayLink provider. To use the DisplayLink device, connect provider 1 to provider 0:
 
 ```
-# xrandr --setprovideroutputsource 1 0
+$ xrandr --setprovideroutputsource 1 0
 
 ```
 
@@ -152,6 +154,28 @@ Avoid placing these commands in `~/.xprofile` as this breaks the display configu
 **Note:** If you have additional providers, specify the name of the provider instead of using indexes. The name of the DisplayLink device will be `modesetting`
 
 ## Troubleshooting
+
+### Not working configuration
+
+These are tested on [XFCE4](/index.php?title=XFCE4&action=edit&redlink=1 "XFCE4 (page does not exist)") using Display settings (included in XFCE4 package) and external tool - [arandr](https://www.archlinux.org/packages/?name=arandr). XFCE4 Display settings are likelly to crash, so ARandR might help.
+
+When you connect display link device via USB to your computer, the computer should show monitors in Display settings. There are few troubleshooting steps that you should try:
+
+*   Check [DisplayLink#Setting_up_X_Displays](/index.php/DisplayLink#Setting_up_X_Displays "DisplayLink"). If you can find any external monitors recognized, you should try to make them visible by the following commands:
+
+```
+xrandr --setprovideroutputsource 1 0
+xrandr --setprovideroutputsource 2 0
+xrandr --setprovideroutputsource 3 0
+...
+
+```
+
+This will make them visible and recognized in Display settings.
+
+*   Restart `displaylink.service`.
+*   Re-connecte USB cable.
+*   Check if `udl` driver is loaded and monitors are connected.
 
 ### Screen redraw is broken
 

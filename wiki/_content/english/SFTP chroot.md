@@ -24,34 +24,36 @@ This package is available in the core repository. To install it, run
 
 ## Configuration
 
-In */etc/ssh/sshd_config*, modify the Subsystem line for sftp:
+First, we need to create the `sftponly` group
 
 ```
- Subsystem       sftp    internal-sftp
+# groupadd sftponly 
 
 ```
 
-At the end of the file, add something similar to the following for a group:
+Following changes to the SSH daemon configure permissions for the `sftponly` group
 
+ `/etc/ssh/sshd_config` 
 ```
- Match Group sftponly
-   ChrootDirectory %h
-   ForceCommand internal-sftp
-   AllowTcpForwarding no
-   PermitTunnel no
-   X11Forwarding no
+Match Group sftponly
+  ChrootDirectory %h
+  ForceCommand internal-sftp
+  AllowTcpForwarding no
+  PermitTunnel no
+  X11Forwarding no
 
 ```
 
 Or for a single user:
 
+ `/etc/ssh/sshd_config` 
 ```
- Match User username
-   ChrootDirectory %h
-   ForceCommand internal-sftp
-   AllowTcpForwarding no
-   PermitTunnel no
-   X11Forwarding no
+Match User username
+  ChrootDirectory %h
+  ForceCommand internal-sftp
+  AllowTcpForwarding no
+  PermitTunnel no
+  X11Forwarding no
 
 ```
 
@@ -60,14 +62,14 @@ Or for a single user:
 The chroot directory must be owned by root.
 
 ```
- sudo chown root:root /home/username
+ # chown root:root /home/username
 
 ```
 
 Add the '*sftponly* group to each user with remote access rights
 
 ```
- sudo adduser username sftponly
+ # gpasswd -a USER sftponly
 
 ```
 

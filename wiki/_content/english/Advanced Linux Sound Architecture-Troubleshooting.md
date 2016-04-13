@@ -626,7 +626,7 @@ $ aplay -D plughw:1,3 /usr/share/sounds/alsa/Front_Center.wav
 
 ```
 
-If aplay does not output any errors, but still no sound is heared, "reboot" the receiver, monitor or tv set. Since the HDMI interface executes a handshake on connection, it might have noticed before that there was no audio stream embedded, and disabled audio decoding. If you are using a standalone window manager, you may need to have sound playing while plugging in the HDMI cable.
+If aplay does not output any errors, but still no sound is heard, "reboot" the receiver, monitor or tv set. Since the HDMI interface executes a handshake on connection, it might have noticed before that there was no audio stream embedded, and disabled audio decoding. If you are using a standalone window manager, you may need to have sound playing while plugging in the HDMI cable.
 
 mplay and other application could be configured to use special HDMI device as audio output. But flashplugin could only use default device. The following method is used to override default device. But you need to change it back when your TV is disconnected from HDMI port.
 

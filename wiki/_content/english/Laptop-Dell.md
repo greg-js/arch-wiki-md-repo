@@ -11,10 +11,10 @@
 
 ## Inspiron
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Inspiron 1300 | Don't Panic (Core Dump version) | 3D with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | Intel | *b44* module works out-of-the-box | BCM4318-based card, works with [ndiswrapper](/index.php/Ndiswrapper "Ndiswrapper") | N/A | Untested | Untested | -- | Everything works out-of-the-box except wireless and sometimes screen resolution |
 | Inspiron 1420 | 2012.09 | 3D with [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | Intel HD Audio with ALSA | Yes | Yes, [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) needed from the AUR | Untested | Untested | Untested | Untested | Everything that I have tested works great without any problems |
 | Inspiron 1501 | Duke | 3D with proprietary ATI fglrx | Intel HD audio with ALSA | Yes | Yes, BCM4311 PCI-E with bcm43xx | N/A | Untested | Untested | Smart card reader works out-of-the-box | Everything else works without a hitch |
@@ -30,13 +30,15 @@ Install CD Version
 | Inspiron M5030 | Any | [ATI](/index.php/ATI "ATI") works fine, [catalyst](/index.php/Catalyst "Catalyst") untested | Yes, works out of the box | Yes | Yes, works out of the box | N/A | Untested | N/A | Everything works alright, and out of the box. | [i8kutils](https://aur.archlinux.org/packages/i8kutils/) required for fan control |
 | Inspiron Duo 1090 (hybrid touchscreen netbook/tablet) | 2014.10.01 | Intel Atom Integrated VGA graphics controller. Software 3D, works out-of-the-box (1366x768). | Intel HD Audio with ALSA | No. | Yes, Qualcomm Atheros (ath9k) | Untested | Suspend-to-RAM works flawlessly. Hibernate untested. | No. | eGalax touchscreen and Synaptics touchpad work flawlessly. All function keys (Power manager, Wifi on/off, touchpad on/off, brightness and audio up/down work flawlessly. Webcam and integrated microphone work. | Audio out works, no standard audio-in or video out ports. USB audio-in and USB video-out untested. |
 | Inspiron E1405 | Any | 3D with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) 2.0, native resolution with [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) 1.3 (1440x900) | Intel HD Audio with [ALSA](/index.php/ALSA "ALSA") | Yes | Yes, ipw3945 | Yes | Suspend-to-RAM is shaky; hibernate is flawless | Untested | SD card reader works out-of-the-box | Everything else works without a hitch |
+| Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
+| Hardware support |
 
 ## Latitude
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Latitude D420 | Duke | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), native resolution with [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) 1.2 (1280x800) | Intel HD Audio with ALSA | Yes (with tg3) | Yes (with ipw3945) | N/A | Untested | Have not tested SD card reader | External D-Bay DVD/CD-RW works, docking station mostly works (can un-dock, but locks up on re-docking) |
 | Latitude D620 | Duke | 3D with NVIDIA, native resolution with [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) 1.2 (1440x900)
 3D with Intel 945GM, native resolution 1440x900 | Intel HD Audio with ALSA | Yes | Yes, bcm4311 PCI-E with bcm43xx. Yes for some models with iwl3945\. | N/A | Suspend-to-RAM perfect, hibernate works fine. | Untested | not tested smart card reader | Everything else works without a hitch |
@@ -48,27 +50,27 @@ Install CD Version
 
 ## Precision
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Precision M4800 | 2014.04.01 | System not usable if booted without kernel parameter `nomodeset`. Nvidia Quadro K2100M works with [nvidia](https://www.archlinux.org/packages/?name=nvidia), but [Nouveau](/index.php/Nouveau "Nouveau") does not work because it requires KMS. | Untested | Yes | Yes | Untested | Untested | No modem | N/A | `nomodeset` is *required* to boot to a usable system, both with the Arch installation media and post-installation. |
 
 ## Studio
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Studio 1749 | 2013.01.04 | Radeon HD 5650M, `xf86-video-ati` is almost flawless (just slower 3D), `catalyst` is faster but has various issues. | HDA Intel MID, works with ALSA after adding `options snd-hda-intel index=0 model=dell-m6-dmic` to `/etc/modprobe.d/alsa-base.conf`. HDMI audio has some issues. | Yes | BCM43224, brcmsmac and [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) both work | N/A | Suspend works; hibernate untested. | N/A | SD card reader works, media keys work, web cam, and microphone both work. | Flawless except for poor 3D performance and battery life. |
 | Studio XPS M1640 | (2009.08) | ATI HD4670 Mobile works with [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) (see the forums for 3D support); Catalyst drivers untested | Works with Intel HD Audio and ALSA. | Yes | Works with iwlagn | Bluetooth works | Works but when using [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), there is video corruption upon boot | N/A | Web cam works, media keys work with the `dell_laptop` kernel module, IR works, card reader works | Everything basically worked out-of-the-box |
 
 ## XPS
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | XPS L322 | 2013_03 | Intel HD 4000, with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | Intel HD Audio with ALSA | No Ethernet port | Yes | Untested | Yes | No modem | No SD card slot | ALPS Touchpad recognized only as PS/2 mouse, two-finger scroll, finger tap-to-click, etc... does not work. Some new mouse drivers suggest a fix but have not worked. |
 | XPS M1210 | Duke | 3D with NVIDIA open source drivers | SigmaTel audio with ALSA | *b44* module, out-of-the-box | IPW 3945, command-line [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Untested | Untested | Untested | rico card reader worked out-of-the-box, hot keys using keytouch, web cam works but is unstable. In [MPlayer](/index.php/MPlayer "MPlayer"), use `driver=v4l2:device=/dev/video0` | Everything else works without a hitch |
 | [XPS M1330](/index.php/Dell_XPS_M1330 "Dell XPS M1330") | Don't Panic (2007.08-2) | For dedicated graphics (NVIDIA 8400m) works with NVIDIA package | Works with Intel HD Audio and ALSA, but need to configure microphone | Yes | Works with iwl4965 | Can set Bluetooth but have not tested with any devices | Suspend works fine with [pm-utils](/index.php/Pm-utils "Pm-utils") (*acpi_cpufreq* problem: [see forums](https://bbs.archlinux.org/viewtopic.php?id=44500)) | Untested | 2.0 MP web cam works with *uvcvideo*, media keys work with keytouch or esekeyd, IR remote works, SD card works | Everything basically worked out-of-the-box except the microphone |

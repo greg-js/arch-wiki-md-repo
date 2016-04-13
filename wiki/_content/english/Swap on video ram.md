@@ -122,4 +122,3 @@ The following command may help you getting the used swap in the different spaces
 
 *   [Archived Gentoo Wiki articles. Note the warnings.](http://www.gentoo-wiki.info/TIP_Use_memory_on_video_card_as_swap)
 *   [MTD website](http://www.linux-mtd.infradead.org)
-*   [Gentoo Wiki](http://www.gentoo-wiki.info/TIP_Use_memory_on_video_card_as_swap)

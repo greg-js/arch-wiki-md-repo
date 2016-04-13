@@ -9,6 +9,7 @@ A [core dump](https://en.wikipedia.org/wiki/Core_dump "wikipedia:Core dump") is 
 *   [2 Making a core dump](#Making_a_core_dump)
     *   [2.1 Where do they go?](#Where_do_they_go.3F)
 *   [3 Examining a core dump](#Examining_a_core_dump)
+*   [4 See also](#See_also)
 
 ## Disabling automatic core dumps
 
@@ -120,3 +121,8 @@ When *gdb* is started, use the `bt` command to print the backtrace:
 (gdb) bt
 
 ```
+
+## See also
+
+*   [american fuzzy lop](http://lcamtuf.coredump.cx/afl/) - An tool for automated tests of the kernel and programs
+*   [Filesystem fuzzing](https://lwn.net/Articles/637151/) - LWN article about testing filesystems for bugs

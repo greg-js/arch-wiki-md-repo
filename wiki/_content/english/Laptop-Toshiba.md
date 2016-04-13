@@ -3,10 +3,10 @@
 
 ## Model list
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Satellite U405-S2856 | current | Intel GMA X3100 3D support with xf86-video-intel driver | sound works with snd_hda_intel and [ALSA](/index.php/ALSA "ALSA"). Volume dial requires xorg configuration | Marvell 88E8040 works with sky2 kernel module | Atheros AR928X works with ma80211 and ath9k | not tested | Suspend to
 RAM: works
 Disk: NA
@@ -96,3 +96,5 @@ Disk: not tested
 Battery: 2h/3:50h with power saving
 Dimming of display: works | NA | Camera works
 Microphone works | NA |
+| Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
+| Hardware support |

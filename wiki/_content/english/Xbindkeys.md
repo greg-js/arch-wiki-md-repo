@@ -119,6 +119,8 @@ A blank window will pop up. Press the key(s) to which you wish to assign a comma
 
 **Tip:** Use `xbindkeys -mk` to keep the key prompt open for multiple keypresses. Press `q` to quit.
 
+To identify mouse buttons, you can use xev, see [here](https://blog.hanschen.org/2009/10/13/mouse-shortcuts-with-xbindkeys/)
+
 ## Making changes permanent
 
 Once you're done configuring your keys, edit your [xprofile](/index.php/Xprofile "Xprofile") or [xinitrc](/index.php/Xinitrc "Xinitrc") file (depending on your window manager) and place

@@ -19,29 +19,25 @@
         *   [4.2.1 挂载 efivarfs](#.E6.8C.82.E8.BD.BD_efivarfs)
     *   [4.3 用户空间工具](#.E7.94.A8.E6.88.B7.E7.A9.BA.E9.97.B4.E5.B7.A5.E5.85.B7)
         *   [4.3.1 efibootmgr](#efibootmgr)
-*   [5 EFI 系统分区](#EFI_.E7.B3.BB.E7.BB.9F.E5.88.86.E5.8C.BA)
-    *   [5.1 GPT 磁盘分区](#GPT_.E7.A3.81.E7.9B.98.E5.88.86.E5.8C.BA)
-    *   [5.2 MBR 磁盘分区](#MBR_.E7.A3.81.E7.9B.98.E5.88.86.E5.8C.BA)
-    *   [5.3 RAID 上的 ESP](#RAID_.E4.B8.8A.E7.9A.84_ESP)
-*   [6 UEFI Shell](#UEFI_Shell)
-    *   [6.1 获取 UEFI Shell](#.E8.8E.B7.E5.8F.96_UEFI_Shell)
-    *   [6.2 启动 UEFI Shell](#.E5.90.AF.E5.8A.A8_UEFI_Shell)
-    *   [6.3 重要 UEFI Shell 命令](#.E9.87.8D.E8.A6.81_UEFI_Shell_.E5.91.BD.E4.BB.A4)
-        *   [6.3.1 bcfg](#bcfg)
-        *   [6.3.2 edit](#edit)
-*   [7 UEFI Linux 硬件兼容性](#UEFI_Linux_.E7.A1.AC.E4.BB.B6.E5.85.BC.E5.AE.B9.E6.80.A7)
-*   [8 UEFI 可启动介质](#UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8.E4.BB.8B.E8.B4.A8)
-    *   [8.1 从 ISO 创建 UEFI 可启动 USB](#.E4.BB.8E_ISO_.E5.88.9B.E5.BB.BA_UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8_USB)
-    *   [8.2 从光学介质里移除 UEFI 启动支持](#.E4.BB.8E.E5.85.89.E5.AD.A6.E4.BB.8B.E8.B4.A8.E9.87.8C.E7.A7.BB.E9.99.A4_UEFI_.E5.90.AF.E5.8A.A8.E6.94.AF.E6.8C.81)
-*   [9 原生无支持情况下测试 UEFI](#.E5.8E.9F.E7.94.9F.E6.97.A0.E6.94.AF.E6.8C.81.E6.83.85.E5.86.B5.E4.B8.8B.E6.B5.8B.E8.AF.95_UEFI)
-    *   [9.1 虚拟机使用 OVMF](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BD.BF.E7.94.A8_OVMF)
-    *   [9.2 仅 BIOS 的系统使用 DUET](#.E4.BB.85_BIOS_.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_DUET)
-*   [10 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
-    *   [10.1 Windows 7 无法以 UEFI 模式启动](#Windows_7_.E6.97.A0.E6.B3.95.E4.BB.A5_UEFI_.E6.A8.A1.E5.BC.8F.E5.90.AF.E5.8A.A8)
-    *   [10.2 Windows 改变了启动次序](#Windows_.E6.94.B9.E5.8F.98.E4.BA.86.E5.90.AF.E5.8A.A8.E6.AC.A1.E5.BA.8F)
-    *   [10.3 USB 介质卡在黑屏界面](#USB_.E4.BB.8B.E8.B4.A8.E5.8D.A1.E5.9C.A8.E9.BB.91.E5.B1.8F.E7.95.8C.E9.9D.A2)
-        *   [10.3.1 使用 GRUB](#.E4.BD.BF.E7.94.A8_GRUB)
-*   [11 另见](#.E5.8F.A6.E8.A7.81)
+*   [5 UEFI Shell](#UEFI_Shell)
+    *   [5.1 获取 UEFI Shell](#.E8.8E.B7.E5.8F.96_UEFI_Shell)
+    *   [5.2 启动 UEFI Shell](#.E5.90.AF.E5.8A.A8_UEFI_Shell)
+    *   [5.3 重要 UEFI Shell 命令](#.E9.87.8D.E8.A6.81_UEFI_Shell_.E5.91.BD.E4.BB.A4)
+        *   [5.3.1 bcfg](#bcfg)
+        *   [5.3.2 edit](#edit)
+*   [6 UEFI Linux 硬件兼容性](#UEFI_Linux_.E7.A1.AC.E4.BB.B6.E5.85.BC.E5.AE.B9.E6.80.A7)
+*   [7 UEFI 可启动介质](#UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8.E4.BB.8B.E8.B4.A8)
+    *   [7.1 从 ISO 创建 UEFI 可启动 USB](#.E4.BB.8E_ISO_.E5.88.9B.E5.BB.BA_UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8_USB)
+    *   [7.2 从光学介质里移除 UEFI 启动支持](#.E4.BB.8E.E5.85.89.E5.AD.A6.E4.BB.8B.E8.B4.A8.E9.87.8C.E7.A7.BB.E9.99.A4_UEFI_.E5.90.AF.E5.8A.A8.E6.94.AF.E6.8C.81)
+*   [8 原生无支持情况下测试 UEFI](#.E5.8E.9F.E7.94.9F.E6.97.A0.E6.94.AF.E6.8C.81.E6.83.85.E5.86.B5.E4.B8.8B.E6.B5.8B.E8.AF.95_UEFI)
+    *   [8.1 虚拟机使用 OVMF](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BD.BF.E7.94.A8_OVMF)
+    *   [8.2 仅 BIOS 的系统使用 DUET](#.E4.BB.85_BIOS_.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_DUET)
+*   [9 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
+    *   [9.1 Windows 7 无法以 UEFI 模式启动](#Windows_7_.E6.97.A0.E6.B3.95.E4.BB.A5_UEFI_.E6.A8.A1.E5.BC.8F.E5.90.AF.E5.8A.A8)
+    *   [9.2 Windows 改变了启动次序](#Windows_.E6.94.B9.E5.8F.98.E4.BA.86.E5.90.AF.E5.8A.A8.E6.AC.A1.E5.BA.8F)
+    *   [9.3 USB 介质卡在黑屏界面](#USB_.E4.BB.8B.E8.B4.A8.E5.8D.A1.E5.9C.A8.E9.BB.91.E5.B1.8F.E7.95.8C.E9.9D.A2)
+        *   [9.3.1 使用 GRUB](#.E4.BD.BF.E7.94.A8_GRUB)
+*   [10 参阅](#.E5.8F.82.E9.98.85)
 
 ## UEFI 发展历史
 
@@ -292,37 +288,6 @@ TARGET SOURCE  FSTYPE OPTIONS
 
 FAT32 文件系统大小写不敏感因为它默认不使用 UTF-8 编码格式。这种情况下固件使用大写字母 'EFI' 而不是小写的 'efi', 因此 `\EFI\refind\refindx64.efi` 或 `\efi\refind\refind_x64.efi` 都没问题 (当文件系统采用 UTF-8 编码时就不同了).
 
-## EFI 系统分区
-
-EFI 系统分区(也称为 ESP 或者 EFISYS)是一个 FAT32 格式的物理分区 (在硬盘主分区表上，而不是 LVM 或软件 RAID 等等) ，从这里 UEFI 固件启动 UEFI 引导器和应用程序。
-
-它与操作系统无关而是作为 EFI 固件要启动的引导器和应用程序的存储空间，是 UEFI 启动所必须。它的分区类型应该是 EFI 系统分区 (见 [#GPT_partitioned_disks](#GPT_partitioned_disks)). 推荐 ESP 大小为 512 MiB 尽管大一点小一点都没问题 (见下面的注意)。更多信息见 [Wikipedia:EFI System partition](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition").
-
-**注意:**
-
-*   推荐使用 GPT 和 UEFI 搭配因为有的 UEFI 固件不支持 UEFI-MBR 启动。
-*   在 [GNU Parted](/index.php/GNU_Parted "GNU Parted") 中， `boot` 参数 (不要与 `legacy_boot` 参数搞混了) 在 MBR 和 GPT 盘上作用不同。在 MBR 硬盘上，它标识分区为活动分区。在 GPT 硬盘上，它把分区编码改为 `EFI System Partition` 类型。 [Parted](/index.php/Parted "Parted") 没有在 MBR 上标识 ESP 的参数 (尽管可以通过 fdisk 完成)。
-*   Microsoft 文献注解了 ESP 大小: 对高级格式化 (Advanced Format) 4K 本地驱动器 (每扇区4KB) 来说，由于 FAT32 文件格式的限制，最小为 260 MB。 FAT32 的最小分区大小可由扇区大小 (4KB) x 65527 = 算出 256 MB。高级格式化 512e 驱动器不受此限制影响，因为其虚拟扇区是 512B. 512 bytes x 65527 = 32 MB, 这比 100 MB 最小限制还要小。[[1]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules)
-*   为防止 [EFISTUB](/index.php/EFISTUB "EFISTUB"), 内核以及 initramfs 文件应储存在 EFI 系统分区。精简起见，当以 EFISTUB 启动时你可以把 ESP 当做 `/boot` 分区而不是单独分一个 `/boot` 分区。
-
-### GPT 磁盘分区
-
-*   **fdisk**/**gdisk**: 创建类型为 EFI System (`EFI System` (在 *fdisk* 中) 或 `ef00` (在 *gdisk* 中)的分区。然后运行 `mkfs.fat -F32 /dev/<THAT_PARTITION>` 格式化为 FAT32 格式。
-
-(或)
-
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): 创建一个 FAT32 分区然后在 Parted 中为那个分区设置/激活 `boot` 参数 (不是 `legacy_boot` 参数).
-
-**注意:** 如果你收到消息 `WARNING: Not enough clusters for a 32 bit FAT!`, 运行 `mkfs.fat -s2 -F32 ...` 或 `-s1` 以减小簇大小，否则 UEFI 无法读取分区。
-
-### MBR 磁盘分区
-
-*   **fdisk**: 使用 fdisk 创建类型为 *EFI System* 的分区，然后运行 `mkfs.fat -F32 /dev/<THAT_PARTITION>` 格式化为 FAT32.
-
-### RAID 上的 ESP
-
-将 ESP 包含进 RAID1 组是可行的，但是会有数据污染的危险，创建 ESP 时请三思。 细节见 [https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) 和 [https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) .
-
 ## UEFI Shell
 
 UEFI Shell 是固件的终端，可用于启动包括引导器的 UEFI 程序。除此之外， Shell也可用于采集固件和系统的各种信息，例如内存映射 (memmap), 修改启动管理器变量 (bcfg), 运行分区程序 (diskpart), 加载 UEFI 驱动，编辑文本文件 (edit), 十六进制编辑等等。
@@ -506,7 +471,7 @@ bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
 
 *   也可能是 [KMS](/index.php/KMS "KMS") 的问题。从 USB 启动时尝试 [Disabling KMS](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting").
 
-*   如果不是 KMS 的问题，那么可能是 [EFISTUB](/index.php/EFISTUB "EFISTUB") 启动的 bug (更多信息见 [[2]](https://bugs.archlinux.org/task/33745) and [[3]](https://bbs.archlinux.org/viewtopic.php?id=156670) ). 官方 ISO ([Archiso](/index.php/Archiso "Archiso")) 和 [Archboot](/index.php/Archboot "Archboot") iso 都用 EFISTUB (通过 [Gummiboot](/index.php/Gummiboot "Gummiboot") 启动管理器) 来让内核以 UEFI 模式启动。这种情况下参考下文来使用 [GRUB](/index.php/GRUB "GRUB") 作为 USB 的引导器。
+*   如果不是 KMS 的问题，那么可能是 [EFISTUB](/index.php/EFISTUB "EFISTUB") 启动的 bug (更多信息见 [[1]](https://bugs.archlinux.org/task/33745) and [[2]](https://bbs.archlinux.org/viewtopic.php?id=156670) ). 官方 ISO ([Archiso](/index.php/Archiso "Archiso")) 和 [Archboot](/index.php/Archboot "Archboot") iso 都用 EFISTUB (通过 [Gummiboot](/index.php/Gummiboot "Gummiboot") 启动管理器) 来让内核以 UEFI 模式启动。这种情况下参考下文来使用 [GRUB](/index.php/GRUB "GRUB") 作为 USB 的引导器。
 
 #### 使用 GRUB
 
@@ -595,13 +560,11 @@ menuentry "UEFI Shell x86_64 v1" {
 
 ```
 
-## 另见
+## 参阅
 
 *   [Wikipedia:UEFI](https://en.wikipedia.org/wiki/UEFI "wikipedia:UEFI")
 *   [UEFI Forum](http://www.uefi.org/home/) - contains the official [UEFI Specifications](http://www.uefi.org/specs/) - GUID Partition Table is part of UEFI Specification
 *   [UEFI boot: how does that actually work, then? - A blog post by AdamW](https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/)
-*   [Wikipedia:EFI System partition](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition")
-*   [The EFI System Partition and the Default Boot Behavior](http://blog.uncooperative.org/blog/2014/02/06/the-efi-system-partition/)
 *   [Linux Kernel x86_64 UEFI Documentation](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/x86/x86_64/uefi.txt)
 *   [Intel's page on EFI](http://www.intel.com/technology/efi/)
 *   [Intel UEFI Community Resource Center](http://uefidk.intel.com/)

@@ -6,7 +6,7 @@ Es fácil de configurar, pero solo puede iniciar ejecutables EFI, [EFISTUB](/ind
 
 **Advertencia:** gummiboot simplemente ofrece un menú de arranque para los EFISTUB del kernel. En caso de tener problemas al arrancar el kernel con EFISTUB como en [FS#33745](https://bugs.archlinux.org/task/33745), debe utilizar un gestor de arranque que no utilice EFISTUB, como [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)"), [Syslinux (Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") o [ELILO](/index.php/Bootloaders#ELILO "Bootloaders").
 
-**Nota:** En todo el artículo, `$esp` hace referencia al punto de montaje de la [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") conocida como ESP.
+**Nota:** En todo el artículo, `$esp` hace referencia al punto de montaje de la [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") conocida como ESP.
 
 ## Contents
 

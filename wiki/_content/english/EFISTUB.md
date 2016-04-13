@@ -10,7 +10,6 @@ An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly usi
         *   [1.1.2 Using incron](#Using_incron)
         *   [1.1.3 Using mkinitcpio hook](#Using_mkinitcpio_hook)
         *   [1.1.4 Using mkinitcpio hook (2)](#Using_mkinitcpio_hook_.282.29)
-        *   [1.1.5 Using bind mount](#Using_bind_mount)
 *   [2 Booting EFISTUB](#Booting_EFISTUB)
     *   [2.1 Using a boot manager](#Using_a_boot_manager)
     *   [2.2 Using UEFI Shell](#Using_UEFI_Shell)
@@ -18,7 +17,7 @@ An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly usi
 
 ## Setting up EFISTUB
 
-After creating the [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface"), you must choose how it will be mounted. The simplest option is to mount it at `/boot`, since this allows pacman to directly update the kernel that the EFI firmware will read. If you elect for this option, continue to [#Booting EFISTUB](#Booting_EFISTUB).
+After creating the [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface"), you must choose how it will be mounted. The simplest option is to mount it at `/boot` or [bind mount](/index.php/EFI_System_Partition#Using_bind_mount "EFI System Partition") it to `/boot` since this allows pacman to directly update the kernel that the EFI firmware will read. If you elect for this option, continue to [#Booting EFISTUB](#Booting_EFISTUB).
 
 **Note:** You can keep kernel and initramfs out of ESP if you use a boot manager which has a file system driver for the partition where they reside, e.g. [rEFInd](/index.php/REFInd "REFInd").
 
@@ -186,29 +185,6 @@ rm /boot/initramfs-linux.img
 mkinitcpio -p linux
 
 ```
-
-#### Using bind mount
-
-Instead of mounting the ESP itself to `/boot`, you can mount a directory of the ESP to `/boot` using a bind mount (see `mount(8)`). This allows pacman to update the kernel directly while keeping the ESP organized to your liking. If it works for you, this method is much simpler than the other approaches which copy files.
-
-**Note:** This requires a kernel and bootloader compatible with FAT32\. This is not an issue for a regular Arch install, but could be problematic for other distributions (namely those that require symlinks in `/boot`). Forum post [here](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
-
-As [before](#Alternative_ESP_Mount_Points), copy all boot files to a directory on your ESP, but mount the ESP **outside** `/boot` (e.g. `/esp`). Then bind mount the directory:
-
-```
-# mount --bind /esp/EFI/arch/ /boot
-
-```
-
-If your files appear in `/boot` as desired, edit your [Fstab](/index.php/Fstab "Fstab") to make it persistent:
-
- `/etc/fstab` 
-```
-/esp/EFI/arch /boot none defaults,bind 0 0
-
-```
-
-**Warning:** You *must* use the `root=*system_root*` [kernel parameter](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") in order to boot using this method.
 
 ## Booting EFISTUB
 

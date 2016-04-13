@@ -43,7 +43,7 @@ Two versions of GTK+ are currently available in the [official repositories](/ind
 
 ## Themes
 
-In GTK+ 2, the default theme is *Raleigh*, but Arch Linux has a custom configuration file at `/usr/share/gtk-2.0/gtkrc`, which sets the default theme to *Adwaita*. In GTK+ 3, the default theme is *Adwaita*, but *HighContrast* and *Raleigh* themes are also included.
+In GTK+ 2, the default theme is *Raleigh*, but Arch Linux has a custom configuration file at `/usr/share/gtk-2.0/gtkrc`, which sets the default theme to *Adwaita*. In GTK+ 3, the default theme is *Adwaita*, but *HighContrast*, *HighContrastInverse* and *Raleigh* themes are also included.
 
 To force a specific theme, you can set environment variables.
 
@@ -67,7 +67,37 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 More themes can be installed from the official repositories or the [AUR](/index.php/AUR "AUR").
 
-**Both GTK+ 2 and GTK+ 3 are supported:**
+**GTK+ 2 and GTK+ 3.20 or newer are supported:**
+
+*   **GNOME Standard Themes** — Default themes for the GNOME desktop. Includes: *Adwaita*, *HighContrast*
+
+	[https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
+
+*   **MATE Themes** — Default themes for the MATE desktop. Includes: *BlackMATE*, *BlueMenta*, *Blue-Submarine*, *ContrastHighInverse*, *Green-Submarine*, *Menta*, *TraditionalGreen*, *TraditionalOk*
+
+	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
+
+*   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce).
+
+	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-themes](https://www.archlinux.org/packages/?name=numix-themes)
+
+*   **Adapta** — An adaptive Gtk+ theme based on Material Design Guidelines.
+
+	[https://github.com/tista500/Adapta](https://github.com/tista500/Adapta) || [adapta-gtk-theme](https://aur.archlinux.org/packages/adapta-gtk-theme/)
+
+*   **Arc** — A flat theme with a modern look and transparent elements.
+
+	[https://github.com/horst3180/arc-theme](https://github.com/horst3180/arc-theme) || [gtk-theme-arc](https://aur.archlinux.org/packages/gtk-theme-arc/)
+
+*   **Vertex** — Theme for GTK 3, GTK 2, Gnome-Shell and Cinnamon.
+
+	[https://github.com/horst3180/vertex-theme](https://github.com/horst3180/vertex-theme) || [vertex-themes](https://aur.archlinux.org/packages/vertex-themes/)
+
+*   **Zuki** — Themes for GTK, gnome-shell and more.
+
+	[https://github.com/lassekongo83/zuki-themes](https://github.com/lassekongo83/zuki-themes) || [zuki-themes-git](https://aur.archlinux.org/packages/zuki-themes-git/)
+
+**GTK+ 2 and GTK+ 3.18 or older are supported:**
 
 *   **Breeze** — GTK+ version of KDE's default widget theme.
 
@@ -75,27 +105,19 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Deepin** — Default theme for the Deepin desktop.
 
-	[https://gitcafe.com/Deepin/deepin-gtk-theme](https://gitcafe.com/Deepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
+	[https://github.com/linuxdeepin/deepin-gtk-theme](https://github.com/linuxdeepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
 
-*   **GNOME Standard Themes** — Default themes for the GNOME desktop. Includes: *Adwaita*, *HighContrast*
+*   **Albatross** — A dark, smooth Xfce theme, introduced in the release of Xubuntu 9.10.
 
-	[https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
+	[https://github.com/shimmerproject/Albatross](https://github.com/shimmerproject/Albatross) || [xfce-theme-albatross](https://aur.archlinux.org/packages/xfce-theme-albatross/)
 
-*   **MATE Themes** — Default themes for the MATE desktop. Includes: *BlackMATE*, *BlueMenta*, *Blue-Submarine*, *ContrastHigh*, *ContrastHighInverse*, *GreenLaguna*, *Green-Submarine*, *Menta*, *TraditionalGreen*, *TraditionalOk*, *TraditionalOkTest*
+*   **Blackbird** — Dark Desktop Suite for Xfce.
 
-	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
-
-*   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce).
-
-	[https://numixproject.org/](https://numixproject.org/) || [numix-themes](https://www.archlinux.org/packages/?name=numix-themes)
-
-*   **Arc** — A flat theme with a modern look and transparent elements.
-
-	[https://github.com/horst3180/Arc-theme](https://github.com/horst3180/Arc-theme) || [gtk-theme-arc-git](https://aur.archlinux.org/packages/gtk-theme-arc-git/)
+	[https://github.com/shimmerproject/Blackbird](https://github.com/shimmerproject/Blackbird) || [xfce-theme-blackbird](https://aur.archlinux.org/packages/xfce-theme-blackbird/)
 
 *   **Ceti-2** — Theme for GTK 3, GTK 2 and Gnome-Shell.
 
-	[http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140](http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140) || [ceti-2-themes](https://aur.archlinux.org/packages/ceti-2-themes/)
+	[https://github.com/horst3180/ceti-2-theme](https://github.com/horst3180/ceti-2-theme) || [ceti-2-themes](https://aur.archlinux.org/packages/ceti-2-themes/)
 
 *   **Clearlooks-Phénix** — GTK3 theme visually close to Clearlooks.
 
@@ -107,19 +129,11 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
 
-	[http://shimmerproject.org/our-projects/greybird/](http://shimmerproject.org/our-projects/greybird/) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
+	[https://github.com/shimmerproject/Greybird](https://github.com/shimmerproject/Greybird) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
 
 *   **Orion** — A modern and light GTK theme.
 
-	[http://deviantart.com/view/281431756](http://deviantart.com/view/281431756) || [gtk-theme-orion](https://aur.archlinux.org/packages/gtk-theme-orion/)
-
-*   **Vertex** — Theme for GTK 3, GTK 2, Gnome-Shell and Cinnamon.
-
-	[http://horst3180.deviantart.com/art/Vertex-Theme-470663601](http://horst3180.deviantart.com/art/Vertex-Theme-470663601) || [vertex-themes](https://aur.archlinux.org/packages/vertex-themes/)
-
-*   **Zukitwo** — Themes for GTK, gnome-shell and more.
-
-	[http://gnome-look.org/content/show.php/Zukitwo?content=140562](http://gnome-look.org/content/show.php/Zukitwo?content=140562) || [zukitwo-themes](https://aur.archlinux.org/packages/zukitwo-themes/)
+	[https://github.com/shimmerproject/Orion](https://github.com/shimmerproject/Orion) || [gtk-theme-orion](https://aur.archlinux.org/packages/gtk-theme-orion/)
 
 **Only GTK+ 2 is supported:**
 

@@ -23,7 +23,7 @@ rEFInd 是一个 [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE
 
 ```
 
-此操作会检测您的内核和 [ESP](/index.php/UEFI#EFI_System_Partition "UEFI") 分区，复制需要的文件，创建默认配置文件并将 rEFInd 设置为默认的 UEFI 启动项
+此操作会检测您的内核和 [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") 分区，复制需要的文件，创建默认配置文件并将 rEFInd 设置为默认的 UEFI 启动项
 
 ## 手动安装
 

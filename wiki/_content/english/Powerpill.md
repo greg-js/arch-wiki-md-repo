@@ -16,7 +16,7 @@ A test of pacman vs. powerpill on one system revealed a 4x speed up in the above
 
 ## Installation
 
-You can get it from [AUR](/index.php/AUR "AUR") [powerpill](https://aur.archlinux.org/packages/powerpill/) or directly from [Xyne's repository](http://xyne.archlinux.ca/repos/).
+[Install](/index.php/Install "Install") the [powerpill](https://aur.archlinux.org/packages/powerpill/) package.
 
 ## Configuration
 
@@ -96,7 +96,7 @@ It is because signature files are missing for that repo and you have not set:
 
 ```
 
-explicity in /etc/pacman.conf as explained in this post [Arch forum post](https://bbs.archlinux.org/viewtopic.php?pid=1254940#p1254940)
+explicity in `/etc/pacman.conf` as explained in this post [Arch forum post](https://bbs.archlinux.org/viewtopic.php?pid=1254940#p1254940)
 
 ## See also
 

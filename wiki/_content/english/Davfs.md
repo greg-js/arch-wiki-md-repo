@@ -62,6 +62,13 @@ https://dav.box.com/dav
 
 ```
 
+For STACK, the url is (replace username with your username):
+
+```
+https://username.stackstorage.com/remote.php/webdav
+
+```
+
 If you want to mount several disks from same server, you need specify mount points of this disks instead of server address in file ~/.davfs2/secrets, remember to put the password in double quotes.
 
 ```

@@ -387,7 +387,7 @@ x:\> "bootrec.exe /RebuildBcd".
 
 ### 检查你是否使用GPT且有ESP分区
 
-如果想要使用EFI在某个磁盘上进行启动,那么就需要对这个磁盘进行EFI系统分区(EFI System Partition,即ESP),GPT倒不是必须的,不过我们还是高度建议使用GTP,并且这也是本篇文章当前支持的方法.如果你在一个支持EFI,并且已经有操作系统的电脑上安装Arch(比如Windows 8),那么你已经有了ESP了.可以通过`parted`来列出启动磁盘上的分区表以检查其是否支持GPT和ESP(假设这个启动磁盘是/dev/sda)
+如果想要使用EFI在某个磁盘上进行启动,那么就需要使用[EFI系统分区](/index.php?title=EFI%E7%B3%BB%E7%BB%9F%E5%88%86%E5%8C%BA&action=edit&redlink=1 "EFI系统分区 (page does not exist)")(EFI System Partition,即ESP),GPT倒不是必须的,不过我们还是高度建议使用GTP,并且这也是本篇文章当前支持的方法.如果你在一个支持EFI,并且已经有操作系统的电脑上安装Arch(比如Windows 8),那么你已经有了ESP了.可以通过`parted`来列出启动磁盘上的分区表以检查其是否支持GPT和ESP(假设这个启动磁盘是/dev/sda)
 
 ```
 # parted /dev/sda print
@@ -398,7 +398,7 @@ x:\> "bootrec.exe /RebuildBcd".
 
 ### 建立ESP
 
-如果你没有ESP,请参考[UEFI#EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI")的引导来创建它
+如果你没有ESP,请参考[EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")的引导来创建它
 
 ### 安装
 

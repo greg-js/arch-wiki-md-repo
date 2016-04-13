@@ -50,13 +50,9 @@ Because of its daemon/client architecture, libvirt needs only be installed on th
 
 *   As of 2015-02-01, `libvirtd` **requires** [qemu](https://www.archlinux.org/packages/?name=qemu) to be installed on the system to start (see [FS#41888](https://bugs.archlinux.org/task/41888)). Fortunately, the [libvirt KVM/QEMU driver](http://libvirt.org/drvqemu.html) is the primary *libvirt* driver and if [KVM is enabled](/index.php/QEMU#Enabling_KVM "QEMU"), fully virtualized, hardware accelerated guests will be available. See the [QEMU](/index.php/QEMU "QEMU") article for more informations.
 
-*   Other virtualization backends include [LXC](/index.php/LXC "LXC"), [VirtualBox](/index.php/VirtualBox "VirtualBox") and [Xen](/index.php/Xen "Xen"). See their respective page for installation instructions.
-
-**Note:** The [libvirt LXC driver](http://libvirt.org/drvlxc.html) has no dependency on the [LXC](/index.php/LXC "LXC") userspace tools provided by [lxc](https://www.archlinux.org/packages/?name=lxc), therefore there is no need to install it if planning on using this driver.
-
-**Warning:** [Xen](/index.php/Xen "Xen") support is available but not by default. You need to use the [ABS](/index.php/ABS "ABS") to modify [libvirt](https://www.archlinux.org/packages/?name=libvirt)'s [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and build it without the `--without-xen` option.
-
-Other supported hypervisors are listed [here](http://libvirt.org/drivers.html).
+*   Other [supported hypervisors](http://libvirt.org/drivers.html) include [LXC](/index.php/LXC "LXC"), [VirtualBox](/index.php/VirtualBox "VirtualBox") and [Xen](/index.php/Xen "Xen"). See the respective articles for installation instructions. With respect to `libvirtd` installation note:
+    *   The [libvirt LXC driver](http://libvirt.org/drvlxc.html) has no dependency on the [LXC](/index.php/LXC "LXC") userspace tools provided by [lxc](https://www.archlinux.org/packages/?name=lxc), therefore there is no need to install the package if planning on using the driver.
+    *   [Xen](/index.php/Xen "Xen") support is available, but not by default. You need to use the [ABS](/index.php/ABS "ABS") to modify [libvirt](https://www.archlinux.org/packages/?name=libvirt)'s [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and build it without the `--without-xen` option. As VirtualBox in turn has no planned stable support for Xen, you might as well replace it with `--without-vbox`.
 
 For network connectivity, install:
 

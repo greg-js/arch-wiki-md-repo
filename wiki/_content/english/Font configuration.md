@@ -130,12 +130,12 @@ $ ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/
 
 ### Anti-aliasing
 
-[Font rasterization](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") converts vector font data to bitmap data so that it can be displayed. The result can appear jagged due to [aliasing](https://en.wikipedia.org/wiki/Aliasing "wikipedia:Aliasing"). [anti-aliasing](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing") is enabled by default and increases the apparent resolution of font edges.
+[Font rasterization](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") converts vector font data to bitmap data so that it can be displayed. The result can appear jagged due to [aliasing](https://en.wikipedia.org/wiki/Aliasing "wikipedia:Aliasing"). [anti-aliasing](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing") is **enabled** by default and increases the apparent resolution of font edges. To disable it:
 
 ```
   <match target="font">
     <edit name="antialias" mode="assign">
-      <bool>true</bool>
+      <bool>false</bool>
     </edit>
   </match>
 
@@ -149,12 +149,12 @@ $ ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/
 
 #### Byte-Code Interpreter (BCI)
 
-Using BCI hinting, instructions in TrueType fonts are rendered according to FreeTypes's interpreter. BCI hinting works well with fonts with good hinting instructions. To enable hinting:
+Using BCI hinting, instructions in TrueType fonts are rendered according to FreeTypes's interpreter. BCI hinting works well with fonts with good hinting instructions. Hinting is **enabled** by default. To disable it:
 
 ```
   <match target="font">
     <edit name="hinting" mode="assign">
-      <bool>true</bool>
+      <bool>false</bool>
     </edit>
   </match>
 
@@ -162,7 +162,7 @@ Using BCI hinting, instructions in TrueType fonts are rendered according to Free
 
 #### Autohinter
 
-The Autohinter attempts to do automatic hinting and disregards any existing hinting information. Originally it was the default because TrueType2 fonts were patent-protected but now that these patents have expired there is very little reason to use it. It does work better with fonts that have broken or no hinting information but it will be strongly sub-optimal for fonts with good hinting information. Generally common fonts are of the later kind so autohinter will not be useful. To enable auto-hinting:
+The autohinter attempts to do automatic hinting and disregards any existing hinting information. Originally it was the default because TrueType2 fonts were patent-protected but now that these patents have expired there is very little reason to use it. It does work better with fonts that have broken or no hinting information but it will be strongly sub-optimal for fonts with good hinting information. Generally common fonts are of the later kind so autohinter will not be useful. Autohinter is **disabled** by default. To enable it:
 
 ```
   <match target="font">
@@ -175,12 +175,12 @@ The Autohinter attempts to do automatic hinting and disregards any existing hint
 
 #### Hintstyle
 
-Hintstyle is the amount of font reshaping done to line up to the grid. Hinting values are: `hintnone`, `hintslight`, `hintmedium`, and `hintfull`. `hintslight` will make the font more fuzzy to line up to the grid but will be better in retaining font shape, while `hintfull` will be a crisp font that aligns well to the pixel grid but will lose a greater amount of font shape. Preferences vary.
+Hintstyle is the amount of font reshaping done to line up to the grid. Hinting values are: `hintnone`, `hintslight`, `hintmedium`, and `hintfull`. `hintslight` will make the font more fuzzy to line up to the grid but will be better in retaining font shape, while `hintfull` will be a crisp font that aligns well to the pixel grid but will lose a greater amount of font shape. **`hintslight`** is the default setting. To change it:
 
 ```
   <match target="font">
     <edit name="hintstyle" mode="assign">
-      <const>hintfull</const>
+      <const>hintnone</const>
     </edit>
   </match>
 
@@ -213,7 +213,7 @@ The `lcddefault` filter will work for most users. Other filters are available th
 
 ```
   <match target="font">
-    <edit mode="assign" name="lcdfilter">
+    <edit name="lcdfilter" mode="assign">
       <const>lcddefault</const>
     </edit>
   </match>

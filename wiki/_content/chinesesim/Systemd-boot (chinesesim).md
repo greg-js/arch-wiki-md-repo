@@ -6,7 +6,7 @@
 
 **Warning:** systemd-boot 提供了引导EFISTUB内核的简单接口，如果你在启动EFISTUB内核时遇到了困难(例如[FS#33745](https://bugs.archlinux.org/task/33745)), 你应该使用像[GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") 或 [ELILO](/index.php/Boot_loaders#ELILO "Boot loaders")这样的不使用EFISTUB的启动管理器.
 
-**Note:** 本文用 `$esp` 表示[EFI 系统分区](/index.php/UEFI#EFI_System_Partition "UEFI")，也就是 ESP 的挂载位置。
+**Note:** 本文用 `$esp` 表示[EFI 系统分区](/index.php/EFI_System_Partition "EFI System Partition")，也就是 ESP 的挂载位置。
 
 ## Contents
 

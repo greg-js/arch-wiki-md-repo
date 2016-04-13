@@ -25,29 +25,28 @@ For your convenience you can, for example, open them all in a web browser to ins
     *   [3.1 Signed](#Signed_2)
         *   [3.1.1 arcanisrepo](#arcanisrepo)
         *   [3.1.2 archlinuxcn](#archlinuxcn)
-        *   [3.1.3 bbqlinux](#bbqlinux)
-        *   [3.1.4 catalyst](#catalyst)
-        *   [3.1.5 catalyst-hd234k](#catalyst-hd234k)
-        *   [3.1.6 city](#city)
-        *   [3.1.7 demz-repo-archiso](#demz-repo-archiso)
-        *   [3.1.8 demz-repo-core](#demz-repo-core)
-        *   [3.1.9 haskell-core](#haskell-core)
-        *   [3.1.10 haskell-happstack](#haskell-happstack)
-        *   [3.1.11 haskell-web](#haskell-web)
-        *   [3.1.12 infinality-bundle](#infinality-bundle)
-        *   [3.1.13 ivasilev](#ivasilev_2)
-        *   [3.1.14 llvm-svn](#llvm-svn)
-        *   [3.1.15 metalgamer](#metalgamer)
-        *   [3.1.16 miffe](#miffe)
-        *   [3.1.17 nullptr_t](#nullptr_t)
-        *   [3.1.18 pipelight](#pipelight)
-        *   [3.1.19 repo-ck](#repo-ck)
-        *   [3.1.20 seblu](#seblu)
-        *   [3.1.21 seiichiro](#seiichiro)
-        *   [3.1.22 sergej-repo](#sergej-repo)
-        *   [3.1.23 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.24 herecura](#herecura)
-        *   [3.1.25 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.3 catalyst](#catalyst)
+        *   [3.1.4 catalyst-hd234k](#catalyst-hd234k)
+        *   [3.1.5 city](#city)
+        *   [3.1.6 demz-repo-archiso](#demz-repo-archiso)
+        *   [3.1.7 demz-repo-core](#demz-repo-core)
+        *   [3.1.8 haskell-core](#haskell-core)
+        *   [3.1.9 haskell-happstack](#haskell-happstack)
+        *   [3.1.10 haskell-web](#haskell-web)
+        *   [3.1.11 infinality-bundle](#infinality-bundle)
+        *   [3.1.12 ivasilev](#ivasilev_2)
+        *   [3.1.13 llvm-svn](#llvm-svn)
+        *   [3.1.14 metalgamer](#metalgamer)
+        *   [3.1.15 miffe](#miffe)
+        *   [3.1.16 nullptr_t](#nullptr_t)
+        *   [3.1.17 pipelight](#pipelight)
+        *   [3.1.18 repo-ck](#repo-ck)
+        *   [3.1.19 seblu](#seblu)
+        *   [3.1.20 seiichiro](#seiichiro)
+        *   [3.1.21 sergej-repo](#sergej-repo)
+        *   [3.1.22 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.23 herecura](#herecura)
+        *   [3.1.24 blackeagle-pre-community](#blackeagle-pre-community)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 arch-deepin](#arch-deepin)
         *   [3.2.2 archaudio](#archaudio)
@@ -61,18 +60,17 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.2.10 heftig](#heftig)
         *   [3.2.11 mesa-git](#mesa-git)
         *   [3.2.12 noware](#noware)
-        *   [3.2.13 openrc-eudev](#openrc-eudev)
-        *   [3.2.14 oracle](#oracle)
-        *   [3.2.15 pantheon](#pantheon)
-        *   [3.2.16 paulburton-fitbitd](#paulburton-fitbitd)
-        *   [3.2.17 pietma](#pietma)
-        *   [3.2.18 pfkernel](#pfkernel)
-        *   [3.2.19 suckless](#suckless)
-        *   [3.2.20 trinity](#trinity)
-        *   [3.2.21 Unity-for-Arch](#Unity-for-Arch)
-        *   [3.2.22 Unity-for-Arch-Extra](#Unity-for-Arch-Extra)
-        *   [3.2.23 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.24 QOwnNotes](#QOwnNotes)
+        *   [3.2.13 oracle](#oracle)
+        *   [3.2.14 pantheon](#pantheon)
+        *   [3.2.15 paulburton-fitbitd](#paulburton-fitbitd)
+        *   [3.2.16 pietma](#pietma)
+        *   [3.2.17 pfkernel](#pfkernel)
+        *   [3.2.18 suckless](#suckless)
+        *   [3.2.19 trinity](#trinity)
+        *   [3.2.20 Unity-for-Arch](#Unity-for-Arch)
+        *   [3.2.21 Unity-for-Arch-Extra](#Unity-for-Arch-Extra)
+        *   [3.2.22 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.23 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 eee-ck](#eee-ck)
@@ -107,21 +105,20 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.18 linux-kalterfx](#linux-kalterfx)
         *   [5.1.19 linux-tresor](#linux-tresor)
         *   [5.1.20 markzz](#markzz)
-        *   [5.1.21 openrc](#openrc)
-        *   [5.1.22 qt-debug](#qt-debug)
-        *   [5.1.23 quarry](#quarry)
-        *   [5.1.24 rstudio](#rstudio)
-        *   [5.1.25 siosm-aur](#siosm-aur)
-        *   [5.1.26 siosm-selinux](#siosm-selinux)
-        *   [5.1.27 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.28 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.21 qt-debug](#qt-debug)
+        *   [5.1.22 quarry](#quarry)
+        *   [5.1.23 rstudio](#rstudio)
+        *   [5.1.24 siosm-aur](#siosm-aur)
+        *   [5.1.25 siosm-selinux](#siosm-selinux)
+        *   [5.1.26 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.27 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
         *   [5.2.3 andrwe](#andrwe_2)
         *   [5.2.4 archstudio](#archstudio)
         *   [5.2.5 brtln](#brtln)
-        *   [5.2.6 jkanetwork64](#jkanetwork64)
+        *   [5.2.6 jkanetwork](#jkanetwork)
         *   [5.2.7 mazdlc](#mazdlc)
         *   [5.2.8 mazdlc-deadbeef-plugins](#mazdlc-deadbeef-plugins)
         *   [5.2.9 mazdlc-kde-frameworks-5](#mazdlc-kde-frameworks-5)
@@ -259,19 +256,6 @@ SigLevel = Optional TrustedOnly
 Server = http://repo.archlinuxcn.org/$arch
 ## or use a CDN (beta)
 #Server = https://cdn.repo.archlinuxcn.org/$arch
-
-```
-
-#### bbqlinux
-
-*   **Maintainer:** [Daniel Hillenbrand](https://plus.google.com/u/0/+DanielHillenbrand/about)
-*   **Description:** Packages for Android Development
-*   **Upstream Page:** [http://bbqlinux.org/](http://bbqlinux.org/)
-*   **Key-ID:** Get the *bbqlinux-keyring* package, as it contains the needed keys.
-
-```
-[bbqlinux]
-Server = http://packages.bbqlinux.org/$repo/os/$arch
 
 ```
 
@@ -672,19 +656,6 @@ Server = http://pkgbuild.com/~lcarlier/$repo/$arch
 ```
 [noware]
 Server = http://direct.$repo.systems.:2/repository/arch/$arch
-
-```
-
-#### openrc-eudev
-
-*   **Maintainer:** [Aaditya](/index.php/User:Aaditya "User:Aaditya"), [Nous](/index.php/User:Nous "User:Nous")
-*   **Description:** OpenRC and eudev packages, [artoo's way](/index.php/OpenRC#artoo "OpenRC").
-
-```
-[openrc-eudev]
-Server = http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
-Server = ftp://ftp.heanet.ie/mirrors/sourceforge/a/ar/archopenrc/$repo/$arch
-Server = https://pub.projectarch.tk/mirror/archopenrc/$repo/$arch
 
 ```
 
@@ -1194,20 +1165,6 @@ Server = http://repo.markzz.com/arch/$repo/$arch
 
 ```
 
-#### openrc
-
-*   **Maintainer:** [jaco](http://www.autistici.org/arch-openrc/)
-*   **Description:** All packages to run OpenRC on a x86_64 machine, using Manjaro PKGBUILDS.
-*   **Sources:** [https://github.com/manjaro/packages-openrc](https://github.com/manjaro/packages-openrc)
-*   **Key ID:** 8C51F416
-*   **Keyfile:** [http://www.autistici.org/arch-openrc/jacopo.asc](http://www.autistici.org/arch-openrc/jacopo.asc)
-
-```
-[openrc]
-Server = http://www.autistici.org/arch-openrc/repo/
-
-```
-
 #### qt-debug
 
 *   **Maintainer:** [The Compiler](http://blog.the-compiler.org/?page_id=36)
@@ -1230,7 +1187,6 @@ Server = http://qutebrowser.org/qt-debug/$arch
 
 ```
 [quarry]
-# report issues at https://github.com/anatol/quarry
 Server = http://pkgbuild.com/~anatolik/quarry/x86_64/
 
 ```
@@ -1362,15 +1318,15 @@ Server = http://pkgbuild.com/~barthalion/brtln/$arch/
 
 ```
 
-#### jkanetwork64
+#### jkanetwork
 
 *   **Maintainer:** kprkpr <kevin01010 at gmail dot com>
 *   **Maintainer:** Joselucross <jlgarrido97 at gmail dot com>
-*   **Description:** Packages of AUR like pimagizer,stepmania, linux-mainline, brackets, wps-office, grub-customizer.. Open for all that wants to contribute
+*   **Description:** Packages of AUR like pimagizer,stepmania,yaourt,linux-mainline,wps-office,grub-customizer,some IDE.. Open for all that wants to contribute
 *   **Upstream page:** [http://repo.jkanetwork.com/](http://repo.jkanetwork.com/)
 
 ```
-[jkanetwork64]
+[jkanetwork]
 Server = http://repo.jkanetwork.com/repo/$repo/
 
 ```

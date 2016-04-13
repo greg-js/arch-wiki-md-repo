@@ -23,7 +23,7 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
     *   [4.4 Tooltips have dark background color with Adwaita theme](#Tooltips_have_dark_background_color_with_Adwaita_theme)
     *   [4.5 Toggle buttons states are the same for selected/not selected](#Toggle_buttons_states_are_the_same_for_selected.2Fnot_selected)
     *   [4.6 Change Default Window Title Font Size](#Change_Default_Window_Title_Font_Size)
-    *   [4.7 Disable gtk3](#Disable_gtk3)
+    *   [4.7 Disable GTK+ 3](#Disable_GTK.2B_3)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -246,9 +246,9 @@ Open the appropriate file with your text editor, ie e4_default_gtk.css if you ar
 
 ```
 
-### Disable gtk3
+### Disable GTK+ 3
 
-When the SWT GTK3 UI is buggy and sometimes unusable, You can try to disable the use of gtk3 with the SWT_GTK3=0 environment variable when you start eclipse:
+When the SWT GTK+ 3 UI is buggy and sometimes unusable, You can try to disable the use of GTK+ 3 with the SWT_GTK3=0 environment variable when you start eclipse:
 
 ```
 SWT_GTK3=0 eclipse
