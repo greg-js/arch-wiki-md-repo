@@ -57,7 +57,7 @@ Performance and system responsiveness can be generally improved by making adjust
 
 ### Adding root to fstab
 
-By default, the *root* partition (`/dev/mmcblk0p2`) isn't set in `/etc/fstab`. This is an example of how to set the `/etc/fstab` file:
+By default, the *root* partition (`/dev/mmcblk0p2`) is not set in `/etc/fstab`. This is an example of how to set the `/etc/fstab` file:
 
  `/etc/fstab` 
 ```
@@ -86,6 +86,13 @@ Users needing to establish a wireless internet connection will need to use a wir
 ## Audio
 
 [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) should supply the needed programs to use onboard sound. Default volume can be adjusted using `alsamixer`.
+
+A key change with Linux kernel version 4.4.x for ARM related to ALSA and to the needed sound module: in order to use tools such as `alsamixer` with the current kernel, users *must* modify `/boot/config.txt` to contain the following line:
+
+```
+dtparam=audio=on
+
+```
 
 **Tip:** Ensure that the sole source "PCM" is not muted (denoted by `MM` if muted, press `M` to unmute).
 

@@ -200,7 +200,7 @@ srcman is a pacman/makepkg wrapper written in Bash, which transparently handles 
 
 ### yaourt
 
-[Yaourt](/index.php/Yaourt "Yaourt") (Yet Another User Repository Tool) is a community-contributed wrapper for pacman which adds seamless access to the AUR, allowing and automating Пакет compilation and installation from your choice of the thousands of PKGBUILDs in the AUR, in addition to the many thousands of available Arch binary packages. Yaourt uses the same exact syntax as pacman, which saves you from relearning an entirely new method of system maintenance, but also adds new options. Yaourt expands the power and simplicity of pacman by adding even more useful features and provides pleasing, colorized output, interactive search mode, and much more.
+[Yaourt](/index.php/Yaourt "Yaourt") (Yet Another User Repository Tool) это разрабатываемая сообществом обертка для pacman, которая добавляет бесшовный доступ к AUR, поддерживает автоматическую компиляцию и установку пакетов по вашему выбору из тысяч PKGBUILS в дополнение к доступным в Arch Linux многим тысячам бинарных пакетов в официальных репозиториях. Yaourt использует синтаксис pacman, что позволит вам не осваивать принципиально новый способ обслуживания системы, но также добавляет новые возможности. Yaourt расширяет мощь и простоту pacman путем добавления многих полезных функций, поддерживает приятный глазу цветной вывод результатов, интерактивный поиск и многое другое.
 
 *   Сайт: [http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en)
 *   Пакет: [https://aur.archlinux.org/packages.php?ID=5863](https://aur.archlinux.org/packages.php?ID=5863)

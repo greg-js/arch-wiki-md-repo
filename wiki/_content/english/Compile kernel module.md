@@ -23,7 +23,7 @@ $ uname -r
 
 ```
 
-Then acquire kernel source code, see [Kernels/Compilation/Traditional#Fetching source](/index.php/Kernels/Compilation/Traditional#Fetching_source "Kernels/Compilation/Traditional"). If you fetch latest source using [Git](/index.php/Git "Git") you will need to checkout needed version using tag (eg. v4.1).
+Then acquire the required source, see [Kernels/Traditional compilation#Download the kernel source](/index.php/Kernels/Traditional_compilation#Download_the_kernel_source "Kernels/Traditional compilation"). If you fetch latest source using [Git](/index.php/Git "Git") you will need to checkout needed version using tag (eg. v4.1).
 
 ## Source configuration
 

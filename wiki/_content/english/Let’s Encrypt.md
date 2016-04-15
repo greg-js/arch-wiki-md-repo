@@ -63,7 +63,28 @@ location /.well-known/acme-challenge {
 }
 ```
 
-The chosen path has then to be writable for the chosen letsencrypt client.
+For apache you can achieve this by creating the file `httpd-acme.conf`:
+
+ `/etc/httpd/conf/extra/httpd-acme.conf` 
+```
+Alias /.well-known/acme-challenge/ "/var/lib/letsencrypt/.well-known/acme-challenge/"
+<Directory "/var/lib/letsencrypt/">
+    AllowOverride None
+    Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+    Require method GET POST OPTIONS
+</Directory>
+
+```
+
+and including it in `httpd.conf`:
+
+ `/etc/httpd/conf/httpd.conf` 
+```
+Include conf/extra/httpd-acme.conf
+
+```
+
+The chosen path has then to be writable for the chosen letsencrypt client. It also has to be readable by the web server; you can achieve this thereby : `chgrp http /val/lib/letsencrypt && chmod g+s /var/lib/letsencrypt`.
 
 #### Automatic renewal
 
@@ -102,7 +123,7 @@ WantedBy=timers.target
 
 You'll probably want your web server to be restarted after each certificate renewal. You can realize that by adding one of these lines to the `letsencrypt.service` file:
 
-*   Apache: `ExecStartPost=/usr/sbin/systemctl restart httpd.service`
+*   Apache: `ExecStartPost=/usr/sbin/systemctl reload httpd.service`
 *   nginx: `ExecStartPost=/usr/sbin/systemctl restart nginx.service`
 
 ## See also

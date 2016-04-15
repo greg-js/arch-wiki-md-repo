@@ -27,7 +27,7 @@ Because its systemwide Arch Linux configuration file (`/etc/mail.rc`) brings in 
 
 ```
 
-Using the *-d*ebug flag results in a dry-run that doesn't perform any action for real (including ignorance of the current *save* and *record* settings). You can adjust the program which is used as a MTA by setting the variable *sendmail* (fine-tuning via *sendmail-arguments*, *sendmail-no-default-arguments*, *sendmail-progname*, please see the manual, "Sending mail"):
+Using the `-d`ebug flag results in a dry-run that does not perform any action for real (including ignorance of the current `save` and `record` settings). You can adjust the program which is used as a MTA by setting the variable `sendmail` (fine-tuning via `sendmail-arguments`, `sendmail-no-default-arguments`, `sendmail-progname`. See the manual, "Sending mail"):
 
 ```
 # < /etc/passwd mailx -Ssendmail=/usr/bin/sendmail -Ssendwait -s 'My password file content!' public-foo@bar.example
@@ -35,9 +35,9 @@ Using the *-d*ebug flag results in a dry-run that doesn't perform any action for
 
 ```
 
-By default message delivery is asynchronous, and S-nail will exit as soon as the prepared message has been passed over to the delivery mechanism (the MTA or the builtin SMTP MTA), stating only wether message preparation was successful (or not). If the *sendwait* option is set, however, S-nail will wait for the started (builtin) MTA instance to exit and (instead) use the MTA exit status as its message delivery "success" or "failure" status.
+By default message delivery is asynchronous, and S-nail will exit as soon as the prepared message has been passed over to the delivery mechanism (the MTA or the builtin SMTP MTA), stating only wether message preparation was successful (or not). If the `sendwait` option is set, however, S-nail will wait for the started (builtin) MTA instance to exit and (instead) use the MTA exit status as its message delivery "success" or "failure" status.
 
-Sending messages to file and command "addresses" (not over the MTA) is possible if the *expandaddr* option is set:
+Sending messages to file and command "addresses" (not over the MTA) is possible if the `expandaddr` option is set:
 
 ```
 # echo bla | mailx -Sexpandaddr -s test ./mbox.mbox
@@ -45,7 +45,9 @@ Sending messages to file and command "addresses" (not over the MTA) is possible 
 
 ```
 
-To avoid environmental noise scripts can (and should) "detach" from configuration files and use the *-S* and *-X* command line flags to create their own setup and run necessary commands, respectively. Also *expandaddr* can be given a value and be used for address verification (the following for example allows *only* network addressees), and the *-.* command line option will terminate option processing and turn on message send mode: together these form active barriers to prevent misinterpretation of address arguments as command line options and other injection attacks. E.g., the following example can be used "as is" (except for *-d*), provided that you have a **somefile.pdf**, somewhere; it sets the *record* variable to the pathname of the folder used to record all outgoing mail, so that we then can look into the generated message:
+To avoid that members of the program environment and settings of configuration files modify program behaviour, scripts can (and should) detach from configuration files and use the `-S` and `-X` command line flags to create their own setup and run necessary commands, respectively.
+
+`expandaddr` can be given a value and be used for address verification. For example, the following *only* allows network addressees. The `-.` command line option will terminate option processing and turn on message send mode. Together these form active barriers to prevent misinterpretation of address arguments as command line options and other injection attacks. The following example can be used as is, except for {ic|-d}}, provided that you have a *somefile.pdf* somewhere; it sets the `record` variable to the pathname of the folder used to record all outgoing mail, so that we then can look into the generated message:
 
 ```
 # echo Body |
@@ -62,18 +64,18 @@ To avoid environmental noise scripts can (and should) "detach" from configuratio
 
 ```
 
-It is hoped that the S-nail manual page is helpful, and especially the sections "A starter", "Sending mail" and "Reading mail" should be worth a glance when looking for more "quick shots".
+The sections "A starter", "Sending mail" and "Reading mail" of the manual page should be worth a glance when looking for more "quick shots".
 
-When in the following **USER** and **PASS** informations are specified as part of an URL (other possibilities exist) they must become URL percent encoded; S-nail offers the **urlencode** command which does this for you:
+In cases when in the following *USER* and *PASS* are specified as part of an URL (and only then), they must become URL-percent-encoded; S-nail offers the `urlencode` command which does this for you:
 
 ```
-# printf 'urlencode USER PASS
+# printf 'urlencode *USER* *PASS*
 x
 ' | mailx -#
 
 ```
 
-Of course: printf as well as S-nail / mailx are subject to your locale settings:
+printf as well as S-nail / mailx are subject to your locale settings:
 
 ```
 # # In UTF-8:
@@ -93,7 +95,11 @@ x
 
 ## First configuration adjustments
 
-Configuration files are the user-specific `$HOME/.mailrc` and the systemwide `/etc/mail.rc`, the latter of which is subject to the usual ArchLinux update mechanism. Thus let's leave that alone and place the following in the private user-specific configuration file, adjusting bold strings. By the way, by using the *-n* command line argument or by setting the *$NAIL_NO_SYSTEM_RC* environment variable it is possible to avoid that the global configuration file will be loaded, and by pointing the *MAILRC* environment variable to `/dev/null` the unavoidable per-user configuration file can be turned behaviour neutral; we've used these possibilities in the detached script example above. And note that all the remaining examples in this document are based upon this configuration template, which simply sets some security and send mode basics:
+Configuration files are the user-specific `$HOME/.mailrc` and the systemwide `/etc/mail.rc`, the latter of which is subject to the usual ArchLinux update mechanism. Thus the following example uses the private user-specific configuration file.
+
+**Tip:** Using the `-n` command line argument or by setting the `NAIL_NO_SYSTEM_RC` inhibits reading `mail.rc` upon startup. Coupled with setting the `MAILRC` environment variable to `/dev/null`, this ensures that no configuration file is used. The detached script example above uses this method.
+
+All the remaining examples in this article are based upon this configuration template, which simply sets some security and send mode basics:
 
 ```
 # All the examples require v15-compat!
@@ -111,7 +117,7 @@ set ssl-no-default-ca
 # Change this only when the remote server doesn't support it:
 # maybe use ssl-protocol-HOST (or -USER@HOST) syntax to define
 # such explicit exceptions, then, e.g.
-#     *ssl-protocol-**USER**@archlinux.org*="-ALL,+TLSv1.2"
+#     ssl-protocol-USER@archlinux.org="-ALL,+TLSv1.2"
 set ssl-protocol="-ALL,+TLSv1.2"
 
 # Explicitly define the list of ciphers, which may improve security,
@@ -144,22 +150,22 @@ set sendwait
 
 # Only use builtin MIME types, no mime.types(5) files.
 # That set is often sufficient, but look at the output of the
-# **mimetype** command to ensure this is true for you, too
+# mimetype command to ensure this is true for you, too
 set mimetypes-load-control
 
 # Default directory where we act in (relative to $HOME)
 set folder=mail
-# A leading "+" (often) means: under *folder*
-# *record* is used to save copies of sent messages
+# A leading "+" (often) means: under folder
+# record is used to save copies of sent messages
 set MBOX=+mbox.mbox record=+sent.mbox DEAD=+dead.mbox
 
-# Define some shortcuts; now one may say, e.g., **file mymbo**
+# Define some shortcuts; now one may say, e.g., file mymbo
 shortcut mymbo %:+mbox.mbox \
          myrec +sent.mbox
 
 # This is optional, but you should get the big picture
 # by reading the manual before you leave that off
-set from="**Your Name <youremail@domain>**" 
+set from="*Your Name <youremail@domain>*" 
 
 # Mailing-list specifics (manual: "Mailing lists"):
 set followup-to followup-to-honour=ask-yes reply-to-honour=ask-yes
@@ -169,7 +175,7 @@ mlsubscribe ^xfans@xfans.xyz$
 
 ```
 
-The above combination of SSL/TLS configuration results in the most secure end-to-end TLS transport that is possible at the time of this writing.
+The above combination of SSL/TLS configuration results in the most secure end-to-end TLS transport that is possible.
 
 ## Sending mail with an external SMTP server
 
@@ -245,7 +251,7 @@ machine *.yXXXXx.ru login **USER** password **PASS**
 
 ```
 
-(Here **USER** and **PASS** are clear text, not URL encoded.) You can furtherly diversify things and use encrypted password storage, since ArchLinux compiles in password agent support. To adjust the example, simply don't specify the *password **PASS*** token in `$HOME/.netrc` but instead uncomment the *agent-shell-lookup* line in the example account above. The encrypted password storage `.pass.gpg` can be created like this:
+In this case **USER** and **PASS** are clear text, not URL encoded. You can further diversify things and use encrypted password storage, since ArchLinux compiles in password agent support. To adjust the example, simply do not specify the *password **PASS*** token in `$HOME/.netrc` but instead uncomment the *agent-shell-lookup* line in the example account above. The encrypted password storage `.pass.gpg` can be created like this:
 
 ```
 # echo **PASS** > .pass

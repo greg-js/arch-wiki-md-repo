@@ -75,9 +75,9 @@ Each line in the file represents a file system that is currently mounted and dis
 
 ## Alternatives that can be used to change the default options for mounting
 
-Here are a few examples about how to extend mount functionality and modify default options. To change the default settings in the [kernel](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional") you will need to compile the kernel yourself. If the script does not exist then the default options will be used.
+Here are a few examples about how to extend mount functionality and modify default options. To change the default settings in the [kernel](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation") you will need to compile the kernel yourself. If the script does not exist then the default options will be used.
 
-*   [By compiling the kernel yourself](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional")
+*   [By compiling the kernel yourself](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation")
 *   By using scripts
 *   [By editing fstab](/index.php/Fstab "Fstab")
 *   [By creating udev / udisks rules](/index.php/Udev "Udev") - device manager for the Linux kernel.

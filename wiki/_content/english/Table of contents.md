@@ -8,7 +8,7 @@
 | <small>1.3.1.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.4.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(1)</small> |
 | <small>1.5.</small> [Events](/index.php/Category:Events "Category:Events") <small>(7)</small> |
-| <small>1.6.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(27)</small> |
+| <small>1.6.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(28)</small> |
 | <small>1.7.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(2)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(22)</small> |
 | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(8)</small> |

@@ -268,4 +268,38 @@ Setting kernel argument "intel_idle.max_cstate=1" solve the problem without affe
 
 ### Bluetooth
 
-Does not work yet.
+Needs tested on a X205TA (works on a T100TA).
+
+Tested on X205TA and it does not work out of the box, albeit it seems promising: BT chip is recognized, but firmware is missing. Using BCM43341B0.hcd from T100 leads to tx-timeouts.
+
+Install bluez, enable the service, and then run this command
+
+```
+# pacman -S bluez
+# systemctl enable --now bluetooth.service
+# btattach --bredr /dev/ttyS1 -P bcm
+
+```
+
+To automate running this command at startup you can create a service file for it
+
+ `/etc/systemd/system/btattach.service` 
+```
+[Unit]
+Description=Btattach
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/btattach --bredr /dev/ttyS1 -P bcm
+ExecStop=/usr/bin/killall btattach
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Then enable the service
+
+```
+# systemctl enable --now btattach.service
+
+```

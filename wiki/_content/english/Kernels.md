@@ -236,7 +236,7 @@ See [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Ar
 
 This involves manually downloading a source tarball, and compiling in your home directory as a normal user. Once configured, two installation methods are available; the traditional manual method, or with [Makepkg](/index.php/Makepkg "Makepkg") + [Pacman](/index.php/Pacman "Pacman").
 
-See [Kernels/Compilation/Traditional](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional").
+See [Kernels/Traditional compilation](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation").
 
 ## See also
 

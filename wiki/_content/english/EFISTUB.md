@@ -17,7 +17,7 @@ An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly usi
 
 ## Setting up EFISTUB
 
-After creating the [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface"), you must choose how it will be mounted. The simplest option is to mount it at `/boot` or [bind mount](/index.php/EFI_System_Partition#Using_bind_mount "EFI System Partition") it to `/boot` since this allows pacman to directly update the kernel that the EFI firmware will read. If you elect for this option, continue to [#Booting EFISTUB](#Booting_EFISTUB).
+After creating the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"), you must choose how it will be mounted. The simplest option is to mount it at `/boot` or [bind mount](/index.php/EFI_System_Partition#Using_bind_mount "EFI System Partition") it to `/boot` since this allows pacman to directly update the kernel that the EFI firmware will read. If you elect for this option, continue to [#Booting EFISTUB](#Booting_EFISTUB).
 
 **Note:** You can keep kernel and initramfs out of ESP if you use a boot manager which has a file system driver for the partition where they reside, e.g. [rEFInd](/index.php/REFInd "REFInd").
 

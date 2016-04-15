@@ -304,7 +304,7 @@ $ DISPLAY=:0 firefox
 Alternatively, to avoid directly attaching to or connecting to the container, the following can be used on the host to automate the process:
 
 ```
-# lxc-attach -n playtime --clear-env -- sudo -u YOURUSER env DISPLAY=0.0 firefox
+# lxc-attach -n playtime --clear-env -- sudo -u YOURUSER env DISPLAY=:0 firefox
 
 ```
 

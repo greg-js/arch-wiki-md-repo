@@ -1,185 +1,149 @@
-เอกสารชุดนี้จะช่วยคุณในการติดตั้ง Arch Linux ขั้นพื้นฐาน โดยการจัดทำจะอ้างอิงจาก installation script ของเวอร์ชัน 0.6 (widget)
+นี่คือเอกสารแนะนำการติดตั้ง [Arch Linux](/index.php/Arch_Linux "Arch Linux") โดยใช้ installation image อย่างเป็นทางการ ก่อนติดตั้ง เราแนะนำให้คุณอ่าน [คำถามที่พบบ่อย](/index.php/FAQ "FAQ") และถ้าคุณกำลังมองหาวิธีการติดตั้งแบบละเอียด ลองไปดูที่ [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") หรือ [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
+
+คุณสามารถขอความช่วยเหลือจากวิกิหรืออ่าน [man page](/index.php/Man_page "Man page") ของโปรแกรมต่าง ๆ; ดูที่ [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) สำหรับภาพโดยรวมในการตั้งค่า และสำหรับความช่วยเหลือเชิงโต้ตอบ คุณสามารถใช้ [ช่อง IRC](/index.php/IRC_channel "IRC channel") และ [กระดานข่าว](https://bbs.archlinux.org/) ได้
 
 ## Contents
 
-*   [1 คำแนะนำเบื้องต้น](#.E0.B8.84.E0.B8.B3.E0.B9.81.E0.B8.99.E0.B8.B0.E0.B8.99.E0.B8.B3.E0.B9.80.E0.B8.9A.E0.B8.B7.E0.B9.89.E0.B8.AD.E0.B8.87.E0.B8.95.E0.B9.89.E0.B8.99)
-*   [2 สิ่งที่จำเป็นสำหรับการติดตั้ง](#.E0.B8.AA.E0.B8.B4.E0.B9.88.E0.B8.87.E0.B8.97.E0.B8.B5.E0.B9.88.E0.B8.88.E0.B8.B3.E0.B9.80.E0.B8.9B.E0.B9.87.E0.B8.99.E0.B8.AA.E0.B8.B3.E0.B8.AB.E0.B8.A3.E0.B8.B1.E0.B8.9A.E0.B8.81.E0.B8.B2.E0.B8.A3.E0.B8.95.E0.B8.B4.E0.B8.94.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87)
-*   [3 การติดตั้งจาก Arch-CD](#.E0.B8.81.E0.B8.B2.E0.B8.A3.E0.B8.95.E0.B8.B4.E0.B8.94.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87.E0.B8.88.E0.B8.B2.E0.B8.81_Arch-CD)
-    *   [3.1 การจัดการ partition ของฮาร์ดดิสค์](#.E0.B8.81.E0.B8.B2.E0.B8.A3.E0.B8.88.E0.B8.B1.E0.B8.94.E0.B8.81.E0.B8.B2.E0.B8.A3_partition_.E0.B8.82.E0.B8.AD.E0.B8.87.E0.B8.AE.E0.B8.B2.E0.B8.A3.E0.B9.8C.E0.B8.94.E0.B8.94.E0.B8.B4.E0.B8.AA.E0.B8.84.E0.B9.8C)
-    *   [3.2 ตั้งค่า Mountpoints](#.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87.E0.B8.84.E0.B9.88.E0.B8.B2_Mountpoints)
-    *   [3.3 เลือก Packages](#.E0.B9.80.E0.B8.A5.E0.B8.B7.E0.B8.AD.E0.B8.81_Packages)
-    *   [3.4 ติดตั้ง Packages](#.E0.B8.95.E0.B8.B4.E0.B8.94.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87_Packages)
-    *   [3.5 ติดตั้ง Kernel](#.E0.B8.95.E0.B8.B4.E0.B8.94.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87_Kernel)
-    *   [3.6 แก้ไขการตั้งค่า Config Files](#.E0.B9.81.E0.B8.81.E0.B9.89.E0.B9.84.E0.B8.82.E0.B8.81.E0.B8.B2.E0.B8.A3.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87.E0.B8.84.E0.B9.88.E0.B8.B2_Config_Files)
-    *   [3.7 ติดตั้ง Bootloader](#.E0.B8.95.E0.B8.B4.E0.B8.94.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87_Bootloader)
-    *   [3.8 พร้อมแล้วที่จะ reboot](#.E0.B8.9E.E0.B8.A3.E0.B9.89.E0.B8.AD.E0.B8.A1.E0.B9.81.E0.B8.A5.E0.B9.89.E0.B8.A7.E0.B8.97.E0.B8.B5.E0.B9.88.E0.B8.88.E0.B8.B0_reboot)
-*   [4 การติดตั้ง Arch ในรูปแบบอื่นๆ](#.E0.B8.81.E0.B8.B2.E0.B8.A3.E0.B8.95.E0.B8.B4.E0.B8.94.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87_Arch_.E0.B9.83.E0.B8.99.E0.B8.A3.E0.B8.B9.E0.B8.9B.E0.B9.81.E0.B8.9A.E0.B8.9A.E0.B8.AD.E0.B8.B7.E0.B9.88.E0.B8.99.E0.B9.86)
-*   [5 ก้าวแรกของคุณ กับ Arch](#.E0.B8.81.E0.B9.89.E0.B8.B2.E0.B8.A7.E0.B9.81.E0.B8.A3.E0.B8.81.E0.B8.82.E0.B8.AD.E0.B8.87.E0.B8.84.E0.B8.B8.E0.B8.93_.E0.B8.81.E0.B8.B1.E0.B8.9A_Arch)
+*   [1 ก่อนเริ่มติดตั้ง](#.E0.B8.81.E0.B9.88.E0.B8.AD.E0.B8.99.E0.B9.80.E0.B8.A3.E0.B8.B4.E0.B9.88.E0.B8.A1.E0.B8.95.E0.B8.B4.E0.B8.94.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87)
+    *   [1.1 ตั้งค่าเลย์เอาต์ของคีย์บอร์ด](#.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87.E0.B8.84.E0.B9.88.E0.B8.B2.E0.B9.80.E0.B8.A5.E0.B8.A2.E0.B9.8C.E0.B9.80.E0.B8.AD.E0.B8.B2.E0.B8.95.E0.B9.8C.E0.B8.82.E0.B8.AD.E0.B8.87.E0.B8.84.E0.B8.B5.E0.B8.A2.E0.B9.8C.E0.B8.9A.E0.B8.AD.E0.B8.A3.E0.B9.8C.E0.B8.94)
+    *   [1.2 เชื่อมต่ออินเทอร์เน็ต](#.E0.B9.80.E0.B8.8A.E0.B8.B7.E0.B9.88.E0.B8.AD.E0.B8.A1.E0.B8.95.E0.B9.88.E0.B8.AD.E0.B8.AD.E0.B8.B4.E0.B8.99.E0.B9.80.E0.B8.97.E0.B8.AD.E0.B8.A3.E0.B9.8C.E0.B9.80.E0.B8.99.E0.B9.87.E0.B8.95)
+    *   [1.3 อัพเดตเวลาของระบบ](#.E0.B8.AD.E0.B8.B1.E0.B8.9E.E0.B9.80.E0.B8.94.E0.B8.95.E0.B9.80.E0.B8.A7.E0.B8.A5.E0.B8.B2.E0.B8.82.E0.B8.AD.E0.B8.87.E0.B8.A3.E0.B8.B0.E0.B8.9A.E0.B8.9A)
+    *   [1.4 แบ่งพาร์ทิชั่นของดิสก์](#.E0.B9.81.E0.B8.9A.E0.B9.88.E0.B8.87.E0.B8.9E.E0.B8.B2.E0.B8.A3.E0.B9.8C.E0.B8.97.E0.B8.B4.E0.B8.8A.E0.B8.B1.E0.B9.88.E0.B8.99.E0.B8.82.E0.B8.AD.E0.B8.87.E0.B8.94.E0.B8.B4.E0.B8.AA.E0.B8.81.E0.B9.8C)
+    *   [1.5 ฟอร์แมตพาร์ทิชั่น](#.E0.B8.9F.E0.B8.AD.E0.B8.A3.E0.B9.8C.E0.B9.81.E0.B8.A1.E0.B8.95.E0.B8.9E.E0.B8.B2.E0.B8.A3.E0.B9.8C.E0.B8.97.E0.B8.B4.E0.B8.8A.E0.B8.B1.E0.B9.88.E0.B8.99)
+    *   [1.6 Mount พาร์ทิชั่น](#Mount_.E0.B8.9E.E0.B8.B2.E0.B8.A3.E0.B9.8C.E0.B8.97.E0.B8.B4.E0.B8.8A.E0.B8.B1.E0.B9.88.E0.B8.99)
+*   [2 การติดตั้ง](#.E0.B8.81.E0.B8.B2.E0.B8.A3.E0.B8.95.E0.B8.B4.E0.B8.94.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87)
+    *   [2.1 เลือก mirror](#.E0.B9.80.E0.B8.A5.E0.B8.B7.E0.B8.AD.E0.B8.81_mirror)
+    *   [2.2 ติดตั้งแพคเกจพื้นฐาน](#.E0.B8.95.E0.B8.B4.E0.B8.94.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87.E0.B9.81.E0.B8.9E.E0.B8.84.E0.B9.80.E0.B8.81.E0.B8.88.E0.B8.9E.E0.B8.B7.E0.B9.89.E0.B8.99.E0.B8.90.E0.B8.B2.E0.B8.99)
+    *   [2.3 ตั้งค่าระบบ](#.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87.E0.B8.84.E0.B9.88.E0.B8.B2.E0.B8.A3.E0.B8.B0.E0.B8.9A.E0.B8.9A)
+    *   [2.4 ติดตั้งบู๊ตโหลดเดอร์](#.E0.B8.95.E0.B8.B4.E0.B8.94.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87.E0.B8.9A.E0.B8.B9.E0.B9.8A.E0.B8.95.E0.B9.82.E0.B8.AB.E0.B8.A5.E0.B8.94.E0.B9.80.E0.B8.94.E0.B8.AD.E0.B8.A3.E0.B9.8C)
+    *   [2.5 รีบู๊ตเครื่อง](#.E0.B8.A3.E0.B8.B5.E0.B8.9A.E0.B8.B9.E0.B9.8A.E0.B8.95.E0.B9.80.E0.B8.84.E0.B8.A3.E0.B8.B7.E0.B9.88.E0.B8.AD.E0.B8.87)
+*   [3 หลังการติดตั้ง](#.E0.B8.AB.E0.B8.A5.E0.B8.B1.E0.B8.87.E0.B8.81.E0.B8.B2.E0.B8.A3.E0.B8.95.E0.B8.B4.E0.B8.94.E0.B8.95.E0.B8.B1.E0.B9.89.E0.B8.87)
 
-## คำแนะนำเบื้องต้น
+## ก่อนเริ่มติดตั้ง
 
-นี่เป็นการแนะนำอย่างง่ายและรวดเร็ว สำหรับผู้ที่ยังไม่รู้จัก Arch เป็นอย่างดี นอกจากนี้บทความนี้ยังคำนึงถึงผู้ใช้ที่มี ระบบปฏิบัติการ Windows อยู่ในเครื่อง และอยากติดตั้ง Arch Linux โดยไม่เป็นอันตรายของส่วนอื่นๆ
+ดาวน์โหลดและบู๊ตจากสื่อการติดตั้งตามวิธีในหน้า [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") จากนั้นจึงกลับมาทำตามขั้นตอนในหน้านี้
 
-คู่มือนี้สำหรับฮาร์ดแวร์ "ธรรมดา" เท่านั้น และจะไม่มีการอ้างอิงถึงอุปกรณ์พิเศษเช่น SCSI
+การติดตั้งจำเป็นต้องดึงแพคเกจมาจากอินเทอร์เน็ต ดังนั้นคุณต้องมีการเชื่อมต่ออินเทอร์เน็ตที่ใช้งานได้
 
-คู่มือนี้สันนิษฐานว่าระบบปฏิบัติการ Windows จะอยู่ใน Partition แรกของฮาร์ดดิสค์ มิเช่นนั้น GRUB (โปรแกรม load ระบบปฏิบัติการ) จะไม่สามารถหามันได้
+### ตั้งค่าเลย์เอาต์ของคีย์บอร์ด
 
-## สิ่งที่จำเป็นสำหรับการติดตั้ง
+เลย์เอาต์เริ่มต้นของคีย์บอร์ดคือ US แต่คุณสามารถเพิ่มเลย์เอาต์ที่ต้องการได้โดยใช้คำสั่ง `loadkeys *keymap_file*`: ซึ่งอยู่ใน `/usr/share/kbd/keymaps/` (ไม่ต้องระบุ path และนามสกุลไฟล์ก็ได้)
 
-*   Archlinux Base Installation CD หรือ Full-Installation-CD
+### เชื่อมต่ออินเทอร์เน็ต
 
-*   ฮาร์ดดิสค์เปล่าหรือพื้นที่ว่างใน partition ใด partition หนึ่งบนฮาร์ดดิสค์ คุณต้องแยกพื้นที่ว่างดังกล่าวออกจาก partition ที่มีอยู่ใน Windows โดยการใช้โปรแกรมจัดการ partition (เช่น Partition Magic)
+ปกติคุณจะใช้อินเทอร์เน็ตได้โดยอัตโนมัติผ่าน DHCP discovery หลังบู๊ตสื่อการติดตั้งอยู่แล้ว (ถ้าเป็นการเชื่อมต่อแบบใช้สาย)   แต่ถ้าใช้เครือข่ายแบบไร้สาย คุณต้องเรียกใช้โปรแกรม `wifi-menu` เพื่อตั้งค่าเครือข่ายก่อน; อ่านข้อมูลเพิ่มเติมที่ [การตั้งค่าเครือข่ายไร้สาย](/index.php/Wireless_network_configuration "Wireless network configuration")   และถ้าคุณต้องการใช้ static IP หรือใช้เครื่องมือจัดการเครือข่ายอื่น คุณต้องหยุดใช้ DHCP ด้วยคำสั่ง `systemctl stop dhcpcd@*eth0*.service` แล้วค่อยทำตามวิธีในหน้า [Netctl](/index.php/Netctl "Netctl")
 
-## การติดตั้งจาก Arch-CD
+### อัพเดตเวลาของระบบ
 
-*   ใส่ CD เข้าไปใน drive ของคุณ reboot เครื่องและตรวจสอบว่า BIOS ถูกตั้งให้ boot เครื่องจาก CD-ROM drive เป็นอันดับแรก
+อ่าน [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")
 
-*   คุณควรจะเห็นหน้าจอแบบนี้:
+### แบ่งพาร์ทิชั่นของดิสก์
 
-[http://home.arcor.de/Langeland/1.png](http://home.arcor.de/Langeland/1.png) หน้าหลักในการ Boot ของ Arch
+อ่านรายละเอียดที่หน้า [การแบ่งพาร์ทิชั่น](/index.php/Partitioning "Partitioning"); คุณอาจต้องสร้างพาร์ทิชั่นพิเศษขึ้นอยู่กับแต่ละกรณี ลองอ่านหน้า [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") และ [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB")    และถ้าคุณต้องการใช้ stacked block devices สำหรับ [LVM](/index.php/LVM "LVM"), [การเข้ารหัสดิสก์](/index.php/Disk_encryption "Disk encryption") หรือ [RAID](/index.php/RAID "RAID") ก็ให้ทำในขั้นตอนนี้ด้วย
 
-*   กด `Enter`
-*   หลังจากเสร็จสิ้นขั้นตอนการเริ่มต้นระบบ พิมพ์:
+### ฟอร์แมตพาร์ทิชั่น
 
-```
-/arch/setup
+อ่าน [ระบบไฟล์](/index.php/File_systems#Create_a_filesystem "File systems") และ [Swap](/index.php/Swap "Swap") สำหรับรายละเอียดและวิธีการ
 
-```
+### Mount พาร์ทิชั่น
 
-คุณจะเริ่มตั้นการติดตั้งจาก CD ก่อน ดังนั้น driver สำหรับ network card จึงยังไม่จำเป็น
+Mount พาร์ทิชั่น root ที่ `/mnt` หลังจากนั้นให้สร้างและ mount ไดเร็คทอรี่อื่น ๆ (ถ้ามี) (เช่น `/mnt/boot`, `/mnt/home`, ...) จากนั้นให้เปิดใช้พาร์ทิชั่น *swap* ถ้าต้องการให้ *genfstab* มองเห็น
 
-หลังจากนั้นหน้าจอจะแสดงเมนูหลัก:
+## การติดตั้ง
 
-[http://home.arcor.de/Langeland/6.png](http://home.arcor.de/Langeland/6.png) เมนูหลัก
+### เลือก mirror
 
-### การจัดการ partition ของฮาร์ดดิสค์
+แก้ไข `/etc/pacman.d/mirrorlist` และเลือก download mirror ที่ต้องการ เราแนะนำให้ใช้ mirror ในท้องถิ่นจะเร็วที่สุด; ลองอ่านรายละเอียดที่หน้า [Mirrors](/index.php/Mirrors "Mirrors")   เนื่องจากการตั้งค่าในไฟล์ `mirrorlist` จะถูกนำไปใช้ในระบบใหม่ด้วยเมื่อคุณใช้สคริปต์ *pacstrap* เราแนะนำให้คุณตั้งค่า mirror ให้ถูกต้องเลยในขั้นตอนนี้เพิ่มความสะดวก
 
-หากคุณมีฮาร์ดดิสค์เปล่า คุณสามารถข้ามขั้นตอนนี้ไปได้ และเลือกตัวเลือก Auto-Partitioning โปรดจำไว้ว่าตัวเลือกนี้จะลบ partition ทุกอันบนฮาร์ดดิสค์ของคุณ! หากคุณต้องการเก็บ partition ใดๆ ก็ตามไว้บนฮาร์ดดิสค์ โปรดทำตามขั้นตอนต่อไปนี้:
+*หมายเหตุ: mirror ที่ใช้ได้ดีในประเทศไทย เช่น ของ[ม.เกษตรศาสตร์](http://mirror.uni.net.th/)*
 
-*   เลือก Prepare Hard-Drive.
-*   เลือก Partition Hard-Drive.
-*   เลือกฮาร์ดดิสค์ที่คุณต้องการติดตั้ง Arch-Linux
-*   โปรแกรม cfdisk จะถูกเรียกใช้งานและคุณสามารถสร้าง partition สำหรับติดตั้งได้ โดยการติดตั้ง Arch-Base-Installation จะต้องการอย่างน้อยสอง partition:
+### ติดตั้งแพคเกจพื้นฐาน
+
+ใช้สคริปต์ [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) เพื่อติดตั้งโปรแกรมจากกลุ่ม [base](https://www.archlinux.org/groups/x86_64/base/):
 
 ```
- * partition สำหรับ swap หนึ่ง partition
- * partition สำหรับข้อมูลหนึ่ง partition
+# pacstrap /mnt base
 
 ```
 
-*   ณ จุดนี้หน้าจอของคุณอาจจะดูคล้ายคลึงกับหน้าจอนี้ (ถ้าคุณมี NTFS partition สำหรับระบบปฏิบัติการ Windows):
+ถ้าต้องการติดตั้งแพคเกจหรือกลุ่มแพคเกจอื่น ให้เพิ่มชื่อที่ต้องการติดตั้งต่อท้ายไปในคำสั่งด้านบนโดยเว้นช่องไฟระหว่างแต่ละชื่อ
 
-[http://home.arcor.de/Langeland/9.png](http://home.arcor.de/Langeland/9.png) cfdisk
+### ตั้งค่าระบบ
 
-*   ห้ามยุ่งกับ NTFS หรือ VFAT เด็ดขาด ไม่เช่นนั้น Windows ของคุณอาจจะไม่สามารถทำงานได้อีก
-*   type ของ swap partition ต้องถูกตั้งให้เป็น 82
-*   หากคุณต้องการออกจาก cfdisk โดยไม่แก้ไขอะไรเลย ให้เลือก quit แต่ถ้าต้องการแก้ไขให้เลือก write
-*   หลังจากการใช้งาน cfdisk คุณควรจะเจอกับหน้าจอคล้ายคลึงกับหน้าจอนี้:
-
-[http://home.arcor.de/Langeland/10.png](http://home.arcor.de/Langeland/10.png) รูปแบบการจัด Partition
-
-### ตั้งค่า Mountpoints
-
-*   เลือกที่: Set Filesystem Mountpoints
-*   เลือก partition ที่คุณตั้งให้เป็น swap
-*   เลือก partition ที่เหลือสำหรับใช้เป็น partition ของระบบ (เพื่อที่จะ mount ให้เป็น /)
-*   เลือก ext3 เป็น Filesystem
-*   เลือก DONE !!
-
-*ขั้นตอนสุดท้ายเป็นขั้นตอนที่สำคัญ หลายๆ คนข้ามขั้นตอนนี้ไป ระบบติดตั้งจะไม่ติดตั้งข้อมูลใดๆ หากท่านไม่เลือกที่ DONE*
-
-### เลือก Packages
-
-*   เลือก CD
-*   คุณควรจะเห็นหน้าจอคล้ายหน้าจอนี้:
-
-[http://home.arcor.de/Langeland/11.png](http://home.arcor.de/Langeland/11.png) Package ประเภทต่างๆ
-
-*   สำหรับตอนนี้คุณควรเลือกแค่ base และ editors เท่านั้น
-*   และคุณควรจะเลือกลง package ทุกตัวในแต่ละประเภทตามที่ระบบแนะนำ
-*   กด OK
-
-### ติดตั้ง Packages
-
-*   นี่เป็นขั้นตอนที่ง่ายมาก: เพียงกด Install Packages และกด OK ทุกอย่างจะถูกติดตั้งจาก CD ลงในเครื่องของคุณ
-
-### ติดตั้ง Kernel
-
-*   เลือก "Kernel 2.6.x for IDE/SCSI systems" นอกจากคุณต้องการติดตั้ง kernel ประเภทอื่นๆ
-
-### แก้ไขการตั้งค่า Config Files
-
-*   เลือกใช้ nano ในการแก้ไขไฟล์ตั้งค่าต่างๆ
-
-**คุณต้องแก้ไขไฟล์ rc.conf** ถ้าคุณต้องการแก้ keyboard layout ของคุณ ตัวอย่างเช่น th คือรูปแบบคีย์บอร์ดภาษาไทย
-
-*   ถ้าคุณใช้ router คุณสามารถลองใช้การตั้งค่านี้ใน /etc/rc.conf:
+สร้าง [fstab](/index.php/Fstab "Fstab") (ใช้ตัวเลือก `-U` หรือ `-L` ถ้าต้องการใช้ UUID หรือ label ในไฟล์):
 
 ```
-#Router address
-gateway="default gw 192.168.0.1"
-ROUTES=(gateway) #ลบเครื่องหมาย ! หน้าคำว่า gateway ออกไป
+# genfstab -p /mnt >> /mnt/etc/fstab
 
 ```
 
-*   ใน /etc/resolf.conf
+[Change root](/index.php/Change_root "Change root") เข้าไปในรากของระบบใหม่:
 
 ```
-nameserver 192.168.0.1
-
-```
-
-*   nano นั้นเป็นโปรแกรม text editor ที่สามารถเข้าใจได้ง่าย: Strg-o ( Ctrl-o ) บันทึกไฟล์, Strg-x ( Ctrl-x ) บันทึกไฟล์และออกจาก nano.
-
-**คุณต้องแก้ไขไฟล์** menu.lst*.
-
-*   ไฟล์ menu.lst ใช้สร้าง bootloader ซึ่งจะทำหน้าที่เรียกระบบปฏิบัติการขึ้นมา คุณสามารถเลือกที่จะใช้ Windows หรือ Arch ได้จากไฟล์นี้
-*   คุณจะพบกับหน้าจอดังนี้:
-
-[http://home.arcor.de/Langeland/13.png](http://home.arcor.de/Langeland/13.png) Menu.lst
-
-*   ทุกสิ่งทุกอย่างควรจะถูกตั้งค่าเรียบร้อยแล้วสำหรับการใช้งาน Arch คุณเพียงต้องเพิ่มคำสั่งเหล่านี้เข้าไป เพื่อที่จะสามารถใช้งาน Windows ได้:
-
-```
-title Windows
-rootnoverify (hd0,0)
-chainloader +1
+# arch-chroot /mnt
 
 ```
 
-กด Strg-O และ Strg-X เพื่อบันทึกไฟล์และออกจาก nano
+ตั้ง [ชื่อเครื่อง](/index.php/Hostname "Hostname"):
 
-### ติดตั้ง Bootloader
+```
+# echo *computer_name* > /etc/hostname
 
-*   เลือก grub
-*   เลือกรายการบนสุด เพื่อติดตั้ง bootloader ที่ Master Boot Record (MBR)
+```
 
-### พร้อมแล้วที่จะ reboot
+ตั้ง [โซนเวลา](/index.php/Time_zone "Time zone"):
 
-*   ออกจากเมนูหลัก พิมพ์คำว่า reboot แล้วกด enter เครื่องของคุณจะ reboot
-*   เอาแผ่น CD ออก
-*   คุณสามารถเลือกระบบปฏิบัติการที่จะใช้ได้ระหว่าง Windows และ Arch โดย Arch จะถูกเลือกก่อนเป็นอันดับแรก
+```
+# ln -s /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime
 
-## การติดตั้ง Arch ในรูปแบบอื่นๆ
+```
 
-*   [Fast Arch Install from existing Linux System](/index.php/Fast_Arch_Install_from_existing_Linux_System "Fast Arch Install from existing Linux System")
-*   [The Official Arch Linux Installation Guide](https://www.archlinux.org/static/docs/arch-install-guide.html)
+เปิดใช้ [locales](/index.php/Locale "Locale") ที่ต้องการใน `/etc/locale.gen` จากนั้นก็สร้าง locale โดยใช้คำสั่ง:
 
-## ก้าวแรกของคุณ กับ Arch
+```
+# locale-gen
 
-*   Login เป็น root.
-*   พิมพ์คำสั่ง `passwd` เพื่อตั้งรหัสผ่านสำหรับผู้ใช้งานชื่อ root.
+```
+
+ตั้ง locale เริ่มต้นใน `/etc/locale.conf` และ `$HOME/.config/locale.conf`:
+
+```
+# echo LANG=*your_locale* > /etc/locale.conf
+
+```
+
+เพิ่ม [keymap](/index.php/Keymap "Keymap") และ [font](/index.php/Fonts#Console_fonts "Fonts") สำหรับคอนโซลใน `/etc/vconsole.conf`
+
+ตั้งค่าเครือข่ายสำหรับเครื่องใหม่: อ่านหน้า [การตั้งค่าเครือข่าย](/index.php/Network_configuration "Network configuration") และ [การตั้งค่าเครือข่ายแบบไร้สาย](/index.php/Wireless_network_configuration "Wireless network configuration")
+
+ตั้งค่า [/etc/mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio") เพิ่มเติมถ้าต้องการ จากนั้นสร้าง RAM disk ใหม่ด้วยคำสั่ง:
+
+```
+# mkinitcpio -p linux
+
+```
+
+กำหนดรหัสผ่านสำหรับผู้ใช้ root:
 
 ```
 # passwd
 
 ```
 
-*   เพิ่มผู้ใช้งาน โดยคุณสามารถใช้ script ชื่อ adduser ได้ โดยผู้ใช้ของคุณควรจะอยู่ใน group ชื่อ users, audio และ optical
+### ติดตั้งบู๊ตโหลดเดอร์
 
-```
-# adduser
+อ่านหน้า [บู๊ตโหลดเดอร์](/index.php/Boot_loaders "Boot loaders") เพื่อดูวิธีการติดตั้งและการตั้งค่า
 
-```
+### รีบู๊ตเครื่อง
 
-ตอนนี้คุณสามารถเริ่มติดตั้ง Internet และใช้งาน package ด้วย pacman ได้แล้ว ขอให้คุณสนุกกับ Arch Linux
+ออกจาก chroot โดยพิมพ์ `exit` หรือกดปุ่ม `Ctrl+D`
+
+Unmount พาร์ทิชั่นทั้งหมดด้วยคำสั่ง `umount -R /mnt`: ขั้นตอนนี้จะทำให้คุณพบพาร์ทิชั่นที่ยังถูกใช้งานอยู่และไม่สามารถ unmount ได้ จะได้หาสาเหตุได้โดยใช้ [fuser](https://en.wikipedia.org/wiki/fuser_(Unix) "wikipedia:fuser (Unix)")
+
+สุดท้ายให้รีบู๊ตเครื่องโดยพิมพ์คำสั่ง `reboot`: พาร์ทิชั่นที่ยังถูก mount อยู่จะถูก *systemd* ปลดออกโดยอัตโนมัติ   อย่าลืมดึงแผ่นซีดีหรือสื่อที่คุณใช้ในการบู๊ตเพื่อติดตั้งออกหลังรีบู๊ตด้วย  หลังรีบู๊ตเสร็จ คุณสามารถล็อกอินด้วยผู้ใช้ root
+
+## หลังการติดตั้ง
+
+ลองอ่าน [คำแนะนำทั่วไป](/index.php/General_recommendations "General recommendations") สำหรับวิธีการจัดการระบบและสิ่งที่คุณอาจอยากทำหลังติดตั้งเสร็จ (เช่น การติดตั้ง graphical user interface, เสียง, หรือ touchpad)
+
+นอกจากนั้นยังมีแอพพลิเคชั่นอีกมากมายที่คุณอาจสนใจ ลองดูที่ [รายชื่อแอพพลิเคชั่น](/index.php/List_of_applications "List of applications")

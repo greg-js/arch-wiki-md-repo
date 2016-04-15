@@ -6,11 +6,34 @@ TPM is naturally supported only on devices that have TPM hardware support. If yo
 
 ## Contents
 
-*   [1 Drivers](#Drivers)
-*   [2 Usage](#Usage)
-    *   [2.1 Basics](#Basics)
-    *   [2.2 Securing SSH Keys](#Securing_SSH_Keys)
-*   [3 See also](#See_also)
+*   [1 Versions](#Versions)
+*   [2 Drivers](#Drivers)
+*   [3 Usage](#Usage)
+    *   [3.1 Basics](#Basics)
+    *   [3.2 Securing SSH Keys](#Securing_SSH_Keys)
+*   [4 See also](#See_also)
+
+## Versions
+
+**Note:** Support for TPM 2.0 is still incomplete (both on the kernel and in userspace), and no known workflow for TPM2 exists at the moment.
+
+Current attempts to run `tcsd` on a system with TPM 2.0 will result in the following:
+
+```
+# cat /sys/class/tpm/tpm0/device/description 
+TPM 2.0 Device
+
+```
+
+```
+# tcsd -f
+TCSD TDDL ioctl: (25) Inappropriate ioctl for device
+TCSD TDDL Falling back to Read/Write device support.
+TCSD TCS ERROR: TCS GetCapability failed with result = 0x1e
+
+```
+
+The rest of this article will focus only on TPM 1.2
 
 ## Drivers
 
@@ -24,7 +47,7 @@ TPM drivers are natively supported in modern kernels, but might need to be loade
 Depending on your chipset, you might also need to load one of the following:
 
 ```
-# modprobe tpm_atmel tpm_bios tpm_infineon tpm_nsc tpm_tis tpm_crb
+# modprobe tpm_{atmel,bios,infineon,nsc,tis,crb}
 
 ```
 

@@ -1,4 +1,4 @@
-[Abiword](http://www.abisource.com/) es un procesador de texto que ofrece una alternativa más ligera para [LibreOffice](/index.php/LibreOffice "LibreOffice") Writer, mientras que al mismo tiempo que proporciona una gran funcionalidad. Abiword es compatible con muchos tipos de documentos estándar, tales como documentos de OpenOffice.org/LibreOffice, documentos de Microsoft Word, documentos de WordPerfect, Rich Text Format documentos y páginas Web HTML.
+[Abiword](http://www.abisource.com/) es un procesador de texto que ofrece una alternativa más ligera a [LibreOffice](/index.php/LibreOffice "LibreOffice") Writer, mientras al mismo tiempo proporciona una gran funcionalidad. Abiword es compatible con muchos tipos de documentos estándar, tales como documentos de OpenOffice.org/LibreOffice, documentos de Microsoft Word, documentos de WordPerfect, Rich Text Format documentos y páginas Web HTML.
 
 ## Contents
 
@@ -9,51 +9,22 @@
 
 ## Instalación
 
-Antes de instalar, usted querrá instalar un diccionarios si desea; usar la corrección ortográfica.
+El programa se encuentra en el paquete [abiword](https://www.archlinux.org/packages/?name=abiword). Para poder utilizar la corrección ortográfica, deberán instalarse los paquetes [aspell-es](https://www.archlinux.org/packages/?name=aspell-es) o [aspell-en](https://www.archlinux.org/packages/?name=aspell-en) en el caso de escribir en inglés. Desde Editar>Preferencias es también posible habilitar la correción gramatical.
 
-```
- # pacman -S aspell-es
-
-```
-
-Para instalar, ejecute:
-
-```
- # pacman -S abiword
-
-```
-
-Para intalar plugins adicionales:
-
-```
- # pacman -S abiword-plugins
-
-```
-
-Para solucionar pequeños problemas de texto cursor y desalineados, instalar [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) del [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") y:
-
-```
-# pacman -S ttf-freefont
-
-```
+En el caso de tener problemas debidos a la alineación del texto o la posición del cursor, deben instalarse las [Fonts_(Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)"), [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) y [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) del repositorio oficial. la fuente [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) puede reemplazarse por [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) del AUR.
 
 ## Cambio de combinaciones de teclas
 
 Ver [this wiki post](http://www.abisource.com/wiki/Keyboard_bindings) acerca de cómo cambiar las combinaciones de teclado por defecto en Abiword.
 
+Si esto no funcionara, puede agregarse en `/usr/share/abiword-3.0/system.profile` la expresión `KeyBindings="viEdit"` dentro de la etiqueta `SystemDefaults`.
+
 ## Fuentes de LaTeX
 
-El paquete [abiword-plugins](https://www.archlinux.org/packages/?name=abiword-plugins) viene con una función que permite al usuario insertar códigos de LaTeX en un documento. Para visualizar correctamente los símbolos de matemáticas, es necesario descargar [latex-xft-fonts](http://movementarian.org/latex-xft-fonts-0.1.tar.gz)y guardarlo en el directorio `/usr/share/fonts`. Para instalar la fuente, descomprimir el archivo
+El paquete [abiword](https://www.archlinux.org/packages/?name=abiword) viene con una función que permite al usuario insertar códigos de LaTeX en un documento. Para visualizar correctamente los símbolos matemáticos, es necesario descargar [latex-xft-fonts](http://movementarian.org/latex-xft-fonts-0.1.tar.gz)y guardarlo en el directorio `/usr/share/fonts`. Para instalar la fuente, descomprimir el tarball y ejecutar:
 
 ```
- # Tar-xzf (nombre del archivo tar.gz)
-
-```
-
-y luego ejecutar
-
-```
- # Fc-cache-fv
+ # fc-cache-fv
 
 ```
 

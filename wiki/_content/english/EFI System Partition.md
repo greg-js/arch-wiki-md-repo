@@ -2,55 +2,46 @@ The [EFI System Partition](https://en.wikipedia.org/wiki/EFI_System_partition "w
 
 It is an OS independent partition that acts as the storage place for the EFI bootloaders and applications to be launched by the EFI firmware. It is mandatory for UEFI boot.
 
-It is recommended to use always [GPT](/index.php/GPT "GPT") for UEFI boot as some UEFI firmwares do not allow UEFI-MBR boot.
-
 ## Contents
 
-*   [1 Partition type](#Partition_type)
-*   [2 Partition size](#Partition_size)
-*   [3 Create the partition](#Create_the_partition)
-    *   [3.1 GPT partitioned disks](#GPT_partitioned_disks)
-    *   [3.2 MBR partitioned disks](#MBR_partitioned_disks)
-*   [4 Mount the partition](#Mount_the_partition)
-    *   [4.1 Using bind mount](#Using_bind_mount)
-*   [5 ESP on RAID](#ESP_on_RAID)
-*   [6 See also](#See_also)
+*   [1 Create the partition](#Create_the_partition)
+    *   [1.1 GPT partitioned disks](#GPT_partitioned_disks)
+    *   [1.2 MBR partitioned disks](#MBR_partitioned_disks)
+    *   [1.3 Partition size](#Partition_size)
+*   [2 Mount the partition](#Mount_the_partition)
+    *   [2.1 Using bind mount](#Using_bind_mount)
+*   [3 ESP on RAID](#ESP_on_RAID)
+*   [4 See also](#See_also)
 
-## Partition type
+## Create the partition
 
-It should have the EFI System partition type.
+The following two sections show how to create an EFI System Partition (ESP).
 
-In [GNU Parted](/index.php/GNU_Parted "GNU Parted"), `boot` flag (not to be confused with `legacy_boot` flag) has different effect in MBR and GPT disk. In MBR disk, it marks the partition as active. In GPT disk, it changes the type code of the partition to `EFI System Partition` type.
+**Note:** It is recommended to use [GPT](/index.php/GPT "GPT") for UEFI boot, because some UEFI firmwares do not allow UEFI-MBR boot.
 
-[Parted](/index.php/Parted "Parted") has no flag to mark a partition as ESP in MBR disk (this can be done using fdisk though).
+### GPT partitioned disks
 
-## Partition size
+**Choose one** of the following methods to create an ESP for a GPT partitioned disk:
+
+*   [fdisk/gdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type EFI System (`EFI System` in *fdisk* or `ef00` in *gdisk*). Then format that partition as FAT32 using `mkfs.fat -F32 /dev/sd*xY*`
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a FAT32 partition and in Parted set/activate the `boot` flag (not `legacy_boot` flag) on that partition
+
+**Note:** If you get the message `WARNING: Not enough clusters for a 32 bit FAT!`, reduce cluster size with `mkfs.fat -s2 -F32 ...` or `-s1`; otherwise the partition may be unreadable by UEFI.
+
+### MBR partitioned disks
+
+**fdisk**: Create a partition with partition type *EFI System* using fdisk. Then format that partition as FAT32 using:
+
+```
+mkfs.fat -F32 /dev/sd*xY*
+
+```
+
+### Partition size
 
 It is recommended to keep ESP size at 512 MiB although smaller/larger sizes are fine.
 
 According to a Microsoft note[[1]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules), the minimum size for the EFI System Partition (ESP) would be 100 MB, though this is not stated in the UEFI Specification. Note that for Advanced Format 4K Native drives (4-KB-per-sector) drives, the size is at least 260 MB, because it is the minimum partition size of FAT32 drives (calculated as sector size (4KB) x 65527 = 256 MB), due to a limitation of the FAT32 file format.
-
-## Create the partition
-
-### GPT partitioned disks
-
-*   [fdisk/gdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type EFI System (`EFI System` in *fdisk* or `ef00` in *gdisk*). Then format that partition as FAT32 using `mkfs.fat -F32 /dev/<THAT_PARTITION>`
-
-(or)
-
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a FAT32 partition and in Parted set/activate the `boot` flag (not `legacy_boot` flag) on that partition
-
-**Note:** If you get the message `WARNING: Not enough clusters for a 32 bit FAT!`, reduce cluster size with `mkfs.fat -s2 -F32 ...` or `-s1`, otherwise the partition may be unreadable by UEFI.
-
-### MBR partitioned disks
-
-*   **fdisk**: Create a partition with partition type *EFI System* using fdisk.
-*   Then format that partition as FAT32 using:
-
-```
-mkfs.fat -F32 /dev/<THAT_PARTITION>
-
-```
 
 ## Mount the partition
 

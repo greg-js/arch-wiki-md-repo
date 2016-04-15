@@ -149,7 +149,7 @@ $ jupyter notebook
 
 ### virtualenv
 
-[virtualenv](https://www.archlinux.org/packages/?name=virtualenv) 是 Ian Bicking 编写的 Python 工具，可以为 Python 建立独立环境，可以安装软件包而不影响其它 virtualenv 环境或系统 Python 软件包，可以修改一个软件使用的 Python 版本。详情请参考 [Python/Virtualenv (简体中文)](/index.php/Python/Virtualenv_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python/Virtualenv (简体中文)").
+[python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv) 是 Ian Bicking 编写的 Python 工具，可以为 Python 建立独立环境，可以安装软件包而不影响其它 virtualenv 环境或系统 Python 软件包，可以修改一个软件使用的 Python 版本。详情请参考 [Python/Virtualenv (简体中文)](/index.php/Python/Virtualenv_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python/Virtualenv (简体中文)").
 
 ### 在 Python Shell 中实现自动补全功能
 

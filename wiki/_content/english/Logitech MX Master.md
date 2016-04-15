@@ -33,7 +33,7 @@ Here is a sample configuration for the vertical scroll wheel and the two buttons
 
 ```
 
-If using PulseAudio (more info [here](/index.php/Xbindkeys#Xbindkeysrc "Xbindkeys"):
+If using PulseAudio (more info [here](/index.php/Xbindkeys#Xbindkeysrc "Xbindkeys")):
 
 ```
 # thumb wheel up => increase volume

@@ -125,6 +125,8 @@ You can create your own shortcut on gnome, on keyboard configuration, associatin
 
 You need to install xdotool first.
 
+There is also a kernel patch which enables the proper brightness keys. This patch is tested with 4.4 kernels: [https://bugzilla.kernel.org/attachment.cgi?id=195071](https://bugzilla.kernel.org/attachment.cgi?id=195071)
+
 ## See also
 
 *   [ASUS Zenbook UX303](/index.php/ASUS_Zenbook_UX303 "ASUS Zenbook UX303")

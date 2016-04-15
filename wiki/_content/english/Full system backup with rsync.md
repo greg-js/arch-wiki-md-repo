@@ -24,6 +24,8 @@ Using the `-aAX` set of options, the files are transferred in archive mode, ensu
 
 The `--exclude` option will cause files that match the given patterns to be excluded. The contents of `/dev`, `/proc`, `/sys`, `/tmp` and `/run` were excluded because they are populated at boot (while the folders themselves are *not* created), `/lost+found` is filesystem-specific. Quoting the exclude patterns will avoid expansion by [shell](/index.php/Shell "Shell"), which is necessary e.g. when backing up over [SSH](/index.php/SSH "SSH"). Ending the excluded paths with `*` will still ensure that the directories themselves are created if not already existing.
 
+Be aware that you will need a Linux compatible file system, eg: `ext4` to maintain symlinks etc, when using the `-aAX` options.
+
 **Note:**
 
 *   If you plan on backing up your system somewhere other than `/mnt` or `/media`, do not forget to add it to the list of exclude patterns to avoid an infinite loop.

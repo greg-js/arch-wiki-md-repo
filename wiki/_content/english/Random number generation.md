@@ -64,3 +64,4 @@ There are also [cryptographically secure pseudorandom number generators](https:/
 *   [Randomness](http://www.random.org/randomness/) - A popular science article explaining different RNGs
 *   [ENT](http://www.fourmilab.ch/random/) - A simple program for testing random sequences (entropy, Chi square test, Monte Carlo, correlation, etc.)
 *   [DIY HRNG](http://www.codeproject.com/Articles/795845/Arduino-Hardware-Random-Sequence-Generator-with-Ja) - One example of a low-cost, DIY Arduino HRNG
+*   [An Analysis of OpenSSL's Random Number Generator](https://eprint.iacr.org/2016/367) - Paper on RNG reseeding risks in OpenSSL functionality

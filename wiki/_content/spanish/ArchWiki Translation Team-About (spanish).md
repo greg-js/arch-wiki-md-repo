@@ -1,6 +1,6 @@
 <center>**Navegación**</center>
 
-<center>[Portada](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") — **Equipo y traductores** — [Colaboración y mantenimiento](/index.php/ArchWiki_Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki Translation Team/Contributing (Español)") — [Tablas de traducciones](/index.php/ArchWiki_Translation_Team/Board_(Espa%C3%B1ol) "ArchWiki Translation Team/Board (Español)") — [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") — [Glorario](/index.php/ArchWiki_Translation_Team/Glossary_(Espa%C3%B1ol) "ArchWiki Translation Team/Glossary (Español)")</center>
+<center>[Portada](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") — **Equipo y traductores** — [Colaboración y mantenimiento](/index.php/ArchWiki_Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki Translation Team/Contributing (Español)") — [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") — [Glorario](/index.php/ArchWiki_Translation_Team/Glossary_(Espa%C3%B1ol) "ArchWiki Translation Team/Glossary (Español)") — [Tablas de traducciones](/index.php/ArchWiki_Translation_Team/Board_(Espa%C3%B1ol) "ArchWiki Translation Team/Board (Español)")</center>
 
 * * *
 
@@ -27,7 +27,7 @@ En el afán de trasladar ese esfuerzo colectivo a los usuarios de habla hispana,
 
 ### Principios
 
-La idea de crear un equipo tiene como objetivo fundamental implementar, mediante la colaboración entre los usuarios de habla hispana de Arch Linux, un grupo coordinado de traducción de los artículos de ArchWiki al español. La idea es sencilla pero de un hondo calado: tratar de articular un espacio abierto donde hacer sugerencias, confrontar ideas, proponer tareas, etc., para, en definitiva, ofrecer a la comunidad traducciones de calidad, unidad de estilo y coherencia visual.
+*   La idea de crear un equipo tiene como objetivo fundamental implementar, mediante la colaboración entre los usuarios de habla hispana de Arch Linux, un grupo coordinado de traducción de los artículos de ArchWiki al español. La idea es sencilla pero de un hondo calado: tratar de articular un espacio abierto donde hacer sugerencias, confrontar ideas, proponer tareas, etc., para, en definitiva, ofrecer a la comunidad traducciones de calidad, unidad de estilo y coherencia visual.
 
 *   Son principios inspiradores del equipo:
 
@@ -80,14 +80,14 @@ La idea de crear un equipo tiene como objetivo fundamental implementar, mediante
 *   En este espacio cada usuario que lo desee puede incluir o quitar su propio nombre de usuario.
 *   Siéntase libre de participar o no en el grupo de traducción, cuya inclusión, por otro lado, no implica la sujeción a ningún tipo de disciplina, es tan solo un intento de coordinar y optimizar el esfuerzo colectivo de los interesados para prestar un mejor servicio a la comunidad.
 *   La participación en el grupo de traductores implica, eso sí, al menos, el compromiso de realizar alguna tarea de mantenimiento, como etiquetar el estado de las traducciones, redirigir páginas..., o, más concretamente, mantener lo más al día posible uno o varios artículos de los elegidos para su seguimiento.
-*   Por motivos de organización, si un miembro del grupo no da muestras de actividad (en tareas de traducción al español) durante un período de seis meses ininterrumpidos, se le pasará a la lista de miembros inactivos, a la espera de que pueda reintegrarse más adelante.
+*   Por motivos de organización, si un miembro del grupo no da muestras de actividad (en tareas de traducción al español) durante un período de seis meses ininterrumpidos, se le pasará a la lista de miembros inactivos, a la espera de que pueda reintegrarse más adelante. Cualquier miembro activo del grupo está autorizado para realizar esta acción.
 
 ### Activos
 
 *   [Cabrokimer](/index.php?title=User:Cabrokimer&action=edit&redlink=1 "User:Cabrokimer (page does not exist)") - [email](/index.php/Special:EmailUser/Cabrokimer "Special:EmailUser/Cabrokimer")
 *   [Pedro](/index.php/User:Pedro "User:Pedro") –*omnia vinces perseverando*– [enviar email](/index.php/Special:EmailUser/Pedro "Special:EmailUser/Pedro")
 *   [SignoSN](/index.php/User:SignoSN "User:SignoSN") - [enviar email](/index.php/Special:EmailUser/SignoSN "Special:EmailUser/SignoSN")
-*   [icemodding](/index.php?title=User:Icemodding&action=edit&redlink=1 "User:Icemodding (page does not exist)") - [enviar email](/index.php/Special:EmailUser/icemodding "Special:EmailUser/icemodding")
+*   [icemodding](/index.php/User:Icemodding "User:Icemodding") - [enviar email](/index.php/Special:EmailUser/icemodding "Special:EmailUser/icemodding")
 
 ### Inactivos
 

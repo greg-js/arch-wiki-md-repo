@@ -594,3 +594,4 @@ You may also experience similar problem when you open a PDF which requires Helve
 *   [Fonts in X11R6.8.2](http://www.x.org/X11R6.8.2/doc/fonts.html) - Official Xorg font information
 *   [FreeType 2 overview](http://freetype.sourceforge.net/freetype2/)
 *   [Gentoo font-rendering thread](https://forums.gentoo.org/viewtopic-t-723341.html)
+*   [On slight hinting](http://www.freetype.org/freetype2/docs/text-rendering-general.html)

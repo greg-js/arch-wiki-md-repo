@@ -73,7 +73,7 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 	[http://freecode.com/projects/scrot](http://freecode.com/projects/scrot) || [scrot](https://www.archlinux.org/packages/?name=scrot)
 
-*   **Shutter** — Rich screenshot and editing program.
+*   **Shutter** — Rich screenshot and editing program. Supports [delay](https://hyp.is/AVQUNTRUH9ZO4OKSlue9/askubuntu.com/questions/252281/how-do-i-take-screenshots-with-a-delay/260178).
 
 	[http://shutter-project.org/](http://shutter-project.org/) || [shutter](https://www.archlinux.org/packages/?name=shutter)
 

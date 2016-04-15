@@ -1,6 +1,6 @@
 <center>**Navegación**</center>
 
-<center>[Portada](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") — [Equipo y traductores](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol) "ArchWiki Translation Team/About (Español)") — [Colaboración y mantenimiento](/index.php/ArchWiki_Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki Translation Team/Contributing (Español)") — [Tablas de traducciones](/index.php/ArchWiki_Translation_Team/Board_(Espa%C3%B1ol) "ArchWiki Translation Team/Board (Español)") — [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") — **Glorario**</center>
+<center>[Portada](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") — [Equipo y traductores](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol) "ArchWiki Translation Team/About (Español)") — [Colaboración y mantenimiento](/index.php/ArchWiki_Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki Translation Team/Contributing (Español)") — [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") — [Tablas de traducciones](/index.php/ArchWiki_Translation_Team/Board_(Espa%C3%B1ol) "ArchWiki Translation Team/Board (Español)") — **Glosario**</center>
 
 * * *
 

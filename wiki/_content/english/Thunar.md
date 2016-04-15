@@ -248,6 +248,6 @@ See [File manager functionality#Troubleshooting](/index.php/File_manager_functio
 
 ## See also
 
-*   [Thunar](http://thunar.xfce.org/index.html) project page
+*   [Thunar](http://docs.xfce.org/xfce/thunar/start) project page
 *   [Thunar Volume Manager](http://goodies.xfce.org/projects/thunar-plugins/thunar-volman) project page
 *   This [list](http://goodies.xfce.org/projects/thunar-plugins/start) of plugins

@@ -389,13 +389,6 @@ With the exceptions noted below, it is recommended to use the `ext4` file system
 
 ```
 
-*If* a new UEFI system partition has been created on a UEFI/GPT system, it **must** be formatted with a `fat32` file system:
-
-```
-# mkfs.fat -F32 /dev/sd*xY*
-
-```
-
 *If* a swap partition has been created, it must be set up and activated with:
 
 ```
@@ -419,7 +412,14 @@ Remaining [partitions](/index.php/Partitioning#Partition_scheme "Partitioning") 
 
 ```
 
-`/boot` is also recommended for mounting the EFI System Partition on a UEFI/GPT system. See [EFISTUB](/index.php/EFISTUB "EFISTUB") and related articles for alternatives.
+*If* a new UEFI system partition has been created on a UEFI/GPT system, it **must** be formatted with a `fat32` file system:
+
+```
+# mkfs.fat -F32 /dev/sd*xY*
+
+```
+
+`/mnt/boot` is also recommended for mounting the (formatted or already existing) EFI System Partition on a UEFI/GPT system. See [EFISTUB](/index.php/EFISTUB "EFISTUB") and related articles for alternatives.
 
 ## Installation
 

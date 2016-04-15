@@ -240,7 +240,6 @@ http {
         ssl_stapling_verify on;
         resolver 8.8.8.8 8.8.4.4 valid=300s; # Google DNS Servers
         resolver_timeout 5s;
-}
 
 server {
         #listen 80; # Uncomment to also listen for HTTP requests

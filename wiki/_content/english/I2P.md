@@ -13,7 +13,7 @@ From the [I2P](https://geti2p.net/en/) homepage:
 
 ## Installation
 
-I2P is available in the [AUR](/index.php/AUR "AUR"), with [i2p](https://aur.archlinux.org/packages/i2p/) providing compilation from source, and [i2p-bin](https://aur.archlinux.org/packages/i2p-bin/) providing a precompiled binary.
+I2P is available with the [i2p](https://aur.archlinux.org/packages/i2p/) package providing compilation from source, and the [i2p-bin](https://aur.archlinux.org/packages/i2p-bin/) package providing a precompiled binary.
 
 ## Usage
 

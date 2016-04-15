@@ -50,8 +50,9 @@ Often VPN provider are offering different authentication groups for different ac
 
 ### Integration in netctl
 
-A simple <tt>tuntap</tt> netctl.profile(5) can be used to integrate OpenConnect in the normal [Netctl](/index.php/Netctl "Netctl") workflow.
+A simple <tt>tuntap</tt> netctl.profile(5) can be used to integrate OpenConnect in the normal [Netctl](/index.php/Netctl "Netctl") workflow. For example:
 
+ `/etc/netctl/vpn` 
 ```
 Description='VPN'
 Interface=vpn
@@ -68,14 +69,11 @@ SERVER=vpn.example.net
 AUTHGROUP="<AUTHGROUP>"
 LOCAL_USERNAME=<USERNAME>
 REMOTE_USERNAME=<VPN_USERNAME>
-PASSWORD="`su ${LOCAL_USERNAME} -c "pass ${REMOTE_USERNAME}" | head -n 1`" # Assume the use of pass(1)
-
-ExecUpPost="echo '${PASSWORD}' | /usr/bin/openconnect --background --pid-file=${PIDFILE} --interface=${Interface} --authgroup=\"${AUTHGROUP}\" --user=${USERNAME} --passwd-on-stdin ${SERVER}"
-ExecDownPre="kill -INT $(cat ${PIDFILE}) ; ip link delete ${Interface}"
-
+# Assuming the use of pass(1): 
+PASSWORD="`su ${LOCAL_USERNAME} -c "pass ${REMOTE_USERNAME}"
 ```
 
-Saved as, e.g., <tt>/etc/netctl/vpn</tt>, this allows such manipulations as
+This allows execution like:
 
 ```
 $ netctl start vpn
@@ -83,6 +81,8 @@ $ netctl restart vpn
 $ netctl stop vpn
 
 ```
+
+Note that this relies on `LOCAL_USERNAME` having a [gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") running, with the passphrase for the PGP key already cached, as it is not possible for [pass](/index.php/Pass "Pass") to trigger an interactive query from this environment.
 
 ## See also
 

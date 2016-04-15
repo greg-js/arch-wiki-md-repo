@@ -197,6 +197,8 @@ Below is a list of general package categories. Should you like, you are welcome 
 
 	[Christian Rebischke](/index.php/User:Shibumi "User:Shibumi")
 
+	[Santiago Torres-Arias](/index.php/User:Sangy "User:Sangy")
+
 	[Your Name Here]
 
 *   Kernel

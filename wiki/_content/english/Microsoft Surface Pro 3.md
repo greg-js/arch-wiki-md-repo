@@ -77,7 +77,7 @@ The easiest way for Arch Linux users is to use a Surface Pro 3 specific package 
 
 ### Compile Kernel with Patches
 
-Ref: [Kernels/Compilation/Traditional#Build configuration](/index.php/Kernels/Compilation/Traditional#Build_configuration "Kernels/Compilation/Traditional")
+Ref: [Kernels/Traditional compilation#Configuration](/index.php/Kernels/Traditional_compilation#Configuration "Kernels/Traditional compilation")
 
 **Note:** The most up-to-date source at the time of writing for the kernel patches is [shvr's github repository](https://github.com/shvr/fedora-surface-pro-3-kernel/).
 

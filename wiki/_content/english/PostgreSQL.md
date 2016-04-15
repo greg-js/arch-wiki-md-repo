@@ -152,7 +152,12 @@ Exit/quit the `psql` shell:
 
 ```
 
-There are of course many more meta-commands, but these should help you get started.
+There are of course many more meta-commands, but these should help you get started. To see all meta-commands run:
+
+```
+=> \?
+
+```
 
 ## Optional configuration
 

@@ -15,7 +15,7 @@ LAMP是指在许多web 服务器上使用的一个软件组合：Linux,Apache,My
         *   [2.1.4 高级选项](#.E9.AB.98.E7.BA.A7.E9.80.89.E9.A1.B9)
     *   [2.2 PHP](#PHP)
         *   [2.2.1 高级选项](#.E9.AB.98.E7.BA.A7.E9.80.89.E9.A1.B9_2)
-        *   [2.2.2 与apache2-mpm-worker和mod_fcgid一起使用php5](#.E4.B8.8Eapache2-mpm-worker.E5.92.8Cmod_fcgid.E4.B8.80.E8.B5.B7.E4.BD.BF.E7.94.A8php5)
+        *   [2.2.2 与apache2-mpm-worker和mod_fcgid一起使用php7](#.E4.B8.8Eapache2-mpm-worker.E5.92.8Cmod_fcgid.E4.B8.80.E8.B5.B7.E4.BD.BF.E7.94.A8php7)
     *   [2.3 MariaDB](#MariaDB)
 *   [3 参见](#.E5.8F.82.E8.A7.81)
 *   [4 链接](#.E9.93.BE.E6.8E.A5)
@@ -318,14 +318,28 @@ Include conf/vhosts/domainname1.dom
 	将这一行放在`LoadModule`列表中 `LoadModule dir_module modules/mod_dir.so` 之后的任意地方：
 
 ```
- LoadModule php5_module modules/libphp5.so
+ LoadModule php7_module modules/libphp7.so
 
 ```
 
 	将这一行放到`Include`列表的末尾：
 
 ```
- Include conf/extra/php5_module.conf
+ Include conf/extra/php7_module.conf
+
+```
+
+	禁用event模式，注释此行：
+
+```
+ LoadModule mpm_event_module modules/mod_mpm_event.so
+
+```
+
+	启用prefork模式，取消此行注释：
+
+```
+ LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
 ```
 
@@ -346,13 +360,13 @@ Include conf/vhosts/domainname1.dom
 *   将这一行添加到`/etc/httpd/conf/mime.types`中：
 
 ```
- application/x-httpd-php5		php php5
+ application/x-httpd-php7		php php7
 
 ```
 
-**注意:** 如果你在Apache的模块目录（`/etc/httpd/modules`）中没有看到`libphp5.so`，你可能忘了安装[php-apache](https://www.archlinux.org/packages/?name=php-apache)。
+**注意:** 如果你在Apache的模块目录（`/etc/httpd/modules`）中没有看到`libphp7.so`，你可能忘了安装[php-apache](https://www.archlinux.org/packages/?name=php-apache)。
 
-**注意:** [本段来源](/index.php/Apache_HTTP_Server#PHP "Apache HTTP Server") 你可能会碰到这一bug ([FS#39218](https://bugs.archlinux.org/task/39218)) [php-apache](https://www.archlinux.org/packages/?name=php-apache)中的`libphp5.so`无法同`mod_mpm_event`一起使用。 此时应当使用 `mod_mpm_prefork` 作为代替。不然将发生下面的错误:
+**注意:** [本段来源](/index.php/Apache_HTTP_Server#PHP "Apache HTTP Server") 你可能会碰到这一bug ([FS#39218](https://bugs.archlinux.org/task/39218)) [php-apache](https://www.archlinux.org/packages/?name=php-apache)中的`libphp7.so`无法同`mod_mpm_event`一起使用。 此时应当使用 `mod_mpm_prefork` 作为代替。不然将发生下面的错误:
 ```
 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.  You need to recompile PHP.
 AH00013: Pre-configuration failed
@@ -427,14 +441,14 @@ extension=mcrypt.so
 
 ```
 
-*   如果你需要，记得在`/etc/httpd/conf/extra/php5_module.conf`中为.phtml添加一个文件处理器：
+*   如果你需要，记得在`/etc/httpd/conf/extra/php7_module.conf`中为.phtml添加一个文件处理器：
 
 ```
 DirectoryIndex index.php index.phtml index.html
 
 ```
 
-#### 与apache2-mpm-worker和mod_fcgid一起使用php5
+#### 与apache2-mpm-worker和mod_fcgid一起使用php7
 
 取消`/etc/conf.d/apache`中如下行的注释：
 

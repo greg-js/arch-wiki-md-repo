@@ -159,8 +159,9 @@ loopback loop **($isopart)**$isofile
 menuentry '[loopback]alpine x86_64' {
         set isofile='/boot/iso/alpine-3.3.3-x86_64.iso'
         loopback loop $isofile
-        linux (loop)/boot/vmlinuz-grsec alpine_dev=usbdisk:vfat modloop=/boot/modloop-grsec modules=loop,squashfs,sd-mod,usb-storage quiet
-        initrd (loop)/boot/initramfs-grsec
+        set root=loop
+        linux /boot/vmlinuz-grsec modloop=/boot/modloop-grsec modules=loop,squashfs,sd-mod,usb-storage quiet
+        initrd /boot/initramfs-grsec
 }
 ```
 

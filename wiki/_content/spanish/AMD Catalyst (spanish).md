@@ -285,7 +285,7 @@ A continuación, vamos a tener que asegurarnos que el módulo `fglrx` se carga a
 
 #### Desactivar kernel mode setting
 
-**Nota:** No haga esto si está usando `catalyst-utils-pxp` or `catalyst-total-pxp` porque controlador intel lo necesita.
+**Nota:** No haga esto si está usando `catalyst-utils-pxp` o `catalyst-total-pxp` porque controlador intel lo necesita.
 
 Desactivar el mode setting del kernel es importante, ya que el controlador no parece compatible con [KMS](/index.php/KMS "KMS") todavía. Si no desactiva KMS, el sistema puede congelarse cuando se trata de cambiar a un tty o, incluso, cuando apague el equipo a través de su DE.
 

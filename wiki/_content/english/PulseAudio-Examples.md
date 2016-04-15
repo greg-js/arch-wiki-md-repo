@@ -16,8 +16,9 @@
     *   [6.1 TCP support (networked sound)](#TCP_support_.28networked_sound.29)
     *   [6.2 TCP support with anonymous clients](#TCP_support_with_anonymous_clients)
     *   [6.3 Zeroconf (Avahi) publishing](#Zeroconf_.28Avahi.29_publishing)
-    *   [6.4 Switching the PulseAudio server used by local X clients](#Switching_the_PulseAudio_server_used_by_local_X_clients)
-    *   [6.5 When everything else seems to fail](#When_everything_else_seems_to_fail)
+    *   [6.4 Selecting the Server](#Selecting_the_Server)
+    *   [6.5 Switching the PulseAudio server used by local X clients](#Switching_the_PulseAudio_server_used_by_local_X_clients)
+    *   [6.6 When everything else seems to fail](#When_everything_else_seems_to_fail)
 *   [7 ALSA monitor source](#ALSA_monitor_source)
 *   [8 Monitor specific output](#Monitor_specific_output)
 *   [9 PulseAudio through JACK](#PulseAudio_through_JACK)
@@ -402,6 +403,16 @@ On the server, add `load-module module-zeroconf-publish` to `/etc/pulse/default.
 
 If you have issues with the remote syncs appearing on the client, try restarting the Avahi daemon on the server to rebroadcast the available interfaces.
 
+### Selecting the Server
+
+Run the graphical PulseAudio Volume Control `pavucontrol`. Under the **Output Devices** tab, you should see the local and remote output devices. Under the **Playback** tab, to the left of the "X" Mute Audio button, you should see a box containing the name of an output device. That box is *actually a button*, which will display a drop-down radio-button list of the available output devices, with one output device selected. Selecting an output device from the list will allow the audio stream to be switched to the PulseAudio server associated with that output device. This control is not at all obvious until you have used it, and is especially useful with a remote Headless sound server.
+
+Similarly, under the **Input Devices** tab, local and remote input devices will be seen. And under the **Recording** tab, there will be a box, to the left of the "X" Mute Audio button, with the name of an input device which is actually a button which will display a drop-down radio-button list of available input devices.
+
+Run `pavucontrol` on the local or remote host associated with the audio stream to be directed. For instance, run `pavucontrol` on the remote host to direct the remote audio output to the local host. Run `pavucontrol` on the local host to direct the local audio output to some remote host.
+
+Setting up simultaneous inputs or outputs is a different thing. Search about "monitor" and "module-combine-sink" for that.
+
 ### Switching the PulseAudio server used by local X clients
 
 To switch between servers on the client from within X, the `pax11publish` command can be used. For example, to switch from the default server to the server at hostname foo:
@@ -734,11 +745,7 @@ This setting is also respected by the default pulseaudio dektop session startup 
 
 To disable the pulseaudio daemon completely, and thereby preventing it from starting, one can add `daemon-binary=/bin/true` to the configuration file.
 
- `~/.config/pulse/client.conf #or /etc/pulse/client.conf` 
-```
-daemon-binary=/bin/true
-
-```
+ `~/.config/pulse/client.conf #or /etc/pulse/client.conf`  `daemon-binary=/bin/true` 
 
 ## Remap stereo to mono
 

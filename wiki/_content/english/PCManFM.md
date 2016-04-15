@@ -15,6 +15,7 @@ From the project [home page](http://wiki.lxde.org/en/PCManFM):
     *   [6.1 Thumbnail support](#Thumbnail_support)
     *   [6.2 One click for open folders and files](#One_click_for_open_folders_and_files)
     *   [6.3 Open or Extract Archives with PCManFM](#Open_or_Extract_Archives_with_PCManFM)
+    *   [6.4 More options under *Create New...*](#More_options_under_Create_New...)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Open With dialog window empty](#Open_With_dialog_window_empty)
     *   [7.2 No "Applications"](#No_.22Applications.22)
@@ -130,6 +131,10 @@ Open PCManFM in file explorer mode, go to *Edit > Preferences > General > Behavi
 Install [file-roller](https://www.archlinux.org/packages/?name=file-roller), [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) or [engrampa](https://www.archlinux.org/packages/?name=engrampa) from the official repositories.
 
 Open PCManFM in file explorer mode, go to *Edit > Preferences > Advanced*, select *Archiver Integration* and select your installed archiver.
+
+### More options under *Create New...*
+
+By default the *Create New...* sub-menu contains *Folder* and *Empty File*. It is possible to include additional entries for your personal needs. To do so create them in `~/Templates/` and restart PCManFM.
 
 ## Troubleshooting
 

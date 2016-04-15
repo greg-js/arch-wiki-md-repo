@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
 
-***cron** is the time-based job scheduler in Unix-like computer operating systems. cron enables users to schedule jobs (commands or shell scripts) to run periodically at certain times or dates. It is commonly used to automate system maintenance or administration.*
+	*cron* is the time-based job scheduler in Unix-like computer operating systems. cron enables users to schedule jobs (commands or shell scripts) to run periodically at certain times or dates. It is commonly used to automate system maintenance or administration.
 
 ## Contents
 

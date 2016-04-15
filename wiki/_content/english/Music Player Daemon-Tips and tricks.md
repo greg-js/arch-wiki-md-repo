@@ -32,7 +32,7 @@ To scrobble your songs to [Last.fm](http://www.last.fm) or [Libre.fm](http://lib
 
 ### mpdas
 
-[mpdas](http://50hz.ws/mpdas/) is an AudioScrobbler client for MPD written in C++. It uses [curl](https://www.archlinux.org/packages/?name=curl) and [libmpd](https://www.archlinux.org/packages/?name=libmpd). mpdas supports the latest AudioScrobbler protocol (2.0) and will also cache unscrobbled plays in ~/.mpdascache if there's no network connectivity.
+[mpdas](http://50hz.ws/mpdas/) is an AudioScrobbler client for MPD written in C++. It uses [curl](https://www.archlinux.org/packages/?name=curl) and [libmpd](https://www.archlinux.org/packages/?name=libmpd). mpdas supports the latest AudioScrobbler protocol (2.0) and will also cache unscrobbled plays in `~/.mpdascache` if there is no network connectivity.
 
 [mpdas](https://aur.archlinux.org/packages/mpdas/) is available in the [AUR](/index.php/AUR "AUR").
 
@@ -41,30 +41,18 @@ Configuration of mpdas is very simple, see the official [README](https://github.
 Your password can also be in the form of an md5hash:
 
 ```
-echo -n 'PASSWORD' | md5sum | cut -f 1 -d " "
+$ echo -n 'PASSWORD' | md5sum | cut -f 1 -d " "
 
 ```
 
 To autostart *mpdas* along with *mpd*, add an entry for it into the file in which you start *mpd* (e.g. [xinitrc](/index.php/Xinitrc "Xinitrc")):
 
-```
-[[ -z $(pgrep -xU $UID mpdas) ]] && mpdas &
+ `[[ -z $(pgrep -xU $UID mpdas) ]] && mpdas &` 
+
+When *mpd* is started with a [systemd user service](/index.php/Music_Player_Daemon#Autostart_with_systemd "Music Player Daemon"), it is better to start *mpdas* the same way:
 
 ```
-
-When *mpd* is started with a [systemd user service](/index.php/Music_Player_Daemon#Autostart_with_systemd "Music Player Daemon"), it is better to start *mpdas* the same way. Create the following service and start it with `systemctl --user`.
-
- `~/.config/systemd/user/mpdas.service` 
-```
-[Unit]
-Description=AudioScrobbler client for MPD
-After=mpd.service
-
-[Service]
-ExecStart=/usr/bin/mpdas --no-daemon
-
-[Install]
-WantedBy=default.target
+$ systemctl --user start mpdas.service
 
 ```
 

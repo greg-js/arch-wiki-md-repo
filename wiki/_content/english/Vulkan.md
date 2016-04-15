@@ -9,11 +9,11 @@ Learn more at [Khronos](https://www.khronos.org/vulkan/).
 To run a Vulkan appplication, you will need to [install](/index.php/Install "Install") the [vulkan-icd-loader](https://www.archlinux.org/packages/?name=vulkan-icd-loader) package, as well as the Vulkan drivers for your graphics card(s):
 
 *   Intel: [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel)
-*   NVIDIA: [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/)
+*   NVIDIA: [nvidia](https://www.archlinux.org/packages/?name=nvidia)
+*   AMD: [amdgpu-pro-vulkan-driver](https://aur.archlinux.org/packages/amdgpu-pro-vulkan-driver/)
 
 The other drivers are not packaged yet, so you will have to install them manually:
 
-*   AMD: [http://gpuopen.com/gaming-product/vulkan/](http://gpuopen.com/gaming-product/vulkan/)
 *   PowerVR: [https://imgtec.com/vulkan](https://imgtec.com/vulkan)
 *   Adreno: [https://developer.qualcomm.com/software/adreno-gpu-sdk/gpu](https://developer.qualcomm.com/software/adreno-gpu-sdk/gpu)
 

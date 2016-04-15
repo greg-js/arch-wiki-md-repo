@@ -22,10 +22,11 @@ Regular system maintenance is necessary for the proper function of Arch over a p
     *   [4.2 Be careful with unofficial packages](#Be_careful_with_unofficial_packages)
     *   [4.3 Update the mirrorlist](#Update_the_mirrorlist)
 *   [5 Clean the filesystem](#Clean_the_filesystem)
-    *   [5.1 Old configuration files](#Old_configuration_files)
-    *   [5.2 Unused packages](#Unused_packages)
-    *   [5.3 Package cache](#Package_cache)
-    *   [5.4 Broken symlinks](#Broken_symlinks)
+    *   [5.1 Package cache](#Package_cache)
+    *   [5.2 Unused (orphaned) packages](#Unused_.28orphaned.29_packages)
+    *   [5.3 Old configuration files](#Old_configuration_files)
+    *   [5.4 Orphaned files](#Orphaned_files)
+    *   [5.5 Broken symlinks](#Broken_symlinks)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Use proven software packages](#Use_proven_software_packages)
     *   [6.2 Install the linux-lts package](#Install_the_linux-lts_package)
@@ -158,6 +159,18 @@ When looking for files to remove, it is important to find the files that take up
 *   [List of applications#Disk usage display](/index.php/List_of_applications#Disk_usage_display "List of applications").
 *   [List of applications#Disk cleaning](/index.php/List_of_applications#Disk_cleaning "List of applications").
 
+### Package cache
+
+Remove unwanted `.pkg` files from `/var/cache/pacman/pkg/` to free up disk space.
+
+See [Pacman#Cleaning the package cache](/index.php/Pacman#Cleaning_the_package_cache "Pacman") for more information.
+
+### Unused (orphaned) packages
+
+Remove unused packages from the system to free up disk space and simplify maintenance.
+
+See [Pacman/Tips and tricks#Removing unused packages](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages "Pacman/Tips and tricks") for details.
+
 ### Old configuration files
 
 Old configuration files may conflict with newer software versions, or corrupt over time. Remove unneeded configurations periodically, particularly in your home folder and `~/.config`. For similar reasons, be careful when sharing home folders between installations.
@@ -174,17 +187,9 @@ To keep the home directory clean from temporary files created at the wrong place
 
 [rmlint](https://www.archlinux.org/packages/?name=rmlint) can be used to find and optionally remove duplicate files, empty files, recursive empty directories and broken symlinks.
 
-### Unused packages
+### Orphaned files
 
-Remove unused packages from the system to free up disk space and simplify maintenance.
-
-See [Pacman/Tips and tricks#Removing unused packages](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages "Pacman/Tips and tricks") for details.
-
-### Package cache
-
-Remove unwanted `.pkg` files from `/var/cache/pacman/pkg/`to free up disk space.
-
-See [Pacman#Cleaning the package cache](/index.php/Pacman#Cleaning_the_package_cache "Pacman") for more information.
+[lostfiles](https://aur.archlinux.org/packages/lostfiles/) is a script for detecting orphaned files. It can be also done manually, see [Pacman/Tips and tricks#Identify files not owned by any package](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks").
 
 ### Broken symlinks
 
