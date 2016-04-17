@@ -847,7 +847,7 @@ Check the kernel version:
 uname will show the kernel version of the archiso. If they are different, run depmod (in the chroot) with the correct kernel version of the chroot installation:
 
 ```
-# depmod -a 3.6.9-1-ARCH (version gathered from pacman -Qi linux)
+# depmod -a 3.6.9-1-ARCH (version gathered from pacman -Qi linux but using the matching kernel modules directory name under the chroot's /lib/modules)
 
 ```
 

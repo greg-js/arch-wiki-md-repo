@@ -14,8 +14,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
         *   [2.1.3 Not in a specified group or repository](#Not_in_a_specified_group_or_repository)
     *   [2.2 Listing files owned by a package with size](#Listing_files_owned_by_a_package_with_size)
     *   [2.3 Identify files not owned by any package](#Identify_files_not_owned_by_any_package)
-    *   [2.4 Removing unused packages](#Removing_unused_packages)
-        *   [2.4.1 Orphans](#Orphans)
+    *   [2.4 Removing unused packages (orphans)](#Removing_unused_packages_.28orphans.29)
     *   [2.5 Removing everything but base group](#Removing_everything_but_base_group)
     *   [2.6 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
     *   [2.7 Listing changed backup files](#Listing_changed_backup_files)
@@ -72,7 +71,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 ### Utilities
 
-*   **Lostfiles** — Script for detecting orphaned files.
+*   **Lostfiles** — Script that identifies files not owned by any package.
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
 
@@ -155,7 +154,7 @@ $ expac --timefmt=%s '%l\t%n' | sort -n | tail -20
 
 #### Not in a specified group or repository
 
-**Note:** To get a list of packages installed as dependencies but no longer required by any installed package, see [#Orphans](#Orphans).
+**Note:** To get a list of packages installed as dependencies but no longer required by any installed package, see [#Removing unused packages (orphans)](#Removing_unused_packages_.28orphans.29).
 
 List explicitely installed packages not in the [base](https://www.archlinux.org/groups/x86_64/base/) or [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) groups:
 
@@ -211,11 +210,9 @@ If your system has stray files not owned by any package (a common case if you do
 
 This process is tricky in practice because many important files are not part of any package (e.g. files generated at runtime, custom configs) and so will be included in the final output, making it difficult to pick out the files that can be safely deleted.
 
-The [lostfiles](https://aur.archlinux.org/packages/lostfiles/) script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output.
+**Tip:** The [lostfiles](https://aur.archlinux.org/packages/lostfiles/) script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output.
 
-### Removing unused packages
-
-#### Orphans
+### Removing unused packages (orphans)
 
 For *recursively* removing orphans and their configuration files:
 
@@ -367,7 +364,7 @@ If willing, add the custom repository to the [list of unofficial user repositori
 
 ### Network shared pacman cache
 
-If you happen to run several Arch boxes on your LAN, you can share packages so that you can greatly decrease your download times. Keep in mind you should not share between different architectures (i.e. i686 and x86_64) or you'll run into problems.
+If you happen to run several Arch boxes on your LAN, you can share packages so that you can greatly decrease your download times. Keep in mind you should not share between different architectures (i.e. i686 and x86_64) or you will run into problems.
 
 #### Read-only cache
 
@@ -604,7 +601,7 @@ Instead of uncommenting the `wget` parameters in `/etc/pacman.conf`, you can als
 
 [aria2](/index.php/Aria2 "Aria2") is a lightweight download utility with support for resumable and segmented HTTP/HTTPS and FTP downloads. aria2 allows for multiple and simultaneous HTTP/HTTPS and FTP connections to an Arch mirror, which should result in an increase in download speeds for both file and package retrieval.
 
-**Note:** Using aria2c in Pacman's XferCommand will **not** result in parallel downloads of multiple packages. Pacman invokes the XferCommand with a single package at a time and waits for it to complete before invoking the next. To download multiple packages in parallel, see the [powerpill](#Using_Powerpill) section above.
+**Note:** Using aria2c in Pacman's XferCommand will **not** result in parallel downloads of multiple packages. Pacman invokes the XferCommand with a single package at a time and waits for it to complete before invoking the next. To download multiple packages in parallel, see [Powerpill](/index.php/Powerpill "Powerpill").
 
 Install [aria2](https://www.archlinux.org/packages/?name=aria2), then edit `/etc/pacman.conf` by adding the following line to the `[options]` section:
 

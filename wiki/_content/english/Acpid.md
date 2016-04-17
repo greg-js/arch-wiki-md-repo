@@ -1,4 +1,4 @@
-[acpid2](http://acpid2.sourceforge.net/) is a flexible and extensible daemon for delivering [ACPI events](/index.php/ACPI_modules "ACPI modules"). When an event occurs, executes programs to handle the event. These events are triggered by certain actions, such as:
+[acpid2](http://acpid2.sourceforge.net/) is a flexible and extensible daemon for delivering [ACPI events](/index.php/ACPI_modules "ACPI modules"). When an event occurs, it executes programs to handle the event. These events are triggered by certain actions, such as:
 
 *   Pressing special keys, including the Power/Sleep/Suspend button
 *   Closing a notebook lid

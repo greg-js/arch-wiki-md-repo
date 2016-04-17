@@ -74,7 +74,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   A rewrite of the game program, now adopted as a GNU project: [liquidwar6](https://aur.archlinux.org/packages/liquidwar6/), homepage: [| Liquid War 6](http://www.gnu.org/software/liquidwar6/)
 
-*   **[Minecraft](/index.php/Minecraft "Minecraft")** — Java based sandbox game. Very addictive game, big community, lots of updates, do not miss this one.
+*   **[Minecraft](/index.php/Minecraft "Minecraft")** — Java based sandbox game.
 
 	[http://minecraft.net](http://minecraft.net) || [minecraft](https://aur.archlinux.org/packages/minecraft/)
 

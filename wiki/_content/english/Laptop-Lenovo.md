@@ -139,7 +139,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo ThinkPad P50 | Untested | Yes | Yes | Yes | Yes | Yes | Suspend/Hibernate buggy but working | NA | SD card (Yes), Webcam (Yes), Fingeprint Reader (No), | Wifi requires Kernel 4.3.3+ |
+| [Lenovo ThinkPad P50](/index.php/Lenovo_ThinkPad_P50 "Lenovo ThinkPad P50") | Untested | Yes | Yes | Yes | Yes | Yes | Suspend/Hibernate buggy but working sometimes | NA | SD card (Yes), Webcam (Yes), Fingeprint Reader (No), | Wifi requires Kernel 4.3.3+ |
 | Lenovo ThinkPad P70 | Untested | Yes | Yes | Yes | Yes | Yes | Suspend/Hibernate not working | NA | SD card (Yes), Webcam (Yes), Fingeprint Reader (No), | Wifi requires Kernel 4.3.3+ |
 
 ## Lenovo

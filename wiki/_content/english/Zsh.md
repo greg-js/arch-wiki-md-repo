@@ -76,56 +76,62 @@ See [Command-line shell#Changing your default shell](/index.php/Command-line_she
 
 ## Configuration files
 
+**Note:**
+
+*   If `$ZDOTDIR` is not set, `$HOME` is used instead.
+*   If option `RCS` is unset in any of the files, no configuration files will be sourced after that file.
+*   If option `GLOBAL_RCS` is unset in any of the files, no global configuration files (`/etc/zsh/*`) will be sourced after that file.
+
 When starting Zsh, it'll source the following files in this order by default:
 
 	`/etc/zsh/zshenv`
 
-	This file should contain commands to set the global [command search path](#Configuring_.24PATH) and other system-wide [environment variables](/index.php/Environment_variables "Environment variables"); it should not contain commands that produce output or assume the shell is attached to a tty.
+	Used for setting system-wide [environment variables](/index.php/Environment_variables "Environment variables"); it should not contain commands that produce output or assume the shell is attached to a tty. This file will ***always*** be sourced, this cannot be overridden.
 
-	`~/.zshenv`
+	`$ZDOTDIR/.zshenv`
 
-	Similar to `/etc/zsh/zshenv` but for per-user configuration. Generally used for setting some useful environment variables.
+	Used for setting user's environment variables; it should not contain commands that produce output or assume the shell is attached to a tty. This file will ***always*** be sourced.
 
 	`/etc/zsh/zprofile`
 
-	This is a global configuration file, it'll be sourced at login. Usually used for executing some general commands at login. Please note that on Arch Linux, by default it contains [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) which source the `/etc/profile`, see [#Global configuration files](#Global_configuration_files) for details.
+	Used for executing commands at start, will be sourced when starting as a ***login shell***. Please note that on Arch Linux, by default it contains [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) which source the `/etc/profile`.
 
 	`/etc/profile`
 
-	This file should be sourced by all Bourne-compatible shells upon login: it sets up an environment upon login and application-specific (`/etc/profile.d/*.sh`) settings. Note that on Arch Linux, Zsh will also source this by default.
+	This file should be sourced by all Bourne-compatible shells upon login: it sets up `$PATH` and other environment variables and application-specific (`/etc/profile.d/*.sh`) settings upon login.
 
-	`~/.zprofile`
+	`$ZDOTDIR/.zprofile`
 
-	This file is generally used for automatic execution of user's scripts at login.
+	Used for executing user's commands at start, will be sourced when starting as a ***login shell***.
 
 	`/etc/zsh/zshrc`
 
-	Global configuration file, will be sourced when starting as a interactive shell.
+	Used for setting interactive shell configuration and executing commands, will be sourced when starting as a ***interactive shell***.
 
-	`~/.zshrc`
+	`$ZDOTDIR/.zshrc`
 
-	Main user configuration file, will be sourced when starting as a interactive shell.
+	Used for setting user's interactive shell configuration and executing commands, will be sourced when starting as a ***interactive shell***.
 
 	`/etc/zsh/zlogin`
 
-	A global configuration file, will be sourced at the ending of initial progress when starting as a login shell.
+	Used for executing commands at ending of initial progress, will be sourced when starting as a ***login shell***.
 
-	`~/.zlogin`
+	`$ZDOTDIR/.zlogin`
 
-	Same as `/etc/zsh/zlogin` but for per-user configuration.
+	Used for executing user's commands at ending of initial progress, will be sourced when starting as a ***login shell***.
+
+	`$ZDOTDIR/.zlogout`
+
+	Will be sourced when a ***login shell*** **exits**.
 
 	`/etc/zsh/zlogout`
 
-	A global configuration file, will be sourced when a login shell exits.
-
-	`~/.zlogout`
-
-	Same as `/etc/zsh/zlogout` but for per-user configuration.
+	Will be sourced when a ***login shell*** **exits**.
 
 **Note:**
 
 *   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page")
-*   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `~/.zshenv`. To prevent this, please set the `$PATH` variable in `~/.zprofile`
+*   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `$ZDOTDIR/.zshenv`. To prevent this, please set the `$PATH` variable in `$ZDOTDIR/.zprofile`
 
 **Warning:** It is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something other, it'll break the integrality of other packages which provide some scripts in `/etc/profile.d`
 

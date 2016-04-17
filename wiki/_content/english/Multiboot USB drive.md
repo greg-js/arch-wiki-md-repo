@@ -149,7 +149,7 @@ loopback loop **($isopart)**$isofile
 
 #### Alpine Linux
 
-**Tip:** If you want to boot into a 32-bit system, replace `x86_64` with `i686`.
+**Tip:** If you want to boot into a 32-bit system, replace `x86_64` with `x86`.
 
 *   Initramfs framework: ???
 *   Live framework: ???

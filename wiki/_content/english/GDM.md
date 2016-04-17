@@ -118,6 +118,7 @@ Next, you need to create a file in the directory with the following content:
     <file>summary-counter.svg</file>
     <file>toggle-off-us.svg</file>
     <file>toggle-off-intl.svg</file>
+    <file>toggle-on-hc.svg</file>
     <file>toggle-on-us.svg</file>
     <file>toggle-on-intl.svg</file>
     <file>ws-switch-arrow-up.png</file>

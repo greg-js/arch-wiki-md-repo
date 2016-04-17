@@ -156,7 +156,7 @@ and append the key to the list of keys in `~/.kde4/Autostart/ssh-add.sh` as expl
 
 ## KDE Wallet for Firefox
 
-There is an addon to make Firefox store passwords with [KDE Wallet 5](http://kde-apps.org/content/show.php?content=173994) or [KDE Wallet 4](http://kde-apps.org/content/show.php/Firefox+addon+for+kwallet?content=116886).
+There is an addon to make Firefox store passwords with [KDE5 Wallet](https://addons.mozilla.org/addon/kde5-wallet-password-integrati/) or [KDE4 Wallet](https://addons.mozilla.org/addon/kde-wallet-password-integratio/).
 
 ## KDE Wallet for Chromium
 

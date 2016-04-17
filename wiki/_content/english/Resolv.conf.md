@@ -7,6 +7,7 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From its [man pa
 ## Contents
 
 *   [1 DNS in Linux](#DNS_in_Linux)
+    *   [1.1 Testing](#Testing)
 *   [2 Alternative DNS servers](#Alternative_DNS_servers)
     *   [2.1 OpenNIC](#OpenNIC)
     *   [2.2 OpenDNS](#OpenDNS)
@@ -20,33 +21,50 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From its [man pa
     *   [3.3 Modify the dhcpcd config](#Modify_the_dhcpcd_config)
     *   [3.4 Write-protect /etc/resolv.conf](#Write-protect_.2Fetc.2Fresolv.conf)
     *   [3.5 Use timeout option to reduce hostname lookup time](#Use_timeout_option_to_reduce_hostname_lookup_time)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Local domain names](#Local_domain_names)
 
 ## DNS in Linux
 
 Your ISP (usually) provides working [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") servers, and a router may also add an extra DNS server in case you have your own cache server. Switching between DNS servers does not represent a problem for Windows users, because if a DNS server is slow or does not work it will immediately switch to a better one. However, Linux usually takes longer to timeout, which could be the reason why you are getting a delay.
 
-Use *drill* (provided by package [ldns](https://www.archlinux.org/packages/?name=ldns)) before any changes, repeat after making the adjustments in the section below and compare the query time(s):
+### Testing
+
+Use *drill* (provided by package [ldns](https://www.archlinux.org/packages/?name=ldns)) before any changes, repeat after making the adjustments and compare the query time(s). The following command uses the nameservers set in `/etc/resolv.conf`:
 
 ```
 $ drill www5.yahoo.com
 
 ```
 
-You can also specify a nameserver:
+You can also specify a specific nameserver's ip address, bypassing the settings in your `/etc/resolv.conf`:
 
 ```
-$ drill @ip.of.name.server www5.yahoo.com
+$ drill @*ip.of.name.server* www5.yahoo.com
+
+```
+
+For example to test Google's name servers:
+
+```
+$ drill @8.8.8.8 www5.yahoo.com
+
+```
+
+To test a local name server (such as [unbound](/index.php/Unbound "Unbound")) do:
+
+```
+$ drill @127.0.0.1 www5.yahoo.com
 
 ```
 
 ## Alternative DNS servers
 
-To use alternative DNS servers, edit `/etc/resolv.conf` and add them to the top of the file so they are used first, optionally removing or commenting out already listed servers.
+To use alternative DNS servers, edit `/etc/resolv.conf` and add them to the top of the file so they are used first, optionally removing or commenting out already listed servers. Currently, you may include a maximum of three `nameserver` lines.
 
-**Note:**
+**Note:** Changes made to `/etc/resolv.conf` take effect immediately.
 
-*   Currently, you may include a maximum of three `nameserver` lines. In order to overcome this limitation, you can use a locally caching nameserver like [dnsmasq](/index.php/Dnsmasq "Dnsmasq").
-*   Changes made to `/etc/resolv.conf` take effect immediately.
+**Tip:** If you require more flexibility, e.g. more than three nameservers, you can use a locally caching nameserver/resolver like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [unbound](/index.php/Unbound "Unbound"). Using a local DNS caching resolver, most likely you will not set the `nameserver` to the actual DNS server but to `127.0.0.1`. See the article for the program you are using for DNS caching.
 
 ### OpenNIC
 
@@ -221,3 +239,16 @@ If you are confronted with a very long hostname lookup (may it be in [pacman](/i
 options timeout:1
 
 ```
+
+## Tips and tricks
+
+### Local domain names
+
+If you want to be able to use the hostname of local machine names without the fully qualified domain names, then add a line to `resolv.conf` with the local domain such as:
+
+```
+domain localdomain.com
+
+```
+
+That way you can refer to local hosts such as `mainmachine1.localdomain.com` as simply `mainmachine1` when using the *ssh* command, but the *drill* command still requires the fully qualified domain names in order to perform lookups.

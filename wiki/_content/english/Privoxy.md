@@ -69,7 +69,7 @@ forward-socks4a .onion localhost:9050 .
 If you like to use a small and fast caching web proxy with Privoxy, you can use [Polipo](/index.php/Polipo "Polipo"). Then you have to forward Privoxy's traffic to Polipo by forwarding all traffic to Polipo's port 8123:
 
 ```
-forward / localhost:8123 .
+forward / localhost:8123
 
 ```
 

@@ -89,7 +89,7 @@ $ makepkg -s
 
 ```
 
-Adding the `-r`/`--rmdeps` flag causes *makepkg* to remove the make dependencies later, which are no longer needed. If constantly building packages, consider using [Pacman tips#Removing unused packages](/index.php/Pacman_tips#Removing_unused_packages "Pacman tips") once in a while instead.
+Adding the `-r`/`--rmdeps` flag causes *makepkg* to remove the make dependencies later, which are no longer needed. If constantly building packages, consider using [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks") once in a while instead.
 
 **Note:**
 

@@ -106,7 +106,7 @@ http_settings:
 ...
 ```
 
-Update the `/usr/share/webapps/gitlab/config/unicorn.rb` configuration if the port and/or hostname is different from the default:
+Update the `/usr/share/webapps/gitlab/unicorn.rb` configuration if the port and/or hostname is different from the default:
 
  `/etc/webapps/gitlab/config/unicorn.rb`  `listen "127.0.0.1:8080", :tcp_nopush => true # <<-- right here` 
 
@@ -192,9 +192,12 @@ Login to PostgreSQL and create the `gitlabhq_production` database with along wit
 
 ```
 template1=# CREATE USER your_username_here WITH PASSWORD 'your_password_here';
+template1=# ALTER USER your_username_here SUPERUSER;
 template1=# CREATE DATABASE gitlabhq_production OWNER your_username_here;
 template1=# \q
 ```
+
+**Note:** The reason for creating the user as a superuser is that GitLab is trying to be "smart" and install extensions (not just create them in it's own userspace). And this is only allowed by superusers in Postgresql.
 
 Try connecting to the new database with the new user to verify it works:
 
@@ -283,6 +286,15 @@ Now you have to install bundler and the required gems with:
 ```
 
 **Warning:** GitLab requires `bundle` command, not `bundle-2.1`, don't forget to install it.
+
+**Note:** If you're getting errors later on saying bundle is missing for the user 'gitlab', then this is most likely because ruby is installed in a non-readable folder such as /usr/lib or something similar and this solves that issue:
+```
+su - gitlab -s /bin/sh -c "export PATH=$PATH:/var/lib/gitlab/.gem/ruby/2.3.0/bin; gem install bundler --no-document"
+su - gitlab -s /bin/sh -c "export PATH=$PATH:/var/lib/gitlab/.gem/ruby/2.3.0/bin; cd /usr/share/webapps/gitlab; bundle install"
+su - gitlab -s /bin/sh -c "export PATH=$PATH:/var/lib/gitlab/.gem/ruby/2.3.0/bin; cd /usr/share/webapps/gitlab; bundle exec rake gitlab:setup RAILS_ENV=production"
+su - gitlab -s /bin/sh -c "export PATH=$PATH:/var/lib/gitlab/.gem/ruby/2.3.0/bin; cd /usr/share/webapps/gitlab; bundle exec rake assets:precompile RAILS_ENV=production"
+
+```
 
 Initialize the database and activate advanced features:
 

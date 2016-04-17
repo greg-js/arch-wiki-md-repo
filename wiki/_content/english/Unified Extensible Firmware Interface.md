@@ -148,7 +148,7 @@ If EFI Variables support does not work even after the above conditions are satis
 If `efivarfs` is not automatically mounted at `/sys/firmware/efi/efivars` by [systemd](/index.php/Systemd "Systemd") during boot, then you need to manually mount it to expose UEFI variables to [#Userspace tools](#Userspace_tools) like `efibootmgr`:
 
 ```
-# mount -t efivarfs efivarfs /sys/firmware/efi/efivarsb
+# mount -t efivarfs efivarfs /sys/firmware/efi/efivars
 
 ```
 

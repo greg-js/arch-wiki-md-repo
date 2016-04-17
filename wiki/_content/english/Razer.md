@@ -104,27 +104,15 @@ It is a [Killer Wireless-AC 1535](http://www.killernetworking.com/support/knowle
 
 #### Touchpad
 
-The touchpad requires the synaptic drivers to work properly.
+[Install](/index.php/Install "Install") the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package. See [Libinput](/index.php/Libinput "Libinput") for more information on this driver.
 
-```
-# pacman -S xf86-input-synaptics
-
-```
-
-See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") for more information on installation and configuration.
+Alternatively, if you prefer using the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") driver, [install](/index.php/Install "Install") the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package.
 
 #### Graphics Drivers
 
-The graphics card works OK with the standard intel drivers.
+The graphics card works OK with the standard intel drivers which you can [install](/index.php/Install "Install") with the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. See [Intel graphics](/index.php/Intel_graphics "Intel graphics") for more information on installation and configuration.
 
-```
-# pacman -S xf86-video-intel
-
-```
-
-See [Intel graphics](/index.php/Intel_graphics "Intel graphics") for more information on installation and configuration.
-
-Issues with screen flickering seem to be resolved by changing *AccelMethod* to *sna* As described in the wiki for the driver.
+Issues with screen flickering seem to be resolved by changing *AccelMethod* to *sna* as described in the [SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") section.
 
 ```
 # cat >/etc/X11/xorg.conf.d/20-intel.conf 
@@ -163,13 +151,14 @@ If you are using an external monitor that is not [HiDPI](/index.php/HiDPI "HiDPI
 [Source](https://bbs.archlinux.org/viewtopic.php?id=173356&p=2)
 
 ```
-git clone https://github.com/aduggan/hid-rmi.git -b rb14 # and then install it
+git clone [https://github.com/aduggan/hid-rmi.git](https://github.com/aduggan/hid-rmi.git) -b rb14 # and then install it
 depmod -a
-sudo pacman -S synaptics
-
-Feature still not working: pinch to zoom, 3rd mouse button
 
 ```
+
+Then [install](/index.php/Install "Install") the [synaptics](https://www.archlinux.org/packages/?name=synaptics) package.
+
+Feature still not working: pinch to zoom, 3rd mouse button.
 
 ### 2013 version
 
@@ -198,11 +187,12 @@ Feature still not working: pinch to zoom, 3rd mouse button
 ```
 git clone https://github.com/aduggan/hid-rmi.git -b rb14 # and then install it
 depmod -a
-sudo pacman -S synaptics
-
-Feature still not working: pinch to zoom, 3rd mouse button
 
 ```
+
+Then [install](/index.php/Install "Install") the [synaptics](https://www.archlinux.org/packages/?name=synaptics) packages.
+
+Feature still not working: pinch to zoom, 3rd mouse button
 
 ## Razer keyboards
 

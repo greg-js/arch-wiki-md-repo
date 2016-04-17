@@ -123,8 +123,8 @@ WantedBy=timers.target
 
 You'll probably want your web server to be restarted after each certificate renewal. You can realize that by adding one of these lines to the `letsencrypt.service` file:
 
-*   Apache: `ExecStartPost=/usr/sbin/systemctl reload httpd.service`
-*   nginx: `ExecStartPost=/usr/sbin/systemctl restart nginx.service`
+*   Apache: `ExecStartPost=/bin/systemctl reload httpd.service`
+*   nginx: `ExecStartPost=/bin/systemctl restart nginx.service`
 
 ## See also
 

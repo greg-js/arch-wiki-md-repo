@@ -42,33 +42,33 @@
 
 ### 安装和配置
 
-Follow [Installation guide#Mount the partitions](/index.php/Installation_guide#Mount_the_partitions "Installation guide"). If you already use the `/mnt` directory for something else, just create another directory such as `/mnt/install`, and use that instead.
+参考 [Installation guide #Mount the partitions](/index.php/Installation_guide#Mount_the_partitions "Installation guide")。如果 `/mnt`文件夹已经被占用 , 只要新建一个文件夹，比如 `/mnt/install`用来替代即可。
 
-Then follow [Installation guide#Installation](/index.php/Installation_guide#Installation "Installation guide"). You can skip [Installation guide#Select the mirrors](/index.php/Installation_guide#Select_the_mirrors "Installation guide"), since the host should already have a correct mirrorlist.
+然后参考 [Installation guide#Installation](/index.php/Installation_guide#Installation "Installation guide")。你可以跳过 [Installation guide#Select the mirrors](/index.php/Installation_guide#Select_the_mirrors "Installation guide")，因为主机中应该已经有了合适的镜像列表。
 
-**Note:** If you only want to create an exact copy of an existing Arch installation, it is also possible to just copy the filesystem to the new partition. With this method, you will still need to
+**注意:** 如果你只想创建当前已经存在的Arch系统的备份, 可能只需要复制文件系统到新分区即可。但是你仍然需要做如下操作：
 
-*   Create [`/etc/fstab`](/index.php/Beginners%27_guide#Generate_an_fstab "Beginners' guide") and edit `/etc/hostname`
-*   Delete `/etc/machine-id` so that a new, unique, one will be regenerated on boot
-*   Make any other changes appropriate to the installation medium
-*   Install the bootloader
+*   创建 [`/etc/fstab`](/index.php/Beginners%27_guide#Generate_an_fstab "Beginners' guide") 并编辑 `/etc/hostname`；
+*   删除 `/etc/machine-id` ，这样在系统启动时将生成一个全新的、独一无二的matchine-id；
+*   对安装媒介做其它相关更改；
+*   安装 bootloader。
 
-When copying the filesystem root, use something like `cp -ax` or `rsync -axX`. This avoids copying contents of mountpoints (`-x`), and preserves the [capabilities](/index.php/Capabilities "Capabilities") attributes of some system binaries (`rsync -X`).
+当复制文件系统根目录时, 使用比如`cp -ax` 或 `rsync -axX`来操作. 这可以避免复制挂载点的内容 (`-x`), 并且保护[capabilities](/index.php/Capabilities "Capabilities") 一些系统二进制文件的属性 (`rsync -X`).
 
 ## 从一个主机运行另一个Linux发行版
 
-There are multiple tools which automate a large part of the steps described in the following subsections. See their respective homepages for detailed instructions.
+下列是多个可以自动处理大量步骤的工具。具体方法可以参考他们各自主页的相关说明。
 
 *   [arch-bootstrap](https://github.com/tokland/arch-bootstrap) (Bash)
 *   [image-bootstrap](https://github.com/hartwork/image-bootstrap) (Python)
 *   [vps2arch](https://github.com/drizzt/vps2arch) (Bash)
 *   [archcx](https://github.com/m4rienf/ArchCX) (Bash, from Hetzner CX Rescue System)
 
-The manual way is presented in the following subsections. The idea is to run an Arch system inside the host system, with the actual installation being executed from the Arch system. The nested system is contained inside a chroot.
+以下是介绍手动处理的办法。具体思路是在主机系统中运行Arch系统，并且是在Arch系统中进行的实际安装。这个嵌套系统是位于chroot中。
 
 ### 创建 chroot
 
-Two methods to setup and enter the chroot are presented below, from the easiest to the most complicated. Select only one of the two methods. Then, continue at [#Using the chroot environment](#Using_the_chroot_environment).
+以下是两个创建并进入chroot的方法，从最简单到最复杂。二者选其一，然后参考[#Using the chroot environment](#Using_the_chroot_environment).
 
 #### 方法一：使用 Bootstrap 镜像（推荐）
 

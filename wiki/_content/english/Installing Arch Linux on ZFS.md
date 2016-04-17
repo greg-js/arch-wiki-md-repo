@@ -99,7 +99,7 @@ If so desired, sub-filesystem mount points such as `/home` and `/root` can be cr
 
 ```
 
-Note that if you want to use other datasets for system directories (`/var` or `/etc` included) your system will not boot unless they are listed in `/etc/fstab`! We will address that at the appropriate time in this tutorial.
+Note that if you create legacy datasets for system directories (`/var` or `/etc` included) your system will not boot unless they are listed in `/etc/fstab`!
 
 ### Swap partition
 
@@ -203,11 +203,11 @@ if you do not have /etc/zfs/zpool.cache, create it:
 
 Follow the following steps using the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"). It will be noted where special consideration must be taken for ZFSonLinux.
 
-*   First mount any boot or system partitions using the mount command.
+*   First mount any legacy or non-ZFS boot or system partitions using the mount command.
 
 *   Install the base system.
 
-*   The procedure described in [Beginners' guide#Generate an fstab](/index.php/Beginners%27_guide#Generate_an_fstab "Beginners' guide") is usually overkill for ZFS. ZFS usually auto mounts its own partitions, so we do not need ZFS partitions in `fstab` file, unless the user made datasets of system directories. To generate the `fstab` for filesystems, use:
+*   The procedure described in [Beginners' guide#Generate an fstab](/index.php/Beginners%27_guide#Generate_an_fstab "Beginners' guide") is usually overkill for ZFS. ZFS usually auto mounts its own partitions, so we do not need ZFS partitions in `fstab` file, unless the user made legacy datasets of system directories. To generate the `fstab` for filesystems, use:
 
 ```
 # genfstab -U -p /mnt >> /mnt/etc/fstab
@@ -218,8 +218,8 @@ Follow the following steps using the [Beginners' guide](/index.php/Beginners%27_
 
 **Note:**
 
-*   If you chose to create datasets for system directories, keep them in this `fstab`! Comment out the lines for the '`/`, `/root`, and `/home` mountpoints, rather than deleting them. You may need those UUIDs later if something goes wrong.
-*   Anyone who just stuck with the guide's directions can delete everything except for the swap file and the boot/EFI partition. It seems convention to replace the swap's uuid with `/dev/zvol/zroot/swap`.
+*   If you chose to create legacy datasets for system directories, keep them in this `fstab`!
+*   Comment out all non-legacy datasets apart from the root dataset, the swap file and the boot/EFI partition. It's convention to replace the swap's uuid with `/dev/zvol/zroot/swap`.
 
 *   You need to add the Arch ZFS repo, sign its key and install zfs-git within the arch-chroot before you can update the ramdisk with ZFS support
 
@@ -275,7 +275,7 @@ Example with Arch installed on the main dataset :
 
 ```
 
-Example with Arch installed on separator dataset zroot/OS/root
+Example with Arch installed on a separate dataset zroot/OS/root
 
 ```
    linux /OS/root/@/boot/vmlinuz-linux zfs=zroot/OS/root rw 
@@ -307,7 +307,7 @@ We are almost done!
 
 ```
 # exit
-# umount /mnt/boot
+# umount /mnt/boot (if you have a legacy boot partition)
 # zfs umount -a
 # zpool export zroot
 

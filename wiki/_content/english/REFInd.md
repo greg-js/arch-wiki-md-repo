@@ -92,17 +92,12 @@ Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry 
 
 ```
 
-At this point, you should be able to reboot into rEFInd but it will not be able to boot your kernel. If your kernel does not reside on your ESP, rEFInd can mount your partitions to find it - provided it has the right drivers:
-
-```
-# mkdir *esp*/EFI/refind/drivers_x64
-# cp /usr/share/refind/drivers_x64/**drivername**_x64.efi *esp*/EFI/refind/drivers_x64/
-
-```
+At this point, you should be able to reboot into rEFInd but it will not be able to boot your kernel. If your kernel does not reside on your ESP, rEFInd can mount your partitions to find it - provided it has the right drivers.
 
 rEFInd automatically loads all drivers from the subdirectories `drivers` and `drivers_*arch*` (e.g. `drivers_x64`) in its install directory.
 
 ```
+# mkdir *esp*/EFI/refind/drivers_x64
 # cp /usr/share/refind/drivers_x64/**drivername**_x64.efi *esp*/EFI/refind/drivers_x64/
 
 ```
@@ -215,7 +210,7 @@ menuentry "Arch Linux" {
 	}
 	submenuentry "Boot to terminal" {
 		add_options "systemd.unit=multi-user.target"
-
+	}
 }
 
 ```

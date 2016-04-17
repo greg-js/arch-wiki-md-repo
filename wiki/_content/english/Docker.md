@@ -10,6 +10,7 @@
         *   [2.2.2 Container Configuration](#Container_Configuration)
     *   [2.3 Daemon Socket Configuration](#Daemon_Socket_Configuration)
     *   [2.4 Configuring DNS](#Configuring_DNS)
+    *   [2.5 Images location](#Images_location)
 *   [3 Docker 0.9.0 -- 1.2.x and LXC](#Docker_0.9.0_--_1.2.x_and_LXC)
 *   [4 Images](#Images)
     *   [4.1 Arch Linux](#Arch_Linux)
@@ -127,6 +128,22 @@ ListenStream=0.0.0.0:2375
 ### Configuring DNS
 
 By default, docker will make resolv.conf in the container match resolv.conf on the host machine, filtering out local addresses (e.g. `127.0.0.1`). If this yields and empty file, than googles DNS servers are defaulted. If you are using a service like dnsmasq to provide name resolution, you will need to add an entry to your resolv.conf for docker's network interface so that it isn't filtered out.
+
+### Images location
+
+By default, docker images are located at `/var/lib/docker`. They can be moved to other partitions. First, [stop](/index.php/Stop "Stop") the `docker.service`.
+
+If you have run the docker images, you need to make sure the images are unmounted totally. Once that is completed, you may move the images from `/var/lib/docker` to the target destination.
+
+Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `-g` parameter to the `ExecStart`:
+
+ `/etc/systemd/system/docker.service.d/imagelocation.conf` 
+```
+ExecStart= 
+ExecStart=/usr/bin/docker daemon -g */path/to/new/location/docker* -H fd://
+```
+
+Finally, [reload](/index.php/Reload "Reload") configuration and [start](/index.php/Start "Start") `docker.service` again.
 
 ## Docker 0.9.0 -- 1.2.x and LXC
 

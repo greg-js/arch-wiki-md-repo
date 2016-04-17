@@ -839,11 +839,11 @@ $ echo -ne '\000**Administrator**\000**UserPass'** | openssl base64
 You should receive output similar to the following:
 
 ```
-AEFkbWluaXN0cmF0b3IAeHh4eHh4eHg=
+AEFkbWluaXN0cmF0b3IAVXNlclBhc3M=
 
 ```
 
-Now, open a *telnet* session and test (commands you enter are in bold, replace **host.domain.tld** with the real external FQDN and **AEFkbWluaXN0cmF0b3IAeHh4eHh4eHg=** with the result of the previous command):
+Now, open a *telnet* session and test (commands you enter are in bold, replace **host.domain.tld** with the real external FQDN and **AEFkbWluaXN0cmF0b3IAVXNlclBhc3M=** with the result of the previous command):
 
 ```
 $ **telnet localhost 25**
@@ -862,7 +862,7 @@ Escape character is '^]'.
 250-ENHANCEDSTATUSCODES
 250-8BITMIME
 250 DSN
-**AUTH PLAIN AEFkbWluaXN0cmF0b3IAeHh4eHh4eHg=**
+**AUTH PLAIN AEFkbWluaXN0cmF0b3IAVXNlclBhc3M=**
 235 2.7.0 Authentication successful
 **quit**
 221 2.0.0 Bye

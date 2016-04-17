@@ -74,7 +74,7 @@ To connect to a VPN service provided by a third party, most of the following can
 
 If you are setting up OpenVPN from scratch, you will need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure").
 
-Create the needed certificates and keys by following: [Create a Public Key Infrastructure Using the easy-rsa Scripts](/index.php/Create_a_Public_Key_Infrastructure_Using_the_easy-rsa_Scripts "Create a Public Key Infrastructure Using the easy-rsa Scripts").
+Create the needed certificates and keys using the [easy-rsa](/index.php/Easy-rsa "Easy-rsa") scripts.
 
 The final step of the key creation process is to copy the files needed to the correct machines through a secure channel.
 

@@ -13,7 +13,7 @@ Berkeley Internet Name Daemon (BIND) is the reference implementation of the Doma
 *   [6 Running BIND in a chrooted environment](#Running_BIND_in_a_chrooted_environment)
     *   [6.1 Creating the Jail House](#Creating_the_Jail_House)
     *   [6.2 Service File](#Service_File)
-*   [7 BIND Resources](#BIND_Resources)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -28,12 +28,7 @@ listen-on { 127.0.0.1; };
 
 ```
 
-Edit `/etc/resolv.conf` to use the local DNS server:
-
-```
-nameserver 127.0.0.1
-
-```
+Edit [resolv.conf](/index.php/Resolv.conf "Resolv.conf") to use the local DNS server, 127.0.0.1.
 
 [Start](/index.php/Start "Start") `named.service`.
 
@@ -123,21 +118,7 @@ allow-recursion { 127.0.0.1; };
 
 ```
 
-So to facilitate general DNS lookups from your host, your `/etc/resolv.conf` file must include this line:
-
-```
-nameserver 127.0.0.1
-
-```
-
-Since `/etc/resolv.conf` is a generated file, edit `/etc/resolvconf.conf` and uncomment the
-
-```
-# name_servers=127.0.0.1
-
-```
-
-line. `/etc/resolvconf.conf` will consequently be set up properly on subsequent reboots.
+So to facilitate general DNS lookups from your host, your [resolv.conf](/index.php/Resolv.conf "Resolv.conf") configuration file must have 127.0.0.1 as a name server. See [Resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") on how to keep this from being overwritten.
 
 If you want to provide name service for your local network; e.g. 192.168.0, you must add the appropriate range of IP addresses to `/etc/named.conf`:
 
@@ -207,10 +188,11 @@ we need to edit how the service calls bind.
 
 Now, reload systemd `systemctl daemon-reload`. Then [start](/index.php/Start "Start") `named-chroot.service`
 
-## BIND Resources
+## See also
 
 *   [BIND 9 DNS Administration Reference Book](http://www.reedmedia.net/books/bind-dns/)
 *   [DNS and BIND by Cricket Liu and Paul Albitz](http://shop.oreilly.com/product/9780596100575.do)
 *   [Pro DNS and BIND](http://www.netwidget.net/books/apress/dns/intro.html)
 *   [Internet Systems Consortium, Inc. (ISC)](http://www.isc.org/)
 *   [DNS Glossary](http://www.menandmice.com/knowledgehub/dnsglossary)
+*   [Archived mailing list discussion on BIND's future](https://lists.archlinux.org/pipermail/arch-dev-public/2013-March/024588.html)

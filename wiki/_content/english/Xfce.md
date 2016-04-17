@@ -52,6 +52,7 @@
     *   [5.9 Session failure](#Session_failure)
     *   [5.10 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
     *   [5.11 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
+    *   [5.12 Rendering issues with Adwaita theme](#Rendering_issues_with_Adwaita_theme)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -647,6 +648,19 @@ $ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-
 ```
 
 Note that each time the laptop lid settings are changed in the power manager, this setting will be reset.
+
+### Rendering issues with Adwaita theme
+
+Since the upgrade of gnome-themes-standard from 3.18.0-1 version to 3.20.0-1 the Adwaita theme exhibits several issues when being used in Xfce, like a frame around the notification area and dark background of the tooltip in eclipse.
+
+A ugly solution is to downgrade the [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) to the old 3.18.0-1 meanwhile. The package can be downloaded at:
+
+```
+$ wget https://archive.archlinux.org/repos/2016/04/08/extra/os/$(uname -m)/gnome-themes-standard-3.18.0-1-$(uname -m).pkg.tar.xz
+
+```
+
+and installed via pacman's `-U` option.
 
 ## See also
 

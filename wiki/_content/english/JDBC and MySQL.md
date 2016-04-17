@@ -96,6 +96,8 @@ public class DBDemo
 }
 ```
 
+If mariadb is used, then the above class name has to be set to `org.mariadb.jdbc.Driver`.
+
 ### Running the program
 
 To compile and run the program enter:

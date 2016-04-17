@@ -19,8 +19,8 @@ This document is an annotated index of popular articles and important informatio
     *   [3.3 Retaining boot messages](#Retaining_boot_messages)
     *   [3.4 Num Lock activation](#Num_Lock_activation)
 *   [4 Graphical user interface](#Graphical_user_interface)
-    *   [4.1 Display drivers](#Display_drivers)
-    *   [4.2 Display server](#Display_server)
+    *   [4.1 Display server](#Display_server)
+    *   [4.2 Display drivers](#Display_drivers)
     *   [4.3 Desktop environments](#Desktop_environments)
     *   [4.4 Window managers](#Window_managers)
     *   [4.5 Display manager](#Display_manager)
@@ -148,19 +148,19 @@ Num Lock is a toggle key found in most keyboards. For activating Num Lock's numb
 
 This section provides orientation for users wishing to run graphical applications on their system. See [Category:X server](/index.php/Category:X_server "Category:X server") for additional resources.
 
-### Display drivers
-
-The default *vesa* display driver will work with most video cards, but performance can be significantly improved and additional features harnessed by installing the appropriate driver for [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel"), or [NVIDIA](/index.php/NVIDIA "NVIDIA") products.
-
 ### Display server
 
 [Xorg](/index.php/Xorg "Xorg") is the public, open-source implementation of the [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") (commonly X11, or X). It is required for running applications with graphical user interfaces (GUIs), and the majority of users will want to install it.
 
 [Wayland](/index.php/Wayland "Wayland") is a new, alternative display server protocol and the Weston reference implementation is available. There is very little support for it from applications at this early stage of development.
 
+### Display drivers
+
+The default *vesa* display driver will work with most video cards, but performance can be significantly improved and additional features harnessed by installing the appropriate driver for [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel"), or [NVIDIA](/index.php/NVIDIA "NVIDIA") products.
+
 ### Desktop environments
 
-Whilst Xorg provides the basic framework for building a graphical environment, there are additional components that may be considered necessary for a complete user experience. [Desktop environments](/index.php/Desktop_environment "Desktop environment") such as [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), and [Xfce](/index.php/Xfce "Xfce") bundle together a wide range of *X clients*, such as a window manager, panel, file manager, terminal emulator, text editor, icons, and other utilities. Users with less experience may wish to install a desktop environment for a more familiar environment. See [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") for additional resources.
+Although Xorg provides the basic framework for building a graphical environment, additional components may be considered necessary for a complete user experience. [Desktop environments](/index.php/Desktop_environment "Desktop environment") such as [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), and [Xfce](/index.php/Xfce "Xfce") bundle together a wide range of *X clients*, such as a window manager, panel, file manager, terminal emulator, text editor, icons, and other utilities. Users with less experience may wish to install a desktop environment for a more familiar environment. See [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") for additional resources.
 
 ### Window managers
 

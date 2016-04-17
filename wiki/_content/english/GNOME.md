@@ -271,24 +271,24 @@ $ gsettings set org.gnome.desktop.wm.preferences theme *theme-name*
 
 ###### Titlebar height
 
-**Note:** As of GNOME 3.16, Mutter no longer uses Metacity themes. Instead, the titlebar decorations are themed using GTK+.
-
-To change the titlebar height, create the following file, adjusting the padding as desired:
-
+**Note:** Applying this configuration shrinks the titlebar of the GNOME-terminal and Chromium, but does not appear to affect the Nautilus titlebar height.
  `~/.config/gtk-3.0/gtk.css` 
 ```
-.header-bar {
-	padding-top: 3px;
-	padding-bottom: 3px;
-	font-size: 9px;
+headerbar.default-decoration {
+ padding-top: 0px;
+ padding-bottom: 0px;
+ min-height: 0px;
+ font-size: 0.6em;
 }
 
-.header-bar .button {
-	padding-top: 5px;
-	padding-bottom: 5px;
+headerbar.default-decoration button.titlebutton {
+ padding: 0px;
+ min-height: 0px;
 }
 
 ```
+
+See [[3]](https://ask.fedoraproject.org/en/question/10035/shrink-title-bar/?answer=86149#post-id-86149) for more information.
 
 ###### Titlebar button order
 
@@ -404,7 +404,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup 
 
 ##### Configure behaviour on lid switch close
 
-The GNOME Tweak Tool, as of version 3.17.1, can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[3]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the Tweak Tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
+The GNOME Tweak Tool, as of version 3.17.1, can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the Tweak Tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
 
 If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 

@@ -106,16 +106,9 @@ Once you know the IPs, you can replace the `pdnsd.conf`’s already-existant `re
 
 You should now have a working `pdnsd` daemon. Start it.
 
-You can test it with the `drill` utility (from the [ldns](https://www.archlinux.org/packages/?name=ldns) package):
+[Test](/index.php/Resolv.conf#Testing "Resolv.conf") that it is now working.
 
-```
-$ drill www.google.com @127.0.0.1
-
-```
-
-If everything works, you should see a list of IP addresses associated with Google.
-
-For the second time you look up the address, query time should be under 1 ms.
+For the second time you look up any address using `127.0.0.1`, query time should be under 1 ms.
 
 ### System setup
 

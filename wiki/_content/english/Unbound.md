@@ -14,11 +14,14 @@
     *   [3.2 Remotely control Unbound](#Remotely_control_Unbound)
         *   [3.2.1 Setting up unbound-control](#Setting_up_unbound-control)
         *   [3.2.2 Using unbound-control](#Using_unbound-control)
-*   [4 Adding an authoritative DNS server](#Adding_an_authoritative_DNS_server)
-*   [5 WAN facing DNS](#WAN_facing_DNS)
-*   [6 Issues concerning num-threads](#Issues_concerning_num-threads)
-*   [7 Block advertising](#Block_advertising)
-*   [8 See also](#See_also)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Block advertising](#Block_advertising)
+    *   [4.2 Adding an authoritative DNS server](#Adding_an_authoritative_DNS_server)
+    *   [4.3 WAN facing DNS](#WAN_facing_DNS)
+    *   [4.4 Roothints systemd timer](#Roothints_systemd_timer)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Issues concerning num-threads](#Issues_concerning_num-threads)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -30,23 +33,34 @@ Additionally, the [expat](https://www.archlinux.org/packages/?name=expat) packag
 
 A default configuration is already included at`/etc/unbound/unbound.conf`. Additionally, there is a commented sample configuration file with other available options located at `/etc/unbound/unbound.conf.example`. The following sections highlight different settings for the configuration file. See `man unbound.conf` for other settings and more details.
 
+Unless otherwise specified, any options listed in this section are to be placed under the `server` section in the configuration like so:
+
+ `/etc/unbound/unbound.conf` 
+```
+server:
+  ...
+  *setting*: *value*
+  ...
+
+```
+
 ### Access control
 
-You can specify the interfaces to answer queries from by IP address. To listen on *localhost*, use:
+You can specify the interfaces to answer queries from by IP address. To listen on *localhost*, use the default setting:
 
 ```
 interface: 127.0.0.1
 
 ```
 
-To listen on all interfaces, use:
+To listen on all interfaces, use the following:
 
 ```
 interface: 0.0.0.0
 
 ```
 
-Access can be further configured via the `access-control` option:
+To control which systems can access the server by IP address, use the `access-control` option:
 
 ```
 access-control: *subnet* *action*
@@ -64,18 +78,20 @@ access-control: 192.168.1.0/24 allow
 
 ### Root hints
 
-For querying a host that is not cached as an address the resolver needs to start at the top of the server tree and query the root servers to know where to go for the top level domain for the address being queried. Unbound comes with default builtin hints, but it is good practice to use a root-hints file since the builtin hints may become outdated. To do so, put a *root hints* file into the *unbound* configuration directory. The simplest way to do this is to run the command:
+For querying a host that is not cached as an address the resolver needs to start at the top of the server tree and query the root servers to know where to go for the top level domain for the address being queried. Unbound comes with default builtin hints, but it is good practice to use a root-hints file since the builtin hints may become outdated.
 
- `# curl -o /etc/unbound/root.hints https://www.internic.net/domain/named.cache` 
-
-It is a good idea to run this every six months or so in order to make sure the list of root servers is up to date. This can be done manually or by setting up a [cron](/index.php/Cron "Cron") job for the task.
-
-Point *unbound* to the `root.hints` file:
+First point *unbound* to the `root.hints` file:
 
 ```
 root-hints: "/etc/unbound/root.hints"
 
 ```
+
+Then, put a *root hints* file into the *unbound* configuration directory. The simplest way to do this is to run the command:
+
+ `# curl -o /etc/unbound/root.hints https://www.internic.net/domain/named.cache` 
+
+It is a good idea to update `root.hints` every six months or so in order to make sure the list of root servers is up to date. This can be done manually or by using [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). See [#Roothints systemd timer](#Roothints_systemd_timer) for an example.
 
 ### Local DNS server
 
@@ -83,37 +99,16 @@ If you want to use *unbound* as your local DNS server, set your nameserver to `1
 
 **Tip:** A simple way to do this is to install the [openresolv](https://www.archlinux.org/packages/?name=openresolv) package and uncomment the line containing `name_servers=127.0.0.1` in `/etc/resolvconf.conf`. Then run `resolvconf -u` to generate `/etc/resolv.conf`.
 
-Also if you want to be able to use the hostname of local machine names without the fully qualified domain names, then add a line with the local domain such as:
+See [Resolv.conf#Testing](/index.php/Resolv.conf#Testing "Resolv.conf") on how to test your settings.
 
-```
-domain localdomain.com
-nameserver 127.0.0.1
-
-```
-
-That way you can refer to local hosts such as mainmachine1.localdomain.com as simply mainmachine1 when using the ssh command, but the drill command below still requires the fully qualified domain names in order to perform lookups.
-
-Testing the server before making it default can be done using the drill command from the [ldns](https://www.archlinux.org/packages/?name=ldns) package with examples from internal and external forward and reverse addresses:
-
-```
-$ drill @127.0.0.1 www.cnn.com
-$ drill @127.0.0.1 localmachine.localdomain.com
-$ drill @127.0.0.1 -x w.x.y.z 
-
-```
-
-where `w.x.y.z` can be a local or external IP address and the `-x` option requests a reverse lookup. Once all is working, and you have `/etc/resolv.conf` set to use `127.0.0.1` as the nameserver then you no longer need the `@127.0.0.1` in the *drill* command, and you can test again that it uses the default DNS server - check that the server used as listed at the bottom of the output from each of these commands shows it is `127.0.0.1` being queried.
+Check specifically that the server being used is `127.0.0.1` after making permanent changes to [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
 
 ### DNSSEC validation
 
-*unbound* automatically copies the root server trust key anchor file from `/etc/trusted-key.key` to `/etc/unbound/trusted-key.key`. To use DNSSEC validation, point *unbound* to this file:
+*unbound* automatically copies the root server trust key anchor file from `/etc/trusted-key.key` to `/etc/unbound/trusted-key.key`. To use DNSSEC validation, point *unbound* to this file by adding the following setting:
 
- `/etc/unbound/unbound.conf` 
 ```
-server:
-  ...
-  trust-anchor-file: trusted-key.key
-  ...
+trust-anchor-file: trusted-key.key
 
 ```
 
@@ -229,7 +224,7 @@ Before you can start using it, the following steps need to be performed:
 
 which will generate a self-signed certificate and private key for the server, as well as the client. These files will be created in the `/etc/unbound` directory.
 
-2) After that, edit `/etc/unbound/unbound.conf` and put the following contents in that. The **control-enable: yes** option is necessary, the rest can be adjusted as required.
+2) After that, edit `/etc/unbound/unbound.conf` and put the following contents in that. The `control-enable: yes` option is necessary, the rest can be adjusted as required.
 
 ```
 remote-control:
@@ -285,15 +280,63 @@ Some of the commands that can be used with *unbound-control* are:
 
 Please refer to `man 8 unbound-control` for a detailed look at the operations it supports.
 
-## Adding an authoritative DNS server
+## Tips and tricks
+
+### Block advertising
+
+You can use the following file and simply include it in your unbound configuration: [adservers](https://pgl.yoyo.org/adservers/serverlist.php?hostformat=unbound&showintro=0&startdate%5Bday%5D=&startdate%5Bmonth%5D=&startdate%5Byear%5D=&mimetype=plaintext)
+
+ `/etc/unbound/unbound.conf` 
+```
+...
+include: /etc/unbound/adservers
+
+```
+
+**Note:** In order to return some OK statuses on those hosts, you can change the 127.0.0.1 redirection to a server you control and have that server respond with empty 204 replies, see [this page](http://www.shadowandy.net/2014/04/adblocking-nginx-serving-1-pixel-gif-204-content.htm)
+
+### Adding an authoritative DNS server
 
 For users who wish to run both a validating, recursive, caching DNS server as well as an authoritative DNS server on a single machine then it may be useful to refer to the wiki page [nsd](/index.php/Nsd "Nsd") which gives an example of a configuration for such a system. Having one server for authoritative DNS queries and a separate DNS server for the validating, recursive, caching DNS functions gives increased security over a single DNS server providing all of these functions. Many users have used bind as a single DNS server, and some help on migration from bind to the combination of running nsd and bind is provided in the [nsd](/index.php/Nsd "Nsd") wiki page.
 
-## WAN facing DNS
+### WAN facing DNS
 
 It is also possible to change the configuration files and interfaces on which the server is listening so that DNS queries from machines outside of the local network can access specific machines within the LAN. This is useful for web and mail servers which are accessible from anywhere, and the same techniques can be employed as has been achieved using bind for many years, in combination with suitable port forwarding on firewall machines to forward incoming requests to the right machine.
 
-## Issues concerning num-threads
+### Roothints systemd timer
+
+Here is an example systemd service and timer that update `root.hints` monthly using the method in [#Root hints](#Root_hints):
+
+ `/etc/systemd/system/roothints.service` 
+```
+[Unit]
+Description=Update root hints for unbound
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/curl -o /etc/unbound/root.hints https://www.internic.net/domain/named.cache
+
+[Install]
+WantedBy=multi-user.target
+```
+ `/etc/systemd/system/roothints.timer` 
+```
+[Unit]
+Description=Run root.hints monthly
+
+[Timer]
+OnCalendar=monthly
+Persistent=true     
+
+[Install]
+WantedBy=timers.target
+```
+
+[Start/enable](/index.php/Start/enable "Start/enable") the `roothints.timer` systemd timer.
+
+## Troubleshooting
+
+### Issues concerning num-threads
 
 The man page for `unbound.conf` mentions:
 
@@ -318,19 +361,6 @@ However it is not possible to arbitrarily increase `num-threads` above `1` witho
 Set the `outgoing-range` to as large a value as possible, see the sections in the referred web page above on how to overcome the limit of `1024` in total. This services more clients at a time. With 1 core, try `950`. With 2 cores, try `450`. With 4 cores try `200`. The `num-queries-per-thread` is best set at half the number of the `outgoing-range`.
 
 Because of the limit on `outgoing-range` thus also limits `num-queries-per-thread`, it is better to compile with [libevent](https://www.archlinux.org/packages/?name=libevent), so that there is no `1024` limit on `outgoing-range`. If you need to compile this way for a heavy duty DNS server then you will need to compile the programme from source instead of using the [unbound](https://www.archlinux.org/packages/?name=unbound) package.
-
-## Block advertising
-
-You can use the following file and simply include it in your unbound configuration: [adservers](https://pgl.yoyo.org/adservers/serverlist.php?hostformat=unbound&showintro=0&startdate%5Bday%5D=&startdate%5Bmonth%5D=&startdate%5Byear%5D=&mimetype=plaintext)
-
- `/etc/unbound/unbound.conf` 
-```
-...
-include: /etc/unbound/adservers
-
-```
-
-**Note:** In order to return some OK statuses on those hosts, you can change the 127.0.0.1 redirection to a server you control and have that server respond with empty 204 replies, see [this page](http://www.shadowandy.net/2014/04/adblocking-nginx-serving-1-pixel-gif-204-content.htm)
 
 ## See also
 

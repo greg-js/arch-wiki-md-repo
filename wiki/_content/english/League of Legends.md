@@ -50,7 +50,7 @@ When you first run it, playonlinux will install some necessary fonts. Afterwards
 
 ### Troubleshooting
 
-*   **Bugsplat opening patcher:** To fix this you need to configure the PlayOnLinux's wine version by clicking the configure gear, change wine version to system from 1.7-LeagueOfLegends and if you have not done so already install [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap).
+*   **Bugsplat opening patcher:** To fix this you need to configure the PlayOnLinux's wine version by clicking the configure gear, change wine version to system from 1.9-LeagueOfLegends and if you have not done so already install [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap).
 
 *   **Adobe air missing:** To fix this you need to install [lib32-lcms2](https://www.archlinux.org/packages/?name=lib32-lcms2).
 

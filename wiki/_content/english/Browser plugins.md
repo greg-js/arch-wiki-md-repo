@@ -62,7 +62,7 @@ The package you will need to install depends on the browser you use.
 **Note:**
 
 *   Some Flash apps may require the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package in order to properly render text.
-*   The [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/) package provides an *experimental* adapter to use [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) with NPAPI based browsers like Firefox.
+*   The [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/) package provides an *experimental* adapter to use [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) with NPAPI based browsers like Firefox. It can be configured (e.g. for enabling HW-acceleration) by copying `/usr/share/freshplayerplugin/freshwrapper.conf.example` to `/usr/share/freshplayerplugin/freshwrapper.conf`.
 
 #### Upgrade
 

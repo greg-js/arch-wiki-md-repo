@@ -93,7 +93,7 @@ Para poner en marcha máquinas virtuales de VirtualBox emarcadas en su sistema A
 
 ### Instalar los paquetes principales
 
-El primer paso es instalar el paquete [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"), que contiene la suite de VirtualBox bajo licencia GPL con las herramientas de línea de órdenes SDL y headless incluidas. El paquete [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) viene con [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) como una dependencia necesaria.
+El primer paso es instalar el paquete [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"), que contiene la suite de VirtualBox bajo licencia GPL con las herramientas de línea de órdenes SDL y headless incluidas. El paquete [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) viene con [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) como una dependencia necesaria.
 
 Puede instalar la dependencia opcional [qt4](https://www.archlinux.org/packages/?name=qt4) con el fin de utilizar la interfaz gráfica del usuario basada en [Qt](/index.php/Qt "Qt"). Esto no es necesario si va a utilizar VirtualBox solamente desde la línea de órdenes. [Ver abajo para conocer las diferencias](#Utilizar_el_front-end_adecuado).
 
@@ -107,8 +107,8 @@ Por lo tanto, hay que distinguir si se está usando un kernel de los [repositori
 
 #### Sistema anfitrión corriendo sobre un kernel oficial
 
-*   Si está utilizando el kernel de [linux](https://www.archlinux.org/packages/?name=linux), asegúrese de que el paquete [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) está instalado. Este último se ha debido instalar con el paquete [virtualbox](https://www.archlinux.org/packages/?name=virtualbox).
-*   Si está utilizando la versión LTS del kernel ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), es necesario instalar el paquete [virtualbox-host-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-host-modules-lts). El paquete [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) ya no será necesario y puede ser eliminado, si quiere.
+*   Si está utilizando el kernel de [linux](https://www.archlinux.org/packages/?name=linux), asegúrese de que el paquete [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) está instalado. Este último se ha debido instalar con el paquete [virtualbox](https://www.archlinux.org/packages/?name=virtualbox).
+*   Si está utilizando la versión LTS del kernel ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), es necesario instalar el paquete [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms). El paquete [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) ya no será necesario y puede ser eliminado, si quiere.
 *   Si está utilizando el kernel [linux-ck](https://aur.archlinux.org/packages/linux-ck/), construya el paquete [virtualbox-ck-host-modules](https://aur.archlinux.org/packages/virtualbox-ck-host-modules/).
 
 #### Sistema anfitrión corriendo sobre un kernel personalizado

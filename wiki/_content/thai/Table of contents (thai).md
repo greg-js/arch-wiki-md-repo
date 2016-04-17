@@ -4,7 +4,7 @@
 | <small>1.2.</small> [Sound](/index.php/Category:Sound_(%E0%B9%84%E0%B8%97%E0%B8%A2) "Category:Sound (ไทย)") <small>(1)</small> |
 | <small>2.</small> [Networking](/index.php/Category:Networking_(%E0%B9%84%E0%B8%97%E0%B8%A2) "Category:Networking (ไทย)") <small>(1)</small> |
 | <small>3.</small> [Pages by subject](/index.php/Category:Pages_by_subject_(%E0%B9%84%E0%B8%97%E0%B8%A2) "Category:Pages by subject (ไทย)") <small>(0)</small> |
-| <small>3.1.</small> [About Arch](/index.php/Category:About_Arch_(%E0%B9%84%E0%B8%97%E0%B8%A2) "Category:About Arch (ไทย)") <small>(3)</small> |
+| <small>3.1.</small> [About Arch](/index.php/Category:About_Arch_(%E0%B9%84%E0%B8%97%E0%B8%A2) "Category:About Arch (ไทย)") <small>(2)</small> |
 | <small>3.1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(%E0%B9%84%E0%B8%97%E0%B8%A2) "Category:ArchWiki (ไทย)") <small>(1)</small> |
 | <small>3.1.2.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%E0%B9%84%E0%B8%97%E0%B8%A2) "Category:Getting and installing Arch (ไทย)") <small>(0)</small> |
 | <small>3.2.</small> [User manuals](/index.php/Category:User_manuals_(%E0%B9%84%E0%B8%97%E0%B8%A2) "Category:User manuals (ไทย)") <small>(0)</small> |

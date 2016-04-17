@@ -656,7 +656,7 @@ Scenario: your device has internet connection over wi-fi and you want to share t
 Requirements:
 
 *   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
-*   You internet connected device and the other devices are connected over a suitable ethernet cable (this usually means a cross over cable or a switch in between).
+*   Your internet connected device and the other devices are connected over a suitable ethernet cable (this usually means a cross over cable or a switch in between).
 
 Steps:
 

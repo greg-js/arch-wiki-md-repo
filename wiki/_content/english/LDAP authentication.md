@@ -390,7 +390,7 @@ auth required pam_unix.so try_first_pass nullok
 auth optional pam_permit.so
 auth required pam_env.so
 
-**account [default=bad success=ok user_unknown=ignore] pam_sss.so**
+**account [default=bad success=ok user_unknown=ignore authinfo_unavail=ignore] pam_sss.so**
 account required pam_unix.so
 account optional pam_permit.so
 account required pam_time.so
@@ -431,7 +431,7 @@ In order to enable users to change their passwords using `passwd` edit `/etc/pam
 password        required        pam_unix.so sha512 shadow nullok
 ```
 
-[Start/enable](/index.php/Start/enable "Start/enable") the `ssd.service` systemd unit.
+[Start/enable](/index.php/Start/enable "Start/enable") the `sssd.service` systemd unit.
 
 You should now be able to see details of your ldap users with `getent passwd <username>` or `id <username>`.
 

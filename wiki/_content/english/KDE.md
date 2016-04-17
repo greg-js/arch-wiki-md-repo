@@ -319,11 +319,32 @@ KDE now uses **inotify** directly from the kernel with **kdirwatch** (included i
 
 ### Autostarting applications
 
-Plasma can autostart applications and run scripts on startup and shutdown. To autostart an application, start `systemsettings` and navigate to *Startup and Shutdown* -> *Autostart* and add the program or shell script of your choice. Note that programs can be autostarted on login only, whilst shell scripts can also be run on shutdown or even before Plasma itself starts. For applications, a `.desktop` file will be created in the `~/.config/autostart` directory. For shell scripts, a symlink will be created in one the following directories:
+Plasma can autostart applications and run scripts on startup and shutdown. To autostart an application, start `systemsettings` and navigate to *Startup and Shutdown* -> *Autostart* and add the program or shell script of your choice. For applications, a `.desktop` file will be created, for shell scripts, a symlink will be created.
 
-*   `~/.config/autostart-scripts` - for starting at login.
-*   `~/.config/plasma-workspace/shutdown` - for starting on shutdown.
-*   `~/.config/plasma-workspace/env` - for starting prior to login.
+**Note:**
+
+*   Programs can be autostarted on login only, whilst shell scripts can also be run on shutdown or even before Plasma itself starts.
+*   Shell scripts will only be run if they are marked executable.
+
+Place [Desktop entries](/index.php/Desktop_entries "Desktop entries") (i.e. `.desktop` files) here:
+
+	`~/.config/autostart`
+
+	for starting applications at login.
+
+Place or symlink shell scripts in one of the following directories:
+
+	`~/.config/plasma-workspace/env`
+
+	for executing scripts at login before launching Plasma.
+
+	`~/.config/autostart-scripts`
+
+	for executing scripts at login.
+
+	`~/.config/plasma-workspace/shutdown`
+
+	for executing scripts on shutdown.
 
 ## System administration
 
@@ -778,23 +799,7 @@ Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fs
 
 ## Unstable releases
 
-When KDE is reaching beta or RC milestone, KDE "unstable" packages are uploaded to the *kde-unstable* repository. They stay there until KDE is declared stable and passes to the *extra* repository.
-
-You can add *kde-unstable* with:
-
- `/etc/pacman.conf` 
-```
-[kde-unstable]
-Include = /etc/pacman.d/mirrorlist
-```
-
-**Warning:** Make sure to add these lines **before** the *extra* repository. Adding the section after *extra* will cause [pacman](/index.php/Pacman "Pacman") to prefer the older packages in the extra repository. Upgrading with *pacman* will not install them, and will warn that they are "too new" if installed manually. Also, some of the libraries will stay at the older versions, which may cause file conflicts and/or instability!
-
-1.  *kde-unstable* is based upon *testing*. Therefore, you need to enable the repositories in the following order: *kde-unstable*, *testing*, *core*, *extra*, *community-testing*, *community*.
-2.  To update from a previous KDE installation, use *pacman* to update your system, or [install](/index.php/Install "Install") `kde-unstable/kde`.
-3.  If you do not have KDE installed, you might have difficulties to install it by using groups (limitation of pacman)
-4.  **Subscribe and read the [arch-dev-public](https://mailman.archlinux.org/pipermail/arch-dev-public/) mailing list**
-5.  Make sure [you make bug reports](#Bugs) if you find any problems.
+See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories")
 
 ## Bugs
 

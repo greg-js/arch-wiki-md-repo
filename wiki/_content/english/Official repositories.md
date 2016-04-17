@@ -15,7 +15,8 @@ Packages in the official repositories are constantly upgraded: when a package is
         *   [1.5.1 community-testing](#community-testing)
         *   [1.5.2 multilib-testing](#multilib-testing)
         *   [1.5.3 gnome-unstable](#gnome-unstable)
-        *   [1.5.4 Disabling testing repositories](#Disabling_testing_repositories)
+        *   [1.5.4 kde-unstable](#kde-unstable)
+        *   [1.5.5 Disabling testing repositories](#Disabling_testing_repositories)
 *   [2 Historical background](#Historical_background)
 
 ## Repositories
@@ -101,6 +102,20 @@ Include = /etc/pacman.d/mirrorlist
 ```
 
 Please report packaging related bugs in our [bug tracker](https://bugs.archlinux.org/), while anything else should be reported upstream to [GNOME Bugzilla](https://bugzilla.gnome.org/).
+
+#### kde-unstable
+
+This repository contains the latest *beta* or *Release Candidate* of [KDE](/index.php/KDE "KDE").
+
+To enable it, add the following lines to `/etc/pacman.conf`. The *kde-unstable* entry should be first in the list of repositories (*i.e.*, above the *testing* entry).
+
+```
+[kde-unstable]
+Include = /etc/pacman.d/mirrorlist
+
+```
+
+Make sure [you make bug reports](/index.php/KDE#Bugs "KDE") if you find any problems.
 
 #### Disabling testing repositories
 

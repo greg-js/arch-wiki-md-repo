@@ -174,7 +174,7 @@ pacman 可能会创建 `.pacnew`, `.pacsave` 和 `.pacorig` 文件，这是 pacm
 
 ### 不需要的软件包
 
-从系统里面删除不需要的软件包可以减少空间占用和维护难度。详情参考 [Pacman/Tips and tricks#Removing unused packages](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages "Pacman/Tips and tricks").
+从系统里面删除不需要的软件包可以减少空间占用和维护难度。详情参考 [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks").
 
 ### 软件包缓存
 

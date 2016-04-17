@@ -27,10 +27,11 @@
     *   [5.11 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#.22Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts.3F.22_dialog_does_not_appear)
     *   [5.12 Silently fails when installing desktop apps from marketplace](#Silently_fails_when_installing_desktop_apps_from_marketplace)
     *   [5.13 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
-    *   [5.14 Javascript context menu doesn't appear on some sites](#Javascript_context_menu_doesn.27t_appear_on_some_sites)
+    *   [5.14 Javascript context menu does not appear on some sites](#Javascript_context_menu_does_not_appear_on_some_sites)
     *   [5.15 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
     *   [5.16 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
     *   [5.17 Picture flickers while scrolling](#Picture_flickers_while_scrolling)
+    *   [5.18 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
 *   [6 See also](#See_also)
 
 ## Installing
@@ -128,6 +129,10 @@ in the Firefox address bar or go to the *Add-ons* entry in the Firefox Menu and 
 Install [firefox-gnome-keyring](https://aur.archlinux.org/packages/firefox-gnome-keyring/) or [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
 
 ### KDE integration
+
+**Warning:** Since GTK3 was updated to 3.20.x, there are several broken themes. Including **Breeze**, the recommended theme for integration between KDE and GTK styles. Some of the issues are invisible scroll bars, no text highlight on selection, invisible checkboxes, among others. As a workaround while the themes are upgraded you can do the following after installing [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config), go to `System Settings` -> `Application Style` -> `GNOME Application Style (GTK)` and choose in the **Select a GTK3 Theme** dropdown choose the **Default** theme, also make sure **Show icons in GTK buttons** and **Show icons in GTK** are checked. For further information on the compatibility issue above visit the thread below in the Arch Forums. This warning should be removed after the issue has been fixed.
+
+*   GTK3 3.20 upgrade thread: [https://bbs.archlinux.org/viewtopic.php?pid=1619076](https://bbs.archlinux.org/viewtopic.php?pid=1619076)
 
 *   To bring the KDE look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to `System Settings` -> `Application Style` -> `GTK`. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
 
@@ -301,7 +306,7 @@ From the [Mozilla support](http://support.mozilla.com/en-US/questions/767751) si
 
 ### Silently fails when installing desktop apps from marketplace
 
-Installation of apps from firefox os marketplace will silently fail if there's no `~/.local/share/applications` folder.
+Installation of apps from firefox os marketplace will silently fail if there is no `~/.local/share/applications` folder.
 
 ### Firefox detects the wrong version of my plugin
 
@@ -311,7 +316,7 @@ If you upgraded your plugin when Firefox was still running, you will thus have t
 
 The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
-### Javascript context menu doesn't appear on some sites
+### Javascript context menu does not appear on some sites
 
 In `about:config`, unset the `dom.w3c_touch_events.enabled` setting.
 
@@ -343,6 +348,16 @@ Uncheck the "smooth scrolling" settings:
 
 ```
 Edit > Settings > Advanced > General > Use smooth scrolling
+
+```
+
+### Tearing video in fullscreen mode
+
+If you are using the Xorg Intel or Nouveau drivers and experience tearing video in fullscreen mode, go to about:config and try to change the following values:
+
+```
+layers.acceleration.force-enabled true
+layers.offmainthreadcomposition.enabled true
 
 ```
 

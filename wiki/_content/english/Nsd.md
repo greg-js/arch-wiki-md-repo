@@ -1,22 +1,18 @@
-Nsd is an authoritative DNS resolver.
+[NSD](https://www.nlnetlabs.nl/projects/nsd/) is "an authoritative only, high performance, simple and open source name server."
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Migration to nsd for bind users](#Migration_to_nsd_for_bind_users)
-*   [3 Initial Setup](#Initial_Setup)
+*   [3 Initial setup](#Initial_setup)
 *   [4 Starting and running nsd](#Starting_and_running_nsd)
 *   [5 Testing nsd](#Testing_nsd)
-*   [6 WAN facing dns](#WAN_facing_dns)
+*   [6 Configuring unbound](#Configuring_unbound)
+*   [7 WAN facing dns](#WAN_facing_dns)
 
 ## Installation
 
-Install [nsd](https://www.archlinux.org/packages/?name=nsd):
-
-```
-pacman -S nsd
-
-```
+[Install](/index.php/Install "Install") the [nsd](https://www.archlinux.org/packages/?name=nsd) package.
 
 ## Migration to nsd for bind users
 
@@ -29,105 +25,46 @@ Once the package is installed there are useful migration notes for users who cur
 
 Many users will wish to run nsd as their authoritative dns server concurrently with unbound as the validating, recursive, caching dns server on a single machine. It may be useful to refer to the wiki page for [unbound](/index.php/Unbound "Unbound").
 
-## Initial Setup
+## Initial setup
 
-More often than not nsd will be running concurrently with a recursive, caching dns server such as unbound. Usually dns servers will be listening on port 53 but the two services would conflict if they were listening to the same port. Hence if unbound was the main server answering dns queries on port 53 then it is sensible for added security to select a high private port number for nsd to listen on. Also if the only direct access to nsd will be from queries forwarded from unbound, then nsd can be configured to listen only to the localhost machine on the private port chosen, and is not then directly accessible from outside. This gives added security to the authoritative server. In the examples of configuration files here port 53530 is chosen as the listening port number for nsd.
+Most likely you will run nsd with a DNS caching servers such as [Unbound](/index.php/Unbound "Unbound"). So, to avoid void conflicts, this configuration use port 53530 for nsd, since port 53 is used by the DNS caching server. nsd will listen for requests on *localhost*. Additionally, the only firewall port that then needs to be open for dns queries coming from external machines (or other machines on the same local network) is port 53.
 
-If any firewall running on the machine blocks private port 53530 then this adds to security. The only port that then needs to be open for dns queries coming from external machines (or other machines on the same local network) is port 53.
+When installed, a commented sample configuration file is placed at `/etc/nsd/nsd.conf.sample`. Below is a minimal working example:
 
-It is perfectly possible to put the nsd.conf file as well as any zone files into /etc/nsd/ but it is also possible to place the zone files in a separate directory. So for the purpose of this wiki page assume that the zone files are in /etc/nsd3/ and if you have already been running bind previously then copying the zone files that worked with bind into /etc/nsd3/ should work without adjustment. There are sample configuration files in the web page at [https://calomel.org/nsd_dns.html](https://calomel.org/nsd_dns.html) but the example here is for a single master zone only.
-
-A sample nsd.conf is given here where the forward and reverse zone files are presumed to be in /etc/nsd3/ and named myhomenet.com.zone and 0.0.10.in-addr.arpa.zone **(Note that in nsd version 4 the sample file has new features enabled, but a pre-existing nsd.conf from version 3 should still work, but it is best to merge changes with the new config file)**:
-
+ `/etc/nsd/nsd.conf` 
 ```
-## NSD authoritative only DNS
-## nsd.conf .:. [https://calomel.org](https://calomel.org)
-## Primary or "Master" NSD server
-#
-# The directives "notify" and "provide-xfr" are only needed if you are also going to setup 
-# a secondary NSD server. Uncomment out these lines to use them.
 server:
- # uncomment to specify specific interfaces to bind (default all).
-   ip-address: 127.0.0.1
- # port to answer queries on. default is 53.
-#    port: 53
-   port: 53530
- # Number of NSD servers to fork.
-   server-count: 1
- # listen only on IPv4 connections
-   ip4-only: yes
- # do not answer VERSION.BIND and VERSION.SERVER CHAOS class queries
-   hide-version: yes
- # identify the server (CH TXT ID.SERVER entry).
-   identity: "Home network authoritative DNS"
- # The directory for zonefile: files.
-   zonesdir: "/etc/nsd3"
+    server-count: 1
+    ip-address: 127.0.0.1
+    port: 53530
+    do-ip4: yes
+    hide-version: yes
+    identity: "Home network authoritative DNS"
+    zonesdir: "//etc/nsd3"
 key:
-  name: "sec_key"
-  algorithm: hmac-md5
-  secret: "6KM6qiKfwfEpamEq72HQdA=="
+    name: "*keyname*"
+    algorithm: hmac-md5
+    secret: "*secretkey*"
 zone:
-   name: myhomenet.com
-   zonefile: myhomenet.com.zone
- # notify: 10.0.0.222@53 sec_key
- # provide-xfr: 10.0.0.222 sec_key
-zone:
-   name: 0.0.10.in-addr.arpa
-   zonefile: 0.0.10.in-addr.arpa.zone
- # notify: 10.0.0.222@53 sec_key
- # provide-xfr: 10.0.0.222 sec_key
-# Logging
-#logfile: "/etc/nsd/nsd.log"
-# Do not uncomment these lines as logging in nsd is not currently implemented
-#
-## NSD authoritative only DNS
-## nsd.conf .:. [https://calomel.org](https://calomel.org)
-## Primary or "Master" NSD server
+    name: "*example.com*"
+    zonefile: "*example.com.zone*"
 
 ```
+
+See [[1]](https://calomel.org/nsd_dns.html) for more examples.
 
 ## Starting and running nsd
 
-Before starting up nsd you can check the zone files using the nsd-checkconf command with the zone file name as a parameter.
+Before starting up nsd you can check the zone files using the *nsd-checkconf* command with the zone file name as a parameter.
 
-In version 3 in order to build the zone database that makes nsd run exceptionally quickly the database file must be rebuilt each time a zone or config file is changed, and the following command is executed as the **nsd** user (the daemon runs as *nsd* and that user must be able to read `/var/db/nsd/nsd.db`):
-
-```
-nsdc rebuild
+In order to build the zone database that makes nsd run exceptionally quickly the database file must be rebuilt each time a zone or config file is changed, and the following command is executed:
 
 ```
-
-**However in nsd version 4 nsdc has been removed and a new command nsd-control replaces it. Refer to the doc file at `/usr/share/doc/nsd/UPGRADING`)**
-
-In order to start nsd then type as root:
-
-```
-systemctl start nsd
+# nsd-control reload
 
 ```
 
-Once nsd has been tested then make nsd start at boot by typing:
-
-```
-systemctl enable nsd
-
-```
-
-If you were already running bind listening on port 53 and are moving over to unbound, then it is important to stop bind before starting unbound to avoid conflicts:
-
-```
-systemctl stop named
-systemctl start unbound
-
-```
-
-and to make the correct services start at boot:
-
-```
-systemctl disable named
-systemctl enable unbound
-
-```
+In order to start nsd, [start/enable](/index.php/Start/enable "Start/enable") the `nsd.service` systemd service.
 
 ## Testing nsd
 
@@ -141,23 +78,18 @@ drill @127.0.0.1 -p 53530 -x w.x.y.z
 
 where w.x.y.z is a local address within the LAN.
 
-Once this is working then if you are running unbound as the caching recursive server then you can switch the unbound config to forward queries from local machines on the same network to query nsd by using the following structure in unbound.conf (and see [unbound](/index.php/Unbound "Unbound")), where it is assumed that nsd is listening to port 53530:
+## Configuring unbound
+
+Once this is working then if you are running [unbound](/index.php/Unbound "Unbound") as the caching recursive server then you can switch the unbound configuration to forward queries from local machines on the same network to query nsd by using the following structure in unbound.conf (and see [unbound](/index.php/Unbound "Unbound")), where it is assumed that nsd is listening to port 53530:
 
 ```
-local-zone: "10.in-addr.arpa." nodefault
-
-```
-
-```
-stub-zone:
-       name: "mdylocalnet.com"
-       stub-addr: 127.0.0.1@53530
+local-zone: "*example.com*" nodefault
 
 ```
 
 ```
 stub-zone:
-       name: "10.in-addr.arpa"
+       name: "*example.com*"
        stub-addr: 127.0.0.1@53530
 
 ```

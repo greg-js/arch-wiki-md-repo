@@ -173,7 +173,7 @@ Apart from installing the desired JRE/JDK, the only requirement is to set the TO
 The variable can be overridden by a custom configuration, as described in [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd"):
 
 1.  create the directory */etc/systemd/system/tomcat7.service.d*
-2.  in that directory, save a *start.conf* file with this content (this is the configuration for Oracle JDK installed with the AUR package):
+2.  in that directory, save a *start.conf* file with this content (for the Oracle JDK package [jdk](https://aur.archlinux.org/packages/jdk/), use instead */usr/lib/jvm/java-8-jdk*):
 
 ```
 [Service]
@@ -181,7 +181,7 @@ Environment=TOMCAT_JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
 ```
 
-Alternatively, the service file is */usr/lib/systemd/system/tomcat7.service*, copy it to */etc/systemd/system/* and replace this line:
+Alternatively, copy the service file */usr/lib/systemd/system/tomcat7.service*, to */etc/systemd/system/* and replace this line:
 
 ```
 Environment=TOMCAT_JAVA_HOME=/usr/lib/jvm/java-7-openjdk
