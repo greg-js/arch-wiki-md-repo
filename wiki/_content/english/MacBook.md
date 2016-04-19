@@ -948,7 +948,7 @@ ls /media/mac
 
 ### HFS+ Partitions
 
-HFS+ partitions, now the default in OS X, are not fully supported by Linux and are mounted as read-only by default. In order to write to an HFS+ partition, it is necessary to disable journaling. This can be accomplished using the OS X Disk Utility. Refer to this [Apple support page](http://support.apple.com/kb/ht2355) for more information or try to do it from the command line:
+HFS+ partitions, now the default in OS X, are not fully supported by Linux and are mounted as read-only by default. In order to write to an HFS+ partition, the safe way is to disable journaling. This can be accomplished using the OS X Disk Utility. Refer to this [Apple support page](http://support.apple.com/kb/ht2355) for more information or try to do it from the command line:
 
 Find your partition:
 
@@ -992,6 +992,8 @@ $
 ```
 
 If you get noting as output, then jounrnaling is disabled.
+
+However, if you fail to disable jounrnaling. You can change "auto,user,rw,exec" in "/etc/fstab" to "auto,user,force,rw,exec" and mount it.
 
 ### Home Sharing
 

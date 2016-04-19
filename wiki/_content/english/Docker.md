@@ -186,8 +186,8 @@ Instead, check [docker base/archlinux registry](https://registry.hub.docker.com/
 ```
 $ chmod +x mkimage-arch.sh
 $ cp /etc/pacman.conf ./mkimage-arch-pacman.conf # or get a pacman.conf from somewhere else
-$ LC_ALL=C ./mkimage-arch.sh # LC_ALL=C because the script parses the console output
-# docker run -t -i --rm base/archlinux /bin/bash # try it
+$ ./mkimage-arch.sh
+# docker run -t -i --rm archlinux /bin/bash  # try it
 
 ```
 

@@ -95,10 +95,7 @@ This will add the respective `/home/user1/.gnupg` and `/home/user2/.gnupg` and c
 
 ## Usage
 
-**Note:**
-
-*   Whenever a *`<user-id>`* is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
-*   Some of these steps may be provided by an external program depending on your usage, such as an [email client](/index.php/List_of_applications/Internet#Email_clients "List of applications/Internet"). See also [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
+**Note:** Whenever a *`<user-id>`* is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
 
 ### Create key pair
 
@@ -759,7 +756,7 @@ Then use an [udev](/index.php/Udev#Writing_udev_rules "Udev") rule, similar to t
 
  `/etc/udev/rules.d/71-gnupg-ccid.rules` 
 ```
-ACTION=="add", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0116|0111", MODE="664", GROUP="scard"
+ACTION=="add", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0116|0111", MODE="660", GROUP="scard"
 
 ```
 

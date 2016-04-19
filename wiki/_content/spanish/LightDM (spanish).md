@@ -11,7 +11,7 @@
             *   [2.1.1.1 GTK+ Greeter](#GTK.2B_Greeter)
             *   [2.1.1.2 Unity Greeter](#Unity_Greeter)
             *   [2.1.1.3 KDE Greeter](#KDE_Greeter)
-    *   [2.2 cambiando íconos](#cambiando_.C3.ADconos)
+    *   [2.2 Cambiando íconos](#Cambiando_.C3.ADconos)
     *   [2.3 Habilitando el autologin](#Habilitando_el_autologin)
 
 # Instalación
@@ -111,7 +111,7 @@ De acuerdo con [this](https://bbs.archlinux.org/viewtopic.php?id=149945).
 
 Solo es necesario entrar a *System Settings > Login Screen (LightDM)* y cambiar la imagen de fondo para tu theme.
 
-## cambiando íconos
+## Cambiando íconos
 
 Usuarios que deseen cambiar el icono de Computador en el login deben seguir 3 pasos:
 

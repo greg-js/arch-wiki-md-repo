@@ -473,6 +473,7 @@ Finally chroot into the SD card root as described in [Change root#Using chroot](
 
 ## See also
 
+*   [Raspberry Pi](https://www.raspberrypi.org) - Official website
 *   [RPi Config](http://elinux.org/RPiconfig) - Excellent source of info relating to under-the-hood tweaks.
 *   [RPi vcgencmd usage](http://elinux.org/RPI_vcgencmd_usage) - Overview of firmware command vcgencmd.
 *   [Arch Linux ARM on Raspberry PI](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Arch Linux on the RPi

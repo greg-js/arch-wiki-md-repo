@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Official repositories](/index.php?title=Official_repositories&redirect=no "Official repositories")
+*   [Official repositories#gnome-unstable](/index.php?title=Official_repositories&redirect=no#gnome-unstable "Official repositories")

@@ -19,7 +19,7 @@ Also see the [Community move to devtools](/index.php/Community_move_to_devtools 
 3.  If a package has any significant usage it should really have at least three votes.
 4.  If users realise that votes do have more of an impact they may be encouraged vote.
 5.  Hundreds of unused packages will cause unneeded strain on the community server's resources.
-6.  If the number of packages are allowed to increase without limit we would need unlimited resources.
+6.  If the number of packages was allowed to increase without limit we would need unlimited resources.
 7.  Increasing resources costs money. Increasing resources without limit requires an unlimited supply of money.
 8.  This plan costs no money to implement.
 9.  [Package Statistics](http://www.archlinux.de/?page=PackageStatistics)

@@ -42,15 +42,15 @@ Other alternatives include:
 
 *   **Firefox Extended Support Release** — long-term supported version
 
-	[https://www.mozilla.org/en-US/firefox/organizations/](https://www.mozilla.org/en-US/firefox/organizations/) || [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)
+	[https://www.mozilla.org/firefox/organizations/](https://www.mozilla.org/firefox/organizations/) || [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)
 
 *   **Firefox Beta** — cutting-edge version
 
-	[https://www.mozilla.org/en-US/firefox/channel](https://www.mozilla.org/en-US/firefox/channel) || [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
+	[https://www.mozilla.org/firefox/channel/](https://www.mozilla.org/firefox/channel/) || [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
 
 *   **Firefox Aurora/Developer edition** — for developers
 
-	[https://www.mozilla.org/en-US/firefox/aurora/](https://www.mozilla.org/en-US/firefox/aurora/) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/)
+	[https://www.mozilla.org/firefox/aurora/](https://www.mozilla.org/firefox/aurora/) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/)
 
 *   **Firefox Nightly** — nightly builds for testing
 
@@ -70,7 +70,7 @@ There are a number of language packs available for Firefox, other than the stand
 
 Firefox is well known for its large library of add-ons which can be used to add new features or modify the behavior of existing features of Firefox. You can find new add-ons or manage installed add-ons with Firefox's "Add-ons Manager."
 
-For a list of popular add-ons, see [Mozilla's add-on list sorted by popularity](https://addons.mozilla.org/en-US/firefox/extensions/?sort=popular). See also [List of Firefox extensions](https://en.wikipedia.org/wiki/List_of_Firefox_extensions "wikipedia:List of Firefox extensions") on Wikipedia.
+For a list of popular add-ons, see [Mozilla's add-on list sorted by popularity](https://addons.mozilla.org/firefox/extensions/?sort=popular). See also [List of Firefox extensions](https://en.wikipedia.org/wiki/List_of_Firefox_extensions "wikipedia:List of Firefox extensions") on Wikipedia.
 
 ## Configuration
 
@@ -83,7 +83,7 @@ about:config
 
 in the Firefox address bar.
 
-Once set, these affect the user's current profile, and may be synchronized across all devices via [Firefox Sync](https://www.mozilla.org/en-US/firefox/sync/). Please note that only a subset of the `about:config` entries are synchronized by this method, and the exact subset may be found by searching for `services.sync.prefs` in `about:config`.
+Once set, these affect the user's current profile, and may be synchronized across all devices via [Firefox Sync](https://www.mozilla.org/firefox/sync/). Please note that only a subset of the `about:config` entries are synchronized by this method, and the exact subset may be found by searching for `services.sync.prefs` in `about:config`.
 
 Firefox also allows configuration for a profile via a `user.js` file: [user.js](http://kb.mozillazine.org/User.js_file) kept in the profile folder, usually `~/.mozilla/firefox/*some name*.default/`. For a useful starting point, see e.g [custom user.js](https://github.com/pyllyukko/user.js) which is targeted at privacy/security conscious users.
 
@@ -130,9 +130,7 @@ Install [firefox-gnome-keyring](https://aur.archlinux.org/packages/firefox-gnome
 
 ### KDE integration
 
-**Warning:** Since GTK3 was updated to 3.20.x, there are several broken themes. Including **Breeze**, the recommended theme for integration between KDE and GTK styles. Some of the issues are invisible scroll bars, no text highlight on selection, invisible checkboxes, among others. As a workaround while the themes are upgraded you can do the following after installing [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config), go to `System Settings` -> `Application Style` -> `GNOME Application Style (GTK)` and choose in the **Select a GTK3 Theme** dropdown choose the **Default** theme, also make sure **Show icons in GTK buttons** and **Show icons in GTK** are checked. For further information on the compatibility issue above visit the thread below in the Arch Forums. This warning should be removed after the issue has been fixed.
-
-*   GTK3 3.20 upgrade thread: [https://bbs.archlinux.org/viewtopic.php?pid=1619076](https://bbs.archlinux.org/viewtopic.php?pid=1619076)
+**Warning:** Since GTK3 was updated to 3.20.x, there are several broken themes. Including **Breeze**, the recommended theme for integration between KDE and GTK styles. Some of the issues are invisible scroll bars, no text highlight on selection, invisible checkboxes, among others. As a workaround while the themes are upgraded you can do the following after installing [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config), go to `System Settings` -> `Application Style` -> `GNOME Application Style (GTK)` and choose in the **Select a GTK3 Theme** dropdown choose the **Default** theme, also make sure **Show icons in GTK buttons** and **Show icons in GTK** are checked. For further information on the compatibility issue above visit the [GTK3 3.20 upgrade thread](https://bbs.archlinux.org/viewtopic.php?pid=1619076) in the Arch Forums.
 
 *   To bring the KDE look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to `System Settings` -> `Application Style` -> `GTK`. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
 
@@ -140,7 +138,7 @@ Install [firefox-gnome-keyring](https://aur.archlinux.org/packages/firefox-gnome
 
 *   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 
-*   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/en-US/firefox/addon/kde-wallet-password-integratio/) and [Plasma notifications](https://addons.mozilla.org/en-US/firefox/addon/plasmanotify/).
+*   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/firefox/addon/kde-wallet-password-integratio/) and [Plasma notifications](https://addons.mozilla.org/firefox/addon/plasmanotify/).
 
 ### Dictionaries for spell checking
 
@@ -156,7 +154,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 ### Adding search engines
 
-Search engines can be added to Firefox through normal add-ons, see [this page](https://addons.mozilla.org/en-US/firefox/search-tools/) for a list of available search engines.
+Search engines can be added to Firefox through normal add-ons, see [this page](https://addons.mozilla.org/firefox/search-tools/) for a list of available search engines.
 
 A very extensive list of search engines can be found [here](http://mycroft.mozdev.org/).
 
@@ -261,7 +259,7 @@ Restart Firefox and see if it solved the problem.
 
 When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. Amazon can have white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme.
 
-A work around is to explicitly setting standard colors for all web pages in `~/.mozilla/firefox/xxxxxxxx.default/chrome/userContent.css` or using [stylish add-on](https://addons.mozilla.org/en-US/firefox/addon/stylish/).
+A work around is to explicitly setting standard colors for all web pages in `~/.mozilla/firefox/xxxxxxxx.default/chrome/userContent.css` or using [stylish add-on](https://addons.mozilla.org/firefox/addon/stylish/).
 
 The following sets input fields to standard black text / white background; both can be overridden by the displayed site, so that colors are seen as intended:
 
@@ -328,7 +326,7 @@ The default spell checking language can be set as follows:
 2.  Set `spellchecker.dictionary` to your language of choice, for instance `en_GB`.
 3.  Notice that the for dictionaries installed as a Firefox plugin the notation is `en-GB`, and for [hunspell](https://www.archlinux.org/packages/?name=hunspell) dictionaries the notation is `en_GB`.
 
-When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/en-US/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
+When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
 
 Related questions on the **StackExchange** platform: [[4]](http://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[5]](http://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[6]](http://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
@@ -367,4 +365,4 @@ layers.offmainthreadcomposition.enabled true
 *   [Mozilla Foundation](http://www.mozilla.org/)
 *   [Firefox wiki](https://wiki.mozilla.org/Firefox)
 *   [Firefox Add-ons](https://addons.mozilla.org/)
-*   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
+*   [Firefox themes](https://addons.mozilla.org/firefox/themes/)

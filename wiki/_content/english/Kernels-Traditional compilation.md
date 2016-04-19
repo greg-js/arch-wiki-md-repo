@@ -124,6 +124,7 @@ There are several interfaces available to fine-tune the kernel configuration, wh
 *   `make menuconfig`: Old command-line ncurses interface superceded by `nconfig`
 *   `make nconfig`: Newer ncurses interface for the command-line
 *   `make xconfig`: User-friendly graphical interface that requires [packagekit-qt4](https://www.archlinux.org/packages/?name=packagekit-qt4) to be installed as a dependency. This is the recommended method - especially for less experienced users - as it is easier to navigate, and information about each option is also displayed.
+*   `make gconfig`: Graphical configuration similar to xconfig but using gtk.
 
 The chosen method should be run inside the kernel source directory, and all will either create a new `.config` file, or overwrite an existing one where present. All optional configurations will be automatically enabled, although any newer configuration options (i.e. with an older kernel `.config`) may not be automatically selected.
 

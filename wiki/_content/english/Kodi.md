@@ -204,6 +204,8 @@ For additional info, refer to the [official Kodi wiki](http://kodi.wiki/index.ph
 
 This section provides an example using NFS exports (NFSv4), but as mentioned above, any protocol that Kodi can read is acceptable.
 
+**Warning:** Kodi is using [libnfs](https://www.archlinux.org/packages/?name=libnfs) to access NFS shares which only supports NFSv3 (see [this issue](https://github.com/sahlberg/libnfs/issues/37)). Therefore do not setup a NFSv4-only server or Kodi will only be able to list the shares but cannot access them.
+
 **Note:** Users only need one box on the LAN to serve the content, therefore, do not repeat this for each node. The following example assumes the user is running Arch Linux, but any NFS server will work, be it Linux or BSD, etc.
 
 The NFS server is provided by [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) and this only needs to be installed on the box serving up the content.

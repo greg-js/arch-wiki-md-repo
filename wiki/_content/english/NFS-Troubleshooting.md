@@ -5,7 +5,7 @@ Dedicated article for common problems and solutions.
 *   [1 Server-side issues](#Server-side_issues)
     *   [1.1 exportfs: /etc/exports:2: syntax error: bad option list](#exportfs:_.2Fetc.2Fexports:2:_syntax_error:_bad_option_list)
     *   [1.2 Group/GID permissions issues](#Group.2FGID_permissions_issues)
-    *   [1.3 "Permission denied" when trying to write files](#.22Permission_denied.22_when_trying_to_write_files)
+    *   [1.3 "Permission denied" when trying to write files as root](#.22Permission_denied.22_when_trying_to_write_files_as_root)
     *   [1.4 "RPC: Program not registered" when showmount -e command issued](#.22RPC:_Program_not_registered.22_when_showmount_-e_command_issued)
 *   [2 Client-side issues](#Client-side_issues)
     *   [2.1 mount.nfs4: No such device](#mount.nfs4:_No_such_device)
@@ -55,12 +55,19 @@ If NFS shares mount fine, and are fully accessible to the owner, but not to grou
 MOUNTD_OPTS="--manage-gids"
 ```
 
-### "Permission denied" when trying to write files
+### "Permission denied" when trying to write files as root
 
 *   If you need to mount shares as root, and have full r/w access from the client, add the no_root_squash option to the export in `/etc/exports`:
 
 ```
 /var/cache/pacman/pkg 192.168.1.0/24(rw,no_subtree_check,no_root_squash)
+
+```
+
+*   You must also add no_root_squash to the first line in `/etc/exports`:
+
+```
+/ 192.168.1.0/24(rw,fsid=root,no_root_squash,no_subtree_check)
 
 ```
 

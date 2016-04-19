@@ -105,7 +105,7 @@ At least a video card with second generation [PureVideo HD](https://en.wikipedia
 
 **Note:** The NVIDIA driver does **not** have an fbdev driver for the high-resolution console.
 
-[nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 (currently in [extra](/index.php/Official_repositories#extra "Official repositories")) adds support for DRM [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). To enable this feature, add the `nvidia-drm.modeset=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), and add nvidia, nvidia_modeset, nvidia_uvm and nvidia_drm modules to [initramfs](/index.php/Initramfs "Initramfs").
+[nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 adds support for DRM [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). To enable this feature, add the `nvidia-drm.modeset=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), and add nvidia, nvidia_modeset, nvidia_uvm and nvidia_drm modules to [initramfs](/index.php/Initramfs "Initramfs").
 
 **Warning:** Do not forget to run mkinitcpio every time you update driver.
 
@@ -156,7 +156,7 @@ EndSection
 
 ```
 
-**Tip:** If upgrading from nouveau make sure to remove `nouveau` from `/etc/mkinitcpio.conf`. See [Switching between NVIDIA and nouveau drivers](#Switching_between_NVIDIA_and_nouveau_drivers), if switching between the open and proprietary drivers often.
+**Tip:** If upgrading from nouveau make sure to remove `nouveau` from `/etc/mkinitcpio.conf`. See [Switching between NVIDIA and nouveau drivers](/index.php/NVIDIA/Tips_and_tricks#Switching_between_NVIDIA_and_nouveau_drivers "NVIDIA/Tips and tricks"), if switching between the open and proprietary drivers often.
 
 ### Automatic configuration
 

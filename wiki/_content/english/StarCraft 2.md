@@ -39,7 +39,7 @@ $ regedit
 
 ```
 
-Go to *HKEY_CURRENT_USER/Software/Wine/Direct3D*, right-click on *Direct3D* (if such a key doesn't exist, right-click on *Wine*, New -> Key, *Direct3D*, OK), select New -> String Value, *VideoMemorySize*, which you should set to the amount of VRAM your GPU has, in MB (for example, "1024" or "2048"). If you're using an integrated GPU, try to preallocate a fair amount of RAM for your GPU in BIOS/UEFI Setup and use the same value here (512 is good enough for low-medium settings).
+*(Skip in Wine 1.9.x as key doesn't exist)* Go to *HKEY_CURRENT_USER/Software/Wine/Direct3D*, right-click on *Direct3D* (if such a key doesn't exist, right-click on *Wine*, New -> Key, *Direct3D*, OK), select New -> String Value, *VideoMemorySize*, which you should set to the amount of VRAM your GPU has, in MB (for example, "1024" or "2048"). If you're using an integrated GPU, try to preallocate a fair amount of RAM for your GPU in BIOS/UEFI Setup and use the same value here (512 is good enough for low-medium settings).
 
 *   If the Battle.net App doesn't work, use a new Wine prefix.
 *   **If you are asked to install Gecko, then click Install to do so.**

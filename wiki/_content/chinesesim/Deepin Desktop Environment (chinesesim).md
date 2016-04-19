@@ -59,4 +59,4 @@ Execute `startx` or `xinit` to start DDE.
 
 ## 反馈bugs
 
-Any upstream or arch packaging related bugs should be reported [here](https://github.com/fasheng/arch-deepin/issues). FaSheng is one of the Deepin developers and also a contributor/maintainer for arch-deepin and if you file bug reports on his github page then there's much greater chance that the bug will be fixed. ;-)
+Any upstream or arch packaging related bugs should be reported [here](https://github.com/linuxdeepin/developer-center/issues). FaSheng is one of the Deepin developers and also a contributor/maintainer for arch-deepin and if you file bug reports on his github page then there's much greater chance that the bug will be fixed. ;-)

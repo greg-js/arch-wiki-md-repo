@@ -218,23 +218,7 @@ Generate `grub.cfg` and `boot.efi` from Arch Linux:
 
 See: [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders")
 
-As of August 2013, refind can automatically detect the Arch kernel, removing the need for copying the kernel into the EFI partition. Simply install refind without the EFI file system drivers [[1]](http://forums.gentoo.org/viewtopic-t-967024-start-0.html) using the `--nodrivers` option [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1348145#p1348145), and enable the `scan_all_linux_kernels` and `also_scan_dirs` options in `refind.conf` (see link above for instructions.).
-
-An alternative way is to omit all the scans and put the following bootentry at the end of your "refind.conf":
-
-```
-menuentry "Arch" {
-  icon EFI/refind/icons/os_arch.icns 
-  volume <Volume label>
-  ostype Linux
-  loader /boot/vmlinuz-linux
-  initrd /boot/initramfs-linux.img
-  options "rw root=/dev/<arch partition> rootfstype=<filesystem type> libata.force=noncq"
-}
-
-```
-
-Do not forget to replace the angle brackets with your data.
+As of April 2016, rEFInd(0.10.2) can automatically detect the Arch kernel. So this is should be the easiest way. Simply install rEFInd. If you follow [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), you can simply skip [Beginners' guide#Install_a_boot_loader](/index.php/Beginners%27_guide#Install_a_boot_loader "Beginners' guide").
 
 #### Direct EFI booting (gummiboot)
 
@@ -434,7 +418,7 @@ EndSection
 
 #### Ctrl-Click as Right-Click
 
-Using this SuperUser receipt [[3]](http://superuser.com/questions/217615/how-to-right-click-using-the-keyboard-from-ubuntu-on-a-mac) I got Ctrl-click working as right-click. I had to increase the sleep time to 0.1 though.
+Using this SuperUser receipt [[1]](http://superuser.com/questions/217615/how-to-right-click-using-the-keyboard-from-ubuntu-on-a-mac) I got Ctrl-click working as right-click. I had to increase the sleep time to 0.1 though.
 
 #### input-mtrack
 

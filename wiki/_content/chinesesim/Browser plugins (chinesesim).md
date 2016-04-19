@@ -1,13 +1,16 @@
-本文主题是**浏览器插件**。其中涉及的浏览器插件在[Firefox](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")、[Opera](/index.php/Opera "Opera")以及其他webkit核心浏览器上均可使用。
+根据插件 API 的不同，浏览器的插件可以分为两种：
+
+*   Netscape plugin API (NPAPI): 可以在 [Firefox](/index.php/Firefox "Firefox") 和一些浏览器中使用(**不能** 在 Chromium 和 Opera 中使用).
+*   Pepper plugin API (PPAPI): 仅能在 [Chromium](/index.php/Chromium "Chromium")，Chrome 和 [Opera](/index.php/Opera "Opera") 中使用.
+
+除非明确说明，本页中的插件都只支持 NPAPI。
 
 ## Contents
 
 *   [1 Flash Player](#Flash_Player)
-    *   [1.1 Gnash](#Gnash)
-    *   [1.2 Adobe Flash Player](#Adobe_Flash_Player)
-        *   [1.2.1 杂项](#.E6.9D.82.E9.A1.B9)
-        *   [1.2.2 配置](#.E9.85.8D.E7.BD.AE)
-        *   [1.2.3 使用nVidia显卡时Flash很卡](#.E4.BD.BF.E7.94.A8nVidia.E6.98.BE.E5.8D.A1.E6.97.B6Flash.E5.BE.88.E5.8D.A1)
+    *   [1.1 Adobe Flash Player](#Adobe_Flash_Player)
+        *   [1.1.1 Installation](#Installation)
+    *   [1.2 Gnash](#Gnash)
 *   [2 PDF浏览器](#PDF.E6.B5.8F.E8.A7.88.E5.99.A8)
     *   [2.1 Evince](#Evince)
     *   [2.2 Adobe Reader](#Adobe_Reader)
@@ -33,66 +36,28 @@
 
 ## Flash Player
 
-### Gnash
-
-GNU Gnash 是 Adobe Flash Player 的自由软件替代。可以作为单独的播放器，也可以嵌入浏览器。可以通过软件包 [gnash-gtk](https://aur.archlinux.org/packages/gnash-gtk/) 进行安装。
-
 ### Adobe Flash Player
 
-[extra]仓库提供了i686和x86_64平台的Adobe Flash Player：
+#### Installation
 
-```
-# pacman -S flashplugin
+不同的浏览器需要安装不同的插件。
 
-```
+*   NPAPI 插件可以通过软件包 [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) 进行 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装")，[Adobe 已经停止开发此插件](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html)，版本固定到 11.2 但是会提供 5 年安全支持，直到 2017 年 3 月.[[1]](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html)[[2]](http://helpx.adobe.com/flash-player/release-note/release-notes-developer-flash-player.html)).
 
-**警告:** Chromium 不再支持 Netscape plugin API (NPAPI)，官方软件仓库中的 [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) 已经无法工作。
+*   PPAPI 版本和 Google Chrome 一起发布. 详情参考 [Chromium#Flash Player plugin](/index.php/Chromium#Flash_Player_plugin "Chromium").
 
-可以使用 Google Chrome (新Pepper API)提供的 Flash。
+**Note:**
 
-请参见[Chromium#Flash Player plugin](/index.php/Chromium#Flash_Player_plugin "Chromium")以获得更详细的信息。
+*   某些时候文本显示不太正常，可能需要从[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")安装[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)
+*   [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/) 软件包提供了 NPAPI 浏览器比如 Firefox 使用 [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) 的测试版本。可以通过将 `/usr/share/freshplayerplugin/freshwrapper.conf.example` 复制到 `/usr/share/freshplayerplugin/freshwrapper.conf` 配置硬件加速。
 
-#### 杂项
+### Gnash
 
-某些时候文本显示不太正常，可能需要从[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")安装[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)。
+参考 [Wikipedia:Gnash](https://en.wikipedia.org/wiki/Gnash "wikipedia:Gnash"). [GNU Gnash](http://www.gnu.org/software/gnash/) 是 Adobe Flash Player 的自由软件替代。可以作为单独的播放器，也可以嵌入浏览器。支持 SWF v7 和 80% 的 ActionScript 2.0。
 
-#### 配置
+可以通过软件包[gnash](https://aur.archlinux.org/packages/gnash/), [gnash-kde4](https://aur.archlinux.org/packages/gnash-kde4/), [gnash-git](https://aur.archlinux.org/packages/gnash-git/).
 
-在浏览器中打开Flash，右键即可看到配置菜单。或者访问[Macromedia网站](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager.html)，通过这里显示的一个Flash可以调整设置。
-
-也可以自己编写mms.conf配置Flash。在/etc/adobe目录创建mms.cfg，内容范例如下：
-
-```
- # Adobe player settings
- AVHardwareDisable = 0
- FullScreenDisable = 0
- LocalFileReadDisable = 1
- FileDownloadDisable = 1
- FileUploadDisable = 1
- LocalStorageLimit = 1
- ThirdPartyStorage = 1
- AssetCacheSize = 10
- AutoUpdateDisable = 1
- LegacyDomainMatching = 0
- LocalFileLegacyAction = 0
- AllowUserLocalTrust = 0
- # DisableSockets = 1 
- OverrideGPUValidation = 1
-
-```
-
-要使用硬件加速, 在 `/etc/adobe/mms.cfg` 文件中加入下面这一行:
-
-```
-EnableLinuxHWVideoDecode=1
-
-```
-
-亦可参考[Gentoo的mms.cfg](http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/www-plugins/adobe-flash/files/mms.cfg)。
-
-#### 使用nVidia显卡时Flash很卡
-
-试试在mms.cfg或配置菜单关闭硬件加速。参见：[https://bugs.archlinux.org/task/22878](https://bugs.archlinux.org/task/22878)。
+**Note:** 如果发现 Gnash 无法工作，可能需要先 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg).
 
 ## PDF浏览器
 

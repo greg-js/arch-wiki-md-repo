@@ -8,15 +8,14 @@ Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passt
     *   [2.2 Ensuring that the groups are valid](#Ensuring_that_the_groups_are_valid)
     *   [2.3 Gotchas](#Gotchas)
         *   [2.3.1 Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot)
-*   [3 Installation](#Installation)
-*   [4 Setting up libvirt](#Setting_up_libvirt)
-*   [5 User-level access to devices](#User-level_access_to_devices)
-*   [6 Isolating the GPU](#Isolating_the_GPU)
-    *   [6.1 vfio-pci](#vfio-pci)
-    *   [6.2 pci-stub](#pci-stub)
-    *   [6.3 Blacklisting modules](#Blacklisting_modules)
-    *   [6.4 Binding to VFIO](#Binding_to_VFIO)
-    *   [6.5 ACS Override Patch](#ACS_Override_Patch)
+*   [3 Isolating the GPU](#Isolating_the_GPU)
+    *   [3.1 Using vfio-pci](#Using_vfio-pci)
+    *   [3.2 Using pci-stub (legacy method, pre-4.1 kernels)](#Using_pci-stub_.28legacy_method.2C_pre-4.1_kernels.29)
+    *   [3.3 Gotchas](#Gotchas_2)
+        *   [3.3.1 Tainting your boot GPU](#Tainting_your_boot_GPU)
+*   [4 Installation](#Installation)
+*   [5 Setting up libvirt](#Setting_up_libvirt)
+*   [6 User-level access to devices](#User-level_access_to_devices)
 *   [7 QEMU permissions](#QEMU_permissions)
 *   [8 QEMU commands](#QEMU_commands)
 *   [9 Create and configure VM for OVMF](#Create_and_configure_VM_for_OVMF)
@@ -24,8 +23,12 @@ Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passt
 *   [11 Complete example for QEMU with libvirtd](#Complete_example_for_QEMU_with_libvirtd)
 *   [12 Control VM via Synergy](#Control_VM_via_Synergy)
 *   [13 Operating system](#Operating_system)
-*   [14 Make Nvidia's GeForce Experience work](#Make_Nvidia.27s_GeForce_Experience_work)
-*   [15 See also](#See_also)
+*   [14 Troubleshooting](#Troubleshooting)
+    *   [14.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
+    *   [14.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
+*   [15 Additionnal information](#Additionnal_information)
+    *   [15.1 ACS Override Patch](#ACS_Override_Patch)
+*   [16 See also](#See_also)
 
 ## Prerequisites
 
@@ -100,7 +103,7 @@ An IOMMU group is the smallest set of physical devices that can be passed to a v
 
 #### Plugging your guest GPU in an unisolated CPU-based PCIe slot
 
-Not all PCI-E slots are the same. Most motherboards have PCIe slots provided by both the CPU and the PCH. Depending on your CPU, it's possible that your processor-based PCIe slot (there's generally only one) doesn't support isolation properly, in which case the PCI slot itself will be appear to be grouped with the device that's connected to it.
+Not all PCI-E slots are the same. Most motherboards have PCIe slots provided by both the CPU and the PCH. Depending on your CPU, it's possible that your processor-based PCIe slot doesn't support isolation properly, in which case the PCI slot itself will be appear to be grouped with the device that's connected to it.
 
 ```
 IOMMU group 1
@@ -109,7 +112,119 @@ IOMMU group 1
 	01:00.1 Audio device: NVIDIA Corporation Device 0fbc (rev a1)
 ```
 
-This constitutes an improper grouping (the GPU is **not** properly isolated), which will lead to complications if you try to pass it to a guest OS and will most likely require you to install the ACS override patch, which comes with its own drawbacks. Unless you have a specific reason to keep your guest GPU plugged this way, such as physical space concerns or simply not having PCH-based PCIe slots on your motherboard, you may want to switch to one of your PCH-based slot instead. It is, however, completely fine to use said GPU on the host since it's not affected by those groups and is supposed to remain in control of the PCI root port anyway.
+This is fine so long as only your guest GPU is included in here, such as above. Depending what's plugged in your other PCIe slots and whether they're allocated to your CPU or your PCH, you may find yourself with additional devices within the same group, which would force you to pass those as well. If you're ok with passing everything that's in there to your VM, you're free to continue. Otherwise, you will either need to try and plug your GPU in your other PCIe slots (if you have any) and see if those provide isolation from the rest or to install the ACS override patch, which comes with its own drawbacks.
+
+## Isolating the GPU
+
+Due to their size and complexity, GPU drivers don't tend to support dynamic rebinding very well, so you can't just have some GPU you use on the host be transparently passed to a VM without consequences. It's generally preferable to bind them with a placeholder driver instead. This will stop other drivers from attempting to claim it, and will force the GPU to remain inactive while a VM is not running. There are two methods for doing this, but it's reccomanded to use vfio-pci if your kernel supports it.
+
+**Warning:** Once you reboot after this procedure, whatever GPU you have configured will no longer be usable on the host until you reverse the manipulation. Make sure the GPU you intend to use on the host is properly configured before doing this.
+
+### Using vfio-pci
+
+Starting with Linux 4.1, the kernel includes vfio-pci, which is functionally similar to pci-stub with a few added bonuses, such as switching devices into their D3 state when they are not in use. If your system supports it, which you can try by running the following command, you should use it. If it returns en error, you will have to rely on pci-stub instead.
+
+ `$ modinfo vfio-pci` 
+```
+filename:       /lib/modules/4.4.5-1-ARCH/kernel/drivers/vfio/pci/vfio-pci.ko.gz
+description:    VFIO PCI - User Level meta-driver
+author:         Alex Williamson <alex.williamson@redhat.com>
+...
+```
+
+Vfio-pci normally targets PCI devices by ID, meaning you only need to specify the IDs of the devices you intend to passthrough. For the following IOMMU group, you'd want to bind vfio-pci with `10de:13c2` and `10de:0fbb`, which will be used as example values for the rest of this section.
+
+```
+IOMMU group 13
+	06:00.0 VGA compatible controller: NVIDIA Corporation GM204 [GeForce GTX 970] [10de:13c2] (rev a1)
+	06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Audio Controller [10de:0fbb] (rev a1)
+```
+
+You can then add those vendor-device ID pairs to the default parameters passed to vfio-pci whenever it's inserted into the kernel.
+
+ `/etc/modprobe.d/vfio.conf`  `options vfio-pci ids=10de:13c2,10de:0fbb` 
+
+This, however, does not guarantee that vfio-pci will be loaded before other graphics drivers. To ensure that, we need to statically bind it in the kernel image by adding it anywhere in the MODULES list in mkinitpcio.conf, alongside with its dependencies.
+
+**Note:** If you also have another driver loaded this way for [early modesetting](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") (such as "nouveau", "radeon", "amdgpu", "i915", etc.), all of the following VFIO modules must preceed it.
+ `/etc/mkinitcpio.conf`  `MODULES="... vfio vfio_iommu_type1 vfio_pci vfio_virqfd ..."` 
+
+Don't forget to regenerate your initramfs.
+
+ `# mkinitcpio -p linux` 
+**Note:** If you're using a non-standard kernel, such as `linux-vfio`, replace `linux` with whichever kernel you intend to use.
+
+Reboot and verify that vfio-pci has loaded properly and that it's now bound to the right devices.
+
+ `$ dmesg | grep -i vfio ` 
+```
+[    0.329224] VFIO - User Level meta-driver version: 0.3
+[    0.341372] vfio_pci: add [10de:13c2[ffff:ffff]] class 0x000000/00000000
+[    0.354704] vfio_pci: add [10de:0fbb[ffff:ffff]] class 0x000000/00000000
+[    2.061326] vfio-pci 0000:06:00.0: enabling device (0100 -> 0103)
+```
+ `$ lspci -nnk -d 10de:13c2` 
+```
+06:00.0 VGA compatible controller: NVIDIA Corporation GM204 [GeForce GTX 970] [10de:13c2] (rev a1)
+	Kernel driver in use: vfio-pci
+	Kernel modules: nouveau nvidia
+```
+ `$ lspci -nnk -d 10de:0fbb` 
+```
+06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Audio Controller [10de:0fbb] (rev a1)
+	Kernel driver in use: vfio-pci
+	Kernel modules: snd_hda_intel
+```
+
+### Using pci-stub (legacy method, pre-4.1 kernels)
+
+If your kernel does not support vfio-pci, you can use the pci-stub module instead.
+
+Pci-stub normally targets PCI devices by ID, meaning you only need to specify the IDs of the devices you intend to passthrough. For the following IOMMU group, you'd want to bind vfio-pci with `10de:13c2` and `10de:0fbb`, which will be used as example values for the rest of this section.
+
+```
+IOMMU group 13
+	06:00.0 VGA compatible controller: NVIDIA Corporation GM204 [GeForce GTX 970] [10de:13c2] (rev a1)
+	06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Audio Controller [10de:0fbb] (rev a1)
+```
+
+Most linux distros (including Arch Linux) have pci-stub built statically within the kernel image. If for any reason it needs to be loaded as a module in your case, you will need to bind it yourself using whatever tool your distro provides for this, such as `mkinitpcio` for Arch.
+
+ `/etc/mkinitcpio.conf`  `MODULES="... pci-stub ..."` 
+
+Don't forget to regenerate your initramfs.
+
+ `# mkinitcpio -p linux` 
+**Note:** If you're using a non-standard kernel, such as `linux-vfio`, replace `linux` with whichever kernel you intend to use.
+
+Add the relevant PCI device IDs to the kernel command line:
+
+ `/etc/mkinitcpio.conf` 
+```
+...
+GRUB_CMDLINE_LINUX_DEFAULT="... pci-stub.ids=10de:13c2,10de:0fbb ..."
+...
+```
+
+Reload the grub configuration:
+
+ `# grub-mkconfig -o /boot/grub/grub.cfg` 
+
+Check dmesg output for successful assignment of the device to pci-stub:
+
+ `dmesg | grep pci-stub` 
+```
+[    2.390128] pci-stub: add 10DE:13C2 sub=FFFFFFFF:FFFFFFFF cls=00000000/00000000
+[    2.390143] pci-stub 0000:06:00.0: claimed by stub
+[    2.390150] pci-stub: add 10DE:0FBB sub=FFFFFFFF:FFFFFFFF cls=00000000/00000000
+[    2.390159] pci-stub 0000:06:00.1: claimed by stub
+```
+
+### Gotchas
+
+#### Tainting your boot GPU
+
+If you're passing through your boot GPU and you cannot change it, make sure you also add `video=efifb:off` to your kernel command line so nothing gets sent to it before vfio-pci gets to bind with it.
 
 ## Installation
 
@@ -152,175 +267,6 @@ KERNEL=="YOUR_VFIO_GROUPS", SUBSYSTEM=="vfio", OWNER="YOUR_USER", GROUP="YOUR_US
 ```
 
 This should allow you to set qemu user and group to something a little safer than root:root in /etc/libvirtd/qemu.conf
-
-## Isolating the GPU
-
-Find your target card's PCI locations and device IDs:
-
- `lspci -nn|grep -iP "NVIDIA|Radeon"` 
-```
-01:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Cayman PRO [Radeon HD 6950] [1002:6719]
-01:00.1 Audio device [0403]: Advanced Micro Devices, Inc. [AMD/ATI] Cayman/Antilles HDMI Audio [Radeon HD 6900 Series] [1002:aa80]
-04:00.0 VGA compatible controller [0300]: NVIDIA Corporation G73 [GeForce 7600 GS] [10de:0392] (rev a1)
-```
-
-In this case, the three PCI device IDs we're after are `1002:6719 1002:aa80 10de:0392`, and their locations are `01:00.0 01:00.1 04:00.0`. Make note of any locations and device IDs you intend to pass through to the VM.
-
-To allow the VM access to your passthrough'd devices, you'll need to claim it before the host drivers do. This can be achieved with either one of two kernel modules, `vfio-pci` or `pci-stub`.
-
-vfio-pci is available in kernel v4.1+, and is the recommended option if your kernel supports it. You can check if this module is available by running:
-
-```
-$ modprobe vfio-pci
-
-```
-
-If there is no output, you're good to go. If instead you receive `modprobe: FATAL: Module vfio-pci not found`, use the guide further down for `pci-stub` instead.
-
-### vfio-pci
-
-Ensure the vfio-pci driver is loaded on bootup through `modprobe.d`. It is necessary to tell the vfio-pci driver which PCI devices to bind. If you were adding all three of the PCI devices listed above, your modprobe.d launch config would have the following contents:
-
- `/etc/modprobe.d/vfio.conf` 
-```
-options vfio-pci ids=1002:6719,1002:aa80,10de:0392
-
-```
-
-Next we'll want to ensure the kernel loads the necessary modules for vfio-pci when starting up:
-
- `/etc/mkinitcpio.conf` 
-```
-...
-MODULES="vfio vfio_iommu_type1 vfio_pci vfio_virqfd"
-...
-```
-
-Save the changes to the initial ramdisk environment:
-
-```
-# mkinitcpio -p linux
-
-```
-
-**Note:** If you're using a non-standard kernel, replace "linux" with whichever kernel you intend to use.
-
-When using the 'base' hook in the initramfs, all modules specified in the MODULES array are loaded statically early in the boot process. The same behavior can be achieved with the 'systemd' hook by using the 'rd.modules-load' kernel parameter to specify modules that should be statically loaded early.
-
-```
-rd.modules-load=vfio-pci,...
-
-```
-
-Reboot and check dmesg output for successful assignment of the device(s) to vfio-pci:
-
- `dmesg | grep -i vfio` 
-```
-...
-[    0.456472] VFIO - User Level meta-driver version: 0.3
-[    0.470269] vfio_pci: add [10de:13c2[ffff:ffff]] class 0x000000/00000000
-[    0.483631] vfio_pci: add [10de:0fbb[ffff:ffff]] class 0x000000/00000000
-[    0.496998] vfio_pci: add [8086:8ca0[ffff:ffff]] class 0x000000/00000000
-[    2.420184] vfio-pci 0000:0a:00.0: enabling device (0000 -> 0003)
-[   38.590395] vfio_ecap_init: 0000:0a:00.0 hiding ecap 0x1e@0x258
-[   38.590413] vfio_ecap_init: 0000:0a:00.0 hiding ecap 0x19@0x900
-[   38.606881] vfio-pci 0000:0a:00.1: enabling device (0000 -> 0002)
-[   38.620241] vfio-pci 0000:00:1b.0: enabling device (0000 -> 0002)
-...
-```
-
-You can cross reference devices id's with `lspci -nn`'s output.
-
-### pci-stub
-
-If your kernel does not support vfio-pci, you can use the pci-stub module instead.
-
-Add `pci-stub` to `/etc/mkinitcpio.conf`:
-
- `/etc/mkinitcpio.conf`  `MODULES="... pci-stub ..."` 
-
-If it doesn't work, try adding it to /etc/modules-load.d/ as well:
-
-```
-# echo pci-stub > /etc/modules-load.d/vfio.conf
-
-```
-
-Add the relevant PCI device IDs to the kernel command line:
-
- `/etc/mkinitcpio.conf` 
-```
-...
-GRUB_CMDLINE_LINUX_DEFAULT="... pci-stub.ids=1002:6719,1002:aa80,10de:0392 ..."
-...
-```
-
-If your graphics card has audio as a separated PCI device, it must be added as well:
-
-```
-pci-stub.ids=1002:6719,1002:aa80
-
-```
-
-Reload the grub configuration:
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-Check dmesg output for successful assignment of the device to pci-stub:
-
- `dmesg | grep pci-stub` 
-```
-...
-[    2.390128] pci-stub: add 1002:6719 sub=FFFFFFFF:FFFFFFFF cls=00000000/00000000
-[    2.390143] pci-stub 0000:01:00.0: claimed by stub
-[    2.390150] pci-stub: add 1002:AA80 sub=FFFFFFFF:FFFFFFFF cls=00000000/00000000
-[    2.390159] pci-stub 0000:01:00.1: claimed by stub
-[    2.390150] pci-stub: add 1002:0392 sub=FFFFFFFF:FFFFFFFF cls=00000000/00000000
-[    2.390159] pci-stub 0000:04:00.0: claimed by stub
-...
-```
-
-### Blacklisting modules
-
-Alternatively, if your host does not require the driver of the PCI device you intend to pass through (i.e. your host and VM are not using the same GPU vendor), you can blacklist `radeon` and `fglrx` for AMD GPUs, or `nouveau` and `nvidia` for NVIDIA GPus in `/etc/modprobe.d/blacklist.conf`.
-
-Example, blacklisting the opensource radeon module:
-
- `/etc/modprobe.d/modprobe.conf`  `blacklist radeon` 
-
-### Binding to VFIO
-
-There are many methods to bind the card to vfio, here is one example:
-
-*   [firewing1 webpage](http://www.firewing1.com/howtos/fedora-20/create-gaming-virtual-machine-using-vfio-pci-passthrough-kvm). Check the part after grub2-mkconfig.
-
-### ACS Override Patch
-
-If you find your PCI devices grouped among others that you don't wish to pass through, you may be able to seperate them using Alex Williamson's ACS override patch. Make sure you understand [the potential risk](http://vfio.blogspot.com/2014/08/iommu-groups-inside-and-out.html) of doing so.
-
-You'll need a kernel with the patch applied. The easiest method to acquiring this is through the [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) package.
-
-In addition, the ACS override patch needs to be enabled with kernel command line options. The patch file adds the following documentation:
-
-```
-       pcie_acs_override =
-               [PCIE] Override missing PCIe ACS support for:
-           downstream
-               All downstream ports - full ACS capabilties
-           multifunction
-               All multifunction devices - multifunction ACS subset
-           id:nnnn:nnnn
-               Specfic device - full ACS capabilities
-               Specified as vid:did (vendor/device ID) in hex
-
-```
-
-The option `pcie_acs_override=downstream` is typically sufficient.
-
-After installation and configuration, reconfigure your [bootloader kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to load the new kernel with the `pcie_acs_override=` option enabled.
 
 ## QEMU permissions
 
@@ -398,28 +344,6 @@ Use virsh to edit the VM with these changes:
  <loader readonly='yes' type='pflash'>/usr/share/edk2.git/ovmf-x64/OVMF_CODE-pure-efi.fd</loader>
  <nvram template='/usr/share/edk2.git/ovmf-x64/OVMF_VARS-pure-efi.fd'/>
 </os>
-```
-
-```
-<hyperv>
- <relaxed state='off'/>
- <vapic state='off'/>
- <spinlocks state='off'/>
-</hyperv>
-```
-
-```
-<features>
- <kvm>
-  <hidden state='on'/>
- </kvm>
-</features>
-```
-
-```
-<clock>
- <timer name='hypervclock' present='no'/>
-</clock>
 ```
 
 A guide from: [Alex Williamson's blog - using virt-manager](http://vfio.blogspot.com/2014/08/primary-graphics-assignment-without-vga.html) can also be used, but in order to make virt-manager discover UEFI on your system, you need to tell your QEMU where to look for ovmf first. Edit your `/etc/libvirt/qemu.conf` appending this at the end of it:
@@ -676,9 +600,67 @@ If while playing a game and the mouse behaves wonky or is too sensitive, change 
 
 Depending on your operating system, you may find that it may refuse to boot after a certain point. To work around this, simply replace `-vga none` to `-vga qxl`, install your operating system, check Device Manager and see if your graphics card has PCI device id equal to your actual GPU and install the graphics card driver, and then change it back to `-vga none`.
 
-## Make Nvidia's GeForce Experience work
+## Troubleshooting
 
-If GeForce Experience complains about an unsupported CPU being present and some features, e.g. game optimization, don't work, passing the `ignore_msrs=1` option to the KVM module will most likely solve the problem by ignoring accesses to unimplemented MSRs:
+### "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs
+
+Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line.
+
+Since libvirt hasn't yet caught up with this new feature, libvirt users will instead have to create a dummy script that will insert that option in the QEMU command line at launch and set it as their emulator.
+
+ `/usr/local/qemu-kvm-vga` 
+```
+#!/bin/sh
+exec /usr/bin/qemu-system-x86_64 \
+$(echo "\$@" | sed 's|hv_time|hv_time,hv_vendor_id=whatever|g')
+```
+ `EDITOR=nano virsh edit myPciPassthroughVm` 
+```
+...
+<emulator>/usr/local/qemu-kvm-vga</emulator>
+...
+```
+
+Users with older versions of QEMU will instead have to disable a few hypervisor extensions, which can degrade performance substentially. If this is what you want to do, do the following replacement in your libvirt domain config file.
+
+ `EDITOR=nano virsh edit myPciPassthroughVm` 
+```
+...
+<hyperv>
+	<relaxed state='on'/>
+	<vapic state='on'/>
+	<spinlocks state='on' retries='8191'/>
+</hyperv>
+...
+<clock offset='localtime'>
+	<timer name='hypervclock' present='yes'/>
+</clock>
+...
+```
+
+```
+...
+<hyperv>
+	<relaxed state='off'/>
+	<vapic state='off'/>
+	<spinlocks state='off'/>
+</hyperv>
+...
+<clock offset='localtime'>
+	<timer name='hypervclock' present='no'/>
+</clock>
+...
+<features>
+	<kvm>
+	<hidden state='on'/>
+	</kvm>
+</features>
+...
+```
+
+### Unexpected crashes related to CPU exceptions
+
+In some cases, kvm may react strangely to certain CPU operations, such as GeForce Experience complaining about an unsupported CPU being present or some game crashing for unknown reasons. A number of those issues can be solved by passing the `ignore_msrs=1` option to the KVM module, which will ignore unimplemented MSRs instead of returning an error value.
 
  `/etc/modprobe.d/kvm.conf` 
 ```
@@ -687,7 +669,34 @@ options kvm ignore_msrs=1
 ...
 ```
 
-**Warning:** Silently ignoring unknown MSR accesses could potentially break other software within the VM or other VMs.
+**Warning:** While this is normally safe and some applications might not work without this, silently ignoring unknown MSR accesses could potentially break other software within the VM or other VMs.
+
+## Additionnal information
+
+### ACS Override Patch
+
+If you find your PCI devices grouped among others that you don't wish to pass through, you may be able to seperate them using Alex Williamson's ACS override patch. Make sure you understand [the potential risk](http://vfio.blogspot.com/2014/08/iommu-groups-inside-and-out.html) of doing so.
+
+You'll need a kernel with the patch applied. The easiest method to acquiring this is through the [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) package.
+
+In addition, the ACS override patch needs to be enabled with kernel command line options. The patch file adds the following documentation:
+
+```
+       pcie_acs_override =
+               [PCIE] Override missing PCIe ACS support for:
+           downstream
+               All downstream ports - full ACS capabilties
+           multifunction
+               All multifunction devices - multifunction ACS subset
+           id:nnnn:nnnn
+               Specfic device - full ACS capabilities
+               Specified as vid:did (vendor/device ID) in hex
+
+```
+
+The option `pcie_acs_override=downstream` is typically sufficient.
+
+After installation and configuration, reconfigure your [bootloader kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to load the new kernel with the `pcie_acs_override=` option enabled.
 
 ## See also
 

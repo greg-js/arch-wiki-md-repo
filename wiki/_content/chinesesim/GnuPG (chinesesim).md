@@ -8,11 +8,11 @@
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 Directory location](#Directory_location)
-    *   [2.2 Configuration files](#Configuration_files)
-    *   [2.3 Default options for new users](#Default_options_for_new_users)
+    *   [2.1 目录位置](#.E7.9B.AE.E5.BD.95.E4.BD.8D.E7.BD.AE)
+    *   [2.2 配置文件](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
+    *   [2.3 新用户的默认选项](#.E6.96.B0.E7.94.A8.E6.88.B7.E7.9A.84.E9.BB.98.E8.AE.A4.E9.80.89.E9.A1.B9)
 *   [3 用法](#.E7.94.A8.E6.B3.95)
-    *   [3.1 Create key pair](#Create_key_pair)
+    *   [3.1 创建密钥对](#.E5.88.9B.E5.BB.BA.E5.AF.86.E9.92.A5.E5.AF.B9)
     *   [3.2 Backup your private key](#Backup_your_private_key)
     *   [3.3 Export your public key](#Export_your_public_key)
     *   [3.4 Import a key](#Import_a_key)
@@ -60,69 +60,66 @@
 
 ## 安装
 
-[Install](/index.php/Install "Install") the [gnupg](https://www.archlinux.org/packages/?name=gnupg) package.
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [gnupg](https://www.archlinux.org/packages/?name=gnupg).
 
-This will also install [pinentry](https://www.archlinux.org/packages/?name=pinentry), a collection of simple PIN or passphrase entry dialogs which GnuPG uses for passphrase entry. Which *pinentry* dialog is used is determined by the symbolic link `/usr/bin/pinentry`, which by default points to `/usr/bin/pinentry-gtk-2`.
+软件包 [pinentry](https://www.archlinux.org/packages/?name=pinentry) 也会被同时安装，它是一个简单的 PIN 或 passphrase 输入对话框集合，GnuPG 用来输入密码，*pinentry* 的对话框是由软链接`/usr/bin/pinentry` 确定，默认指向 `/usr/bin/pinentry-gtk-2`.
 
-If you want to use a graphical frontend or program that integrates with GnuPG, see [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
+如果要图形界面和 GnuPG 进行整合，请查看 [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
 
 ## 配置
 
-### Directory location
+### 目录位置
 
-`$GNUPGHOME` is used by GnuPG to point to the directory where its configuration files are stored. By default `$GNUPGHOME` is not set and your `$HOME` is used instead; thus, you will find a `~/.gnupg` directory right after installation.
+GnuPG 用环境变量 `$GNUPGHOME` 定位配置文件的位置，默认情况下此变量并未被设置，会直接使用 `$HOME`，所以默认的配置目录是 `~/.gnupg`。
 
-To change the default location, either run gpg this way `$ gpg --homedir *path/to/file*` or set `GNUPGHOME` in one of your regular [startup files](/index.php/Startup_files "Startup files").
+要改变默认位置，执行 `$ gpg --homedir *path/to/file*` 或在 [startup files](/index.php/Startup_files "Startup files") 中设置 `GNUPGHOME`。
 
-### Configuration files
+### 配置文件
 
-The default configuration files are `~/.gnupg/gpg.conf` and `~/.gnupg/dirmngr.conf`.
+默认的配置文件是 `~/.gnupg/gpg.conf` 和 `~/.gnupg/dirmngr.conf`.
 
-By default, the gnupg directory has its [permissions](/index.php/Permissions "Permissions") set to `700` and the files it contains have their permissions set to `600`. Only the owner of the directory has permission to read, write, and access the files. This is for security purposes and should not be changed. In case this directory or any file inside it does not follow this security measure, you will get warnings about unsafe file and home directory permissions.
+gnupg 目录的默认 [权限](/index.php/Permissions "Permissions") 是 `700`，其中文件的权限是 `600`. 仅目录的所有者有权读写，访问这些文件。这是基于安全考虑，请不要变更。如果不使用这样的安全权限设置，会收到不安全文件的警告。
 
-Append to these files any long options you want. Do not write the two dashes, but simply the name of the option and required arguments. You will find skeleton files in `/usr/share/gnupg`. These files are copied to `~/.gnupg` the first time gpg is run if they do not exist there. Other examples are found in [#See also](#See_also).
+在文件中附加需要的文件，`/usr/share/gnupg` 包含基本架构文件. gpg 第一次运行时，如果配置文件不存在，会自动复制文件到 `~/.gnupg`.
 
-Additionally, [pacman](/index.php/Pacman "Pacman") uses a different set of configuration files for package signature verification. See [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing") for details.
+此外, [pacman](/index.php/Pacman "Pacman") 使用单独的配置文件进行软件包的权限验证。详情请参考 [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing")。
 
-### Default options for new users
+### 新用户的默认选项
 
-If you want to setup some default options for new users, put configuration files in `/etc/skel/.gnupg/`. When the new user is added in system, files from here will be copied to its GnuPG home directory. There is also a simple script called *addgnupghome* which you can use to create new GnuPG home directories for existing users:
+要给新建用户设定一些默认选项，把配置文件放到 `/etc/skel/.gnupg/`. 系统创建新用户时，就会把文件复制到 GnuPG 目录。还有一个 *addgnupghome* 命令可以为已有用户创建新 GnuPG 主目录：
 
 ```
 # addgnupghome user1 user2
 
 ```
 
-This will add the respective `/home/user1/.gnupg` and `/home/user2/.gnupg` and copy the files from the skeleton directory to it. Users with existing GnuPG home directory are simply skipped.
+此命令会将对检查 `/home/user1/.gnupg` 和 `/home/user2/.gnupg`，如果用户的 GnuPG 主目录不存在，就会从 skeleton 目录复制文件过去。
 
 ## 用法
 
-**Note:**
+**Note:** 如果命令需要一个 *`<user-id>`*， 可以使用 key ID, 指纹, 用户名和密码对等替代，GnuPG 这的处理很灵活。
 
-*   Whenever a *`<user-id>`* is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
-*   Some of these steps may be provided by an external program depending on your usage, such as an [email client](/index.php/List_of_applications/Internet#Email_clients "List of applications/Internet"). See also [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
+### 创建密钥对
 
-### Create key pair
-
-Generate a key pair by typing in a terminal:
+用下面命令创建一个密钥对：
 
 ```
 $ gpg --full-gen-key
 
 ```
 
-**Tip:** Use the `--expert` option for getting alternative ciphers like [ECC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography "wikipedia:Elliptic curve cryptography").
+**Tip:** 使用 `--expert` 选项可以选择其它的 option for getting alternative 密码算法，比如 [ECC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography "wikipedia:Elliptic curve cryptography").
 
-The command will prompt for answers to several questions. For general use most people will want:
+命令执行后会需要用户回答一些问题，大部分用户应该需要的是：
 
-*   the RSA (sign only) and a RSA (encrypt only) key.
-*   a keysize of the default value (2048). A larger keysize of 4096 "gives us almost nothing, while costing us quite a lot"[[1]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096).
-*   an expiration date. A period of a year is good enough for the average user. This way even if access is lost to the keyring, it will allow others to know that it is no longer valid. Later, if necessary, the expiration date can be extended without having to re-issue a new key.
-*   your name and email address. You can add multiple identities to the same key later (*e.g.*, if you have multiple email addresses you want to associate with this key).
-*   *no* optional comment. Since the semantics of the comment field are [not well-defined](https://lists.gnupg.org/pipermail/gnupg-devel/2015-July/030150.html), it has limited value for identification.
+*   RSA (sign only) 和 a RSA (encrypt only) 密钥.
+*   默认的密钥长度 (2048). 增大长度到 4096 "收益不大，但是付出很大"[[1]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096).
+*   过期日期. 大部分用户可以选择一年. 这样即使无法访问 keyring, 用户也知道密钥已经过期。如果需要可以不重新建立密钥就延长过期时间。
+*   用户名和电子邮件。可以给同样的密钥不同的身份，比如给同一个密钥关联多个电子邮件。
+*   *无* 可选注释，注释字段并没有被[很好的定义](https://lists.gnupg.org/pipermail/gnupg-devel/2015-July/030150.html)，作用有限。
 *   [a secure passphrase](/index.php/Security#Choosing_secure_passwords "Security").
 
-**Note:** The name and email address you enter here will be seen by anybody who imports your key.
+**注意:** 任何导入密钥的人都可以看到这里的用户名和电子邮件地址。
 
 ### Backup your private key
 

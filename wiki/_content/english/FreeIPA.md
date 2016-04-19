@@ -95,7 +95,9 @@ You can configure SSHD to fetch users SSH public key from the LDAP directory by 
 
 ```
 
-Then restart sshd. You can add your ssh key to your FreeIPA user account through the web interface or use the `-sshpubkey='ssh-rsa AAAA...'` argument to the `ipa user-mod` or `ipa user-create` commands.
+Then restart sshd.
+
+You can add your ssh key to your FreeIPA user account through the web interface or use the `-sshpubkey='ssh-rsa AAAA...'` argument to the `ipa user-mod` or `ipa user-create` commands.
 
 Test it:
 

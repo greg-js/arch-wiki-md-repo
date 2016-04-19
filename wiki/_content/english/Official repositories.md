@@ -25,7 +25,7 @@ Packages in the official repositories are constantly upgraded: when a package is
 
 This repository can be found in `.../core/os/` on your favorite [mirror](/index.php/Mirror "Mirror").
 
-core contains packages for:
+*core* contains packages for:
 
 *   booting Arch Linux
 *   [connecting to the Internet](/index.php/Network_configuration "Network configuration")
@@ -81,19 +81,21 @@ If you enable *testing*, you must also enable *community-testing*.
 
 #### community-testing
 
-This repository is like the *testing* repository, but for packages that are candidates for the *community* repository.
+This repository is similar to the *testing* repository, but for packages that are candidates for the *community* repository.
 
 If you enable it, you must also enable *testing*.
 
 #### multilib-testing
 
-This repository is like the *testing* repository, but for packages that are candidates for the *multilib* repository.
+This repository is similar to the *testing* repository, but for packages that are candidates for the *multilib* repository.
 
 If you enable it, you must also enable *testing*.
 
 #### gnome-unstable
 
-This repository contains the latest version of the [GNOME](/index.php/GNOME "GNOME") desktop environment. To enable it, add the following lines to `/etc/pacman.conf`. The *gnome-unstable* entry should be first in the list of repositories (*i.e.*, above the *testing* entry).
+This repository contains the latest version of the [GNOME](/index.php/GNOME "GNOME") desktop environment, before it moves to the main *testing* repository.
+
+To enable it, add the following lines to `/etc/pacman.conf`. The *gnome-unstable* entry should be first in the list of repositories (*i.e.*, above the *testing* entry).
 
 ```
 [gnome-unstable]
@@ -105,7 +107,7 @@ Please report packaging related bugs in our [bug tracker](https://bugs.archlinux
 
 #### kde-unstable
 
-This repository contains the latest *beta* or *Release Candidate* of [KDE](/index.php/KDE "KDE").
+This repository contains the latest *beta* or *Release Candidate* of [KDE](/index.php/KDE "KDE") Plasma and Applications.
 
 To enable it, add the following lines to `/etc/pacman.conf`. The *kde-unstable* entry should be first in the list of repositories (*i.e.*, above the *testing* entry).
 

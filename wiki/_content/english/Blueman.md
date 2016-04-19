@@ -68,7 +68,12 @@ Configuration is done through [dconf](https://www.archlinux.org/packages/?name=d
 
 ### Disable auto power-on
 
-Set `auto-power-on` in `org.blueman.plugins.powermanager` to `false`.
+Blueman automatically enables Bluetooth adapter () when certain events (on boot, laptop lid is opened, ...) occur. This can be disabled with the `auto-power-on` in `org.blueman.plugins.powermanager`:
+
+```
+$ gsettings set org.blueman.plugins.powermanager auto-power-on false
+
+```
 
 ## Troubleshooting
 

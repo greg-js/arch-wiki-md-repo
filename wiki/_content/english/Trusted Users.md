@@ -35,7 +35,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 ## Active Trusted Users
 
 | Nick | Name | E-Mail |
-| [alucryd](https://aur.archlinux.org/packages.php?K=alucryd&SeB=m) | Maxime Gauduin | alucryd@gmail.com |
+| [alucryd](https://aur.archlinux.org/packages.php?K=alucryd&SeB=m) | Maxime Gauduin | alucryd@archlinux.org |
 | [Ambrevar](https://aur.archlinux.org/packages.php?K=Ambrevar&SeB=m) | [Pierre Neidhardt](/index.php/User:Ambrevar "User:Ambrevar") | ambrevar@gmail.com |
 | [anatolik](https://aur.archlinux.org/packages.php?K=anatolik&SeB=m) | Anatol Pomozov | anatol dot pomozov + arch at gmail |
 | [anthraxx](https://aur.archlinux.org/packages.php?K=anthraxx&SeB=m) | [Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx") | anthraxx [at] archlinux [dot] org |

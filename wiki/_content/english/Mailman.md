@@ -174,7 +174,7 @@ server {
     fastcgi_param PATH_TRANSLATED   $document_root$fastcgi_path_info;
   }
 
-  location /mailman-icons {
+  location /icons {
     alias /usr/lib/mailman/icons;
   }
 

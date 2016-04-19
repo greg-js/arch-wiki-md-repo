@@ -22,7 +22,7 @@ rbenv can be extended via a plugin system, and the rbenv wiki includes a [list o
 
 ### Ruby 2.x.x
 
-Installation of Ruby 2.1.4, 2.1.6, 2.1.7, and 2.2.3 may show this error
+Installation of Ruby 2.0.0, 2.1.4, 2.1.6, 2.1.7, and 2.2.3 may show this error
 
 ```
  ossl_ssl.c:141:27: error: ‘SSLv3_method’ undeclared here (not in a function)

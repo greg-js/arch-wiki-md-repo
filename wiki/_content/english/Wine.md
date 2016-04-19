@@ -139,7 +139,7 @@ By default sound issues may arise when running Wine applications. Ensure only on
 *   If you want to use the [PulseAudio](/index.php/PulseAudio "PulseAudio") driver in Wine, you will need to install the [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) package.
 *   If you want to use the [OSS](/index.php/OSS "OSS") driver in Wine, you will need to install the [lib32-alsa-oss](https://www.archlinux.org/packages/?name=lib32-alsa-oss) package. The OSS driver in the kernel will not suffice.
 
-If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)), [configure it via the registry](https://www.winehq.org/docs/wineusr-guide/using-regedit#Configuring_Sound). Also, if you are using a 64-bit Arch, it may help to [recreate the prefix](#WINEARCH)
+If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)), [configure it via the registry](https://www.winehq.org/docs/wineusr-guide/using-regedit#Configuring_Sound). For example, in a case where the microphone wasn't working in a 32-bit Windows application on a 64-bit stock install of wine-1.9.7, this provided full access to the sound hardware (sound playback and mic): open *regedit*, look for the key HKEY_CURRENT_USER → Software → Wine → Drivers, and add a string called *Audio* and give it the value *alsa*. Also, if you are using a 64-bit Arch, it may help to [recreate the prefix](#WINEARCH).
 
 Games that use advanced sound systems may require installations of [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal).
 

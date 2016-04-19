@@ -1,6 +1,6 @@
 From the project [home page](http://www.videolan.org/vlc/):
 
-	*VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.*
+	VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
 
 ## Contents
 

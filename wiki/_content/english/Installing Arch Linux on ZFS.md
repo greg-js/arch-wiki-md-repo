@@ -1,4 +1,4 @@
-This article details the steps required to install Arch Linux onto a root ZFS filesystem. This article supplements the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+This article details the steps required to install Arch Linux onto a ZFS root filesystem. It is a supplement to the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
 
 ## Contents
 
@@ -9,7 +9,7 @@ This article details the steps required to install Arch Linux onto a root ZFS fi
 *   [3 Format the destination disk](#Format_the_destination_disk)
 *   [4 Setup the ZFS filesystem](#Setup_the_ZFS_filesystem)
     *   [4.1 Create the root zpool](#Create_the_root_zpool)
-    *   [4.2 Create necessary filesystems](#Create_necessary_filesystems)
+    *   [4.2 Create your datasets](#Create_your_datasets)
     *   [4.3 Swap partition](#Swap_partition)
     *   [4.4 Configure the root filesystem](#Configure_the_root_filesystem)
 *   [5 Install and configure Arch Linux](#Install_and_configure_Arch_Linux)
@@ -34,11 +34,11 @@ Review [Beginners' guide#Prepare the storage devices](/index.php/Beginners%27_gu
 
 ZFS manages its own partitions, so only a basic partition table scheme is required. The partition that will contain the ZFS filesystem should be of the type `bf00`, or "Solaris Root".
 
-When using GRUB on a BIOS machine there is no need for a boot partition.
+When using GRUB as your bootloader on a BIOS machine there is no need for a separate boot partition.
 
 ### Partition scheme
 
-Here is an example, using MBR, of a basic partition scheme that could be employed for your ZFS root setup:
+Here is an example of a basic partition scheme that could be employed for your ZFS root install on a BIOS-based machine:
 
 ```
 Part     Size   Type
@@ -89,17 +89,23 @@ First, make sure the ZFS modules are loaded,
 *   Always use id names when working with ZFS, otherwise import errors will occur.
 *   The zpool command will normally activate all features. See [ZFS#GRUB-compatible pool creation](/index.php/ZFS#GRUB-compatible_pool_creation "ZFS") when using [GRUB](/index.php/GRUB "GRUB").
 
-### Create necessary filesystems
+### Create your datasets
 
-If so desired, sub-filesystem mount points such as `/home` and `/root` can be created with the following commands:
+Instead of using conventional disk partitions, ZFS has the concept of datasets to manage your storage. Unlike disk partitions, datasets have no fixed size and allow for different attributes, such as compression, to be applied per dataset. Normal ZFS datasets are mounted automatically by ZFS whilst legacy datasets are required to be mounted using fstab or with the traditional mount command.
+
+One of the most useful features of ZFS is boot environments. Boot environments allow you to create a bootable snapshot of your system that you can revert to at any time instantly by simply rebooting and booting from that boot environment. This can make doing system updates much safer and is also incredibly useful for developing and testing software. In order to be able to use [beadm](https://github.com/b333z/beadm) to manage boot environments your datasets must be configured properly. Key to this are that you split your data directories (such as `/home`) into datasets that are distinct from your system datasets and that you do not place data in the root of the pool as this cannot be moved afterwards.
+
+You should always create a dataset for at least your root filesystem and in nearly all cases you will also want `/home` to be in a separate dataset. You may decide you want your logs to persist over boot environments. If you're a running any software that stores data outside of `/home` (such as is the case for database servers) you should structure your datasets so that the data directories of the software you want to run are separated out from the root dataset.
+
+With these example commands, we will create a basic boot enviroment compatible configuration comprisng of just root and `/home` datasets:
 
 ```
-# zfs create zroot/home -o mountpoint=/home
-# zfs create zroot/root -o mountpoint=/root
+# zfs create -o mountpoint=none zroot/data
+# zfs create -o mountpoint=none zroot/ROOT
+# zfs create -o mountpoint=/ zroot/ROOT/default
+# zfs create -o mountpoint=/home zroot/data/home
 
 ```
-
-Note that if you create legacy datasets for system directories (`/var` or `/etc` included) your system will not boot unless they are listed in `/etc/fstab`!
 
 ### Swap partition
 
@@ -114,26 +120,11 @@ If you have just created your zpool, it will be mounted in a dir at the root of 
 
 ```
 
-Now set the mount point of the root filesystem:
+Now set the mount points of the datasets:
 
 ```
-# zfs set mountpoint=/ zroot
-
-```
-
-and optionally, any sub-filesystems:
-
-```
-# zfs set mountpoint=/home zroot/home
-# zfs set mountpoint=/root zroot/root
-
-```
-
-and if you have separate datasets for system directories (ie `/var` or `/usr`)
-
-```
-# zfs set mountpoint=legacy zroot/usr
-# zfs set mountpoint=legacy zroot/var
+# zfs set mountpoint=/ zroot/ROOT/default
+# zfs set mountpoint=legacy zroot/data/home
 
 ```
 
@@ -142,24 +133,16 @@ and put them in `/etc/fstab`
  `/etc/fstab` 
 ```
 # <file system>        <dir>         <type>    <options>              <dump> <pass>
-zroot/usr              /usr          zfs       defaults,noatime       0      0
-zroot/var              /var          zfs       defaults,noatime,acl   0      0
+zroot/ROOT/default / zfs rw,relatime,xattr,noacl 0 0
+zroot/data/home /home zfs rw,relatime,xattr,noacl 0 0
 ```
 
-Note that the `/var` filesystem requires the [Access Control List enabled (acl)](/index.php/Systemd#systemd-tmpfiles-setup.service_fails_to_start_at_boot "Systemd") that in zfs it is disabled by default. To enable it use `zfs set`:
-
-```
-# zfs set xattr=sa zroot/var
-# zfs set acltype=posixacl zroot/var
-
-```
-
-The property `xattr=sa` is not mandatory, but suggested. Check `man zfs` for all details.
+All legacy datasets must be listed in `/etc/fstab` or they will not be mounted at boot.
 
 Set the bootfs property on the descendant root filesystem so the boot loader knows where to find the operating system.
 
 ```
-# zpool set bootfs=zroot zroot
+# zpool set bootfs=zroot/ROOT/default zroot
 
 ```
 
@@ -172,7 +155,7 @@ Export the pool,
 
 **Warning:** Do not skip this, otherwise you will be required to use `-f` when importing your pools. This unloads the imported pool.
 
-**Note:** This might fail if you added a swap partition above. Need to turn it off with the *swapoff* command.
+**Note:** This might fail if you added a swap partition. You need to turn it off with the *swapoff* command.
 
 Finally, re-import the pool,
 
@@ -221,7 +204,15 @@ Follow the following steps using the [Beginners' guide](/index.php/Beginners%27_
 *   If you chose to create legacy datasets for system directories, keep them in this `fstab`!
 *   Comment out all non-legacy datasets apart from the root dataset, the swap file and the boot/EFI partition. It's convention to replace the swap's uuid with `/dev/zvol/zroot/swap`.
 
-*   You need to add the Arch ZFS repo, sign its key and install zfs-git within the arch-chroot before you can update the ramdisk with ZFS support
+*   You need to add the [Arch ZFS repo](https://wiki.archlinux.org/index.php/Unofficial_user_repositories#demz-repo-archiso) to `/etc/pacman.conf`, sign its key and install zfs-git within the arch-chroot before you can update the ramdisk with ZFS support:
+
+```
+# pacman-key -r 5E1ABF240EE7A126
+# pacman-key --lsign-key 5E1ABF240EE7A126
+# pacman -Sy
+# pacman -S zfs-git
+
+```
 
 *   When creating the initial ramdisk, first edit `/etc/mkinitcpio.conf` and add `zfs` before filesystems. Also, move `keyboard` hook before `zfs` so you can type in console if something goes wrong. You may also remove fsck (if you are not using Ext3 or Ext4). Your `HOOKS` line should look something like this:
 
@@ -267,7 +258,7 @@ if you did not create a separate /boot partition, kernel and initrd paths have t
 
 ```
 
-Example with Arch installed on the main dataset :
+Example with Arch installed on the main dataset (not recommended - this won't allow for boot environments):
 
 ```
    linux /@/boot/vmlinuz-linux zfs=zroot rw
@@ -275,11 +266,11 @@ Example with Arch installed on the main dataset :
 
 ```
 
-Example with Arch installed on a separate dataset zroot/OS/root
+Example with Arch installed on a separate dataset zroot/ROOT/default:
 
 ```
-   linux /OS/root/@/boot/vmlinuz-linux zfs=zroot/OS/root rw 
-   initrd /OS/root/@/boot/initramfs-linux.img
+   linux /ROOT/default/@/boot/vmlinuz-linux zfs=zroot/ROOT/default rw 
+   initrd /ROOT/default/@/boot/initramfs-linux.img
 
 ```
 

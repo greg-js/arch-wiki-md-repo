@@ -136,6 +136,20 @@ If you convert from a container format like `ico`, you will get all images that 
 
 As you can see, the example *ico* file, although its name might suggest a single image of size 48x48, contains no less than 6 different sizes, of which one is even greater than 48x48, namely 128x128.
 
+Alternatively, you can use [icoutils](https://www.archlinux.org/packages/?name=icoutils) to extract png images from ico container:
+
+```
+$ icoutils -x <icon name>.ico
+
+```
+
+For extracting images from .icns container, you can use *icns2png* (provided by [libicns](https://aur.archlinux.org/packages/libicns/)):
+
+```
+$ icns2png -x <icon name>.icns
+
+```
+
 ### Obtaining icons
 
 Although packages that already ship with a .desktop-file most certainly contain an icon or a set of icons, there is sometimes the case when a developer has not created a .desktop-file, but may ship icons, nonetheless. So a good start is to look for icons in the source package. You can i.e. first filter for the extension with **find** and then use **grep** to filter further for certain buzzwords like the package name, "icon", "logo", etc, if there are quite a lot of images in the source package.

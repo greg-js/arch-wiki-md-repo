@@ -127,6 +127,8 @@ You need to install xdotool first.
 
 There is also a kernel patch which enables the proper brightness keys. This patch is tested with 4.4 kernels: [https://bugzilla.kernel.org/attachment.cgi?id=195071](https://bugzilla.kernel.org/attachment.cgi?id=195071)
 
+04/2016: If someone else can try this patch given by Intel DRM Team : [https://patchwork.freedesktop.org/series/4783/](https://patchwork.freedesktop.org/series/4783/). Please respond to this thread here when done: [http://thread.gmane.org/gmane.comp.freedesktop.xorg.drivers.intel/84376/focus=84538](http://thread.gmane.org/gmane.comp.freedesktop.xorg.drivers.intel/84376/focus=84538)
+
 ## See also
 
 *   [ASUS Zenbook UX303](/index.php/ASUS_Zenbook_UX303 "ASUS Zenbook UX303")

@@ -248,42 +248,42 @@ If you are already using iptables you can easily protect SSH against brute force
 Before the following rules can be used we create a new rule chain to log and drop to many connection attempts:
 
 ```
-$IPT -N LOG_AND_DROP
+# iptables -N LOG_AND_DROP
 
 ```
 
 The first rule will be applied to packets that signal the start of new connections headed for TCP port 42660
 
 ```
-iptables -A INPUT -p tcp -m tcp --dport 42660 -m state --state NEW -m recent --set --name DEFAULT --rsource
+# iptables -A INPUT -p tcp -m tcp --dport 42660 -m state --state NEW -m recent --set --name DEFAULT --rsource
 
 ```
 
 The next rule tells iptables to look for packets that match the previous rule's parameters, and which also come from hosts already added to the watch list.
 
 ```
-iptables -A INPUT -p tcp -m tcp --dport 42660 -m state --state NEW -m recent --update --seconds 90 --hitcount 4 --name DEFAULT --rsource -j LOG_AND_DROP
+# iptables -A INPUT -p tcp -m tcp --dport 42660 -m state --state NEW -m recent --update --seconds 90 --hitcount 4 --name DEFAULT --rsource -j LOG_AND_DROP
 
 ```
 
 Now iptables decides what to do with TCP traffic to port 42660 which does not match the previous rule.
 
 ```
-iptables -A INPUT -p tcp -m tcp --dport 42660 -j ACCEPT
+# iptables -A INPUT -p tcp -m tcp --dport 42660 -j ACCEPT
 
 ```
 
 We are appending this rule to the LOG_AND_DROP table, and we use the -j (jump) operator to pass the packet's information to the logging facility
 
 ```
-iptables -A LOG_AND_DROP -j LOG --log-prefix "iptables deny: " --log-level 7
+# iptables -A LOG_AND_DROP -j LOG --log-prefix "iptables deny: " --log-level 7
 
 ```
 
 After they are logged by the first rule, all packets are then dropped
 
 ```
-iptables -A LOG_AND_DROP -j DROP
+# iptables -A LOG_AND_DROP -j DROP
 
 ```
 

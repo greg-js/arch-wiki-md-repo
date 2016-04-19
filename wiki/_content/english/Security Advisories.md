@@ -36,6 +36,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### April 2016
 
+*   [17 April 2016] [ASA-201604-10](https://lists.archlinux.org/pipermail/arch-security/2016-April/000602.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
+*   [17 April 2016] [ASA-201604-9](https://lists.archlinux.org/pipermail/arch-security/2016-April/000601.html) [libtasn1](https://www.archlinux.org/packages/?name=libtasn1) denial of service
 *   [14 April 2016] [ASA-201604-8](https://lists.archlinux.org/pipermail/arch-security/2016-April/000600.html) [lhasa](https://www.archlinux.org/packages/?name=lhasa) arbitrary code execution
 *   [10 April 2016] [ASA-201604-7](https://lists.archlinux.org/pipermail/arch-security/2016-April/000599.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) arbitrary code execution
 *   [06 April 2016] [ASA-201604-6](https://lists.archlinux.org/pipermail/arch-security/2016-April/000598.html) [mercurial](https://www.archlinux.org/packages/?name=mercurial) arbitrary code execution

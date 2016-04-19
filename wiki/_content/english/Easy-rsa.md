@@ -25,9 +25,9 @@ In this article the needed certificates are created by root in root's home direc
 
 ### Installing the easy-rsa scripts
 
-Install the scripts by doing the following:
+First, install [easy-rsa](https://www.archlinux.org/packages/?name=easy-rsa) package and copy files as shown:
 
- `# pacman -S easy-rsa`  `# cp -r /usr/share/easy-rsa /root` 
+ `# cp -r /usr/share/easy-rsa /root` 
 
 ### Creating certificates on the server
 
@@ -202,7 +202,7 @@ Data Base Updated
 
 ```
 
-The build-dh script generates the [Diffie-Hellman parameters](https://web.archive.org/web/20130701090246/https://www.rsa.com/rsalabs/node.asp?id=2248) .pem file needed by the server. This command will take some time, possibly around a minute or two.
+The build-dh script generates the [Diffie-Hellman parameters](https://web.archive.org/web/20130701090246/https://www.rsa.com/rsalabs/node.asp?id=2248) .pem file needed by the server. This command will take some time, possibly around from 1 to 5 minutes.
 
 **Note:** It would be better to generate a new one for each server, but you can use the same one if you want to.
  `# ./build-dh` 
@@ -271,7 +271,12 @@ Data Base Updated
 
 This generates a client certificate (`bugs.crt`) and a client private key (`bugs.key`) which need to be transferred to the client through a secure channel.
 
-Generate a secret [Hash-based Message Authentication Code (HMAC)](https://en.wikipedia.org/wiki/HMAC "wikipedia:HMAC") by running: `# openvpn --genkey --secret /root/easy-rsa/keys/ta.key`
+Generate a secret [Hash-based Message Authentication Code (HMAC)](https://en.wikipedia.org/wiki/HMAC "wikipedia:HMAC") file by running:
+
+```
+# openvpn --genkey --secret /root/easy-rsa/keys/ta.key
+
+```
 
 This will be used to add an additional HMAC signature to all SSL/TLS handshake packets. In addition any UDP packet not having the correct HMAC signature will be immediately dropped, protecting against:
 

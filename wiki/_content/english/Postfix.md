@@ -31,6 +31,7 @@ The goal of this article is to setup Postfix and explain what the basic configur
     *   [5.4 Using Razor](#Using_Razor)
     *   [5.5 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
     *   [5.6 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
+    *   [5.7 Rule-based mail processing](#Rule-based_mail_processing)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -589,6 +590,23 @@ cond_copy '/usr/lib/libdb.so*' lib
 ```
 
 And don't forget to reload postfix.
+
+### Rule-based mail processing
+
+With policy services one can easily finetune postfix' behaviour of mail delivery. [postfwd](https://www.archlinux.org/packages/?name=postfwd) and [policyd](https://aur.archlinux.org/packages/policyd/) provide services to do so. This allows you to e.g. implement time-aware grey- and blacklisting of senders and receivers as well as [SPF](/index.php/SPF "SPF") policy checking.
+
+Policy services are standalone services and connected to Postfix like this:
+
+ `/etc/postfix/main.cf` 
+```
+smtpd_recipient_restrictions =
+  ...
+  check_policy_service unix:/run/policyd.sock
+  check_policy_service inet:127.0.0.1:10040
+
+```
+
+Placing policy services at the end of the queue reduces load, as only legitimate mails are processed.
 
 ## See also
 

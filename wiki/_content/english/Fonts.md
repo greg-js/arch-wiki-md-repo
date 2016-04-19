@@ -361,10 +361,11 @@ To properly render fonts for multilingual websites like Wikipedia or this Arch L
 
 #### Persian
 
-*   [ttf-irfonts](https://aur.archlinux.org/packages/ttf-irfonts/) - Official I.R. Iran Supreme Council of Information and Communication Technology (SCICT) standard persian fonts series
-*   [ttf-borna](https://aur.archlinux.org/packages/ttf-borna/) - Borna Rayaneh Persian B font series
-*   [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) - X Series 2 fonts are built on freely available fonts and extended to support Persian, Arabic, Urdu, Pashto, Dari, Uzbek, Kurdish, Uighur, old Turkish (Ottoman) and modern Turkish (Roman).
-*   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - An Unicode calligraphic font published by the High Council of Informatics of Iran
+*   [ttf-irfonts](https://aur.archlinux.org/packages/ttf-irfonts/) - Iran Supreme Council of Information and Communication Technology (SCICT) standard Persian fonts series.
+*   [ttf-borna](https://aur.archlinux.org/packages/ttf-borna/) - Borna Rayaneh Persian B font series.
+*   [ttf-sina](https://aur.archlinux.org/packages/ttf-sina/) - Sina Pardazesh Persian font series.
+*   [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) - Free fonts with support for Persian, Arabic, Urdu, Pashto, Dari, Uzbek, Kurdish, Uighur, old Turkish (Ottoman) and modern Turkish (Roman).
+*   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - A free Unicode calligraphic Persian font created by Iran Supreme Council of Information and Communication Technology (SCICT).
 
 #### Burmese
 

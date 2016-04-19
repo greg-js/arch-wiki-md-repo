@@ -15,6 +15,7 @@ This article is for users that have a mouse with more than 7 mouse buttons and w
     *   [4.4 Firefox 3](#Firefox_3)
         *   [4.4.1 Thumb Buttons - forward and back](#Thumb_Buttons_-_forward_and_back)
     *   [4.5 xmodmap tweaking](#xmodmap_tweaking)
+    *   [4.6 xinput tweaking](#xinput_tweaking)
 *   [5 Alternate methods](#Alternate_methods)
     *   [5.1 IMPS/2](#IMPS.2F2)
     *   [5.2 ExplorerPS/2](#ExplorerPS.2F2)
@@ -330,6 +331,15 @@ If you use GDM/XDM/KDM instead of .xinitrc, then create the file `~/.Xmodmap` an
 You may have to play with these numbers a bit to get your desired behavior. Some mice use buttons 6 and 7 for the scroll wheel, in which case those buttons would have to be the last numbers. Keep playing with it until it works!
 
 You can also check to see which buttons are being read with a program called 'xev', which is part of XOrg. When xev is run, it will show a box on your desktop that you can put the cursor into and click buttons to find out what buttons have been mapped.
+
+### xinput tweaking
+
+For debugging purposes `xinput` can be used as it is able to change the button map on the fly in userspace. The following line corrects the button mapping (there have been reported cases with Logitech M505/B605 mice and possibly others) so the received events are mapped correctly:
+
+```
+ $ xinput set-button-map "$(xinput | awk -F'[=]' '/Logitech M505\/B605/ {print $2}' | awk '{print $1}')" 1 2 3 4 5 8 9
+
+```
 
 ## Alternate methods
 

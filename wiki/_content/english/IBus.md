@@ -66,7 +66,13 @@ export QT_IM_MODULE=ibus
 **Note:**
 
 *   Although IBus uses a daemon, it is not the sort of daemon managed by *systemd*: it runs as an ordinary user and will be started for you when you login.
-*   If, however, IBus is **not** autostarted upon login, then move the “export …” lines above to `$HOME/.xprofile` instead, and append this line to the same file: `ibus-daemon -drx`, and relogin your desktop. You can also try adding `ibus-daemon -drx` after the `export ...` lines in `$HOME/.bashrc`.
+*   If, however, IBus is **not** autostarted upon login, then move the “export …” lines above to either
+    *   `$HOME/.xprofile` instead and append this line to the same file: `ibus-daemon -drx`, **or**
+    *   `$HOME/.xinitrc` and append this line to the same file: `ibus-daemon -drx`.
+
+	Which works best, depends on your [Window manager](/index.php/Window_manager "Window manager"), see also [xprofile](/index.php/Xprofile "Xprofile") and [xinitrc](/index.php/Xinitrc "Xinitrc").
+
+*   You can also try adding `ibus-daemon -drx` after the `export ...` lines in `$HOME/.bashrc`.
 
 You will then see a configuration screen; you can access this screen whenever IBus is running by right-clicking the icon in the system tray and choosing *Preferences*. See [Configuration](#Configuration).
 
