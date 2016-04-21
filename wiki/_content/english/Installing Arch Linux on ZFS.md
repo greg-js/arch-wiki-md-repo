@@ -62,7 +62,7 @@ An additional partition may be required depending on your hardware and chosen bo
 
 **Tip:** Bootloaders with support for ZFS are described in [#Install and configure the bootloader](#Install_and_configure_the_bootloader).
 
-**Warning:** Several GRUB bugs ([bug #42861](https://savannah.gnu.org/bugs/?42861), [zfsonlinux/grub/issues/5](https://github.com/zfsonlinux/grub/issues/5)) complicate installing it on ZFS partitions, see [Installing_Arch_Linux_on_ZFS#Install_and_configure_the_bootloader](/index.php/Installing_Arch_Linux_on_ZFS#Install_and_configure_the_bootloader "Installing Arch Linux on ZFS") for a workaround
+**Warning:** Several GRUB bugs ([bug #42861](https://savannah.gnu.org/bugs/?42861), [zfsonlinux/grub/issues/5](https://github.com/zfsonlinux/grub/issues/5)) complicate installing it on ZFS partitions, see [#Install and configure the bootloader](#Install_and_configure_the_bootloader) for a workaround
 
 ## Format the destination disk
 
@@ -95,7 +95,7 @@ Instead of using conventional disk partitions, ZFS has the concept of datasets t
 
 One of the most useful features of ZFS is boot environments. Boot environments allow you to create a bootable snapshot of your system that you can revert to at any time instantly by simply rebooting and booting from that boot environment. This can make doing system updates much safer and is also incredibly useful for developing and testing software. In order to be able to use [beadm](https://github.com/b333z/beadm) to manage boot environments your datasets must be configured properly. Key to this are that you split your data directories (such as `/home`) into datasets that are distinct from your system datasets and that you do not place data in the root of the pool as this cannot be moved afterwards.
 
-You should always create a dataset for at least your root filesystem and in nearly all cases you will also want `/home` to be in a separate dataset. You may decide you want your logs to persist over boot environments. If you're a running any software that stores data outside of `/home` (such as is the case for database servers) you should structure your datasets so that the data directories of the software you want to run are separated out from the root dataset.
+You should always create a dataset for at least your root filesystem and in nearly all cases you will also want `/home` to be in a separate dataset. You may decide you want your logs to persist over boot environments. If you are a running any software that stores data outside of `/home` (such as is the case for database servers) you should structure your datasets so that the data directories of the software you want to run are separated out from the root dataset.
 
 With these example commands, we will create a basic boot enviroment compatible configuration comprisng of just root and `/home` datasets:
 
@@ -202,17 +202,9 @@ Follow the following steps using the [Beginners' guide](/index.php/Beginners%27_
 **Note:**
 
 *   If you chose to create legacy datasets for system directories, keep them in this `fstab`!
-*   Comment out all non-legacy datasets apart from the root dataset, the swap file and the boot/EFI partition. It's convention to replace the swap's uuid with `/dev/zvol/zroot/swap`.
+*   Comment out all non-legacy datasets apart from the root dataset, the swap file and the boot/EFI partition. It is a convention to replace the swap's uuid with `/dev/zvol/zroot/swap`.
 
-*   You need to add the [Arch ZFS repo](https://wiki.archlinux.org/index.php/Unofficial_user_repositories#demz-repo-archiso) to `/etc/pacman.conf`, sign its key and install zfs-git within the arch-chroot before you can update the ramdisk with ZFS support:
-
-```
-# pacman-key -r 5E1ABF240EE7A126
-# pacman-key --lsign-key 5E1ABF240EE7A126
-# pacman -Sy
-# pacman -S zfs-git
-
-```
+*   You need to add the [Arch ZFS](/index.php/Unofficial_user_repositories#demz-repo-archiso "Unofficial user repositories") repository to `/etc/pacman.conf`, sign its key and [install](/index.php/Install "Install") **zfs-git** within the arch-chroot before you can update the ramdisk with ZFS support.
 
 *   When creating the initial ramdisk, first edit `/etc/mkinitcpio.conf` and add `zfs` before filesystems. Also, move `keyboard` hook before `zfs` so you can type in console if something goes wrong. You may also remove fsck (if you are not using Ext3 or Ext4). Your `HOOKS` line should look something like this:
 
@@ -225,12 +217,7 @@ HOOKS="base udev autodetect modconf block keyboard zfs filesystems"
 
 *   If you are using a separate dataset for `/usr` and have followed the instructions below, you must make sure you have the `usr` hook enabled after `zfs`, or your system will not boot.
 
-*   Regenerate the initramfs with the command:
-
-```
-# mkinitcpio -p linux
-
-```
+*   [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ## Install and configure the bootloader
 
@@ -258,7 +245,7 @@ if you did not create a separate /boot partition, kernel and initrd paths have t
 
 ```
 
-Example with Arch installed on the main dataset (not recommended - this won't allow for boot environments):
+Example with Arch installed on the main dataset (not recommended - this will not allow for boot environments):
 
 ```
    linux /@/boot/vmlinuz-linux zfs=zroot rw

@@ -14,7 +14,9 @@ This document describes how to install Arch Linux to the SSD via a SD card.
 
 ### Hardware
 
-CPU: AMD Embedded G series GX-412TC, 1 GHz quad Jaguar core with 64 bit RAM: 4GB DRAM with ECC
+CPU: AMD Embedded G series GX-412TC, 1 GHz quad Jaguar core with 64 bit
+
+RAM: 4GB DRAM with ECC
 
 **Note:** Remove the screws from the serial port first!
 

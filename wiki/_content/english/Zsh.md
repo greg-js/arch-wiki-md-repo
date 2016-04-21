@@ -28,16 +28,19 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
         *   [3.7.3 File manager key binds](#File_manager_key_binds)
     *   [3.8 History search](#History_search)
     *   [3.9 Prompts](#Prompts)
-    *   [3.10 Customizing the prompt](#Customizing_the_prompt)
-        *   [3.10.1 Colors](#Colors)
-        *   [3.10.2 Example](#Example)
-    *   [3.11 Dirstack](#Dirstack)
-    *   [3.12 Help command](#Help_command)
-    *   [3.13 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
-    *   [3.14 Sample .zshrc files](#Sample_.zshrc_files)
-    *   [3.15 Configuration Frameworks](#Configuration_Frameworks)
-    *   [3.16 Autostarting applications](#Autostarting_applications)
-    *   [3.17 Persistent rehash](#Persistent_rehash)
+        *   [3.9.1 Prompt themes](#Prompt_themes)
+        *   [3.9.2 Customized prompt](#Customized_prompt)
+            *   [3.9.2.1 Colors](#Colors)
+            *   [3.9.2.2 Example](#Example)
+    *   [3.10 Remembering recent directories](#Remembering_recent_directories)
+        *   [3.10.1 Dirstack](#Dirstack)
+        *   [3.10.2 cdr](#cdr)
+    *   [3.11 Help command](#Help_command)
+    *   [3.12 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
+    *   [3.13 Sample .zshrc files](#Sample_.zshrc_files)
+    *   [3.14 Configuration Frameworks](#Configuration_Frameworks)
+    *   [3.15 Autostarting applications](#Autostarting_applications)
+    *   [3.16 Persistent rehash](#Persistent_rehash)
 *   [4 Uninstallation](#Uninstallation)
 *   [5 See also](#See_also)
 
@@ -231,7 +234,7 @@ $ sort -t ";" -k 2 -u ~/.zsh_history | sort -o ~/.zsh_history
 
 ### Key bindings
 
-Zsh does not use readline, instead it uses its own and more powerful zle. It does not read `/etc/inputrc` or `~/.inputrc`. Zle has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. By default, it tries to guess whether emacs or vi keys from the `$EDITOR` environment variable are desired. If it is empty, it will default to emacs. Change this with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
+Zsh does not use readline, instead it uses its own and more powerful zle. It does not read `/etc/inputrc` or `~/.inputrc`. Zle has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` environment variables contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
 
 See also [zshwiki: bindkeys](http://zshwiki.org/home/zle/bindkeys).
 
@@ -292,16 +295,22 @@ Add these lines to .zshrc
 
  `~/.zshrc` 
 ```
-[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
-[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+[[ -n "${key[Up]}"   ]] && bindkey "${key[Up]}"   up-line-or-beginning-search
+[[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" down-line-or-beginning-search
 
 ```
 
-Doing this, only past commands beginning with the current input would have been shown.
+Doing this, only past commands matching the current line up to the current cursor position will be shown.
 
 ### Prompts
 
-There is a quick and easy way to set up a colored prompt in Zsh. Make sure that prompt is set to autoload in `.zshrc`. This can be done by adding these lines to:
+#### Prompt themes
+
+There is a quick and easy way to set up a colored prompt in Zsh. Make sure that prompt theme system is set to autoload in `.zshrc`. This can be done by adding these lines to:
 
  `~/.zshrc` 
 ```
@@ -310,14 +319,14 @@ promptinit
 
 ```
 
-Available prompts are listed by running the command:
+Available prompt themes are listed by running the command:
 
 ```
 $ prompt -l
 
 ```
 
-For example, to use the prompt `walters`, enter:
+For example, to use the `walters` theme, enter:
 
 ```
 $ prompt walters
@@ -331,13 +340,13 @@ $ prompt -p
 
 ```
 
-### Customizing the prompt
+#### Customized prompt
 
 For users who are dissatisfied with the prompts mentioned above (or want to expand their usefulness), Zsh offers the possibility to build a custom prompt. Zsh supports a left- and right-sided prompt additional to the single, left-sided prompt that is common to all shells. Customize it by using `PROMPT=` with the following variables:
 
 See [Prompt Expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html) for a list of prompt variables and conditional substrings.
 
-#### Colors
+##### Colors
 
 Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). Add `autoload -Uz colors && colors` before `PROMPT=` in `.zshrc` to use them. Usually you will want to put these inside `%{ [...] %}` so the cursor does not move.
 
@@ -357,7 +366,7 @@ Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash
 
 **Note:** Bold text does not necessarily use the same colors as normal text. For example, `$fg['yellow']` looks brown or a very dark yellow, while `$fg_bold['yellow']` looks like bright or regular yellow.
 
-#### Example
+##### Example
 
 This is an example of a two-sided prompt:
 
@@ -374,7 +383,9 @@ username@host ~ %                                                         [0]
 
 ```
 
-### Dirstack
+### Remembering recent directories
+
+#### Dirstack
 
 Zsh can be configured to remember the DIRSTACKSIZE last visited folders. This can then be used to *cd* them very quickly. You need to add some lines to your configuration file:
 
@@ -404,13 +415,42 @@ setopt PUSHD_MINUS
 Now use
 
 ```
-dirs -v
+$ dirs -v
 
 ```
 
 to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autocompletion after the dash. This proves very handy if using the autocompletion menu.
 
 **Note:** This will not work if you have more than one *zsh* session open, and attempt to `cd`, due to a conflict in both sessions writing to the same file.
+
+#### cdr
+
+cdr allows you to change the working directory to a previous working directory from a list maintained automatically. It stores all entries in files that are maintained across sessions and (by default) between terminal emulators in the current session. To use cdr add the following lines to shell configuration:
+
+ `.zshrc` 
+```
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+```
+
+Recent directories list by default is stored in `${ZDOTDIR:-$HOME}/.chpwd-recent-dirs`, to change it use `zstyle`:
+
+```
+zstyle ':chpwd:*' recent-dirs-file "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/chpwd-recent-dirs"
+
+```
+
+Every time you change directly interactively, no matter which command you use, the directory to which you change will be remembered in most-recent-first order.
+
+To print the list of recent directories use:
+
+```
+$ cdr -l
+
+```
+
+Use `cdr <NUM>` to go back to a visited folder. Completion for the argument to cdr is available if compinit has been run; menu selection is recommended.
 
 ### Help command
 
@@ -439,6 +479,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 *   A package in offical repository named [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) comes from [http://grml.org/zsh](http://grml.org/zsh) and provides a zshrc file that includes many tweaks for Zshell. This is the default configuration for the [monthly ISO releases](https://www.archlinux.org/download/).
 *   Basic setup, with dynamic prompt and window title/hardinfo => [http://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc](http://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc);
 *   [https://github.com/slashbeast/things/blob/master/configs/DOTzshrc](https://github.com/slashbeast/things/blob/master/configs/DOTzshrc) - zshrc with multiple features, be sure to check out comments into it. Notable features: confirm function to ensure that user want to run poweroff, reboot or hibernate, support for GIT in prompt (done without vcsinfo), tab completion with menu, printing current executed command into window's title bar and more.
+
+See [Dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for more.
 
 ### Configuration Frameworks
 

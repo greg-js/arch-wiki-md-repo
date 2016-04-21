@@ -64,7 +64,7 @@
 
 ### 安卓 SDK 核心组件
 
-**注意:** 如果运行 64 位操作系统，你需要启用[pacman.conf](/index.php/Pacman#Repositories "Pacman")中的[multilib](/index.php/Multilib "Multilib")软件源。否则，安装时出现的"error: target not found: lib32-zlib"报错信息会烦死你。
+**注意:** 如果运行 64 位操作系统，你需要启用[pacman.conf](/index.php/Pacman#Repositories_and_mirrors "Pacman")中的[multilib](/index.php/Multilib "Multilib")软件源。否则，安装时出现的"error: target not found: lib32-zlib"报错信息会烦死你。
 
 在开发安卓程序之前，需要安装安卓 SDK。它由下列三组软件包组成，均可从 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 安装：
 

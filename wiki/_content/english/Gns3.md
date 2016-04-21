@@ -1,4 +1,6 @@
-[GNS3](http://www.gns3.net/) is a **G**raphical **N**etwork **S**imulator. It allows you to simulate a network on your computer. From the webpage:
+[GNS3](https://www.gns3.com/) is a **G**raphical **N**etwork **S**imulator. It allows you to simulate a network on your computer.
+
+From the webpage:
 
 	*GNS3 is an open source software that simulate complex networks while being as close as possible to the way real networks perform. All of this without having dedicated network hardware such as routers and switches.*
 
@@ -18,7 +20,7 @@
 
 ## Installation
 
-You can get [gns3](https://aur.archlinux.org/packages/gns3/) from the [AUR](/index.php/AUR "AUR"), or install in manually by getting the package from the [GNS3 website](http://www.gns3.net/download/)
+The [gns3-gui](https://aur.archlinux.org/packages/gns3-gui/) and [gns3-server](https://aur.archlinux.org/packages/gns3-server/) packages are needed to run the GNS3 GUI. Both of which can be obtained from [AUR](/index.php/AUR "AUR").
 
 ## Adding virtual machines
 

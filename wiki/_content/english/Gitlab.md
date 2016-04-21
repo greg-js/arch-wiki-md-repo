@@ -108,7 +108,7 @@ http_settings:
 
 Update the `/usr/share/webapps/gitlab/unicorn.rb` configuration if the port and/or hostname is different from the default:
 
- `/etc/webapps/gitlab/config/unicorn.rb`  `listen "127.0.0.1:8080", :tcp_nopush => true # <<-- right here` 
+ `/etc/webapps/gitlab/unicorn.rb`  `listen "127.0.0.1:8080", :tcp_nopush => true # <<-- right here` 
 
 #### GitLab
 

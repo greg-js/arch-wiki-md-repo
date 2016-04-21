@@ -385,11 +385,11 @@ $ broadwayd $display_number
 Port Used on default
 
 ```
-port = 8080 + ($display_number - 1)
+port = 8080 + $display_number
 
 ```
 
-Point your browser to [http://localhost:port](http://localhost:port)
+Point your browser to [http://127.0.0.1:port](http://127.0.0.1:port)
 
 To Start apps
 

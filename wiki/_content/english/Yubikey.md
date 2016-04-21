@@ -62,7 +62,7 @@ So you can either:
 **Note:** To authenticate the Yubico validation server, you can:
 
 *   **with HMAC**: use [https://upgrade.yubico.com/getapikey/](https://upgrade.yubico.com/getapikey/) to get an HMAC key and ID
-*   **with HTTPS**: the validation server's certificate is signed by GoDaddy, that is cool because it is thus trusted by default in Arch installs (at least if you have package ca-certificates)
+*   **with HTTPS**: the validation server's certificate is signed by GoDaddy, and is thus trusted by default in Arch installs (at least if you have package ca-certificates)
 
 ## Two-factor authentication with SSH
 

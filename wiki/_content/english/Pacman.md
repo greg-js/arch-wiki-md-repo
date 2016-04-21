@@ -27,9 +27,9 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
         *   [2.1.4 Skip package group from being upgraded](#Skip_package_group_from_being_upgraded)
         *   [2.1.5 Skip files from being installed to system](#Skip_files_from_being_installed_to_system)
         *   [2.1.6 Maintain several configuration files](#Maintain_several_configuration_files)
-    *   [2.2 Repositories](#Repositories)
-    *   [2.3 Package security](#Package_security)
-    *   [2.4 Hooks](#Hooks)
+        *   [2.1.7 Hooks](#Hooks)
+    *   [2.2 Repositories and mirrors](#Repositories_and_mirrors)
+        *   [2.2.1 Package security](#Package_security)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 "Failed to commit transaction (conflicting files)" error](#.22Failed_to_commit_transaction_.28conflicting_files.29.22_error)
     *   [3.2 "Failed to commit transaction (invalid or corrupted package)" error](#.22Failed_to_commit_transaction_.28invalid_or_corrupted_package.29.22_error)
@@ -437,7 +437,7 @@ Use `--asexplicit` to do the opposite operation.
 
 ## Configuration
 
-*pacman'*s settings are located in `/etc/pacman.conf`. This is the place where the user configures the program to work in the desired manner. In-depth information about the configuration file can be found in [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html).
+*pacman'*s settings are located in `/etc/pacman.conf`: this is the place where the user configures the program to work in the desired manner. In-depth information about the configuration file can be found in [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html).
 
 ### General options
 
@@ -516,21 +516,23 @@ Include = /path/to/common/settings
 
 where `/path/to/common/settings` file contains the same options for both configurations.
 
-### Repositories
-
-This section defines which [Official repositories](/index.php/Official_repositories "Official repositories") and possible [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") to use, as referred to in `/etc/pacman.conf`. They can be stated here directly or included from another file (such as `/etc/pacman.d/mirrorlist`), thus making it necessary to maintain only one list. See [Mirrors](/index.php/Mirrors "Mirrors") article for mirror configuration.
-
-The order of repositories in the configuration files matters; repositories listed first will take precedence over those listed later in the file when packages in two repositories have identical names, regardless of version number.
-
-### Package security
-
-*pacman* 4 supports package signatures, which add an extra layer of security to the packages. The default configuration, `SigLevel = Required DatabaseOptional`, enables signature verification for all the packages on a global level: this can be overridden by per-repository `SigLevel` lines as shown above. For more details on package signing and signature verification, take a look at [pacman-key](/index.php/Pacman-key "Pacman-key").
-
-### Hooks
+#### Hooks
 
 *pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`, which defaults to `/etc/pacman.d/hooks`.
 
 For more information on the alpm hooks, see the alpm-hooks(5) man page.
+
+### Repositories and mirrors
+
+Besides the special [[options]](#General_options) section, each other `[section]` in `pacman.conf` defines a package repository to be used. A *repository* is a *logical* collection of packages, which are *physically* stored on one or more servers: for this reason each server is called a *mirror* for the repository.
+
+Repositories are distinguished between [official](/index.php/Official_repositories "Official repositories") and [unofficial](/index.php/Unofficial_user_repositories "Unofficial user repositories"). The order of repositories in the configuration file matters; repositories listed first will take precedence over those listed later in the file when packages in two repositories have identical names, regardless of version number. In order to use a repository after adding it, you will need to [upgrade](#Upgrading_packages) the whole system first.
+
+Each repository section allows defining the list of its mirrors directly or in a dedicated external file through the `Include` directive: for example, the mirrors for the official repositories are included from `/etc/pacman.d/mirrorlist`. See the [Mirrors](/index.php/Mirrors "Mirrors") article for mirror configuration.
+
+#### Package security
+
+*pacman* 4 supports package signatures, which add an extra layer of security to the packages. The default configuration, `SigLevel = Required DatabaseOptional`, enables signature verification for all the packages on a global level: this can be overridden by per-repository `SigLevel` lines. For more details on package signing and signature verification, take a look at [pacman-key](/index.php/Pacman-key "Pacman-key").
 
 ## Troubleshooting
 

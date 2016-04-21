@@ -58,10 +58,10 @@ Re-login for the changes to take effect.
 
 Even with anti-aliasing enforced through Java options, the resulting anti-aliasing may be inferior to native applications. This can be remedied with a patch to OpenJDK, available in the [AUR](/index.php/AUR "AUR"):
 
-*   Patched **OpenJDK7** is available as [jre7-openjdk-infinality](https://aur.archlinux.org/packages/jre7-openjdk-infinality/)
+*   Patched **OpenJDK7** is available as [jre7-openjdk-infinality](https://aur.archlinux.org/packages/jre7-openjdk-infinality/) (<tt>--enable-infinality=yes</tt>)
 *   Patched **OpenJDK8** is available as [jre8-openjdk-infinality](https://aur.archlinux.org/packages/jre8-openjdk-infinality/) (also available from [Infinality unofficial repository](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories"))
 
-The patched version combines well with the [Infinality](/index.php/Infinality "Infinality") patches to fontconfig and freetype.
+The patched version obtains the per-family FreeType rendering/loading flags from fontconfig instead of using OpenJDK heuristics. Although this is an [Infinality](/index.php/Infinality "Infinality") package, the patches themselves don't actually depend on [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) since only vanilla fontconfig APIs are used.
 
 ## Font selection
 

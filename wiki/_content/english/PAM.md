@@ -46,7 +46,7 @@ The different configuration files of the base installation link together, are st
 
  `/etc/pam.d/`  `login -> system-local-login -> system-login -> system-auth` 
 
-For a different application, a different path may apply. For example, [sshd](https://www.archlinux.org/packages/?name=sshd) installs its `sshd` PAM policy:
+For a different application, a different path may apply. For example, [openssh](https://www.archlinux.org/packages/?name=openssh) installs its `sshd` PAM policy:
 
  `/etc/pam.d/`  `sshd -> system-remote-login -> system-login -> system-auth` 
 

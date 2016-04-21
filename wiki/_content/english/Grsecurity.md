@@ -26,11 +26,11 @@
 
 ## Installation
 
-The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package in the [official repositories](/index.php/Official_repositories "Official repositories") provides the grsecurity hardened kernel. In most cases, grsecurity is a drop-in replacement for the vanilla kernel and will not cause any issues. By default, many of the user-facing features are disabled, but there is significant hardening of the kernel itself against exploitation.
+The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package provides the grsecurity hardened kernel. In most cases, this package is a drop-in replacement for the vanilla kernel and will not cause any issues. By default, many of the user-facing features are disabled, but there is significant hardening of the kernel itself against exploitation.
 
-**Note:** The linux-grsec-lts package used to provide the 3.14 stable branch but it is [no longer available](https://grsecurity.net/announce.php).
+**Note:** [Upstream](https://grsecurity.net/announce.php) no longer provides a long-term support version of *grsecurity*, which it calls the "stable" series. The package [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) is known at upstream as the "test" series.
 
-After installing the [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package, you need to edit your [bootloader](/index.php/Bootloader "Bootloader") settings to load `vmlinuz-linux-grsec` and `initramfs-linux-grsec.img`.
+After [installing](/index.php/Install "Install") the [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package, edit your [bootloader](/index.php/Bootloader "Bootloader") settings to load `vmlinuz-linux-grsec` and `initramfs-linux-grsec.img`.
 
 Installing the optional [paxd](https://www.archlinux.org/packages/?name=paxd) package causes the PaX exploit mitigations to be enabled, protecting userspace processes. It automatically applies the necessary exceptions for packages in the repositories. See [PaX#PaX exceptions](/index.php/PaX#PaX_exceptions "PaX") for more details.
 

@@ -17,12 +17,10 @@
 *   [2 Profile maintenance](#Profile_maintenance)
 *   [3 Security](#Security)
     *   [3.1 WebRTC](#WebRTC)
-    *   [3.2 Disable insecure RC4 cipher](#Disable_insecure_RC4_cipher)
-    *   [3.3 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
-    *   [3.4 SSL certificates](#SSL_certificates)
-        *   [3.4.1 Adding CAcert certificates for self-signed certificates](#Adding_CAcert_certificates_for_self-signed_certificates)
-        *   [3.4.2 Example 1: Using a shell script to isolate the certificate from TomatoUSB](#Example_1:_Using_a_shell_script_to_isolate_the_certificate_from_TomatoUSB)
-        *   [3.4.3 Example 2: Using Firefox to isolate the certificate from TomatoUSB](#Example_2:_Using_Firefox_to_isolate_the_certificate_from_TomatoUSB)
+    *   [3.2 SSL certificates](#SSL_certificates)
+        *   [3.2.1 Adding CAcert certificates for self-signed certificates](#Adding_CAcert_certificates_for_self-signed_certificates)
+        *   [3.2.2 Example 1: Using a shell script to isolate the certificate from TomatoUSB](#Example_1:_Using_a_shell_script_to_isolate_the_certificate_from_TomatoUSB)
+        *   [3.2.3 Example 2: Using Firefox to isolate the certificate from TomatoUSB](#Example_2:_Using_Firefox_to_isolate_the_certificate_from_TomatoUSB)
 *   [4 Making flags persistent](#Making_flags_persistent)
 *   [5 See also](#See_also)
 
@@ -183,36 +181,6 @@ Chromium uses [SQLite](/index.php/SQLite "SQLite") databases to manage history a
 WebRTC is a communication protocol that relies on JavaScript that can leak one's actual IP address from behind a VPN. While software like NoScript prevents this, it's probably a good idea to block this protocol directly as well, just to be safe. An [option to disable it](https://code.google.com/p/chromium/issues/detail?id=457492) is available via an [extension](https://chrome.google.com/webstore/detail/webrtc-network-limiter/npeicpdbkakmehahjeeohfdhnlpdklia).
 
 One can test this via [this page](https://www.privacytools.io/webrtc.html).
-
-### Disable insecure RC4 cipher
-
-The RC4 cipher has been [declared as insecure](http://www.cisco.com/web/about/security/intelligence/nextgen_crypto.html), but the cipher is still in Chromium at present. To disable it:
-
-```
-$ chromium --cipher-suite-blacklist=0x0001,0x0002,0x0004,0x0005,0x0017,0x0018,0xc002,0xc007,0xc00c,0xc011,0xc016,0xff80,0xff81,0xff82,0xff83
-
-```
-
-You can check which cipher suites are supported by your browser at [https://cc.dcsec.uni-hannover.de/](https://cc.dcsec.uni-hannover.de/). Make sure to visit this page before and after you make the change to verify that the change was effective.
-
-To make the change persistent, you can modify `~/.config/chromium-flags.conf` and add the flags above. To check, open the website mentioned before. An alternative is to grep inside of your process list for the keyword "cipher".
-
-**External Information**
-
-There is no cleaner way to disable RC4\. Also, the [source-code](https://code.google.com/p/chromium/codesearch#chromium/usr/include/nss/sslproto.h) only shows the right hexadecimal value for the single cipher. See [Wikipedia:RC4](https://en.wikipedia.org/wiki/RC4 "wikipedia:RC4") for basic information and a recommendation to disable RC4.
-
-[German Blog](http://blog.pregos.info/2013/11/13/howto-disable-weak-rc4-cipher-in-firefox-chromium-google-chrome-internet-explorer/comment-page-1/#comment-141763) showing how to disable RC4 in common browsers.
-
-### Disable 1024-bit Diffie-Hellman primes
-
-Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/) it is likely that the NSA has been breaking 1024-bit Diffie-Hellman for some time now. To disable these [use](https://www.eff.org/deeplinks/2015/10/how-to-protect-yourself-from-nsa-attacks-1024-bit-DH):
-
-```
-$ chromium --cipher-suite-blacklist=0x0033,0x0039,0x009E,0xcc15
-
-```
-
-(best in combination with disabling RC4, s. a.), restart the browser and check [how your SSL is](https://www.howsmyssl.com/).
 
 ### SSL certificates
 

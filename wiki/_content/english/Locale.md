@@ -120,18 +120,20 @@ $ export LANG="en_AU.UTF-8"
 
 *   [LANG](#LANG:_default_locale)
 *   [LANGUAGE](#LANGUAGE:_fallback_locales)
-*   `LC_CTYPE`
-*   `LC_NUMERIC`
-*   [LC_TIME](#LC_TIME:_date_and_time_format)
-*   [LC_COLLATE](#LC_COLLATE:_collation)
-*   `LC_MONETARY`
-*   `LC_MESSAGES`
-*   `LC_PAPER`
-*   `LC_NAME`
 *   `LC_ADDRESS`
-*   `LC_TELEPHONE`
-*   `LC_MEASUREMENT`
+*   [LC_COLLATE](#LC_COLLATE:_collation)
+*   `LC_CTYPE`
 *   `LC_IDENTIFICATION`
+*   `LC_MEASUREMENT`
+*   `LC_MESSAGES`
+*   `LC_MONETARY`
+*   `LC_NAME`
+*   `LC_NUMERIC`
+*   `LC_PAPER`
+*   `LC_TELEPHONE`
+*   [LC_TIME](#LC_TIME:_date_and_time_format)
+
+Full meaning of the above `LC_*` variables can be found on manpage [locale(7)](https://www.mankier.com/7/locale), whereas details of their definition are described on [locale(5)](https://www.mankier.com/5/locale).
 
 ### LANG: default locale
 

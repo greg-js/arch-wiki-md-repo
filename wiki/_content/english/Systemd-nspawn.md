@@ -20,11 +20,12 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
 *   [4 Tips](#Tips)
     *   [4.1 X environment](#X_environment)
     *   [4.2 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
-    *   [4.3 Networking](#Networking)
-        *   [4.3.1 nsswitch.conf](#nsswitch.conf)
-        *   [4.3.2 use host networking](#use_host_networking)
-        *   [4.3.3 Virtual Ethernet interfaces](#Virtual_Ethernet_interfaces)
-    *   [4.4 Running on a non-systemd system](#Running_on_a_non-systemd_system)
+    *   [4.3 Access host filesystem](#Access_host_filesystem)
+    *   [4.4 Networking](#Networking)
+        *   [4.4.1 nsswitch.conf](#nsswitch.conf)
+        *   [4.4.2 use host networking](#use_host_networking)
+        *   [4.4.3 Virtual Ethernet interfaces](#Virtual_Ethernet_interfaces)
+    *   [4.5 Running on a non-systemd system](#Running_on_a_non-systemd_system)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 root login fails](#root_login_fails)
     *   [5.2 unable to upgrade some packages on the container](#unable_to_upgrade_some_packages_on_the_container)
@@ -167,6 +168,10 @@ X stores some required files in the `/tmp` directory. In order for your containe
 ### Run Firefox inside an nspawn container
 
 See [Firefox tweaks](/index.php/Firefox_tweaks#Run_Firefox_inside_an_nspawn_container "Firefox tweaks").
+
+### Access host filesystem
+
+See `--bind`, `--bind-ro` in `man systemd-nspawn`.
 
 ### Networking
 

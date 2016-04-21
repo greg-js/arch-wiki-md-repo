@@ -1,23 +1,21 @@
-**翻译状态：** 本文是英文页面 [Pacnew_and_Pacsave_Files](/index.php/Pacnew_and_Pacsave_Files "Pacnew and Pacsave Files") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-04-12，点击[309973 这里](https://wiki.archlinux.org/index.php?title=Pacnew_and_Pacsave_Files&diff=0&oldid=)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Pacnew_and_Pacsave_Files](/index.php/Pacnew_and_Pacsave_Files "Pacnew and Pacsave Files") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-04-12，点击[这里](https://wiki.archlinux.org/index.php?title=Pacnew_and_Pacsave_Files&diff=0&oldid=309973)可以查看翻译后英文页面的改动。
+
+在使用 pacman 移除一个带有配置文档的软件包时，pacman 通常会将配置文档复制为一个后缀名为 .pacsave 的备份文档。
+
+同样的，当 pacman 升级一个软件包，而新软件包含有与与当前配置不同的新配置文件时，pacman 会将新配置写入 .pacnew 文件。当写入这些文件时，pacman 会输出提示信息。
 
 ## Contents
 
-*   [1 自此开始](#.E8.87.AA.E6.AD.A4.E5.BC.80.E5.A7.8B)
+*   [1 为什么创建了这样的文件](#.E4.B8.BA.E4.BB.80.E4.B9.88.E5.88.9B.E5.BB.BA.E4.BA.86.E8.BF.99.E6.A0.B7.E7.9A.84.E6.96.87.E4.BB.B6)
 *   [2 包备份文件](#.E5.8C.85.E5.A4.87.E4.BB.BD.E6.96.87.E4.BB.B6)
 *   [3 类型说明](#.E7.B1.BB.E5.9E.8B.E8.AF.B4.E6.98.8E)
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
-    *   [3.3 .pacorig](#.pacorig)
 *   [4 定位 .pac* 文件](#.E5.AE.9A.E4.BD.8D_.pac.2A_.E6.96.87.E4.BB.B6)
 *   [5 .管理 .pacnew 文件](#..E7.AE.A1.E7.90.86_.pacnew_.E6.96.87.E4.BB.B6)
-    *   [5.1 Using a graphics diff. editor](#Using_a_graphics_diff._editor)
-*   [6 资源](#.E8.B5.84.E6.BA.90)
+*   [6 参阅](#.E5.8F.82.E9.98.85)
 
-## 自此开始
-
-在使用 pacman 移除一个带有配置文档的软件包时，pacman 通常会将配置文档复制为一个后缀名为 .pacsave 的备份文档。
-
-同样的，当 pacman 升级一个软件包，而新软件包含有与与当前配置不同的新配置文件时，pacman 会将新配置写入 .pacnew 文件。在特殊情况时，还可能会创建一个 .pacorig 文件。当写入这些文件时，pacman 会输出提示信息。
+## 为什么创建了这样的文件
 
 当升级某个软件包（命令为 `pacman -Syu`，`pacman -Su` 或者`pacman -U`）时，可能会创建一个 `.pacnew` 文件，以避免覆盖一个之前被用户修改过的已存在文件。此时，pacman会输出如下信息：
 
@@ -45,8 +43,6 @@ backup=('etc/pulse/client.conf' 'etc/pulse/daemon.conf' 'etc/pulse/default.pa')
 ```
 
 ## 类型说明
-
-下面是一些不同类型的 *.pac* 文件：
 
 ### .pacnew
 
@@ -80,27 +76,21 @@ backup=('etc/pulse/client.conf' 'etc/pulse/daemon.conf' 'etc/pulse/default.pa')
 
 **注意:** 使用命令 `pacman -R` 中的 `-n` 选项会移除指定软件包中的所有文件，因此不会创建 `.pacsave` 文件。
 
-### .pacorig
-
-若在安装或升级某个软件包时，遇到某个文件（配置文件通常在 `/etc` 目录下）不属于任何已安装的软件包，但却被列在当前操作的软件包的备份文件（backup）中，那么该文件将被以扩展名 `.pacorig` 保存并用软件包中的文件版本替代。通常这种情况发生于配置文件在软件包间移动时。如果此文件没有被列在备份文件（backup）中，pacman将会退出并报文件冲突错误。
-
-{{注意| 因为 `.pacorig` 文件往往创建于特定环境，所以没有通用的方法来处理它们。如果您清楚这种情况，咨询 [Arch News](https://www.archlinux.org/news/) 以获得处理指令可能会有所帮助。
-
 ## 定位 .pac* 文件
 
-Arch Linux 不为 `.pacnew` 文件提供官方程序。你需要自己维护这些文件；下一节介绍了一些工具。你首先需要确定这些文件的位置，才能手动维护这些文件。当升级或卸载大量软件包时，可能会错过升级的 *.pac* 的信息。你需要寻找是否产生了 `*.pac*` 文件：
+首先需要确定这些文件的位置，才能手动维护这些文件。当升级或卸载大量软件包时，可能会错过升级的 *.pac* 的信息。你需要寻找是否产生了 `*.pac*` 文件：
 
 仅搜索绝大多数全局配置文件所存放的位置：
 
 ```
-$ find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null
+$ find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
 
 ```
 
 或全盘搜索：
 
 ```
-$ find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null
+$ find / -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
 
 ```
 
@@ -114,14 +104,14 @@ $ find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null
 然后:
 
 ```
-$ locate -e --regex "\.pac(new|orig|save)$"
+$ locate -e --regex "\.pac(new|save)$"
 
 ```
 
 或者使用pacman日志来找到它们：
 
 ```
-$ egrep "pac(new|orig|save)" /var/log/pacman.log
+$ egrep "pac(new|save)" /var/log/pacman.log
 
 ```
 
@@ -129,11 +119,9 @@ $ egrep "pac(new|orig|save)" /var/log/pacman.log
 
 ## .管理 .pacnew 文件
 
-There are various tools to help resolve *.pacnew* and *.pacsave* file issues. The standard *(s)diff* (from [diffutils](https://www.archlinux.org/packages/?name=diffutils)) provides an easy way to compare these files. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") for other common comparison tools.
+Pacman 包含了 *pacdiff* 工具管理 pacnew/pacsave 文件。这个工具会搜索所有的 `pacnew` 和 `pacsave` 文件并询问要执行的操作。默认使用 [vimdiff](/index.php/Vim#Merging_files "Vim") 工具，可以通过 `DIFFPROG=your_editor pacdiff` 指定要使用的差异比较工具。参考 [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities").
 
-A few third-party utilities providing various levels of automation for these tasks are available from the [AUR](/index.php/Arch_User_Repository "Arch User Repository").
-
-You can use one of the following tools:
+下面一些 [AUR](/index.php/AUR "AUR") 三方工具可以自动处理这些文件：
 
 *   **diffpac** — Standalone pacdiffviewer replacement
 
@@ -141,17 +129,13 @@ You can use one of the following tools:
 
 *   **[Dotpac](/index.php/Dotpac "Dotpac")** — Basic interactive script with ncurses-based text interface and helpful walkthrough. No merging or auto-merging features.
 
-	|| [dotpac](https://aur.archlinux.org/packages/dotpac/)
+	[https://github.com/AladW/dotpac](https://github.com/AladW/dotpac) || [dotpac](https://aur.archlinux.org/packages/dotpac/)
 
 *   **etc-update** — Arch port of Gentoo's *etc-update* utility, providing a simple CLI to view, merge and interactively edit changes. Trivial changes (such as comments) can be merged automatically.
 
-	[http://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?part=3&chap=4#doc_chap2](http://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?part=3&chap=4#doc_chap2) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
+	[https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update](https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
 
-*   **pacdiff** — A minimal CLI script from *pacman* using [vimdiff](/index.php/Vim#Merging_files_.28vimdiff.29 "Vim"). It will search all `pacnew` and `pacsave` files and ask for any actions on them.
-
-	[https://www.archlinux.org/pacman/](https://www.archlinux.org/pacman/) || [pacman](https://www.archlinux.org/packages/?name=pacman)
-
-*   **pacdiffviewer** — Fully-featured interactive CLI script with automatic merging. Part of *yaourt*.
+*   **pacdiffviewer** — Fully-featured interactive CLI script with automatic merging. Part of [Yaourt](/index.php/Yaourt "Yaourt").
 
 	[http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)
 
@@ -159,53 +143,14 @@ You can use one of the following tools:
 
 	[https://gitorious.org/pacmerge](https://gitorious.org/pacmerge) || [pacmerge-git](https://aur.archlinux.org/packages/pacmerge-git/)
 
-*   **pacnews-git** — A simple script aimed at finding all *.pacnew* files, then editing them with [vimdiff](/index.php/Vim#Merging_files_.28vimdiff.29 "Vim").
+*   **pacnew-auto** — Automatic `pacnew` merging using [git](https://www.archlinux.org/packages/?name=git) rebase.
+
+	[https://github.com/joanrieu/pacnew-auto](https://github.com/joanrieu/pacnew-auto) || [pacnew-auto-git](https://aur.archlinux.org/packages/pacnew-auto-git/)
+
+*   **pacnews-git** — A simple script aimed at finding all *.pacnew* files, then editing them with [vimdiff](/index.php/Vim#Merging_files "Vim").
 
 	[https://github.com/pbrisbin/scripts/blob/master/pacnews](https://github.com/pbrisbin/scripts/blob/master/pacnews) || [pacnews-git](https://aur.archlinux.org/packages/pacnews-git/)
 
-*   **[Yaourt](/index.php/Yaourt "Yaourt")** — *pacman* wrapper with extended features and [AUR](/index.php/AUR "AUR") support. Use `yaourt -C` to compare, replace and merge configuration files.
+## 参阅
 
-	[http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)
-
-### Using a graphics diff. editor
-
-```
-#!/bin/sh
-# Diff *.pacnew configuration files with their originals
-
-diffed="diffuse"
-[ $(whoami) = root ] && diffed="vimdiff"
-
-# Required programs
-req_prgs=("$diffed" vimdiff sudo)
-for prog in ${req_prgs[@]}; do
-  if ! hash "$prog" 2>&- ; then
-    echo >&2 ""${0##*/}": requires program: "$prog""
-    error=y ;fi ; done
-[ "$error" = y ] && exit 1
-
-pacnew=$(sudo find /etc -type f -name "*.pacnew")
-if [ -z "$pacnew" ]; then
-  echo "No configurations to update"; fi
-
-for config in $pacnew; do
-  sudo "$diffed" ${config%\.*} $config &
-  wait
-  # Remove .pacnew file?
-  while true; do
-    read -p "Delete \""$config"\"? (Y/n): " Yn
-    case $Yn in
-      [Yy]* ) sudo rm "$config" && \
-              echo "Deleted \""$config"\"."
-              break                         ;;
-      [Nn]* ) break                         ;;
-      *     ) echo "Answer (Y)es or (n)o."  ;;
-    esac; done; done
-
-# Alert of pacsave files
-sudo find /etc -name "*.pacsave"
-```
-
-## 资源
-
-*   Arch Linux 论坛: [Dealing With .pacnew Files](https://bbs.archlinux.org/viewtopic.php?id=53532)
+*   Arch Linux 论坛: [处理 .pacnew 文件](https://bbs.archlinux.org/viewtopic.php?id=53532)

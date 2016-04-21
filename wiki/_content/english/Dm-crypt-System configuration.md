@@ -168,7 +168,9 @@ If you want to mount an encrypted drive at boot time, enter the device's UUID in
 
 ```
 
-The first parameter is your preferred device mapper's name for your encrypted drive. The option `none` will trigger a prompt during boot to type the passphrase for unlocking the partition. The `timeout` option defines the timeout in seconds for entering the decryption password while booting. A [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") can also be set up and referenced instead of `none`. This results in an automatic unlocking, if the keyfile is accessible during boot. Since LUKS offers the option to have multiple keys, the chosen option can also be changed later.
+The first parameter is your preferred device mapper's name for the encrypted drive. The option `none` will trigger a prompt during boot to type the passphrase for unlocking the partition. The `timeout` option defines a timeout in seconds for entering the decryption password during boot.
+
+A [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") can also be set up and referenced instead of `none`. This results in an automatic unlocking, if the keyfile is accessible during boot. Since LUKS offers the option to have multiple keys, the chosen option can also be changed later.
 
 Use the device mapper's name you've defined in `/etc/crypttab` in `/etc/fstab` as follows:
 
@@ -179,3 +181,24 @@ Use the device mapper's name you've defined in `/etc/crypttab` in `/etc/fstab` a
 ```
 
 Since `/dev/mapper/externaldrive` already is the result of a unique partition mapping, there is no need to specify an UUID for it. In any case, the mapper with the filesystem will have a different UUID than the partition it is encrypted in.
+
+**Tip:** The systemd generators also automatically process stacked block devices at boot.
+
+For example, you can create a [RAID](/index.php/RAID "RAID") setup, use cryptsetup to encrypt it and create an [LVM](/index.php/LVM "LVM") logical volume with respective filesystem inside the encrypted block device. A resulting:
+
+ `# lsblk -f` 
+```
+─sdXX                  linux_raid_member    
+│ └─md0                 crypto_LUKS   
+│   └─cryptedbackup     LVM2_member 
+│     └─vgraid-lvraid   ext4              /mnt/backup
+└─sdYY                  linux_raid_member    
+  └─md0                 crypto_LUKS       
+    └─cryptedbackup     LVM2_member 
+      └─vgraid-lvraid   ext4              /mnt/backup
+
+```
+
+will ask for the passphrase and mount automatically at boot.
+
+Since `/etc/crypttab` processing applies to non-root mounts only, there is no need to add additional mkinitcpio hooks/configuration, given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_LUKS` device) and fstab (`/dev/mapper/vgraid-lvraid`) entries.

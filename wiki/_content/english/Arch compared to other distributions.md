@@ -96,13 +96,13 @@ These distributions offer a broad range of advantages and strengths, and can be 
 
 *   Slackware is famous for its lack of branding and completely vanilla packages, from the kernel up. Arch typically applies patching only to avoid severe breakage or to ensure packages will compile cleanly.
 
-*   Slackware uses BSD-style init scripts, Arch uses [systemd](/index.php/Systemd "Systemd").
+*   Slackware uses BSD-style init scripts, whereas Arch uses [systemd](/index.php/Systemd "Systemd").
 
 *   Arch supplies a package management system in [pacman](/index.php/Pacman "Pacman") which, unlike Slackware's standard tools, offers automatic dependency resolution and allows for more automated system upgrades. Slackware users typically prefer their method of manual dependency resolution, citing the level of system control it grants them, as well as Slackware's excellent supply of pre-installed libraries and dependencies.
 
 *   Arch is a rolling-release system. Slackware is seen as more conservative in its release cycle, preferring proven stable packages. Arch is more *bleeding-edge* in this respect.
 
-*   Arch Linux provides many thousands of binary packages within its official repositories whereas Slackware official repositories are more modest.
+*   Arch Linux provides many thousands of binary packages within its official repositories, whereas Slackware official repositories are more modest.
 
 *   Arch offers the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), an actual ports-like system and also the [AUR](/index.php/AUR "AUR"), a very large collection of PKGBUILDs contributed by users. Slackware offers a similar, though slimmer system at [slackbuilds.org](http://www.slackbuilds.org) which is a semi-official repository of Slackbuilds, which are analogous to Arch PKGBUILDs. Slackware users will generally be quite comfortable with most aspects of Arch.
 

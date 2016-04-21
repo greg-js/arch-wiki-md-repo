@@ -139,8 +139,8 @@ The official [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/
 There are multiple scripts automating the update of the mirrorlist from the ranking server:
 
 *   [Reflector](/index.php/Reflector "Reflector") retrieves the latest mirrorlist from the [MirrorStatus](https://www.archlinux.org/mirrors/status/) page, filters the most up-to-date mirrors, sorts them by speed and overwrites the `/etc/pacman.d/mirrorlist` file.
-*   [update-pacman-mirrorlist](https://aur.archlinux.org/packages/update-pacman-mirrorlist/) is a minimalistic script that downloads a mirrorlist from a specified ranking server defaulting to the official [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/). It also provides a [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") to manage the mirrorlist automatically without intervention. Configuration is possible by changing the URL query string in the `/etc/update-pacman-mirrorlist` configuration file.
-*   [armrr](https://github.com/Gen2ly/armrr) downloads ranked mirrorlist for a specific country from [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) and creates a backup of the previous mirrorlist.
+*   [update-pacman-mirrorlist](https://aur.archlinux.org/packages/update-pacman-mirrorlist/) is a minimalistic script that downloads a mirrorlist from a specified ranking server defaulting to the official [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/). It also provides an optional [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") to manage the mirrorlist automatically without intervention.
+*   [armrr](https://github.com/Gen2ly/armrr) downloads a ranked mirrorlist for a specific country from the [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) and creates a backup of the previous mirrorlist.
 
 ### List mirrors only for a specific country
 

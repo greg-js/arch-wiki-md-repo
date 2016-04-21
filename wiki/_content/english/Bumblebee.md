@@ -89,7 +89,7 @@ Also [enable](/index.php/Enable "Enable") `bumblebeed.service`. Reboot your syst
 
 ### Installing Bumblebee with Intel/Nouveau
 
-**Note:** This method is deprecated and will most likely not work anymore. Use the nvidia module instead. If you want nouveau, use [PRIME](/index.php/PRIME "PRIME").
+**Warning:** This method is deprecated and will most likely not work anymore. Use the nvidia module instead. If you want nouveau, use [PRIME](/index.php/PRIME "PRIME").
 
 Install:
 

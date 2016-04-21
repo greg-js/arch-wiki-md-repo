@@ -82,13 +82,13 @@ Optional:
 
 ### Installing the 0.8 series
 
-**Note:** The [compiz-core](https://aur.archlinux.org/packages/compiz-core/) package does not provide the GTK Window Decorator by default. Users of this package should use [emerald](https://aur.archlinux.org/packages/emerald/) for [#Window decoration](#Window_decoration). Alternatively, use [compiz-gtk-standalone](https://aur.archlinux.org/packages/compiz-gtk-standalone/) for a Compiz Core package that also provides GTK Window Decorator.
+**Note:** The [compiz-core](https://aur.archlinux.org/packages/compiz-core/) package does not provide the GTK Window Decorator by default. Users of this package should use [emerald](https://aur.archlinux.org/packages/emerald/) for [#Window decoration](#Window_decoration). Alternatively, use [compiz-gtk](https://aur.archlinux.org/packages/compiz-gtk/) for a Compiz Core package that also provides GTK Window Decorator.
 
 Required:
 
 *   **Compiz Core** — OpenGL compositing window manager.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-core](https://aur.archlinux.org/packages/compiz-core/), [compiz-gtk-standalone](https://aur.archlinux.org/packages/compiz-gtk-standalone/)
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-core](https://aur.archlinux.org/packages/compiz-core/), [compiz-gtk](https://aur.archlinux.org/packages/compiz-gtk/)
 
 Highly recommended:
 
@@ -108,7 +108,7 @@ Optional:
 
 *   **Compiz Fusion Plugins Experimental** — Experimental Compiz plugins.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-experimental-git](https://aur.archlinux.org/packages/compiz-fusion-plugins-experimental-git/)
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-experimental](https://aur.archlinux.org/packages/compiz-fusion-plugins-experimental/)
 
 *   **Emerald** — A standalone window decorator for Compiz.
 

@@ -81,13 +81,21 @@ should work, if it doesn't go back and make sure that avahi is running and that 
 
 The drivers for a printer may come from any of the sources shown below. See [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems") for a non-comprehensive list of drivers that others have gotten to work.
 
+Usually CUPS requires either a prebuilt PPD file including the driver or some XML data files + a PPD file generating engine to work. Even when a PPD file is provided to CUPS, the CUPS server will install it's own regenerated PPD file into `/etc/cups/ppd/`
+
 	CUPS Native Drivers
 
 CUPS already includes a few printer drivers. In that case you can just select it in the list and your printer will likely work.
 
+	Foomatic
+
+[foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) + [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) or [foomatic-db-nonfree](https://www.archlinux.org/packages/?name=foomatic-db-nonfree) are database-driven systems for integrating software printer drivers with common spoolers under Unix.
+
+[foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds) or [foomatic-db-nonfree-ppds](https://www.archlinux.org/packages/?name=foomatic-db-nonfree-ppds) provide prebuilt PPD files from manufacturers.
+
 	OpenPrinting.org
 
-There might be a PPD available at the [OpenPrinting Printer List](http://www.openprinting.org/printers).
+There might be a PPD available at the [OpenPrinting Printer List](http://www.openprinting.org/printers). Usually these driver files are included in the above foomatic packages. But searching for your printer model might help you decide which driver to chose from the list.
 
 Select the brand and type/model of the printer to find out what driver the site recommends. Download the PPD file from the site. When the CUPS web interface asks for a printer driver/PPD, select "Or Provide a PPD File: Choose file".
 
@@ -95,15 +103,11 @@ The website will also suggest a driver. For instance, for the HP LaserJet 5P, th
 
 	Manufacturer-specific drivers
 
-Many printer manufacturers supply their own Linux drivers. These are often available in the official Arch repositories or in the AUR.
-
-	Foomatic
-
-[foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db), [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) and [foomatic-db-nonfree](https://www.archlinux.org/packages/?name=foomatic-db-nonfree) are database-driven systems for integrating free software printer drivers with common spoolers under Unix.
+Many printer manufacturers supply their own Linux drivers. These are often available in the official Arch repositories or in the [AUR](/index.php/AUR "AUR").
 
 	Gutenprint
 
-The [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) drivers are high-quality, open source printer drivers for various Canon, Epson, HP, Lexmark, Sony, Olympus and PCL printers supporting CUPS. They also support ghostscript, The GIMP, and other applications.
+The [gutenprint](https://www.archlinux.org/packages/?name=gutenprint), [foomatic-db-gutenprint](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint), [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds) drivers are high-quality, open source printer drivers for various Canon, Epson, HP, Lexmark, Sony, Olympus and PCL printers supporting CUPS. They also support ghostscript, The GIMP, and other applications.
 
 ## Configuration
 
@@ -399,4 +403,6 @@ See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting
 *   [Official CUPS documentation](http://localhost:631/help), *locally installed*
 *   [Official CUPS website](http://www.cups.org/)
 *   [OpenPrinting homepage](http://www.linuxfoundation.org/collaborate/workgroups/openprinting)
+*   [OpenSuSE Concepts printing guide - explains the full printing workflow](https://en.opensuse.org/Concepts_printing)
+*   [OpenSuSE CUPS in a Nutshell - a quick CUPS overwiev](https://en.opensuse.org/SDB:CUPS_in_a_Nutshell)
 *   [Gentoo's printing guide](https://wiki.gentoo.org/wiki/Printing)

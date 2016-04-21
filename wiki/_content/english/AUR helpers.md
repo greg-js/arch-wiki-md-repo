@@ -153,7 +153,7 @@ The columns have the following meaning:
 *   *Secure*: does not [source](/index.php/Source "Source"), by default, the PKGBUILD at all, or, before doing so, reminds the user and offers him the opportunity to inspect it manually. Some helpers are known to source PKGBUILDs before the user can inspect them, **allowing malicious code to be executed**. *Optional* means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
 *   *Clean build*: does not export new variables that can prevent a successful build process.
 *   *Reliable parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli](https://aur.archlinux.org/packages/aws-cli/).
-*   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
+*   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [ros-indigo-desktop](https://aur.archlinux.org/packages/ros-indigo-desktop/).
 *   *Split packages*: ability to correctly build and install split packages independently, such as [python-nikola](https://aur.archlinux.org/packages/python-nikola/).
 *   *Git clone*: uses git clones instead of downloading tarballs (deprecated since AUR 4).
 *   *Syntax*: P stands for [Pacman](/index.php/Pacman "Pacman")-like, S for specific.
@@ -163,14 +163,14 @@ The columns have the following meaning:
 | aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | No | No [[2]](https://github.com/aurapm/aura/issues/353) | No | bash/zsh | P | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support, multilingual |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | S | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[3]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | P | - |
-| aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | None | S | [tsort](https://en.wikipedia.org/wiki/Topological_sorting "w:Topological sorting"), PCRE, local repository, [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
-| bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
+| aurutils | Bash/C | Yes | Yes | Yes |  ? | Yes | Yes | None | S | [tsort](https://en.wikipedia.org/wiki/Topological_sorting "w:Topological sorting"), PCRE, local repository, [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
+| bauerbill | Python3 | Yes | Yes | Yes |  ? | Yes | Yes | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
 | burgaur | Python3/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | P | Wrapper for *cower* |
 | cower | C | Yes | N/A | Yes | N/A | N/A | No | bash/zsh | S | No automatic builds, regex support |
 | pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Minimizes user interaction, multilingual |
 | packer | Bash | No | Yes | No | No | No | No | None | P | - |
 | pbget | Python3 | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |
-| PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[4]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |
+| PKGBUILDer | Python3 | Optional | Yes | Yes |  ? | Partial [[4]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |
 | prm | Bash | Yes [[5]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds, ABS support |
 | trizen | Perl | Yes | Yes | Yes [[6]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | No | No | No | None | P | AUR comments |
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | S | Mirror updates, print news and AUR comments |

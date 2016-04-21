@@ -8,7 +8,7 @@ rEFInd is a [UEFI](/index.php/UEFI "UEFI") boot manager. It is a fork of the no-
     *   [1.1 Scripted installation](#Scripted_installation)
     *   [1.2 Manual installation](#Manual_installation)
     *   [1.3 Upgrading](#Upgrading)
-        *   [1.3.1 Systemd automation](#Systemd_automation)
+        *   [1.3.1 Pacman hook](#Pacman_hook)
 *   [2 Configuration](#Configuration)
     *   [2.1 Passing kernel parameters](#Passing_kernel_parameters)
         *   [2.1.1 For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd)
@@ -50,17 +50,17 @@ This will attempt to find and mount your [ESP](/index.php/ESP "ESP"), copy rEFIn
 Alternatively you can install rEFInd to the default/fallback boot path `/EFI/BOOT/BOOT*.EFI`. This is helpful for bootable USB flash drives or on systems that have issues with the NVRAM changes made by efibootmgr:
 
 ```
-# refind-install --usedefault **/dev/sdXY**
+# refind-install --usedefault */dev/sdXY*
 
 ```
 
-Where **/dev/sdXY** is the partition of your ESP.
+Where `*/dev/sdXY*` is the partition of your ESP.
 
 You can read the comments in the install script for explanations of the various installation options.
 
 **Note:** By default `refind-install` installs only the driver for the file system on which kernel resides. Additional file systems need to be installed manually or you can install all drivers with the `--alldrivers` option. This is useful for bootable USB flash drives e.g.
 ```
-# refind-install --usedefault /dev/sdXY --alldrivers
+# refind-install --usedefault */dev/sdXY* --alldrivers
 
 ```
 
@@ -85,10 +85,10 @@ First, copy the executable to the ESP:
 
 ```
 
-Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry in the UEFI NVRAM (change X and Y to match the device and partition of your ESP). If you are installing rEFInd to the default UEFI path `/EFI/BOOT/BOOTX64.EFI`, you can probably skip this step.
+Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your ESP. If you are installing rEFInd to the default UEFI path `/EFI/BOOT/BOOTX64.EFI`, you can probably skip this step.
 
 ```
-# efibootmgr -c -d /dev/sdX -p Y -l /EFI/refind/refind_x64.efi -L "rEFInd Boot Manager"
+# efibootmgr -c -d */dev/sdX* -p *Y* -l /EFI/refind/refind_x64.efi -L "rEFInd Boot Manager"
 
 ```
 
@@ -129,36 +129,25 @@ You can try out different fonts by copying them and changing the `font` setting 
 
 ### Upgrading
 
-Pacman updates the rEFInd files in `/usr/share/refind` and will not copy new files to the ESP for you. If `refind-install` worked for your original installation of rEFInd, you can rerun it to copy the updated files. The new config file will be copied as `refind.conf-sample` so that you can integrate changes into your config file using a diff tool. If your rEFInd required [#Manual installation](#Manual_installation), you will need to copy the new files yourself.
+Pacman updates the rEFInd files in `/usr/share/refind` and will not copy new files to the ESP for you. If `refind-install` worked for your original installation of rEFInd, you can rerun it to copy the updated files. The new config file will be copied as `refind.conf-sample` so that you can integrate changes into your config file using a diff tool. If your rEFInd required [#Manual installation](#Manual_installation), you will need to figure out which files to copy yourself.
 
-#### Systemd automation
+#### Pacman hook
 
-To automate this process, you need a .path file for watching for rEFInd updates and a .service file for copying the new files and updating the nvram.
+You can automate the update process using a hook:
 
- `/etc/systemd/system/refind_update.path` 
+ `/etc/pacman.d/hooks/refind.hook` 
 ```
-[Unit]
-Description=path monitor for rEFInd updates
+[Trigger]
+Operation=Upgrade
+Type=Package
+Target=refind-efi
 
-[Path]
-PathChanged=/usr/share/refind
-
-[Install]
-WantedBy=multi-user.target
-
-```
- `/etc/systemd/system/refind_update.service` 
-```
-[Unit]
-Description=rEFInd boot manager update
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/refind-install
-
+[Action]
+When=PostTransaction
+Exec=/usr/bin/refind-install
 ```
 
-Then [enable](/index.php/Enable "Enable") `refind_update.path`.
+Where the `Exec=` may need to be changed to the correct update command for your setup. If you did [#Manual configuration](#Manual_configuration), you could create your own update script to call with the hook.
 
 ## Configuration
 
@@ -306,10 +295,10 @@ A failure to do so will otherwise result in the following error message: `ERROR:
 
 ### Apple Macs
 
-[mactel-boot](https://aur.archlinux.org/packages/mactel-boot/) is an experimental "bless" utility for Linux. If that does not work, use "bless" from within OSX to set rEFInd as the default boot entry. Assuming your UEFISYS partition is mounted at `/mnt/efi` within OSX, do:
+[mactel-boot](https://aur.archlinux.org/packages/mactel-boot/) is an experimental "bless" utility for Linux. If that does not work, use "bless" from within OSX to set rEFInd as the default boot entry:
 
 ```
-# bless --setBoot --folder /mnt/efi/EFI/refind --file /mnt/efi/EFI/refind/refind_x64.efi
+# bless --setBoot --folder *esp*/EFI/refind --file *esp*/EFI/refind/refind_x64.efi
 
 ```
 

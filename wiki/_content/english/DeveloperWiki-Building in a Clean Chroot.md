@@ -78,7 +78,7 @@ Now create the chroot (the sub directory `root` is required because the `$CHROOT
 
 **Note:** On [btrfs](/index.php/Btrfs "Btrfs") disks, the chroot is created as a subvolume, so you have to remove it by removing the subvolume with `# btrfs subvolume delete $CHROOT/root`.
 
-Edit `~/.makepkg.conf` to set the packager name and any makeflags. Also adjust the [mirrorlist](/index.php/Pacman#Repositories "Pacman") in `$CHROOT/root/etc/pacman.d/mirrorlist` and enable the [testing](/index.php/Testing "Testing") repository in `$CHROOT/root/etc/pacman.conf`, if desired.
+Edit `~/.makepkg.conf` to set the packager name and any makeflags. Also adjust the [mirrorlist](/index.php/Pacman#Repositories_and_mirrors "Pacman") in `$CHROOT/root/etc/pacman.d/mirrorlist` and enable the [testing](/index.php/Testing "Testing") repository in `$CHROOT/root/etc/pacman.conf`, if desired.
 
 #### Custom pacman.conf
 

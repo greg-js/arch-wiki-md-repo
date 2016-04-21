@@ -2,7 +2,7 @@ This article lists binary repositories freely created and shared by the communit
 
 **Warning:** Neither the official Arch Linux Developers nor the Trusted Users perform tests of any sort to verify the contents of these repositories; it is up to each user to decide whether to trust their maintainers, and take full responsibility for whatever their decision brings.
 
-In order to use these repositories, you will have to add them to `/etc/pacman.conf`, as explained in [pacman#Repositories](/index.php/Pacman#Repositories "Pacman"). If a repository is signed, you will have to obtain and locally sign the associated key, as explained in [Pacman-key#Adding unofficial keys](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key").
+In order to use these repositories, you will have to add them to `/etc/pacman.conf`, as explained in [pacman#Repositories and mirrors](/index.php/Pacman#Repositories_and_mirrors "Pacman"). If a repository is signed, you will have to obtain and locally sign the associated key, as explained in [Pacman-key#Adding unofficial keys](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key").
 
 If you want to create your own custom repository, follow [pacman tips#Custom local repository](/index.php/Pacman_tips#Custom_local_repository "Pacman tips").
 
@@ -109,9 +109,8 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.22 quarry](#quarry)
         *   [5.1.23 rstudio](#rstudio)
         *   [5.1.24 siosm-aur](#siosm-aur)
-        *   [5.1.25 siosm-selinux](#siosm-selinux)
-        *   [5.1.26 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.27 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.25 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.26 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -408,6 +407,7 @@ Server = http://arch.miffe.org/$arch/
 
 *   **Maintainers:** nullptr_t,
 *   **Description:** AUR packages that have a longer build time on some machines (e.g. [veracrypt](https://aur.archlinux.org/packages/veracrypt/) or [plymouth](/index.php/Plymouth "Plymouth"))
+*   **Current Information:** Because of internet problems, the repo will be updated in week 4, April again
 *   **Key-ID:** B4767A17CEC5B4E9
 
 ```
@@ -1212,19 +1212,6 @@ Server = http://repo.psylab.info/archlinux/x86_64/
 
 ```
 [siosm-aur]
-Server = http://siosm.fr/repo/$repo/
-
-```
-
-#### siosm-selinux
-
-*   **Maintainer:** [Timothee Ravier](https://tim.siosm.fr/about/)
-*   **Description:** packages required for SELinux support – work in progress (notably, missing an Arch Linux-compatible SELinux policy). See the [SELinux](/index.php/SELinux "SELinux") page for details.
-*   **Upstream page:** [https://tim.siosm.fr/repositories/](https://tim.siosm.fr/repositories/)
-*   **Key-ID:** 78688F83
-
-```
-[siosm-selinux]
 Server = http://siosm.fr/repo/$repo/
 
 ```

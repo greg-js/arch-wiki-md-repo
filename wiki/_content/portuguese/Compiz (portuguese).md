@@ -20,7 +20,7 @@ A instalação pode ser feita usando os repositórios community. Uma outra forma
 
 ## Através do Repositório Community
 
-Após [habilitar o repositório no arquivo /etc/pacman.conf](/index.php/Pacman#Repositories "Pacman"), pode-se instalar o compiz com o comando:
+Após [habilitar o repositório no arquivo /etc/pacman.conf](/index.php/Pacman#Repositories_and_mirrors "Pacman"), pode-se instalar o compiz com o comando:
 
 ### Todos os Pacotes
 

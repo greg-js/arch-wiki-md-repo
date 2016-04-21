@@ -31,7 +31,7 @@
 *   [3 工具](#.E5.B7.A5.E5.85.B7)
     *   [3.1 gendesk](#gendesk)
         *   [3.1.1 用法](#.E7.94.A8.E6.B3.95)
-    *   [3.2 List or search in available *.desktop files](#List_or_search_in_available_.2A.desktop_files)
+    *   [3.2 在*.desktop文件目錄或搜索](#.E5.9C.A8.2A.desktop.E6.96.87.E4.BB.B6.E7.9B.AE.E9.8C.84.E6.88.96.E6.90.9C.E7.B4.A2)
     *   [3.3 fbrokendesktop](#fbrokendesktop)
 *   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [4.1 隐藏桌面配置项](#.E9.9A.90.E8.97.8F.E6.A1.8C.E9.9D.A2.E9.85.8D.E7.BD.AE.E9.A1.B9)
@@ -182,11 +182,11 @@ Icons can be automatically downloaded from [openiconlibrary](http://openiconlibr
 
 *   See the [gendesk project](https://github.com/xyproto/gendesk) for more information.
 
-### List or search in available *.desktop files
+### 在*.desktop文件目錄或搜索
 
-The [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) bash script searching for content in "Categories" or "Exec", if "Categories" doesn't exist then it uses content of "Name" or you can use custom options to search only for a preferred content. It's main purpose is to get a quick overview in console of the available programs with their command lines and categories in *.desktop. It shows colored existing base path. To list all supported options use option *--help*. Option *--var* and *--var-sys* passing all options to [grep](http://www.gnu.org/software/grep/manual/grep.html), it means that you can use additional options supported by grep but only after first two *--var text*.
+該[lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/)腳本列出可用*.desktop文件或在自己的搜索內容。它的主要目的是讓在可用程序控制台的簡要概述他們的命令行，並在`*.desktop`文件設置的類別。
 
-Examples
+例子
 
 ```
 # lsdesktopf
@@ -195,22 +195,15 @@ Examples
 
 ```
 
-To search only for content of variable names use
+完全相同的功能之上，但垂直文本輸出可讀性，包括相關的變量名：
 
 ```
-# lsdesktopf --var Name= -e ^Exec= -e Comment= -i
-# lsdesktopf --var-sys Name= -e ^Exec
-
-```
-
-To show all available base name of the variables that can be used with option *--var* you can use option *--sud* to search only in a predefined path in "ADskPath" variable. The *--ssu* option show variables that can be used with *--var-sys*, both are looking for content only in /usr /etc /opt folders.
-
-```
-# lsdesktopf --sud
+# lsdesktopf --more
+# lsdesktopf --more game
 
 ```
 
-It is possible to create own list of folders to check with warriors commands or added manually to `/opt/share/list-desktop-files/sorted.test` or `~/.list-desktop-path/custom-path/sorted.test`. You can use even wildcards as * in path names stored in configuration files because it is using command `file` to get all available path names while population an array before starting search or list.
+欲了解更多的選擇使用 `lsdesktopf --help`.
 
 ### fbrokendesktop
 

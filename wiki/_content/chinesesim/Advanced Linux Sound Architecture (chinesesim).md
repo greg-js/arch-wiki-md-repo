@@ -9,11 +9,11 @@
 *   [1 安装](#.E5.AE.89.E8.A3.85)
     *   [1.1 用户权限](#.E7.94.A8.E6.88.B7.E6.9D.83.E9.99.90)
     *   [1.2 ALSA 工具](#ALSA_.E5.B7.A5.E5.85.B7)
-    *   [1.3 OSS compatibility](#OSS_compatibility)
+    *   [1.3 OSS 兼容性](#OSS_.E5.85.BC.E5.AE.B9.E6.80.A7)
     *   [1.4 ALSA 和 Systemd](#ALSA_.E5.92.8C_Systemd)
 *   [2 解除各声道的静音](#.E8.A7.A3.E9.99.A4.E5.90.84.E5.A3.B0.E9.81.93.E7.9A.84.E9.9D.99.E9.9F.B3)
     *   [2.1 测试你改变的设置](#.E6.B5.8B.E8.AF.95.E4.BD.A0.E6.94.B9.E5.8F.98.E7.9A.84.E8.AE.BE.E7.BD.AE)
-    *   [2.2 Additional notes](#Additional_notes)
+    *   [2.2 附加注释](#.E9.99.84.E5.8A.A0.E6.B3.A8.E9.87.8A)
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
     *   [3.1 基本语法](#.E5.9F.BA.E6.9C.AC.E8.AF.AD.E6.B3.95)
         *   [3.1.1 赋值与分隔符](#.E8.B5.8B.E5.80.BC.E4.B8.8E.E5.88.86.E9.9A.94.E7.AC.A6)
@@ -38,9 +38,9 @@
 *   [6 混音](#.E6.B7.B7.E9.9F.B3)
     *   [6.1 手动启用 dmix](#.E6.89.8B.E5.8A.A8.E5.90.AF.E7.94.A8_dmix)
 *   [7 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [7.1 Hot-plugging a USB sound card](#Hot-plugging_a_USB_sound_card)
-    *   [7.2 Simultaneous output](#Simultaneous_output)
-    *   [7.3 Keyboard volume control](#Keyboard_volume_control)
+    *   [7.1 USB声卡热插拔](#USB.E5.A3.B0.E5.8D.A1.E7.83.AD.E6.8F.92.E6.8B.94)
+    *   [7.2 同时输出](#.E5.90.8C.E6.97.B6.E8.BE.93.E5.87.BA)
+    *   [7.3 键盘控制声音](#.E9.94.AE.E7.9B.98.E6.8E.A7.E5.88.B6.E5.A3.B0.E9.9F.B3)
 *   [8 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [8.1 Audigy 2 ZS 不发出声音](#Audigy_2_ZS_.E4.B8.8D.E5.8F.91.E5.87.BA.E5.A3.B0.E9.9F.B3)
     *   [8.2 VirtualBox中无声音](#VirtualBox.E4.B8.AD.E6.97.A0.E5.A3.B0.E9.9F.B3)
@@ -96,9 +96,13 @@ Arch 默认的内核已经通过一套模块提供了 ALSA，不必特别安装�
 
 从 [官方仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") [安装](/index.php/Pacman "Pacman") [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) 软件包，其中包含的 `alsamixer` 工具允许用户在控制台或终端中配置声音设备。 如果你需要 [高质量重采样](#.E9.AB.98.E8.B4.A8.E9.87.8F.E9.87.8D.E9.87.87.E6.A0.B7) 、 [软件模拟环绕立体声](#Upmixing.2FDownmixing) 和其他高级特性的话 ，请另外安装 [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) 软件包。
 
-### OSS compatibility
+### OSS 兼容性
 
-如果你想让 OSS 应用程序与 dmix (软件混音)协同工作的话, 请额外安装 [alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss) 软件包。 请载入 `snd_seq_oss`, `snd_pcm_oss` 和 `snd_mixer_oss` [核心模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)") 来启用 OSS 模拟模块。
+**注意:** 如果你的应用抱怨说缺少`/dev/dsp`或者`/dev/snd/seq`，这一部分很重要
+
+ALSA能够截获[OSS](/index.php/OSS "OSS")调用，然后转而在ALSA中重新发送他们。例如，对于试图打开`/dev/dsp`并向里面写入声音数据的传统应用，这个模仿层很有用。没有OSS或者这个模仿库的话，会缺少`/dev/dsp`，应用程序从而不会产生任何声音。
+
+如果你希望[OSS](/index.php/OSS "OSS")应用和[dmix](#Dmix)一起工作，也安装[alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss)。然后载入`snd-seq-oss`， `snd-pcm-oss` 和 `snd-mixer-oss` [核心模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)") 来激活OSS模仿。
 
 ### ALSA 和 Systemd
 
@@ -185,17 +189,17 @@ surround71:CARD=PCH,DEV=0
 
 [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) 软件包提供了两个配置 alsa 的服务：`alsa-restore.service` 和 `alsa-store.service`。它们分别在开机和关机时自动运行。
 
-### Additional notes
+### 附加注释
 
-*   If your system has more than one soundcard, then you can switch between them by pressing `F6`
+*   如果你的系统有多个声卡， 那么你可以按`F6`在它们中切换。
 
 *   Some cards need to have digital output muted or disabled in order to hear analog sound. For the Soundblaster Audigy LS mute the channel labeled `IEC958`.
 
-*   Some machines, (like the Thinkpad T61), have a `Speaker` channel which must be unmuted and adjusted as well.
+*   有些机器，（像Thinkpad T61），有`Speaker`通道，此通道必须被解除静音然后调整。
 
-*   Some machines, (like the Dell E6400) may also require the `Front` and `Headphone` channels to be unmuted and adjusted.
+*   有些机器，(像Dell E6400) 可能需要解除`Front` 和 `Headphone` 通道的静音并调整它们。
 
-*   If your volume adjustments seem to be lost after you reboot, try running alsamixer as root.
+*   如果重起以后，你的声音调整似乎丢失了，尝试以root运行alsamixer。
 
 ## 配置
 
@@ -869,42 +873,42 @@ pcm.dsp {
 
 ## 提示和技巧
 
-### Hot-plugging a USB sound card
+### USB声卡热插拔
 
-See [Writing Udev rules for ALSA](http://alsa.opensrc.org/Udev).
+参见 [Writing Udev rules for ALSA](http://alsa.opensrc.org/Udev).
 
-### Simultaneous output
+### 同时输出
 
-You might want to play music via external speakers connected via mini jack and internal speakers simultaneously. This can be done by unmuting **Auto-Mute** item using `alsamixer` or `amixer`:
+你可能会希望同时使用一个用mini jack连接的外置扬声器和内置扬声器同时播放一个音乐。这个可以同时使用`alsamixer` 或 `amixer`解静音**Auto-Mute**来实现：
 
 ```
 $ amixer sset "Auto-Mute" unmute
 
 ```
 
-and then unmuting other required items, such as **Headphones**, **Speaker**, **Bass Speaker**...
+然后解静音其他需要的项目, 比如 **Headphones**, **Speaker**, **Bass Speaker**...
 
-**Note:** If you have a crackling sound through headphones connector (mini-jack) after, see [here](/index.php/ALSA/Troubleshooting#Crackling_sound_through_mini-jack_.28headphones_connector.29 "ALSA/Troubleshooting").
+**注意:** 如果之后你在耳机连接器(mini-jack)中听到劈里啪啦的声音，参见 [这里](/index.php/ALSA/Troubleshooting#Crackling_sound_through_mini-jack_.28headphones_connector.29 "ALSA/Troubleshooting").
 
-### Keyboard volume control
+### 键盘控制声音
 
-Map the following commands to your volume keys: `XF86AudioRaiseVolume`, `XF86AudioLowerVolume`, `XF86AudioMute`
+将下列命令映射倒你的声音键: `XF86AudioRaiseVolume`, `XF86AudioLowerVolume`, `XF86AudioMute`
 
-To raise the volume:
+增加音量:
 
 ```
 amixer set Master 5%+
 
 ```
 
-To lower the volume:
+减小音量:
 
 ```
 amixer set Master 5%-
 
 ```
 
-To toggle mute/unmute of the volume:
+静音/解静音:
 
 ```
 amixer set Master toggle

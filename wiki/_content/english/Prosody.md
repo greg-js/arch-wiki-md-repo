@@ -1,6 +1,6 @@
-[Prosody](http://prosody.im/) (pronunciation: [1](http://www.merriam-webster.com/cgi-bin/audio.pl?prosod05.wav=prosody%27), [2](http://www.merriam-webster.com/cgi-bin/audio.pl?prosod04.wav=prosody%27)) is an [XMPP](http://xmpp.org/) server written in the [Lua](http://www.lua.org/) programming language. Prosody is designed to be lightweight and highly extensible. It is licensed under a permissive [MIT license](http://prosody.im/source/mit). Prosody is available for Arch Linux in the Community repository with some optional dependencies available from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+From the [official website](http://prosody.im/):
 
-Previous experience with building and installing packages from the AUR and basic knowledge of XMPP will be very helpful when following the guide.
+	Prosody is a modern XMPP communication server. It aims to be easy to set up and configure, and efficient with system resources. Additionally, for developers it aims to be easy to extend and give a flexible system on which to rapidly develop added functionality, or prototype new protocols.
 
 ## Contents
 
@@ -61,27 +61,33 @@ Prosody has optional depedencies that although not strictly required for its ope
 
 ## Configuration
 
-**Note:** The `posix` module and `pidfile` setting contained in the default configuration file are required for Prosody's proper operation on Arch Linux. Please do not disable or alter them.
+**Note:** The `posix` module and `pidfile` setting contained in the default configuration file are required for Prosody's proper operation.
 
-The main configuration file is located at `/etc/prosody/prosody.cfg.lua`, information on how to configure Prosody can be found in Prosody's [documentation](http://prosody.im/doc/configure). The syntax of the configuration file can be checked after any changes are made by running:
+The main configuration file is located at `/etc/prosody/prosody.cfg.lua`. Information on how to configure Prosody can be found in Prosody's [documentation](http://prosody.im/doc/configure). The syntax of the configuration file can be checked after any changes are made by running:
 
-`$ luac5.1 -p /etc/prosody/prosody.cfg.lua`
+```
+# luac5.1 -p /etc/prosody/prosody.cfg.lua
+
+```
 
 No output means the syntax is correct.
 
 ### Logging
 
-The Arch Linux Prosody package is pre-configured to log to syslog. Thus, by default, Prosody log messages are available in the [systemd journal](/index.php/Systemd_journal "Systemd journal").
+The [prosody](https://www.archlinux.org/packages/?name=prosody) package is pre-configured to log to syslog. Thus, by default, Prosody log messages are available in the [systemd journal](/index.php/Systemd_journal "Systemd journal").
 
 ## Operation
 
-[Start/enable](/index.php/Start/enable "Start/enable") `prosody.service`.
+[Start/enable](/index.php/Start/enable "Start/enable") the `prosody.service` systemd service.
 
 Prosody uses the default XMPP ports, 5222 and 5269, for client-to-server and server-to-server communications respectively. Configure your firewall as necessary.
 
 You can manipulate Prosody users by using the `prosodyctl` program. To add a user:
 
-`# prosodyctl adduser <JID>`
+```
+# prosodyctl adduser *<JID>*
+
+```
 
 **Tip:** You will likely want to make at least one user an administrator by adding their Jabber ID to the `admins` list in the configuration file.
 

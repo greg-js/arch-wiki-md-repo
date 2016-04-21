@@ -82,35 +82,43 @@ The first step to creating an Active Directory domain is provisioning. If this i
 Create a suitable NTP configuration for your network time server. See [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") for explanations of, and additional configuration options. Create a backup copy of the default file:
 
 ```
-# mv /etc/ntp.conf{,.default}
+# cp /etc/ntp.conf{,.default}
 
 ```
 
-Create the `/etc/ntp.conf` file with the following contents:
+Modify the `/etc/ntp.conf` file with the following contents:
 
  `/etc/ntp.conf` 
 ```
-# Associate to the public NTP pool servers
-server 0.pool.ntp.org
-server 1.pool.ntp.org
-server 2.pool.ntp.org
+# Please consider joining the pool:
+#
+#     http://www.pool.ntp.org/join.html
+#
+# For additional information see:
+# - https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon
+# - http://support.ntp.org/bin/view/Support/GettingStarted
+# - the ntp.conf man page
 
-# Location of drift file
-driftfile /var/lib/ntp/ntpd.drift
-
-# Location of the log file
-logfile /var/log/ntpd
-
-# Location of the update directory
-ntpsigndsocket /var/lib/samba/ntp_signd/
+# Associate to Arch's NTP pool
+server 0.arch.pool.ntp.org
+server 1.arch.pool.ntp.org
+server 2.arch.pool.ntp.org
+server 3.arch.pool.ntp.org
 
 # Restrictions
 restrict default kod limited nomodify notrap nopeer mssntp
 restrict 127.0.0.1
 restrict ::1
-restrict 0.pool.ntp.org mask 255.255.255.255 nomodify notrap nopeer noquery
-restrict 1.pool.ntp.org mask 255.255.255.255 nomodify notrap nopeer noquery
-restrict 2.pool.ntp.org mask 255.255.255.255 nomodify notrap nopeer noquery
+restrict 0.arch.pool.ntp.org mask 255.255.255.255 nomodify notrap nopeer noquery
+restrict 1.arch.pool.ntp.org mask 255.255.255.255 nomodify notrap nopeer noquery
+restrict 2.arch.pool.ntp.org mask 255.255.255.255 nomodify notrap nopeer noquery
+restrict 3.arch.pool.ntp.org mask 255.255.255.255 nomodify notrap nopeer noquery
+
+# Location of drift file
+driftfile /var/lib/ntp/ntpd.drift
+
+# Location of the update directory
+ntpsigndsocket /var/lib/samba/ntp_signd/
 
 ```
 
@@ -139,72 +147,94 @@ Create the `/etc/named.conf` file:
  `/etc/named.conf` 
 ```
 
-// Global options
+// vim:set ts=4 sw=4 et:
+
 options {
- auth-nxdomain yes;
- datasize default;
- directory "/var/named";
- empty-zones-enable no;
- pid-file "/run/named/named.pid";
- tkey-gssapi-keytab "/var/lib/samba/private/dns.keytab";
- forwarders { '''xxx.xxx.xxx.xxx'''; '''xxx.xxx.xxx.xxx'''; };
-//  Uncomment the next line to enable IPv6
-//    listen-on-v6 { any; };
-//  Add this for no IPv4:
-//    listen-on { none; };
- notify no;
-//  Add any subnets or hosts you want to allow to use this DNS server (use "; " delimiter)
- allow-query     { '''xxx.xxx.xxx.xxx/xx'''; 127.0.0.0/8; };
-//  Add any subnets or hosts you want to allow to use recursive queries
- allow-recursion { '''xxx.xxx.xxx.xxx/xx'''; 127.0.0.0/8; };
-//  Add any subnets or hosts you want to allow dynamic updates from
- allow-update    { '''xxx.xxx.xxx.xxx/xx'''; 127.0.0.0/8; };
- version none;
- hostname none;
- server-id none;
+    directory "/var/named";
+    pid-file "/run/named/named.pid";
+
+    // Uncomment these to enable IPv6 connections support
+    // IPv4 will still work:
+    //  listen-on-v6 { any; };
+    // Add this for no IPv4:
+    //  listen-on { none; };
+
+    auth-nxdomain yes;
+    datasize default;
+    empty-zones-enable no;
+    tkey-gssapi-keytab "/var/lib/samba/private/dns.keytab";
+    forwarders { **xxx.xxx.xxx.xxx**; **xxx.xxx.xxx.xxx**; };
+
+    //  Add any subnets or hosts you want to allow to use this DNS server (use "; " delimiter)
+    allow-query     { **xxx.xxx.xxx.xxx/xx**; 127.0.0.0/8; };
+
+    //  Add any subnets or hosts you want to allow to use recursive queries
+    allow-recursion { **xxx.xxx.xxx.xxx/xx**; 127.0.0.0/8; };
+
+    //  Add any subnets or hosts you want to allow dynamic updates from
+    allow-update    { **xxx.xxx.xxx.xxx/xx**; 127.0.0.0/8; };
+
+    allow-transfer { none; };
+    version none;
+    hostname none;
+    server-id none;
 };
 
-//Root servers (required zone for recursive queries)
-zone "." IN {
- type hint;
- file "root.hint";
-};
-
-//Required localhost forward-/reverse zones
 zone "localhost" IN {
- type master;
- file "localhost.zone";
-//  allow-transfer { any; };
+    type master;
+    file "localhost.zone";
 };
+
 zone "0.0.127.in-addr.arpa" IN {
- type master;
- file "127.0.0.zone";
-//  allow-transfer { any; };
+    type master;
+    file "127.0.0.zone";
 };
-// Uncomment the following zone for IPv6 support
-//zone "1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa" IN {
-//    type master;
-//    file "localhost.ip6.zone";
-//    allow-transfer { any; };
-//};
+
+zone "1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa" {
+    type master;
+    file "localhost.ip6.zone";
+};
+
+zone "255.in-addr.arpa" IN {
+    type master;
+    file "empty.zone";
+};
+
+zone "0.in-addr.arpa" IN {
+    type master;
+    file "empty0.zone";
+};
+
+zone "." IN {
+    type hint;
+    file "root.hint";
+};
 
 //Load AD integrated zones
 dlz "AD DNS Zones" {
- database "dlopen /usr/lib/samba/bind9/dlz_bind9_10.so";
+    database "dlopen /usr/lib/samba/bind9/dlz_bind9_10.so";
 };
 
-//Log settings
-logging {
-channel xfer-log {
-    file "/var/log/named.log";
-    print-category yes;
-    print-severity yes;
-    print-time yes;
-    severity info;
- };
- category xfer-in { xfer-log; };
- category xfer-out { xfer-log; };
- category notify { xfer-log; };
+//zone "example.org" IN {
+//    type slave;
+//    file "example.zone";
+//    masters {
+//        192.168.1.100;
+//    };
+//    allow-query { any; };
+//    allow-transfer { any; };
+//};
+
+//logging {
+    channel xfer-log {
+        file "/var/log/named.log";
+            print-category yes;
+            print-severity yes;
+            severity info;
+        };
+        category xfer-in { xfer-log; };
+        category xfer-out { xfer-log; };
+        category notify { xfer-log; };
 };
 
 ```
@@ -217,6 +247,14 @@ Set permissions:
 # touch /var/log/named.log
 # chown root:named /var/log/named.log
 # chmod 664 /var/log/named.log
+
+```
+
+Fix for recent versions of bind:
+
+```
+# copy /var/named/empty.zone /var/named/empty0.zone
+# chown root:named /var/named/empty0.zone
 
 ```
 

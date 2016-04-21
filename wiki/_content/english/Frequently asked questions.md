@@ -24,13 +24,14 @@ Besides the questions covered below, you may find [The Arch Way](/index.php/The_
     *   [2.4 Pacman needs a library so other applications can easily access package information](#Pacman_needs_a_library_so_other_applications_can_easily_access_package_information)
     *   [2.5 Pacman needs feature X!](#Pacman_needs_feature_X.21)
     *   [2.6 What is the difference between all these repositories?](#What_is_the_difference_between_all_these_repositories.3F)
-    *   [2.7 I just installed Package X. How do I start it?](#I_just_installed_Package_X._How_do_I_start_it.3F)
-    *   [2.8 Why is there only a single version of each shared library in the official repositories?](#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F)
-    *   [2.9 What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?](#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F)
-    *   [2.10 Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?](#Is_it_possible_that_there.27s_a_major_kernel_update_in_the_repository.2C_and_that_some_of_the_driver_packages_haven.27t_been_updated.3F)
-    *   [2.11 Does Arch use package signing?](#Does_Arch_use_package_signing.3F)
-    *   [2.12 What to do before upgrading?](#What_to_do_before_upgrading.3F)
-    *   [2.13 A package update was released, but pacman says the system is up to date](#A_package_update_was_released.2C_but_pacman_says_the_system_is_up_to_date)
+    *   [2.7 What is the difference between a repository and a mirror?](#What_is_the_difference_between_a_repository_and_a_mirror.3F)
+    *   [2.8 I just installed Package X. How do I start it?](#I_just_installed_Package_X._How_do_I_start_it.3F)
+    *   [2.9 Why is there only a single version of each shared library in the official repositories?](#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F)
+    *   [2.10 What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?](#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F)
+    *   [2.11 Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?](#Is_it_possible_that_there.27s_a_major_kernel_update_in_the_repository.2C_and_that_some_of_the_driver_packages_haven.27t_been_updated.3F)
+    *   [2.12 Does Arch use package signing?](#Does_Arch_use_package_signing.3F)
+    *   [2.13 What to do before upgrading?](#What_to_do_before_upgrading.3F)
+    *   [2.14 A package update was released, but pacman says the system is up to date](#A_package_update_was_released.2C_but_pacman_says_the_system_is_up_to_date)
 *   [3 Installation](#Installation)
     *   [3.1 Arch needs an installer. Maybe a GUI installer?](#Arch_needs_an_installer._Maybe_a_GUI_installer.3F)
     *   [3.2 I installed Arch, and now I am at a shell! What now?](#I_installed_Arch.2C_and_now_I_am_at_a_shell.21_What_now.3F)
@@ -170,6 +171,10 @@ However, the best way to get a feature added to pacman or Arch Linux is to imple
 ### What is the difference between all these repositories?
 
 See [Official repositories](/index.php/Official_repositories "Official repositories").
+
+### What is the difference between a repository and a mirror?
+
+See [pacman#Repositories and mirrors](/index.php/Pacman#Repositories_and_mirrors "Pacman").
 
 ### I just installed Package X. How do I start it?
 

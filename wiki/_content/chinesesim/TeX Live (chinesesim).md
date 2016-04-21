@@ -1,6 +1,8 @@
 **翻译状态：** 本文是英文页面 [TeXLive](/index.php/TeXLive "TeXLive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-04-08，点击[这里](https://wiki.archlinux.org/index.php?title=TeXLive&diff=0&oldid=251936)可以查看翻译后英文页面的改动。
 
-[TeX Live](http://www.tug.org/texlive/)是"研究和运行[TeX](/index.php/Category:TeX "Category:TeX")文档制作系统的简单方式。它提供了一个全面的Tex系统和针对充满Unix味道的操作系统(包括GNU/Linux)的二进制文件，当然也有Windows版本。它包含了全部主要的Tex相关的程序，宏包，自由软件字体，还有对世界上很多语种的支持。"
+[TeX Live](http://www.tug.org/texlive/)是"安装和运行[TeX](/index.php/Category:TeX "Category:TeX")文档制作系统的简单方式。它提供了一个全面的Tex系统，提供的二进制文件适用于大多数Unix风格操作系统(包括GNU/Linux)的二进制文件，当然也有Windows。它包含了全部主要的Tex相关的属于自由软件的程序，宏包，字体，还有对世界上很多语种的支持。"
+
+Tex Live是[LaTeX](https://en.wikipedia.org/wiki/LaTeX "wikipedia:LaTeX")， [ConTeXt](https://en.wikipedia.org/wiki/ConTeXt "wikipedia:ConTeXt")和其他友商最流行的发行版本之一。
 
 查看[Category:TeX (简体中文)](/index.php/Category:TeX_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:TeX (简体中文)")以获得更多信息。
 
@@ -9,18 +11,19 @@
 *   [1 安装](#.E5.AE.89.E8.A3.85)
     *   [1.1 texlive-most](#texlive-most)
     *   [1.2 texlive-lang](#texlive-lang)
-    *   [1.3 另一种方法：网络安装TeXLive](#.E5.8F.A6.E4.B8.80.E7.A7.8D.E6.96.B9.E6.B3.95.EF.BC.9A.E7.BD.91.E7.BB.9C.E5.AE.89.E8.A3.85TeXLive)
-*   [2 重要信息](#.E9.87.8D.E8.A6.81.E4.BF.A1.E6.81.AF)
-    *   [2.1 纸张大小](#.E7.BA.B8.E5.BC.A0.E5.A4.A7.E5.B0.8F)
-    *   [2.2 升级时出现 "formats not generated" 错误](#.E5.8D.87.E7.BA.A7.E6.97.B6.E5.87.BA.E7.8E.B0_.22formats_not_generated.22_.E9.94.99.E8.AF.AF)
-    *   [2.3 字体](#.E5.AD.97.E4.BD.93)
-*   [3 中文化](#.E4.B8.AD.E6.96.87.E5.8C.96)
-*   [4 TeXLive Local Manager](#TeXLive_Local_Manager)
-    *   [4.1 "langukenglish" 错误](#.22langukenglish.22_.E9.94.99.E8.AF.AF)
-*   [5 安装 .sty 文件](#.E5.AE.89.E8.A3.85_.sty_.E6.96.87.E4.BB.B6)
-    *   [5.1 手工安装.sty文件](#.E6.89.8B.E5.B7.A5.E5.AE.89.E8.A3.85.sty.E6.96.87.E4.BB.B6)
-    *   [5.2 使用PKGBUILD安装 .sty](#.E4.BD.BF.E7.94.A8PKGBUILD.E5.AE.89.E8.A3.85_.sty)
-*   [6 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
+    *   [1.3 手动安装TeXLive](#.E6.89.8B.E5.8A.A8.E5.AE.89.E8.A3.85TeXLive)
+*   [2 使用](#.E4.BD.BF.E7.94.A8)
+*   [3 重要信息](#.E9.87.8D.E8.A6.81.E4.BF.A1.E6.81.AF)
+    *   [3.1 纸张大小](#.E7.BA.B8.E5.BC.A0.E5.A4.A7.E5.B0.8F)
+    *   [3.2 升级时出现 "formats not generated" 错误](#.E5.8D.87.E7.BA.A7.E6.97.B6.E5.87.BA.E7.8E.B0_.22formats_not_generated.22_.E9.94.99.E8.AF.AF)
+    *   [3.3 字体](#.E5.AD.97.E4.BD.93)
+*   [4 中文化](#.E4.B8.AD.E6.96.87.E5.8C.96)
+*   [5 TeXLive Local Manager](#TeXLive_Local_Manager)
+    *   [5.1 "langukenglish" 错误](#.22langukenglish.22_.E9.94.99.E8.AF.AF)
+*   [6 安装 .sty 文件](#.E5.AE.89.E8.A3.85_.sty_.E6.96.87.E4.BB.B6)
+    *   [6.1 手工安装.sty文件](#.E6.89.8B.E5.B7.A5.E5.AE.89.E8.A3.85.sty.E6.96.87.E4.BB.B6)
+    *   [6.2 使用PKGBUILD安装 .sty](#.E4.BD.BF.E7.94.A8PKGBUILD.E5.AE.89.E8.A3.85_.sty)
+*   [7 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
 
 ## 安装
 
@@ -29,7 +32,7 @@ Tex Live宏包主要在[官方仓库](/index.php/Official_repositories "Official
 *   [texlive-most](https://www.archlinux.org/groups/x86_64/texlive-most/) 包括Tex Live应用
 *   [texlive-lang](https://www.archlinux.org/groups/x86_64/texlive-lang/) 提供个性化的设置和非英语特性
 
-必要的软件包[texlive-core](https://www.archlinux.org/packages/?name=texlive-core) 包含了基本的 texmf-dist 目录树(宏包和字体)，[texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) 包含二进制文件，库文件，和 texmf 目录树(核心部件)。[texlive-core](https://www.archlinux.org/packages/?name=texlive-core) 基于在TexLive DVD中 “中等的” 安装。其它的包基于TeX Live中齐名的宏包。去了解没个软件包中包含CTAN中哪些宏包，查看这些文件：
+必要的软件包[texlive-core](https://www.archlinux.org/packages/?name=texlive-core) 包含了基本的 texmf-dist 目录树(宏包和字体)，[texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) 包含二进制文件，库文件，和 texmf 目录树。[texlive-core](https://www.archlinux.org/packages/?name=texlive-core) 基于上游发行版的"medium"安装方案。所有其它的包基于TeX Live同名的包。想确定每个包重包含了哪些CTAN包，查看这些文件：
 
 ```
   /var/lib/texmf-var/arch/installedpkgs/<package>_<revnr>.pkgs
@@ -67,24 +70,56 @@ Tex Live宏包主要在[官方仓库](/index.php/Official_repositories "Official
 
 ### texlive-lang
 
-*   [texlive-langcjk](https://www.archlinux.org/packages/?name=texlive-langcjk)
+*   [texlive-langchinese](https://www.archlinux.org/packages/?name=texlive-langchinese)
 *   [texlive-langcyrillic](https://www.archlinux.org/packages/?name=texlive-langcyrillic)
 *   [texlive-langgreek](https://www.archlinux.org/packages/?name=texlive-langgreek)
+*   [texlive-langjapanese](https://www.archlinux.org/packages/?name=texlive-langjapanese)
+*   [texlive-langkorean](https://www.archlinux.org/packages/?name=texlive-langkorean)
 *   [texlive-langextra](https://www.archlinux.org/packages/?name=texlive-langextra)
 
-**注意:** `texlive-langextra` 取代了 African，Arab，Armenian，Croatian，Hebrew，Indic，Mongolian，Tibetan 和 Vietnamese 软件包.
+**注意:** `texlive-langextra` 提供了对 African, Arabic, Armenian, Croatian, Hebrew, Indic, Mongolian, Tibetan 和 Vietnamese 的语言支持.
 
-### 另一种方法：网络安装TeXLive
+### 手动安装TeXLive
 
-手动安装Tex Live使用Arch的方式因此给你更多的控制并能让你更好的理解过程。这是唯一的能获取不到100MB适合你需要的全功能LaTeX套件的方式，而不用安装成百上千的你从不会用上的包。
+参见[LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Custom_installation_with_TeX_Live) 和 [TeX Live Guide](https://tug.org/texlive/doc/texlive-en/texlive-en.html#x1-140003). 对于需要Tex Live的程序 (例如 kile) 你可以参考 [texlive-dummy](https://aur.archlinux.org/packages/texlive-dummy/) 包.
 
-这里可以找到一份详细的TeX Live网络安装指导[[http://en.wikibooks.org/wiki/LaTeX/Installation#Custom_installation_with_TeX_Live](http://en.wikibooks.org/wiki/LaTeX/Installation#Custom_installation_with_TeX_Live) LaTeX Wikibook].
+## 使用
 
-有关网络安装的更多信息参见：[http://tug.org/texlive/doc/texlive-en/texlive-en.html#x1-140003](http://tug.org/texlive/doc/texlive-en/texlive-en.html#x1-140003)
+You can test your installation with
 
-这里有一个关于网络安装优缺点的 [讨论](https://bbs.archlinux.org/viewtopic.php?id=109427).
+```
+$ tex '\empty Hello world!\bye'
+$ pdftex '\empty Hello world!\bye'
 
-其它依赖texlive的程序如kile现在可以从源里获得。
+```
+
+You should get a DVI or a PDF file accordingly.
+
+You will probably want a [TeX editor](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents").
+
+There are also a few online solutions that let you create TeX-based documents without TeX Live:
+
+*   **Authorea** — Online collaborative editor for scientific, academic, and technical documents.
+
+	[https://www.authorea.com/](https://www.authorea.com/) ||
+
+*   **ShareLaTeX** — An open source online LaTeX editor. You can either run your own local version where you can host, edit, collaborate in real-time, and compile your LaTeX documents, or simply use the version hosted on the official website.
+
+	[https://www.sharelatex.com/](https://www.sharelatex.com/) ||
+
+*   **Overleaf** — (Previously writeLaTeX) Online collaborative LaTeX editor with integrated real-time preview.
+
+	[https://www.overleaf.com/](https://www.overleaf.com/) ||
+
+*   **cloudTeX** — Social TeX in the cloud.
+
+	[https://cloud-tex.com/](https://cloud-tex.com/) ||
+
+*   **Papeeria** — Online LaTeX editor.
+
+	[http://papeeria.com/](http://papeeria.com/) ||
+
+Find more on the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions).
 
 ## 重要信息
 

@@ -13,9 +13,9 @@
     *   [2.3 新用户的默认选项](#.E6.96.B0.E7.94.A8.E6.88.B7.E7.9A.84.E9.BB.98.E8.AE.A4.E9.80.89.E9.A1.B9)
 *   [3 用法](#.E7.94.A8.E6.B3.95)
     *   [3.1 创建密钥对](#.E5.88.9B.E5.BB.BA.E5.AF.86.E9.92.A5.E5.AF.B9)
-    *   [3.2 Backup your private key](#Backup_your_private_key)
-    *   [3.3 Export your public key](#Export_your_public_key)
-    *   [3.4 Import a key](#Import_a_key)
+    *   [3.2 备份私钥](#.E5.A4.87.E4.BB.BD.E7.A7.81.E9.92.A5)
+    *   [3.3 导出公钥](#.E5.AF.BC.E5.87.BA.E5.85.AC.E9.92.A5)
+    *   [3.4 导入密钥](#.E5.AF.BC.E5.85.A5.E5.AF.86.E9.92.A5)
     *   [3.5 Use a keyserver](#Use_a_keyserver)
     *   [3.6 Encrypt and decrypt](#Encrypt_and_decrypt)
 *   [4 密钥维护](#.E5.AF.86.E9.92.A5.E7.BB.B4.E6.8A.A4)
@@ -121,44 +121,42 @@ $ gpg --full-gen-key
 
 **注意:** 任何导入密钥的人都可以看到这里的用户名和电子邮件地址。
 
-### Backup your private key
+### 备份私钥
 
-To backup your private key do the following:
+用下面方法备份私钥，然后将私钥保存在一个安全的位置，加锁或加密磁盘。
 
 ```
 $ gpg --export-secret-keys --armor *<user-id>* > *privkey.asc*
 
 ```
 
-Place the private key in a safe place, such as a locked container or encrypted drive.
+**警告:** 如果有人能访问备份文件，就可以伪装成你进行加密和签名，而且**不**需要密码.
 
-**Warning:** Anyone who gains access to the above exported file will be able to encrypt and sign documents as if they were you *without* needing to know your passphrase.
+### 导出公钥
 
-### Export your public key
+其他人需要有你的公钥才能给你发加密信息。
 
-In order for others to send encrypted messages to you, they need your public key.
-
-To generate an ASCII version of your public key (*e.g.* to distribute it by e-mail):
+要生成公钥的 ASCII 版本，(例如通过电子邮件发布):
 
 ```
 $ gpg --armor --output *public.key* --export *<user-id>*
 
 ```
 
-Alternatively, or in addition, you can share your key [on a keyserver](#Use_a_keyserver).
+此外，还可以通过 [密钥服务器](#.E4.BD.BF.E7.94.A8.E5.AF.86.E9.92.A5.E6.9C.8D.E5.8A.A1.E5.99.A8) 分发公钥.
 
-**Tip:** Add `--no-emit-version` to avoid printing the version number, or add the corresponding setting to your configuration file.
+**Tip:** 使用 `--no-emit-version` 可以避免打印版本号，通过配置文件也可以进行此设置。
 
-### Import a key
+### 导入密钥
 
-In order to encrypt messages to others, as well as verify their signatures, you need their public key. To import a public key with file name `*public.key*` to your public key ring:
+要给其他人发送加密信息，或者验证他们的签名，就需要他们的公钥。通过文件 `*public.key*` 导入公钥到密钥环：
 
 ```
 $ gpg --import *public.key*
 
 ```
 
-Alternatively, find a public key [on a keyserver](#Use_a_keyserver).
+此外，还可以通过密钥服务器导入公钥。
 
 ### Use a keyserver
 

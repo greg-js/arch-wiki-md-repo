@@ -225,7 +225,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [67.2 Troubleshooting](#Troubleshooting_25)
 *   [68 Unity3D](#Unity3D)
     *   [68.1 Locale Settings](#Locale_Settings_2)
-    *   [68.2 Unity 5 and PulseAudio](#Unity_5_and_PulseAudio)
+    *   [68.2 Unity 5 sound problems](#Unity_5_sound_problems)
 *   [69 Unity of Command](#Unity_of_Command)
     *   [69.1 Dependencies](#Dependencies_35)
     *   [69.2 Troubleshooting](#Troubleshooting_26)
@@ -1552,9 +1552,9 @@ To work around this, set the game's launch options to `LC_ALL=C %command%`
 
 Some of the affected games: *FORCED*, *Gone Home*, *Ichi*, *Nimble Quest*, *Syder Arcade*.
 
-### Unity 5 and PulseAudio
+### Unity 5 sound problems
 
-The sound system in Unity 5 changed and to be able to play games created with it you must most likely install and run [PulseAudio](/index.php/PulseAudio "PulseAudio").
+The sound system in Unity 5 changed and to be able to play games created with it you must most likely install and run [PulseAudio](/index.php/PulseAudio "PulseAudio"). Another solution is to disable the Steam runtime: in the launch options for the game, write this: LD_LIBRARY_PATH="" %command%
 
 ## Unity of Command
 

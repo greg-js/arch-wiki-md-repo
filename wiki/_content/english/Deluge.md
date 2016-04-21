@@ -249,7 +249,16 @@ The number **10** corresponds to a level of **Admin**. Refer to the following ta
 The default settings disallow remote connections. Change the "allow_remote" setting in `$HOME/.config/deluge/core.conf`:
 
 ```
-"allow_remote": true,
+"allow_remote": true
+
+```
+
+**Note:**
+
+`$HOME/.config/deluge/core.conf` is automatically created at the first configuration change, if it does not exist you can set the value via `deluge-console`:
+
+```
+config --set allow_remote true
 
 ```
 

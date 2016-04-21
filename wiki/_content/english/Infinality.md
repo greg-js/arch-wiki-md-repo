@@ -1,4 +1,4 @@
-The [infinality](http://www.infinality.net/) patchset aims to greatly improve freetype2 font rendering. It adds multiple new capabilities.
+The [infinality](http://www.infinality.net/) patchset aims to greatly improve font rendering in freetype2 and friends. It adds multiple new capabilities.
 
 ## Contents
 
@@ -6,22 +6,25 @@ The [infinality](http://www.infinality.net/) patchset aims to greatly improve fr
 *   [2 Installation](#Installation)
     *   [2.1 Infinality-bundle](#Infinality-bundle)
         *   [2.1.1 Installation](#Installation_2)
-        *   [2.1.2 Recommended fonts with restricted licenses](#Recommended_fonts_with_restricted_licenses)
-        *   [2.1.3 Usage](#Usage)
-        *   [2.1.4 More fonts](#More_fonts)
-        *   [2.1.5 Font substitutions](#Font_substitutions)
-        *   [2.1.6 Package signatures](#Package_signatures)
-        *   [2.1.7 Updating](#Updating)
-    *   [2.2 Upstream infinality](#Upstream_infinality)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Spotify font issue](#Spotify_font_issue)
-    *   [3.2 Google Chrome issues](#Google_Chrome_issues)
-    *   [3.3 Emacs issues](#Emacs_issues)
-    *   [3.4 GIMP issues](#GIMP_issues)
-    *   [3.5 Language specifics diacritics / glyphs](#Language_specifics_diacritics_.2F_glyphs)
-    *   [3.6 Firefox/Chrome browsers rendering monospaced with proportional font](#Firefox.2FChrome_browsers_rendering_monospaced_with_proportional_font)
-    *   [3.7 General problems with fonts](#General_problems_with_fonts)
-*   [4 See also](#See_also)
+        *   [2.1.2 More fonts](#More_fonts)
+        *   [2.1.3 Package signatures](#Package_signatures)
+        *   [2.1.4 Updating](#Updating)
+    *   [2.2 Other sources](#Other_sources)
+        *   [2.2.1 AUR](#AUR)
+        *   [2.2.2 Upstream infinality (dead)](#Upstream_infinality_.28dead.29)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Recommended fonts with restricted licenses](#Recommended_fonts_with_restricted_licenses)
+    *   [3.2 Usage](#Usage)
+    *   [3.3 Font substitutions](#Font_substitutions)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Spotify font issue](#Spotify_font_issue)
+    *   [4.2 Google Chrome issues](#Google_Chrome_issues)
+    *   [4.3 Emacs issues](#Emacs_issues)
+    *   [4.4 GIMP issues](#GIMP_issues)
+    *   [4.5 Language specifics diacritics / glyphs](#Language_specifics_diacritics_.2F_glyphs)
+    *   [4.6 Firefox/Chrome browsers rendering monospaced with proportional font](#Firefox.2FChrome_browsers_rendering_monospaced_with_proportional_font)
+    *   [4.7 General problems with fonts](#General_problems_with_fonts)
+*   [5 See also](#See_also)
 
 ## Features
 
@@ -45,15 +48,18 @@ Variables should be set in `/etc/profile.d/infinality-settings.sh`. See [infinal
 
 ## Installation
 
+There are two main sources of infinality packages available, from bohoomil's fork or from the old infinality.net upstream. Since the old upstream (infinality.net) is now gone, you should only look at *Infinality-bundle*.
+
 ### Infinality-bundle
 
-**Infinality-bundle** is a collection of software aiming to improve text rendering in Arch Linux.
+**Infinality-bundle** is a collection of software aiming to improve text rendering in Arch Linux by bohoomil.
 
 Currently, the bundle comprises:
 
-*   *freetype2-infinality-ultimate* - [freetype2](https://www.archlinux.org/packages/?name=freetype2) built with [Infinality](http://www.infinality.net/blog/) and additional patches.
-*   *fontconfig-infinality-ultimate* - [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) optimized for use with *freetype2-infinality-ultimate*, including separate configuration presets for free (default), MS and custom font collections.
-*   *cairo-infinality-ultimate* - [cairo](https://www.archlinux.org/packages/?name=cairo) built with Ubuntu and additional patches.
+*   *freetype2-infinality-ultimate* – [freetype2](https://www.archlinux.org/packages/?name=freetype2) built with [Infinality](http://www.infinality.net/blog/) and additional patches. Also as [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/).
+*   *fontconfig-infinality-ultimate* – [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) optimized for use with *freetype2-infinality-ultimate*, including separate configuration presets for free (default), MS and custom font collections. Also as [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/).
+*   *cairo-infinality-ultimate* – [cairo](https://www.archlinux.org/packages/?name=cairo) built with Ubuntu and additional patches. Also as [cairo-infinality](https://aur.archlinux.org/packages/cairo-infinality/).
+*   *jdk8-openjdk-infinality* – [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) built with patches to respect fontconfig settings. See also [jdk8-openjdk-infinality](https://aur.archlinux.org/packages/jdk8-openjdk-infinality/). (The AUR package is quite a bit different from [Bohoomil's own patchset](https://github.com/bohoomil/fontconfig-ultimate/tree/pkgbuild/04_java8-openjdk).)
 
 All libraries are built in a clean chroot environment and are available for both i686 and x86_64 architectures, including multilib support.
 
@@ -81,7 +87,67 @@ The installation consists of adding the selected repositories to `pacman.conf` a
     ```
     answer `yes`.
 
-#### Recommended fonts with restricted licenses
+#### More fonts
+
+If you want to install even more fonts, there is an additional *infinality-bundle-fonts-extra* collection. Run
+
+```
+$ pacman -Ss infinality-bundle-fonts-extra
+
+```
+
+to list available packages.
+
+**Warning:** **Do not** attempt to install the entire *infinality-bundle-fonts* or *infinality-bundle-fonts-extra* group. Unless you know for sure you need any of the fonts available there, you will only unnecessarily clutter your hard drive and decrease performance of the font cache. *ibfonts-meta-extended* should suffice in most, even very complex, use scenarios. Besides, several font families are available in multiple formats (T1, TTF, OTF): trying to install all font packages will lead to unresolvable package conflicts. If this is the case, you should always use only **one** format per family.
+
+**Tip:** Before you install any third party font from either [official repositories](/index.php/Official_repositories "Official repositories") or the [AUR](/index.php/AUR "AUR"), always check if it is available in the *infinality-bundle-fonts* collection.
+
+#### Package signatures
+
+One frequent issue users may face with this repositories is that the package database or signatures do not correspond. Often a simple force refresh of the package lists (`pacman -Syy`) will fix the issue. If that fails, try removing the infinality-bundle files from `/var/lib/pacman/sync` and then resyncing again.
+
+#### Updating
+
+*fontconfig-infinality-ultimate* is updated frequently, usually every 3-4 weeks, after a number of recently reported minor bugs has been fixed. As every fix is immediately committed to the GitHub repository, users who chose [fontconfig-infinality-ultimate-git](https://aur.archlinux.org/packages/fontconfig-infinality-ultimate-git/) from the AUR will get them sooner, i.e. when they rebuild the package.
+
+**Note:**
+
+*   *fontconfig-infinality-ultimate-git* is a development branch of the package available in the [infinality-bundle] repository. Keep in mind that it is not a stable release and can break at times.
+*   When **reporting bugs**, please report all code-related issues (incorrect rendering, fontconfig problems, etc.) at GitHub [Issues * bohoomil/fontconfig-ultimate](https://github.com/bohoomil/fontconfig-ultimate/issues) and Arch specific, including problems regarding maintenance, packaging and general questions, in dedicated threads at Arch Forums. Before filing a report, make sure that [infinality-bundle] packages were correctly installed and customized.
+
+### Other sources
+
+#### AUR
+
+See the package correspondence in the section [#Infinality-bundle](#Infinality-bundle) for what packages are available.
+
+Besides [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/), it is recommended to also install [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) to enable selection of predefined font substitution styles and antialiasing settings, apart from the rendering settings of the engine itself. After doing so, you can select the font style (win7, winxp, osx, linux, ...) with:
+
+```
+# fc-presets set
+
+```
+
+The corresponding fonts need to be installed.
+
+**Note:**
+
+*   Install [grip-git](https://aur.archlinux.org/packages/grip-git/) from the AUR to have a realtime font preview.
+*   The `README` for [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) says that `/etc/fonts/local.conf` should either not exist, or have no infinality-related configurations in it. The `local.conf` is now obsolete and completely replaced by this configuration.
+
+#### Upstream infinality (dead)
+
+The old upstream has gone dead, and the AUR packages have switched to Bohoomil's patches ([[1]](https://aur.archlinux.org/cgit/aur.git/commit/?h=freetype2-infinality&id=b5e7833b99c67854a9f8db663edd825dd87831e7)). This section is left for historians.
+
+**Warning:** Upstream infinality patches are intended for the older 2.4x freetype2 branch. Users are advised to use the [infinality-bundle](#Infinality-bundle) by *bohoomil*.
+
+[freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/) can be installed from the [AUR](/index.php/AUR "AUR"). If you are a multilib user, also install [lib32-freetype2-infinality](https://aur.archlinux.org/packages/lib32-freetype2-infinality/) from the AUR. The AUR also contains the latest development snapshot of freetype2 with the Infinality patchset: [freetype2-infinality-git](https://aur.archlinux.org/packages/freetype2-infinality-git/) and [lib32-freetype2-infinality-git](https://aur.archlinux.org/packages/lib32-freetype2-infinality-git/).
+
+For more information see this forum post: [http://www.infinality.net/forum/viewtopic.php?f=2&t=77#p794](http://www.infinality.net/forum/viewtopic.php?f=2&t=77#p794)
+
+## Configuration
+
+### Recommended fonts with restricted licenses
 
 Below you will find a list of fonts that cannot be freely redistributed and thus could not be included in the *infinality-bundle-fonts* collection as binary packages. However, they can still be installed and used free of charge under specified conditions. Source packages can be found in the [AUR](/index.php/AUR "AUR"). Please, read the EULAs for details before you use the fonts!
 
@@ -90,7 +156,7 @@ Below you will find a list of fonts that cannot be freely redistributed and thus
 *   [ttf-aller](https://aur.archlinux.org/packages/ttf-aller/)
 *   [ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/)
 
-#### Usage
+### Usage
 
 Users of popular Desktop Environments (GNOME, KDE, Xfce4, Cinnamon, LXDE) should adjust font settings via their DE's control panel. Basically, the settings should duplicate those found in the freetype2 configuration file (`/etc/X11/xinit/xinitrc.d/xft-settings.sh`):
 
@@ -137,59 +203,9 @@ Run `fc-presets help` for more information.
 
 *   If you would rather use a custom font collection, there is a `combi` preset available that should let you adjust fontconfig parameters accordingly. When you activate the `combi` preset, the content of 'custom' configuration files (`/etc/fonts/conf.avail.infinality/combi`) can be freely modified. When you are done, do not forget to create a backup copy of the 'combi' directory.
 
-#### More fonts
-
-If you want to install even more fonts, there is an additional *infinality-bundle-fonts-extra* collection. Run
-
-```
-$ pacman -Ss infinality-bundle-fonts-extra
-
-```
-
-to list available packages.
-
-**Warning:** **Do not** attempt to install the entire *infinality-bundle-fonts* or *infinality-bundle-fonts-extra* group. Unless you know for sure you need any of the fonts available there, you will only unnecessarily clutter your hard drive and decrease performance of the font cache. *ibfonts-meta-extended* should suffice in most, even very complex, use scenarios. Besides, several font families are available in multiple formats (T1, TTF, OTF): trying to install all font packages will lead to unresolvable package conflicts. If this is the case, you should always use only **one** format per family.
-
-**Tip:** Before you install any third party font from either [official repositories](/index.php/Official_repositories "Official repositories") or the [AUR](/index.php/AUR "AUR"), always check if it is available in the *infinality-bundle-fonts* collection.
-
-#### Font substitutions
+### Font substitutions
 
 If you want to override default font substitutions set in `/etc/fonts/conf.d/37-repl-global-*preset*.conf` or add new ones, use `/etc/fonts/conf.d/35-repl-custom.conf` to do so. You will need to duplicate the template (16 lines of code) for each font family to be replaced and provide appropriate font names.
-
-#### Package signatures
-
-One frequent issue users may face with this repositories is that the package database or signatures do not correspond. Often a simple force refresh of the package lists (`pacman -Syy`) will fix the issue. If that fails, try removing the infinality-bundle files from `/var/lib/pacman/sync` and then resyncing again.
-
-#### Updating
-
-*fontconfig-infinality-ultimate* is updated frequently, usually every 3-4 weeks, after a number of recently reported minor bugs has been fixed. As every fix is immediately committed to the GitHub repository, users who chose [fontconfig-infinality-ultimate-git](https://aur.archlinux.org/packages/fontconfig-infinality-ultimate-git/) from the AUR will get them sooner, i.e. when they rebuild the package.
-
-**Note:**
-
-*   *fontconfig-infinality-ultimate-git* is a development branch of the package available in the [infinality-bundle] repository. Keep in mind that it is not a stable release and can break at times.
-*   When **reporting bugs**, please report all code-related issues (incorrect rendering, fontconfig problems, etc.) at GitHub [Issues * bohoomil/fontconfig-ultimate](https://github.com/bohoomil/fontconfig-ultimate/issues) and Arch specific, including problems regarding maintenance, packaging and general questions, in dedicated threads at Arch Forums. Before filing a report, make sure that [infinality-bundle] packages were correctly installed and customized.
-
-### Upstream infinality
-
-**Warning:** Upstream infinality patches are intended for the older 2.4x freetype2 branch. Users are advised to use the [infinality-bundle](#Infinality-bundle) by *bohoomil*.
-
-[freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/) can be installed from the [AUR](/index.php/AUR "AUR"). If you are a multilib user, also install [lib32-freetype2-infinality](https://aur.archlinux.org/packages/lib32-freetype2-infinality/) from the AUR. The AUR also contains the latest development snapshot of freetype2 with the Infinality patchset: [freetype2-infinality-git](https://aur.archlinux.org/packages/freetype2-infinality-git/) and [lib32-freetype2-infinality-git](https://aur.archlinux.org/packages/lib32-freetype2-infinality-git/).
-
-It is recommended to also install [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) to enable selection of predefined font substitution styles and antialiasing settings, apart from the rendering settings of the engine itself. After doing so, you can select the font style (win7, winxp, osx, linux, ...) with:
-
-```
-# fc-presets set
-
-```
-
-The corresponding fonts need to be installed.
-
-**Note:**
-
-*   Install [grip-git](https://aur.archlinux.org/packages/grip-git/) from the AUR to have a realtime font preview.
-*   The `README` for [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) says that `/etc/fonts/local.conf` should either not exist, or have no infinality-related configurations in it. The `local.conf` is now obsolete and completely replaced by this configuration.
-
-For more information see this forum post: [http://www.infinality.net/forum/viewtopic.php?f=2&t=77#p794](http://www.infinality.net/forum/viewtopic.php?f=2&t=77#p794)
 
 ## Troubleshooting
 

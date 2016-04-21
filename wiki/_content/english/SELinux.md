@@ -79,7 +79,7 @@ For further information, visit [wikipedia:Mandatory access control](https://en.w
 
 ### Package description
 
-All SELinux related packages belong to the *selinux* group in the AUR as well as in [Siosm's unofficial repository](/index.php/Unofficial_user_repositories#siosm-selinux "Unofficial user repositories").
+All SELinux related packages belong to the *selinux* group in the AUR.
 
 #### SELinux aware system utilities
 

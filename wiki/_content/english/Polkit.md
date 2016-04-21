@@ -54,7 +54,7 @@ Polkit definitions can be divided into two kinds:
 
 Polkit operates on top of the existing permissions systems in Linux – group membership, administrator status – it does not replace them. The .rules files designate a subset of users, refer to one (or more) of the actions specified in the actions files and determine with what restrictions these actions can be taken by that/those user(s). As an example, a rules file could overrule the default requirement for all users to authenticate as an admin when using GParted, determining that some specific user doesn't need to. Or isn't allowed to use GParted at all.
 
-**Note:** it does not preclude him running GParted by some means that do not respect polkit, e.g. the command line. Therefore it's probably better to use polkit to expand access to privileged services for unprivileged users, rather than to try using it to curtail the rights of (semi-)privileged users. For security purposes, the [sudoers file](/index.php/Sudo "Sudo") is still the way to go.
+**Note:** This does not preclude running GParted by means which do not respect polkit, such as the command line. Therefore, polkit should be used to expand access to privileged services for unprivileged users, rather than try to curtail the rights of (semi-)privileged users. For security purposes, [sudoers](/index.php/Sudo "Sudo") is still the way to go.
 
 ### Actions
 

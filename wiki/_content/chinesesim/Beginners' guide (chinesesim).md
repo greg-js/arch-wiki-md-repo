@@ -87,6 +87,8 @@
 
 可以用 [ping 命令检查网络是否正常](/index.php/Network_configuration#Check_the_connection "Network configuration")，如果网络不可用，需要 [手动配置网络](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")。下面用 [netctl](/index.php/Netctl "Netctl") 做示例。
 
+在设置网络之前，请先查明自己的网卡名称，[网络设备名](/index.php/Network_configuration#Device_names "Network configuration")可以通过 `ip link` 或 `iw dev`(无线网络)查到设备名称。通常以 `en` (ethernet), `wl` (WLAN) 或 `ww` (WWAN)开头。
+
 为了防止冲突，首先停用 *dhcpcd* 服务，将 `enp0s25` 替换为正确的有线接口：
 
 ```
@@ -95,8 +97,6 @@
 ```
 
 要保存设置，在配置基本系统之前将修改过的文件复制到新系统中。详见 。[Category:Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")包含了其它配置方法，比如拨号连接。
-
-[网络设备名](/index.php/Network_configuration#Device_names "Network configuration")可以通过 `ip link` 或 `iw dev`(无线网络)可以查到设备名称。通常以 `en` (ethernet), `wl` (WLAN) 或 `ww` (WWAN)开头。
 
 	无线网络连接
 

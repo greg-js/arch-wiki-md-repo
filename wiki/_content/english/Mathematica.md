@@ -1,4 +1,4 @@
-Mathematica is a commercial program used in scientific, engineering and mathematical fields. Here we explain how to install it.
+[Mathematica](http://www.wolfram.com/mathematica/) is a commercial program used in scientific, engineering and mathematical fields. Here we explain how to install it.
 
 ## Contents
 
@@ -7,20 +7,23 @@ Mathematica is a commercial program used in scientific, engineering and mathemat
         *   [1.1.1 Mounting iso](#Mounting_iso)
         *   [1.1.2 Running the Installer](#Running_the_Installer)
         *   [1.1.3 Fonts](#Fonts)
-        *   [1.1.4 Troubleshooting](#Troubleshooting)
     *   [1.2 Mathematica 7](#Mathematica_7)
     *   [1.3 Mathematica 8.0.4.0](#Mathematica_8.0.4.0)
     *   [1.4 Mathematica 10](#Mathematica_10)
-        *   [1.4.1 HiDPI / Retina Screens](#HiDPI_.2F_Retina_Screens)
-*   [2 See also](#See_also)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Missing symbols](#Missing_symbols)
+    *   [2.2 HiDPI / Retina Screens](#HiDPI_.2F_Retina_Screens)
+*   [3 See also](#See_also)
 
 ## Installation
+
+Since Mathematica is a non-free application and upgrades may incur costs, this section lists instructions for different available versions.
 
 ### Mathematica 6
 
 #### Mounting iso
 
-One way to mount the Mathematica .iso is to create */media/iso* and add the following line to the fstab:
+One way to mount the Mathematica `.iso` is to create a `/media/iso` mount directory and add the following line to the [fstab](/index.php/Fstab "Fstab"):
 
 ```
 /*location/of/mathematica.iso* /media/iso iso9660 exec,ro,user,noauto,loop=/dev/loop0   0 0
@@ -30,7 +33,7 @@ One way to mount the Mathematica .iso is to create */media/iso* and add the foll
 Now you can mount it with:
 
 ```
-mount /media/iso
+# mount /media/iso
 
 ```
 
@@ -55,14 +58,6 @@ sh ./MathInstaller
 #### Fonts
 
 Add the directories containing Type1 and BDF fonts to your FontPath.
-
-#### Troubleshooting
-
-If you have font rendering problems where certain symbols do not show up (i.e. "/" appears as a square), try uninstalling [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica).
-
-Also, try [this](http://mathematica.stackexchange.com/questions/1158/invisible-conjugate-glyph-in-the-linux-frontend) solution.
-
-Try having applications use anti-aliasing. For KDE: System Settings > Application Appearance > Fonts > Use anti-aliasing (Enabled)
 
 ### Mathematica 7
 
@@ -110,7 +105,17 @@ The second issue with Mathematica 8 in 64-bit archlinux (may also affect 32-bit 
 
 ### Mathematica 10
 
-[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/) from the [AUR](/index.php/AUR "AUR"). The *Mathematica_10.XX.YY_LINUX.sh* installation script is required; you will need to download this separately from Wolfram.com, your university, etc. You will also need an activation key.
+[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/). The `Mathematica_10.XX.YY_LINUX.sh` installation script is required; you will need to download this separately from Wolfram.com, your university, etc. You will also need an activation key.
+
+## Troubleshooting
+
+#### Missing symbols
+
+If you have font rendering problems where certain symbols do not show up (i.e. `/` appears as a square), try uninstalling [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica).
+
+Also, try [this](http://mathematica.stackexchange.com/questions/1158/invisible-conjugate-glyph-in-the-linux-frontend) solution. It also states the issue is fixed with Mathematica version 9.
+
+Try having applications use anti-aliasing. For KDE: *System Settings > Application Appearance > Fonts > Use anti-aliasing (Enabled)*
 
 #### HiDPI / Retina Screens
 

@@ -48,7 +48,7 @@
 *   Gentoo的基础系统和软件包都是根据用户指定的USE标识直接从源代码构建。Arch提供了一个类ports系统（Ports是BSD上的一个系统工具）来从源代码编译软件包，而Arch基础系统被设计为“直接由预构建好的i686/x86_64二进制软件包组成”。一般来说，Arch更易于构建和升级，而Gentoo更易于进行系统化的定制。
 *   Arch支持i686和x86_64架构，Gentoo对x86、ppc、sparc、alpha、amd64、arm、mips、hppa、s390、sh和 itanium 架构都提供官方支持。
 *   Gentoo的官方包管理工具比ArchLinux的更复杂和强大，而且一些在Gentoo中处于核心位置的特性（比如UES标记、SLOTs等等）在Arch中并没有相对应的功能。究其原因，一是因为ArchLinux主要是一个二进制发行版，第二是因为Gentoo和Arch在设计哲学上有些差别。Arch在原则上更偏向于架构的简洁性和避免过度设计。
-*   因为Gentoo和Arch的安装包都只包含基本系统，所以它们两者都被认为是需要高度定制化的系统。一般来说，Gentoo用户对Arch的大多数方面都会感到满意。
+*   因为Gentoo和Arch的安装包都只包含基本系统，所以它们两者都被认为是需要高度定制化的系统。一般来说，Gentoo用户如果习惯于systemd的话，对Arch的大多数方面都会感到满意。
 
 ## 通用发行版
 
@@ -56,7 +56,7 @@
 
 ### Debian GNU/Linux
 
-*   Debian是上游最大的发行版,其社区规模更大,提供稳定、测试和不稳定分支,包含超过三万个二进制包.ARCH的软件仓库相对较小,但是如果包含AUR,那么支持的软件数量也差不多.
+*   Debian是上游最大的发行版,其社区规模更大,提供稳定、测试和不稳定分支,包含超过43000个二进制包.ARCH的软件仓库相对较小,但是如果包含AUR,那么支持的软件数量也差不多.
 *   Debian对自由软件更热情,但是也提供非自由软件仓库.ARCH对GNU定义的非自由（'non-free'）软件更显宽容.
 *   Debian 对稳定分支的测试更详细彻底，软件基本冻结并提供[五年](https://wiki.debian.org/LTS)支持。Arch 提供的的软件包比Debian Stable和testing分支中的软件包更新,和unstable里的差不多，而且没有固定发布周期，滚动发布。
 *   Debian支持许多架构,包括alpha,arm,hppa,i386,x86_64,ia64,m68k,mips,mipsel,powerpc,s390和sparc.而ARCH仅对i686和x86_64提供官方支持,其对arm的支持移植自社区项目(例如对Raspberry Pi的支持).

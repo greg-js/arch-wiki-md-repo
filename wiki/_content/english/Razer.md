@@ -78,6 +78,22 @@ There are two commands you can use, one for the command line tool *razercfg* or 
 
 From the tool you can use the 5 profiles, change the DPI, change mouse frequency, enable and disable the scroll and logo lights and configure the buttons.
 
+If the colors reset on reboot edit the config file directly and test with another reboot:
+
+ `/etc/razer.conf` 
+```
+# Configure LEDs
+led=1:GlowingLogo:on
+led=1:Scrollwheel:on
+mode=1:Scrollwheel:static
+color=1:Scrollwheel:0000FF
+mode=1:GlowingLogo:static
+color=1:GlowingLogo:FFFFFF
+
+```
+
+"static" can probably be changed to spectrum or breathing, and mode/color lines can be removed if led is set to "off".
+
 ## Razer Blade
 
 Razer Blade is Razer's line of gaming laptops. There is currently a 14" model, and a 17" model. Due to the proprietary SBUI trackpad on the 17" model, it will be extremely difficult to get it to work without extensive USB protocol reversing.

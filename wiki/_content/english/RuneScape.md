@@ -13,8 +13,6 @@ From [Wikipedia](https://en.wikipedia.org/wiki/RuneScape "wikipedia:RuneScape"):
 
 ### RuneScape NXT
 
-**Note:** NXT is currently still in beta
-
 Install the official RuneScape NXT client with the [runescape-launcher](https://aur.archlinux.org/packages/runescape-launcher/) package.
 
 ### Rsu-client

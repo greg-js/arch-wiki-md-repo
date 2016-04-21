@@ -470,6 +470,15 @@ To be added...
 
 ### Testing Dovecot authentication
 
+Create the vmail user and group:
+
+```
+# groupadd -g 5000 vmail
+# useradd -u 5000 -g vmail -s /usr/bin/nologin -d /home/vmail -m vmail
+# chmod 750 /home/vmail
+
+```
+
 Open a *telnet* session and test (commands you enter are in bold, replace *Administrator* with a valid user account and *UserPass* with your real password):
 
 ```

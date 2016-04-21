@@ -35,7 +35,7 @@ It is simple to configure, but can only start EFI executables, such as the Linux
     **Note:** systemd-boot cannot load EFI binaries from other partitions. It is therefore recommended to mount your ESP to `/boot`. See [#Updating](#Updating) for more information and work-around, in case you want to separate `/boot` from the ESP.
 
 4.  Copy your kernel and initramfs onto that ESP.
-    **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted.
+    **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted. If your efi partition is using automount, you may need to add vfat to a file in /etc/modules-load.d/ to ensure the current running kernel has the vfat module loaded at boot, before any kernel update happens that could replace the module for the currently running version making the mounting of /boot/efi impossible until reboot.
 
 5.  Finally, Type the following command to install systemd-boot: `# bootctl --path=*esp* install` It will copy the systemd-boot binary to your EFI System Partition (`*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/Boot/BOOTX64.EFI` - both of which are identical - on x64 systems) and add systemd-boot itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 

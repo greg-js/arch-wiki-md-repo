@@ -52,26 +52,7 @@ options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1 semaphores=1
 
 ## Touch Pad
 
-The touch pad requires Linux 4.5 (currently in testing) and the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package.
-
-Full hardware support can be enabled by creating `/etc/X11/xorg.conf.d/50-synaptics.conf` containing the following:
-
-```
-Section "InputClass"
-    Identifier "touchpad"
-    Driver "synaptics"
-    MatchIsTouchpad "on"
-    Option "ClickFinger2" "2"
-    Option "ClickPad" "true"
-    Option "EmulateMidButtonTime" "0"
-    Option "SoftButtonAreas" "50% 0 82% 0 0 0 0 0"
-    Option "PalmDetect" "on"
-    Option "PalmMinWidth" "4"
-    Option "PalmMinZ" "1"
-    Option "SHMConfig" "on"
-EndSection
-
-```
+The touch pad will work with the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package.
 
 ## Fan Control
 

@@ -39,6 +39,7 @@ Packages marked with `*` are available only for the 64-bit systems, see [this fo
 | *ck-ivybridge ** | Intel 3rd Generation Core i3/i5/i7-family |
 | *ck-haswell ** | Intel 4th Generation Core i3/i5/i7-family |
 | *ck-broadwell ** | Intel 5th Generation Core i3/i5/i7-family |
+| *ck-skylake ** | Intel 6th Generation Core i3/i5/i7-family |
 | *ck-p4* | Intel Pentium-4 (P4/P4-based Celeron/Pentium-4 M/Older Xeon). |
 | *ck-pentm* | Intel Pentium-M (Pentium-M notebook chips/not Pentium-4 M). |
 | **AMD** | *ck-kx* | AMD K7/K8-family |
@@ -71,6 +72,7 @@ The resulting `-march` is what GCC would use natively. Refer to the table below 
 | *ck-ivybridge* | ivybridge |
 | *ck-haswell* | haswell |
 | *ck-broadwell* | broadwell |
+| *ck-skylake* | skylake |
 | *ck-p4* | pentium4, prescott, nocona |
 | *ck-pentm* | pentm, pentium-m |
 | **AMD** | *ck-kx* | athlon, athlon-4, athlon-tbird, athlon-mp, athlon-xp, k8-sse3 |
@@ -95,7 +97,7 @@ Extensive testing comparing the effect of GCC compile options show varying resul
 
 **Note:** As with *any* additional kernel, manually edit the boot loader configuration to make it aware of new kernel images. For example, see [GRUB#Generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") for GRUB.
 
-Use the **ck-X** group and select the desired packages for installation. There are 10 groups corresponding to the [package sets](#Kernels_and_related_packages). For example:
+Use the **ck-X** group and select the desired packages for installation. There are 11 groups corresponding to the [package sets](#Kernels_and_related_packages). For example:
 
  `# pacman -S ck-generic` 
 ```
