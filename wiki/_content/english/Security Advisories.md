@@ -36,6 +36,9 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### April 2016
 
+*   [23 April 2016] [ASA-201604-13](https://lists.archlinux.org/pipermail/arch-security/2016-April/000605.html) [samba](https://www.archlinux.org/packages/?name=samba) multiple issues
+*   [23 April 2016] [ASA-201604-12](https://lists.archlinux.org/pipermail/arch-security/2016-April/000604.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) multiple issues
+*   [22 April 2016] [ASA-201604-11](https://lists.archlinux.org/pipermail/arch-security/2016-April/000603.html) [pgpdump](https://www.archlinux.org/packages/?name=pgpdump) denial of service
 *   [17 April 2016] [ASA-201604-10](https://lists.archlinux.org/pipermail/arch-security/2016-April/000602.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
 *   [17 April 2016] [ASA-201604-9](https://lists.archlinux.org/pipermail/arch-security/2016-April/000601.html) [libtasn1](https://www.archlinux.org/packages/?name=libtasn1) denial of service
 *   [14 April 2016] [ASA-201604-8](https://lists.archlinux.org/pipermail/arch-security/2016-April/000600.html) [lhasa](https://www.archlinux.org/packages/?name=lhasa) arbitrary code execution

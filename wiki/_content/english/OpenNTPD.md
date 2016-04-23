@@ -1,46 +1,64 @@
-OpenNTPD (part of the OpenBSD project) is a daemon that can be used to synchronize the system clock to internet time servers using the Network Time Protocol, and can also act as a time server itself if needed.
+[OpenNTPD](http://www.openntpd.org/) (part of the OpenBSD project) is a daemon that can be used to synchronize the system clock to internet time servers using the Network Time Protocol, and can also act as a time server itself if needed. It implements the Simple Network Time Protocol version 4, as described in [RFC 5905](//tools.ietf.org/html/rfc5905), and the Network Time Protocol version 3, as described in [RFC 1305](//tools.ietf.org/html/rfc1305).
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Enable OpenNTPD through systemd](#Enable_OpenNTPD_through_systemd)
-*   [2 Making openntpd dependent upon network access](#Making_openntpd_dependent_upon_network_access)
-    *   [2.1 Using netcfg](#Using_netcfg)
-    *   [2.2 Using NetworkManager dispatcher](#Using_NetworkManager_dispatcher)
-    *   [2.3 Using wicd](#Using_wicd)
-    *   [2.4 Using dhclient hooks](#Using_dhclient_hooks)
-    *   [2.5 Using dhcpcd hooks](#Using_dhcpcd_hooks)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Error adjusting time](#Error_adjusting_time)
-    *   [3.2 Increasing time shift](#Increasing_time_shift)
-    *   [3.3 Initialization Failure](#Initialization_Failure)
-*   [4 See also](#See_also)
-*   [5 External links](#External_links)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Client](#Client)
+    *   [2.2 Server](#Server)
+*   [3 Usage](#Usage)
+    *   [3.1 Start OpenNTPD at boot](#Start_OpenNTPD_at_boot)
+    *   [3.2 Making openntpd dependent upon network access](#Making_openntpd_dependent_upon_network_access)
+        *   [3.2.1 Using NetworkManager dispatcher](#Using_NetworkManager_dispatcher)
+        *   [3.2.2 Using wicd](#Using_wicd)
+        *   [3.2.3 Using dhclient hooks](#Using_dhclient_hooks)
+        *   [3.2.4 Using dhcpcd hooks](#Using_dhcpcd_hooks)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Error adjusting time](#Error_adjusting_time)
+    *   [4.2 Increasing time shift](#Increasing_time_shift)
+*   [5 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [openntpd](https://www.archlinux.org/packages/?name=openntpd) package. The default configuration is actually usable if all you want is to sync the time of the local computer. For more detailed settings, the `/etc/ntpd.conf` file must be edited:
+[Install](/index.php/Install "Install") the [openntpd](https://www.archlinux.org/packages/?name=openntpd) package. The default configuration is actually usable if all you want is to sync the time of the local computer.
 
-To sync to a particular server, uncomment and edit the "server" directive. You can find the server's URL in your area at [www.pool.ntp.org/zone/@](http://www.pool.ntp.org/zone/@).
+## Configuration
 
+To configure OpenNTPD, you need to edit `/etc/ntpd.conf`.
+
+**Tip:** After configuring, check the configuration file for validity by executing:
+```
+$ ntpd -n
+
+```
+
+### Client
+
+To sync to a single particular server, uncomment and edit the "server" directive.
+
+ `/etc/ntpd.conf` 
 ```
 server ntp.example.org
 
 ```
 
-The "servers" directive works the same as the "server" directive, however, if the DNS name resolves to multiple IP address, ALL of them will be synced to. The default, "pool.ntp.org" is working and should be acceptable in most cases.
+The "servers" directive works the same as the "server" directive, however, if the DNS name resolves to multiple IP address, ALL of them will be synced to. The default, "pool.ntp.org" is working and should be acceptable in most cases. You can find the server's URL in your area at [www.pool.ntp.org/zone/@](http://www.pool.ntp.org/zone/@).
 
+ `/etc/ntpd.conf` 
 ```
-pool.ntp.org
+servers pool.ntp.org
 
 ```
 
 Any number of "server" or "servers" directives may be used.
 
+### Server
+
 If you want the computer you run OpenNTPD on to also be a time server, simply uncomment and edit the "listen" directive.
 
 For example:
 
+ `/etc/ntpd.conf` 
 ```
 listen on *
 
@@ -48,8 +66,10 @@ listen on *
 
 will listen on all interfaces, and
 
+ `/etc/ntpd.conf` 
 ```
 listen on 127.0.0.1
+listen on ::1
 
 ```
 
@@ -57,77 +77,59 @@ will only listen on the loopback interface.
 
 Your time server will only begin to serve time after it has synchronized itself to a high resolution. This may take hours, or days, depending on the accuracy of your system.
 
-### Enable OpenNTPD through systemd
+## Usage
 
-[Start/enable](/index.php/Start/enable "Start/enable") the `openntpd` service.
+### Start OpenNTPD at boot
 
-## Making openntpd dependent upon network access
+[Enable](/index.php/Enable "Enable") `openntpd.service`.
 
-If you have intermittent network access (you roam around on a laptop, you use dial-up, etc), it does not make sense to have `openntpd` running as a system daemon on start up. Here are a few ways you can control `openntpd` based on the presence of a network connection. These instructions should also work for `ntpd` found further below.
+### Making openntpd dependent upon network access
 
-### Using netcfg
+If you have intermittent network access (you roam around on a laptop, you use dial-up, etc), it does not make sense to have `openntpd` running as a system daemon on start up. Here are a few ways you can control `openntpd` based on the presence of a network connection.
 
-If you are using netcfg, you can also start/stop openntpd as a POST_UP/PRE_DOWN command in your network profile:
+#### Using NetworkManager dispatcher
 
-```
-POST_UP="/etc/rc.d/openntpd start || true"
-PRE_DOWN="/etc/rc.d/openntpd stop || true"
+OpenNTPD can be brought up/down along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager").
 
-```
+Install [networkmanager-dispatcher-openntpd](https://www.archlinux.org/packages/?name=networkmanager-dispatcher-openntpd).
 
-Of course, you will have to specify this manually for each network profile.
+#### Using wicd
 
-### Using NetworkManager dispatcher
+Create these two scripts and mark them executable using [chmod](/index.php/Chmod "Chmod").
 
-OpenNTPD can be brought up/down along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"). You can [install](/index.php/Install "Install") the needed script, `networkmanager-dispatcher-openntpd`.
-
-### Using wicd
-
-These instructions require wicd 1.7.0 or later, which is available in the standard Arch repository. You will also need write access to `/etc/wicd/scripts`.
-
-**Note:** Remember to make these two scripts executable using `chmod`
-
-Make one shell script inside `/etc/wicd/scripts/postconnect/openntpd-start.sh` with the following:
-
+ `/etc/wicd/scripts/postconnect/openntpd-start.sh` 
 ```
 #!/bin/sh
-systemctl start openntpd
+systemctl start openntpd.service
 
 ```
-
-Similarly, make another shell script inside `/etc/wicd/scripts/predisconnect/openntpd-stop.sh` with the following:
-
+ `/etc/wicd/scripts/predisconnect/openntpd-stop.sh` 
 ```
 #!/bin/sh
-systemctl stop openntpd
+systemctl stop openntpd.service
 
 ```
 
-### Using dhclient hooks
+#### Using dhclient hooks
 
 Another possibility is to use dhclient hooks to start and stop openntpd. When dhclient detects a change in state it will run the following scripts:
 
 *   `/etc/dhclient-enter-hooks`
 *   `/etc/dhclient-exit-hooks`
 
-The following example uses `/etc/dhclient-exit-hooks` to start and stop openntpd depending on dhcp status:
+See dhclient-script(8)
 
+#### Using dhcpcd hooks
+
+ `/etc/dhcpcd.exit-hook` 
 ```
-[ "$interface" != "eth0" ] && exit 0
-
 if $if_up; then
-    pgrep ntpd &> /dev/null || /etc/rc.d/openntpd start
+	systemctl start openntpd.service
 elif $if_down; then
-    pgrep ntpd &> /dev/null && /etc/rc.d/openntpd stop
+	systemctl stop openntpd.service
 fi
 
 ```
-
-See dhclient-script(8)
-
-### Using dhcpcd hooks
-
-`/usr/lib/dhcpcd/dhcpcd-hooks/*`
 
 See dhcpcd-run-hooks(8)
 
@@ -155,24 +157,6 @@ This is also how you would manually sync your system.
 
 Starting *openntpd* in the background could lead to synchronization errors between the actual time and the time stored on your computer. If you recognize an increasing time difference between your desktop clock and the actual time, try to start the *openntpd* daemon normal and not in the background.
 
-### Initialization Failure
-
-Openntpd may fail to initialize properly if it is started before the network is fully configured. In some cases you may want to remove `openntpd` from the DAEMONS array in `/etc/rc.conf` and add the following line to `/etc/rc.local`:
-
-```
-(sleep 300 && /etc/rc.d/openntpd start) &
-
-```
-
-**Note:** This method is an alternative to the four methods listed [above](#Making_openntpd_dependent_upon_network_access). The other three methods are preferred and work better. Use this as a last resort.
-
-This will wait 5 minutes before starting openntpd, which should give the system sufficient time to set up the network properly. If your network settings change often, you may also consider restarting the daemon regularly with cron.
-
 ## See also
-
-*   [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")
-*   If you do not require strict timekeeping then [Systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") is easier to setup.
-
-## External links
 
 *   [http://www.openntpd.org](http://www.openntpd.org)

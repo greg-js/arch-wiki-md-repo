@@ -1,4 +1,4 @@
-This article is about basic sound management. For advanced topics see [Pro Audio](/index.php/Pro_Audio "Pro Audio").
+This article is about basic sound management. For advanced topics see [professional audio](/index.php/Professional_audio "Professional audio").
 
 ## Contents
 

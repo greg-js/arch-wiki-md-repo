@@ -3,10 +3,10 @@
 
 ## Model List
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | R65-Pro T5500 Boteez | 2008.06 overlord | GeForce 7600 Go | hda-intel | BCM4401B0 100BaseTX | Intel 3945ABG | N/A | Suspend to RAM: N/A
 Disk: N/A
 Battery: No
@@ -36,3 +36,12 @@ Card reader Realtek RTS5139 - staging driver, works as of Linux 3.11;
 Fn keys - only brightness and sound out-of-the-box;
 Elan Touchpad works perfectly (Linux 3.11);
 Cannot wake up on lid open; | Somewhat tricky, needs work. |
+| NP535U3C (Series 5) | 2016.03.01 | Radeon HD 7300G @ 1366x768_60 - works fine with [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)
+HDMI works fine. | Generic AMD Audio;
+Works fine with [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) | Realtek Gigabit Ethernet, r8169 driver | Qualcomm Atheros AR9462 ath9k driver | AR3012 Bluetooth 4.0, works fine | Suspend to RAM: OK
+Disk: Not tested
+Dimming of display: Yes
+CPU frequency scaling: Yes | N/A | Web-Cam: OK;
+Card reader: Untested;
+Fn keys - All Out-of-Box;
+Elan Touchpad works perfectly | N/A |

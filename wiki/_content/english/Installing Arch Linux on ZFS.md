@@ -47,18 +47,17 @@ Part     Size   Type
 
 ```
 
-Here is an example using GPT. The BIOS boot partition contains the bootloader.
+Here is an example using UEFI and GPT.
 
 ```
 Part     Size   Type
 ----     ----   -------------------------
-   1       2M   BIOS boot partition (ef02)
-   1     512M   Ext boot partition (8300)
+   1     100M   EFI boot partition (8300)
    2     XXXG   Solaris Root (bf00)
 
 ```
 
-An additional partition may be required depending on your hardware and chosen bootloader. Consult [Beginners' guide#Install and configure a bootloader](/index.php/Beginners%27_guide#Install_and_configure_a_bootloader "Beginners' guide") for more info.
+The EFI partition may be required depending on your hardware and chosen bootloader. Consult [Beginners' guide#Install and configure a bootloader](/index.php/Beginners%27_guide#Install_and_configure_a_bootloader "Beginners' guide") for more info.
 
 **Tip:** Bootloaders with support for ZFS are described in [#Install and configure the bootloader](#Install_and_configure_the_bootloader).
 

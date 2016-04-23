@@ -1,4 +1,4 @@
-Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passthrough a graphics card, offering the VM native graphics performance which is useful when doing graphic-intensive tasks such as gaming. Provided you have a desktop computer with a spare gpu you can dedicate ot the host (be it an integrated GPU or an old OEM card, the brands don't even need to match) and that your hardware supports it (see below), it's possible to have a VM of any OS with its own dedicated GPU and near-native performance.
+Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passthrough a graphics card, offering the VM native graphics performance which is useful when doing graphic-intensive tasks such as gaming. Provided you have a desktop computer with a spare gpu you can dedicate ot the host (be it an integrated GPU or an old OEM card, the brands do not even need to match) and that your hardware supports it (see below), it is possible to have a VM of any OS with its own dedicated GPU and near-native performance.
 
 ## Contents
 
@@ -32,17 +32,17 @@ Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passt
 
 ## Prerequisites
 
-A VGA Passthrough relies on a number of technologies that aren't ubiquitous as of today and might not be available on your hardware. You will not be able to do this on your machine unless the following requirements are met :
+A VGA Passthrough relies on a number of technologies that are not ubiquitous as of today and might not be available on your hardware. You will not be able to do this on your machine unless the following requirements are met :
 
 *   Your CPU must support hardware virtualization (for kvm) and IOMMU (for the passthrough itself)
     *   [List of compatible Intel CPUs (Intel VT-x and Intel VT-d)](http://ark.intel.com/search/advanced?s=t&VTX=true&VTD=true)
     *   [List of compatible AMD CPUs (AMD-V and AMD-Vi)](http://support.amd.com/en-us/kb-articles/Pages/GPU120AMDRVICPUsHyperVWin8.aspx)
 *   Your motherboard must also support IOMMU
-    *   Both the chipset and the BIOS must support it. It's not always easy to tell at a glance whether or not this is the case, but there's a [fairly comprehensive list on the matter on the Xen wiki](http://wiki.xen.org/wiki/VTdHowTo) as well as [another one on Wikipedia](https://wiki.archlinux.org/index.php/List_of_IOMMU-supporting_hardware "en:List of IOMMU-supporting hardware").
+    *   Both the chipset and the BIOS must support it. It is not always easy to tell at a glance whether or not this is the case, but there is a [fairly comprehensive list on the matter on the Xen wiki](http://wiki.xen.org/wiki/VTdHowTo) as well as [another one on Wikipedia](https://en.wikipedia.org/wiki/List_of_IOMMU-supporting_hardware "wikipedia:List of IOMMU-supporting hardware").
 *   Your guest GPU ROM must support UEFI
-    *   If you can find [any ROM in this list](https://www.techpowerup.com/vgabios/) that applies to your specific GPU and is said to support UEFI, you're generally in the clear. If not, you might want to try anyway if you have a recent GPU.
+    *   If you can find [any ROM in this list](https://www.techpowerup.com/vgabios/) that applies to your specific GPU and is said to support UEFI, you are generally in the clear. If not, you might want to try anyway if you have a recent GPU.
 
-You'll probably want to have a spare monitor (the GPU won't display anything if there's no screen plugged it and using a VNC or Spice connection won't help your performance), as well as a mouse and a keyboard you can pass to your VM. If anything goes wrong, you'll at least have a way to control your host machine this way.
+You will probably want to have a spare monitor (the GPU will not display anything if there is no screen plugged it and using a VNC or Spice connection will not help your performance), as well as a mouse and a keyboard you can pass to your VM. If anything goes wrong, you will at least have a way to control your host machine this way.
 
 ## Setting up IOMMU
 
@@ -50,7 +50,7 @@ You'll probably want to have a spare monitor (the GPU won't display anything if 
 
 Ensure that AMD-VI/VT-d is enabled in your BIOS settings. Both normally show up alongside other CPU features (meaning they could be in an overclocking-related menu) either with their actual names ("Vt-d" or "AMD-VI"), legacy names ("Vanderpool" for Vt-x, "Pacifica" for AMD-V) or in more ambiguous terms such as "Virtualization technology", which may or may not be explained in the manual.
 
-You'll also have to enable iommu support in the kernel itself through a [bootloader kernel option](/index.php/Kernel_parameters "Kernel parameters"). Depending on your type of CPU, use either `intel_iommu=on` for Intel CPUs (VT-d) or `amd_iommu=on` for AMD CPUs (AMD-Vi).
+You will also have to enable iommu support in the kernel itself through a [bootloader kernel option](/index.php/Kernel_parameters "Kernel parameters"). Depending on your type of CPU, use either `intel_iommu=on` for Intel CPUs (VT-d) or `amd_iommu=on` for AMD CPUs (AMD-Vi).
 
 After rebooting, check dmesg to confirm that IOMMU has been correctly enabled:
 
@@ -76,7 +76,7 @@ After rebooting, check dmesg to confirm that IOMMU has been correctly enabled:
 
 ### Ensuring that the groups are valid
 
-The following command will allow you to see how your various PCI devices are mapped to IOMMU groups. If it does not return anything, you either haven't enabled IOMMU support properly or your hardware does not support it.
+The following command will allow you to see how your various PCI devices are mapped to IOMMU groups. If it does not return anything, you either have not enabled IOMMU support properly or your hardware does not support it.
 
  `$ for iommu_group in $(find /sys/kernel/iommu_groups/ -maxdepth 1 -mindepth 1 -type d); do echo "IOMMU group $(basename "$iommu_group")"; for device in $(ls -1 "$iommu_group"/devices/); do echo -n $'\t'; lspci -nns "$device"; done; done` 
 ```
@@ -103,7 +103,7 @@ An IOMMU group is the smallest set of physical devices that can be passed to a v
 
 #### Plugging your guest GPU in an unisolated CPU-based PCIe slot
 
-Not all PCI-E slots are the same. Most motherboards have PCIe slots provided by both the CPU and the PCH. Depending on your CPU, it's possible that your processor-based PCIe slot doesn't support isolation properly, in which case the PCI slot itself will be appear to be grouped with the device that's connected to it.
+Not all PCI-E slots are the same. Most motherboards have PCIe slots provided by both the CPU and the PCH. Depending on your CPU, it is possible that your processor-based PCIe slot does not support isolation properly, in which case the PCI slot itself will be appear to be grouped with the device that is connected to it.
 
 ```
 IOMMU group 1
@@ -112,11 +112,11 @@ IOMMU group 1
 	01:00.1 Audio device: NVIDIA Corporation Device 0fbc (rev a1)
 ```
 
-This is fine so long as only your guest GPU is included in here, such as above. Depending what's plugged in your other PCIe slots and whether they're allocated to your CPU or your PCH, you may find yourself with additional devices within the same group, which would force you to pass those as well. If you're ok with passing everything that's in there to your VM, you're free to continue. Otherwise, you will either need to try and plug your GPU in your other PCIe slots (if you have any) and see if those provide isolation from the rest or to install the ACS override patch, which comes with its own drawbacks.
+This is fine so long as only your guest GPU is included in here, such as above. Depending on what is plugged in your other PCIe slots and whether they are allocated to your CPU or your PCH, you may find yourself with additional devices within the same group, which would force you to pass those as well. If you are ok with passing everything that is in there to your VM, you are free to continue. Otherwise, you will either need to try and plug your GPU in your other PCIe slots (if you have any) and see if those provide isolation from the rest or to install the ACS override patch, which comes with its own drawbacks.
 
 ## Isolating the GPU
 
-Due to their size and complexity, GPU drivers don't tend to support dynamic rebinding very well, so you can't just have some GPU you use on the host be transparently passed to a VM without consequences. It's generally preferable to bind them with a placeholder driver instead. This will stop other drivers from attempting to claim it, and will force the GPU to remain inactive while a VM is not running. There are two methods for doing this, but it's reccomanded to use vfio-pci if your kernel supports it.
+Due to their size and complexity, GPU drivers do not tend to support dynamic rebinding very well, so you cannot just have some GPU you use on the host be transparently passed to a VM without consequences. It is generally preferable to bind them with a placeholder driver instead. This will stop other drivers from attempting to claim it, and will force the GPU to remain inactive while a VM is not running. There are two methods for doing this, but it is recommended to use vfio-pci if your kernel supports it.
 
 **Warning:** Once you reboot after this procedure, whatever GPU you have configured will no longer be usable on the host until you reverse the manipulation. Make sure the GPU you intend to use on the host is properly configured before doing this.
 
@@ -132,7 +132,7 @@ author:         Alex Williamson <alex.williamson@redhat.com>
 ...
 ```
 
-Vfio-pci normally targets PCI devices by ID, meaning you only need to specify the IDs of the devices you intend to passthrough. For the following IOMMU group, you'd want to bind vfio-pci with `10de:13c2` and `10de:0fbb`, which will be used as example values for the rest of this section.
+Vfio-pci normally targets PCI devices by ID, meaning you only need to specify the IDs of the devices you intend to passthrough. For the following IOMMU group, you would want to bind vfio-pci with `10de:13c2` and `10de:0fbb`, which will be used as example values for the rest of this section.
 
 ```
 IOMMU group 13
@@ -140,7 +140,7 @@ IOMMU group 13
 	06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Audio Controller [10de:0fbb] (rev a1)
 ```
 
-You can then add those vendor-device ID pairs to the default parameters passed to vfio-pci whenever it's inserted into the kernel.
+You can then add those vendor-device ID pairs to the default parameters passed to vfio-pci whenever it is inserted into the kernel.
 
  `/etc/modprobe.d/vfio.conf`  `options vfio-pci ids=10de:13c2,10de:0fbb` 
 
@@ -149,12 +149,12 @@ This, however, does not guarantee that vfio-pci will be loaded before other grap
 **Note:** If you also have another driver loaded this way for [early modesetting](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") (such as "nouveau", "radeon", "amdgpu", "i915", etc.), all of the following VFIO modules must preceed it.
  `/etc/mkinitcpio.conf`  `MODULES="... vfio vfio_iommu_type1 vfio_pci vfio_virqfd ..."` 
 
-Don't forget to regenerate your initramfs.
+Do not forget to regenerate your initramfs.
 
  `# mkinitcpio -p linux` 
-**Note:** If you're using a non-standard kernel, such as `linux-vfio`, replace `linux` with whichever kernel you intend to use.
+**Note:** If you are using a non-standard kernel, such as `linux-vfio`, replace `linux` with whichever kernel you intend to use.
 
-Reboot and verify that vfio-pci has loaded properly and that it's now bound to the right devices.
+Reboot and verify that vfio-pci has loaded properly and that it is now bound to the right devices.
 
  `$ dmesg | grep -i vfio ` 
 ```
@@ -180,7 +180,7 @@ Reboot and verify that vfio-pci has loaded properly and that it's now bound to t
 
 If your kernel does not support vfio-pci, you can use the pci-stub module instead.
 
-Pci-stub normally targets PCI devices by ID, meaning you only need to specify the IDs of the devices you intend to passthrough. For the following IOMMU group, you'd want to bind vfio-pci with `10de:13c2` and `10de:0fbb`, which will be used as example values for the rest of this section.
+Pci-stub normally targets PCI devices by ID, meaning you only need to specify the IDs of the devices you intend to passthrough. For the following IOMMU group, you would want to bind vfio-pci with `10de:13c2` and `10de:0fbb`, which will be used as example values for the rest of this section.
 
 ```
 IOMMU group 13
@@ -192,10 +192,10 @@ Most linux distros (including Arch Linux) have pci-stub built statically within 
 
  `/etc/mkinitcpio.conf`  `MODULES="... pci-stub ..."` 
 
-Don't forget to regenerate your initramfs.
+Do not forget to regenerate your initramfs.
 
  `# mkinitcpio -p linux` 
-**Note:** If you're using a non-standard kernel, such as `linux-vfio`, replace `linux` with whichever kernel you intend to use.
+**Note:** If you are using a non-standard kernel, such as `linux-vfio`, replace `linux` with whichever kernel you intend to use.
 
 Add the relevant PCI device IDs to the kernel command line:
 
@@ -224,7 +224,7 @@ Check dmesg output for successful assignment of the device to pci-stub:
 
 #### Tainting your boot GPU
 
-If you're passing through your boot GPU and you cannot change it, make sure you also add `video=efifb:off` to your kernel command line so nothing gets sent to it before vfio-pci gets to bind with it.
+If you are passing through your boot GPU and you cannot change it, make sure you also add `video=efifb:off` to your kernel command line so nothing gets sent to it before vfio-pci gets to bind with it.
 
 ## Installation
 
@@ -366,7 +366,7 @@ and you are good to go.
 
 ## Complete example for QEMU (CLI-based) without libvirtd
 
-This script starts Samba and Synergy, runs the VM and closes everything after the VM is shut down. Note that this method does **not** require libvirtd to be running or configured, although the second statement hasn't been verified.
+This script starts Samba and Synergy, runs the VM and closes everything after the VM is shut down. Note that this method does **not** require libvirtd to be running or configured, although the second statement has not been verified.
 
 ```
 #!/bin/bash
@@ -583,7 +583,7 @@ end
 
 Replace `vm` and `host` with the hostnames of your Virtual Machine and host OS respectively.
 
-Add `altgr = alt` in the section screens/vm if your Alt Gr key dosen't work properly.
+Add `altgr = alt` in the section screens/vm if your Alt Gr key dose not work properly.
 
 Before you start qemu or within your startup script:
 
@@ -606,7 +606,7 @@ Depending on your operating system, you may find that it may refuse to boot afte
 
 Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line.
 
-Since libvirt hasn't yet caught up with this new feature, libvirt users will instead have to create a dummy script that will insert that option in the QEMU command line at launch and set it as their emulator.
+Since libvirt has not yet caught up with this new feature, libvirt users will instead have to create a dummy script that will insert that option in the QEMU command line at launch and set it as their emulator.
 
  `/usr/local/qemu-kvm-vga` 
 ```
@@ -675,9 +675,9 @@ options kvm ignore_msrs=1
 
 ### ACS Override Patch
 
-If you find your PCI devices grouped among others that you don't wish to pass through, you may be able to seperate them using Alex Williamson's ACS override patch. Make sure you understand [the potential risk](http://vfio.blogspot.com/2014/08/iommu-groups-inside-and-out.html) of doing so.
+If you find your PCI devices grouped among others that you do not wish to pass through, you may be able to seperate them using Alex Williamson's ACS override patch. Make sure you understand [the potential risk](http://vfio.blogspot.com/2014/08/iommu-groups-inside-and-out.html) of doing so.
 
-You'll need a kernel with the patch applied. The easiest method to acquiring this is through the [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) package.
+You will need a kernel with the patch applied. The easiest method to acquiring this is through the [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) package.
 
 In addition, the ACS override patch needs to be enabled with kernel command line options. The patch file adds the following documentation:
 

@@ -669,32 +669,10 @@ If you often have to edit your boot command with diverse parameters in the Sysli
 
 **Note:** keytab-lilo is a perl script invoking the "loadkeys" program.
 
-First you have to create a compatible keymap, in this example German:
-
-**Note:** `us.kmap` needs to be created or the following will not work.
+To create a compatible keymap (e.g. a german one) run:
 
 ```
-$ cp /usr/share/kbd/keymaps/i386/qwertz/de.map.gz .
-$ cp /usr/share/kbd/keymaps/i386/qwerty/us.map.gz .
-$ gunzip de.map.gz
-$ gunzip us.map.gz
-$ mv de.map de.kmap
-$ mv us.map us.kmap
-# keytab-lilo de > de.ktl
-
-```
-
-Copy `de.ktl` as root to `/boot/syslinux/` and set ownership to root:
-
-```
-# chown root:root /boot/syslinux/de.ktl
-
-```
-
-A generic example:
-
-```
-# keytab-lilo.pl */path/to/*us.kmap.gz */path/to/*dvorak.kmap.gz > */path/to/*dvorak.ktl
+# keytab-lilo /usr/share/kbd/keymaps/i386/qwerty/us.kmap.gz /usr/share/kbd/keymaps/i386/qwertz/de.kmap.gz > /boot/syslinux/de.ktl
 
 ```
 

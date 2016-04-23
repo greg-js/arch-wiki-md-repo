@@ -1,4 +1,4 @@
-*"[Apache Subversion](http://subversion.apache.org/features.html) is a full-featured version control system originally designed to be a better [CVS](/index.php/CVS "CVS"). Subversion has since expanded beyond its original goal of replacing CVS, but its basic model, design, and interface remain heavily influenced by that goal."*
+[Apache Subversion](http://subversion.apache.org/features.html) is "a full-featured version control system originally designed to be a better [CVS](/index.php/CVS "CVS"). Subversion has since expanded beyond its original goal of replacing CVS, but its basic model, design, and interface remain heavily influenced by that goal."
 
 This article deals with setting up an svn-server on your machine. There are two popular svn-servers, the built in *svnserve* and the more advanced option, [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") with svn plugins.
 
@@ -242,7 +242,7 @@ The above defines users harry and sally, with passwords foopassword and barpassw
 
 ### Start the server daemon
 
-Before you start the server, edit the config file:
+Before you start the server, edit the configuration file:
 
  `/etc/conf.d/svnserve`  `SVNSERVE_ARGS="--root=/path/to/repos"` 
 

@@ -32,8 +32,9 @@ There is currently only a Mac OS and a Windows version of LoL. This page outline
 *   [3 Troubleshooting/Tips](#Troubleshooting.2FTips)
     *   [3.1 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
     *   [3.2 In-game shop crash](#In-game_shop_crash)
-    *   [3.3 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
-    *   [3.4 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
+    *   [3.3 Store Authentication Required](#Store_Authentication_Required)
+    *   [3.4 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
+    *   [3.5 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
 
 ## PlayonLinux Method
 
@@ -312,6 +313,14 @@ x3d_platform=1
 This option should switch to the OpenGL renderer.
 
 **Warning:** This may cause some moderate to severe graphic bugs and blurry textures, depending on setup.
+
+#### Store Authentication Required
+
+If clicking "Browse the Store" causes a dialog box titled "Authentication Required" with the text "Please enter your username and password: Server store.XX#.lol.riotgame.com", do not enter your user/pass. Clicking OK leads to a screen filled with black text (highlight to confirm), and clicking Cancel probably gives some network timeout error.
+
+A possible solution: After you log in, there is a home screen containing elements that link to youtube videos, patch notes, etc. In this home screen there are two or more elements that link to current sales within the in-game shop. If you click on one of those sales, for example, a skin that is on sale, it'll automatically authenticate and send you to the in-game shop, and as a result you won't get the session error and re-authentication bug.
+
+Tip via [Play on Linux thread](https://www.playonlinux.com/en/app-1135-League_Of_Legends.html).
 
 #### Connection Error: connection failure unable to connect to the pvp.net server
 

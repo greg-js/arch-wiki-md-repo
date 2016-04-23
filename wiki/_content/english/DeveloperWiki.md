@@ -1,16 +1,21 @@
 ## Contents
 
-*   [1 Policies](#Policies)
-*   [2 Organization](#Organization)
-*   [3 Packaging Guidelines](#Packaging_Guidelines)
-*   [4 Packaging Reference](#Packaging_Reference)
-*   [5 Important Public Information](#Important_Public_Information)
-*   [6 Internals](#Internals)
-*   [7 Future](#Future)
-*   [8 Artwork and Branding](#Artwork_and_Branding)
-*   [9 Web Development](#Web_Development)
-*   [10 Release Engineering](#Release_Engineering)
-*   [11 Devops Team](#Devops_Team)
+*   [1 Server migration](#Server_migration)
+*   [2 Policies](#Policies)
+*   [3 Organization](#Organization)
+*   [4 Packaging Guidelines](#Packaging_Guidelines)
+*   [5 Packaging Reference](#Packaging_Reference)
+*   [6 Important Public Information](#Important_Public_Information)
+*   [7 Internals](#Internals)
+*   [8 Future](#Future)
+*   [9 Artwork and Branding](#Artwork_and_Branding)
+*   [10 Web Development](#Web_Development)
+*   [11 Release Engineering](#Release_Engineering)
+*   [12 Devops Team](#Devops_Team)
+
+### Server migration
+
+*   [DeveloperWiki:ServerMigration](/index.php/DeveloperWiki:ServerMigration "DeveloperWiki:ServerMigration")
 
 ### Policies
 
@@ -24,7 +29,6 @@
 
 *   [DeveloperWiki:Internal Projects](/index.php/DeveloperWiki:Internal_Projects "DeveloperWiki:Internal Projects")
 *   [DeveloperWiki:Roll Call](/index.php/DeveloperWiki:Roll_Call "DeveloperWiki:Roll Call")
-*   [DeveloperWiki:ArchlinuxOrg Services](/index.php/DeveloperWiki:ArchlinuxOrg_Services "DeveloperWiki:ArchlinuxOrg Services")
 *   [DeveloperWiki:Linux Conferences](/index.php/DeveloperWiki:Linux_Conferences "DeveloperWiki:Linux Conferences")
 
 ### Packaging Guidelines

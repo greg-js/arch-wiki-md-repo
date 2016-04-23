@@ -49,16 +49,6 @@ Now set up your IRC-servers and IRC-nicknames on the core.
 Once it all works, you can set it up to start automatically through on system boot:
 
  `# systemctl enable quassel` 
-**Note:** This has been fixed as of quassel 0.12.0-1.
-```
-This is supposed to work but does not because of a bug [FS#38950](https://bugs.archlinux.org/task/38950) but it is easy to work around:
-
-Copy the system service file to make a override in /etc/systemd/system/ (then when the bug is fixed you can just remove this file)
-
-# cp /usr/lib/systemd/system/quassel.service /etc/systemd/system/
-
-Then edit the file /etc/systemd/system/quassel.service and remove --listen=${LISTEN} from ExecStart.
-```
 
 ## Troubleshooting
 

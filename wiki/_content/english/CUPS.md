@@ -175,7 +175,7 @@ Remote print servers can be accessed by adding an IPP "printer" to the local CUP
 
 **Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers [[2]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
 
-Install [libcups](https://www.archlinux.org/packages/?name=libcups), and set up Avahi's .local hostname resolution, otherwise the client will fail to print with an "Unable to locate printer" error. See [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") for details.
+Install [libcups](https://www.archlinux.org/packages/?name=libcups). To print from some applications, you will also need to install [cups](https://www.archlinux.org/packages/?name=cups).
 
 There are currently two methods for accessing a remote print server. The first method involves setting `CUPS_SERVER` for each application, for instance for [Firefox](/index.php/Firefox "Firefox"):
 

@@ -121,9 +121,48 @@ No effect so far. Investigate.
 
 For whatever reason, `xev` does not return any events for the standard brightness keys, but `F3` and `F4` seem to be detected as `XF86KbdBrightnessDown` and `XF86KbdBrightnessUp`, respectively.
 
-You can create your own shortcut on gnome, on keyboard configuration, associating a key with the commands: xdotool key XF86MonBrightnessUp xdotool key XF86MonBrightnessDown
+Using grub, a simple workaround is to add
 
-You need to install xdotool first.
+```
+acpi_osi=
+
+```
+
+on the
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT=
+
+```
+
+line in
+
+```
+/etc/default/grub
+
+```
+
+then, rebooting.
+
+Edit 04/23/16: UX305UA: Keys recognized with this method, but brightness levels not working (stay at minimum level).
+
+Or you can create your own shortcut on gnome, on keyboard configuration, associating a key with the commands:
+
+```
+xdotool key XF86MonBrightnessUp
+xdotool key XF86MonBrightnessDown
+
+```
+
+or
+
+```
+xbacklight -inc 10
+xbacklight -dec 10
+
+```
+
+You need to install xdotool or xbacklight first.
 
 There is also a kernel patch which enables the proper brightness keys. This patch is tested with 4.4 kernels: [https://bugzilla.kernel.org/attachment.cgi?id=195071](https://bugzilla.kernel.org/attachment.cgi?id=195071)
 

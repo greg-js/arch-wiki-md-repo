@@ -493,7 +493,7 @@ $ aplay -D default:PCH *your_favourite_sound.wav*
 
 ```
 
-If you receive an error regarding your asound configuration, check the [upstream documentation](http://www.alsa-project.org/main/index.php/Asoundrc#The_default_plugin) for possible changes to the config file format.
+If you receive an error regarding your asound configuration, check the [upstream documentation](http://www.alsa-project.org/main/index.php/Asoundrc#The_default_plugin) for possible changes to the configuration file format.
 
 ### Verifying correct sound modules are loaded
 

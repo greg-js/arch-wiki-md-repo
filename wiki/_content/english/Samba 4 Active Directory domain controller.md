@@ -18,7 +18,7 @@ This article explains how to setup a new Active Directory Domain Controller. It 
     *   [4.3 Kerberos](#Kerberos)
 *   [5 Additional configuration](#Additional_configuration)
     *   [5.1 DNS](#DNS_3)
-    *   [5.2 SSL](#SSL)
+    *   [5.2 TLS](#TLS)
     *   [5.3 DHCP](#DHCP)
     *   [5.4 Password Complexity](#Password_Complexity)
 
@@ -424,9 +424,9 @@ xxx.xxx.xxx.xxx.in-addr.arpa domain name pointer server.internal.domain.tld.
 
 ```
 
-### SSL
+### TLS
 
-By defualt, SSL support is not enabled, however, a default certificate was created when the DC was brought up. To use the default keys, append the following lines to the "**[global]**" section of the `/etc/samba/smb.conf` file:
+TLS support is not enabled by default, however, a default certificate was created when the DC was brought up. With the release of Samba 4.3.8 and 4.2.2, unsecured LDAP binds are disabled by default, and you must configure TLS to use Samba as an authentication source (without reducing the security of your Samba installation). To use the default keys, append the following lines to the "**[global]**" section of the `/etc/samba/smb.conf` file:
 
 ```
         tls enabled  = yes
@@ -436,16 +436,7 @@ By defualt, SSL support is not enabled, however, a default certificate was creat
 
 ```
 
-If a trusted certificate is needed, create a signing key and a certificate request with the following commands (make certain that the Common Name matches the FQDN of the server and do not enter a password):
-
-```
-# cd /var/lib/samba/private/tls
-# openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out **NETBIOS**_KEY.pem
-# openssl req -new -key **NETBIOS**_KEY.pem -out **NETBIOS**_CSR.pem
-
-```
-
-Get the CSR signed by your chosen certificate authority, name appropriately (**NETBIOS**_CERT.pem for this example), and put into this directory. If your certifiacte authority also needs an intermedia certificate, put it there as well and use the **tls cafile** parmeter (else leave **tls cafile** blank).
+If a trusted certificate is needed, create a signing key and a certificate request (see [OpenSSL](/index.php/OpenSSL "OpenSSL") for detailed instructions). Get the request signed by your chosen certificate authority, name appropriately (**NETBIOS**_CERT.pem for this example), and put into this directory. If your certificate authority also needs an intermediate certificate, put it there as well and use the **tls cafile** parameter (else leave **tls cafile** blank).
 
 Restart `samba` for the changes to take effect.
 

@@ -134,10 +134,10 @@ to `~/.xprofile` and restart your X user session.
 
 ### Kimpanel
 
-IBus main interface is currently only available in GTK+, but Kimpanel provides a native Qt/KDE input interface. The package [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel) is compiled to support IBus, but IBus needs to be launched as following to be able to communicate with the panel:
+IBus main interface is currently only available in GTK+, but Kimpanel provides a native Qt/KDE input interface. Kimpanel is bundled with Plasma 5, but IBus needs to be launched as following to be able to communicate with the panel
 
 ```
-$ ibus-daemon --xim --panel=/usr/lib/kde4/libexec/kimpanel-ibus-panel
+$ ibus-daemon --panel=/usr/lib/kimpanel-ibus-panel
 
 ```
 
@@ -149,7 +149,7 @@ Encoding=UTF-8
 Name=IBus (KIMPanel)
 GenericName=Input Method Framework
 Comment=Start IBus Input Method Framework
-Exec=ibus-daemon --xim --panel=/usr/lib/kde4/libexec/kimpanel-ibus-panel
+Exec=ibus-daemon --panel=/usr/lib/kimpanel-ibus-panel
 Icon=ibus
 Terminal=false
 Type=Application
@@ -162,6 +162,8 @@ X-KDE-autostart-after=panel
 ```
 
 Then you can either let KDE autostart ibus, or set it as the input method application in Kimpanel, and manually click on the kimpanel icon to start it. In either case, choose Utility/Ibus (Kimpanel) in the Choose Application dialog.
+
+Finally, add the input panel widget to show the panel.
 
 ### rxvt-unicode
 

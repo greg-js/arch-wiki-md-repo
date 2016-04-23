@@ -21,6 +21,8 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
         *   [2.3.2 Problems](#Problems_2)
         *   [2.3.3 Possible trackpad solution](#Possible_trackpad_solution_2)
 *   [3 Razer keyboards](#Razer_keyboards)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Mouse randomly stops working](#Mouse_randomly_stops_working)
 
 ## Razer Peripherals
 
@@ -223,3 +225,27 @@ There are currently two Python scripts available to enable macro keys under Linu
     *   works with BlackWidow Ultimate 2013
     *   uses Python 2
     *   also bundles scripts to create and execute macros
+
+## Troubleshooting
+
+### Mouse randomly stops working
+
+**Note:** This is tested on [Asus N550JV](/index.php/ASUS_N550JV "ASUS N550JV") using mouse **Razer Orochi 2013**. Laptop probably has faulty charging port and therefore it sometimes directly affects connected mouse USB port and causes similar issues.
+
+If your razer mouse stops working after some time, however, led flashes or lights up, but reboot and re-plugging does not help, try the following commands:
+
+```
+# rmmod ehci_pci
+# rmmod ehci_hcd
+
+```
+
+Now disconnect the mouse from your computer (wait at least 5 seconds) and run the following:
+
+```
+# modprobe ehci_hcd
+# modprobe ehci_pci
+
+```
+
+Connect the mouse now. It should be working.

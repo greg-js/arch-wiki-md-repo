@@ -57,7 +57,7 @@ An example for why one might want to alter these settings is to get high-perform
 
 ```
 
-See [Pro Audio](/index.php/Pro_Audio#JACK "Pro Audio") for more on professional audio configuration of an Arch system.
+See [professional audio](/index.php/Professional_audio "Professional audio") for more information.
 
 There are an infinite variety of possible PAM limits configurations. While an overview is provided here, it is highly advisable to read the `man 5 limits.conf` page in order to better understand these functions.
 

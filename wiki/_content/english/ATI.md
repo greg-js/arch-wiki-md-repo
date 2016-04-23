@@ -160,7 +160,7 @@ Option "TearFree" "on"
 
 ```
 
-**Acceleration architecture**; Glamor is available as 2D acceleration method implement through OpenGL, and it should work with graphic cards whose drivers are newer or equal to R300. Since xf86-video-ati driver-1:7.2.0-1, it is automatically enabled with radeonsi drivers (Southern Islands and superior GFX cards); on other graphic cards the method can be forced by adding AccelMethod **glamor** to the config file:
+**Acceleration architecture**; Glamor is available as 2D acceleration method implement through OpenGL, and it should work with graphic cards whose drivers are newer or equal to R300. Since xf86-video-ati driver-1:7.2.0-1, it is automatically enabled with radeonsi drivers (Southern Islands and superior GFX cards); on other graphic cards the method can be forced by adding AccelMethod **glamor** to the configuration file:
 
 ```
 Option "AccelMethod" "glamor"
@@ -181,7 +181,7 @@ Option "EXAVSync" "yes"
 
 ```
 
-Below is a sample config file of `/etc/X11/xorg.conf.d/**20-radeon.conf**`:
+Below is a sample configuration file of `/etc/X11/xorg.conf.d/**20-radeon.conf**`:
 
 ```
 Section "Device"
@@ -676,7 +676,7 @@ If you have problem with 2D performance, like scrolling in terminal or browser, 
 
 **Note:** This only applies to EXA.
 
-Below is a sample config file `/etc/X11/xorg.conf.d/**20-radeon.conf**`:
+Below is a sample configuration file `/etc/X11/xorg.conf.d/**20-radeon.conf**`:
 
 ```
 Section "Device"

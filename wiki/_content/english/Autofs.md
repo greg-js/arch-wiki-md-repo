@@ -127,7 +127,7 @@ An alternative Way is to use the automount-service from Systemd, see [NFS with s
 
 #### Manual NFS configuration
 
-To mount a NFS share on server_name called /srv/shared_dir to another computer named client_pc at location /mnt/foo, edit auto.master and create a config file for the share (auto.server_name):
+To mount a NFS share on server_name called /srv/shared_dir to another computer named client_pc at location /mnt/foo, edit auto.master and create a configuration file for the share (auto.server_name):
 
  `/etc/autofs/auto.master`  `/mnt   /etc/autofs/auto.server_name --timeout 60`  `/etc/autofs/auto.server_name`  `foo  -rw,soft,intr,rsize=8192,wsize=8192 server_name:/srv/shared_dir` 
 

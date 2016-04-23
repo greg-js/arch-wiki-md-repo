@@ -204,7 +204,7 @@ See main article: [Suspend and hibernate](/index.php/Suspend_and_hibernate "Susp
 
 *   [OSS](/index.php/OSS "OSS") is a viable alternative in case ALSA does not work.
 
-Users may additionally wish to install and configure a [sound server](/index.php/Sound#Sound_servers "Sound") (such as [PulseAudio](/index.php/PulseAudio "PulseAudio")). For advanced audio requirements, see [Pro Audio](/index.php/Pro_Audio "Pro Audio").
+Users may additionally wish to install and configure a [sound server](/index.php/Sound#Sound_servers "Sound") such as [PulseAudio](/index.php/PulseAudio "PulseAudio"). For advanced audio requirements, see [professional audio](/index.php/Professional_audio "Professional audio").
 
 ### Browser plugins
 

@@ -14,7 +14,7 @@ This guide will give you an overview for the most common server options in exist
     *   [4.2 FTP](#FTP)
     *   [4.3 DAViCal](#DAViCal)
     *   [4.4 WebDAV](#WebDAV)
-    *   [4.5 DLAN](#DLAN)
+    *   [4.5 DLNA](#DLNA)
     *   [4.6 Web cache](#Web_cache)
 *   [5 Local Network Services](#Local_Network_Services)
     *   [5.1 Zeroconf](#Zeroconf)
@@ -113,7 +113,7 @@ There is also the option of FTP over SSH, or [SFTP](/index.php/SFTP "SFTP").
 
 [WebDAV](/index.php/WebDAV "WebDAV")(Web Distributed Authoring and Versioning) is an extension of HTTP 1.1\. It contains a set of concepts and accompanying extension methods to allow read and write across the HTTP 1.1 protocol. Instead of using NFS or SMB, WebDAV offers file transfers via HTTP.
 
-### DLAN
+### DLNA
 
 [ReadyMedia](/index.php/ReadyMedia "ReadyMedia") (previously **MiniDLNA**) is server software with the aim of being fully compliant with [DLNA](https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance "wikipedia:Digital Living Network Alliance")/[UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play "wikipedia:Universal Plug and Play") clients to serves media files (music, pictures, and video) to clients on a network.
 

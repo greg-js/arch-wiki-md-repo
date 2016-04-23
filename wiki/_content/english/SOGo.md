@@ -1,6 +1,6 @@
 [SOGo](http://www.sogo.nu/) provides a rich AJAX-based Web interface and supports multiple native clients through the use of standard protocols such as CalDAV, CardDAV and GroupDAV, as well as Microsoft ActiveSync.
 
-This article explains how to setup a groupware server using a SOGo backend. While other MTAs and IMAP servers can be used, Postfix is used for the MTA and Dovecot for the IMAP/POP server.
+This article explains how to setup a groupware server using a SOGo backend. While other MTAs and IMAP servers can be used, Postfix and Dovecot have been selected for this article. Please feel free to add other implementations.
 
 ## Contents
 
@@ -64,7 +64,7 @@ Additionally, either [mariadb](https://www.archlinux.org/packages/?name=mariadb)
 
 ### Prerequisites
 
-[Install](/index.php/Install "Install") the needed prerequisite packages [dovecot](https://www.archlinux.org/packages/?name=dovecot), [mariadb](https://www.archlinux.org/packages/?name=mariadb), [pigeonhole](https://www.archlinux.org/packages/?name=pigeonhole), [postfix](https://www.archlinux.org/packages/?name=postfix), [postgresql](https://www.archlinux.org/packages/?name=postgresql), [mysql-python](https://www.archlinux.org/packages/?name=mysql-python) and either [apache](https://www.archlinux.org/packages/?name=apache) or [nginx](https://www.archlinux.org/packages/?name=nginx) from the [official repositories](/index.php/Official_repositories "Official repositories"), and [python2-sievelib](https://aur.archlinux.org/packages/python2-sievelib/), [sogo](https://aur.archlinux.org/packages/sogo/), and [sope](https://aur.archlinux.org/packages/sope/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the needed prerequisite packages [dovecot](https://www.archlinux.org/packages/?name=dovecot), [mariadb](https://www.archlinux.org/packages/?name=mariadb), [pigeonhole](https://www.archlinux.org/packages/?name=pigeonhole), [postfix](https://www.archlinux.org/packages/?name=postfix), [postgresql](https://www.archlinux.org/packages/?name=postgresql), [mysql-python](https://www.archlinux.org/packages/?name=mysql-python) and either [apache](https://www.archlinux.org/packages/?name=apache) or [nginx](https://www.archlinux.org/packages/?name=nginx) from the [official repositories](/index.php/Official_repositories "Official repositories"), and [libwbxml](https://aur.archlinux.org/packages/libwbxml/), [python2-sievelib](https://aur.archlinux.org/packages/python2-sievelib/), [sogo](https://aur.archlinux.org/packages/sogo/), and [sope](https://aur.archlinux.org/packages/sope/) from the [AUR](/index.php/AUR "AUR").
 
 ## Initial web server configuration
 
@@ -304,11 +304,11 @@ It is important to change both the **mail** attribute (this is what will be used
 
 ```
 ...
+mail: administrator@**domain**.**tld**
 proxyAddresses: SMTP:administrator@**domain**.**tld**
 proxyAddresses: smtp:postmaster@**internal**.**domain**.**tld**
 proxyAddresses: smtp:postmaster@**domain**.**tld**
 proxyAddresses: smtp:administrator@**internal**.**domain**.**tld**
-mail: administrator@**domain**.**tld**
 ...
 ```
 
@@ -321,6 +321,10 @@ Next, allow daemons to lookup users in the directory using LDAP. To do this, cre
 # samba-tool user setexpiry ldap --noexpiry
 
 ```
+
+Finally, with Samba after 4.3.8 or 4.2.2, you will need to allow non-secure binds. Add the following configuration item to the [global] section of `/etc/samba/smb.conf`:
+
+ `        ldap server require strong auth = no` 
 
 ### MySQL/MariaDB
 
@@ -538,6 +542,7 @@ ssl_key = </etc/dovecot/ssl/**host**.**domain**.**tld**.key
 
 ```
 # chmod 644 /etc/dovecot/conf.d/tls.conf
+# chmod 600 /etc/dovecot/ssl/**host**.**domain**.**tld**.key
 
 ```
 
@@ -645,12 +650,9 @@ If this server will be accessible from the internet, set the HELO/EHLO values to
 
 Enable and start `postfix`.
 
-Create a vmail user and set up Postfix to use it:
+Configure Postfix to use the vmail user and group:
 
 ```
-# groupadd -g 5000 vmail
-# useradd -u 5000 -g vmail -s /usr/bin/nologin -d /home/vmail -m vmail
-# chmod 750 /home/vmail
 # postconf -e virtual_minimum_uid=5000
 # postconf -e virtual_uid_maps=static:5000
 # postconf -e virtual_gid_maps=static:5000
@@ -1079,5 +1081,7 @@ RequestHeader set "x-webobjects-server-url" "https://**mail**.**domain**.**tld**
 Restart `httpd` service for the changes to take effect.
 
 Go ahead and go to the regular http page and it should redirect you to the https site.
+
+To be added: ActiveSync configuration...
 
 ### nginx

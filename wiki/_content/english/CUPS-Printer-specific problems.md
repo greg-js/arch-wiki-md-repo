@@ -57,6 +57,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-3150CDW | [brother-hl3150cdw](https://aur.archlinux.org/packages/brother-hl3150cdw/) |
 | HL-3170CDW | [brother-cups-wrapper-ac](https://aur.archlinux.org/packages/brother-cups-wrapper-ac/) | Use BRScript3 Driver for HL-4070CDW |
 | HL-5140 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or Brother's driver. |
+| HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
 | MFC-465CN | [brother-mfc-465cn](https://aur.archlinux.org/packages/brother-mfc-465cn/) |
@@ -149,6 +150,11 @@ See [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
 
 | Printer | Driver/filter | Notes |
 | 1250C | [foo2zjs](https://aur.archlinux.org/packages/foo2zjs/) | See [http://cybercom.net/~dcoffin/hbpl](http://cybercom.net/~dcoffin/hbpl), the patch has been merged into upstream. The printer may also work with the [Xerox Phaser 6000B driver](#Xerox_Phaser_6000B). |
+| E515,
+
+E515dw
+
+ | Install Dell's driver. | Download [on DELL download site](http://downloads.dell.com/FOLDER03040853M/1/Printer_E515dw_Driver_Dell_A00_LINUX.zip). You will need to install [dpkg](https://aur.archlinux.org/packages/dpkg/), and then install unpacked deb package using following command: `sudo dpkg --force-architecture -i e515dwcupswrapper-3.2.0-1.i386.deb`. The driver works on x64 platform, not only i386 |
 | Printer | Driver/filter | Notes |
 
 ### Custom drivers

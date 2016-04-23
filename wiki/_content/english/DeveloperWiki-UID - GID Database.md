@@ -92,6 +92,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
  lldpd | 127 |
  pulse | 130 |
  rtkit | 133 |
+ netdata | 134 |
  kdm | 135 |
  znc (deprecated, now dynamic) | 136 |
  usbmux | 140 |
@@ -226,6 +227,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
  pulse-access | 131 |
  pulse-rt | 132 |
  rtkit | 133 |
+ netdata | 134 |
  kdm | 135 |
  znc (deprecated, now dynamic) | 136 |
  usbmux | 140 |

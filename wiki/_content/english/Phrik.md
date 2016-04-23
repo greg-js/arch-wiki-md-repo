@@ -1,4 +1,4 @@
-Phrik is the friendly IRC bot in Arch Linux's [IRC channels](/index.php/IRC_channel "IRC channel"). He is a [supybot](http://sourceforge.net/projects/supybot/) with loads of handy factoids and utilities for things like searching Google, the ArchWiki, and the [AUR](/index.php/AUR "AUR"), which is useful for quickly giving people links to what they need.
+Phrik is the villainous IRC bot in Arch Linux's [IRC channels](/index.php/IRC_channel "IRC channel"). He is a [supybot](http://sourceforge.net/projects/supybot/) with loads of handy factoids and utilities for things like searching Google, the ArchWiki, and the [AUR](/index.php/AUR "AUR"), which is useful for quickly giving people links to what they need. Custom commands can be edited or added once registered (not to be confused with NickServ registration.)
 
 ## Contents
 
@@ -131,7 +131,7 @@ To replace the word "This" in the example factoid with the word "That" you can u
 
 Completely replacing a factoid with something new can be done with the no command like this:
 
- `!no example is "a really bad example factoid"` 
+ `!no example is "<reply>a really bad example factoid"` 
 
 ### Deleting factoids
 

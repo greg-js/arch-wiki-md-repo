@@ -10,18 +10,16 @@
     *   [2.2 A shell-based example setup](#A_shell-based_example_setup)
         *   [2.2.1 Details of the shell-based example setup](#Details_of_the_shell-based_example_setup)
     *   [2.3 A GUI-based example setup](#A_GUI-based_example_setup)
-    *   [2.4 More](#More)
-    *   [2.5 Playing nice with ALSA](#Playing_nice_with_ALSA)
-    *   [2.6 gstreamer](#gstreamer)
-    *   [2.7 PulseAudio](#PulseAudio)
-    *   [2.8 Firewire](#Firewire)
+    *   [2.4 Playing nice with ALSA](#Playing_nice_with_ALSA)
+    *   [2.5 gstreamer](#gstreamer)
+    *   [2.6 PulseAudio](#PulseAudio)
+    *   [2.7 Firewire](#Firewire)
 *   [3 MIDI](#MIDI)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 "Cannot lock down memory area (Cannot allocate memory)" message on startup](#.22Cannot_lock_down_memory_area_.28Cannot_allocate_memory.29.22_message_on_startup)
     *   [4.2 jack2-dbus and qjackctl errors](#jack2-dbus_and_qjackctl_errors)
     *   [4.3 Problems with specific applications](#Problems_with_specific_applications)
         *   [4.3.1 VLC - no audio after starting JACK](#VLC_-_no_audio_after_starting_JACK)
-*   [5 Related Articles](#Related_Articles)
 
 ## Installation
 
@@ -266,10 +264,6 @@ ctl.!default {
 *   Start tweaking in the QjackCtl GUI. The info embedded in the shell-script setup above may be of some help :-) As may be the info in [this article](http://www.linuxjournal.com/article/8354). Just remember that you have to get your latency down to less than 5ms for live tone production or filtration of any sort, or the delay will be obvious to player and listener alike.
 *   From the [AUR](/index.php/AUR "AUR"), install [non-daw](https://aur.archlinux.org/packages/non-daw/). One of the components of this package is called non-session-manager; it has the function of setting up "sessions": sets of other audio software items which Jack (through the QjackCtl patchbay or not!) will wire together. NSM can handle as many different sessions as you wish to set up; and as a result, it's all GUI, apart from the one rc.local edit in the beginning.
 
-### More
-
-Yet more info is in the [Pro Audio](/index.php/Pro_Audio "Pro Audio") page.
-
 ### Playing nice with ALSA
 
 To allow Alsa programs to play while jack is running you must install the jack plugin for alsa with [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins).
@@ -428,7 +422,3 @@ Run VLC and change the following menu options:
 *   Show settings: All
 *   Audio > Output modules > Audio output module: JACK audio output
 *   Audio > Output modules > JACK: Automatically connect to writable clients (enable)
-
-## Related Articles
-
-*   [Pro Audio](/index.php/Pro_Audio "Pro Audio")

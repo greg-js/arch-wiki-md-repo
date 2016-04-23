@@ -214,7 +214,12 @@ If using Gnome, you can also toggle Location Services to "On" in "Settings -> Pr
 
 ### If you can't get redshift to autostart in i3
 
-You can add 'exec --no-startup-id redshift-gtk to your i3 config
+You can add this to your i3 config file.
+
+```
+   exec --no-startup-id redshift-gtk
+
+```
 
 ## See also
 

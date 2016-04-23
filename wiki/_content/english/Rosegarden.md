@@ -49,4 +49,4 @@ This way, Rosegarden will not launch [jackd](/index.php/JACK "JACK") and you'll 
 
 ## See also
 
-*   [Pro Audio](/index.php/Pro_Audio "Pro Audio")
+*   [Professional audio](/index.php/Professional_audio "Professional audio")

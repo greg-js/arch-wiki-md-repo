@@ -318,7 +318,7 @@ username2:hashed_password2
 
 Next you need to create a PAM service using `pam_pwdfile.so` and the generated `/etc/vsftpd/.passwd` file. In this example we create a PAM policy for *vsftpd* with the following content:
 
- `/etc/pam.d/vsftp` 
+ `/etc/pam.d/vsftpd` 
 ```
 auth required pam_pwdfile.so pwdfile /etc/vsftpd/.passwd
 account required pam_permit.so

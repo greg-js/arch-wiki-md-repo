@@ -970,6 +970,15 @@ end
 
 ```
 
+	Smalltalk
+
+	Smalltalk is an object-oriented, dynamically typed, reflective programming language.
+
+```
+Transcript show: 'Arch is the best!'.
+
+```
+
 	SQL
 
 	Structured Query Language, the query language for relational databases

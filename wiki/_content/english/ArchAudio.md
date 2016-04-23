@@ -1,4 +1,4 @@
-*This page contains information related to a [third-party initiative](/index.php/Getting_involved#Community_projects "Getting involved"). You may be looking for [Pro Audio](/index.php/Pro_Audio "Pro Audio") and not even know it!*
+*This page contains information related to a [third-party initiative](/index.php/Getting_involved#Community_projects "Getting involved"). You may instead want to read about [professional audio](/index.php/Professional_audio "Professional audio") tips.*
 
 If you have come here from another page, or were referred, you are probably interested in the [ArchAudio](http://archaudio.org/) [repositories](http://archaudio.org/packages/).
 

@@ -191,64 +191,67 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [55.1 Troubleshooting](#Troubleshooting_21)
         *   [55.1.1 Start with black screen](#Start_with_black_screen)
         *   [55.1.2 No English fonts](#No_English_fonts)
-*   [56 Strike Suite Zero](#Strike_Suite_Zero)
-    *   [56.1 Dependencies](#Dependencies_28)
-*   [57 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
-    *   [57.1 Dependencies](#Dependencies_29)
-*   [58 Team Fortress 2](#Team_Fortress_2)
-    *   [58.1 Dependencies](#Dependencies_30)
-    *   [58.2 Making HRTF work](#Making_HRTF_work)
-    *   [58.3 Troubleshooting](#Troubleshooting_22)
-        *   [58.3.1 Loading screen freeze](#Loading_screen_freeze)
-        *   [58.3.2 No audio](#No_audio_4)
-        *   [58.3.3 Slow loading textures](#Slow_loading_textures)
-        *   [58.3.4 NVIDIA drivers](#NVIDIA_drivers)
-*   [59 Terraria](#Terraria)
-*   [60 The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales)
-    *   [60.1 Dependencies](#Dependencies_31)
-*   [61 The Book of Unwritten Tales: The Critter Chronicles](#The_Book_of_Unwritten_Tales:_The_Critter_Chronicles)
-*   [62 The Clockwork Man](#The_Clockwork_Man)
-    *   [62.1 Dependencies](#Dependencies_32)
-*   [63 The Polynomial](#The_Polynomial)
-    *   [63.1 Dependencies](#Dependencies_33)
-    *   [63.2 Troubleshooting](#Troubleshooting_23)
-        *   [63.2.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
-*   [64 This War of Mine](#This_War_of_Mine)
-    *   [64.1 Troubleshooting](#Troubleshooting_24)
-        *   [64.1.1 Game doesn't load](#Game_doesn.27t_load)
-*   [65 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-    *   [65.1 Crash on launch](#Crash_on_launch)
-*   [66 Transistor](#Transistor)
-    *   [66.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
-*   [67 Trine 2](#Trine_2)
-    *   [67.1 Dependencies](#Dependencies_34)
-    *   [67.2 Troubleshooting](#Troubleshooting_25)
-*   [68 Unity3D](#Unity3D)
-    *   [68.1 Locale Settings](#Locale_Settings_2)
-    *   [68.2 Unity 5 sound problems](#Unity_5_sound_problems)
-*   [69 Unity of Command](#Unity_of_Command)
-    *   [69.1 Dependencies](#Dependencies_35)
-    *   [69.2 Troubleshooting](#Troubleshooting_26)
-        *   [69.2.1 No audio](#No_audio_5)
-*   [70 Unrest](#Unrest)
-    *   [70.1 Dependencies](#Dependencies_36)
-*   [71 War Thunder](#War_Thunder)
-    *   [71.1 Troubleshooting](#Troubleshooting_27)
-*   [72 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [72.1 Dependencies](#Dependencies_37)
-    *   [72.2 Troubleshooting](#Troubleshooting_28)
-*   [73 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-    *   [73.1 Dependencies](#Dependencies_38)
-*   [74 World of Goo](#World_of_Goo)
-    *   [74.1 Changing resolution](#Changing_resolution)
-*   [75 Worms Reloaded](#Worms_Reloaded)
-    *   [75.1 Dependencies](#Dependencies_39)
-*   [76 XCOM](#XCOM)
-    *   [76.1 Dependencies](#Dependencies_40)
-    *   [76.2 Hangs on startup](#Hangs_on_startup)
-    *   [76.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
-*   [77 Saints Row IV](#Saints_Row_IV)
-    *   [77.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+*   [56 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [56.1 Troubleshooting](#Troubleshooting_22)
+        *   [56.1.1 No sound](#No_sound_6)
+*   [57 Strike Suite Zero](#Strike_Suite_Zero)
+    *   [57.1 Dependencies](#Dependencies_28)
+*   [58 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+    *   [58.1 Dependencies](#Dependencies_29)
+*   [59 Team Fortress 2](#Team_Fortress_2)
+    *   [59.1 Dependencies](#Dependencies_30)
+    *   [59.2 Making HRTF work](#Making_HRTF_work)
+    *   [59.3 Troubleshooting](#Troubleshooting_23)
+        *   [59.3.1 Loading screen freeze](#Loading_screen_freeze)
+        *   [59.3.2 No audio](#No_audio_4)
+        *   [59.3.3 Slow loading textures](#Slow_loading_textures)
+        *   [59.3.4 NVIDIA drivers](#NVIDIA_drivers)
+*   [60 Terraria](#Terraria)
+*   [61 The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales)
+    *   [61.1 Dependencies](#Dependencies_31)
+*   [62 The Book of Unwritten Tales: The Critter Chronicles](#The_Book_of_Unwritten_Tales:_The_Critter_Chronicles)
+*   [63 The Clockwork Man](#The_Clockwork_Man)
+    *   [63.1 Dependencies](#Dependencies_32)
+*   [64 The Polynomial](#The_Polynomial)
+    *   [64.1 Dependencies](#Dependencies_33)
+    *   [64.2 Troubleshooting](#Troubleshooting_24)
+        *   [64.2.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
+*   [65 This War of Mine](#This_War_of_Mine)
+    *   [65.1 Troubleshooting](#Troubleshooting_25)
+        *   [65.1.1 Game doesn't load](#Game_doesn.27t_load)
+*   [66 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+    *   [66.1 Crash on launch](#Crash_on_launch)
+*   [67 Transistor](#Transistor)
+    *   [67.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
+*   [68 Trine 2](#Trine_2)
+    *   [68.1 Dependencies](#Dependencies_34)
+    *   [68.2 Troubleshooting](#Troubleshooting_26)
+*   [69 Unity3D](#Unity3D)
+    *   [69.1 Locale Settings](#Locale_Settings_2)
+    *   [69.2 Unity 5 sound problems](#Unity_5_sound_problems)
+*   [70 Unity of Command](#Unity_of_Command)
+    *   [70.1 Dependencies](#Dependencies_35)
+    *   [70.2 Troubleshooting](#Troubleshooting_27)
+        *   [70.2.1 No audio](#No_audio_5)
+*   [71 Unrest](#Unrest)
+    *   [71.1 Dependencies](#Dependencies_36)
+*   [72 War Thunder](#War_Thunder)
+    *   [72.1 Troubleshooting](#Troubleshooting_28)
+*   [73 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [73.1 Dependencies](#Dependencies_37)
+    *   [73.2 Troubleshooting](#Troubleshooting_29)
+*   [74 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [74.1 Dependencies](#Dependencies_38)
+*   [75 World of Goo](#World_of_Goo)
+    *   [75.1 Changing resolution](#Changing_resolution)
+*   [76 Worms Reloaded](#Worms_Reloaded)
+    *   [76.1 Dependencies](#Dependencies_39)
+*   [77 XCOM](#XCOM)
+    *   [77.1 Dependencies](#Dependencies_40)
+    *   [77.2 Hangs on startup](#Hangs_on_startup)
+    *   [77.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [78 Saints Row IV](#Saints_Row_IV)
+    *   [78.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
 
 ## Air Brawl
 
@@ -1357,6 +1360,62 @@ Now you can change the resolution in game.
 #### No English fonts
 
 If you use Intel video card, just disable S3TC in DriConf.
+
+## Stephen's Sausage Roll
+
+### Troubleshooting
+
+#### No sound
+
+If [libpulse](https://www.archlinux.org/packages/?name=libpulse) is installed, Unity may try to use that library for sound and fail. To test if this is the problem, try removing [libpulse](https://www.archlinux.org/packages/?name=libpulse) or renaming the package files that are named `libpulse-simple*`. To see which [libpulse](https://www.archlinux.org/packages/?name=libpulse) files are relevant, run:
+
+ `$ pacman -Ql libpulse | awk '{print $2}' | grep /usr/lib/libpulse-simple` 
+```
+/usr/lib/libpulse-simple.so
+/usr/lib/libpulse-simple.so.0
+/usr/lib/libpulse-simple.so.0.1.0
+```
+
+If renaming any of those files works for you, you can proceed with the following instructions (don't forget to revert any renaming you just did!). Browse to the game's directory:
+
+```
+$ cd "$HOME/.local/share/Steam/steamapps/common/Stephen's Sausage Roll"
+
+```
+
+And create a sub-directory that we can use to hold 0-byte look-alike library files:
+
+```
+$ mkdir noload/
+
+```
+
+Use `touch` to create 0-byte versions of the above files that we want the dynamic linker to skip, e.g.:
+
+```
+$ touch noload/{libpulse-simple.so,libpulse-simple.so.0,libpulse-simple.so.0.1.0}
+
+```
+
+**Note:** I only had to create a 0-byte `libpulse-simple.so.0` file for the following trick to work.
+
+After you have created these 0-byte files, you can now attempt to run the game binary directly, telling the dynamic linker to use our 0-byte files:
+
+```
+$ LD_LIBRARY_PATH="noload/:$LD_LIBRARY_PATH" ./Sausage.x86_64
+
+```
+
+Hopefully you now have sound!
+
+If everything works up to this point, you can amend the launch options in Steam to be:
+
+```
+LD_LIBRARY_PATH="noload/:$LD_LIBRARY_PATH" %command%
+
+```
+
+Again, this should work because Steam checks for a `noload/` directory relative to the game's directory. The dynamic linker should respect the `$LD_LIBRARY_PATH` variable and fail to load the necessary [libpulse](https://www.archlinux.org/packages/?name=libpulse) files. The game should then fallback to plain ALSA.
 
 ## Strike Suite Zero
 

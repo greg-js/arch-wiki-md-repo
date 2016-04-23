@@ -139,6 +139,7 @@ Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for t
 
  `/etc/systemd/system/docker.service.d/imagelocation.conf` 
 ```
+[Service]
 ExecStart= 
 ExecStart=/usr/bin/docker daemon -g */path/to/new/location/docker* -H fd://
 ```

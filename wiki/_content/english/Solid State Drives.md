@@ -27,6 +27,7 @@ Solid State Drives (SSDs) are not PnP devices. Special considerations such as pa
 *   [4 Tips for SSD security](#Tips_for_SSD_security)
     *   [4.1 Hdparm shows "frozen" state](#Hdparm_shows_.22frozen.22_state)
     *   [4.2 SSD memory cell clearing](#SSD_memory_cell_clearing)
+    *   [4.3 Hardware encryption](#Hardware_encryption)
 *   [5 Tips for minimizing disk reads/writes](#Tips_for_minimizing_disk_reads.2Fwrites)
     *   [5.1 Intelligent partition scheme](#Intelligent_partition_scheme)
     *   [5.2 noatime mount option](#noatime_mount_option)
@@ -245,13 +246,17 @@ If you intend to set a password to a "frozen" device yourself, a motherboard BIO
 
 **Warning:** Do not try to change the above **lock** security settings with `hdparm` unless you know exactly what you are doing.
 
-If you intend to erase the SSD, see [Securely wipe disk#hdparm](/index.php/Securely_wipe_disk#hdparm "Securely wipe disk") and [below](#SSD_memory_cell_clearing).
+If you intend to erase the SSD, see [Securely wipe disk#hdparm](/index.php/Securely_wipe_disk#hdparm "Securely wipe disk") and [#SSD memory cell clearing](#SSD_memory_cell_clearing) below.
 
 ### SSD memory cell clearing
 
 On occasion, users may wish to completely reset an SSD's cells to the same virgin state they were at the time the device was installed thus restoring it to its [factory default write performance](http://www.anandtech.com/storage/showdoc.aspx?i=3531&p=8). Write performance is known to degrade over time even on SSDs with native TRIM support. TRIM only safeguards against file deletes, not replacements such as an incremental save.
 
 The reset is easily accomplished in a three step procedure denoted on the [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing") wiki article. If the reason for the reset is to wipe data, you may not want to rely on the SSD bios to perform it securely. See [Securely wipe disk#Flash memory](/index.php/Securely_wipe_disk#Flash_memory "Securely wipe disk") for further information and examples to perform a wipe.
+
+### Hardware encryption
+
+As noted in [#Hdparm shows frozen state](#Hdparm_shows_.22frozen.22_state) setting a password for a storage device (SSD/HDD) in the BIOS may also initialize the hardware encryption of devices supporting it. If the device also conforms to the OPAL standard, this may also be achieved without a respective BIOS feature to set the passphrase, see [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives").
 
 ## Tips for minimizing disk reads/writes
 

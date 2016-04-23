@@ -92,6 +92,7 @@ In order to integrate functions of the host system to the guests, including shar
     *   [6.21 Host OS freezes on Virtual Machine start](#Host_OS_freezes_on_Virtual_Machine_start)
     *   [6.22 The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)](#The_virtual_machine_has_terminated_unexpectedly_during_startup_with_exit_code_1_.280x1.29)
     *   [6.23 Analog microphone not working in guest](#Analog_microphone_not_working_in_guest)
+    *   [6.24 Fullscreen mode shows blank guest screen](#Fullscreen_mode_shows_blank_guest_screen)
 *   [7 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
@@ -1364,6 +1365,10 @@ This may occur after upgrading the [virtualbox](https://www.archlinux.org/packag
 ### Analog microphone not working in guest
 
 If the audio input from an analog microphone is working correctly on the host, but no sound seems to get through to the guest, despite the microphone device apparently being detected normally, installing a [sound server](/index.php/Sound_system#Sound_servers "Sound system") such as [PulseAudio](/index.php/PulseAudio "PulseAudio") on the host might fix the problem.
+
+### Fullscreen mode shows blank guest screen
+
+On some window managers ([i3](/index.php/I3 "I3")), VirtualBox has issues with fullscreen mode properly due to the overlay bar. To workaround this issue, disable "Show in Full-screen/Seamless" option in "Guest Settings --> User Interface --> Mini ToolBar". See [the upstream bug report](https://www.virtualbox.org/ticket/14323) for more information.
 
 ## See also
 
