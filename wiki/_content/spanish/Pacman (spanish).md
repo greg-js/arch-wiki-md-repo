@@ -84,7 +84,7 @@ NoExtract=usr/lib/systemd/system/*
 
 ### Repositorios
 
-En esta sección se define qué [repositorios](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") utilizar, como se especifican en `/etc/pacman.conf`. Se puede especificar aquí directamente o incluirlo desde otro archivo (por ejemplo `/etc/pacman.d/mirrorlist`), siendo necesario mantener una sola lista.
+En esta sección se define qué [repositorios](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") utilizar, como se especifican en `/etc/pacman.conf`. Se puede especificar aquí directamente o incluirlo desde otro archivo (por ejemplo `/etc/pacman.d/mirrorlist`), siendo necesario mantener una sola lista.
 
  `/etc/pacman.conf` 
 ```
@@ -420,7 +420,7 @@ El consejo más importante a recordar es que no actualice "a ciegas" el sistema.
 
 Si una actualización de paquetes se espera que (o se conoce por) causar problemas, los responsables del paquete se asegurarán de que pacman muestre un mensaje apropiado cuando el paquete se haya actualizado. Si experimenta problemas después de una actualización, compruebe la salida de pacman mirando el archivo del registro (`/var/log/pacman.log`).
 
-En este punto, **una vez se ha asegurado de que no existe información disponible a través de pacman, que no hay ninguna noticia relativa al tema en [https://www.archlinux.org/](https://www.archlinux.org/), y que no hay publicaciones en el foro acerca de la actualización**, se puede considerar la posibilidad de o bien solicitar ayuda en el foro, a través del canal [IRC](/index.php/IRC_Channel "IRC Channel"), o bien optar por [degradar el paquete problemático](/index.php/Downgrading_packages "Downgrading packages").
+En este punto, **una vez se ha asegurado de que no existe información disponible a través de pacman, que no hay ninguna noticia relativa al tema en [https://www.archlinux.org/](https://www.archlinux.org/), y que no hay publicaciones en el foro acerca de la actualización**, se puede considerar la posibilidad de o bien solicitar ayuda en el foro, a través del canal [IRC](/index.php/IRC_channel "IRC channel"), o bien optar por [degradar el paquete problemático](/index.php/Downgrading_packages "Downgrading packages").
 
 ### ¡Conozco un paquete de actualización para ABC que fue liberado, pero pacman dice que mi sistema está al día!
 

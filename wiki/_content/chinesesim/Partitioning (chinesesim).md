@@ -4,7 +4,7 @@
 
 可以为一个硬盘划分一个或者多个分区。一些场景需要使用多个分区：例如双重或多重启动，或使用 [swap](/index.php/Swap "Swap") 分区。此外，分区也可以从逻辑上隔离数据，例如为音频和视频数据创建单独的分区。下面将会讨论通用的分区方案。
 
-每个分区在使用前需要格式化为 [文件系统](/index.php/File_Systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File Systems (简体中文)") 。
+每个分区在使用前需要格式化为 [文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)") 。
 
 ## Contents
 

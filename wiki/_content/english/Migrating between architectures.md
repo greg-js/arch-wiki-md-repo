@@ -74,24 +74,20 @@ Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-
 1.  Download, burn and boot the 64-bit Arch ISO LiveCD
 2.  Configure your network on the LiveCD, then pacman to use your new architecture repos
 3.  Mount your existing installation to `/mnt` directory. For example: `mount /dev/sda1 /mnt`
-4.  Use the following script to update the local pacman database, get a list of all your installed packages and then reinstall them.
-5.  You should probably run the script twice, because many packages fail to run their post-install scripts first time. This is due to sed, grep, perl, etc. being of the wrong architecture.
-6.  You might also need to update the initrd, chroot into /mnt and run mkinitcpio -p linux.
+4.  Use the following command to update the local pacman database, get a list of all your installed packages and then reinstall them.
 
 ```
-#!/bin/bash
+  # pacman --root /mnt -Syy
+  # pacman --root /mnt -Qnq | pacman --root /mnt -S -
 
-MOUNTED_INSTALL='/mnt'
-TEMP_FILE='/tmp/packages.list'
+```
 
-pacman --root $MOUNTED_INSTALL -Syy
-pacman --root $MOUNTED_INSTALL --cachedir $MOUNTED_INSTALL/var/cache/pacman/pkg --noconfirm -Sg base base-devel
-pacman --root $MOUNTED_INSTALL -Qq > $TEMP_FILE
-for PKG in $(cat $TEMP_FILE) ; do
-   pacman --root $MOUNTED_INSTALL --cachedir $MOUNTED_INSTALL/var/cache/pacman/pkg --noconfirm -S $PKG
-done
+1.  You should probably run the second command twice, because many packages fail to run their post-install scripts first time. This is due to sed, grep, perl, etc. being of the wrong architecture.
+2.  Finally, run
 
-exit 0
+```
+ # arch-chroot /mnt 
+ # mkinitcpio -p linux
 
 ```
 

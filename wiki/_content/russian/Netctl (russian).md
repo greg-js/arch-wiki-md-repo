@@ -30,7 +30,7 @@
 
 ## Установка
 
-Установите пакет [netctl](https://www.archlinux.org/packages/?name=netctl), доступный в [официальных репозиториях](/index.php/Official_Repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official Repositories (Русский)").
+Установите пакет [netctl](https://www.archlinux.org/packages/?name=netctl), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
 Опциональные зависимости перечислены в таблице ниже.
 
@@ -176,7 +176,7 @@ netctl хранит профили в `/etc/netctl/`, а не в `/etc/network.d
 
 ```
 
-Вычислите хеш с помощью [wpa_passphrase](/index.php/WPA_Supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81 "WPA Supplicant (Русский)"):
+Вычислите хеш с помощью [wpa_passphrase](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E "WPA supplicant (Русский)"):
 
  `$ wpa_passphrase *your_essid* *passphrase*` 
 ```

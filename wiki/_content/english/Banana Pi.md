@@ -13,6 +13,7 @@ With its Allwinner SoC, a Banana board usually runs the well documented Sunxi Li
     *   [2.1 Using original ArchLinuxARM tarball](#Using_original_ArchLinuxARM_tarball)
         *   [2.1.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
         *   [2.1.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
+        *   [2.1.3 Login / SSH](#Login_.2F_SSH)
     *   [2.2 Using prebuilt ArchLinuxARM images](#Using_prebuilt_ArchLinuxARM_images)
         *   [2.2.1 Download the source](#Download_the_source)
         *   [2.2.2 Installation](#Installation_2)
@@ -118,6 +119,14 @@ If everything went fine you should have an U-Boot image: u-boot-sunxi-with-spl.b
 # dd if=u-boot-sunxi-with-spl.bin of=/dev/sdX bs=1024 seek=8
 
 ```
+
+#### Login / SSH
+
+SSH login for root is disabled by default. Login with the default user account and use [su](/index.php/Su "Su").
+
+| Type | Username | Password |
+| Root | `root` | `root` |
+| User | `alarm` | `alarm` |
 
 ### Using prebuilt ArchLinuxARM images
 

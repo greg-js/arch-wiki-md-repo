@@ -44,7 +44,7 @@ Dla inspiracji, zobacz:
 
 ## Włączanie wizualizacji
 
-Dla działającej wizualizacji, musisz edytować plik konfiguracyjny mpd, by włączyć [szybką transformację Fouriera](http://pl.wikipedia.org/wiki/Szybka_transformacja_Fouriera), niezbędna dla wizualizacji:
+Dla działającej wizualizacji, musisz edytować plik konfiguracyjny mpd, by włączyć [szybką transformację Fouriera](https://pl.wikipedia.org/wiki/Szybka_transformacja_Fouriera), niezbędna dla wizualizacji:
 
 ```
 audio_output {

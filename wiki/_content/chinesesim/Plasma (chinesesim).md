@@ -30,7 +30,7 @@ Plasma是 [KDE](/index.php/KDE "KDE") 提供桌面(比如 wallpapers and panels)
 
 在你的[display manager](/index.php/Display_manager "Display manager")菜单选择 Plasma 5 去启动它。
 
-**注意:** 为了能够更好的整合 SDDM 和Plasma，推荐修改 `/etc/sddm.conf` 使用[plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 或者 [plasma](https://www.archlinux.org/groups/x86_64/plasma/)自动安装的微风（breeze）主题。 请参阅 [SDDM#Theme_settings](/index.php/SDDM#Theme_settings "SDDM") 的说明。
+**注意:** 为了能够更好的整合 SDDM 和Plasma，推荐修改 `/etc/sddm.conf` 使用[plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 或者 [plasma](https://www.archlinux.org/groups/x86_64/plasma/)自动安装的微风（breeze）主题。 请参阅 [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM") 的说明。
 
 ### 使用 xinitrc
 

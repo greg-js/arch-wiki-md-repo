@@ -100,7 +100,7 @@ This section provides an overview of content detailing how to apply changes to t
 
 The following sections describe examples to change the default PAM parameter configuration:
 
-*   [Security#Enforcing strong passwords using pam cracklib](/index.php/Security#Enforcing_strong_passwords_using_pam_cracklib "Security")
+*   [Security#Enforcing strong passwords using pam_cracklib](/index.php/Security#Enforcing_strong_passwords_using_pam_cracklib "Security")
 
 	shows how to enforce srong passwords with `pam_cracklib.so`.
 
@@ -156,7 +156,7 @@ PAM modules from the [Arch User Repository](/index.php/Arch_User_Repository "Arc
 
 	shows how to configure `pam_usb.so` to use an usb-device for, optionally two-factor, authentication.
 
-*   [SSH keys#pam ssh](/index.php/SSH_keys#pam_ssh "SSH keys")
+*   [SSH keys#pam_ssh](/index.php/SSH_keys#pam_ssh "SSH keys")
 
 	uses `pam_ssh.so` to authenticate as a remote user.
 

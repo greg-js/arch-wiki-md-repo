@@ -3,18 +3,13 @@ The **Arch is the best** project is a very sophisticated and exquisite, ego-boos
 ## Contents
 
 *   [1 History](#History)
-*   [2 Installation](#Installation)
-*   [3 The code](#The_code)
-*   [4 Translations](#Translations)
-*   [5 Encodings](#Encodings)
+*   [2 The code](#The_code)
+*   [3 Translations](#Translations)
+*   [4 Encodings](#Encodings)
 
 ## History
 
 The visionary project was originally devised in April 2008 by long time Arch community member [lucke](https://bbs.archlinux.org/profile.php?id=2529) as a simple shell script which provided irrefutable proof that "Arch is the best". It was announced to the world with a [forum post](https://bbs.archlinux.org/viewtopic.php?id=47306), thus illuminating other people's minds, who immediately started porting it to multiple different languages, both programming and verbal, so that every human being on the planet could fully appreciate and benefit from this revolutionary discovery.
-
-## Installation
-
-A sample PKGBUILD called [archbest-mod1](https://aur.archlinux.org/packages/archbest-mod1/) has been uploaded to [AUR](/index.php/AUR "AUR").
 
 ## The code
 
@@ -125,10 +120,8 @@ yes Arch is the best!
 	Bourne shell (Dynamically updated)
 
 ```
- #!/bin/bash
- wget http://wiki.archlinux.org/index.php/Arch_is_the_best -qO-| sed -n ':b;n;s/id="Translations"//;Tb;:d;n;s/id="Encodings"//;t;p;bd'|sed '/<i>.*<\/i>/d;s/<[^>]*>//g'|sed 'N;s/
-/: /;N;N;s/
-//g'
+#!/bin/sh
+w3m -dump "https://wiki.archlinux.org/index.php/Arch_is_the_best" | sed -n '/^Translations/,/^Encodings/p'
 
 ```
 
@@ -681,7 +674,7 @@ len equ $-msg
 
 ```
 
-	NASM / Yasm (x86_64)
+	NASM / Yasm (x86_64) 
 
 	Featuring AMD's sexy new instruction, *syscall*.
 
@@ -869,7 +862,6 @@ format('Arch is the best~n',[]).
 	A general-purpose high-level programming language.
 
 ```
-#!/usr/bin/env python3
 print('Arch is the best!')
 
 ```
@@ -1058,7 +1050,7 @@ void loop()
 
 ```
 
-	X11 
+	X11
 
 	X11 is an architecture independent system for display of graphical user interfaces.
 
@@ -1373,6 +1365,13 @@ Arch'pu'ta"a'
 
 ```
 아치가 최고입니다!
+
+```
+
+	Kurdish
+
+```
+Arç herî baş e!
 
 ```
 

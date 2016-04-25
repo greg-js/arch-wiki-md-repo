@@ -90,8 +90,8 @@ Estas instrucciones son para aquellos que utilizan el paquete stock [linux](http
 
 2\. Instale el controlador apropiado para su tarjeta:
 
-*   Para las tarjetas de la serie GeForce 8 y posteriores [NVC0 y posteriores], instale el paquete [nvidia](https://www.archlinux.org/packages/?name=nvidia), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
-*   Para las tarjetas de las series GeForce 6/7 [NV40-FANV], instale el paquete [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+*   Para las tarjetas de la serie GeForce 8 y posteriores [NVC0 y posteriores], instale el paquete [nvidia](https://www.archlinux.org/packages/?name=nvidia), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+*   Para las tarjetas de las series GeForce 6/7 [NV40-FANV], instale el paquete [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 *   Para las tarjetas de la serie GeForce 5 FX [NV30-NV38], instale el paquete [nvidia-173xx](https://aur.archlinux.org/packages/nvidia-173xx/), disponible en [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
 *   Para las tarjetas de las series 2/3/4 MX/Ti [NV11 y NV17-NV28], instale el paquete [nvidia-96xx](https://aur.archlinux.org/packages/nvidia-96xx/), disponible en [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
 
@@ -119,7 +119,7 @@ En primer lugar, es bueno saber cómo funciona el sistema ABS mediante la lectur
 
 Lo que sigue es un breve tutorial para crear un paquete personalizado de controladores NVIDIA usando [ABS](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)"):
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [abs](https://www.archlinux.org/packages/?name=abs) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") y genere el árbol con:
+[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [abs](https://www.archlinux.org/packages/?name=abs) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y genere el árbol con:
 
 ```
 # abs

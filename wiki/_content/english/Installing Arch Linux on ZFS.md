@@ -314,7 +314,7 @@ Enable the target with [systemd](/index.php/Systemd "Systemd"):
 
 When running ZFS on root, the machine's hostid will not be available at the time of mounting the root filesystem. There are two solutions to this. You can either place your spl hostid in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") in your boot loader. For example, adding `spl.spl_hostid=0x00bab10c`, to get your number use the `hostid` command.
 
-The other, and suggested, solution is to make sure that there is a hostid in `/etc/hostid`, and then regenerate the initramfs image. Which will copy the hostid into the initramfs image. To do write the hostid file safely you need to use a small C program:
+The other, and suggested, solution is to make sure that there is a hostid in `/etc/hostid`, and then regenerate the initramfs image which will copy the hostid into the initramfs image. To write the hostid file safely you need to use a small C program:
 
 ```
 #include <stdio.h>

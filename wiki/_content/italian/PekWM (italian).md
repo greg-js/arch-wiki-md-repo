@@ -37,7 +37,7 @@ pacman -S pekwm
 
 ### Metodo 1: avviare tramite kdm/gdm
 
-Per prima cosa installare e attivare kdm o gdm. Per le istruzioni su come attivare un **login manager** , consultare la pagina [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)").
+Per prima cosa installare e attivare kdm o gdm. Per le istruzioni su come attivare un **login manager** , consultare la pagina [Display Manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)").
 
 Pekwm dovrebbe essere aggiunta ai tipi di sessione. Selezionare pekwm dal menu a destra prima di effettuare la sessione di Login.
 

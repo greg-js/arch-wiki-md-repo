@@ -155,7 +155,7 @@ $ export LANG="en_AU.UTF-8"
 
  `locale.conf` 
 ```
-LANG="zh_CN"
+LANG="zh_CN.UTF-8"
 LANGUAGE="zh_CN:en_GB:en"
 ```
 

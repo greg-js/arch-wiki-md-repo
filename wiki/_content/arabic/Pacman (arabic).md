@@ -414,7 +414,7 @@ The most important tip to remember is to not "blindly" update Arch systems. Alwa
 
 If a package update is expected/known to cause problems, packagers will ensure that pacman displays an appropriate message when the package is updated. If experiencing trouble after an update, double-check pacman's output by looking at the log (`/var/log/pacman.log`).
 
-At this point, **only after ensuring there is no information available through pacman, there is no relative news on [https://www.archlinux.org/](https://www.archlinux.org/), and there are no forum posts regarding the update**, consider seeking help on the forum, over [IRC](/index.php/IRC_Channel "IRC Channel"), or [downgrading the offending package](/index.php/Downgrading_packages "Downgrading packages").
+At this point, **only after ensuring there is no information available through pacman, there is no relative news on [https://www.archlinux.org/](https://www.archlinux.org/), and there are no forum posts regarding the update**, consider seeking help on the forum, over [IRC](/index.php/IRC_channel "IRC channel"), or [downgrading the offending package](/index.php/Downgrading_packages "Downgrading packages").
 
 ### I know an update to package ABC was released, but pacman says my system is up to date!
 

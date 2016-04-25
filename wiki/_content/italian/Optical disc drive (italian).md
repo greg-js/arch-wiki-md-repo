@@ -633,7 +633,7 @@ Se si desidera riprodurre i DVD criptati , è necessario installare i pacchetti 
 
 Inoltre, è necessario installare un software per il lettore. I più diffusi lettori DVD sono [MPlayer](/index.php/MPlayer "MPlayer"), [xine](https://en.wikipedia.org/wiki/it:Xine "wikipedia:it:Xine") e [VLC](https://en.wikipedia.org/wiki/VLC "wikipedia:VLC").
 
-**Suggerimento:** Gli utenti possono avere bisogno di appartenere al [gruppo](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") `optical` per essere in grado di accedere all'unità DVD. Per aggiungere un `UTENTE` al gruppo `optical`, eseguire le seguenti operazioni:
+**Suggerimento:** Gli utenti possono avere bisogno di appartenere al [gruppo](/index.php/Users_and_groups_(Italiano) "Users and groups (Italiano)") `optical` per essere in grado di accedere all'unità DVD. Per aggiungere un `UTENTE` al gruppo `optical`, eseguire le seguenti operazioni:
 ```
 # gpasswd -a UTENTE optical
 
@@ -642,7 +642,7 @@ Non dimenticare di uscire dalal sessione corente e rientrare affinché le modifi
 
 ### Lettori DVD
 
-Vedere anche : [Multimedia/Lettori Video](/index.php/List_of_Applications/Multimedia_(Italiano)#Lettori_Video "List of Applications/Multimedia (Italiano)")
+Vedere anche : [Multimedia/Lettori Video](/index.php/List_of_applications/Multimedia_(Italiano)#Lettori_Video "List of applications/Multimedia (Italiano)")
 
 #### MPlayer
 
@@ -752,7 +752,7 @@ Il ripping di un DVD è spesso una semplice questione di scelta del codec prefer
 
 ### HandBrake
 
-HandBrake è un transcoder video multithreaded, che offre sia un'interfaccia grafica che utilizzo da riga di comando, con molte configurazioni preimpostate. Il pacchetto è disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") : [handbrake](https://www.archlinux.org/packages/?name=handbrake).
+HandBrake è un transcoder video multithreaded, che offre sia un'interfaccia grafica che utilizzo da riga di comando, con molte configurazioni preimpostate. Il pacchetto è disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") : [handbrake](https://www.archlinux.org/packages/?name=handbrake).
 
 ### MEncoder
 

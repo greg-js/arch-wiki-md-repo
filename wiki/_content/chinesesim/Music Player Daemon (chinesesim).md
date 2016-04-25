@@ -81,7 +81,7 @@ $ chmod 710 /home/<your home dir>
 
 *   采取以下方式将音乐集合放到不同的路径
 
-（a）完全移动 （b）绑定挂载 （c）使用 [Btrfs 子卷](/index.php/Btrfs#Sub-volumes "Btrfs")（需要将这一永久改变写入 `/etc/fstab` 中）
+（a）完全移动 （b）绑定挂载 （c）使用 [Btrfs 子卷](/index.php/Btrfs#Subvolumes "Btrfs")（需要将这一永久改变写入 `/etc/fstab` 中）
 
 MPD 配置必须仅包含一个目录，如果音乐集包含在多个目录下，那么在 `/var/lib/mpd` 的主音乐目录下创建符号链接。记得为被链接的目录设置相应的权限。
 

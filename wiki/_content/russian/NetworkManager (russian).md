@@ -1,6 +1,6 @@
 [NetworkManager](http://projects.gnome.org/NetworkManager/) - это программа, облегчающая определение и конфигурацию средств для автоматического подключения к сети. Функционал NetworkManager полезен как для беспроводных, так и проводных сетей. Для подключения к беспроводным сетям, NetworkManager отдаёт предпочтение ранее известным сетям и обеспечивает переключение на наиболее стабильную сеть, но при их наличии, отдаёт предпочтение проводным сетям. Также поддерживаются подключения с использованием модема, и некоторые типы VPN. NetworkManager был разработан Red Hat, и в настоящее время содержится проектом [GNOME](/index.php/GNOME "GNOME").
 
-**Важно:** По умолчанию все пароли хранятся в чистом виде. См. [шифрование паролей к wifi](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A8.D0.B8.D1.84.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D0.B5.D0.B9_.D0.BA_wifi "NetworkManager (Русский)").
+**Важно:** По умолчанию все пароли хранятся в чистом виде. См. [шифрование паролей к wifi](#.D0.A8.D0.B8.D1.84.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D0.B5.D0.B9_.D0.BA_wifi).
 
 ## Contents
 
@@ -211,7 +211,7 @@ NetworkManager will require some additional steps to be able run properly. Make 
 
 NetworkManager запускается ([Использование юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)")) с помощью `NetworkManager.service`. После запуска демона NetworkManager, он автоматически подключатется к любой доступной сети, которые уже были настроены. Для любых "пользовательских соединений" или не настроенных соединений нужен *nmcli* или апплет для настройки и подключения.
 
-**Note:** NetworkManager возможно будет печатать бессмысленные предупреждения ([FS#34971](https://bugs.archlinux.org/task/34971)) в ваш системный лог, когда [NetworkManager-dispatcher.service](/index.php/Networkmanager#Network_services_with_NetworkManager_dispatcher "Networkmanager") и [ModemManager.service](https://www.archlinux.org/packages/?name=modemmanager) не запущены. Чтобы сохранить журнал в чистоте и убрать эти сообщения, запустите оба сервиса, даже если они не требуются вашей среде.
+**Note:** NetworkManager возможно будет печатать бессмысленные предупреждения ([FS#34971](https://bugs.archlinux.org/task/34971)) в ваш системный лог, когда [NetworkManager-dispatcher.service](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") и [ModemManager.service](https://www.archlinux.org/packages/?name=modemmanager) не запущены. Чтобы сохранить журнал в чистоте и убрать эти сообщения, запустите оба сервиса, даже если они не требуются вашей среде.
 
 ### Enable NetworkManager Wait Online
 
@@ -491,7 +491,7 @@ On at least one KDE4 system, no default route was created when establishing wire
 
 ### 3G modem not detected
 
-See [USB_3G_Modem#Network_Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem").
+See [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem").
 
 ### Switching off WLAN on laptops
 
@@ -561,7 +561,7 @@ This may need to be done for any other NM VPN plugins as well, but these are the
 
 Wlan chips are shipped with a default regulatory domain. If your AccessPoint doesn't operate within these limitations, you will not be able to connect to the network. Fixing this is easy:
 
-*   Install [crda](https://www.archlinux.org/packages/?name=crda) with pacman, see [Wireless_network_configuration#Regulatory_domain](/index.php/Wireless_network_configuration#Regulatory_domain "Wireless network configuration")
+*   Install [crda](https://www.archlinux.org/packages/?name=crda) with pacman, see [Wireless network configuration#Regulatory_domain](/index.php/Wireless_network_configuration#Regulatory_domain "Wireless network configuration")
 *   Uncomment the correct Country Code in '/etc/conf.d/wireless-regdom'
 *   reboot the system, because the setting is only read on boot.
 

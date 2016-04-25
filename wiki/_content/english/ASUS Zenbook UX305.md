@@ -46,6 +46,15 @@ Touchpad will only work by default with Linux 4.5.0-rc1 or later. Can currently 
 
 Touchpad works great on Linux-4.4.3 kernel and superior.
 
+EDIT by sputnick 20160424: With ASUS Zenbook UX305UA-FC057T, I can't figure out how to simulate middle click (to paste) even after running
+
+```
+synclient TapButton3=2
+
+```
+
+thanks to add workaround if you have one
+
 ### Wifi
 
 Intel Dual Band wifi. Should work with recent kernels. 3.10+ with iwlwifi. See [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") for details.

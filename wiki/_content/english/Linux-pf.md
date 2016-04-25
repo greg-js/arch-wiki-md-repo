@@ -40,7 +40,7 @@ There are a number of options a user is asked to choose from, should he/she sele
 
 ```
 
-The <Y> option is for users who have already compiled and are running a custom kernel. The PKGBUILD reads the running kernel's configuration and uses it for the subsequent compilation. The <L> option tries some kind of autodetection of the user's hardware: it first tries to use the [modprobed_db](/index.php/Modprobed_db "Modprobed db") module database, then falls back to the linux kernel's `make localmodconfig` functionality. The last option is self-explanatory.
+The <Y> option is for users who have already compiled and are running a custom kernel. The PKGBUILD reads the running kernel's configuration and uses it for the subsequent compilation. The <L> option tries some kind of autodetection of the user's hardware: it first tries to use the [modprobed-db](/index.php/Modprobed-db "Modprobed-db") module database, then falls back to the linux kernel's `make localmodconfig` functionality. The last option is self-explanatory.
 
 ```
 ==> Kernel configuration options before build:

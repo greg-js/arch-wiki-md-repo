@@ -94,14 +94,14 @@ You can work around the issue by forcing Steam to use the up-to-date system vers
 The dynamic linker (`man 8 ld.so`) can be told to load specific libraries using the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable").
 
 ```
-LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1' steam
+LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' steam
 
 ```
 
 If you wish to use this method in a .desktop shortcut, you can use this command in the **Exec=** field.
 
 ```
-env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1' /usr/bin/steam %U
+env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam %U
 
 ```
 

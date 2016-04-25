@@ -26,7 +26,7 @@ MySQL - это широко применяемая свободная много
 
 ## Установка
 
-MariaDB - так именуется форк популярного сервера баз данных MySQL, выбранный сообществом Archlinux. [Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") пакет [mariadb](https://www.archlinux.org/packages/?name=mariadb) из [официальных репозиториев](/index.php/Official_Repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official Repositories (Русский)"). В качестве альтернативы вы можете установить, например:
+MariaDB - так именуется форк популярного сервера баз данных MySQL, выбранный сообществом Archlinux. [Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") пакет [mariadb](https://www.archlinux.org/packages/?name=mariadb) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). В качестве альтернативы вы можете установить, например:
 
 *   **Oracle MySQL** — Официальный релиз от компании Oracle.
 

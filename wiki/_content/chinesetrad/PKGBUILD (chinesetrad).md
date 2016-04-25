@@ -69,7 +69,7 @@ build() {
 *   **pkgver**: 安裝包的版本號
 *   **pkgrel**: 此 Arch 安裝包的釋出號。它不同於版本號。當PKGBUILD 文件有改動時，釋出號就改變了。這種情況有多種原因，例如你為某個包開啟了編譯時間支援。
 *   **pkgdesc**: 安裝包的簡明描述。這也是你瀏覽[package database](https://archlinux.org/packages/)時會見到的。
-*   **arch**: 表明它在哪種架構下構建和工作的，軟體移植的細節可參閱[Arch64_FAQ](/index.php/Arch64_FAQ "Arch64 FAQ")。
+*   **arch**: 表明它在哪種架構下構建和工作的，軟體移植的細節可參閱[Arch64 FAQ](/index.php/Arch64_FAQ "Arch64 FAQ")。
 *   **url**: 軟體的主頁 (當你在安裝包數據庫中點擊它時候，就能出現了)
 *   **license**: 基於哪種軟體發佈許可
 *   **groups**: 這一倏用於為軟體分組；例如當你要安裝 KDE 時，它就會安裝屬於 KDE 軟體組的所有安裝包。

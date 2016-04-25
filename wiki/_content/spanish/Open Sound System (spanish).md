@@ -1,4 +1,4 @@
-El [Open Sound System](http://es.wikipedia.org/wiki/Open_Sound_System) (**OSS**) es una arquitectura de sonido alternativa para sistemas compatibles con UNIX y POSIX. OSS versión 3 era el sistema original de sonido para Linux y estaba incluido en el kernel hasta que fue reemplazado por [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") (**ALSA**) en 2002, año en que la versión 4 de OSS se convirtió en un producto propietario. Luego, OSSv4 volvió a ser software libre en 2007 cuando [4Front Technologies](http://www.opensound.com/) liberó el código bajo licencia GPL.
+El [Open Sound System](https://es.wikipedia.org/wiki/Open_Sound_System) (**OSS**) es una arquitectura de sonido alternativa para sistemas compatibles con UNIX y POSIX. OSS versión 3 era el sistema original de sonido para Linux y estaba incluido en el kernel hasta que fue reemplazado por [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") (**ALSA**) en 2002, año en que la versión 4 de OSS se convirtió en un producto propietario. Luego, OSSv4 volvió a ser software libre en 2007 cuando [4Front Technologies](http://www.opensound.com/) liberó el código bajo licencia GPL.
 
 ## Contents
 
@@ -114,7 +114,7 @@ $ osstest
 
 ```
 
-Debería oir música durante la prueba. Si no hay sonido, trate de ajustar el nivel del volumen o consulte la sección de [solución de problemas](/index.php/Open_Sound_System_(Espa%C3%B1ol)#Soluci.C3.B3n_de_problemas "Open Sound System (Español)").
+Debería oir música durante la prueba. Si no hay sonido, trate de ajustar el nivel del volumen o consulte la sección de [solución de problemas](#Soluci.C3.B3n_de_problemas).
 
 Para escuchar sonidos procedentes de más de una aplicación simultáneamente es necesario usar `vmix`, el software de mezcla de OSS.
 

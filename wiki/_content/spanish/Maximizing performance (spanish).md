@@ -230,7 +230,7 @@ Hay un [bash script](https://bbs.archlinux.org/viewtopic.php?pid=714052) que se 
 
 ### Tuning for an SSD
 
-[Trucos para maximizar el rendimiento de discos SSD](/index.php/SSD#Tips_for_Maximizing_SSD_Performance "SSD")
+[Trucos para maximizar el rendimiento de discos SSD](/index.php/SSD#Tips_for_maximizing_SSD_performance "SSD")
 
 ## CPU
 
@@ -342,7 +342,7 @@ Compilar un kernel modificado reducirá el tiempo de inicio y el uso de memoria,
 ### Firefox
 
 ```
-El articulo sobre [Firefox](/index.php/Firefox "Firefox") ofrece algunos buenos trucos; los mas notables son [Firefox Tips and Tweaks#Improve rendering by disabling pango |deshabilitar pango]], [Limpiar la base de datis SQLite](/index.php/Firefox_Tips_and_Tweaks#Defragment_the_profile.27s_SQLite_databases "Firefox Tips and Tweaks"), y usar  [firefox-pgo](/index.php/Firefox#Firefox_customized_for_speed "Firefox"). Revise cambien: [Aumentar la velocidad de Firefox usando tmpfs](/index.php?title=Aumentar_la_velocidad_de_Firefox_usando_tmpfs&action=edit&redlink=1 "Aumentar la velocidad de Firefox usando tmpfs (page does not exist)"), and [Apagando el ati-pishing](/index.php/Firefox_Tips_and_Tweaks#Turning_off_anti-phishing "Firefox Tips and Tweaks").
+El articulo sobre [Firefox](/index.php/Firefox "Firefox") ofrece algunos buenos trucos; los mas notables son [Firefox Tips and Tweaks#Improve rendering by disabling pango |deshabilitar pango]], [Limpiar la base de datis SQLite](/index.php/Firefox_Tips_and_Tweaks#Defragment_the_profile.27s_SQLite_databases "Firefox Tips and Tweaks"), y usar  [firefox-pgo](/index.php/Firefox#Firefox_customized_for_speed "Firefox"). Revise cambien: [Aumentar la velocidad de Firefox usando tmpfs](/index.php?title=Aumentar_la_velocidad_de_Firefox_usando_tmpfs&action=edit&redlink=1 "Aumentar la velocidad de Firefox usando tmpfs (page does not exist)"), and [Apagando el ati-pishing](/index.php/Firefox_Tips_and_Tweaks#Turn_off_anti-phishing "Firefox Tips and Tweaks").
 
 ```
 
@@ -364,7 +364,7 @@ Revise [Mejorando el rendimiento de pacman](/index.php/Improve_pacman_performanc
 
 ### SSH
 
-Revise [Aumentando la velocidad de SSH](/index.php/SSH#Speed_up_SSH "SSH").
+Revise [Aumentando la velocidad de SSH](/index.php/SSH#Speeding_up_SSH "SSH").
 
 ## Laptops
 

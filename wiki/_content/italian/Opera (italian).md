@@ -13,7 +13,7 @@
 
 ## Introduzione
 
-[Opera](http://www.opera.com) è un browser web prodotto da [Opera Software](http://it.wikipedia.org/wiki/Opera_Software) ASA, una compagnia norvegese IT. È il quarto browser più utilizzato dopo Internet Explorer, Mozilla Firefox e Apple Safari.
+[Opera](http://www.opera.com) è un browser web prodotto da [Opera Software](https://it.wikipedia.org/wiki/Opera_Software) ASA, una compagnia norvegese IT. È il quarto browser più utilizzato dopo Internet Explorer, Mozilla Firefox e Apple Safari.
 
 ## Vantaggi
 
@@ -107,4 +107,4 @@ Server = [http://repo.archlinux.fr/x86_64](http://repo.archlinux.fr/x86_64)
 
 ```
 
-**Di vitale importanza è aver installato polymer ed eseguito le qtconfig spiegate [precedentemente](/index.php/Opera_(Italiano)#Ulteriori_modifiche "Opera (Italiano)").**
+**Di vitale importanza è aver installato polymer ed eseguito le qtconfig spiegate [precedentemente](#Ulteiori_modifiche).**

@@ -9,8 +9,9 @@ This article covers running Steam in Wine, in order to play games not available 
     *   [3.2 Source engine launch options](#Source_engine_launch_options)
     *   [3.3 Using a pre-existing Steam installation](#Using_a_pre-existing_Steam_installation)
     *   [3.4 Steam links in Firefox, Chrome, etc](#Steam_links_in_Firefox.2C_Chrome.2C_etc)
-    *   [3.5 No text rendered problem](#No_text_rendered_problem)
-    *   [3.6 Proxy settings](#Proxy_settings)
+    *   [3.5 Steam Client Store/(built-in) Web Browser not working](#Steam_Client_Store.2F.28built-in.29_Web_Browser_not_working)
+    *   [3.6 No text rendered problem](#No_text_rendered_problem)
+    *   [3.7 Proxy settings](#Proxy_settings)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -171,10 +172,19 @@ detectDE()
 
 *   Restart the browser and you should be good to go. In Chromium, you cannot enter a `steam://` link in the url box like you can with Firefox. The forum link above has a `steam://open/friends` link to try if needed.
 
-**Note:**
+**Note:** Steam links in Firefox, Chrome, etc
 
 *   If you have any problems with file associations after doing this, simply revert to regular xdg-utils and undo your changes to `/usr/bin/xdg-open`.
 *   Those on other distributions that stumble upon this page, see the link above for firefox specific instructions. No easy way to get it working on Chromium on other distros exists.
+
+### Steam Client Store/(built-in) Web Browser not working
+
+Launch Steam 32-bit disabling "CEF-based runtime sandboxing" support:
+
+```
+wine ~/.wine/drive_c/Program Files/Steam/Steam.exe -no-cef-sandbox
+
+```
 
 ### No text rendered problem
 

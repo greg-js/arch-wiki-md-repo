@@ -1,10 +1,13 @@
-**翻译状态：** 本文是英文页面 [Intel_Graphics](/index.php/Intel_Graphics "Intel Graphics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-27，点击[这里](https://wiki.archlinux.org/index.php?title=Intel_Graphics&diff=0&oldid=407162)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Intel_Graphics](/index.php/Intel_Graphics "Intel Graphics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-23，点击[这里](https://wiki.archlinux.org/index.php?title=Intel_Graphics&diff=0&oldid=407162)可以查看翻译后英文页面的改动。
 
-由于Intel对X.Org开源驱动的支持，现在所需做的基本上是即插即用。
+由于Intel对X.Org开源驱动的支持，Intel的显卡现在基本上是即插即用的。
 
 Intel显卡和相应芯片组、cpu的完整型号参考[this comparison on wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units")。
 
-**注意:** 开源驱动不支持基于PowerVR的显卡([GMA 500](/index.php/Poulsbo "Poulsbo") and [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600") series)。
+**注意:**
+
+*   有些人建议不要安装Intel驱动，而应该回滚使用modesetting驱动。 参见 [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel) 与 [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/).
+*   开源驱动不支持基于PowerVR的显卡([GMA 500](/index.php/Poulsbo "Poulsbo") 和 [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600") 系列)。
 
 ## Contents
 
@@ -34,15 +37,19 @@ Intel显卡和相应芯片组、cpu的完整型号参考[this comparison on wiki
 
 先安装 [Xorg](/index.php/Xorg "Xorg")，然后[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的 [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) 软件包。它提供了用于2D加速的DDX驱动和旧显卡的[XvMC](/index.php/XvMC "XvMC")视频解码驱动。它依赖于3D加速的DRI驱动 [mesa](https://www.archlinux.org/packages/?name=mesa)。
 
-启用OpenGL支持, 安装 [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl).64位系统需要安装[lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) 才能在 32 位程序中使用加速功能。
+启用OpenGL支持, 安装 [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl)。64位系统需要安装[lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) 才能在 32 位程序中使用加速功能。
 
-要使用新 GPU 的硬件编解码功能，请按装官方软件仓库中的[libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver)和[libva](https://www.archlinux.org/packages/?name=libva)软件包，它提供了[VA-API](/index.php/VA-API "VA-API")驱动。
+要使用新 GPU 的硬件编解码功能，请参考 [VA-API](/index.php/VA-API "VA-API") 与 [VDPAU](/index.php/VDPAU "VDPAU") 页面；对于一些老型号的GPU，这项功能被集成在 [XvMC](/index.php/XvMC "XvMC")中，同时也包括了DDX驱动。
+
+Ivy-Bridge以及更新的GPU支持 [Vulkan](/index.php/Vulkan "Vulkan") ，要启用这项功能，请安装 [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) 。
 
 ## 配置
 
-没必要做任何形式的配置来运行X.ORG（不需要`xorg.conf`，但若有则要正确配置）。
+没必要做任何形式的配置来运行 [Xorg](/index.php/Xorg "Xorg")（不需要`xorg.conf`，但若有则要正确配置）。
 
-However, to take advantage of some driver options, you will need to create a Xorg configuration file similar to the one below:
+**注意:** 一些最新型号的核心显卡（例如Skylake/HD 530）可能需要额外的设置，参见[#Skylake Support](#Skylake_Support)
+
+然而，为了设定驱动的选项，你可能需要创建一份形式如下的Xorg的配置文件。
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
@@ -52,38 +59,38 @@ Section "Device"
 EndSection
 ```
 
-Additional options are added by the user on new lines below `Driver`.
+其他的一些选项由用户自行添加在`Driver`下方（每个选项一行）。
 
-**Note:**
+**注意:**
 
-*   You may need to indicate `AccelMethod` when creating a configuration file, even just to set it to the default method (currently `"sna"`); otherwise, X may crash.
-*   You might need to add more device sections than the one listed above. This will be indicated where necessary.
+*   在创建配置文件时，你可能需要指定`AccelMethod`（加速方式），哪怕只是将他设定为默认的方式 （现在的默认加速方式为 `"sna"`）；否则 X 可能会崩溃。
+*   你可能会需要在配置文件中添加更多的`Section "Device"`（驱动部分）。在相应的文章中会提示你在何处添加。
 
-查看完整选项，输入`man intel`。
+查看完整选项列表，在终端中输入`man intel`。
 
 ## 加载
 
 英特尔内核模块在系统启动时自动加载. 如果它不启动，则:
 
-*   Make sure you do **not** have `nomodeset` or `vga=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), since Intel requires kernel mode-setting.
-*   Also, check that you have not disabled Intel by using any modprobe blacklisting within `/etc/modprobe.d/` or `/usr/lib/modprobe.d/`.
+*   首先，确认你 **没有** 在 [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") 中添加 `nomodeset` 或 `vga=`选项， 因为Intel显示驱动需要 [KMS](/index.php/KMS "KMS").
+*   其次，检查你没有把Intel列入 `/etc/modprobe.d/` 或 `/usr/lib/modprobe.d/` 中的modprobe的黑名单文件中。
 
 ### 启用 early KMS
 
-**Tip:** If you have problems with the resolution, you can check whether [enforcing the mode](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") helps.
+**提示:** 如果你有分辨率方面的问题，可以参考一下 [enforcing the mode](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") ，也许会有帮助。
 
-[Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS)的支持,使用的的i915 DRM驱动程序英特尔芯片组和是强制性的，默认情况下启用。
+[Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS)被使用的i915 DRM驱动程序英特尔芯片组所支持，并且默认情况下被强制启用。
 
-KMS之后，通常初始化[initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process")，这是可能的，但是，要在initramfs的阶段启用KMS。添加`i915`模块到`/etc/mkinitcpio.conf`的`MODULES`行：
+KMS通常是在[initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process")之后开始初始化，但是你也可以在initramfs的阶段启用KMS，添加`i915`模块到`/etc/mkinitcpio.conf`的`MODULES`行：
 
 ```
 MODULES="**i915**"
 
 ```
 
-**Tip:** Users might need to add `intel_agp` before `i915` to suppress the ACPI errors. The order matters because the modules are activated in sequence.
+**注意:** 有些用户也许需要在 `i915` 之前添加`intel_agp` 用来阻止 ACPI 错误。顺序很重要，因为模块是按顺序加载的
 
-如果您使用的是自定义的 [EDID](https://en.wikipedia.org/wiki/Extended_display_identification_data "wikipedia:Extended display identification data") 文件, you should embed it into initramfs as well:
+如果您使用的是自定义的 [EDID](https://en.wikipedia.org/wiki/Extended_display_identification_data "wikipedia:Extended display identification data") 文件,你应该也把它添加到initramfs中：
 
  `/etc/mkinitcpio.conf`  `FILES="/lib/firmware/edid/your_edid.bin"` 
 
@@ -126,7 +133,7 @@ options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1 semaphores=1
 
 ```
 
-You can experiment with higher values for `enable_rc6`, but your GPU may not support them or the activation of the other options [[1]](https://wiki.archlinux.org/index.php?title=Talk:Intel_Graphics&oldid=327547#Kernel_Module_options).
+You can experiment with higher values for `enable_rc6`, but your GPU may not support them or the activation of the other options [[3]](https://wiki.archlinux.org/index.php?title=Talk:Intel_Graphics&oldid=327547#Kernel_Module_options).
 
 Framebuffer compression, for example, may be unreliable or unavailable on Intel GPU generations before Sandy Bridge (generation 6). This results in messages logged to the system journal similar to this one:
 
@@ -142,9 +149,9 @@ kernel: drm: not enough stolen space for compressed buffer, disabling.
 *   UXA - (Unified Acceleration Architecture) 是支持GEM驱动模型(GEM driver model)的成熟后端(backend)
 *   SNA - (Sandybridge's New Acceleration) 在有硬件支持下比UXA更快
 
-现在默认的加速方式为SNA(截至 2013-08-05[[2]](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/xf86-video-intel&id=d03f5fb77df413017821f492aa81e5d68def7e48))，比UXA更快，但是稳定性比UXA稍差
+现在默认的加速方式为SNA(截至 2013-08-05[[4]](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/xf86-video-intel&id=d03f5fb77df413017821f492aa81e5d68def7e48))，比UXA更快，但是稳定性比UXA稍差
 
-DDX驱动可重设你需要的加速方式。Phoronix的基准测试在 [[3]](http://www.phoronix.com/scan.php?page=news_item&px=MTEzOTE).Sandy Bridge为[[4]](http://www.phoronix.com/scan.php?page=article&item=intel_glamor_first&num=1)，Ivy Bridge为[[5]](http://www.phoronix.com/scan.php?page=article&item=intel_ivy_glamor&num=1). 若使用SNA有问题，UXA仍为稳妥的选择.
+DDX驱动可重设你需要的加速方式。Phoronix的基准测试在 [[5]](http://www.phoronix.com/scan.php?page=news_item&px=MTEzOTE).Sandy Bridge为[[6]](http://www.phoronix.com/scan.php?page=article&item=intel_glamor_first&num=1)，Ivy Bridge为[[7]](http://www.phoronix.com/scan.php?page=article&item=intel_ivy_glamor&num=1). 若使用SNA有问题，UXA仍为稳妥的选择.
 
 要使用旧的UXA加速方式, 创建包含下列内容的`/etc/X11/xorg.conf.d/20-intel.conf` 就可使用UXA:
 
@@ -189,7 +196,7 @@ $ xrandr --output LVDS1 --set "scaling mode" param
 
 ### 在 GMA 4500 硬解 H.264
 
-GMA 4500 平台上，[libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) 只能硬解 MPEG-2。 H.264 的硬解为另一分支——g45-h264， 在 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 中安装 [libva-driver-intel-g45-h264](https://aur.archlinux.org/packages/libva-driver-intel-g45-h264/) 就OK。 但注意 g45-h264 目前仍处于试验阶段，且开发不活跃。通过 VA-API 会减轻cpu的负载但不如使用非加速方式流畅。 mplayer的测试表明 使用vaapi 播放H.264 编码的 1080p 视频会让cpu的负载减半 (与XV相比) ，但播放很不稳定, 而 720p 则很到位 [[6]](https://bbs.archlinux.org/viewtopic.php?id=150550)。其他一些用户也提到这点[[7]](http://www.emmolution.org/?p=192&cpage=1#comment-12292)。
+GMA 4500 平台上，[libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) 只能硬解 MPEG-2。 H.264 的硬解为另一分支——g45-h264， 在 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 中安装 [libva-driver-intel-g45-h264](https://aur.archlinux.org/packages/libva-driver-intel-g45-h264/) 就OK。 但注意 g45-h264 目前仍处于试验阶段，且开发不活跃。通过 VA-API 会减轻cpu的负载但不如使用非加速方式流畅。 mplayer的测试表明 使用vaapi 播放H.264 编码的 1080p 视频会让cpu的负载减半 (与XV相比) ，但播放很不稳定, 而 720p 则很到位 [[8]](https://bbs.archlinux.org/viewtopic.php?id=150550)。其他一些用户也提到这点[[9]](http://www.emmolution.org/?p=192&cpage=1#comment-12292)。
 
 ### 设置伽马和亮度
 
@@ -314,7 +321,7 @@ EndSection
 
 ## 更多信息
 
-*   [http://intellinuxgraphics.org/documentation.html](http://intellinuxgraphics.org/documentation.html) (includes a list of supported hardware)
-*   [KMS](/index.php/KMS "KMS") — Arch wiki article on kernel mode setting
-*   [Xrandr](/index.php/Xrandr "Xrandr") — If you have problems setting the resolution
-*   Arch Linux forums: [Intel 945GM, Xorg, Kernel - performance](https://bbs.archlinux.org/viewtopic.php?pid=522665#p522665)
+*   [http://intellinuxgraphics.org/documentation.html](http://intellinuxgraphics.org/documentation.html) (包括一个被支持的硬件列表)
+*   [KMS](/index.php/KMS "KMS") — Arch维基上关于 kernel mode setting 的文章
+*   [Xrandr](/index.php/Xrandr "Xrandr") — 如果你有关于分辨率方面的问题，请参阅它。
+*   Arch Linux 论坛中的讨论: [Intel 945GM, Xorg, Kernel - performance](https://bbs.archlinux.org/viewtopic.php?pid=522665#p522665)

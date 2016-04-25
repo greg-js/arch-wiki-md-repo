@@ -30,7 +30,7 @@ Alternatively, select a client from the AUR:
 
 	[http://ratox.2f30.org/](http://ratox.2f30.org/) || [ratox-git](https://aur.archlinux.org/packages/ratox-git/)
 
-*   **qTox** — Powerful Tox client written in QT
+*   **qTox** — Powerful Tox client written in QT, current Github Version
 
 	[https://wiki.tox.chat/clients/qtox](https://wiki.tox.chat/clients/qtox) || [qtox-git](https://aur.archlinux.org/packages/qtox-git/)
 

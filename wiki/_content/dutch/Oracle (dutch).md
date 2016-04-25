@@ -117,7 +117,7 @@ En activeer deze instellingen met:
 
 ### Pam Limits
 
-Ook de PAM module limits (Zie ook: [Realtime_process_management](/index.php/Realtime_process_management "Realtime process management")) moet geconfigureerd worden. Voeg aan het bestand /etc/security/limits.conf het volgende toe:
+Ook de PAM module limits (Zie ook: [Realtime process management](/index.php/Realtime_process_management "Realtime process management")) moet geconfigureerd worden. Voeg aan het bestand /etc/security/limits.conf het volgende toe:
 
 ```
 oracle           soft    nproc   2047

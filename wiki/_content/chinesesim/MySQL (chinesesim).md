@@ -375,7 +375,7 @@ $ mysql -u <user> -p"<some-veryveryveryveryveryveryveryveryveryveryveryveryveryv
 
 ## 更多资源
 
-*   [LAMP_(简体中文)](/index.php/LAMP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LAMP (简体中文)") - Arch wiki 文章，涵盖安装 LAMP 服务器 (Linux Apache MySQL PHP)
+*   [LAMP (简体中文)](/index.php/LAMP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LAMP (简体中文)") - Arch wiki 文章，涵盖安装 LAMP 服务器 (Linux Apache MySQL PHP)
 *   [http://mariadb.org/](http://mariadb.org/) - Community-driven 实现
 *   [http://www.mysql.com/](http://www.mysql.com/) - Oracle 实现
 *   [http://www.percona.com/software](http://www.percona.com/software) - Percona 实现

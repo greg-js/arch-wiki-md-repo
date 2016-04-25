@@ -63,7 +63,7 @@ Tato sekce definuje, které repozitáře mají být použity. Mohou zde být uve
 
 Všechny oficiální repozitáře používají shodný soubor se seznamem zrcadel `/etc/pacman.d/mirrorlist`, jenž pro umožnění udržování takovéhoto jednotného seznamu využívá proměnnou "`$repo`". Ta se při každém zahrnutí seznamu zrcadel v určitém repozitáři nahradí za jméno onoho repozitáře.
 
-Následuje příklad pro [oficiální repozitáře](/index.php/Official_Repositories_(%C4%8Cesky) "Official Repositories (Česky)"), jenž využívá [zrcadla](/index.php?title=Mirrors_(%C4%8Cesky)&action=edit&redlink=1 "Mirrors (Česky) (page does not exist)") ze zmíněného souboru.
+Následuje příklad pro [oficiální repozitáře](/index.php/Official_repositories_(%C4%8Cesky) "Official repositories (Česky)"), jenž využívá [zrcadla](/index.php?title=Mirrors_(%C4%8Cesky)&action=edit&redlink=1 "Mirrors (Česky) (page does not exist)") ze zmíněného souboru.
 
 ```
 [core]
@@ -255,7 +255,7 @@ Vyčištění cache balíčků od balíčků, jenž nejsou momentálně nainstal
 
 Smazání kompletně celé cache balíčků:
 
-**Warning:** Toto provádějte pouze tehdy, jste-li si jistí, že nebude třeba [downgrade některého balíčku](/index.php/Downgrading_Packages_(%C4%8Cesky) "Downgrading Packages (Česky)"), protože `pacman -Scc` z cache odstraní skutečně *všechny* balíčky.
+**Warning:** Toto provádějte pouze tehdy, jste-li si jistí, že nebude třeba [downgrade některého balíčku](/index.php/Downgrading_packages_(%C4%8Cesky) "Downgrading packages (Česky)"), protože `pacman -Scc` z cache odstraní skutečně *všechny* balíčky.
 
 ```
 # pacman -Scc
@@ -272,7 +272,7 @@ Nejdůležitější rada pro zapamatování je neaktualizovat systém "naslepo".
 
 Pokud je očekáváno/známo, že aktualizace balíčku způsobí problémy, balíčkovači (lidé, kteří se starají o balíčky) nezapomenou přidat příslušnou zprávu, kterou pacman zobrazí při aktualizaci daného balíčku. Pokud po aktualizaci máte nějaké potíže, dvakrát si projděte výstup pacmana, jenž naleznete v logu (`/var/log/pacman.log`).
 
-V tomto momentě, **pouze poté, co jste se ujistili, že pacman neposkytuje žádné informace, že nejsou žádné související novinky na [https://www.archlinux.org](https://www.archlinux.org), a že nejsou na fóru žádné příspěvky ohledně dané aktualizace**, byste měli zvážit vyhledání pomoci na fóru, [IRC](/index.php?title=IRC_Channel_(%C4%8Cesky)&action=edit&redlink=1 "IRC Channel (Česky) (page does not exist)") nebo zkuste [downgradovat problematický balíček](/index.php/Downgrading_Packages_(%C4%8Cesky) "Downgrading Packages (Česky)").
+V tomto momentě, **pouze poté, co jste se ujistili, že pacman neposkytuje žádné informace, že nejsou žádné související novinky na [https://www.archlinux.org](https://www.archlinux.org), a že nejsou na fóru žádné příspěvky ohledně dané aktualizace**, byste měli zvážit vyhledání pomoci na fóru, [IRC](/index.php?title=IRC_Channel_(%C4%8Cesky)&action=edit&redlink=1 "IRC Channel (Česky) (page does not exist)") nebo zkuste [downgradovat problematický balíček](/index.php/Downgrading_packages_(%C4%8Cesky) "Downgrading packages (Česky)").
 
 Přečtěte si poslední odstavec znova.
 

@@ -196,7 +196,7 @@ WantedBy=multi-user.target
 
 **Note:** ntpd should still be running when the network is down if the hwclock daemon is disabled, so you should not use this.
 
-*ntpd* can be brought up/down along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_Services_with_NetworkManager_Dispatcher "NetworkManager"). You can install the needed script from [community]:
+*ntpd* can be brought up/down along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"). You can install the needed script from [community]:
 
  `# pacman -S networkmanager-dispatcher-ntpd` 
 

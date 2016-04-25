@@ -73,7 +73,7 @@ source=("$pkgname-${pkgver//_/-}.tar.gz")
 
 **注意:** 如果上游使用时间戳格式的版本，例如 *05102014*，请修改为年份在前的格式 *20141005* (ISO 8601). 否则新版本判断会失效。
 
-**Tip:** 在 PKGBUILD 中定义`pkgver()`，[makepkg](/index.php/Makepkg "Makepkg") 就可以自动 [更新](http://allanmcrae.com/2013/04/pacman-4-1-released/) 此变量。详情参阅 [VCS_package_guidelines#The pkgver() 函数](/index.php/VCS_package_guidelines#The_pkgver.28.29_.E5.87.BD.E6.95.B0 "VCS package guidelines").
+**Tip:** 在 PKGBUILD 中定义`pkgver()`，[makepkg](/index.php/Makepkg "Makepkg") 就可以自动 [更新](http://allanmcrae.com/2013/04/pacman-4-1-released/) 此变量。详情参阅 [VCS package guidelines#The pkgver() 函数](/index.php/VCS_package_guidelines#The_pkgver.28.29_.E5.87.BD.E6.95.B0 "VCS package guidelines").
 
 ### pkgrel
 

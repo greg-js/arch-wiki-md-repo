@@ -94,7 +94,7 @@ MPD должен иметь разрешение на выполнение (`+x`
 
 ```
 
-в) в случае с фс Btrfs — [подразделом Btrfs](/index.php/Btrfs#Sub-volumes "Btrfs") (необходимо сделать данные изменения постоянными, путём редактирования файла `/etc/fstab`);
+в) в случае с фс Btrfs — [подразделом Btrfs](/index.php/Btrfs#Subvolumes "Btrfs") (необходимо сделать данные изменения постоянными, путём редактирования файла `/etc/fstab`);
 
 г) созданием символической ссылки на папку с музыкой в `/var/lib/mpd/music`:
 
@@ -273,7 +273,7 @@ If you do not use a DE, place the line from [#Autostart on tty login](#Autostart
 
 **Note:** It is assumed that you already have systemd user-session manager running. See the [systemd/User](/index.php/Systemd/User "Systemd/User") page for details.
 
-The package [mpd](https://www.archlinux.org/packages/?name=mpd) provides user service file in `/usr/lib/systemd/user/mpd.service`. The configuration file is expected to exist either in `~/.mpdconf` or `~/.config/mpd/mpd.conf`, see [systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd") if you would like to use different path. The process is not started as root, so you should not use the `user` and `group` variables in the MPD configuration file, the process already has user permissions and therefore it is not necessary to change them further.
+The package [mpd](https://www.archlinux.org/packages/?name=mpd) provides user service file in `/usr/lib/systemd/user/mpd.service`. The configuration file is expected to exist either in `~/.mpdconf` or `~/.config/mpd/mpd.conf`, see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you would like to use different path. The process is not started as root, so you should not use the `user` and `group` variables in the MPD configuration file, the process already has user permissions and therefore it is not necessary to change them further.
 
 All you have to do is enable and start the `mpd` [user service](/index.php/Systemd/User#User_Services "Systemd/User").
 

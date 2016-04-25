@@ -28,7 +28,7 @@
 core 包含的軟體包有以下用途：
 
 *   啟動 Arch Linux
-*   [連上網際網路](/index.php/Network_Configuration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Network Configuration (正體中文)")
+*   [連上網際網路](/index.php/Network_configuration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Network configuration (正體中文)")
 *   [組建軟體包](/index.php/Creating_packages "Creating packages")
 *   管理並修復支援的[檔案系統](/index.php/File_systems "File systems")
 *   系統設定程序 (例如 [openssh](https://www.archlinux.org/packages/?name=openssh))

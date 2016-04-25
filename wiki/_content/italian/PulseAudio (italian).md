@@ -100,7 +100,7 @@ Se non si sta utilizzando GNOME, KDE o Xfce e il proprio [~/.xinitrc](/index.php
 
 ### ALSA
 
-Si installi [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). Il pacchetto contiene il file `/etc/asound.conf` per impostare ALSA per l'utilizzo con PulseAudio.
+Si installi [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"). Il pacchetto contiene il file `/etc/asound.conf` per impostare ALSA per l'utilizzo con PulseAudio.
 
 Si installino inoltre [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) e [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) se si è su un sistema a 64 bit e si utilizzano applicazioni [multilib](/index.php/Multilib "Multilib") a 32 bit come Wine, Skype e Steam.
 
@@ -328,7 +328,7 @@ Consultare inoltre la guida ufficiale: [[1]](https://xmms2.org/wiki/Using_the_ap
 
 PulseAudio viene utilizzato automaticamente dalle applicazioni KDE/Qt4 e supportato di default nel mixer di KDE. Per ulteriori informazioni si veda la [pagina](http://www.pulseaudio.org/wiki/KDE) relativa a KDE sul wiki di PulseAudio. Un consiglio utile dal link di cui sopra è quello di aggiungere `load-module module-device-manager` a `/etc/pulse/default.pa`.
 
-Se si sta utilizzando il backend phonon-gstreamer per Phonon, sarà necessario configurare anche GStreamer come descritto in [#GStreamer](#GStreamer).
+Se si sta utilizzando il backend phonon-gstreamer per Phonon, sarà necessario configurare anche GStreamer come descritto in [#Gstreamer](#Gstreamer).
 
 ### Audacious
 

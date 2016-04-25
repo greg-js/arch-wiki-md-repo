@@ -67,7 +67,7 @@ Per la connessione ad una rete wireless, tenere a portata di mano alcune informa
 
 ## Installazione
 
-Assicurarsi di avere l'ultima versione di netcfg installato. Le versioni più datate sono più soggette a bug e potrebbero non funzionare bene con i driver più recenti. Il pacchetto [netcfg](https://aur.archlinux.org/packages/netcfg/) è disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"):
+Assicurarsi di avere l'ultima versione di netcfg installato. Le versioni più datate sono più soggette a bug e potrebbero non funzionare bene con i driver più recenti. Il pacchetto [netcfg](https://aur.archlinux.org/packages/netcfg/) è disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"):
 
 ```
 # pacman -S netcfg
@@ -438,7 +438,7 @@ Installare il pacchetto [newlan](https://aur.archlinux.org/packages/newlan/) da 
 
 Vi è uno strumento da console per la selezione delle reti wireless in "tempo reale" (in modalità [NetworkManager](/index.php/NetworkManager "NetworkManager")) chiamato `wifi-select`. Lo strumento è utile per l'uso negli Internet café o in altri luoghi che si sta visitando per la prima (e forse l'ultima) volta. Con questo strumento, non è necessario creare un profilo per una nuova rete, basta digitare `# wifi-select wlan0` e selezionare la rete che si vuole.
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [wifi-select](https://aur.archlinux.org/packages/wifi-select/), attualmente disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [wifi-select](https://aur.archlinux.org/packages/wifi-select/), attualmente disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 [wifi-select](https://aur.archlinux.org/packages/wifi-select/) esegue quanto segue:
 

@@ -51,11 +51,11 @@
 
 ## Installazione di base
 
-[networkmanager](https://www.archlinux.org/packages/?name=networkmanager) è disponibile nei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") ed è quindi installabile tramite [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
+[networkmanager](https://www.archlinux.org/packages/?name=networkmanager) è disponibile nei [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") ed è quindi installabile tramite [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
 
 ### Supporto VPN
 
-Networkmanager supporta le reti VPN tramite tre plugin, tutti presenti nei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"):
+Networkmanager supporta le reti VPN tramite tre plugin, tutti presenti nei [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"):
 
 *   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn)
 *   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp)
@@ -73,7 +73,7 @@ Se si desidera memorizzare i dati di autenticazione (Wireless/DSL) e attivare le
 
 ### KDE4
 
-Il front-end KNetworkManager è stato reso disponibile per la versione KDE 4.4 come un widget di Plasma [kdeplasma-applets-networkmanagement](https://aur.archlinux.org/packages/kdeplasma-applets-networkmanagement/) nei [Repositori Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)")
+Il front-end KNetworkManager è stato reso disponibile per la versione KDE 4.4 come un widget di Plasma [kdeplasma-applets-networkmanagement](https://aur.archlinux.org/packages/kdeplasma-applets-networkmanagement/) nei [Repositori Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)")
 
 La controparte GNOME funziona altrettanto bene, o anche meglio (ha più funzioni e rileva più hardware).
 
@@ -340,7 +340,7 @@ Aprire quindi `NetworkManager/system-connections/<nome della connessione>` e cam
 
 ### Impostazioni proxy
 
-Network Manager non gestisce direttamente le impostazioni del proxy, ma con il [DE](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)"), è possibile utilizzare [proxydriver](http://marin.jb.free.fr/proxydriver/) per le impostazioni proxy tramite le informazioni di Network Manager. Il pacchetto [proxydriver](https://aur.archlinux.org/packages/proxydriver/) è disponibile su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
+Network Manager non gestisce direttamente le impostazioni del proxy, ma con il [DE](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)"), è possibile utilizzare [proxydriver](http://marin.jb.free.fr/proxydriver/) per le impostazioni proxy tramite le informazioni di Network Manager. Il pacchetto [proxydriver](https://aur.archlinux.org/packages/proxydriver/) è disponibile su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
 
 Per fare in modo che proxydriver sia in grado di modificare le impostazioni del proxy, è necessario eseguire questo comando, dalle applicazioni d'avvio di GNOME (Sistema->Preferenze->Applicazioni d'avvio):
 
@@ -475,7 +475,7 @@ Se NetworkManager (da v0.7.999) non rileva il modem 3G, ma è comunque possibile
 
 ### Spegnimento WLAN su computer portatili
 
-A volte NetworkManager non funziona quando si disattiva l'adattatore Wifi con l'interruttore del portatile e si prova ad abilitarlo nuovamente in seguito. Questo è spesso un problema con [rfkill](https://www.archlinux.org/packages/?name=rfkill). [Installarlo](/index.php/Pacman_(Italiano) "Pacman (Italiano)") dai [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") e dare il comando
+A volte NetworkManager non funziona quando si disattiva l'adattatore Wifi con l'interruttore del portatile e si prova ad abilitarlo nuovamente in seguito. Questo è spesso un problema con [rfkill](https://www.archlinux.org/packages/?name=rfkill). [Installarlo](/index.php/Pacman_(Italiano) "Pacman (Italiano)") dai [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") e dare il comando
 
 ```
 $ watch -n1 rfkill list all
@@ -527,7 +527,7 @@ Tale comando funziona con ogni rete.
 
 #### Ad-hoc
 
-*   Installare [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) dai [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+*   Installare [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) dai [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 *   Una configurazione personalizzata di `dnsmasq.conf` potrebbe interferire.
 *   Clickare sull'applet di nm-applet -> Creare nuova connessione wireless.
 *   Seguire il wizard (se si usa WEP assicurarsi di usare o 5 o 13 caratteri come password, password diverse potrebbero fallire)

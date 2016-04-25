@@ -384,4 +384,4 @@ Do obsługi MPD potrzebny jest oddzielny klient. Zobacz listę klientów na [mpd
 *   [Strona domowa (en)](http://www.musicpd.org/)
 *   [Forum MPD (en)](http://forum.musicpd.org/)
 *   [Dokumentacja MPD (en)](http://www.musicpd.org/doc/user/)
-*   [Opis na wikipedii (pl)](http://pl.wikipedia.org/wiki/Music_Player_Daemon)
+*   [Opis na wikipedii (pl)](https://pl.wikipedia.org/wiki/Music_Player_Daemon)

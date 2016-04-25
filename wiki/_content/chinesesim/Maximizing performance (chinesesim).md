@@ -93,7 +93,7 @@ $ glxinfo | grep direct
 
 最简单有效的改善系统性能的方法是：改用轻量级桌面和应用程序。
 
-*   不安装完整的[桌面环境](/index.php/Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop Environment (简体中文)")，仅仅使用[窗口管理器](/index.php/Window_manager "Window manager")。可选的方案包括[Awesome](/index.php/Awesome "Awesome")、[dwm](/index.php/Dwm "Dwm")、[Fluxbox](/index.php/Fluxbox "Fluxbox")、[i3](/index.php/I3 "I3")、[JWM](/index.php/JWM "JWM")、[Openbox](/index.php/Openbox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Openbox (简体中文)")、[wmii](/index.php/Wmii "Wmii")和[xmonad](/index.php/Xmonad "Xmonad")。
+*   不安装完整的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")，仅仅使用[窗口管理器](/index.php/Window_manager "Window manager")。可选的方案包括[Awesome](/index.php/Awesome "Awesome")、[dwm](/index.php/Dwm "Dwm")、[Fluxbox](/index.php/Fluxbox "Fluxbox")、[i3](/index.php/I3 "I3")、[JWM](/index.php/JWM "JWM")、[Openbox](/index.php/Openbox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Openbox (简体中文)")、[wmii](/index.php/Wmii "Wmii")和[xmonad](/index.php/Xmonad "Xmonad")。
 *   不用重量级的[GNOME](/index.php/GNOME "GNOME")或[KDE](/index.php/KDE "KDE")，改用轻量的桌面环境，如[LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")或者[Xfce](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)")。
 *   改用轻量级应用程序，你可以在[应用程序列表](/index.php/List_of_applications "List of applications")中搜索命令行界面的程序，或者参考论坛票选出的“年度轻便程序”：[2007](https://bbs.archlinux.org/viewtopic.php?id=41168)、 [2008](https://bbs.archlinux.org/viewtopic.php?id=67951)、 [2009](https://bbs.archlinux.org/viewtopic.php?id=78490)、 [2010](https://bbs.archlinux.org/viewtopic.php?id=88515)、 [2011](https://bbs.archlinux.org/viewtopic.php?id=111878)以及[2012](https://bbs.archlinux.org/viewtopic.php?id=138281)。
 *   禁用多余的[系统服务](/index.php/Daemons "Daemons")。
@@ -155,7 +155,7 @@ $ glxinfo | grep direct
 
 #### Ext4
 
-参见 [Ext4](/index.php/Ext4#Tips_and_tricks "Ext4")。
+参见[Ext4](/index.php/Ext4#Tips_and_tricks "Ext4")。
 
 #### JFS
 
@@ -197,7 +197,7 @@ vm.dirty_background_ratio = 2
 
 ### 优化SSD
 
-参见[SSD#Tips_for_Maximizing_SSD_Performance](/index.php/SSD#Tips_for_Maximizing_SSD_Performance "SSD")。
+参见[SSD#Tips for maximizing SSD performance](/index.php/SSD#Tips_for_maximizing_SSD_performance "SSD")。
 
 ### 使用RAM disks
 
@@ -293,7 +293,7 @@ GPU超频要比CPU超频简单得多，通过软件可以实时调整GPU时钟�
 
 ## 系统启动
 
-参见：[加速系统启动](/index.php/Improve_Boot_Performance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Improve Boot Performance (简体中文)")。
+参见：[加速系统启动](/index.php/Improve_boot_performance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Improve boot performance (简体中文)")。
 
 ### 待机
 
@@ -307,7 +307,7 @@ GPU超频要比CPU超频简单得多，通过软件可以实时调整GPU时钟�
 
 ### Firefox
 
-[Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")一文提供了不少技巧。常用的有：[禁用 pango](/index.php/Firefox_Tips_and_Tweaks#Improve_rendering_by_disabling_pango "Firefox Tips and Tweaks")，[清理sqlite数据库](/index.php/Firefox_Tips_and_Tweaks#Defragment_the_profile.27s_SQLite_databases "Firefox Tips and Tweaks")，使用[firefox-pgo](/index.php/Firefox#Firefox_customized_for_speed "Firefox")。另见：[Speed-up Firefox using tmpfs](/index.php/Speed-up_Firefox_using_tmpfs "Speed-up Firefox using tmpfs")、[关闭反钓鱼功能](/index.php/Firefox_Tips_and_Tweaks#Turning_off_anti-phishing "Firefox Tips and Tweaks")。
+[Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")一文提供了不少技巧。常用的有：[禁用 pango](/index.php/Firefox_Tips_and_Tweaks#Improve_rendering_by_disabling_pango "Firefox Tips and Tweaks")，[清理sqlite数据库](/index.php/Firefox_Tips_and_Tweaks#Defragment_the_profile.27s_SQLite_databases "Firefox Tips and Tweaks")，使用[firefox-pgo](/index.php/Firefox#Firefox_customized_for_speed "Firefox")。另见：[Speed-up Firefox using tmpfs](/index.php/Speed-up_Firefox_using_tmpfs "Speed-up Firefox using tmpfs")、[关闭反钓鱼功能](/index.php/Firefox_Tips_and_Tweaks#Turn_off_anti-phishing "Firefox Tips and Tweaks")。
 
 ### Gcc/Makepkg
 
@@ -323,4 +323,4 @@ GPU超频要比CPU超频简单得多，通过软件可以实时调整GPU时钟�
 
 ### SSH
 
-参见：[Speed up SSH](/index.php/SSH#Speed_up_SSH "SSH")。
+参见：[Speed up SSH](/index.php/SSH#Speeding_up_SSH "SSH")。

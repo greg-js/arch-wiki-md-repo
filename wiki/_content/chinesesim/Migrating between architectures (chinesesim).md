@@ -50,7 +50,7 @@ grep --color '\<lm\>' /proc/cpuinfo
 
 你应该在迁移期间为 `/var/cache/pacman/pkg` 预备当前大约两倍的空间。这是假设只有当前安装的软件包都在缓存中， 好像 “pacman -Sc” (clean) 刚刚运行过。磁盘占据空间的增加源于在两个架构间迁移时没个软件包的复制。
 
-如果你没有足够的空间请使用*[gparted](/index.php/Gparted "Gparted")* 重新划分相关分区的大小，或者将另一个分区挂载到 */var/cache/pacman*
+如果你没有足够的空间请使用*[GParted](/index.php/GParted "GParted")* 重新划分相关分区的大小，或者将另一个分区挂载到 */var/cache/pacman*
 
 在系统完全在新架构操作前请勿从缓存中移除旧架构中的软件包。过早地移除软件包将使你不能回退和撤销改变。
 

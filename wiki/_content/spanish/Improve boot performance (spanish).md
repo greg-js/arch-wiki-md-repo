@@ -28,7 +28,7 @@ $ systemd-analyze
 
 ```
 
-**Tip:** Si se inicia vía [Unified_Extensible_Firmware_Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") (UEFI) y utiliza un gestor de arranque que implementa systemd [Boot Loader Interface](http://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface) (que actualmente [Gummiboot (Español)](/index.php/Gummiboot_(Espa%C3%B1ol) "Gummiboot (Español)") y [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") do), *systemd-analyze* puede mostrar cuán rápido inició el firmware EFI y el porpio gestor de arranque.
+**Tip:** Si se inicia vía [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") (UEFI) y utiliza un gestor de arranque que implementa systemd [Boot Loader Interface](http://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface) (que actualmente [Gummiboot (Español)](/index.php/Gummiboot_(Espa%C3%B1ol) "Gummiboot (Español)") y [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") do), *systemd-analyze* puede mostrar cuán rápido inició el firmware EFI y el porpio gestor de arranque.
 
 Para listar los archivos en las unidades iniciadas, ordenadas por el tiempo que les tomó iniciar a cada uno:
 
@@ -108,7 +108,7 @@ Compilar un kernel personalizado puede reducir el tiempo de arranque y el uso de
 
 ## Initramfs
 
-Parecido a [#Compiling a custom kernel](#Compiling_a_custom_kernel), el initramfs puede ser más ligero. Una forma sencilla es incluir el [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") `autodetect` hook. Si querés ir más allá de éso puedes ver [Minimal initramfs](/index.php/Minimal_initramfs "Minimal initramfs").
+Parecido a [#Compilando un custom kernel](#Compilando_un_custom_kernel), el initramfs puede ser más ligero. Una forma sencilla es incluir el [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") `autodetect` hook. Si querés ir más allá de éso puedes ver [Minimal initramfs](/index.php/Minimal_initramfs "Minimal initramfs").
 
 ## Cominezo rápido de los serivicios
 

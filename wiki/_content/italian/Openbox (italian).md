@@ -270,7 +270,7 @@ Per configurare Openbox manualmente, modificare `~/.config/openbox/rc.xml` con u
 
  `# pacman -S obconf` 
 
-Al momento ObConf non può essere usato per gestire le scorciatoie di tastiera e alcune funzioni avanzate. Per queste modifiche, l'utente deve ricorrere alla modifica manuale del file `rc.xml`. Un'alternativa è l'applicazione [obkey](https://aur.archlinux.org/packages/obkey/) disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)")
+Al momento ObConf non può essere usato per gestire le scorciatoie di tastiera e alcune funzioni avanzate. Per queste modifiche, l'utente deve ricorrere alla modifica manuale del file `rc.xml`. Un'alternativa è l'applicazione [obkey](https://aur.archlinux.org/packages/obkey/) disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)")
 
 ### Configurazione delle applicazioni
 
@@ -350,7 +350,7 @@ Dopodichè eseguire il comando `openbox --reconfigure` per aggiornare il menu di
 
 ### Xdg-menu
 
-[Xdg-menu](/index.php/Xdg-menu "Xdg-menu") può generare automaticamente un menù per openbox a partire da dei file xdg. Può essere installato col pacchetto [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu) presente nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). Per una guida all'utilizzo dei menu XDG consultare [Xdg-menu#OpenBox](/index.php/Xdg-menu#OpenBox "Xdg-menu")
+[Xdg-menu](/index.php/Xdg-menu "Xdg-menu") può generare automaticamente un menù per openbox a partire da dei file xdg. Può essere installato col pacchetto [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu) presente nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"). Per una guida all'utilizzo dei menu XDG consultare [Xdg-menu#OpenBox](/index.php/Xdg-menu#OpenBox "Xdg-menu")
 
 #### Script menu xdg basato su python
 
@@ -438,13 +438,13 @@ La pagina wiki supplementare **[Openbox Themes and Apps](/index.php/Openbox_Them
 
 L'articolo fornisce dettagli su pannelli, gestori della system tray, gestori del volume, ed altri elementi utilizzabili su un sistema desktop.
 
-Visitate anche la [lista di applicazioni](/index.php/List_of_Applications_(Italiano) "List of Applications (Italiano)"). Molte di queste funzionano senza problemi in Openbox.
+Visitate anche la [lista di applicazioni](/index.php/List_of_applications_(Italiano) "List of applications (Italiano)"). Molte di queste funzionano senza problemi in Openbox.
 
 ## Suggerimenti
 
 ### Funzione simile alla "Snap" di Aero
 
-Tramite le configurazioni di Openbox, è possibile ottenere un comportamento simile alla funzione Snap di Aero (Windows Vista), cioè che le finestre vadano automaticamente ad occupare solo metà dello schermo. Una spiegazione dettagliata è reperibile [[in questa discussione del forum italiano](http://www.archlinux.it/forum/viewtopic.php?f=17&t=10545)]
+Tramite le configurazioni di Openbox, è possibile ottenere un comportamento simile alla funzione Snap di Aero (Windows Vista), cioè che le finestre vadano automaticamente ad occupare solo metà dello schermo. Una spiegazione dettagliata è reperibile [in questa discussione del forum italiano](http://www.archlinux.it/forum/viewtopic.php?f=17&t=10545)
 
 ### Associazione dei file
 

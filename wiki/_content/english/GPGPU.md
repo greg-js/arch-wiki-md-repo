@@ -171,6 +171,7 @@ It might be necessary to use the legacy driver [nvidia-304xx](https://www.archli
 *   [Bitcoin](/index.php/Bitcoin "Bitcoin")
 *   [GIMP](/index.php/GIMP "GIMP") (experimental - see [[3]](http://www.h-online.com/open/news/item/GIMP-2-8-RC-1-arrives-with-GPU-acceleration-1518417.html))
 *   [pyrit](https://www.archlinux.org/packages/?name=pyrit)
+*   [darktable](https://www.archlinux.org/packages/?name=darktable) - OpenCL feature requires at least 1 GB RAM on GPU and *Image support* (check output of clinfo command).
 *   [aircrack-ng](https://www.archlinux.org/packages/?name=aircrack-ng)
 *   [john-opencl](https://aur.archlinux.org/packages/john-opencl/)
 *   [cuda_memtest](https://aur.archlinux.org/packages/cuda_memtest/) - a GPU memtest. Despite its name, is supports both CUDA and OpenCL

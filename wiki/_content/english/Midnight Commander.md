@@ -184,7 +184,7 @@ If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the 
 
 #### No bold text in urxvt
 
-If started under [urxvt](/index.php/Rxvt-unicode "Rxvt-unicode") with the default `TERM` setting, text that is usually bold in many other terminals will not appear so. The root of the issue is because xterm couples bright text color with the bold attribute (thus, bright colors will always appear as bold in xterm).
+If started under [urxvt](/index.php/Urxvt "Urxvt") with the default `TERM` setting, text that is usually bold in many other terminals will not appear so. The root of the issue is because xterm couples bright text color with the bold attribute (thus, bright colors will always appear as bold in xterm).
 
 urxvt does not have this limitation, which Slang (the library mc uses for text display by default) honors. Because Slang can decouple the bold attribute from bright colors on urxvt, mc would need to explicitly specify the bold attribute as appropriate ([which it does not](https://bugzilla.redhat.com/show_bug.cgi?id=474108#c3)).
 

@@ -1207,7 +1207,7 @@ Pastebin services are often used to quote text or images while collaborating and
 
 *   **paste-binouse** — C++ standalone pastebin web server
 
-	[https://github.com/abique/paste-binouse](https://github.com/abique/paste-binouse) || [paste-binouse](https://aur.archlinux.org/packages/paste-binouse/)
+	[https://github.com/abique/paste-binouse](https://github.com/abique/paste-binouse) || [paste-binouse-git](https://aur.archlinux.org/packages/paste-binouse-git/)
 
 *   **pb** — A very fast, lightweight pastebin and general file uploader written in python with a ton of features.
 

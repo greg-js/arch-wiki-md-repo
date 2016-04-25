@@ -2,7 +2,7 @@ Partycjonowanie dysku pozwala na logiczny podział dostępnej przestrzeni dyskow
 
 Cały dysk twardy może być dostępny jako jedna partycja lub można podzielić dostępne miejsce na kilka partycji. Różne możliwości wymagają utworzenia wielu partycji, np. dual- lub multi-booting, czy utworzenie partycji wymiany (swap). W innych przypadkach partycjonowanie jest używane jako środek podziału danych, np. utworzenie osobnych partycji dla plików audio i video. Najczęściej używane układy partycji zostały omówione poniżej.
 
-Każda partycja musi zostać [sformatowana](/index.php/File_Systems_(Polski) "File Systems (Polski)") przed użyciem.
+Każda partycja musi zostać [sformatowana](/index.php/File_systems_(Polski) "File systems (Polski)") przed użyciem.
 
 ## Contents
 
@@ -175,7 +175,7 @@ Podstawowe użycie *gdisk*:
 *   Wybierz identyfikator typu partycji, domyślnie `Linux/Windows data` (kod`0700`), powinien być odpowiedni. Wciśnij `L` by zobaczyć listę kodów. Jeśli planujesz używać LVM wybierz `Linux LVM` (`8e00`).
 *   Utwórz inne partycje w podobny sposób.
 *   Zapisz tablicę partycji na dysku i wyjdź wpisując komendę `w`.
-*   Sformatuj nową partycję z pomocą [file system](/index.php/File_Systems_(Polski) "File Systems (Polski)").
+*   Sformatuj nową partycję z pomocą [file system](/index.php/File_systems_(Polski) "File systems (Polski)").
 
 **Note:**
 
@@ -205,4 +205,4 @@ Pamiętaj, że dawniej *fdisk* używał cylindrów jako domyślna jednostka, i u
 *   Zmień identyfikator (id) typu partycji z domyślnego Linux (`type 83`) na wybrany poprzez użycie komendy `t`. To tylko opcjonalny krok, w razie gdyby użytkownik np. chciał utworzyć inny typ partycji, swap, NTFS, LVM itp. Listę typów partycji można wywołać komendą `l`.
 *   Ustaw resztę partycji jak wyżej.
 *   Zapisz tablicę partycji na dysk i wyjdź używając komendy `w`.
-*   Sformatuj nowe partycje na [file system](/index.php/File_Systems_(Polski) "File Systems (Polski)").
+*   Sformatuj nowe partycje na [file system](/index.php/File_systems_(Polski) "File systems (Polski)").

@@ -415,7 +415,7 @@ A dica mais importante para se lembrar é não "às cegas" atualizar o sistema A
 
 Se uma atualização do pacote é esperada/conhecida por causar de problemas, empacotadores garantirão que pacman exiba uma mensagem apropriada quando o pacote é atualizado. Se enfrentar problemas após uma atualização, verifique a saída do pacman, veja o log (`/var/log/pacman.log`).
 
-Neste ponto, **só depois de garantir que não há nenhuma informação disponível através de pacman, não há nenhuma notícia relativa em [http://www.archlinux-br.org/](http://www.archlinux-br.org/), e não há mensagem no fórum sobre a atualização**, considere a busca de ajuda no fórum, através [IRC](/index.php/IRC_Channel "IRC Channel"), ou [downgrade do pacote problemático](/index.php/Downgrading_packages "Downgrading packages").
+Neste ponto, **só depois de garantir que não há nenhuma informação disponível através de pacman, não há nenhuma notícia relativa em [http://www.archlinux-br.org/](http://www.archlinux-br.org/), e não há mensagem no fórum sobre a atualização**, considere a busca de ajuda no fórum, através [IRC](/index.php/IRC_channel "IRC channel"), ou [downgrade do pacote problemático](/index.php/Downgrading_packages "Downgrading packages").
 
 ### Eu sei que uma atualização para o pacote ABC foi lançada, mas pacman diz que o meu sistema está atualizado!
 

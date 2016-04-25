@@ -185,4 +185,4 @@ Recuerde que puede consultar siempre la documentación para más información, i
 
 *   Documentación de pdnsd, en inglés: [pdnsd Documentation](http://www.phys.uu.nl/~rombouts/pdnsd/doc.html)
 
-*   Artículo en Wikipedia, en español, sobre el protocolo [DNS](http://es.wikipedia.org/wiki/Domain_Name_System).
+*   Artículo en Wikipedia, en español, sobre el protocolo [DNS](https://es.wikipedia.org/wiki/Domain_Name_System).

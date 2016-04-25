@@ -272,6 +272,16 @@ Shell> bcfg boot add 3 fs0:\EFI\refind\refind_x64.efi "rEFInd"
 
 where `fs0:` is the mapping corresponding to the EFI System Partition and `fs0:\EFI\refind\refind_x64.efi` is the file to be launched.
 
+To add an entry to boot directly into your system without a bootloader, configure a boot option using your kernel as an [EFISTUB](/index.php/EFISTUB#UEFI_Shell "EFISTUB"):
+
+```
+Shell> bcfg boot add **N** fs**V**:\vmlinuz-linux
+Shell> bcfg boot -opt **N** "root=**/dev/sdX#** initrd=\initramfs-linux.img"
+
+```
+
+where `N` is the priority, `V` is the volume number of your EFI partition, and `/dev/sdX#` is your root partition.
+
 To remove the 4th boot option:
 
 ```

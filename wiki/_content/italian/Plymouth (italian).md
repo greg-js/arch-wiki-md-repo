@@ -25,7 +25,7 @@ Se non si dispone di KMS è necessario utilizzare framebuffer.
 
 Utilizza Plymouth da AUR. È meglio utilizzare la [versione git](https://aur.archlinux.org/packages.php?ID=26117), in quanto è la più aggiornata ed è in grado di lavorare meglio.
 
-Istruzioni su come installare i pacchetti da AUR sono [disponibili qui](/index.php/AUR_User_Guidelines_(Italiano)#Installare_pacchetti_da_AUR "AUR User Guidelines (Italiano)")
+Istruzioni su come installare i pacchetti da AUR sono [disponibili qui](/index.php/AUR_User_Guidelines_(Italiano)#Installare_i_pacchetti_da_AUR "AUR User Guidelines (Italiano)")
 
 ## Configurazione
 

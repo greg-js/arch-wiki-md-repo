@@ -13,7 +13,9 @@ An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly usi
 *   [2 Booting EFISTUB](#Booting_EFISTUB)
     *   [2.1 Using a boot manager](#Using_a_boot_manager)
     *   [2.2 Using UEFI Shell](#Using_UEFI_Shell)
-    *   [2.3 Using UEFI directly (efibootmgr)](#Using_UEFI_directly_.28efibootmgr.29)
+    *   [2.3 Using UEFI directly](#Using_UEFI_directly)
+        *   [2.3.1 efibootmgr](#efibootmgr)
+        *   [2.3.2 UEFI Shell](#UEFI_Shell)
 
 ## Setting up EFISTUB
 
@@ -212,9 +214,11 @@ To avoid needing to remember all of your kernel parameters every time, you can s
 
 ```
 
-### Using UEFI directly (efibootmgr)
+### Using UEFI directly
 
-UEFI is [designed to remove the need](/index.php/UEFI#Multibooting_in_UEFI "UEFI") for an intermediate bootloader such as [GRUB](/index.php/GRUB "GRUB"). If your motherboard has a good UEFI implementation, it is possible to embed the kernel parameters within a UEFI boot entry and for the motherboard to boot Arch directly. You can use [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) to modify your motherboard's boot entries from within Arch.
+UEFI is [designed to remove the need](/index.php/UEFI#Multibooting_in_UEFI "UEFI") for an intermediate bootloader such as [GRUB](/index.php/GRUB "GRUB"). If your motherboard has a good UEFI implementation, it is possible to embed the kernel parameters within a UEFI boot entry and for the motherboard to boot Arch directly. You can use [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) or UEFI Shell v2 to modify your motherboard's boot entries.
+
+#### efibootmgr
 
 ```
 # efibootmgr -d /dev/sd**X** -p **Y** -c -L "Arch Linux" -l /vmlinuz-linux -u "root=**/dev/sda2** rw initrd=/initramfs-linux.img"
@@ -260,3 +264,31 @@ where XXXX is the number that appears in the output of `efibootmgr` command agai
 **Tip:** Save the command for creating your boot entry in a shell script somewhere, which makes it easier to modify (when changing kernel parameters, for example).
 
 More info about efibootmgr at [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI"). Forum post [https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040](https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040) .
+
+#### UEFI Shell
+
+Some UEFI implementations make it difficult to modify the NVRAM successfully using efibootmgr. If efibootmgr cannot successfully create an entry, you can use the [bcfg](/index.php/UEFI#bcfg "UEFI") command in UEFI Shell v2.
+
+To add an entry for your kernel, use:
+
+```
+Shell> bcfg boot add **N** fs**V**:\vmlinuz-linux
+
+```
+
+where `N` is the priority (0 is top priority) and `V` is the volume number representing your EFI partition. If you don't know which volume number you should use, use the map command to list file systems, and the ls command to list their contents:
+
+```
+Shell> map
+Shell> ls fs0:
+
+```
+
+To add the bare minimum necessary kernel options, use:
+
+```
+Shell> bcfg boot -opt **N** "root=**/dev/sdX#** initrd=\initramfs-linux.img"
+
+```
+
+where `N` is the priority number you selected in the first step, and `/dev/sdX#` represents your root partition.

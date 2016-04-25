@@ -49,7 +49,7 @@ Different environments exist to play games in Linux:
     *   [DOSBox](/index.php/DOSBox "DOSBox") is a minimal virtual machine which runs a full DOS-compatible environment. It can be used to run classic DOS titles.
     *   [scummvm](https://www.archlinux.org/packages/?name=scummvm) is an all-in-one engine reimplementation of many classic point-and-click adventure games. A full list of compatible titles can be found on the [ScummVM website](http://scummvm.org).
     *   Similar to ScummVM, engine reimplementations exist for specific titles, such as Doom.
-*   Virtual machines can be used to install compatible operating systems (such as Windows). [VirtualBox](/index.php/VirtualBox "VirtualBox") has good 3D support.
+*   Virtual machines can be used to install compatible operating systems (such as Windows). [VirtualBox](/index.php/VirtualBox "VirtualBox") has good 3D support. As an extension of this, if you have compatible hardware you can consider VGA passthrough to a Windows KVM guest.
 
 ## Getting games
 
@@ -244,6 +244,8 @@ Most every game can benefit if given the correct scheduling policies for the ker
 ### For Wine programs
 
 [wine-rt](https://aur.archlinux.org/packages/wine-rt/) is a patched version of Wine that implements scheduling policies on a per-thread basis, using the equivalent of what the Windows developers had intended the threads to be run at. The default patch is more oriented towards professional audio users, and tends to be too heavy-handed of an approach for gaming. You may instead wish to use [this patch](http://pastebin.com/D9GBzBBv), which also includes nice levels and uses more than one policy decision. Be warned that it uses `SCHED_ISO`, which is only properly implemented on [Linux-ck](/index.php/Linux-ck "Linux-ck"), and will simply renice `THREAD_PRIORITY_ABOVE_NORMAL` threads if your system does not support it.
+
+[wine-staging](https://www.archlinux.org/packages/?name=wine-staging) versions 1.9.5 and before incorporate the CSMT patchset which provides better performance for 3D accelerated games. The patchset has been disabled as of 1.9.6 pending an upstream update to the patch and incorporation into the main Wine source tree, so you will need to compile version 1.9.5 of wine-staging yourself if you wish to take advantage of this.
 
 ### For everything else
 

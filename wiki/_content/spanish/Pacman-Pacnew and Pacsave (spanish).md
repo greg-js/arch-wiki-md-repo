@@ -32,7 +32,7 @@ Estos archivos requieren intervención manual del usuario y es una buena prácti
 
 ### .pacnew
 
-Por cada archivo en un paquete que se actualiza, `pacman` compara tres [sumas MD5](http://es.wikipedia.org/wiki/Md5) generadas del contenido del archivo: una suma por la versión instalada por el paquete, una para la versión actual en el sistema de archivos, y una para la versión en el nuevo paquete. Si la versión del archivo actualmente en el sistema de archivos fue modificada de la versión originalmente instalada del paquete, `pacman` no puede saber como mezclar esos cambios con la versión nueva del archivo. Por lo tanto, en vez de sobreescribir el archivo modificado cuando actualiza, `pacman` guarda la nueva versión con una extensión `.pacnew` y deja la versión modificada intacta.
+Por cada archivo en un paquete que se actualiza, `pacman` compara tres [sumas MD5](https://es.wikipedia.org/wiki/Md5) generadas del contenido del archivo: una suma por la versión instalada por el paquete, una para la versión actual en el sistema de archivos, y una para la versión en el nuevo paquete. Si la versión del archivo actualmente en el sistema de archivos fue modificada de la versión originalmente instalada del paquete, `pacman` no puede saber como mezclar esos cambios con la versión nueva del archivo. Por lo tanto, en vez de sobreescribir el archivo modificado cuando actualiza, `pacman` guarda la nueva versión con una extensión `.pacnew` y deja la versión modificada intacta.
 
 Yendo a más detalles, el resultado de la comparación de tres vías de sumas MD5 resulta en lo siguiente:
 

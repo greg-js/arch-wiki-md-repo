@@ -2,7 +2,7 @@ Il *partizionamento* del disco fisso permette di dividere logicamente lo spazio 
 
 Un intero disco rigido può essere assegnato a una singola partizione, oppure si può dividere lo spazio di memoria disponibile su più partizioni. Un certo numero di scenari richiedono la creazione di più partizioni: dual- o multi-boot, per esempio, o il mantenimento di un partizione di [swap](/index.php/Swap "Swap"). In altri casi , il partizionamento è usato come mezzo di dati logicamente separati, come ad esempio la creazione di partizioni separate per i file audio e video. Schemi di partizionamento comuni sono discussi in dettaglio qui di seguito .
 
-Ogni partizione deve essere formattata per un [tipo di file system](/index.php/File_Systems_(Italiano) "File Systems (Italiano)") prima di essere utilizzato.
+Ogni partizione deve essere formattata per un [tipo di file system](/index.php/File_systems_(Italiano) "File systems (Italiano)") prima di essere utilizzato.
 
 ## Contents
 
@@ -223,7 +223,7 @@ Una sintesi del uso tipico di *gdisk*  :
 *   Selezionare l'ID del tipo di partizione, per valore predefinito, `Linux/Windows data` (code `0700`), dovrebbe andare bene per la maggior parte degli utilizzi. Premere `L` per visualizzare l'elenco dei codici. Se prevedete di usare LVM selezionare `Linux LVM` (`8e00`).
 *   Assegnare altre partizioni in modo simile.
 *   Scrivere la tabella su disco e uscire attraverso con il comando `w`.
-*   Formattare la nuova partizione con un [file system](/index.php/File_Systems_(Italiano) "File Systems (Italiano)").
+*   Formattare la nuova partizione con un [file system](/index.php/File_systems_(Italiano) "File systems (Italiano)").
 
 **Nota:**
 
@@ -253,7 +253,7 @@ Si noti che in passato, *fdisk* usava i cilindri come unità di visualizzazione 
 *   Cambiare l'ID di sistema della partizione dal tipo predefinito di Linux (`tipo 83`) al tipo desiderato tramite il comando `t`. Questo è un passaggio facoltativo qualora l'utente desideri creare un altro tipo di partizione, ad esempio swap, NTFS, LVM , ecc. Si noti che un elenco completo di tutti i tipi di partizione validi è disponibile tramite il comando `l`.
 *   Assegnare altre partizioni in modo simile.
 *   Scrivere la tabella su disco e uscire attraverso con il comando `w`.
-*   Formattare la nuova partizione con un [file system](/index.php/File_Systems_(Italiano) "File Systems (Italiano)").
+*   Formattare la nuova partizione con un [file system](/index.php/File_systems_(Italiano) "File systems (Italiano)").
 
 ## Altre fonti
 

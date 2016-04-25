@@ -48,11 +48,11 @@ Utilizzato in combinazione col pacchetto [cpupower](/index.php/Cpupower "Cpupowe
 
 ## Installazione
 
-Il pacchetto [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) è reperibile nei [Repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Il pacchetto [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) è reperibile nei [Repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 **Note:**
 
-*   Se si riscontrano problemi durante la riproduzione di video, potrebbe essere necessario installare anche di [vbetool](https://www.archlinux.org/packages/?name=vbetool) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+*   Se si riscontrano problemi durante la riproduzione di video, potrebbe essere necessario installare anche di [vbetool](https://www.archlinux.org/packages/?name=vbetool) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 *   Se si parte da una nuova installazione, assicurarsi di installare anche il pacchetto [acpi](https://www.archlinux.org/packages/?name=acpi).
 
 Eseguire `pm-suspend`, `pm-suspend-hybrid` o `pm-hibernate` come utente root per attivare la sospensione manualmente. Gli script di sospensione scrivono i loro log in `/var/log/pm-suspend.log`.
@@ -154,11 +154,11 @@ $ sudo pm-suspend
 
 ```
 
-Inoltre, aggiungere il proprio utente al [gruppo](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") `power` permette di utilizzare molti applet che si occupano della sospensione. Non non si effettua questa procedura quando si tenterà di utilizzare un applet integrato, come ad esempio [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") shutdown, per sospendere o ibernare il proprio computer, esso non funzionerà correttamente ottenendo solo il blocco dello schermo.
+Inoltre, aggiungere il proprio utente al [gruppo](/index.php/Users_and_groups_(Italiano) "Users and groups (Italiano)") `power` permette di utilizzare molti applet che si occupano della sospensione. Non non si effettua questa procedura quando si tenterà di utilizzare un applet integrato, come ad esempio [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") shutdown, per sospendere o ibernare il proprio computer, esso non funzionerà correttamente ottenendo solo il blocco dello schermo.
 
  ` # gpasswd -a *username* power` 
 
-Ora dovreste essere in grado di utilizzare gli strumenti di gestione energetica del vostro [ambiente desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)"), ad esempio per sospendere o ibernare il sistema alla chiusura del coperchio del portatile, o quando si sta esaurendo la batteria, etc...
+Ora dovreste essere in grado di utilizzare gli strumenti di gestione energetica del vostro [ambiente desktop](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)"), ad esempio per sospendere o ibernare il sistema alla chiusura del coperchio del portatile, o quando si sta esaurendo la batteria, etc...
 
 ### Risparmio Energetico
 
@@ -448,7 +448,7 @@ Inoltre, controllare l'output del comando `pm-is-supported`. Questo comando (con
 
 ### Segmentation faults
 
-Se si riscontrano difetti di segmentazione che potrebbe causare il blocco del sistema e di chiavi mancanti, provare a impostare l'UUID nei punti di montaggio in `/boot/grub/menu.lst` come spiegato [sopra](#Ibernazione_.28suspend2disk.29.29).
+Se si riscontrano difetti di segmentazione che potrebbe causare il blocco del sistema e di chiavi mancanti, provare a impostare l'UUID nei punti di montaggio in `/boot/grub/menu.lst` come spiegato [sopra](#Ibernazione_.28suspend2disk.29).
 
 ### Il sistema si riavvia invece di ripristinarsi dalla sospensione
 
@@ -707,6 +707,6 @@ Se si sta usando KDE, terminare la sessione una volta sola e l'opzione per ibern
 *   [OpenSUSE Wiki](http://en.opensuse.org/SDB:Pm-utils) - L'articolo da cui è stato originariamente presa questa pagina (sotto licenza GPL)
 *   [Comprendere la sospensione](https://wiki.ubuntu.com/UnderstandingSuspend) - Articolo su sistema ubuntu che espone come lavora la sospensione su ram
 *   [PM Debugging](http://www.mjmwired.net/kernel/Documentation/power/basic-pm-debugging.txt#178) - Debugging di base per PM
-*   [CPU Frequency Scaling](/index.php/CPU_Frequency_Scaling_(Italiano) "CPU Frequency Scaling (Italiano)") - selettore per scalare le frequenze sulle CPU e schemi di risparmio energetico CPU
+*   [CPU Frequency Scaling](/index.php/CPU_frequency_scaling_(Italiano) "CPU frequency scaling (Italiano)") - selettore per scalare le frequenze sulle CPU e schemi di risparmio energetico CPU
 *   [Acpid](/index.php/Acpid_(Italiano) "Acpid (Italiano)") - Demone per gli eventi ACPI.
 *   [Hibernate after sleep](http://superuser.com/questions/298672/linuxhow-to-hibernate-after-a-period-of-sleep) - Un esempio di hook di pm personalizzato in cui l'ibernazione è attivata dopo un periodo di tempo in sospensione.

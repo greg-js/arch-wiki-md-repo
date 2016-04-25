@@ -1,6 +1,4 @@
-[SOGo](http://www.sogo.nu/) provides a rich AJAX-based Web interface and supports multiple native clients through the use of standard protocols such as CalDAV, CardDAV and GroupDAV, as well as Microsoft ActiveSync.
-
-This article explains how to setup a groupware server using a SOGo backend. While other MTAs and IMAP servers can be used, Postfix and Dovecot have been selected for this article. Please feel free to add other implementations.
+[SOGo](http://www.sogo.nu/) provides a rich AJAX-based Web interface and supports multiple native clients through the use of standard protocols such as CalDAV, CardDAV and GroupDAV, as well as Microsoft ActiveSync. This article explains how to setup a groupware server using SOGo.
 
 ## Contents
 
@@ -53,6 +51,10 @@ This article explains how to setup a groupware server using a SOGo backend. Whil
 *   [8 Web server final configuration](#Web_server_final_configuration)
     *   [8.1 Apache](#Apache_2)
     *   [8.2 nginx](#nginx_2)
+*   [9 ActiveSync configuration](#ActiveSync_configuration)
+    *   [9.1 Apache](#Apache_3)
+    *   [9.2 nginx](#nginx_3)
+    *   [9.3 SOGo](#SOGo)
 
 ## Installation
 
@@ -1082,6 +1084,40 @@ Restart `httpd` service for the changes to take effect.
 
 Go ahead and go to the regular http page and it should redirect you to the https site.
 
-To be added: ActiveSync configuration...
+### nginx
+
+To be added...
+
+## ActiveSync configuration
+
+### Apache
+
+To add ActiveSync support, simply uncomment the following lines in `/etc/httpd/conf/extra/SOGo.conf`:
+
+```
+...
+ProxyPass /Microsoft-Server-ActiveSync \
+ http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync \
+ retry=60 connectiontimeout=5 timeout=3600
+...
+
+```
+
+This will result in extended locking delays if you have more than a handful of users, so some tuning is required. You may notice that the above line was changed from 360 seconds to 3600 seconds (or one hour). This is because EAS devices need to keep their HTTP connections open for very long times (up to one hour). Because of this, you will need to tell SOGo (see below) to honor that timeout.
 
 ### nginx
+
+To be added...
+
+### SOGo
+
+As stated above for the listed HTTP servers, some tuning is required to use EAS. While the timeouts below (59 minutes) are appropriate for the HTTP session timeout set above, the number of workers is dependent on the number of simultaneous EAS clients you must support. In short, you will always need more workers than EAS clients to allow start of another worker for push operations. Additionally, the sync interval will allow you to reduce the load on the server so that less delay is generated, and this dependent on the total number of clients. The SOGo configuration guide, available at [http://sogo.nu/files/docs/SOGoInstallationGuide.pdf](http://sogo.nu/files/docs/SOGoInstallationGuide.pdf), lists two example configurations. The 100 user with 10 EAS users example was chosen for this article. Append the following lines to `/etc/sogo/sogo.conf` making sure that they are placed before the closing brace ("}") character:
+
+```
+  /* ActiveSync */
+  WOWorkersCount = 15;
+  SOGoMaximumPingInterval = 3540;
+  SOGoMaximumSyncInterval = 3540;
+  SOGoInternalSyncInterval = 30;
+
+```

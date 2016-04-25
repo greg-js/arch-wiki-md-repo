@@ -161,7 +161,7 @@ These are tested on [XFCE4](/index.php?title=XFCE4&action=edit&redlink=1 "XFCE4 
 
 When you connect display link device via USB to your computer, the computer should show monitors in Display settings. There are few troubleshooting steps that you should try:
 
-*   Check [DisplayLink#Setting_up_X_Displays](/index.php/DisplayLink#Setting_up_X_Displays "DisplayLink"). If you can find any external monitors recognized, you should try to make them visible by the following commands:
+*   Check [#Setting up X Displays](#Setting_up_X_Displays). If you can find any external monitors recognized, you should try to make them visible by the following commands:
 
 ```
 xrandr --setprovideroutputsource 1 0

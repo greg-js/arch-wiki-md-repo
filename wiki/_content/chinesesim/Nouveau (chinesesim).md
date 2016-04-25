@@ -30,9 +30,9 @@ Nouveau的内核模块应该在系统启动时就已加载完成。 如果没有
 
 ### 提前启动KMS
 
-**Tip:** 如果你对这个问题的解决有问题的话，请访问[这个页面](/index.php/Kernel_Mode_Setting#Forcing_modes_and_EDID "Kernel Mode Setting").
+**Tip:** 如果你对这个问题的解决有问题的话，请访问[这个页面](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting").
 
-Nouveau 驱动依赖[Kernel Mode Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting") (KMS)。当系统启动时，由于KMS初始化显示驱动程序可能会使分辨率发生改变。只需要安装Nouveau驱动，足以使系统能够识别并使用"延迟启动"模式初始化它。查看 [Nouveau KernelModeSetting page](http://nouveau.freedesktop.org/wiki/KernelModeSetting) 获取更多细节
+Nouveau 驱动依赖[Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS)。当系统启动时，由于KMS初始化显示驱动程序可能会使分辨率发生改变。只需要安装Nouveau驱动，足以使系统能够识别并使用"延迟启动"模式初始化它。查看 [Nouveau KernelModeSetting page](http://nouveau.freedesktop.org/wiki/KernelModeSetting) 获取更多细节
 
 **Note:** 用户可能会更喜欢提前启动的方法，因为它不会在引导过程中产生讨厌的分辨率变化问题
 

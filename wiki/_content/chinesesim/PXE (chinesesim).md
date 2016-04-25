@@ -47,7 +47,7 @@
 
 为了在安装目标上配置网络并在 PXE 服务端和客户端之间传输文件，需要搭建 DHCP 和 TFTP 服务器；dnsmasq 能做到这两点，也很容易配置。
 
-从[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq)。
+从[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq)。
 
 配置 dnsmasq：
 
@@ -70,7 +70,7 @@ tftp-root=/mnt/archiso
 
 [ArchISO](/index.php/Archiso_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Archiso (简体中文)")的改进使其能从 HTTP（archiso_pxe_http initcpio hook）或 NFS（archiso_pxe_nfs initcpio hook）启动；在所有备选方案中，darkhttpd 是最容易设置的（也是最轻量的）。
 
-首先，从[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)。
+首先，从[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)。
 
 然后用`/mnt/archiso`作文件根目录并启动 [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)：
 

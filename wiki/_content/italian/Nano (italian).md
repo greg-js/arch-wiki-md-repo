@@ -1,4 +1,4 @@
-[GNU nano](http://www.nano-editor.org/) (o nano) è un editor di testo per console, che si propone di introdurre una semplice interfaccia ed opzioni di comando molto intuitivi per la modifica base di un testo. nano è l'editor predefinito per console in distribuzioni come Ubuntu e supporta svariate funzioni, tra cui l'evidenziazione colorata della sintassi, conversione dei file di tipo DOS/Mac, controllo ortografico e la codifica [UTF-8](http://it.wikipedia.org/wiki/UTF-8). L'avvio di nano con un buffer vuoto occupa in genere meno di 1,5 MB di memoria. [Una immagine di nano](http://i275.photobucket.com/albums/jj281/adamchrista/Arch%20Linux/Wiki%20Examples/nano-man.png).
+[GNU nano](http://www.nano-editor.org/) (o nano) è un editor di testo per console, che si propone di introdurre una semplice interfaccia ed opzioni di comando molto intuitivi per la modifica base di un testo. nano è l'editor predefinito per console in distribuzioni come Ubuntu e supporta svariate funzioni, tra cui l'evidenziazione colorata della sintassi, conversione dei file di tipo DOS/Mac, controllo ortografico e la codifica [UTF-8](https://it.wikipedia.org/wiki/UTF-8). L'avvio di nano con un buffer vuoto occupa in genere meno di 1,5 MB di memoria. [Una immagine di nano](http://i275.photobucket.com/albums/jj281/adamchrista/Arch%20Linux/Wiki%20Examples/nano-man.png).
 
 ## Contents
 
@@ -31,7 +31,7 @@
 
 ## Installazione
 
-[nano](https://www.archlinux.org/packages/?name=nano) è incluso nel [repository ufficiale di Arch Linux [core]](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") e, generalmente, viene installato di default.
+[nano](https://www.archlinux.org/packages/?name=nano) è incluso nel [repository ufficiale di Arch Linux [core]](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") e, generalmente, viene installato di default.
 
 ## Configurazione
 

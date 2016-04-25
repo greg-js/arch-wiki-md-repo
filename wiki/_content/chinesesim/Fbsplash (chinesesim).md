@@ -32,7 +32,7 @@ fbsplash包只提供了最基本的功能,为了更好的支持, 应该安装 [f
 
 ### Suspend to Disk
 
-If you want suspend to disk with Fbsplash, install the [uswsusp-fbsplash package](https://aur.archlinux.org/packages.php?ID=16233) from the AUR. For more info have a look at [Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29](/index.php/Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29 "Pm-utils") or [Suspend_to_Disk#Uswsusp_method (hibernate-script)](/index.php/Suspend_to_Disk#Uswsusp_method_.28hibernate-script.29 "Suspend to Disk"). Additionally there is limited support for using a Fbsplash theme in the [tuxonice-userui package](https://aur.archlinux.org/packages.php?ID=24613) for those using a kernel with the TuxOnIce patch.
+If you want suspend to disk with Fbsplash, install the [uswsusp-fbsplash package](https://aur.archlinux.org/packages.php?ID=16233) from the AUR. For more info have a look at [Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29](/index.php/Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29 "Pm-utils") or [Suspend to Disk#Uswsusp_method (hibernate-script)](/index.php/Suspend_to_Disk#Uswsusp_method_.28hibernate-script.29 "Suspend to Disk"). Additionally there is limited support for using a Fbsplash theme in the [tuxonice-userui package](https://aur.archlinux.org/packages.php?ID=24613) for those using a kernel with the TuxOnIce patch.
 
 ## Configuration
 
@@ -70,7 +70,7 @@ If **uresume** and/or **encrypt** HOOKS are used, add **fbsplash** *after* them 
 
  `/etc/mkinitcpio.conf`  `HOOKS="base udev autodetect [...] keymap encrypt uresume fbsplash"` 
 
-Rebuild your initcpio via mkinitcpio. See the [Mkinitcpio article](/index.php/Mkinitcpio#Creating_the_image "Mkinitcpio") for more info.
+Rebuild your initcpio via mkinitcpio. See the [Mkinitcpio article](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") for more info.
 
 **Tip:** For a quick resume, it is recommended to put **uswsusp** *before* **fbsplash** or even drop `fadein`, if using a Fbcondecor kernel.
 

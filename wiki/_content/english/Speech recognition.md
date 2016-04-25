@@ -33,7 +33,7 @@ Speech recognition can mean several things:
 
 ## List of text to speech applications
 
-The two major players in text-to-speech applications are Festival and eSpeak. Comparison available [here](http://braille.uwo.ca/pipermail/speakup/2008-July/046755.html)
+Two text-to-speech applications are Festival and eSpeak, a small feature comparison is available in a mailing list [thread](http://web.archive.org/web/20090924193011/http://braille.uwo.ca/pipermail/speakup/2008-July/046756.html). Available packages for this category:
 
 *   **[eSpeak](https://en.wikipedia.org/wiki/eSpeak "wikipedia:eSpeak")** — Compact open source software speech synthesizer for more than 50 languages.
 
@@ -50,6 +50,10 @@ The two major players in text-to-speech applications are Festival and eSpeak. Co
 *   **[MBROLA](/index.php/Mbrola "Mbrola")** — Non-free phonemes-to-audio program which supports more than 70 languages.
 
 	[http://tcts.fpms.ac.be/synthesis/mbrola.html](http://tcts.fpms.ac.be/synthesis/mbrola.html) || [mbrola](https://aur.archlinux.org/packages/mbrola/)
+
+*   **Mimic** — Text-to-speech voice synthesis from the Mycroft project
+
+	[https://mimic.mycroft.ai/](https://mimic.mycroft.ai/) || [mimic-git](https://aur.archlinux.org/packages/mimic-git/)
 
 *   **Speech Dispatcher** — Common interface to speech synthesis. It has backends for eSpeak, Festival, and a few other speech synthesizers.
 

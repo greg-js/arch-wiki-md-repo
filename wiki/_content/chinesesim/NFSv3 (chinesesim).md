@@ -187,7 +187,7 @@ mount -t cifs -v ELROND:music /mnt/point -o username=USERNAME,password=PASSWORD,
 
 ```
 
-More information for this can be found in the [manual mounting](/index.php/Samba#Manual_share_mounting "Samba") section of [samba](/index.php/Samba "Samba"). Now you have effectively made 1 folder accessible for NFS clients (mostly linux) and CIFS clients (mostly windows).
+More information for this can be found in the [manual mounting](/index.php/Samba#Manual_mounting "Samba") section of [samba](/index.php/Samba "Samba"). Now you have effectively made 1 folder accessible for NFS clients (mostly linux) and CIFS clients (mostly windows).
 
 ### 启动时自动挂载
 

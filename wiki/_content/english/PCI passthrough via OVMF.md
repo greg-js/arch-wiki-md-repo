@@ -149,7 +149,7 @@ This, however, does not guarantee that vfio-pci will be loaded before other grap
 **Note:** If you also have another driver loaded this way for [early modesetting](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") (such as "nouveau", "radeon", "amdgpu", "i915", etc.), all of the following VFIO modules must preceed it.
  `/etc/mkinitcpio.conf`  `MODULES="... vfio vfio_iommu_type1 vfio_pci vfio_virqfd ..."` 
 
-Do not forget to regenerate your initramfs.
+Remember to regenerate your initramfs.
 
  `# mkinitcpio -p linux` 
 **Note:** If you are using a non-standard kernel, such as `linux-vfio`, replace `linux` with whichever kernel you intend to use.
@@ -192,7 +192,7 @@ Most linux distros (including Arch Linux) have pci-stub built statically within 
 
  `/etc/mkinitcpio.conf`  `MODULES="... pci-stub ..."` 
 
-Do not forget to regenerate your initramfs.
+Remember to regenerate your initramfs.
 
  `# mkinitcpio -p linux` 
 **Note:** If you are using a non-standard kernel, such as `linux-vfio`, replace `linux` with whichever kernel you intend to use.

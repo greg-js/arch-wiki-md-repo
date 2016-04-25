@@ -184,7 +184,7 @@ Puede iniciar el demonio NetworkManager inmediatamente con la siguiente orden:
 
 #### Evitar advertencias
 
-NetworkManager imprimirá, probablemente sin sentido, [advertencias (Bug#34971)](https://bugs.archlinux.org/task/34971) para el registro del sistema, cuando [NetworkManager-dispatcher.service](/index.php/Networkmanager#Network_services_with_NetworkManager_dispatcher "Networkmanager") y [ModemManager.service](https://www.archlinux.org/packages/?name=modemmanager) no estén activados. Para mantener el registro limpio y suprimir estos mensajes, active ambos servicios, incluso si no son requeridos por el entorno:
+NetworkManager imprimirá, probablemente sin sentido, [advertencias (Bug#34971)](https://bugs.archlinux.org/task/34971) para el registro del sistema, cuando [NetworkManager-dispatcher.service](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") y [ModemManager.service](https://www.archlinux.org/packages/?name=modemmanager) no estén activados. Para mantener el registro limpio y suprimir estos mensajes, active ambos servicios, incluso si no son requeridos por el entorno:
 
  `# systemctl enable NetworkManager-dispatcher.service && systemctl enable ModemManager.service`  `# systemctl start NetworkManager-dispatcher.service && systemctl start ModemManager.service` 
 
@@ -644,7 +644,7 @@ Un script similar debe funcionar también con Openbox, LXDE, etc.
 
 #### SLiM login manager
 
-Véase [Slim#SLiM and Gnome Keyring](/index.php/Slim#SLiM_and_Gnome_Keyring "Slim").
+Véase [SLiM#SLiM and Gnome Keyring](/index.php/SLiM#SLiM_and_Gnome_Keyring "SLiM").
 
 ### Ignorar dispositivos específicos
 

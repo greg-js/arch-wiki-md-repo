@@ -81,7 +81,7 @@ Once installed, you can use one of the many [GTK+ configuration tools](/index.ph
 
 ### Adwaita
 
-Adwaita is the default GNOME theme. It can be installed with the [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) package, which contains the GTK+ 2 and 3 themes. [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is a Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimic the GTK+ 2 theme, it provides a native Qt style made to look like the GTK+ 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/) package for the Qt5 version, and [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) for the Qt 4 version.
+Adwaita is the default GNOME theme. The GTK+ 3 version is included in the [gtk3](https://www.archlinux.org/packages/?name=gtk3) package, while the GTK+ 2 version is in [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard). [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is a Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimics the GTK+ 2 theme, it provides a native Qt style made to look like the GTK+ 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) and [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/) packages for the Qt 4 and 5 versions, respectively.
 
 To set the Qt style as default:
 

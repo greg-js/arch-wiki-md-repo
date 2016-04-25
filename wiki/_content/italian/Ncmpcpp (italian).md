@@ -22,7 +22,7 @@ L'interfaccia grafica (GUI) da shell per ncmpcpp è altamente configurabile. È 
 
 ## Installazione
 
-[ncmpcpp](https://www.archlinux.org/packages/?name=ncmpcpp) si [installa](/index.php/Pacman_(Italiano) "Pacman (Italiano)") dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[ncmpcpp](https://www.archlinux.org/packages/?name=ncmpcpp) si [installa](/index.php/Pacman_(Italiano) "Pacman (Italiano)") dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ## Configurazione (molto) basilare
 
@@ -36,7 +36,7 @@ Nel caso in cui, dopo l'installazione, ~/.ncmpcpp/config non sia stato creato, �
 
 ## Abilitare la visualizzazione
 
-Per abilitare la visualizzazione, è necessario il pacchetto [ncmpcpp-git](https://aur.archlinux.org/packages/ncmpcpp-git/) da [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"). Una volta compilato, è necessario aggiungere delle righe a `/etc/mpd.conf` (o `$HOME/.mpd/mpd.conf`, nel caso in cui [si avvii mpd come utente](/index.php/Music_Player_Daemon_(Italiano)#Configurazione_alternativa "Music Player Daemon (Italiano)")) per abilitare la generazione dei dati [fast Fourier transform](http://it.wikipedia.org/wiki/Trasformata_di_Fourier_veloce) per la visualizzazione:
+Per abilitare la visualizzazione, è necessario il pacchetto [ncmpcpp-git](https://aur.archlinux.org/packages/ncmpcpp-git/) da [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"). Una volta compilato, è necessario aggiungere delle righe a `/etc/mpd.conf` (o `$HOME/.mpd/mpd.conf`, nel caso in cui [si avvii mpd come utente](/index.php/Music_Player_Daemon_(Italiano)#Configurazione_alternativa "Music Player Daemon (Italiano)")) per abilitare la generazione dei dati [fast Fourier transform](https://it.wikipedia.org/wiki/Trasformata_di_Fourier_veloce) per la visualizzazione:
 
 ```
 audio_output {

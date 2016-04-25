@@ -38,7 +38,7 @@ As of kernel 4.1.3, a patched kernel is no longer necessary. However, some manua
     *   [3.5 EFISTUB does not boot](#EFISTUB_does_not_boot)
     *   [3.6 Repeating keys issue](#Repeating_keys_issue)
     *   [3.7 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
-    *   [3.8 Sound doesn't work after upgrading to kernel 4.4](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4)
+    *   [3.8 Sound doesn't work after upgrading to kernel 4.4 / Microphone input under 4.5](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4_.2F_Microphone_input_under_4.5)
 *   [4 See also](#See_also)
 
 ## Model differences
@@ -97,15 +97,15 @@ Note that if you are dual-booting with Windows, you will have to do a cold boot 
 
 With BIOS A02+ and Arch kernel 4.4 or newer, the sound card will be initialized in I2S mode.
 
-**Note:** Linux 4.5 requires CONFIG_DW_DMAC_CORE statically compiled[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792), otherwise 'aplay -l' doesn't even show broadwell-rt286 anymore. Unfortunately this means having to carry DW_DMAC_CORE in-memory regardless of whether or not it is needed. Expect a regression when 4.5 gets released.
+**Note:** Linux 4.5 requires CONFIG_DW_DMAC=y and SND_SOC_INTEL_BROADWELL_MACH=m statically compiled[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792#c21), otherwise 'aplay -l' doesn't even show broadwell-rt286 anymore. Unfortunately this means having to carry DW_DMAC_CORE in-memory regardless of whether or not it is needed. Users may resort to the [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel until this bug[[2]](https://bugs.archlinux.org/task/48936) is fixed.
 
-I2S support in Linux is quite nascent and wasn't up to par with HDA support until recently, so a quirk flag was enabled in the mainline kernel that would force HDA mode on.[[2]](http://thread.gmane.org/gmane.linux.acpi.devel/75464/focus=75466)[[3]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=18d78b64fddc11eb336f01e46ad3303a3f55d039) This flag has been disabled in the stock Arch kernel as of 4.4.[[4]](https://bugs.archlinux.org/task/47710) Also note that I2S support is known to be broken with older versions of alsalib.[[5]](http://www.spinics.net/lists/linux-acpi/msg57457.html)
+I2S support in Linux is quite nascent and wasn't up to par with HDA support until recently, so a quirk flag was enabled in the mainline kernel that would force HDA mode on.[[3]](http://thread.gmane.org/gmane.linux.acpi.devel/75464/focus=75466)[[4]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=18d78b64fddc11eb336f01e46ad3303a3f55d039) This flag has been disabled in the stock Arch kernel as of 4.4.[[5]](https://bugs.archlinux.org/task/47710) Also note that I2S support is known to be broken with older versions of alsalib.[[6]](http://www.spinics.net/lists/linux-acpi/msg57457.html)
 
 In I2S mode, the dual-boot workaround is not necessary.
 
 #### ALSA configuration
 
-By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). In the current case, both cards use the `snd_hda_intel` module. To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
+By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). In the current case, both cards use the `snd_hda_intel` module. To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
 
  `/etc/modprobe.d/alsa-base.conf`  `options snd_hda_intel index=1,0` 
 
@@ -198,11 +198,13 @@ See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems
 
 ```
 
-### Sound doesn't work after upgrading to kernel 4.4
+### Sound doesn't work after upgrading to kernel 4.4 / Microphone input under 4.5
 
 You need to do two cold boots (*don't* reboot; shutdown and turn back on again) to make sound work again. This is necessary because I2S support was enabled in the Arch 4.4 stock kernel, and the XPS 13's embedded controller requires two cold boots to recognize changes in the sound chipset mode. See the Audio section above for more information.
 
 It is reported that recompiling the kernel with the CONFIG_ACPI_REV_OVERRIDE_POSSIBLE option will re-enable the microphone. See the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208674) and [bug report](https://bugs.archlinux.org/task/47989) for information.
+
+As of late April 2016, the default Arch kernel 4.5, in the testing repo, appears to support all sound functions without being custom compiled. It appears to be necessary to bring up pavucontrol and toggle between mic input sources to "kickstart" the mic input.
 
 ## See also
 

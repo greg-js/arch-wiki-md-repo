@@ -1,4 +1,4 @@
-**NFSv4**, *n*etwork *f*ile *s*ystem *v*ersione 4, è la nuova versione di NFS (per configurare un vecchio NFSv3, guarda su [Nfs (Italiano)](/index.php/Nfs_(Italiano) "Nfs (Italiano)") con nuove funzionalità come autenticazione sicura e integrità via Kerberos e SPKM-3, prestazioni migliorate, file caching sicuro, lock migration, UTF-8, ACLs e un miglior supporto per la semantica di condivisione file di Windows.
+**NFSv4**, *n*etwork *f*ile *s*ystem *v*ersione 4, è la nuova versione di NFS (per configurare un vecchio NFSv3, guarda su [NFS (Italiano)](/index.php/NFS_(Italiano) "NFS (Italiano)") con nuove funzionalità come autenticazione sicura e integrità via Kerberos e SPKM-3, prestazioni migliorate, file caching sicuro, lock migration, UTF-8, ACLs e un miglior supporto per la semantica di condivisione file di Windows.
 
 Questo articolo si occupa dell'installazione e della configurazione di NFSv4.
 

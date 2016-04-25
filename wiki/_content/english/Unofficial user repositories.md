@@ -28,24 +28,22 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.1.3 catalyst](#catalyst)
         *   [3.1.4 catalyst-hd234k](#catalyst-hd234k)
         *   [3.1.5 city](#city)
-        *   [3.1.6 demz-repo-archiso](#demz-repo-archiso)
-        *   [3.1.7 demz-repo-core](#demz-repo-core)
-        *   [3.1.8 haskell-core](#haskell-core)
-        *   [3.1.9 haskell-happstack](#haskell-happstack)
-        *   [3.1.10 haskell-web](#haskell-web)
-        *   [3.1.11 infinality-bundle](#infinality-bundle)
-        *   [3.1.12 ivasilev](#ivasilev_2)
-        *   [3.1.13 llvm-svn](#llvm-svn)
-        *   [3.1.14 metalgamer](#metalgamer)
-        *   [3.1.15 miffe](#miffe)
-        *   [3.1.16 pipelight](#pipelight)
-        *   [3.1.17 repo-ck](#repo-ck)
-        *   [3.1.18 seblu](#seblu)
-        *   [3.1.19 seiichiro](#seiichiro)
-        *   [3.1.20 sergej-repo](#sergej-repo)
-        *   [3.1.21 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.22 herecura](#herecura)
-        *   [3.1.23 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.6 haskell-core](#haskell-core)
+        *   [3.1.7 haskell-happstack](#haskell-happstack)
+        *   [3.1.8 haskell-web](#haskell-web)
+        *   [3.1.9 infinality-bundle](#infinality-bundle)
+        *   [3.1.10 ivasilev](#ivasilev_2)
+        *   [3.1.11 llvm-svn](#llvm-svn)
+        *   [3.1.12 metalgamer](#metalgamer)
+        *   [3.1.13 miffe](#miffe)
+        *   [3.1.14 pipelight](#pipelight)
+        *   [3.1.15 repo-ck](#repo-ck)
+        *   [3.1.16 seblu](#seblu)
+        *   [3.1.17 seiichiro](#seiichiro)
+        *   [3.1.18 sergej-repo](#sergej-repo)
+        *   [3.1.19 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.20 herecura](#herecura)
+        *   [3.1.21 blackeagle-pre-community](#blackeagle-pre-community)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 arch-deepin](#arch-deepin)
         *   [3.2.2 archaudio](#archaudio)
@@ -57,19 +55,20 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.2.8 cinnamon](#cinnamon)
         *   [3.2.9 ede](#ede)
         *   [3.2.10 heftig](#heftig)
-        *   [3.2.11 mesa-git](#mesa-git)
-        *   [3.2.12 noware](#noware)
-        *   [3.2.13 oracle](#oracle)
-        *   [3.2.14 pantheon](#pantheon)
-        *   [3.2.15 paulburton-fitbitd](#paulburton-fitbitd)
-        *   [3.2.16 pietma](#pietma)
-        *   [3.2.17 pfkernel](#pfkernel)
-        *   [3.2.18 suckless](#suckless)
-        *   [3.2.19 trinity](#trinity)
-        *   [3.2.20 Unity-for-Arch](#Unity-for-Arch)
-        *   [3.2.21 Unity-for-Arch-Extra](#Unity-for-Arch-Extra)
-        *   [3.2.22 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.23 QOwnNotes](#QOwnNotes)
+        *   [3.2.11 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
+        *   [3.2.12 mesa-git](#mesa-git)
+        *   [3.2.13 noware](#noware)
+        *   [3.2.14 oracle](#oracle)
+        *   [3.2.15 pantheon](#pantheon)
+        *   [3.2.16 paulburton-fitbitd](#paulburton-fitbitd)
+        *   [3.2.17 pietma](#pietma)
+        *   [3.2.18 pfkernel](#pfkernel)
+        *   [3.2.19 suckless](#suckless)
+        *   [3.2.20 trinity](#trinity)
+        *   [3.2.21 Unity-for-Arch](#Unity-for-Arch)
+        *   [3.2.22 Unity-for-Arch-Extra](#Unity-for-Arch-Extra)
+        *   [3.2.23 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.24 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 eee-ck](#eee-ck)
@@ -85,32 +84,33 @@ For your convenience you can, for example, open them all in a web browser to ins
 *   [5 x86_64 only](#x86_64_only)
     *   [5.1 Signed](#Signed_4)
         *   [5.1.1 apathism](#apathism)
-        *   [5.1.2 ashleyis](#ashleyis)
-        *   [5.1.3 atom](#atom)
-        *   [5.1.4 bioinformatics](#bioinformatics)
-        *   [5.1.5 boyska64](#boyska64)
-        *   [5.1.6 coderkun-aur](#coderkun-aur)
-        *   [5.1.7 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [5.1.8 eatabrick](#eatabrick)
-        *   [5.1.9 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.10 holo](#holo)
-        *   [5.1.11 Linux-pf](#Linux-pf)
-        *   [5.1.12 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.13 kc9ydn](#kc9ydn)
-        *   [5.1.14 linux-lts-ck](#linux-lts-ck)
-        *   [5.1.15 linux-lts31x](#linux-lts31x)
-        *   [5.1.16 linux-lts31x-ck](#linux-lts31x-ck)
-        *   [5.1.17 linux-ck-pax](#linux-ck-pax)
-        *   [5.1.18 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.19 linux-tresor](#linux-tresor)
-        *   [5.1.20 nullptr_t](#nullptr_t)
-        *   [5.1.21 markzz](#markzz)
-        *   [5.1.22 qt-debug](#qt-debug)
-        *   [5.1.23 quarry](#quarry)
-        *   [5.1.24 rstudio](#rstudio)
-        *   [5.1.25 siosm-aur](#siosm-aur)
-        *   [5.1.26 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.27 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.2 archzfs](#archzfs)
+        *   [5.1.3 ashleyis](#ashleyis)
+        *   [5.1.4 atom](#atom)
+        *   [5.1.5 bioinformatics](#bioinformatics)
+        *   [5.1.6 boyska64](#boyska64)
+        *   [5.1.7 coderkun-aur](#coderkun-aur)
+        *   [5.1.8 coderkun-aur-audio](#coderkun-aur-audio)
+        *   [5.1.9 eatabrick](#eatabrick)
+        *   [5.1.10 freifunk-rheinland](#freifunk-rheinland)
+        *   [5.1.11 holo](#holo)
+        *   [5.1.12 Linux-pf](#Linux-pf)
+        *   [5.1.13 infinality-bundle-multilib](#infinality-bundle-multilib)
+        *   [5.1.14 kc9ydn](#kc9ydn)
+        *   [5.1.15 linux-lts-ck](#linux-lts-ck)
+        *   [5.1.16 linux-lts31x](#linux-lts31x)
+        *   [5.1.17 linux-lts31x-ck](#linux-lts31x-ck)
+        *   [5.1.18 linux-ck-pax](#linux-ck-pax)
+        *   [5.1.19 linux-kalterfx](#linux-kalterfx)
+        *   [5.1.20 linux-tresor](#linux-tresor)
+        *   [5.1.21 nullptr_t](#nullptr_t)
+        *   [5.1.22 markzz](#markzz)
+        *   [5.1.23 qt-debug](#qt-debug)
+        *   [5.1.24 quarry](#quarry)
+        *   [5.1.25 rstudio](#rstudio)
+        *   [5.1.26 siosm-aur](#siosm-aur)
+        *   [5.1.27 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.28 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -298,32 +298,6 @@ Server = http://catalyst.wirephire.com/repo/catalyst-hd234k/$arch
 ```
 [city]
 Server = http://pkgbuild.com/~bgyorgy/$repo/os/$arch
-
-```
-
-#### demz-repo-archiso
-
-*   **Maintainer:** [Jesus Alvarez (demizer)](http://demizerone.com)
-*   **Description:** Packages for installing ZFS from an Arch ISO live disk
-*   **Upstream page:** [https://github.com/demizer/archzfs](https://github.com/demizer/archzfs)
-*   **Key-ID:** 5E1ABF240EE7A126
-
-```
-[demz-repo-archiso]
-Server = http://demizerone.com/$repo/$arch
-
-```
-
-#### demz-repo-core
-
-*   **Maintainer:** [Jesus Alvarez (demizer)](http://demizerone.com)
-*   **Description:** Packages for ZFS on Arch Linux.
-*   **Upstream page:** [https://github.com/demizer/archzfs](https://github.com/demizer/archzfs)
-*   **Key-ID:** 5E1ABF240EE7A126
-
-```
-[demz-repo-core]
-Server = http://demizerone.com/$repo/$arch
 
 ```
 
@@ -624,6 +598,18 @@ Server = http://pkgbuild.com/~heftig/repo/$arch
 
 ```
 
+#### home_Minerva_W_Science_Arch_Extra
+
+*   **Maintainer:**
+*   **Description:** [OpenFOAM](/index.php/OpenFOAM "OpenFOAM") packages.
+
+```
+[home_Minerva_W_Science_Arch_Extra]
+SigLevel = Never
+Server = http://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch_Extra/$arch 
+
+```
+
 #### mesa-git
 
 *   **Maintainer:** [Laurent Carlier](https://www.archlinux.org/people/trusted-users/#lcarlier)
@@ -906,6 +892,19 @@ Server = http://apathism.net/archlinux/
 
 ```
 
+#### archzfs
+
+*   **Maintainer:** [Jesus Alvarez (demizer)](http://archzfs.com)
+*   **Description:** Packages for ZFS on Arch Linux.
+*   **Upstream page:** [https://github.com/archzfs/archzfs](https://github.com/archzfs/archzfs)
+*   **Key-ID:** 5E1ABF240EE7A126
+
+```
+[archzfs]
+Server = http://archzfs.com/$repo/x86_64
+
+```
+
 #### ashleyis
 
 *   **Maintainer:** Ashley Towns ([ashleyis](https://aur.archlinux.org/account/ashleyis/))
@@ -1141,6 +1140,7 @@ Server = http://dl.dropbox.com/u/298301785/arch/linux-tresor/$arch
 
 *   **Maintainers:** nullptr_t,
 *   **Description:** Cherry-picked non-properitary packages and admin tools from AUR (e.g. [plymouth](/index.php/Plymouth "Plymouth"), nemo-extensions and a few more)
+*   **Comment:** Down until packaging is explicitly allowed by all GPL Licenses.
 *   **Key-ID:** B4767A17CEC5B4E9
 
 ```

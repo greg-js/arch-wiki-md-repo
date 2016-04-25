@@ -10,6 +10,7 @@ PIA is a subscription based service provided from the [PIA](https://www.privatei
     *   [3.1 Enabling auto-login](#Enabling_auto-login)
     *   [3.2 Manually Connecting to VPN](#Manually_Connecting_to_VPN)
     *   [3.3 Automatically connect to VPN](#Automatically_connect_to_VPN)
+    *   [3.4 WIP: Advanced Options](#WIP:_Advanced_Options)
 *   [4 See also](#See_also)
 
 ## Requirements
@@ -57,6 +58,8 @@ This secures the access to the file from non-root users. Read more on [File perm
     *   If you have [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) installed, it will created the configuration files for [networkmanager](https://www.archlinux.org/packages/?name=networkmanager). Make sure to [restart](/index.php/Restart "Restart") [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) to see them.
     *   If you have [connman](https://www.archlinux.org/packages/?name=connman) installed, it will create the configuration files for [connman](https://www.archlinux.org/packages/?name=connman). [Start](/index.php/Start "Start") `connman-vpn.service` if not running already. It will auto load the profiles.
 
+**Tip:** Disable auto-login in configurations by adding `openvpn_auto_login = False` to `/etc/private-internet-access/pia.conf`
+
 ### Manually Connecting to VPN
 
 Run `openvpn --config /etc/openvpn/{config_file_name}` as root. {config_file_name} will be listed in the /etc/openvpn directory.
@@ -71,6 +74,16 @@ Run `openvpn --config /etc/openvpn/{config_file_name}` as root. {config_file_nam
 **Note:** These are unsupported configurations.
 
 *   For [openvpn](https://www.archlinux.org/packages/?name=openvpn) you can look here: [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
+
+### WIP: Advanced Options
+
+*   Create `/etc/private-internet-access/pia.conf`
+
+| option | option values | description |
+| openvpn_auto-login | True,False | Default: True; Configures if OpenVPN configuration files should have auto-login enabled. See [#Enabling auto-login](#Enabling_auto-login) |
+| port | 80, 443, 110, 53, 8080, 9201 | Default: 1194; This configures which port and protocol the VPN uses. 80,443,110=TCP; 53,8080,9201=UDP |
+| cipher | AES-128-CBC, BF-CBC, None | Default: BF-CBC; This configures the data encryption cipher. |
+| auth | SHA1, SHA256, None | Default: SHA1; This configures the data authentication. |
 
 ## See also
 

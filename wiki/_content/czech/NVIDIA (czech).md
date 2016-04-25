@@ -344,7 +344,7 @@ Dobrý článek na toto téma najdete zde:
 
 Znalost fungování systému ABS je výhodou, proto si přečtěte nejprvé pár článků:
 
-*   [ABS_-_The_Arch_Build_System_(Česky)](/index.php/ABS_-_The_Arch_Build_System_(%C4%8Cesky) "ABS - The Arch Build System (Česky)")
+*   [ABS - The Arch Build System (Česky)](/index.php/ABS_-_The_Arch_Build_System_(%C4%8Cesky) "ABS - The Arch Build System (Česky)")
 *   [Makepkg](/index.php/Makepkg "Makepkg")
 
 Vytvoříme si vlastní balíček s použitím balíčku, který už je připravený v ABS:

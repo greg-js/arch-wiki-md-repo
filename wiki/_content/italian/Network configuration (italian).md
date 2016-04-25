@@ -92,7 +92,7 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 
 **Suggerimento:** 8.8.8.8 è un indirizzo statico semplice da ricordare. Si tratta dell'indirizzo del principale server DNS di Google, quindi può essere considerato affidabile, e generalmente non è bloccato da filtri sui contenuti e da proxy.
 
-Se si riesce a pingare quell'indirizzo, si può provare ad [aggiungere questo nameserver al proprio file resolv.conf](/index.php/Configuring_Network_(Italiano)#Indirizzo_IP_Statico "Configuring Network (Italiano)").
+Se si riesce a pingare quell'indirizzo, si può provare ad [aggiungere questo nameserver al proprio file resolv.conf](#Indirizzo_IP_dinamico).
 
 ## Impostare l'host name
 

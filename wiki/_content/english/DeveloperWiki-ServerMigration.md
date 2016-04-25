@@ -80,6 +80,7 @@
 
 *   repos/rsync
 *   sources
+*   archive
 
 # Plan of attack
 

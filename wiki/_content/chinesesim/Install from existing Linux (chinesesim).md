@@ -42,7 +42,7 @@
 
 ### 安装和配置
 
-参考 [Installation guide #Mount the partitions](/index.php/Installation_guide#Mount_the_partitions "Installation guide")。如果 `/mnt`文件夹已经被占用 , 只要新建一个文件夹，比如 `/mnt/install`用来替代即可。
+参考 [Installation guide#Mount the partitions](/index.php/Installation_guide#Mount_the_partitions "Installation guide")。如果 `/mnt`文件夹已经被占用 , 只要新建一个文件夹，比如 `/mnt/install`用来替代即可。
 
 然后参考 [Installation guide#Installation](/index.php/Installation_guide#Installation "Installation guide")。你可以跳过 [Installation guide#Select the mirrors](/index.php/Installation_guide#Select_the_mirrors "Installation guide")，因为主机中应该已经有了合适的镜像列表。
 

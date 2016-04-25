@@ -1,4 +1,4 @@
-[Opera](http://www.opera.com)浏览器，是一款自1994年以来由挪威 [Opera Software](https://en.wikipedia.org/wiki/Opera_Software "wikipedia:Opera Software")公司开发的免费浏览器软件。该浏览器因曾经最先引入诸如标签式浏览、内置搜索等功能而闻名。
+[Opera](http://www.opera.com)浏览器，是一款自1994年以来由挪威[Opera Software](https://en.wikipedia.org/wiki/Opera_Software "wikipedia:Opera Software")公司开发的免费浏览器软件。该浏览器因曾经最先引入诸如标签式浏览、内置搜索等功能而闻名。
 
 Opera 浏览器仍在不断开发创新。它的特色功能包括集成的邮件客户端、一键保存书签、标签栈（一种特别的标签组织方式）以及对 [HTML5](https://en.wikipedia.org/wiki/HTML5 "wikipedia:HTML5") 的良好支持。
 

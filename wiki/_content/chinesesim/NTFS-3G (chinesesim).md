@@ -164,7 +164,7 @@ powercfg /h off
 
 ### 挂载失败
 
-如果你按本指南内容操作也无法挂载你的 NTFS 分区，可以尝试一下在 `fstab` 中的所有 ntfs 分区里加上 [UUID](/index.php/UUID "UUID")。参见 [example](/index.php/Fstab#UUID "Fstab").
+如果你按本指南内容操作也无法挂载你的 NTFS 分区，可以尝试一下在 `fstab` 中的所有 ntfs 分区里加上 [UUID](/index.php/UUID "UUID")。参见 [example](/index.php/Fstab#UUIDs "Fstab").
 
 ## 其他资源
 

@@ -147,7 +147,7 @@ En todo artículo que traduzca o actualice deberá prestar atención a los sigui
 
 	Se debe incluir al principio del texto. Se visualiza en la cabecera de la página, bajo el título principal. Esta es su estructura: `{{TranslationStatus (Español)|Título de la página en inglés|Fecha de la última traducción/revisión|ID del historial}}` 
 
-	Ver [aquí](https://wiki.archlinux.org/index.php/Template:TranslationStatus_%28Espa%C3%B1ol%29) para conocer su utilización.
+	Ver [aquí](/index.php/Template:TranslationStatus_(Espa%C3%B1ol) "Template:TranslationStatus (Español)") para conocer su utilización.
 
 	Es una referencia muy útil para el lector a fin de que tenga una aproximación del grado de actualización (y, por lo tanto, de fiabilidad) de la traducción con respecto a su versión original inglesa.
 
@@ -190,7 +190,7 @@ En todo artículo que traduzca o actualice deberá prestar atención a los sigui
 ## Mantenimiento
 
 *   El mantenimiento de Archwiki al español consiste en aquel conjunto de actividades destinadas a mantener actualizada una traducción en español respecto de las variaciones que sufra su versión inglesa, y de paso, también, ampliar el número de artículos traducidos.
-*   Cuando un usuario asume el compromiso de decicar parte de su tiempo, de forma más o menos estable, a la traducción de artículos de la wiki de Arch al español, podría considerar la posibilidad de [unirse al equipo](https://wiki.archlinux.org/index.php/ArchWiki_Translation_Team/About_%28Espa%C3%B1ol%29#Unirse_al_equipo) y adoptar o hacer el seguimiento de una o varias páginas para mantenerlas al día.
+*   Cuando un usuario asume el compromiso de decicar parte de su tiempo, de forma más o menos estable, a la traducción de artículos de la wiki de Arch al español, podría considerar la posibilidad de [unirse al equipo](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol)#Unirse_al_equipo "ArchWiki Translation Team/About (Español)") y adoptar o hacer el seguimiento de una o varias páginas para mantenerlas al día.
 
 ### Criterios de prioridad para traducir los artículos
 
@@ -217,7 +217,7 @@ En todo artículo que traduzca o actualice deberá prestar atención a los sigui
 
 	**Respecto al mantenimiento (ocasional) de Archwiki al español**
 
-*   Si tiene la intención de traducir una página nueva o de actualizar una ya existente, una vez realizada la traducción/actualización, por favor, introduzca su título y fecha de actualización en las columnas «Nombre del artículo» y «Última revisión», respectivamente, en la [tabla correspondiente](https://wiki.archlinux.org/index.php/ArchWiki_Translation_Team/Board_%28Espa%C3%B1ol%29).
+*   Si tiene la intención de traducir una página nueva o de actualizar una ya existente, una vez realizada la traducción/actualización, por favor, introduzca su título y fecha de actualización en las columnas «Nombre del artículo» y «Última revisión», respectivamente, en la [tabla correspondiente](/index.php/ArchWiki_Translation_Team/Board_(Espa%C3%B1ol) "ArchWiki Translation Team/Board (Español)").
 
 *   Si tras navegar por la wiki observa una página desactualizada, pero no tiene intención de actualizarla, podría incluir una plantilla de estado apropiada (por ejemplo, `{{Out of date}}`), para advertir al resto de usuarios de que no es fiable su contenido. Si la página no se encuentra en ninguna tabla, podría incluirla en la que le corresponda.
 

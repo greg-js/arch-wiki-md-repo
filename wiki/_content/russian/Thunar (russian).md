@@ -98,7 +98,7 @@ Multimedia - Audio CDs: `amarok --cdplay %d`
 
 Цель проекта Эскизы Thunar - создать генерацию эскизов для мультимедиа форматов, неподдерживаемых другими генераторами эскизов. Если вы хотели бы видеть эскизы и поддержку форматов мультимедиа, с которыми не работают другие генераторы эскизов, используйте Эскизы Thunar. Чтобы узнать полный список поддерживаемых форматов, посмотрите [страницу проекта](http://goodies.xfce.org/projects/thunar-plugins/thunar-thumbnailers/).
 
-Дополнение можно установить из пакета [thunar-thumbnailers](https://www.archlinux.org/packages/?name=thunar-thumbnailers).
+Дополнение можно установить из пакета [thunar-thumbnailers](https://aur.archlinux.org/packages/thunar-thumbnailers/).
 
 ### Общий доступ Thunar
 

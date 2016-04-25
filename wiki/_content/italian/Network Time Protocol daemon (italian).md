@@ -21,7 +21,7 @@ Questo articolo descrive come configurare ed eseguire NTPd (Network Time Protoco
 
 ## Installazione
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [ntp](https://www.archlinux.org/packages/?name=ntp), disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [ntp](https://www.archlinux.org/packages/?name=ntp), disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ## Configurazione
 

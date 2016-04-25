@@ -179,7 +179,7 @@ Plasmoid包含短的脚本（plasmoid scripts）或者编译过的（plasmoid bi
 
 ##### Adding a Global Menu to the desktop
 
-Install [appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt) from the official repositories and [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/) and [appmenu-qt5](https://aur.archlinux.org/packages/appmenu-qt5/) from the AUR in order to complete the preliminaries for a Mac OS X style always-on global menu.
+Install [appmenu-qt](https://aur.archlinux.org/packages/appmenu-qt/) from the official repositories and [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/) and [appmenu-qt5](https://aur.archlinux.org/packages/appmenu-qt5/) from the AUR in order to complete the preliminaries for a Mac OS X style always-on global menu.
 
 *   To get LibreOffice to use the global menu as well, install [libreoffice-extension-menubar](https://aur.archlinux.org/packages/libreoffice-extension-menubar/) from the AUR.
 *   [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/) is orphaned and Canonical has abandoned appmenu-gtk in favor of unity-gtk-module that is depending on Unity desktop. As of October 2014 there is no way of exporting gtk2,3 menus in KDE.
@@ -239,7 +239,7 @@ Arch Linux 官方图库位于 [archlinux-artwork](https://aur.archlinux.org/pack
 
 你可以从以下工具中选择：
 
-*   NetworkManager 。更多信息请参见 [NetworkManager](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#KDE4 "NetworkManager (简体中文)")。
+*   NetworkManager 。更多信息请参见 [NetworkManager](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#KDE_4 "NetworkManager (简体中文)")。
 *   Wicd。更多信息请参见 [Wicd](/index.php/Wicd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wicd (简体中文)")。
 
 ### 打印

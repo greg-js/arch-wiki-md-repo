@@ -85,7 +85,7 @@ Shall the new role be allowed to create more new roles? (y/n)  y
 
 *   Если имя созданного пользователя совпадает с именем пользователя ($USER), вы получите доступ к базе данных оболочки PostgreSQL без указания имени пользователя (что весьма удобно).
 
-*   Создаём новую базу данных. Создавать можно только от пользователя (например, postgres, за которого мы зашли), имеющего разрешение на чтение и запись (read/write). Если кодировку не указать, то она будет той, что вы указали в разделе [«Установка PostgreSQL»](/index.php/PostgreSQL_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_PostgreSQL "PostgreSQL (Русский)").
+*   Создаём новую базу данных. Создавать можно только от пользователя (например, postgres, за которого мы зашли), имеющего разрешение на чтение и запись (read/write). Если кодировку не указать, то она будет той, что вы указали в разделе [«Установка PostgreSQL»](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_PostgreSQL).
 
 ```
 $ [createdb](http://www.postgresql.org/docs/8.3/static/app-createdb.html) -O username databasename [-E database_encoding]

@@ -152,7 +152,7 @@ $ newgrp sdkusers
 
 **注意:** 确保[配置了 Java 环境](/index.php/Java#Change_default_Java_environment "Java") 已正确配置，否则无法启动 android-studio。
 
-**注意:** 如 [这个](https://youtrack.jetbrains.com/issue/IDEA-57233#comment=27-876236) 页面所述，安装 [infinality-bundle](/index.php/Infinality#Installation_2 "Infinality") 并使用 AUR 中 infinality 打完补丁的 openJDK7 （[jdk7-openjdk-infinality](https://aur.archlinux.org/packages/jdk7-openjdk-infinality/)）或者 openJDK 8 （[jdk8-openjdk-infinality](https://aur.archlinux.org/packages/jdk8-openjdk-infinality/)）能修复 Android Studio 中糟糕的字体渲染问题，也可以使用 [Infinality 非官方软件库](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories") 中打完补丁的 OpenJDK8。
+**注意:** 如 [这个](https://youtrack.jetbrains.com/issue/IDEA-57233#comment=27-876236) 页面所述，安装 [infinality-bundle](/index.php/Infinality#Installation "Infinality") 并使用 AUR 中 infinality 打完补丁的 openJDK7 （[jdk7-openjdk-infinality](https://aur.archlinux.org/packages/jdk7-openjdk-infinality/)）或者 openJDK 8 （[jdk8-openjdk-infinality](https://aur.archlinux.org/packages/jdk8-openjdk-infinality/)）能修复 Android Studio 中糟糕的字体渲染问题，也可以使用 [Infinality 非官方软件库](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories") 中打完补丁的 OpenJDK8。
 
 **注意:** 在 `~/.AndroidStudio1.2/studio64.vmoptions` 文件中添加 `-Dhidpi=true` 能修复 HiDPI 缩放情况下文本超出控件边界的问题。
 

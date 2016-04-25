@@ -202,7 +202,7 @@ TLS_REQCERT allow
 
 Теперь у вас есть базовая установка ldap. Далее необходимо спроектировать вашу директорию. Проектирование сильно зависит от ваших целей. If you are new to ldap, consider starting with a directory design recommended by the specific client services that will use the directory (PAM, Postfix, etc).
 
-A directory for system authentication is the [LDAP Authentication](/index.php/LDAP_Authentication "LDAP Authentication") article.
+A directory for system authentication is the [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication") article.
 
 ## Решение проблем
 

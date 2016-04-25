@@ -2,7 +2,7 @@
 
 Un disco duro completo se puede o bien asignar a una sola partición, o bien se puede dividir el espacio de almacenamiento disponible en varias particiones. La existencia de una variedad de escenarios requieren la creación de múltiples particiones: dual o multi-arranque, por ejemplo, o el mantenimiento de un partición [swap](/index.php/Swap "Swap"). En otros casos, la partición se utiliza como un medio para guardar datos separados lógicamente, como crear particiones para guardar los archivos de audio y vídeo. Los esquemas de particionado más comunes se tratan con más detalle a continuación.
 
-Cada partición debe ser formateada con un [tipo de sistema de archivos](/index.php/File_Systems_(Espa%C3%B1ol) "File Systems (Español)") antes de ser utilizada.
+Cada partición debe ser formateada con un [tipo de sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") antes de ser utilizada.
 
 ## Contents
 
@@ -257,7 +257,7 @@ He aquí un resumen del uso típico de `gdisk`:
 *   Seleccione el identificador del tipo de la partición, el valor predeterminado, `Linux/Windows data` (código `0700`), debería estar bien para la mayoría de los casos. Pulse `L` para mostrar la lista de códigos. Si planea utilizar LVM, seleccione `Linux LVM` (`8e00`).
 *   Asigne otras particiones siguiendo el método descrito.
 *   Escriba la tabla en el disco y salga con la orden `w`.
-*   Formatee las particiones nuevas con un [sistema de archivos](/index.php/File_Systems_(Espa%C3%B1ol) "File Systems (Español)").
+*   Formatee las particiones nuevas con un [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)").
 
 ## Usar MBR - método tradicional
 
@@ -277,7 +277,7 @@ Tenga en cuenta que antes, *fdisk* utilizaba los cilindros como la unidad de ref
 *   Cambie el identificador del sistema de particiones desde el tipo predeterminado de Linux (`tipo 83`) para el tipo deseado con la orden `t`. Este es un paso opcional para el caso de que el usuario desea crear otro tipo de partición, por ejemplo, swap, NTFS, LVM, etc. Puede ver una lista completa de todos los tipos de particiones válidos con la orden `l`.
 *   Asigne otras particiones siguiendo el método descrito.
 *   Escriba la tabla en el disco y salga con la orden `w`.
-*   Formatee las particiones nuevas con un [sistema de archivos](/index.php/File_Systems_(Espa%C3%B1ol) "File Systems (Español)").
+*   Formatee las particiones nuevas con un [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)").
 
 ## Véase también
 

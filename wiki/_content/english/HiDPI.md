@@ -16,6 +16,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 *   [4 GUI toolkits](#GUI_toolkits)
     *   [4.1 Qt 5](#Qt_5)
     *   [4.2 GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)
+    *   [4.3 Elementary (EFL)](#Elementary_.28EFL.29)
 *   [5 Display managers](#Display_managers)
     *   [5.1 SDDM](#SDDM)
 *   [6 Applications](#Applications)
@@ -180,6 +181,17 @@ To undo scaling of text:
 export GDK_DPI_SCALE=0.5
 
 ```
+
+### Elementary (EFL)
+
+To scale UI elements by a factor of 1.5:
+
+```
+ export ELM_SCALE=1.5
+
+```
+
+For more details see [https://phab.enlightenment.org/w/elementary/](https://phab.enlightenment.org/w/elementary/)
 
 ## Display managers
 

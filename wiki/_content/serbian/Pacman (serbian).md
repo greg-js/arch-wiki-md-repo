@@ -278,7 +278,7 @@ Najvazniji savet koji treba da zapamtite je da ne osvezavate vas sistem "slepo".
 
 Ako ocekujete/znate da ce zakrpa paketa uzrokovati probleme, ljudi koji obezbedjuju pakete ce obezbediti da pacman prikaze odgovarajucu poruku kada se paket osvezi. Ako imate probleme nakon osvezenja, proverite dva puta tekstualni izlaz pacman-a tako sto cete proveriti log u (`/var/log/pacman.log`).
 
-U ovom momentu, **samo nakon sto ste se uverili da nema informacija dostupnih preko pacman-a, ne postoje vesti u vezi problema na [https://archlinux.org](https://archlinux.org), i nema postova na forumu u vezi te zakrpe**, mozete uzeti u obzir da zatrazite pomoc na forumu, preko [IRC-a](/index.php/IRC_Channel "IRC Channel"), ili [unazadjivanje problematicnih paketa](/index.php?title=Downgrading_Packages_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8)&action=edit&redlink=1 "Downgrading Packages (Српски) (page does not exist)").
+U ovom momentu, **samo nakon sto ste se uverili da nema informacija dostupnih preko pacman-a, ne postoje vesti u vezi problema na [https://archlinux.org](https://archlinux.org), i nema postova na forumu u vezi te zakrpe**, mozete uzeti u obzir da zatrazite pomoc na forumu, preko [IRC-a](/index.php/IRC_channel "IRC channel"), ili [unazadjivanje problematicnih paketa](/index.php?title=Downgrading_Packages_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8)&action=edit&redlink=1 "Downgrading Packages (Српски) (page does not exist)").
 
 Ponovo procitajte zadnji paragraf.
 
@@ -331,7 +331,7 @@ U slucaju da pacman puca sa "database error" greskom dok uklanjate pakete, i rei
 
 Ako dobijate "conflicting files" gresku, imajte na umu da ce pacman prepisati rucno instalirani softver ako zadate komandu sa `--force` prekidacem (`pacman -S --force`).
 
-Pogledajte [preuzimanje liste fajlova koje nisu u posedu ni jednog paketa](/index.php/Pacman_tips#Getting_a_list_of_files_not_owned_by_any_package "Pacman tips") za skriptu koja vrsi pretragu fajlsistema za fajlove koji *nisu u posedu*.
+Pogledajte [preuzimanje liste fajlova koje nisu u posedu ni jednog paketa](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips") za skriptu koja vrsi pretragu fajlsistema za fajlove koji *nisu u posedu*.
 
 ### pacman je potpuno slomljen! Kako da ga instaliram?
 

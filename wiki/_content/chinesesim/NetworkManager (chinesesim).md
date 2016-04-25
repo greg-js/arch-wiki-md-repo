@@ -540,7 +540,7 @@ IPv6推送主机名：
 
 ### 缺少默认路由 route
 
-在至少一个KDE4系统中,当使用NetworkManager [Wireless_Setup_(简体中文)](/index.php/Wireless_Setup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless Setup (简体中文)")链接时不会建立缺省路由。 改变无线链接的路由配置来移除*Use only for resources on this connection"的默认选择能解决这个问题。*
+在至少一个KDE4系统中,当使用NetworkManager [Wireless Setup (简体中文)](/index.php/Wireless_Setup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless Setup (简体中文)")链接时不会建立缺省路由。 改变无线链接的路由配置来移除*Use only for resources on this connection"的默认选择能解决这个问题。*
 
 ### 没有探测到 3G 模块
 
@@ -582,7 +582,7 @@ IPv6推送主机名：
 
 ### GNOME VPN失效问题
 
-在[Gnome](/index.php/Gnome "Gnome")系统中用NetworkManager 设立[OpenConnect](/index.php/OpenConnect "OpenConnect")或VPN链接，有时会无法跳出对话框，在/var/log/errors.log中会出现如下错误提示：
+在[GNOME](/index.php/GNOME "GNOME")系统中用NetworkManager 设立[OpenConnect](/index.php/OpenConnect "OpenConnect")或VPN链接，有时会无法跳出对话框，在/var/log/errors.log中会出现如下错误提示：
 
 ```
 localhost NetworkManager[399]: <error> [1361719690.10506] [nm-vpn-connection.c:1405] get_secrets_cb(): Failed to request VPN secrets #3: (6) No agents were available for this request.

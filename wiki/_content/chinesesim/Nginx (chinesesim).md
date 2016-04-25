@@ -26,7 +26,7 @@
 
 ```
 
-针对 **Ruby on Rails** 的安装参见 [The Perfect Rails Setup](/index.php/RubyOnRails#Option_C:_The_Perfect_Rails_Setup "RubyOnRails").
+针对 **Ruby on Rails** 的安装参见 [The Perfect Rails Setup](/index.php/RubyOnRails#The_Perfect_Rails_Setup "RubyOnRails").
 
 ## 启动服务
 
@@ -167,7 +167,7 @@ fastcgi_pass 127.0.0.1:9000;
 
 ### 安装 phpMyAdmin
 
-请看这篇 wiki 文章: [PhpMyAdmin#NGINX_Configuration](/index.php/PhpMyAdmin#NGINX_Configuration "PhpMyAdmin").
+请看这篇 wiki 文章: [PhpMyAdmin#Configuration](/index.php/PhpMyAdmin#Configuration "PhpMyAdmin").
 
 ## 疑难解答
 

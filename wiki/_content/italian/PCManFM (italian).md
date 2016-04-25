@@ -26,7 +26,7 @@ Dal [sito](http://wiki.lxde.org/en/PCManFM) del progetto:
 
 ## Installazione
 
-[pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) è disponibile negli [official repositories](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) è disponibile negli [official repositories](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Si consiglia di installare [gvfs](https://www.archlinux.org/packages/?name=gvfs) per il supporto del Cestino, del montaggio con Udisk e dei filesystem remoti.
 
@@ -98,7 +98,7 @@ Rivedere l'articolo wiki pertinente e/o l'home page ufficiale per uno specifico 
 
 ## Ulteriori caratteristiche e funzionalità
 
-Gli utenti meno esperti dovrebbero essere consapevoli che un file manager da solo - soprattutto quando installato in un autonomo [Window manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") come Openbox - non fornirà le caratteristiche e le funzionalità di ambienti desktop completi come Xfce e KDE. Rivedere l'articolo [File_manager_functionality](/index.php/File_manager_functionality "File manager functionality") per ulteriori informazioni.
+Gli utenti meno esperti dovrebbero essere consapevoli che un file manager da solo - soprattutto quando installato in un autonomo [Window manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") come Openbox - non fornirà le caratteristiche e le funzionalità di ambienti desktop completi come Xfce e KDE. Rivedere l'articolo [File manager functionality](/index.php/File_manager_functionality "File manager functionality") per ulteriori informazioni.
 
 ## Consigli e trucchi
 

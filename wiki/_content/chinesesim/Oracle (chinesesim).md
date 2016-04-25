@@ -921,7 +921,7 @@ Configure server for oracle
 Setup OEM (optional)
 
 ```
-[Oracle#Oracle_Enterprise_Manager_installation_.28optional.29](/index.php/Oracle#Oracle_Enterprise_Manager_installation_.28optional.29 "Oracle")
+[Oracle#Oracle Enterprise Manager installation (optional)](/index.php/Oracle#Oracle_Enterprise_Manager_installation_.28optional.29 "Oracle")
 
 ```
 

@@ -32,6 +32,9 @@ The goal of this article is to setup Postfix and explain what the basic configur
     *   [5.5 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
     *   [5.6 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
     *   [5.7 Rule-based mail processing](#Rule-based_mail_processing)
+    *   [5.8 Dane](#Dane)
+        *   [5.8.1 Resource Record](#Resource_Record)
+        *   [5.8.2 Configuration](#Configuration_2)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -593,7 +596,7 @@ And don't forget to reload postfix.
 
 ### Rule-based mail processing
 
-With policy services one can easily finetune postfix' behaviour of mail delivery. [postfwd](https://www.archlinux.org/packages/?name=postfwd) and [policyd](https://aur.archlinux.org/packages/policyd/) provide services to do so. This allows you to e.g. implement time-aware grey- and blacklisting of senders and receivers as well as [SPF](/index.php/SPF "SPF") policy checking.
+With policy services one can easily finetune postfix' behaviour of mail delivery. [postfwd](https://www.archlinux.org/packages/?name=postfwd) and [policyd](https://aur.archlinux.org/pkgbase/policyd) provide services to do so. This allows you to e.g. implement time-aware grey- and blacklisting of senders and receivers as well as [SPF](/index.php/SPF "SPF") policy checking.
 
 Policy services are standalone services and connected to Postfix like this:
 
@@ -607,6 +610,62 @@ smtpd_recipient_restrictions =
 ```
 
 Placing policy services at the end of the queue reduces load, as only legitimate mails are processed.
+
+### Dane
+
+#### Resource Record
+
+DANE supports several types of records, however not all of them are suitable in postfix. Certificate usage 0 is unsupported, 1 is mapped to 3 and 2 is optional, thus it is recommendet to publish a "3" record. More on [Resource Records](/index.php/DANE#Resource_Record "DANE").
+
+#### Configuration
+
+Opportunistic DANE is configured this way:
+
+ `/etc/postfix/main.cf` 
+```
+smtpd_use_tls = yes
+smtp_dns_support_level = dnssec
+smtp_tls_security_level = dane
+
+```
+ `/etc/postfix/master.cf` 
+```
+dane       unix  -       -       n       -       -       smtp
+  -o smtp_dns_support_level=dnssec
+  -o smtp_tls_security_level=dane
+
+```
+
+To use per-domain policies, e.g. opportunistic DANE for example.org and mandatory DANE for example.com, use something like this:
+
+ `/etc/postfix/main.cf` 
+```
+indexed = ${default_database_type}:${config_directory}/
+
+# Per-destination TLS policy
+#
+smtp_tls_policy_maps = ${indexed}tls_policy
+
+# default_transport = smtp, but some destinations are special:
+#
+transport_maps = ${indexed}transport
+
+```
+ `transport` 
+```
+example.com dane
+example.org dane
+
+```
+ `tls_policy` 
+```
+example.com dane-only
+
+```
+
+**Note:** For global mandatory DANE, change `smtp_tls_security_level` to `dane-only`. Be aware that this makes postfix tempfail on all delivieres that do not use DANE at all!
+
+Full documentation is found [here](http://www.postfix.org/TLS_README.html#client_tls_dane).
 
 ## See also
 

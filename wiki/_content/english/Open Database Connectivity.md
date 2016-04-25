@@ -68,7 +68,7 @@ Myodbc is ODBC driver/connector for mariadb.
 
 #### Installation
 
-Install [myodbc](https://www.archlinux.org/packages/?name=myodbc) from [official repositories](/index.php/Official_repositories "Official repositories"). (The package disappeared from oficial repositories and does not exist in AUR either. Google search appears to have seen it in March 2016 last time.)
+Install [myodbc](https://aur.archlinux.org/packages/myodbc/) from [official repositories](/index.php/Official_repositories "Official repositories"). (The package disappeared from oficial repositories and does not exist in AUR either. Google search appears to have seen it in March 2016 last time.)
 
 #### Configuration
 

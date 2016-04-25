@@ -209,7 +209,7 @@ Frameworks 5 могут использовать настройки от KDE 4, 
 
 ##### Главное меню на рабочем столе
 
-Вы можете добавить на рабочий стол панель, которая будет отображать главное меню выбранного окна (наподобие панели в Mac OS X). Для этого установите пакеты [appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt), [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/) и [appmenu-qt5](https://aur.archlinux.org/packages/appmenu-qt5/). Чтобы [Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)") и [LibreOffice](/index.php/LibreOffice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LibreOffice (Русский)") также начали использовать эту панель, установите [firefox-extension-globalmenu](https://aur.archlinux.org/packages/firefox-extension-globalmenu/) и [libreoffice-extension-menubar](https://aur.archlinux.org/packages/libreoffice-extension-menubar/) соответственно.
+Вы можете добавить на рабочий стол панель, которая будет отображать главное меню выбранного окна (наподобие панели в Mac OS X). Для этого установите пакеты [appmenu-qt](https://aur.archlinux.org/packages/appmenu-qt/), [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/) и [appmenu-qt5](https://aur.archlinux.org/packages/appmenu-qt5/). Чтобы [Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)") и [LibreOffice](/index.php/LibreOffice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LibreOffice (Русский)") также начали использовать эту панель, установите [firefox-extension-globalmenu](https://aur.archlinux.org/packages/firefox-extension-globalmenu/) и [libreoffice-extension-menubar](https://aur.archlinux.org/packages/libreoffice-extension-menubar/) соответственно.
 
 **Примечание:**
 

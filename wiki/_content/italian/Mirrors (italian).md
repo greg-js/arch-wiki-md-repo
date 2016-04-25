@@ -76,7 +76,7 @@ pacman tenterà ora di connettersi prima a questo mirror. Procedere con la stess
 
 Verificare lo stato dei mirror Arch ed il loro livello di aggiornamento visitando il sito [http://www.archlinux.de/?page=MirrorStatus](http://www.archlinux.de/?page=MirrorStatus) o [https://www.archlinux.org/mirrors/status/](https://www.archlinux.org/mirrors/status/).
 
-Si può generare una lista aggiornata dei mirror [qui](https://www.archlinux.org/mirrorlist/) e automatizzare il processo con uno [script](#.3DScript_per_automatizzare_l.27uso_di_Pacman_Mirrorlist_Generator), oppure installare eventualmente [Reflector](/index.php/Reflector "Reflector"), una utility che genera una mirrorlist usando la lista "Mirrorcheck"; un ulteriore alternativa è controllare il livello di aggiornamento manualmente così:
+Si può generare una lista aggiornata dei mirror [qui](https://www.archlinux.org/mirrorlist/) e automatizzare il processo con uno [script](#Script_per_automatizzare_l.27uso_di_Pacman_Mirrorlist_Generator), oppure installare eventualmente [Reflector](/index.php/Reflector "Reflector"), una utility che genera una mirrorlist usando la lista "Mirrorcheck"; un ulteriore alternativa è controllare il livello di aggiornamento manualmente così:
 
 1.  scegliere un server ed esplorare "extra/os/";
 2.  accedere a [https://www.archlinux.org/](https://www.archlinux.org/) in un'altra scheda o finestra del browser e,
@@ -377,4 +377,4 @@ done < <(pacman -Sup | tail -n +2 | sed -e 's,/\(core\|extra\)/,/testing/,' \
 
 ## Vedere anche
 
-*   [[MirUp](http://wiki.gotux.net/code:bash:mirup)] – pacman mirrorlist downloader/checker
+*   [MirUp](http://wiki.gotux.net/code:bash:mirup) – pacman mirrorlist downloader/checker

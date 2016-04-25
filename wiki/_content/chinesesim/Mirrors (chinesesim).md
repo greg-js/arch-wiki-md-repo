@@ -223,4 +223,4 @@ Architecture = auto
 
 ## 参见
 
-*   [[MirUp](http://wiki.gotux.net/code:bash:mirup)] -- pacman mirrorlist downloader/checker
+*   [MirUp](http://wiki.gotux.net/code:bash:mirup) -- pacman mirrorlist downloader/checker

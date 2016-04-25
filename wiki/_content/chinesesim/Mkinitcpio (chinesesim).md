@@ -299,7 +299,7 @@ COMPRESSION_OPTIONS='-9'
 
 ## 运行时配置
 
-运行时配置选项可以通过内核命令行传递到 `init` 以及某些钩子。内核命令行参数通常是由启动引导器提供。参见 [Arch 启动过程](/index.php/Arch_Boot_Process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Boot Process (简体中文)")和[Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")以获取更多信息。
+运行时配置选项可以通过内核命令行传递到 `init` 以及某些钩子。内核命令行参数通常是由启动引导器提供。参见 [Arch 启动过程](/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch boot process (简体中文)")和[Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")以获取更多信息。
 
 ### init
 

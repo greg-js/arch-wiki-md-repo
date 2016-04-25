@@ -202,7 +202,7 @@ For the `Address` take care to include the correct netmask (the `/24` in the sam
 
 无论采用何种方法，建议运行 `chmod 600 /etc/netctl/<config_file>` 来禁止其他用户访问密码。
 
-用[wpa_passphrase](/index.php/WPA_supplicant#Configuration_file "WPA supplicant")中的方法生成你的256位PSK:
+用[wpa_passphrase](/index.php/WPA_supplicant#Configuration "WPA supplicant")中的方法生成你的256位PSK:
 
  `$ wpa_passphrase *your_essid* *passphrase*` 
 ```

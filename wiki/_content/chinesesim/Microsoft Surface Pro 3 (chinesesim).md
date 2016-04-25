@@ -60,7 +60,7 @@ Surface Pro 3有三种启动模式 [详细看这里](http://www.microsoft.com/su
 
 ### 编译内核
 
-Ref: [Kernels/Compilation/Traditional#Build configuration](/index.php/Kernels/Compilation/Traditional#Build_configuration "Kernels/Compilation/Traditional")
+Ref: [Kernels/Compilation/Traditional#Configuration](/index.php/Kernels/Compilation/Traditional#Configuration "Kernels/Compilation/Traditional")
 
 **Note:** 最新的内核补丁是[shvr's github repository](https://github.com/shvr/fedora-surface-pro-3-kernel/).
 

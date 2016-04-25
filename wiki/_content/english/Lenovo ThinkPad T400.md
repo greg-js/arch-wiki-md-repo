@@ -108,7 +108,7 @@ See [ATI](/index.php/ATI "ATI") for the open-source driver or [AMD Catalyst](/in
 
 ### Switchable Graphics
 
-[ATI#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics](/index.php/ATI#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics "ATI")
+[ATI#Hybrid graphics/AMD Dynamic Switchable Graphics](/index.php/ATI#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics "ATI")
 
 ### Synaptic, UltraNav
 

@@ -29,7 +29,7 @@
 
 *   Загрузки Arch Linux
 *   [Подключения к интернету](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Network configuration (Русский)")
-*   [Сборки пакетов](/index.php/Creating_Packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Creating Packages (Русский)")
+*   [Сборки пакетов](/index.php/Creating_packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Creating packages (Русский)")
 *   Управления и восстановления поддерживаемых [файловых систем](/index.php/File_systems "File systems")
 *   Процесса установки системы (например, [openssh](https://www.archlinux.org/packages/?name=openssh))
 

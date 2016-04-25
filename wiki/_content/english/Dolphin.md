@@ -12,6 +12,7 @@ This article is about **Dolphin**, the default [file manager](/index.php/Categor
     *   [3.2 Transparent fonts](#Transparent_fonts)
     *   [3.3 Unicode characters are not shown](#Unicode_characters_are_not_shown)
     *   [3.4 Crashes on mounted SMB share](#Crashes_on_mounted_SMB_share)
+    *   [3.5 Cannot write to NTFS: Operation not permitted](#Cannot_write_to_NTFS:_Operation_not_permitted)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -58,6 +59,10 @@ This was a general issue in Qt4 and [kdelibs](https://www.archlinux.org/packages
 ### Crashes on mounted SMB share
 
 See [Samba#Unable to overwrite files](/index.php/Samba#Unable_to_overwrite_files.2C_permissions_errors "Samba").
+
+### Cannot write to NTFS: Operation not permitted
+
+If you are not able to do any write operations (create/delete/rename file/folder) as normal user to your NTFS partition, then you probably missing to install the [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) package. See [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") for details.
 
 ## See also
 

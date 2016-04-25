@@ -35,7 +35,7 @@ Lo scopo di questo articolo è quello di configurare un server nfs per condivide
 
 ## Pacchetti richiesti
 
-I pacchetti necessari per l'installazione e la configurazione del server e del client sono pochi. Sarà solo necessario [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) dai [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+I pacchetti necessari per l'installazione e la configurazione del server e del client sono pochi. Sarà solo necessario [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) dai [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ## Configurazione del server
 
@@ -153,7 +153,7 @@ mount ELROND:music /mnt/point
 
 altrimenti si otterrà *mount.nfs: access denied by server while mounting*
 
-**Nota:** Se si ottengono i seguenti messaggi allora, probabilmente, non si sono avviati i demoni della [sezione precedente](/index.php/NFS_(Italiano)#Demoni_2 "NFS (Italiano)") o durante il loro avvio qualcosa è andato storto.
+**Nota:** Se si ottengono i seguenti messaggi allora, probabilmente, non si sono avviati i demoni della [sezione precedente](#Demoni_2) o durante il loro avvio qualcosa è andato storto.
 ```
 mount: wrong fs type, bad option, bad superblock on 192.168.1.99:/media/raid5-4tb,
        missing codepage or helper program, or other error

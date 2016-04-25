@@ -14,7 +14,7 @@
 
 ## Установка
 
-Установите [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) из [Official_Repositories_(Русский)](/index.php/Official_Repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official Repositories (Русский)").
+Установите [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) из [Official repositories (Русский)](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
 ## Настройка
 

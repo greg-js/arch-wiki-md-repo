@@ -17,7 +17,7 @@ En este artículo se describe cómo utilizar nombres permanentes para sus dispos
 
 ## Métodos para nombrar los dispositivos de forma permanente
 
-Hay cuatro esquemas diferentes para nombrar de forma permanente los dispositivos: [by-label](#by-label), [by-uuid](#by-uuid), [by-id y by-path](#by-id_and_by-path). Para aquellos que utilizan discos con [tabla de particiones GUID (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table"), pueden usar dos esquemas adicionales [by-partlabel](#by-partlabel) y [by-partuuid](#by-partuuid). También puede utilizar [nombres estáticos de dispositivos utilizando udev](#Static_device_names_with_Udev).
+Hay cuatro esquemas diferentes para nombrar de forma permanente los dispositivos: [by-label](#by-label), [by-uuid](#by-uuid), [by-id y by-path](#by-id_y_by-path). Para aquellos que utilizan discos con [tabla de particiones GUID (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table"), pueden usar dos esquemas adicionales [by-partlabel](#by-partlabel) y [by-partuuid](#by-partuuid). También puede utilizar [nombres estáticos de dispositivos utilizando udev](#Static_device_names_with_Udev).
 
 Las siguientes secciones describen lo que son y cómo se utilizan los diferentes métodos de asignación de nombres permanentes.
 

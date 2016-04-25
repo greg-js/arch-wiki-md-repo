@@ -22,12 +22,13 @@ Variables should be set in `/etc/profile.d/infinality-settings.sh`. See [infinal
 
 *   [1 Installation](#Installation)
     *   [1.1 Infinality-bundle](#Infinality-bundle)
-    *   [1.2 Additional fonts](#Additional_fonts)
-    *   [1.3 AUR](#AUR)
+        *   [1.1.1 Additional fonts](#Additional_fonts)
+    *   [1.2 AUR](#AUR)
 *   [2 Configuration](#Configuration)
     *   [2.1 Fonts with restricted licenses](#Fonts_with_restricted_licenses)
-    *   [2.2 Font settings](#Font_settings)
-    *   [2.3 Font substitutions](#Font_substitutions)
+    *   [2.2 Xft and FreeType settings](#Xft_and_FreeType_settings)
+    *   [2.3 Fontconfig settings](#Fontconfig_settings)
+        *   [2.3.1 Font substitutions](#Font_substitutions)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Spotify](#Spotify)
     *   [3.2 Google Chrome](#Google_Chrome)
@@ -75,7 +76,7 @@ The installation consists of adding the selected repositories to `pacman.conf` a
     ```
     answer `yes`.
 
-### Additional fonts
+#### Additional fonts
 
 If you want to install even more fonts, there is an additional *infinality-bundle-fonts-extra* collection. Run
 
@@ -94,21 +95,17 @@ to list available packages.
 
 ### AUR
 
-See the package correspondence in the section [#Infinality-bundle](#Infinality-bundle) for what packages are available.
+As of 2016-04, the following AUR packages containing (mainly Bohoomil's) Infinality patches are available:
 
-Besides [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/), it is recommended to also install [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) to enable selection of predefined font substitution styles and antialiasing settings, apart from the rendering settings of the engine itself. After doing so, you can select the font style (win7, winxp, osx, linux, ...) with:
+*   [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/)
+*   [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/)
+*   [cairo-infinality](https://aur.archlinux.org/packages/cairo-infinality/)
+*   [jdk8-openjdk-infinality](https://aur.archlinux.org/packages/jdk8-openjdk-infinality/)
+    *   In [jdk7-openjdk-infinality](https://aur.archlinux.org/packages/jdk7-openjdk-infinality/) (IcedTea JDK7), the Infinality patch is already included, so all the maintainer did was setting <tt>--enable-infinality=yes</tt>.
 
-```
-# fc-presets set
+Although these packages are using the same source of patches as Bohoomil's repo does, they often target a specific commit in Bohoomil's repo and can be lagging behind. The packagers may also have their own ideas on what patches to apply.
 
-```
-
-The corresponding fonts need to be installed.
-
-**Note:**
-
-*   Install [grip-git](https://aur.archlinux.org/packages/grip-git/) from the AUR to have a realtime font preview.
-*   The `README` for [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) says that `/etc/fonts/local.conf` should either not exist, or have no infinality-related configurations in it. The `local.conf` is now obsolete and completely replaced by this configuration.
+Besides [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/), it is recommended to also install [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) to enable selection of predefined font substitution styles and antialiasing settings, apart from the rendering settings of the engine itself.
 
 ## Configuration
 
@@ -121,9 +118,9 @@ Below you will find a list of fonts that cannot be freely redistributed and thus
 *   [ttf-aller](https://aur.archlinux.org/packages/ttf-aller/)
 *   [ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/)
 
-### Font settings
+### Xft and FreeType settings
 
-Settings should duplicate those found in the freetype2 configuration file (`/etc/X11/xinit/xinitrc.d/xft-settings.sh`):
+Settings should duplicate those found in the [Xft](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration") configuration file (`/etc/X11/xinit/xinitrc.d/xft-settings.sh`):
 
 ```
 Xft.antialias: 1
@@ -149,7 +146,11 @@ export INFINALITY_FT_FILTER_PARAMS="16 20 28 20 16"
 
 **Note:** Customisations will be saved in a `.pacsave` file on an update of the infinality package.
 
-It is possible to skip installation of *infinality-bundle-fonts* if you want to use Microsoft proprietary font collection instead. If this is the case, you have to activate fontconfig MS preset to ensure the correct set of fonts is selected. To do so, issue
+### Fontconfig settings
+
+Infinality-patched [fontconfig](/index.php/Fontconfig "Fontconfig") provides a different set of example/avail and default configurations. There are also multiple presets available. Run `fc-presets help` for more information.
+
+For example, it is possible to skip installation of *infinality-bundle-fonts* if you want to use Microsoft proprietary font collection instead. If this is the case, you have to activate fontconfig MS preset to ensure the correct set of fonts is selected. To do so, issue
 
  `# fc-presets set` 
 ```
@@ -164,11 +165,14 @@ Enter your choice...
 
 and select `3`.
 
-Run `fc-presets help` for more information.
-
 If you would rather use a custom font collection, there is a `combi` preset available that should let you adjust fontconfig parameters accordingly. When you activate the `combi` preset, the content of 'custom' configuration files (`/etc/fonts/conf.avail.infinality/combi`) can be freely modified. When you are done, do not forget to create a backup copy of the 'combi' directory.
 
-### Font substitutions
+**Note:**
+
+*   Install [grip-git](https://aur.archlinux.org/packages/grip-git/) from the AUR to have a realtime font preview.
+*   The `README` for [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) says that `/etc/fonts/local.conf` should either not exist, or have no infinality-related configurations in it. The `local.conf` is now obsolete and completely replaced by this configuration.
+
+#### Font substitutions
 
 To override default font substitutions set in `/etc/fonts/conf.d/37-repl-global-*preset*.conf` or add new ones, use `/etc/fonts/conf.d/35-repl-custom.conf` to do so. You will need to duplicate the template (16 lines of code) for each font family to be replaced and provide appropriate font names.
 
@@ -178,7 +182,7 @@ See also [Font configuration#Troubleshooting](/index.php/Font_configuration#Trou
 
 ### Spotify
 
-When experiencing font rendering issues with Spotify [[1](http://i.imgur.com/E51vt2b.jpg)], try the following font settings:
+When experiencing font rendering issues with Spotify [[1]](http://i.imgur.com/E51vt2b.jpg), try the following font settings:
 
 ```
 USE_STYLE="2"
@@ -193,7 +197,7 @@ export INFINALITY_FT_STEM_FITTING_STRENGTH="25"
 
 ### Google Chrome
 
-To solve rendering issues in Google Chrome [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1344172#p1344172), edit `/etc/fonts/fonts.conf` file and uncomment the following entry:
+To solve rendering issues in Google Chrome [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1344172#p1344172), edit `/etc/fonts/fonts.conf` file and uncomment the following entry:
 
 ```
 <!--match target="pattern">

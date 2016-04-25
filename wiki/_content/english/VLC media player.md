@@ -70,8 +70,6 @@ Choose the "Use custom skin" radio button, and browse to the location of the dow
 
 Restart VLC for the change to take effect.
 
-Note: You need to install [libtar](https://www.archlinux.org/packages/?name=libtar) from the [official repositories](/index.php/Official_repositories "Official repositories") to use the skinnable interface module.
-
 ## Web interface
 
 Run VLC with the parameter `--extraintf=http` to use both the desktop and web interface. The `--http-host` parameter specifies the address to, which is `localhost` by default. To set a password, use `--http-password`, otherwise VLC will not allow you to log in.

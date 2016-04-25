@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [openLDAP](/index.php/OpenLDAP "OpenLDAP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-06-01，点击[这里](https://wiki.archlinux.org/index.php?title=openLDAP&diff=0&oldid=317024)可以查看翻译后英文页面的改动。
 
-OpenLDAP 是 LDAP 协议的一个开源实现。LDAP 服务器基本上是一个为只读访问而优化的非关系型数据库。它主要用做地址簿查询（如 email 客户端）或对各种服务访问做后台认证以及用户数据权限管控。（例如，访问 Samba 时，LDAP 可以起到域控制器的作用；或者 [Linux 系统认证](/index.php/LDAP_Authentication "LDAP Authentication") 时代替 `/etc/passwd` 的作用。）
+OpenLDAP 是 LDAP 协议的一个开源实现。LDAP 服务器基本上是一个为只读访问而优化的非关系型数据库。它主要用做地址簿查询（如 email 客户端）或对各种服务访问做后台认证以及用户数据权限管控。（例如，访问 Samba 时，LDAP 可以起到域控制器的作用；或者 [Linux 系统认证](/index.php/LDAP_authentication "LDAP authentication") 时代替 `/etc/passwd` 的作用。）
 
 **注意:** 以 `ldap` 开头的命令（如： `ldapsearch`）是客户端工具，以 `slap` 开头的命令（如： `slapcat` `slapcat`）是服务端工具。
 
@@ -249,7 +249,7 @@ If `slapd` started successfully you can enable it.
 
 You now have a basic LDAP installation. The next step is to design your directory. The design is heavily dependent on what you are using it for. If you are new to LDAP, consider starting with a directory design recommended by the specific client services that will use the directory (PAM, [Postfix](/index.php/Postfix "Postfix"), etc).
 
-A directory for system authentication is the [LDAP Authentication](/index.php/LDAP_Authentication "LDAP Authentication") article.
+A directory for system authentication is the [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication") article.
 
 A nice web frontend is [phpLDAPadmin](/index.php/PhpLDAPadmin "PhpLDAPadmin").
 
@@ -286,5 +286,5 @@ to allow slapd write access to its data directory as the user "ldap".
 
 *   [Official OpenLDAP Software 2.4 Administrator's Guide](http://www.openldap.org/doc/admin24/)
 *   [phpLDAPadmin](/index.php/PhpLDAPadmin "PhpLDAPadmin") is a web interface tool in the style of phpMyAdmin.
-*   [LDAP Authentication](/index.php/LDAP_Authentication "LDAP Authentication")
+*   [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication")
 *   [apachedirectorystudio](https://aur.archlinux.org/packages/apachedirectorystudio/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") is an Eclipse-based LDAP viewer. Works perfect with OpenLDAP installations.

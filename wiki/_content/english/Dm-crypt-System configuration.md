@@ -13,6 +13,7 @@ Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
     *   [2.5 crypto](#crypto)
 *   [3 crypttab](#crypttab)
     *   [3.1 Mounting at boot time](#Mounting_at_boot_time)
+        *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
 
 ## mkinitcpio
 
@@ -182,11 +183,13 @@ Use the device mapper's name you've defined in `/etc/crypttab` in `/etc/fstab` a
 
 Since `/dev/mapper/externaldrive` already is the result of a unique partition mapping, there is no need to specify an UUID for it. In any case, the mapper with the filesystem will have a different UUID than the partition it is encrypted in.
 
-**Tip:** The systemd generators also automatically process stacked block devices at boot.
+#### Mounting a stacked blockdevice
 
-For example, you can create a [RAID](/index.php/RAID "RAID") setup, use cryptsetup to encrypt it and create an [LVM](/index.php/LVM "LVM") logical volume with respective filesystem inside the encrypted block device. A resulting:
+The systemd generators also automatically process stacked block devices at boot.
 
- `# lsblk -f` 
+For example, you can create a [RAID](/index.php/RAID "RAID") setup, use cryptsetup on it and create an [LVM](/index.php/LVM "LVM") logical volume with respective filesystem inside the encrypted block device. A resulting:
+
+ `$ lsblk -f` 
 ```
 ─sdXX                  linux_raid_member    
 │ └─md0                 crypto_LUKS   
@@ -201,4 +204,4 @@ For example, you can create a [RAID](/index.php/RAID "RAID") setup, use cryptset
 
 will ask for the passphrase and mount automatically at boot.
 
-Since `/etc/crypttab` processing applies to non-root mounts only, there is no need to add additional mkinitcpio hooks/configuration, given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_LUKS` device) and fstab (`/dev/mapper/vgraid-lvraid`) entries.
+Given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_LUKS` device) and fstab (`/dev/mapper/vgraid-lvraid`) entries, there is no need to add additional mkinitcpio hooks/configuration, because `/etc/crypttab` processing applies to non-root mounts only. One exception is when the `mdadm_udev` hook is used *already* (e.g. for the root device). In this case `/etc/madadm.conf` and the initramfs need updating to achieve the correct root raid is picked first.

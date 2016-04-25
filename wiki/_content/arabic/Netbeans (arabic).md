@@ -27,7 +27,7 @@
 
 #### Java بشكل عام
 
-قم بمراجعة [Java#Better font rendering](/index.php/Java#Better_font_rendering "Java") .
+قم بمراجعة [Java#Better font rendering](/index.php/Java#Better_font_rendering "Java").
 
 ### GTK look and feel
 

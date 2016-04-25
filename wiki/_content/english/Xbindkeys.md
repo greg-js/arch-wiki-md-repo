@@ -172,3 +172,13 @@ $ xbindkeys -n
 ```
 
 By pressing the non-working key, you will be able to see any error *xbindkeys* encounter (e.g: mistyped command/keycode,...).
+
+If the command for a keybind works via the xdotool in command line, but not when activated by the hotkey try adding "+ Release" to the hotkey (Esp notable on gnome):
+
+```
+"xdotool key --clearmodifiers XF86AudioPlay"
+    Mod2 + F7 + Release
+
+```
+
+This will make the F7 key play/pause audio. Where the "xdotool" command would work in commandline, if the "+ Release" is removed it will fail with xbindkeys.

@@ -238,7 +238,7 @@ pcm.jack {
 
 ### Распространённые примеры
 
-Общие примеры настройки доступны в разделе [JACK Audio Connection Kit#A Shell-Based Example Setup](/index.php/JACK_Audio_Connection_Kit#A_Shell-Based_Example_Setup "JACK Audio Connection Kit").
+Общие примеры настройки доступны в разделе [JACK Audio Connection Kit#A shell-based example setup](/index.php/JACK_Audio_Connection_Kit#A_shell-based_example_setup "JACK Audio Connection Kit").
 
 ## Режим реального времени ядра
 

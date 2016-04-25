@@ -41,7 +41,7 @@ Si raccomanda inoltre di reinstallare [xorg-server](https://www.archlinux.org/pa
 
 Prima di procedere bisogna contyrollare se la vostra scheda è [supportata](http://nouveau.freedesktop.org/wiki/CodeNames) (un elenco più dettagliato è disponibile su [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units installato correttamente .
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau), che è disponibile nel [Depositi ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). Il quale fornisce il driver DDX per l'accelerazione 2D e ha come dipendenza il pacchetto [mesa](https://www.archlinux.org/packages/?name=mesa) che fornisce il driver DRI per l'accelerazione 3D.
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau), che è disponibile nel [Depositi ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"). Il quale fornisce il driver DDX per l'accelerazione 2D e ha come dipendenza il pacchetto [mesa](https://www.archlinux.org/packages/?name=mesa) che fornisce il driver DRI per l'accelerazione 3D.
 
 Per utilizzare applicazioni 32 bit con accelerazione 3D su Arch x86_64, installare [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) dal deposito [multilib](/index.php/Multilib "Multilib").
 
@@ -58,9 +58,9 @@ Nel caso che questo non avvenga, allora:
 
 ### KMS
 
-**Suggerimento:** Se avete problemi con la risoluzione , controllare [questa pagina](/index.php/Kernel_Mode_Setting#Forcing_modes_and_EDID "Kernel Mode Setting").
+**Suggerimento:** Se avete problemi con la risoluzione , controllare [questa pagina](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting").
 
-Il [Kernel Mode Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting") (KMS) è richiesto dal driver Nouveau. All'avvio del sistema la risoluzione verrà cambiata quando il KMS inizializzerà il driver video. Semplicemente, installare il driver Nouveau dovrebbe essere sufficiente per ottenere al sistema di riconoscere e inizializzarlo nella modalità "avvio ritardato" (trattato in seguito). Si veda la pagina [Nouveau KerneModeSetting](http://nouveau.freedesktop.org/wiki/KernelModeSetting) per maggiori informazioni.
+Il [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) è richiesto dal driver Nouveau. All'avvio del sistema la risoluzione verrà cambiata quando il KMS inizializzerà il driver video. Semplicemente, installare il driver Nouveau dovrebbe essere sufficiente per ottenere al sistema di riconoscere e inizializzarlo nella modalità "avvio ritardato" (trattato in seguito). Si veda la pagina [Nouveau KerneModeSetting](http://nouveau.freedesktop.org/wiki/KernelModeSetting) per maggiori informazioni.
 
 **Nota:** Molti utenti preferiscono abilitare il metodo di "avvio anticipato" in modo da non causare un cambio di risoluzione durante il processo di boot.
 

@@ -386,6 +386,10 @@ A few simple shutdown managers are available:
 
 ##### Screen reading
 
+*   **Mimic** — Text-to-speech voice synthesis from the Mycroft project
+
+	[https://mimic.mycroft.ai/](https://mimic.mycroft.ai/) || [mimic-git](https://aur.archlinux.org/packages/mimic-git/)
+
 *   **Orca** — Screen reader for individuals who are blind or visually impaired
 
 	[http://www.gnome.org/projects/orca](http://www.gnome.org/projects/orca) || [orca](https://www.archlinux.org/packages/?name=orca)

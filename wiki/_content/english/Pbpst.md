@@ -13,7 +13,7 @@ A command-line tool to interact with pb instances (eg [ptpb.pw](https://ptpb.pw)
 
 ## Installation
 
-Install [pbpst](https://www.archlinux.org/packages/?name=pbpst) from the official repositories. Alternatively, a [Git](/index.php/Git "Git") version is available in [AUR](/index.php/Arch_User_Repository "Arch User Repository"): [pbpst-git](https://aur.archlinux.org/packages/pbpst-git/).
+Install [pbpst](https://www.archlinux.org/packages/?name=pbpst) from the official repositories. Alternatively, a [Git](/index.php/Git "Git") version is available in [AUR](/index.php/AUR "AUR"): [pbpst-git](https://aur.archlinux.org/packages/pbpst-git/).
 
 ## Configuration
 

@@ -154,7 +154,7 @@ También puedes detener [darkhttpd](https://www.archlinux.org/packages/?name=dar
 
  `# umount /mnt/archiso` 
 
-Ahora ya puedes seguir la [guía oficial de instalación](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)").
+Ahora ya puedes seguir la [guía oficial de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)").
 
 ## Métodos Alternativos
 

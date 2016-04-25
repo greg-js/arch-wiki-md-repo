@@ -1,6 +1,6 @@
 **翻譯狀態：** 本文章是 [pacman](/index.php/Pacman "Pacman") 的翻譯版本。最近一次的翻譯時間：2013-12-22。點擊[本連結](https://wiki.archlinux.org/index.php?title=pacman&diff=0&oldid=289055)查看英文頁面之後的變更。
 
-**[Pacman](https://www.archlinux.org/pacman/)** [軟體包管理員](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system")是 Arch Linux 的主要特色工具，結合了二進位軟體包格式和容易使用的[組建系統](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)")。輕鬆管理軟體是 Pacman 的目標，無論這些軟體包是來自[官方軟體庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")還是由使用者自建。
+**[Pacman](https://www.archlinux.org/pacman/)** [軟體包管理員](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system")是 Arch Linux 的主要特色工具，結合了二進位軟體包格式和容易使用的[組建系統](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)")。輕鬆管理軟體是 Pacman 的目標，無論這些軟體包是來自[官方軟體庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")還是由使用者自建。
 
 Pacman 會和主要伺服器同步軟體包清單，來保持系統處於最新狀態。在主從式架構之下，使用者只要用簡單的指令就可以下載並安裝軟體包，並補足所有相依的軟體包。
 
@@ -86,7 +86,7 @@ NoExtract=usr/lib/systemd/system/*
 
 ### 軟體庫
 
-這一部分定義了要使用哪些[軟體庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")，如 `/etc/pacman.conf` 內所述。我們可以直接在檔案內宣告軟體庫的位置，或是從另一個檔案讀取(如 `/etc/pacman.d/mirrorlist`)，這樣就只需要維護一項清單。鏡像站的設定請參閱[這裡](/index.php/Mirrors "Mirrors")。
+這一部分定義了要使用哪些[軟體庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")，如 `/etc/pacman.conf` 內所述。我們可以直接在檔案內宣告軟體庫的位置，或是從另一個檔案讀取(如 `/etc/pacman.d/mirrorlist`)，這樣就只需要維護一項清單。鏡像站的設定請參閱[這裡](/index.php/Mirrors "Mirrors")。
 
  `/etc/pacman.conf` 
 ```
@@ -422,7 +422,7 @@ Arch Linux 屬於無縫發行的尖端發行版本。當軟體包的更新被認
 
 若軟體包更新預期/已知會產生問題，打包人員會確認更新軟體包時 Pacman 會顯示適當訊息。若更新後碰到任何問題，到日誌檔 (`/var/log/pacman.log`) 檢查 Pacman 的輸出訊息。
 
-到這個時候，**只有在確認 Pacman 沒有顯示任何可用訊息、[https://www.archlinux.org/](https://www.archlinux.org/) 上沒有相關新聞，論壇上也沒有和該次更新相關的貼文時**，再考慮到論壇、[IRC](/index.php/IRC_Channel "IRC Channel") 上求助，或是將[衝突的軟體包降級](/index.php/Downgrading_packages "Downgrading packages")。
+到這個時候，**只有在確認 Pacman 沒有顯示任何可用訊息、[https://www.archlinux.org/](https://www.archlinux.org/) 上沒有相關新聞，論壇上也沒有和該次更新相關的貼文時**，再考慮到論壇、[IRC](/index.php/IRC_channel "IRC channel") 上求助，或是將[衝突的軟體包降級](/index.php/Downgrading_packages "Downgrading packages")。
 
 ### 我知道某個軟體包升級已經釋出，但 Pacman 說我的系統已經是最新的！
 

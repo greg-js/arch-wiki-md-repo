@@ -13,8 +13,7 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
 *   [1 Installation](#Installation)
     *   [1.1 Initial configuration](#Initial_configuration)
     *   [1.2 Making Zsh your default shell](#Making_Zsh_your_default_shell)
-*   [2 Configuration files](#Configuration_files)
-    *   [2.1 Global configuration files](#Global_configuration_files)
+*   [2 Startup/Shutdown files](#Startup.2FShutdown_files)
 *   [3 Configure Zsh](#Configure_Zsh)
     *   [3.1 Simple .zshrc](#Simple_.zshrc)
     *   [3.2 Configuring $PATH](#Configuring_.24PATH)
@@ -39,8 +38,7 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
     *   [3.12 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
     *   [3.13 Sample .zshrc files](#Sample_.zshrc_files)
     *   [3.14 Configuration Frameworks](#Configuration_Frameworks)
-    *   [3.15 Autostarting applications](#Autostarting_applications)
-    *   [3.16 Persistent rehash](#Persistent_rehash)
+    *   [3.15 Persistent rehash](#Persistent_rehash)
 *   [4 Uninstallation](#Uninstallation)
 *   [5 See also](#See_also)
 
@@ -77,7 +75,7 @@ See [Command-line shell#Changing your default shell](/index.php/Command-line_she
 
 **Tip:** If replacing [bash](https://www.archlinux.org/packages/?name=bash), users may want to move some code from `~/.bashrc` to `~/.zshrc` (e.g. the prompt and the [aliases](/index.php/Bash#Aliases "Bash")) and from `~/.bash_profile` to `~/.zprofile` (e.g. [the code that starts the X Window System](/index.php/Xinitrc#Autostart_X_at_login "Xinitrc")).
 
-## Configuration files
+## Startup/Shutdown files
 
 **Note:**
 
@@ -133,18 +131,10 @@ When starting Zsh, it'll source the following files in this order by default:
 
 **Note:**
 
-*   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page")
+*   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992))
 *   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `$ZDOTDIR/.zshenv`. To prevent this, please set the `$PATH` variable in `$ZDOTDIR/.zprofile`
 
 **Warning:** It is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something other, it'll break the integrality of other packages which provide some scripts in `/etc/profile.d`
-
-### Global configuration files
-
-Occasionally users might want to have some settings applied globally to all Zsh users. The zsh(1) said that there are some global configuration files, for example `/etc/zshrc`. This however is slightly different on Arch, since it has been compiled with flags specifically to target[[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/zsh#n34) `/etc/zsh/` instead.
-
-So, for global configuration use `/etc/zsh/zshrc`, not `/etc/zshrc`. The same goes for `/etc/zsh/zshenv`, `/etc/zsh/zlogin` and `/etc/zsh/zlogout`. Note that these files are not installed by default, so create them if desired.
-
-The only exception is `zprofile`, use `/etc/profile` instead.
 
 ## Configure Zsh
 
@@ -180,7 +170,7 @@ typeset -U path
 path=(~/bin /other/things/in/path $path[@])
 ```
 
-See also [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html#l24) and the note in [#Configuration files](#Configuration_files).
+See also [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html#l24) and the note in [#Startup/Shutdown files](#Startup.2FShutdown_files).
 
 ### Command completion
 
@@ -228,7 +218,7 @@ $ sort -t ";" -k 2 -u ~/.zsh_history | sort -o ~/.zsh_history
 
 ### The ttyctl command
 
-[[2]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
+[[1]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
 
  `~/.zshrc`  `ttyctl -f` 
 
@@ -441,7 +431,7 @@ zstyle ':chpwd:*' recent-dirs-file "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/chpwd-re
 
 ```
 
-Every time you change directly interactively, no matter which command you use, the directory to which you change will be remembered in most-recent-first order.
+Every time you change directory interactively, no matter which command you use, the directory to which you change will be remembered in most-recent-first order.
 
 To print the list of recent directories use:
 
@@ -488,16 +478,6 @@ See [Dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for mor
 *   [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) is a popular, community-driven framework for managing your Zsh configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes.
 *   [Prezto - Instantly Awesome Zsh](https://github.com/sorin-ionescu/prezto) (available as [prezto-git](https://aur.archlinux.org/packages/prezto-git/)) is a configuration framework for Zsh. It comes with modules, enriching the command line interface environment with sane defaults, aliases, functions, auto completion, and prompt themes.
 
-### Autostarting applications
-
-**Note:** `$ZDOTDIR` defaults to `$HOME`
-
-Zsh always executes `/etc/zsh/zshenv` and `$ZDOTDIR/.zshenv` so do not bloat these files.
-
-If the shell is a login shell, commands are read from `/etc/profile` and then `$ZDOTDIR/.zprofile`. Then, if the shell is interactive, commands are read from `/etc/zsh/zshrc` and then `$ZDOTDIR/.zshrc`. Finally, if the shell is a login shell, `/etc/zsh/zlogin` and `$ZDOTDIR/.zlogin` are read.
-
-See also the *STARTUP/SHUTDOWN FILES* section of `man zsh`.
-
 ### Persistent rehash
 
 Typically, compinit will not automatically find new executables in the $PATH. For example, after you install a new package, the files in /usr/bin would not be immediately or automatically included in the completion. Thus, to have these new exectuables included, one would run:
@@ -510,7 +490,7 @@ $ rehash
 This 'rehash' can be set to happen automatically. Simply include the following in your `zshrc`:
 
  `~/.zshrc`  `zstyle ':completion:*' rehash true` 
-**Note:** This hack has been found in a PR for Oh My Zsh [[3]](https://github.com/robbyrussell/oh-my-zsh/issues/3440)
+**Note:** This hack has been found in a PR for Oh My Zsh [[2]](https://github.com/robbyrussell/oh-my-zsh/issues/3440)
 
 ## Uninstallation
 

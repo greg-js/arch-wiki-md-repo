@@ -47,7 +47,7 @@ Questo articolo tratterà sia l'utizzo nativo di IMAP per inviare/ricevere email
 
 ## Installazione
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [mutt](https://www.archlinux.org/packages/?name=mutt) dai [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [mutt](https://www.archlinux.org/packages/?name=mutt) dai [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Opzionalmente è possibile installare applicazioni esterne, per il setup IMAP come [offlineimap](https://www.archlinux.org/packages/?name=offlineimap) e [msmtp](https://www.archlinux.org/packages/?name=msmtp).
 
@@ -71,7 +71,7 @@ Si noti che Mutt riconosce due posizioni per i propri file di configurazione: `~
 
 #### Utilizzo del supporto nativo IMAP
 
-La versione Mutt dei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") è compilata con il supporto IMAP. È necessario disporre per lo meno di 4 righe nel file muttrc per poter accedere alla posta.
+La versione Mutt dei [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") è compilata con il supporto IMAP. È necessario disporre per lo meno di 4 righe nel file muttrc per poter accedere alla posta.
 
 ##### imap_user
 

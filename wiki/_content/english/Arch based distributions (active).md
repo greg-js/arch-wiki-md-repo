@@ -16,18 +16,20 @@
     *   [1.13 TalkingArch](#TalkingArch)
     *   [1.14 Tux Hat Linux](#Tux_Hat_Linux)
 *   [2 Counterpart distributions](#Counterpart_distributions)
-    *   [2.1 Arch Linux ARM](#Arch_Linux_ARM)
-    *   [2.2 MSYS2](#MSYS2)
-    *   [2.3 PacBSD](#PacBSD)
-    *   [2.4 Parabola GNU/Linux-libre](#Parabola_GNU.2FLinux-libre)
-    *   [2.5 UBOS](#UBOS)
+    *   [2.1 Arch Hurd](#Arch_Hurd)
+    *   [2.2 Arch Linux ARM](#Arch_Linux_ARM)
+    *   [2.3 MSYS2](#MSYS2)
+    *   [2.4 PacBSD](#PacBSD)
+    *   [2.5 Parabola GNU/Linux-libre](#Parabola_GNU.2FLinux-libre)
+    *   [2.6 UBOS](#UBOS)
 *   [3 Meta distributions](#Meta_distributions)
     *   [3.1 Archiso](#Archiso)
 *   [4 Live distributions](#Live_distributions)
-    *   [4.1 Archboot](#Archboot)
-    *   [4.2 ArchEX](#ArchEX)
-    *   [4.3 DidJiX](#DidJiX)
-    *   [4.4 PoliArch](#PoliArch)
+    *   [4.1 alphaOS](#alphaOS)
+    *   [4.2 Archboot](#Archboot)
+    *   [4.3 ArchEX](#ArchEX)
+    *   [4.4 DidJiX](#DidJiX)
+    *   [4.5 PoliArch](#PoliArch)
 *   [5 Arch-influenced distributions](#Arch-influenced_distributions)
     *   [5.1 Alpine Linux](#Alpine_Linux)
     *   [5.2 Arquetype CRT](#Arquetype_CRT)
@@ -159,7 +161,7 @@ Ninja OS is a pre-configured Live OS Desktop based on Arch Linux and XFCE 4.
 
 ### TalkingArch
 
-TalkingArch is respin of the Arch Linux live CD/USB image modified to include speech and braille output for blind and visually impaired users.
+[TalkingArch](/index.php/TalkingArch "TalkingArch") is respin of the Arch Linux live CD/USB image modified to include speech and braille output for blind and visually impaired users.
 
 *   Homepage: [http://talkingarch.tk/](http://talkingarch.tk/)
 
@@ -172,6 +174,12 @@ Tux Hat Linux is a Lightweight AwesomeWM GNU/Linux LiveCD/DVD/USB ISO
 ## Counterpart distributions
 
 Includes distributions that are built around kernels or for architectures that are not supported by Arch Linux
+
+### Arch Hurd
+
+Arch Hurd is a port of Arch Linux to the GNU/Hurd platform.
+
+*   Homepage: [[1]](http://www.archhurd.org/)
 
 ### Arch Linux ARM
 
@@ -227,6 +235,14 @@ Web applications can be fully deployed at a virtual host with a single command. 
 *   Documentation: [Archiso - ArchWiki](/index.php/Archiso "Archiso")
 
 ## Live distributions
+
+### alphaOS
+
+alphaOS is a simple and minimalistic Linux distribution for the x86-64 architecture, built using Linux Live Kit set of scripts developed by Tomas M. It is based on Arch Linux and uses pacman as the default package manager. This operating system features highly configurable and lightweight Openbox window manager. Modular by design, alphaOS makes it easy to add desired functionality.
+
+*   Homepage: [http://alphaos.tuxfamily.org/](http://alphaos.tuxfamily.org/)
+*   Forums: [http://alphaos.tuxfamily.org/forum/](http://alphaos.tuxfamily.org/forum/)
+*   Screenshots: [forum thread](http://alphaos.tuxfamily.org/forum/viewtopic.php?f=13&t=705)
 
 ### Archboot
 

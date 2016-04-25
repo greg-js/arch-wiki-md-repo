@@ -41,7 +41,7 @@ Openbox es un gestor de ventanas ligero, altamente configurable y con amplia com
 
 ## Instalación
 
-[openbox](https://www.archlinux.org/packages/?name=openbox) está disponible desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Una vez instalado, pacman te indicará que copies los archivos `rc.xml`, `rc.xml`, `autostart` y `environment` de la configuración por defecto a `~/.config/openbox/`.
+[openbox](https://www.archlinux.org/packages/?name=openbox) está disponible desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Una vez instalado, pacman te indicará que copies los archivos `rc.xml`, `rc.xml`, `autostart` y `environment` de la configuración por defecto a `~/.config/openbox/`.
 
 **Note:** haz esto como un usuario normal, no como root.
 
@@ -59,7 +59,7 @@ Estos archivos son la base de tu configuración en openbox. Cada archivo apunta 
 
 	`menu.xml` 
 
-	Controla el menú de aplicaciones de Openbox que aparece al hacer click secundario en el escritorio. [ver la sección menú.](/index.php/Openbox_(Espa%C3%B1ol)#Gesti.C3.B3n_del_men.C3.BA "Openbox (Español)")
+	Controla el menú de aplicaciones de Openbox que aparece al hacer click secundario en el escritorio. [ver la sección menú.](#Gesti.C3.B3n_del_men.C3.BA)
 
 	`autostart` 
 
@@ -182,7 +182,7 @@ Para configurar manualmente Openbox, tienes que editar **~/.config/openbox/rc.xm
 
 ### ObConf
 
-[ObConf](http://icculus.org/openbox/index.php/ObConf:About) es una herramienta de interfaz gráfica para la configuración de Openbox, que puede establecer la mayor parte de las preferencias incluyendo los temas, los escritorios virtuales, las propiedades de ventana y los márgenes del escritorio. Puede ser instalado con el paquete [obconf](https://www.archlinux.org/packages/?name=obconf), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+[ObConf](http://icculus.org/openbox/index.php/ObConf:About) es una herramienta de interfaz gráfica para la configuración de Openbox, que puede establecer la mayor parte de las preferencias incluyendo los temas, los escritorios virtuales, las propiedades de ventana y los márgenes del escritorio. Puede ser instalado con el paquete [obconf](https://www.archlinux.org/packages/?name=obconf), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ObConf no sirve para configurar ni atajos de teclado, ni otras características avanzadas. Para hacer este tipo de modificaciones, debes editar `rc.xml`, alternativamente, puedes utilizar [obkey](https://aur.archlinux.org/packages/obkey/) desde [AUR](/index.php/AUR "AUR").
 
@@ -244,7 +244,7 @@ Esto le proporcionará un menú bastante completo. Ahora puede modificar el arch
 
 ### Obmenu
 
-Obmenu es un editor gráfico para el menu de Openbox. Para todos aquellos que no les gusta mucho enredar con el codigo fuente XML. ésta es probablemente la mejor opción para usted. Se instala mediante el paquete [obmenu](https://www.archlinux.org/packages/?name=obmenu), disponible en los [repositorios oficiales.](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)")
+Obmenu es un editor gráfico para el menu de Openbox. Para todos aquellos que no les gusta mucho enredar con el codigo fuente XML. ésta es probablemente la mejor opción para usted. Se instala mediante el paquete [obmenu](https://www.archlinux.org/packages/?name=obmenu), disponible en los [repositorios oficiales.](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 
 Una vez instalado, tan sólo debe ejecutar `obmenu` y añadir o quitar las aplicaciones que se desee.
 
@@ -333,7 +333,7 @@ Openbox también se inicia cualquier archivo *.desktop en la carpeta `/etc/xdg/a
 
 ## Temas y apariencia
 
-Ver Artículo Principal: [Openbox Themes and Apps (español)#Temas y Aparencia](/index.php/Openbox_Themes_and_Apps_(espa%C3%B1ol)#Temas_y_Aparencia "Openbox Themes and Apps (español)").
+Ver Artículo Principal: [Openbox Themes and Apps (Español)#Temas y Aparencia](/index.php/Openbox_Themes_and_Apps_(Espa%C3%B1ol)#Temas_y_Aparencia "Openbox Themes and Apps (Español)").
 
 ### Temas de Openbox
 
@@ -357,7 +357,7 @@ mas información sobre temas de personalización en [Openbox Themes and Apps (Es
 
 ### Programas recomendados
 
-Ver Artículo Principal: [Openbox Themes and Apps (español)#Programas Recomendados](/index.php/Openbox_Themes_and_Apps_(espa%C3%B1ol)#Programas_Recomendados "Openbox Themes and Apps (español)").
+Ver Artículo Principal: [Openbox Themes and Apps (Español)#Programas Recomendados](/index.php/Openbox_Themes_and_Apps_(Espa%C3%B1ol)#Programas_Recomendados "Openbox Themes and Apps (Español)").
 
 ### Obtener rápidamente valores xprop para ajustes individualizados
 

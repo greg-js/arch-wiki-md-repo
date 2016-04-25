@@ -1,4 +1,4 @@
-**mkinitcpio** è un generatore initramfs di ultima generazione [initramfs](http://it.wikipedia.org/wiki/Initrd).
+**mkinitcpio** è un generatore initramfs di ultima generazione [initramfs](https://it.wikipedia.org/wiki/Initrd).
 
 ## Contents
 
@@ -33,7 +33,7 @@ mkinitcpio è uno script bash usato per generare un iniziale ambiente ramdisk. D
 
 	*Il ramdisk iniziale è in sostanza un ambiente molto ridotto ("pre-userspace"), che carica vari moduli del kernel e imposta le operazioni preliminari necessarie prima di consegnare il controllo ad init. In questo modo è possibile avere, ad esempio, filesystem criptati e filesystem su software RAID. L'mkinitcpio permette inoltre estensioni con hooks personalizzati, rilevamento automatico in fase di runtime, e molte altre caratteristiche.*
 
-Tradizionalmente, il kernel è il responsabile del rilevamento dell'hardware e dei compiti di inizializzazione nelle prime fasi del [boot process](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)"), prima di montare il filesystem root e passare il controllo a `init`. Tuttavia, con il progredire della tecnologia, queste attività sono diventate sempre più complesse.
+Tradizionalmente, il kernel è il responsabile del rilevamento dell'hardware e dei compiti di inizializzazione nelle prime fasi del [boot process](/index.php/Arch_boot_process_(Italiano) "Arch boot process (Italiano)"), prima di montare il filesystem root e passare il controllo a `init`. Tuttavia, con il progredire della tecnologia, queste attività sono diventate sempre più complesse.
 
 Al giorno d'ggi, il filesystem root può essere installato su una vasta gamma di hardware, da SCSI a SATA a USB, monitorato da una serie di controller di unità di produttori diversi. Inoltre, il filesystem root può essere compresso o criptato, all'interno di un software RAID o di un gruppo di volumi logici. Il modo più semplice per gestire questa serie di complessità, è passare la gestione all'ambiente userspace: il ramdisk iniziale.
 
@@ -51,7 +51,7 @@ mkinitcpio è stato sviluppato dagli sviluppatori di Arch Linux e da contributi 
 
 ## Installazione
 
-Il pacchetto [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio) è disponibile nei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), ed è installato in modo predefinito in quanto incluso nel gruppo [base](https://www.archlinux.org/groups/x86_64/base/).
+Il pacchetto [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio) è disponibile nei [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), ed è installato in modo predefinito in quanto incluso nel gruppo [base](https://www.archlinux.org/groups/x86_64/base/).
 
 Gli utenti avanzati che preferiscono installare l'ultima versione in sviluppo di mkinitcpio da Git:
 
@@ -263,7 +263,7 @@ In generale questi non dovrebbero essere necessari, in quanto mkinitcpio farà i
 
 ## Personalizzazione del runtime
 
-Le opzioni di configurazione del runtime possono essere inviate a `init` e ad alcuni hooks per mezzo della riga di comando del kernel. I parametri della riga di comando del kernel sono spesso forniti dal bootloader. Le opzioni specificate sotto possono essere apportate alla linea di comando del kernel per alterare il comportamento predefinito. Consultare [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") e [Arch Boot Process](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)") per ulteriori informazioni.
+Le opzioni di configurazione del runtime possono essere inviate a `init` e ad alcuni hooks per mezzo della riga di comando del kernel. I parametri della riga di comando del kernel sono spesso forniti dal bootloader. Le opzioni specificate sotto possono essere apportate alla linea di comando del kernel per alterare il comportamento predefinito. Consultare [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") e [Arch Boot Process](/index.php/Arch_boot_process_(Italiano) "Arch boot process (Italiano)") per ulteriori informazioni.
 
 ### init
 
@@ -319,7 +319,7 @@ Se si configura tale parametro via udev, è consigliabile usare l'hook `mdadm_ud
 
 **Pacchetti richiesti:**
 
-La rete richiede che il pacchetto [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) sia installato dai [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+La rete richiede che il pacchetto [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) sia installato dai [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 **Parametri del Kernel:**
 

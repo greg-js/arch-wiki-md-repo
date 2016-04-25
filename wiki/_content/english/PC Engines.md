@@ -26,7 +26,7 @@ Assemble the device with care and read the [guide for the cooling system](http:/
 
 *   You need a serial (RS-232) connection to the apu to controll it.
 *   Add your user to uucp
-*   Install picocom or something similar, see [Working_with_the_serial_console#Making_Connections](/index.php/Working_with_the_serial_console#Making_Connections "Working with the serial console")
+*   Install picocom or something similar, see [Working with the serial console#Making Connections](/index.php/Working_with_the_serial_console#Making_Connections "Working with the serial console")
 *   Download and verify the [arch-dualboot.iso](https://www.archlinux.org/download/)
 
 ### Boot the system
@@ -93,6 +93,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
-Also you should read [Working_with_the_serial_console#Configure_console_access_on_the_target_machine](/index.php/Working_with_the_serial_console#Configure_console_access_on_the_target_machine "Working with the serial console")
+Also you should read [Working with the serial console#Configure console access on the target machine](/index.php/Working_with_the_serial_console#Configure_console_access_on_the_target_machine "Working with the serial console")
 
 Remember to remove the SD after you finished your setup.

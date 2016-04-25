@@ -22,7 +22,7 @@ En este artículo se describe, además, cómo configurar y ejecutar el demonio N
 
 ## Instalación
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [ntp](https://www.archlinux.org/packages/?name=ntp), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [ntp](https://www.archlinux.org/packages/?name=ntp), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Configuración
 
@@ -198,7 +198,7 @@ Las columnas delay, offset y jitter deben mostrar una fluctuación distinta de c
 
 **Nota:** ntpd debe seguir funcionando cuando la red no funciona, si el demonio hwclock está desactivado, por lo que no es necesario utilizar este último.
 
-*ntpd* puede ser puesto up/down junto con una conexión de red mediante el uso de los [scripts de NetworkManager dispatcher](/index.php/NetworkManager_(Espa%C3%B1ol)#Servicios_de_red_con_NetworkManager_dispatcher "NetworkManager (Español)"). Puede ser necesario instalar [networkmanager-dispatcher-ntpd](https://www.archlinux.org/packages/?name=networkmanager-dispatcher-ntpd) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+*ntpd* puede ser puesto up/down junto con una conexión de red mediante el uso de los [scripts de NetworkManager dispatcher](/index.php/NetworkManager_(Espa%C3%B1ol)#Servicios_de_red_con_NetworkManager_dispatcher "NetworkManager (Español)"). Puede ser necesario instalar [networkmanager-dispatcher-ntpd](https://www.archlinux.org/packages/?name=networkmanager-dispatcher-ntpd) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ### Ejecutar en un entorno chroot
 

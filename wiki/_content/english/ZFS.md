@@ -59,17 +59,15 @@ ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://
 
 ### General
 
-Install [zfs-git](https://aur.archlinux.org/packages/zfs-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repository. This package has [zfs-utils-git](https://aur.archlinux.org/packages/zfs-utils-git/) and [spl-git](https://aur.archlinux.org/packages/spl-git/) as a dependency, which in turn has [spl-utils-git](https://aur.archlinux.org/packages/spl-utils-git/) as dependency. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
+Install [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository. This package has [zfs-utils-linux-git](https://aur.archlinux.org/packages/zfs-utils-linux-git/) and [spl-linux-git](https://aur.archlinux.org/packages/spl-linux-git/) as a dependency, which in turn has [spl-utils-linux-git](https://aur.archlinux.org/packages/spl-utils-linux-git/) as dependency. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
 
-**Note:** The zfs-git package replaces the original zfs package from [AUR](/index.php/AUR "AUR"). ZFSonLinux.org is slow to make stable releases and kernel API changes broke stable builds of ZFSonLinux for Arch. Changes submitted to the master branch of the ZFSonLinux repository are regression tested and therefore considered stable.
+For users that desire ZFS builds from stable releases, [zfs-linux-lts](https://aur.archlinux.org/packages/zfs-linux-lts/) is available from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository. A script to build ZFS and its dependencies automatically can be found [here](#Automated_build_script).
 
-For users that desire ZFS builds from stable releases, [zfs-lts](https://aur.archlinux.org/packages/zfs-lts/) is available from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repository. A script to build ZFS and its dependencies automatically can be found [here](#Automated_build_script).
-
-**Warning:** The ZFS and SPL kernel modules are tied to a specific kernel version. It would not be possible to apply any kernel updates until updated packages are uploaded to AUR or the [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repository.
+**Warning:** The ZFS and SPL kernel modules are tied to a specific kernel version. It would not be possible to apply any kernel updates until updated packages are uploaded to AUR or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
 
 Test the installation by issuing `zpool status` on the command line. If an "insmod" error is produced, try `depmod -a`.
 
-**Tip:** You can [downgrade](/index.php/Downgrade "Downgrade") your linux version to the one from [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repo if your current kenel is newer.
+**Tip:** You can [downgrade](/index.php/Downgrade "Downgrade") your linux version to the one from [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repo if your current kenel is newer.
 
 ### Root on ZFS
 
@@ -737,17 +735,17 @@ errors: No known data errors
 
 Follow the [Archiso](/index.php/Archiso "Archiso") steps for creating a fully functional Arch Linux live CD/DVD/USB image.
 
-Enable the [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repository:
+Enable the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository:
 
  `~/archlive/pacman.conf` 
 ```
 ...
-[demz-repo-core]
-Server = http://demizerone.com/$repo/$arch
+[archzfs]
+Server = http://archzfs.com/$repo/x86_64
 
 ```
 
-Add the `archzfs-git` group to the list of packages to be installed:
+Add the `archzfs-linux` group to the list of packages to be installed:
 
  `~/archlive/packages.both` 
 ```
@@ -805,7 +803,7 @@ For example to have an encrypted home: (the two passwords, encryption and login,
 To get into the ZFS filesystem from live system for maintenance, there are two options:
 
 1.  Build custom archiso with ZFS as described in [#Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso).
-2.  Boot the latest official archiso and bring up the network. Then enable [demz-repo-archiso](/index.php/Unofficial_user_repositories#demz-repo-archiso "Unofficial user repositories") repository inside the live system as usual, sync the pacman package database and install the *archzfs-git* package.
+2.  Boot the latest official archiso and bring up the network. Then enable [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository inside the live system as usual, sync the pacman package database and install the *archzfs-archiso-linux* package.
 
 To start the recovery, load the ZFS kernel modules:
 

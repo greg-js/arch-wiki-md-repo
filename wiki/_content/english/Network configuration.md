@@ -121,6 +121,8 @@ To temporarily set the hostname (until reboot), use *hostname* from [inetutils](
 
 ```
 
+To set the "pretty" hostname and other machine metadata, see the manpage for `machine-info`.
+
 ## Device driver
 
 ### Check the status

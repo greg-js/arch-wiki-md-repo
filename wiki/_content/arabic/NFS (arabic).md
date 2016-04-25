@@ -127,7 +127,7 @@ servername:/music   /mountpoint/on/client   nfs4   rsize=8192,wsize=8192,timeo=1
 
 #### استخدام autofs
 
-استخدام [autofs](/index.php/Autofs "Autofs") مفيد للحواسب التي تريد الاتصال عن طريق NFS; ويمكن أن تكون خوادم أو عملاء أيضا. السبب في هذه الطريقة هو أفضلية بعضها على بعض أنه عند إطفاء الخادم ، فلن يحصل العميل على أخطاء عن عدم قدرته الوصول إلى مشاركات NFS. انظر [autofs#NFS Network mounts](/index.php/Autofs#NFS_Network_mounts "Autofs") لمزيد من التفاصيل.
+استخدام [autofs](/index.php/Autofs "Autofs") مفيد للحواسب التي تريد الاتصال عن طريق NFS; ويمكن أن تكون خوادم أو عملاء أيضا. السبب في هذه الطريقة هو أفضلية بعضها على بعض أنه عند إطفاء الخادم ، فلن يحصل العميل على أخطاء عن عدم قدرته الوصول إلى مشاركات NFS. انظر [autofs#NFS network mounts](/index.php/Autofs#NFS_network_mounts "Autofs") لمزيد من التفاصيل.
 
 #### التوصيل من وندوز
 

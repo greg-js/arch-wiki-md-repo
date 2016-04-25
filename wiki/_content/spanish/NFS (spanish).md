@@ -172,7 +172,7 @@ Algunas opciones de montaje adicionales que puede tener en cuenta para incluir s
 
 ##### Uso de autofs
 
-El uso de [autofs](/index.php/Autofs "Autofs") es útil cuando varías máquinas se quieren conectar a través de NFS; ya sean clientes o servidores. La razón por la cual este método es perferible a los más actuales es que si el servidor se apaga, el cliente no mostrará mensajes de error al ser incapaz de encontrar los archivos compartidos. Revise [autofs#NFS Network mounts](/index.php/Autofs#NFS_Network_mounts "Autofs") para obtener mayor información.
+El uso de [autofs](/index.php/Autofs "Autofs") es útil cuando varías máquinas se quieren conectar a través de NFS; ya sean clientes o servidores. La razón por la cual este método es perferible a los más actuales es que si el servidor se apaga, el cliente no mostrará mensajes de error al ser incapaz de encontrar los archivos compartidos. Revise [autofs#NFS network mounts](/index.php/Autofs#NFS_network_mounts "Autofs") para obtener mayor información.
 
 #### Montaje en Windows
 
@@ -262,7 +262,7 @@ Cree la entrada cron de root para ejecutar `auto_share` en todo momento:
 
 ```
 
-Un archivo de unidad de systemd también puede ser utilizado para montar los recursos compartidos NFS en el arranque. El archivo de unidad no es necesario si NetworkManager está instalado y configurado en el sistema cliente. Véase [#NetworkManager dispatch](#NetworkManager_dispatch).
+Un archivo de unidad de systemd también puede ser utilizado para montar los recursos compartidos NFS en el arranque. El archivo de unidad no es necesario si NetworkManager está instalado y configurado en el sistema cliente. Véase [#NetworkManager dispatcher](#NetworkManager_dispatcher).
 
  `/etc/systemd/system/auto_share.service` 
 ```

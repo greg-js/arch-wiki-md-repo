@@ -154,7 +154,7 @@ See [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
 
 E515dw
 
- | Install Dell's driver. | Download [on DELL download site](http://downloads.dell.com/FOLDER03040853M/1/Printer_E515dw_Driver_Dell_A00_LINUX.zip). You will need to install [dpkg](https://aur.archlinux.org/packages/dpkg/), and then install unpacked deb package using following command: `sudo dpkg --force-architecture -i e515dwcupswrapper-3.2.0-1.i386.deb`. The driver works on x64 platform, not only i386 |
+ | Install [Dell's driver](http://downloads.dell.com/FOLDER03040853M/1/Printer_E515dw_Driver_Dell_A00_LINUX.zip). | Both *e515dwcupswrapper-3.2.0-1.i386.deb* and *e515dwlpr-3.2.0-1.i386.deb* need to be installed. You could either write a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), use [deptap](https://aur.archlinux.org/packages/deptap/), or use [dpkg](https://aur.archlinux.org/packages/dpkg/) (using dpkg is not recommended as the files will not be managed by [pacman](/index.php/Pacman "Pacman")). The driver works on both the x86_64 and i386 platforms, but may require [multilib](/index.php/Multilib "Multilib"). |
 | Printer | Driver/filter | Notes |
 
 ### Custom drivers

@@ -1,6 +1,6 @@
 Questo articolo spiega come installare e configurare l' **O**pen **S**ound **S**ystem (OSS) sul tuo computer.
 
-L' [Open Sound System](http://it.wikipedia.org/wiki/Open_Sound_System) è un'architettura audio per i sistemi derivati da UNIX e POSIX-compatibili. La versione 3 di OSS é stata la versione originale usata per il sistema audio di Linux ed è inserita nel kernel ma nel 2002 fu rimpiazzata da ALSA quando la versione 4 di OSS divenne software proprietario. OSSv4 è ritornata software libero nel 2007 quando [4Front Technologies](http://www.opensound.com/) ha rilasciato il suo codice sorgente con licenza GPL.
+L' [Open Sound System](https://it.wikipedia.org/wiki/Open_Sound_System) è un'architettura audio per i sistemi derivati da UNIX e POSIX-compatibili. La versione 3 di OSS é stata la versione originale usata per il sistema audio di Linux ed è inserita nel kernel ma nel 2002 fu rimpiazzata da ALSA quando la versione 4 di OSS divenne software proprietario. OSSv4 è ritornata software libero nel 2007 quando [4Front Technologies](http://www.opensound.com/) ha rilasciato il suo codice sorgente con licenza GPL.
 
 ## Contents
 

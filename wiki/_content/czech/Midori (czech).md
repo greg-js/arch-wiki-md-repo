@@ -26,7 +26,7 @@ Mezi jeho hlavní přednosti patří:
 
 ## Instalace
 
-GTK+ 2 verze prohlížeče Midori může být [nainstalována](/index.php/Pacman "Pacman") pomocí balíčku [midori](https://www.archlinux.org/packages/?name=midori), dostupného v [Official Repositories (Česky)](/index.php/Official_Repositories_(%C4%8Cesky) "Official Repositories (Česky)").
+GTK+ 2 verze prohlížeče Midori může být [nainstalována](/index.php/Pacman "Pacman") pomocí balíčku [midori](https://www.archlinux.org/packages/?name=midori), dostupného v [Official repositories (Česky)](/index.php/Official_repositories_(%C4%8Cesky) "Official repositories (Česky)").
 
 Vývojové verze jsou k dispozici v uživatelském repozitáři [AUR](/index.php/AUR "AUR"):
 

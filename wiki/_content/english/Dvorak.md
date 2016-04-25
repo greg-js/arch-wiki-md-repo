@@ -46,7 +46,3 @@ In Xorg, specify `es` as `XkbLayout` and `dvorak` as `XkbVariant`.
 
 *   [kdeedu-ktouch](https://www.archlinux.org/packages/?name=kdeedu-ktouch) (includes Dvorak lessons in English, French, German & Spanish)
 *   [klavaro](https://www.archlinux.org/packages/?name=klavaro) Dvorak lessons: (BG; BR; DE_neo2; EO; FR; FR_bépo; TR; UK; US; US_BR; US_ES; US_SE)
-
-	WEB
-
-*   [http://typeyourway.com/](http://typeyourway.com/) - *Your keyboard, Your Words, Your Rules, Learn to Type Your Way*

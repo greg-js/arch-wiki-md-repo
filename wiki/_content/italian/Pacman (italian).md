@@ -84,7 +84,7 @@ NoExtract=usr/lib/systemd/system/*
 
 ### Repository
 
-In questa sezione si può definire quali [repository](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") usare, come specificato in `/etc/pacman.conf`. Possono essere specificati direttamente qui oppure aggiunti da un altro file (ad esempio `/etc/pacman.d/mirrorlist`), rendendo così necessario mantenere una sola lista. Consultare [questo articolo](/index.php/Mirrors_(Italiano) "Mirrors (Italiano)") per la configurazione dei mirror.
+In questa sezione si può definire quali [repository](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") usare, come specificato in `/etc/pacman.conf`. Possono essere specificati direttamente qui oppure aggiunti da un altro file (ad esempio `/etc/pacman.d/mirrorlist`), rendendo così necessario mantenere una sola lista. Consultare [questo articolo](/index.php/Mirrors_(Italiano) "Mirrors (Italiano)") per la configurazione dei mirror.
 
  `/etc/pacman.conf` 
 ```
@@ -419,7 +419,7 @@ La cosa più importante da ricordare è quella di non aggiornare "alla cieca" il
 
 Se l'aggiornamento di un pacchetto già prevede dei cambiamenti o è noto che potrebbe causare dei problemi, i responsabili del pacchetto faranno in modo che pacman visualizzi un messaggio appropriato quando viene aggiornato. Se l'aggiornamento non va a buon fine, controllare il log di pacman per riscontrare eventuali messaggi e procedere ad una prima analisi del problema (`/var/log/pacman.log`).
 
-A questo punto,**solo dopo essersi assicurati che non ci sono informazioni disponibili tramite pacman, non ci sono notizie relative su [https://www.archlinux.org/](https://www.archlinux.org/), e non ci sono messaggi nel forum inerenti al proprio problema**, si dovrebbe prendere in considerazione di cercare aiuto sul forum, su [IRC](/index.php/IRC_Channel "IRC Channel") oppure optare per un [downgrade del pacchetto](/index.php/Downgrading_Packages_(Italiano) "Downgrading Packages (Italiano)").
+A questo punto,**solo dopo essersi assicurati che non ci sono informazioni disponibili tramite pacman, non ci sono notizie relative su [https://www.archlinux.org/](https://www.archlinux.org/), e non ci sono messaggi nel forum inerenti al proprio problema**, si dovrebbe prendere in considerazione di cercare aiuto sul forum, su [IRC](/index.php/IRC_channel "IRC channel") oppure optare per un [downgrade del pacchetto](/index.php/Downgrading_packages_(Italiano) "Downgrading packages (Italiano)").
 
 ### So che un aggiornamento del pacchetto ABC è stato rilasciato, ma pacman mi dice che il mio sistema è aggiornato!
 

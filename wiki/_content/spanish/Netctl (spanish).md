@@ -22,7 +22,7 @@
 
 ## Instalación
 
-El paquete [netctl](https://www.archlinux.org/packages/?name=netctl) está disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). netctl sustituirá a [netcfg](https://aur.archlinux.org/packages/netcfg/) una vez se instale en el equipo.
+El paquete [netctl](https://www.archlinux.org/packages/?name=netctl) está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). netctl sustituirá a [netcfg](https://aur.archlinux.org/packages/netcfg/) una vez se instale en el equipo.
 
 [netctl](https://www.archlinux.org/packages/?name=netctl) y [netcfg](https://aur.archlinux.org/packages/netcfg/) son paquetes incompatibles y conflictivos. Si los perfiles de las conexiones de red no están correctamente configurados, lo más probable es que el usuario se quede sin conexión a internet después de instalar **netctl**.
 
@@ -161,7 +161,7 @@ Los usuarios que **no** quieran tener sus contraseñas guardadas en *texto plano
 
 Para ambos métodos es recomendable el uso de la orden `chmod 600 /etc/netctl/<config_file>`, a fin de evitar el acceso a la contraseña por parte de otros usuarios.
 
-A continuación, se generará la PSK con encriptación de 256-bits usando [wpa_passphrase](/index.php/WPA_supplicant#Configuration_file "WPA supplicant"):
+A continuación, se generará la PSK con encriptación de 256-bits usando [wpa_passphrase](/index.php/WPA_supplicant#Configuration "WPA supplicant"):
 
  `$ wpa_passphrase *your_essid* *passphrase*` 
 ```

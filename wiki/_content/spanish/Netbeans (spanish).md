@@ -1,6 +1,6 @@
 **NetBeans** es un entorno de desarrollo integrado (**IDE** por sus siglas en inglés). Permite desarrollar en Java, JavaScript, PHP, Python, Ruby, Groovy, C/C++, Scala, Clojure, etc.
 
-De [Wikipedia](http://es.wikipedia.org/wiki/NetBeans):
+De [Wikipedia](https://es.wikipedia.org/wiki/NetBeans):
 
 «**NetBeans** es un entorno de desarrollo integrado libre, hecho principalmente para el lenguaje de programación **Java**. Existe además un número importante de módulos para extenderlo. **NetBeans IDE** es un producto libre y gratuito sin restricciones de uso.»
 
@@ -94,4 +94,4 @@ Para más información consultar este [hilo](https://bbs.archlinux.org/viewtopic
 ## Véase también
 
 *   [Pagina oficial de NetBeans](http://www.netbeans.org)
-*   [Articulo de NetBeans en la Wikipedia](http://es.wikipedia.org/wiki/NetBeans)
+*   [Articulo de NetBeans en la Wikipedia](https://es.wikipedia.org/wiki/NetBeans)

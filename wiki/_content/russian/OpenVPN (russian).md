@@ -78,7 +78,7 @@ OpenVPN требует поддержки TUN/TAP. Удостоверьтесь 
 
 Для подключения к VPN, предоставленной третьей стороной, большинство текста ниже скорее всего может не пригодиться. Используйте сертификаты и инструкции, предоставленные поставщиком, например см.: [Airvpn](/index.php/Airvpn "Airvpn").
 
-**Note:** To connect to servers of the most VPN providers that offer free service, one can plainly use [PPTP Server](/index.php/PPTP_Server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PPTP Server (Русский)") since most offers only this protocol.
+**Note:** To connect to servers of the most VPN providers that offer free service, one can plainly use [PPTP Server](/index.php/PPTP_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PPTP server (Русский)") since most offers only this protocol.
 
 ## Инфраструктура открытых ключей
 

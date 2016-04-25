@@ -158,7 +158,7 @@ $ pacman-key -f *keyid*
 
 ## 问题解决
 
-**警告:** Pacman-key 依赖于 [Time_(简体中文)](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Time (简体中文)"). 如果系统时间是错误的，将会获得一个报错：
+**警告:** Pacman-key 依赖于 [Time (简体中文)](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Time (简体中文)"). 如果系统时间是错误的，将会获得一个报错：
 ```
 error: PackageName: signature from "User <email@archlinux.org>" is invalid
 error: failed to commit transaction (invalid or corrupted package (PGP signature))

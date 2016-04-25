@@ -785,7 +785,7 @@ WantedBy=multi-user.target
 
 Нет необходимости задавать расположение по умолчанию, nginx по умолчанию загружает `-c /etc/nginx/nginx.conf`, хотя вообще это хорошая идея.
 
-Также можно запускать **только** `ExecStart` как chroot с параметром `RootDirectoryStartOnly` заданным как `yes` [[man systemd service](http://www.freedesktop.org/software/systemd/man/systemd.service.html)] или запустить его до точки монтирования в качестве эффективного или [пути systemd](http://www.freedesktop.org/software/systemd/man/systemd.path.html).
+Также можно запускать **только** `ExecStart` как chroot с параметром `RootDirectoryStartOnly` заданным как `yes` [man systemd service](http://www.freedesktop.org/software/systemd/man/systemd.service.html) или запустить его до точки монтирования в качестве эффективного или [пути systemd](http://www.freedesktop.org/software/systemd/man/systemd.path.html).
 
  `/etc/systemd/system/nginx.path` 
 ```

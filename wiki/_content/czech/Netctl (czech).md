@@ -69,7 +69,7 @@ If you are using only one profile, once that profile is started successfully, it
 
 This will create and enable a [systemd](/index.php/Systemd "Systemd") service that will start when the computer boots.
 
-**Note:** The connection to a dhcp-server is only established if the interface is connected and up at boot time (or when the service starts). In order to have an automatic connection established on cable connect, proceed to [#Multiple Profiles](#Multiple_Profiles).
+**Note:** The connection to a dhcp-server is only established if the interface is connected and up at boot time (or when the service starts). In order to have an automatic connection established on cable connect, proceed to [#Multiple profiles](#Multiple_profiles).
 
 #### Multiple profiles
 
@@ -127,7 +127,7 @@ Users *not* wishing to have the passphrase to their wireless network stored in *
 
 For both methods it is suggested to `chmod 600 /etc/netctl/<config_file>` to prevent user access to the password.
 
-Calculate your 256-bit PSK using [wpa_passphrase](/index.php/WPA_supplicant#Configuration_file "WPA supplicant"):
+Calculate your 256-bit PSK using [wpa_passphrase](/index.php/WPA_supplicant#Configuration "WPA supplicant"):
 
  `Usage: wpa_passphrase [ssid] [passphrase]`  `$ wpa_passphrase archlinux freenode` 
 

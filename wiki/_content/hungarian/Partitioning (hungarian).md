@@ -2,7 +2,7 @@ Egy merevlemez *particionálása* lehetővé teszi a felhasználható hely logik
 
 Egy merevlemez egyetlen partícióvá is alakítható, vagy a felhasználható tárhely akár több partícióra is osztható. Bizonyos helyzetek megkövetelik több partíció létrehozását: a kettős-, vagy multiboot, vagy épp a [cserehely](/index.php/Swap_(Magyar) "Swap (Magyar)") partíció használata. Más esetekben a particionálás egyszerűen csak az adatok logikai "elszigetelésének" eszköze, mint például amikor különböző partíciókat készítünk hang-, és videó állományainknak. Alább részletesen beszélünk majd a leggyakoribb partíciós sémákról.
 
-Minden partíciót valamilyen típusú [fájlrendszerre](/index.php/File_Systems_(Magyar) "File Systems (Magyar)") kell formázni, mielőtt használni lehet.
+Minden partíciót valamilyen típusú [fájlrendszerre](/index.php/File_systems_(Magyar) "File systems (Magyar)") kell formázni, mielőtt használni lehet.
 
 ## Contents
 

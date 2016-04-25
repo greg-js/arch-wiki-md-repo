@@ -2,61 +2,48 @@ This is list of inactive Arch derivatives, sorted by latest activity from a proj
 
 ## Contents
 
-*   [1 2015](#2015)
-    *   [1.1 alphaOS](#alphaOS)
-*   [2 2014](#2014)
-    *   [2.1 Arch Linux MIPS](#Arch_Linux_MIPS)
-    *   [2.2 Mesk Linux](#Mesk_Linux)
-*   [3 2013](#2013)
-    *   [3.1 Arch Hurd](#Arch_Hurd)
-    *   [3.2 CDN Linux](#CDN_Linux)
-*   [4 2012](#2012)
-    *   [4.1 Arch Linux PPC](#Arch_Linux_PPC)
-    *   [4.2 ArchServer](#ArchServer)
-    *   [4.3 ConnochaetOS](#ConnochaetOS)
-    *   [4.4 Kahel OS](#Kahel_OS)
-    *   [4.5 LDR](#LDR)
-    *   [4.6 Nosonja](#Nosonja)
-*   [5 2011](#2011)
-    *   [5.1 archlive](#archlive)
-    *   [5.2 CTKArch](#CTKArch)
-    *   [5.3 Elegance](#Elegance)
-    *   [5.4 live.linuX-gamers.net](#live.linuX-gamers.net)
-*   [6 2010](#2010)
-    *   [6.1 ArchPwn](#ArchPwn)
-    *   [6.2 Chaox](#Chaox)
-    *   [6.3 uArch](#uArch)
-    *   [6.4 UKnow4Kids](#UKnow4Kids)
-    *   [6.5 Uzume Linux](#Uzume_Linux)
-*   [7 2009](#2009)
-    *   [7.1 archlive-i586](#archlive-i586)
-    *   [7.2 Firefly Linux](#Firefly_Linux)
-    *   [7.3 Shift Linux](#Shift_Linux)
-    *   [7.4 Maryan Linux 2](#Maryan_Linux_2)
-*   [8 2008](#2008)
-    *   [8.1 Arch Linux Modified](#Arch_Linux_Modified)
-    *   [8.2 Archie](#Archie)
-    *   [8.3 FaunOS](#FaunOS)
-*   [9 2007](#2007)
-    *   [9.1 March Linux](#March_Linux)
-*   [10 2006](#2006)
-    *   [10.1 Aegis Project](#Aegis_Project)
-    *   [10.2 Lowarch](#Lowarch)
-    *   [10.3 Minimax](#Minimax)
-*   [11 2005](#2005)
-    *   [11.1 Underground Desktop](#Underground_Desktop)
-*   [12 2004](#2004)
-    *   [12.1 The Arch Linux Embedded Project](#The_Arch_Linux_Embedded_Project)
-
-## 2015
-
-### alphaOS
-
-alphaOS has been discontinued as of 18.01.2015 [[1]](http://alphaos.tuxfamily.org/forum/viewtopic.php?f=4&p=3633&sid=87e9878c4807208e206c8a27783a044b#p3630). alphaOS is a simple and minimalistic Linux distribution for the x86-64 architecture, built using Linux Live Kit set of scripts developed by Tomas M. It is based on Arch Linux and uses pacman as the default package manager. This operating system features highly configurable and lightweight Openbox window manager. Modular by design, alphaOS makes it easy to add desired functionality.
-
-*   Homepage: [http://alphaos.tuxfamily.org/](http://alphaos.tuxfamily.org/)
-*   Forums: [http://alphaos.tuxfamily.org/forum/](http://alphaos.tuxfamily.org/forum/)
-*   Screenshots: [forum thread](http://alphaos.tuxfamily.org/forum/viewtopic.php?f=13&t=705)
+*   [1 2014](#2014)
+    *   [1.1 Arch Linux MIPS](#Arch_Linux_MIPS)
+    *   [1.2 Mesk Linux](#Mesk_Linux)
+*   [2 2013](#2013)
+    *   [2.1 CDN Linux](#CDN_Linux)
+*   [3 2012](#2012)
+    *   [3.1 Arch Linux PPC](#Arch_Linux_PPC)
+    *   [3.2 ArchServer](#ArchServer)
+    *   [3.3 ConnochaetOS](#ConnochaetOS)
+    *   [3.4 Kahel OS](#Kahel_OS)
+    *   [3.5 LDR](#LDR)
+    *   [3.6 Nosonja](#Nosonja)
+*   [4 2011](#2011)
+    *   [4.1 archlive](#archlive)
+    *   [4.2 CTKArch](#CTKArch)
+    *   [4.3 Elegance](#Elegance)
+    *   [4.4 live.linuX-gamers.net](#live.linuX-gamers.net)
+*   [5 2010](#2010)
+    *   [5.1 ArchPwn](#ArchPwn)
+    *   [5.2 Chaox](#Chaox)
+    *   [5.3 uArch](#uArch)
+    *   [5.4 UKnow4Kids](#UKnow4Kids)
+    *   [5.5 Uzume Linux](#Uzume_Linux)
+*   [6 2009](#2009)
+    *   [6.1 archlive-i586](#archlive-i586)
+    *   [6.2 Firefly Linux](#Firefly_Linux)
+    *   [6.3 Shift Linux](#Shift_Linux)
+    *   [6.4 Maryan Linux 2](#Maryan_Linux_2)
+*   [7 2008](#2008)
+    *   [7.1 Arch Linux Modified](#Arch_Linux_Modified)
+    *   [7.2 Archie](#Archie)
+    *   [7.3 FaunOS](#FaunOS)
+*   [8 2007](#2007)
+    *   [8.1 March Linux](#March_Linux)
+*   [9 2006](#2006)
+    *   [9.1 Aegis Project](#Aegis_Project)
+    *   [9.2 Lowarch](#Lowarch)
+    *   [9.3 Minimax](#Minimax)
+*   [10 2005](#2005)
+    *   [10.1 Underground Desktop](#Underground_Desktop)
+*   [11 2004](#2004)
+    *   [11.1 The Arch Linux Embedded Project](#The_Arch_Linux_Embedded_Project)
 
 ## 2014
 
@@ -73,12 +60,6 @@ Mesk Linux is a project aiming at showcasing Arch to Arabic-speaking users . The
 *   Homepage at Rollback Machine: [http://mesklinux.org/](http://web.archive.org/web/20141217163857/http://mesklinux.org/)
 
 ## 2013
-
-### Arch Hurd
-
-Arch Hurd is a port of Arch Linux to the GNU/Hurd platform.
-
-*   Homepage at Rollback Machine: [http://www.archhurd.org/](http://web.archive.org/web/20140815205847/http://www.archhurd.org/)
 
 ### CDN Linux
 
