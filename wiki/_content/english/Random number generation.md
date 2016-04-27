@@ -14,7 +14,7 @@ Generation of random data is crucial for several applications like making crypto
 
 ## Kernel built-in RNG
 
-The Linux kernel's built-in RNGs [/dev/{u}random](https://en.wikipedia.org/wiki//dev/random "wikipedia:/dev/random") are highly commended for producing reliable random data providing the same security level that is used for the creation of cryptographic keys. The random number generator gathers environmental noise from device drivers and other sources into an entropy pool.
+The Linux kernel's built-in RNGs [/dev/{u}random](https://en.wikipedia.org/wiki//dev/random "wikipedia:/dev/random") are highly acclaimed for producing reliable random data providing the same security level that is used for the creation of cryptographic keys. The random number generator gathers environmental noise from device drivers and other sources into an entropy pool.
 
 Note that the `man random` command will misdirect to the library function manpage [random(3)](http://man7.org/linux/man-pages/man3/random.3.html) while for information about the `/dev/random` device files you should run `man 4 random` to read [random(4)](http://man7.org/linux/man-pages/man4/random.4.html).
 

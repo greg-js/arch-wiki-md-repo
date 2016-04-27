@@ -7,6 +7,7 @@
 *   [3 Generating a secret key file](#Generating_a_secret_key_file)
 *   [4 Setting up your OTP-generator](#Setting_up_your_OTP-generator)
 *   [5 Testing](#Testing)
+*   [6 Desktop logins](#Desktop_logins)
 
 ## Installation
 
@@ -114,5 +115,14 @@ SSH to your host from another machine and/or from another terminal window:
  Verification code: <generated/backup-code>
  Password: <password>
  $
+
+```
+
+## Desktop logins
+
+The Google Authenticator PAM plugin can also be used for console logins and with GDM. Just add the following to `/etc/pam.d/login` or the `/etc/pam.d/gdm-password` file:
+
+```
+   auth required pam_google_authenticator.so
 
 ```

@@ -26,12 +26,11 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
     *   [5.1 Version 1.6](#Version_1.6)
     *   [5.2 Consistent naming of Arduino devices](#Consistent_naming_of_Arduino_devices)
     *   [5.3 Error opening serial port](#Error_opening_serial_port)
-    *   [5.4 avrdude Permission denied error](#avrdude_Permission_denied_error)
-    *   [5.5 Missing twi.o](#Missing_twi.o)
-    *   [5.6 Working with Uno/Mega2560](#Working_with_Uno.2FMega2560)
-    *   [5.7 Error compiling](#Error_compiling)
-    *   [5.8 avrdude missing libtinfo.so.5](#avrdude_missing_libtinfo.so.5)
-    *   [5.9 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
+    *   [5.4 Missing twi.o](#Missing_twi.o)
+    *   [5.5 Working with Uno/Mega2560](#Working_with_Uno.2FMega2560)
+    *   [5.6 Error compiling](#Error_compiling)
+    *   [5.7 avrdude missing libtinfo.so.5](#avrdude_missing_libtinfo.so.5)
+    *   [5.8 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -292,20 +291,11 @@ udevadm trigger
 
 ```
 
+Common `idVendor`/`idProduct` pairs can be found in `hardware/arduino/avr/boards.txt` in the distribution package. Note that some of them (notably [FTDI](https://en.wikipedia.org/wiki/FTDI) ones) are not unique to the Arduino platform. Using `serial` attribute is a good way to distinguish between various devices.
+
 ### Error opening serial port
 
 You may see the serial port initially when the IDE starts, but the TX/RX leds do nothing when uploading. You may have previously changed the baudrate in the serial monitor to something it does not like. Edit ~/.arduino/preferences.txt so that serial.debug_rate is a different speed, like 115200.
-
-### avrdude Permission denied error
-
-**Warning:** `avrdude` hasn't been designed to be run with root privileges. Consider this solution as a last resort.
-
-If you try to upload code to your Arduino, have the correct udev rules in place and still get an error like: `avrdude: ser_open(): can't open device "/dev/ACM0": Permission denied`, execute `avrdude` with root permissions:
-
-```
-sudo /usr/bin/avrdude
-
-```
 
 ### Missing twi.o
 

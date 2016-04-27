@@ -4,6 +4,9 @@ Hyper-V is a hypervisor that is included with some versions of Microsoft Windows
 
 *   [1 Installation](#Installation)
 *   [2 Network configuration](#Network_configuration)
+    *   [2.1 Set up a virtual switch](#Set_up_a_virtual_switch)
+        *   [2.1.1 External switch](#External_switch)
+        *   [2.1.2 Internal switch](#Internal_switch)
 *   [3 Virtual machine creation](#Virtual_machine_creation)
 *   [4 Virtual machine configuration](#Virtual_machine_configuration)
 *   [5 Arch installation](#Arch_installation)
@@ -13,7 +16,7 @@ Hyper-V is a hypervisor that is included with some versions of Microsoft Windows
 
 ## Installation
 
-Hyper-V is included with Windows 8 and 8.1\. It can be enabled from Control Panel at "Turn Windows features on or off" under "Programs and Features". Activate the "Hyper-V" checkbox, apply the change, and follow the directions on screen.
+Hyper-V is included with Windows since Windows Server 2008 as well as Windows 8, 8.1 and 10 in the Pro versions. It can be enabled from Control Panel at "Turn Windows features on or off" under "Programs and Features". Activate the "Hyper-V" checkbox, apply the change, and follow the directions on screen.
 
 ## Network configuration
 
@@ -24,7 +27,17 @@ First, you must configure a new virtual switch so that your virtual machine will
 
 ```
 
-In the right sidebar, select "Virtual Switch Manager...". In the left sidebar of the dialog that opens, choose "New virtual network switch". Under "What type of virtual switch do you want to create?", select "External", then "Create Virtual Switch". You will be prompted about network disruption; continue and your network will be briefly disconnected as the switch is configured.
+### Set up a virtual switch
+
+In order to connect your virtual machine to an existing network, either use an internal or external network switch. An external switch will assign the VM an IP address, and will give it total external access on the network, which not be possible on some networks with high security; the host machine will lose internet access as a result. An internal switch can be used for simple internet access.
+
+#### External switch
+
+To create an external switch, in the right sidebar, select "Virtual Switch Manager...". In the left sidebar of the dialog that opens, choose "New virtual network switch". Under "What type of virtual switch do you want to create?", select "External", then "Create Virtual Switch". You will be prompted about network disruption; continue and your network will be briefly disconnected as the switch is configured.
+
+#### Internal switch
+
+To create an internal switch, follow the same steps as the external switch, however replace the relevant choices for 'internal switch'. Then open Network and Sharing Settings, and Adapter Settings, where you will need to enable internet connection sharing for your internet adapter that you normally use. Once the connection can be shared, add it to a bridge together with the virtual switch that you created in the previous step.
 
 ## Virtual machine creation
 

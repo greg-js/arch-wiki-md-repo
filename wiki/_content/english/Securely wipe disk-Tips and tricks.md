@@ -6,8 +6,9 @@ This article describes alternative wiping methods to the specialized utilities t
 
 *   [1 Wipe a single file](#Wipe_a_single_file)
 *   [2 Overwrite the target](#Overwrite_the_target)
-    *   [2.1 dd - advanced example](#dd_-_advanced_example)
-    *   [2.2 Using a template file](#Using_a_template_file)
+    *   [2.1 Prevent wiping mounted partitions](#Prevent_wiping_mounted_partitions)
+    *   [2.2 dd - advanced example](#dd_-_advanced_example)
+    *   [2.3 Using a template file](#Using_a_template_file)
 *   [3 Wipe free space](#Wipe_free_space)
     *   [3.1 7zip](#7zip)
     *   [3.2 Create multiple files with help of the *timeout* command](#Create_multiple_files_with_help_of_the_timeout_command)
@@ -74,6 +75,23 @@ See also:
 *   [sed alternatives](http://www.computing.net/answers/unix/alternative-for-sed-i/7800.html) - a perl example that works better than sed for replacing content in a file
 
 ## Overwrite the target
+
+### Prevent wiping mounted partitions
+
+Choosing the device to be wiped needs extra care; a simple typo can be enough to damage the system. To minimize these risks, you can use a simple script to wrap your favourite wipe tool. For example:
+
+```
+if [[ -e "$1" && -b "$1" ]];then 
+if_safe="$(lsblk -o "NAME,MOUNTPOINT" ${1//[0-9]/} | grep /)";
+ if [[ -z "$if_safe" ]];then
+# Here you can use any of your favourite wiping tools 
+# to wipe destination passed on command line and stored in variable "$1"
+# 
+  else
+  echo 'Not allowed to destroy if any of the partitions is mounted: '"$if_safe"
+ fi
+fi 
+```
 
 ### dd - advanced example
 

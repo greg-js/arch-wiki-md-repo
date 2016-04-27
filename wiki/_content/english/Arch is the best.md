@@ -34,7 +34,7 @@ use Ada.Text_IO;
 procedure ArchIsTheBest is
 begin
    Put_Line("Arch is the best!");
-end HelloWorld;
+end ArchIsTheBest;
 
 ```
 
@@ -1224,7 +1224,7 @@ So Arch, Much Good, Wow
 	Dutch
 
 ```
-Arch is de beste!
+Arch is het best!
 
 ```
 

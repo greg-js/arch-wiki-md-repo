@@ -32,7 +32,9 @@ GNU Screen can be [installed](/index.php/Pacman "Pacman") using the [screen](htt
 
 ## Usage
 
-Commands are entered pressing `ctrl+a` and then the key binding.
+Commands are entered pressing the "escape key" `ctrl+a` and then the key binding.
+
+Some users find the default escape key `ctrl+a` inconvenient. The escape key can be changed to another key as [described below](#Change_the_escape_key).
 
 ### Common Commands
 
@@ -116,15 +118,15 @@ WantedBy=multi-user.target
 
 ### Change the escape key
 
-The escape key can be changed with the `escape` option in `~/.screenrc`. For example:
+It can be a good idea to change the default escape key, not only because "a" is usually typed with the left pinky, but also because `ctrl+a` is mapped to the common command `beginning-of-line` in [GNU Readline](/index.php/Readline "Readline") and [Bash](/index.php/Bash "Bash")-like shells.
 
- `escape ``` 
+The escape key can be changed with the `escape` option in `~/.screenrc`, or the `-e` option to `screen`.
 
-sets the escape key to ``` and
+For example, if you find that you rarely type `ctrl+j` in your shell or editor, you could use `escape ^Jj` to set the escape key to `ctrl-j`. The second "j" means that a literal `ctrl-j` can be sent to the terminal via the sequence `ctrl-j j`. For [Dvorak](/index.php/Dvorak "Dvorak") keyboard users, `ctrl-t` (`escape ^Tt`) might be more convenient.
 
- `escape ^^^` 
+More exotic options include `escape ``` which sets the escape key to ```, or `escape ^^^` which sets it to `ctrl+^`.
 
-sets it to `ctrl+^`.
+The escape key is also called the "command character" in Screen documentation.
 
 ### Start at window 1
 

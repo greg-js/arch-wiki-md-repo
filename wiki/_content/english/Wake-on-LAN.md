@@ -315,7 +315,11 @@ echo  "this is the (quit) end!! c-ya!"
 
 ### Realtek
 
-Users with Realtek 8168 8169 8101 8111(C) based NICs (cards / and on-board) may notice a problem where the NIC seems to be disabled on boot and has no Link light. See [Network configuration#Realtek no link / WOL problem](/index.php/Network_configuration#Realtek_no_link_.2F_WOL_problem "Network configuration")
+Users with Realtek 8168 8169 8101 8111(C) based NICs (cards / and on-board) may notice a problem where the NIC seems to be disabled on boot and has no Link light. See [Network configuration#Realtek no link / WOL problem](/index.php/Network_configuration#Realtek_no_link_.2F_WOL_problem "Network configuration").
+
+If the link light on the network switch is enabled when the computer is turned off but wake on LAN is still not working, booting the system using the [r8168](https://www.archlinux.org/packages/?name=r8168) kernel module at least once and then switching back to the r8169 kernel module included with the kernel seems to fix it at least in the following configurations:
+
+*   MSI B85M-E45 motherboard, BIOS version V10.9, onboard Realtek 8111G chipset
 
 ### Suspend/Resume
 

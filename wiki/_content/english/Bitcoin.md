@@ -49,7 +49,7 @@ This is one procedure that worked in release 2015.02.01 of Arch:
 10.  Consider making a backup of your wallet.dat file using bitcoin-qt.
 11.  See the [official Bitcoin wiki](https://en.bitcoin.it/wiki/Main_Page) for additional guidance.
 
-Lighter software includes [multibit](https://www.archlinux.org/packages/?name=multibit) and [electrum](https://www.archlinux.org/packages/?name=electrum), available in the [official repositories](/index.php/Official_repositories "Official repositories") too, but these alternatives for using Bitcoin may carry more risk of BTC loss than using the Bitcoin Core software because with them, your wallet file resides on someone else's computer rather than your own.
+Lighter software includes [multibit](https://www.archlinux.org/packages/?name=multibit) and [electrum](https://www.archlinux.org/packages/?name=electrum), available in the [official repositories](/index.php/Official_repositories "Official repositories") too.
 
 You can use this **Systemd service file** for [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon)
 

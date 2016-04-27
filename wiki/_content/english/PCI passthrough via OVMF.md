@@ -1,4 +1,6 @@
-Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passthrough a graphics card, offering the VM native graphics performance which is useful when doing graphic-intensive tasks such as gaming. Provided you have a desktop computer with a spare gpu you can dedicate ot the host (be it an integrated GPU or an old OEM card, the brands do not even need to match) and that your hardware supports it (see below), it is possible to have a VM of any OS with its own dedicated GPU and near-native performance.
+The Open Virtual Machine Firmware ([OMVF](http://www.tianocore.org/ovmf/)) is a project to enable UEFI support for virtual machines. Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passthrough a graphics card, offering the VM native graphics performance which is useful for graphic-intensive tasks.
+
+Provided you have a desktop computer with a spare GPU you can dedicate to the host (be it an integrated GPU or an old OEM card, the brands do not even need to match) and that your hardware supports it (see [#Prerequisites](#Prerequisites)), it is possible to have a VM of any OS with its own dedicated GPU and near-native performance. For more information on techniques see the background [presentation (pdf)](http://www.linux-kvm.org/images/b/b3/01x09b-VFIOandYou-small.pdf).
 
 ## Contents
 
@@ -25,7 +27,8 @@ Starting with Linux 3.9 and recent versions of QEMU, it is now possible to passt
 *   [13 Operating system](#Operating_system)
 *   [14 Troubleshooting](#Troubleshooting)
     *   [14.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
-    *   [14.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
+    *   [14.2 Dropped into uefi shell without boot errors](#Dropped_into_uefi_shell_without_boot_errors)
+    *   [14.3 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
 *   [15 Additionnal information](#Additionnal_information)
     *   [15.1 ACS Override Patch](#ACS_Override_Patch)
 *   [16 See also](#See_also)
@@ -657,6 +660,10 @@ Users with older versions of QEMU will instead have to disable a few hypervisor 
 </features>
 ...
 ```
+
+### Dropped into uefi shell without boot errors
+
+If you are dropped into a uefi shell and do not have any "boot failed" errors you may have an invalid uefi boot media. Try using an alternative linux/windows uefi boot media to determine if you have an invalid media.
 
 ### Unexpected crashes related to CPU exceptions
 

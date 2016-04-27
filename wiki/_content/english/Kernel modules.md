@@ -227,3 +227,4 @@ A module will not be loaded if the "vermagic" string contained within the kernel
 ## See also
 
 *   [Disable PC speaker beep](/index.php/Disable_PC_speaker_beep "Disable PC speaker beep")
+*   [Writing a WMI driver](https://lwn.net/Articles/391230/) - an LWM introduction

@@ -10,6 +10,7 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
     *   [3.1 Audio](#Audio)
     *   [3.2 Microphone](#Microphone)
     *   [3.3 Video](#Video)
+        *   [3.3.1 Toggle between HDMI/Monitor](#Toggle_between_HDMI.2FMonitor)
     *   [3.4 Keyboard](#Keyboard)
     *   [3.5 Touchpad](#Touchpad)
     *   [3.6 Wireless](#Wireless)
@@ -74,6 +75,17 @@ Need to configure [PulseAudio](/index.php/PulseAudio/Troubleshooting#Microphone_
 The notebook comes two GPUs, one power-efficent (Intel Corporation Haswell-ULT Integrated Graphics) and one more powerful and more power-hungry (AMD Radeon R7 M265). Please read this [ATI Dynamic Switchable Graphics](/index.php/Hybrid_graphics#ATI_Dynamic_Switchable_Graphics "Hybrid graphics"). This has not be testing yet.
 
 You can found a topic in the Archlinux forum about the problem [here](https://bbs.archlinux.org/viewtopic.php?id=190236)
+
+#### Toggle between HDMI/Monitor
+
+Create a quick key combination to toggle your monitors by using this script on [github](https://github.com/PeteMo/toggle/blob/master/toggle.sh) that was designed exactly for this purpose Copy the script and place it in your home directory. Make it executable by
+
+```
+chmod +x ~/toggle.sh
+
+```
+
+Add this script to a custom keyboard shortcut using the keyboard system settings dialog. Click on the "Shortcuts" tab and then "Custom Shortcuts" in the left panel. Click the "+" sign to add a new shortcut.
 
 ### Keyboard
 

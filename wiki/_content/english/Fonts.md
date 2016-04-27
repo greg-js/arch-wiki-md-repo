@@ -21,34 +21,35 @@ Note that certain font licenses may impose some legal limitations.
 *   [4 Font packages](#Font_packages)
     *   [4.1 Ancient Scripts](#Ancient_Scripts)
     *   [4.2 Braille](#Braille)
-    *   [4.3 International users](#International_users)
-        *   [4.3.1 Arabic & Urdu](#Arabic_.26_Urdu)
-        *   [4.3.2 Persian](#Persian)
-        *   [4.3.3 Burmese](#Burmese)
-        *   [4.3.4 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
-            *   [4.3.4.1 Pan-CJK](#Pan-CJK)
-            *   [4.3.4.2 (Mainly) Chinese](#.28Mainly.29_Chinese)
-            *   [4.3.4.3 Japanese](#Japanese)
-            *   [4.3.4.4 Korean](#Korean)
-        *   [4.3.5 Cyrillic](#Cyrillic)
-        *   [4.3.6 Greek](#Greek)
-        *   [4.3.7 Hebrew](#Hebrew)
-        *   [4.3.8 Indic](#Indic)
-        *   [4.3.9 Khmer](#Khmer)
-        *   [4.3.10 Lao](#Lao)
-        *   [4.3.11 Sinhala](#Sinhala)
-        *   [4.3.12 Thai](#Thai)
-        *   [4.3.13 Tibetan](#Tibetan)
-    *   [4.4 Math](#Math)
-    *   [4.5 Microsoft fonts](#Microsoft_fonts)
-    *   [4.6 Apple OS X fonts](#Apple_OS_X_fonts)
-    *   [4.7 Monospaced](#Monospaced)
-        *   [4.7.1 TrueType](#TrueType)
-        *   [4.7.2 Bitmap](#Bitmap)
-    *   [4.8 Sans-serif](#Sans-serif)
-    *   [4.9 Script](#Script)
-    *   [4.10 Serif](#Serif)
-    *   [4.11 Unsorted](#Unsorted)
+    *   [4.3 Emoji](#Emoji)
+    *   [4.4 International users](#International_users)
+        *   [4.4.1 Arabic & Urdu](#Arabic_.26_Urdu)
+        *   [4.4.2 Persian](#Persian)
+        *   [4.4.3 Burmese](#Burmese)
+        *   [4.4.4 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
+            *   [4.4.4.1 Pan-CJK](#Pan-CJK)
+            *   [4.4.4.2 (Mainly) Chinese](#.28Mainly.29_Chinese)
+            *   [4.4.4.3 Japanese](#Japanese)
+            *   [4.4.4.4 Korean](#Korean)
+        *   [4.4.5 Cyrillic](#Cyrillic)
+        *   [4.4.6 Greek](#Greek)
+        *   [4.4.7 Hebrew](#Hebrew)
+        *   [4.4.8 Indic](#Indic)
+        *   [4.4.9 Khmer](#Khmer)
+        *   [4.4.10 Lao](#Lao)
+        *   [4.4.11 Sinhala](#Sinhala)
+        *   [4.4.12 Thai](#Thai)
+        *   [4.4.13 Tibetan](#Tibetan)
+    *   [4.5 Math](#Math)
+    *   [4.6 Microsoft fonts](#Microsoft_fonts)
+    *   [4.7 Apple OS X fonts](#Apple_OS_X_fonts)
+    *   [4.8 Monospaced](#Monospaced)
+        *   [4.8.1 TrueType](#TrueType)
+        *   [4.8.2 Bitmap](#Bitmap)
+    *   [4.9 Sans-serif](#Sans-serif)
+    *   [4.10 Script](#Script)
+    *   [4.11 Serif](#Serif)
+    *   [4.12 Unsorted](#Unsorted)
 *   [5 Fallback font order with X11](#Fallback_font_order_with_X11)
 *   [6 Font alias](#Font_alias)
 *   [7 Tips and tricks](#Tips_and_tricks)
@@ -330,6 +331,17 @@ Github user Ternstor has created a python script that generates HTML documents w
 
 *   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - Font containing Unicode symbols for *braille*
 
+### Emoji
+
+A section of the Unicode standard is designated for picotographic characters called "emoji".
+
+*   [emojione-color-font](https://aur.archlinux.org/packages/emojione-color-font/) - a complete, independent, open-source emoji set focused on design correctness
+*   [twemoji-color-font](https://aur.archlinux.org/packages/twemoji-color-font/) - Twitter's open-sourced emoji glyphs
+*   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - provides many Unicode symbols, including emoji, in outline style
+*   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts
+
+Some newer additions to Unicode appear to render poorly with Noto fonts.
+
 ### International users
 
 Applications and browsers select and display fonts depending upon fontconfig preferences and available font glyph for Unicode text. To list installed fonts for a particular language, issue a command `fc-list :lang="two letter language code"`. For instance, to list installed Arabic fonts or fonts supporting Arabic glyph:
@@ -376,6 +388,7 @@ To properly render fonts for multilingual websites like Wikipedia or this Arch L
 
 ##### Pan-CJK
 
+*   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look. It is currently a rebadged version of [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts).
 *   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look.
 
 ##### (Mainly) Chinese
@@ -400,6 +413,7 @@ To properly render fonts for multilingual websites like Wikipedia or this Arch L
 *   [ttf-hanazono](https://www.archlinux.org/packages/?name=ttf-hanazono) - A free Japanese kanji font, style Mincho (serif).
 *   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - Japanese Gothic fonts. Default of Debian/Fedora/Vine Linux
 *   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) - Modern Gothic style Japanese outline fonts. It includes all of Japanese Hiragana/Katakana, Basic Latin, Latin-1 Supplement, Latin Extended-A, IPA Extensions and most of Japanese Kanji, Greek, Cyrillic, Vietnamese with 7 weights (proportional) or 5 weights (monospace).
+*   [ttf-koruri](https://aur.archlinux.org/packages/ttf-koruri/) - Japanese TrueType font obtained by mixing [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) and Open Sans
 *   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - Japanese fonts to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art") properly.
 
 ##### Korean
@@ -601,7 +615,9 @@ Fontconfig lets every user configure the order they want via `$XDG_CONFIG_HOME/f
 
 **Tip:** If you use a Chinese locale, set `LC_LANG` to `und` to make this work. Otherwise both English and Chinese text will be rendered in the Chinese font.
 
-You can add a section for Sans-serif and monospace as well. For more informations, have a look at the fontconfig manual.
+You can add a section for sans-serif and monospace as well. For more informations, have a look at the fontconfig manual.
+
+See also [Font configuration#Replace or set default fonts](/index.php/Font_configuration#Replace_or_set_default_fonts "Font configuration").
 
 ## Font alias
 

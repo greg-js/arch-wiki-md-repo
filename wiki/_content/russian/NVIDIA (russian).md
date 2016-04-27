@@ -19,7 +19,7 @@
         *   [2.4.2 ConnectedMonitor](#ConnectedMonitor)
         *   [2.4.3 TwinView](#TwinView)
             *   [2.4.3.1 Ручная конфигурация из командной строки с использованием xrandr](#.D0.A0.D1.83.D1.87.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.B8.D0.B7_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BD.D0.BE.D0.B9_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D0.B8_.D1.81_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5.D0.BC_xrandr)
-            *   [2.4.3.2 Vertical sync using TwinView](#Vertical_sync_using_TwinView)
+            *   [2.4.3.2 Vsync при использовании TwinView](#Vsync_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_TwinView)
             *   [2.4.3.3 Gaming using TwinView](#Gaming_using_TwinView)
         *   [2.4.4 Режим Mosaic](#.D0.A0.D0.B5.D0.B6.D0.B8.D0.BC_Mosaic)
             *   [2.4.4.1 Base Mosaic](#Base_Mosaic)
@@ -198,11 +198,11 @@ EndSection
 
 ### NVIDIA Settings
 
-The [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) tool lets you configure many options using a GUI. Run `nvidia-settings` as root, configure as you wish, and then save the configuration to `/etc/X11/xorg.conf.d/` as usual.
+Пакет [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) позволяет редактировать большинство опций через графическую оболочку. Запустите `nvidia-settings` c правами суперпользователя, отредактируйте, и сохраните в `/etc/X11/xorg.conf.d/`.
 
-Alternatively, you can run the GUI as a normal user and save the settings to `~/.nvidia-settings-rc`. Then you can load the settings using `$ nvidia-settings --load-config-only` (for example in your [xinitrc](/index.php/Xinitrc "Xinitrc")).
+Также, вы можете запустить настройки от обычного пользователя и сохранить в `~/.nvidia-settings-rc`. Затем, вы сможете загружать настройки используя команду `$ nvidia-settings --load-config-only` (для примера, в ваш файл [xinitrc](/index.php/Xinitrc "Xinitrc")).
 
-**Tip:** If your X server is crashing on startup, it may be because the GUI-generated settings are corrupt. Try deleting the generated file and starting from scratch.
+**Tip:** Если ваш X server падает при запуске, возможно, это из-за некорректно сгенерированных настроек. Попробуйте удалить сгенерированный файл и начать сначала.
 
 ### Несколько мониторов
 
@@ -210,7 +210,7 @@ Alternatively, you can run the GUI as a normal user and save the settings to `~/
 
 #### Использование NVIDIA Settings
 
-The [nvidia-settings](#NVIDIA_Settings) tool can configure multiple monitors.
+Используйте [nvidia-settings](#NVIDIA_Settings) для настройки мультимониторной конфигурации.
 
 #### ConnectedMonitor
 
@@ -406,9 +406,9 @@ xrandr --output DVI-I-1 --pos 1440x0 --mode 1440x900 --rate 75.0
 *   `--mode` разрешение второго монитора.
 *   `--rate` частота обновления (в Гц).
 
-##### Vertical sync using TwinView
+##### Vsync при использовании TwinView
 
-If you are using TwinView and vertical sync (the "Sync to VBlank" option in **nvidia-settings**), you will notice that only one screen is being properly synced, unless you have two identical monitors. Although **nvidia-settings** does offer an option to change which screen is being synced (the "Sync to this display device" option), this does not always work. A solution is to add the following environment variables at startup, for example append in `/etc/profile`:
+Если вы используете TwinView и вертикальную синхронизацию (опция "Sync to VBlank" в **nvidia-settings**), вы заметите, что только один экран корректно использует синхронизацию, если у вас два идентичных монитора. Несмотря на то, что **nvidia-settings** имеет необходимую опцию для выбора, какой именно экран синхронизировать (опция "Sync to this display device"), это не всегда работает. Решением будет добавить следующие переменные окружения при запуске, например в `/etc/profile`:
 
 ```
 export __GL_SYNC_TO_VBLANK=1
@@ -417,7 +417,7 @@ export __VDPAU_NVIDIA_SYNC_DISPLAY_DEVICE=DFP-0
 
 ```
 
-You can change `DFP-0` with your preferred screen (`DFP-0` is the DVI port and `CRT-0` is the VGA port). You can find the identifier for your display from **nvidia-settings** in the "X Server XVideoSettings" section.
+Вы можете изменить `DFP-0` на ваш используемый монитор (`DFP-0` это DVI порт, а `CRT-0` - VGA порт). Идентификатор для вашего монитора можно найти с помощью **nvidia-settings** в секции "X Server XVideoSettings".
 
 ##### Gaming using TwinView
 

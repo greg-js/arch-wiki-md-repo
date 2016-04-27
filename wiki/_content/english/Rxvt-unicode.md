@@ -25,6 +25,7 @@
     *   [5.4 My numerical keypad acts weird and generates differing output? (e.g. in vim)](#My_numerical_keypad_acts_weird_and_generates_differing_output.3F_.28e.g._in_vim.29)
     *   [5.5 Key combinations do not work](#Key_combinations_do_not_work)
     *   [5.6 Slow performance when drawing glyphs](#Slow_performance_when_drawing_glyphs)
+    *   [5.7 Very long lines cause slowdown](#Very_long_lines_cause_slowdown)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -402,6 +403,21 @@ Some programs like alsamixer and xprop do not perform well with some graphics dr
 URxvt*skipBuiltinGlyphs:    true
 
 ```
+
+### Very long lines cause slowdown
+
+The `matcher` plugin may be the culprit here. It must match a regex against a line every time the line updates, and if you have a large `saveLines` value this can exacerbate the problem by allowing a very large maximum line length.
+
+There are some simple workarounds:
+
+*   Reduce `saveLines`
+*   Disable the `matcher` plugin
+
+If neither of those are palatable options, you can compromise by disabling URL matching past a certain cutoff point:
+
+1.  Copy `/usr/lib/urxvt/perl/matcher` to `~/.urxvt/ext/` (creating the directory if necessary)
+2.  Edit `~/.urxvt/ext/matcher`, and find the `my ($self, $row) = @_;` line in the `on_line_update` sub. It should be line 270.
+3.  After that line, insert the line `return () if $row < -100;`. This disables URL matching on any line that starts more than 100 rows behind the top of the terminal.
 
 ## See also
 

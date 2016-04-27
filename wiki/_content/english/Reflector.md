@@ -133,7 +133,7 @@ To override this configuration, edit `/etc/conf.d/reflector.conf`:
 
  `/etc/conf.d/reflector.conf` 
 ```
-COUNTRY=United States
+COUNTRY=US
 
 ```
 

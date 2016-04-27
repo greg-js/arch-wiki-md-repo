@@ -12,10 +12,7 @@ This article covers the installation and configuration of Arch Linux on a Lenovo
     *   [2.5 ALSA Beep](#ALSA_Beep)
     *   [2.6 Function keys](#Function_keys)
     *   [2.7 Video Issues](#Video_Issues)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Backlight](#Backlight)
-    *   [3.2 Audio Volume Buttons](#Audio_Volume_Buttons)
-*   [4 Youtube](#Youtube)
+*   [3 Youtube](#Youtube)
 
 ## Model Description
 
@@ -69,24 +66,6 @@ Fn+Esc to enable FnLk which will make your function keys work.
 With newer kernels (>= 4.5), there seems to be video flickering, i.e. the screen occasionally goes black for what seems to be a single frame. See bug reports: [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=91393).
 
 This can be worked around by using the `i915.enable_rc6=0` kernel parameter [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake Support](/index.php/Intel_graphics#Skylake_Support "Intel graphics"))
-
-## Configuration
-
-### Backlight
-
-The backlight can, for example, be controlled via the [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) package as described in [Backlight#xbacklight](/index.php/Backlight#xbacklight "Backlight"). Follow the instructions for the "No outputs have backlight property" error. Then, the brightness can be controlled by the multimedia buttons, e.g. by using the [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) package with the following lines in your `$HOME/.xbindkeysrc` (cf. [Xbindkeys](/index.php/Xbindkeys "Xbindkeys")):
-
-```
-"xbacklight -inc 10"
-  XF86MonBrightnessUp
-"xbacklight -dec 10"
-  XF86MonBrightnessDown
-
-```
-
-### Audio Volume Buttons
-
-The ALSA audio volume can be controlled via the multimedia buttons, e.g. by using [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) package as described here [Xbindkeys#Xbindkeysrc](/index.php/Xbindkeys#Xbindkeysrc "Xbindkeys").
 
 ## Youtube
 

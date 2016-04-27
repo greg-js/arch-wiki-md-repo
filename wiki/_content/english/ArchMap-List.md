@@ -999,6 +999,7 @@ You can use the following website to get your device's coordinates along with a 
 41.967952,-84.6459807 "myrrlyn" # Jonesville, MI, USA
 37, 80 "riggt" # Blacksburg, Virginia, USA
 49.23, -123.98 "pxit" # Nanaimo, BC Canada
+46.106677, 11.112510 "alegotta" Trento, Italy
 41.091064, -73.865318 "snakeroot" # Sleepy Hollow, NY USA
 46.518568, 6.566716 "dopsi" # Lausanne, VD, Switzerland
 40.915535, 17.021062 "TheSillex" # Turi, BA, Italy
@@ -1010,5 +1011,6 @@ You can use the following website to get your device's coordinates along with a 
 52.318574, -0.082783 "andrewj720" # St Ives, Cambridgeshire, UK
 82.501771, -62.348099 "Archeon" # Toronto, Ontario, Canada 
 42.6677927, 23.3233898 "Ianis G. Vasilev aka ivasilev / v--" # Sofia, Bulgaria
+32.8037,130.7232 "hiri" # Kumamoto, Japan
 
 ```

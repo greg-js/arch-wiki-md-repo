@@ -79,7 +79,11 @@ Alt+k add video-pan-y -0.05
 
 ### Hardware Decoding
 
-Unlike *mplayer* and *mplayer2*, *mpv* has both [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking for `--hwdec=<api>` in [man page](/index.php/Man_page "Man page") `mpv (1)`. To make this persistent, add the line `hwdec=*method*` to your configuration file. When hardware decoding is used, the video output should be set to `opengl`, `opengl-hq` or `vdpau` (if using `hwdec=vdpau`). Using `vo=vaapi` is not recommended for use anymore [[1]](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst). If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding. See [options.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst) and [vo.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst) for more information.
+Unlike *mplayer* and *mplayer2*, *mpv* has both [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking for `--hwdec=<api>` in [man page](/index.php/Man_page "Man page") `mpv (1)`. To make this persistent, add the line `hwdec=*method*` to your configuration file.
+
+When hardware decoding is used, the video output should generally be set to `opengl` or `opengl-hq` (or possibly `vdpau` if using `hwdec=vdpau`). In particular, `hwdec=vaapi` should be used with `vo=opengl` [[1]](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst) if possible.
+
+If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
 
 ### High quality video output
 

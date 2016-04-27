@@ -1140,7 +1140,6 @@ Server = http://dl.dropbox.com/u/298301785/arch/linux-tresor/$arch
 
 *   **Maintainers:** nullptr_t,
 *   **Description:** Cherry-picked non-properitary packages and admin tools from AUR (e.g. [plymouth](/index.php/Plymouth "Plymouth"), nemo-extensions and a few more)
-*   **Comment:** Down until packaging is explicitly allowed by all GPL Licenses.
 *   **Key-ID:** B4767A17CEC5B4E9
 
 ```

@@ -264,8 +264,8 @@ Download `gdisk-efi-*.zip` from [SourceForge](http://sourceforge.net/projects/gp
 To use rEFInd's drivers in UEFI shell load them using command `load` and refresh mapped drives with `map -r`.
 
 ```
-# load FS0:\EFI\refind\drivers\ext4_x64.efi
-# map -r
+Shell> load FS0:\EFI\refind\drivers\ext4_x64.efi
+Shell> map -r
 
 ```
 

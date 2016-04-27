@@ -669,7 +669,7 @@ Fontconfig 让每个用户能够通过`$XDG_CONFIG_HOME/fontconfig/fonts.conf`�
 
 ## 字体别名
 
-在 Linux 系统中有几种字体别名，它们实际代表着别的字体，这样以达到让应用程序的字体看起来类似。最常见的别名有：`serif` 代表一种衬线体（关于衬线体与非衬线体概念请参考[这里](http://hanyu.iciba.com/wiki/2198016.shtml)——译注）（例如 DejaVu Serif、宋体）；`sans-serif`代表一种非衬线体（例如 DejaVu Sans、黑体）；而`monospace` 则代表等宽字体（例如 DejaVu Sans Mono）。 然而，这些别名所代表的字体有可能会变化，而且通常 KDE 和其他桌面环境中的字体管理工具不会显示其内在联系。
+在 Linux 系统中有几种字体别名，它们实际代表着别的字体，这样以达到让应用程序的字体看起来类似。最常见的别名有：`serif` 代表一种[衬线体](https://en.wikipedia.org/wiki/zh:%E8%A1%AC%E7%BA%BF%E4%BD%93 "wikipedia:zh:衬线体")（关于衬线体与非衬线体概念请参考[UbuntuCN:字体#基础知识](http://wiki.ubuntu.org.cn/%E5%AD%97%E4%BD%93#.E5.9F.BA.E7.A1.80.E7.9F.A5.E8.AF.86)——译注）（例如 DejaVu Serif、宋体）；`sans-serif`代表一种[无衬线体](https://en.wikipedia.org/wiki/zh:%E6%97%A0%E8%A1%AC%E7%BA%BF%E4%BD%93 "wikipedia:zh:无衬线体")（例如 DejaVu Sans 和各种黑体）；而`monospace` 则代表[等宽字体](https://en.wikipedia.org/wiki/zh:%E7%AD%89%E5%AE%BD%E5%AD%97%E4%BD%93 "wikipedia:zh:等宽字体")（例如 DejaVu Sans Mono）。 然而，这些别名所代表的字体有可能会变化，而且通常 KDE 和其他桌面环境中的字体管理工具不会显示其内在联系。
 
 如果想通过别名反向查找是哪种字体被展现出来，运行：
 

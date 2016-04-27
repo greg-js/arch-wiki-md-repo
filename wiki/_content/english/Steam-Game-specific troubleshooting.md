@@ -147,111 +147,113 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [40 Mark of the Ninja](#Mark_of_the_Ninja)
     *   [40.1 Troubleshooting](#Troubleshooting_14)
         *   [40.1.1 Bad sound](#Bad_sound)
-*   [41 Multiwinia](#Multiwinia)
-    *   [41.1 Dependencies](#Dependencies_18)
-    *   [41.2 Crash on startup](#Crash_on_startup)
-*   [42 Natural Selection 2](#Natural_Selection_2)
-    *   [42.1 No Sound](#No_Sound_4)
-*   [43 Penumbra: Overture](#Penumbra:_Overture)
-    *   [43.1 Dependencies](#Dependencies_19)
-    *   [43.2 Troubleshooting](#Troubleshooting_15)
-        *   [43.2.1 Windowed mode](#Windowed_mode_2)
-*   [44 Portal 2](#Portal_2)
-    *   [44.1 Troubleshooting](#Troubleshooting_16)
-        *   [44.1.1 Game does not start](#Game_does_not_start_6)
-*   [45 Prison Architect](#Prison_Architect)
-    *   [45.1 Troubleshooting](#Troubleshooting_17)
-        *   [45.1.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
-*   [46 Project Zomboid](#Project_Zomboid)
-    *   [46.1 Dependencies](#Dependencies_20)
-    *   [46.2 No sound](#No_sound_5)
-*   [47 Redshirt](#Redshirt)
-    *   [47.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29_3)
-*   [48 Revenge of the Titans](#Revenge_of_the_Titans)
-    *   [48.1 Dependencies](#Dependencies_21)
-*   [49 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
-    *   [49.1 Dependencies](#Dependencies_22)
-*   [50 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
-    *   [50.1 Dependencies](#Dependencies_23)
-    *   [50.2 Troubleshooting](#Troubleshooting_18)
-        *   [50.2.1 No audio](#No_audio_2)
-*   [51 Sir, you are being hunted](#Sir.2C_you_are_being_hunted)
-    *   [51.1 Dependencies](#Dependencies_24)
-*   [52 Spacechem](#Spacechem)
-    *   [52.1 Dependencies](#Dependencies_25)
-    *   [52.2 Troubleshooting](#Troubleshooting_19)
-        *   [52.2.1 Game crash](#Game_crash)
-*   [53 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
-    *   [53.1 Dependencies](#Dependencies_26)
-    *   [53.2 Troubleshooting](#Troubleshooting_20)
-        *   [53.2.1 No audio](#No_audio_3)
-*   [54 Splice](#Splice)
-    *   [54.1 Dependencies](#Dependencies_27)
-*   [55 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [55.1 Troubleshooting](#Troubleshooting_21)
-        *   [55.1.1 Start with black screen](#Start_with_black_screen)
-        *   [55.1.2 No English fonts](#No_English_fonts)
-*   [56 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
-    *   [56.1 Troubleshooting](#Troubleshooting_22)
-        *   [56.1.1 No sound](#No_sound_6)
-*   [57 Strike Suite Zero](#Strike_Suite_Zero)
-    *   [57.1 Dependencies](#Dependencies_28)
-*   [58 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
-    *   [58.1 Dependencies](#Dependencies_29)
-*   [59 Team Fortress 2](#Team_Fortress_2)
-    *   [59.1 Dependencies](#Dependencies_30)
-    *   [59.2 Making HRTF work](#Making_HRTF_work)
-    *   [59.3 Troubleshooting](#Troubleshooting_23)
-        *   [59.3.1 Loading screen freeze](#Loading_screen_freeze)
-        *   [59.3.2 No audio](#No_audio_4)
-        *   [59.3.3 Slow loading textures](#Slow_loading_textures)
-        *   [59.3.4 NVIDIA drivers](#NVIDIA_drivers)
-*   [60 Terraria](#Terraria)
-*   [61 The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales)
-    *   [61.1 Dependencies](#Dependencies_31)
-*   [62 The Book of Unwritten Tales: The Critter Chronicles](#The_Book_of_Unwritten_Tales:_The_Critter_Chronicles)
-*   [63 The Clockwork Man](#The_Clockwork_Man)
-    *   [63.1 Dependencies](#Dependencies_32)
-*   [64 The Polynomial](#The_Polynomial)
-    *   [64.1 Dependencies](#Dependencies_33)
-    *   [64.2 Troubleshooting](#Troubleshooting_24)
-        *   [64.2.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
-*   [65 This War of Mine](#This_War_of_Mine)
-    *   [65.1 Troubleshooting](#Troubleshooting_25)
-        *   [65.1.1 Game doesn't load](#Game_doesn.27t_load)
-*   [66 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-    *   [66.1 Crash on launch](#Crash_on_launch)
-*   [67 Transistor](#Transistor)
-    *   [67.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
-*   [68 Trine 2](#Trine_2)
-    *   [68.1 Dependencies](#Dependencies_34)
-    *   [68.2 Troubleshooting](#Troubleshooting_26)
-*   [69 Unity3D](#Unity3D)
-    *   [69.1 Locale Settings](#Locale_Settings_2)
-    *   [69.2 Unity 5 sound problems](#Unity_5_sound_problems)
-*   [70 Unity of Command](#Unity_of_Command)
-    *   [70.1 Dependencies](#Dependencies_35)
-    *   [70.2 Troubleshooting](#Troubleshooting_27)
-        *   [70.2.1 No audio](#No_audio_5)
-*   [71 Unrest](#Unrest)
-    *   [71.1 Dependencies](#Dependencies_36)
-*   [72 War Thunder](#War_Thunder)
-    *   [72.1 Troubleshooting](#Troubleshooting_28)
-*   [73 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [73.1 Dependencies](#Dependencies_37)
-    *   [73.2 Troubleshooting](#Troubleshooting_29)
-*   [74 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-    *   [74.1 Dependencies](#Dependencies_38)
-*   [75 World of Goo](#World_of_Goo)
-    *   [75.1 Changing resolution](#Changing_resolution)
-*   [76 Worms Reloaded](#Worms_Reloaded)
-    *   [76.1 Dependencies](#Dependencies_39)
-*   [77 XCOM](#XCOM)
-    *   [77.1 Dependencies](#Dependencies_40)
-    *   [77.2 Hangs on startup](#Hangs_on_startup)
-    *   [77.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
-*   [78 Saints Row IV](#Saints_Row_IV)
-    *   [78.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+*   [41 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
+    *   [41.1 Floating heads](#Floating_heads)
+*   [42 Multiwinia](#Multiwinia)
+    *   [42.1 Dependencies](#Dependencies_18)
+    *   [42.2 Crash on startup](#Crash_on_startup)
+*   [43 Natural Selection 2](#Natural_Selection_2)
+    *   [43.1 No Sound](#No_Sound_4)
+*   [44 Penumbra: Overture](#Penumbra:_Overture)
+    *   [44.1 Dependencies](#Dependencies_19)
+    *   [44.2 Troubleshooting](#Troubleshooting_15)
+        *   [44.2.1 Windowed mode](#Windowed_mode_2)
+*   [45 Portal 2](#Portal_2)
+    *   [45.1 Troubleshooting](#Troubleshooting_16)
+        *   [45.1.1 Game does not start](#Game_does_not_start_6)
+*   [46 Prison Architect](#Prison_Architect)
+    *   [46.1 Troubleshooting](#Troubleshooting_17)
+        *   [46.1.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
+*   [47 Project Zomboid](#Project_Zomboid)
+    *   [47.1 Dependencies](#Dependencies_20)
+    *   [47.2 No sound](#No_sound_5)
+*   [48 Redshirt](#Redshirt)
+    *   [48.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29_3)
+*   [49 Revenge of the Titans](#Revenge_of_the_Titans)
+    *   [49.1 Dependencies](#Dependencies_21)
+*   [50 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
+    *   [50.1 Dependencies](#Dependencies_22)
+*   [51 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
+    *   [51.1 Dependencies](#Dependencies_23)
+    *   [51.2 Troubleshooting](#Troubleshooting_18)
+        *   [51.2.1 No audio](#No_audio_2)
+*   [52 Sir, you are being hunted](#Sir.2C_you_are_being_hunted)
+    *   [52.1 Dependencies](#Dependencies_24)
+*   [53 Spacechem](#Spacechem)
+    *   [53.1 Dependencies](#Dependencies_25)
+    *   [53.2 Troubleshooting](#Troubleshooting_19)
+        *   [53.2.1 Game crash](#Game_crash)
+*   [54 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
+    *   [54.1 Dependencies](#Dependencies_26)
+    *   [54.2 Troubleshooting](#Troubleshooting_20)
+        *   [54.2.1 No audio](#No_audio_3)
+*   [55 Splice](#Splice)
+    *   [55.1 Dependencies](#Dependencies_27)
+*   [56 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [56.1 Troubleshooting](#Troubleshooting_21)
+        *   [56.1.1 Start with black screen](#Start_with_black_screen)
+        *   [56.1.2 No English fonts](#No_English_fonts)
+*   [57 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [57.1 Troubleshooting](#Troubleshooting_22)
+        *   [57.1.1 No sound](#No_sound_6)
+*   [58 Strike Suite Zero](#Strike_Suite_Zero)
+    *   [58.1 Dependencies](#Dependencies_28)
+*   [59 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+    *   [59.1 Dependencies](#Dependencies_29)
+*   [60 Team Fortress 2](#Team_Fortress_2)
+    *   [60.1 Dependencies](#Dependencies_30)
+    *   [60.2 Making HRTF work](#Making_HRTF_work)
+    *   [60.3 Troubleshooting](#Troubleshooting_23)
+        *   [60.3.1 Loading screen freeze](#Loading_screen_freeze)
+        *   [60.3.2 No audio](#No_audio_4)
+        *   [60.3.3 Slow loading textures](#Slow_loading_textures)
+        *   [60.3.4 NVIDIA drivers](#NVIDIA_drivers)
+*   [61 Terraria](#Terraria)
+*   [62 The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales)
+    *   [62.1 Dependencies](#Dependencies_31)
+*   [63 The Book of Unwritten Tales: The Critter Chronicles](#The_Book_of_Unwritten_Tales:_The_Critter_Chronicles)
+*   [64 The Clockwork Man](#The_Clockwork_Man)
+    *   [64.1 Dependencies](#Dependencies_32)
+*   [65 The Polynomial](#The_Polynomial)
+    *   [65.1 Dependencies](#Dependencies_33)
+    *   [65.2 Troubleshooting](#Troubleshooting_24)
+        *   [65.2.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
+*   [66 This War of Mine](#This_War_of_Mine)
+    *   [66.1 Troubleshooting](#Troubleshooting_25)
+        *   [66.1.1 Game doesn't load](#Game_doesn.27t_load)
+*   [67 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+    *   [67.1 Crash on launch](#Crash_on_launch)
+*   [68 Transistor](#Transistor)
+    *   [68.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
+*   [69 Trine 2](#Trine_2)
+    *   [69.1 Dependencies](#Dependencies_34)
+    *   [69.2 Troubleshooting](#Troubleshooting_26)
+*   [70 Unity3D](#Unity3D)
+    *   [70.1 Locale Settings](#Locale_Settings_2)
+    *   [70.2 Unity 5 sound problems](#Unity_5_sound_problems)
+*   [71 Unity of Command](#Unity_of_Command)
+    *   [71.1 Dependencies](#Dependencies_35)
+    *   [71.2 Troubleshooting](#Troubleshooting_27)
+        *   [71.2.1 No audio](#No_audio_5)
+*   [72 Unrest](#Unrest)
+    *   [72.1 Dependencies](#Dependencies_36)
+*   [73 War Thunder](#War_Thunder)
+    *   [73.1 Troubleshooting](#Troubleshooting_28)
+*   [74 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [74.1 Dependencies](#Dependencies_37)
+    *   [74.2 Troubleshooting](#Troubleshooting_29)
+*   [75 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [75.1 Dependencies](#Dependencies_38)
+*   [76 World of Goo](#World_of_Goo)
+    *   [76.1 Changing resolution](#Changing_resolution)
+*   [77 Worms Reloaded](#Worms_Reloaded)
+    *   [77.1 Dependencies](#Dependencies_39)
+*   [78 XCOM](#XCOM)
+    *   [78.1 Dependencies](#Dependencies_40)
+    *   [78.2 Hangs on startup](#Hangs_on_startup)
+    *   [78.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [79 Saints Row IV](#Saints_Row_IV)
+    *   [79.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
 
 ## Air Brawl
 
@@ -372,11 +374,25 @@ The Linux version of Borderlands 2 expects to be run on Ubuntu, as that is the "
 
 ```
 
-You will now be able to log into SHiFT to redeem SHiFT codes.
+To avoid symlinking an alternative to the above is to add the following to the launch options in Steam:
+
+```
+SSL_CERT_DIR="/etc/ssl/certs" %command%
+
+```
+
+Using one method or the other you will now be able to log into SHiFT to redeem SHiFT codes.
 
 ## Borderlands the Pre-Sequel
 
-Borderlands the Pre-Sequle (and maybe Borderlands 2) might not be able to connect to the Gearbox SHIFT-service, this is related to a wrong path to the available SSL certificates. This can be solved by creating a symbolic link from `/etc/ssl` to `/usr/lib/ssl`. See [this comment on the steam dissuscion forum](http://steamcommunity.com/app/49520/discussions/0/616189742722687689/#c616189742811551908).
+Borderlands the Pre-Sequel (and maybe Borderlands 2) might not be able to connect to the Gearbox SHIFT-service, this is related to a wrong path to the available SSL certificates. This can be solved by creating a symbolic link from `/etc/ssl` to `/usr/lib/ssl`. See [this comment on the steam discussion forum](http://steamcommunity.com/app/49520/discussions/0/616189742722687689/#c616189742811551908).
+
+As an alternative the following can be added to the launch options in Steam:
+
+```
+SSL_CERT_DIR="/etc/ssl/certs" %command%
+
+```
 
 ## Cities in Motion 2
 
@@ -1139,6 +1155,17 @@ LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" %command%
 
 ```
 
+## Middle-earth: Shadow of Mordor
+
+### Floating heads
+
+Right click on `Middle-earth: Shadow of Mordor` on your game list, click on `Properties`, click on `SET LAUNCH OPTIONS`, then add this:
+
+```
+__GL_ShaderPortabilityWarnings=0 %command%
+
+```
+
 ## Multiwinia
 
 ### Dependencies
@@ -1733,6 +1760,13 @@ Steam ships its own versions of some libraries, and they sometimes are too old t
 ```
 rm ~.local/share/Steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libgcc_s.so.1
 rm ~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+```
+
+If you are running a hybrid graphic system, try
+
+```
+__GL_THREADED_OPTIMIZATIONS=0 primusrun %command%
+
 ```
 
 ### Graphical glitches on Intel HD

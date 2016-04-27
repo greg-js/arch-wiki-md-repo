@@ -28,15 +28,12 @@ Configuring wireless is a two-part process; the first part is to identify and en
     *   [3.5 Power saving](#Power_saving)
     *   [3.6 Failed to get IP address](#Failed_to_get_IP_address)
     *   [3.7 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
-    *   [3.8 Connection always times out](#Connection_always_times_out)
-        *   [3.8.1 Lowering the rate](#Lowering_the_rate)
-        *   [3.8.2 Lowering the txpower](#Lowering_the_txpower)
-    *   [3.9 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
-    *   [3.10 Random disconnections](#Random_disconnections)
-        *   [3.10.1 Cause #1](#Cause_.231)
-        *   [3.10.2 Cause #2](#Cause_.232)
-        *   [3.10.3 Cause #3](#Cause_.233)
-        *   [3.10.4 Cause #4](#Cause_.234)
+    *   [3.8 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
+    *   [3.9 Random disconnections](#Random_disconnections)
+        *   [3.9.1 Cause #1](#Cause_.231)
+        *   [3.9.2 Cause #2](#Cause_.232)
+        *   [3.9.3 Cause #3](#Cause_.233)
+        *   [3.9.4 Cause #4](#Cause_.234)
 *   [4 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
     *   [4.1 Ralink](#Ralink)
         *   [4.1.1 rt2x00](#rt2x00)
@@ -53,7 +50,6 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [4.3.1 ath5k](#ath5k)
         *   [4.3.2 ath9k](#ath9k)
             *   [4.3.2.1 Power saving](#Power_saving_2)
-            *   [4.3.2.2 ASUS](#ASUS)
     *   [4.4 Intel](#Intel)
         *   [4.4.1 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
         *   [4.4.2 iwlegacy](#iwlegacy)
@@ -490,7 +486,9 @@ If the card is *hard-blocked*, use the hardware button (switch) to unblock it. I
 
 **Note:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
 
-More info: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
+Hardware buttons to toggle wireless cards are handled by a vendor specific [kernel module](/index.php/Kernel_module "Kernel module"), frequently these are [WMI](https://lwn.net/Articles/391230/) modules. Particularly for very new hardware models, it happens that the model is not fully supported in the latest stable kernel yet. In this case it often helps to search the kernel bug tracker for information and report the model to the maintainer of the respective vendor kernel module, if it has not happened already.
+
+See also: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
 
 ### Respecting the regulatory domain
 
@@ -600,37 +598,6 @@ Before changing the channel to auto, make sure your wireless interface is down. 
 ### Valid IP address but cannot resolve host
 
 If you are on a public wireless network that may have a [captive portal](https://en.wikipedia.org/wiki/Captive_portal "wikipedia:Captive portal"), make sure to query an HTTP page (not an HTTPS page) from your web browser, as some captive portals only redirect HTTP. If this is not the issue, it may be necessary to remove any custom DNS servers from [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
-
-### Connection always times out
-
-There are a few things to try if you are experiencing excessive transmission retries, errors, packet loss, and/or disconnects.
-
-#### Lowering the rate
-
-Try setting lower rate, for example 5.5M:
-
-```
-# iwconfig wlan0 rate 5.5M auto
-
-```
-
-Fixed option should ensure that the driver does not change the rate on its own, thus making the connection a bit more stable:
-
-```
-# iwconfig wlan0 rate 5.5M fixed
-
-```
-
-#### Lowering the txpower
-
-You can try lowering the transmit power. This may save power as well:
-
-```
-# iw phy0 set txpower fixed 500
-
-```
-
-Valid settings are from 0 to 2000, though certain values may be restricted by your card's regulatory domain.
 
 ### Setting RTS and fragmentation thresholds
 
@@ -838,17 +805,6 @@ command failed: Operation not supported (-95)
 The solution is to set the `ps_enable=1` option for the `ath9k` module:
 
  `/etc/modprobe.d/ath9k.conf`  `options ath9k ps_enable=1` 
-
-##### ASUS
-
-With some ASUS laptops (tested with ASUS U32U series), it could help to add `options asus_nb_wmi wapf=1` to `/etc/modprobe.d/asus_nb_wmi.conf` to fix rfkill-related issues.
-
-You can also try to blacklist the module asus_nb_wmi (tested with ASUSPRO P550C):
-
-```
-# echo "blacklist asus_nb_wmi" >> /etc/modprobe.d/blacklist.conf
-
-```
 
 ### Intel
 

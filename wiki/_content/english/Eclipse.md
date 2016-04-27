@@ -24,6 +24,7 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
     *   [4.5 Toggle buttons states are the same for selected/not selected](#Toggle_buttons_states_are_the_same_for_selected.2Fnot_selected)
     *   [4.6 Change Default Window Title Font Size](#Change_Default_Window_Title_Font_Size)
     *   [4.7 Disable GTK+ 3](#Disable_GTK.2B_3)
+    *   [4.8 White on white quick outline and type hierarchy](#White_on_white_quick_outline_and_type_hierarchy)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -271,6 +272,19 @@ Those two lines must be added **before**:
 ```
 
 Also note that if you do this, the Javadoc pop ups do not get rendered properly anymore if the package [webkitgtk2](https://www.archlinux.org/packages/?name=webkitgtk2) is not installed.
+
+### White on white quick outline and type hierarchy
+
+When using GTK2 backend the workaround is to edit the theme. Append the following to `e4_default_gtk.css`.
+
+```
+ Tree {
+   color: black;
+ }
+
+```
+
+For GTK3 backend this should already be fixed. See [https://bugs.eclipse.org/bugs/show_bug.cgi?id=492376](https://bugs.eclipse.org/bugs/show_bug.cgi?id=492376) for the relevant info.
 
 ## See also
 

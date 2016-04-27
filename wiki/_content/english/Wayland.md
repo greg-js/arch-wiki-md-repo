@@ -54,8 +54,8 @@ As Wayland is only a library, it is useless on its own. To replace X Server, you
 | Super + Scroll (or PageUp/PageDown) | Zoom in/out of desktop |
 | Super + Tab | Switch windows |
 | Super + LMB | Move Window |
-| Super + MMB | Resize Window |
-| Super + RMB | Rotate Window ! |
+| Super + MMB | Rotate Window ! |
+| Super + RMB | Resize Window |
 | Super + Alt + Scroll | Change window opacity |
 | Super + K | Force Kill Active Window |
 | Super + KeyUp/KeyDown | Switch Prev/Next Workspace |

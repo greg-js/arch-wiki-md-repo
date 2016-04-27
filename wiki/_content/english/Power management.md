@@ -1,6 +1,6 @@
-The purpose of this page is to provide general overview of power management in Arch Linux. Power management consists of two main parts:
+The purpose of this page is to provide a general overview of power management in Arch Linux. Power management consists of two main parts:
 
-1.  Configuration of the Linux kernel, which interacts with hardware.
+1.  Configuration of the Linux kernel, which interacts with the hardware.
     *   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
     *   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
     *   [udev](/index.php/Udev "Udev") rules

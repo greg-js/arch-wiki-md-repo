@@ -10,8 +10,7 @@ This article details the steps required to install Arch Linux onto a ZFS root fi
 *   [4 Setup the ZFS filesystem](#Setup_the_ZFS_filesystem)
     *   [4.1 Create the root zpool](#Create_the_root_zpool)
     *   [4.2 Create your datasets](#Create_your_datasets)
-    *   [4.3 Swap partition](#Swap_partition)
-    *   [4.4 Configure the root filesystem](#Configure_the_root_filesystem)
+    *   [4.3 Configure the root filesystem](#Configure_the_root_filesystem)
 *   [5 Install and configure Arch Linux](#Install_and_configure_Arch_Linux)
 *   [6 Install and configure the bootloader](#Install_and_configure_the_bootloader)
     *   [6.1 For BIOS motherboards](#For_BIOS_motherboards)
@@ -56,6 +55,8 @@ Part     Size   Type
    2     XXXG   Solaris Root (bf00)
 
 ```
+
+ZFS does not support swap files. If you require a swap partition, see [ZFS#Swap volume](/index.php/ZFS#Swap_volume "ZFS") for creating a swap ZVOL.
 
 The EFI partition may be required depending on your hardware and chosen bootloader. Consult [Beginners' guide#Install and configure a bootloader](/index.php/Beginners%27_guide#Install_and_configure_a_bootloader "Beginners' guide") for more info.
 
@@ -105,10 +106,6 @@ With these example commands, we will create a basic boot enviroment compatible c
 # zfs create -o mountpoint=/home zroot/data/home
 
 ```
-
-### Swap partition
-
-See [ZFS#Swap volume](/index.php/ZFS#Swap_volume "ZFS").
 
 ### Configure the root filesystem
 

@@ -7,6 +7,7 @@ Quassel (sometimes referred to as Quassel IRC) is a cross-platform IRC client in
     *   [2.1 Basic usage](#Basic_usage)
     *   [2.2 Setting up multiple clients to connect through the same core](#Setting_up_multiple_clients_to_connect_through_the_same_core)
 *   [3 Troubleshooting](#Troubleshooting)
+*   [4 See also](#See_also)
 
 ## Structure
 
@@ -54,6 +55,13 @@ Once it all works, you can set it up to start automatically through on system bo
 
 If you were previously using quassel-monolithic, your settings might be messed up. Close quasselcore. Move your settings database to a backup copy:
 
- `$ mv /~/.config/quassel-irc.org/quassel-storage.sqlite /~/.config/quassel-irc.org/quassel-storage.sqlite.bak` 
+```
+$ mv ~/.config/quassel-irc.org/quassel-storage.sqlite ~/.config/quassel-irc.org/quassel-storage.sqlite.bak
+
+```
 
 Then start quasselcore again and connect from your client, you should now get the wizard to show, however, all settings will have to be re-entered.
+
+## See also
+
+*   [QuasselWiki](http://bugs.quassel-irc.org/projects/quassel-irc/wiki)

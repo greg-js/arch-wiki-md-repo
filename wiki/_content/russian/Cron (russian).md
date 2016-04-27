@@ -13,7 +13,7 @@
         *   [2.2.3 Пример с opensmtpd](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D1.81_opensmtpd)
         *   [2.2.4 Длительные задания cron](#.D0.94.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.B4.D0.B0.D0.BD.D0.B8.D1.8F_cron)
 *   [3 Формат crontab](#.D0.A4.D0.BE.D1.80.D0.BC.D0.B0.D1.82_crontab)
-*   [4 Basic commands](#Basic_commands)
+*   [4 Базовые команды](#.D0.91.D0.B0.D0.B7.D0.BE.D0.B2.D1.8B.D0.B5_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D1.8B)
 *   [5 Examples](#Examples)
 *   [6 Default editor](#Default_editor)
 *   [7 run-parts issue](#run-parts_issue)
@@ -224,64 +224,64 @@ smtpmsg='421 … Error: timeout exceeded' errormsg='the server did not accept th
 *   *месяц* - значение от 1 до 12
 *   *день_недели* - значение от 0 до 6, где 0 - это воскресенье.
 
-Multiple times may be specified with a comma, a range can be given with a hyphen, and the asterisk symbol is a wildcard character. Spaces are used to separate fields. For example, the line:
+Несколько вызовов могут быть перечислены через запятую, интервал может быть задан через дефис, а звёздочка означает любой символ. Пробелы используются для разделения полей. К примеру, строка
 
 ```
 */5 9-16 * 1-5,9-12 1-5 ~/bin/i_love_cron.sh
 
 ```
 
-Will execute the script `i_love_cron.sh` at five minute intervals from 9 AM to 4:55 PM on weekdays except during the summer months (June, July, and August). More examples and advanced configuration techniques can be found below.
+вызовет скрипт `i_love_cron.sh` каждые пять минут с 9 AM до 4:55 PM по будням (уточнить, неделя может начинаться с воскресенья) кроме летних месяцев (июнь, июль, август). Больше примеров и дополнительные настройки могут быть найдены ниже.
 
-## Basic commands
+## Базовые команды
 
-Crontabs should never be edited directly; instead, users should use the `crontab` program to work with their crontabs. To be granted access to this command, user must be a member of the users group (see the `gpasswd` command).
+Crontabs никогда не редактируются напрямую; вместо этого пользователи должны использовать `crontab` утилиту для работы со своими crontabs. Чтобы получить доступ к этой утилите, пользователь должен быть членом группы `users` (смотри команду `gpasswd`).
 
-To view their crontabs, users should issue the command:
+Чтобы просмотреть свои crontabs, пользователь может воспользоваться коммандой:
 
 ```
 $ crontab -l
 
 ```
 
-To edit their crontabs, they may use:
+Для редактирования своих crontabs:
 
 ```
 $ crontab -e
 
 ```
 
-**Note:** By default the `crontab` command uses the `vi` editor. To change it, [export](/index.php/Environment_variable "Environment variable") `EDITOR` or `VISUAL`, or specify the editor directly: `EDITOR=vim crontab -e`.
+**Note:** По умолчанию команда `crontab` использует редактор `vi`. Чтобы изменить это, [экспортируйте](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `EDITOR` или `VISUAL`, или укажите редактор напрямую: `EDITOR=vim crontab -e`.
 
-To remove their crontabs, they should use:
+Чтобы удалить свои crontabs:
 
 ```
 $ crontab -r
 
 ```
 
-If a user has a saved crontab and would like to completely overwrite their old crontab, he or she should use:
+Если пользователь имеет сохранённые crontab и хочет полностью перезаписать свои старые crontab, он может воспользоваться:
 
 ```
 $ crontab *saved_crontab_filename*
 
 ```
 
-To overwrite a crontab from the command line ([Wikipedia:stdin](https://en.wikipedia.org/wiki/stdin "wikipedia:stdin")), use
+Чтобы перезаписать crontab из командной строки ([Wikipedia:stdin](https://en.wikipedia.org/wiki/stdin "wikipedia:stdin")), используйте
 
 ```
 $ crontab - 
 
 ```
 
-To edit somebody else's crontab, issue the following command as root:
+Чтобы отредактировать чьи-либо ещё crontab, вызовите следующую команду из под root:
 
 ```
 # crontab -u *username* -e
 
 ```
 
-This same format (appending `-u *username*` to a command) works for listing and deleting crontabs as well.
+Этот же формат (присоединяя `-u *username*` к команде) работает так же для чтения и удаления crontabs.
 
 ## Examples
 

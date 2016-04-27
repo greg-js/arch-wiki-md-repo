@@ -89,6 +89,10 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://github.com/horst3180/arc-theme](https://github.com/horst3180/arc-theme) || [gtk-theme-arc](https://aur.archlinux.org/packages/gtk-theme-arc/)
 
+*   **Gnome-breeze** — A GTK theme created to match with the new Plasma 5 Breeze.
+
+	[https://github.com/dirruk1/gnome-breeze](https://github.com/dirruk1/gnome-breeze) || [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)
+
 *   **Vertex** — Theme for GTK 3, GTK 2, Gnome-Shell and Cinnamon.
 
 	[https://github.com/horst3180/vertex-theme](https://github.com/horst3180/vertex-theme) || [vertex-themes](https://aur.archlinux.org/packages/vertex-themes/)
@@ -122,10 +126,6 @@ More themes can be installed from the official repositories or the [AUR](/index.
 *   **Clearlooks-Phénix** — GTK3 theme visually close to Clearlooks.
 
 	[https://github.com/jpfleury/clearlooks-phenix](https://github.com/jpfleury/clearlooks-phenix) || [clearlooks-phenix-gtk-theme](https://aur.archlinux.org/packages/clearlooks-phenix-gtk-theme/)
-
-*   **Gnome-breeze** — A GTK theme created to match with the new Plasma 5 Breeze.
-
-	[https://github.com/dirruk1/gnome-breeze](https://github.com/dirruk1/gnome-breeze) || [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)
 
 *   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
 

@@ -76,7 +76,7 @@ If you have any additional problems, I recommend setting the winecfg to Windows 
 
 ## Global media hotkeys
 
-Spotify has support for media keys like `XF86AudioPlay`, but out of the box they only work inside Spotify. We can use for example [xbindkeys](/index.php/Xbindkeys "Xbindkeys") to catch the global media keypresses, and then forward them to Spotify using one of the methods below.
+Spotify has support for media keys like `XF86AudioPlay`, but out of the box they only work inside Spotify. We can use for example [xbindkeys](/index.php/Xbindkeys "Xbindkeys") to catch the global media keypresses, and then forward them to Spotify using one of the methods below. If you use xbindkeys, ensure that Spotify is restarted after installation and key configuration otherwise the key events will not be properly caught.
 
 ### Linux
 

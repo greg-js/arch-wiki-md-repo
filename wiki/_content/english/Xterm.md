@@ -311,7 +311,7 @@ xterm*faceSize: 8
 Install the package [transset-df](https://www.archlinux.org/packages/?name=transset-df) and a [composite manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") such as [Xcompmgr](/index.php/Xcompmgr "Xcompmgr"). Then add the following line to your `~/.bashrc`:
 
 ```
-[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
+[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
 
 ```
 

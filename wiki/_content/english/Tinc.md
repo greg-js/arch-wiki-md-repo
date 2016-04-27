@@ -144,7 +144,7 @@ After having created the appropriate configuration in /etc/tinc/*vpnname*, you c
 If you want to enable it at startup you have to enable the appropriate service
 
 ```
-# systemctl enable tincd@*vpnname*
+# systemctl enable tinc@*vpnname*
 
 ```
 
@@ -185,7 +185,7 @@ ip link set $INTERFACE down
 And finally restart your tinc daemon:
 
 ```
-# systemctl restart tincd@*vpnname*
+# systemctl restart tinc@*vpnname*
 
 ```
 

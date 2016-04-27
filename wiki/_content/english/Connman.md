@@ -73,7 +73,7 @@ Before [enabling](/index.php/Enabling "Enabling") `connman.service`, ensure any 
 ConnMan has a standard command line client `connmanctl`. It can run in 2 modes:
 
 *   In **command mode** commands are entered as arguments to `connmanctl` command, just like [systemctl](/index.php/Systemctl "Systemctl").
-*   **Interactive mode** is started by typing `connmanctl` without arguments. Prompt will change to `connmanctl>` to indicate it is waiting for user commands, just like [python](/index.php/Python "Python") interactive mode.
+*   **Interactive mode** is started by typing `connmanctl` without arguments. Prompt will change to `connmanctl>` to indicate it is waiting for user commands, just like [python](/index.php/Python "Python") interactive mode. The interactive mode supports tab completion, which makes finding the correct connection easy.
 
 ### Wired
 
@@ -224,7 +224,7 @@ $ connmanctl disable wifi
 
 ```
 
-**Warning:** connman grabs all rfkill events. It is most likely impossible to use `rfkill` or `bluetoothctl` to (un)block devices. Always use `connmanctl enable|disable`
+**Warning:** connman grabs rfkill events. It is most likely impossible to use `rfkill` or `bluetoothctl` to (un)block devices, yet hardware keys may still work.[[1]](https://git.kernel.org/cgit/network/connman/connman.git/tree/doc/overview-api.txt#n406) Always use `connmanctl enable|disable`
 
 ## Tips and tricks
 
@@ -290,7 +290,7 @@ Make sure to [reload](/index.php/Reload "Reload") the systemd daemon and [restar
 
 ### Blacklist interfaces
 
-If something like [Docker](/index.php/Docker "Docker") is creating virtual interfaces Connman may attempt to connect to one of these instead of your physical adapter if the connection drops. A simple way of avoiding this is to blacklist the interfaces you do not want to use. Connman will by default blacklist interfaces starting with "vmnet", "vboxnet", "virbr" and "ifb" so those need to be included as well.
+If something like [Docker](/index.php/Docker "Docker") is creating virtual interfaces Connman may attempt to connect to one of these instead of your physical adapter if the connection drops. A simple way of avoiding this is to blacklist the interfaces you do not want to use. Connman will by default blacklist interfaces starting with `vmnet`, `vboxnet`, `virbr` and `ifb`, so those need to be included in the new blacklist as well.
 
 Blacklisting interface names is also useful to avoid a race condition where connman may access `eth#` or `wlan#` before systemd/udev can change it to use a [predictable interface name](/index.php/Network_configuration#Device_names "Network configuration") like `enp4s0`. Blacklisting the conventional (and unpredictable) interface prefixes makes connman wait until they are renamed.
 
@@ -302,8 +302,8 @@ NetworkInterfaceBlacklist=vmnet,vboxnet,virbr,ifb,docker,veth,eth,wlan
 
 ```
 
-Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Systemd") this will also hide all the "veth#######" interfaces from GUI tools like Econnman.
+Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Systemd") this will also hide all the `veth#######` interfaces from GUI tools like Econnman.
 
 ## See also
 
-For further detailed information on ConnMan you may refer to the documentation in its git repo at [[1]](https://git.kernel.org/cgit/network/connman/connman.git/tree/doc).
+*   [git repo documentation](https://git.kernel.org/cgit/network/connman/connman.git/tree/doc) - for further detailed documentation

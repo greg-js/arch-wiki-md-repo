@@ -143,7 +143,7 @@ $ gpg --armor --output *public.key* --export *<user-id>*
 
 ```
 
-Alternatively, or in addition, you can share your key [on a keyserver](#Use_a_keyserver).
+Alternatively, or in addition, you can [#Use a keyserver](#Use_a_keyserver) to share your key.
 
 **Tip:** Add `--no-emit-version` to avoid printing the version number, or add the corresponding setting to your configuration file.
 
@@ -156,7 +156,7 @@ $ gpg --import *public.key*
 
 ```
 
-Alternatively, find a public key [on a keyserver](#Use_a_keyserver).
+Alternatively, [#Use a keyserver](#Use_a_keyserver) to find a public key.
 
 ### Use a keyserver
 

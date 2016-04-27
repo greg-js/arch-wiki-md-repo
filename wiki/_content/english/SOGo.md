@@ -324,7 +324,7 @@ Next, allow daemons to lookup users in the directory using LDAP. To do this, cre
 
 ```
 
-Finally, with Samba after 4.3.8 or 4.2.2, you will need to allow non-secure binds. Add the following configuration item to the [global] section of `/etc/samba/smb.conf`:
+Finally, with Samba after 4.3.8 or 4.2.2, non-encrypted communication is disabled by default. Add the following configuration item to the [global] section of `/etc/samba/smb.conf` if you are not in a position to enable TLS or StartTLS:
 
  `        ldap server require strong auth = no` 
 
@@ -391,7 +391,7 @@ Set permissions:
 
 ```
 
-Create the LDAP user and password configuration files (replace dc=**internal**,dc=**domain**,dc=**tld**, **INTERNAL**, and **ldapPW** with appropriate values):
+Create the LDAP user and password configuration files (replace dc=**internal**,dc=**domain**,dc=**tld**, **INTERNAL**, and **ldapPW** with appropriate values). Remove the tls lines below if you haven't enabled the TLS configuration in your directory:
 
 `/etc/dovecot/dovecot-ldap-passdb.conf`
 
@@ -400,6 +400,7 @@ hosts = localhost
 auth_bind = yes
 auth_bind_userdn = **INTERNAL**\%u
 ldap_version = 3
+tls = yes
 base = dc=**internal**,dc=**domain**,dc=**tld**
 scope = subtree
 deref = never
@@ -414,7 +415,7 @@ hosts = localhost
 dn = cn=ldap,cn=Users,dc=**internal**,dc=**domain**,dc=**tld**
 dnpass = **ldapPW**
 ldap_version = 3
-# The base must be cn=Users for OpenChange ATM...future
+tls = yes
 base = cn=Users,dc=**internal**,dc=**domain**,dc=**tld**
 user_attrs = =uid=5000,=gid=5000,=home=/home/vmail/%Lu,=mail=maildir:/home/vmail/%Lu/Maildir/
 user_filter = (&(objectClass=person)(sAMAccountName=%u)(mail=*))
@@ -667,7 +668,7 @@ Configure Postfix to use the vmail user and group:
 
 #### Active Directory
 
-Now, create a LDAP alias and group maps for Postfix by pasting the following lines in the file `/etc/postfix/ldap-alias.cf` as root (replace dc=**internal**,dc=**domain**,dc=**tld** with appropriate values and **ldapPW** with the password of the ldap user):
+Now, create a LDAP alias and group maps for Postfix by pasting the following lines in the file `/etc/postfix/ldap-alias.cf` as root (replace dc=**internal**,dc=**domain**,dc=**tld** with appropriate values and **ldapPW** with the password of the ldap user). If TLS has not been configured for your directory, remove the start_tls line:
 
 ```
 # Directory settings
@@ -675,6 +676,7 @@ server_host = 127.0.0.1
 search_base = dc=**internal**,dc=**domain**,dc=**tld**
 scope = sub
 version = 3
+start_tls = yes
 
 # User Binding
 bind = yes
@@ -979,7 +981,7 @@ Then issue the following commands:
 
 #### Active Directory
 
-Modify the `/etc/sogo/sogo.conf` file and add the LDAP user sources (and global address list). Place the following contents before the *Web Interface* section:
+Modify the `/etc/sogo/sogo.conf` file and add the LDAP user sources (and global address list). Place the following contents before the *Web Interface* section. If TLS is not configured for your Directory, exclude the "**/????!StartTLS**" strings at the end of the LDAP URIs:
 
 ```
     /* User Authentication */
@@ -996,7 +998,7 @@ Modify the `/etc/sogo/sogo.conf` file and add the LDAP user sources (and global 
         bindDN = "cn=ldap,cn=Users,dc=**internal**,dc=**domain**,dc=**tld**";
         bindFields = (sAMAccountName);
         bindPassword = **ldapPW**;
-        hostname = ldap://127.0.0.1:389;
+        hostname = ldap://**server**.**internal**.**domain**.**tld**:389/????!StartTLS;
       },
       {
         id = sambaShared;
@@ -1007,7 +1009,7 @@ Modify the `/etc/sogo/sogo.conf` file and add the LDAP user sources (and global 
         CNFieldName = cn;
         IDFieldName = mail;
         UIDFieldName = mail;
-        hostname = ldap://127.0.0.1:389;
+        hostname = ldap://**server**.**internal**.**domain**.**tld**:389/????!StartTLS;
         baseDN = "dc=**internal**,dc=**domain**,dc=**tld**";
         bindDN = "cn=ldap,cn=Users,dc=**internal**,dc=**domain**,dc=**tld**";
         bindPassword = **ldapPW**;
@@ -1022,7 +1024,7 @@ Modify the `/etc/sogo/sogo.conf` file and add the LDAP user sources (and global 
         CNFieldName = cn;
         IDFieldName = mail;
         UIDFieldName = mail;
-        hostname = ldap://127.0.0.1:389;
+        hostname = ldap://**server**.**internal**.**domain**.**tld**:389/????!StartTLS;
         baseDN = "dc=**internal**,dc=**domain**,dc=**tld**";
         bindDN = "cn=ldap,cn=Users,dc=**internal**,dc=**domain**,dc=**tld**";
         bindPassword = **ldapPW**;

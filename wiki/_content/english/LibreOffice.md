@@ -28,7 +28,7 @@ From [Home - LibreOffice](http://www.libreoffice.org/):
     *   [8.7 Exit while pushing the save button](#Exit_while_pushing_the_save_button)
     *   [8.8 Media support](#Media_support)
     *   [8.9 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
-    *   [8.10 Libreoffice toolbars unreadable with gtk3 Dark theme](#Libreoffice_toolbars_unreadable_with_gtk3_Dark_theme)
+    *   [8.10 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
 
 ## LibreOffice in Arch Linux
 
@@ -241,6 +241,10 @@ If the default paper size in blank Writer and Draw documents is persistently inc
 
 **Note:** [libpaper](https://www.archlinux.org/packages/?name=libpaper) defaults to **Letter** paper size if nothing else has been set.
 
-### Libreoffice toolbars unreadable with gtk3 Dark theme
+### LibreOffice toolbars unreadable with dark themes
 
-See [[2]](https://bugzilla.redhat.com/show_bug.cgi?id=1287593). As a workaround, run *libreoffice* with the `GTK_THEME=Adwaita:light` [environment variable](/index.php/Environment_variable "Environment variable").
+See [https://bugs.documentfoundation.org/show_bug.cgi?id=94632](https://bugs.documentfoundation.org/show_bug.cgi?id=94632)
+
+To use toolbar icons compatible with dark themes, set [environment variable](/index.php/Environment_variable "Environment variable") `VCL_ICONS_FOR_DARK_THEME=1`
+
+As an alternative workaround, run *libreoffice* with a light theme (e.g. with environment variable `GTK_THEME=Adwaita:light`).

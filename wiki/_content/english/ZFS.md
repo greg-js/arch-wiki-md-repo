@@ -750,7 +750,7 @@ Add the `archzfs-linux` group to the list of packages to be installed:
  `~/archlive/packages.both` 
 ```
 ...
-archzfs-git
+archzfs-linux
 
 ```
 

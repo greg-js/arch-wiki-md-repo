@@ -6,7 +6,14 @@
     *   [1.3 install-info](#install-info)
     *   [1.4 glib-compile-schemas](#glib-compile-schemas)
     *   [1.5 gtk-update-icon-cache, xdg-icon-resource](#gtk-update-icon-cache.2C_xdg-icon-resource)
-    *   [1.6 OTHER](#OTHER)
+    *   [1.6 systemd-tmpfiles](#systemd-tmpfiles)
+    *   [1.7 systemd-sysusers](#systemd-sysusers)
+    *   [1.8 mktexlsr, texhash](#mktexlsr.2C_texhash)
+    *   [1.9 gconf](#gconf)
+    *   [1.10 gio-querymodules](#gio-querymodules)
+    *   [1.11 fc-cache](#fc-cache)
+    *   [1.12 update-ca-trust](#update-ca-trust)
+*   [2 TBD](#TBD)
 
 # Hooks!
 
@@ -129,7 +136,7 @@ Target = usr/share/icons/*/
 Target = !usr/share/icons/*/?*
 
 [Action]
-Description = Updating icon cache...
+Description = Updating icon theme caches...
 When = PostTransaction
 Exec = /usr/lib/pacman-hooks/gtk-update-icon-cache
 NeedsTargets
@@ -150,12 +157,171 @@ done
 
 ```
 
-## OTHER
+## systemd-tmpfiles
 
-*   mkfontdir
-*   mkfontscale
-*   fc-cache
-*   gio-querymodules
-*   gdk-pixbuf-query-loaders
-*   gtk-query-immodules-2.0
-*   gtk-query-immodules-3.0
+Used by 52 packages
+
+Proposed hook (systemd)
+
+```
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Target = usr/lib/tmpfiles.d/*.conf
+
+[Action]
+Description = Creating temporary files...
+When = PostTransaction
+Exec = /bin/sh -c 'while read -r f; do /usr/bin/systemd-tmpfiles --create "/$f"; done'
+NeedsTargets
+
+```
+
+## systemd-sysusers
+
+Used by 29 packages
+
+Proposed hook (systemd)
+
+```
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Target = usr/lib/sysusers.d/*.conf
+
+[Action]
+Description = Updating system user accounts...
+When = PostTransaction
+Exec = /bin/sh -c 'while read -r f; do /usr/bin/systemd-sysusers "/$f" ; done'
+NeedsTargets
+
+```
+
+## mktexlsr, texhash
+
+Used in 27 packages
+
+Proposed hook (texlive-texmf)
+
+```
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = usr/share/texmf/*
+Target = usr/share/texmf-dist/*
+
+[Action]
+Description = Updating TeX Live ls-R databases...
+When = PostTransaction
+Exec = /usr/bin/mktexlsr
+
+```
+
+## gconf
+
+Used by 55 packages
+
+Proposed hook (gconf)
+
+```
+[Trigger]
+Type = file
+Operation = Install
+Operation = Upgrade
+Target = usr/share/gconf/schemas/*.schemas
+
+[Action]
+Description = Installing GConf schemas...
+When = PostTransaction
+Exec = /bin/bash -c 'while read -r f; do f=${f##*/}; f=${f%.schemas}; /usr/bin/gconfpkg --install $f; done'
+NeedsTargets
+
+```
+
+```
+[Trigger]
+Type = file
+Operation = Remove
+Target = usr/share/gconf/schemas/*.schemas
+
+[Action]
+Description = Uninstalling GConf schemas...
+When = PreTransaction
+Exec = /bin/bash -c 'while read -r f; do f=${f##*/}; f=${f%.schemas}; /usr/bin/gconfpkg --uninstall $f; done'
+NeedsTargets
+
+```
+
+## gio-querymodules
+
+Used by 6 packages
+
+Proposed hook (glib2)
+
+```
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = usr/lib/gio/modules/*.so
+
+[Action]
+Description = Updating GIO module cache...
+When = PostTransaction
+Exec = /usr/bin/gio-querymodules /usr/lib/gio/modules
+
+```
+
+## fc-cache
+
+Used by 53 packages
+
+Proposed hook (fontconfig)
+
+```
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = usr/share/fonts/*
+
+[Action]
+Description = Updating fontconfig cache...
+When = PostTransaction
+Exec = /usr/bin/fc-cache -s
+
+```
+
+## update-ca-trust
+
+Used by 5 packages
+
+Proposed hook (ca-certificates-utils)
+
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = File
+Target = usr/share/ca-certificates/trust-source/*
+
+[Action]
+Description = Rebuilding certificate stores...
+When = PostTransaction
+Exec = /usr/bin/update-ca-trust
+
+```
+
+# TBD
+
+*   mkfontscale, mkfontdir (58 packages)
+*   gdk-pixbuf-query-loaders (6 packages)
+*   gtk-query-immodules-2.0 (7 packages)
+*   gtk-query-immodules-3.0 (7 packages)

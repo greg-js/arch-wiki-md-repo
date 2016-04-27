@@ -436,7 +436,7 @@ TLS support is not enabled by default, however, a default certificate was create
 
 ```
 
-If a trusted certificate is needed, create a signing key and a certificate request (see [OpenSSL](/index.php/OpenSSL "OpenSSL") for detailed instructions). Get the request signed by your chosen certificate authority, name appropriately (**NETBIOS**_CERT.pem for this example), and put into this directory. If your certificate authority also needs an intermediate certificate, put it there as well and use the **tls cafile** parameter (else leave **tls cafile** blank).
+If a trusted certificate is needed, create a signing key and a certificate request (see [OpenSSL](/index.php/OpenSSL "OpenSSL") for detailed instructions). Get the request signed by your chosen certificate authority, and put into this directory. If your certificate authority also needs an intermediate certificate, concatenate the certs (server cert first, then intermediate) and leave **tls cafile** blank.
 
 Restart `samba` for the changes to take effect.
 
