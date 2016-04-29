@@ -75,7 +75,14 @@ Install:
 
 ### Daemon
 
-[Enable](/index.php/Enable "Enable") the `munin.service`, so *Munin* will be started at boot.
+On the nodes, start and enable `munin-node`.
+
+```
+# systemctl enable --now munin-node
+
+```
+
+On the master, use a systemd timer as described below.
 
 ### Plugins
 
@@ -184,6 +191,11 @@ Finally, [enable](/index.php/Enable "Enable") `munin-cron.timer`.
 ### Permissions
 
 Because many plugins read log files, it is useful to [add](/index.php/Users_and_groups#Example_adding_a_user "Users and groups") `munin` user into `log` group:
+
+```
+# usermod -a -G log munin
+
+```
 
 When `graph_strategy cgi` is enabled in `/etc/munin/munin.conf` ensure the directory `/var/lib/munin/cgi-tmp` is owned by user and group `munin` so that the `/usr/share/munin/cgi/munin-cgi-graph` script is able to write the png files to this directory.
 

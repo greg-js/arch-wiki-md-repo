@@ -513,7 +513,7 @@ If you are using [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86
 
 **Special Note About Older Macbook Models (confirmed on MacBook2,1):** On older Macbook models (pre-multitouch), the touchpad will not function properly until you install the xf86-input-synaptics package. Please see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") for more information on installing and configuring this package.
 
-**Note on MacBookPro5,5:** I found it is much simpler to use the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) in Extra. Although it does not have much function as 3 finger swipe, this driver provides faster response. [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings) also provides a simple GUI config. Below is a Xorg config file /etc/X11/xorgconfig.d/60-synaptics.conf for reference only.
+**Note on MacBookPro5,5:** I found it is much simpler to use the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) in Extra. Although it does not have much function as 3 finger swipe, this driver provides faster response. [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings) also provides a simple GUI config. Below is a Xorg config file /etc/X11/xorg.conf.d/60-synaptics.conf for reference only.
 
 ```
  Section "InputClass"

@@ -57,7 +57,7 @@ server {
       include /etc/nginx/uwsgi_params;
    }
 
-   location /moin_static[0-9]+/(.*) {
+   location ~ /moin_static[0-9]+/(.*) {
       alias /usr/lib/python2.7/site-packages/MoinMoin/web/static/htdocs/$1;
    }
 

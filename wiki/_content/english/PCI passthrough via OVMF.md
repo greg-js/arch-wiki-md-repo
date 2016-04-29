@@ -615,7 +615,7 @@ Since libvirt has not yet caught up with this new feature, libvirt users will in
 ```
 #!/bin/sh
 exec /usr/bin/qemu-system-x86_64 \
-$(echo "\$@" | sed 's|hv_time|hv_time,hv_vendor_id=whatever|g')
+$(echo "$@" | sed 's|hv_time|hv_time,hv_vendor_id=whatever|g')
 ```
  `EDITOR=nano virsh edit myPciPassthroughVm` 
 ```

@@ -7,12 +7,13 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 *   [1 Hinted fonts](#Hinted_fonts)
 *   [2 No hinting for *italic* or **bold**](#No_hinting_for_italic_or_bold)
 *   [3 Sharp fonts](#Sharp_fonts)
-*   [4 Liberation fonts](#Liberation_fonts)
-*   [5 Enable anti-aliasing only for bigger fonts](#Enable_anti-aliasing_only_for_bigger_fonts)
-*   [6 Chrome OS fonts](#Chrome_OS_fonts)
-*   [7 Google Noto Fonts](#Google_Noto_Fonts)
-*   [8 Patched packages](#Patched_packages)
-*   [9 See also](#See_also)
+*   [4 Enable anti-aliasing only for bigger fonts](#Enable_anti-aliasing_only_for_bigger_fonts)
+*   [5 Default fonts](#Default_fonts)
+    *   [5.1 Liberation fonts](#Liberation_fonts)
+    *   [5.2 Chrome OS fonts](#Chrome_OS_fonts)
+    *   [5.3 Google Noto Fonts](#Google_Noto_Fonts)
+*   [6 Patched packages](#Patched_packages)
+*   [7 See also](#See_also)
 
 ## Hinted fonts
 
@@ -90,49 +91,12 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
   <match target="font">
     <edit name="antialias" mode="assign"><bool>true</bool></edit>
     <edit name="hinting" mode="assign"><bool>true</bool></edit>
-    <edit name="hintstyle" mode="assign"><const>hintfull</const></edit>
+    <edit name="hintstyle" mode="assign"><const>hintfull</const></edit>   <!-- try hintmedium if it looks bad -->
     <edit name="lcdfilter" mode="assign"><const>lcddefault</const></edit>
-    <edit name="rgba" mode="assign"><const>rgb</const></edit>
+    <edit name="rgba" mode="assign"><const>rgb</const></edit>             <!-- set to match your display -->
   </match>
 </fontconfig>
 
-```
-
-## Liberation fonts
-
-For font consistency, all applications should be set to use the serif, sans-serif, and monospace aliases, which are mapped to particular fonts by fontconfig. The Liberation fonts were chosen to follow metric-compatibility of the MS Core fonts.
-
-```
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-    <match target="font">
-        <edit mode="assign" name="antialias"><bool>true</bool></edit>
-        <edit mode="assign" name="autohint"><bool>false</bool></edit>
-        <edit mode="assign" name="embeddedbitmap"><bool>false</bool></edit>
-        <edit mode="assign" name="hinting"><bool>true</bool></edit>
-        <edit mode="assign" name="hintstyle"><const>hintslight</const></edit>
-        <edit mode="assign" name="lcdfilter"><const>lcddefault</const></edit>
-        <edit mode="assign" name="rgba"><const>rgb</const></edit>
-    </match>
-
-    <match target="pattern">
-        <test qual="any" name="family"><string>serif</string></test>
-        <edit name="family" mode="assign" binding="same"><string>Liberation Serif</string></edit>
-    </match>
-    <match target="pattern">
-        <test qual="any" name="family"><string>sans-serif</string></test>
-        <edit name="family" mode="assign" binding="same"><string>Liberation Sans</string></edit>
-    </match>
-    <match target="pattern">
-        <test qual="any" name="family"><string>monospace</string></test>
-        <edit name="family" mode="assign" binding="same"><string>Liberation Mono</string></edit>
-    </match>
-
-    <match target="pattern">
-        <edit name="dpi" mode="assign"><double>96</double></edit>
-    </match>
-</fontconfig>
 ```
 
 ## Enable anti-aliasing only for bigger fonts
@@ -170,7 +134,32 @@ Some users prefer the sharper rendering that anti-aliasing does not offer:
 
 ```
 
-## Chrome OS fonts
+## Default fonts
+
+### Liberation fonts
+
+For font consistency, all applications should be set to use the serif, sans-serif, and monospace aliases, which are mapped to particular fonts by fontconfig. The Liberation fonts were chosen to follow metric-compatibility of the MS Core fonts.
+
+```
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <match target="pattern">
+        <test qual="any" name="family"><string>serif</string></test>
+        <edit name="family" mode="assign" binding="same"><string>Liberation Serif</string></edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family"><string>sans-serif</string></test>
+        <edit name="family" mode="assign" binding="same"><string>Liberation Sans</string></edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family"><string>monospace</string></test>
+        <edit name="family" mode="assign" binding="same"><string>Liberation Mono</string></edit>
+    </match>
+</fontconfig>
+```
+
+### Chrome OS fonts
 
 Web browser and another common applications use `Serif`, `Sans-Serif` and `Monospace` as default fonts ([Fonts#Font alias](/index.php/Fonts#Font_alias "Fonts")). The procedure to change default fonts is similar to replace them. For example, to use Chrome OS fonts [ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/):
 
@@ -199,7 +188,7 @@ Web browser and another common applications use `Serif`, `Sans-Serif` and `Monos
 
 ```
 
-## Google Noto Fonts
+### Google Noto Fonts
 
 The following configuration might be necessary to make use of [Google's Noto Fonts](https://www.google.com/get/noto/) available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
@@ -212,6 +201,7 @@ The following configuration might be necessary to make use of [Google's Noto Fon
   <alias> <family>sans</family>       <prefer> <family>Noto Sans</family>  </prefer> </alias>
   <alias> <family>monospace</family>  <prefer> <family>Noto Mono</family>  </prefer> </alias>
 
+  <!-- WARNING: LOTS OF metric-incompatible bindings here! -->
   <match> <test name="family"> <string>Arial</string> </test>           <edit name="family" mode="assign" binding="strong"> <string>Noto Sans</string>  </edit> </match>
   <match> <test name="family"> <string>Helvetica</string> </test>       <edit name="family" mode="assign" binding="strong"> <string>Noto Sans</string>  </edit> </match>
   <match> <test name="family"> <string>Verdana</string> </test>         <edit name="family" mode="assign" binding="strong"> <string>Noto Sans</string>  </edit> </match>

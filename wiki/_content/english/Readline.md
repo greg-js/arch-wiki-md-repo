@@ -2,16 +2,14 @@
 
 ## Contents
 
-*   [1 Command-line editing](#Command-line_editing)
-*   [2 History](#History)
-    *   [2.1 History search](#History_search)
-        *   [2.1.1 Avoid duplicates](#Avoid_duplicates)
-        *   [2.1.2 Avoid whitespaces](#Avoid_whitespaces)
-*   [3 Macros](#Macros)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Disabling control echo](#Disabling_control_echo)
+*   [1 Editing mode](#Editing_mode)
+*   [2 Fast word movement](#Fast_word_movement)
+*   [3 History](#History)
+*   [4 Faster completion](#Faster_completion)
+*   [5 Macros](#Macros)
+*   [6 Disabling control echo](#Disabling_control_echo)
 
-## Command-line editing
+## Editing mode
 
 By default Readline uses Emacs style shortcuts for interacting with command line. However, vi style editing interface is also supported. Either way, rich sets of shortcut keys are provided for editing [without using the far-away cursor keys](/index.php/Keyboard_without_cursor_keys "Keyboard without cursor keys").
 
@@ -30,6 +28,18 @@ set -o vi
 ```
 
 You may find either [vi](http://www.catonmat.net/download/bash-vi-editing-mode-cheat-sheet.pdf) or [emacs](http://www.catonmat.net/download/readline-emacs-editing-mode-cheat-sheet.pdf) cheat sheets useful.
+
+## Fast word movement
+
+[Xterm](/index.php/Xterm "Xterm") supports moving between words with `Ctrl+Left` and `Ctrl+Right` [by default](http://stackoverflow.com/a/7783928). To achieve this effect with other terminal emulators, find the correct [terminal codes](http://wiki.bash-hackers.org/scripting/terminalcodes), and bind them to `backward-word` and `forward-word` in `~/.inputrc`.
+
+For example, for [urxvt](/index.php/Urxvt "Urxvt"):
+
+ `~/.inputrc` 
+```
+"\eOd": backward-word
+"\eOc": forward-word
+```
 
 ## History
 
@@ -92,37 +102,23 @@ or use a different key in `inputrc`. For example, to use `Alt+S` which is not bo
 
 ```
 
-### History search
+## Faster completion
 
-#### Avoid duplicates
+When performing tab completion, a single tab attempts to partially complete the current word. If no partial completions are possible, a double tab shows all possible completions.
 
-If you repeat the same command several times, they will all be appended in your history. To prevent this, add to your `~/.bashrc`:
+The double tab can be changed to a single tab by setting
 
+ `~/.inputrc` 
 ```
-export HISTCONTROL=ignoredups
-
-```
-
-#### Avoid whitespaces
-
-To disable logging of lines beginning with a space add this to your `~/.bashrc`:
-
-```
-export HISTCONTROL=ignorespace
+set show-all-if-unmodified on
 
 ```
 
-If your `~/.bashrc` already contains
+Or you can set it such that a single tab will perform both steps: partially complete the word *and* show all possible completions if it is still ambiguous:
 
+ `~/.inputrc` 
 ```
-export HISTCONTROL=ignoredups
-
-```
-
-replace it with
-
-```
-export HISTCONTROL=ignoreboth
+set show-all-if-ambiguous on
 
 ```
 
@@ -179,9 +175,7 @@ As a last example, quickly send a command in the background with `Ctrl+Alt+B`, d
 
 ```
 
-## Tips and tricks
-
-### Disabling control echo
+## Disabling control echo
 
 Due to an update to [readline](https://www.archlinux.org/packages/?name=readline), the terminal now echoes `^C` after `Ctrl+C` is pressed. For users who wish to disable this, simply add the following to `~/.inputrc`:
 

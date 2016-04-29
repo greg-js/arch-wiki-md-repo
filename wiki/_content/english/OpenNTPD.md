@@ -147,7 +147,7 @@ openntpd adjtime failed: Invalid argument
 Try:
 
 ```
-ntpd -s -d
+# ntpd -s -d
 
 ```
 

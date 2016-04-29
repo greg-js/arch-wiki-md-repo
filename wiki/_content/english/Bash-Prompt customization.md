@@ -295,7 +295,7 @@ $ tput cup $((LINES - 11)) $((COLUMNS - 6))
 
 ### Customizing the terminal window title
 
-The terminal window title can be customized in much the same way as the prompt: by printing escape sequences in the shell. Thus it is common for users to include window title customizations in their prompt. Although this is technically a feature of xterm, many modern terminals support it. The escape sequence to use is `**ESC**]2;*new title***BEL**` where `**ESC**` and `**BEL**` are the escape and bell characters. Using [Bash escape sequences](#Bash_escape_sequences), changing the title in your prompt looks like
+The terminal window title can be customized in much the same way as the prompt: by printing escape sequences in the shell. Thus it is common for users to include window title customizations in their prompt. Although this is technically a feature of xterm, many modern terminals support it. The escape sequence to use is `**ESC**]2;*new title***BEL**` where `**ESC**` and `**BEL**` are the escape and bell characters. Using [#Bash escape sequences](#Bash_escape_sequences), changing the title in your prompt looks like
 
 ```
 export PS1='\[\e]2;*new title*\a\]prompt > '

@@ -7,12 +7,13 @@
     *   [1.2 Shell and environment variables](#Shell_and_environment_variables)
 *   [2 Command line](#Command_line)
     *   [2.1 Tab completion](#Tab_completion)
-        *   [2.1.1 Single-tab ability](#Single-tab_ability)
-        *   [2.1.2 Additional programs and options](#Additional_programs_and_options)
-        *   [2.1.3 Additional programs and options manually](#Additional_programs_and_options_manually)
-    *   [2.2 History completion](#History_completion)
-    *   [2.3 Fast word movement with Ctrl](#Fast_word_movement_with_Ctrl)
-    *   [2.4 Mimic Zsh run-help ability](#Mimic_Zsh_run-help_ability)
+        *   [2.1.1 Single-tab](#Single-tab)
+        *   [2.1.2 Common programs and options](#Common_programs_and_options)
+        *   [2.1.3 Customize per-command](#Customize_per-command)
+    *   [2.2 History](#History)
+        *   [2.2.1 History completion](#History_completion)
+        *   [2.2.2 Shorter history](#Shorter_history)
+    *   [2.3 Mimic Zsh run-help ability](#Mimic_Zsh_run-help_ability)
 *   [3 Aliases](#Aliases)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Prompt customization](#Prompt_customization)
@@ -84,44 +85,39 @@ Bash command line is managed by the separate library called [Readline](/index.ph
 
 ### Tab completion
 
-[Tab completion](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion") is the option to auto-complete partial typed commands by pressing `Tab` twice (enabled by default).
+[Tab completion](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion") is the option to auto-complete typed commands by pressing `Tab` (enabled by default).
 
-#### Single-tab ability
+#### Single-tab
 
-For single press `Tab` results for when a partial or no completion is possible:
+It may require up to three tab-presses to show all possible completions for a command. To reduce the needed number of tab-presses, see [Readline#Faster completion](/index.php/Readline#Faster_completion "Readline").
 
- `~/.inputrc` 
-```
-set show-all-if-ambiguous on
+#### Common programs and options
 
-```
+By default, Bash only tab-completes commands, filenames, and variables. The package [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) extends this by adding more specialized tab completions for common commands and their options. With [bash-completion](https://www.archlinux.org/packages/?name=bash-completion), normal completions (such as `$ ls file.*<tab><tab>`) will behave differently; however, they can be re-enabled with `$ compopt -o bashdefault *program*` (see [[2]](https://bbs.archlinux.org/viewtopic.php?id=128471) and [[3]](https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html) for more detail).
 
-Alternatively, for results when no completion is possible:
+#### Customize per-command
 
- `~/.inputrc` 
-```
-set show-all-if-unmodified on
+**Note:** Using the `complete` builtin may cause conflicts with [bash-completion](https://www.archlinux.org/packages/?name=bash-completion).
 
-```
-
-#### Additional programs and options
-
-Bash has native support for tab completion of: commands, filenames, and variables. This functionality can be extended with the package [bash-completion](https://www.archlinux.org/packages/?name=bash-completion); it extends its functionality by adding a subset of tab completions to popular commands and their options. With [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) know that normal completions (such as `$ ls file.*<tab><tab>`) will behave different; however, they can be re-enabled with `$ compopt -o bashdefault <prog>` (see [[2]](https://bbs.archlinux.org/viewtopic.php?id=128471) and [[3]](https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html) for more detail). Also for older systems [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) may not be resourcefully convenient.
-
-#### Additional programs and options manually
-
-For basic completion use lines in the form of `complete -cf your_command` (these will conflict with the [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) settings):
+By default Bash only tab-completes file names following a command. You can change it to complete command names using `complete -c`:
 
  `~/.bashrc` 
 ```
-complete -cf sudo
-complete -cf man
+complete -c man which
 
 ```
 
-### History completion
+or complete command names and file names with `-cf`:
 
-History completion bound to arrow keys (down, up) (see: [Readline#History](/index.php/Readline#History "Readline") and [Readline Init File Syntax](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)):
+ `complete -cf sudo` 
+
+See the Bash man page for more completion options.
+
+### History
+
+#### History completion
+
+You can bind the up and down arrow keys to search through Bash's history (see: [Readline#History](/index.php/Readline#History "Readline") and [Readline Init File Syntax](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)):
 
  `~/.bashrc` 
 ```
@@ -130,7 +126,7 @@ History completion bound to arrow keys (down, up) (see: [Readline#History](/inde
 
 ```
 
-or:
+or to affect all readline programs:
 
  `~/.inputrc` 
 ```
@@ -139,27 +135,25 @@ or:
 
 ```
 
-### Fast word movement with Ctrl
+#### Shorter history
 
-[Xterm](/index.php/Xterm "Xterm") supports moving between words with `Ctrl+Left` and `Ctrl+Right` [by default](http://stackoverflow.com/a/7783928). To achieve this effect with other terminal emulators, find the correct [terminal codes](http://wiki.bash-hackers.org/scripting/terminalcodes), and bind them to `backward-word` and `forward-word` in `~/.inputrc`. The codes can be made visible by first issuing the *cat* command.
+The `HISTCONTROL` variable can prevent certain commands from being logged to the history. For example, to stop logging of repeated identical commands
 
-For example, for [urxvt](/index.php/Urxvt "Urxvt"):
+ `~/.bashrc`  `export HISTCONTROL=ignoredups` 
 
- `~/.inputrc` 
-```
-"\eOd": backward-word
-"\eOc": forward-word
-```
+or set it to `erasedups` to ensure that Bash's history will only contain one copy of each command (regardless of order). See the Bash man page for more options.
 
 ### Mimic Zsh run-help ability
 
-Zsh can invoke the manual for the written command pushing `Alt+h`. A similar behaviour is obtained in Bash by appending this line in your `inputrc` file:
+Zsh can invoke the manual for the command preceding the cursor by pressing `Alt+h`. A similar behaviour is obtained in Bash using this [Readline](/index.php/Readline "Readline") bind:
 
- `/etc/inputrc` 
+ `~/.bashrc` 
 ```
-"\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"
+bind '"\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"'
 
 ```
+
+This assumes are you using the (default) Emacs [editing mode](/index.php/Readline#Editing_mode "Readline").
 
 ## Aliases
 

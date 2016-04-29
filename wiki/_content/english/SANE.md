@@ -80,7 +80,7 @@ Then you need to tell sane where the firmware is:
 *   Open the file `/etc/sane.d/<backend-name>.conf`.
 *   Make sure the firmware entry is uncommented and let the file-path point to where you put the firmware file for your scanner. Be sure that members of the group `scanner` can access the `/etc/sane.d/<backend-name>.conf` file.
 
-If the backend of your scanner is not part of the sane package (such as hpaio.conf which is part of hplip), you need to uncomment the relevant entry in /etc/sane.d/dll.d/hplip.
+If the backend of your scanner is not part of the sane package (such as hpaio.conf which is part of [hplip](https://www.archlinux.org/packages/?name=hplip)), you need to uncomment the relevant entry in `/etc/sane.d/dll.conf`.
 
 ## Install a frontend
 
@@ -93,6 +93,10 @@ Many frontends exist for SANE, a non-exhaustive list of which can be found on th
 *   **[Simple Scan](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#Simple_Scan "wikipedia:Scanner Access Now Easy")** — A simplified GUI that is intended to be easier to use and better integrated into the [GNOME](/index.php/GNOME "GNOME") desktop than XSane. It was initially written for Ubuntu and is maintained by Robert Ancell of Canonical Ltd. for GNU/Linux.
 
 	[http://launchpad.net/simple-scan](http://launchpad.net/simple-scan) || [simple-scan](https://www.archlinux.org/packages/?name=simple-scan)
+
+*   **[Skanlite](https://en.wikipedia.org/wiki/Skanlite "wikipedia:Skanlite")** — A simple image scanning application that does nothing more than scan and save images, based on the KSane backend.
+
+	[https://www.kde.org/applications/graphics/skanlite](https://www.kde.org/applications/graphics/skanlite) || [skanlite](https://www.archlinux.org/packages/?name=skanlite)
 
 *   **[XSane](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#XSane "wikipedia:Scanner Access Now Easy")** — A full-featured GTK-based frontend looking a bit old but providing extended functionalities.
 

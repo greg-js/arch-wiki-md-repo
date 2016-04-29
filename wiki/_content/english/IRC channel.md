@@ -23,7 +23,7 @@ There are also a number of other channels dedicated to Arch Linux maintained by 
 
 To join the channels, you need an IRC client. See [List of applications/Internet#IRC clients](/index.php/List_of_applications/Internet#IRC_clients "List of applications/Internet") or [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients") for a list. **#archlinux** and **#archlinux-offtopic** now have the channel mode set to `+r`, which means that you need to be identified with NickServ. We needed to do this to reduce spam. To register with NickServ, follow the freenode FAQ's instructions found [here](https://freenode.net/kb/answer/registration). If you are not registered and identified, you will be forwarded to **#archlinux-unregistered**, and not be able to join until you are identified. You can get a list of people who can help you by typing `/msg chanserv access #archlinux list`, or join #freenode and ask there.
 
-Some IRC clients have a race-condition where they try to autojoin channels before you have been identified with NickServ, and to solve it you need to enable SASL. Either look up your IRC client's documentation or look at the freenode [SASL page](https://freenode.net/sasl/) to find instructions for how to enable it.
+Some IRC clients have a race-condition where they try to autojoin channels before you have been identified with NickServ, and to solve it you need to enable SASL. Either look up your IRC client's documentation or look at the freenode [SASL page](https://freenode.net/kb/answer/sasl) to find instructions for how to enable it.
 
 The following commands can be used inside your IRC client to quickly connect to a server and join a channel, provided that you have registered with NickServ:
 
@@ -52,9 +52,9 @@ If `/query` happens to not work in your client you can try using either `/quote 
 
 *   **Follow the guidelines**
 
-	[Freenode network policy](http://freenode.net/policies)
+	[Freenode network policy](https://freenode.net/policies)
 
-	[Freenode channel guidelines](http://freenode.net/changuide)
+	[Freenode channel guidelines](https://freenode.net/changuide)
 
 	[#archlinux channel guidelines](#.23archlinux_guidelines)
 
@@ -110,9 +110,9 @@ If you for some reason need the help of an op, do not be shy to `/query` or `/ms
 
 *   **Follow the guidelines**
 
-	[Freenode network policy](http://freenode.net/policy.shtml)
+	[Freenode network policy](https://freenode.net/policies)
 
-	[Freenode channel guidelines](http://freenode.net/channel_guidelines.shtml)
+	[Freenode channel guidelines](https://freenode.net/changuide)
 
 	[#archlinux channel guidelines](#.23archlinux_guidelines)
 

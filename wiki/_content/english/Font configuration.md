@@ -613,7 +613,9 @@ Those still having problems can fall back to manually setting the DPI used by fo
 
 ### Calibri, Cambria, Monaco, etc. not rendering properly
 
-Some scalable fonts have embedded bitmap versions which are rendered instead, mainly at smaller sizes. Force using scalable fonts at all sizes by [#Disabling embedded bitmap](#EmbeddedBitmap).
+Some scalable fonts have embedded bitmap versions which are rendered instead, mainly at smaller sizes.
+
+Using [Croscore Fonts](/index.php/Croscore_Fonts "Croscore Fonts") can improve the rendering in these cases. You can also force using scalable fonts at all sizes by [#Disabling embedded bitmap](#EmbeddedBitmap), sacrificing some rendering quality.
 
 ### Applications overriding hinting
 

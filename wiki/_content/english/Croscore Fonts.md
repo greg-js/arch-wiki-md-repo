@@ -49,13 +49,13 @@ Append following lines to your font configuration file, eg. /etc/fonts/local.con
       <string>Arimo</string>
     </edit>
   </match>
-  <match>
+  <match> <!-- NOT metric-compatible! -->
     <test name="family"><string>Verdana</string></test>
     <edit name="family" mode="assign" binding="strong">
       <string>Arimo</string>
     </edit>
   </match>
-  <match>
+  <match> <!-- NOT metric-compatible! -->
     <test name="family"><string>Tahoma</string></test>
     <edit name="family" mode="assign" binding="strong">
       <string>Arimo</string>
@@ -73,7 +73,7 @@ Append following lines to your font configuration file, eg. /etc/fonts/local.con
       <string>Tinos</string>
     </edit>
   </match>
-    <match>
+  <match> <!-- NOT metric-compatible! -->
     <test name="family"><string>Consolas</string></test>
     <edit name="family" mode="assign" binding="strong">
       <string>Cousine</string>

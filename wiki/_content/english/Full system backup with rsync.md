@@ -1,6 +1,8 @@
-This article is about using [rsync](/index.php/Rsync "Rsync") to transfer a copy of your "/" tree, excluding a few select folders. This approach is considered to be better than [disk cloning](/index.php/Disk_cloning "Disk cloning") with `dd` since it allows for a different size, partition table and filesystem to be used, and better than copying with `cp -a` as well, because it allows greater control over file permissions, attributes, Access Control Lists (ACLs) and extended attributes. [[1]](http://www.bestbits.at/acl/about.html)
+This article is about using [rsync](/index.php/Rsync "Rsync") to transfer a copy of your "/" tree, excluding a few select folders. This approach is considered to be better than [disk cloning](/index.php/Disk_cloning "Disk cloning") with `dd` since it allows for a different size, partition table and filesystem to be used, and better than copying with `cp -a` as well, because it allows greater control over file permissions, attributes, [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") and [extended attributes](/index.php/Extended_attributes "Extended attributes").
 
-Either method will work even while the system is running. Since it's going to take a while, you may freely browse the web during this time. Worst case scenario you will not get the same opened tabs when you restore the backup (or boot from it) because they were not saved. Not a big deal.
+Either method will work even while the system is running, but files changed during the transfer may or may not be transferred, which could cause undefined behaviour of some programs using the transferred files.
+
+This approach will also work well for migrating an existing installation to a new harddrive or [SSD](/index.php/SSD "SSD").
 
 ## Contents
 

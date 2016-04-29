@@ -489,7 +489,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 ### Microsoft fonts
 
-See [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts").
+See [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts") and [Croscore Fonts](/index.php/Croscore_Fonts "Croscore Fonts").
 
 ### Apple OS X fonts
 

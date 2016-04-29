@@ -221,39 +221,42 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [66 This War of Mine](#This_War_of_Mine)
     *   [66.1 Troubleshooting](#Troubleshooting_25)
         *   [66.1.1 Game doesn't load](#Game_doesn.27t_load)
-*   [67 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-    *   [67.1 Crash on launch](#Crash_on_launch)
-*   [68 Transistor](#Transistor)
-    *   [68.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
-*   [69 Trine 2](#Trine_2)
-    *   [69.1 Dependencies](#Dependencies_34)
-    *   [69.2 Troubleshooting](#Troubleshooting_26)
-*   [70 Unity3D](#Unity3D)
-    *   [70.1 Locale Settings](#Locale_Settings_2)
-    *   [70.2 Unity 5 sound problems](#Unity_5_sound_problems)
-*   [71 Unity of Command](#Unity_of_Command)
-    *   [71.1 Dependencies](#Dependencies_35)
-    *   [71.2 Troubleshooting](#Troubleshooting_27)
-        *   [71.2.1 No audio](#No_audio_5)
-*   [72 Unrest](#Unrest)
-    *   [72.1 Dependencies](#Dependencies_36)
-*   [73 War Thunder](#War_Thunder)
-    *   [73.1 Troubleshooting](#Troubleshooting_28)
-*   [74 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [74.1 Dependencies](#Dependencies_37)
-    *   [74.2 Troubleshooting](#Troubleshooting_29)
-*   [75 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-    *   [75.1 Dependencies](#Dependencies_38)
-*   [76 World of Goo](#World_of_Goo)
-    *   [76.1 Changing resolution](#Changing_resolution)
-*   [77 Worms Reloaded](#Worms_Reloaded)
-    *   [77.1 Dependencies](#Dependencies_39)
-*   [78 XCOM](#XCOM)
-    *   [78.1 Dependencies](#Dependencies_40)
-    *   [78.2 Hangs on startup](#Hangs_on_startup)
-    *   [78.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
-*   [79 Saints Row IV](#Saints_Row_IV)
-    *   [79.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+*   [67 Tomb Raider](#Tomb_Raider)
+    *   [67.1 Troubleshooting](#Troubleshooting_26)
+        *   [67.1.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+*   [68 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+    *   [68.1 Crash on launch](#Crash_on_launch)
+*   [69 Transistor](#Transistor)
+    *   [69.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
+*   [70 Trine 2](#Trine_2)
+    *   [70.1 Dependencies](#Dependencies_34)
+    *   [70.2 Troubleshooting](#Troubleshooting_27)
+*   [71 Unity3D](#Unity3D)
+    *   [71.1 Locale Settings](#Locale_Settings_2)
+    *   [71.2 Unity 5 sound problems](#Unity_5_sound_problems)
+*   [72 Unity of Command](#Unity_of_Command)
+    *   [72.1 Dependencies](#Dependencies_35)
+    *   [72.2 Troubleshooting](#Troubleshooting_28)
+        *   [72.2.1 No audio](#No_audio_5)
+*   [73 Unrest](#Unrest)
+    *   [73.1 Dependencies](#Dependencies_36)
+*   [74 War Thunder](#War_Thunder)
+    *   [74.1 Troubleshooting](#Troubleshooting_29)
+*   [75 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [75.1 Dependencies](#Dependencies_37)
+    *   [75.2 Troubleshooting](#Troubleshooting_30)
+*   [76 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [76.1 Dependencies](#Dependencies_38)
+*   [77 World of Goo](#World_of_Goo)
+    *   [77.1 Changing resolution](#Changing_resolution)
+*   [78 Worms Reloaded](#Worms_Reloaded)
+    *   [78.1 Dependencies](#Dependencies_39)
+*   [79 XCOM](#XCOM)
+    *   [79.1 Dependencies](#Dependencies_40)
+    *   [79.2 Hangs on startup](#Hangs_on_startup)
+    *   [79.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [80 Saints Row IV](#Saints_Row_IV)
+    *   [80.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
 
 ## Air Brawl
 
@@ -1572,6 +1575,16 @@ This happens because of a incompatibility of the newer version of `lib32-glibc`.
 ```
 
 located in the archive and put on the main game folder: `~/.local/share/Steam/steamapps/common/This War of Mine/`
+
+## Tomb Raider
+
+### Troubleshooting
+
+#### Game immediately closes when running with steam-native
+
+Tomb Raider has a very heavy amount of dependency on the Steam runtime, the easiest solution is to just run it using the runtime. You can do so by setting the following as the launch option:
+
+ `/home/[your username]/.local/share/Steam/ubuntu12_32/steam-runtime/run.sh %command%` 
 
 ## Towns / Towns Demo
 

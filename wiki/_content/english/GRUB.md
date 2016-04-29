@@ -72,6 +72,7 @@
     *   [7.11 error: unknown filesystem](#error:_unknown_filesystem)
     *   [7.12 grub-reboot not resetting](#grub-reboot_not_resetting)
     *   [7.13 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
+    *   [7.14 Windows 8 not found](#Windows_8_not_found)
 *   [8 See also](#See_also)
 
 ## Preface
@@ -1128,6 +1129,10 @@ If a drive is formatted with BTRFS without creating a partition table (eg. /dev/
 ```
 
 You can zero the drive, but the easy solution that leaves your data alone is to erase the BTRFS superblock with `wipefs -o 0x10040 /dev/sdx`
+
+### Windows 8 not found
+
+A setting in Windows 8 called "Hiberboot", "Hybrid Boot" or "Fast Boot" can prevent the Windows partition from being mounted, so `grub-mkconfig` will not find a Windows install. Disabling Hiberboot in Windows will allow it to be added to the GRUB menu.
 
 ## See also
 

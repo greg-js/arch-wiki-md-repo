@@ -201,7 +201,7 @@ menuentry "[loopback]altlinux-7.0.5-simply-x86_64-install-dvd5.iso" {
 menuentry '[loopback]archlinux-2014.12.01-dual.iso' {
 	set isofile='/boot/iso/archlinux-2014.12.01-dual.iso'
 	loopback loop $isofile
-	linux (loop)/arch/boot/**x86_64**/vmlinuz archisodevice=/dev/loop0 img_dev=$imgdevpath img_loop=$isofile
+	linux (loop)/arch/boot/**x86_64**/vmlinuz archisodevice=/dev/loop0 img_dev=$imgdevpath img_loop=$isofile earlymodules=loop
 	initrd (loop)/arch/boot/**x86_64**/archiso.img
 }
 ```

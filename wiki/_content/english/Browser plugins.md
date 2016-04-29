@@ -189,11 +189,11 @@ The same procedure can be used to associate video downloaders such as *youtube-d
 
 ### PDF.js
 
-[PDF.js](https://mozillalabs.com/en-US/pdfjs/) is a PDF renderer created by Mozilla and built using HTML5 technologies.
+[PDF.js](https://github.com/mozilla/pdf.js) is a PDF renderer created by Mozilla and built using HTML5 technologies.
 
-For [Firefox](/index.php/Firefox "Firefox") it is available as a [plugin](https://addons.mozilla.org/en-US/firefox/addon/pdfjs/), which is included in [Firefox](/index.php/Firefox "Firefox") since version 19.
+It is included in [Firefox](/index.php/Firefox "Firefox").
 
-For [Chromium](/index.php/Chromium "Chromium") and Google Chrome there is an experimental extension in the [Chrome web store](https://chrome.google.com/webstore/detail/pdf-viewer/oemmndcbldboiebfnladdacbdfmadadm) or alternatively it can be built from the source of [Pdf.js](https://github.com/mozilla/pdf.js).
+For [Chromium](/index.php/Chromium "Chromium") and Google Chrome it is available as extension in the [Chrome Web Store](https://chrome.google.com/webstore/detail/pdf-viewer/oemmndcbldboiebfnladdacbdfmadadm).
 
 ### External PDF viewers
 
@@ -218,8 +218,6 @@ Restart and it should work like a charm!
 ### Adobe Reader
 
 **Note:** Adobe Reader for Linux is discontinued[[3]](http://www.omgubuntu.co.uk/2014/10/adobe-reader-linux-download-pulled-website) and the outdated version that is still available cannot easily run in a 64-bit browser.
-
-Due to licensing restrictions, Adobe Reader is only available in the [AUR](/index.php/AUR "AUR").
 
 Adobe Acrobat Reader is only available as a 32-bit binary. It can be installed with the [acroread](https://aur.archlinux.org/packages/acroread/) package. This package installs the Acrobat Reader application as well as the NPAPI plugin.
 

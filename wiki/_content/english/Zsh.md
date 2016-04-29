@@ -361,7 +361,7 @@ Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash
 This is an example of a two-sided prompt:
 
 ```
-PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%#"
+PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%# "
 RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 
 ```

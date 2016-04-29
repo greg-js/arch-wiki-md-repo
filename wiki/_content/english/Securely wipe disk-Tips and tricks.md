@@ -82,13 +82,13 @@ Choosing the device to be wiped needs extra care; a simple typo can be enough to
 
 ```
 if [[ -e "$1" && -b "$1" ]];then 
-if_safe="$(lsblk -o "NAME,MOUNTPOINT" ${1//[0-9]/} | grep /)";
- if [[ -z "$if_safe" ]];then
+NOT_safe="$(lsblk -o "NAME,MOUNTPOINT" ${1//[0-9]/} | grep -e / -e '\]')";
+ if [[ -z "$NOT_safe" ]];then
 # Here you can use any of your favourite wiping tools 
 # to wipe destination passed on command line and stored in variable "$1"
 # 
   else
-  echo 'Not allowed to destroy if any of the partitions is mounted: '"$if_safe"
+  echo 'Not allowed to destroy if any of the partitions is mounted: '"$NOT_safe"
  fi
 fi 
 ```

@@ -101,4 +101,4 @@ authors = ["Your Name <you@example.com>"]
 *   [Examples with small descriptions](http://rustbyexample.com/)
 *   [Official starting guide](http://doc.rust-lang.org/stable/book/)
 *   [Page listing of Rust tutorials](https://github.com/ctjhoa/rust-learning)
-*   [Libraries(crates) avalaible through Cargo](https://crates.io/)
+*   [Libraries(crates) available through Cargo](https://crates.io/)

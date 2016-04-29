@@ -38,14 +38,6 @@ $ git commit -a
 
 ### Other tools
 
-*   **vcsh** — Allows separating differents modules (e.g., Emacs config vs. zsh config) into individual repositories which can be maintained separately, as opposed to keeping all dotfiles in a single repository. Works with git only.
-
-	[https://github.com/RichiH/vcsh](https://github.com/RichiH/vcsh) || [vcsh](https://aur.archlinux.org/packages/vcsh/)
-
-*   **yadm** — Manages files across systems using a single Git repository. Provides a way to use alternate files on a specific OS or host. Supplies a method of encrypting confidential data so it can safely be stored in your repository.
-
-	[https://github.com/TheLocehiliosan/yadm](https://github.com/TheLocehiliosan/yadm) || [yadm](https://aur.archlinux.org/packages/yadm/)
-
 *   **etckeeper** — Intended to version-control system-wide configuration in /etc. Works by keeping track of permissions and modes which version-control software often ignores. Can use various SCM systems as a backend. Hooks can auto-commit changes to the repository before a system-upgrade; for pacman, these hooks currently have to be triggered manually.
 
 	[http://joeyh.name/code/etckeeper/](http://joeyh.name/code/etckeeper/) || [etckeeper](https://www.archlinux.org/packages/?name=etckeeper)
@@ -53,6 +45,18 @@ $ git commit -a
 *   **GNU Stow** — Can be used to symlink dotfiles from a repository into the $HOME tree. See [[1]](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) for more information.
 
 	[http://www.gnu.org/software/stow/](http://www.gnu.org/software/stow/) || [stow](https://www.archlinux.org/packages/?name=stow)
+
+*   **Pearl** — Package manager for dotfiles, plugins, programs and any form of code accessible via git. Allow to easily share and sync packages across systems and have them ready to work out of the box.
+
+	[https://github.com/pearl-core/pearl](https://github.com/pearl-core/pearl) || [pearl-git](https://aur.archlinux.org/packages/pearl-git/)
+
+*   **vcsh** — Allows separating differents modules (e.g., Emacs config vs. zsh config) into individual repositories which can be maintained separately, as opposed to keeping all dotfiles in a single repository. Works with git only.
+
+	[https://github.com/RichiH/vcsh](https://github.com/RichiH/vcsh) || [vcsh](https://aur.archlinux.org/packages/vcsh/)
+
+*   **yadm** — Manages files across systems using a single Git repository. Provides a way to use alternate files on a specific OS or host. Supplies a method of encrypting confidential data so it can safely be stored in your repository.
+
+	[https://github.com/TheLocehiliosan/yadm](https://github.com/TheLocehiliosan/yadm) || [yadm](https://aur.archlinux.org/packages/yadm/)
 
 ### Maintaining dotfiles across multiple machines
 
@@ -96,7 +100,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | [meskarune](https://github.com/meskarune/.dotfiles) | bash | herbstluftwm | vim | rxvt-unicode | screen | conky | weechat |
 | [neersighted](https://github.com/neersighted/dotfiles) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp | htop | mutt | irssi |
 | [OK100](https://github.com/ok100/configs) | bash | dwm | vim | rxvt-unicode | cmus | conky, dzen | mutt | weechat |
-| [pid1](https://github.com/pid1/dotfiles) | zsh | dwm | neovim | st | custom | weechat |
+| [pid1](https://github.com/pid1/dotfiles) | zsh | dwm | neovim | termite | tmux | custom | mutt | weechat |
 | [unexist](http://hg.subtle.de/dotfiles/file) | zsh | subtle | vim | rxvt-unicode | ncmpcpp | mutt | irssi |
 | [vodik](https://github.com/vodik/dotfiles) | zsh | xmonad | vim | termite-git | tmux | ncmpcpp | custom | mutt | weechat |
 | [w0ng](https://github.com/w0ng/dotfiles) | zsh | dwm | vim | rxvt-unicode | tmux | ncmpcpp | custom | mutt | irssi |

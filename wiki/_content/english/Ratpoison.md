@@ -1,4 +1,4 @@
-[Ratpoison](http://www.nongnu.org/ratpoison/) is a tiling [window manager](/index.php/Window_manager "Window manager") written in C, that allows the user to manage applications without a mouse. The user interface is inspired by [Screen](/index.php/Screen "Screen").
+[Ratpoison](http://www.nongnu.org/ratpoison/) is a tiling [window manager](/index.php/Window_manager "Window manager") written in C that allows the user to manage applications without a mouse. The user interface is inspired by [Screen](/index.php/Screen "Screen").
 
 ## Contents
 
@@ -24,7 +24,7 @@ Ratpoison can be [installed](/index.php/Installed "Installed") with package [rat
 
 ## Configuration
 
-To use ratpoison as your windowmanager, you have to create/edit the file `~/.xinitrc`.
+To use ratpoison as your window manager, you have to create/edit the file `~/.xinitrc`.
 
 Example .xinitrc:
 

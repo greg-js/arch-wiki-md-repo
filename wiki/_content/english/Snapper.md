@@ -24,6 +24,7 @@
     *   [8.3 Deleting files from snapshots](#Deleting_files_from_snapshots)
     *   [8.4 Preventing slowdowns](#Preventing_slowdowns)
         *   [8.4.1 updatedb](#updatedb)
+        *   [8.4.2 Incremental backup to external drive](#Incremental_backup_to_external_drive)
     *   [8.5 Preserving log files](#Preserving_log_files)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Snapper logs](#Snapper_logs)
@@ -344,6 +345,10 @@ Keeping many of snapshots for a large timeframe on a busy filesystem like `/`, w
 By default, `updatedb` will also index the `.snapshots` directory created by snapper, which can cause serious slowdown and excessive memory usage if you have many snapshots. You can prevent `updatedb` from indexing over it by editing:
 
  `/etc/updatedb.conf`  `PRUNENAMES = ".snapshots"` 
+
+#### Incremental backup to external drive
+
+This [script](https://gist.githubusercontent.com/wesbarnett/c9d12e60d17cf8a73c485ad4bb9037e9/raw/4f74040ea8a0b0cca73305550681b8c2b2669f89/backup) can be used to perform incremental backups to an external drive mounted on the system.
 
 ### Preserving log files
 

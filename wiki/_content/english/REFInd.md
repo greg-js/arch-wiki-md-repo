@@ -88,7 +88,7 @@ First, copy the executable to the ESP:
 Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your ESP. If you are installing rEFInd to the default UEFI path `/EFI/BOOT/BOOTX64.EFI`, you can probably skip this step.
 
 ```
-# efibootmgr -c -d */dev/sdX* -p *Y* -l /EFI/refind/refind_x64.efi -L "rEFInd Boot Manager"
+# efibootmgr --create --disk */dev/sdX* --part *Y* --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager"
 
 ```
 

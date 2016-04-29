@@ -29,6 +29,7 @@ The ownCloud installation and configuration mainly depends on what web server an
     *   [5.2 Android](#Android)
 *   [6 Important notes](#Important_notes)
     *   [6.1 SABnzbd](#SABnzbd)
+    *   [6.2 php-7.0.6](#php-7.0.6)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
     *   [7.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
@@ -37,11 +38,10 @@ The ownCloud installation and configuration mainly depends on what web server an
     *   [7.5 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
     *   [7.6 Seeing white page after login](#Seeing_white_page_after_login)
     *   [7.7 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
-    *   [7.8 Server waits forever after creating admin account, before giving a 503 error](#Server_waits_forever_after_creating_admin_account.2C_before_giving_a_503_error)
-    *   [7.9 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
-    *   [7.10 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
-    *   [7.11 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
-    *   [7.12 Password not saved](#Password_not_saved)
+    *   [7.8 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
+    *   [7.9 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
+    *   [7.10 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
+    *   [7.11 Password not saved](#Password_not_saved)
 *   [8 Upload and Share from File Manager](#Upload_and_Share_from_File_Manager)
 *   [9 See also](#See_also)
 
@@ -561,6 +561,10 @@ folder_rename 0
 
 in your sabnzbd.ini file, because ownCloud will scan the files as soon as they get uploaded, preventing SABnzbd from removing UNPACKING prefixes etc.
 
+### php-7.0.6
+
+OwnCloud 9.0.1 doesn't work with php-7.0.6, so you have to downgrade php, php-apache, php-gd and php-intl to 7.0.5 until [this fix](https://github.com/owncloud/core/pull/24326/) is backported.
+
 ## Troubleshooting
 
 ### Self-signed certificate not accepted
@@ -655,18 +659,7 @@ This is most likely a certificate issue. Recreate it, and do not leave the commo
 
 ### Seeing white page after login
 
-The cause is probably a new app that you installed. To fix that, you can either use [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") to edit the `oc_appconfig` table (if you got lucky and the table has an edit option), or do it by hand with mysql:
-
-```
-mysql -u root -p owncloud
-MariaDB [owncloud]> **delete from** oc_appconfig **where** appid='<nameOfExtension>' **and** configkey='enabled' **and** configvalue='yes';
-MariaDB [owncloud]> **insert into** oc_appconfig (appid,configkey,configvalue) **values** ('<nameOfExtension>','enabled','no');
-
-```
-
-This should delete the relevant configuration from the table and add it again.
-
-Alternatively, you can use the occ command as described [here](https://doc.owncloud.org/server/8.2/admin_manual/configuration_server/occ_command.html). So with
+The cause is probably a new app that you installed. To fix that, you can use the occ command as described [here](https://doc.owncloud.org/server/8.2/admin_manual/configuration_server/occ_command.html). So with
 
 ```
 sudo -u http php /usr/share/webapps/owncloud/occ app:list
@@ -682,13 +675,20 @@ sudo -u http php /usr/share/webapps/owncloud/occ app:disable <nameOfExtension>
 
 you can disable the troubling app.
 
+Alternatively, you can either use [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") to edit the `oc_appconfig` table (if you got lucky and the table has an edit option), or do it by hand with mysql:
+
+```
+mysql -u root -p owncloud
+MariaDB [owncloud]> **delete from** oc_appconfig **where** appid='<nameOfExtension>' **and** configkey='enabled' **and** configvalue='yes';
+MariaDB [owncloud]> **insert into** oc_appconfig (appid,configkey,configvalue) **values** ('<nameOfExtension>','enabled','no');
+
+```
+
+This should delete the relevant configuration from the table and add it again.
+
 ### GUI sync client fails to connect
 
 If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[4]](https://github.com/owncloud/mirall/issues/734)
-
-### Server waits forever after creating admin account, before giving a 503 error
-
-If the server waits forever but the database is working, try installing all of the apps available in the ArchLinux repos. If you don't have any apps installed, it can cause issues.
 
 ### Some files upload, but give an error 'Integrity constraint violation...'
 

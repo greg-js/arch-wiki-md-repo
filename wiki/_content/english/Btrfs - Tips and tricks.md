@@ -192,7 +192,7 @@ You can manually create a [GRUB#GNU/Linux menu entry](/index.php/GRUB#GNU.2FLinu
 
 *btrfs-check* cannot be used on a mounted file system. To be able to use *btrfs-check* without booting from a live USB, add it to the initial ramdisk:
 
- `/etc/mkinitcpio.conf`  `BINARIES="/usr/bin/btrfsck"` 
+ `/etc/mkinitcpio.conf`  `BINARIES="/usr/bin/btrfs"` 
 
 Regenerate the initial ramdisk using [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio").
 

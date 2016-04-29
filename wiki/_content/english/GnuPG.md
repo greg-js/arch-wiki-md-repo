@@ -11,16 +11,16 @@ According to the [official website](http://www.gnupg.org):
     *   [2.3 Default options for new users](#Default_options_for_new_users)
 *   [3 Usage](#Usage)
     *   [3.1 Create key pair](#Create_key_pair)
-    *   [3.2 Backup your private key](#Backup_your_private_key)
+    *   [3.2 List keys](#List_keys)
     *   [3.3 Export your public key](#Export_your_public_key)
     *   [3.4 Import a key](#Import_a_key)
     *   [3.5 Use a keyserver](#Use_a_keyserver)
     *   [3.6 Encrypt and decrypt](#Encrypt_and_decrypt)
 *   [4 Key maintenance](#Key_maintenance)
-    *   [4.1 Edit your key](#Edit_your_key)
-    *   [4.2 Exporting subkey](#Exporting_subkey)
-    *   [4.3 Rotating subkeys](#Rotating_subkeys)
-    *   [4.4 List keys](#List_keys)
+    *   [4.1 Backup your private key](#Backup_your_private_key)
+    *   [4.2 Edit your key](#Edit_your_key)
+    *   [4.3 Exporting subkey](#Exporting_subkey)
+    *   [4.4 Rotating subkeys](#Rotating_subkeys)
 *   [5 Signatures](#Signatures)
     *   [5.1 Sign a file](#Sign_a_file)
     *   [5.2 Clearsign a file or message](#Clearsign_a_file_or_message)
@@ -119,18 +119,21 @@ The command will prompt for answers to several questions. For general use most p
 
 **Note:** The name and email address you enter here will be seen by anybody who imports your key.
 
-### Backup your private key
+### List keys
 
-To backup your private key do the following:
-
-```
-$ gpg --export-secret-keys --armor *<user-id>* > *privkey.asc*
+To list keys in your public key ring:
 
 ```
+$ gpg --list-keys
 
-Place the private key in a safe place, such as a locked container or encrypted drive.
+```
 
-**Warning:** Anyone who gains access to the above exported file will be able to encrypt and sign documents as if they were you *without* needing to know your passphrase.
+To list keys in your secret key ring:
+
+```
+$ gpg --list-secret-keys
+
+```
 
 ### Export your public key
 
@@ -222,6 +225,19 @@ You will be prompted to enter your passphrase. You will need to have already [im
 
 ## Key maintenance
 
+### Backup your private key
+
+To backup your private key do the following:
+
+```
+$ gpg --export-secret-keys --armor *<user-id>* > *privkey.asc*
+
+```
+
+Note that *gpg* release 2.1 changed default behaviour so that the above command enforces a passphrase protection, even if you deliberately chose not to use one on key creation. This is because otherwise anyone who gains access to the above exported file would be able to encrypt and sign documents as if they were you *without* needing to know your passphrase.
+
+**Warning:** The passphrase is usually the weakest link in protecting your secret key. Place the private key in a safe place on a different system/device, such as a locked container or encrypted drive. It is the only safety you have to regain control to your keyring in case of, for example, a drive failure, theft or worse.
+
 ### Edit your key
 
 Running the `gpg --edit-key *<user-id>*` command will present a menu which enables you to do most of your key management related tasks.
@@ -309,22 +325,6 @@ $ gpg --keyserver pgp.mit.edu --send-keys *<user-id>*
 ```
 
 **Note:** Revoking expired subkeys is unnecessary and arguably bad form. If you are constantly revoking keys, it may cause others to lack confidence in you.
-
-### List keys
-
-To list keys in your public key ring:
-
-```
-$ gpg --list-keys
-
-```
-
-To list keys in your secret key ring:
-
-```
-$ gpg --list-secret-keys
-
-```
 
 ## Signatures
 

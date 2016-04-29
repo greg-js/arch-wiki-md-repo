@@ -63,7 +63,7 @@ Exec = /usr/bin/update-mime-database /usr/share/mime
 
 Used by 170 packages
 
-Proposed Hook (install/upgrade)
+Proposed Hook (texinfo)
 
 ```
 [Trigger]
