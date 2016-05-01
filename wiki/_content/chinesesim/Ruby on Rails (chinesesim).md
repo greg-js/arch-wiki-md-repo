@@ -145,7 +145,7 @@ For [Nginx](/index.php/Nginx "Nginx"):
 
 The installer will provide you with any additional information regarding the installation (such as installing additional libraries).
 
-**Note:** See [NginX#Ruby_Integration_(Ruby_on_Rails_and_Rack-based)](/index.php/NginX#Ruby_Integration_.28Ruby_on_Rails_and_Rack-based.29 "NginX") for more information on configuring a Rails Nginx-Passenger web stack.
+**Note:** See [Nginx#Ruby Integration (Ruby on Rails and Rack-based)](/index.php/Nginx#Ruby_Integration_.28Ruby_on_Rails_and_Rack-based.29 "Nginx") for more information on configuring a Rails Nginx-Passenger web stack.
 
 ## 数据库
 

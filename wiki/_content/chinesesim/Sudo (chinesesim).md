@@ -71,7 +71,7 @@ sudo的配置文件是`/etc/sudoers`。`visudo`会锁住`sudoers`文件，保存
 
 ```
 
-要永久设置编辑器，请查看 [定义本地环境变量](/index.php/Environment_variables#Defining_variables_locally "Environment variables").
+要永久设置编辑器，请查看 [定义本地环境变量](/index.php/Environment_variables#Defining_variables "Environment variables").
 
 系统级的设置可以把编辑器设置到 `/etc/sudoers`。以 `nano` 为例，使用`visudo`打开该文件，加入以下内容：
 

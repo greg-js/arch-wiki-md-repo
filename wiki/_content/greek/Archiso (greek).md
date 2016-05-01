@@ -41,7 +41,7 @@ $ mkdir ~/archlive
 
 ```
 
-Αν χρησιμοποιείτε το προφίλ 'releng' ώστε να δημιουργήσετε μια πλήρως προσαρμοσμένη εικόνα, μπορείτε να προχωρήσετε στο τμήμα [Archiso#Configure our live medium](/index.php/Archiso#Configure_our_live_medium "Archiso").
+Αν χρησιμοποιείτε το προφίλ 'releng' ώστε να δημιουργήσετε μια πλήρως προσαρμοσμένη εικόνα, μπορείτε να προχωρήσετε στο τμήμα [Archiso#Configure the live medium](/index.php/Archiso#Configure_the_live_medium "Archiso").
 
 Αν χρησιμοποιείτε το προφίλ 'baseline' ώστε να δημιουργήσετε μια βασική εικόνα εγκατάστασης, τότε δεν θα χρειαστεί να κάνετε κάποιες προσαρμογές και μπορείτε να προχωρήσετε στο τμήμα [Archiso#Build the ISO](/index.php/Archiso#Build_the_ISO "Archiso")
 

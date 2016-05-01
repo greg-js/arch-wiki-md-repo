@@ -69,7 +69,7 @@ Altri bootloaders come [grub](https://www.archlinux.org/packages/?name=grub) uti
 
 ### Installazione
 
-*   Installare i pacchetti [syslinux](https://www.archlinux.org/packages/?name=syslinux) e [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+*   Installare i pacchetti [syslinux](https://www.archlinux.org/packages/?name=syslinux) e [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 **Nota:**
 
@@ -225,7 +225,7 @@ Se il comando di cui sopra non funziona è possibile provare ad utilizzare:
 
 ### Installazione
 
-*   Installare [syslinux](https://www.archlinux.org/packages/?name=syslinux) ed [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), quindi si installi Syslinux nella partizione EFI di sistema come mostrato sotto.
+*   Installare [syslinux](https://www.archlinux.org/packages/?name=syslinux) ed [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), quindi si installi Syslinux nella partizione EFI di sistema come mostrato sotto.
 
 *   Copiare i file di Syslinux nella partizione EFI di sistema (sostituire a `$esp` il punto di mount della partizione, solitamente `/boot`):
 
@@ -407,7 +407,7 @@ Gli standard VESA prevedono una dimensione massima di 25 righe e 80 colonne. Imp
 
 **Nel caso più semplice**, sarà necessario sostituire il valore del parametro `root`: si modifichi quindi `/dev/sda2` con il valore corretto.
 
-**Se si desidera usare gli [UUID](/index.php/Persistent_block_device_naming_(Italiano)#by-uuid "Persistent block device naming (Italiano)")** per la [nomenclatura persistende dei dispositivi a blocchi](/index.php/Persistent_block_device_naming_(Italiano) "Persistent block device naming (Italiano)") si modifichi la riga APPEND inserendo l'UUID della propria partizione root:
+**Se si desidera usare gli [UUID](/index.php/Persistent_block_device_naming_(Italiano)#By-uuid "Persistent block device naming (Italiano)")** per la [nomenclatura persistende dei dispositivi a blocchi](/index.php/Persistent_block_device_naming_(Italiano) "Persistent block device naming (Italiano)") si modifichi la riga APPEND inserendo l'UUID della propria partizione root:
 
 ```
 APPEND root=UUID=*1234* rw
@@ -597,7 +597,7 @@ Si noti che la voce relativa all'altro sistema in `<altro-OS>/boot/syslinux/sysl
 
 ### Usare memtest
 
-Si installi [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Si installi [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Si utilizzi questa sezione `LABEL` per effettuare il boot di memtest.
 
@@ -902,7 +902,7 @@ LABEL Windows
 
 ```
 
-si sostituisca il codice MBR con quello del drive dove è installato Windows (Si veda [sopra](/index.php/Syslinux_(Italiano)#Chainloading "Syslinux (Italiano)")), e si aggiunga `swap` alle opzioni.
+si sostituisca il codice MBR con quello del drive dove è installato Windows (Si veda [sopra](#Chainloading)), e si aggiunga `swap` alle opzioni.
 
 ### Leggere i log del bootloader
 

@@ -10,7 +10,9 @@ copy everything in `EFI` folder to your UEFI partition.
 
 ## Configuration
 
-Configuration is done through an xml file `config.plist` under path `EFI/CLOVER` from the UEFI partition. For details please reference [their wiki](http://clover-wiki.zetam.org/Home), for the Linux kernel EFISTUB boot entry and native resolution GUI, add following code to the relevent place:
+Configuration is done through an xml file `config.plist` under path `EFI/CLOVER` from the UEFI partition. For details please reference [their wiki](http://clover-wiki.zetam.org/Home), for the Linux kernel EFISTUB boot entry and native resolution GUI, add following code to the relevent place.
+
+`/initramfs-linux.img` and `vmlinuz-linux` are relative to the root of the UEFI partition. In this example, the initramfs and kernel files have to be at the root of the EFI partition, at the same level as the `EFI` directory.
 
 ```
 <key>GUI</key>

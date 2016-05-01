@@ -209,7 +209,7 @@ set spell
 
 Con questa opzione Vim evidenzierà le parole non scritte correttamente. Muovere il cursore su una parola errata e usare `z=` per vedere le correzioni proposte.
 
-Solo il dizionario inglese sarà installato di default, altri possono essere trovati nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). Per ottenere una lista dei linguaggi disponibili, eseguire:
+Solo il dizionario inglese sarà installato di default, altri possono essere trovati nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"). Per ottenere una lista dei linguaggi disponibili, eseguire:
 
 ```
 # pacman -Ss vim-spell
@@ -293,7 +293,7 @@ Consultare anche [questo articolo](http://vim.wikia.com/wiki/Restore_cursor_to_f
 
 ### Spazio vuoto all'inizio della finestra di gvim
 
-Quando si usa un [window manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") configurato per ignorare le dimensioni delle finestre, gvim riempirà l'area non funzionale con il colore dell sfondo del tema GTK.
+Quando si usa un [window manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") configurato per ignorare le dimensioni delle finestre, gvim riempirà l'area non funzionale con il colore dell sfondo del tema GTK.
 
 Una soluzione è disabilitare la barra dei menu in `.vimrc`, questo farà apparire la finestra di gvim come dovrebbe, occupando l'intera area:
 

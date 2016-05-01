@@ -563,7 +563,7 @@ in your sabnzbd.ini file, because ownCloud will scan the files as soon as they g
 
 ### php-7.0.6
 
-OwnCloud 9.0.1 doesn't work with php-7.0.6, so you have to downgrade php, php-apache, php-gd and php-intl to 7.0.5 until [this fix](https://github.com/owncloud/core/pull/24326/) is backported.
+OwnCloud 9.0.1-1 doesn't work with php-7.0.6, so you have to downgrade php, php-apache, php-gd and php-intl to 7.0.5 until [this fix](https://github.com/owncloud/core/pull/24326/) is backported. This is fixed in owncloud-9.0.1-2, so this chapter can be deleted soon.
 
 ## Troubleshooting
 

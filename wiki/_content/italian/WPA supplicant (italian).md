@@ -152,7 +152,7 @@ Per reti di varia complessità, che utilizzino [EAP](https://en.wikipedia.org/wi
 
 ### Configurazione
 
-Come già evidenziato nel paragrafo [#Configurazione tramite wpa_passphrase](#Configurazione_tramite_wpa_passphrase), è possibile generare un file di configurazione di base con:
+Come già evidenziato nel paragrafo [#Connessione tramite wpa_passphrase](#Connessione_tramite_wpa_passphrase), è possibile generare un file di configurazione di base con:
 
 ```
 # wpa_passphrase MIOSSID passphrase > /etc/wpa_supplicant/esempio.conf
@@ -288,7 +288,7 @@ che indica il mancato supporto al driver `nl80211`. In questo caso è possibile 
 
 ```
 
-Se il comando di cui sopra funziona e si desidera utilizzare [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)") per gestire la connessione wireless, è necessario [modificare](/index.php/Systemd#Editing_provided_unit_files "Systemd") il servizio `wpa_supplicant@.service` e modificare di conseguenza il parametro `ExecStart`:
+Se il comando di cui sopra funziona e si desidera utilizzare [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)") per gestire la connessione wireless, è necessario [modificare](/index.php/Systemd#Editing_provided_units "Systemd") il servizio `wpa_supplicant@.service` e modificare di conseguenza il parametro `ExecStart`:
 
  `/etc/systemd/system/wpa_supplicant@.service.d/wext.conf` 
 ```

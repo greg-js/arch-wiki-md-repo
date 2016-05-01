@@ -207,7 +207,7 @@ Para el autocompletado de parámetros de comandos en alias, añada lo siguiente 
 
 ### El gancho de "comando no encontrado"
 
-Vea [Pkgfile (Español)#Comando_no_encontrado](/index.php/Pkgfile_(Espa%C3%B1ol)#Comando_no_encontrado "Pkgfile (Español)").
+Vea [Pkgfile (Español)#Comando no encontrado](/index.php/Pkgfile_(Espa%C3%B1ol)#Comando_no_encontrado "Pkgfile (Español)").
 
 ### Prevenir líneas duplicadas en el historial
 

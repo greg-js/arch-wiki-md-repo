@@ -28,7 +28,7 @@
 
 ## Installazione
 
-[thunar](https://www.archlinux.org/packages/?name=thunar) è presente nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), quindi è facilmente installabile tramite [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
+[thunar](https://www.archlinux.org/packages/?name=thunar) è presente nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), quindi è facilmente installabile tramite [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
 
 Se si ha già installato [Xfce4](/index.php/Xfce_(Italiano) "Xfce (Italiano)") sul proprio sistema, si avrà già installato sicuramente anche Thunar.
 
@@ -42,7 +42,7 @@ Thunar supporta già di suo il montaggio\smontaggio delle periferiche, questo pl
 
 #### Installazione
 
-Il pacchetto [thunar-volman](https://www.archlinux.org/packages/?name=thunar-volman) è presente nei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Il pacchetto [thunar-volman](https://www.archlinux.org/packages/?name=thunar-volman) è presente nei [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 #### Configurazione
 
@@ -68,7 +68,7 @@ Multimedia - CD Audio: `amarok --cdplay %d`
 
 ### Usare Thunar per esplorare cartelle remote
 
-Da Xfce 4.8 e Thunar 1.2 è possibile esplorare cartelle remote (server FTP o cartelle condivise con [Samba](/index.php/Samba_(Italiano) "Samba (Italiano)")) direttamente in Thunar. Una funzionalità simile è disponibile anche con [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") e [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"). I pacchetti necessari sono [gvfs](https://www.archlinux.org/packages/?name=gvfs) e [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb), entrambi disponibili nei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Da Xfce 4.8 e Thunar 1.2 è possibile esplorare cartelle remote (server FTP o cartelle condivise con [Samba](/index.php/Samba_(Italiano) "Samba (Italiano)")) direttamente in Thunar. Una funzionalità simile è disponibile anche con [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") e [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"). I pacchetti necessari sono [gvfs](https://www.archlinux.org/packages/?name=gvfs) e [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb), entrambi disponibili nei [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Dopo aver riavviato Xfce ci sarà un link "Network" nella barra laterale di Thunar e le directory remote si potranno aprire agevolmente con questi URIs nella cartella di dialogo (da aprire con `Ctrl+L`): smb://, ftp:// e ssh:// .
 
@@ -94,7 +94,7 @@ gtk-icon-theme-name = "Tango"
 
 ```
 
-Naturalmente è fondamentale avere installato il pacchetto [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Naturalmente è fondamentale avere installato il pacchetto [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ### Partenza lenta "da freddo"
 
@@ -110,7 +110,7 @@ Thunar Archive Plugin è un frontend per programmi di archiviazione come File Ro
 
 #### Installazione
 
-Il pacchetto necessario è [thunar-archive-plugin](https://www.archlinux.org/packages/?name=thunar-archive-plugin) ed è disponibile nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), quindi facilmente installabile con [Pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
+Il pacchetto necessario è [thunar-archive-plugin](https://www.archlinux.org/packages/?name=thunar-archive-plugin) ed è disponibile nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), quindi facilmente installabile con [Pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
 
 ### Thunar Media Tags Plugin
 

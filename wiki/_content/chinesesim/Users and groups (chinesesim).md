@@ -382,9 +382,9 @@ $ cat /etc/group
 
 | 组 | 影响文件 | 作用 |
 | adbusers | `/dev/`中的设备节点 | 访问 [Android](/index.php/Android "Android") 调试桥。 |
-| cdemu | `/dev/vhba_ctl` | 使用 [cdemu](/index.php/Cdemu "Cdemu") 模拟驱动. |
+| cdemu | `/dev/vhba_ctl` | 使用 [CDemu](/index.php/CDemu "CDemu") 模拟驱动. |
 | locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | 使用 [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb") 命令。 |
-| networkmanager | 通过 [Networkmanager](/index.php/Networkmanager "Networkmanager") 连接无线网的权限。这个组在默认的Arch设置里没有，需要手动添加 |
+| networkmanager | 通过 [NetworkManager](/index.php/NetworkManager "NetworkManager") 连接无线网的权限。这个组在默认的Arch设置里没有，需要手动添加 |
 | thinkpad | `/dev/misc/nvram` | ThinkPad 用户访问 [tpb](/index.php/Tpb "Tpb") 等工具。 |
 | vboxusers | `/dev/vboxdrv` | 使用Virtualbox软件 |
 | vmware | 使用 [VMware](/index.php/VMware "VMware") 软件。 |
@@ -407,7 +407,7 @@ $ cat /etc/group
 | disk | `/dev/sda[1-9]`, `/dev/sdb[1-9]` | 直接访问不受 *optical*, *floppy* 和 *storage* 组控制的块设备. 除非有特殊需要, 否则不建议将一般用户添加至该组. |
 | floppy | `/dev/fd[0-9]` | 访问软盘驱动器。 |
 | lp | `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | 访问打印设备，管理打印任务。 |
-| network | 改变网络设置的权限，比如使用 [Networkmanager](/index.php/Networkmanager "Networkmanager") 的权限. |
+| network | 改变网络设置的权限，比如使用 [NetworkManager](/index.php/NetworkManager "NetworkManager") 的权限. |
 | optical | `/dev/sr[0-9]`, `/dev/sg[0-9]` | 访问光学设备，比如CD，DVD。 |
 | power | 使用 [Pm-utils](/index.php/Pm-utils "Pm-utils") (挂起、休眠...) 和电源管理控制。 |
 | scanner | `/var/lock/sane` | 访问扫描仪硬件。 |

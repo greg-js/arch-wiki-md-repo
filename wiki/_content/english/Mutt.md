@@ -69,6 +69,7 @@
     *   [5.3 I cannot change folder when using Mutt read-only (Mutt -R)](#I_cannot_change_folder_when_using_Mutt_read-only_.28Mutt_-R.29)
     *   [5.4 Error sending message, child exited 127 (Exec error.).](#Error_sending_message.2C_child_exited_127_.28Exec_error..29.)
     *   [5.5 Character encoding problems](#Character_encoding_problems)
+    *   [5.6 Unable to login with GMail](#Unable_to_login_with_GMail)
 *   [6 Documentation](#Documentation)
 *   [7 See also](#See_also)
 
@@ -1483,6 +1484,10 @@ For HTML emails, you can edit the relevant line of your mailcap by replacing `%{
 text/html; w3m -dump -I $(echo %{charset} | sed s/gb2312/gbk/I) %s; nametemplate=%s.html; copiousoutput
 
 ```
+
+### Unable to login with GMail
+
+Gmail disables access from apps it considers less secure, including `mutt`. You can enable access by following the instructions [here](https://support.google.com/accounts/answer/6010255)
 
 ## Documentation
 

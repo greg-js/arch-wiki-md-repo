@@ -131,7 +131,7 @@ Disk identifier: 0x526e236e
 /dev/sdb1   *           0      802815      401408   17  Hidden HPFS/NTFS
 ```
 
-If you are worried about unintentional damage of important data on the primary computer, consider using an isolated environment such as a virtual environment (VirtualBox, VMWare, QEMU, etc...) with direct connected disk drives to it or a single computer only with a storage disk(s) that need to be wiped booted from a [Live Media](/index.php/Archiso "Archiso")(USB, CD, PXE, etc...).
+If you are worried about unintentional damage of important data on the primary computer, consider using an isolated environment such as a virtual environment (VirtualBox, VMWare, QEMU, etc...) with direct connected disk drives to it or a single computer only with a storage disk(s) that need to be wiped booted from a [Live Media](/index.php/Archiso "Archiso")(USB, CD, PXE, etc...) or use a script to [prevent wiping mounted partitions by typo](/index.php/Securely_wipe_disk/Tips_and_tricks#Prevent_wiping_mounted_partitions "Securely wipe disk/Tips and tricks").
 
 ## Select a block size
 

@@ -127,7 +127,7 @@ Consulte [Comparison of tiling window managers](/index.php/Comparison_of_tiling_
 
 	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://www.archlinux.org/packages/?name=pawm)
 
-*   **[pekwm](/index.php/Pekwm "Pekwm")** — pekwm es un gestor de ventanas que alguna vez se basó en el gestor de ventanas aewm + +, pero ha evolucionado lo suficiente como para que no se parezca a aewm + + en absoluto. Tiene un gran conjunto de características ampliadas, incluyendo agrupamiento de ventanas (similar a Ion, PWM, o Fluxbox), auto-propiedades, Xinerama, keygrabber que soporta la gestión keychains, y mucho más.
+*   **[PekWM](/index.php/PekWM "PekWM")** — pekwm es un gestor de ventanas que alguna vez se basó en el gestor de ventanas aewm + +, pero ha evolucionado lo suficiente como para que no se parezca a aewm + + en absoluto. Tiene un gran conjunto de características ampliadas, incluyendo agrupamiento de ventanas (similar a Ion, PWM, o Fluxbox), auto-propiedades, Xinerama, keygrabber que soporta la gestión keychains, y mucho más.
 
 	[http://www.pekwm.org/projects/pekwm](http://www.pekwm.org/projects/pekwm) || [pekwm](https://www.archlinux.org/packages/?name=pekwm)
 

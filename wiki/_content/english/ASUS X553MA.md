@@ -49,7 +49,7 @@ See [Broadcom wireless#broadcom-wl](/index.php/Broadcom_wireless#broadcom-wl "Br
 If your laptop freezes whilst booting Linux, usually, one of these solutions will help:
 
 1.  Blacklist modules `dw_dmac` and `dw_dmac_core`:
-    1.  By adding the [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") `modprobe.blacklist=dw_dmac,dw_dmac_core`.
+    1.  By adding the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `modprobe.blacklist=dw_dmac,dw_dmac_core`.
     2.  By adding these lines to `/etc/modprobe.d/blacklist.conf`:
 
         ```

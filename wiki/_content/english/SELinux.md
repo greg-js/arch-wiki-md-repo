@@ -19,7 +19,7 @@ Running SELinux under a Linux distribution requires three things: An SELinux ena
     *   [3.4 Changing boot loader configuration](#Changing_boot_loader_configuration)
         *   [3.4.1 GRUB](#GRUB)
         *   [3.4.2 Syslinux](#Syslinux)
-        *   [3.4.3 Gummiboot](#Gummiboot)
+        *   [3.4.3 systemd-boot](#systemd-boot)
     *   [3.5 Checking PAM](#Checking_PAM)
     *   [3.6 Installing a policy](#Installing_a_policy)
     *   [3.7 Testing in a Vagrant virtual machine](#Testing_in_a_Vagrant_virtual_machine)
@@ -272,9 +272,9 @@ LABEL arch-selinux
 
 at the end. Change "linux-selinux" to whatever kernel you are using.
 
-#### Gummiboot
+#### systemd-boot
 
-Create a new loader entry, for example in /boot/loader/entries/arch-selinux.conf:
+Create a new loader entry, for example in `/boot/loader/entries/arch-selinux.conf`:
 
  `/boot/loader/entries/arch-selinux.conf` 
 ```

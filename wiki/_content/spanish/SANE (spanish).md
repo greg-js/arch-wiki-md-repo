@@ -27,7 +27,7 @@ Sane proporciona una biblioteca y una herramienta en línea de órdenes para uti
 
 ## Instalación
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [sane](https://www.archlinux.org/packages/?name=sane) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [sane](https://www.archlinux.org/packages/?name=sane) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Configuración
 
@@ -82,7 +82,7 @@ firmware /usr/share/sane/snapscan/u176v046.bin
 
 ### Para hardware HP
 
-Para el hardware de HP es posible que tenga que instalar [hplip](https://www.archlinux.org/packages/?name=hplip) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") y/o [hpoj](https://aur.archlinux.org/packages/hpoj/) desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
+Para el hardware de HP es posible que tenga que instalar [hplip](https://www.archlinux.org/packages/?name=hplip) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y/o [hpoj](https://aur.archlinux.org/packages/hpoj/) desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
 
 *   No se olvide descomentar `hpaio` en el archivo `/etc/sane.d/dll.conf`.
 *   Ejecutar `hp-setup`, como root, puede ayudarle a agregar el dispositivo.
@@ -238,7 +238,7 @@ Ahora el escáner puede ser utilizado por otras estaciones de trabajo, a través
 
 Puede acceder al escáner de red habilitada desde una estación de trabajo remota de Arch Linux.
 
-Para configurar la estación de trabajo, comience [instalando](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [xsane](https://www.archlinux.org/packages/?name=xsane) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Para configurar la estación de trabajo, comience [instalando](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [xsane](https://www.archlinux.org/packages/?name=xsane) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 A continuación, especifique el nombre del servidor host o la dirección IP en el archivo `/etc/sane.d/net.conf`:
 

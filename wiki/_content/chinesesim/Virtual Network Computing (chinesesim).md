@@ -358,7 +358,7 @@ WantedBy=multi-user.target
 
 ### 复制远程机器剪贴板内容到本地
 
-如果从远程机器到本机的复制不工作，如该[[参考](https://bbs.archlinux.org/viewtopic.php?id=101243)]下面所述，在服务器上执行 autocutsel：
+如果从远程机器到本机的复制不工作，如该[参考](https://bbs.archlinux.org/viewtopic.php?id=101243)下面所述，在服务器上执行 autocutsel：
 
 ```
 $ autocutsel -fork
@@ -396,7 +396,7 @@ VNC 代表 'Virtual Network Computing'（即虚拟网络计算机）.
 
 *   [Tightvnc](/index.php/Tightvnc "Tightvnc")
 
-*   [X11VNC (简体中文)](/index.php/X11VNC_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "X11VNC (简体中文)")
+*   [X11vnc (简体中文)](/index.php/X11vnc_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "X11vnc (简体中文)")
 
 *   其他
 

@@ -79,7 +79,7 @@ alias su='su -'
 
 ### su y wheel
 
-su de BSD permite únicamente a los miembros del [grupo](/index.php/Users_and_Groups_(Espa%C3%B1ol) "Users and Groups (Español)") «wheel» asumir la identidad de root por defecto. Este no es el comportamiento por defecto de su en GNU, pero dicho comportamiento puede ser imitado usando PAM. Descomente la línea apropiada en `/etc/pam.d/su`:
+su de BSD permite únicamente a los miembros del [grupo](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") «wheel» asumir la identidad de root por defecto. Este no es el comportamiento por defecto de su en GNU, pero dicho comportamiento puede ser imitado usando PAM. Descomente la línea apropiada en `/etc/pam.d/su`:
 
 ```
 auth required pam_wheel.so use_uid

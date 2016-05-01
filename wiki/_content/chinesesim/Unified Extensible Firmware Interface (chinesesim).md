@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Unified_Extensible_Firmware_Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-24，点击[这里](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=420028)可以查看翻译后英文页面的改动。
 
-**统一可扩展固件界面（Unified Extensible Firmware Interface）** (简称UEFI) 是一种新型固件，引入了新的系统启动方式，该方式有别于传统[BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS")系统所使用的“[MBR](/index.php/MBR "MBR")启动代码”(其二者区别见 [Arch boot process#Firmware_types](/index.php/Arch_boot_process#Firmware_types "Arch boot process"))。本文介绍了 **什么是UEFI** 以及 **UEFI在Linux内核中的支持** 。若要配置 UEFI 引导器，详见 [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)").
+**统一可扩展固件界面（Unified Extensible Firmware Interface）** (简称UEFI) 是一种新型固件，引入了新的系统启动方式，该方式有别于传统[BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS")系统所使用的“[MBR](/index.php/MBR "MBR")启动代码”(其二者区别见 [Arch boot process#Firmware types](/index.php/Arch_boot_process#Firmware_types "Arch boot process"))。本文介绍了 **什么是UEFI** 以及 **UEFI在Linux内核中的支持** 。若要配置 UEFI 引导器，详见 [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)").
 
 ## Contents
 
@@ -479,7 +479,7 @@ bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
 
 *   把 `<USB>/EFI/boot/loader.efi` 备份为 `<USB>/EFI/boot/gummiboot.efi`
 
-*   [创建一个独立的 GRUB 镜像](/index.php/GRUB#GRUB_Standalone "GRUB")并把它复制为 `<USB>/EFI/boot/loader.efi`
+*   [创建一个独立的 GRUB 镜像](/index.php/GRUB#GRUB_standalone "GRUB")并把它复制为 `<USB>/EFI/boot/loader.efi`
 
 *   按如下内容创建 `<USB>/EFI/boot/grub.cfg` (替换 `ARCH_YYYYMM` 为 USB 盘，例如 `ARCH_201404`):
 

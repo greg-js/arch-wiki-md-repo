@@ -308,8 +308,8 @@ Para iniciar el script de forma automática cuando se inicia el sistema, ejecute
 
 Si no desea utilizar este servicio systemd, hay dos soluciones alternativas disponibles:
 
-*   si se está usando un [Desktop Environment (Español)](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)"), solo necesita marcar una casilla o añadir la ruta del script `/usr/sbin/VBoxClient-all` en la sección autostart en la configuración del entorno de escritorio (en los entornos de escritorios esto se suele establecer en un archivo *.desktop* en `~/.config/autostart` —[vea la sección de inicio automático para más detalles](/index.php/Autostarting_(Espa%C3%B1ol)#Entradas_de_Desktop "Autostarting (Español)")—);
-*   si no tiene ningún [entorno de escritorio](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)"), agregue la línea siguiente en la parte superior de [~/.xinitrc](/index.php/Xinitrc "Xinitrc") por encima de cualquier opción `exec`:
+*   si se está usando un [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"), solo necesita marcar una casilla o añadir la ruta del script `/usr/sbin/VBoxClient-all` en la sección autostart en la configuración del entorno de escritorio (en los entornos de escritorios esto se suele establecer en un archivo *.desktop* en `~/.config/autostart` —[vea la sección de inicio automático para más detalles](/index.php/Autostarting_(Espa%C3%B1ol)#Entradas_de_Desktop "Autostarting (Español)")—);
+*   si no tiene ningún [entorno de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"), agregue la línea siguiente en la parte superior de [~/.xinitrc](/index.php/Xinitrc "Xinitrc") por encima de cualquier opción `exec`:
 
  `~/.xinitrc`  `/usr/bin/VBoxClient-all` 
 
@@ -520,7 +520,7 @@ $ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2*
 
 ```
 
-Como qcow2 viene en dos revisiones (vea [#Formats supported by VirtualBox](#Formats_supported_by_VirtualBox), utilice la etiqueta `-o compat=` para especificar la revisión.
+Como qcow2 viene en dos revisiones (vea [#Formatos soportados por VirtualBox](#Formatos_soportados_por_VirtualBox), utilice la etiqueta `-o compat=` para especificar la revisión.
 
 ```
 $ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2* -o compat=0.10

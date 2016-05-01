@@ -171,7 +171,7 @@ Si desea montar unidades extraíbles no haga una llamada a 'mount' en la regla u
 Hay dos versiones incompatibles, udisks y udisks2, una reescritura de udisks que rompe la compatibilidad. Dependiendo de nuestro DE, uno u otra versión será necesaria (la cual ya vendrá instalada como una dependencia):
 
 *   Para [GNOME](/index.php/GNOME "GNOME") o [KDE](/index.php/KDE "KDE") 4.10+, instale [udisks2](https://www.archlinux.org/packages/?name=udisks2)
-*   Para [XFCE](/index.php/XFCE "XFCE"), instale [udisks](https://www.archlinux.org/packages/?name=udisks)
+*   Para [Xfce](/index.php/Xfce "Xfce"), instale [udisks](https://www.archlinux.org/packages/?name=udisks)
 
 No hay necesidad de cualquier regla adicional. Como elemento adicional, se puede eliminar HAL si se está utilizando solo para fines de montaje automático.
 
@@ -289,7 +289,7 @@ DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM}="0"
 Debido a que udev carga todos los módulos de forma asíncrona, se pueden inicializar en un orden diferente en cada arranque. Esto puede dar como resultado dispositivos con nombres cambiados aleatoriamente. Udev permite crear reglas donde se utilicen nombres estáticos para los dispositivo:
 
 *   Véase [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") para dispositivos de bloque.
-*   Véase [Network configuration#Device_names](/index.php/Network_configuration#Device_names "Network configuration") para dispositivos de red.
+*   Véase [Network configuration#Device names](/index.php/Network_configuration#Device_names "Network configuration") para dispositivos de red.
 
 #### Dispositivo iscsi
 
@@ -311,9 +311,9 @@ KERNEL=="sd*", SUBSYSTEM=="block", \
 
 #### Dispositivos de vídeo
 
-Para configurar la cámara web, en primer lugar, consulte [Webcam configuration](/index.php/Webcam_Setup#Webcam_configuration "Webcam Setup").
+Para configurar la cámara web, en primer lugar, consulte [Webcam configuration](/index.php/Webcam_setup#Webcam_configuration "Webcam setup").
 
-Si utilizamos múltiples cámaras web, útil por ejemplo con [motion](https://www.archlinux.org/packages/?name=motion) (software detector de movimiento que toma imágenes de los dispositivos video4linux y/o de webcams), asignará los dispositivos de vídeo como /dev/video0..n al azar en el arranque. La solución recomendada es crear enlaces simbólicos que utilicen una regla udev (como en el ejemplo de la [sección anterior](/index.php/Udev_(Espa%C3%B1ol)#Escribir_reglas_udev "Udev (Español)")).
+Si utilizamos múltiples cámaras web, útil por ejemplo con [motion](https://www.archlinux.org/packages/?name=motion) (software detector de movimiento que toma imágenes de los dispositivos video4linux y/o de webcams), asignará los dispositivos de vídeo como /dev/video0..n al azar en el arranque. La solución recomendada es crear enlaces simbólicos que utilicen una regla udev (como en el ejemplo de la [sección anterior](#Escribir_reglas_udev)).
 
  `/etc/udev/rules.d/83-webcam.rules` 
 ```

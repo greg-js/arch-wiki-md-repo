@@ -28,7 +28,7 @@ $ systemd-analyze
 
 ```
 
-**Tip:** If you boot via [UEFI](/index.php/UEFI "UEFI") and use a boot loader which implements systemd's [Boot Loader Interface](http://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface) (which currently [Gummiboot](/index.php/Gummiboot "Gummiboot") and [GRUB](/index.php/GRUB "GRUB") do), *systemd-analyze* can additionally show you how much time was spent in the EFI firmware and the boot loader itself.
+**Tip:** If you boot via [UEFI](/index.php/UEFI "UEFI") and use a boot loader which implements systemd's [Boot Loader Interface](http://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface) (which currently [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and [GRUB](/index.php/GRUB "GRUB") do), *systemd-analyze* can additionally show you how much time was spent in the EFI firmware and the boot loader itself.
 
 To list the started unit files, sorted by the time each of them took to start up:
 

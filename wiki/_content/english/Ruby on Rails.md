@@ -418,7 +418,7 @@ $ bundle exec puma -C config/puma.rb
 You can also run it in background with parameter `-d` and check with
 
 ```
-$ ps aux| grep puma
+$ pgrep puma
 
 ```
 

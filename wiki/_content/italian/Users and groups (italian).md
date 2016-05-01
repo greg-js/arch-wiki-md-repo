@@ -1,4 +1,4 @@
-Gli utenti e i gruppi sono usati nei sistemi GNU/Linux per [il controllo degli accessi](https://en.wikipedia.org/wiki/Access_control#Computer_security "wikipedia:Access control") - ciò permette di determinare quali utenti e servizi sono autorizzati ad accedere ai file, alle cartelle oppure alle periferiche presenti sul sistema. Linux offre dei sistemi relativamente semplici di default. Per avere delle opzioni avanzate, consultare [ACL](/index.php/ACL "ACL") e [LDAP Authentication](/index.php/LDAP_Authentication "LDAP Authentication").
+Gli utenti e i gruppi sono usati nei sistemi GNU/Linux per [il controllo degli accessi](https://en.wikipedia.org/wiki/Access_control#Computer_security "wikipedia:Access control") - ciò permette di determinare quali utenti e servizi sono autorizzati ad accedere ai file, alle cartelle oppure alle periferiche presenti sul sistema. Linux offre dei sistemi relativamente semplici di default. Per avere delle opzioni avanzate, consultare [ACL](/index.php/ACL "ACL") e [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication").
 
 ## Contents
 
@@ -289,7 +289,7 @@ Gli utenti di pc Workstation/desktop sono soliti aggiungere i propri utenti non-
 | rfkill | `/dev/rfkill` | Permette di controllare lo stato di alimentazione dei dispositivi wireless (utilizzato dal pacchetto [rfkill](https://www.archlinux.org/packages/?name=rfkill)). |
 | users | Gruppo standard degli utenti. |
 | uucp | `/dev/ttyS[0-9]`, `/dev/tts/[0-9]` | Permette di accedere a periferiche seriali ed USB come modem, controller, porte seriali/RS232. |
-| wheel | Gruppo di Amministrazione, comunemente utilizzato per consentire l'accesso alle utility [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)") e [su](/index.php/Su "Su") ( non lo usa di default), , configurabili in `/etc/pam.d/su` and `/etc/pam.d/su-l`). Può anche essere usato per avere accesso completo in lettura ai file [journal](/index.php/Systemd_(Italiano)#Journal "Systemd (Italiano)"). |
+| wheel | Gruppo di Amministrazione, comunemente utilizzato per consentire l'accesso alle utility [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)") e [su](/index.php/Su "Su") ( non lo usa di default), , configurabili in `/etc/pam.d/su` and `/etc/pam.d/su-l`). Può anche essere usato per avere accesso completo in lettura ai file [journal](/index.php/Systemd_(Italiano)#Il_Journal "Systemd (Italiano)"). |
 
 ### Gruppi di sistema
 
@@ -319,7 +319,7 @@ Questi gruppi sono utilizzati da alcuni software non essenziale. A volte vengono
 | Gruppo | File interessati | Scopo |
 | adbusers | file dei dispositivi in `/dev/` | Diritti di acesso al Debugging Bridge di [Android](/index.php/Android "Android"). |
 | avahi |
-| cdemu | `/dev/vhba_ctl` | Permesso per l'utilizzo dell'emulazione con [cdemu](/index.php/Cdemu "Cdemu"). |
+| cdemu | `/dev/vhba_ctl` | Permesso per l'utilizzo dell'emulazione con [CDemu](/index.php/CDemu "CDemu"). |
 | clamav | `/var/lib/clamav/*`, `/var/log/clamav/*` | Usato da [Clam AntiVirus](/index.php/ClamAV_(Italiano) "ClamAV (Italiano)"). |
 | gdm | Cartella di autorizzazione del server X (ServAuthDir) | gruppo di [GDM](/index.php/GDM "GDM"). |
 | locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Permette l'uso del comando [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb"). |

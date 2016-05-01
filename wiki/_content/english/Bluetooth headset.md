@@ -216,6 +216,38 @@ $ ln -s /dev/null ~gdm/.config/systemd/user/pulseaudio.socket
 
 On next reboot the second instance of PulseAudio will not be started.
 
+It may happen that bluez wrongly considers an headset as not a2dp capable. In this case, search the index of the bluetooth device with
+
+```
+$ pacmd ls
+
+```
+
+Among the output there should be a section related to the bluetooth headset, containing something similar to
+
+ `pacmd ls` 
+```
+index: 2
+        name: <bluez_card.XX_XX_XX_XX_XX_XX>
+        driver: <module-bluez5-device.c>
+        owner module: 27
+        properties:
+                device.description = "SONY MDR-100ABN"
+                device.string = "XX:XX:XX:XX:XX:XX"
+                device.api = "bluez"
+                device.class = "sound"
+                ...
+```
+
+To manually set the profile, run
+
+```
+$ pacmd set-card-profile 2 a2dp_sink
+
+```
+
+where 2 is the index of the device retirieved through `pacmd ls`.
+
 #### UUIDs has unsupported type
 
 During pairing you might see this output in *bluetoothctl*:

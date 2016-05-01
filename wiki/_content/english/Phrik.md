@@ -29,21 +29,29 @@ Phrik is the villainous IRC bot in Arch Linux's [IRC channels](/index.php/IRC_ch
 
 ## Account
 
+**Warning:** Remember to query phrik in a private message with `/msg phrik` for operations related to your account. Prefixing commands with `!` is not required in this case.
+
 ### Registering
 
-To make new or change already existing factoids you need to have a phrik account, which doesn't have to be named the same as your IRC nick. To register with phrik all you need to do is to send him the following command (Remember to do it in private with `/msg phrik <message>` so that others won't see your password):
+To make new or change already existing factoids you need to have a phrik account, which doesn't have to be named the same as your IRC nick.
 
- `!register <name> <password>` 
+```
+register <name> <password>
 
-Example: `!register demize stuff` to register an account named `demize` with the password `stuff`
+```
+
+Example: `register demize stuff` to register an account named `demize` with the password `stuff`
 
 ### Identifying
 
-To identify with phrik for the current session, or until you `!unidentify`, you need to run the following command:
+To identify with phrik for the current session, or until you `unidentify`, you need to run the following command:
 
- `!identify <name> <password>` 
+```
+identify <name> <password>}}
 
-Example: `!identify demize stuff`
+```
+
+Example: `identify demize stuff`
 
 ### Identify with hostname
 
@@ -57,19 +65,31 @@ Two good examples are `demize!kyrias@theos.kyriasis.com` or `*!*@archlinux/op/de
 
 To add a hostmask send the following command to phrik in private:
 
- `!hostmask add <hostmask>` 
+```
+hostmask add <hostmask>
+
+```
 
 Example: `!hostmask add demize!kyrias@theos.kyriasis.com`
 
 #### Removing a hostmask
 
- `!hostmask remove <name> <hostmask>` 
+```
+hostmask remove <name> <hostmask>
 
-Example: `!hostmask remove demize demize!kyrias@theos.kyriasis.com`
+```
+
+```
+hostmask remove demize demize!kyrias@theos.kyriasis.com
+
+```
 
 #### Listing hostmasks
 
- `!hostmask list` 
+```
+hostmask list
+
+```
 
 ## Factoids
 

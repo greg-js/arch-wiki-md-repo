@@ -1,6 +1,6 @@
 **翻譯狀態：** 本文章是 [Start_X_at_Login](/index.php/Start_X_at_Login "Start X at Login") 的翻譯版本。最近一次的翻譯時間：2014-01-22。點擊[本連結](https://wiki.archlinux.org/index.php?title=Start_X_at_Login&diff=0&oldid=294001)查看英文頁面之後的變更。
 
-這篇文章將解釋如何使 [X 伺服器](/index.php/X_server "X server")在登入虛擬終端機後自動啟動。利用 *startx* 指令可以達到目的，並使用 [xinitrc](/index.php/Xinitrc "Xinitrc") 調整該指令的行為，例如選擇要啟動什麼[視窗管理員](/index.php/Window_manager "Window manager")。一種替代方案是使用[顯示管理員](/index.php/Display_Manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Display Manager (正體中文)")，它會自動啟動 X 並提供圖形登入畫面。
+這篇文章將解釋如何使 [X 伺服器](/index.php/X_server "X server")在登入虛擬終端機後自動啟動。利用 *startx* 指令可以達到目的，並使用 [xinitrc](/index.php/Xinitrc "Xinitrc") 調整該指令的行為，例如選擇要啟動什麼[視窗管理員](/index.php/Window_manager "Window manager")。一種替代方案是使用[顯示管理員](/index.php/Display_manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Display manager (正體中文)")，它會自動啟動 X 並提供圖形登入畫面。
 
 ## Shell 設定檔案
 

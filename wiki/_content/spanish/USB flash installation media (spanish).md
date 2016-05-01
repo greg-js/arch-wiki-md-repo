@@ -1,6 +1,6 @@
 Esta página aborda varios métodos sobre cómo escribir la instatánea de Arch Linux en una unidad USB (también conocida por *«unidad flash», «lápiz USB», «llave USB»*, etc.) El resultado será un sistema de tipo LiveCD (*«LiveUSB»*, si se prefiere) que, debido a la naturaleza de [SquashFS](https://en.wikipedia.org/wiki/es:SquashFS "wikipedia:es:SquashFS"), descarta todos los cambios una vez que se apaga el equipo.
 
-Si desea realizar una instalación completa de Arch Linux desde una unidad USB (es decir, con valores persistentes), véase [Intatar Arch Linux en una llave USB](/index.php/Installing_Arch_Linux_on_a_USB_key_(Espa%C3%B1ol) "Installing Arch Linux on a USB key (Español)"). Si desea usar la llave USB arrancable de Arch Linux como un USB de rescate, consulte [Change Root](/index.php/Change_Root_(Espa%C3%B1ol) "Change Root (Español)").
+Si desea realizar una instalación completa de Arch Linux desde una unidad USB (es decir, con valores persistentes), véase [Intatar Arch Linux en una llave USB](/index.php/Installing_Arch_Linux_on_a_USB_key_(Espa%C3%B1ol) "Installing Arch Linux on a USB key (Español)"). Si desea usar la llave USB arrancable de Arch Linux como un USB de rescate, consulte [Change Root](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)").
 
 ## Contents
 
@@ -220,9 +220,9 @@ $ sed -i "s|label=ARCH_.*|device=/dev/disk/by-uuid/$(blkid -o value -s UUID /dev
 
 **Nota:** Una vez más, ajuste `/dev/sd**X**1`.
 
-*   Instale Syslinux en el USB siguiendo las instrucciones de [Syslinux_(Español)#Instalación_manual](/index.php/Syslinux_(Espa%C3%B1ol)#Instalaci.C3.B3n_manual "Syslinux (Español)"). Sobrescriba los módulos existentes de syslinux (archivos `*.c32`) presentes en el USB (que se han copiado desde la ISO) con las del paquete Syslinux, para evitar los errores de inicio relacionados con versiones no concordantes.
+*   Instale Syslinux en el USB siguiendo las instrucciones de [Syslinux (Español)#Instalación manual](/index.php/Syslinux_(Espa%C3%B1ol)#Instalaci.C3.B3n_manual "Syslinux (Español)"). Sobrescriba los módulos existentes de syslinux (archivos `*.c32`) presentes en el USB (que se han copiado desde la ISO) con las del paquete Syslinux, para evitar los errores de inicio relacionados con versiones no concordantes.
 
-*   Marque la partición USB como activa siguiendo [Syslinux_(Español)#Tabla_de_particiones_MBR](/index.php/Syslinux_(Espa%C3%B1ol)#Tabla_de_particiones_MBR "Syslinux (Español)")
+*   Marque la partición USB como activa siguiendo [Syslinux (Español)#Tabla de particiones MBR](/index.php/Syslinux_(Espa%C3%B1ol)#Tabla_de_particiones_MBR "Syslinux (Español)")
 
 #### En Windows
 
@@ -315,7 +315,7 @@ En primer lugar, descargar el programa desde [aquí](http://sourceforge.net/proj
 
 **Sugerencia:** Por defecto, el navegador de archivos Win32 Disk Imager asume que los archivos de la imagen del disco terminan con la extensión `.img`. Sin embargo, puede diferenciar simplemente los `Files of type` desplegando una lista con `*.*` y continuar con la selección de la ISO de Arch Linux.
 
-**Nota:** Después de la instalación, es posible que tenga que restaurar la unidad flash USB siguiendo un proceso similar al que se indica [aquí](/index.php/USB_Installation_Media_(Espa%C3%B1ol)#C.C3.B3mo_restaurar_la_unidad_USB "USB Installation Media (Español)").
+**Nota:** Después de la instalación, es posible que tenga que restaurar la unidad flash USB siguiendo un proceso similar al que se indica [aquí](#C.C3.B3mo_restaurar_la_unidad_USB).
 
 #### USBWriter para Windows
 
@@ -356,7 +356,7 @@ Si está en Vista o Win7, debe abrir la consola como administrador, o de lo cont
 
 Este método utiliza [Syslinux](/index.php/Syslinux "Syslinux") y un [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) para cargar toda la imagen ISO de Arch Linux ISO en la memoria RAM. Dado que esto se ejecuta por completo desde la memoria del sistema, tendrá que asegurarse de que dicha memoria del sistema cuenta con una cantidad adecuada. Una cantidad mínima de RAM entre 500 MB y 1 GB debería ser suficiente para instalar Arch Linux desde un MEMDISK.
 
-Para obtener más información sobre los requisitos del sistema de Arch Linux, así como los de MEMDISK véase la [Guía para Principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)") y [esto](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries).
+Para obtener más información sobre los requisitos del sistema de Arch Linux, así como los de MEMDISK véase la [Guía para Principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") y [esto](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries).
 
 **Sugerencia:** Una vez que se realiza la carga y aparece el menú gráfico se puede simplemente retirar la memoria USB y, tal vez, incluso utilizarla en otro equipo para iniciar el proceso de nuevo. Por lo tanto, utilizar MEMDISK permite también el arranque y la instalación de Arch desde (y para) el mismo lápiz USB.
 

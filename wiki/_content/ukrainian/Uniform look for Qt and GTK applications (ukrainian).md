@@ -29,7 +29,7 @@
 
 # Вступ
 
-Програми основані на [Qt](http://uk.wikipedia.org/wiki/Qt)- та [GTK+](/index.php/GTK%2B_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "GTK+ (Українська)") використовують різні інструментарій віджет для відображення графічного інтерфейсу користувача. Між іншим кожен з них іде за замовчуванням з разнити темами, стилями та наборами значків, так що "зовнішній вигляд" істотно відрізняються. Ця стаття допоможе тобі зробити вигляд застосунків Qt та GTK+ подібними для більш раціонального та "інтегрованого" робочого столу.
+Програми основані на [Qt](https://uk.wikipedia.org/wiki/Qt)- та [GTK+](/index.php/GTK%2B_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "GTK+ (Українська)") використовують різні інструментарій віджет для відображення графічного інтерфейсу користувача. Між іншим кожен з них іде за замовчуванням з разнити темами, стилями та наборами значків, так що "зовнішній вигляд" істотно відрізняються. Ця стаття допоможе тобі зробити вигляд застосунків Qt та GTK+ подібними для більш раціонального та "інтегрованого" робочого столу.
 
 *"Qt (вимовляється як "кюте") крос-платформний фреймвок для розробки застосунків, який широко використовується для розробки програм GUI (в даному випадку він відомий як інструментарій віджетів), і зазвичай використовується для розробки не-GUI програм таких як консолі інструменти і сервери."*
 
@@ -134,7 +134,7 @@ This is a Qt style which intends to make applications blend perfectly into the G
 
 ### Having trouble making your Qt applications use QGtkStyle?
 
-Qt won't apply QGtkStyle correctly if GTK is using the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"). Qt determines whether the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications") is in use by reading the GTK configuration files listed in the environmental variable **GTK2_RC_FILES**. If the environmental variable is not set properly, Qt assumes you are using the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"), sets QGtkStyle to use the style GTK style *Clearlooks*, and outputs an error message:
+Qt won't apply QGtkStyle correctly if GTK is using the [GTK-QT-Engine](/index.php/Uniform_look_for_Qt_and_GTK_applications#GTK-QT-Engine "Uniform look for Qt and GTK applications"). Qt determines whether the [GTK-QT-Engine](/index.php/Uniform_look_for_Qt_and_GTK_applications#GTK-QT-Engine "Uniform look for Qt and GTK applications") is in use by reading the GTK configuration files listed in the environmental variable **GTK2_RC_FILES**. If the environmental variable is not set properly, Qt assumes you are using the [GTK-QT-Engine](/index.php/Uniform_look_for_Qt_and_GTK_applications#GTK-QT-Engine "Uniform look for Qt and GTK applications"), sets QGtkStyle to use the style GTK style *Clearlooks*, and outputs an error message:
 
 ```
 QGtkStyle cannot be used together with the GTK_Qt engine.
@@ -155,7 +155,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 ```
 
 *   In `.gtkrc-2.0` you must specify a GTK theme. For example:
-    *   This is usually done for you by an [application which sets GTK2 Styles](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK2_styles "Uniform Look for QT and GTK Applications")
+    *   This is usually done for you by an [application which sets GTK2 Styles](/index.php/Uniform_look_for_Qt_and_GTK_applications#GTK2_styles "Uniform look for Qt and GTK applications")
 
  `.gtkrc-2.0` 
 ```

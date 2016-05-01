@@ -101,7 +101,7 @@ $ timedatectl status | grep local
 
 ### Windows 系统使用 UTC
 
-如果同时安装了 Windows 操作系统（[默认使用地方时](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)），那么一般 RTC 会被设置为地方时。Windows 其实也能处理 UTC，需要[修改注册表](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Windows_.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_UTC "Time (简体中文)")。建议让 Windows 使用 UTC，而非让 Linux 使用地方时。Windows 使用 UTC 后，请记得禁用 Windows 的时间同步功能，以防 Windows 错误设置硬件时间。如上文所说，Linux 可以使用[NTP服务](/index.php/NTP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NTP (简体中文)")来在线同步硬件时钟。
+如果同时安装了 Windows 操作系统（[默认使用地方时](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)），那么一般 RTC 会被设置为地方时。Windows 其实也能处理 UTC，需要[修改注册表](#Windows_.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_UTC)。建议让 Windows 使用 UTC，而非让 Linux 使用地方时。Windows 使用 UTC 后，请记得禁用 Windows 的时间同步功能，以防 Windows 错误设置硬件时间。如上文所说，Linux 可以使用[NTP服务](/index.php/NTP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NTP (简体中文)")来在线同步硬件时钟。
 
 使用 `regedit`,输入如下 DWORD 值：
 

@@ -2,7 +2,7 @@ Tratto da [Xfce - About](http://www.xfce.org/about/):
 
 	*Xfce incarna la filosofia UNIX tradizionale di modularità e riutilizzabilità. Si compone di una serie di componenti che forniscono la completa funzionalità che si può aspettare da un ambiente desktop moderno. Essi sono distribuiti separatamente e si può scegliere tra i pacchetti disponibili per creare un ambiente ottimale di lavoro personale.*
 
-Xfce è un [ambiente Desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") leggero e modulare, attualmente basato sule GTK+2 anche se in futuro potrebbe essere portato sulle GTK+3\. XFCE include una collezione di applicazioni come un gestore delle, un file manager ed un pannello per fornire un'esperienza utente completa. Xfce è molto popolare ed usato da molti utenti, in parte perché è leggero, ma anche perché una grande quantità delle impostazioni sono gestite tramite una GUI. Questo è in netto contrasto con i desktop come GNOME Shell che nascondono molte delle impostazioni all'utente.
+Xfce è un [ambiente Desktop](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") leggero e modulare, attualmente basato sule GTK+2 anche se in futuro potrebbe essere portato sulle GTK+3\. XFCE include una collezione di applicazioni come un gestore delle, un file manager ed un pannello per fornire un'esperienza utente completa. Xfce è molto popolare ed usato da molti utenti, in parte perché è leggero, ma anche perché una grande quantità delle impostazioni sono gestite tramite una GUI. Questo è in netto contrasto con i desktop come GNOME Shell che nascondono molte delle impostazioni all'utente.
 
 ## Contents
 
@@ -100,7 +100,7 @@ Xfce può essere installato dal gruppo [xfce4](https://www.archlinux.org/groups/
 
 ### Login Grafico
 
-Semplicemente si scelga la sessione "Xfce" dal proprio [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") utilizzato.
+Semplicemente si scelga la sessione "Xfce" dal proprio [Display Manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") utilizzato.
 
 ### Console virtuale
 
@@ -331,7 +331,7 @@ xfconf-query -c xfwm4 -p /general/tile_on_move -s true   # per abilitare
 
 #### Rimpiazzare il gestore delle finestre nativo
 
-Per sostituire xfwm4 con un altro [Window Manager (Italiano)](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") è possibile utilizzare la sintassi 'nome del window manager ' '-- replace' in un terminale.
+Per sostituire xfwm4 con un altro [Window manager (Italiano)](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") è possibile utilizzare la sintassi 'nome del window manager ' '-- replace' in un terminale.
 
 Alcuni esempi:
 
@@ -394,7 +394,7 @@ Per bloccare la sessione di Xfce4 (attraverso `xflock4`), uno tra i seguenti pac
 
 #### Cambiare utente
 
-Xfce4 ha il supporto per il cambio utente quando viene utilizzato con un [Display Manager (Italiano)](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") che ha questa funzionalità - esempi sono [LightDM](/index.php/LightDM "LightDM") e [GDM](/index.php/GDM "GDM"). Si prega di consultare la pagina wiki del display manager per maggiori informazioni. Quando si dispone di un display manager installato e configurato correttamente è possibile cambiare utente dalla voce del menu 'pulsanti di azione' presente nel pannello.
+Xfce4 ha il supporto per il cambio utente quando viene utilizzato con un [Display manager (Italiano)](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") che ha questa funzionalità - esempi sono [LightDM](/index.php/LightDM "LightDM") e [GDM](/index.php/GDM "GDM"). Si prega di consultare la pagina wiki del display manager per maggiori informazioni. Quando si dispone di un display manager installato e configurato correttamente è possibile cambiare utente dalla voce del menu 'pulsanti di azione' presente nel pannello.
 
 #### Modificare le impostazioni dei file XML direttamente
 
@@ -436,7 +436,7 @@ Le applicazioni non hanno sempre un aspetto coerente . Ci sono due possibili rag
 
 Per ottenere un aspetto uniforme per tutte le applicazioni, è consigliabile utilizzare un tema aggiornato GTK+3 come Advaita, che come tema GTK+3 ha il supporto integrato per le applicazioni GKT+2 . Advaita può essere installato dal pacchetto [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard). Le applicazioni basate sul toolkit Qt sono in grado di simulare l'attuale tema GTK+ usando { {ic</code> .
 
-per maggiori informazioni consultare [GTK+#GTK+ 3.x](/index.php/GTK%2B#GTK.2B_3.x "GTK+") per GTK3 e [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications") per Qt.
+per maggiori informazioni consultare [GTK+#GTK+ 3.x](/index.php/GTK%2B#GTK.2B_3.x "GTK+") per GTK3 e [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") per Qt.
 
 #### Cursori
 
@@ -481,7 +481,7 @@ Si potrebbe anche provare a utilizzare un impostazione DPI personalizzata.
 
 ```
 
-I plugin richiesti dipendono dall'hardware. Alla maggior parte delle persone dovrebbe andare bene con [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins) che può essere [installato](/index.php/Pacman_(Italiano) "Pacman (Italiano)") dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+I plugin richiesti dipendono dall'hardware. Alla maggior parte delle persone dovrebbe andare bene con [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins) che può essere [installato](/index.php/Pacman_(Italiano) "Pacman (Italiano)") dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Se la voce del pannello xfce4-mixer era già in esecuzione prima di installare uno dei pacchetti di plugin, bisogna uscire dalla sessione e rientrarvi nuovamente per vedere se funziona correttamente, o semplicemente rimuovere il plugin mixer dal pannello e aggiungerlo di nuovo. Se non funziona, potrebbe essere necessario avere più o diversi plugin gstreamer. Provare a installare il pacchetto [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) o [gstreamer0.10-bad-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-bad-plugins).
 
@@ -691,7 +691,7 @@ Il terminale di Xfce utilizza F1 e F11 rispettivamente per il menu Help e la fun
 
 ### Temi o tavole di colore del terminale
 
-Temi o tavole di colore del terminale possono essere modificati tramite interfaccia grafica nella scheda Colori e Aspetto nelle Preferenze. Questi sono i colori che sono disponibili per le maggiori applicazioni da console come [emacs](/index.php/Emacs "Emacs"), [vi](/index.php/Vi "Vi") , e così via . Le loro impostazioni vengono memorizzate individualmente per ogni utente del sistema nel file `~/.config/xfce4/terminal/terminalrc`. Ci sono anche tanti altri temi tra cui scegliere. Controllare la discussione sul forum [[Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?pid=1194644%7CTerminal)] per centinaia di scelte e temi disponibili.
+Temi o tavole di colore del terminale possono essere modificati tramite interfaccia grafica nella scheda Colori e Aspetto nelle Preferenze. Questi sono i colori che sono disponibili per le maggiori applicazioni da console come [emacs](/index.php/Emacs "Emacs"), [vi](/index.php/Vi "Vi") , e così via . Le loro impostazioni vengono memorizzate individualmente per ogni utente del sistema nel file `~/.config/xfce4/terminal/terminalrc`. Ci sono anche tanti altri temi tra cui scegliere. Controllare la discussione sul forum [Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?pid=1194644%7CTerminal) per centinaia di scelte e temi disponibili.
 
 #### Cambiare colore del tema di default
 

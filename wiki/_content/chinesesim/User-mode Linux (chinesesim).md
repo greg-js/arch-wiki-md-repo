@@ -73,7 +73,7 @@ DAEMONS=(syslog-ng !hotplug !pcmcia network netfs crond)
 umount /mnt
 
 ```
-7.) 下一步是配置网络。 因此您要创建 tun 设备 (请阅读 [[uml howto](http://user-mode-linux.sourceforge.net/UserModeLinux-HOWTO-6.html)] 得到具体的 tun/tap 信息)， 分配一个 IP 地址。 如下命令将会创建 tun/tap 设备并让普通用户能够使用，然后分配 ip 地址。为了安全起见您最好建立一个 uml 用户组并赋予使用网络设备的权限。
+7.) 下一步是配置网络。 因此您要创建 tun 设备 (请阅读 [uml howto](http://user-mode-linux.sourceforge.net/UserModeLinux-HOWTO-6.html) 得到具体的 tun/tap 信息)， 分配一个 IP 地址。 如下命令将会创建 tun/tap 设备并让普通用户能够使用，然后分配 ip 地址。为了安全起见您最好建立一个 uml 用户组并赋予使用网络设备的权限。
 ```
 modprobe tun
 tunctl -u users

@@ -429,11 +429,11 @@ bridge-nf-call-ip6tables  bridge-nf-filter-vlan-tagged
 
 ```
 
-And if you still cannot get networking to work, see: [Linux_Containers#Bridge_device_setup](/index.php/Linux_Containers#Bridge_device_setup "Linux Containers").
+And if you still cannot get networking to work, see: [Linux Containers#Bridge_device_setup](/index.php/Linux_Containers#Bridge_device_setup "Linux Containers").
 
 ### 桥接网络
 
-NOTE：这部分由[User:athurg](/index.php/User:Athurg "User:Athurg")根据实际体验过程翻译，和原文的流程有比较大的出入。如果有任何问题，请联系[User:athurg](/index.php/User:Athurg "User:Athurg")。
+NOTE：这部分由[User:Athurg](/index.php/User:Athurg "User:Athurg")根据实际体验过程翻译，和原文的流程有比较大的出入。如果有任何问题，请联系[User:Athurg](/index.php/User:Athurg "User:Athurg")。
 
 #### 简介
 

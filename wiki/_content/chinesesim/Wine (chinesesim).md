@@ -127,7 +127,7 @@ export WINEARCH=win32
 
 ### 显卡驱动
 
-使用Wine运行Windows游戏时，可能需要高性能的显卡驱动。[Nvidia](/index.php/Nvidia_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nvidia (简体中文)")、[Amd/ATI](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)")用户最好使用闭源驱动。[Intel](/index.php/Intel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel (简体中文)")显卡用户也可以选择开源驱动，它已经非常成熟。
+使用Wine运行Windows游戏时，可能需要高性能的显卡驱动。[Nvidia](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)")、[Amd/ATI](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)")用户最好使用闭源驱动。[Intel](/index.php/Intel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel (简体中文)")显卡用户也可以选择开源驱动，它已经非常成熟。
 
 要是显卡驱动有问题或者相关配置有误，控制台用Wine运行某些程序时会输出：
 

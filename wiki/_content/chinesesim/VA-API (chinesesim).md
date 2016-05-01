@@ -16,17 +16,17 @@
 
 **开源驱动:**
 
-*   [AMD](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)"): 位于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")的[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)和[mesa](https://www.archlinux.org/packages/?name=mesa)两者为 Radeon 9500 或更新的GPU提供支持。
+*   [AMD](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)"): 位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)和[mesa](https://www.archlinux.org/packages/?name=mesa)两者为 Radeon 9500 或更新的GPU提供支持。
 
-*   [Intel](/index.php/Intel_Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel Graphics (简体中文)"): 位于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")的[libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver)软件包为 GMA 4500 系列或者更新的GPU提供支持。
+*   [Intel](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)"): 位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的[libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver)软件包为 GMA 4500 系列或者更新的GPU提供支持。
 
-*   [NVIDIA](/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nouveau (简体中文)"): 位于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")的[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)和[mesa](https://www.archlinux.org/packages/?name=mesa)两者为 GeForce 8 系列和更新的GPU提供支持。位于AUR的 [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/) 软件包包含从NVIDIA闭源驱动中提取出的必要的固件文件。
+*   [NVIDIA](/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nouveau (简体中文)"): 位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)和[mesa](https://www.archlinux.org/packages/?name=mesa)两者为 GeForce 8 系列和更新的GPU提供支持。位于AUR的 [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/) 软件包包含从NVIDIA闭源驱动中提取出的必要的固件文件。
 
 **闭源驱动:**
 
 *   [AMD](/index.php/AMD_Catalyst_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AMD Catalyst (简体中文)"): 位于[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")的[libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/)软件包为 Radeon HD 4000 系列或更新的GPU提供支持。在 Radeon HD 5000 系列或者更新的GPU上请使用 [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) 驱动；在 Radeon HD 4000 系列上使用 [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/) 作为驱动程序。
 
-*   [NVIDIA](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)"): 位于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")的[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)软件包和 [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) 驱动为 GeForce 8 系列或更新的GPU提供支持。
+*   [NVIDIA](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)"): 位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)软件包和 [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) 驱动为 GeForce 8 系列或更新的GPU提供支持。
 
 ### 支持的格式
 
@@ -60,7 +60,7 @@ export LIBVA_DRIVER_NAME=vdpau
 
 ### [GStreamer](/index.php/GStreamer "GStreamer")
 
-安装 [gst-vaapi](https://www.archlinux.org/packages/?name=gst-vaapi) 软件包，它存在于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")。
+安装 [gst-vaapi](https://www.archlinux.org/packages/?name=gst-vaapi) 软件包，它存在于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")。
 
  `$ gst-launch-1.0 playbin uri=file://*/path/to/foobar.mpeg*` 
 
@@ -72,7 +72,7 @@ export LIBVA_DRIVER_NAME=vdpau
 
 ### [MPlayer](/index.php/MPlayer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MPlayer (简体中文)")
 
-安装 [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) 软件包，它存在于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")。
+安装 [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) 软件包，它存在于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")。
 
  `$ mplayer -vo vaapi -va vaapi *foobar.mpeg*` 
 

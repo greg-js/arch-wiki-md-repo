@@ -1,4 +1,4 @@
-在 [Arch Linux 问题跟踪系统](https://bugs.archlinux.org/) 报告问题是 [帮助社区](/index.php/Getting_Involved_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Getting Involved (简体中文)") 的一种方式。然而，质量不高的问题报告却会起反作用，浪费开发者的时间。此文档将像那些愿意帮助社区的人给出有效报告问题和解决问题的指南。
+在 [Arch Linux 问题跟踪系统](https://bugs.archlinux.org/) 报告问题是 [帮助社区](/index.php/Getting_involved_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Getting involved (简体中文)") 的一种方式。然而，质量不高的问题报告却会起反作用，浪费开发者的时间。此文档将像那些愿意帮助社区的人给出有效报告问题和解决问题的指南。
 
 参见 Simon Tatham 的 [如何有效的报告问题](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html)。
 

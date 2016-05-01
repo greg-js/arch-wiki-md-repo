@@ -136,7 +136,7 @@ Compruebe las siguientes listas para descubrir si su tarjeta está soportada:
 *   [Soporte inalámbrico para Linux](http://linux-wless.passys.nl/) y las preguntas para Linux de la [Lista de compatibilidad de hardware](http://www.linuxquestions.org/hcl/index.php?cat=10) (HCL) también proporcinan una buena base de datos sobre hardware compatible con el kernel.
 *   La [página del kernel](http://wireless.kernel.org/en/users/Devices), contiene una matriz adicional de hardware compatible.
 
-Si su tarjeta inalámbrica aparece en la lista anterior, continúe en [esta sección](/index.php/Wireless_Setup_(Espa%C3%B1ol)#Soluci.C3.B3n_de_problemas_sobre_controladores_y_firmware "Wireless Setup (Español)") del presente artículo, que contiene información sobre la instalación de controladores y firmware de algunas tarjetas de red específicas. A continuación [compruebe el estado del controlador](#Comprobar_el_estado_del_controlador) de nuevo.
+Si su tarjeta inalámbrica aparece en la lista anterior, continúe en [esta sección](#Soluci.C3.B3n_de_problemas_sobre_controladores_y_firmware) del presente artículo, que contiene información sobre la instalación de controladores y firmware de algunas tarjetas de red específicas. A continuación [compruebe el estado del controlador](#Comprobar_el_estado_del_controlador) de nuevo.
 
 Si su tarjeta inalámbrica no aparece en la lista anterior, es posible que sea compatible solo en Windows (algunas como Broadcom, 3com, etc.). En estos casos, pruebe a usar [ndiswrapper](#ndiswrapper).
 
@@ -333,14 +333,14 @@ Dependiendo del cifrado, es necesario asociar el dispositivo inalámbrico con el
     *   Utilizar una clave hexadecimal o ASCII, especificando la tercera clave establecida como predeterminada (claves contadas desde cero): `# iw dev wlan0 connect your_essid key d:2:your_key` 
 *   **WPA/WPA2**
 
-Hay que modificar el archivo `/etc/wpa_supplicant.conf` como se describe en [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant") y acomodarlo a lo que obtuvo en [#Descubrir el punto de acceso](#Descubrir_el_punto_de_acceso). A continuación, ejecute la siguiente orden:
+Hay que modificar el archivo `/etc/wpa_supplicant.conf` como se describe en [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") y acomodarlo a lo que obtuvo en [#Descubrir el punto de acceso](#Descubrir_el_punto_de_acceso). A continuación, ejecute la siguiente orden:
 
 ```
 # wpa_supplicant -i wlan0 -c /etc/wpa_supplicant.conf
 
 ```
 
-Esto es suponiendo que el dispositivo utiliza el controlador `wext`. Si esto no funciona, puede que tenga que reajustar estas opciones. Si está conectado correctamente, continúe en una nueva terminal (o abandone `wpa_supplicant` con `Ctrl+c` y añada el parámetro `-B` a la orden anterior para que se ejecute en segundo plano). [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant") contiene más información y solución de problemas.
+Esto es suponiendo que el dispositivo utiliza el controlador `wext`. Si esto no funciona, puede que tenga que reajustar estas opciones. Si está conectado correctamente, continúe en una nueva terminal (o abandone `wpa_supplicant` con `Ctrl+c` y añada el parámetro `-B` a la orden anterior para que se ejecute en segundo plano). [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") contiene más información y solución de problemas.
 
 Independientemente del método utilizado, se puede comprobar si se ha asociado con éxito de la siguiente manera:
 
@@ -377,7 +377,7 @@ para DHCP, o
 
 para direcciones IP estáticas.
 
-**Sugerencia:** [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) contiene un hook (activado por defecto) para poner en marcha de forma automática [WPA supplicant](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)") en busca de interfaces inalámbricas. Se inicia solo si existe un archivo de configuración en `/etc/wpa_supplicant.conf` y sin un proceso *wpa_supplicant* sondeando la interfaz en cuestión. En la mayoría de los casos, no es necesario crear ningún [servicio personalizado](#Wireless_Setup_.28Espa.C3.B1ol.29.23Conectarse_manualmente_a_una_red_inal.C3.A1mbrica_en_el_arranque_con_systemd_y_dhcpcd), basta con activar `dhcpcd@*interfaz*`.
+**Sugerencia:** [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) contiene un hook (activado por defecto) para poner en marcha de forma automática [WPA supplicant](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)") en busca de interfaces inalámbricas. Se inicia solo si existe un archivo de configuración en `/etc/wpa_supplicant.conf` y sin un proceso *wpa_supplicant* sondeando la interfaz en cuestión. En la mayoría de los casos, no es necesario crear ningún [servicio personalizado](#Conectarse_manualmente_a_una_red_inal.C3.A1mbrica_en_el_arranque_con_systemd_y_dhcpcd), basta con activar `dhcpcd@*interfaz*`.
 
 #### Iniciar scripts/servicios personalizados
 
@@ -499,7 +499,7 @@ Consulte: [Netctl (Español)](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español
 
 #### Wicd
 
-Wicd es un gestor de red que puede manejar tanto conexiones inalámbricas como por cable. Está escrito en Python y GTK, con un menor número de dependencias que NetworkManager, por lo que es una solución ideal para los usuarios de escritorios ligeros. Wicd está disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Wicd es un gestor de red que puede manejar tanto conexiones inalámbricas como por cable. Está escrito en Python y GTK, con un menor número de dependencias que NetworkManager, por lo que es una solución ideal para los usuarios de escritorios ligeros. Wicd está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Consulte: [Wicd (Español)](/index.php/Wicd_(Espa%C3%B1ol) "Wicd (Español)")
 
@@ -755,7 +755,7 @@ Recursos externos:
 *   [http://wireless.kernel.org/en/users/Drivers/ath5k](http://wireless.kernel.org/en/users/Drivers/ath5k)
 *   [http://wiki.debian.org/ath5k](http://wiki.debian.org/ath5k)
 
-Si encuentra que algunas páginas web se cargan muy lentas, o si el dispositivo no mantiene una dirección IP, pruebe cambiando la encriptación por hardware a software para cargar el módulo `ath5k` con la opción `nohwcrypt=1`. Véase [Kernel Modules#Options](/index.php/Kernel_Modules#Options "Kernel Modules") para obtener más detalles.
+Si encuentra que algunas páginas web se cargan muy lentas, o si el dispositivo no mantiene una dirección IP, pruebe cambiando la encriptación por hardware a software para cargar el módulo `ath5k` con la opción `nohwcrypt=1`. Véase [Kernel modules#Options](/index.php/Kernel_modules#Options "Kernel modules") para obtener más detalles.
 
 Algunos portátiles pueden tener problemas con el LED del wireless que parpadea entre el color rojo y azul. Para resolver este problema, haga:
 

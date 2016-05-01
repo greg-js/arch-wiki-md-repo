@@ -1,4 +1,4 @@
-[Wicd](http://www.wicd.net/) è un gestore delle connessioni capace di gestire sia le interfacce wireless che quelle cablate, simile ed alternativo a [Network Manager](/index.php/NetworkManager_(Italiano) "NetworkManager (Italiano)"). Wicd è scritto in [Python](/index.php/Python "Python") e [GTK+](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)"), e necessita dell'installazione di un minor numero di dipendenze rispetto agli altri network manager. Alternativamente, una versione di Wicd per [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), scritta con le Qt, è disponibile su [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"). Wicd può anche essere eseguito da terminale, utilizzando una interfaccia disegnata con le librerie curses, non necessita di un server grafico avviato oppure un di un vassoio di sistema o di un area di notifica (si veda il paragrafo [Eseguire Wicd](/index.php/Wicd_(Italiano)#Eseguire_Wicd "Wicd (Italiano)")).
+[Wicd](http://www.wicd.net/) è un gestore delle connessioni capace di gestire sia le interfacce wireless che quelle cablate, simile ed alternativo a [Network Manager](/index.php/NetworkManager_(Italiano) "NetworkManager (Italiano)"). Wicd è scritto in [Python](/index.php/Python "Python") e [GTK+](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)"), e necessita dell'installazione di un minor numero di dipendenze rispetto agli altri network manager. Alternativamente, una versione di Wicd per [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), scritta con le Qt, è disponibile su [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"). Wicd può anche essere eseguito da terminale, utilizzando una interfaccia disegnata con le librerie curses, non necessita di un server grafico avviato oppure un di un vassoio di sistema o di un area di notifica (si veda il paragrafo [Eseguire Wicd](#Eseguire_Wicd)).
 
 ## Contents
 
@@ -22,11 +22,11 @@
 
 ## Installazione
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [wicd](https://www.archlinux.org/packages/?name=wicd) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [wicd](https://www.archlinux.org/packages/?name=wicd) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Questo installerà Wicd (**il client da linea di comando, l'interfaccia ncurses ed il demone**) e tutte le dipendenze necessarie.
 
-Se non si utilizza [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") (oppure il suo demone di notifica), è possibile installare [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) dai [reopository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), prima di installare l'interfaccia [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) per evitare di installare il demone di notifica di GNOME e le sue relative dipendenze, che non sempre sono necessarie.
+Se non si utilizza [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") (oppure il suo demone di notifica), è possibile installare [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) dai [reopository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), prima di installare l'interfaccia [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) per evitare di installare il demone di notifica di GNOME e le sue relative dipendenze, che non sempre sono necessarie.
 
 Installare quindi il pacchetto [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) per ottenere **l'interfaccia scritta in GTK e l'icona nell'aria di notifica**.
 
@@ -98,7 +98,7 @@ $ wicd-client -n
 
 Sarà possibile aggiungere `wicd-client` nell'avvio automatico del proprio DE/WM, in modo da avviare il programma ad ogni accesso.
 
-**Nota:** Alcuni utenti hanno ricontrato che il programma viene avviato due volte usando questo metodo. Esiste una discussione al riguardo nel forum internazionale di Arch ed su Arch bug reports (vedere [Collegamenti esterni](/index.php/Wicd_(Italiano)#Collegamenti_esterni "Wicd (Italiano)")).
+**Nota:** Alcuni utenti hanno ricontrato che il programma viene avviato due volte usando questo metodo. Esiste una discussione al riguardo nel forum internazionale di Arch ed su Arch bug reports (vedere [Collegamenti esterni](#Collegamenti_esterni)).
 
 Sembra che il pacchetto wicd inserisca un file nel percorso `/etc/xdg/autostart/wicd-tray.desktop`, che avvierà il client all'accesso del proprio DE/WM. Se ci si trova in questo caso si avranno due processi `wicd-client` in esecuzione, se si è aggiunto manualmente l'avvio del client al proprio DE/WM.
 
@@ -262,7 +262,7 @@ e rendere nascosto l'avvio dell'applicazione, oppure se si pensa di non avviare 
 
 ### Due processi wicd-client (ed eventualmente due icone nell'aria di notifica)
 
-Leggere le note nel paragrafo [Eseguire Wicd](/index.php/Wicd_(Italiano)#Eseguire_Wicd "Wicd (Italiano)") riguardo all'avvio automatico ed al file nella cartella `/etc/xdg/autostart`, consultare anche il post sul forum internazionale ed il bug report indicati in [Collegamenti esterni](/index.php/Wicd_(Italiano)#Collegamenti_esterni "Wicd (Italiano)"). Essenzialmente, se il file `/etc/xdg/autostart/wicd-tray.desktop` è presente sul proprio sistema, basterà inserire il demone `wicd` nella lista dei demoni in avvio nel file `/etc/rc.conf`, e **non** sarà necessario avviare il client nel file (o nelle configurazioni) di avvio automatico del proprio DE/WM.
+Leggere le note nel paragrafo [Eseguire Wicd](#Eseguire_Wicd) riguardo all'avvio automatico ed al file nella cartella `/etc/xdg/autostart`, consultare anche il post sul forum internazionale ed il bug report indicati in [Collegamenti esterni](#Collegamenti_esterni). Essenzialmente, se il file `/etc/xdg/autostart/wicd-tray.desktop` è presente sul proprio sistema, basterà inserire il demone `wicd` nella lista dei demoni in avvio nel file `/etc/rc.conf`, e **non** sarà necessario avviare il client nel file (o nelle configurazioni) di avvio automatico del proprio DE/WM.
 
 ### Password errata usando PEAP con TKIP/MSCHAPV2
 

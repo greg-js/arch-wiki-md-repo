@@ -16,9 +16,9 @@
 
 ### Change Root
 
-1.  启动LiveCD, 然后[change root](/index.php/Change_Root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change Root (简体中文)")。
+1.  启动LiveCD, 然后[change root](/index.php/Change_root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change root (简体中文)")。
 2.  使用`passwd`重置你的密码。
-3.  退出[change root](/index.php/Change_Root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change Root (简体中文)")。
+3.  退出[change root](/index.php/Change_root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change root (简体中文)")。
 4.  重启，记下你的密码。
 
 ## 使用GRUB调用Bash

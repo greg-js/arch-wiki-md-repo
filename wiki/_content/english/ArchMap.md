@@ -35,7 +35,7 @@ Here are some screenshots of how it used to look:
 
 **Note:** ArchMap is currently under development on [GitHub](https://github.com/maelstrom59/ArchMap). If you have any suggestions, please [post them](https://bbs.archlinux.org/viewtopic.php?id=22518&p=2) in the forums or [create an issue](https://github.com/maelstrom59/ArchMap/issues) in the repository.
 
-The documentation is hosted by [readthedocs.org](http://archmap.readthedocs.org).
+The documentation is hosted by [readthedocs.org](http://archmap.readthedocs.io).
 
 ## Maps
 

@@ -98,9 +98,9 @@ Failed to modify password entry for user "<user>"
 
 ```
 
-Per aggiungere un nuovo utente di sistema Linux si può usare [adduser](/index.php/Users_and_Groups_(Italiano)#Gestione_degli_utenti "Users and Groups (Italiano)"). Questo articolo non spiega come aggiungere utenti su sistemi Windows.
+Per aggiungere un nuovo utente di sistema Linux si può usare [adduser](/index.php/Users_and_groups_(Italiano)#Gestione_degli_utenti "Users and groups (Italiano)"). Questo articolo non spiega come aggiungere utenti su sistemi Windows.
 
-**Nota:** smbpasswd non è più il metodo di default per le autenticazioni Samba a partire da [Samba versione 3.4.0](/index.php/Samba_(Italiano)#Cambiamenti_in_Samba_versione_3.4.0 "Samba (Italiano)")
+**Nota:** smbpasswd non è più il metodo di default per le autenticazioni Samba a partire da [Samba versione 3.4.0](#Cambiamenti_in_Samba_versione_3.4.0)
 
 ### Opzioni web
 
@@ -625,7 +625,7 @@ HOMENET               PUTER
 
 ```
 
-Questo mostra quali cartelle sono condivise, e quindi possono essere montate localmente. Vedi [#Accedere alle condivisioni Samba](#Accedere_alle_condivisioni_Samba)
+Questo mostra quali cartelle sono condivise, e quindi possono essere montate localmente. Vedi [#Accedere alle condivisioni](#Accedere_alle_condivisioni)
 
 ### Controllare da remoto i computer Windows
 

@@ -37,7 +37,7 @@ Sudo es una alternativa a [su](/index.php/Su "Su") para ejecutar órdenes como r
 
 ## Instalación
 
-Instale el paquete [sudo](https://www.archlinux.org/packages/?name=sudo), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"):
+Instale el paquete [sudo](https://www.archlinux.org/packages/?name=sudo), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"):
 
 ```
 # pacman -S sudo
@@ -219,7 +219,7 @@ $ sudo fire<`Tab`>
 
 la shell no hará nada.
 
-Para activar `Tab`-completion con sudo, [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Véase [bash#Auto-completion](/index.php/Bash#Auto-completion "Bash") para obtener más información
+Para activar `Tab`-completion con sudo, [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Véase [bash#Auto-completion](/index.php/Bash#Auto-completion "Bash") para obtener más información
 
 Como alternativa, añada lo siguiente al archivo `~/.bashrc`:
 

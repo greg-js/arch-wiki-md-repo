@@ -76,7 +76,7 @@ As of now, there are 2 choices:
 
 ### Fully Power Down Discrete GPU
 
-You may want to turn off the high-performance graphics processor to save battery power, this can be done by installing the the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) (previously [acpi_call-git](https://aur.archlinux.org/packages/acpi_call-git/) or [acpi_call-git-dkms](https://aur.archlinux.org/packages/acpi_call-git-dkms/) package from the AUR).
+You may want to turn off the high-performance graphics processor to save battery power, this can be done by installing the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) package.
 
 Once installed load the kernel module:
 
@@ -88,7 +88,7 @@ modprobe acpi_call
 With the kernel module loaded run the following (requires root):
 
 ```
-usr/share/acpi_call/examples/turn_off_gpu.sh
+/usr/share/acpi_call/examples/turn_off_gpu.sh
 
 ```
 

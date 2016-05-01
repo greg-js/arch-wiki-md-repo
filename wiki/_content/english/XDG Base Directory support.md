@@ -21,7 +21,7 @@ Hopefully this will provide a source of information about exactly what certain k
 
 Please read the [full specification](http://standards.freedesktop.org/basedir-spec/latest/). This section will attempt to break down the essence of what it tries to achieve.
 
-Apart from `XDG_RUNTIME_DIR` (by [pam_systemd](http://www.freedesktop.org/software/systemd/man/pam_systemd.html)), these variables are not set by default; see [FS#31204](https://bugs.archlinux.org/task/31204) and [[1]](https://lists.archlinux.org/pipermail/arch-general/2013-February/032980.html). If the user wants to [define](/index.php/Define "Define") them, the used path must be absolute and point to an existing directory.
+Only `XDG_RUNTIME_DIR` is set by default through [pam_systemd](http://www.freedesktop.org/software/systemd/man/pam_systemd.html). It is up to the user to explicitly [define](/index.php/Define "Define") the other variables, using absolute paths that point to existing directories; see [FS#31204](https://bugs.archlinux.org/task/31204) and [[1]](https://lists.archlinux.org/pipermail/arch-general/2013-February/032980.html).
 
 ### User directories
 

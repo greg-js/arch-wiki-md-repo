@@ -2,7 +2,7 @@
 
 ## Installazione
 
-Ci sono diverse opzioni nei [Repository Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"):
+Ci sono diverse opzioni nei [Repository Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"):
 
 	[transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli)
 

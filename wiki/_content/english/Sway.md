@@ -15,7 +15,9 @@
     *   [3.3 Wallpaper](#Wallpaper)
     *   [3.4 Input devices](#Input_devices)
     *   [3.5 Custom keybindings](#Custom_keybindings)
-*   [4 See also](#See_also)
+*   [4 Known issues](#Known_issues)
+    *   [4.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -143,6 +145,22 @@ man sway-input
  bindsym XF86AudioToggle exec pactl set-sink-mute 0 toggle
  bindsym XF86MonBrightnessDown exec dsplight down 5
  bindsym XF86MonBrightnessUp exec dsplight up 5
+
+```
+
+## Known issues
+
+### Using i3-dmenu-desktop
+
+i3-dmenu-desktop is not usable directly from sway, but a patch is available here : [https://github.com/i3/i3/pull/2265/files](https://github.com/i3/i3/pull/2265/files) Unfortunately, the patch cannot be merged because it breaks when used from i3 in some corner cases.
+
+See here for more information: [https://github.com/SirCmpwn/sway/issues/521](https://github.com/SirCmpwn/sway/issues/521)
+
+You can still apply the patch manually though:
+
+```
+$ wget 'https://patch-diff.githubusercontent.com/raw/i3/i3/pull/2265.patch'
+# patch -p0 /usr/bin/i3-dmenu-desktop < 2265.patch
 
 ```
 

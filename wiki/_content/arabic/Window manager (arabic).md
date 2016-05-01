@@ -9,7 +9,7 @@
 
 X تطبيقا مفتوح المصدر من نظام النافذة
 
-وهو الأساس لواجهة المستخدم الرسومية بيئات سطح المكتب مثل: [GNOME](/index.php/GNOME "GNOME") ، [Enlightenment](/index.php/Enlightenment "Enlightenment") ، [KDE](/index.php/KDE "KDE") ، [LXDE](/index.php/LXDE "LXDE") و [Xfce](/index.php/Xfce "Xfce") توفر بيئة رسومية كاملة. العديد من [مدراء النوافذ](/index.php/Window_Manager_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Window Manager (العربية)") تقدم بيئات العرض البديلة ، ويمكن استخدامها بشكل مستقل للحفاظ على موارد النظام. وتوفر [مدراء تسجيل الدخول](/index.php/Display_Manager_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Display Manager (العربية)") شاشة تسجيل دخول رسومية.
+وهو الأساس لواجهة المستخدم الرسومية بيئات سطح المكتب مثل: [GNOME](/index.php/GNOME "GNOME") ، [Enlightenment](/index.php/Enlightenment "Enlightenment") ، [KDE](/index.php/KDE "KDE") ، [LXDE](/index.php/LXDE "LXDE") و [Xfce](/index.php/Xfce "Xfce") توفر بيئة رسومية كاملة. العديد من **مدراء النوافذ** تقدم بيئات العرض البديلة ، ويمكن استخدامها بشكل مستقل للحفاظ على موارد النظام. وتوفر [مدراء تسجيل الدخول](/index.php/Display_manager_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Display manager (العربية)") شاشة تسجيل دخول رسومية.
 
  |
 
@@ -142,7 +142,7 @@ X تطبيقا مفتوح المصدر من نظام النافذة
 
 	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://www.archlinux.org/packages/?name=pawm)
 
-*   **[pekwm](/index.php/Pekwm "Pekwm")** — pekwmمدير نوافذ يفتح مرة واحدة مبني على aewm++ , ولكن تطورت بما فيه الكفاية ليختلف عن aewm + + في جميع الاشياء . يحتوي على الكثير من الميزات الموسعة ,كتجميع النوافذ (شبيه لـ Ion, PWM, او Fluxbox), تخصيص اتوماتيكي, Xinerama, خطف المفاتيح مثل keychains, و اشياء اخرى.
+*   **[PekWM](/index.php/PekWM "PekWM")** — pekwmمدير نوافذ يفتح مرة واحدة مبني على aewm++ , ولكن تطورت بما فيه الكفاية ليختلف عن aewm + + في جميع الاشياء . يحتوي على الكثير من الميزات الموسعة ,كتجميع النوافذ (شبيه لـ Ion, PWM, او Fluxbox), تخصيص اتوماتيكي, Xinerama, خطف المفاتيح مثل keychains, و اشياء اخرى.
 
 	[http://www.pekwm.org/projects/pekwm](http://www.pekwm.org/projects/pekwm) || [pekwm](https://www.archlinux.org/packages/?name=pekwm)
 

@@ -24,7 +24,7 @@
 
 ## 安装
 
-请从 [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") [安装](/index.php/Pacman "Pacman") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) 软件包。除此之外，也可使用 [arandr](https://www.archlinux.org/packages/?name=arandr) 或 [lxrandr](https://www.archlinux.org/packages/?name=lxrandr) 等图形前端作为替代。
+请从 [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")[安装](/index.php/Pacman "Pacman") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) 软件包。除此之外，也可使用 [arandr](https://www.archlinux.org/packages/?name=arandr) 或 [lxrandr](https://www.archlinux.org/packages/?name=lxrandr) 等图形前端作为替代。
 
 ## 设置分辨率
 

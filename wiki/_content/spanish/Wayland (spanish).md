@@ -33,7 +33,7 @@
 
 ## Requisitos
 
-Actualmente Wayland solo funciona en sistemas que utilizan [KMS](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol) "Kernel Mode Setting (Español)").
+Actualmente Wayland solo funciona en sistemas que utilizan [KMS](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)").
 
 ## Instalación
 
@@ -375,7 +375,7 @@ $ export EGL_DRIVER=/usr/lib/egl/egl_gallium.so
 
 ## Véase también
 
-*   [Cursor Themes](/index.php/Cursor_Themes "Cursor Themes")
+*   [Cursor themes](/index.php/Cursor_themes "Cursor themes")
 *   [Arch Linux forum discussion](https://bbs.archlinux.org/viewtopic.php?id=107499)
 *   [Wayland documentation online](http://wayland.freedesktop.org/docs/html/)
 *   [Wayland usability wiki](http://www.chaosreigns.com/wiki/Wayland_State)

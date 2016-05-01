@@ -72,7 +72,7 @@ Additionally, either [mariadb](https://www.archlinux.org/packages/?name=mariadb)
 
 ### Apache
 
-If using [Apache](/index.php/Apache_HTTP_Server "Apache HTTP Server") for the web server, add SOGo to the Apache configuration appending the following lines at the end of `/etc/httpd/conf/httpd.conf`:
+If using [Apache](/index.php/Apache "Apache") for the web server, add SOGo to the Apache configuration appending the following lines at the end of `/etc/httpd/conf/httpd.conf`:
 
 ```
 ...

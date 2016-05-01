@@ -31,11 +31,11 @@
 
 ### Paquete base
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [wicd](https://www.archlinux.org/packages/?name=wicd), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Incluye todo lo necesario para ejecutar el demonio wicd, el cliente `wicd-cli` y la interfaz de terminal `wicd-curses`.
+[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [wicd](https://www.archlinux.org/packages/?name=wicd), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Incluye todo lo necesario para ejecutar el demonio wicd, el cliente `wicd-cli` y la interfaz de terminal `wicd-curses`.
 
 ### Cliente GTK+
 
-Para una interfaz GTK+, instale [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Incluye todo lo necesario para ejecutar la interfaz GTK de wicd y el archivo de inicio automático para que el icono aparezca en la bandeja del sistema.
+Para una interfaz GTK+, instale [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Incluye todo lo necesario para ejecutar la interfaz GTK de wicd y el archivo de inicio automático para que el icono aparezca en la bandeja del sistema.
 
 ### Cliente KDE
 
@@ -212,7 +212,7 @@ Véase [Network configuration#Troubleshooting](/index.php/Network_configuration#
 
 ### Fallo importando pynotify, notificaciones desactivadas
 
-Para el caso de que el paquete [python2-notify](https://www.archlinux.org/packages/?name=python2-notify) no se instale automáticamente. Puede [instalarlo](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+Para el caso de que el paquete [python2-notify](https://www.archlinux.org/packages/?name=python2-notify) no se instale automáticamente. Puede [instalarlo](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ### Mensaje de error de conexión con Dbus
 
@@ -319,7 +319,7 @@ NB. Este ajuste funciona en algunos caso comentando `subject_match`, aunque no e
 
 ### Dos procesos wicd-client (y eventualmente dos iconos en la bandeja del sistema)
 
-Consulte la nota en [Wicd_(Español)#Ejecutar_Wicd_en_modo_texto](/index.php/Wicd_(Espa%C3%B1ol)#Ejecutar_Wicd_en_modo_texto "Wicd (Español)") sobre el archivo autostart en `/etc/xdg/autostart`, consulte el post del foro y envíe los errores a algunos de los [siguientes enlaces](/index.php/Wicd_(Espa%C3%B1ol)#V.C3.A9ase_tambi.C3.A9n "Wicd (Español)") proporcionados. Resumidamente, si `/etc/xdg/autostart/wicd-tray.desktop` existe, elimínelo. Solo es necesario el servicio `wicd` activado en el sistema.
+Consulte la nota en [#Ejecutar Wicd en modo texto](#Ejecutar_Wicd_en_modo_texto) sobre el archivo autostart en `/etc/xdg/autostart`, consulte el post del foro y envíe los errores a algunos de los [siguientes enlaces](#V.C3.A9ase_tambi.C3.A9n) proporcionados. Resumidamente, si `/etc/xdg/autostart/wicd-tray.desktop` existe, elimínelo. Solo es necesario el servicio `wicd` activado en el sistema.
 
 ### Contraseña incorrecta usando PEAP con TKIP/MSCHAPV2
 

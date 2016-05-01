@@ -63,7 +63,7 @@ pacman -S usb_modeswitch
 
 ```
 
-Примечательно то, что usb_modeswtich при установке создаёт правила udev для ряда моделей устройств. Подробнее вы можете почитать на официальном [[сайте](http://www.draisberghof.de/usb_modeswitch)] программы, или же загляните в сами правила, `/lib/udev/rules.d/40-usb_modeswitch.rules`.
+Примечательно то, что usb_modeswtich при установке создаёт правила udev для ряда моделей устройств. Подробнее вы можете почитать на официальном [сайте](http://www.draisberghof.de/usb_modeswitch) программы, или же загляните в сами правила, `/lib/udev/rules.d/40-usb_modeswitch.rules`.
 
 Правила udev находятся в `/etc/udev/rules.d`. Например, для автоматического переключения Huawei E1220 в режим модема, нужно создать файл `/etc/udev/rules.d/40-huawei-e1220.rules` с правилом:
 

@@ -291,7 +291,7 @@ udevadm trigger
 
 ```
 
-Common `idVendor`/`idProduct` pairs can be found in `hardware/arduino/avr/boards.txt` in the distribution package. Note that some of them (notably [FTDI](https://en.wikipedia.org/wiki/FTDI) ones) are not unique to the Arduino platform. Using `serial` attribute is a good way to distinguish between various devices.
+Common `idVendor`/`idProduct` pairs can be found in `hardware/arduino/avr/boards.txt` in the distribution package. Note that some of them (notably [FTDI](https://en.wikipedia.org/wiki/FTDI "wikipedia:FTDI") ones) are not unique to the Arduino platform. Using `serial` attribute is a good way to distinguish between various devices.
 
 ### Error opening serial port
 

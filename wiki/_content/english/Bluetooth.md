@@ -20,6 +20,7 @@
     *   [6.1 bluetoothctl](#bluetoothctl_2)
     *   [6.2 gnome-bluetooth](#gnome-bluetooth)
     *   [6.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
+        *   [6.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
     *   [6.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
     *   [6.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
     *   [6.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
@@ -346,6 +347,21 @@ hci0:   Type: USB
         Device Class: Computer, Uncategorized
         HCI Ver: 2.0 (0x3) HCI Rev: 0xc5c LMP Ver: 2.0 (0x3) LMP Subver: 0xc5c
         Manufacturer: Cambridge Silicon Radio (10)
+
+```
+
+#### Audio devices start to skip at short distance from dongle
+
+If other devices share the same USB host, they can [interrupt communication with audio devices](https://bbs.archlinux.org/viewtopic.php?pid=1440161#p1440161). Make sure it is the only device attached to its bus. For example:
+
+ `$ lsusb` 
+```
+Bus 002 Device 002: ID 0a12:0001 Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 004: ID 048d:1345 Integrated Technology Express, Inc. Multi Cardreader
+Bus 001 Device 003: ID 0424:a700 Standard Microsystems Corp. 2 Port Hub
+Bus 001 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 

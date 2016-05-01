@@ -20,9 +20,9 @@ O objetivo deste guia é permitir a utilização de um arranjo RAID criado atrav
 
 ## O que é "Fake RAID"
 
-Segundo a [Wikipedia](http://pt.wikipedia.org/):
+Segundo a [Wikipedia](https://pt.wikipedia.org/):
 
-	*A implementação via software geralmente não possui uma facil configuração. Já na implementação via hardware as controladoras tem um preço muito elevado. Então foi criada uma "controladora barata" que em vez de um chip controlador RAID voce utiliza uma combinação de funções especiais na BIOS da placa e drivers instalados no sistema operacional .*[[1]](http://pt.wikipedia.org/wiki/Raid#Fake_RAID)
+	*A implementação via software geralmente não possui uma facil configuração. Já na implementação via hardware as controladoras tem um preço muito elevado. Então foi criada uma "controladora barata" que em vez de um chip controlador RAID voce utiliza uma combinação de funções especiais na BIOS da placa e drivers instalados no sistema operacional .*[[1]](https://pt.wikipedia.org/wiki/Raid#Fake_RAID)
 
 Veja [Wikipedia:pt:RAID](https://en.wikipedia.org/wiki/pt:RAID "wikipedia:pt:RAID") ou [Guia do Hardware:RAID](http://www.hardware.com.br/livros/hardware/raid.html)para mais informações.
 
@@ -32,7 +32,7 @@ Apesar da terminologia, "Fake RAID" via dmraid é uma implementação RAID via s
 
 Antes de tudo:
 
-*   Tenha em mãos os guias que precisará (além deste guia podem ser necessários o [Beginners' Guide (Português)](/index.php/Beginners%27_Guide_(Portugu%C3%AAs) "Beginners' Guide (Português)") ou [Installation guide](/index.php/Installation_guide "Installation guide")) abertos em outra máquina ou impressos.
+*   Tenha em mãos os guias que precisará (além deste guia podem ser necessários o [Beginners' guide (Português)](/index.php/Beginners%27_guide_(Portugu%C3%AAs) "Beginners' guide (Português)") ou [Installation guide](/index.php/Installation_guide "Installation guide")) abertos em outra máquina ou impressos.
 *   Baixe a imagem e queime o disco da última versão do disco de instalação do Arch.
 *   Faça o Backup de seus dados importantes.
 
@@ -144,7 +144,7 @@ Se, provavelmente é o caso, você não conseguir encontrar as partições recé
 *   **tty2**: /arch/setup.
 *   **tty3**: cfdisk para referência.
 
-Execute a instalação conforme indica o [Beginners' Guide (Português)](/index.php/Beginners%27_Guide_(Portugu%C3%AAs) "Beginners' Guide (Português)") com essas alterações:
+Execute a instalação conforme indica o [Beginners' guide (Português)](/index.php/Beginners%27_guide_(Portugu%C3%AAs) "Beginners' guide (Português)") com essas alterações:
 
 *   Select Packages
     *   Marque **dmraid** para instalação

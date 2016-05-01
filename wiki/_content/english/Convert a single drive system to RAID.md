@@ -52,7 +52,7 @@ Next, create the RAID array in a degraded state, using only the new disk. Note h
 
 Note: If the above command causes mdadm to say "no such device /dev/sdb2", then reboot, and run the command again.
 
-If you want to use Syslinux, you need to specify --metadata=1.0 (for the boot partition) [as of Sept. 2011](http://www.zytor.com/pipermail/syslinux/2011-September/016911.html)
+If you want to use [Syslinux](/index.php/Syslinux "Syslinux"), then specify `--metadata=1.0` (for the boot partition). As of Syslinux 6.03, [mdadm](/index.php/Mdadm "Mdadm") 1.2 is not yet supported in Syslinux. See also [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM").
 
 Make sure the array has been created correctly by checking `/proc/mdstat`:
 

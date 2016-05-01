@@ -628,7 +628,7 @@ If you *require* an install media with persistent dataspace, the [Archiso](/inde
 
 Most likely your initramfs got broken during a kernel update (improper use of *pacman'*s `--force` option can be a cause). You have two options; first, try the *Fallback* entry:
 
-**Tip:** In case you removed this entry for whatever reason, you can always press the `Tab` key when the bootloader menu shows up (for Syslinux) or `e` (for GRUB or gummiboot), rename it `initramfs-linux-fallback.img` and press `Enter` or `b` (depending on your bootloader) to boot with the new parameters.
+**Tip:** In case you removed this entry for whatever reason, you can always press the `Tab` key when the bootloader menu shows up (for Syslinux) or `e` (for GRUB or systemd-boot), rename it `initramfs-linux-fallback.img` and press `Enter` or `b` (depending on your bootloader) to boot with the new parameters.
 
 Once the system starts, run this command (for the stock [linux](https://www.archlinux.org/packages/?name=linux) kernel) either from the console or from a terminal to rebuild the initramfs image:
 

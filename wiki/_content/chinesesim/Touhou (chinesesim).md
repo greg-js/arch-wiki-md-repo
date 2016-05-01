@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Touhou](/index.php/Touhou "Touhou") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-03-20，点击[这里](https://wiki.archlinux.org/index.php?title=Touhou&diff=0&oldid=305737)可以查看翻译后英文页面的改动。
 
-[东方系列](https://zh.wikipedia.org/wiki/%E6%9D%B1%E6%96%B9Project) 是一种 [弹幕游戏](http://zh.wikipedia.org/wiki/%E5%BD%88%E5%B9%95%E5%B0%84%E6%93%8A%E9%81%8A%E6%88%B2) (在西方又被叫做 "bullet-hell shooters")
+[东方系列](https://zh.wikipedia.org/wiki/%E6%9D%B1%E6%96%B9Project) 是一种 [弹幕游戏](https://zh.wikipedia.org/wiki/%E5%BD%88%E5%B9%95%E5%B0%84%E6%93%8A%E9%81%8A%E6%88%B2) (在西方又被叫做 "bullet-hell shooters")
 
 东方系列(Touhou project)是一个弹幕类游戏系列的合称. 弹幕类游戏是一种2D射击类游戏, 大多由美丽的弹幕和难度大到蛋碎的弹幕组成. 东方众作为现在最大的弹幕类游戏,现在已经渗透到各个领域,比如说linux这个和一款windows游戏八杆子打不着的地方...
 

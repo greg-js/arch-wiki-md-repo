@@ -108,7 +108,7 @@ USER_NAME   HOSTNAME=(ALL) ALL
 
 ```
 
-Permette ai membri del [gruppo](/index.php/Users_and_Groups_(Italiano)#Gruppi "Users and Groups (Italiano)") wheel l'accesso sudo senza richiedere la password:
+Permette ai membri del [gruppo](/index.php/Users_and_groups_(Italiano)#Gruppi "Users and groups (Italiano)") wheel l'accesso sudo senza richiedere la password:
 
 ```
 %wheel      ALL=(ALL) NOPASSWD: ALL

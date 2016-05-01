@@ -50,8 +50,8 @@ Si deseas usar que xfce4-mixer funcione con [Alsa](/index.php/ALSA_(Espa%C3%B1ol
 
 Hay dos maneras de iniciar Xfce (de hecho, cualquier Entorno de Escritorio o Gestor de Ventanas) al inicio:
 
-*   Ejecutar Xfce mediante un [Gestor de inicio](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)").
-*   Ejecutar Xfce utilizando [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit), combinando [Inicio de sesión gráfica automatica](/index.php/Start_X_at_Login_(Espa%C3%B1ol) "Start X at Login (Español)") y [Login automático en la consola virtual](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)").
+*   Ejecutar Xfce mediante un [Gestor de inicio](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)").
+*   Ejecutar Xfce utilizando [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit), combinando [Inicio de sesión gráfica automatica](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)") y [Login automático en la consola virtual](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)").
 
 ### Manualmente
 
@@ -91,7 +91,7 @@ exec startxfce4
 
 ### Apagado, Reinicio y Automontaje en Xfce
 
-Ver [Problemas Comunes#Permisos de Sesión](/index.php/Problemas_Comunes#Permisos_de_Sesi.C3.B3n "Problemas Comunes").
+Ver [Problemas Comunes#Permisos de sesión](/index.php/Problemas_Comunes#Permisos_de_sesi.C3.B3n "Problemas Comunes").
 
 Si no tienes problemas Apagando y Reiniciando, pero no puedes auto-montar medios externos y discos duros, quizá necesites instalar el paquete [gvfs](https://www.archlinux.org/packages/?name=gvfs). Más información en la sección [Medios Extraibles](#Medios_Extraibles).
 

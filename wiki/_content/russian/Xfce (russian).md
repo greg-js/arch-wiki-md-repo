@@ -316,7 +316,7 @@ $ cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml ~/.config/xfce4
 
 Чтобы у приложений был единый схожий внешний вид рекомендуется использовать последние версии тем GTK+ 3, таких как, например, *Adwaita*, так как темы GTK+ 3 совместимы с приложениями GTK+ 2.
 
-Подробнее см. в разделе [GTK+ 3.x](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D0.B5_.D1.82.D0.B5.D0.BC.D1.8B_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BC.D0.B5.D0.B6.D0.B4.D1.83_GTK.2B_2_.D0.B8_GTK.2B_3 "GTK+ (Русский)") для GTK+ 3 и [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications") для Qt.
+Подробнее см. в разделе [GTK+ 3.x](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D0.B5_.D1.82.D0.B5.D0.BC.D1.8B_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BC.D0.B5.D0.B6.D0.B4.D1.83_GTK.2B_2_.D0.B8_GTK.2B_3 "GTK+ (Русский)") для GTK+ 3 и [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") для Qt.
 
 #### Курсоры мыши
 

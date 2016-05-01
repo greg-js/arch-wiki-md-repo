@@ -282,7 +282,7 @@ $ cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml ~/.config/xfce4
 
 在 [xfce-look.org](http://www.xfce-look.org) 上有不少XFCE的主题。 *Xfwm* 的主题保存在 `/usr/share/themes/xfce4`, 在 *Settings > Window Manager*中可以更改主题。 而[GTK+](/index.php/GTK%2B "GTK+") 主题在 *Settings > Appearance*。
 
-如果想要使所有的应用能有一个统一的外观, 参见 [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")获得更多的信息。
+如果想要使所有的应用能有一个统一的外观, 参见 [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications")获得更多的信息。
 
 相关主题在 [Cursor themes](/index.php/Cursor_themes "Cursor themes"), [Icons](/index.php/Icons "Icons"), 和 [Font configuration](/index.php/Font_configuration "Font configuration") 中。
 

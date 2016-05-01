@@ -111,7 +111,7 @@
 
 Бинарная совместимость модулей ядра зависит от API ядра, на котором они были собраны. Проблема с ядром Linux в том, что API может не совпадать в разных версиях ядра. Для того, чтобы избежать проблем с совместимостью и мелкие баги, каждый раз ядра при обновлении ядра Linux, рекомендуется перекомпилировать модули ядра с новой версией ядра Linux. Это то, что делают менеджеры пакетов Arch Linux с модулями ядра VirtualBox: каждый раз, когда выходит новое ядро Arch Linux, модули Virtualbox будут обновлены.
 
-Поэтому, если вы используете ядро из [официального репозитория](/index.php/Official_Repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official Repositories (Русский)") или кастомное (самостоятельно скомпилированное или установленное из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)")), то необходимо тем же способом переустановить ядро.
+Поэтому, если вы используете ядро из [официального репозитория](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") или кастомное (самостоятельно скомпилированное или установленное из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)")), то необходимо тем же способом переустановить ядро.
 
 #### Если хост работает с официальным ядром
 
@@ -376,7 +376,7 @@ desktop   /media/desktop    vboxsf  uid=user,gid=group,rw,dmode=700,fmode=600,co
 
 ```
 
-mount.vboxsf [[может не поддерживать](https://www.virtualbox.org/ticket/10676%7C)] *nofail* аргумент:
+mount.vboxsf [может не поддерживать](https://www.virtualbox.org/ticket/10676%7C) *nofail* аргумент:
 
 ```
 desktop   /media/desktop    vboxsf  uid=user,gid=group,rw,dmode=700,fmode=600,nofail 0 0

@@ -25,6 +25,8 @@ $ xclip -o | xclip -selection clipboard -i
 
 ```
 
+The above command reads data from the PRIMARY selection and writes it to CLIPBOARD selection.
+
 ### Intercepting commands’s output
 
 Use *tee* to intercept the output of a command.

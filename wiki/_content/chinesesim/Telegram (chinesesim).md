@@ -4,7 +4,7 @@
 
 目前在官方库中还没有有关的软件包，但是在AUR中有[telegram-desktop](https://aur.archlinux.org/packages/telegram-desktop/)、[telegram-dev](https://aur.archlinux.org/packages/telegram-dev/)、[telegram-desktop-cn](https://aur.archlinux.org/packages/telegram-desktop-cn/)等包，对于中日韩等需要使用输入法的，请安装[telegram-desktop-cn](https://aur.archlinux.org/packages/telegram-desktop-cn/)。
 
-官方的 telegram 从 0.8.50 版本开始已经修复了中文输入法问题，推荐使用。您有可能需要设置 QT_IM_MODULE 环境变量，详情参考 [Fcitx_(简体中文)#非桌面环境](/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.9D.9E.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83 "Fcitx (简体中文)")
+官方的 telegram 从 0.8.50 版本开始已经修复了中文输入法问题，推荐使用。您有可能需要设置 QT_IM_MODULE 环境变量，详情参考 [Fcitx (简体中文)#非桌面环境](/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.9D.9E.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83 "Fcitx (简体中文)")
 
 您也可以直接添加[archlinuxcn](/index.php/Unofficial_user_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#archlinuxcn "Unofficial user repositories (简体中文)")源：
 

@@ -30,9 +30,9 @@
 
 ## Introduzione
 
-**Nota:** Si veda l'articolo di [Wikipedia](http://it.wikipedia.org)su questo argomento per maggiori informazioni:[wikipedia:it:RAID](https://en.wikipedia.org/wiki/it:RAID "wikipedia:it:RAID").
+**Nota:** Si veda l'articolo di [Wikipedia](https://it.wikipedia.org)su questo argomento per maggiori informazioni:[wikipedia:it:RAID](https://en.wikipedia.org/wiki/it:RAID "wikipedia:it:RAID").
 
-I dispositivi RAID (Redundant Array of Independent Disks - insieme ridondante di dischi indipendenti) sono dispositivi virtuali creati da due o più dispositivi a blocchi reali . Questo consente a più dispositivi (in genere unità disco o partizioni di esse) per essere combinati in un unico blocco per contenere (ad esempio) un singolo filesystem. RAID è progettato per impedire la perdita di dati nel caso di un guasto del disco rigido. Vi sono diversi [livelli di RAID](http://it.wikipedia.org/wiki/RAID#Livelli_RAID_standard).
+I dispositivi RAID (Redundant Array of Independent Disks - insieme ridondante di dischi indipendenti) sono dispositivi virtuali creati da due o più dispositivi a blocchi reali . Questo consente a più dispositivi (in genere unità disco o partizioni di esse) per essere combinati in un unico blocco per contenere (ad esempio) un singolo filesystem. RAID è progettato per impedire la perdita di dati nel caso di un guasto del disco rigido. Vi sono diversi [livelli di RAID](https://it.wikipedia.org/wiki/RAID#Livelli_RAID_standard).
 
 ### Livelli RAID Standard
 
@@ -73,7 +73,7 @@ RAID non fornisce una garanzia che i dati siano al sicuro. In caso di incendio, 
 
 ## Installazione
 
-[Installare](/index.php/Pacman "Pacman") [mdadm](https://www.archlinux.org/packages/?name=mdadm) e [parted](https://www.archlinux.org/packages/?name=parted), disponibili nei [Depositi ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman "Pacman") [mdadm](https://www.archlinux.org/packages/?name=mdadm) e [parted](https://www.archlinux.org/packages/?name=parted), disponibili nei [Depositi ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ### Preparare il dispositivo
 

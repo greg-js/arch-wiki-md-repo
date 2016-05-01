@@ -1,4 +1,4 @@
-Los usuarios y los grupos son usados ​​en los sistemas GNU/Linux para el [control de los accesos](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control") —es decir, determina qué usuarios y servicios están autorizados para acceder a los archivos, directorios y dispositivos periféricos presentes en el sistema—. Linux ofrece de forma predefinida mecanismos de control de acceso relativamente simples/básicos. Para obtener opciones más avanzadas, consulte [ACL](/index.php/ACL "ACL") y [LDAP Authentication](/index.php/LDAP_Authentication "LDAP Authentication").
+Los usuarios y los grupos son usados ​​en los sistemas GNU/Linux para el [control de los accesos](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control") —es decir, determina qué usuarios y servicios están autorizados para acceder a los archivos, directorios y dispositivos periféricos presentes en el sistema—. Linux ofrece de forma predefinida mecanismos de control de acceso relativamente simples/básicos. Para obtener opciones más avanzadas, consulte [ACL](/index.php/ACL "ACL") y [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication").
 
 ## Contents
 
@@ -323,7 +323,7 @@ Estos grupos permiten a sus miembros utilizar un software específico:
 
 | Grupo | Archivos afectados | Propósito |
 | adbusers | Archivos de los dispositivos en `/dev/` | Faculta el acceso al Debugging Bridge de [Android](/index.php/Android "Android"). |
-| cdemu | `/dev/vhba_ctl` | Faculta el uso de la emulación de disco de [cdemu](/index.php/Cdemu "Cdemu"). |
+| cdemu | `/dev/vhba_ctl` | Faculta el uso de la emulación de disco de [CDemu](/index.php/CDemu "CDemu"). |
 | thinkpad | `/dev/misc/nvram` | Utilizado por los usuarios de ThinkPad para acceder a herramientas como [tpb](/index.php/Tpb "Tpb"). |
 | vboxusers | `/dev/vboxdrv` | Faculta para utilizar el software VirtualBox. |
 | vmware | Faculta para utilizar el software [VMware](/index.php/VMware "VMware"). |

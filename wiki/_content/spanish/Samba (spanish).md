@@ -22,7 +22,7 @@
 
 ## Introducción
 
-Samba es una reimplementación del protocolo de red SMB/CIFS. Facilita el intercambio de ficheros y de impresoras entre sistemas Linux y Windows, o entre sistemas Linux -como una alternativa a [Nfs](/index.php/Nfs "Nfs"). Se configura fácilmente.
+Samba es una reimplementación del protocolo de red SMB/CIFS. Facilita el intercambio de ficheros y de impresoras entre sistemas Linux y Windows, o entre sistemas Linux -como una alternativa a [NFS](/index.php/NFS "NFS"). Se configura fácilmente.
 
 ## Instalación
 

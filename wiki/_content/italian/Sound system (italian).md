@@ -70,4 +70,4 @@ Chiamato anche JACK-mp è la prossima versione di JACK, con supporto per sistemi
 *   [Pro Audio](/index.php/Pro_Audio "Pro Audio")
 *   [MIDI](/index.php/MIDI "MIDI")
 *   [Codecs](/index.php/Codecs_(Italiano) "Codecs (Italiano)")
-*   [Disable PC Speaker Beep](/index.php/Disable_PC_Speaker_Beep "Disable PC Speaker Beep")
+*   [Disable PC speaker beep](/index.php/Disable_PC_speaker_beep "Disable PC speaker beep")

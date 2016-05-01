@@ -124,7 +124,7 @@
 
 	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://www.archlinux.org/packages/?name=pawm)
 
-*   **[pekwm](/index.php/Pekwm "Pekwm")** — Оконный менеджер, некогда основывавшийся на aewm++, но теперь уже далеко от него ушедший. У него сильно больший набор возможностей, например группировка окон (аналогично Ion, PWM, или Fluxbox), auto-properties, Xinerama, keygrabber с поддержкой наборов ключей и многое другое.
+*   **[PekWM](/index.php/PekWM "PekWM")** — Оконный менеджер, некогда основывавшийся на aewm++, но теперь уже далеко от него ушедший. У него сильно больший набор возможностей, например группировка окон (аналогично Ion, PWM, или Fluxbox), auto-properties, Xinerama, keygrabber с поддержкой наборов ключей и многое другое.
 
 	[http://www.pekwm.org/projects/pekwm](http://www.pekwm.org/projects/pekwm) || [pekwm](https://www.archlinux.org/packages/?name=pekwm)
 
@@ -245,7 +245,7 @@
 
 	[https://github.com/c00kiemon5ter/monsterwm](https://github.com/c00kiemon5ter/monsterwm) || [monsterwm-git](https://aur.archlinux.org/packages/monsterwm-git/)
 
-*   **[frankenwm](/index.php/Frankenwm "Frankenwm")** — Продолжение *monsterwm* с правильно реализованным стековым режимом. Из добавленных возможностей: новые схемы размещения (fibonacci, equal stack, dual stack), рамки и отступы можно настраивать, сворачивание/разворачивание отдельных окон, возможность показать/спрятать все окна и прочее
+*   **[FrankenWM](/index.php/FrankenWM "FrankenWM")** — Продолжение *monsterwm* с правильно реализованным стековым режимом. Из добавленных возможностей: новые схемы размещения (fibonacci, equal stack, dual stack), рамки и отступы можно настраивать, сворачивание/разворачивание отдельных окон, возможность показать/спрятать все окна и прочее
 
 	[https://github.com/sulami/FrankenWM](https://github.com/sulami/FrankenWM) || [frankenwm-git](https://aur.archlinux.org/packages/frankenwm-git/)
 

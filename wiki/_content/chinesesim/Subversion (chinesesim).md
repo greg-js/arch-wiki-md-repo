@@ -2,7 +2,7 @@
 
 *"[Apache Subversion](http://subversion.apache.org/features.html) 是一套功能全面的版本控制系统，最初被设计为[CVS](/index.php/CVS "CVS")的改进版本。其后Subversion的发展大大超出了取代CVS的原始目标，但它的基本模型、设计和接口仍然受到了这一目标的深刻影响。"*
 
-本文主要介绍架设svn服务器的方法。有两种流行的svn服务器，内建的`svnserve`以及更高级的选择——结合了svn插件的 [Apache](/index.php/LAMP "LAMP")。
+本文主要介绍架设svn服务器的方法。有两种流行的svn服务器，内建的`svnserve`以及更高级的选择——结合了svn插件的[Apache](/index.php/LAMP "LAMP")。
 
 ## Contents
 

@@ -23,4 +23,4 @@ Chcete-li, nainstalujte Arch Linux theme pro XDM:
 
 ```
 
-Pro další informace navštivte [Display Manager (Česky)](/index.php/Display_Manager_(%C4%8Cesky) "Display Manager (Česky)").
+Pro další informace navštivte [Display manager (Česky)](/index.php/Display_manager_(%C4%8Cesky) "Display manager (Česky)").

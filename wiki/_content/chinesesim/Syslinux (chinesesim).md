@@ -47,7 +47,7 @@ Syslinux是一个优秀的系统启动加载器，可引导自硬盘、光盘和
 **Note:**
 
 *   从 Syslinux 4 开始，Extlinux 和 Syslinux 已经统一，是同一个东西。
-*   UEFI support was added in the 6.x branch. See [UEFI_Bootloaders#SYSLINUX](/index.php/UEFI_Bootloaders#SYSLINUX "UEFI Bootloaders") for more info.
+*   UEFI support was added in the 6.x branch. See [UEFI Bootloaders#SYSLINUX](/index.php/UEFI_Bootloaders#SYSLINUX "UEFI Bootloaders") for more info.
 *   [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) is required for [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") support using the automated script.
 
 #### 自动完成安装
@@ -116,7 +116,7 @@ Make sure you have the *syslinux* package installed. Then install Syslinux onto 
 
 #### GUID Partition Table aka GPT
 
-Main article [GUID_Partition_Table](/index.php/GUID_Partition_Table "GUID Partition Table")
+Main article [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
 
 Bit 2 of the attributes for the `/boot` partition need to be set.
 

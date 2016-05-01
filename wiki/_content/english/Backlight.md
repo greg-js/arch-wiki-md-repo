@@ -295,7 +295,7 @@ If you have an Intel i915 GPU, then it may be possible to adjust PWM modulation 
 
 Install [intel-gpu-tools](https://www.archlinux.org/packages/?name=intel-gpu-tools) from the official repositories. Get value of the register, that determines PWM modulation frequency
 
- `# intel_reg_read 0xC8254` 
+ `# intel_reg read 0xC8254` 
 ```
 0xC8254 : 0x12281228
 
@@ -304,7 +304,7 @@ Install [intel-gpu-tools](https://www.archlinux.org/packages/?name=intel-gpu-too
 The value returned represents period of PWM modulation. So to increase PWM modulation frequency, value of the register has to be reduced. For example, to double frequency from the previous listing, execute:
 
 ```
-# intel_reg_write 0xC8254 0x09140914
+# intel_reg write 0xC8254 0x09140914
 
 ```
 

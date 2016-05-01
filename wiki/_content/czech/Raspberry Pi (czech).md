@@ -69,7 +69,7 @@ Po vložení karty do slotu vašeho PPi by měl nabootovat základní systém Ar
 
 ### Home
 
-Stažený obraz disku má přibližně 2GB z toho je /boot 94MB a / 1.8GB. Pokud jste použili větší kartu jak 2GB, tak doporučuji na zbytek karty připojit například /home (popřípadě /usr ...). Volný prostor je třeba naformátovat například pomocí [Gparted](/index.php/Gparted "Gparted"). Při první možné příležitosti (po nabootování RPi nebo po namontování karty v počítači) je třeba upravit `/etc/fstab`
+Stažený obraz disku má přibližně 2GB z toho je /boot 94MB a / 1.8GB. Pokud jste použili větší kartu jak 2GB, tak doporučuji na zbytek karty připojit například /home (popřípadě /usr ...). Volný prostor je třeba naformátovat například pomocí [GParted](/index.php/GParted "GParted"). Při první možné příležitosti (po nabootování RPi nebo po namontování karty v počítači) je třeba upravit `/etc/fstab`
 
 ```
 # sudo vim /etc/fstab

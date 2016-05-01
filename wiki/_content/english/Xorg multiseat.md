@@ -662,7 +662,7 @@ ServerArgsLocal=-nolisten tcp -novtswitch -keeptty -layout Seat0 -isolateDevice 
 It works for my computer: one on-board Intel card (xf86-video-intel driver), and one Nvidia card (xf86-video-nouveau driver). You can check if the parameters are passed correctly by:
 
 ```
-$ ps aux | grep 'PCI' | grep -Ev 'grep'
+$ pgrep -af PCI
 root     16993  1.6  1.3  32900 26772 ?        S    08:09   0:19 /usr/bin/X0 :1 vt7 -nolisten tcp -novtswitch -keeptty -layout Seat0 -isolateDevice PCI:0:2:0 -auth /var/run/xauth/A:1-ES6CCb
 root     17124  5.9  0.5  18996 11980 ?        S    08:09   1:09 /usr/bin/X1 :0 vt8 -nolisten tcp -sharevts -novtswitch -keeptty -layout Seat1 -isolateDevice PCI:1:0:0 -auth /var/run/xauth/A:0-Wgiyza
 

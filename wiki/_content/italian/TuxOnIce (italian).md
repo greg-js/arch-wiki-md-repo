@@ -149,7 +149,7 @@ Si può rendere questa pratica più sicura aggiungendo il demone *hibernate-clea
 
 ## Configurazioni addizionali di pm-utils
 
-Se si usa [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") come [DE](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)"), o un qualunque altro DE che richieda [pm-utils](/index.php/Pm-utils_(Italiano) "Pm-utils (Italiano)") per spegnere e sospendere sono necessarie ulteriori configurazioni per TuxOnIce.
+Se si usa [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") come [DE](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)"), o un qualunque altro DE che richieda [pm-utils](/index.php/Pm-utils_(Italiano) "Pm-utils (Italiano)") per spegnere e sospendere sono necessarie ulteriori configurazioni per TuxOnIce.
 
 Tali configurazioni vanno fatte in `/etc/hibernate/hibernate.conf` e dovrebbero funzionare. Alcune configurazioni però possono dare problemi con pm-utils. La compressione, per esempio, è di default lzo a meno che si intervenga manualmente. Editare il file sotto `/etc/pm/sleep.d/` è un'ottima alternativa per far si che le configurazioni vengano lette correttamente.
 

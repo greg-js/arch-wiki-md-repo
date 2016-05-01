@@ -1,4 +1,4 @@
-Il file `~/.xinitrc` è uno shell script letto da `xinit` e `startx`. Viene tipicamente utilizzato per eseguire i [window manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") e altri programmi all'avvio di X, ad esempio demoni e configurazioni delle variabili d'ambiente. Il programma `xinit` viene utilizzato per avviare l'[X Window System](/index.php/Xorg_(Italiano) "Xorg (Italiano)") e funziona come un primo programma client su sistemi che non possono avviare direttamente X da `/etc/init`, o in ambienti che usano vari window manager.
+Il file `~/.xinitrc` è uno shell script letto da `xinit` e `startx`. Viene tipicamente utilizzato per eseguire i [window manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") e altri programmi all'avvio di X, ad esempio demoni e configurazioni delle variabili d'ambiente. Il programma `xinit` viene utilizzato per avviare l'[X Window System](/index.php/Xorg_(Italiano) "Xorg (Italiano)") e funziona come un primo programma client su sistemi che non possono avviare direttamente X da `/etc/init`, o in ambienti che usano vari window manager.
 
 Una delle funzioni principali di `~/.xinitrc` è quello di dettare quale client per il sistema X Window sarà invocato da `/usr/bin/startx` e/o il programma `/usr/bin/xinit` *a utente singolo*. Ci sono molte altre configurazioni e comandi che possono essere aggiunti a `~/.xinitrc` al fine di personalizzare ulteriormente il proprio sistema.
 
@@ -25,7 +25,7 @@ $ cp /etc/skel/.xinitrc ~
 
 ```
 
-Quindi editare `~/.xinitrc` e decommentare la riga corrispondente al proprio [ambiente desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)"). Per esempio, se si utilizza [Xterm](/index.php/Xterm "Xterm"), sarà simile a questo:
+Quindi editare `~/.xinitrc` e decommentare la riga corrispondente al proprio [ambiente desktop](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)"). Per esempio, se si utilizza [Xterm](/index.php/Xterm "Xterm"), sarà simile a questo:
 
 ```
 #!/bin/sh
@@ -66,11 +66,11 @@ $ xinit -- :1
 
 **Nota:** `xinit` non può avviare sessioni multiple. Per questo può essere necessario l'uso di `-- :<session_no>`. In pratica questo è necessario se si ha già un'altra sessione di X aperta sul proprio sistema.
 
-Il [DE](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") o [WM](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") scelto dovrebbe essersi avviato. È possibile provare la tastiera e la sua configurazione. Provare a spostare il mouse intorno per verificarne il funzionamento.
+Il [DE](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") o [WM](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") scelto dovrebbe essersi avviato. È possibile provare la tastiera e la sua configurazione. Provare a spostare il mouse intorno per verificarne il funzionamento.
 
 ### Effettuare la scelta fra i DE/WM
 
-Se non si usa un [display manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") e non si vuole usarne uno, `~/.xinitrc` è di fondamentale importanza. Questo è un esempio di `xinitrc` pronto per lanciare sessioni diversi in base agli argomenti che gli vengono forniti sulla riga di comando.
+Se non si usa un [display manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") e non si vuole usarne uno, `~/.xinitrc` è di fondamentale importanza. Questo è un esempio di `xinitrc` pronto per lanciare sessioni diversi in base agli argomenti che gli vengono forniti sulla riga di comando.
 
 ```
 #!/bin/sh

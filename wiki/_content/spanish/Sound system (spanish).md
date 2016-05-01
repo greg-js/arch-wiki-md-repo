@@ -19,7 +19,7 @@ El sistema de sonido de Arch Linux contiene varios niveles:
 
 *   **(Opcional)** frameworks de sonido – entorno para aplicaciones exigentes que no comprometen procesos del servidor
 
-La instalación, por defecto, de Arch ya incluye sistema de sonido en el kernel, denominado [ALSA](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)"), y varias utilidades para ello, que se instalarán desde los [repositorios oficiales.](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") Quienes deseen funciones adicionales pueden optar por [OSS](/index.php/OSS_(Espa%C3%B1ol) "OSS (Español)") o indagar otros [servidores de sonido.](https://en.wikipedia.org/wiki/es:Servidor_de_sonido "wikipedia:es:Servidor de sonido")
+La instalación, por defecto, de Arch ya incluye sistema de sonido en el kernel, denominado [ALSA](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)"), y varias utilidades para ello, que se instalarán desde los [repositorios oficiales.](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") Quienes deseen funciones adicionales pueden optar por [OSS](/index.php/OSS_(Espa%C3%B1ol) "OSS (Español)") o indagar otros [servidores de sonido.](https://en.wikipedia.org/wiki/es:Servidor_de_sonido "wikipedia:es:Servidor de sonido")
 
 ## Controladores e interfaces
 
@@ -57,4 +57,4 @@ La instalación, por defecto, de Arch ya incluye sistema de sonido en el kernel,
 
 *   [MIDI](/index.php/MIDI "MIDI")
 *   [Codecs (Español)](/index.php/Codecs_(Espa%C3%B1ol) "Codecs (Español)")
-*   [Disable PC Speaker Beep (Español)](/index.php/Disable_PC_Speaker_Beep_(Espa%C3%B1ol) "Disable PC Speaker Beep (Español)")
+*   [Disable PC speaker beep (Español)](/index.php/Disable_PC_speaker_beep_(Espa%C3%B1ol) "Disable PC speaker beep (Español)")

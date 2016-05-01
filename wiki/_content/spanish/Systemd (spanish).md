@@ -214,7 +214,7 @@ Como los archivos de unidad suministrados se actualizarán de vez en cuando, es 
 
 ### Resaltar la sintaxis de las unidades de systemd con Vim
 
-El resaltado de sintaxis para las unidades de *systemd* con [Vim](/index.php/Vim "Vim") se puede activar mediante la instalación de [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+El resaltado de sintaxis para las unidades de *systemd* con [Vim](/index.php/Vim "Vim") se puede activar mediante la instalación de [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Targets
 

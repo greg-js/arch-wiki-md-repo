@@ -447,7 +447,7 @@ Option "PalmMinZ" "200"
 
 [GNOME](/index.php/GNOME "GNOME") 和[MATE](/index.php/MATE "MATE") 会覆盖您的个性化设定,包括那些没法在GNOME或者MATE下进行图形化设定的选项.所以这导致`/etc/X11/xorg.conf.d/50-synaptics.conf` 里的设置不起作用了.请参考本文GNOME一节来避免这种情况的发生.
 
-*   [Touchpad_Synaptics#GNOME](/index.php/Touchpad_Synaptics#GNOME "Touchpad Synaptics")
+*   [Touchpad Synaptics#GNOME](/index.php/Touchpad_Synaptics#GNOME "Touchpad Synaptics")
 
 ### ALPS 触摸板
 

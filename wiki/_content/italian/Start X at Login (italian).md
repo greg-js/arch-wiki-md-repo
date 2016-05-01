@@ -1,6 +1,6 @@
-Questo articolo spiega come avviare automaticamente il [Server X](/index.php/Xorg_(Italiano) "Xorg (Italiano)") dopo il login in un terminale virtuale attraverso l'utilizzo del comando *startx*, il cui comportamento può essere modificato come riportato nella pagina relativa a [xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)"), ad esempio per scegliere quale [window manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") avviare.
+Questo articolo spiega come avviare automaticamente il [Server X](/index.php/Xorg_(Italiano) "Xorg (Italiano)") dopo il login in un terminale virtuale attraverso l'utilizzo del comando *startx*, il cui comportamento può essere modificato come riportato nella pagina relativa a [xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)"), ad esempio per scegliere quale [window manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") avviare.
 
-In alternativa, è possibile utilizzare un [display manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") per avviare automaticamente X e fornire un login grafico.
+In alternativa, è possibile utilizzare un [display manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") per avviare automaticamente X e fornire un login grafico.
 
 ## Contents
 

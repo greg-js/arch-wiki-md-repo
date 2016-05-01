@@ -264,7 +264,7 @@ Security:
 
 有时用户希望通过重置SSD单元到刚安装时的纯净状态以使其恢复到 [出厂时的写入性能](http://www.anandtech.com/storage/showdoc.aspx?i=3531&p=8)。即使是原生支持TRIM的SSD，其写入性能也会随时间变差。TRIM只在文件删除时起作用，而不是如增量保存一样的替代保障措施。
 
-重置按wiki文章[SSD Memory Cell Clearing](/index.php/SSD_Memory_Cell_Clearing "SSD Memory Cell Clearing")指示，三步之内即可轻松完成。
+重置按wiki文章[SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing")指示，三步之内即可轻松完成。
 
 ### 处理NCQ错误
 
@@ -281,7 +281,7 @@ Security:
 问题可由以下某一方法解决:
 
 1.  更新SSD固件。Intelligent partition scheme
-2.  更新主板的BIOS/UEFI固件。见 [Flashing_BIOS_from_Linux](/index.php/Flashing_BIOS_from_Linux "Flashing BIOS from Linux")。
+2.  更新主板的BIOS/UEFI固件。见 [Flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux "Flashing BIOS from Linux")。
 3.  启动时禁止NCQ。在[Bootloader](/index.php/Bootloader "Bootloader")配置的kernel行里添加 `libata.force=noncq` 。
 
 如果问题仍未解决或者导致了其它问题， [提交一个bug](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")。
@@ -322,7 +322,7 @@ AUR上有自动完成这些过程的软件，如 [profile-sync-daemon](https://a
 
 ### 在tmpfs里编译
 
-在[tmpfs](/index.php/Tmpfs "Tmpfs")里编译是减少硬盘读写的好招数。更多详见 [Makepkg#Improving_compile_times](/index.php/Makepkg#Improving_compile_times "Makepkg")。
+在[tmpfs](/index.php/Tmpfs "Tmpfs")里编译是减少硬盘读写的好招数。更多详见 [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times "Makepkg")。
 
 ### 文件系统上禁用日志
 
@@ -357,7 +357,7 @@ AUR上有自动完成这些过程的软件，如 [profile-sync-daemon](https://a
 
 ### 其他文件系统
 
-有些为SSD而特殊设计的 [文件系统](https://en.wikipedia.org/wiki/List_of_flash_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "wikipedia:List of flash file systems")，例如 [F2fs](/index.php/F2fs "F2fs").
+有些为SSD而特殊设计的 [文件系统](https://en.wikipedia.org/wiki/List_of_flash_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "wikipedia:List of flash file systems")，例如 [F2FS](/index.php/F2FS "F2FS").
 
 ## 固件升级
 

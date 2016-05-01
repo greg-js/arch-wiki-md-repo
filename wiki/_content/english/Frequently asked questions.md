@@ -207,7 +207,7 @@ Yes. Package signing in [pacman](/index.php/Pacman "Pacman") has been implemente
 
 ### What to do before upgrading?
 
-It is important in Arch Linux, before upgrading to "Check the front page [Arch news](https://www.archlinux.org/), [Announcement lists](https://mailman.archlinux.org/mailman/listinfo/arch-announce/), and optionally the [forum](https://bbs.archlinux.org/) and [Mailing Lists](https://mailman.archlinux.org/mailman/listinfo/), before hitting enter." Any special instructions will be posted there. See also [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance").
+Before upgrading check the front page [Arch news](https://www.archlinux.org/), [Announcement lists](https://mailman.archlinux.org/mailman/listinfo/arch-announce/), and optionally the [forum](https://bbs.archlinux.org/) and [Mailing Lists](https://mailman.archlinux.org/mailman/listinfo/), before hitting enter. Any special instructions will be posted there. See also [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance").
 
 ### A package update was released, but pacman says the system is up to date
 

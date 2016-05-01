@@ -29,4 +29,4 @@ UUID包含了32個十六進位數字，並且用"-"分隔成五組，分別是8,
 ## 參考資料
 
 *   [Wikipedia's Article on *Universally Unique Identifier*](https://en.wikipedia.org/wiki/Universally_Unique_Identifier "wikipedia:Universally Unique Identifier")
-*   [維基百科](http://zh.wikipedia.org/wiki/Uuid)
+*   [維基百科](https://zh.wikipedia.org/wiki/Uuid)

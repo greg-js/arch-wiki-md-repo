@@ -497,7 +497,7 @@ Option         "Protocol" "ExplorerPS/2"
 
 ### Ekstra museknap virker ikke
 
-Brugere af USB-mus bør læse [Get_All_Mouse_Buttons_Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working") (Engelsk).
+Brugere af USB-mus bør læse [Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working") (Engelsk).
 
 Intellimouse (ExplorerPS/2) -brugere finder måske, at deres rulle og sideknapper ikke opfører sig som de plejer. Tidligere xorg.conf behøvede:
 

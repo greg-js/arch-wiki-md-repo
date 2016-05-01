@@ -302,7 +302,7 @@ Picked from [Judd's explanation](https://www.archlinux.org/pipermail/arch/2005-J
 
 ### NetworkManager
 
-**NetworkManager** A more advanced network management system for Linux. This is included in various Linux distributions and now can be used in Arch Linux. It is very painless for roaming users, and includes an easy-to-use GUI program for selcting your desired network. One caveat however is that you are prompted for your keyring password every time you log into gnome and the program starts. This most likely won't be fixed until later versions, and can be quite annoying. More information on NetworkManager can be found at: [Networkmanager](/index.php/Networkmanager "Networkmanager").
+**NetworkManager** A more advanced network management system for Linux. This is included in various Linux distributions and now can be used in Arch Linux. It is very painless for roaming users, and includes an easy-to-use GUI program for selcting your desired network. One caveat however is that you are prompted for your keyring password every time you log into gnome and the program starts. This most likely won't be fixed until later versions, and can be quite annoying. More information on NetworkManager can be found at: [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
 ### Using phrakture's old scripts (very outdated)
 

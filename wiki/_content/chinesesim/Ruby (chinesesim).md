@@ -180,7 +180,7 @@ require 'bundler/setup'
 
 ## 又见
 
-*   [Ruby On Rails](/index.php/Ruby_On_Rails "Ruby On Rails")
+*   [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails")
 
 ## 引用
 

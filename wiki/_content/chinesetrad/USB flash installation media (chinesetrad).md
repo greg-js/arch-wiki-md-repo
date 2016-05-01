@@ -314,7 +314,7 @@ append initrd=/arch/boot/i686/archiso.img archisodevice=/dev/sd**x1** ../../
 
 **提示:** 預設 Win32 Disk Imager 的檔案瀏覽會認為映像檔的副檔名為 `.img`。您可以輕易將 `Files of type` (檔案類型) 下拉選單改為 `*.*`，再選擇 Arch Linux ISO。
 
-**註記:** 安裝完成後，若需要還原 USB 裝置，請依照[這裡](/index.php/USB_Installation_Media_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E5.A6.82.E4.BD.95.E9.82.84.E5.8E.9F_USB_.E8.A3.9D.E7.BD.AE "USB Installation Media (正體中文)")所寫的步驟進行。
+**註記:** 安裝完成後，若需要還原 USB 裝置，請依照[這裡](#.E5.A6.82.E4.BD.95.E9.82.84.E5.8E.9F_USB_.E8.A3.9D.E7.BD.AE)所寫的步驟進行。
 
 #### Windows 下的 USBWriter
 
@@ -353,7 +353,7 @@ Vista 或 Win7 的使用者，請以系統管理員的身分啟動終端機，�
 
 這個方式使用 [Syslinux](/index.php/Syslinux "Syslinux") 和 [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) 將整個 Arch Linux ISO 載入記憶體 (RAM)。整個 Live 環境將完全在系統記憶體上執行，因此您需要確定系統的記憶體容量足夠。以 MEMDISK 為基礎的 Arch Linux 安裝最低 RAM 需求大小為 500 MB 到 1 GB 之間。
 
-更多 Arch Linux 與 MEMDISK 的系統要求，請參閱[新手教學](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' Guide (正體中文)")以及[這裡](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries)。
+更多 Arch Linux 與 MEMDISK 的系統要求，請參閱[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")以及[這裡](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries)。
 
 **提示:** 一旦安裝程序徹底載入完畢，就可以移除 USB 隨身碟，將它插入不同機器後可以重新進行安裝步驟。可利用式 MEMDISK 也允許啟動並安裝 Arch Linux 到原本用來安裝的 USB 隨身碟上。
 

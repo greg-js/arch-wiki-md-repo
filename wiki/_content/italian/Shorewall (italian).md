@@ -19,7 +19,7 @@ Ogni messaggio (meglio: *ogni pacchetto*) che entra o esce dalla nostra rete sar
 
 # Shorewall
 
-Shoreline Firewall, più comunemente conosciuto come [Shorewall](http://www.shorewall.net), è un tool ad alto livello per configurare [Netfilter](http://it.wikipedia.org/wiki/Netfilter). Le "regole" del firewall sono descritte usando dei file di configurazione testuale relativamente semplici da capire ed interpretare nascondendo la complessità insita in iptables. Shorewall legge questi file di configurazione e, con l'aiuto dell'utility iptables, configura Netfilter secondo le tue esigenze. Shorewall può essere utilizzato sia in un sistema dedicato che in un sistema GNU/Linux standalone. Vista la sua completezza e la sua ottima [documentazione](http://www.shorewall.net/Documentation.html) è di certo una ottima soluzione.
+Shoreline Firewall, più comunemente conosciuto come [Shorewall](http://www.shorewall.net), è un tool ad alto livello per configurare [Netfilter](https://it.wikipedia.org/wiki/Netfilter). Le "regole" del firewall sono descritte usando dei file di configurazione testuale relativamente semplici da capire ed interpretare nascondendo la complessità insita in iptables. Shorewall legge questi file di configurazione e, con l'aiuto dell'utility iptables, configura Netfilter secondo le tue esigenze. Shorewall può essere utilizzato sia in un sistema dedicato che in un sistema GNU/Linux standalone. Vista la sua completezza e la sua ottima [documentazione](http://www.shorewall.net/Documentation.html) è di certo una ottima soluzione.
 
 ## Installazione
 

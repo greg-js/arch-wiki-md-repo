@@ -135,7 +135,7 @@ $ qt_application --stylesheet *style.qss*
 
 ### GTK+ и Qt
 
-Если вы используете одновременно приложения GTK+ и Qt, их внешний вид может несколько различаться. Если вы хотите, чтобы стили отображения в точности соответствовали друг другу, смотрите статью [Единый вид приложений GTK и Qt](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform Look for QT and GTK Applications (Русский)").
+Если вы используете одновременно приложения GTK+ и Qt, их внешний вид может несколько различаться. Если вы хотите, чтобы стили отображения в точности соответствовали друг другу, смотрите статью [Единый вид приложений GTK и Qt](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform look for Qt and GTK applications (Русский)").
 
 ## Разработка
 

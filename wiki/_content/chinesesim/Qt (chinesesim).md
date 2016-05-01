@@ -127,7 +127,7 @@ For more information on Qt Style Sheets see the [official documentation](http://
 
 ### GTK+ 和 Qt
 
-如果你有 GTK+ 和 Qt 应用程序，它们的外观可能无法融合到一起。如果你希望使 GTK+ 风格与 Qt 风格匹配，请阅读 [统一 GTK+ 和 Qt 应用程序外观](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform Look for QT and GTK Applications (简体中文)").
+如果你有 GTK+ 和 Qt 应用程序，它们的外观可能无法融合到一起。如果你希望使 GTK+ 风格与 Qt 风格匹配，请阅读 [统一 GTK+ 和 Qt 应用程序外观](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform look for Qt and GTK applications (简体中文)").
 
 ## 开发
 

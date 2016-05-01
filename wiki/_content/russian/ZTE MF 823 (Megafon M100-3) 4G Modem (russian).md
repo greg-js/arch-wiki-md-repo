@@ -27,7 +27,7 @@ $ Bus 002 Device 018: ID 19d2:1405 ZTE WCDMA Technologies MSM
 
 0016 - диагностический режим (download mode)
 
-Если модем не определяется как 19d2:1405 (или 1403), обратитесь к этой статье: [USB 3G Modem#Mode_switching](/index.php/USB_3G_Modem#Mode_switching "USB 3G Modem")
+Если модем не определяется как 19d2:1405 (или 1403), обратитесь к этой статье: [USB 3G Modem#Mode switching](/index.php/USB_3G_Modem#Mode_switching "USB 3G Modem")
 
 ## Соединение
 

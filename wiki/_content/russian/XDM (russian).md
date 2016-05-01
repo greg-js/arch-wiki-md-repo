@@ -34,7 +34,7 @@ $ chmod 744 ~/.xsession
 
 Если вы также хотите установить тему “Arch Linux” для XDM, вам поможет пакет [xdm-archlinux](https://www.archlinux.org/packages/?name=xdm-archlinux) (также доступен в официальном репозитории).
 
-Дополнительная информация доступна здесь: [Display Manager](/index.php/Display_Manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display Manager (Русский)").
+Дополнительная информация доступна здесь: [Display Manager](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)").
 
 ## Фоны для XDM
 

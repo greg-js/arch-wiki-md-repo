@@ -33,11 +33,13 @@ Review [Beginners' guide#Prepare the storage devices](/index.php/Beginners%27_gu
 
 ZFS manages its own partitions, so only a basic partition table scheme is required. The partition that will contain the ZFS filesystem should be of the type `bf00`, or "Solaris Root".
 
-When using GRUB as your bootloader on a BIOS machine there is no need for a separate boot partition.
+When using GRUB as your bootloader with an MBR partition table there is no need for a BIOS boot partition. Drives larger than 2TB require a GPT partition table and you should use [parted](https://www.archlinux.org/packages/?name=parted) to create the partitions for GPT. BIOS/GPT and UEFI/GPT configurations require a small (1/2MB) BIOS boot partition to store the bootloader. If you are using a UEFI-only bootloader you should use GPT.
+
+Depending upon your choice of bootloader you may or may not require an EFI partition. GRUB, when installed on a BIOS machine (or a UEFI machine booting in legacy mode) using either MBR or GPT doesn't require an EFI partition. Consult [Boot loaders](/index.php/Boot_loaders "Boot loaders") for more info.
 
 ### Partition scheme
 
-Here is an example of a basic partition scheme that could be employed for your ZFS root install on a BIOS-based machine:
+Here is an example of a basic partition scheme that could be employed for your ZFS root install on a BIOS/MBR installation using GRUB:
 
 ```
 Part     Size   Type
@@ -46,19 +48,28 @@ Part     Size   Type
 
 ```
 
-Here is an example using UEFI and GPT.
+Using GRUB on a BIOS (or UEFI machine in legacy boot mode) machine but using a GPT partition table:
 
 ```
 Part     Size   Type
 ----     ----   -------------------------
-   1     100M   EFI boot partition (8300)
+   1       2M   BIOS boot partition (ef02)
    2     XXXG   Solaris Root (bf00)
 
 ```
 
-ZFS does not support swap files. If you require a swap partition, see [ZFS#Swap volume](/index.php/ZFS#Swap_volume "ZFS") for creating a swap ZVOL.
+Another example, this time using a UEFI-specific bootloader (such as [rEFInd](/index.php/REFInd "REFInd")) and GPT:
 
-The EFI partition may be required depending on your hardware and chosen bootloader. Consult [Beginners' guide#Install and configure a bootloader](/index.php/Beginners%27_guide#Install_and_configure_a_bootloader "Beginners' guide") for more info.
+```
+Part     Size   Type
+----     ----   -------------------------
+   1       2M   BIOS boot partition (ef02)
+   2     100M   EFI boot partition (ef00)
+   3     XXXG   Solaris Root (bf00)
+
+```
+
+ZFS does not support swap files. If you require a swap partition, see [ZFS#Swap volume](/index.php/ZFS#Swap_volume "ZFS") for creating a swap ZVOL.
 
 **Tip:** Bootloaders with support for ZFS are described in [#Install and configure the bootloader](#Install_and_configure_the_bootloader).
 
@@ -164,14 +175,14 @@ Finally, re-import the pool,
 
 If there is an error in this step, you can export the pool to redo the command. The ZFS filesystem is now ready to use.
 
-Be sure to bring the zpool.cache file into your new system. This is required later for the ZFS daemon to start.
+Be sure to bring the `zpool.cache` file into your new system. This is required later for the ZFS daemon to start.
 
 ```
 # cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
 
 ```
 
-if you do not have /etc/zfs/zpool.cache, create it:
+if you do not have `/etc/zfs/zpool.cache`, create it:
 
 ```
 # zpool set cachefile=/etc/zfs/zpool.cache zroot

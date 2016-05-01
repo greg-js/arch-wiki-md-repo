@@ -134,7 +134,7 @@ Press 'i' to start input, type in the line above, press Esc to escape back to th
 ```
 #!/bin/sh
 # Run offlineimap through cron to fetch email periodically
-ps aux | grep "\/usr\/bin\/offlineimap"
+pgrep offlineimap
 if [ $? -eq "0" ]; then
         logger -i -t offlineimap "Another instance of offlineimap running. Exiting."
         exit 0;

@@ -26,7 +26,7 @@ Przy uruchamianiu *systemd-timesyncd* wczyta plik `/etc/systemd/timesyncd.conf`.
 #FallbackNTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
 ```
 
-Aby dodać lub zmienić [serwery czasu](/index.php/Network_Time_Protocol_daemon#Configuring_connection_to_NTP_servers "Network Time Protocol daemon"), odkomentuj linie odnoszące się do nich. Każdy adres serwera rozdzielony jest spacją, listę dostępnych serwerów otrzymasz na [stronie basenu projektu NTP](http://www.pool.ntp.org/) lub [te domyślne Archa](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/ntp&id=1b485f87c9e1384eaf069d031e415515e8ead92d) (również dostarczane przez serwery basenu NTP).
+Aby dodać lub zmienić [serwery czasu](/index.php/Network_Time_Protocol_daemon#Connection_to_NTP_servers "Network Time Protocol daemon"), odkomentuj linie odnoszące się do nich. Każdy adres serwera rozdzielony jest spacją, listę dostępnych serwerów otrzymasz na [stronie basenu projektu NTP](http://www.pool.ntp.org/) lub [te domyślne Archa](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/ntp&id=1b485f87c9e1384eaf069d031e415515e8ead92d) (również dostarczane przez serwery basenu NTP).
 
  `/etc/systemd/timesyncd.conf` 
 ```

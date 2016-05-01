@@ -16,7 +16,7 @@
 
 *   [AMD](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)"): 位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的 [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) 软件包为 Radeon 9500 或更新的GPU提供支持。
 
-*   [Intel](/index.php/Intel_Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel Graphics (简体中文)"): 位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的[libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)和[libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver)这两个软件包为 GMA 4500 系列或者更新的GPU提供支持。
+*   [Intel](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)"): 位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的[libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)和[libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver)这两个软件包为 GMA 4500 系列或者更新的GPU提供支持。
 
 *   [NVIDIA](/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nouveau (简体中文)"): 位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的 [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) 软件包为 GeForce 8 系列和更新的GPU提供支持。位于AUR的 [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/) 软件包包含从NVIDIA闭源驱动中提取出的必要的[固件](http://nouveau.freedesktop.org/wiki/VideoAcceleration/#firmware) 。
 
@@ -91,7 +91,7 @@ $ vdpauinfo
 
 ### 配置
 
-环境变量 `VDPAU_DRIVER` 决定使用的驱动。可以[全局设置](/index.php/Environment_variables#Defining_variables_globally "Environment variables") 或 [针对一个用户](/index.php/Environment_variables#Defining_variables_locally "Environment variables") 设置 [环境变量](/index.php/Environment_variables "Environment variables")
+环境变量 `VDPAU_DRIVER` 决定使用的驱动。可以[全局设置](/index.php/Environment_variables#Defining_variables "Environment variables") 或 [针对一个用户](/index.php/Environment_variables#Defining_variables "Environment variables") 设置 [环境变量](/index.php/Environment_variables "Environment variables")
 
 正确的驱动程序名称取决于您的设置：
 

@@ -73,7 +73,7 @@ network={
 }
 ```
 
-Once you have a configuration file, you can [start](#Starting) the *wpa_supplicant* daemon as described in the previous section and connect to the wireless network, using a [static IP](/index.php/Network_configuration#Static_IP_Address "Network configuration") or [DHCP](/index.php/Network_configuration#Dynamic_IP_Address "Network configuration").
+Once you have a configuration file, you can [start](#Starting) the *wpa_supplicant* daemon as described in the previous section and connect to the wireless network, using a [static IP](/index.php/Network_configuration#Static_IP_address "Network configuration") or [DHCP](/index.php/Network_configuration#Dynamic_IP_address "Network configuration").
 
 ### wpa_passphrase
 

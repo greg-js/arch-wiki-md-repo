@@ -89,7 +89,7 @@ authors = ["Your Name <you@example.com>"]
 ## Смотрите также
 
 *   [Официальный сайт языка программирования Rust (англ.)](http://rust-lang.org/)
-*   [Статья в Wikipedia](http://ru.wikipedia.org/wiki/Rust_(язык_программирования))
+*   [Статья в Wikipedia](https://ru.wikipedia.org/wiki/Rust_(язык_программирования))
 *   [Примеры с небольшими описаниями (англ.)](http://rustbyexample.com/)
 *   [Подборка материалов по изучению Rust (англ.)](https://github.com/ctjhoa/rust-learning)
 *   [Хранилище Cargo библиотек (crates)](https://crates.io/)

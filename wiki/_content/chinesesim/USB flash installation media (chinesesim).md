@@ -2,7 +2,7 @@
 
 本文探讨如何制作能在 UEFI 和 BIOS 系统上启动的 Arch Linux 安装 USB 驱动器（也被称为*“闪存驱动器”，“USB记忆棒"，“U盘”等）。制作好的U盘被称为 LiveUSB 系统（类似 LiveCD 系统），因为[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")的性质，关机后所有的更改都会丢失。这样的系统可用于安装 Arch Linux、系统维护或者系统恢复。*
 
-如果想在U盘上运行完整的 Arch Linux（即能保留设置），参见[在U盘中安装Arch Linux](/index.php/Installing_Arch_Linux_on_a_USB_key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux on a USB key (简体中文)")。如果想将 Arch Linux LiveUSB 当作救援 USB 来用，参见[Change Root](/index.php/Change_Root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change Root (简体中文)")
+如果想在U盘上运行完整的 Arch Linux（即能保留设置），参见[在U盘中安装Arch Linux](/index.php/Installing_Arch_Linux_on_a_USB_key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux on a USB key (简体中文)")。如果想将 Arch Linux LiveUSB 当作救援 USB 来用，参见[Change Root](/index.php/Change_root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change root (简体中文)")
 
 ## Contents
 
@@ -38,7 +38,7 @@
 
 ### dd
 
-**注意:** 推荐该方法是因为它简单。如果没有效果，请使用下面介绍的方法 [#手动方法](#.E6.89.8B.E5.8A.A8.E6.96.B9.E6.B3.95) 。
+**注意:** 推荐该方法是因为它简单。如果没有效果，请使用下面介绍的方法 [#手动方法](#.E6.89.8B.E5.8A.A8.E6.96.B9.E6.B3.95)。
 
 **警告:** 这种方法会删除 `/dev/sd**x**` 上的所有数据且不可逆
 
@@ -216,7 +216,7 @@ ISO 镜像是多功能镜像，既可以烧到光盘也能直接写入 USB，所
 
 **警告:** 错误的卷标或 UUID 会导致启动失败。
 
-*   */mnt/usb/arch/boot/syslinux* 里已经安装 syslinux。请按照 [Syslinux#Manual_install](/index.php/Syslinux#Manual_install "Syslinux")进行重装。
+*   */mnt/usb/arch/boot/syslinux* 里已经安装 syslinux。请按照 [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux")进行重装。
     *   用新 syslinux 的模块（`*.c32` 文件）覆盖原有 syslinux 的模块，以免因版本差异导致启动失败。
     *   运行：
 
@@ -406,7 +406,7 @@ DEFAULT arch_iso
 
 ## 故障排除
 
-*   对于 [MEMDISK 方法](#.E5.9C.A8.E5.86.85.E5.AD.98.E4.B8.AD.E5.8A.A0.E8.BD.BD.E5.AE.89.E8.A3.85.E4.BB.8B.E8.B4.A8)，如果你尝试引导 i686 版本的系统时碰到了著名的 *30 seconds error*，那么在 `Boot Arch Linux (i686)` 条目上按 `Tab` 键，然后在末尾添加 `vmalloc=448M`。参考： *如果你的映像大于 128MiB 且你使用的是32位操作系统，你必须增加最大内存使用参数vmalloc*。[(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+*   对于 [MEMDISK 方法](#.E5.9C.A8.E5.86.85.E5.AD.98.E5.8A.A0.E8.BD.BD.E5.AE.89.E8.A3.85.E4.BB.8B.E8.B4.A8)，如果你尝试引导 i686 版本的系统时碰到了著名的 *30 seconds error*，那么在 `Boot Arch Linux (i686)` 条目上按 `Tab` 键，然后在末尾添加 `vmalloc=448M`。参考： *如果你的映像大于 128MiB 且你使用的是32位操作系统，你必须增加最大内存使用参数vmalloc*。[(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 *   如果你碰到因 `/dev/disk/by-label/ARCH_XXXXXX` 未挂载而导致的 *30 seconds error*，可尝试重命名你的 USB 媒介为 `ARCH_XXXXXX`（例如 `ARCH_201409`）。
 

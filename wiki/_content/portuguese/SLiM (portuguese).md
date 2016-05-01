@@ -1,4 +1,4 @@
-[SLiM](http://slim.berlios.de/) é um acrônimo para Gerenciador de Login Simples (Simple Login Manager). SLiM é simples, leve e fácil de ser configurado. SLiM é usado por alguns porque não requer dependências do [GNOME](/index.php/GNOME "GNOME") ou [KDE](/index.php/KDE "KDE") e pode ajudar a criar um sistema leve para usuários que gostam de usar desktops leve como [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), e [Fluxbox_(Português)](/index.php/Fluxbox_(Portugu%C3%AAs) "Fluxbox (Português)").
+[SLiM](http://slim.berlios.de/) é um acrônimo para Gerenciador de Login Simples (Simple Login Manager). SLiM é simples, leve e fácil de ser configurado. SLiM é usado por alguns porque não requer dependências do [GNOME](/index.php/GNOME "GNOME") ou [KDE](/index.php/KDE "KDE") e pode ajudar a criar um sistema leve para usuários que gostam de usar desktops leve como [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), e [Fluxbox (Português)](/index.php/Fluxbox_(Portugu%C3%AAs) "Fluxbox (Português)").
 
 ## Contents
 

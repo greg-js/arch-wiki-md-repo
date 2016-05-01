@@ -13,10 +13,12 @@
 
 ## Configuration
 
-First open `/etc/vnstat.conf` with your editor and check the interface name is set right, eg.:
+Pick a preferred network interface and edit the `Interface` variable in the `/etc/vnstat.conf` accordingly. To the list all interfaces available to vnstat, use `vnstat --iflist`.
+
+To start monitoring a particular interface you must initialize a database first. Each interface needs its own database. The command to initialize one for the `eth0` interface is:
 
 ```
-# Interface "enp3s0"
+# vnstat -u -i eth0 
 
 ```
 

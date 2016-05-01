@@ -269,7 +269,7 @@ Cambie las opciones en *ExecStart*, pero mantenga el parámetro -fg para permiti
 
 ### Copiar contenidos del portapapeles desde la máquina remota a la local
 
-Si la copia de la máquina remota a la máquina local no funciona, ejecute autocutsel en el servidor, como se menciona a continuación [[referencia](https://bbs.archlinux.org/viewtopic.php?id=101243)]:
+Si la copia de la máquina remota a la máquina local no funciona, ejecute autocutsel en el servidor, como se menciona a continuación [referencia](https://bbs.archlinux.org/viewtopic.php?id=101243):
 
 ```
 $ autocutsel -fork

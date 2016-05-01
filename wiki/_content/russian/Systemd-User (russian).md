@@ -243,7 +243,7 @@ As detailed in `man systemd.unit`, the `%h` variable is replaced by the home dir
 
 ### Примечание о приложениях X
 
-Most X apps need a `DISPLAY` variable to run. See [#DISPLAY and XAUTHORITY](#DISPLAY_and_XAUTHORITY) for how to this variable is set for the entire systemd user instance.
+Most X apps need a `DISPLAY` variable to run. See [#DISPLAY и XAUTHORITY](#DISPLAY_.D0.B8_XAUTHORITY) for how to this variable is set for the entire systemd user instance.
 
 ## Некоторые случаи использования
 

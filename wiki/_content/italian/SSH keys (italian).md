@@ -231,7 +231,7 @@ Altre opzioni utili per questo file sono ad esempio, il programma di inserimento
 
 [Keychain](http://www.funtoo.org/en/security/keychain/intro/) gestisce una o più chiavi private specifiche. Quando avviato richiederà la passphrase per la chiave (o chiavi) privata e la memorizzerà. In questo modo la chiave privata sarà protetta dalla password, ma non la si dovrà inserire ripetutamente.
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [keychain](https://www.archlinux.org/packages/?name=keychain) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [keychain](https://www.archlinux.org/packages/?name=keychain) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Aggiungere il seguente comando nel proprio `.bashrc`,`.bash_profile`, oppure creare il file `/etc/profile.d/keychain.sh` come utente root e renderlo eseguibile (esempio `chmod 755 keychain.sh`).
 
@@ -259,7 +259,7 @@ Chiudere la shell ed avviarla di nuovo. Dovrebbe apparire il portachiavi e se è
 
 È necessario avviare ssh-agent ogni volta che si avvia una nuova sessione di X. Ssh-agent verrà spento al termine della sessione X.
 
-Installare una variante di x11-ssh-askpass, che chiederà la password ogni volta che si apre un nuova sessione di X. Sarà possibile scegliere tra l'originale [x11-ssh-askpass](https://www.archlinux.org/packages/?name=x11-ssh-askpass) [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) (che utilizza [kdelibs](https://www.archlinux.org/packages/?name=kdelibs)) oppure [openssh-askpass](https://www.archlinux.org/packages/?name=openssh-askpass) (che utilizza le qt) tutti reperibili dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Installare una variante di x11-ssh-askpass, che chiederà la password ogni volta che si apre un nuova sessione di X. Sarà possibile scegliere tra l'originale [x11-ssh-askpass](https://www.archlinux.org/packages/?name=x11-ssh-askpass) [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) (che utilizza [kdelibs](https://www.archlinux.org/packages/?name=kdelibs)) oppure [openssh-askpass](https://www.archlinux.org/packages/?name=openssh-askpass) (che utilizza le qt) tutti reperibili dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Dopo aver installato il pacchetto, chiudendo la sessione X ed effettuando nuovamente l'accesso verrà richiesta la password all'avvio della sessione X senza doverla immettere successivamente.
 

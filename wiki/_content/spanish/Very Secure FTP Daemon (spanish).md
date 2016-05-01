@@ -1,6 +1,6 @@
 **vsftpd** es el "**v**ery **s**ecure **ftp** **d**aemon" (demonio ftp muy seguro) , un pequeño pero eficiente servidor FTP.
 
-Como puede correr con o sin [xinetd](http://es.wikipedia.org/wiki/Xinetd), serán explicados los dos métodos.
+Como puede correr con o sin [xinetd](https://es.wikipedia.org/wiki/Xinetd), serán explicados los dos métodos.
 
 ## Contents
 

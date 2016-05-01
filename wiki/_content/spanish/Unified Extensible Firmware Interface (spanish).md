@@ -49,7 +49,7 @@
 
 ## Diferencias entre BIOS y UEFI
 
-Véase [Arch_Boot_Process_(Español)#Tipos_de_firmware](/index.php/Arch_Boot_Process_(Espa%C3%B1ol)#Tipos_de_firmware "Arch Boot Process (Español)") para conocer más detalles.
+Véase [Arch boot process (Español)#Tipos de firmware](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Tipos_de_firmware "Arch boot process (Español)") para conocer más detalles.
 
 ## Proceso de arranque bajo UEFI
 
@@ -160,7 +160,7 @@ El Kernel de Linux expone los datos de las variables de EFI en el espacio de usu
 
 #### Inconsistencia entre efivarfs y sysfs-efivars
 
-Activar tanto sysfs-efivars ANTIGUO como efivarfs NUEVO simultáneamente puede causar problemas de inconsistencia de datos (véase [https://lkml.org/lkml/2013/4/16/473](https://lkml.org/lkml/2013/4/16/473) para más información). Debido a que el VIEJO sysfs-efivars está completamente desactivado en los kernel oficiales de Arch (desde **core/[linux](https://www.archlinux.org/packages/?name=linux)-3.11** y **core/[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)-3.10**), únicamente el NUEVO efivarfs será activado/soportado en lo sucesivo. Todas las variables de UEFI respecto a las herramientas y utilidades disponibles en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") soportan efivarfs desde el 1 de octubre de 2013.
+Activar tanto sysfs-efivars ANTIGUO como efivarfs NUEVO simultáneamente puede causar problemas de inconsistencia de datos (véase [https://lkml.org/lkml/2013/4/16/473](https://lkml.org/lkml/2013/4/16/473) para más información). Debido a que el VIEJO sysfs-efivars está completamente desactivado en los kernel oficiales de Arch (desde **core/[linux](https://www.archlinux.org/packages/?name=linux)-3.11** y **core/[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)-3.10**), únicamente el NUEVO efivarfs será activado/soportado en lo sucesivo. Todas las variables de UEFI respecto a las herramientas y utilidades disponibles en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") soportan efivarfs desde el 1 de octubre de 2013.
 
 **Nota:** Como efecto secundario de la desactivación del ANTIGUO sysfs-efivars, el módulo `efi_pstore` también está desactivado en los kernel oficiales de Arch como funcionalidad de EFI pstore.
 
@@ -415,7 +415,7 @@ Véase el artículo [Unified Extensible Firmware Interface/Hardware](/index.php/
 
 ### Crear un USB arrancable con UEFI desde la ISO
 
-Siga las instrucciones del siguiente [artículo](/index.php/USB_Installation_Media_(Espa%C3%B1ol)#Crear_USB_arrancable_desde_sistemas_BIOS_y_UEFI "USB Installation Media (Español)")
+Siga las instrucciones del siguiente [artículo](/index.php/USB_Installation_Media_(Espa%C3%B1ol)#Crear_USB_para_arrancar_desde_sistemas_BIOS_y_UEFI "USB Installation Media (Español)")
 
 ### Eliminar el apoyo de arranque de UEFI desde la ISO
 
@@ -490,13 +490,13 @@ bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
 
 ### El soporte USB arranca mostrando una pantalla en negro
 
-*   Este fallo puede deberse a un problema con [KMS](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol) "Kernel Mode Setting (Español)"). Pruebe [desactivando KMS](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol)#Desactivar_modesetting "Kernel Mode Setting (Español)") durante el arranque del USB.
+*   Este fallo puede deberse a un problema con [KMS](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Pruebe [desactivando KMS](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Desactivar_modesetting "Kernel mode setting (Español)") durante el arranque del USB.
 
 *   Si el problema no se debe a KMS, entonces puede ser debido a un error en el arranque de [EFISTUB](/index.php/EFISTUB "EFISTUB") (véase [[2]](https://bugs.archlinux.org/task/33745) y [[3]](https://bbs.archlinux.org/viewtopic.php?id=156670) para obtener más información.). Tanto la ISO Oficial ([Archiso](/index.php/Archiso "Archiso")) como la iso de [Archboot](/index.php/Archboot "Archboot") utilizan EFISTUB (mediante el gestor de arranque [Gummiboot](/index.php/Gummiboot "Gummiboot") para el menú) para iniciar el kernel en modalidad UEFI. En tal caso hay que usar [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") como gestor de arranque de UEFI para el USB siguiendo la sección siguiente.
 
 #### Utilizar GRUB
 
-*   Cree un USB arrancable como soporte de la instalación, siguiendo las instrucciones de este [enlace](/index.php/USB_Flash_Installation_Media_(Espa%C3%B1ol) "USB Flash Installation Media (Español)"). Después de eso, siga los pasos siguientes para utilizar GRUB en lugar de Gummiboot.
+*   Cree un USB arrancable como soporte de la instalación, siguiendo las instrucciones de este [enlace](/index.php/USB_flash_installation_media_(Espa%C3%B1ol) "USB flash installation media (Español)"). Después de eso, siga los pasos siguientes para utilizar GRUB en lugar de Gummiboot.
 
 *   Realice una copia de seguridad de `<USB>/EFI/boot/loader.efi` a `<USB>/EFI/boot/gummiboot.efi`
 

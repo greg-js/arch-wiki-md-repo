@@ -30,7 +30,7 @@
 
 ## 系统需求
 
-目前 Wayland 只能在使用了 [KMS](/index.php/Kernel_Mode_Setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel Mode Setting (简体中文)") 的系统上工作。
+目前 Wayland 只能在使用了 [KMS](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel mode setting (简体中文)") 的系统上工作。
 
 ## 安装
 
@@ -333,5 +333,5 @@ modules=xwayland.so
 
 ## 参阅
 
-*   [Cursor Themes](/index.php/Cursor_Themes "Cursor Themes")
+*   [Cursor themes](/index.php/Cursor_themes "Cursor themes")
 *   [forum discussion](https://bbs.archlinux.org/viewtopic.php?id=107499) 页面将持续关注 Wayland 信息 ，如有兴趣请留意。

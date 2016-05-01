@@ -3,7 +3,7 @@
 ## Contents
 
 *   [1 Setup](#Setup)
-*   [2 Configure our live medium](#Configure_our_live_medium)
+*   [2 Configure the live medium](#Configure_the_live_medium)
     *   [2.1 Installing packages](#Installing_packages)
         *   [2.1.1 Custom local repository](#Custom_local_repository)
         *   [2.1.2 Avoid installation of packages belonging to base group](#Avoid_installation_of_packages_belonging_to_base_group)
@@ -39,7 +39,7 @@
 *   To use Archiso you must be running on a x86_64 platform. [[1]](https://projects.archlinux.org/archiso.git/tree/docs/README.build#n67)
 *   It is recommended to act as root in all the following steps. If not, it is very likely to have problems with false permissions later.
 
-Before we begin, we need to [install](/index.php/Install "Install") [archiso](https://www.archlinux.org/packages/?name=archiso) from the [official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, [archiso-git](https://aur.archlinux.org/packages/archiso-git/) can be found in the [AUR](/index.php/AUR "AUR").
+Before you begin, [install](/index.php/Install "Install") the [archiso](https://www.archlinux.org/packages/?name=archiso) or [archiso-git](https://aur.archlinux.org/packages/archiso-git/) package.
 
 Archiso comes with two "profiles": *releng* and *baseline*.
 
@@ -53,10 +53,10 @@ Now, copy the profile of your choice to a directory where you can make adjustmen
 
 ```
 
-*   If you are using the `releng` profile to make a fully customised image, then you can proceed onto [#Configure our live medium](#Configure_our_live_medium).
+*   If you are using the `releng` profile to make a fully customised image, then you can proceed onto [#Configure the live medium](#Configure_the_live_medium).
 *   If you are using the `baseline` profile to create a bare image, then you will not be needing to do any customisations and can proceed onto [#Build the ISO](#Build_the_ISO).
 
-## Configure our live medium
+## Configure the live medium
 
 This section details configuring the image you will be creating, allowing you to define the packages and configurations you want your live image to contain.
 

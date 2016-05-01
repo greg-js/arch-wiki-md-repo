@@ -473,7 +473,7 @@ Quindi spuntare **Avvia sul terminale**.
 
 [GNOME](/index.php/GNOME "GNOME") e [MATE](/index.php/MATE "MATE"), come opzione predefinita, sovrascrive varie opzioni per il proprio touchpad. Questo inclide opzioni configurabili per cui non c'è possibilità di configurazione grafica del pannello di controllo di GNOME. Ciò potrebbe far sembrare che `/etc/X11/xorg.conf.d/10-syanaptics.conf` non sia applicato. Si faccia riferimento alla sezione GNOME di questo articolo per prevenire questo comportamento.
 
-*   [Touchpad_Synaptics#GNOME](/index.php/Touchpad_Synaptics#GNOME "Touchpad Synaptics")
+*   [Touchpad Synaptics#GNOME](/index.php/Touchpad_Synaptics#GNOME "Touchpad Synaptics")
 
 #### ALPS Touchpads
 
@@ -602,7 +602,7 @@ ENV{XAUTHORITY}="$result/database", RUN+="/usr/bin/synclient TouchpadOff=0"
 
 **Nota:** le regole di [udev](/index.php/Udev "Udev") devono essere ognuna di una singola riga, per accordarsi al formato.
 
-**Nota:** Queste regole [udev](/index.php/Udev "Udev") vanno in conflitto con syndaemon (si veda [#Using .xinitrc](#Using_.xinitrc))
+**Nota:** Queste regole [udev](/index.php/Udev "Udev") vanno in conflitto con syndaemon (si veda [#Usando .xinitrc](#Usando_.xinitrc))
 
 Per disabilitare il touchpad e mandare segnale kill a syndaemon, si può usare una regola come questa:
 

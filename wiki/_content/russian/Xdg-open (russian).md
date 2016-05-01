@@ -22,7 +22,7 @@
 
 ## Конфигурация
 
-*xdg-open* использует файл конфигурации, упомянутый в [Default Applications](/index.php/Default_applications#Using_MIME_types_and_desktop_entries "Default applications"). Вы можете редактировать этот файл, используя комманду *xdg-mime*. Чтобы **узнать** mime-тип требуемого существующего файла, наберите `xdg-mime query **filetype** *file.ext*`. И наоборот, чтобы узнать какой [ярлык приложения](/index.php/Desktop_entries "Desktop entries") соответствует mime-типу, запустите `xdg-mime query **default** *mime/type*`. К общим типам относятся: `inode/directory` (файловый менеджер), `image/jpeg` (просмотрщик JPEG изображений), `application/pdf` (PDF просмотрщик).
+*xdg-open* использует файл конфигурации, упомянутый в [Default Applications](/index.php/Default_applications#MIME_types_and_desktop_entries "Default applications"). Вы можете редактировать этот файл, используя комманду *xdg-mime*. Чтобы **узнать** mime-тип требуемого существующего файла, наберите `xdg-mime query **filetype** *file.ext*`. И наоборот, чтобы узнать какой [ярлык приложения](/index.php/Desktop_entries "Desktop entries") соответствует mime-типу, запустите `xdg-mime query **default** *mime/type*`. К общим типам относятся: `inode/directory` (файловый менеджер), `image/jpeg` (просмотрщик JPEG изображений), `application/pdf` (PDF просмотрщик).
 
 Чтобы **изменить** ассоциированное приложение, выполните `xdg-mime **default** *application.desktop* *mime/type*`. Например для установки [Thunar](/index.php/Thunar_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Thunar (Русский)") в качестве файлового менеджера по умолчанию, запустите:
 

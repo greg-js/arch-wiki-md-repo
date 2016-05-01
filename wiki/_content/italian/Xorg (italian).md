@@ -44,7 +44,7 @@ Da [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 ## Installazione
 
-È necessario [installare](/index.php/Pacman "Pacman") il pacchetto essenziale [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), reperibile nei [Depositi ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+È necessario [installare](/index.php/Pacman "Pacman") il pacchetto essenziale [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), reperibile nei [Depositi ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Inoltre alcuni pacchetti del gruppo [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) sono utili per alcune attività di configurazione, essi sono segnalati nella sezione/pagina dedicata.
 
@@ -53,7 +53,7 @@ Inoltre alcuni pacchetti del gruppo [xorg-apps](https://www.archlinux.org/groups
 
 ```
 
-**Suggerimento:** L' ambiente di default X è piuttosto spoglia , e si cercherà in linea di installare un [window manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") or a [desktop environment](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") in supplemento ad X.
+**Suggerimento:** L' ambiente di default X è piuttosto spoglia , e si cercherà in linea di installare un [window manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") or a [desktop environment](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") in supplemento ad X.
 
 ### Installazione dei Driver
 
@@ -95,7 +95,7 @@ Xorg dovrebbe funzionare senza problemi senza i driver "closed source", che in g
 
 	*Si veda anche: [Avviare X al login](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)")*
 
-**Suggerimento:** Il modo più semplice per avviare X è quello di utilizzare un [display manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)"), come [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM") o [SLiM](/index.php/SLiM "SLiM").
+**Suggerimento:** Il modo più semplice per avviare X è quello di utilizzare un [display manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)"), come [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM") o [SLiM](/index.php/SLiM "SLiM").
 
 Se si desidera avviare X senza l'ausilio di un display manager, si installi il pacchetto [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). Opzionalmente anche i pacchetti [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) e [xterm](https://www.archlinux.org/packages/?name=xterm), che permettono di avere un ambiente di lavoro predefinito, come descritto in seguito.
 
@@ -221,9 +221,9 @@ EndSection
 Si veda l'articolo principale [Multihead](/index.php/Multihead "Multihead") per informazioni generali.
 
 *   [NVIDIA (Italiano)#Monitor multipli](/index.php/NVIDIA_(Italiano)#Monitor_multipli "NVIDIA (Italiano)").
-*   [Nouveau_(Italiano)#Dual_Head](/index.php/Nouveau_(Italiano)#Dual_Head "Nouveau (Italiano)")
-*   [AMD_Catalyst_(Italiano)#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29](/index.php/AMD_Catalyst_(Italiano)#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst (Italiano)")
-*   [ATI_(Italiano)#Configurare_la_modalit.C3.A0_Dual_Head](/index.php/ATI_(Italiano)#Configurare_la_modalit.C3.A0_Dual_Head "ATI (Italiano)")
+*   [Nouveau (Italiano)#Dual Head](/index.php/Nouveau_(Italiano)#Dual_Head "Nouveau (Italiano)")
+*   [AMD Catalyst (Italiano)#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst_(Italiano)#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst (Italiano)")
+*   [ATI (Italiano)#Configurare la modalità Dual Head](/index.php/ATI_(Italiano)#Configurare_la_modalit.C3.A0_Dual_Head "ATI (Italiano)")
 
 #### Con più di una scheda grafica
 
@@ -403,7 +403,7 @@ Si veda l'articolo principale: [SSH#X11 forwarding](/index.php/SSH#X11_forwardin
 
 Con l'aiuto di *xinput* è possibile disabilitare o abilitare le sorgenti di ingresso temporaneamente. Questo potrebbe essere utile, ad esempio, su sistemi che hanno più di un mouse, come ad esempio i ThinkPad, e si preferisce utilizzarne solo uno per evitare clic indesiderati del mouse. Vediamo come eseguire questa operazione .
 
-[Installare](/index.php/Pacman "Pacman") il pacchetto [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) contenuto nei [repositori ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+[Installare](/index.php/Pacman "Pacman") il pacchetto [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) contenuto nei [repositori ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Trovare l'ID del dispositivo che si intende disabilitare:
 
@@ -546,7 +546,7 @@ alla sezione Device che fa riferimento alla vostra scheda video nello `xorg.conf
 
 Se Xorg è impostato per avviarsi automaticamente e per qualche motivo è necessario evitare che si avvii prima che si presenti la schermata di login o che si entri nella propria sessione grafica (se ad esempio `rc.conf` è erroneamente configurato e Xorg non riconosce il mouse o la tastiera), è possibile disattivare il suo caricamento in due modi.
 
-*   Cambia destinazione predefinita per rescue.target. Vedere [Systemd_(Italiano)#Cambiare_il_target_predefinito_all'avvio](/index.php/Systemd_(Italiano)#Cambiare_il_target_predefinito_all.27avvio "Systemd (Italiano)").
+*   Cambia destinazione predefinita per rescue.target. Vedere [systemd (Italiano)#Cambiare il target predefinito all'avvio](/index.php/Systemd_(Italiano)#Cambiare_il_target_predefinito_all.27avvio "Systemd (Italiano)").
 *   If you have not only a faulty system that makes Xorg unusable, but you have also set the GRUB menu wait time to zero, or cannot otherwise use GRUB to prevent Xorg from booting, you can use the Arch Linux live CD. Boot up the live CD and log in as root. You need a mount point, such as `/mnt`, and you need to know the name of the partition you want to mount.
 
 Potete utilizzare il comando,

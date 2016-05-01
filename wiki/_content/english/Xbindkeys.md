@@ -82,9 +82,9 @@ pactl set-sink-mute @DEFAULT_SINK@ toggle
 Another possibility is to use amixer (part of the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package)
 
 ```
-amixer -c 1 set Master 5+
-amixer -c 1 set Master 5-
-amixer -c 1 set Master toggle
+amixer -c 0 sset Master 3+
+amixer -c 0 sset Master 3-
+amixer -c 0 sset Master toggle
 
 ```
 

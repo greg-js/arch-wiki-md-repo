@@ -116,7 +116,7 @@ exec xfce4-session
 
 ## Jak používat Xfce spolu se správci displeje
 
-Počínaje verzí Xfce 4.2.0 balíčky v Archu obsahují náležité soubory sezení. Jsou obsaženy v balíčku xfce-utils, který by měl být přítomný v základní instalaci. Jednoduše [zapněte správce displeje](/index.php/Display_Manager_(%C4%8Cesky) "Display Manager (Česky)").
+Počínaje verzí Xfce 4.2.0 balíčky v Archu obsahují náležité soubory sezení. Jsou obsaženy v balíčku xfce-utils, který by měl být přítomný v základní instalaci. Jednoduše [zapněte správce displeje](/index.php/Display_manager_(%C4%8Cesky) "Display manager (Česky)").
 
 ## Jak vypínat a restartovat z Xfce
 

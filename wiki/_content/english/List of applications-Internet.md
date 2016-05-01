@@ -561,7 +561,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 ##### Graphical
 
-*   **[Balsa](/index.php/Balsa "Balsa")** — Simple and light email client that is part of the Gnome project.
+*   **Balsa** — Simple and light email client that is part of the Gnome project.
 
 	[http://pawsa.fedorapeople.org/balsa/](http://pawsa.fedorapeople.org/balsa/) || [balsa](https://www.archlinux.org/packages/?name=balsa)
 

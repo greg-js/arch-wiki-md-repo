@@ -1,6 +1,6 @@
 **翻譯狀態：** 本文章是 [Users_and_Groups](/index.php/Users_and_Groups "Users and Groups") 的翻譯版本。最近一次的翻譯時間：2014-01-23。點擊[本連結](https://wiki.archlinux.org/index.php?title=Users_and_Groups&diff=0&oldid=290182)查看英文頁面之後的變更。
 
-GNU/Linux 利用使用者和群組的概念來[控制存取](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control") — 也就是控制系統的檔案、目錄、周邊設備的存取權。Linux 預設對存取權限的控制相當簡易。更多進階的存取控制請參閱 [ACL](/index.php/ACL "ACL") 和 [LDAP 驗證](/index.php/LDAP_Authentication "LDAP Authentication")。
+GNU/Linux 利用使用者和群組的概念來[控制存取](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control") — 也就是控制系統的檔案、目錄、周邊設備的存取權。Linux 預設對存取權限的控制相當簡易。更多進階的存取控制請參閱 [ACL](/index.php/ACL "ACL") 和 [LDAP 驗證](/index.php/LDAP_authentication "LDAP authentication")。
 
 ## Contents
 
@@ -331,7 +331,7 @@ $ cat /etc/group
 
 | 群組 | 影響檔案 | 目的 |
 | adbusers | `/dev/` 下的裝置節點 | 存取「[Android](/index.php/Android "Android") 除錯橋接器」(Android Debugging Bridge) 的權利。 |
-| cdemu | `/dev/vhba_ctl` | 使用 [cdemu](/index.php/Cdemu "Cdemu") 驅動模擬的權利。 |
+| cdemu | `/dev/vhba_ctl` | 使用 [CDemu](/index.php/CDemu "CDemu") 驅動模擬的權利。 |
 | thinkpad | `/dev/misc/nvram` | ThinkPad 使用者用來存取諸如 [tpb](/index.php/Tpb "Tpb") 等工具。 |
 | vboxusers | `/dev/vboxdrv` | 使用 VirtualBox 軟體的權利。 |
 | vmware | 使用 [VMware](/index.php/VMware "VMware") 軟體的權利。 |

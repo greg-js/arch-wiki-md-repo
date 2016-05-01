@@ -137,6 +137,8 @@ Once the changes have been made save the `.config` file. It is a good idea to ma
 *   Look for `CONFIG_MK8,CONFIG_MPSC,CONFIG_MCORE2,CONFIG_MATOM,CONFIG_GENERIC_CPU` that you have chosen in `Processor type and features > Processor Family`
 *   Change the call cc-options flag to `-march=native` to the one that you have selected in Processor Family, e.g. `cflags-$(CONFIG_MK8) += $(call cc-option,-march=native)`. This is probably the best way to compile with `-march=native` as it works.
 
+*   Note: For 32bit Kernels, you need to edit `arch/x86/Makefile_32.cpu` instead and set `-march=native` for your processor.
+
 ### Compile the kernel
 
 Compilation time will vary from as little as fifteen minutes to over an hour, depending on your kernel configuration and processor capability. See [Makeflags](/index.php/Makepkg#MAKEFLAGS "Makepkg") for details. Once the `.config` file has been set for the custom kernel, within the source directory run the following command to compile:

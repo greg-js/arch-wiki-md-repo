@@ -45,7 +45,7 @@ Este artículo detalla el proceso de instalación y configuración de ***Synapti
 
 ## Instalación
 
-El controlador Synaptics puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con el paquete [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)")
+El controlador Synaptics puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con el paquete [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 
 ## Configuración
 
@@ -328,7 +328,7 @@ Es posible activar el desplazamiento natural a través de Synaptics. Solo tenemo
 
 ### Software para intercambiar
 
-Puede que le resulte útil disponer de un software que le permita alternar la activación o desactivación del panel táctil, sobre todo si este es muy sensible y si escribe con mucha frecuencia. Véase también cómo [desactivar el panel táctil al detectar el ratón externo](#Desactivar_el_panel_t.C3.A1ctil_cuando_se_detecta_un_mouse_externo), dado que esta última puede ser una mejor solución, en cualquier caso es una cuestión de elección. La ventaja aquí es que se tiene el control, mientras que la otra solución utiliza un demonio para determinar cuándo apagar el panel táctil.
+Puede que le resulte útil disponer de un software que le permita alternar la activación o desactivación del panel táctil, sobre todo si este es muy sensible y si escribe con mucha frecuencia. Véase también cómo [desactivar el panel táctil al detectar el ratón externo](#Desactivar_el_panel_t.C3.A1ctil_cuando_se_detecta_un_rat.C3.B3n_externo), dado que esta última puede ser una mejor solución, en cualquier caso es una cuestión de elección. La ventaja aquí es que se tiene el control, mientras que la otra solución utiliza un demonio para determinar cuándo apagar el panel táctil.
 
 Si va a probar este método, debe instalar [xbindkeys](/index.php/Xbindkeys "Xbindkeys"), en el caso de no disponer aún de un software que gestione la combinación de teclas.
 
@@ -476,7 +476,7 @@ Si *syndaemon* se inicia automáticamente con la omisión del ratón, entonces s
 
 [GNOME](/index.php/GNOME "GNOME") y [MATE](/index.php/MATE "MATE"), de forma predeterminada, sobrescribe varias opciones para su panel táctil. Esto incluye características configurables para los que no hay ajustes gráficos en el panel de control del sistema de GNOME. Ello puede causar que lo que aparece en `/etc/X11/xorg.conf.d/50-synaptics.conf` no se aplique. Por favor, remítase a la sección de GNOME de este artículo para evitar este comportamiento.
 
-*   [Touchpad_Synaptics_(Español)#GNOME](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol)#GNOME "Touchpad Synaptics (Español)")
+*   [#GNOME](#GNOME)
 
 ### Paneles táctiles ALPS
 

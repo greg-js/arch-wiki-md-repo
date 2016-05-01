@@ -356,7 +356,7 @@ Sonic-snap [[2]](http://www.stolk.org/sonic-snap/) is a viewer/grabber for sn9c1
 
 ```
 
-如果从 skype 中获得的图片出现颜色不正常，请阅读[使用网络摄像头软件](/index.php/Webcam_Setup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.8E.B7.E5.8F.96.E8.BD.AF.E4.BB.B6.E4.BB.A5.E4.BD.BF.E7.94.A8.E4.BD.A0.E7.9A.84.E7.BD.91.E7.BB.9C.E6.91.84.E5.83.8F.E6.9C.BA "Webcam Setup (简体中文)").
+如果从 skype 中获得的图片出现颜色不正常，请阅读[使用网络摄像头软件](#.E8.8E.B7.E5.8F.96.E8.BD.AF.E4.BB.B6.E4.BB.A5.E4.BD.BF.E7.94.A8.E4.BD.A0.E7.9A.84.E7.BD.91.E7.BB.9C.E6.91.84.E5.83.8F.E6.9C.BA).
 
 如果运行 x86-64，需要[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") Multilib 仓库中的 [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils)，并用下面命令运行 skype：
 

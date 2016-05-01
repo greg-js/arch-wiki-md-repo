@@ -73,7 +73,7 @@ Le versioni più recenti di Thunderbird usano il browser predefinito impostato s
 
 Ciò può essere annullato attraverso Thunderbird con *Preferenze > Avanzate > Generale > Editor di Configurazione* e cercando: `network.protocol-handler.warn-external`.
 
-Se le seguenti linee sono tutte impostate su `false` (default), cambiarle con `true`, e quando verrà aperto un link Thunderbird chiederà quale applicazione utilizzare. Il risultato dipende dal [Desktop Environment (Italiano)](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") in uso, valori più comuni sono `/usr/bin/firefox`, `/usr/bin/google-chrome-stable`, per XFCE `/usr/bin/exo-open` o `/usr/bin/xdg-open` per gli ambienti senza DE.
+Se le seguenti linee sono tutte impostate su `false` (default), cambiarle con `true`, e quando verrà aperto un link Thunderbird chiederà quale applicazione utilizzare. Il risultato dipende dal [Desktop environment (Italiano)](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") in uso, valori più comuni sono `/usr/bin/firefox`, `/usr/bin/google-chrome-stable`, per XFCE `/usr/bin/exo-open` o `/usr/bin/xdg-open` per gli ambienti senza DE.
 
 ```
 network.protocol-handler.warn-external.ftp

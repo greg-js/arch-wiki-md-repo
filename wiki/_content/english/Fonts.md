@@ -24,19 +24,19 @@ Note that certain font licenses may impose some legal limitations.
     *   [4.3 Emoji](#Emoji)
     *   [4.4 International users](#International_users)
         *   [4.4.1 Arabic & Urdu](#Arabic_.26_Urdu)
-        *   [4.4.2 Persian](#Persian)
-        *   [4.4.3 Burmese](#Burmese)
-        *   [4.4.4 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
-            *   [4.4.4.1 Pan-CJK](#Pan-CJK)
-            *   [4.4.4.2 (Mainly) Chinese](#.28Mainly.29_Chinese)
-            *   [4.4.4.3 Japanese](#Japanese)
-            *   [4.4.4.4 Korean](#Korean)
-        *   [4.4.5 Cyrillic](#Cyrillic)
-        *   [4.4.6 Greek](#Greek)
-        *   [4.4.7 Hebrew](#Hebrew)
-        *   [4.4.8 Indic](#Indic)
-        *   [4.4.9 Khmer](#Khmer)
-        *   [4.4.10 Lao](#Lao)
+        *   [4.4.2 Burmese](#Burmese)
+        *   [4.4.3 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
+            *   [4.4.3.1 Pan-CJK](#Pan-CJK)
+            *   [4.4.3.2 (Mainly) Chinese](#.28Mainly.29_Chinese)
+            *   [4.4.3.3 Japanese](#Japanese)
+            *   [4.4.3.4 Korean](#Korean)
+        *   [4.4.4 Cyrillic](#Cyrillic)
+        *   [4.4.5 Greek](#Greek)
+        *   [4.4.6 Hebrew](#Hebrew)
+        *   [4.4.7 Indic](#Indic)
+        *   [4.4.8 Khmer](#Khmer)
+        *   [4.4.9 Lao](#Lao)
+        *   [4.4.10 Persian](#Persian)
         *   [4.4.11 Sinhala](#Sinhala)
         *   [4.4.12 Thai](#Thai)
         *   [4.4.13 Tibetan](#Tibetan)
@@ -371,14 +371,6 @@ To properly render fonts for multilingual websites like Wikipedia or this Arch L
 *   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - Collection of free Arabic fonts
 *   [ttf-urdufonts](https://aur.archlinux.org/packages/ttf-urdufonts/) - Urdu fonts (Jameel Noori Nastaleeq (+kasheeda), Nafees Web Naskh, PDMS Saleem Quran Font) and font configuration to set Jameel Noori Nastaleeq as default font for Urdu
 
-#### Persian
-
-*   [ttf-irfonts](https://aur.archlinux.org/packages/ttf-irfonts/) - Iran Supreme Council of Information and Communication Technology (SCICT) standard Persian fonts series.
-*   [ttf-borna](https://aur.archlinux.org/packages/ttf-borna/) - Borna Rayaneh Persian B font series.
-*   [ttf-sina](https://aur.archlinux.org/packages/ttf-sina/) - Sina Pardazesh Persian font series.
-*   [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) - Free fonts with support for Persian, Arabic, Urdu, Pashto, Dari, Uzbek, Kurdish, Uighur, old Turkish (Ottoman) and modern Turkish (Roman).
-*   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - A free Unicode calligraphic Persian font created by Iran Supreme Council of Information and Communication Technology (SCICT).
-
 #### Burmese
 
 *   [ttf-my-paduk](https://aur.archlinux.org/packages/ttf-my-paduk/) - Padauk font for Myanmar/Birmania
@@ -467,6 +459,15 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 *   [ttf-lao](https://aur.archlinux.org/packages/ttf-lao/) - Lao TTF font (Phetsarath_OT)
 *   [ttf-lao-fonts](https://aur.archlinux.org/packages/ttf-lao-fonts/) - Lao TTF fonts, both Unicode and non-Unicode for Windows
+
+#### Persian
+
+*   [ttf-irfonts](https://aur.archlinux.org/packages/ttf-irfonts/) - Iran Supreme Council of Information and Communication Technology (SCICT) standard Persian fonts series.
+*   [ttf-borna](https://aur.archlinux.org/packages/ttf-borna/) - Borna Rayaneh Persian B font series.
+*   [ttf-sina](https://aur.archlinux.org/packages/ttf-sina/) - Sina Pardazesh Persian font series.
+*   [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) - Free fonts with support for Persian, Arabic, Urdu, Pashto, Dari, Uzbek, Kurdish, Uighur, old Turkish (Ottoman) and modern Turkish (Roman).
+*   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - A free Unicode calligraphic Persian font created by Iran Supreme Council of Information and Communication Technology (SCICT).
+*   [ttf-vazir](https://aur.archlinux.org/packages/ttf-vazir/), [ttf-samim](https://aur.archlinux.org/packages/ttf-samim/), [ttf-tanha](https://aur.archlinux.org/packages/ttf-tanha/), [ttf-shabnam](https://aur.archlinux.org/packages/ttf-shabnam/), [ttf-gandom](https://aur.archlinux.org/packages/ttf-gandom/), [ttf-parastoo](https://aur.archlinux.org/packages/ttf-parastoo/) - Beautiful Persian fonts made by Ali Rasti Kerdar.
 
 #### Sinhala
 

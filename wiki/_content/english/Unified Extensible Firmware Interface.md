@@ -128,7 +128,7 @@ Linux kernel exposes EFI variables data to userspace via **efivarfs** (**EFI** *
 ### Requirements for UEFI variable support
 
 1.  EFI Runtime Services support should be present in the kernel (`CONFIG_EFI=y`, check if present with `zgrep CONFIG_EFI /proc/config.gz`).
-2.  Kernel processor [bitness](#Detecting_UEFI_Firmware_bitness) and EFI processor bitness should match
+2.  Kernel processor [bitness](#UEFI_Firmware_bitness) and EFI processor bitness should match
 3.  Kernel should be booted in EFI mode (via [EFISTUB](/index.php/EFISTUB "EFISTUB") or any [EFI boot loader](/index.php/Boot_loaders "Boot loaders"), not via BIOS/CSM or Apple's "bootcamp" which is also BIOS/CSM)
 4.  EFI Runtime Services in the kernel SHOULD NOT be disabled via kernel cmdline, i.e. `noefi` kernel parameter SHOULD NOT be used
 5.  `efivarfs` filesystem should be mounted at `/sys/firmware/efi/efivars`, otherwise follow [#Mount efivarfs](#Mount_efivarfs) section below.

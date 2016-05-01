@@ -525,7 +525,7 @@ knockd is a [port knocking](http://www.portknocking.org/) daemon that can provid
 
 ```
 
-It is wise to randomly select the ports that you use for the knock sequence. Random.org [[link](http://www.random.org/nform.html)] can help you generate a selection of ports between 1 and 65535\. Once you have selected your port range check that you haven't inadvertantly selected a commonly used port; this [port database](https://www.grc.com/PortDataHelp.htm) can help you check.
+It is wise to randomly select the ports that you use for the knock sequence. Random.org [link](http://www.random.org/nform.html) can help you generate a selection of ports between 1 and 65535\. Once you have selected your port range check that you haven't inadvertantly selected a commonly used port; this [port database](https://www.grc.com/PortDataHelp.htm) can help you check.
 
 # Также Смотрите
 

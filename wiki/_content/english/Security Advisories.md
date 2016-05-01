@@ -36,6 +36,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### April 2016
 
+*   [30 April 2016] [ASA-201604-15](https://lists.archlinux.org/pipermail/arch-security/2016-April/000607.html) [firefox](https://www.archlinux.org/packages/?name=firefox) multiple issues
 *   [23 April 2016] [ASA-201604-14](https://lists.archlinux.org/pipermail/arch-security/2016-April/000606.html) [squid](https://www.archlinux.org/packages/?name=squid) multiple issues
 *   [23 April 2016] [ASA-201604-13](https://lists.archlinux.org/pipermail/arch-security/2016-April/000605.html) [samba](https://www.archlinux.org/packages/?name=samba) multiple issues
 *   [23 April 2016] [ASA-201604-12](https://lists.archlinux.org/pipermail/arch-security/2016-April/000604.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) multiple issues

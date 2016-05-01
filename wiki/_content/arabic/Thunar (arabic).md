@@ -119,7 +119,7 @@
 
 تُمكنك هذه الإضافة [Thunar Shares Plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) من مشاركة المجلدات بسهولة باستخدام Samba ضمن ثونَر ومن دون أن تكون مستخدماً جذراً root، تتوفر هذه الإضافة في حزمة [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/) في مستودعات [AUR](/index.php/AUR "AUR").
 
-اطلع على [Samba#Creating user share path](/index.php/Samba#Creating_user_share_path "Samba") لمعلومات حول هذا الموضوع.
+اطلع على [Samba#Creating usershare path](/index.php/Samba#Creating_usershare_path "Samba") لمعلومات حول هذا الموضوع.
 
 ## إجراءات مخصصة
 

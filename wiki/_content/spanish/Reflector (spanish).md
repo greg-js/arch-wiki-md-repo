@@ -2,7 +2,7 @@
 
 ## Instalación
 
-[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [reflector](https://www.archlinux.org/packages/?name=reflector), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [reflector](https://www.archlinux.org/packages/?name=reflector), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Uso
 

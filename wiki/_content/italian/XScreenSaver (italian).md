@@ -23,13 +23,13 @@ XScreenSaver è uno screensaver e locker per il server X.
 
 ## Installazione
 
-Il pacchetto [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver) è presente nei [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), quindi è facilmente con [Pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
+Il pacchetto [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver) è presente nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), quindi è facilmente con [Pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
 
 In alternativa, esiste una versione patchata con il logo Archlinux su [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)") che si chiama [xscreensaver-arch-logo](https://aur.archlinux.org/packages/xscreensaver-arch-logo/). L'utilizzo di questo pacchetto al posto della versione del repository **extra** è vantaggioso per diversi motivi:
 
 1.  Dal momento che makepkg compila da codice sorgente, il pacchetto risultante conterrà ottimizzazioni specifiche uniche per il *proprio* sistema, supponendo che si configuri il [makepkg.conf](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)") con le apposite [CFLAGS](http://wiki.gentoo.org/wiki/Safe_CFLAGS) e CXXFLAGS.
 2.  Questo pacchetto è marchiato Arch (screensaver, schermata di blocco, ecc.)
-3.  Se si utilizza [Gnome](/index.php/GNOME_(Italiano) "GNOME (Italiano)"), questo pacchetto fornirà un'icona per accedere alle preferenze di xscreensaver da Sistema>Preferenze>Screensaver, a differenza del pacchetto del [repository ufficiale](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+3.  Se si utilizza [Gnome](/index.php/GNOME_(Italiano) "GNOME (Italiano)"), questo pacchetto fornirà un'icona per accedere alle preferenze di xscreensaver da Sistema>Preferenze>Screensaver, a differenza del pacchetto del [repository ufficiale](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ## Configurazione di Xscreensaver
 
@@ -82,7 +82,7 @@ exec startxfce4
 
 ### Sistemi con più utenti
 
-Se si opera su un sistema multi-utente con un [display manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") (es. [SLiM](/index.php/SLiM_(Italiano) "SLiM (Italiano)"), [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)")) è meglio avviare xscreensaver tramite l'interfaccia di gestione screensaver nativa. Questo permette la gestione completa al cambio utenti. Per esempio, se si utilizza [Gnome](/index.php/GNOME_(Italiano) "GNOME (Italiano)"), e si installa [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver) e [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), solo `gnome-screensaver` risulta attivo. Questo permette di poter selezionare tutti gli screensaver, e mantenere la funzionalità di "switch-user, in caso un utente abbia lo schermo bloccato, e un altro utente vuole "cambiare utente" accedendo alla casella.
+Se si opera su un sistema multi-utente con un [display manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") (es. [SLiM](/index.php/SLiM_(Italiano) "SLiM (Italiano)"), [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)")) è meglio avviare xscreensaver tramite l'interfaccia di gestione screensaver nativa. Questo permette la gestione completa al cambio utenti. Per esempio, se si utilizza [Gnome](/index.php/GNOME_(Italiano) "GNOME (Italiano)"), e si installa [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver) e [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), solo `gnome-screensaver` risulta attivo. Questo permette di poter selezionare tutti gli screensaver, e mantenere la funzionalità di "switch-user, in caso un utente abbia lo schermo bloccato, e un altro utente vuole "cambiare utente" accedendo alla casella.
 
 **Note:** Alcune funzionalità native di xscreensaver andranno perdute, come il cattura schermo, l'utilizzo di foto in un percorso predefinito, e/o la visualizzazione di testi personalizzati durante l'esecuzione dello screensaver specifico del DM in uso con un sottoinsieme di funzionalità di xscreensaver (per esempio, schermo 3D Flip, photopile, ecc.)
 

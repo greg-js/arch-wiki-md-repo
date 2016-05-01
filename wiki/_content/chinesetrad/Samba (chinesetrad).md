@@ -142,7 +142,7 @@ If running a [firewall](/index.php/Firewall "Firewall"), don't forget to open re
 
 Only [smbclient](https://www.archlinux.org/packages/?name=smbclient) is required to access files from a Samba/SMB/CIFS server. It is available from the official repositories.
 
-Shared resources from other computers on the LAN may be accessed and mounted locally by GUI or CLI methods. Depending on the [desktop environment](/index.php/Desktop_environment "Desktop environment"), GUI methods may not be available. See also [#File_manager_configuration](#File_manager_configuration) for use with a file manager.
+Shared resources from other computers on the LAN may be accessed and mounted locally by GUI or CLI methods. Depending on the [desktop environment](/index.php/Desktop_environment "Desktop environment"), GUI methods may not be available. See also [#File manager configuration](#File_manager_configuration) for use with a file manager.
 
 There are two parts in sharing access. The first is the underlying file system mechanism, which some environments have built in. The second is the interface which allows the user to mount shared resources.
 

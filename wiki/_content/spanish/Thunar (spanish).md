@@ -43,7 +43,7 @@ Thunar utiliza [GVFS](/index.php/GVFS "GVFS") para el montaje automático, consu
 
 	[http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
 
-*   **Thunar Shares Plugin** — Programas que permite compartir rápidamente una carpeta con Samba desde Thunar sin necesidad de acceso como root. Véase también [how to configure directions](/index.php/Samba#Creating_user_share_path "Samba").
+*   **Thunar Shares Plugin** — Programas que permite compartir rápidamente una carpeta con Samba desde Thunar sin necesidad de acceso como root. Véase también [how to configure directions](/index.php/Samba#Creating_usershare_path "Samba").
 
 	[http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)
 

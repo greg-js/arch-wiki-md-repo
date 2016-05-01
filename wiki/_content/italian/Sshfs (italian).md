@@ -50,7 +50,7 @@ Dove 9876 è il numero della porta.
 
 Inoltre, assicurarsi prima di connettersi, di aver impostato i giusti permessi sui file, per le cartelle locali dove si vuole effettuare il mount di una cartella remota. Esempio: non lasciare che l'unico proprietario sia root! Sarà possibile utilizzare il comando di mount anche come utente normale, dovrebbe funzionare correttamente.
 
-[SSH](/index.php/SSH_(Italiano) "SSH (Italiano)") richiederà la password, se necessaria. Se non si vuole inserire ogni volta la password, consultare; [Come usare l'autenticazione con una chiave RSA via SSH (in inglese)](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html), oppure [usare le chiavi SSH](/index.php/SSH_Keys_(Italiano) "SSH Keys (Italiano)").
+[SSH](/index.php/SSH_(Italiano) "SSH (Italiano)") richiederà la password, se necessaria. Se non si vuole inserire ogni volta la password, consultare; [Come usare l'autenticazione con una chiave RSA via SSH (in inglese)](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html), oppure [usare le chiavi SSH](/index.php/SSH_keys_(Italiano) "SSH keys (Italiano)").
 
 ### Effettuare l'umount
 
@@ -133,7 +133,7 @@ sshfs#llib@192.168.1.200:/home/llib/FAH /media/FAH2 fuse defaults 0 0
 
 ```
 
-Comunque questo non funzionerà automaticamente se non si utilizza una chiave ssh per l'utente. [SSH Keys](/index.php/SSH_Keys_(Italiano) "SSH Keys (Italiano)").
+Comunque questo non funzionerà automaticamente se non si utilizza una chiave ssh per l'utente. [SSH Keys](/index.php/SSH_keys_(Italiano) "SSH keys (Italiano)").
 
 Se si vuole usare sshfs per diversi utenti:
 

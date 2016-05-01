@@ -168,7 +168,7 @@ You will find the snapshot in the same directory as the sync target and it will 
 Example using /foo/bar
 
 ```
-mv /foo/bar /for/bar-bad
+mv /foo/bar /foo/bar-bad
 cp -a /foo/.bar-backup_asd-crashrecovery-20141221_070112 /foo/bar
 
 ```

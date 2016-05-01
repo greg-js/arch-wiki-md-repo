@@ -653,7 +653,7 @@ Now switch back to the tty that X is running on. If you chose the right module, 
 
 [GNOME](/index.php/GNOME "GNOME") and [MATE](/index.php/MATE "MATE"), by default, will overwrite various options for your touch-pad. This includes configurable features for which there is no graphical configuration within GNOME's system control panel. This may cause it to appear that `/etc/X11/xorg.conf.d/50-synaptics.conf` is not applied. Please refer to the GNOME section in this article to prevent this behavior.
 
-*   [#GNOME/Xfce4/Cinnamon](#GNOME.2FXfce4.2FCinnamon)
+*   [#Xfce4/Cinnamon](#Xfce4.2FCinnamon)
 
 ### The touchpad is not working, Xorg.0.log shows "Query no Synaptics: 6003C8"
 

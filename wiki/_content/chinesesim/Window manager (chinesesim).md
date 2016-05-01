@@ -1,4 +1,4 @@
-窗口管理器（window manager，简称WM）是图形用户界面的一部分。用户可以选择安装[桌面环境](/index.php/Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop Environment (简体中文)")，他们通常已经提供了完整的用户界面，包括图标、窗口、工具栏、壁纸和桌面部件。
+窗口管理器（window manager，简称WM）是图形用户界面的一部分。用户可以选择安装[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")，他们通常已经提供了完整的用户界面，包括图标、窗口、工具栏、壁纸和桌面部件。
 
 ## Contents
 
@@ -23,7 +23,7 @@
 
 窗口管理器是提供窗口边框的X客户端，它控制图形程序的外观和行为方式：边框、标题栏、大小、以及调整大小等操作。很多窗口管理器还有其他功能，比如[Window Maker](/index.php/Window_Maker "Window Maker")提供了[应用程序面板](http://www.dockapps.org)，[Fluxbox](/index.php/Fluxbox "Fluxbox")提供窗口标签功能，此外还有启动程序的菜单、窗口管理器配置菜单等。
 
-窗口管理器一般不提供额外的组件，比如图标之类的，它们一般由[桌面环境](/index.php/Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop Environment (简体中文)")提供。因此，窗口管理器通常不怎么耗费系
+窗口管理器一般不提供额外的组件，比如图标之类的，它们一般由[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")提供。因此，窗口管理器通常不怎么耗费系
 
 ### 类型
 
@@ -119,7 +119,7 @@
 
 	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://www.archlinux.org/packages/?name=pawm)
 
-*   **[pekwm](/index.php/Pekwm "Pekwm")** — pekwm is a window manager that once upon a time was based on the aewm++ window manager, but it has evolved enough that it no longer resembles aewm++ at all. It has a much expanded feature-set, including window grouping (similar to Ion, PWM, or Fluxbox), auto-properties, Xinerama, keygrabber that supports keychains, and much more.
+*   **[PekWM](/index.php/PekWM "PekWM")** — pekwm is a window manager that once upon a time was based on the aewm++ window manager, but it has evolved enough that it no longer resembles aewm++ at all. It has a much expanded feature-set, including window grouping (similar to Ion, PWM, or Fluxbox), auto-properties, Xinerama, keygrabber that supports keychains, and much more.
 
 	[http://www.pekwm.org/projects/pekwm](http://www.pekwm.org/projects/pekwm) || [pekwm](https://www.archlinux.org/packages/?name=pekwm)
 

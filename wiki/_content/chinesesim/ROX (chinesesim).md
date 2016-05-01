@@ -67,7 +67,7 @@ Actually installing and using things is a little different, just read their stuf
 
 ### 桌面环境
 
-你需要在运行你的窗口管理器前运行ROX. 这是我的方式, 使用[openbox_(简体中文)](/index.php/Openbox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Openbox (简体中文)")作为窗口管理器
+你需要在运行你的窗口管理器前运行ROX. 这是我的方式, 使用[Openbox (简体中文)](/index.php/Openbox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Openbox (简体中文)")作为窗口管理器
 
  `rox -b Default -p default ; exec openbox` 
 

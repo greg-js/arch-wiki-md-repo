@@ -21,7 +21,7 @@
 
 ## Configuración desde systemd 206
 
-**Nota:** Las sesiones de usuario están en desarrollo, por lo que faltan algunas características, que aún no están apoyadas por los desarrolladores. Véase [[[1]](http://lists.freedesktop.org/archives/systemd-devel/2013-July/012392.html)] y [[[2]](http://lists.freedesktop.org/archives/systemd-devel/2013-August/012517.html)] para obtener más detalles sobre el estado actual del asunto.
+**Nota:** Las sesiones de usuario están en desarrollo, por lo que faltan algunas características, que aún no están apoyadas por los desarrolladores. Véase [[1]](http://lists.freedesktop.org/archives/systemd-devel/2013-July/012392.html) y [[2]](http://lists.freedesktop.org/archives/systemd-devel/2013-August/012517.html) para obtener más detalles sobre el estado actual del asunto.
 
 Desde la versión 206, el mecanismo para instancias de usuario de systemd ha cambiado. Ahora el módulo `pam_systemd.so` lanza una instancia de usuario, por defecto, en el primer inicio de sesión de un usuario, iniciando `user@.service`. En el estado actual, existen algunas diferencias con respecto a versiones anteriores de systemd, que hay que tener en cuenta:
 

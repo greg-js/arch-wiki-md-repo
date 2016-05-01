@@ -700,14 +700,14 @@ using an ascii key:
 
 *   *WPA/WPA2*
 
-You need to edit the `/etc/wpa_supplicant.conf` file as described in [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant"). Then, issue this command:
+You need to edit the `/etc/wpa_supplicant.conf` file as described in [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"). Then, issue this command:
 
 ```
  # wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant.conf
 
 ```
 
-This is assuming your device uses the `wext` driver. If this does not work, you may need to adjust these options. Check [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant") for more information and troubleshooting.
+This is assuming your device uses the `wext` driver. If this does not work, you may need to adjust these options. Check [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for more information and troubleshooting.
 
 Regardless of the method used, you can check if you have associated successfully as follows:
 

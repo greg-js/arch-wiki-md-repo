@@ -147,7 +147,7 @@ The only special consideration is the MacBook firmware boot sound. To ensure tha
 
 *   The swap partition is optional, on machines with a RAM of size 4GB or more, good performance can be expected without a swap partition. Also, a **swap file** can be created later, see [Swap file](/index.php/Swap_file "Swap file"). You'll need a swap partition/file if you expect to [Hibernate](/index.php/Hibernate "Hibernate") your machine in future.
 *   For more information on partitioning, see [Partitioning hard disks: General information](/index.php/Beginners%27_guide#Partitioning_hard_disks:_General_information "Beginners' guide").
-*   As of Aug 2014 [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) has a bug that does not allow to run `refind-install` if EFI partition is mounted to `/boot`. Other bootloaders (like [gummiboot](https://www.archlinux.org/packages/?name=gummiboot)) have no such problem and thus there is no need to split `/boot/efi` from `/boot`.
+*   As of Aug 2014 [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) has a bug that does not allow to run `refind-install` if EFI partition is mounted to `/boot`. Other bootloaders (like [systemd-boot](/index.php/Systemd-boot "Systemd-boot")) have no such problem and thus there is no need to split `/boot/efi` from `/boot`.
 
 Simple example (no LVM, crypto):
 
@@ -304,7 +304,7 @@ cd /efi/refit
 
 ## Setup bootloader
 
-If you are going for an Arch Linux-only setup, installing the bootloader is no different than on any other machine: Install [gummiboot](/index.php/Gummiboot "Gummiboot"), [rEFInd](/index.php/REFInd "REFInd") or other bootloader of your choice.
+If you are going for an Arch Linux-only setup, installing the bootloader is no different than on any other machine: Install [systemd-boot](/index.php/Systemd-boot "Systemd-boot"), [rEFInd](/index.php/REFInd "REFInd") or other bootloader of your choice.
 
 If, on the other hand, you are dual/triple booting, then read on.
 

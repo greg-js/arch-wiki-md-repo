@@ -32,7 +32,7 @@
 
 从[2012-10-13版安装介质](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/)开始，安装程序已经默认安装[systemd](https://www.archlinux.org/packages/?name=systemd) 和 [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat)。本部分帮助还在使用[sysvinit](https://aur.archlinux.org/packages/sysvinit/) 和 initscripts 的用户迁移到 **systemd**.
 
-**注意:** 如果是在 VPS 中使用 Arch，请先阅读：[Virtual_Private_Server#Moving_your_VPS_from_initscripts_to_systemd](/index.php/Virtual_Private_Server#Moving_your_VPS_from_initscripts_to_systemd "Virtual Private Server")。
+**注意:** 如果是在 VPS 中使用 Arch，请先阅读：[Virtual Private Server#Moving_your_VPS_from_initscripts_to_systemd](/index.php/Virtual_Private_Server#Moving_your_VPS_from_initscripts_to_systemd "Virtual Private Server")。
 
 *   阅读[该站](http://freedesktop.org/wiki/Software/systemd/)，了解 systemd。
 *   systemd 自己有一套日志（**journal**）系统，用于代替 **syslog**。两者也可以共存，参见后面的[日志部分](#.E6.97.A5.E5.BF.97)。
@@ -42,7 +42,7 @@
 ### 安装
 
 1.  从[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")安装 [systemd](https://www.archlinux.org/packages/?name=systemd) 并添加[内核参数](/index.php/Kernel_parameters "Kernel parameters")`init=/usr/lib/systemd/systemd`
-2.  使用 `systemctl enable <服务名>` 启用需要的服务（大致相当于以前 `DAEMONS` 数组的作用，新的服务名称参见 [Daemons_List_(简体中文)](/index.php/Daemons_List_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Daemons List (简体中文)")）。
+2.  使用 `systemctl enable <服务名>` 启用需要的服务（大致相当于以前 `DAEMONS` 数组的作用，新的服务名称参见 [Daemons List (简体中文)](/index.php/Daemons_List_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Daemons List (简体中文)")）。
 3.  重启系统，执行命令 `cat /proc/1/comm`，如果返回`systemd`，表示 systemd 已经正常启动。
 4.  确认主机名已经正确设置：`hostnamectl set-hostname myhostname`。
 5.  删除 initscripts 和 sysvinit，并安装[systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat).
@@ -51,8 +51,8 @@
 ### 附加信息
 
 *   如果内核参数中有 `quiet`，建议在一开始先去掉，以便调试。
-*   使用 systemd 的时候**无需**将用户加入特殊[用户组](/index.php/Users_and_Groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and Groups (简体中文)")（如`sys`、`disk`、`lp`、`network`、`video`、`audio`、`optical`、`storage`、`scanner`、`power`等等）。加入这些组反而会有问题，例如audio组会导致程序阻塞软件混声。每个 PAM 登录都拥有一个 logind 会话，它通过[POSIX ACLs](https://en.wikipedia.org/wiki/Access_control_list "wikipedia:Access control list")，赋予本地会话以声音设备访问权限、通过[udisks](/index.php/Udisks "Udisks")挂载和卸载移动设备的权限等。
-*   阅读 [Network Configuration (简体中文)](/index.php/Network_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Configuration (简体中文)")，了解如何配置网络。
+*   使用 systemd 的时候**无需**将用户加入特殊[用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and groups (简体中文)")（如`sys`、`disk`、`lp`、`network`、`video`、`audio`、`optical`、`storage`、`scanner`、`power`等等）。加入这些组反而会有问题，例如audio组会导致程序阻塞软件混声。每个 PAM 登录都拥有一个 logind 会话，它通过[POSIX ACLs](https://en.wikipedia.org/wiki/Access_control_list "wikipedia:Access control list")，赋予本地会话以声音设备访问权限、通过[udisks](/index.php/Udisks "Udisks")挂载和卸载移动设备的权限等。
+*   阅读 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")，了解如何配置网络。
 
 ## init、inittab 概览
 
@@ -212,7 +212,7 @@ Keyboard Request -- edit /etc/inittab to customize
 
 ## 外部链接
 
-*   [维基百科：init](http://zh.wikipedia.org/wiki/Init)
+*   [维基百科：init](https://zh.wikipedia.org/wiki/Init)
 *   [Linux Knowledge Base and Tutorial：运行级别](http://www.linux-tutorial.info/modules.php?name=MContent&pageid=65)
 *   [Linux.com：runlevels 和 inittab 的介绍](http://www.linux.com/articles/114107)
 *   [Linux.com：服务、运行级别、rc.d脚本的介绍](http://www.linux.com/news/enterprise/systems-management/8116-an-introduction-to-services-runlevels-and-rcd-scripts)

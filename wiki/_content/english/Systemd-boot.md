@@ -208,7 +208,7 @@ The following keys are used inside the menu:
 *   `d` - select the default entry to boot (stored in a non-volatile EFI variable)
 *   `-/T` - decrease the timeout (stored in a non-volatile EFI variable)
 *   `+/t` - increase the timeout (stored in a non-volatile EFI variable)
-*   `e` - edit the kernel command line. has no effect if the `editor` config option is set to `0`.
+*   `e` - edit the kernel command line. It has no effect if the `editor` config option is set to `0`.
 *   `v` - show the gummiboot and UEFI version
 *   `Q` - quit
 *   `P` - print the current configuration

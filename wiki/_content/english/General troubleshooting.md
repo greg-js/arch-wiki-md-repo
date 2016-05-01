@@ -67,7 +67,31 @@ Instead, look at it in its entirety:
 
 With all the information in front of you you should have a good idea as to what is going on with the system and you can now start working on a proper fix.
 
-If you require any additional support, it can be found on [the forums](https://bbs.archlinux.org) or IRC at irc.freenode.net #archlinux
+If you require any additional support, it can be found on [the forums](https://bbs.archlinux.org) or IRC at irc.freenode.net #archlinux See [IRC channels](/index.php/IRC_channels "IRC channels") for other options.
+
+When asking for support post the **complete** output/logs, not just what you think are the significant sections. Sources of information include:
+
+*   Full output of any command involved - don't just select what you think is relevant.
+*   Output from systemd's `journalctl`. For more extensive output, use the `systemd.log_level=debug` boot parameter.
+*   Log files (have a look in `/var/log`)
+*   Relevant configuration files
+*   Drivers involved
+*   Versions of packages involved
+*   Kernel: `dmesg`. For a boot problem, at least the last 10 lines displayed, preferably more
+*   Networking: Exact output of commands involved, and any configuration files
+*   Xorg: `/var/log/Xorg.0.log`, and prior logs if you have overwritten the problematic one
+*   Pacman: If a recent upgrade broke something, look in `/var/log/pacman.log`
+
+One of the better ways to post this information is to use an online pastebin. You can [install](/index.php/Install "Install") the [pbpst](https://www.archlinux.org/packages/?name=pbpst) or [gist](https://www.archlinux.org/packages/?name=gist) package to automatically upload information. For example, to upload the content of your systemd journal from this boot you would do:
+
+```
+# journalctl -xb | pbpst -S
+
+```
+
+A link will then be output that you can paste to the forum or IRC.
+
+Additionally, before posting your question, you may wish to review [how to ask smart questions](http://www.catb.org/esr/faqs/smart-questions.html). See also [Forum etiquette](/index.php/Forum_etiquette "Forum etiquette").
 
 ## Boot problems
 

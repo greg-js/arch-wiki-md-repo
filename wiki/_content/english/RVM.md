@@ -97,7 +97,7 @@ However, closing out your current shell or terminal and opening a new one is the
 System-wide installation is a similar procedure to the single user install. However, instead run the install script with sudo. **Do not run the installer directly as root!**
 
 ```
-$ curl -L get.rvm.io | sudo bash -s stable
+$ sudo bash -s stable
 
 ```
 

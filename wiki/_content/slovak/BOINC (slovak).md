@@ -63,7 +63,7 @@ Spustenie damona BOINC
 Sontrolovanie či beží:
 
 ```
-$ ps aux | grep boinc
+$ pgrep boinc
 
 ```
 

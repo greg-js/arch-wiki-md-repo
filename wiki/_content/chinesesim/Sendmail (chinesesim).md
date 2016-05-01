@@ -58,7 +58,7 @@ Sendmail 是来自 UNIX 世界的经典 SMTP 服务器。编写于很久很久�
 
 ### sendmail.cf
 
-*   创建文件 `/etc/mail/sendmail.mc`，并以此为基础使用 [m4](http://zh.wikipedia.org/wiki/M4_(程式語言)) 工具生成 `sendmail.cf` 文件。
+*   创建文件 `/etc/mail/sendmail.mc`，并以此为基础使用 [m4](https://zh.wikipedia.org/wiki/M4_(程式語言)) 工具生成 `sendmail.cf` 文件。
 
 您可以由 `/usr/share/sendmail-cf/README` 文件了解配置 sendmail 的全部选项。
 

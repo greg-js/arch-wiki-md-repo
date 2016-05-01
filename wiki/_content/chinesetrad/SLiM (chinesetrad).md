@@ -1,4 +1,4 @@
-**警告:** 目前 SLiM 尚未和 [Systemd](/index.php/Systemd "Systemd") 完全相容，第二次登入會引發各種問題。詳情參閱[顯示管理員#與 systemd 不相容](/index.php/Display_Manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E8.88.87_systemd_.E4.B8.8D.E7.9B.B8.E5.AE.B9 "Display Manager (正體中文)")。
+**警告:** 目前 SLiM 尚未和 [Systemd](/index.php/Systemd "Systemd") 完全相容，第二次登入會引發各種問題。詳情參閱[顯示管理員#與 systemd 不相容](/index.php/Display_manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E8.88.87_systemd_.E4.B8.8D.E7.9B.B8.E5.AE.B9 "Display manager (正體中文)")。
 
 [SLiM](http://slim.berlios.de/) is an acronym for Simple Login Manager. SLiM is simple, lightweight and easily configurable. SLiM is used by some because it does not require the dependencies of [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") and can help make a lighter system for users that like to use lightweight desktops like [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), and [Fluxbox](/index.php/Fluxbox "Fluxbox").
 

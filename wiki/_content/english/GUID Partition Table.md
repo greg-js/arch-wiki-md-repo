@@ -39,7 +39,7 @@ GUID Partition Table (GPT) uses GUIDs (or UUIDs in linux world) to define partit
 1.  Uses GUIDs (UUIDs) to identify partition types - No collisions.
 2.  Provides a unique disk GUID and unique partition GUID for each partition - A good filesystem-independent way of referencing partitions and disks.
 3.  Arbitrary number of partitions - depends on space allocated for the partition table - No need for extended and logical partitions. By default the GPT table contains space for defining 128 partitions. However if the user wants to define more partitions, he/she can allocate more space to the partition table (currently only gdisk is known to support this feature).
-4.  Uses 64-bit LBA for storing Sector numbers - maximum addressable disk size is 2 [ZiB](https://en.wikipedia.org/wiki/ZiB "wikipedia:ZiB").
+4.  Uses 64-bit LBA for storing Sector numbers - maximum addressable disk size is 2 [ZiB](https://en.wikipedia.org/wiki/ZiB "wikipedia:ZiB"). MBR is limited to addressing 2 TB of space per drive.
 5.  Stores a backup header and partition table at the end of the disk that aids in recovery in case the primary ones are damaged.
 6.  CRC32 checksums to detect errors and corruption of the header and partition table.
 

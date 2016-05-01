@@ -2,7 +2,7 @@ Ten dokument to zbiór popularnych artykułów i przydatnych informacji o dodawa
 
 ## Contents
 
-*   [1 Administarcja systemem](#Administarcja_systemem)
+*   [1 Administracja systemem](#Administracja_systemem)
     *   [1.1 Użytkownicy i grupy](#U.C5.BCytkownicy_i_grupy)
     *   [1.2 Eskalacja uprawnień](#Eskalacja_uprawnie.C5.84)
     *   [1.3 Zarządzanie usługami](#Zarz.C4.85dzanie_us.C5.82ugami)
@@ -66,9 +66,9 @@ Ten dokument to zbiór popularnych artykułów i przydatnych informacji o dodawa
     *   [12.9 Scrollback buffer](#Scrollback_buffer)
     *   [12.10 Session management](#Session_management)
 
-## Administarcja systemem
+## Administracja systemem
 
-Ta sekcja mówi o zadaniach administracyjnycj i zarządzaniem systemem. Jeśli chcesz wiedzieć więcej, odwiedź [Core utilities (Polski](/index.php?title=Core_utilities_(Polski&action=edit&redlink=1 "Core utilities (Polski (page does not exist)") i [Category:System administration (Polski)](/index.php/Category:System_administration_(Polski) "Category:System administration (Polski)")
+Ta sekcja mówi o zadaniach administracyjnycj i zarządzaniem systemem. Jeśli chcesz wiedzieć więcej, odwiedź [Core utilities (Polski)](/index.php?title=Core_utilities_(Polski)&action=edit&redlink=1 "Core utilities (Polski) (page does not exist)") i [Category:System administration (Polski)](/index.php/Category:System_administration_(Polski) "Category:System administration (Polski)")
 
 ### Użytkownicy i grupy
 

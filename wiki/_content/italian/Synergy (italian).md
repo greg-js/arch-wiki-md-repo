@@ -30,7 +30,7 @@ Per reindirizzare mouse e tastiera è sufficiente muovere il mouse oltre il bord
 
 ### Arch Linux
 
-È possibile [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [synergy](https://www.archlinux.org/packages/?name=synergy) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+È possibile [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [synergy](https://www.archlinux.org/packages/?name=synergy) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 ### Windows e Mac OS X
 
@@ -91,7 +91,7 @@ Leggere [Formato del File di Configurazione di Synergy](http://synergy2.sourcefo
 
 Il file di configurazione per Arch Linux si trova in `/etc/synergy.conf`. Se tale file non esiste, crearlo basandosi su `/etc/synergy.conf.example`, i cui commenti dovrebbero fornire sufficienti informazioni per una configurazione di base; se si ha bisogno di approfondimenti, leggere la guida citata sopra.
 
-**Suggerimento:** È anche possibile usare [qsynergy](https://aur.archlinux.org/packages/qsynergy/) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") oppure [quicksynergy](https://aur.archlinux.org/packages/quicksynergy/) dall'[AUR](/index.php/AUR_(Italiano) "AUR (Italiano)"), che forniscono una GUI per semplificare la procedura di configurazione.
+**Suggerimento:** È anche possibile usare [qsynergy](https://aur.archlinux.org/packages/qsynergy/) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") oppure [quicksynergy](https://aur.archlinux.org/packages/quicksynergy/) dall'[AUR](/index.php/AUR_(Italiano) "AUR (Italiano)"), che forniscono una GUI per semplificare la procedura di configurazione.
 
 Per avviare il demone server, eseguire:
 
@@ -390,7 +390,7 @@ Poi premere `Invio`.
 
 ## Problemi conosciuti
 
-Se Arch viene usato come client in un'installazione di Synergy, il server potrebbe non essere in grado di riattivare il monitor del client. Ci sono alcune soluzioni per questo, come eseguire il comando seguente via [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)"), se ACPI è abilitato (leggere: [modificare la configurazione di DPMS e ScreenSaver con xset](/index.php/Display_Power_Management_Signaling#Modifing_DPMS_and_screensaver_settings_using_xset "Display Power Management Signaling")):
+Se Arch viene usato come client in un'installazione di Synergy, il server potrebbe non essere in grado di riattivare il monitor del client. Ci sono alcune soluzioni per questo, come eseguire il comando seguente via [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)"), se ACPI è abilitato (leggere: [modificare la configurazione di DPMS e ScreenSaver con xset](/index.php/Display_Power_Management_Signaling#Modifying_DPMS_and_screensaver_settings_using_xset "Display Power Management Signaling")):
 
  `# xset dpms force on` 
 

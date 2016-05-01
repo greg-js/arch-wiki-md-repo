@@ -342,7 +342,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 *   **WPA/WPA2**
 
-Πρέπει να επεξεργαστείτε το αρχείο `/etc/wpa_supplicant.conf` όπως περιγράφεται στο [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant") σύμφωνα με το τι έχετε βρει από το [#Access point discovery](#Access_point_discovery). Κατόπιν δώστε την παρακάτω εντολή:
+Πρέπει να επεξεργαστείτε το αρχείο `/etc/wpa_supplicant.conf` όπως περιγράφεται στο [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") σύμφωνα με το τι έχετε βρει από το [#Access point discovery](#Access_point_discovery). Κατόπιν δώστε την παρακάτω εντολή:
 
 ```
 # wpa_supplicant -i wlan0 -c /etc/wpa_supplicant.conf
@@ -351,7 +351,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 [Opanos](/index.php/User:Opanos "User:Opanos") ([talk](/index.php?title=User_talk:Opanos&action=edit&redlink=1 "User talk:Opanos (page does not exist)")) 09:58, 20 December 2013 (UTC)
 
-This is assuming your device uses the `wext` driver. If this does not work, you may need to adjust these options. If connected successfully, continue in a new terminal (or quit `wpa_supplicant` with `Ctrl+c` and add the `-B` switch to the above command to run it in the background). [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant") contains more information and troubleshooting.
+This is assuming your device uses the `wext` driver. If this does not work, you may need to adjust these options. If connected successfully, continue in a new terminal (or quit `wpa_supplicant` with `Ctrl+c` and add the `-B` switch to the above command to run it in the background). [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") contains more information and troubleshooting.
 
 Regardless of the method used, you can check if you have associated successfully:
 
@@ -768,7 +768,7 @@ External resources:
 *   [http://wireless.kernel.org/en/users/Drivers/ath5k](http://wireless.kernel.org/en/users/Drivers/ath5k)
 *   [http://wiki.debian.org/ath5k](http://wiki.debian.org/ath5k)
 
-If you find web pages randomly loading very slow, or if the device is unable to lease an IP address, try to switch from hardware to software encryption by loading the `ath5k` module with `nohwcrypt=1` option. See [Kernel Modules#Options](/index.php/Kernel_Modules#Options "Kernel Modules") for details.
+If you find web pages randomly loading very slow, or if the device is unable to lease an IP address, try to switch from hardware to software encryption by loading the `ath5k` module with `nohwcrypt=1` option. See [Kernel modules#Options](/index.php/Kernel_modules#Options "Kernel modules") for details.
 
 Some laptops may have problems with their wireless LED indicator flickering red and blue. To solve this problem, do:
 

@@ -23,7 +23,7 @@
 
 *   [Apache](/index.php/LAMP "LAMP")
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")
-*   [NginX](/index.php/NginX "NginX")
+*   [Nginx](/index.php/Nginx "Nginx")
 
 Или любой другой подходящий сервер, который вы можете найти в категории [веб-серверы](/index.php/Category:Web_server "Category:Web server").
 
