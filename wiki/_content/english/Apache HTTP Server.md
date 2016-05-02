@@ -437,7 +437,9 @@ When configuration is complete, [restart](/index.php/Restart "Restart") `httpd.s
 
 ### HTTP2
 
-To enable HTTP/2 support, uncomment the following line in `httpd.conf`:
+To enable HTTP/2 support, install the [nghttp2](https://www.archlinux.org/packages/?name=nghttp2) package.
+
+Then uncomment the following line in `httpd.conf`:
 
 ```
 LoadModule http2_module modules/mod_http2.so

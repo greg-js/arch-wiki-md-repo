@@ -148,7 +148,7 @@ See also [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wi
 
 See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
 
-*   **bbpager** — Dockable pager for [blackbox](/index.php?title=Blackbox&action=edit&redlink=1 "Blackbox (page does not exist)") and other window managers.
+*   **bbpager** — Dockable pager for [blackbox](/index.php/Blackbox "Blackbox") and other window managers.
 
 	[http://bbtools.sourceforge.net/download.php?file=6](http://bbtools.sourceforge.net/download.php?file=6) || [bbpager](https://www.archlinux.org/packages/?name=bbpager)
 

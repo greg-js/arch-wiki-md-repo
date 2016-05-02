@@ -736,7 +736,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — Программа обмена мгновенными сообщениями в KDE, использующая фреймворк [Telepathy](https://en.wikipedia.org/wiki/ru:Telepathy "wikipedia:ru:Telepathy"). Предназначена для замены Kopete
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — Программа обмена мгновенными сообщениями в KDE, использующая фреймворк [Telepathy](https://en.wikipedia.org/wiki/ru:Telepathy "wikipedia:ru:Telepathy"). Предназначена для замены Kopete
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -1086,7 +1086,7 @@ eDonkey по-прежнему является второй по величин�
 
 #### Чтение и сбор новостей Usenet
 
-Некоторые [клиенты электронной почты](/index.php/List_of_applications/Internet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.AD.D0.BB.D0.B5.D0.BA.D1.82.D1.80.D0.BE.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BF.D0.BE.D1.87.D1.82.D0.B0 "List of applications/Internet (Русский)") также поддерживают NNTP. Этот раздел описывает только клиенты NNTP.
+Некоторые [клиенты электронной почты](#.D0.AD.D0.BB.D0.B5.D0.BA.D1.82.D1.80.D0.BE.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BF.D0.BE.D1.87.D1.82.D0.B0) также поддерживают NNTP. Этот раздел описывает только клиенты NNTP.
 
 Смотрите также: [Список программ для чтения новостей Usenet](https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders "wikipedia:List of Usenet newsreaders"), [Сравнение программ для чтения новостей Usenet](https://en.wikipedia.org/wiki/Comparison_of_Usenet_newsreaders "wikipedia:Comparison of Usenet newsreaders").
 
@@ -1206,7 +1206,7 @@ eDonkey по-прежнему является второй по величин�
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Pastebin](https://en.wikipedia.org/wiki/ru:Pastebin "wikipedia:ru:Pastebin").
 
-Сервисы pastebin часто используются для вставки информации в [каналы IRC](/index.php/IRC_Channel "IRC Channel"), для получения помощи в решении проблем. Существуют сервисы как для текста (например, [bpaste.net](http://bpaste.net/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)), так и для изображений (например, [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Клиенты pastebin позволяют вам извлекать необходимую информацию прямо из командной строки, без необходимости запуска веб-браузера.
+Сервисы pastebin часто используются для вставки информации в [каналы IRC](/index.php/IRC_channel "IRC channel"), для получения помощи в решении проблем. Существуют сервисы как для текста (например, [bpaste.net](http://bpaste.net/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)), так и для изображений (например, [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Клиенты pastebin позволяют вам извлекать необходимую информацию прямо из командной строки, без необходимости запуска веб-браузера.
 
 **Tip:** Доступ к sprunge и ix pastebins можно получить напрямую, при помощи curl, который вернет ссылку для вставки:
 ```
@@ -1436,7 +1436,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
 
-*   **[GIMP](https://en.wikipedia.org/wiki/ru:GIMP "wikipedia:ru:GIMP")** — Программа редактирования изображений в духе проприетарных редакторов, таких как [Adobe Photoshop](https://en.wikipedia.org/wiki/ru:Adobe_Photoshop "wikipedia:ru:Adobe Photoshop"). Разработка GIMP ( [GNU](/index.php/GNU_Project "GNU Project") Image Manipulation Program) началась в середине 1990-х, и с тех пор в программе появилось большое количество [плагинов](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") и дополнительных утилит
+*   **[GIMP](https://en.wikipedia.org/wiki/ru:GIMP "wikipedia:ru:GIMP")** — Программа редактирования изображений в духе проприетарных редакторов, таких как [Adobe Photoshop](https://en.wikipedia.org/wiki/ru:Adobe_Photoshop "wikipedia:ru:Adobe Photoshop"). Разработка GIMP ([GNU](/index.php/GNU_Project "GNU Project") Image Manipulation Program) началась в середине 1990-х, и с тех пор в программе появилось большое количество [плагинов](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") и дополнительных утилит
 
 	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
 
@@ -1586,7 +1586,7 @@ eDonkey по-прежнему является второй по величин�
 
 #### Создание скриншотов
 
-Смотрите статью [Создание скриншотов](/index.php/Taking_a_Screenshot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Taking a Screenshot (Русский)").
+Смотрите статью [Создание скриншотов](/index.php/Taking_a_screenshot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Taking a screenshot (Русский)").
 
 ### Аудио
 
@@ -2918,7 +2918,7 @@ eDonkey по-прежнему является второй по величин�
 
 ### Управление пакетами
 
-Смотрите также: [AUR Helpers](/index.php/AUR_Helpers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR Helpers (Русский)") и [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman GUI Frontends (Русский)").
+Смотрите также: [AUR Helpers](/index.php/AUR_helpers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR helpers (Русский)") и [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman GUI Frontends (Русский)").
 
 *   **[Lostfiles](/index.php/Lostfiles "Lostfiles")** — Скрипт для обнаружения файлов, не принадлежащих ни одному пакету
 
@@ -3496,7 +3496,7 @@ eDonkey по-прежнему является второй по величин�
 
 ### Сканирование
 
-Смотрите раздел [Установка фронтенда](/index.php/Sane#Install_a_frontend "Sane").
+Смотрите раздел [Установка фронтенда](/index.php/SANE#Install_a_frontend "SANE").
 
 ### Оптическое распознавание символов (OCR)
 
@@ -3698,7 +3698,7 @@ eDonkey по-прежнему является второй по величин�
 
 #### Резервное копирование
 
-Смотрите основную статью: [Программы для резервного копирования](/index.php/Backup_Programs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Backup Programs (Русский)").
+Смотрите основную статью: [Программы для резервного копирования](/index.php/Backup_programs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Backup programs (Русский)").
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Список ПО для резервного копирования](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%9F%D0%9E_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F "wikipedia:ru:Список ПО для резервного копирования").
 
@@ -4418,7 +4418,7 @@ eDonkey по-прежнему является второй по величин�
 
 ##### Менеджеры входа в систему
 
-Смотрите основную статью: [Display Manager (Русский)#Список экранных менеджеров](/index.php/Display_Manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.BE.D0.B2 "Display Manager (Русский)").
+Смотрите основную статью: [Display manager (Русский)#Список экранных менеджеров](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.BE.D0.B2 "Display manager (Русский)").
 
 ##### Композитные менеджеры
 
@@ -4764,7 +4764,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://desmume.org/](http://desmume.org/) || [desmume](https://www.archlinux.org/packages/?name=desmume)
 
-*   **[Dolphin](/index.php/Dolphin_Emulator "Dolphin Emulator")** — Очень умный эмулятор GameCube и Wii
+*   **[Dolphin](/index.php/Dolphin_emulator "Dolphin emulator")** — Очень умный эмулятор GameCube и Wii
 
 	[http://dolphin-emu.org/](http://dolphin-emu.org/) || [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu)
 
@@ -4863,7 +4863,7 @@ eDonkey по-прежнему является второй по величин�
 
 ### Любительское радио
 
-Смотрите основную статью: [Список программного обеспечения для любительского радио](/index.php/Amateur_Radio#Software_list "Amateur Radio").
+Смотрите основную статью: [Список программного обеспечения для любительского радио](/index.php/Amateur_radio#Software_list "Amateur radio").
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Списко программно-определяемых радиосистем](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
 

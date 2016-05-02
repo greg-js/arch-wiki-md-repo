@@ -36,11 +36,11 @@ Other versions include:
 
 *   **Thunderbird Beta** — Cutting edge features with relatively-good stability.
 
-	[http://www.mozilla.org/en-US/thunderbird/channel/](http://www.mozilla.org/en-US/thunderbird/channel/) || [thunderbird-beta-bin](https://aur.archlinux.org/packages/thunderbird-beta-bin/)
+	[https://www.mozilla.org/thunderbird/channel/](https://www.mozilla.org/thunderbird/channel/) || [thunderbird-beta-bin](https://aur.archlinux.org/packages/thunderbird-beta-bin/)
 
 *   **Thunderbird Earlybird** — Experience the newest innovations as they're developed (equivalent to an alpha and Firefox Aurora releases).
 
-	[http://www.mozilla.org/en-US/thunderbird/channel/](http://www.mozilla.org/en-US/thunderbird/channel/) || [thunderbird-earlybird](https://aur.archlinux.org/packages/thunderbird-earlybird/)
+	[https://www.mozilla.org/thunderbird/channel/](https://www.mozilla.org/thunderbird/channel/) || [thunderbird-earlybird](https://aur.archlinux.org/packages/thunderbird-earlybird/)
 
 *   **Thunderbird Nightly** — Experience the newest innovations with nightly releases (for those that want to work with breakages).
 
@@ -109,7 +109,7 @@ and `gpg --list-keys` fails to show some keys that used to be there, see [GnuPG 
 
 ### TorBirdy - Anonymity
 
-TorBirdy is an [extension](https://addons.mozilla.org/en-us/thunderbird/addon/torbirdy/) that configures Thunderbird to make connections over the [Tor](/index.php/Tor "Tor") anonymity network.
+TorBirdy is an [extension](https://addons.mozilla.org/thunderbird/addon/torbirdy/) that configures Thunderbird to make connections over the [Tor](/index.php/Tor "Tor") anonymity network.
 
 ### FireTray - Tray icon
 
@@ -131,7 +131,7 @@ It is available in the AUR as [thunderbird-sogo-connector-bin](https://aur.archl
 
 ### Cardbook (CardDAV)
 
-[Cardbook](https://addons.mozilla.org/en-US/thunderbird/addon/cardbook/) (VCard Addressbook): a new addressbook for Thunderbird based on the CARDDav and VCARD standards.
+[Cardbook](https://addons.mozilla.org/thunderbird/addon/cardbook/) (VCard Addressbook): a new addressbook for Thunderbird based on the CARDDav and VCARD standards.
 
 ## Tips and tricks
 
@@ -179,7 +179,7 @@ Remember to run `fc-cache -fv` to update system font cache. See [Font configurat
 
 ### Migrate profile to another system
 
-**Tip:** The [ImportExportTools](https://addons.mozilla.org/en-US/thunderbird/addon/importexporttools) addon offers an option to export and import a profile folder.
+**Tip:** The [ImportExportTools](https://addons.mozilla.org/thunderbird/addon/importexporttools) addon offers an option to export and import a profile folder.
 
 Before you start with Importing or Exporting tasks, backup your complete `~/.thunderbird` profile:
 
@@ -219,7 +219,7 @@ $ cp -R ~/.thunderbird /to/backup/folder/
 
 ```
 
-If your accounts are broken or you want to join two different Thunderbird installations, you better install one Import and Export AddOn (eg. [ImportExportTools AddOn](https://addons.mozilla.org/en-US/thunderbird/addon/importexporttools)) to both Thunderbird installations and following this just export and import all your data to the new installation.
+If your accounts are broken or you want to join two different Thunderbird installations, you better install one Import and Export AddOn (eg. [ImportExportTools AddOn](https://addons.mozilla.org/thunderbird/addon/importexporttools)) to both Thunderbird installations and following this just export and import all your data to the new installation.
 
 ### Changing the default sorting order
 
@@ -279,6 +279,6 @@ $ pacman -S thunderbird
 
 6.Create your mail accounts, feeds and calenders (empty).
 
-7\. Install the [ImportExportTools](https://addons.mozilla.org/en-US/thunderbird/addon/importexporttools/) AddOn
+7\. Install the [ImportExportTools](https://addons.mozilla.org/thunderbird/addon/importexporttools/) AddOn
 
 8\. Import all your data.

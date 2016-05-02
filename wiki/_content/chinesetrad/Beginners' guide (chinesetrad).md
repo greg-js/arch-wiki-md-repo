@@ -2,7 +2,7 @@
 
 本文件將指導您使用 [Arch 安裝腳本](https://projects.archlinux.org/arch-install-scripts.git/)完成 [Arch Linux](/index.php/Arch_Linux_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Linux (正體中文)") 的安裝。開始之前建議您大略瀏覽一下 [FAQ](/index.php/FAQ_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "FAQ (正體中文)")。
 
-若您碰到任何問題，社群維護的 [Arch 維基](/index.php/Main_Page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main Page (正體中文)")是主要的資料來源，請多加利用。若無法自行解決，也歡迎到 [IRC 頻道](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) 和[論壇](https://bbs.archlinux.org/)問問。根據 [Arch 的設計哲學](/index.php/The_Arch_Way_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "The Arch Way (正體中文)")，我們鼓勵所有使用者在碰到任何不熟悉的指令時，先呼叫 `man **指令**` 查看 `man` 說明文件。
+若您碰到任何問題，社群維護的 [Arch 維基](/index.php/Main_page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main page (正體中文)")是主要的資料來源，請多加利用。若無法自行解決，也歡迎到 [IRC 頻道](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) 和[論壇](https://bbs.archlinux.org/)問問。根據 [Arch 的設計哲學](/index.php/The_Arch_Way_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "The Arch Way (正體中文)")，我們鼓勵所有使用者在碰到任何不熟悉的指令時，先呼叫 `man **指令**` 查看 `man` 說明文件。
 
 ## Contents
 
@@ -79,7 +79,7 @@
 
 ## 準備
 
-**註記:** 如果您打算在既存的 GNU/Linux 發行版本下安裝 Arch，請參閱[這篇文章](/index.php/Install_from_Existing_Linux "Install from Existing Linux")，對透過 [VNC](/index.php/VNC "VNC") 或 [SSH](/index.php/SSH "SSH") 遠端安裝 Arch 的使用者而言會有幫助。欲透過 [SSH](/index.php/SSH "SSH") 連線遠端安裝 Arch Linux 的使用者，應閱讀[從 SSH 安裝](/index.php/Install_from_SSH "Install from SSH")提到的額外提示。
+**註記:** 如果您打算在既存的 GNU/Linux 發行版本下安裝 Arch，請參閱[這篇文章](/index.php/Install_from_existing_Linux "Install from existing Linux")，對透過 [VNC](/index.php/VNC "VNC") 或 [SSH](/index.php/SSH "SSH") 遠端安裝 Arch 的使用者而言會有幫助。欲透過 [SSH](/index.php/SSH "SSH") 連線遠端安裝 Arch Linux 的使用者，應閱讀[從 SSH 安裝](/index.php/Install_from_SSH "Install from SSH")提到的額外提示。
 
 ### 系統需求
 
@@ -103,7 +103,7 @@ Arch Linux 在任何 [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture)
 
 #### 從既存的 Linux 系統安裝
 
-在一個正在運行的 Linux 系統上安裝 Arch 是可行的。請參閱[從既存 Linux 安裝](/index.php/Install_from_Existing_Linux "Install from Existing Linux")。
+在一個正在運行的 Linux 系統上安裝 Arch 是可行的。請參閱[從既存 Linux 安裝](/index.php/Install_from_existing_Linux "Install from existing Linux")。
 
 #### 在虛擬機器上安裝
 
@@ -1199,11 +1199,11 @@ options        root=**/dev/sdaX** rw
 
 ## 安裝完成後
 
-現在，您全新的 Arch Linux 基本系統已經是可以工作的 GNU/Linux 環境了，剩下就有待您的巧手了。若您剛使用 Linux 不久，參考一下新系統包含的[核心工具](/index.php/Core_Utilities_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Core Utilities (正體中文)")會很有幫助。
+現在，您全新的 Arch Linux 基本系統已經是可以工作的 GNU/Linux 環境了，剩下就有待您的巧手了。若您剛使用 Linux 不久，參考一下新系統包含的[核心工具](/index.php/Core_utilities_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Core utilities (正體中文)")會很有幫助。
 
 ### 使用者管理
 
-根據[使用者管理](/index.php/Users_and_Groups_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E8.80.85.E7.AE.A1.E7.90.86 "Users and Groups (正體中文)")的說明新增任何 root 以外您需要的使用者帳號。以 root 帳號作為日常使用、或透過 [SSH](/index.php/SSH "SSH") 連接伺服器都不是好的習慣。您應該只在進行管理任務時才使用 root 帳號。
+根據[使用者管理](/index.php/Users_and_groups_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E8.80.85.E7.AE.A1.E7.90.86 "Users and groups (正體中文)")的說明新增任何 root 以外您需要的使用者帳號。以 root 帳號作為日常使用、或透過 [SSH](/index.php/SSH "SSH") 連接伺服器都不是好的習慣。您應該只在進行管理任務時才使用 root 帳號。
 
 ### 軟體包管理
 
@@ -1211,7 +1211,7 @@ Pacman 是 Arch Linux 的「軟體包管理員」(**pac**kage **man**ager)。請
 
 若您安裝了 Arch Linux x86_64 版本，且打算使用 32 位元的應用程式，或許會想[啟用 [multilib] 倉庫](/index.php/Multilib "Multilib")。
 
-各個倉庫的用途詳情請參閱[官方倉庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")。
+各個倉庫的用途詳情請參閱[官方倉庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")。
 
 ### 服務管理
 
@@ -1394,10 +1394,10 @@ X 視窗系統提供了建立圖形使用者介面 (GUI) 的基本架構。
 
 *   [桌面環境](/index.php/Desktop_environment "Desktop environment") (DE) 在 X 之上工作，與 X 一同提供完整功能的動態 GUI。一般的桌面環境會提供視窗管理員、圖示、小插件、視窗、工具列、資料夾、桌布、程式套組以及拖拉等功能。
 
-除了手動用 `startx` (來自 [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit)) 啟動 X 以外，請參閱[顯示管理員](/index.php/Display_Manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Display Manager (正體中文)")了解登入管理員的使用方式，或是從[登入時啟動 X](/index.php/Start_X_at_Login_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Start X at Login (正體中文)") 了解從既存的虛擬終端機啟動的方式。
+除了手動用 `startx` (來自 [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit)) 啟動 X 以外，請參閱[顯示管理員](/index.php/Display_manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Display manager (正體中文)")了解登入管理員的使用方式，或是從[登入時啟動 X](/index.php/Start_X_at_Login_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Start X at Login (正體中文)") 了解從既存的虛擬終端機啟動的方式。
 
 ## 附錄
 
 好奇 Arch 下有什麼吸引人的應用程式嗎？請參考[應用程式清單](/index.php/List_of_applications "List of applications")。
 
-安裝好 Arch 以後，也歡迎參考[一般建議](/index.php/General_Recommendations_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "General Recommendations (正體中文)")內的設定教學，例如設定觸控板、字型算繪等等。
+安裝好 Arch 以後，也歡迎參考[一般建議](/index.php/General_recommendations_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "General recommendations (正體中文)")內的設定教學，例如設定觸控板、字型算繪等等。

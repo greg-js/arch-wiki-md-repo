@@ -4,7 +4,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 **Note:**
 
-*   Some recommend not installing the Intel driver, and instead falling back on the modesetting driver. See [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel) and [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/).
+*   Some recommend not installing the Intel driver, and instead falling back on the modesetting driver. See [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel), [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and `man modesetting`.
 *   PowerVR-based graphics ([GMA 500](/index.php/GMA_500 "GMA 500") and [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600") series) are not supported by open source drivers.
 
 ## Contents
@@ -65,7 +65,7 @@ Additional options are added by the user on new lines below `Driver`.
 
 **Note:**
 
-*   You may need to indicate `AccelMethod` when creating a configuration file, even just to set it to the default method (currently `"sna"`); otherwise, X may crash.
+*   You may need to indicate `Option "AccelMethod"` when creating a configuration file, even just to set it to the default method (currently `"sna"`); otherwise, X may crash.
 *   You might need to add more device sections than the one listed above. This will be indicated where necessary.
 
 For the full list of options, see the [man page](/index.php/Man_page "Man page") for `intel`.
@@ -223,16 +223,14 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 ### SNA issues
 
-From `man 4 intel`:
-
-	*There are a couple of backends available for accelerating the DDX. "UXA" (Unified Acceleration Architecture) is the mature backend that was introduced to support the GEM driver model. It is in the process of being superseded by "SNA" (Sandybridge's New Acceleration). Until that process is complete, the ability to choose which backend to use remains for backwards compatibility.*
-
 *SNA* is the default acceleration method in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). If you are experience issues with *SNA* (e.g. pixelated graphics, corrupt text, etc.), try using *UXA* instead, which can be done by adding the following line to your [configuration file](#Configuration):
 
 ```
 Option      "AccelMethod"  "uxa"
 
 ```
+
+See `man 4 intel` under `Option "AccelMethod"`.
 
 ### Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)
 

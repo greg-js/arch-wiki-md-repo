@@ -93,6 +93,10 @@ CUPS already includes a few printer drivers. In that case you can just select it
 
 [foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds) or [foomatic-db-nonfree-ppds](https://www.archlinux.org/packages/?name=foomatic-db-nonfree-ppds) provide prebuilt PPD files from manufacturers.
 
+	Gutenprint
+
+The [gutenprint](https://www.archlinux.org/packages/?name=gutenprint), [foomatic-db-gutenprint](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint), [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds) drivers are high-quality, open source printer drivers for various Canon, Epson, HP, Lexmark, Sony, Olympus and PCL printers supporting CUPS. They also support ghostscript, The GIMP, and other applications.
+
 	OpenPrinting.org
 
 There might be a PPD available at the [OpenPrinting Printer List](http://www.openprinting.org/printers). Usually these driver files are included in the above foomatic packages. But searching for your printer model might help you decide which driver to chose from the list.
@@ -105,15 +109,13 @@ The website will also suggest a driver. For instance, for the HP LaserJet 5P, th
 
 Many printer manufacturers supply their own Linux drivers. These are often available in the official Arch repositories or in the [AUR](/index.php/AUR "AUR").
 
-	Gutenprint
-
-The [gutenprint](https://www.archlinux.org/packages/?name=gutenprint), [foomatic-db-gutenprint](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint), [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds) drivers are high-quality, open source printer drivers for various Canon, Epson, HP, Lexmark, Sony, Olympus and PCL printers supporting CUPS. They also support ghostscript, The GIMP, and other applications.
-
 ## Configuration
 
 The CUPS server configuration located in `/etc/cups/cupsd.conf`. After editing, [restart](/index.php/Restart "Restart") `org.cups.cupsd.service` to apply any changes. The default configuration is sufficient for most users.
 
 [Groups](/index.php/Groups "Groups") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` group is used by default.
+
+**Note:** [cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to **Letter** paper size. To avoid having to change paper size for each printer you add, edit `/etc/papersize` and set your system default paper size. See papersize(5).
 
 ### Local printers
 

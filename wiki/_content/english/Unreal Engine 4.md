@@ -6,25 +6,36 @@ The content of this article was originally written on [this page](https://wiki.u
 
 *   [1 Minimum requirements](#Minimum_requirements)
 *   [2 Installation](#Installation)
-    *   [2.1 Compile from source code](#Compile_from_source_code)
-        *   [2.1.1 Satisfy dependencies](#Satisfy_dependencies)
-        *   [2.1.2 Get the source code](#Get_the_source_code)
-        *   [2.1.3 Prepare to compile](#Prepare_to_compile)
-        *   [2.1.4 Compile the source code](#Compile_the_source_code)
+    *   [2.1 Register to get the source code](#Register_to_get_the_source_code)
+    *   [2.2 Installing from the AUR](#Installing_from_the_AUR)
+    *   [2.3 Compile from source code](#Compile_from_source_code)
+        *   [2.3.1 Satisfy dependencies](#Satisfy_dependencies)
+        *   [2.3.2 Get the source code](#Get_the_source_code)
+        *   [2.3.3 Prepare to compile](#Prepare_to_compile)
+        *   [2.3.4 Compile the source code](#Compile_the_source_code)
 *   [3 Run Unreal Engine 4](#Run_Unreal_Engine_4)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Compilation errors](#Compilation_errors)
-        *   [4.1.1 "ConvexHull2D.h" not found](#.22ConvexHull2D.h.22_not_found)
-    *   [4.2 Compilation problems](#Compilation_problems)
+    *   [4.1 Compilation problems](#Compilation_problems)
 
 ## Minimum requirements
 
-*   PC or Mac
 *   Intel or Amd CPU@2.5GHz Quad Core **64 Bits**
 *   GPU: NVIDIA GeForce GTX 470 or AMD Radeon 6870 HD series
 *   RAM: 8 GB
 
 ## Installation
+
+#### Register to get the source code
+
+First you need to register on the [Epic Games](https://www.unrealengine.com) Webpage and link your GitHub account to your Epic Games account.
+
+### Installing from the AUR
+
+Unreal Engine 4 is available in the [AUR](/index.php/AUR "AUR") as the [unreal-engine](https://aur.archlinux.org/packages/unreal-engine/) package.
+
+The package is 22 GiB once installed, so it needs about 100 GiB free space to build. There is about 7 GiB of source files to download, and the compilation might take a few hours.
+
+Since the repository is private, you can [set up an SSH key](https://help.github.com/articles/generating-an-ssh-key/) so your GitHub account is used to download the source.
 
 ### Compile from source code
 
@@ -52,9 +63,7 @@ Then close all the terminals to apply the changes.
 
 #### Get the source code
 
-First you need to register in the [Epic Games](https://www.unrealengine.com) Webpage and link your GitHub Account to your Epic Games Account.
-
-Then download the source code with the following command:
+Download the source code with the following command, logging in with a github account which is registered on unrealengine.com:
 
 ```
 $ git clone -b release https://github.com/EpicGames/UnrealEngine.git
@@ -90,24 +99,6 @@ $ ./UE4Editor
 ```
 
 ## Troubleshooting
-
-#### Compilation errors
-
-##### "ConvexHull2D.h" not found
-
-You need to modify the `SubUVAnimation.cpp` file located in `/Engine/Source/Runtime/Engine/Private/Particles` and override this line:
-
-```
-#include "ConvexHull2D.h"
-
-```
-
-with this:
-
-```
-#include "ConvexHull2d.h"
-
-```
 
 #### Compilation problems
 

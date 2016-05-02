@@ -17,15 +17,15 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
 
 ## Installation
 
-If you wish to use *libinput* under [Wayland](/index.php/Wayland "Wayland"), there is nothing to do for installation. The [libinput](https://www.archlinux.org/packages/?name=libinput) package should already be installed as a dependency of any graphical environment you use that has Wayland, and no additional driver is needed.
+If you wish to use libinput under [Wayland](/index.php/Wayland "Wayland"), there is nothing to do for installation. The [libinput](https://www.archlinux.org/packages/?name=libinput) package should already be installed as a dependency of any graphical environment you use that has Wayland, and no additional driver is needed.
 
-If you wish to use *libinput* with [Xorg](/index.php/Xorg "Xorg"), [install](/index.php/Install "Install") the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package, which is "a thin wrapper around libinput and allows for libinput to be used for input devices in X. This driver can be used as as drop-in replacement for evdev and synaptics." [[1]](https://freedesktop.org/wiki/Software/libinput/) In other words, other packages used for input with X (i.e., those prefixed with `xf86-input-`) can be replaced with this driver.
+If you wish to use libinput with [Xorg](/index.php/Xorg "Xorg"), [install](/index.php/Install "Install") the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package, which is "a thin wrapper around libinput and allows for libinput to be used for input devices in X. This driver can be used as as drop-in replacement for evdev and synaptics." [[1]](https://freedesktop.org/wiki/Software/libinput/) In other words, other packages used for input with X (i.e., those prefixed with `xf86-input-`) can be replaced with this driver.
 
 You may also want to install [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) to be able to change settings at runtime.
 
 ## Configuration
 
-For [Xorg](/index.php/Xorg "Xorg"), a default configuration file is installed in `/usr/share/X11/xorg.conf.d/90-libinput.conf`. No extra configuration is necessary for it to autodetect keyboards, touchpads, trackpointers and supported touchscreens.
+For [Xorg](/index.php/Xorg "Xorg"), a default configuration file is installed in `/usr/share/X11/xorg.conf.d/60-libinput.conf`. No extra configuration is necessary for it to autodetect keyboards, touchpads, trackpointers and supported touchscreens.
 
 First, execute:
 

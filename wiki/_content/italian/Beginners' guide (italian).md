@@ -2,7 +2,7 @@
 
 Questa pagina servirà da guida nel processo di installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando gli [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Prima di procedere, si consiglia di leggere velocemente le [FAQ](/index.php/FAQ_(Italiano) "FAQ (Italiano)").
 
-Il [wiki di Arch](/index.php/Main_Page_(Italiano) "Main Page (Italiano)"), mantenuto dalla comunità, è la risorsa primaria che deve essere consultato in caso di problemi. Sono disponibili anche dei canali [IRC Channel](/index.php/IRC_Channel "IRC Channel") (per la comunità italiana: [irc://irc.azzurra.org/archlinux](irc://irc.azzurra.org/archlinux) o [irc://irc.freenode.net/#archlinux.it](irc://irc.freenode.net/#archlinux.it), mentre per il supporto internazionale: [irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/), che sono eccellenti risorse, nel caso la risposta non possa essere trovata altrove. Seguendo il [metodo Arch](/index.php/The_Arch_Way_(Italiano) "The Arch Way (Italiano)"), si consiglia di digitare `man *comando*` per leggere la pagina `man` pagina di un qualsiasi comando che non si conosce.
+Il [wiki di Arch](/index.php/Main_page_(Italiano) "Main page (Italiano)"), mantenuto dalla comunità, è la risorsa primaria che deve essere consultato in caso di problemi. Sono disponibili anche dei canali [IRC channel](/index.php/IRC_channel "IRC channel") (per la comunità italiana: [irc://irc.azzurra.org/archlinux](irc://irc.azzurra.org/archlinux) o [irc://irc.freenode.net/#archlinux.it](irc://irc.freenode.net/#archlinux.it), mentre per il supporto internazionale: [irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/), che sono eccellenti risorse, nel caso la risposta non possa essere trovata altrove. Seguendo il [metodo Arch](/index.php/The_Arch_Way_(Italiano) "The Arch Way (Italiano)"), si consiglia di digitare `man *comando*` per leggere la pagina `man` pagina di un qualsiasi comando che non si conosce.
 
 ## Contents
 
@@ -79,7 +79,7 @@ Il [wiki di Arch](/index.php/Main_Page_(Italiano) "Main Page (Italiano)"), mante
 
 ## Preparazione
 
-**Nota:** Se si desidera installare da una distribuzione GNU/Linux esistente, si legga [questo articolo](/index.php/Install_from_Existing_Linux_(Italiano) "Install from Existing Linux (Italiano)"). Ciò può essere utile soprattutto se si prevede di installare Arch Linux tramite [VNC](/index.php/VNC "VNC") o [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") remoto. Gli utenti che cercano di eseguire l'installazione di Arch Linux da remoto tramite un connessione [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)"), dovrebbero leggere [Installare tramite SSH](/index.php/Install_from_SSH_(Italiano) "Install from SSH (Italiano)") per ulteriori suggerimenti.
+**Nota:** Se si desidera installare da una distribuzione GNU/Linux esistente, si legga [questo articolo](/index.php/Install_from_existing_Linux_(Italiano) "Install from existing Linux (Italiano)"). Ciò può essere utile soprattutto se si prevede di installare Arch Linux tramite [VNC](/index.php/VNC "VNC") o [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") remoto. Gli utenti che cercano di eseguire l'installazione di Arch Linux da remoto tramite un connessione [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)"), dovrebbero leggere [Installare tramite SSH](/index.php/Install_from_SSH_(Italiano) "Install from SSH (Italiano)") per ulteriori suggerimenti.
 
 ### Requisiti di Sistema
 
@@ -93,7 +93,7 @@ L'ultima versione del supporto di installazione può essere ottenuta dalla pagin
 
 **Nota:** La verifica gpg2 fallirà se non avete scaricato la corrispondente chiave pubblica per l'ID della chiave RSA. Vedere [http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/](http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/) per i dettagli.
 
-*   Masterizzare l'immagine ISO su un CD o DVD tramite il vostro software preferito. Su Arch questo può essere fatto seguendo [Optical_Disc_Drive_(Italiano)#Masterizzare](/index.php/Optical_Disc_Drive_(Italiano)#Masterizzare "Optical Disc Drive (Italiano)")
+*   Masterizzare l'immagine ISO su un CD o DVD tramite il vostro software preferito. Su Arch questo può essere fatto seguendo [Optical disc drive (Italiano)#Masterizzare](/index.php/Optical_disc_drive_(Italiano)#Masterizzare "Optical disc drive (Italiano)")
 
 **Nota:** La qualità delle unità ottiche e degli stessi dischi può variare. In generale, per masterizzazioni affidabili è raccomandata una velocità bassa. Se si verifica un comportamento imprevisto del CD, provare a masterizzarne un altro usando la velocità minima.
 
@@ -101,11 +101,11 @@ L'ultima versione del supporto di installazione può essere ottenuta dalla pagin
 
 #### Installazione tramite Rete
 
-Invece di scrivere i supporti di avvio di un'unità ottica o USB, è possibile, in alternativa, avviare un'immagine ISO in rete. Questo funziona bene quando si dispone già di un server configurato. Si prega di consultare l'articolo [PXE](/index.php/PXE "PXE") per ulteriori informazioni e quindi continuare l'avvio di [avviare il supporto di installazione di Arch Linux](#Avviare_il_supporto_di_installazione_di_Arch_Linux).
+Invece di scrivere i supporti di avvio di un'unità ottica o USB, è possibile, in alternativa, avviare un'immagine ISO in rete. Questo funziona bene quando si dispone già di un server configurato. Si prega di consultare l'articolo [PXE](/index.php/PXE "PXE") per ulteriori informazioni e quindi continuare l'avvio di [avviare il supporto di installazione di Arch Linux](#Avviare_il_supporto_di_installazione).
 
 #### Installazione da un sistema Linux esistente
 
-In alternativa, è possibile installare da un sistema Linux già in esecuzione. Vedere [Install from Existing Linux (Italiano)](/index.php/Install_from_Existing_Linux_(Italiano) "Install from Existing Linux (Italiano)").
+In alternativa, è possibile installare da un sistema Linux già in esecuzione. Vedere [Install from existing Linux (Italiano)](/index.php/Install_from_existing_Linux_(Italiano) "Install from existing Linux (Italiano)").
 
 #### Installazione su Macchina Virtuale
 
@@ -118,7 +118,7 @@ La procedura esatta per la preparazione di una macchina virtuale dipende dal sof
 1.  Creare l'immagine disco virtuale che ospiterà il sistema operativo.
 2.  Configurare correttamente i parametri della macchina virtuale.
 3.  Avviare l'Immagine ISO scaricata con un drive CD virtuale.
-4.  Continuare con [Avviare il supporto di installazione di Arch Linux](#Avviare_il_supporto_di_installazione_di_Arch_Linux).
+4.  Continuare con [Avviare il supporto di installazione di Arch Linux](#Avviare_il_supporto_di_installazione).
 
 Gli articoli seguenti possono risultare utili:
 
@@ -149,7 +149,7 @@ Se efivar elenca le variabili UEFI correttamente, allora il boot in modalità UE
 
 #### Risoluzione dei problemi di avvio
 
-*   Se siete in possesso di una scheda grafica Intel e lo schermo rimane vuoto durante il processo di boot, il problema è dovuto probabilmente all'impostazione in modalità [Kernel Mode Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting"). Una possibile soluzione è quella di riavviare e premere il tasto `e` sulla voce che si sta tentando di eseguire all'avvio ( i686 o x86_64 ). Inserire alla fine della stringa delle opzioni del kernel `nomodeset` e premere `Invio`. In alternativa aggiungere `video=SVIDEO-1:d`, che dovrebbe permettere di poter funzionare senza disattivare il kernel mode setting (KMS). Si può anche provare `i915.modeset=0`. Consultare l'articolo [Intel](/index.php/Intel_(Italiano) "Intel (Italiano)") per ulteriori informazioni.
+*   Se siete in possesso di una scheda grafica Intel e lo schermo rimane vuoto durante il processo di boot, il problema è dovuto probabilmente all'impostazione in modalità [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Una possibile soluzione è quella di riavviare e premere il tasto `e` sulla voce che si sta tentando di eseguire all'avvio ( i686 o x86_64 ). Inserire alla fine della stringa delle opzioni del kernel `nomodeset` e premere `Invio`. In alternativa aggiungere `video=SVIDEO-1:d`, che dovrebbe permettere di poter funzionare senza disattivare il kernel mode setting (KMS). Si può anche provare `i915.modeset=0`. Consultare l'articolo [Intel](/index.php/Intel_(Italiano) "Intel (Italiano)") per ulteriori informazioni.
 
 *   Se lo schermo non si spegne ed il processo di avvio si blocca durante il tentativo di caricare il kernel, riavviare e premere `Tab` sulla voce che si sta tentando di eseguire all'avvio, ed inserire alla fine della stringa delle opzioni del kernel `acpi=off` e premere `Invio`.
 
@@ -1160,20 +1160,20 @@ Per ulteriori informazioni su come configurare ed utilizzare gummiboot, consulta
 Installare i pacchetti [grub](https://www.archlinux.org/packages/?name=grub) e [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr), ed eseguire `grub-install` per installare il bootloader :
 
 ```
-# mount -t efivarfs efivarfs /sys/firmware/efi/efivars              # ignora se già montato
+# mount -t efivarfs efivarfs /sys/firmware/efi/efivars              [ignora se già montato]
 # pacman -S grub efibootmgr
 # grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck
 
 ```
 
-Poi, creare manualmente un file `grub.cfg` è assolutamente indicato, si raccomanda che i principianti ne generino automaticamente uno:
-
-{{Suggerimento|Per la ricerca automatica di altri sistemi operativi sul computer, installare [os-prober](https://www.archlinux.org/packages/?name=os-prober), tuttavia os-prober è noto per non riuscire a rilevare correttamente tutti i sistemi operativi in ambiente UEFI.
+Poi, creare manualmente un file `grub.cfg` è assolutamente indicato. Si raccomanda per i principianti che si può generare automaticamente uno:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
+
+**Suggerimento:** Per la ricerca automatica di altri sistemi operativi sul computer, installare [os-prober](https://www.archlinux.org/packages/?name=os-prober), tuttavia os-prober è noto per non riuscire a rilevare correttamente tutti i sistemi operativi in ambiente UEFI.
 
 Per ulteriori informazioni sulla configurazione e l'utilizzo di GRUB, vedere [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)").
 
@@ -1208,7 +1208,7 @@ Il nuovo sistema di base Arch Linux è ora un funzionale sistema operativo GNU/L
 
 ### Gestione Utenti
 
-Aggiungere gli account utente che si desiderano, oltre a root, come descritto in [Gestione degli utenti](/index.php/Users_and_Groups_(Italiano)#Gestione_degli_utenti "Users and Groups (Italiano)"). Non è consigliabile utilizzare l'account di root per un uso regolare, o esporlo tramite [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") su un server. L'account di root deve essere utilizzato solo per le attività amministrative.
+Aggiungere gli account utente che si desiderano, oltre a root, come descritto in [Gestione degli utenti](/index.php/Users_and_groups_(Italiano)#Gestione_degli_utenti "Users and groups (Italiano)"). Non è consigliabile utilizzare l'account di root per un uso regolare, o esporlo tramite [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") su un server. L'account di root deve essere utilizzato solo per le attività amministrative.
 
 In un tipico sistema desktop per aggiungere un nuovo utente denominato *archie* specificando [bash](/index.php/Bash_(Italiano) "Bash (Italiano)") come shell di login
 
@@ -1219,7 +1219,7 @@ In un tipico sistema desktop per aggiungere un nuovo utente denominato *archie* 
 
 Questo comando creerà automaticamente un gruppo denominato `archie` con lo stesso GID pari all' UID dell'utente `archie` e ne fa di questo il gruppo predefinito dell'utente `archie` al login.
 
-Altri scenari sono possibili, si veda [Utenti e gruppi](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") per maggiori dettagli e potenziali rischi per la sicurezza.
+Altri scenari sono possibili, si veda [Utenti e gruppi](/index.php/Users_and_groups_(Italiano) "Users and groups (Italiano)") per maggiori dettagli e potenziali rischi per la sicurezza.
 
 ### Gestione dei pacchetti
 
@@ -1229,7 +1229,7 @@ Poichè il metodo Arch prevede la [correttezza del codice oltre la convenienza](
 
 Se si è installato Arch Linux x86_64, si consiglia di [abilitare il deposito [multilib]](/index.php/Multilib "Multilib") , se si pensa di utilizzare le applicazioni a 32 bit .
 
-Si veda [Repositories Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") per dettagli maggiori su ogni deposito.
+Si veda [Repositories Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") per dettagli maggiori su ogni deposito.
 
 ### Gestione dei servizi
 
@@ -1288,7 +1288,7 @@ Il driver `vesa` è un generico mode-setting driver che funziona con quasi tutte
 
 ```
 
-Al fine di poter usufruire dell'accelerazione video per lavorare, e spesso per poter usufruire di tutte le modalità che la GPU può impostare, è necessario un driver video corretto. Si veda [Xorg_(Italiano)#Installazione_dei_Driver](/index.php/Xorg_(Italiano)#Installazione_dei_Driver "Xorg (Italiano)") per una tabella dei driver video più frequentemente utilizzati.
+Al fine di poter usufruire dell'accelerazione video per lavorare, e spesso per poter usufruire di tutte le modalità che la GPU può impostare, è necessario un driver video corretto. Si veda [Xorg (Italiano)#Installazione dei Driver](/index.php/Xorg_(Italiano)#Installazione_dei_Driver "Xorg (Italiano)") per una tabella dei driver video più frequentemente utilizzati.
 
 #### Installare driver di input
 
@@ -1393,14 +1393,14 @@ $ wgetpaste /var/log/Xorg.0.log
 
 #### Font
 
-Si potrebbe desiderare di installare un set di caratteri TrueType, in quanto solo font bitmap non scalabili sono inclusi di default. Tuttavia, se si utilizza un [Ambiente Desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") completo come [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), questo passaggio potrebbe non essere necessario. Dejavu è un font di uso generico di alta qualità e con una buona copertura [Unicode](https://en.wikipedia.org/wiki/it:Unicode "wikipedia:it:Unicode") :
+Si potrebbe desiderare di installare un set di caratteri TrueType, in quanto solo font bitmap non scalabili sono inclusi di default. Tuttavia, se si utilizza un [Ambiente Desktop](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") completo come [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), questo passaggio potrebbe non essere necessario. Dejavu è un font di uso generico di alta qualità e con una buona copertura [Unicode](https://en.wikipedia.org/wiki/it:Unicode "wikipedia:it:Unicode") :
 
 ```
 # pacman -S ttf-dejavu
 
 ```
 
-Fare riferimento a [Font Configuration](/index.php/Font_Configuration_(Italiano) "Font Configuration (Italiano)") per sapere come configurare il rendering dei font e a [Fonts](/index.php/Fonts_(Italiano) "Fonts (Italiano)") per i suggerimenti sui tipi di caratteri e le istruzioni di installazione.
+Fare riferimento a [Font Configuration](/index.php/Font_configuration_(Italiano) "Font configuration (Italiano)") per sapere come configurare il rendering dei font e a [Fonts](/index.php/Fonts_(Italiano) "Fonts (Italiano)") per i suggerimenti sui tipi di caratteri e le istruzioni di installazione.
 
 #### Scegliere ed installare una interfaccia grafica
 
@@ -1408,14 +1408,14 @@ Mentre il sistema **X** Window fornisce il quadro di base per la costruzione di 
 
 **Nota:** La scelta di un DE o WM è una decisione molto soggettiva e personale. Si scelga l'ambiente migliore in base alle *proprie* esigenze. É possibile costruire il proprio ambiente desktop (DE) utilizzando un Window Manager (WM) e le applicazioni di propria scelta.
 
-*   Un [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") (Gestore delle finestre) controlla il posizionamento e l'aspetto delle finestre dell'applicazione in combinazione con il sistema X Window.
+*   Un [Window Manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") (Gestore delle finestre) controlla il posizionamento e l'aspetto delle finestre dell'applicazione in combinazione con il sistema X Window.
 
-*   Un [Desktop Environment](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") (Ambiente desktop), lavora in cima e in collaborazione con **X**, per fornire una completa interfaccia grafica funzionale e dinamica. Un ambiente desktop contiene in genere un gestore di finestre, icone, applets, finestre, barre degli strumenti, cartelle, wallpapers, una suite di applicazioni e capacità come il drag and drop.
+*   Un [Desktop Environment](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") (Ambiente desktop), lavora in cima e in collaborazione con **X**, per fornire una completa interfaccia grafica funzionale e dinamica. Un ambiente desktop contiene in genere un gestore di finestre, icone, applets, finestre, barre degli strumenti, cartelle, wallpapers, una suite di applicazioni e capacità come il drag and drop.
 
-Al posto di lanciare X manualmente tramite `startx` da [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit), si veda [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") per le istruzioni su come utilizzare un gestore grafico delle sessioni, oppure si veda [Far partire X al boot](/index.php/Far_partire_X_al_boot "Far partire X al boot") per l'utilizzo di un terminale virtuale esistente come equivalente ad un display manager ..
+Al posto di lanciare X manualmente tramite `startx` da [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit), si veda [Display Manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") per le istruzioni su come utilizzare un gestore grafico delle sessioni, oppure si veda [Far partire X al boot](/index.php/Far_partire_X_al_boot "Far partire X al boot") per l'utilizzo di un terminale virtuale esistente come equivalente ad un display manager ..
 
 ## Appendice
 
-Per un elenco dei programmi maggiormente utilizzati e si veda l'articolo [Lista delle Applicazioni](/index.php/List_of_Applications_(Italiano) "List of Applications (Italiano)").
+Per un elenco dei programmi maggiormente utilizzati e si veda l'articolo [Lista delle Applicazioni](/index.php/List_of_applications_(Italiano) "List of applications (Italiano)").
 
 Si veda anche [Raccomandazioni Generali](/index.php/Raccomandazioni_Generali "Raccomandazioni Generali") per consigli post-installazione, come la configurazione del touchpad o il rendering dei font.

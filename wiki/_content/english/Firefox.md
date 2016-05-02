@@ -1,4 +1,4 @@
-[Firefox](http://www.firefox.com) is a popular open-source graphical web browser from [Mozilla](http://www.mozilla.com).
+[Firefox](https://www.mozilla.org/firefox) is a popular open-source graphical web browser from [Mozilla](https://www.mozilla.org).
 
 ## Contents
 

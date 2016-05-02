@@ -57,7 +57,7 @@
 
 ## 준비하기
 
-**참고:** 만약 여러분이 다른 GNU/리눅스 배포판 또는 라이브CD를 이용해서 다른 파티션에 설치하길 원한다면, [이 wiki 문서](/index.php/Install_from_Existing_Linux "Install from Existing Linux")를 봐주세요. 만약 여러분이 원격으로 [VNC](/index.php/VNC "VNC")나 [SSH](/index.php/SSH "SSH")를 통해 아치리눅스를 설치하려고 한다면 특히 유용할 것입니다.
+**참고:** 만약 여러분이 다른 GNU/리눅스 배포판 또는 라이브CD를 이용해서 다른 파티션에 설치하길 원한다면, [이 wiki 문서](/index.php/Install_from_existing_Linux "Install from existing Linux")를 봐주세요. 만약 여러분이 원격으로 [VNC](/index.php/VNC "VNC")나 [SSH](/index.php/SSH "SSH")를 통해 아치리눅스를 설치하려고 한다면 특히 유용할 것입니다.
 
 ### 시스템 요구사항
 
@@ -82,11 +82,11 @@
 
 #### 네트워크를 통해 설치하기
 
-디스크나 USB 드라이브에 설치 매체를 기록하는 대신에, 네트워크를 통해 ISO 이미지로 부팅할 수 있습니다. 이미 작동하고 있는 서버가 있을 경우에 네트워크 설치가 좋을 수 있습니다. 네트워크 설치를 원하실 경우 반드시 [PXE](/index.php/PXE "PXE") 문서를 읽은 후, [아치리눅스 설치도구로 부팅하기](#.EC.95.84.EC.B9.98.EB.A6.AC.EB.88.85.EC.8A.A4_.EC.84.A4.EC.B9.98.EB.8F.84.EA.B5.AC.EB.A1.9C_.EB.B6.80.ED.8C.85.ED.95.98.EA.B8.B0_2) 섹션으로 넘어가십시오.
+디스크나 USB 드라이브에 설치 매체를 기록하는 대신에, 네트워크를 통해 ISO 이미지로 부팅할 수 있습니다. 이미 작동하고 있는 서버가 있을 경우에 네트워크 설치가 좋을 수 있습니다. 네트워크 설치를 원하실 경우 반드시 [PXE](/index.php/PXE "PXE") 문서를 읽은 후, [아치리눅스 설치도구로 부팅하기](#.EC.95.84.EC.B9.98.EB.A6.AC.EB.88.85.EC.8A.A4_.EC.84.A4.EC.B9.98.EB.A7.A4.EC.B2.B4.EB.A1.9C_.EB.B6.80.ED.8C.85.ED.95.98.EA.B8.B0) 섹션으로 넘어가십시오.
 
 #### 기존에 설치한 리눅스 시스템에서 아치리눅스 설치하기
 
-이미 작동하고 있는 리눅스 시스템이 있다면 그 리눅스 시스템을 이용하여 아치리눅스를 설치하는 것도 가능합니다. [Install from Existing Linux](/index.php/Install_from_Existing_Linux "Install from Existing Linux") 문서를 참고하십시오. 이 방법은 아치를 [VNC](/index.php/VNC "VNC")나 [SSH](/index.php/SSH "SSH")를 통해 원격으로 설치할 경우 특히 유용합니다. 아치를 [SSH](/index.php/SSH "SSH")를 통해 원격 설치하려는 사용자는 [Install from SSH](/index.php/Install_from_SSH "Install from SSH")문서를 참고하십시오.
+이미 작동하고 있는 리눅스 시스템이 있다면 그 리눅스 시스템을 이용하여 아치리눅스를 설치하는 것도 가능합니다. [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux") 문서를 참고하십시오. 이 방법은 아치를 [VNC](/index.php/VNC "VNC")나 [SSH](/index.php/SSH "SSH")를 통해 원격으로 설치할 경우 특히 유용합니다. 아치를 [SSH](/index.php/SSH "SSH")를 통해 원격 설치하려는 사용자는 [Install from SSH](/index.php/Install_from_SSH "Install from SSH")문서를 참고하십시오.
 
 #### 가상 머신에 설치하기
 
@@ -99,7 +99,7 @@
 1.  OS가 설치될 가상의 디스크 이미지를 만듭니다.
 2.  버추얼 머신의 환경을 적절하게 구성합니다.
 3.  다운로드받은 .iso 이미지를 가상 CD 드라이브에 넣어 가상 머신을 부팅합니다.
-4.  [아치리눅스 설치도구로 부팅하기](#.EC.95.84.EC.B9.98.EB.A6.AC.EB.88.85.EC.8A.A4_.EC.84.A4.EC.B9.98.EB.8F.84.EA.B5.AC.EB.A1.9C_.EB.B6.80.ED.8C.85.ED.95.98.EA.B8.B0)로 넘어가 설명을 따릅니다.
+4.  [아치리눅스 설치도구로 부팅하기](#.EC.95.84.EC.B9.98.EB.A6.AC.EB.88.85.EC.8A.A4_.EC.84.A4.EC.B9.98.EB.A7.A4.EC.B2.B4.EB.A1.9C_.EB.B6.80.ED.8C.85.ED.95.98.EA.B8.B0)로 넘어가 설명을 따릅니다.
 
 다음의 문서들이 도움이 될 수 있습니다:
 
@@ -139,7 +139,7 @@ EFI Default Loader
 
 #### 부팅 문제 해결
 
-*   인텔 비디오 칩셋을 사용하며, 부팅 과정에서 화면에 아무것도 나오지 않는다면, 아마 커널 모드 세팅([KMS](/index.php/Kernel_Mode_Setting "Kernel Mode Setting"))의 문제일 것입니다. 해결을 위해서는 재부팅을 하고, 메뉴에서 부팅하기를 원하는 항목(i686이나 x86_64)을 선택하고 `Tab`을 누릅니다. 화면에 나오는 문자열의 끝에 `nomodset`을 추가하고 `Enter`를 누릅니다. `nomodset` 대신 `video=SVIDEO-1:d`를 추가하셔도 됩니다. `video=SVIDEO-1:d`는 커널 모드 세팅을 비활성화하지 않습니다. `i915.modeset=0`를 추가하는 것도 가능합니다. 관련 내용은 [Intel](/index.php/Intel "Intel")항목을 참고하십시오.
+*   인텔 비디오 칩셋을 사용하며, 부팅 과정에서 화면에 아무것도 나오지 않는다면, 아마 커널 모드 세팅([KMS](/index.php/Kernel_mode_setting "Kernel mode setting"))의 문제일 것입니다. 해결을 위해서는 재부팅을 하고, 메뉴에서 부팅하기를 원하는 항목(i686이나 x86_64)을 선택하고 `Tab`을 누릅니다. 화면에 나오는 문자열의 끝에 `nomodset`을 추가하고 `Enter`를 누릅니다. `nomodset` 대신 `video=SVIDEO-1:d`를 추가하셔도 됩니다. `video=SVIDEO-1:d`는 커널 모드 세팅을 비활성화하지 않습니다. `i915.modeset=0`를 추가하는 것도 가능합니다. 관련 내용은 [Intel](/index.php/Intel "Intel")항목을 참고하십시오.
 
 *   만약 화면이 공백 상태로 가지 *않고* 커널을 로딩하는 중에 부팅이 멈춘다면, 메뉴 항목을 선택한 상테에서 `Tab`키를 눌러 다음 내용을 추가해 준 다음 `Enter`키를 눌러주십시오.
 
@@ -169,7 +169,7 @@ EFI Default Loader
 
 ```
 
-과 같은 명령을 사용하면 됩니다. 선택된 폰트에 포함된 글자들을 모두 보고 싶다면, `showconsolefont` 명령을 실행하십시오. 폰트 이름에는 대소문자가 구분된다는 점에 유의하십시오. [Fonts#Console Fonts](/index.php/Fonts#Console_Fonts "Fonts")에서 더 자세한 정보를 찾을 수 있습니다.
+과 같은 명령을 사용하면 됩니다. 선택된 폰트에 포함된 글자들을 모두 보고 싶다면, `showconsolefont` 명령을 실행하십시오. 폰트 이름에는 대소문자가 구분된다는 점에 유의하십시오. [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts")에서 더 자세한 정보를 찾을 수 있습니다.
 
 기본 언어는 미국 영어로 설정되어 있습니다. 언어를 바꾸고 싶으면 `/etc/locale.gen`에서 en_US와 함께 사용할 언어인 한국어 ko_KR 앞의 `#`을 제거하세요. 그리고 `Ctrl+X`를 누른 후 `Y`를 누르고 `Enter`를 눌러 같은 파일이름으로 저장하세요. (ko_KR.EUC_KR 보다는 ko_KR.UTF-8을 선택하는 것이 좋습니다)
 
@@ -1165,6 +1165,6 @@ chroot 환경에서 빠져나오십시오.
 
 새로운 아치 리눅스 시스템이 이제 작동하는 리눅스 환경이 되었으며 입맛에 따라 설정을 변경할 준비가 되어 있습니다. 이제 기본적인 아치 리눅스 시스템이 설치되었습니다 여기에서부터 이 멋진 도구의 집합체를 당신이 원하거나 목적에 부합하는 어떤 것으로도 만들 수 있습니다.
 
-[일반 추천 사항](/index.php/General_Recommendations_(%ED%95%9C%EA%B5%AD%EC%96%B4) "General Recommendations (한국어)") 문서를 읽는 것을 **강력히** 권장합니다. 특히 첫 두 섹션은 반드시 읽는 것이 좋습니다. 나머지 섹션들에서는 터치패드 설정, 사운드 설정, 그래픽 설정 등 여러가지 튜토리얼로 가는 링크들이 제공됩니다.
+[일반 추천 사항](/index.php/General_recommendations_(%ED%95%9C%EA%B5%AD%EC%96%B4) "General recommendations (한국어)") 문서를 읽는 것을 **강력히** 권장합니다. 특히 첫 두 섹션은 반드시 읽는 것이 좋습니다. 나머지 섹션들에서는 터치패드 설정, 사운드 설정, 그래픽 설정 등 여러가지 튜토리얼로 가는 링크들이 제공됩니다.
 
 [Common Applications](/index.php/Common_Applications "Common Applications")는 여러분이 관심을 가질 만한 프로그램 목록을 다룹니다.

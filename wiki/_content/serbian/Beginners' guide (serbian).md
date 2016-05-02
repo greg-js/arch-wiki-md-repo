@@ -149,7 +149,7 @@ Arch Linux, pacman, dokumentacija i skripte su Copyright © 2002-2007 by Judd Vi
 
 ### O ovom uputstvu
 
-Odrzavan od strane zajednice, [Arch wiki](/index.php/Main_Page_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Main Page (Српски)") je odlican izvor za resavanje problema. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanali ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i ([irc://irc.freenode.net/#archlinux-rs](irc://irc.freenode.net/#archlinux-rs)), i [forumi](https://bbs.archlinux.org/) su takodje na raspolaganju ukoliko ne mozete da pronadjete odgovor. Posetite i `man` stranice za komande sa kojima niste upoznati; to mozete uciniti sa `man "komandom`*.*
+Odrzavan od strane zajednice, [Arch wiki](/index.php/Main_page_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Main page (Српски)") je odlican izvor za resavanje problema. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanali ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i ([irc://irc.freenode.net/#archlinux-rs](irc://irc.freenode.net/#archlinux-rs)), i [forumi](https://bbs.archlinux.org/) su takodje na raspolaganju ukoliko ne mozete da pronadjete odgovor. Posetite i `man` stranice za komande sa kojima niste upoznati; to mozete uciniti sa `man "komandom`*.*
 
 **Note:** Pazljivo pracenje ovog uputstva je od kljucnog znacaja kako bi ste uspesno instalirali i podesili Arch Linux sistem, pa vas "molimo" da ga detaljno procitate. Jako je preporucljivo da procitate svaku sekciju u celosti <u>pre</u> obavljanja posla koji sekcija opisuje.
 
@@ -163,7 +163,7 @@ Uputstvo je podeljeno u 5 glavnih delova:
 
 ## Priprema
 
-**Note:** Ukoliko zelite da instalirate na drugu particiju iz vec postojece distribucije ili LiveCD-a, molim vas pogledajte [ovaj wiki clanak](/index.php/Install_from_Existing_Linux "Install from Existing Linux") za neophodne korake. Ovo moze biti korisno, pogotovo ako planirate da instalirate Arch na udaljeni nacin preko [VNC](/index.php/VNC "VNC")-a ili [SSH](/index.php/SSH "SSH")-a. Uputstvo koje sledi pretpostavlja instalaciju na konvencionalan nacin.
+**Note:** Ukoliko zelite da instalirate na drugu particiju iz vec postojece distribucije ili LiveCD-a, molim vas pogledajte [ovaj wiki clanak](/index.php/Install_from_existing_Linux "Install from existing Linux") za neophodne korake. Ovo moze biti korisno, pogotovo ako planirate da instalirate Arch na udaljeni nacin preko [VNC](/index.php/VNC "VNC")-a ili [SSH](/index.php/SSH "SSH")-a. Uputstvo koje sledi pretpostavlja instalaciju na konvencionalan nacin.
 
 ### Preuzimanje najskorijeg instalacionog medija
 
@@ -1933,7 +1933,7 @@ X prozor sistem pruza osnovni frejmvork za izgradnju grafickog korisnickog inter
 
 	Desktop okruzenje (DE)
 
-	Radi povrh i u saradnji sa X-om da obezbedi kompletno funkcionalan i dinamicki GUI. DE tipicno obezbedjuje prozor menadzer, ikone, aplete, prozore, toolbar-ove, foldere, pozadine (wallpaper-e), skup aplikacija i mogucnosti poput prevuci i ispusti (drag and drop). Kada razmisljate o licnom desktopu, obicno je DE ono sto zelite. **See [Desktop okruzenja](/index.php/Desktop_environment#Desktop_environments "Desktop environment") za vise informacija.**
+	Radi povrh i u saradnji sa X-om da obezbedi kompletno funkcionalan i dinamicki GUI. DE tipicno obezbedjuje prozor menadzer, ikone, aplete, prozore, toolbar-ove, foldere, pozadine (wallpaper-e), skup aplikacija i mogucnosti poput prevuci i ispusti (drag and drop). Kada razmisljate o licnom desktopu, obicno je DE ono sto zelite. **See [Desktop okruzenja](/index.php/Desktop_environment "Desktop environment") za vise informacija.**
 
 Mozete izgraditi vas licni DE koriscenjem WM-a i aplikacija prema vasem izboru.
 

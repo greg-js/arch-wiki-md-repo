@@ -15,6 +15,7 @@
 *   [5 Hardware information](#Hardware_information)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 High CPU usage in idle](#High_CPU_usage_in_idle)
+    *   [6.2 Screen rotation not working](#Screen_rotation_not_working)
 
 ## Overview
 
@@ -95,8 +96,6 @@ Section "Device"
 EndSection
 
 ```
-
-Enabling the option `"TearFree"`, however, breaks screen rotation: *xrandr -o left* will either result in a blank screen or in an error message (`xrandr: Configure crtc 0 failed`).
 
 The miniDP port works, at least when used with a VGA adapter. The connected display shows up in *xrandr* correctly..
 
@@ -191,3 +190,7 @@ WantedBy=multi-user.target
 ```
 
 Then [enable](/index.php/Enable "Enable") the `disable-interrupts.service` systemd unit.
+
+### Screen rotation not working
+
+Enabling the option `"TearFree"` might break screen rotation: *xrandr -o left* will either result in a blank screen or in an error message (`xrandr: Configure crtc 0 failed`). The X.org Intel driver above version 1:2.99.917+641+ge4ef6e9 no longer has this bug. Either upgrade the driver or disable the tear-free playback.

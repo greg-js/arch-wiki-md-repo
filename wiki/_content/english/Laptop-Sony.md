@@ -3,10 +3,10 @@
 
 ## Model List
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Vaio VGN-S5M | Any | 3D with nvidia driver | Intel audio with [ALSA](/index.php/ALSA "ALSA") | Yes | Yes, ipw2200bg | -- | Suspend-to-RAM with suspend2 | Untested | Memory stick reader does not work | Everything else (Fn Keys, DVD-RW drive, FireWire...) works without a hitch |
 | Vaio VGN-C2Z | Any | 3D with nvidia driver | Intel audio with [ALSA](/index.php/ALSA "ALSA") | Yes | Yes, ipw3945 | Modules look fine but due to lack of a Bluetooth client not tested | Suspend-to-RAM with vanilla kernel & [linux-ck](https://aur.archlinux.org/packages/linux-ck/) | Untested | Memory stick reader not tested | Everything else (Fn Keys, DVDRW drive, Firewire...) works without a hitch |
 | Vaio VGN-FS742/W

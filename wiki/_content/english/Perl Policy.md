@@ -272,7 +272,7 @@ build() {
 
 #### Binary modules
 
-Binary modules must specify a dependency on either `perl` with a minimum version of the `perl` package used to build the module, and must additionally depend on the expansion of `perlapi-$Config{version`}using the `Config` module.
+Binary modules must specify a dependency on either `perl` with a minimum version of the `perl` package used to build the module, and must additionally depend on the expansion of `perlapi-$Config{version}` using the `Config` module.
 
 #### Architecture-independent modules
 

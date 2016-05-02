@@ -28,9 +28,10 @@
         *   [5.2.4 Remove special scripts of the Live environment](#Remove_special_scripts_of_the_Live_environment)
         *   [5.2.5 Create an initial ramdisk environment](#Create_an_initial_ramdisk_environment)
         *   [5.2.6 Normal configuration](#Normal_configuration)
-*   [6 See also](#See_also)
-    *   [6.1 Documentation and tutorials](#Documentation_and_tutorials)
-    *   [6.2 Example customization template](#Example_customization_template)
+*   [6 Testing iso file by Virtualbox](#Testing_iso_file_by_Virtualbox)
+*   [7 See also](#See_also)
+    *   [7.1 Documentation and tutorials](#Documentation_and_tutorials)
+    *   [7.2 Example customization template](#Example_customization_template)
 
 ## Setup
 
@@ -425,6 +426,20 @@ Please create an initial ramdisk as described in [Beginners' guide#Create an ini
 #### Normal configuration
 
 After all of these, now you can follow the [Beginners' guide#Locale](/index.php/Beginners%27_guide#Locale "Beginners' guide") and finish the installation.
+
+## Testing iso file by Virtualbox
+
+*   add 'virtualbox-guest-modules-arch' 'virtualbox-guest-utils' into packages.both
+*   added three lines in airootfs/etc/modules-load.d/virtualbox.conf
+
+```
+ vboxguest
+ vboxsf
+ vboxvideo
+
+```
+
+*   in your .xinitrc add '/usr/bin/VBoxClient-all'
 
 ## See also
 

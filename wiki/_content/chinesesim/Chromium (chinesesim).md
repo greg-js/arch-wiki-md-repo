@@ -96,7 +96,9 @@ $ chromium --audio-buffer-size=2048
 
 ### 卡顿
 
-chrome 及 chromium 在中文环境下使用可能会极其卡顿，原因在于Google Chrome UI 的缺省字体继承自 Gnome 桌面设置（而不是 chrome://settings/）, 地址栏弹出框的缺省字体也是继承自 Gnome 桌面设置。字体名称的标准名称和本地化名称不相同导致了 Skia 缓存无法命中。Skia 缓存无法命中导致 fontconfig 频繁被调用， 而该调用非常消耗 CPU 时间，导致chrome卡顿。 所以解决方法就是不要使用文泉驿系列字体，使用非中文名字的字体。
+chrome 及 chromium 在中文环境下使用可能会极其卡顿，原因在于Google Chrome UI 的缺省字体继承自 Gnome 桌面设置（而不是 chrome://settings/）, 地址栏弹出框的缺省字体也是继承自 Gnome 桌面设置。字体名称的标准名称和本地化名称不相同导致了 Skia 缓存无法命中。Skia 缓存无法命中导致 fontconfig 频繁被调用， 而该调用非常消耗 CPU 时间，导致chrome卡顿。因此不要使用文泉驿这样拥有本地化名称的字体，推荐使用Noto Sans CJK系列字体。
+
+AdBlock Plus 最近系列版本占用明显增大，也可能导致卡顿，建议换用ublock origin来减少占用，对于一些低配置电脑效果明显。
 
 ### PDF 插件中的字体问题
 

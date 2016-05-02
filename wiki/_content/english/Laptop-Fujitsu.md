@@ -3,10 +3,10 @@
 
 ## Model List
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | E6540 | Don't Panic | Yes (ATI Mobility P/M 8Mb) | Yes | Yes (PCMCIA) | N/A | N/A | Suspend to RAM: NA
 Disk: NA
 Battery: No

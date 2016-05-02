@@ -123,7 +123,7 @@ Az Arch Linux, a pacman, a dokumentáció, és a szkriptek © 2002-2007 Judd Vin
 
 Az [Arch telepítő szkriptek](https://github.com/falconindy/arch-install-scripts) az Arch Linux telepítését megkönnyítő szkripteket jelentik. Ez az útmutató összefoglalóan bemutatja az alaprendszer telepítését ezen szkriptek használatával.
 
-Ez a közösség által karbantartott [Arch wiki](/index.php/Main_Page_(Magyar) "Main Page (Magyar)") remek forrás és először itt érdemes tanácsot kérni a felmerülő kérdésekre. Az [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") csatorna ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) az [angol fórum](https://bbs.archlinux.org/) és a [magyar fórum](http://archlinux.hu/forum) ugyan csak elérhető, ha a válasz máshol nem található. Ezek mellett olvasgasd a `man` oldalakat minden olyan paranccsal kapcsolatban, amelyek még ismeretlenek számodra; ezt legkönnyebben a terminálba beírva a következő módon teheted meg: `man *parancs*`.
+Ez a közösség által karbantartott [Arch wiki](/index.php/Main_page_(Magyar) "Main page (Magyar)") remek forrás és először itt érdemes tanácsot kérni a felmerülő kérdésekre. Az [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") csatorna ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) az [angol fórum](https://bbs.archlinux.org/) és a [magyar fórum](http://archlinux.hu/forum) ugyan csak elérhető, ha a válasz máshol nem található. Ezek mellett olvasgasd a `man` oldalakat minden olyan paranccsal kapcsolatban, amelyek még ismeretlenek számodra; ezt legkönnyebben a terminálba beírva a következő módon teheted meg: `man *parancs*`.
 
 **Megjegyzés:** Az útmutató követése közel létfontosságú a jól konfigurált Arch Linux sikeres telepítéséhez, tehát *kérlek* olvasd át alaposan. Erősen ajánlott minden egyes részt végigolvasása <u>mielőtt</u> bármilyen feladatba kezdenél.
 
@@ -137,7 +137,7 @@ Az útmutató öt fő részre osztható fel:
 
 ## Előkészületek
 
-**Megjegyzés:** Ha egy másik partición lévi már meglévő GNU/Linux disztribúció vagy LiveCD mellé szeretnéd telepíteni, akkor kérlek nézd meg [ezt a wiki bejegyzést](/index.php/Install_from_Existing_Linux "Install from Existing Linux") a teendőid lépéseiről. Ez különösen hasznos tud lenni, ha az Arch-odat [VNC](/index.php/VNC "VNC") vagy [SSH](/index.php/SSH "SSH") segítségével távolról szeretnéd feltenni. Ez az útmutató a hagyományos módon történő telepítést mutatja be.
+**Megjegyzés:** Ha egy másik partición lévi már meglévő GNU/Linux disztribúció vagy LiveCD mellé szeretnéd telepíteni, akkor kérlek nézd meg [ezt a wiki bejegyzést](/index.php/Install_from_existing_Linux "Install from existing Linux") a teendőid lépéseiről. Ez különösen hasznos tud lenni, ha az Arch-odat [VNC](/index.php/VNC "VNC") vagy [SSH](/index.php/SSH "SSH") segítségével távolról szeretnéd feltenni. Ez az útmutató a hagyományos módon történő telepítést mutatja be.
 
 ### Szerezzük be a legfrissebb telepítőt
 
@@ -1387,7 +1387,7 @@ Ha kernel frissítés esetén újra kell indítani a rendszert.
 
 **Note:** Néha, a beéllítások módosításához a felhasználó is jelen kell legyen a frissítésnél; olvasd a pacman kimenetét az erre vonatkozó információkért. További információért lásd a [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files") oldalt.
 
-A pacman kimenete lementődik automatikusan a `/var/log/pacman.log` fájlba. Lásd a [Package Management FAQ](/index.php/FAQ#Package_Management "FAQ") oldalt a GYIK-ért a rendszerfrissítéssel és szoftverkezeléssel kapcsolatban.
+A pacman kimenete lementődik automatikusan a `/var/log/pacman.log` fájlba. Lásd a [Package Management FAQ](/index.php/FAQ#Package_management "FAQ") oldalt a GYIK-ért a rendszerfrissítéssel és szoftverkezeléssel kapcsolatban.
 
 ##### Ignoring Packages
 

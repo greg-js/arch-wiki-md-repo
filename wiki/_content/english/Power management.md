@@ -407,6 +407,8 @@ options snd_ac97_codec power_save=1
 *   To retrieve the manufacturer and the corresponding kernel driver which is used for your sound card, run `lspci -k`.
 *   Toggling the audio card's power state can cause a popping sound or noticeable latency on some broken hardware.
 
+It is also possible to further reduce the audio power requirements by disabling the HDMI audio output, which can done by [blacklisting](/index.php/Blacklisting "Blacklisting") the appropriate kernel modules (e.g. `snd_hda_codec_hdmi` in case of Intel hardware).
+
 ### Backlight
 
 See [Backlight](/index.php/Backlight "Backlight").
@@ -503,6 +505,7 @@ If believing the computer has support for ASPM it can be forced on for the kerne
 
 *   Forcing on ASPM can cause a freeze/panic, so make sure you have a way to undo the option if it does not work.
 *   On systems that do not support it forcing on ASPM can even increase power consumption.
+*   This forces ASPM in kernel while it can still remain disabled in hardware and not work. To check whether this is the case the `dmesg | grep ASPM` command can be used and if that is the case, hardware-specific Wiki article should be consulted.
 
 To adjust to `powersave` do (the following command will not work unless enabled):
 

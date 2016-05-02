@@ -27,6 +27,8 @@ $ xclip -o | xclip -selection clipboard -i
 
 The above command reads data from the PRIMARY selection and writes it to CLIPBOARD selection.
 
+Other [clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard") such as [autocutsel](https://www.archlinux.org/packages/?name=autocutsel) provide automatic synchronization between selection buffers.
+
 ### Intercepting commands’s output
 
 Use *tee* to intercept the output of a command.
@@ -49,34 +51,35 @@ The backlog of a native terminal named `/dev/ttyN` may be accessed via `/dev/vcs
 
 ## A cheatsheet for common emulators
 
-Until the "Notes" column states otherwise, the keys combination is `Ctrl+Shift+c`.
+Unless the "Notes" column states otherwise, the keys combination is `Ctrl+Shift+c`.
 
-| Emulator | Selection → CLIPBOARD | Selection → PRIMARY | Keys combination | Context menu → Copy | Window menu → Copy | Notes |
-| [aterm](https://aur.archlinux.org/packages/aterm/) | No | Yes | No | No | No |
-| [ETerm](https://aur.archlinux.org/packages/ETerm/) | No | Yes | No | No | No |
-| [germinal](https://aur.archlinux.org/packages/germinal/) | No | Yes | Yes | Yes | No |
-| [guake](/index.php/Guake "Guake") | No | Yes | Yes | Yes | No |
-| [konsole](https://www.archlinux.org/packages/?name=konsole) | No | No | Yes | Yes | Yes |
-| [lilyterm](https://www.archlinux.org/packages/?name=lilyterm) | No | Yes | Yes | Yes | No | `Ctrl+Delete` |
-| [lxterminal](https://www.archlinux.org/packages/?name=lxterminal) | No | Yes | Yes | Yes | Yes |
-| [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | No | Yes | Yes | Yes | Yes |
+| Emulator | Selection → PRIMARY | Selection → CLIPBOARD |
+| Automatic | Keys combination | Context menu → Copy | Window menu → Copy | Notes |
+| [aterm](https://aur.archlinux.org/packages/aterm/) | Yes | No | No | No | No |
+| [ETerm](https://aur.archlinux.org/packages/ETerm/) | Yes | No | No | No | No |
+| [germinal](https://aur.archlinux.org/packages/germinal/) | Yes | No | Yes | Yes | No |
+| [guake](/index.php/Guake "Guake") | Yes | No | Yes | Yes | No |
+| [konsole](https://www.archlinux.org/packages/?name=konsole) | Yes | No | Yes | Yes | Yes |
+| [lilyterm](https://www.archlinux.org/packages/?name=lilyterm) | Yes | No | Yes | Yes | No | `Ctrl+Delete` |
+| [lxterminal](https://www.archlinux.org/packages/?name=lxterminal) | Yes | No | Yes | Yes | Yes |
+| [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | Yes | No | Yes | Yes | Yes |
 | [mlterm](https://aur.archlinux.org/packages/mlterm/) | Yes | Yes | No | No | No |
-| [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) | No | Yes | Yes | Yes | No |
-| [putty](https://www.archlinux.org/packages/?name=putty) | No | Yes | No | No | No |
-| [qterminal](https://aur.archlinux.org/packages/qterminal/) | No | Yes | Yes | Yes | Yes |
-| [roxterm](https://www.archlinux.org/packages/?name=roxterm) | No | Yes | Yes | Yes | Yes |
-| [rxvt](https://www.archlinux.org/packages/?name=rxvt) | No | Yes | No | No | No |
-| [sakura](https://www.archlinux.org/packages/?name=sakura) | No | Yes | Yes | Yes | Yes |
-| [st](/index.php/St "St") | No | Yes | No | No | No |
-| [terminator](/index.php/Terminator "Terminator") | No | Yes | Yes | Yes | No |
-| [terminology](https://www.archlinux.org/packages/?name=terminology) | No | Yes | Yes | Yes | No |
-| [termite](/index.php/Termite "Termite") | No | Yes | Yes | No | No |
-| [tilda](/index.php/Tilda "Tilda") | No | Yes | Yes | Yes | No |
-| tinyterm ([tinyterm-git](https://aur.archlinux.org/packages/tinyterm-git/)) | No | Yes | Yes | No | No |
-| [urxvt](/index.php/Urxvt "Urxvt") | Optional | Yes | Yes | No | No | `Ctrl+Alt+c` |
-| XFCE Terminal ([xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)) | No | Yes | Yes | Yes | Yes |
+| [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) | Yes | No | Yes | Yes | No |
+| [putty](https://www.archlinux.org/packages/?name=putty) | Yes | No | No | No | No |
+| [qterminal](https://aur.archlinux.org/packages/qterminal/) | Yes | No | Yes | Yes | Yes |
+| [roxterm](https://www.archlinux.org/packages/?name=roxterm) | Yes | No | Yes | Yes | Yes |
+| [rxvt](https://www.archlinux.org/packages/?name=rxvt) | Yes | No | No | No | No |
+| [sakura](https://www.archlinux.org/packages/?name=sakura) | Yes | No | Yes | Yes | Yes |
+| [st](/index.php/St "St") | Yes | No | No | No | No |
+| [terminator](/index.php/Terminator "Terminator") | Yes | No | Yes | Yes | No |
+| [terminology](https://www.archlinux.org/packages/?name=terminology) | Yes | No | Yes | Yes | No |
+| [termite](/index.php/Termite "Termite") | Yes | No | Yes | No | No |
+| [tilda](/index.php/Tilda "Tilda") | Yes | No | Yes | Yes | No |
+| [tinyterm-git](https://aur.archlinux.org/packages/tinyterm-git/) | Yes | No | Yes | No | No |
+| [urxvt](/index.php/Urxvt "Urxvt") | Yes | Optional | Yes | No | No | `Ctrl+Alt+c` |
+| [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal) | Yes | No | Yes | Yes | Yes |
 | [xterm](/index.php/Xterm "Xterm") | Yes | Yes | Optional | No | No | [[1]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=588785) |
-| [yakuake](/index.php/Yakuake "Yakuake") | No | Yes | Yes | Yes | No |
+| [yakuake](/index.php/Yakuake "Yakuake") | Yes | No | Yes | Yes | No |
 
 ## Special cases
 

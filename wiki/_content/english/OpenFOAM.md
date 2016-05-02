@@ -46,6 +46,6 @@ Paste the following code into your ~/.bashrc file. Whenever you want to run Open
 
 ```
 # OpenFOAM Install
-export FOAM_INST_DIR $HOME/.OpenFOAM
-alias of20x 'source $FOAM_INST_DIR/OpenFOAM-2.0.x/etc/bashrc'
+export FOAM_INST_DIR='$HOME/.OpenFOAM'
+alias of20x='source $FOAM_INST_DIR/OpenFOAM-2.0.x/etc/bashrc'
 ```

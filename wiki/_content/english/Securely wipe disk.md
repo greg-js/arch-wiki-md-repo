@@ -299,7 +299,7 @@ The file copy command `cp` can also be used to rewrite the device, because it ig
 To show speed and time you can use [pv](https://www.archlinux.org/packages/?name=pv):
 
 ```
-# pv --timer --rate /dev/zero > /dev/sd"X"
+# pv --timer --rate --stop-at-size "$(blockdev --getsize64 /dev/sd"XY" )" /dev/zero > /dev/sd"XY"
 
 ```
 

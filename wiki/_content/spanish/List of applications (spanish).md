@@ -338,7 +338,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — Cliente de mensajería de KDE que usa [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Se entiende como un reemplazo de Kopete.
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — Cliente de mensajería de KDE que usa [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Se entiende como un reemplazo de Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -598,7 +598,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 [Wikipedia:es:Pastebin](https://en.wikipedia.org/wiki/es:Pastebin "wikipedia:es:Pastebin")
 
-Pastebin es un servicio que permite pegar información dentro de los [canales IRC](/index.php/IRC_Channel "IRC Channel") para solicitar ayuda en la resolución de problemas. Hay servicios, tanto para textos (por ejemplo, [sprunge.org](http://sprunge.us/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) como para imágenes (por ejemplo, [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Los clientes pastebin permiten envios directamente desde el intérprete de línea de órdenes (consola) sin necesidad de utilizar navegadores web.
+Pastebin es un servicio que permite pegar información dentro de los [canales IRC](/index.php/IRC_channel "IRC channel") para solicitar ayuda en la resolución de problemas. Hay servicios, tanto para textos (por ejemplo, [sprunge.org](http://sprunge.us/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) como para imágenes (por ejemplo, [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Los clientes pastebin permiten envios directamente desde el intérprete de línea de órdenes (consola) sin necesidad de utilizar navegadores web.
 
 **Sugerencia:** El cliente pastebin «sprunge» permite acceder directamente a través de curl: `<orden> | curl -F 'sprunge=<-' http://sprunge.us` También hay un [plugin de sprunge](https://github.com/robbyrussell/oh-my-zsh/wiki/Usage-of-the-%22sprunge%22-command) para [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki) (una herramienta de configuración para la shell de órdenes [Zsh](/index.php/Zsh "Zsh")).
 
@@ -1735,7 +1735,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 #### Interfaz gráfica
 
-Véanse los artículos de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [MPlayer frontends](/index.php/MPlayer#Frontends.2FGUIs "MPlayer") y [mpv](/index.php/Mpv "Mpv").
+Véanse los artículos de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [MPlayer frontends](/index.php/MPlayer#Frontends.2FGUIs "MPlayer") y [mpv](/index.php/Mpv "Mpv").
 
 *   **[Dragon Player](https://en.wikipedia.org/wiki/Kdemultimedia#Dragon_Player "wikipedia:Kdemultimedia")** — Reproductor de vídeo sencillo para KDE. Parte de los grupos [kde](https://www.archlinux.org/groups/x86_64/kde/) y [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/).
 
@@ -1857,7 +1857,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 ### Gestores de paquetes
 
-Véanse los artículos de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [AUR helpers](/index.php/AUR_helpers "AUR helpers") y [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends").
+Véanse los artículos de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [AUR helpers](/index.php/AUR_helpers "AUR helpers") y [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends").
 
 *   **[Pacmatic](/index.php/Pacmatic "Pacmatic")** — Wrapper de pacman para comprobar noticias de Arch antes de actualizar, evitar las actualizaciones parciales y alertar sobre cambios en los archivos de configuración.
 
@@ -1899,7 +1899,7 @@ Véanse los artículos de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main P
 
 ### Herramientas de grabación de CD/DVD
 
-Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [Burning CD/DVD with GUI](/index.php/Optical_disc_drive#Burning_CD.2FDVD.2FBD_with_a_GUI "Optical disc drive").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [Burning CD/DVD with GUI](/index.php/Optical_disc_drive#Burning_CD.2FDVD.2FBD_with_a_GUI "Optical disc drive").
 
 ### Gestores de portapapeles
 
@@ -2457,7 +2457,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of optical character recognition software](https://en.wikipedia.org/wiki/Comparison_of_optical_character_recognition_software "wikipedia:Comparison of optical character recognition software").
 
-Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [Optical Character Recognition#OCR software](/index.php/Optical_Character_Recognition#OCR_software "Optical Character Recognition").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [Optical Character Recognition#OCR software](/index.php/Optical_Character_Recognition#OCR_software "Optical Character Recognition").
 
 ## Seguridad
 
@@ -2467,7 +2467,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of firewalls](https://en.wikipedia.org/wiki/Comparison_of_firewalls "wikipedia:Comparison of firewalls").
 
-Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [Firewalls](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [Firewalls](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)").
 
 #### Seguridad de la red
 
@@ -2543,7 +2543,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software").
 
-Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [Backup programs](/index.php/Backup_programs "Backup programs").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [Backup programs](/index.php/Backup_programs "Backup programs").
 
 #### Aplicaciones para bloquear la pantalla
 
@@ -2565,7 +2565,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page
 
 ### Documentos científicos
 
-Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)") sobre este asunto para obtener más información: [List of_Applications/Documents (Español)#Documentos científicos](/index.php/List_of_Applications/Documents_(Espa%C3%B1ol)#Documentos_cient.C3.ADficos "List of Applications/Documents (Español)").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [List of applications/Documents (Español)#Documentos científicos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol)#Documentos_cient.C3.ADficos "List of applications/Documents (Español)").
 
 ### Matemáticas
 
@@ -2734,7 +2734,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	[http://scidavis.sourceforge.net/](http://scidavis.sourceforge.net/) || [scidavis](https://aur.archlinux.org/packages/scidavis/)
 
-Véase también el apartado: [Hojas de cálculo](/index.php/List_of_Applications_(Espa%C3%B1ol)#Hojas_de_c.C3.A1lculo "List of Applications (Español)")
+Véase también el apartado: [Hojas de cálculo](/index.php/List_of_applications_(Espa%C3%B1ol)#Hojas_de_c.C3.A1lculo "List of applications (Español)")
 
 ### Química y biología
 
@@ -3074,7 +3074,7 @@ Vea también [Comparación de gestores de ventanas de X (en Inglés)](https://en
 
 Vea también [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
 
-*   **bbpager** — Paginador acoplable a paneles para [blackbox](/index.php?title=Blackbox&action=edit&redlink=1 "Blackbox (page does not exist)") y otros gestores de ventanas.
+*   **bbpager** — Paginador acoplable a paneles para [blackbox](/index.php/Blackbox "Blackbox") y otros gestores de ventanas.
 
 	[http://bbtools.sourceforge.net/download.php?file=6](http://bbtools.sourceforge.net/download.php?file=6) || [bbpager](https://www.archlinux.org/packages/?name=bbpager)
 

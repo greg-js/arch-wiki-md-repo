@@ -1,4 +1,4 @@
-[Let’s Encrypt](https://letsencrypt.org/) is a free, automated, and open certificate authority utilizing the ACME protocol. It provides tools to request valid ssl certificates straight from the command line.
+[Let’s Encrypt](https://letsencrypt.org/) is a free, automated, and open certificate authority utilizing the ACME protocol. It provides tools to request valid SSL certificates straight from the command line.
 
 ## Contents
 

@@ -24,26 +24,27 @@ For your convenience you can, for example, open them all in a web browser to ins
 *   [3 Both i686 and x86_64](#Both_i686_and_x86_64)
     *   [3.1 Signed](#Signed_2)
         *   [3.1.1 arcanisrepo](#arcanisrepo)
-        *   [3.1.2 archlinuxcn](#archlinuxcn)
-        *   [3.1.3 catalyst](#catalyst)
-        *   [3.1.4 catalyst-hd234k](#catalyst-hd234k)
-        *   [3.1.5 city](#city)
-        *   [3.1.6 haskell-core](#haskell-core)
-        *   [3.1.7 haskell-happstack](#haskell-happstack)
-        *   [3.1.8 haskell-web](#haskell-web)
-        *   [3.1.9 infinality-bundle](#infinality-bundle)
-        *   [3.1.10 ivasilev](#ivasilev_2)
-        *   [3.1.11 llvm-svn](#llvm-svn)
-        *   [3.1.12 metalgamer](#metalgamer)
-        *   [3.1.13 miffe](#miffe)
-        *   [3.1.14 pipelight](#pipelight)
-        *   [3.1.15 repo-ck](#repo-ck)
-        *   [3.1.16 seblu](#seblu)
-        *   [3.1.17 seiichiro](#seiichiro)
-        *   [3.1.18 sergej-repo](#sergej-repo)
-        *   [3.1.19 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.20 herecura](#herecura)
-        *   [3.1.21 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.2 arch-openrc](#arch-openrc)
+        *   [3.1.3 archlinuxcn](#archlinuxcn)
+        *   [3.1.4 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.5 catalyst](#catalyst)
+        *   [3.1.6 catalyst-hd234k](#catalyst-hd234k)
+        *   [3.1.7 city](#city)
+        *   [3.1.8 haskell-core](#haskell-core)
+        *   [3.1.9 haskell-happstack](#haskell-happstack)
+        *   [3.1.10 haskell-web](#haskell-web)
+        *   [3.1.11 herecura](#herecura)
+        *   [3.1.12 infinality-bundle](#infinality-bundle)
+        *   [3.1.13 ivasilev](#ivasilev_2)
+        *   [3.1.14 llvm-svn](#llvm-svn)
+        *   [3.1.15 metalgamer](#metalgamer)
+        *   [3.1.16 miffe](#miffe)
+        *   [3.1.17 pipelight](#pipelight)
+        *   [3.1.18 repo-ck](#repo-ck)
+        *   [3.1.19 seblu](#seblu)
+        *   [3.1.20 seiichiro](#seiichiro)
+        *   [3.1.21 sergej-repo](#sergej-repo)
+        *   [3.1.22 tredaelli-systemd](#tredaelli-systemd)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 arch-deepin](#arch-deepin)
         *   [3.2.2 archaudio](#archaudio)
@@ -241,6 +242,20 @@ Server = ftp://repo.arcanis.me/repo/$arch
 
 ```
 
+#### arch-openrc
+
+*   **Maintainer:** [Chris Cromer](https://bbs.archlinux.org/profile.php?id=84785)
+*   **Description:** Packages to install and maintain OpenRC with sysvinit for Arch Linux.
+*   **Upstream sources page:** [https://github.com/cromerc/packages-openrc](https://github.com/cromerc/packages-openrc)
+*   **Upstream packages/ISO page:** [https://sourceforge.net/projects/archopenrc/files/arch-openrc/](https://sourceforge.net/projects/archopenrc/files/arch-openrc/)
+*   **Key-ID:** 97BEEEC2
+
+```
+[arch-openrc]
+Server = http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
+
+```
+
 #### archlinuxcn
 
 *   **Maintainers:** [Phoenix Nemo (phoenixlzx)](https://plus.google.com/+PhoenixNemo/), Felix Yan (felixonmars, TU), [lilydjwg](https://twitter.com/lilydjwg), and others
@@ -255,6 +270,18 @@ SigLevel = Optional TrustedOnly
 Server = http://repo.archlinuxcn.org/$arch
 ## or use a CDN (beta)
 #Server = https://cdn.repo.archlinuxcn.org/$arch
+
+```
+
+#### blackeagle-pre-community
+
+*   **Maintainer:** [Ike Devolder](https://www.archlinux.org/people/trusted-users/#idevolder)
+*   **Description:** testing of the by me maintaned packages before moving to *community* repository
+*   **Key-ID:** Not required, as maintainer is a TU
+
+```
+[blackeagle-pre-community]
+Server = http://repo.herecura.be/$repo/$arch
 
 ```
 
@@ -312,6 +339,18 @@ See [ArchHaskell#haskell-happstack](/index.php/ArchHaskell#haskell-happstack "Ar
 #### haskell-web
 
 See [ArchHaskell#haskell-web](/index.php/ArchHaskell#haskell-web "ArchHaskell").
+
+#### herecura
+
+*   **Maintainer:** [Ike Devolder](https://www.archlinux.org/people/trusted-users/#idevolder)
+*   **Description:** additional packages not found in the *community* repository
+*   **Key-ID:** Not required, as maintainer is a TU
+
+```
+[herecura]
+Server = http://repo.herecura.be/$repo/$arch
+
+```
 
 #### infinality-bundle
 
@@ -452,30 +491,6 @@ Server = http://repo.p5n.pp.ru/$repo/os/$arch
 ```
 [tredaelli-systemd]
 Server = http://pkgbuild.com/~tredaelli/repo/systemd/$arch
-
-```
-
-#### herecura
-
-*   **Maintainer:** [Ike Devolder](https://www.archlinux.org/people/trusted-users/#idevolder)
-*   **Description:** additional packages not found in the *community* repository
-*   **Key-ID:** Not required, as maintainer is a TU
-
-```
-[herecura]
-Server = http://repo.herecura.be/$repo/$arch
-
-```
-
-#### blackeagle-pre-community
-
-*   **Maintainer:** [Ike Devolder](https://www.archlinux.org/people/trusted-users/#idevolder)
-*   **Description:** testing of the by me maintaned packages before moving to *community* repository
-*   **Key-ID:** Not required, as maintainer is a TU
-
-```
-[blackeagle-pre-community]
-Server = http://repo.herecura.be/$repo/$arch
 
 ```
 

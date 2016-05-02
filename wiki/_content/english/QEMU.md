@@ -237,7 +237,7 @@ To start QEMU in KVM mode, append `-enable-kvm` to the additional start options.
 
 ### Enabling IOMMU (Intel VT-d/AMD-Vi) support
 
-Using IOMMU opens to features like PCI passthrough and provide memory protection from faulty or malicious devices [[2]](https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit#Advantages) [[3]](https://www.quora.com/Memory-Management-computer-programming/Could-you-explain-IOMMU-in-plain-English).
+Using IOMMU opens to features like PCI passthrough and memory protection from faulty or malicious devices, see [wikipedia:Input-output memory management unit#Advantages](https://en.wikipedia.org/wiki/Input-output_memory_management_unit#Advantages "wikipedia:Input-output memory management unit") and [Memory Management (computer programming): Could you explain IOMMU in plain English?](https://www.quora.com/Memory-Management-computer-programming/Could-you-explain-IOMMU-in-plain-English).
 
 To enable IOMMU:
 
@@ -1072,7 +1072,7 @@ You might also want to install [qemu-guest-agent](https://www.archlinux.org/pack
 
 ### Preparing a Windows guest
 
-**Note:** The only (reliable) way to upgrade a Windows 8.1 guest to Windows 10 seems to be to temporarily choose cpu core2duo,nx for the install [[4]](http://ubuntuforums.org/showthread.php?t=2289210). After the install, you may revert to other cpu settings (8/8/2015).
+**Note:** The only (reliable) way to upgrade a Windows 8.1 guest to Windows 10 seems to be to temporarily choose cpu core2duo,nx for the install [[2]](http://ubuntuforums.org/showthread.php?t=2289210). After the install, you may revert to other cpu settings (8/8/2015).
 
 #### Block device drivers
 

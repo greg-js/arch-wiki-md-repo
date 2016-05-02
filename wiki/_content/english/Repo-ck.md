@@ -12,6 +12,7 @@
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Support](#Support)
     *   [7.2 Downloads interrupt regularly](#Downloads_interrupt_regularly)
+    *   [7.3 Error: signature from "graysky (used to sign repo-ck packages) <graysky@archlinux.us>" is unknown trust](#Error:_signature_from_.22graysky_.28used_to_sign_repo-ck_packages.29_.3Cgraysky.40archlinux.us.3E.22_is_unknown_trust)
 
 ## Installation
 
@@ -143,3 +144,7 @@ Server = http://repo-ck.com/$arch
 Alternatively, change the [pacman](/index.php/Pacman "Pacman") downloader to [wget](/index.php/Improve_pacman_performance#Using_wget "Improve pacman performance"), which automatically resumes downloads.
 
 See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1422475#p1422475) for an explanation of these issues.
+
+### Error: signature from "graysky (used to sign repo-ck packages) <graysky@archlinux.us>" is unknown trust
+
+You must import and sign graysky's gpg keys. Instructions along with his key ID are located at [repo-ck.com](http://repo-ck.com/). See also [Pacman/Package signing#Adding unofficial keys](/index.php/Pacman/Package_signing#Adding_unofficial_keys "Pacman/Package signing").

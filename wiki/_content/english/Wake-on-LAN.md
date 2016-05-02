@@ -154,6 +154,8 @@ Enable Wake-on-LAN by magic packet on that connection:
 
 Then reboot, possibly two times.
 
+From version 1.2.0 Wake-on-LAN settings can be changed graphically using [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor).
+
 ## Trigger a wake up
 
 To trigger WOL on a target machine, its MAC address and external or internal IP should be known.

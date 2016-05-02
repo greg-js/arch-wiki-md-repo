@@ -627,7 +627,7 @@ Many clients listed here (including Pidgin and all it's forks) support multiple 
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Meant as a replacement for Kopete.
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Meant as a replacement for Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -1011,7 +1011,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:Pastebin").
 
-Pastebin services are often used to paste information into [IRC channels](/index.php/IRC_Channel "IRC Channel") to help with troubleshooting. There are services for both text (e.g. [bpaste.net](http://bpaste.net/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) and images (e.g. [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Pastebin clients allow you to post directy from the cli without using a web browser.
+Pastebin services are often used to paste information into [IRC channels](/index.php/IRC_channel "IRC channel") to help with troubleshooting. There are services for both text (e.g. [bpaste.net](http://bpaste.net/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) and images (e.g. [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Pastebin clients allow you to post directy from the cli without using a web browser.
 
 **Tip:** The sprunge and ix pastebins can be accessed directly via curl, which should return a link to the paste:
 ```
@@ -1229,7 +1229,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
 
-*   **[GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP")** — Image editing suite in the vein of proprietary editors such as [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ( [GNU](/index.php/GNU_Project "GNU Project") Image Manipulation Program) has been started in the mid 1990s and has acquired a large number of [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") and additional tools.
+*   **[GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP")** — Image editing suite in the vein of proprietary editors such as [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ([GNU](/index.php/GNU_Project "GNU Project") Image Manipulation Program) has been started in the mid 1990s and has acquired a large number of [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") and additional tools.
 
 	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
 
@@ -2742,7 +2742,7 @@ See also [Wikipedia:Comparison of text editors](https://en.wikipedia.org/wiki/Co
 
 ##### 書本管理員
 
-for more collection apps, see also [Multimedia#Collection_managers](/index.php/Multimedia#Collection_managers "Multimedia")
+for more collection apps, see also [Multimedia#Collection managers](/index.php/Multimedia#Collection_managers "Multimedia")
 
 *   **[Alexandria](https://en.wikipedia.org/wiki/Alexandria_(software) "wikipedia:Alexandria (software)")** — GNOME application to help manage your book collection.
 
@@ -3032,7 +3032,7 @@ See the main article: [Backup programs](/index.php/Backup_programs "Backup progr
 
 ### 科學文件
 
-參閱主文：[List of Applications/Documents (正體中文)#科學文件](/index.php/List_of_Applications/Documents_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E7.A7.91.E5.AD.B8.E6.96.87.E4.BB.B6 "List of Applications/Documents (正體中文)").
+參閱主文：[List of applications/Documents (正體中文)#科學文件](/index.php/List_of_applications/Documents_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E7.A7.91.E5.AD.B8.E6.96.87.E4.BB.B6 "List of applications/Documents (正體中文)").
 
 ### 數學
 
@@ -3501,7 +3501,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 ##### 登入管理員
 
-參閱主文：[顯示管理員#顯示管理員清單](/index.php/Display_Manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E9.A1.AF.E7.A4.BA.E7.AE.A1.E7.90.86.E5.93.A1.E6.B8.85.E5.96.AE "Display Manager (正體中文)").
+參閱主文：[顯示管理員#顯示管理員清單](/index.php/Display_manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E9.A1.AF.E7.A4.BA.E7.AE.A1.E7.90.86.E5.93.A1.E6.B8.85.E5.96.AE "Display manager (正體中文)").
 
 ##### 任務欄 / 面板 / Dock
 

@@ -326,7 +326,7 @@ Alcuni client elencati in seguito (incluso Pidgin e tutti i suoi forks) supporta
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/KDE_(Italiano)#Telepathy "KDE (Italiano)")** — Client di messaggistica istantanea per KDE, che utilizza il framework [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Inteso come un sostituto di Kopete.
+*   **[KDE Telepathy](/index.php/KDE_(Italiano)#KDE_Telepathy "KDE (Italiano)")** — Client di messaggistica istantanea per KDE, che utilizza il framework [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Inteso come un sostituto di Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -576,7 +576,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 ### Client Pastebin
 
-See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:Pastebin"). Pastebin è un servizio che permette di incollare delle informazioni all'interno di [Canali IRC](/index.php/IRC_Channel "IRC Channel") per essere aiutati nella risoluzione dei problemi. Vi sono sia servizi testuali (es. [sprunge.org](http://sprunge.us/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) che di immagini (es. [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). I client Pastebin permettono di postare direttamente da cli senza utilizzare il browser.
+See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:Pastebin"). Pastebin è un servizio che permette di incollare delle informazioni all'interno di [Canali IRC](/index.php/IRC_channel "IRC channel") per essere aiutati nella risoluzione dei problemi. Vi sono sia servizi testuali (es. [sprunge.org](http://sprunge.us/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) che di immagini (es. [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). I client Pastebin permettono di postare direttamente da cli senza utilizzare il browser.
 
 **Suggerimento:** Al servizio pastebin "sprunge" si può accedere direttamente via curl: `<command> | curl -F 'sprunge=<-' http://sprunge.us` Vi sono anche dei [sprunge plugin](https://github.com/robbyrussell/oh-my-zsh/wiki/Usage-of-the-%22sprunge%22-command) per [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki) (un tool di configurazione per la shell [Zsh](/index.php?title=Zsh_(Italiano)&action=edit&redlink=1 "Zsh (Italiano) (page does not exist)")).
 
@@ -676,7 +676,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **Geary** — Semplice client email per il desktop scritto in [Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) "wikipedia:Vala (programming language)").
 
-	[http://redmine.yorba.org/projects/geary/wiki](http://redmine.yorba.org/projects/geary/wiki) || [geary](https://www.archlinux.org/packages/?name=geary)
+	[http://wiki.gnome.org/Apps/Geary/](http://wiki.gnome.org/Apps/Geary/) || [geary](https://www.archlinux.org/packages/?name=geary)
 
 *   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — Client mail maturo e ricco di funzioni parte di KDE Software Compilation. Parte di [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
@@ -1270,7 +1270,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 #### Cattura dello schermo
 
-Si veda |[Taking a Screenshot](/index.php/Taking_a_Screenshot "Taking a Screenshot").
+Si veda |[Taking a screenshot](/index.php/Taking_a_screenshot "Taking a screenshot").
 
 #### Screencast
 
@@ -1805,7 +1805,7 @@ Si veda anche: [AUR helpers](/index.php/AUR_helpers "AUR helpers") and [Pacman G
 
 ### Tool per masterizzare CD/DVD
 
-Consultare: [Masterizzare CD/DVD con una interfaccia grafica](/index.php/Optical_Disc_Drive_(Italiano)#Masterizzare_CD.2FDVD_con_una_interfaccia_grafica "Optical Disc Drive (Italiano)").
+Consultare: [Masterizzare CD/DVD con una interfaccia grafica](/index.php/Optical_disc_drive_(Italiano)#Masterizzare_CD.2FDVD_con_una_interfaccia_grafica "Optical disc drive (Italiano)").
 
 ### Gestore degli appunti
 
@@ -2481,7 +2481,7 @@ Si veda l'articolo completo: [Backup programs](/index.php/Backup_programs "Backu
 
 ### Documenti scientifici
 
-Si veda l'articolo principale: [List_of_Applications/Documents_(Italiano)#Documenti_scientifici](/index.php/List_of_Applications/Documents_(Italiano)#Documenti_scientifici "List of Applications/Documents (Italiano)").
+Si veda l'articolo principale: [List of applications/Documents (Italiano)#Documenti scientifici](/index.php/List_of_applications/Documents_(Italiano)#Documenti_scientifici "List of applications/Documents (Italiano)").
 
 ### Matematica
 
@@ -2637,7 +2637,7 @@ Si veda l'articolo principale: [List_of_Applications/Documents_(Italiano)#Docume
 
 	[http://scidavis.sourceforge.net/](http://scidavis.sourceforge.net/) || [scidavis](https://aur.archlinux.org/packages/scidavis/)
 
-Vedi anche [List of Applications (Italiano)#Fogli di calcolo](/index.php/List_of_Applications_(Italiano)#Fogli_di_calcolo "List of Applications (Italiano)").
+Vedi anche [List of applications (Italiano)#Fogli di calcolo](/index.php/List_of_applications_(Italiano)#Fogli_di_calcolo "List of applications (Italiano)").
 
 ### Chimica e Biologia
 
@@ -3043,7 +3043,7 @@ See the main article: [Command shell](/index.php/Command_shell "Command shell").
 
 See also [Wikipedia:Comparison of X Window System desktop environments](https://en.wikipedia.org/wiki/Comparison_of_X_Window_System_desktop_environments "wikipedia:Comparison of X Window System desktop environments").
 
-Si veda l'articolo principale: [Lista degli Ambienti Desktop](/index.php/Desktop_Environment_(Italiano)#Lista_degli_Ambienti_Desktop "Desktop Environment (Italiano)").
+Si veda l'articolo principale: [Lista degli Ambienti Desktop](/index.php/Desktop_environment_(Italiano)#Lista_degli_Ambienti_Desktop "Desktop environment (Italiano)").
 
 #### Gestori delle finestre (Wm)
 
@@ -3057,13 +3057,13 @@ Si veda l'articolo principale: [Lista degli Ambienti Desktop](/index.php/Desktop
 
 See also [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wiki/Comparison_of_X_window_managers "wikipedia:Comparison of X window managers").
 
-Si veda l'articolo principale: [Elenco dei gestori delle finestre](/index.php/Window_Manager_(Italiano)#Elenco_dei_gestori_di_finestre "Window Manager (Italiano)").
+Si veda l'articolo principale: [Elenco dei gestori delle finestre](/index.php/Window_manager_(Italiano)#Elenco_dei_gestori_di_finestre "Window manager (Italiano)").
 
 #### Applicazioni supportate
 
 ##### Login managers
 
-Si veda l'articolo principale: [Lista dei Gestori di Login disponibili](/index.php/Display_Manager_(Italiano)#Lista_dei_display_manager_disponibili "Display Manager (Italiano)").
+Si veda l'articolo principale: [Lista dei Gestori di Login disponibili](/index.php/Display_manager_(Italiano)#Lista_dei_display_manager_disponibili "Display manager (Italiano)").
 
 ##### Terminal multiplexers etc
 
@@ -3469,7 +3469,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
 
-Si veda l'articolo principale: [Amateur Radio#Software list](/index.php/Amateur_Radio#Software_list "Amateur Radio").
+Si veda l'articolo principale: [Amateur radio#Software list](/index.php/Amateur_radio#Software_list "Amateur radio").
 
 ### Finanza
 

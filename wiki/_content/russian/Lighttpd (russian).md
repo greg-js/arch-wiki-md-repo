@@ -81,7 +81,7 @@ lighttpd доступ в extra репозитории
 
 Вы также можете добавить lighttpd в секцию DAEMONS в `/etc/rc.conf`, чтобы он загружался при старте системы.
 
-Примеры конфигурационных файлов вы можете найти в `/usr/share/lighttpd/config/`.
+Примеры конфигурационных файлов вы можете найти в `/usr/share/doc/lighttpd/config/`.
 
 **Tip:** Вы можете копировать текст из примеров прямо в `/etc/lighttpd/lighttpd.conf` или разместить настройки в отдельных файлах в `/etc/lighttpd/conf.d` (предварительно создав этот каталог). Чтобы включить файл с настройками из `/etc/lighttpd/conf.d` добавьте в `/etc/lighttpd/lighttpd.conf` следующую строку: `/etc/lighttpd/lighttpd.conf`  `include "conf.d/example.conf"` 
 

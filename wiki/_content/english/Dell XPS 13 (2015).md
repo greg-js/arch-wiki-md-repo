@@ -1,16 +1,16 @@
 **Note:** This page refers to the early 2015 model of XPS 13\. For the late 2015 model, see [Dell XPS 13 (2016)](/index.php/Dell_XPS_13_(2016) "Dell XPS 13 (2016)").
 
-| **Device** | **Status** | **Modules** |
-| Video | Working | i915 |
-| Wireless | Working | wl *or* iwlwifi |
-| Bluetooth | Works after installing firmware | btbcm |
-| Audio | Working | snd_hda_intel |
-| Touchpad | Works after configuration | hid_multitouch |
-| Webcam | Working | linux-uvc |
-| Card Reader | Working | rtsx_usb |
-| Wireless switch | Works, but is [problematic](#rfkill_issues_with_Broadcom_wireless) with Broadcom WiFi | rfkill |
+| **Device** | **Status** |
+| Video | Working |
+| Wireless | Working |
+| Bluetooth | Works after installing firmware |
+| Audio | Works, but [requires new kernel options](#I2S_mode) |
+| Touchpad | Works after configuration |
+| Webcam | Working |
+| Card Reader | Working |
+| Wireless switch | Works (Broadcom WiFi has some [issues](#rfkill_issues_with_Broadcom_wireless)) |
 
-The [2015 Dell XPS 13 (9343)](http://www.dell.com/us/p/xps-13-9343-laptop/pd) is the second-generation model of the XPS 13 line, and like its predecessor, it has official Linux support courtesy of Dell's Project Sputnik team. They target Ubuntu 14.04 LTS, but the improvements and support from the Sputnik team are generally applicable to all distros.
+The [2015 Dell XPS 13 (9343)](http://www.dell.com/us/p/xps-13-9343-laptop/pd) is the second-generation model of Dell's XPS 13 line. Like its predecessor, it has official Linux support courtesy of Dell's Project Sputnik team. They target Ubuntu 14.04 LTS, but the improvements and support from the Sputnik team are generally applicable to all distros.
 
 The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide"), [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
@@ -26,19 +26,20 @@ As of kernel 4.1.3, a patched kernel is no longer necessary. However, some manua
     *   [2.4 Audio](#Audio)
         *   [2.4.1 HDA mode](#HDA_mode)
         *   [2.4.2 I2S mode](#I2S_mode)
-        *   [2.4.3 ALSA configuration](#ALSA_configuration)
-    *   [2.5 High quality ICC monitor profiles](#High_quality_ICC_monitor_profiles)
-    *   [2.6 Touchpad](#Touchpad)
-    *   [2.7 Powersaving](#Powersaving)
+            *   [2.4.2.1 Enabling the microphone](#Enabling_the_microphone)
+    *   [2.5 Touchpad](#Touchpad)
+        *   [2.5.1 Synaptics driver](#Synaptics_driver)
+        *   [2.5.2 Libinput driver](#Libinput_driver)
+    *   [2.6 Powersaving](#Powersaving)
+    *   [2.7 Calibrated ICC profile for QHD+ models](#Calibrated_ICC_profile_for_QHD.2B_models)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
     *   [3.2 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
     *   [3.3 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
     *   [3.4 rfkill issues with Broadcom wireless](#rfkill_issues_with_Broadcom_wireless)
     *   [3.5 EFISTUB does not boot](#EFISTUB_does_not_boot)
-    *   [3.6 Repeating keys issue](#Repeating_keys_issue)
-    *   [3.7 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
-    *   [3.8 Sound doesn't work after upgrading to kernel 4.4 / Microphone input under 4.5](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4_.2F_Microphone_input_under_4.5)
+    *   [3.6 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
+    *   [3.7 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
 *   [4 See also](#See_also)
 
 ## Model differences
@@ -57,9 +58,7 @@ There are no exclusive hardware differences between the Developer Edition and th
 
 Most configurations feature the Dell DW1560 802.11ac adapter (Broadcom BCM4352), which requires [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) (in this case, remember to install `linux-headers` too; even if it is listed as an optional dependency) to be installed. See the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for more details and/or assistance.
 
-Some higher-end models do not use the Dell-branded adapter but instead use an Intel Wireless 7265, which is supported by the mainline kernel. This card is generally available as an aftermarket purchase for those wishing to replace the Broadcom wireless in their laptop. Compared to the Broadcom card, the Intel card has a 2-3 times wider reception range and way higher throughput, making it an worthwhile upgrade should you decide to do so. Note that the Intel 7265 card exists as both a WLAN standalone and WLAN/Bluetooth combo card; both work, so it's your decision if you are willing to pay extra to get Bluetooth support or not.
-
-**Tip:** **Intel users:** Intel Linux driver maintainer Emmanuel Grumbach maintains a [fork of the linux-firmware repository](https://git.kernel.org/cgit/linux/kernel/git/iwlwifi/linux-firmware.git) which contains bleeding edge firmware that provides improved throughput and connection stability for the Intel 7265 card, see [linux-firmware-git-iwlwifi](https://aur.archlinux.org/packages/linux-firmware-git-iwlwifi/).
+Some higher-end models do not use the Dell-branded Broadcom adapter but instead use an Intel Wireless 7265, which is supported by the mainline kernel. This card is widely available as an aftermarket purchase for those wishing to replace the Broadcom adapter in their laptop. Compared to the Broadcom card, the Intel card has a 2-3 times wider reception range and a much higher throughput, making it an worthwhile upgrade should you decide to do so.
 
 ### Bluetooth
 
@@ -87,61 +86,49 @@ The sound chipset in this laptop, a Realtek ALC3263, is described as "dual-mode"
 
 #### HDA mode
 
-With BIOS A02+ and Arch kernel 4.3 or older, the sound card will be initialized in HDA mode.
+With BIOS A02+ and Arch kernel **4.3 or older**, the sound card will be initialized in HDA mode.
 
-Microphone support was finally fixed in the mainline kernel in 4.1.3\. All older kernel versions require patches to fix it. To fix it on kernels 4.1.0-4.1.2, apply the patch [available here](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=831bfdf9520e389357cfeee42a6174a73ce7bdb7). To fix it on kernels older than 4.1, apply this patchset: [1](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit?id=e1e62b98ebddc3234f3259019d3236f66fc667f8), [2](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit?id=f3b703326541d0c1ce85f5e570f6d2b6bd4296ec).
-
-Note that if you are dual-booting with Windows, you will have to do a cold boot twice before HDA sound will work in Linux and vice-versa.
-
-#### I2S mode
-
-With BIOS A02+ and Arch kernel 4.4 or newer, the sound card will be initialized in I2S mode.
-
-**Note:** Linux 4.5 requires CONFIG_DW_DMAC=y and SND_SOC_INTEL_BROADWELL_MACH=m statically compiled[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792#c21), otherwise 'aplay -l' doesn't even show broadwell-rt286 anymore. Unfortunately this means having to carry DW_DMAC_CORE in-memory regardless of whether or not it is needed. Users may resort to the [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel until this bug[[2]](https://bugs.archlinux.org/task/48936) is fixed.
-
-I2S support in Linux is quite nascent and wasn't up to par with HDA support until recently, so a quirk flag was enabled in the mainline kernel that would force HDA mode on.[[3]](http://thread.gmane.org/gmane.linux.acpi.devel/75464/focus=75466)[[4]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=18d78b64fddc11eb336f01e46ad3303a3f55d039) This flag has been disabled in the stock Arch kernel as of 4.4.[[5]](https://bugs.archlinux.org/task/47710) Also note that I2S support is known to be broken with older versions of alsalib.[[6]](http://www.spinics.net/lists/linux-acpi/msg57457.html)
-
-In I2S mode, the dual-boot workaround is not necessary.
-
-#### ALSA configuration
-
-By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). In the current case, both cards use the `snd_hda_intel` module. To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
+By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). In the current case, both cards use the `snd_hda_intel` module. To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
 
  `/etc/modprobe.d/alsa-base.conf`  `options snd_hda_intel index=1,0` 
 
-### High quality ICC monitor profiles
+Note that if you are dual-booting with Windows, you will have to do a cold boot twice before HDA sound will work in Linux and vice-versa. This is not necessary in I2S mode.
 
-An ICC profile is a binary file which contains precise data regarding the color attributes of the monitor. It allows you to produce consistent and repeatable results for graphic and document editing and publishing. The following ICC profiles are made with DispcalGUI, ArgyllCMS and a spectrophotometer for absolute color accuracy. Since every monitor is different it is possible to achieve better results calibrating your own monitor, but if you don't have a colorimeter or a spectrophotometer you will get far better results with the following XYZ LUT + MATRIX profiles made with a ~3500 patches testchart instead of the canned ones. If you previously didn't install a canned profile you will notice a night and day difference in color accuracy. Do not use a profile made for the QHD+ version with the FHD one and vice versa. The profiles has been made with the spectrophotometer's high resolution spectral mode, with white and black level drift compensation, the high quality ArgyllCMS switch and 3440 patches. Dynamic Brightness Control has been disabled and the monitor has been turned on at least 30 minutes before commencing the calibration.
+#### I2S mode
 
-*   [QHD+, D65, Gamma 2.2, max luminance](https://mega.nz/#!nkNVQDCI!YYcS32HLWk1Aqry30dmOrt0wrfH9W_VczNesHQEpG_U).
+With BIOS A02+ and Arch kernel **4.4 or newer**, the sound card will be initialized in I2S mode. I2S support requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 1.1.0 or newer.[[2]](http://www.spinics.net/lists/linux-acpi/msg57457.html)
 
-**Note:** You should disable Dynamic Brightness Control to accurately calibrate the QHD+ display: [https://github.com/advancingu/XPS13Linux/issues/2](https://github.com/advancingu/XPS13Linux/issues/2)
+**Note:** Kernel 4.5+ requires the options `CONFIG_DW_DMAC=y` and `SND_SOC_INTEL_BROADWELL_MACH=m` to be statically compiled[[3]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792#c21); otherwise, the sound card will not be recognized. This has been resolved in Arch kernel 4.5.2, which is now in testing.[[4]](https://bugs.archlinux.org/task/48936) In the meantime, users may stay on kernel 4.4 or use the [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
 
-*   FHD, D65, Gamma 2.2, max luminance: coming soon (I will get my hands on the FHD monitor in February.) However, it may not be possible to accurately calibrate the FHD display due to the dynamic contrast behaviour of the panel which cannot be disabled.
+##### Enabling the microphone
+
+The built-in microphone is muted by default. To enable it, open `alsamixer`, then press F6 and select the `broadwell-rt286` sound card. Then, press F4 to switch to the Capture view and ensure that ADC0 has the CAPTURE label. If it doesn't, toggle over to it with your arrow keys and press the spacebar to turn on CAPTURE. Finally, toggle over to the Mic item and raise the volume to 100.
 
 ### Touchpad
 
-With the latest BIOS patch, most of the touchpad functions should work, although [palm detection](/index.php/Touchpad_Synaptics#Using_the_driver.27s_automatic_palm_detection "Touchpad Synaptics") does not work in i2c mode yet. For advanced settings with [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), the *psmouse* kernel module must be [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules") first.
+With the latest BIOS, the touchpad should work out-of-the-box with either the synaptics or libinput drivers.
 
-The touchpad may freeze if two fingers are detected on the pad. This can be fixed by setting `synclient Clickpad=1`
+#### Synaptics driver
 
-If your desktop does not provide useful default settings for the clickpad (no right or middle button emulation, for example) or you want more control than your desktop environments settings provide, see [Touchpad Synaptics](/index.php/Touchpad_Synaptics#Buttonless_touchpads_.28aka_ClickPads.29 "Touchpad Synaptics")
+For more advanced settings with the Synaptics driver, see [Touchpad Synaptics](/index.php/Touchpad_Synaptics#Buttonless_touchpads_.28aka_ClickPads.29 "Touchpad Synaptics").
 
-If you need working palm detection, you can use [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). The libinput driver supports nearly all button layouts out of the box with few additional settings.
+If the touchpad freezes when you use more than one finger, try enabling Clickpad mode with `synclient Clickpad=1`.
 
- `/etc/X11/xorg.conf.d/50-synaptics.conf` 
+#### Libinput driver
+
+For better multi-touch support, you can use [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). The libinput driver supports nearly all button layouts out of the box with few additional settings.
+
+ `/etc/X11/xorg.conf.d/50-libinput.conf` 
 ```
 Section "InputClass"
 	Identifier "touchpad"
-	MatchProduct "DLL0665:01 06CB:76AD UNKNOWN"
+	MatchProduct "DLL0665:01 06CB:76AD Touchpad"
 	Driver "libinput"
 	Option	"Tapping"	"on"
 	Option	"AccelSpeed"	"1"
 EndSection
 
 ```
-
-For kernel >= 4.4, the touchpad description is "DLL0665:01 06CB:76AD Touchpad".
 
 ### Powersaving
 
@@ -161,6 +148,16 @@ Additionally, [powertop](/index.php/Powertop "Powertop") may also be employed to
 *   Enabling PSR support, via `i915.enable_psr=1`, will further reduce idle power usage to ~2.6 W. As of kernel version 4.3.3 it still causes occasional flickering but no longer so much as to be unusable.
 *   `i915.lvds_downclock=1` for lvds_downclock is no longer needed. From the MacBook page: "there's a new auto-downclock for eDP panels in recent kernels and it's enabled by default if available, so don't use - recommendation from irc #intel-gfx").
 
+### Calibrated ICC profile for QHD+ models
+
+**Warning:** This profile is only for QHD+ models. Do not use it if you have the FHD model of the XPS 13.
+
+An [ICC profile](/index.php/ICC_profiles "ICC profiles") is a binary file which contains precise data regarding the color attributes of the monitor. It allows you to produce consistent and repeatable results for graphic and document editing and publishing. The following ICC profiles are made with DispcalGUI, ArgyllCMS and a spectrophotometer for absolute color accuracy. It is possible to achieve better results by calibrating your own monitor, but generally this profile will be an improvement over the stock profile.
+
+This profile has been made with the spectrophotometer's high resolution spectral mode, with white and black level drift compensation, the high quality ArgyllCMS switch and 3440 patches. Dynamic Brightness Control has been disabled and the monitor has been turned on at least 30 minutes before commencing the calibration.
+
+*   [QHD+, D65, Gamma 2.2, max luminance](https://mega.nz/#!nkNVQDCI!YYcS32HLWk1Aqry30dmOrt0wrfH9W_VczNesHQEpG_U).
+
 ## Troubleshooting
 
 ### Pink & green artifacts in video or webcam output
@@ -177,17 +174,13 @@ If `wifi-menu` and `iwlist scan` fail after driver installation and reboot, try 
 
 ### rfkill issues with Broadcom wireless
 
-With kernel 4.4 and Broadcom WiFi card, the wireless switch has no effect except freezing the pointer in the KDE desktop (to unfreeze it switch to another virtual console and back).
+With kernel 4.4 and Broadcom WiFi card, the wireless switch has no effect except freezing the pointer in the KDE desktop. To unfreeze it, switch to another virtual console and back.
 
-With lower kernel versions it switches the wireless card on/off at the hardware level, but the Broadcom driver does not not react to it properly: it does not realise the card is off, and only sees a lost connection. It then fails to recover when the card is switched back on. You can work-around this issue by switching WiFi off and on again in the NetworkManager applet or by setting `/sys/class/rfkill/rfkill0/state` to 0 and then 1\. Alternatively, you can disable the "Wireless Switch" control in the firmware setup.
+With lower kernel versions, it switches the wireless card on/off at the hardware level, but the Broadcom driver does not not react to it properly: it does not realise the card is off, and only sees a lost connection. It then fails to recover when the card is switched back on. You can work-around this issue by switching WiFi off and on again in the NetworkManager applet or by setting `/sys/class/rfkill/rfkill0/state` to 0 and then 1\. Alternatively, you can disable the "Wireless Switch" control in the firmware setup.
 
 ### EFISTUB does not boot
 
 As of version A07, the BIOS does not pass any boot parameters to the kernel. Use a [UEFI boot loader](/index.php/Boot_loaders#UEFI-only_boot_loaders "Boot loaders") instead. [systemd-boot](/index.php/Systemd-boot "Systemd-boot") works with current kernels.
-
-### Repeating keys issue
-
-BIOS A07 should fix this.
 
 ### Random kernel hangs at boot
 
@@ -198,13 +191,11 @@ See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems
 
 ```
 
-### Sound doesn't work after upgrading to kernel 4.4 / Microphone input under 4.5
+### Sound doesn't work after upgrading to kernel 4.4+
 
-You need to do two cold boots (*don't* reboot; shutdown and turn back on again) to make sound work again. This is necessary because I2S support was enabled in the Arch 4.4 stock kernel, and the XPS 13's embedded controller requires two cold boots to recognize changes in the sound chipset mode. See the Audio section above for more information.
+You need to do two cold boots (*don't* reboot; shutdown and turn back on again) to make sound work again. This is necessary because I2S support was enabled in the Arch 4.4 stock kernel, and the XPS 13's embedded controller requires two cold boots to recognize changes in the sound chipset mode.
 
-It is reported that recompiling the kernel with the CONFIG_ACPI_REV_OVERRIDE_POSSIBLE option will re-enable the microphone. See the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208674) and [bug report](https://bugs.archlinux.org/task/47989) for information.
-
-As of late April 2016, the default Arch kernel 4.5, in the testing repo, appears to support all sound functions without being custom compiled. It appears to be necessary to bring up pavucontrol and toggle between mic input sources to "kickstart" the mic input.
+Refer to the Audio section above for more info, as well as the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208674) and [Arch bug report](https://bugs.archlinux.org/task/47989).
 
 ## See also
 

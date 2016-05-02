@@ -741,7 +741,7 @@ See also [Wikipedia:Comparison of instant messaging clients#Multiprotocol_client
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[Telepathy](/index.php/Kde#Telepathy "Kde")** — 一个KDE 即时通讯客户端，使用[Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)")框架.作为Kopete的替代品而生.
+*   **[Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — 一个KDE 即时通讯客户端，使用[Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)")框架.作为Kopete的替代品而生.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -4050,7 +4050,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 ### 学术文档
 
-参见主条目 [List of Applications/Documents#Scientific documents](/index.php/List_of_Applications/Documents#Scientific_documents "List of Applications/Documents").
+参见主条目 [List of applications/Documents#Scientific documents](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents").
 
 ### 数学
 
@@ -4526,7 +4526,7 @@ See also [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wi
 
 See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
 
-*   **bbpager** — Dockable pager for [blackbox](/index.php?title=Blackbox&action=edit&redlink=1 "Blackbox (page does not exist)") and other window managers.
+*   **bbpager** — Dockable pager for [blackbox](/index.php/Blackbox "Blackbox") and other window managers.
 
 	[http://bbtools.sourceforge.net/download.php?file=6](http://bbtools.sourceforge.net/download.php?file=6) || [bbpager](https://www.archlinux.org/packages/?name=bbpager)
 

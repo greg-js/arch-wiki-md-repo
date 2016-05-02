@@ -139,9 +139,7 @@ Self-test 560K passed!
 
 ### Linpack
 
-**Note:** The AUR linpack package runs only on Intel CPUs.
-
-Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability. [linpack](https://aur.archlinux.org/packages/linpack/) is available from the AUR. After installation, users should adjust `/etc/linpack.conf` according to the amount of memory on the target system.
+[linpack](https://aur.archlinux.org/packages/linpack/) makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. It is an excellent way to stress CPUs for stability (only Intel CPUs are supported). After installation, users should copy `/usr/share/linpack/linpack.conf` to `~/.config/linpack.conf` and adjust it according to the amount of memory on the system.
 
 ### Systester (AKA SuperPi for Windows)
 
@@ -171,7 +169,7 @@ Once it is installed, you can run the Diagnostic Tool by clicking on the IPDT Ic
 
 ## Stressing Memory
 
-A very good program for stress testing memory is [Memtest86+](http://www.memtest.org/). It is based on the well-known original memtest86 written by Chris Brady. Memtest86+ is, like the original, released under the terms of the GNU General Public License (GPL). No restrictions for use, private or commercial exist other than the ones mentioned in the GNU GPL.
+A very good program for stress testing memory is [Memtest86+](http://www.memtest.org/). It is based on the well-known original memtest86 written by Chris Brady. Memtest86+ is, like the original, released under the terms of the GNU General Public License (GPL).
 
 ### Running Memtest86+
 

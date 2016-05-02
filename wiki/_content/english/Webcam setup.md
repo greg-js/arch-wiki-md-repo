@@ -18,6 +18,7 @@ This is a guide to setting up your webcam in Arch Linux.
 *   [3 Make sure the module is loaded for your webcam](#Make_sure_the_module_is_loaded_for_your_webcam)
 *   [4 Permissions](#Permissions)
 *   [5 Webcam configuration](#Webcam_configuration)
+    *   [5.1 Webcam resolution](#Webcam_resolution)
 *   [6 Get software to use your webcam](#Get_software_to_use_your_webcam)
     *   [6.1 Cheese](#Cheese)
     *   [6.2 QtCAM](#QtCAM)
@@ -206,6 +207,31 @@ Permissions to access video devices (e.g. `/dev/video0`) are handled by [udev](/
 
 If you want to configure brightness, color and other webcam parameters (e.g. in the case when out-of-the-box colors are too bluish/reddish/greenish) you may use [GTK+ UVC Viewer](http://guvcview.berlios.de/) (guvcview), available in the [Official repositories](/index.php/Official_repositories "Official repositories") as package [guvcview](https://www.archlinux.org/packages/?name=guvcview). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications (e.g. Skype).
 
+### Webcam resolution
+
+[#Identify your webcam](#Identify_your_webcam), for example:
+
+ `$ lsusb` 
+```
+Bus 001 Device 002: ID 5986:0241 Acer, Inc BisonCam, NB Pro
+...
+
+```
+
+Then use the `Bus` and `Device` numbers to get more information on that device:
+
+ `$ lsusb -s 001:002 -v | egrep "Width|Height"` 
+```
+wWidth    640
+wHeight   480
+wWidth    1280
+wHeight   1024
+...
+
+```
+
+Which should print the height, width pairs the camera is capable of - in this case, 1280x1024 plus some smaller ones.[[2]](http://askubuntu.com/questions/214977/how-can-i-find-out-the-supported-webcam-resolutions/214990#214990)
+
 ## Get software to use your webcam
 
 Version 2.6.27 of the Linux kernel supports [many new webcam drivers](http://mxhaard.free.fr/spca5xx.html). Legacy Video4Linux API has been dropped, and these drivers now only support Video4Linux version 2\. Pixel format decoding has been pushed to user space, since Video4Linux version 2 does not support kernel space decoding. The libv4l library provides userland applications with pixel decoding services and will be used by most programs. Other compatibility layers are also available.
@@ -368,7 +394,7 @@ This is very similar to Microsoft NetMeeting. Install the [ekiga](https://www.ar
 
 ### Sonic-snap
 
-[sonic-snap](https://aur.archlinux.org/packages/sonic-snap/) [[2]](http://www.stolk.org/sonic-snap/) is a viewer/grabber for sn9c102-based webcams **only**.
+[sonic-snap](https://aur.archlinux.org/packages/sonic-snap/) [[3]](http://www.stolk.org/sonic-snap/) is a viewer/grabber for sn9c102-based webcams **only**.
 
 ### Skype
 

@@ -2,7 +2,7 @@
 
 Este documento irá guiá-lo com o processo de instalação do [Arch Linux](/index.php/Arch_Linux "Arch Linux") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalá-lo, é aconselhado que leia o [FAQ](/index.php/FAQ "FAQ").
 
-A [ArchWiki](/index.php/Main_page "Main page") que é mantida pela comunidade, é o primeiro recurso que deve ser consultada se surgirem problemas. O [IRC Channel](/index.php/IRC_Channel "IRC Channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) e o [forums](https://bbs.archlinux.org/) também são excelentes recursos quando uma resposta não pode ser encontrada em outro lugar. Conforme [O Jeito Arch](/index.php/The_Arch_Way_(Portugu%C3%AAs) "The Arch Way (Português)"), você é encorajado a usar `man *command*` para ler a página `man` de qualquer comando que você não estiver familiarizado.
+A [ArchWiki](/index.php/Main_page "Main page") que é mantida pela comunidade, é o primeiro recurso que deve ser consultada se surgirem problemas. O [IRC channel](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) e o [forums](https://bbs.archlinux.org/) também são excelentes recursos quando uma resposta não pode ser encontrada em outro lugar. Conforme [O Jeito Arch](/index.php/The_Arch_Way_(Portugu%C3%AAs) "The Arch Way (Português)"), você é encorajado a usar `man *command*` para ler a página `man` de qualquer comando que você não estiver familiarizado.
 
 ## Contents
 
@@ -28,8 +28,9 @@ A [ArchWiki](/index.php/Main_page "Main page") que é mantida pela comunidade, �
         *   [3.2.3 Proxy](#Proxy)
             *   [3.2.3.1 Configurando o pacman](#Configurando_o_pacman)
             *   [3.2.3.2 Configurando o wget](#Configurando_o_wget)
-    *   [3.3 Preparando os Discos](#Preparando_os_Discos)
-        *   [3.3.1 Exemplo](#Exemplo)
+    *   [3.3 Preparando os dispositivos de armazenamento](#Preparando_os_dispositivos_de_armazenamento)
+        *   [3.3.1 Identificando os discos](#Identificando_os_discos)
+        *   [3.3.2 MBR (Master Boot Record)](#MBR_.28Master_Boot_Record.29)
     *   [3.4 Montando as Partições](#Montando_as_Parti.C3.A7.C3.B5es)
     *   [3.5 Selecionando um repositório](#Selecionando_um_reposit.C3.B3rio)
     *   [3.6 Instalando o sistema Base](#Instalando_o_sistema_Base)
@@ -121,7 +122,7 @@ O guia é dividido em 3 componentes principais:
 
 ## Preparar a Instalação
 
-**Nota:** Se você desejar instalar em outra partição a partir de uma distribuição GNU/Linux já existente ou o LiveCD, por favor veja [este artigo de wiki](/index.php/Install_from_Existing_Linux_(Portugu%C3%AAs) "Install from Existing Linux (Português)") para obter as etapas para fazer isso. Isso pode ser útil especialmente se você planeja instalar o Arch via VNC ou SSH remotamente. O seguinte artigo assume que a instalação ocorrerá por meios convencionais.
+**Nota:** Se você desejar instalar em outra partição a partir de uma distribuição GNU/Linux já existente ou o LiveCD, por favor veja [este artigo de wiki](/index.php/Install_from_existing_Linux_(Portugu%C3%AAs) "Install from existing Linux (Português)") para obter as etapas para fazer isso. Isso pode ser útil especialmente se você planeja instalar o Arch via VNC ou SSH remotamente. O seguinte artigo assume que a instalação ocorrerá por meios convencionais.
 
 ### Obtendo a última mídia de instalação
 
@@ -450,17 +451,23 @@ ftp_proxy = http://usuario:senha@ipdoproxy:portadoproxy/
 
 Mais informações sobre configuração de proxy podem ser encontradas em: [Proxy settings](/index.php/Proxy_settings "Proxy settings").
 
-### Preparando os Discos
+### Preparando os dispositivos de armazenamento
 
-**Warning:** O particionamento pode causar destruição de dados. Recomendamos **fortemente** que efetue um backup de qualquer informação importante antes de proceder com este passo.
+**Warning:**
 
-Para completos iniciantes, encorajamos ferramentas gráficas de particionamento. O [GParted](http://gparted.sourceforge.net/download.php) é um bom exemplo de uma distribuição Linux live, assim como [Parted Magic](https://en.wikipedia.org/wiki/Parted_Magic "wikipedia:Parted Magic"), etc. Um dispositivo deve ser primeiramente particionado e então as partições serão formatadas com um [sistema de arquivos](/index.php/File_systems "File systems") antes de reiniciar.
+*   Este passo irá guiá-lo no particionamento e formatação do seu disco;
+*   Leia com muita atenção **TODAS** as etapas, dicas e alertas desta seção;
+*   O particionamento ou formatação **poderá causar perda de dados ou torná-los inacessíveis**, portanto é aconselhável que seja feita uma **cópia de segurança dos seus arquivos** antes de proceder com esta etapa;
+*   Se você pretende fazer a instalação em paralelo (dual boot) com um sistema Windows que utilize UEFI/GPT evite formatar a partição UEFI existente, pois ela inclui o arquivo *.efi* do Windows necessário para carregá-lo.
 
-Caso já tenha executado este passo, prossiga para [Montando as partições](#Montando_as_Parti.C3.A7.C3.B5es). Caso contrário, siga o exemplo:
+**Nota:**
 
-#### Exemplo
+*   Caso esteja instalando o Arch Linux em um dispositivo USB, veja [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key");
+*   Se você possui um computador apenas com suporte a **BIOS/Legacy** utilize a tabela de partições **MBR** (Master Boot Record) por ser de simples configuração;
+*   Você pode utilizar a tabela de partições **GPT** (GUID Partition Table) em um computador **BIOS/Legacy**, mas isso requer configurações adicionais;
+*   Se você possui um computador com suporte a **UEFI** você deve utilizar a tabela de partições **GPT** (GUID Partition Table).
 
-A mídia de instalação do Arch Linux provê as seguinter ferramentas de particionamento:
+A mídia de instalação do Arch Linux provê as seguintes ferramentas de particionamento:
 
 *   [gdisk](https://en.wikipedia.org/wiki/gdisk "wikipedia:gdisk") – Suporta apenas tabelas de partição [GPT](/index.php/GPT "GPT").
 
@@ -468,60 +475,85 @@ A mídia de instalação do Arch Linux provê as seguinter ferramentas de partic
 
 *   [parted](https://en.wikipedia.org/wiki/parted "wikipedia:parted") – Suporta ambas.
 
-Este exemplo utiliza o **cfdisk**, mas ele pode ser facilmente adaptado para o **gdisk**, que permite o particionamento em tabelas do tipo GPT.
+#### Identificando os discos
 
-**Notas sobre o boot [UEFI](/index.php/UEFI "UEFI"):**
+Antes de tudo você precisa identificar qual o disco que será utilizado para a instalação do sistema. O comando abaixo irá listar os discos disponíveis e suas respectivas estruturas de partições, se houver:
 
-*   Se você possui uma placa-mãe com suporte a UEFI, você precisará criar uma partição [UEFI](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux "Unified Extensible Firmware Interface") extra.
-*   É recomendado sempre usar GPT para boot UEFI, pois algumas firmwares UEFI não permitem inicialização EFI-MBR.
+```
+# lsblk
 
-**Notas sobre o particionamento [GPT](/index.php/GPT "GPT"):**
+```
 
-*   Se você não está configurando dual boot com o Windows, utilize GPT ao invés de MBR. Leia a lista de vantagens da [GPT](/index.php/GPT "GPT").
-*   Se você possui uma placa mãe com BIOS(ou planeja iniciar em modo de compatibilidade BIOS) e deseja configurar o GRUP em um driver particionado via GPT, você precisará criar uma [Partiçaõ de boot BIOS](/index.php/GRUB#GPT_specific_instructions "GRUB") de 2 MiB. O Syslinux não precisa de uma.
+Note que nem todos os dispositivos listados estarão disponíveis para a instalação do Arch Linux (o que inclui a que está sendo utilizada para carregar o CD/USB do Arch Linux). Os terminados em `rom`, `loop` ou `airoot` podem ser ignorados.
 
-**Nota:** Caso esteja instalando o Arch de um driver USB, veja [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key").
+```
+NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda               8:0    0    80G  0 disk
+└─sda1            8:1    0    80G  0 part
+
+```
+
+**Nota:**
+
+*   A instalação do Arch Linux pode ser feita apenas com as partições raiz `/` e a `swap`;
+*   Geralmente se recomenda colocar o dobro do tamanho de sua memória RAM para a partição `swap`, pois esse espaço será necessário caso você "hiberne" o sistema;
+*   É recomendável o mínimo de **512MB** na partição `/boot` para que não se tenha problemas ao atualizar o kernel do sistema;
+*   Se você pretende utilizar **LVM** (Logical Volume Manager) é importante deixar a partição `/boot` **fora da partição utilizada para a LVM**;
+*   Os diretórios `/bin`, `/sbin`, `/lib`, `/etc`, `/dev` e `/proc` devem permanecer na mesma partição que a raiz `/`, ou seja, não devem ser particionados.
+
+Os exemplos a seguir usarão o seguinte particionamento:
+
+*   2048MB (2GB) para a partição `swap` (utilizando como base um computador com 1GB de memória RAM);
+*   512MB para a partição `/boot`;
+*   15360MB (15GB) para a partição raiz `/`; e
+*   Todo o espaço restante para a partição `/home`.
+
+Vale enfatizar que particionamento de disco trata-se de gosto pessoal, e que este exemplo existe para propósitos ilustrativos. Veja [Partitioning](/index.php/Partitioning "Partitioning").
+
+#### MBR (Master Boot Record)
+
+Para o particionamento de um disco utilizando a tabela de partições **MBR** (Master Boot Record) vamos utilizar a ferramenta `cfdisk`:
 
 ```
 # cfdisk /dev/sda
 
 ```
 
-Este exemplo mostrará um sistema que terá 15 GB de partição raíz (`/`), 1GB de partição `swap`, e o espaço remanescente será destinado ao `/home`.
+**Swap:**
 
-Vale enfatizar que particionamento de disco trata-se de gosto pessoal, e que este exemplo existe para propósitos ilustrativos. Veja [Partitioning](/index.php/Partitioning "Partitioning").
+*   Escolha Nova (ou pressione `N`) – `Enter` para Primária - digite "2048" – `Enter` para "No início".
+*   Escolha o tipo (ou pressione `T`) – pressione qualquer tecla para rolar a lista para baixo - `Enter` para 82.
+
+**Boot**
+
+*   Pressione seta para baixo para mover a seleção para o "espaço livre" no disco rígido.
+*   Escolha Nova (ou pressione `N`) - `Enter` para Primária - digite "512" - `Enter` para "No início" - `Enter` para Bootável.
 
 **Raíz:**
 
-*   Escolha Nova (ou pressione `N`) - `Enter` para Primaria - digite "15360" - `Enter` para "No início" - `Enter` para Bootável.
-
-**Swap:**
-
 *   Pressione seta para baixo para mover a seleção para o "espaço livre" no disco rígido.
-*   Escolha Nova (ou pressione `N`) - `Enter` para Primaria - digite "1024" – `Enter` para "No início".
-*   Escolha o tipo (ou pressione `T`) – pressione qualquer tecla para rolar a lista para baixo - `Enter` para 82.
+*   Escolha Nova (ou pressione `N`) - `Enter` para Primária - digite "15360" - `Enter` para "No início".
 
 **Home:**
 
 *   Pressione seta para baixo para mover a seleção para o "espaço livre" no disco rígido.
-*   Escolha Nova (ou pressione `N`) – `Enter` para Primaria - `Enter` para usar o restante do espaço em disco.
+*   Escolha Nova (ou pressione `N`) – `Enter` para Primária - `Enter` para usar o restante do espaço em disco.
 
-O resultado do particionamento ficara parecido com este:
+O resultado do particionamento ficará parecido com este:
 
 ```
 Name    Flags     Part Type    FS Type          [Label]       Size (MB)
 -----------------------------------------------------------------------
-sda1    Boot       Primary     Linux                             15360
-sda2               Primary     Linux swap / Solaris              1024
-sda3               Primary     Linux                             133000*
+sda1               Primary     Linux swap / Solaris              2048
+sda2    Boot       Primary     Linux                             512
+sda3               Primary     Linux                             15360
+sda4               Primary     Linux                             133000*
 
 ```
 
-Verifique novamente, e se certifique que você está contente com os tamanhos das partições assim como o layout delas antes de continuar.
+**Nota:** A tabela de partição **MBR** só suporta **4 partições primárias**. Caso queira incluir mais partições à instalação do sistema você deve criar apenas **3 partições primárias** e as **demais partições** que se deseja incluir **devem ser lógicas**.
 
-Se quiser reiniciar o processo, você pode simplesmente selecionar "Sair" (ou pressionar `Q`) para sair do particionador sem salvar quaisquer alterações feitas no disco. Depois, basta executar o cfdisk novamente.
-
-Se tiver satisfeito, selecione Gravar (ou pressione `Shift+W`) para finalizar a gravação da tabela de partições para o disco. Digite "Sim"(yes) e selecione Sair (ou pressionar `Q`) para sair do cfdisk.
+Se quiser reiniciar o processo, você pode simplesmente selecionar "Sair" (ou pressionar `Q`) para sair do particionador sem salvar quaisquer alterações feitas no disco. Depois, basta executar o cfdisk novamente. "sim" (ou yes, caso não tenha alterado o idioma) e selecione Sair (ou pressionar `Q`) para sair do cfdisk.
 
 Particionar não é o bastante; As partições precisam de um [File systems](/index.php/File_systems "File systems"). Para formatar as partições com um sistema de arquivos ext4:
 
@@ -1217,7 +1249,7 @@ Vá em frente e logue com sua conta de usuário.
 
 ### Gerenciamento de pacotes
 
-Veja [pacman](/index.php/Pacman "Pacman") e [gerenciamento de pacotes](/index.php/FAQ#Package_Management "FAQ") para respostas sobre instalação, atualização e gerenciamento de pacotes.
+Veja [pacman](/index.php/Pacman "Pacman") e [gerenciamento de pacotes](/index.php/FAQ#Package_management "FAQ") para respostas sobre instalação, atualização e gerenciamento de pacotes.
 
 ### Gerenciamento de serviços
 

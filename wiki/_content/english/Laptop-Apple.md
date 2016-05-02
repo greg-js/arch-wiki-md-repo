@@ -3,10 +3,10 @@
 
 ## Model List
 
-| Model Version | Arch Linux
-Install CD Version
- | Hardware Support | Remark |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | MacBook Pro Rev3 | x86_64 2007.08 | Yes | Yes | Yes | Yes | Yes | Cpufreq + pm-utils | Not Used | - | - |
 | MacBook Mid2007 | i686 2008.03 | Yes | Yes | Yes | Yes | Not used | Cpufreq + laptop-mode-tools | Not Used | - | Suspend-to-RAM working ok |
 | MacBook Mid2007 | x86_64 2009.08 | Yes | Yes | Yes | Yes | Yes | pm-utils | Not Used | - | All works out-of-the box, except iSight |

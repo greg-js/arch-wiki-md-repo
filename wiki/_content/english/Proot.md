@@ -28,4 +28,4 @@ proot internally utilizes the qemu user-mode emulator to allow programs to be ru
 
 ## Security
 
-Like chroot, proot provides only filesystem level isolation. Programs inside the proot "jail" share the same kernel, hardware, process space, and networking subsystem. chroot and proot are not designed to be substitutes for real [virtualization](/index.php?title=Virtualization&action=edit&redlink=1 "Virtualization (page does not exist)") applications, such as hypervisors and paravirtualizers.
+Like chroot, proot provides only filesystem level isolation. Programs inside the proot "jail" share the same kernel, hardware, process space, and networking subsystem. chroot and proot are not designed to be substitutes for real [virtualization](/index.php/Virtualization "Virtualization") applications, such as hypervisors and paravirtualizers.
