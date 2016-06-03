@@ -8,6 +8,7 @@ This page explains how to setup Arch to use a US Department of Defense [Common A
     *   [3.1 Firefox](#Firefox)
         *   [3.1.1 Load security device](#Load_security_device)
         *   [3.1.2 Import the DoD Certificates](#Import_the_DoD_Certificates)
+    *   [3.2 Chromium/Google Chrome](#Chromium.2FGoogle_Chrome)
 *   [4 Testing](#Testing)
 *   [5 Debugging](#Debugging)
 
@@ -15,7 +16,7 @@ This page explains how to setup Arch to use a US Department of Defense [Common A
 
 Install [ccid](https://www.archlinux.org/packages/?name=ccid) and [opensc](https://www.archlinux.org/packages/?name=opensc) from [official repositories](/index.php/Official_repositories "Official repositories").
 
-There are two places in `/etc/opensc.conf` that comment out `enable_pinpad = false`. If you card reader does not have a pin pad, uncomment these lines.
+There are two places in `/etc/opensc.conf` that comment out `enable_pinpad = false`. If your card reader does not have a pin pad, uncomment these lines.
 
 ## Enable pcscd
 
@@ -39,6 +40,16 @@ The primary root certificate used has a CN of "DoD Root CA 2": this certificate 
 2.  Extract the root certificate into a PEM-formatted file.
 
 `$ openssl pkcs7 -inform DER -in rel3_dodroot_2048.p7b -print_certs | sed -n '/subject=.*CN=DoD Root CA 2/,${/^$/q;P;D}' > DoD_Root_CA_2.pem`
+
+### Chromium/Google Chrome
+
+1\. Complete the setup for [Firefox](/index.php/Firefox "Firefox").
+
+2\. Ensure CAC is connected, [Chromium](/index.php/Chromium "Chromium") is closed and enter the following in a terminal: `$ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/lopensc-pkcs11.so`
+
+3\. Navigate to Settings -> Show Advanced Settings -> Manage Certificates -> Authorities to load CA bundle from the PEM-formatted file from above.
+
+You may need to import the other DoD certs for [Chromium](/index.php/Chromium "Chromium") manually. All current certs can be found [http://militarycac.com/maccerts/AllCerts.zip](http://militarycac.com/maccerts/AllCerts.zip).
 
 ## Testing
 

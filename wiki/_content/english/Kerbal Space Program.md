@@ -5,12 +5,14 @@ Since version 0.19, Kerbal Space Program includes a native Linux version. Howeve
 *   [1 Installation](#Installation)
 *   [2 Known issues](#Known_issues)
     *   [2.1 Game never progresses past initial loading](#Game_never_progresses_past_initial_loading)
-    *   [2.2 No text display](#No_text_display)
-    *   [2.3 Graphics flickering when using primusrun](#Graphics_flickering_when_using_primusrun)
-    *   [2.4 Game crashes when accessing settings or saves on 64 bit systems on Steam](#Game_crashes_when_accessing_settings_or_saves_on_64_bit_systems_on_Steam)
-    *   [2.5 Game has garbled graphics when running on x86_64 with all lib32 drivers installed](#Game_has_garbled_graphics_when_running_on_x86_64_with_all_lib32_drivers_installed)
-    *   [2.6 No audio on 64-bit systems](#No_audio_on_64-bit_systems)
-    *   [2.7 Black ingame textures](#Black_ingame_textures)
+    *   [2.2 Game SegFaults before launching, v1.1+](#Game_SegFaults_before_launching.2C_v1.1.2B)
+    *   [2.3 No text display](#No_text_display)
+    *   [2.4 In-game menus are blank, v1.1+](#In-game_menus_are_blank.2C_v1.1.2B)
+    *   [2.5 Graphics flickering when using primusrun](#Graphics_flickering_when_using_primusrun)
+    *   [2.6 Game crashes when accessing settings or saves on 64 bit systems on Steam](#Game_crashes_when_accessing_settings_or_saves_on_64_bit_systems_on_Steam)
+    *   [2.7 Game has garbled graphics when running on x86_64 with all lib32 drivers installed](#Game_has_garbled_graphics_when_running_on_x86_64_with_all_lib32_drivers_installed)
+    *   [2.8 No audio on 64-bit systems](#No_audio_on_64-bit_systems)
+    *   [2.9 Black ingame textures](#Black_ingame_textures)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -30,11 +32,21 @@ LC_ALL=C
 
 This is also relevant if your rocket's parts do not connect.
 
+### Game SegFaults before launching, v1.1+
+
+The Unity 5 engine expects you to be running PulseAudio. You can use the 'pulsenomore' tool[[1]](http://bugs.kerbalspaceprogram.com/issues/7515#note-28) posted on the KSP bug tracker as a workaround until this is fixed by the Unity devs.
+
 ### No text display
 
 The game requires Arial and Arial Black fonts, provided in the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) [AUR](/index.php/AUR "AUR") package.
 
 Another alternative is to try to use [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), from the [official repositories](/index.php/Official_repositories "Official repositories"). This worked using KSP 0.90.0 on x86_64 Arch Linux. YMMV
+
+### In-game menus are blank, v1.1+
+
+Some resolutions cause menus to appear empty. Try using your settings.cfg file to enable fullscreen and/or change your resolution by a few pixels, e.g. 1366x768 to 1363x768\.
+
+Imperfect resolutions can cause poor font rendering. If this happens you can use the AnyRes mod to change your resolution in-game to find a good one, rather than launching the game for every change
 
 ### Graphics flickering when using primusrun
 

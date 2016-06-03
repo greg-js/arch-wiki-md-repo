@@ -163,7 +163,7 @@ For BCM4313 there are the following drivers available:
 
 *   open source `brcm80211` driver directly included in the Linux kernel, since version 3.0.0 (recommended)
 
-In case you use the open source brcm80211 driver provided by Linux kernel, make sure you add `bcma` to a [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") file, otherwise you will have a conflict between drivers which will block the `brcm80211` driver and that will make your wireless card be unavailable.
+In case you use the open source brcm80211 driver provided by Linux kernel, make sure you add `bcma` to a [blacklist](/index.php/Blacklist "Blacklist") file, otherwise you will have a conflict between drivers which will block the `brcm80211` driver and that will make your wireless card be unavailable.
 
 ## Bumblebee
 

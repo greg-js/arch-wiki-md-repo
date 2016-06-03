@@ -4,12 +4,15 @@
     *   [1.1 Components](#Components)
     *   [1.2 Support](#Support)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Touchpad](#Touchpad)
-    *   [2.2 Sound](#Sound)
-    *   [2.3 Fingerprint Reader](#Fingerprint_Reader)
-    *   [2.4 Function Keys](#Function_Keys)
-    *   [2.5 LEDs](#LEDs)
-    *   [2.6 Intel Rapid Start Technology (IRST)](#Intel_Rapid_Start_Technology_.28IRST.29)
+    *   [2.1 Display](#Display)
+    *   [2.2 Wireless](#Wireless)
+        *   [2.2.1 rtl8192ee](#rtl8192ee)
+    *   [2.3 Touchpad](#Touchpad)
+    *   [2.4 Sound](#Sound)
+    *   [2.5 Fingerprint Reader](#Fingerprint_Reader)
+    *   [2.6 Function Keys](#Function_Keys)
+    *   [2.7 LEDs](#LEDs)
+    *   [2.8 Intel Rapid Start Technology (IRST)](#Intel_Rapid_Start_Technology_.28IRST.29)
 *   [3 See also](#See_also)
 
 ## Model description
@@ -52,6 +55,26 @@ Lenovo ThinkPad T450s
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 
 ## Configuration
+
+### Display
+
+The Intel display is run with the <tt>i915</tt> driver, which has become unstable in the 4.2+ series of kernels. Regrettably, this instability has found its way into the current <tt>linux-lts</tt> kernel (see [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=203088)). A working fix is to downgrade your kernel to version 4.1.21-1, and wait for the problem to be fixed.
+
+This was easy for me to do, because I had previously downloaded the package in <tt>/var/cache/pacman/pkg</tt>. All I needed to do was navigate to that directory as root and run <tt>pacman -U linux-lts-4.1.21-1-x86_64.pkg.tar.xz</tt> and it Just Worked. If you do not have the package already downloaded, you can find it in the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive").
+
+I also edited <tt>/etc/pacman.conf</tt> and added <tt>linux-lts</tt> and <tt>linux-lts-headers</tt> to my <tt>IgnorePkg</tt> line, so they would not be inadvertently upgraded when I do system updates.
+
+### Wireless
+
+The T450s comes with two wireless card configurations: a Realtek chip that's run with the <tt>rtl8192ee</tt> driver, and an intel chip upgrade that I read somewhere didn't play well with Linux, so I chose the realtek driver.
+
+#### rtl8192ee
+
+The stock driver under the 4.x kernel is [not reliable](http://damienfirmenich.com/2015/04/12/t450s-rtl8191ee.html), frequently dropping connections and requiring to be re-set. One solution is to install [this updated driver](https://github.com/lwfinger/rtlwifi_new), which contains device-specific fixes and will ultimately be integrated into the kernel around version 4.7.
+
+In order to build and install the new drivers, all that is required is to have your kernel headers installed-- meaning <tt>linux-headers</tt> or <tt>linux-lts-headers</tt> -- make sure the version of headers installed matches your currently installed kernel-- and then pull the git repository, <tt>make</tt>, and <tt>sudo make install</tt>. After a reboot you will be running the new, improved driver.
+
+Note- this driver still has some problems for me: I have found that I have to <tt>modprobe -r rtl8192ee</tt> before suspend, and then <tt>modprobe rtl8192ee</tt> after suspend, in order to connect to some/most access points. However, the new driver no longer drops connections unexpectedly.
 
 ### Touchpad
 

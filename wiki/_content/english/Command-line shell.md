@@ -32,6 +32,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 
 	[http://plan9.bell-labs.com/sys/doc/rc.html](http://plan9.bell-labs.com/sys/doc/rc.html) || [9base-git](https://aur.archlinux.org/packages/9base-git/)
 
+*   **xonsh** — A retrocompatible shell based on the python interpreter.
+
+	[http://xon.sh/](http://xon.sh/) || [xonsh](https://aur.archlinux.org/packages/xonsh/)
+
 *   **[Zsh](/index.php/Zsh "Zsh")** — Shell designed for interactive use, although it is also a powerful scripting language. Many of the useful features of Bash, ksh, and tcsh were incorporated into Zsh; many original features were added. The [introductory document](http://zsh.sourceforge.net/Intro/intro_toc.html) details some of the unique features of Zsh.
 
 	[http://www.zsh.org/](http://www.zsh.org/) || [zsh](https://www.archlinux.org/packages/?name=zsh)

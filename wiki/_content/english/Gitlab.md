@@ -63,7 +63,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 
 GitLab requires a database backend. If you plan to run it on the same machine, first install either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
-[Install](/index.php/Install "Install") the [gitlab](https://aur.archlinux.org/packages/gitlab/) package.
+[Install](/index.php/Install "Install") the [gitlab](https://www.archlinux.org/packages/?name=gitlab) package.
 
 In order to receive mail notifications, a mail server must be installed and configured. See the following for more information: [Category:Mail server](/index.php/Category:Mail_server "Category:Mail server")
 
@@ -71,9 +71,9 @@ In order to receive mail notifications, a mail server must be installed and conf
 
 ### Notes Before Configuring
 
-The [gitlab](https://aur.archlinux.org/packages/gitlab/) package installs GitLab's files in a manner that more closely follows standard Linux conventions:
+The [gitlab](https://www.archlinux.org/packages/?name=gitlab) package installs GitLab's files in a manner that more closely follows standard Linux conventions:
 
-| Description | [GitLab's Official](https://github.com/gitlabhq/gitlabhq/blob/6-5-stable/doc/install/installation.md) | [gitlab](https://aur.archlinux.org/packages/gitlab/) |
+| Description | [GitLab's Official](https://github.com/gitlabhq/gitlabhq/blob/6-5-stable/doc/install/installation.md) | [gitlab](https://www.archlinux.org/packages/?name=gitlab) |
 | Configuration File GitShell | `/home/git/gitlab-shell/config.yml` | `/etc/webapps/gitlab-shell/config.yml` |
 | Configuration File GitLab | `/home/git/gitlab/config/gitlab.yml` | `/etc/webapps/gitlab/gitlab.yml` |
 | User (Home Directory) | `git` (`/home/git`) | `gitlab` (`/var/lib/gitlab`) |
@@ -385,13 +385,13 @@ With the following commands we check if the steps we followed so far are configu
 
 ```
 # cd /usr/share/webapps/gitlab
-# sudo -u gitlab bundle exec rake gitlab:env:info RAILS_ENV=production
-# sudo -u gitlab bundle exec rake gitlab:check RAILS_ENV=production
+# sudo -u gitlab bundle-2.1 exec rake gitlab:env:info RAILS_ENV=production
+# sudo -u gitlab bundle-2.1 exec rake gitlab:check RAILS_ENV=production
 
 ```
 
 **Note:** These gitlab:env:info and gitlab:check commands will show a fatal error related to git. This is OK.
- `$ sudo -u gitlab bundle exec rake gitlab:env:info RAILS_ENV=production` 
+ `$ sudo -u gitlab bundle-2.1 exec rake gitlab:env:info RAILS_ENV=production` 
 ```
 fatal: Not a git repository (or any of the parent directories): .git
 
@@ -425,7 +425,7 @@ Git:		/usr/bin/git
 ```
 
 **Note:** `gitlab:check` will complain about missing initscripts. This is nothing to worry about, as [systemd](/index.php/Systemd "Systemd") service files are used instead (which GitLab does not recognize).
- `$ sudo -u gitlab bundle exec rake gitlab:check RAILS_ENV=production` 
+ `$ sudo -u gitlab bundle-2.1 exec rake gitlab:check RAILS_ENV=production` 
 ```
 fatal: Not a git repository (or any of the parent directories): .git
 Checking Environment ...
@@ -805,7 +805,7 @@ For more information, please see issue [#6100](https://github.com/gitlabhq/gitla
 
 ### Gitlab-workhorse
 
-Since 8.0 GitLab uses separate HTTP server `gitlab-workhorse` for large HTTP requests like Git push/pull. If you want to use this instead of SSH, install the [gitlab-workhorse](https://aur.archlinux.org/packages/gitlab-workhorse/) package, enable `gitlab-workhorse.service` and configure web server for this.
+Since 8.0 GitLab uses separate HTTP server `gitlab-workhorse` for large HTTP requests like Git push/pull. If you want to use this instead of SSH, install the [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) package, enable `gitlab-workhorse.service` and configure web server for this.
 
 ### GitLab CI
 
@@ -1069,7 +1069,7 @@ Finally, restart the gitlab services and test your site.
 
 ### /etc/webapps/gitlab/secret is empty
 
-This file is usually generated while installing the [gitlab-shell](https://aur.archlinux.org/packages/gitlab-shell/) and the [gitlab](https://aur.archlinux.org/packages/gitlab/) packages, but in some cases it may need to be generated manually.
+This file is usually generated while installing the [gitlab-shell](https://www.archlinux.org/packages/?name=gitlab-shell) and the [gitlab](https://www.archlinux.org/packages/?name=gitlab) packages, but in some cases it may need to be generated manually.
 
 ```
 # hexdump -v -n 64 -e '1/1 "%02x"' /dev/urandom > /etc/webapps/gitlab-shell/secret

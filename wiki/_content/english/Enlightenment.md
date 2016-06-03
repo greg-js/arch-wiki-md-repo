@@ -280,9 +280,14 @@ E16 can be quite different from the other WM's out there, read `/usr/share/doc/e
 
 ### Basic Configuration
 
-Most everything in E16 resides in `~/.e16` and is text-based, editable at will. That includes the Menus too.
+Most configuration files for E16 reside in `~/.e16` and are text-based, editable at will. That includes the Menus too.
 
-Shortcut keys can be either modified by hand, or with the e16keyedit software provided as source on the [sourceforge](http://sourceforge.net/projects/enlightenment/) page of the e16 project, or from the [e16keyedit](https://aur.archlinux.org/packages/e16keyedit/) package.
+Shortcut keys can be either modified by hand, or with the e16keyedit software provided as source on the [sourceforge](http://sourceforge.net/projects/enlightenment/) page of the e16 project, or from the [e16keyedit](https://aur.archlinux.org/packages/e16keyedit/) package. Note that the keyboard shortcuts file is not created in `~/.e16` by default. You can copy the packaged version to your home directory if you wish to make changes:
+
+```
+$ cp /usr/share/e16/config/bindings.cfg ~/.e16
+
+```
 
 #### Background images
 

@@ -11,7 +11,9 @@ Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
     *   [1.4 Other methods](#Other_methods)
 *   [2 Using GPG or OpenSSL Encrypted Keyfiles](#Using_GPG_or_OpenSSL_Encrypted_Keyfiles)
 *   [3 Remote unlocking of the root (or other) partition](#Remote_unlocking_of_the_root_.28or_other.29_partition)
-    *   [3.1 Remote unlock via wifi](#Remote_unlock_via_wifi)
+    *   [3.1 Remote unlocking (hooks: systemd, systemd-tool)](#Remote_unlocking_.28hooks:_systemd.2C_systemd-tool.29)
+    *   [3.2 Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)](#Remote_unlocking_.28hooks:_netconf.2C_dropbear.2C_tinyssh.2C_ppp.29)
+    *   [3.3 Remote unlock via wifi (hooks: build your own)](#Remote_unlock_via_wifi_.28hooks:_build_your_own.29)
 *   [4 Discard/TRIM support for solid state drives (SSD)](#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29)
 *   [5 The encrypt hook and multiple disks](#The_encrypt_hook_and_multiple_disks)
     *   [5.1 Expanding LVM on multiple disks](#Expanding_LVM_on_multiple_disks)
@@ -137,7 +139,7 @@ echo "Pacman update [3] All done, let us roll on ..."
 
 [mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) is a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook that performs integrity checks during early-userspace and advises the user not to enter his root partition password if the system appears to have been compromised. Security is achieved through an [encrypted boot partition](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_.28GRUB.29 "Dm-crypt/Encrypting an entire system"), which is unlocked using [GRUB](/index.php/GRUB#Boot_partition "GRUB")'s `cryptodisk.mod` module, and a root filesystem partition, which is encrypted with a password different from the former. This way, the [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") are secured against offline tampering, and the root partition can remain secure even if the `/boot` partition password is entered on a compromised machine (provided that the chkcryptoboot hook detects the compromise, and is not itself compromised at run-time).
 
-This hook requires [GRUB](https://www.archlinux.org/packages/?name=GRUB) release >=2.00 to function, and a dedicated, LUKS encrypted `/boot` partition with its own password in order to be secure.
+This hook requires [grub](https://www.archlinux.org/packages/?name=grub) release >=2.00 to function, and a dedicated, LUKS encrypted `/boot` partition with its own password in order to be secure.
 
 #### Installation
 
@@ -191,6 +193,40 @@ Note that:
 
 ## Remote unlocking of the root (or other) partition
 
+There are few ways to provide early networking and cryptsetup configuration.
+
+They all require making changes to initramfs with help of packages contributing various [mkinitcpio build hooks](/index.php/Mkinitcpio#Build_hooks "Mkinitcpio").
+
+### Remote unlocking (hooks: systemd, systemd-tool)
+
+AUR package [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-systemd-tool/) provides [systemd](https://www.archlinux.org/packages/?name=systemd)-centric mkinitcpio hook named *systemd-tool* with the following set of features for systemd in initramfs:
+
+| 
+
+Core features provided by the hook:
+
+*   unified systemd + mkinitcpio configuration
+*   automatic provisioning of binary and config resources
+*   on-demand invocation of mkinitcpio scripts and in-line functions
+
+ | 
+
+Features provided by the included service units:
+
+*   initrd debugging
+*   early network setup
+*   interactive user shell
+*   remote ssh access in initrd
+*   cryptsetup + custom password agent
+
+ |
+
+**Note:** [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-systemd-tool/) package requires use of [systemd hook](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio").
+
+**Tip:** please study project [README](https://github.com/random-archer/mkinitcpio-systemd-tool/blob/master/README.md) as well as provided default [systemd service unit files](https://github.com/random-archer/mkinitcpio-systemd-tool) to get you started.
+
+### Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)
+
 **Note:** As of 07/23/2015 the "dropbear_initrd_encrypt" package was split into three other packages. See [this forum post](https://bbs.archlinux.org/viewtopic.php?id=200114). As of 11/18/2015 the package was deleted from the [AUR](/index.php/AUR "AUR"). The steps below reflect the usage of the new packages.
 
 If you want to be able to reboot a fully LUKS-encrypted system remotely, or start it with a [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") service, you will need a way to enter a passphrase for the root partition/volume at startup. This can be achieved by running a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook that configures a network interface, such as [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/) and/or [mkinitcpio-ppp](https://aur.archlinux.org/packages/mkinitcpio-ppp/) (for remote unlocking using a [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") connection over the internet) along with an [SSH](/index.php/SSH "SSH") server in initrd. You have the option of using either [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) or [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/). Those hooks do not install any shell, so you also need to [install](/index.php/Install "Install") the [mkinitcpio-utils](https://aur.archlinux.org/packages/mkinitcpio-utils/) package. The instructions below can be used in any combination of the packages above. When there are different paths, it will be noted.
@@ -205,11 +241,11 @@ If you want to be able to reboot a fully LUKS-encrypted system remotely, or star
 4.  Add the `<netconf and/or ppp> <dropbear or tinyssh> encryptssh` [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") before `filesystems` within the "HOOKS" array in `/etc/mkinitcpio.conf` (the `encryptssh` can be used to replace the `encrypt` hook). Then [rebuild the initramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
     **Note:** The `net` hook provided with [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) is **not** needed
 
-    **Note:** It could be necessary to add [the module for your network card](/index.php/Network_configuration#Device_Driver "Network configuration") to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.
+    **Note:** It could be necessary to add [the module for your network card](/index.php/Network_configuration#Device_driver "Network configuration") to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.
 
 5.  Configure the required `cryptdevice=` [parameter](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and add the `ip=` [kernel command parameter](/index.php/Kernel_parameters "Kernel parameters") to your bootloader configuration with the appropriate arguments (see [Mkinitcpio#Using_net](/index.php/Mkinitcpio#Using_net "Mkinitcpio")). For example, if the DHCP server does not attribute a static IP to your remote system, making it difficult to access via SSH accross reboots, you can explicitly state the IP you want to be used: `ip=192.168.1.1:::::eth0:none` 
     **Note:** Make sure to use kernel device names for the interface name (under the form *eth#*) and not *udev* ones, as those will not work.
-    Then update the configuration of your [bootloader](/index.php/Boot_loaders "Boot loaders"), e.g. for [GRUB](/index.php/GRUB#Generating_main_configuration_file "GRUB"): `# grub-mkconfig -o /boot/grub/grub.cfg` 
+    Then update the configuration of your [bootloader](/index.php/Boot_loaders "Boot loaders"), e.g. for [GRUB](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"): `# grub-mkconfig -o /boot/grub/grub.cfg` 
 6.  Finally, restart the remote system and try to [ssh to it](/index.php/Secure_Shell#Client_usage "Secure Shell"), **explicitly stating the "root" username** (even if the root account is disabled on the machine, this root user is used only in the initrd for the purpose of unlocking the remote system). If you are using the [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) package and you also have the [openssh](https://www.archlinux.org/packages/?name=openssh) package installed, then you most probably will not get any warnings before logging in, because it convert and use the same host keys openssh uses. (Except Ed25519 keys, dropbear does not support them). In case you are using [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), you **will** get a warning the first time you login, because tinyssh does not use the same host keys as openssh, and they will be created when you build the initramfs. They will not be recreated every time, just on the first build. In either case, you should be prompted for the passphrase to unlock the root device:
 
  `$ ssh **root**@192.168.1.1` 
@@ -222,7 +258,7 @@ Afterwards, the system will complete its boot process and you can ssh to it [as 
 
 **Tip:** If you would simply like a nice solution to mount other encrypted partitions (such as `/home`) remotely, you may want to look at [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=880484).
 
-### Remote unlock via wifi
+### Remote unlock via wifi (hooks: build your own)
 
 The net hook is normally used with an ethernet connection. In case you want to setup a computer with wireless only, and unlock it via wifi, you can create a custom hook to connect to a wifi network before the net hook is run.
 
@@ -290,7 +326,7 @@ Below example shows a setup using a usb wifi adapter, connecting to a wifi netwo
 4.  Add `ip=:::::wlan0:dhcp` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Remove `ip=:::::eth0:dhcp` so it does not conflict.
 5.  Optionally create an additional boot entry with kernel parameter `ip=:::::eth0:dhcp`.
 6.  [Regenerate the intiramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
-7.  Update the configuration of your [boot loader](/index.php/Boot_loader "Boot loader"), e.g. for [GRUB](/index.php/GRUB#Generating_main_configuration_file "GRUB"): `# grub-mkconfig -o /boot/grub/grub.cfg` 
+7.  Update the configuration of your [boot loader](/index.php/Boot_loader "Boot loader"), e.g. for [GRUB](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"): `# grub-mkconfig -o /boot/grub/grub.cfg` 
 
 Remember to setup [wifi](/index.php/Wireless_network_configuration "Wireless network configuration"), so you are able to login once the system is fully booted. In case you are unable to connect to the wifi network, try increasing the sleep times a bit.
 
@@ -306,7 +342,7 @@ The following cases can be distinguished:
 
 	See also [Securely wipe disk#Flash memory](/index.php/Securely_wipe_disk#Flash_memory "Securely wipe disk").
 
-*   The device is encrypted with dm-crypt plain mode, or the LUKS header is stored [separately](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header "Dm-crypt/Specialties"):
+*   The device is encrypted with dm-crypt plain mode, or the LUKS header is stored [separately](#Encrypted_system_using_a_remote_LUKS_header):
     *   If plausible deniability is required, TRIM should **never** be used because of the considerations at the top of this section, or the use of encryption will be given away.
     *   If plausible deniability is not required, TRIM can be used for its performance gains, provided that the security dangers described at the top of this section are not of concern.
 
@@ -429,7 +465,7 @@ kernel /boot/vmlinuz-linux root=/dev/md0 ro md=0,/dev/sda1,/dev/sdb1 md=1,/dev/s
 
 This example follows the same setup as in [Dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), which should be read first before following this guide.
 
-By using a remote header the encrypted blockdevice itself only carries encrypted data, which gives [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption") as long as the existence of a header is unknown to the attackers. It is similar to using [plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), but with the LUKS advantages such as multiple passphrases for the masterkey and key derivation. Further, using a remote header offers a form of two factor authentication with an easier setup than [using GPG or OpenSSL encrypted keyfiles](/index.php/Dm-crypt/Specialties#Using_GPG_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties"), while still having a built-in password prompt for multiple retries. See [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption") for more information.
+By using a remote header the encrypted blockdevice itself only carries encrypted data, which gives [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption") as long as the existence of a header is unknown to the attackers. It is similar to using [plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), but with the LUKS advantages such as multiple passphrases for the masterkey and key derivation. Further, using a remote header offers a form of two factor authentication with an easier setup than [using GPG or OpenSSL encrypted keyfiles](#Using_GPG_or_OpenSSL_Encrypted_Keyfiles), while still having a built-in password prompt for multiple retries. See [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption") for more information.
 
 See [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") for encryption options before performing the first step to setup the encrypted system partition and creating a header file to use with `cryptsetup`:
 
@@ -458,8 +494,6 @@ Follow the installation procedure up to the mkinitcpio step (you should now be `
 There are two options for initramfs to support a detached LUKS header.
 
 #### Using systemd hook
-
-**Note:** This method requires systemd **219** or later.
 
 First create `/etc/crypttab.initramfs` and add the encrypted device to it. The syntax is defined in [crypttab(5)](http://www.freedesktop.org/software/systemd/man/crypttab.html)
 

@@ -18,6 +18,8 @@ Extra userspace NVMe tools can be found in [nvme-cli-git](https://aur.archlinux.
 
 See [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") for supported filesystems, maximizing performance, minimizing disk reads/writes, etc.
 
+**Note:** It may be needed to add the **nvme** module to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array within `/etc/mkinitcpio.conf` to successfully boot into the root filesystem.
+
 ## Performance
 
 ### Alignment

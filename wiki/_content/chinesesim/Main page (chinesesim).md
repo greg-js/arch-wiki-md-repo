@@ -58,7 +58,7 @@
 
 	Arch 论坛行为规范。
 
-	[IRC channels](/index.php/IRC_channels "IRC channels")
+	[IRC 频道列表](/index.php/IRC_channels_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "IRC channels (简体中文)")
 
 	通过聊天解决问题。
 

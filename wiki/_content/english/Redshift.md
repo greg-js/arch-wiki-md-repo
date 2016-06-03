@@ -27,7 +27,7 @@ The project is developed on [GitHub](https://github.com/jonls/redshift).
 
 ### Desktop environments
 
-For desktop environments, the `redshift-gtk` command is installed with the [redshift](https://www.archlinux.org/packages/?name=redshift) package. redshift-gtk provides a system tray icon for controlling redshift. redshift-gtk requires the [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [librsvg](https://www.archlinux.org/packages/?name=librsvg) packages. [KDE](/index.php/KDE "KDE") users can use the [kdeplasma-applets-redshift](https://aur.archlinux.org/packages/kdeplasma-applets-redshift/). [plasma](https://www.archlinux.org/groups/x86_64/plasma/) users can use the [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/).
+For desktop environments, the `redshift-gtk` command is installed with the [redshift](https://www.archlinux.org/packages/?name=redshift) package. `redshift-gtk` provides a system tray icon for controlling redshift and requires these three packages to work: [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [librsvg](https://www.archlinux.org/packages/?name=librsvg); all of them are listed as optional dependencies of the main [redshift](https://www.archlinux.org/packages/?name=redshift) package. [KDE](/index.php/KDE "KDE") users can use the [kdeplasma-applets-redshift](https://aur.archlinux.org/packages/kdeplasma-applets-redshift/). [plasma](https://www.archlinux.org/groups/x86_64/plasma/) users can use the [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/).
 
 ### Autostart
 
@@ -168,7 +168,7 @@ case $1 in
 			transition)
 				xbacklight -set $brightness_transition -time $fade_time
 				;;
-			day)
+			daytime)
 				xbacklight -set $brightness_day -time $fade_time
 				;;
 		esac
@@ -200,6 +200,10 @@ If this is the case, installing [python-gobject](https://www.archlinux.org/packa
 
 ### Failed to run Redshift due to geoclue2
 
+**Note:** Prior to apply the method below, close redshift-gtk and restart the geoclue service. Sometimes the location service fails due to e.g. connection established after the location service.
+
+If using Gnome, you can also toggle Location Services to "On" in "Settings -> Privacy"
+
 By default, the geoclue2 configuration files does not allow Redshift access. In order to allow access, add the following lines to `/etc/geoclue/geoclue.conf`
 
  `/etc/geoclue/geoclue.conf` 
@@ -209,8 +213,6 @@ allowed=true
 system=false
 users=
 ```
-
-If using Gnome, you can also toggle Location Services to "On" in "Settings -> Privacy"
 
 ### If you can't get redshift to autostart in i3
 

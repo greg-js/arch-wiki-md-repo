@@ -18,10 +18,11 @@
     *   [3.5 Rhythmbox Startup is Slow](#Rhythmbox_Startup_is_Slow)
     *   [3.6 No cover are shown in the dedicated box](#No_cover_are_shown_in_the_dedicated_box)
     *   [3.7 Cannot enable MTP device support](#Cannot_enable_MTP_device_support)
+    *   [3.8 Music files within the music library are not found](#Music_files_within_the_music_library_are_not_found)
 
 ## Installation
 
-Install [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Install the [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox) package.
 
 ## Tips
 
@@ -83,7 +84,9 @@ After you install it, restart Rhythmbox.
 
 Alternatively, Rhythmbox will display the same error message when it does not have the correct codec to play that stream. You will need to identify what format the stream is (by looking at the command line error messages that Rhythmbox displays) and then install the correct Gstreamer codec for that particular audio stream.
 
-If you do not know which gstreamer plugin servers what audio formats, ask on IRC or just google it.
+For mp3-files install [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) and/or [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins) depending on wheter you use the current and/or legacy version (see [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer")). You will also need [gst-libav](https://www.archlinux.org/packages/?name=gst-libav).
+
+If you do not know which gstreamer plugin servers what audio formats, ask on IRC or just google it. For a full setup of rhythmbox, have a look at its optional dependencies: [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox).
 
 ### "Error, impossible to activate plugin 'Audio CD Recorder'" shows up every time I start Rhythmbox
 
@@ -114,3 +117,7 @@ Creating a lastFM account and login in with the rhythmbox plugin can solve the p
 ### Cannot enable MTP device support
 
 Install [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp).
+
+### Music files within the music library are not found
+
+Sometimes it helps to rebuild the rhythmbox library in order to rescan it properly. To do this quit rhythmbox, delete (do not forget to make a backup of the file) `/.local/share/rhythmbox/rhythmdb.xml`, restart rhythmbox and rescan your music library.

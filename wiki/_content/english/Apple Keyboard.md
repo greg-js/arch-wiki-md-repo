@@ -58,7 +58,7 @@ options hid_apple fnmode=2
 
 ```
 
-Don't forget to add this file to FILES in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"), otherwise it will not work.
+Don't forget to add this file to FILES in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") or rebuild the initial ramdisk, otherwise it will not work.
 
 ### If the above doesn't work for your wireless keyboard
 
@@ -178,12 +178,14 @@ First, try if the new method works for you (you have to be root)
 
 ```
 
-To make the changes permanent add the following line to `/etc/modprobe.d/hid_apple.conf`:
+To make the changes permanent add
 
 ```
 options hid_apple iso_layout=0
 
 ```
+
+to `/etc/modprobe.d/hid_apple.conf` and run `mkinitcpio -p linux` as root.
 
 ## Media Keys
 

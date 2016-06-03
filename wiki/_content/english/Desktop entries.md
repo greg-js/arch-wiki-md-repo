@@ -1,4 +1,6 @@
-Desktop entries is a [freedesktop.org](http://www.freedesktop.org/wiki/) standard for specifying the behaviour of programs running on [Xorg](/index.php/Xorg "Xorg"). It is a configuration file that describes how an application is launched and how it appears in a menu with an icon. The most common desktop entries are the `.desktop` and `.directory` files. This article explains briefly how to create useful and standard compliant desktop entries. It is mainly intended for package contributors and maintainers, but may also be useful for software developers and others.
+The freedesktop [Desktop Entry specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html) provides a standard for applications to integrate into a [desktop environment](/index.php/Desktop_environment "Desktop environment"). Desktop entries are the configuration files that describe how an application is launched and which data it can handle. They also configure how an application appears in a menu with an icon, which is subject to the related [menu specification](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html) standard.
+
+The most common desktop entries are the `.desktop` and `.directory` files. This article explains briefly how to create useful and standard compliant desktop entries. It is mainly intended for package contributors and maintainers, but may also be useful for software developers and others.
 
 There are roughly three types of desktop entries:
 
@@ -16,6 +18,8 @@ There are roughly three types of desktop entries:
 
 The following sections will roughly explain how these are created and validated.
 
+Related to this content, and also defined in `.desktop` files, are MIME-type associations for data files. [Default applications](/index.php/Default_applications "Default applications") describes how these are configured.
+
 ## Contents
 
 *   [1 Application entry](#Application_entry)
@@ -29,7 +33,7 @@ The following sections will roughly explain how these are created and validated.
 *   [3 Tools](#Tools)
     *   [3.1 gendesk](#gendesk)
         *   [3.1.1 How to use](#How_to_use)
-    *   [3.2 List or search in *.desktop files](#List_or_search_in_.2A.desktop_files)
+    *   [3.2 List or search in .desktop files](#List_or_search_in_.desktop_files)
     *   [3.3 fbrokendesktop](#fbrokendesktop)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Hide desktop entries](#Hide_desktop_entries)
@@ -43,7 +47,7 @@ Desktop entries for applications, or `.desktop` files, are generally a combinati
 
 ### File example
 
-Following is an example of its structure with additional comments. The example is only meant to give a quick impression, and does not show how to utilize all possible entry keys. The complete list of keys can be found in the [freedesktop.org specification](http://standards.freedesktop.org/desktop-entry-spec/latest/ar01s05.html).
+Following is an example of its structure with additional comments. The example is only meant to give a quick impression, and does not show how to utilize all possible entry keys. The complete list of keys can be found in the [freedesktop.org specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys).
 
 ```
 [Desktop Entry]
@@ -61,7 +65,7 @@ Categories=Education;Languages;Java;      # Describes the categories in which th
 
 ### Key definition
 
-All Desktop recognized desktop entries can be found on the [freedesktop.org](http://standards.freedesktop.org/desktop-entry-spec/latest/ar01s05.html) site. For example, the `Type` key defines three types of desktop entries: Application (type 1), Link (type 2) and Directory (type 3).
+All Desktop recognized desktop entries can be found on the [freedesktop.org](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys) site. For example, the `Type` key defines three types of desktop entries: Application (type 1), Link (type 2) and Directory (type 3).
 
 *   `Version` key does not stand for the version of the application, but for the version of the desktop entry specification to which this file complies.
 
@@ -99,11 +103,13 @@ This will give you very verbose and useful warnings and error messages.
 
 ## Icons
 
+See also the [Icon Theme Specification](https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html).
+
 ### Common image formats
 
 Here is a short overview of image formats commonly used for icons.
 
-<caption>Support for image formats for icons as specified by the [freedesktop.org standard](http://standards.freedesktop.org/icon-theme-spec/latest/ar01s02.html).</caption>
+<caption>Support for image formats for icons as specified by the freedesktop.org standard.</caption>
 | Extension | Full Name and/or Description | Graphics Type | Container Format | Supported |
 | .[png](https://en.wikipedia.org/wiki/Portable_Network_Graphics "wikipedia:Portable Network Graphics") | Portable Network Graphics | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | Yes |
 | .[svg(z)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics "wikipedia:Scalable Vector Graphics") | Scalable Vector Graphics | [Vector](https://en.wikipedia.org/wiki/Vector_graphics "wikipedia:Vector graphics") | No | Yes (optional) |
@@ -136,10 +142,10 @@ If you convert from a container format like `ico`, you will get all images that 
 
 As you can see, the example *ico* file, although its name might suggest a single image of size 48x48, contains no less than 6 different sizes, of which one is even greater than 48x48, namely 128x128.
 
-Alternatively, you can use [icoutils](https://www.archlinux.org/packages/?name=icoutils) to extract png images from ico container:
+Alternatively, you can use *icotool* (from [icoutils](https://www.archlinux.org/packages/?name=icoutils)) to extract png images from ico container:
 
 ```
-$ icoutils -x <icon name>.ico
+$ icotool -x <icon name>.ico
 
 ```
 
@@ -195,24 +201,24 @@ Icons can be automatically downloaded from [openiconlibrary](http://openiconlibr
 
 *   See the [gendesk project](https://github.com/xyproto/gendesk) for more information.
 
-### List or search in *.desktop files
+### List or search in .desktop files
 
-The [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) script is listing available `*.desktop` files or searching in their content. Its main purpose is to get a quick overview in console of the available programs with their command lines and categories set in the `*.desktop` files.
+The [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) script is listing available *.desktop* files or searching in their content.
 
 Examples
 
 ```
 # lsdesktopf
-# lsdesktopf game
-# lsdesktopf gtk
+# lsdesktopf --less
+# lsdesktopf --less gtk zh_TW,zh_CN,en_GB
 
 ```
 
-Exactly same functionality as above, but with vertical text output for readability and including associated variable names:
+List MIME-types or parts of MIME-types found in *.desktop*, and which desktop files shares same MIME-type, output is equal as in [mimeapps.list](/index.php/Default_applications#Configuration_of_the_mimeapps.list_file "Default applications") for section `[Added Associations]`.
 
 ```
-# lsdesktopf --more
-# lsdesktopf --more game
+# lsdesktopf --gm
+# lsdesktopf --gm [options]
 
 ```
 
@@ -220,7 +226,7 @@ For more options use `lsdesktopf --help`.
 
 ### fbrokendesktop
 
-The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) bash script using command "which" to detect broken Exec that points to not existing path. Without any parameters it uses preset folders in "DskPath" array. It shows only broken *.desktop with full path and filename that is missing.
+The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) bash script using command *which* to detect broken `Exec` that points to not existing path. Without any parameters it uses preset folders in `DskPath` array. It shows only broken *.desktop* with full path and filename that is missing.
 
 Examples
 
@@ -261,7 +267,7 @@ If you use an XDG-compliant desktop environment, such as GNOME or KDE, the deskt
 
 Users can override system-wide `*.desktop` files by copying them into the user-specific `~/.config/autostart/` folder.
 
-For an explanation of the desktop file standard refer to [Desktop Entry Specification](http://standards.freedesktop.org/desktop-entry-spec/latest/). For a more specific description of directories used, [Desktop Application Autostart Specification](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
+For a more specific description of directories used, [Desktop Application Autostart Specification](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
 
 **Note:** This method is supported only by XDG-compliant desktop environments. Tools like [dapper](https://aur.archlinux.org/packages/dapper/), [dex](https://www.archlinux.org/packages/?name=dex), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) can be used to offer XDG autostart in unsupported desktop environments as long as some other autostart mechanism exists. Use the existing mechanism to start the xdg compliant autostart tool.
 
@@ -275,9 +281,4 @@ Edit the `Exec` command by appending `env`, for example:
 
 *   [DeveloperWiki:Removal of desktop files](/index.php/DeveloperWiki:Removal_of_desktop_files "DeveloperWiki:Removal of desktop files")
 *   [desktop wikipedia article](https://en.wikipedia.org/wiki/.desktop "wikipedia:.desktop")
-*   [recognized desktop entry keys](http://standards.freedesktop.org/desktop-entry-spec/latest/ar01s05.html)
-*   [freedesktop.org desktop entry specification](http://freedesktop.org/wiki/Specifications/desktop-entry-spec)
-*   [freedesktop.org icon theme specification](http://freedesktop.org/wiki/Specifications/icon-theme-spec)
-*   [freedesktop.org menu specification](http://freedesktop.org/wiki/Specifications/menu-spec)
-*   [freedesktop.org basedir specification](http://freedesktop.org/wiki/Specifications/basedir-spec)
 *   [information for developers](http://freedesktop.org/wiki/Howto_desktop_files)

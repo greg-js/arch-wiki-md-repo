@@ -9,9 +9,8 @@
     *   [2.3 Lighttpd](#Lighttpd)
     *   [2.4 Nginx](#Nginx)
         *   [2.4.1 Option 1: subdomain](#Option_1:_subdomain)
-        *   [2.4.2 Option 2: subdirectory](#Option_2:_subdirectory)
-    *   [2.5 Symlink Method](#Symlink_Method)
-    *   [2.6 Alias Method](#Alias_Method)
+        *   [2.4.2 Option 2: subdirectory using symlink](#Option_2:_subdirectory_using_symlink)
+        *   [2.4.3 Option 3: subdirectory using alias](#Option_3:_subdirectory_using_alias)
 *   [3 phpMyAdmin configuration](#phpMyAdmin_configuration)
     *   [3.1 Add blowfish_secret passphrase](#Add_blowfish_secret_passphrase)
     *   [3.2 Enabling Configuration Storage (optional)](#Enabling_Configuration_Storage_.28optional.29)
@@ -24,32 +23,24 @@
 
 ## Installation
 
-Install the [phpmyadmin](https://www.archlinux.org/packages/?name=phpmyadmin) and [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) packages from the [official repositories](/index.php/Official_repositories "Official repositories").
+Install the [phpmyadmin](https://www.archlinux.org/packages/?name=phpmyadmin) package.
 
 ## Configuration
 
 ### PHP
 
-You need to enable the `mysqli` and `mcrypt` (if you want phpMyAdmin internal authentication) extensions in PHP by editing `/etc/php/php.ini` and uncommenting the following lines:
+You need to enable the `mysqli` extension in PHP by editing `/etc/php/php.ini` and uncommenting the following line:
 
 ```
 extension=mysqli.so
-extension=mcrypt.so
 
 ```
 
 Optionally you can enable `bz2.so` and `zip.so` for compression support.
 
-You need to make sure that PHP can access `/etc/webapps`. Add it to `open_basedir` in `/etc/php/php.ini` if necessary:
-
-```
-open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc/webapps/
-
-```
+**Note:** *If* you use `open_basedir` (it is not set by default), make sure that PHP can access `/etc/webapps` by adding it to `open_basedir` in `/etc/php/php.ini`.
 
 ### Apache
-
-**Note:** The following works (at least no obvious problems) with Apache 2.4 and php-apache/mod_mpm_prefork or php-fpm/mod_proxy_handler
 
 Set up Apache to use php as outlined in the [LAMP](/index.php/LAMP#PHP "LAMP") article.
 
@@ -156,11 +147,9 @@ When using SSL, you might run into the problem that the links on the pages gener
 
 ```
 
-#### Option 2: subdirectory
+#### Option 2: subdirectory using symlink
 
 Using this method, you'll access PhpMyAdmin as `localhost/phpmyadmin`, similarly to Apache.
-
-### Symlink Method
 
 To get PhpMyAdmin working with your [nginx](/index.php/Nginx "Nginx") setup, first take note of the root of the server you want to use. Supposing it is `/srv/http`, now create a symlink:
 
@@ -169,9 +158,11 @@ To get PhpMyAdmin working with your [nginx](/index.php/Nginx "Nginx") setup, fir
 
 ```
 
-### Alias Method
+#### Option 3: subdirectory using alias
 
 If for some reason you are unable to create a symlink in the root of the server or would just rather use an alias, you can use this example configuration.
+
+Using this method, you'll access PhpMyAdmin as `localhost/phpmyadmin`, similarly to Apache.
 
 ```
  location /phpmyadmin {

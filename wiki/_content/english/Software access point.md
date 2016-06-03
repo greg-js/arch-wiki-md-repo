@@ -56,21 +56,15 @@ Wiphy phy1
 
 The constraint `#channels <= 1` means that your software AP must operate on the same channel as your Wi-Fi client connection; see the `channel` setting in `hostapd.conf` below.
 
-If you want to use the capability/feature, perhaps because an Ethernet connection is not available, you need to create two separate *virtual interfaces* for using it. Virtual interfaces for a physical device `wlan0` can be created as follows: First, the *virtual interfaces* are created for the network connection (`wlan0_sta`) itself and for the software AP/hostapd "wireless repeater":
+If you want to use the capability/feature, perhaps because an Ethernet connection is not available, you need to create two separate *virtual interfaces* for using it. Virtual interfaces for a physical device `wlan0` can be created as follows: The *virtual interfaces* with unique MAC address are created for the network connection (`wlan0_sta`) itself and for the software AP/hostapd "wireless repeater":
 
 ```
-# iw dev wlan0 interface add wlan0_sta type station  
-# iw dev wlan0 interface add wlan0_ap  type __ap     
+# iw dev wlan0 interface add wlan0_sta type managed addr 12:34:56:78:ab:cd  
+# iw dev wlan0 interface add wlan0_ap  type wds addr 12:34:56:78:ab:ce
 
 ```
 
-Second, the interfaces are assigned separate MAC addresses (use custom unique addresses):
-
-```
-# ip link set dev wlan0_sta address 12:34:56:78:ab:cd
-# ip link set dev wlan0_ap  address 12:34:56:78:ab:ce
-
-```
+Random MAC address can be generated using [macchanger](/index.php/Macchanger "Macchanger").
 
 ## Overview
 

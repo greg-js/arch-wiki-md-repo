@@ -13,7 +13,7 @@
     *   [1.2 网络浏览器](#.E7.BD.91.E7.BB.9C.E6.B5.8F.E8.A7.88.E5.99.A8)
         *   [1.2.1 终端](#.E7.BB.88.E7.AB.AF)
         *   [1.2.2 图形界面](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2)
-            *   [1.2.2.1 Gecko-based](#Gecko-based)
+            *   [1.2.2.1 基于 Gecko](#.E5.9F.BA.E4.BA.8E_Gecko)
                 *   [1.2.2.1.1 Firefox forks](#Firefox_forks)
             *   [1.2.2.2 Blink-based](#Blink-based)
             *   [1.2.2.3 Webkit-based](#Webkit-based)
@@ -105,9 +105,9 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 #### 图形界面
 
-##### Gecko-based
+##### 基于 Gecko
 
-See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(software) "wikipedia:Gecko (software)").
+可见 [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(software) "wikipedia:Gecko (software)").
 
 *   **[Firefox](/index.php/Firefox "Firefox")** — Extensible browser from Mozilla based on Gecko with fast rendering.
 
@@ -1111,7 +1111,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **ttytter** — Easily scriptable twitter client written in Perl.
 
-	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://www.archlinux.org/packages/?name=ttytter)
+	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://aur.archlinux.org/packages/ttytter/)
 
 *   **Turpial** — Multi-interface Twitter client written in Python.
 

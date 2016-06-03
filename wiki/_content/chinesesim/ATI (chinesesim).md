@@ -1,72 +1,62 @@
-**翻译状态：** 本文是英文页面 [ATI](/index.php/ATI "ATI") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-09，点击[这里](https://wiki.archlinux.org/index.php?title=ATI&diff=0&oldid=390492)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [ATI](/index.php/ATI "ATI") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-19，点击[这里](https://wiki.archlinux.org/index.php?title=ATI&diff=0&oldid=435319)可以查看翻译后英文页面的改动。
 
-**ATI/AMD**显卡用户有两个选择：官方的专有驱动([catalyst](https://aur.archlinux.org/packages/catalyst/))和开源驱动([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati))。本文介绍开源驱动.
+**ATI/AMD**显卡用户有两个选择：官方的专有驱动([catalyst](https://aur.archlinux.org/packages/catalyst/))和开源驱动 ([ATI](/index.php/ATI "ATI") for older or [AMDGPU](/index.php/AMDGPU "AMDGPU") for newer cards)。本文主要介绍较旧的显卡使用的开源的 **ATI**/[Radeon](https://wiki.freedesktop.org/xorg/radeon/) 驱动.
 
-目前，开源驱动在新显卡的 3D 性能上不及官方专属版本，也缺乏TV输出等功能。但另一方面，它能更好地支持双显示，优秀的2D加速，为基于 OpenGL 的[窗口管理器](/index.php/Window_manager "Window manager")如 Mutter, KWin 或 [Compiz](/index.php/Compiz "Compiz") 提供了足够的 3D 加速。
+在很多显卡上开源驱动的性能几乎已经达到和闭源驱动一样的水平。（参见[这里](http://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1)。）同时开源驱动有不错的多显支持，但在电视输出上不及闭源驱动。较新版本的显卡支持也许落后于 Catalyst。
 
 如果你不确定该用哪种，请先试一试开源版的。开源驱动能满足大多数的需要，而且，一般来说遇到的麻烦也更少些。查看现在功能开发进展情况可访问 [功能矩阵](http://www.x.org/wiki/RadeonFeature)。
 
 ## Contents
 
 *   [1 命名规范](#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83)
-*   [2 概览](#.E6.A6.82.E8.A7.88)
-*   [3 安装](#.E5.AE.89.E8.A3.85)
-*   [4 配置](#.E9.85.8D.E7.BD.AE)
-*   [5 载入](#.E8.BD.BD.E5.85.A5)
-    *   [5.1 早启动KMS](#.E6.97.A9.E5.90.AF.E5.8A.A8KMS)
-*   [6 性能调整](#.E6.80.A7.E8.83.BD.E8.B0.83.E6.95.B4)
-    *   [6.1 模块参数](#.E6.A8.A1.E5.9D.97.E5.8F.82.E6.95.B0)
-    *   [6.2 关闭 PCI-E 2.0](#.E5.85.B3.E9.97.AD_PCI-E_2.0)
-*   [7 混合交火](#.E6.B7.B7.E5.90.88.E4.BA.A4.E7.81.AB)
-*   [8 节能](#.E8.8A.82.E8.83.BD)
-    *   [8.1 老方法](#.E8.80.81.E6.96.B9.E6.B3.95)
-        *   [8.1.1 动态频率调整](#.E5.8A.A8.E6.80.81.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
-        *   [8.1.2 基于计划的频率调整](#.E5.9F.BA.E4.BA.8E.E8.AE.A1.E5.88.92.E7.9A.84.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
-        *   [8.1.3 永久配置](#.E6.B0.B8.E4.B9.85.E9.85.8D.E7.BD.AE)
-        *   [8.1.4 图形化工具](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E5.B7.A5.E5.85.B7)
-    *   [8.2 动态电源管理](#.E5.8A.A8.E6.80.81.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
-    *   [8.3 其它](#.E5.85.B6.E5.AE.83)
-*   [9 TV输出（TV out）](#TV.E8.BE.93.E5.87.BA.EF.BC.88TV_out.EF.BC.89)
+*   [2 安装](#.E5.AE.89.E8.A3.85)
+*   [3 配置](#.E9.85.8D.E7.BD.AE)
+*   [4 载入](#.E8.BD.BD.E5.85.A5)
+    *   [4.1 早启动 KMS](#.E6.97.A9.E5.90.AF.E5.8A.A8_KMS)
+*   [5 性能调整](#.E6.80.A7.E8.83.BD.E8.B0.83.E6.95.B4)
+    *   [5.1 启动视频加速](#.E5.90.AF.E5.8A.A8.E8.A7.86.E9.A2.91.E5.8A.A0.E9.80.9F)
+    *   [5.2 驱动设置](#.E9.A9.B1.E5.8A.A8.E8.AE.BE.E7.BD.AE)
+    *   [5.3 内核参数](#.E5.86.85.E6.A0.B8.E5.8F.82.E6.95.B0)
+        *   [5.3.1 关闭 PCI-E 2.0](#.E5.85.B3.E9.97.AD_PCI-E_2.0)
+    *   [5.4 Gallium HUD](#Gallium_HUD)
+*   [6 混合交火](#.E6.B7.B7.E5.90.88.E4.BA.A4.E7.81.AB)
+*   [7 节能](#.E8.8A.82.E8.83.BD)
+    *   [7.1 动态电源管理](#.E5.8A.A8.E6.80.81.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
+        *   [7.1.1 命令行工具](#.E5.91.BD.E4.BB.A4.E8.A1.8C.E5.B7.A5.E5.85.B7)
+    *   [7.2 老方法](#.E8.80.81.E6.96.B9.E6.B3.95)
+        *   [7.2.1 动态频率调整](#.E5.8A.A8.E6.80.81.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
+        *   [7.2.2 基于计划的频率调整](#.E5.9F.BA.E4.BA.8E.E8.AE.A1.E5.88.92.E7.9A.84.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
+        *   [7.2.3 永久配置](#.E6.B0.B8.E4.B9.85.E9.85.8D.E7.BD.AE)
+        *   [7.2.4 图形化工具](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E5.B7.A5.E5.85.B7)
+    *   [7.3 其它](#.E5.85.B6.E5.AE.83)
+*   [8 风扇速度](#.E9.A3.8E.E6.89.87.E9.80.9F.E5.BA.A6)
+*   [9 TV输出](#TV.E8.BE.93.E5.87.BA)
     *   [9.1 在KMS中强制TV输出](#.E5.9C.A8KMS.E4.B8.AD.E5.BC.BA.E5.88.B6TV.E8.BE.93.E5.87.BA)
 *   [10 HDMI 音频输出](#HDMI_.E9.9F.B3.E9.A2.91.E8.BE.93.E5.87.BA)
-*   [11 Dual Head setup](#Dual_Head_setup)
-    *   [11.1 独立的 X screen](#.E7.8B.AC.E7.AB.8B.E7.9A.84_X_screen)
-*   [12 启动视频加速](#.E5.90.AF.E5.8A.A8.E8.A7.86.E9.A2.91.E5.8A.A0.E9.80.9F)
-*   [13 关闭垂直同步刷新](#.E5.85.B3.E9.97.AD.E5.9E.82.E7.9B.B4.E5.90.8C.E6.AD.A5.E5.88.B7.E6.96.B0)
-*   [14 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [14.1 登录后出现Artifacts](#.E7.99.BB.E5.BD.95.E5.90.8E.E5.87.BA.E7.8E.B0Artifacts)
-    *   [14.2 添加没有被侦测到的分辨率](#.E6.B7.BB.E5.8A.A0.E6.B2.A1.E6.9C.89.E8.A2.AB.E4.BE.A6.E6.B5.8B.E5.88.B0.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87)
-    *   [14.3 AGP被禁用(KMS启用)](#AGP.E8.A2.AB.E7.A6.81.E7.94.A8.28KMS.E5.90.AF.E7.94.A8.29)
-    *   [14.4 电视屏幕显示黑边](#.E7.94.B5.E8.A7.86.E5.B1.8F.E5.B9.95.E6.98.BE.E7.A4.BA.E9.BB.91.E8.BE.B9)
-    *   [14.5 从睡眠恢复后X显示一个黑屏,鼠标指针还在](#.E4.BB.8E.E7.9D.A1.E7.9C.A0.E6.81.A2.E5.A4.8D.E5.90.8EX.E6.98.BE.E7.A4.BA.E4.B8.80.E4.B8.AA.E9.BB.91.E5.B1.8F.2C.E9.BC.A0.E6.A0.87.E6.8C.87.E9.92.88.E8.BF.98.E5.9C.A8)
-    *   [14.6 X1300上KDE4没有桌面特效](#X1300.E4.B8.8AKDE4.E6.B2.A1.E6.9C.89.E6.A1.8C.E9.9D.A2.E7.89.B9.E6.95.88)
-    *   [14.7 KMS启用时,黑幕,没有控制台,但是 X 能够工作](#KMS.E5.90.AF.E7.94.A8.E6.97.B6.2C.E9.BB.91.E5.B9.95.2C.E6.B2.A1.E6.9C.89.E6.8E.A7.E5.88.B6.E5.8F.B0.2C.E4.BD.86.E6.98.AF_X_.E8.83.BD.E5.A4.9F.E5.B7.A5.E4.BD.9C)
-    *   [14.8 2D 性能(比如滚动滑块)缓慢](#2D_.E6.80.A7.E8.83.BD.28.E6.AF.94.E5.A6.82.E6.BB.9A.E5.8A.A8.E6.BB.91.E5.9D.97.29.E7.BC.93.E6.85.A2)
-    *   [14.9 显示器旋转对光标起效却对窗口/内容不起效](#.E6.98.BE.E7.A4.BA.E5.99.A8.E6.97.8B.E8.BD.AC.E5.AF.B9.E5.85.89.E6.A0.87.E8.B5.B7.E6.95.88.E5.8D.B4.E5.AF.B9.E7.AA.97.E5.8F.A3.2F.E5.86.85.E5.AE.B9.E4.B8.8D.E8.B5.B7.E6.95.88)
-    *   [14.10 在ATI X1600 (RV530 series)上3D应用程序显示黑窗口](#.E5.9C.A8ATI_X1600_.28RV530_series.29.E4.B8.8A3D.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E6.98.BE.E7.A4.BA.E9.BB.91.E7.AA.97.E5.8F.A3)
-    *   [14.11 从休眠中唤醒后光标崩溃](#.E4.BB.8E.E4.BC.91.E7.9C.A0.E4.B8.AD.E5.94.A4.E9.86.92.E5.90.8E.E5.85.89.E6.A0.87.E5.B4.A9.E6.BA.83)
-    *   [14.12 多显示器模式下DisplayPort黑屏](#.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8.E6.A8.A1.E5.BC.8F.E4.B8.8BDisplayPort.E9.BB.91.E5.B1.8F)
-    *   [14.13 Gallium HUD](#Gallium_HUD)
+*   [11 多显设置](#.E5.A4.9A.E6.98.BE.E8.AE.BE.E7.BD.AE)
+    *   [11.1 使用 RandR 扩展](#.E4.BD.BF.E7.94.A8_RandR_.E6.89.A9.E5.B1.95)
+    *   [11.2 独立的 X screen](#.E7.8B.AC.E7.AB.8B.E7.9A.84_X_screen)
+*   [12 关闭垂直同步刷新](#.E5.85.B3.E9.97.AD.E5.9E.82.E7.9B.B4.E5.90.8C.E6.AD.A5.E5.88.B7.E6.96.B0)
+*   [13 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
+    *   [13.1 登录后出现Artifacts](#.E7.99.BB.E5.BD.95.E5.90.8E.E5.87.BA.E7.8E.B0Artifacts)
+    *   [13.2 添加没有被侦测到的分辨率](#.E6.B7.BB.E5.8A.A0.E6.B2.A1.E6.9C.89.E8.A2.AB.E4.BE.A6.E6.B5.8B.E5.88.B0.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87)
+    *   [13.3 AGP被禁用(KMS启用)](#AGP.E8.A2.AB.E7.A6.81.E7.94.A8.28KMS.E5.90.AF.E7.94.A8.29)
+    *   [13.4 电视屏幕显示黑边](#.E7.94.B5.E8.A7.86.E5.B1.8F.E5.B9.95.E6.98.BE.E7.A4.BA.E9.BB.91.E8.BE.B9)
+    *   [13.5 从睡眠恢复后X显示一个黑屏,鼠标指针还在](#.E4.BB.8E.E7.9D.A1.E7.9C.A0.E6.81.A2.E5.A4.8D.E5.90.8EX.E6.98.BE.E7.A4.BA.E4.B8.80.E4.B8.AA.E9.BB.91.E5.B1.8F.2C.E9.BC.A0.E6.A0.87.E6.8C.87.E9.92.88.E8.BF.98.E5.9C.A8)
+    *   [13.6 X1300上KDE4没有桌面特效](#X1300.E4.B8.8AKDE4.E6.B2.A1.E6.9C.89.E6.A1.8C.E9.9D.A2.E7.89.B9.E6.95.88)
+    *   [13.7 KMS启用时,黑幕,没有控制台,但是 X 能够工作](#KMS.E5.90.AF.E7.94.A8.E6.97.B6.2C.E9.BB.91.E5.B9.95.2C.E6.B2.A1.E6.9C.89.E6.8E.A7.E5.88.B6.E5.8F.B0.2C.E4.BD.86.E6.98.AF_X_.E8.83.BD.E5.A4.9F.E5.B7.A5.E4.BD.9C)
+    *   [13.8 2D 性能(比如滚动滑块)缓慢](#2D_.E6.80.A7.E8.83.BD.28.E6.AF.94.E5.A6.82.E6.BB.9A.E5.8A.A8.E6.BB.91.E5.9D.97.29.E7.BC.93.E6.85.A2)
+    *   [13.9 显示器旋转对光标起效却对窗口/内容不起效](#.E6.98.BE.E7.A4.BA.E5.99.A8.E6.97.8B.E8.BD.AC.E5.AF.B9.E5.85.89.E6.A0.87.E8.B5.B7.E6.95.88.E5.8D.B4.E5.AF.B9.E7.AA.97.E5.8F.A3.2F.E5.86.85.E5.AE.B9.E4.B8.8D.E8.B5.B7.E6.95.88)
+    *   [13.10 在ATI X1600 (RV530 series)上3D应用程序显示黑窗口](#.E5.9C.A8ATI_X1600_.28RV530_series.29.E4.B8.8A3D.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E6.98.BE.E7.A4.BA.E9.BB.91.E7.AA.97.E5.8F.A3)
+    *   [13.11 从休眠中唤醒后光标崩溃](#.E4.BB.8E.E4.BC.91.E7.9C.A0.E4.B8.AD.E5.94.A4.E9.86.92.E5.90.8E.E5.85.89.E6.A0.87.E5.B4.A9.E6.BA.83)
+    *   [13.12 多显示器模式下DisplayPort黑屏](#.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8.E6.A8.A1.E5.BC.8F.E4.B8.8BDisplayPort.E9.BB.91.E5.B1.8F)
+    *   [13.13 控制台与 X 下 2D 性能低下](#.E6.8E.A7.E5.88.B6.E5.8F.B0.E4.B8.8E_X_.E4.B8.8B_2D_.E6.80.A7.E8.83.BD.E4.BD.8E.E4.B8.8B)
 
 ## 命名规范
 
 [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon")品牌遵循这样的命名规则:每个产品关联与某个市场分段.这篇文章中读者将会见到*产品*名(比如 HD 4850, X1900)与*代码*或者*核心*名(比如 RV770, R580). 传统地, 一个*产品系列*将匹配一个*核心系列* (比如产品系列 "X1000" 包含 X1300, X1600, X1800, 和 X1900 ,他们的核心系列是"R500" – 包含 RV515, RV530, R520, 和 R580 核心).
 
-具体对应关系可以查看维基百科： [Wikipedia:Comparison of AMD graphics processing units](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units").
-
-## 概览
-
-`xf86-video-ati`(**radeon**) 驱动：
-
-*   支持至 Radeon HD 6xxx 和 7xxxM 显卡系列（“北方群岛” 系列显卡）。
-    *   HD 77xx (南方群岛系列)已大部分支持.查看[功能矩阵](http://www.x.org/wiki/RadeonFeature)以了解不受支持的功能.
-    *   Radeons X1xxx 以及之前的显卡系列，拥有稳定、完整的功能以及2D、3D加速功能。
-    *   Radeons HD 2xxx 到 HD 6xxx系列具备完整2D加速和较好的3D加速功能，但相比ati官方驱动，功能仍然不全(比如, powersaving仍然处于测试阶段)。
-*   支持 DRI1, RandR 1.2/1.3/1.4, Glamor, EXA 加速 和 [kernel mode-setting](/index.php/KMS "KMS")/DRI2.
-
-一般来说，**xf86-video-ati** 应该是是你的首选，无论你用什么ATI/AMD卡。当然如果你使用的是最新的AMD显卡，你可能更喜欢 **catalyst** 驱动。
-
-**注意:** xf86-video-ati 驱动在Xorg (`xorg.conf`) 被识别为 "**radeon**"
+具体对应关系可以查看 [Wikipedia:Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") 与 [Wikipedia:List of AMD graphics processing units](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units")。
 
 ## 安装
 
@@ -100,14 +90,14 @@ radeon模块应该在启动时被正常载入.
 
 要是没有的话...
 
-*   确保 [内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)") 中**没有** `nomodeset` 或 `vga=`,因为现在 radeon 需要 [KMS](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel mode setting (简体中文)").
-*   另外,检查 `/etc/modprobe.d/` 或 `/usr/lib/modprobe.d/` 以确保radeon模块没有被禁用.
+*   确保 [内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)") 中**没有** `nomodeset` 或 `vga=`,因为现在 radeon 需要[内核级显示模式设置](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel mode setting (简体中文)")。
+*   另外，确保 radeon 模块不在内核模块[黑名单](/index.php/Kernel_modules#Blacklisting "Kernel modules")中。
 
-### 早启动KMS
+### 早启动 KMS
 
 **小贴士:** 若分辨率有问题,试试[强设模式](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F "Kernel mode setting (简体中文)")也许可以解决.
 
-radeon支持(并且现在强制需要)[Kernel Mode Setting](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel mode setting (简体中文)")(KMS).KMS默认启用.
+现在 radeon 支持并需要[内核级显示模式设置](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel mode setting (简体中文)") (KMS)。KMS 默认启用。
 
 KMS一般在[载入initramfs](/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#initramfs "Arch boot process (简体中文)")后初始化.不过,也可以在载入initramfs时启用KMS:将 `radeon` 模块添加到 `/etc/mkinitcpio.conf` 的 `MODULES` 列:
 
@@ -127,97 +117,83 @@ MODULES="... radeon ..."
 
 ## 性能调整
 
+### 启动视频加速
+
+参见[Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration")。
+
+### 驱动设置
+
 下面这些选项属于`/etc/X11/xorg.conf.d/**20-radeon.conf**`.
 
-**ColorTiling** 是绝对安全的,并且默认被启用. 大多数用户能注意到性能的提升,但是这个功能R200及更早的显卡不支持. 早的显卡虽可以启用,但是工作负担转移到了cpu上
+请在应用驱动选项之前先阅读 `man radeon` 和 [RadeonFeature](http://www.x.org/wiki/RadeonFeature/#index4h2)。
+
+**ColorTiling** 和 **ColorTiling2D** 是绝对安全的,并且默认被启用. 大多数用户能注意到性能的提升,但是这个功能R200及更早的显卡不支持. 早的显卡虽可以启用,但是工作负担转移到了cpu上
 
 ```
 Option "ColorTiling" "on"
+Option "ColorTiling2D" "on"
+
+```
+
+**DRI3** 支持可以被启用，来代替默认的 **DRI2**。你也许想参阅来自 [Phoronix](http://www.phoronix.com/scan.php?page=article&item=radeon-dri3-perf&num=1) 的评测以决定使用 DRI2 还是 DRI3。
+
+```
+Option "DRI" "3"
+
+```
+
+**TearFree** 使用硬件的 flipping mechanism 机制来防止撕裂。当前启用这个选项会禁用 "EnablePageFlip" 选项。
+
+```
+Option "TearFree" "on"
 
 ```
 
 **Acceleration architecture**; Glamor是一种使用OpenGL的 2D加速方式，适用于R300及以上显卡驱动。 自xf86-video-ati版本1:7.2.0-1后, 在radeonsi(南方群岛系列 和 superior GFX 显卡)上glamor默认启用; 在其他显卡上想启用的话,添加 AccelMethod **glamor** 到配置文件:
 
 ```
-Option "AccelMethod" "Glamor"
+Option "AccelMethod" "glamor"
 
 ```
 
-**Page Flip** 一般来说是安全的. 老显卡可以启用这个功能,不过这样将会禁用EXA. 最近的驱动可以使这项功能和EXA都启用.
+使用 Glamor 加速方式时可以启用 **ShadowPrimary** 选项，它将启用一个被称为 "shadow primary" 的缓冲区来供CPU快速存取像素信息，并给每个显示控制器 (CRTC) 分离出单独的 scanout 缓冲区。这将提升某些 2D 工作的性能，但可能会降低其他（比如3D）工作的性能。注意当前启用这个选项会禁用 "EnablePageFlip" 选项。
 
 ```
-Option "EnablePageFlip" "on"
+Option "ShadowPrimary" "on"
 
 ```
 
-**EXAVSync** 选项试图通过stalling the engine until the display controller has passed the destination region来避免撕裂。在开启了Xv overlay视频选项的3D加速桌面非常有用，使用KMS时则没有必要。
+**EXAVSync** 选项仅在使用 EXA 加速方式时有效，它通过stalling the engine until the display controller has passed the destination region来避免撕裂。这将导致性能下降，并已知在某些芯片上导致不稳定。
 
 ```
 Option "EXAVSync" "yes"
 
 ```
 
-下面是一个简单的配置文件示例： `/etc/X11/xorg.conf.d/**20-radeon.conf**`:
+下面是一个简单的 `/etc/X11/xorg.conf.d/**20-radeon.conf**` 配置文件示例：
 
 ```
 Section "Device"
-	Identifier  "My Graphics Card"
-	Driver	"radeon"
-	Option	"SWcursor"              "off" #software cursor might be necessary on some rare occasions, hence set off by default
-	Option	"AccelMethod"           "Glamor" #valid options are XAA, EXA and Glamor. Default value varies per-GPU.
-	#Option	"EXAVSync"              "off" #default is off, otherwise on. Only works **if EXA activated**
-	#Option	"EXAPixmaps"            "on"  #when on icreases 2D performance, but may also cause artifacts on some old cards. Only works **if EXA activated**
-	Option	"AccelDFS"              "on"  #default is off, because it can give problems with some PCI-e/AGP cards (artefacts, corruption, etc.)
+	Identifier  "Radeon"
+	Driver "radeon"
+	Option "AccelMethod" "glamor"
+        Option "DRI" "3"
+        Option "TearFree" "on"
 EndSection
 
 ```
 
 **小贴士:** [driconf](https://www.archlinux.org/packages/?name=driconf) 是一个可以修改诸多设置的小工具，如 vsync, anisotropic filtering, texture compression 等。它还有一些程序（比如Goole Earth）需要的"disable Low Impact fallback"功能。
 
-### 模块参数
+### 内核参数
 
-应用模块参数前请阅读 `man radeon` 与 [RadeonFeature](http://www.x.org/wiki/RadeonFeature/#index4h2) 。
+**小贴士:** 你也许想用 `systool` 来调试新的参数，参见[这里](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.A6.82.E8.A7.88 "Kernel modules (简体中文)")。
 
-这些[内核参数](/index.php/Kernel_parameters "Kernel parameters")可能会有用：`radeon.bapm=1` [[1]](https://www.phoronix.com/scan.php?page=news_item&px=MTczMzI), `radeon.disp_priority=2` [[2]](http://lists.freedesktop.org/pipermail/xorg/2013-February/055477.html), `radeon.hw_i2c=1` [[3]](https://superuser.com/questions/723760/does-radeon-hw-i2c-1-has-any-thing-to-do-with-temperature-readings), `radeon.mst=1` [[4]](https://www.phoronix.com/scan.php?page=news_item&px=Linux-4.1-Radeon-DP-MST), `radeon.msi=1` (强制启用 MSI 支持), `radeon.audio=0` (强制禁用 GPU 音频) 和/或 `radeon.tv=0` (禁用 TV-out).
+这些[内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)")可能会有用：`radeon.bapm=1` [[1]](https://www.phoronix.com/scan.php?page=news_item&px=MTczMzI), `radeon.disp_priority=2` [[2]](http://lists.freedesktop.org/pipermail/xorg/2013-February/055477.html), `radeon.hw_i2c=1` [[3]](https://superuser.com/questions/723760/does-radeon-hw-i2c-1-has-any-thing-to-do-with-temperature-readings), `radeon.mst=1` [[4]](https://www.phoronix.com/scan.php?page=news_item&px=Linux-4.1-Radeon-DP-MST), `radeon.msi=1` (强制启用 MSI 支持), `radeon.audio=0` (强制禁用 GPU 音频) 和/或 `radeon.tv=0` (禁用 TV-out).
 
-使用 `systool` 来调试模块参数，参阅 [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_information "Kernel modules")：
+如果 **gartsize** 没有被自动检测到，请添加 `radeon.gartsize=32` 到 [内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)")来手动定义它。
 
- `$ systool -v -m radeon` 
-```
-  Parameters:
-    agpmode             = "0"
-    aspm                = "-1"
-    audio               = "-1"
-    auxch               = "-1"
-    backlight           = "-1"
-    bapm                = "-1"
-    benchmark           = "0"
-    connector_table     = "0"
-    deep_color          = "0"
-    disp_priority       = "0"
-    dpm                 = "-1"
-    dynclks             = "-1"
-    fastfb              = "0"
-    hard_reset          = "0"
-    hw_i2c              = "0"
-    lockup_timeout      = "10000"
-    msi                 = "-1"
-    mst                 = "0"
-    no_wb               = "0"
-    pcie_gen2           = "-1"
-    r4xx_atom           = "0"
-    runpm               = "-1"
-    test                = "0"
-    tv                  = "1"
-    use_pflipirq        = "2"
-    vm_block_size       = "12"
-    vm_size             = "8"
-```
-
-如果**gartsize**没有自动检测到，可以通过向[内核参数](/index.php/Kernel_parameters "Kernel parameters")添加`radeon.gartsize=32`来实现，单位是Mb，对于RV280显卡是32M。
-
-**注意：** 对于新的AMD显卡不再需要设置这个参数：
-
+**注意:** 对于新的AMD显卡不再需要设置这个参数：
 ```
 [drm] Detected VRAM RAM=2048M, BAR=256M
 [drm] radeon: 2048M of VRAM memory ready
@@ -225,13 +201,33 @@ EndSection
 
 ```
 
-### 关闭 PCI-E 2.0
+重启后生效。
+
+#### 关闭 PCI-E 2.0
 
 从3.6版内核开始，radeon里PCI-E v2.0选项默认启用。
 
 对一些主板可能不稳定，可以向[内核参数](/index.php/Kernel_parameters "Kernel parameters")添加 `radeon.pcie_gen2=0` 来关闭。
 
 参考 [Phoronix 文章](http://www.phoronix.com/scan.php?page=article&item=amd_pcie_gen2&num=1)
+
+### Gallium HUD
+
+radeonsi 驱动支持激活一个HUD，来显示透明的图像及文字于正在渲染的程序（如游戏）之上。可以显示当前帧率，每个CPU核心负载或者CPU负载平均值。这个HUD受 GALLIUM_HUD 环境变量控制，可以添加一些参数如：
+
+*   "fps" - 显示当前帧率
+*   "cpu" - 显示平均CPU负载
+*   "cpu0" - 显示第一个CPU核心负载
+*   "cpu0+cpu1" - 显示前两个CPU核心负载
+*   "draw-calls" - 显示一个物体的每个材质被显示到屏幕上多少次(displays how many times each material in an object is drawn to the screen）
+*   "requested-VRAM" - 显示GPU的VRAM使用量
+*   "pixels-rendered" - 显示正在显示的像素计数
+
+关于参数的完整列表以及操作GALLIUM_HUD的一些注意事项，你可以添加"help"参数运行一个简单程序（如glxgears）来查看相应的终端输出。
+
+ `# GALLIUM_HUD="help" glxgears` 
+
+更多信息参见 [邮件列表页面](http://lists.freedesktop.org/archives/mesa-dev/2013-March/036586.html) 或 [这篇博客](https://kparal.wordpress.com/2014/03/03/fraps-like-fps-overlay-for-linux/).
 
 ## 混合交火
 
@@ -248,13 +244,45 @@ EndSection
 
 三种方法可供选择:
 
-1.  [dynpm](#.E5.8A.A8.E6.80.81.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
-2.  [profile](#.E5.9F.BA.E4.BA.8E.E8.AE.A1.E5.88.92.E7.9A.84.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
-3.  [dpm](#.E5.8A.A8.E6.80.81.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)(3.13内核后默认启用)
-
-**不好说哪个方法对你最合适，你该自己试试。**
+1.  [dpm](#.E5.8A.A8.E6.80.81.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)(3.13内核后默认启用)
+2.  [dynpm](#.E5.8A.A8.E6.80.81.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
+3.  [profile](#.E5.9F.BA.E4.BA.8E.E8.AE.A1.E5.88.92.E7.9A.84.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
 
 详见 [http://www.x.org/wiki/RadeonFeature/#index3h2](http://www.x.org/wiki/RadeonFeature/#index3h2) .
+
+### 动态电源管理
+
+从3.13内核开始,在[很多 AMD Radeon 设备](http://kernelnewbies.org/Linux_3.13#head-f95c198f6fdc7defe36f470dc8369cf0e16898df)上 DPM 默认启用。如果要禁用可加入参数 `radeon.dpm=0` 到 [kernel parameters](/index.php/Kernel_parameters "Kernel parameters")。
+
+不像[dynpm](#.E5.8A.A8.E6.80.81.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)，“dpm"方式根据GPU负载情况动态调整时钟频率和电压，同时它会启用频率和电压门控.
+
+dpm有3种模式可选:
+
+*   `battery` 最节能
+*   `balanced` 默认
+*   `performance` 最佳性能
+
+可以通过sysfs来更改dpm的模式,如下:
+
+```
+# echo battery > /sys/class/drm/card0/device/power_dpm_state
+
+```
+
+你也许想要强制显卡工作在某一性能等级下:
+
+*   `auto` 默认; 使用当前dpm模式限定的所有性能等级
+*   `low` 强制在最低性能
+*   `high` 强制在最高性能
+
+```
+# echo low > /sys/class/drm/card0/device/power_dpm_force_performance_level
+
+```
+
+#### 命令行工具
+
+*   [radcard](https://github.com/superjamie/snippets/blob/master/radcard) - 一个获取/调整 DPM 电源状态与级别的脚本。
 
 ### 老方法
 
@@ -331,36 +359,6 @@ KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_method}=
 
 	[https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager](https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager) || [gnome-shell-extension-radeon-ppm](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-ppm/) [gnome-shell-extension-radeon-power-profile-manager-git](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-power-profile-manager-git/)
 
-### 动态电源管理
-
-从3.13内核开始,在[很多AMD Radeon设备](http://kernelnewbies.org/Linux_3.13#head-f95c198f6fdc7defe36f470dc8369cf0e16898df)上DPM默认启用。如果要禁用可加入参数 `radeon.dpm=0` 到 [kernel parameters](/index.php/Kernel_parameters "Kernel parameters")。
-
-不像[dynpm](#.E5.8A.A8.E6.80.81.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)，“dpm"方式根据GPU负载情况动态调整时钟频率和电压，同时它会启用频率和电压门控.
-
-dpm有3种模式可选:
-
-*   `battery` 最节能
-*   `balanced` 默认
-*   `performance` 最佳性能
-
-可以通过sysfs来更改dpm的模式,如下:
-
-```
-# echo battery > /sys/class/drm/card0/device/power_dpm_state
-
-```
-
-你也许想要强制显卡工作在某一性能等级下:
-
-*   `auto` 默认; 使用当前dpm模式限定的所有性能等级
-*   `low` 强制在最低性能
-*   `high` 强制在最高性能
-
-```
-# echo low > /sys/class/drm/card0/device/power_dpm_force_performance_level
-
-```
-
 ### 其它
 
 要查看当前GPU频率，可以运行如下命令，你可以看到类似如下输出：
@@ -378,7 +376,34 @@ It depends on which GPU line yours is, however. Along with the radeon driver ver
 
 Thermal sensors are implemented via external i2c chips or via the internal thermal sensor (rv6xx-evergreen only). To get the temperature on asics that use i2c chips, you need to load the appropriate hwmon driver for the sensor used on your board (lm63, lm64, etc.). The drm will attempt to load the appropriate hwmon driver. On boards that use the internal thermal sensor, the drm will set up the hwmon interface automatically. When the appropriate driver is loaded, the temperatures can be accessed via [lm_sensors](/index.php/Lm_sensors "Lm sensors") tools or via sysfs in `/sys/class/hwmon`.
 
-## TV输出（TV out）
+## 风扇速度
+
+即使上述省电功能应该能很好调整风扇速度，一些显卡在空闲状态时仍然太吵了。这时，如果你的风扇支持的话，你可以尝试手动改变风扇速度。
+
+**注意:**
+
+*   请谨记以下方法会将风扇速度设置为固定值，它不会随着 gpu 的压力而调整，所以在高负荷工作时这有可能导致过热。
+*   设置低于标准的数值时最好检查你的 gpu 温度。
+
+首先，输入如下命令来启用 gpu（或者在多 gpu 的情况下，第一个 gpu）的风扇手动调速。
+
+```
+# echo 1 > /sys/class/drm/card0/device/hwmon/hwmon2/pwm1_enable
+
+```
+
+接下来设置你想要的风扇速度，可选的数值为 0 到 255，分别对应 0-100% 的风扇速度。（比如下例设置为了大约 20%）
+
+```
+# echo 55 > /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
+
+```
+
+如果要让此成为永久设置，使用 [systemd-tmpfiles](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.B8.B4.E6.97.B6.E6.96.87.E4.BB.B6 "Systemd (简体中文)")。
+
+如果固定值不符合你的期望，还可以自定义为按一个温度/风扇速度曲线来调整，比如写一个脚本，来根据当前温度 (/sys/class/drm/card0/device/hwmon/hwmon2/temp1_input) 设置风扇速度，最好还能设置为温度变化后延迟调整。这里有一个图形界面的工具：[http://github.com/marazmista/radeon-profile](http://github.com/marazmista/radeon-profile) [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/)。
+
+## TV输出
 
 首先，检查你有S-video输出：`xrandr`应该会给你类似如下的结果：
 
@@ -488,76 +513,40 @@ You can get list of your video outputs with following command:
 
 ## HDMI 音频输出
 
-HDMI音频输出在 [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) 软件包中提供支持。由于可能引发一些问题，在 Linux内核版本 >=3.0 中默认禁用了HDMI音频输出。要启用它，在 [内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)") 中添加 `radeon.audio=1` 。
+HDMI 音频输出在 [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) 软件包中提供支持。由于可能引发一些问题，在 Linux 内核版本 >=3.0 中默认禁用了 HDMI 音频输出。要启用它，在[内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)")中添加 `radeon.audio=1`。
 
 如果启动后没有视频输出，则请禁用这个参数。
 
 **注意:**
 
-*   如果在安装驱动后HDMI音频没有工作，请使用 [这里](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#HDMI_.E8.BE.93.E5.87.BA.E6.97.A0.E6.95.88 "Advanced Linux Sound Architecture (简体中文)") 中提供的方法进行检测。
-*   如果在PulseAudio中声音出现问题，尝试设置 `tsched=0` （参见 [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling "PulseAudio/Troubleshooting")） 并确保 `rtkit` 守护进程正在运行。
-*   Your sound card might use the same module, since HDA compliant hardware is pretty common. [Change the default sound card](/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card "Advanced Linux Sound Architecture") using one of the suggested methods, which include using the `defaults` node in alsa configuration.
+*   如果在安装驱动后 HDMI 音频没有工作，请使用[这里](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#HDMI_.E8.BE.93.E5.87.BA.E6.97.A0.E6.95.88 "Advanced Linux Sound Architecture (简体中文)")提供的方法进行检测。
+*   如果在 PulseAudio 中声音出现问题，尝试设置 `tsched=0`（参见 [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling "PulseAudio/Troubleshooting")）并确保 `rtkit` 守护进程正在运行。
+*   因为 HDA 兼容硬件的相似性，你的声卡可能使用相同的模块。请使用推荐的方式[改变默认声卡](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4.E5.A3.B0.E5.8D.A1 "Advanced Linux Sound Architecture (简体中文)")，比如修改 alsa 配置文件的 `defaults` 节点。
 
-## Dual Head setup
+## 多显设置
+
+### 使用 RandR 扩展
+
+参见 [Multihead#RandR](/index.php/Multihead#RandR "Multihead")。
 
 ### 独立的 X screen
 
 独立的双显示器可以按正常方式配置，radeon 驱动有一个 `"ZaphodHeads"` 选项可以把显示的区域绑定到固定的设备，例如：
 
+ `/etc/X11/xorg.conf.d/20-radeon.conf` 
 ```
-       Section "Device"
-       Identifier     "Device0"
-       Driver         "radeon"
-       Option         "ZaphodHeads"   "VGA-0"
-       VendorName     "ATI"
-       BusID          "PCI:1:0:0"
-       Screen          0
-       EndSection
+Section "Device"
+  Identifier "Device0"
+  Driver "radeon"
+  Option "ZaphodHeads" "VGA-0"
+  VendorName "ATI"
+  BusID "PCI:1:0:0"
+  Screen 0
+EndSection
 
-```
-
-有些设备有多个输出(HDMI, DVI 和 VGA)，但是双屏显示的时候只使用其中的某两个组合例如 HDMI+DVI，所以需要通过 `"ZaphodHeads" "VGA-0"` 更改输出设备。
-
-## 启动视频加速
-
-[mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) 包已为开源驱动带来MPEG1/2的硬件解码支持，安装 [libvdpau](https://www.archlinux.org/packages/?name=libvdpau) 后将自动启用。
-
-要是它不会自动使用的话,你也可以通过声明环境变量 `LIBVA_DRIVER_NAME` 为 `vdpau` 和 `VDPAU_DRIVER` 为对应驱动来强制启用，例如：
-
- `~/.bashrc` 
-```
-export LIBVA_DRIVER_NAME=vdpau
-export VDPAU_DRIVER=r600
 ```
 
-这用于基于 r600 系列及以上的显卡（所有可用VDPAU 驱动位于 `/usr/lib/vdpau/` 目录下找到）。
-
-如果你拥有一块[南方群岛](https://en.wikipedia.org/wiki/Radeon_HD_7000_Series "wikipedia:Radeon HD 7000 Series")(HD 7XXX) 或者更高的显卡，`VDPAU_DRIVER`变量应该设置成`radeonsi`：
-
- `~/.bashrc`  `export VDPAU_DRIVER=radeonsi` 
-
-使用 `vainfo` 来验证新设置：
-
- `$ vainfo` 
-```
-libva info: VA-API version 0.38.0
-libva info: va_getDriverName() returns 0
-libva info: User requested driver 'vdpau'
-libva info: Trying to open /usr/lib/dri/vdpau_drv_video.so
-libva info: Found init function __vaDriverInit_0_35
-libva info: va_openDriver() returns 0
-vainfo: VA-API version: 0.38 (libva 1.6.0)
-vainfo: Driver version: Splitted-Desktop Systems VDPAU backend for VA-API - 0.7.4
-vainfo: Supported profile and entrypoints
-      VAProfileMPEG2Simple            :	VAEntrypointVLD
-      VAProfileMPEG2Main              :	VAEntrypointVLD
-      VAProfileMPEG4Simple            :	VAEntrypointVLD
-      VAProfileMPEG4AdvancedSimple    :	VAEntrypointVLD
-      VAProfileH264Baseline           :	VAEntrypointVLD
-      VAProfileH264Main               :	VAEntrypointVLD
-      VAProfileH264High               :	VAEntrypointVLD
-      VAProfileVC1Advanced            :	VAEntrypointVLD
-```
+有些显卡有多个输出（HDMI，DVI 和 VGA），而双屏显示的时候它只使用 HDMI+DVI，这时你可以通过 `"ZaphodHeads" "VGA-0"` 来更改输出。这在使用多输出显卡时很方便。
 
 ## 关闭垂直同步刷新
 
@@ -594,13 +583,6 @@ Section "Device"
     Driver "radeon"
     Option "EXAPixmaps" "off"
 EndSection
-
-```
-
-若想进一步地调整,还可以禁用 `AccelDFS`:
-
-```
-Option "AccelDFS" "off"
 
 ```
 
@@ -704,26 +686,12 @@ EndSection
 
 ### 从休眠中唤醒后光标崩溃
 
-如果显示器唤醒后光标垂直方向重复刷新，可以在xorg的配置文件的"Device"部分中将"SWCursor"设置成"true".
+如果显示器唤醒后光标垂直方向重复刷新，可以在配置文件 `20-radeon.conf` 中的 `"Device"` 部分里设置 `"SWCursor" "True"`。
 
 ### 多显示器模式下DisplayPort黑屏
 
 尝试以[内核参数](/index.php/Kernel_parameter "Kernel parameter") `radeon.audio=0` 启动。
 
-### Gallium HUD
+### 控制台与 X 下 2D 性能低下
 
-radeon 支持激活一个HUD，来显示透明的图像及文字于正在渲染的程序（如游戏）之上。可以显示当前帧率，每个CPU核心负载或者CPU负载平均值。这个HUD受 GALLIUM_HUD 环境变量控制，可以添加一些参数如：
-
-*   "fps" - 显示当前帧率
-*   "cpu" - 显示平均CPU负载
-*   "cpu0" - 显示第一个CPU核心负载
-*   "cpu0+cpu1" - 显示前两个CPU核心负载
-*   "draw-calls" - 显示一个物体的每个材质被显示到屏幕上多少次(displays how many times each material in an object is drawn to the screen）
-*   "requested-VRAM" - 显示GPU的VRAM使用量
-*   "pixels-rendered" - 显示正在显示的像素计数
-
-关于参数的完整列表以及操作GALLIUM_HUD的一些注意事项，你可以添加"help"参数运行一个简单程序（如glxgears）来查看相应的终端输出。
-
- `# GALLIUM_HUD="help" glxgears` 
-
-更多信息参见 [邮件列表页面](http://lists.freedesktop.org/archives/mesa-dev/2013-March/036586.html) 或 [这篇博客](https://kparal.wordpress.com/2014/03/03/fraps-like-fps-overlay-for-linux/).
+从内核版本 4.1.4 开始，[动态电源管理 (dpm)](#.E5.8A.A8.E6.80.81.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86) 在某些 R9 270X 显卡（芯片设备号码 (chip device number) 为 6810，子系统 (subsystem) id 为 174b:e271，在lspci中显示为 Curacao XT, PC Partner Limited / Sapphire Technology Device e271）上不工作。这个 regression 是由一次对相同 PCI ids 显卡的[修复](https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=ea039f927524e36c15b5905b4c9469d788591932)引起。禁用 dpm （添加 `radeon.dpm=0` 到 [内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)")）可以解决问题。

@@ -486,7 +486,9 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 *   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Mathematica fonts by Wolfram Research, Inc.
 *   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/) - MathType fonts
 *   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/), [otf-cm-unicode](https://aur.archlinux.org/packages/otf-cm-unicode/) - [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern "wikipedia:Computer Modern") (of TeX fame)
-*   [otf-xits](https://aur.archlinux.org/packages/otf-xits/) - An OpenType implementation of [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project") with math support
+*   [otf-latin-modern](https://aur.archlinux.org/packages/otf-latin-modern/), [otf-latinmodern-math](https://aur.archlinux.org/packages/otf-latinmodern-math/) - Improved version of Computer Modern fonts as used in LaTeX
+*   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) and [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra) contain many math fonts such as Latin Modern Math and [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project"). See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for configuration.
+*   [otf-xits](https://aur.archlinux.org/packages/otf-xits/) - An OpenType implementation of [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project") with support for maths written from right to left.
 
 ### Microsoft fonts
 

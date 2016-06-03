@@ -130,7 +130,7 @@ This section contains information pertaining to the boot process. An overview of
 
 ### Hardware auto-recognition
 
-Hardware should be auto-detected by [udev](/index.php/Udev "Udev") during the boot process by default. A potential improvement in boot time can be achieved by disabling module auto-loading and specifying required modules manually, as described in [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules"). Additionally, [Xorg](/index.php/Xorg "Xorg") should be able to auto-detect required drivers using udev, but users have the option to configure the X server manually too.
+Hardware should be auto-detected by [udev](/index.php/Udev "Udev") during the boot process by default. A potential improvement in boot time can be achieved by disabling module auto-loading and specifying required modules manually, as described in [Kernel modules](/index.php/Kernel_modules "Kernel modules"). Additionally, [Xorg](/index.php/Xorg "Xorg") should be able to auto-detect required drivers using udev, but users have the option to configure the X server manually too.
 
 ### Microcode
 
@@ -324,7 +324,7 @@ A list of miscellaneous Bash settings, including completion enhancements, histor
 
 ### Colored output
 
-Even though a number of applications have built-in color capabilities, using a general-purpose colorizing wrapper, such as `cope`, is another route. Install the [cope-git](https://aur.archlinux.org/packages/cope-git/) package. The [acoc](https://aur.archlinux.org/packages/acoc/) package provides a similar application.
+Even though a number of applications have built-in color capabilities, using a general-purpose colorizing wrapper, such as [cope-git](https://aur.archlinux.org/packages/cope-git/), is another route.
 
 Colorizing the output of specific core utilities such as `grep` and `ls` is covered in the [Core utilities](/index.php/Core_utilities "Core utilities") article.
 
@@ -332,7 +332,7 @@ Man pages (or manual pages) are one of the most useful resources available to GN
 
 ### Compressed files
 
-Compressed files, or archives, are frequently encountered on a GNU/Linux system. [Tar](/index.php/Tar "Tar") is one of the most commonly used archiving tools, and users should be familiar with its syntax (Arch Linux packages, for example, are simply xzipped tarballs). See [Bash#Functions](/index.php/Bash#Functions "Bash") for other helpful commands.
+Compressed files, or archives, are frequently encountered on a GNU/Linux system. [Tar](/index.php/Tar "Tar") is one of the most commonly used archiving tools, and users should be familiar with its syntax (Arch Linux packages, for example, are simply xzipped tarballs). See [Bash/Functions](/index.php/Bash/Functions "Bash/Functions") for other helpful commands.
 
 ### Console prompt
 

@@ -9,7 +9,7 @@
 | Wireless switch | Will work in Linux 4.6 | intel-hid |
 | Function/Multimedia Keys | Working |  ? |
 
-The Dell XPS 13 2016 (9350) is the third-generation model of the XPS 13 line. Unlike its predecessor, it has no official Linux support yet. Just like the older versions ([Dell XPS 13](/index.php/Dell_XPS_13 "Dell XPS 13") and [Dell XPS 13 (2015)](/index.php/Dell_XPS_13_(2015) "Dell XPS 13 (2015)")) it can be bought in different hardware configurations.
+The Dell XPS 13 2016 (9350) is the third-generation model of the XPS 13 line. The laptop is available in both a standard edition with Windows installed as well as a Developer Edition which only differs in that it comes with Ubuntu installed as well as the Broadcom WiFi card replaced with an Intel WiFi card. Just like the older versions ([Dell XPS 13](/index.php/Dell_XPS_13 "Dell XPS 13") and [Dell XPS 13 (2015)](/index.php/Dell_XPS_13_(2015) "Dell XPS 13 (2015)")) it can be bought in different hardware configurations.
 
 The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide"), [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
@@ -17,22 +17,29 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 
 ## Contents
 
-*   [1 BIOS updates](#BIOS_updates)
-*   [2 SATA controller](#SATA_controller)
-*   [3 NVM Express SSD](#NVM_Express_SSD)
-    *   [3.1 Cannot find root device](#Cannot_find_root_device)
-    *   [3.2 Note on Mount Options](#Note_on_Mount_Options)
-*   [4 Wireless](#Wireless)
-*   [5 Bluetooth](#Bluetooth)
-*   [6 Video](#Video)
-*   [7 Touchpad](#Touchpad)
-*   [8 Sound](#Sound)
-    *   [8.1 PulseAudio Workaround](#PulseAudio_Workaround)
-*   [9 Microphone](#Microphone)
-*   [10 Diverting models](#Diverting_models)
-    *   [10.1 XPS 12](#XPS_12)
-*   [11 lspci and lsusb](#lspci_and_lsusb)
-*   [12 See also](#See_also)
+*   [1 Content adaptive brightness control](#Content_adaptive_brightness_control)
+*   [2 BIOS updates](#BIOS_updates)
+*   [3 SATA controller](#SATA_controller)
+*   [4 NVM Express SSD](#NVM_Express_SSD)
+    *   [4.1 Cannot find root device](#Cannot_find_root_device)
+    *   [4.2 Note on Mount Options](#Note_on_Mount_Options)
+*   [5 Wireless](#Wireless)
+*   [6 Bluetooth](#Bluetooth)
+*   [7 Video](#Video)
+*   [8 Touchpad](#Touchpad)
+*   [9 Sound](#Sound)
+    *   [9.1 PulseAudio Workaround](#PulseAudio_Workaround)
+*   [10 Microphone](#Microphone)
+*   [11 Diverting models](#Diverting_models)
+    *   [11.1 XPS 12](#XPS_12)
+*   [12 lspci and lsusb](#lspci_and_lsusb)
+    *   [12.1 lspci](#lspci)
+    *   [12.2 lsusb](#lsusb)
+*   [13 See also](#See_also)
+
+## Content adaptive brightness control
+
+In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightness embedded in the panel firmware, this "content adaptive brightness control" (usually referred to as CABC or DBC) will adjust the screen brightness depending on the content displayed on the screen and will generally be found undesirable, especially for Linux users who are likely to be switching between dark and light screen content. Dell has issued a fix for this however it is only available to run in Windows and for the QHD+ model of the laptop so this precaution should be taken before installing Linux, the FHD model of the XPS 13 (9350) cannot be fixed. This is not a problem with the panel but rather a problem with the way the panels are configured for the XPS 13, as the same panel exists in the Dell's Latitude 13 7000 series (e7370) FHD model but with CABC disabled. The fix is available directly from [Dell](http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=PWD5K&fileId=3505631210&osCode=WT64A&productCode=xps-13-9350-laptop&languageCode=EN&categoryId=AP&dgc=BA&cid=299605&lid=5718620&acd=123092226602942957c94940922&ven3=120619725550599228).
 
 ## BIOS updates
 
@@ -212,6 +219,60 @@ For ALSA, increase "Digital" channel for microphone to work.
 ### XPS 12
 
 ## lspci and lsusb
+
+The <tt>lspci</tt> and <tt>lsusb</tt> below were take from the following system:
+
+```
+[    0.000000] DMI: Dell Inc. XPS 13 9350/0PWNCR, BIOS 1.3.3 03/01/2016
+
+```
+
+on kernel:
+
+```
+Linux marv 4.5.4-1-ARCH #1 SMP PREEMPT Wed May 11 22:21:28 CEST 2016 x86_64 GNU/Linux
+
+```
+
+### lspci
+
+```
+00:00.0 Host bridge: Intel Corporation Skylake Host Bridge/DRAM Registers (rev 08)
+00:02.0 VGA compatible controller: Intel Corporation Skylake Integrated Graphics (rev 07)
+00:04.0 Signal processing controller: Intel Corporation Skylake Processor Thermal Subsystem (rev 08)
+00:14.0 USB controller: Intel Corporation Sunrise Point-LP USB 3.0 xHCI Controller (rev 21)
+00:14.2 Signal processing controller: Intel Corporation Sunrise Point-LP Thermal subsystem (rev 21)
+00:15.0 Signal processing controller: Intel Corporation Sunrise Point-LP Serial IO I2C Controller #0 (rev 21)
+00:15.1 Signal processing controller: Intel Corporation Sunrise Point-LP Serial IO I2C Controller #1 (rev 21)
+00:16.0 Communication controller: Intel Corporation Sunrise Point-LP CSME HECI #1 (rev 21)
+00:1c.0 PCI bridge: Intel Corporation Device 9d10 (rev f1)
+00:1c.4 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #5 (rev f1)
+00:1c.5 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #6 (rev f1)
+00:1d.0 PCI bridge: Intel Corporation Device 9d18 (rev f1)
+00:1f.0 ISA bridge: Intel Corporation Sunrise Point-LP LPC Controller (rev 21)
+00:1f.2 Memory controller: Intel Corporation Sunrise Point-LP PMC (rev 21)
+00:1f.3 Audio device: Intel Corporation Sunrise Point-LP HD Audio (rev 21)
+00:1f.4 SMBus: Intel Corporation Sunrise Point-LP SMBus (rev 21)
+3a:00.0 Network controller: Broadcom Corporation BCM4350 802.11ac Wireless Network Adapter (rev 08)
+3b:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. RTS525A PCI Express Card Reader (rev 01)
+3c:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd NVMe SSD Controller (rev 01)
+
+```
+
+[Full output from sudo lspci -v](https://gist.github.com/mgalgs/a903e3528f48aa25b5c0b9ae9c09a07f)
+
+### lsusb
+
+```
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 004: ID 0c45:670c Microdia 
+Bus 001 Device 003: ID 04f3:20d0 Elan Microelectronics Corp. 
+Bus 001 Device 002: ID 0a5c:6412 Broadcom Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
+[Full output from sudo lsusb -v](https://gist.github.com/mgalgs/15fb0d19795f700d60f061f67dddbefc)
 
 ## See also
 

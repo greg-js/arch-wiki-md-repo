@@ -6,24 +6,21 @@ Additionally, Ring has a clean separation between daemon and user interface, and
 
 ## Installation
 
-**Note:** Remember that as of February 2016, Ring is still in alpha stage. As such, things might break, especially when upgrading.
+**Note:** Remember that as of May 2016, Ring is still in beta stage. As such, things might break, especially when upgrading.
 
 Ring is currently packaged in the AUR. You can choose between several versions:
 
 *   Gnome client, weekly/monthly snapshot: [ring-gnome](https://aur.archlinux.org/packages/ring-gnome/)
+*   KDE client, stable version: [ring-kde](https://aur.archlinux.org/packages/ring-kde/)
 *   Gnome client, latest git version: [ring-gnome-git](https://aur.archlinux.org/packages/ring-gnome-git/)
 *   KDE client, latest git version: [ring-kde-git](https://aur.archlinux.org/packages/ring-kde-git/)
 
-These packages will pull the appropriate dependencies ([ring-daemon-git](https://aur.archlinux.org/packages/ring-daemon-git/), [libringclient-git](https://aur.archlinux.org/packages/libringclient-git/) or [ring-daemon](https://aur.archlinux.org/packages/ring-daemon/), [libringclient](https://aur.archlinux.org/packages/libringclient/)).
-
-Whether you want to use the *-git* packages or the "stable" snapshots is up to you. [ring-gnome](https://aur.archlinux.org/packages/ring-gnome/), [ring-daemon](https://aur.archlinux.org/packages/ring-daemon/) and [libringclient](https://aur.archlinux.org/packages/libringclient/) are updated weekly to monthly, and the maintainer checks that everything works fine before uploading the new version to the AUR. *-git* packages, on the other hand, may offer new features, but they may also be broken.
-
 ## Usage
 
-You just have to use the launcher provided by your desktop environment, or run the `ring` command as user:
+You can use the desktop launcher provided by your desktop environment, or run the `ring.cx` command as user:
 
 ```
-$ ring
+$ ring.cx
 
 ```
 

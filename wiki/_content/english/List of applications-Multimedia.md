@@ -161,7 +161,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/muennich/sxiv](https://github.com/muennich/sxiv) || [sxiv](https://www.archlinux.org/packages/?name=sxiv)
 
-*   **[Viewnior](https://en.wikipedia.org/wiki/Viewnior "wikipedia:Viewnior")** — Minimalistic GTK+ image viewer featuring support for flipping, rotating, animations and configurable mouse actions.
+*   **Viewnior** — Minimalistic GTK+ image viewer featuring support for flipping, rotating, animations and configurable mouse actions.
 
 	[http://siyanpanayotov.com/project/viewnior/](http://siyanpanayotov.com/project/viewnior/) || [viewnior](https://www.archlinux.org/packages/?name=viewnior)
 
@@ -237,7 +237,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **[MyPaint](https://en.wikipedia.org/wiki/MyPaint "wikipedia:MyPaint")** — Free software graphics application for digital painters.
 
-	[http://mypaint.intilinux.com](http://mypaint.intilinux.com) || [mypaint](https://www.archlinux.org/packages/?name=mypaint)
+	[http://mypaint.org](http://mypaint.org) || [mypaint](https://www.archlinux.org/packages/?name=mypaint)
 
 *   **[Pinta](https://en.wikipedia.org/wiki/Pinta_(software) "wikipedia:Pinta (software)")** — Drawing and editing program modeled after [Paint.NET](https://en.wikipedia.org/wiki/Paint.net "wikipedia:Paint.net"). Its goal is to provide a simplified alternative to GIMP for casual users.
 
@@ -299,7 +299,7 @@ See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.
 
 	[http://brlcad.org/](http://brlcad.org/) || [brlcad](https://aur.archlinux.org/packages/brlcad/)
 
-*   **[DraftSight](https://en.wikipedia.org/wiki/DraftSight "wikipedia:DraftSight")** — Dassault Systemes' freeware 2D CAD application. DraftSight allows users to access DWG/DXF files, regardless of which CAD software was originally used to create them.
+*   **DraftSight** — Dassault Systemes' freeware 2D CAD application. DraftSight allows users to access DWG/DXF files, regardless of which CAD software was originally used to create them.
 
 	[http://www.3ds.com/products-services/draftsight/overview/](http://www.3ds.com/products-services/draftsight/overview/) || [draftsight](https://aur.archlinux.org/packages/draftsight/)
 

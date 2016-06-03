@@ -66,7 +66,7 @@ Otherwise; read the Troubleshooting part or ask for help in the [Arch Forums](ht
 
 ClamAV can use databases/signature from other repositories or security vendors.
 
-To add the most important ones in a single step install [clamav-unofficial-sigs](https://aur.archlinux.org/packages/clamav-unofficial-sigs/) and configure it in `/etc/clamav-unofficial-sigs.conf`.
+To add the most important ones in a single step install [clamav-unofficial-sigs](https://aur.archlinux.org/packages/clamav-unofficial-sigs/) and configure it in `/etc/clamav-unofficial-sigs/user.conf`.
 
 This will add signatures/databases from e.g. MalwarePatrol, SecuriteInfo, Yara, Linux Malware Detect,...
 

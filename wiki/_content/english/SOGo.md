@@ -60,13 +60,15 @@
 
 ### Considerations
 
-SOGo can use many different sources for user authentication including, but not limited to, Active Directory, OpenLDAP, MySQL/MariaDB, PostgreSQL, and probably many others if you include PAM. This article will focus on using a centrally managed user database (following on from the [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller "Samba 4 Active Directory domain controller") article initially -- hopefully others will contribute OpenLDAP/MySQL/PostgreSQL user configs) for both authentication, and to provide a global address list.
+SOGo can use many different sources for user authentication including, but not limited to, Active Directory, OpenLDAP, MySQL/MariaDB, PostgreSQL, and probably many others if you include PAM. This article will focus on using a centrally managed user database (following on from the [Samba/Active Directory domain controller](/index.php/Samba/Active_Directory_domain_controller "Samba/Active Directory domain controller") article initially -- hopefully others will contribute OpenLDAP/MySQL/PostgreSQL user configs) for both authentication, and to provide a global address list.
 
-Additionally, either [mariadb](https://www.archlinux.org/packages/?name=mariadb) or [postgresql](https://www.archlinux.org/packages/?name=postgresql) must be used to store the users' calendars and address books. As of this writing, the SOGo documentation has a clear preference for MariaDB (or MySQL), but if you have an existing PostgreSQL installation, it makes sense to use it. Other SQL implementations might be supported as well, but are not currently covered.
+Additionally, either [mariadb](https://www.archlinux.org/packages/?name=mariadb) or [postgresql](https://www.archlinux.org/packages/?name=postgresql) must be used to store the users' calendars and address books. As of this writing, the SOGo documentation has a clear preference for MariaDB (or MySQL), but if you have an existing PostgreSQL installation, it might make sense to use it. Other SQL implementations might also be supported, but are not currently covered.
+
+Finally, there are currently two versions of SOGo that are being actively maintained. SOGo-2.x is uses a look and feel that is similar to a desktop client, while SOGo-3.x uses a more modern interface, taking cues from Google using AngularJS. Instructions and configuration are interchangeable between the two versions.
 
 ### Prerequisites
 
-[Install](/index.php/Install "Install") the needed prerequisite packages [dovecot](https://www.archlinux.org/packages/?name=dovecot), [mariadb](https://www.archlinux.org/packages/?name=mariadb), [pigeonhole](https://www.archlinux.org/packages/?name=pigeonhole), [postfix](https://www.archlinux.org/packages/?name=postfix), [postgresql](https://www.archlinux.org/packages/?name=postgresql), [mysql-python](https://www.archlinux.org/packages/?name=mysql-python) and either [apache](https://www.archlinux.org/packages/?name=apache) or [nginx](https://www.archlinux.org/packages/?name=nginx) from the [official repositories](/index.php/Official_repositories "Official repositories"), and [libwbxml](https://aur.archlinux.org/packages/libwbxml/), [python2-sievelib](https://aur.archlinux.org/packages/python2-sievelib/), [sogo](https://aur.archlinux.org/packages/sogo/), and [sope](https://aur.archlinux.org/packages/sope/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the needed prerequisite packages [dovecot](https://www.archlinux.org/packages/?name=dovecot), [mariadb](https://www.archlinux.org/packages/?name=mariadb), [pigeonhole](https://www.archlinux.org/packages/?name=pigeonhole), [postfix](https://www.archlinux.org/packages/?name=postfix), [postgresql](https://www.archlinux.org/packages/?name=postgresql), [mysql-python](https://www.archlinux.org/packages/?name=mysql-python) and either [apache](https://www.archlinux.org/packages/?name=apache) or [nginx](https://www.archlinux.org/packages/?name=nginx) from the [official repositories](/index.php/Official_repositories "Official repositories"), and [libwbxml](https://aur.archlinux.org/packages/libwbxml/), [python2-sievelib](https://aur.archlinux.org/packages/python2-sievelib/), [sogo](https://aur.archlinux.org/packages/sogo/) (or [sogo2](https://aur.archlinux.org/packages/sogo2/)), and [sope](https://aur.archlinux.org/packages/sope/) (or [sope2](https://aur.archlinux.org/packages/sope2/)) from the [AUR](/index.php/AUR "AUR").
 
 ## Initial web server configuration
 
@@ -293,7 +295,7 @@ Restart the `postgresql` service.
 
 ### Active Directory
 
-If using Active Directory for user authentication, whether using Samba (following the [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller "Samba 4 Active Directory domain controller") article) or using a Microsoft server, the needed attributes for mail users are already present in the default schema. Users, however, need to have both *mail* and *proxyAddresses* attributes set. The *proxyAddress* attribute labeled **SMTP** (as opposed to smtp) is the default mail address. If using internal and external domains, you will need to set SMTP to the user's external address as this will be the SMTP from address and envelope sender in outgoing messages. Additionally, the *mail* attribute must also be set to the user's external email address.
+If using Active Directory for user authentication, whether using Samba (following the [Samba/Active Directory domain controller](/index.php/Samba/Active_Directory_domain_controller "Samba/Active Directory domain controller") article) or using a Microsoft server, the needed attributes for mail users are already present in the default schema. Users, however, need to have both *mail* and *proxyAddresses* attributes set. The *proxyAddress* attribute labeled **SMTP** (as opposed to smtp) is the default mail address. If using internal and external domains, you will need to set SMTP to the user's external address as this will be the SMTP from address and envelope sender in outgoing messages. Additionally, the *mail* attribute must also be set to the user's external email address.
 
 For Samba, you can use the *ldbedit* command to edit users. In this example, we'll modify the "Administrator" user and add aliases for postmaster, as well as internal and external email addresses. Replace *vim* in the following command with your preferred editor:
 
@@ -992,7 +994,7 @@ Modify the `/etc/sogo/sogo.conf` file and add the LDAP user sources (and global 
         canAuthenticate = YES;
         type = ldap;
         CNFieldName = cn;
-        IDFieldName = cn;
+        IDFieldName = sAMAccountName;
         UIDFieldName = sAMAccountName;
         baseDN = "dc=**internal**,dc=**domain**,dc=**tld**";
         bindDN = "cn=ldap,cn=Users,dc=**internal**,dc=**domain**,dc=**tld**";

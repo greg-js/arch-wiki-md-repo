@@ -614,7 +614,7 @@ Where using a static menu, it will then be necessary to edit the `~/.config/open
 [xdotool](https://www.archlinux.org/packages/?name=xdotool) is a package that can issue commands to simulate key presses / keybinds, meaning that it is possible to use it to invoke keybind-related actions without having to actually press their assigned keys. As this includes the ability to invoke an assigned keybind for the Openbox desktop menu, it is therefore possible to use XDoTool to turn the Openbox desktop menu into a panel menu. Especially where the desktop menu is heavily customised and feature-rich, this may prove very useful to:
 
 *   Replace an existing panel menu
-*   Implement a panel menu where otherwise not provided or possible (e.g. for [tint2-git](https://aur.archlinux.org/packages/tint2-git/))
+*   Implement a panel menu where otherwise not provided or possible (e.g. for [Tint2](/index.php/Tint2 "Tint2"))
 *   Compensate where losing access to the desktop menu due to the use of an application like [xfdesktop](#xfdesktop) to [manage the desktop](#Desktop_icons_and_wallpapers).
 
 Once XDoTool has been installed - if not already present - it will be necessary to create a keybind to access the root menu in `~/.config/openbox/rc.xml`, and again below the `<!-- Keybindings for running aplications -->` heading. For example, the following code will bring up the menu by pressing `CTRL` + `m`:
@@ -656,7 +656,7 @@ $ chmod +x ~/.config/obpanelmenu.sh
 
 ```
 
-Executing it will bring up the Openbox desktop menu. Consequently, where using a panel that supports drag-and-drop functionality to add new launchers, simply drag the executable script onto it before changing the icon to suit personal taste. For instructions on how to use this executable script with [tint2-svn](https://aur.archlinux.org/packages/tint2-svn/) - a derivative of the popular [tint2](https://www.archlinux.org/packages/?name=tint2) panel that allows launchers to be added - see [Tint2-Svn launchers](/index.php/Tint2#Application_Launchers_in_tint2-svn_.28AUR.29 "Tint2").
+Executing it will bring up the Openbox desktop menu. Consequently, where using a panel that supports drag-and-drop functionality to add new launchers, simply drag the executable script onto it before changing the icon to suit personal taste.
 
 ## Desktop theming
 

@@ -89,7 +89,7 @@
 
 	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
-*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev"). The service is available with *systemd* > 210.
+*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev").
 
 	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
@@ -195,7 +195,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[https://bitbucket.org/xiannox/quill](https://bitbucket.org/xiannox/quill) || [quill-git](https://aur.archlinux.org/packages/quill-git/)
 
-*   **Vivaldi** — An advanced browser made with the power user in mind.
+*   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced browser made with the power user in mind.
 
 	[https://vivaldi.com/](https://vivaldi.com/) || [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
 
@@ -267,7 +267,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
 
-*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq) "wikipedia:Rekonq)")** — WebKit-based web browser for KDE.
+*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
 
 	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
 
@@ -553,7 +553,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **[Sup](/index.php/Sup "Sup")** — CLI mail client with very fast searching, tagging, threading and GMail like operation.
 
-	[http://supmua.org/](http://supmua.org/) || [sup](https://aur.archlinux.org/packages/sup/)
+	[https://sup-heliotrope.github.io/](https://sup-heliotrope.github.io/) || [sup](https://aur.archlinux.org/packages/sup/)
 
 *   **Wanderlust** — Email client and news reader for Emacs.
 
@@ -685,7 +685,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[https://wiki.gnome.org/Apps/Polari/](https://wiki.gnome.org/Apps/Polari/) || [polari](https://www.archlinux.org/packages/?name=polari)
 
-*   **[Quassel](https://en.wikipedia.org/wiki/Quassel_IRC "wikipedia:Quassel IRC")** — Modern, cross-platform, distributed IRC client.
+*   **[Quassel](/index.php/Quassel "Quassel")** — Modern, cross-platform, distributed IRC client.
 
 	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) [quassel-client](https://www.archlinux.org/packages/?name=quassel-client)
 
@@ -733,7 +733,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 	[https://gajim.org/](https://gajim.org/) || [gajim](https://www.archlinux.org/packages/?name=gajim)
 
-*   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based Jabber client which supports video conferencing (since version 0.13).
+*   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based Jabber client which supports video conferencing.
 
 	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psimedia](https://www.archlinux.org/packages/?name=psimedia)
 
@@ -939,7 +939,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **Gladstone** — Educational ITU-T G.729 compliant codec with a GStreamer plugin.
 
-	[https://gitorious.org/gladstone](https://gitorious.org/gladstone) || [gladstone-drizztbsd-git](https://aur.archlinux.org/packages/gladstone-drizztbsd-git/)
+	[https://github.com/drizzt/gladstone](https://github.com/drizzt/gladstone) || [gladstone-drizztbsd-git](https://aur.archlinux.org/packages/gladstone-drizztbsd-git/)
 
 *   **SIPp** — Open source test tool and traffic generator for the SIP protocol.
 
@@ -1119,7 +1119,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 See also [Wikipedia:List of Twitter services and applications](https://en.wikipedia.org/wiki/List_of_Twitter_services_and_applications "wikipedia:List of Twitter services and applications").
 
-*   **Birdie** — A beautiful Twitter client for GNU/Linux, currently [under active development](http://www.birdieapp.eu/2014/10/26/birdie-2-status.html).
+*   **Birdie** — A beautiful Twitter client for GNU/Linux.
 
 	[http://birdieapp.github.io/](http://birdieapp.github.io/) || [birdie-git](https://aur.archlinux.org/packages/birdie-git/)
 
@@ -1143,13 +1143,17 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 	[https://pumpa.branchable.com/](https://pumpa.branchable.com/) || [pumpa-git](https://aur.archlinux.org/packages/pumpa-git/)
 
-*   **ttytter** — Easily scriptable twitter client written in Perl.
+*   **Rainbowstream** — A powerful and fully-featured console Twitter client written in Python.
 
-	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://www.archlinux.org/packages/?name=ttytter)
+	[http://www.rainbowstream.org/](http://www.rainbowstream.org/) || [rainbowstream](https://aur.archlinux.org/packages/rainbowstream/)
+
+*   **ttytter** — Easily scriptable Twitter client written in Perl.
+
+	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://aur.archlinux.org/packages/ttytter/)
 
 *   **Turpial** — Multi-interface Twitter client written in Python.
 
-	[http://turpial.org.ve/](http://turpial.org.ve/) || [turpial-git](https://aur.archlinux.org/packages/turpial-git/)
+	[https://github.com/satanas/Turpial](https://github.com/satanas/Turpial) || [turpial-git](https://aur.archlinux.org/packages/turpial-git/)
 
 *   **turses** — Twitter client for the console based off *tyrs* with major improvements.
 
@@ -1164,10 +1168,6 @@ Pastebin services are often used to quote text or images while collaborating and
 **Tip:** You can access the [ptpb.pw](https://ptpb.pw), [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to ptpb: `*command* | curl -F c=@- https://ptpb.pw ` or upload a file (including images): `curl -F c=@- https://ptpb.pw < *file*` 
 
 **Note:** [pastebin.com](http://pastebin.com/) is blocked for some people and has a history of annoying issues (javascript, adverts, poor formatting, etc).
-
-*   **codepad-git** — A [codepad.org](http://www.codepad.org) pastebin client written in python.
-
-	[https://github.com/kevr/codepad](https://github.com/kevr/codepad) || [codepad-git](https://aur.archlinux.org/packages/codepad-git/)
 
 *   **Elmer** — Pastebin client similar to wgetpaste and curlpaste, except written in Perl and usable with wget or curl. Servers: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/).
 

@@ -208,7 +208,7 @@ If you're using a SSD, make sure to read [Solid State Drives](/index.php/Solid_S
 
 ## Graphics
 
-To use the Intel graphics card, install the xf86-video-intel package and read [Intel graphics](/index.php/Intel_graphics "Intel graphics"). For hardware accelerated video decoding read [VA-API](/index.php/VA-API "VA-API").
+To use the Intel graphics card, install the xf86-video-intel package and read [Intel graphics](/index.php/Intel_graphics "Intel graphics"). For hardware accelerated video read [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
 ## Touchpad
 

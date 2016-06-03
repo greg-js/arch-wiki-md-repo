@@ -10,11 +10,12 @@ The scope of this article, however, will mainly focus on the usage of MIDI in co
     *   [3.1 Hardware](#Hardware)
         *   [3.1.1 SB Audigy 1 - Emu10k1 WaveTable](#SB_Audigy_1_-_Emu10k1_WaveTable)
     *   [3.2 Software](#Software)
-        *   [3.2.1 GStreamer-based players like Totem (GNOME Videos) or Rhythmbox](#GStreamer-based_players_like_Totem_.28GNOME_Videos.29_or_Rhythmbox)
-        *   [3.2.2 VLC](#VLC)
-        *   [3.2.3 Audacious](#Audacious)
-        *   [3.2.4 TiMidity++](#TiMidity.2B.2B)
-        *   [3.2.5 FluidSynth](#FluidSynth)
+        *   [3.2.1 DeaDBeeF](#DeaDBeeF)
+        *   [3.2.2 GStreamer-based players like Totem (GNOME Videos) or Rhythmbox](#GStreamer-based_players_like_Totem_.28GNOME_Videos.29_or_Rhythmbox)
+        *   [3.2.3 VLC](#VLC)
+        *   [3.2.4 Audacious](#Audacious)
+        *   [3.2.5 TiMidity++](#TiMidity.2B.2B)
+        *   [3.2.6 FluidSynth](#FluidSynth)
 
 ## MIDI File
 
@@ -101,6 +102,10 @@ You should be all set now. If you want to play your .mid files in [Audacious](/i
         *   *Mixer control > Synth*
 
 ### Software
+
+#### DeaDBeeF
+
+You can play MIDI files in [deadbeef](https://www.archlinux.org/packages/?name=deadbeef) player after installing and configuring *freepats.cfg* which is provided by [timidity-freepats](https://www.archlinux.org/packages/?name=timidity-freepats). See [how to configure freepats.](/index.php/Timidity#Freepats "Timidity") You can also change the *freepats.cfg* file location in DeaDBeeF by going to *Edit > Preferences > Plugins > WildMidi Player > Configure*.
 
 #### GStreamer-based players like Totem (GNOME Videos) or Rhythmbox
 

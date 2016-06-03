@@ -19,9 +19,9 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 *   [2 Other Methods for BIOS systems](#Other_Methods_for_BIOS_systems)
     *   [2.1 In GNU/Linux](#In_GNU.2FLinux_3)
         *   [2.1.1 Using a multiboot USB drive](#Using_a_multiboot_USB_drive)
-        *   [2.1.2 Using UNetbootin](#Using_UNetbootin)
-        *   [2.1.3 Using GNOME Disk Utility](#Using_GNOME_Disk_Utility)
-        *   [2.1.4 Making an USB-ZIP drive](#Making_an_USB-ZIP_drive)
+        *   [2.1.2 Using GNOME Disk Utility](#Using_GNOME_Disk_Utility)
+        *   [2.1.3 Making an USB-ZIP drive](#Making_an_USB-ZIP_drive)
+        *   [2.1.4 Using UNetbootin](#Using_UNetbootin)
     *   [2.2 In Windows](#In_Windows_3)
         *   [2.2.1 Win32 Disk Imager](#Win32_Disk_Imager)
         *   [2.2.2 USBWriter for Windows](#USBWriter_for_Windows)
@@ -271,6 +271,24 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 This allows booting multiple ISOs from a single USB device, including the archiso. Updating an existing USB drive to a more recent ISO is simpler than for most other methods. See [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive").
 
+#### Using GNOME Disk Utility
+
+Linux distributions running GNOME can easily make a live CD through [nautilus](https://www.archlinux.org/packages/?name=nautilus) and [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility). Simply right-click on the .iso file, and select "Open With Disk Image Writer." When GNOME Disk Utility opens, specify the flash drive from the "Destination" drop-down menu and click "Start Restoring."
+
+#### Making an USB-ZIP drive
+
+For some old BIOS systems, only booting from USB-ZIP drives is supported. This method allows you to still boot from a USB-HDD drive.
+
+**Warning:** This will destroy all information on your USB flash drive!
+
+*   Download [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [mtools](https://www.archlinux.org/packages/?name=mtools) from the official repositories.
+*   Find your usb drive with `lsblk`.
+*   Type `mkdiskimage -4 /dev/sd**x** 0 64 32` (replace x with the letter of your drive). This will take a while.
+
+From here continue with the manual formatting method. The partition will be /dev/sd**x**4 due to the way ZIP drives work.
+
+**Note:** Do not format the drive as FAT32 keep it as FAT16.
+
 #### Using UNetbootin
 
 UNetbootin can be used on any Linux distribution or Windows to copy your iso to a USB device. However, Unetbootin overwrites syslinux.cfg, so it creates a USB device that does not boot properly. For this reason, **Unetbootin is not recommended** -- please use `dd` or one of the other methods discussed in this topic.
@@ -298,24 +316,6 @@ append initrd=/arch/boot/i686/archiso.img archisodevice=/dev/sd**x1** ../../
 ```
 
 In `/dev/sd**x1**` you must replace **x** with the first free letter after the last letter in use on the system where you are installing Arch Linux (e.g. if you have two hard drives, use `c`.). You can make this change during the first phase of boot by pressing `Tab` when the menu is shown.
-
-#### Using GNOME Disk Utility
-
-Linux distributions running GNOME can easily make a live CD through [nautilus](https://www.archlinux.org/packages/?name=nautilus) and [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility). Simply right-click on the .iso file, and select "Open With Disk Image Writer." When GNOME Disk Utility opens, specify the flash drive from the "Destination" drop-down menu and click "Start Restoring."
-
-#### Making an USB-ZIP drive
-
-For some old BIOS systems, only booting from USB-ZIP drives is supported. This method allows you to still boot from a USB-HDD drive.
-
-**Warning:** This will destroy all information on your USB flash drive!
-
-*   Download [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [mtools](https://www.archlinux.org/packages/?name=mtools) from the official repositories.
-*   Find your usb drive with `lsblk`.
-*   Type `mkdiskimage -4 /dev/sd**x** 0 64 32` (replace x with the letter of your drive). This will take a while.
-
-From here continue with the manual formatting method. The partition will be /dev/sd**x**4 due to the way ZIP drives work.
-
-**Note:** Do not format the drive as FAT32 keep it as FAT16.
 
 ### In Windows
 

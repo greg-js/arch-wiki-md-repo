@@ -1,39 +1,53 @@
-**dnsmasq** provides services as a DNS cacher and a DHCP server. As a Domain Name Server (DNS) it can cache DNS queries to improve connection speeds to previously visited sites, and as a DHCP server [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) can be used to provide internal IP addresses and routes to computers on a LAN. Either or both of these services can be implemented. dnsmasq is considered to be lightweight and easy to configure; it is designed for personal computer use or for use on a network with less than 50 computers. It also comes with a [PXE](/index.php/PXE "PXE") server.
+[dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) provides services as a DNS cacher and a DHCP server. As a Domain Name Server (DNS) it can cache DNS queries to improve connection speeds to previously visited sites, and as a DHCP server dnsmasq can be used to provide internal IP addresses and routes to computers on a LAN. Either or both of these services can be implemented. dnsmasq is considered to be lightweight and easy to configure; it is designed for personal computer use or for use on a network with less than 50 computers. It also comes with a [PXE](/index.php/PXE "PXE") server.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 DNS Cache Setup](#DNS_Cache_Setup)
-    *   [2.1 DNS Addresses File](#DNS_Addresses_File)
-        *   [2.1.1 resolv.conf](#resolv.conf)
-            *   [2.1.1.1 More than three nameservers](#More_than_three_nameservers)
-        *   [2.1.2 dhcpcd](#dhcpcd)
-        *   [2.1.3 dhclient](#dhclient)
-    *   [2.2 NetworkManager](#NetworkManager)
-        *   [2.2.1 Usage with libvirt](#Usage_with_libvirt)
-        *   [2.2.2 Custom Configuration](#Custom_Configuration)
-        *   [2.2.3 IPv6](#IPv6)
-        *   [2.2.4 Other methods](#Other_methods)
-*   [3 DHCP server setup](#DHCP_server_setup)
-*   [4 Start the daemon](#Start_the_daemon)
-*   [5 Test](#Test)
-    *   [5.1 DNS Caching](#DNS_Caching)
-    *   [5.2 DHCP Server](#DHCP_Server)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Prevent OpenDNS Redirecting Google Queries](#Prevent_OpenDNS_Redirecting_Google_Queries)
-    *   [6.2 View leases](#View_leases)
-    *   [6.3 Adding a custom domain](#Adding_a_custom_domain)
-    *   [6.4 Override addresses](#Override_addresses)
-    *   [6.5 More than one instance](#More_than_one_instance)
-        *   [6.5.1 Static](#Static)
-        *   [6.5.2 Dynamic](#Dynamic)
-*   [7 See also](#See_also)
+*   [2 Configuration](#Configuration)
+*   [3 DNS cache setup](#DNS_cache_setup)
+    *   [3.1 DNS addresses file](#DNS_addresses_file)
+        *   [3.1.1 resolv.conf](#resolv.conf)
+            *   [3.1.1.1 More than three nameservers](#More_than_three_nameservers)
+        *   [3.1.2 dhcpcd](#dhcpcd)
+        *   [3.1.3 dhclient](#dhclient)
+    *   [3.2 NetworkManager](#NetworkManager)
+        *   [3.2.1 Usage with libvirt](#Usage_with_libvirt)
+        *   [3.2.2 Custom configuration](#Custom_configuration)
+        *   [3.2.3 IPv6](#IPv6)
+        *   [3.2.4 Other methods](#Other_methods)
+    *   [3.3 Test](#Test)
+*   [4 DHCP server setup](#DHCP_server_setup)
+    *   [4.1 Test](#Test_2)
+*   [5 TFTP server setup](#TFTP_server_setup)
+*   [6 PXE setup](#PXE_setup)
+*   [7 Start the daemon](#Start_the_daemon)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Prevent OpenDNS redirecting Google queries](#Prevent_OpenDNS_redirecting_Google_queries)
+    *   [8.2 View leases](#View_leases)
+    *   [8.3 Adding a custom domain](#Adding_a_custom_domain)
+    *   [8.4 Override addresses](#Override_addresses)
+    *   [8.5 More than one instance](#More_than_one_instance)
+        *   [8.5.1 Static](#Static)
+        *   [8.5.2 Dynamic](#Dynamic)
+*   [9 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq).
 
-## DNS Cache Setup
+## Configuration
+
+To configure dnsmasq, you need to edit `/etc/dnsmasq.conf`. The file contains extensive comments explaining its options.
+
+**Warning:** dnsmasq by default enables its DNS server. If you do not require it, you need to explicitly disable it by setting DNS port to `0`: `/etc/dnsmasq.conf`  `port=0` 
+
+**Tip:** To check configuration file(s) syntax, execute:
+```
+$ dnsmasq --test
+
+```
+
+## DNS cache setup
 
 To set up dnsmasq as a DNS caching daemon on a single computer edit `/etc/dnsmasq.conf` and uncomment the `listen-address` directive, adding in the localhost IP address:
 
@@ -58,7 +72,7 @@ listen-address=127.0.0.1,192.168.1.1
 
 ```
 
-### DNS Addresses File
+### DNS addresses file
 
 After configuring dnsmasq, the DHCP client will need to prepend the localhost address to the known DNS addresses in `/etc/resolv.conf`. This causes all queries to be sent to dnsmasq before trying to resolve them with an external DNS. After the DHCP client is configured, the network will need to be restarted for changes to take effect.
 
@@ -138,13 +152,12 @@ Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been i
  `/etc/NetworkManager/NetworkManager.conf` 
 ```
 [main]
-plugins=keyfile
-dhcp=dhclient
+...
 dns=dnsmasq
 
 ```
 
-Now restart NetworkManager or reboot. NetworkManager will automatically start dnsmasq and add 127.0.0.1 to `/etc/resolv.conf`. The actual DNS servers can be found in `/var/run/NetworkManager/dnsmasq.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ dig example.com` that can be installed with [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) and verifying the server and query times.
+Now restart NetworkManager or reboot. NetworkManager will automatically start dnsmasq and add 127.0.0.1 to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/dnsmasq.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ dig example.com` that can be installed with [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) and verifying the server and query times.
 
 #### Usage with libvirt
 
@@ -155,8 +168,7 @@ We do **not** want change our resolv.conf automaticly.
  `/etc/NetworkManager/NetworkManager.conf` 
 ```
 [main]
-plugins=keyfile
-dhcp=dhclient
+...
 dns=none
 
 ```
@@ -200,11 +212,11 @@ ExecStart=/usr/bin/dnsmasq -k --enable-dbus --user=dnsmasq --pid-file --conf-dir
 ExecReload=/bin/kill -HUP $MAINPID
 ```
 
-#### Custom Configuration
+#### Custom configuration
 
 Custom configurations can be created for *dnsmasq* by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
 
- `/etc/NetworkManager/dnsmasq.d/cache`  `cache-size=1000` 
+ `/etc/NetworkManager/dnsmasq.d/cache.conf`  `cache-size=1000` 
 
 #### IPv6
 
@@ -217,6 +229,28 @@ In addition, `dnsmasq` also does not prioritize upstream IPv6 DNS. Unfortunately
 #### Other methods
 
 Another option is in NetworkManagers' settings (usually by right-clicking the applet) and entering settings manually. Setting up will depending on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as 'Automatic (specify addresses).' The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, DNS-server-one, ...`.
+
+### Test
+
+To do a lookup speed test choose a website that has not been visited since dnsmasq has been started (*dig* is part of the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package):
+
+```
+$ dig archlinux.org | grep "Query time"
+
+```
+
+Running the command again will use the cached DNS IP and result in a faster lookup time if dnsmasq is setup correctly:
+
+ `$ dig archlinux.org | grep "Query time"` 
+```
+;; Query time: 18 msec
+
+```
+ `$ dig archlinux.org | grep "Query time"` 
+```
+;; Query time: 2 msec
+
+```
 
 ## DHCP server setup
 
@@ -242,6 +276,63 @@ dhcp-host=aa:bb:cc:dd:ee:ff,192.168.111.50
 
 ```
 
+### Test
+
+From a computer that is connected to the one with dnsmasq on it, configure it to use DHCP for automatic IP address assignment, then attempt to log into the network normally.
+
+## TFTP server setup
+
+Create a directory for TFTP root (e.g. `/srv/tftp`) to put transferable files in.
+
+To use dnsmasq's TFTP secure mode [chown](/index.php/Chown "Chown") TFTP root and all files in it to `dnsmasq` user.
+
+Enable TFTP in `dnsmasq.conf`
+
+ `/etc/dnsmasq.conf` 
+```
+enable-tftp
+tftp-root=/srv/tftp
+tftp-secure
+
+```
+
+## PXE setup
+
+PXE requires DHCP and TFTP servers, both functions can be provided by dnsmasq.
+
+**Tip:** dnsmasq can add PXE booting options to a network with an already running DHCP server: `/etc/dnsmasq.conf` 
+```
+interface=*enp0s0*
+bind-dynamic
+dhcp-range=*192.168.0.1*,proxy
+```
+
+1.  set up [TFTP server](#TFTP_server_setup) and [DHCP server](#DHCP_server_setup)
+2.  copy and configure a PXE compatible bootloader (e.g. [PXELINUX](/index.php/Syslinux#Pxelinux "Syslinux")) on TFTP root
+3.  enable PXE in `/etc/dnsmasq.conf`:
+
+**Note:**
+
+*   file paths are relative to TFTP root
+*   if the file has a `.0` suffix, you must exclude the suffix in `pxe-service` options
+
+To simply send one file:
+
+```
+dhcp-boot=lpxelinux.0
+
+```
+
+To send a file depending on client architecture:
+
+```
+pxe-service=x86PC, "PXELINUX (BIOS)", "bios/lpxelinux"
+pxe-service=X86-64_EFI, "PXELINUX (EFI)", "efi64/syslinux.efi"
+
+```
+
+The rest is up to the bootloader.
+
 ## Start the daemon
 
 [Start/enable](/index.php/Start/enable "Start/enable") `dnsmasq.service`.
@@ -252,37 +343,9 @@ To see if dnsmasq started properly, check the system's journal:
 
 The network will also need to be restarted so the DHCP client can create a new `/etc/resolv.conf`.
 
-## Test
-
-### DNS Caching
-
-To do a lookup speed test choose a website that has not been visited since dnsmasq has been started (*dig* is part of the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package):
-
-```
-$ dig archlinux.org | grep "Query time"
-
-```
-
-Running the command again will use the cached DNS IP and result in a faster lookup time if dnsmasq is setup correctly:
-
- `$ dig archlinux.org | grep "Query time"` 
-```
-;; Query time: 18 msec
-
-```
- `$ dig archlinux.org | grep "Query time"` 
-```
-;; Query time: 2 msec
-
-```
-
-### DHCP Server
-
-From a computer that is connected to the one with dnsmasq on it, configure it to use DHCP for automatic IP address assignment, then attempt to log into the network normally.
-
 ## Tips and tricks
 
-### Prevent OpenDNS Redirecting Google Queries
+### Prevent OpenDNS redirecting Google queries
 
 To prevent OpenDNS from redirecting all Google queries to their own search server, add to `/etc/dnsmasq.conf`:
 

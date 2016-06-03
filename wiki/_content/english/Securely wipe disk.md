@@ -299,11 +299,9 @@ The file copy command `cp` can also be used to rewrite the device, because it ig
 To show speed and time you can use [pv](https://www.archlinux.org/packages/?name=pv):
 
 ```
-# pv --timer --rate --stop-at-size "$(blockdev --getsize64 /dev/sd"XY" )" /dev/zero > /dev/sd"XY"
+# pv --timer --rate --stop-at-size -s "$(blockdev --getsize64 /dev/sd"XY" )" /dev/zero > /dev/sd"XY"
 
 ```
-
-**Tip:** The `cp` and the `cat` command are the fastest. But as an alternative you can create a small partition in just a few megabytes on the device that need to be wiped and use the `time` command in front of them to find out which of them will work faster on your device.
 
 ### dd
 
@@ -343,7 +341,7 @@ To speed up wiping a large drive, see also:
 
 ### wipe
 
-Specialized on wiping files and is available in arch repositories. To make a quick wipe of a destination you can use something like:
+Specialized on wiping files and is available as the [wipe](https://www.archlinux.org/packages/?name=wipe) package. To make a quick wipe of a destination you can use something like:
 
 ```
 $ wipe -r -q /path/to/wipe
@@ -354,7 +352,7 @@ See also: [man page](http://linux.die.net/man/1/wipe).
 
 ### shred
 
-[*shred*](https://www.gnu.org/software/coreutils/manual/html_node/shred-invocation.html) is a Unix command that can be used to securely delete [individual files](#Overwrite_the_target) or full devices so that they can be recovered only with great difficulty with specialised hardware, if at all. *shred* uses three passes, writing [pseudo-random data](/index.php/Random_number_generation "Random number generation") to the device during each pass. This can be reduced or increased.
+[*shred*](https://www.gnu.org/software/coreutils/manual/html_node/shred-invocation.html) (from the [coreutils](https://www.archlinux.org/packages/?name=coreutils) package) is a Unix command that can be used to securely delete individual files or full devices so that they can be recovered only with great difficulty with specialised hardware, if at all. *shred* uses three passes, writing [pseudo-random data](/index.php/Random_number_generation "Random number generation") to the device during each pass. This can be reduced or increased.
 
 The following command invokes shred with its default settings and displays the progress.
 
@@ -372,7 +370,7 @@ Alternatively, shred can be instructed to do only one pass, with entropy from e.
 
 ### Badblocks
 
-For letting badblocks perform a disk wipe, a destructive [read-write test](/index.php/Badblocks#read-write_Test "Badblocks") has to be done:
+For letting badblocks (from the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package) perform a disk wipe, a destructive [read-write test](/index.php/Badblocks#read-write_Test "Badblocks") has to be done:
 
 ```
 # badblocks -c <NUMBER_BLOCKS> -wsv /dev/<drive>

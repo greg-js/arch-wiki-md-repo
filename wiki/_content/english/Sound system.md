@@ -27,7 +27,7 @@ Default Arch installation already includes kernel sound system, namely [ALSA](/i
 
 	[http://www.alsa-project.org/](http://www.alsa-project.org/) || present in stock kernel
 
-*   **[The Open Sound System (OSS)](/index.php/OSS "OSS")** — An alternative sound architecture for Unix-like and POSIX-compatible systems. OSS version 3 was the original sound system for Linux and is in the kernel, but was superceded by ALSA in 2002 when OSS version 4 became proprietary software. OSSv4 became free software again in 2007 when 4Front Technologies released its source code and provided it under the GPL. Does not support as wide a variety of hardware as ALSA, but does better for some.
+*   **[The Open Sound System (OSS)](/index.php/OSS "OSS")** — An alternative sound architecture for Unix-like and POSIX-compatible systems. OSS version 3 was the original sound system for Linux and is in the kernel, but was superceded by ALSA in 2002 when OSS version 4 became proprietary software. OSSv4 became free software again in 2007 when 4Front Technologies released its source code and provided it under the GPL. OSS does not support as wide a variety of hardware as ALSA, but does better for some.
 
 	[http://www.opensound.com/](http://www.opensound.com/) || [oss](https://aur.archlinux.org/packages/oss/)
 

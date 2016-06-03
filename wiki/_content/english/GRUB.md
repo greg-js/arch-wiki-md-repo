@@ -45,6 +45,7 @@
     *   [5.7 Encryption](#Encryption)
         *   [5.7.1 Root partition](#Root_partition)
         *   [5.7.2 Boot partition](#Boot_partition)
+            *   [5.7.2.1 Manual Configuration of Core Image for Early Boot](#Manual_Configuration_of_Core_Image_for_Early_Boot)
 *   [6 Using the command shell](#Using_the_command_shell)
     *   [6.1 Pager support](#Pager_support)
     *   [6.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
@@ -82,8 +83,10 @@ A *bootloader* is the first software program that runs when a computer starts. I
 **Note:**
 
 *   GRUB supports [Btrfs](/index.php/Btrfs "Btrfs") as root (without a separate `/boot` file system needed), only compressed with either zlib (the btrfs default) or LZO.
-*   GRUB does not support [F2FS](/index.php/F2FS "F2FS") as root ,so you will need a separate `/boot` with a supported file system.
+*   GRUB does not support [F2FS](/index.php/F2FS "F2FS") as root, so you will need a separate `/boot` with a supported file system.
 *   For GRUB's XFS support, see [XFS#Installation](/index.php/XFS#Installation "XFS") with the linked [FS#46856](https://bugs.archlinux.org/task/46856).
+
+**Note:** As of grub-1:2.02.beta2-6, there is not native support to boot to a root filesystem contained on an NVMe device. Users wishing to do so are directed to [grub-git](https://aur.archlinux.org/packages/grub-git/) which does allow for this.
 
 ## BIOS systems
 
@@ -97,7 +100,7 @@ On a BIOS/[GPT](/index.php/GPT "GPT") configuration a [BIOS boot partition](http
 *   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). GRUB for GPT, however, does not use the Post-GPT gap to conform to GPT specifications that require 1_megabyte/2048_sector disk boundaries.
 *   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required as no embedding of boot sectors takes place in that case.
 
-Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no file system and type BIOS boot (*BIOS boot* in fdisk, `ef02` in gdisk, `bios_grub` in `parted`). This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
+Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no file system and type BIOS boot (`BIOS boot`, respectively partition type number `4` in `fdisk`, `ef02` in `gdisk`, `bios_grub` in `parted`). This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
 
 The post-GPT gap can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded (though some disk utilities will display a warning about it). In `fdisk` or `gdisk` create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
 
@@ -782,6 +785,55 @@ Without further changes you will be prompted twice for a passhrase: the first fo
 *   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub as below appending the following to the end of your installation command:
 
  `# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--modules="part_gpt part_msdos"**` 
+
+##### Manual Configuration of Core Image for Early Boot
+
+If you require a special keymap or other complex steps that GRUB isn't able to configure automatically in order to make `/boot` available to the GRUB environment, you can generate a core image yourself. On UEFI systems, the core image is the `grubx64.efi` file that is loaded by the firmware on boot. Building your own core image will allow you to embed any modules required for very early boot, as well as a configuration script to bootstrap GRUB.
+
+Firstly, taking as an example a requirement for the `dvorak` keymap embedded in early-boot in order to enter a password for a crypted `/boot` on a UEFI system:
+
+Determine from the generated `/boot/grub/grub.cfg` file what modules are required in order to mount the crypted `/boot`. For instance, under your `menuentry` you should see lines similar to:
+
+```
+insmod diskfilter cryptodisk luks gcry_rijndael gcry_rijndael gcry_sha256
+insmod ext2
+cryptomount -u 1234abcdef1234abcdef1234abcdef
+set root='cryptouuid/1234abcdef1234abcdef1234abcdef'
+```
+
+Take note of all of those modules: they'll need to be included in the core image. Now, create a tarball containing your keymap. This will be bundled in the core image as a memdisk:
+
+```
+# ckbcomp dvorak | grub-mklayout > dvorak.gkb
+# tar cf memdisk.tar dvorak.gkb
+
+```
+
+Now create a config file to be run by the GRUB core image. This is in the same format as your regular grub config, but need contain only a few lines to find and run the main config file on our `/boot` partition:
+
+ `early-grub.cfg` 
+```
+root=(memdisk)
+prefix=($root)/
+
+terminal_input at_keyboard
+keymap /dvorak.gkb
+
+cryptomount -u 1234abcdef1234abcdef1234abcdef
+set root='cryptouuid/1234abcdef1234abcdef1234abcdef'
+set prefix=($root)/grub
+
+configfile grub.cfg
+```
+
+Finally, generate the core image, listing all of the modules determined to be required in the generated `grub.cfg`, along with any modules used in the `early-grub.cfg` script. In our case, we will need to add the following in addition: `memdisk tar at_keyboard keylayouts configfile`
+
+```
+# grub-mkimage -c early-grub.cfg -o grubx64.efi -O x86_64-efi -m memdisk.tar diskfilter cryptodisk luks gcry_rijndael gcry_sha256 ext2 memdisk tar at_keyboard keylayouts configfile
+
+```
+
+The generated EFI core image can now be used in the same way as the image that is generated automatically by `grub-install`: place it in your EFI partition and enable it with `efibootmgr`, or configure as appropriate for your system firmware.
 
 ## Using the command shell
 

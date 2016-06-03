@@ -13,7 +13,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
     *   [2.1 Create and boot a minimal Arch Linux distribution in a container](#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container)
     *   [2.2 Create a Debian or Ubuntu environment](#Create_a_Debian_or_Ubuntu_environment)
     *   [2.3 Enable Container on boot](#Enable_Container_on_boot)
-    *   [2.4 Building and Testing packages](#Building_and_Testing_packages)
+    *   [2.4 Building and testing packages](#Building_and_testing_packages)
 *   [3 Management](#Management)
     *   [3.1 machinectl](#machinectl)
     *   [3.2 systemd toolchain](#systemd_toolchain)
@@ -28,7 +28,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
     *   [4.5 Running on a non-systemd system](#Running_on_a_non-systemd_system)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 root login fails](#root_login_fails)
-    *   [5.2 unable to upgrade some packages on the container](#unable_to_upgrade_some_packages_on_the_container)
+    *   [5.2 Unable to upgrade some packages on the container](#Unable_to_upgrade_some_packages_on_the_container)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -96,53 +96,63 @@ Unlike Arch, Debian and Ubuntu will not let you login without a password on firs
 
 ### Enable Container on boot
 
-If you want to use a container frequently, you can have systemd start it on boot. First you have to enable the `systemd` target `machines.target`
+When using a container frequently, you may want to start it on boot.
 
-```
-# systemctl enable machines.target
-
-```
-
-then you can
-
-```
-# mv ~/MyContainer /var/lib/machines/MyContainer
-# systemctl enable systemd-nspawn@MyContainer.service
-# systemctl start systemd-nspawn@MyContainer.service
-
-```
-
-**Note:** *systemd-nspawn@.service* is a template unit that expects nspawn containers to be under `/var/lib/machines`.
+First [enable](/index.php/Enable "Enable") the `machines.target` target, then `systemd-nspawn@*myContainer*.service`, where `myContainer` is an nspawn container in `/var/lib/machines`.
 
 **Tip:**
 
-*   Instead of moving your container, as above, you can just *symlink* it to where it is expected to be,
+*   Symbolic links to containers in `/var/lib/machines` do not work as of [systemd](https://www.archlinux.org/packages/?name=systemd) v229, see [[1]](https://github.com/systemd/systemd/issues/2001).
+*   To customize the startup of a container, [edit](/index.php/Edit "Edit") the `systemd-nspawn@*myContainer*` unit instance. See `systemd-nspawn(1)` for all options.
 
-```
-# ln -s ~/MyContainer /var/lib/machines/MyContainer
+### Building and testing packages
 
-```
-
-*   To customize the startup of a container, [edit](/index.php/Systemd#Editing_provided_units "Systemd") the `systemd-nspawn@*MyContainer*` unit instance. See `systemd-nspawn(1)` for all options.
-
-### Building and Testing packages
+See [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions") for example uses.
 
 ## Management
 
 ### machinectl
 
-Managing your containers is essentially done with the `machinectl` command. See `machinectl(1)` for more detail then listed here.
+Managing your containers is essentially done with the `machinectl` command. See `machinectl(1)` for details.
 
 Examples:
 
-*   Spawn a new shell inside a running container: `$ machinectl login MyContainer` 
-*   Show detailed information about a container: `$ machinectl status MyContainer` 
-*   Reboot a container: `$ machinectl reboot MyContainer` 
-*   Poweroff a container: `$ machinectl poweroff MyContainer` 
+Spawn a new shell inside a running container:
+
+```
+$ machinectl login *MyContainer*
+
+```
+
+Show detailed information about a container:
+
+```
+$ machinectl status *MyContainer*
+
+```
+
+Reboot a container:
+
+```
+$ machinectl reboot *MyContainer*
+
+```
+
+Poweroff a container:
+
+```
+$ machinectl poweroff *MyContainer*
+
+```
 
 **Tip:** Poweroff and reboot operations can be performed from within a container session using the *systemctl* `poweroff` or `reboot` commands.
 
-*   Download an image: `# machinectl pull-tar *URL* *name*` 
+Download an image:
+
+```
+# machinectl pull-tar *URL* *name*
+
+```
 
 ### systemd toolchain
 
@@ -150,10 +160,33 @@ Much of the core systemd toolchain has been updated to work with containers. Too
 
 Examples:
 
-*   See journal logs for a particular machine: ` $ journalctl -M MyContainer` 
-*   Show control group contents: `$ systemd-cgls -M MyContainer` 
-*   See startup time of container: `$ systemd-analyze -M MyContainer` 
-*   For an overview of resource usage: `$ systemd-cgtop` 
+See journal logs for a particular machine:
+
+```
+$ journalctl -M *MyContainer*
+
+```
+
+Show control group contents:
+
+```
+$ systemd-cgls -M *MyContainer*
+
+```
+
+See startup time of container:
+
+```
+$ systemd-analyze -M *MyContainer*
+
+```
+
+For an overview of resource usage:
+
+```
+$ systemd-cgtop
+
+```
 
 ## Tips
 
@@ -239,9 +272,9 @@ pam_securetty(login:auth): access denied: tty 'pts/0' is not secure !
 
 ```
 
-Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[1]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[2]](https://github.com/systemd/systemd/issues/852).
+Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[2]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[3]](https://github.com/systemd/systemd/issues/852).
 
-### unable to upgrade some packages on the container
+### Unable to upgrade some packages on the container
 
 It can sometimes be impossible to upgrade some packages on the container, [filesystem](https://www.archlinux.org/packages/?name=filesystem) being a perfect example. The issue is due to `/sys` being mounted as Read Only. The workaround is to remount the directory in Read Write when running `mount -o remount,rw -t sysfs sysfs /sys`, do the upgrade then reboot the container.
 

@@ -33,6 +33,7 @@ The purpose of this page is to provide a general overview of power management in
         *   [3.5.2 Writeback Time](#Writeback_Time)
         *   [3.5.3 Laptop Mode](#Laptop_Mode)
     *   [3.6 Network interfaces](#Network_interfaces)
+        *   [3.6.1 Intel wireless cards (iwlwifi)](#Intel_wireless_cards_.28iwlwifi.29)
     *   [3.7 Bus power management](#Bus_power_management)
         *   [3.7.1 Active State Power Management](#Active_State_Power_Management)
         *   [3.7.2 PCI Runtime Power Management](#PCI_Runtime_Power_Management)
@@ -415,7 +416,7 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 ### Bluetooth
 
-To disable bluetooth completely, [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `btusb` and `bluetooth` modules.
+To disable bluetooth completely, [blacklist](/index.php/Blacklist "Blacklist") the `btusb` and `bluetooth` modules.
 
 To turn off bluetooth only temporarily, use [rfkill](https://www.archlinux.org/packages/?name=rfkill):
 
@@ -437,7 +438,7 @@ Or just [enable](/index.php/Enable "Enable") the instantiated `rfkill-block@blue
 
 ### Web camera
 
-If you will not use integrated web camera then [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `uvcvideo` module.
+If you will not use integrated web camera then [blacklist](/index.php/Blacklist "Blacklist") the `uvcvideo` module.
 
 ### Kernel parameters
 
@@ -480,6 +481,24 @@ To enable powersaving on all wireless interfaces:
 In these examples, `%k` is a specifier for the kernel name of the matched device. For example, if it finds that the rule is applicable to `wlan0`, the `%k` specifier will be replaced with `wlan0`. To apply the rules to only a particular interface, just replace the pattern `eth*` and specifier `%k` with the desired interface name. For more information, see [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html).
 
 **Note:** In this case, the name of the configuration file is important. Due to the introduction of [persistent device names](/index.php/Network_configuration#Device_names "Network configuration") via `80-net-setup-link.rules` in systemd, it is important that the network powersave rules are named lexicographically before `80-net-setup-link.rules` so that they are applied before the devices are named e.g. `enp2s0`. However, be advised that commands ran with `RUN` are executed **after** all rules have been processed -- in which case the naming of the rules file is irrelevant and the persistent device names should be used.
+
+#### Intel wireless cards (iwlwifi)
+
+Additional power saving functions of Intel wireless cards with `iwlwifi` driver can be enabled by passing the correct parameters to the kernel module. Making it persistent can be achieved by adding the line below to `/etc/modprobe.d/iwlwifi.conf` file:
+
+```
+ options iwlwifi power_save=1 d0i3_disable=0 uapsd_disable=0
+
+```
+
+And another one to the `/etc/modprobe.d/iwldvm.conf` file:
+
+```
+ options iwldvm force_cam=0
+
+```
+
+Keep in mind that these power saving options are experimental and can cause an unstable system.
 
 ### Bus power management
 
@@ -571,7 +590,7 @@ See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/us
 
 **Note:** This adds latency when accessing a drive that has been idle, so it is one of the few settings that may be worth toggling based on whether you are on AC power.
  `/etc/udev/rules.d/hd_power_save.rules`  `ACTION=="add", SUBSYSTEM=="scsi_host", KERNEL=="host*", ATTR{link_power_management_policy}="min_power"` 
-**Warning:** SATA Active Link Power Management can lead to data loss on some devices (e.g. Lenovo T440s [is known to suffer](http://lkml.indiana.edu/hypermail/linux/kernel/1401.2/02171.html) this problem)
+**Warning:** SATA Active Link Power Management can lead to data loss on some devices (e.g. Lenovo T440s [is known to suffer](http://lkml.indiana.edu/hypermail/linux/kernel/1401.2/02171.html) this problem. Issue is still verified to occur on Linux kernel version 4.5.1\. Do not enable this setting unless you have frequent backups.)
 
 ### Hard disk drive
 

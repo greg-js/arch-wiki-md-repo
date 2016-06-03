@@ -35,13 +35,7 @@ There are two methods to capture as a normal user :
 
 ### Add the user to the wireshark group
 
-To use wireshark as a normal user, add user to the wireshark group:
-
- `# gpasswd -a *username* wireshark` 
-
-To make your session aware of this new group without having to log in again, you can use this command before launching wireshark:
-
- `$ newgrp wireshark` 
+To use wireshark as a normal user, add user to the `wireshark` [group](/index.php/Group "Group").
 
 ### Use sudo
 

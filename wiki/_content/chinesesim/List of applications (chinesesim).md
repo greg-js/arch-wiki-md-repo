@@ -23,7 +23,7 @@
     *   [1.2 网络浏览器](#.E7.BD.91.E7.BB.9C.E6.B5.8F.E8.A7.88.E5.99.A8)
         *   [1.2.1 终端](#.E7.BB.88.E7.AB.AF)
         *   [1.2.2 图形界面](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2)
-            *   [1.2.2.1 Gecko-based](#Gecko-based)
+            *   [1.2.2.1 基于 Gecko](#.E5.9F.BA.E4.BA.8E_Gecko)
                 *   [1.2.2.1.1 Firefox forks](#Firefox_forks)
             *   [1.2.2.2 Blink-based](#Blink-based)
             *   [1.2.2.3 Webkit-based](#Webkit-based)
@@ -283,9 +283,9 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 #### 图形界面
 
-##### Gecko-based
+##### 基于 Gecko
 
-See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(software) "wikipedia:Gecko (software)").
+可见 [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(software) "wikipedia:Gecko (software)").
 
 *   **[Firefox](/index.php/Firefox "Firefox")** — Extensible browser from Mozilla based on Gecko with fast rendering.
 
@@ -1289,7 +1289,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **ttytter** — Easily scriptable twitter client written in Perl.
 
-	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://www.archlinux.org/packages/?name=ttytter)
+	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://aur.archlinux.org/packages/ttytter/)
 
 *   **Turpial** — Multi-interface Twitter client written in Python.
 
@@ -2604,7 +2604,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://thunar.xfce.org/index.html](http://thunar.xfce.org/index.html) || [thunar](https://www.archlinux.org/packages/?name=thunar)
 
-*   **tuxcmd** — 双面板文件管理器
+*   **tuxcmd** — 双面板文件管理器，Total Commander风格
 
 	[http://tuxcmd.sourceforge.net/description.php](http://tuxcmd.sourceforge.net/description.php) || [tuxcmd](https://www.archlinux.org/packages/?name=tuxcmd)
 
@@ -3430,7 +3430,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs.
 
-	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://aur.archlinux.org/packages/xpdf/)
+	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf)
 
 *   **[zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer) "wikipedia:Zathura (document viewer)")** — Highly customizable and functional PDF/DjVu/PostScript/ComicBook viewer (plugin based).
 
@@ -4716,7 +4716,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **slingshot** — An application launcher has a clear look, part of [pantheon](/index.php/Pantheon "Pantheon") desktop environment.
 
-	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://www.archlinux.org/packages/?name=slingshot-launcher)
+	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://aur.archlinux.org/packages/slingshot-launcher/)
 
 *   **Synapse** — Synapse is a semantic launcher written in Vala that you can use to start applications as well as find and access relevant documents and files by making use of the Zeitgeist engine.
 
@@ -5073,7 +5073,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **[RetroArch](/index.php/RetroArch "RetroArch")** — Frontend to libretro (emulation library, using modified versions of existing emulators as plugins).
 
-	[http://github.com/Themaister/RetroArch](http://github.com/Themaister/RetroArch) || [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/)
+	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
 
 *   **ScummVM** — Virtual machine for old school adventures.
 

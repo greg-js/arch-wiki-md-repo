@@ -37,14 +37,15 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.1.12 infinality-bundle](#infinality-bundle)
         *   [3.1.13 ivasilev](#ivasilev_2)
         *   [3.1.14 llvm-svn](#llvm-svn)
-        *   [3.1.15 metalgamer](#metalgamer)
-        *   [3.1.16 miffe](#miffe)
-        *   [3.1.17 pipelight](#pipelight)
-        *   [3.1.18 repo-ck](#repo-ck)
-        *   [3.1.19 seblu](#seblu)
-        *   [3.1.20 seiichiro](#seiichiro)
-        *   [3.1.21 sergej-repo](#sergej-repo)
-        *   [3.1.22 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.15 nuvolaplayer](#nuvolaplayer)
+        *   [3.1.16 metalgamer](#metalgamer)
+        *   [3.1.17 miffe](#miffe)
+        *   [3.1.18 pipelight](#pipelight)
+        *   [3.1.19 repo-ck](#repo-ck)
+        *   [3.1.20 seblu](#seblu)
+        *   [3.1.21 seiichiro](#seiichiro)
+        *   [3.1.22 sergej-repo](#sergej-repo)
+        *   [3.1.23 tredaelli-systemd](#tredaelli-systemd)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 arch-deepin](#arch-deepin)
         *   [3.2.2 archaudio](#archaudio)
@@ -73,8 +74,7 @@ For your convenience you can, for example, open them all in a web browser to ins
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 eee-ck](#eee-ck)
-        *   [4.1.2 phillid](#phillid)
-        *   [4.1.3 xyne-i686](#xyne-i686)
+        *   [4.1.2 xyne-i686](#xyne-i686)
     *   [4.2 Unsigned](#Unsigned_3)
         *   [4.2.1 andrwe](#andrwe)
         *   [4.2.2 kpiche](#kpiche)
@@ -127,9 +127,7 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.2.12 pnsft-pur](#pnsft-pur)
         *   [5.2.13 rakudo](#rakudo)
         *   [5.2.14 rightlink](#rightlink)
-        *   [5.2.15 seiichiro](#seiichiro_2)
-        *   [5.2.16 studioidefix](#studioidefix_2)
-        *   [5.2.17 zrootfs](#zrootfs)
+        *   [5.2.15 zrootfs](#zrootfs)
 *   [6 armv6h only](#armv6h_only)
     *   [6.1 Unsigned](#Unsigned_5)
         *   [6.1.1 arch-fook-armv6h](#arch-fook-armv6h)
@@ -372,8 +370,6 @@ Server = http://bohoomil.com/repo/$arch
 *   **Upstream page:** [http://ivasilev.net/pacman](http://ivasilev.net/pacman)
 *   **Key-ID:** 436BB513
 
-**Note:** I mantain 'any', 'i686' and 'x86_64' repos. Each of them includes packages from 'any'. $arch can be replaced with any of the three
-
 ```
 [ivasilev]
 Server = http://ivasilev.net/pacman/$arch
@@ -389,6 +385,18 @@ Server = http://ivasilev.net/pacman/$arch
 ```
 [llvm-svn]
 Server = http://repos.uni-plovdiv.net/archlinux/$repo/$arch
+
+```
+
+#### nuvolaplayer
+
+*   **Maintainer:** [Patrick Burroughs (Celti) <celti@celti.name>](https://www.celti.name/)
+*   **Description:** Packages for the [Nuvola Player](https://tiliado.eu/nuvolaplayer) cloud music player and its various integrations. Includes both stable and git versions. The [build scripts](https://repo.celti.name/nuvolaplayer/) used to manage the repository (using makepkg-template, makechrootpkg, and repose) are available. Both the packages and the database are signed.
+*   **Key-ID:** <tt>[123C 3F8B 058A 707F 8664 3316 FA68 2BD8 910C F4EA](https://sks-keyservers.net/pks/lookup?op=vindex&search=0x123C3F8B058A707F86643316FA682BD8910CF4EA)</tt>
+
+```
+[nuvolaplayer]
+Server = https://repo.celti.name/archlinux/$repo/$arch
 
 ```
 
@@ -604,7 +612,7 @@ Server = http://ede.elderlinux.org/repos/archlinux/$arch
 #### heftig
 
 *   **Maintainer:** [Jan Steffens](https://www.archlinux.org/trustedusers/#heftig)
-*   **Description:** Includes linux-zen and aurora (Firefox development build - works alongside [firefox](https://www.archlinux.org/packages/?name=firefox) in the *extra* repository).
+*   **Description:** Includes linux-zen and firefox-developer-edition
 *   **Upstream page:** [https://bbs.archlinux.org/viewtopic.php?id=117157](https://bbs.archlinux.org/viewtopic.php?id=117157)
 
 ```
@@ -790,18 +798,6 @@ Server = http://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_Ex
 ```
 [eee-ck]
 Server = http://zembla.duckdns.org/repo
-
-```
-
-#### phillid
-
-*   **Maintainer:** Phillid
-*   **Description:** Various GCC-s and matching binutils-es which target bare-bones formats (for OS dev). The GCC toolchains are shrunk to ~8 MiB each by disabling NLS and everything but the C front-end. Thrown in there is some ham-related stuff I use such as hamlib, xastir, qsstv. Also a couple of legacy packages which are a bit lengthy to build for most people (kdelibs3, qt3).
-*   **Key-ID:** 28F1E6CE
-
-```
-[phillid]
-Server = http://phillid.tk/r/i686/
 
 ```
 
@@ -1370,7 +1366,7 @@ Server = http://download.opensuse.org/repositories/home:/mazdlc:/kde-frameworks-
 #### mikroskeem
 
 *   **Maintainer:** mikroskeem <mikroskeem@mikroskeem.eu>
-*   **Description:** Openarena, i3 wm, and neovim-related packages (do *pacman -Sl mikroskeem*)
+*   **Description:** Openarena, i3 wm, and neovim-related packages
 
 ```
 [mikroskeem]
@@ -1420,28 +1416,6 @@ Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
 ```
 [rightlink]
 Server = https://s3-ap-southeast-2.amazonaws.com/archlinux.rightscale.me/repo
-
-```
-
-#### seiichiro
-
-*   **Maintainer:**
-*   **Description:** VDR and some plugins, mms, foo2zjs-drivers
-
-```
-[seiichiro]
-Server = http://repo.seiichiro0185.org/x86_64
-
-```
-
-#### studioidefix
-
-*   **Maintainer:**
-*   **Description:** Precompiled boxee packages.
-
-```
-[studioidefix]
-Server = http://studioidefix.googlecode.com/hg/repo/x86_64
 
 ```
 

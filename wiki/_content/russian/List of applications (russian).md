@@ -1188,7 +1188,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **ttytter** — Клиент для twitter с возможностью легкого создания скриптов, написанный на Perl
 
-	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://www.archlinux.org/packages/?name=ttytter)
+	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://aur.archlinux.org/packages/ttytter/)
 
 *   **Turpial** — Клиент для Twitter с различными интерфейсами (multi-interface), написанный на Python
 
@@ -3436,7 +3436,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/ru:Xpdf "wikipedia:ru:Xpdf")** — Программа просмотра, которая способна декодировать LZW и читать зашифрованные файлы PDF
 
-	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://aur.archlinux.org/packages/xpdf/)
+	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf)
 
 *   **zathura** — Сильно настраиваемая и функциональная программа просмотра PDF/DjVu/PostScript/ComicBook (основанная на плагинах)
 
@@ -4564,7 +4564,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **slingshot** — Утилита запуска приложений с хорошим внешним видом, часть окружения рабочего стола [pantheon](/index.php/Pantheon "Pantheon")
 
-	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://www.archlinux.org/packages/?name=slingshot-launcher)
+	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://aur.archlinux.org/packages/slingshot-launcher/)
 
 *   **Synapse** — Семантическая утилита, написанная на Vala, которую можно использовать как для запуска приложений, так и для поиска и получения доступа к необходимым документам и файлам (при использовании движка Zeitgeist)
 
@@ -4851,7 +4851,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[RetroArch](/index.php/RetroArch "RetroArch")** — Фронтенд к libretro (библиотеке эмуляции, использующей измененные версии существующих эмуляторов в качестве плагинов)
 
-	[http://github.com/Themaister/RetroArch](http://github.com/Themaister/RetroArch) || [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/)
+	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
 
 *   **ScummVM** — Виртуальная машина для старых приключенческих игр
 

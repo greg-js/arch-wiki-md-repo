@@ -489,7 +489,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **ASCIIpOrtal** — Sidescrolling game with ANSI text graphics in which you are a person holding a device which creates portals, or links to other parts of the level.
 
-	[http://cymonsgames.com/asciiportal](http://cymonsgames.com/asciiportal) || [asciiportal](https://aur.archlinux.org/packages/asciiportal/)
+	[http://cymonsgames.com/asciiportal](http://cymonsgames.com/asciiportal) || [asciiportal](https://www.archlinux.org/packages/?name=asciiportal)
 
 *   **Cataclysm: Dark Days Ahead** — Post-apocalyptic roguelike.
 
@@ -790,7 +790,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **Tesseract** — Smooth FPS with map editing, instagib, DM and CTF.
 
-	[http://tesseract.gg/](http://tesseract.gg/) || [tesseract-game](https://www.archlinux.org/packages/?name=tesseract-game)
+	[http://tesseract.gg/](http://tesseract.gg/) || [tesseract-game](https://aur.archlinux.org/packages/tesseract-game/)
 
 *   **[Tremulous](https://en.wikipedia.org/wiki/Tremulous "wikipedia:Tremulous")** — FPS with elements of real time strategy, featuring humans and aliens.
 

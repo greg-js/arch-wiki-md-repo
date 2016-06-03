@@ -30,7 +30,7 @@ After launching bitmessage (the name of the bitmessage binary is *pybitmessage*)
 *   Navigate to the *Your Identities* tab
 *   Hit the *New* button and create a few new addresses. Since bitmessage is built to be used with different (ideally disposable) addresses, feel free to create more than one address (for instance this user created four addresses)
 *   You can use either a passphrase or a random number as the basis for the generation of your address. A random number is better for security and a passphrase is better for convenience (you can recreate your identity more easily with a passphrase than with a random number)
-*   Remember the *address version number* and the *stream number*. These will be useful if you need to re-make your address for any reason
+*   Remember the *address version number* and the *stream number*. These will be useful if you need to re-make your address for any reason (Currently the default address version is 4 and stream number 1 will be fine)
 
 ### With TOR
 
@@ -48,7 +48,7 @@ Using bitmessage is the same as using an email client. The addresses you have ar
 
 ### Attachments
 
-Attachments are not possible for the moment in bitmessage. There are two ways around it. One is to convert your files using base64 and concatenating them to the end of your bitmessage itself.
+Attachments are not possible for the moment in bitmessage. There are three ways around it. One is to convert your files using base64 and concatenating them to the end of your bitmessage itself.
 
 ```
 base64 < binary.file > text.file
@@ -102,6 +102,8 @@ print(magneturi)
 
 You need to have [python2-bencode](https://aur.archlinux.org/packages/python2-bencode/) installed in order to make this script work. The magnet link can be shared with the intended recipient without using *base64*.
 
+Torrents might raise privacy issues, so the third way is to embed binaries or pictures employing **BM API client**, currently of version 1.2.8\. A python script (published on [UBF](http://bitmessage.mybb.im/viewtopic.php?id=13#p28)) will post binaries as encoded bitmessages much like method 1 but offers additional features.
+
 ### Using bitmessage with Thunderbird
 
 After setting up bitmessage normally, add the following to your `~/.config/PyBitmessage/keys.dat` file:
@@ -132,7 +134,7 @@ According to the [bitmessage wiki](https://bitmessage.org/wiki/DML):
 
 	*A Mailing List without the requirement of a central "authority". Sometimes called Chan (short for channel) because they usually focus on a subject which also is the password for the deterministic address too.*
 
-A Chan (or a Distributed Mailing List) can be joined or created by hitting *"Join/Create Chan"* in the file menu. A Passphrase must be entered and the address is generated for creating a can. To join a Chan, you must enter its address and a passphrase (of your choice).
+A Chan (or a Distributed Mailing List) can be joined or created by hitting *"Join/Create Chan"* in the file menu. A Passphrase must be entered and the address is generated for creating a can. To join a Chan, you must enter its address and a passphrase (of your choice). The equivalent, but **simpler** method for joining in omits the hard to memorize BM-2... address (key) and requires entering the passphrase ("chan name") only: *Add Chan / Create New Chan*. By far for the most popular chan is *general*, to join it, *Create New Chan* and enter: *general* as the passphrase.
 
 ## Additional resources
 

@@ -37,7 +37,7 @@ Combined with [acpid](/index.php/Acpid "Acpid") and [CPU frequency scaling](/ind
 
 [Install](/index.php/Install "Install") the [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/) package or the [laptop-mode-tools-git](https://aur.archlinux.org/packages/laptop-mode-tools-git/) package.
 
-**Warning:** Some arch users have experience many systemd errors using [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/). It is recommended to use [laptop-mode-tools-git](https://aur.archlinux.org/packages/laptop-mode-tools-git/). The relevant forum articles are [https://bbs.archlinux.org/viewtopic.php?id=209855](https://bbs.archlinux.org/viewtopic.php?id=209855) and [https://bbs.archlinux.org/viewtopic.php?id=209100](https://bbs.archlinux.org/viewtopic.php?id=209100).
+**Warning:** Some arch users have experienced many systemd errors using [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/). It is recommended to use [laptop-mode-tools-git](https://aur.archlinux.org/packages/laptop-mode-tools-git/). The relevant forum articles are [https://bbs.archlinux.org/viewtopic.php?id=209855](https://bbs.archlinux.org/viewtopic.php?id=209855) and [https://bbs.archlinux.org/viewtopic.php?id=209100](https://bbs.archlinux.org/viewtopic.php?id=209100).
 
 ## Configuration
 

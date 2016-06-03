@@ -20,3 +20,5 @@ Kernels older than 4.4 won't support the new wifi chip and a great deal of Skyla
 #### Crash on lid close
 
 Boot with intel_pstate=no_hwp kernel param to resolve until [https://bugzilla.kernel.org/show_bug.cgi?id=110941](https://bugzilla.kernel.org/show_bug.cgi?id=110941) rolls.
+
+Fixed with [linux](https://www.archlinux.org/packages/?name=linux) version 4.5.4-1

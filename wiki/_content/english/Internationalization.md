@@ -37,6 +37,7 @@ See [Keyboard configuration in console](/index.php/Keyboard_configuration_in_con
 *   [uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim") (Japanese)
 *   [IBus](/index.php/IBus "IBus")
 *   [Dasom](/index.php/Dasom "Dasom")
+*   [Nimf](/index.php/Nimf "Nimf")
 
 ### GTK immodule
 

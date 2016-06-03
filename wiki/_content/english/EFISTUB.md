@@ -70,7 +70,7 @@ ExecStart=/usr/bin/cp -f /boot/initramfs-linux.img *esp*/EFI/arch/initramfs-linu
 ExecStart=/usr/bin/cp -f /boot/initramfs-linux-fallback.img *esp*/EFI/arch/initramfs-linux-fallback.img
 ```
 
-**Tip:** For [Secure Boot](/index.php/Secure_Boot "Secure Boot") (with your own keys), you can set up the service to also sign the image (using [sbsigntools](https://aur.archlinux.org/packages/sbsigntools/)): `ExecStart=/usr/bin/sbsign --key */path/to/db.key* --cert */path/to/db.crt* --output *esp*/EFI/arch/vmlinuz-linux *esp*/EFI/arch/vmlinuz_linux` 
+**Tip:** For [Secure Boot](/index.php/Secure_Boot "Secure Boot") (with your own keys), you can set up the service to also sign the image (using [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools)): `ExecStart=/usr/bin/sbsign --key */path/to/db.key* --cert */path/to/db.crt* --output *esp*/EFI/arch/vmlinuz-linux *esp*/EFI/arch/vmlinuz_linux` 
 
 Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `efistub-update.path`.
 
@@ -272,7 +272,7 @@ Some UEFI implementations make it difficult to modify the NVRAM successfully usi
 To add an entry for your kernel, use:
 
 ```
-Shell> bcfg boot add **N** fs**V**:\vmlinuz-linux
+Shell> bcfg boot add **N** fs**V**:\vmlinuz-linux "Arch Linux"
 
 ```
 

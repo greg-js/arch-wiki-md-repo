@@ -295,7 +295,7 @@ Adding `lpadmin` to `/etc/group` and then to the `SystemGroup` directive in `/et
 SystemGroup sys root lpadmin
 ```
 
-**Tip:** Read [CUPS#Administration](/index.php/CUPS#Administration "CUPS") to get more details on how to configure CUPS.
+**Tip:** Read [CUPS#Configuration](/index.php/CUPS#Configuration "CUPS") to get more details on how to configure CUPS.
 
 ### Samba/Windows support
 
@@ -676,7 +676,7 @@ Under Gnome you can try to install the package libgnomeui.
 
 ### KF5/Qt5 applications don't display icons in i3/fvwm/awesome
 
-See [Qt#Configuration of Qt apps under environments other than KDE](/index.php/Qt#Configuration_of_Qt_apps_under_environments_other_than_KDE "Qt").
+See [Qt#Configuration of Qt5 apps under environments other than KDE](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE "Qt").
 
 ### Graphical related problems
 
@@ -714,7 +714,7 @@ Since Qt 4.7+, recompiling Qt is not needed. Simply export `QT_GRAPHICSSYSTEM=ra
 
 **The best and automatic way to do that** is to install [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/) from AUR and configure this particular Qt setting through *System Settings > Qt Graphics System*.
 
-For more information, consult this [KDE Developer blog entry](http://apachelog.wordpress.com/2010/09/05/qt-graphics-system-kcm/) and/or this [Qt Developer blog entry](http://labs.trolltech.com/blogs/2009/12/18/qt-graphics-and-performance-the-raster-engine/).
+For more information, consult this [KDE Developer blog entry](http://apachelog.wordpress.com/2010/09/05/qt-graphics-system-kcm/) and/or this [Qt Developer blog entry](https://web.archive.org/web/20100430183745/http://labs.trolltech.com/blogs/2009/12/18/qt-graphics-and-performance-the-raster-engine).
 
 #### Low 3D desktop performance
 

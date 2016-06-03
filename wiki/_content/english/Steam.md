@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam (software)"):
 
-	*Steam is a digital distribution, digital rights management, multiplayer and communications platform developed by Valve Corporation. It is used to distribute games and related media online, from small independent developers to larger software houses.*
+	Steam is a digital distribution, digital rights management, multiplayer and communications platform developed by Valve Corporation. It is used to distribute games and related media online, from small independent developers to larger software houses.
 
 [Steam](http://store.steampowered.com/about/) is best known as the platform needed to play Source Engine games (e.g. Half-Life 2, Counter-Strike). Today it offers many games from many other developers.
 
@@ -10,6 +10,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 *   [2 Usage](#Usage)
     *   [2.1 Big Picture Mode (with a Display Manager)](#Big_Picture_Mode_.28with_a_Display_Manager.29)
     *   [2.2 Silent Mode](#Silent_Mode)
+    *   [2.3 Headless In-Home Streaming Server](#Headless_In-Home_Streaming_Server)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Launching games with custom commands](#Launching_games_with_custom_commands)
     *   [3.2 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
@@ -19,6 +20,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
     *   [3.5 Changing the Steam friends notification placement](#Changing_the_Steam_friends_notification_placement)
         *   [3.5.1 Use a skin](#Use_a_skin)
         *   [3.5.2 On-the-fly patch](#On-the-fly_patch)
+    *   [3.6 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 See also](#See_also)
 
@@ -81,6 +83,10 @@ Exec=/usr/bin/steam -silent %U
 ...
 
 ```
+
+### Headless In-Home Streaming Server
+
+To setup a Headless In-Home Streaming Server follow the Guide at: [https://steamcommunity.com/sharedfiles/filedetails/?id=680514371](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371)
 
 ## Tips and tricks
 
@@ -156,9 +162,23 @@ $ LD_LIBRARY_PATH=".:${LD_LIBRARY_PATH}" ldd $(file *|sed '/ELF/!d;s/:.*//g')|gr
 Once you have done this, run steam again with `STEAM_RUNTIME=0 steam` and verify it is not loading anything outside of the handful of steam support libraries:
 
 ```
-$ < /proc/$(pidof steam)/maps|sed '/\.local/!d;s/.*  //g'|sort|uniq
+$ for i in $(pgrep steam); do sed '/\.local/!d;s/.*  //g' /proc/$i/maps; done | sort | uniq
 
 ```
+
+To launch Steam using native runtime in a graphical user environment you can add the [environment variable](/index.php/Environment_variable "Environment variable") to your [xprofile](/index.php/Xprofile "Xprofile") file:
+
+ `~/.xprofile` 
+```
+export STEAM_RUNTIME=0
+
+```
+
+If you create or edit this file while in a desktop session you will need to log out and then back into your [desktop environment](/index.php/Desktop_environment "Desktop environment") to enable the change to take effect.
+
+**Backing out the using native runtime in a graphical environment change**
+
+To reverse this change remove or comment out the export line in your [xprofile](/index.php/Xprofile "Xprofile") file. Log out and then in again to refresh your desktop session. When launched, Steam will use the old bundled Ubuntu libraries.
 
 **Convenience repository**
 
@@ -166,13 +186,17 @@ The unofficial [alucryd-multilib](/index.php/Unofficial_user_repositories#alucry
 
 All you need to install is the meta-package [steam-libs](https://aur.archlinux.org/packages/steam-libs/), it will pull all the libs for you. Please report if there is any missing library, the maintainer already had some lib32 packages installed so a library may have been overlooked.
 
-**Satisfacing dependencies with pacman and AUR without the aur meta-package (For x86_64)**
+**Satisfying dependencies without using the convenience repository or steam-libs meta-package (For x86_64)**
 
-Steam with native runtimes needs from AUR this packages with his dependencies [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) [lib32-dbus-glib](https://aur.archlinux.org/packages/lib32-dbus-glib/) [lib32-libnm-glib](https://aur.archlinux.org/packages/lib32-libnm-glib/) [lib32-libudev0](https://ptpb.pw/Y9re)
+If you do not like the approach of installing all the libraries known for Steam and various game-compatibility libraries and want to install the minimum required libraries to launch Steam and most games install the following libraries:
 
-Apart, from pacman [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) [lib32-nss](https://www.archlinux.org/packages/?name=lib32-nss) [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2) and [lib32-gtk3](https://www.archlinux.org/packages/?name=lib32-gtk3) (enable the [multilib](/index.php/Multilib "Multilib") repository first)
+Steam on x86_64 requires the following libraries from [AUR](/index.php/AUR "AUR") to be installed [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) [lib32-dbus-glib](https://aur.archlinux.org/packages/lib32-dbus-glib/) [lib32-libnm-glib](https://aur.archlinux.org/packages/lib32-libnm-glib/) and [lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/).
 
-And, if it show errors of libcanberra-gtk3 install [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra)
+It will also require the following libraries from the [multilib](/index.php/Multilib "Multilib") repository [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) [lib32-nss](https://www.archlinux.org/packages/?name=lib32-nss) [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2) and [lib32-gtk3](https://www.archlinux.org/packages/?name=lib32-gtk3).
+
+If Steam displays errors related to libcanberra-gtk3 install [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra).
+
+While most games will run with the minimal set of libraries listed here some games will require additional libraries to run. For a list of known game-compatibility libraries consult the [game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") page.
 
 ### Skins for Steam
 
@@ -291,6 +315,23 @@ And the launch options should be something like the following.
 ```
 
 There is another file in the same folder as **gameoverlay.style** folder called **steam.style** which has an entry with the exact same function as the file we patched and will change the notification corner for the desktop only (not in-game), but for editing this file to actually work it has to be set before steam is launched and the folder set to read-only so steam cannot re-write the file. Therefore the only two ways to modify that file is to make the directory read only so steam cannot change it when it is launched (can break updates) or making a skin like in method 1.
+
+### Prevent Memory Dumps Consuming RAM
+
+Every time steam crashes, it writes a memory dump to **/tmp/dumps/**. If Steam falls into a crash loop, and it often does, the dump files can start consuming considerable space. Since **/tmp** on Arch is mounted as tmpfs, memory and swap file can be consumed needlessly. To prevent this, you can make a symbolic link to **/dev/null** or create and modify permissions on **/tmp/dumps**. Then Steam will be unable to write dump files to the directory. This also has the added benefit of Steam not uploading these dumps to Valve's servers.
+
+```
+# ln -s /dev/null /tmp/dumps
+
+```
+
+or
+
+```
+# mkdir /tmp/dumps
+# chmod 600 /tmp/dumps
+
+```
 
 ## Troubleshooting
 

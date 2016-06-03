@@ -53,7 +53,7 @@ Algunas versiones destacables:
 
 *   **KMPlayer** — Complemento de vídeo para el navegador Konqueror y una básica interfaz MPlayer/Xine/ffmpeg/ffserver/VDR para KDE.
 
-	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://aur.archlinux.org/packages/kmplayer/)
+	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
 
 *   **Rosa Media Player** — Reproductor multimedia basado en SMPlayer con una UI limpia y elegante.
 
@@ -79,9 +79,9 @@ Hay disponible en los repositorios oficiales un complemento para Firefox con el 
 
 ### Konqueror
 
-Un complemento para Konqueror puede ser obtenido en [AUR](/index.php/AUR "AUR") con el paquete [kmplayer](https://aur.archlinux.org/packages/kmplayer/).
+Un complemento para Konqueror puede ser obtenido en [AUR](/index.php/AUR "AUR") con el paquete [kmplayer](https://www.archlinux.org/packages/?name=kmplayer).
 
-**Nota:** [kmplayer](https://aur.archlinux.org/packages/kmplayer/) también proporciona un frontend completo para MPlayer.
+**Nota:** [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) también proporciona un frontend completo para MPlayer.
 
 ### Chromium
 

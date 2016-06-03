@@ -71,19 +71,35 @@ Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-
 
 ## Method 1: using the Arch LiveCD
 
-1.  Download, burn and boot the 64-bit Arch ISO LiveCD
-2.  Configure your network on the LiveCD, then pacman to use your new architecture repos
-3.  Mount your existing installation to `/mnt` directory. For example: `mount /dev/sda1 /mnt`
-4.  Use the following command to update the local pacman database, get a list of all your installed packages and then reinstall them.
+1.  Download, burn and boot the 64-bit Arch ISO LiveCD.
+2.  Configure your network on the LiveCD.
+3.  Mount your existing installation. For example: `mount /dev/sda1 /mnt`.
+4.  Edit the LiveCD `/etc/pacman.conf` repositories to match the existing `/mnt/etc/pacman.conf` repositories.
+5.  Use the following commands to update the local pacman database and clear the cache directory.
 
 ```
-  # pacman --root /mnt -Syy
-  # pacman --root /mnt -Qnq | pacman --root /mnt -S -
+ # pacman --root /mnt -Syy
+ # pacman --root /mnt -Scc
 
 ```
 
-1.  You should probably run the second command twice, because many packages fail to run their post-install scripts first time. This is due to sed, grep, perl, etc. being of the wrong architecture.
-2.  Finally, run
+	6\. You might first re-install the [base](https://www.archlinux.org/groups/x86_64/base/) group alone, then install any package that triggered an install error, identified using `pacman --root /mnt -Qo <error file>`. Then repeat the [base](https://www.archlinux.org/groups/x86_64/base/) group install, until it installs cleanly without errors.
+
+```
+ # pacman --root /mnt -S base
+
+```
+
+	7\. Use the following command to get a list of all your installed packages and then reinstall them.
+
+```
+ # pacman --root /mnt -Qnq | pacman --root /mnt -S -
+
+```
+
+	8\. You could run the command twice, because many packages fail to run their post-install scripts first time. This is due to sed, grep, perl, etc. being of the wrong architecture. Or you can make note of any individual package-re-install that throws an error and then go back after the upgrade completes to re-install just those packages. Also, if you see an error about not enough disk space, you can filter the package list alphabetically and upgrade in stages, with for instance `...| grep '$[a-k]' |...`, then perhaps `'$l'` and `'$[m-z]'`. In this case you would also have to run `pacman --root /mnt -Scc` after each install stage to free disk space.
+
+	9\. Finally, run
 
 ```
  # arch-chroot /mnt 
@@ -91,10 +107,24 @@ Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-
 
 ```
 
-After rebooting to your new 64-bit system, run this command to find out what 32-bit binaries you still have and reinstall them:
+	10\. Also, see if your boot loader needs to be migrated. For instance:
 
 ```
-find /usr/bin -type f -exec bash -c 'file "{}" | grep 32-bit' \;
+ # grub-install --recheck /dev/sda
+
+```
+
+	11\. After rebooting to your new 64-bit system, edit and then move `/etc/makepkg.conf.pacnew` to `/etc/makepkg.conf`, to migrate the cpu architecture. Then rebuild the "foreign" packages, which will include packages from the AUR, as for instance, with:
+
+```
+ $ pacman -Qmq | pacaur -S -
+
+```
+
+	You might first want to remove certain orphaned foreign packages before trying to rebuild them. Run this command to find out what 32-bit binaries you still have and reinstall them:
+
+```
+ $ pacman -Qo `find /usr/bin -type f -exec bash -c 'file "{}" | grep 32-bit' \; | cut -d':' -f1` | cut -d' ' -f5 | sort | uniq | tee list
 
 ```
 

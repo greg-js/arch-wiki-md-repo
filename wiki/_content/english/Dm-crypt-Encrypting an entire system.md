@@ -672,7 +672,7 @@ The disk layout in this example is:
 
 Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
-Create an [EFI System Partition (ESP)](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") with an appropriate size, it will later be mounted at `/boot/efi`.
+Create an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an appropriate size, it will later be mounted at `/boot/efi`.
 
 Create a partition to be mounted at `/boot` of type `8300` with a size of 100 MB or more.
 
@@ -752,7 +752,7 @@ Mount the partition to `/mnt/boot`:
 
 ```
 
-Create a mountpoint for the [ESP](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") at `/boot/efi` for compatibility with `grub-install` and mount it:
+Create a mountpoint for the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") at `/boot/efi` for compatibility with `grub-install` and mount it:
 
 ```
 # mkdir /mnt/boot/efi
@@ -793,7 +793,7 @@ Configure GRUB to recognize the LUKS encrypted `/boot` partition and unlock the 
 
  `/etc/default/grub` 
 ```
-GRUB_CMDLINE_LINUX="... UUID=*<device-UUID>*:lvm root=/dev/mapper/MyStorage-rootvol ..."
+GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*<device-UUID>*:lvm root=/dev/mapper/MyStorage-rootvol ..."
 GRUB_ENABLE_CRYPTODISK=y
 ```
 
@@ -834,9 +834,11 @@ If for some reason the keyfile fails to unlock the boot partition, systemd will 
 
 ## Btrfs subvolumes with swap
 
-The following example creates a full system encryption with LUKS using [btrfs](/index.php/Btrfs "Btrfs") subvolumes to simulate partitions. Because `/boot` will reside on the encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used. The layout shows an unencrypted [EFI](/index.php/EFI "EFI") system partition (ESP); if using BIOS, this is not needed. Additionally an optional [swap](/index.php/Swap "Swap") partition is shown.
+The following example creates a full system encryption with LUKS using [btrfs](/index.php/Btrfs "Btrfs") subvolumes to simulate partitions. NOTE: the EFI System Partition (ESP) cannot be encrypted. The layout shows an unencrypted [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an encrypted `/`. This is the setup that works with UEFI.
 
-**Warning:** Do not use a [swap file](/index.php/Swap_file "Swap file") instead of a separate partition, as this may result in data loss, see [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs").
+Additionally an optional [swap](/index.php/Swap "Swap") partition is shown.
+
+**Warning:** Do not use a [swap file](/index.php/Swap_file "Swap file") instead of a separate partition, because this may result in data loss. See [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs").
 
 ```
 +--------------------------+--------------------------+--------------------------+
@@ -849,11 +851,13 @@ The following example creates a full system encryption with LUKS using [btrfs](/
 
 ```
 
+If using BIOS instead of UEFI, a separate and unencrypted /boot is not absolutely necessary. `/boot` can reside on the encrypted `/`. However, in that case [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because (at this time) only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[1]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
+
 ### Preparing the disk
 
 **Note:** It is not possible to use btrfs partitioning as described in [Btrfs#Partitioning](/index.php/Btrfs#Partitioning "Btrfs") when using LUKS. Traditional partitioning must be used, even if it is just to create one partition.
 
-Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). If you are using [UEFI](/index.php/UEFI "UEFI") create an [EFI System Partition (ESP)](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") with an appropriate size. It will later be mounted at `/boot/efi`. If you are going to create an encrypted swap partition, create the partition for it, but do **not** mark it as swap, since plain *dm-crypt* will be used with the partition.
+Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). If you are using [UEFI](/index.php/UEFI "UEFI") create an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an appropriate size. It will later be mounted at `/boot/efi`. If you are going to create an encrypted swap partition, create the partition for it, but do **not** mark it as swap, since plain *dm-crypt* will be used with the partition.
 
 Create the needed partitions, at least one for `/` (e.g. `/dev/sda*X*`). See [Partitioning](/index.php/Partitioning "Partitioning").
 
@@ -915,7 +919,7 @@ Here we are using the convention of prefixing `@` to subvolume names that will b
 ```
 # btrfs subvolume create /mnt/@
 # btrfs subvolume create /mnt/@snapshots
-# btrfs sbuvolume create /mnt/@home
+# btrfs subvolume create /mnt/@home
 
 ```
 

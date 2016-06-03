@@ -67,6 +67,8 @@ install CD version
 
 ## XPS
 
+}
+
 | Model version | Arch Linux
 install CD version
  | Hardware support | Remarks |
@@ -74,3 +76,5 @@ install CD version
 | XPS L322 | 2013_03 | Intel HD 4000, with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | Intel HD Audio with ALSA | No Ethernet port | Yes | Untested | Yes | No modem | No SD card slot | ALPS Touchpad recognized only as PS/2 mouse, two-finger scroll, finger tap-to-click, etc... does not work. Some new mouse drivers suggest a fix but have not worked. |
 | XPS M1210 | Duke | 3D with NVIDIA open source drivers | SigmaTel audio with ALSA | *b44* module, out-of-the-box | IPW 3945, command-line [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Untested | Untested | Untested | rico card reader worked out-of-the-box, hot keys using keytouch, web cam works but is unstable. In [MPlayer](/index.php/MPlayer "MPlayer"), use `driver=v4l2:device=/dev/video0` | Everything else works without a hitch |
 | [XPS M1330](/index.php/Dell_XPS_M1330 "Dell XPS M1330") | Don't Panic (2007.08-2) | For dedicated graphics (NVIDIA 8400m) works with NVIDIA package | Works with Intel HD Audio and ALSA, but need to configure microphone | Yes | Works with iwl4965 | Can set Bluetooth but have not tested with any devices | Suspend works fine with [pm-utils](/index.php/Pm-utils "Pm-utils") (*acpi_cpufreq* problem: [see forums](https://bbs.archlinux.org/viewtopic.php?id=44500)) | Untested | 2.0 MP web cam works with *uvcvideo*, media keys work with keytouch or esekeyd, IR remote works, SD card works | Everything basically worked out-of-the-box except the microphone |
+| [XPS 13 (2015)](/index.php/Dell_XPS_13_(2015) "Dell XPS 13 (2015)") | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [XPS 13 (2016)](/index.php/Dell_XPS_13_(2016) "Dell XPS 13 (2016)") | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

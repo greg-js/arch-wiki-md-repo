@@ -12,11 +12,7 @@
 
 Download and extract the [nessus](https://aur.archlinux.org/packages/nessus/) tarball available in the [AUR](/index.php/AUR "AUR").
 
-Go to [http://tenable.com/products/nessus/nessus-download-agreement](http://tenable.com/products/nessus/nessus-download-agreement), agree to the license, and download the package `Nessus-6.5.2-fc20.x86_64.rpm`.
-
-Move the RPM file into the `nessus` directory (i.e. the directory you extracted the tarball's contents to).
-
-Then, [build and install](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") the package as usual.
+**Note:** As of April 26, 2016, it is no longer required to agree and download the Nessus rpm. A script will run and download the rpm from the Nessus site automatically. If it appears that nothing is happening, please be patient as the script runs wget silently. The installation will proceed after the rpm is downloaded.
 
 ## Post-installation setup
 

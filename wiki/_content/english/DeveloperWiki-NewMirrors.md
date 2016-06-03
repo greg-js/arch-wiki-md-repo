@@ -6,6 +6,7 @@
     *   [3.1 Tier 2 requirements](#Tier_2_requirements)
     *   [3.2 Tier 1 requirements](#Tier_1_requirements)
     *   [3.3 Create a feature-request](#Create_a_feature-request)
+    *   [3.4 Contact info and mailing lists](#Contact_info_and_mailing_lists)
 *   [4 The Arch Linux side](#The_Arch_Linux_side)
 *   [5 Mirror size](#Mirror_size)
 
@@ -31,7 +32,7 @@ All other mirrors should sync from one of tier 1 mirrors. Syncing from archlinux
 *   Do not sync more often than every hour, but you should sync at least once a day
 *   Sync on a random minute so it is more likely the requests will be spaced out with other mirrors
 *   Use the following [rsync](/index.php/Rsync "Rsync") options: **-rtlvH --delete-after --delay-updates --safe-links**
-*   If you ever whish to send downtime notifications to our users, please use the [arch-mirrors-announce](https://mailman.archlinux.org/mailman/listinfo/arch-mirrors-announce) list. You do not need to subscribe to be able to post.
+*   If you ever wish to send downtime notifications to our users, please use the [arch-mirrors-announce](https://mailman.archlinux.org/mailman/listinfo/arch-mirrors-announce) list. You do not need to subscribe to be able to post.
 *   http support
 
 #### Tier 1 requirements
@@ -58,7 +59,11 @@ Go to [https://bugs.archlinux.org](https://bugs.archlinux.org) and create a feat
 *   (tier 1 mirrors) Rsync IPs so your server(s) can be allowed to sync off tier 0 (rsync.archlinux.org)
 *   (tier 2 mirrors) The name of tier 1 mirror you are syncing from. You can find available tier 1 mirrors [here](https://www.archlinux.org/mirrors/) (sort using the tier column)
 
-Please also join the [arch-mirrors mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-mirrors).
+### Contact info and mailing lists
+
+Feel free to join the [arch-mirrors mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-mirrors) which can be used for general discussion about our mirrors. If you want to inform our users about downtime of your mirror please use the [arch-mirrors-announce](https://lists.archlinux.org/listinfo/arch-mirrors-announce) mailing list. You do not need to subscribe to be able to post to arch-mirrors-announce.
+
+If you want to reach the Arch Linux staff for questions, you can either use the arch-mirrors list, you can open a bug report on our tracker or you can send a mail to [mirrors@archlinux.org](mailto:mirrors@archlinux.org).
 
 ## The Arch Linux side
 

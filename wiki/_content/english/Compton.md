@@ -76,21 +76,21 @@ compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
 
 ### Using a configuration file
 
+The default configuration is available in `/etc/xdg/compton.conf`. For modifications, it can be copied to `~/.config/compton.conf`, or to `~/.compton.conf`.
+
 To use a custom configuration file with compton during a session, use the following command:
 
 ```
-compton --config <path/to/compton.conf>
+compton --config *path/to/compton.conf*
 
 ```
 
-To auto-start compton as a background ([Daemon](/index.php/Daemon "Daemon")) process for a session, the `-b` argument must again be used:
+To auto-start compton as a background ([Daemon](/index.php/Daemon "Daemon")) process for a session, specify the `-b` argument:
 
 ```
-compton --config <path/to/compton.conf> -b
+compton --config *path/to/compton.conf* -b
 
 ```
-
-It is recommended to either create the configuration file in the hidden `~/.config` directory (`~/.config/compton.conf`) or as a hidden file in the `Home` directory (`~/.compton.conf`). A sample config file can be found here: [Compton Sample Config](https://github.com/chjj/compton/blob/master/compton.sample.conf)
 
 #### Disable shadowing of some windows
 

@@ -31,7 +31,7 @@ The default keyboard layout is US. Alternative keyboard layouts can be loaded wi
 
 ### Connect to the Internet
 
-Internet service via DHCP discovery is enabled on boot for supported wired devices; read more at [Network configuration](/index.php/Network_configuration "Network configuration"). For supported wireless devices run `wifi-menu` to set up the network; read more with [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). If needing a static IP or network management tools, stop the DHCP discovery service with `systemctl stop dhcpcd@*eth0*.service`, and read [Netctl](/index.php/Netctl "Netctl").
+Internet service via DHCP discovery is enabled on boot for supported wired devices; read more at [Network configuration](/index.php/Network_configuration "Network configuration"). For supported wireless devices run `wifi-menu` to set up the network; read more with [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). If needing a static IP or network management tools, [stop](/index.php/Stop "Stop") `dhcpcd@*eth0*.service` and read [Netctl](/index.php/Netctl "Netctl").
 
 ### Update the system clock
 
@@ -82,12 +82,7 @@ Generate an [fstab](/index.php/Fstab "Fstab") file (use `-U` or `-L` to define b
 
 ```
 
-Set the [hostname](/index.php/Hostname "Hostname"):
-
-```
-# echo *computer_name* > /etc/hostname
-
-```
+[Create](/index.php/Create "Create") the [/etc/hostname](/index.php//etc/hostname "/etc/hostname") file.
 
 Set the [time zone](/index.php/Time_zone "Time zone"):
 
@@ -103,12 +98,7 @@ Uncomment the needed [locales](/index.php/Locale "Locale") in `/etc/locale.gen`,
 
 ```
 
-Set locale preferences in `/etc/locale.conf` and possibly `$HOME/.config/locale.conf`:
-
-```
-# echo LANG=*your_locale* > /etc/locale.conf
-
-```
+Add at least `LANG=*your_locale*` in `/etc/locale.conf` and possibly `$HOME/.config/locale.conf`.
 
 Add console [keymap](/index.php/Keymap "Keymap") and [font](/index.php/Fonts#Console_fonts "Fonts") preferences in `/etc/vconsole.conf`.
 

@@ -6,7 +6,7 @@ Spotify also offers free users the ability to create playlist which can be shuff
 
 ## Contents
 
-*   [1 Client installation](#Client_installation)
+*   [1 Installation](#Installation)
     *   [1.1 Linux](#Linux)
     *   [1.2 Windows (Wine)](#Windows_.28Wine.29)
 *   [2 Global media hotkeys](#Global_media_hotkeys)
@@ -35,9 +35,19 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [4.8 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
 *   [5 See also](#See_also)
 
-## Client installation
+## Installation
 
-Choose which client you would prefer. The Linux client is receiving good reviews. However, if you are comfortable with wine and its configuration, you might want to choose the windows client. Please note that you do NOT need to install both. Some opensource clients exist, such as [mopidy](https://www.archlinux.org/packages/?name=mopidy) + [mopidy-spotify](https://aur.archlinux.org/packages/mopidy-spotify/) or [despotify-svn](https://aur.archlinux.org/packages/despotify-svn/), most of which work only with premium accounts. There is also the online player (requires flash) on [https://play.spotify.com/](https://play.spotify.com/).
+Choose which client you would prefer. The Linux client is receiving good reviews. However, if you are comfortable with wine and its configuration, you might want to choose the windows client. Please note that you do **not** need to install both. There is also the online player (requires flash) on [https://play.spotify.com/](https://play.spotify.com/).
+
+There are also some alternatives to the official spotify client:
+
+*   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Amarok 1.4 clone, ported to Qt 4, is able of streaming from Spotify with a premium account after activating (downloading) a plugin in the settings.
+
+	[http://www.clementine-player.org/](http://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)
+
+*   **[Mopidy](https://www.mopidy.com/)** — An alternative plug-in based implementation of [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon") is able of streaming from Spotify with an extension.
+
+	[https://github.com/mopidy](https://github.com/mopidy) || [mopidy](https://www.archlinux.org/packages/?name=mopidy)+ [mopidy-spotify](https://aur.archlinux.org/packages/mopidy-spotify/) or [despotify-svn](https://aur.archlinux.org/packages/despotify-svn/)
 
 ### Linux
 
@@ -359,6 +369,24 @@ Categories=Audio;Music;Player;AudioVideo
 MimeType=x-scheme-handler/spotify
 
 ```
+
+In alternative, it is possible to create an application launcher override in the `~/.local/share/applications/` folder so that once the app gets updated, the setting will be kept.
+
+Example `spotify.desktop` override:
+
+```
+cp /usr/share/applications/spotify.desktop ~/.local/share/applications/
+# edit ~/.local/share/applications/spotify.desktop
+# so that the following
+# Exec=spotify %U
+# becomes this:
+Exec=spotify --force-device-scale-factor=2 %U
+# or use --force-device-scale-factor=1.0000001
+# if you are not on HiDPi screen
+
+```
+
+Please keep in mind you need to relaunch your Desktop Manager once, before these override changes will be effective.
 
 ## Troubleshooting
 

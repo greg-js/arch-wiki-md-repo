@@ -83,7 +83,7 @@ Most media buttons work out of the box:
 
 ### Wireless Fidelity
 
-Internal Wi-Fi driver (r8723au) is working with a huge troubles with current kernel (3.17.6-1-ARCH). So to get wifi work, [blacklist](/index.php/Blacklisting#Blacklisting "Blacklisting") r8723 module. Then you should install [dkms-8723au-git](https://aur.archlinux.org/packages/dkms-8723au-git/) package and insert 8723au module.
+Internal Wi-Fi driver (r8723au) is working with a huge troubles with current kernel (3.17.6-1-ARCH). So to get wifi work, [blacklist](/index.php/Blacklist "Blacklist") r8723 module. Then you should install [dkms-8723au-git](https://aur.archlinux.org/packages/dkms-8723au-git/) package and insert 8723au module.
 
 ### Bluetooth
 

@@ -23,6 +23,7 @@
     *   [2.3 link files](#link_files)
         *   [2.3.1 [Match] section](#.5BMatch.5D_section_3)
         *   [2.3.2 [Link] section](#.5BLink.5D_section_2)
+        *   [2.3.3 Renaming an interface](#Renaming_an_interface)
 *   [3 Usage with containers](#Usage_with_containers)
     *   [3.1 Basic DHCP network](#Basic_DHCP_network)
     *   [3.2 DHCP with two distinct IP](#DHCP_with_two_distinct_IP)
@@ -33,7 +34,8 @@
         *   [3.2.5 Result](#Result)
         *   [3.2.6 Notice](#Notice)
     *   [3.3 Static IP network](#Static_IP_network)
-*   [4 See also](#See_also)
+*   [4 Management and desktop integration](#Management_and_desktop_integration)
+*   [5 See also](#See_also)
 
 ## Basic usage
 
@@ -325,11 +327,27 @@ Most common keys are:
 
 **Note:** the system `/usr/lib/systemd/network/99-default.link` is generally sufficient for most of the basic cases.
 
+#### Renaming an interface
+
+Instead of [editing udev rules](/index.php/Network_configuration#Change_device_name "Network configuration"), a .link file can be used to rename an interface. A useful example is to set a predictable interface name for a USB-to-Ethernet adapter based on its MAC address, as those adapters are usually given different names depending on which USB port they are plugged into.
+
+ `/etc/systemd/network/10-ethusb0.link` 
+```
+[Match]
+MACAddress=12:34:56:78:90:ab
+
+[Link]
+Description=USB to Ethernet Adapter
+Name=ethusb0
+```
+
+**Note:** The default link file `/usr/lib/systemd/network/99-default.link` is shipped by the system. Any user-supplied .link **should** have a lexically earlier file name to be considered at all. For example, name the file `10-ethusb0.link` and not `ethusb0.link`.
+
 ## Usage with containers
 
-The service is available with [systemd](https://www.archlinux.org/packages/?name=systemd) >= 210\. You will want to [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") the `systemd-networkd.service` on the host and container.
+The service is available with [systemd](https://www.archlinux.org/packages/?name=systemd). You will want to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `systemd-networkd.service` unit on the host and container.
 
-For debugging purposes, it is strongly advised to [install](/index.php/Install "Install") the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools) and [iproute2](https://www.archlinux.org/packages/?name=iproute2) packages.
+For debugging purposes, it is strongly advised to [install](/index.php/Install "Install") the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools), and [iproute2](https://www.archlinux.org/packages/?name=iproute2) packages.
 
 If you are using *systemd-nspawn*, you may need to modify the `systemd-nspawn@.service` and append boot options to the `ExecStart` line. Please refer to `man 1 systemd-nspawn` for an exhaustive list of options.
 
@@ -589,6 +607,14 @@ Address=192.168.1.94/24
 Gateway=192.168.1.254
 
 ```
+
+## Management and desktop integration
+
+*systemd-networkd* doesn't have a proper interactive management interface via either command-line or GUI. *networkctl* (via CLI) just offers a simple dump of the network interface states.
+
+When *networkd* is configured with [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), both *wpa_cli* and *wpa_gui* offer the ability to associate and reconfigure WLAN interfaces dynamically.
+
+[networkd-notify](https://github.com/wavexx/networkd-notify) can generate simple notifications in response to network interface state changes (such as connection/disconnection and re-association).
 
 ## See also
 

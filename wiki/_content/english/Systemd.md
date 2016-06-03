@@ -25,24 +25,28 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [3.5 Change default target to boot into](#Change_default_target_to_boot_into)
 *   [4 Temporary files](#Temporary_files)
 *   [5 Timers](#Timers)
-*   [6 Journal](#Journal)
-    *   [6.1 Filtering output](#Filtering_output)
-    *   [6.2 Journal size limit](#Journal_size_limit)
-    *   [6.3 Clean journal files manually](#Clean_journal_files_manually)
-    *   [6.4 Journald in conjunction with syslog](#Journald_in_conjunction_with_syslog)
-    *   [6.5 Forward journald to /dev/tty12](#Forward_journald_to_.2Fdev.2Ftty12)
-    *   [6.6 Specify a different journal to view](#Specify_a_different_journal_to_view)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Investigating systemd errors](#Investigating_systemd_errors)
-    *   [7.2 Diagnosing boot problems](#Diagnosing_boot_problems)
-    *   [7.3 Diagnosing problems with a specific service](#Diagnosing_problems_with_a_specific_service)
-    *   [7.4 Shutdown/reboot takes terribly long](#Shutdown.2Freboot_takes_terribly_long)
-    *   [7.5 Short lived processes do not seem to log any output](#Short_lived_processes_do_not_seem_to_log_any_output)
-    *   [7.6 Disabling application crash dumps journaling](#Disabling_application_crash_dumps_journaling)
-    *   [7.7 Boot time increasing over time](#Boot_time_increasing_over_time)
-    *   [7.8 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
-    *   [7.9 systemctl enable fails for symlinks in /etc/systemd/system](#systemctl_enable_fails_for_symlinks_in_.2Fetc.2Fsystemd.2Fsystem)
-*   [8 See also](#See_also)
+*   [6 Mounting](#Mounting)
+*   [7 Journal](#Journal)
+    *   [7.1 Filtering output](#Filtering_output)
+    *   [7.2 Journal size limit](#Journal_size_limit)
+    *   [7.3 Clean journal files manually](#Clean_journal_files_manually)
+    *   [7.4 Journald in conjunction with syslog](#Journald_in_conjunction_with_syslog)
+    *   [7.5 Forward journald to /dev/tty12](#Forward_journald_to_.2Fdev.2Ftty12)
+    *   [7.6 Specify a different journal to view](#Specify_a_different_journal_to_view)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Enable installed units by default](#Enable_installed_units_by_default)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Investigating systemd errors](#Investigating_systemd_errors)
+    *   [9.2 Diagnosing boot problems](#Diagnosing_boot_problems)
+    *   [9.3 Diagnosing problems with a specific service](#Diagnosing_problems_with_a_specific_service)
+    *   [9.4 Shutdown/reboot takes terribly long](#Shutdown.2Freboot_takes_terribly_long)
+    *   [9.5 Short lived processes do not seem to log any output](#Short_lived_processes_do_not_seem_to_log_any_output)
+    *   [9.6 Disabling application crash dumps journaling](#Disabling_application_crash_dumps_journaling)
+    *   [9.7 Boot time increasing over time](#Boot_time_increasing_over_time)
+    *   [9.8 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
+    *   [9.9 systemctl enable fails for symlinks in /etc/systemd/system](#systemctl_enable_fails_for_symlinks_in_.2Fetc.2Fsystemd.2Fsystem)
+    *   [9.10 dependent services are not started when starting a service manually](#dependent_services_are_not_started_when_starting_a_service_manually)
+*   [10 See also](#See_also)
 
 ## Basic systemctl usage
 
@@ -51,7 +55,7 @@ The main command used to introspect and control *systemd* is *systemctl*. Some o
 **Tip:**
 
 *   You can use all of the following *systemctl* commands with the `-H *user*@*host*` switch to control a *systemd* instance on a remote machine. This will use [SSH](/index.php/SSH "SSH") to connect to the remote *systemd* instance.
-*   *systemadm* is the official graphical frontend for *systemctl*. It is provided by [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui) from the [official repositories](/index.php/Official_repositories "Official repositories") or by [systemd-ui-git](https://aur.archlinux.org/packages/systemd-ui-git/) from the [AUR](/index.php/AUR "AUR") for the development version.
+*   *systemadm* is the official graphical frontend for *systemctl* and is provided by the [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui) package.
 *   [Plasma](/index.php/Plasma "Plasma") users can install [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm) as a graphical fronted for *systemctl*. After installing the module will be added under *System administration*.
 
 ### Analyzing the system state
@@ -110,7 +114,7 @@ To be more accurate, *before* trying to instantiate the `name@.suffix` template 
 **Tip:**
 
 *   Most of the following commands also work if multiple units are specified, see `man systemctl` for more information.
-*   Since [systemd 220](https://github.com/systemd/systemd/blob/master/NEWS#L323-L326), a `--now` switch can be used in conjunction with `enable`, `disable` and `mask` to respectively start, stop or mask immediately the unit rather than after the next boot.
+*   The `--now` switch can be used in conjunction with `enable`, `disable`, and `mask` to respectively start, stop, or mask immediately the unit rather than after the next boot.
 *   A package may offer units for different purposes. If you just installed a package, `pacman -Qql *package* | grep -Fe .service -e .socket` can be used to check and find them.
 
 **Start** a unit immediately:
@@ -434,6 +438,10 @@ A timer is a unit configuration file whose name ends with *.timer* and encodes i
 
 **Note:** Timers can replace *cron* functionality to a great extent. See [systemd/Timers#As a cron replacement](/index.php/Systemd/Timers#As_a_cron_replacement "Systemd/Timers").
 
+## Mounting
+
+Since systemd is a replacement for System V init, it is in charge of the mounts specified in `/etc/fstab`. In fact, it goes beyond the usual `fstab` capabilities, implementing special mount options prefixed with `x-systemd.`. See [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") for an example of *automounting* (mounting on-demand) using these extensions. See [[2]](https://www.freedesktop.org/software/systemd/man/systemd.mount.html#fstab) for the complete documentation of these extensions.
+
 ## Journal
 
 *systemd* has its own logging system called the journal; therefore, running a `syslog` daemon is no longer required. To read the log, use:
@@ -498,7 +506,7 @@ Refer to `man journalctl` for more info.
 
 Compatibility with a classic, non-journald aware [syslog](/index.php/Syslog-ng "Syslog-ng") implementation can be provided by letting *systemd* forward all messages via the socket `/run/systemd/journal/syslog`. To make the syslog daemon work with the journal, it has to bind to this socket instead of `/dev/log` ([official announcement](http://lwn.net/Articles/474968/)).
 
-As of *systemd* 216 the default `journald.conf` for forwarding to the socket was changed to `ForwardToSyslog=no` to avoid system overhead, because [rsyslog](/index.php/Rsyslog "Rsyslog") or [syslog-ng](/index.php/Syslog-ng "Syslog-ng") (since 3.6) pull the messages from the journal by [itself](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
+The default `journald.conf` for forwarding to the socket is `ForwardToSyslog=no` to avoid system overhead, because [rsyslog](/index.php/Rsyslog "Rsyslog") or [syslog-ng](/index.php/Syslog-ng "Syslog-ng") pull the messages from the journal by [itself](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
 
 See [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") and [Syslog-ng#syslog-ng and systemd journal](/index.php/Syslog-ng#syslog-ng_and_systemd_journal "Syslog-ng"), or [rsyslog](/index.php/Rsyslog "Rsyslog") respectively, for details on configuration.
 
@@ -524,6 +532,16 @@ There may be a need to check the logs of another system that is dead in the wate
 $ journalctl -D */mnt*/var/log/journal -xe
 
 ```
+
+## Tips and tricks
+
+### Enable installed units by default
+
+Arch Linux ships with `/usr/lib/systemd/system-preset/99-default.preset` containing `disable *`. This causes *systemctl preset* to disable all units by default, such that when a new package is installed, the user must manually enable the unit.
+
+If this behavior is not desired, simply create a symlink from `/etc/systemd/system-preset/99-default.preset` to `/dev/null` in order to override the configuration file. This will cause *systemctl preset* to enable all units that get installed unless specified in another file in one *systemctl preset'*s configuration directories. See the manpage for `systemd.preset` for more information.
+
+**Note:** Enabling all units by default may cause problems with packages that contain two or more mutually exclusive units. *systemctl preset* is designed to be used by distributions and spins or system administrators. In the case where two conflicting units would be enabled, you should explicitly specify which one is to be disabled in a preset configuration file as specified in the manpage for `systemd.preset`.
 
 ## Troubleshooting
 
@@ -682,6 +700,31 @@ This is a [design choice](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14
 
 ```
 # systemctl enable */absolute/path/foo*.service
+
+```
+
+### dependent services are not started when starting a service manually
+
+One (in)famomus example is `libvirtd.service` which needs the `virtlogd.socket` to function properly.
+
+The dependencies in `/usr/lib/systemd/system/libvirtd.service` are defined as
+
+```
+[Install]
+WantedBy=multi-user.target
+Also=virtlockd.socket
+Also=virtlogd.socket
+
+```
+
+This only defines the necessary/dependent sockets to be enabled services(i.e. as "autostart"), too - but does not start them whenever the DISABLED (= non-autostarting) service ist started manually e.g. by running `systemctl start libvirtd`
+
+Thus the correct (?) way to manually start a service with dependent subservices once (instead of at each start of the system) probably is
+
+```
+systemctl enable ServiceWithSubservices
+systemctl start ServiceWithSubservices
+systemctl disable ServiceWithSubservices
 
 ```
 

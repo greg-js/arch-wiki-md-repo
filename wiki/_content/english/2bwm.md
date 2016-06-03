@@ -22,13 +22,13 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [2bwm](https://aur.archlinux.org/packages/2bwm/). Although the installation process can be automatic, if directly building from the AUR, it is highly recommended to read and edit the "config.h" file in the source directory.
+[Install](/index.php/Install "Install") the [2bwm](https://aur.archlinux.org/packages/2bwm/) package. Although the installation process can be automatic, if directly building from the AUR, it is highly recommended to read and edit the `config.h` file in the source directory.
 
 ## Configuration
 
 ### Starting 2bwm
 
-2bwm generally starts from a script, either from [startx](/index.php/Startx "Startx") or from a login manager such as [XDM](/index.php/XDM "XDM").
+2bwm generally starts from a script, either from [startx](/index.php/Startx "Startx") or from a [display manager](/index.php/Display_manager "Display manager") such as [XDM](/index.php/XDM "XDM").
 
 If it starts from the console, a .xinitrc file is needed. Here is a complete example:
 

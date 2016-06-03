@@ -7,7 +7,7 @@ They can do many operations, including:
 *   setting DPI, antialiasing, hinting and other X font settings
 *   changing the Xcursor theme
 *   theming xscreensaver
-*   altering preferences on low-level X applications (xclock ([xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock)), [xpdf](https://aur.archlinux.org/packages/xpdf/), [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode), etc.)
+*   altering preferences on low-level X applications (xclock ([xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock)), [xpdf](https://www.archlinux.org/packages/?name=xpdf), [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode), etc.)
 
 **Note:** Using `~/.Xdefaults` is deprecated, so this article will only refer to resources loaded with xrdb
 

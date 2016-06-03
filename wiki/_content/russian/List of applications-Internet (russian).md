@@ -1026,7 +1026,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **ttytter** — Клиент для twitter с возможностью легкого создания скриптов, написанный на Perl
 
-	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://www.archlinux.org/packages/?name=ttytter)
+	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://aur.archlinux.org/packages/ttytter/)
 
 *   **Turpial** — Клиент для Twitter с различными интерфейсами (multi-interface), написанный на Python
 

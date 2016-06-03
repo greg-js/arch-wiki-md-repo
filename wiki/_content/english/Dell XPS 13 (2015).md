@@ -2,9 +2,10 @@
 
 | **Device** | **Status** |
 | Video | Working |
+| Backlight control | Working |
 | Wireless | Working |
 | Bluetooth | Works after installing firmware |
-| Audio | Works, but [requires new kernel options](#I2S_mode) |
+| Audio | Working |
 | Touchpad | Works after configuration |
 | Webcam | Working |
 | Card Reader | Working |
@@ -21,25 +22,29 @@ As of kernel 4.1.3, a patched kernel is no longer necessary. However, some manua
 *   [1 Model differences](#Model_differences)
 *   [2 Configuration](#Configuration)
     *   [2.1 BIOS updates](#BIOS_updates)
-    *   [2.2 WiFi](#WiFi)
-    *   [2.3 Bluetooth](#Bluetooth)
-    *   [2.4 Audio](#Audio)
-        *   [2.4.1 HDA mode](#HDA_mode)
-        *   [2.4.2 I2S mode](#I2S_mode)
-            *   [2.4.2.1 Enabling the microphone](#Enabling_the_microphone)
-    *   [2.5 Touchpad](#Touchpad)
-        *   [2.5.1 Synaptics driver](#Synaptics_driver)
-        *   [2.5.2 Libinput driver](#Libinput_driver)
-    *   [2.6 Powersaving](#Powersaving)
-    *   [2.7 Calibrated ICC profile for QHD+ models](#Calibrated_ICC_profile_for_QHD.2B_models)
+    *   [2.2 Backlight](#Backlight)
+    *   [2.3 SSD](#SSD)
+    *   [2.4 WiFi](#WiFi)
+    *   [2.5 Bluetooth](#Bluetooth)
+    *   [2.6 Audio](#Audio)
+        *   [2.6.1 HDA mode](#HDA_mode)
+            *   [2.6.1.1 Setting the default sound card](#Setting_the_default_sound_card)
+        *   [2.6.2 I2S mode](#I2S_mode)
+            *   [2.6.2.1 Enabling the microphone](#Enabling_the_microphone)
+    *   [2.7 Touchpad](#Touchpad)
+        *   [2.7.1 Synaptics driver](#Synaptics_driver)
+        *   [2.7.2 Libinput driver](#Libinput_driver)
+    *   [2.8 Powersaving](#Powersaving)
+    *   [2.9 Calibrated ICC profile for QHD+ models](#Calibrated_ICC_profile_for_QHD.2B_models)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
-    *   [3.2 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
-    *   [3.3 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
-    *   [3.4 rfkill issues with Broadcom wireless](#rfkill_issues_with_Broadcom_wireless)
-    *   [3.5 EFISTUB does not boot](#EFISTUB_does_not_boot)
-    *   [3.6 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
-    *   [3.7 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
+    *   [3.1 Random hangs after login with external monitor](#Random_hangs_after_login_with_external_monitor)
+    *   [3.2 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
+    *   [3.3 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
+    *   [3.4 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
+    *   [3.5 rfkill issues with Broadcom wireless](#rfkill_issues_with_Broadcom_wireless)
+    *   [3.6 EFISTUB does not boot](#EFISTUB_does_not_boot)
+    *   [3.7 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
+    *   [3.8 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
 *   [4 See also](#See_also)
 
 ## Model differences
@@ -53,6 +58,17 @@ There are no exclusive hardware differences between the Developer Edition and th
 ### BIOS updates
 
 [BIOS update A07](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=28M21) was released on 2015-11-26\. With A02 or newer, almost everything should work out of the box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
+
+### Backlight
+
+Works out-of-the-box:
+
+*   The [systemd-backlight.service](/index.php/Backlight#systemd-backlight_service "Backlight") takes care of both eDP panel and keyboard backlight (and any other external device) status, saving at shutdown and restoring their values at boot.
+*   hardware keys (`Fn-F10` to `Fn-F12`) works without any operation, as well.
+
+### SSD
+
+This laptop series comes with a SSD as storage device; this section aims to remind you that this technology needs some configuration in order to achieve the best operative conditions. See [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") for information.
 
 ### WiFi
 
@@ -88,7 +104,11 @@ The sound chipset in this laptop, a Realtek ALC3263, is described as "dual-mode"
 
 With BIOS A02+ and Arch kernel **4.3 or older**, the sound card will be initialized in HDA mode.
 
-By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). In the current case, both cards use the `snd_hda_intel` module. To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
+To use HDA mode on newer kernels, compile your kernel with the option `CONFIG_ACPI_REV_OVERRIDE_POSSIBLE=y`. This will force HDA mode on; you will not be able to use I2S mode.
+
+##### Setting the default sound card
+
+By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
 
  `/etc/modprobe.d/alsa-base.conf`  `options snd_hda_intel index=1,0` 
 
@@ -98,11 +118,18 @@ Note that if you are dual-booting with Windows, you will have to do a cold boot 
 
 With BIOS A02+ and Arch kernel **4.4 or newer**, the sound card will be initialized in I2S mode. I2S support requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 1.1.0 or newer.[[2]](http://www.spinics.net/lists/linux-acpi/msg57457.html)
 
-**Note:** Kernel 4.5+ requires the options `CONFIG_DW_DMAC=y` and `SND_SOC_INTEL_BROADWELL_MACH=m` to be statically compiled[[3]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792#c21); otherwise, the sound card will not be recognized. This has been resolved in Arch kernel 4.5.2, which is now in testing.[[4]](https://bugs.archlinux.org/task/48936) In the meantime, users may stay on kernel 4.4 or use the [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
+**Note:** Kernel 4.5+ requires the options `CONFIG_DW_DMAC=y` and `SND_SOC_INTEL_BROADWELL_MACH=m` to be statically compiled[[3]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792#c21); otherwise, the sound card will not be recognized. This has been resolved in Arch kernel 4.5.2+.[[4]](https://bugs.archlinux.org/task/48936)
 
 ##### Enabling the microphone
 
-The built-in microphone is muted by default. To enable it, open `alsamixer`, then press F6 and select the `broadwell-rt286` sound card. Then, press F4 to switch to the Capture view and ensure that ADC0 has the CAPTURE label. If it doesn't, toggle over to it with your arrow keys and press the spacebar to turn on CAPTURE. Finally, toggle over to the Mic item and raise the volume to 100.
+**Note:** The microphone appears to be enabled by default as of Arch kernel 4.5.3, so these instructions may be unnecessary.[[5]](https://bugs.archlinux.org/task/47989#comment146876)
+
+In I2S mode, the built-in microphone is muted by default. To enable it you have to unmute `Mic` item; follow the instructions below in order to achieve the goal:
+
+*   open `alsamixer` (an utility included into the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package)
+*   press `F6` and select the ***broadwell-rt286*** sound card
+*   press `F4` to switch to the *Capture view* and ensure that **ADC0** has the *CAPTURE* label. If it doesn't, toggle over to it with your arrow keys and press the spacebar to turn it on *CAPTURE*
+*   finally, toggle over to the **Mic** item and raise the volume to 100.
 
 ### Touchpad
 
@@ -130,23 +157,23 @@ EndSection
 
 ```
 
+Refer to `man libinput` for more configurable options (for eg. NaturalScrolling, MiddleEmulation).
+
 ### Powersaving
 
-With kernel 4.1 and [tlp](https://www.archlinux.org/packages/?name=tlp), the idle power usage is reduced to ~3.5 W with the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+With kernel 4.5.4 and [tlp](https://www.archlinux.org/packages/?name=tlp), the idle power usage can reach ~2.3 W with the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
-pcie_aspm=force i915.enable_fbc=1 i915.enable_rc6=7
+pcie_aspm=force i915.enable_fbc=1
 
 ```
 
-At least since kernel 4.3.3 the flickering caused by `i915.enable_fbc=1` seems to have been fixed, and freezes happen significantly less often. However, heavy flickering may still occur with external monitors.
+Additionally, [powertop](/index.php/Powertop "Powertop") may also be employed to tweak performance and monitor power consumption.
 
-Additionally, [powertop](/index.php/Powertop "Powertop") may also be employed to tweak the performance and monitor power consumption.
+**Note:**  
 
-**Note:**
-
-*   Enabling PSR support, via `i915.enable_psr=1`, will further reduce idle power usage to ~2.6 W. As of kernel version 4.3.3 it still causes occasional flickering but no longer so much as to be unusable.
-*   `i915.lvds_downclock=1` for lvds_downclock is no longer needed. From the MacBook page: "there's a new auto-downclock for eDP panels in recent kernels and it's enabled by default if available, so don't use - recommendation from irc #intel-gfx").
+*   With kernel 4.6+, frame-buffer compression (FBC) and panel self-refresh (PSR) are enabled by default, so `i915.enable_fbc` and `i915.enable_psr` are no longer needed. However, PSR still causes the display to briefly flicker at times; a patch is available to fix this[[6]](https://bugs.freedesktop.org/show_bug.cgi?id=95176#c14), but until it's merged you may want to disable PSR by adding `i915.enable_psr=0` to your kernel parameters if it bothers you.
+*   `i915.lvds_downclock=1` for LVDS downclock is no longer needed. According to irc #intel-gfx, "there's a new auto-downclock for eDP panels in recent kernels and it's enabled by default if available, so don't use."
 
 ### Calibrated ICC profile for QHD+ models
 
@@ -159,6 +186,10 @@ This profile has been made with the spectrophotometer's high resolution spectral
 *   [QHD+, D65, Gamma 2.2, max luminance](https://mega.nz/#!nkNVQDCI!YYcS32HLWk1Aqry30dmOrt0wrfH9W_VczNesHQEpG_U).
 
 ## Troubleshooting
+
+### Random hangs after login with external monitor
+
+Very often, three-quarters of times, if I boot up the machine with an external monitor connected (I use a miniDP to HDMI cable), the computer hangs after I login in through graphical display manager. i.e. in my case, using GDM to login in into gnome desktop, after I enter the password, cursor disappears and system becomes totally unresponsive; the only way to "continue" is to force a reboot by pressing the power button. I don't know if it was only a problem of mine due to a strange hardware/software combination but, anyway and fortunately, it seems fixed *starting from May 2016*, likely thanks to a kernel bug fix. This mean `kernel-lts` users may still suffer of this issue.
 
 ### Pink & green artifacts in video or webcam output
 
@@ -184,12 +215,7 @@ As of version A07, the BIOS does not pass any boot parameters to the kernel. Use
 
 ### Random kernel hangs at boot
 
-See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems to only affect those with touchscreens. The fix consists in removing "keyboard" from the HOOKS in /etc/mkinitcpio.conf and instead using MODULES="atkbd.ko usbhid hid-generic" (if you need the keyboard hook). Obviously you will have to run:
-
-```
-# mkinitcpio -p linux
-
-```
+See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems to only affect those with touchscreens. The fix consists in removing "keyboard" from the HOOKS in /etc/mkinitcpio.conf and instead using MODULES="atkbd.ko usbhid hid-generic" (if you need the keyboard hook). You will have to run `mkinitcpio -p linux` as root afterwards.
 
 ### Sound doesn't work after upgrading to kernel 4.4+
 

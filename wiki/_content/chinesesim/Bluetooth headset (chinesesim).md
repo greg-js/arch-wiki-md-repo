@@ -1,10 +1,10 @@
 **翻译状态：** 本文是英文页面 [Bluetooth_headset](/index.php/Bluetooth_headset "Bluetooth headset") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&diff=0&oldid=396614)可以查看翻译后英文页面的改动。
 
-Arch Linux现在默认支持A2DP profile (Audio Sink)，可以实现远程音频播放功能。
+Arch Linux 现在默认支持 A2DP profile (Audio Sink)，可以实现远程音频播放功能。
 
 **小贴士:**
 
-*   Bluez5 只能通过 [PulseAudio](/index.php/PulseAudio "PulseAudio") 来支持耳机的录音/播放，不支持[ALSA](/index.php/ALSA "ALSA")。如果你不想使用PulseAudio，你需要从AUR安装老版本的Bluez来支持。
+*   Bluez5 只能通过 [PulseAudio](/index.php/PulseAudio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PulseAudio (简体中文)") 来支持耳机的录音/播放，不支持 [ALSA](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Advanced Linux Sound Architecture (简体中文)")。如果你不想使用 PulseAudio，你需要从 AUR 安装老版本的 Bluez 来支持。
 
 ## Contents
 

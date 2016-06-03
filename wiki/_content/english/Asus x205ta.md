@@ -134,7 +134,10 @@ $ cp /LOCATION/OF/bootia32.efi <MNT-TARGET-N>/EFI/boot/bootia32.efi
 
 #### Adding wireless drivers to the install image
 
-Note, if you intend to use a wired connection during install you can skip these steps.
+**Note:**
+
+*   if you intend to use a wired connection during install you can skip these steps.
+*   As of May, 2016\. Arch Linux should be able to support brcm43220/43221 natively. Skip this step and see the "Enable wifi" section in this article.
 
 Get a copy of the wireless drivers and untar:
 
@@ -297,6 +300,8 @@ WantedBy=multi-user.target
 ```
 
 Then [enable](/index.php/Enable "Enable") the `btattach.service` systemd service.
+
+**Tip:** * If btattach doesn't works, remove "-P bcm" parameter and try again
 
 ## See also
 

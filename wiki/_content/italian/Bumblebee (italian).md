@@ -52,7 +52,7 @@ Prima di procedere all'installazione di Bunblebee controllare il vostro BIOS e a
 Sono disponibili diversi pacchetti per un setup completo :
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - Il pacchetto principale che fornisce il demone e programmi client.
-*   (opzionale) [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (o [bbswitch-dkms](https://aur.archlinux.org/packages/bbswitch-dkms/)) -Consigliato per il risparmio energetico disabilitando la scheda Nvidia
+*   (opzionale) [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (o [bbswitch-dkms](https://www.archlinux.org/packages/?name=bbswitch-dkms)) -Consigliato per il risparmio energetico disabilitando la scheda Nvidia
 *   (opzionale ) Se si desidera più di un semplice risparmio energetico, per un rendering di programmi sulla scheda Nvidia dedicata, è inoltre necessario:
     *   Un driver per la scheda Nvidia. Il driver open-source [Nouveau](/index.php/Nouveau_(Italiano) "Nouveau (Italiano)") o il driver proprietario [Nvidia](/index.php/NVIDIA_(Italiano) "NVIDIA (Italiano)"). Vedere la sottosezione.
     *   Un bridge per il rendering e la visualizzazione. Attualmente sono disponibili due pacchetti che sono in grado di farlo, [primus](https://www.archlinux.org/packages/?name=primus) e [virtualgl](https://www.archlinux.org/packages/?name=virtualgl). Solo uno di loro è necessario, ma possono essere installati ugualmente entrambi.

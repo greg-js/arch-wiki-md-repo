@@ -74,7 +74,7 @@ cp /usr/share/applications/lxterminal.desktop ~/Desktop
 
 ```
 
-Per coloro che hanno utilizzato il programma [Xdg user directories](/index.php/Xdg_user_directories "Xdg user directories") per creare la loro `$HOME`, non sarà richiesta alcuna ulteriore configurazione.
+Per coloro che hanno utilizzato il programma [XDG user directories](/index.php/XDG_user_directories "XDG user directories") per creare la loro `$HOME`, non sarà richiesta alcuna ulteriore configurazione.
 
 ## Modalità Daemon
 

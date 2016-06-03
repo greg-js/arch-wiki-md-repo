@@ -1012,5 +1012,8 @@ You can use the following website to get your device's coordinates along with a 
 82.501771, -62.348099 "Archeon" # Toronto, Ontario, Canada 
 42.6677927, 23.3233898 "Ianis G. Vasilev aka ivasilev / v--" # Sofia, Bulgaria
 32.8037,130.7232 "hiri" # Kumamoto, Japan
+-23.588182,-46.610116 "gaballench" # São Paulo, Brazil
+52.7577027,7.2108198 "SunRed" # Haren (Ems), Lower Saxony, Germany
+42.351812, -71.141449 "jethrosun7" # Boston, MA, USA
 
 ```

@@ -23,7 +23,8 @@ See [NVIDIA](/index.php/NVIDIA "NVIDIA") for the main article.
 *   [18 Flash video players crashes](#Flash_video_players_crashes)
 *   [19 Override EDID](#Override_EDID)
 *   [20 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
-*   [21 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
+*   [21 Avoid screen tearing](#Avoid_screen_tearing)
+    *   [21.1 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
 
 ## Wayland (gdm) crashes after nvidia-libgl installation
 
@@ -374,6 +375,20 @@ Section "Screen"
 EndSection
 ```
 
+Alternatively, it may be that your monitor's EDID is actually correct and the driver does not trust it. To force it to use the EDID anyway, set the `IgnoreEDIDChecksum` option for the X11 Device.
+
+**Warning:** If the EDID is actually incorrect, ignoring the checksum could cause hardware damage. Only attempt this if you know for a fact that the monitor's mode is correctly detected in some case (e.g. different OS, different driver, different output).
+
+```
+Section "Device"
+    Identifier "Device0"
+    Driver "nvidia"
+    Option "IgnoreEDIDChecksum" "*displayName*"
+EndSection
+```
+
+where `*displayName*` is the name of the display device e.g. `DFP-4`. You can find the display device name in your Xorg log; it is *not* the same as the output name (e.g. `DVI-I-0`) that you would see in [Xrandr](/index.php/Xrandr "Xrandr") output.
+
 ## Overclocking with nvidia-settings GUI not working
 
 Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking(as explained in [#Enabling overclocking](#Enabling_overclocking) ). `man nvidia-settings` for more information.
@@ -399,7 +414,35 @@ Example to set multiple variables at once(Overclock on performance level [3] by 
 
 ```
 
-## Avoid screen tearing in KDE (KWin)
+## Avoid screen tearing
+
+Tearing can be avoided by forcing a full composition pipeline, regardless of the compositor you are using. To test whether this option will work, type
+
+```
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+
+```
+
+This however has been reported to reduce the performance of some OpenGL applications and may produce issues in WebGL.
+
+In order to make the change permanent, it must be added to the `"Screen"` section of your Xorg configuration file. When making this change, `TripleBuffering` should be enabled and `AllowIndirectGLXProtocol` should be disabled in the driver configuration as well. See example configuration below:
+
+ `/etc/X11/xorg.conf.d/20-nvidia.conf` 
+```
+Section "Screen"
+    Identifier     "Screen0"
+    Option         "metamodes" "nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+    Option         "AllowIndirectGLXProtocol" "off"
+    Option         "TripleBuffer" "on"
+EndSection
+
+```
+
+If you do not have an Xorg configuration file, you can create one for your present hardware using `nvidia-xconfig` (see [NVIDIA#Automatic configuration](/index.php/NVIDIA#Automatic_configuration "NVIDIA")) and move it from `/etc/X11/xorg.conf` to the preferred location `/etc/X11/xorg.conf.d/20-nvidia.conf`.
+
+**Note:** Many of the configuration options produced in `20-nvidia.conf` by using `nvidia-xconfig` are set automatically by the driver and are not needed. To only use this file for enabling composition pipeline, only the section `"Screen"` containing lines with values for `Identifier` and `Option` are necessary. Other sections may be removed from this file.
+
+### Avoid screen tearing in KDE (KWin)
 
  `/etc/profile.d/kwin.sh` 
 ```
@@ -415,4 +458,10 @@ export KWIN_TRIPLE_BUFFER=1
 
 ```
 
-Do not have both of the above enabled at the same time. Also if you enable triple buffering make sure to enable TripleBuffering for the driver itself. Source: [https://bugs.kde.org/show_bug.cgi?id=322060](https://bugs.kde.org/show_bug.cgi?id=322060)
+**Warning:** Do not have both of the above enabled at the same time.
+
+If you enable triple buffering make sure to enable `TripleBuffering` for the driver itself.
+
+In some cases neither of the above fixes work. A possible fix is to configure [ForceFullCompositionPipeline](#Avoid_screen_tearing).
+
+Source: [https://bugs.kde.org/show_bug.cgi?id=322060](https://bugs.kde.org/show_bug.cgi?id=322060)

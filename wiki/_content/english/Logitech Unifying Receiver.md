@@ -57,9 +57,11 @@ Pairing: turn your new device on (timing out in 20 seconds).
 Paired device 1: Wireless Mouse M525 [M525:DAFA335E]
 $ solaar-cli show
 -: Unifying Receiver [/dev/hidraw0:08D89AA6] with 1 devices
-1: Wireless Mouse M525 [M525:DAFA335E] 
+1: Wireless Mouse M525 [M525:DAFA335E]
 
 ```
+
+To disable autostart of Solaar, remove `/etc/xdg/autostart/solaar.desktop`.
 
 ### pairingtool
 

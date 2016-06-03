@@ -56,7 +56,7 @@ The following table lists basic shell commands every Linux user should be famili
 
 ## cat
 
-[cat](https://en.wikipedia.org/wiki/cat_(Unix) (*catenate*) is a standard Unix utility that concatenates and lists files.
+[cat](https://en.wikipedia.org/wiki/cat_(Unix) is a standard Unix utility that concatenates and lists files.
 
 *   Because *cat* is not a built-in shell, on many occasions you may find it more convenient to use a [redirection](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), for example in scripts, or if you care a lot about performance. In fact `< *file*` does the same as `cat *file*`.
 
@@ -201,7 +201,7 @@ See [List of applications#Terminal pagers](/index.php/List_of_applications#Termi
 
 ## ls
 
-[ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") (*list*) is a command to list files in Unix and Unix-like operating systems.
+[ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") lists directory contents.
 
 See `info ls` or [the online manual](http://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation) for more information.
 
@@ -245,7 +245,7 @@ By default, file and directory names that contain spaces are displayed surrounde
 
 ## mkdir
 
-[mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") (*make directory*) is a command to create directories.
+[mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") makes directories.
 
 To create a directory and its whole hierarchy, the `-p` switch is used, otherwise an error is printed. As users are supposed to know what they want, `-p` switch may be used as a default:
 
@@ -262,7 +262,7 @@ Changing mode of a just created directory using *chmod* is not necessary as the 
 
 ## mv
 
-[mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") (*move*) is a command to move and rename files and directories.
+[mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") moves and renames files and directories.
 
 To limit potential damage caused by the command, use an alias:
 
@@ -297,7 +297,7 @@ Use of *strace* shows that `pv` is stopped with `SIGTTOU`.
 
 ## rm
 
-[rm](https://en.wikipedia.org/wiki/rm_(Unix) (*remove*) is a command to delete files and directories.
+[rm](https://en.wikipedia.org/wiki/rm_(Unix) removes files or directories.
 
 To limit potential damage caused by the command, use an alias:
 
@@ -314,7 +314,7 @@ To remove directories known to be empty, use *rmdir* as it fails in case of file
 
 ## sed
 
-[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") (*stream editor*) is a Unix utility that parses and transforms text.
+[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") is stream editor for filtering and transforming text.
 
 Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-liners examples.
 
@@ -322,7 +322,7 @@ Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-lin
 
 ## seq
 
-**seq** (*sequence*) is a utility for generating a sequence of numbers. Shell built-in alternatives are available, so it is good practice to use them as explained on [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
+**seq** prints a sequence of numbers. Shell built-in alternatives are available, so it is good practice to use them as explained on [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
 
 ## tar
 
@@ -351,7 +351,7 @@ The construction of some of these `tar` arguments may be considered legacy, but 
 
 ## which
 
-The [which](https://en.wikipedia.org/wiki/Which_(Unix) command is useful to determine the path to an executable, for example:
+[which](https://en.wikipedia.org/wiki/Which_(Unix) shows the full path of (shell) commands. In the following example the full path of `ssh` is used as an argument for `journalctl`:
 
 ```
 # journalctl $(which sshd)

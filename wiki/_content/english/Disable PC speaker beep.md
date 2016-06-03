@@ -129,9 +129,17 @@ $ dconf write /org/cinnamon/desktop/wm/preferences/audible-bell false
 
 ### GTK+
 
-Append this line to `~/.gtkrc-2.0` and to the [Settings] section of `$XDG_CONFIG_HOME/gtk-3.0/settings.ini`:
+Append this line to `~/.gtkrc-2.0`:
 
 ```
+gtk-error-bell = 0
+
+```
+
+Add the same line to the [Settings] section of `$XDG_CONFIG_HOME/gtk-3.0/settings.ini`:
+
+```
+[Settings]
 gtk-error-bell = 0
 
 ```

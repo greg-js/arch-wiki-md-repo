@@ -1,4 +1,4 @@
-Arch Linux is an independently developed, i686/x86-64 general-purpose GNU/Linux distribution that strives to provide the latest stable versions of most software by following a rolling-release model. The default installation is a minimal base system, configured by the user to only add what is required for his purposes.
+Arch Linux is an independently developed, i686/x86-64 general-purpose GNU/Linux distribution that strives to provide the latest stable versions of most software by following a rolling-release model. The default installation is a minimal base system, configured by the user to only add what is purposely required.
 
 ## Contents
 
@@ -19,13 +19,13 @@ Arch Linux is an independently developed, i686/x86-64 general-purpose GNU/Linux 
 
 Arch Linux defines simplicity as *without unnecessary additions or modifications*. It ships software as released by the original developers ([upstream](https://en.wikipedia.org/wiki/Upstream_(software_development) "wikipedia:Upstream (software development)")) with minimal distribution-specific (downstream) changes: patches not accepted by upstream are avoided, and Arch's downstream patches consist almost entirely of backported bug fixes that are obsoleted by the project's next release.
 
-In a similar fashion, Arch ships the configuration files provided by upstream with changes limited to distribution-specific issues like adjusting the system file paths. It does not add automation features such as enabling a service simply because the package was installed. Packages are only split when compelling advantages exist, such as to save disk space in particularly bad cases of waste. GUI configuration utilities are not officially provided, encouraging to perform most system configuration from the shell and a text editor.
+In a similar fashion, Arch ships the configuration files provided by upstream with changes limited to distribution-specific issues like adjusting the system file paths. It does not add automation features such as enabling a service simply because the package was installed. Packages are only split when compelling advantages exist, such as to save disk space in particularly bad cases of waste. GUI configuration utilities are not officially provided, encouraging users to perform most system configuration from the shell and a text editor.
 
 ### Modernity
 
 Arch Linux strives to maintain the latest stable release versions of its software as long as systemic package breakage can be reasonably avoided. It is based on a [rolling-release](https://en.wikipedia.org/wiki/Rolling_release "wikipedia:Rolling release") system, which allows a one-time installation with continuous upgrades.
 
-Arch incorporates many of the newer features available to GNU/Linux users, including the [systemd](/index.php/Systemd "Systemd") init system, modern file systems (Ext2/3/4, Reiser, XFS, JFS, BTRFS), LVM2, software RAID, udev support and initcpio (with [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")), as well as the latest available kernels.
+Arch incorporates many of the newer features available to GNU/Linux users, including the [systemd](/index.php/Systemd "Systemd") init system, modern [file systems](/index.php/File_systems "File systems"), LVM2, software RAID, udev support and initcpio (with [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")), as well as the latest available kernels.
 
 ### Pragmatism
 

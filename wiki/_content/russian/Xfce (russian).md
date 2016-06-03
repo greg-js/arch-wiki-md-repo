@@ -678,7 +678,7 @@ ColorPalette16=#eeeeeeeeecec
 
 ### Пользовательские каталоги XDG
 
-freedesktop.org определяет стандартные каталоги для пользователей, вроде desktop или music. Дополнительную информацию см. в [Xdg user directories](/index.php/Xdg_user_directories "Xdg user directories").
+freedesktop.org определяет стандартные каталоги для пользователей, вроде desktop или music. Дополнительную информацию см. в [XDG user directories](/index.php/XDG_user_directories "XDG user directories").
 
 ### SSH Agents
 

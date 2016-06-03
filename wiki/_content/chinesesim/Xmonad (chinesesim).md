@@ -474,7 +474,7 @@ For more details about the problem, refer to the [xmonad FAQ.](http://haskell.or
 
 ### Empty space at the bottom of gvim or terminals
 
-See [Vim#Empty space at the bottom of gvim windows](/index.php/Vim#Empty_space_at_the_bottom_of_gvim_windows "Vim") for a solution which makes the area match the background color.
+See [Vim#Empty space at the bottom of gVim windows](/index.php/Vim#Empty_space_at_the_bottom_of_gVim_windows "Vim") for a solution which makes the area match the background color.
 
 For [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode"), you can use [rxvt-unicode-patched](https://aur.archlinux.org/packages/rxvt-unicode-patched/).
 

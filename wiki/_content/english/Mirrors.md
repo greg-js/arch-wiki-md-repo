@@ -26,8 +26,9 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
     *   [5.12 Russia](#Russia)
     *   [5.13 South Africa](#South_Africa)
     *   [5.14 Sweden](#Sweden)
-    *   [5.15 United States](#United_States)
-    *   [5.16 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
+    *   [5.15 Thailand](#Thailand)
+    *   [5.16 United States](#United_States)
+    *   [5.17 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
 
 ## Official mirrors
 
@@ -148,7 +149,7 @@ Can be useful to automate update of the mirror list only for a specific countrie
 
 ```
 Cnt="China";
-awk -v GG=$Cnt '{if(match($0,GG) != "0")AA="1";if(AA == "1"){if( length($2) != "0"  )print substr($0,2) ;else AA="0"} }' \
+awk -v GG="$Cnt" '{if(match($0,GG) != "0")AA="1";if(AA == "1"){if( length($2) != "0"  )print substr($0,2) ;else AA="0"} }' \
  /etc/pacman.d/mirrorlist.pacnew
 ```
 
@@ -266,6 +267,10 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 
 *   [http://foss.dhyrule.se/linux/archlinux/](http://foss.dhyrule.se/linux/archlinux/)
 *   [ftp://foss.dhyrule.se/linux/archlinux/](ftp://foss.dhyrule.se/linux/archlinux/)
+
+### Thailand
+
+*   [http://mirror1.ku.ac.th/archlinux/](http://mirror1.ku.ac.th/archlinux/)
 
 ### United States
 

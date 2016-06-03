@@ -13,6 +13,7 @@
     *   [3.3 Choosing a user](#Choosing_a_user)
     *   [3.4 Configuring the daemon](#Configuring_the_daemon)
         *   [3.4.1 Watch dir](#Watch_dir)
+        *   [3.4.2 CLI Examples](#CLI_Examples)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Cannot access the daemon over the network](#Cannot_access_the_daemon_over_the_network)
     *   [4.2 UDP Failed to set receive/sent buffer](#UDP_Failed_to_set_receive.2Fsent_buffer)
@@ -190,6 +191,15 @@ An alternative is to add your user to the `transmission` group (`#usermod -a -G 
 If you want to *Automatically add .torrent files from a folder*, but you find that the `watch-dir` and `watch-dir-enabled` options set in the config file do not work, you can start the transmission daemon with the flag `-c /path/to/watch/dir`.
 
 If you're using systemd, edit the unit file located at `/etc/systemd/system/transmission.service`.
+
+#### CLI Examples
+
+If you want to remove all finished torrents you can use the following command with your own username and password
+
+```
+# transmission-remote -n 'username:password' -l | grep 100% | awk '{print $1}'| paste -d, -s | xargs -i transmission-remote -t {} -r
+
+```
 
 ## Troubleshooting
 

@@ -1,4 +1,4 @@
-[Gnome Keyring](https://wiki.gnome.org/action/show/Projects/GnomeKeyring) is "a collection of components in GNOME that store secrets, passwords, keys, certificates and make them available to applications."
+[GNOME Keyring](https://wiki.gnome.org/Projects/GnomeKeyring) is "a collection of components in GNOME that store secrets, passwords, keys, certificates and make them available to applications."
 
 **Note:** There are some [#Known issues](#Known_issues).
 
@@ -119,6 +119,7 @@ When using a display manager, the keyring works out of the box for most cases. T
 *   [GDM](/index.php/GDM "GDM")
 *   [SLiM](/index.php/SLiM "SLiM")
 *   [LightDM](/index.php/LightDM "LightDM")
+*   [LXDM](/index.php/LXDM "LXDM")
 
 **Note:** You may need to install [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring)
 

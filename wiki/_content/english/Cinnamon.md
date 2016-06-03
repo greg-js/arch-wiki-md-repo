@@ -19,9 +19,10 @@
     *   [4.5 Workspaces](#Workspaces)
     *   [4.6 Hide desktop icons](#Hide_desktop_icons)
     *   [4.7 Themes and icons](#Themes_and_icons)
-    *   [4.8 Resize windows by mouse](#Resize_windows_by_mouse)
-    *   [4.9 Portable keybindings](#Portable_keybindings)
-    *   [4.10 Screenshot](#Screenshot)
+    *   [4.8 Sound events](#Sound_events)
+    *   [4.9 Resize windows by mouse](#Resize_windows_by_mouse)
+    *   [4.10 Portable keybindings](#Portable_keybindings)
+    *   [4.11 Screenshot](#Screenshot)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 cinnamon-settings: No module named Image](#cinnamon-settings:_No_module_named_Image)
     *   [5.2 Video tearing](#Video_tearing)
@@ -105,6 +106,7 @@ This is the default behaviour. To change the setting open the `cinnamon-settings
 
 *   To add/remove languages: see [Locale](/index.php/Locale "Locale").
 *   To change between enabled languages: install the [mintlocale](https://aur.archlinux.org/packages/mintlocale/) package.
+*   To change the keyboard layout: navigate to **System Settings > Hardware > Keyboard > Layouts**.
 
 ## Tips and tricks
 
@@ -150,9 +152,13 @@ $ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### Themes and icons
 
-Linux Mint styled themes and icons can be installed from AUR using packages [mint-themes](https://aur.archlinux.org/packages/mint-themes/) and [mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/). The themes can be edited in `Settings → Themes → Other settings`.
+Linux Mint styled themes and icons can be installed with the [mint-x-theme](https://aur.archlinux.org/packages/mint-x-theme/) and [mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/) packages. The themes can be edited in `Settings → Themes → Other settings`.
 
 Official Linux Mint Cinnamon themes can be installed using the [mint-cinnamon-themes](https://aur.archlinux.org/packages/mint-cinnamon-themes/) package.
+
+### Sound events
+
+Cinnamon does not come with sounds used for events like the startup of the desktop that are also used in Linux Mint by default. These sound effects can be installed with the [cinnamon-sound-effects](https://aur.archlinux.org/packages/cinnamon-sound-effects/) and [mint-sounds](https://aur.archlinux.org/packages/mint-sounds/) packages. The sound events can be edited in `Settings → Sound → Sound Effects`.
 
 ### Resize windows by mouse
 

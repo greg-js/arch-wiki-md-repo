@@ -232,7 +232,9 @@ There are currently two Python scripts available to enable macro keys under Linu
 
 **Note:** This is tested on [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") using mouse **Razer Orochi 2013**. Laptop probably has faulty charging port and therefore it sometimes directly affects connected mouse USB port and causes similar issues.
 
-If your razer mouse stops working after some time, however, led flashes or lights up, but reboot and re-plugging does not help, try the following commands:
+If your razer mouse stops working after some time, however, led flashes or lights up, but reboot and re-plugging does not help, try the following commands.
+
+Unload `ehci_pci` and `ehci_hcd` modules:
 
 ```
 # rmmod ehci_pci
@@ -240,7 +242,7 @@ If your razer mouse stops working after some time, however, led flashes or light
 
 ```
 
-Now disconnect the mouse from your computer (wait at least 5 seconds) and run the following:
+Disconnect the mouse, wait a few seconds and run the following commands to load modules back:
 
 ```
 # modprobe ehci_hcd
@@ -248,4 +250,4 @@ Now disconnect the mouse from your computer (wait at least 5 seconds) and run th
 
 ```
 
-Connect the mouse now. It should be working.
+Connect the mouse and it should be working.

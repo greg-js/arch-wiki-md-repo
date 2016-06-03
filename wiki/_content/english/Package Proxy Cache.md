@@ -11,6 +11,7 @@ If you want to install the same Arch packages over and over - like for testing A
 *   [3 Start Squid](#Start_Squid)
 *   [4 Follow Squid access log](#Follow_Squid_access_log)
 *   [5 Manual Arch Install](#Manual_Arch_Install)
+*   [6 Intercepting local requests](#Intercepting_local_requests)
 
 ## Install Squid
 
@@ -104,3 +105,20 @@ Before running /arch/setup, add variables for your proxy. To do so, run on the c
 Now just use /arch/setup to normally install the system, and it should use your proxy. Watch the squid logs to verify this.
 
 **Note:** If you want to use the proxy settings in the installed system, you need to add the http_proxy and/or ftp_proxy variables in an appropriate place on the installed system. (like /etc/profile.d/proxy.sh)
+
+## Intercepting local requests
+
+If you want all HTTP requests on local machine *automagically* go through squid, we first need to add an intercepting port for squid:
+
+ `/etc/squid/squid.conf `  `http_port 3127 intercept` 
+
+and iptables rules to redirect all (except the ones from squid) port 80 requests to squid:
+
+```
+# iptables -t nat -A OUTPUT -p tcp --dport 80 -m owner --uid-owner proxy -j ACCEPT
+# iptables -t nat -A OUTPUT -p tcp --dport 80 -j REDIRECT --to-ports 3127
+```
+
+**Tip:** [http://wiki.squid-cache.org/ConfigExamples/Intercept/LinuxLocalhost](http://wiki.squid-cache.org/ConfigExamples/Intercept/LinuxLocalhost)
+
+**Note:** if you get random slow download speeds in vagrant/packer/virtualbox, try using `virtio` network device type.

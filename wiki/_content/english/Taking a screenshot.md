@@ -1,4 +1,4 @@
-This article explain different methods to take [screenshots](https://en.wikipedia.org/wiki/Screenshot "wikipedia:Screenshot") on your system.
+This article explains different methods to take [screenshots](https://en.wikipedia.org/wiki/Screenshot "wikipedia:Screenshot") on your system.
 
 ## Contents
 
@@ -29,7 +29,7 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 ## Dedicated software
 
-*   **Deepin Screenshot** — Provide a quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/Qt5 based.
+*   **Deepin Screenshot** — A quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/Qt5 based.
 
 	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
 
@@ -37,7 +37,7 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 	[https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)
 
-*   **gnome-screenshot** — Take pictures of your screen. Even if its used Gnome in their name, its dependencies only dconf, gtk3, and libcanberra.
+*   **gnome-screenshot** — Despite its name its dependencies are only dconf, gtk3, and libcanberra.
 
 	[http://gnome.org](http://gnome.org) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)
 
@@ -65,7 +65,7 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 	[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)
 
-*   **screengrab** — Cross-platform application designed to quickly get screenshots (Qt).
+*   **screengrab** — Cross-platform application designed to quickly take screenshots (Qt).
 
 	[http://screengrab.doomer.org/](http://screengrab.doomer.org/) || [screengrab](https://aur.archlinux.org/packages/screengrab/)
 

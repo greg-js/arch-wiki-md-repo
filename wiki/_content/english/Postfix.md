@@ -1,6 +1,6 @@
 From [Postfix's site](http://www.postfix.org/):
 
-	*Postfix attempts to be fast, easy to administer, and secure, while at the same time being sendmail compatible enough to not upset existing users. Thus, the outside has a sendmail-ish flavor, but the inside is completely different.*
+	Postfix attempts to be fast, easy to administer, and secure, while at the same time being sendmail compatible enough to not upset existing users. Thus, the outside has a sendmail-ish flavor, but the inside is completely different.
 
 The goal of this article is to setup Postfix and explain what the basic configuration files do. There are instructions for setting up local system user-only delivery and a link to a guide for virtual user delivery.
 
@@ -28,6 +28,7 @@ The goal of this article is to setup Postfix and explain what the basic configur
     *   [5.3 SpamAssassin](#SpamAssassin)
         *   [5.3.1 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
         *   [5.3.2 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
+        *   [5.3.3 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
     *   [5.4 Using Razor](#Using_Razor)
     *   [5.5 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
     *   [5.6 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
@@ -457,6 +458,23 @@ Compile the sieve rules `spamassassin.svbin`:
 ```
 
 Finally, [restart](/index.php/Restart "Restart") `dovecot.service`.
+
+#### Call ClamAV from SpamAssassin
+
+Install and setup clamd as described in [ClamAV](/index.php/ClamAV "ClamAV").
+
+Follow one of the above instructions to call SpamAssassin from within your mail system.
+
+[Install](/index.php/Install "Install") the [perl-cpanplus-dist-arch](https://www.archlinux.org/packages/?name=perl-cpanplus-dist-arch) package. Then install the ClamAV perl library as follows:
+
+```
+ # /usr/bin/vendor_perl/cpanp -i File::Scan::ClamAV
+
+```
+
+Add the 2 files from [http://wiki.apache.org/spamassassin/ClamAVPlugin](http://wiki.apache.org/spamassassin/ClamAVPlugin) into `/etc/mail/spamassassin/`. Edit `/etc/mail/spamassassin/clamav.pm` and update `$CLAM_SOCK` to point to your Clamd socket location (default is `/var/lib/clamav/clamd.sock`).
+
+Finally, [restart](/index.php/Restart "Restart") `spamassassin.service`.
 
 ### Using Razor
 

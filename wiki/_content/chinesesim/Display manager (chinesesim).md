@@ -25,7 +25,7 @@
 ### 控制台
 
 *   [CDM](/index.php/CDM "CDM"): 控制台显示管理器 (available in the [AUR](/index.php/AUR "AUR"): [cdm-git](https://aur.archlinux.org/packages/cdm-git/))
-*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — Extension for *xinit* written in pure Bash.
+*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — 扩展自xinit，由纯粹的Bush脚本编写的
 
 	[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)
 
@@ -35,7 +35,7 @@
 
 ### 图形界面
 
-*   **[Entrance](/index.php/Enlightenment "Enlightenment")** — An EFL based display manager, highly experimental.
+*   **[Entrance](/index.php/Enlightenment "Enlightenment")** — 一个基于EFL的窗口管理器， 高度地实验性
 
 	[http://enlightenment.org/](http://enlightenment.org/) || [entrance-git](https://aur.archlinux.org/packages/entrance-git/)
 

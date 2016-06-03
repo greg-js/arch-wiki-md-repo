@@ -155,7 +155,7 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 *   **[OpenOffice Calc](/index.php/OpenOffice "OpenOffice")** — Full-featured spreadsheet application included in the OpenOffice suite.
 
-	[http://openoffice.org/product/calc](http://openoffice.org/product/calc) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
+	[http://openoffice.org/product/calc.html](http://openoffice.org/product/calc.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
 *   **Pyspread** — Pyspread is a non-traditional spreadsheet application that is based on and written in the programming language Python.
 
@@ -429,7 +429,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://www.archlinux.org/packages/?name=medit)
 
-*   **[Mousepad](https://en.wikipedia.org/wiki/Xfce#Leafpad "wikipedia:Xfce")** — Fast text editor for the Xfce Desktop Environment.
+*   **[Mousepad](https://en.wikipedia.org/wiki/Xfce#Mousepad "wikipedia:Xfce")** — Fast text editor for the Xfce Desktop Environment.
 
 	[http://www.xfce.org/](http://www.xfce.org/) || [mousepad](https://www.archlinux.org/packages/?name=mousepad)
 
@@ -619,7 +619,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs.
 
-	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://aur.archlinux.org/packages/xpdf/)
+	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf)
 
 *   **[zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer) "wikipedia:Zathura (document viewer)")** — Highly customizable and functional PDF/DjVu/PostScript/ComicBook viewer (plugin based).
 

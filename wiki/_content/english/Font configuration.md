@@ -130,7 +130,7 @@ $ ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/
 
 ### Anti-aliasing
 
-[Font rasterization](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") converts vector font data to bitmap data so that it can be displayed. The result can appear jagged due to [aliasing](https://en.wikipedia.org/wiki/Aliasing "wikipedia:Aliasing"). [anti-aliasing](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing") is **enabled** by default and increases the apparent resolution of font edges. To disable it:
+[Font rasterization](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") converts vector font data to bitmap data so that it can be displayed. The result can appear jagged due to [aliasing](https://en.wikipedia.org/wiki/Aliasing "wikipedia:Aliasing"). Technique known as [anti-aliasing](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing") can be used to increase the apparent resolution of font edges. Anti-aliasing is **enabled** by default. To disable it:
 
 ```
   <match target="font">

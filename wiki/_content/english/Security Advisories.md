@@ -4,26 +4,28 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 *   [1 Scheduled Advisories](#Scheduled_Advisories)
 *   [2 Recent Advisories](#Recent_Advisories)
-    *   [2.1 April 2016](#April_2016)
-    *   [2.2 March 2016](#March_2016)
-    *   [2.3 February 2016](#February_2016)
-    *   [2.4 January 2016](#January_2016)
-    *   [2.5 December 2015](#December_2015)
-    *   [2.6 November 2015](#November_2015)
-    *   [2.7 October 2015](#October_2015)
-    *   [2.8 September 2015](#September_2015)
-    *   [2.9 August 2015](#August_2015)
-    *   [2.10 July 2015](#July_2015)
-    *   [2.11 June 2015](#June_2015)
-    *   [2.12 May 2015](#May_2015)
-    *   [2.13 Apr 2015](#Apr_2015)
-    *   [2.14 Mar 2015](#Mar_2015)
-    *   [2.15 Feb 2015](#Feb_2015)
-    *   [2.16 Jan 2015](#Jan_2015)
-    *   [2.17 Dec 2014](#Dec_2014)
-    *   [2.18 Nov 2014](#Nov_2014)
-    *   [2.19 Oct 2014](#Oct_2014)
-    *   [2.20 Sep 2014](#Sep_2014)
+    *   [2.1 June 2016](#June_2016)
+    *   [2.2 May 2016](#May_2016)
+    *   [2.3 April 2016](#April_2016)
+    *   [2.4 March 2016](#March_2016)
+    *   [2.5 February 2016](#February_2016)
+    *   [2.6 January 2016](#January_2016)
+    *   [2.7 December 2015](#December_2015)
+    *   [2.8 November 2015](#November_2015)
+    *   [2.9 October 2015](#October_2015)
+    *   [2.10 September 2015](#September_2015)
+    *   [2.11 August 2015](#August_2015)
+    *   [2.12 July 2015](#July_2015)
+    *   [2.13 June 2015](#June_2015)
+    *   [2.14 May 2015](#May_2015)
+    *   [2.15 Apr 2015](#Apr_2015)
+    *   [2.16 Mar 2015](#Mar_2015)
+    *   [2.17 Feb 2015](#Feb_2015)
+    *   [2.18 Jan 2015](#Jan_2015)
+    *   [2.19 Dec 2014](#Dec_2014)
+    *   [2.20 Nov 2014](#Nov_2014)
+    *   [2.21 Oct 2014](#Oct_2014)
+    *   [2.22 Sep 2014](#Sep_2014)
 *   [3 Publishing a new advisory](#Publishing_a_new_advisory)
     *   [3.1 Templates](#Templates)
     *   [3.2 Vim-Snippet](#Vim-Snippet)
@@ -33,6 +35,42 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
+
+### June 2016
+
+*   [1 June 2016] [ASA-201606-2](https://lists.archlinux.org/pipermail/arch-security/2016-June/000637.html) [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) denial of service
+*   [1 June 2016] [ASA-201606-1](https://lists.archlinux.org/pipermail/arch-security/2016-June/000636.html) [nginx](https://www.archlinux.org/packages/?name=nginx) denial of service
+
+### May 2016
+
+*   [28 May 2016] [ASA-201605-28](https://lists.archlinux.org/pipermail/arch-security/2016-May/000635.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
+*   [26 May 2016] [ASA-201605-27](https://lists.archlinux.org/pipermail/arch-security/2016-May/000634.html) [libxml2](https://www.archlinux.org/packages/?name=libxml2) multiple issues
+*   [24 May 2016] [ASA-201605-26](https://lists.archlinux.org/pipermail/arch-security/2016-May/000633.html) [libndp](https://www.archlinux.org/packages/?name=libndp) man-in-the-middle
+*   [19 May 2016] [ASA-201605-25](https://lists.archlinux.org/pipermail/arch-security/2016-May/000632.html) [bugzilla](https://www.archlinux.org/packages/?name=bugzilla) cross-site scripting
+*   [18 May 2016] [ASA-201605-24](https://lists.archlinux.org/pipermail/arch-security/2016-May/000631.html) [p7zip](https://www.archlinux.org/packages/?name=p7zip) arbitrary code execution
+*   [18 May 2016] [ASA-201605-23](https://lists.archlinux.org/pipermail/arch-security/2016-May/000630.html) [lib32-expat](https://www.archlinux.org/packages/?name=lib32-expat) arbitrary code execution
+*   [18 May 2016] [ASA-201605-22](https://lists.archlinux.org/pipermail/arch-security/2016-May/000629.html) [expat](https://www.archlinux.org/packages/?name=expat) arbitrary code execution
+*   [15 May 2016] [ASA-201605-21](https://lists.archlinux.org/pipermail/arch-security/2016-May/000628.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) arbitrary code execution
+*   [13 May 2016] [ASA-201605-20](https://lists.archlinux.org/pipermail/arch-security/2016-May/000627.html) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) multiple issues
+*   [13 May 2016] [ASA-201605-19](https://lists.archlinux.org/pipermail/arch-security/2016-May/000626.html) [glibc](https://www.archlinux.org/packages/?name=glibc) multiple issues
+*   [12 May 2016] [ASA-201605-18](https://lists.archlinux.org/pipermail/arch-security/2016-May/000625.html) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) arbitrary code execution
+*   [12 May 2016] [ASA-201605-17](https://lists.archlinux.org/pipermail/arch-security/2016-May/000624.html) [libksba](https://www.archlinux.org/packages/?name=libksba) denial of service
+*   [12 May 2016] [ASA-201605-16](https://lists.archlinux.org/pipermail/arch-security/2016-May/000623.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) arbitrary code execution
+*   [12 May 2016] [ASA-201605-15](https://lists.archlinux.org/pipermail/arch-security/2016-May/000622.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
+*   [10 May 2016] [ASA-201605-14](https://lists.archlinux.org/pipermail/arch-security/2016-May/000621.html) [cacti](https://www.archlinux.org/packages/?name=cacti) sql injection
+*   [10 May 2016] [ASA-201605-13](https://lists.archlinux.org/pipermail/arch-security/2016-May/000620.html) [squid](https://www.archlinux.org/packages/?name=squid) multiple issues
+*   [06 May 2016] [ASA-201605-12](https://lists.archlinux.org/pipermail/arch-security/2016-May/000619.html) [mencoder](https://www.archlinux.org/packages/?name=mencoder) denial of service
+*   [06 May 2016] [ASA-201605-11](https://lists.archlinux.org/pipermail/arch-security/2016-May/000618.html) [mplayer](https://www.archlinux.org/packages/?name=mplayer) denial of service
+*   [06 May 2016] [ASA-201605-10](https://lists.archlinux.org/pipermail/arch-security/2016-May/000617.html) [mercurial](https://www.archlinux.org/packages/?name=mercurial) arbitrary code execution
+*   [06 May 2016] [ASA-201605-9](https://lists.archlinux.org/pipermail/arch-security/2016-May/000616.html) [latex2rtf](https://www.archlinux.org/packages/?name=latex2rtf) arbitrary code execution
+*   [06 May 2016] [ASA-201605-8](https://lists.archlinux.org/pipermail/arch-security/2016-May/000615.html) [gd](https://www.archlinux.org/packages/?name=gd) arbitrary code execution
+*   [05 May 2016] [ASA-201605-7](https://lists.archlinux.org/pipermail/arch-security/2016-May/000614.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
+*   [05 May 2016] [ASA-201605-6](https://lists.archlinux.org/pipermail/arch-security/2016-May/000613.html) [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) arbitrary code execution
+*   [05 May 2016] [ASA-201605-5](https://lists.archlinux.org/pipermail/arch-security/2016-May/000612.html) [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) denial of service
+*   [04 May 2016] [ASA-201605-4](https://lists.archlinux.org/pipermail/arch-security/2016-May/000611.html) [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl) multiple issues
+*   [04 May 2016] [ASA-201605-3](https://lists.archlinux.org/pipermail/arch-security/2016-May/000610.html) [openssl](https://www.archlinux.org/packages/?name=openssl) multiple issues
+*   [04 May 2016] [ASA-201605-2](https://lists.archlinux.org/pipermail/arch-security/2016-May/000609.html) [jasper](https://www.archlinux.org/packages/?name=jasper) multiple issues
+*   [04 May 2016] [ASA-201605-1](https://lists.archlinux.org/pipermail/arch-security/2016-May/000608.html) [imlib2](https://www.archlinux.org/packages/?name=imlib2) multiple issues
 
 ### April 2016
 

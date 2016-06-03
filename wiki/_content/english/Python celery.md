@@ -328,6 +328,19 @@ Celery requires `libssl`:
 
 ```
 
+Celery requires `libgcc_s` if you want to use multithreading:
+
+```
+# cp /usr/lib/libgcc_s* /srv/http/apps/celery/usr/lib
+
+```
+
+```
+# cp $(ldd /usr/lib/libssl.so.1.0.0 | grep /usr/lib | sed -sre 's/(.+)(\/usr\/lib\/\S+).+/\2/g') /srv/http/apps/celery/usr/lib
+# cp /usr/lib/libssl.so* /srv/http/apps/celery/usr/lib
+
+```
+
 Celery also requires `/bin/getent`, which in turn requires `libnss_files`:
 
 ```

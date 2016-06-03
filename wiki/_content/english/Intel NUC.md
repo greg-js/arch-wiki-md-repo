@@ -1,4 +1,4 @@
-[Next Unit of Computing (NUC)](https://en.wikipedia.org/wiki/Next_Unit_of_Computing "wikipedia:Next Unit of Computing") is a small-form-factor (SFF) PC designed by Intel and is based on soldered-on low-power i3, i5 and i7 CPUs. Its motherboard measures 4 × 4 inches (10.16 × 10.16 cm).
+[Next Unit of Computing (NUC)](https://en.wikipedia.org/wiki/Next_Unit_of_Computing "wikipedia:Next Unit of Computing") is a small-form-factor (SFF) PC designed by Intel and is based on soldered-on low-power Celeron, Pentium, i3, i5 and i7 CPUs. Its motherboard measures 4 × 4 inches (10.16 × 10.16 cm).
 
 The barebone kits consist of the board, in a plastic case with a fan, an external power supply and VESA mounting plate. Intel does offer for sale just the NUC motherboards, which have a built-in CPU, although (as of 2013) the price of a NUC motherboard is very close to the corresponding cased kit; third-party cases for the NUC boards are also available.
 
@@ -34,13 +34,13 @@ Intel NUCs support NVMe drives connected to the PCIe M.2 connector. See [Solid S
 
 ### Graphics
 
-Most NUCs use integrated [Intel graphics](/index.php/Intel_graphics "Intel graphics"). Make sure to install [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") to enjoy the hardware graphics acceleration on supported NUC models.
+Most NUCs use integrated [Intel graphics](/index.php/Intel_graphics "Intel graphics"). See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") to enjoy it on supported NUC models.
 
 #### Skylake
 
 **Warning:** The `i915` Intel DRM driver suffers from various bugs that can result in kernel errors, GPU crashes and even complete system freezes.
 
-There are no pending fixes for DRM bugs in latest kernel versions (last tested on `4.5`). See [Intel graphics#Skylake Support](/index.php/Intel_graphics#Skylake_Support "Intel graphics") for useful workarounds.
+Some promising fixes are pending in kernel `4.6`. In the meantime, see [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics") for useful workarounds.
 
 ### Wireless
 
@@ -74,7 +74,7 @@ The [PulseAudio#Switch on connect](/index.php/PulseAudio#Switch_on_connect "Puls
 
 ### TPM
 
-NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently blocked due to a few bugs in `tpm_crb`[[4]](https://bugzilla.kernel.org/show_bug.cgi?id=98181)[[5]](https://bugzilla.kernel.org/show_bug.cgi?id=111511).
+NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently blocked due to a few bugs in `tpm_crb`[[4]](https://bugzilla.kernel.org/show_bug.cgi?id=98181)[[5]](https://bugzilla.kernel.org/show_bug.cgi?id=111511). 4.6 Kernel still has no solution for Haswell TPMs but a relevant patch is work in progress[[6]](https://lkml.org/lkml/2016/4/19/46).
 
 ### Poweroff
 

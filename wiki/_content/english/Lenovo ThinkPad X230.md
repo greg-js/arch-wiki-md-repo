@@ -8,12 +8,14 @@
     *   [1.3 Touchpad](#Touchpad)
     *   [1.4 Backlight control keys](#Backlight_control_keys)
     *   [1.5 Suspend to ram](#Suspend_to_ram)
-        *   [1.5.1 Suspend to ram fails](#Suspend_to_ram_fails)
     *   [1.6 Microphone](#Microphone)
 *   [2 Power Saving](#Power_Saving)
     *   [2.1 TLP](#TLP)
-*   [3 Not Working](#Not_Working)
-*   [4 See also](#See_also)
+*   [3 x230T (tablet version)](#x230T_.28tablet_version.29)
+    *   [3.1 Multitouch screen for the x230t (tablet version)](#Multitouch_screen_for_the_x230t_.28tablet_version.29)
+    *   [3.2 Wacom tablet input](#Wacom_tablet_input)
+*   [4 Not Working](#Not_Working)
+*   [5 See also](#See_also)
 
 ## Configuration
 
@@ -22,29 +24,14 @@
  `/etc/mkinitcpio.conf` 
 ```
 MODULES="i915"
-BINARIES="badblocks"
-FILES="/etc/modprobe.d/modprobe.conf"
-HOOKS="base udev autodetect block filesystems keyboard fsck"
 
 ```
- `/etc/modprobe.d/modprobe.conf` 
-```
-options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1
-options iwlwifi 11n_disable=1
-
-```
-
-The `badblocks` binary helps fix logical bad blocks if detected by fsck during system startup. The first line in modprobe.conf file enables different Intel HD power saving options. To see what each of the parameters does, issue the command `modinfo i915`. The second line disables the wifi N mode as the Intel wireless driver suffers connection loss due to possible bugs. You can comment out this line if you want to transfer data at wireless N speeds.
 
 After saving the above files, make sure to regenerate your init ram image by the command `mkinitcpio -p linux`, and follow the steps in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
-**Note:** Using **enable_rc6=1** will enable basic power saving with first stage of [C-state 6](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface#Processor_states "wikipedia:Advanced Configuration and Power Interface") [(sleeping state)](http://software.intel.com/en-us/blogs/2013/06/03/intel-xeon-phi-coprocessor-power-management-part-2a-core-c-states-the-details). The stages vary by the depth of sleep, that can be attained by setting the value of **enable_rc6** between 1 to 7 in ascending order as can be seen in its documentation with **modinfo i915** command shown above.
-
-**Warning:** Keep in mind that c-state power saving always comes at performance sacrifice and setting a higher value can cause a jittery display or some other unexplained and unexpected misbehavior with i915 so you may want to experiment with different values to find out what suits your needs.
-
 ### Screen
 
-X230 has IPS screen with 125.37 DPI. Refer to [HiDPI](/index.php/HiDPI "HiDPI") page for more information.
+X230 has IPS or TN screen with 125.37 DPI. Refer to [HiDPI](/index.php/HiDPI "HiDPI") page for more information.
 
 ### Touchpad
 
@@ -124,31 +111,6 @@ RemainAfterExit=yes
 
 ```
 
-#### Suspend to ram fails
-
-As of kernel 3.10 and 3.11 suspend may fail because the kernel tries to switch off the onboard ethernet device twice (see [http://forums.fedoraforum.org/archive/index.php/t-293457.html](http://forums.fedoraforum.org/archive/index.php/t-293457.html)).
-
-A workaround is to unload the driver manually and reload it on wake.
-
- `/usr/lib/systemd/system-sleep/e1000e-probe.sh` 
-```
-#!/bin/bash
-# /usr/lib/systemd/system-sleep/e1000e-probe.sh
-# handles e1000e driver suspend problems:
-#	pci_pm_suspend(): e1000_suspend+0x0/0x20 [e1000e] returns -2
-#	dpm_run_callback(): pci_pm_suspend+0x0/0x150 returns -2
-#	PM: Device 0000:00:19.0 failed to suspend async: error -2
-#	PM: Some devices failed to suspend
-
-case "$1" in
-   "pre") rmmod e1000e
-   ;;
-   "post") modprobe e1000e
-   ;;
-esac
-
-```
-
 ### Microphone
 
 If the built-in microphone is not detected when using PulseAudio, the steps here may fix the issue: [PulseAudio/Troubleshooting#Microphone not detected by PulseAudio](/index.php/PulseAudio/Troubleshooting#Microphone_not_detected_by_PulseAudio "PulseAudio/Troubleshooting").
@@ -172,9 +134,23 @@ STOP_CHARGE_THRESH_BAT0=100
 
 ```
 
+## x230T (tablet version)
+
+### Multitouch screen for the x230t (tablet version)
+
+**Note:** Some x230t models have a multitouch screen in addition to the wacom tablet.
+
+Works out of the box with [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput).
+
+### Wacom tablet input
+
+Works out of the box with [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom). See [Wacom Tablet](/index.php/Wacom_Tablet "Wacom Tablet")
+
 ## Not Working
 
 *   Microphone on-off key does not work out of the box
+
+**Note:** It works out of the box with GNOME.
 
 ## See also
 

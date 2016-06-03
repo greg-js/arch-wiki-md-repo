@@ -4,7 +4,7 @@ This page is mainly about how to gather more information in connection with bug 
 
 *   [1 When an application fails](#When_an_application_fails)
     *   [1.1 Run it from the commandline](#Run_it_from_the_commandline)
-    *   [1.2 Check if the application segfaults](#Check_if_the_application_segfaults)
+    *   [1.2 Check availability of a core dump](#Check_availability_of_a_core_dump)
 *   [2 Segmentation faults](#Segmentation_faults)
     *   [2.1 Gdb](#Gdb)
     *   [2.2 Improved gdb output](#Improved_gdb_output)
@@ -28,18 +28,11 @@ for f in `pacman -Ql *packagename* | grep "/bin/" | cut -d" " -f2`; do file $f 2
 
 ```
 
-### Check if the application segfaults
+### Check availability of a core dump
 
-If you see the word "segfault" or the phrase "segmentation fault", see if there is a file named "core" as well.
+A core dump is a file containing a process's address space (memory) when the process terminates unexpectedly. If the application is compiled in a debug-friendly way, the "core" file can be used to find out where things went wrong.
 
-```
-ls core
-
-```
-
-If there is, the application has segfaulted. The "core" file can, if the application is compiled in a debug-friendly way, be used to find out where things went wrong. Sometimes the core file ends up in one of the directories the application has visited, instead of the current directory.
-
-If you cannot find the "core" file, it may be the case that core dumping is disabled by default. Use `$ ulimit -c unlimited` before executing the faulty program, you may also add this to `.bashrc` to aid in future debugging.
+The location of core dumps may vary depending on the operating system configuration. See [core dump](/index.php/Core_dump "Core dump") to find whether generation of core dump files is enabled on your system and where do they go.
 
 ## Segmentation faults
 

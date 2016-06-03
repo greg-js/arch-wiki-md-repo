@@ -18,9 +18,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [st](https://www.archlinux.org/packages/?name=st) or [st-git](https://aur.archlinux.org/packages/st-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-
-Install [st-git-zsh](https://aur.archlinux.org/packages/st-git-zsh/) package for a *zsh* preconfigured *st*.
+[Install](/index.php/Install "Install") the [st](https://www.archlinux.org/packages/?name=st) or [st-git](https://aur.archlinux.org/packages/st-git/) package.
 
 ## Configuration
 

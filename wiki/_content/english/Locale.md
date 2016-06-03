@@ -103,14 +103,14 @@ Locale variables can also be defined with the standard methods as explained in [
 For example, in order to test or debug a particular application during development, it could be launched with something like:
 
 ```
-$ LANG="en_AU.UTF-8" ./my_application.sh
+$ LANG=C ./my_application.sh
 
 ```
 
 Similarly, to set the locale for all processes run from the current shell (for example, during system installation):
 
 ```
-$ export LANG="en_AU.UTF-8"
+$ export LANG=C
 
 ```
 

@@ -279,11 +279,11 @@ Sadly, it doesn't contain the QOTD service we just created. Thus `avahi-browse -
 
 ##### Getting the Sources
 
-First, download the files `build-db.in` and `service-types` files from the `service-type-database` subdirectory in the [the avahi github mirror](https://github.com/Distrotech/avahi) to a build directory.
+First, download the files `build-db.in` and `service-types` files from the `service-type-database` subdirectory in the [the avahi github mirror](https://github.com/lathiat/avahi) to a build directory.
 
 ```
-wget [https://raw.githubusercontent.com/Distrotech/avahi/distrotech-avahi/service-type-database/build-db.in](https://raw.githubusercontent.com/Distrotech/avahi/distrotech-avahi/service-type-database/build-db.in)
-wget [https://raw.githubusercontent.com/Distrotech/avahi/distrotech-avahi/service-type-database/service-types](https://raw.githubusercontent.com/Distrotech/avahi/distrotech-avahi/service-type-database/service-types)
+wget [https://raw.githubusercontent.com/lathiat/avahi/master/service-type-database/build-db.in](https://raw.githubusercontent.com/lathiat/avahi/master/service-type-database/build-db.in)
+wget [https://raw.githubusercontent.com/lathiat/avahi/master/service-type-database/service-types](https://raw.githubusercontent.com/lathiat/avahi/master/service-type-database/service-types)
 
 ```
 

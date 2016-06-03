@@ -632,19 +632,22 @@ This is a very misleading response, it really means that you have assigned a def
 
 Remove it and everything works, except you no longer have a default route and so cannot access things such as the internet. `ExecUpPost` does not work as it gets executed for each network card.
 
-A possible solution is creating a new service:
+A possible solution is creating a new service. Replace "FIRST_INTERFACE" and "SECOND_INTERFACE" with your interface names, and replace "192.168.xxx.yyy" with your default gateway.
 
  `/etc/systemd/system/defaultrouter.service` 
 ```
 [Unit]
-Description
-Requires=netctl.service
-After=netctl.service
-Before=ntpd.service,dnsmasq.service
+Description="Configure default gateway"
+Requires=netctl@FIRST_INTERFACE.service netctl@SECOND_INTERFACE.service
+After=netctl@FIRST_INTERFACE.service netctl@SECOND_INTERFACE.service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/ip route add default via 192.168.xxx.yyy
+
+[Install]
+WantedBy=network-online.target
+
 ```
 
 ## See also

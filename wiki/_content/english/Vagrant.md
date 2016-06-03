@@ -4,11 +4,9 @@ Vagrant has a concept of 'providers', which map to the virtualisation engine and
 
 Vagrant uses a mostly declarative `Vagrantfile` to define virtualised machines. A single Vagrantfile can define multiple machines.
 
-See also [Wikipedia:Vagrant (software)](https://en.wikipedia.org/wiki/Vagrant_(software) "wikipedia:Vagrant (software)").
-
 ## Contents
 
-*   [1 Installing Vagrant](#Installing_Vagrant)
+*   [1 Installation](#Installation)
 *   [2 Plugins](#Plugins)
     *   [2.1 vagrant-libvirt](#vagrant-libvirt)
     *   [2.2 vagrant-lxc](#vagrant-lxc)
@@ -18,11 +16,12 @@ See also [Wikipedia:Vagrant (software)](https://en.wikipedia.org/wiki/Vagrant_(s
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 No ping between host and vagrant box (host-only networking)](#No_ping_between_host_and_vagrant_box_.28host-only_networking.29)
     *   [5.2 'vagrant up' hangs on NFS mounting (Mounting NFS shared folders...)](#.27vagrant_up.27_hangs_on_NFS_mounting_.28Mounting_NFS_shared_folders....29)
+    *   [5.3 Error starting network 'default': internal error: Failed to initialize a valid firewall backend](#Error_starting_network_.27default.27:_internal_error:_Failed_to_initialize_a_valid_firewall_backend)
 *   [6 See also](#See_also)
 
-## Installing Vagrant
+## Installation
 
-Install [vagrant](https://www.archlinux.org/packages/?name=vagrant) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Install package [vagrant](https://www.archlinux.org/packages/?name=vagrant).
 
 ## Plugins
 
@@ -31,49 +30,27 @@ Vagrant [has a middleware architecture](https://news.ycombinator.com/item?id=440
 Plugins can be installed with Vagrant's built-in plugin manager. You can specify multiple plugins to install:
 
 ```
-vagrant plugin install vagrant-vbguest vagrant-share
+$ vagrant plugin install vagrant-vbguest vagrant-share
 
 ```
 
 ### vagrant-libvirt
 
-This plugin adds [Libvirt](/index.php/Libvirt "Libvirt") support. Unfortunately, we have to use Vagrant's embedded version of Ruby to avoid RubyGem Native Extension version conflicts.
+This plugin adds a libvirt provider to Vagrant. The gcc and make packages must be installed before this plugin can be installed, and [libvirt](/index.php/Libvirt "Libvirt") and related packages must be installed and configured before using the libvirt provider.
 
-As of vagrant 1.8.1, this invocation will install vagrant-libvirt successfully:
+At the time of writing (using Vagrant version 1.8.1), a normal installation of this plugin fails on Arch Linux. The plugin can be successfully installed with this workaround:
 
 ```
- # in case it's already installled
- vagrant plugin uninstall vagrant-libvirt
-
- # vagrant's copy of curl prevents the proper installation of ruby-libvirt
- sudo mv /opt/vagrant/embedded/lib/libcurl.so{,.backup}
- sudo mv /opt/vagrant/embedded/lib/libcurl.so.4{,.backup}
- sudo mv /opt/vagrant/embedded/lib/libcurl.so.4.4.0{,.backup}
- sudo mv /opt/vagrant/embedded/lib/pkgconfig/libcurl.pc{,.backup}
-
- CONFIGURE_ARGS="with-libvirt-include=/usr/include/libvirt with-libvirt-lib=/usr/lib" vagrant plugin install vagrant-libvirt
-
- # [https://github.com/pradels/vagrant-libvirt/issues/541](https://github.com/pradels/vagrant-libvirt/issues/541)
- export PATH=/opt/vagrant/embedded/bin:$PATH
- export GEM_HOME=~/.vagrant.d/gems
- export GEM_PATH=$GEM_HOME:/opt/vagrant/embedded/gems
- gem uninstall ruby-libvirt
- gem install ruby-libvirt
-
- # put vagrant's copy of curl back
- sudo mv /opt/vagrant/embedded/lib/libcurl.so{.backup,}
- sudo mv /opt/vagrant/embedded/lib/libcurl.so.4{.backup,}
- sudo mv /opt/vagrant/embedded/lib/libcurl.so.4.4.0{.backup,}
- sudo mv /opt/vagrant/embedded/lib/pkgconfig/libcurl.pc{.backup,}
+$ CONFIGURE_ARGS='with-ldflags=-L/opt/vagrant/embedded/lib with-libvirt-include=/usr/include/libvirt with-libvirt-lib=/usr/lib' \
+  GEM_HOME=~/.vagrant.d/gems GEM_PATH=$GEM_HOME:/opt/vagrant/embedded/gems PATH=/opt/vagrant/embedded/bin:$PATH \
+  vagrant plugin install vagrant-libvirt
 
 ```
 
-[Source](https://gist.github.com/robled/070e1922816bbe983623#file-reinstall-vagrant-libvirt-sh)
-
-Then start the virtual machine with
+Once the plugin is installed the `libvirt` provider will be available:
 
 ```
- vagrant up --provider=libvirt
+$ vagrant up --provider=libvirt
 
 ```
 
@@ -82,7 +59,7 @@ Then start the virtual machine with
 First install [lxc](https://www.archlinux.org/packages/?name=lxc) from the official repositories, then:
 
 ```
-vagrant plugin install vagrant-lxc
+$ vagrant plugin install vagrant-lxc
 
 ```
 
@@ -160,6 +137,11 @@ Sometimes there are troubles with host-only networking not functioning. Host hav
 
 Installing [net-tools](https://www.archlinux.org/packages/?name=net-tools) package may solve this problem.
 
+### Error starting network 'default': internal error: Failed to initialize a valid firewall backend
+
+Most likely the firewall dependencies were not installed. [Install](/index.php/Install "Install") the [ebtables](https://www.archlinux.org/packages/?name=ebtables) and [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) packages and [restart](/index.php/Restart "Restart") the `libvirtd` systemd service.
+
 ## See also
 
 *   [official Vagrant documentation](http://docs.vagrantup.com/v2/getting-started/project_setup.html)
+*   [Wikipedia:Vagrant (software)](https://en.wikipedia.org/wiki/Vagrant_(software) "wikipedia:Vagrant (software)")

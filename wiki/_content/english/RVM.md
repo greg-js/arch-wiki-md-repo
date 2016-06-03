@@ -45,12 +45,7 @@ As an observation, **installing RVM with gem is not recommended anymore**. This 
 
 ### Pre-requisites
 
-Before starting, you will need the following to get the installation process going:
-
-```
-$ pacman -S git curl
-
-```
+Before starting, you will need to [install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git) and [curl](https://www.archlinux.org/packages/?name=curl) packages.
 
 ### Single-user installation
 

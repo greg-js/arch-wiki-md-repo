@@ -23,7 +23,7 @@ mysql> GRANT ALL PRIVILEGES ON ttrss.* TO "ttrss"@"localhost" IDENTIFIED BY 'som
 
 ```
 
-You also need to add some paths to /etc/php/php.ini:
+You also need to add some paths to /etc/php/php.ini (starting with PHP 7.0 it is [unset by default](https://www.archlinux.org/news/php-70-packages-released/), so no change is required):
 
 ```
 ...

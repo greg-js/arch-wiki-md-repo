@@ -23,6 +23,7 @@ Network Information Service (NIS) is a protocol developed by Sun to allow one to
         *   [2.2.3 Start NIS Daemons](#Start_NIS_Daemons_2)
         *   [2.2.4 Early testing](#Early_testing)
         *   [2.2.5 /etc/nsswitch.conf](#.2Fetc.2Fnsswitch.conf)
+        *   [2.2.6 /etc/pam.d/passwd](#.2Fetc.2Fpam.d.2Fpasswd)
 *   [3 More resources](#More_resources)
 
 ## NIS Server
@@ -158,6 +159,7 @@ ypserver nis_server
 *   `rpcbind.service`
 *   `ypbind.service`
 *   `ypserv.service`
+*   `yppasswdd.service` (to allow clients to change their password with `passwd`)
 
 ## NIS Client
 
@@ -234,6 +236,17 @@ And then do not forget
 
 ```
 # systemctl restart ypbind
+
+```
+
+#### /etc/pam.d/passwd
+
+To allow a user on a client machine to change their password on the server, be sure that `yppasswdd.service` is started/enabled on the server.
+
+Edit `/etc/pam.d/passwd` on the client to add the `nis` parameter to `password/pam_unix.so`:
+
+```
+password     required     pam_unix.so sha512 shadow nullok nis
 
 ```
 

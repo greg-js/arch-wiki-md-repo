@@ -20,7 +20,8 @@
 *   [5 Some use cases](#Some_use_cases)
     *   [5.1 Persistent terminal multiplexer](#Persistent_terminal_multiplexer)
     *   [5.2 Window manager](#Window_manager)
-*   [6 See also](#See_also)
+*   [6 Kill user processes on logout](#Kill_user_processes_on_logout)
+*   [7 See also](#See_also)
 
 ## How it works
 
@@ -37,7 +38,7 @@ When systemd user instance starts, it brings up the target `default.target`. Oth
 
 **Note:**
 
-*   Be aware that since version 206, the `systemd --user` instance is a per-user process, and not per-session. The rationale is that most resources handled by user services, like sockets or state files will be per-user (live on the user's home dir) and not per session. This means that all user services run outside of a session. As a consequence, programs that need to be run inside a session will probably break in user services. The way systemd handles user sessions is pretty much in flux. See [[1]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) and [[2]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html) for some hints on where things are going.
+*   Be aware that the `systemd --user` instance is a per-user process, and not per-session. The rationale is that most resources handled by user services, like sockets or state files will be per-user (live on the user's home dir) and not per session. This means that all user services run outside of a session. As a consequence, programs that need to be run inside a session will probably break in user services. The way systemd handles user sessions is pretty much in flux. See [[1]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) and [[2]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html) for some hints on where things are going.
 *   `systemd --user` runs as a separate process from the `systemd --system` process. User units can not reference or depend on system units.
 
 ## Basic setup
@@ -46,7 +47,7 @@ All the user services will be placed in `~/.config/systemd/user/`. If you want t
 
 ### D-Bus
 
-Some programs will need a [D-Bus](/index.php/D-Bus "D-Bus") user message bus. Traditionally it had been started when launching a desktop environment via `dbus-launch`, but since version 226, systemd has become the manager of the user message bus.[[3]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) The *dbus-daemon* is started once per user for all sessions with the provided `dbus.socket` and `dbus.service` user units.
+Some programs will need a [D-Bus](/index.php/D-Bus "D-Bus") user message bus, and systemd is the manager of the user message bus.[[3]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) The *dbus-daemon* is started once per user for all sessions with the provided `dbus.socket` and `dbus.service` user units.
 
 **Note:** If you had previously created these units manually under `/etc/systemd/user/` or `~/.config/systemd/user/`, they can be removed.
 
@@ -77,7 +78,7 @@ Environment="NO_AT_BRIDGE=1"
 
 #### DISPLAY and XAUTHORITY
 
-`DISPLAY` is used by any X application to know which display to use and `XAUTHORITY` to provide a path to the user's `.Xauthority` file and thus the cookie needed to access the X server. If you plan on launching X applications from systemd units, these variables need to be set. Since [version 219](https://github.com/systemd/systemd/blob/v219/NEWS#L194), systemd provides a script in `/etc/X11/xinit/xinitrc.d/50-systemd-user.sh` to import those variables into the systemd user session on X launch. So unless you start X in a nonstandard way, user services should be aware of the `DISPLAY` and `XAUTHORITY`.
+`DISPLAY` is used by any X application to know which display to use and `XAUTHORITY` to provide a path to the user's `.Xauthority` file and thus the cookie needed to access the X server. If you plan on launching X applications from systemd units, these variables need to be set. Systemd provides a script in `/etc/X11/xinit/xinitrc.d/50-systemd-user.sh` to import those variables into the systemd user session on X launch. [[4]](https://github.com/systemd/systemd/blob/v219/NEWS#L194) So unless you start X in a nonstandard way, user services should be aware of the `DISPLAY` and `XAUTHORITY`.
 
 #### PATH
 
@@ -127,7 +128,7 @@ The user session lives entirely inside a systemd scope and everything in the use
 
 Alternatively, [xorg](/index.php/Xorg "Xorg") can be run from within a systemd user service. This is nice since other X-related units can be made to depend on xorg, etc, but on the other hand, it has some drawbacks explained below.
 
-Since version 1.16 [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) provides better integration with systemd in two ways:
+[xorg-server](https://www.archlinux.org/packages/?name=xorg-server) provides integration with systemd in two ways:
 
 *   Can be run unprivileged, delegating device management to logind (see Hans de Goede commits around [this commit](http://cgit.freedesktop.org/xorg/xserver/commit/?id=82863656ec449644cd34a86388ba40f36cea11e9)).
 *   Can be made into a socket activated service (see [this commit](http://cgit.freedesktop.org/xorg/xserver/commit/?id=b3d3ffd19937827bcbdb833a628f9b1814a6e189)). This removes the need for [systemd-xorg-launch-helper-git](https://aur.archlinux.org/packages/systemd-xorg-launch-helper-git/).
@@ -136,7 +137,7 @@ Unfortunately, to be able to run xorg in unprivileged mode, it needs to run insi
 
 **Note:** This is not a fundamental restriction imposed by logind, but the reason seems to be that xorg needs to know which session to take over, and right now it gets this information calling [logind](http://www.freedesktop.org/wiki/Software/systemd/logind)'s `GetSessionByPID` using its own pid as argument. See [this thread](http://lists.x.org/archives/xorg-devel/2014-February/040476.html) and [xorg sources](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/os-support/linux/systemd-logind.c). It seems likely that xorg could be modified to get the session from the tty it is attaching to, and then it could run unprivileged from a user service outside a session.
 
-**Warning:** On xorg 1.18 socket activation seems to be broken. The client triggering the activation deadlocks. See the upstream bug report [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=93072). As a temporary workaround you can start the xorg server without socket activation, making sure the clients connect after a delay, so the server is fully started. There seems to be no nice mechanism te get startup notification for the X server.
+**Warning:** On xorg 1.18 socket activation seems to be broken. The client triggering the activation deadlocks. See the upstream bug report [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=93072). As a temporary workaround you can start the xorg server without socket activation, making sure the clients connect after a delay, so the server is fully started. There seems to be no nice mechanism te get startup notification for the X server.
 
 This is how to launch xorg from a user service:
 
@@ -185,7 +186,7 @@ $ systemctl --user set-environment XDG_VTNR=1
 
 **Note:** xorg should be launched at the same virtual terminal where the user logged in. Otherwise logind will consider the session inactive.
 
-3\. Make sure to configure the `DISPLAY` environment variable as explained [above](#DISPLAY).
+3\. Make sure to configure the `DISPLAY` environment variable as explained [above](#DISPLAY_and_XAUTHORITY).
 
 4\. Then, to enable socket activation for xorg on display 0 and tty 2 one would do:
 
@@ -199,7 +200,7 @@ Now running any X application will launch xorg on virtual terminal 2 automatical
 
 The environment variable `XDG_VTNR` can be set in the systemd environment from `.bash_profile`, and then one could start any X application, including a window manager, as a systemd unit that depends on `xorg@0.socket`.
 
-**Warning:** Currently running a window manager as a user service means it runs outside of a session with the problems this may bring: [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting"). However, it seems that systemd developers intend to make something like this possible. See [[5]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) and [[6]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html)
+**Warning:** Currently running a window manager as a user service means it runs outside of a session with the problems this may bring: [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting"). However, it seems that systemd developers intend to make something like this possible. See [[6]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) and [[7]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html)
 
 ## Writing user units
 
@@ -308,6 +309,24 @@ WantedBy=wm.target
 ```
 
 **Note:** The `[Install]` section includes a `WantedBy` part. When using `systemctl --user enable` it will link this as `~/.config/systemd/user/wm.target.wants/*window_manager*.service`, allowing it to be started at login. Is recommended to enable this service, not to link it manually.
+
+## Kill user processes on logout
+
+The [systemd](https://www.archlinux.org/packages/?name=systemd) package by default has `KillUserProcesses=no`, meaning user processes are not killed when the user completely logs out. To change this behavior in order to have all user processes killed on the user's logout, set `KillUserProcesses=yes` in `/etc/systemd/logind.conf`.
+
+Note that changing this setting breaks terminal multiplexers such as [tmux](/index.php/Tmux "Tmux") and [screen](/index.php/Screen "Screen"). If you change this setting, you can still use a terminal multiplexer by using `systemd-run` as follows:
+
+```
+$ systemd-run --scope --user *command* *args*
+
+```
+
+For example, to run `screen` you would do:
+
+```
+$ systemd-run --scope --user screen -S *foo*
+
+```
 
 ## See also
 

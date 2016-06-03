@@ -125,7 +125,7 @@ To boot with Secure Boot, you will need the following packages: [efibootmgr](htt
 
 Ref: [Surface Pro 3 and Secure Boot post-install](https://bbs.archlinux.org/viewtopic.php?pid=1570523#p1570523)
 
-Copy `/usr/lib/prebootloader/HashTool.efi` and `/usr/lib/prebootloader/PreLoader.efi` to `/boot/EFI/systemd/` Create an NVRAM entry for PreLoader.efi:
+Copy `/boot/EFI/systemd/systemd-bootx64.efi` to `/boot/EFI/systemd/loader.EFI`. Copy `/usr/lib/prebootloader/HashTool.efi` and `/usr/lib/prebootloader/PreLoader.efi` to `/boot/EFI/systemd/`. Create an NVRAM entry for PreLoader.efi:
 
 ```
  efibootmgr -d /dev/sd**X** -p **Y** -c -L Preloader -l /EFI/systemd/PreLoader.efi

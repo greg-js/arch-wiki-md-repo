@@ -110,8 +110,7 @@ After=bluetooth.service sys-subsystem-bluetooth-devices-%i.device suspend.target
 
 [Service]
 Type=oneshot
-ExecStartPre=/usr/bin/sleep 1
-ExecStart=/usr/bin/dbus-send --system --type=method_call --dest=org.bluez /org/bluez/%I org.freedesktop.DBus.Properties.Set string:org.bluez.Adapter1 string:Powered variant:boolean:true
+ExecStart=/usr/bin/hciconfig %i up
 
 [Install]
 WantedBy=suspend.target

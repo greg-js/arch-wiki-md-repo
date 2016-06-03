@@ -8,6 +8,8 @@
     *   [2.2 Systemd Service](#Systemd_Service)
     *   [2.3 Systemd Timer](#Systemd_Timer)
         *   [2.3.1 AUR package](#AUR_package)
+            *   [2.3.1.1 reflector-timer](#reflector-timer)
+            *   [2.3.1.2 reflector-timer-weekly](#reflector-timer-weekly)
 
 ## Installation
 
@@ -115,7 +117,9 @@ And then just [start](/index.php/Start "Start") the `reflector.timer`.
 
 #### AUR package
 
-Install the [reflector-timer](https://aur.archlinux.org/packages/reflector-timer/) package.
+[Install](/index.php/Install "Install") the [reflector-timer](https://aur.archlinux.org/packages/reflector-timer/) package to run *reflector* daily, or install the [reflector-timer-weekly](https://aur.archlinux.org/packages/reflector-timer-weekly/) to run it weekly.
+
+##### reflector-timer
 
 The default configuration is:
 
@@ -136,5 +140,21 @@ To override this configuration, edit `/etc/conf.d/reflector.conf`:
 COUNTRY=US
 
 ```
+
+Be sure to [enable](/index.php/Enable "Enable") `reflector.timer`.
+
+##### reflector-timer-weekly
+
+The default configuration is:
+
+ `/etc/reflector.conf` 
+```
+--save /etc/pacman.d/mirrorlist
+--country China
+--sort rate
+
+```
+
+Each line (except that begins with '#') should be valid `reflector` option.
 
 Be sure to [enable](/index.php/Enable "Enable") `reflector.timer`.

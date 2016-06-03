@@ -5,6 +5,7 @@ The [Trivial File Transfer Protocol](https://en.wikipedia.org/wiki/Trivial_File_
 *   [1 Server](#Server)
     *   [1.1 tftp-hpa](#tftp-hpa)
     *   [1.2 atftp](#atftp)
+    *   [1.3 dnsmasq](#dnsmasq)
 *   [2 Client](#Client)
 
 ## Server
@@ -24,6 +25,10 @@ To modify service parameters edit `/etc/conf.d/tftpd`.
 [Install](/index.php/Install "Install") [atftp](https://www.archlinux.org/packages/?name=atftp) and then [start](/index.php/Start "Start") `atftpd.service`.
 
 To modify service parameters edit `/etc/conf.d/atftpd`.
+
+### dnsmasq
+
+See [dnsmasq#TFTP server setup](/index.php/Dnsmasq#TFTP_server_setup "Dnsmasq").
 
 ## Client
 

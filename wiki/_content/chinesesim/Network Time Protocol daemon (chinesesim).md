@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Network_Time_Protocol_daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-19，点击[这里](https://wiki.archlinux.org/index.php?title=Network_Time_Protocol_daemon&diff=0&oldid=390018)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Network_Time_Protocol_daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-08，点击[这里](https://wiki.archlinux.org/index.php?title=Network_Time_Protocol_daemon&diff=0&oldid=412005)可以查看翻译后英文页面的改动。
 
-[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") （网络时间协议）是 GNU/Linux 系统通过Internet 时间服务器同步系统[软件时钟](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Time (简体中文)")的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。
+[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") （网络时间协议）是 GNU/Linux 系统通过互联网时间服务器同步系统[软件时钟](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Time (简体中文)")的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。
 
 [NTP 项目](http://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。
 
@@ -10,16 +10,14 @@
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 连接到 NTP 服务器](#.E8.BF.9E.E6.8E.A5.E5.88.B0_NTP_.E6.9C.8D.E5.8A.A1.E5.99.A8)
     *   [2.2 NTP 服务器模式](#NTP_.E6.9C.8D.E5.8A.A1.E5.99.A8.E6.A8.A1.E5.BC.8F)
-    *   [2.3 其他关于配置 NTP 的资源](#.E5.85.B6.E4.BB.96.E5.85.B3.E4.BA.8E.E9.85.8D.E7.BD.AE_NTP_.E7.9A.84.E8.B5.84.E6.BA.90)
-*   [3 不以守护进程使用](#.E4.B8.8D.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E4.BD.BF.E7.94.A8)
-    *   [3.1 启动时同步一次时钟](#.E5.90.AF.E5.8A.A8.E6.97.B6.E5.90.8C.E6.AD.A5.E4.B8.80.E6.AC.A1.E6.97.B6.E9.92.9F)
-*   [4 作为守护进程运行](#.E4.BD.9C.E4.B8.BA.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E8.BF.90.E8.A1.8C)
-    *   [4.1 启动 ntpd](#.E5.90.AF.E5.8A.A8_ntpd)
-    *   [4.2 NetworkManager](#NetworkManager)
+*   [3 使用](#.E4.BD.BF.E7.94.A8)
+    *   [3.1 启动时启用 ntpd](#.E5.90.AF.E5.8A.A8.E6.97.B6.E5.90.AF.E7.94.A8_ntpd)
+    *   [3.2 每次启动同步一次](#.E6.AF.8F.E6.AC.A1.E5.90.AF.E5.8A.A8.E5.90.8C.E6.AD.A5.E4.B8.80.E6.AC.A1)
+*   [4 技巧](#.E6.8A.80.E5.B7.A7)
+    *   [4.1 Start ntpd on network connection](#Start_ntpd_on_network_connection)
+    *   [4.2 Using ntpd with GPS](#Using_ntpd_with_GPS)
     *   [4.3 Running in a chroot](#Running_in_a_chroot)
-*   [5 Alternatives](#Alternatives)
-*   [6 参见](#.E5.8F.82.E8.A7.81)
-*   [7 外部链接](#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5)
+*   [5 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
@@ -123,98 +121,141 @@ logfile /var/log/ntp.log
 
 **注意:** 定义日志文件不是必须的，但是它对于反馈 *ntpd* 操作是有好处的。
 
-### 其他关于配置 NTP 的资源
+## 使用
 
-总之，永远不要忘记手册页： `man ntp.conf` 有可能可以回答你仍旧有的任何疑问。（见相关的手册页： `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`）。
-
-## 不以守护进程使用
-
-想要仅仅同步时钟一次，不想启动守护进程的话，运行：
+软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项:
 
 ```
-# ntpd -qg
-# hwclock -w
+# ntpd -u ntp:ntp
 
 ```
 
-`ntpd -qg` 与 `ntpdate` 程序效果相同，而ntpdate 已经[不推荐使用](http://support.ntp.org/bin/view/Dev/DeprecatingNtpdate). `hwclock -w` 把时间存储到硬件时钟上，这样重启的时候就不会丢失了。
+systemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(*panic-gate*). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。
 
-`ntpd` 的 `-g` 选项允许时钟漂移大于警报级别(默认是 15 分钟)而不发出警告。注意这种误差是不正常的，也许意味着失去设置错误，时钟芯片错误，或仅仅是长时间的忽略。如果在这些情况下你不想设置时钟而且输出错误到 syslog，删除 `-g`：
+**Warning:** 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。
+
+两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。
+
+### 启动时启用 ntpd
+
+[启用](/index.php/Enable "Enable") `ntpd.service` 服务.
+
+**Note:** systemd 命令 *timedatectl* 仅可以控制 [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd"), 用 root 执行 `timedatectl set-ntp 1` 会停止运行中的 `ntpd.service`.[[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-April/030277.html)
+
+用 *ntpq* 可以查看同步的状态：
 
 ```
-# ntpd -q
+$ ntpq -p
 
 ```
 
-### 启动时同步一次时钟
+delay, offset 和 jitter 不应该为零，*ntpd* 同步的服务器前有星号，*ntpd* 可能等待很多分钟后才会进行同步，请等 17 分钟 (1024 秒).
 
-**警告:** 这种方法不推荐在服务器上或是需要连续运行2到3天的普通机器上使用，因为系统时钟仅会在启动时更新一次。
+### 每次启动同步一次
 
-写一个 *oneshot* [systemd](/index.php/Systemd "Systemd") 模块：
+另一种方式是 [启用](/index.php/Enable "Enable") `ntpdate.service` 服务，每次启动都同步一次(`-q`) 并且是 non-forking (`-n`), 进程不会在后台运行。如果是服务器或者很多天才会重启一次，不建议使用此方式。
 
- `/etc/systemd/system/ntp-once.service` 
+如果需要把同步到的时间写入硬件时钟，请按照 [这里](/index.php/Systemd#Editing_provided_units "Systemd") 的说明修改服务并启动:
+
+ `/etc/systemd/system/ntpdate.service.d/hwclock.conf` 
 ```
-[Unit]
-Description=Network Time Service (once)
-After=network.target nss-lookup.target 
-
 [Service]
-Type=oneshot
-ExecStart=/usr/bin/ntpd -q -g -u ntp:ntp ; /sbin/hwclock -w
-
-[Install]
-WantedBy=multi-user.target
-```
-并启动它: `# systemctl enable ntp-once` 
-
-## 作为守护进程运行
-
-### 启动 ntpd
-
-启动：
-
-```
-# systemctl start ntpd
-
+ExecStart=/usr/bin/hwclock -w
 ```
 
-开机启动：
+## 技巧
+
+### Start ntpd on network connection
+
+*ntpd* can be started by your network manager, so that the daemon only runs when the computer is online.
+
+	Netctl
+
+Append the following lines to your [netctl](/index.php/Netctl "Netctl") profile:
 
 ```
-# systemctl enable ntpd
+ExecUpPost='/usr/bin/ntpd || true'
+ExecDownPre='killall ntpd || true'
 
 ```
 
-或者使用：
+	NetworkManager
+
+The *ntpd* daemon can be brought up/down along with a network connection through the use of NetworkManager's [dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") scripts. The [networkmanager-dispatcher-ntpd](https://www.archlinux.org/packages/?name=networkmanager-dispatcher-ntpd) package installs one, pre-configured to start and stop the [ntpd service](#Start_ntpd_at_boot) with a connection.
+
+	Wicd
+
+For [Wicd](/index.php/Wicd "Wicd"), create a start script in the `postconnect` directory and a stop script in the `predisconnect` directory. Remember to make them executable:
+
+ `/etc/wicd/scripts/postconnect/ntpd` 
+```
+#!/bin/bash
+systemctl start ntpd &
 
 ```
-# timedatectl set-ntp 1
+ `/etc/wicd/scripts/predisconnect/ntpd` 
+```
+#!/bin/bash
+systemctl stop ntpd &
 
 ```
 
-### NetworkManager
+**Note:** You are advised to customize the options for the *ntpd* command as explained in [#Usage](#Usage).
 
-**Note:** ntpd should still be running when the network is down if the hwclock daemon is disabled, so you should not use this.
+See also [Wicd#Scripts](/index.php/Wicd#Scripts "Wicd").
 
-*ntpd* can be brought up/down along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"). You can install the needed script from [community]:
+	KDE
 
- `# pacman -S networkmanager-dispatcher-ntpd` 
+KDE can use NTP (ntp must be installed) by right clicking the clock and selecting *Adjust date/time*. However, this requires the ntp daemon to be [disabled](/index.php/Disable "Disable") before configuring KDE to use NTP. [[2]](https://bugs.kde.org/show_bug.cgi?id=178968)
+
+### Using ntpd with GPS
+
+Most of the articles online about configuring *ntpd* to receive time from a GPS suggest to use the SHM (shared memory) method. However, at least since *ntpd* version 4.2.8 a *much better* method is available. It connects directly to *gpsd*, so [gpsd](https://www.archlinux.org/packages/?name=gpsd) needs to be installed.
+
+Add these lines to your `/etc/ntp.conf`:
+
+ `/etc/ntp.conf` 
+```
+#=========================================================
+#  GPSD native ntpd driver
+#=========================================================
+# This driver exists from at least ntp version 4.2.8
+# Details at
+#   [https://www.eecis.udel.edu/~mills/ntp/html/drivers/driver46.html](https://www.eecis.udel.edu/~mills/ntp/html/drivers/driver46.html)
+server 127.127.46.0 
+fudge 127.127.46.0 time1 0.0 time2 0.0 refid GPS
+```
+
+This will work as long as you have *gpsd* working. It connects to *gpsd* via the local socket and queries the "gpsd_json" object that is returned.
+
+To test the setup, first ensure that *gpsd* is working by running:
+
+```
+ $ cgps -s 
+
+```
+
+Then wait a few minutes and run `ntpq -p`. This will show if *ntpd* is talking to *gpsd*:
+
+ `$ ntpq -p` 
+```
+remote           refid            st t when poll reach   delay   offset  jitter
+ ==================================================================================
+*GPSD_JSON(0)    .GPS.            0 l   55   64  377    0.000    2.556  14.109
+```
+
+**Tip:** If the *reach* column is 0, it means *ntpd* has not been able to talk to *gpsd*. Wait a few minutes and try again. Sometimes it takes *ntpd* a while.
 
 ### Running in a chroot
 
-**Note:** Before attempting this, complete the previous section on running as non-root, since chroots are relatively useless at securing processes running as root.
+**Note:** *ntpd* should be started as non-root (default in the Arch Linux package) before attempting to jail it in a chroot, since chroots are relatively useless at securing processes running as root.
 
-Edit `/etc/conf.d/ntpd.conf` and change
-
-```
-NTPD_ARGS="-g -u ntp:ntp"
+Create a new directory `/etc/systemd/system/ntpd.service.d/` if it does not exist and a file named `customexec.conf` inside with the following content:
 
 ```
-
-to
-
-```
-NTPD_ARGS="-g -i /var/lib/ntp -u ntp:ntp"
+[Service]
+ExecStart=
+ExecStart=/usr/bin/ntpd -g -i /var/lib/ntp -u ntp:ntp -p /run/ntpd.pid
 
 ```
 
@@ -237,6 +278,7 @@ Create a suitable chroot environment so that getaddrinfo() will work by creating
 ```
 # mkdir /var/lib/ntp/etc /var/lib/ntp/lib /var/lib/ntp/proc
 # touch /var/lib/ntp/etc/resolv.conf /var/lib/ntp/etc/services
+
 ```
 
 and by bind-mounting the aformentioned files:
@@ -247,27 +289,28 @@ and by bind-mounting the aformentioned files:
 #ntpd chroot mounts
 /etc/resolv.conf  /var/lib/ntp/etc/resolv.conf none bind 0 0
 /etc/services	  /var/lib/ntp/etc/services none bind 0 0
-/lib		          /var/lib/ntp/lib none bind 0 0
+/lib		  /var/lib/ntp/lib none bind 0 0
 /proc		  /var/lib/ntp/proc none bind 0 0
 
 ```
- `# mount -a` 
 
-Finally, restart the daemon again:
+```
+# mount -a
 
- `# rc.d restart ntpd` 
+```
 
-It is relatively difficult to be sure that your driftfile configuration is actually working without waiting a while, as ntpd does not read or write it very often. If you get it wrong, it will log an error; if you get it right, it will update the timestamp. If you do not see any errors about it after a full day of running, and the timestamp is updated, you should be confident of success.
+Finally, restart `ntpd` daemon again. Once it restarted you can verify that the daemon process is chrooted by checking where `/proc/{PID}/root` symlinks to:
 
-## Alternatives
+```
+# ps -C ntpd | awk '{print $1}' | sed 1d | while read -r PID; do ls -l /proc/$PID/root; done
 
-Available alternative to NTPd are [Chrony](/index.php/Chrony "Chrony"), a dial-up friendly and specifically designed for systems that are not online all the time, and [OpenNTPD](/index.php/OpenNTPD "OpenNTPD"), part of the OpenBSD project and currently not maintained for Linux.
+```
+
+should now link to `/var/lib/ntp` instead of `/`.
+
+It is relatively difficult to be sure that your driftfile configuration is actually working without waiting a while, as *ntpd* does not read or write it very often. If you get it wrong, it will log an error; if you get it right, it will update the timestamp. If you do not see any errors about it after a full day of running, and the timestamp is updated, you should be confident of success.
 
 ## 参见
-
-*   [Time (简体中文)](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Time (简体中文)") (更多关于计算机计时的信息)
-
-## 外部链接
 
 *   [http://www.ntp.org/](http://www.ntp.org/)
 *   [http://support.ntp.org/](http://support.ntp.org/)

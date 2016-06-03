@@ -2,7 +2,7 @@
 | Инсталација, конфигурисање и решавање проблема Samba протокола |
 | **Слично** |
 | [NFS](/index.php/NFS "NFS") |
-| [Samba Domain Controller](/index.php/Samba_Domain_Controller "Samba Domain Controller") |
+| [Samba/Active Directory domain controller](/index.php/Samba/Active_Directory_domain_controller "Samba/Active Directory domain controller") |
 
 **Samba** је реимплементација SMB/CIFS мрежног протокола, који олакшава дељење фајлова и штампача међу Linux и Windows системима као алтернатива за [NFS](/index.php/NFS "NFS"). Неки корисници кажу да се Samba лако конфигурише и да је рад веома једноставан. Али, многи корисници наиђу на проблеме са његовим комплексним и неинтуитивним механизмом. Препорука је да се корисници држе следећих упутстава.
 

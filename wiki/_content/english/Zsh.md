@@ -18,27 +18,28 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
     *   [3.1 Simple .zshrc](#Simple_.zshrc)
     *   [3.2 Configuring $PATH](#Configuring_.24PATH)
     *   [3.3 Command completion](#Command_completion)
-    *   [3.4 The "command not found" hook](#The_.22command_not_found.22_hook)
-    *   [3.5 Preventing duplicate lines in the history](#Preventing_duplicate_lines_in_the_history)
-    *   [3.6 The ttyctl command](#The_ttyctl_command)
-    *   [3.7 Key bindings](#Key_bindings)
-        *   [3.7.1 Bind key to ncurses application](#Bind_key_to_ncurses_application)
-        *   [3.7.2 Alternate way to bind ncurses application](#Alternate_way_to_bind_ncurses_application)
-        *   [3.7.3 File manager key binds](#File_manager_key_binds)
-    *   [3.8 History search](#History_search)
-    *   [3.9 Prompts](#Prompts)
-        *   [3.9.1 Prompt themes](#Prompt_themes)
-        *   [3.9.2 Customized prompt](#Customized_prompt)
-            *   [3.9.2.1 Colors](#Colors)
-            *   [3.9.2.2 Example](#Example)
-    *   [3.10 Remembering recent directories](#Remembering_recent_directories)
-        *   [3.10.1 Dirstack](#Dirstack)
-        *   [3.10.2 cdr](#cdr)
-    *   [3.11 Help command](#Help_command)
-    *   [3.12 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
-    *   [3.13 Sample .zshrc files](#Sample_.zshrc_files)
-    *   [3.14 Configuration Frameworks](#Configuration_Frameworks)
-    *   [3.15 Persistent rehash](#Persistent_rehash)
+    *   [3.4 Autostart X at login](#Autostart_X_at_login)
+    *   [3.5 The "command not found" hook](#The_.22command_not_found.22_hook)
+    *   [3.6 Preventing duplicate lines in the history](#Preventing_duplicate_lines_in_the_history)
+    *   [3.7 The ttyctl command](#The_ttyctl_command)
+    *   [3.8 Key bindings](#Key_bindings)
+        *   [3.8.1 Bind key to ncurses application](#Bind_key_to_ncurses_application)
+        *   [3.8.2 Alternate way to bind ncurses application](#Alternate_way_to_bind_ncurses_application)
+        *   [3.8.3 File manager key binds](#File_manager_key_binds)
+    *   [3.9 History search](#History_search)
+    *   [3.10 Prompts](#Prompts)
+        *   [3.10.1 Prompt themes](#Prompt_themes)
+        *   [3.10.2 Customized prompt](#Customized_prompt)
+            *   [3.10.2.1 Colors](#Colors)
+            *   [3.10.2.2 Example](#Example)
+    *   [3.11 Remembering recent directories](#Remembering_recent_directories)
+        *   [3.11.1 Dirstack](#Dirstack)
+        *   [3.11.2 cdr](#cdr)
+    *   [3.12 Help command](#Help_command)
+    *   [3.13 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
+    *   [3.14 Sample .zshrc files](#Sample_.zshrc_files)
+    *   [3.15 Configuration Frameworks](#Configuration_Frameworks)
+    *   [3.16 Persistent rehash](#Persistent_rehash)
 *   [4 Uninstallation](#Uninstallation)
 *   [5 See also](#See_also)
 
@@ -198,6 +199,10 @@ For autocompletion with an arrow-key driven interface, add the following to:
 For autocompletion of command line switches for aliases, add the following to:
 
  `~/.zshrc`  `setopt COMPLETE_ALIASES` 
+
+### Autostart X at login
+
+See [Xinitrc#Autostart X at login](/index.php/Xinitrc#Autostart_X_at_login "Xinitrc").
 
 ### The "command not found" hook
 

@@ -27,7 +27,7 @@ The kernel [DRM](https://en.wikipedia.org/wiki/Direct_Rendering_Manager "wikiped
 
 First, the setup and installation:
 
-*   [Blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the old kernel module, `udlfb`, which may attempt to load itself first.
+*   [Blacklist](/index.php/Blacklist "Blacklist") the old kernel module, `udlfb`, which may attempt to load itself first.
 
 ### USB 3.0 DL-5xxx, DL-41xx, DL-3x00 Devices
 

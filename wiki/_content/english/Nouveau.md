@@ -5,6 +5,7 @@ Find your card's [codename](http://nouveau.freedesktop.org/wiki/CodeNames) (a mo
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Supported GPU Hardware](#Supported_GPU_Hardware)
 *   [2 Loading](#Loading)
     *   [2.1 Enable early KMS](#Enable_early_KMS)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -25,6 +26,10 @@ Find your card's [codename](http://nouveau.freedesktop.org/wiki/CodeNames) (a mo
 [Install](/index.php/Install "Install") the [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package. It provides the DDX driver for 2D acceleration in [Xorg](/index.php/Xorg "Xorg"), and pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency which provides the DRI driver for 3D acceleration.
 
 For OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl), and [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) when using [multilib](/index.php/Multilib "Multilib").
+
+### Supported GPU Hardware
+
+Check the [nouveau FeatureMatrix](https://nouveau.freedesktop.org/wiki/FeatureMatrix/) to see if, or how well, your card is supported. Check [nouveau CodeNames](https://nouveau.freedesktop.org/wiki/CodeNames/) to find the code used for your card in the FeatureMatrix.
 
 ## Loading
 
@@ -66,7 +71,7 @@ If you're experiencing troubles with Nouveau leading to rebuild nouveau-drm seve
 
 ### Keep NVIDIA driver installed
 
-If you want to keep the proprietary NVIDIA driver installed, but want to use the Nouveau driver, comment out nouveau blacklisting in `/etc/modprobe.d/nouveau_blacklist.conf` or `/usr/lib/modprobe.d/nvidia.conf` modifying it as follows:
+If you want to keep the proprietary NVIDIA driver installed (and are not using OpenGL), but want to use the Nouveau driver, comment out nouveau blacklisting in `/etc/modprobe.d/nouveau_blacklist.conf` or `/usr/lib/modprobe.d/nvidia.conf` modifying it as follows:
 
 ```
 #blacklist nouveau

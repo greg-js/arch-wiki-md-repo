@@ -861,7 +861,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **ttytter** — Sencillo script para que funciones como cliente para twitter escrito en Perl.
 
-	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://www.archlinux.org/packages/?name=ttytter)
+	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://aur.archlinux.org/packages/ttytter/)
 
 *   **Turpial** — Cliente Multiinterfaz de Twitter escrito en Python.
 

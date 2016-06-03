@@ -153,7 +153,7 @@ Partitions containing world-writable directories can still be kept separate as a
 
 #### Mount options
 
-Following the principle of least privilege, partitions should be mounted with the most restrictive mount options possible (without losing functionality).
+Following the principle of least privilege, filesystems should be mounted with the most restrictive mount options possible (without losing functionality).
 
 Relevant mount options are:
 
@@ -161,7 +161,7 @@ Relevant mount options are:
 *   `nosuid`: Do not allow set-user-identifier or set-group-identifier bits to take effect.
 *   `noexec`: Do not allow direct execution of any binaries on the mounted filesystem.
 
-Data partitions should always be mounted with `nodev`, `nosuid`, `noexec`. Potential usage is presented in the table below.
+Partitions used for data should always be mounted with `nodev`, `nosuid`, `noexec`. Potential usage is presented in the table below.
 
 | **Partition** | `nodev` | `nosuid` | `noexec` |
 | `/var` | yes | yes | yes  |
@@ -449,7 +449,7 @@ Syslinux supports [password-protecting your bootloader](/index.php/Syslinux#Secu
 
 ### Denying console login as root
 
-Changing the configuration to disallow root to login from the console makes it harder for an intruder to gain access to the system. The intruder would have to guess both a user-name that exists on the system and that users password. When root is allowed to log in via the console, an intruder only needs to guess a password. Blocking root login at the console is done by commenting out the tty lines in `/etc/securetty`.
+Changing the configuration to disallow root to login from the console makes it harder for an intruder to gain access to the system. The intruder would have to guess both a username that exists on the system and that user's password. When root is allowed to log in via the console, an intruder only needs to guess a password. Blocking root login at the console is done by commenting out the tty lines in `/etc/securetty`.
 
  `/etc/securetty` 
 ```
@@ -484,7 +484,7 @@ $ export TMOUT="$(( 60*10 ))";
 
 ```
 
-Note that this will not work if there is some command running in the shell (eg.: an SSH session or other shell without `TMOUT` support). But if you are using VC mostly for restarting frozen GDM/Xorg as root, then this is very usefull.
+Note that this will not work if there is some command running in the shell (eg.: an SSH session or other shell without `TMOUT` support). But if you are using VC mostly for restarting frozen GDM/Xorg as root, then this is very useful.
 
 ## See also
 

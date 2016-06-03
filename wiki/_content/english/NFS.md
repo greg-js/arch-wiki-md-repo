@@ -153,7 +153,7 @@ The previous commands can be saved by executing:
 
 ```
 
-**Note:** This command will **override** the current iptables start configuration with the actual iptables configuration!
+**Note:** This command will **override** the current iptables start configuration with the current iptables configuration!
 
 If using NFSv3 and the above listed static ports for `rpc.statd` and `lockd` these also need to be added to the configuration:
 
@@ -448,7 +448,7 @@ In addition to the method described previously, [NetworkManager](/index.php/Netw
 The easiest method for mount shares on network status change is to just symlink to the `auto_share` script:
 
 ```
-# ln -s /usr/local/bin/auto_share /etc/NetworkManager/dispatcher.d/30_nfs.sh
+# ln -s /usr/local/bin/auto_share /etc/NetworkManager/dispatcher.d/30-nfs.sh
 
 ```
 
@@ -457,7 +457,7 @@ However, in that particular case unmounting will happen only after the network c
 The following script safely unmounts the NFS shares before the relevant network connection is disabled by listening for the `pre-down` and `vpn-pre-down` events:
 
 **Note:** This script ignores mounts with the noauto option.
- `/etc/NetworkManager/dispatcher.d/30_nfs.sh` 
+ `/etc/NetworkManager/dispatcher.d/30-nfs.sh` 
 ```
 #!/bin/bash
 
@@ -483,17 +483,10 @@ fi
 
 ```
 
-Make the script executable:
+Make the script executable with [chmod](/index.php/Chmod "Chmod") and create a symlink inside `/etc/NetworkManager/dispatcher.d/pre-down` to catch the `pre-down` events:
 
 ```
- # chmod +x /etc/NetworkManager/dispatcher.d/30_nfs.sh
-
-```
-
-and create a symlink inside `/etc/NetworkManager/dispatcher.d/pre-down` to catch the `pre-down` events:
-
-```
- # ln -s /etc/NetworkManager/dispatcher.d/30_nfs.sh /etc/NetworkManager/dispatcher.d/pre-down.d/30_nfs.sh
+# ln -s /etc/NetworkManager/dispatcher.d/30-nfs.sh /etc/NetworkManager/dispatcher.d/pre-down.d/30-nfs.sh
 
 ```
 

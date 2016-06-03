@@ -45,6 +45,20 @@ DEVICE /dev/usb/hiddev[[0-15]]
 
 ```
 
+If apcupsd does not start, in `/etc/defaults/apcupsd` change
+
+```
+ISCONFIGURED=no
+
+```
+
+to
+
+```
+ISCONFIGURED=yes
+
+```
+
 ## Test
 
 First, [enable](/index.php/Enable "Enable") and start the [systemd](/index.php/Systemd "Systemd") service, `apcupsd.service`.

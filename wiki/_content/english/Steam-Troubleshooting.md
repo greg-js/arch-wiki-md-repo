@@ -98,10 +98,10 @@ LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so
 
 ```
 
-If you wish to use this method in a .desktop shortcut, you can use this command in the **Exec=** field.
+If you wish to use this method in a .desktop shortcut, you can use this command in the **Exec=** field. In this case you need to enclose the command in `"` and prepend every `$` with `\\`.
 
 ```
-env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam %U
+Exec="env LD_PRELOAD='/usr/\\$LIB/libstdc++.so.6 /usr/\\$LIB/libgcc_s.so.1 /usr/\\$LIB/libxcb.so.1 /usr/\\$LIB/libgpg-error.so' /usr/bin/steam %U"
 
 ```
 
@@ -130,7 +130,7 @@ If you wish to restore the files that were deleted by the commands above, you ca
 **Warning:** `--reset` also deletes your games (the AppCache).
 
 ```
-bc|steam --reset
+steam --reset
 
 ```
 

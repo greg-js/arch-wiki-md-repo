@@ -41,7 +41,7 @@ Once you have verified that it won't break any functionality, it should be safe 
 
 ```
 
-Updates of Bash could overwrite `/bin/sh`. To prevent this, add the following lines to the [option] section of `/etc/pacman.conf`:
+Updates of Bash could overwrite `/bin/sh`. To prevent this, add the following lines to the `[options]` section of `/etc/pacman.conf`:
 
 ```
 NoUpgrade   = usr/bin/sh

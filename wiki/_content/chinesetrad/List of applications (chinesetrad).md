@@ -993,7 +993,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **ttytter** — Easily scriptable twitter client written in Perl.
 
-	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://www.archlinux.org/packages/?name=ttytter)
+	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://aur.archlinux.org/packages/ttytter/)
 
 *   **Turpial** — Multi-interface Twitter client written in Python.
 
@@ -2820,7 +2820,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs.
 
-	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://aur.archlinux.org/packages/xpdf/)
+	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf)
 
 *   **zathura** — Highly customizable and functional PDF/DjVu/PostScript/ComicBook viewer (plugin based).
 
@@ -3954,7 +3954,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **[RetroArch](/index.php/RetroArch "RetroArch")** — Frontend to libretro (emulation library, using modified versions of existing emulators as plugins).
 
-	[http://github.com/Themaister/RetroArch](http://github.com/Themaister/RetroArch) || [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/)
+	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
 
 *   **ScummVM** — Virtual machine for old school adventures.
 

@@ -45,21 +45,20 @@ The configuration file for *cpupower* is located in `/etc/default/cpupower`. Thi
 
 **Note:**
 
-*   As of kernel 3.4, the native CPU module is loaded automatically.
-*   Starting with kernel 3.9, the new `pstate` power scaling driver is used automatically for modern Intel CPUs instead of the other drivers below. This driver takes priority over other drivers and in fact is inbuilt as opposed to being a module. This driver is currently automatically used for Sandy Bridge and Ivy Bridge type CPUs. If you encounter a problem while using this driver, add `intel_pstate=disable` to your kernel line. You can use the same user space utilities with this driver but cannot control it.
+*   The native CPU module is loaded automatically.
+*   The `pstate` power scaling driver is used automatically for modern Intel CPUs instead of the other drivers below. This driver takes priority over other drivers and is built-in as opposed to being a module. This driver is currently automatically used for Sandy Bridge and newer CPUs. If you encounter a problem while using this driver, add `intel_pstate=disable` to your kernel line. You can use the same user space utilities with this driver, **but cannot control it**.
 *   Even P State behavior mentioned above can be influenced with `/sys/devices/system/cpu/intel_pstate`, e.g. Intel Turbo Boost can be deactivated with `# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo` for keeping CPU-Temperatures low.
 *   Additional control for modern Intel CPUs is available with the [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) (available as [thermald](https://aur.archlinux.org/packages/thermald/)), which proactively controls thermal using P-states, T-states, and the Intel power clamp driver. thermald can also be used for older Intel CPUs. If the latest drivers are not available, then the daemon will revert to x86 model specific registers and the Linux ‘cpufreq subsystem’ to control system cooling.
 
 *cpupower* requires modules to know the limits of the native CPU:
 
 | Module | Description |
-| intel_pstate | This driver implements a scaling driver with an internal governor for Intel Core (SandyBridge and newer) processors. |
-| acpi-cpufreq | CPUFreq driver which utilizes the ACPI Processor Performance States. This driver also supports Intel Enhanced SpeedStep (previously supported by the deprecated speedstep-centrino module). |
-| speedstep-lib | CPUFreq drive for Intel speedstep enabled processors (mostly atoms and older pentiums (< 3)) |
-| powernow-k8 | CPUFreq driver for K8/K10 Athlon64/Opteron/Phenom processors. Since linux 3.7 'acpi-cpufreq' will automaticly be used for more modern CPUs from this family. |
-| pcc-cpufreq | This driver supports Processor Clocking Control interface by Hewlett-Packard and Microsoft Corporation which is useful on some Proliant servers. |
-| p4-clockmod | CPUFreq driver for Intel Pentium 4 / Xeon / Celeron processors. When enabled it will lower CPU temperature by skipping clocks.
-You probably want to use a Speedstep driver instead. |
+| intel_pstate | This driver implements a scaling driver with an internal governor for Intel Core (Sandy Bridge and newer) processors. |
+| acpi-cpufreq | CPUFreq driver which utilizes the ACPI Processor Performance States. This driver also supports the Intel Enhanced SpeedStep (previously supported by the deprecated speedstep-centrino module). |
+| speedstep-lib | CPUFreq driver for Intel SpeedStep-enabled processors (mostly Atoms and older Pentiums (< 3)) |
+| powernow-k8 | CPUFreq driver for K8/K10 Athlon 64/Opteron/Phenom processors. Since Linux 3.7 'acpi-cpufreq' will automatically be used for more modern CPUs from this family. |
+| pcc-cpufreq | This driver supports Processor Clocking Control interface by Hewlett-Packard and Microsoft Corporation which is useful on some ProLiant servers. |
+| p4-clockmod | CPUFreq driver for Intel Pentium 4/Xeon/Celeron processors which lowers the CPU temperature by skipping clocks. (You probably want to use a SpeedStep driver instead.) |
 
 To see a full list of available modules, run:
 

@@ -13,14 +13,13 @@ See [NVIDIA](/index.php/NVIDIA "NVIDIA") for the main article.
     *   [6.3 Method 3 - nvclock](#Method_3_-_nvclock)
 *   [7 Set fan speed at login](#Set_fan_speed_at_login)
 *   [8 Switching between NVIDIA and nouveau drivers](#Switching_between_NVIDIA_and_nouveau_drivers)
-*   [9 Avoid tearing with GeForce 500/600/700/900 series cards](#Avoid_tearing_with_GeForce_500.2F600.2F700.2F900_series_cards)
-*   [10 Manual configuration](#Manual_configuration)
-    *   [10.1 Disabling the logo on startup](#Disabling_the_logo_on_startup)
-    *   [10.2 Overriding monitor detection](#Overriding_monitor_detection)
-    *   [10.3 Enabling brightness control](#Enabling_brightness_control)
-    *   [10.4 Enabling SLI](#Enabling_SLI)
-    *   [10.5 Enabling overclocking](#Enabling_overclocking)
-        *   [10.5.1 Setting static 2D/3D clocks](#Setting_static_2D.2F3D_clocks)
+*   [9 Manual configuration](#Manual_configuration)
+    *   [9.1 Disabling the logo on startup](#Disabling_the_logo_on_startup)
+    *   [9.2 Overriding monitor detection](#Overriding_monitor_detection)
+    *   [9.3 Enabling brightness control](#Enabling_brightness_control)
+    *   [9.4 Enabling SLI](#Enabling_SLI)
+    *   [9.5 Enabling overclocking](#Enabling_overclocking)
+        *   [9.5.1 Setting static 2D/3D clocks](#Setting_static_2D.2F3D_clocks)
 
 ## Fixing terminal resolution
 
@@ -264,29 +263,9 @@ fi
 
 ```
 
-## Avoid tearing with GeForce 500/600/700/900 series cards
-
-Tearing can be avoided by forcing a full composition pipeline, regardless of the compositor you are using. To test whether this option will work, type
-
-```
-nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
-
-```
-
-It has been reported to reduce the performance of some OpenGL applications, though.
-
-In order to make the change permanent, you need to add the following line to the `"Screen"` section of your Xorg configuration file, for example `/etc/X11/xorg.conf.d/20-nvidia.conf`:
-
-```
-Option  "metamodes" "nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
-
-```
-
-If you do not have an Xorg configuration file, you can create one for your present hardware using `nvidia-xconfig` (see [#Automatic configuration](#Automatic_configuration)) and move it from `/etc/X11/xorg.conf` to the preferred location `/etc/X11/xorg.conf.d/20-nvidia.conf`.
-
 ## Manual configuration
 
-Several tweaks (which cannot be enabled [automatically](#Automatic_configuration) or with the [GUI](#NVIDIA_Settings)) can be performed by editing your [config](#Configuring) file. The Xorg server will need to be restarted before any changes are applied.
+Several tweaks (which cannot be enabled [automatically](/index.php/NVIDIA#Automatic_configuration "NVIDIA") or with the [GUI](/index.php/NVIDIA#NVIDIA_Settings "NVIDIA")) can be performed by editing your [config](/index.php/NVIDIA#Minimal_configuration "NVIDIA") file. The Xorg server will need to be restarted before any changes are applied.
 
 See [NVIDIA Accelerated Linux Graphics Driver README and Installation Guide](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt) for additional details and options.
 

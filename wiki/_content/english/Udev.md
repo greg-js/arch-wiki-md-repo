@@ -206,6 +206,10 @@ KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/*us
 
 ```
 
+Some display managers store the .Xauthority outside the user home directory. You will need to update the ENV{XAUTHORITY} accordingly. As an example [GNOME Display Manager](/index.php/GDM "GDM") looks as follows:
+
+ `$ printenv XAUTHORITY`  `/run/user/1000/gdm/Xauthority` 
+
 ### Detect new eSATA drives
 
 If your eSATA drive is not detected when you plug it in, there are a few things you can try. You can reboot with the eSATA plugged in. Or you could try

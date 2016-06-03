@@ -741,6 +741,7 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 | **Bose AE2 SoundLink** | bluez 5.36, pulseaudio 7.1 | Pause and resume does not work. Microphone does not work. | Limited |
 | **Jawbone Jambox** | bluez 5.38, pulseaudio 8.0 | Yes |
 | **Plantronics BackBeat FIT** | bluez5, pulseaudio 8.0 | Fully working on both headset and a2dp profiles. Pause button pauses the player. (Tested in mpv.) | Yes |
+| **Aukey EP-B26** | bluez 5.39-1, pulseaudio 8.0-3 | Fully working on both headset(poor quality) and a2dp(good quality) profiles. Pause button pauses the player, back/forth goes to previous/next song. (Tested in mpv) Microphone works only in HSP/HFP mode. | Yes |
 
 ## See also
 

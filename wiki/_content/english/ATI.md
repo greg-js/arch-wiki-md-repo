@@ -2,72 +2,59 @@ Owners of **AMD** (previously **ATI**) video cards have a choice between [propri
 
 The open source driver is *on par* performance-wise with the proprietary driver for many cards. (See this [benchmark](http://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).) It also has good dual-head support but worse TV-out support. Newer cards support might be lagging behind Catalyst.
 
-If unsure, try the open source driver first, it will suit most needs and is generally less problematic. (See the [feature matrix](http://www.x.org/wiki/RadeonFeature) to know what is supported for the GPU.)
+If unsure, try the open source driver first, it will suit most needs and is generally less problematic. See the [feature matrix](http://www.x.org/wiki/RadeonFeature) to know what is supported for the GPU.
 
 ## Contents
 
 *   [1 Naming conventions](#Naming_conventions)
-*   [2 Overview](#Overview)
-*   [3 Installation](#Installation)
-*   [4 Configuration](#Configuration)
-*   [5 Loading](#Loading)
-    *   [5.1 Enable early KMS](#Enable_early_KMS)
-*   [6 Performance tuning](#Performance_tuning)
-    *   [6.1 Enabling video acceleration](#Enabling_video_acceleration)
-    *   [6.2 Driver options](#Driver_options)
-    *   [6.3 Kernel parameters](#Kernel_parameters)
-        *   [6.3.1 Deactivating PCI-E 2.0](#Deactivating_PCI-E_2.0)
-    *   [6.4 Gallium Heads-Up Display](#Gallium_Heads-Up_Display)
-*   [7 Hybrid graphics/AMD Dynamic Switchable Graphics](#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics)
-*   [8 Powersaving](#Powersaving)
-    *   [8.1 Dynamic power management](#Dynamic_power_management)
-    *   [8.2 Old methods](#Old_methods)
-        *   [8.2.1 Dynamic frequency switching](#Dynamic_frequency_switching)
-        *   [8.2.2 Profile-based frequency switching](#Profile-based_frequency_switching)
-        *   [8.2.3 Persistent configuration](#Persistent_configuration)
-        *   [8.2.4 Graphical tools](#Graphical_tools)
-    *   [8.3 Other notes](#Other_notes)
-*   [9 Fan Speed](#Fan_Speed)
-*   [10 TV out](#TV_out)
-    *   [10.1 Force TV-out in KMS](#Force_TV-out_in_KMS)
-*   [11 HDMI audio](#HDMI_audio)
-*   [12 Multihead setup](#Multihead_setup)
-    *   [12.1 Using the RandR extension](#Using_the_RandR_extension)
-    *   [12.2 Independent X screens](#Independent_X_screens)
-*   [13 Turn vsync off](#Turn_vsync_off)
-*   [14 Troubleshooting](#Troubleshooting)
-    *   [14.1 Artifacts upon logging in](#Artifacts_upon_logging_in)
-    *   [14.2 Adding undetected resolutions](#Adding_undetected_resolutions)
-    *   [14.3 AGP is disabled (with KMS)](#AGP_is_disabled_.28with_KMS.29)
-    *   [14.4 TV showing a black border around the screen](#TV_showing_a_black_border_around_the_screen)
-    *   [14.5 Black screen with mouse cursor on resume from suspend in X](#Black_screen_with_mouse_cursor_on_resume_from_suspend_in_X)
-    *   [14.6 No desktop effects in KDE4 with X1300 and Radeon driver](#No_desktop_effects_in_KDE4_with_X1300_and_Radeon_driver)
-    *   [14.7 Black screen and no console, but X works in KMS](#Black_screen_and_no_console.2C_but_X_works_in_KMS)
-    *   [14.8 2D performance (e.g. scrolling) is slow](#2D_performance_.28e.g._scrolling.29_is_slow)
-    *   [14.9 Monitor rotation works for cursor but not windows/content](#Monitor_rotation_works_for_cursor_but_not_windows.2Fcontent)
-    *   [14.10 ATI X1600 (RV530 series) 3D application show black windows](#ATI_X1600_.28RV530_series.29_3D_application_show_black_windows)
-    *   [14.11 Cursor corruption after coming out of sleep](#Cursor_corruption_after_coming_out_of_sleep)
-    *   [14.12 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
-    *   [14.13 Low 2D performance in console and X](#Low_2D_performance_in_console_and_X)
+*   [2 Installation](#Installation)
+*   [3 Configuration](#Configuration)
+*   [4 Loading](#Loading)
+    *   [4.1 Enable early KMS](#Enable_early_KMS)
+*   [5 Performance tuning](#Performance_tuning)
+    *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
+    *   [5.2 Driver options](#Driver_options)
+    *   [5.3 Kernel parameters](#Kernel_parameters)
+        *   [5.3.1 Deactivating PCI-E 2.0](#Deactivating_PCI-E_2.0)
+    *   [5.4 Gallium Heads-Up Display](#Gallium_Heads-Up_Display)
+*   [6 Hybrid graphics/AMD Dynamic Switchable Graphics](#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics)
+*   [7 Powersaving](#Powersaving)
+    *   [7.1 Dynamic power management](#Dynamic_power_management)
+        *   [7.1.1 Commandline Tools](#Commandline_Tools)
+    *   [7.2 Old methods](#Old_methods)
+        *   [7.2.1 Dynamic frequency switching](#Dynamic_frequency_switching)
+        *   [7.2.2 Profile-based frequency switching](#Profile-based_frequency_switching)
+        *   [7.2.3 Persistent configuration](#Persistent_configuration)
+        *   [7.2.4 Graphical tools](#Graphical_tools)
+    *   [7.3 Other notes](#Other_notes)
+*   [8 Fan Speed](#Fan_Speed)
+*   [9 TV out](#TV_out)
+    *   [9.1 Force TV-out in KMS](#Force_TV-out_in_KMS)
+*   [10 HDMI audio](#HDMI_audio)
+*   [11 Multihead setup](#Multihead_setup)
+    *   [11.1 Using the RandR extension](#Using_the_RandR_extension)
+    *   [11.2 Independent X screens](#Independent_X_screens)
+*   [12 Turn vsync off](#Turn_vsync_off)
+*   [13 Troubleshooting](#Troubleshooting)
+    *   [13.1 Artifacts upon logging in](#Artifacts_upon_logging_in)
+    *   [13.2 Adding undetected resolutions](#Adding_undetected_resolutions)
+    *   [13.3 AGP is disabled (with KMS)](#AGP_is_disabled_.28with_KMS.29)
+    *   [13.4 TV showing a black border around the screen](#TV_showing_a_black_border_around_the_screen)
+    *   [13.5 Black screen with mouse cursor on resume from suspend in X](#Black_screen_with_mouse_cursor_on_resume_from_suspend_in_X)
+    *   [13.6 No desktop effects in KDE4 with X1300 and Radeon driver](#No_desktop_effects_in_KDE4_with_X1300_and_Radeon_driver)
+    *   [13.7 Black screen and no console, but X works in KMS](#Black_screen_and_no_console.2C_but_X_works_in_KMS)
+    *   [13.8 2D performance (e.g. scrolling) is slow](#2D_performance_.28e.g._scrolling.29_is_slow)
+    *   [13.9 Monitor rotation works for cursor but not windows/content](#Monitor_rotation_works_for_cursor_but_not_windows.2Fcontent)
+    *   [13.10 ATI X1600 (RV530 series) 3D application show black windows](#ATI_X1600_.28RV530_series.29_3D_application_show_black_windows)
+    *   [13.11 Cursor corruption after coming out of sleep](#Cursor_corruption_after_coming_out_of_sleep)
+    *   [13.12 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
+    *   [13.13 Low 2D performance in console and X](#Low_2D_performance_in_console_and_X)
 
 ## Naming conventions
 
 The [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") brand follows a naming scheme that relates each product to a market segment. Within this article, readers will see both *product* names (e.g. HD 4850, X1900) and *code* or *core* names (e.g. RV770, R580). Traditionally, a *product series* will correspond to a *core series* (e.g. the "X1000" product series includes the X1300, X1600, X1800, and X1900 products which utilize the "R500" core series – including the RV515, RV530, R520, and R580 cores).
 
 For a table of core and product series, see [Wikipedia:Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") and [Wikipedia:List of AMD graphics processing units](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units").
-
-## Overview
-
-*   For the latest Fiji and Tonga based graphics cards (Volcanic Islands/GCN 1.2), see the [AMDGPU](/index.php/AMDGPU "AMDGPU") page.
-*   Radeons in the Rx 200 and Rx 300 (except for Radeon R9 285, R9 380, Radeon R9 Fury, Radeon R9 Nano) series (Sea/Southern Islands or GCN 1.1/1.0) have almost complete feature coverage and offer best performance.
-*   Radeons up to the HD 8xxx series have full 2D and 3D acceleration, but might not support all the features that the proprietary driver provides. Performance varies from medicore for some cards to excellent for others.
-*   Support of DRI1, RandR 1.2/1.3/1.4, Glamor, EXA acceleration and [kernel mode-setting](/index.php/KMS "KMS")/DRI2.
-
-Check the [feature matrix](http://www.x.org/wiki/RadeonFeature) for more details.
-
-Generally, **xf86-video-ati** should be your first choice, no matter which AMD/ATI card you own. In case you need to use a driver for newer AMD cards, you should consider the proprietary **catalyst** driver.
-
-**Note:** **xf86-video-ati** is specified as ***radeon*** for the kernel and in `xorg.conf`.
 
 ## Installation
 
@@ -101,7 +88,7 @@ The radeon kernel module should load fine automatically on system boot.
 
 If it does not happen, then:
 
-*   Make sure you do **not** have `nomodeset` or `vga=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), since radeon requires kernel mode-setting.
+*   Make sure you do **not** have `nomodeset` or `vga=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), since radeon requires [KMS](/index.php/KMS "KMS").
 *   Also, check that you have not disabled radeon by using any [kernel module blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules").
 
 ### Enable early KMS
@@ -130,7 +117,7 @@ The change takes effect at the next reboot.
 
 ### Enabling video acceleration
 
-[VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") can be installed to provide hardware accelerated video encoding and decoding.
+See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
 ### Driver options
 
@@ -259,8 +246,6 @@ You can choose between three different methods:
 2.  [dynpm](#Dynamic_frequency_switching)
 3.  [profile](#Profile-based_frequency_switching)
 
-**It is hard to say which is the best for you, so you have to try it yourself!**
-
 See [http://www.x.org/wiki/RadeonFeature/#index3h2](http://www.x.org/wiki/RadeonFeature/#index3h2) for more details.
 
 ### Dynamic power management
@@ -292,6 +277,10 @@ For testing or debugging purposes, you can force the card to run in a set perfor
 # echo low > /sys/class/drm/card0/device/power_dpm_force_performance_level
 
 ```
+
+#### Commandline Tools
+
+*   [radcard](https://github.com/superjamie/snippets/blob/master/radcard) - A script to get and set DPM power states and levels
 
 ### Old methods
 

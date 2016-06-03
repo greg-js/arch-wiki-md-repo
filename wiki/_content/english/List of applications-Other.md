@@ -278,10 +278,6 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[https://github.com/manuelschneid3r/albert](https://github.com/manuelschneid3r/albert) || [albert](https://aur.archlinux.org/packages/albert/)
 
-*   **Ayr** — Manages menus of application launchers, either executables or desktop files. Also opens files and URLs with launchers, desktop files, or applications associated by name or mimetype. Uses dmenu to manage its menus.
-
-	[http://appstogo.mcfadzean.org.uk/linux.html#ayr](http://appstogo.mcfadzean.org.uk/linux.html#ayr) || [ayr](https://aur.archlinux.org/packages/ayr/)
-
 *   **Bashrun2** — Provides a different, barebones approach to a run dialog, using a specialized Bash session within a small xterm window.
 
 	[http://henning-bekel.de/bashrun2/](http://henning-bekel.de/bashrun2/) || [bashrun2](https://aur.archlinux.org/packages/bashrun2/)
@@ -304,7 +300,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **Fehlstart** — Small GTK+-based application launcher.
 
-	[https://gitorious.org/fehlstart](https://gitorious.org/fehlstart) || [fehlstart-git](https://aur.archlinux.org/packages/fehlstart-git/)
+	[https://gitlab.com/fehlstart/fehlstart](https://gitlab.com/fehlstart/fehlstart) || [fehlstart-git](https://aur.archlinux.org/packages/fehlstart-git/)
 
 *   **[Gmrun](/index.php/Gmrun "Gmrun")** — Lightweight GTK+-based application launcher, with the ability to run programs inside a terminal and other handy features.
 
@@ -336,7 +332,11 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **slingshot** — An application launcher has a clear look, part of [pantheon](/index.php/Pantheon "Pantheon") desktop environment.
 
-	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://www.archlinux.org/packages/?name=slingshot-launcher)
+	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://aur.archlinux.org/packages/slingshot-launcher/)
+
+*   **Runa** — Fast and light dmenu-driven application launcher, suitable for use standalone, integrated into file manager context menus, or as an 'xdg-open' replacement. Favourite applications can also be configured.
+
+	[http://appstogo.mcfadzean.org.uk/linux.html#runa](http://appstogo.mcfadzean.org.uk/linux.html#runa) || [runa](https://aur.archlinux.org/packages/runa/)
 
 *   **Synapse** — Synapse is a semantic launcher written in Vala that you can use to start applications as well as find and access relevant documents and files by making use of the Zeitgeist engine.
 
@@ -361,10 +361,6 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 ##### Logout dialogue
 
 A few simple shutdown managers are available:
-
-*   **exitx** — A logout dialog for Openbox that uses [Sudo](/index.php/Sudo "Sudo").
-
-	[http://www.linuxsir.com/bbs/lastpostinthread350740.html](http://www.linuxsir.com/bbs/lastpostinthread350740.html) || [exitx](https://aur.archlinux.org/packages/exitx/)
 
 *   **exitx-polkit** — A GTK logout dialog for Openbox with PolicyKit support.
 
@@ -418,7 +414,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://www.archlinux.org/packages/?name=gnucash)
 
-*   **[Grisbi](https://en.wikipedia.org/wiki/Grisbi "wikipedia:Grisbi")** — Personal finance system which manages third party, expenditure and receipt categories, as well as budgetary lines, financial years, and other information that makes it suitable for associations.
+*   **Grisbi** — Personal finance system which manages third party, expenditure and receipt categories, as well as budgetary lines, financial years, and other information that makes it suitable for associations.
 
 	[http://www.grisbi.org/](http://www.grisbi.org/) || [grisbi](https://aur.archlinux.org/packages/grisbi/)
 
@@ -713,7 +709,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **[RetroArch](/index.php/RetroArch "RetroArch")** — Frontend to libretro (emulation library, using modified versions of existing emulators as plugins).
 
-	[http://github.com/Themaister/RetroArch](http://github.com/Themaister/RetroArch) || [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/)
+	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
 
 *   **ScummVM** — Virtual machine for old school adventures.
 

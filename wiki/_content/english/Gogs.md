@@ -62,6 +62,16 @@ Install [sqlite](https://www.archlinux.org/packages/?name=sqlite) and select SQL
 
 #### PostgreSQL
 
+Install [postgresql](https://www.archlinux.org/packages/?name=postgresql) and select Postgresql on the installation page.
+
+```
+# su - postgres -c "initdb --locale en_US.UTF-8 -D '/var/lib/postgres/data'"
+# su - postgres -c "createuser --interactive"
+# name: gogs
+# su - postgres -c "createdb -U gogs gogs"
+
+```
+
 #### MariaDB
 
 ### SMTP
@@ -78,4 +88,4 @@ The current package (gogs-git* and gogs>=0.4.2) support custom themes. The locat
 
 ## See also
 
-*   [Official Documentation](http://gogs.io/docs/intro/)
+*   [Official Documentation](https://gogs.io/docs)

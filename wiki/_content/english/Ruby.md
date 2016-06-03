@@ -22,7 +22,7 @@ For the latest version of Ruby, [install](/index.php/Install "Install") the [rub
 ### Older versions
 
 *   For Ruby 2.2, install the [ruby2.2](https://aur.archlinux.org/packages/ruby2.2/) package.
-*   For Ruby 2.1, install the [ruby2.1](https://aur.archlinux.org/packages/ruby2.1/) package.
+*   For Ruby 2.1, install the [ruby2.1](https://www.archlinux.org/packages/?name=ruby2.1) package.
 *   For Ruby 2.0, install the [ruby2.0](https://aur.archlinux.org/packages/ruby2.0/) package.
 
 ### Multiple versions

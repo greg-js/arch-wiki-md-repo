@@ -55,7 +55,7 @@ Arch Linux 存档目前位于 [https://archive.archlinux.org/](https://archive.a
 
 ### /repos
 
-[repos](http://ala.seblu.net/repos) 这个目录包含官方仓库镜像的每日快照，按下例结构组织：
+[repos](https://archive.archlinux.org/repos) 这个目录包含官方仓库镜像的每日快照，按下例结构组织：
 
 ```
 repos
@@ -112,7 +112,7 @@ repos
 
 ### /packages
 
-[packages](http://ala.seblu.net/packages) 这个目录包含每个包的所有版本及其相应的数字签名。每个包一个目录，按首字母排序。
+[packages](https://archive.archlinux.org/packages) 这个目录包含每个包的所有版本及其相应的数字签名。每个包一个目录，按首字母排序。
 
 ```
 ├── packages
@@ -136,7 +136,7 @@ repos
 
 ```
 
-你可以使用“魔法目录”[.all](http://ala.seblu.net/packages/.all) 按包名访问所有包。In a nutshell, all versions of each package in one flat directory. No clear-text listing allowed here.
+你可以使用“魔法目录”[.all](https://archive.archlinux.org/packages/.all) 按包名访问所有包。In a nutshell, all versions of each package in one flat directory. No clear-text listing allowed here.
 
 ```
 ├── packages
@@ -149,11 +149,11 @@ repos
 
 ```
 
-An lightweight index, named [index.0.xz](http://ala.seblu.net/packages/.all/index.0.xz) is available to list all package in once.
+An lightweight index, named [index.0.xz](https://archive.archlinux.org/packages/.all/index.0.xz) is available to list all package in once.
 
 ### /iso
 
-The [iso](http://ala.seblu.net/iso) directory contains official ISO images and bootstrap tarballs sorted by release date.
+The [iso](https://archive.archlinux.org/iso) directory contains official ISO images and bootstrap tarballs sorted by release date.
 
 ```
 ├── 2014.09.03
@@ -235,15 +235,15 @@ Or you can do it manually:
 ```
 [core]
 SigLevel = PackageRequired
-Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
+Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 [extra]
 SigLevel = PackageRequired
-Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
+Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 [community]
 SigLevel = PackageRequired
-Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
+Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 ```
 
@@ -254,7 +254,7 @@ Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
 ## Arch Linux repository mirrorlist                                             
 ## Generated on 2042-01-01                                                      
 ##
-Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
+Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 ```
 

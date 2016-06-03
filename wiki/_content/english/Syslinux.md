@@ -1,6 +1,6 @@
 [Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX") is a collection of boot loaders capable of booting from hard drives, CDs, and over the network via PXE. It supports the [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), and [Btrfs](/index.php/Btrfs "Btrfs") [file systems](/index.php/File_systems "File systems").
 
-**Note:** Syslinux cannot access files from partitions other than its own. For an alternative bootloader with the multifs feature see [GRUB](/index.php/GRUB "GRUB").
+**Note:** Syslinux cannot access files from partitions other than its own. For an alternative bootloader with the multi-filesystem feature see [GRUB](/index.php/GRUB "GRUB").
 
 ## Contents
 
@@ -52,10 +52,10 @@
 ### Boot process overview
 
 1.  **Stage 1 : Part 1** - **Load MBR** - At boot, the BIOS loads the 440 byte [MBR](/index.php/MBR "MBR") boot code at the start of the disk (`/usr/lib/syslinux/bios/mbr.bin` or `/usr/lib/syslinux/bios/gptmbr.bin`).
-2.  **Stage 1 : Part 2** - **Search active partition**. The **Stage 1 MBR boot code** looks for the partition that is marked as active (boot flag in MBR disks). Let us assume this is the `/boot` partition for example.
-3.  **Stage 2 : Part 1** - **Execute volume boot record** - The **Stage 1 MBR boot code** executes the Volume Boot Record (VBR) of the `/boot` partition. In the case of Syslinux, the VBR boot code is the starting sector of `/boot/syslinux/ldlinux.sys` which is created by the `extlinux --install` command. Note `ldlinux.sys` is not same as `ldlinux.c32`.
+2.  **Stage 1 : Part 2** - **Search active partition**. The **Stage 1 MBR boot code** looks for the partition that is marked as active (boot flag in MBR disks). Let us assume this is the `/boot` partition, for example.
+3.  **Stage 2 : Part 1** - **Execute volume boot record** - The **Stage 1 MBR boot code** executes the Volume Boot Record (VBR) of the `/boot` partition. In the case of Syslinux, the VBR boot code is the starting sector of `/boot/syslinux/ldlinux.sys` which is created by the `extlinux --install` command. Note that `ldlinux.sys` is not the same as `ldlinux.c32`.
 4.  **Stage 2 : Part 2** - **Execute `/boot/syslinux/ldlinux.sys`** - The VBR will load the rest of `/boot/syslinux/ldlinux.sys`. The sector location of `/boot/syslinux/ldlinux.sys` should not change, otherwise syslinux will not boot.
-    **Note:** In the case of [Btrfs](/index.php/Btrfs "Btrfs"), the above method will not work since files move around resulting in changing of the sector location of `ldlinux.sys`. Therefore, in BTRFS the entire `ldlinux.sys` code is embedded in the space following the VBR and is not installed at `/boot/syslinux/ldlinux.sys` unlike the case of other filesystems.
+    **Note:** In the case of [Btrfs](/index.php/Btrfs "Btrfs"), the above method will not work since files move around resulting in changing of the sector location of `ldlinux.sys`. Therefore, in Btrfs the entire `ldlinux.sys` code is embedded in the space following the VBR and is not installed at `/boot/syslinux/ldlinux.sys` unlike the case of other filesystems.
 
 5.  **Stage 3** - **Load `/boot/syslinux/ldlinux.c32`** - The `/boot/syslinux/ldlinux.sys` will load the `/boot/syslinux/ldlinux.c32` (core module) that contains the rest of the **core** part of syslinux that could not be fit into `ldlinux.sys` (due to file-size constraints). The `ldlinux.c32` file should be present in every Syslinux installation and should match the version of `ldlinux.sys` installed in the partition. Otherwise Syslinux will fail to boot. See [http://bugzilla.syslinux.org/show_bug.cgi?id=7](http://bugzilla.syslinux.org/show_bug.cgi?id=7) for more info.
 6.  **Stage 4** - **Search and Load configuration file** - Once Syslinux is fully loaded, it looks for `/boot/syslinux/syslinux.cfg` (or `/boot/syslinux/extlinux.conf` in some cases) and loads it if it is found. If no configuration file is found, you will be dropped to a Syslinux `boot:` prompt. This step and the rest of **non-core** parts of Syslinux (`/boot/syslinux/*.c32` modules, excluding `lib*.c32` and `ldlinux.c32`) require `/boot/syslinux/lib*.c32` (library) modules to be present ([http://www.syslinux.org/wiki/index.php/Common_Problems#ELF](http://www.syslinux.org/wiki/index.php/Common_Problems#ELF)). The `lib*.c32` library modules and non-core `*.c32` modules should match the version of `ldlinux.sys` installed in the partition.
@@ -81,7 +81,7 @@ Installing the package is not the same as installing the bootloader. After insta
 
 The `syslinux-install_update` script will install Syslinux, copy `*.c32` modules to `/boot/syslinux`, set the boot flag and install the boot code in the MBR. It can handle [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT") disks along with software RAID:
 
-If you use a separate boot partition make sure that it is mounted. Check with `lsblk`; if you do not see a `/boot` mountpoint, mount it before you go any further.
+If you use a separate boot partition, make sure that it is mounted. Check with `lsblk`; if you do not see a `/boot` mountpoint, mount it before you go any further.
 
 *   Run `syslinux-install_update` with flags: `-i` (install the files), `-a` (mark the partition *active* with the *boot* flag), `-m` (install the *MBR* boot code): `# syslinux-install_update -i -a -m` If this command fails with *Syslinux BIOS install failed*, the problem is likely that the `extlinux` binary could not find the partition containing `/boot`:
 
@@ -92,11 +92,11 @@ extlinux: cannot open device (null)
 
 ```
 
-This can happen for example when upgrading from [LILO](/index.php/LILO "LILO") which, while booting a current custom kernel, turned a kernel command line parameter of say `root=/dev/sda1` into its numeric equivalent `root=801`, as evidenced by `/proc/cmdline` and the output of the `mount` command. Remedy the situation by either continuing with the manual install described below while specifying `--device=/dev/sda1` to `extlinux`, or simply by first rebooting into a stock Arch Linux kernel; its use of an initramfs avoids the problem.
+This can happen, for example, when upgrading from [LILO](/index.php/LILO "LILO") which, while booting a current custom kernel, turned a kernel command line parameter of say `root=/dev/sda1` into its numeric equivalent `root=801`, as evidenced by `/proc/cmdline` and the output of the `mount` command. Remedy the situation by either continuing with the manual install described below while specifying `--device=/dev/sda1` to `extlinux`, or simply by first rebooting into a stock Arch Linux kernel; its use of an initramfs avoids the problem.
 
 **Note:**
 
-*   When you reboot your system now, you will have a Syslinux prompt. To automatically boot your system or get a boot menu, you still need to create a configuration file.
+*   If you rebooted your system now, you would get a Syslinux prompt. To automatically boot your system or get a boot menu, you need to create (edit) the configuration file.
 *   If you are on another root directory (e.g. from an install disk) install SYSLINUX by directing to the chroot:
 
 ```
@@ -137,7 +137,7 @@ After this, proceed to install the Syslinux boot code (`mbr.bin` or `gptmbr.bin`
 
 See the main article: [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record").
 
-Next you need to mark your boot partition as "active" in your partition table. Applications capable of doing this include `fdisk`, `cfdisk`, `sfdisk`, `parted/gparted` ("boot" flag). It should look like this:
+Next, you need to mark your boot partition as "active" in your partition table. Applications capable of doing this include `fdisk`, `cfdisk`, `sfdisk`, `parted/gparted` ("boot" flag). It should look like this:
 
  `# fdisk -l /dev/sda` 
 ```
@@ -190,7 +190,7 @@ Install the MBR:
 
 ```
 
-If this does not work you can also try:
+If this does not work, you can also try:
 
 ```
 # syslinux-install_update -i -m
@@ -213,15 +213,11 @@ If this does not work you can also try:
 
 ### Limitations of UEFI Syslinux
 
-*   UEFI Syslinux application `syslinux.efi` cannot be signed by `sbsign` (from sbsigntool) for UEFI Secure Boot. Bug report - [http://bugzilla.syslinux.org/show_bug.cgi?id=8](http://bugzilla.syslinux.org/show_bug.cgi?id=8)
-
-*   Using TAB to edit kernel parameters in UEFI Syslinux menu might lead to garbaged display (text on top of one-another). Bug report - [http://bugzilla.syslinux.org/show_bug.cgi?id=9](http://bugzilla.syslinux.org/show_bug.cgi?id=9)
-
-*   UEFI Syslinux does not support chainloading other EFI applications like `UEFI Shell` or `Windows Boot Manager`. Enhancement request - [http://bugzilla.syslinux.org/show_bug.cgi?id=17](http://bugzilla.syslinux.org/show_bug.cgi?id=17)
-
-*   In some cases, UEFI Syslinux might not boot in some Virtual Machines like QEMU/OVMF or VirtualBox or some VMware products/versions and in some UEFI emulation environments like DUET. A Syslinux contributor has confirmed no such issues present on VMware Workstation 10.0.2 and Syslinux-6.02 or later. Bug reports - [http://bugzilla.syslinux.org/show_bug.cgi?id=21](http://bugzilla.syslinux.org/show_bug.cgi?id=21) and [http://bugzilla.syslinux.org/show_bug.cgi?id=23](http://bugzilla.syslinux.org/show_bug.cgi?id=23)
-
-*   Memdisk is not available for UEFI. Enhancement request - [http://bugzilla.syslinux.org/show_bug.cgi?id=30](http://bugzilla.syslinux.org/show_bug.cgi?id=30)
+*   UEFI Syslinux application `syslinux.efi` cannot be signed by `sbsign` (from sbsigntool) for UEFI Secure Boot. Bug report: [[2]](http://bugzilla.syslinux.org/show_bug.cgi?id=8)
+*   Using TAB to edit kernel parameters in UEFI Syslinux menu might lead to garbaged display (text on top of one another). Bug report: [[3]](http://bugzilla.syslinux.org/show_bug.cgi?id=9)
+*   UEFI Syslinux does not support chainloading other EFI applications like `UEFI Shell` or `Windows Boot Manager`. Enhancement request: [[4]](http://bugzilla.syslinux.org/show_bug.cgi?id=17)
+*   In some cases, UEFI Syslinux might not boot in some Virtual Machines like QEMU/OVMF or VirtualBox or some VMware products/versions and in some UEFI emulation environments like DUET. A Syslinux contributor has confirmed no such issues present on VMware Workstation 10.0.2 and Syslinux-6.02 or later. Bug reports: [[5]](http://bugzilla.syslinux.org/show_bug.cgi?id=21), [[6]](http://bugzilla.syslinux.org/show_bug.cgi?id=23) and [[7]](http://bugzilla.syslinux.org/show_bug.cgi?id=72)
+*   Memdisk is not available for UEFI. Enhancement request: [[8]](http://bugzilla.syslinux.org/show_bug.cgi?id=30)
 
 ### Installation on UEFI
 
@@ -268,7 +264,7 @@ The bootloader will look for either `syslinux.cfg` (preferred) or `extlinux.conf
 
 #### Boot prompt
 
-This is a simple configuration file that will show a `boot:` prompt and automatically boot after 5 seconds. If you want to boot directly without seeing a prompt, set `PROMPT` to `0`.
+This is a simple configuration file that will show a `boot:` prompt and will automatically boot after 5 seconds. If you want to boot directly without seeing a prompt, set `PROMPT` to `0`.
 
 Configuration:
 
@@ -339,7 +335,7 @@ Syslinux also allows you to use a graphical boot menu. To use it, copy the `vesa
 
 Copying additional `lib*.c32` library modules might be needed too.
 
-**Note:** If you are using [UEFI](/index.php/UEFI "UEFI") make sure to copy from `/usr/lib/syslinux/efi64/` (`efi32` for i686 systems), otherwise you will be presented with a black screen. In that case, boot from a live medium and use [chroot](/index.php/Chroot "Chroot") to make the appropriate changes.
+**Note:** If you are using [UEFI](/index.php/UEFI "UEFI"), make sure to copy from `/usr/lib/syslinux/efi64/` (`efi32` for i686 systems), otherwise you will be presented with a black screen. In that case, boot from a live medium and use [chroot](/index.php/Chroot "Chroot") to make the appropriate changes.
 
 This configuration uses the same menu design as the Arch Install CD, its config can be found at [projects.archlinux.org](https://projects.archlinux.org/archiso.git/tree/configs/releng/syslinux). The [Arch Linux background image](https://projects.archlinux.org/archiso.git/plain/configs/releng/syslinux/splash.png) can be downloaded from there, too. Copy the image to `/boot/syslinux/splash.png`.
 
@@ -457,7 +453,7 @@ A failure to do so will otherwise result in the following error message: `ERROR:
 
 ### Auto boot
 
-If you do not want to see the Syslinux menu at all, use the [#Boot prompt](#Boot_prompt), and set `PROMPT` to `0` and comment out any `UI` menu entries. Setting the `TIMEOUT` variable to `0` might also be a good idea. Make sure there is a `DEFAULT` set in your `syslinux.cfg`.
+If you do not want to see the Syslinux menu at all, use the [#Boot prompt](#Boot_prompt), and set `PROMPT` to `0` and comment out any `UI` menu entries. Setting the `TIMEOUT` variable to `0` might also be a good idea. Make sure there is a `DEFAULT` set in your `syslinux.cfg`. Holding either `Shift` or `Alt`, or setting either `Caps Lock` or `Scroll Lock`, during boot will allow for options other than default to be used. See the [upstream wiki](http://www.syslinux.org/wiki/index.php/Directives/special_keys) for additional alternatives.
 
 ### Security
 
@@ -707,15 +703,15 @@ to hide the menu while displaying only the timeout. Press any key to bring up th
 For BIOS clients, copy the `{l,}pxelinux.0` bootloader to the boot directory of the client. For version 5.00 and newer, also copy `ldlinux.c32` from the same package:
 
 ```
-# cp /usr/lib/syslinux/bios/pxelinux.0 "$root/boot"
-# cp /usr/lib/syslinux/bios/ldlinux.c32 "$root/boot"
-# mkdir "$root/boot/pxelinux.cfg"
+# cp /usr/lib/syslinux/bios/pxelinux.0 "*TFTP_root*/boot"
+# cp /usr/lib/syslinux/bios/ldlinux.c32 "*TFTP_root*/boot"
+# mkdir "*TFTP_root*/boot/pxelinux.cfg"
 
 ```
 
 We also created the `pxelinux.cfg` directory, which is where PXELINUX searches for configuration files by default. Because we do not want to discriminate between different host MACs, we then create the `default` configuration.
 
- `# vim "$root/boot/pxelinux.cfg/default"` 
+ `*TFTP_root*/boot/pxelinux.cfg/default` 
 ```
 default linux
 
@@ -742,7 +738,7 @@ Syslinux supports booting from ISO images directly using the [memdisk](http://ww
 
 ### Serial console
 
-To enable Serial Console add the `SERIAL port [baudrate]` to the top of `syslinux.cfg` file. "port" is a number (0 for `/dev/ttyS0`), if "baudrate" is omitted, the baud rate default is 9600 bps. The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[2]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D)
+To enable Serial Console add the `SERIAL port [baudrate]` to the top of `syslinux.cfg` file. "port" is a number (0 for `/dev/ttyS0`), if "baudrate" is omitted, the baud rate default is 9600 bps. The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[9]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D)
 
  `syslinux.cfg` 
 ```
@@ -750,7 +746,7 @@ SERIAL 0 115200
 
 ```
 
-Enable Serial Console in the kernel at boot by adding `console=tty0 console=ttyS0,115200n8` to the `APPEND` option.[[3]](http://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt#681)
+Enable Serial Console in the kernel at boot by adding `console=tty0 console=ttyS0,115200n8` to the `APPEND` option.[[10]](http://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt#681)
 
  `syslinux.cfg`  `APPEND root=UUID=126ca36d-c853-4f3a-9f46-cdd49d034ce4 rw console=tty0 console=ttyS0,115200n8` 
 
@@ -922,7 +918,7 @@ To get more detailed debug log, recompile the [syslinux](https://www.archlinux.o
 
 ### Btrfs compression
 
-Booting from btrfs with compression is not supported.[[4]](http://www.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
+Booting from btrfs with compression is not supported.[[11]](http://www.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
 
 ```
 btrfs: found compressed data, cannot continue!

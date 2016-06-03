@@ -91,7 +91,7 @@ At the final stage of early userspace, the real root is mounted, and then replac
 
 ## Display Manager
 
-If a [display manager](/index.php/Display_manager "Display manager") is installed, it will be executed on the configured tty, replacing the getty login prompt. If there is no display manager, getty will prompt the user for credentials by itself in a text-based manner, and proceed to call [login](#Login) itself.
+A [display manager](/index.php/Display_manager "Display manager") can be configured to replace the getty login prompt on a tty.
 
 ## Login
 

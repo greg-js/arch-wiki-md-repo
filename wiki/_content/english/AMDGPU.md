@@ -1,6 +1,6 @@
 **amdgpu** is the open source graphics driver for the latest AMD Radeon graphics cards.
 
-At the moment there is only support for the [Volcanic Islands](http://xorg.freedesktop.org/wiki/RadeonFeature/) and some cards of the [Sea Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) family. AMD has yet to decide to add support for older cards in the near future.
+At the moment there is support for the [Volcanic Islands](http://xorg.freedesktop.org/wiki/RadeonFeature/), some cards of the [Sea Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) family and the [Southern Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) family (more experimental than Sea Islands and coming only in Linux 4.8). AMD has absolutely no plans for supporting the pre-GCN GPUs.
 
 Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/index.php/ATI "ATI") or [AMD's proprietary](/index.php/AMD_Catalyst "AMD Catalyst") driver instead.
 
@@ -32,7 +32,7 @@ Support for [accelerated video decoding](#Enabling_video_acceleration) is provid
 
 **Warning:** This is still highly experimental, no official Arch Linux package exists yet
 
-AMD provides a binary driver userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. This hybrid approach allows the in-kernel component to be recompiled by the Arch Linux maintainers when required (e.g. on a kernel or Xorg update), while keeping the same binary userspace part. This should remedy the problem where the driver provided by AMD is out of date and incompatible with newer kernels or Xorg versions (a problem that was very common with the old [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver). For an detailed overview of the hybrid system, see [this article](http://www.phoronix.com/scan.php?page=news_item&px=MTgwODA).
+AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. This hybrid approach allows the in-kernel component to be recompiled by the Arch Linux maintainers when required (e.g. on a kernel or Xorg update), while keeping the same binary userspace part. This should remedy the problem where the driver provided by AMD is out of date and incompatible with newer kernels or Xorg versions (a problem that was very common with the old [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver). For an detailed overview of the hybrid system, see [this article](http://www.phoronix.com/scan.php?page=news_item&px=MTgwODA).
 
 The AMDGPU PRO driver provides OpenGL, OpenCL, Vulkan and VDPAU support. It aims to provide better performance than the open-source driver.
 
@@ -70,7 +70,7 @@ If it does not happen, then:
 
 **Tip:** If you have problems with the resolution, [Kernel mode setting#Forcing modes and EDID](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") may help.
 
-[Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) is supported by the radeon driver and is mandatory and enabled by default.
+[Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) is supported by the amdgpu driver and is mandatory and enabled by default.
 
 KMS is typically initialized after the [initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process"). It is possible, however, to enable KMS during the initramfs stage. To do this, add the `amdgpu` module to the `MODULES` line in `/etc/mkinitcpio.conf`:
 
@@ -92,7 +92,7 @@ The change takes effect at the next reboot.
 
 ### Enabling video acceleration
 
-[VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") can be installed to provide hardware accelerated video encoding and decoding.
+See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
 ## Enable amdgpu for Sea Islands Cards
 
@@ -111,7 +111,7 @@ It may also be needed to use the `amdgpu.exp_hw_support=1` [[2]](https://www.pho
 
 ## Disable radeon driver
 
-To prevent `radeon` from loading, you can disable it in the Kconfig or [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `radeon` module.
+To prevent `radeon` from loading, you can disable it in the Kconfig or [blacklist](/index.php/Blacklist "Blacklist") the `radeon` module.
 
  `/etc/modprobe.d/radeon.conf`  `blacklist radeon` 
 

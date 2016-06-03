@@ -201,6 +201,8 @@ gap_X = 840,
 
 The `alignment` option is trivial, and `gap_X` option is the distance, in pixels, from the left border of your screen.
 
+The `xinerama_head` option might also need to be set.
+
 ### Do not minimize on Show Desktop
 
 **Using Compiz:** If the 'Show Desktop' button or key-binding minimizes Conky along with all other windows, start the Compiz configuration settings manager, go to "General Options" and uncheck the "Hide Skip Taskbar Windows" option.
@@ -259,7 +261,7 @@ own_window_transparent yes
 
 ### Display package update information
 
-*   [Pacman](/index.php/Pacman "Pacman") provides an own script called `checkupdates` which displays package updates from the official repos. Use `${execpi 3600 checkupdates | wc -l}` to display the total number of packages.
+*   [Pacman](/index.php/Pacman "Pacman") provides its own script called `checkupdates` which displays package updates from the official repos. Use `${execpi 3600 checkupdates | wc -l}` to display the total number of packages.
 *   [Paconky](https://bbs.archlinux.org/viewtopic.php?id=68104) - Displays package update information in a user-defined format. The output of this program can be included in Conky with the `${execpi}` command.
 *   [Scrolling Notifications](https://bbs.archlinux.org/viewtopic.php?id=53761) - Prints scrolling update notifications. From the author of *paconky*.
 *   [Perl Script](https://bbs.archlinux.org/viewtopic.php?id=57291) - Simpler and earlier script from the author of *paconky*. Prints only the number of packages needing an update.

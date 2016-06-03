@@ -130,7 +130,7 @@ polkit.addRule(function(action, subject) {
 
 #### 基于文件的权限授权
 
-To define file-based permissions for users in the *libvirt* group to manage virtual machines, uncomment and define:
+为了给 *libvirt* 组用户定义基于文件的权限以管理虚拟机，取消下列行的注释：
 
  `/etc/libvirt/libvirtd.conf` 
 ```
@@ -142,7 +142,7 @@ To define file-based permissions for users in the *libvirt* group to manage virt
 
 ```
 
-While some guides mention changed permissions of certain libvirt directories to ease management, keep in mind permissions are lost on package update. To edit these system directories, root user is expected.
+有些资料提到可以通过改变某些特定 libvirt 目录的权限以简化管理。需要记住的是：包更新时，这些变更会丢失。如要修改这些系统目录的权限，需要 root 用户权限。
 
 ### 守护进程
 

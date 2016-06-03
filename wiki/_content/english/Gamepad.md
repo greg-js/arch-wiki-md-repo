@@ -585,6 +585,8 @@ Then replug the device making you trouble. The joystick and event devices should
 
 ### Steam Controller Not Pairing
 
+If you want your system to be able to recognise Steam controller after hot swapping between wireless and wired connection, and also want system to recognise Steam controller if connected via micro-usb cable while wireless dongle is plugged in, you need to do instructions below. Otherwise, Steam controller will behave just as keyboard/mouse devise after hot swapping or unrecognised at all by steam and games.
+
 If the Steam Controller will not pair wirelessly but works when wired make you may need to create the following udev rule, suggested by Valve[[1]](https://steamcommunity.com/app/353370/discussions/0/490123197956024380/).
 
 `/lib/udev/rules.d/99-steam-controller-perms.rules`
@@ -593,12 +595,12 @@ If the Steam Controller will not pair wirelessly but works when wired make you m
 # This rule is needed for basic functionality of the controller in Steam and keyboard/mouse emulation
 SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666"
 
-# This rule is necessary for gamepad emulation; make sure you replace 'pgriffais' with a group that the user that runs Steam belongs to
+# This rule is necessary for gamepad emulation; make sure you add yourself to 'steamcontroller' group
 KERNEL=="uinput", MODE="0660", GROUP="steamcontroller", OPTIONS+="static_node=uinput"
 
 ```
 
-Additionally, create a group of steam controller users.
+Create a group of steam controller users.
 
 ```
 # groupadd steamcontroller

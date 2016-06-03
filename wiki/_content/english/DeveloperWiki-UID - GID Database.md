@@ -78,8 +78,9 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | nobody | 99 |
 | [polkit](https://www.archlinux.org/packages/?name=polkit) | polkitd | 102 |
  nm-openconnect | 104 |
- git | 105 |
+ gitlab | 105 |
  cherokee | 106 |
+ gitlab-runner | 107 |
  partimag | 110 |
 | [x2goserver](https://www.archlinux.org/packages/?name=x2goserver) | x2gouser | 111 |
 | [x2goserver](https://www.archlinux.org/packages/?name=x2goserver) | x2goprint | 112 |
@@ -209,8 +210,9 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | users | 100 |
 | [polkit](https://www.archlinux.org/packages/?name=polkit) | polkitd | 102 |
  nm-openconnect | 104 |
- git | 105 |
+ gitlab | 105 |
  cherokee | 106 |
+ gitlab-runner | 107 |
  vboxusers | 108 |
  vboxsf | 109 |
  partimag | 110 |

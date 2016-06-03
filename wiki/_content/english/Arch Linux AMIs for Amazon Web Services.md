@@ -28,7 +28,7 @@ These were updated as of 2012-10-19.
 
 ### Other AMIs
 
-Verified working public arch liunx AMIs are below
+Verified working public arch linux AMIs are below
 
 ```
 AMI          Store Build   Release     Kernel Last verified

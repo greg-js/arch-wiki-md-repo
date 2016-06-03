@@ -85,4 +85,4 @@ Users have [reported](http://forum.unity3d.com/threads/unity-on-arch-manjaro-lin
 
 ### Unity crashes if ~/.config/user-dirs.dirs is missing
 
-See how to generate the xdg files here: [Xdg user directories](/index.php/Xdg_user_directories "Xdg user directories")
+See how to generate the xdg files here: [XDG user directories](/index.php/XDG_user_directories "XDG user directories")

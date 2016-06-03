@@ -52,7 +52,7 @@ Point the current boot device to the drive containing the Arch installation medi
 
 When the Arch menu appears, select *Boot Arch Linux* and press `Enter` to enter the installation environment. See [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) for a list of [boot parameters](/index.php/Kernel_parameters#Configuration "Kernel parameters").
 
-You will be logged in as the root user and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt. *Zsh* provides advanced [tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html) and other features as part of the [grml config](http://grml.org/zsh/). For modifying or creating configuration files, typically in `/etc`, [nano](/index.php/Nano#Usage "Nano") and [vim](/index.php/Vim#Usage "Vim") are suggested.
+You will be logged in as the root user and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt. *Zsh* provides advanced [tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html) and other features as part of the [grml config](http://grml.org/zsh/). For [modifying or creating](/index.php/Create "Create") configuration files, typically in `/etc`, [nano](/index.php/Nano#Usage "Nano") and [vim](/index.php/Vim#Usage "Vim") are suggested.
 
 ### UEFI mode
 
@@ -198,8 +198,8 @@ Any existing partition table can be identified with the following command for ea
 For each device to be partitioned, a proper tool must be chosen according to the partition table to be used. Several partitioning tools are provided by the Arch installation medium, including:
 
 *   [parted](/index.php/Parted "Parted"): GPT and MBR
-*   [fdisk](/index.php/Fdisk#Fdisk_usage_summary "Fdisk"), **cfdisk**, **sfdisk**: GPT and MBR
-*   [gdisk](/index.php/Gdisk#Gdisk_usage_summary "Gdisk"), **cgdisk**, **sgdisk**: GPT
+*   [fdisk](/index.php/Fdisk#Usage "Fdisk"), **cfdisk**, **sfdisk**: GPT and MBR
+*   [gdisk](/index.php/Gdisk "Gdisk"), **cgdisk**, **sgdisk**: GPT
 
 Devices may also be partitioned before booting the installation media, for example through tools such as [GParted](/index.php/GParted "GParted") (also provided as a [live CD](http://gparted.sourceforge.net/livecd.php)).
 
@@ -309,7 +309,7 @@ The following command will be used to flag the partition that contains the `/boo
 
 #### UEFI/GPT examples
 
-In every instance, a special bootable [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") is required.
+In every instance, a special bootable [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is required.
 
 If creating a new EFI System Partition, use the following commands (a size of 512MiB is suggested):
 
@@ -459,7 +459,7 @@ Check the resulting file in `/mnt/etc/fstab` afterwards, and edit it in case of 
 
 ### Change root
 
-Copy any other configuration files to the new system in `/mnt` (such as netctl profiles in `/etc/netctl`), then [chroot](/index.php/Chroot "Chroot") to it:
+Copy netctl profiles in `/etc/netctl` to the new system in `/mnt` (when applicable), then [chroot](/index.php/Chroot "Chroot") to it:
 
 ```
 # arch-chroot /mnt /bin/bash
@@ -477,7 +477,7 @@ Possible values are listed in `/etc/locale.gen`. Uncomment `en_US.UTF-8 UTF-8`, 
 
 ```
 
-Create `/etc/locale.conf`, where `LANG` refers to the *first column* of an uncommented entry in `/etc/locale.gen`:
+[Create](/index.php/Create "Create") `/etc/locale.conf`, where `LANG` refers to the *first column* of an uncommented entry in `/etc/locale.gen`:
 
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 
@@ -531,7 +531,7 @@ See [Boot loaders](/index.php/Boot_loaders "Boot loaders") for available choices
 
 #### UEFI/GPT
 
-Here, the installation drive is assumed to be GPT-partioned, and have the [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") (gdisk type `EF00`, formatted with FAT32) mounted at `/boot`.
+Here, the installation drive is assumed to be GPT-partioned, and have the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (gdisk type `EF00`, formatted with FAT32) mounted at `/boot`.
 
 Install [systemd-boot](/index.php/Systemd-boot "Systemd-boot") to the EFI system partition:
 
@@ -573,11 +573,11 @@ The procedure is similar to [#Connect to the Internet](#Connect_to_the_Internet)
 
 #### Hostname
 
-Set the [hostname](/index.php/Hostname "Hostname") to your liking:
+Set the [hostname](/index.php/Hostname "Hostname") to your liking by [adding](/index.php/Add "Add") *myhostname* to the following file, where *myhostname* is the hostname you wish to set:
 
  `/etc/hostname`  `*myhostname*` 
 
-It is recommended to append the same hostname to `localhost` entries in `/etc/hosts`. See [Network configuration#Set the hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration") for details.
+It is recommended to [append](/index.php/Append "Append") the same hostname to `localhost` entries in `/etc/hosts`. See [Network configuration#Set the hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration") for details.
 
 #### Wired
 

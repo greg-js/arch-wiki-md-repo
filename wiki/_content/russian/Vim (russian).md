@@ -335,9 +335,9 @@ nnoremap <C-l> :TlistToggle<CR>
 
 ### Конфигурация
 
-*   [nion](http://nion.modprobe.de/setup/vimrc)
+*   [nion](https://web.archive.org/web/20131020125020/http://nion.modprobe.de/setup/vimrc)
 *   [Детальная конфигурация от Amir Salihefendic](http://amix.dk/vim/vimrc.html)
-*   [Bart Trojanowski](http://www.jukie.net/~bart/conf/vimrc)
+*   [Bart Trojanowski](https://web.archive.org/web/20131004071740/http://www.jukie.net/~bart/conf/vimrc)
 *   [Дистрибьютор Vim Steve Francia](https://github.com/spf13/spf13-vim)
 *   [Конфигурация Vim W4RH4W](https://github.com/W4RH4WK/dotVim)
 *   [vimrc/colorscheme от askapache](http://www.askapache.com/linux/fast-vimrc.html)

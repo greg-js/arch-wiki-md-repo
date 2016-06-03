@@ -167,7 +167,7 @@ $ echo test | sendmail user
 
 *user* can check his/her mail in with any [reader](/index.php/Category:Email_clients "Category:Email clients") able to handle mbox format, or just have a look at the file `/var/spool/mail/*user*`. If everything goes as expected, you can [enable](/index.php/Enable "Enable") opensmtpd for future boots.
 
-This approach has the advantage of not sending local cron notifications to a remote server. Not even network connection is needed. On the downside, you need a new daemon running.
+This approach has the advantage of not sending local cron notifications to a remote server. On the downside, you need a new daemon running.
 
 **Note:**
 
@@ -207,7 +207,7 @@ To solve this problem you can use the command chronic or sponge from [moreutils]
 
 	sponge reads standard input and writes it out to the specified file. Unlike a shell redirect, sponge soaks up all its input before opening the output file… If no output file is specified, sponge outputs to stdout.
 
-Even if it's not said chronic buffer the command output before opening its standard output (like sponge does).
+Chronic too buffers the command output before opening its standard output.
 
 ## Crontab format
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-6-1，点击[这里](https://wiki.archlinux.org/index.php?title=Mkinitcpio&diff=0&oldid=317583)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-14，点击[这里](https://wiki.archlinux.org/index.php?title=Mkinitcpio&diff=0&oldid=434079)可以查看翻译后英文页面的改动。
 
 **mkinitcpio**是新一代[initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")创建工具。
 
@@ -7,6 +7,7 @@
 *   [1 概览](#.E6.A6.82.E8.A7.88)
 *   [2 安装](#.E5.AE.89.E8.A3.85)
 *   [3 创建和启用镜像](#.E5.88.9B.E5.BB.BA.E5.92.8C.E5.90.AF.E7.94.A8.E9.95.9C.E5.83.8F)
+    *   [3.1 手动生成自定义的 initcpio](#.E6.89.8B.E5.8A.A8.E7.94.9F.E6.88.90.E8.87.AA.E5.AE.9A.E4.B9.89.E7.9A.84_initcpio)
 *   [4 配置](#.E9.85.8D.E7.BD.AE)
     *   [4.1 模块（MODULES）](#.E6.A8.A1.E5.9D.97.EF.BC.88MODULES.EF.BC.89)
     *   [4.2 附加文件（BINARIES、FILES）](#.E9.99.84.E5.8A.A0.E6.96.87.E4.BB.B6.EF.BC.88BINARIES.E3.80.81FILES.EF.BC.89)
@@ -14,12 +15,11 @@
         *   [4.3.1 编译钩子](#.E7.BC.96.E8.AF.91.E9.92.A9.E5.AD.90)
         *   [4.3.2 运行时钩子](#.E8.BF.90.E8.A1.8C.E6.97.B6.E9.92.A9.E5.AD.90)
         *   [4.3.3 常用钩子](#.E5.B8.B8.E7.94.A8.E9.92.A9.E5.AD.90)
-        *   [4.3.4 过时的钩子](#.E8.BF.87.E6.97.B6.E7.9A.84.E9.92.A9.E5.AD.90)
-        *   [4.3.5 编写钩子扩展](#.E7.BC.96.E5.86.99.E9.92.A9.E5.AD.90.E6.89.A9.E5.B1.95)
+        *   [4.3.4 编写钩子扩展](#.E7.BC.96.E5.86.99.E9.92.A9.E5.AD.90.E6.89.A9.E5.B1.95)
     *   [4.4 压缩方式(COMPRESSION)](#.E5.8E.8B.E7.BC.A9.E6.96.B9.E5.BC.8F.28COMPRESSION.29)
     *   [4.5 压缩选项(COMPRESSION_OPTIONS)](#.E5.8E.8B.E7.BC.A9.E9.80.89.E9.A1.B9.28COMPRESSION_OPTIONS.29)
 *   [5 运行时配置](#.E8.BF.90.E8.A1.8C.E6.97.B6.E9.85.8D.E7.BD.AE)
-    *   [5.1 init](#init)
+    *   [5.1 从基本钩子启动](#.E4.BB.8E.E5.9F.BA.E6.9C.AC.E9.92.A9.E5.AD.90.E5.90.AF.E5.8A.A8)
     *   [5.2 使用 RAID 磁盘阵列](#.E4.BD.BF.E7.94.A8_RAID_.E7.A3.81.E7.9B.98.E9.98.B5.E5.88.97)
     *   [5.3 使用 net](#.E4.BD.BF.E7.94.A8_net)
     *   [5.4 使用 lvm](#.E4.BD.BF.E7.94.A8_lvm)
@@ -27,6 +27,11 @@
     *   [5.6 /usr 放到单独分区](#.2Fusr_.E6.94.BE.E5.88.B0.E5.8D.95.E7.8B.AC.E5.88.86.E5.8C.BA)
 *   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [6.1 解压缩镜像](#.E8.A7.A3.E5.8E.8B.E7.BC.A9.E9.95.9C.E5.83.8F)
+    *   [6.2 "/dev must be mounted" when it already is](#.22.2Fdev_must_be_mounted.22_when_it_already_is)
+    *   [6.3 Using systemd HOOKS in a LUKS/LVM/resume setup](#Using_systemd_HOOKS_in_a_LUKS.2FLVM.2Fresume_setup)
+    *   [6.4 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
+    *   [6.5 Standard rescue procedures](#Standard_rescue_procedures)
+        *   [6.5.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
 *   [7 参考资料](#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99)
 
 ## 概览
@@ -39,7 +44,7 @@ mkinitcpio是一个用来创建初始化内存盘（initial ramdisk，简称init
 
 如今，根文件系统可能位于各种硬件上，如SCSI设备、SATA设备、U盘，而这些硬件受控于形形色色的厂家所提供的五花八门的驱动之下。另外，根系统可以加密、压缩，可存放在RAID阵列中，或者一个逻辑卷组上。为了简化这复杂的过程，可以把管理权转入一个用户空间：初始化内存盘。
 
-另见：[/dev/brain0 » Blog Archive » Early Userspace in Arch Linux](http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/)。
+另见：[/dev/brain0 » Blog Archive » Early Userspace in Arch Linux](https://web.archive.org/web/20150430223035/http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/)。
 
 用模块化的mkinitcpio构建初始化内存盘镜像（init ramfs cpio image），较之其他方法有诸多优势：
 
@@ -51,14 +56,7 @@ mkinitcpio是一个用来创建初始化内存盘（initial ramdisk，简称init
 
 ## 安装
 
-[mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio)软件包被收录于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")。作为[base](https://www.archlinux.org/groups/x86_64/base/)软件包组的一部分，应该已经自动安装了。
-
-高级用户可以从git获取 mkinitcpio 的最新开发版本：
-
-```
-$ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlinux.org/mkinitcpio.git)
-
-```
+[mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio)软件包被收录于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")。作为[linux](https://www.archlinux.org/packages/?name=linux)软件包组的一部分，应该已经自动安装了。高级用户可以从[mkinitcpio-git](https://aur.archlinux.org/packages/mkinitcpio-git/) 获取 mkinitcpio 的最新开发版本.
 
 **注意:** 若要使用git开发版本，强烈建议同时加入[arch-projectsarch-projects](https://mailman.archlinux.org/mailman/listinfo/arch-projects) 邮件列表！
 
@@ -77,6 +75,8 @@ $ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlin
 
 **警告:** 每次升级内核，系统都会自动使用**preset**文件重新生成内存盘镜像。不要轻易编辑这些文件。
 
+### 手动生成自定义的 initcpio
+
 使用其他配置文件创建镜像， 例如下面命令会根据`/etc/mkinitcpio-custom.conf`配置的内容生成镜像`/boot/linux-custom.img`.
 
 ```
@@ -87,7 +87,7 @@ $ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlin
 为其他不是当前正在运行的内核创建镜像，添加内核版本到命令行， 可以在`/usr/lib/modules`目录查看支持的内核版本.
 
 ```
-# mkinitcpio -g /boot/linux.img -k 3.3.0-ARCH
+ # mkinitcpio -g /boot/linux-custom2.img -k 3.3.0-ARCH
 
 ```
 
@@ -96,8 +96,6 @@ $ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlin
 **mkinitcpio**的主配置文件是`/etc/mkinitcpio.conf`。此外，内核软件包的预配置文件位于`/etc/mkinitcpio.d`（例如：`/etc/mkinitcpio.d/linux.preset`）。
 
 **警告:** **lvm2**、**mdadm**、**encrypt**支持默认是**关闭**的。如果需要使用这些钩子扩展，请仔细阅读本章。
-
-**注意:** 若使用多个拥有相同节点名、但内核模块不同的硬盘控制器（如两个SCSI/SATA或两个IDE控制器），应确保在`/etc/mkinitcpio.conf`中设置了正确的模块加载顺序。否则，系统无法确定根目录位置，导致崩溃（kernel panic）。 另一个更好的办法是使用[永久性块设备名称](/index.php/Persistent_block_device_naming "Persistent block device naming")。
 
 用户可以编辑配置文件中的六个变量：
 
@@ -123,7 +121,7 @@ $ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlin
 
 	`COMPRESSION_OPTIONS`
 
-	传递给压缩工具的额外参数。
+	传递给压缩工具的额外参数，不建议使用，可以自动根据压缩算法传递需要的参数(例如对 xz 传递 `--check=crc32` to xz), 手动设置了错误的参数可能导致系统无法启动。
 
 ### 模块（MODULES）
 
@@ -131,9 +129,13 @@ $ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlin
 
 如果模块名称前加上一个“?”问号，那么即使系统无法找到该模块也不会报错。对于自己编译的内核，其中内置了某些模块，该功能可能有用。
 
-**注意:** 如果使用**reiser4**，该模块*必须*放入`MODULES`数组。此外，如果运行mkinitcpio时未加载某些文件系统的模块，而系统启动时又必须使用这些文件系统——比如，LUKS加密密匙文件在**ext2**分区上，而使用mkinitcpio时系统并未挂载任何**ext2**分区——那么该文件系统的模块也必须放在`MODULES`数组。详情参见[此文](/index.php/System_Encryption_with_LUKS_for_dm-crypt#Storing_the_Key_File "System Encryption with LUKS for dm-crypt")。
+**注意:** 如果使用**reiser4**，该模块*必须*放入`MODULES`数组。此外，如果运行mkinitcpio时未加载某些文件系统的模块，而系统启动时又必须使用这些文件系统——比如，LUKS加密密匙文件在**ext2**分区上，而使用mkinitcpio时系统并未挂载任何**ext2**分区——那么该文件系统的模块也必须放在`MODULES`数组。详情参见 [此文](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration")。
 
 如果挂载root分区时需要上述任一模块，请将其加入`/etc/mkinitcpio.conf`，以避免内核崩溃。
+
+若使用多个拥有相同节点名、但内核模块不同的硬盘控制器（如两个SCSI/SATA或两个IDE控制器），应确保在`/etc/mkinitcpio.conf`中设置了正确的模块加载顺序。否则，系统无法确定根目录位置，导致崩溃（kernel panic）。另一个更好的办法是使用[永久性块设备名称](/index.php/Persistent_block_device_naming "Persistent block device naming")。
+
+从 Linux 4.4 开始，如果使用 NVME 设备，请将 **nvme** 添加到模块列表。
 
 ### 附加文件（BINARIES、FILES）
 
@@ -156,6 +158,8 @@ BINARIES="kexec"
 `HOOKS`设置是此文件中最重要的设置。Hooks 是一系列的小脚本，描述那些东西需要加入到镜像里面。有些钩子还包含了运行组建，在启动时执行特定动作，例如启动服务、构建存储栈等。Hooks 按照配置文件中`HOOKS`项中给出的顺序执行。
 
 默认的`HOOKS`可以满足大部分简单的单硬盘系统。对于[LVM](/index.php/LVM "LVM"), [mdadm](/index.php/Software_RAID_and_LVM "Software RAID and LVM") 或 [LUKS](/index.php/LUKS "LUKS") 等复杂根分区系统，请查看相应的 Wiki 页面。
+
+**PS/2 键盘用户** : 要在初始化早期阶段使用键盘，请把 **keyboard** 钩子加入 `HOOKS`. 个别的键盘无法自动检测到 i8042 控制器，出现 `i8042: PNP: No PS/2 controller found. Probing ports directly` 报错信息，导致无法使用键盘，请把 **atkbd** 加入 `MODULES`.
 
 #### 编译钩子
 
@@ -194,8 +198,8 @@ Runtime hooks are found in `/usr/lib/initcpio/hooks`. For any runtime hook, ther
 <caption>**当前钩子**</caption>
 | 钩子 | 安装 | 运行 |
 | **base** | 设置初始目录并安装基本工具和库，一般都需要将其加为第一个钩子。 | -- |
-| **systemd** | 在 initramfs 中安装一个基本的 systemd，会替代掉 'base', 'usr', 'udev' 和 'timestamp' 钩子。其它钩子目前还需要调整。从 systemd 207 开始，这个钩子和 lvm2 一起使用的时候可能会引起 boot 损坏。同属，可以考虑保留 'base' 钩子(放在 systemd 钩子前) 以确保 initramfs 中包含应急 shell. | -- |
-| **btrfs** | 加入启用 Btrfs 根目录和 subvolumes 需要的模块. | 如果没有 udev 钩子，会运行 "btrfs device scan" 生成多设备 btrfs 根文件系统。 |
+| **systemd** | 在 initramfs 中安装一个基本的 systemd，会替代掉 'base', 'usr', 'udev' 钩子。其它钩子目前还需要调整。 如果使用了其它 systemd 钩子("sd-*")，这个钩子是 **必须的**。 从 systemd 207 开始，这个钩子和 lvm2 一起使用的时候可能会引起 boot 损坏，请使用 *sd-lvm2* 钩子替代 *lvm2*。同属，可以考虑保留 'base' 钩子(放在 systemd 钩子前) 以确保 initramfs 中包含应急 shell. [systemd](https://www.archlinux.org/packages/?name=systemd) 217 此钩子还会安装从 [hibernation](/index.php/Hibernation "Hibernation") 恢复的服务和执行程序。 | -- |
+| **btrfs** | 加入启用 Btrfs 根目录和 subvolumes 需要的模块. | 如果没有 udev 钩子，会运行 "btrfs device scan" 生成多设备 btrfs 根文件系统。此钩子需要 [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)。 |
 | **udev** | 在镜像中加入 udevd, udevadm 和一小部分 udev 规则。 | 启动 udev 守护进程并处理内核的 uevents 事件，创建设备节点。简化了启动过程，用户不需要显示定义所需的模块，所以推荐使用。 |
 | **autodetect** | 通过生成模块白名单缩减 initramfs 的大小，白名单中仅包含 sysfs 中扫描到的模块。请确认加入的模块正确，没有少加模块。此钩子必须在其它子系统钩子前运行，以利于自动检测的优势。'autodetect' 前的模块会全部加入。 | -- |
 | **modconf** | 从 `/etc/modprobe.d` 和 `/usr/lib/modprobe.d`包含 modprobe 配置文件 | -- |
@@ -205,28 +209,19 @@ Runtime hooks are found in `/usr/lib/initcpio/hooks`. For any runtime hook, ther
 | **dmraid** | Provides support for fakeRAID root devices. You must have [dmraid](https://www.archlinux.org/packages/?name=dmraid) installed to use this. Note that it is preferred to use `mdadm` with the **mdadm_udev** hook with fakeRAID if your controller supports it. | Locates and assembles fakeRAID block devices using `dmraid`. |
 | **filesystems** | 加入需要的文件系统模块，只要没有在 MODULES 指定文件系统，就**必须**使用此钩子。 | -- |
 | **lvm2** | 添加设备映射内核模块和 `lvm` 工具。需要安装 [lvm2](https://www.archlinux.org/packages/?name=lvm2) 软件包。 | 启用所有 LVM2 卷组，如果 root 位于 LVM 这是必须的。 |
+| **sd-lvm2** | Use this hook instead of **lvm2** when using the **systemd** hook | Enables all LVM2 volume groups. This is necessary if you have your root file system on [LVM](/index.php/LVM "LVM"). |
 | **mdadm** | 从 `/etc/mdadm.conf` 读取或启动时自动检测磁盘阵列。请优先使用下面的 **mdadm_udev** 钩子。 | 用 `mdassemble` 定位并组合软 RAID 块设备。 |
 | **mdadm_udev** | 通过 udev 组合磁盘阵列。建议在二进制中包含 `mdmon` 并加入**shutdown** 钩子以避免重启时不必要的 raid 重建。 | 使用 `udev` 和 `mdadm` 组合软 RAID 块设备。 |
 | **encrypt** | 添加 **dm-crypt** 内核模块和 `cryptsetup` 工具。需要安装 [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) 软件包。 | 检查并解密 root 分区。详情参见 [#Runtime customization](#Runtime_customization)。 |
-| **resume** | -- | 尝试从 "磁盘休眠" 状态唤醒。同时支持 *swsusp* 和 *[suspend2](/index.php/Suspend2 "Suspend2")*. 参见 [#Runtime customization](#Runtime_customization) |
-| **keymap** | 从 [rc.conf](/index.php/Rc.conf "Rc.conf") 添加键盘映射和终端字体。 | 装入指定的键盘映射和终端字体。 |
-| **fsck** | 添加 fsck 程序和文件系统专用工具，如果添加在 **autodetect** 钩子后面，仅会添加根文件系统需要的工具。强烈推荐所用用户使用， /usr 单独分区的用户必须使用此钩子。 | 对根分区 (和单独分区的 /usr) 执行 fsck。 |
-| **shutdown** | 增加关机 initramfs 支持。如果使用单独 `/usr` 分区或加密 root 分区，强烈推荐使用此钩子。 | 卸载并关闭设备。 |
+| **resume** | -- | Tries to resume from the "suspend to disk" state. Works with both *swsusp* and *[TuxOnIce](/index.php/TuxOnIce "TuxOnIce")*. See [Hibernation](/index.php/Hibernation "Hibernation") for further configuration. Intended to work along with the `base` hook, the `systemd` hook provides its own resume mechanism. |
+| **keyboard** | Adds the necessary modules for keyboard devices. Use this if you have an USB keyboard and need it in early userspace (either for entering encryption passphrases or for use in an interactive shell). As a side effect, modules for some non-keyboard input devices might be added to, but this should not be relied on. | -- |
+| **keymap** | Adds the specified keymap(s) from `/etc/vconsole.conf` to the initramfs. | Loads the specified keymap(s) from `/etc/vconsole.conf` during early userspace. |
+| **consolefont** | Adds the specified console font from `/etc/vconsole.conf` to the initramfs. | Loads the specified console font from `/etc/vconsole.conf` during early userspace. |
+| **sd-vconsole** | Adds the keymap(s) and console font specified in `/etc/vconsole.conf` to the systemd-based initramfs. | Loads the specified keymap(s) and console font during early userspace. |
+| **sd-encrypt** | This hook allows for an encrypted root device with systemd initramfs. See the man page of systemd-cryptsetup-generator(8) for available kernel command line options. Alternatively, if the file `/etc/crypttab.initramfs` exists, it will be added to the initramfs as `/etc/crypttab`. See the crypttab(5) manpage for more information on crypttab syntax. | -- |
+| **fsck** | 添加 fsck 程序和文件系统专用工具，如果添加在 **autodetect** 钩子后面，仅会添加根文件系统需要的工具。强烈推荐所用用户使用， /usr 单独分区的用户必须使用此钩子。 | 对根分区 (和单独分区的 /usr) 执行 fsck。The use of this hook requires the rw parameter to be set on the kernel commandline ([discussion](https://bbs.archlinux.org/viewtopic.php?pid=1307895#p1307895)). |
+| **shutdown** | 增加关机 initramfs 支持，从 mkinitcpio 0.16 开始，已经 [不再需要](https://mailman.archlinux.org/pipermail/arch-dev-public/2013-December/025742.html)。 | 卸载并关闭设备。 |
 | **usr** | 加入对单独 `/usr` 分区的支持 | 在 root 挂载后挂载 `/usr` 分区. |
-
-#### 过时的钩子
-
-[mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio) 0.13.0 后，不推荐使用`usbinput`，请使用`keyboard`钩子。
-
-[mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio) 0.12.0 后，以下钩子不推荐使用，请使用`block`钩子替代。
-
-*   `fw`
-*   `mmc`
-*   `pata`
-*   `sata`
-*   `scsi`
-*   `usb`
-*   `virtio`
 
 #### 编写钩子扩展
 
@@ -270,7 +265,7 @@ Runtime hooks are found in `/usr/lib/initcpio/hooks`. For any runtime hook, ther
 
 ### 压缩方式(COMPRESSION)
 
-内核支持几种initramfs的压缩方式 - gzip, bzip2, lzma, xz (也被称为 lzma2), 以及 lzo。对于大多数使用的情况，gzip 或者 lzop 提供了基本的压缩大小和解压缩速度的平衡。
+内核支持几种initramfs的压缩方式 - gzip, bzip2, lzma, xz (也被称为 lzma2), lzo 和 lz4。对于大多数使用的情况，gzip, lzop, lz4 提供了基本的压缩大小和解压缩速度的平衡。
 
 ```
 COMPRESSION="gzip"
@@ -301,9 +296,7 @@ COMPRESSION_OPTIONS='-9'
 
 运行时配置选项可以通过内核命令行传递到 `init` 以及某些钩子。内核命令行参数通常是由启动引导器提供。参见 [Arch 启动过程](/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch boot process (简体中文)")和[Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")以获取更多信息。
 
-### init
-
-**注意:** 下面的选项改变了 `init` 在 initramfs 环境中的默认行为。参见 `/lib/initcpio/init` 获取更多信息。
+### 从基本钩子启动
 
 	`root`
 
@@ -314,10 +307,10 @@ root=/dev/sda1                                                # /dev 节点
 root=LABEL=CorsairF80                                         # 卷标
 root=UUID=ea1c4959-406c-45d0-a144-912f4e86b207                # UUID
 root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660            # GPT partition UUID
-root=/dev/disk/by-path/pci-0000:00:1f.2-scsi-0:0:0:0-part1    # udev 符号链接 (需要 **udev** 钩子)
-root=801                                                      # hex-encoded major/minor number
 
 ```
+
+**注意:** 下面的选项改变了 `init` 在 initramfs 环境中的默认行为。参见 `/lib/initcpio/init` 获取更多信息。
 
 	`break`
 
@@ -339,9 +332,9 @@ root=801                                                      # hex-encoded majo
 
 ### 使用 RAID 磁盘阵列
 
-首先，在 `/etc/mkinitcpio.conf` 文件中把 `mdadm` 钩子加入到 `HOOKS` 数组中，以及将任何需要的 RAID 模块(raid456, ext4)添加到 `MODULES` 数组中。
+首先，在 `/etc/mkinitcpio.conf` 文件中把 `mdadm_udev` 或 `mdadm` 钩子加入到 `HOOKS` 数组中，以及将任何需要的 RAID 模块(raid456, ext4)添加到 `MODULES` 数组中。
 
-**内核参数:** 使用 `mdadm` 钩子，你不再需要在 [GRUB](/index.php/GRUB "GRUB") 参数中配置你的 RAID 磁盘阵列。在启动过程中(init phase)，`mdadm` 钩子会或者使用你的 `/etc/mdadm.conf` 文件或者自动探测磁盘阵列。
+**内核参数:** 使用 `mdadm` 钩子，你不再需要在 [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") 参数中配置你的 RAID 磁盘阵列。在启动过程中(init phase)，`mdadm` 钩子会或者使用你的 `/etc/mdadm.conf` 文件或者自动探测磁盘阵列。
 
 也可通过使用 `mdadm_udev` 钩子，使用 udev 组装(assemble)。上游倾向于使用这个组装方法。`/etc/mdadm.conf` 仍然会被读取，目的是命名可能存在的已经组装的设备。
 
@@ -355,47 +348,18 @@ net 需要 [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkini
 
 **内核参数：**
 
+```
+[内核文档](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt)包含最新的信息和清晰的说明。
+
+```
+
 **ip=**
 
-一个接口的参数可以用短的格式，只有接口的名字(*eth0* 或者其他), 或者是长格式。( [内核文档](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt) )长格式由至多7个部分组成，之间用冒号分隔：
+This parameter tells the kernel how to configure IP addresses of devices and also how to set up the IP routing table. It can take up to nine arguments separated by colons: `ip=<client-ip>:<server-ip>:<gw-ip>:<netmask>:<hostname>:<device>:<autoconf>:<dns0-ip>:<dns1-ip>`.
 
-```
- ip=<client-ip>:<server-ip>:<gw-ip>:<netmask>:<hostname>:<device>:<autoconf>
- nfsaddrs= 是 ip= 一个别名，也可以使用。
+If this parameter is missing from the kernel command line, all fields are assumed to be empty, and the defaults mentioned in the [kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt) apply. In general this means that the kernel tries to configure everything using autoconfiguration.
 
-```
-
-*参数解释：*
-
-```
- <client-ip>   客户端的 IP 地址。如果为空，会通过 RARP/BOOTP/DHCP 确定。
-               使用的协议由 <autoconf> 参数确定，如果为空会使用 autoconf。
-
- <server-ip>   NFS 服务器的 IP 地址。如果 RARP 被用来确定客户端的 IP 地址，
-               且该参数非空，只有指定服务器的回应会接受。想使用不同的 RARP 
-               和 NFS 服务器，在这里指定你的 RARP 服务器 (或者设为空)，并且
-               在 `nfsroot' 中指定你的 NFS 服务器(见下)。如果这个字段为空，
-               服务器地址会使用响应 RARP/BOOTP/DHCP 请求的地址。
-
- <gw-ip>       如果服务器不在一个子网中，需要指定网关的 IP 地址。如果本条目为
-               空，不会使用网关，同时服务器被假定在局域网中，除非从 BOOTP/DHCP
-               接收到一个值。
-
- <netmask>     本地网络接口的子网掩码。如果为空，子网掩码会通过客户端 IP 的类
-               别确定，除非被 BOOTP/DHCP 响应覆盖。
-
- <hostname>    客户端的名称。如果为空，客户端 IP 地址会按照 ASCII 表示作为名
-               称，或者使用 BOOTP/DHCP 收到的值。
-
- <device>      使用的网络设备的名字。如果为空，所以设备都用来进行 RARP/BOOTP/
-               DHCP 请求，并且第一个回应会被配置。如果你只有一个设备，你可以安
-               全的留空。
-
- <autoconf>	用来自动配置的方法。如果这是'rarp', 'bootp', 或者 'dhcp' 
-               指定的协议会被使用。如果值是 'both', 'all' 或者为空，所有的
-               协议都会使用。'off', 'static' 或者 'none' 意味着没有自动配置。
-
-```
+The `<autoconf>` parameter can appear alone as the value to the 'ip' parameter (without all the ':' characters before). If the value is "ip=off" or "ip=none", no autoconfiguration will take place, otherwise autoconfiguration will take place. The most common way to use this is "ip=dhcp".
 
 *例子：*
 
@@ -405,6 +369,8 @@ net 需要 [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkini
  ip=:::::eth0:dhcp --> Enable dhcp protocol for eth0 configuration.
 
 ```
+
+**Note:** Make sure to use kernel device names (e.g. *eth0*) for the `<device>` parameter, and not [udev](/index.php/Network_configuration#Device_names "Network configuration") ones (e.g. *enp2s0*) as those will not work.
 
 **BOOTIF=** 使用多个网卡的时候，此参数可以指定要使用网卡的 Mac 地址。在接口号可能变化或与 IPAPPEND 2 、IPAPPEND 3 选项共用时比较有用。默认使用 eth0.
 
@@ -460,41 +426,20 @@ BOOTIF=01-A1-B2-C3-D4-E5-F6  # Note the prepended "01-" and capital letters.
 
 ### 使用 lvm
 
-如果你的根设备是在 lvm 上，你必须添加 **lvm2** 钩子。你必须在内核命令行传递根设备的参数，格式如下：
-
-```
-root=/dev/mapper/<volume group name>-<logical volume name>
-
-```
-
-例如
-
-```
-root=/dev/mapper/myvg-root
-
-```
+如果你的根设备是在[LVM](/index.php/LVM "LVM") 上，你必须添加 **lvm2** 钩子。请阅读 [这里](/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM "LVM").
 
 ### 使用加密根目录
 
-如果你的根卷是加密的，你需要添加 `encrypt` 钩子。
-
-要使用加密 root，使用类似下面这样的命令：
-
-```
-root=/dev/mapper/root cryptdevice=/dev/sda5:root
-
-```
-
-`/dev/sda5` 是加密设备，可以任意起名，这里设置为 `root`，解锁后挂载到 `/dev/mapper/root`。启动时，会提示输入密码解锁。详情参见 [LUKS#Configuration_of_initcpio](/index.php/LUKS#Configuration_of_initcpio "LUKS")。
+如果使用 [加密 root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"), `encrypt` 钩子需要加到 `filesystems` 和其它需要的钩子之前。并且需要一些额外的内核命令参数，请参考 [Dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration")。
 
 ### /usr 放到单独分区
 
 如果将 /usr 放在单独分区，必须满足：
 
-*   添加 shutdown 钩子，在关机进程会转到 initramfs 的副本拷贝，使 /usr 和 root 能够从 VFS 正常卸载。
+*   启用 `mkinitcpio-generate-shutdown-ramfs.service` **或** 添加 `shutdown` 钩子.
 *   添加 `fsck` 钩子，在`/etc/fstab`中将`/usr`的`passno`设置为`0`。这个对其他用户是推荐选项，而对 /usr 单独分区用户是硬性要求。不添加这个钩子，没有此选项，系统不好对`/usr`进行磁盘检查。
 *   从 mkinitcpio 0.9.0 开始: 添加上面的钩子和 `usr` 钩子，它会在 root 挂载后挂载 `/usr` 分区。
-*   在 0.9.0 之前，如果真正 root 中的 `/etc/fstab` 包含 `/usr`，将会自动挂载它。
+*   在 0.9.0 之前，如果真正 root 中的 `/etc/fstab` 包含 `/usr`，将会自动挂载它, 参考 [Fstab](/index.php/Fstab "Fstab").
 
 ## 疑难解答
 
@@ -527,8 +472,46 @@ $ lsinitcpio -a /boot/initramfs-linux.img
 
 ```
 
+### "/dev must be mounted" when it already is
+
+The test used by mkinitcpio to determine if /dev is mounted is to see if /dev/fd/ is there. If everything else looks fine, it can be "created" manually by:
+
+```
+# ln -s /proc/self/fd /dev/
+
+```
+
+(Obviously, /proc must be mounted as well. mkinitcpio requires that anyway, and that is the next thing it will check.)
+
+### Using systemd HOOKS in a LUKS/LVM/resume setup
+
+Using `systemd/sd-encrypt/sd-lvm2` **HOOKS** instead of the traditional `encrypt/lvm2/resume` requires different initrd parameters to be passed by your bootloader. See this post on forum for details [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1480241).
+
+### Possibly missing firmware for module XXXX
+
+When initramfs are being rebuild after a kernel update, you might get these two warnings:
+
+```
+==> WARNING: Possibly missing firmware for module: aic94xx
+==> WARNING: Possibly missing firmware for module: smsmdtv 
+
+```
+
+These appear to any Arch Linux users, especially those who have not installed these firmware modules. If you do not use hardware which uses these firmwares you can safely ignore this message.
+
+### Standard rescue procedures
+
+With an improper initial ram-disk a system often is unbootable. So follow a system rescue procedure like below:
+
+#### Boot succeeds on one machine and fails on another
+
+*mkinitcpio'*s `autodetect` hook filters unneeded [kernel modules](/index.php/Kernel_modules "Kernel modules") in the primary initramfs scanning `/sys` and the modules loaded at the time it is run. If you transfer your `/boot` directory to another machine and the boot sequence fails during early userspace, it may be because the new hardware is not detected due to missing kernel modules.
+
+To fix, first try choosing the [fallback](#Image_creation_and_activation) image from your [bootloader](/index.php/Bootloader "Bootloader"), as it is not filtered by `autodetect`. Once booted, run *mkinitcpio* on the new machine to rebuild the primary image with the correct modules. If the fallback image fails, try booting into an Arch Linux live CD/USB, chroot into the installation, and run *mkinitcpio* on the new machine. As a last resort, try [manually](#MODULES) adding modules to the initramfs.
+
 ## 参考资料
 
-1.  Linux Kernel documentation on [initramfs](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/filesystems/ramfs-rootfs-initramfs.txt;hb=HEAD)
-2.  Linux Kernel documentation on [initrd](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/initrd.txt;hb=HEAD)
-3.  Wikipedia article on [initrd](http://en.wikipedia.org/wiki/initrd)
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging") - 用 GRUB 调试
+*   Linux Kernel documentation on [initramfs](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/filesystems/ramfs-rootfs-initramfs.txt;hb=HEAD)
+*   Linux Kernel documentation on [initrd](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/initrd.txt;hb=HEAD)
+*   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")

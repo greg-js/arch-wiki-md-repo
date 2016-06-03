@@ -35,21 +35,19 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [3.2 "Failed to commit transaction (invalid or corrupted package)" error](#.22Failed_to_commit_transaction_.28invalid_or_corrupted_package.29.22_error)
     *   [3.3 "Failed to init transaction (unable to lock database)" error](#.22Failed_to_init_transaction_.28unable_to_lock_database.29.22_error)
     *   [3.4 Packages cannot be retrieved on installation](#Packages_cannot_be_retrieved_on_installation)
-    *   [3.5 The same package is upgraded repeatedly](#The_same_package_is_upgraded_repeatedly)
-    *   [3.6 Search for a package that contains a specific file](#Search_for_a_package_that_contains_a_specific_file)
-    *   [3.7 pacman is broken beyond repair](#pacman_is_broken_beyond_repair)
-    *   [3.8 pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade)
-    *   [3.9 pacman crashes the official installation media](#pacman_crashes_the_official_installation_media)
-    *   [3.10 "Unable to find root device" error after rebooting](#.22Unable_to_find_root_device.22_error_after_rebooting)
-    *   [3.11 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
-    *   [3.12 Request on importing PGP keys](#Request_on_importing_PGP_keys)
-    *   [3.13 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.2C_installation_failed)
-    *   [3.14 "Warning: current locale is invalid; using default "C" locale" error](#.22Warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.22_error)
-    *   [3.15 pacman does not honor proxy settings](#pacman_does_not_honor_proxy_settings)
-    *   [3.16 How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?](#How_do_I_reinstall_all_packages.2C_retaining_information_on_whether_something_was_explicitly_installed_or_as_a_dependency.3F)
-    *   [3.17 "Cannot open shared object file" error](#.22Cannot_open_shared_object_file.22_error)
-    *   [3.18 Freeze of package downloads](#Freeze_of_package_downloads)
-    *   [3.19 Failed retrieving file 'core.db' from mirror](#Failed_retrieving_file_.27core.db.27_from_mirror)
+    *   [3.5 Search for a package that contains a specific file](#Search_for_a_package_that_contains_a_specific_file)
+    *   [3.6 Manually reinstalling pacman](#Manually_reinstalling_pacman)
+    *   [3.7 pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade)
+    *   [3.8 "Unable to find root device" error after rebooting](#.22Unable_to_find_root_device.22_error_after_rebooting)
+    *   [3.9 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
+    *   [3.10 Request on importing PGP keys](#Request_on_importing_PGP_keys)
+    *   [3.11 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.2C_installation_failed)
+    *   [3.12 "Warning: current locale is invalid; using default "C" locale" error](#.22Warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.22_error)
+    *   [3.13 pacman does not honor proxy settings](#pacman_does_not_honor_proxy_settings)
+    *   [3.14 How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?](#How_do_I_reinstall_all_packages.2C_retaining_information_on_whether_something_was_explicitly_installed_or_as_a_dependency.3F)
+    *   [3.15 "Cannot open shared object file" error](#.22Cannot_open_shared_object_file.22_error)
+    *   [3.16 Freeze of package downloads](#Freeze_of_package_downloads)
+    *   [3.17 Failed retrieving file 'core.db' from mirror](#Failed_retrieving_file_.27core.db.27_from_mirror)
 *   [4 See also](#See_also)
 
 ## Usage
@@ -386,21 +384,21 @@ Download a package without installing it:
 Install a 'local' package that is not from a remote repository (e.g. the package is from the [AUR](/index.php/AUR "AUR")):
 
 ```
-# pacman -U /path/to/package/package_name-version.pkg.tar.xz
+# pacman -U */path/to/package/package_name-version.pkg.tar.xz*
 
 ```
 
 To keep a copy of the local package in *pacman'*s cache, use:
 
 ```
-# pacman -U file:///path/to/package/package_name-version.pkg.tar.xz
+# pacman -U file:///*path/to/package/package_name-version.pkg.tar.xz*
 
 ```
 
 Install a 'remote' package (not from a repository stated in *pacman'*s configuration files):
 
 ```
-# pacman -U http://www.example.com/repo/example.pkg.tar.xz
+# pacman -U *http://www.example.com/repo/example.pkg.tar.xz*
 
 ```
 
@@ -503,18 +501,18 @@ NoExtract = usr/share/vim/vim74/lang/*
 
 Later rules override previous ones, and you can negate a rule by prepending `!` — this allows you to keep the locales you need.
 
-**Tip:** Since pacman 5, while updating a package for which locales have been cleared by *localepurge* or *bleachbit*, *pacman* issues warning messages about the missing locales. Commenting the `CheckSpace` option in `pacman.conf` suppresses such warnings, but consider that the space-checking functionality will be disabled for all packages.
+**Tip:** *pacman* issues warning messages about missing locales when updating a package for which locales have been cleared by *localepurge* or *bleachbit*. Commenting the `CheckSpace` option in `pacman.conf` suppresses such warnings, but consider that the space-checking functionality will be disabled for all packages.
 
 #### Maintain several configuration files
 
 If you have several configuration files (e.g. main configuration and configuration with [testing](/index.php/Testing "Testing") repository enabled) and would have to share options between configurations you may use `Include` option declared in the configuration files, e.g.:
 
 ```
-Include = /path/to/common/settings
+Include = */path/to/common/settings*
 
 ```
 
-where `/path/to/common/settings` file contains the same options for both configurations.
+where `*/path/to/common/settings*` file contains the same options for both configurations.
 
 #### Hooks
 
@@ -532,7 +530,7 @@ Each repository section allows defining the list of its mirrors directly or in a
 
 #### Package security
 
-*pacman* 4 supports package signatures, which add an extra layer of security to the packages. The default configuration, `SigLevel = Required DatabaseOptional`, enables signature verification for all the packages on a global level: this can be overridden by per-repository `SigLevel` lines. For more details on package signing and signature verification, take a look at [pacman-key](/index.php/Pacman-key "Pacman-key").
+*pacman* supports package signatures, which add an extra layer of security to the packages. The default configuration, `SigLevel = Required DatabaseOptional`, enables signature verification for all the packages on a global level: this can be overridden by per-repository `SigLevel` lines. For more details on package signing and signature verification, take a look at [pacman-key](/index.php/Pacman-key "Pacman-key").
 
 ## Troubleshooting
 
@@ -588,23 +586,37 @@ It could also be that the repository containing the package is not enabled on yo
 
 See also [FAQ#Why is there only a single version of each shared library in the official repositories?](/index.php/FAQ#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F "FAQ").
 
-### The same package is upgraded repeatedly
-
-**Note:** *pacman* version 3.4 should display an error in case of duplicate entries, which should make this note obsolete.
-
-This is due to duplicate entries in `/var/lib/pacman/local/`, such as two `linux` instances. `pacman -Qi` outputs the correct version, but `pacman -Qu` recognizes the old version and therefore will attempt to upgrade.
-
-The solution is to delete the offending entry in `/var/lib/pacman/local/`.
-
 ### Search for a package that contains a specific file
 
 Install [pkgfile](/index.php/Pkgfile "Pkgfile") which uses a separate database with all files and their associated packages.
 
-### pacman is broken beyond repair
+### Manually reinstalling pacman
 
-In the case that *pacman* is broken beyond repair, manually download the necessary packages ([openssl](https://www.archlinux.org/packages/?name=openssl), [libarchive](https://www.archlinux.org/packages/?name=libarchive), and [pacman](https://www.archlinux.org/packages/?name=pacman)) and extract them to root. The *pacman* binary will be restored along with its default configuration file. Afterwards, reinstall these packages with *pacman* to maintain package database integrity. Additional information and an example (outdated) script that automates the process is available in [this](https://bbs.archlinux.org/viewtopic.php?id=95007) forum post.
+**Warning:** It is extremely easy to break your system even worse using this approach. Use this only as a last resort if the method from [#pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade) is not an option.
 
-Alternatively, you can also use an Arch live media and follow [#pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade) to re-install pacman.
+Even if *pacman* is terribly broken, you can fix it manually by downloading the latest packages and extracting them to the correct locations. The rough steps to perform are
+
+1.  Determine dependencies to install
+2.  Download each package from a mirror of your choice
+3.  Extract each package to root
+4.  Reinstall these packages with `pacman -Sf` to update the package database accordingly
+5.  Do a full system upgrade
+
+If you have a healthy Arch system on hand, you can see the full list of dependencies with
+
+```
+$ pacman -Q $(pactree -u pacman)
+
+```
+
+but you may only need to update a few of them depending on your issue. An example of extracting a package is
+
+```
+# tar -xvpwf *package.tar.xz* -C / --exclude .PKGINFO --exclude .INSTALL
+
+```
+
+Note the use of the `w` flag for interactive mode. Running non-interactively is very risky since you might end up overwriting an important file. Also take care to extract packages in the correct order (i.e. dependencies first). [This forum post](https://bbs.archlinux.org/viewtopic.php?id=95007) contains an example of this process where only a couple *pacman* dependencies are broken.
 
 ### pacman crashes during an upgrade
 
@@ -615,14 +627,6 @@ In the case that *pacman* crashes with a "database write" error while removing p
 3.  If the system uses default database and directory locations, you can now update the system's pacman database and upgrade it via `pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -Syyu` as root.
 4.  After the upgrade, one way to double-check for not upgraded but still broken packages: `find /mnt/usr/lib -size 0`
 5.  Followed by a re-install of any still broken package via `pacman --root /mnt --cachedir=/mnt/var/cache/pacman/pkg -S *package*`.
-
-### pacman crashes the official installation media
-
-The official installation media (ISO) before version 10.2015 are not setup to be updated itself at runtime. Running `pacman -Syu` from a booted install media console may crash unexpectedly any time, as soon as memory is depleted. This happens because the install media image build reports an arbitrary capacity (of 32GB) to pacman, regardless of available free memory.[[3]](https://bugs.archlinux.org/task/45618#comment137346) At the same time the ISO reserves only a low static memory allotment for operations (`/run/archiso/cowspace` of `256MB` RAM) of the live system, in order to allow installation on machines with low resources. If the machine has more RAM available, you can override the allotment by setting the `cow_spacesize=` kernel option for the ISO manually, e.g. `cow_spacesize=2GB`.
-
-If you use the install media to update an installed system, you simply have to use the `--root=` option along with a `--cachedir=` path to point pacman to available real storage. For example, see [#pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade).
-
-If you *require* an install media with persistent dataspace, the [Archiso](/index.php/Archiso "Archiso") build script can be used to create one along with its [boot options](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams).
 
 ### "Unable to find root device" error after rebooting
 
@@ -707,7 +711,7 @@ That's it. Update the rest of the system.
 
 ### Freeze of package downloads
 
-Some issues have been reported regarding network problems that prevent *pacman* from updating/synchronizing repositories. [[4]](https://bbs.archlinux.org/viewtopic.php?id=68944) [[5]](https://bbs.archlinux.org/viewtopic.php?id=65728) When installing Arch Linux natively, these issues have been resolved by replacing the default *pacman* file downloader with an alternative (see [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance") for more details). When installing Arch Linux as a guest OS in [VirtualBox](/index.php/VirtualBox "VirtualBox"), this issue has also been addressed by using *Host interface* instead of *NAT* in the machine properties.
+Some issues have been reported regarding network problems that prevent *pacman* from updating/synchronizing repositories. [[3]](https://bbs.archlinux.org/viewtopic.php?id=68944) [[4]](https://bbs.archlinux.org/viewtopic.php?id=65728) When installing Arch Linux natively, these issues have been resolved by replacing the default *pacman* file downloader with an alternative (see [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance") for more details). When installing Arch Linux as a guest OS in [VirtualBox](/index.php/VirtualBox "VirtualBox"), this issue has also been addressed by using *Host interface* instead of *NAT* in the machine properties.
 
 ### Failed retrieving file 'core.db' from mirror
 

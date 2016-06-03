@@ -105,13 +105,17 @@ There are also a few online solutions that let you create TeX-based documents wi
 
 	[https://www.overleaf.com/](https://www.overleaf.com/) ||
 
-*   **cloudTeX** — Social TeX in the cloud.
-
-	[https://cloud-tex.com/](https://cloud-tex.com/) ||
-
 *   **Papeeria** — Online LaTeX editor.
 
-	[http://papeeria.com/](http://papeeria.com/) ||
+	[https://papeeria.com/](https://papeeria.com/) ||
+
+*   **TeXBin** — A minimalistic online LaTeX editor.
+
+	[https://texbin.io/](https://texbin.io/) ||
+
+*   **cloudTeX** — Social TeX in the cloud.
+
+	[https://cloud-tex.com/](https://cloud-tex.com/) || 
 
 Find more on the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions).
 

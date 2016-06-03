@@ -79,9 +79,12 @@ forward / localhost:8123
 
 Using an ad blocking extension in a web browser can increase page load time. Additionally, extensions like AdBlock Plus are not supported by all browsers. A useful alternative is to install system-wide ad blocking by setting a proxy address in your preferred browser.
 
-Once Privoxy has been installed download and install the Opera urlfilter importer from [AUR](/index.php/AUR "AUR") (i.e. [blocklist-to-privoxy](https://aur.archlinux.org/packages/blocklist-to-privoxy/?ID=63431)). You can optionally use an [AUR Helper](/index.php/AUR_Helper "AUR Helper") to do so.
+You can use adblock plus filters. The [privoxy blocklist](https://github.com/Andrwe/privoxy-blocklist) script automatically downloads adblock plus filters, converts them to a privoxy friendly format, and edits privoxy's config file to include those filters:
 
-You can use adblock plus filters instead of the above "opera-fanboy" filters (fanboy filters haven't been updated in a long time anyway). The script here ([https://github.com/Andrwe/privoxy-blocklist](https://github.com/Andrwe/privoxy-blocklist)) automatically downloads adblock plus filters, converts them to a privoxy friendly format, and edits privoxy's config file to include those filters. 1) Run this script once to create /etc/conf.d/privoxy-blacklist 2) edit /etc/conf.d/privoxy-blacklist, and uncomment the line that says "PRIVOXY_USER=" and the two lines below it. 3) Run the script again to download and install the blocklists. 4) restart privoxy.
+1.  Run the script once to create `/etc/conf.d/privoxy-blacklist`
+2.  Edit `/etc/conf.d/privoxy-blacklist` to uncomment the line `PRIVOXY_USER=` and the two lines below it.
+3.  Run the script again to download and install the blocklists.
+4.  Restart privoxy.
 
 To block tracking via embedded Facebook "Like" button, Twitter "follow", and Google Plus "+1", edit `/etc/privoxy/user.action` and add these lines to the end:
 
@@ -124,6 +127,8 @@ Alternatively you can set `http_proxy` environment variable, which is respected 
 http_proxy="http://localhost:8118"
 
 ```
+
+Privoxy can be tested by accessing the link [http://p.p](http://p.p)
 
 ## See also
 

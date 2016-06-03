@@ -92,13 +92,6 @@ Download the pre-boot authorization (PBA) image for a [BIOS](https://github.com/
 
 **Note:** UEFI support currently requires that Secure Boot be turned off.
 
-Compress the PBA with gzip (if required):
-
-```
-$ gzip -c pba.img > pba.img.gz
-
-```
-
 ### Test the PBA on your machine (optional)
 
 Refer to the [official docs](https://github.com/Drive-Trust-Alliance/sedutil/wiki/Test-the-PBA).
@@ -108,6 +101,13 @@ Refer to the [official docs](https://github.com/Drive-Trust-Alliance/sedutil/wik
 Refer to the [official docs](https://github.com/Drive-Trust-Alliance/sedutil/wiki/Test-the-Rescue-system).
 
 ### Set up the drive
+
+Decompress the PBA (if required):
+
+```
+$ gunzip pba.img.gz
+
+```
 
 Use the output of `lsblk --fs` to help identify the correct drive.
 

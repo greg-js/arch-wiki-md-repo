@@ -829,7 +829,7 @@ Di solito, le impostazioni modificate in questo modo richiedono un logout/login 
 
 ### Cartelle utente XDG
 
-freedesktop.org specifica le "ben note directory degli utenti, come la cartella del desktop e la cartella musica. Vedere [Xdg user directories](/index.php/Xdg_user_directories "Xdg user directories") per informazioni dettagliate .
+freedesktop.org specifica le "ben note directory degli utenti, come la cartella del desktop e la cartella musica. Vedere [XDG user directories](/index.php/XDG_user_directories "XDG user directories") per informazioni dettagliate .
 
 ### SSH Agents
 

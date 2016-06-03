@@ -57,8 +57,9 @@ You can use the following frameworks:
 *   [Fcitx](/index.php/Fcitx "Fcitx")
 *   [IBus](/index.php/IBus "IBus")
 *   [uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim")
+*   [Nimf](/index.php/Nimf "Nimf")
 
-See each articles for detail.
+See the articles for details.
 
 **Note:** [SCIM](/index.php/SCIM "SCIM") is dead project. You should not use it.
 

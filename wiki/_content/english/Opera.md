@@ -1,7 +1,5 @@
 [Opera](http://www.opera.com) is a free of charge web browser developed since 1994 by the Norwegian company [Opera Software](https://en.wikipedia.org/wiki/Opera_Software "wikipedia:Opera Software"). It is known for being the first to bring new browsing features to the world that have become common on all web browsers, such as tabbed browsing and built-in search.
 
-Opera continues to innovate with its integrated mail client, one-click bookmarking, tab stacks (a way of organizing your tabs) and very good support for [HTML5](https://en.wikipedia.org/wiki/HTML5 "wikipedia:HTML5") features.
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -10,12 +8,7 @@ Opera continues to innovate with its integrated mail client, one-click bookmarki
     *   [2.2 Adblock](#Adblock)
 *   [3 Performance tweaks](#Performance_tweaks)
     *   [3.1 Disabling features and services](#Disabling_features_and_services)
-        *   [3.1.1 Disable the e-mail client](#Disable_the_e-mail_client)
-        *   [3.1.2 Disable ARGB, LIRC and mailto links](#Disable_ARGB.2C_LIRC_and_mailto_links)
-    *   [3.2 Improving Flash performance](#Improving_Flash_performance)
-        *   [3.2.1 .xinitrc example](#.xinitrc_example)
-        *   [3.2.2 Command-line example](#Command-line_example)
-    *   [3.3 Profile in tmpfs](#Profile_in_tmpfs)
+    *   [3.2 Profile in tmpfs](#Profile_in_tmpfs)
 *   [4 Appearance](#Appearance)
     *   [4.1 Themes](#Themes)
     *   [4.2 Title bar](#Title_bar)
@@ -45,7 +38,7 @@ The 12.16 Presto version is also available from the [opera-legacy](https://aur.a
 
 ## Plugins
 
-For details about different plugins and installation instructions see [Browser plugins](/index.php/Browser_plugins "Browser plugins"). In Opera, the plugin path can be specified under *Settings > Preferences... > Advanced > Content > Plug-in Options*.
+For details about different plugins and installation instructions see [Browser plugins](/index.php/Browser_plugins "Browser plugins"). Note that Opera no longer supports the Netscape plugin API (NPAPI), but only the newer Pepper plugin API (PPAPI).
 
 ### Adobe Flash
 
@@ -54,6 +47,8 @@ Opera no longer supports the Netscape plugin API (NPAPI), so [chromium-pepper-fl
 See [Browser plugins#Flash Player](/index.php/Browser_plugins#Flash_Player "Browser plugins") for details.
 
 ### Adblock
+
+**Tip:** Opera also has a built-in ad blocker which can be enabled in Settings.
 
 Install Adblock support using the [opera-adblock-complete](https://aur.archlinux.org/packages/opera-adblock-complete/) package.
 
@@ -74,65 +69,6 @@ Some commonly disabled features are:
 *   **Web Server**: uncheck *Enable* under opera:config#Web Server.
 
 To more easily find these options just write the respective path (without spaces) in the address bar, for example `opera:config#UserPrefs|ShowTrayIcon` or use the built-in search.
-
-#### Disable the e-mail client
-
-Additional command-line options are available for further control over browser features and services. To start Opera without the default internal e-mail client:
-
-```
-$ opera -nomail
-
-```
-
-Alternatively, if you want to permanently disable the internal e-mail client you can uncheck the *Show E-mail Client* option under opera:config#UserPrefs.
-
-#### Disable ARGB, LIRC and mailto links
-
-To start Opera without [ARGB](https://en.wikipedia.org/wiki/ARGB "wikipedia:ARGB") (32-bit) visuals, [LIRC](http://www.lirc.org/) infrared control support and with `mailto:` links disabled:
-
-```
-$ opera -noargb -nolirc -nomaillinks 
-
-```
-
-### Improving Flash performance
-
-To improve Flash performance you can set the following environment variables before starting Opera, or export the entries in [xinitrc](/index.php/Xinitrc "Xinitrc"), or [~/.bash_profile](/index.php/Bash "Bash"), or for system-wide changes, to `/etc/profile`:
-
-```
- OPERAPLUGINWRAPPER_PRIORITY=0
- OPERA_KEEP_BLOCKED_PLUGIN=1
-
-```
-
-Another environment variable which may help resolve Flash issues:
-
-```
-GDK_NATIVE_WINDOWS=1
-
-```
-
-See the blog article [Flash problems on Linux?](http://my.opera.com/ruario/blog/flash-problems-on-linux) for additional details.
-
-#### .xinitrc example
-
- `~/.xinitrc` 
-```
-...
-export OPERAPLUGINWRAPPER_PRIORITY=0
-export OPERA_KEEP_BLOCKED_PLUGIN=0
-...
-
-```
-
-#### Command-line example
-
-To use the variables from the command line call Opera as:
-
-```
-$ OPERAPLUGINWRAPPER_PRIORITY=0 OPERA_KEEP_BLOCKED_PLUGIN=1 opera &
-
-```
 
 ### Profile in tmpfs
 

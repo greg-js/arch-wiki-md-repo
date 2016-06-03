@@ -5,19 +5,18 @@
     *   [1.2 Package defaults](#Package_defaults)
     *   [1.3 Long-Term Support (LTS) CK releases](#Long-Term_Support_.28LTS.29_CK_releases)
 *   [2 Installation options](#Installation_options)
-    *   [2.1 1\. Compile the package from source](#1._Compile_the_package_from_source)
-    *   [2.2 2 . Use pre-compiled packages](#2_._Use_pre-compiled_packages)
+    *   [2.1 Compile the package from source](#Compile_the_package_from_source)
+    *   [2.2 Use pre-compiled packages](#Use_pre-compiled_packages)
 *   [3 How to enable the BFQ I/O Scheduler](#How_to_enable_the_BFQ_I.2FO_Scheduler)
     *   [3.1 Enable BFQ for all devices](#Enable_BFQ_for_all_devices)
     *   [3.2 Enable BFQ for only specified devices](#Enable_BFQ_for_only_specified_devices)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Boot loader and Linux-ck](#Boot_loader_and_Linux-ck)
-    *   [4.2 Running VirtualBox with Linux-ck](#Running_VirtualBox_with_Linux-ck)
-        *   [4.2.1 Use the unofficial repo (recommended if linux-ck is installed from Repo-ck)](#Use_the_unofficial_repo_.28recommended_if_linux-ck_is_installed_from_Repo-ck.29)
-        *   [4.2.2 The virtualbox-ck-host-modules package (recommended if linux-ck is built by you from the AUR)](#The_virtualbox-ck-host-modules_package_.28recommended_if_linux-ck_is_built_by_you_from_the_AUR.29)
-        *   [4.2.3 Use DKMS (more complicated, recommended with LTS releases)](#Use_DKMS_.28more_complicated.2C_recommended_with_LTS_releases.29)
-    *   [4.3 Downgrading](#Downgrading)
-    *   [4.4 Forum support](#Forum_support)
+    *   [4.1 Running VirtualBox with Linux-ck](#Running_VirtualBox_with_Linux-ck)
+        *   [4.1.1 Use the unofficial repo (recommended if linux-ck is installed from Repo-ck)](#Use_the_unofficial_repo_.28recommended_if_linux-ck_is_installed_from_Repo-ck.29)
+        *   [4.1.2 The virtualbox-ck-host-modules package (recommended if linux-ck is built by you from the AUR)](#The_virtualbox-ck-host-modules_package_.28recommended_if_linux-ck_is_built_by_you_from_the_AUR.29)
+        *   [4.1.3 Use DKMS (more complicated, recommended with LTS releases)](#Use_DKMS_.28more_complicated.2C_recommended_with_LTS_releases.29)
+    *   [4.2 Downgrading](#Downgrading)
+    *   [4.3 Forum support](#Forum_support)
 *   [5 A little about the BFS](#A_little_about_the_BFS)
     *   [5.1 BFS design goals](#BFS_design_goals)
     *   [5.2 An example video about queuing theory](#An_example_video_about_queuing_theory)
@@ -29,7 +28,7 @@
 
 ## General package details
 
-[Linux-ck](https://aur.archlinux.org/packages/Linux-ck/) is a package available in the [AUR](/index.php/AUR "AUR") and in the [unofficial linux-ck repo](#2_._Use_pre-compiled_packages) that allows users to run a kernel/headers setup patched with Con Kolivas' ck1 patchset, including the Brain Fuck Scheduler (BFS). Many Archers elect to use this package for the BFS' excellent desktop interactivity and responsiveness under any load situation. Additionally, the bfs imparts performance gains beyond interactivity. For example, see: [CPU_Schedulers_Compared.pdf](http://repo-ck.com/bench/cpu_schedulers_compared.pdf).
+[Linux-ck](https://aur.archlinux.org/packages/Linux-ck/) is a package available in the [AUR](/index.php/AUR "AUR") and in the [unofficial linux-ck repo](#Use_pre-compiled_packages) that allows users to run a kernel/headers setup patched with Con Kolivas' ck1 patchset, including the Brain Fuck Scheduler (BFS). Many Archers elect to use this package for the BFS' excellent desktop interactivity and responsiveness under any load situation. Additionally, the bfs imparts performance gains beyond interactivity. For example, see: [CPU_Schedulers_Compared.pdf](http://repo-ck.com/bench/cpu_schedulers_compared.pdf).
 
 ### Release cycle
 
@@ -62,11 +61,11 @@ In addition to the linux-ck package, there are the following LTS kernel releases
 
 ## Installation options
 
-**Note:** As with *any* additional kernel, users will need to manually update their boot loader's config file to make it aware of the new kernel images. For example, users of [GRUB](/index.php/GRUB "GRUB") should execute "grub-mkconfig -o /boot/grub/grub.cfg". Syslinux, GRUB-legacy, etc. will need to be modified as well.
+**Note:** As with *any* additional kernel, users will need to manually update their [boot loader](/index.php/Boot_loader "Boot loader")'s config file to make it aware of the new kernel images. For GRUB, see [GRUB#Generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"). For other boot loaders it may be necessary to add a custom entry.
 
 Users have two options to get these kernel packages.
 
-### 1\. Compile the package from source
+### Compile the package from source
 
 The [AUR](/index.php/AUR "AUR") contains entries for both packages mentioned above.
 
@@ -79,13 +78,11 @@ Users can customize the linux-ck package via tweaks in the PKGBUILD:
 
 More details about these options are provided in the PKGBUILD itself via line comments. Be sure to read them if compiling from the AUR!
 
-**Note:** There are related PKGBUILDs in the AUR for other common modules unique to linux-ck. For example [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [nvidia-304xx-ck](https://aur.archlinux.org/packages/nvidia-304xx-ck/),[nvidia-340xx-ck](https://aur.archlinux.org/packages/nvidia-340xx-ck/), and [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/) to name a few.
+**Note:** There are related PKGBUILDs in the AUR for other common modules unique to linux-ck. For example [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [nvidia-304xx-ck](https://aur.archlinux.org/packages/nvidia-304xx-ck/), [nvidia-340xx-ck](https://aur.archlinux.org/packages/nvidia-340xx-ck/), and [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/) to name a few.
 
-### 2 . Use pre-compiled packages
+### Use pre-compiled packages
 
-If users would rather not spend the time to compile on their own, an unofficial repo maintained by [graysky](/index.php/User:Graysky "User:Graysky") is available to the community.
-
-For details, see: [Repo-ck](/index.php/Repo-ck "Repo-ck").
+If users would rather not spend the time to compile on their own, an unofficial repo maintained by [graysky](/index.php/User:Graysky "User:Graysky") is available to the community. For details, see: [Repo-ck](/index.php/Repo-ck "Repo-ck").
 
 There are also unofficial repositories for the aforementioned LTS branches, available at [linux-lts-ck](/index.php/Unofficial_user_repositories#linux-lts-ck "Unofficial user repositories") and [linux-lts31x-ck](/index.php/Unofficial_user_repositories#linux-lts31x-ck "Unofficial user repositories"), maintained by [clfarron4](/index.php/User:Clfarron4 "User:Clfarron4").
 
@@ -93,7 +90,7 @@ There are also unofficial repositories for the aforementioned LTS branches, avai
 
 **Note:** Do not confuse BFS (Brain Fuck Scheduler) with BFQ (Budget Fair Queueing). The BFS is a CPU scheduler and is enabled by default whereas BFQ is an I/O scheduler and must explicitly be enabled in order to use it.
 
-Budget Fair Queueing is a disk scheduler which allows each process/thread to be assigned a portion of the disk throughput. Its creator has released some [benchmarks](http://www.youtube.com/watch?v=KhZl9LjCKuU) which shows some pretty amazing latency performance.
+Budget Fair Queueing is a disk scheduler which allows each process/thread to be assigned a portion of the disk throughput. Its creator has released results of many benchmarks ([results](http://algo.ing.unimo.it/people/paolo/disk_sched/results.php) and [video](http://www.youtube.com/watch?v=KhZl9LjCKuU)) which shows some pretty amazing latency performance.
 
 Since linux-ck-3.0.4-2, the BFQ patchset is applied to the package by default, but the scheduler must be enabled manually. Users have several options to do so.
 
@@ -130,25 +127,6 @@ Note that doing it this way will not survive a reboot. To make the change automa
  `/etc/tmpfiles.d/set_IO_scheduler.conf`  `w /sys/block/sdX/queue/scheduler - - - - bfq` 
 
 ## Troubleshooting
-
-### Boot loader and Linux-ck
-
-The [boot loader](/index.php/Boot_loader "Boot loader") configuration needs to find the (new) kernel images. For GRUB, see [GRUB#Generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"). For other boot loaders it may be necessary to add a custom entry.
-
-This is an example if adding a custom entry if using [REFInd](/index.php/REFInd#Custom_Menu_Entries "REFInd"):
-
- `refind.conf` 
-```
-menuentry Linux {
-        icon EFI/refind/icons/os_linux.png
-        ostype Linux
-        volume boot
-        loader /vmlinuz-linux-ck
-        initrd /initramfs-linux-ck.img
-        options "root=/dev/mapper/root elevator=bfq"
-}
-
-```
 
 ### Running VirtualBox with Linux-ck
 

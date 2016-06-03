@@ -109,4 +109,4 @@ $ loadkeys /usr/local/share/kbd/keymaps/personal.map
 
 ```
 
-However this keymap only active for the current session. In order to load the keymap at boot, specify the full path to the file in `KEYMAP` variable in `/etc/vconsole.conf`. The file does not have to be gzipped as the official keymaps provided by [kbd](https://www.archlinux.org/packages/?name=kbd).
+However this keymap is only active for the current session. In order to load the keymap at boot, specify the full path to the file in the `KEYMAP` variable in [/etc/vconsole.conf](/index.php/Keyboard_configuration_in_console#Persistent_configuration "Keyboard configuration in console"). The file does not have to be gzipped as the official keymaps provided by [kbd](https://www.archlinux.org/packages/?name=kbd).

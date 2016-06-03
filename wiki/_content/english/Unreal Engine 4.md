@@ -16,6 +16,11 @@ The content of this article was originally written on [this page](https://wiki.u
 *   [3 Run Unreal Engine 4](#Run_Unreal_Engine_4)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Compilation problems](#Compilation_problems)
+    *   [4.2 Runtime problems](#Runtime_problems)
+    *   [4.3 C++ code project problems](#C.2B.2B_code_project_problems)
+*   [5 Additional Content](#Additional_Content)
+    *   [5.1 Starter Content](#Starter_Content)
+    *   [5.2 Marketplace Apps](#Marketplace_Apps)
 
 ## Minimum requirements
 
@@ -27,7 +32,7 @@ The content of this article was originally written on [this page](https://wiki.u
 
 #### Register to get the source code
 
-First you need to register on the [Epic Games](https://www.unrealengine.com) Webpage and link your GitHub account to your Epic Games account.
+First, register at [UnrealEngine.com](https://www.unrealengine.com/) and link your GitHub account to your Epic Games account. Once registered, you should be able to [browse the source code](https://github.com/EpicGames/UnrealEngine).
 
 ### Installing from the AUR
 
@@ -41,25 +46,7 @@ Since the repository is private, you can [set up an SSH key](https://help.github
 
 #### Satisfy dependencies
 
-Install [clang35](https://www.archlinux.org/packages/?name=clang35), [mono](https://www.archlinux.org/packages/?name=mono), [dos2unix](https://www.archlinux.org/packages/?name=dos2unix) and [cmake](https://www.archlinux.org/packages/?name=cmake).
-
-Some users will have to either recompile their Clang or get a compiled package that does not use `ld.gold`:
-
-If you installed clang35 from the repositories do the following:
-
-```
-$ mkdir ~/bin/ && cd ~/bin/ && ln -s /bin/ld.bfd ./ld.gold
-
-```
-
-Then modify the [.bashrc](/index.php/.bashrc ".bashrc") file and add the following line:
-
-```
-export PATH=$HOME/bin:$PATH
-
-```
-
-Then close all the terminals to apply the changes.
+Install [clang](https://www.archlinux.org/packages/?name=clang), [mono](https://www.archlinux.org/packages/?name=mono), [dos2unix](https://www.archlinux.org/packages/?name=dos2unix) and [cmake](https://www.archlinux.org/packages/?name=cmake).
 
 #### Get the source code
 
@@ -106,5 +93,36 @@ If the compilation fails you should try building the Editor using the Debug prof
 
 ```
 $ make UE4Editor-Linux-Debug
+
+```
+
+#### Runtime problems
+
+If the editor doesn't start from the menu, or something doesn't work right, start it in a console and check the output for errors.
+
+```
+$ cd /opt/unreal-tournament/Engine/Binaries/Linux/
+$ ./UE4Editor
+
+```
+
+#### C++ code project problems
+
+After creating a code project, the new project opens in a text editor instead of in UE4Editor as it should. After re-launching the editor, the new project shows up and can be opened, but on the first run, it takes a half-hour or so to compile, and since this happens in the background (no GUI) it might not seem to be doing anything. The CPU usage should show that it's still compiling, and you may want to launch the editor from a console to see progress.
+
+## Additional Content
+
+### Starter Content
+
+The StarterContent project is installed to /opt/unreal-engine/Samples/StarterContent/StarterContent.uproject, you can browse to it from the launcher.
+
+### Marketplace Apps
+
+The launcher with the Unreal Marketplace is not available for Linux yet[[1]](https://forums.unrealengine.com/showthread.php?52166-Unreal-launcher-for-linux), so apps like the ContentExamples project cannot be installed from Linux[[2]](https://answers.unrealengine.com/questions/301869/download-content-from-marketplace-on-linux.html).
+
+The marketplace apps can be downloaded using the [launcher](https://www.unrealengine.com/download) on Windows (Mac may also work), they are stored in:
+
+```
+   /Program Files (x86)/Epic Games/Launcher/VaultCache/
 
 ```

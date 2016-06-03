@@ -337,6 +337,8 @@ Also, change `VGA1` to correct output name.
 
 If the previous method results in an `*ERROR* EDID checksum is invalid` error during boot, see [KMS#Forcing modes and EDID](/index.php/KMS#Forcing_modes_and_EDID "KMS") and [[1]](http://askubuntu.com/questions/201081/how-can-i-make-linux-behave-better-when-edid-is-unavailable).
 
+Or `xrandr --addmode` might give you the error `X Error of failed request: BadMatch`. This could also indicate an invalid EDID checksum. To verify that this is the case, run X in verbose mode (e.g. `startx -- -logverbose 6`) and check your Xorg log for messages about a bad EDID. NVIDIA users should read [NVIDIA/Troubleshooting#Override EDID](/index.php/NVIDIA/Troubleshooting#Override_EDID "NVIDIA/Troubleshooting").
+
 ### Permanently adding undetected resolutions
 
 Once a suitable resolution is found using `xrandr`, the mode can be permanently added by creating an entry in `/etc/X11/xorg.conf.d/`:

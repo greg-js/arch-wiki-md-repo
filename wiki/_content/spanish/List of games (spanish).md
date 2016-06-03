@@ -499,7 +499,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **ASCIIpOrtal** — Juego de desplazamiento horizontal con gráficos de texto ANSI en el que el usuario es una persona que tiene un dispositivo que crea portales, o enlaces a otras partes del nivel.
 
-	[http://cymonsgames.com/asciiportal](http://cymonsgames.com/asciiportal) || [asciiportal](https://aur.archlinux.org/packages/asciiportal/)
+	[http://cymonsgames.com/asciiportal](http://cymonsgames.com/asciiportal) || [asciiportal](https://www.archlinux.org/packages/?name=asciiportal)
 
 *   **[Crawl](https://en.wikipedia.org/wiki/Linley%27s_Dungeon_Crawl "wikipedia:Linley's Dungeon Crawl") (conocido como Dungeon Crawl** — Dungeon Crawl de Linley).
 

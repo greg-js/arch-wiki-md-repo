@@ -104,15 +104,15 @@ When using systemd, you may want to blacklist the tp_smapi module if your system
 
 ### Fans
 
-Install [thinkfan](https://aur.archlinux.org/packages/thinkfan/) from the AUR. It will automatically create the necessary acpi configuration file in "/usr/lib/modprobe.d/thinkpad_acpi.conf".
+Install the package [thinkfan](https://aur.archlinux.org/packages/thinkfan/). It will automatically create the necessary acpi configuration file in `/usr/lib/modprobe.d/thinkpad_acpi.conf`.
 
 Copy the example sensor settings file from "/usr/share/doc/thinkfan/examples/thinkfan.conf.simple" to "/etc/thinkfan.conf".
 
- `sudo cp /usr/share/doc/thinkfan/examples/thinkfan.conf.simple /etc/thinkfan.conf` 
+ `# cp /usr/share/doc/thinkfan/examples/thinkfan.conf.simple /etc/thinkfan.conf` 
 
-Aftwards replace the default hwmon in the settings file `/etc/thinkfan.conf` with the following.
+Aftwards replace the default `hwmon` in the settings file `/etc/thinkfan.conf` with the following:
 
- `sudo nano /etc/thinkfan.conf`  `hwmon /sys/devices/virtual/thermal/thermal_zone0/temp` 
+ `/etc/thinkfan.conf`  `hwmon /sys/devices/virtual/thermal/thermal_zone0/temp` 
 
 Alternatively, sensors can be generated using following command. Add `hwmon` before the sensor lines.
 
@@ -132,17 +132,17 @@ In the same configuration file replace the default fan level settings with your 
 (127,	75,	32767)
 ```
 
-Finally enable [systemd](/index.php/Systemd "Systemd") [daemon](/index.php/Daemon "Daemon") **thinkfan**.
+Finally [enable](/index.php/Enable "Enable") the **thinkfan** service.
 
- `sudo systemctl enable thinkfan` 
+ `# systemctl enable thinkfan` 
 
 ### Laptop Mode Tools
 
 No significant issues were found using [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools").
 
-Possible bug with [#Shutdown on battery](#Shutdown_on_battery)
+Possible bug with [#Shutdown on battery](#Shutdown_on_battery).
 
-[tlp](https://www.archlinux.org/packages/?name=tlp) From the [AUR](/index.php/AUR "AUR") is an alternative tool that can replace [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/).
+The package [tlp](https://www.archlinux.org/packages/?name=tlp) is an alternative tool that can replace [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/).
 
 ### Synaptics
 
@@ -159,7 +159,7 @@ w /sys/devices/platform/i8042/serio1/sensitivity - - - - 200
 
 Possible range of values are 1-255.
 
-Or add an udev rule:
+Alternatively, you can add an [udev](/index.php/Udev "Udev") rule:
 
  `/etc/udev/rules.d/10-trackpoint.rules` 
 ```

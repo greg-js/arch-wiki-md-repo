@@ -71,7 +71,7 @@ Restart `unbound.service` to apply the changes.
 
 #### Example: configuration for dnsmasq
 
-Configure dnsmasq as a [local DNS cache](/index.php/Dnsmasq#DNS_Cache_Setup "Dnsmasq"). The basic configuration to work with DNSCrypt:
+Configure dnsmasq as a [local DNS cache](/index.php/Dnsmasq#DNS_cache_setup "Dnsmasq"). The basic configuration to work with DNSCrypt:
 
  `/etc/dnsmasq.conf` 
 ```

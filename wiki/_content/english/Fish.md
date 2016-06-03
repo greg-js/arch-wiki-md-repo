@@ -15,7 +15,7 @@
 *   [4 Tips and Tricks](#Tips_and_Tricks)
     *   [4.1 History Substitution](#History_Substitution)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Scripts not compatiable with fish](#Scripts_not_compatiable_with_fish)
+    *   [5.1 Scripts not compatible with fish](#Scripts_not_compatible_with_fish)
     *   [5.2 su launching Bash](#su_launching_Bash)
     *   [5.3 Start X at login](#Start_X_at_login)
 *   [6 See also](#See_also)
@@ -158,14 +158,14 @@ Since standard POSIX `sh` syntax is not compatible with fish, fish will not be a
 If you want fish to source those files, install [dash](https://www.archlinux.org/packages/?name=dash) and add this line to your `config.fish`:
 
 ```
-env -i HOME=$HOME dash -l -c printenv | sed -e '/PATH/s/:/ /g;s/=/ /;s/^/set -x /' | source
+env -i HOME=$HOME dash -l -c printenv | sed -e '/PWD/d; /PATH/s/:/ /g;s/=/ /;s/^/set -x /' | source
 
 ```
 
 an alternative variant will save you one executable invocation by using a builtin command:
 
 ```
-env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
+env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
 
 ```
 
@@ -177,7 +177,7 @@ Fish does not implement history substitution (e.g. `sudo !!`), and the fish dev
 
 ## Troubleshooting
 
-### Scripts not compatiable with fish
+### Scripts not compatible with fish
 
 In Arch, some shell scripts are written for Bash, and not fully compatible to fish. You may meet some script error if your default shell is set as fish. The best option is to open your terminal emulator with a command line option that executes fish. For most terminals this is the `-e` switch, so for example, to open gnome-terminal using fish, change your shortcut to use:
 
@@ -213,7 +213,7 @@ end
 
 ```
 
-Note that you will need to manually add various other environment variables, such as `$MOZ_PLUGIN_PATH`. It is a huge amount of work to get a seamless experience with fish as your default shell.
+Note that this route requires you to manually add various other environment variables, such as `$MOZ_PLUGIN_PATH`. It is a huge amount of work to get a seamless experience with fish as your default shell using this method. A better idea would be to [source /etc/profile and ~/.profile](#.2Fetc.2Fprofile_and_.7E.2F.profile_compatibility).
 
 ### su launching Bash
 
@@ -247,4 +247,4 @@ end
 ## See also
 
 *   [http://fishshell.com/](http://fishshell.com/) - Home page
-*   [http://fishshell.com/docs/2.1/index.html](http://fishshell.com/docs/2.1/index.html) - Documentation
+*   [http://fishshell.com/docs/current/index.html](http://fishshell.com/docs/current/index.html) - Documentation

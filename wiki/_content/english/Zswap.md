@@ -13,19 +13,21 @@ zswap is a compressed RAM cache for swap devices. Pages which would otherwise be
 
 ## Enabling zswap
 
-You can enable zswap at runtime by executing the following command as root:
+To enable zswap at runtime, execute the following command:
 
 ```
-  echo 1 > /sys/module/zswap/parameters/enabled
+# echo 1 > /sys/module/zswap/parameters/enabled
 
 ```
 
-To enable zswap permanently, you must add this to your kernel boot parameters [Kernel parameters#Configuration](/index.php/Kernel_parameters#Configuration "Kernel parameters")
+To enable zswap permanently, add this to your kernel boot parameters [Kernel parameters#Configuration](/index.php/Kernel_parameters#Configuration "Kernel parameters"):
 
 ```
-  zswap.enabled=1
+zswap.enabled=1
 
 ```
+
+**Tip:** You can use the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package to enable and [configure](#Customizing_zswap) zswap.
 
 ## Customizing zswap
 

@@ -23,6 +23,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [1.3 Keyboard](#Keyboard)
         *   [1.3.1 Brightness](#Brightness_2)
         *   [1.3.2 Incorrectly mapped buttons](#Incorrectly_mapped_buttons)
+    *   [1.4 Touchpad](#Touchpad)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Audio](#Audio_2)
         *   [2.1.1 Dual boot](#Dual_boot)
@@ -150,6 +151,10 @@ Test with `xev` or try to bind something on media button. `FN+F7` should be cont
 { sleep 10; xmodmap ~/.Xmodmap; } &
 
 ```
+
+### Touchpad
+
+For touchpad to operate as expected, please install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package. For more information, see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 ## Troubleshooting
 

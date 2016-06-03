@@ -25,8 +25,9 @@ This article provides information on basic system diagnostics relating to perfor
 *   [3 CPU](#CPU)
     *   [3.1 Overclocking](#Overclocking)
     *   [3.2 Verynice](#Verynice)
-    *   [3.3 cgroups](#cgroups)
-    *   [3.4 irqbalance](#irqbalance)
+    *   [3.3 Ananicy](#Ananicy)
+    *   [3.4 cgroups](#cgroups)
+    *   [3.5 irqbalance](#irqbalance)
 *   [4 Graphics](#Graphics)
     *   [4.1 Xorg.conf configuration](#Xorg.conf_configuration)
     *   [4.2 Driconf](#Driconf)
@@ -268,7 +269,7 @@ There are few ways to get more performance:
 
 The only way to directly improve CPU speed is overclocking. As it is a complicated and risky task, it is not recommended for anyone except experts. The best way to overclock is through the BIOS. When purchasing your system, keep in mind that most Intel motherboards are notorious for disabling the capability to overclock.
 
-Many Intel i5 and i7 chips, even when overclocked properly through the BIOS or UEFI interface, will not report the correct clock frequency to acpi_cpufreq and most other utilities. This will result in excessive messages in dmesg about delays unless the module acpi_cpufreq is unloaded and blacklisted. The only tool known to correctly read the clock speed of these overclocked chips under Linux is i7z. The [i7z](https://www.archlinux.org/packages/?name=i7z) package is available in the community repo and [i7z-git](https://aur.archlinux.org/packages/i7z-git/) is available in the [AUR](/index.php/AUR "AUR").
+Many Intel i5 and i7 chips, even when overclocked properly through the BIOS or UEFI interface, will not report the correct clock frequency to acpi_cpufreq and most other utilities. This will result in excessive messages in dmesg about delays unless the module acpi_cpufreq is unloaded and blacklisted. The only tool known to correctly read the clock speed of these overclocked chips under Linux is i7z. The [i7z](https://www.archlinux.org/packages/?name=i7z) and [i7z-git](https://aur.archlinux.org/packages/i7z-git/) packages are available.
 
 A way to modify performance ([ref](http://lkml.org/lkml/2009/9/6/136)) is to use Con Kolivas' desktop-centric kernel patchset, which, among other things, replaces the Completely Fair Scheduler (CFS) with the Brain Fuck Scheduler (BFS).
 
@@ -278,7 +279,11 @@ Kernel PKGBUILDs that include the BFS patch can be installed from the [AUR](/ind
 
 ### Verynice
 
-[VeryNice](/index.php/VeryNice "VeryNice") is a daemon, available in the [AUR](/index.php/AUR "AUR") as [verynice](https://aur.archlinux.org/packages/verynice/), for dynamically adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources. Simply define executables for which responsiveness is important, like X or multimedia applications, as *goodexe* in `/etc/verynice.conf`. Similarly, CPU-hungry executables running in the background, like make, can be defined as *badexe*. This prioritization greatly improves system responsiveness under heavy load.
+[VeryNice](/index.php/VeryNice "VeryNice") is a daemon, available in the [verynice](https://aur.archlinux.org/packages/verynice/) package, for dynamically adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources. Simply define executables for which responsiveness is important, like X or multimedia applications, as *goodexe* in `/etc/verynice.conf`. Similarly, CPU-hungry executables running in the background, like make, can be defined as *badexe*. This prioritization greatly improves system responsiveness under heavy load.
+
+### Ananicy
+
+[Ananicy](https://github.com/Nefelim4ag/Ananicy) is a daemon, available in the [ananicy-git](https://aur.archlinux.org/packages/ananicy-git/) package, for auto adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources.
 
 ### cgroups
 

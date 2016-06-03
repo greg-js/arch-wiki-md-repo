@@ -10,7 +10,6 @@
 *   multiple domain support
 *   a powerful web interface
 *   rss aggregation
-*   instant messaging,
 *   SSL support
 
 This guide will help you install and configure Citadel groupware server and web interface.

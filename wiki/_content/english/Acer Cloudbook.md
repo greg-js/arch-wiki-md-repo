@@ -7,6 +7,7 @@
     *   [2.3 Installation](#Installation_2)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 GDM](#GDM)
+    *   [3.2 High load average on idle](#High_load_average_on_idle)
 
 ## Hardware
 
@@ -53,7 +54,7 @@ Then save and exit.
 
 ### Kernel parameters
 
-Without these options, the installation image won't load at all:
+Without these options, the installation image will not load at all:
 
 *   edd=off
 *   noapic
@@ -75,19 +76,16 @@ linux /vmlinuz-linux ... edd=off noapic modprobe.blacklist=pinctrl_cherryview
 
 *   Everything should function without any issues thanks to the previous kernel parameters, proceed to install the image as normal.
     *   The module for the wireless NIC is included with the kernel, so Wi-Fi works out of the box.
-*   Do not forget to add **edd=off noapic modprobe.blacklist=pinctrl_cherryview** to the kernel parameters of the boot launcher's configuration file. See: [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+*   Do not forget to add **edd=off noapic** to the kernel parameters of the boot launcher's configuration file and also to blacklist the **pinctrl_cherryview** module.
 
-Example with Grub:
-
-```
-GRUB_CMDLINE_LINUX="quiet edd=off noapic modprobe.blacklist=pinctrl_cherryview" 
-
-```
-
-in the **/etc/default/grub** configuration file.
+See: [Kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules")
 
 ## Troubleshooting
 
 ### GDM
 
 If Gnome/GDM is installed and started, the login page will flicker up-to the point that it becomes nonfunctional. See [GDM#Use Xorg backend](/index.php/GDM#Use_Xorg_backend "GDM").
+
+### High load average on idle
+
+The kernel module **rtsx_usb_ms** is loaded at boot time yet is non-functional (the kernel thread associated to the module when inspecting with *top* is a zombified process) and unnecessary for the system to function. The module can safely be [blacklisted](/index.php/Blacklist "Blacklist").

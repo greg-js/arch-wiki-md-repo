@@ -1,4 +1,4 @@
-*Hybrid-graphics is a concept involving two graphics cards on same computer, it was first designed to control power consumption in laptops and is extending to desktop computers as well*.
+Hybrid-graphics is a concept involving two graphics cards on same computer. It was first designed to control power consumption in laptops and is extending to desktop computers as well.
 
 ## Contents
 
@@ -70,25 +70,27 @@ This means that with a muxless intel+ati design, you cannot use your discrete ca
 
 As of now, there are 2 choices:
 
-- Test and improve some virtualGL based program to make the switch, like the common-amd branch of bumblebee project. Check the [project repository](https://github.com/Bumblebee-Project/Bumblebee/issues/52) and [this](http://forums.gentoo.org/viewtopic-t-909802.html) useful post.
+*   Test and improve some virtualGL based program to make the switch, like the common-amd branch of bumblebee project. Check the [project repository](https://github.com/Bumblebee-Project/Bumblebee/issues/52) and [this](http://forums.gentoo.org/viewtopic-t-909802.html) useful post.
 
-- Use the proprietary driver with powerxpress (a.k.a. pxp) support maintained by [Vi0l0](/index.php/AMD_Catalyst#Installing_from_the_AUR "AMD Catalyst") (remember to check for xorg compatibility).
+*   Use the proprietary driver with powerxpress (a.k.a. pxp) support maintained by [Vi0l0](/index.php/AMD_Catalyst#Installing_from_the_AUR "AMD Catalyst") (remember to check for xorg compatibility).
 
 ### Fully Power Down Discrete GPU
 
 You may want to turn off the high-performance graphics processor to save battery power, this can be done by installing the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) package.
 
+**Tip:** For kernels not in the [Official repositories](/index.php/Official_repositories "Official repositories"), the [acpi_call-git-dkms](https://aur.archlinux.org/packages/acpi_call-git-dkms/) is an alternative. See also [DKMS](/index.php/DKMS "DKMS").
+
 Once installed load the kernel module:
 
 ```
-modprobe acpi_call
+# modprobe acpi_call
 
 ```
 
-With the kernel module loaded run the following (requires root):
+With the kernel module loaded run the following:
 
 ```
-/usr/share/acpi_call/examples/turn_off_gpu.sh
+# /usr/share/acpi_call/examples/turn_off_gpu.sh
 
 ```
 
@@ -148,7 +150,7 @@ w /proc/acpi/call - - - - \\_SB.PCI0.PEG0.PEGP._OFF
 
 The above config will be loaded at boot by systemd. What it does is write the specific OFF signal to the `/proc/acpi/call` file. Obviously, replace the `\_SB.PCI0.PEG0.PEGP._OFF` with the one which works on your system (please note that you need to escape the backslash).
 
-**Tip:** To prevent manual reinstalling the [acpi_call-git](https://aur.archlinux.org/packages/acpi_call-git/) package after each kernel upgrade, you can use the [acpi_call-git-dkms](https://aur.archlinux.org/packages/acpi_call-git-dkms/) package.
+**Tip:** If you are experiencing trouble hibernating or suspending the system after disabling the GPU, try to enable it again by sending the corresponding acpi_call. See also [Suspend/resume service files](/index.php/Power_management#Suspend.2Fresume_service_files "Power management").
 
 ## See Also
 

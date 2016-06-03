@@ -71,6 +71,7 @@
     *   [7.9 Advertencias cuando se instala en entorno chroot](#Advertencias_cuando_se_instala_en_entorno_chroot)
     *   [7.10 GRUB carga lentamente](#GRUB_carga_lentamente)
     *   [7.11 error: unknown filesystem](#error:_unknown_filesystem)
+    *   [7.12 grub-reboot no reinicia](#grub-reboot_no_reinicia)
 *   [8 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Prefacio
@@ -1090,7 +1091,11 @@ GRUB puede tardar mucho tiempo en cargarse cuando el espacio en disco es pequeñ
 
 ### error: unknown filesystem
 
-GRUB puede monstrar la salida `error: unknown filesystem` y negarse a arrancar por varias razones. Si está seguro de que todas las [UUID](/index.php/UUID "UUID") son correctas y todos los sistemas de archivos son válidos y soportados, puede ser debido a que su [BIOS Boot Partition](#GUID_Partition_Table_.28GPT.29_specific_instructions) se encuentra fuera de los primeros 2TB de su unidad [[3]](https://bbs.archlinux.org/viewtopic.php?id=195948). Utilice una herramienta de particionado de su elección para asegurarse de que esta partición se encuentra totalmente dentro de los primeros 2TB, y luego reinstale y reconfigure GRUB.
+GRUB puede mostrar la salida `error: unknown filesystem` y negarse a arrancar por varias razones. Si está seguro de que todas las [UUID](/index.php/UUID "UUID") son correctas y todos los sistemas de archivos son válidos y soportados, puede ser debido a que su [BIOS Boot Partition](#GUID_Partition_Table_.28GPT.29_specific_instructions) se encuentra fuera de los primeros 2TB de su unidad [[3]](https://bbs.archlinux.org/viewtopic.php?id=195948). Utilice una herramienta de particionado de su elección para asegurarse de que esta partición se encuentra totalmente dentro de los primeros 2TB, y luego reinstale y reconfigure GRUB.
+
+### grub-reboot no reinicia
+
+GRUB parece incapaz de escribir a particiones root en BTRFS [[4]](https://bbs.archlinux.org/viewtopic.php?id=166131). Si usa grub-reboot para reiniciar en otra entrada no podra actualizar su entorno en-disco. Por lo tanto ejecute grub-reboot desde la otra entrada (por ejemplo, al cambiar entre varias distribuciones) o considere un sistema de archivos distinto. Es posible resetear una entrada "pegajosa" ejecutando `grub-editenv create` y estableciendo `GRUB_DEFAULT=0` en su `/etc/default/grub` (recuerde ejecutar `grub-mkconfig -o /boot/grub/grub.cfg`).
 
 ## Véase también
 

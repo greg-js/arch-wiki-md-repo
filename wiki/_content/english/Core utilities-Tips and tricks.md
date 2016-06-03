@@ -89,7 +89,7 @@ Re-login after installing *lesspipe* in order to activate it, or source `/etc/pr
 
 ### Vim as alternative pager
 
-[Vim](/index.php/Vim "Vim") (*visual editor improved*) has a script to view the content of text files, compressed files, binaries, directories. Add the following line to your shell configuration file to use it as a pager:
+[Vim](/index.php/Vim "Vim") as a script to view the content of text files, compressed files, binaries, directories. Add the following line to your shell configuration file to use it as a pager:
 
  `~/.bashrc`  `alias less='/usr/share/vim/vim74/macros/less.sh'` 
 

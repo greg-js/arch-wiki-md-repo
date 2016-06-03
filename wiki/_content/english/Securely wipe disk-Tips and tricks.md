@@ -2,6 +2,8 @@ See [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk") for
 
 This article describes alternative wiping methods to the specialized utilities that can speed up wiping.
 
+**Warning:** [Reserved blocks](/index.php/Ext4#Reserved_blocks "Ext4") will not be wiped by creation of the files but they can be disabled with utility `tune2fs`.
+
 ## Contents
 
 *   [1 Wipe a single file](#Wipe_a_single_file)
@@ -27,6 +29,8 @@ Wiping of a single file consists of two basic and one advanced anti-forensic tim
     *   Search the whole disk for the deleted left-over parts of the file and wipe them too without making any changes to other files and their traces.
 
 Overwriting of the file without changing its size can be done with common Linux utilities:
+
+*   Invoking `shred -x *file*` will replace content of *file* with pseudo-random data without changing the filesize (`-x`). Using the `-u` option will remove *file* after overwriting it.
 
 *   With `mkfs` you can convert file into the filesystem that will alter everything in it, mount and fill in with any other content for a better overwriting.
 
@@ -145,7 +149,9 @@ See also:
 
 ## Wipe free space
 
-**Warning:** It is not appropriate to use before [preparations for block device encryption](/index.php/Securely_wipe_disk#Preparations_for_block_device_encryption "Securely wipe disk").
+**Warning:**
+
+*   It is not appropriate to use before [preparations for block device encryption](/index.php/Securely_wipe_disk#Preparations_for_block_device_encryption "Securely wipe disk").
 
 You can wipe free space by several ways:
 

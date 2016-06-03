@@ -65,7 +65,7 @@ To enable it in all children shells, you need to source the hook from one of you
 
 ### Fish
 
-Since [version 2.2](https://github.com/fish-shell/fish-shell/releases/tag/2.2.0) [Fish](/index.php/Fish "Fish") has provided its own "command not found" hook for [pkgfile](https://www.archlinux.org/packages/?name=pkgfile): [Add command-not-found handler for Arch Linux #1925](https://github.com/fish-shell/fish-shell/pull/1925)
+[Fish](/index.php/Fish "Fish") provides its own "command not found" hook for [pkgfile](https://www.archlinux.org/packages/?name=pkgfile): [Add command-not-found handler for Arch Linux #1925](https://github.com/fish-shell/fish-shell/pull/1925)
 
 ## Automatic updates
 

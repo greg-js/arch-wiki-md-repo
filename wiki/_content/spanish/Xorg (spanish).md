@@ -74,10 +74,10 @@ A fin de que pueda funcionar la aceleración de vídeo y, muchas veces, dejar ex
 
 | Marca | Tipo | Controlador | Paquete [Multilib](/index.php/Multilib "Multilib")
 (Para ejecutar aplicaciones de 32-bit en Arch x86_64) |  Documentación  |
-| ** AMD/ATI ** |  Código abierto  | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [lib32-ati-dri](https://www.archlinux.org/packages/?name=lib32-ati-dri) | [ATI](/index.php/ATI "ATI") |
+| ** AMD/ATI ** |  Código abierto  | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [ATI](/index.php/ATI "ATI") |
 | Propietario | [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/) | [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/) | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
-| **Intel** | Código abierto | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [lib32-intel-dri](https://www.archlinux.org/packages/?name=lib32-intel-dri) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
-| **Nvidia** | Código abierto | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [lib32-nouveau-dri](https://www.archlinux.org/packages/?name=lib32-nouveau-dri) | [Nouveau](/index.php/Nouveau "Nouveau") |
+| **Intel** | Código abierto | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
+| **Nvidia** | Código abierto | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau](/index.php/Nouveau "Nouveau") |
 | [xf86-video-nv](https://www.archlinux.org/packages/?name=xf86-video-nv) | – | (controlador legacy) |
 | Propietario | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
 | [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) | [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) |

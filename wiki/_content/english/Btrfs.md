@@ -79,7 +79,7 @@ To overwrite the existing partition table with Btrfs, run the following command:
 
 For example, use `/dev/sda` rather than `/dev/sda1`. The latter would format an existing partition instead of replacing the entire partitioning scheme.
 
-Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). For example, in the case of [GRUB](/index.php/GRUB#Install_to_440-byte_MBR_boot_code_region "GRUB"):
+Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). For example, in the case of [GRUB](/index.php/GRUB#Install_to_disk "GRUB"):
 
 ```
 # grub-install --recheck /dev/sd*X*
@@ -364,7 +364,7 @@ The [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary) says
 
 **Warning:** The running scrub process will prevent the system from suspending, see [this thread](http://comments.gmane.org/gmane.comp.file-systems.btrfs/33106) for details.
 
-The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package brings the `btrfs-scrub@.timer` unit for monthly scrubbing the specified mountpoint. [Enable](/index.php/Enable "Enable") the timer with an encoded path, e.g. `btrfs-scrub@-.timer` for `/` and `btrfs-scrub@home.timer` for `/home`.
+The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package brings the `btrfs-scrub@.timer` unit for monthly scrubbing the specified mountpoint. [Enable](/index.php/Enable "Enable") the timer with an escaped path, e.g. `btrfs-scrub@-.timer` for `/` and `btrfs-scrub@home.timer` for `/home`. You can use the *systemd-escape* tool to escape a given string, see `systemd-escape(1)` for examples.
 
 You can also run the scrub manually by [starting](/index.php/Starting "Starting") `btrfs-scrub@.service` (with the same encoded path). The advantage of this over `# btrfs scrub` is that the results of the scrub will be logged in the [systemd journal](/index.php/Systemd_journal "Systemd journal").
 

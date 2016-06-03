@@ -52,7 +52,7 @@ The kernel contains two built-in open-source drivers: **brcmsmac** for PCI backe
 
 ### b43
 
-Two reverse-engineered open-source drivers are built-in to the kernel: **b43** and **b43legacy**. b43 supports most newer Broadcom chipsets, while the b43legacy driver only supports the early BCM4301 and BCM4306 rev.2 chipsets. To avoid erroneous detection of your WiFi card's chipset, [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the unused driver.
+Two reverse-engineered open-source drivers are built-in to the kernel: **b43** and **b43legacy**. b43 supports most newer Broadcom chipsets, while the b43legacy driver only supports the early BCM4301 and BCM4306 rev.2 chipsets. To avoid erroneous detection of your WiFi card's chipset, [blacklist](/index.php/Blacklist "Blacklist") the unused driver.
 
 Both of these drivers require non-free firmware to function. Install [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/), [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/) or [b43-firmware-legacy](https://aur.archlinux.org/packages/b43-firmware-legacy/) from the [AUR](/index.php/AUR "AUR").
 
@@ -63,9 +63,15 @@ Both of these drivers require non-free firmware to function. Install [b43-firmwa
 
 ### broadcom-wl
 
-Install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or its [DKMS](/index.php/DKMS "DKMS") variant [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) from the [AUR](/index.php/AUR "AUR") for the restrictively licensed driver.
+There are two version in [AUR](/index.php/AUR "AUR") of the restrictively licensed driver:
 
-**Tip:** If you use [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/), kernel upgrades may break wireless from time to time, and you may need to uninstall & reinstall the package. Using [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) helps avoid this.
+*   the standard [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)
+*   and the [DKMS](/index.php/DKMS "DKMS") variant [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)
+
+**Tip:** The DKMS variant [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)
+
+*   is kernel agnostic. This means it supports different kernels you may use (e.g. [linux-ck](https://aur.archlinux.org/packages/linux-ck/)).
+*   is kernel release agnostic too. It will be rebuild after a kernel is upgraded to a new release. If you use [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or another kernel release dependant variant (e.g. [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/)), it may happen that kernel upgrades break wireless from time to time until the packages are in sync again
 
 #### Offline installation
 
@@ -93,7 +99,7 @@ If the driver does not work at this point, you may need to update dependencies:
 
 ```
 
-To make the module load at boot, refer to [Kernel modules](/index.php/Kernel_modules "Kernel modules"). It is recommending that you [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") conflicting modules.
+To make the module load at boot, refer to [Kernel modules](/index.php/Kernel_modules "Kernel modules"). It is recommending that you [blacklist](/index.php/Blacklist "Blacklist") conflicting modules.
 
 ## Troubleshooting
 

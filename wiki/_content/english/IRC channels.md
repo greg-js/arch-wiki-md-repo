@@ -17,6 +17,7 @@ You can find official Arch-related discussion on the following Internet Relay Ch
 | [#archlinux-projects](irc://irc.freenode.net/archlinux-projects) | Projects development and discussion (mkinitcpio, abs, dbscripts, devtools, ...) |
 | [#archlinux-multilib](irc://irc.freenode.net/archlinux-multilib) | Arch Linux Multilib Project discussion and packaging |
 | [#archlinux-security](irc://irc.freenode.net/archlinux-security) | Discussion of security issues within Arch packages. |
+| [#archlinux-wiki](irc://irc.freenode.net/archlinux-wiki) | Discussion on [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") and its articles. |
 
 ## Unofficial IRC channels
 
@@ -50,6 +51,7 @@ International discussions are available at the following channels, also located 
 | [#archlinux-nordics](irc://irc.freenode.net/archlinux-nordics) | Discussion (the nordics: Danish, Finnish, Norwegian and Swedish) |
 | [#archlinux-ir](irc://irc.freenode.net/archlinux-ir) | Discussion (Persian) |
 | [#archlinux.org.pl](irc://irc.freenode.net/archlinux.org.pl) | Discussion (Polish) |
+| [#archlinux-pt](irc://irc.freenode.net/archlinux-pt) | Discussion (Portuguese) |
 | [#archlinux.ro](irc://irc.freenode.net/archlinux.ro) | Discussion (Romanian) |
 | [#archlinux-ru](irc://irc.freenode.net/archlinux-ru) | Discussion (Russian); also on **[irc.mibbit.net#archlinux-ru](irc://irc.mibbit.net/archlinux-ru)** |
 | [#archlinux-rs](irc://irc.freenode.net/archlinux-rs) | Discussion (Serbian) |

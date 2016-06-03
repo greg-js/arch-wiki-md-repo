@@ -60,7 +60,7 @@ You can also provide ntop with your own SSL certificate. Simply put it in ntop's
 
 ### Group and user
 
-In order that the *-u* parameter is able to work properly and to secure your ntop setup a bit more, you should create an own group and user for it.
+In order for the *-u* parameter to work properly and to make your ntop setup a bit more secure, you should create your own group and user for it.
 
 ```
 # useradd -M -s /usr/bin/false ntop

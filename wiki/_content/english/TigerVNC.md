@@ -111,6 +111,8 @@ Systemd can manage the vncserver via a service in one of two modes using either 
 
 #### User mode
 
+**Note:** In order to keep the vncserver alive when the user logs out (physically or via ssh), one must enable the linger option for loginctl like this: `# loginctl enable-linger username` Failure to do so will result in the vncserver getting killed when the user logs off the machine.
+
 Start the service in usermode:
 
 ```
@@ -122,13 +124,6 @@ Enable the service in usermode:
 
 ```
 $ systemctl --user enable vncserver@:1
-
-```
-
-In order to keep the vncserver alive when the user logs out (physically or via ssh), one must enable the linger option for loginctl:
-
-```
-# loginctl enable-linger username
 
 ```
 
@@ -176,7 +171,7 @@ WantedBy=multi-user.target
 
 #### Multi-user mode
 
-You can use systemd socket activation in combination with [XDMCP](/index.php/Xdmcp "Xdmcp") to automatically spawn VNC servers for each user who attempts to login, so there is no need to set up one server/port per user. It uses your display manager to authenticate users and login, so there is no need for VNC passwords. The downside is that you cannot leave a session running on the server and reconnect to it later. To get this running, first set up [XDMCP](/index.php/Xdmcp "Xdmcp") and make sure whichever display manager you're using is running. Then create:
+One can use systemd socket activation in combination with [XDMCP](/index.php/Xdmcp "Xdmcp") to automatically spawn VNC servers for each user who attempts to login, so there is no need to set up one server/port per user. This setup uses the display manager to authenticate users and login, so there is no need for VNC passwords. The downside is that users cannot leave a session running on the server and reconnect to it later. To get this running, first set up [XDMCP](/index.php/Xdmcp "Xdmcp") and make sure the display manager is running. Then create:
 
  `/etc/systemd/system/xvnc.socket` 
 ```
@@ -208,7 +203,7 @@ StandardError=syslog
 
 Use systemctl to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `xvnc.socket`. Now any number of users can get unique desktops by connecting to port 5900.
 
-If your VNC server is exposed to the internet, add the `-localhost` option to `Xvnc` in `xvnc@.service` and follow the instructions below about connecting over SSH (Note that the 'localhost' in `-query localhost` is not `-localhost`). Since we only select a user after connecting, the VNC server runs as user 'nobody' and uses xvnc directly instead of the 'vncserver' script, so any options in ~/.vnc are ignored. You might want to [autostart](/index.php/Autostart "Autostart") `vncconfig` so that the clipboard works (`vncconfig` exits immediately in non-VNC sessions). One way is to create:
+If the VNC server is exposed to the internet, add the `-localhost` option to `Xvnc` in `xvnc@.service` and follow the instructions below about connecting over SSH (Note that the 'localhost' in `-query localhost` is not `-localhost`). Since we only select a user after connecting, the VNC server runs as user 'nobody' and uses xvnc directly instead of the 'vncserver' script, so any options in ~/.vnc are ignored. Optionally [autostart](/index.php/Autostart "Autostart") `vncconfig` so that the clipboard works (`vncconfig` exits immediately in non-VNC sessions). One way is to create:
 
  `/etc/X11/xinit/xinitrc.d/99-vncconfig.sh` 
 ```

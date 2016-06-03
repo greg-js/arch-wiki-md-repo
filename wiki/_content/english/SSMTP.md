@@ -3,10 +3,10 @@ SSMTP is a program which delivers email from a local computer to a configured ma
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Forward to a Gmail Mail Server](#Forward_to_a_Gmail_Mail_Server)
-    *   [2.1 Using an App Password](#Using_an_App_Password)
+*   [2 Forward to a Gmail mail server](#Forward_to_a_Gmail_mail_server)
+    *   [2.1 Using an app password](#Using_an_app_password)
 *   [3 Security](#Security)
-*   [4 Sending Email](#Sending_Email)
+*   [4 Sending email](#Sending_email)
     *   [4.1 Attachments](#Attachments)
 *   [5 References](#References)
 
@@ -14,16 +14,18 @@ SSMTP is a program which delivers email from a local computer to a configured ma
 
 [Install](/index.php/Install "Install") the package [ssmtp](https://www.archlinux.org/packages/?name=ssmtp).
 
-## Forward to a Gmail Mail Server
+## Forward to a Gmail mail server
 
 To configure SSMTP, you will have to edit its configuration file (`/etc/ssmtp/ssmtp.conf`) and enter your account settings:
 
+ `/etc/ssmtp/ssmtp.conf` 
 ```
+
 # The user that gets all the mails (UID < 1000, usually the admin)
 root=username@gmail.com
 
 # The mail server (where the mail is sent to), both port 465 or 587 should be acceptable
-# See also http://mail.google.com/support/bin/answer.py?answer=78799
+# See also https://support.google.com/mail/answer/78799
 mailhub=smtp.gmail.com:587
 
 # The address where the mail appears to come from for user authentication.
@@ -75,7 +77,7 @@ root:x:0:0:root@myhostname,,,:/root:/bin/bash
 mainuser:x:1000:1000:mainuser@myhostname,,,:/home/mainuser:/bin/bash
 ```
 
-### Using an App Password
+### Using an app password
 
 If your Gmail account is secured with two-factor authentication, you need to generate a unique [App Password](https://support.google.com/mail/answer/185833) to use in `ssmtp.conf`. You can do so on your [App Passwords](https://security.google.com/settings/security/apppasswords) page. Use the generated 16-character password in the `AuthPass` line. Spaces in the password can be omitted.
 
@@ -125,7 +127,7 @@ Set the SGID bit on the *ssmtp* binary.
 
 Now, all the regular users can still send email using the terminal, but none can read the `ssmtp.conf` file.
 
-## Sending Email
+## Sending email
 
 To send email from the terminal, do:
 
@@ -177,4 +179,4 @@ $ uuencode file.txt file.txt | mail user@domain.com
 *   [SSMTP and Gmail on the Arch forums](https://bbs.archlinux.org/viewtopic.php?pid=446831)
 *   [Sending Email From Your System with sSMTP](http://tombuntu.com/index.php/2008/10/21/sending-email-from-your-system-with-ssmtp/)
 *   [The Qnd Guide to ssmtp](http://www.scottro.net/qnd/qnd-ssmtp.html)
-*   [GMail Support - Configuring other mail clients](http://mail.google.com/support/bin/answer.py?answer=78799)
+*   [GMail Support - Configuring other mail clients](https://support.google.com/mail/answer/78799)

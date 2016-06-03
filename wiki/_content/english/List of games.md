@@ -472,7 +472,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **ASCIIpOrtal** — Sidescrolling game with ANSI text graphics in which you are a person holding a device which creates portals, or links to other parts of the level.
 
-	[http://cymonsgames.com/asciiportal](http://cymonsgames.com/asciiportal) || [asciiportal](https://aur.archlinux.org/packages/asciiportal/)
+	[http://cymonsgames.com/asciiportal](http://cymonsgames.com/asciiportal) || [asciiportal](https://www.archlinux.org/packages/?name=asciiportal)
 
 *   **[Cataclysm: Dark Days Ahead](https://en.wikipedia.org/wiki/Cataclysm:_Dark_Days_Ahead "wikipedia:Cataclysm: Dark Days Ahead")** — Post-apocalyptic roguelike.
 
@@ -674,7 +674,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **nQuake** — Fast paced multiplayer FPS focusing on movement and trick jumps. This is the popular Quake / QuakeWorld package, including ezQuake client, 24bit textures, maps, bots and more. Can play on-line for free.
 
-	[http://nquake.sourceforge.net/](http://nquake.sourceforge.net/) || [nquake-arena](https://aur.archlinux.org/packages/nquake-arena/)
+	[http://nquake.sourceforge.net/](http://nquake.sourceforge.net/) || [nquake](https://aur.archlinux.org/packages/nquake/)
 
 *   **[OpenArena](https://en.wikipedia.org/wiki/OpenArena "wikipedia:OpenArena")** — Fast multiplayer shooter based on the quake3-engine.
 
@@ -687,7 +687,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Quake](https://en.wikipedia.org/wiki/Quake_(video_game) "wikipedia:Quake (video game)")
 
 *   Advanced Quake 1 game engine – [darkplaces](https://aur.archlinux.org/packages/darkplaces/)
-*   Free content replacement project for Quake 1 – [oqplus-svn](https://aur.archlinux.org/packages/oqplus-svn/)
 *   High quality textures for Quake from the Quake Revitalization Project – [quake-qrp-textures](https://aur.archlinux.org/packages/quake-qrp-textures/)
 
 *   [Quake II](https://en.wikipedia.org/wiki/Quake_II "wikipedia:Quake II")
@@ -719,7 +718,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **Tesseract** — Smooth FPS with map editing, instagib, DM and CTF.
 
-	[http://tesseract.gg/](http://tesseract.gg/) || [tesseract-game](https://www.archlinux.org/packages/?name=tesseract-game)
+	[http://tesseract.gg/](http://tesseract.gg/) || [tesseract-game](https://aur.archlinux.org/packages/tesseract-game/)
 
 *   **[Tremulous](https://en.wikipedia.org/wiki/Tremulous "wikipedia:Tremulous")** — FPS with elements of real time strategy, featuring humans and aliens.
 
@@ -811,6 +810,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **[Vega Strike](https://en.wikipedia.org/wiki/Vega_Strike "wikipedia:Vega Strike")** — 3D action-space-sim allowing player to trade and bounty hunt in a vast universe.
 
 	[http://vegastrike.sourceforge.net/](http://vegastrike.sourceforge.net/) || [vegastrike](https://aur.archlinux.org/packages/vegastrike/)
+
+*   **Voxelands** — A fork of Minetest, an Infiniminer/Minecraft inspired game.
+
+	[http://www.voxelands.com/](http://www.voxelands.com/) || [voxelands](https://aur.archlinux.org/packages/voxelands/)
 
 ## Strategy
 

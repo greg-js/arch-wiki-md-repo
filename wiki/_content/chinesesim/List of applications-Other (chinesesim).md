@@ -338,7 +338,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **slingshot** — An application launcher has a clear look, part of [pantheon](/index.php/Pantheon "Pantheon") desktop environment.
 
-	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://www.archlinux.org/packages/?name=slingshot-launcher)
+	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://aur.archlinux.org/packages/slingshot-launcher/)
 
 *   **Synapse** — Synapse is a semantic launcher written in Vala that you can use to start applications as well as find and access relevant documents and files by making use of the Zeitgeist engine.
 
@@ -695,7 +695,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **[RetroArch](/index.php/RetroArch "RetroArch")** — Frontend to libretro (emulation library, using modified versions of existing emulators as plugins).
 
-	[http://github.com/Themaister/RetroArch](http://github.com/Themaister/RetroArch) || [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/)
+	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
 
 *   **ScummVM** — Virtual machine for old school adventures.
 

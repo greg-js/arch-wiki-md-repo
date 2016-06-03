@@ -11,6 +11,7 @@
     *   [4.1 Reload File](#Reload_File)
     *   [4.2 Remote Interface](#Remote_Interface)
     *   [4.3 Cleanup history](#Cleanup_history)
+    *   [4.4 Inverse search using Synctex and Vim](#Inverse_search_using_Synctex_and_Vim)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -108,6 +109,36 @@ $ llpp -gc /path/to/script
 gc.py done.
 
 ```
+
+### Inverse search using Synctex and Vim
+
+To use the synctex capability of llpp, add the line bellow to your <tt>~/.config/llpp.conf</tt> under the <tt>defaults</tt> tag:
+
+```
+<defaults
+    ...
+    synctex-command='SyncTeX-inverse.sh'
+    ...>
+    ...
+</defaults>
+
+```
+
+where <tt>SyncTeX-inverse.sh</tt> is the script bellow
+
+```
+#!/bin/bash
+pdf_file=$1
+page=$(($2 + 1)) # The page number star at zero in llpp
+x=$3
+y=$4
+
+synctex edit -o "$page:$x:$y:$pdf_file" \
+       -x "gvim --servername synctex --remote-wait-silent +%{line} %{input}"
+
+```
+
+Make sure <tt>SyncTeX-inverse.sh</tt> is an executable script and add it to your <tt>PATH</tt> environment variable. To use the <tt>synctex</tt> command you will need [texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) package from the official Arch repositories.
 
 ## See also
 

@@ -214,13 +214,22 @@ $ fusermount -u ~/mnt
 
 	FUSE interface
 
+Mount your device on `~/my-device`:
+
 ```
 $ mkdir ~/my-device
-$ ./aft-mtp-mount ~/my-device
+$ aft-mtp-mount ~/my-device
 
 ```
 
 If you want album art to be displayed, it must be named `albumart.xxx` and placed first in the destination folder. Then copy other files. Also, note that fuse could be 7-8 times slower than ui/cli file transfer.
+
+Unmount device mounted on `~/my-device`:
+
+```
+$ fusermount -u ~/my-device
+
+```
 
 	Qt user interface
 

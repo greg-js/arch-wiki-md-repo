@@ -28,7 +28,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support "wi
 
 The *positive effect* of using DKMS is that modules are often able to be rebuilt when the kernel is upgrading. This means that a user does not have to wait for a company, project, or package maintainer to release a new version of the module.
 
-The *negative effect* of using DKMS is that DKMS breaks the Pacman database. The problem is that the resulting modules do not belong to the package anymore, so Pacman cannot track them. Theoretically though, support could be added through hooks (see: [FS#2985](https://bugs.archlinux.org/task/2985)).
+Since the introduction of [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman"), the rebuilt of the modules is handled automatically when a kernel is upgraded. See also [#Upgrading](#Upgrading).
 
 ## Installation
 
@@ -48,7 +48,9 @@ A good number of modules that lie outside the kernel source tree have a DKMS var
 
 ## Upgrades
 
-Though modules are able to be rebuilt usually through a good number of kernel upgrades, at times the package will need to get upgraded. To deal with changes in the kernel, fix bugs, or add necessary features consider upgrading the DKMS package before rebooting.
+Though the rebuilt of the DKMS modules is usually seamless during a kernel upgrade, it may still happen that the rebuilt fails. You should pay extra attention to pacman's output! This applies in particular if the system relies on the DKMS module to boot successfully and/or if you use DKMS with a custom kernel not in the [Official repositories](/index.php/Official_repositories "Official repositories").
+
+To deal with changes in the kernel, fix bugs, or add necessary features consider upgrading the DKMS package before rebooting.
 
 ## Usage
 
@@ -137,7 +139,7 @@ The variable `$_pkgname` is often used below `$pkgname` to describe the package 
 
 ### Dependencies
 
-Dependencies should be inherited from the original version with [dkms](https://www.archlinux.org/packages/?name=dkms) added and [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) removed (as it is listed by the dkms pacakge as *optional*).
+Dependencies should be inherited from the original version with [dkms](https://www.archlinux.org/packages/?name=dkms) added and [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) removed (as it is listed by the dkms package as *optional*).
 
 ### Build source location
 

@@ -1,43 +1,37 @@
-Tethering is a way to have internet access on your PC through your smartphone using its network connection. USB tethering and Wi-Fi access point tethering are natively supported since Android Froyo (2.2). In older versions of the Android OS, most unofficial ROMs have this option enabled.
+Tethering is a way to have internet access on your PC through your smartphone using its network connection. USB tethering and Wi-Fi access point tethering are natively supported since Android 2.2 "Froyo".
 
 ## Contents
 
 *   [1 Wi-Fi access point](#Wi-Fi_access_point)
 *   [2 USB tethering](#USB_tethering)
-    *   [2.1 Tools Needed](#Tools_Needed)
-    *   [2.2 Procedure](#Procedure)
-        *   [2.2.1 Using systemd-networkd with udev](#Using_systemd-networkd_with_udev)
-*   [3 USB tethering with OpenVPN](#USB_tethering_with_OpenVPN)
-    *   [3.1 Tools Needed](#Tools_Needed_2)
+    *   [2.1 Using systemd-networkd with udev](#Using_systemd-networkd_with_udev)
+*   [3 USB tethering with AziLink](#USB_tethering_with_AziLink)
+    *   [3.1 Tools needed](#Tools_needed)
         *   [3.1.1 Configuring the phone connection in Arch Linux](#Configuring_the_phone_connection_in_Arch_Linux)
-    *   [3.2 Procedure](#Procedure_2)
-    *   [3.3 Troubleshooting](#Troubleshooting)
-        *   [3.3.1 DNS](#DNS)
-        *   [3.3.2 NetworkManager](#NetworkManager)
-*   [4 Tethering via Bluetooth](#Tethering_via_Bluetooth)
-*   [5 Tethering with SOCKS proxy](#Tethering_with_SOCKS_proxy)
-    *   [5.1 Tools Needed](#Tools_Needed_3)
-    *   [5.2 Instructions](#Instructions)
-        *   [5.2.1 Tetherbot](#Tetherbot)
-        *   [5.2.2 Proxoid](#Proxoid)
-*   [6 ClockworkMod Tether](#ClockworkMod_Tether)
+    *   [3.2 Procedure](#Procedure)
+*   [4 USB tethering with EasyTether](#USB_tethering_with_EasyTether)
+*   [5 Tethering via Bluetooth](#Tethering_via_Bluetooth)
+*   [6 Tethering with SOCKS proxy](#Tethering_with_SOCKS_proxy)
+    *   [6.1 Tools needed](#Tools_needed_2)
+    *   [6.2 Instructions](#Instructions)
+        *   [6.2.1 Tetherbot](#Tetherbot)
+        *   [6.2.2 Proxoid](#Proxoid)
 
 ## Wi-Fi access point
 
-Using an Android phone as a Wi-Fi access point (using 3G) has been accessible by default since Froyo (Android 2.2) without needing to root the phone. Moreover, this method will discharge the battery rapidly and tends to cause intense heating, unlike USB. See : **menu/wireless & networks/Internet tethering/Wi-Fi access point**
+Using an Android phone as a Wi-Fi access point (to a 3G/4G mobile internet connection) is available for devices running Android 2.2 "Froyo" or newer.
+
+Enable it in `Settings -> Wireless & networks -> Internet tethering -> Wi-Fi access point`
+
+**Note:** On some phones, this method will discharge the battery rapidly and tends to cause intense heating, unlike USB.
 
 ## USB tethering
 
-### Tools Needed
-
-*   Root access to the phone (for old Android versions, Froyo (Android 2.2) and beyond can do it natively)
-*   USB connection cable from your phone to PC
-
-### Procedure
+USB tethering is available for devices running Android 2.2 "Froyo" or newer.
 
 *   Disconnect your computer from any wireless or wired networks
 *   Connect the phone to your computer using the USB cable (the USB connection mode -- Phone Portal, Memory Card or Charge only -- is not important, but please note that you will not be able to change the USB mode during tethering)
-*   Enable the tethering option from your phone. This is usually done from `Settings --> Wireless & Networks --> Internet tethering` (or `Tethering & portable hotspot`, for more recent versions)
+*   Enable the tethering option from your phone. This is usually done from `Settings -> Wireless & networks -> Internet tethering` (or `Tethering & portable hotspot`, for more recent versions)
 *   Make sure that the USB interface is recognized by the system by using the following command:
 
 	 `$ ip link` 
@@ -95,19 +89,19 @@ DHCP=ipv4
 
 ```
 
-## USB tethering with OpenVPN
+## USB tethering with AziLink
 
-This method works for any old Android version and requires neither root access nor modifications in the phone (it is also suitable for Android 2.2 and later, but no longer required).
+This method works for all known Android versions and requires neither root access nor modifications in the phone. It does not require changes to your browser. All network traffic is transparently handled (except ICMP pings). It may be somewhat CPU intensive on the phone at high usage rates (a 500 kBytes/sec data transfer rate may take more than 50% of phone CPU).
 
-It does not require changes to your browser. In fact, all network traffic is transparently handled for any PC application (except ICMP pings). It is somewhat CPU intensive on the phone at high usage rates (a 500 kBytes/sec data transfer rate may take more than 50% of phone CPU on a powerful Acer Liquid).
+### Tools needed
 
-### Tools Needed
-
-For Arch, you need to [install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package. It is also required to have the Android SDK installed (which can be obtained [here](http://developer.android.com/sdk/index.html) or from the AUR). On the phone, you need the [azilink](http://code.google.com/p/azilink/) application, which is a Java-based NAT that will communicate with OpenVPN on your computer.
+For Arch, you need to [install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package. You will also need to install the [android-tools](https://www.archlinux.org/packages/?name=android-tools) package for the *adb* tool and [android-udev](https://www.archlinux.org/packages/?name=android-udev) which sets up the correct `/usr/lib/udev/rules.d/51-android.rules` file for your device to be recognized. On the phone, you need the [azulink.apk](http://lfx.org/azilink/azilink.apk) ([azilink homepage](https://github.com/aziwoqpd/azilink)). The android application acts as a NAT, adb forwards the ports to your phone, and your openvnp setup will connect to it.
 
 #### Configuring the phone connection in Arch Linux
 
-Once you have installed the Android SDK, in order to use the provided tools your phone must be properly set up in [udev](/index.php/Udev "Udev") and your Linux user needs to be granted rights. Otherwise you may need root privileges to use the Android SDK, which is not recommended. To perform this configuration, turn on USB debugging on the phone (usually in Settings -> Applications -> Development -> USB debugging), connect it to the PC by the USB cable and run the `lsusb` command. The device should be listed. Example output for the Acer Liquid phone:
+So that you do not have to run adb with sudo, we are going to grant your user permissions to your usb device. Make sure you have turned on USB debugging on the phone (usually in Settings -> Applications -> Development -> USB debugging) so that it will be shown as a device, and that it is plugged in to your computer via the USB cable. You should see it with you run the `lsusb` command. Original azi link instructions are [here](https://raw.githubusercontent.com/aziwoqpd/azilink/master/HOWTO)
+
+The device should be listed. Example output for the Acer Liquid phone:
 
 ```
 Bus 001 Device 006: ID **0502**:3202 Acer, Inc. 
@@ -122,9 +116,7 @@ SUBSYSTEM=="usb", ATTR(idVendor)=="0502", MODE="0666" OWNER="ciri"
 
 ```
 
-As root run the `udevadm control restart` command (or reboot your computer) to make the change effective.
-
-Now run in your linux PC the `adb shell` command from the Android SDK as plain (non root) user: you should get a unix prompt *in your phone*.
+As root run the `sudo udevadm control --reload` command to make the change effective. To make sure the change took effect, run 'adb devices' and it should say 'device' instead of 'unauthorized'. Another way to make it take effect is to reboot. Another test is to run `adb shell` to get to your phones unix prompt. The command should work without needing sudo.
 
 ### Procedure
 
@@ -137,9 +129,11 @@ Run the AziLink application in the phone and select "About" at the bottom to rec
 
 	 `$ adb forward tcp:41927 tcp:41927` 
 
-	 `# openvpn AziLink.ovpn` 
+	 `# sudo openvpn azilink.ovpn` 
 
- `AziLink.ovpn` 
+azilink.ovpn source from [here](https://raw.githubusercontent.com/aziwoqpd/azilink/master/azilink.ovpn)
+
+ `azilink.ovpn` 
 ```
 dev tun
 remote 127.0.0.1 41927 tcp-client
@@ -152,10 +146,6 @@ dhcp-option DNS 192.168.56.1
 
 ```
 
-### Troubleshooting
-
-#### DNS
-
 You may need to manually update the contents of [resolv.conf](/index.php/Resolv.conf "Resolv.conf") to
 
  `/etc/resolv.conf` 
@@ -164,9 +154,20 @@ nameserver 192.168.56.1
 
 ```
 
-#### NetworkManager
-
 If you're running NetworkManager, you may need to stop it before running OpenVPN.
+
+## USB tethering with EasyTether
+
+Get the [easytether](http://www.mobile-stream.com/easytether/drivers.html) linux client software. The commands to set it up and run it are as follows.
+
+```
+# pacman -U easytether-0.8.5-2-x86_64.pkg.tar.xz
+# easytether-usb
+# dhcpcd tap-easytether
+
+```
+
+Make sure you have the EasyTether android app installed on your phone for it to connect to. Note: The Lite app disables some connections and you must have the paid app for full functionality. For this reason, using the AziLink setup is recommended instead.
 
 ## Tethering via Bluetooth
 
@@ -184,9 +185,9 @@ This will create a network interface `bnep0`. Finally, [configure a network conn
 
 With this method tethering is achieved by port forwarding from the phone to the PC. This is suitable only for browsing. For Firefox, you should set **network.proxy.socks_remote_dns** to **true** in **about:config** ( address bar )
 
-### Tools Needed
+### Tools needed
 
-*   [android-sdk](https://aur.archlinux.org/packages/android-sdk/) and [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/) from [AUR](/index.php/AUR "AUR") and [android-udev](https://www.archlinux.org/packages/?name=android-udev) from [official repositories](/index.php/Official_repositories "Official repositories")
+*   The [android-tools](https://www.archlinux.org/packages/?name=android-tools) and [android-udev](https://www.archlinux.org/packages/?name=android-udev) packages
 *   USB connection cable from your phone to PC
 *   Either [Tetherbot](http://graha.ms/androidproxy/) or [Proxoid](https://code.google.com/p/proxoid/)
 
@@ -199,13 +200,3 @@ Follow the instructions under **Using the Socks Proxy** on [[1]](http://graha.ms
 #### Proxoid
 
 Follow the instructions demonstrated in the following [link](http://androidcommunity.com/forums/f23/android-usb-tethering-for-linux-using-proxoid-24875/)
-
-## ClockworkMod Tether
-
-Clockworkmod Tether is a tethering app for android, but also requires software installed on your desktop. The linux application is available at [clockworkmod.com](http://download.clockworkmod.com/tether/tether-linux.tgz).
-
-*   Create a temporary symlink in `/usr/local/bin/python` to `/usr/bin/python2`, as multiple files refer to python2\. Then follow the instructions in the README file.
-
-*   The included *adb* binary requires [Multilib](/index.php/Multilib "Multilib") and [installation](/index.php/Install "Install") of the [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) packages. Use *ldd* to find any other missing libraries.
-
-When *adb* is working, the command line will repeated say "Checking phone status...". Make sure you launch the android app as well.

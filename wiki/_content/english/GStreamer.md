@@ -13,7 +13,9 @@ Designed to be cross-platform, it is known to work on Linux (x86, PowerPC and AR
     *   [2.1 PulseAudio](#PulseAudio)
     *   [2.2 Lightweight desktops](#Lightweight_desktops)
     *   [2.3 KDE / Phonon integration](#KDE_.2F_Phonon_integration)
-*   [3 Bugs](#Bugs)
+    *   [2.4 Hardware acceleration](#Hardware_acceleration)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 assertion 'mini_object->refcount > 0' failed](#assertion_.27mini_object-.3Erefcount_.3E_0.27_failed)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -60,9 +62,20 @@ To configure GStreamer, for example to change the audio output device, use *gstr
 
 See [Phonon](/index.php/Phonon "Phonon").
 
-## Bugs
+### Hardware acceleration
 
-In case of error `GStreamer-CRITICAL **: gst_mini_object_unref: assertion `mini_object->refcount > 0' failed` which usually occurs when recording video through recording software, install [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) to fix.
+See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+
+GStreamer will automatically detect and use the correct API [[1]](http://docs.gstreamer.com/display/GstSDK/Playback+tutorial+8%3A+Hardware-accelerated+video+decoding). Depending on your system you can [install](/index.php/Install "Install"):
+
+*   [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) for VA-API support.
+*   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) for VDPAU support.
+
+## Troubleshooting
+
+### assertion 'mini_object->refcount > 0' failed
+
+If you get an `GStreamer-CRITICAL **: gst_mini_object_unref: assertion 'mini_object->refcount > 0' failed` error (which usually occurs when recording video), you can [install](/index.php/Install "Install") [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) to fix it.
 
 ## See also
 

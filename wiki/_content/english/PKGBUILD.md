@@ -68,7 +68,10 @@ The version of the package. This should be the same as the version released by t
 
 **Note:** If upstream uses a timestamp versioning such as `30102014`, ensure to use the reversed date, i.e. `20141030` ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601 "wikipedia:ISO 8601") format). Otherwise it will not appear as a newer version.
 
-**Tip:** [makepkg](/index.php/Makepkg "Makepkg") can automatically [update](http://allanmcrae.com/2013/04/pacman-4-1-released/) this variable by defining a `pkgver()` function in the PKGBUILD. See [VCS package guidelines#The pkgver() function](/index.php/VCS_package_guidelines#The_pkgver.28.29_function "VCS package guidelines") for details
+**Tip:**
+
+*   The ordering of uncommon values can be tested with [vercmp](https://www.archlinux.org/pacman/vercmp.8.html), which is provided by the [pacman](/index.php/Pacman "Pacman") package.
+*   [makepkg](/index.php/Makepkg "Makepkg") can automatically [update](http://allanmcrae.com/2013/04/pacman-4-1-released/) this variable by defining a `pkgver()` function in the PKGBUILD. See [VCS package guidelines#The pkgver() function](/index.php/VCS_package_guidelines#The_pkgver.28.29_function "VCS package guidelines") for details.
 
 ### pkgrel
 

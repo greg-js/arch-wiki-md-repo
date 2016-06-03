@@ -9,6 +9,7 @@ Apache is often used together with a scripting language such as PHP and database
     *   [2.1 Advanced options](#Advanced_options)
     *   [2.2 User directories](#User_directories)
     *   [2.3 TLS/SSL](#TLS.2FSSL)
+        *   [2.3.1 Create a key and (self-signed) certificate](#Create_a_key_and_.28self-signed.29_certificate)
     *   [2.4 Virtual hosts](#Virtual_hosts)
         *   [2.4.1 Managing many virtual hosts](#Managing_many_virtual_hosts)
 *   [3 Extensions](#Extensions)
@@ -124,6 +125,8 @@ Restart `httpd.service` to apply any changes. See also [Umask#Set the mask value
 
 ### TLS/SSL
 
+**Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to the web server, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
+
 [openssl](https://www.archlinux.org/packages/?name=openssl) provides TLS/SSL support and is installed by default on Arch installations.
 
 In `/etc/httpd/conf/httpd.conf`, uncomment the following three lines:
@@ -135,19 +138,26 @@ Include conf/extra/httpd-ssl.conf
 
 ```
 
+For TLS/SSL, you will need a key and certificate. If you own a public domain, you can use [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") to obtain a certificate for free, otherwise follow [#Create a key and (self-signed) certificate](#Create_a_key_and_.28self-signed.29_certificate).
+
+After obtaining a key and certificate, make sure the `SSLCertificateFile` and `SSLCertificateKeyFile` lines in `/etc/httpd/conf/extra/httpd-ssl.conf` point to the key and certificate.
+
+Finally, restart `httpd.service` to apply any changes.
+
+**Tip:** Mozilla has a useful [SSL/TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS) which includes [Apache specific](https://wiki.mozilla.org/Security/Server_Side_TLS#Apache) configuration guidelines as well as an [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to help create a more secure configuration.
+
+#### Create a key and (self-signed) certificate
+
 Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request"):
 
 ```
 # cd /etc/httpd/conf
 # openssl req -new -x509 -nodes -newkey rsa:4096 -keyout server.key -out server.crt -days 1095
 # chmod 400 server.key
-# chmod 444 server.crt
 
 ```
 
 **Note:** The -days switch is optional and RSA keysize can be as low as 2048 (default).
-
-Then make sure the `SSLCertificateFile` and `SSLCertificateKeyFile` lines in `/etc/httpd/conf/extra/httpd-ssl.conf` point to the key and certificate you have just created.
 
 If you need to create a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request"), follow these keygen instructions instead of the above:
 
@@ -160,12 +170,6 @@ If you need to create a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_
 ```
 
 **Note:** For more openssl options, read the [man page](https://www.openssl.org/docs/apps/openssl.html) or peruse openssl's [extensive documentation](https://www.openssl.org/docs/).
-
-**Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to the web server, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
-
-**Tip:** Mozilla has a useful [SSL/TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS) which includes [Apache specific](https://wiki.mozilla.org/Security/Server_Side_TLS#Apache) configuration guidelines as well as an [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to help create a more secure configuration.
-
-Restart `httpd.service` to apply any changes.
 
 ### Virtual hosts
 

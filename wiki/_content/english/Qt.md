@@ -18,7 +18,7 @@ The Qt framework is emerging as a major development platform and is the basis of
     *   [3.2 Qt5](#Qt5)
     *   [3.3 Qt Style Sheets](#Qt_Style_Sheets)
     *   [3.4 GTK+ and Qt](#GTK.2B_and_Qt)
-    *   [3.5 Configuration of Qt apps under environments other than KDE](#Configuration_of_Qt_apps_under_environments_other_than_KDE)
+    *   [3.5 Configuration of Qt5 apps under environments other than KDE](#Configuration_of_Qt5_apps_under_environments_other_than_KDE)
 *   [4 Development](#Development)
     *   [4.1 Supported platforms](#Supported_platforms)
         *   [4.1.1 Android](#Android)
@@ -89,7 +89,7 @@ Qt4 application will try to mimic the behavior of the desktop environment they a
 *   In Cinnamon, GNOME, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
 *   In other desktop environments, it uses Windows.
 
-For those who want to change the look and feel of Qt4 application, the *Qt Configuration* (*qtconfig-qt4*) GUI tool is available. It offers a very simple configuration for the appearance of Qt4 applications that gives the user easy access to the current Qt Style, colors, fonts and other more advanced options.
+For those who want to change the look and feel of Qt4 applications, the *Qt Configuration* (*qtconfig-qt4*) GUI tool is provided by the [qt4](https://www.archlinux.org/packages/?name=qt4) package. It offers a simple interface to configure the appearance of Qt4 applications including style, colors, fonts and some further options.
 
 **Note:** If you use *GTK+* style, then color and font settings will be ignored, and inherited from GTK+ 2.
 
@@ -119,7 +119,7 @@ The following styles are included in Qt4: *CDE*, *Cleanlooks*, *GTK+*, *Motif*, 
 
 	[https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-qt4](https://www.archlinux.org/packages/?name=qtcurve-qt4)
 
-*   **Adwatia-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
+*   **Adwaita-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 
 	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/)
 
@@ -147,7 +147,7 @@ The following styles are included in Qt5: *GTK+*, *Fusion*, *Windows*. Others ca
 
 	[https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-qt5](https://www.archlinux.org/packages/?name=qtcurve-qt5)
 
-*   **Adwatia-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
+*   **Adwaita-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 
 	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)
 
@@ -172,11 +172,11 @@ For more information on Qt Style Sheets see the [official documentation](http://
 
 If you have GTK+ and Qt applications, their looks might not exactly blend in very well. If you wish to make your GTK+ styles match your Qt styles please read [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-### Configuration of Qt apps under environments other than KDE
+### Configuration of Qt5 apps under environments other than KDE
 
 Unlike Qt4, Qt5 doesn't ship a qtconfig utility to configure fonts, icons or styles. Instead, it will try to use the settings from the running DE. In KDE or GNOME this works well, but in other less popular DEs or WM it can lead to missing icons in Qt5 applications. One way to solve this is to fake the running desktop environment by setting `XDG_CURRENT_DESKTOP=KDE` or `GNOME`, and then using the corresponding configuration application to set the desired icon set.
 
-Another solution is provided by the [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package, which provides a DE independent Qt5 QPA and a configuration utility. After installing the package, run `qt5ct` to set an icon theme, and set the environment variable `QT_QPA_PLATFORMTHEME="qt5ct"` so that the settings are picked up by Qt applications.
+Another solution is provided by the [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package, which provides a DE independent Qt5 QPA and a configuration utility. After installing the package, run `qt5ct` to set an icon theme, and set the environment variable `QT_QPA_PLATFORMTHEME="qt5ct"` so that the settings are picked up by Qt applications. Alternatively, use `--platformtheme qt5ct` as argument to the Qt5 application.
 
 If the below errors are received, and some icons still do not appear in some of the apps, install [oxygen](https://www.archlinux.org/packages/?name=oxygen) and [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons):
 
@@ -255,7 +255,7 @@ The following examples display a small 'Hello world!' message in a window.
 *   Website: [http://qt-project.org/](http://qt-project.org/)
 *   Build:
     *   The Qt4 version: `g++ $(pkg-config --cflags --libs QtGui) -o hello hello.cpp`
-    *   The Qt5 version: `g++ $(pkg-config --cflags --libs Qt5Widgets) -o hello hello.cpp`
+    *   The Qt5 version: `g++ $(pkg-config --cflags --libs Qt5Widgets) -fPIC -o hello hello.cpp`
 *   Run with: `./hello`
 
  `hello.cpp` 

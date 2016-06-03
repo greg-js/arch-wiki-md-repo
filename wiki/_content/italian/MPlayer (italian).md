@@ -69,7 +69,7 @@ Ci sono diverse interfacce grafiche per MPlayer.
 
 *   **KMPlayer** — Un player video, plugin for Konqueror, frontend per MPlayer/Xine/ffmpeg/ffserver/VDR per KDE.
 
-	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://aur.archlinux.org/packages/kmplayer/)
+	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
 
 *   **Xt7-Player** — Una GUI per mplayer scritta in Gambas, con una lunga lista di features.
 
@@ -87,7 +87,7 @@ Il plugin per [Firefox](/index.php/Firefox_(Italiano) "Firefox (Italiano)") si c
 
 #### Konqueror
 
-Il pacchetto [kmplayer](https://aur.archlinux.org/packages/kmplayer/) è disponibile il [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
+Il pacchetto [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) è disponibile il [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
 
 **Note:** il pacchetto fornisce anche un'ulteriore interfaccia a MPlayer.
 

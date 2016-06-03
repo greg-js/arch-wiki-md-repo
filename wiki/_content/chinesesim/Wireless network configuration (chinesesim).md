@@ -454,25 +454,25 @@ See: [Connman](/index.php/Connman "Connman")
 
 *netctl* is a replacement for *netcfg* designed to work with systemd. It uses a profile based setup and is capable of detection and connection to a wide range of network types. This is no harder than using graphical tools.
 
-See: [Netctl](/index.php/Netctl "Netctl")
+参阅： [Netctl (简体中文)](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Netctl (简体中文)")
 
 ##### Wicd
 
 Wicd 是可以同时处理无线和有线网络的管理器。用 Python 和 Gtk 写成，依赖关系比 NetworkManager 少，所以是轻量级桌面的理想选择。位于[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库").
 
-参见: [Wicd](/index.php/Wicd "Wicd").
+参见: [Wicd (简体中文)](/index.php/Wicd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wicd (简体中文)").
 
 ##### NetworkManager
 
 NetworkManager 是高级网络管理工具，在大部分流行发行版中使用。除了能管理有线链接，NetworkManager还提供了一个易于使用的图形界面程序来选择想要的无线移动链接。
 
-详情请见 [NetworkManager](/index.php/NetworkManager "NetworkManager")。
+详情请见 [NetworkManager (简体中文)](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)")。
 
 ##### Wifi Radar
 
 WiFi Radar是 一个Python/PyGTK2 的管理无线配置的程序（**只有**无线）。它能够扫描可用的网络,为选择的网络创建新的配置。
 
-详情请见[Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")。
+详情请见[Wifi Radar (简体中文)](/index.php/Wifi_Radar_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wifi Radar (简体中文)")。
 
 ### Power saving
 

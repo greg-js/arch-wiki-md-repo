@@ -433,7 +433,7 @@ Archiso 有一些脚本，并且依然对于新系统来说没有意义：
 
 ## 另请参见
 
-*   [Archiso project page](https://projects.archlinux.org/?p=archiso.git;a=summary)
+*   [Archiso project page](https://git.archlinux.org/archiso.git)
 *   [Offical documentation](https://projects.archlinux.org/archiso.git/tree/docs)
 *   [Archiso as pxe server](/index.php/Archiso_as_pxe_server "Archiso as pxe server")
 *   [Creating a custom Arch Linux live USB tutorial](http://blog.jak.me/2011/09/07/creating-a-custom-arch-linux-live-usb/)

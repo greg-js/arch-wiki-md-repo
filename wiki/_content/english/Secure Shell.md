@@ -76,7 +76,7 @@ OpenSSH is occasionally confused with the similarly-named OpenSSL; however, the 
 To connect to a server, run:
 
 ```
-$ ssh -p port user@server-address
+$ ssh -p *port* *user*@*server-address*
 
 ```
 
@@ -92,16 +92,16 @@ The client can be configured to store common options and hosts. All options can 
 User user
 
 # host-specific options
-Host myserver
-    HostName server-address
-    Port     port
+Host *myserver*
+    HostName *server-address*
+    Port     *port*
 ```
 
 With such a configuration, the following commands are equivalent
 
 ```
-$ ssh -p port user@server-address
-$ ssh myserver
+$ ssh -p *port* *user*@*server-address*
+$ ssh *myserver*
 
 ```
 
@@ -118,14 +118,14 @@ The SSH daemon configuration file can be found and edited in `/etc/ssh/ssh**d**_
 To allow access only for some users add this line:
 
 ```
-AllowUsers    user1 user2
+AllowUsers    *user1 user2*
 
 ```
 
 To allow access only for some groups:
 
 ```
-AllowGroups   group1 group2
+AllowGroups   *group1 group2*
 
 ```
 

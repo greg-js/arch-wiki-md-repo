@@ -64,7 +64,7 @@ Disconnect can also stop side-jacking, which utilizes stolen cookies to steal pe
 
 *Ghostery tracks over 1,000 trackers and gives you a roll-call of the ad networks, behavioural data providers, web publishers, and other companies interested in your activity.*
 
-Ghostery can be installed from the Firefox add-on manager or from the [official website](https://www.ghostery.com/download). Once installed, Ghostery can be configured by selecting preferences from the Add-ons Manager in `Firefox` which will bring you to the configuration page. It may also be configured from:
+Ghostery can be installed from the Firefox add-on manager or from the [official website](https://www.ghostery.com/download). Once installed, Ghostery can be configured by selecting preferences from the Add-ons Manager in Firefox which will bring you to the configuration page. It may also be configured from:
 
 ```
  [https://extension.ghostery.com/settings](https://extension.ghostery.com/settings)
@@ -83,6 +83,8 @@ Alternatively you can configure Ghostery through the included wizard:
 [NoScript](http://noscript.net/) is an extension which disables JavaScript, Java, Flash and other plugins on any website not specifically whitelisted by the user. This extension will protect you from exploitation of security vulnerabilities by not letting anything but trusted sites (e.g: your bank, webmail) serve you executable content.
 
 Once installed you can configure settings for NoScript by either clicking its icon on the toolbar or right clicking a page and navigating to NoScript. You will then have the option to enable/disable scripts for the current page, as well as any third party scripts that the page is linking to. Alternatively you can choose to enable scripts temporarily for that session only.
+
+Be aware a lot of modern websites use scripts for layout purposes, hence content may look different. For example, failed rendering due to missing fonts might occur on websites that load fonts at runtime via scripts, which were blocked by NoScript.
 
 For more detailed configuration see the [NoScript FAQ](http://noscript.net/faq).
 
@@ -103,6 +105,8 @@ From the preferences for Cookie Monster select "Block All Cookies". Once this is
 [RefControl](http://www.stardrifter.org/refcontrol/) is an extension to control what gets sent as the HTTP Referer. Once installed RefControl can be configured so that no referer gets sent when navigating to a new webpage. This prevents the server from knowing which website you originated from.
 
 To do this open RefControl's preferences and change the setting for "Default for sites not listed:" to <Block>.
+
+**Note:** Firefox has options to control emitted HTTP referers, possibly replacing plugins such as RefControl and Smart Referer. See [Firefox tweaks#Referer header control](/index.php/Firefox_tweaks#Referer_header_control "Firefox tweaks").
 
 ## RequestPolicy
 

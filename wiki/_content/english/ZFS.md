@@ -22,10 +22,11 @@ ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://
     *   [4.4 Importing a pool created by id](#Importing_a_pool_created_by_id)
 *   [5 Tuning](#Tuning)
     *   [5.1 General](#General_2)
-    *   [5.2 Database](#Database)
-    *   [5.3 /tmp](#.2Ftmp)
-    *   [5.4 ZVOLs](#ZVOLs)
-        *   [5.4.1 RAIDZ and Advanced Format physical disks](#RAIDZ_and_Advanced_Format_physical_disks)
+    *   [5.2 SSD Caching](#SSD_Caching)
+    *   [5.3 Database](#Database)
+    *   [5.4 /tmp](#.2Ftmp)
+    *   [5.5 ZVOLs](#ZVOLs)
+        *   [5.5.1 RAIDZ and Advanced Format physical disks](#RAIDZ_and_Advanced_Format_physical_disks)
 *   [6 Usage](#Usage)
     *   [6.1 Scrub](#Scrub)
     *   [6.2 Check zfs pool status](#Check_zfs_pool_status)
@@ -78,8 +79,6 @@ It may be useful to prepare a [customized archiso](#Embed_the_archzfs_packages_i
 ### DKMS
 
 Users can make use of DKMS [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") to rebuild the ZFS modules automatically with every kernel upgrade.
-
-Read the [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") wiki entry for a general understanding of the initial ramdisk environment, and adding the dkms hook [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio").
 
 Install [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) or [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) and apply the post-install instructions given by these packages.
 
@@ -250,6 +249,19 @@ By default, *zpool* will enable all features on a pool. If `/boot` resides on ZF
 
 ```
 
+To create a mirrored vdev for GRUB you would use a command like this:
+
+```
+ # zpool create <pool_name> mirror -f -d \
+               -o feature@async_destroy=enabled \
+               -o feature@empty_bpobj=enabled \
+               -o feature@lz4_compress=enabled \
+               -o feature@spacemap_histogram=enabled \
+               -o feature@enabled_txg=enabled \
+               /dev/disk/by-id/ata-disk-part2 /dev/disk/by-id/ata-disk-part2
+
+```
+
 **Tip:** As of September 2015, GRUB's development tree supports `extensible_dataset`, `hole_birth`, `embedded_data`, and `large_blocks`, making it viable to use a pool with all features enabled, either at create time or by using `zpool upgrade <pool_name>`, if [grub-git](https://aur.archlinux.org/packages/grub-git/) is installed.
 
 ### Importing a pool created by id
@@ -301,6 +313,40 @@ Other options for zfs can be displayed again, using the zfs command:
 
 ```
 # zfs get all <pool>
+
+```
+
+### SSD Caching
+
+You can also add SSD devices as a write intent log (external ZIL or SLOG) and also as a layer 2 adaptive replacement cache (l2arc). The process to add them is very similar to creating a new VDEV.
+
+All of the below references to device-id are the IDs from /dev/disk/by-id/*
+
+To add a ZIL:
+
+```
+ zpool add <pool> log <device-id>
+
+```
+
+or to add a mirrored ZIL:
+
+```
+ zpool add <pool> log mirror <device-id-1> <device-id-2>
+
+```
+
+To add an l2arc:
+
+```
+ zpool add <pool> cache <device-id>
+
+```
+
+or to add a mirrored l2arc:
+
+```
+ zpool add <pool> cache mirror <device-id-1> <device-id-2>
 
 ```
 
@@ -745,9 +791,9 @@ Server = http://archzfs.com/$repo/x86_64
 
 ```
 
-Add the `archzfs-linux` group to the list of packages to be installed:
+Add the `archzfs-linux` group to the list of packages to be installed (the `archzfs` repository provides packages for the x86_64 architecture only).
 
- `~/archlive/packages.both` 
+ `~/archlive/packages.x86_64` 
 ```
 ...
 archzfs-linux

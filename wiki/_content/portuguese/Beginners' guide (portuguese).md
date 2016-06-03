@@ -875,17 +875,24 @@ Você precisa configurar a rede novamente, mas desta vez para o seu ambiente rec
 
 	IP Dinâmico
 
-Se você só usa uma única conexão de rede fixa cabeada, você não precisa de um serviço de gerenciamento de rede e pode simplesmente habilitar o serviço `dhcpcd`:
+Se você só usa uma única conexão de rede cabeada, você não precisa de um serviço de gerenciamento de rede e pode simplesmente habilitar o cliente de DHCP `dhcpcd` já incluído na instalação do sistema. Supondo que após dar o comando
 
 ```
-# systemctl enable dhcpcd@.service
+# ip addr
 
 ```
 
-Alternativamente, você pode usar [netcfg](https://aur.archlinux.org/packages/netcfg/)'s `net-auto-wired`, que normalmente lidá com conexões dinâmicas para novas redes:
+o sistema informou que sua placa de rede cabeada é enp2s0, o comando para habilitar o cliente dhcpcd associado a ela será:
 
 ```
-# pacman -S netcfg ifplugd
+# systemctl enable dhcpcd@enp2s0.service
+
+```
+
+Alternativamente, você pode usar [netcfg](https://aur.archlinux.org/packages/netcfg/)'s `net-auto-wired`, que normalmente lida com conexões dinâmicas para novas redes:
+
+```
+# yaourt -S netcfg ifplugd
 # cd /etc/network.d
 # ln -s examples/ethernet-dhcp .
 # systemctl enable net-auto-wired.service

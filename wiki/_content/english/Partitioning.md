@@ -182,6 +182,10 @@ The size of the partitions depends on personal preference, but the following inf
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
+*   **[sfdisk](/index.php/Sfdisk "Sfdisk")** — Scriptable version of fdisk.
+
+	|| [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
 *   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](/index.php/GPT "GPT") version of fdisk.
 
 	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
@@ -209,6 +213,50 @@ The size of the partitions depends on personal preference, but the following inf
 *   **QtParted** — Similar to Partitionmanager, available in [AUR](/index.php/AUR "AUR").
 
 	[http://qtparted.sourceforge.net/](http://qtparted.sourceforge.net/) || [qtparted](https://aur.archlinux.org/packages/qtparted/)
+
+This table will help you to choose utility for your needs:
+
+| User interaction | MBR | GPT |
+| Dialog | fdisk
+
+parted
+
+ | fdisk
+
+gdisk
+
+parted
+
+ |
+| Pseudo-graphics | cfdisk | cfdisk
+
+cgdisk
+
+ |
+| Non-interactive | sfdisk
+
+parted
+
+ | sfdisk
+
+sgdisk
+
+parted
+
+ |
+| Graphical | gparted
+
+partitionmanager
+
+qtparted(?)
+
+ | gparted
+
+partitionmanager
+
+qtparted(?)
+
+ |
 
 ## Partition alignment
 

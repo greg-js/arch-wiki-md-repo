@@ -219,11 +219,11 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[QDevelop](https://en.wikipedia.org/wiki/QDevelop "wikipedia:QDevelop")** — Free and cross-platform IDE for Qt.
 
-	[http://biord-software.org/qdevelop/](http://biord-software.org/qdevelop/) || [qdevelop-svn](https://aur.archlinux.org/packages/qdevelop-svn/)
+	[https://code.google.com/archive/p/qdevelop/](https://code.google.com/archive/p/qdevelop/) || [qdevelop-svn](https://aur.archlinux.org/packages/qdevelop-svn/)
 
 *   **[Qt Creator](https://en.wikipedia.org/wiki/Qt_Creator "wikipedia:Qt Creator")** — Lightweight, cross-platform C++ integrated development environment with a focus on Qt.
 
-	[http://qt-project.org/downloads#qt-creator](http://qt-project.org/downloads#qt-creator) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
+	[https://www.qt.io/ide/](https://www.qt.io/ide/) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
 *   **[Scratch](https://en.wikipedia.org/wiki/Scratch_(programming_language) "wikipedia:Scratch (programming language)")** — A multimedia authoring tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming"). *Scratch* is free software under GPL v2 and [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License).
 
@@ -262,6 +262,10 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 *   **[aterm](https://en.wikipedia.org/wiki/aterm "wikipedia:aterm")** — Xterm replacement with transparency support. It has been deprecated in favour of urxvt since 2008.
 
 	[http://aterm.sourceforge.net/](http://aterm.sourceforge.net/) || [aterm](https://aur.archlinux.org/packages/aterm/)
+
+*   **Cool Retro Term** — A good looking terminal emulator which mimics the old cathode display.
+
+	[https://github.com/Swordfish90/cool-retro-term](https://github.com/Swordfish90/cool-retro-term) || [cool-retro-term](https://www.archlinux.org/packages/?name=cool-retro-term)
 
 *   **Eterm** — Terminal emulator intended as a replacement for xterm and designed for the [Enlightenment](/index.php/Enlightenment "Enlightenment") desktop.
 
@@ -655,9 +659,9 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 	[https://code.google.com/p/zopfli](https://code.google.com/p/zopfli) || [zopfli-git](https://aur.archlinux.org/packages/zopfli-git/)
 
-*   **zoo** — Rarely used archiver that was mostly used in VMS world before PKZIP became popular.
+*   **[zoo](https://en.wikipedia.org/wiki/Zoo_(file_format) "wikipedia:Zoo (file format)")** — Rarely used archiver that was mostly used in VMS world before PKZIP became popular.
 
-	[http://ftp.sunet.se/pub/usenet/ftp.uu.net/comp.sources.unix/volume11/zoo/](http://ftp.sunet.se/pub/usenet/ftp.uu.net/comp.sources.unix/volume11/zoo/) || [zoo](https://aur.archlinux.org/packages/zoo/)
+	[http://www.ibiblio.org/pub/Linux/utils/compress/zoo-2.10-3.src.rpm](http://www.ibiblio.org/pub/Linux/utils/compress/zoo-2.10-3.src.rpm) || [zoo](https://aur.archlinux.org/packages/zoo/)
 
 ##### Graphical
 
@@ -725,7 +729,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 	[http://furius.ca/xxdiff/](http://furius.ca/xxdiff/) || [xxdiff](https://aur.archlinux.org/packages/xxdiff/)
 
-[Vim](/index.php/Vim "Vim") and [Emacs](/index.php/Emacs "Emacs") provide merge functionality with [vimdiff](/index.php/Vim#Merging_files_.28vimdiff.29 "Vim") and `ediff`.
+[Vim](/index.php/Vim "Vim") and [Emacs](/index.php/Emacs "Emacs") provide merge functionality with [vimdiff](/index.php/Vim#Merging_files "Vim") and `ediff`.
 
 #### Batch renamers
 
@@ -743,7 +747,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **pyRenamer** — Application for the mass renaming of files.
 
-	[http://www.infinicode.org/code/pyrenamer/](http://www.infinicode.org/code/pyrenamer/) || [pyrenamer](https://aur.archlinux.org/packages/pyrenamer/)
+	[https://github.com/SteveRyherd/pyRenamer](https://github.com/SteveRyherd/pyRenamer) || [pyrenamer](https://aur.archlinux.org/packages/pyrenamer/)
 
 *   **rename.pl** — Batch renamer based on perl regex.
 
@@ -821,7 +825,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **[GKrellM](https://en.wikipedia.org/wiki/GKrellM "wikipedia:GKrellM")** — Simple, flexible system monitor package for [GTK+](/index.php/GTK%2B "GTK+") with many plug-ins.
 
-	[http://members.dslextreme.com/users/billw/gkrellm/gkrellm.html](http://members.dslextreme.com/users/billw/gkrellm/gkrellm.html) || [gkrellm](https://www.archlinux.org/packages/?name=gkrellm)
+	[http://billw2.github.io/gkrellm/gkrellm.html](http://billw2.github.io/gkrellm/gkrellm.html) || [gkrellm](https://www.archlinux.org/packages/?name=gkrellm)
 
 *   **gnome-system-monitor** — A system monitor for [GNOME](/index.php/GNOME "GNOME").
 
@@ -921,7 +925,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **tp-hdd-led** — Monitor HDD use with the Think-Led
 
-	[http://en.timherbst.de/tp-hdd-led/](http://en.timherbst.de/tp-hdd-led/) || [tp-hdd-led](https://aur.archlinux.org/packages/tp-hdd-led/)
+	[http://timherbst.de/en/tp-hdd-led/](http://timherbst.de/en/tp-hdd-led/) || [tp-hdd-led](https://aur.archlinux.org/packages/tp-hdd-led/)
 
 ### Keyboard layout switchers
 
@@ -943,7 +947,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 ### Power management
 
-See [Power saving#Packages](/index.php/Power_saving#Packages "Power saving").
+See [Power management](/index.php/Power_management "Power management").
 
 ### Clipboard managers
 

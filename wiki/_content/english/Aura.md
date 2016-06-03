@@ -1,6 +1,6 @@
 **Aura** is a multilingual package manager for Arch Linux written in [Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language) "wikipedia:Haskell (programming language)"). It connects to both the [ABS](/index.php/ABS "ABS") and [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Aura caches built package files, so they can be managed like any ABS package would. This includes downgrading with `-C`.
 
-See the [README](https://github.com/aurapm/aura/blob/master/README.md) and [documentation](https://github.com/aurapm/aura/tree/master/doc) for general information.
+See the [README](https://github.com/aurapm/aura/blob/master/aura/README.md) and [documentation](https://github.com/aurapm/aura/tree/master/doc) for general information.
 
 ## Contents
 
@@ -10,7 +10,6 @@ See the [README](https://github.com/aurapm/aura/blob/master/README.md) and [docu
 *   [2 Tips and tricks](#Tips_and_tricks)
     *   [2.1 Auto-prompt for sudo](#Auto-prompt_for_sudo)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Build failing at configuration step](#Build_failing_at_configuration_step)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -44,18 +43,6 @@ See [[1]](https://github.com/aurapm/aura/issues/394).
 ## Troubleshooting
 
 See [GitHub issues](https://github.com/aurapm/aura/issues) for known problems.
-
-### Build failing at configuration step
-
-If you get the following:
-
-```
-Configuring aura-1.x.x.x...
-Setup: At least the following dependencies are missing:
-regex-pcre-builtin -any
-```
-
-Then you need to rebuild the [haskell-regex-pcre-builtin](https://www.archlinux.org/packages/?name=haskell-regex-pcre-builtin) AUR package, or install it out of [haskell-core]. This usually occurs after ghc upgrades, and has to do with ghc and all the haskell libraries being linked by special hash values for security purposes.
 
 ## See also
 

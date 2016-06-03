@@ -9,7 +9,7 @@
 *   задать DPI монитора, сглаживание (antialiasing), хинтование (hinting) и другие настройки шрифтов X
 *   изменить тему Xcursor
 *   установить тему xscreensaver
-*   изменять предпочтения низкоуровневых приложений X (xclock ([xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock)), [xpdf](https://aur.archlinux.org/packages/xpdf/), [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode), и т.д.)
+*   изменять предпочтения низкоуровневых приложений X (xclock ([xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock)), [xpdf](https://www.archlinux.org/packages/?name=xpdf), [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode), и т.д.)
 
 **Примечание:** Устарело использование `~/.Xdefaults`, так что эта статья будет относиться только к ресурсам, загруженных с xrdb xrdb
 
@@ -336,7 +336,7 @@ aterm*geometry:                 80x25
 
 ### Ресурсы Xpdf
 
-Ниже приведены некоторые основные ресурсы для [xpdf](https://aur.archlinux.org/packages/xpdf/), легковесного приложения для просмотра PDF:
+Ниже приведены некоторые основные ресурсы для [xpdf](https://www.archlinux.org/packages/?name=xpdf), легковесного приложения для просмотра PDF:
 
 ```
 ! xpdf -----------------------------------------------------------------------

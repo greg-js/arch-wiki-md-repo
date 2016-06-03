@@ -73,7 +73,7 @@ The default Arch Linux kernel is *modular*, meaning many of the drivers for mach
 
 Some wireless chipsets also require firmware, in addition to a corresponding driver. Many firmware images are provided by the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package which is installed by default, however, proprietary firmware images are not included and have to be installed separately. This is described in [#Installing driver/firmware](#Installing_driver.2Ffirmware).
 
-**Note:** Udev is not perfect. If the proper module is not loaded by udev on boot, simply [load it manually](/index.php/Kernel_modules#Loading "Kernel modules"). Note also that udev may occasionally load more than one driver for a device, and the resulting conflict will prevent successful configuration. Make sure to [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the unwanted module.
+**Note:** Udev is not perfect. If the proper module is not loaded by udev on boot, simply [load it manually](/index.php/Kernel_modules#Loading "Kernel modules"). Note also that udev may occasionally load more than one driver for a device, and the resulting conflict will prevent successful configuration. Make sure to [blacklist](/index.php/Blacklist "Blacklist") the unwanted module.
 
 **Tip:** Though not strictly required, it's a good idea to first install user-space tools mentioned in [#Manual setup](#Manual_setup), especially when some problem should appear.
 
@@ -677,7 +677,7 @@ A list of devices supported by the modules is available at the project's [homepa
 
 For devices which are using the rt3090 chipset it should be possible to use `rt2800pci` driver, however, is not working with this chipset very well (e.g. sometimes it is not possible to use higher rate than 2Mb/s).
 
-The best way is to use the [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/) driver. Make sure to [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `rt2800pci` module and setup the `rt3090sta` module to [load](/index.php/Kernel_modules#Loading "Kernel modules") at boot.
+The best way is to use the [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/) driver. Make sure to [blacklist](/index.php/Blacklist "Blacklist") the `rt2800pci` module and setup the `rt3090sta` module to [load](/index.php/Kernel_modules#Loading "Kernel modules") at boot.
 
 **Note:** This driver also works with rt3062 chipsets. Also the [rt3090](https://aur.archlinux.org/packages/rt3090/) package is not supported by the latest kernel and has been orphaned; [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/) should be used instead.
 
@@ -733,7 +733,7 @@ Some dongles, like the TP-Link TL-WN725N v2 (not sure, but it seems that uses th
 
 #### rtl8723ae/rtl8723be
 
-The new `rtl8723ae` module is included in the mainline Linux kernel since version 3.6, the `rtl8723be` module since 3.15.
+The `rtl8723ae` and `rtl8723be` modules are included in the mainline Linux kernel.
 
 Some users may encounter errors with powersave on this card. This is shown with occasional disconnects that are not recognized by high level network managers ([netctl](/index.php/Netctl "Netctl"), [NetworkManager](/index.php/NetworkManager "NetworkManager")). This error can be confirmed by running `dmesg -w` or `journalctl -f` and looking for output related to powersave and the `rtl8723ae`/`rtl8723be` module. If you are having this issue, use the `fwlps=0` kernel option, which should prevent the WiFi card from automatically sleeping and halting connection.
 
@@ -888,13 +888,13 @@ Treat this Tenda card as an `rt2870sta` device. See [#rt2x00](#rt2x00).
 
 This should be a part of the kernel package and be installed already.
 
-Some Orinoco chipsets are Hermes II. You can use the `wlags49_h2_cs` driver instead of `orinoco_cs` and gain WPA support. To use the driver, [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") `orinoco_cs` first.
+Some Orinoco chipsets are Hermes II. You can use the `wlags49_h2_cs` driver instead of `orinoco_cs` and gain WPA support. To use the driver, [blacklist](/index.php/Blacklist "Blacklist") `orinoco_cs` first.
 
 #### prism54
 
 The driver `p54` is included in kernel, but you have to download the appropriate firmware for your card from [this site](http://linuxwireless.org/en/users/Drivers/p54#firmware) and install it into the `/usr/lib/firmware` directory.
 
-**Note:** There is also older, deprecated driver `prism54`, which might conflict with the newer driver (`p54pci` or `p54usb`). Make sure to [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") `prism54`.
+**Note:** There is also older, deprecated driver `prism54`, which might conflict with the newer driver (`p54pci` or `p54usb`). Make sure to [blacklist](/index.php/Blacklist "Blacklist") `prism54`.
 
 #### ACX100/111
 
@@ -912,7 +912,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 [Host AP](http://hostap.epitest.fi/) is a Linux driver for wireless LAN cards based on Intersil's Prism2/2.5/3 chipset. The driver is included in Linux kernel.
 
-**Note:** Make sure to [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `orinico_cs` driver, it may cause problems.
+**Note:** Make sure to [blacklist](/index.php/Blacklist "Blacklist") the `orinico_cs` driver, it may cause problems.
 
 ### ndiswrapper
 

@@ -22,8 +22,6 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [4.3 Multiple monitors](#Multiple_monitors)
         *   [4.3.1 Outputs wired to the Intel chip](#Outputs_wired_to_the_Intel_chip)
         *   [4.3.2 Output wired to the NVIDIA chip](#Output_wired_to_the_NVIDIA_chip)
-            *   [4.3.2.1 Using intel-virtual-output](#Using_intel-virtual-output)
-            *   [4.3.2.2 xf86-video-intel-virtual-crtc and hybrid-screenclone](#xf86-video-intel-virtual-crtc_and_hybrid-screenclone)
 *   [5 Switch between discrete and integrated like Windows](#Switch_between_discrete_and_integrated_like_Windows)
 *   [6 CUDA without Bumblebee](#CUDA_without_Bumblebee)
 *   [7 Troubleshooting](#Troubleshooting)
@@ -266,7 +264,7 @@ Or, set `Bridge=primus` in `/etc/bumblebee/bumblebee.conf` and you won't have to
 
 ### Power management
 
-The goal of the power management feature is to turn off the NVIDIA card when it is not used by Bumblebee any more. If [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (or [bbswitch-dkms](https://aur.archlinux.org/packages/bbswitch-dkms/)) is installed, it will be detected automatically when the Bumblebee daemon starts. No additional configuration is necessary. However, [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) is for [Optimus laptops only and will not work on desktop computers](https://bugs.launchpad.net/ubuntu/+source/bbswitch/+bug/1338404/comments/6). So, Bumblebee power management is not available for desktop computers, and there is no reason to install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) on a desktop. (Nevertheless, the other features of Bumblebee do work on some desktop computers.)
+The goal of the power management feature is to turn off the NVIDIA card when it is not used by Bumblebee any more. If [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (or [bbswitch-dkms](https://www.archlinux.org/packages/?name=bbswitch-dkms)) is installed, it will be detected automatically when the Bumblebee daemon starts. No additional configuration is necessary. However, [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) is for [Optimus laptops only and will not work on desktop computers](https://bugs.launchpad.net/ubuntu/+source/bbswitch/+bug/1338404/comments/6). So, Bumblebee power management is not available for desktop computers, and there is no reason to install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) on a desktop. (Nevertheless, the other features of Bumblebee do work on some desktop computers.)
 
 #### Default power state of NVIDIA card using bbswitch
 
@@ -392,15 +390,11 @@ The BusID is 0:2:0
 
 #### Output wired to the NVIDIA chip
 
-On some notebooks, the digital Video Output (HDMI or DisplayPort) is hardwired to the NVIDIA chip. If you want to use all the displays on such a system simultaniously, you have to run 2 X Servers. The first will be using the Intel driver for the notebooks panel and a display connected on VGA. The second will be started through optirun on the NVIDIA card, and drives the digital display.
+On some notebooks, the digital Video Output (HDMI or DisplayPort) is hardwired to the NVIDIA chip. If you want to use all the displays on such a system simultaneously, you have to run 2 X Servers. The first will be using the Intel driver for the notebooks panel and a display connected on VGA. The second will be started through optirun on the NVIDIA card, and drives the digital display.
 
-There are currently several instructions on the web how such a setup can be made to work. One can be found on the bumblebee [wiki page](https://github.com/Bumblebee-Project/Bumblebee/wiki/Multi-monitor-setup). Another approach is described below.
+*intel-virtual-output* is a tool provided in the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver set, as of v2.99\. When run in a terminal, it will daemonize itself unless the `-f` switch is used. Once the tool is running, it activates Bumblebee (Bumblebee can be left as default install), and any displays attached will be automatically detected, and manageable via any desktop display manager such as xrandr or KDE Display. See the [Bumblebee wiki page](https://github.com/Bumblebee-Project/Bumblebee/wiki/Multi-monitor-setup) for more information.
 
-##### Using intel-virtual-output
-
-This method should obsolete the use of *xf86-video-intel-virtual-crtc* and *hybrid-screenclone*. *intel-virtual-output* is a tool provided in the *xf86-video-intel driver* set, as of v2.99\. When run in a terminal, it will daemonize itself unless the `-f` switch is used. Once the tool is running, it activates Bumblebee (Bumblebee can be left as default install), and any displays attached will be automatically detected, and manageable via any desktop display manager such as xrandr or KDE Display.
-
-**Note:** In `/etc/bumblebee/xorg.conf.nvidia` change the lines `UseEDID` and `Option "AutoAddDevices" "false"` to `"true"`, if you are having trouble with device resolution detection.
+**Note:** In `/etc/bumblebee/xorg.conf.nvidia` change the lines `UseEDID` and `Option "AutoAddDevices" "false"` to `"true"`, if you are having trouble with device resolution detection. You will also need to comment out the line `Option "UseDisplayDevices" "none"` in order to use the display connected to the NVIDIA GPU.
 
 Commandline usage is as follows:
 
@@ -419,131 +413,7 @@ intel-virtual-output [OPTION]... [TARGET_DISPLAY]...
 
 If no target displays are parsed on the commandline, *intel-virtual-output* will attempt to connect to any local display and then start bumblebee.[[1]](http://cgit.freedesktop.org/xorg/driver/xf86-video-intel/tree/tools/)
 
-The advantage of using *intel-virtual-output* in foreground mode is that once the external display is disconected, *intel-virtual-output* can then be killed and bumblebee will disable the nvidia chip. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun *game_bin*`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
-
-##### xf86-video-intel-virtual-crtc and hybrid-screenclone
-
-This method uses a patched Intel driver, which is extended to have a VIRTUAL Display, and the program hybrid-screenclone which is used to copy the display over from the virtual display to a second X Server which is running on the NVIDIA card using Optirun. Credit goes to [Triple-head monitors on a Thinkpad T520](http://judsonsnotes.com/notes/index.php?option=com_content&view=article&id=673:triple-head-monitors-on-thinkpad-t520&catid=37:tech-notes&Itemid=59)  which has a detailed explanation on how this is done on a Ubuntu system.
-
-For simplicity, DP is used below to refer to the Digital Output (DisplayPort). The instructions should be the same if the notebook has a HDMI port instead.
-
-*   Set system to use NVIDIA card exclusively, test DP/Monitor combination and generate xorg.nvidia.conf. This step is not required, but recommended if your system Bios has an option to switch the graphics into NVIDIA-only mode. To do this, first uninstall the bumblebee package and install just the NVIDIA driver. Then reboot, enter the Bios and switch the Graphics to NVIDIA-only. When back in Arch, connect you Monitor on DP and use startx to test if it is working in principle. Use Xorg -configure to generate an xorg.conf file for your NVIDIA card. This will come in handy further down below.
-
-*   Reinstall bumlbebee and bbswitch, reboot and set the system Gfx back to Hybrid in the BIOS.
-*   Install [xf86-video-intel-virtual-crtc](https://aur.archlinux.org/packages/xf86-video-intel-virtual-crtc/), and replace your xf86-video-intel package with it.
-*   Install [screenclone-git](https://aur.archlinux.org/packages/screenclone-git/)
-*   Change these bumblebee.conf settings:
-
- `/etc/bumblebee/bumblebee.conf` 
-```
-KeepUnusedXServer=true
-Driver=nvidia
-```
-
-**Note:** Leave the PMMethod set to "bumblebee". This is contrary to the instructions linked in the article above, but on arch this options needs to be left alone so that bbswitch module is automatically loaded
-
-*   Copy the xorg.conf generated in Step 1 to `/etc/X11` (e.g. `/etc/X11/xorg.nvidia.conf`). In the [driver-nvidia] section of `bumblebee.conf`, change `XorgConfFile` to point to it.
-*   Test if your `/etc/X11/xorg.nvidia.conf` is working with `startx -- -config /etc/X11/xorg.nvidia.conf`
-*   In order for your DP Monitor to show up with the correct resolution in your VIRTUAL Display you might have to edit the Monitor section in your `/etc/X11/xorg.nvidia.conf`. Since this is extra work, you could try to continue with your auto-generated file. Come back to this step in the instructions if you find that the resolution of the VIRTUAL Display as shown by xrandr is not correct.
-    *   First you have to generate a Modeline. You can use the tool [amlc](http://zi.fi/amlc/), which will genearte a Modeline if you input a few basic parameters.
-
-	Example: 24" 1920x1080 Monitor
-
-	start the tool with `amlc -c`
-
-```
-Monitor Identifier: Samsung 2494
-Aspect Ratio: 2
-physical size[cm]: 60
-Ideal refresh rate, in Hz: 60
-min HSync, kHz: 40
-max HSync, kHz: 90
-min VSync, Hz: 50
-max VSync, Hz: 70
-max pixel Clock, MHz: 400
-```
-
-This is the Monitor section which `amlc` generated for this input:
-
-```
-Section "Monitor"
-    Identifier     "Samsung 2494"
-    ModelName      "Generated by Another Modeline Calculator"
-    HorizSync      40-90
-    VertRefresh    50-70
-    DisplaySize    532 299  # Aspect ratio 1.778:1
-    # Custom modes
-    Modeline "1920x1080" 174.83 1920 2056 2248 2536 1080 1081 1084 1149             # 174.83 MHz,  68.94 kHz,  60.00 Hz
-EndSection  # Samsung 2494
-```
-
-Change your `xorg.nvidia.conf` to include this Monitor section. You can also trim down your file so that it only contains ServerLayout, Monitor, Device and Screen sections. For reference, here is mine:
-
- `/etc/X11/xorg.nvidia.conf` 
-```
-Section "ServerLayout"
-        Identifier     "X.org Nvidia DP"
-        Screen      0  "Screen0" 0 0
-        InputDevice    "Mouse0" "CorePointer"
-        InputDevice    "Keyboard0" "CoreKeyboard"
-EndSection
-
-Section "Monitor"
-    Identifier     "Samsung 2494"
-    ModelName      "Generated by Another Modeline Calculator"
-    HorizSync      40-90
-    VertRefresh    50-70
-    DisplaySize    532 299  # Aspect ratio 1.778:1
-    # Custom modes
-    Modeline "1920x1080" 174.83 1920 2056 2248 2536 1080 1081 1084 1149             # 174.83 MHz,  68.94 kHz,  60.00 Hz
-EndSection  # Samsung 2494
-
-Section "Device"
-        Identifier  "DiscreteNvidia"
-        Driver      "nvidia"
-        BusID       "PCI:1:0:0"
-EndSection
-
-Section "Screen"
-        Identifier "Screen0"
-        Device     "DiscreteNvidia"
-        Monitor    "Samsung 2494"
-        SubSection "Display"
-                Viewport   0 0
-                Depth     24
-        EndSubSection
-EndSection
-
-```
-
-*   Plug in both external monitors and startx. Look at your `/var/log/Xorg.0.log`. Check that your VGA Monitor is detected with the correct Modes there. You should also see a VIRTUAL output with modes show up.
-*   Run `xrandr` and three displays should be listed there, along with the supported modes.
-*   If the listed Modelines for your VIRTUAL display doesn't have your Monitors native resolution, make note of the exact output name. For me that is `VIRTUAL1`. Then have a look again in the Xorg.0.log file. You should see a message: "Output VIRTUAL1 has no monitor section" there. We will change this by putting a file with the needed Monitor section into `/etc/X11/xorg.conf.d`. Exit and Restart X afterward.
-
- `/etc/X11/xorg.conf.d/20-monitor_samsung.conf` 
-```
-Section "Monitor"
-    Identifier     "VIRTUAL1"
-    ModelName      "Generated by Another Modeline Calculator"
-    HorizSync      40-90
-    VertRefresh    50-70
-    DisplaySize    532 299  # Aspect ratio 1.778:1
-    # Custom modes
-    Modeline "1920x1080" 174.83 1920 2056 2248 2536 1080 1081 1084 1149             # 174.83 MHz,  68.94 kHz,  60.00 Hz
-EndSection  # Samsung 2494
-
-```
-
-*   Turn the NVIDIA card on by running: `sudo tee /proc/acpi/bbswitch <<< ON`
-*   Start another X server for the DisplayPort monitor: `sudo optirun true`
-*   Check the log of the second X server in `/var/log/Xorg.8.log`
-*   Run xrandr to set up the VIRTUAL display to be the right size and placement, eg.: `xrandr --output VGA1 --auto --rotate normal --pos 0x0 --output VIRTUAL1 --mode 1920x1080 --right-of VGA1 --output LVDS1 --auto --rotate normal --right-of VIRTUAL1`
-*   Take note of the position of the VIRTUAL display in the list of Outputs as shown by xrandr. The counting starts from zero, i.e. if it is the third display shown, you would specify `-x 2` as parameter to `screenclone` (Note: This might not always be correct. If you see your internal laptop display cloned on the monitor, try `-x 2` anyway.)
-*   Clone the contents of the VIRTUAL display onto the X server created by bumblebee, which is connected to the DisplayPort monitor via the NVIDIA chip:
-
-	`screenclone -d :8 -x 2`
-
-Thats it, all three displays should be up and running now.
+The advantage of using *intel-virtual-output* in foreground mode is that once the external display is disconnected, *intel-virtual-output* can then be killed and bumblebee will disable the nvidia chip. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun *game_bin*`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
 
 ## Switch between discrete and integrated like Windows
 
@@ -779,23 +649,21 @@ See [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg
 
 ### Primusrun mouse delay/disable VSYNC
 
-For `primusrun`, `VSYNC` is enabled by default and as a result, it could make mouse input delay lag or even slightly decrease performance. Test `primusrun` without `VSYNC`:
+For `primusrun`, `VSYNC` is enabled by default and as a result, it could make mouse input delay lag or even slightly decrease performance. Test `primusrun` with `VSYNC` disabled:
 
 ```
 $ vblank_mode=0 primusrun glxgears
 
 ```
 
-If you want to use it, install [optiprime](https://aur.archlinux.org/packages/optiprime/) package.
-
-Usage:
+If you want to keep using it, install [optiprime](https://aur.archlinux.org/packages/optiprime/) package, which provides a script for above command. Usage:
 
 ```
 $ optiprime glxgears
 
 ```
 
-In conclusion, it doesn't make significant performance improvement, but as mentioned above, it should remove mouse input delay lag.
+Comparison:
 
 | Command | FPS | Score | Min FPS | Max FPS |
 | optiprime unigine-heaven | 31.5 | 793 | 22.3 | 54.8 |

@@ -13,6 +13,9 @@ There are different kinds of portable audio players around:
 
 ### Players accessible with native protocols
 
+*   Apple iPod
+    *   For Informations on the Apple iPod visit [iPod](/index.php/IPod "IPod")
+
 *   iRiver
     *   All iRiver players with "Manager Mode" firmware should follow the instructions here: [IRiver iFP Audio Players](/index.php/IRiver_iFP_Audio_Players "IRiver iFP Audio Players")
 

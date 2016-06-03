@@ -1,8 +1,8 @@
 **翻译状态：** 本文是英文页面 [Master_Boot_Record](/index.php/Master_Boot_Record "Master Boot Record") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-30，点击[这里](https://wiki.archlinux.org/index.php?title=Master_Boot_Record&diff=0&oldid=425504)可以查看翻译后英文页面的改动。
 
-主引导记录 (Master Boot Record, MBR) 是指一个存储设备的头512B. 它包含操作系统的引导器和存储设备的分区表。
+主引导记录（Master Boot Record ， MBR）是指一个存储设备的开头 512 字节。它包含操作系统的引导器和存储设备的分区表。
 
-**注意:** 作为新的分区方案， [GPT](/index.php/GPT "GPT") ( [UEFI](/index.php/UEFI "UEFI") 标准的一部分) 也能通过[保护分区](https://en.wikipedia.org/wiki/GUID_Partition_Table#Legacy_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table")在 BIOS 系统上使用。GPT 解决了一些 MBR 的遗留问题但又造成了许多兼容问题。更多见 [GUID Partition Table#Master Boot Record](/index.php/GUID_Partition_Table#Master_Boot_Record "GUID Partition Table").
+**注意:** 作为新的分区方案， [GPT](/index.php/GPT "GPT") ( [UEFI](/index.php/UEFI "UEFI") 标准的一部分) 也能通过[保护分区](https://en.wikipedia.org/wiki/GUID_Partition_Table#Legacy_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table")在 BIOS 系统上使用。GPT 解决了一些 MBR 的遗留问题但又造成了许多兼容问题。更多见 [GUID Partition Table#Master Boot Record](/index.php/GUID_Partition_Table#Master_Boot_Record "GUID Partition Table")。
 
 ## Contents
 

@@ -5,6 +5,7 @@ Neovim is a fork of [Vim](/index.php/Vim "Vim") aiming to improve user experienc
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Transition from vim](#Transition_from_vim)
+        *   [2.1.1 Loading vim addons](#Loading_vim_addons)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -28,6 +29,15 @@ To get more info about the transition run the following command in neovim:
 
 ```
 :help nvim-from-vim
+
+```
+
+#### Loading vim addons
+
+If you would like to use plugins, syntax definitions, or other addons that are installed for vim, you can add the default vim runtime path to neovim by adding it to the `rtp`. For example, you could run the following within nvim or add it to your neovim config:
+
+```
+set rtp^=/usr/share/vim/vimfiles/
 
 ```
 

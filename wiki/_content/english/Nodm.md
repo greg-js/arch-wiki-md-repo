@@ -1,4 +1,4 @@
-[nodm](http://enricozini.org/sw/nodm/) is an automatic display manager which automatically starts an X session at system boot. It is meant for devices like smartphones, but can be used on a regular computer as well, if the security implications are acceptable.
+[nodm](https://github.com/spanezz/nodm) is an automatic display manager which automatically starts an X session at system boot. It is meant for devices like smartphones, but can be used on a regular computer as well, if the security implications are acceptable.
 
 ## Installation
 

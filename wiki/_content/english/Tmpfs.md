@@ -17,7 +17,7 @@ Some directories where tmpfs is commonly used are [/tmp](http://www.pathname.com
 
 Arch uses a tmpfs `/run` directory, with `/var/run` and `/var/lock` simply existing as symlinks for compatibility. It is also used for `/tmp` by the default systemd setup and does not require an entry in [fstab](/index.php/Fstab "Fstab") unless a specific configuration is needed.
 
-[glibc](https://www.archlinux.org/packages/?name=glibc) 2.2 and above expects tmpfs to be mounted at `/dev/shm` for [POSIX shared memory](https://en.wikipedia.org/wiki/Shared_memory_(interprocess_communication)#Support_on_UNIX_platforms "wikipedia:Shared memory (interprocess communication)"). Mounting tmpfs at `/dev/shm` is handled automatically by [systemd](/index.php/Systemd "Systemd"), so manual configuration in [fstab](/index.php/Fstab "Fstab") is no longer necessary.
+[glibc](https://www.archlinux.org/packages/?name=glibc) 2.2 and above expects tmpfs to be mounted at `/dev/shm` for [POSIX shared memory](https://en.wikipedia.org/wiki/Shared_memory#Support_on_Unix-like_systems "wikipedia:Shared memory"). Mounting tmpfs at `/dev/shm` is handled automatically by [systemd](/index.php/Systemd "Systemd"), so manual configuration in [fstab](/index.php/Fstab "Fstab") is no longer necessary.
 
 Generally, I/O intensive tasks and programs that run frequent read/write operations can benefit from using a tmpfs folder. Some applications can even receive a substantial gain by offloading some (or all) of their data onto the shared memory. For example, [relocating the Firefox profile into RAM](/index.php/Firefox_on_RAM "Firefox on RAM") shows a significant improvement in performance.
 

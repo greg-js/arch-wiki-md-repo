@@ -22,10 +22,11 @@ One of its strengths is that it emulates a USB keyboard to send the OTP as text,
     *   [3.1 Configure the NEO as a CCID Device](#Configure_the_NEO_as_a_CCID_Device)
     *   [3.2 Install the Applet](#Install_the_Applet)
     *   [3.3 (Optional) Install the Yubico Authenticator Desktop client](#.28Optional.29_Install_the_Yubico_Authenticator_Desktop_client)
-*   [4 Enabling U2F in the browser](#Enabling_U2F_in_the_browser)
-    *   [4.1 Chromium/Chrome](#Chromium.2FChrome)
-    *   [4.2 Firefox](#Firefox)
-*   [5 Enabling OpenPGP smartcard mode](#Enabling_OpenPGP_smartcard_mode)
+*   [4 FIDO U2F Security Key by Plug-up International](#FIDO_U2F_Security_Key_by_Plug-up_International)
+*   [5 Enabling U2F in the browser](#Enabling_U2F_in_the_browser)
+    *   [5.1 Chromium/Chrome](#Chromium.2FChrome)
+    *   [5.2 Firefox](#Firefox)
+*   [6 Enabling OpenPGP smartcard mode](#Enabling_OpenPGP_smartcard_mode)
 
 ## Introduction
 
@@ -200,6 +201,15 @@ release_context
 ### (Optional) Install the Yubico Authenticator Desktop client
 
 You can get the desktop version of the Yubico Authenticator by installing [yubico-yubioath-desktop-git](https://aur.archlinux.org/packages/yubico-yubioath-desktop-git/).
+
+## FIDO U2F Security Key by Plug-up International
+
+```
+# cat > /etc/udev/rules.d/10-security-key.rules
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="users", ATTRS{idVendor}=="2581", ATTRS{idProduct}=="f1d0"
+
+# udevadm trigger
+```
 
 ## Enabling U2F in the browser
 

@@ -105,4 +105,4 @@ Now you should be able to authenticate with the relevant USB device plugged-in.
 ## See also
 
 *   [Github repository](https://github.com/aluzzardi/pam_usb)
-*   [Github wiki](https://github.com/neovim/neovim/wiki)
+*   [Github wiki](https://github.com/aluzzardi/pam_usb/wiki)

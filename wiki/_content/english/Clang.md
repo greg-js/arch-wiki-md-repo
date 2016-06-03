@@ -19,7 +19,7 @@ NB: For packages that specify GCC-specific build options, there may be build err
 
 ## Using the Static Analyzer
 
-First install the [clang-analyzer](https://www.archlinux.org/packages/?name=clang-analyzer) package. To analyze a project, simply place the word `scan-build` in front of your build command. For example:
+To analyze a project, simply place the word `scan-build` in front of your build command. For example:
 
 ```
 $ scan-build make

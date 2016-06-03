@@ -130,3 +130,5 @@ There may be several reasons for this:
 If you have issues opening a Citrix connection under Firefox you may need to set the Citrix Receiver plugin to 'Always Activate' under the Firefox Add-ons Manager plugin settings.
 
 If you have cursor alignment issues under Citrix and you have multiple displays connected to your machine you may need to disable all but one when using Citrix.
+
+If you have sticky Control Ctrl key issues after logging to session you may resolve it using this [guide](http://looselytyped.blogspot.com/2014/08/fixing-sticky-control-key-issues-with.html)

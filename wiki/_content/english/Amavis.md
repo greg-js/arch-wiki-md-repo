@@ -154,7 +154,7 @@ You also have to add another other configuration in your `smtp` or `submission` 
 
 Using this options implies that Postfix will send emails to Amavis on port `10024`, so that these can be checked. If mail passes the control then these are sent to port `10025`, as explained before.
 
-We can now [restart](/index.php/Restart "Restart") `postfix.service` and `amavis.service`.
+We can now [restart](/index.php/Restart "Restart") `postfix.service` and `amavisd.service`.
 
 To check that Postfix is listening on port `10025` do the same operations as the port `10024` case.
 

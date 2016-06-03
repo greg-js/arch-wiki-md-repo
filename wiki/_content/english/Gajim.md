@@ -17,7 +17,7 @@
 
 If you suspend your computer gajim stays connected for about 15 minutes. To prevent message loss, it is needed to set your status offline before suspending or hibernating. The status message won't be changed.
 
-Therefore create a new systemd unit `gajim-suspend@.service`:
+This can be achieved by creating a new systemd unit `gajim-suspend@.service` that uses Gajim's [D-Bus](/index.php/D-Bus "D-Bus") interface:
 
  `/etc/systemd/system/gajim-suspend@.service` 
 ```
@@ -37,6 +37,15 @@ ExecStop=/usr/bin/bash -c ". /home/%I/.dbus/session-bus/$(</var/lib/dbus/machine
 [Install]
 WantedBy=sleep.target
 ```
+
+The D-Bus remote control feature must be enabled for the systemd unit to work. It can be tested using
+
+```
+$ gajim-remote check_gajim_running
+
+```
+
+In case it returns "False" while Gajim is running, enable *remote_control* in the 'Advanced Configuration Editor' (Preferences -> Advanced -> 'Advanced Configuration Editor'), then restart Gajim.
 
 Then [enable](/index.php/Enable "Enable") the service.
 

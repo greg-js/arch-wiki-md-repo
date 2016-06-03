@@ -1,4 +1,4 @@
-Sendmail is the classical SMTP server from the unix world. It was originally coded long time ago, when the internet was a safer place, and back then, security didn't matter as much as does today. Therefore it used to have several security bugs and it got some bad reputation for that. But those bugs are long fixed and a recent sendmail version is as safe as any other SMTP server. However, if your top priority is security, you should probably use netqmail.
+Sendmail is the classic SMTP server from the unix world. Arch Linux provides the alternative [Postfix](/index.php/Postfix "Postfix") in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 The goal of this article is to setup Sendmail for local users accounts, **without using mysql or other database**, and allowing also the creation of *mail-only accounts*.
 
@@ -23,7 +23,7 @@ This article only explains the required steps configuring Sendmail; after that, 
 
 ## Installation
 
-Install the package [sendmail](https://aur.archlinux.org/packages/sendmail/) from the [AUR](/index.php/AUR "AUR"), and the packages [procmail](https://www.archlinux.org/packages/?name=procmail) and [m4](https://www.archlinux.org/packages/?name=m4) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [sendmail](https://aur.archlinux.org/packages/sendmail/), [procmail](https://www.archlinux.org/packages/?name=procmail) and [m4](https://www.archlinux.org/packages/?name=m4) packages.
 
 ## DNS Records
 
@@ -31,13 +31,12 @@ You should have a domain, and edit your MX records to point your server. Remembe
 
 ## Adding users
 
-*   By default, all the local users can have an email address like username@your-domain.com. But if you want to add *mail-only accounts*, that is, users who can get email, but can't have shell access or login on X, you can add them like this:
+Create a [Linux user](/index.php/Users_and_groups "Users and groups") for each user that wants to receive email at *username@your-domain.com*. To add *mail-only accounts*, that is, users who can get email, but can't have shell access or login on X, you can add them like this:
 
- `useradd -m -s /sbin/nologin joenobody` 
+```
+# useradd -m -s /usr/bin/nologin *username*
 
-*   Assign a password:
-
- `passwd joenobody` 
+```
 
 ## Configuration
 
@@ -45,13 +44,11 @@ You should have a domain, and edit your MX records to point your server. Remembe
 
 **Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to Sendmail, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
-*   Generate a key and sign it. Read [OpenSSL](/index.php/OpenSSL#Generating_keys "OpenSSL") for more information.
+Generate a key and obtain a certificate. See [OpenSSL#Self-signed certificate](/index.php/OpenSSL#Self-signed_certificate "OpenSSL") for private use or [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") for a free publicly-trusted certificate.
 
 ### sendmail.cf
 
-*   Create the file `/etc/mail/sendmail.mc`.
-
-You can read all the options for configuring sendmail on the file `/usr/share/sendmail-cf/README`.
+Create the file `/etc/mail/sendmail.mc`. You can read all the options for configuring sendmail on the file `/usr/share/sendmail-cf/README`.
 
 **Warning:** If you create your own sendmail.mc file, remember that plaintext auth over **non-TLS** is very risky. Using the following example forces TLS and is therefore more safe unless you know what are you doing
 
@@ -84,13 +81,16 @@ MAILER(smtp)dnl
 
 ```
 
-*   Then process it with
+Then process it with
 
- `# m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf` 
+```
+# m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
+
+```
 
 ### local-host-names
 
-*   Put your domains on the `local-host-names` file:
+Put your domains on the `local-host-names` file:
 
  `/etc/mail/local-host-names` 
 ```
@@ -101,11 +101,11 @@ localhost.localdomain
 
 ```
 
-*   Make sure the domains are also resolved by your `/etc/hosts` file.
+Make sure the domains are also resolved by your `/etc/hosts` file.
 
 ### access.db
 
-*   Create the file `/etc/mail/access` and put there the base addresses where you want to be able to relay mail. Lets suppose you have a vpn on `10.5.0.0/24`, and you want to relay mails from any ip in that range:
+Create the file `/etc/mail/access` and put there the base addresses where you want to be able to relay mail. Lets suppose you have a vpn on `10.5.0.0/24`, and you want to relay mails from any ip in that range:
 
  `/etc/mail/access` 
 ```
@@ -114,30 +114,36 @@ localhost.localdomain
 
 ```
 
-*   Then process it with
+Then process it with
 
- `# makemap hash /etc/mail/access.db < /etc/mail/access` 
+```
+# makemap hash /etc/mail/access.db < /etc/mail/access
+
+```
 
 ### aliases.db
 
-*   Edit the file `/etc/mail/aliases` and uncomment the line `#root: human being here` and change it to be like this:
+Edit the file `/etc/mail/aliases` and uncomment the line `#root: human being here` and change it to be like this:
 
  `root:         your-username` 
 
-*   You can add aliases for your usernames there, like:
+You can add aliases for your usernames there, like:
 
 ```
 coolguy:      your-username
 somedude:     your-username
 ```
 
-*   Then process it with
+Then process it with
 
- `# newaliases` 
+```
+# newaliases
+
+```
 
 ### virtusertable.db
 
-*   Create your `virtusertable` file and put there aliases that includes domains (useful if your server is hosting several domains)
+Create your `virtusertable` file and put there aliases that includes domains (useful if your server is hosting several domains)
 
  `/etc/mail/virtusertable` 
 ```
@@ -146,9 +152,12 @@ joe@my-other.tk                       joenobody
 
 ```
 
-*   Then process it with
+Then process it with
 
- `# makemap hash /etc/mail/virtusertable.db < /etc/mail/virtusertable` 
+```
+# makemap hash /etc/mail/virtusertable.db < /etc/mail/virtusertable
+
+```
 
 ### Start on boot
 
@@ -160,9 +169,12 @@ Enable and start the following services. Read [Daemons](/index.php/Daemons "Daem
 
 ### SASL authentication
 
-*   Add a user to the SASL database for SMTP authentication.
+Add a user to the SASL database for SMTP authentication.
 
- `# saslpasswd2 -c your-username` 
+```
+# saslpasswd2 -c your-username
+
+```
 
 ## Tips and tricks
 
@@ -174,4 +186,7 @@ To forward all mail addressed to any user in the **my-other.tk** domain to **you
 
 Do not forget to process it again with
 
- `# makemap hash /etc/mail/virtusertable.db < /etc/mail/virtusertable`
+```
+# makemap hash /etc/mail/virtusertable.db < /etc/mail/virtusertable
+
+```

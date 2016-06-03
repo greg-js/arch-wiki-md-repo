@@ -80,7 +80,7 @@ For this to work you do not need any `xorg.conf` file, any configurations are ma
 
 With the arrival of Xorg 1.8 support for HAL was dropped in favor of [udev](/index.php/Udev "Udev") which might break auto-detection for some tablets as fitting udev rules might not exist yet, so you may need to write your own.
 
-~~If you have installed [libwacom](https://www.archlinux.org/packages/?name=libwacom) or associated packages like [libwacom-fedora](https://aur.archlinux.org/packages/libwacom-fedora/) remove those packages first. They are known to cause problems with newer version of X. *xf86-input-wacom* is the only package you need to install the X11 drivers.~~ **This may now break your system!**
+If you have installed [libwacom](https://www.archlinux.org/packages/?name=libwacom) or associated packages like [libwacom-fedora](https://aur.archlinux.org/packages/libwacom-fedora/) remove those packages first. They are known to cause problems with newer version of X. *xf86-input-wacom* is the only package you need to install the X11 drivers.
 
 ### Manual setup
 
@@ -609,7 +609,7 @@ It remaps
 
 To enabled proper usage, and pressure sensitive painting in [GIMP](http://www.gimp.org), just go to *Edit → Input Devices*. Now for each of your *eraser*, *stylus*, and *cursor* **devices**, set the **mode** to *Screen*, and remember to save.
 
-*   Please take note that if present, the *pad* **device** should be kept disabled as I do not think The GIMP supports such things. Alternatively, to use such features of your tablet you should map them to keyboard commands with a program such as [Wacom ExpressKeys](http://hem.bredband.net/devel/wacom/).
+*   Please take note that if present, the *pad* **device** should be kept disabled as I do not think GIMP supports such things. Alternatively, to use such features of your tablet you should map them to keyboard commands with a program such as [Wacom ExpressKeys](http://hem.bredband.net/devel/wacom/).
 
 *   You should also take note that the tool selected for the *stylus* is independent to that of the *eraser*. This can actually be quite handy, as you can have the *eraser* set to be used as any tool you like.
 

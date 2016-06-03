@@ -202,13 +202,15 @@ They can be added through the web interface (as well as updated) through the Adm
 
 It is very trivial to backup DokuWiki, since there is no database. All pages are in plain text, and require only a simple tar, or rsync.
 
-A quick breakdown of the directories of interest in the current (2008-05-05) version:
+A quick breakdown of the directories of interest in the current (2015-08-10a) version:
 
 ```
  /dokuwiki/data/  =>  All User Created Data
- /dokuwiki/lib/plugins/  =>  All User Added Plugins
+ /dokuwiki/conf/  =>  Configuration settings
 
 ```
+
+This may change in future releases, please consult the [DokuWiki Backup FAQ](https://www.dokuwiki.org/faq:backup) for verification.
 
 ## Further Reading
 

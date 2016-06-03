@@ -88,7 +88,7 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 *   **[Wireshark](/index.php/Wireshark "Wireshark")** — Network protocol analyzer that lets you capture and interactively browse the traffic running on a computer network.
 
-	[http://www.wireshark.org/](http://www.wireshark.org/) || [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk)
+	[http://www.wireshark.org/](http://www.wireshark.org/) || [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk)
 
 #### Threat and vulnerability detection
 
@@ -130,7 +130,7 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 *   **[Tripwire](https://en.wikipedia.org/wiki/Open_Source_Tripwire "wikipedia:Open Source Tripwire")** — Intrusion detection system.
 
-	[http://tripwire.sourceforge.net/](http://tripwire.sourceforge.net/) || [tripwire](https://aur.archlinux.org/packages/tripwire/)
+	[https://github.com/Tripwire/tripwire-open-source](https://github.com/Tripwire/tripwire-open-source) || [tripwire](https://aur.archlinux.org/packages/tripwire/)
 
 #### File security
 
@@ -326,7 +326,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **GPass** — Password manegement software for GNOME2 desktop.
 
-	[http://projects.netlab.jp/gpass/](http://projects.netlab.jp/gpass/) || [gpass](https://aur.archlinux.org/packages/gpass/)
+	[https://github.com/raffael-sfm/gpass](https://github.com/raffael-sfm/gpass) || [gpass](https://aur.archlinux.org/packages/gpass/)
 
 *   **GPassword Manager** — Simple, lightweight and cross-platform utility for managing and accessing passwords.
 
@@ -387,6 +387,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 *   **Revelation** — Password manager for the GNOME desktop.
 
 	[http://revelation.olasagasti.info/](http://revelation.olasagasti.info/) || [revelation](https://aur.archlinux.org/packages/revelation/)
+
+*   **spm** — Simple Password Manager written entirely in POSIX shell using PGP. Fast, lightweight and easily scriptable.
+
+	[https://notabug.org/kl3/spm/](https://notabug.org/kl3/spm/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **Seahorse** — GNOME application for managing encryption keys and passwords in the GnomeKeyring.
 

@@ -1,161 +1,16 @@
 ## Contents
 
 *   [1 Hooks!](#Hooks.21)
-    *   [1.1 update-desktop-database](#update-desktop-database)
-    *   [1.2 update-mime-database](#update-mime-database)
-    *   [1.3 install-info](#install-info)
-    *   [1.4 glib-compile-schemas](#glib-compile-schemas)
-    *   [1.5 gtk-update-icon-cache, xdg-icon-resource](#gtk-update-icon-cache.2C_xdg-icon-resource)
-    *   [1.6 systemd-tmpfiles](#systemd-tmpfiles)
-    *   [1.7 systemd-sysusers](#systemd-sysusers)
-    *   [1.8 mktexlsr, texhash](#mktexlsr.2C_texhash)
-    *   [1.9 gconf](#gconf)
-    *   [1.10 gio-querymodules](#gio-querymodules)
-    *   [1.11 fc-cache](#fc-cache)
-    *   [1.12 update-ca-trust](#update-ca-trust)
+    *   [1.1 systemd-tmpfiles](#systemd-tmpfiles)
+    *   [1.2 systemd-sysusers](#systemd-sysusers)
+    *   [1.3 udevadm hwdb, systemd-hwdb](#udevadm_hwdb.2C_systemd-hwdb)
+    *   [1.4 mktexlsr, texhash](#mktexlsr.2C_texhash)
+    *   [1.5 fc-cache](#fc-cache)
+    *   [1.6 update-ca-trust](#update-ca-trust)
 *   [2 TBD](#TBD)
+*   [3 Implemented](#Implemented)
 
 # Hooks!
-
-## update-desktop-database
-
-Used by 490 packages
-
-Proposed Hook (desktop-file-utils)
-
-```
-[Trigger]
-Type = File
-Operation = Install
-Operation = Upgrade
-Operation = Remove
-Target = usr/share/applications/*.desktop
-
-[Action]
-Description = Updating the desktop file MIME type cache...
-When = PostTransaction
-Exec = /usr/bin/update-desktop-database --quiet
-
-```
-
-## update-mime-database
-
-Used by 142 packages
-
-Proposed Hook (shared-mime-info)
-
-```
-[Trigger]
-Type = File
-Operation = Install
-Operation = Upgrade
-Operation = Remove
-Target = usr/share/mime/packages/*.xml
-
-[Action]
-Description = Updating the MIME type database...
-When = PostTransaction
-Exec = /usr/bin/update-mime-database /usr/share/mime
-
-```
-
-## install-info
-
-Used by 170 packages
-
-Proposed Hook (texinfo)
-
-```
-[Trigger]
-Type = File
-Operation = Install
-Operation = Upgrade
-Target = usr/share/info/*
-
-[Action]
-Description = Updating the info directory file...
-When = PostTransaction
-Exec = /bin/sh -c 'while read -r f; do install-info "$f" /usr/share/info/dir 2> /dev/null; done'
-NeedsTargets
-
-```
-
-Proposed Hook (remove)
-
-```
-[Trigger]
-Type = File
-Operation = Remove
-Target = usr/share/info/*
-
-[Action]
-Description = Removing old entries from the info directory file...
-When = PostTransaction
-Exec = /bin/sh -c 'while read -r f; do install-info --delete "$f" /usr/share/info/dir 2> /dev/null; done'
-NeedsTargets
-
-```
-
-## glib-compile-schemas
-
-Used by 222 packages
-
-Proposed Hook (glib2)
-
-```
-[Trigger]
-Type = File
-Operation = Install
-Operation = Upgrade
-Operation = Remove
-Target = usr/share/glib-2.0/schemas/*.gschema.xml
-Target = usr/share/glib-2.0/schemas/*.gschema.override
-
-[Action]
-Description = Compiling GSettings XML schema files...
-When = PostTransaction
-Exec = /usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas
-
-```
-
-## gtk-update-icon-cache, xdg-icon-resource
-
-Used by 754 packages
-
-Note that `xdg-icon-resource forceupdate` has no effect without gtk-update-icon-cache installed, so removing it doesn't hurt.
-
-Proposed Hook (gtk-update-icon-cache)
-
-```
-[Trigger]
-Type = File
-Operation = Install
-Operation = Upgrade
-Operation = Remove
-Target = usr/share/icons/*/
-Target = !usr/share/icons/*/?*
-
-[Action]
-Description = Updating icon theme caches...
-When = PostTransaction
-Exec = /usr/lib/pacman-hooks/gtk-update-icon-cache
-NeedsTargets
-
-```
-
-```
-#!/bin/bash
-
-while read -r f; do
-  if [[ -e ${f}index.theme ]]; then
-    gtk-update-icon-cache -q "$f"
-  else
-    rm -f "${f}icon-theme.cache"
-    rmdir --ignore-fail-on-non-empty "$f"
-  fi
-done
-
-```
 
 ## systemd-tmpfiles
 
@@ -199,6 +54,33 @@ NeedsTargets
 
 ```
 
+## udevadm hwdb, systemd-hwdb
+
+Used by 5 packages
+
+This SHOULD be run with --usr, resulting in /usr/lib/udev/hwdb.bin instead of /etc/udev/hwdb.bin.
+
+Although the latter database overrides the former, this would not be a problem since systemd-hwdb-update.service will update /etc/udev/hwdb.bin at boot if /etc/udev/hwdb.bin exists OR /usr/lib/udev/hwdb.bin does not exist OR /etc/udev/hwdb.d is not empty.
+
+However, this service is also gated on ConditionNeedsUpdate=/etc, which passes if /usr has a newer mtime than /etc/.updated. Unfortunately, ConditionNeedsUpdate (used in quite a few services!) is broken for us since pacman will not update the mtime of directories that already exist, such as /usr.
+
+Proposed hook (systemd)
+
+```
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = usr/lib/udev/hwdb.d/*.hwdb
+
+[Action]
+Description = Updating udev hardware database...
+When = PostTransaction
+Exec = /usr/bin/systemd-hwdb update
+
+```
+
 ## mktexlsr, texhash
 
 Used in 27 packages
@@ -218,62 +100,6 @@ Target = usr/share/texmf-dist/*
 Description = Updating TeX Live ls-R databases...
 When = PostTransaction
 Exec = /usr/bin/mktexlsr
-
-```
-
-## gconf
-
-Used by 55 packages
-
-Proposed hook (gconf)
-
-```
-[Trigger]
-Type = file
-Operation = Install
-Operation = Upgrade
-Target = usr/share/gconf/schemas/*.schemas
-
-[Action]
-Description = Installing GConf schemas...
-When = PostTransaction
-Exec = /bin/bash -c 'while read -r f; do f=${f##*/}; f=${f%.schemas}; /usr/bin/gconfpkg --install $f; done'
-NeedsTargets
-
-```
-
-```
-[Trigger]
-Type = file
-Operation = Remove
-Target = usr/share/gconf/schemas/*.schemas
-
-[Action]
-Description = Uninstalling GConf schemas...
-When = PreTransaction
-Exec = /bin/bash -c 'while read -r f; do f=${f##*/}; f=${f%.schemas}; /usr/bin/gconfpkg --uninstall $f; done'
-NeedsTargets
-
-```
-
-## gio-querymodules
-
-Used by 6 packages
-
-Proposed hook (glib2)
-
-```
-[Trigger]
-Type = File
-Operation = Install
-Operation = Upgrade
-Operation = Remove
-Target = usr/lib/gio/modules/*.so
-
-[Action]
-Description = Updating GIO module cache...
-When = PostTransaction
-Exec = /usr/bin/gio-querymodules /usr/lib/gio/modules
 
 ```
 
@@ -325,3 +151,17 @@ Exec = /usr/bin/update-ca-trust
 *   gdk-pixbuf-query-loaders (6 packages)
 *   gtk-query-immodules-2.0 (7 packages)
 *   gtk-query-immodules-3.0 (7 packages)
+
+# Implemented
+
+*   update-desktop-database
+*   update-mime-database
+*   update-appstream-index
+*   install-info
+*   glib-compile-schemas
+*   gtk-update-icon-cache, xdg-icon-resource
+*   gconfpkg
+*   gio-querymodules
+*   gdk-pixbuf-query-loaders
+*   gtk-query-immodules-2.0
+*   gtk-query-immodules-3.0

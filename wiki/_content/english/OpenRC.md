@@ -14,6 +14,7 @@
     *   [2.5 Hostname](#Hostname)
     *   [2.6 Kernel modules](#Kernel_modules)
     *   [2.7 Locale](#Locale)
+    *   [2.8 DM-Crypt](#DM-Crypt)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Error while unmounting /tmp](#Error_while_unmounting_.2Ftmp)
     *   [3.2 Disabling IPv6 does not work](#Disabling_IPv6_does_not_work)
@@ -107,6 +108,10 @@ modules="vboxdrv acpi_cpufreq"
 Keyboard layout can be configured via `/etc/openrc/conf.d/keymaps` and `/etc/openrc/conf.d/consolefont`. You can also configure the settings through the `/etc/locale.conf` file, which is sourced via `/etc/profile.d/locale.sh`.
 
 See [[3]](http://wiki.gentoo.org/wiki/Localization/HOWTO#Keyboard_layout_for_the_console) and [Locale](/index.php/Locale "Locale") for details.
+
+### DM-Crypt
+
+See [DM-Crypt - Gentoo-en](http://gentoo-en.vfose.ru/wiki/DM-Crypt) for automatically mounting encrypted LVM or other block devices.
 
 ## Troubleshooting
 

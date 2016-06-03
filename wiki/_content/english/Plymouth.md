@@ -11,14 +11,15 @@
     *   [3.2 Show Delay](#Show_Delay)
     *   [3.3 Changing the Theme](#Changing_the_Theme)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Replacing the Arch Logo and creating custom themes](#Replacing_the_Arch_Logo_and_creating_custom_themes)
+    *   [4.1 Show kernel messages](#Show_kernel_messages)
+    *   [4.2 Replacing the Arch Logo and creating custom themes](#Replacing_the_Arch_Logo_and_creating_custom_themes)
 *   [5 See also](#See_also)
 
 ## Preparation
 
 **Warning:** Plymouth is currently under heavy development and may contain serious bugs.
 
-Plymouth primarily uses [KMS](/index.php/KMS "KMS") (Kernel Mode Setting) to display graphics. If you can't use KMS (e.g. because you are using a proprietary driver) you will need to use [framebuffer](/index.php/Framebuffer#Framebuffer_Resolution "Framebuffer") instead. In EFI/UEFI systems, plymouth can utilize the EFI framebuffer, otherwise Uvesafb is recommended as it can function with widescreen resolutions.
+Plymouth primarily uses [KMS](/index.php/KMS "KMS") (Kernel Mode Setting) to display graphics. If you can't use KMS (e.g. because you are using a proprietary driver) you will need to use [framebuffer](/index.php/Framebuffer#Framebuffer_Resolution "Framebuffer") instead. In EFI/UEFI systems, plymouth can utilize the EFI framebuffer, otherwise [Uvesafb](/index.php/Uvesafb "Uvesafb") is recommended as it can function with widescreen resolutions.
 
 If you have neither KMS nor a framebuffer, Plymouth will fall back to text-mode.
 
@@ -26,11 +27,9 @@ If you have neither KMS nor a framebuffer, Plymouth will fall back to text-mode.
 
 Plymouth is available from the [AUR](/index.php/AUR "AUR"): the stable package is [plymouth](https://aur.archlinux.org/packages/plymouth/) and the development version is [plymouth-git](https://aur.archlinux.org/packages/plymouth-git/).
 
-If you also use [KDM](/index.php/KDM "KDM"), you need to install the [kdebase-workspace-plymouth](https://aur.archlinux.org/packages/kdebase-workspace-plymouth/), otherwise kdm may not start correctly.
-
 If you also use [GDM](/index.php/GDM "GDM"), you should install the [gdm-plymouth](https://aur.archlinux.org/packages/gdm-plymouth/), which compiles gdm with plymouth support.
 
-Both packages are also available in the unofficial [nullptr_t](/index.php/Unofficial_user_repositories#nullptr_t "Unofficial user repositories") repository.
+Packages are also available in the unofficial [nullptr_t](/index.php/Unofficial_user_repositories#nullptr_t "Unofficial user repositories") repository.
 
 ### The plymouth hook
 
@@ -40,17 +39,6 @@ Add `plymouth` to the HOOKS array in [mkinitcpio.conf](/index.php/Mkinitcpio.con
 **Warning:** If you use [hard drive encryption](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") with the `encrypt` hook, you **must** replace the `encrypt` hook with `plymouth-encrypt` in order to get to the TTY password prompts.
 
 **Warning:** Using PARTUUID in `cryptdevice=` parameter does **not** work with `plymouth-encrypt` hook.
-
-For early KMS start (if you are using the open drivers) add the module [radeon](/index.php/Radeon "Radeon") (for radeon cards), [i915](/index.php/I915 "I915") (for intel cards) or [nouveau](/index.php/Nouveau "Nouveau") (for nvidia cards) to the MODULES line in `/etc/mkinitcpio.conf`:
-
- `/etc/mkinitcpio.conf` 
-```
-MODULES="i915"
-**or**
-MODULES="radeon"
-**or**
-MODULES="nouveau"
-```
 
 ### The kernel command line
 
@@ -67,10 +55,10 @@ Rebuild your initrd image (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 
 
 ### Smooth transition
 
-For *smooth transition* to [display manager](/index.php/Display_manager "Display manager") you have to:
+To enable *smooth transition* (if supported) you have to:
 
-1.  Disable your Display Manager Unit, e.g. `systemctl disable gdm.service`
-2.  Enable the respective DM-plymouth Unit (GDM, KDM, LXDM, SLiM units provided), e.g. `systemctl enable gdm-plymouth.service`
+1.  Disable your [Display manager](/index.php/Display_manager "Display manager") Unit, e.g. `systemctl disable gdm.service`
+2.  Enable the respective DM-plymouth Unit (GDM, LXDM, SLiM units provided), e.g. `systemctl enable gdm-plymouth.service`
 
 ### Show Delay
 
@@ -100,17 +88,6 @@ Plymouth comes with a selection of themes:
 
 In addition you can install other themes from [AUR](/index.php/AUR "AUR"), just have a look at the "Required by"-Array on [plymouth](https://aur.archlinux.org/packages/plymouth/).
 
-By default, **spinner** theme is selected. You can change the theme by editing `/etc/plymouth/plymouthd.conf`, for example:
-
- `/etc/plymouth/plymouthd.conf` 
-```
-[Daemon]
-Theme=spinner
-ShowDelay=5
-```
-
-You will also need to rebuild your initrd image every time you change your theme.
-
 All currently installed themes can be listed by using this command:
 
 ```
@@ -125,6 +102,15 @@ or:
 details  glow    solar       spinner  tribar
 fade-in  script  spinfinity  text
 
+```
+
+By default, the **spinner** theme is selected. The theme can be changed by editing `/etc/plymouth/plymouthd.conf`, for example:
+
+ `/etc/plymouth/plymouthd.conf` 
+```
+[Daemon]
+Theme=spinner
+ShowDelay=5
 ```
 
 Themes can be previewed without rebuilding, press `Ctrl+Alt+F2` to change to console, log in as root and type:
@@ -142,14 +128,7 @@ To quit the preview, press `Ctrl+Alt+F2` again and type:
 
 ```
 
-every time a theme is changed, the kernel image must be rebuilt with:
-
-```
-# mkinitcpio -p <name of your kernel preset; e.g. linux>
-
-```
-
-To change theme and rebuild initrd image:
+Every time a theme is changed, the kernel image must be rebuilt:
 
 ```
 # plymouth-set-default-theme -R <theme>
@@ -159,6 +138,8 @@ To change theme and rebuild initrd image:
 Reboot to apply the changes.
 
 ## Tips and tricks
+
+#### Show kernel messages
 
 During boot you can switch to kernel messages by pressing "Home" (or "Escape") key.
 

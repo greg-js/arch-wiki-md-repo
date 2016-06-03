@@ -26,7 +26,7 @@ See [Flash#Flash Player](/index.php/Flash#Flash_Player "Flash").
 
 ### Web Apps
 
-Since version 3.0, Web can add *web app* launchers to GNOME Shell. To manage and remove them, navigate to `about:applications` in Web.
+Web can add *web app* launchers to GNOME Shell. To manage and remove them, navigate to `about:applications` in Web.
 
 ## Troubleshooting
 

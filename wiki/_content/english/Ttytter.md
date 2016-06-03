@@ -2,7 +2,7 @@
 
 tytter is a twitter client for the command line
 
-[ttytter](https://www.archlinux.org/packages/?name=ttytter)
+[ttytter](https://aur.archlinux.org/packages/ttytter/)
 
 When you start TTYtter without a keyfile, which will be the case the first time you run it, it will automatically
 

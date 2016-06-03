@@ -5,9 +5,8 @@ Cocos2D-X is a high-performance cross platform 2D/3D game engine that supports m
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 PATH Environment Variable](#PATH_Environment_Variable)
-    *   [2.2 Python Buildscripts Workaround](#Python_Buildscripts_Workaround)
-    *   [2.3 Cross Compiling for Android](#Cross_Compiling_for_Android)
-    *   [2.4 Updating SDKBOX](#Updating_SDKBOX)
+    *   [2.2 Cross Compiling for Android](#Cross_Compiling_for_Android)
+    *   [2.3 Updating SDKBOX](#Updating_SDKBOX)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -22,15 +21,6 @@ After installation, add `/opt/cocos2d-x/tools/cocos2d-console/bin`, and `/opt/co
 
 ```
 export PATH=/opt/cocos2d-x/tools/cocos2d-console/bin:/opt/cocos2d-x/tools/cocos2d-console/plugins/plugin_package:${PATH}
-
-```
-
-### Python Buildscripts Workaround
-
-Since most Cocos2D-X scripts use `python2` instead of `python3`, simply calling `python2 foo.py` will not suffice since other modules will be called with "env python" which could point to python3\. To fix this, read [here](/index.php/Python#Dealing_with_version_problem_in_build_scripts "Python"). Don't forget to add `/usr/local/bin`, or whichever directory the workaround shell script is installed at, before `/usr/bin` in your PATH environment variable. The following should suffice:
-
-```
-export PATH=/usr/local/bin:${PATH}
 
 ```
 

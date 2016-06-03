@@ -20,13 +20,14 @@ From project [home page](http://lxde.org/):
     *   [3.6 Font settings](#Font_settings)
     *   [3.7 Keyboard layout](#Keyboard_layout)
     *   [3.8 Screen locking](#Screen_locking)
-    *   [3.9 lxpanel icons](#lxpanel_icons)
-    *   [3.10 lxpanel menus](#lxpanel_menus)
+    *   [3.9 LXPanel icons](#LXPanel_icons)
+    *   [3.10 LXPanel menus](#LXPanel_menus)
     *   [3.11 Replace Openbox](#Replace_Openbox)
     *   [3.12 Shutdown, reboot, suspend and hibernate options (LXSession-logout)](#Shutdown.2C_reboot.2C_suspend_and_hibernate_options_.28LXSession-logout.29)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 NTFS with Chinese characters](#NTFS_with_Chinese_characters)
-    *   [4.2 lxpanel crashes with some themes or browsing particular web pages](#lxpanel_crashes_with_some_themes_or_browsing_particular_web_pages)
+    *   [4.2 LXPanel crashes with some themes or browsing particular web pages](#LXPanel_crashes_with_some_themes_or_browsing_particular_web_pages)
+    *   [4.3 LXPanel uses a smaller icon size for the Task Bar](#LXPanel_uses_a_smaller_icon_size_for_the_Task_Bar)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -144,7 +145,7 @@ LXDE does not come with a screen locker of its own; see [List of applications/Se
 
 `/etc/xdg/lxsession/LXDE/autostart` from [lxde-common](https://www.archlinux.org/packages/?name=lxde-common) lists [XScreenSaver](/index.php/XScreenSaver "XScreenSaver"), which will be launched automatically. See [#Autostart](#Autostart) when using a different locker. See [DPMS](/index.php/DPMS "DPMS") on how to control the screen saver without external programs.
 
-### lxpanel icons
+### LXPanel icons
 
 Default icons used by lxpanel are stored in `/usr/share/pixmaps` and any custom icons you want lxpanel to use need to be saved there as well.
 
@@ -166,7 +167,7 @@ Icon=/name/of/new/icon/added/to/pixmaps/.png
 
 ```
 
-### lxpanel menus
+### LXPanel menus
 
 The panel's menus can be configured in `/etc/xdg/menus/lxde-applications.menu` as per the [xdg-menu](/index.php/Xdg-menu "Xdg-menu") format to work with applications from other sessions (notably [MATE](/index.php/MATE "MATE")) to add some of the function-ability that lxde lacks.
 
@@ -225,7 +226,7 @@ And then make it executable:
 
 ```
 
-### lxpanel crashes with some themes or browsing particular web pages
+### LXPanel crashes with some themes or browsing particular web pages
 
 With some gtk themes ([AUR](/index.php/AUR "AUR") - [gtk-theme-greybird](https://aur.archlinux.org/packages/gtk-theme-greybird/)), launch lxpanel will get errors below.
 
@@ -237,6 +238,10 @@ lxpanel: cairo-scaled-font.c:459: _cairo_scaled_glyph_page_destroy: Assertion `!
 Try install [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) in this case.
 
 If lxpanel crashes when browsing particular unicode web pages, try install [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid).
+
+### LXPanel uses a smaller icon size for the Task Bar
+
+The icons of running applications do not match the set Icon size in Panel Settings > Geometry - they are 4px smaller which is making some of them blurry. To have clear looking 32px icons in the Task Bar the set Icon size has to be 36px which would blur the icons of the rest of your active Panel Applets. To get around this create additional panel(s) and have them collectively constitute a single continuous looking panel by adjusting the Alignment and Margin in Panel Settings > Geometry.
 
 ## See also
 

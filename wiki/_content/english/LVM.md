@@ -109,6 +109,7 @@ LVM gives you more flexibility than just using normal hard drive partitions:
 ### Disadvantages
 
 *   Additional steps in setting up the system, more complicated.
+*   If dual-booting, note that Windows does not support LVM; you will be unable to access any LVM partitions from Windows.
 
 ## Installing Arch Linux on LVM
 

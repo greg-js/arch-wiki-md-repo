@@ -61,7 +61,7 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 **提示:** 不要安装下列任何软件包，请跳至后文以寻求帮助。
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - 提供守护进程以及程序的主要安装包。
-*   [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (或 [bbswitch-dkms](https://aur.archlinux.org/packages/bbswitch-dkms/)) - 当未使用时禁用NVIDIA独立显卡。
+*   [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (或 [bbswitch-dkms](https://www.archlinux.org/packages/?name=bbswitch-dkms)) - 当未使用时禁用NVIDIA独立显卡。
 *   [primus](https://www.archlinux.org/packages/?name=primus) (或 [primus-git](https://aur.archlinux.org/packages/primus-git/)), [virtualgl](https://www.archlinux.org/packages/?name=virtualgl) - 一个渲染/显示的桥接器。只需其中之一，不过两个都安装也不会有问题。
 *   [lib32-primus](https://www.archlinux.org/packages/?name=lib32-primus), [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) - 针对32位程序的渲染/显示桥接器。必须启用 [Multilib](/index.php/Multilib "Multilib") .
 *   [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) - 测试程序 `glxgears`.

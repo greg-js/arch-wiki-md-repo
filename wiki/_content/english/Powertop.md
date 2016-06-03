@@ -43,7 +43,7 @@ WantedBy=multi-user.target
 
 ### Error: Cannot load from file
 
-If you get an error like the following when starting powertop, you are likely to have powertop not allowed collecting enough measurement data yet. All you need to do is to keep powertop running for a certain time whilst being on battery.
+If you receive an error like the following when starting powertop, it's likely that powertop has not collected enough measurement data yet. To fix this, keep powertop running for a certain time connected to battery power only.
 
 ```
 Loaded 39 prior measurements

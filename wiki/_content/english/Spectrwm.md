@@ -1,6 +1,6 @@
 From [spectrwm website](http://spectrwm.org/):
 
-	*spectrwm is a small dynamic tiling window manager for [Xorg](/index.php/Xorg "Xorg"). It tries to stay out of the way so that valuable screen real estate can be used for much more important stuff. It has sane defaults and does not require one to learn a language to do any configuration. It was written by hackers for hackers and it strives to be small, compact and fast.*
+	spectrwm is a small dynamic tiling window manager for [Xorg](/index.php/Xorg "Xorg"). It tries to stay out of the way so that valuable screen real estate can be used for much more important stuff. It has sane defaults and does not require one to learn a language to do any configuration. It was written by hackers for hackers and it strives to be small, compact and fast.
 
 Spectrwm is written in C and configured with a text configuration file. It was previously known as scrotwm.
 
@@ -270,8 +270,8 @@ Currently the PID of window is used to determine the desktop for new windows. To
 
 *   [spectrwm](http://www.spectrwm.org) - spectrwm's official website
 
-*   [dmenu](/index.php/Dmenu "Dmenu") - Simple application launcher from the developers of [dwm](/index.php/Dwm "Dwm")
+*   #spectrwm at [OFTC](https://www.oftc.net/) - Official IRC channel.
 
-*   #spectrwm at irc.freenode.net - (un)official IRC channel
+*   [dmenu](/index.php/Dmenu "Dmenu") - Simple application launcher from the developers of [dwm](/index.php/Dwm "Dwm")
 
 *   [The scrotwm thread](https://bbs.archlinux.org/viewtopic.php?id=64645)

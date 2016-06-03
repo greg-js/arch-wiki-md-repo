@@ -157,6 +157,8 @@ It is also possible to specify the color values of foreground, background, curso
 
 ## Cut and paste
 
+You can use CTRL-ALT-C and CTRL-ALT-V for copy and paste.
+
 Rxvt-unicode uses cut buffers which are loaded into the current `PRIMARY` selection by default. See [Selecting and pasting text](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod#THE_SELECTION_SELECTING_AND_PASTING_) for details.
 
 **Note:** Text can be selected to `CLIPBOARD` with the `selection-to-clipboard` [perl extension](#Perl_extensions) available since [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) 9.20.

@@ -55,7 +55,7 @@ MPlayer 可以通过[官方软件仓库](/index.php/Official_repositories "Offic
 
 *   **KMPlayer** — Konqueror 视频播放插件，KDE 的MPlayer/Xine/ffmpeg/ffserver/VDR 前端。
 
-	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://aur.archlinux.org/packages/kmplayer/)
+	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
 
 *   **Xt7-Player** — Gambas编写的MPlayer 图形界面，有大量功能。
 
@@ -73,7 +73,7 @@ MPlayer 可以通过[官方软件仓库](/index.php/Official_repositories "Offic
 
 #### Konqueror
 
-[AUR](/index.php/AUR "AUR") 中的 [kmplayer](https://aur.archlinux.org/packages/kmplayer/) 软件包提供了Konqueror 插件。
+[AUR](/index.php/AUR "AUR") 中的 [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) 软件包提供了Konqueror 插件。
 
 **注意:** 亦提供完整的mplayer图形前端。
 

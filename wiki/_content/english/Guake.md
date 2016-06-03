@@ -81,32 +81,32 @@ guake --rename-tab="iotop" --execute="/usr/bin/iotop"
 # create new tab, start bash session in it
 guake --new-tab --execute="/usr/bin/bash"
 # and then execute htop, renaming the tab to "htop"
-guake --execute="/usr/bin/htop" --rename-tab="htop"
+guake --execute="/usr/bin/htop" --rename-current-tab="htop"
 
 # ...
 guake --new-tab --execute="/usr/bin/bash"
-guake --execute="/usr/bin/atop" --rename-tab="atop"
+guake --execute="/usr/bin/atop" --rename-current-tab="atop"
 
 guake --new-tab --execute="/usr/bin/bash"
-guake --execute="~/.iptables.sh" --rename-tab="iptables -nvL"
+guake --execute="~/.iptables.sh" --rename-current-tab="iptables -nvL"
 
 guake --new-tab --execute="/usr/bin/bash"
-guake --execute="/usr/bin/journalctl --follow --full" --rename-tab="journalctl"
+guake --execute="/usr/bin/journalctl --follow --full" --rename-current-tab="journalctl"
 
 guake --new-tab --execute="/usr/bin/bash"
-guake --execute="/usr/bin/irssi" --rename-tab="irssi"
+guake --execute="/usr/bin/irssi" --rename-current-tab="irssi"
 
 guake --new-tab --execute="/usr/bin/bash"
-guake --execute="/usr/bin/sudo -i" --rename-tab="rootshell0"
+guake --execute="/usr/bin/sudo -i" --rename-current-tab="rootshell0"
 
 guake --new-tab --execute="/usr/bin/bash"
-guake --execute="/usr/bin/sudo -i" --rename-tab="rootshell1"
+guake --execute="/usr/bin/sudo -i" --rename-current-tab="rootshell1"
 
 guake --new-tab --execute="/usr/bin/bash"
-guake --rename-tab="shell0"
+guake --rename-current-tab="shell0"
 
 guake --new-tab --execute="/usr/bin/bash"
-guake --rename-tab="shell1"
+guake --rename-current-tab="shell1"
 
 ```
 

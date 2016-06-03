@@ -4,7 +4,7 @@ From the [systemd mailing list](http://lists.freedesktop.org/archives/systemd-de
 
 ## Installation
 
-The *systemd-timesyncd* service is available with [systemd](https://www.archlinux.org/packages/?name=systemd) >= 213\. To start and enable it, simply run:
+The *systemd-timesyncd* service is available with [systemd](https://www.archlinux.org/packages/?name=systemd). To start and enable it, simply run:
 
 ```
 # timedatectl set-ntp true 
@@ -26,7 +26,7 @@ RTC in local TZ: no
 
 ## Configuration
 
-When starting, *systemd-timesyncd* will read the configuration file from `/etc/systemd/timesyncd.conf`. As of [systemd](/index.php/Systemd "Systemd") 229 it looks like this:
+When starting, *systemd-timesyncd* will read the configuration file from `/etc/systemd/timesyncd.conf`, which looks like this:
 
  `/etc/systemd/timesyncd.conf` 
 ```
@@ -44,7 +44,7 @@ NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 ```
 
-Further to the daemon configuration, NTP servers may also be provided via a [systemd-networkd](/index.php/Systemd-networkd#.5BNetwork.5D_section "Systemd-networkd") configuration with a `NTP=` option or, dynamically, via a DHCP server (since *systemd* 216).
+Further to the daemon configuration, NTP servers may also be provided via a [systemd-networkd](/index.php/Systemd-networkd#.5BNetwork.5D_section "Systemd-networkd") configuration with a `NTP=` option or, dynamically, via a DHCP server.
 
 The NTP server to be used will be determined using the following rules:
 

@@ -65,7 +65,7 @@ fi
 
 You do not always want to define an environment variable globally. For instance, you might want to add `/home/my_user/bin` to the `PATH` variable but do not want all other users on your system to have that in their `PATH` too. Local environment variables can be defined in many different files:
 
-1.  Configuration files of your shell, for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Configuration files](/index.php/Zsh#Configuration_files "Zsh").
+1.  Configuration files of your shell, for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 2.  `~/.profile` is used by many shells as fallback, see [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 3.  `~/.pam_environment` is the user specific equivalent of `/etc/environment`, used by PAM-env module. See `pam_env(8)` and `pam_env.conf(5)` for details.
 

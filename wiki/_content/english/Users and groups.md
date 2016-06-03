@@ -35,13 +35,13 @@ Users may be grouped together into a "group", and users may be added to an exist
 
 From [In UNIX Everything is a File](http://ph7spot.com/musings/in-unix-everything-is-a-file):
 
-	*The UNIX operating system crystallizes a couple of unifying ideas and concepts that shaped its design, user interface, culture and evolution. One of the most important of these is probably the mantra: "everything is a file," widely regarded as one of the defining points of UNIX.*
+	The UNIX operating system crystallizes a couple of unifying ideas and concepts that shaped its design, user interface, culture and evolution. One of the most important of these is probably the mantra: "everything is a file," widely regarded as one of the defining points of UNIX.
 
-	*This key design principle consists of providing a unified paradigm for accessing a wide range of input/output resources: documents, directories, hard-drives, CD-ROMs, modems, keyboards, printers, monitors, terminals and even some inter-process and network communications. The trick is to provide a common abstraction for all of these resources, each of which the UNIX fathers called a "file." Since every "file" is exposed through the same API, you can use the same set of basic commands to read/write to a disk, keyboard, document or network device.*
+	This key design principle consists of providing a unified paradigm for accessing a wide range of input/output resources: documents, directories, hard-drives, CD-ROMs, modems, keyboards, printers, monitors, terminals and even some inter-process and network communications. The trick is to provide a common abstraction for all of these resources, each of which the UNIX fathers called a "file." Since every "file" is exposed through the same API, you can use the same set of basic commands to read/write to a disk, keyboard, document or network device.
 
 From [Extending UNIX File Abstraction for General-Purpose Networking](http://www.intel-research.net/Publications/Pittsburgh/101220041324_277.pdf):
 
-	*A fundamental and very powerful, consistent abstraction provided in UNIX and compatible operating systems is the file abstraction. Many OS services and device interfaces are implemented to provide a file or file system metaphor to applications. This enables new uses for, and greatly increases the power of, existing applications — simple tools designed with specific uses in mind can, with UNIX file abstractions, be used in novel ways. A simple tool, such as cat, designed to read one or more files and output the contents to standard output, can be used to read from I/O devices through special device files, typically found under the `/dev` directory. On many systems, audio recording and playback can be done simply with the commands, "`cat /dev/audio > myfile`" and "`cat myfile > /dev/audio`," respectively.*
+	A fundamental and very powerful, consistent abstraction provided in UNIX and compatible operating systems is the file abstraction. Many OS services and device interfaces are implemented to provide a file or file system metaphor to applications. This enables new uses for, and greatly increases the power of, existing applications — simple tools designed with specific uses in mind can, with UNIX file abstractions, be used in novel ways. A simple tool, such as cat, designed to read one or more files and output the contents to standard output, can be used to read from I/O devices through special device files, typically found under the `/dev` directory. On many systems, audio recording and playback can be done simply with the commands, "`cat /dev/audio > myfile`" and "`cat myfile > /dev/audio`," respectively.
 
 Every file on a GNU/Linux system is owned by a user and a group. In addition, there are three types of access permissions: read, write, and execute. Different access permissions can be applied to a file's owning user, owning group, and others (those without ownership). One can determine a file's owners and permissions by viewing the long listing format of the [ls](/index.php/Ls "Ls") command:
 
@@ -149,7 +149,7 @@ Although it is not required to protect the newly user `archie` with a password, 
 
 **Tip:** Bash is the default value for the shell (as indicated by `useradd -D`), so you can omit the `-s` option except if you want to use something else.
 
-This command will also automatically create a group called `archie` with the same GID as the UID of the user `archie` and makes this the default group for `archie` on login. Making each user have their own group (with group name same as user name and GID same as UID) is the preferred way to add users.
+The above "useradd" command will also automatically create a group called `archie` with the same GID as the UID of the user `archie` and makes this the default group for `archie` on login. Making each user have their own group (with group name same as user name and GID same as UID) is the preferred way to add users.
 
 You could also make the default group something else, e.g. `study`:
 
@@ -256,7 +256,7 @@ User accounts may be deleted with the *userdel* command.
 
 The `-r` option specifies that the user's home directory and mail spool should also be deleted.
 
-**Tip:** The [AUR](/index.php/AUR "AUR") packages [adduser](https://aur.archlinux.org/packages/adduser/), [adduser-defaults](https://aur.archlinux.org/packages/adduser-defaults/) or [adduser-deb](https://aur.archlinux.org/packages/adduser-deb/) provide an *adduser* script that allows carrying out the jobs of *useradd*, *chfn* and *passwd* interactively. See also [FS#32893](https://bugs.archlinux.org/task/32893).
+**Tip:** The [adduser](https://aur.archlinux.org/packages/adduser/) script allows carrying out the jobs of *useradd*, *chfn* and *passwd* interactively. See also [FS#32893](https://bugs.archlinux.org/task/32893).
 
 ### Username change tips
 

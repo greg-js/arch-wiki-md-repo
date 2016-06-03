@@ -16,11 +16,11 @@ From the project [home page](http://folding.stanford.edu/):
 
 ## Installation
 
-Install [foldingathome](https://aur.archlinux.org/packages/foldingathome/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [foldingathome](https://aur.archlinux.org/packages/foldingathome/) package.
 
 ## Configuration
 
-Run `/opt/fah/FAHClient --configure` as root to generate a configuration file at `/opt/fah/config.xml` (the Arch Linux team number is 45032). Alternately, you can write `opt/fah/config.xml` by hand and use `/opt/fah/sample-config.xml` as a reference. With a config file in place, you can start the daemon, check its status, and make the daemon automatically start at boot time.
+Run `/opt/fah/FAHClient --configure` as root to generate a configuration file at `/opt/fah/config.xml` (the Arch Linux team number is 45032). Alternately, you can write `/opt/fah/config.xml` by hand and use `/opt/fah/sample-config.xml` as a reference. With a config file in place, you can start the daemon, check its status, and make the daemon automatically start at boot time.
 
 ```
 $ cd /opt/fah

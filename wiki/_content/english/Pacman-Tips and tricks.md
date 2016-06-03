@@ -109,9 +109,10 @@ See also [System maintenance](/index.php/System_maintenance "System maintenance"
 
 You may want to get the list of installed packages with their version, which is useful when reporting bugs or discussing installed packages.
 
-*   List all explicitly installed packages: `pacman -Qe` .
-*   List all foreign packages (typically manually downloaded and installed): `pacman -Qm` .
-*   List all native packages (installed from the sync database(s)): `pacman -Qn` .
+*   List all explicitly installed packages: `pacman -Qe`.
+*   List all explicitly installed native packages (i.e. present in the sync database) that are not direct or optional dependencies: `pacman -Qent`.
+*   List all foreign packages (typically manually downloaded and installed): `pacman -Qm`.
+*   List all native packages (installed from the sync database(s)): `pacman -Qn`.
 *   List packages by regex: `pacman -Qs *regex*`.
 *   List packages by regex with custom output format: `expac -s "%-30n %v" *regex*` (needs [expac](https://www.archlinux.org/packages/?name=expac)).
 
@@ -224,6 +225,15 @@ For *recursively* removing orphans and their configuration files:
 If no orphans were found, pacman errors with `error: no targets specified`. This is expected as no arguments were passed to `pacman -Rns`.
 
 **Note:** As of [pacman](https://www.archlinux.org/packages/?name=pacman) 4.2.0, `-Qt` lists only true orphans. To include packages which are *optionally* required by another package, pass the `-t` flag twice (*i.e.*, `-Qtt`).
+
+Note that the `-Rns` (or `-Rnc`) option will remove only direct dependencies but not optional dependencies that were explicitly installed (without `--asdeps` option).
+
+Although it is not a requirement, but only for better system maintenance whenever you are installing optional dependencies try to install them with `--asdeps` option. Doing this doesn't affect anything in runtime or installation. It only affects when you have removed a package and there were optional dependencies. Then if you remove orphans it will also remove leftover optional dependencies if they were installed using `--asdeps` option. So while you are installing optional dependencies, use the following command:
+
+```
+# pacman -S --asdeps <packages that are optional dependencies>
+
+```
 
 ### Removing everything but base group
 
@@ -378,7 +388,10 @@ In order to share packages between multiple computers, simply share `/var/cache/
 
 First, install any network-supporting filesystem; for example [sshfs](/index.php/Sshfs "Sshfs"), [shfs](/index.php/Shfs "Shfs"), ftpfs, [smbfs](/index.php/Smbfs "Smbfs") or [nfs](/index.php/Nfs "Nfs").
 
-**Tip:** To use sshfs or shfs, consider reading [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
+**Tip:**
+
+*   To use sshfs or shfs, consider reading [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
+*   By default, smbfs does not serve filenames that contain colons, which results in the client downloading the offending package afresh. To prevent this, use the `mapchars` mount option on the client.
 
 Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the server to `/var/cache/pacman/pkg` on every client machine.
 

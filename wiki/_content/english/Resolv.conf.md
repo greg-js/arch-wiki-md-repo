@@ -128,7 +128,7 @@ nameserver 8.20.247.20
 
 ### Yandex
 
-[Yandex.DNS](https://dns.yandex.ru/advanced/) have three options:
+[Yandex.DNS](https://dns.yandex.com/advanced/) have three options:
 
 ```
 # Basic Yandex.DNS - Quick and reliable DNS

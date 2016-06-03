@@ -63,15 +63,16 @@
     *   [4.30 Ignore own e-mail addresses from group-reply](#Ignore_own_e-mail_addresses_from_group-reply)
     *   [4.31 Conversation grouping](#Conversation_grouping)
     *   [4.32 IMAP message cache](#IMAP_message_cache)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Backspace does not work in Mutt](#Backspace_does_not_work_in_Mutt)
-    *   [5.2 The *change-folder* function always prompt for the same mailbox](#The_change-folder_function_always_prompt_for_the_same_mailbox)
-    *   [5.3 I cannot change folder when using Mutt read-only (Mutt -R)](#I_cannot_change_folder_when_using_Mutt_read-only_.28Mutt_-R.29)
-    *   [5.4 Error sending message, child exited 127 (Exec error.).](#Error_sending_message.2C_child_exited_127_.28Exec_error..29.)
-    *   [5.5 Character encoding problems](#Character_encoding_problems)
-    *   [5.6 Unable to login with GMail](#Unable_to_login_with_GMail)
-*   [6 Documentation](#Documentation)
-*   [7 See also](#See_also)
+*   [5 NeoMutt](#NeoMutt)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Backspace does not work in Mutt](#Backspace_does_not_work_in_Mutt)
+    *   [6.2 The *change-folder* function always prompt for the same mailbox](#The_change-folder_function_always_prompt_for_the_same_mailbox)
+    *   [6.3 I cannot change folder when using Mutt read-only (Mutt -R)](#I_cannot_change_folder_when_using_Mutt_read-only_.28Mutt_-R.29)
+    *   [6.4 Error sending message, child exited 127 (Exec error.).](#Error_sending_message.2C_child_exited_127_.28Exec_error..29.)
+    *   [6.5 Character encoding problems](#Character_encoding_problems)
+    *   [6.6 Unable to login with GMail](#Unable_to_login_with_GMail)
+*   [7 Documentation](#Documentation)
+*   [8 See also](#See_also)
 
 ## Overview
 
@@ -83,7 +84,7 @@ This article covers using both native IMAP sending and retrieval, and a setup de
 
 ## Installing
 
-[Install](/index.php/Install "Install") the [mutt](https://www.archlinux.org/packages/?name=mutt) package.
+[Install](/index.php/Install "Install") the [mutt](https://www.archlinux.org/packages/?name=mutt) package. Alternatively consider using the [#NeoMutt](#NeoMutt) package.
 
 Optionally install external helper applications for an IMAP setup, such as [isync](/index.php/Isync "Isync"), [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP"), or [msmtp](/index.php/Msmtp "Msmtp").
 
@@ -506,13 +507,13 @@ source "gpg2 -dq $HOME/.my-pwds.gpg |"
 *   The `-q` parameter makes gpg2 quiet which prevents gpg2 output messing with Mutt interface.
 *   The pipe `|` at the end of a string is the Mutt syntax to tell that you want the result of what is preceeding.
 
-Explanation: when Mutt starts, it will first source the result of the password decryption, that's why it will prompt for a passphrase. Then all passwords will be stored in memory in specific variables for the time Mutt runs. Then, when a folder-hook is called, it sets the imap_pass variable to the variable holding the appropriate password. When switching accounts, the imap_pass variable will be set to another variable holding another password, etc.
+Explanation: when Mutt starts, it will first source the result of the password decryption, that is why it will prompt for a passphrase. Then all passwords will be stored in memory in specific variables for the time Mutt runs. Then, when a folder-hook is called, it sets the imap_pass variable to the variable holding the appropriate password. When switching accounts, the imap_pass variable will be set to another variable holding another password, etc.
 
 If you use external tools like OfflineIMAP and msmtp, you need to set up an agent (e.g. gpg-agent, see [GnuPG#gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG")) to keep the passphrase into cache and thus avoiding those tools always prompting for it.
 
 #### Security concern
 
-If `enter-command` is available from the UI, it is possible to see the password unencrypted, which my be undesired if anybody else than you has access to your session while Mutt is running. You may want to disable it for this reason. As a consequence, every command that the user intends to use must be bound to a key in advance, otherwise it will never be accessible.
+If `enter-command` is available from the UI, it is possible to see the password unencrypted, which may be undesired if anybody else than you has access to your session while Mutt is running. You may want to disable it for this reason. As a consequence, every command that the user intends to use must be bound to a key in advance, otherwise it will never be accessible.
 
  `.muttrc` 
 ```
@@ -957,7 +958,7 @@ folder-hook ! *[sS]ent* 'set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %?M?<
 
 The exclamation mark means *everything that does not match the following regex*. Of course you can change the index_format following your taste, and the regular expression if the folder does not have *Sent* not *sent* in its name.
 
-Let's centralize the settings, it will simplify future tweaking.
+Let us centralize the settings, it will simplify future tweaking.
 
  `muttrc` 
 ```
@@ -1178,16 +1179,15 @@ macro index \' "<tag-pattern>~R !~D !~F<enter>\
 
 ### Mutt-Sidebar
 
-The vanilla Mutt does not feature a sidebar unlike most MUAs. If you miss it, you can install [mutt-sidebar](https://aur.archlinux.org/packages/mutt-sidebar/) or [mutt-sidebar-hg](https://aur.archlinux.org/packages/mutt-sidebar-hg/) which add a list of folders on the left side of the Mutt window.
+The vanilla Mutt does not feature a sidebar unlike most MUAs. If you miss it, you can install [mutt-sidebar](https://aur.archlinux.org/packages/mutt-sidebar/) which adds a list of folders on the left side of the Mutt window.
 
-For a while there has been several different patches for the sidebar. Since the late 2000's, it seems like the main patch is maintained at [Lunar Linux](http://www.lunar-linux.org/mutt-sidebar/). See the documentation there. Note that the patch also updates the `muttrc` man page, so have a look at the `sidebar_*` sections.
+For a while there has been several different patches for the sidebar. The [NeoMutt](http://www.neomutt.org/) project maintains the most current patch. For more documentation see [there](http://www.neomutt.org/feature/sidebar/). Note that the patch also updates the `muttrc` man page, so have a look at the `sidebar_*` sections.
 
 You can choose to display the sidebar on startup, or to prompt it manually with a key:
 
 ```
 set sidebar_visible = yes
-macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
-macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+bind index,pager B sidebar-toggle-visible
 
 ```
 
@@ -1204,19 +1204,12 @@ bind index,pager \CO sidebar-open
 
 **Note:** You *must* set the `mailboxes` variables or the `imap_check_subscribed` to tell the sidebar which folder should be displayed. See the [mailboxes](#mailboxes) section.
 
-If you use the `imap_check_subscribed` option to list all your folders, they will appear in an uncontrollable order in the sidebar. Fix it with
-
-```
-set sidebar_sort = yes
-
-```
-
-Note that with the `mailboxes` option, folders appear in the order they were set to `mailboxes` if you do not use the `sidebar_sort` option.
+Note that with the `mailboxes` option, folders appear in the order they were set to `mailboxes` if you do not use the `sidebar_sort_method` option.
 
 If you have trouble with truncated names, set the option
 
 ```
-set sidebar_shortpath = yes
+set sidebar_short_path = yes
 
 ```
 
@@ -1227,12 +1220,7 @@ mailboxes "+-- My mailbox -----------"
 
 ```
 
-The dashes are not required, they are here just for fancy output. It will also work if you used the `imap_check_subscribed` option. If you chose to sort the folders, the separator will not appear in the correct place, so an even more dirty workaround is to add an 'A' in front of the name. Note that punctuation is ignored during sorting.
-
-```
-mailboxes "+A-- My mailbox -----------"
-
-```
+The dashes are not required, they are here just for fancy output.
 
 ### Migrating mails from one computer to another
 
@@ -1400,6 +1388,12 @@ source "~/.mutt/purgecache.sh '$message_cachedir'|"
 
 ```
 
+## NeoMutt
+
+The [NeoMutt](http://www.neomutt.org/) Project aims to bring together all the patches for Mutt. It adds a large set of features such as a [sidebar](http://www.neomutt.org/feature/sidebar/), support for [notmuch](https://notmuchmail.org/) and [NNTP](https://en.wikipedia.org/wiki/Network_News_Transfer_Protocol "wikipedia:Network News Transfer Protocol"). Lots of old Mutt patches have been brought up-to-date, tidied and documented. See [here](http://www.neomutt.org/features.html) for a full list of features added on top of vanilla Mutt
+
+While there are many different packages of mutt in the AUR, each of them providing another set of patches, NeoMutt aims to replace them in the future by implementing appropriate compile options. For now, you can find NeoMutt in the AUR at [neomutt](https://aur.archlinux.org/packages/neomutt/) and [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/).
+
 ## Troubleshooting
 
 ### Backspace does not work in Mutt
@@ -1462,7 +1456,7 @@ Take note of the smtps protocol, it is important. This should solve the problem.
 
 ### Character encoding problems
 
-If you're having problems with character encoding, first read [this section](http://dev.mutt.org/trac/wiki/MuttFaq/Charset) in the Mutt wiki.
+If you are having problems with character encoding, first read [this section](http://dev.mutt.org/trac/wiki/MuttFaq/Charset) in the Mutt wiki.
 
 If Chinese text is still garbled, it may help to decode with GBK even when GB2312 is specified in the header. You can do this with `iconv` by adding the following to your `mailcap` file:
 

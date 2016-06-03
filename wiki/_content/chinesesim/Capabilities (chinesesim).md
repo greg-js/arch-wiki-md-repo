@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Capabilities](/index.php/Capabilities "Capabilities") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-18，点击[这里](https://wiki.archlinux.org/index.php?title=Capabilities&diff=0&oldid=421209)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Capabilities](/index.php/Capabilities "Capabilities") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-09，点击[这里](https://wiki.archlinux.org/index.php?title=Capabilities&diff=0&oldid=422752)可以查看翻译后英文页面的改动。
 
-**能力(capability)** (POSIX 1003.1e, capabilities(7))用更小的粒度控制超级管理员权限,可以避免使用 root 权限。软件开发者应该为二进制文件赋予最小权限，而不是使用强大的[setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid")。很多软件包用了能力, 比如 [iputils](https://www.archlinux.org/packages/?name=iputils)提供的`ping` 和`ping6`使用的CAP_NET_RAW(能力的一种) 。例如`ping`可以被普通用户执行(和**setuid**模式一样),同时减少了`ping`的潜在安全隐患。
+**能力(capability)** (POSIX 1003.1e, capabilities(7))用更小的粒度控制超级管理员权限,可以避免使用 root 权限。软件开发者应该为二进制文件赋予最小权限，而不是使用强大的[setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid")。很多软件包用了能力, 比如 [iputils](https://www.archlinux.org/packages/?name=iputils)提供的`ping` 使用的CAP_NET_RAW(能力的一种) 。例如`ping`可以被普通用户执行(和**setuid**模式一样),同时减少了`ping`的潜在安全隐患。
 
 ## Contents
 

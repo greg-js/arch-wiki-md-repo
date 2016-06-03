@@ -84,7 +84,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Un visualizzatore che può decodificare i formati LZW e leggere i PDF criptati.
 
-	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://aur.archlinux.org/packages/xpdf/)
+	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf)
 
 *   **zathura** — Visualizzatore altamente personalizzabile e ricco di funzioni per formati PDF/DjVu/PostScript/ComicBook (basato su plugin).
 

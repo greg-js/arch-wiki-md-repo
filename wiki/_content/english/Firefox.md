@@ -138,7 +138,7 @@ Install [firefox-gnome-keyring](https://aur.archlinux.org/packages/firefox-gnome
 
 *   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 
-*   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/firefox/addon/kde-wallet-password-integratio/) and [Plasma notifications](https://addons.mozilla.org/firefox/addon/plasmanotify/).
+*   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/firefox/addon/kde-wallet-password-integratio/), [Unityfox Revived](https://addons.mozilla.org/firefox/addon/unityfox-revived/), and [Plasma notifications](https://addons.mozilla.org/firefox/addon/plasmanotify/).
 
 ### Dictionaries for spell checking
 
@@ -202,7 +202,7 @@ See also [[2]](http://alien.slackbook.org/blog/make-firefox-understand-downloade
 
 ### Firefox keeps creating ~/Desktop even when this is not desired
 
-Firefox uses `~/Desktop` as the default place for download and upload files. To change it to another folder, set the `XDG_DESKTOP_DIR` option as explained in [Xdg user directories](/index.php/Xdg_user_directories "Xdg user directories").
+Firefox uses `~/Desktop` as the default place for download and upload files. To change it to another folder, set the `XDG_DESKTOP_DIR` option as explained in [XDG user directories](/index.php/XDG_user_directories "XDG user directories").
 
 ### Make plugins respect blocked pop-ups
 

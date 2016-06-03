@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Partitioning](/index.php/Partitioning "Partitioning") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-09-17，点击[这里](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=335810)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Partitioning](/index.php/Partitioning "Partitioning") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-12，点击[这里](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=430918)可以查看翻译后英文页面的改动。
 
 *分区* 硬盘的可用空间可以划分为多个逻辑区块，区块之间的访问是相互独立的。
 
@@ -72,10 +72,11 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 *   如果使用GRUB legacy作为bootloader，必须使用MBR。
 *   如果使用传统的BIOS，并且双启动中包含 Windows （无论是32位版还是64位版），必须使用MBR。
 *   如果使用 [UEFI](/index.php/UEFI "UEFI") 而不是BIOS，并且双启动中包含 Windows 64位版，必须使用GPT。
+*   非常老的机器需要使用 MBR，因为 BIOS 可能不支持 GPT.
 *   如果不属于上述任何一种情况，可以随意选择使用 GPT 还是 MBR。由于 GPT 更先进，建议选择 GPT。
 *   建议在使用 [UEFI](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 的情况下选择 GPT，因为有些 UEFI firmware 不支持从 MBR 启动。
 
-**注意:** 为了使 GRUB 从一台有 GPT 分区的基于 BIOS 的系统上启动，需要创建一个 [BIOS 启动分区](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB")
+**注意:** 为了使 GRUB 从一台有 GPT 分区的基于 BIOS 的系统上启动，需要创建一个 [BIOS 启动分区](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"), 这个分区和 /boot 没关系，仅仅是 GRUB 使用，不要建立文件系统和挂载。
 
 ## 分区方案
 
@@ -99,7 +100,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 根目录是目录树的顶层，这里是主文件系统挂载和其他文件系统挂靠的地方。所有文件和目录都在根目录 `/` 显示，即使它们实际上存储在其他的物理设备上。根文件系统中的内容应该足以启动、恢复、修复系统。因此 `/` 目录下的特定目录是不能作为独立分区的。
 
-`/` 分区或叫根分区是最重要而且必需的。其他其他分区可以被它取代。
+`/` 分区或叫根分区是最重要而且必需的，需要最先挂载，其他其他分区可以被它取代。
 
 **警告:** 与系统启动相关的特定目录（除了 `/boot`） **必须** 与 `/` 在同一个分区，或在系统刚进入用户态的时候通过 [initramfs](/index.php/Initramfs "Initramfs") 挂载。这些特定的目录包括：`/etc` 和 `/usr` [[1]](http://freedesktop.org/wiki/Software/systemd/separate-usr-is-broken) 。
 
@@ -108,6 +109,8 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 `/boot` 分区包含内核、ramdisk 镜像以及 bootloader 配置文件和 bootloader stage。它也可以存放内核在执行用户态程序之前所使用的其他数据。`/boot` 在日常系统运行中并不需要，只在启动和内核升级（包括重建initial ramdisk）的时候用到。
 
 如果使用软RAID0（条带化）系统的话，必须有一个独立的 `/boot` 分区。
+
+**Note:** 如果使用 UEFI 启动管理器，支持读取 ESP 文件系统，建议将 [ESP](/index.php/ESP "ESP") 挂载到 `/boot`.
 
 #### /home
 
@@ -152,7 +155,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 	/var - 8-12 GB 
 
-	除了其他数据以外，还包括[ABS](/index.php/ABS "ABS") 树和 [pacman](/index.php/Pacman "Pacman") 缓存。保留缓存的包提供了包降级的能力，因此非常有用。也正因为这样，`/var` 的大小会随着时间推移而增长。尤其是 pacman 缓存将会随着新软件的安装、系统的升级而增长。在磁盘空间不足的时候，可以安全的清理这个目录。`/var` 分配 8-12 GB 对于桌面系统来说是比较合适的取值，具体取值取决于安装的软件数量。
+	除了其他数据以外，还包括[ABS](/index.php/ABS "ABS") 树和 [pacman](/index.php/Pacman "Pacman") 缓存。保留缓存的包提供了包[降级](/index.php/Downgrade "Downgrade")的能力，因此非常有用。也正因为这样，`/var` 的大小会随着时间推移而增长。尤其是 pacman 缓存将会随着新软件的安装、系统的升级而增长。在磁盘空间不足的时候，可以安全的清理这个目录。`/var` 分配 8-12 GB 对于桌面系统来说是比较合适的取值，具体取值取决于安装的软件数量。
 
 	/home - [不定] 
 
@@ -160,9 +163,9 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 	swap - [不定] 
 
-	历史上 swap 分区的大小通常是物理内存的2倍。由于当前的电脑内存容量快速增长，这条规则已经不那么适用。在拥有不足 512 MB 内存的机器上，通常为 swap 分区分配2倍内存大小的空间。如果有更大的内存（大于 1024 MB），可以分配较少的空间甚至不需要swap 分区。在拥有 2 GB 以上物理内存的情况下，不使用 swap 分区可以获得更好的性能。
+	在拥有不足 512 MB 内存的机器上，通常为 swap 分区分配2倍内存大小的空间。如果有更大的内存（大于 1024 MB），可以分配较少的空间甚至不需要swap 分区。
 
-**注意:** 如果你要使用休眠到磁盘功能，你需要参考[Suspend and hibernate#About swap partition/file size](/index.php/Suspend_and_hibernate#About_swap_partition.2Ffile_size "Suspend and hibernate")。
+**注意:** 如果你要使用休眠到磁盘功能，你需要参考[Suspend and hibernate#About swap partition/file size](/index.php/Suspend_and_hibernate#About_swap_partition.2Ffile_size "Suspend and hibernate")。使用[虚拟机](/index.php/Virtual_machine "Virtual machine")时建议使用 Swap.
 
 	/data - [不定] 
 
@@ -170,25 +173,23 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 ## 分区工具
 
-*   **fdisk** — Linux 自带的命令行分区工具。
+*   **[fdisk](/index.php/Fdisk "Fdisk")** — Linux 自带的命令行分区工具。
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-*   **cfdisk** — 使用 ncurses 库编写的具有伪图形界面的命令行分区工具。
+*   **[cfdisk](/index.php/Cfdisk "Cfdisk")** — 使用 ncurses 库编写的具有伪图形界面的命令行分区工具。
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-**警告:** *cfdisk* 创建的第一个分区起始位置是63扇区而不是通常的2048扇区。这将会在 SSD 和使用高级格式化（4k 扇区）的设备上造成性能问题。[GRUB2](/index.php/GRUB2#msdos-style_error_message "GRUB2") 也会受影响。GRUB legacy 和 Syslinux不受影响。
-
-*   **gdisk** — [GPT](/index.php/GPT "GPT") 版的 fdisk。
+*   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](/index.php/GPT "GPT") 版的 fdisk。
 
 	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 
-*   **cgdisk** — GPT 版的 cfdisk。
+*   **[cgdisk](/index.php/Cgdisk "Cgdisk")** — GPT 版的 cfdisk。
 
 	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 
-*   **sgdisk** — Scriptable version of gdisk.
+*   **[sgdisk](/index.php/Sgdisk "Sgdisk")** — Scriptable version of gdisk.
 
 	[http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html](http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 
@@ -220,7 +221,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 ### 固态硬盘
 
-固态硬盘基于[闪存芯片](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory")，与机械硬盘有显著的不同。只读访问能够以随机方式进行，而擦除（覆写或随机写入）只能以[整块](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory")进行。此外，*擦除块大小*（Erase Block Size，EBS）比*块大小*明显大很多，例如 128KiB vs 4KiB，所以需要以 EBS 的整数倍进行对齐。
+固态硬盘基于[闪存芯片](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory")，与机械硬盘有显著的不同。只读访问能够以随机方式进行，而擦除（覆写或随机写入）只能以[整块](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory")进行。此外，*擦除块大小*（Erase Block Size，EBS）比*块大小*明显大很多，例如 128KiB vs 4KiB，所以需要以 EBS 的整数倍进行对齐。[NVMe](/index.php/NVMe "NVMe") 需要 4KiB 对齐。
 
 ### 分区工具
 
@@ -231,13 +232,16 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 *   gparted
 *   parted
 
-要验证一个分区是否对齐，像下面这样使用 `/usr/bin/blockdev` 工具进行检查，如果返回值为0，则分区已经对齐：
+要验证一个分区是否对齐，使用[parted](/index.php/Parted "Parted") 工具进行检查：
 
 ```
-# blockdev --getalignoff /dev/<partition>
-0
+# parted /dev/sda
+(parted) align-check optimal 1
+1 aligned
 
 ```
+
+**Warning:** 用 `/usr/bin/blockdev --getalignoff` 检查的话可能有 [误报](https://bbs.archlinux.org/viewtopic.php?id=174141)。
 
 ## 参考资料
 

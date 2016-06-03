@@ -1,4 +1,4 @@
-**Note:** This laptop uses a [Poulsbo](/index.php/Poulsbo "Poulsbo") GPU. Hardware acceleration is currently unsupported.
+**Note:** This laptop uses a [Poulsbo](/index.php/Poulsbo "Poulsbo") GPU. Hardware acceleration for GPU-related tasks is unsupported. Use the VESA display driver.
 
 ## Contents
 

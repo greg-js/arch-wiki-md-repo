@@ -68,7 +68,7 @@ If you experience a black screen when booting from Live-CD, add `modprobe.blackl
 
 **Note:** The `nomodeset` option will probably not work here.
 
-After installing the system you will need to [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `viafb` module.
+After installing the system you will need to [blacklist](/index.php/Blacklist "Blacklist") the `viafb` module.
 
 #### VIA kernel
 

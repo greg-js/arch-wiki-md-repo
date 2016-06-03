@@ -97,7 +97,7 @@ These will generate `/etc/adjtime` automatically and update the RTC accordingly;
 
 During kernel startup, at the point when the RTC driver is loaded, the system clock may be set from the hardware clock. Whether this occurs depends on the hardware platform, the version of the kernel and kernel build options. If this does occur, at this point in the boot sequence, the hardware clock time is assumed to be UTC and the value of `/sys/class/rtc/rtcN/hctosys` (N=0,1,2,..) will be set to 1\.
 
-Later, the system clock is set again from the hardware clock by systemd, dependent on values in `/etc/adjtime`. Hence, having the hardware clock using localtime may cause some unexpected behavior during the boot sequence; e.g system time going backwards, which is always a bad idea ([there is a lot more to it](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html)). To avoid it systemd ([>215](https://mailman.archlinux.org/pipermail/arch-dev-public/2014-August/026577.html)) will only synchronize back, if the hardware clock is set to UTC and keep the kernel uninformed about the local timezone. As a consequence timestamps on a FAT filesystem touched by the Linux system will be in UTC.
+Later, the system clock is set again from the hardware clock by systemd, dependent on values in `/etc/adjtime`. Hence, having the hardware clock using localtime may cause some unexpected behavior during the boot sequence; e.g system time going backwards, which is always a bad idea ([there is a lot more to it](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html)). To avoid it systemd [will only synchronize back](https://mailman.archlinux.org/pipermail/arch-dev-public/2014-August/026577.html), if the hardware clock is set to UTC and keep the kernel uninformed about the local timezone. As a consequence timestamps on a FAT filesystem touched by the Linux system will be in UTC.
 
 **Note:** The use of `timedatectl` requires an active dbus. Therefore, it may not be possible to use this command under a chroot (such as during installation). In these cases, you can revert back to the hwclock command.
 
@@ -111,6 +111,13 @@ Using `regedit`, add a `DWORD` value with hexadecimal value `1` to the registry:
 
 ```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\RealTimeIsUniversal
+
+```
+
+You can do this from an Administrator Command Prompt running:
+
+```
+reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
 
 ```
 

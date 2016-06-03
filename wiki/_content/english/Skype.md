@@ -40,7 +40,7 @@ Running Skype is just as easy. Type `skype` into a terminal or double-click the 
 
 ## Skype sound
 
-Since version 4.3, Skype requires [PulseAudio](/index.php/PulseAudio "PulseAudio") for voice communication (and no longer supports plain [ALSA](/index.php/ALSA "ALSA")).
+Skype requires [PulseAudio](/index.php/PulseAudio "PulseAudio") for voice communication and does not support plain [ALSA](/index.php/ALSA "ALSA").
 
 Alternatively, if you do not want to use PulseAudio, you can install [apulse](https://aur.archlinux.org/packages/apulse/) (and [lib32-apulse](https://aur.archlinux.org/packages/lib32-apulse/) for x86_64 users) from the [AUR](/index.php/AUR "AUR"), which emulates PulseAudio. Then execute Skype with:
 

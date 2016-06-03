@@ -12,12 +12,8 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
     *   [1.3 Container creation](#Container_creation)
     *   [1.4 Container configuration](#Container_configuration)
         *   [1.4.1 Basic config with networking](#Basic_config_with_networking)
-        *   [1.4.2 Systemd considerations (required)](#Systemd_considerations_.28required.29)
-            *   [1.4.2.1 Systemd conflicts in the /dev tree](#Systemd_conflicts_in_the_.2Fdev_tree)
-            *   [1.4.2.2 Maintain devpts consistency](#Maintain_devpts_consistency)
-            *   [1.4.2.3 Prevent excess journald activity](#Prevent_excess_journald_activity)
-        *   [1.4.3 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
-        *   [1.4.4 OpenVPN considerations](#OpenVPN_considerations)
+        *   [1.4.2 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
+        *   [1.4.3 OpenVPN considerations](#OpenVPN_considerations)
 *   [2 Managing Containers](#Managing_Containers)
 *   [3 Running Xorg programs](#Running_Xorg_programs)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -158,76 +154,6 @@ lxc.network.name = eth0
 
 ```
 
-#### Systemd considerations (required)
-
-The following sections explain some quirks that should be addressed. A small bash script is required for this to work, which users should create:
-
- `/var/lib/lxc/playtime/autodev` 
-```
-#!/bin/bash
-cd ${LXC_ROOTFS_MOUNT}/dev
-mkdir net
-mknod net/tun c 10 200
-chmod 0666 net/tun
-
-```
-
-Make it executable:
-
-```
-# chmod +x /var/lib/lxc/playtime/autodev
-
-```
-
-Next, modify `/var/lib/lxc/playtime/config` to contain this new section:
-
-```
-## systemd within the lxc
-lxc.autodev = 1
-lxc.pts = 1024
-lxc.kmsg = 0
-lxc.hook.autodev=/var/lib/lxc/playtime/autodev
-
-```
-
-##### Systemd conflicts in the /dev tree
-
-To avoid conflicts of systemd and lxc in the `/dev` tree. It is **highly recommended** to enable the *autodev* mode. This will cause LXC to create its own device tree. This also means that the traditional way of manually creating device nodes in the container rootfs `/dev` tree will not work because `/dev` is overmounted by LXC.
-
-**Warning:** Any device nodes required that are not created by LXC by default must be created by the *autodev hook* script!
-
-It is also important to disable services that are not supported inside a container. Either attach to the running LXC, or [chroot](/index.php/Chroot "Chroot") into the container rootfs, and mask those services:
-
-```
-ln -s /dev/null /etc/systemd/system/systemd-udevd.service
-ln -s /dev/null /etc/systemd/system/systemd-udevd-control.socket
-ln -s /dev/null /etc/systemd/system/systemd-udevd-kernel.socket
-ln -s /dev/null /etc/systemd/system/proc-sys-fs-binfmt_misc.automount
-
-```
-
-This disables udev and mounting of `/proc/sys/fs/binfmt_misc`.
-
-##### Maintain devpts consistency
-
-Additionally ensure a pty declaration in the LXC container because the presence of this causes LXC to mount devpts as a new instance. Without this, the container gets the host's devpts, negative results will occur.
-
-```
-lxc.pts = 1024
-
-```
-
-**Note:** There is no need to explicitly mount system devices (either via the container config or via its own /etc/fstab), and this should not be done because systemd (or LXC in the case of /dev...) takes care of it.
-
-##### Prevent excess journald activity
-
-By default, lxc symlinks `/dev/kmsg` to `/dev/console`, this leads to journald running at 100% CPU usage all the time. To prevent the symlink, use:
-
-```
-lxc.kmsg = 0
-
-```
-
 #### Xorg program considerations (optional)
 
 In order to run programs on the host's display, some bind mounts need to be defined so that the containerized programs can access the host's resources. Add the following section to `/var/lib/lxc/playtime/config`:
@@ -242,6 +168,8 @@ lxc.mount.entry = /tmp/.X11-unix tmp/.X11-unix none bind,optional,create=dir
 lxc.mount.entry = /dev/video0 dev/video0 none bind,optional,create=file
 
 ```
+
+If you still get a permission denied error in your LXC guest, then you may need to call `xhost +` in your host to allow the guest to connect to the host's display server. Take note of the security concerns of opening up your display server by doing this.
 
 #### OpenVPN considerations
 

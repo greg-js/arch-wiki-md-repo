@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Environment_variables](/index.php/Environment_variables "Environment variables") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-12，点击[这里](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=424392)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Environment_variables](/index.php/Environment_variables "Environment variables") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-31，点击[这里](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=436135)可以查看翻译后英文页面的改动。
 
 环境变量是一个有名称的对象，包含可被其它程序使用的数据。简单的说，它是一个名称和数值对。环境变量的值可以是文件系统上所有执行程序的位置，默认的编辑器，系统本地化设置等。Linux 新用户可能觉得这种管理变量的方式有点混乱。但是环境变量提供了一种在多个程序和进程间共享配置的方式。
 
@@ -12,7 +12,7 @@
     *   [2.3 按会话](#.E6.8C.89.E4.BC.9A.E8.AF.9D)
 *   [3 Examples](#Examples)
     *   [3.1 Using pam_env](#Using_pam_env)
-*   [4 See also](#See_also)
+*   [4 参阅](#.E5.8F.82.E9.98.85)
 
 ## 工具
 
@@ -41,15 +41,13 @@ $ env EDITOR=vim xterm
 
 ### 全局
 
-Most Linux distributions tell you to change or add environment variable definitions in `/etc/profile` or other locations. Be sure to maintain and manage the environment variables and pay attention to the numerous files that can contain environment variables. In principle, any shell script can be used for initializing environmental variables, but following traditional UNIX conventions, these statements should be only be present in some particular files.
+理论上，任何 shell 脚本都可以初始化环境变量，但为了维护方便，环境变量的定义集中在几个特定的文件中。对全局变量来说是：`/etc/profile`, `/etc/bash.bashrc` 和 `/etc/environment`. 每个文件都有不同的限制，请根据需要选择要使用的文件。
 
-The following files should be used for defining global environment variables on your system: `/etc/profile`, `/etc/bash.bashrc` and `/etc/environment`. Each of these files has different limitations, so you should carefully select the appropriate one for your purposes.
+*   `/etc/profile` **仅**初始化登陆 shell 的环境变量。它可以执行脚本并支持 [Bash](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell") 兼容 Shell。
+*   `/etc/bash.bashrc` **仅**初始化交互 shell，它也可以执行脚本但是只支持 Bash。
+*   `/etc/environment` 被 PAM-env 模块使用，和登陆与否，交互与否，Bash与否无关，所以无法使用脚本或通配符展开。仅接受 `*variable=value*` 格式。
 
-*   `/etc/profile` initializes variables for login shells *only*. It does, however, run scripts and can be used by all [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell") compatible shells.
-*   `/etc/bash.bashrc` initializes variables for interactive shells *only*. It also runs scripts but (as its name implies) is Bash specific.
-*   `/etc/environment` is used by the PAM-env module and is agnostic to login/non-login, interactive/non-interactive and also Bash/non-Bash, so scripting or glob expansion cannot be used. The file only accepts `*variable=value*` pairs.
-
-In this example, we add `~/bin` directory to the `PATH` for respective user. To do this, just put this in your preferred global environment variable config file (`/etc/profile` or `/etc/bash.bashrc`):
+以将 `~/bin` 加入某些特定用户的 `PATH` 为例，可以将其放入 `/etc/profile` 或 `/etc/bash.bashrc`:
 
 ```
 # If user ID is greater than or equal to 1000 & if ~/bin exists and is a directory & if ~/bin is not already in your $PATH
@@ -63,26 +61,26 @@ fi
 
 ### 按用户
 
-**Note:** The dbus daemon and the user instance of systemd do not inherit any of the environment variables set in places like .bashrc etc. This means that, for example, dbus activated programs like Nautilus will not use them by default. See [Systemd/User#Environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User").
+**注意:** dbus 进程和 systemd 用户实例不会使用任何 .bashrc 等文件定义的环境变量。所以 dbus 启动的程序默认不会使用这些变量，请参考 [Systemd/User#Environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User").
 
-You do not always want to define an environment variable globally. For instance, you might want to add `/home/my_user/bin` to the `PATH` variable but do not want all other users on your system to have that in their `PATH` too. Local environment variables can be defined in many different files:
+有时并不希望定义全局环境变量，比如要把 `/home/my_user/bin` 加入 `PATH` 变量但是不影响其它用户。本地环境变量可以在下面文件定义：
 
-1.  Configuration files of your shell, for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Configuration files](/index.php/Zsh#Configuration_files "Zsh").
-2.  `~/.profile` is used by many shells as fallback, see [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
-3.  `~/.pam_environment` is the user specific equivalent of `/etc/environment`, used by PAM-env module. See `pam_env(8)` and `pam_env.conf(5)` for details.
+1.  shell 配置文件，例如 [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") 或 [Zsh#Configuration files](/index.php/Zsh#Configuration_files "Zsh").
+2.  很多 shell 会使用 `~/.profile` 作为后备方案参考 [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
+3.  `~/.pam_environment` 是用户特有的环境变量，PAM-env 模块会使用它。参考 `pam_env(8)` 和 `pam_env.conf(5)`。
 
-To add a directory to the `PATH` for local usage, put following in `~/.bash_profile`:
+要修改本地用户的路径变量，修改 `~/.bash_profile`:
 
 ```
 export PATH="${PATH}:/home/my_user/bin"
 
 ```
 
-To update the variable, re-login or *source* the file: `$ source ~/.bash_profile`.
+要更新变量，重新登录或 *source* 文件 `$ source ~/.bash_profile`.
 
 #### 图形程序
 
-To set environment variables for GUI applications, you can put your variables in [xinitrc](/index.php/Xinitrc "Xinitrc") (or [xprofile](/index.php/Xprofile "Xprofile") when using a [display manager](/index.php/Display_manager "Display manager")), for example:
+要设置图形程序的环境变量，可以将变量放入 [xinitrc](/index.php/Xinitrc "Xinitrc") (从 [显示管理器](/index.php/Display_manager "Display manager") 登陆时，使用 [xprofile](/index.php/Xprofile "Xprofile"))，例如：
 
  `~/.xinitrc` 
 ```
@@ -211,6 +209,6 @@ The first one **doesn't allow** the use of `${VARIABLES}` , while the second doe
 
 **Note:** This file is read before everything, even `~/.{,bash_,z}profile` and `~/.zshenv` .
 
-## See also
+## 参阅
 
 *   [Gentoo Linux Documentation](https://wiki.gentoo.org/wiki/Handbook:X86/Working/EnvVar)

@@ -7,8 +7,8 @@ This article explains how to share the internet connection from one machine to o
     *   [2.1 Static IP address](#Static_IP_address)
     *   [2.2 Enable packet forwarding](#Enable_packet_forwarding)
     *   [2.3 Enable NAT](#Enable_NAT)
-    *   [2.4 Assigning ip addresses to the client pc(s)](#Assigning_ip_addresses_to_the_client_pc.28s.29)
-        *   [2.4.1 Manually adding an ip](#Manually_adding_an_ip)
+    *   [2.4 Assigning IP addresses to the client PC(s)](#Assigning_IP_addresses_to_the_client_PC.28s.29)
+        *   [2.4.1 Manually adding an IP](#Manually_adding_an_IP)
 *   [3 Troubleshooting](#Troubleshooting)
 *   [4 See also](#See_also)
 
@@ -25,7 +25,7 @@ This section assumes, that the network device connected to the client computer(s
 
 **Tip:** You can rename your devices to this scheme using [Udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev").
 
-All configuration is done on the server computer, except for the final step of [#Assigning ip addresses to the client pc(s)](#Assigning_ip_addresses_to_the_client_pc.28s.29).
+All configuration is done on the server computer, except for the final step of [#Assigning IP addresses to the client PC(s)](#Assigning_IP_addresses_to_the_client_PC.28s.29).
 
 ### Static IP address
 
@@ -88,17 +88,24 @@ Afterwards it is advisable to double-check forwarding is enabled as required aft
 
 Read the [iptables](/index.php/Iptables "Iptables") article for more information (especially saving the rule and applying it automatically on boot). There is also an excellent guide on iptables [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
 
-### Assigning ip addresses to the client pc(s)
+### Assigning IP addresses to the client PC(s)
 
-If you are planning to regularly have several machines using the internet shared by this machine, then is a good idea to install a [dhcp server](https://en.wikipedia.org/wiki/dhcp "wikipedia:dhcp").
+If you are planning to regularly have several machines using the internet shared by this machine, then is a good idea to install a [DHCP server](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP"), such as [dhcpd](/index.php/Dhcpd "Dhcpd") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Then configure a DHCP client (e.g. [dhcpcd](/index.php/Dhcpcd "Dhcpcd")) on every client PC.
 
-You can read the [dhcpd](/index.php/Dhcpd "Dhcpd") wiki article, to add a dhcp server. Then, install the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") client on every client pc.
+Incoming connections to UDP port 67 has to be allowed for DHCP server. It also necessary to allow incoming connections to UDP/TCP port 53 for DNS requests.
 
-If you are not planing to use this setup regularly, you can manually add an ip to each client instead.
+```
+# iptables -I INPUT -p udp --dport 67 -i net0 -j ACCEPT
+# iptables -I INPUT -p udp --dport 53 -s 192.168.123.0/24 -j ACCEPT
+# iptables -I INPUT -p tcp --dport 53 -s 192.168.123.0/24 -j ACCEPT
 
-#### Manually adding an ip
+```
 
-Instead of using dhcp, on each client pc, add an ip address and the default route:
+If you are not planing to use this setup regularly, you can manually add an IP to each client instead.
+
+#### Manually adding an IP
+
+Instead of using DHCP, on each client PC, add an IP address and the default route:
 
 ```
 # ip addr add 192.168.123.201/24 dev eth0  # arbitrary address, first three blocks must match the address from above

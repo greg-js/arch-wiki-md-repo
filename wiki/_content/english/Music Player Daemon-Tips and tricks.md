@@ -7,7 +7,6 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
     *   [2.1 mpdas](#mpdas)
     *   [2.2 mpdcron](#mpdcron)
     *   [2.3 mpdscribble](#mpdscribble)
-        *   [2.3.1 systemd user service](#systemd_user_service)
     *   [2.4 Sonata](#Sonata)
 *   [3 Disable resume playback on startup](#Disable_resume_playback_on_startup)
 *   [4 Example configuration: Output with 44.1 KHz at e. g. 16 bit depth, multiple programs at once](#Example_configuration:_Output_with_44.1_KHz_at_e._g._16_bit_depth.2C_multiple_programs_at_once)
@@ -56,6 +55,8 @@ $ systemctl --user start mpdas.service
 
 ```
 
+**Tip:** If you get a failed `mpdas.service` after system startup, consider using [socket activation](/index.php/Music_Player_Daemon#Socket_activation "Music Player Daemon") with `mpd.socket` instead.
+
 ### mpdcron
 
 [mpdcron](http://alip.github.io/mpdcron/) is a cron-like daemon for MPD that listens for events and executes user defined actions. It can be extended via modules to show notifications, submit songs to Last.fm or Libre.fm (*scrobbling*), or to collect statistics about played songs.
@@ -73,7 +74,7 @@ To autostart *mpdcron* along with *mpd*, add an entry for it into the file in wh
 
 ### mpdscribble
 
-[mpdscribble](https://aur.archlinux.org/packages/mpdscribble/) is a daemon available in the [AUR](/index.php/AUR "AUR") (if you prefer, [mpdscribble-git](https://aur.archlinux.org/packages/mpdscribble-git/) is also available). This is arguably the best alternative, because it is the semi-official MPD scrobbler and uses the new "idle" feature in MPD for more accurate scrobbling. Also, you do not need root access to configure it, because it does not need any changes to `/etc` at all. Visit [the official website](http://mpd.wikia.com/wiki/Client:Mpdscribble) for more information.
+[mpdscribble](https://aur.archlinux.org/packages/mpdscribble/) is a daemon available in the [AUR](/index.php/AUR "AUR"). This is arguably the best alternative, because it is the semi-official MPD scrobbler and uses the new "idle" feature in MPD for more accurate scrobbling. Also, you do not need root access to configure it, because it does not need any changes to `/etc` at all. Visit [the official website](http://mpd.wikia.com/wiki/Client:Mpdscribble) for more information.
 
 Example configuration:
 
@@ -117,24 +118,7 @@ To autostart *mpdscribble* along with *mpd*, add an entry for it into the file i
 
 **Note:** If you get a `[last.fm] handshake failed, username or password incorrect (BADAUTH)` error, make sure your username and password are correct, and that your password is not [32 characters long](http://bugs.musicpd.org/view.php?id=3836).
 
-#### systemd user service
-
-Use the following service to start *mpdscribble* under systemd user instance. See [systemd/User](/index.php/Systemd/User "Systemd/User") for details.
-
- `~/.config/systemd/user/mpdscribble.service` 
-```
-[Unit]
-Description=MPD Scribbler
-Requires=mpd.service
-After=mpd.service
-
-[Service]
-ExecStart=/usr/bin/mpdscribble --no-daemon
-
-[Install]
-WantedBy=default.target
-
-```
+Alternatively you can use the `mpdscribble.service` to start *mpdscribble* under systemd user instance. See [systemd/User](/index.php/Systemd/User "Systemd/User") for details.
 
 ### Sonata
 
@@ -356,6 +340,8 @@ audio_output {
 #	quality		"5.0"			# do not define if bitrate is defined
 	bitrate		"128"			# do not define if quality is defined
 	format		"44100:16:1"
+	always_on       "yes"			# prevent MPD from disconnecting all listeners when playback is stopped.
+	tags            "yes"			# httpd supports sending tags to listening streams.
 }
 
 ```

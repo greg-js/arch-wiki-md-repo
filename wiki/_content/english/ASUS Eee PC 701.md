@@ -21,11 +21,10 @@ Most of this information is from the [Arch Forum](https://bbs.archlinux.org/view
     *   [4.2 Webcam](#Webcam)
     *   [4.3 Microphone](#Microphone)
     *   [4.4 Wireless doesn't work, even after installing custom Madwifi module](#Wireless_doesn.27t_work.2C_even_after_installing_custom_Madwifi_module)
-    *   [4.5 Unclean unmount during shutdown when having home directory mounted on SD card](#Unclean_unmount_during_shutdown_when_having_home_directory_mounted_on_SD_card)
-    *   [4.6 Booting from card without initrd](#Booting_from_card_without_initrd)
-    *   [4.7 Sleeping and waking system on a card](#Sleeping_and_waking_system_on_a_card)
-    *   [4.8 Display doesn't wake up properly](#Display_doesn.27t_wake_up_properly)
-    *   [4.9 DMA problems](#DMA_problems)
+    *   [4.5 Booting from card without initrd](#Booting_from_card_without_initrd)
+    *   [4.6 Sleeping and waking system on a card](#Sleeping_and_waking_system_on_a_card)
+    *   [4.7 Display doesn't wake up properly](#Display_doesn.27t_wake_up_properly)
+    *   [4.8 DMA problems](#DMA_problems)
 *   [5 Battery Tests](#Battery_Tests)
 
 ## Before You Begin
@@ -323,29 +322,7 @@ control.11 {
 
 I found that Arch tried to use the ath5k module for wireless, and that meant it took control of the card rather than ath_pci (the module I had compiled and installed). I got a Madwifi status 3 message in dmesg when this happened.
 
-The solution is to [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `ath5k` module.
-
-### Unclean unmount during shutdown when having home directory mounted on SD card
-
-If you experienced unclean unmount during shutdown when having your home directory on SD card, then add the following 3 lines to "Write to wtmp file before unmounting" section of your `/etc/rc.shutdown` file:
-
-```
-...
-
-stat_busy "Unmounting Filesystems"
-/bin/umount -a -t noramfs,notmpfs,nosysfs,noproc
-
-# Add these 3 lines
-sync;sync;sync;
-eject /dev/sdb  # Or whichever is your SD-card's device name. /dev/disk/by-uuid/ followed by the UUID identifier is preferable though.
-sleep 3
-# End of hack
-
-stat_done
-
-...
-
-```
+The solution is to [blacklist](/index.php/Blacklist "Blacklist") the `ath5k` module.
 
 ### Booting from card without initrd
 

@@ -151,13 +151,13 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 	[http://gnuradio.org/redmine/projects/gnuradio/wiki](http://gnuradio.org/redmine/projects/gnuradio/wiki) || [gnuradio](https://www.archlinux.org/packages/?name=gnuradio)
 
+*   **[matplotlib (PyLab)](https://en.wikipedia.org/wiki/matplotlib "wikipedia:matplotlib")** — Collection of Python modules (pyplot, numpy, etc.) used for scientific calculations.
+
+	[http://www.scipy.org/](http://www.scipy.org/) || [python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib)
+
 *   **[Octave](/index.php/Octave "Octave")** — [Matlab](/index.php/Matlab "Matlab")-like language and interface for numerical computations.
 
 	[http://www.gnu.org/software/octave/](http://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
-
-*   **[PyLab](https://en.wikipedia.org/wiki/matplotlib "wikipedia:matplotlib")** — Collection of Python modules (pyplot, numpy, etc.) used for scientific calculations.
-
-	[http://www.scipy.org/PyLab](http://www.scipy.org/PyLab) || [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)
 
 *   **[Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")** — Mathematics software system, that combines many existing open-source packages into a common Python interface. Alternative to Magma, Maple, Mathematica and Matlab.
 
@@ -245,7 +245,7 @@ See also [Wikipedia:List of open source bioinformatics software](https://en.wiki
 
 *   **[BioJava](https://en.wikipedia.org/wiki/BioJava "wikipedia:BioJava")** — Set of Java tools for computational biology, as well as bioinformatics.
 
-	[http://biojava.org/wiki/Main_Page](http://biojava.org/wiki/Main_Page) || [biojava](https://aur.archlinux.org/packages/biojava/)
+	[http://biojava.org](http://biojava.org) || [biojava](https://aur.archlinux.org/packages/biojava/)
 
 *   **[Biopython](https://en.wikipedia.org/wiki/Biopython "wikipedia:Biopython")** — Python package with tools for computational biology, as well as bioinformatics.
 

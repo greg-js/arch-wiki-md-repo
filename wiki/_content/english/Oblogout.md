@@ -4,11 +4,10 @@
 
 *   [1 Overview](#Overview)
 *   [2 Keybind](#Keybind)
-*   [3 Suspend and Hibernate Functionality](#Suspend_and_Hibernate_Functionality)
-*   [4 Screen locking](#Screen_locking)
-*   [5 Button theme](#Button_theme)
-*   [6 Button display](#Button_display)
-*   [7 Dual Head](#Dual_Head)
+*   [3 Screen locking](#Screen_locking)
+*   [4 Button theme](#Button_theme)
+*   [5 Button display](#Button_display)
+*   [6 Dual Head](#Dual_Head)
 
 ## Overview
 
@@ -30,27 +29,6 @@ To execute the script by pressing `Super`+`x` (i.e. create a **keybind** for it)
   <command>oblogout</command>
  </action>
 </keybind>
-
-```
-
-## Suspend and Hibernate Functionality
-
-[oblogout](https://www.archlinux.org/packages/?name=oblogout) has been configured by default to use the now-deprecated [upower](https://www.archlinux.org/packages/?name=upower) package for suspension and hibernation functionality, meaning that they will not work. However, it is possible to easily fix this problem by using [Systemd](/index.php/Systemd "Systemd") to take over these functions. To do so, edit the `/etc/oblogout.conf` file, and find the following section:
-
-```
-[commands]
-shutdown = systemctl poweroff
-restart = systemctl reboot
-suspend = dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
-hibernate = dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Hibernate
-
-```
-
-Amend the `suspend` and `hibernate` commands accordingly to allow [Systemd](/index.php/Systemd "Systemd") to take over:
-
-```
-suspend = systemctl suspend
-hibernate = systemctl hibernate
 
 ```
 

@@ -10,6 +10,7 @@ User-mode-Linux (UML) is a method to run Linux inside Linux as a normal process.
     *   [2.2 Setup by rootfs + tap](#Setup_by_rootfs_.2B_tap)
         *   [2.2.1 Required packages](#Required_packages_2)
         *   [2.2.2 Build rootfs image](#Build_rootfs_image)
+    *   [2.3 Marionnet](#Marionnet)
 
 ## Why use UML?
 
@@ -17,10 +18,11 @@ Running UML is a safe way to run multiple instances of (Arch-)Linux at the same 
 
 ## HOWTO
 
-There are two methods:
+There are three methods:
 
 *   Use hostfs with vde2 network (all UMLs use same file system)
 *   Use rootfs with tap network (require build image)
+*   Use [Marionnet](https://www.marionnet.org/)
 
 Both methods are workable on Linux 3.4.4-3 (Jul 3 2012)
 
@@ -140,3 +142,7 @@ Headless example:
  vmlinux ubd0=rootfs eth0=tuntap,,,192.168.0.100 mem=128M con=pty
 
 ```
+
+### Marionnet
+
+For use [Marionnet](https://www.marionnet.org/), you must install [uml_utilities](https://aur.archlinux.org/packages/uml_utilities/), and see [https://bugs.launchpad.net/marionnet/+bug/1580349](https://bugs.launchpad.net/marionnet/+bug/1580349).

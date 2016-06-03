@@ -127,7 +127,7 @@ ListenStream=0.0.0.0:2375
 
 ### Configuring DNS
 
-By default, docker will make resolv.conf in the container match resolv.conf on the host machine, filtering out local addresses (e.g. `127.0.0.1`). If this yields and empty file, than googles DNS servers are defaulted. If you are using a service like dnsmasq to provide name resolution, you will need to add an entry to your resolv.conf for docker's network interface so that it isn't filtered out.
+By default, docker will make resolv.conf in the container match resolv.conf on the host machine, filtering out local addresses (e.g. `127.0.0.1`). If this yields an empty file, then googles DNS servers are defaulted. If you are using a service like dnsmasq to provide name resolution, you will need to add an entry to your resolv.conf for docker's network interface so that it isn't filtered out.
 
 ### Images location
 
@@ -204,9 +204,9 @@ $ sed -i 's/timeout 60/timeout 120/' mkimage-arch.sh
 Build Debian image with [debootstrap](https://www.archlinux.org/packages/?name=debootstrap):
 
 ```
-# mkdir wheezy-chroot
-# debootstrap wheezy ./wheezy-chroot [http://http.debian.net/debian/](http://http.debian.net/debian/)
-# cd wheezy-chroot
+# mkdir jessie-chroot
+# debootstrap jessie ./jessie-chroot [http://http.debian.net/debian/](http://http.debian.net/debian/)
+# cd jessie-chroot
 # tar cpf - . | docker import - debian
 # docker run -t -i --rm debian /bin/bash
 
@@ -271,7 +271,7 @@ Docker enables IP forwarding by itself, but by default systemd overrides the res
 IPForward=ipv4
 EOF
 
-# cat > /etc/systemd/network/99-docker.conf <<EOF
+# cat > /etc/sysctl.d/99-docker.conf <<EOF
 net.ipv4.ip_forward = 1
 EOF
 

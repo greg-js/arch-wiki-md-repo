@@ -345,7 +345,7 @@ $ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/pi
 
 #### Extensions
 
-**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) is not compatible with Chrome/Chromium versions 35 and over. Users wishing to install extensions from the webpage will have to use a compatible browser such as [Firefox](/index.php/Firefox "Firefox") or [GNOME/Web](/index.php/GNOME/Web "GNOME/Web").
+**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) is not compatible with Chrome/Chromium. Users wishing to install extensions from the webpage will have to use a compatible browser such as [Firefox](/index.php/Firefox "Firefox") or [GNOME/Web](/index.php/GNOME/Web "GNOME/Web").
 
 GNOME Shell can be customized with extensions per user or system-wide.
 
@@ -379,7 +379,7 @@ The same effect can be achieved using the Tweak Tool.
 
 **Tip:** If the plus sign button in the Tweak Tool's Startup Applications section is unresponsive, try start the Tweak Tool from the terminal using the following command: `gnome-tweak-tool`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
 
-**Note:** The *gnome-session-properties* dialog was removed as of GNOME 3.12\. It can be added back by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) package.
+**Note:** The deprecated *gnome-session-properties* dialog can be added by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) package.
 
 #### Power
 
@@ -404,7 +404,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup 
 
 ##### Configure behaviour on lid switch close
 
-The GNOME Tweak Tool, as of version 3.17.1, can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the Tweak Tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
+The GNOME Tweak Tool can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the Tweak Tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
 
 If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 

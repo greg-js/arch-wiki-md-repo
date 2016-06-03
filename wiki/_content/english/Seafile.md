@@ -137,7 +137,7 @@ In order to deploy Seafile's webinterface "seahub" with Nginx, you can use an Ng
 server {
     listen 80;
     server_name www.example.org example.org;
-    rewrite ^/(.*) https://$server_name/$1 permanent;   # force redirect http to https
+    return 301 https://$server_name$request_uri;
 }
 
 server {

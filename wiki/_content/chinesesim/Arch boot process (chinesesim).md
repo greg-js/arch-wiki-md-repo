@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Arch_Boot_Process](/index.php/Arch_Boot_Process "Arch Boot Process") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-10-25，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Boot_Process&diff=0&oldid=326515)可以查看翻译后英文页面的改动。
 
-为了启动 Arch Linux，一个与 Linux 兼容的 [启动引导程序](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")，比如 [GRUB (简体中文)](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)")或者 [Syslinux (简体中文)](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)")，必须事先被安装到 [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") 或者 [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). 启动引导程序负责在初始化启动进程之前，加载好内核和 [initial ramdisk](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)"). 具体过程因 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 和 [UEFI](/index.php/UEFI "UEFI") 系统而异，细节在正文中给出。
+为了启动 Arch Linux，一个与 Linux 兼容的 [启动引导器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")，比如 [GRUB](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)") 或者 [Syslinux](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 必须事先被安装到[主引导记录](/index.php/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "主引导记录")或者 [GUID 分区表](/index.php/GUID_Partition_Table_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GUID Partition Table (简体中文)")。启动引导程序负责在初始化启动进程之前，加载好内核和 [initial ramdisk](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)")。具体过程因 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 和 [UEFI](/index.php/UEFI "UEFI") 系统而异，细节在正文中给出。
 
 ## Contents
 
@@ -24,7 +24,7 @@
 
 ### BIOS
 
-所谓 BIOS 或 Basic Input-Output System, 就是开机时第一个被执行的程序，又名固件。一般来说它储存在主板上的一块闪存中，与硬盘彼此独立。BIOS 被启动后，它接着会执行第一个硬盘上的前 440 字节代码，即 [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"), 由于代码的储存空间实在太小了，所以实际代码常常是某个启动引导器，像 [GRUB (简体中文)](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)"), [Syslinux (简体中文)](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 和 [LILO](/index.php/LILO "LILO") 之类的。最后启动引导器又通过「链式引导」，或是直接加载内核，以加载一个操作系统
+所谓 BIOS 或 Basic Input-Output System, 就是开机时第一个被执行的程序，又名固件。一般来说它储存在主板上的一块闪存中，与硬盘彼此独立。BIOS 被启动后，它接着会执行第一个硬盘上的前 440 字节代码，即[主引导记录](/index.php/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "主引导记录")，由于代码的储存空间实在太小了，所以实际代码常常是某个启动引导器，像 [GRUB](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)")、[Syslinux](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 和 [LILO](/index.php/LILO "LILO") 之类的。最后启动引导器又通过「链式引导」，或是直接加载内核，以加载一个操作系统
 
 ### UEFI
 
@@ -44,14 +44,14 @@ UEFI 下每一个程序，无论它是某个 OS 引导器还是某个内存测�
 
 1.  开机时[加电自检](https://en.wikipedia.org/wiki/Power-on_self-test "wikipedia:Power-on self-test")。
 2.  加电自检后，BIOS 初始化一些必要的硬件以准备引导，比如硬盘和键盘等。
-3.  BIOS 执行在「BIOS 硬盘顺序」中的第一块硬盘上的前 440 字节代码，即 [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")。
+3.  BIOS 执行在「BIOS 硬盘顺序」中的第一块硬盘上的前 440 字节代码，即[主引导记录](/index.php/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "主引导记录")。
 4.  MBR 接管后，执行它之后的第二阶段代码，如果后者存在的话，它一般就是[启动引导器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")。
 5.  被执行的第二阶段代码会读取它的支持文件和配置文件。
 6.  启动引导器按照配置文件，加载内核和 initramfs 进内存并启动前者。
 
 ### UEFI
 
-参见 [Unified Extensible Firmware Interface#Boot Process under UEFI](/index.php/Unified_Extensible_Firmware_Interface#Boot_Process_under_UEFI "Unified Extensible Firmware Interface").
+参见 [UEFI 引导过程](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)")。
 
 ## 内核
 
@@ -65,11 +65,11 @@ initramfs 之所以存在，是为了帮系统访问真正的根文件系统（�
 
 ## Init 流程
 
-在「早期用户空间」的最终环节里，真・根文件系统被挂载好后，就会替换掉原来的伪・根文件系统。接着 `/sbin/init` 被执行，同样也替换掉原来的 `/init` 进程。Arch 御用的 [init](/index.php/Init "Init") 就是 [systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)").
+在「早期用户空间」的最终环节里，**真正**的根文件系统被挂载好后，就会替换掉原来的**伪**根文件系统。接着 `/sbin/init` 被执行，同样也替换掉原来的 `/init` 进程。Arch 御用的 [init](/index.php/Init "Init") 就是 [systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)").
 
 ## Getty
 
-[init](/index.php/Init "Init") 为每一个 [虚拟终端](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") 调用 [getty](/index.php/Getty "Getty")，前者一般有六个，每个虚拟终端都会初始化 tty 并请求输入用户名和密码。当在某虚拟终端输入用户名和密码后，其 getty 会通过 `/etc/passwd` 检查是否正确，如果正确，就接着调用 [login](#Login), 即为用户启动一个「会话」，接着根据 `/etc/passwd` 文件启动用户专用 shell. 此外，getty 也可能会改启动一个显示管理器。
+[init](/index.php/Init "Init") 为每一个 [虚拟终端](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") 调用 [getty](/index.php/Getty "Getty")，前者一般有六个，每个虚拟终端都会初始化 tty 并请求输入用户名和密码。当在某虚拟终端输入用户名和密码后，其 getty 会通过 `/etc/passwd` 检查是否正确，如果正确，就接着调用 [login](#Login), 即为用户启动一个「会话」，接着根据 `/etc/passwd` 文件启动用户专用 shell。此外，getty 也可能会改启动一个显示管理器。
 
 ## 显示管理器
 

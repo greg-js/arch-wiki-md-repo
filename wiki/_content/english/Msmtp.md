@@ -7,15 +7,17 @@
 *   [3 Using the mail command](#Using_the_mail_command)
 *   [4 Test functionality](#Test_functionality)
 *   [5 Cronie default email client](#Cronie_default_email_client)
-*   [6 Miscellaneous](#Miscellaneous)
-    *   [6.1 Practical password management](#Practical_password_management)
-    *   [6.2 Using msmtp offline](#Using_msmtp_offline)
-    *   [6.3 Vim syntax highlighting](#Vim_syntax_highlighting)
-    *   [6.4 Send mail with PHP using msmtp](#Send_mail_with_PHP_using_msmtp)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Issues with TLS](#Issues_with_TLS)
-    *   [7.2 Server sent empty reply](#Server_sent_empty_reply)
-    *   [7.3 Issues with GSSAPI](#Issues_with_GSSAPI)
+*   [6 Password management](#Password_management)
+    *   [6.1 GNOME Keyring](#GNOME_Keyring)
+    *   [6.2 GnuPG](#GnuPG)
+*   [7 Miscellaneous](#Miscellaneous)
+    *   [7.1 Using msmtp offline](#Using_msmtp_offline)
+    *   [7.2 Vim syntax highlighting](#Vim_syntax_highlighting)
+    *   [7.3 Send mail with PHP using msmtp](#Send_mail_with_PHP_using_msmtp)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Issues with TLS](#Issues_with_TLS)
+    *   [8.2 Server sent empty reply](#Server_sent_empty_reply)
+    *   [8.3 Issues with GSSAPI](#Issues_with_GSSAPI)
 
 ## Installing
 
@@ -146,23 +148,37 @@ Then you must tell cronie or msmtp what your email address is, either by:
 
 *   Add a `MAILTO` line to the crontab: `MAILTO=email@address.com` 
 
-## Miscellaneous
+## Password management
 
-Other details.
+Passwords for msmtp [can be stored](http://msmtp.sourceforge.net/doc/msmtp.html#Authentication) in plaintext, encrypted files, or a keyring.
 
-### Practical password management
+### GNOME Keyring
 
-The `password` directive may be omitted. In that case, if the account in question has `auth` set to a legitimate value other than `off`, invoking msmtp from an interactive shell will ask for the password before sending mail. msmtp will not prompt if it has been called by another type of application, such as [Mutt](/index.php/Mutt "Mutt"). There is a solution for such cases: the `--passwordeval` parameter. You can call msmtp to use an external keyring tool like gpg:
+Storing passwords in [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") is supported natively in msmtp. Setup the keyring as described on the linked wiki page and install [libsecret](https://www.archlinux.org/packages/?name=libsecret). Then, store a password by running:
 
- `msmtp --passwordeval 'gpg -d mypwfile.gpg'` 
+```
+ secret-tool store --label=msmtp host *smtp.your.domain* service smtp user *yourusername*
 
-If gpg prompt for the passphrase cannot be issued (e.g. when called from Mutt) then start the [gpg-agent](/index.php/GPG#gpg-agent "GPG") before.
+```
 
-A simple hack to start the agent is to execute a external command in your muttrc.
+That's all, now msmtp should find the password automatically.
 
-**Note:** Mutt uses the backtick `` command `` syntax to execute external commands
+### GnuPG
 
-For example, you can put something like the following in your muttrc
+The `password` directive may be omitted. In that case, if the account in question has `auth` set to a legitimate value other than `off`, invoking msmtp from an interactive shell will ask for the password before sending mail. msmtp will not prompt if it has been called by another type of application, such as [Mutt](/index.php/Mutt "Mutt"). For such cases, the `--passwordeval` parameter can be used to call an external keyring tool like [GnuPG](/index.php/GnuPG "GnuPG").
+
+To do this, set up [GnuPG](/index.php/GnuPG "GnuPG"), including [gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") to avoid having to enter the password every time. Then, create an encrypted password file for msmtp, as follows. Create a secure directory with `700` permissions located on a [tmpfs](/index.php/Tmpfs "Tmpfs") to avoid writing the unencrypted password to the disk. In that directory create a plain text file with the mail account password. Then, encrypt the file with your private key:
+
+```
+$ gpg --default-recipient-self -e */path/to/plain/password*
+
+```
+
+Remove the plain text file and move the encrypted file to the final location, e.g. `~/.mail/.msmtp-credentials.gpg`. In `~/.msmtprc` add:
+
+ `~/.msmtprc`  `paswordeval  "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mail/.msmtp-credentials.gpg"` 
+
+Normally this is sufficient for a GUI password prompt to appear when, for example, sending a message from [Mutt](/index.php/Mutt "Mutt"). If gpg prompt for the passphrase cannot be issued, then start the [gpg-agent](/index.php/GPG#gpg-agent "GPG") before. A simple hack to start the agent is to execute a external command in your muttrc using the backtick `` command `` syntax. For example, you can put something like the following in your muttrc
 
  `muttrc`  `set my_msmtp_pass=`gpg -d mypwfile.gpg`` 
 
@@ -173,6 +189,8 @@ Mutt will execute this when it starts, gpg-agent will cache your password, msmtp
 If you cannot use a keyring tool for any reason, you may want to use the password directly. There is a patched version [msmtp-pwpatched](https://aur.archlinux.org/packages/msmtp-pwpatched/) in the AUR that provides the `--password` parameter. Note that it is a **huge security flaw**, since any user connected to you machine can see the parameter of any command (in the /proc filesystem for example).
 
 If this is not desired, an alternative is to place passwords in `~/.netrc`, a file that can act as a common pool for msmtp, [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP"), and associated tools.
+
+## Miscellaneous
 
 ### Using msmtp offline
 

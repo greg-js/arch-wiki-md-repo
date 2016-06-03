@@ -41,7 +41,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [anthraxx](https://aur.archlinux.org/packages.php?K=anthraxx&SeB=m) | [Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx") | anthraxx [at] archlinux [dot] org |
 | [Atsutane](https://aur.archlinux.org/packages.php?K=Atsutane&SeB=m) | Thorsten Töpper | atsutane {0x40} freethoughts {0x2E} de |
 | [arcanis](https://aur.archlinux.org/packages/?SeB=m&K=arcanis) | Evgeniy Alekseev | arcanis DOT arch AT gmail DOT com |
-| [arojas](https://aur.archlinux.org/packages/?SeB=m&K=arojas) | Antonio Rojas | nqn76sw@gmail.com |
+| [arojas](https://aur.archlinux.org/packages/?SeB=m&K=arojas) | Antonio Rojas | arojas@archlinux.org |
 | [Barthalion](https://aur.archlinux.org/packages.php?K=Barthalion&SeB=m) | Bartłomiej Piotrowski | spam@bpiotrowski.pl |
 | [BlackIkeEagle](https://aur.archlinux.org/packages.php?K=BlackIkeEagle&SeB=m) | [Ike Devolder](/index.php/User:BlackEagle "User:BlackEagle") | ike DOT devolder AT gmail DOT com |
 | [Bluewind](https://aur.archlinux.org/packages.php?K=bluewind&SeB=m) | Florian Pritz | bluewind@xinu.at |
@@ -53,7 +53,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [Dragonlord](https://aur.archlinux.org/packages.php?K=Dragonlord&SeB=m) | [Jaroslav Lichtblau](/index.php/User:Drag0nl0rd "User:Drag0nl0rd") | dragonlord @ aur archlinux org |
 | [Faidoc](https://aur.archlinux.org/packages.php?K=faidoc&SeB=m) | Alexandre Filgueira | alexfilgueira [at] cinnarch [dot] com |
 | [farseerfc](https://aur.archlinux.org/packages.php?K=farseerfc&SeB=m) | Jiachen Yang | farseerfc[at]gmail[dot]com |
-| [felixonmars](https://aur.archlinux.org/packages.php?K=felixonmars&SeB=m) | Felix Yan | felixonmars[at]gmail[dot]com |
+| [felixonmars](https://aur.archlinux.org/packages.php?K=felixonmars&SeB=m) | Felix Yan | felixonmars@archlinux.org |
 | [flexiondotorg](https://aur.archlinux.org/packages.php?K=flexiondotorg&SeB=m) | Martin Wimpress | [martin+arch@flexion.org](mailto:martin+arch@flexion.org) |
 | [foutrelis](https://aur.archlinux.org/packages.php?K=foutrelis&SeB=m) | Evangelos Foutras | evangelos@foutrelis.com |
 | [giniu](https://aur.archlinux.org/packages.php?K=giniu&SeB=m) | [Andrzej Giniewicz](/index.php/User:Giniu "User:Giniu") | gginiu@gmail.com |

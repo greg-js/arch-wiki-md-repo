@@ -216,7 +216,7 @@ And use the new `efiboot.img` as above.
 Create a new ISO image with `genisoimage`, which is part of [cdrkit](https://www.archlinux.org/packages/?name=cdrkit).
 
 ```
-$ genisoimage -l -r -J -V "ARCH_201209" -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4 -boot-info-table -c isolinux/boot.cat -o ~/arch-custom.iso ~/customiso
+$ genisoimage -l -r -J -V "ARCH_201209" -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4 -boot-info-table -c isolinux/boot.cat -o ../arch-custom.iso ./
 
 ```
 

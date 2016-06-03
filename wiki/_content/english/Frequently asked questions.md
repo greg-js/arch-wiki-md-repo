@@ -160,7 +160,7 @@ This has been discussed on the Arch mailing list. Some proposed a `.pac` file ex
 
 ### Pacman needs a library so other applications can easily access package information
 
-Since version 3.0.0, pacman has been the front-end to libalpm, the "Arch Linux Package Management" library. This library allows alternative front-ends to be written (for instance, a GUI front-end).
+Pacman is a front-end to [libalpm](https://www.archlinux.org/pacman/libalpm.3.html)—the "Arch Linux Package Management" library—which allows alternative front-ends, like a GUI front-end, to be written.
 
 ### Pacman needs feature X!
 
@@ -203,7 +203,7 @@ No, it is not possible. Major kernel updates (e.g. *linux 3.5.0-1* to *linux 3.6
 
 ### Does Arch use package signing?
 
-Yes. Package signing in [pacman](/index.php/Pacman "Pacman") has been implemented since version 4\. See [package signing](/index.php/Package_signing "Package signing") for more information.
+Yes. Package signing has been implemented in [pacman](/index.php/Pacman "Pacman"). See [package signing](/index.php/Package_signing "Package signing") for more information.
 
 ### What to do before upgrading?
 
@@ -248,7 +248,7 @@ Under Windows, using the freeware [CPU-Z](http://www.cpuid.com/cpuz.php) helps d
 
 Most official packages have 64-bit versions, though you may need to enable the [multilib](/index.php/Multilib "Multilib") repository to run some 32-bit programs. [Package Differences](https://www.archlinux.org/packages/differences/) lists the few cases where the multilib packages differ from the native 32-bit versions.
 
-The only exception is [AUR](/index.php/AUR "AUR") packages which only have `'i686'` listed, but even then they may work for 64-bit too. Just try adding `'x86_64'` to the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+The only exception is [AUR](/index.php/AUR "AUR") packages that only have `'i686'` listed, but even then they may work for 64-bit too. Just try adding `'x86_64'` to the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
 As a last resort, you can always [install a 32-bit system inside your 64-bit system](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system").
 

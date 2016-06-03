@@ -4,10 +4,9 @@
 
 *   [1 Supported file systems](#Supported_file_systems)
 *   [2 Mounting a file system](#Mounting_a_file_system)
-*   [3 Seeing what's been mounted](#Seeing_what.27s_been_mounted)
+*   [3 Listing mounted file systems](#Listing_mounted_file_systems)
     *   [3.1 mtab](#mtab)
-    *   [3.2 mtab File Definition](#mtab_File_Definition)
-*   [4 Alternatives that can be used to change the default options for mounting](#Alternatives_that_can_be_used_to_change_the_default_options_for_mounting)
+*   [4 Alternatives to change the default mount options](#Alternatives_to_change_the_default_mount_options)
 *   [5 Some other file systems](#Some_other_file_systems)
     *   [5.1 VFAT, FAT, DOS](#VFAT.2C_FAT.2C_DOS)
     *   [5.2 NTFS](#NTFS)
@@ -52,43 +51,41 @@ If the mount point does not exist, it may be necessary to create it first. To mo
 
 See [/etc/fstab](/index.php//etc/fstab "/etc/fstab"), `man fstab` and `man mount` for more information.
 
-## Seeing what's been mounted
+## Listing mounted file systems
 
-You can see what's been mounted by looking at the `/etc/mtab` and `/proc/mounts` files.
+You can see the mounted file systems by looking at the `/etc/mtab` and `/proc/mounts` files.
 
 ### mtab
 
 The [/etc/mtab](https://en.wikipedia.org/wiki/Mtab "wikipedia:Mtab") is a system-generated file created and updated by the **mount** application whenever any [file system](/index.php/File_system "File system") is mounted or unmounted.
 
-It lists each device node, mount point and mount options used. Whenever the `mount` program is executed without any arguments, this file is printed.
+Whenever the `mount` program is executed without any arguments, this file is printed. Each line in the file represents a file system that is currently mounted and displays the following information:
 
-**Note:** The `/etc/mtab` file is meant to be used to display the status of currently mounted file systems only. It should not be manually modified.
-
-### mtab File Definition
-
-Each line in the file represents a file system that is currently mounted and displays the following information:
-
-*   The file system.
-*   The mount point.
-*   The file system type.
+*   device node
+*   mount point
+*   file system type
 *   Mount options used while mounting the file system.
 
-## Alternatives that can be used to change the default options for mounting
+**Note:** The `/etc/mtab` file is meant to be used to display the status of currently mounted file systems only. It should not be modified manually.
 
-Here are a few examples about how to extend mount functionality and modify default options. To change the default settings in the [kernel](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation") you will need to compile the kernel yourself. If the script does not exist then the default options will be used.
+## Alternatives to change the default mount options
 
-*   [By compiling the kernel yourself](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation")
-*   By using scripts
-*   [By editing fstab](/index.php/Fstab "Fstab")
-*   [By creating udev / udisks rules](/index.php/Udev "Udev") - device manager for the Linux kernel.
-*   Manually mounting as shown above
+A few examples about how to extend mount functionality and modify default options:
 
-The *mount.X* scripts or symbolic links, where *X* is the name of a file system, can be used to alter the default *mount* options for almost any of its supported file systems. Use the `-i` option to ignore *mount.X* scripts and also for avoiding of the loops(starting *mount.X* non-stop) when *mount* is inside the script, e.g. `mount -i -t reiserfs /dev/sd*XY* /mnt/sd*XY*`.
+*   [By editing fstab](/index.php/Fstab "Fstab") to include the desired mount options
+*   [By creating udev / udisks rules](/index.php/Udev "Udev") - mostly useful for removable devices
+*   Mounting manually / by using scripts
 
-There are two ways to list available altered mount settings:
+	The *mount.X* scripts or symbolic links, where *X* is the name of a file system, can be used to alter the default *mount* options for almost any of its supported file systems. Option `-i` is used to let the *mount* command ignore *mount.X* scripts and must also be used inside *mount.X* scripts for any *mount* command.
+
+	There are two ways to list the available scripts:
 
 *   Write *mount* and press a `Tab` key.
 *   Execute `ls /usr/bin/mount.*`.
+
+*   [By compiling the kernel yourself](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System")
+
+	To change the default settings in the kernel, you will need to compile it yourself.
 
 ## Some other file systems
 

@@ -79,17 +79,16 @@ For the `System service scripts directory`, use `/etc/init.d` (the default).
 
 ## Configuration
 
-**Tip:** There is also a package called [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) with the intention of trying to automate this section (it also supports older VMware versions).
-
 ### Kernel modules
 
-**Note:** Due to Workstation 12 taking advantage of the [mainlined](http://www.phoronix.com/scan.php?page=news_item&px=MTI3MTE) kernel modules, patching the VMCI/VSOCK sources is no longer required.
+*   VMware 12 and newer will work out-of-the box, since they take advantage of the [mainlined](http://www.phoronix.com/scan.php?page=news_item&px=MTI3MTE) kernel modules.
+*   VMware 11 and older require patching the VMCI/VSOCK sources. This is automated by installing the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
 
 VMware Workstation 12 supports kernels up to 4.2.
 
 ### systemd services
 
-*(Optional)* Instead of using `/etc/init.d/vmware` (`start|stop|status|restart`) and `/usr/bin/vmware-usbarbitrator` directly to manage the services, you may also use `.service` files (also available in the [AUR](/index.php/AUR "AUR") as [vmware-systemd-services](https://aur.archlinux.org/packages/vmware-systemd-services/)):
+*(Optional)* Instead of using `/etc/init.d/vmware` (`start|stop|status|restart`) and `/usr/bin/vmware-usbarbitrator` directly to manage the services, you may also use `.service` files (also available in the [vmware-systemd-services](https://aur.archlinux.org/packages/vmware-systemd-services/) package, and also included in [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/)):
 
  `/etc/systemd/system/vmware.service` 
 ```

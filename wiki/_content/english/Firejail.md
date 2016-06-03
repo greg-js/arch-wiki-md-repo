@@ -16,7 +16,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [firejail](https://aur.archlinux.org/packages/firejail/) or [firejail-git](https://aur.archlinux.org/packages/firejail-git/) package which provide all of the requirements out of the box.
+[Install](/index.php/Install "Install") the [firejail](https://www.archlinux.org/packages/?name=firejail) or [firejail-git](https://aur.archlinux.org/packages/firejail-git/) package which provide all of the requirements out of the box.
 
 ## Configuration
 

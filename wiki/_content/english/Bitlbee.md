@@ -10,7 +10,8 @@ The users' buddies appear as normal IRC users in a channel and conversations use
 *   [3 Basic Usage (Jabber/XMPP)](#Basic_Usage_.28Jabber.2FXMPP.29)
     *   [3.1 OTR](#OTR)
 *   [4 External Services](#External_Services)
-    *   [4.1 Twitter](#Twitter)
+    *   [4.1 Telegram](#Telegram)
+    *   [4.2 Twitter](#Twitter)
 *   [5 See Also](#See_Also)
 
 ## Installation
@@ -73,6 +74,23 @@ To initiate a chat, simply open a new IRC private window:
 For OTR support you must have [libotr](https://www.archlinux.org/packages/?name=libotr) installed. Upon account registration, bitlbee will generate your OTR keys, and it will use them transparently whenever you are negotiating with an OTR-capable contact.
 
 ## External Services
+
+### Telegram
+
+To make Telegram work with bitlbee you need version compiled with libpurple support enabled - [bitlbee-libpurple](https://aur.archlinux.org/packages/bitlbee-libpurple/) for example, although there are patched or development versions also available.
+
+Next, install [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) and restart bitlbee via systemd.
+
+In the control channel, `&bitlbee`, type the following commands:
+
+```
+11:45:03 <@user> account add telegram <phone_number_with_region_prefix> <anything>
+11:45:03 <@root> Account successfully added
+11:45:06 <@user> account telegram on
+
+```
+
+After connecting a separate chat window will open, asking for the SMS code - enter it and Telegram will work with your setup.
 
 ### Twitter
 

@@ -1624,6 +1624,7 @@ Also, check out this thread [[8]](https://steamcommunity.com/app/237930/discussi
 *   [lib32-libxxf86vm](https://www.archlinux.org/packages/?name=lib32-libxxf86vm)
 *   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
 *   [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo)
+*   [lib32-libdrm](https://www.archlinux.org/packages/?name=lib32-libdrm)
 
 ### Troubleshooting
 

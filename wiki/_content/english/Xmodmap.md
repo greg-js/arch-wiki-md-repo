@@ -64,7 +64,7 @@ Each *keysym* column in the table corresponds to a particular combination of mod
 
 Not all *keysyms* have to be set, but to assign only a latter *keysym*, use the `NoSymbol` value.
 
-To see which *keycode* corresponds to a key, see [Extra keyboard keys#In Xorg](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys") for details on the *xev* utility.
+To see which *keycode* corresponds to a key, see [Extra keyboard keys#In Xorg](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys") for details on the *xev* utility which will output relevant keycode/keysym information about a key when you press it.
 
 **Tip:** There are predefined descriptive *keysyms* for multimedia keys, e.g. `XF86AudioMute` or `XF86Mail`. These *keysyms* can be found in `/usr/include/X11/XF86keysym.h`. Many multimedia programs are designed to work with these *keysyms* out-of-the-box, without the need to configure any third-party application.
 

@@ -1145,7 +1145,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **ttytter** — Easily scriptable twitter client written in Perl.
 
-	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://www.archlinux.org/packages/?name=ttytter)
+	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://aur.archlinux.org/packages/ttytter/)
 
 *   **Turpial** — Multi-interface Twitter client written in Python.
 

@@ -103,6 +103,14 @@ xinput --map-to-output 14 LVDS1
 
 ```
 
+You can automate this by putting these commands in your `~/.xinitrc` or similar. ID numbers are not guaranteed to persist between boots, but you can extract that info from xinput itself.
+
+```
+xinput --map-to-output $(xinput list --id-only "Serial Wacom Tablet WACf004 stylus") LVDS1
+xinput --map-to-output $(xinput list --id-only "Serial Wacom Tablet WACf004 eraser") LVDS1
+
+```
+
 ## Touchegg
 
 [Touchegg](/index.php/Touchegg "Touchegg") is a multitouch gesture program, that runs as a user in the background, and adds multitouch support to window managers.

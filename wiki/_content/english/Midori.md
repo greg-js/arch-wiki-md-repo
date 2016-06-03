@@ -19,6 +19,7 @@ Some of its features are:
     *   [2.2 Search engines](#Search_engines)
     *   [2.3 User scripts](#User_scripts)
     *   [2.4 Flash plugin](#Flash_plugin)
+        *   [2.4.1 Pepper Flash](#Pepper_Flash)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Flash Block](#Flash_Block)
     *   [3.2 Personal AdBlock filters](#Personal_AdBlock_filters)
@@ -28,9 +29,9 @@ Some of its features are:
 
 ## Installation
 
-A GTK+2 and GTK+3 versions of Midori can be [installed](/index.php/Pacman "Pacman") with the respective [midori-gtk2](https://www.archlinux.org/packages/?name=midori-gtk2) and [midori](https://www.archlinux.org/packages/?name=midori) packages, available in the [official repositories](/index.php/Official_repositories "Official repositories").
+GTK+2 and GTK+3 versions of Midori can be [installed](/index.php/Pacman "Pacman") with the respective [midori-gtk2](https://www.archlinux.org/packages/?name=midori-gtk2) and [midori](https://www.archlinux.org/packages/?name=midori) packages.
 
-Development versions are available in the [AUR](/index.php/AUR "AUR"):
+Development versions are also available:
 
 *   [midori-gtk2-bzr](https://aur.archlinux.org/packages/midori-gtk2-bzr/) - GTK+ 2 development version.
 *   [midori-bzr](https://aur.archlinux.org/packages/midori-bzr/) - GTK+ 3 and WebKitGTK3-based development version.
@@ -70,9 +71,42 @@ For manual installation, you have to create the folder `~/.local/share/midori/sc
 
 ### Flash plugin
 
-To get the Flash plugin working in Midori you can install the [midori-flash](https://aur.archlinux.org/packages/midori-flash/) package from [AUR](/index.php/AUR "AUR") or follow the instructions at [Epiphany#Flash](/index.php/Epiphany#Flash "Epiphany").
+To get the Flash plugin working in Midori you can install the [midori-flash](https://aur.archlinux.org/packages/midori-flash/) package.
 
-If you're running the i686 architecture, or you don't want to use to the AUR script, then install flashplugin from the main repository, and add `export MOZ_PLUGIN_PATH="/usr/lib/mozilla/plugins"` to your .bashrc, or corresponding shell configuration file.
+Alternatively, install the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) from the main repository, and add `export MOZ_PLUGIN_PATH="/usr/lib/mozilla/plugins"` to your [.bashrc](https://www.archlinux.org/packages/?name=.bashrc), [.xprofile](https://www.archlinux.org/packages/?name=.xprofile), or corresponding shell configuration file.
+
+#### Pepper Flash
+
+To use Pepper flash in midori install [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) or [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/), and additionally install one of the following:
+
+*   [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/)
+*   [chromium-pepper-flash-standalone](https://aur.archlinux.org/packages/chromium-pepper-flash-standalone/)
+*   [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
+*   [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/)
+*   [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)
+
+You should now have a `libfreshwrapper-flashplayer.so` file in `/usr/lib/mozilla/plugins/`.
+
+To configure fresh wrapper copy the default configuration to your user's home and edit the file.
+
+```
+   $ cp /usr/share/freshplayerplugin-git/freshwrapper.conf.example ~/.config/freshwrapper.conf
+
+```
+
+Next you will need to configure midori to use libfreshwrapper-flashplayer.so. You can do this by going to preferences->extentions and enabling the flash plugin or by adding the following to your ~/.config/midori/config file:
+
+```
+   [extensions]
+   libnsplugin-manager.so/gecko-mediaplayer-dvx.so=true
+   libnsplugin-manager.so/gecho-mediaplayer-rm.so=true
+   libnsplugin-manager.so/gecho-mediaplayer.so=true
+   libnsplugin-manager.so/gecho-mediaplayer-qt.so=true
+   libnsplugin-manager.so/gecko-mediaplayer-wmp.so=true
+   libnsplugin-manager.so/libpipelight-silverlight5.1.so=true
+   libnsplugin-manager.so/libfreshwrapper-flashplayer.so=true
+
+```
 
 ## Tips and tricks
 

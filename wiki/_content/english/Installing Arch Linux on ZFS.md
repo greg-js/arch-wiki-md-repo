@@ -4,8 +4,10 @@ This article details the steps required to install Arch Linux onto a ZFS root fi
 
 *   [1 Installation](#Installation)
     *   [1.1 Embedding archzfs into archiso](#Embedding_archzfs_into_archiso)
+    *   [1.2 Arch ZFS installation scripts](#Arch_ZFS_installation_scripts)
 *   [2 Partition the destination drive](#Partition_the_destination_drive)
     *   [2.1 Partition scheme](#Partition_scheme)
+    *   [2.2 Example parted commands](#Example_parted_commands)
 *   [3 Format the destination disk](#Format_the_destination_disk)
 *   [4 Setup the ZFS filesystem](#Setup_the_ZFS_filesystem)
     *   [4.1 Create the root zpool](#Create_the_root_zpool)
@@ -21,11 +23,15 @@ This article details the steps required to install Arch Linux onto a ZFS root fi
 
 ## Installation
 
-See [ZFS#Installation](/index.php/ZFS#Installation "ZFS") for installing the ZFS packages. If installing Arch Linux onto ZFS from the archiso, it would be easier to use the [demz-repo-archiso](/index.php/Unofficial_user_repositories#demz-repo-archiso "Unofficial user repositories") repository.
+See [ZFS#Installation](/index.php/ZFS#Installation "ZFS") for installing the ZFS packages. If installing Arch Linux onto ZFS from the archiso, it would be easier to use the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
 
 ### Embedding archzfs into archiso
 
 See [ZFS](/index.php/ZFS#Embed_the_archzfs_packages_into_an_archiso "ZFS") article.
+
+### Arch ZFS installation scripts
+
+Manually installing Arch using ZFS is quite an involved undertaking but thankfully there are scripts to simplify the process such as [ALEZ](https://github.com/danboid/ALEZ) and [install-raidz](https://bitbucket.org/avi9526/install-raidz/src).
 
 ## Partition the destination drive
 
@@ -75,6 +81,23 @@ ZFS does not support swap files. If you require a swap partition, see [ZFS#Swap 
 
 **Warning:** Several GRUB bugs ([bug #42861](https://savannah.gnu.org/bugs/?42861), [zfsonlinux/grub/issues/5](https://github.com/zfsonlinux/grub/issues/5)) complicate installing it on ZFS partitions, see [#Install and configure the bootloader](#Install_and_configure_the_bootloader) for a workaround
 
+### Example parted commands
+
+Here are some example commands to partition a drive for the second scenario above ie using BIOS/legacy boot mode with a GPT partition table and a (slighty more than) 1MB BIOS boot partition for GRUB:
+
+```
+# parted /dev/sda
+(parted)mklabel gpt
+(parted)mkpart non-fs 0% 2
+(parted)mkpart primary 2 100%
+(parted)set 1 bios_grub on
+(parted)set 2 boot on
+(parted)quit
+
+```
+
+If you are creating an EFI partition then that should have the boot flag set instead of the root partition.
+
 ## Format the destination disk
 
 If you have opted for a boot partition as well as any other non-ZFS system partitions then format them. Do not do anything to the Solaris partition nor to the BIOS boot partition. ZFS will manage the first, and your bootloader the second.
@@ -120,7 +143,7 @@ With these example commands, we will create a basic boot enviroment compatible c
 
 ### Configure the root filesystem
 
-If you have just created your zpool, it will be mounted in a dir at the root of your tree named after the pool (ie /zroot) so first we need to unmount it:
+If you have just created your zpool, it will be mounted in a dir at the root of your tree named after the pool (ie /zroot). If the following set commands fail, you may need to unmount any ZFS filesystems first:
 
 ```
 # zfs umount -a
@@ -135,13 +158,15 @@ Now set the mount points of the datasets:
 
 ```
 
+**Note:** `/etc/fstab` mounts occur before zfs mounts, so don't use zfs mountpoints on directories with subfolders configured to be mounted by `/etc/fstab`.
+
 and put them in `/etc/fstab`
 
  `/etc/fstab` 
 ```
 # <file system>        <dir>         <type>    <options>              <dump> <pass>
-zroot/ROOT/default / zfs rw,relatime,xattr,noacl 0 0
-zroot/data/home /home zfs rw,relatime,xattr,noacl 0 0
+zroot/ROOT/default / zfs defaults,noatime 0 0
+zroot/data/home /home zfs defaults,noatime 0 0
 ```
 
 All legacy datasets must be listed in `/etc/fstab` or they will not be mounted at boot.
@@ -172,6 +197,8 @@ Finally, re-import the pool,
 ```
 
 **Note:** `-d` is not the actual device id, but the `/dev/by-id` directory containing the symbolic links.
+
+If this command fails and you are asked to import your pool via its numeric ID, run `zpool import` to find out the ID of your pool then use a command such as: `zpool import 9876543212345678910 -R /mnt zroot`
 
 If there is an error in this step, you can export the pool to redo the command. The ZFS filesystem is now ready to use.
 
@@ -211,7 +238,7 @@ Follow the following steps using the [Beginners' guide](/index.php/Beginners%27_
 *   If you chose to create legacy datasets for system directories, keep them in this `fstab`!
 *   Comment out all non-legacy datasets apart from the root dataset, the swap file and the boot/EFI partition. It is a convention to replace the swap's uuid with `/dev/zvol/zroot/swap`.
 
-*   You need to add the [Arch ZFS](/index.php/Unofficial_user_repositories#demz-repo-archiso "Unofficial user repositories") repository to `/etc/pacman.conf`, sign its key and [install](/index.php/Install "Install") **zfs-git** within the arch-chroot before you can update the ramdisk with ZFS support.
+*   You need to add the [Arch ZFS](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository to `/etc/pacman.conf`, sign its key and [install](/index.php/Install "Install") **zfs-linux** (or **zfs-linux-lts** if you are running the LTS kernel) within the arch-chroot before you can update the ramdisk with ZFS support.
 
 *   When creating the initial ramdisk, first edit `/etc/mkinitcpio.conf` and add `zfs` before filesystems. Also, move `keyboard` hook before `zfs` so you can type in console if something goes wrong. You may also remove fsck (if you are not using Ext3 or Ext4). Your `HOOKS` line should look something like this:
 

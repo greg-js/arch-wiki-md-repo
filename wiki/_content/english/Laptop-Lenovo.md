@@ -108,8 +108,6 @@ install CD version
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad T550](/index.php/Lenovo_ThinkPad_T550 "Lenovo ThinkPad T550") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | DisplayPort |
-| Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
-| Hardware support |
 
 #### W series
 
@@ -139,8 +137,8 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| [Lenovo ThinkPad P50](/index.php/Lenovo_ThinkPad_P50 "Lenovo ThinkPad P50") | Untested | Yes | Yes | Yes | Yes | Yes | Suspend/Hibernate buggy but working sometimes | NA | SD card (Yes), Webcam (Yes), Fingeprint Reader (No), | Wifi requires Kernel 4.3.3+ |
-| [Lenovo ThinkPad P70](/index.php/Lenovo_ThinkPad_P70 "Lenovo ThinkPad P70") | Untested | Yes | Yes | Yes | Yes | Yes | Suspend/Hibernate not working | NA | SD card (Yes), Webcam (Yes), Fingeprint Reader (No), | Wifi requires Kernel 4.3.3+ |
+| [Lenovo ThinkPad P50](/index.php/Lenovo_ThinkPad_P50 "Lenovo ThinkPad P50") | 2016.04 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (No), | Wifi requires Kernel 4.3.3+ |
+| [Lenovo ThinkPad P70](/index.php/Lenovo_ThinkPad_P70 "Lenovo ThinkPad P70") | 2016.04 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (No), | Wifi requires Kernel 4.3.3+ |
 
 ## Lenovo
 
@@ -269,7 +267,7 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 *   Graphics and Video:
     *   With the integrated GPU, [xrandr](/index.php/Xrandr "Xrandr") can crash while attaching or detaching displays connected via the dock.
     *   The built-in miniDisplayPort will sometimes spew I²C issues into the kernel log.
-    *   [VA-API](/index.php/VA-API "VA-API") is highly recommended as it performs significantly better than CPU decoding of large media files.
+    *   [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") is highly recommended as it performs significantly better than CPU decoding of large media files.
     *   **The BIOS should not be upgraded past version 1.14, as newer BIOSes cause memory corruption when used with Bumblebee.** See [Bumblebee GitHub](https://github.com/Bumblebee-Project/bbswitch/issues/78#issuecomment-42741698)
 *   Connectivity:
     *   Bluetooth is *extremely* fragile. The controller works fine most of the time, but can cause the system to wedge totally on sleep/wake cycles, especially if a connection was active at sleep. Disable the controller using `bluetoothctl` before sleeping.

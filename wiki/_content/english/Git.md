@@ -585,6 +585,8 @@ When changing to a directory of a Git repository, the prompt will change to show
 
 **Note:** If you experience that `$(__git_ps1)` returns `((unknown))`, then there is a `.git` folder in your current directory which does not contain any repository, and therefore Git does not recognize it. This can, for example, happen if you mistake Git's configuration file to be `~/.git/config` instead of `~/.gitconfig`.
 
+Alternatively, you can use one of git shell prompt customization packages from [AUR](/index.php/AUR "AUR") such as [bash-git-prompt](https://aur.archlinux.org/packages/bash-git-prompt/) or [gittify](https://aur.archlinux.org/packages/gittify/).
+
 ### Visual representation
 
 To get an idea of the amount of work done:

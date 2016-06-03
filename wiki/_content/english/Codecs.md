@@ -1,6 +1,4 @@
-From [Wikipedia](https://en.wikipedia.org/wiki/Codec "wikipedia:Codec"):
-
-	*A codec is a device or computer program capable of encoding and/or decoding a digital data stream or signal.*
+From [Wikipedia](https://en.wikipedia.org/wiki/Codec "wikipedia:Codec"), "a codec is a device or computer program capable of encoding and/or decoding a digital data stream or signal."
 
 In general, codecs are utilized by multimedia applications to encode or decode audio or video streams. In order to play encoded streams, users must ensure an appropriate codec is installed.
 
@@ -147,7 +145,7 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 From [http://www.gstreamer.net/](http://www.gstreamer.net/):
 
-	*GStreamer is a library for constructing graphs of media-handling components. The applications supports range from simple Ogg/Vorbis playback, audio/video streaming to complex audio (mixing) and video (non-linear editing) processing.*
+	GStreamer is a library for constructing graphs of media-handling components. The applications supports range from simple Ogg/Vorbis playback, audio/video streaming to complex audio (mixing) and video (non-linear editing) processing.
 
 Simply, GStreamer is a *backend* or *framework* utilized by many media applications. See [GStreamer](/index.php/GStreamer "GStreamer") article.
 
@@ -155,7 +153,7 @@ Simply, GStreamer is a *backend* or *framework* utilized by many media applicati
 
 From [http://www.xine-project.org/about](http://www.xine-project.org/about):
 
-	*xine is a free (gpl-licensed) high-performance, portable and reusable multimedia playback engine. xine itself is a shared library with an easy to use, yet powerful API which is used by many applications for smooth video playback and video processing purposes.*
+	xine is a free (gpl-licensed) high-performance, portable and reusable multimedia playback engine. xine itself is a shared library with an easy to use, yet powerful API which is used by many applications for smooth video playback and video processing purposes.
 
 As an alternative to GStreamer, many media players can be configured to utilize the xine backend provided by [xine-lib](https://www.archlinux.org/packages/?name=xine-lib).
 
@@ -173,7 +171,7 @@ As an ultimate solution, you can try to install MPlayer binary codecs.
 
 If you are not able to play some files go to [http://www.mplayerhq.hu/design7/dload.html](http://www.mplayerhq.hu/design7/dload.html), read the instructions and install the codec you need to play your files.
 
-They can also be found in AUR with the name [codecs](https://aur.archlinux.org/packages/codecs/) and [codecs64](https://aur.archlinux.org/packages/codecs64/).
+They can also be found in the [codecs](https://aur.archlinux.org/packages/codecs/) and [codecs64](https://aur.archlinux.org/packages/codecs64/) packages.
 
 ### No H264, mpg4 or Musepack (.mpc) in Totem Player
 

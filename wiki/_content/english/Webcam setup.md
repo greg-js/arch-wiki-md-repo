@@ -172,7 +172,7 @@ options ov51x-jpeg forceblock=1
 
 The Ricoh webcam is built into most new Sony laptops.
 
-Install [r5u87x-hg](https://aur.archlinux.org/packages/r5u87x-hg/) (provides firmware too) and run the `loader` command.
+Install [r5u87x-hg](https://aur.archlinux.org/packages/r5u87x-hg/) (provides firmware too) and run the `r5u87x-loader` command.
 
 ### stk11xx (Syntek)
 

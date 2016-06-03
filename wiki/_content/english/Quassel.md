@@ -33,13 +33,14 @@ As this is a self-signed certificate, you can type whatever you want in the fiel
 
 Open port 4242 in your firewall.
 
-Start core:
-
- `# systemctl start quassel` 
+Start core by [starting](/index.php/Start "Start") `quassel.service`.
 
 Start the client and connect to core:
 
- `$ quasselclient` 
+```
+$ quasselclient
+
+```
 
 Accept your self-created certificate.
 
@@ -47,9 +48,7 @@ Now set up your IRC-servers and IRC-nicknames on the core.
 
 **Note:** As this is the first time you connected to the core, you should see a wizard where you can set up the first user-account. If you do not get this wizard, your settings might be messed up, see troubleshooting below.
 
-Once it all works, you can set it up to start automatically through on system boot:
-
- `# systemctl enable quassel` 
+Once it all works, you can [enable](/index.php/Enable "Enable") `quassel.service` to start automatically on system boot.
 
 ## Troubleshooting
 

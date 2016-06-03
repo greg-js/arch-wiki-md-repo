@@ -32,7 +32,8 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [6.8 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
     *   [6.9 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
     *   [6.10 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
-    *   [6.11 Skylake Support](#Skylake_Support)
+    *   [6.11 Skylake support](#Skylake_support)
+    *   [6.12 Lag in Windows guests](#Lag_in_Windows_guests)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -41,7 +42,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 To enable OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl). If you are on x86_64 and need 32-bit support, also install [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) from the [multilib](/index.php/Multilib "Multilib") repository.
 
-Follow [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") for hardware-accelerated video processing; on older GPUs, this is provided instead by the [XvMC](/index.php/XvMC "XvMC") driver, which is included with the DDX driver.
+Also see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
 For [Vulkan](/index.php/Vulkan "Vulkan") support, install [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) on Ivy-Bridge or newer GPUs.
 
@@ -49,7 +50,7 @@ For [Vulkan](/index.php/Vulkan "Vulkan") support, install [vulkan-intel](https:/
 
 There is no need for any configuration to run [Xorg](/index.php/Xorg "Xorg").
 
-**Note:** The latest generation of integrated GPUs (Skylake/HD 530 for instance) may require additional configuration, see [#Skylake Support](#Skylake_Support)
+**Note:** The latest generation of integrated GPUs (Skylake/HD 530 for instance) may require additional configuration, see [#Skylake support](#Skylake_support)
 
 However, to take advantage of some driver options, you will need to create a Xorg configuration file similar to the one below:
 
@@ -388,9 +389,11 @@ i915.enable_execlists=0
 
 This is known to be broken to at least kernel 4.0.5.
 
-### Skylake Support
+### Skylake support
 
 For linux kernels older than 4.3.x, `i915.preliminary_hw_support=1` must be added to your boot parameters for the driver to work on the new Intel Skylake (6th gen.) GPUs. On a fully updated system running kernel 4.3.x and up, this step is unneccesary.
+
+**Note:** Fixes for the GPU/DRM bugs are pending in kernel 4.6\. The following steps are unneccesary if you have [testing](/index.php/Testing "Testing") repo enabled, or once 4.6 lands in [core](/index.php/Official_repositories#core "Official repositories").
 
 The i915 DRM driver is known to cause various GPU hangs, crashes and even full system freezes. It might be neccesary to disable hardware acceleration to workaround these issues. One solution is to use the following Xorg configuration.
 
@@ -407,6 +410,12 @@ EndSection
 Otherwise, specific applications such as Chromium and Firefox browsers can be instructed to disable hardware rendering directly.
 
 Another option that seems to work for some users is to add the `i915.enable_rc6=0` kernel boot parameter, which will cause the CPU/GPU to remain in high-power modes, but seems to resolve most cases of GPU hangs and system freezes.
+
+**Note:** If the system appears to hang after "Loading Initial Ramdisk", make sure that the IGD aperture size in BIOS is less than 4GB.
+
+### Lag in Windows guests
+
+The video output of a Windows guests in VirtualBox sometimes hangs until the host forces a screen update (e.g. by moving the mouse cursor). Removing the `enable_fbc=1` option fixes this issue.
 
 ## See also
 

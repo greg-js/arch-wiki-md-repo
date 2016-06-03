@@ -473,7 +473,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **ASCIIpOrtal** — Gioco a scorrimento laterale con grafica di testo ANSI in cui si è una persona in possesso di un dispositivo che crea portali, o collegamenti ad altre parti del livello
 
-	[http://cymonsgames.com/asciiportal](http://cymonsgames.com/asciiportal) || [asciiportal](https://aur.archlinux.org/packages/asciiportal/)
+	[http://cymonsgames.com/asciiportal](http://cymonsgames.com/asciiportal) || [asciiportal](https://www.archlinux.org/packages/?name=asciiportal)
 
 *   **[Crawl](https://en.wikipedia.org/wiki/Linley%27s_Dungeon_Crawl "wikipedia:Linley's Dungeon Crawl") (Conosciuto come Dungeon Crawl)** — Linley's Dungeon Crawl)
 

@@ -25,6 +25,7 @@
         *   [7.7.2 Native client](#Native_client)
             *   [7.7.2.1 Upload file](#Upload_file_2)
     *   [7.8 Desktop notifications](#Desktop_notifications)
+    *   [7.9 Mobile device notifications](#Mobile_device_notifications)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Errors loading plugins](#Errors_loading_plugins)
 *   [9 Getting Help](#Getting_Help)
@@ -333,6 +334,28 @@ ln -s ../notify_send.py autoload/
 ```
 
 The script uses [libnotify](https://www.archlinux.org/packages/?name=libnotify) and is known to work with both KDE and Gnome.
+
+### Mobile device notifications
+
+To receive notifications for mentions or private messages to an Android mobile device, you can use the [IrssiNotifier](https://irssinotifier.appspot.com/) port to WeeChat from [here](http://www.weechat.org/files/scripts/irssinotifier.py). This script requires a Google Account, and a registration step with the service provider to obtain an API key. Then, install the plugin
+
+```
+cd ~/.weechat/python
+curl -O http://www.weechat.org/files/scripts/irssinotifier.py
+ln -s ../irssinotifier.py autoload/
+
+```
+
+and intialize the API token and end-to-end encryption password in WeeChat
+
+```
+/set plugins.var.python.irssinotifier.api_token your-api-token-from-website
+/set plugins.var.python.irssinotifier.encryption_password your-password-same-as-in-andoid-app
+/save
+
+```
+
+An alternative that does not require a Google Account is a Ruby script for [NotifyMyAndroid.com](http://www.notifymyandroid.com) from [here](https://github.com/jamtur01/nma-weechat), with a similar installation procedure to the above, but into `~/.weechat/ruby`.
 
 ## Troubleshooting
 

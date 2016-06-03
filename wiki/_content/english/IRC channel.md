@@ -91,7 +91,6 @@ If `/query` happens to not work in your client you can try using either `/quote 
 
 If you for some reason need the help of an op, do not be shy to `/query` or `/msg` us. Here is the list of ops as of 4 Feb 2016:
 
-*   [demize](/index.php/User:Kyrias "User:Kyrias")
 *   brain0
 *   falconindy
 *   grawity

@@ -1,12 +1,8 @@
-From the project [home page](https://tox.chat/):
-
-	*Tox is a distributed, secure messenger with audio and video chat capabilities.*
+From the project [home page](https://tox.chat/): "Tox is a distributed, secure messenger with audio and video chat capabilities."
 
 ## Installation
 
-Install one of many [Tox clients](https://wiki.tox.chat/clients). [toxcore](https://www.archlinux.org/packages/?name=toxcore) is installed as a dependency.
-
-Currently two clients are available in the official repositories:
+In order to use Tox, you should [install](/index.php/Install "Install") a [Tox client](https://wiki.tox.chat/clients):
 
 *   **qTox** — Powerful Tox client written in QT
 
@@ -15,8 +11,6 @@ Currently two clients are available in the official repositories:
 *   **Toxic** — ncurses-based CLI
 
 	[https://wiki.tox.chat/clients/toxic](https://wiki.tox.chat/clients/toxic) || [toxic](https://www.archlinux.org/packages/?name=toxic)
-
-Alternatively, select a client from the AUR:
 
 *   **gTox** — GTK3-Style Tox-Client
 

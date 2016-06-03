@@ -16,10 +16,9 @@ See [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architec
     *   [3.1 Crackling sound through mini-jack (headphones connector)](#Crackling_sound_through_mini-jack_.28headphones_connector.29)
     *   [3.2 Popping sound after resuming from suspension](#Popping_sound_after_resuming_from_suspension)
     *   [3.3 Sound skipping during playback](#Sound_skipping_during_playback)
-    *   [3.4 Crackling sound with USB sound devices](#Crackling_sound_with_USB_sound_devices)
-    *   [3.5 Poor sound quality or clipping](#Poor_sound_quality_or_clipping)
-    *   [3.6 Pops when starting and stopping playback](#Pops_when_starting_and_stopping_playback)
-    *   [3.7 Sound skipping while using dynamic CPU frequency scaling](#Sound_skipping_while_using_dynamic_CPU_frequency_scaling)
+    *   [3.4 Poor sound quality or clipping](#Poor_sound_quality_or_clipping)
+    *   [3.5 Pops when starting and stopping playback](#Pops_when_starting_and_stopping_playback)
+    *   [3.6 Sound skipping while using dynamic CPU frequency scaling](#Sound_skipping_while_using_dynamic_CPU_frequency_scaling)
 *   [4 Hardware and Cards](#Hardware_and_Cards)
     *   [4.1 Verifying output parameters](#Verifying_output_parameters)
     *   [4.2 Error 'Unknown hardware' appears after kernel update](#Error_.27Unknown_hardware.27_appears_after_kernel_update)
@@ -142,7 +141,7 @@ As the pulseaudio wrapper is shown as "default" in alsamixer, you may have to pr
 To test the microphone, run these commands (see arecord's man page for further information):
 
 ```
-$ arecord -d 5 test-mic.wav
+$ arecord -d 5 -f dat test-mic.wav
 $ aplay test-mic.wav
 
 ```
@@ -270,14 +269,6 @@ You might hear a popping sound after resuming the computer from suspension. This
 ### Sound skipping during playback
 
 Run *alsamixer*, and if channels exist for nonexistent output devices then disable them (e.g. *alsamixer* showing a center speaker but you not having one).
-
-### Crackling sound with USB sound devices
-
-Try modifying the parameters of the `snd-usb-audio` [kernel module](/index.php/Kernel_module "Kernel module") for minimal latency via `modprobe.conf`.
-
- `/etc/modprobe.d/modprobe.conf`  `options snd-usb-audio nrpacks=1` 
-
-For more information, see the following: [Tuning USB devices for minimal latency](http://alsa.opensrc.org/Usb-audio#Tuning_USB_devices_for_minimal_latencies)
 
 ### Poor sound quality or clipping
 

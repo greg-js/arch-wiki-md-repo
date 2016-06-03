@@ -2,7 +2,7 @@ NeoGRUB is an implementation of GRUB4DOS provided by the EasyBCD bootloader-conf
 
 This can be helpful if you find that updates to Arch are breaking your Arch's GRUB or Syslinux.
 
-One caveat: NeoGRUB is only known to support the following filesystems: FAT16, FAT32, MINIX fs, ext2, ReiserFS, JFS, XFS that means that your /boot partition must be one of these filesystems if you use NeoGRUB. your / and other partitions can be whatever.
+One caveat: NeoGRUB is only known to support the following filesystems: FAT16, FAT32, MINIX fs, ext2, ReiserFS, JFS, XFS that means that your /boot partition must be one of these filesystems if you use NeoGRUB. Your root partition and the others are not restricted to these filesystems.
 
 When you install NeoGRUB to the windows bootloader, click Configure. A configuration file window pops up, prompting you for GRUB configuration syntax for the NeoGrub. Here's an example to boot Arch Linux:
 

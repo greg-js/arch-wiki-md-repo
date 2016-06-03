@@ -248,7 +248,7 @@ To find the location of the hardware write-protect screw/switch/jumper and how t
 
 More information about the firmware protection available at the [Custom firmware for Chrome OS devices](/index.php/Custom_firmware_for_Chrome_OS_devices#Firmware_write_protection "Custom firmware for Chrome OS devices") page.
 
-*   Enter the command shown on the [Download ROM page at John Lewis site](https://johnlewis.ie/custom-chromebook-firmware/rom-download/) .
+*   Enter the command shown on the [Download ROM page at John Lewis site](https://johnlewis.ie/custom-chromebook-firmware/rom-download/).
 
 **Note:** The reason for not posting here is to force you to visit the site and read the page before proceeding.
 

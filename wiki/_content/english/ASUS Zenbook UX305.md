@@ -53,7 +53,14 @@ synclient TapButton3=2
 
 ```
 
-thanks to add workaround if you have one
+thanks to add workaround if you have one. This post didn't help me [https://askubuntu.com/questions/761931/cant-simulate-middle-click-with-my-trackpad-asus-zenbook-ux305ua-fc057t](https://askubuntu.com/questions/761931/cant-simulate-middle-click-with-my-trackpad-asus-zenbook-ux305ua-fc057t)
+
+Edit by [H3g3m0n](/index.php?title=User:H3g3m0n&action=edit&redlink=1 "User:H3g3m0n (page does not exist)") ([talk](/index.php?title=User_talk:H3g3m0n&action=edit&redlink=1 "User talk:H3g3m0n (page does not exist)")) 23:12, 26 May 2016 (UTC): @sputnick Button3 is actually right click. The following works for three finger middleclick on my UX305FA:
+
+```
+synclient TapButton1=1 TapButton2=3 TapButton3=2
+
+```
 
 ### Wifi
 

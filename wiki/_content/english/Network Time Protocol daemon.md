@@ -308,6 +308,20 @@ should now link to `/var/lib/ntp` instead of `/`.
 
 It is relatively difficult to be sure that your driftfile configuration is actually working without waiting a while, as *ntpd* does not read or write it very often. If you get it wrong, it will log an error; if you get it right, it will update the timestamp. If you do not see any errors about it after a full day of running, and the timestamp is updated, you should be confident of success.
 
+If you get following in your journal:
+
+```
+   ntpd[601]: frequency file /ntp.drift.TEMP: Permission denied
+
+```
+
+Try following:
+
+```
+# chown ntp:ntp /var/lib/ntp
+
+```
+
 ## See also
 
 *   [http://www.ntp.org/](http://www.ntp.org/)

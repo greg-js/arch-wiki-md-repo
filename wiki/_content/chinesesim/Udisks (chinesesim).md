@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Udisks](/index.php/Udisks "Udisks") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-08，点击[这里](https://wiki.archlinux.org/index.php?title=Udisks&diff=0&oldid=403663)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Udisks](/index.php/Udisks "Udisks") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-27，点击[这里](https://wiki.archlinux.org/index.php?title=Udisks&diff=0&oldid=434397)可以查看翻译后英文页面的改动。
 
 [udisks](http://www.freedesktop.org/wiki/Software/udisks/) 提供了 *udisksd* 守护进程，它实现了用于查询和管理存储设备的 D-Bus 接口；还提供了一个命令行工具 *udisksctl*，用于查询和使用该守护进程。
 
@@ -8,110 +8,83 @@
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
 *   [3 挂载助手](#.E6.8C.82.E8.BD.BD.E5.8A.A9.E6.89.8B)
     *   [3.1 Devmon](#Devmon)
-    *   [3.2 inotify](#inotify)
+    *   [3.2 udevadm monitor](#udevadm_monitor)
+    *   [3.3 udiskie](#udiskie)
 *   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [4.1 禁止隐藏设备（udisks2）](#.E7.A6.81.E6.AD.A2.E9.9A.90.E8.97.8F.E8.AE.BE.E5.A4.87.EF.BC.88udisks2.EF.BC.89)
     *   [4.2 挂载到 /media (udisks2)](#.E6.8C.82.E8.BD.BD.E5.88.B0_.2Fmedia_.28udisks2.29)
     *   [4.3 挂载 ISO 镜像](#.E6.8C.82.E8.BD.BD_ISO_.E9.95.9C.E5.83.8F)
     *   [4.4 隐藏选中的分区](#.E9.9A.90.E8.97.8F.E9.80.89.E4.B8.AD.E7.9A.84.E5.88.86.E5.8C.BA)
 *   [5 排错](#.E6.8E.92.E9.94.99)
-    *   [5.1 udisks: Devices do not remain unmounted](#udisks:_Devices_do_not_remain_unmounted)
+    *   [5.1 卸载的设备被自动挂载](#.E5.8D.B8.E8.BD.BD.E7.9A.84.E8.AE.BE.E5.A4.87.E8.A2.AB.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD)
+    *   [5.2 物理设备移除后再连接，无法再次挂载](#.E7.89.A9.E7.90.86.E8.AE.BE.E5.A4.87.E7.A7.BB.E9.99.A4.E5.90.8E.E5.86.8D.E8.BF.9E.E6.8E.A5.EF.BC.8C.E6.97.A0.E6.B3.95.E5.86.8D.E6.AC.A1.E6.8C.82.E8.BD.BD)
 *   [6 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
-有两个版本的 *udisks*，分别称为 [udisks](https://www.archlinux.org/packages/?name=udisks) 和 [udisks2](https://www.archlinux.org/packages/?name=udisks2)。*udisks* 的开发已终止以利于 *udisks2*。[[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
+有两个版本的 *udisks*，分别称为 [udisks](https://www.archlinux.org/packages/?name=udisks) 和 [udisks2](https://www.archlinux.org/packages/?name=udisks2)。为了集中精力开发*udisks2*，*udisks* 的开发已终止 。[[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) 和 *udisks-daemon* ([udisks](https://www.archlinux.org/packages/?name=udisks)) 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，并且不应该被显式地启用。（参阅 `man udisksd` 和 `man udisks-daemon`）。它们分别可以通过 *udisksctl* 和 *udisks* 以命令行方式管控。详情参阅 `man udisksctl` 和 `man udisks`。
+*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) 和 *udisks-daemon* ([udisks](https://www.archlinux.org/packages/?name=udisks)) 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，不应该被显式地启用。（参阅 `man udisksd` 和 `man udisks-daemon`）。可以通过 *udisksctl* 和 *udisks* 以命令行方式分别进行管控。详情参阅 `man udisksctl` 和 `man udisks`。
 
 ## 配置
 
-用户通过 udisks 可执行的动作受限于 [Polkit](/index.php/Polkit "Polkit")。If your [session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") is not activated or present, configure policykit manually. The following file sets common udisks permissions for the `storage` group. [[2]](https://github.com/coldfix/udiskie#permissions)
+用户通过 udisks 可执行的动作 [Polkit](/index.php/Polkit "Polkit") 控制。如果[会话](/index.php/Session "Session")不活跃或不存在，例如通过 [systemd/User](/index.php/Systemd/User "Systemd/User") 控制 udisks 是，需要手动配置 policykit.
 
- `/etc/polkit-1/rules.d/50-udisks.rules` 
-```
-polkit.addRule(function(action, subject) {
-  var YES = polkit.Result.YES;
-  var permission = {
-    // only required for udisks1:
-    "org.freedesktop.udisks.filesystem-mount": YES,
-    "org.freedesktop.udisks.filesystem-mount-system-internal": YES,
-    "org.freedesktop.udisks.luks-unlock": YES,
-    "org.freedesktop.udisks.drive-eject": YES,
-    "org.freedesktop.udisks.drive-detach": YES,
-    // only required for udisks2:
-    "org.freedesktop.udisks2.filesystem-mount": YES,
-    "org.freedesktop.udisks2.filesystem-mount-system": YES,
-    "org.freedesktop.udisks2.encrypted-unlock": YES,
-    "org.freedesktop.udisks2.eject-media": YES,
-    "org.freedesktop.udisks2.power-off-drive": YES,
-    // required for udisks2 if using udiskie from another seat (e.g. systemd):
-    "org.freedesktop.udisks2.filesystem-mount-other-seat": YES,
-    "org.freedesktop.udisks2.encrypted-unlock-other-seat": YES,
-    "org.freedesktop.udisks2.eject-media-other-seat": YES,
-    "org.freedesktop.udisks2.power-off-drive-other-seat": YES
-  };
-  if (subject.isInGroup("storage")) {
-    return permission[action.id];
-  }
-});
-```
-
-See [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example. Note the `org.freedesktop.udisks2.filesystem-*` settings, which are required to start udiskie from a [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") service.
+[这里](https://github.com/coldfix/udiskie/wiki/Permissions) 包含 `storage` 群组的 udisk 配置， [这里](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js)有一个更严格的版本。
 
 ## 挂载助手
 
-Automatic mounting of devices is easily achieved with [udisks wrappers](/index.php/List_of_applications#Udisks "List of applications"). See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications") and [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
+通过 [udisks 工具程序](/index.php/List_of_applications#Udisks "List of applications")也可以实现挂载，请参考 [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications") 和 [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality")。
 
 ### Devmon
 
-[udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible to *udisks* and *udisks2*. It uses mount helpers with the following priority:
+[udevil](https://www.archlinux.org/packages/?name=udevil) 包含 [devmon](http://igurublog.wordpress.com/downloads/script-devmon), 这个程序和 *udisks*/*udisks2* 兼容，按照下面的优先级选择挂载程序：
 
 1.  [udevil](http://ignorantguru.github.io/udevil/) (SUID)
 2.  pmount (SUID)
 3.  udisks
 4.  udisks2
 
-To mount devices with *udisks* or *udisks2*, remove the SUID permission from *udevil*:
+要通过 *udisks* 或 *udisks2* 挂载，从 *udevil* 删除 SUID:
 
 ```
 # chmod -s /usr/bin/udevil
 
 ```
 
-**Note:** `chmod -x /usr/bin/udevil` as root causes devmon to use *udisks* for device monitoring
+**Note:** 用 root 执行 `chmod -x /usr/bin/udevil` 会让 devmon 使用 *udisks* 执行设备监控。
 
-**Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@*user*.service`. Keep in mind services run outside the [session](/index.php/Session "Session"). Adjust Polkit rules where appropriate, or run `devmon` from the user session (see [Autostart](/index.php/Autostart "Autostart")).
+**Tip:** 要在后台执行 devmon 自动挂载，用 `devmon@.service` [启用服务](/index.php/Enable "Enable")，用户名作为参数: `devmon@*user*.service`. 请注意这里是在 [session](/index.php/Session "Session") 之外执行的，需要调整 Polkit 规则或从用户会话启动，参考 [自动启动](/index.php/Autostart "Autostart").
 
-### inotify
+### udevadm monitor
 
-You may use [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) to monitor `/dev`, and mount drives when a new block device is created. Stale mount points are automatically removed by *udisksd*, such that no special action is required on deletion.
+可以使用 `udevadm monitor` 监测块设备事件并在新的块设备被创建时进行挂载。无用的挂载点会被 *udisksd* 自动删除，所以删除时不需要额外动作。
 
 ```
 #!/bin/bash
-pattern='sd[b-z][1-9]$'
-coproc inotifywait --monitor --event create,delete --format '%e %w%f' /dev
 
-while read -r -u "${COPROC[0]}" event file; do
-    if [[ $file =~ $pattern ]]; then
-	case $event in
-	    CREATE)
-		echo "Settling..."; sleep 1
-		udisksctl mount --block-device $file --no-user-interaction
-		;;
-	    DELETE)
-		;;
-	esac
-    fi
-done
+pathtoname() {
+    udevadm info -p "/sys/$1" | awk -v FS== '/DEVNAME/ {print $2}'
+}
+
+while read -r _ _ event devpath _; do
+        if [[ $event == add ]]; then
+            devname=$(pathtoname "$devpath")
+            udisksctl mount --block-device "$devname" --no-user-interaction
+        fi
+done < <(stdbuf -o L udevadm monitor --udev -s block)
 
 ```
+
+### udiskie
+
+[udiskie](https://github.com/coldfix/udiskie) 是使用 [udisks](https://www.archlinux.org/packages/?name=udisks) 或 [udisks2](https://www.archlinux.org/packages/?name=udisks2) 的挂载助手，支持密码保护的 [LUKS 设备](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). 请参考[Wiki](https://github.com/coldfix/udiskie/wiki/Usage).
 
 ## 提示与技巧
 
 ### 禁止隐藏设备（udisks2）
 
-Udisks2 hides certain devices from the user by default. If this is undesired or otherwise problematic, copy `/usr/lib/udev/rules.d/80-udisks2.rules` to `/etc/udev/rules.d/80-udisks2.rules` and remove the following section in the copy:
+Udisks2 在默认情况下会隐藏一些设备，如果不希望隐藏，可以将 `/usr/lib/udev/rules.d/80-udisks2.rules` 复制到 `/etc/udev/rules.d/80-udisks2.rules` 并删除不需要隐藏的设备：
 
 ```
 # ------------------------------------------------------------------------
@@ -138,18 +111,18 @@ ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
 
 ### 挂载 ISO 镜像
 
-To easily mount ISO images, use the following command:
+要挂载 ISO 镜像，使用下面命令：
 
 ```
 $ udisksctl loop-setup -r -f *image.iso*
 
 ```
 
-This will create a loop device and show the ISO image ready to mount. Once unmounted, the loop device will be terminated by [udev](/index.php/Udev "Udev").
+这条命令会创建 loop 设备并显示可以挂载的 ISO 镜像，卸载后，loop 设备会被 [udev](/index.php/Udev "Udev") 删除.
 
 ### 隐藏选中的分区
 
-If you wish to prevent certain partitions or drives appearing on the desktop, you can create a udev rule, for example `/etc/udev/rules.d/10-local.rules`:
+如果要在桌面中隐藏某些分区或设备，可以创建类似下面的 udev 规则 `/etc/udev/rules.d/10-local.rules`:
 
 ```
 KERNEL=="sda1", ENV{UDISKS_PRESENTATION_HIDE}="1"
@@ -157,7 +130,7 @@ KERNEL=="sda2", ENV{UDISKS_PRESENTATION_HIDE}="1"
 
 ```
 
-shows all partitions with the exception of `sda1` and `sda2` on your desktop. Notice if you are using [udisks2](https://www.archlinux.org/packages/?name=udisks2) the above will not work as `UDISKS_PRESENTATION_HIDE` is no longer supported. Instead use `UDISKS_IGNORE` as follows:
+会隐藏 `sda1` 和 `sda2`，如果使用 [udisks2](https://www.archlinux.org/packages/?name=udisks2)，请使用 `UDISKS_IGNORE`:
 
 ```
 KERNEL=="sda1", ENV{UDISKS_IGNORE}="1"
@@ -167,25 +140,42 @@ KERNEL=="sda2", ENV{UDISKS_IGNORE}="1"
 
 ## 排错
 
-### udisks: Devices do not remain unmounted
+### 卸载的设备被自动挂载
 
-*udisks* remounts devices after a given period, or *polls* those devices. This can cause unexpected behaviour, for example when formatting drives, sharing them in a [virtual machine](/index.php/Virtual_machine "Virtual machine"), power saving, or removing a drive that was not detached with `--detach` before.
+*udisks* 会定期检查设备并自动挂载，这会在格式化磁盘，[虚拟机](/index.php/Virtual_machine "Virtual machine") 共享时导致问题，不利于省电。
 
-To disable polling for a given device, for example a CD/DVD device:
+禁用设备定期检查，以 CD/DVD 设备为例:
 
 ```
 # udisks --inhibit-polling /dev/sr*0*
 
 ```
 
-or for all devices:
+要禁用所有设备的定期检查:
 
 ```
 # udisks --inhibit-all-polling
 
 ```
 
-See `man udisks` for more information.
+详情请参考`man udisks`.
+
+### 物理设备移除后再连接，无法再次挂载
+
+当 udisk 和 [systemd](/index.php/Systemd "Systemd") 同时尝试卸载设备时可能会出现此问题，[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1588027#p1588027) [[3]](https://github.com/systemd/systemd/issues/1741) 错误信息:
+
+```
+Jan 16 18:46:04 thinkpad systemd[1]: media-ASMT_2105.mount: Unit is bound to inactive unit dev-sdc2.device. Stopping, too.
+Jan 16 18:46:04 thinkpad systemd[1]: Unmounting /media/ASMT_2105...
+
+```
+
+重置设备挂载状态：
+
+```
+# systemctl reset-failed
+
+```
 
 ## 参阅
 

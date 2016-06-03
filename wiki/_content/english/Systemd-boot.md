@@ -1,4 +1,4 @@
-**systemd-boot** (previously called **gummiboot**), is a simple UEFI boot manager which executes configured EFI images. The default entry is selected by a configured pattern (glob) or an on-screen menu. It is included with systemd since [systemd](https://www.archlinux.org/packages/?name=systemd) 220-2.
+**systemd-boot**, previously called **gummiboot**, is a simple UEFI boot manager which executes configured EFI images. The default entry is selected by a configured pattern (glob) or an on-screen menu. It is included with the [systemd](https://www.archlinux.org/packages/?name=systemd), which is installed on an Arch system by default.
 
 It is simple to configure, but can only start EFI executables, such as the Linux kernel [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, the Windows Boot Manager, and such.
 
@@ -57,7 +57,7 @@ If you can do so, the installation is easier: go into your EFI shell or your fir
 systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) assumes that your EFI System Partition is mounted on `/boot`. Unlike the previous separate *gummiboot* package, which updated automatically on a new package release with a `post_install` script, updates of new systemd-boot versions are now handled manually by the user:
 
 ```
-# bootctl update  
+# bootctl update
 
 ```
 
@@ -67,6 +67,8 @@ If the ESP is not mounted on `/boot`, the `--path=` option can pass it. For exam
 # bootctl --path=*esp* update
 
 ```
+
+**Note:** This is also the command to use when migrating from *gummiboot*, before removing that package. If that package has already been removed, however, run `bootctl --path=*esp* install`
 
 ## Configuration
 
@@ -162,7 +164,17 @@ initrd /initramfs-linux.img
 options cryptdevice=UUID=<UUID>:<mapped-name> root=/dev/mapper/<mapped-name> quiet rw
 ```
 
-UUID is used in this example; PARTUUID should be able to replace the UUID, if so desired. You may also replace the /dev path with a regular UUID. See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
+UUID is used in this example; PARTUUID should be able to replace the UUID, if so desired. You may also replace the /dev path with a regular UUID. Mapped-name is whatever you want it to be called. See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
+
+If you are using LVM, your cryptdevice line will looks like this.
+
+ `*esp*/loader/entries/arch-encrypted-lvm.conf` 
+```
+title Arch Linux Encrypted LVM
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options cryptdevice=UUID=<UUID>:MyVolGroup root=/dev/mapper/MyVolGroup-MyVolRoot quiet rw
+```
 
 You can also add other EFI programs such as `\EFI\arch\grub.efi`.
 

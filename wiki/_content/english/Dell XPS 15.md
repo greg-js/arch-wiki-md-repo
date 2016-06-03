@@ -24,22 +24,23 @@ This page is a work in progress! More info coming soon.
 *   [1 System Settings](#System_Settings)
 *   [2 System Setup](#System_Setup)
     *   [2.1 Power Management](#Power_Management)
-    *   [2.2 Graphics](#Graphics)
-        *   [2.2.1 Intel only](#Intel_only)
-            *   [2.2.1.1 acpi_call usage](#acpi_call_usage)
-        *   [2.2.2 Intel with Nvidia](#Intel_with_Nvidia)
-    *   [2.3 Screen](#Screen)
-    *   [2.4 External Display](#External_Display)
-        *   [2.4.1 Multihead](#Multihead)
-    *   [2.5 WLAN](#WLAN)
-        *   [2.5.1 Note](#Note)
-    *   [2.6 Bluetooth](#Bluetooth)
-    *   [2.7 Webcam](#Webcam)
-    *   [2.8 Power management](#Power_management_2)
-    *   [2.9 Special Touch Keys](#Special_Touch_Keys)
-        *   [2.9.1 Alternative method](#Alternative_method)
-    *   [2.10 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
-    *   [2.11 Notes](#Notes)
+    *   [2.2 Sound](#Sound)
+    *   [2.3 Graphics](#Graphics)
+        *   [2.3.1 Intel only](#Intel_only)
+            *   [2.3.1.1 acpi_call usage](#acpi_call_usage)
+        *   [2.3.2 Intel with Nvidia](#Intel_with_Nvidia)
+    *   [2.4 Screen](#Screen)
+    *   [2.5 External Display](#External_Display)
+        *   [2.5.1 Multihead](#Multihead)
+    *   [2.6 WLAN](#WLAN)
+        *   [2.6.1 Note](#Note)
+    *   [2.7 Bluetooth](#Bluetooth)
+    *   [2.8 Webcam](#Webcam)
+    *   [2.9 Power management](#Power_management_2)
+    *   [2.10 Special Touch Keys](#Special_Touch_Keys)
+        *   [2.10.1 Alternative method](#Alternative_method)
+    *   [2.11 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
+    *   [2.12 Notes](#Notes)
 *   [3 Howtos](#Howtos)
 
 ## System Settings
@@ -199,6 +200,62 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ### Power Management
 
 For the Sandy Bridge model (L502X): Suspend works; hibernation does not (it gets hung on a flashing cursor in text mode and does not even switch video modes).
+
+### Sound
+
+For the XPS 9550 variant, sound works out of the box with the linux kernel. If you try to plug in headphones, you won't hear any output from them. Upon restart, you'll receive a **Dummy Output** as your sound card.
+
+sudo aplay -l should give you this output if Arch can detect your soundcard:
+
+```
+**** List of PLAYBACK Hardware Devices ****
+card 0: PCH [HDA Intel PCH], device 0: ALC3266 Analog [ALC3266 Analog]
+  Subdevices: 0/1
+  Subdevice #0: subdevice #0
+card 0: PCH [HDA Intel PCH], device 3: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: PCH [HDA Intel PCH], device 7: HDMI 1 [HDMI 1]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: PCH [HDA Intel PCH], device 8: HDMI 2 [HDMI 2]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+```
+
+sudo aplay -l will give you this output if Arch cannot detect your soundcard:
+
+```
+aplay: device_list:268: no soundcards found...
+
+```
+
+You may or may not get sound back after a few restarts. This is a bug and has been documented here: [[1]](https://bugs.archlinux.org/task/49157)
+
+Things you can try:
+
+```
+sudo modprobe snd_hda_intel
+
+```
+
+Then reboot.
+
+Use the linux-lts kernel until the bug is resolved. Click here for more information on changing your kernel: [System maintenance#Install the linux-lts package](/index.php/System_maintenance#Install_the_linux-lts_package "System maintenance")
+
+If changing the kernel does not work, make sure FluidSynth is installed and enabled (systemctl enable fluidsynth). Then ensure the line "AUDIO_DRIVER" in /etc/conf.d/fluidsynth matches this:
+
+```
+...
+AUDIO_DRIVER=alsa
+...
+
+```
+
+It may take a few restarts to get headphones to register in alsamixer. Sometimes, when you plug in your headphones, you may have to unmute the channel in alsamixer.
+
+Regardless, for now, it is recommended that you reduce hot-plugging headphones as it makes ALSA/PulseAudio break/very unstable.
 
 ### Graphics
 

@@ -37,6 +37,15 @@ path = ~/mail/
 
 You can tweak this to your POP3 service's specification.
 
+To store the password in a keyring instead of in plain text in the configuration file, setup [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), and install the [python2-gnomekeyring](https://www.archlinux.org/packages/?name=python2-gnomekeyring) package. Then, delete the `password` entry from `getmailrc`, and run
+
+```
+ getmail --store-password-in-gnome-keyring
+
+```
+
+type the password when prompted to have it saved into the keyring.
+
 Most people will like to add the following section to their `getmailrc` to prevent all the mail on the server being downloaded every time getmail is ran.
 
 ```

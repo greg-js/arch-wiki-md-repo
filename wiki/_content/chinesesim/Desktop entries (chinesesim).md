@@ -102,7 +102,7 @@ This will give you very verbose and useful warnings and error messages.
 
 ### 通用图像格式
 
-Here is a short overview of image formats commonly used for icons.
+用于图标的图像文件格式简述如下：
 
 <caption>Support for image formats for icons as specified by the [freedesktop.org standard](http://standards.freedesktop.org/icon-theme-spec/latest/ar01s02.html).</caption>
 | Extension | Full Name and/or Description | Graphics Type | Container Format | Supported |

@@ -26,6 +26,7 @@ For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install
 *   [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers): Image files
 *   [kdesdk-thumbnailers](https://www.archlinux.org/packages/?name=kdesdk-thumbnailers): Plugins for the thumbnailing system
 *   [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs): Video files
+*   [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs): Video files (based on ffmpeg)
 *   [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer): `.raw` files
 *   [audiothumbs](https://aur.archlinux.org/packages/audiothumbs/): Audio files
 *   [kde-thumbnailer-apk](https://aur.archlinux.org/packages/kde-thumbnailer-apk/): **A**ndroid **a**pplication **p**ackage files

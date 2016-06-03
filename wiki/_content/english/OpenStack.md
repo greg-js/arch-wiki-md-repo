@@ -42,7 +42,7 @@ Swift is not available in Arch, yet.
 
 ### Identity (Keystone)
 
-[keystone](https://aur.archlinux.org/packages/keystone/) is available in the [AUR](/index.php/AUR "AUR").
+[keystone](https://www.archlinux.org/packages/?name=keystone) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Dashboard (Horizon)
 

@@ -11,11 +11,12 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [2.3 All jobs are "The printer is not responding"](#All_jobs_are_.22The_printer_is_not_responding.22)
     *   [2.4 The PPD version is not compatible with gutenprint](#The_PPD_version_is_not_compatible_with_gutenprint)
 *   [3 Networking issues](#Networking_issues)
-    *   [3.1 CUPS identifies printer but cannot connect to it](#CUPS_identifies_printer_but_cannot_connect_to_it)
+    *   [3.1 Unable to locate printer](#Unable_to_locate_printer)
+    *   [3.2 CUPS identifies printer but cannot connect to it](#CUPS_identifies_printer_but_cannot_connect_to_it)
 *   [4 USB printers](#USB_printers)
 *   [5 HP issues](#HP_issues)
     *   [5.1 CUPS: "/usr/lib/cups/backend/hp failed"](#CUPS:_.22.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.22)
-    *   [5.2 CUPS: job is shown as complete but the printer does nothing](#CUPS:_job_is_shown_as_complete_but_the_printer_does_nothing)
+    *   [5.2 CUPS: Job is shown as complete but the printer does nothing](#CUPS:_Job_is_shown_as_complete_but_the_printer_does_nothing)
     *   [5.3 CUPS: '"foomatic-rip" not available/stopped with status 3'](#CUPS:_.27.22foomatic-rip.22_not_available.2Fstopped_with_status_3.27)
     *   [5.4 CUPS: "Filter failed"](#CUPS:_.22Filter_failed.22)
         *   [5.4.1 Bad permissions](#Bad_permissions)
@@ -33,18 +34,16 @@ This article covers all non-specific (ie, not related to any one printer) troubl
 *   [6 Other](#Other)
     *   [6.1 Printer "Paused" or "Stopped" with Status "Rendering completed"](#Printer_.22Paused.22_or_.22Stopped.22_with_Status_.22Rendering_completed.22)
         *   [6.1.1 Explanation of the GID issue](#Explanation_of_the_GID_issue)
-    *   [6.2 CUPS permission errors](#CUPS_permission_errors)
-    *   [6.3 Printing fails with unauthorised error](#Printing_fails_with_unauthorised_error)
-    *   [6.4 Unknown supported format: application/postscript](#Unknown_supported_format:_application.2Fpostscript)
-    *   [6.5 Print-Job client-error-document-format-not-supported](#Print-Job_client-error-document-format-not-supported)
-    *   [6.6 Unable to get list of printer drivers](#Unable_to_get_list_of_printer_drivers)
-    *   [6.7 lp: Error - Scheduler Not Responding](#lp:_Error_-_Scheduler_Not_Responding)
-    *   [6.8 "Using invalid Host" error message](#.22Using_invalid_Host.22_error_message)
-    *   [6.9 Printer is not recognized by CUPS](#Printer_is_not_recognized_by_CUPS)
-        *   [6.9.1 Conflict with SANE](#Conflict_with_SANE)
-    *   [6.10 Cannot print from LibreOffice](#Cannot_print_from_LibreOffice)
-    *   [6.11 Printer output shifted](#Printer_output_shifted)
-    *   [6.12 Printer becomes stuck after a problem](#Printer_becomes_stuck_after_a_problem)
+    *   [6.2 Printing fails with unauthorised error](#Printing_fails_with_unauthorised_error)
+    *   [6.3 Unknown supported format: application/postscript](#Unknown_supported_format:_application.2Fpostscript)
+    *   [6.4 Print-Job client-error-document-format-not-supported](#Print-Job_client-error-document-format-not-supported)
+    *   [6.5 Unable to get list of printer drivers](#Unable_to_get_list_of_printer_drivers)
+    *   [6.6 lp: Error - Scheduler Not Responding](#lp:_Error_-_Scheduler_Not_Responding)
+    *   [6.7 "Using invalid Host" error message](#.22Using_invalid_Host.22_error_message)
+    *   [6.8 Conflict with SANE](#Conflict_with_SANE)
+    *   [6.9 Cannot print from LibreOffice](#Cannot_print_from_LibreOffice)
+    *   [6.10 Printer output shifted](#Printer_output_shifted)
+    *   [6.11 Printer becomes stuck after a problem](#Printer_becomes_stuck_after_a_problem)
 
 ## Introduction
 
@@ -123,6 +122,10 @@ And restart CUPS (as pointed out in gutenprint's post-install message)
 
 ## Networking issues
 
+### Unable to locate printer
+
+Even if CUPS can detect networked printers, you may still end up with an "Unable to locate printer" error when trying to print something. The solution to this problem is to enable Avahi's [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi"). See [CUPS#Local Network](/index.php/CUPS#Local_Network "CUPS") for details.
+
 ### CUPS identifies printer but cannot connect to it
 
 Enable debug logging. If you see `Executing backend "/usr/lib/cups/backend/dnssd"...` over and over switch from dnssd to socket in the printer configuration.
@@ -189,11 +192,11 @@ Try adding the printer as a Network Printer using the http:// protocol.
 
 **Note:** There might need to set permissions issues right.
 
-### CUPS: job is shown as complete but the printer does nothing
+### CUPS: Job is shown as complete but the printer does nothing
 
-This happens on HP printers when you select the (old) hpijs driver (e.g. the Deskjet D1600 series). Instead, use the hpcups driver when adding the printer.
+This happens on HP printers when you select the (old) hpijs driver (e.g. the Deskjet D1600 series). Use the hpcups driver instead.
 
-Some HP printers (e.g HP LaserJet) require their firmware to be downloaded from the computer every time the printer is switched on. If there is an issue with udev (or equivalent) and the firmware download rule is never fired, you may experience this issue. As a workaround, you can manually download the firmware to the printer. Ensure the printer is plugged in and switched on, then enter
+Some HP printers require their firmware to be downloaded from the computer every time the printer is switched on. If there is an issue with udev (or equivalent) and the firmware download rule is never fired, you may experience this issue. As a workaround, you can manually download the firmware to the printer. Ensure the printer is plugged in and switched on, then run
 
 ```
 hp-firmware -n
@@ -292,15 +295,15 @@ This can also be caused by printers such as the P1102 that provide a virtual CD-
 
 #### Networked printers
 
-This can also occur with network attached printers if the [avahi-daemon](/index.php/Avahi "Avahi") is not running. Another possibility is the specification of the printer's IP address in *hp-setup* fails to locate the printer because the IP address of the the printer changed due to DHCP. If this is the case, consider adding a DHCP reservation for the printer in the DHCP server's configuration.
+This can also occur with network attached printers using dynamic hostnames if the [avahi-daemon](/index.php/Avahi "Avahi") is not running. Another possibility is that *hp-setup* failed to locate the printer because the IP address of the the printer changed due to DHCP. If this is the case, consider adding a DHCP reservation for the printer in the DHCP server's configuration.
 
 ### hp-setup asks to specify the PPD file for the discovered printer
 
-Install CUPS before running hp-setup.
+Install and start CUPS before running hp-setup.
 
 ### hp-setup: "Qt/PyQt 4 initialization failed"
 
-You need to [install](/index.php/Install "Install") [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4), which is an optdepend of [hplip](https://www.archlinux.org/packages/?name=hplip). Alternatively, to run hp-setup with the command line interface, use the `-i` flag.
+[Install](/index.php/Install "Install") [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4), which is an optdepend of [hplip](https://www.archlinux.org/packages/?name=hplip). Alternatively, to run hp-setup with the command line interface, use the `-i` flag.
 
 ### hp-setup: finds the printer automatically but reports "Unable to communicate with device" when printing test page immediately afterwards
 
@@ -340,15 +343,6 @@ Error messages can be sent to the systemd-journald log instead of to the default
  `/etc/cups/cups-files.conf`  `ErrorLog syslog` 
 
 Currently, even then, the command `systemctl status org.cups.cupsd.service` will not properly display the final group collision error message, but the error message can still be seen in the journal, with for instance, `sudo journalctl -f`.
-
-### CUPS permission errors
-
-Some users fixed 'NT_STATUS_ACCESS_DENIED' (Windows clients) errors by using a slightly different syntax:
-
-```
-smb://workgroup/username:password@hostname/printer_name
-
-```
 
 ### Printing fails with unauthorised error
 
@@ -398,54 +392,13 @@ ServerName localhost:631
 
 ### lp: Error - Scheduler Not Responding
 
-If you get this error when printing a document using:
-
-```
-$ lp document-to-print
-
-```
-
-Try setting the `CUPS_SERVER` environment variable:
-
-```
-$ export CUPS_SERVER=localhost
-
-```
-
-If this solves your problem, make the solution permanent by adding the export line above to `~/.bash_profile`.
+If you get this error, ensure [CUPS](/index.php/CUPS "CUPS") is running, the environmental variable `CUPS_SERVER` is unset, and that `/etc/cups/client.conf` is correct.
 
 ### "Using invalid Host" error message
 
 Try adding `ServerAlias *` into `/etc/cups/cupsd.conf`.
 
-### Printer is not recognized by CUPS
-
-If your printer is not listed in the "Add Printers" page of the CUPS web interface, nor by `lpinfo -v`, try the following (suggested in [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1037279#p1037279)):
-
-*   Remove `usblp` from blacklist
-*   Load `usblp` module
-
-```
-# modprobe usblp
-
-```
-
-*   Stop CUPS
-*   Add the following udev rule in a new rule file:
-
- `/etc/udev/rules.d/10-cups_device_link.rules`  `KERNEL=="lp[0-9]", SYMLINK+="%k", GROUP="lp"` 
-
-*   Reload udev rules:
-
-```
-# udevadm control --reload-rules
-
-```
-
-*   Unplug the printer, and plug it in again.
-*   Wait a few seconds, and then start the CUPS service.
-
-#### Conflict with SANE
+### Conflict with SANE
 
 If you are also running [SANE](/index.php/SANE "SANE"), it's possible that it is conflicting with CUPS.
 

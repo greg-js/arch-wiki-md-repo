@@ -46,7 +46,7 @@ Some programs can add extra functionality to Nemo. Here are a few packages that 
 
 	[http://www.rabbitvcs.org/](http://www.rabbitvcs.org/) || [rabbitvcs-nemo](https://aur.archlinux.org/packages/rabbitvcs-nemo/)
 
-See [nemo-extensions github repo](https://github.com/linuxmint/nemo-extensions) for all extensions.
+See [AUR](https://aur.archlinux.org/packages/?O=0&K=nemo-) and [nemo-extensions github repo](https://github.com/linuxmint/nemo-extensions) for all extensions.
 
 ## Configuration
 

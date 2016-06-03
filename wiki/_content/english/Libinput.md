@@ -56,7 +56,11 @@ to change a setting.
 
 See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") and [#Touchpad configuration](#Touchpad_configuration) illustrate examples.
 
-Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence. One way to check which devices are managed by libinput is the *xorg* logfile. For example, the following:
+Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence.
+
+**Tip:** You might have to manually remove the synaptics configuration, probably at `/etc/X11/xorg.conf.d/50-synaptics.conf`, to make a touchpad work correctly with libinput.
+
+One way to check which devices are managed by libinput is the *xorg* logfile. For example, the following:
 
  `$ grep -e "Using input driver 'libinput'" ~/.local/share/xorg/Xorg.0.log` 
 ```
@@ -110,20 +114,23 @@ In this example, we mapped button 6 to be the middle button and disabled the ori
 
 **Tip:** You can use *xev* (from the [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) package) to find out which physical button is currently mapped to which ID.
 
-Some devices occur several times under the same device name, with a different amount of buttons exposed. The following shell script is an example for reliably changing the button mapping for a Logitech Revolution MX mouse:
+Some devices occur several times under the same device name, with a different amount of buttons exposed. The following is an example for reliably changing the button mapping for a Logitech Revolution MX mouse via [xinitrc](/index.php/Xinitrc "Xinitrc"):
 
- `remap-revolution.sh` 
+ `~/.xinitrc` 
 ```
-#!/usr/bin/bash
-for i in `xinput list | grep "Logitech USB Receiver" | perl -n -e'/id=(\d+)/ && print "$1
-"'`
+...
+for i in $(xinput list | grep "Logitech USB Receiver" | perl -n -e'/id=(\d+)/ && print "$1
+"')
 	do if xinput get-button-map "$i" 2>/dev/null| grep -q 20; then
 		xinput set-button-map "$i" 1 17 3 4 5 8 7 6 9 10 11 12 13 14 15 16 2 18 19 20
 	fi
 done
+...
 ```
 
 ### Debugging
+
+First, see whether the packaged *libinput-debug-events* tool can support you in debugging the problem. Executing `libinput-debug-events --help` shows options it covers.
 
 Some inputs require kernel support. The tool *evemu-describe* from the [evemu](https://www.archlinux.org/packages/?name=evemu) package can be used to check:
 
@@ -135,7 +142,7 @@ While the libinput driver already contains logic to process advanced multitouch 
 
 For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile.
 
-The utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file. An [AUR](/index.php/AUR "AUR") package is not available yet.[[3]](https://github.com/bulletmark/libinput-gestures/issues/6)
+The utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file. An [AUR](/index.php/AUR "AUR") package is not available yet.[[2]](https://github.com/bulletmark/libinput-gestures/issues/6)
 
 ## See also
 

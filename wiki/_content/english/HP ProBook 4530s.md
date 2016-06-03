@@ -14,20 +14,23 @@
 *   [1 Device information](#Device_information)
     *   [1.1 lspci](#lspci)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Network](#Network)
-    *   [2.2 Bluetooth](#Bluetooth)
-        *   [2.2.1 hciconfig -a](#hciconfig_-a)
-    *   [2.3 Graphics](#Graphics)
-        *   [2.3.1 Brightness](#Brightness)
-    *   [2.4 Touchpad](#Touchpad)
-    *   [2.5 Miscellaneous hardware](#Miscellaneous_hardware)
-        *   [2.5.1 Card reader](#Card_reader)
-        *   [2.5.2 Function keys](#Function_keys)
-        *   [2.5.3 Camera](#Camera)
-        *   [2.5.4 HP DriveGuard](#HP_DriveGuard)
-    *   [2.6 Power](#Power)
-    *   [2.7 Suspend and hibernation](#Suspend_and_hibernation)
-        *   [2.7.1 Sensors](#Sensors)
+    *   [2.1 Fan throttling](#Fan_throttling)
+    *   [2.2 Intel CPU microcode](#Intel_CPU_microcode)
+    *   [2.3 Network](#Network)
+        *   [2.3.1 WLAN BIOS whitelist workaround (experimental)](#WLAN_BIOS_whitelist_workaround_.28experimental.29)
+    *   [2.4 Bluetooth](#Bluetooth)
+        *   [2.4.1 hciconfig -a](#hciconfig_-a)
+    *   [2.5 Graphics](#Graphics)
+        *   [2.5.1 Brightness](#Brightness)
+    *   [2.6 Touchpad](#Touchpad)
+    *   [2.7 Miscellaneous hardware](#Miscellaneous_hardware)
+        *   [2.7.1 Card reader](#Card_reader)
+        *   [2.7.2 Function keys](#Function_keys)
+        *   [2.7.3 Camera](#Camera)
+        *   [2.7.4 HP DriveGuard](#HP_DriveGuard)
+    *   [2.8 Power](#Power)
+    *   [2.9 Suspend and hibernation](#Suspend_and_hibernation)
+        *   [2.9.1 Sensors](#Sensors)
 
 ## Device information
 
@@ -60,11 +63,33 @@ This model has many hardware configurations. Mine has an i3 processor, Intel HD 
 
 ## Configuration
 
+### Fan throttling
+
+The fan can be controlled (throttled) in software, otherwise it never shuts off, even if the BIOS option "Fan always on while on AC power" is disabled. There are two programs supporting the 4730s:
+
+*   [NoteBook FanControl](https://github.com/hirschmann/nbfc)
+*   [probook_ec.pl script](http://ubuntuforums.org/showthread.php?t=2008756&p=12422983#post12422983) daemonized [in Python](https://github.com/deanrock/probook-fan-control) and [in Ruby](https://github.com/opinsys/puavo-hw-tools/tree/master/bin)
+
+### Intel CPU microcode
+
+See [Microcode#Enabling Intel microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
+
 ### Network
 
 Both the wired and wireless network cards works out-of-the-box. The Atheros card requires the **ath9k** module, and the Realtek Ethernet card requires the **r8169** module. More information can be found at [Wireless network configuration#ath9k](/index.php/Wireless_network_configuration#ath9k "Wireless network configuration")
 
 **Note:** With some revisions of this Realtek Ethernet card, better performance may be obtained with the Realtek provided [r8168](https://www.archlinux.org/packages/?name=r8168) module, available in the [official repositories](/index.php/Official_repositories "Official repositories").
+
+#### WLAN BIOS whitelist workaround (experimental)
+
+HP BIOS allows only certain WLAN cards (whitelisting) to be used. This can be worked around by adding the following as the first GRUB command in every OS entry:
+
+```
+write_dword 0xFED1F418 0x1F501FEB
+
+```
+
+You can read more on engineering this hack [here](http://milksnot.com/content/project-dirty-laundry-how-defeat-whitelisting-without-bios-modding). As it is working on 4330s and 4730s it should probably also on 4530s, but consider it experimental.
 
 ### Bluetooth
 

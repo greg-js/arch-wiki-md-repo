@@ -15,7 +15,7 @@ This page goes over installation and configuration of both the client portion of
         *   [2.2.1 Network](#Network)
         *   [2.2.2 Config File](#Config_File)
         *   [2.2.3 Startup](#Startup)
-        *   [2.2.4 Self-Signed Certificate](#Self-Signed_Certificate)
+        *   [2.2.4 SSL/TLS](#SSL.2FTLS)
 
 ## Client
 
@@ -57,28 +57,11 @@ The default Murmur config file is at `/etc/murmur.ini` and is heavily commented.
 
 [Enable](/index.php/Enable "Enable") and then [start](/index.php/Start "Start") `murmur.service`. If all went smoothly, you should have a functioning Murmur server.
 
-#### Self-Signed Certificate
+#### SSL/TLS
 
-By default, murmur will generate a default self-signed certificate. Clients connecting to the server will warn users about the host name not matching and the certificate being untrusted. If your server is in DNS, you can get rid of the hostname mismatch by creating your own self-signed certificate.
+Obtain either a self-signed certificate as described in [OpenSSL](/index.php/OpenSSL "OpenSSL"), or a publicly trusted one with [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt").
 
-Create a secure directory for the certificate and key to live in and switch to it.
-
-```
-# mkdir /var/lib/murmur/ssl
-# chmod 700 /var/lib/murmur/ssl
-# chown murmur:murmur /var/lib/murmur/ssl
-# cd /var/lib/murmur/ssl
-
-```
-
-Create a self-signed certificate for your server:
-
-```
-# openssl req -new -x509 -nodes -newkey rsa:4096 -keyout voip.example.com.key -out voip.example.com.crt
-
-```
-
-Edit murmur.ini and tell it where your key and cert is:
+Edit `murmur.ini` and tell it where your key and cert is:
 
  `/etc/murmur.ini` 
 ```

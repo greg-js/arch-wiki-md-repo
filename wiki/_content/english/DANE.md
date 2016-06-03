@@ -18,7 +18,7 @@ TLSA resource record is an own type of DNS record. It consists of port number an
 
 <caption>Matching Type Field</caption>
 | Value | Name | Description |
-| 0 | Full | DATA ist the full cert of SPKI |
+| 0 | Full | DATA ist the full cert or SPKI |
 | 1 | sha256 | DATA is the sha256 hash of the cert or SPKI |
 | 2 | sha512 | DATA is the sha512 hash of the cert or SPKI |
 

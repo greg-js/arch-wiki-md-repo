@@ -42,7 +42,7 @@ See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 
 ### Fingerprint Reader
 
-The fingerprint reader that is found in the X200/X200T is not supported.
+Depending on the laptop variant the fingerprint reader in the X200/X200T could be supported.
 
 See [fprint](/index.php/Fprint "Fprint") for more information.
 

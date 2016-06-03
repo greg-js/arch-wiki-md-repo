@@ -67,7 +67,7 @@ rEFIt and [REFInd](/index.php/REFInd "REFInd") depending on how they are configu
 
 If the install media you are using has a kernel version earlier than 3.13 you will need to edit the boot entry in the syslinux boot loader. This can be accomplished by pressing `Tab` to edit the entry and append `nomodeset` this will prevent visible screen corruption.
 
-If the install media you are using has a kernel version later than 3.13 **do not** use `nomodeset` as it is not needed and will break [VA-API](/index.php/VA-API "VA-API").
+If the install media you are using has a kernel version later than 3.13 **do not** use `nomodeset` as it is not needed and will break [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
 ### Console
 

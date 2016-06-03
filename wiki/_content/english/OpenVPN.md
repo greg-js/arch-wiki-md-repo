@@ -38,6 +38,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [8.4 Connect both the client and server LANs](#Connect_both_the_client_and_server_LANs)
     *   [8.5 Connect clients and client LANs](#Connect_clients_and_client_LANs)
 *   [9 DNS](#DNS)
+    *   [9.1 Update resolv-conf script](#Update_resolv-conf_script)
 *   [10 L2 Ethernet bridging](#L2_Ethernet_bridging)
 *   [11 Troubleshooting](#Troubleshooting)
     *   [11.1 Resolve issues](#Resolve_issues)
@@ -173,9 +174,14 @@ tls-auth /etc/openvpn/ta.key **1**
 
 #### Drop root privileges after connecting
 
-Using the options `user nobody` and `group nobody` in the configuration file makes *openvpn* drop its privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, this may be advantageous. However, it requires manual action to delete the routes and will, hence, often be undesired. For this case the [OpenVPN howto](https://openvpn.net/index.php/open-source/documentation/howto.html#security) explains how to create an unprivileged user mode and wrapper script to have the routes restored automatically.
+Using the options `user nobody` and `group nobody` in the configuration file makes *openvpn* drop its privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, this may be advantageous. However, it requires manual action to delete the routes and will, hence, often be undesired. Further, it can happen that the OpenVPN server pushes updates to routes at runtime of the tunnel. A client with dropped privileges will be unable to perform the update and exit with an error.
 
-Further, it is possible to let OpenVPN start as a non-privileged user in the first place, without ever running as root, see [this OpenVPN wiki page](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser).
+Depending on setup, there are four ways to handle these situations:
+
+*   For errors of the unit, a simple way is to [edit](/index.php/Edit "Edit") it and add a `Restart=on-failure` to the `[Service]` section. Though, this alone will not delete any obsoleted routes, so it may happen that the restarted tunnel is not routed properly.
+*   The package contains the `/usr/lib/openvpn/plugins/openvpn-plugin-down-root.so` (see README in its directory), which can be used to let *openvpn* fork a process with root privileges with the only task to execute a custom script when receiving a down signal from the main process, which is handling the tunnel with dropped privileges.[[1]](https://community.openvpn.net/openvpn/browser/plugin/down-root/README?rev=d02a86d37bed69ee3fb63d08913623a86c88da15)
+*   The [OpenVPN howto](https://openvpn.net/index.php/open-source/documentation/howto.html#security) explains another way how to create an unprivileged user mode and wrapper script to have the routes restored automatically.
+*   Further, it is possible to let OpenVPN start as a non-privileged user in the first place, without ever running as root, see [this OpenVPN wiki page](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser).
 
 ### Testing the OpenVPN configuration
 
@@ -444,7 +450,7 @@ If you would like to connect a client to an OpenVPN server through Gnome's built
 
 **Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to [the OpenVPN documenation on this topic](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
 
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server.conf`) [[1]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
+By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server.conf`) [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
@@ -505,14 +511,14 @@ Lastly, reload UFW:
 
 #### iptables
 
-In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
+In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[3]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
-If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[3]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
+If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[4]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
 
 **Warning:** There are security implications for the following rules if you do not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 
@@ -653,16 +659,32 @@ push "route 192.168.5.0 255.255.255.0"
 
 ## DNS
 
-The DNS servers used by the system are defined in `/etc/resolv.conf`. Traditionally, this file is the responsibility of whichever program deals with connecting the system to the network (e.g. Wicd, NetworkManager, etc...) However, OpenVPN will need to modify this file if you want to be able to resolve names on the remote side. To achieve this in a sensible way, install [openresolv](https://www.archlinux.org/packages/?name=openresolv), which makes it possible for more than one program to modify `resolv.conf` without stepping on each-other's toes.
+The DNS servers used by the system are defined in `/etc/resolv.conf`. Traditionally, this file is the responsibility of whichever program deals with connecting the system to the network (e.g. Wicd, NetworkManager, etc.). However, OpenVPN will need to modify this file if you want to be able to resolve names on the remote side. To achieve this in a sensible way, install [openresolv](https://www.archlinux.org/packages/?name=openresolv), which makes it possible for more than one program to modify `resolv.conf` without stepping on each-other's toes.
 
 Before continuing, test openresolv by restarting your network connection and ensuring that `resolv.conf` states that it was generated by *resolvconf*, and that your DNS resolution still works as before. You should not need to configure openresolv; it should be automatically detected and used by your network system.
 
-For Linux, OpenVPN can send DNS host information, but expects an external process to act on it. This can be done with a [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) script, which can be saved for example at `/etc/openvpn/update-resolv-conf` and make it executable with [chmod](/index.php/Chmod "Chmod"). There is also an AUR package: [openvpn-update-resolv-conf](https://aur.archlinux.org/packages/openvpn-update-resolv-conf/) which will take care of the script installation for you.
+For Linux, OpenVPN can send DNS host information, but expects an external process to act on it. This can be done with the `client.up` and `client.down` scripts packaged in `/usr/share/openvpn/contrib/pull-resolv-conf/`. See their comments on how to install them to `/etc/openvpn`. The following is an excerpt of a resulting client configuration using the scripts in conjunction with *resolvconf* and options to [#Drop root privileges after connecting](#Drop_root_privileges_after_connecting):
+
+ `/etc/openvpn/clienttunnel.conf` 
+```
+user nobody
+group nobody
+# Optional, choose a suitable path to chroot into for your system
+chroot /srv
+script-security 2
+up /etc/openvpn/client.up 
+plugin /usr/lib/openvpn/plugins/openvpn-plugin-down-root.so "/etc/openvpn/client.down"
+```
+
+### Update resolv-conf script
+
+The [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) script is available as an alternative to packaged scripts. It needs to be saved for example at `/etc/openvpn/update-resolv-conf` and made executable with [chmod](/index.php/Chmod "Chmod"). There is also an AUR package: [openvpn-update-resolv-conf](https://aur.archlinux.org/packages/openvpn-update-resolv-conf/) which will take care of the script installation for you.
 
 Once the script is installed add lines like the following into your OpenVPN client configuration file:
 
 ```
 script-security 2
+setenv PATH /usr/bin
 up /etc/openvpn/update-resolv-conf
 down /etc/openvpn/update-resolv-conf
 

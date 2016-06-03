@@ -69,6 +69,8 @@ See [Wikipedia:Tor (anonymity network)](https://en.wikipedia.org/wiki/Tor_(anony
 
 The [arm](https://www.archlinux.org/packages/?name=arm) (Anonymizing Relay Monitor) package provides a terminal status monitor for bandwidth usage, connection details and more.
 
+For GUI could be used [vidalia](https://aur.archlinux.org/packages/vidalia/)
+
 ## Configuration
 
 By default Tor reads configurations from the file `/etc/tor/torrc`. The configuration options are explained in `man tor` and the [Tor website](https://torproject.org/docs/tor-manual.html.en). The default configuration should work fine for most Tor users.
@@ -398,7 +400,7 @@ If you get "Could not bind to 0.0.0.0:443: Permission denied" errors on startup,
 
 ### Running a Tor relay
 
-This means that your machine will act as an entry node or forwarding relay (depending on the relay's online time) and - opposing to the bridge relay - it will be listed in the public Tor directory. Your IP address will be publicly visible in the Tor directory but the relay will only forward to other relays or Tor exit nodes, not directly to the internet.
+This means that your machine will act as an entry node or forwarding relay and, unlike a bridge, it will be listed in the public Tor directory. Your IP address will be publicly visible in the Tor directory but the relay will only forward to other relays or Tor exit nodes, not directly to the internet.
 
 #### Configuration
 
@@ -747,6 +749,21 @@ TransPort 9040
 ```
 
 See `man iptables`.
+
+**Note:**
+
+iptables-restore: unable to initialize table 'nat'
+
+Requires:
+
+```
+modprobe ip_tables
+modprobe iptable_nat
+modprobe ip_conntrack
+modprobe iptable-filter
+modprobe ipt_state
+
+```
 
  `/etc/iptables/iptables.rules` 
 ```

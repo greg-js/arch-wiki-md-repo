@@ -58,7 +58,7 @@
 
 #### Konqueror
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [kmplayer](https://aur.archlinux.org/packages/kmplayer/).
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [kmplayer](https://www.archlinux.org/packages/?name=kmplayer).
 
 **Примечание:** Также является полноценным графическим интерфейсом к MPlayer
 

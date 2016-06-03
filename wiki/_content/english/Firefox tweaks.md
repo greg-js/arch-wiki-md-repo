@@ -14,9 +14,10 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [1.1.8 Immediate rendering of pages](#Immediate_rendering_of_pages)
     *   [1.2 Other modifications](#Other_modifications)
         *   [1.2.1 Enable firefox optional tracking protection](#Enable_firefox_optional_tracking_protection)
-        *   [1.2.2 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
-        *   [1.2.3 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
-        *   [1.2.4 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
+        *   [1.2.2 Referer header control](#Referer_header_control)
+        *   [1.2.3 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
+        *   [1.2.4 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
+        *   [1.2.5 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -162,6 +163,17 @@ Firefox gained an option for [tracking protection](https://support.mozilla.org/e
 
 Apart from privacy benefits, enabling [tracking protection](http://venturebeat.com/2015/05/24/firefoxs-optional-tracking-protection-reduces-load-time-for-top-news-sites-by-44/) may also reduce load time by 44%.
 
+#### Referer header control
+
+Firefox as of version 28 has the ability to control how the HTTP Referer header is send. The options are hidden from the GUI configuration, but available through `about:config`. There are [four related keys](http://security.stackexchange.com/a/80194). The source post mentions recommended and default settings. A short description of the recommended setting is given in table, as well as the values to achieve a perfect score on [ip-check.info](https://ip-check.info).
+
+<caption>Suggested values</caption>
+| Key | Recommended | [ip-check.info](https://ip-check.info) | Default | Description |
+| network.http.sendRefererHeader | 1 | 1 | 2 | Only for clicked links (0 disabled completely, 1 send referer on link click, 2 always send; incl. images) |
+| network.http.referer.XOriginPolicy | 1 | 1 | 0 | Only if base domains match (0 always send, 2 only if host matches) |
+| network.http.referer.spoofSource | true | false | false | Send target URI instead |
+| network.http.referer.trimmingPolicy | 2 | 0 | 0 | scheme, host and port (0 full; 1 scheme, host port and path) |
+
 #### Defragment the profile's SQLite databases
 
 **Warning:** This procedure may damage the databases in such a way that sessions are not saved properly.
@@ -181,7 +193,7 @@ If the system has memory to spare, `tmpfs` can be used to [cache the entire prof
 
 #### Turn off sponsored content and tiles
 
-In about.config, set the string value to a blank for both of these: browser.newtabpage.directory.source and browser.newtabpage.directory.ping. Consider also disabling the tile feature from the tools on a new tab page. A wireshark session demonstrates the level of chatter created by these features.
+In `about:config`, set the string value to a blank for both of these: `browser.newtabpage.directory.source` and `browser.newtabpage.directory.ping`. Consider also disabling the tile feature from the tools on a new tab page. A [Wireshark](/index.php/Wireshark "Wireshark") session demonstrates the level of chatter created by these features.
 
 ## Appearance
 

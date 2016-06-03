@@ -5,7 +5,11 @@ A multiboot USB flash drive allows booting multiple ISO files from a single devi
 *   [1 Using GRUB and loopback devices](#Using_GRUB_and_loopback_devices)
     *   [1.1 Preparation](#Preparation)
     *   [1.2 Installing GRUB](#Installing_GRUB)
+        *   [1.2.1 Simple installation](#Simple_installation)
+        *   [1.2.2 Hybrid UEFI GPT + BIOS GPT/MBR boot](#Hybrid_UEFI_GPT_.2B_BIOS_GPT.2FMBR_boot)
     *   [1.3 Configuring GRUB](#Configuring_GRUB)
+        *   [1.3.1 Using a template](#Using_a_template)
+        *   [1.3.2 Manual configuration](#Manual_configuration)
     *   [1.4 Boot entries](#Boot_entries)
         *   [1.4.1 Alpine Linux](#Alpine_Linux)
         *   [1.4.2 Alt Linux](#Alt_Linux)
@@ -40,6 +44,7 @@ A multiboot USB flash drive allows booting multiple ISO files from a single devi
         *   [1.4.20 Slax](#Slax)
         *   [1.4.21 Tails](#Tails)
         *   [1.4.22 Ubuntu](#Ubuntu)
+        *   [1.4.23 Xubuntu (32 bit)](#Xubuntu_.2832_bit.29)
 *   [2 Chainloading Windows](#Chainloading_Windows)
 *   [3 Using Syslinux and memdisk](#Using_Syslinux_and_memdisk)
     *   [3.1 Preparation](#Preparation_2)
@@ -67,6 +72,8 @@ disadvantages:
 Create at least one partition and a filesystem supported by [GRUB](/index.php/GRUB "GRUB") on the USB drive. See [Partitioning](/index.php/Partitioning "Partitioning") and [File systems#Create a filesystem](/index.php/File_systems#Create_a_filesystem "File systems"). Choose the size based on the total size of the ISO files that you want to store on the drive, and plan for extra space for the bootloader.
 
 ### Installing GRUB
+
+#### Simple installation
 
 Mount the filesystem located on the USB drive:
 
@@ -98,7 +105,85 @@ In case you want to boot ISOs in UEFI mode, you have to install grub for the UEF
 
 For UEFI, the partition has to be the first one in an MBR partition table and formatted with FAT32.
 
+#### Hybrid UEFI GPT + BIOS GPT/MBR boot
+
+This configuration is useful for creating an universal USB key, bootable everywhere. First of all you must create a [GPT](/index.php/GPT "GPT") partition table on your device. You need at least 3 partitions:
+
+1.  A BIOS boot partition (type EF02)
+2.  An EFI System partition (type EF00)
+3.  Your data partition (use a filesystem supported by [GRUB](/index.php/GRUB "GRUB"))
+
+The BIOS boot partition must be sized 1 MB, while the EFI System partition can be at least as small as 50 MB. The data partition can take up the rest of the space of your drive.
+
+Next you must create a hybrid MBR partition table, as setting the boot flag on the protective MBR partition might not be enough.
+
+Hybrid MBR partition table creation example using gdisk:
+
+```
+$ gdisk /dev/sdX
+
+Command (? for help): r
+Recovery/transformation command (? for help): h
+Type from one to three GPT partition numbers, separated by spaces, to be added to the hybrid MBR, in sequence: 1 2 3
+Place EFI GPT (0xEE) partition first in MBR (good for GRUB)? (Y/N): N
+
+Creating entry for GPT partition #1 (MBR partition #2)
+Enter an MBR hex code (default EF): 
+Set the bootable flag? (Y/N): N
+
+Creating entry for GPT partition #2 (MBR partition #3)
+Enter an MBR hex code (default EF): 
+Set the bootable flag? (Y/N): N
+
+Creating entry for GPT partition #3 (MBR partition #4)
+Enter an MBR hex code (default 83): 
+Set the bootable flag? (Y/N): Y
+
+Recovery/transformation command (? for help): x
+Expert command (? for help): h
+Expert command (? for help): w
+
+Final checks complete. About to write GPT data. THIS WILL OVERWRITE EXISTING
+PARTITIONS!!
+
+Do you want to proceed? (Y/N): Y
+
+```
+
+You can now install GRUB to support both EFI + GPT and BIOS + GPT/MBR. The GRUB configuration (--boot-directory) can be kept in the same place.
+
+First, you need to mount the EFI System partition and the data partition of your USB drive. Then, you can install GRUB for EFI with:
+
+```
+$ grub-install --target=x86_64-efi --efi-directory=/EFI_MOUNTPOINT --boot-directory=/DATA_MOUNTPOINT/boot --removable --recheck
+
+```
+
+And for BIOS with:
+
+```
+$ grub-install --target=i386-pc --boot-directory=/DATA_MOUNTPOINT/boot --recheck /dev/sdX
+
+```
+
+As an additional fallback, you can also install GRUB on your MBR-bootable data partition:
+
+```
+$ grub-install --target=i386-pc --boot-directory=/DATA_MOUNTPOINT/boot --recheck /dev/sdX3
+
+```
+
 ### Configuring GRUB
+
+#### Using a template
+
+There are some git projects which provide some pre-existing GRUB configuration files, and a nice generic grub.cfg which can be used to load the other boot entries on demand, showing them only if the specified ISO files - or folders containing them - are present on the drive.
+
+Multiboot USB: [https://github.com/aguslr/multibootusb](https://github.com/aguslr/multibootusb)
+
+GLIM (GRUB2 Live ISO Multiboot): [https://github.com/thias/glim](https://github.com/thias/glim)
+
+#### Manual configuration
 
 For the purpose of multiboot USB drive it is easier to edit `grub.cfg` by hand instead of generating it. Alternatively, make the following changes in `/etc/grub.d/40_custom` or `/mnt/boot/grub/custom.cfg` and generate `/mnt/boot/grub/grub.cfg` using [grub-mkconfig](/index.php/GRUB#Generate_the_main_configuration_file "GRUB").
 
@@ -375,11 +460,11 @@ menuentry '[loopback]Fedora-Live-Workstation-x86_64-21-5' {
 *   Init system: [OpenRC](https://wiki.gentoo.org/wiki/Project:OpenRC) (cmdline: *RFD*)
 
 ```
-menuentry "[loopback]livedvd-amd64-multilib-20140826" {
-	set isofile="/boot/iso/livedvd-amd64-multilib-20140826.iso"
+menuentry "[loopback]livedvd-amd64-multilib-20160514" {
+	set isofile="/boot/iso/livedvd-amd64-multilib-20160514.iso"
 	loopback loop $isofile
 	linux (loop)/isolinux/gentoo root=/dev/ram0 init=/linuxrc aufs looptype=squashfs loop=/image.squashfs cdroot isoboot=$isofile vga=**791** splash=silent,theme:default console=tty0
-	initrd (loop)/isolinux/gentoo.igz 
+	initrd (loop)/isolinux/gentoo.xz 
 }
 ```
 
@@ -619,6 +704,17 @@ menuentry '[loopback]ubuntu-14.04.1-desktop-amd64' {
 	loopback loop $isofile
 	linux (loop)/casper/vmlinuz.efi boot=casper iso-scan/filename=$isofile locale=**en_US.UTF-8**
 	initrd (loop)/casper/initrd.lz
+}
+```
+
+#### Xubuntu (32 bit)
+
+```
+menuentry '[loopback]Xubuntu-16.04-desktop-i386' {
+	set isofile='/boot/iso/xubuntu-16.04-desktop-i386.iso'
+	loopback loop $isofile
+	linux	(loop)/casper/vmlinuz  file=/cdrom/preseed/xubuntu.seed boot=casper iso-scan/filename=$isofile quiet splash ---
+	initrd	(loop)/casper/initrd.lz
 }
 ```
 

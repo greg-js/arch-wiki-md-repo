@@ -30,6 +30,9 @@
     *   [3.1 Block certain file extensions on Samba share](#Block_certain_file_extensions_on_Samba_share)
     *   [3.2 Discovering network shares](#Discovering_network_shares)
     *   [3.3 Remote control of Windows computer](#Remote_control_of_Windows_computer)
+    *   [3.4 Share files without a username and password](#Share_files_without_a_username_and_password)
+        *   [3.4.1 Sample Passwordless Configuration](#Sample_Passwordless_Configuration)
+    *   [3.5 Build Samba without CUPS](#Build_Samba_without_CUPS)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB.2FCIFS_server)
     *   [4.2 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files.2C_permissions_errors)
@@ -143,16 +146,18 @@ Log out and log back in. You should now be able to configure your samba share us
 
 ### Adding a user
 
-You may use an existing user account or create a [Linux user account](/index.php/Users_and_groups#User_management "Users and groups") as Samba user.
+Samba requires a Linux user account - you may use an existing user account or create a [new one](/index.php/Users_and_groups#User_management "Users and groups").
 
-Samba uses a password separate from that of the Linux user accounts. Replace `samba_user` with the chosen Samba user account:
+Although the user name is shared with Linux system, Samba uses a password separate from that of the Linux user accounts. Replace `samba_user` with the chosen Samba user account:
 
 ```
-# pdbedit -a -u *samba_user*
+# smbpasswd -a *samba_user*
 
 ```
 
 **Note:** Depending on the [server role](https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html#SERVERROLE), existing [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") may need to be altered for the Samba user account.
+
+**Note:** If you want the new user only to be allowed to remotely access the file server shares through Samba, you can restrict other login options - disabling shell (`usermod --shell /usr/bin/nologin --lock username`), disabling SSH logons (/etc/ssh/sshd_conf, option `AllowUsers`), etc... Also see [Security](/index.php/Security "Security") for hardening your system.
 
 ### Changing Samba user's password
 
@@ -238,7 +243,7 @@ Depending on the [desktop environment](/index.php/Desktop_environment "Desktop e
 
 ### List Public Shares
 
-To following command lists public shares on a server:
+The following command lists public shares on a server:
 
 ```
 $ smbclient -L *hostname* -U%
@@ -360,7 +365,7 @@ WantedBy=multi-user.target
 
 ```
 
-To use `myshare.mount`, [start](/index.php/Start "Start") the unit and [enable](/index.php/Enable "Enable") it to run on system boot.
+To use `mnt-myshare.mount`, [start](/index.php/Start "Start") the unit and [enable](/index.php/Enable "Enable") it to run on system boot.
 
 #### smbnetfs
 
@@ -608,6 +613,107 @@ To see all possible net rpc command:
 
 ```
 $ net rpc
+
+```
+
+### Share files without a username and password
+
+Edit `/etc/samba/smb.conf` and add the following line:
+
+ `map to guest = Bad User` 
+
+After this line:
+
+ `security = user` 
+
+Restrict the shares data to a specific interface replace:
+
+ `;   interfaces = 192.168.12.2/24 192.168.13.2/24` 
+
+with:
+
+```
+interfaces = lo eth0
+bind interfaces only = true
+```
+
+Optionally edit the account that access the shares, edit the following line:
+
+ `;   guest account = nobody` 
+
+For example:
+
+ `   guest account = pcguest` 
+
+And do something in the likes of:
+
+ `# useradd -c "Guest User" -d /dev/null -s /bin/false pcguest` 
+
+Then setup a "" password for user pcguest.
+
+The last step is to create share directory (for write access make writable = yes):
+
+```
+[Public Share]
+path = /path/to/public/share
+available = yes
+browsable = yes
+public = yes
+writable = no
+
+```
+
+**Note:** Make sure the guest also has permission to visit /path, /path/to and /path/to/public, according to [http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory](http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory)
+
+#### Sample Passwordless Configuration
+
+This is the configuration I use with samba 4 for easy passwordless filesharing with family on a home network. Change any options needed to suit your network (workgroup and interface). I'm restricting it to the static IP I have on my ethernet interface, just delete that line if you do not care which interface is used.
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+
+   workgroup = WORKGROUP
+
+   server string = Media Server
+
+   security = user
+   map to guest = Bad User
+
+   log file = /var/log/samba/%m.log
+
+   max log size = 50
+
+   interfaces = 192.168.2.194/24
+
+   dns proxy = no 
+
+[media]
+   path = /shares
+   public = yes
+   only guest = yes
+   writable = yes
+
+[storage]
+   path = /media/storage
+   public = yes
+   only guest = yes
+   writable = yes
+
+```
+
+### Build Samba without CUPS
+
+Just build without cups installed. From the [Samba Wiki](https://wiki.samba.org/index.php/Samba_as_a_print_server):
+
+> Samba has built-in support [for CUPS] and defaults to CUPS if the development package (aka header files and libraries) could be found at compile time.
+
+Of course, modifications to the PKGBUILD will also be necessary: libcups will have to be removed from the depends and makedepends arrays and other references to cups and printing will need to be deleted. In the case of the 4.1.9-1 PKGBUILD, 'other references' includes lines 169, 170 and 236:
+
+```
+    mkdir -p ${pkgdir}/usr/lib/cups/backend
+    ln -sf /usr/bin/smbspool ${pkgdir}/usr/lib/cups/backend/smb
+  install -d -m1777 ${pkgdir}/var/spool/samba
 
 ```
 

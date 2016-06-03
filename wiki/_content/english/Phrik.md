@@ -47,7 +47,7 @@ Example: `register demize stuff` to register an account named `demize` with the 
 To identify with phrik for the current session, or until you `unidentify`, you need to run the following command:
 
 ```
-identify <name> <password>}}
+identify <name> <password>
 
 ```
 

@@ -35,7 +35,7 @@ Microsoft imposes limitations on which firmware boot mode and partitioning style
 
 In case of pre-installed Systems:
 
-*   All systems pre-installed with Windows XP, Vista or 7 32-bit, irrespective of Service Pack level, bitness, edition (SKU)or presence of UEFI support in firmware, boot in BIOS-MBR mode by default.
+*   All systems pre-installed with Windows XP, Vista or 7 32-bit, irrespective of Service Pack level, bitness, edition (SKU) or presence of UEFI support in firmware, boot in BIOS-MBR mode by default.
 *   MOST of the systems pre-installed with Windows 7 x86_64, irrespective of Service Pack level, bitness or edition (SKU), boot in BIOS-MBR mode by default. Very few recent systems pre-installed with Windows 7 are known to boot in x86_64 UEFI-GPT mode by default.
 *   ALL systems pre-installed with Windows 8/8.1 boot in UEFI-GPT mode. The firmware bitness matches the bitness of Windows, ie. x86_64 Windows 8/8.1 boot in x86_64 UEFI mode and 32-bit Windows 8/8.1 boot in IA32 UEFI mode.
 
@@ -75,7 +75,7 @@ So it is advisable to disable UEFI Secure Boot in the firmware setup manually be
 
 ### Fast Start-Up
 
-Fast Start-Up is a feature in Windows 8 that hibernates the computer rather than actually shutting it down to speed up boot times. Your system can lose data if Windows hibernates and you dual boot into another OS and make changes to files. Even if you do not intend to share filesystems, the EFI System Partition is likely to be damaged on an EFI system. Therefore, you should disable Fast Startup, as described [here](http://www.eightforums.com/tutorials/6320-fast-startup-turn-off-windows-8-a.html), before you install Linux on any computer that uses Windows 8.
+Fast Start-Up is a feature in Windows 8 and above that hibernates the computer rather than actually shutting it down to speed up boot times. Your system can lose data if Windows hibernates and you dual boot into another OS and make changes to files. Even if you do not intend to share filesystems, the EFI System Partition is likely to be damaged on an EFI system. Therefore, you should disable Fast Startup, as described [here for Windows 8](http://www.eightforums.com/tutorials/6320-fast-startup-turn-off-windows-8-a.html) and [here for Windows 10](http://www.tenforums.com/tutorials/4189-fast-startup-turn-off-windows-10-a.html), before you install Linux on any computer that uses Windows 8 or above.
 
 [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) added a [safe-guard](http://sourceforge.net/p/ntfs-3g/ntfs-3g/ci/559270a8f67c77a7ce51246c23d2b2837bcff0c9/) to prevent read-write mounting of hibernated disks, but the NTFS driver within the Linux kernel has no such safeguard.
 

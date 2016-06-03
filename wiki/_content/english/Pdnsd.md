@@ -31,7 +31,7 @@
 
 ## Configuration
 
-The sample configuration file that comes with pdnsd needs a few changes before the daemon can start.
+The package comes with a sample configuration file at `/usr/share/doc/pdnsd/pdnsd.conf`. The customized configuration file should be created at `/etc/pdnsd.conf`.
 
 ### Format
 

@@ -1,4 +1,4 @@
-[CUPS](https://en.wikipedia.org/wiki/CUPS "wikipedia:CUPS") is the standards-based, open source printing system developed by Apple Inc. for OS X® and other UNIX®-like operating systems.
+[CUPS](http://www.cups.org/) is the standards-based, open source printing system developed by Apple Inc. for OS X® and other UNIX®-like operating systems.
 
 ## Contents
 
@@ -10,16 +10,17 @@
     *   [1.2 Printer Drivers](#Printer_Drivers)
 *   [2 Configuration](#Configuration)
     *   [2.1 Local printers](#Local_printers)
-        *   [2.1.1 Test the printer](#Test_the_printer)
     *   [2.2 Remote printers](#Remote_printers)
         *   [2.2.1 Local CUPS server](#Local_CUPS_server)
         *   [2.2.2 Without a local CUPS server](#Without_a_local_CUPS_server)
     *   [2.3 Printer sharing](#Printer_sharing)
     *   [2.4 Remote administration](#Remote_administration)
-*   [3 Printing related applications](#Printing_related_applications)
-*   [4 Usage](#Usage)
-*   [5 Troubleshooting](#Troubleshooting)
-*   [6 See also](#See_also)
+    *   [2.5 Test the printer](#Test_the_printer)
+*   [3 Usage](#Usage)
+    *   [3.1 CLI tools](#CLI_tools)
+    *   [3.2 GUI applications](#GUI_applications)
+*   [4 Troubleshooting](#Troubleshooting)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -66,22 +67,22 @@ DeviceID = parallel:/dev/usb/lp0
 
 #### Local Network
 
-Newer versions of cups tend to be good at detecting printers, and tend to pick the right hostname, but unless you have added the printer to your /etc/hosts, cups will fail to resolve for normal printer activities. Unless you want to make your printer ip static, avahi-daemon can help autoresolve your printer hostname. Install and start [Avahi](/index.php/Avahi "Avahi") then restart cups by [restarting](/index.php/Restart "Restart") the `org.cups.cupsd.service` systemd unit.
+Newer versions of CUPS tend to be good at detecting printers, and tend to pick the right hostname, but unless you have added the printer to your /etc/hosts, CUPS will fail to resolve for normal printer activities. Unless you want to make your printer ip static, Avahi can help autoresolve your printer hostname. Set up [Avahi](/index.php/Avahi "Avahi") and [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") then restart CUPS by [restarting](/index.php/Restart "Restart") the `org.cups.cupsd.service` systemd unit.
 
-You can use avahi-discover find the name of your printer and its address (ex. Address: BRN30055C6B4C7A.local/10.10.0.155:631) or just add .local to the hostname cups was using (ex. BRN30055C6B4C7A.local). Double check that everything is working with ping:
+You can use `avahi-discover` find the name of your printer and its address (ex. Address: BRN30055C6B4C7A.local/10.10.0.155:631) or just add .local to the hostname CUPS was using (ex. BRN30055C6B4C7A.local). Double check that everything is working with ping:
 
 ```
 ping XXXXXX.local
 
 ```
 
-should work, if it doesn't go back and make sure that avahi is running and that you have the right hostname. After this, make sure that the hostname in the cups web interface is the .local hostname.
+should work, if it doesn't go back and make sure that Avahi is running and that you have the right hostname. After this, make sure that the hostname in the CUPS web interface is the .local hostname.
 
 ### Printer Drivers
 
 The drivers for a printer may come from any of the sources shown below. See [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems") for a non-comprehensive list of drivers that others have gotten to work.
 
-Usually CUPS requires either a prebuilt PPD file including the driver or some XML data files + a PPD file generating engine to work. Even when a PPD file is provided to CUPS, the CUPS server will install it's own regenerated PPD file into `/etc/cups/ppd/`
+Usually CUPS requires either a prebuilt PPD file including the driver or some XML data files + a PPD file generating engine to work. Even when a PPD file is provided to CUPS, the CUPS server will install its own regenerated PPD file into `/etc/cups/ppd/`
 
 	CUPS Native Drivers
 
@@ -148,21 +149,6 @@ On the next screen, you can select the printer manufacturer along with the model
 
 Once the driver is selected, CUPS will inform that the printer has been added successfully to the system. Navigate to the printer management page on the administration interface and select Configure Printer to change the printer's settings (resolution, page format, ...).
 
-#### Test the printer
-
-To verify if the printer is working correctly, go to the printer administration page, select the printer and click on Print Test Page.
-
-If the printer does not seem to work correctly, click on Modify Printer to reconfigure the printer. The same screens as during the first installation will appear but the defaults will now be the current configuration.
-
-If the printer does not function, clues may be found by looking at the CUPS error log located at `/var/log/cups/error_log`. In the next example a permission error is discovered, probably due to a wrong Allow setting in the `/etc/cups/cupsd.conf` file.
-
-```
-tail /var/log/cups/error_log
- (...)
- E [11/Jun/2005:10:23:28 +0200] [Job 102] Unable to get printer status (client-error-forbidden)!
-
-```
-
 ### Remote printers
 
 **Note:** As of CUPS version 1.6, the client defaults to IPP 2.0\. If the server uses CUPS <= 1.5 / IPP <= 1.1, the client does not downgrade the protocol automatically and thus cannot communicate with the server. A workaround (undocumented as of 2013-05-07, but see [this bug report](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=704238)) is to put the following in `/etc/cups/client.conf`: ServerName HOSTNAME-OR-IP-ADDRESS[:PORT]/version=1.1
@@ -204,7 +190,7 @@ See [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing
 
 ### Remote administration
 
-If remote administration is needed, then access to the CUPS administration will need to be granted from more systems than the localhost. Add the allowed hosts to the `<Location /admin>` block in `/etc/cups/cupsd.conf`, using the same syntax as described in [CUPS/Printer sharing#Manual setup](/index.php/CUPS/Printer_sharing#Manual_setup "CUPS/Printer sharing"). Note that three levels of access can be granted:
+Once the server is set up as described in [CUPS/Printer sharing#Between GNU/Linux systems](/index.php/CUPS/Printer_sharing#Between_GNU.2FLinux_systems "CUPS/Printer sharing"), it can also be configured so that it can be remotely administered. If this is needed, then access to the CUPS administration will need to be granted from more systems than the localhost. Add the allowed hosts to the `<Location /admin>` block in `/etc/cups/cupsd.conf`, using the same syntax as described in [CUPS/Printer sharing#Manual setup](/index.php/CUPS/Printer_sharing#Manual_setup "CUPS/Printer sharing"). Note that three levels of access can be granted:
 
 ```
 <Location />           #access to the server
@@ -260,27 +246,21 @@ DefaultEncryption Never
 
 This should avoid the error: 426 - Upgrade Required when using the CUPS web interface from a remote machine.
 
-## Printing related applications
+### Test the printer
 
-*   **print-manager** — A tool for managing print jobs and printers ([KDE](/index.php/KDE "KDE")).
+To verify if the printer is working correctly, go to the printer administration page, select the printer and click on Print Test Page.
 
-	[https://projects.kde.org/projects/kde/kdeutils/print-manager](https://projects.kde.org/projects/kde/kdeutils/print-manager) || [print-manager](https://www.archlinux.org/packages/?name=print-manager)
-
-*   **system-config-printer** — A CUPS printer configuration tool and status applet ([GNOME](/index.php/GNOME "GNOME") and others)
-
-	[http://cyberelk.net/tim/software/system-config-printer/](http://cyberelk.net/tim/software/system-config-printer/) || [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer)
-
-*   **gtklp** — GTK+ interface to CUPS.
-
-	[http://gtklp.sirtobi.com/index.shtml](http://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)
-
-If your user does not have sufficient privileges to administer the cups scheduler, system-config-printer will request the root password when it starts. To give users administrative privileges without needing root access, see [#Configuration](#Configuration).
+If the printer does not work, see [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting").
 
 ## Usage
 
-CUPS can be fully controlled from command-line with nice tools, *i.e.* the lp* and the cups* command families. Here follows a crash-course. See [CUPS local documentation](http://localhost:631/help/options.html) for more tips on command-line tools.
+CUPS can be fully controlled using the lp* and cups* command-line tools. Alternatively, several GUI applications exist.
 
-On Arch Linux, most commands support auto-completion with common shells. Also note that command-line switches cannot be grouped.
+### CLI tools
+
+See [CUPS local documentation](http://localhost:631/help/options.html) for more tips on the command-line tools.
+
+**Note:** Command-line switches cannot be grouped
 
 	List the devices
 
@@ -299,30 +279,28 @@ On Arch Linux, most commands support auto-completion with common shells. Also no
 	Add a new printer
 
 ```
-# lpadmin -p *printer* -E -v *device* -P *ppd*
+# lpadmin -p *printer_name* -E -v *device* -P *ppd*
 
 ```
 
-The *printer* is up to you. The device can be retrieved from the 'lpinfo -v' command. Example:
+The *printer_name* is up to you. The device can be retrieved from the 'lpinfo -v' command. Example:
 
 ```
 # lpadmin -p HP_DESKJET_940C -E -v "usb://HP/DESKJET%20940C?serial=CN16E6C364BH" -P /usr/share/ppd/HP/hp-deskjet_940c.ppd.gz
 
 ```
 
-In the following, the *printer* references the name you have used here to set up the printer.
-
 	Make the printer use the raw driver
 
 ```
-# lpadmin -p *printer* -m raw
+# lpadmin -p *printer_name* -m raw
 
 ```
 
 	Set the default printer
 
 ```
-$ lpoptions -d *printer*
+$ lpoptions -d *printer_name*
 
 ```
 
@@ -330,21 +308,21 @@ $ lpoptions -d *printer*
 
 ```
 $ lpstat -s
-$ lpstat -p *printer*
+$ lpstat -p *printer_name*
 
 ```
 
 	Deactivate a printer
 
 ```
-# cupsdisable *printer*
+# cupsdisable *printer_name*
 
 ```
 
 	Activate a printer
 
 ```
-# cupsenable *printer*
+# cupsenable *printer_name*
 
 ```
 
@@ -353,21 +331,21 @@ $ lpstat -p *printer*
 First set it to reject all incoming entries:
 
 ```
-# cupsreject *printer*
+# cupsreject *printer_name*
 
 ```
 
 Then disable it.
 
 ```
-# cupsdisable *printer*
+# cupsdisable *printer_name*
 
 ```
 
 Finally remove it.
 
 ```
-# lpadmin -x *printer*
+# lpadmin -x *printer_name*
 
 ```
 
@@ -396,6 +374,22 @@ $ lpq -a # on all printers
 
 ```
 
+### GUI applications
+
+If your user does not have sufficient privileges to administer CUPS, the applications will request the root passwords when they start. To give users administrative privileges without needing root access, see [#Configuration](#Configuration).
+
+*   **print-manager** — A tool for managing print jobs and printers ([KDE](/index.php/KDE "KDE")).
+
+	[https://projects.kde.org/projects/kde/kdeutils/print-manager](https://projects.kde.org/projects/kde/kdeutils/print-manager) || [print-manager](https://www.archlinux.org/packages/?name=print-manager)
+
+*   **system-config-printer** — A CUPS printer configuration tool and status applet ([GNOME](/index.php/GNOME "GNOME") and others)
+
+	[http://cyberelk.net/tim/software/system-config-printer/](http://cyberelk.net/tim/software/system-config-printer/) || [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer)
+
+*   **gtklp** — GTK+ interface to CUPS.
+
+	[http://gtklp.sirtobi.com/index.shtml](http://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)
+
 ## Troubleshooting
 
 See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting").
@@ -403,7 +397,7 @@ See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting
 ## See also
 
 *   [Official CUPS documentation](http://localhost:631/help), *locally installed*
-*   [Official CUPS website](http://www.cups.org/)
+*   [Wikipedia:CUPS](https://en.wikipedia.org/wiki/CUPS "wikipedia:CUPS")
 *   [OpenPrinting homepage](http://www.linuxfoundation.org/collaborate/workgroups/openprinting)
 *   [OpenSuSE Concepts printing guide - explains the full printing workflow](https://en.opensuse.org/Concepts_printing)
 *   [OpenSuSE CUPS in a Nutshell - a quick CUPS overwiev](https://en.opensuse.org/SDB:CUPS_in_a_Nutshell)

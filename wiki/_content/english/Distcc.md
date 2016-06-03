@@ -1,4 +1,4 @@
-Distcc is a program to distribute builds of C, C++, Objective C or Objective C++ code across several machines on a network. distcc should always generate the same results as a local build, is simple to install and use, and is usually much faster than a local compile. The cool part is one can use it together with pacman/srcpac.
+Distcc is a program to distribute builds of C, C++, Objective C or Objective C++ code across several machines on a network. It should always generate the same results as a local build, is simple to install and use, and is usually much faster than a local compile. The cool part is one can use it together with native Arch build tools such as makepkg.
 
 ## Contents
 
@@ -32,11 +32,13 @@ Distcc is a program to distribute builds of C, C++, Objective C or Objective C++
 
 	master
 
-	The master is the computer which initiates and distributes the compilation to the configured slaves.
+	The master is the computer which initiates the compilation.
 
 	slaves
 
-	The slaves are running the distcc daemon which accepts incoming compilation requests send by the master.
+	The slave(s) accept compilation requests send by the master.
+
+**Note:** Both master and slave(s) machines need to be running distcc.
 
 ## Getting started
 
@@ -325,7 +327,7 @@ Users experiencing this error should make sure that groups permissions as descri
 
 Make sure to change back `/etc/passwd` to its original state after these modifications.
 
-Alternatively you may use sudo without changing the shell in /etc/passwd.
+Alternatively, use sudo without changing the shell in /etc/passwd.
 
 ```
  # sudo -u nobody gcc --version

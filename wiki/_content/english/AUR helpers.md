@@ -43,11 +43,11 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[http://xyne.archlinux.ca/projects/python3-aur](http://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
 
-*   **aurutils** — Helper tools for the AUR ([Forum page](https://bbs.archlinux.org/viewtopic.php?pid=1615428)).
+*   **aurutils** — Helper tools for the AUR. ([Forum page](https://bbs.archlinux.org/viewtopic.php?pid=1615428))
 
 	[https://github.com/AladW/aurutils](https://github.com/AladW/aurutils) || [aurutils](https://aur.archlinux.org/packages/aurutils/)
 
-*   **bauerbill** — Powerpill/pacman extension with support for building packages from ABS and AUR ([Forum page](https://bbs.archlinux.org/viewtopic.php?id=205834)).
+*   **bauerbill** — Powerpill/pacman extension with support for building packages from ABS and AUR. ([Forum page](https://bbs.archlinux.org/viewtopic.php?id=205834))
 
 	[http://xyne.archlinux.ca/projects/bauerbill](http://xyne.archlinux.ca/projects/bauerbill) || [bauerbill](https://aur.archlinux.org/packages/bauerbill/)
 
@@ -141,17 +141,13 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://bitbucket.org/kachelaqa/pkgbrowser/wiki/Home](https://bitbucket.org/kachelaqa/pkgbrowser/wiki/Home) || [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/)
 
-*   **kalu** — Small C application that adds an icon in the systray and can show notifications for Arch Linux News, Upgrades, AUR upgrades, and watched (AUR) upgrades (upgrades for packages not installed). Also includes a GUI system upgrader.
-
-	[https://github.com/jjk-jacky/kalu](https://github.com/jjk-jacky/kalu) || [kalu](https://aur.archlinux.org/packages/kalu/) (or [kalu-kde](https://aur.archlinux.org/packages/kalu-kde/) for auto-hide in KDE's panel)
-
 ## Comparison table
 
 The columns have the following meaning:
 
 *   *Secure*: does not [source](/index.php/Source "Source"), by default, the PKGBUILD at all, or, before doing so, reminds the user and offers him the opportunity to inspect it manually. Some helpers are known to source PKGBUILDs before the user can inspect them, **allowing malicious code to be executed**. *Optional* means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
 *   *Clean build*: does not export new variables that can prevent a successful build process.
-*   *Reliable parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli](https://aur.archlinux.org/packages/aws-cli/).
+*   *Reliable parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
 *   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
 *   *Split packages*: ability to correctly build and install split packages independently, such as [python-nikola](https://aur.archlinux.org/packages/python-nikola/).
 *   *Git clone*: uses git clones instead of downloading tarballs (deprecated since AUR 4).
@@ -162,7 +158,7 @@ The columns have the following meaning:
 | aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | No | No [[2]](https://github.com/aurapm/aura/issues/353) | No | bash/zsh | P | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support, multilingual |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | S | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[3]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | P | - |
-| aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | zsh | S | [tsort](https://en.wikipedia.org/wiki/Topological_sorting "w:Topological sorting"), PCRE, local repository, [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
+| aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | zsh | S | [tsort](https://en.wikipedia.org/wiki/Topological_sorting "w:Topological sorting"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [GnuPG](/index.php/GnuPG "GnuPG"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
 | bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
 | burgaur | Python3/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | P | Wrapper for *cower* |
 | cower | C | Yes | N/A | Yes | N/A | N/A | No | bash/zsh | S | No automatic builds, regex support |
@@ -175,7 +171,7 @@ The columns have the following meaning:
 | trizen | Perl | Yes | Yes | Yes [[7]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | No | No | No | None | P | AUR comments |
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | S | Mirror updates, print news and AUR comments |
 | yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | bash | S | No automatic builds |
-| yaourt | Bash/C | No [[8]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) | No [[9]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[10]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[11]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | P | Backup, ABS support, AUR comments, multilingual |
+| yaourt | Bash/C | No (*yaourt -Si*) [[8]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) | No [[9]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[10]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[11]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | P | Backup, ABS support, AUR comments, multilingual |
 
 **Note:** [Pacman](/index.php/Pacman "Pacman") 4.2\. introduced architecture specific fields. [[12]](http://allanmcrae.com/2014/12/pacman-4-2-released/) However, as of 06 April 2016, [AurJson](/index.php/AurJson "AurJson") combines all entries in a single field: [FS#48796](https://bugs.archlinux.org/task/48796). Helpers relying on the RPC may use the below workarounds to retrieve dependencies:
 

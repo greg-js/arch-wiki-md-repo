@@ -116,7 +116,9 @@ The program `xprop` is provided by the package [xorg-xprop](https://www.archlinu
 
 **Note:** These solutions run X on the same tty used to login, which is required in order to maintain the login session.
 
-For [Bash](/index.php/Bash "Bash"), add the following to the bottom of `~/.bash_profile`. If the file does not exist, copy a skeleton version from `/etc/skel/.bash_profile`. For [Zsh](/index.php/Zsh "Zsh"), add it to `~/.zlogin` (or `~/.zprofile`) instead.
+For [Bash](/index.php/Bash "Bash"), add the following to the bottom of `~/.bash_profile`. If the file does not exist, copy a skeleton version from `/etc/skel/.bash_profile`.
+
+For [Zsh](/index.php/Zsh "Zsh"), add it to `~/.zprofile`.
 
 ```
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

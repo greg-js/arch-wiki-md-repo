@@ -58,6 +58,10 @@ $ git commit -a
 
 	[https://github.com/TheLocehiliosan/yadm](https://github.com/TheLocehiliosan/yadm) || [yadm](https://aur.archlinux.org/packages/yadm/)
 
+*   **homeshick** — git dotfiles synchronizer written in bash
+
+	[https://github.com/andsens/homeshick](https://github.com/andsens/homeshick) || [homeshick-git](https://aur.archlinux.org/packages/homeshick-git/)
+
 ### Maintaining dotfiles across multiple machines
 
 One way of maintaining dotfiles across various machines across various hosts while still allowing for per-host customizations, is by maintaining a master-branch for all shared configuration, while each individual machine has a machine-specific branch checked out. Host-specific configuration can be committed to the machine-specific branch; as shared configuration is added to the master-branch, the per-machine branches are then rebased on top of the updated master.
@@ -111,6 +115,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | [zendeavor](https://github.com/zendeavor) | [zsh](https://github.com/zendeavor/config-stuff/tree/sandbag/zsh) | [i3](https://github.com/zendeavor/config-stuff/blob/sandbag/i3/config) | [vim](https://github.com/zendeavor/dotvim/tree/sandbag) | [rxvt-unicode](https://github.com/zendeavor/config-stuff/blob/sandbag/X11/Xresources#L14) | [tmux](https://github.com/zendeavor/config-stuff/tree/sandbag/tmux) | [ncmpcpp](https://github.com/zendeavor/config-stuff/blob/sandbag/ncmpcpp/config) | [i3status](https://github.com/zendeavor/config-stuff/blob/sandbag/i3/i3status.conf) | [weechat](https://github.com/zendeavor/config-stuff/tree/kiwi/weechat) |
 | [bstaletic](https://github.com/bstaletic) | [zsh](https://github.com/bstaletic/dotfiles/blob/master/.zshrc) | [dwm](https://github.com/bstaletic/dotfiles/blob/master/dwm/config.h) | [vim](https://github.com/bstaletic/dotfiles/blob/master/.vimrc) | terminator | screen | [ncmpcpp](https://github.com/bstaletic/blob/master/.ncmpcpp/config) | [conky](https://github.com/bstaletic/dotfiles/blob/master/.conkyrc) |
 | [swalladge](https://bitbucket.org/swalladge/dotfiles) | zsh/bash | i3 | neovim/vim | termite | tmux | i3status |
+| [awal](https://github.com/awalGarg/dotfiles) | fish | i3 | vim | sakura | tmux | i3status | The Lounge |
 
 ## See also
 

@@ -13,6 +13,8 @@
 
 For ROS Jade, see [Installation Instructions for jade in Arch Linux](http://wiki.ros.org/jade/Installation/Arch).
 
+**Note:** If using gcc in version 6.x or above, log4cxx 0.10 (one of dependencies) will not build. Use SVN version ([log4cxx-svn](https://aur.archlinux.org/packages/log4cxx-svn/) in aur) until 0.11 is released.
+
 ## Setup Notes - Indigo
 
 For ROS Indigo, see [Installation Instructions for Indigo in Arch Linux](http://wiki.ros.org/indigo/Installation/Arch).

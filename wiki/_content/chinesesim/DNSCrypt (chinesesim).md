@@ -73,7 +73,7 @@ forward-zone:
 
 #### 示例: 配置 dnsmasq
 
-配置 dnsmasq作为 [本地DNS缓存](/index.php/Dnsmasq#DNS_Cache_Setup "Dnsmasq"), 基本配置工作在DNSCrypt:
+配置 dnsmasq作为 [本地DNS缓存](/index.php/Dnsmasq#DNS_cache_setup "Dnsmasq"), 基本配置工作在DNSCrypt:
 
  `/etc/dnsmasq.conf` 
 ```

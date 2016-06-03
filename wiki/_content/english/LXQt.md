@@ -12,14 +12,17 @@ The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses R
     *   [3.1 Replace Openbox](#Replace_Openbox)
     *   [3.2 Autostarting applications](#Autostarting_applications)
     *   [3.3 Editing the Application Menu](#Editing_the_Application_Menu)
+    *   [3.4 Compton](#Compton)
 *   [4 Suggested applications](#Suggested_applications)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Desktop icons are grouped together](#Desktop_icons_are_grouped_together)
+*   [6 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/) group.
 
-You also need an icon theme to be installed. The default one is *Oxygen*, which can be installed with the [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons) package.
+An icon theme is also needed. The default one is *Oxygen*, which can be installed with the [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons) package.
 
 For additional functionality, you may wish to install the following:
 
@@ -39,6 +42,10 @@ For additional functionality, you may wish to install the following:
 
 	[https://github.com/lxde/obconf-qt](https://github.com/lxde/obconf-qt) || [obconf-qt](https://aur.archlinux.org/packages/obconf-qt/)
 
+*   **LXAppearance** — Easy to use GTK+ configuration tool. Part of LXDE.
+
+	[git://lxde.git.sourceforge.net/gitroot/lxde/lxappearance](git://lxde.git.sourceforge.net/gitroot/lxde/lxappearance) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
+
 *   **QTerminal** — Lightweight Qt-based terminal emulator.
 
 	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://aur.archlinux.org/packages/qterminal/)
@@ -47,7 +54,7 @@ For additional functionality, you may wish to install the following:
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
-*   **[XScreenSaver](/index.php/XScreenSaver "XScreenSaver")** — A screen saver required for screen locking in LXQt.
+*   **[XScreenSaver](/index.php/XScreenSaver "XScreenSaver")** — A screen saver required for screen locking in LXQt.[FS#49444](https://bugs.archlinux.org/task/49444)
 
 	[https://www.jwz.org/xscreensaver/](https://www.jwz.org/xscreensaver/) || [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)
 
@@ -103,9 +110,19 @@ From this window, click on "AutoStart" on the left side. Here you can add a new 
 
 It is possible to edit menu entries by editing their .desktop files stored in `/usr/share/applications/lxqt-*.desktop` files. See [Desktop entries](/index.php/Desktop_entries "Desktop entries").
 
+### Compton
+
+If present [Compton](/index.php/Compton "Compton") should auto start with the initial default session.
+
 ## Suggested applications
 
 As LXQt is a lightweight desktop, a plain install will not provide many desktop applications. It is left to the user to choose what applications they wish to install. The [Razor-qt wiki](https://github.com/Razor-qt/razor-qt/wiki/3rd-party-applications) has a page which lists of number of useful Qt applications that you may wish to install. Also see the [List of applications](/index.php/List_of_applications "List of applications") page for a comprehensive list of applications available in Arch.
+
+## Troubleshooting
+
+### Desktop icons are grouped together
+
+When moving icons on the desktop it is possible to place them a bit too close to each other making them connected. If unable to separate them Stop Desktop from Session Settings, remove `.config/pcmanfm-qt/lxqt/desktop-items-0.conf` and Start Desktop again.
 
 ## See also
 

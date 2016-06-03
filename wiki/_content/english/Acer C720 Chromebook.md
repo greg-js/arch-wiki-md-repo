@@ -11,13 +11,15 @@ The Acer C720 Chromebook (and newer Chromebooks in general) features a "legacy b
         *   [2.2.1 Bluetooth coexistence](#Bluetooth_coexistence)
         *   [2.2.2 Power saving](#Power_saving)
         *   [2.2.3 Improving signal quality](#Improving_signal_quality)
-    *   [2.3 Fix wakeup from suspend on lid close](#Fix_wakeup_from_suspend_on_lid_close)
-    *   [2.4 Enabling the light sensor](#Enabling_the_light_sensor)
-*   [3 Locating the Write-Protect Screw](#Locating_the_Write-Protect_Screw)
-*   [4 Known Issues](#Known_Issues)
-    *   [4.1 System freezes](#System_freezes)
-    *   [4.2 Internal microphone not working](#Internal_microphone_not_working)
-*   [5 See also](#See_also)
+    *   [2.3 Enabling the light sensor](#Enabling_the_light_sensor)
+*   [3 Suspend](#Suspend)
+    *   [3.1 Fix wakeup from suspend on lid close](#Fix_wakeup_from_suspend_on_lid_close)
+    *   [3.2 Lots of ehci errors in dmesg after resume](#Lots_of_ehci_errors_in_dmesg_after_resume)
+*   [4 Locating the Write-Protect Screw](#Locating_the_Write-Protect_Screw)
+*   [5 Known Issues](#Known_Issues)
+    *   [5.1 System freezes](#System_freezes)
+    *   [5.2 Internal microphone not working](#Internal_microphone_not_working)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -29,7 +31,7 @@ For information on general Chromebook post installation configuration (hotkeys, 
 
 ### Touchpad Configuration
 
-[Add](/index.php/Edit "Edit") the Xorg touchpad configuration below for better usability (increases touchpad sensitivity). These options are not available for all touchpad drivers (e.g. [libinput](/index.php/Libinput "Libinput")).
+[Add](/index.php/Add "Add") the Xorg touchpad configuration below for better usability (increases touchpad sensitivity). These options are not available for all touchpad drivers (e.g. [libinput](/index.php/Libinput "Libinput")).
 
  `/etc/X11/xorg.conf.d/50-cros-touchpad.conf` 
 ```
@@ -83,6 +85,12 @@ You can enable power savings with the option `ps_enable=1` to reduce power usage
 
 Enable antenna diversity with the option `bt_ant_diversity=1` to improve the signal quality and boost performance. However, keep in mind that [this disables the bluetooth interface](https://wireless.wiki.kernel.org/en/users/drivers/ath9k/antennadiversity) and, as such, bluetooth coexistence must not be loaded at the same time.
 
+### Enabling the light sensor
+
+Intersil ISL29018 is the light sensor in the C720, as default its module is disabled on build time so in order to use the sensor the kernel should be recompiled with `CONFIG_SENSORS_ISL29018` enabled.
+
+## Suspend
+
 ### Fix wakeup from suspend on lid close
 
 When the lid of the C720 is closed, the top of the screen presses against the touchpad, instantly waking the computer from suspend. To disable wakeup by touchpad, create the following file:
@@ -106,9 +114,11 @@ Alternatively, it may be toggled manually by running:
 
 This method does not persist after a reboot.
 
-### Enabling the light sensor
+### Lots of ehci errors in dmesg after resume
 
-Intersil ISL29018 is the light sensor in the C720, as default its module is disabled on build time so in order to use the sensor the kernel should be recompiled with `CONFIG_SENSORS_ISL29018` enabled.
+See [Chrome OS devices#Fixing suspend](/index.php/Chrome_OS_devices#Fixing_suspend "Chrome OS devices"). Additionally, [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1364521#p1364521%7Cthis), [[2]](https://github.com/vonbrownie/linux-post-install/blob/master/config/c720_jessiebook/lib/systemd/system-sleep/ehci-pci.sh%7Cthis), [[3]](https://philipalban.wordpress.com/2014/04/25/fixing-suspend-in-xubuntu-on-the-acer-c720-a-simplified-guide/%7Cthis), and [[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1218734%7Cthis) may be helpful.
+
+One symptom may be that it cannot properly shut down or reboot.
 
 ## Locating the Write-Protect Screw
 
@@ -126,7 +136,7 @@ Additionally see [SSD#Troubleshooting](/index.php/SSD#Troubleshooting "SSD") if 
 
 ### Internal microphone not working
 
-If your internal microphone is not working (for example, in Skype), select "Microphone (unplugged)" as your input source in the PulseAudio Volume Control. Your internal microphone should now work. [[1]](http://forums.bodhilinux.com/index.php?/topic/9975-microphone-support-on-acer-c720/)
+If your internal microphone is not working (for example, in Skype), select "Microphone (unplugged)" as your input source in the PulseAudio Volume Control. Your internal microphone should now work. [[5]](http://forums.bodhilinux.com/index.php?/topic/9975-microphone-support-on-acer-c720/)
 
 See also [Chrome OS devices#Fixing audio](/index.php/Chrome_OS_devices#Fixing_audio "Chrome OS devices") for another possible solution.
 

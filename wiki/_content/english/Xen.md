@@ -65,7 +65,7 @@ To install the Xen hypervisor install either the current stable [xen](https://au
 It's possible to boot the Xen hypervisor though the bare UEFI system on a modern computer but requires you to first recompile binutils to add support for x86_64-pep emulation. Using the archway of doing things you would use the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") and add `--enable-targets=x86_64-pep` to the build options of the binutils PKGBUILD file:
 
 ```
---disable-werror **--enable-targets=x86_64-pep**
+--disable-werror --disable-gdb **--enable-targets=x86_64-pep**
 
 ```
 

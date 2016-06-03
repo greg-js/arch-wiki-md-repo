@@ -66,13 +66,13 @@ IP=no
 
 PIDFILE=/run/openconnect_${Interface}.pid
 SERVER=vpn.example.net
-AUTHGROUP="<AUTHGROUP>"
+AUTHGROUP='<AUTHGROUP>'
 LOCAL_USERNAME=<USERNAME>
 REMOTE_USERNAME=<VPN_USERNAME>
 # Assuming the use of pass(1): 
 PASSWORD="`su ${LOCAL_USERNAME} -c "pass ${REMOTE_USERNAME}" | head -n 1`" 
 
-ExecUpPost="echo '${PASSWORD}' | /usr/bin/openconnect --background --pid-file=${PIDFILE} --interface=${Interface} --authgroup=\"${AUTHGROUP}\" --user=${REMOTE_USERNAME} --passwd-on-stdin ${SERVER}"
+ExecUpPost="echo '${PASSWORD}' | /usr/bin/openconnect --background --pid-file=${PIDFILE} --interface='${Interface}' --authgroup='${AUTHGROUP}' --user='${REMOTE_USERNAME}' --passwd-on-stdin ${SERVER}"
 ExecDownPre="kill -INT $(cat ${PIDFILE}) ; ip link delete ${Interface}"
 
 ```

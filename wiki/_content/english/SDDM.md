@@ -7,13 +7,14 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Autologin](#Autologin)
-    *   [2.2 Theme settings](#Theme_settings)
-        *   [2.2.1 Main theme](#Main_theme)
-        *   [2.2.2 Editing themes](#Editing_themes)
-        *   [2.2.3 Mouse cursor](#Mouse_cursor)
-        *   [2.2.4 Changing your avatar](#Changing_your_avatar)
-    *   [2.3 Numlock](#Numlock)
-    *   [2.4 Configuration GUI](#Configuration_GUI)
+    *   [2.2 Unlock KDE Wallet automatically on login](#Unlock_KDE_Wallet_automatically_on_login)
+    *   [2.3 Theme settings](#Theme_settings)
+        *   [2.3.1 Main theme](#Main_theme)
+        *   [2.3.2 Editing themes](#Editing_themes)
+        *   [2.3.3 Mouse cursor](#Mouse_cursor)
+        *   [2.3.4 Changing your avatar](#Changing_your_avatar)
+    *   [2.4 Numlock](#Numlock)
+    *   [2.5 Configuration GUI](#Configuration_GUI)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Hangs after login](#Hangs_after_login)
     *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
@@ -60,6 +61,10 @@ You can add a script that activates the screensaver of KDE to the autostart as a
 exit 0
 
 ```
+
+### Unlock KDE Wallet automatically on login
+
+See [KDE Wallet#Unlock KDE Wallet automatically on login](/index.php/KDE_Wallet#Unlock_KDE_Wallet_automatically_on_login "KDE Wallet").
 
 ### Theme settings
 
@@ -116,11 +121,11 @@ Alternatively, if your cursor turns to a black cross at the same time, and you a
 
 ### SDDM starts on tty1 instead of tty7
 
-SDDM follows the [systemd convention](http://0pointer.de/blog/projects/serial-console.html) of starting the first graphical session on tty1\. If you prefer the old convention where tty1 through tty6 are reserved for text consoles, uncomment and edit the "MinimumVT" variable, under section [XDisplay], in `sddm.conf`:
+SDDM follows the [systemd convention](http://0pointer.de/blog/projects/serial-console.html) of starting the first graphical session on tty1\. If you prefer the old convention where tty1 through tty6 are reserved for text consoles, uncomment and edit the "MinimumVT" variable, under the [X11] section in `sddm.conf`:
 
  `/etc/sddm.conf` 
 ```
-[XDisplay]
+[X11]
 ...
 MinimumVT=7
 ...

@@ -9,6 +9,7 @@
     *   [2.3 Panels](#Panels)
     *   [2.4 Scratchpad](#Scratchpad)
     *   [2.5 Different monitor configurations for different machines](#Different_monitor_configurations_for_different_machines)
+    *   [2.6 Set up a desktop where all windows are floating](#Set_up_a_desktop_where_all_windows_are_floating)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Help! I get a blank screen and my keybindings don't work!](#Help.21_I_get_a_blank_screen_and_my_keybindings_don.27t_work.21)
     *   [3.2 Window box larger than the actual application!](#Window_box_larger_than_the_actual_application.21)
@@ -157,6 +158,28 @@ Since the `bspwmrc` is a shell script, it allows you to do things like these:
  fi
 
 ```
+
+### Set up a desktop where all windows are floating
+
+Here is how to setup the desktop 3 to have only floating windows. It can be useful for Gimp or other apps with multiple windows.
+
+Put this script somewhere in your $PATH and call it from .xinitrc or similar (with a & at the end):
+
+```
+#!/bin/bash
+
+ # change the desktop number here
+ FLOATING_DESKTOP_ID=$(bspc query -D -d '^3')
+
+ bspc subscribe node_manage | while read -a msg ; do
+    desk_id=${msg[2]}
+    wid=${msg[3]}
+    [ "$FLOATING_DESKTOP_ID" = "$desk_id" ] && bspc node "$wid" -t floating
+ done
+
+```
+
+([source](https://github.com/baskerville/bspwm/issues/428#issuecomment-199985423))
 
 ## Troubleshooting
 

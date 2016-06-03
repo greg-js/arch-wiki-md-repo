@@ -67,7 +67,7 @@ auth            optional        pam_kwallet.so kdehome=.kde4
 account         include         system-login
 password        include         system-login
 session         include         system-login
-session         optional        pam_kwallet5.so auto_start
+session         optional        pam_kwallet5.so
 session         optional        pam_kwallet.so
 ```
 

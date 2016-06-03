@@ -1,17 +1,24 @@
+From the [project](http://perl.apache.org/):
+
+	mod_perl brings together the full power of the Perl programming language and the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"). You can use Perl to manage Apache, respond to requests for web pages and much more.
+
 ## Contents
 
-*   [1 Enabling Perl + Apache](#Enabling_Perl_.2B_Apache)
-    *   [1.1 Allow perl to execute scripts for certain directories](#Allow_perl_to_execute_scripts_for_certain_directories)
-        *   [1.1.1 Alternative 1: Using virtual hosts](#Alternative_1:_Using_virtual_hosts)
-        *   [1.1.2 Alternative 2: Just enable for a certain subdirectory](#Alternative_2:_Just_enable_for_a_certain_subdirectory)
-    *   [1.2 Turn on perl for directory listings](#Turn_on_perl_for_directory_listings)
-    *   [1.3 Try it out](#Try_it_out)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Allow perl to execute scripts for certain directories](#Allow_perl_to_execute_scripts_for_certain_directories)
+        *   [2.1.1 Using virtual hosts](#Using_virtual_hosts)
+        *   [2.1.2 For a subdirectory](#For_a_subdirectory)
+    *   [2.2 Turn on perl for directory listings](#Turn_on_perl_for_directory_listings)
+    *   [2.3 Try it out](#Try_it_out)
 
-## Enabling Perl + Apache
+## Installation
 
-Install [mod_perl](https://aur.archlinux.org/packages/mod_perl/).
+Install the [mod_perl](https://aur.archlinux.org/packages/mod_perl/) package.
 
-Add this to `httpd.conf`:
+## Configuration
+
+Load the module via the main Apache configuration file `httpd.conf`:
 
 ```
 LoadModule perl_module modules/mod_perl.so
@@ -20,12 +27,16 @@ LoadModule perl_module modules/mod_perl.so
 
 ### Allow perl to execute scripts for certain directories
 
-There are two possible methods: creating a virtual host, or enabling perl for a subdirectory.
+There are two possible methods to enable the `mod_perl` module:
 
-#### Alternative 1: Using virtual hosts
+*   [#Using virtual hosts](#Using_virtual_hosts), or
+*   [#For a subdirectory](#For_a_subdirectory).
 
-Add a virtual host with various settings in extra/httpd-vhosts.conf:
+#### Using virtual hosts
 
+Add a virtual host with settings. For example:
+
+ `/etc/httpd/conf/extra/httpd-vhosts.conf` 
 ```
 <VirtualHost perlwebtest:80>
 	Servername perlwebtest
@@ -45,28 +56,27 @@ Add a virtual host with various settings in extra/httpd-vhosts.conf:
 
 ```
 
-Ensure `/etc/httpd/conf/httpd.conf` includes the line
+Ensure `/etc/httpd/conf/httpd.conf` includes the created virtual host:
 
 ```
 Include conf/extra/httpd-vhosts.conf
 
 ```
 
-Make sure you do not have "Options Indexes FollowSymLinks"!
+Make sure it does not have `Options Indexes FollowSymLinks`!
 
-Add "perlwebtest" as localhost in `/etc/hosts`:
-
-```
-127.0.0.1	localhost YOURHOSTNAME perlwebtest
+Add "perlwebtest" as localhost in `/etc/hosts`, using the machine's hostname for *yourhostname*:
 
 ```
+127.0.0.1	localhost *yourhostname* perlwebtest
 
-Use your hostname instead of `YOURHOSTNAME`.
+```
 
-#### Alternative 2: Just enable for a certain subdirectory
+#### For a subdirectory
 
-Add the following to `/etc/httpd/conf/httpd.conf`:
+Add the following to the main configuration file:
 
+ `<code>/etc/httpd/conf/httpd.conf</code>` 
 ```
 Alias /perlwebtest/ /srv/http/perlwebtest/
 <Location /perlwebtest/>
@@ -118,18 +128,9 @@ print "mod_perl now works
 
 ```
 
-Restart apache:
+[Restart](/index.php/Restart "Restart") apache's `httpd.service` and let it [reload](/index.php/Reload "Reload") the configuration.
 
-```
-# systemctl restart httpd
+Finally, depending on chosen alternative configuration, visit
 
-```
-
-Usually you can just reload:
-
-```
-# systemctl reload httpd
-
-```
-
-Then visit [http://perlwebtest](http://perlwebtest) (if you created a virtual host) or [http://localhost/perlwebtest](http://localhost/perlwebtest) (if you only enabled one directory).
+*   [http://perlwebtest](http://perlwebtest) for [#Using virtual hosts](#Using_virtual_hosts), or
+*   [http://localhost/perlwebtest](http://localhost/perlwebtest) for [#For a subdirectory](#For_a_subdirectory)

@@ -5,8 +5,7 @@ This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s
 *   [1 Installation](#Installation)
     *   [1.1 Unsupported drivers](#Unsupported_drivers)
     *   [1.2 Alternate install: custom kernel](#Alternate_install:_custom_kernel)
-        *   [1.2.1 Automatic re-compilation of the NVIDIA module with kernel update](#Automatic_re-compilation_of_the_NVIDIA_module_with_kernel_update)
-    *   [1.3 Pure Video HD (VDPAU/VAAPI)](#Pure_Video_HD_.28VDPAU.2FVAAPI.29)
+    *   [1.3 Pure Video HD](#Pure_Video_HD)
     *   [1.4 DRM kernel mode setting](#DRM_kernel_mode_setting)
         *   [1.4.1 Pacman hook](#Pacman_hook)
     *   [1.5 Hardware accelerated video decoding with XvMC](#Hardware_accelerated_video_decoding_with_XvMC)
@@ -70,42 +69,19 @@ However, Nvidia's legacy drivers are still available and might provide better 3D
 
 ### Alternate install: custom kernel
 
-**Tip:** You must build a custom [nvidia](https://www.archlinux.org/packages/?name=nvidia) package to use it with a custom kernel, so it is a good idea to be familiar with the following topics:
+If you are using a custom kernel, compilation of the Nvidia kernel modules can be automated with [DKMS](/index.php/DKMS "DKMS").
 
-*   [ABS](/index.php/ABS "ABS")
-*   [makepkg](/index.php/Makepkg "Makepkg")
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
+Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). The Nvidia module will be rebuilt after every Nvidia or kernel update thanks to the DKMS [Pacman Hook](/index.php/Pacman#Hooks "Pacman").
 
-Follow the [How to use ABS](/index.php/ABS#How_to_use_ABS "ABS") instructions to create a build directory for the `nvidia` package. Then, before building with [makepkg](/index.php/Makepkg "Makepkg"), you must edit `nvidia.install` and `PKGBUILD` so that they contain the right kernel version variables.
+### Pure Video HD
 
-While running the custom kernel, get the appropriate kernel and local version names:
-
-```
-$ uname -r
-
-```
-
-and make sure the corresponding kernel header package, which was built during kernel compilation, is installed as well. Next:
-
-1.  In nvidia.install, replace the `EXTRAMODULES='extramodules-3.4-ARCH'` variable with the custom kernel version, such as `EXTRAMODULES='extramodules-3.4.4'` or `EXTRAMODULES='extramodules-3.4.4-custom'` depending on what the kernel's version is and the local version's text/numbers. Do this for all instances of the version number within this file.
-2.  In PKGBUILD, change the `_extramodules=extramodules-3.4-ARCH` variable to match the appropriate version, as above.
-3.  If there are multiple kernels installed in parallel (such as a custom kernel alongside the default -ARCH kernel), change the `pkgname=nvidia` variable in the PKGBUILD to a unique identifier, such as nvidia-344 or nvidia-custom. This will allow both kernels to use the nvidia module, since the custom nvidia module has a different package name and will not overwrite the original. You will also need to comment the line in `package()` that blacklists the nouveau module in `/usr/lib/modprobe.d/nvidia.conf` (no need to do it again).
-
-Then build and install the package as usual.
-
-#### Automatic re-compilation of the NVIDIA module with kernel update
-
-This is possible with [DKMS](/index.php/DKMS "DKMS"). Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). The [dkms](https://www.archlinux.org/packages/?name=dkms) package doesn't use [Systemd](/index.php/Systemd "Systemd") anymore, it uses pacman/alpm hooks. See [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman") for more information. See [Dynamic Kernel Module Support#Usage](/index.php/Dynamic_Kernel_Module_Support#Usage "Dynamic Kernel Module Support") for more information on how to use [DKMS](/index.php/DKMS "DKMS").
-
-### Pure Video HD (VDPAU/VAAPI)
-
-At least a video card with second generation [PureVideo HD](https://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_GPUs_containing_a_PureVideo_SIP_block "wikipedia:Nvidia PureVideo") is required to use [VDPAU](/index.php/VDPAU "VDPAU") and [VA-API](/index.php/VA-API "VA-API").
+At least a video card with second generation [PureVideo HD](https://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_GPUs_containing_a_PureVideo_SIP_block "wikipedia:Nvidia PureVideo") is required for [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") using VDPAU.
 
 ### DRM kernel mode setting
 
 **Note:** The NVIDIA driver does **not** have an fbdev driver for the high-resolution console.
 
-[nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 adds support for DRM [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). To enable this feature, add the `nvidia-drm.modeset=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), and add nvidia, nvidia_modeset, nvidia_uvm and nvidia_drm modules to [initramfs](/index.php/Initramfs "Initramfs").
+[nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 adds support for DRM [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). To enable this feature, add the `nvidia-drm.modeset=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), and add nvidia, nvidia_modeset, nvidia_uvm and nvidia_drm to your [initramfs#MODULES](/index.php/Initramfs#MODULES "Initramfs").
 
 **Warning:** Do not forget to run mkinitcpio every time you update driver.
 
@@ -130,13 +106,13 @@ Exec=/usr/bin/mkinitcpio -p linux
 
 ### Hardware accelerated video decoding with XvMC
 
-Accelerated decoding of MPEG-1 and MPEG-2 videos via [XvMC](/index.php/XvMC "XvMC") are supported on GeForce4, GeForce 5 FX, GeForce 6 and GeForce 7 series cards. See [XvMC](/index.php/XvMC "XvMC") for detail.
+Accelerated decoding of MPEG-1 and MPEG-2 videos via [XvMC](/index.php/XvMC "XvMC") are supported on GeForce4, GeForce 5 FX, GeForce 6 and GeForce 7 series cards. See [XvMC](/index.php/XvMC "XvMC") for details.
 
 ## Configuration
 
 It is possible that after installing the driver it may not be needed to create an Xorg server configuration file. You can run [a test](/index.php/Xorg#Running "Xorg") to see if the Xorg server will function correctly without a configuration file. However, it may be required to create a configuration file (prefer `/etc/X11/xorg.conf.d/20-nvidia.conf` over `/etc/X11/xorg.conf`) in order to adjust various settings. This configuration can be generated by the NVIDIA Xorg configuration tool, or it can be created manually. If created manually, it can be a minimal configuration (in the sense that it will only pass the basic options to the [Xorg](/index.php/Xorg "Xorg") server), or it can include a number of settings that can bypass Xorg's auto-discovered or pre-configured options.
 
-**Note:** Since 1.8.x Xorg uses separate configuration files in `/etc/X11/xorg.conf.d/` - check out [advanced configuration](#Advanced:_20-nvidia.conf) section.
+**Note:** For maunal configuration see [NVIDIA/Tips and tricks#Manual configuration](/index.php/NVIDIA/Tips_and_tricks#Manual_configuration "NVIDIA/Tips and tricks").
 
 ### Minimal configuration
 
@@ -457,7 +433,7 @@ $ nvidia-xconfig --sli=Mosaic --metamodes="GPU-0.DFP-0: 1920x1024+0+0, GPU-0.DFP
 
 ### Driver persistence
 
-Since version 319, Nvidia has changed the way driver persistence works, it now has a daemon that is to be run at boot. See the [Driver Persistence](http://docs.nvidia.com/deploy/driver-persistence/index.html) section of the Nvidia documentation for more details.
+Nvidia has a daemon that is to be run at boot. See the [Driver Persistence](http://docs.nvidia.com/deploy/driver-persistence/index.html) section of the Nvidia documentation for more details.
 
 To start the persistence daemon at boot, [enable](/index.php/Enable "Enable") the `nvidia-persistenced.service`. For manual usage see the [upstream documentation](http://docs.nvidia.com/deploy/driver-persistence/index.html#usage).
 

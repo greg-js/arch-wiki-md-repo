@@ -23,20 +23,20 @@ Install [prey-node-client](https://aur.archlinux.org/packages/prey-node-client/)
 
 Edit `/etc/prey/prey.conf` and add your device key and API key, both of which are listed in Prey's control panel. Or use the [the GUI](#GUI_config) to ste your account.
 
-Run `prey config activate` as prey user to ensure that the configuration is correct.
+Run `prey_project config activate` as prey user to ensure that the configuration is correct.
 
 The installer should enable automatically the [systemd](/index.php/Systemd "Systemd") service **prey-agent** to start Prey at boot. You can check if it's loaded and running with `# systemctl | grep prey-agent`
 
 ### Plugins
 
-To enable/disable plugins, you must run `prey config plugins` and read the usage to enable/disable and list the available plugins.
+To enable/disable plugins, you must run `prey_project config plugins` and read the usage to enable/disable and list the available plugins.
 
 ### GUI config
 
-You can use a GUI to configure prey using the `prey config gui` command:
+You can use a GUI to configure prey using the `prey_project config gui` command:
 
 ```
-# prey config gui
+# prey_project config gui
 
 ```
 
@@ -48,7 +48,7 @@ By enabling **url-trigger** and **report-to-inbox** plugins you can set a standa
 
 To troubleshoot, run
 
- `$ prey config check` 
+ `$ prey_project config check` 
 
 Ensure you have enabled [systemd](/index.php/Systemd "Systemd") service **prey-agent.service** to start Prey at boot.
 

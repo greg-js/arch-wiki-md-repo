@@ -69,7 +69,7 @@
 
 ## Installation
 
-NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager). The package does not include the tray applet *nm-applet* which is part of the [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet). Since version 1.0 it gained internal functionality for basic DHCP support. For full featured DHCP and if you require IPv6 support, [dhclient](https://www.archlinux.org/packages/?name=dhclient) integrates it.
+NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager). The package does not include the tray applet *nm-applet* which is part of the [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet). It has functionality for basic DHCP support. For full featured DHCP and if you require IPv6 support, [dhclient](https://www.archlinux.org/packages/?name=dhclient) integrates it.
 
 **Note:** You must ensure that no other service that wants to configure the network is running; in fact, multiple networking services will conflict. You can find a list of the currently running services with `systemctl --type=service` and then [stop](/index.php/Stop "Stop") them. See [#Configuration](#Configuration) to enable the NetworkManager service.
 
@@ -195,7 +195,7 @@ NetworkManager is [controlled](/index.php/Systemd#Using_units "Systemd") via `Ne
 
 NetworkManager has a global configuration file at `/etc/NetworkManager/NetworkManager.conf`. Usually no configuration needs to be done to the global defaults.
 
-**Note:** NetworkManager will print meaningless warnings ([FS#34971](https://bugs.archlinux.org/task/34971)) to your system log, when [NetworkManager-dispatcher.service](#Network_services_with_NetworkManager_dispatcher) and [ModemManager.service](https://www.archlinux.org/packages/?name=modemmanager) are not enabled. You may enable both to suppress the messages.
+**Note:** NetworkManager will print meaningless warnings ([FS#34971](https://bugs.archlinux.org/task/34971)) to your system log, when [NetworkManager-dispatcher.service](#Network_services_with_NetworkManager_dispatcher) and [ModemManager.service](https://www.archlinux.org/packages/?name=modemmanager) are not enabled. You may enable both to suppress the messages. *As of May 2016, this is no more a problem because it was "fixed" upstream.*
 
 ### Enable NetworkManager Wait Online
 

@@ -23,6 +23,7 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
     *   [6.2 Xflux](#Xflux)
     *   [6.3 redshift](#redshift)
     *   [6.4 NVIDIA settings](#NVIDIA_settings)
+    *   [6.5 Increase brightness above maximum level](#Increase_brightness_above_maximum_level)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Backlight PWM modulation frequency (Intel i915 only)](#Backlight_PWM_modulation_frequency_.28Intel_i915_only.29)
     *   [7.2 Inverted Brightness (Intel i915 only)](#Inverted_Brightness_.28Intel_i915_only.29)
@@ -282,6 +283,17 @@ redshift-gtk -l 37.8717:-122.2728
 ### NVIDIA settings
 
 Users of [NVIDIA's proprietary drivers](/index.php/NVIDIA "NVIDIA") users can change display brightness via the nvidia-settings utility under "X Server Color Correction." However, note that this has absolutely nothing to do with backlight (intensity), it merely adjusts the color output. (Reducing brightness this way is a power-inefficient last resort when all other options fail; increasing brightness spoils your color output completely, in a way similar to overexposed photos.)
+
+### Increase brightness above maximum level
+
+You can use [xrandr](/index.php/Xrandr "Xrandr") to increase brightness above its maximum level:
+
+```
+$ xrandr --output *output_name* --brightness 2
+
+```
+
+This will set the brightness level to 200%. It will cause higher power usage and sacrifice color quality for brightness, nevertheless it is particularly suited for situations where the ambient light is very bright (e.g. sunlight).
 
 ## Troubleshooting
 

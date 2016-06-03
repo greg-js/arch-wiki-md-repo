@@ -536,7 +536,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 *   **Okular** r for KDE. [http://okular.kde.org/](http://okular.kde.org/)
 *   **Xpdf** — A viewer for Portable Document Format (PDF) files
 
-	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://aur.archlinux.org/packages/xpdf/)
+	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf)
 
 *   **zathura** — Another lightweight PDF viewer similar to apvlv, only lighter
 

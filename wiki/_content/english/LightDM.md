@@ -267,11 +267,12 @@ Move the contents of [xinitrc](/index.php/Xinitrc "Xinitrc") to [xprofile](/inde
 
 ### NumLock on by default
 
-Install the [numlockx](https://www.archlinux.org/packages/?name=numlockx) package and the edit `/etc/lightdm/lightdm.conf` adding the following line:
+Install the [numlockx](https://www.archlinux.org/packages/?name=numlockx) package and then edit `/etc/lightdm/lightdm.conf`:
 
+ `/etc/lightdm/lightdm.conf` 
 ```
+[Seat:*]
 greeter-setup-script=/usr/bin/numlockx on
-
 ```
 
 ### User switching under Xfce4

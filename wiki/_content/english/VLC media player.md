@@ -139,9 +139,9 @@ The default settings for VLC is to open a new instance of the program for each f
 
 ### Hardware acceleration support
 
-To enable hardware acceleration since version 2.1.x: *Tools > Preferences > Input & Codecs*, then choose under *Hardware-accelerated decoding* the suitable item, e.g. `Video Acceleration (VA) API` or `Video Decode and Presentation API for Unix (VDPAU)`.
+See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-To enable hardware acceleration in previous versions: *Tools > Preferences > Input & Codecs*, then check `Use GPU accelerated decoding`.
+VLC automatically tries to use an available API, but you can override it by going to *Tools > Preferences > Input & Codecs* and choosing the suitable option under *Hardware-accelerated decoding*, e.g. `Video Acceleration (VA) API` for VA-API or `Video Decode and Presentation API for Unix (VDPAU)` for VDPAU.
 
 ### systemd service
 
@@ -179,7 +179,7 @@ If using a ffmpeg variant from the AUR, be sure that you have upgraded it as wel
 When starting VLC you can get a segfault, and ruling out general factors such as [Microcode](/index.php/Microcode "Microcode"), a possible workaround to this is running the following:
 
 ```
- # /usr/lib/vlc/vlc-cache-gen -f usr/lib/vlc/plugins
+ # /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins
 
 ```
 
@@ -205,14 +205,9 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 ### Failed to open VDPAU backend
 
-By changing some VLC preferences, you can fix the following message:
+See [Hardware video acceleration#Failed to open VDPAU backend](/index.php/Hardware_video_acceleration#Failed_to_open_VDPAU_backend "Hardware video acceleration").
 
-```
-Failed to open VDPAU backend libvdpau_i965.so: cannot open shared object file: No such file or director
-
-```
-
-In *Tools*, *Preferences*, *Video* tab (v2.2.0 menu) select "OpenGL video output (experimental)" for *Output* and, in *Input/Codecs*, "VA-API video decoder via X11/DRM" (both are OK) in *Hardware-accelerated decoding* (*Codecs* group).[[1]](https://bugs.archlinux.org/task/44569)
+Since your system probably doesn't support VDPAU you should tell VLC to use VA-API instead, see [#Hardware acceleration support](#Hardware_acceleration_support).
 
 ### Video output overlaps the desktop, does not scale nor position properly
 
@@ -236,7 +231,7 @@ Exec=/usr/bin/vlc --started-from-file %F
 
 ```
 
-in the vlc.desktop file. [[2]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bug/239431/comments/11)
+in the vlc.desktop file. [[1]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bug/239431/comments/11)
 
 ## See also
 

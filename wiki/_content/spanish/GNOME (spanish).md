@@ -274,7 +274,7 @@ gtk-icon-theme-name = mi_tema_de_iconos
 
 Para reproducir vídeos h.264, es necesario instalar [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)
 
-Para obtener más información sobre la aceleración de hardware de gstreamer, véase [Gstreamer: Hardware Acceleration](/index.php/GStreamer#Hardware_Acceleration "GStreamer").
+Para obtener más información sobre la aceleración de hardware de gstreamer, véase [Gstreamer: Hardware Acceleration](/index.php/GStreamer#Hardware_acceleration "GStreamer").
 
 ### Panel de GNOME
 

@@ -19,6 +19,7 @@ Source: [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4)
     *   [4.1 E4rat](#E4rat)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Barriers and Performance](#Barriers_and_Performance)
+*   [6 See also](#See_also)
 
 ## Create a new ext4 filesystem
 
@@ -37,15 +38,15 @@ From `man mkfs.ext4`:
 
 	***mke2fs** creates an inode for every* bytes-per-inode *bytes of space on the disk. The larger the* bytes-per-inode *ratio, the fewer inodes will be created.*
 
-Creating a new file, directory, symlink etc. requires at least one free inode. If the inode count is too low, no file can be created on the filesystem even though there is still space left on it.
+Creating a new file, directory, symlink etc. requires at least one free [inode](https://en.wikipedia.org/wiki/Inode "wikipedia:Inode"). If the inode count is too low, no file can be created on the filesystem even though there is still space left on it.
 
-Because it is not possible to change this value or the inode count after the filesystem is created, `mkfs.ext4` uses by default a rather low ratio of one inode every 16384 bytes (16 Kb) to avoid this situation.
+Because it is not possible to change either the bytes-per-inode ratio or the inode count after the filesystem is created, `mkfs.ext4` uses by default a rather low ratio of one inode every 16384 bytes (16 Kb) to avoid this situation.
 
 However, for partitions with size in the hundreds or thousands of GB and average file size in the megabyte range, this usually results in a much too large inode number because the number of files created never reaches the number of inodes.
 
 This results in a waste of disk space, because all those unused inodes each take up 256 bytes on the filesystem (this is also set in `/etc/mke2fs.conf` but should not be changed). 256 * several millions = quite a few gigabytes wasted in unused inodes.
 
-This can be evaluated by comparing the `{I}Use%` figures provided by `df` and `df -i`:
+This situation can be evaluated by comparing the `{I}Use%` figures provided by `df` and `df -i`:
 
  `$ df -h /home` 
 ```
@@ -58,18 +59,18 @@ Filesystem              Inodes  IUsed  IFree  **IUse%**  Mounted on
 /dev/mapper/lvm-home    1.8M    1.1K   1.8M   **1%**     /home
 ```
 
-Here comes the `-T *usage-type*` option, which specifies the expected usage of the filesystem using types defined in `/etc/mke2fs.conf`. Among those types are the bigger `largefile` and `largefile4`, which offer more relevant ratios for bigger disks of 1 MiB and 4 MiB respectively. They can be used as such:
+To specify a different bytes-per-inode ratio, you can use the `-T *usage-type*` option which hints at the expected usage of the filesystem using types defined in `/etc/mke2fs.conf`. Among those types are the bigger `largefile` and `largefile4` which offer more relevant ratios of one inode every 1 MiB and 4 MiB respectively. It can be used as such:
 
 ```
 # mkfs.ext4 -T largefile /dev/*device*
 
 ```
 
-This ratio can also be set directly via the `-i` option: *e.g.* use `-i 2097152` for a 2 MiB ratio and `-i 6291456` for a 6 MiB ratio.
+The bytes-per-inode ratio can also be set directly via the `-i` option: *e.g.* use `-i 2097152` for a 2 MiB ratio and `-i 6291456` for a 6 MiB ratio.
 
 **Tip:** Conversely, if you are setting up a partition dedicated to host millions of small files like emails or newsgroup items, you can use smaller *usage-type* values such as `news` (one inode for every 4096 bytes) or `small` (same plus smaller inode and block sizes).
 
-**Warning:** If you make a heavy use of symbolic or hard links, *e.g.* you use a backup scheme leveraging [rsync](/index.php/Rsync "Rsync") `--link-dest` feature ([rsnapshot](/index.php/Rsnapshot "Rsnapshot"), [BackupPC](/index.php/BackupPC "BackupPC"), [backintime](https://aur.archlinux.org/packages/backintime/)...), you may want to keep your inode number high enough because while not taking more space, every new hardlink consumes one new inode and therefore inode use may grow dramatically.
+**Warning:** If you make a heavy use of symbolic or hard links, *e.g.* you use a backup scheme leveraging [rsync](/index.php/Rsync "Rsync") `--link-dest` feature ([rsnapshot](/index.php/Rsnapshot "Rsnapshot"), [BackupPC](/index.php/BackupPC "BackupPC"), [backintime](https://aur.archlinux.org/packages/backintime/)...), make sure to keep the inode count high enough with a low bytes-per-inode ratio, because while not taking more space every new hardlink consumes one new inode and therefore the filesystem may run out of them quickly.
 
 ### Reserved blocks
 
@@ -169,7 +170,7 @@ In the following steps `/dev/sdxX` denotes the path to the partition to be conve
 
 ## Using ext4 per directory encryption
 
-Linux 4.1 comes with a new Ext4 feature to encrypt directories of a filesystem.[[5]](http://lwn.net/Articles/639427/) [[6]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656) See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the features, an overview of the implementation state and practical test results with kernel 4.1\.
+Linux comes with an Ext4 feature to encrypt directories of a filesystem.[[5]](http://lwn.net/Articles/639427/) [[6]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656) See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the features, an overview of the implementation state and practical test results with kernel 4.1\.
 
 Encryption keys are stored in the keyring. To get started, make sure you have enabled `CONFIG_KEYS` and `CONFIG_EXT4_ENCRYPTION` kernel options and you have kernel 4.1 or higher. Note the Arch default [linux](https://www.archlinux.org/packages/?name=linux) does not have `CONFIG_EXT4_ENCRYPTION` set yet.
 
@@ -268,4 +269,9 @@ Since kernel 2.6.30, ext4 performance has decreased due to changes that serve to
 
 To turn barriers off add the option `barrier=0` to the desired filesystem. For example:
 
- `/etc/fstab`  `/dev/sda5    /    ext4    noatime,barrier=0    0    1`
+ `/etc/fstab`  `/dev/sda5    /    ext4    noatime,barrier=0    0    1` 
+
+## See also
+
+*   [Official Ext4 wiki](https://ext4.wiki.kernel.org/)
+*   [Ext4 Disk Layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout)

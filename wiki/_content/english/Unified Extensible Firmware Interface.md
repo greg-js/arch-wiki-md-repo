@@ -172,7 +172,7 @@ There are few tools that can access/modify the UEFI variables, namely
 1.  **efivar** - Library and Tool to manipulate UEFI Variables (used by efibootmgr) - [https://github.com/vathpela/efivar](https://github.com/vathpela/efivar) - [efivar](https://www.archlinux.org/packages/?name=efivar) or [efivar-git](https://aur.archlinux.org/packages/efivar-git/)
 2.  **efibootmgr** - Tool to manipulate UEFI Firmware Boot Manager Settings - [https://github.com/vathpela/efibootmgr](https://github.com/vathpela/efibootmgr) - [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) or [efibootmgr-git](https://aur.archlinux.org/packages/efibootmgr-git/)
 3.  **uefivars** - Dumps list of EFI variables with some additional PCI related info (uses efibootmgr code internally) - [https://github.com/fpmurphy/Various/tree/master/uefivars-2.0](https://github.com/fpmurphy/Various/tree/master/uefivars-2.0) supports only efivarfs and [https://github.com/fpmurphy/Various/tree/master/uefivars-1.0](https://github.com/fpmurphy/Various/tree/master/uefivars-1.0) supports only sysfs-efivars . AUR package [uefivars-git](https://aur.archlinux.org/packages/uefivars-git/)
-4.  **efitools** - Tools to Create and Setup own UEFI Secure Boot Certificates, Keys and Signed Binaries (requires efivarfs) - [efitools-git](https://aur.archlinux.org/packages/efitools-git/)
+4.  **efitools** - Tools for manipulating UEFI secure boot platforms - [efitools](https://www.archlinux.org/packages/?name=efitools) or [efitools-git](https://aur.archlinux.org/packages/efitools-git/)
 5.  **Ubuntu's Firmware Test Suite** - [https://wiki.ubuntu.com/FirmwareTestSuite/](https://wiki.ubuntu.com/FirmwareTestSuite/) - [fwts](https://aur.archlinux.org/packages/fwts/) (along with [fwts-efi-runtime-dkms](https://aur.archlinux.org/packages/fwts-efi-runtime-dkms/)) or [fwts-git](https://aur.archlinux.org/packages/fwts-git/)
 
 #### efibootmgr
@@ -275,7 +275,7 @@ where `fs0:` is the mapping corresponding to the EFI System Partition and `fs0:\
 To add an entry to boot directly into your system without a bootloader, configure a boot option using your kernel as an [EFISTUB](/index.php/EFISTUB#UEFI_Shell "EFISTUB"):
 
 ```
-Shell> bcfg boot add **N** fs**V**:\vmlinuz-linux
+Shell> bcfg boot add **N** fs**V**:\vmlinuz-linux "Arch Linux"
 Shell> bcfg boot -opt **N** "root=**/dev/sdX#** initrd=\initramfs-linux.img"
 
 ```

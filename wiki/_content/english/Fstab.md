@@ -189,7 +189,7 @@ External devices that are to be mounted when present but ignored if absent may r
 
  `/etc/fstab`  `/dev/sdg1        /media/backup    jfs    defaults,nofail,x-systemd.device-timeout=1    0  2` 
 
-As of systemd 219, the `nofail` option is best combined with the `x-systemd.device-timeout` option. This is because the default device timeout is 90 seconds, so a disconnected external device with only `nofail` will make your boot take 90 seconds longer, unless you reconfigure the timeout as shown. Make sure not to set the timeout to 0, as this translates to infinite timeout.
+The `nofail` option is best combined with the `x-systemd.device-timeout` option. This is because the default device timeout is 90 seconds, so a disconnected external device with only `nofail` will make your boot take 90 seconds longer, unless you reconfigure the timeout as shown. Make sure not to set the timeout to 0, as this translates to infinite timeout.
 
 If your external device requires another systemd unit to be loaded (for example the network for a network share) you can use `x-systemd.requires=x` combined with `x-systemd.automount`to postpone automounting until after the unit is available. For example:
 

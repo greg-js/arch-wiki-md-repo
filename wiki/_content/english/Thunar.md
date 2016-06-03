@@ -1,6 +1,6 @@
 From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
-	*Thunar is a new modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy-to-use. Its user interface is clean and intuitive, and does not include any confusing or useless options by default. Thunar is fast and responsive with a good start up time and folder load time.*
+	*Thunar is a modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy-to-use. Its user interface is clean and intuitive, and does not include any confusing or useless options by default. Thunar is fast and responsive with a good start up time and folder load time.*
 
 ## Contents
 
@@ -30,7 +30,7 @@ From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [thunar](https://www.archlinux.org/packages/?name=thunar) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories"). It is part of the [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) group, so if you are running [Xfce](/index.php/Xfce "Xfce"), you probably already have Thunar installed.
+[Install](/index.php/Install "Install") the [thunar](https://www.archlinux.org/packages/?name=thunar) package. It is part of the [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) group, so if you are running [Xfce](/index.php/Xfce "Xfce"), you probably already have Thunar installed.
 
 ### Additional functionality
 
@@ -73,6 +73,8 @@ While Thunar can support automatic mounting and unmounting of removable media, t
 ### Installation
 
 Thunar Volume Manager can be installed from the package [thunar-volman](https://www.archlinux.org/packages/?name=thunar-volman) in the official repositories.
+
+**Tip:** To let Thunar handle automatic mounting, one must launch thunar in daemon mode. [#Starting in daemon mode](#Starting_in_daemon_mode)
 
 ### Configuration
 
@@ -121,7 +123,7 @@ What's important here is the `noauto` which prevents the share from being mounte
 
 ### Starting in daemon mode
 
-Thunar may be run in daemon mode. This has several advantages, including a faster startup for Thunar, as well as Thunar running in the background and only opening a window when necessary (for instance, when a flash drive is inserted).
+Thunar may be run in daemon mode. This has several advantages, including a faster startup for Thunar, Thunar running in the background and only opening a window when necessary (for instance, when a flash drive is inserted), and letting Thunar handle automatic mounting of removable media.
 
 Make sure the command `thunar --daemon` is autostarted on login. See [Xfce](/index.php/Xfce "Xfce") and [Autostarting](/index.php/Autostarting "Autostarting") for more details.
 

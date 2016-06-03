@@ -68,6 +68,8 @@ ArchWiki pages follow specific conventions, so if you have trouble reading ArchW
 
 If looking for specific information, try using the search box to the left. Alternatively, use your favorite web search engine which likely provides a special syntax or interface for restricting results to a particular website (usually appending `site:wiki.archlinux.org` to the search terms is enough). See [Help:Searching](/index.php/Help:Searching "Help:Searching") for other tricks.
 
-### Account registration from non-Arch systems
+### Registrations of new accounts suspended temporarily
 
-The captcha used for registering a new wiki account requires running an up-to-date Arch system. Nonetheless, users of other operating systems are very welcome of course, provided they only contribute [generic](/index.php/ArchWiki:Contributing#Non-Arch_users "ArchWiki:Contributing") Linux-related content: in order to answer the captcha, they are advised to boot the latest Arch [live image](https://www.archlinux.org/download/), for example in a virtual machine, or send an email to an active [administrator](/index.php/ArchWiki:Administrators "ArchWiki:Administrators") for help.
+The registrations of new accounts for this wiki have been temporarily suspended due to repeated spam attacks. In order to create an account, [check](/index.php/Special:ListUsers "Special:ListUsers") if your desired user name is available. Then, you can either join [#archlinux-wiki](/index.php/ArchWiki:IRC "ArchWiki:IRC") on Freenode and ask one of the administrators in there to create the user for you (exchange your email details via pm), or you can [email an administrator directly](/index.php/ArchWiki:Administrators "ArchWiki:Administrators").
+
+Hopefully, this will only be a short term workaround. Thank you for your patience.

@@ -6,6 +6,7 @@ rEFInd is a [UEFI](/index.php/UEFI "UEFI") boot manager. It is a fork of the no-
 
 *   [1 Installation](#Installation)
     *   [1.1 Scripted installation](#Scripted_installation)
+        *   [1.1.1 Secure Boot](#Secure_Boot)
     *   [1.2 Manual installation](#Manual_installation)
     *   [1.3 Upgrading](#Upgrading)
         *   [1.3.1 Pacman hook](#Pacman_hook)
@@ -69,6 +70,21 @@ After installing rEFInd's files to the ESP, verify that rEFInd has created `refi
 By default, rEFInd will scan all of your drives (that it has drivers for) and add a boot entry for each EFI bootloader it finds, which should include your kernel (since Arch enables [EFISTUB](/index.php/EFISTUB "EFISTUB") by default). So you may have a bootable system at this point.
 
 **Tip:** It is always a good idea to edit the default config `/EFI/refind/refind.conf` on the ESP to ensure that the default options work for you.
+
+#### Secure Boot
+
+Follow [Secure Boot#Using your own keys](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") to create keys.
+
+Create directory `/etc/refind.d/keys` and place Signature Database (**db**) key and certificates in it. Name the files: `refind_local.key`, `refind_local.crt` and `refind_local.cer`.
+
+When running install script add option `--localkeys`, e.g.:
+
+```
+# refind-install --localkeys
+
+```
+
+rEFInd EFI binary will be signed with supplied key and certificate.
 
 ### Manual installation
 

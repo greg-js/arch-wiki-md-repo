@@ -10,7 +10,8 @@ Minecraft is a game about breaking and placing blocks. At first, people built st
     *   [2.1 Installation](#Installation_2)
     *   [2.2 Setup](#Setup)
     *   [2.3 Spigot (respectively Craftbukkit)](#Spigot_.28respectively_Craftbukkit.29)
-    *   [2.4 Additional notes](#Additional_notes)
+    *   [2.4 Cuberite](#Cuberite)
+    *   [2.5 Additional notes](#Additional_notes)
 *   [3 See also](#See_also)
 
 ## Client
@@ -72,11 +73,17 @@ To easily control the server you may use the provided `minecraftd` script. It is
 
 To tweak the default settings (e.g. the maximum RAM, number of threads etc.) edit the file `/etc/conf.d/minecraft`.
 
+The server provides a service and timer for systemd to take automatic backups. The backups are located in the `backup` folder under the server root directory. The related systemd files reside under `/usr/lib/systemd/system/minecraftd-backup.timer` and `/usr/lib/systemd/system/minecraftd-backup.service`. They may easily be adapted to your liking, e.g. a custom backup interval.
+
 ### Spigot (respectively Craftbukkit)
 
 Spigot is the most widely-used **modded** Minecraft server in the world, hence there is a [spigot](https://aur.archlinux.org/packages/spigot/) package in the [AUR](/index.php/AUR "AUR"). The spigot PKGBUILD builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the spigot server as well provides its own systemd unit files, spigot script and the corresponding script configuration file. The binary is called `spigot` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/spigot`.
 
 It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in popularity since Bukkit's demise.
+
+### Cuberite
+
+[Cuberite](http://cuberite.org/) is a highly efficient minecraft compatible server written in C++ and Lua. It achieves better performances than the vanilla minecraft server plus it is extensively moddable. The [cuberite](https://aur.archlinux.org/packages/cuberite/) package is available in the [AUR](/index.php/AUR "AUR"). The program provides a simple web interface by default at `port 8080` with which most server operations can easily be done through the browser. Therefore there is no need for a management script. Additionally two systemd files for starting (`cuberite.service`) and backing up (`cuberite-backup.service`) the server are provided by the package.
 
 ### Additional notes
 

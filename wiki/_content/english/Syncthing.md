@@ -48,7 +48,7 @@ $ systemctl --user start syncthing.service
 
 ## Accessing the web-interface
 
-**Tip:** Syncthing can only be accessed on the running computer. Change `<address>127.0.0.1:8384</address>` in `~/config/syncthing/config.xml` to `<address>0.0.0.0:8384</address>` and restart the [systemd](/index.php/Systemd "Systemd") service to allow access from another computer.
+**Tip:** Syncthing can only be accessed on the running computer. Change `<address>127.0.0.1:8384</address>` in `~/.config/syncthing/config.xml` to `<address>0.0.0.0:8384</address>` and restart the [systemd](/index.php/Systemd "Systemd") service to allow access from another computer.
 
 When Syncthing is started, a web interface will be provided by default on [localhost port 8384](http://localhost:8384). If you started syncthing manually, it should open the admin page in your browser.
 

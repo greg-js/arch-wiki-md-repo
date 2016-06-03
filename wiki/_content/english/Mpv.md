@@ -79,7 +79,9 @@ Alt+k add video-pan-y -0.05
 
 ### Hardware Decoding
 
-Unlike *mplayer* and *mplayer2*, *mpv* has both [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking for `--hwdec=<api>` in [man page](/index.php/Man_page "Man page") `mpv (1)`. To make this persistent, add the line `hwdec=*method*` to your configuration file.
+See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+
+Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking for `--hwdec=<api>` in [man page](/index.php/Man_page "Man page") `mpv (1)`. To make this persistent, add the line `hwdec=*method*` to your configuration file.
 
 When hardware decoding is used, the video output should generally be set to `opengl` or `opengl-hq` (or possibly `vdpau` if using `hwdec=vdpau`). In particular, `hwdec=vaapi` should be used with `vo=opengl` [[1]](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst) if possible.
 
@@ -155,10 +157,12 @@ ytdl-format=bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best
 
 ### youtube-dl audio with search
 
-To find and play audio straight from your terminal with `mm ' *SEARCH* '` put the following function in your `.bashrc`:
+To find and play audio straight from your terminal with `mm "*search terms*"` put the following function in your `.bashrc`:
 
 ```
-mm () { youtube-dl ytsearch:"$@" -q -f bestaudio --ignore-config --console-title --print-traffic --max-downloads 1 --no-call-home --no-playlist -o - | mpv --no-terminal --no-video --cache=256 -; }
+function mm() {
+    mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$@"
+}
 
 ```
 

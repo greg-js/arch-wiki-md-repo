@@ -38,7 +38,7 @@ Alternatively, you can search for documentation on [CTAN](http://ctan.org/search
 
 ### Q: I want LaTeX to do something special, and I am pretty sure someone before me had to have the same problem.
 
-**A:** There is an excellent [TeX FAQ](http://www.tex.ac.uk/cgi-bin/texfaq2html) on the web. Typical LaTeX problems (special headers, different page layout, tricks with tables, etc.) are all covered there. Searchable!
+**A:** There is an excellent [TeX FAQ](http://www.tex.ac.uk/faq) on the web. Typical LaTeX problems (special headers, different page layout, tricks with tables, etc.) are all covered there. Searchable!
 
 ### Q: I want to read more! More! I said more!
 

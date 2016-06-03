@@ -22,10 +22,10 @@ From now on we must have ArchLinux booted and we only have to install it normall
 
 ## Touchpad
 
-After we install a graphic interface we can appreciate that the touchpad of the computer is not working, so the easy fix is to blacklist "ic2_hid".
+After we install a graphic interface we can appreciate that the touchpad of the computer is not working, so the easy fix is to blacklist "i2c_hid".
 
 ```
- echo "blacklist ic2_hid" > /etc/modprobe.d/blacklist.conf
+ echo "blacklist i2c_hid" | sudo tee -a /etc/modprobe.d/blacklist.conf
 
 ```
 
@@ -50,8 +50,8 @@ Fortunately for us they have a patch that is able to get it to work (Tested on 4
 
 ```
  git clone [https://github.com/sumdog/ath10k-firmware](https://github.com/sumdog/ath10k-firmware)
- sudo cp ath10k-firmware/ath10k/QCA6174 /lib/firmware/ath10k/QCA6174
- sudo echo "options ath10k_core skip_otp=y" > /etc/modprobe.d/ath10k.conf
+ sudo cp -a ath10k-firmware/ath10k/QCA6174 /lib/firmware/ath10k/QCA6174
+ echo "options ath10k_core skip_otp=y" | sudo tee -a /etc/modprobe.d/ath10k.conf
 
 ```
 

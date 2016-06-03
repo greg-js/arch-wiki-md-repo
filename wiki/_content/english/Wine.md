@@ -19,21 +19,22 @@
     *   [4.1 Wineconsole](#Wineconsole)
     *   [4.2 Winetricks](#Winetricks)
     *   [4.3 CSMT patch](#CSMT_patch)
-    *   [4.4 Unregister Wine file associations](#Unregister_Wine_file_associations)
-    *   [4.5 Dual Head with different resolutions](#Dual_Head_with_different_resolutions)
-    *   [4.6 exe-thumbnailer](#exe-thumbnailer)
-    *   [4.7 Changing the language](#Changing_the_language)
-    *   [4.8 Using Wine as an interpreter for Win16/Win32 binaries](#Using_Wine_as_an_interpreter_for_Win16.2FWin32_binaries)
-    *   [4.9 16-bit programs](#16-bit_programs)
-    *   [4.10 Burning optical media](#Burning_optical_media)
-    *   [4.11 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
-    *   [4.12 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
-    *   [4.13 Show FPS overlay in games](#Show_FPS_overlay_in_games)
-    *   [4.14 Installing .NET Framework 4.0](#Installing_.NET_Framework_4.0)
-    *   [4.15 Installing Microsoft Office](#Installing_Microsoft_Office)
-        *   [4.15.1 Office 2010](#Office_2010)
-        *   [4.15.2 Office 2013](#Office_2013)
-        *   [4.15.3 Office 2016](#Office_2016)
+    *   [4.4 Unregister existing Wine file associations](#Unregister_existing_Wine_file_associations)
+    *   [4.5 Prevent new Wine file associations](#Prevent_new_Wine_file_associations)
+    *   [4.6 Dual Head with different resolutions](#Dual_Head_with_different_resolutions)
+    *   [4.7 exe-thumbnailer](#exe-thumbnailer)
+    *   [4.8 Changing the language](#Changing_the_language)
+    *   [4.9 Using Wine as an interpreter for Win16/Win32 binaries](#Using_Wine_as_an_interpreter_for_Win16.2FWin32_binaries)
+    *   [4.10 16-bit programs](#16-bit_programs)
+    *   [4.11 Burning optical media](#Burning_optical_media)
+    *   [4.12 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
+    *   [4.13 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
+    *   [4.14 Show FPS overlay in games](#Show_FPS_overlay_in_games)
+    *   [4.15 Installing .NET Framework 4.0](#Installing_.NET_Framework_4.0)
+    *   [4.16 Installing Microsoft Office](#Installing_Microsoft_Office)
+        *   [4.16.1 Office 2010](#Office_2010)
+        *   [4.16.2 Office 2013](#Office_2013)
+        *   [4.16.3 Office 2016](#Office_2016)
 *   [5 Third-party interfaces](#Third-party_interfaces)
     *   [5.1 CrossOver](#CrossOver)
     *   [5.2 PlayOnLinux/PlayOnMac](#PlayOnLinux.2FPlayOnMac)
@@ -118,7 +119,7 @@ export WINEARCH=win32
 
 ### Graphics drivers
 
-For most games, Wine requires high performance accelerated graphics drivers. This likely means using proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") or [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") drivers, although the open source [ATI](/index.php/ATI "ATI") driver is increasingly become proficient for use with Wine. [Intel](/index.php/Intel "Intel") drivers should mostly work as well as they are going to out of the box.
+For 64-bit systems, additional [multilib](/index.php/Multilib "Multilib") packages are required. Please install the one that is listed in the *Multilib Package* column in the table in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
 
 A good sign that your drivers are inadequate or not properly configured is when Wine reports the following in your terminal window:
 
@@ -126,8 +127,6 @@ A good sign that your drivers are inadequate or not properly configured is when 
 Direct rendering is disabled, most likely your OpenGL drivers have not been installed correctly
 
 ```
-
-For 64-bit systems, additional [multilib](/index.php/Multilib "Multilib") packages are required. Please install the one that is listed in the *Multilib Package* column in the table in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
 
 **Note:** You might need to restart X after having installed the correct library.
 
@@ -304,9 +303,7 @@ $ winetricks
 
 Since 2013 Wine developers have been experimenting with [stream/worker thread optimizations](http://www.winehq.org/pipermail/wine-devel/2013-September/101106.html). You may experience an enormous performance improvement by using this experimental patched Wine versions. Many games may run as fast as on Windows or even faster. This Wine patch is known as CSMT patch and works with NVidia and AMD graphics cards.
 
-[Wine-staging](http://www.wine-staging.com/) includes CSMT support, and can be installed with the [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) package.
-
-**Note:** CSMT is in the process of being merged into the regular [wine](https://www.archlinux.org/packages/?name=wine) and is not available in [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) as of version 1.9.6.[[1]](http://www.wine-staging.com/news/2016-03-21-release-1.9.6.html)
+[Wine-staging](http://www.wine-staging.com/) includes CSMT support (included again since [version 1.9.10](http://www.wine-staging.com/news/2016-05-18-release-1.9.10.html)), and can be installed with the [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) package.
 
 CSMT support needs to be enabled before it can be used, instructions can be found [here](https://github.com/wine-compholio/wine-staging/wiki/CSMT#enabledisable-csmt), no further configuration is needed.
 
@@ -315,7 +312,7 @@ Further information:
 *   [Phoronix Forum discussion](http://www.phoronix.com/forums/showthread.php?93967-Wine-s-Big-Command-Stream-D3D-Patch-Set-Updated/page3&s=7775d7c3d4fa698089d5492bb7b1a435) with the CSMT developer Stefan Dösinger
 *   [Here](https://www.youtube.com/playlist?list=PL0P2a_sII2eTd8uq-azTNpQjiFLqBhDjg) you find some game videos running with CSMT enabled
 
-### Unregister Wine file associations
+### Unregister existing Wine file associations
 
 By default, Wine takes over as the default application for a lot of formats. Some (e.g. `vbs` or `chm`) are Windows-specific, and opening them with Wine can be a convenience. However, having other formats (e.g. `gif`, `jpeg`, `txt`, `js`) open in Wine's bare-bones simulations of Internet Explorer and Notepad can be annoying.
 
@@ -355,7 +352,9 @@ And update the cache as above.
 
 Please note Wine will still create new file associations and even recreate the file associations if the application sets the file associations again.
 
-To prevent this, edit your `$WINEPREFIX/system.reg` file, Search for `winemenubuilder` and remove `-a`, so you'll get:
+### Prevent new Wine file associations
+
+To prevent wine from creating any file associations edit your `$WINEPREFIX/system.reg` file, Search for `winemenubuilder` and remove `-a`, so you'll get:
 
  `$WINEPREFIX/system.reg` 
 ```

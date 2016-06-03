@@ -15,6 +15,7 @@ SANE ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now
         *   [6.1.1 Missing firmware file](#Missing_firmware_file)
         *   [6.1.2 Wrong firmware file permissions](#Wrong_firmware_file_permissions)
         *   [6.1.3 Multiple backends claim scanner](#Multiple_backends_claim_scanner)
+        *   [6.1.4 Communication via xHCI not working (older scanner models)](#Communication_via_xHCI_not_working_.28older_scanner_models.29)
     *   [6.2 Slow startup](#Slow_startup)
     *   [6.3 Permission problem](#Permission_problem)
 
@@ -188,6 +189,13 @@ to
  epson
 
 ```
+
+#### Communication via xHCI not working (older scanner models)
+
+Some older Scanner models do not work when connected via an USB3 port. This is not a big issue if USB2 ports are available. In case the machine running arch-linux has only USB3 ports, there are two ways to resolve the issue.
+
+*   Disable xHCI via Bios/EFI. eHCI will consequently be used and communication with the scanner will work. On the downside, USB3 speed can not be reached on any port.
+*   On (some) intel chipsets the 'setpci' command can be used to route specific usb ports to either the xHCI or the eHCI controller. See [Here](https://forums.opensuse.org/showthread.php/507627-Suse-13-2-scanner-no-longer-working-on-64-bit-version?p=2714695#post2714695) and [Here](http://superuser.com/questions/812022/force-a-single-usb-3-0-port-to-work-as-usb-2-0) (scroll down to where it says "setpci") for further information. With this it is possible to toggle single USB ports with a simple shell script.
 
 ### Slow startup
 

@@ -69,6 +69,8 @@ There are 3 steps that need to be performed before you can develop Android appli
 
 **Note:** If you are running a 64-bit system, make sure the [multilib](/index.php/Multilib "Multilib") repository is enabled to avoid "error: target not found: lib32-zlib" error messages.
 
+**Note:** If you plan to install [Android Studio](/index.php/Android_Studio "Android Studio") and want the IDE to manage your SDK installation, you do not need to install these packages
+
 Before developing Android applications, you need to install the Android SDK, which is made of 3 distinct packages, all installable from [AUR](/index.php/AUR "AUR"):
 
 1.  [android-sdk](https://aur.archlinux.org/packages/android-sdk/)
@@ -112,9 +114,11 @@ $ newgrp sdkusers
 
 ```
 
-**Note:** As an alternative to a global install with the [AUR](/index.php/AUR "AUR") packages, the SDK can be installed to a user's home directory via [the upstream instructions](https://developer.android.com/sdk/index.html).
+**Note:** As an alternative to a global install with the [AUR](/index.php/AUR "AUR") packages, the SDK can be installed to a user's home directory via [the upstream instructions](https://developer.android.com/sdk/index.html). You may also use the android-*-dummy packages in the [AUR](/index.php/AUR "AUR") to handle the system dependencies.
 
 ### Android SDK platform API
+
+**Note:** If you plan to install [Android Studio](/index.php/Android_Studio "Android Studio") and want the IDE to handle your SDK, you don't need to install these packages
 
 Install the desired Android SDK Platform package from the [AUR](/index.php/AUR "AUR"):
 
@@ -348,13 +352,13 @@ To build any version of Android, you need to install these packages:
 
 *   64-bit systems only: [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline)
 
-*   AUR Packages: [libtinfo](https://aur.archlinux.org/packages/libtinfo/) [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
+*   AUR Packages 32-bit and 64-bit systems: [libtinfo](https://aur.archlinux.org/packages/libtinfo/) [libtinfo-5](https://aur.archlinux.org/packages/libtinfo-5/) [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
+
+*   AUR Packages 64-bit systems only: [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
 
 To build Android 6+, you need to install these additional packages:
 
 *   32-bit and 64-bit systems: [rsync](https://www.archlinux.org/packages/?name=rsync)
-
-**Note:** You must now also install [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) & [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) since ncurses was updated to ncurses6 and android's prebuilt clang still depends on ncurses5\. You can check what libs are still needed: `ldd prebuilts/clang/linux-x86/host/3.6/bin/clang` 
 
 **Note:** You must now also install [maven](https://www.archlinux.org/packages/?name=maven) to build CyanogenMod since, from cm-13.0, they are using maven artifacts
 
@@ -371,7 +375,7 @@ Older versions [require](http://source.android.com/source/initializing.html) a w
 
 ### Setting up the build environment
 
-[Install](/index.php/Install "Install") the [repo](https://aur.archlinux.org/packages/repo/) package, then:
+[Install](/index.php/Install "Install") the [repo](https://www.archlinux.org/packages/?name=repo) package, then:
 
 ```
 $ mkdir ~/bin

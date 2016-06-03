@@ -9,13 +9,12 @@
     *   [4.1 gd](#gd)
     *   [4.2 imagemagick](#imagemagick)
     *   [4.3 pthreads](#pthreads)
-    *   [4.4 mcrypt](#mcrypt)
-    *   [4.5 PCNTL](#PCNTL)
-    *   [4.6 MySQL/MariaDB](#MySQL.2FMariaDB)
-    *   [4.7 PostgreSQL](#PostgreSQL)
-    *   [4.8 Sqlite](#Sqlite)
-    *   [4.9 XDebug](#XDebug)
-    *   [4.10 IMAP](#IMAP)
+    *   [4.4 PCNTL](#PCNTL)
+    *   [4.5 MySQL/MariaDB](#MySQL.2FMariaDB)
+    *   [4.6 PostgreSQL](#PostgreSQL)
+    *   [4.7 Sqlite](#Sqlite)
+    *   [4.8 XDebug](#XDebug)
+    *   [4.9 IMAP](#IMAP)
 *   [5 Caching](#Caching)
     *   [5.1 OPCache](#OPCache)
     *   [5.2 APCu](#APCu)
@@ -53,7 +52,7 @@ Note that to run PHP scripts as plain CGI, you need the [php-cgi](https://www.ar
 
 ## Running
 
-While PHP can be run standalone, it is typically used with http servers such as [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"), [nginx](/index.php/Nginx "Nginx"), [lighttpd](/index.php/Lighttpd "Lighttpd") and [Hiawatha](/index.php/Hiawatha "Hiawatha").
+While PHP can be run standalone, it is typically used with http servers such as [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") (this is frequently called [LAMP](/index.php/LAMP "LAMP") setup), [nginx](/index.php/Nginx "Nginx"), [lighttpd](/index.php/Lighttpd "Lighttpd") and [Hiawatha](/index.php/Hiawatha "Hiawatha").
 
 To run PHP standalone issue the `php -S localhost:8000 -t public_html/` command. See [documentation](https://secure.php.net/manual/en/features.commandline.webserver.php).
 
@@ -120,15 +119,6 @@ to `/etc/php/php.ini`.
 If you wish to have POSIX multi-threading you will need the pthreads extension. To install the pthreads ([http://pecl.php.net/package/pthreads](http://pecl.php.net/package/pthreads)) extension using `pecl` you are required to use a compiled version of PHP with the the thread safety support flag `--enable-maintainer-zts`. Currently the most clean way to do this would be to rebuild the original package with the flag.
 
 Instruction can be found on the [PHP pthreads extension](/index.php/PHP_pthreads_extension "PHP pthreads extension") page.
-
-### mcrypt
-
-If you want the `mcrypt` module, install [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) and uncomment the line in `/etc/php/php.ini`:
-
-```
-extension=mcrypt.so
-
-```
 
 ### PCNTL
 
@@ -266,7 +256,7 @@ You would need other plugins for JavaScript support and DB query.
 
 ### Composer
 
-[Composer](https://getcomposer.org/) is a dependency manager for PHP. It can be installed with the [php-composer](https://www.archlinux.org/packages/?name=php-composer) package.
+[Composer](https://getcomposer.org/) is a dependency manager for PHP. It can be installed with the [composer](https://www.archlinux.org/packages/?name=composer) package.
 
 ### PDepend
 

@@ -30,8 +30,7 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
     *   [4.6 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
     *   [4.7 Cannot login through CLI, but phpmyadmin works well](#Cannot_login_through_CLI.2C_but_phpmyadmin_works_well)
     *   [4.8 MySQL binary logs are taking up huge disk space](#MySQL_binary_logs_are_taking_up_huge_disk_space)
-*   [5 phpMyAdmin](#phpMyAdmin)
-*   [6 See also](#See_also)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -70,7 +69,7 @@ It is recommended to secure the MySQL installation by running the following comm
 
 ```
 
-To simplify administration, you might want to install a front-end such as [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) and/or [Adminer](/index.php/Adminer "Adminer").
+To simplify administration, you might want to install a front-end such as [dbeaver](https://aur.archlinux.org/packages/dbeaver/), [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench), [Adminer](/index.php/Adminer "Adminer") or [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) is not completely compatible with MariaDB but can be used for basic tasks.
 
 ### Upgrade MariaDB
 
@@ -501,10 +500,6 @@ Alternatively, you can purge some binary logs in `/var/lib/mysql` to free up dis
 # mysql -u root -p"PASSWORD" -e "PURGE BINARY LOGS TO 'mysql-bin.0000xx';"
 
 ```
-
-## phpMyAdmin
-
-[phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") is a free software tool written in PHP intended to handle the administration of MySQL over the Internet. phpMyAdmin supports a wide range of operations with MySQL. The most frequently used operations are supported by the user interface (managing databases, tables, fields, relations, indexes, users, permissions, etc), while you still have the ability to directly execute any SQL statement." [http://www.phpmyadmin.net/home_page/index.php](http://www.phpmyadmin.net/home_page/index.php)
 
 ## See also
 

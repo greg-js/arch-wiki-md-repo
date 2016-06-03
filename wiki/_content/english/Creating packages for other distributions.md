@@ -25,7 +25,7 @@
 *   Use distribution-specific packaging tools. Examples: [dh-make](https://aur.archlinux.org/packages/dh-make/), [dpkg](https://aur.archlinux.org/packages/dpkg/) (Debian), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) (Fedora). Shortcuts such as [dpkg-deb](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/) or [checkinstall](https://aur.archlinux.org/packages/checkinstall/) may be suited for less complex tasks.
 *   [Chroot](/index.php/Chroot "Chroot") to create a base system inside (yet separate from) Arch. Examples: [debootstrap](https://www.archlinux.org/packages/?name=debootstrap) (Debian), [febootstrap](https://aur.archlinux.org/packages/febootstrap/) (Fedora). This has the added benefit of building in a minimal, clean environment.
 *   Use chroot with packaging tools in an an automated fashion. Examples: [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/) (Debian), [mock-git](https://aur.archlinux.org/packages/mock-git/) (Fedora).
-*   A different way to handle (possibly incompatible) depends is [static linking](http://jurjenbokma.com/ApprenticesNotes/getting_statlinked_binaries_on_debian.html). Please note that most distributions frown on this practice.
+*   A different way to handle (possibly incompatible) depends is [static linking](http://jurjenbokma.com/ApprenticesNotes/getting_statlinked_binaries_on_debian.xhtml). Please note that most distributions frown on this practice.
 *   Common practice applies regardless of distribution used. For example, do [not build packages as root](https://bbs.archlinux.org/viewtopic.php?id=67561).
 
 ## Debian

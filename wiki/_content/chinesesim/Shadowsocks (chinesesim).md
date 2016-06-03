@@ -196,4 +196,4 @@ $ chromium %U --proxy-server=127.0.0.1:8118
 *   [shadowsocks@gitHub](https://github.com/clowwindy/shadowsocks)
 *   [shadowsocks使用说明](https://github.com/clowwindy/shadowsocks/wiki/Shadowsocks-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
 *   [About Shadowsocks](http://blog.robotshell.org/2014/about-shadowsocks/)
-*   [shadowsocks最新配置](http://www.pcwuyu.com/index.php/Arch/archlinux-shadowsocks-configuration.html)
+*   [shadowsocks最新配置](http://blog.pcwuyu.com/index.php/Arch/archlinux-shadowsocks-configuration.html)

@@ -232,5 +232,5 @@ Then update the database and force downgrade:
 
 *   The original ARM (*Archlinux Rollback Machine*) was closed on 2013-08-18.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360)
 *   The new one is hosted on [seblu.net](http://seblu.net) since 2013-08-31.
-*   New URL and closing the old ARM hierarchy on 2015-10-13\. A new software, agetpkg was introduced.
+*   New URL and closing the old ARM hierarchy on 2015-10-13\. A new software, [agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) was introduced.
 *   Moved to [archive.archlinux.org](https://archive.archlinux.org) on 2015-12-19.[[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2015-December/027635.html)

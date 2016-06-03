@@ -1,6 +1,6 @@
 According to the [official website](http://www.gnupg.org):
 
-	GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as [PGP](https://en.wikipedia.org/wiki/PGP "wikipedia:PGP")). GnuPG allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).
+	GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).
 
 ## Contents
 
@@ -13,7 +13,7 @@ According to the [official website](http://www.gnupg.org):
     *   [3.1 Create key pair](#Create_key_pair)
     *   [3.2 List keys](#List_keys)
     *   [3.3 Export your public key](#Export_your_public_key)
-    *   [3.4 Import a key](#Import_a_key)
+    *   [3.4 Import a public key](#Import_a_public_key)
     *   [3.5 Use a keyserver](#Use_a_keyserver)
     *   [3.6 Encrypt and decrypt](#Encrypt_and_decrypt)
 *   [4 Key maintenance](#Key_maintenance)
@@ -137,12 +137,14 @@ $ gpg --list-secret-keys
 
 ### Export your public key
 
-In order for others to send encrypted messages to you, they need your public key.
+gpg's main usage is to ensure confidentiality of exchanged messages via public-key cryptography. With it each user distributes the public key of their keyring, which can be be used by others to encrypt messages to the user. The private key must *always* be kept private, otherwise confidentiality is broken. See [w:Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "w:Public-key cryptography") for examples about the message exchange.
+
+So, in order for others to send encrypted messages to you, they need your public key.
 
 To generate an ASCII version of your public key (*e.g.* to distribute it by e-mail):
 
 ```
-$ gpg --armor --output *public.key* --export *<user-id>*
+$ gpg --output *public.key* --armor --export *<user-id>* 
 
 ```
 
@@ -150,7 +152,7 @@ Alternatively, or in addition, you can [#Use a keyserver](#Use_a_keyserver) to s
 
 **Tip:** Add `--no-emit-version` to avoid printing the version number, or add the corresponding setting to your configuration file.
 
-### Import a key
+### Import a public key
 
 In order to encrypt messages to others, as well as verify their signatures, you need their public key. To import a public key with file name `*public.key*` to your public key ring:
 
@@ -188,40 +190,37 @@ $ gpg --recv-keys *<key-id>*
 
 **Tip:**
 
-*   Adding `keyserver-options auto-key-retrieve` to `gnupg.conf` will automatically fetch keys from the key server as needed.
+*   Adding `keyserver-options auto-key-retrieve` to `gpg.conf` will automatically fetch keys from the key server as needed.
 *   An alternative key server is `pool.sks-keyservers.net` and can be specified with `keyserver` in `dirmngr.conf`.; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
 *   You can connect to the keyserver over [Tor](/index.php/Tor "Tor") using `--use-tor`. `hkp://jijrk5u4osbsr34t5.onion` is the onion address for the sks-keyservers pool. [See this GnuPG blog post](https://gnupg.org/blog/20151224-gnupg-in-november-and-december.html) for more information.
 *   You can connect to a keyserver using a proxy by setting the `http_proxy` environment variable and setting `honor-http-proxy` in `dirmngr.conf`. Alternatively, set `http-proxy *host[:port]*` in `dirmngr.conf`, overriding the `http_proxy` environment variable.
 
 ### Encrypt and decrypt
 
-When encrypting or decrypting it is possible to have more than one private key in use. If this occurs you need to select the active key by using the option `-u *<user-id>*` or `--local-user *<user-id>*`.
+You need to [#Import a public key](#Import_a_public_key) of a user before encrypting (options `--encrypt` or `-e`) a file or message to that recipient (options `--recipient` or `-r`).
 
-To encrypt a file named `*doc*` using ASCII armor (suitable for copying and pasting a message in text format), use:
-
-```
-$ gpg --encrypt --armor *doc*
+To encrypt a file with the name *doc*, use:
 
 ```
+$ gpg --recipient *<user-id>* --encrypt *doc*
 
-If you want to just encrypt a file, exclude `--armor`.
+```
+
+To decrypt (option `--decrypt` or `-d`) a file with the name *doc.gpg* encrypted with your public key, use:
+
+```
+$ gpg --output *doc* --decrypt *doc.gpg*
+
+```
+
+*gpg* will prompt you for your passphrase and then decrypt and write the data from *doc.gpg* to *doc*. If you omit the `-o` (`--output`) option, *gpg* will write the decrypted data to stdout.
 
 **Tip:**
 
-*   If you want to change recipient this can be done by the option `-r *<user-id>*` (or `--recipient *<user-id>*`).
-*   Add `-R *<user-id>*` or `--hidden-recipient *<user-id>*` instead of `--recipient` to not put the recipient key IDs in the encrypted message. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis.
+*   Add `--armor` to encrypt a file using ASCII armor (suitable for copying and pasting a message in text format)
+*   Use `-R *<user-id>*` or `--hidden-recipient *<user-id>*` instead of `-r` to not put the recipient key IDs in the encrypted message. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis.
 *   Add `--no-emit-version` to avoid printing the version number, or add the corresponding setting to your configuration file.
-
-**Note:** You can use gnupg to encrypt your sensitive documents, but only individual files at a time. If you want to encrypt directories or a whole file-system you should consider using [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") or [EncFS](/index.php/EncFS "EncFS"), though you can always tarball various files and then encrypt them.
-
-To decrypt a file, use:
-
-```
-$ gpg --decrypt *doc.asc*
-
-```
-
-You will be prompted to enter your passphrase. You will need to have already [imported](#Import_a_key) the sender's public key to decrypt a file or message from them.
+*   You can use gnupg to encrypt your sensitive documents by using your own user-id as recipient, but only individual files at a time, though you can always tarball various files and then encrypt the tarball. See also [Disk encryption#Available methods](/index.php/Disk_encryption#Available_methods "Disk encryption") if you want to encrypt directories or a whole file-system.
 
 ## Key maintenance
 
@@ -237,6 +236,13 @@ $ gpg --export-secret-keys --armor *<user-id>* > *privkey.asc*
 Note that *gpg* release 2.1 changed default behaviour so that the above command enforces a passphrase protection, even if you deliberately chose not to use one on key creation. This is because otherwise anyone who gains access to the above exported file would be able to encrypt and sign documents as if they were you *without* needing to know your passphrase.
 
 **Warning:** The passphrase is usually the weakest link in protecting your secret key. Place the private key in a safe place on a different system/device, such as a locked container or encrypted drive. It is the only safety you have to regain control to your keyring in case of, for example, a drive failure, theft or worse.
+
+To import the backup of your private key:
+
+```
+$ gpg --allow-secret-key-import --import *privkey.asc*
+
+```
 
 ### Edit your key
 

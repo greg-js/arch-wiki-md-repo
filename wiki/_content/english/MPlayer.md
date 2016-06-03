@@ -12,17 +12,18 @@
     *   [4.1 Key bindings](#Key_bindings)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Automatic resuming from where you left off](#Automatic_resuming_from_where_you_left_off)
-    *   [5.2 Enabling VDPAU](#Enabling_VDPAU)
-        *   [5.2.1 Using a configuration file](#Using_a_configuration_file)
-        *   [5.2.2 Using a wrapper script](#Using_a_wrapper_script)
-    *   [5.3 Enabling VA-API](#Enabling_VA-API)
-    *   [5.4 Translucent video with Radeon cards and Composite enabled](#Translucent_video_with_Radeon_cards_and_Composite_enabled)
-    *   [5.5 Watching streamed video](#Watching_streamed_video)
-        *   [5.5.1 DVD playing](#DVD_playing)
-        *   [5.5.2 DVB-T Streaming](#DVB-T_Streaming)
-    *   [5.6 JACK support](#JACK_support)
-    *   [5.7 Advanced Subtitles](#Advanced_Subtitles)
-    *   [5.8 Internet radio](#Internet_radio)
+    *   [5.2 Hardware acceleration](#Hardware_acceleration)
+        *   [5.2.1 Enabling VDPAU](#Enabling_VDPAU)
+            *   [5.2.1.1 Using a configuration file](#Using_a_configuration_file)
+            *   [5.2.1.2 Using a wrapper script](#Using_a_wrapper_script)
+        *   [5.2.2 Enabling VA-API](#Enabling_VA-API)
+    *   [5.3 Translucent video with Radeon cards and Composite enabled](#Translucent_video_with_Radeon_cards_and_Composite_enabled)
+    *   [5.4 Watching streamed video](#Watching_streamed_video)
+        *   [5.4.1 DVD playing](#DVD_playing)
+        *   [5.4.2 DVB-T Streaming](#DVB-T_Streaming)
+    *   [5.5 JACK support](#JACK_support)
+    *   [5.6 Advanced Subtitles](#Advanced_Subtitles)
+    *   [5.7 Internet radio](#Internet_radio)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 MPlayer fails to open files with spaces](#MPlayer_fails_to_open_files_with_spaces)
     *   [6.2 MPlayer has black or strange colored font for OSD and Subtitles](#MPlayer_has_black_or_strange_colored_font_for_OSD_and_Subtitles)
@@ -74,7 +75,7 @@ Notable variants are:
 
 *   **KMPlayer** — Video player plugin for Konqueror and basic MPlayer/Xine/ffmpeg/ffserver/VDR frontend for KDE.
 
-	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://aur.archlinux.org/packages/kmplayer/)
+	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
 
 *   **Rosa Media Player** — Multimedia player based on SMPlayer with clean and elegant UI.
 
@@ -100,9 +101,9 @@ A browser plugin is available in the official repositories with the [gecko-media
 
 ### Konqueror
 
-A plugin for Konqueror can be found in the [AUR](/index.php/AUR "AUR") with the [kmplayer](https://aur.archlinux.org/packages/kmplayer/) package.
+A plugin for Konqueror can be found in the [AUR](/index.php/AUR "AUR") with the [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) package.
 
-**Note:** [kmplayer](https://aur.archlinux.org/packages/kmplayer/) also provides a complete frontend to MPlayer.
+**Note:** [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) also provides a complete frontend to MPlayer.
 
 ### Chromium
 
@@ -143,31 +144,13 @@ If this script is restarted within a short amount of time after closing MPayer (
 
 If the video file to be played is on a read-only filesystem, or otherwise lives in a location that cannot be written to, resume will fail. This is because the current implementation uses a file parallel to the video file to store the timecode.
 
-### Enabling VDPAU
+### Hardware acceleration
 
-For a complete list of NVIDIA VDPAU capable hardware, see [this table](https://en.wikipedia.org/wiki/PureVideo#Table_of_PureVideo_.28HD.29_GPUs "wikipedia:PureVideo"). Ensure the [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver is installed and consider one of the following two methods to automatically enable VDPAU for playback.
+See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-For an Intel or (AMD with [Catalyst](/index.php/Catalyst "Catalyst")) video card, you can use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) — VAAPI backend for VDPAU. For AMD you should also install [xvba-video](https://aur.archlinux.org/packages/xvba-video/). To use it, create:
+#### Enabling VDPAU
 
- `/etc/profile.d/vdpau_vaapi.sh` 
-```
-#!/bin/sh
-export VDPAU_DRIVER=va_gl
-
-```
-
-and make it executable:
-
-```
-# chmod +x /etc/profile.d/vdpau_vaapi.sh
-
-```
-
-and reboot or relogin.
-
-[The open source driver for AMD video cards](/index.php/ATI#Enabling_video_acceleration "ATI") provides VDPAU.
-
-#### Using a configuration file
+##### Using a configuration file
 
 Append the following to either the system-wide (`/etc/mplayer/mplayer.conf`) or user-specific (`~/.mplayer/config`) configuration files:
 
@@ -184,13 +167,13 @@ vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,
 
 **Warning:** The `ffodivxvdpau` codec is only supported by the most recent series of NVIDIA hardware. Consider omitting it based on your specific hardware. See [the NVIDIA page](/index.php/NVIDIA#Pure_Video_HD_.28VDPAU.2FVAAPI.29 "NVIDIA") for more information.
 
-#### Using a wrapper script
+##### Using a wrapper script
 
 The [AUR](/index.php/AUR "AUR") contains a trivial Bash script called [mplayer-vdpau-auto](https://aur.archlinux.org/packages/mplayer-vdpau-auto/) that detects which video codec to use and when to use VDPAU as the video output.
 
 Another simple wrapper is [mplayer-vdpau-shell-git](https://aur.archlinux.org/packages/mplayer-vdpau-shell-git/), which can recover from a VDPAU FATAL error. This wrapper uses the "-include" option to include a VDPAU configuration, so it will ignore any VDPAU specific settings in your `~/.mplayer/config` file.
 
-### Enabling VA-API
+#### Enabling VA-API
 
 This requires [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) from the AUR.
 

@@ -328,6 +328,7 @@ Edit `/etc/lighttpd/lighttpd.conf`. To make lighttpd SSL-only (you probably need
 
 ```
 ssl.engine = "enable" 
+ssl.ca-file = "/etc/lighttpd/certs/ca.pem"
 ssl.pemfile = "/etc/lighttpd/certs/www.example.com.pem"
 
 ```
@@ -337,6 +338,7 @@ To enable SSL in addition to normal HTTP
 ```
 $SERVER["socket"] == ":443" {
     ssl.engine                  = "enable" 
+    ssl.ca-file                 = "/etc/lighttpd/certs/ca.pem"
     ssl.pemfile                 = "/etc/lighttpd/certs/www.example.com.pem" 
  }
 
@@ -348,6 +350,7 @@ If you want to serve different sites, you can change the document root inside th
 $SERVER["socket"] == ":443" {
     server.document-root = "/srv/ssl" # use your ssl directory here
     ssl.engine                 = "enable"
+    ssl.ca-file                = "/etc/lighttpd/certs/ca.pem"
     ssl.pemfile                = "/etc/lighttpd/certs/www.example.com.pem"  # use the path where you created your pem file
  }
 
@@ -359,6 +362,7 @@ or as alternative you can use the scheme conditional to distinguish between secu
 $HTTP["scheme"] == "https" {
     server.document-root = "/srv/ssl" # use your ssl directory here
     ssl.engine                 = "enable"
+    ssl.ca-file                = "/etc/lighttpd/certs/ca.pem"
     ssl.pemfile                = "/etc/lighttpd/certs/www.example.com.pem"  # use the path where you created your pem file
  }
 

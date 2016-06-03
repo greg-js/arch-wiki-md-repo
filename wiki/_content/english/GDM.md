@@ -1,8 +1,6 @@
-From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM):
+From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins."
 
-	The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins.
-
-[Display managers](/index.php/Display_manager "Display manager") provide [X Window System](/index.php/X_Window_System "X Window System") users with a graphical login prompt.
+[Display managers](/index.php/Display_manager "Display manager") provide [X Window System](/index.php/X_Window_System "X Window System") and [Wayland](/index.php/Wayland "Wayland") users with a graphical login prompt.
 
 ## Contents
 
@@ -73,7 +71,7 @@ fi
 gst=/usr/share/gnome-shell/gnome-shell-theme.gresource
 
 for r in `gresource list $gst`; do
-        gresource extract $gst $r >$workdir${r/#\/org\/gnome\/shell/}
+        gresource extract $gst $r >$workdir${r#\/org\/gnome\/shell/}
 done
 ```
 
@@ -334,7 +332,7 @@ AutomaticLogin=*username*
 AutomaticLoginEnable=True
 ```
 
-**Warning:** If GDM fails after adding these lines, comment them out from a TTY.
+**Tip:** If GDM fails after adding these lines, comment them out from a TTY.
 
 or for an automatic login with a delay:
 

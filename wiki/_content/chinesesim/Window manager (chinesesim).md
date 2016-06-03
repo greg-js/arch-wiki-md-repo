@@ -157,7 +157,7 @@
 
 	[https://github.com/dss-project/dswm](https://github.com/dss-project/dswm) || [dswm](https://aur.archlinux.org/packages/dswm/) [unsupported]
 
-*   **[Herbstluftwm](/index.php/Herbstluftwm "Herbstluftwm")** — herbstluftwm is a manual tiling window manager for X11 using Xlib and Glib. The layout is based on splitting frames into subframes which can be split again or can be filled with windows (similar to i3/ musca). Tags (or workspaces or virtual desktops or …) can be added/removed at runtime. Each tag contains an own layout. Exactly one tag is viewed on each monitor. The tags are monitor independent (similar to xmonad). It is configured at runtime via ipc calls from herbstclient. So the configuration file is just a script which is run on startup. (similar to wmii/ musca)
+*   **[Herbstluftwm](/index.php/Herbstluftwm "Herbstluftwm")** — herbstluftwm is a manual tiling window manager for X11 using Xlib and Glib. The layout is based on splitting frames into subframes which can be split again or can be filled with windows (similar to i3/ musca). Tags (or workspaces or virtual desktops or …) can be added/removed at runtime. Each tag contains its own layout. Exactly one tag is viewed on each monitor. The tags are monitor independent (similar to xmonad). It is configured at runtime via ipc calls from herbstclient. So the configuration file is just a script which is run on startup. (similar to wmii/ musca)
 
 	[http://wwwcip.cs.fau.de/~re06huxa/herbstluftwm](http://wwwcip.cs.fau.de/~re06huxa/herbstluftwm) || [herbstluftwm-git](https://aur.archlinux.org/packages/herbstluftwm-git/) [unsupported]
 

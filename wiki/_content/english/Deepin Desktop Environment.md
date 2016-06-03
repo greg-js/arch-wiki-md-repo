@@ -6,7 +6,9 @@
 *   [2 Launching Deepin Desktop Environment](#Launching_Deepin_Desktop_Environment)
     *   [2.1 Via a Display Manager](#Via_a_Display_Manager)
     *   [2.2 Using xinitrc](#Using_xinitrc)
-*   [3 Bug Reporting](#Bug_Reporting)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Does not start](#Does_not_start)
+*   [4 Bug Reporting](#Bug_Reporting)
 
 ## Installation
 
@@ -46,6 +48,12 @@ exec startdde
 Execute `startx` or `xinit` to start DDE.
 
 **Note:** If you want to start Xorg at boot, please read the [Start X at login](/index.php/Start_X_at_login "Start X at login") article.
+
+## Troubleshooting
+
+### Does not start
+
+Type `startdde` in virtual console and see the output. If you see error with file mentioned `libgo.so.9` - ensure you have installed **the latest** [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) package.
 
 ## Bug Reporting
 

@@ -534,7 +534,7 @@
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/ru:Xpdf "wikipedia:ru:Xpdf")** — Программа просмотра, которая способна декодировать LZW и читать зашифрованные файлы PDF
 
-	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://aur.archlinux.org/packages/xpdf/)
+	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf)
 
 *   **zathura** — Сильно настраиваемая и функциональная программа просмотра PDF/DjVu/PostScript/ComicBook (основанная на плагинах)
 

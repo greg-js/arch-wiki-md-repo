@@ -2,6 +2,26 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.5.6-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.6](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.6)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=9e288618c131e9fd5e2c5a821f1d61006bbbdb3e](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=9e288618c131e9fd5e2c5a821f1d61006bbbdb3e)
+
+**Bump to v4.5.5-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.5](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.5)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=d837941f30d7abc8eb87d5d3211a6bb312d06ab2](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=d837941f30d7abc8eb87d5d3211a6bb312d06ab2)
+
+**Bump to v4.5.4-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.4](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.4)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=84e0d89b934d35b76693a3790f7a09f25b37c72f](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=84e0d89b934d35b76693a3790f7a09f25b37c72f)
+
+**Bump to v4.5.3-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.3](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.3)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=8edd6214f5a75fcbad124e42546ad15d4b48cb06](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=8edd6214f5a75fcbad124e42546ad15d4b48cb06)
+
 **Bump to v4.5.2-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.2](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.2)

@@ -61,7 +61,7 @@
 
 ### 安装软件包
 
-**注意:** 软件包通常有很多[可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")， 它们为软件提供额外功能， 并不强制要求安装它们。 安装软件时, *pacman* 将会输出它的可选依赖, 但是这个输出不会在 `pacman.log`中；当你想浏览已安装软件的可选依赖时可以[#查询软件数据库](#.E6.9F.A5.E8.AF.A2.E8.BD.AF.E4.BB.B6.E6.95.B0.E6.8D.AE.E5.BA.93) ，同时得到关于可选依赖的简短描述。
+**注意:** 软件包通常有很多[可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")， 它们为软件提供额外功能， 并不强制要求安装它们。 安装软件时, *pacman* 将会输出它的可选依赖, 但是这个输出不会在 `pacman.log`中；当你想浏览已安装软件的可选依赖时可以[#查询包数据库](#.E6.9F.A5.E8.AF.A2.E5.8C.85.E6.95.B0.E6.8D.AE.E5.BA.93) ，同时得到关于可选依赖的简短描述。
 
 **警告:** 未[更新](#.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85)系统前，**不要**在安装软件包时更新软件包数据库（`pacman -Sy *package_name*`），否则会有依赖问题。参见[#不支持部分升级](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)和 [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 

@@ -19,16 +19,15 @@ Please note that our official wiki also supports internationalized content. In a
     *   [1.12 Japan](#Japan)
     *   [1.13 Lithuania](#Lithuania)
     *   [1.14 Poland](#Poland)
-    *   [1.15 Portugal](#Portugal)
-    *   [1.16 Romania](#Romania)
-    *   [1.17 Russia](#Russia)
-    *   [1.18 Serbia](#Serbia)
-    *   [1.19 Spain and Latin America (España y América Latina)](#Spain_and_Latin_America_.28Espa.C3.B1a_y_Am.C3.A9rica_Latina.29)
-    *   [1.20 Sweden](#Sweden)
-    *   [1.21 Taiwan](#Taiwan)
-    *   [1.22 Turkey](#Turkey)
-    *   [1.23 Ukraine](#Ukraine)
-    *   [1.24 Vietnam](#Vietnam)
+    *   [1.15 Romania](#Romania)
+    *   [1.16 Russia](#Russia)
+    *   [1.17 Serbia](#Serbia)
+    *   [1.18 Spain and Latin America (España y América Latina)](#Spain_and_Latin_America_.28Espa.C3.B1a_y_Am.C3.A9rica_Latina.29)
+    *   [1.19 Sweden](#Sweden)
+    *   [1.20 Taiwan](#Taiwan)
+    *   [1.21 Turkey](#Turkey)
+    *   [1.22 Ukraine](#Ukraine)
+    *   [1.23 Vietnam](#Vietnam)
 *   [2 Related Pages](#Related_Pages)
 
 ## International Communities
@@ -119,11 +118,6 @@ This list is by no means complete. If you know of a community that is not listed
 
 *   Forum: [http://forum.archlinux.org.pl/](http://forum.archlinux.org.pl/)
 *   Wiki: [Main page (Polski)](/index.php/Main_page_(Polski) "Main page (Polski)")
-
-### Portugal
-
-*   Homepage: [https://www.tuxpt.com](https://www.tuxpt.com)
-*   Forum: [https://www.tuxpt.com/forum/Forum-Arch](https://www.tuxpt.com/forum/Forum-Arch)
 
 ### Romania
 

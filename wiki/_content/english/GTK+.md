@@ -1,6 +1,6 @@
 From the [GTK+ website](http://www.gtk.org):
 
-	*GTK+, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off tools to complete application suites.*
+	GTK+, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off tools to complete application suites.
 
 GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_Project "GNU Project") for the [GIMP](/index.php/GIMP "GIMP") but is now a very popular toolkit with bindings for many languages. This article will explore the tools used to configure the GTK+ theme, style, icon, font and font size, and also detail manual configuration.
 
@@ -14,6 +14,7 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [4.1 Basic theme configuration](#Basic_theme_configuration)
     *   [4.2 Dark theme variant](#Dark_theme_variant)
     *   [4.3 Keyboard shortcuts](#Keyboard_shortcuts)
+        *   [4.3.1 Emacs keybindings](#Emacs_keybindings)
     *   [4.4 GNOME menu delay](#GNOME_menu_delay)
     *   [4.5 Reduce widget sizes](#Reduce_widget_sizes)
     *   [4.6 File-Chooser Startup-Location](#File-Chooser_Startup-Location)
@@ -269,6 +270,36 @@ gtk-can-change-accels = 1
 
 ```
 
+#### Emacs keybindings
+
+To get Emacs-like keybindings in gtk apps:
+
+For GTK2, add `gtk-key-theme-name = "Emacs"` to `~/.gtkrc-2.0`.
+
+For GTK3 add the following to the noted file:
+
+ `~/.config/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-key-theme-name = Emacs
+```
+
+Then run:
+
+```
+$ gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
+```
+
+XFCE has a similar setting:
+
+```
+$ xfconf-query -c xsettings -p /Gtk/KeyThemeName -s Emacs
+
+```
+
+The config files in `/usr/share/themes/Emacs/` determine what the Emacs bindings are, and can be changed. Copying sections to the users `~/.gtkrc-2.0` file allows for changes on a per user basis.
+
 ### GNOME menu delay
 
 This setting controls the delay between pointing the mouse at a menu and that menu opening. This delay is measured in milliseconds.
@@ -360,7 +391,7 @@ The positions of the overlay scrollbars are indicated by thin dashed lines in th
  `~/.config/gtk-3.0/gtk.css` 
 ```
 /* Remove dotted lines from GTK+ 3 applications */
-.undershoot.top, .undershoot.right, .undershoot.bottom, .undershoot.left { background-image: none; }
+undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { background-image: none; }
 
 ```
 

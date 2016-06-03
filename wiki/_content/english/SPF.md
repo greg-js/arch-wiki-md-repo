@@ -41,7 +41,7 @@ This is shown for [Postfix](/index.php/Postfix "Postfix") only.
 
 ### Installation
 
-There are several SPF validators available [[1]](http://www.openspf.org/Implementations), [perl-mail-spf](https://www.archlinux.org/packages/?name=perl-mail-spf) and [perl-mail-spf-query](https://www.archlinux.org/packages/?name=perl-mail-spf-query) can be found in the official Repositories. Below [python-policyd-spf](https://aur.archlinux.org/packages/python-policyd-spf/) is combined with the [postfix](https://www.archlinux.org/packages/?name=postfix) mailserver.
+There are several SPF validators available [[1]](http://www.openspf.org/Implementations), [perl-mail-spf](https://www.archlinux.org/packages/?name=perl-mail-spf) and [perl-mail-spf-query](https://www.archlinux.org/packages/?name=perl-mail-spf-query) can be found in the official Repositories. Below [python-postfix-policyd-spf](https://aur.archlinux.org/packages/python-postfix-policyd-spf/) is combined with the [postfix](https://www.archlinux.org/packages/?name=postfix) mailserver.
 
 ### Configuration
 
@@ -82,7 +82,7 @@ You can test your Setup with the following:
 
 ## Sender Rewrite Scheme (SRS)
 
-To prevent SPF checks from failing when delivering when forwarding mails, SRS can rewrite the ENVELOPE-FROM field to an own domain, thus passing the SPF test at the recipient server. For [postfix](https://www.archlinux.org/packages/?name=postfix) install [postsrsd](https://aur.archlinux.org/packages/postsrsd/) and adjust the settings:
+To prevent future SPF checks from failing when forwarding mails, SRS provides a scheme to rewrite the ENVELOPE-FROM field to your own domain, thus passing the SPF test at the recipient server. To prevent creating open relays and still catch and backwrite bounces, this often contains a hash of the original adress combined with a secret only known to the server, providing validability of bounce email. For [postfix](https://www.archlinux.org/packages/?name=postfix) install [postsrsd](https://aur.archlinux.org/packages/postsrsd/) and adjust the settings:
 
  `/etc/postsrsd/postsrsd` 
 ```

@@ -291,7 +291,7 @@
 
 *   **slingshot** — Утилита запуска приложений с хорошим внешним видом, часть окружения рабочего стола [pantheon](/index.php/Pantheon "Pantheon")
 
-	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://www.archlinux.org/packages/?name=slingshot-launcher)
+	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://aur.archlinux.org/packages/slingshot-launcher/)
 
 *   **Synapse** — Семантическая утилита, написанная на Vala, которую можно использовать как для запуска приложений, так и для поиска и получения доступа к необходимым документам и файлам (при использовании движка Zeitgeist)
 
@@ -578,7 +578,7 @@
 
 *   **[RetroArch](/index.php/RetroArch "RetroArch")** — Фронтенд к libretro (библиотеке эмуляции, использующей измененные версии существующих эмуляторов в качестве плагинов)
 
-	[http://github.com/Themaister/RetroArch](http://github.com/Themaister/RetroArch) || [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/)
+	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
 
 *   **ScummVM** — Виртуальная машина для старых приключенческих игр
 

@@ -223,7 +223,7 @@ Arch has other Pidgin-related packages. Here are the most popular (for a thoroug
 
 ## Skype plugin
 
-Install the [skype4pidgin-git](https://aur.archlinux.org/packages/skype4pidgin-git/) or [purple-skypeweb-git](https://aur.archlinux.org/packages/purple-skypeweb-git/) package.
+Install the [purple-skypeweb](https://www.archlinux.org/packages/?name=purple-skypeweb) or [skype4pidgin-git](https://aur.archlinux.org/packages/skype4pidgin-git/) package.
 
 ## Auto logout on suspend
 

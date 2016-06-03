@@ -93,7 +93,7 @@ The other filesystems provide ordered-mode journaling, which only logs meta-data
 
 *   **zfs** — [ZFS](/index.php/ZFS "ZFS") support.
 
-	[http://zfsonlinux.org/](http://zfsonlinux.org/) || [zfs-git](https://aur.archlinux.org/packages/zfs-git/)
+	[http://zfsonlinux.org/](http://zfsonlinux.org/) || [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/), [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/)
 
 ### FUSE-based file systems
 

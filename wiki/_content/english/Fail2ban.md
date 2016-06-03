@@ -42,11 +42,13 @@ In the example above, `CAP_DAC_READ_SEARCH` will allow fail2ban full read access
 
 ### Filesystem Access
 
+**Note:** On some systems this might lead to fail2ban not working. So, first try without, before hardening fail2ban
+
 Consider limiting file system read and write access by using *ReadOnlyDirectories* and *ReadWriteDirectories*, under the `[Service]` section. For example:
 
 ```
 ReadOnlyDirectories=/
-ReadWriteDirectories=/var/run/fail2ban /var/lib/fail2ban /var/spool/postfix/maildrop /tmp
+ReadWriteDirectories=/var/run/fail2ban /var/lib/fail2ban /var/spool/postfix/maildrop /tmp /var/log/fail2ban
 
 ```
 
@@ -54,34 +56,40 @@ In the example above, this limits the file system to read-only, except for `/var
 
 ## SSH jail
 
-Edit `/etc/fail2ban/jail.conf` and modify the ssh-iptables section to enable it and configure the action.
-
 **Note:** Due to the possibility of the `jail.conf` file being overwritten or improved during a distribution update, it is recommended to provide customizations in a `jail.local` file, or separate *.conf* files under the `jail.d/` directory, e.g. `jail.d/ssh-iptables.conf`.
+
+Edit `/etc/fail2ban/jail.d/jail.conf`, add this section and update the list of trusted IP addresses.
 
 If your firewall is iptables:
 
 ```
-[ssh-iptables]
+[DEFAULT]
+bantime = 864000
+ignoreip = 127.0.0.1/8 111.111.111.111 222.222.222.222
+
+[sshd]
 enabled  = true
 filter   = sshd
 action   = iptables[name=SSH, port=ssh, protocol=tcp]
            sendmail-whois[name=SSH, dest=your@mail.org, sender=fail2ban@mail.com]
-logpath  = /var/log/auth.log
+backend  = systemd
 maxretry = 5
 
 ```
 
-Fail2Ban from version 0.9 can also read directly from the systemd journal by setting `backend = systemd`.
-
 If your firewall is shorewall:
 
 ```
+[DEFAULT]
+bantime = 864000
+ignoreip = 127.0.0.1/8 111.111.111.111 222.222.222.222
+
 [ssh-shorewall]
 enabled  = true
 filter   = sshd
 action   = shorewall
            sendmail-whois[name=SSH, dest=your@mail.org, sender=fail2ban@mail.com]
-logpath  = /var/log/auth.log
+backend  = systemd
 maxretry = 5
 
 ```

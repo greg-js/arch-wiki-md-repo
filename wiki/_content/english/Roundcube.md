@@ -74,7 +74,6 @@ and uncomment
 
 ```
 extension=iconv.so
-extension=mbstring.so
 
 ```
 

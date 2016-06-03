@@ -1,8 +1,4 @@
-From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
-
-	*ownCloud is a software suite that provides a location-independent storage area for data (cloud storage).*
-
-The ownCloud installation and configuration mainly depends on what web server and database you decide to run. Currently the wiki discusses [Apache configuration](#Apache_configuration) and [Nginx configuration](#Nginx).
+From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "ownCloud is a software suite that provides a location-independent storage area for data (cloud storage)." The ownCloud installation and configuration mainly depends on what web server and database you decide to run. Currently the wiki discusses [Apache configuration](#Apache_configuration) and [Nginx configuration](#Nginx).
 
 ## Contents
 
@@ -29,7 +25,6 @@ The ownCloud installation and configuration mainly depends on what web server an
     *   [5.2 Android](#Android)
 *   [6 Important notes](#Important_notes)
     *   [6.1 SABnzbd](#SABnzbd)
-    *   [6.2 php-7.0.6](#php-7.0.6)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
     *   [7.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
@@ -561,10 +556,6 @@ folder_rename 0
 
 in your sabnzbd.ini file, because ownCloud will scan the files as soon as they get uploaded, preventing SABnzbd from removing UNPACKING prefixes etc.
 
-### php-7.0.6
-
-OwnCloud 9.0.1-1 doesn't work with php-7.0.6, so you have to downgrade php, php-apache, php-gd and php-intl to 7.0.5 until [this fix](https://github.com/owncloud/core/pull/24326/) is backported. This is fixed in owncloud-9.0.1-2, so this chapter can be deleted soon.
-
 ## Troubleshooting
 
 ### Self-signed certificate not accepted
@@ -625,6 +616,8 @@ Then import `CA.der.crt` to your Android device:
 Put the `CA.der.crt` file onto the sdcard of your Android device (usually to the internal one, e.g. save from a mail attachment). It should be in the root directory. Go to *Settings > Security > Credential storage* and select *Install from device storage*. The `.crt` file will be detected and you will be prompted to enter a certificate name. After importing the certificate, you will find it in *Settings > Security > Credential storage > Trusted credentials > User*.
 
 Thanks to: [[3]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
+
+Another way is to import the certificate directly from your server via [CAdroid](https://play.google.com/store/apps/details?id=at.bitfire.cadroid) and follow the instructions there.
 
 ### Cannot write into config directory!
 

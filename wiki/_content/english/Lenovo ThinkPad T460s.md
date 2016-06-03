@@ -1,28 +1,6 @@
-This article covers the installation and configuration of Arch Linux on a Lenovo T460s laptop.
-
-## Contents
-
-*   [1 Model Description](#Model_Description)
-    *   [1.1 Support](#Support)
-*   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 Touchpad/TrackPoint](#Touchpad.2FTrackPoint)
-    *   [2.2 Suspend / Resume](#Suspend_.2F_Resume)
-    *   [2.3 Hibernate / Resume](#Hibernate_.2F_Resume)
-    *   [2.4 Fingerprint Sensor](#Fingerprint_Sensor)
-    *   [2.5 ALSA Beep](#ALSA_Beep)
-    *   [2.6 Function keys](#Function_keys)
-    *   [2.7 Video Issues](#Video_Issues)
-*   [3 Youtube](#Youtube)
-
-## Model Description
-
-Lenovo ThinkPad T460s aka model 20F9-CTO1WW
-
-### Support
-
-| **Device** | **Working** |
+| **Device** | **Status** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
-| [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") | Yes |
+| [Wireless](/index.php/Wireless "Wireless") | Yes |
 | [ALSA](/index.php/ALSA "ALSA") | no beep |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | with linux-4.5.1 |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
@@ -30,10 +8,24 @@ Lenovo ThinkPad T460s aka model 20F9-CTO1WW
 | Fingerprint Sensor | No |
 | Mobile Broadband | Yes |
 | Bluetooth | Yes |
-| Suspend/Resume | kernel patch |
-| Hibernate/Resume | without charger |
 
-## Troubleshooting
+This article covers the installation and configuration of Arch Linux on a Lenovo T460s laptop.
+
+For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
+
+## Contents
+
+*   [1 Configuration](#Configuration)
+    *   [1.1 Touchpad/TrackPoint](#Touchpad.2FTrackPoint)
+    *   [1.2 Suspend / Resume](#Suspend_.2F_Resume)
+    *   [1.3 Hibernate / Resume](#Hibernate_.2F_Resume)
+    *   [1.4 Fingerprint Sensor](#Fingerprint_Sensor)
+    *   [1.5 ALSA Beep](#ALSA_Beep)
+    *   [1.6 Function keys](#Function_keys)
+    *   [1.7 Video Issues](#Video_Issues)
+*   [2 See also](#See_also)
+
+## Configuration
 
 The [linux-t460s](https://aur.archlinux.org/packages/linux-t460s/) package includes kernel patches that fix the mouse and suspend issues described below, which can be useful until [linux](https://www.archlinux.org/packages/?name=linux) includes these patches. Alternatively, [linux-git](https://aur.archlinux.org/packages/linux-git/) can be used.
 
@@ -65,8 +57,8 @@ Fn+Esc to enable FnLk which will make your function keys work.
 
 With newer kernels (>= 4.5), there seems to be video flickering, i.e. the screen occasionally goes black for what seems to be a single frame. See bug reports: [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=91393).
 
-This can be worked around by using the `i915.enable_rc6=0` kernel parameter [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake Support](/index.php/Intel_graphics#Skylake_Support "Intel graphics"))
+This can be worked around by using the `i915.enable_rc6=0` kernel parameter [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"))
 
-## Youtube
+## See also
 
 [Dual boot install with bootctl](https://www.youtube.com/watch?v=fnYZAr-BaK0&list=PLiKgVPlhUNuxgKwoVH4MMUy5MLqjAE2ux&index=3)

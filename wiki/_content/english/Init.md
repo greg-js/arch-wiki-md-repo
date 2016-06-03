@@ -162,7 +162,7 @@ Arch uses [timer](/index.php/Systemd#Timers "Systemd") files instead of [cron](/
 
 ### Dbus
 
-As of systemd 226 and [dbus](/index.php/Dbus "Dbus") 1.10.0-3, user instances of *dbus-daemon* are launched by [systemd/User](/index.php/Systemd/User#D-Bus "Systemd/User"). [[5]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) When requring IPC between desktop applications, restore `30-dbus.sh`:
+User instances of *dbus-daemon* are launched by [systemd/User](/index.php/Systemd/User#D-Bus "Systemd/User"). [[5]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) When requring IPC between desktop applications, restore `30-dbus.sh`:
 
  `/etc/X11/xinit/xinitrc.d/30-dbus.sh` 
 ```

@@ -2,7 +2,7 @@ This is a small howto on how to install an imap-Server with Courier-Imap, SSL-En
 
 You can fetch your Mail from this IMAP-Server with every Mail-Client capable of communicating with IMAP.
 
-For testing purposes you should create an own email-account, e.g. www.gmx.de.
+For testing purposes you should create your own email-account, e.g. www.gmx.de.
 
 For more complex setup see [Creating a Linux Mail Server (Postfix, Procmail, Fetchmail, SpamBayes, Courier-imap, Mutt, SquirrelMail)](http://www.hypexr.org/linux_mail_server.php)
 

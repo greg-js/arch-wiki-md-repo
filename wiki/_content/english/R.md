@@ -1,4 +1,4 @@
-*R is a free software environment for statistical computing and graphics* ([http://www.r-project.org/](http://www.r-project.org/)).
+[R](http://www.r-project.org/) is a "free software environment for statistical computing and graphics ([http://www.r-project.org/](http://www.r-project.org/))."
 
 ## Contents
 
@@ -12,29 +12,31 @@
     *   [2.1 Upgrading R packages](#Upgrading_R_packages)
         *   [2.1.1 Within a R session](#Within_a_R_session)
         *   [2.1.2 Within a shell](#Within_a_shell)
+        *   [2.1.3 Automatically after R upgrades](#Automatically_after_R_upgrades)
 *   [3 Configuration files](#Configuration_files)
     *   [3.1 .Renviron](#.Renviron)
     *   [3.2 Rprofile.r](#Rprofile.r)
 *   [4 Adding a graphical frontend to R](#Adding_a_graphical_frontend_to_R)
     *   [4.1 R Commander frontend](#R_Commander_frontend)
     *   [4.2 RKWard frontend](#RKWard_frontend)
-    *   [4.3 Rstudio IDE](#Rstudio_IDE)
-    *   [4.4 Rstudio server](#Rstudio_server)
-    *   [4.5 Emacs Speaks Statistics](#Emacs_Speaks_Statistics)
-    *   [4.6 Nvim-R](#Nvim-R)
-*   [5 Optimized packages](#Optimized_packages)
-    *   [5.1 OpenBLAS](#OpenBLAS)
-    *   [5.2 Intel MKL](#Intel_MKL)
-    *   [5.3 intel-advisor-xe](#intel-advisor-xe)
-*   [6 See also](#See_also)
+*   [5 Editors IDEs and notebooks with R support](#Editors_IDEs_and_notebooks_with_R_support)
+    *   [5.1 Rstudio IDE](#Rstudio_IDE)
+    *   [5.2 Rstudio server](#Rstudio_server)
+    *   [5.3 Emacs Speaks Statistics](#Emacs_Speaks_Statistics)
+    *   [5.4 Nvim-R](#Nvim-R)
+    *   [5.5 Cantor](#Cantor)
+    *   [5.6 Jupyter notebook](#Jupyter_notebook)
+*   [6 Optimized packages](#Optimized_packages)
+    *   [6.1 OpenBLAS](#OpenBLAS)
+    *   [6.2 Intel MKL](#Intel_MKL)
+    *   [6.3 intel-advisor-xe](#intel-advisor-xe)
+*   [7 See also](#See_also)
 
 ## Installation
 
 ### Basic package
 
-[Install](/index.php/Install "Install") the [r](https://www.archlinux.org/packages/?name=r) package available in the [official repositories](/index.php/Official_repositories "Official repositories")
-
-Some external packages may require to be compiled in Fortran as well, so [installing](/index.php/Installing "Installing") the [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) can be a good idea
+[Install](/index.php/Install "Install") the [r](https://www.archlinux.org/packages/?name=r) package. The installation of external packages within the R environment may require [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran).
 
 ### Initial configuration
 
@@ -150,6 +152,26 @@ Put this script in your favorite place and make it executable. Of course, feel f
 
 **Warning:** when using [zsh](/index.php/Zsh "Zsh"), **r** is a builtin command. You will have to either use an explicit path `/usr/bin/r` or create an alias under a different name.
 
+#### Automatically after R upgrades
+
+R packages may not be compatible between R versions. You may want to automatically upgrade them and rebuild them if necessary when R upgrades. This can be accomplished with a pacman hook:
+
+ `/etc/pacman.d/hooks/r-upgrade.hook` 
+```
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = r
+
+[Action]
+Description = Updates R packages and rebuilds them if necessary after R upgrade
+# Depends is optional if this should depend on another package
+Depends = 
+When = PostTransaction
+Exec = Rscript -e 'update.packages(checkBuilt = TRUE, ask = FALSE)'
+
+```
+
 ## Configuration files
 
 The two user configuration files you want in your home folder are `.Renviron` and `Rprofile.r`. If you want to keep your `$HOME` directory as clean as possible, a good practice will be to make the `~/.config/r` directory, put the `Rprofile.r` file at the root of the directory and append all your `R` code in this file.
@@ -196,7 +218,7 @@ You can add more [global options](http://stat.ethz.ch/R-manual/R-devel/library/b
 
 ## Adding a graphical frontend to R
 
-The linux version of R does not include a graphical user interface. However, third-party user interfaces for R are available, such as R commander and RKWard.
+R does not include a point-and-click graphical user interface for statistics or data manipulation. However, third-party user interfaces for R are available, such as R commander and RKWard.
 
 ### R Commander frontend
 
@@ -222,6 +244,8 @@ You can then start R Commander from within R using the library command:
 
 RKWard is an open-source frontend which allows for data import and browsing as well as running common statistical tests and plots. You can install [rkward](https://aur.archlinux.org/packages/rkward/) from [AUR](/index.php/AUR "AUR").
 
+## Editors IDEs and notebooks with R support
+
 ### Rstudio IDE
 
 RStudio an open-source R IDE. It includes many modern conveniences such as parentheses matching, tab-completion, tool-tip help popups, and a spreadsheet-like data viewer.
@@ -245,6 +269,14 @@ To start the server, please [enable and start](/index.php/Systemd#Using_units "S
 ### Nvim-R
 
 The [nvim-r](https://aur.archlinux.org/packages/nvim-r/) package allows [vim](https://www.archlinux.org/packages/?name=vim) and [neovim](https://www.archlinux.org/packages/?name=neovim) users to code in R, including editing and rendering of R markdown (Rmd) files, execution of R code in a separate pane, inspection of variables, and integrated help panes.
+
+### Cantor
+
+[cantor](https://www.archlinux.org/packages/?name=cantor) is a notebook application developed by KDE that includes support for R.
+
+### Jupyter notebook
+
+[jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) is a browser based notebook with support for many programming languages. R support can be added by installing the [IRkernel](https://github.com/IRkernel/IRkernel).
 
 ## Optimized packages
 

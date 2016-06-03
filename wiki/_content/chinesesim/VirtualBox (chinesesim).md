@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [VirtualBox](/index.php/VirtualBox "VirtualBox") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-7-29，点击[这里](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=389392)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [VirtualBox](/index.php/VirtualBox "VirtualBox") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-5-19，点击[这里](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=434334)可以查看翻译后英文页面的改动。
 
 **VirtualBox** 是一个类似 [VMware](/index.php/VMware "VMware") 的虚拟 PC 模拟器，处于不断的开发中。使用 [Qt](/index.php/Qt "Qt") 图形界面，提供了无界面运行和 [SDL](https://en.wikipedia.org/wiki/SDL "wikipedia:SDL") 命令行工具进行运行管理。它包含**guest additions**为一些虚拟系统提供附加功能，包括文件共享、剪贴板和图形加速，支持 “无缝” 窗口整合模式。
 
@@ -8,24 +8,21 @@
 
 *   [1 在Archlinux中安装VirtualBox的安装步骤](#.E5.9C.A8Archlinux.E4.B8.AD.E5.AE.89.E8.A3.85VirtualBox.E7.9A.84.E5.AE.89.E8.A3.85.E6.AD.A5.E9.AA.A4)
     *   [1.1 安装基本软件包](#.E5.AE.89.E8.A3.85.E5.9F.BA.E6.9C.AC.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [1.2 安装VirtualBox内核模块](#.E5.AE.89.E8.A3.85VirtualBox.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
-        *   [1.2.1 使用定制的内核](#.E4.BD.BF.E7.94.A8.E5.AE.9A.E5.88.B6.E7.9A.84.E5.86.85.E6.A0.B8)
-            *   [1.2.1.1 DKMS 的安装](#DKMS_.E7.9A.84.E5.AE.89.E8.A3.85)
-    *   [1.3 加载VirtualBox的内核模块](#.E5.8A.A0.E8.BD.BDVirtualBox.E7.9A.84.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
-    *   [1.4 添加用户到 vboxusers组](#.E6.B7.BB.E5.8A.A0.E7.94.A8.E6.88.B7.E5.88.B0_vboxusers.E7.BB.84)
-    *   [1.5 Guest 附加光盘](#Guest_.E9.99.84.E5.8A.A0.E5.85.89.E7.9B.98)
-    *   [1.6 扩展组件](#.E6.89.A9.E5.B1.95.E7.BB.84.E4.BB.B6)
-    *   [1.7 使用正确的前端](#.E4.BD.BF.E7.94.A8.E6.AD.A3.E7.A1.AE.E7.9A.84.E5.89.8D.E7.AB.AF)
+    *   [1.2 加载VirtualBox的内核模块](#.E5.8A.A0.E8.BD.BDVirtualBox.E7.9A.84.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
+    *   [1.3 在客户端系统访问主机 USB](#.E5.9C.A8.E5.AE.A2.E6.88.B7.E7.AB.AF.E7.B3.BB.E7.BB.9F.E8.AE.BF.E9.97.AE.E4.B8.BB.E6.9C.BA_USB)
+    *   [1.4 Guest 附加光盘](#Guest_.E9.99.84.E5.8A.A0.E5.85.89.E7.9B.98)
+    *   [1.5 扩展组件](#.E6.89.A9.E5.B1.95.E7.BB.84.E4.BB.B6)
+    *   [1.6 使用正确的前端](#.E4.BD.BF.E7.94.A8.E6.AD.A3.E7.A1.AE.E7.9A.84.E5.89.8D.E7.AB.AF)
 *   [2 在 VirtualBox 中安装 Archlinux](#.E5.9C.A8_VirtualBox_.E4.B8.AD.E5.AE.89.E8.A3.85_Archlinux)
     *   [2.1 在EFI模式下安装](#.E5.9C.A8EFI.E6.A8.A1.E5.BC.8F.E4.B8.8B.E5.AE.89.E8.A3.85)
-    *   [2.2 安装增强功能](#.E5.AE.89.E8.A3.85.E5.A2.9E.E5.BC.BA.E5.8A.9F.E8.83.BD)
-    *   [2.3 加载 VirtuakBox 虚拟模块](#.E5.8A.A0.E8.BD.BD_VirtuakBox_.E8.99.9A.E6.8B.9F.E6.A8.A1.E5.9D.97)
-    *   [2.4 加载 VirtualBox 虚拟机服务](#.E5.8A.A0.E8.BD.BD_VirtualBox_.E8.99.9A.E6.8B.9F.E6.9C.BA.E6.9C.8D.E5.8A.A1)
-    *   [2.5 硬件加速](#.E7.A1.AC.E4.BB.B6.E5.8A.A0.E9.80.9F)
-    *   [2.6 开启共享文件夹](#.E5.BC.80.E5.90.AF.E5.85.B1.E4.BA.AB.E6.96.87.E4.BB.B6.E5.A4.B9)
-        *   [2.6.1 手动挂载](#.E6.89.8B.E5.8A.A8.E6.8C.82.E8.BD.BD)
-        *   [2.6.2 自动挂载](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD)
-        *   [2.6.3 启动时挂载](#.E5.90.AF.E5.8A.A8.E6.97.B6.E6.8C.82.E8.BD.BD)
+    *   [2.2 Install the Guest Additions](#Install_the_Guest_Additions)
+    *   [2.3 Load the Virtualbox kernel modules](#Load_the_Virtualbox_kernel_modules)
+    *   [2.4 Launch the VirtualBox guest services](#Launch_the_VirtualBox_guest_services)
+    *   [2.5 Hardware acceleration](#Hardware_acceleration)
+    *   [2.6 Enable shared folders](#Enable_shared_folders)
+        *   [2.6.1 Manual mounting](#Manual_mounting)
+        *   [2.6.2 Automounting](#Automounting)
+        *   [2.6.3 Mount at boot](#Mount_at_boot)
 *   [3 VirtualBox虚拟机从其他虚拟机导入/导出的管理](#VirtualBox.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BB.8E.E5.85.B6.E4.BB.96.E8.99.9A.E6.8B.9F.E6.9C.BA.E5.AF.BC.E5.85.A5.2F.E5.AF.BC.E5.87.BA.E7.9A.84.E7.AE.A1.E7.90.86)
     *   [3.1 添加删除](#.E6.B7.BB.E5.8A.A0.E5.88.A0.E9.99.A4)
     *   [3.2 使用正确的虚拟磁盘格式](#.E4.BD.BF.E7.94.A8.E6.AD.A3.E7.A1.AE.E7.9A.84.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98.E6.A0.BC.E5.BC.8F)
@@ -45,6 +42,7 @@
         *   [5.3.1 VDI](#VDI)
     *   [5.4 压缩磁盘映像](#.E5.8E.8B.E7.BC.A9.E7.A3.81.E7.9B.98.E6.98.A0.E5.83.8F)
     *   [5.5 增加虚拟磁盘](#.E5.A2.9E.E5.8A.A0.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98)
+        *   [5.5.1 Increase size for VDI disks](#Increase_size_for_VDI_disks)
     *   [5.6 从.vbox文件中手动更换虚拟磁盘](#.E4.BB.8E.vbox.E6.96.87.E4.BB.B6.E4.B8.AD.E6.89.8B.E5.8A.A8.E6.9B.B4.E6.8D.A2.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98)
         *   [5.6.1 Linux主机和其他操作系统之间的转移](#Linux.E4.B8.BB.E6.9C.BA.E5.92.8C.E5.85.B6.E4.BB.96.E6.93.8D.E4.BD.9C.E7.B3.BB.E7.BB.9F.E4.B9.8B.E9.97.B4.E7.9A.84.E8.BD.AC.E7.A7.BB)
 *   [6 配置](#.E9.85.8D.E7.BD.AE)
@@ -60,7 +58,7 @@
         *   [7.1.2 启动虚拟机键盘快捷键](#.E5.90.AF.E5.8A.A8.E8.99.9A.E6.8B.9F.E6.9C.BA.E9.94.AE.E7.9B.98.E5.BF.AB.E6.8D.B7.E9.94.AE)
     *   [7.2 在虚拟机中使用特定的设备](#.E5.9C.A8.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.B8.AD.E4.BD.BF.E7.94.A8.E7.89.B9.E5.AE.9A.E7.9A.84.E8.AE.BE.E5.A4.87)
     *   [7.3 使用 USB 摄像头 / 麦克风](#.E4.BD.BF.E7.94.A8_USB_.E6.91.84.E5.83.8F.E5.A4.B4_.2F_.E9.BA.A6.E5.85.8B.E9.A3.8E)
-        *   [7.3.1 获得可探测的Web-cam和其他USB设备](#.E8.8E.B7.E5.BE.97.E5.8F.AF.E6.8E.A2.E6.B5.8B.E7.9A.84Web-cam.E5.92.8C.E5.85.B6.E4.BB.96USB.E8.AE.BE.E5.A4.87)
+        *   [7.3.1 侦测摄像头和其他USB设备](#.E4.BE.A6.E6.B5.8B.E6.91.84.E5.83.8F.E5.A4.B4.E5.92.8C.E5.85.B6.E4.BB.96USB.E8.AE.BE.E5.A4.87)
     *   [7.4 访问guest 服务](#.E8.AE.BF.E9.97.AEguest_.E6.9C.8D.E5.8A.A1)
     *   [7.5 在Windows客户端中激活D3D加速](#.E5.9C.A8Windows.E5.AE.A2.E6.88.B7.E7.AB.AF.E4.B8.AD.E6.BF.80.E6.B4.BBD3D.E5.8A.A0.E9.80.9F)
     *   [7.6 在USB key上使用VirtualBox](#.E5.9C.A8USB_key.E4.B8.8A.E4.BD.BF.E7.94.A8VirtualBox)
@@ -70,44 +68,44 @@
         *   [7.7.3 Create a VM configuration to boot from the physical drive](#Create_a_VM_configuration_to_boot_from_the_physical_drive)
             *   [7.7.3.1 创建一个原始只读磁盘的.vmdk映像](#.E5.88.9B.E5.BB.BA.E4.B8.80.E4.B8.AA.E5.8E.9F.E5.A7.8B.E5.8F.AA.E8.AF.BB.E7.A3.81.E7.9B.98.E7.9A.84.vmdk.E6.98.A0.E5.83.8F)
             *   [7.7.3.2 创建虚拟机配置文件](#.E5.88.9B.E5.BB.BA.E8.99.9A.E6.8B.9F.E6.9C.BA.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-        *   [7.7.4 Install the Guest Additions](#Install_the_Guest_Additions)
     *   [7.8 安装VirtualBox的本地Arch Linux系统](#.E5.AE.89.E8.A3.85VirtualBox.E7.9A.84.E6.9C.AC.E5.9C.B0Arch_Linux.E7.B3.BB.E7.BB.9F)
     *   [7.9 将本机Windows安装到虚拟机](#.E5.B0.86.E6.9C.AC.E6.9C.BAWindows.E5.AE.89.E8.A3.85.E5.88.B0.E8.99.9A.E6.8B.9F.E6.9C.BA)
         *   [7.9.1 Tasks on Windows](#Tasks_on_Windows)
-        *   [7.9.2 Tasks on GNU/Linux](#Tasks_on_GNU.2FLinux)
-        *   [7.9.3 修复MBR和Microsoft引导](#.E4.BF.AE.E5.A4.8DMBR.E5.92.8CMicrosoft.E5.BC.95.E5.AF.BC)
-        *   [7.9.4 已知的限制](#.E5.B7.B2.E7.9F.A5.E7.9A.84.E9.99.90.E5.88.B6)
+        *   [7.9.2 Using Disk2vhd to clone Windows partition](#Using_Disk2vhd_to_clone_Windows_partition)
+        *   [7.9.3 Tasks on GNU/Linux](#Tasks_on_GNU.2FLinux)
+        *   [7.9.4 修复MBR和Microsoft引导](#.E4.BF.AE.E5.A4.8DMBR.E5.92.8CMicrosoft.E5.BC.95.E5.AF.BC)
+        *   [7.9.5 已知的限制](#.E5.B7.B2.E7.9F.A5.E7.9A.84.E9.99.90.E5.88.B6)
 *   [8 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [8.1 modprobe Exec 格式错误](#modprobe_Exec_.E6.A0.BC.E5.BC.8F.E9.94.99.E8.AF.AF)
     *   [8.2 VERR_ACCESS_DENIED](#VERR_ACCESS_DENIED)
-    *   [8.3 键盘和鼠标都在我的虚拟机](#.E9.94.AE.E7.9B.98.E5.92.8C.E9.BC.A0.E6.A0.87.E9.83.BD.E5.9C.A8.E6.88.91.E7.9A.84.E8.99.9A.E6.8B.9F.E6.9C.BA)
-    *   [8.4 无法发送CTRL + ALT+ Fn键到我的虚拟机](#.E6.97.A0.E6.B3.95.E5.8F.91.E9.80.81CTRL_.2B_ALT.2B_Fn.E9.94.AE.E5.88.B0.E6.88.91.E7.9A.84.E8.99.9A.E6.8B.9F.E6.9C.BA)
-    *   [8.5 解决ISO映像问题](#.E8.A7.A3.E5.86.B3ISO.E6.98.A0.E5.83.8F.E9.97.AE.E9.A2.98)
-    *   [8.6 VirtualBox的GUI没有应用我的GTK主题](#VirtualBox.E7.9A.84GUI.E6.B2.A1.E6.9C.89.E5.BA.94.E7.94.A8.E6.88.91.E7.9A.84GTK.E4.B8.BB.E9.A2.98)
-    *   [8.7 OpenBSD系统无法使用时，虚拟化指令不可用](#OpenBSD.E7.B3.BB.E7.BB.9F.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8.E6.97.B6.EF.BC.8C.E8.99.9A.E6.8B.9F.E5.8C.96.E6.8C.87.E4.BB.A4.E4.B8.8D.E5.8F.AF.E7.94.A8)
-    *   [8.8 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_.280x80BB0007.29)
-    *   [8.9 USB 子系统在宿主机和虚拟机没有作用](#USB_.E5.AD.90.E7.B3.BB.E7.BB.9F.E5.9C.A8.E5.AE.BF.E4.B8.BB.E6.9C.BA.E5.92.8C.E8.99.9A.E6.8B.9F.E6.9C.BA.E6.B2.A1.E6.9C.89.E4.BD.9C.E7.94.A8)
-    *   [8.10 主机模式网络接口创建失败](#.E4.B8.BB.E6.9C.BA.E6.A8.A1.E5.BC.8F.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3.E5.88.9B.E5.BB.BA.E5.A4.B1.E8.B4.A5)
-    *   [8.11 WinXP: 位深不能大于 16](#WinXP:_.E4.BD.8D.E6.B7.B1.E4.B8.8D.E8.83.BD.E5.A4.A7.E4.BA.8E_16)
-    *   [8.12 虚拟系统使用串行端口](#.E8.99.9A.E6.8B.9F.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8.E4.B8.B2.E8.A1.8C.E7.AB.AF.E5.8F.A3)
-    *   [8.13 Windows 8.x Error Code 0x000000C4](#Windows_8.x_Error_Code_0x000000C4)
-    *   [8.14 Windows 8 VM fails to boot with error "ERR_DISK_FULL"](#Windows_8_VM_fails_to_boot_with_error_.22ERR_DISK_FULL.22)
-    *   [8.15 Linux guests have slow/distorted audio](#Linux_guests_have_slow.2Fdistorted_audio)
-    *   [8.16 客户端启动后的Xorg死机](#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.90.AF.E5.8A.A8.E5.90.8E.E7.9A.84Xorg.E6.AD.BB.E6.9C.BA)
-    *   [8.17 "NS_ERROR_FAILURE" and missing menu items](#.22NS_ERROR_FAILURE.22_and_missing_menu_items)
-    *   [8.18 USB modem](#USB_modem)
-    *   [8.19 "The specified path does not exist. Check the path and then try again." error in Windows guests](#.22The_specified_path_does_not_exist._Check_the_path_and_then_try_again..22_error_in_Windows_guests)
-    *   [8.20 挂载失败导致的啟动问题](#.E6.8C.82.E8.BD.BD.E5.A4.B1.E8.B4.A5.E5.AF.BC.E8.87.B4.E7.9A.84.E5.95.9F.E5.8A.A8.E9.97.AE.E9.A2.98)
-    *   [8.21 复制和粘贴在 Arch Linux 客户机没有作用](#.E5.A4.8D.E5.88.B6.E5.92.8C.E7.B2.98.E8.B4.B4.E5.9C.A8_Arch_Linux_.E5.AE.A2.E6.88.B7.E6.9C.BA.E6.B2.A1.E6.9C.89.E4.BD.9C.E7.94.A8)
-    *   [8.22 唤醒后异常](#.E5.94.A4.E9.86.92.E5.90.8E.E5.BC.82.E5.B8.B8)
-    *   [8.23 Btrfs 系统镜像](#Btrfs_.E7.B3.BB.E7.BB.9F.E9.95.9C.E5.83.8F)
-    *   [8.24 vagrant 啟动问题](#vagrant_.E5.95.9F.E5.8A.A8.E9.97.AE.E9.A2.98)
-    *   [8.25 没有64位客户端选项](#.E6.B2.A1.E6.9C.8964.E4.BD.8D.E5.AE.A2.E6.88.B7.E7.AB.AF.E9.80.89.E9.A1.B9)
-    *   [8.26 主机上的虚拟机启动操作系统死机](#.E4.B8.BB.E6.9C.BA.E4.B8.8A.E7.9A.84.E8.99.9A.E6.8B.9F.E6.9C.BA.E5.90.AF.E5.8A.A8.E6.93.8D.E4.BD.9C.E7.B3.BB.E7.BB.9F.E6.AD.BB.E6.9C.BA)
-    *   [8.27 向客户端发送CTRL+ALT+F1](#.E5.90.91.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.8F.91.E9.80.81CTRL.2BALT.2BF1)
-    *   [8.28 在运行于无显示器的服务器上的系统上启动虚拟机](#.E5.9C.A8.E8.BF.90.E8.A1.8C.E4.BA.8E.E6.97.A0.E6.98.BE.E7.A4.BA.E5.99.A8.E7.9A.84.E6.9C.8D.E5.8A.A1.E5.99.A8.E4.B8.8A.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.B8.8A.E5.90.AF.E5.8A.A8.E8.99.9A.E6.8B.9F.E6.9C.BA)
-    *   [8.29 从主机端访问虚拟机上的服务器](#.E4.BB.8E.E4.B8.BB.E6.9C.BA.E7.AB.AF.E8.AE.BF.E9.97.AE.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.B8.8A.E7.9A.84.E6.9C.8D.E5.8A.A1.E5.99.A8)
-    *   [8.30 守护进程工具](#.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.B7.A5.E5.85.B7)
+    *   [8.3 pacstrap script fails](#pacstrap_script_fails)
+    *   [8.4 键盘和鼠标都在我的虚拟机](#.E9.94.AE.E7.9B.98.E5.92.8C.E9.BC.A0.E6.A0.87.E9.83.BD.E5.9C.A8.E6.88.91.E7.9A.84.E8.99.9A.E6.8B.9F.E6.9C.BA)
+    *   [8.5 无法发送CTRL + ALT+ Fn键到我的虚拟机](#.E6.97.A0.E6.B3.95.E5.8F.91.E9.80.81CTRL_.2B_ALT.2B_Fn.E9.94.AE.E5.88.B0.E6.88.91.E7.9A.84.E8.99.9A.E6.8B.9F.E6.9C.BA)
+    *   [8.6 解决ISO映像问题](#.E8.A7.A3.E5.86.B3ISO.E6.98.A0.E5.83.8F.E9.97.AE.E9.A2.98)
+    *   [8.7 VirtualBox的GUI没有应用我的GTK主题](#VirtualBox.E7.9A.84GUI.E6.B2.A1.E6.9C.89.E5.BA.94.E7.94.A8.E6.88.91.E7.9A.84GTK.E4.B8.BB.E9.A2.98)
+    *   [8.8 OpenBSD系统无法使用时，虚拟化指令不可用](#OpenBSD.E7.B3.BB.E7.BB.9F.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8.E6.97.B6.EF.BC.8C.E8.99.9A.E6.8B.9F.E5.8C.96.E6.8C.87.E4.BB.A4.E4.B8.8D.E5.8F.AF.E7.94.A8)
+    *   [8.9 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_.280x80BB0007.29)
+    *   [8.10 USB 子系统在宿主机和虚拟机没有作用](#USB_.E5.AD.90.E7.B3.BB.E7.BB.9F.E5.9C.A8.E5.AE.BF.E4.B8.BB.E6.9C.BA.E5.92.8C.E8.99.9A.E6.8B.9F.E6.9C.BA.E6.B2.A1.E6.9C.89.E4.BD.9C.E7.94.A8)
+    *   [8.11 主机模式网络接口创建失败](#.E4.B8.BB.E6.9C.BA.E6.A8.A1.E5.BC.8F.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3.E5.88.9B.E5.BB.BA.E5.A4.B1.E8.B4.A5)
+    *   [8.12 WinXP: 位深不能大于 16](#WinXP:_.E4.BD.8D.E6.B7.B1.E4.B8.8D.E8.83.BD.E5.A4.A7.E4.BA.8E_16)
+    *   [8.13 虚拟系统使用串行端口](#.E8.99.9A.E6.8B.9F.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8.E4.B8.B2.E8.A1.8C.E7.AB.AF.E5.8F.A3)
+    *   [8.14 Windows 8.x Error Code 0x000000C4](#Windows_8.x_Error_Code_0x000000C4)
+    *   [8.15 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8.2C_8.1_or_10_fails_to_install.2C_boot_or_has_error_.22ERR_DISK_FULL.22)
+    *   [8.16 Linux guests have slow/distorted audio](#Linux_guests_have_slow.2Fdistorted_audio)
+    *   [8.17 客户端启动后的Xorg死机](#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.90.AF.E5.8A.A8.E5.90.8E.E7.9A.84Xorg.E6.AD.BB.E6.9C.BA)
+    *   [8.18 "NS_ERROR_FAILURE" and missing menu items](#.22NS_ERROR_FAILURE.22_and_missing_menu_items)
+    *   [8.19 USB modem](#USB_modem)
+    *   [8.20 "The specified path does not exist. Check the path and then try again." error in Windows guests](#.22The_specified_path_does_not_exist._Check_the_path_and_then_try_again..22_error_in_Windows_guests)
+    *   [8.21 挂载失败导致的啟动问题](#.E6.8C.82.E8.BD.BD.E5.A4.B1.E8.B4.A5.E5.AF.BC.E8.87.B4.E7.9A.84.E5.95.9F.E5.8A.A8.E9.97.AE.E9.A2.98)
+    *   [8.22 复制和粘贴在 Arch Linux 客户机没有作用](#.E5.A4.8D.E5.88.B6.E5.92.8C.E7.B2.98.E8.B4.B4.E5.9C.A8_Arch_Linux_.E5.AE.A2.E6.88.B7.E6.9C.BA.E6.B2.A1.E6.9C.89.E4.BD.9C.E7.94.A8)
+    *   [8.23 唤醒后异常](#.E5.94.A4.E9.86.92.E5.90.8E.E5.BC.82.E5.B8.B8)
+    *   [8.24 Btrfs 系统镜像](#Btrfs_.E7.B3.BB.E7.BB.9F.E9.95.9C.E5.83.8F)
+    *   [8.25 vagrant 啟动问题](#vagrant_.E5.95.9F.E5.8A.A8.E9.97.AE.E9.A2.98)
+    *   [8.26 没有64位客户端选项](#.E6.B2.A1.E6.9C.8964.E4.BD.8D.E5.AE.A2.E6.88.B7.E7.AB.AF.E9.80.89.E9.A1.B9)
+    *   [8.27 主机上的虚拟机启动操作系统死机](#.E4.B8.BB.E6.9C.BA.E4.B8.8A.E7.9A.84.E8.99.9A.E6.8B.9F.E6.9C.BA.E5.90.AF.E5.8A.A8.E6.93.8D.E4.BD.9C.E7.B3.BB.E7.BB.9F.E6.AD.BB.E6.9C.BA)
+    *   [8.28 The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)](#The_virtual_machine_has_terminated_unexpectedly_during_startup_with_exit_code_1_.280x1.29)
+    *   [8.29 Analog microphone not working in guest](#Analog_microphone_not_working_in_guest)
+    *   [8.30 Fullscreen mode shows blank guest screen](#Fullscreen_mode_shows_blank_guest_screen)
 *   [9 参阅](#.E5.8F.82.E9.98.85)
 
 ## 在Archlinux中安装VirtualBox的安装步骤
@@ -116,50 +114,22 @@
 
 ### 安装基本软件包
 
-[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 软件包 [virtualbox](https://www.archlinux.org/packages/?name=virtualbox)。[virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 会被安装为依赖软件包，要使用它安装内核模块，需要根据实际使用的内核安装内核头文件[[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html):
+[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 软件包 [virtualbox](https://www.archlinux.org/packages/?name=virtualbox)。从下面选择一个内核模块获取方式
 
-*   [linux](https://www.archlinux.org/packages/?name=linux)内核: [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)
-*   [linux-lts](https://www.archlinux.org/packages/?name=linux-lts): [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)
-*   [linux-zen](https://www.archlinux.org/packages/?name=linux-zen): [linux-zen-headers](https://www.archlinux.org/packages/?name=linux-zen-headers)
-*   [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec): [linux-grsec-headers](https://www.archlinux.org/packages/?name=linux-grsec-headers)
+*   如果使用[linux](https://www.archlinux.org/packages/?name=linux)内核，请安装[virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch)
+*   其它内核安装 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
+
+要编译 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 提供的内核文件，需要同时安装对应的内核头文件(例如安装 [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) 的头文件 [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) VirtualBox 或内核更新的时候，DKMS Pacman 钩子会自动编译内核模块。
 
 要使用基于 [Qt](/index.php/Qt "Qt") 的图形界面，需要安装 [qt4](https://www.archlinux.org/packages/?name=qt4) 软件包。如果使用命令行命令，则不需要安装。
 
-如果不安装需要的内核，dkms 在内核升级后不会做任何操作，你会找不到 Virtualbox 内核模块。只要安装了内核头文件， dkms 就会在内核升级后运行。
-
-### 安装VirtualBox内核模块
-
-接下来, 对你的机器进行完全的虚拟化，VirtualBox提供了下列 [Kernel modules (简体中文)](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)"): `vboxdrv`, `vboxnetadp`, `vboxnetflt` 和 `vboxpci`。这些模块需要添加进你的主机内核中。
-
-二进制内核模块的兼容性取决于它们已编译的内核的API。而Linux内核接口在不同的内核版本中可能不一样，为了避免兼容性问题而产生的小错误，每次Linux内核升级，建议重新编译内核模块。而这正是Linux包管理器所做的：每次Archlinux内核升级之后，VirtualBox的内核模块都会被同时更新。
-
-#### 使用定制的内核
-
-如果你使用的是自己从源代码编译的内核， 你需要知道的是VirtualBox不需要一些虚拟模块 (例如 virtuo, kvm,...). VirtualBox内核模块已经提供了所有工作所必须的东西.因此如果你不需要使用其他一些虚拟程序像是Xen, KVM 或是 GEMU，你可以在你的内核 *.config* 文件中禁用这些模块。
-
-##### DKMS 的安装
-
-**Tip:** [DKMS](/index.php/DKMS "DKMS") 可以为当前所运行的内核自动生成模块，通过使用以下命令： `# dkms autoinstall` 
-
-由于[virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 包需要进行编译，请确保你拥有对应于你的内核版本的[Template:Linux-headers](/index.php?title=Template:Linux-headers&action=edit&redlink=1 "Template:Linux-headers (page does not exist)")以避免这个错误: `Your kernel headers for kernel *your custom kernel version* cannot be found at /usr/lib/modules/*your custom kernel version*/build or /usr/lib/modules/*your custom kernel version*/source`
-
-当[virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 安装后，请通过以下命令生成内核模块：
-
-```
-# dkms install vboxhost/*virtualbox-host-source version* -k *your custom kernel version*/*your architecture*
-
-```
-
-**Tip:** 你可以通过这个整合命令安装，如果你想省点事的话: `# dkms install vboxhost/$(pacman -Q virtualbox|awk '{print $2}'|sed 's/\-.\+//') -k $(uname -rm|sed 's/\ /\//')` 
-
-为了在源代码升级之后自动重新编译内核模块， (例如当 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 更新时), 请 enable `dkms` 服务。
-
 ### 加载VirtualBox的内核模块
 
-```
-VirtualBox 在 Linux 上运行需要使用自己的[内核模块](/index.php/Kernel_modules "Kernel modules")，包括一个必须的 **vboxdrv**。这个模块必须在虚拟机运行前启动。如果需要，可以在 Arch Linux 启动时自动加载。
+从版本 5.0.16 开始，[virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch) 和 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 使用 `systemd-modules-load.service` 在启动时自动加载内核模块。
 
-```
+**Note:** 如果不希望启动时就加载 VirtualBox 模块，需要屏蔽默认的 `/usr/lib/modules-load.d/virtualbox-host-modules-arch.conf` (或 `-dkms.conf`)。创建一个同名空文件或链接到 `/dev/null`.
+
+VirtualBox 在 Linux 上运行需要使用自己的[内核模块](/index.php/Kernel_modules "Kernel modules")，**vboxdrv**模块必须在虚拟机运行前加载。
 
 手动加载模块:
 
@@ -168,10 +138,7 @@ VirtualBox 在 Linux 上运行需要使用自己的[内核模块](/index.php/Ker
 
 ```
 
-若要启动时加载 VirtualBox 驱动，在 `/etc/[modules-load.d](/index.php/Kernel_modules#Loading "Kernel modules")` 创建 `*.conf` 文件 (例如：`virtualbox.conf`)，包括所有应加载的模块:
-
- `/etc/modules-load.d/virtualbox.conf`  `vboxdrv` 
-**Note:** You may need to update the kernel modules db in order to avoid 'no such file or directory' error when loading vboxdrv. Run: `depmod -a`.
+**Note:** 使用命令前可能需要更新内核模块数据库以避免 'no such file or directory' 错误，执行: `depmod -a`.
 
 启动 VirtualBox 图形界面:
 
@@ -190,14 +157,9 @@ $VirtualBox
 
 最后，如果你使用前面提到的 "Host-only" 或是 "bridge networking" 功能，请确保 [net-tools](https://www.archlinux.org/packages/?name=net-tools) 已经安装。VirtualBoxt 为主机接口配置命令 `VBoxManage hostonlyif` 使用 `ifconfig` 和 `route` 来定位 IP 和 route，或通过 GUI 的*Settings > Network > Host-only Networks > Edit host-only network (space) > Adapter*选项。
 
-### 添加用户到 vboxusers组
+### 在客户端系统访问主机 USB
 
-将需要运行 Virtualbox 的用户名添加到 **vboxusers** [用户组](/index.php/Group "Group")，文件夹共享和其它功能需要正确的组才能工作。新组设置不会应用到当前会话，请重新登录或者通过命令 `newgrp` 或 `sudo -u *username* -s` 启动一个新环境。
-
-```
-# gpasswd -a $USER vboxusers
-
-```
+将需要运行 Virtualbox 的用户名添加到 **vboxusers** [用户组](/index.php/Group "Group")，USB 设备才能被访问。
 
 ### Guest 附加光盘
 
@@ -205,7 +167,7 @@ $VirtualBox
 
 ### 扩展组件
 
-自从 VirtualBox 4.0 之后，非GPL协议的组件已经从应用中被分离了出来，尽管这些组件使用非免费的协议并且 **仅授权给个人使用**，你也许仍有兴趣安装 Oracle 的扩展组件， 在这里提供 [additional features](https://www.virtualbox.org/manual/ch01.html#intro-installing)。为了避免手动操作, [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/) 包可供获得, 已编译的版本可以在 [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories")仓库找到。
+Oracle 的扩展组件以仅供个人使用的协议发布，在这里提供 [additional features](https://www.virtualbox.org/manual/ch01.html#intro-installing)。安装 [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/) 可获得这些组件, 已编译的版本可以在 [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories")仓库找到。
 
 如果你喜欢使用传统的手动方法：手动下载扩展组件并通过 GUI 安装 (*File > Preferences > Extensions*) 或通过 `VBoxManage extpack install <.vbox-extpack>`命令来安装, 请确保你拥有 toolkit (like [Polkit](/index.php/Polkit "Polkit"), gksu, etc.) 来获准进入 VirtualBox。安装过程 [需要 root 权限](https://www.virtualbox.org/ticket/8473).
 
@@ -216,7 +178,7 @@ $VirtualBox
 这里有多个前端提供给您，其中两个是默认提供:
 
 *   如果你只想在命令行下使用 VirtualBox (只想启动现有的虚拟机或是更改一些配置)，你可以使用 `VBoxSDL` 命令。VBoxSDL 仅仅提供一个简单的窗口包含所有虚拟机，没有菜单或是其他控制项。
-*   如果你想使用命令行并且不使用任何 GUI (例如在服务器上) 来创建、运行和配置虚拟机，使用 `VBoxHeadless` 命令，不会有任何图形输出，但是仅仅使用 VRDP 数据。
+*   如果你想使用命令行并且不使用任何 GUI (例如在服务器上) 来创建、运行和配置虚拟机，使用 `VBoxHeadless` 命令，不会有任何图形输出，但是仅仅使用 VRDP 数据(安装扩展模块之后才能使用)
 
 如果你安装了 [qt4](https://www.archlinux.org/packages/?name=qt4)这一可选依赖，你可以运行 `VirtualBox` 来获得一个美观易用的图形界面并能够使用鼠标。
 
@@ -234,7 +196,7 @@ $VirtualBox
 
 If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings of the virtual machine, choose *System* item from the panel on the left and *Motherboard* tab from the right panel, and check the checkbox *Enable EFI (special OSes only)*. After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
 
-Once the system and the boot loader are installed, VirtualBox will first attempt to run `/EFI/BOOT/BOOTX64.EFI` from the ESP. If that first option fails, VirtualBox will then try the EFI shell script `startup.nsh` from the root of the ESP. This means that in order to boot the system you have the following options:
+Once the system and the boot loader are installed, VirtualBox will first attempt to run `/EFI/BOOT/BOOTX64.EFI` from the [ESP](/index.php/ESP "ESP"). If that first option fails, VirtualBox will then try the EFI shell script `startup.nsh` from the root of the ESP. This means that in order to boot the system you have the following options:
 
 *   [Launch the bootloader manually](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") from the EFI shell every time;
 *   Move the bootloader to the default `/EFI/BOOT/BOOTX64.EFI` path;
@@ -244,23 +206,26 @@ Do not bother with the VirtualBox Boot Manager (accessible with `F2` at boot): E
 
 See also [UEFI Virtualbox installation boot problems](https://bbs.archlinux.org/viewtopic.php?id=158003).
 
-### 安装增强功能
+### Install the Guest Additions
 
-VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) provides drivers and applications that optimize the guest operating system including improved image resolution and better control of the mouse. Within the installed guest system, if using a graphical environment, install [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils). Otherwise install [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) for VirtualBox Guest utilities without X support.
+VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) provides drivers and applications that optimize the guest operating system including improved image resolution and better control of the mouse. Within the installed guest system, install:
 
-Both packages will install [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) as a dependency. To compile the virtualbox modules provided by `virtualbox-guest-dkms`, it will also be necessary to install the appropriate headers package(s) for your installed kernel(s)[[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html):
+*   [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) for VirtualBox Guest utilities with X support
+*   [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) for VirtualBox Guest utilities without X support
 
-*   [linux](https://www.archlinux.org/packages/?name=linux) kernel: [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)
-*   [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel: [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)
-*   [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel: [linux-zen-headers](https://www.archlinux.org/packages/?name=linux-zen-headers)
-*   [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) kernel: [linux-grsec-headers](https://www.archlinux.org/packages/?name=linux-grsec-headers)
+Both packages will make you choose a package to provide guest modules:
+
+*   for [linux](https://www.archlinux.org/packages/?name=linux) kernel choose [virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch)
+*   for other kernels choose [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
+
+To compile the virtualbox modules provided by [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms), it will also be necessary to install the appropriate headers package(s) for your installed kernel(s) (e.g. [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) for [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). [[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) When either VirtualBox or the kernel is updated, the kernel modules will be automatically recompiled thanks to the DKMS Pacman hook.
 
 **Note:**
 
 *   You can alternatively install the Guest Additions with the ISO from the [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) package, provided you installed this on the host system. To do this, go to the device menu click Insert Guest Additions CD Image.
 *   To recompile the vbox kernel modules, run `rcvboxdrv` as root.
 
-### 加载 VirtuakBox 虚拟模块
+### Load the Virtualbox kernel modules
 
 To load the modules automatically, [enable](/index.php/Enable "Enable") the `vboxservice` service which loads the modules and synchronizes the guest's system time with the host.
 
@@ -271,20 +236,11 @@ To load the modules manually, type:
 
 ```
 
-To load the VirtualBox module at boot time, refer to [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") and create a `*.conf` file (e.g. `virtualbox.conf`) in `/etc/modules-load.d/` with these lines:
+Since version 5.0.16, [virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch) and [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) use **systemd-modules-load** service to load their modules at boot time.
 
- `/etc/modules-load.d/virtualbox.conf` 
-```
-vboxguest
-vboxsf
-vboxvideo
-```
+**Note:** If you don't want the VirtualBox modules to be loaded at boot time, you have to mask the default `/usr/lib/modules-load.d/virtualbox-guest-modules-arch.conf` (or `-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d`.
 
-Note that depending on your choice of paravirtualization in VirtualBox, you may need to [edit the unit](/index.php/Systemd#Editing_provided_units "Systemd") with the following property to get it to load: `ConditionVirtualization=*paravirtualization*`
-
-Run `systemd-detect-virt` in the console to determine your paravirtualization.
-
-### 加载 VirtualBox 虚拟机服务
+### Launch the VirtualBox guest services
 
 After the rather big installation step dealing with VirtualBox kernel modules, now you need to start the guest services. The guest services are actually just a binary executable called `VBoxClient` which will interact with your X Window System. `VBoxClient` manages the following features:
 
@@ -300,24 +256,21 @@ $ VBoxClient --clipboard --draganddrop --seamless --display --checkhostversion
 
 ```
 
-As a shortcut, the `VBoxClient-all` bash script enables all of these features. You should set `VBoxClient` to be automatically loaded as your [desktop environment](/index.php/Desktop_environment "Desktop environment") or [window manager](/index.php/Window_manager "Window manager") starts. In practice,
+As a shortcut, the `VBoxClient-all` bash script enables all of these features.
 
-*   if you are using a [desktop environment](/index.php/Desktop_environment "Desktop environment"), you just need to check a box or add the `/usr/sbin/VBoxClient-all` to the autostart section in your [desktop environment](/index.php/Desktop_environment "Desktop environment") settings (the DE will typically set a flag to a *.desktop* file in `~/.config/autostart`, see [the Autostart section](/index.php/Autostart#Desktop_entries "Autostart") for more details);
-*   if you do not have any [desktop environment](/index.php/Desktop_environment "Desktop environment"), add the following line to the top of `~/.xinitrc` above any `exec` options. See [Xinitrc](/index.php/Xinitrc "Xinitrc") for detail.
+[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) installs `/etc/xdg/autostart/vboxclient.desktop` that launches `VBoxClient-all` on logon. If your [desktop environment](/index.php/Desktop_environment "Desktop environment") or [window manager](/index.php/Window_manager "Window manager") does not support this scheme, you will need to set up autostarting yourself, see [Autostarting#Graphical](/index.php/Autostarting#Graphical "Autostarting") for more details.
 
- `~/.xinitrc`  `/usr/bin/VBoxClient-all` 
-
-VirtualBox can also synchronize the time between the host and the guest. To do this, run `VBoxService` as root. To set this to run automatically on boot, simply [enable](/index.php/Enable "Enable") the `vboxservice` service.
+VirtualBox can also synchronize the time between the host and the guest, to do this, [start/enable](/index.php/Start/enable "Start/enable") the `vboxservice.service`.
 
 Now, you should have a working Arch Linux guest. Note that features like clipboard sharing are disabled by default in VirtualBox, and you will need to turn them on in the per-VM settings if you actually want to use them (e.g. *Settings > General > Advanced > Shared Clipboard*).
 
-### 硬件加速
+### Hardware acceleration
 
 Hardware acceleration can be activated from the VirtualBox options on the host computer. Note the [GDM](/index.php/GDM "GDM") display manager 3.16+ is known to [break](https://bugzilla.gnome.org/show_bug.cgi?id=749390) hardware acceleration support. So if you get issues with hardware acceleration, try out another display manager (lightdm seems to work fine).[[3]](https://bbs.archlinux.org/viewtopic.php?id=200025) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1607593#p1607593)
 
 If you want to share folders between your host and your Arch Linux guest, read on.
 
-### 开启共享文件夹
+### Enable shared folders
 
 Shared folders are managed on the host, in the settings of the Virtual Machine accessible via the GUI of VirtualBox, in the *Shared Folders* tab. There, *Folder Path*, the name of the mount point identified by *Folder name*, and options like *Read-only*, *Auto-mount* and *Make permanent* can be specified. These parameters can be defined with the `VBoxManage` command line utility. See [there for more details](https://www.virtualbox.org/manual/ch04.html#sharedfolders).
 
@@ -328,9 +281,9 @@ To avoid this issue `/sbin/mount.vboxsf: mounting failed with the error: No such
 Two additional steps are needed in order for the mount point to be accessible from users other than root:
 
 *   the [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package created a group `vboxsf` (done in a previous step);
-*   your username must be in this group, use this command `gpasswd -a $USER vboxsf` to add your username and use `newgrp` to apply the changes immediately;
+*   your username must be in `vboxsf` [group](/index.php/Group "Group").
 
-#### 手动挂载
+#### Manual mounting
 
 Use the following command to mount your folder in your Arch Linux guest:
 
@@ -355,7 +308,7 @@ For example if the user was not in the *vboxsf* group, we could have used this c
 
 Where *uid* and *gid* are values corresponding to the users we want to give access to. These values are obtained from the `id` command run against this user.
 
-#### 自动挂载
+#### Automounting
 
 In order for the automounting feature to work you must have checked the auto-mount checkbox in the GUI or used the optional `--automount` argument with the command `VBoxManage sharedfolder`.
 
@@ -368,7 +321,7 @@ $ ln -s /media/sf_*shared_folder_name* ~/*my_documents*
 
 ```
 
-#### 启动时挂载
+#### Mount at boot
 
 You can mount your directory with [fstab](/index.php/Fstab "Fstab"). However, to prevent startup problems with systemd, `comment=systemd.automount` should be added to `/etc/fstab`. This way, the shared folders are mounted only when those mount points are accessed and not during startup. This can avoid some problems, especially if the guest additions are not loaded yet when systemd read fstab and mount the partitions.
 
@@ -724,6 +677,17 @@ $ rm *old.vdi*
 
 ```
 
+#### Increase size for VDI disks
+
+If your disk is a vdi one, simply run:
+
+```
+$ VBoxManage modifyhd *your_virtual_disk.vdi* --resize *the_new_size*
+
+```
+
+Then jump back to the Gparted step, to increase the size of the partition on the virtual disk.
+
 ### 从.vbox文件中手动更换虚拟磁盘
 
 If you think that editing a simple *XML* file is more convenient than playing with the GUI or with `VBoxManage` and you want to replace (or add) a virtual disk to your virtual machine, in the *.vbox* configuration file corresponding to your virtual machine, simply replace the GUID, the file location and the format to your needs:
@@ -970,9 +934,15 @@ XF86Battery
 5.  从列表中选择你的USB摄像头 / 麦克风设备。
 6.  然后再点击OK，启动你的VM
 
-#### 获得可探测的Web-cam和其他USB设备
+**Note:** If your Microphone does not show up in the "Add filter from device" menu, try the USB 3.0 and 1.1 options instead (In Step 3).
 
-Make sure you filter any devices that are not a keyboard or a mouse so they do not start up at boot and this insures that Windows will detect the device at start-up.
+#### 侦测摄像头和其他USB设备
+
+**Note:** This will not do much if you are running a *NIX OS inside of your VM, as most do not have autodetection features.
+
+If the device that you are looking for does not show up on any of the menus in the section above and you have tried all three USB controller options,
+
+boot up your VM three seperate times. Once using the USB 1.1 controller, another using the USB 2.0 controller, etc. Leave the VM running for at least 5 minutes after startup. Sometimes Windows will autodetect the device for you. Be sure you filter any devices that are not a keyboard or a mouse so they do not start up at boot. This ensures that Windows will detect the device at start-up.
 
 ### 访问guest 服务
 
@@ -1063,27 +1033,7 @@ This guide will let you reuse, in a virtual machine, your native Arch Linux inst
 
 Depending on your hard drive setup, device files representing your hard drives may appear differently when you will run your Arch Linux installation natively or in virtual machine. This problem occurs when using [FakeRAID](/index.php/RAID#Implementation "RAID") for example. The fake RAID device will be mapped in `/dev/mapper/` when you run your GNU/Linux distribution natively, while the devices are still accessible separately. However, in your virtual machine, it can appear without any mapping in `/dev/sdaX` for example, because the drivers controlling the fake RAID in your host operating system (e.g. Windows) are abstracting the fake RAID device.
 
-To circumvent this problem, we will need to use an addressing scheme that is persistent to both systems. This can be achieved using [UUIDs](/index.php/Fstab#UUIDs "Fstab") in your `/etc/fstab` file. Make sure your [fstab](/index.php/Fstab "Fstab") file is using UUIDs, otherwise fix this issue. Read [fstab](/index.php/Fstab "Fstab") and [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
-
-`/etc/fstab` is not the only location where UUIDs are used. Bootloaders and boot managers make use of them too. Now, make sure these are really using UUIDs.
-
-	[GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")
-
-If you are still using the old [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"), maybe is it [time to upgrade](/index.php/GRUB_Legacy#Upgrading_to_GRUB2 "GRUB Legacy"), since this package is now dropped from the official Arch Linux repositories. If you want to keep it, edit `/boot/grub/menu.lst` and replace the `root=/dev/sdXX` statement in your Arch Linux boot entry by the Linux UUID mapping in `/dev/disk/by-uuid/` corresponding to your root partition.
-
-```
-title  Arch Linux
-root
-kernel /vmlinuz-linux root=*/dev/disk/by-uuid/0a3407de-014b-458b-b5c1-848e92a327a3* ro vga=773
-initrd /initramfs-linux-vbox.img
-
-```
-
-Repeat the process here, for the fallback entry.
-
-	[GRUB](/index.php/GRUB "GRUB")
-
-If you are running the most recent version of [GRUB](/index.php/GRUB "GRUB"); you have nothing to do. Yet another reason to upgrade to GRUB 2.
+To circumvent this problem, we will need to use an addressing scheme that is persistent to both systems. This can be achieved using [UUIDs](/index.php/Fstab#UUIDs "Fstab"). Make sure your [boot loader](/index.php/Boot_loader "Boot loader") and [fstab](/index.php/Fstab "Fstab") file is using UUIDs, otherwise fix this issue. Read [fstab](/index.php/Fstab "Fstab") and [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 **Warning:**
 
@@ -1208,8 +1158,6 @@ $ VBoxManage storageattach *VM_name* --storagectl "SATA Controller" --port 0 --d
 
 While you continue using the CLI, it is recommended to use the VirtualBox GUI, to personalise the virtual machine configuration. Indeed, you must specify its hardware configuration as close as possible as your native machine: turning on the 3D acceleration, increasing video memory, setting the network interface, etc.
 
-#### Install the Guest Additions
-
 Finally, you may want to seamlessly integrate your Arch Linux with your host operating system and allow copy pasting between both OSes. Please refer to [#Install the Guest Additions](#Install_the_Guest_Additions) for that, since this Arch Linux virtual machine is basically an Arch Linux guest.
 
 **Warning:** For [Xorg](/index.php/Xorg "Xorg") to work in natively and in the virtual machine, since obviously it will be using different drivers, it is best if there is no `/etc/X11/xorg.conf`, so Xorg will pick up everything it needs on the fly. However, if you really do need your own Xorg configuration, maybe is it worth to set your default systemd target to `multi-user.target` with `systemctl isolate graphical.target` as root (more details at [Systemd#Targets table](/index.php/Systemd#Targets_table "Systemd") and [Systemd#Change current target](/index.php/Systemd#Change_current_target "Systemd")). In that way, the graphical interface is disabled (i.e. Xorg is not launched) and after you logged in, you can `startx`} manually with a custom `xorg.conf`.
@@ -1254,7 +1202,13 @@ The first three following points comes from [this outdated VirtualBox wiki page]
 
 *   Create a Windows recovery disk: In the following steps, if things turn bad, you will need to repair your Windows installation. Make sure you have an install media at hand, or create one with *Create a recovery disk* from Vista SP1, *Create a system repair disc* on Windows 7 or *Create a recovery drive* on Windows 8.x).
 
+#### Using Disk2vhd to clone Windows partition
+
+Boot into Windows, clean up the installation (with [CCleaner](http://www.piriform.com/ccleaner) for example), use [disk2vhd](https://technet.microsoft.com/en-us/library/ee656415.aspx) tool to create a VHD image. Include a reserved system partition (if present) and the actual Windows partition (usually disk C:). The size of Disk2vhd-created image will be the sum of the actual files on the partition (used space), not the size of a whole partition. If all goes well, the image should just boot in a VM and you won't have to go through the hassle with MBR and Windows bootloader, as in the case of cloning an entire partition.
+
 #### Tasks on GNU/Linux
+
+**Tip:** Skip the partition-related parts if you created VHD image with [Disk2vhd](#Using_Disk2vhd_to_clone_Windows_partition).
 
 *   Reduce the native Windows partition size to the size Windows actually needs with `ntfsresize` available from [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). The size you will specify will be the same size of the VDI that will be created in the next step. If this size is too low, you may break your Windows install and the latter might not boot at all.
 
@@ -1285,6 +1239,8 @@ The first three following points comes from [this outdated VirtualBox wiki page]
 *   Attempt to boot your Windows virtual machine in safe mode (press the F8 key before the Windows logo shows up)... if running into boot issues, read [#Fix MBR and Microsoft bootloader](#Fix_MBR_and_Microsoft_bootloader). In safe-mode, drivers will be installed likely by the Windows plug-and-play detection mechanism [view](http://i.imgur.com/hh1RrSp.png). Additionally, install the VirtualBox Guest Additions via the menu *Devices* > *Insert Guest Additions CD image...*. If a new disk dialog does not appear, navigate to the CD drive and start the installer manually.
 
 *   You should finally have a working Windows virtual machine. Do not forget to read the [#Known limitations](#Known_limitations).
+
+*   Performance tip: according to [VirtualBox manual](http://www.virtualbox.org/manual/ch05.html#harddiskcontrollers), SATA controller has a better performance than IDE. If you can't boot Windows off virtual SATA controller right away, it is probably due to the lack of SATA drivers. Attach virtual disk to IDE controller, create an empty SATA controller and boot the VM - Windows should automatically install SATA drivers for the controller. You can then shutdown VM, detach virtual disk from IDE controller and attach it to SATA controller instead.
 
 #### 修复MBR和Microsoft引导
 
@@ -1328,6 +1284,10 @@ pacman -Syu
 ### VERR_ACCESS_DENIED
 
 To access the raw vmdk image on a windows host, run the VirtualBox GUI as administrator.
+
+### pacstrap script fails
+
+If you used *pacstrap* in the [#Installation steps for Arch Linux guests](#Installation_steps_for_Arch_Linux_guests) to also [#Install the Guest Additions](#Install_the_Guest_Additions) **before** performing a first boot into the new guest, you will need to `umount -l /mnt/dev` as root before using *pacstrap* again; a failure to do this will render it unusable.
 
 ### 键盘和鼠标都在我的虚拟机
 
@@ -1446,9 +1406,9 @@ $ vboxmanage setextradata *virtual_machine_name* VBoxInternal/CPUM/CMPXCHG16B 1
 
 ```
 
-### Windows 8 VM fails to boot with error "ERR_DISK_FULL"
+### Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"
 
-Situation: Your Windows 8 VM refuses to start. VirtualBox throws an error stating the virtual disk is full. However, you are certain that the disk is not full. Bring up your VM's settings at *Settings > Storage > Controller:SATA* and select "Use Host I/O Cache".
+Update the VM's settings by going to *Settings > Storage > Controller:SATA* and check "Use Host I/O Cache".
 
 ### Linux guests have slow/distorted audio
 
@@ -1507,8 +1467,8 @@ There are several workarounds:
 
 1.  Disable UAC from Control Panel -> Action Center -> "Change User Account Control settings" from left side pane -> set slider to "Never notify" -> OK and reboot
 2.  Copy the file from the shared folder to the guest and run from there
-3.  Control Panel -> Network and Internet -> Internet Options -> Security -> Trusted Sites -> Sites -> Add "VBOXSVR" as a website
-4.  Start -> type "gpedit.msc" and press Enter -> Computer Configuration -> Administrative Templates -> Windows Components -> Internet Explorer -> Internet Control Panel -> Security Page -> Size to Zone Assignment List -> Add "VBOXSVR" to "2" and reboot
+
+Other threads on the internet suggest to add VBOXSVR to the list of trusted sites, but this doesn't work with Windows 7 or newer.
 
 ### 挂载失败导致的啟动问题
 
@@ -1601,83 +1561,47 @@ When launching a VM client, and no 64-bit options are available, make sure your 
 
 ### 主机上的虚拟机启动操作系统死机
 
-This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Intel Broadwell chipsets.
+Possible causes/solutions :
 
-The matter is currently being investigated, with a wide variety of WIP vboxhost module patches out in the wild that are meant to solve the issue.
+*   SMAP
 
-At the moment of writing though, the only 100% guaranteed solution to this problem is disabling SMAP support in your kernel by appending the "nosmap" option to your kernel boot command line.
+This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Intel Broadwell chipsets. The matter is currently being investigated, with a wide variety of WIP vboxhost module patches out in the wild that are meant to solve the issue. At the moment of writing though, the only 100% guaranteed solution to this problem is disabling SMAP support in your kernel by appending the "nosmap" option to your kernel boot command line.
 
-### 向客户端发送CTRL+ALT+F1
+*   Hardware Virtualisation
 
-如果你的客户端操作系统是Linux发行版，且你又想打开一个新的tty文本shell或者通过键入`Ctrl`+`Alt`+`F1`来退出 X ，你可以简单地敲击你的'Host Key'向客户端操作系统发送这个命令（通常为键盘右边的`Ctrl`） + `F1` 或 `F2`，以此类推。
+Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
 
-### 在运行于无显示器的服务器上的系统上启动虚拟机
+*   Various Kernel bugs
+    *   Fuse mounted partitions (like ntfs) [[7]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[8]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
 
-Add this line to /etc/rc.local
+Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
 
-```
-exec /bin/su -c 'VBoxManage startvm --type headless <*UUID|NAME*>' *PREFERED_USER* >/dev/null 2>&1
+### The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)
 
-```
-
-Where <UUID|NAME> is the guest identifier, and PREFERRED_USER is the user profile that contains the VM definitions and .vdi files.
-
-Since exec replaces the currently running process, you will not be able to start a second VM, or execute any other commands, after the exec. Try the following if this is a problem:
+When trying to launch a virtual machine, an error message like the following appears:
 
 ```
-su -c 'VBoxHeadless -s <*UUID|NAME*> &' -s /bin/sh *PREFERED_USER* >/dev/null 2>&1
-
+The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)
+NS_ERROR_FAILURE 0x80004005
+Component: MachineWrap
+Interface: IMachine
 ```
 
-Using fully qualified path to su and VBoxHeadless is recommend. Add additional lines like above to start additional VMs. Commands following these in rc.local will be executed. Based on some rooting around in the VBox documentation, I get the impression this will be a little more robust than 'VBoxManage ... --type headless' in future VBox releases.
-
-To determine the available VMs for a user:
+This may occur after upgrading the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) or [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) package. Try reloading the `vboxdrv` module:
 
 ```
-su -c 'VBoxManage list vms' PREFERED_USER
+# modprobe -r vboxdrv
+# modprobe vboxdrv
 
 ```
 
-To save the state of a running VM:
+### Analog microphone not working in guest
 
-```
-su -c 'VBoxManage controlvm <UUID|NAME> savestate' PREFERED_USER
+If the audio input from an analog microphone is working correctly on the host, but no sound seems to get through to the guest, despite the microphone device apparently being detected normally, installing a [sound server](/index.php/Sound_system#Sound_servers "Sound system") such as [PulseAudio](/index.php/PulseAudio "PulseAudio") on the host might fix the problem.
 
-```
+### Fullscreen mode shows blank guest screen
 
-rc.local.shutdown would be a good spot for this.
-
-### 从主机端访问虚拟机上的服务器
-
-To access apache on a VM from the Host machine ONLY, simply execute the following lines on the Host:
-
-```
-$ VBoxManage setextradata GuestName "VBoxInternal/Devices/pcnet/0/LUN#0/Config/Apache/HostPort" 8888
-$ VBoxManage setextradata GuestName "VBoxInternal/Devices/pcnet/0/LUN#0/Config/Apache/GuestPort" 80
-$ VBoxManage setextradata GuestName "VBoxInternal/Devices/pcnet/0/LUN#0/Config/Apache/Protocol" TCP
-
-```
-
-Where 8888 is the port the host should listen on and 80 is the port the VM will send Apache's signal on. To use a port lower than 1024 on the host machine changes need to be made to the firewall on the host machine. This can also be set up to work with SSH, etc.. by changing "Apache" to whatever service and using different ports.
-
-Note: "pcnet" refers to the network card of the VM. If you use an Intel card in your VM settings change "pcnet" to "e1000"
-
-*   from [[7]](http://mydebian.blogdns.org/?p=111)
-
-It might also be necessary to allow connections from the outside to the server in your VM. E.g. if the guest OS is Arch, you may want to add the line
-
-```
-httpd: ALL
-
-```
-
-to your /etc/hosts.allow file.
-
-### 守护进程工具
-
-While VirtualBox can mount ISO images without a problem, there are some image formats which cannot reliably be converted to ISO. For instance, ccd2iso ignores .ccd and .sub files, which can give disk images with broken files. cdemu, fuseiso, and MagicISO will do the same. In this case there is no choice but to use Daemon Tools inside VirtualBox.
-
-Recent Daemon Tools versions won't install, so use this old one: [[8]](http://www.disc-tools.com/download/daemon347+hashcalc)
+On some window managers ([i3](/index.php/I3 "I3")), VirtualBox has issues with fullscreen mode properly due to the overlay bar. To workaround this issue, disable "Show in Full-screen/Seamless" option in "Guest Settings --> User Interface --> Mini ToolBar". See [the upstream bug report](https://www.virtualbox.org/ticket/14323) for more information.
 
 ## 参阅
 

@@ -62,7 +62,7 @@ The package you will need to install depends on the browser you use.
 **Note:**
 
 *   Some Flash apps may require the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package in order to properly render text.
-*   The [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/) package provides an *experimental* adapter to use [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) with NPAPI based browsers like Firefox. It can be configured (e.g. for enabling HW-acceleration) by copying `/usr/share/freshplayerplugin/freshwrapper.conf.example` to `/usr/share/freshplayerplugin/freshwrapper.conf`.
+*   The [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) package provides an *experimental* adapter to use [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) with NPAPI based browsers like Firefox. It can be configured (e.g. for enabling HW-acceleration) by copying `/usr/share/freshplayerplugin/freshwrapper.conf.example` to `~/.config/freshwrapper.conf`.
 
 #### Upgrade
 
@@ -70,11 +70,11 @@ If you are using [Firefox](/index.php/Firefox "Firefox"), please make sure to fo
 
 #### Configuration
 
-To change the preferences (privacy settings, resource usage, etc.) of Flash Player, right click on any embedded Flash content (for instance the one on [this page](https://helpx.adobe.com/flash-player.html)) and choose *Settings* from the menu.
+To change the preferences (privacy settings, resource usage, etc.) of Flash Player, right click on any embedded Flash content (for instance [adobe's flash home](https://helpx.adobe.com/flash-player.html)) and choose *Settings* from the menu.
 
 You can also use the Flash settings file `/etc/adobe/mms.cfg`. Gentoo has an extensively commented [example mms.cfg](http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/www-plugins/adobe-flash/files/mms.cfg).
 
-To enable [VDPAU](/index.php/VDPAU "VDPAU") hardware video decoding, add/uncomment the following line:
+To enable video decoding with [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"), add/uncomment the following line:
 
 ```
 EnableLinuxHWVideoDecode = 1
@@ -108,7 +108,7 @@ Then, patch `libflashplayer.so`:
 
 If you use Firefox and want to remove the message *Press ESC to exit full screen mode in HTML5 videos* too, go to about:config and set `full-screen-api.warning.timeout` to `0`.
 
-Alternatively, install Firefox extension [Disable HTML5 Fullscreen Alert](https://addons.mozilla.org/en-gb/firefox/addon/disable-html5-fullscreen-alert/), which will suppress full screen warnings for HTML5 content.
+Alternatively, install Firefox extension [Disable HTML5 Fullscreen Alert](https://addons.mozilla.org/firefox/addon/disable-html5-fullscreen-alert/), which will suppress full screen warnings for HTML5 content.
 
 #### Multiple monitor full-screen fix
 
@@ -176,7 +176,7 @@ Lightspark can be [installed](/index.php/Install "Install") with the [lightspark
 
 #### Open-with Firefox extension
 
-1.  Install [Open-with](https://addons.mozilla.org/en-US/firefox/addon/open-with/) add-on.
+1.  Install [Open-with](https://addons.mozilla.org/firefox/addon/open-with/) add-on.
 2.  Open `about:openwith`, select *Add...*
 3.  In the dialog select a video streaming capable player (e.g. [/usr/bin/mpv](/index.php/Mpv "Mpv")).
 4.  (Optional step) Add needed arguments to the player (e.g. you may want `--force-window --ytdl` for *mpv*)
@@ -216,8 +216,6 @@ If this is not enough, you may need to change 2 values in `about:config`:
 Restart and it should work like a charm!
 
 ### Adobe Reader
-
-**Note:** Adobe Reader for Linux is discontinued[[3]](http://www.omgubuntu.co.uk/2014/10/adobe-reader-linux-download-pulled-website) and the outdated version that is still available cannot easily run in a 64-bit browser.
 
 Adobe Acrobat Reader is only available as a 32-bit binary. It can be installed with the [acroread](https://aur.archlinux.org/packages/acroread/) package. This package installs the Acrobat Reader application as well as the NPAPI plugin.
 
@@ -280,7 +278,7 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 
 *   **VLC Plugin** — NPAPI-based plugin that uses VLC technologies.
 
-	[http://git.videolan.org/?p=npapi-vlc.git;a=summary](http://git.videolan.org/?p=npapi-vlc.git;a=summary) || [npapi-vlc-git](https://aur.archlinux.org/packages/npapi-vlc-git/)
+	[https://code.videolan.org/videolan/npapi-vlc](https://code.videolan.org/videolan/npapi-vlc) || [npapi-vlc](https://www.archlinux.org/packages/?name=npapi-vlc)
 
 ## Other
 
@@ -479,14 +477,14 @@ Firefox will automatically rebuild this file once it is started again. Make sure
 A common problem is that the plugin path is unset. This typically occurs on a new install, when the user has not re-logged in before running Firefox after the installation. Test if the path is unset:
 
 ```
-echo $MOZ_PLUGIN_PATH
+$ printenv MOZ_PLUGIN_PATH
 
 ```
 
 If unset, then either re-login, or source `/etc/profile.d/mozilla-common.sh` and start Firefox from the same shell:
 
 ```
-source /etc/profile.d/mozilla-common.sh && firefox
+$ source /etc/profile.d/mozilla-common.sh && firefox
 
 ```
 

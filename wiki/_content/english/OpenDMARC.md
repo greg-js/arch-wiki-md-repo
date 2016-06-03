@@ -29,7 +29,7 @@ The alignment modes for DKIM and SPF can be s for strict and r for relaxed, wher
 
 ### Installation
 
-[Install](/index.php/Install "Install") the package [opendmarc](https://aur.archlinux.org/packages/opendmarc/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the package [opendmarc](https://www.archlinux.org/packages/?name=opendmarc).
 
 ### Basic configuration
 

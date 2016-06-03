@@ -85,7 +85,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **Xclip** — A lightweight, command-line based interface to the clipboard.
 
-	[http://sourceforge.net/projects/xclip/](http://sourceforge.net/projects/xclip/) || [xclip](https://www.archlinux.org/packages/?name=xclip)
+	[https://github.com/astrand/xclip](https://github.com/astrand/xclip) || [xclip](https://www.archlinux.org/packages/?name=xclip)
 
 *   **xcmenu** — Clipboard synchronizer developed for window manager users.
 

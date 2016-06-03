@@ -222,7 +222,7 @@ Note: lspci for another user produced "Network controller: RaLink RT2860" rather
 
 ### WiFi
 
-WiFi should work out of the box with the stock kernel. However, if you do have trouble, you can try switching to the rt2860sta module provided by the [rt2860](https://aur.archlinux.org/packages/rt2860/) package. If you use the AUR package, you may need to [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the rt2800lib and rt2800pci modules.
+WiFi should work out of the box with the stock kernel. However, if you do have trouble, you can try switching to the rt2860sta module provided by the [rt2860](https://aur.archlinux.org/packages/rt2860/) package. If you use the AUR package, you may need to [blacklist](/index.php/Blacklist "Blacklist") the rt2800lib and rt2800pci modules.
 
 ### Bluetooth
 

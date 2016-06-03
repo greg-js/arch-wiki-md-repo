@@ -26,16 +26,16 @@ Sysadmins can jail a subset of users to a chroot jail using [openssh](https://ww
 Create a jail directory:
 
 ```
-# mkdir -p /var/jail
+# mkdir -p /var/lib/jail
 
 ```
 
-**Note:** Readers may select a file access scheme on their own. For example, optionally create a subdirectory for an incoming (writable) space and/or a read-only space. This need not be done directly under /var/jail ... it can be accomplished on the live partition which will be mounted via a bind mount as well.
+**Note:** Readers may select a file access scheme on their own. For example, optionally create a subdirectory for an incoming (writable) space and/or a read-only space. This need not be done directly under /var/lib/jail ... it can be accomplished on the live partition which will be mounted via a bind mount as well.
 
 Bind mount the live filesystem to be shared to this directory. In this example, /mnt/data/share is to be used. It is owned by root and has octal permissions of 755.
 
 ```
-# mount -o bind /mnt/data/share /var/jail
+# mount -o bind /mnt/data/share /var/lib/jail
 
 ```
 
@@ -46,7 +46,7 @@ Bind mount the live filesystem to be shared to this directory. In this example, 
 Create the share user and setup a good password:
 
 ```
-# useradd -g sshusers -s /var/jail foo
+# useradd -g sshusers -d /var/lib/jail foo
 # passwd foo
 
 ```

@@ -22,6 +22,7 @@ This article contains instruction on sharing printers between systems, be it bet
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Cannot print with GTK applications](#Cannot_print_with_GTK_applications)
     *   [3.2 Unable to add/modify a printer via SAMBA](#Unable_to_add.2Fmodify_a_printer_via_SAMBA)
+    *   [3.3 Permission errors on Windows](#Permission_errors_on_Windows)
 *   [4 Other operating systems](#Other_operating_systems)
 
 ## Between GNU/Linux systems
@@ -88,33 +89,22 @@ BrowseAddress 192.168.0.*:631
 
 The **preferred way** to connect a Windows client to a Linux print server is using [IPP](https://en.wikipedia.org/wiki/Internet_Printing_Protocol "wikipedia:Internet Printing Protocol"). It is a standard printer protocol based on HTTP, allowing you all ways to profit from port forwarding, tunneling etc. The configuration is **very easy** and this way is less error-prone than using Samba. IPP is natively supported by Windows **since Windows 2000**.
 
-To configure the server side proceed as described in the section above to enable browsing.
+**Note:** You may have to add the Internet Printing Client to Windows (*Control Panel->Programs->Turn Windows features on or off->Print and Document Services*)
 
-On the Windows computer, go to the printer control panel and choose to 'Add a New Printer'. Next, choose to give a URL. For the URL, type in the location of the printer:
+First, configure the server as described in the section [#Between GNU/Linux systems](#Between_GNU.2FLinux_systems).
+
+On the Windows computer, go to *Control Panel->Devices and Printers* and choose to 'Add a printer'. Next, choose 'Select a shared printer by name' and type in the location of the printer:
 
 ```
-http://*host_ip_address*:631/printers/*printer_name*
-
-```
-
-(where *host_ip_address* is the GNU/Linux server's IP address and *printer_name* is the name of the printer being connected to, you can also use the server's fully qualified domain name, if it has one, but you may need to set `ServerAlias my_fully_qualified_domain_name` in *cupsd.conf* for this to work).
-
-**Note:** The add printer dialog in windows is quite sensitive to the path to the printer, the dialogue box itself suggests:
-```
-http://servername:631/printers/printer_name/.printer
+http://*hostname*:631/printers/*printer_name*
 
 ```
 
-which will work in a web-browser but **not** in the add printer dialogue. (At least, not when using cups as an ipp server). The syntax suggested above:
+(where *hostname* is the GNU/Linux server's hostname or IP address and *printer_name* is the name of the printer being connected to. You can also use the server's fully qualified domain name, if it has one, but you may need to set `ServerAlias my_fully_qualified_domain_name` in *cupsd.conf* for this to work).
 
-```
-http://host_ip_address:631/printers/printer_name
+**Note:** The 'Add Printer' dialog in Windows is sensitive about the path. The dialogue box suggests the format `http://computername/printers/printername/.printer`, which it will not accept. Instead, use the syntax suggested above.
 
-```
-
-**will** work.
-
-**Note**: If you are using **proxy** - check used proxy **exclusions** twice - it may result in failing to add a printer until reboot even if you will disable proxy at all afterwards (actual for Windows 7).
+**Note:** If you are using **proxy** - check used proxy **exclusions** twice - it may result in failing to add a printer until reboot even if you will disable proxy at all afterwards (actual for Windows 7).
 
 After this, install the native printer drivers for your printer on the Windows computer. If the CUPS server is set up to use its own printer drivers, then you can just select a generic postscript printer for the Windows client(e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2'). Then test the print setup by printing a test page.
 
@@ -338,6 +328,15 @@ This is a known bug in Gutenprint ([https://bugs.archlinux.org/task/43708](https
 ```
 
 should then return the list of drivers instead of just the "Success" message.
+
+### Permission errors on Windows
+
+Some users fixed 'NT_STATUS_ACCESS_DENIED' (Windows clients) errors by using a slightly different syntax:
+
+```
+smb://workgroup/username:password@hostname/printer_name
+
+```
 
 ## Other operating systems
 

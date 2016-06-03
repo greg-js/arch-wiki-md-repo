@@ -93,7 +93,7 @@ Xorg 的相关错误可以查看 [Xorg#Troubleshooting](/index.php/Xorg#Troubles
 
 ### 避免某些 Pacman 命令
 
-避免 [部分更新](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E6.9B.B4.E6.96.B0)，不要运行 `pacman -Sy` 而是运行 `pacman -Syu`.
+避免 [部分更新](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)，不要运行 `pacman -Sy` 而是运行 `pacman -Syu`.
 
 避免 pacman 的 `--force` 选项，**尤其是** `pacman -Syu --force` 这种可能更新多个软件包的时候。`--force` 忽略文件冲突，可能导致文件丢失！如果系统按正常维护，这个选项仅应该在 Arch 开发者明确指导的情况下使用，在 Arch 主页会有通知。
 

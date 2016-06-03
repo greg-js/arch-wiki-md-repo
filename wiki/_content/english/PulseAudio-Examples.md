@@ -12,6 +12,7 @@
     *   [5.1 Splitting front/rear](#Splitting_front.2Frear)
     *   [5.2 Splitting 7.1 into 5.1+2.0](#Splitting_7.1_into_5.1.2B2.0)
     *   [5.3 Disabling LFE remixing](#Disabling_LFE_remixing)
+    *   [5.4 Binaural Headphones](#Binaural_Headphones)
 *   [6 PulseAudio over network](#PulseAudio_over_network)
     *   [6.1 TCP support (networked sound)](#TCP_support_.28networked_sound.29)
     *   [6.2 TCP support with anonymous clients](#TCP_support_with_anonymous_clients)
@@ -324,15 +325,13 @@ Similar to the example above, you can also split a 7.1 configuration into 5.1 su
 
 ```
  load-module module-remap-sink sink_name=Surround remix=no master=alsa_output.pci-0000_00_14.2.analog-surround-71 channels=6 master_channel_map=front-left,front-right,rear-left,rear-right,front-center,lfe channel_map=front-left,front-right,rear-left,rear-right,front-center,lfe
- load-module module-remap-sink sink_name=Stereo remix=yes master=alsa_output.pci-0000_00_14.2.analog-surround-71 channels=2 master_channel_map=front-left,front-right channel_map=front-left,front-right
+ load-module module-remap-sink sink_name=Stereo remix=no master=alsa_output.pci-0000_00_14.2.analog-surround-71 channels=2 master_channel_map=side-left,side-right channel_map=front-left,front-right
 
 ```
 
 Make sure to replace alsa_output.pci-0000_00_14.2 with your sound card name, get it by running 'pacmd list-sinks'. This configuration will use the front/rear/center+lfe (green/black/orange) jacks for the 5.1 sink and the side (grey) jack for the stereo sink. It will also downmix any audio to stereo for the stereo sink, but will not touch the 5.1 output.
 
 **Tip:** If pulseaudio fails with `master sink not found`, comment out the remapping lines, start PulseAudio and verify your card output is set to analog surround 7.1\. Alternatively, try using a [sink index](#Set_the_defaulting_output_source) instead of a sink name.
-
-**Note:** The `remix=yes` parameter will only work if you also have `enable-remixing = yes` in your `/etc/pulse/daemon.conf` (default).
 
 ### Disabling LFE remixing
 
@@ -351,6 +350,32 @@ enable-lfe-remixing = no
 ```
 
 then restart Pulseaudio.
+
+### Binaural Headphones
+
+[ladsp-bs2b](https://aur.archlinux.org/packages/ladsp-bs2b/) provides a plugin to simulate surround sound on stereo headphones. To use it, find your headphones with:
+
+ `$ pacmd list-sinks | grep -e 'name:'` 
+```
+	name: <alsa_output.pci-0000_00_1b.0.iec958-ac3-surround-51>
+	name: <alsa_output.pci-0000_00_1b.0.iec958-ac3-surround-51.equalizer>
+	name: <bluez_sink.00_1F_82_28_93_51>
+
+```
+
+Load the plugin (*new* sink_name is up to you, master=*headphone's sink name*):
+
+```
+pacmd load-module module-ladspa-sink sink_name=binaural master=bluez_sink.00_1F_82_28_93_51 plugin=bs2b label=bs2b control=700,4.5
+
+```
+
+Use [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) to transfer streams to the new sink, or:
+
+```
+pactl move-sink-input $INPUTID $BINAURALSINKNAME
+
+```
 
 ## PulseAudio over network
 

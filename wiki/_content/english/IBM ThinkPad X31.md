@@ -269,7 +269,7 @@ If you have the Cisco neta504 wifi card, it's a bit tricky to use the wpa encryp
 
 ```
 
-Next, [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the modules in `/etc/modprobe.d/`.
+Next, [blacklist](/index.php/Blacklist "Blacklist") the modules in `/etc/modprobe.d/`.
 
 then install [ndiswrapper](/index.php/Ndiswrapper "Ndiswrapper").
 

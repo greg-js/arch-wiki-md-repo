@@ -8,6 +8,7 @@
     *   [2.2 Making ipset persistent](#Making_ipset_persistent)
     *   [2.3 Blocking With PeerGuardian and Other Blocklists](#Blocking_With_PeerGuardian_and_Other_Blocklists)
 *   [3 Other Commands](#Other_Commands)
+*   [4 Optimization](#Optimization)
 
 ## Installation
 
@@ -81,3 +82,7 @@ To delete all sets:
 ```
 
 Please see the man page for ipset for further information.
+
+## Optimization
+
+The [iprange](https://aur.archlinux.org/packages/iprange/) tool can help to reduce entries in ipset.conf by merging adjacent ranges or eliminating overlapped ranges. This can improve the router/firewall performance if the table size is huge. This tool can also convert a list of hostnames to IPs.

@@ -300,7 +300,7 @@ own_window_transparent yes
 
 ### Display package update information
 
-*   [Pacman](/index.php/Pacman "Pacman") provides an own script called `checkupdates` which displays package updates from the official repos. Use `${execpi 3600 checkupdates | wc -l}` to display the total number of packages.
+*   [Pacman](/index.php/Pacman "Pacman") provides its own script called `checkupdates` which displays package updates from the official repos. Use `${execpi 3600 checkupdates | wc -l}` to display the total number of packages.
 *   [Paconky](https://bbs.archlinux.org/viewtopic.php?id=68104) - Displays package update information in a user-defined format. The output of this program can be included in Conky with the `${execpi}` command.
 *   [Scrolling Notifications](https://bbs.archlinux.org/viewtopic.php?id=53761) - Prints scrolling update notifications. From the author of Paconky.
 *   [Perl Script](https://bbs.archlinux.org/viewtopic.php?id=57291) - Simpler and earlier script from the author of Paconky. Prints only the number of packages needing an update.

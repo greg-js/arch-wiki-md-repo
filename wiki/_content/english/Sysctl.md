@@ -129,21 +129,19 @@ net.ipv6.conf.all.accept_redirects=0
 
 ## Virtual memory
 
-There are several key parameters to tune the operation of the virtual memory (VM) subsystem of the Linux kernel and the writeout of dirty data to disk. See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt) for more information.
+There are several key parameters to tune the operation of the virtual memory (VM) subsystem of the Linux kernel and the writeout of dirty data to disk. See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt) for more information. For example:
 
-```
-# Contains, as a percentage of total system memory, the number of pages at which
-# a process which is generating disk writes will start writing out dirty data.
-vm.dirty_ratio = 3
+*   `vm.dirty_ratio = 3`
 
-# Contains, as a percentage of total system memory, the number of pages at which
-# the background kernel flusher threads will start writing out dirty data.
-vm.dirty_background_ratio = 2
-```
+	Contains, as a percentage of total available memory that contains free pages and reclaimable pages, the number of pages at which a process which is generating disk writes will itself start writing out dirty data.
 
-As noted in the comments, one needs to consider the total amount of RAM when setting these values.
+*   `vm.dirty_background_ratio = 2`
 
-*   `vm.dirty_ratio` defaults to 10 (percent of RAM). Consensus is that 10% of RAM when RAM is say half a GB (so 10% is ~50 MB) is a sane value on spinning disks, but it can be MUCH worse when RAM is larger, say 16 GB (10% is ~1.6 GB), as that's several seconds of writeback on spinning disks. A more sane value in this case is 3 (16*0.03 ~ 491 MB).
+	Contains, as a percentage of total available memory that contains free pages and reclaimable pages, the number of pages at which the background kernel flusher threads will start writing out dirty data.
+
+As noted in the comments for the parameters, one needs to consider the total amount of RAM when setting these values:
+
+*   `vm.dirty_ratio` defaults to 10 (percent of RAM). Consensus is that 10% of RAM when RAM is say half a GB (so 10% is ~50 MB) is a sane value on spinning disks. But if the machine has much more RAM, say 16 GB (10% is ~1.6 GB), the percentage may be out of proportion as it becomes several seconds of writeback on spinning disks. A more sane value in this case is 3 (16*0.03 ~ 491 MB).
 
 *   `vm.dirty_background_ratio` similarly, 5 (% of RAM) by default may be just fine for small memory values, but again, consider and adjust accordingly for the amount of RAM on a particular system.
 

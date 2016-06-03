@@ -65,6 +65,8 @@ Where *user* is the username of the user who is running the X server.
 
 ##### GDM
 
+**Note:** Newer GDM packages ship with Xwayland as the default display server backend. The following instructions, however, only apply when using Xorg (else `.Xauthority` is not created, and *x11vnc* fails to start). You are therefore advised to uncomment `#WaylandEnable=false` setting in `/etc/gdm/custom.conf` in order to proceed.
+
 ```
 # x11vnc -display :0 -auth /var/lib/gdm/:0.Xauth
 

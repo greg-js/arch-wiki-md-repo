@@ -52,7 +52,8 @@ Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to inst
         *   [7.1.1 Mavericks upgrade breaks Arch boot option](#Mavericks_upgrade_breaks_Arch_boot_option)
 *   [8 Model-specific information](#Model-specific_information)
     *   [8.1 MacBook](#MacBook)
-        *   [8.1.1 Mid 2007 13" - Version 2,1](#Mid_2007_13.22_-_Version_2.2C1)
+        *   [8.1.1 April 2016 12" - Version 9,1](#April_2016_12.22_-_Version_9.2C1)
+        *   [8.1.2 Mid 2007 13" - Version 2,1](#Mid_2007_13.22_-_Version_2.2C1)
     *   [8.2 MacBook Pro with Retina display](#MacBook_Pro_with_Retina_display)
         *   [8.2.1 Early 2015 13"/15" - Version 12,x/11,4+](#Early_2015_13.22.2F15.22_-_Version_12.2Cx.2F11.2C4.2B)
             *   [8.2.1.1 Wireless](#Wireless)
@@ -412,7 +413,7 @@ Some models may need EFI_ARCH set to i386.
 *   Some MacBook users report strange keyboard output such as long delays and character doubling. To fix this problem, boot with the following options: arch noapic irqpoll acpi=force
 
 *   Proceed through the installation as described in the [Installation guide](/index.php/Installation_guide "Installation guide") **except** in the following areas:
-    *   In the [prepare hard drive](/index.php/Installation_guide#Prepare_Hard_Drive "Installation guide") stage, do only the [set filesystem mountpoints](/index.php/Installation_guide#Manually_configure_block_devices.2C_filesystems_and_mountpoints "Installation guide") step, taking care to assign the correct partitions. Partitions have already been created if you followed [#Partitions](#Partitions)
+    *   Skip the [partition the disks](/index.php/Installation_guide#Partition_the_disks "Installation guide") stage, do only the [partition formatting](/index.php/Installation_guide#Format_the_partitions "Installation guide") and [mounting](/index.php/Installation_guide#Mount_the_partitions "Installation guide") steps, taking care to assign the correct partitions. Partitions have already been created if you followed [#Partitions](#Partitions)
     *   **(for booting with EFI**) After the [install boot loader](/index.php/Installation_guide#Install_a_boot_loader "Installation guide") stage, exit the installer and install [GRUB](/index.php/GRUB "GRUB").
     *   **(for booting with BIOS-compatibility)** In the [install boot loader](/index.php/Installation_guide#Install_a_boot_loader "Installation guide") stage, edit the menu.lst file and add **reboot=pci** to the end of the **kernel** lines, for example: `kernel /vmlinuz26 root=/dev/sda5 ro reboot=pci` This will allow your MacBook to reboot correctly from Arch.
     *   **(for booting with BIOS-compatibility)** Also in the [install boot loader](/index.php/Installation_guide#Install_a_boot_loader "Installation guide") stage, install GRUB on whatever partition that `/boot` is on.
@@ -457,7 +458,7 @@ For MacBooks with NVIDIA graphics, for the backlight to work properly you may ne
 
 **Tip:**
 
-*   If backlight control does not work after installing nvidia-bl, you should [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") apple_bl kernel module.
+*   If backlight control does not work after installing nvidia-bl, you should [blacklist](/index.php/Blacklist "Blacklist") apple_bl kernel module.
 *   If backlight control does not work even this way, try setting module parameters, e.g. `options nvidiabl screen_type=3 min=0 max=44000` in `/etc/modprobe.conf` in case of MacBook Air 3.2
 *   Alternatively, you can choose to use the [pommed-light](https://aur.archlinux.org/packages/pommed-light/) package. If you do so, you may wish to change the step settings in `/etc/pommed.conf.mactel` to something around 5000-10000 depending on how many levels of brightness you desire. The max brightness is around 80000, so take that into account.
 
@@ -707,7 +708,14 @@ options snd_hda_intel model=intel-mac-auto
 
 ```
 
-This should automatically specify the codec in your MacBook. Alternatively, for MacBookPro5,X, you can use:
+This should automatically specify the codec in your MacBook. If you have a MacBookPro12,1, you might need
+
+```
+ options snd-hda-intel index=1,0
+
+```
+
+instead. Alternatively, for MacBookPro5,X, you can use:
 
 ```
 options snd_hda_intel model=mb5
@@ -1204,6 +1212,20 @@ Reboot. You should see a new entry for Arch Linux in rEFInd and it should boot t
 
 ### MacBook
 
+#### April 2016 12" - Version 9,1
+
+*   Booting from USB via EFI works fine, when giving the `noapic` kernel option. (On Ubuntu, also `noacpi nomodeset` seem to be necessary.) Remember to hold the Alt key on booting.
+
+*   The wireless card works out of the box with `brcmfmac`.
+
+*   Suspend-to-RAM works out of the box.
+
+*   The built-in flash drive does *not* work with kernel 4.5.4-1-ARCH, but it *does* work with kernel 4.6.0-mainline (install [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)). As long as a [rather trivial patch](http://lists.infradead.org/pipermail/linux-nvme/2016-May/004618.html) is not merged into the kernel, either this patch must be applied locally or one puts `modprobe nvme; echo 106b 2003 > /sys/bus/pci/devices/nvme/new_id` into a mkinitcpio hook (to be started after the udev hook). The reason is that the NVMe controller of the flash drive doesn't advertise itself with the correct PCI device class. Note that with the patch, a short sleep still seems to be necessary.
+
+*   Audio recording works out of the box. Audio playback doesn't work (still looking for a solution).
+
+*   The keyboard and the touchpad do *not* work (still looking for a solution).
+
 #### Mid 2007 13" - Version 2,1
 
 **Note:** I used the 201212 ISO image.
@@ -1225,13 +1247,14 @@ The mount points are:
 
 ```
 /dev/sda2 -> /
-/dev/sda1 -> /boot/EFI
+/dev/sda1 -> /boot
 
 ```
 
 The bootloader in use was [rEFInd](http://www.rodsbooks.com/refind/index.html) instead of rEFIt. To install it, the rEFInd homepage provides a good guide. Usually it is simply done by copying rEFInd:
 
 ```
+mkdir /boot/EFI
 cp -vr /usr/share/refind/drivers_ia32 /boot/EFI/refind/
 cp -vr /usr/share/refind/tools_ia32 /boot/EFI/refind/
 cp -vr /usr/share/refind/fonts /boot/EFI/refind/

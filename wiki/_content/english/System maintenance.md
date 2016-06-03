@@ -73,7 +73,7 @@ Before editing any configuration files, create a backup. This way, you can rever
 
 Maintain a list of all installed packages, so that if a complete re-installation is inevitable, it is easier to re-create the original environment.
 
-See [Pacman tips#Backing up and retrieving a list of installed packages](/index.php/Pacman_tips#Backing_up_and_retrieving_a_list_of_installed_packages "Pacman tips") for details.
+See [Pacman tips#List of installed packages](/index.php/Pacman_tips#List_of_installed_packages "Pacman tips") for details.
 
 ### Pacman database
 

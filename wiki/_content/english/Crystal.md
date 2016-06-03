@@ -39,6 +39,6 @@ For more options see:
 *   [The official website](http://crystal-lang.org)
 *   [The official documentation](http://crystal-lang.org/docs/)
 *   [The standard library reference](http://crystal-lang.org/api/)
-*   [The official Github repository](https://github.com/manastech/crystal)
-*   [Online code evaluation](http://play.crystal-lang.org/#/cr)
+*   [The official Github repository](https://github.com/crystal-lang/crystal)
+*   [Online code evaluation](https://play.crystal-lang.org/#/cr)
 *   [#crystal-lang IRC channel](http://webchat.freenode.net/?channels=#crystal-lang)

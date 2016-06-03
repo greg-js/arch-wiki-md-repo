@@ -7,12 +7,11 @@ From [Wikipedia:TeamSpeak](https://en.wikipedia.org/wiki/TeamSpeak "wikipedia:Te
 *   [1 Installation](#Installation)
     *   [1.1 Client](#Client)
     *   [1.2 Server](#Server)
-*   [2 Configuration and startup](#Configuration_and_startup)
-    *   [2.1 Server](#Server_2)
-        *   [2.1.1 Configuration](#Configuration)
-        *   [2.1.2 First startup](#First_startup)
-        *   [2.1.3 Regular startup](#Regular_startup)
-    *   [2.2 Re-Initialising Teamspeak](#Re-Initialising_Teamspeak)
+*   [2 Server configuration and startup](#Server_configuration_and_startup)
+    *   [2.1 Configuration](#Configuration)
+    *   [2.2 First startup](#First_startup)
+    *   [2.3 Regular startup](#Regular_startup)
+    *   [2.4 Re-Initialising Teamspeak](#Re-Initialising_Teamspeak)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -25,17 +24,15 @@ From [Wikipedia:TeamSpeak](https://en.wikipedia.org/wiki/TeamSpeak "wikipedia:Te
 
 Install the [teamspeak3-server](https://aur.archlinux.org/packages/teamspeak3-server/) package.
 
-## Configuration and startup
+## Server configuration and startup
 
-### Server
-
-#### Configuration
+### Configuration
 
 *   You can configure the TeamSpeak server. If you are using [systemd](/index.php/Systemd "Systemd") please check `/usr/share/doc/teamspeak3-server/server_quickstart.txt` for all available command line parameters.
 
 *   If you possess a license file please copy it to `/var/lib/teamspeak3-server/licensekey.dat`.
 
-#### First startup
+### First startup
 
 With the first startup TeamSpeak creates the SQLite database at `/var/lib/teamspeak3-server/ts3server.sqlitedb` and starts logging its standard output in files in: `/var/log/teamspeak3-server/`. Teamspeak also creates the first ServerQuery administration account (the superuser) and the first virtual server including a privilege key for the server administrator of this virtual server. The privilege key is only displayed once on standard output.
 
@@ -83,7 +80,7 @@ $ cat ts3server_*.log
 
 Open up a Teamspeak 3 client, connect to the server and copy and paste the privilege key into the client popup.
 
-#### Regular startup
+### Regular startup
 
 Simply [enable](/index.php/Enable "Enable") the `teamspeak3-server` service.
 

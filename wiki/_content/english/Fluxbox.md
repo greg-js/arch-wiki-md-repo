@@ -1,4 +1,4 @@
-Fluxbox is yet another window manager for X11\. It is based on the (now abandoned) Blackbox 0.61.1 code, but with significant enhancements and continued development. Fluxbox is very light on resources and fast, yet provides interesting window management tools such as tabbing and grouping. Its configuration files are easy to understand and edit and there are hundreds of Fluxbox "styles" to make your desktop look great. Arch Linux with Fluxbox can turn an old Pentium 800 box with just 256MB of RAM into a very usable computer.
+Fluxbox is a window manager for X11\. It is based on the (now abandoned) Blackbox 0.61.1 code, but with significant enhancements and continued development. Fluxbox is very light on resources and fast, yet provides interesting window management tools such as tabbing and grouping. Its configuration files are easy to understand and edit with hundreds of Fluxbox "styles" to make your desktop look great. Arch Linux with Fluxbox can turn an old Pentium 800 box with just 256MB of RAM into a very usable computer.
 
 ## Contents
 
@@ -30,7 +30,7 @@ Fluxbox is yet another window manager for X11\. It is based on the (now abandone
 
 ## Installation
 
-[Install](/index.php/Install "Install") [fluxbox](https://www.archlinux.org/packages/?name=fluxbox). [Xorg](/index.php/Xorg "Xorg") must be installed as well.
+[Install](/index.php/Install "Install") the [fluxbox](https://www.archlinux.org/packages/?name=fluxbox) package.
 
 ## Starting Fluxbox
 
@@ -163,7 +163,7 @@ With at least two windows visible on your desktop use ctrl +left click on the up
 
 Setting the background in Fluxbox has historically been convoluted, especially where transparency was required. The Fluxbox wiki now has an entry for [background setting](http://fluxbox-wiki.org/category/howtos/en/Howto_set_the_background.html), so please refer to that.
 
-The easiest way to do it with ArchLinux is to first of all check that you have a background setting application available:
+Check that you have a background setting application available:
 
 ```
 $ fbsetbg -i
@@ -352,7 +352,7 @@ To make a help function in your menu, just add in `~/.fluxbox/menu`:
 *   [Fluxbox Homepage](http://fluxbox.org/)
 *   [Fluxbox wiki](http://fluxbox-wiki.org/)
 *   [Gentoo Wiki about Fluxbox](http://wiki.gentoo.org/wiki/Fluxbox)
-*   [Themes for Fluxbox](http://box-look.org/index.php?xcontentmode=7400)
+*   [Themes for Fluxbox](https://www.box-look.org/browse/cat/139/ord/latest/)
 *   [Narada's Fluxbox Guide](https://bbs.archlinux.org/viewtopic.php?id=77729)
 *   The Fluxbox man pages: fluxbox, fluxbox-menu, fluxbox-style, fluxbox-keys, fluxbox-apps, fluxbox-remote, fbsetroot, fbsetbg, fbrun, startfluxbox.
 *   [Arch Linux Fluxbox screenshots](https://bbs.archlinux.org/viewtopic.php?id=90260)

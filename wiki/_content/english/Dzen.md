@@ -68,7 +68,7 @@ Simply execute `dzconky` in your startup scripts.
 
 ### Clickable areas and popups
 
-dzen2 allows you to define clickable areas using `^ca(*button*, *command*)Text^ca()`. You can use this property to create popups giving arbitrary information, as seen in various screenshot gifs like [this](http://i.minus.com/ibzmjKMXKk7IbH.gif).
+dzen2 allows you to define clickable areas using `^ca(*button*, *command*)Text^ca()`. You can use this property to create popups giving arbitrary information, as seen in various screenshot gifs like [this](http://i.imgur.com/bZegioR.gif).
 
 A simple example can be:
 

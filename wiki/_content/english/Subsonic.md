@@ -1,4 +1,4 @@
-**Subsonic** is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications. It can be installed using the [subsonic](https://aur.archlinux.org/packages/subsonic/) package on [AUR](/index.php/AUR "AUR").
+**Subsonic** is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications. It can be installed using the [subsonic](https://aur.archlinux.org/packages/subsonic/) package on [AUR](/index.php/AUR "AUR"). As of version 6, the software is not open source anymore.
 
 ## Contents
 
@@ -125,7 +125,7 @@ Wrote 3252295 characters to file 'MEDIA_FILE.csv'.
 
 ## Madsonic
 
-Madsonic is a fork of Subsonic with extra features, does not require a registration fee (read completely free) and is available in AUR.
+Madsonic is a (non-free) fork of Subsonic with extra features and is available in AUR.
 
 Once you start the server, pay close attention to the Transcoding options, as you will probably have to change the command from "Audioffmpeg" to "ffmpeg".
 

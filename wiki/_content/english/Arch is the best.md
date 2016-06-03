@@ -1520,7 +1520,7 @@ Arch é o melhor!
 	Québécois
 
 ```
-Arch est le plus meilleure du monde!
+Arch c'est le plus meilleure du monde!
 
 ```
 
