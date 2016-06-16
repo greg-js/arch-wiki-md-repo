@@ -49,7 +49,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **Clipster** — A lightweight, command-line-driven clipboard manager, written in Python.
 
-	[https://github.com/mrichar1/clipster](https://github.com/mrichar1/clipster) ||
+	[https://github.com/mrichar1/clipster](https://github.com/mrichar1/clipster) || [clipster-git](https://aur.archlinux.org/packages/clipster-git/)
 
 *   **CopyQ** — Clever clipboard manager with searchable and editable history, custom actions on items and command line support.
 

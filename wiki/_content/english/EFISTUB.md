@@ -287,7 +287,7 @@ Shell> ls fs0:
 To add the bare minimum necessary kernel options, use:
 
 ```
-Shell> bcfg boot -opt **N** "root=**/dev/sdX#** initrd=\initramfs-linux.img"
+Shell> bcfg boot -opt **N** "root=**/dev/sdX#** rw initrd=\initramfs-linux.img"
 
 ```
 

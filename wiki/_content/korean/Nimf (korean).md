@@ -6,7 +6,7 @@
     *   [1.1 입력기 엔진](#.EC.9E.85.EB.A0.A5.EA.B8.B0_.EC.97.94.EC.A7.84)
     *   [1.2 초기 설정](#.EC.B4.88.EA.B8.B0_.EC.84.A4.EC.A0.95)
 *   [2 설정 변경](#.EC.84.A4.EC.A0.95_.EB.B3.80.EA.B2.BD)
-*   [3 See also](#See_also)
+*   [3 더 보기](#.EB.8D.94_.EB.B3.B4.EA.B8.B0)
 
 ## 설치
 
@@ -47,6 +47,6 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMM
 
 님프 설정을 변경하려면, `nimf-settings` 를 사용하세요. 터미널에서 `nimf-settings` 를 실행 하거나, 시스템 트레이에 표시되는 님프 표시기를 클릭하면 나타나는 표시기 메뉴에서 `Settings` 를 선택하여 실행하실 수 있습니다.
 
-## See also
+## 더 보기
 
 *   [님프 깃허브](https://github.com/cogniti/nimf)

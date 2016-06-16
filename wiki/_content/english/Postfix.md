@@ -26,9 +26,11 @@ The goal of this article is to setup Postfix and explain what the basic configur
         *   [5.2.1 STARTTLS over SMTP (port 587)](#STARTTLS_over_SMTP_.28port_587.29)
         *   [5.2.2 SMTPS (port 465)](#SMTPS_.28port_465.29)
     *   [5.3 SpamAssassin](#SpamAssassin)
-        *   [5.3.1 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
-        *   [5.3.2 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
-        *   [5.3.3 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
+        *   [5.3.1 Spam Assassin rule update](#Spam_Assassin_rule_update)
+        *   [5.3.2 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
+        *   [5.3.3 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
+        *   [5.3.4 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
+        *   [5.3.5 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
     *   [5.4 Using Razor](#Using_Razor)
     *   [5.5 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
     *   [5.6 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
@@ -377,12 +379,70 @@ Install the [spamassassin](https://www.archlinux.org/packages/?name=spamassassin
 
 Go over `/etc/mail/spamassassin/local.cf` and configure it to your needs.
 
-Update the SpamAssassin matching patterns:
+#### Spam Assassin rule update
+
+Update the SpamAssassin matching patterns and compile them:
 
 ```
 # sa-update
+# sa-compile
 
 ```
+
+You will want to run this periodically, the best way to do so is by setting up a [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
+
+Add and edit `/etc/systemd/system/sa.service` as such:
+
+```
+[Unit]
+Description=spamassassin housekeeping stuff
+
+[Service]
+User=spamd
+Group=spamd
+Type=oneshot
+ExecStart=-/usr/bin/vendor_perl/sa-update --allowplugins #You can remove the allowplugins options if you do not want direct plugin updates from SA.
+#Alternatively, you may want to use yerp's channel in addition to the official SA channel. He's a SA developer with well-known good quality rules.
+#If enabled, ensure you have imported his key via (you can also verify the key signatures via GnuPG since this is an insecure link, or bug the author to fix it):
+# curl -O [http://yerp.org/rules/GPG.KEY](http://yerp.org/rules/GPG.KEY)
+# sa-update --import GPG.key
+# rm GPG.key
+#ExecStart=-/usr/bin/vendor_perl/sa-update --gpgkey 0xDC85341F6C6191E3 --channel sought.rules.yerp.org  --channel updates.spamassassin.org
+ExecStart=-/usr/bin/vendor_perl/sa-compile
+# You can automatically train SA's bayes filter by uncommenting this line and specifying the path to a mailbox where you store email that is spam (for ex this could be yours or your users manually reported spam)
+#ExecStart=-/usr/bin/vendor_perl/sa-learn --spam <path to your spam>
+```
+
+Also add and edit `/etc/systemd/system/sa.timer` as such for daily updates:
+
+```
+[Unit]
+Description=spamassassin house keeping
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+Finally, you'll need to modify your Spamassassin systemd service file so that it knows to restart itself to read the new rules. Copy the bundled service file to a custom service file:
+
+ `# cp /usr/lib/systemd/system/spamassassin.service /etc/systemd/system` 
+
+And edit the newly created `/etc/systemd/system/spamassassin.service` to include:
+
+```
+[Unit]
+PartOf=sa.service
+```
+
+This will ensure that Spamassassin's spamd is restarted just before the timer runs. This means the rules will be available the next day if your timer runs daily. This is so that there is no long service interruption while `sa.service` runs as it takes a while to compile rules.
+
+Now you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `sa.service`.
+
+#### SpamAssassin stand-alone generic setup
 
 **Note:** If you want to combine SpamAssassin and Dovecot Mail Filtering, ignore the next two lines and continue further down instead.
 
@@ -431,6 +491,8 @@ Edit `/etc/dovecot/conf.d/90-sieve.conf` and add:
  sieve_before = /etc/dovecot/sieve.before.d/
  sieve_extensions = +vnd.dovecot.filter
  sieve_plugins = sieve_extprograms
+ sieve_filter_bin_dir = /etc/dovecot/sieve-filter
+ sieve_filter_exec_timeout = 120s #this is often needed for the long running spamassassin scans, default is otherwise 10s
 
 ```
 
@@ -627,7 +689,7 @@ smtpd_recipient_restrictions =
 
 ```
 
-Placing policy services at the end of the queue reduces load, as only legitimate mails are processed.
+Placing policy services at the end of the queue reduces load, as only legitimate mails are processed. Be sure to place it before the first permit statement to catch all incoming messages.
 
 ### Dane
 

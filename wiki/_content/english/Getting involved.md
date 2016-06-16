@@ -27,11 +27,11 @@ This article describes how both new and experienced Arch users can contribute to
 
 ## Official Arch Linux projects
 
+Please get accustomed with the [Code of conduct](/index.php/Code_of_conduct "Code of conduct").
+
 ### Post on the forums
 
 One of the easiest ways to get involved is participating in the [Arch Linux Forums](https://bbs.archlinux.org/), which allow getting to know the community and help new users.
-
-Please get accustomed with [Forum etiquette](/index.php/Forum_etiquette "Forum etiquette"). Forum staff can be contacted via [forum@archlinux.org](mailto:forum@archlinux.org).
 
 ### Improve this wiki
 

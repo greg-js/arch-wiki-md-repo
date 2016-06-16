@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [PAM](/index.php/PAM "PAM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-14，点击[这里](https://wiki.archlinux.org/index.php?title=PAM&diff=0&oldid=436909)可以查看翻译后英文页面的改动。
+
 Linux PAM( Pluggable Authentication Modules ) 提供了一个框架，用于进行系统级的用户认证。如下描述引用自 [[1]](http://www.linux-pam.org/whatispam.html):
 
 	PAM provides a way to develop programs that are independent of authentication scheme. These programs need "authentication modules" to be attached to them at run-time in order to work. Which authentication module is to be attached is dependent upon the local system setup and is at the discretion of the local system administrator. （ PAM 可以使程序开发与认证方式细节分离，而是在程序运行时调用“认证”模型完成工作。认证模型可以由本地系统管理员通过配置进行选择）
@@ -19,7 +21,7 @@ Linux PAM( Pluggable Authentication Modules ) 提供了一个框架，用于进�
 
 ## 安装
 
-[pam](https://www.archlinux.org/packages/?name=pam) 包是基础安装包，默认已经安装在系统。PAM 模块被放置于 [Template:In/usr/lib/security](/index.php?title=Template:In/usr/lib/security&action=edit&redlink=1 "Template:In/usr/lib/security (page does not exist)") 目录
+[pam](https://www.archlinux.org/packages/?name=pam) 包是基础安装包，默认已经安装在系统。PAM 模块被放置于 `/usr/lib/security` 目录
 
 软件源中另外还包括其它一些可选的 PAM 包，详见 [#配置方法](#.E9.85.8D.E7.BD.AE.E6.96.B9.E6.B3.95)
 

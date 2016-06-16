@@ -38,6 +38,10 @@ Visit the [Table of contents](/index.php/Table_of_contents "Table of contents") 
 
 ## Our community
 
+	[Code of conduct](/index.php/Code_of_conduct "Code of conduct")
+
+	Guidelines for the Arch community.
+
 	[Getting involved](/index.php/Getting_involved "Getting involved")
 
 	Describes various ways Archers can contribute to the Arch community.
@@ -53,10 +57,6 @@ Visit the [Table of contents](/index.php/Table_of_contents "Table of contents") 
 	[International communities](/index.php/International_communities "International communities")
 
 	Collection of links to the Arch Linux communities around the world.
-
-	[Forum etiquette](/index.php/Forum_etiquette "Forum etiquette")
-
-	Guidelines for Arch forum members.
 
 	[IRC channels](/index.php/IRC_channels "IRC channels")
 

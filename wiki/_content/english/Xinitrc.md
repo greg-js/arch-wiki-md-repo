@@ -8,6 +8,8 @@ Most DMs also source the similar [xprofile](/index.php/Xprofile "Xprofile") befo
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
+    *   [2.1 xserverrc](#xserverrc)
+    *   [2.2 xinitrc](#xinitrc)
 *   [3 Running](#Running)
 *   [4 Autostart X at login](#Autostart_X_at_login)
     *   [4.1 Automatic login to the virtual console](#Automatic_login_to_the_virtual_console)
@@ -18,9 +20,27 @@ Most DMs also source the similar [xprofile](/index.php/Xprofile "Xprofile") befo
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit) package, which provides both *xinit*，*startx*, and a default xinitrc configuration file.
+[Install](/index.php/Install "Install") the [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit) package, which provides both *xinit*, *startx*, and a default xinitrc configuration file.
 
 ## Configuration
+
+### xserverrc
+
+The `xserverrc` file is a shell script responsible for starting up the X server. Both *startx* and *xinit* execute `~/.xserverrc` if it exists, *startx* will use `/etc/X11/xinit/xserverrc` otherwise.
+
+In order to maintain an [authenticated session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") with `logind` and to prevent bypassing the screen locker by switching terminals, [Xorg](/index.php/Xorg "Xorg") has to be started on the same virtual terminal where the login occurred.[[1]](http://blog.falconindy.com/articles/back-to-basics-with-x-and-systemd.html) Therefore it is recommended to specify `vt$XDG_VTNR` in the `~/.xserverrc` file:
+
+ `~/.xserverrc` 
+```
+#!/bin/sh
+
+exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR
+
+```
+
+Alternatively, if you wish to have the X display on a separate console from the one where the server is invoked, you can do so by using the X server wrapper provided by `/usr/lib/systemd/systemd-multi-seat-x`. For convenience, *xinit* and *startx* can be set up to use this wrapper by modifying your `~/.xserverrc`.
+
+### xinitrc
 
 If `.xinitrc` is present in a user's home directory, *startx* and *xinit* execute it. Otherwise *startx* will run the default `/etc/X11/xinit/xinitrc`.
 
@@ -78,9 +98,11 @@ $ startx
 or
 
 ```
-$ xinit -- :1 -nolisten tcp vt$XDG_VTNR
+$ xinit -- :1
 
 ```
+
+**Note:** *xinit* does not handle multiple displays when another X server is already started. For that you must specify the display by appending `-- :*display_number*`, where `*display_number*` is 1 or more.
 
 Your window manager (or desktop environment) of choice should now start correctly.
 
@@ -91,7 +113,7 @@ $ pkill -15 Xorg
 
 ```
 
-**Note:** *pkill* will kill all running X instances. To specifically kill the window manager on the current VT, use:
+**Note:** *pkill* will kill all running X instances. To specifically kill the window manager on the current virtual terminal, use:
 ```
 WM_PID=$(xprop -id $(xprop -root _NET_SUPPORTING_WM_CHECK \
 | awk -F'#' '{ print $2 }') _NET_WM_PID \
@@ -102,23 +124,11 @@ kill -15 $WM_PID
 
 The program `xprop` is provided by the package [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-**Note:**
-
-*   The above commands run [Xorg](/index.php/Xorg "Xorg") on the same virtual terminal the user is logged in to. [[1]](http://blog.falconindy.com/articles/back-to-basics-with-x-and-systemd.html) This maintains an authenticated session with `logind`, and prevents bypassing the screen locker by switching terminals.
-*   You have to specify `vt$XDG_VTNR` as command line option for *xinit* in order to [preserve session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
-*   *xinit* does not handle multiple sessions when already logged-in into a different virtual terminal. For that you must specify the session by appending `-- :*session_no*`. If X is already running, then you should start with :1 or more.
-*   By default, due to permissions on console devices, the X display needs to be on the same tty where the login occurred. This is handled by the default `/etc/X11/xinit/xserverrc`. See [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") for details.
-*   If you wish to have the X display on a separate console from the one where the server is invoked, you can do so by using the X server wrapper provided by `/usr/lib/systemd/systemd-multi-seat-x`. For convenience, *startx* can be set up to use this wrapper by modifying your `~/.xserverrc`.
-*   If you choose to use *xinit* instead of *startx*, you are responsible for passing `-nolisten tcp` and ensuring the session does not break by starting X on a different tty.
-*   If X terminates with error message "SocketCreateListener() failed", you may need to delete socket files in `/tmp/.X11-unix`. This may happen if you have previously run Xorg as root (e.g. to generate an `xorg.conf`, as below).
-
 ## Autostart X at login
 
-**Note:** These solutions run X on the same tty used to login, which is required in order to maintain the login session.
+Make sure that *startx* is properly [configured](#Configuration).
 
-For [Bash](/index.php/Bash "Bash"), add the following to the bottom of `~/.bash_profile`. If the file does not exist, copy a skeleton version from `/etc/skel/.bash_profile`.
-
-For [Zsh](/index.php/Zsh "Zsh"), add it to `~/.zprofile`.
+For [Bash](/index.php/Bash "Bash"), add the following to the bottom of `~/.bash_profile`. If the file does not exist, copy a skeleton version from `/etc/skel/.bash_profile`. For [Zsh](/index.php/Zsh "Zsh"), add it to `~/.zprofile`.
 
 ```
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
@@ -127,9 +137,7 @@ For [Zsh](/index.php/Zsh "Zsh"), add it to `~/.zprofile`.
 
 **Note:**
 
-*   You can replace the `-eq 1` comparison with one like `-le 3` (for vt1 to vt3) if you want to use graphical logins on more than one VT.
-*   X must always be run on the same tty where the login occurred, to preserve the logind session. This is handled by the default `/etc/X11/xinit/xserverrc`.
-*   `xinit` may be faster than `startx`, but needs additional parameter such as `-nolisten tcp`.
+*   You can replace the `-eq 1` comparison with one like `-le 3` (for vt1 to vt3) if you want to use graphical logins on more than one virtual terminal.
 *   If you would like to remain logged in when the X session ends, remove `exec`.
 
 See also [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") and [Systemd/User#Automatic login into Xorg without display manager](/index.php/Systemd/User#Automatic_login_into_Xorg_without_display_manager "Systemd/User").
@@ -156,17 +164,10 @@ $ startx "/full/path/to/window-manager --key value"
 
 ```
 
-Note that the full path is **required**. Optionally, you can also override `/etc/X11/xinit/xserverrc` file (which stores the default X server options) with custom options by appending them after `--`, e.g.:
+Note that the full path is **required**. Optionally, you can also specify custom options for [#xserverrc](#xserverrc) script by appending them after `--`, e.g.:
 
 ```
-$ startx /usr/bin/enlightenment -- -nolisten tcp -br +bs -dpi 96 vt$XDG_VTNR
-
-```
-
-or
-
-```
-$ xinit /usr/bin/enlightenment -- -nolisten tcp -br +bs -dpi 96 vt$XDG_VTNR
+$ startx /usr/bin/enlightenment -- -br +bs -dpi 96
 
 ```
 
@@ -212,13 +213,6 @@ case $session in
     # No known session, try to run it as command
     *) exec $1;;
 esac
-
-```
-
-Then copy the `/etc/X11/xinit/xserverrc` file to your home directory:
-
-```
-$ cp /etc/X11/xinit/xserverrc ~/.xserverrc
 
 ```
 

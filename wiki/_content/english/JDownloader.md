@@ -15,7 +15,7 @@ JDownloader is a Download Manager written in Java. JDownloader can download norm
 
 Install [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/) from the [AUR](/index.php/AUR "AUR").
 
-For running JDownloader you need Java installed. OpenJDK is recommended, it works flawlessly with jDownloader.
+For running JDownloader you need [Java](/index.php/Java "Java") installed. OpenJDK is recommended, it works flawlessly with jDownloader.
 
 ### Running
 

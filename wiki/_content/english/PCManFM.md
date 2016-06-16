@@ -29,7 +29,7 @@ From the project [home page](http://wiki.lxde.org/en/PCManFM):
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) package, or [pcmanfm-git](https://aur.archlinux.org/packages/pcmanfm-git/) for the development version. [gvfs](https://www.archlinux.org/packages/?name=gvfs) is recommended for trash support, mounting with [udisks](/index.php/Udisks "Udisks") and remote filesystems.
+[Install](/index.php/Install "Install") the [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) package, or [pcmanfm-gtk3](https://www.archlinux.org/packages/?name=pcmanfm-gtk3) for the GTK3 version, or [pcmanfm-git](https://aur.archlinux.org/packages/pcmanfm-git/) for the development version. [gvfs](https://www.archlinux.org/packages/?name=gvfs) is recommended for trash support, mounting with [udisks](/index.php/Udisks "Udisks") and remote filesystems.
 
 [Qt](/index.php/Qt "Qt") variants are available through [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) and [pcmanfm-qt-git](https://aur.archlinux.org/packages/pcmanfm-qt-git/).
 
@@ -194,7 +194,7 @@ $ pacman -Ss icon-theme
 
 A method to fix this is with [Xbindkeys](/index.php/Xbindkeys "Xbindkeys").
 
-Install [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) and edit `~/.xbindkeysrc` to contain the following:
+Install [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys), [xvkbd](https://www.archlinux.org/packages/?name=xvkbd) and edit `~/.xbindkeysrc` to contain the following:
 
 ```
 # Sample .xbindkeysrc for a G9x mouse.

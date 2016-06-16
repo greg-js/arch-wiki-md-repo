@@ -4,8 +4,9 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
 
 *   [1 BenQ/Acer](#BenQ.2FAcer)
 *   [2 Brother](#Brother)
-    *   [2.1 Scan-key-tool](#Scan-key-tool)
-    *   [2.2 xsane crashes](#xsane_crashes)
+    *   [2.1 Invalid argument](#Invalid_argument)
+    *   [2.2 Scan-key-tool](#Scan-key-tool)
+    *   [2.3 xsane crashes](#xsane_crashes)
 *   [3 Canon](#Canon)
     *   [3.1 Scanning over the network with Canon Pixma all-in-one printer/scanners](#Scanning_over_the_network_with_Canon_Pixma_all-in-one_printer.2Fscanners)
     *   [3.2 Cannot read scanner make and model](#Cannot_read_scanner_make_and_model)
@@ -62,6 +63,17 @@ Example:
 # brsaneconfig2 -a name=SCANNER_DCP770CW model=DCP-770CW ip=192.168.0.110
 
 ```
+
+### Invalid argument
+
+If all the necessary packages are installed but you still get the "invalid argument" error this could mean that the configuration file has been corrupted. Run the following command (in case of brscan4):
+
+```
+ # brsaneconfig4 -d 
+
+```
+
+The output should narrow down the problem. Most likely the connection isn't setup correctly. In case of a network scanner check if the IP address is right by opening the `/etc/opt/brother/scanner/brscan4//brsanenetdevice4.cfg` with an editor. In case of a USB connection check if the path to the scanner in the configuration file is setup correctly. For that compare the values of the `lsusb` command with your configuration file and change them if necessary.
 
 ### Scan-key-tool
 

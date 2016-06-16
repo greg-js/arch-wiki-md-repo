@@ -19,23 +19,24 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 
 *   [1 Content adaptive brightness control](#Content_adaptive_brightness_control)
 *   [2 BIOS updates](#BIOS_updates)
-*   [3 SATA controller](#SATA_controller)
-*   [4 NVM Express SSD](#NVM_Express_SSD)
-    *   [4.1 Cannot find root device](#Cannot_find_root_device)
-    *   [4.2 Note on Mount Options](#Note_on_Mount_Options)
-*   [5 Wireless](#Wireless)
-*   [6 Bluetooth](#Bluetooth)
-*   [7 Video](#Video)
-*   [8 Touchpad](#Touchpad)
-*   [9 Sound](#Sound)
-    *   [9.1 PulseAudio Workaround](#PulseAudio_Workaround)
-*   [10 Microphone](#Microphone)
-*   [11 Diverting models](#Diverting_models)
-    *   [11.1 XPS 12](#XPS_12)
-*   [12 lspci and lsusb](#lspci_and_lsusb)
-    *   [12.1 lspci](#lspci)
-    *   [12.2 lsusb](#lsusb)
-*   [13 See also](#See_also)
+*   [3 Thunderbolt Firmware Updates](#Thunderbolt_Firmware_Updates)
+*   [4 SATA controller](#SATA_controller)
+*   [5 NVM Express SSD](#NVM_Express_SSD)
+    *   [5.1 Cannot find root device](#Cannot_find_root_device)
+    *   [5.2 Note on Mount Options](#Note_on_Mount_Options)
+*   [6 Wireless](#Wireless)
+*   [7 Bluetooth](#Bluetooth)
+*   [8 Video](#Video)
+*   [9 Touchpad](#Touchpad)
+*   [10 Sound](#Sound)
+    *   [10.1 PulseAudio Workaround](#PulseAudio_Workaround)
+*   [11 Microphone](#Microphone)
+*   [12 Diverting models](#Diverting_models)
+    *   [12.1 XPS 12](#XPS_12)
+*   [13 lspci and lsusb](#lspci_and_lsusb)
+    *   [13.1 lspci](#lspci)
+    *   [13.2 lsusb](#lsusb)
+*   [14 See also](#See_also)
 
 ## Content adaptive brightness control
 
@@ -44,6 +45,10 @@ In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightne
 ## BIOS updates
 
 [BIOS update 1.3.3](http://downloads.dell.com/FOLDER03596893M/1/XPS_9350_1.3.3.exe) was released on 2016-03-30\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
+
+## Thunderbolt Firmware Updates
+
+[Thunderbolt 3 Firmware Update 2.12.07 ,A03](http://downloads.dell.com/FOLDER03585171M/1/Intel_TBT3_FW_UPDATE_NVM16_A03_02.12.07.exe) was released on 2016-03-18\. Unlike the BIOS update, this is a graphical application which must be run in a modern Windows environment (MS-DOS will not suffice).
 
 ## SATA controller
 
@@ -117,7 +122,15 @@ If you are using an older kernel 4.3 or earlier, you also require the kernel par
 
 If you have the newer i7-6560 CPU with Iris 540 graphics, the GPU hangs every few minutes with the current kernel (4.4.1) and up. This is probably due to this bug [https://bugs.freedesktop.org/show_bug.cgi?id=94161](https://bugs.freedesktop.org/show_bug.cgi?id=94161) and can be countered by either disabling DRI in your Xorg configuration:
 
- `/etc/X11/xorg.conf.d/20-intel.conf`  `Option "DRI" "False"` 
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+	Identifier  "Intel Graphics"
+	Driver      "intel"
+	Option	    "DRI"	"false"
+EndSection
+
+```
 
 or by adding `i915.enable_rc6=0` to the kernel boot parameters.
 

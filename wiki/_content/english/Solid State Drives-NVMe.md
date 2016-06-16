@@ -4,7 +4,7 @@ NVM Express (NVMe) is a specification for accessing SSDs attached through the PC
 
 *   [1 Installation](#Installation)
 *   [2 Performance](#Performance)
-    *   [2.1 Alignment](#Alignment)
+    *   [2.1 Sector size](#Sector_size)
     *   [2.2 Discards](#Discards)
     *   [2.3 Airflow](#Airflow)
     *   [2.4 Testing](#Testing)
@@ -22,9 +22,9 @@ See [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") for
 
 ## Performance
 
-### Alignment
+### Sector size
 
-Partitions should be [aligned](/index.php/Partitioning#Partition_alignment "Partitioning") to 4096 bytes.
+See [Advanced Format#How to determine if HDD employ a 4k sector](/index.php/Advanced_Format#How_to_determine_if_HDD_employ_a_4k_sector "Advanced Format").
 
 ### Discards
 

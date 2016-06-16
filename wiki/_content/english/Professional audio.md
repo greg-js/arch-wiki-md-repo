@@ -49,6 +49,7 @@ The following packages are a good start to build a full-featured pro audio syste
 *   [lmms](https://www.archlinux.org/packages/?name=lmms)
 *   [calf](https://www.archlinux.org/packages/?name=calf)
 *   [dssi](https://www.archlinux.org/packages/?name=dssi)
+*   [guitarix2](https://www.archlinux.org/packages/?name=guitarix2)
 
 Other packages you may need that are available from the [AUR](/index.php/AUR "AUR"):
 
@@ -56,7 +57,6 @@ Other packages you may need that are available from the [AUR](/index.php/AUR "AU
 *   [tal-plugins-vst-bin](https://aur.archlinux.org/packages/tal-plugins-vst-bin/)
 *   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)
 *   [carla](https://aur.archlinux.org/packages/carla/)
-*   [guitarix-git](https://aur.archlinux.org/packages/guitarix-git/)
 *   [fluidsynth-dssi](https://aur.archlinux.org/packages/fluidsynth-dssi/)
 *   [rakarrack-git](https://aur.archlinux.org/packages/rakarrack-git/)
 *   [XCFA](https://aur.archlinux.org/packages/XCFA/)

@@ -11,7 +11,6 @@
 *   [4 Connecting to a server](#Connecting_to_a_server)
 *   [5 Creating a Server profile](#Creating_a_Server_profile)
 *   [6 Configuring SSL](#Configuring_SSL)
-    *   [6.1 OFTC](#OFTC)
 *   [7 Tips and Tricks](#Tips_and_Tricks)
     *   [7.1 Upgrading](#Upgrading)
     *   [7.2 Aliases](#Aliases)
@@ -86,7 +85,7 @@ to get a buffer with all configuration options.
 
 The .conf files for WeeChat are saved to `~/.weechat`. These files are not commented. Detailed information can be found within the program itself (see **Internally** above), or WeeChat's [user guide](http://www.weechat.org/files/doc/stable/weechat_user.en.html).
 
-**Tip:** in case you want to move `.weechat` directory somewhere else (like in your '**$XDG_CONFIG_HOME**), use this option : `$weechat -d $XDG_CONFIG_HOME/weechat`
+**Tip:** in case you want to move `.weechat` directory somewhere else (like in your **$XDG_CONFIG_HOME**), use this option: `$weechat -d $XDG_CONFIG_HOME/weechat` or set the environment variable `WEECHAT_HOME`.
 
 ## Connecting to a server
 
@@ -147,16 +146,6 @@ You may also want to change the location where WeeChat looks for trusted authori
 
 ```
 /set weechat.network.gnutls_ca_file "/etc/ssl/certs/ca-certificates.crt"
-
-```
-
-### OFTC
-
-If you wish to connect to [OFTC](http://oftc.net) you will need to install their certificate:
-
-```
-# wget [http://www.spi-inc.org/ca/spi-cacert.crt](http://www.spi-inc.org/ca/spi-cacert.crt) -O /etc/ca-certificates/trust-source/anchors/spi-cacert.crt
-# trust update-compat
 
 ```
 

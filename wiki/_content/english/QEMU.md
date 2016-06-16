@@ -544,7 +544,7 @@ This method does not require a start-up script and readily accommodates multiple
 
 **Tip:** See [Network bridge](/index.php/Network_bridge "Network bridge") for information on creating bridge.
 
-First, copy `/etc/qemu/bridge.conf.sample` to `/etc/qemu/bridge.conf`. Now modify `/etc/qemu/bridge.conf` to contain the names of all bridges to be used by QEMU:
+First, create a configuration file containing the names of all bridges to be used by QEMU:
 
  `/etc/qemu/bridge.conf` 
 ```
@@ -681,7 +681,7 @@ Alternatively, you can configure [iptables](/index.php/Iptables "Iptables") to a
 
 #### Network sharing between physical device and a Tap device through iptables
 
-Bridged networking works fine between a wired interface (Eg. eth0), and it's easy to setup. However if the host gets connected to the network through a wireless device, then bridging is not possible.
+Bridged networking works fine between a wired interface (Eg. eth0), and it is easy to setup. However if the host gets connected to the network through a wireless device, then bridging is not possible.
 
 See [Network bridge#Wireless interface on a bridge](/index.php/Network_bridge#Wireless_interface_on_a_bridge "Network bridge") as a reference.
 
@@ -689,7 +689,7 @@ One way to overcome that is to setup a tap device with a static IP, making linux
 
 See [Internet sharing](/index.php/Internet_sharing "Internet sharing") as a reference.
 
-There you can find what's needed to share the network between devices, included tap and tun ones. The following just hints further on some of the host configurations required. As indicated in the reference above, the client needs to be configured for a static IP, using the IP assigned to the tap interface as the gateway. The caveat is that the DNS servers on the client might need to be manually edited if they change when changing from one host device connected to the network to another.
+There you can find what is needed to share the network between devices, included tap and tun ones. The following just hints further on some of the host configurations required. As indicated in the reference above, the client needs to be configured for a static IP, using the IP assigned to the tap interface as the gateway. The caveat is that the DNS servers on the client might need to be manually edited if they change when changing from one host device connected to the network to another.
 
 To allow IP forwarding on every boot, one need to add the following lines to sysctl configuration file inside /etc/sysctl.d:
 
@@ -729,7 +729,7 @@ EXT_2=tun0
 
 The prior shows a forwarding that would allow sharing wired and wireless connections with the tap device.
 
-The forwarding rules shown are stateless, and for pure forwarding. One could think of restricting specific traffic, putting a firewall in place to protect the guest and others. However those would decrease the networking performance, while a simple bridge doesn't include any of that.
+The forwarding rules shown are stateless, and for pure forwarding. One could think of restricting specific traffic, putting a firewall in place to protect the guest and others. However those would decrease the networking performance, while a simple bridge does not include any of that.
 
 Bonus: Whether the connection is wired or wireless, if one gets connected through VPN to a remote site with a tun device, supposing the tun device opened for that connection is tun0, and the prior iptables rules are applied, then the remote connection gets also shared with the guest. This avoids the need for the guest to also open a VPN connection. Again, as the guest networking needs to be static, then if connecting the host remotely this way, one most probably will need to edit the DNS servers on the guest.
 
@@ -998,6 +998,14 @@ $ spicy -h 127.0.0.1 -p 5930
 
 ```
 
+Using [Unix sockets](https://en.wikipedia.org/wiki/Unix_socket "wikipedia:Unix socket") instead of TCP ports does not involve using network stack on the host system, so it is [reportedly](https://unix.stackexchange.com/questions/91774/performance-of-unix-sockets-vs-tcp-ports) better for performance. Example:
+
+```
+$ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent -spice unix,addr=/tmp/vm_spice.socket,disable-ticketing,playback-compression=off
+$ spicy --uri="spice+unix:///tmp/vm_spice.socket"
+
+```
+
 For improved support for multiple monitors, clipboard sharing, etc. the following packages should be installed on the guest:
 
 *   [spice-vdagent](https://aur.archlinux.org/packages/spice-vdagent/): Spice agent xorg client that enables copy and paste between client and X-session and more
@@ -1250,7 +1258,7 @@ $ qemu-system-i386 -hda *disk_image* -m 512 -vga std -usbdevice tablet
 
 ```
 
-If that doesn't work, try the tip at [#Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic).
+If that does not work, try the tip at [#Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic).
 
 ### Pass-through host USB device
 
@@ -1441,7 +1449,7 @@ If you start a live-environment (or better: booting a system) you may encounter 
 
 ```
 
-or some other boot hindering process (e.g. can't unpack initramfs, cant start service foo). Try starting the VM with the `-m VALUE` switch and an appropriate amount of RAM, if the ram is to low you will probably encounter similar issues as above/without the memory-switch.
+or some other boot hindering process (e.g. cannot unpack initramfs, cant start service foo). Try starting the VM with the `-m VALUE` switch and an appropriate amount of RAM, if the ram is to low you will probably encounter similar issues as above/without the memory-switch.
 
 ## See also
 

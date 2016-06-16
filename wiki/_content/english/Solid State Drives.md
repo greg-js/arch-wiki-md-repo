@@ -93,15 +93,15 @@ It's still possible/required to use other filesystems, e.g. FAT32 for the [EFI S
 
 ### Ext4
 
-[Ext4](https://en.wikipedia.org/wiki/Ext4 "wikipedia:Ext4") is another filesystem that has support for SSD. It is considered as stable since 2.6.28 and is mature enough for daily use. ext4 users can enable the TRIM command support using the `discard` mount option in [fstab](/index.php/Fstab "Fstab") (or with `tune2fs -o discard /dev/sdaX`). See the [official in kernel tree documentation](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=blob;f=Documentation/filesystems/ext4.txt) for further information on ext4.
+[Ext4](https://en.wikipedia.org/wiki/Ext4 "wikipedia:Ext4") is another filesystem that has support for SSD. It is considered as stable since 2.6.28 and is mature enough for daily use. See the [official in kernel tree documentation](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=blob;f=Documentation/filesystems/ext4.txt) for further information on ext4.
 
 ### XFS
 
-Many users do not realize that in addition to ext4 and btrfs, [XFS](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS") has TRIM support as well. This can be enabled in the usual ways. That is, the choice may be made of either using the discard option mentioned above, or by using the fstrim command. More information can be found on the [XFS wiki](http://xfs.org/index.php/FITRIM/discard).
+[XFS](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS") has TRIM support as well. More information can be found on the [XFS wiki](http://xfs.org/index.php/FITRIM/discard).
 
 ### JFS
 
-As of Linux kernel version 3.7, proper TRIM support has been added. So far, there is not a great wealth of information of the topic but it has certainly been picked up by [Linux news sites.](http://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY) It is apparent that it can be enabled via the `discard` mount option, or by using the method of batch TRIMs with fstrim.
+As of Linux kernel version 3.7, proper TRIM support has been added.[[5]](http://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY)
 
 ### Other filesystems
 
@@ -115,15 +115,23 @@ See [Partitioning#Partition alignment](/index.php/Partitioning#Partition_alignme
 
 ### TRIM
 
-Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. For more including some before and after benchmark, see [this](https://sites.google.com/site/lightrush/random-1/howtoconfigureext4toenabletrimforssdsonubuntu) tutorial.
+Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. For a performance benchmark before and after filling an SSD with data, see [[6]](http://www.techspot.com/review/737-ocz-vector-150-ssd/page9.html).
 
-As of Linux kernel version 3.8 onwards, the following filesystems support TRIM: [Ext4](/index.php/Ext4 "Ext4"), [Btrfs](/index.php/Btrfs "Btrfs"), [JFS](/index.php/JFS "JFS"), VFAT, [XFS](/index.php/XFS "XFS"), [F2FS](/index.php/F2FS "F2FS").
+As of Linux kernel version 3.8 onwards, the following filesystems support TRIM: [Ext4](/index.php/Ext4 "Ext4"), [Btrfs](/index.php/Btrfs "Btrfs"), [JFS](/index.php/JFS "JFS"), [XFS](/index.php/XFS "XFS"), [F2FS](/index.php/F2FS "F2FS"), VFAT.
 
-As of [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) version 2015.3.14, TRIM is supported for [NTFS](/index.php/NTFS "NTFS") filesystem too [[5]](http://permalink.gmane.org/gmane.comp.file-systems.ntfs-3g.devel/1101).
+As of [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) version 2015.3.14, TRIM is supported for [NTFS](/index.php/NTFS "NTFS") filesystem too [[7]](http://permalink.gmane.org/gmane.comp.file-systems.ntfs-3g.devel/1101).
 
-VFAT only supports TRIM by the mount option `discard`, not manually with *fstrim*.
-
-The [Choice of Filesystem](#Choice_of_filesystem) section of this article offers more details.
+| File system | Continuous TRIM
+(`discard` option) | Periodic TRIM
+(*fstrim*) |
+| [Ext3](/index.php/Ext3 "Ext3") | No | ? |
+| [Ext4](/index.php/Ext4 "Ext4") | Yes | Yes |
+| [Btrfs](/index.php/Btrfs "Btrfs") | Yes | Yes |
+| [JFS](/index.php/JFS "JFS") | Yes | Yes |
+| [XFS](/index.php/XFS "XFS") | Yes | Yes |
+| [F2FS](/index.php/F2FS "F2FS") | Yes | Yes |
+| VFAT | Yes | No |
+| [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | No | Yes |
 
 #### Verify TRIM support
 
@@ -136,8 +144,6 @@ The [Choice of Filesystem](#Choice_of_filesystem) section of this article offers
 Note that there are different types of TRIM support defined by the specification. Hence, the output may differ depending what the drive supports. See [wikipedia:TRIM#ATA](https://en.wikipedia.org/wiki/TRIM#ATA "wikipedia:TRIM") for more information.
 
 #### Apply periodic TRIM via fstrim
-
-**Note:** This method does not work for VFAT filesystems.
 
 The [util-linux](https://www.archlinux.org/packages/?name=util-linux) package (part of [base](https://www.archlinux.org/groups/x86_64/base/) and [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)) provides `fstrim.service` and `fstrim.timer` [systemd](/index.php/Systemd "Systemd") unit files. [Enabling](/index.php/Enabling "Enabling") the timer will activate the service weekly, which will then trim all mounted filesystems on devices that support the discard operation.
 
@@ -183,7 +189,6 @@ The main benefit of continuous TRIM is speed; an SSD can perform more efficient 
 **Note:**
 
 *   There is no need for the `discard` flag if you run `fstrim` periodically.
-*   Using the `discard` flag for an ext3 root partition will result in it being mounted read-only.
 *   Before SATA 3.1, TRIM commands are synchronous and will block all I/O while running. This may cause short freezes while this happens, for example during a filesystem sync. You may not want to use `discard` in that case but [#Apply periodic TRIM via fstrim](#Apply_periodic_TRIM_via_fstrim) instead. One way to check your SATA version is with `smartctl --info /dev/sd*X*`.
 
 On the ext4 filesystem, the `discard` flag can also be set as a [default mount option](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") using *tune2fs*:
@@ -242,7 +247,7 @@ Operations like formatting the device or installing operating systems are not af
 
 The above output shows the device is **not locked** by a HDD-password on boot and the **frozen** state safeguards the device against malwares which may try to lock it by setting a password to it at runtime.
 
-If you intend to set a password to a "frozen" device yourself, a motherboard BIOS with support for it is required. A lot of notebooks have support, because it is required for [hardware encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption"), but support may not be trivial for a desktop/server board. For the Intel DH67CL/BL motherboard, for example, the motherboard has to be set to "maintenance mode" by a physical jumper to access the settings (see [[6]](http://sstahlman.blogspot.in/2014/07/hardware-fde-with-intel-ssd-330-on.html?showComment=1411193181867#c4579383928221016762), [[7]](https://communities.intel.com/message/251978#251978)).
+If you intend to set a password to a "frozen" device yourself, a motherboard BIOS with support for it is required. A lot of notebooks have support, because it is required for [hardware encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption"), but support may not be trivial for a desktop/server board. For the Intel DH67CL/BL motherboard, for example, the motherboard has to be set to "maintenance mode" by a physical jumper to access the settings (see [[8]](http://sstahlman.blogspot.in/2014/07/hardware-fde-with-intel-ssd-330-on.html?showComment=1411193181867#c4579383928221016762), [[9]](https://communities.intel.com/message/251978#251978)).
 
 **Warning:** Do not try to change the above **lock** security settings with `hdparm` unless you know exactly what you are doing.
 
@@ -262,7 +267,7 @@ As noted in [#Hdparm shows frozen state](#Hdparm_shows_.22frozen.22_state) setti
 
 An overarching theme for SSD usage should be 'simplicity' in terms of locating high-read/write operations either in RAM (Random Access Memory) or on a physical HDD rather than on an SSD. Doing so will add longevity to an SSD. This is primarily due to the large erase block size (512 KiB in some cases); a lot of small writes result in huge effective writes.
 
-**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[8]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
+**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[10]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
 
 Use [iotop](https://www.archlinux.org/packages/?name=iotop) and sort by disk writes to see how much and how frequently are programs writing to the disk.
 
@@ -274,7 +279,7 @@ Use [iotop](https://www.archlinux.org/packages/?name=iotop) and sort by disk wri
 
 ### Intelligent partition scheme
 
-*   For systems with both an SSD and an HDD, consider relocating the `/var` partition to a magnetic disc on the system rather than on the SSD itself to avoid read/write wear.
+For systems with both an SSD and an HDD, consider relocating the `/var` partition to a magnetic disc on the system rather than on the SSD itself to avoid read/write wear.
 
 ### noatime mount option
 

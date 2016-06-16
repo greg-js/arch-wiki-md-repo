@@ -12,6 +12,7 @@
     *   [3.5 mutt-kz](#mutt-kz)
     *   [3.6 ner](#ner)
 *   [4 Integrating with mutt](#Integrating_with_mutt)
+    *   [4.1 notmuch-mutt problems](#notmuch-mutt_problems)
 
 ## Overview
 
@@ -89,4 +90,30 @@ More file handlers can be configured of course.
 
 If you use [mutt](/index.php/Mutt "Mutt") as your MUA, then notmuch is an excellent complementary tool to index and search your mail. The [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt) package provides a script to integrate notmuch with mutt.
 
-Refer to the [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt) man page for configuration information. This [blogpost](http://jasonwryan.com/blog/2012/05/23/notmuch/) steps through how to setup notmuch with mutt, but the information is a little outdated.
+After installing the [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt) package and configuring notmuch, the only thing left before using notmuch to search from mutt is adding keybindings to call the `notmuch-mutt` perl script from mutt. Adding the following to your `.muttrc` is what is recommended in notmuch contrib source:
+
+```
+macro index <F8> \
+     "<enter-command>unset wait_key<enter><shell-escape>notmuch-mutt --prompt search<enter><change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>" \
+     "notmuch: search mail"
+macro index <F9> \
+     "<enter-command>unset wait_key<enter><pipe-message>notmuch-mutt thread<enter><change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter><enter-command>set wait_key<enter>" \
+     "notmuch: reconstruct thread"
+macro index <F6> \
+     "<enter-command>unset wait_key<enter><pipe-message>notmuch-mutt tag -inbox<enter>" \
+     "notmuch: remove message from inbox"
+
+```
+
+The above uses `F8` to search your inbox using notmuch, `F9` to create threads from search results, and `F6` to tag search results.
+
+### notmuch-mutt problems
+
+There can sometimes be disagreement between pacman-installed and managed perl modules and perl modules installed via cpan/cpanm. An error message of the format:
+
+```
+Gnu.c: loadable library and perl binaries are mismatched (got handshake key 0xdb00080, needed 0xdb80080)
+
+```
+
+can indicate that some of the notmuch-mutt dependencies are installed via cpan while some are installed and managed via pacman, and that you should install all dependencies via one or the other method.

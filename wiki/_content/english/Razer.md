@@ -217,7 +217,7 @@ Feature still not working: pinch to zoom, 3rd mouse button
 There are currently two Python scripts available to enable macro keys under Linux:
 
 *   [blackwidowcontrol](https://aur.archlinux.org/packages/blackwidowcontrol/)
-    *   works with regular BlackWidow and might work with BlackWidow Ultimate / 2013
+    *   works with regular BlackWidow and BlackWidow 2013\. Might work with BlackWidow Ultimate / 2013
     *   uses Python 3
     *   does not bundle any scripts to create macros (use hot key configuration tool from your desktop environment)
     *   allows to control the status of the LED

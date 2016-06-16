@@ -1,246 +1,207 @@
-**翻译状态：** 本文是英文页面 [LAMP](/index.php/LAMP "LAMP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2012-11-21，点击[这里](https://wiki.archlinux.org/index.php?title=LAMP&diff=0&oldid=236184)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Apache_HTTP_Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-15，点击[这里](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&diff=0&oldid=436671)可以查看翻译后英文页面的改动。
 
-LAMP是指在许多web 服务器上使用的一个软件组合：Linux,Apache,MySQL/MariaDB以及PHP。本文档描述了怎样在Archlinux系统上安装设置Apache网页服务器。以及选择安装PHP和MariaDB并集成到Apache服务器中。
+LAMP是指在许多web 服务器上使用的一个软件组合：Linux,Apache,MySQL/MariaDB以及PHP。
 
-如果只是用来开发和测试， [Xampp](/index.php/Xampp "Xampp") 可能更简便一些。
+[Apache HTTP 服务器](https://en.wikipedia.org/wiki/Apache_HTTP_Server 栈(**L**inux, **A**pache, **M**ySQL, **P**HP). 本文介绍。本文档描述了怎样安装设置 Apache 网页服务器。以及选择安装 [PHP](/index.php/PHP "PHP")和 [MySQL](/index.php/MySQL "MySQL") 并集成到Apache服务器中。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 Apache](#Apache)
-        *   [2.1.1 用户目录](#.E7.94.A8.E6.88.B7.E7.9B.AE.E5.BD.95)
-        *   [2.1.2 SSL](#SSL)
-        *   [2.1.3 Virtual Hosts](#Virtual_Hosts)
-        *   [2.1.4 高级选项](#.E9.AB.98.E7.BA.A7.E9.80.89.E9.A1.B9)
-    *   [2.2 PHP](#PHP)
-        *   [2.2.1 高级选项](#.E9.AB.98.E7.BA.A7.E9.80.89.E9.A1.B9_2)
-        *   [2.2.2 与apache2-mpm-worker和mod_fcgid一起使用php7](#.E4.B8.8Eapache2-mpm-worker.E5.92.8Cmod_fcgid.E4.B8.80.E8.B5.B7.E4.BD.BF.E7.94.A8php7)
-    *   [2.3 MariaDB](#MariaDB)
-*   [3 参见](#.E5.8F.82.E8.A7.81)
-*   [4 链接](#.E9.93.BE.E6.8E.A5)
+    *   [2.1 高级选项](#.E9.AB.98.E7.BA.A7.E9.80.89.E9.A1.B9)
+    *   [2.2 用户目录](#.E7.94.A8.E6.88.B7.E7.9B.AE.E5.BD.95)
+    *   [2.3 TLS/SSL](#TLS.2FSSL)
+        *   [2.3.1 创建密钥并自签名](#.E5.88.9B.E5.BB.BA.E5.AF.86.E9.92.A5.E5.B9.B6.E8.87.AA.E7.AD.BE.E5.90.8D)
+    *   [2.4 Virtual Hosts](#Virtual_Hosts)
+        *   [2.4.1 管理多个主机](#.E7.AE.A1.E7.90.86.E5.A4.9A.E4.B8.AA.E4.B8.BB.E6.9C.BA)
+*   [3 扩展](#.E6.89.A9.E5.B1.95)
+    *   [3.1 PHP](#PHP)
+        *   [3.1.1 Using apache2-mpm-worker and mod_fcgid](#Using_apache2-mpm-worker_and_mod_fcgid)
+    *   [3.2 MariaDB](#MariaDB)
+    *   [3.3 HTTP2](#HTTP2)
+*   [4 问题处理](#.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86)
+    *   [4.1 Apache 的状态和日志](#Apache_.E7.9A.84.E7.8A.B6.E6.80.81.E5.92.8C.E6.97.A5.E5.BF.97)
+    *   [4.2 启动后出现 Error: PID file /run/httpd/httpd.pid not readable](#.E5.90.AF.E5.8A.A8.E5.90.8E.E5.87.BA.E7.8E.B0_Error:_PID_file_.2Frun.2Fhttpd.2Fhttpd.pid_not_readable)
+    *   [4.3 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
+    *   [4.4 php.ini 中的 max_execution_time 设置无效](#php.ini_.E4.B8.AD.E7.9A.84_max_execution_time_.E8.AE.BE.E7.BD.AE.E6.97.A0.E6.95.88)
+*   [5 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
-```
-# pacman -S apache php php-apache mariadb
-
-```
-
-你可以只单独安装Apache，PHP或者mariadb(MySQL)，也可以安装所有包。这个文档假设你安装全部，当然你可以忽略任何部分。
-
-**注意:** 新默认用户和用户组: 取代了原先的用户组group "nobody" ,现在默认以user/group "http" 来运行Apache。根据这个变化，需要调整httpd.conf，虽然仍然能够用nobody来运行httpd。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [apache](https://www.archlinux.org/packages/?name=apache).
 
 ## 配置
 
-### Apache
+Apache 配置文件位于 `/etc/httpd/conf`，主要的配置文件是 `/etc/httpd/conf/httpd.conf`, 此文件会引用其它文件。
 
-出于安全原因，Apache以root用户身份启动(直接的或者通过启动脚本)后将立即切换为 `/etc/httpd/conf/httpd.conf`中指定的UID/GID。
+用默认配置可以启动一个简单的服务，有用户访问时会提供目录 `/srv/http` 下的内容。
 
-*   通过寻找如下命令的输出中的http来判断http user的存在：
+启动 `httpd.service` [systemd 服务](/index.php/Systemd#Using_units "Systemd")，Apache 就会启动，从浏览器中访问 [http://localhost/](http://localhost/) 会显示一个简单的索引页面。
 
-```
- # grep http /etc/passwd
+### 高级选项
 
-```
-
-*   如果还不存在用户http，创建他：
+请关注一下 `/etc/httpd/conf/httpd.conf` 中的下面选项:
 
 ```
- # useradd -d /srv/http -r -s /bin/false -U http
+User http
 
 ```
 
-	这将创建一个以目录/srv/http/为家目录的http用户，作为系统帐号（-r），使用bogus shell（-s /bin/false）并且创建一个相同名称的用户组（-U）。
-
-*   按照你的喜好更改`httpd.conf` 和 `extra/httpd-default.conf` 。。出于安全原因，你可能想将 `extra/httpd-default.conf`中的 **ServerTokens Full** 改为 **ServerTokens Prod** 并且将 **ServerSignature On** 改为 **ServerSignature Off** 。
-
-*   [启动](/index.php/Daemons#Starting_manually "Daemons") **httpd** (Apache 的守护进程).
+	出于安全原因，Apache以root用户身份启动(直接的或者通过启动脚本)后将立即切换为 `/etc/httpd/conf/httpd.conf`中指定的 UID，默认配置是 *http*, 安装时会自动创建此用户。
 
 ```
- # systemctl start httpd
+Listen 80
 
 ```
 
-	Apache现在应该在运行中了。通过使用浏览器访问http://localhost/ 来测试之。。应该有一个简单的Apache测试页面出现。如果你得到一个403错误，注释掉`/etc/httpd/conf/httpd.conf`中的如下行:
+	Apach 监听的端口，要被外网访问，请在路由器开放此端口。
+
+	如果是本地调试用，可以用下面命令设置为仅供本地访问 `Listen 127.0.0.1:80`.
+
+```
+ServerAdmin you@example.com
+
+```
+
+	管理员的电子邮件，在错误页面会展示给用户。
+
+```
+DocumentRoot "/srv/http"
+
+```
+
+	网页的目录.
+
+	如果需要可以修改这个目录，请记得同步修改 `<Directory "/srv/http">` 和`DocumentRoot`,否则访问新位置时可能出现 **403 Error** (缺少权限)问题。不要忘记修改 `Require all denied` 行到 `Require all granted`，否则会出现 **403 Error**. DocumentRoot 目录及其父目录必须有可执行权限，这样再能被服务器进程使用的用户访问到(用 `chmod o+x /path/to/DocumentRoot` 设置)，否则会出现 **403 Error**.
+
+```
+AllowOverride None
+
+```
+
+	在 `<Directory>` 段落中的这个设置会让 Apache 完全忽略 `.htaccess` 文件。从 Apache 2.4，这个设置以及是默认的，所以如果要使用 `.htaccess`，亲允许Overide. 如果要在 `.htaccess` 中使用 `mod_rewrite` 或其它设置, 可以指定哪些目录允许覆盖服务器配置。更多信息请访问 [Apache 文档](http://httpd.apache.org/docs/current/mod/core.html#allowoverride).
+
+**Tip:** 可以用 `apachectl configtest` 检查配置文件是否存在问题。
+
+更多设置可以访问 `/etc/httpd/conf/extra/httpd-default.conf`，例如
+
+关闭服务器签名:
+
+```
+ServerSignature Off
+
+```
+
+隐藏 Apache 和 PHP 版本等属性:
+
+```
+ServerTokens Prod
+
+```
+
+### 用户目录
+
+在默认设置下，可以通过 [http://localhost/~yourusername/](http://localhost/~yourusername/) 访问用户的主目录并显示 `~/public_html` 中的内容 (可以通过 `/etc/httpd/conf/extra/httpd-userdir.conf` 设置). 要禁用这个访问，请注释掉 `/etc/httpd/conf/httpd.conf` 文件中的如下行：
 
 ```
 Include conf/extra/httpd-userdir.conf
 
 ```
 
-*   可以在系统 [启动时自动启动](/index.php/Daemons#Starting_on_boot "Daemons") **httpd**进程。
+请正确设置目录的权限，使得 Apache 可以访问到文件。主目录和 `~/public_html` 必须是可被其它用户执行:
 
 ```
- # systemctl enable httpd
-
-```
-
-#### 用户目录
-
-*   如果你不希望用户目录在web上可以访问 (即， 机器上的`~/public_html` 在web上以 [http://localhost/~user/](http://localhost/~user/) 访问 -注意，你可以在`/etc/httpd/conf/extra/httpd-userdir.conf`文件中修改它所指向的目录)， 注释掉 `/etc/httpd/conf/httpd.conf` 文件中的如下行，他们默认时激活的：
-
-```
- Include conf/extra/httpd-userdir.conf
+$ chmod o+x ~
+$ chmod o+x ~/public_html
+$ chmod -R o+r ~/public_html
 
 ```
 
-*   你应该确保你的家目录权限时合适的以便Apache能够访问它。你的家目录和 `~/public_html/` 应该可以被其他用户执行。这样应该就可以了：
+重启 `httpd.service` 服务以应用更改。参考 [Umask#Set the mask value](/index.php/Umask#Set_the_mask_value "Umask").
+
+### TLS/SSL
+
+**警告:** 如果计划使用 SSL/TLS，请注意某些版本和实现 [依然](https://weakdh.org/#affected) [有安全漏洞](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). 访问 [http://disablessl3.com/](http://disablessl3.com/) 和 [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html) 可以查看当前的安全漏洞和服务器处理方式。
+
+[openssl](https://www.archlinux.org/packages/?name=openssl) 提供了 TLS/SSL 支持，默认已经安装在 Arch 中。
+
+在 `/etc/httpd/conf/httpd.conf` 中，取消下面行的注释:
 
 ```
- $ chmod o+x ~
- $ chmod o+x ~/public_html
-
-```
-
-*   更安全的通过apache共享你的家目录的方法时将用户 **http** 添加到你的家目录所属的用户组中。 例如，如果你的家目录和他的子目录属于**piter**用户组，你需要做的就是：
-
-```
- $ usermod -aG piter http
-
-```
-
-*   当然了，你还需要开放`~/`目录， `~/public_html`以及他们所有的子目录的‘读’权限和‘写’权限给这个组（在我们的例子中时用户组**piter**）。 如下这样做(**根据自己的情况修改命令**):
-
-```
- $ chmod g+xr-w /home/*yourusername*
- $ chmod -R g+xr-w /home/*yourusername*/public_html
-
-```
-
-**注意:** 使用此种方法你不必为了将权限开放给用户http而开放权限给所有的用户。只有用户**http**和同属于**piter**用户组的其他用户可以访问你的家目录
-
-并重启**httpd**.
-
-#### SSL
-
-创建自签名的证书（你可以改变密钥长度和有效天数）
-
-```
-# cd /etc/httpd/conf
-# openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out server.key
-# openssl req -new -key server.key -out server.csr
-# cp server.key server.key.org
-# openssl rsa -in server.key.org -out server.key
-# openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
-
-```
-
-在 `/etc/httpd/conf/httpd.conf`中，取消如下行的注释：
-
-```
+LoadModule ssl_module modules/mod_ssl.so
+LoadModule socache_shmcb_module modules/mod_socache_shmcb.so
 Include conf/extra/httpd-ssl.conf
 
 ```
 
-并重启**httpd**。
+TLS/SSL 需要密钥和认证，如果你有公开域名，可以使用 [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") 免费获取认证，如果没有，请参考 [#创建密钥并自签名](#.E5.88.9B.E5.BB.BA.E5.AF.86.E9.92.A5.E5.B9.B6.E8.87.AA.E7.AD.BE.E5.90.8D).
 
-#### Virtual Hosts
+获取密钥和认证之后，请将 `/etc/httpd/conf/extra/httpd-ssl.conf` 中的 `SSLCertificateFile` 和 `SSLCertificateKeyFile` 指向对应的文件。
 
-如果你需要不止一个主机，确保你有
+重启 `httpd.service`.
+
+**Tip:** Mozilla 的 [SSL/TLS 文章](https://wiki.mozilla.org/Security/Server_Side_TLS) 包含了 [Apache 相关](https://wiki.mozilla.org/Security/Server_Side_TLS#Apache) 配置的指南和一个 [自动生成工具](https://mozilla.github.io/server-side-tls/ssl-config-generator/)，可以有助于创建更安全的配置。
+
+#### 创建密钥并自签名
+
+创建一个私钥并自己签名认证，对于不需要 [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request") 的大部分使用来说已经足够:
 
 ```
-# Virtual hosts
+# cd /etc/httpd/conf
+# openssl req -new -x509 -nodes -newkey rsa:4096 -keyout server.key -out server.crt -days 1095
+# chmod 400 server.key
+
+```
+
+**Note:** -days 参数是可选的，RSA 密钥大小最低是 2048 (default).
+
+如果需要创建 [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request")，用下面的密钥创建方:
+
+```
+# openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out server.key
+# chmod 400 server.key
+# openssl req -new -sha256 -key server.key -out server.csr
+# openssl x509 -req -days 1095 -in server.csr -signkey server.key -out server.crt
+
+```
+
+**Note:** [openssl 手册](https://www.openssl.org/docs/apps/openssl.html) 和 [opnssl 文档](https://www.openssl.org/docs/) 包含了更多信息。
+
+### Virtual Hosts
+
+**Note:** You will need to add a separate <VirtualHost dommainame:443> section for virtual host SSL support. See [#Managing many virtual hosts](#Managing_many_virtual_hosts) for an example file.
+
+如果需要不止一个主机，在 `/etc/httpd/conf/httpd.conf`中注释掉:
+
+```
 Include conf/extra/httpd-vhosts.conf
 
 ```
 
-在 `/etc/httpd/conf/httpd.conf`文件中.
+在 `/etc/httpd/conf/extra/httpd-vhosts.conf` 中设置虚拟主机，默认文件包含了一个示例。
 
-参考下面的例子，在 `/etc/httpd/conf/extra/httpd-vhosts.conf`中设置你的虚拟主机：
+要在本地机器测试虚拟主机，将虚拟名称加入 `/etc/hosts` 文件:
 
 ```
-NameVirtualHost *:80
-
-#this first virtualhost enables: [http://127.0.0.1](http://127.0.0.1), or: [http://localhost](http://localhost), 
-#to still go to /srv/http/*index.html(otherwise it will 404_error).
-#the reason for this: once you tell httpd.conf to include extra/httpd-vhosts.conf, 
-#ALL vhosts are handled in httpd-vhosts.conf(including the default one),
-# E.G. the default virtualhost in httpd.conf is not used and must be included here, 
-#otherwise, only domainname1.dom & domainname2.dom will be accessible
-#from your web browser and NOT [http://127.0.0.1](http://127.0.0.1), or: [http://localhost](http://localhost), etc.
-#
-
-<VirtualHost *:80>
-    DocumentRoot "/srv/http"
-    ServerAdmin root@localhost
-    ErrorLog "/var/log/httpd/127.0.0.1-error_log"
-    CustomLog "/var/log/httpd/127.0.0.1-access_log" common
-    <Directory /srv/http/>
-		    DirectoryIndex index.htm index.html
-		    AddHandler cgi-script .cgi .pl
-		    Options ExecCGI Indexes FollowSymLinks MultiViews +Includes
-		    AllowOverride None
-		    Order allow,deny
-		    allow from all
-	</Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
-    ServerAdmin your@domainname1.dom
-    DocumentRoot "/home/username/yoursites/domainname1.dom/www"
-    ServerName domainname1.dom
-    ServerAlias domainname1.dom
-    <Directory /home/username/yoursites/domainname1.dom/www/>
-		    DirectoryIndex index.htm index.html
-		    AddHandler cgi-script .cgi .pl
-		    Options ExecCGI Indexes FollowSymLinks MultiViews +Includes
-		    AllowOverride None
-		    Order allow,deny
-		    allow from all
-	</Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
-    ServerAdmin your@domainname2.dom
-    DocumentRoot "/home/username/yoursites/domainname2.dom/www"
-    ServerName domainname2.dom
-    ServerAlias domainname2.dom
-    <Directory /home/username/yoursites/domainname2.dom/www/>
-		    DirectoryIndex index.htm index.html
-		    AddHandler cgi-script .cgi .pl
-		    Options ExecCGI Indexes FollowSymLinks MultiViews +Includes
-		    AllowOverride None
-		    Order allow,deny
-		    allow from all
-	</Directory>
-</VirtualHost>
+127.0.0.1 domainname1.dom 
+127.0.0.1 domainname2.dom
 
 ```
 
-将你的虚拟主机的名称添加到你的 /etc/hosts 文件（如果bind已经在为这些域名服务了，则非必需，但是加上也无妨）：
+重启 `httpd.service` 服务。
 
-```
-127.0.0.1	domainname1.dom
-127.0.0.1	domainname2.dom
-```
+#### 管理多个主机
 
-并重启**httpd**。
+如果要管理的主机非常多，希望更方便的维护，建议为每一个虚拟主机创建一个配置文件并文件存储到一个文件夹中 `/etc/httpd/conf/vhosts`。
 
-如果你将虚拟主机设定在你的用户目录中，有时这会干扰Apache的'Userdir'设定。注释掉以下行以避免此问题：
-
-```
-# User home directories
-#Include conf/extra/httpd-userdir.conf
-```
-
-如上所述，确保你有合适的权限：
-
-```
-# chmod 0775 /home/yourusername/
-
-```
-
-如果你有非常多的虚拟主机并且希望轻松的激活或禁用他们，建议你为每一个虚拟主机创建一个配置文件并且将所有的这些配置文件存储到一个文件夹中，如：`/etc/httpd/conf/vhosts`。
-
-首先创建这个文件夹：
+创建目录：
 
 ```
 # mkdir /etc/httpd/conf/vhosts
 
 ```
 
-然后将单个的配置文件放到里面：
+编写单独的配置文件:
 
 ```
 # nano /etc/httpd/conf/vhosts/domainname1.dom
@@ -249,206 +210,122 @@ NameVirtualHost *:80
 
 ```
 
-最后一步，"Include"单个的配置文件们到你的 `/etc/httpd/conf/httpd.conf`文件：
+在 `/etc/httpd/conf/httpd.conf` 中 `Include` 单独的配置文件:
 
 ```
 #Enabled Vhosts:
 Include conf/vhosts/domainname1.dom
-#Include conf/vhosts/domainname1.dom
-```
-
-你可以通过注释或去注释来激活或禁用单个的虚拟主机。
-
-#### 高级选项
-
-你也许会对 `/etc/httpd/conf/httpd.conf`中的这些选项感兴趣：
-
-```
-# Listen 80
+Include conf/vhosts/domainname2.dom
 
 ```
 
-这是Apache监听的端口。为了跨路由器的访问，你需要转发这个端口。
+通过注释或取消注释可以单独启用或禁用一个虚拟主机。
 
-如果你只是用于本地开发，你可能希望她只能被你自己的计算机访问。那么将这一行改为：
+基本的 vhost 文件：
 
+ `/etc/httpd/conf/vhosts/domainname1.dom` 
 ```
-# Listen 127.0.0.1:80
+<VirtualHost domainname1.dom:80>
+    ServerAdmin webmaster@domainname1.dom
+    DocumentRoot "/home/user/http/domainname1.dom"
+    ServerName domainname1.dom
+    ServerAlias domainname1.dom
+    ErrorLog "/var/log/httpd/domainname1.dom-error_log"
+    CustomLog "/var/log/httpd/domainname1.dom-access_log" common
 
+    <Directory "/home/user/http/domainname1.dom">
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost domainname1.dom:443>
+    ServerAdmin webmaster@domainname1.dom
+    DocumentRoot "/home/user/http/domainname1.dom"
+    ServerName domainname1.dom:443
+    ServerAlias domainname1.dom:443
+    ErrorLog "/var/log/httpd/domainname1.dom-error_log"
+    CustomLog "/var/log/httpd/domainname1.dom-access_log" common
+
+    <Directory "/home/user/http/domainname1.dom">
+        Require all granted
+    </Directory>
+
+    SSLEngine on
+    SSLCertificateFile "/etc/httpd/conf/apache.crt"
+    SSLCertificateKeyFile "/etc/httpd/conf/apache.key"
+</VirtualHost>
 ```
 
-这是管理员的电子邮件地址，该地址可以在错误页面等处见到：
-
-```
-# ServerAdmin sample@sample.com
-
-```
-
-这是存放你的网页文件的目录：
-
-```
-# DocumentRoot "/srv/http"
-
-```
-
-如果愿意，可以修改，不过不要忘了同时修改
-
-```
-<Directory "/srv/http">
-
-```
-
-为你所修改的文档根目录，否则当你试图访问新的文档根目录时可能会得到一个403错误（缺少权限）。不要忘记修改"Deny from all"行，否则你也可能遇到403错误。
-
-```
-# AllowOverride None
-
-```
-
-`<Directory>`部分中的这条指令将使得Apache完全忽略.htaccess文件。如果你希望使用重写模块或.htaccess文件中的其他设定，你可以允许那个文件中声明的>指令覆盖服务器配置。请参考 [http://httpd.apache.org/docs/current/mod/core.html#allowoverride](http://httpd.apache.org/docs/current/mod/core.html#allowoverride) 以获得更多信息。
-
-**注意:** 如果你对自己的配置文件有问题，你可以用如下命令让apache来检查一下你的配置文件：`apachectl configtest`
+## 扩展
 
 ### PHP
 
-*   从官方源[安装](/index.php/Pacman "Pacman") [php-apache](https://www.archlinux.org/packages/?name=php-apache)。
+首先，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [php](https://www.archlinux.org/packages/?name=php) 和 [php-apache](https://www.archlinux.org/packages/?name=php-apache)。
 
-*   在`/etc/httpd/conf/httpd.conf`中添加如下行：
-
-	将这一行放在`LoadModule`列表中 `LoadModule dir_module modules/mod_dir.so` 之后的任意地方：
+[php-apache](https://www.archlinux.org/packages/?name=php-apache) 中包含的 `libphp7.so` 不支持 `mod_mpm_event`，仅支持 `mod_mpm_prefork`([FS#39218](https://bugs.archlinux.org/task/39218))。需要在 `/etc/httpd/conf/httpd.conf` 中注释掉:
 
 ```
- LoadModule php7_module modules/libphp7.so
+#LoadModule mpm_event_module modules/mod_mpm_event.so
 
 ```
 
-	将这一行放到`Include`列表的末尾：
+取消下面行的注释:
 
 ```
- Include conf/extra/php7_module.conf
-
-```
-
-	禁用event模式，注释此行：
-
-```
- LoadModule mpm_event_module modules/mod_mpm_event.so
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
 ```
 
-	启用prefork模式，取消此行注释：
+不然将发生下面的错误:
 
-```
- LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
-
-```
-
-	确保`<IfModule mime_module>`部分中的如下行被取消注释：
-
-```
- TypesConfig conf/mime.types
-
-```
-
-	取消如下行的注释（可选）：
-
-```
- MIMEMagicFile conf/magic
-
-```
-
-*   将这一行添加到`/etc/httpd/conf/mime.types`中：
-
-```
- application/x-httpd-php7		php php7
-
-```
-
-**注意:** 如果你在Apache的模块目录（`/etc/httpd/modules`）中没有看到`libphp7.so`，你可能忘了安装[php-apache](https://www.archlinux.org/packages/?name=php-apache)。
-
-**注意:** [本段来源](/index.php/Apache_HTTP_Server#PHP "Apache HTTP Server") 你可能会碰到这一bug ([FS#39218](https://bugs.archlinux.org/task/39218)) [php-apache](https://www.archlinux.org/packages/?name=php-apache)中的`libphp7.so`无法同`mod_mpm_event`一起使用。 此时应当使用 `mod_mpm_prefork` 作为代替。不然将发生下面的错误:
 ```
 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.  You need to recompile PHP.
 AH00013: Pre-configuration failed
 httpd.service: control process exited, code=exited status=1
 ```
 
-要使用 `mod_mpm_prefork`，编辑`/etc/httpd/conf/httpd.conf`将
+另一种选择, 你可以使用`mod_proxy_fcgi` ( [使用php-fpm和mod_proxy_fcgi](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server")
 
- `LoadModule mpm_event_module modules/mod_mpm_event.so` 
+要启用 PHP，在 `/etc/httpd/conf/httpd.conf` 中添加如下行：
 
-替换成
-
- `LoadModule mpm_prefork_module modules/mod_mpm_prefork.so` 
-
-另一种选择, 你可以使用`mod_proxy_fcgi` ( [使用php-fpm和mod_proxy_fcgi](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server") ).
-
-*   如果你的`文件根目录`不是`/srv/http`，将其添加到`/etc/php/php.ini`的`open_basedir`部分，如下：
+*   将这一行放在`LoadModule`列表中 `LoadModule dir_module modules/mod_dir.so` 之后的任意地方：
 
 ```
- open_basedir=/srv/http/:/home/:/tmp/:/usr/share/pear/:/path/to/documentroot
+ LoadModule php7_module modules/libphp7.so
 
 ```
 
-*   [重启](/index.php/Systemd#Using_units "Systemd") **httpd**。
+*   将这一行放到`Include`列表的末尾：
 
-*   测试PHP：在你的apache文档根目录（即`/srv/http/`或`~public_html`）中创建test.php文件，在其中写入：
+```
+ Include conf/extra/php7_module.conf
+
+```
+
+[重启](/index.php/Systemd#Using_units "Systemd") `httpd.service`。
+
+要测试PHP，在 apache 文档根目录（即`/srv/http/`或`~public_html`）中创建test.php文件，在其中写入：
 
 ```
 <?php phpinfo(); ?>
 
 ```
 
-	看它是否能用： [http://localhost/test.php](http://localhost/test.php) 或者 [http://localhost/~myname/test.php](http://localhost/~myname/test.php)
+然后访问： [http://localhost/test.php](http://localhost/test.php) 或者 [http://localhost/~myname/test.php](http://localhost/~myname/test.php)
 
-	如果PHP代码没有被执行（你看到了：<html>...</html>），检查一下`/etc/httpd/conf/httpd.conf`看你是否将你的根目录“Includes”到“Options”行中。
+高级的配置和扩展，请设置 [PHP](/index.php/PHP "PHP").
 
-如果还不行，检查<IfModule mime_module>部分中`TypesConfig conf/mime.types` 是否被取消注释，你可以尝试将以下行添加到httpd.conf中的<IfModule mime_module>部分中：
+#### Using apache2-mpm-worker and mod_fcgid
 
-```
-AddHandler application/x-httpd-php .php
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) 和 [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
 
-```
-
-#### 高级选项
-
-*   建议你在`/etc/php/php.ini`中将你的时区设置为这样：([时区列表](http://www.php.net/manual/en/timezones.php))
-
- `date.timezone = Asia/Shanghai` 
-
-*   如果你想显示出错信息以调试你的PHP代码，将`/etc/php/php.ini`中的`display_errors`设置为`On`：
+创建目录并建立 PHP 软链接:
 
 ```
-display_errors=On
+# mkdir /srv/http/fcgid-bin
+# ln -s /usr/bin/php-cgi /srv/http/fcgid-bin/php-fcgid-wrapper
 
 ```
-
-*   如果你想使用libGD模块，安装{{}Pkg|php-gd}并且将`/etc/php/php.ini`中的`extension=gd.so`取消注释：
-
-**注意:** php-gd 需要 libpng，libjpeg和freetype2
-
-```
-extension=gd.so
-
-```
-
-**注意:** 看清楚你注释的是哪一行，这个扩展有时会在你需要注释掉的那一行之前的解释性的注释中被提到
-
-*   如果你需要mcrypt模块，安装[php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt)并且取消`/etc/php/php.ini`中`extension=mcrypt.so`的注释：
-
-```
-extension=mcrypt.so
-
-```
-
-*   如果你需要，记得在`/etc/httpd/conf/extra/php7_module.conf`中为.phtml添加一个文件处理器：
-
-```
-DirectoryIndex index.php index.phtml index.html
-
-```
-
-#### 与apache2-mpm-worker和mod_fcgid一起使用php7
 
 取消`/etc/conf.d/apache`中如下行的注释：
 
@@ -457,35 +334,21 @@ HTTPD=/usr/sbin/httpd.worker
 
 ```
 
-取消`/etc/httpd/conf/httpd.conf`中如下行的注释：
+创建 `/etc/httpd/conf/extra/php-fcgid.conf`，包含的内容：
 
-```
-Include conf/extra/httpd-mpm.conf
-
-```
-
-安装mod_fcgid和php-cgi包：
-
-```
-# pacman -S mod_fcgid php-cgi
-
-```
-
-创建`/etc/httpd/conf/extra/php5_fcgid.conf`，写入以下内容：
-
+ `/etc/httpd/conf/extra/php-fcgid.conf` 
 ```
 # Required modules: fcgid_module
 
 <IfModule fcgid_module>
-	AddHandler php-fcgid .php
-	AddType application/x-httpd-php .php
-	Action php-fcgid /fcgid-bin/php-fcgid-wrapper
-	ScriptAlias /fcgid-bin/ /srv/http/fcgid-bin/
-	SocketPath /var/run/httpd/fcgidsock
-	SharememPath /var/run/httpd/fcgid_shm
+    AddHandler php-fcgid .php
+    AddType application/x-httpd-php .php
+    Action php-fcgid /fcgid-bin/php-fcgid-wrapper
+    ScriptAlias /fcgid-bin/ /srv/http/fcgid-bin/
+    SocketPath /var/run/httpd/fcgidsock
+    SharememPath /var/run/httpd/fcgid_shm
         # If you don't allow bigger requests many applications may fail (such as WordPress login)
         FcgidMaxRequestLen 536870912
-        PHP_Fix_Pathinfo_Enable 1
         # Path to php.ini – defaults to /etc/phpX/cgi
         DefaultInitEnv PHPRC=/etc/php/
         # Number of PHP childs that will be launched. Leave undefined to let PHP decide.
@@ -493,74 +356,96 @@ Include conf/extra/httpd-mpm.conf
         # Maximum requests before a process is stopped and a new one is launched
         #DefaultInitEnv PHP_FCGI_MAX_REQUESTS 5000
         <Location /fcgid-bin/>
-		SetHandler fcgid-script
-		Options +ExecCGI
-	</Location>
+        SetHandler fcgid-script
+        Options +ExecCGI
+    </Location>
 </IfModule>
-```
-
-为PHP包装器创建需要的目录和符号链接：
-
-```
-# mkdir /srv/http/fcgid-bin
-# ln -s /usr/bin/php-cgi /srv/http/fcgid-bin/php-fcgid-wrapper
 
 ```
 
-编辑 `/etc/httpd/conf/httpd.conf`：
+编辑 `/etc/httpd/conf/httpd.conf`，加入：
 
 ```
-#LoadModule php5_module modules/libphp5.so
 LoadModule fcgid_module modules/mod_fcgid.so
-Include conf/extra/php5_fcgid.conf
+Include conf/extra/httpd-mpm.conf
+Include conf/extra/php-fcgid.conf
 
 ```
 
-确保`/etc/php/php.ini`中的如下指令被启用：
+**Note:** 如果之前在 `httpd.conf` 加入了下面内容，请删除它们，已经不再需要：
+```
+LoadModule php7_module modules/libphp7.so
+Include conf/extra/php7_module.conf
 
 ```
-cgi.fix_pathinfo=1
 
-```
-
-并重启 **httpd**。
-
-**注意:** Apache2.4（[AUR package](https://aur.archlinux.org/package.php?ID=60719)中可用）中已经可以与PHP-FPM（以及新的event MPM）一起使用[mod_proxy_fcgi](http://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html)（官方发行版的一部分）。参见[configuration example](http://wiki.apache.org/httpd/PHP-FPM)
+[重启](/index.php/Restart "Restart") `httpd.service`.
 
 ### MariaDB
 
-*   按照[MariaDB](/index.php/MariaDB "MariaDB")中所述配置MySQL/MariaDB。
+按照[PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "PHP") 配置 MySQL/MariaDB。
 
-*   至少取消`/etc/php/php.ini`中如下注释的一行：
+完成后 [重启](/index.php/Restart "Restart") `httpd.service` 服务。
+
+### HTTP2
+
+要启用 http2，安装 [nghttp2](https://www.archlinux.org/packages/?name=nghttp2) 软件包。然后取消 `httpd.conf` 中下面行前的注释:
 
 ```
-;extension=pdo_mysql.so
-;extension=mysqli.so
+LoadModule http2_module modules/mod_http2.so
 
 ```
 
-**警告:** 从 PHP 5.5 开始，`mysql.so` 被 [废弃](http://www.php.net/manual/de/migration55.deprecated.php)，若启用，会导致大量错误消息充斥日志文件。
+并加入:
 
-*   可以加入有较少权限的 Mysql 用户以执行 Mysql 脚本，或者编辑`/etc/mysql/my.cnf`，取消 `skip-networking` 行注释，这样 Mysql 只允许本地访问。重启 Mysql 后修改生效。
+```
+Protocols h2 http/1.1
 
-*   [重启](/index.php/Systemd#Using_units "Systemd") **httpd**.
+```
 
-*   通过编辑`/etc/mysql/my.cnf`文件，取消`skip-networking`行的注释可以使MySQL服务器只能通过本地主机访问。
+更多信息请参考 [mod_http2](https://httpd.apache.org/docs/2.4/mod/mod_http2.html) 文档。
 
-**Tip:** 可以安装[phpmyadmin](/index.php/PhpMyAdmin "PhpMyAdmin"), [adminer](/index.php/Adminer "Adminer") 或者 [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) 来配合数据库的工作。
+## 问题处理
 
-## 参见
+### Apache 的状态和日志
 
-*   [MariaDB](/index.php/MariaDB "MariaDB") - 关于MariaDB的的文章
-*   [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") - LAMP环境下典型的MySQL Web前端
-*   [Adminer](/index.php/Adminer "Adminer") - 一个课用于MySQL，PostgreSQL，SQLite，MS SQL和Oracle的功能全面的数据库管理工具
-*   [Xampp](/index.php/Xampp "Xampp") - 支持PHP，Perl和MySQL的自包含的web服务器
-*   [mod_perl](/index.php/Mod_perl "Mod perl") - Apache + Perl
+状态信息可以用 [systemctl](/index.php/Systemctl "Systemctl") 查询。
 
-## 链接
+Apache 默认的系统日志位于 `/var/log/httpd/`。
+
+### 启动后出现 Error: PID file /run/httpd/httpd.pid not readable
+
+在 `httpd.conf` 中注释掉 `unique_id_module` 行：
+
+```
+#LoadModule unique_id_module modules/mod_unique_id.so
+
+```
+
+### AH00534: httpd: Configuration error: No MPM loaded.
+
+最近的升级需要修改 `httpd.conf` 配置文件，取消下面行前的注释：
+
+ `/etc/httpd/conf/httpd.conf` 
+```
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+
+```
+
+### php.ini 中的 max_execution_time 设置无效
+
+`php.ini` 中的 `max_execution_time` 设置为大于 30 (秒), 还会受到 `503 Service Unavailable` 的话，还需要添加 `ProxyTimeout` 到 `<FilesMatch \.php$>` 段落之前:
+
+ `/etc/httpd/conf/httpd.conf` 
+```
+ProxyTimeout 300
+
+```
+
+重启 `httpd.service`.
+
+## 参阅
 
 *   [Apache 官方网站](http://www.apache.org/)
-*   [PHP官方网站](http://www.php.net/)
-*   [MariaDB官方网站](https://mariadb.org/)
 *   [生成ssh_test_certificate的教程](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [Apache故障排除Wiki](http://wiki.apache.org/httpd/CommonMisconfigurations)

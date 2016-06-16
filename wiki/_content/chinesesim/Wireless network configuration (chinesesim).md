@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Wireless_network_configuration](/index.php/Wireless_network_configuration "Wireless network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-13，点击[这里](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=423440)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Wireless_network_configuration](/index.php/Wireless_network_configuration "Wireless network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-12，点击[这里](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=437081)可以查看翻译后英文页面的改动。
 
 配置无线网络一般分两步：第一步是识别硬件、安装正确的驱动程序并进行配置，安装盘中已经包含驱动，但是通常需要额外安装；第二步是选择一种管理无线连接的方式。这篇文章涵盖了这两方面，并提供了无线管理工具的链接地址。
 
@@ -30,10 +30,7 @@
     *   [3.4 Observing Logs](#Observing_Logs)
     *   [3.5 Failed to get IP address](#Failed_to_get_IP_address)
     *   [3.6 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
-    *   [3.7 Connection always times out](#Connection_always_times_out)
-        *   [3.7.1 Lowering the rate](#Lowering_the_rate)
-        *   [3.7.2 Lowering the txpower](#Lowering_the_txpower)
-        *   [3.7.3 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
+    *   [3.7 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
     *   [3.8 Random disconnections](#Random_disconnections)
         *   [3.8.1 Cause #1](#Cause_.231)
         *   [3.8.2 Cause #2](#Cause_.232)
@@ -56,7 +53,6 @@
         *   [4.3.2 ath9k](#ath9k)
         *   [4.3.3 ath9k](#ath9k_2)
             *   [4.3.3.1 Power saving](#Power_saving_2)
-            *   [4.3.3.2 ASUS](#ASUS)
     *   [4.4 Intel](#Intel)
         *   [4.4.1 ipw2100 与 ipw2200](#ipw2100_.E4.B8.8E_ipw2200)
         *   [4.4.2 iwlegacy](#iwlegacy)
@@ -70,7 +66,7 @@
         *   [4.5.5 zd1211rw](#zd1211rw)
         *   [4.5.6 hostap_cs](#hostap_cs)
     *   [4.6 ndiswrapper](#ndiswrapper)
-    *   [4.7 compat-drivers-patched](#compat-drivers-patched)
+    *   [4.7 backports-patched](#backports-patched)
 *   [5 参见](#.E5.8F.82.E8.A7.81)
 *   [6 其他资源](#.E5.85.B6.E4.BB.96.E8.B5.84.E6.BA.90)
 
@@ -507,6 +503,8 @@ If the card is *hard-blocked*, use the hardware button (switch) to unblock it. I
 
 **Note:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
 
+切换无线网卡的硬件按钮是厂商专用的 [内核模块](/index.php/Kernel_module "Kernel module") 处理的, 通常是 [WMI](https://lwn.net/Articles/391230/) 模块。新硬件模块可能还没有被最新内核支持，这时可能需要查看内核 bug 系统并将硬件信息汇报给对应内核模块的维护者。
+
 More info: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
 
 ### Respecting the regulatory domain
@@ -614,38 +612,7 @@ Before changing the channel to auto, make sure your wireless interface is down. 
 
 If you are on a public wireless network that may have a [captive portal](https://en.wikipedia.org/wiki/Captive_portal "wikipedia:Captive portal"), make sure to query an HTTP page (not an HTTPS page) from your web browser, as some captive portals only redirect HTTP. If this is not the issue, it may be necessary to remove any custom DNS servers from [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
 
-### Connection always times out
-
-There are a few things to try if you are experiencing excessive transmission retries, errors, packet loss, and/or disconnects.
-
-#### Lowering the rate
-
-Try setting lower rate, for example 5.5M:
-
-```
-# iwconfig wlan0 rate 5.5M auto
-
-```
-
-Fixed option should ensure that the driver does not change the rate on its own, thus making the connection a bit more stable:
-
-```
-# iwconfig wlan0 rate 5.5M fixed
-
-```
-
-#### Lowering the txpower
-
-You can try lowering the transmit power. This may save power as well:
-
-```
-# iw phy0 set txpower fixed 500
-
-```
-
-Valid settings are from 0 to 2000, though certain values may be restricted by your card's regulatory domain.
-
-#### Setting RTS and fragmentation thresholds
+### Setting RTS and fragmentation thresholds
 
 Wireless hardware disables RTS and fragmentation by default. These are two different methods of increasing throughput at the expense of bandwidth (i.e. reliability at the expense of speed). These are useful in environments with wireless noise or many adjacent access points.
 
@@ -865,17 +832,6 @@ The solution is to set the `ps_enable=1` option for the `ath9k` module:
 
  `/etc/modprobe.d/ath9k.conf`  `options ath9k ps_enable=1` 
 
-##### ASUS
-
-With some ASUS laptops (tested with ASUS U32U series), it could help to add `options asus_nb_wmi wapf=1` to `/etc/modprobe.d/asus_nb_wmi.conf` to fix rfkill-related issues.
-
-You can also try to blacklist the module asus_nb_wmi (tested with ASUSPRO P550C):
-
-```
-# echo "blacklist asus_nb_wmi" >> /etc/modprobe.d/blacklist.conf
-
-```
-
 ### Intel
 
 #### ipw2100 与 ipw2200
@@ -915,9 +871,7 @@ If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps
 
 Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[2]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[3]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
-In case this does not work for you, you may try disabling power saving for your wireless adapter. For a permanent solution, add a new udev rule:
-
- `/etc/udev/rules.d/80-iwlwifi.rules`  `ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="<your_mac_address>", RUN+="/usr/bin/iw dev %k set power_save off"` 
+In case this does not work for you, you may try disabling [power saving](/index.php/Power_saving#Network_interfaces "Power saving") for your wireless adapter.
 
 [Some](http://ubuntuforums.org/showthread.php?t=2183486&p=12845473#post12845473) have never gotten this to work. [Others](http://ubuntuforums.org/showthread.php?t=2205733&p=12935783#post12935783) found salvation by disabling N in their router settings after trying everything. This is known to have be the only solution on more than one occasion. The second link there mentions a 5ghz option that might be worth exploring.
 
@@ -1029,34 +983,9 @@ iwconfig
 
 如果正常的话, 你应该可以看到wlan0接口了. 如果有问题的话, 你可以阅读： [Ndiswrapper installation wiki](http://ndiswrapper.sourceforge.net/joomla/index.php?/component/option,com_openwiki/Itemid,33/id,installation/). [ndiswrapper howto](http://sourceforge.net/p/ndiswrapper/ndiswrapper/HowTos/) 和 [ndiswrapper FAQ](http://sourceforge.net/p/ndiswrapper/ndiswrapper/FAQ/).
 
-### compat-drivers-patched
+### backports-patched
 
-Patched compat wireless drivers correct the "fixed-channel -1" issue, whilst providing better injection. Install the [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) package.
-
-[compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) does not conflict with any other package and the modules built reside in `/usr/lib/modules/*your_kernel_version*/updates`.
-
-These patched drivers come from the [Linux Wireless project](http://wireless.kernel.org/) and support many of the above mentioned chips such as:
-
-```
-ath5k ath9k_htc carl9170 b43 zd1211rw rt2x00 wl1251 wl12xx ath6kl brcm80211
-
-```
-
-Supported groups:
-
-```
-atheros ath iwlagn rtl818x rtlwifi wl12xx atlxx bt
-
-```
-
-It is also possible to build a specific module/driver or a group of drivers by editing the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), particularly uncommenting the **line #46**. Here is an example of building the atheros group:
-
-```
-scripts/driver-select atheros
-
-```
-
-Please read the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for any other possible modifications prior to compilation and installation.
+[backports-patched](https://aur.archlinux.org/packages/backports-patched/) 为老内核提供了新内核中无线网卡驱动的移植，项目从 2007 年开始，以前名称是 compat-wireless, 现在重命名为 backports. 如果使用旧内核并且有无线问题，可以试试这个软件包。
 
 ## 参见
 

@@ -29,7 +29,7 @@
 
 ## Setup
 
-Use **sensors-detect** to detect and generate a list of kernel modules:
+Use *sensors-detect* as root to detect and generate a list of kernel modules:
 
 **Warning:** Do not use anything other than the default options (by just hitting `Enter`), unless you know exactly what you are doing. See [#Laptop Screen issues after running sensors-detect](#Laptop_Screen_issues_after_running_sensors-detect).
 
@@ -104,7 +104,7 @@ temp2:        +37.4°C  (low  = -40.0°C, high = +70.0°C)
 
 ### Reading SPD values from memory modules (optional)
 
-To read the SPD timing values from memory modules, install [i2c-tools](https://www.archlinux.org/packages/?name=i2c-tools) from the [official repositories](/index.php/Official_repositories "Official repositories"). Once installed, load the `eeprom` [kernel module](/index.php/Kernel_module "Kernel module").
+To read the SPD timing values from memory modules, install the [i2c-tools](https://www.archlinux.org/packages/?name=i2c-tools) package. Once installed, load the `eeprom` [kernel module](/index.php/Kernel_module "Kernel module").
 
 ```
 # modprobe eeprom

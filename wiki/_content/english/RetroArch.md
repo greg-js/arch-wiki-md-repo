@@ -20,20 +20,18 @@ Install the [retroarch](https://www.archlinux.org/packages/?name=retroarch) pack
 
 ## Usage
 
-RetroArch uses separate libraries, called *emulator cores* or *emulator implementations*, available from both [Community](https://www.archlinux.org/packages/?q=libretro) and the [Libretro GitHub repository](https://github.com/libretro).
+RetroArch uses separate libraries, called "emulator cores" or "emulator implementations", available from both [Community](https://www.archlinux.org/packages/?q=libretro) and the [Libretro GitHub repository](https://github.com/libretro).
 
 Each libretro core package will install a library to `/usr/lib/libretro`. The syntax to choose one when executing *retroarch* is:
 
 ```
-$ retroarch -L /usr/lib/libretro/libretro-(emulation core).so ~/path/to/foo
+$ retroarch -L /usr/lib/libretro/libretro-*core*.so *path/to/rom*
 
 ```
 
-A default emulation core can be defined in `retroarch.cfg`, obviating the need to specify it on every run.
+A default emulation core can be defined in the configuration, obviating the need to specify it on every run.
 
-Example:
-
- `/etc/retroarch.cfg or ~/.retroarch.cfg`  `libretro_path = "/usr/lib/libretro/libretro-foo.so"` 
+ `/etc/retroarch.cfg or ~/.retroarch.cfg`  `libretro_path = "/usr/lib/libretro/libretro-*core*.so"` 
 
 ## Configuration
 

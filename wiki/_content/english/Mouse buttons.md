@@ -26,7 +26,6 @@ This article describes how to configure a mouse with more than 3 buttons.
     *   [6.1 xvkbd and xbindkeys](#xvkbd_and_xbindkeys)
     *   [6.2 evrouter](#evrouter)
     *   [6.3 Binding + and - in Logitech G5 mouse](#Binding_.2B_and_-_in_Logitech_G5_mouse)
-    *   [6.4 startup scripts](#startup_scripts)
 *   [7 User tools](#User_tools)
 *   [8 Device Specific Configuration Files](#Device_Specific_Configuration_Files)
     *   [8.1 Logitech G600](#Logitech_G600)
@@ -326,7 +325,7 @@ If you use GDM/XDM/KDM instead of .xinitrc, then create the file `~/.Xmodmap` an
 
 ```
 
-*   GDM/XDM/KDM read the `~/.Xmodmap` file if it's present, whereas `startx` does not. Another solution would be to add this to your ~/.xinitrc: `xmodmap -e $(cat ~/.Xmodmap)`. This would allow you to use *DM and `startx` while only having to edit `~/.Xmodmap` when you need to make changes.
+*   GDM/XDM/KDM read the `~/.Xmodmap` file if it's present, whereas `startx` does not. Another solution would be to add this to your ~/.xinitrc: `xmodmap ~/.Xmodmap`. This would allow you to use *DM and `startx` while only having to edit `~/.Xmodmap` when you need to make changes.
 
 You may have to play with these numbers a bit to get your desired behavior. Some mice use buttons 6 and 7 for the scroll wheel, in which case those buttons would have to be the last numbers. Keep playing with it until it works!
 
@@ -588,29 +587,7 @@ If you want to bind your `+` and `-` buttons you must copy the line at the botto
 
 For the newest G5 mouse which is reported as "product 0xc049" original hack does not work. You have to simply change the `#define MOUSE_G5 0xc041` to `#define MOUSE_G5 0xc049` and recompile.
 
-### startup scripts
-
-Currently, I am using a startup script with a few dirty methods, so if somebody can propose better, please edit. I have created an input group and made my user a member of it.
-
- `/etc/rc.local` 
-```
-#!/bin/bash
-# g5hack ran for a few times to make sure that it will work...
-# note that I have add it to /usr/bin, you should probably put your full path here
-# you probably should skip this lines, especially if you do not have a Logitech g5/g3/g7
-g5hack /dev/usb/hiddev0 3
-g5hack /dev/usb/hiddev0 3
-g5hack /dev/usb/hiddev0 3
-
-```
- `~/.kde/Autostart/init` 
-```
-#!/bin/bash
-# here I map my buttons so I can use G5 thumb button as push to talk in TS
-# note that I have to use it as middle button also on KDE
-# you probably do not need it
-xmodmap -e "pointer = 1 9 3 4 5 6 7 2 8 10 11 12"
-```
+You can execute the g5hack tool at system start up using systemd unit. See [Systemd#Writing_unit_files](/index.php/Systemd#Writing_unit_files "Systemd") for detail.
 
 ## User tools
 

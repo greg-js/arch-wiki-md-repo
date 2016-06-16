@@ -380,25 +380,11 @@ admin% screen
 *   There is no need to edit a `sudoers.pacnew` file;
 *   If there is a problem with a new entry, you can remove the offending file instead of editing `/etc/sudoers`.
 
-The format for entries in these drop-in files is the same as for `/etc/sudoers` itself. To edit them directly, use `visudo -f */path/to/file*`. See the **Including other files from within sudoers** section from `man sudoers` for details.
+The format for entries in these drop-in files is the same as for `/etc/sudoers` itself. To edit them directly, use `visudo -f */path/to/file*`. See the "Including other files from within sudoers" section of `man sudoers` for details.
 
-Be carefull, that the order of entries is still important even that each entry of the following example is in a separate (drop-in) file! E.g.:
+The files in `/etc/sudoers.d/` directory are parsed in lexicographical order, file names containing `.` or `~` are skipped. To avoid sorting problems, the file names should begin with two digits, e.g. `01_foo`.
 
-```
-%wheel ALL=(ALL) ALL
-%someothergroup ALL=(root) NOPASSWD: /usr/bin/some-command
-
-```
-
-or
-
-```
-%someothergroup ALL=(root) NOPASSWD: /usr/bin/some-command
-%wheel ALL=(ALL) ALL
-
-```
-
-The latter case will not work and sudo will still require a password for some-command. That said, sudo simply concatenates the drop-in files to the end of /etc/sudoers file. The order of the drop-in files is therefore dependent on both filenames and LC_COLLATE setting.
+**Note:** The order of entries in the drop-in files is important, make sure that the statements do not override themselves.
 
 ## Troubleshooting
 

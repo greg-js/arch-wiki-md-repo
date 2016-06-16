@@ -17,6 +17,7 @@
     *   [3.5 Custom keybindings](#Custom_keybindings)
 *   [4 Known issues](#Known_issues)
     *   [4.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
+    *   [4.2 hidpi](#hidpi)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -163,6 +164,10 @@ $ wget 'https://patch-diff.githubusercontent.com/raw/i3/i3/pull/2265.patch'
 # patch -p0 /usr/bin/i3-dmenu-desktop < 2265.patch
 
 ```
+
+### hidpi
+
+wlc (which sway relies on) does not currently support hidpi : [https://github.com/Cloudef/wlc/issues/57](https://github.com/Cloudef/wlc/issues/57)
 
 ## See also
 

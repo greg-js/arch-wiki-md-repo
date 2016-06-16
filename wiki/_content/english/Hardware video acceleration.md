@@ -14,12 +14,12 @@ There are several ways to achieve this on Linux:
 *   [2 Installation](#Installation)
     *   [2.1 Installing VA-API](#Installing_VA-API)
     *   [2.2 Installing VDPAU](#Installing_VDPAU)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Configuring VA-API](#Configuring_VA-API)
-    *   [3.2 Configuring VDPAU](#Configuring_VDPAU)
-*   [4 Verifying](#Verifying)
-    *   [4.1 Verifying VA-API](#Verifying_VA-API)
-    *   [4.2 Verifying VDPAU](#Verifying_VDPAU)
+*   [3 Verification](#Verification)
+    *   [3.1 Verifying VA-API](#Verifying_VA-API)
+    *   [3.2 Verifying VDPAU](#Verifying_VDPAU)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Configuring VA-API](#Configuring_VA-API)
+    *   [4.2 Configuring VDPAU](#Configuring_VDPAU)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Failed to open VDPAU backend](#Failed_to_open_VDPAU_backend)
     *   [5.2 VA-API vaInitialize failed](#VA-API_vaInitialize_failed)
@@ -144,7 +144,7 @@ There are several ways to achieve this on Linux:
 *   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
 *   Except GeForce GTX 970 and GTX 980.
 
-The features supported by your GPU may vary. To see what your GPU supports see [#Verifying](#Verifying).
+The features supported by your GPU may vary. To see what your GPU supports see [#Verification](#Verification).
 
 Regarding the [libvdpau-amdgpu-pro](https://aur.archlinux.org/packages/libvdpau-amdgpu-pro/) package, see also: [AMD Radeon™ Software AMD GPU-PRO Beta Driver – Linux® for Vulkan™ Release Notes](https://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Beta-Driver-for-Vulkan-Release-Notes.aspx). Loosely, this VDPAU driver is for the Radeon R9 family.
 
@@ -153,7 +153,7 @@ Regarding the [libvdpau-amdgpu-pro](https://aur.archlinux.org/packages/libvdpau-
  VA-API | VDPAU |
 | [GStreamer](/index.php/GStreamer "GStreamer") | ✓ (with [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi), see [GStreamer#Hardware acceleration](/index.php/GStreamer#Hardware_acceleration "GStreamer")) | ✓ (with [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad), see [GStreamer#Hardware acceleration](/index.php/GStreamer#Hardware_acceleration "GStreamer")) |
 | [VLC media player](/index.php/VLC_media_player "VLC media player") | ✓ (see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player")) | ✓ (see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player")) |
-| [mpv](/index.php/Mpv "Mpv") | ✓ (see [Mpv#Hardware Decoding](/index.php/Mpv#Hardware_Decoding "Mpv")) | ✓ (see [Mpv#Hardware Decoding](/index.php/Mpv#Hardware_Decoding "Mpv")) |
+| [mpv](/index.php/Mpv "Mpv") | ✓ (see [mpv#Hardware Decoding](/index.php/Mpv#Hardware_Decoding "Mpv")) | ✓ (see [mpv#Hardware Decoding](/index.php/Mpv#Hardware_Decoding "Mpv")) |
 | [MPlayer](/index.php/MPlayer "MPlayer") | ✓ (with [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/), see [MPlayer#Enabling VA-API](/index.php/MPlayer#Enabling_VA-API "MPlayer")) | ✓ (see [MPlayer#Enabling VDPAU](/index.php/MPlayer#Enabling_VDPAU "MPlayer")) |
 | [Flash](/index.php/Flash "Flash") | ✓ (with [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl), see [Flash#Configuration](/index.php/Flash#Configuration "Flash")) | ✓ (see [Flash#Configuration](/index.php/Flash#Configuration "Flash")) |
 | [Kodi](/index.php/Kodi "Kodi") | ✓ | ✓ |
@@ -165,7 +165,7 @@ The choice varies depending on your video card vendor:
 
 *   For Intel Graphics use VA-API.
 *   For NVIDIA cards use VDPAU.
-*   For AMD cards you have a choice: either VA-API with [mesa](https://www.archlinux.org/packages/?name=mesa) or VDPAU.
+*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)).
 
 There are also two specific types of drivers for VA-API and VDPAU:
 
@@ -206,43 +206,9 @@ For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 400 series and newer GPUs are supported by [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils).
     *   GeForce 8/9 and GeForce 100-300 series are supported by [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils).
 
-## Configuration
+## Verification
 
-### Configuring VA-API
-
-The [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) for VA-API is autodetected. To determine which one is used see [#Verifying](#Verifying). You can override it by setting the `LIBVA_DRIVER_NAME` [environment variable](/index.php/Environment_variable "Environment variable"):
-
-*   For Intel Graphics use `i965`.
-*   For NVIDIA use `vdpau`.
-*   For AMD use either `gallium` (for [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver)) or `vdpau` (for [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)).
-
-**Note:** You can find the installed drivers in `/usr/lib/dri/`.
-
-### Configuring VDPAU
-
-The driver for use with VDPAU is auto-detected, but you may need to override it by using the `VDPAU_DRIVER` [environment variable](/index.php/Environment_variable "Environment variable").
-
-The correct driver name depends on your setup:
-
-*   For Intel Graphics or AMD Catalyst you [need](#Failed_to_open_VDPAU_backend) to set it to `va_gl`.
-*   For the open source AMD/ATI driver set it to the proper driver version depending on your GPU (see below).
-*   For NVIDIA's proprietary version set it to `nvidia`.
-
-The driver name can determined by running:
-
- `$ grep -i vdpau ~/.local/share/xorg/Xorg.0.log` 
-```
-(II) RADEON(0): [DRI2] VDPAU driver: r300
-
-```
-
-In this case you want to set `VDPAU_DRIVER=r300`.
-
-**Note:** You can find the installed drivers in `/usr/lib/vdpau/`.
-
-For hybrid setups (both NVIDIA and AMD), it may be necessary to [set](/index.php/Environment_variable "Environment variable") `DRI_PRIME=1`. For more information see [PRIME](/index.php/PRIME "PRIME").
-
-## Verifying
+**Tip:** [mpv](/index.php/Mpv#Hardware_Decoding "Mpv") is great for testing hardware acceleration in practice.
 
 ### Verifying VA-API
 
@@ -290,13 +256,49 @@ Information string: NVIDIA VDPAU Driver Shared Library  364.19  Tue Apr 19 14:14
 
 ```
 
+## Configuration
+
+### Configuring VA-API
+
+The [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) for VA-API is autodetected. To determine which one is used see [#Verifying](#Verifying). You can override it by setting the `LIBVA_DRIVER_NAME` [environment variable](/index.php/Environment_variable "Environment variable"):
+
+*   For Intel Graphics use `i965`.
+*   For NVIDIA use `vdpau`.
+*   For AMD use either `gallium` (for [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver)) or `vdpau` (for [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)).
+
+**Note:** You can find the installed drivers in `/usr/lib/dri/`.
+
+### Configuring VDPAU
+
+The driver for use with VDPAU is auto-detected, but you may need to override it by using the `VDPAU_DRIVER` [environment variable](/index.php/Environment_variable "Environment variable").
+
+The correct driver name depends on your setup:
+
+*   For Intel Graphics or AMD Catalyst you [need](#Failed_to_open_VDPAU_backend) to set it to `va_gl`.
+*   For the open source AMD/ATI driver set it to the proper driver version depending on your GPU (see below).
+*   For NVIDIA's proprietary version set it to `nvidia`.
+
+The driver name can determined by running:
+
+ `$ grep -i vdpau ~/.local/share/xorg/Xorg.0.log` 
+```
+(II) RADEON(0): [DRI2] VDPAU driver: r300
+
+```
+
+In this case you want to set `VDPAU_DRIVER=r300`.
+
+**Note:** You can find the installed drivers in `/usr/lib/vdpau/`.
+
+For hybrid setups (both NVIDIA and AMD), it may be necessary to [set](/index.php/Environment_variable "Environment variable") `DRI_PRIME=1`. For more information see [PRIME](/index.php/PRIME "PRIME").
+
 ## Troubleshooting
 
 ### Failed to open VDPAU backend
 
 This happens when you use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) without overriding `VDPAU_DRIVER`. VDPAU doesn't know what driver to use in this case for some reason and guesses wrongly. See [#Configuring VDPAU](#Configuring_VDPAU).
 
-You may however to configure your media player to use VA-API instead, getting far better results, see [#Software](#Software).
+However you may want to configure your media player to use VA-API instead, getting far better results. See [#Software](#Software).
 
 ### VA-API vaInitialize failed
 

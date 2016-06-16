@@ -4,9 +4,8 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Hamachi 2 (beta)](#Hamachi_2_.28beta.29)
-        *   [2.1.1 Using the hamachi command line tool as a regular user](#Using_the_hamachi_command_line_tool_as_a_regular_user)
-        *   [2.1.2 Automatically setting a custom nickname](#Automatically_setting_a_custom_nickname)
+    *   [2.1 Using the hamachi command line tool as a regular user](#Using_the_hamachi_command_line_tool_as_a_regular_user)
+    *   [2.2 Automatically setting a custom nickname](#Automatically_setting_a_custom_nickname)
 *   [3 Running Hamachi](#Running_Hamachi)
     *   [3.1 Systemd](#Systemd)
 *   [4 GUI](#GUI)
@@ -18,11 +17,9 @@
 
 ## Configuration
 
-### Hamachi 2 (beta)
+Hamachi is configured in `/var/lib/logmein-hamachi/h2-engine-override.cfg` (create that file if it doesn't exist). Unfortunately, it isn't easy to find a comprehensive list of possible configuration options, so here are a few that you can use.
 
-Hamachi 2 is configured in `/var/lib/logmein-hamachi/h2-engine-override.cfg` (create that file if it doesn't exist). Unfortunately, it isn't easy to find a comprehensive list of possible configuration options, so here are a few that you can use.
-
-#### Using the hamachi command line tool as a regular user
+### Using the hamachi command line tool as a regular user
 
 In order to use the `hamachi` command line tool as a regular user, add the following line to the configuration file:
 
@@ -31,7 +28,7 @@ Ipc.User YourUserNameHere
 
 ```
 
-#### Automatically setting a custom nickname
+### Automatically setting a custom nickname
 
 Normally, Hamachi uses your system's hostname as the nickname that other Hamachi users will see. If you want to automatically set a custom nickname every time Hamachi starts, add the following line to the configuration file:
 
@@ -84,4 +81,4 @@ The following GUI frontends for Hamachi are available in the AUR:
 
 ## See also
 
-*   [Project home page](https://secure.logmein.com/products/hamachi/)
+*   [Project home page](https://www.vpn.net/)

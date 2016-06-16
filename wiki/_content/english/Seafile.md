@@ -4,19 +4,20 @@ Collections of files are called libraries, and each library can be synced separa
 
 Seafile lets you create groups with file syncing, wiki, and discussion -- enabling easy collaboration around documents within a team.
 
+This article covers the installation of the Seafile server. If you only require a client to access a Seafile server, [install](/index.php/Install "Install") [seafile-client](https://aur.archlinux.org/packages/seafile-client/) or [seafile-client-cli](https://aur.archlinux.org/packages/seafile-client-cli/).
+
 ## Contents
 
-*   [1 Server](#Server)
-    *   [1.1 Installation](#Installation)
-    *   [1.2 Setup a server instance](#Setup_a_server_instance)
-    *   [1.3 Deploy an instance with Nginx](#Deploy_an_instance_with_Nginx)
-    *   [1.4 Upgrading](#Upgrading)
-    *   [1.5 Running Seafile GC](#Running_Seafile_GC)
-*   [2 Sources](#Sources)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Setup a server instance](#Setup_a_server_instance)
+    *   [2.2 Deploy an instance with Nginx](#Deploy_an_instance_with_Nginx)
+*   [3 Maintenance](#Maintenance)
+    *   [3.1 Upgrading](#Upgrading)
+    *   [3.2 Running Seafile GC](#Running_Seafile_GC)
+*   [4 See also](#See_also)
 
-## Server
-
-### Installation
+## Installation
 
 Install [seafile-server](https://aur.archlinux.org/packages/seafile-server/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
 
@@ -26,6 +27,8 @@ As root, add a new user to run seafile server instances under:
 # useradd -m -r -d /srv/seafile -s /usr/bin/nologin seafile
 
 ```
+
+## Configuration
 
 ### Setup a server instance
 
@@ -44,7 +47,7 @@ $ cd $HOME/example.org
 
 ```
 
-***Note:*** **Replace every occurence of 'example.org' on this page with the actual domain of your new server instance**
+**Note:** Replace every occurence of *example.org* on this page with the actual domain of your new server instance
 
 Determine the appropriate seahub version (it will be shown in the format 'x.y.z-r', e.g. 3.0.2):
 
@@ -53,7 +56,7 @@ $ pacman -Qi seafile-server | grep Version
 
 ```
 
-Set the SEAFILE_SERVER_VERSION variable to the 'x.y.z' retrieved in the previous step:
+Set the `SEAFILE_SERVER_VERSION` variable to the 'x.y.z' retrieved in the previous step:
 
 ```
 $ SEAFILE_SERVER_VERSION=3.0.3
@@ -83,7 +86,7 @@ To create the configuration for the seafile server instance choose and follow th
 Those initial setup steps can be done with the `seafile-admin` command as the seafile user. Be sure to execute them in the correct directory:
 
 ```
-$ cd $HOME/example.org
+$ cd $HOME/*example.org*
 $ seafile-admin setup
 
 ```
@@ -91,7 +94,7 @@ $ seafile-admin setup
 If you wish to have non-english consistent language support you need to compile your language by executing the following command:
 
 ```
-$ cd $HOME/example.org/seafile-server/seahub/locale/<yourlanguage>/LC_MESSAGES/
+$ cd $HOME/*example.org*/seafile-server/seahub/locale/<yourlanguage>/LC_MESSAGES/
 $ msgfmt -o django.mo django.po
 
 ```
@@ -103,28 +106,23 @@ $ echo "LANGUAGE='<yourlanguage>'" >> $HOME/example.org/seahub_settings.py
 
 ```
 
-Now, copy the systemd service for seafile 'seafile-server@.service' from /usr/lib/systemd/system/ to /etc/systemd/system and replace the two occurences of '%h' in it with the actual $HOME for the user setup in [#Installation](#Installation).
+Now, copy the systemd service for seafile `seafile-server@.service` from `/usr/lib/systemd/system/` to `/etc/systemd/system` and replace the two occurences of `%h` in it with the actual $HOME for the user set up in [#Installation](#Installation).
 
-If you did not yet setup nginx and if you want to test out seafiles own web-frontend-implementation seahub purely, you have to edit the systemd-service file, were you replaced the '%h' with your $HOME, and delete the --fastcgi parameter from the start script, as fastcgi is not supported with seahub-only.
+If you did not yet setup nginx and if you want to test out Seafile's own web-frontend-implementation seahub purely, you have to edit the systemd-service file, were you replaced the `%h` with your $HOME, and delete the `--fastcgi` parameter from the start script, as fastcgi is not supported with seahub-only.
 
 To manually start your new seafile server, run as root:
 
 ```
-# systemctl start seafile-server@example.org
+# systemctl start seafile-server@*example.org*
 
 ```
 
-To automatically start your new seafile server at system startup, run as root:
-
-```
-# systemctl enable seafile-server@example.org
-
-```
+If it starts up fine, you may also [enable](/index.php/Enable "Enable") the service.
 
 After starting the seafile server daemon, you can create an admin user for your seafile instance:
 
 ```
-$ cd $HOME/example.org
+$ cd $HOME/*example.org*
 $ seafile-admin create-admin
 
 ```
@@ -177,6 +175,8 @@ server {
 }
 
 ```
+
+## Maintenance
 
 ### Upgrading
 
@@ -257,7 +257,7 @@ $ seafserv-gc -c /srv/seafile/example.org/ccnet -d /srv/seafile/example.org/seaf
 
 If the output looks okay, proceed to run the same command without the --dry-run argument.
 
-## Sources
+## See also
 
 *   [http://manual.seafile.com/deploy/README.html](http://manual.seafile.com/deploy/README.html)
 *   [http://manual.seafile.com/deploy/deploy_with_nginx.html](http://manual.seafile.com/deploy/deploy_with_nginx.html)

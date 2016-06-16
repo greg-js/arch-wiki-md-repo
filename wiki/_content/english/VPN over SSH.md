@@ -3,10 +3,11 @@ There are several ways to set up a Virtual Private Network through SSH. Note tha
 ## Contents
 
 *   [1 OpenSSH's built in tunneling](#OpenSSH.27s_built_in_tunneling)
-    *   [1.1 Create tun interfaces](#Create_tun_interfaces)
-        *   [1.1.1 Creating interfaces in SSH command](#Creating_interfaces_in_SSH_command)
-    *   [1.2 Start SSH](#Start_SSH)
-    *   [1.3 Troubleshooting](#Troubleshooting)
+    *   [1.1 Create tun interfaces using netctl](#Create_tun_interfaces_using_netctl)
+    *   [1.2 Create tun interfaces using systemd-networkd](#Create_tun_interfaces_using_systemd-networkd)
+        *   [1.2.1 Creating interfaces in SSH command](#Creating_interfaces_in_SSH_command)
+    *   [1.3 Start SSH](#Start_SSH)
+    *   [1.4 Troubleshooting](#Troubleshooting)
 *   [2 Using PPP over SSH](#Using_PPP_over_SSH)
     *   [2.1 Helper script](#Helper_script)
 *   [3 See also](#See_also)
@@ -15,7 +16,7 @@ There are several ways to set up a Virtual Private Network through SSH. Note tha
 
 OpenSSH has built-in TUN/TAP support using -w<local-tun-number>:<remote-tun-number>. Here, a layer 3/point-to-point/ TUN tunnel is described. It is also possible to create a layer 2/ethernet/TAP tunnel.
 
-### Create tun interfaces
+### Create tun interfaces using netctl
 
 Create tun interfaces:
 
@@ -34,6 +35,31 @@ IPCFG=('ip route add <REMOTE-NETWORK/MASK> via <REMOTE-SIDE-IP>')
 ```
 
 Then do 'netcfg -u vpn' or add it into /etc/conf.d/netcfg.
+
+### Create tun interfaces using systemd-networkd
+
+```
+$ cat /etc/systemd/network/vpn.netdev 
+[NetDev]
+Name=tun5
+Kind=tun
+MTUBytes=1480
+
+[TUN]
+User=vpn
+Group=network
+
+$ cat /etc/systemd/network/vpn.network 
+[Match]
+Name=tun5
+
+[Address]
+Address=192.168.200.2/24
+```
+
+Once these files are created, enable them by restarting systemd-networkd
+
+ `# systemctl restart systemd-networkd.service` 
 
 Also you may manage tun interfaces with 'ip tunnel' command.
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [MySQL](/index.php/MySQL "MySQL") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-29，点击[这里](https://wiki.archlinux.org/index.php?title=MySQL&diff=0&oldid=394453)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [MySQL](/index.php/MySQL "MySQL") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-07，点击[这里](https://wiki.archlinux.org/index.php?title=MySQL&diff=0&oldid=435153)可以查看翻译后英文页面的改动。
 
 MySQL是一个广泛使用的多线程多用户式数据库。具体特性请参看[官方网站](http://www.mysql.com/)。
 
@@ -46,6 +46,8 @@ Archlinux 选择的 MySQL 实现被称为 MariaDB。 [安装](/index.php/Pacman 
 
 启动 `mysqld` [守护进程](/index.php/Daemon "Daemon")，运行安装脚本，然后重新启动守护进程：
 
+**Tip:** 如果数据目录使用的不是 `/var/lib/mysql`，需要 [编辑](/index.php/Systemd#Editing_provided_units "Systemd") `mysqld.service` 文件并将目录设置到 `ExecStart` 行.
+
 ```
 # systemctl start mysqld
 # mysql_secure_installation
@@ -53,7 +55,7 @@ Archlinux 选择的 MySQL 实现被称为 MariaDB。 [安装](/index.php/Pacman 
 
 ```
 
-为了简化管理过程，可用的管理前端有 [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) 和 [Adminer](/index.php/Adminer "Adminer")。
+为了简化管理过程，可用的管理前端有 [dbeaver](https://aur.archlinux.org/packages/dbeaver/), [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench), [Adminer](/index.php/Adminer "Adminer") 或 [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) 和 MariaDB 并不完全兼容，但是可以执行基本任务。
 
 ### 升级
 
@@ -91,13 +93,13 @@ $ mysql -p -u root
 
 ### 添加新用户
 
-以下是创建一个密码为'some_pass'的'monty'用户的示例。
+以下是创建一个密码为'some_pass'的'monty'用户的示例,并赋予 mydb 完全操作权限：
 
  `$ mysql -u root -p` 
 ```
 MariaDB> CREATE USER 'monty'@'localhost' IDENTIFIED BY 'some_pass';
-MariaDB> GRANT ALL PRIVILEGES ON *.* TO 'monty'@'localhost'
-   ->     WITH GRANT OPTION;
+MariaDB> GRANT ALL PRIVILEGES ON mydb.* TO 'monty'@'localhost'
+MariaDB> FLUSH PRIVILEGES;
 MariaDB> quit
 ```
 
@@ -366,6 +368,14 @@ $ mysql -u <user> -p"<some-veryveryveryveryveryveryveryveryveryveryveryveryveryv
 
 ```
 
+或者限制 logfile 的大小：
+
+```
+expire_logs_days = 10
+max_binlog_size  = 100M
+
+```
+
 另外，您也可以执行以下命令来清除 `/var/lib/mysql` 里的一些日志文件来释放硬盘空间：
 
 ```
@@ -381,6 +391,5 @@ $ mysql -u <user> -p"<some-veryveryveryveryveryveryveryveryveryveryveryveryveryv
 *   [http://www.percona.com/software](http://www.percona.com/software) - Percona 实现
 *   [MariaDB knowledge Base](https://mariadb.com/kb/en/)
 *   [MySQL documentation](http://dev.mysql.com/doc/)
-*   [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") - ArchWiki article covering the web-based tool to help manage MySQL databases using an Apache/PHP front-end.
 *   [PHP](/index.php/PHP "PHP") - ArchWiki article on PHP.
 *   [MySQL Performance Tuning Scripts and Know-How](http://www.askapache.com/mysql/performance-tuning-mysql.html)

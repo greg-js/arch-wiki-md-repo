@@ -35,7 +35,7 @@ To fix this, add the user `exim` to the group `log`. Then change the group of th
 
 ### Check logrotate status
 
-Run `cat /var/lib/logrotate.status` to se which logrotate files were rotated.
+Run `cat /var/lib/logrotate.status` to see which logrotate files were rotated.
 
 ```
 "/var/log/mysql/query.log" 2016-3-20-5:0:0

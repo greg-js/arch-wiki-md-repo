@@ -29,8 +29,7 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
     *   [5.4 Missing twi.o](#Missing_twi.o)
     *   [5.5 Working with Uno/Mega2560](#Working_with_Uno.2FMega2560)
     *   [5.6 Error compiling](#Error_compiling)
-    *   [5.7 avrdude missing libtinfo.so.5](#avrdude_missing_libtinfo.so.5)
-    *   [5.8 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
+    *   [5.7 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -330,24 +329,6 @@ see this fix [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1343402#p1343402)
 To use the avr tools that are system installed, remove the avr directory as per the Arduino Linux install page: "If you want to use your system's compiler, delete the folder `./hardware/tools/avr` in your arduino IDE installation"
 
 An alternate approach to take is to download the corresponding Linux install from Arduino.cc and replace the `/usr/share/arduino/hardware/tools/avr` directory with the avr directory that comes in the stock installation archive.
-
-### avrdude missing libtinfo.so.5
-
-When uploading a sketch to the Arduino, the following message is thrown in the Arduino UI concole:
-
-```
- /usr/share/arduino/hardware/tools/avr/bin/avrdude: error while loading shared libraries: libtinfo.so.5: cannot open shared object file: No such file or directory
-
-```
-
-Solve the dependency problem by creating a symbolic link
-
-```
-# ln -s /usr/lib/libncurses.so.5 /usr/lib/libtinfo.so.5
-
-```
-
-For more info: [https://bbs.archlinux.org/viewtopic.php?pid=1108717#p1108717](https://bbs.archlinux.org/viewtopic.php?pid=1108717#p1108717)
 
 ### Application not resizing with WM, menus immediately closing
 

@@ -156,7 +156,7 @@ Append the following to either the system-wide (`/etc/mplayer/mplayer.conf`) or 
 
 ```
 vo=vdpau,
-vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,
+vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,ffhevcvdpau
 
 ```
 

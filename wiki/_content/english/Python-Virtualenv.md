@@ -1,62 +1,111 @@
-*virtualenv* is a Python tool written by Ian Bicking and used to create isolated environments for [Python](/index.php/Python "Python") in which you can install packages without interfering with the other virtualenvs nor with the system Python's packages. The present article covers the installation of the *virtualenv* package and its companion command line utility *virtualenvwrapper* designed by Doug Hellmann to (greatly) improve your work flow. A quick how-to to help you to begin working inside virtual environment is then provided.
+*virtualenv* is a tool used to create an isolated workspace for a [Python](/index.php/Python "Python") application. It has various advantages such as the ability to install modules locally, export a working environment, and execute a [Python](/index.php/Python "Python") program in that environment.
 
 ## Contents
 
-*   [1 Virtual Environments at a glance](#Virtual_Environments_at_a_glance)
-*   [2 Virtualenv](#Virtualenv)
-    *   [2.1 Installation](#Installation)
-    *   [2.2 Basic Usage](#Basic_Usage)
-*   [3 Virtualenvwrapper](#Virtualenvwrapper)
-    *   [3.1 Installation](#Installation_2)
-    *   [3.2 Basic Usage](#Basic_Usage_2)
-*   [4 See Also](#See_Also)
+*   [1 Overview](#Overview)
+*   [2 Installation](#Installation)
+    *   [2.1 Packages](#Packages)
+*   [3 Usage](#Usage)
+    *   [3.1 Creation](#Creation)
+        *   [3.1.1 pyvenv](#pyvenv)
+        *   [3.1.2 virtualenv](#virtualenv)
+    *   [3.2 Activation](#Activation)
+    *   [3.3 Normal Activities](#Normal_Activities)
+*   [4 Python Versions](#Python_Versions)
+*   [5 Virtualenvwrapper](#Virtualenvwrapper)
+    *   [5.1 Installation](#Installation_2)
+    *   [5.2 Basic Usage](#Basic_Usage)
+*   [6 See Also](#See_Also)
 
-## Virtual Environments at a glance
+## Overview
 
-*virtualenv* is a tool designated to address the problem of dealing with packages' dependencies while maintaining different versions that suit projects' needs. For example, if you work on two Django web sites, say one that needs Django 1.2 while the other needs the good old 0.96\. You have no way to keep both versions if you install them into /usr/lib/python2/site-packages . Thanks to virtualenv it's possible, by creating two isolated environments, to have the two development environment to play along nicely.
+A virtual environment is a directory into which some binaries and shell scripts are installed. The binaries include `python` for executing scripts and `pip` for installing other modules within the environment. There are also shell scripts (one for [bash](/index.php/Bash "Bash"), csh, and [fish](/index.php/Fish "Fish")) to activate the environment. Essentially, a virtual environment mimics a full system install of [Python](/index.php/Python "Python") and all of the desired modules without interfering with any system on which the application might run.
 
-*vitualenvwrapper* takes *virtualenv* a step further by providing convenient commands you can invoke from your favorite console.
+## Installation
 
-*venv* is [a built-in module](https://docs.python.org/3/library/venv.html) added in version 3.3, implementing a similar API to *virtualenv*.
+[Python](/index.php/Python "Python") 3.3+ comes with a tool called `pyvenv` and an API called *venv* for extending the native implementation. For applications that require an older version of Python, `virtualenv` must be used.
 
-## Virtualenv
+### Packages
 
-*virtualenv* supports Python 2.6+ and Python 3.x. See [Python#Python 3](/index.php/Python#Python_3 "Python") for an overview of the different versions of Python.
+[Install](/index.php/Install "Install") one of these packages from the [official repositories](/index.php/Official_repositories "Official repositories") to use a Python virtual environment.
 
-### Installation
+*   Python 3.3+: [python](https://www.archlinux.org/packages/?name=python)
+*   Python 3: [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv)
+*   Python 2: [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv)
 
-[Install](/index.php/Install "Install") [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv), or [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) for the legacy version.
+## Usage
 
-### Basic Usage
+All three tools use a similar workflow.
 
-An extended tutorial on how use *virtualenv* for sandboxing can be found [here](http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox). If the link does not work, try [the archive link](http://web.archive.org/web/20120304235158/http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox). A simple use case is as follows:
+### Creation
 
-*   Create a virtualenv:
+Use `pyvenv` or `virtualenv` to create the virtual environment within your project directory. Be sure to exclude the venv directory from version control--a copy of `pip freeze` will be enough to rebuild it.
 
-```
-$ virtualenv my_env
+#### pyvenv
 
-```
-
-*   Activate the virtualenv:
-
-```
-$ source my_env/bin/activate
-
-```
-
-*   Install some package inside the virtualenv (say, Django):
+This tool is provided by [python](https://www.archlinux.org/packages/?name=python) (3.3+).
 
 ```
-(my_env)$ pip install django
+$ pyvenv venv
 
 ```
 
-*   Do your things
-*   Leave the virtualenv:
+#### virtualenv
+
+Use `virtualenv` for Python 3, available in [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv).
 
 ```
-(my_env)$ deactivate
+$ virtualenv venv
+
+```
+
+And `virtualenv2` for Python 2, available in [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
+
+```
+$ virtualenv2 venv
+
+```
+
+### Activation
+
+Use one of the provided shell scripts to activate and deactivate the environment. This example assumes bash is used.
+
+```
+$ source venv/bin/activate
+(venv) $ which python
+(venv) $ deactivate  # this is a shell function provided by bin/activate
+$ which python
+
+```
+
+### Normal Activities
+
+Once inside the virtual environment, modules can be installed and scripts can be run as normal:
+
+```
+(venv) $ python -c 'import requests; print("**this will not display because requests is not installed**")'
+(venv) $ pip install requests
+(venv) $ python -c 'import requests; print("**requests is now installed in the virtual environment**")'
+
+```
+
+## Python Versions
+
+The binary versions depend on which virtual environment tool was used. For instance, the `python` command used in the Python 2 example points to `bin/python2.7`, while the one in the `pyvenv` example points to `bin/python3.5`.
+
+One major difference between `pyvenv` and `virtualenv` is that the former uses the system's Python binary by default:
+
+```
+$ ls -l pyvenv/bin/python3.5
+lrwxrwxrwx 1 foo foo 7 Jun  3 19:57 pyvenv/bin/python3.5 -> /usr/bin/python3
+
+```
+
+The `virtualenv` tool uses a separate Python binary in the environment directory:
+
+```
+$ ls -l venv3/bin/python3.5
+lrwxrwxrwx 1 foo foo 7 Jun  3 19:58 venv3/bin/python3.5 -> python3
 
 ```
 
@@ -71,8 +120,8 @@ $ source my_env/bin/activate
 Now add the following lines to your `~/.bashrc`:
 
 ```
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+$ export WORKON_HOME=~/.virtualenvs
+$ source /usr/bin/virtualenvwrapper.sh
 
 ```
 
@@ -111,7 +160,7 @@ $ workon my_env
 *   Install some package inside the virtualenv (say, Django):
 
 ```
-(my_env)$ pip install django
+(my_env) $ pip install django
 
 ```
 
@@ -119,12 +168,13 @@ $ workon my_env
 *   Leave the virtualenv:
 
 ```
-(my_env)$ deactivate
+(my_env) $ deactivate
 
 ```
 
 ## See Also
 
+*   [Python venv (pyvenv)](https://docs.python.org/3/library/venv.html)
 *   [virtualenv Pypi page](https://pypi.python.org/pypi/virtualenv)
 *   [Tutorial for virtualenv](http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox)
 *   [virtualenvwrapper page at Doug Hellmann's](http://www.doughellmann.com/docs/virtualenvwrapper/)

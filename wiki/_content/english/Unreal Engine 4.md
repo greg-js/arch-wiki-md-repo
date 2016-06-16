@@ -9,18 +9,13 @@ The content of this article was originally written on [this page](https://wiki.u
     *   [2.1 Register to get the source code](#Register_to_get_the_source_code)
     *   [2.2 Installing from the AUR](#Installing_from_the_AUR)
     *   [2.3 Compile from source code](#Compile_from_source_code)
-        *   [2.3.1 Satisfy dependencies](#Satisfy_dependencies)
-        *   [2.3.2 Get the source code](#Get_the_source_code)
-        *   [2.3.3 Prepare to compile](#Prepare_to_compile)
-        *   [2.3.4 Compile the source code](#Compile_the_source_code)
-*   [3 Run Unreal Engine 4](#Run_Unreal_Engine_4)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Compilation problems](#Compilation_problems)
-    *   [4.2 Runtime problems](#Runtime_problems)
-    *   [4.3 C++ code project problems](#C.2B.2B_code_project_problems)
-*   [5 Additional Content](#Additional_Content)
-    *   [5.1 Starter Content](#Starter_Content)
-    *   [5.2 Marketplace Apps](#Marketplace_Apps)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Compilation problems](#Compilation_problems)
+    *   [3.2 Runtime problems](#Runtime_problems)
+    *   [3.3 C++ code project problems](#C.2B.2B_code_project_problems)
+*   [4 Additional Content](#Additional_Content)
+    *   [4.1 Starter Content](#Starter_Content)
+    *   [4.2 Marketplace Apps](#Marketplace_Apps)
 
 ## Minimum requirements
 
@@ -42,48 +37,11 @@ The package is 22 GiB once installed, so it needs about 100 GiB free space to bu
 
 Since the repository is private, you can [set up an SSH key](https://help.github.com/articles/generating-an-ssh-key/) so your GitHub account is used to download the source.
 
+For a smaller download, you can [download the release as a tar.gz](https://github.com/EpicGames/UnrealEngine/releases) after logging into github.com, then use that file as the source in the PKGBUILD.
+
 ### Compile from source code
 
-#### Satisfy dependencies
-
-Install [clang](https://www.archlinux.org/packages/?name=clang), [mono](https://www.archlinux.org/packages/?name=mono), [dos2unix](https://www.archlinux.org/packages/?name=dos2unix) and [cmake](https://www.archlinux.org/packages/?name=cmake).
-
-#### Get the source code
-
-Download the source code with the following command, logging in with a github account which is registered on unrealengine.com:
-
-```
-$ git clone -b release https://github.com/EpicGames/UnrealEngine.git
-
-```
-
-#### Prepare to compile
-
-```
-$ cd UnrealEngine
-$ ./Setup.sh
-$ ./GenerateProjectFiles.sh
-
-```
-
-#### Compile the source code
-
-To compile the source code execute the following command:
-
-```
-$ make UE4Editor UE4Game UnrealPak CrashReportClient ShaderCompileWorker UnrealLightmass
-
-```
-
-This process will take a long time.
-
-## Run Unreal Engine 4
-
-```
-$ cd Engine/Binaries/Linux
-$ ./UE4Editor
-
-```
+To compile manually, refer to [the official instructions to build on Linux](https://wiki.unrealengine.com/Building_On_Linux#Building).
 
 ## Troubleshooting
 

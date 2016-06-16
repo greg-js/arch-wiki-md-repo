@@ -21,23 +21,11 @@ Tomcat is an open source Java [Servlet container](https://en.wikipedia.org/wiki/
 
 ## Installation
 
-See the previous paragraph to choose which version to install:
+Install one of [tomcat6](https://www.archlinux.org/packages/?name=tomcat6), [tomcat7](https://www.archlinux.org/packages/?name=tomcat7), or [tomcat8](https://www.archlinux.org/packages/?name=tomcat8).
 
-```
-pacman -S tomcat6
-pacman -S tomcat7
-pacman -S tomcat8
+If deploying Tomcat onto a production environment, consider installing [tomcat-native](https://www.archlinux.org/packages/?name=tomcat-native). The native library for Tomcat configures the server to use the Apache Portable Runtime (APR) library's network connection (socket) and RNG implementations. It uses native 32- or 64-bit code to enhance performance and is sometimes used in production environments where speed is crucial. No configuration is necessary for default Tomcat installations. More information is availble in the [official Tomcat docs](http://tomcat.apache.org/native-doc/).
 
-```
-
-If using out of a development environment (e.g. production), consider installing [tomcat-native](http://tomcat.apache.org/native-doc/):
-
-```
-pacman -S tomcat-native
-
-```
-
-This adds native 32b/64b code to enhance performance. This will remove the following warning in `catalina.err`:
+Using tomcat-native will remove the following warning in `catalina.err`:
 
 ```
 INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path [...]

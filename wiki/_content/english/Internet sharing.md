@@ -14,10 +14,11 @@ This article explains how to share the internet connection from one machine to o
 
 ## Requirements
 
-*   The machine acting as server should have an additional network device.
-*   That network device should be connected to the machines that are going to receive internet access. They can be one or more machines. To be able to share internet to several machines a [switch](https://en.wikipedia.org/wiki/Network_switch "wikipedia:Network switch") is required. If you are sharing to only one machine, a [crossover cable](https://en.wikipedia.org/wiki/Ethernet_crossover_cable "wikipedia:Ethernet crossover cable") is sufficient.
+The machine acting as server should have an additional network device. That network device requires a functional [w:data link layer](https://en.wikipedia.org/wiki/data_link_layer "w:data link layer") to the machine(s) that are going to receive internet access:
 
-**Note:** If one of the two computers has a gigabit ethernet card, a crossover cable is not necessary and a regular ethernet cable should be enough
+*   To be able to share internet to several machines a [switch](https://en.wikipedia.org/wiki/Network_switch "wikipedia:Network switch") can provide the data link.
+*   A wireless device can share access to several machines as well, see [Software access point](/index.php/Software_access_point "Software access point") first for this case.
+*   If you are sharing to only one machine, a [crossover cable](https://en.wikipedia.org/wiki/Ethernet_crossover_cable "wikipedia:Ethernet crossover cable") is sufficient. In case one of the two computers' ethernet cards has [MDI-X](https://en.wikipedia.org/wiki/Medium_Dependent_Interface#Auto_MDI-X "w:Medium Dependent Interface") capability, a crossover cable is not necessary and a regular ethernet cable can be used. Executing `ethtool *interface* | grep MDI` as root helps to figure it.
 
 ## Configuration
 
@@ -125,3 +126,4 @@ If you are able to connect the two PCs but cannot send data (for example, if the
 ## See also
 
 *   [Xyne's guide and scripts for launching a subnet with DHCP and DNS](http://xyne.archlinux.ca/notes/network/dhcp_with_dns.html)
+*   [NetworkManager](/index.php/NetworkManager "NetworkManager") can be configured for internet sharing if used.

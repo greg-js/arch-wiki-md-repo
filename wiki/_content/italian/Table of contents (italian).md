@@ -33,7 +33,7 @@
 | <small>4.6.</small> [Dispositivi di input](/index.php/Category:Input_devices_(Italiano) "Category:Input devices (Italiano)") <small>(2)</small> |
 | <small>4.6.1.</small> [Tastiere](/index.php/Category:Keyboards_(Italiano) "Category:Keyboards (Italiano)") <small>(1)</small> |
 | <small>4.6.2.</small> [Mouse](/index.php/Category:Mice_(Italiano) "Category:Mice (Italiano)") <small>(1)</small> |
-| <small>4.7.</small> [Portatili](/index.php/Category:Laptops_(Italiano) "Category:Laptops (Italiano)") <small>(6)</small> |
+| <small>4.7.</small> [Portatili](/index.php/Category:Laptops_(Italiano) "Category:Laptops (Italiano)") <small>(5)</small> |
 | <small>4.7.1.</small> [ASUS](/index.php/Category:ASUS_(Italiano) "Category:ASUS (Italiano)") <small>(1)</small> |
 | <small>4.8.</small> [Schede madre e BIOS](/index.php/Category:Mainboards_and_BIOS_(Italiano) "Category:Mainboards and BIOS (Italiano)") <small>(1)</small> |
 | <small>4.9.</small> [Modem](/index.php/Category:Modems_(Italiano) "Category:Modems (Italiano)") <small>(1)</small> |

@@ -235,6 +235,13 @@ You may or may not get sound back after a few restarts. This is a bug and has be
 
 Things you can try:
 
+- Disable audio, microphone, and internal speaker from BIOS, let it boot into Arch, shutdown, re-enable audio settings, and boot into Arch with sound back. This has worked 100% of the time... so far.
+
+```
+sudo mkinitcpio -p linux
+
+```
+
 ```
 sudo modprobe snd_hda_intel
 
@@ -242,9 +249,9 @@ sudo modprobe snd_hda_intel
 
 Then reboot.
 
-Use the linux-lts kernel until the bug is resolved. Click here for more information on changing your kernel: [System maintenance#Install the linux-lts package](/index.php/System_maintenance#Install_the_linux-lts_package "System maintenance")
+- Use the linux-lts kernel. Click here for more information on changing your kernel: [System maintenance#Install the linux-lts package](/index.php/System_maintenance#Install_the_linux-lts_package "System maintenance")
 
-If changing the kernel does not work, make sure FluidSynth is installed and enabled (systemctl enable fluidsynth). Then ensure the line "AUDIO_DRIVER" in /etc/conf.d/fluidsynth matches this:
+- Make sure FluidSynth is installed and enabled (systemctl enable fluidsynth). Then ensure the line "AUDIO_DRIVER" in /etc/conf.d/fluidsynth matches this:
 
 ```
 ...

@@ -393,24 +393,12 @@ About the numbers: DELL on the left and Samsung on the right. So the virtual wid
 
 ### Full RGB in HDMI
 
-Background: May occur that the intel driver will not configure correctly the output of the HDMI monitor. It will set a limited "Broadcast RGB"(limited 16-235), and the black will not look black, it will be grey.
+It may occur that the [Intel](/index.php/Intel "Intel") driver will not configure correctly the output of the HDMI monitor. It will set a limited color range (16-235) using the [Broadcast RGB property](https://patchwork.kernel.org/patch/1972181/), and the black will not look black, it will be grey.
 
 To see if it is your case:
 
- `Run in the terminal` 
 ```
-/usr/bin/xrandr --output HDMI1 --set "Broadcast RGB" "Full"
-
-```
-
-Note: Run xrandr without arguments to see if it is really HDMI1 in your case.
-
-If it fixed your issue, you can configure it permanently creating a file in /etc/X11/xinit/xinitrc.d/70-fullrgb.sh. Don't forget to change the permissions for the file to be executable (I used chmod 755).
-
-```
-if [ "$(/usr/bin/xrandr -q --prop | grep 'Broadcast RGB: Full' | wc -l)" = "0" ] ; then
-/usr/bin/xrandr --output HDMI1 --set "Broadcast RGB" "Full"
-fi
+$ xrandr --output HDMI1 --set "Broadcast RGB" "Full"
 
 ```
 
@@ -420,4 +408,3 @@ fi
 *   [RandR 1.2 tutorial](http://wiki.debian.org/XStrikeForce/HowToRandR12)
 *   [Xorg RandR 1.2 on ThinkWiki](http://www.thinkwiki.org/wiki/Xorg_RandR_1.2)
 *   [FAQVideoModes - more information about modelines](http://www.x.org/wiki/FAQVideoModes#ObtainingmodelinesfromWindowsprogramPowerStrip)
-*   [RGB Correction issue](https://patchwork.kernel.org/patch/1972181/)

@@ -82,7 +82,7 @@ Environment="NO_AT_BRIDGE=1"
 
 #### PATH
 
-As any other environment variable you set in `.bashrc` or `.bash_profile`, the `PATH` variable is not available to systemd. If you customize your `PATH` and plan on launching applications that make use of it from systemd units, you should make sure the modified `PATH` is set on the systemd environment. Assuming you set your `PATH` in `.bash_profile`, the best way to make systemd aware of your modified `PATH` is by adding the following to `.bash_profile` after the `PATH` variable is set:
+If you customize your `PATH` and plan on launching applications that make use of it from systemd units, you should make sure the modified `PATH` is set on the systemd environment. Assuming you set your `PATH` in `.bash_profile`, the best way to make systemd aware of your modified `PATH` is by adding the following to `.bash_profile` after the `PATH` variable is set:
 
  `~/.bash_profile` 
 ```
@@ -312,7 +312,7 @@ WantedBy=wm.target
 
 ## Kill user processes on logout
 
-The [systemd](https://www.archlinux.org/packages/?name=systemd) package by default has `KillUserProcesses=no`, meaning user processes are not killed when the user completely logs out. To change this behavior in order to have all user processes killed on the user's logout, set `KillUserProcesses=yes` in `/etc/systemd/logind.conf`.
+Arch Linux builds the [systemd](https://www.archlinux.org/packages/?name=systemd) package with `--without-kill-user-processes`, setting `KillUserProcesses` to `no` by default. This setting causes user processes not to be killed when the user completely logs out. To change this behavior in order to have all user processes killed on the user's logout, set `KillUserProcesses=yes` in `/etc/systemd/logind.conf`.
 
 Note that changing this setting breaks terminal multiplexers such as [tmux](/index.php/Tmux "Tmux") and [screen](/index.php/Screen "Screen"). If you change this setting, you can still use a terminal multiplexer by using `systemd-run` as follows:
 

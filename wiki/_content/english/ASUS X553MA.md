@@ -30,9 +30,9 @@ For X.org drivers, [install](/index.php/Install "Install") [xf86-video-intel](ht
 
 ### Touchpad
 
-Install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
+Install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput).
 
-**Note:** FocalTech touchpads are only properly supported in Linux 4.x.
+**Note:** FocalTech touchpads are only properly supported since Linux 4.0.
 
 ### Wireless NIC
 

@@ -72,13 +72,11 @@ You can access the Arch Linux User Community Repository [here](https://aur.archl
 
 ## community/[community]
 
-The [community] repository is where pre-built packages are made available by [Trusted Users](/index.php/Trusted_Users "Trusted Users"). A majority of the packages in [community] come from the [AUR](/index.php/AUR "AUR").
-
-To access the [community] repository, uncomment it in `/etc/pacman.conf`.
+The *community* repository is where pre-built packages are made available by [Trusted Users](/index.php/Trusted_Users "Trusted Users"). A majority of the packages in community come from the [AUR](/index.php/AUR "AUR").
 
 ## core/[core]
 
-The [core] repository contains the bare packages needed for an Arch Linux system. [core] has everything needed to get a working command-line system.
+The *core* repository contains the bare packages needed for an Arch Linux system. core has everything needed to get a working command-line system.
 
 ## custom/user repository
 
@@ -92,7 +90,7 @@ Half-gods working to improve Arch for no financial gain. [Developers](https://ww
 
 ## extra/[extra]
 
-Arch's official package set is fairly streamlined, but we supplement this with a larger, more complete "extra" repository that contains a lot of the stuff that never made it into our core package set. This repository is constantly growing with the help of packages submitted from our strong community. This is where desktop environments, window managers and common programs are found.
+Arch's official package set is fairly streamlined, but we supplement this with a larger, more complete *extra* repository that contains a lot of the stuff that never made it into our core package set. This repository is constantly growing with the help of packages submitted from our strong community. This is where desktop environments, window managers and common programs are found.
 
 ## initramfs
 
@@ -161,7 +159,7 @@ This is the configuration file of [pacman](/index.php/Pacman "Pacman"). It is lo
 
 ## repository/repo
 
-The repository has the pre-compiled packages of one or (usually) more [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). [Official repositories](/index.php/Official_repositories "Official repositories") is splited into different parts for easy maintaince. Pacman uses these repositories to search for packages and install them. A repository can be local (i.e. on your own computer) or remote (i.e. the packages are downloaded before they are installed).
+The repository has the pre-compiled packages of one or (usually) more [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). [Official repositories](/index.php/Official_repositories "Official repositories") are split into different parts for easy maintaince. Pacman uses these repositories to search for packages and install them. A repository can be local (i.e. on your own computer) or remote (i.e. the packages are downloaded before they are installed).
 
 ## [RTFM](https://en.wikipedia.org/wiki/RTFM "wikipedia:RTFM")
 

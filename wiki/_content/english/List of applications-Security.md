@@ -70,6 +70,10 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 	[http://www.snort.org/](http://www.snort.org/) || [snort](https://aur.archlinux.org/packages/snort/)
 
+*   **Spectools** — A set of utilities for spectrum analyzer hardware including Wi-Spy devices.
+
+	[https://www.kismetwireless.net/spectools/](https://www.kismetwireless.net/spectools/) || [spectools](https://aur.archlinux.org/packages/spectools/)
+
 *   **[Sshguard](/index.php/Sshguard "Sshguard")** — Daemon that protects SSH and other services against brute-force attacts, similar to Fail2ban.
 
 	[http://www.sshguard.net/](http://www.sshguard.net/) || [sshguard](https://www.archlinux.org/packages/?name=sshguard)

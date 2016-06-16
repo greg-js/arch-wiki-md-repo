@@ -91,7 +91,7 @@ One of the better ways to post this information is to use an online pastebin. Yo
 
 A link will then be output that you can paste to the forum or IRC.
 
-Additionally, before posting your question, you may wish to review [how to ask smart questions](http://www.catb.org/esr/faqs/smart-questions.html). See also [Forum etiquette](/index.php/Forum_etiquette "Forum etiquette").
+Additionally, before posting your question, you may wish to review [how to ask smart questions](http://www.catb.org/esr/faqs/smart-questions.html). See also [Code of conduct](/index.php/Code_of_conduct "Code of conduct").
 
 ## Boot problems
 
@@ -138,7 +138,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 ```
 
-This should contain `Remote=no` and `Active=yes` in the output. If it does not, make sure that X runs on the same tty where the login occurred. This is required in order to preserve the logind session. This is handled by the default `/etc/X11/xinit/xserverrc`.
+This should contain `Remote=no` and `Active=yes` in the output. If it does not, make sure that X runs on the same tty where the login occurred. This is required in order to preserve the logind session.
 
 A D-Bus session should also be started along with X. See [D-Bus#Starting the user session](/index.php/D-Bus#Starting_the_user_session "D-Bus") for more information on this.
 

@@ -100,10 +100,8 @@
 *   Set up orion
     *   Set up sources and repos
         *   sources are a part of the repos (currently split to a different box for space and bandwidth reasons)
-        *   repos need dbscripts
-            *   needs ssh keys for all users
-            *   Try to avoid changing any paths from the current setup on nymeria to make migration easy for users
-            *   Use a generic hostname when telling people the new ssh address for svn. Don't have them set up svn to orion.archlinux.org
-    *   Set up rsync/web access to repos (and sources)
+    *   Set up web access to repos (and sources)
         *   Limit access to the repos to the lastsync file only
+    *   Fix archweb updater (currently archweb updates because data is synced back to nymeria where the updater works)
+    *   Remove sync cronjob on nymeria
     *   Migrate archive from seblu's server

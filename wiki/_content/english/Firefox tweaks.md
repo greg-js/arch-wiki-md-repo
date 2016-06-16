@@ -52,7 +52,7 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.12 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
     *   [3.13 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
     *   [3.14 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
-    *   [3.15 Show search matches in scroll bar](#Show_search_matches_in_scroll_bar)
+    *   [3.15 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
 *   [4 See also](#See_also)
 
 ## Performance
@@ -75,8 +75,8 @@ To check if OpenGL OMTC is enabled, go to `about:support` and under the "Graphic
 
 To enable OpenGL OMTC go to `about:config` and set:
 
-*   layers.acceleration.force-enabled true
-*   layers.offmainthreadcomposition.enabled true (default)
+*   `layers.acceleration.force-enabled true`
+*   `layers.offmainthreadcomposition.enabled true` (default)
 
 Restart Firefox for changes to take effect. If the above changes do not enable GPU acceleration, try setting the environment variable as follows: `export MOZ_USE_OMTC=1`. Then run Firefox [[1]](http://featherweightmusings.blogspot.se/2013/11/no-more-main-thread-opengl-in-firefox.html).
 
@@ -655,7 +655,7 @@ Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger
 
 Then consider checking your SSL configuration at [https://www.howsmyssl.com/](https://www.howsmyssl.com/).
 
-### Show search matches in scroll bar
+### Show search matches position in scroll bar
 
 This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.org/en-US/firefox/addon/findbar-tweak/?src=hp-dl-featured) extension.
 

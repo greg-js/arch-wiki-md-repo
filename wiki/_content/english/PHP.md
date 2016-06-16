@@ -74,8 +74,6 @@ display_errors=On
 
 ```
 
-**Tip:** Prior to 22 November 2015, [php-composer](https://www.archlinux.org/packages/?name=php-composer) kept its settings in a separate file in `/usr/share/php-composer/php.ini`
-
 *   The [open_basedir](http://php.net/open-basedir) directive limits the paths that can be accessed by PHP, thus increasing security at the expense of potentially interfering with normal program execution. Starting with PHP 7.0, it is [no longer set by default](https://www.archlinux.org/news/php-70-packages-released/) to more closely match upstream so users who wish to use it must configure it manually. Example:
 
 ```
@@ -139,8 +137,6 @@ extension=mysqli.so
 **Warning:** `mysql.so` was [removed](https://secure.php.net/manual/en/migration70.removed-exts-sapis.php) in PHP 7.0.
 
 You can add minor privileged MySQL users for your web scripts. You might also want to edit `/etc/mysql/my.cnf` and uncomment the `skip-networking` line so the MySQL server is only accessible by the localhost. You have to restart MySQL for changes to take effect.
-
-**Tip:** You may want to install a tool like [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"), [Adminer](/index.php/Adminer "Adminer") or [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) to work with your databases.
 
 ### PostgreSQL
 

@@ -15,11 +15,9 @@ Wireshark is a free and open-source packet analyzer. It is used for network trou
 
 The wireshark package has been split into the CLI version as well as GTK and Qt frontends, which depend on the CLI.
 
-CLI version can be [installed](/index.php/Pacman "Pacman") with the package [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli), available in the [official repositories](/index.php/Official_repositories "Official repositories").
-
-GTK frontend can be [installed](/index.php/Pacman "Pacman") with the package [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk), available in the [official repositories](/index.php/Official_repositories "Official repositories").
-
-Qt frontend can be [installed](/index.php/Pacman "Pacman") with the package [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+*   CLI version - [Install](/index.php/Pacman "Pacman") package [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli).
+*   GTK frontend - [Install](/index.php/Pacman "Pacman") package [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk).
+*   Qt frontend - [Install](/index.php/Pacman "Pacman") package [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt).
 
 ## Capturing as normal user
 

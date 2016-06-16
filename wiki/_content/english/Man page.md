@@ -129,7 +129,7 @@ Color-enabled man pages allow for a clearer presentation and easier digestion of
 
 ### Using less (Recommended)
 
-	<small>*Source: [Less Colors For Man Pages | Linux Tidbits](http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/)*</small>
+	<small>*Source: [nion's blog - less colors for man pages](http://nion.modprobe.de/blog/archives/572-less-colors-for-man-pages.html)*</small>
 
 This method has the advantage that `less` has a bigger feature set than `most`, and is the default for viewing man pages.
 
@@ -138,13 +138,14 @@ Add the following to a shell configuration file. For [Bash](/index.php/Bash "Bas
  `~/.bashrc` 
 ```
 man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    env \
+    LESS_TERMCAP_mb=$'\e[01;31m' \
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
     man "$@"
 }
 
@@ -153,7 +154,7 @@ man() {
 To see the changes in your Man Pages (without restarting bash or linux), you may run:
 
 ```
-# source ~/.bashrc
+$ source ~/.bashrc
 
 ```
 
@@ -174,7 +175,7 @@ set -xU LESS_TERMCAP_us (printf "\e[01;32m")      # begin underline
 To see the changes in your Man Pages (without restarting fish or linux), you may run:
 
 ```
-# source ~/.config/fish/config.fish
+$ source ~/.config/fish/config.fish
 
 ```
 

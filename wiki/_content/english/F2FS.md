@@ -37,6 +37,6 @@ With the latest [installation media](https://www.archlinux.org/download/) it is 
 2.  Create a separate `/boot` partition as ext2, or any other filesystem supported by the bootloader.
 3.  Continue with the installation procedure as per [Beginners' guide#Mount the partitions](/index.php/Beginners%27_guide#Mount_the_partitions "Beginners' guide") until [chrooted](/index.php/Change_root "Change root").
 4.  Install [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) on the newly installed system as well.
-5.  Regenerate the initramfs while chrooted.
+5.  Regenerate the [initramfs](/index.php/Initramfs "Initramfs") while chrooted.
 
-It is no longer necessary to modify `/etc/mkinitpcio.conf`, as the `filesystems` hook adds the f2fs module to the initramfs image.
+The driver included in the kernel 4.6 or higher uses Crypto API for computing CRC32\. Add `crc32_generic` and `crc32-pclmul` to the `MODULES` array in `/etc/mkinitpcio.conf` and regenerate the initramfs if the driver fails to load a CRC32 module at boot.

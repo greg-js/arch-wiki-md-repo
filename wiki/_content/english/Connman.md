@@ -18,7 +18,9 @@
     *   [3.4 Connecting to eduroam](#Connecting_to_eduroam)
     *   [3.5 Avoiding conflicts with local DNS server](#Avoiding_conflicts_with_local_DNS_server)
     *   [3.6 Blacklist interfaces](#Blacklist_interfaces)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Error /net/connman/technology/wifi: Not supported](#Error_.2Fnet.2Fconnman.2Ftechnology.2Fwifi:_Not_supported)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -303,6 +305,12 @@ NetworkInterfaceBlacklist=vmnet,vboxnet,virbr,ifb,docker,veth,eth,wlan
 ```
 
 Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Systemd") this will also hide all the `veth#######` interfaces from GUI tools like Econnman.
+
+## Troubleshooting
+
+### Error /net/connman/technology/wifi: Not supported
+
+You need to install [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and then restart connman service: `systemctl restart connman.service`.
 
 ## See also
 

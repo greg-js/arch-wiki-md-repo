@@ -43,13 +43,18 @@ The primary root certificate used has a CN of "DoD Root CA 2": this certificate 
 
 ### Chromium/Google Chrome
 
-1\. Complete the setup for [Firefox](/index.php/Firefox "Firefox").
+1\. Ensure CAC is connected, [Chromium](/index.php/Chromium "Chromium") is closed and enter the following in a terminal: `$ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/lopensc-pkcs11.so`
 
-2\. Ensure CAC is connected, [Chromium](/index.php/Chromium "Chromium") is closed and enter the following in a terminal: `$ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/lopensc-pkcs11.so`
+2\. Go to : [http://iase.disa.mil/pki-pke/Pages/tools.aspx](http://iase.disa.mil/pki-pke/Pages/tools.aspx)
 
-3\. Navigate to Settings -> Show Advanced Settings -> Manage Certificates -> Authorities to load CA bundle from the PEM-formatted file from above.
+3\. Download certs -> "Trust Store" -> "PKI CA Certificate Bundles: PKCS#7" -> "For DoD PKI Only - Version 5.0" download zip
 
-You may need to import the other DoD certs for [Chromium](/index.php/Chromium "Chromium") manually. All current certs can be found [http://militarycac.com/maccerts/AllCerts.zip](http://militarycac.com/maccerts/AllCerts.zip).
+4\. Unzip the DoD PKI zip and install
+
+```
+ for n in (ls * | grep Chrome); do certutil -d sql:$HOME/.pki/nssdb -A -t TC -n $n -i $n; done
+
+```
 
 ## Testing
 

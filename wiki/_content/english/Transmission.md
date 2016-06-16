@@ -190,7 +190,7 @@ An alternative is to add your user to the `transmission` group (`#usermod -a -G 
 
 If you want to *Automatically add .torrent files from a folder*, but you find that the `watch-dir` and `watch-dir-enabled` options set in the config file do not work, you can start the transmission daemon with the flag `-c /path/to/watch/dir`.
 
-If you're using systemd, edit the unit file located at `/etc/systemd/system/transmission.service`.
+If you're using systemd, edit the `transmission.service` unit as described in [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd").
 
 #### CLI Examples
 

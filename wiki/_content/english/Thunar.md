@@ -5,8 +5,7 @@ From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Additional functionality](#Additional_functionality)
-    *   [1.2 Plugins and addons](#Plugins_and_addons)
+    *   [1.1 Plugins and addons](#Plugins_and_addons)
 *   [2 Thunar Volume Manager](#Thunar_Volume_Manager)
     *   [2.1 Installation](#Installation_2)
     *   [2.2 Configuration](#Configuration)
@@ -31,10 +30,6 @@ From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 ## Installation
 
 [Install](/index.php/Install "Install") the [thunar](https://www.archlinux.org/packages/?name=thunar) package. It is part of the [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) group, so if you are running [Xfce](/index.php/Xfce "Xfce"), you probably already have Thunar installed.
-
-### Additional functionality
-
-Thunar adheres to shared standards and can exploit common libraries to enhance its functionality, such as using [GVFS](/index.php/GVFS "GVFS") for automounting. See [File manager functionality](/index.php/File_manager_functionality "File manager functionality") for more details.
 
 ### Plugins and addons
 
@@ -65,6 +60,8 @@ Thunar adheres to shared standards and can exploit common libraries to enhance i
 *   **libgsf** — The GNOME Structured File Library is a utility library for reading and writing structured file formats. Install if you need support for odf thumbnails
 
 	[http://directory.fsf.org/wiki/Libgsf](http://directory.fsf.org/wiki/Libgsf) || [libgsf](https://www.archlinux.org/packages/?name=libgsf)
+
+**Tip:** For additional functionality, such as `mtp` or `smb` services access from Thunar, see [GVFS](/index.php/GVFS "GVFS"). Also see [File manager functionality](/index.php/File_manager_functionality "File manager functionality") for more details.
 
 ## Thunar Volume Manager
 

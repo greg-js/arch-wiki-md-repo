@@ -31,7 +31,7 @@ This article details more advanced Compiz configuration. It is assumed that you 
 **Note:**
 
 *   Depending on what packages you have installed, not all of the Compiz backends may be available.
-*   Support for the GConf backend was removed with [revision 3991](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3991).
+*   The GConf backend was dropped from Compiz 0.9.12 ([revision 3991](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3991)).
 
 By default, Compiz stores its configuration settings in a plain text file `~/.config/compiz-1/compizconfig/Default.ini`. In CCSM this is known as *Flat-file Configuration Backend*.
 

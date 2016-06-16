@@ -809,7 +809,7 @@ Installare il pacchetto gvfs-obexftp:
 
 ### Bluetooth disabilitato all'avvio di gnome
 
-Se si hanno `dbus` e `bluetooth` avviati in background (@) nel proprio array `DAEMONS` nel file `/etc/rc.conf`, potrebbe accadere che il `bluetooth` venga disabilitato all'avvio di GNOME. Per risovlere, assicurarsi che `dbus` non vengo avviato in bacground.
+Se si hanno `dbus` e `bluetooth` avviati in background (@) nel proprio array `DAEMONS` nel file `/etc/rc.conf`, potrebbe accadere che il `bluetooth` venga disabilitato all'avvio di GNOME. Per risovlere, assicurarsi che `dbus` non venga avviato in background.
 
 ### Problemi di connessione con Sennheiser MM400 Headset
 

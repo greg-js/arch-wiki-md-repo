@@ -4,9 +4,8 @@
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)
-    *   [2.1 Hamachi 2 (beta)](#Hamachi_2_.28beta.29)
-        *   [2.1.1 Usare hamachi da linea di comando come normale utente](#Usare_hamachi_da_linea_di_comando_come_normale_utente)
-        *   [2.1.2 Impostazione automatica del nickname](#Impostazione_automatica_del_nickname)
+    *   [2.1 Usare hamachi da linea di comando come normale utente](#Usare_hamachi_da_linea_di_comando_come_normale_utente)
+    *   [2.2 Impostazione automatica del nickname](#Impostazione_automatica_del_nickname)
 *   [3 Eseguire Hamachi](#Eseguire_Hamachi)
     *   [3.1 Systemd](#Systemd)
 *   [4 GUI](#GUI)
@@ -18,11 +17,9 @@ Installare il pacchetto [logmein-hamachi](https://aur.archlinux.org/packages/log
 
 ## Configurazione
 
-### Hamachi 2 (beta)
+Hamachi è configurato in `/var/lib/logmein-hamachi/h2-engine-override.cfg` (creare il file nel caso non esistesse). Sfortunatamente, non è facile trovare una lista completa di opzioni di configurazione possibili, quindi sono qui elencate alcune.
 
-Hamachi 2 è configurato in `/var/lib/logmein-hamachi/h2-engine-override.cfg` (creare il file nel caso non esistesse). Sfortunatamente, non è facile trovare una lista completa di opzioni di configurazione possibili, quindi sono qui elencate alcune.
-
-#### Usare hamachi da linea di comando come normale utente
+### Usare hamachi da linea di comando come normale utente
 
 Per usare il comando `hamachi` da terminale come normale utente, aggiungere la seguente riga al file di configurazione:
 
@@ -31,7 +28,7 @@ Ipc.User TuoNomeUtente
 
 ```
 
-#### Impostazione automatica del nickname
+### Impostazione automatica del nickname
 
 Normalmente, Hamachi usa l'hostname del sistema come nickname che sarà visto dagli altri utenti di Hamachi. Se si desidera impostare automaticamente un nickname personalizzato ad ogni avvio di Hamachi, aggiungere la seguente riga al file di configurazione:
 
@@ -104,4 +101,4 @@ Sono disponibili su AUR le seguenti GUI per Hamachi:
 
 ## Altre risorse
 
-*   [Project home page](https://secure.logmein.com/products/hamachi/)
+*   [Project home page](https://www.vpn.net/)

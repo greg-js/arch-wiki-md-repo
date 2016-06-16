@@ -205,7 +205,7 @@ Devices may also be partitioned before booting the installation media, for examp
 
 #### Using parted in interactive mode
 
-All the examples provided below make use of *parted*, as it can be used for both UEFI/GPT and BIOS/MBR. It will be launched in *interactive mode*, which simplifies the partitioning process and reduces unnecessary repetition by automatically applying all partitioning commands to the specified device.
+All the examples provided below use *parted*, because it can be used for both UEFI/GPT and BIOS/MBR. It will be launched in *interactive mode*, which simplifies the partitioning process and reduces unnecessary repetition by automatically applying all partitioning commands to the specified device.
 
 In order to start operating on a device, execute:
 

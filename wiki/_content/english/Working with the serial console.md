@@ -41,7 +41,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="console=tty0 console=ttyS0,38400n8"
 
 ```
 
-Now we need to tell grub what command to start in order to enable the serial console:
+Now we need to tell grub where is the console and what command to start in order to enable the serial console (Note as above for Linux kernel, one can append multiple input/output terminals in grub e.g. GRUB_TERMINAL="console serial" would enable both display and serial):
 
 ```
 ## Serial console

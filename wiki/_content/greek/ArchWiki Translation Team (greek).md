@@ -52,6 +52,7 @@ H οργάνωση της μετάφρασης γίνεται στην πλατ�
 | [Maevius](/index.php/User:Maevius "User:Maevius") | [@axil](https://trello.com/axil) |
 | [eliasps](/index.php/User:Eliasps "User:Eliasps") | [@eliasps](https://trello.com/eliasps) |
 | [Goldenbeetle](/index.php/User:Goldenbeetle "User:Goldenbeetle") | [@goldenbeetle](https://trello.com/goldenbeetle) |
+| [Tripalatos](/index.php?title=User:Tripalatos&action=edit&redlink=1 "User:Tripalatos (page does not exist)") | [@tripalatos](https://trello.com/tripalatos) |
 
 ### Άμεση επικοινωνία (IRC)
 

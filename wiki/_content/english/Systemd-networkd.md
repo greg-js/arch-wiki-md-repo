@@ -7,9 +7,10 @@
     *   [1.2 Configuration examples](#Configuration_examples)
         *   [1.2.1 Wired adapter using DHCP](#Wired_adapter_using_DHCP)
         *   [1.2.2 Wired adapter using a static IP](#Wired_adapter_using_a_static_IP)
-        *   [1.2.3 Wireless adapter](#Wireless_adapter)
-        *   [1.2.4 Wired and wireless adapters on the same machine](#Wired_and_wireless_adapters_on_the_same_machine)
-        *   [1.2.5 IPv6 privacy extensions](#IPv6_privacy_extensions)
+        *   [1.2.3 Wired adapter using both DHCP and a static IP](#Wired_adapter_using_both_DHCP_and_a_static_IP)
+        *   [1.2.4 Wireless adapter](#Wireless_adapter)
+        *   [1.2.5 Wired and wireless adapters on the same machine](#Wired_and_wireless_adapters_on_the_same_machine)
+        *   [1.2.6 IPv6 privacy extensions](#IPv6_privacy_extensions)
 *   [2 Configuration files](#Configuration_files)
     *   [2.1 network files](#network_files)
         *   [2.1.1 [Match] section](#.5BMatch.5D_section)
@@ -108,6 +109,22 @@ Gateway=10.1.10.1
 ```
 
 See the `systemd.network(5)` man page for more network options such as specifying DNS servers and a broadcast address.
+
+#### Wired adapter using both DHCP and a static IP
+
+ `/etc/systemd/network/*wired*.network` 
+```
+[Match]
+Name=eth0
+
+[Network]
+DHCP=ipv4
+
+[Address]
+Label=eth0:0
+Address=192.168.144.120/24
+
+```
 
 #### Wireless adapter
 

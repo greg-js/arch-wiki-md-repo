@@ -340,7 +340,7 @@ The *.mailcap* file format is used by mail programs such as [mutt](https://www.a
 
 #### xdg-open
 
-*xdg-mime* modifies the local file `~/.config/mimeapps.list` and `~/.local/share/applications/mimeapps.list` (deprecated).
+*xdg-mime* modifies the local file `~/.local/share/applications/mimeapps.list` (deprecated).
 
 To **query** the mime type used by an existing file, use
 

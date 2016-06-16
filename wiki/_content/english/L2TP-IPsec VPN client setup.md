@@ -1,8 +1,8 @@
 L2TP/IPsec is a secure Virtual Private Network solution that is well supported on many different platforms.
 
-This article aims to describe how to configure and use a L2TP/IPsec client on Arch Linux. This article will cover the installation and setup of several needed software packages. One of the packages is only available in the [AUR](/index.php/AUR "AUR"), so knowledge of how to build and install [AUR](/index.php/AUR "AUR") packages on your system is required.
+This article aims to describe how to configure and use a L2TP/IPsec client on Arch Linux. This article will cover the installation and setup of several needed software packages.
 
-This guide is primarily targeted for clients connecting to a Windows Server machine, as it uses some settings that are specific to the Microsoft implementation of L2TP/IPsec. However, it's often easily adaptable with any other common L2TP/IPsec setup.
+This guide is primarily targeted for clients connecting to a Windows Server machine, as it uses some settings that are specific to the Microsoft implementation of L2TP/IPsec. However, it is adaptable with any other common L2TP/IPsec setup. The [Openswan wiki](https://github.com/xelerance/Openswan/wiki/L2tp-ipsec-configuration-using-openswan-and-xl2tpd) features instructions to set up a corresponding L2TP/IPSec Linux server.
 
 ## Contents
 
@@ -21,7 +21,7 @@ This guide is primarily targeted for clients connecting to a Windows Server mach
 
 ## Installation
 
-Install [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd) from the repos and [openswan](https://aur.archlinux.org/packages/openswan/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd) from the repos and [openswan](https://aur.archlinux.org/packages/openswan/) from the [AUR](/index.php/AUR "AUR").
 
 Make sure that the openswan service is running with `systemctl start openswan.service`, or you may get an error message about a missing pluto_ctl `connect(pluto_ctl) failed: No such file or directory`.
 

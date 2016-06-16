@@ -518,7 +518,7 @@ where `*/path/to/common/settings*` file contains the same options for both confi
 
 *pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`, which defaults to `/etc/pacman.d/hooks`.
 
-For more information on the alpm hooks, see the alpm-hooks(5) man page.
+For more information on the alpm hooks, see the [alpm-hooks(5)](https://www.archlinux.org/pacman/alpm-hooks.5.html) man page.
 
 ### Repositories and mirrors
 

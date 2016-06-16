@@ -10,6 +10,9 @@ Tmux is a BSD-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Sc
         *   [2.1.1 Copy Mode](#Copy_Mode)
     *   [2.2 Browsing URLs](#Browsing_URLs)
     *   [2.3 Setting the correct term](#Setting_the_correct_term)
+        *   [2.3.1 256 colors](#256_colors)
+        *   [2.3.2 24-bit color](#24-bit_color)
+        *   [2.3.3 xterm-keys](#xterm-keys)
     *   [2.4 Other Settings](#Other_Settings)
     *   [2.5 Autostart with systemd](#Autostart_with_systemd)
 *   [3 Session initialization](#Session_initialization)
@@ -44,7 +47,7 @@ Tmux is a BSD-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Sc
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [tmux](https://www.archlinux.org/packages/?name=tmux) package.
+[Install](/index.php/Install "Install") the [tmux](https://www.archlinux.org/packages/?name=tmux) package. Optionally, install [tmux-bash-completion](https://aur.archlinux.org/packages/tmux-bash-completion/) to provide bash completion functions for tmux.
 
 ## Configuration
 
@@ -136,6 +139,8 @@ bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; new-window -n "urlvie
 
 ### Setting the correct term
 
+#### 256 colors
+
 If you are using a 256 colour terminal, you will need to set the correct term in tmux. You can do this in `tmux.conf`:
 
 ```
@@ -156,6 +161,19 @@ Also, if tmux messes up, you can force tmux to assume that the terminal support 
 alias tmux="tmux -2"
 
 ```
+
+#### 24-bit color
+
+Tmux supports 24-bit color as of version 2.2 ([[1]](https://github.com/tmux/tmux/commit/427b8204268af5548d09b830e101c59daa095df9)). If your terminal supports 24-bit color (see this [gist](https://gist.github.com/XVilka/8346728)), add your terminal to the `terminal-overrides` setting. For example, if you use [Termite](/index.php/Termite "Termite"), you would add:
+
+```
+set -ga terminal-overrides ",xterm-termite:Tc"
+
+```
+
+For other terminals, replace `xterm-termite` with the relevant terminal type (stored in `$TERM`). See the tmux(1) man page for details about the `Tc` terminfo extension.
+
+#### xterm-keys
 
 To enable xterm-keys in your `tmux.conf`, you have to add the following line
 
@@ -237,7 +255,7 @@ WantedBy=multi-user.target
 
 **Tip:** You may want to add `WorkingDirectory=*custom_path*` to customize working directory.
 
-Alternatively, you can place this file within your [systemd/User](/index.php/Systemd/User "Systemd/User") directory (without `User=%I`), for example `~/.config/systemd/user/tmux.service`. This way the tmux service will start when you log in.
+Alternatively, you can place this file within your [systemd/User](/index.php/Systemd/User "Systemd/User") directory (without `User=%I`), for example `~/.config/systemd/user/tmux.service`. This way the tmux service will start when you log in, unless you also enable [systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
 
 ## Session initialization
 
@@ -285,7 +303,7 @@ set -ga terminal-overrides ',xterm*:smcup@:rmcup@'
 
 ```
 
-This tricks the terminal emulator into thinking Tmux is a full screen application like pico or mutt[[1]](http://superuser.com/questions/310251/use-terminal-scrollbar-with-tmux), which will make the scrollback be recorded properly. Beware however, it will get a bit messed up when switching between windows/panes. Consider using Tmux's native scrollback instead.
+This tricks the terminal emulator into thinking Tmux is a full screen application like pico or mutt[[2]](http://superuser.com/questions/310251/use-terminal-scrollbar-with-tmux), which will make the scrollback be recorded properly. Beware however, it will get a bit messed up when switching between windows/panes. Consider using Tmux's native scrollback instead.
 
 ### Mouse scrolling
 
@@ -708,7 +726,7 @@ setw -g aggressive-resize on
 
 added to `~/.tmux.conf`. It causes tmux to resize a window based on the smallest client actually viewing it, not on the smallest one attached to the entire session.
 
-An alternative taken from [[2]](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/2632) is to put the following ~/.bashrc:
+An alternative taken from [[3]](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/2632) is to put the following ~/.bashrc:
 
  `.bashrc` 
 ```
@@ -827,7 +845,7 @@ bind-key -n M-n split-window \; select-layout
 
 ### Vim friendly configuration
 
-See [[3]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configuration friendly to [vim](/index.php/Vim "Vim") users.
+See [[4]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configuration friendly to [vim](/index.php/Vim "Vim") users.
 
 ## See also
 

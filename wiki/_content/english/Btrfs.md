@@ -14,7 +14,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 ## Contents
 
 *   [1 Preparation](#Preparation)
-*   [2 Partitioning](#Partitioning)
+*   [2 Partitionless Btrfs disk](#Partitionless_Btrfs_disk)
 *   [3 File system creation](#File_system_creation)
     *   [3.1 Creating a new file system](#Creating_a_new_file_system)
         *   [3.1.1 File system on a single device](#File_system_on_a_single_device)
@@ -62,7 +62,7 @@ The official kernels [linux](https://www.archlinux.org/packages/?name=linux) and
 
 User space utilities are available by [installing](/index.php/Installing "Installing") the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package.
 
-## Partitioning
+## Partitionless Btrfs disk
 
 Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes; however, this is not required to simply [create a Btrfs filesystem](#Creating_a_new_file_system) on an existing [partition](/index.php/Partition "Partition") that was created using another method. If using Btrfs for partitioning, one can use [subvolumes](#Subvolumes) to simulate partitions. There are some limitations to this approach in single disk setups:
 
@@ -79,12 +79,9 @@ To overwrite the existing partition table with Btrfs, run the following command:
 
 For example, use `/dev/sda` rather than `/dev/sda1`. The latter would format an existing partition instead of replacing the entire partitioning scheme.
 
-Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). For example, in the case of [GRUB](/index.php/GRUB#Install_to_disk "GRUB"):
+Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). See [Syslinux#Manual_install](/index.php/Syslinux#Manual_install "Syslinux") or [Grub#Install_to_partition_or_partitionless_disk](/index.php/Grub#Install_to_partition_or_partitionless_disk "Grub").
 
-```
-# grub-install --recheck /dev/sd*X*
-
-```
+**Warning:** GRUB strongly discourages installation to a partitionless disk.
 
 ## File system creation
 

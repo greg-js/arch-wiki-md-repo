@@ -5,18 +5,19 @@ A software access point is used when you want your computer to act as a Wi-Fi ac
 *   [1 Requirements](#Requirements)
     *   [1.1 Wi-Fi device must support AP mode](#Wi-Fi_device_must_support_AP_mode)
     *   [1.2 Wireless client and software AP with a single Wi-Fi device](#Wireless_client_and_software_AP_with_a_single_Wi-Fi_device)
-*   [2 Overview](#Overview)
-*   [3 Wi-Fi Link Layer](#Wi-Fi_Link_Layer)
-*   [4 Network configuration](#Network_configuration)
-    *   [4.1 Bridge Setup](#Bridge_Setup)
-    *   [4.2 NAT Setup](#NAT_Setup)
-*   [5 Tools](#Tools)
-    *   [5.1 create_ap](#create_ap)
-    *   [5.2 RADIUS](#RADIUS)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 WLAN is very slow](#WLAN_is_very_slow)
-    *   [6.2 NetworkManager is interfering](#NetworkManager_is_interfering)
-*   [7 See also](#See_also)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Wi-Fi link layer](#Wi-Fi_link_layer)
+    *   [2.2 Network configuration](#Network_configuration)
+        *   [2.2.1 Bridge setup](#Bridge_setup)
+        *   [2.2.2 NAT setup](#NAT_setup)
+*   [3 Tools](#Tools)
+    *   [3.1 create_ap](#create_ap)
+    *   [3.2 RADIUS](#RADIUS)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 WLAN is very slow](#WLAN_is_very_slow)
+    *   [4.2 NetworkManager is interfering](#NetworkManager_is_interfering)
+    *   [4.3 Cannot start AP mode in 5Ghz band](#Cannot_start_AP_mode_in_5Ghz_band)
+*   [5 See also](#See_also)
 
 ## Requirements
 
@@ -66,14 +67,14 @@ If you want to use the capability/feature, perhaps because an Ethernet connectio
 
 Random MAC address can be generated using [macchanger](/index.php/Macchanger "Macchanger").
 
-## Overview
+## Configuration
 
 Setting up an access point comprises two main parts:
 
 *   Setting up the **Wi-Fi link layer**, so that wireless clients can associate to your computer's "software access point" and send/receive IP packets from/to your computer; this is what the hostapd package will do for you.
 *   Setting up the **network configuration** on you computer, so that your computer will properly relay IP packets from/to its own Internet connection from/to wireless clients.
 
-## Wi-Fi Link Layer
+### Wi-Fi link layer
 
 The actual Wi-Fi link is established via the [hostapd](https://www.archlinux.org/packages/?name=hostapd) package, which has WPA2 support.
 
@@ -116,7 +117,7 @@ For automatically starting hostapd, [enable](/index.php/Daemon "Daemon") the `ho
 
 **Note:** If you have a card based on RTL8192CU chipset, install [hostapd-8192cu](https://aur.archlinux.org/packages/hostapd-8192cu/) in the [AUR](/index.php/AUR "AUR") and replace `driver=nl80211` with `driver=rtl871xdrv` in the `hostapd.conf` file.
 
-## Network configuration
+### Network configuration
 
 There are two basic ways for implementing this:
 
@@ -129,7 +130,7 @@ The NAT approach is more versatile, as it clearly separates Wi-Fi clients from y
 
 Of course, it is possible to *combine both things*. For that, studying both articles would be necessary. Example: Like having a bridge that contains both an ethernet device and the wireless device with an static ip, offering DHCP and setting NAT configured to relay the traffic to an additional network device - that can be ppp or eth.
 
-### Bridge Setup
+#### Bridge setup
 
 You need to create a network *bridge* and add your network interface (e.g. `eth0`) to it. You **should not** add the wireless device (e.g. `wlan0`) to the bridge; hostapd will add it on its own.
 
@@ -137,11 +138,11 @@ See [Network bridge](/index.php/Network_bridge "Network bridge").
 
 **Tip:** You may wish to reuse an existing bridge, if you have one (e.g. used by a virtual machine).
 
-### NAT Setup
+#### NAT setup
 
-See [Internet sharing](/index.php/Internet_sharing "Internet sharing") for details.
+See [Internet sharing#Configuration](/index.php/Internet_sharing#Configuration "Internet sharing") for configuration details.
 
-On that article, the device connected to the LAN is `net0`. That device would be in this case your wireless device (e.g. `wlan0`).
+In that article, the device connected to the LAN is `net0`. That device would be in this case your wireless device (e.g. `wlan0`).
 
 ## Tools
 
@@ -169,6 +170,10 @@ hostapd may not work, if the device is managed by NetworkManager. You can mask t
 unmanaged-devices=mac:<hwaddr>
 
 ```
+
+### Cannot start AP mode in 5Ghz band
+
+Apparently with the special country code `00` (global), all usable frequencies in the 5Ghz band will have the [`no-ir` (*no-initiating-radiation*)](https://wireless.wiki.kernel.org/en/developers/regulatory/processing_rules#post_processing_mechanisms) flag set, which will prevent hostapd from using them. You will need to have [crda](https://www.archlinux.org/packages/?name=crda) installed and have your country code set to make frequencies allowed in your country available for hostapd.
 
 ## See also
 

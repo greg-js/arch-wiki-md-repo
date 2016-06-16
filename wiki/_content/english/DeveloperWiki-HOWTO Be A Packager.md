@@ -40,14 +40,14 @@ Package guidelines can be found in the Arch Linux documentation. Please follow t
 For core, extra, testing and staging repos:
 
 ```
-  svn checkout -N svn+[ssh://svn-packages@nymeria.archlinux.org/srv/repos/svn-packages/svn](ssh://svn-packages@nymeria.archlinux.org/srv/repos/svn-packages/svn) svn-packages
+  svn checkout -N svn+[ssh://svn-packages@repos.archlinux.org/srv/repos/svn-packages/svn](ssh://svn-packages@repos.archlinux.org/srv/repos/svn-packages/svn) svn-packages
 
 ```
 
 For community, community-testing, community-staging, multilib, multilib-testing, multilib-staging:
 
 ```
-  svn checkout -N svn+[ssh://svn-community@nymeria.archlinux.org/srv/repos/svn-community/svn](ssh://svn-community@nymeria.archlinux.org/srv/repos/svn-community/svn) svn-community
+  svn checkout -N svn+[ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn](ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn) svn-community
 
 ```
 
@@ -89,7 +89,7 @@ This will pull the package you requested into your checkout. From now on, any ti
 ### Removing a package
 
 ```
-  ssh nymeria.archlinux.org
+  ssh repos.archlinux.org
   /packages/db-remove repo-name arch packagename
   i.e. /packages/db-remove core i686 openssh 
 
@@ -106,14 +106,14 @@ Sometime the previous command yields:
 You can remotely remove it with:
 
 ```
-   svn rm svn+[ssh://svn-packages@nymeria.archlinux.org/srv/repos/svn-packages/svn/](ssh://svn-packages@nymeria.archlinux.org/srv/repos/svn-packages/svn/)<PKG>
+   svn rm svn+[ssh://svn-packages@repos.archlinux.org/srv/repos/svn-packages/svn/](ssh://svn-packages@repos.archlinux.org/srv/repos/svn-packages/svn/)<PKG>
 
 ```
 
 ### Moving a package between repos
 
 ```
-  ssh nymeria.archlinux.org
+  ssh repos.archlinux.org
   /packages/db-move fromrepo torepo packagename
   i.e. /packages/db-move testing core openssh
 
@@ -213,14 +213,14 @@ This is repo dependent. For 'extra', you use 'extrapkg'. 'testingpkg' for 'testi
 Use 'db-update'. It will find new packages for any repository and it manages both i686 and x86_64 architectures at once, if present. For example:
 
 ```
-  ssh nymeria.archlinux.org
+  ssh repos.archlinux.org
   /packages/db-update
 
 ```
 
 ## Staging Directories
 
-Staging directories are needed on nymeria.archlinux.org for uploading of packages. The following structure is NOT automatically created. You must do it yourself:
+Staging directories are needed on repos.archlinux.org for uploading of packages. The following structure is NOT automatically created. You must do it yourself:
 
 ```
    ~/staging/
@@ -266,14 +266,14 @@ Add this to your *$HOME/.ssh/config*:
 ```
 ControlPath /home/<your username>/.ssh/master-%h-%p-%r
 
-Host nymeria.archlinux.org
+Host repos.archlinux.org
 
 ```
 
 Now, before you start working, open a ssh session with
 
 ```
-ssh -M nymeria.archlinux.org
+ssh -M repos.archlinux.org
 
 ```
 

@@ -22,9 +22,9 @@ Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
 
 ## Installation
 
-**Warning:** The Unity package is **huge**. For a successful installation you'll need about 8GiB of free space for the package building, and another 2.5GiB for it to install.
+**Warning:** The Unity package is **huge**. For a successful installation you'll need about 8GiB of free space for the package building, and another 3.5GiB for it to install.
 
-Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://aur.archlinux.org/packages/unity-editor/).
+Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://aur.archlinux.org/packages/unity-editor/) or [unity-editor-beta](https://aur.archlinux.org/packages/unity-editor-beta/) for the beta version.
 
 ## Android Remote
 

@@ -4,9 +4,8 @@
 
 *   [1 Inštalácia](#In.C5.A1tal.C3.A1cia)
 *   [2 Konfigurácia](#Konfigur.C3.A1cia)
-    *   [2.1 Hamachi 2 (beta)](#Hamachi_2_.28beta.29)
-        *   [2.1.1 Používanie hamachi v príkazovom riadku ako bežný užívateľ](#Pou.C5.BE.C3.ADvanie_hamachi_v_pr.C3.ADkazovom_riadku_ako_be.C5.BEn.C3.BD_u.C5.BE.C3.ADvate.C4.BE)
-        *   [2.1.2 Automatické nastavenie vlastnej prezývky](#Automatick.C3.A9_nastavenie_vlastnej_prez.C3.BDvky)
+    *   [2.1 Používanie hamachi v príkazovom riadku ako bežný užívateľ](#Pou.C5.BE.C3.ADvanie_hamachi_v_pr.C3.ADkazovom_riadku_ako_be.C5.BEn.C3.BD_u.C5.BE.C3.ADvate.C4.BE)
+    *   [2.2 Automatické nastavenie vlastnej prezývky](#Automatick.C3.A9_nastavenie_vlastnej_prez.C3.BDvky)
 *   [3 Spustenie Hamachi](#Spustenie_Hamachi)
     *   [3.1 Systemd](#Systemd)
 *   [4 GUI](#GUI)
@@ -18,11 +17,9 @@ Nainštalujte balíček [logmein-hamachi](https://aur.archlinux.org/packages/log
 
 ## Konfigurácia
 
-### Hamachi 2 (beta)
+Konfigurácia Hamachi sa nachádza v `/var/lib/logmein-hamachi/h2-engine-override.cfg` (ak súbor neexistuje, vytvorte ho). Nanešťastie nie je možné nájsť kompletný zoznam konfiguračných nastavení, takže ich tu je len zopár, ktoré je možné použiť.
 
-Konfigurácia Hamachi 2 sa nachádza v `/var/lib/logmein-hamachi/h2-engine-override.cfg` (ak súbor neexistuje, vytvorte ho). Nanešťastie nie je možné nájsť kompletný zoznam konfiguračných nastavení, takže ich tu je len zopár, ktoré je možné použiť.
-
-#### Používanie hamachi v príkazovom riadku ako bežný užívateľ
+### Používanie hamachi v príkazovom riadku ako bežný užívateľ
 
 Aby bolo možné používať `hamachi` v príkazovom riadku bez privilegovaných práv, pridajte nasledujúci riadok do konfiguračného súboru:
 
@@ -31,7 +28,7 @@ Ipc.User VaseUzivatelskeMeno
 
 ```
 
-#### Automatické nastavenie vlastnej prezývky
+### Automatické nastavenie vlastnej prezývky
 
 Hamachi bežne používa ako prezývku názov počítača(hostname). Ak chcete, aby Hamachi automaticky nastavil vlastnú prezývku po svojom štarte, pridajte nasledujúci riadok do konfiguračného súboru:
 
@@ -104,4 +101,4 @@ Na repozitári AUR sa nachádzajú aj nasledujúce grafické frontendy pre Hamac
 
 ## Tiež pozrite
 
-*   [Domovská stránka projektu](https://secure.logmein.com/products/hamachi/)
+*   [Domovská stránka projektu](https://www.vpn.net/)

@@ -57,7 +57,7 @@ See also [Wikipedia:GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Par
 
 ### Btrfs Partitioning
 
-Btrfs can occupy an entire data storage device and replace the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes. See the [Btrfs#Partitioning](/index.php/Btrfs#Partitioning "Btrfs") instructions for details.
+Btrfs can occupy an entire data storage device and replace the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes. See the [Btrfs#Partitionless_Btrfs_disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") instructions for details.
 
 See also [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs").
 
@@ -270,7 +270,7 @@ The standard *sector size* is 512B, but modern high-capacity hard drives use gre
 
 ### Solid state drives
 
-Solid state drives are based on [flash memory](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory"), and thus differ significantly from hard drives. While reading remains possible in a random access fashion, erasure (hence rewriting and random writing) is possible only by [whole blocks](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory"). Additionally, the *erase block size* (EBS) are significantly greater than regular *block size*, for example 128KiB vs. 4KiB, so it is necessary to align to multiples of EBS. [NVMe](/index.php/NVMe "NVMe") drives should be aligned to 4KiB.
+Solid state drives are based on [flash memory](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory"), and thus differ significantly from hard drives. While reading remains possible in a random access fashion, erasure (hence rewriting and random writing) is possible only by [whole blocks](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory"). Additionally, the *erase block size* (EBS) are significantly greater than regular *block size*, for example 128KiB vs. 4KiB, so it is necessary to align to multiples of EBS. Some [NVMe](/index.php/NVMe "NVMe") drives should be aligned to 4KiB, but not all. To find the sector size of your SSD, see [Advanced Format#How to determine if HDD employ a 4k sector](/index.php/Advanced_Format#How_to_determine_if_HDD_employ_a_4k_sector "Advanced Format").
 
 ### Partitioning tools
 

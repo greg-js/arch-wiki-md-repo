@@ -197,6 +197,13 @@ Some older Scanner models do not work when connected via an USB3 port. This is n
 *   Disable xHCI via Bios/EFI. eHCI will consequently be used and communication with the scanner will work. On the downside, USB3 speed can not be reached on any port.
 *   On (some) intel chipsets the 'setpci' command can be used to route specific usb ports to either the xHCI or the eHCI controller. See [Here](https://forums.opensuse.org/showthread.php/507627-Suse-13-2-scanner-no-longer-working-on-64-bit-version?p=2714695#post2714695) and [Here](http://superuser.com/questions/812022/force-a-single-usb-3-0-port-to-work-as-usb-2-0) (scroll down to where it says "setpci") for further information. With this it is possible to toggle single USB ports with a simple shell script.
 
+The following command will force usb2 use on all the usb ports
+
+```
+# lspci -nn | grep USB | cut -d '[' -f3 | cut -d ']' -f1 | xargs -I@ setpci -H1 -d @ d0.l=0
+
+```
+
 ### Slow startup
 
 If you encounter slow startup issue (e.g. `xsane` or `scanimage -L` take a lot to find scanner) it may be that more than one driver supporting it is available.

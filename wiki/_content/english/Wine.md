@@ -40,14 +40,13 @@
     *   [5.2 PlayOnLinux/PlayOnMac](#PlayOnLinux.2FPlayOnMac)
     *   [5.3 PyWinery](#PyWinery)
     *   [5.4 Q4wine](#Q4wine)
-    *   [5.5 Wine-staging](#Wine-staging)
 *   [6 See also](#See_also)
 
 ## Installation
 
 **Warning:** If you can access a file or resource with your user account, programs running in Wine can too. Wine prefixes are **not** [sandboxes](https://en.wikipedia.org/wiki/Sandbox_(computer_security) "wikipedia:Sandbox (computer security)"). Consider using [virtualization](https://en.wikipedia.org/wiki/Virtualization "wikipedia:Virtualization") if security is important.
 
-Wine can be [installed](/index.php/Pacman "Pacman") with the package [wine](https://www.archlinux.org/packages/?name=wine), available in the [official repositories](/index.php/Official_repositories "Official repositories"). If you are running a 64-bit system, you will need to enable the [Multilib](/index.php/Multilib "Multilib") repository first. See also [#Sound](#Sound).
+Wine can be installed with the packages [wine](https://www.archlinux.org/packages/?name=wine) (stable) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (testing). [Wine Staging](https://wine-staging.com/) is patched version of [Wine](https://www.winehq.org/), which contains bug fixes and features (e.g. [CSMT patch](/index.php/Wine#CSMT_patch "Wine")), which have not been integrated into the development branch yet. If you are running a 64-bit system, you will need to enable the [Multilib](/index.php/Multilib "Multilib") repository first. See also [#Sound](#Sound).
 
 You may also want to install [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that need support for Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
 
@@ -547,10 +546,6 @@ It is recommended using winetricks by default to open *.exe* files, so you can c
 ### Q4wine
 
 [Q4Wine](http://sourceforge.net/projects/q4wine/) is a graphical wine-prefix manager which allows you to manage configuration of prefixes. Notably it allows exporting [Qt](/index.php/Qt "Qt") themes into the Wine configuration so that they can integrate nicely. You can find the [q4wine](https://www.archlinux.org/packages/?name=q4wine) package in [multilib](/index.php/Multilib "Multilib").
-
-### Wine-staging
-
-[Wine-Staging](http://www.wine-staging.com/) (formerly wine-compholio) is a special wine version containing bug fixes and features, which are not yet available in regular wine versions. The idea of Wine Staging is to provide new features faster to end users and to give developers the possibility to discuss and improve their patches before they are sent upstream. Available via the [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) package or directly via the wine-staging [Arch Linux repo](https://github.com/wine-compholio/wine-staging/wiki/Installation#-arch-linux).
 
 ## See also
 

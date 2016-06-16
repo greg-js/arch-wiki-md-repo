@@ -264,7 +264,12 @@ lxpanelctl run
 
 	Xfce Appfinder
 
-When Compiz is used in an Xfce session, the run dialog (provided by [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)) should work without intervention. If you are using Xfce Appfinder in a standalone Compiz session, map the command to the `Alt+F2` key combination using the *Commands* plugin in CCSM.
+When Compiz is used in an Xfce session, the run dialog (provided by [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)) should work without intervention. If you are using Xfce Appfinder in a standalone Compiz session, map the command below to the `Alt+F2` key combination using the *Commands* plugin in CCSM.
+
+```
+xfce4-appfinder --collapsed
+
+```
 
 	Other run dialogs
 
@@ -434,7 +439,7 @@ For more information, see the following [upstream bug report](https://bugs.launc
 
 ### Alt-Tab switcher has no background (Emerald)
 
-You may find that the `Alt-Tab` switcher (provided by the staticswitcher or switcher plugins) has a completely transparent background when using Emerald as well. This can make it hard to differentiate window thumbnails from the desktop background behind them. As of [revision 3975](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3975) a workaround is available. In CCSM, navigate to *Application Switcher* or *Static Application Switcher* depending on which plugin you are using. For the former, the *Background* settings are located under *General* and for the latter the settings are located under *Appearance*. Once you have found the settings, ensure that the *Set background color* box is ticked. The default is a dark grey which can be optionally changed.
+You may find that the `Alt-Tab` switcher (provided by the staticswitcher or switcher plugins) has a completely transparent background when using Emerald as well. This can make it hard to differentiate window thumbnails from the desktop background behind them. As of Compiz 0.9.12 ([revision 3975](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3975)) a workaround is available. In CCSM, navigate to *Application Switcher* or *Static Application Switcher* depending on which plugin you are using. For the former, the *Background* settings are located under *General* and for the latter the settings are located under *Appearance*. Once you have found the settings, ensure that the *Set background color* box is ticked. The default is a dark grey which can be optionally changed.
 
 Alternatively, use GTK Window Decorator instead of Emerald or use a different window switcher altogether such as the shift switcher. Note that even if you are using the GTK Window Decorator, you can still change the background color as described above.
 

@@ -6,31 +6,30 @@ They are typically implemented in userspace daemons on the server side. [strongS
 
 ## Contents
 
-*   [1 Server Configuration](#Server_Configuration)
-    *   [1.1 Certificates](#Certificates)
-        *   [1.1.1 Certificate Authority](#Certificate_Authority)
-        *   [1.1.2 Host Certificate](#Host_Certificate)
-        *   [1.1.3 Client Certificate](#Client_Certificate)
-    *   [1.2 VPN Variants](#VPN_Variants)
-        *   [1.2.1 IPSec in tunnel mode](#IPSec_in_tunnel_mode)
-        *   [1.2.2 IPSec in transport mode](#IPSec_in_transport_mode)
-        *   [1.2.3 IPSec/L2TP](#IPSec.2FL2TP)
-    *   [1.3 Secrets](#Secrets)
-    *   [1.4 Networking](#Networking)
-    *   [1.5 Running Strongswan in a Container](#Running_Strongswan_in_a_Container)
-    *   [1.6 Troubleshooting](#Troubleshooting)
-*   [2 Client configuration](#Client_configuration)
-*   [3 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Certificates](#Certificates)
+    *   [2.1 Certificate Authority](#Certificate_Authority)
+    *   [2.2 Host Certificate](#Host_Certificate)
+    *   [2.3 Client Certificate](#Client_Certificate)
+*   [3 VPN Variants](#VPN_Variants)
+    *   [3.1 IPSec in tunnel mode](#IPSec_in_tunnel_mode)
+    *   [3.2 IPSec in transport mode](#IPSec_in_transport_mode)
+    *   [3.3 IPSec/L2TP](#IPSec.2FL2TP)
+*   [4 Secrets](#Secrets)
+*   [5 Networking](#Networking)
+    *   [5.1 Running Strongswan in a Container](#Running_Strongswan_in_a_Container)
+*   [6 Troubleshooting](#Troubleshooting)
+*   [7 See also](#See_also)
 
-## Server Configuration
+## Installation
 
 First, install the [strongswan](https://aur.archlinux.org/packages/strongswan/) package.
 
-### Certificates
+## Certificates
 
 The first step is to generate the X.509 certificates, including a certificate authority (CA), a server certificate, and at least one client certificate.
 
-#### Certificate Authority
+### Certificate Authority
 
 Let us start by creating a self-signed root CA certificate:
 
@@ -79,7 +78,7 @@ subjkey:   45:30:11:da:a4:0e:0b:0a:a3:41:a5:81:41:ab:d8:04:7a:40:6c:c0
 
 **Warning:** The private key `/etc/ipsec.d/private/strongswanKey.pem` of the CA should be moved somewhere safe, ossibly to a special signing host without access to the Internet. Theft of this master signing key would completely compromise your public key infrastructure.
 
-#### Host Certificate
+### Host Certificate
 
 This certificate will be used to authenticate the VPN server. Run the following commands:
 
@@ -136,7 +135,7 @@ subjkey:   5f:12:c2:06:ee:2b:1e:cc:5f:78:54:ff:f0:f3:7b:a0:2b:c0:b4:d6
 
 ```
 
-#### Client Certificate
+### Client Certificate
 
 Any client will require a personal certificate in order to use the VPN. The process is analogous to generating a host certificate, except that we identify a client certificate by the client's e-mail address rather than a hostname.
 
@@ -163,11 +162,11 @@ $ openssl pkcs12 -export -inkey private/ClientKey.pem \
 
 The result is a 2048 bit RSA private key `ClientKey.pem` (line 4). In line 6 we extract its public key and pipe it over to issue `ClientCert.pem` (line 12), the first client certificate signed by your CA. The certificate has a validity of two years (730 days) and identifies the client by his e-mail address (here: `myself@example.com`). The last command bundles all needed certificates and keys into a PKCS#12 file with a passphrase, which is the most convenient format for clients.
 
-### VPN Variants
+## VPN Variants
 
 The easiest configuration to get running with is IPSec in tunnel mode, described below.
 
-#### IPSec in tunnel mode
+### IPSec in tunnel mode
 
 VPN configuration can be found in `/etc/ipsec.conf`. The following contains the necessary options to build a basic, functional VPN server:
 
@@ -234,13 +233,13 @@ conn CiscoIPSec
 
 ```
 
-#### IPSec in transport mode
+### IPSec in transport mode
 
-#### IPSec/L2TP
+### IPSec/L2TP
 
 The [L2TP/IPsec VPN client setup](/index.php/L2TP/IPsec_VPN_client_setup "L2TP/IPsec VPN client setup") page describes how to setup a client to connect to an IPSec/L2TP server. This variant of an IPSec VPN has the advantage of allowing to tunnel non-IP packets, contrary to pure IPSec, but at the expense of having to run an additional L2TP daemon.
 
-### Secrets
+## Secrets
 
 strongSwan needs to know which clients are allowed to connect to the VPN. This is configured in the `/etc/ipsec.secrets` file, like the following example:
 
@@ -266,7 +265,7 @@ $ ipsec rereadsecrets
 
 ```
 
-### Networking
+## Networking
 
 You’re almost done setting up your server. There are a few things left to make your VPN server properly route the VPN tunnel:
 
@@ -310,9 +309,7 @@ ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=try-
 
 ```
 
-### Troubleshooting
-
-## Client configuration
+## Troubleshooting
 
 ## See also
 

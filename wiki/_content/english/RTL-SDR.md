@@ -31,7 +31,7 @@ $ rtl_sdr capture.bin -s 1.8e6 -f 123.4e6
 Tune to your favorite radio station and pipe to [sox](/index.php/PulseAudio "PulseAudio") for audio:
 
 ```
-$ rtl_fm -f 102.7e6 -M wbfm -s 200000 -r 48000 - | aplay -r 48k -f S16_LE
+$ rtl_fm -f 102.7e6 -M wbfm -s 200000 -r 48000 - | aplay -r 48000 -f S16_LE
 
 ```
 

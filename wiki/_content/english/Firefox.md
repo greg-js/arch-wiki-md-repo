@@ -83,7 +83,14 @@ about:config
 
 in the Firefox address bar.
 
-Once set, these affect the user's current profile, and may be synchronized across all devices via [Firefox Sync](https://www.mozilla.org/firefox/sync/). Please note that only a subset of the `about:config` entries are synchronized by this method, and the exact subset may be found by searching for `services.sync.prefs` in `about:config`.
+Once set, these affect the user's current profile, and may be synchronized across all devices via [Firefox Sync](https://www.mozilla.org/firefox/sync/). Please note that only a subset of the `about:config` entries are synchronized by this method, and the exact subset may be found by searching for `services.sync.prefs` in `about:config`. Additional preferences and 3rd party preferences may be synchronized by creating new boolean entries prepending the config value with `services.sync.prefs.sync` ([documentation](https://developer.mozilla.org/en-US/docs/Archive/Mozilla/Firefox_Sync/Syncing_custom_preferences) is still applicable.) To synchronize the whitelist for the extension [NoScript](https://addons.mozilla.org/en-US/firefox/addon/noscript/):
+
+```
+services.sync.prefs.sync.capability.policy.maonoscript.sites
+
+```
+
+The boolean `noscript.sync.enabled` must be set to true to synchronize the remainder of NoScript's preferences via Firefox Sync.
 
 Firefox also allows configuration for a profile via a `user.js` file: [user.js](http://kb.mozillazine.org/User.js_file) kept in the profile folder, usually `~/.mozilla/firefox/*some name*.default/`. For a useful starting point, see e.g [custom user.js](https://github.com/pyllyukko/user.js) which is targeted at privacy/security conscious users.
 
@@ -351,13 +358,7 @@ Edit > Settings > Advanced > General > Use smooth scrolling
 
 ### Tearing video in fullscreen mode
 
-If you are using the Xorg Intel or Nouveau drivers and experience tearing video in fullscreen mode, go to about:config and try to change the following values:
-
-```
-layers.acceleration.force-enabled true
-layers.offmainthreadcomposition.enabled true
-
-```
+If you are using the Xorg Intel or Nouveau drivers and experience tearing video in fullscreen mode, try [Firefox tweaks#Enable OpenGL Off-Main-Thread Compositing (OMTC)](/index.php/Firefox_tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29 "Firefox tweaks").
 
 ## See also
 

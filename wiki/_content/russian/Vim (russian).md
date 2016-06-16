@@ -31,7 +31,7 @@ Vim фокусируется на использовании клавиатур�
         *   [7.2.1 Видео](#.D0.92.D0.B8.D0.B4.D0.B5.D0.BE)
         *   [7.2.2 Игры](#.D0.98.D0.B3.D1.80.D1.8B)
     *   [7.3 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
-    *   [7.4 Цвета](#.D0.A6.D0.B2.D0.B5.D1.82.D0.B0)
+        *   [7.3.1 Цвета](#.D0.A6.D0.B2.D0.B5.D1.82.D0.B0)
 
 ## Установка
 
@@ -219,7 +219,7 @@ set guiheadroom=0
 *   [Vundle](https://github.com/gmarik/Vundle.vim) — в настоящее время наиболее популярный менеджер плагинов Vim.
 *   [Vim-plug](https://github.com/junegunn/vim-plug) - минималистичный менеджер плагинов для Vim, который имеет много особенностей, например, загрузка плагинов по запросу и параллельное обновление.
 *   [pathogen.vim](https://github.com/tpope/vim-pathogen) — простой плагин для управления переменной runtimepath.
-*   [Dein.vim](https://github.com/Shougo/dein.vim) - новый, быстрый и простой менеджер плагинов для Vim/[Neovim](/index.php/Neovim "Neovim") [NeoBundle](https://github.com/Shougo/neobundle.vim), доступен как [vim-dein-git](https://aur.archlinux.org/packages/vim-dein-git/).
+*   [Dein.vim](https://github.com/Shougo/dein.vim) - менеджер плагинов, заменяющий [NeoBundle](https://github.com/Shougo/neobundle.vim), доступен как [vim-dein-git](https://aur.archlinux.org/packages/vim-dein-git/).
 
 #### Из репозиториев Arch
 
@@ -344,7 +344,7 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [Базовый vimrc](https://gist.github.com/anonymous/c966c0757f62b451bffa)
 *   [Usevim](http://www.usevim.com/)
 
-### Цвета
+#### Цвета
 
 *   [Vivify](http://bytefluent.com/vivify/)
 *   [Vim colorscheme customization](https://linuxtidbits.wordpress.com/2014/10/14/vim-customize-installed-colorschemes/)

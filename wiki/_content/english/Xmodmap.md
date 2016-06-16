@@ -14,11 +14,12 @@
     *   [4.2 Test changes](#Test_changes)
 *   [5 Modifier keys](#Modifier_keys)
 *   [6 Reverse scrolling](#Reverse_scrolling)
-*   [7 Templates](#Templates)
-    *   [7.1 Spanish](#Spanish)
-    *   [7.2 Turn CapsLock into Control, and LeftControl into Hyper](#Turn_CapsLock_into_Control.2C_and_LeftControl_into_Hyper)
-    *   [7.3 Switch every number key N with Shift-N and vice-versa, for Croatian layout](#Switch_every_number_key_N_with_Shift-N_and_vice-versa.2C_for_Croatian_layout)
-*   [8 See also](#See_also)
+*   [7 Swapping mouse buttons](#Swapping_mouse_buttons)
+*   [8 Templates](#Templates)
+    *   [8.1 Spanish](#Spanish)
+    *   [8.2 Turn CapsLock into Control, and LeftControl into Hyper](#Turn_CapsLock_into_Control.2C_and_LeftControl_into_Hyper)
+    *   [8.3 Switch every number key N with Shift-N and vice-versa, for Croatian layout](#Switch_every_number_key_N_with_Shift-N_and_vice-versa.2C_for_Croatian_layout)
+*   [9 See also](#See_also)
 
 ## Introduction
 
@@ -155,6 +156,19 @@ The [natural scrolling](http://who-t.blogspot.com/2011/09/natural-scrolling-in-s
  `~/.Xmodmap`  `pointer = 1 2 3 **5 4** 7 6 8 9 10 11 12` 
 
 Then update *xmodmap*:
+
+```
+$ xmodmap ~/.Xmodmap
+
+```
+
+## Swapping mouse buttons
+
+The left, middle and right mouse buttons correspond to buttons 1,2 and 3 respectively in the synaptics driver. To swap left and right mouse buttons, again simply reverse the order in which they are listed in your `~/.Xmodmap`:
+
+ `~/.Xmodmap`  `pointer = **3 2 1**` 
+
+This should suffice for a simple mouse setup. Again, update *xmodmap*:
 
 ```
 $ xmodmap ~/.Xmodmap

@@ -3,24 +3,29 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Connection Interfaces](#Connection_Interfaces)
-        *   [1.1.1 USB](#USB)
-        *   [1.1.2 Parallel port](#Parallel_port)
-        *   [1.1.3 Local Network](#Local_Network)
-    *   [1.2 Printer Drivers](#Printer_Drivers)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Local printers](#Local_printers)
-    *   [2.2 Remote printers](#Remote_printers)
-        *   [2.2.1 Local CUPS server](#Local_CUPS_server)
-        *   [2.2.2 Without a local CUPS server](#Without_a_local_CUPS_server)
-    *   [2.3 Printer sharing](#Printer_sharing)
-    *   [2.4 Remote administration](#Remote_administration)
-    *   [2.5 Test the printer](#Test_the_printer)
-*   [3 Usage](#Usage)
-    *   [3.1 CLI tools](#CLI_tools)
-    *   [3.2 GUI applications](#GUI_applications)
-*   [4 Troubleshooting](#Troubleshooting)
-*   [5 See also](#See_also)
+*   [2 Connection Interfaces](#Connection_Interfaces)
+    *   [2.1 USB](#USB)
+    *   [2.2 Parallel port](#Parallel_port)
+    *   [2.3 Local Network](#Local_Network)
+*   [3 Printer Drivers](#Printer_Drivers)
+    *   [3.1 CUPS Native Drivers](#CUPS_Native_Drivers)
+    *   [3.2 Foomatic](#Foomatic)
+    *   [3.3 Gutenprint](#Gutenprint)
+    *   [3.4 OpenPrinting.org](#OpenPrinting.org)
+    *   [3.5 Manufacturer-specific drivers](#Manufacturer-specific_drivers)
+*   [4 Print Queues](#Print_Queues)
+    *   [4.1 Remote CUPS servers](#Remote_CUPS_servers)
+        *   [4.1.1 Local CUPS server](#Local_CUPS_server)
+        *   [4.1.2 Without a local CUPS server](#Without_a_local_CUPS_server)
+*   [5 Configuration](#Configuration)
+    *   [5.1 Printer sharing](#Printer_sharing)
+    *   [5.2 Remote administration](#Remote_administration)
+    *   [5.3 Test the printer](#Test_the_printer)
+*   [6 Usage](#Usage)
+    *   [6.1 CLI tools](#CLI_tools)
+    *   [6.2 GUI applications](#GUI_applications)
+*   [7 Troubleshooting](#Troubleshooting)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -32,11 +37,11 @@ If you intend to "print" into a PDF document, also install the [cups-pdf](https:
 
 [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `org.cups.cupsd.service`. Optionally, CUPS can use [Avahi](/index.php/Avahi "Avahi") browsing to discover unknown shared printers in your network. This can be useful in large setups where the server is unknown. To use this feature, start `cups-browsed.service`.
 
-### Connection Interfaces
+## Connection Interfaces
 
 Before CUPS can attempt to use a printer, it must be able to detect the printer. Additional steps for printer detection are listed below for various connection interfaces.
 
-#### USB
+### USB
 
 To see if your USB printer is detected:
 
@@ -47,7 +52,7 @@ Bus 001 Device 007: ID 03f0:1004 Hewlett-Packard DeskJet 970c/970cse
 
 ```
 
-#### Parallel port
+### Parallel port
 
 To use a parallel port printer, the `lp`, `parport` and `parport_pc` [kernel modules](/index.php/Kernel_modules "Kernel modules") are required.
 
@@ -65,7 +70,7 @@ DeviceID = parallel:/dev/usb/lp0
 
 ```
 
-#### Local Network
+### Local Network
 
 Newer versions of CUPS tend to be good at detecting printers, and tend to pick the right hostname, but unless you have added the printer to your /etc/hosts, CUPS will fail to resolve for normal printer activities. Unless you want to make your printer ip static, Avahi can help autoresolve your printer hostname. Set up [Avahi](/index.php/Avahi "Avahi") and [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") then restart CUPS by [restarting](/index.php/Restart "Restart") the `org.cups.cupsd.service` systemd unit.
 
@@ -78,27 +83,27 @@ ping XXXXXX.local
 
 should work, if it doesn't go back and make sure that Avahi is running and that you have the right hostname. After this, make sure that the hostname in the CUPS web interface is the .local hostname.
 
-### Printer Drivers
+## Printer Drivers
 
 The drivers for a printer may come from any of the sources shown below. See [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems") for a non-comprehensive list of drivers that others have gotten to work.
 
 Usually CUPS requires either a prebuilt PPD file including the driver or some XML data files + a PPD file generating engine to work. Even when a PPD file is provided to CUPS, the CUPS server will install its own regenerated PPD file into `/etc/cups/ppd/`
 
-	CUPS Native Drivers
+### CUPS Native Drivers
 
 CUPS already includes a few printer drivers. In that case you can just select it in the list and your printer will likely work.
 
-	Foomatic
+### Foomatic
 
 [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) + [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) or [foomatic-db-nonfree](https://www.archlinux.org/packages/?name=foomatic-db-nonfree) are database-driven systems for integrating software printer drivers with common spoolers under Unix.
 
 [foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds) or [foomatic-db-nonfree-ppds](https://www.archlinux.org/packages/?name=foomatic-db-nonfree-ppds) provide prebuilt PPD files from manufacturers.
 
-	Gutenprint
+### Gutenprint
 
 The [gutenprint](https://www.archlinux.org/packages/?name=gutenprint), [foomatic-db-gutenprint](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint), [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds) drivers are high-quality, open source printer drivers for various Canon, Epson, HP, Lexmark, Sony, Olympus and PCL printers supporting CUPS. They also support ghostscript, The GIMP, and other applications.
 
-	OpenPrinting.org
+### OpenPrinting.org
 
 There might be a PPD available at the [OpenPrinting Printer List](http://www.openprinting.org/printers). Usually these driver files are included in the above foomatic packages. But searching for your printer model might help you decide which driver to chose from the list.
 
@@ -106,19 +111,13 @@ Select the brand and type/model of the printer to find out what driver the site 
 
 The website will also suggest a driver. For instance, for the HP LaserJet 5P, the site recommends the `ljet4` driver. It is possible that this driver is already included with CUPS, otherwise you will need to install it through another source listed in this section.
 
-	Manufacturer-specific drivers
+### Manufacturer-specific drivers
 
 Many printer manufacturers supply their own Linux drivers. These are often available in the official Arch repositories or in the [AUR](/index.php/AUR "AUR").
 
-## Configuration
+Some of those drivers are described in more detail in [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems").
 
-The CUPS server configuration located in `/etc/cups/cupsd.conf`. After editing, [restart](/index.php/Restart "Restart") `org.cups.cupsd.service` to apply any changes. The default configuration is sufficient for most users.
-
-[Groups](/index.php/Groups "Groups") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` group is used by default.
-
-**Note:** [cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to **Letter** paper size. To avoid having to change paper size for each printer you add, edit `/etc/papersize` and set your system default paper size. See papersize(5).
-
-### Local printers
+## Print Queues
 
 To have the printer installed on the system, fire up a browser and point it to [http://localhost:631](http://localhost:631). The CUPS web interface should be displayed from which all administrative tasks can be performed.
 
@@ -130,14 +129,7 @@ Go to Administration and enter the root login and password information your GNU/
 *   The *location*, a description where the printer is physically located (for instance "bedroom", or "in the kitchen right next to the dish washer", etc.). This is to aid in maintaining several printers.
 *   The *description* should contain a full description of the printer. A common use is the full printer name (like "HP LaserJet 5P").
 
-The next screen requests the device the printer listens to. The choice of several devices will be presented. The next table covers a few possible devices, but the list is not exhaustive.
-
-| Device | Description |
-| AppSocket/HP JetDirect | This special device allows for network printers to be accessible through a HP JetDirect socket. Only specific printers include support for this option. |
-| Internet Printing Protocol (IPP or HTTP) | Used reach the remote printer through the IPP protocol either directly (IPP) or through HTTP. |
-| LPD/LPR Host or Printer | Select this option if the printer is remote and attached to a LPD/LPR server. |
-| Parallel Port #1 | Select when the printer is locally attached to a parallel port (LPT). When the printer is automatically detected its name will be appended to the device. |
-| USB Printer #1 | Select when the printer is locally attached to a USB port. The printer name should automatically be appended to the device name. |
+The next screen requests the device the printer listens to.
 
 If installing a remote printer, the URL to the printer will be queried:
 
@@ -145,11 +137,13 @@ If installing a remote printer, the URL to the printer will be queried:
 *   An HP JetDirect printer requires a `socket://hostname` syntax.
 *   An IPP printer requires a `ipp://hostname/printers/printername` or `http://hostname:631/printers/printername` syntax.
 
+Detection of local printers should be automatic, and the printer name should automatically be appended to the device name.
+
 On the next screen, you can select the printer manufacturer along with the model type and number. Remember that you need to have downloaded/installed the correct printer driver in order to see your printer type among the others in the list. See the previous section on "Printer Drivers" to do this.
 
 Once the driver is selected, CUPS will inform that the printer has been added successfully to the system. Navigate to the printer management page on the administration interface and select Configure Printer to change the printer's settings (resolution, page format, ...).
 
-### Remote printers
+### Remote CUPS servers
 
 **Note:** As of CUPS version 1.6, the client defaults to IPP 2.0\. If the server uses CUPS <= 1.5 / IPP <= 1.1, the client does not downgrade the protocol automatically and thus cannot communicate with the server. A workaround (undocumented as of 2013-05-07, but see [this bug report](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=704238)) is to put the following in `/etc/cups/client.conf`: ServerName HOSTNAME-OR-IP-ADDRESS[:PORT]/version=1.1
 
@@ -183,6 +177,14 @@ ServerName printserver.mydomain
 ```
 
 The remote system's default printer setting will be used by default.
+
+## Configuration
+
+The CUPS server configuration located in `/etc/cups/cupsd.conf`. After editing, [restart](/index.php/Restart "Restart") `org.cups.cupsd.service` to apply any changes. The default configuration is sufficient for most users.
+
+[Groups](/index.php/Groups "Groups") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` group is used by default.
+
+[cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to **Letter** paper size. To avoid having to change paper size for each printer you add, edit `/etc/papersize` and set your system default paper size. See papersize(5).
 
 ### Printer sharing
 

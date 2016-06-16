@@ -89,24 +89,7 @@ Edit boot options in `/boot/refind_linux.conf` as per EFI boot stub above, examp
 
 ```
 
-If you are using manual stanzas in `/boot/EFI/refind/refind.conf`, you could simply add `initrd=/intel-ucode.img` or `initrd=/boot/intel-ucode.img` as required to the options line:
-
-```
-menuentry "Arch Linux" {
-...
-initrd /initramfs-linux.img
-options "... **initrd=/intel-ucode.img**"
-...
-}
-
-```
-
-**Note:**
-
-*   You should specify images in that order, as in example above. Because image, that is specified in *initrd* line will be added as last, but microcode should be added first. If you do it incorrect, you will be able to boot, but microcode will not be updated.
-*   It is impossible to create two *initrd* lines or adding two images to a single *initrd* line.
-
-Alternatively, you can specify two "initrd=" parameters in *options* line and do not use *initrd* line, just like in `/boot/refind_linux.conf`.
+Users employing [manual stanzas](/index.php/REFInd#Manual_boot_stanzas "REFInd") in `/boot/refind.conf` to define the kernels should simply add `initrd=/intel-ucode.img` or `/boot/intel-ucode.img` as required to the options line, and not in the main part of the stanza.
 
 ### Syslinux
 

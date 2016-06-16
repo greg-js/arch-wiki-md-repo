@@ -19,7 +19,7 @@
 
 The preferred version control system (default is [git](/index.php/Git "Git")) and other options are to be configured in `/etc/etckeeper/etckeeper.conf`.
 
-Etckeeper supports using [pacman](/index.php/Pacman "Pacman") as a `LOWLEVEL_PACKAGE_MANAGER` and `HIGHLEVEL_PACKAGER_MANAGER` in `etckeeper.conf`.
+Etckeeper supports using [pacman](/index.php/Pacman "Pacman") as a `LOWLEVEL_PACKAGE_MANAGER` and `HIGHLEVEL_PACKAGE_MANAGER` in `etckeeper.conf`.
 
 ## Usage
 

@@ -1,6 +1,6 @@
 This tutorial shows how to download, install, and configure the following software from Altera:
 
-*   Quartus Prime Stamdard Edition v15.1
+*   Quartus Prime Standard Edition v15.1
     *   USB-Blaster (I and II) Download Cable Driver
 *   ModelSim-Altera Edition (Included with Quartus Prime Standard Edition v15.1)
 

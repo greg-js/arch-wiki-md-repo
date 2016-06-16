@@ -907,6 +907,15 @@ fn main() {
 
 ```
 
+	Salt
+
+	Salt is an automation framework
+
+```
+ salt '*' event.fire '{"data":"Arch Is the best!"}' 'arch/best'
+
+```
+
 	Scala
 
 	A multi paradigm language that runs on the JVM.

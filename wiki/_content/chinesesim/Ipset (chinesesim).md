@@ -1,4 +1,6 @@
-[ipset](http://ipset.netfilter.org/)是 Linux [防火墙](/index.php?title=%E9%98%B2%E7%81%AB%E5%A2%99&action=edit&redlink=1 "防火墙 (page does not exist)")[iptables](/index.php/Iptables "Iptables")的一个伴随工具。 除了其他众多功能，它允许你建立规则来轻松愉快地屏蔽一组IP地址。
+**翻译状态：** 本文是英文页面 [Ipset](/index.php/Ipset "Ipset") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-14，点击[这里](https://wiki.archlinux.org/index.php?title=Ipset&diff=0&oldid=437580)可以查看翻译后英文页面的改动。
+
+[ipset](http://ipset.netfilter.org/)是 Linux [防火墙](/index.php/Firewalls "Firewalls")[iptables](/index.php/Iptables "Iptables")的一个伴随工具。 除了其他众多功能，它允许你建立规则来轻松愉快地屏蔽一组IP地址。
 
 ## Contents
 
@@ -52,7 +54,7 @@
 
 ```
 
-然后[激活](/index.php?title=%E6%BF%80%E6%B4%BB&action=edit&redlink=1 "激活 (page does not exist)") `ipset.service`,这个服务与用于恢复[iptables rules](/index.php/Iptables#Configuration_and_usage "Iptables")的`iptables.service`相似。
+然后[启用](/index.php/Enable "Enable") `ipset.service`,这个服务与用于恢复[iptables rules](/index.php/Iptables#Configuration_and_usage "Iptables")的`iptables.service`相似。
 
 ### 使用PeerGuardian和其它列表屏蔽
 

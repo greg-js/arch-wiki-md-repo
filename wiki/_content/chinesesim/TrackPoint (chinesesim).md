@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [TrackPoint](/index.php/TrackPoint "TrackPoint") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-18，点击[这里](https://wiki.archlinux.org/index.php?title=TrackPoint&diff=0&oldid=425743)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [TrackPoint](/index.php/TrackPoint "TrackPoint") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-08，点击[这里](https://wiki.archlinux.org/index.php?title=TrackPoint&diff=0&oldid=437637)可以查看翻译后英文页面的改动。
 
 小红点(TrackPoint)是联想所有的键盘中间的指点杆的商标。[xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) 和 [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) 都支持它。evdev是 [Xorg](/index.php/Xorg "Xorg") 的默认驱动。
 
@@ -57,7 +57,7 @@ tpset "Device Accel Constant Deceleration" 0.95
 
 这条规则增大小红点的**速度**并在启动时打开**按压选择**功能（如上所述）。 随便改变这些数值并添加其他修改到 /sys/devices/platform/i8042/serio1/serio2/ 的文件中。这个规则也使用于只有小红点的设备。
 
- `/etc/udev/rules.d/10-trackpoint.rules`  `ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/sensitivity}="240"` 
+ `/etc/udev/rules.d/10-trackpoint.rules`  `ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/sensitivity}="240", ATTR{device/press_to_select}="1"` 
 
 ## Xorg配置
 

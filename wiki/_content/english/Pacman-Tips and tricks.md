@@ -71,6 +71,10 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 ### Utilities
 
+*   **Arch-Update** — Update indicator for Gnome-Shell.
+
+	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
+
 *   **Lostfiles** — Script that identifies files not owned by any package.
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
@@ -90,6 +94,14 @@ For general methods to improve the flexibility of the provided tips or pacman it
 *   **[pkgtools](/index.php/Pkgtools "Pkgtools")** — Collection of scripts for Arch Linux packages.
 
 	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
+
+*   **repoctl** — Tool to help manage local repositories.
+
+	[https://github.com/cassava/repoctl](https://github.com/cassava/repoctl) || [repoctl](https://aur.archlinux.org/packages/repoctl/)
+
+*   **repose** — An Arch Linux repository building tool.
+
+	[https://github.com/vodik/repose](https://github.com/vodik/repose) || [repose](https://aur.archlinux.org/packages/repose/)
 
 *   **srcpac** — Simple tool that automates rebuilding packages from source.
 

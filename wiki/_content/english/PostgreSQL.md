@@ -237,19 +237,14 @@ Become the postgres user, and initialize the new cluster:
 
 ```
 
-If enabled, disable `postgresql.service`. Copy `/usr/lib/systemd/system/postgresql.service` to `/etc/systemd/system/postgresql.service` and edit it to change the default `PGROOT` and `PIDFile` paths.
+Some variables need to be overridden in the configuration, as described in [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd"). First, run:
 
 ```
-Environment=PGROOT=*/pathto/pgroot/*
-...
-PIDFile=*/pathto/pgroot/*data/postmaster.pid
+# systemctl edit postgresql.service
 
 ```
 
-Alternatively, the variables can be overridden by a custom configuration, as described in [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd"):
-
-1.  create the directory */etc/systemd/system/postgresql.service.d*
-2.  create a file *start.conf*:
+Systemctl will open a drop-in configuration file in your editor. Write the following in that file:
 
 ```
 [Service]

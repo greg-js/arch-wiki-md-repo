@@ -367,7 +367,7 @@ To create a separate signature file to be distributed separately from the docume
 
 ```
 
-This method is often used in distributing software projects to allow users to verify that the program has not been modified by a third part.
+This method is often used in distributing software projects to allow users to verify that the program has not been modified by a third party.
 
 ### Verify a signature
 

@@ -90,7 +90,7 @@ location / {
    try_files $uri $uri/ @mediawiki;
 }
 location @mediawiki {
-   rewrite ^/(.*)$ /index.php?title=$1&$args;
+   rewrite ^/(.*)$ /index.php;
 }
 location ~ \.php5?$ {
    include /etc/nginx/fastcgi_params;

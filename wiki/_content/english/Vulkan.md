@@ -6,7 +6,7 @@ Learn more at [Khronos](https://www.khronos.org/vulkan/).
 
 ## Installation
 
-To run a Vulkan appplication, you will need to [install](/index.php/Install "Install") the [vulkan-icd-loader](https://www.archlinux.org/packages/?name=vulkan-icd-loader) package, as well as the Vulkan drivers for your graphics card(s):
+To run a Vulkan application, you will need to [install](/index.php/Install "Install") the [vulkan-icd-loader](https://www.archlinux.org/packages/?name=vulkan-icd-loader) package, as well as the Vulkan drivers for your graphics card(s):
 
 *   Intel: [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel)
 *   NVIDIA: [nvidia](https://www.archlinux.org/packages/?name=nvidia)

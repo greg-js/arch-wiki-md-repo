@@ -1,22 +1,23 @@
-There is a wonderful tool for `gcc` called `ccache`. You can read about it at their [home page](http://ccache.samba.org).
-
-If you are always compiling the same programs over and over again — such as trying out several kernel patches, or testing your own development — then `ccache` is perfect. While it may take a few seconds longer to compile a program the first time with `ccache`, subsequent compiles will be much, much faster.
+[ccache](http://ccache.samba.org/) is a tool for the gcc compiler used to compile the same program over and over again with little downtime. While it may take a few seconds longer to compile a program the first time with `ccache`, subsequent compiles will be much, much faster.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Enable ccache for makepkg](#Enable_ccache_for_makepkg)
-    *   [1.2 Enable for command line](#Enable_for_command_line)
-    *   [1.3 Enable with colorgcc](#Enable_with_colorgcc)
-*   [2 Misc](#Misc)
-    *   [2.1 Change the cache directory](#Change_the_cache_directory)
-    *   [2.2 Disable the cache via environment](#Disable_the_cache_via_environment)
-    *   [2.3 CLI](#CLI)
-*   [3 See also](#See_also)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Enable ccache for makepkg](#Enable_ccache_for_makepkg)
+    *   [2.2 Enable for command line](#Enable_for_command_line)
+    *   [2.3 Enable with colorgcc](#Enable_with_colorgcc)
+*   [3 Misc.](#Misc.)
+    *   [3.1 Change the cache directory](#Change_the_cache_directory)
+    *   [3.2 Disable the cache via environment](#Disable_the_cache_via_environment)
+    *   [3.3 CLI](#CLI)
+*   [4 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [ccache](https://www.archlinux.org/packages/?name=ccache) package.
+
+## Configuration
 
 ### Enable ccache for makepkg
 
@@ -60,7 +61,7 @@ f77:/usr/bin/g77
 gcj:/usr/bin/gcj
 ```
 
-## Misc
+## Misc.
 
 ### Change the cache directory
 
@@ -100,5 +101,4 @@ $ ccache -C
 
 ## See also
 
-*   [ccache homepage](http://ccache.samba.org/)
 *   [ccache manual](http://ccache.samba.org/manual.html)

@@ -8,6 +8,7 @@ This article will show you how to easily achieve this goal. The things you need 
 *   [2 X applications](#X_applications)
     *   [2.1 Secondary X server](#Secondary_X_server)
     *   [2.2 xpra](#xpra)
+    *   [2.3 X2Go](#X2Go)
 *   [3 Conclusion](#Conclusion)
 
 ## Console applications
@@ -60,6 +61,10 @@ This is important because some features, like AGP mode, works only on one X serv
 Xpra allows you to start X programs and leave them running after disconnecting to reconnect again at a later time. It is possible to start X programs on a remote machine, connect to the machine over ssh, disconnect and reconnect again while the programs continue running.
 
 Read the [Xpra](/index.php/Xpra "Xpra") article for more information.
+
+### X2Go
+
+[X2Go](/index.php/X2Go "X2Go") supports suspending of sessions and reconnecting even from different client. While designed for remote access, it can be used even on localhost.
 
 ## Conclusion
 

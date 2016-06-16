@@ -141,7 +141,7 @@ After having created the appropriate configuration in /etc/tinc/*vpnname*, you c
 
 ```
 
-If you want to enable it at startup you have to enable the appropriate service
+If you want to enable it at startup you can enable the appropriate service
 
 ```
 # systemctl enable tinc@*vpnname*

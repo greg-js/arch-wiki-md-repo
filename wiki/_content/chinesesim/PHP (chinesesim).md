@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [PHP](/index.php/PHP "PHP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=PHP&diff=0&oldid=421404)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [PHP](/index.php/PHP "PHP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-08，点击[这里](https://wiki.archlinux.org/index.php?title=PHP&diff=0&oldid=437642)可以查看翻译后英文页面的改动。
 
 [PHP](http://www.php.net/)是一种广泛使用的通用脚本语言，特别适合于Web开发，可嵌入到HTML。
 
@@ -11,12 +11,12 @@
     *   [4.1 gd](#gd)
     *   [4.2 imagemagick](#imagemagick)
     *   [4.3 pthreads](#pthreads)
-    *   [4.4 mcrypt](#mcrypt)
-    *   [4.5 PCNTL](#PCNTL)
-    *   [4.6 MySQL/MariaDB](#MySQL.2FMariaDB)
-    *   [4.7 PostgreSQL](#PostgreSQL)
-    *   [4.8 Sqlite](#Sqlite)
-    *   [4.9 XDebug](#XDebug)
+    *   [4.4 PCNTL](#PCNTL)
+    *   [4.5 MySQL/MariaDB](#MySQL.2FMariaDB)
+    *   [4.6 PostgreSQL](#PostgreSQL)
+    *   [4.7 Sqlite](#Sqlite)
+    *   [4.8 XDebug](#XDebug)
+    *   [4.9 IMAP](#IMAP)
 *   [5 缓存](#.E7.BC.93.E5.AD.98)
     *   [5.1 OPCache](#OPCache)
     *   [5.2 APCu](#APCu)
@@ -54,7 +54,7 @@
 
 ## 运行
 
-虽然PHP可以独立运行，它通常用于HTTP服务器如： [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"), [nginx](/index.php/Nginx "Nginx"), [lighttpd](/index.php/Lighttpd "Lighttpd") 和 [Hiawatha](/index.php/Hiawatha "Hiawatha").
+虽然PHP可以独立运行，它通常用于HTTP服务器如： [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")([LAMP](/index.php/LAMP "LAMP") 组合), [nginx](/index.php/Nginx "Nginx"), [lighttpd](/index.php/Lighttpd "Lighttpd") 和 [Hiawatha](/index.php/Hiawatha "Hiawatha").
 
 使用命令：“`php -S localhost:8000 -t public_html/` ”可以独立运行PHP。 见 [documentation](https://secure.php.net/manual/en/features.commandline.webserver.php).
 
@@ -75,8 +75,6 @@ date.timezone = Europe/Berlin
 display_errors=On
 
 ```
-
-**Tip:** 2015-11-22 前，[php-composer](https://www.archlinux.org/packages/?name=php-composer) 的配置文件在`/usr/share/php-composer/php.ini`
 
 *   [open_basedir](http://php.net/open-basedir) 限制 PHP 可以访问的目录，可以增加安全性。从 PHP 7.0 开始，和上游一样默认不再设置，要使用的用户请手动设置，例如：
 
@@ -120,24 +118,15 @@ extension=imagick.so
 
 可在 [PHP pthreads extension](/index.php/PHP_pthreads_extension "PHP pthreads extension") 页面找到指令介绍。
 
-### mcrypt
-
-如果想用 `mcrypt` 模块， 安装 [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) 以及在`/etc/php/php.ini`中取消下面这行的注释：
-
-```
-extension=mcrypt.so
-
-```
-
 ### PCNTL
 
 利用 PCNTL 可以在服务器上直接创建进程。虽然这可能是你想要的，但是这样也会让 PHP 有能力把机器搞的一团糟。所以 PHP 不能和其他扩展一样加载，要启用此扩展，需要重新编译PHP。
 
 ### MySQL/MariaDB
 
-Install and configure MySQL/MariaDB as described in [MariaDB](/index.php/MariaDB "MariaDB").
+根据 [MariaDB](/index.php/MariaDB "MariaDB") 页面安装并配置 MySQL/MariaDB.
 
-Uncomment [the following lines](https://secure.php.net/manual/en/mysqlinfo.api.choosing.php) in `/etc/php/php.ini`:
+取消 `/etc/php/php.ini` 中 [下面行](https://secure.php.net/manual/en/mysqlinfo.api.choosing.php)前面的注释 :
 
 ```
 extension=pdo_mysql.so
@@ -145,15 +134,13 @@ extension=mysqli.so
 
 ```
 
-**Warning:** `mysql.so` was [removed](https://secure.php.net/manual/en/migration70.removed-exts-sapis.php) in PHP 7.0.
+**警告:** PHP 7.0 中 [删除了](https://secure.php.net/manual/en/migration70.removed-exts-sapis.php) `mysql.so`。
 
-You can add minor privileged MySQL users for your web scripts. You might also want to edit `/etc/mysql/my.cnf` and uncomment the `skip-networking` line so the MySQL server is only accessible by the localhost. You have to restart MySQL for changes to take effect.
-
-**Tip:** You may want to install a tool like [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"), [Adminer](/index.php/Adminer "Adminer") or [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) to work with your databases.
+可以给网络脚本最低的 MySQL 用户权限，可以编辑 `/etc/mysql/my.cnf` 取消 `skip-networking` 行的注释，这样 MySQL 服务器就只能本地访问。设置之后需要重启 MySQL。
 
 ### PostgreSQL
 
-Install and configure [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), then install the [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql) package and uncomment the following lines in `/etc/php/php.ini`:
+安装并配置 [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")，然后安装 [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql) 软件包并取消 `/etc/php/php.ini` 中下面几行的注释:
 
 ```
 extension=pdo_pgsql.so
@@ -163,7 +150,7 @@ extension=pgsql.so
 
 ### Sqlite
 
-Install and configure [SQLite](/index.php/SQLite "SQLite"), then install the [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) package and uncomment the following lines in `/etc/php/php.ini`:
+安装并配置 [SQLite](/index.php/SQLite "SQLite")，然后安装 [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) 软件包并取消 `/etc/php/php.ini` 中下面几行的注释:
 
 ```
 extension=pdo_sqlite.so
@@ -173,10 +160,23 @@ extension=sqlite3.so
 
 ### XDebug
 
-XDebug allows you to easily debug php code using modified var_dump() function. Install [xdebug](https://www.archlinux.org/packages/?name=xdebug) and add the line at `/etc/php/php.ini`:
+用 XDebug 可以很容易的通过修改的 var_dump() 函数进行调试，安装 [xdebug](https://www.archlinux.org/packages/?name=xdebug) 并取消 `/etc/php/conf.d/xdebug.ini` 中如下行前面的注释：
 
 ```
-extension=xdebug.so
+zend_extension=xdebug.so
+xdebug.remote_enable=on
+xdebug.remote_host=127.0.0.1
+xdebug.remote_port=9000
+xdebug.remote_handler=dbgp
+
+```
+
+### IMAP
+
+安装 [php-imap](https://www.archlinux.org/packages/?name=php-imap) 并取消 `/etc/php/conf.d/xdebug.ini` 中如下行前面的注释:
+
+```
+ extension=imap.so
 
 ```
 
@@ -230,7 +230,7 @@ You would need other plugins for JavaScript support and DB query.
 
 ### Komodo
 
-[Komodo](http://komodoide.com/) is an IDE with good integration for PHP+HTML+JavaScript. [Komodo Edit](http://komodoide.com/komodo-edit/) is a free editor-only variant.
+[Komodo](http://komodoide.com/) is an IDE with good integration for PHP+HTML+JavaScript. [Komodo Edit](http://komodoide.com/komodo-edit/) is a free editor-only variant. 可以通过 [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/) 安装。
 
 ### Netbeans
 

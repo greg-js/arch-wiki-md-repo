@@ -447,7 +447,7 @@ Save the rules with this command:
 
 ```
 
-and make sure your rules are loaded on boot enabling the **iptables** [daemon](/index.php/Daemon "Daemon").
+and make sure your rules are loaded on boot enabling the **iptables** systemd service.
 
 Check that the rules load correctly by [starting](/index.php/Starting "Starting") `iptables.service` and then checking the status of the service.
 
@@ -613,7 +613,7 @@ Save the rules:
 
 ```
 
-and make sure your rules are loaded when you boot enabling the **iptables** [daemon](/index.php/Daemon "Daemon").
+and make sure your rules are loaded when you boot enabling the **iptables** systemd service.
 
 ## See Also
 

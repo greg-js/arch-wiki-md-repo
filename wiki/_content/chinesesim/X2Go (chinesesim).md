@@ -22,10 +22,10 @@
 
 ## 安装
 
-[官方仓库](/index.php/Official_repositories "Official repositories")中提供了下列两个软件包供 [安装](/index.php/Pacman "Pacman") ：
+[官方仓库](/index.php/Official_repositories "Official repositories")中提供了下列两个软件包供[安装](/index.php/Pacman "Pacman") ：
 
 *   [x2goserver](https://www.archlinux.org/packages/?name=x2goserver) - X2Go 服务器
-*   [x2goclient](https://www.archlinux.org/packages/?name=x2goclient) - X2Go 基于 Qt4 的客户端
+*   [x2goclient](https://www.archlinux.org/packages/?name=x2goclient) - 基于 Qt4 的 X2Go 客户端
 
 ## 服务器端配置
 
@@ -36,7 +36,7 @@ X2Go 使用 [Secure Shell](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%
 如果你使用非 POSIX (C) 本地化环境，则需要在[配置文件](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B "Secure Shell (简体中文)")中添加下列配置行：
 
 ```
-# Allow client to pass locale environment variables（允许客户端跳过本地化环境变量）
+# Allow client to pass locale environment variables（允许客户端略过本地化环境变量）
 AcceptEnv LANG LC_*
 
 ```

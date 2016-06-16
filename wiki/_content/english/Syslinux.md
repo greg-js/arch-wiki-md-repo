@@ -131,7 +131,7 @@ Your boot partition, on which you plan to install Syslinux, must contain a FAT, 
 
 After this, proceed to install the Syslinux boot code (`mbr.bin` or `gptmbr.bin`) to the Master Boot Record 440-byte boot code region (not to be confused with MBR aka msdos partition table) of the disk, as described in the next sections, respectively.
 
-**Note:** For a partitionless install, there is no need to install the Syslinux boot code to the MBR. See [[1]](https://unix.stackexchange.com/questions/103501/boot-partiotionless-disk-with-syslinux).
+**Note:** For a partitionless install, there is no need to install the Syslinux boot code to the MBR. You could skip below and jump to [#Configuration](#Configuration). See [[1]](https://unix.stackexchange.com/questions/103501/boot-partiotionless-disk-with-syslinux).
 
 ##### MBR partition table
 
@@ -909,7 +909,7 @@ In some cases (e.g. bootloader unable to boot kernel) it is highly desirable to 
 *   use PROMPT 1
 *   use DEFAULT <problematic_label>
 
-To get more detailed debug log, recompile the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package with additional CFLAGS:
+To get more detailed debug log, [recompile](/index.php/ABS "ABS") the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package with additional CFLAGS:
 
 ```
 -DDEBUG_STDIO=1 -DCORE_DEBUG=1

@@ -9,26 +9,26 @@ This article will show you how to configure a simple in house network enabling u
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 SIP](#SIP)
-    *   [2.2 Music On Hold](#Music_On_Hold)
+    *   [2.2 Music on hold](#Music_on_hold)
     *   [2.3 Voicemail](#Voicemail)
-    *   [2.4 Connecting To The PSTN](#Connecting_To_The_PSTN)
-        *   [2.4.1 General Set-up](#General_Set-up)
+    *   [2.4 Connecting to the PSTN](#Connecting_to_the_PSTN)
+        *   [2.4.1 General set-up](#General_set-up)
             *   [2.4.1.1 sip.conf](#sip.conf)
             *   [2.4.1.2 extensions.conf](#extensions.conf)
             *   [2.4.1.3 iax.conf](#iax.conf)
             *   [2.4.1.4 extensions.conf](#extensions.conf_2)
     *   [2.5 Sounds](#Sounds)
     *   [2.6 MeetMe](#MeetMe)
-*   [3 Asterisk Console And Softphones](#Asterisk_Console_And_Softphones)
+*   [3 Asterisk console and softphones](#Asterisk_console_and_softphones)
 *   [4 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
-Install the [asterisk](https://aur.archlinux.org/packages/asterisk/) package. You may also want to install [asterisk-addons](https://aur.archlinux.org/packages/asterisk-addons/) and [zaptel-svn](https://aur.archlinux.org/packages/zaptel-svn/).
+Install the [asterisk](https://aur.archlinux.org/packages/asterisk/) package.
 
 [Start](/index.php/Start "Start") the server with `asterisk.service`.
 
-You will also need a SIP [softphone](/index.php/Softphone "Softphone") and at least two machines. Recommendations for SIP phones are [linphone](http://www.linphone.org/) ([linphone](https://www.archlinux.org/packages/?name=linphone) package) or [x-lite](http://www.xten.net/index.php?menu=X-Series) ([xlite_bin](https://aur.archlinux.org/packages/xlite_bin/) package).
+You will also need a SIP [softphone](/index.php/Softphone "Softphone") and at least two machines. Recommendations for SIP phones are [Linphone](http://www.linphone.org/) ([linphone](https://www.archlinux.org/packages/?name=linphone) package) or [X-Lite](http://www.counterpath.com/x-lite/) ([xlite_bin](https://aur.archlinux.org/packages/xlite_bin/) package).
 
 To enable ilbc codec support add the following to the very beginning of the `build` section of the PKGBUILD:
 
@@ -73,7 +73,7 @@ exten => 101,1,Dial(SIP/me2)
 
 This creates the context `house` and assigns extension 100 to the SIP user `me1`, and extension 101 to the SIP user `me2`. Now all thats left is to see if it works.
 
-### Music On Hold
+### Music on hold
 
 Music on hold is a really sweet feature. And once again easy to install and configure. Edit `/etc/asterisk/musiconhold.conf` and add, or make sure it is uncommented:
 
@@ -141,11 +141,11 @@ So when we call 600, the application 'VoiceMailMain' goes to 100 in the default 
 
 **Note:** The 'VoiceMail' applications have a significant amount of options, so it is suggested reading over some additional documentation. This is just for a basic, home use setup. Also note that it is generally a good idea to use extensions higher then your users extensions for accessing 'VoiceMail'. This way someone dialing 208 does not hit someone's voice-mail at 205.
 
-### Connecting To The PSTN
+### Connecting to the PSTN
 
-Now that you have the previous setup, it is time to actually connect to the outside world. To do this, you will need a provider such as [Junction Networks](http://pstn.junctionnetworks.com/). Your provider should have instructions on connecting to asterisk, so this section is very general.
+Now that you have the previous setup, it is time to actually connect to the outside world. To do this, you will need a provider such as [OnSIP](https://www.onsip.com/). Your provider should have instructions on connecting to asterisk, so this section is very general.
 
-#### General Set-up
+#### General set-up
 
 ##### sip.conf
 
@@ -294,7 +294,7 @@ Now dial 999 to get into conference 1000\. The enables music on hold if no one i
 
 **Note:** You *must* have the zaptel package in order for MeetMe to work. Install it and run `modprobe ztdummy` before running asterisk. This provides digium timing for us without cards so we can utilize TDM.
 
-## Asterisk Console And Softphones
+## Asterisk console and softphones
 
 Now lets get Asterisk going:
 

@@ -7,14 +7,15 @@
 *   [1 Пошаговая установка на хост-компьютер под управлением Arch Linux](#.D0.9F.D0.BE.D1.88.D0.B0.D0.B3.D0.BE.D0.B2.D0.B0.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BD.D0.B0_.D1.85.D0.BE.D1.81.D1.82-.D0.BA.D0.BE.D0.BC.D0.BF.D1.8C.D1.8E.D1.82.D0.B5.D1.80_.D0.BF.D0.BE.D0.B4_.D1.83.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC_Arch_Linux)
     *   [1.1 Установка базовых пакетов](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B1.D0.B0.D0.B7.D0.BE.D0.B2.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
     *   [1.2 Установка модулей ядра VirtualBox](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D0.B5.D0.B9_.D1.8F.D0.B4.D1.80.D0.B0_VirtualBox)
-        *   [1.2.1 Если хост работает с официальным ядром](#.D0.95.D1.81.D0.BB.D0.B8_.D1.85.D0.BE.D1.81.D1.82_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D1.81_.D0.BE.D1.84.D0.B8.D1.86.D0.B8.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.BC_.D1.8F.D0.B4.D1.80.D0.BE.D0.BC)
-        *   [1.2.2 Действия после обновления версии ядра](#.D0.94.D0.B5.D0.B9.D1.81.D1.82.D0.B2.D0.B8.D1.8F_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2.D0.B5.D1.80.D1.81.D0.B8.D0.B8_.D1.8F.D0.B4.D1.80.D0.B0)
-        *   [1.2.3 Хосты, работающие со сторонним ядром](#.D0.A5.D0.BE.D1.81.D1.82.D1.8B.2C_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.89.D0.B8.D0.B5_.D1.81.D0.BE_.D1.81.D1.82.D0.BE.D1.80.D0.BE.D0.BD.D0.BD.D0.B8.D0.BC_.D1.8F.D0.B4.D1.80.D0.BE.D0.BC)
+        *   [1.2.1 Использование различных версий ядра Linux на хост-машине](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D1.85_.D0.B2.D0.B5.D1.80.D1.81.D0.B8.D0.B9_.D1.8F.D0.B4.D1.80.D0.B0_Linux_.D0.BD.D0.B0_.D1.85.D0.BE.D1.81.D1.82-.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D0.B5)
+        *   [1.2.2 Обновление ядра Linux на хост-машине](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8F.D0.B4.D1.80.D0.B0_Linux_.D0.BD.D0.B0_.D1.85.D0.BE.D1.81.D1.82-.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D0.B5)
+        *   [1.2.3 Стороннее ядро на хост-машине](#.D0.A1.D1.82.D0.BE.D1.80.D0.BE.D0.BD.D0.BD.D0.B5.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE_.D0.BD.D0.B0_.D1.85.D0.BE.D1.81.D1.82-.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D0.B5)
     *   [1.3 Загрузка модулей ядра VirtualBox](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D0.B5.D0.B9_.D1.8F.D0.B4.D1.80.D0.B0_VirtualBox)
-    *   [1.4 Добавление пользователей в группу vboxusers](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_.D0.B2_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D1.83_vboxusers)
-    *   [1.5 Образ диска с гостевыми дополнениями](#.D0.9E.D0.B1.D1.80.D0.B0.D0.B7_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0_.D1.81_.D0.B3.D0.BE.D1.81.D1.82.D0.B5.D0.B2.D1.8B.D0.BC.D0.B8_.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8)
-    *   [1.6 Пакет дополнений](#.D0.9F.D0.B0.D0.BA.D0.B5.D1.82_.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B9)
-    *   [1.7 Правильное использование в фронт-энде](#.D0.9F.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2_.D1.84.D1.80.D0.BE.D0.BD.D1.82-.D1.8D.D0.BD.D0.B4.D0.B5)
+    *   [1.4 Дополнительные модули VirtualBox](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D0.B8_VirtualBox)
+    *   [1.5 Добавление пользователей в группу vboxusers](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_.D0.B2_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D1.83_vboxusers)
+    *   [1.6 Образ диска с гостевыми дополнениями](#.D0.9E.D0.B1.D1.80.D0.B0.D0.B7_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0_.D1.81_.D0.B3.D0.BE.D1.81.D1.82.D0.B5.D0.B2.D1.8B.D0.BC.D0.B8_.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8)
+    *   [1.7 Пакет дополнений](#.D0.9F.D0.B0.D0.BA.D0.B5.D1.82_.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B9)
+    *   [1.8 Правильное использование в фронт-энде](#.D0.9F.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2_.D1.84.D1.80.D0.BE.D0.BD.D1.82-.D1.8D.D0.BD.D0.B4.D0.B5)
 *   [2 Пошаговая установка Arch Linux как гостевой ОС](#.D0.9F.D0.BE.D1.88.D0.B0.D0.B3.D0.BE.D0.B2.D0.B0.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_Arch_Linux_.D0.BA.D0.B0.D0.BA_.D0.B3.D0.BE.D1.81.D1.82.D0.B5.D0.B2.D0.BE.D0.B9_.D0.9E.D0.A1)
     *   [2.1 Установка Arch Linux в виртуальную машину](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_Arch_Linux_.D0.B2_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D1.83.D1.8E_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D1.83)
         *   [2.1.1 Установка в режиме EFI](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_EFI)
@@ -92,11 +93,11 @@
 
 ## Пошаговая установка на хост-компьютер под управлением Arch Linux
 
-Для того, чтобы запустить виртуальную машину под VirtualBox на хост-компьютере под управлением Arch Linux, выполните следующие действия по установке.
+Для запуска виртуальной машины под VirtualBox на хост-компьютере под управлением Arch Linux, выполните следующие действия по установке пакетов.
 
 ### Установка базовых пакетов
 
-Установите пакет [virtualbox](https://www.archlinux.org/packages/?name=virtualbox). [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) будет установлен в качестве необходимой зависимости. Также необходимо установить пакеты с заголовками для установленных ядер [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html):
+Установите пакет [virtualbox](https://www.archlinux.org/packages/?name=virtualbox). [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) будет установлен в качестве необходимой зависимости. Также нужно установить пакеты с заголовками для установленных ядер [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html):
 
 *   [linux](https://www.archlinux.org/packages/?name=linux) kernel: [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)
 *   [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel: [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)
@@ -107,63 +108,63 @@
 
 ### Установка модулей ядра VirtualBox
 
-Далее, чтобы полностью виртуализировать гостевую установку, VirtualBox предоставляет следующие [модули ядра](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel modules (Русский)"): `vboxdrv`, `vboxnetadp`, `vboxnetflt`, и `vboxpci`. Они должны быть добавлены к вашему хост ядру.
+Чтобы полностью виртуализировать гостевую ОС, VirtualBox предоставляет следующие [модули ядра](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel modules (Русский)"): `vboxdrv`, `vboxnetadp`, `vboxnetflt`, и `vboxpci`. Они должны быть добавлены к вашему хост ядру.
 
-Бинарная совместимость модулей ядра зависит от API ядра, на котором они были собраны. Проблема с ядром Linux в том, что API может не совпадать в разных версиях ядра. Для того, чтобы избежать проблем с совместимостью и мелкие баги, каждый раз ядра при обновлении ядра Linux, рекомендуется перекомпилировать модули ядра с новой версией ядра Linux. Это то, что делают менеджеры пакетов Arch Linux с модулями ядра VirtualBox: каждый раз, когда выходит новое ядро Arch Linux, модули Virtualbox будут обновлены.
+Бинарная совместимость модулей ядра зависит от API ядра, на котором они были собраны. API может не совпадать в разных версиях ядра. Чтобы избежать проблем совместимости и багов, каждый раз при обновлении ядра Linux рекомендуется перекомпилировать модули ядра с обновленным ядром. Вместе с обновлением ядра в репозиториях Arch Linux обновляются также и модули Virtualbox, так что достаточно обновиться через пакетный менеджер.
 
-Поэтому, если вы используете ядро из [официального репозитория](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") или кастомное (самостоятельно скомпилированное или установленное из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)")), то необходимо тем же способом переустановить ядро.
+Если вы используете ядро из [официального репозитория](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") или стороннее (скомпилированное самостоятельно или установленное из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)")), то необходимо тем же способом переустановить ядро.
 
-#### Если хост работает с официальным ядром
+#### Использование различных версий ядра Linux на хост-машине
 
-*   Если вы используете ядро [linux](https://www.archlinux.org/packages/?name=linux), убедитесь, что пакет [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) установлен. Последняя версия была установлена, при установке [virtualbox](https://www.archlinux.org/packages/?name=virtualbox).
-*   Если вы используете LTS версию ядра ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), тогда вам нужно установить пакет [virtualbox-host-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-host-modules-lts). Пакет [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) можно удалить.
-*   Если вы используете ядро [linux-ck](https://aur.archlinux.org/packages/linux-ck/), скомпилируйте пакет [virtualbox-ck-host-modules](https://aur.archlinux.org/packages/virtualbox-ck-host-modules/).
+*   Если вы используете ядро [linux](https://www.archlinux.org/packages/?name=linux), убедитесь, что пакет [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) установлен. По умолчанию последняя версия этого пакета устанавливается как зависимость [virtualbox](https://www.archlinux.org/packages/?name=virtualbox).
+*   Если вы используете LTS версию ядра ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), тогда вам нужно установить пакет [virtualbox-host-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-host-modules-lts). Пакет [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) после этого можно удалить.
+*   Если вы используете ядро [linux-ck](https://aur.archlinux.org/packages/linux-ck/), установите пакет [virtualbox-ck-host-modules](https://aur.archlinux.org/packages/virtualbox-ck-host-modules/).
 
-#### Действия после обновления версии ядра
+#### Обновление ядра Linux на хост-машине
 
-Выполните команду
+После обновления ядра выполните команду
 
 ```
 # sudo /usr/bin/rcvboxdrv
 
 ```
 
-для рекомпиляции модулей ядра
+для рекомпиляции модулей ядра.
 
-#### Хосты, работающие со сторонним ядром
+#### Стороннее ядро на хост-машине
 
-Если вы используете или планируете использовать самостоятельно собранное ядро, вы должны знать, что VirtualBox не требует каких-либо модулей виртуализации (например, virtio, KVM, ...). Модули ядра VirtualBox обеспечивают все необходимое для нормальной работы. Таким образом, вы можете отключить в вашем ядре *.config* файл модулей виртуализации, если вы не используете другие гипервизоры (как Xen, KVM или QEMU).
+Если вы используете или планируете использовать самостоятельно собранное ядро, вы должны знать, что VirtualBox не требует каких-либо модулей виртуализации (например, virtio, KVM, ...). Модули ядра VirtualBox обеспечивают все необходимое для нормальной работы. Таким образом, вы можете отключить в вашем ядре *.config*-файл модулей виртуализации, если они не требуются другим гипервизорам (например, Xen, KVM или QEMU).
 
 Пакет `virtualbox-host-modules` отлично работает с пользовательской конфигурацией стокового ядра Arch Linux, такого как [linux-ck](https://aur.archlinux.org/packages/linux-ck/). `virtualbox-host-modules` поставляется с официальным ядром Arch Linux ([linux](https://www.archlinux.org/packages/?name=linux)) в зависимостях, и если вы используете иное ядро, необходимо установить [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms).
 
-Если вы используете собственное ядро, которое не относится к в той же версии стокового ядра Arch Linux , вы также должны установить [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms).Последнее поставляется в комплекте с исходниками модулей ядра VirtualBox, которые были написаны для создания этих модулей ядра.
+Если вы используете самостоятельно собранное ядро, версия которого не совпадает с версией стокового ядра Arch Linux , нужно установить [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms). Он поставляется в комплекте с исходниками модулей ядра VirtualBox.
 
-Как пакет, [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) требует компиляции. Убедитесь, что у вас есть заголовки ядра, соответствующие вашей версии пользовательского ядра, чтобы предотвратить ошибку: `Your kernel headers for kernel *your custom kernel version* cannot be found at /usr/lib/modules/*your custom kernel version*/build or /usr/lib/modules/*your custom kernel version*/source`
+Пакет [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) требует компиляции. Проверьте наличие заголовков ядра, соответствующих вашей версии пользовательского ядра, чтобы избежать ошибки `Your kernel headers for kernel *your custom kernel version* cannot be found at /usr/lib/modules/*your custom kernel version*/build or /usr/lib/modules/*your custom kernel version*/source`
 
-*   Если вы используете самостоятельно собранное ядро и использовали `make modules_install` для установки модулей, директории `/usr/lib/modules/*your custom kernel version*/build` и `(...)/source` будут символическими ссылками на исходники ядра. Они будут выступать в качестве заголовков ядра, если вам это понадобится.
-*   Если вы используете собственное ядро из [AUR](/index.php/AUR "AUR") репозитория, убедитесь, что установлен пакет [linux-headers](https://www.archlinux.org/packages/?name=linux-headers).
+*   Если вы используете самостоятельно собранное ядро и использовали `make modules_install` для установки модулей, директории `/usr/lib/modules/*your custom kernel version*/build` и `(...)/source` будут символическими ссылками на исходники ядра. Они могут использоваться в качестве заголовков ядра в случае необходимости.
+*   Если вы используете ядро из [AUR](/index.php/AUR "AUR") репозитория, убедитесь, что установлен пакет [linux-headers](https://www.archlinux.org/packages/?name=linux-headers).
 
-После того, как [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) установится, просто сгенерируйте модули ядра для пользовательского ядра, выполнив следующую команду:
+После того, как [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) установится, сгенерируйте модули ядра для пользовательского ядра следующей командой:
 
 ```
 # dkms install vboxhost/*virtualbox-host-source version* -k *your custom kernel version*/*your architecture*
 
 ```
 
-**Совет:** Используйте этоту команду вместо предыдущей, если вы не хотите её адаптировать: `# dkms install vboxhost/$(pacman -Q virtualbox|awk '{print $2}'|sed 's/\-.\+//') -k $(uname -rm|sed 's/\ /\//')` 
+**Совет:** Используйте эту команду вместо предыдущей, если вы не хотите её адаптировать: `# dkms install vboxhost/$(pacman -Q virtualbox|awk '{print $2}'|sed 's/\-.\+//') -k $(uname -rm|sed 's/\ /\//')` 
 
-Чтобы автоматически перекомпилировать модули ядра VirtualBox, когда их исходники обновится (т.е. когда версия пакета [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) повышается) и чтобы не повторять впоследствии вручную `dkms install`, включите `dkms` сервис командой:
+Чтобы автоматически перекомпилировать модули ядра VirtualBox, когда их исходники обновится (т.е. повысится версия пакета [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)) и чтобы не повторять впоследствии вручную `dkms install`, включите `dkms` сервис командой:
 
 ```
 # systemctl enable dkms.service
 
 ```
 
-Если эта служба не включена, а пакет [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) будет обновлен, VirtualBox модули не смогут обновиться, и вы должны будете ввести вручную команду `dkms install`, описанную выше, для сборки последней версии модулей ядра VirtualBox. Если вы не хотите вводить вручную эту команду, можно просто перезагрузить компьютер и ваши VirtualBox модули будут перекомпилированы "в тихом режиме" (разумеется, при включенном сервисе `dkms`).
+При включенной службе `dkms` для обновления модулей можно перезагрузить компьютер. Если же вы не хотите включать эту службу, то нужно выполнять команду `dkms install` каждый раз при обновлении [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms). В противном случае модули не обновятся, и есть немалая возможность получить нерабочий VirtualBox.
 
-Однако, если вы не хотите включать этот сервис (например, для оптимизации systemd) вы можете использовать [initramfs hook](/index.php/Mkinitcpio "Mkinitcpio"), который будет автоматически запускать `dkms install` во время загрузки. Это потребует перезагрузки, чтобы перекомпилировать модули VirtualBox. Чтобы включить этот хук, можно установить пакет [vboxhost-hook](https://aur.archlinux.org/packages/vboxhost-hook/) из [AUR](/index.php/AUR "AUR") и добавить `vboxhost` в вашем хуке, отредактировав `/etc/mkinitcpio.conf`. Опять же, убедитесь, что заголовки Linux доступны для нового ядра: в противном случае компиляция не удастся.
+Однако, если вы не хотите включать этот сервис (например, для оптимизации systemd) можно также использовать [initramfs hook](/index.php/Mkinitcpio "Mkinitcpio"), который будет автоматически запускать `dkms install` во время загрузки. Он требует перезагрузки для перекомпиляции модулей VirtualBox. Чтобы включить этот хук, нужно установить пакет [vboxhost-hook](https://aur.archlinux.org/packages/vboxhost-hook/) из [AUR](/index.php/AUR "AUR") и добавить `vboxhost` в `/etc/mkinitcpio.conf`. Опять же, убедитесь, что заголовки Linux доступны для нового ядра: в противном случае компиляция не удастся.
 
-**Совет:** Как и команда `dkms`, `vboxhost` хук выведет ошибку, если что-то пойдет не так во время перекомпиляции модулей VirtualBox.
+**Совет:** Ровно как и команда `dkms`, `vboxhost` хук выведет ошибку, если что-то пойдет не так во время перекомпиляции модулей VirtualBox.
 
 ### Загрузка модулей ядра VirtualBox
 
@@ -180,15 +181,31 @@
 
  `/etc/modules-load.d/virtualbox.conf`  `vboxdrv` 
 
+### Дополнительные модули VirtualBox
+
 Следующие модули не являются обязательными, но рекомендуются, если вы не хотите проблем с некоторыми конфигурациями (подробнее смотрите ниже): `vboxnetadp`, `vboxnetflt` и `vboxpci`.
 
-*   `vboxnetadp` и `vboxnetflt` оба необходимы, если вы собираетесь использовать ["Локальную виртуальную сеть"](https://www.virtualbox.org/manual/ch06.html#network_hostonly). Точнее, `vboxnetadp` нужен для создания интерфейса в глобальных настройках VirtualBox, и `vboxnetflt` нужен для запуска виртуальной машины с использованием этого интерфейса.
+*   `vboxnetadp` и `vboxnetflt` необходимы, если вы собираетесь использовать ["Локальную виртуальную сеть"](https://www.virtualbox.org/manual/ch06.html#network_hostonly). Точнее, `vboxnetadp` нужен для создания интерфейса в глобальных настройках VirtualBox, и `vboxnetflt` нужен для запуска виртуальной машины с использованием этого интерфейса.
 
-*   `vboxpci` необходимо, когда вашей виртуальной машине нужно получить доступ к PCI устройству на вашей машине.
+*   `vboxpci` необходим, когда вашей виртуальной машине нужно получить доступ к PCI устройству на вашей машине.
 
-**Примечание:** Если модули ядра VirtualBox были загружены в ядро пока вы обновляли модуль, то вы должны загрузить их вручную для использования новой, обновленной версии. Что бы это сделать, запустите `vboxreload` с правами суперпользователя.
+Для работы данных модулей выполните команду
 
-Наконец, если вы используете вышеописанную "Локальную виртальную сеть", убедитесь, что пакет [net-tools](https://www.archlinux.org/packages/?name=net-tools) установлен. VirtualBox использует `ifconfig` и `route`, чтобы назначить IP и маршрут до интерфейса хоста, настроенного с помощью `VBoxManage hostonlyif` или с помощью GUI *Settings > Network > Host-only Networks > Edit host-only network (space) > Adapter*.
+```
+# pacman -S net-tools
+
+```
+
+И создайте файл `vbox-other-modules.conf` в каталоге `/etc/modules-load.d/` с записью
+
+ `/etc/modules-load.d/vbox-other-modules.conf`  `vboxnetadp vboxnetflt vboxpci` 
+**Примечание:** Если модули ядра VirtualBox были загружены в ядро пока вы обновляли модули, то вы должны загрузить их вручную для использования новой, обновленной версии. Что бы это сделать, запустите
+```
+# vboxreload
+
+```
+
+VirtualBox использует `ifconfig` и `route`, чтобы назначить IP и маршрут до интерфейса хоста, настроенного с помощью `VBoxManage hostonlyif` или с помощью GUI *Settings > Network > Host-only Networks > Edit host-only network (space) > Adapter*.
 
 ### Добавление пользователей в группу vboxusers
 

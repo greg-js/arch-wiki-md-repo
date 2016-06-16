@@ -9,9 +9,7 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 *   [3 Sharp fonts](#Sharp_fonts)
 *   [4 Enable anti-aliasing only for bigger fonts](#Enable_anti-aliasing_only_for_bigger_fonts)
 *   [5 Default fonts](#Default_fonts)
-    *   [5.1 Liberation fonts](#Liberation_fonts)
-    *   [5.2 Chrome OS fonts](#Chrome_OS_fonts)
-    *   [5.3 Google Noto Fonts](#Google_Noto_Fonts)
+    *   [5.1 Japanese](#Japanese)
 *   [6 Patched packages](#Patched_packages)
 *   [7 See also](#See_also)
 
@@ -136,81 +134,93 @@ Some users prefer the sharper rendering that anti-aliasing does not offer:
 
 ## Default fonts
 
-### Liberation fonts
+For font consistency, all applications should be set to use the serif, sans-serif, and monospace aliases, which are mapped to particular fonts by fontconfig. See [Metric-compatible_fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts") for options and examples.
 
-For font consistency, all applications should be set to use the serif, sans-serif, and monospace aliases, which are mapped to particular fonts by fontconfig. The Liberation fonts were chosen to follow metric-compatibility of the MS Core fonts.
+### Japanese
+
+Example fonts.conf which also specifies a default font for the Japanese locale (ja_JP) and keeps western style fonts for Latin letters.
 
 ```
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<?xml version='1.0'?>
+<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
 <fontconfig>
-    <match target="pattern">
-        <test qual="any" name="family"><string>serif</string></test>
-        <edit name="family" mode="assign" binding="same"><string>Liberation Serif</string></edit>
-    </match>
-    <match target="pattern">
-        <test qual="any" name="family"><string>sans-serif</string></test>
-        <edit name="family" mode="assign" binding="same"><string>Liberation Sans</string></edit>
-    </match>
-    <match target="pattern">
-        <test qual="any" name="family"><string>monospace</string></test>
-        <edit name="family" mode="assign" binding="same"><string>Liberation Mono</string></edit>
-    </match>
-</fontconfig>
-```
 
-### Chrome OS fonts
+<!-- Default font (no fc-match pattern) -->
+ <match>
+  <edit mode="prepend" name="family">
+   <string>Noto Sans</string>
+  </edit>
+ </match>
 
-Web browser and another common applications use `Serif`, `Sans-Serif` and `Monospace` as default fonts ([Fonts#Font alias](/index.php/Fonts#Font_alias "Fonts")). The procedure to change default fonts is similar to replace them. For example, to use Chrome OS fonts [ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/):
+<!-- Default font for the ja_JP locale (no fc-match pattern) -->
+ <match>
+  <test compare="contains" name="lang">
+   <string>ja</string>
+  </test>
+  <edit mode="prepend" name="family">
+   <string>Noto Sans CJK JP</string>
+  </edit>
+ </match>
 
-```
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-  <!-- Set preferred serif, sans serif, and monospace fonts. -->
-  <alias>
-    <family>serif</family>
-    <prefer><family>Tinos</family></prefer>
-  </alias>
-  <alias>
-    <family>sans-serif</family>
-    <prefer><family>Arimo</family></prefer>
-  </alias>
-  <alias>
-    <family>sans</family>
-    <prefer><family>Arimo</family></prefer>
-  </alias>
-  <alias>
-    <family>monospace</family>
-    <prefer><family>Cousine</family></prefer>
-  </alias>
-</fontconfig>
+<!-- Default sans-serif font -->
+ <match target="pattern">
+   <test qual="any" name="family"><string>sans-serif</string></test>
+   <!--<test qual="any" name="lang"><string>ja</string></test>-->
+   <edit name="family" mode="prepend" binding="same"><string>Noto Sans</string>  </edit>
+ </match>
 
-```
+<!-- Default serif fonts -->
+ <match target="pattern">
+   <test qual="any" name="family"><string>serif</string></test>
+   <edit name="family" mode="prepend" binding="same"><string>Noto Serif</string>  </edit>
+   <edit name="family" mode="append" binding="same"><string>IPAPMincho</string>  </edit>
+   <edit name="family" mode="append" binding="same"><string>HanaMinA</string>  </edit>
+ </match>
 
-### Google Noto Fonts
+<!-- Default monospace fonts -->
+ <match target="pattern">
+   <test qual="any" name="family"><string>monospace</string></test>
+   <edit name="family" mode="prepend" binding="same"><string>Inconsolatazi4</string></edit>
+   <edit name="family" mode="append" binding="same"><string>IPAGothic</string></edit>
+ </match>
 
-The following configuration might be necessary to make use of [Google's Noto Fonts](https://www.google.com/get/noto/) available in the [official repositories](/index.php/Official_repositories "Official repositories").
+<!-- Fallback fonts preference order -->
+ <alias>
+  <family>sans-serif</family>
+  <prefer>
+   <family>Noto Sans</family>
+   <family>Open Sans</family>
+   <family>Droid Sans</family>
+   <family>Ubuntu</family>
+   <family>Roboto</family>
+   <family>NotoSansCJK</family>
+   <family>Source Han Sans JP</family>
+   <family>IPAPGothic</family>
+   <family>VL PGothic</family>
+   <family>Koruri</family>
+  </prefer>
+ </alias>
+ <alias>
+  <family>serif</family>
+  <prefer>
+   <family>Noto Serif</family>
+   <family>Droid Serif</family>
+   <family>Roboto Slab</family>
+   <family>IPAPMincho</family>
+  </prefer>
+ </alias>
+ <alias>
+  <family>monospace</family>
+  <prefer>
+   <family>Inconsolatazi4</family>
+   <family>Ubuntu Mono</family>
+   <family>Droid Sans Mono</family>
+   <family>Roboto Mono</family>
+   <family>IPAGothic</family>
+  </prefer>
+ </alias>
 
-```
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-  <alias> <family>serif</family>      <prefer> <family>Noto Serif</family> </prefer> </alias>
-  <alias> <family>sans-serif</family> <prefer> <family>Noto Sans</family>  </prefer> </alias>
-  <alias> <family>sans</family>       <prefer> <family>Noto Sans</family>  </prefer> </alias>
-  <alias> <family>monospace</family>  <prefer> <family>Noto Mono</family>  </prefer> </alias>
-
-  <!-- WARNING: LOTS OF metric-incompatible bindings here! -->
-  <match> <test name="family"> <string>Arial</string> </test>           <edit name="family" mode="assign" binding="strong"> <string>Noto Sans</string>  </edit> </match>
-  <match> <test name="family"> <string>Helvetica</string> </test>       <edit name="family" mode="assign" binding="strong"> <string>Noto Sans</string>  </edit> </match>
-  <match> <test name="family"> <string>Verdana</string> </test>         <edit name="family" mode="assign" binding="strong"> <string>Noto Sans</string>  </edit> </match>
-  <match> <test name="family"> <string>Tahoma</string> </test>          <edit name="family" mode="assign" binding="strong"> <string>Noto Sans</string>  </edit> </match>
-  <match> <test name="family"> <string>Times New Roman</string> </test> <edit name="family" mode="assign" binding="strong"> <string>Noto Serif</string> </edit> </match>
-  <match> <test name="family"> <string>Times</string> </test>           <edit name="family" mode="assign" binding="strong"> <string>Noto Serif</string> </edit> </match>
-  <!--match> <test name="family"> <string>Georgia</string> </test>         <edit name="family" mode="assign" binding="strong"> <string>Noto Serif</string> </edit> </match-->
-  <match> <test name="family"> <string>Consolas</string> </test>        <edit name="family" mode="assign" binding="strong"> <string>Noto Mono</string>  </edit> </match>
-  <match> <test name="family"> <string>Courier New</string> </test>     <edit name="family" mode="assign" binding="strong"> <string>Noto Mono</string>  </edit> </match>
+ <dir>~/.fonts</dir>
 </fontconfig>
 
 ```

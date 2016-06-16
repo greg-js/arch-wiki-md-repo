@@ -13,7 +13,8 @@
     *   [3.3 Command completion](#Command_completion)
     *   [3.4 /etc/profile and ~/.profile compatibility](#.2Fetc.2Fprofile_and_.7E.2F.profile_compatibility)
 *   [4 Tips and Tricks](#Tips_and_Tricks)
-    *   [4.1 History Substitution](#History_Substitution)
+    *   [4.1 History substitution](#History_substitution)
+    *   [4.2 Disabling greeting message](#Disabling_greeting_message)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Scripts not compatible with fish](#Scripts_not_compatible_with_fish)
     *   [5.2 su launching Bash](#su_launching_Bash)
@@ -171,9 +172,13 @@ env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/
 
 ## Tips and Tricks
 
-### History Substitution
+### History substitution
 
 Fish does not implement history substitution (e.g. `sudo !!`), and the fish developers have said that they [do not plan to](http://fishshell.com/docs/current/faq.html#faq-history). Still, this is an essential piece of many users' workflow. Reddit user, [crossroads1112](http://www.reddit.com/u/crossroads1112), created a function that regains some of the functionality of history substitution and with another syntax. The function is on [github](https://gist.github.com/crossroads1112/77badb2c3455e23b873b) and instructions are included as comments in it. There is a [forked version](https://gist.github.com/b-/981892a65837ab0a387e) that is closer to the original syntax and allows for `command !!` if you specify the command in the helper function.
+
+### Disabling greeting message
+
+By default, fish prints a greeting message at startup. To disable it, add `set fish_greeting` to your fish configuration file.
 
 ## Troubleshooting
 

@@ -38,6 +38,18 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### June 2016
 
+*   [13 June 2016] [ASA-201606-14](https://lists.archlinux.org/pipermail/arch-security/2016-June/000649.html) [lib32-expat](https://www.archlinux.org/packages/?name=lib32-expat) multiple issues
+*   [13 June 2016] [ASA-201606-13](https://lists.archlinux.org/pipermail/arch-security/2016-June/000648.html) [expat](https://www.archlinux.org/packages/?name=expat) multiple issues
+*   [10 June 2016] [ASA-201606-12](https://lists.archlinux.org/pipermail/arch-security/2016-June/000647.html) [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls) arbitrary file overwrite
+*   [10 June 2016] [ASA-201606-11](https://lists.archlinux.org/pipermail/arch-security/2016-June/000646.html) [haproxy](https://www.archlinux.org/packages/?name=haproxy) denial of service
+*   [10 June 2016] [ASA-201606-10](https://lists.archlinux.org/pipermail/arch-security/2016-June/000645.html) [gnutls](https://www.archlinux.org/packages/?name=gnutls) arbitrary file overwrite
+*   [8 June 2016] [ASA-201606-9](https://lists.archlinux.org/pipermail/arch-security/2016-June/000644.html) [qemu-arch-extra](https://www.archlinux.org/packages/?name=qemu-arch-extra) multiple issues
+*   [8 June 2016] [ASA-201606-8](https://lists.archlinux.org/pipermail/arch-security/2016-June/000643.html) [qemu](https://www.archlinux.org/packages/?name=qemu) multiple issues
+*   [8 June 2016] [ASA-201606-7](https://lists.archlinux.org/pipermail/arch-security/2016-June/000642.html) [firefox](https://www.archlinux.org/packages/?name=firefox) multiple issues
+*   [8 June 2016] [ASA-201606-6](https://lists.archlinux.org/pipermail/arch-security/2016-June/000641.html) [subversion](https://www.archlinux.org/packages/?name=subversion) multiple issues
+*   [5 June 2016] [ASA-201606-5](https://lists.archlinux.org/pipermail/arch-security/2016-June/000640.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
+*   [4 June 2016] [ASA-201606-4](https://lists.archlinux.org/pipermail/arch-security/2016-June/000639.html) [ntp](https://www.archlinux.org/packages/?name=ntp) distributed denial of service amplification
+*   [4 June 2016] [ASA-201606-3](https://lists.archlinux.org/pipermail/arch-security/2016-June/000638.html) [webkit2gtk](https://www.archlinux.org/packages/?name=webkit2gtk) arbitrary code execution
 *   [1 June 2016] [ASA-201606-2](https://lists.archlinux.org/pipermail/arch-security/2016-June/000637.html) [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) denial of service
 *   [1 June 2016] [ASA-201606-1](https://lists.archlinux.org/pipermail/arch-security/2016-June/000636.html) [nginx](https://www.archlinux.org/packages/?name=nginx) denial of service
 

@@ -78,7 +78,7 @@ To get invoiceplane working with your [nginx](/index.php/Nginx "Nginx") setup, f
 
 ### Installation wizard
 
-Once database and webserver have been setup, visit the installation wizard page at [http://yourdomain/invoiceplane/setup](http://yourdomain/invoiceplane/setup) and follow the instructions.
+Once database and webserver have been setup, visit the installation wizard page at [http://your-invoiceplane-domain.com/index.php/setup](http://your-invoiceplane-domain.com/index.php/setup) and follow the instructions.
 
 ## Localization
 

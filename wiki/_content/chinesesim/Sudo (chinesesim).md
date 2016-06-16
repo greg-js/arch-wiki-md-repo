@@ -1,50 +1,46 @@
-**翻译状态：** 本文是英文页面 [Sudo](/index.php/Sudo "Sudo") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-01-31，点击[这里](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=358889)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Sudo](/index.php/Sudo "Sudo") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-13，点击[这里](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=437107)可以查看翻译后英文页面的改动。
 
 [sudo](http://www.gratisoft.us/sudo/)(substitute user do) 使得系统管理员可以授权特定用户或用户组作为 root 或他用户执行某些（或所有）命令，同时还能够对命令及其参数提供审核跟踪。
 
+用户可以选择用 [su](/index.php/Su "Su") 切换到 root 用户运行命令，但是这种方式会启动一个 root shell 并允许用户运行之后的所有的命令。而 sudo 可以针对单个命令、仅在需要时授予临时权限，减少因为执行错误命令损坏系统的可能性。sudo 也能以其他用户身份执行命令并且记录用户执行的命令，以及失败的权限申请。
+
 ## Contents
 
-*   [1 合理性](#.E5.90.88.E7.90.86.E6.80.A7)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-*   [3 使用](#.E4.BD.BF.E7.94.A8)
-*   [4 配置](#.E9.85.8D.E7.BD.AE)
-    *   [4.1 查看当前设置](#.E6.9F.A5.E7.9C.8B.E5.BD.93.E5.89.8D.E8.AE.BE.E7.BD.AE)
-    *   [4.2 使用 visudo](#.E4.BD.BF.E7.94.A8_visudo)
-    *   [4.3 设置示例](#.E8.AE.BE.E7.BD.AE.E7.A4.BA.E4.BE.8B)
-    *   [4.4 sudoers文件默认权限](#sudoers.E6.96.87.E4.BB.B6.E9.BB.98.E8.AE.A4.E6.9D.83.E9.99.90)
-    *   [4.5 密码过期时间](#.E5.AF.86.E7.A0.81.E8.BF.87.E6.9C.9F.E6.97.B6.E9.97.B4)
-*   [5 使用技巧](#.E4.BD.BF.E7.94.A8.E6.8A.80.E5.B7.A7)
-    *   [5.1 sudoers 范例](#sudoers_.E8.8C.83.E4.BE.8B)
-    *   [5.2 bash 自动补全支持](#bash_.E8.87.AA.E5.8A.A8.E8.A1.A5.E5.85.A8.E6.94.AF.E6.8C.81)
-    *   [5.3 跨终端sudo](#.E8.B7.A8.E7.BB.88.E7.AB.AFsudo)
-    *   [5.4 环境变量](#.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
-    *   [5.5 传递命令别名](#.E4.BC.A0.E9.80.92.E5.91.BD.E4.BB.A4.E5.88.AB.E5.90.8D)
-    *   [5.6 扯淡](#.E6.89.AF.E6.B7.A1)
-    *   [5.7 使用root密码](#.E4.BD.BF.E7.94.A8root.E5.AF.86.E7.A0.81)
-    *   [5.8 禁止root登陆](#.E7.A6.81.E6.AD.A2root.E7.99.BB.E9.99.86)
-        *   [5.8.1 gksu](#gksu)
-        *   [5.8.2 kdesu](#kdesu)
-    *   [5.9 让 sudo 使用 /etc/sudoers.d 中的文件](#.E8.AE.A9_sudo_.E4.BD.BF.E7.94.A8_.2Fetc.2Fsudoers.d_.E4.B8.AD.E7.9A.84.E6.96.87.E4.BB.B6)
-*   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [6.1 SSH TTY 问题](#SSH_TTY_.E9.97.AE.E9.A2.98)
-    *   [6.2 显示用户权限](#.E6.98.BE.E7.A4.BA.E7.94.A8.E6.88.B7.E6.9D.83.E9.99.90)
-    *   [6.3 权限 Umask](#.E6.9D.83.E9.99.90_Umask)
-    *   [6.4 默认 skeleton 文件](#.E9.BB.98.E8.AE.A4_skeleton_.E6.96.87.E4.BB.B6)
-
-## 合理性
-
-用户也可以通过[su](/index.php/Su "Su")切换到root用户运行命令。然而与su的启动一个root shell允许用户运行之后的所有的命令不同，sudo可以针对单个命令授予临时权限。sudo仅在需要时授予用户权限，减少了用户因为错误执行命令损坏系统的可能性。sudo也可以用来以其他用户身份执行命令。此外，sudo可以记录用户执行的命令，以及失败的特权获取。
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 使用](#.E4.BD.BF.E7.94.A8)
+*   [3 配置](#.E9.85.8D.E7.BD.AE)
+    *   [3.1 查看当前设置](#.E6.9F.A5.E7.9C.8B.E5.BD.93.E5.89.8D.E8.AE.BE.E7.BD.AE)
+    *   [3.2 使用 visudo](#.E4.BD.BF.E7.94.A8_visudo)
+    *   [3.3 设置示例](#.E8.AE.BE.E7.BD.AE.E7.A4.BA.E4.BE.8B)
+    *   [3.4 sudoers文件默认权限](#sudoers.E6.96.87.E4.BB.B6.E9.BB.98.E8.AE.A4.E6.9D.83.E9.99.90)
+    *   [3.5 密码过期时间](#.E5.AF.86.E7.A0.81.E8.BF.87.E6.9C.9F.E6.97.B6.E9.97.B4)
+*   [4 使用技巧](#.E4.BD.BF.E7.94.A8.E6.8A.80.E5.B7.A7)
+    *   [4.1 bash 自动补全支持](#bash_.E8.87.AA.E5.8A.A8.E8.A1.A5.E5.85.A8.E6.94.AF.E6.8C.81)
+    *   [4.2 跨终端sudo](#.E8.B7.A8.E7.BB.88.E7.AB.AFsudo)
+    *   [4.3 环境变量](#.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
+    *   [4.4 传递命令别名](#.E4.BC.A0.E9.80.92.E5.91.BD.E4.BB.A4.E5.88.AB.E5.90.8D)
+    *   [4.5 使用root密码](#.E4.BD.BF.E7.94.A8root.E5.AF.86.E7.A0.81)
+    *   [4.6 禁止root登陆](#.E7.A6.81.E6.AD.A2root.E7.99.BB.E9.99.86)
+        *   [4.6.1 gksu](#gksu)
+        *   [4.6.2 kdesu](#kdesu)
+    *   [4.7 让 sudo 使用 /etc/sudoers.d 中的文件](#.E8.AE.A9_sudo_.E4.BD.BF.E7.94.A8_.2Fetc.2Fsudoers.d_.E4.B8.AD.E7.9A.84.E6.96.87.E4.BB.B6)
+*   [5 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+    *   [5.1 SSH TTY 问题](#SSH_TTY_.E9.97.AE.E9.A2.98)
+    *   [5.2 权限 Umask](#.E6.9D.83.E9.99.90_Umask)
+    *   [5.3 默认 skeleton 文件](#.E9.BB.98.E8.AE.A4_skeleton_.E6.96.87.E4.BB.B6)
 
 ## 安装
 
-从[官方源](/index.php/%E5%AE%98%E6%96%B9%E6%BA%90 "官方源")中[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")软件包 [sudo](https://www.archlinux.org/packages/?name=sudo)。在配置之前，普通用户还无法使用sudo。所以请认真阅读配置部分。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")软件包 [sudo](https://www.archlinux.org/packages/?name=sudo)。
 
 ## 使用
 
-普通用户只需在命令前加上`sudo`，即可使用root（或其他用户）特权执行命令：
+在配置之前，普通用户还无法使用sudo。所以请认真阅读配置部分。
+
+普通用户只需在命令前加上`sudo`，即可使用 root 特权执行命令：
 
 ```
-$ sudo pacman -Syu
+$ sudo *cmd*
 
 ```
 
@@ -52,9 +48,11 @@ $ sudo pacman -Syu
 
 ## 配置
 
+有关配置和密码过期等问题的更多信息，请阅读 [man sudoers](http://www.sudo.ws/man/1.8.13/sudoers.man.html)。
+
 ### 查看当前设置
 
-命令 `sudo -ll` 可以显示当前的 sudo 配置。
+命令 `sudo -ll` 可以显示当前的 sudo 配置; 命令 `sudo -lU *user*` 可以查看某个特定用户的设置。
 
 ### 使用 visudo
 
@@ -157,36 +155,6 @@ Defaults:用户名 timestamp_timeout=20
 
 ## 使用技巧
 
-### sudoers 范例
-
-该配置针对使用终端复用器（screen、tmux或者ratpoison）：
-
-```
-/etc/sudoers
-
-```
-
-```
-Cmnd_Alias WHEELER = /usr/sbin/lsof, /bin/nice, /bin/ps, /usr/bin/top, /usr/local/bin/nano, /usr/sbin/ss, /usr/bin/locate, /usr/bin/find, /usr/bin/rsync
-Cmnd_Alias PROCESSES = /bin/nice, /bin/kill, /usr/bin/nice, /usr/bin/ionice, /usr/bin/top, /usr/bin/kill, /usr/bin/killall, /usr/bin/ps, /usr/bin/pkill
-Cmnd_Alias EDITS = /usr/bin/vim, /usr/bin/nano, /usr/bin/cat, /usr/bin/vi
-Cmnd_Alias ARCHLINUX = /usr/sbin/gparted, /usr/bin/pacman
-
-root ALL = (ALL) ALL
-yourusename ALL = (ALL) ALL, NOPASSWD: WHEELER, NOPASSWD: PROCESSES, NOPASSWD: ARCHLINUX, NOPASSWD: EDITS
-
-Defaults !requiretty, !tty_tickets, !umask
-Defaults visiblepw, path_info, insults, lecture=always
-Defaults loglinelen = 0, logfile =/var/log/sudo.log, log_year, log_host, syslog=auth
-Defaults mailto=webmaster@foobar.com, mail_badpass, mail_no_user, mail_no_perms
-Defaults passwd_tries = 8, passwd_timeout = 1
-Defaults env_reset, always_set_home, set_home, set_logname
-Defaults !env_editor, editor="/usr/bin/vim:/usr/bin/vi:/usr/bin/nano"
-Defaults timestamp_timeout=360
-Defaults passprompt="Sudo invoked by [%u] on [%H] - Cmd run as %U - Password for user %p:"
-
-```
-
 ### bash 自动补全支持
 
 详情参见：[bash#Auto-completion](/index.php/Bash#Auto-completion "Bash")。
@@ -240,18 +208,6 @@ Defaults env_keep += "ftp_proxy http_proxy https_proxy no_proxy"
 alias sudo='sudo '
 
 ```
-
-### 扯淡
-
-用户输入密码不正确时，sudo会提示“Sorry, try again.”。在配置文件的“Defaults”部分加入以下内容，会得到更有趣的错误提示：
-
-```
-#Defaults specification
-Defaults insults
-
-```
-
-输入`sudo -K`清空密码缓存，然后测试。
 
 ### 使用root密码
 
@@ -317,11 +273,18 @@ $ gconftool-2 --set --type boolean /apps/gksu/sudo-mode true
 
 #### kdesu
 
-KDE下常用kdesu以root权限执行GUI程序。默认情况下，即使root账户被禁用，kdesu仍会尝试使用su切换root。需要配置kdesu以使用sudo，创建/编辑`/usr/share/config/kdesurc`加入：
+KDE下常用 kdesu 以 root 权限执行图形程序。默认情况下，即使root账户被禁用，kdesu仍会尝试使用su切换root。需要配置kdesu以使用sudo，创建/编辑`~/.config/kdesurc` (KDE4 的 `~/.kde4/share/config/kdesurc`)，加入：
 
 ```
 [super-user-command]
 super-user-command=sudo
+
+```
+
+或者使用下面命令，KDE 4 使用 kwriteconfig
+
+```
+$ kwriteconfig5 --file kdesurc --group super-user-command --key super-user-command sudo
 
 ```
 
@@ -331,6 +294,8 @@ super-user-command=sudo
 
 *   不需要编辑 {ic|sudoers.pacnew}} 文件;
 *   如果新配置有问题，可以删除这个文件而不用编辑 `/etc/sudoers`.
+
+`/etc/sudoers.d/` 目录中的文件是按字母顺序加载的，`.` 或 `~` 开头的文件会被跳过。文件名应该以双字母开头，例如 `01_foo`，请注意配置文件的顺序以避免相互覆盖。
 
 ## 疑难解答
 
@@ -345,39 +310,6 @@ super-user-command=sudo
 # You have to run "ssh -t hostname sudo <cmd>".
 #
 # Defaults    requiretty
-
-```
-
-### 显示用户权限
-
-通过下列命令查看用户权限：
-
-```
- sudo -lU 用户名
-
-```
-
-仅查看自己的权限：
-
-```
- sudo -l
-
-```
-
-输出：
-
-```
-Matching Defaults entries for yourusename on this host:
-    loglinelen=0, logfile=/var/log/sudo.log, log_year, syslog=auth, mailto=sqpt.webmaster@gmail.com, mail_badpass, mail_no_user, mail_no_perms, env_reset, always_set_home, tty_tickets, lecture=always, pwfeedback, rootpw, set_home
-
-User yourusename may run the following commands on this host:
-    (ALL) ALL, 
-    (ALL) NOPASSWD: /usr/sbin/lsof, /bin/nice, /usr/sbin/ss, /usr/bin/su, /usr/bin/locate, /usr/bin/find, /usr/bin/rsync, /usr/bin/strace, 
-    (ALL) /bin/nice, /bin/kill, /usr/bin/nice, /usr/bin/ionice, /usr/bin/top, /usr/bin/kill, /usr/bin/killall, /usr/bin/ps, /usr/bin/pkill, 
-    (ALL) /usr/sbin/gparted, /usr/bin/pacman
-    (ALL) /usr/local/bin/synergyc, /usr/local/bin/synergys, 
-    (ALL) /usr/bin/vim, /usr/bin/nano, /usr/bin/cat
-    (root) NOPASSWD: /usr/local/bin/synergyc
 
 ```
 

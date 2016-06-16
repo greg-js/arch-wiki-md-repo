@@ -38,7 +38,7 @@ The AMDGPU PRO driver provides OpenGL, OpenCL, Vulkan and VDPAU support. It aims
 
 See the [initial release notes](http://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Beta-Driver-for-Vulkan-Release-Notes.aspx) and the [announcement at the Phoronix forum](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/amd-linux/855699-amd-representative-says-their-vulkan-linux-driver-will-be-here-soon/page6) for more information.
 
-There are packages for the amdgpu-pro components in the [AUR](/index.php/AUR "AUR") ([amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/)), visit [https://github.com/LEW21/archlinux-amdgpu](https://github.com/LEW21/archlinux-amdgpu) for issues or pull requests.
+There are packages for the amdgpu-pro components in the [AUR](/index.php/AUR "AUR") ([amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/)), visit [https://github.com/Corngood/archlinux-amdgpu](https://github.com/Corngood/archlinux-amdgpu) for issues or pull requests.
 
 ## Configuration
 

@@ -117,6 +117,12 @@ To manually start the daemon:
 
 ```
 
+**Note:** If `zfs-mount.service` fails on boot due to running before the kernel module is loaded, you may have to manually enable the `zfs-import-cache.service`.
+```
+# systemctl enable zfs-import-cache.service
+
+```
+
 ## Create a storage pool
 
 Use `# parted --list` to see a list of all available drives. It is not necessary nor recommended to partition the drives before creating the zfs filesystem.

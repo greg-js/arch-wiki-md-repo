@@ -26,6 +26,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
         *   [4.4.2 use host networking](#use_host_networking)
         *   [4.4.3 Virtual Ethernet interfaces](#Virtual_Ethernet_interfaces)
     *   [4.5 Running on a non-systemd system](#Running_on_a_non-systemd_system)
+    *   [4.6 Per-container settings](#Per-container_settings)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 root login fails](#root_login_fails)
     *   [5.2 Unable to upgrade some packages on the container](#Unable_to_upgrade_some_packages_on_the_container)
@@ -253,6 +254,15 @@ For example, a host virtual Ethernet interface shown as `ve-foo@if2` will connec
 
 See [Init#systemd-nspawn](/index.php/Init#systemd-nspawn "Init").
 
+### Per-container settings
+
+To specify per-container settings and not overrides for all (e.g. bind a directory to only one container)[[2]](https://github.com/systemd/systemd/issues/3442#issuecomment-223837408), the ".nspawn" file definition can be used [[3]](https://www.freedesktop.org/software/systemd/man/systemd.nspawn.html#)
+
+```
+ man systemd.nspawn
+
+```
+
 ## Troubleshooting
 
 ### root login fails
@@ -272,7 +282,7 @@ pam_securetty(login:auth): access denied: tty 'pts/0' is not secure !
 
 ```
 
-Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[2]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[3]](https://github.com/systemd/systemd/issues/852).
+Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[4]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[5]](https://github.com/systemd/systemd/issues/852).
 
 ### Unable to upgrade some packages on the container
 

@@ -97,8 +97,10 @@ In order to have the device active after a reboot, a udev rule is needed:
  `/etc/udev/rules.d/10-local.rules` 
 ```
 # Set bluetooth power up
-ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
+ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig %k up"
 ```
+
+**Tip:** Replace `KERNEL=="hci0"` with `KERNEL=="hci[0-9]*"` to match all interfaces.
 
 After a suspend/resume-cycle, the device can be powered on automatically using a custom *systemd* service:
 

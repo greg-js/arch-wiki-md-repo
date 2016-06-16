@@ -39,6 +39,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.10 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
     *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
     *   [5.12 GUI doesn't show after upgrade](#GUI_doesn.27t_show_after_upgrade)
+    *   [5.13 Kernel modules fail to build after Linux 4.6](#Kernel_modules_fail_to_build_after_Linux_4.6)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -84,7 +85,7 @@ For the `System service scripts directory`, use `/etc/init.d` (the default).
 *   VMware 12 and newer will work out-of-the box, since they take advantage of the [mainlined](http://www.phoronix.com/scan.php?page=news_item&px=MTI3MTE) kernel modules.
 *   VMware 11 and older require patching the VMCI/VSOCK sources. This is automated by installing the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
 
-VMware Workstation 12 supports kernels up to 4.2.
+VMware Workstation 12 supports kernels up to 4.4\. For 4.6 and later, a source modification is needed, see [#Kernel modules fail to build after Linux 4.6](#Kernel_modules_fail_to_build_after_Linux_4.6).
 
 ### systemd services
 
@@ -495,6 +496,29 @@ To make this change permanent only when running VMware Workstation add the follo
  `/usr/bin/vmware`  `export LD_LIBRARY_PATH=/usr/lib/vmware/lib/libglibmm-2.4.so.1` 
 
 For VMware Player make the same change in `/usr/bin/vmplayer`.
+
+### Kernel modules fail to build after Linux 4.6
+
+As of VMware Workstation Pro 12.1, the module source needs to be modified to be successfully compiled [[2]](https://communities.vmware.com/thread/536705?start=0&tstart=0).
+
+```
+# cd /usr/lib/vmware/modules/source
+# tar xf vmmon.tar
+# mv vmmon.tar vmmon.old.tar
+# sed -i -e 's/get_user_pages/get_user_pages_remote/g' vmmon-only/linux/hostif.c
+# tar cf vmmon.tar vmmon-only
+# rm -rf vmmon-only
+
+```
+
+```
+# tar xf vmnet.tar
+# mv vmnet.tar vmnet.old.tar
+# sed -i -e 's/get_user_pages/get_user_pages_remote/g' vmnet-only/userif.c
+# tar cf vmnet.tar vmnet-only
+# rm -rf vmnet-only
+
+```
 
 ## Uninstallation
 

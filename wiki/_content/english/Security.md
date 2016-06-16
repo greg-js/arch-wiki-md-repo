@@ -46,6 +46,7 @@ This article contains recommendations and best practices for hardening an Arch L
     *   [9.3 SSH](#SSH)
     *   [9.4 DNS](#DNS)
     *   [9.5 Proxies](#Proxies)
+    *   [9.6 Managing SSL certificates](#Managing_SSL_certificates)
 *   [10 Authenticating packages](#Authenticating_packages)
 *   [11 Follow NVD/CVE alerts](#Follow_NVD.2FCVE_alerts)
 *   [12 Physical security](#Physical_security)
@@ -366,6 +367,8 @@ The [grsecurity](/index.php/Grsecurity "Grsecurity") kernel provides many securi
 
 [Firejail](/index.php/Firejail "Firejail") is an easy to use and simple tool for sandboxing applications and servers alike. Firejail is suggested for browsers and internet facing applications, as well as any servers you may be running. Firejail is further enhanced when used with Grsecurity.
 
+**Tip:** If you do not require to sandbox graphical applications, an alternative is [playpen](https://www.archlinux.org/packages/?name=playpen).
+
 ### chroots
 
 Manual [chroot](/index.php/Chroot "Chroot") jails can also be constructed.
@@ -410,6 +413,20 @@ See [DNSSEC](/index.php/DNSSEC "DNSSEC") and [DNSCrypt](/index.php/DNSCrypt "DNS
 Proxies are commonly used as an extra layer between applications and the network, sanitizing data from untrusted sources. The attack surface of a small proxy running with lower privileges is significantly smaller than a complex application running with the end user privileges.
 
 For example the DNS resolver is implemented in [glibc](https://www.archlinux.org/packages/?name=glibc), that is linked with the application (that may be running as root), so a bug in the DNS resolver might lead to a remote code execution. This can be prevented by installing a DNS caching server, such as [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"), which acts as a proxy. [[2]](https://googleonlinesecurity.blogspot.it/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html)
+
+### Managing SSL certificates
+
+See [OpenSSL](/index.php/OpenSSL "OpenSSL") and [Network Security Services](/index.php/Network_Security_Services "Network Security Services") (NSS) for managing custom server-side SSL certificates. Notably, the related [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") project is also supported.
+
+The default internet SSL certificate trustchains are provided by the [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates) package and its dependencies. Note that Arch relies on trust-sources (e.g. [ca-certificates-cacert](https://www.archlinux.org/packages/?name=ca-certificates-cacert), [ca-certificates-mozilla](https://www.archlinux.org/packages/?name=ca-certificates-mozilla)) providing the certificates to be trusted per default by the system.
+
+There may be occasions when you want to deviate from the default. For example, you may read some [news](http://www.theregister.co.uk/2016/05/27/blue_coat_ca_certs/) and want to distrust a certificate rather than wait until the trust-source providers do. The Arch infrastructure makes such easy:
+
+1.  Obtain the respective certificate in .crt format (Example: [view](https://crt.sh/?id=19538258), [download](https://crt.sh/?d=19538258); in case of an existing trusted root certificate authority, you may also find it extracted in the system path),
+2.  Copy it to `/etc/ca-certificates/trust-source/blacklist/` and
+3.  Run *update-ca-trust* as root.
+
+To check the blacklisting works as intended, you may re-open your preferred browser and do so via its GUI, which should show it as **untrusted** now.
 
 ## Authenticating packages
 

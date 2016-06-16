@@ -41,11 +41,10 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [9.3 Diagnosing problems with a specific service](#Diagnosing_problems_with_a_specific_service)
     *   [9.4 Shutdown/reboot takes terribly long](#Shutdown.2Freboot_takes_terribly_long)
     *   [9.5 Short lived processes do not seem to log any output](#Short_lived_processes_do_not_seem_to_log_any_output)
-    *   [9.6 Disabling application crash dumps journaling](#Disabling_application_crash_dumps_journaling)
-    *   [9.7 Boot time increasing over time](#Boot_time_increasing_over_time)
-    *   [9.8 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
-    *   [9.9 systemctl enable fails for symlinks in /etc/systemd/system](#systemctl_enable_fails_for_symlinks_in_.2Fetc.2Fsystemd.2Fsystem)
-    *   [9.10 dependent services are not started when starting a service manually](#dependent_services_are_not_started_when_starting_a_service_manually)
+    *   [9.6 Boot time increasing over time](#Boot_time_increasing_over_time)
+    *   [9.7 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
+    *   [9.8 systemctl enable fails for symlinks in /etc/systemd/system](#systemctl_enable_fails_for_symlinks_in_.2Fetc.2Fsystemd.2Fsystem)
+    *   [9.9 dependent services are not started when starting a service manually](#dependent_services_are_not_started_when_starting_a_service_manually)
 *   [10 See also](#See_also)
 
 ## Basic systemctl usage
@@ -539,7 +538,7 @@ $ journalctl -D */mnt*/var/log/journal -xe
 
 Arch Linux ships with `/usr/lib/systemd/system-preset/99-default.preset` containing `disable *`. This causes *systemctl preset* to disable all units by default, such that when a new package is installed, the user must manually enable the unit.
 
-If this behavior is not desired, simply create a symlink from `/etc/systemd/system-preset/99-default.preset` to `/dev/null` in order to override the configuration file. This will cause *systemctl preset* to enable all units that get installed unless specified in another file in one *systemctl preset'*s configuration directories. See the manpage for `systemd.preset` for more information.
+If this behavior is not desired, simply create a symlink from `/etc/systemd/system-preset/99-default.preset` to `/dev/null` in order to override the configuration file. This will cause *systemctl preset* to enable all units that get installed—regardless of unit type—unless specified in another file in one *systemctl preset'*s configuration directories. User units are not affected. See the manpage for `systemd.preset` for more information.
 
 **Note:** Enabling all units by default may cause problems with packages that contain two or more mutually exclusive units. *systemctl preset* is designed to be used by distributions and spins or system administrators. In the case where two conflicting units would be enabled, you should explicitly specify which one is to be disabled in a preset configuration file as specified in the manpage for `systemd.preset`.
 
@@ -657,24 +656,6 @@ If the shutdown process takes a very long time (or seems to freeze) most likely 
 
 If `journalctl -u foounit` does not show any output for a short lived service, look at the PID instead. For example, if `systemd-modules-load.service` fails, and `systemctl status systemd-modules-load` shows that it ran as PID 123, then you might be able to see output in the journal for that PID, i.e. `journalctl -b _PID=123`. Metadata fields for the journal such as `_SYSTEMD_UNIT` and `_COMM` are collected asynchronously and rely on the `/proc` directory for the process existing. Fixing this requires fixing the kernel to provide this data via a socket connection, similar to `SCM_CREDENTIALS`.
 
-### Disabling application crash dumps journaling
-
-Edit the file `/etc/systemd/coredump.conf` by adding this line:
-
-```
- Storage=none
-
-```
-
-and run:
-
-```
-# systemctl daemon-reload
-
-```
-
-to reload the configuration.
-
 ### Boot time increasing over time
 
 After using `systemd-analyze` a number of users have noticed that their boot time has increased significantly in comparison with what it used to be. After using `systemd-analyze blame` [NetworkManager](/index.php/NetworkManager "NetworkManager") is being reported as taking an unusually large amount of time to start.
@@ -705,7 +686,7 @@ This is a [design choice](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14
 
 ### dependent services are not started when starting a service manually
 
-One (in)famomus example is `libvirtd.service` which needs the `virtlogd.socket` to function properly.
+One (in)famous example is `libvirtd.service` which needs the `virtlogd.socket` to function properly.
 
 The dependencies in `/usr/lib/systemd/system/libvirtd.service` are defined as
 

@@ -309,93 +309,6 @@ An alternate approach is to set the "preferred" font, but *this only works if th
 
 ```
 
-Example fonts.conf which also specifies a default font for the Japanese locale (ja_JP) and keeps western style fonts for Latin letters.
-
-```
-<?xml version='1.0'?>
-<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
-<fontconfig>
-
-<!-- Default font (no fc-match pattern) -->
- <match>
-  <edit mode="prepend" name="family">
-   <string>Noto Sans</string>
-  </edit>
- </match>
-
-<!-- Default font for the ja_JP locale (no fc-match pattern) -->
- <match>
-  <test compare="contains" name="lang">
-   <string>ja</string>
-  </test>
-  <edit mode="prepend" name="family">
-   <string>Noto Sans CJK JP</string>
-  </edit>
- </match>
-
-<!-- Default sans-serif font -->
- <match target="pattern">
-   <test qual="any" name="family"><string>sans-serif</string></test>
-   <!--<test qual="any" name="lang"><string>ja</string></test>-->
-   <edit name="family" mode="prepend" binding="same"><string>Noto Sans</string>  </edit>
- </match>
-
-<!-- Default serif fonts -->
- <match target="pattern">
-   <test qual="any" name="family"><string>serif</string></test>
-   <edit name="family" mode="prepend" binding="same"><string>Noto Serif</string>  </edit>
-   <edit name="family" mode="append" binding="same"><string>IPAPMincho</string>  </edit>
-   <edit name="family" mode="append" binding="same"><string>HanaMinA</string>  </edit>
- </match>
-
-<!-- Default monospace fonts -->
- <match target="pattern">
-   <test qual="any" name="family"><string>monospace</string></test>
-   <edit name="family" mode="prepend" binding="same"><string>Inconsolatazi4</string></edit>
-   <edit name="family" mode="append" binding="same"><string>IPAGothic</string></edit>
- </match>
-
-<!-- Fallback fonts preference order -->
- <alias>
-  <family>sans-serif</family>
-  <prefer>
-   <family>Noto Sans</family>
-   <family>Open Sans</family>
-   <family>Droid Sans</family>
-   <family>Ubuntu</family>
-   <family>Roboto</family>
-   <family>NotoSansCJK</family>
-   <family>Source Han Sans JP</family>
-   <family>IPAPGothic</family>
-   <family>VL PGothic</family>
-   <family>Koruri</family>
-  </prefer>
- </alias>
- <alias>
-  <family>serif</family>
-  <prefer>
-   <family>Noto Serif</family>
-   <family>Droid Serif</family>
-   <family>Roboto Slab</family>
-   <family>IPAPMincho</family>
-  </prefer>
- </alias>
- <alias>
-  <family>monospace</family>
-  <prefer>
-   <family>Inconsolatazi4</family>
-   <family>Ubuntu Mono</family>
-   <family>Droid Sans Mono</family>
-   <family>Roboto Mono</family>
-   <family>IPAGothic</family>
-  </prefer>
- </alias>
-
- <dir>~/.fonts</dir>
-</fontconfig>
-
-```
-
 ### Whitelisting and blacklisting fonts
 
 The element `<selectfont>` is used in conjunction with the `<acceptfont>` and `<rejectfont>` elements to selectively whitelist or blacklist fonts from the resolve list and match requests. The simplest and most typical use case it to reject one font that is needed to be installed, however is getting matched for a generic font query that is causing problems within application user interfaces.
@@ -613,9 +526,9 @@ Those still having problems can fall back to manually setting the DPI used by fo
 
 ### Calibri, Cambria, Monaco, etc. not rendering properly
 
-Some scalable fonts have embedded bitmap versions which are rendered instead, mainly at smaller sizes.
+Some scalable fonts have embedded bitmap versions which are rendered instead, mainly at smaller sizes. Using [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts") as replacements can improve the rendering in these cases.
 
-Using [Croscore Fonts](/index.php/Croscore_Fonts "Croscore Fonts") can improve the rendering in these cases. You can also force using scalable fonts at all sizes by [#Disabling embedded bitmap](#EmbeddedBitmap), sacrificing some rendering quality.
+You can also force using scalable fonts at all sizes by [#Disabling embedded bitmap](#EmbeddedBitmap), sacrificing some rendering quality.
 
 ### Applications overriding hinting
 

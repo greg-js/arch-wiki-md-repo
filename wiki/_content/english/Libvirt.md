@@ -19,6 +19,7 @@ Some of the major libvirt features are:
         *   [2.1.2 Authenticate with file-based permissions](#Authenticate_with_file-based_permissions)
     *   [2.2 Daemon](#Daemon)
     *   [2.3 Unencrypt TCP/IP sockets](#Unencrypt_TCP.2FIP_sockets)
+    *   [2.4 Access virtual machines using their hostnames](#Access_virtual_machines_using_their_hostnames)
 *   [3 Test](#Test)
 *   [4 Management](#Management)
     *   [4.1 virsh](#virsh)
@@ -160,6 +161,20 @@ auth_tcp=none
 It is also necessary to start the server in listening mode by editing `/etc/conf.d/libvirtd`:
 
  `/etc/conf.d/libvirtd`  `LIBVIRTD_ARGS="--listen"` 
+
+### Access virtual machines using their hostnames
+
+For host access to guests on non-isolated, bridged networks, enable the `libvirt` NSS module provided by [libvirt](https://www.archlinux.org/packages/?name=libvirt).
+
+Edit `/etc/nsswitch.conf`:
+
+ `/etc/nsswitch.conf` 
+```
+hosts: files libvirt dns myhostname
+
+```
+
+**Note:** While commands such as `ping` and `ssh` should work with virtual machine hostnames, commands such as `host` and `nslookup` may fail or produce unexpected results because they rely on DNS. Use `getent hosts <vm-hostname>` instead.
 
 ## Test
 
@@ -418,7 +433,7 @@ $ virsh edit *domain*
 
 A [decent overview of libvirt networking](https://jamielinux.com/docs/libvirt-networking-handbook/).
 
-By default, when the `libvird` systemd service is started, a NAT bridge is created called *default* to allow external network connectivity (warning see: [#"default" network bug](#.22default.22_network_bug)). For other network connectivity needs, four network types exist that can be created to connect a domain to:
+By default, when the `libvirtd` systemd service is started, a NAT bridge is created called *default* to allow external network connectivity (warning see: [#"default" network bug](#.22default.22_network_bug)). For other network connectivity needs, four network types exist that can be created to connect a domain to:
 
 *   bridge — a virtual device; shares data directly with a physical interface. Use this if the host has *static* networking, it does not need to connect other domains, the domain requires full inbound and outbound trafficing, and the domain is running on a *system*-level. See [Network bridge](/index.php/Network_bridge "Network bridge") on how to add a bridge additional to the default one. After creation, it needs to be specified in the respective guest's `.xml` configuration file.
 *   network — a virtual network; has ability to share with other domains. Use a virtual network if the host has *dynamic* networking (e.g. NetworkManager), or using wireless.

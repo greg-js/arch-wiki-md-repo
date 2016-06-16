@@ -19,7 +19,9 @@
 *   [6 Extended attributes](#Extended_attributes)
     *   [6.1 User extended attributes](#User_extended_attributes)
     *   [6.2 Capabilities](#Capabilities)
-*   [7 See also](#See_also)
+*   [7 Tips and tricks](#Tips_and_tricks)
+    *   [7.1 Preserve root](#Preserve_root)
+*   [8 See also](#See_also)
 
 ## Viewing permissions
 
@@ -429,6 +431,12 @@ user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"
 ### Capabilities
 
 Extended attributes are also used to set [Capabilities](/index.php/Capabilities "Capabilities").
+
+## Tips and tricks
+
+### Preserve root
+
+Use the `--preserve-root` flag to prevent `chmod` from acting recursively on `/`. This can, for example, prevent one from removing the executable bit systemwide and thus breaking the system. To use this flag every time, set it within an [alias](/index.php/Alias "Alias"). See also [[1]](https://www.reddit.com/r/linux/comments/4ni3xe/tifu_sudo_chmod_644/).
 
 ## See also
 

@@ -97,7 +97,7 @@ Navigate to your kernel tree folder and execute the following command:
 
 ### Load the VirtualBox kernel modules
 
-Since version 5.0.16, [virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch) and [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) use `systemd-modules-load.service` to load their modules at boot time.
+Since version 5.0.16, [virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch) and [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) use `systemd-modules-load.service` to load all four VirtualBox modules at boot time.
 
 **Note:** If you don't want the VirtualBox modules to be loaded at boot time, you have to mask the default `/usr/lib/modules-load.d/virtualbox-host-modules-arch.conf` (or `-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d`.
 

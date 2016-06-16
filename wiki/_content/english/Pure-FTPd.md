@@ -138,7 +138,7 @@ Create a Self-Signed Certificate:
 
 ```
 # mkdir -p /etc/ssl/private
-# openssl req -x509 -nodes -days 7300 -newkey rsa:1024 -keyout /etc/ssl/private/pure-ftpd.pem -out /etc/ssl/private/pure-ftpd.pem
+# openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -sha256 -keyout /etc/ssl/private/pure-ftpd.pem -out /etc/ssl/private/pure-ftpd.pem
 
 ```
 
@@ -148,8 +148,6 @@ Make it private:
 # chmod 600 /etc/ssl/private/*.pem
 
 ```
-
-**Warning:** Be aware that using 1024 bits in some countries is against the law. Choose 512 or less if unsure.
 
 #### Enable TLS
 

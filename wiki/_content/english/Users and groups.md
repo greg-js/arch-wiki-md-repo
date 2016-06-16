@@ -384,7 +384,7 @@ Workstation/desktop users often add their non-root user to some of following gro
 | games | `/var/games` | Access to some game software. |
 | rfkill | `/dev/rfkill` | Right to control wireless devices power state (used by [rfkill](https://www.archlinux.org/packages/?name=rfkill)). |
 | users | Standard users group. |
-| uucp | `/dev/ttyS[0-9]`, `/dev/tts/[0-9]`, `/dev/ttyACM[0-9]` | Serial and USB devices such as modems, handhelds, RS-232/serial ports. |
+| uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+` | RS-232 serial ports and devices connected to them. |
 | wheel | Administration group, commonly used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default, configurable in `/etc/pam.d/su` and `/etc/pam.d/su-l`). It can also be used to gain full read access to [journal](/index.php/Systemd#Journal "Systemd") files. |
 
 ### System groups

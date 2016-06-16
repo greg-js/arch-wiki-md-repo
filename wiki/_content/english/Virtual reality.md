@@ -1,4 +1,4 @@
-Virtual Reality is the process of simulating an environment for a user, using a variety of peripherals, head mounted displays or CAVEs, and trackers. Instead of showing you a static viewpoint from a screen, it renders your viewpoint relative to where you are standing, on a head-attached or projected surface, to give an effect identical to your own eyes.
+Virtual reality is the process of simulating an environment for a user, using a variety of peripherals, head mounted displays or CAVEs, and trackers. Instead of showing you a static viewpoint from a screen, it renders your viewpoint relative to where you are standing, on a head-attached or projected surface, to give an effect identical to your own eyes.
 
 A number of peripherals have been released or are about to be released recently which have brought affordable, extremely immersive virtual reality to everyone. Most of these peripherals have full or partial Linux support, and many have AUR packages.
 
@@ -101,7 +101,7 @@ The Leap Motion is an incredibly affordable hand tracker which can easily be mou
 
 #### Setting up
 
-Install [leap-motion-driver](https://aur.archlinux.org/packages/leap-motion-driver/) and optionally [leap-motion-sdk](https://aur.archlinux.org/packages/leap-motion-sdk/). Unfortunately, although it compiles, [osvr-leap-motion-git](https://aur.archlinux.org/packages/osvr-leap-motion-git/) seems to be broken for the moment, so you will not yet be able to use it for OSVR/SteamVR/OpenVR applications.
+Install [leap-motion-driver](https://aur.archlinux.org/packages/leap-motion-driver/), [osvr-leap-motion-git](https://aur.archlinux.org/packages/osvr-leap-motion-git/) and optionally [leap-motion-sdk](https://aur.archlinux.org/packages/leap-motion-sdk/).
 
 To configure, enable and start `leapd.service` and run `LeapControlPanel`. To test that tracking works, run the `Playground` demo included with the installation.
 

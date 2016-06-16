@@ -50,6 +50,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [8.11 Rootless Xorg (v1.16)](#Rootless_Xorg_.28v1.16.29)
         *   [8.11.1 Broken redirection](#Broken_redirection)
     *   [8.12 Why do I get a green screen whenever I try to watch a video?](#Why_do_I_get_a_green_screen_whenever_I_try_to_watch_a_video.3F)
+    *   [8.13 SocketCreateListener error](#SocketCreateListener_error)
 
 ## Installation
 
@@ -655,3 +656,7 @@ Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See
 ### Why do I get a green screen whenever I try to watch a video?
 
 Your color depth is set wrong. It may need to be 24 instead of 16, for example.
+
+### SocketCreateListener error
+
+If X terminates with error message "SocketCreateListener() failed", you may need to delete socket files in `/tmp/.X11-unix`. This may happen if you have previously run Xorg as root (e.g. to generate an `xorg.conf`).

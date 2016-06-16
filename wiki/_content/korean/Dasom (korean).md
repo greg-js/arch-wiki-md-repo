@@ -2,12 +2,12 @@
 
 ## Contents
 
-*   [1 Installation](#Installation)
+*   [1 설치](#.EC.84.A4.EC.B9.98)
     *   [1.1 입력기 엔진](#.EC.9E.85.EB.A0.A5.EA.B8.B0_.EC.97.94.EC.A7.84)
     *   [1.2 초기 설정](#.EC.B4.88.EA.B8.B0_.EC.84.A4.EC.A0.95)
-*   [2 See also](#See_also)
+*   [2 더 보기](#.EB.8D.94_.EB.B3.B4.EA.B8.B0)
 
-## Installation
+## 설치
 
 [dasom-git](https://aur.archlinux.org/packages/dasom-git/)패키지를 [설치](/index.php/Install "Install") 하세요. 필요한 경우, 입력기 모듈 패키지를 추가적으로 설치하세요. GTK+ 응용프로그램에 대해서는 [dasom-gtk-git](https://aur.archlinux.org/packages/dasom-gtk-git/)를, Qt 응용프로그램에 대해서는 [dasom-gtk-git](https://aur.archlinux.org/packages/dasom-gtk-git/)를 설치합니다.
 
@@ -40,7 +40,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMM
 
 ```
 
-## See also
+## 더 보기
 
 *   [다솜 깃허브](https://github.com/dasom-im/dasom/)
 *   [다솜 홈페이지](http://dasom-im.github.io)

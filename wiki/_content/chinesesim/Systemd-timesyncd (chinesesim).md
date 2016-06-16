@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-02，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd-timesyncd&diff=0&oldid=402647)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-13，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd-timesyncd&diff=0&oldid=435960)可以查看翻译后英文页面的改动。
 
 来自于 [systemd mailing list](http://lists.freedesktop.org/archives/systemd-devel/2014-May/019537.html):
 
@@ -6,7 +6,7 @@
 
 ## 安装
 
-*systemd-timesyncd* 服务可以通过 [systemd](https://www.archlinux.org/packages/?name=systemd) >= 213 获取。 启动服务:
+*systemd-timesyncd* 服务可以通过 [systemd](https://www.archlinux.org/packages/?name=systemd) 获取。 启动服务:
 
 ```
 # timedatectl set-ntp true 
@@ -26,11 +26,9 @@ NTP synchronized: yes
 RTC in local TZ: no
 ```
 
-**Note:** systemd 216 之前 *systemd-timesyncd* 需要 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 才能支持 (不需要额外配置) 接收网络开启/关闭事件的通知。 这个问题报告并不通用，比如它现在也接受来自于 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 和 [NetworkManager](/index.php/NetworkManager "NetworkManager") 的通知, 不过时网络配置或者网络管理工具的差异，可能还是需要上面的服务。
-
 ## 配置
 
-*systemd-timesyncd* 启动时会读取 `/etc/systemd/timesyncd.conf` 配置文件。 在 [systemd](/index.php/Systemd "Systemd") 217 中，配置内容如下:
+*systemd-timesyncd* 启动时会读取 `/etc/systemd/timesyncd.conf` 配置文件,内容如下:
 
  `/etc/systemd/timesyncd.conf` 
 ```
@@ -48,7 +46,7 @@ NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 ```
 
-进一步讲, NTP 服务器也可以通过 [systemd-networkd](/index.php/Systemd-networkd#.5BNetwork.5D_section "Systemd-networkd") 提供，通过 `NTP=` 选项启用, 或者通过DHCP 服务动态加载 (*systemd* 216 起支持).
+进一步讲, NTP 服务器也可以通过 [systemd-networkd](/index.php/Systemd-networkd#.5BNetwork.5D_section "Systemd-networkd") 提供，通过 `NTP=` 选项启用, 或者通过DHCP 服务动态加载.
 
 NTP 服务器使用规则:
 

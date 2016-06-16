@@ -11,8 +11,11 @@ Basically a DSDT table is the code run on ACPI (Power Management) events.
     *   [1.2 Find a fixed DSDT](#Find_a_fixed_DSDT)
 *   [2 Recompiling it yourself](#Recompiling_it_yourself)
 *   [3 Using modified code](#Using_modified_code)
-    *   [3.1 Compiling into the kernel](#Compiling_into_the_kernel)
-    *   [3.2 Loading at runtime](#Loading_at_runtime)
+    *   [3.1 Using a CPIO archive](#Using_a_CPIO_archive)
+    *   [3.2 Compiling into the kernel](#Compiling_into_the_kernel)
+    *   [3.3 Loading at runtime](#Loading_at_runtime)
+*   [4 Verify successful override](#Verify_successful_override)
+*   [5 See also](#See_also)
 
 ## Before you start...
 
@@ -94,14 +97,60 @@ If it says no errors and no warnings you should be good to go.
 
 ## Using modified code
 
-There are two ways to use a custom DSDT:
+**Warning:** After each BIOS update you will need to fix DSDT again and repeat these steps!
 
+There are at least three ways to use a custom DSDT:
+
+*   creating a CPIO archive that is loaded by the bootloader
 *   compiling it into the kernel
 *   loading it at runtime (not supported)
 
-### Compiling into the kernel
+### Using a CPIO archive
 
-**Warning:** After each BIOS update you need to fix DSDT again and compile it into kernel again
+This method has the advantage that you do not need to recompile your kernel, and updating the kernel will not make it necessary to repeat these steps. This solution should work for all kernels that have the `CONFIG_ACPI_INITRD_TABLE_OVERRIDE=y` option, which is true for the Arch kernel.
+
+First, create the following folder structure:
+
+```
+$ mkdir kernel/firmware/acpi
+
+```
+
+Copy the fixed ACPI tables into the just created `kernel/firmware/acpi` folder, for example:
+
+```
+$ cp dsdt.aml ssdt1.aml kernel/firmware/acpi
+
+```
+
+In the folder where the newly created `kernel/` folder resides, run:
+
+```
+$ find kernel | cpio -H newc --create > acpi_override
+
+```
+
+This is the CPIO archive containing the fixed ACPI tables. To use them, copy the archive to the `boot` directory.
+
+```
+# cp acpi_override /boot
+
+```
+
+Lastly, configure the [bootloader](/index.php/Boot_loaders "Boot loaders") to load your CPIO archive. For example, using [Systemd-boot](/index.php/Systemd-boot "Systemd-boot"), `/boot/loader/entries/arch.conf` might look like this:
+
+```
+title	 Arch Linux
+linux	 /vmlinuz-linux
+initrd   /acpi_override
+initrd	 /initramfs-linux.img
+options  root=PARTUUID=ec9d5998-a9db-4bd8-8ea0-35a45df04701 resume=PARTUUID=58d0aa86-d39b-4fe1-81cf-45e7add275a0 ...
+
+```
+
+This is it. Now all that is left to do is to reboot and to [verify the result.](#Verify_successful_override)
+
+### Compiling into the kernel
 
 You'll want to be familiar with [compiling your own kernel](/index.php/Kernels "Kernels"). The most straightforward way is with the "traditional" approach. After compiling DSDT, iasl produce two files: `dsdt.hex` and `dsdt.aml`.
 
@@ -109,18 +158,6 @@ You'll want to be familiar with [compiling your own kernel](/index.php/Kernels "
 
 *   Disable "Select only drivers that don't need compile-time external firmware". Located in "Device Drivers -> Generic Driver Options".
 *   Enable "Include Custom DSDT" and specify the absolute path of your fixed DSDT file (`dsdt.hex`, not `dsdt.aml`). Located in "Power management and ACPI options -> ACPI (Advanced Configuration and Power Interface) Support".
-
-**Checking for successful override**:
-
-1.  Run `dmesg | grep DSDT`.
-2.  Look for clues that suggest an override, for example:
-
-```
-[    0.000000] ACPI: Override [DSDT-   A M I], this is unsafe: tainting kernel
-[    0.000000] ACPI: DSDT 00000000be9b1190 Logical table override, new table: ffffffff81865af0
-[    0.000000] ACPI: DSDT ffffffff81865af0 0BBA3 (v02 ALASKA    A M I 000000F3 INTL 20130517)
-
-```
 
 ### Loading at runtime
 
@@ -190,3 +227,19 @@ mkinitcpio -p linux
 and reboot. Done!
 
 To check if you are really using your own DSDT read your table again `# cat /sys/firmware/acpi/tables/DSDT > dsdt.dat` and decompile it with `iasl -d dsdt.dat`
+
+## Verify successful override
+
+1.  Run `dmesg | grep ACPI`.
+2.  Look for clues that suggest an override, for example:
+
+```
+[    0.000000] ACPI: Override [DSDT-   A M I], this is unsafe: tainting kernel
+[    0.000000] ACPI: DSDT 00000000be9b1190 Logical table override, new table: ffffffff81865af0
+[    0.000000] ACPI: DSDT ffffffff81865af0 0BBA3 (v02 ALASKA    A M I 000000F3 INTL 20130517)
+
+```
+
+## See also
+
+*   [Upgrading ACPI tables via initrd](https://www.kernel.org/doc/Documentation/acpi/initrd_table_override.txt)

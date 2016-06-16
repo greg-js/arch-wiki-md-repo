@@ -232,6 +232,15 @@ And create log file:
 
 ## Accessing the admin page
 
+Before accesing de admin page you have to specify which users/groups will be able to edit BackupPC's configuration.
+
+ `/etc/backuppc/config.pl` 
+```
+$Conf{CgiAdminUserGroup} = '<authorized groups>';
+$Conf{CgiAdminUsers}     = '<authorized users>';  # <-- set to '*' if the webserver is not autenticating users
+
+```
+
 Browse to [http://localhost/BackupPC_Admin](http://localhost/BackupPC_Admin) respectively http://*your_backuppc_server_ip*/BackupPC_Admin.
 
 ## Website view problem

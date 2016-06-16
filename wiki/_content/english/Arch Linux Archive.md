@@ -15,7 +15,7 @@ The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollb
     *   [2.3 /iso](#.2Fiso)
 *   [3 FAQ](#FAQ)
     *   [3.1 How to downgrade one package](#How_to_downgrade_one_package)
-    *   [3.2 How to restore all my packages at a specific date](#How_to_restore_all_my_packages_at_a_specific_date)
+    *   [3.2 How to restore all packages to a specific date](#How_to_restore_all_packages_to_a_specific_date)
 *   [4 History](#History)
 
 ## Location
@@ -189,9 +189,9 @@ Find the package you want under [/packages](#.2Fpackages). Download it and insta
 
 See also [Downgrading packages#Automation](/index.php/Downgrading_packages#Automation "Downgrading packages") for tools that simplify the process.
 
-### How to restore all my packages at a specific date
+### How to restore all packages to a specific date
 
-To restore all the package you have at a specific date, let says 30 March 2014, you have to stuck [pacman](/index.php/Pacman "Pacman") at this date, by editing your `/etc/pacman.conf` and use the following server directive:
+To restore all packages to their version at a specific date, let's say 30 March 2014, you have to direct [pacman](/index.php/Pacman "Pacman") to this date, by editing your `/etc/pacman.conf` and use the following server directive:
 
 ```
 [core]
@@ -208,7 +208,7 @@ Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 ```
 
-or by replace your `/etc/pacman.d/mirrorlist` by the following content:
+or by replacing your `/etc/pacman.d/mirrorlist` with the following content:
 
 ```
 ##                                                                              
@@ -226,7 +226,7 @@ Then update the database and force downgrade:
 
 ```
 
-**Note:** It's [not safe](/index.php/Partial_upgrades "Partial upgrades") to mix Archive and up-to-date mirrors. In case of download failure, you can fall-back on an upstream package and you will have packages not from the same epoch as the rest of the system.
+**Note:** It's [not safe](/index.php/Partial_upgrades "Partial upgrades") to mix Archive and up-to-date mirrors. In case of a download failure, you will fall-back on an upstream package and you will have packages not from the same epoch in the rest of the system.
 
 ## History
 

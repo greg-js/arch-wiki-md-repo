@@ -8,12 +8,13 @@ Timers are [systemd](/index.php/Systemd "Systemd") unit files whose name ends in
 *   [4 Example](#Example)
     *   [4.1 Monotonic timer](#Monotonic_timer)
     *   [4.2 Realtime timer](#Realtime_timer)
-*   [5 As a cron replacement](#As_a_cron_replacement)
-    *   [5.1 Benefits](#Benefits)
-    *   [5.2 Caveats](#Caveats)
-    *   [5.3 MAILTO](#MAILTO)
-    *   [5.4 Using a crontab](#Using_a_crontab)
-*   [6 See also](#See_also)
+*   [5 Transient .timer units](#Transient_.timer_units)
+*   [6 As a cron replacement](#As_a_cron_replacement)
+    *   [6.1 Benefits](#Benefits)
+    *   [6.2 Caveats](#Caveats)
+    *   [6.3 MAILTO](#MAILTO)
+    *   [6.4 Using a crontab](#Using_a_crontab)
+*   [7 See also](#See_also)
 
 ## Timer units
 
@@ -22,7 +23,7 @@ Timers are *systemd* unit files with a suffix of `.timer`. Timers are like other
 *   **Monotonic timers** activate after a time span relative to a varying starting point. There are number of different monotonic timers but all have the form of: `On*Type*Sec=`. `OnBootSec` and `OnActiveSec` are common monotonic timers.
 *   **Realtime timers** (a.k.a. wallclock timers) activate on a calendar event (like cronjobs). The option `OnCalendar=` is used to define them.
 
-For a full explanation of timer options, see the `systemd.timer(5)` [man page](/index.php/Man_page "Man page"). The argument syntax for calendar events and time spans is defined on the `systemd.time(7)` [man page](/index.php/Man_page "Man page").
+For a full explanation of timer options, see the `systemd.timer(5)`[[1]](https://www.freedesktop.org/software/systemd/man/systemd.timer.html) [man page](/index.php/Man_page "Man page"). The argument syntax for calendar events and time spans is defined on the `systemd.time(7)`[[2]](https://www.freedesktop.org/software/systemd/man/systemd.time.html) [man page](/index.php/Man_page "Man page").
 
 ## Service unit
 
@@ -85,7 +86,32 @@ Persistent=true
 WantedBy=timers.target
 ```
 
+The format controlling `OnCalendar` events uses the following format when more specific dates and times are required: `DayOfWeek Year-Month-Day Hour:Minute:Second`. An asterisk may be used to specify any value and commas may be used to list possible values. In this example the service is run the first four days of each month at 12:00 PM, but *only* if that day is also on a Monday or a Tuesday. More information is available in `man systemd.time`.
+
+```
+OnCalendar=Mon,Tue *-*-01,02,03,04 12:00:00
+
+```
+
 **Tip:** Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. The `RandomizedDelaySec` option avoids this problem by randomly staggering the start time of each timer. See `systemd.timer (5)`.
+
+## Transient .timer units
+
+One can use `systemd-run` to create transient `.timer` units. That is, one can set a command to run at a specified time without having a service file. For example the following command touches a file after 30 seconds:
+
+```
+# systemd-run --on-active=30 /bin/touch /tmp/foo
+
+```
+
+One can also specify a pre-existing service file that does not have a timer file. For example, the following starts the systemd unit named `*someunit*.service` after 12.5 hours have elapsed:
+
+```
+# systemd-run --on-active="12h 30m" --unit *someunit*.service
+
+```
+
+See `man systemd-run` for more information and examples.
 
 ## As a cron replacement
 

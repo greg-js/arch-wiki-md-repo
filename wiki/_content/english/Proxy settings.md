@@ -118,7 +118,7 @@ As an alternative, you may want to use the following script. Change the strings 
 
 ### Keep proxy through sudo
 
-If the proxy environment variables are set for the user only (say, from manual commands or .bashrc) they will get lost when running commands with [sudo](/index.php/Sudo "Sudo") (or when programs use sudo intenally).
+If the proxy environment variables are set for the user only (say, from manual commands or .bashrc) they will get lost when running commands with [sudo](/index.php/Sudo "Sudo") (or when programs use sudo internally).
 
 A way to prevent that is to add the following line to the sudo configuration file (accessible with visudo) :
 

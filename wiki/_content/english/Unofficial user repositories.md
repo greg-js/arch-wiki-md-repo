@@ -240,6 +240,8 @@ Server = ftp://repo.arcanis.me/repo/$arch
 
 ```
 
+(It is also available via HTTP with the same url.)
+
 #### arch-openrc
 
 *   **Maintainer:** [Chris Cromer](https://bbs.archlinux.org/profile.php?id=84785)
@@ -899,7 +901,7 @@ Server = http://studioidefix.googlecode.com/hg/repo/i686
 
 ```
 [apathism]
-Server = http://apathism.net/archlinux/
+Server = https://apathism.net/archlinux/
 
 ```
 

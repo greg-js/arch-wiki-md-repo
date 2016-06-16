@@ -10,7 +10,7 @@
 
 ## apu2c4
 
-This document describes how to install Arch Linux to the SSD via a SD card.
+This document describes how to install Arch Linux to the SSD via an SD card or USB flash drive.
 
 ### Hardware
 
@@ -24,7 +24,7 @@ Assemble the device with care and read the [guide for the cooling system](http:/
 
 ### Setup preperations
 
-*   You need a serial (RS-232) connection to the apu to controll it.
+*   You need a serial (RS-232) connection to the apu to control it.
 *   Add your user to uucp
 *   Install picocom or something similar, see [Working with the serial console#Making Connections](/index.php/Working_with_the_serial_console#Making_Connections "Working with the serial console")
 *   Download and verify the [arch-dualboot.iso](https://www.archlinux.org/download/)
@@ -38,7 +38,7 @@ LANG=C picocom --baud 115200 --omap crcrlf /dev/ttyUSB0
 
 ```
 
-If your device does not boot from the SD, press F10 during the boot and select the sdcard with a press to 1. Then close picocom with "Ctl+A" "Ctl+Q"
+If your device does not boot from the SD card or USB flash drive, press F10 during boot to bring up a boot menu. Then close picocom with "Ctl+A" "Ctl+Q"
 
 Reconnect to the ArchIso Grub:
 
@@ -67,7 +67,7 @@ Now wait for about 30 seconds and you will get a colorful boot prompt
 
 ### Install the system
 
-The most comftable way to install Arch now is to start the sshd and use [Install guide](/index.php/Install_guide "Install guide")
+The most comfortable way to install Arch now is to start the sshd and use [Install guide](/index.php/Install_guide "Install guide")
 
 You may need to get a new IP with dhclient and start sshd
 
@@ -93,6 +93,17 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
+If using [Syslinux](/index.php/Syslinux "Syslinux"), make sure to provide a `console` option in the boot menu:
+
+ `/boot/syslinux/syslinux.cfg` 
+```
+LABEL arch
+    MENU LABEL Arch Linux
+    LINUX ../vmlinuz-linux
+    APPEND root=UUID=1ef5a2eb-1908-4929-9b91-f6c4183695ac rw console=ttyS0,38400
+    INITRD ../initramfs-linux.img
+```
+
 Also you should read [Working with the serial console#Configure console access on the target machine](/index.php/Working_with_the_serial_console#Configure_console_access_on_the_target_machine "Working with the serial console")
 
-Remember to remove the SD after you finished your setup.
+Remember to remove the SD card or USB flash drive after you finished your setup.

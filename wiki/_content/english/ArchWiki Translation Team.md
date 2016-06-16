@@ -33,6 +33,7 @@ List here articles that only exist in non-English languages, or that exist in En
 | [Fcitx (简体中文)](/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fcitx (简体中文)") | Chinese (Simplified) |
 | [Fujitsu LIFEBOOK UH572 Ultrabook (Русский)](/index.php/Fujitsu_LIFEBOOK_UH572_Ultrabook_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fujitsu LIFEBOOK UH572 Ultrabook (Русский)") | Russian | only in Russian |
 | [GtkD (Русский)](/index.php/GtkD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GtkD (Русский)") | Russian |
+| [HASEE K650D i7 D3 (简体中文)](/index.php/HASEE_K650D_i7_D3_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "HASEE K650D i7 D3 (简体中文)") | Chinese (Simplified) |
 | [Hime (正體中文)](/index.php/Hime_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Hime (正體中文)") | Chinese (Traditional) |
 | [How to repair a local pacman database (Русский)](/index.php?title=How_to_repair_a_local_pacman_database_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&action=edit&redlink=1 "How to repair a local pacman database (Русский) (page does not exist)") | Russian | in Russian only |
 | [HP Nx7400 (Česky)](/index.php/HP_Nx7400_(%C4%8Cesky) "HP Nx7400 (Česky)") | Czech |

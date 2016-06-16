@@ -1,6 +1,6 @@
 A firewall is a system designed to prevent unauthorized access to or from a private network (which could be just one machine). Firewalls can be implemented in only hardware or software, or a combination of both. Firewalls are frequently used to prevent unauthorized Internet users from accessing private networks connected to the Internet, especially intranets. All messages entering or leaving the intranet pass through the firewall, which examines each message and allows, proxys, or denies the traffic based on specified security criteria.
 
-The firewalls listed in this article are overwhelmingly based on the [iptables](/index.php/Iptables "Iptables") program. Consider configuring the iptables process yourself according to its wiki page (listed below) to keep to the [The Arch Way](/index.php/The_Arch_Way "The Arch Way").
+The firewalls listed in this article are overwhelmingly based on the [iptables](/index.php/Iptables "Iptables") program. Consider configuring the iptables process yourself according to its wiki page (listed below) to keep to the ["The Arch Way"](/index.php/Arch_Linux#Principles "Arch Linux").
 
 There are many posts on the forums about different firewall apps and scripts so here they all are condensed into one page - please add your comments about each firewall, especially ease of use and a security check at [Shields Up](http://www.grc.com/x/ne.dll?bh0bkyd2).
 

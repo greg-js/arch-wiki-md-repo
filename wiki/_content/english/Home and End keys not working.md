@@ -1,5 +1,3 @@
-**Note:** This page previously contained some bad advice. Setting the TERM environment variable in your ~/.bashrc is a **BAD** idea. Please do not do it. Follow the advice below.
-
 A frequent problem in command line programs is that keys like Home and End do not work as expected. This is usually because the terminal emulator sends multi-character escape codes when such keys are pressed, which the running program (such as your shell) does not know how to interpret correctly. Usually this problem can be fixed by configuring the offending program to perform the correct action when receiving certain escape codes. Thus the solution varies from program to program.
 
 First you should check the common culprits that can affect the behavior of many programs.

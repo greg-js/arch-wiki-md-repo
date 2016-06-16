@@ -57,14 +57,15 @@
         *   [6.2.2 Real AP](#Real_AP)
     *   [6.3 Sharing internet connection over Ethernet](#Sharing_internet_connection_over_Ethernet)
     *   [6.4 Checking if networking is up inside a cron job or script](#Checking_if_networking_is_up_inside_a_cron_job_or_script)
-    *   [6.5 Automatically unlock keyring after login](#Automatically_unlock_keyring_after_login)
-        *   [6.5.1 GNOME](#GNOME_2)
-        *   [6.5.2 SLiM login manager](#SLiM_login_manager)
-    *   [6.6 KDE and OpenConnect VPN with password authentication](#KDE_and_OpenConnect_VPN_with_password_authentication)
-        *   [6.6.1 Troubleshooting](#Troubleshooting_2)
-    *   [6.7 Ignore specific devices](#Ignore_specific_devices)
-    *   [6.8 Enable DNS Caching](#Enable_DNS_Caching)
-    *   [6.9 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
+    *   [6.5 Connect to network with secret on boot](#Connect_to_network_with_secret_on_boot)
+    *   [6.6 Automatically unlock keyring after login](#Automatically_unlock_keyring_after_login)
+        *   [6.6.1 GNOME](#GNOME_2)
+        *   [6.6.2 SLiM login manager](#SLiM_login_manager)
+    *   [6.7 KDE and OpenConnect VPN with password authentication](#KDE_and_OpenConnect_VPN_with_password_authentication)
+        *   [6.7.1 Troubleshooting](#Troubleshooting_2)
+    *   [6.8 Ignore specific devices](#Ignore_specific_devices)
+    *   [6.9 Enable DNS Caching](#Enable_DNS_Caching)
+    *   [6.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -633,12 +634,12 @@ The downside of using the keyring is that the connections have to be set up for 
 
 ### Sharing internet connection over Wi-Fi
 
-You can share your internet connection (e.g.: 3G or wired) with a few clicks using nm. You will need a supported Wi-Fi card (Cards based on Atheros AR9xx or at least AR5xx are probably best choice).
+You can share your internet connection (e.g. 3G or wired) with a few clicks using nm. You will need a supported Wi-Fi card (Cards based on Atheros AR9xx or at least AR5xx are probably best choice). Please note that a [firewall](/index.php/Firewall "Firewall") may interfere with internet sharing.
 
 #### Ad-hoc
 
 *   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
-*   Custom `dnsmasq.conf` may interfere with NetworkManager (not sure about this, but i think so).
+*   Custom `dnsmasq.conf` may interfere with NetworkManager (not sure about this, but I think so).
 *   Click on applet and choose "Create new wireless network".
 *   Follow wizard (if using WEP, be sure to use 5 or 13 character long password, different lengths will fail).
 *   Settings will remain stored for the next time you need it.
@@ -657,6 +658,7 @@ Requirements:
 
 *   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
 *   Your internet connected device and the other devices are connected over a suitable ethernet cable (this usually means a cross over cable or a switch in between).
+*   Internet sharing is not blocked by a [firewall](/index.php/Firewall "Firewall").
 
 Steps:
 
@@ -684,15 +686,21 @@ fi
 
 This useful for a `cron.hourly` script that runs *fpupdate* for the F-Prot virus scanner signature update, as an example. Another way it might be useful, with a little modification, is to differentiate between networks using various parts of the output from *nm-tool*; for example, since the active wireless network is denoted with an asterisk, you could grep for the network name and then grep for a literal asterisk.
 
-### Automatically unlock keyring after login
+### Connect to network with secret on boot
 
-#### GNOME
+By default, NetworkManager will not connect to networks requiring a secret automatically on boot. This is because it locks such connections to the user who makes it by default, only connecting after they have logged in. To change this, do the following:
 
 1.  Right click on the `nm-applet` icon in your panel and select Edit Connections and open the Wireless tab
 2.  Select the connection you want to work with and click the Edit button
 3.  Check the boxes “Connect Automatically” and “Available to all users”
 
 Log out and log back in to complete.
+
+### Automatically unlock keyring after login
+
+NetworkManager requires access to the login keyring to connect to networks requiring a secret. Under most circumstances, this keyring is unlocked automatically at login, but if it isn't, and NetworkManager isn't connecting on login, you can try the following.
+
+#### GNOME
 
 **Note:** The following method is dated and known not to work on at least one machine!
 

@@ -266,7 +266,7 @@ Change your syslinux.cfg file by adding:
 ```
 LABEL arch-selinux
          LINUX ../vmlinuz-linux-selinux
-         APPEND root=/dev/sda2 ro selinux selinux=1
+         APPEND root=/dev/sda2 ro security=selinux selinux=1
          INITRD ../initramfs-linux-selinux.img
 ```
 

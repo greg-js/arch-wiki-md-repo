@@ -41,7 +41,7 @@ Note that certain font licenses may impose some legal limitations.
         *   [4.4.12 Thai](#Thai)
         *   [4.4.13 Tibetan](#Tibetan)
     *   [4.5 Math](#Math)
-    *   [4.6 Microsoft fonts](#Microsoft_fonts)
+    *   [4.6 Metric-compatible fonts](#Metric-compatible_fonts)
     *   [4.7 Apple OS X fonts](#Apple_OS_X_fonts)
     *   [4.8 Monospaced](#Monospaced)
         *   [4.8.1 TrueType](#TrueType)
@@ -468,6 +468,8 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 *   [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) - Free fonts with support for Persian, Arabic, Urdu, Pashto, Dari, Uzbek, Kurdish, Uighur, old Turkish (Ottoman) and modern Turkish (Roman).
 *   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - A free Unicode calligraphic Persian font created by Iran Supreme Council of Information and Communication Technology (SCICT).
 *   [ttf-vazir](https://aur.archlinux.org/packages/ttf-vazir/), [ttf-samim](https://aur.archlinux.org/packages/ttf-samim/), [ttf-tanha](https://aur.archlinux.org/packages/ttf-tanha/), [ttf-shabnam](https://aur.archlinux.org/packages/ttf-shabnam/), [ttf-gandom](https://aur.archlinux.org/packages/ttf-gandom/), [ttf-parastoo](https://aur.archlinux.org/packages/ttf-parastoo/) - Beautiful Persian fonts made by Ali Rasti Kerdar.
+*   [ttf-persian-hm-xs2](https://aur.archlinux.org/packages/ttf-persian-hm-xs2/) - An improved and corrected font series derived from [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) Persian font series with Kashida feature.
+*   [ttf-persian-hm-ftx](https://aur.archlinux.org/packages/ttf-persian-hm-ftx/) - An improved and corrected font series derived from [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) Persian font series, Metafont and FarsiTeX fonts with Kashida feature.
 
 #### Sinhala
 
@@ -490,9 +492,9 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 *   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) and [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra) contain many math fonts such as Latin Modern Math and [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project"). See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for configuration.
 *   [otf-xits](https://aur.archlinux.org/packages/otf-xits/) - An OpenType implementation of [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project") with support for maths written from right to left.
 
-### Microsoft fonts
+### Metric-compatible fonts
 
-See [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts") and [Croscore Fonts](/index.php/Croscore_Fonts "Croscore Fonts").
+See [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts"), which lists available alternatives for [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts").
 
 ### Apple OS X fonts
 

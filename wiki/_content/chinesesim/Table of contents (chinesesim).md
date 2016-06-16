@@ -2,7 +2,7 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(151)</small> |
+| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(148)</small> |
 | <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(24)</small> |
 | <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
 | <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(17)</small> |
@@ -39,7 +39,7 @@
 | <small>3.2.</small> [编程语言](/index.php/Category:Programming_languages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Programming languages (简体中文)") <small>(3)</small> |
 | <small>3.3.</small> [版本控制系统](/index.php/Category:Version_Control_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Version Control System (简体中文)") <small>(3)</small> |
 | <small>3.4.</small> [部件工具](/index.php/Category:Widget_toolkits_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Widget toolkits (简体中文)") <small>(1)</small> |
-| <small>4.</small> [硬件](/index.php/Category:Hardware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware (简体中文)") <small>(1)</small> |
+| <small>4.</small> [硬件](/index.php/Category:Hardware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware (简体中文)") <small>(2)</small> |
 | <small>4.1.</small> [ARM 架构](/index.php/Category:ARM_architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ARM architecture (简体中文)") <small>(1)</small> |
 | <small>4.2.</small> [蓝牙](/index.php/Category:Bluetooth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bluetooth (简体中文)") <small>(2)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:CPU (简体中文)") <small>(3)</small> |
@@ -53,7 +53,8 @@
 | <small>4.8.1.</small> [Acer](/index.php/Category:Acer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Acer (简体中文)") <small>(1)</small> |
 | <small>4.8.2.</small> [Apple](/index.php/Category:Apple_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Apple (简体中文)") <small>(1)</small> |
 | <small>4.8.3.</small> [Dell](/index.php/Category:Dell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dell (简体中文)") <small>(1)</small> |
-| <small>4.8.4.</small> [Lenovo](/index.php/Category:Lenovo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lenovo (简体中文)") <small>(2)</small> |
+| <small>4.8.4.</small> [HASEE](/index.php/Category:HASEE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:HASEE (简体中文)") <small>(1)</small> |
+| <small>4.8.5.</small> [Lenovo](/index.php/Category:Lenovo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lenovo (简体中文)") <small>(2)</small> |
 | <small>4.9.</small> [主板和BIOS](/index.php/Category:Mainboards_and_BIOS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mainboards and BIOS (简体中文)") <small>(3)</small> |
 | <small>4.10.</small> [移动设备](/index.php/Category:Mobile_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mobile devices (简体中文)") <small>(3)</small> |
 | <small>4.11.</small> [其他硬件](/index.php/Category:Other_hardware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Other hardware (简体中文)") <small>(1)</small> |
@@ -62,7 +63,7 @@
 | <small>4.14.</small> [存储设备](/index.php/Category:Storage_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Storage (简体中文)") <small>(6)</small> |
 | <small>4.14.1.</small> [光存储设备](/index.php/Category:Optical_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Optical (简体中文)") <small>(2)</small> |
 | <small>5.</small> [帮助](/index.php/Category:Help_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Help (简体中文)") <small>(10)</small> |
-| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(31)</small> |
+| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(30)</small> |
 | <small>6.1.</small> [域名解析](/index.php/Category:Domain_Name_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Domain Name System (简体中文)") <small>(5)</small> |
 | <small>6.2.</small> [FTP](/index.php/Category:File_Transfer_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File Transfer Protocol (简体中文)") <small>(2)</small> |
 | <small>6.3.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(3) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
@@ -88,10 +89,10 @@
 | <small>7.4.1.</small> [登陆管理器](/index.php/Category:Display_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Display managers (简体中文)") <small>(8)</small> |
 | <small>7.4.2.</small> [动态窗口管理器](/index.php/Category:Dynamic_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dynamic WMs (简体中文)") <small>(3)</small> |
 | <small>7.4.3.</small> [KDE](/index.php/Category:KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:KDE (简体中文)") <small>(2)</small> |
-| <small>7.4.4.</small> [层叠窗口管理器](/index.php/Category:Stacking_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Stacking WMs (简体中文)") <small>(5)</small> |
+| <small>7.4.4.</small> [层叠窗口管理器](/index.php/Category:Stacking_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Stacking WMs (简体中文)") <small>(6)</small> |
 | <small>7.4.5.</small> [平铺窗口管理器](/index.php/Category:Tiling_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Tiling WMs (简体中文)") <small>(5)</small> |
 | <small>7.5.</small> [Dotfiles](/index.php/Category:Dotfiles_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dotfiles (简体中文)") <small>(1)</small> |
-| <small>7.6.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(20)</small> |
+| <small>7.6.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(21)</small> |
 | <small>7.7.</small> [软件包管理](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)") <small>(24)</small> |
 | <small>7.7.1.</small> [Arch用户软件库 (AUR)](/index.php/Category:Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch User Repository (简体中文)") <small>(3)</small> |
 | <small>7.8.</small> [电源管理](/index.php/Category:Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Power management (简体中文)") <small>(7)</small> |
@@ -101,11 +102,11 @@
 | <small>8.2.</small> [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)") <small>(13)</small> |
 | <small>8.2.1.</small> [图形启动界面](/index.php/Category:Bootsplash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bootsplash (简体中文)") <small>(2) (同时还属于 [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)"))</small> |
 | <small>8.2.2.</small> [字体](/index.php/Category:Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Fonts (简体中文)") <small>(4)</small> |
-| <small>8.3.</small> [国际化](/index.php/Category:Internationalization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internationalization (简体中文)") <small>(5)</small> |
+| <small>8.3.</small> [国际化](/index.php/Category:Internationalization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internationalization (简体中文)") <small>(4)</small> |
 | <small>8.3.1.</small> [中文化](/index.php/Category:Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Localization (简体中文)") <small>(2)</small> |
-| <small>8.4.</small> [内核](/index.php/Category:Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Kernel (简体中文)") <small>(14)</small> |
+| <small>8.4.</small> [内核](/index.php/Category:Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Kernel (简体中文)") <small>(15)</small> |
 | <small>8.5.</small> [脚本](/index.php/Category:Scripts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Scripts (简体中文)") <small>(2)</small> |
-| <small>8.6.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(14)</small> |
+| <small>8.6.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(15)</small> |
 | <small>8.6.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(2)</small> |
 | <small>8.6.2.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(3) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>8.6.3.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(3) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |

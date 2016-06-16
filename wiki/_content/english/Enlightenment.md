@@ -10,7 +10,7 @@
         *   [1.3.1 Network](#Network)
         *   [1.3.2 Polkit agent](#Polkit_agent)
         *   [1.3.3 GNOME Keyring integration](#GNOME_Keyring_integration)
-        *   [1.3.4 Enabling the system tray](#Enabling_the_system_tray)
+        *   [1.3.4 System tray](#System_tray)
         *   [1.3.5 Notifications](#Notifications)
     *   [1.4 Themes](#Themes)
         *   [1.4.1 GTK+](#GTK.2B)
@@ -121,7 +121,7 @@ You can also use [networkmanager](https://www.archlinux.org/packages/?name=netwo
 
 You probably also need [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) to help with your settings. You may want to add it to the start up programs so every time Enlightenment starts it appears on systray. For that you should go to *Settings Panel > Apps > Startup Applications > System* and activate *Network*.
 
-Whilst network connectivity will work, the applet itself will not be visible unless you have enabled the system tray, see [#Enabling the system tray](#Enabling_the_system_tray).
+Whilst network connectivity will work, the applet itself will not be visible without a [#System tray](#System_tray).
 
 #### Polkit agent
 
@@ -141,7 +141,7 @@ This "hack" is used to override the automatic setting of the variable by "enligh
 
 More information on this topic in the [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") article.
 
-#### Enabling the system tray
+#### System tray
 
 **Note:** Since Enlightenment 20, Xembed support has been removed [[1]](https://twitter.com/_enlightenment_/status/538000507315314688) meaning that many 'legacy' applets can no longer be displayed in the Systray. To use these applets, you will need to use a standalone system tray application such as [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) instead.
 
@@ -276,7 +276,7 @@ Enlightenment, Development Release 16 was first released in 2000, and reached ve
 
 Install [enlightenment16](https://www.archlinux.org/packages/?name=enlightenment16).
 
-E16 can be quite different from the other WM's out there, read `/usr/share/doc/e16/e16.html` after installation to learn more. The man page is at `man e16`, not `man enlightenment`, and only gives startup options.
+See `/usr/share/doc/e16/e16.html` for in depth documentation. The man page is at `man e16`, not `man enlightenment`, and only gives startup options.
 
 ### Basic Configuration
 
