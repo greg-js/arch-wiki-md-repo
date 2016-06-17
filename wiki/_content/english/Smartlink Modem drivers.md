@@ -1,15 +1,4 @@
-## Contents
-
-*   [1 How to install Smartlink Modem drivers](#How_to_install_Smartlink_Modem_drivers)
-    *   [1.1 From README](#From_README)
-    *   [1.2 Installation](#Installation)
-        *   [1.2.1 Configuration of "normal modem"](#Configuration_of_.22normal_modem.22)
-        *   [1.2.2 Configuration of "Alsa Modems" (Alsa Mode)](#Configuration_of_.22Alsa_Modems.22_.28Alsa_Mode.29)
-    *   [1.3 3\. NOTE:](#3._NOTE:)
-
-### How to install Smartlink Modem drivers
-
-#### From README
+From README:
 
 ```
 Introduction:
@@ -48,11 +37,18 @@ Recent 'alsa-driver' (>=1.0.6) has also support for NVidia NForce
 
 ```
 
-#### Installation
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 Configuration of "normal modem"](#Configuration_of_.22normal_modem.22)
+    *   [1.2 Configuration of "Alsa Modems" (Alsa Mode)](#Configuration_of_.22Alsa_Modems.22_.28Alsa_Mode.29)
+*   [2 NOTE](#NOTE)
+
+## Installation
 
 Install the [slmodem](https://aur.archlinux.org/packages/slmodem/) package.
 
-##### Configuration of "normal modem"
+### Configuration of "normal modem"
 
 In /etc/rc.conf:
 
@@ -65,7 +61,7 @@ In /etc/rc.conf:
     /dev/slamr0 #(depends on your chipset slamr' or 'slusb')
     --country=USA #(See output of 'slmodemd --countrylist')
 
-##### Configuration of "Alsa Modems" (Alsa Mode)
+### Configuration of "Alsa Modems" (Alsa Mode)
 
 /etc/rc.conf:
 
@@ -92,7 +88,7 @@ devices with a description.
 
 The modem device is called /dev/ttySL0 and is symlinked to /dev/modem if you use udev.
 
-#### 3\. NOTE:
+## NOTE
 
 If pppd quits with an ERROR 1 just after connection, change auth to noauth in `/etc/ppp/options` or use the call option (see the pppd manpage). wvdial requires option 'Carrier Check = no' in config file
 

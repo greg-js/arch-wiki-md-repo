@@ -407,7 +407,7 @@ The following groups are used for system purposes and are not likely to be used 
 | root | `/*` | Complete system administration and control (root, admin). |
 | smmsp | [sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") group. |
 | systemd-journal | `/var/log/journal/*` | Provides access to the complete systemd logs. Otherwise, only user generated messages are displayed. |
-| tty | `/dev/tty`, `/dev/vcc`, `/dev/vc`, `/dev/ptmx` | Eg. to acces `/dev/ACMx` |
+| tty | `/dev/tty`, `/dev/vcc`, `/dev/vc`, `/dev/ptmx` |
 
 ### Software groups
 

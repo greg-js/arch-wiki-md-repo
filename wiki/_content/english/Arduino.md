@@ -68,13 +68,6 @@ The arduino board communicates with the computer via a serial connection or a se
 
 **Note:** You will have to logout and login again for this to take effect.
 
-The arduino board appears as `/dev/ttyACMx` so if the above does not work try adding the user to the group `tty`:
-
-```
-# gpasswd -a $USER tty
-
-```
-
 Before uploading to the Arduino, be sure to set the correct serial port, board, and processor from the Tools menu.
 
 ## stty

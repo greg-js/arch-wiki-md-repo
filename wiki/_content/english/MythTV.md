@@ -22,12 +22,11 @@ MythTV is an application suite designed to provide an amazing multimedia experie
 *   [7 MythTV Plugins](#MythTV_Plugins)
     *   [7.1 MythWeb](#MythWeb)
     *   [7.2 Mythweather](#Mythweather)
-*   [8 Environment Variables](#Environment_Variables)
-*   [9 Hints to a Happy Myth System](#Hints_to_a_Happy_Myth_System)
-    *   [9.1 Using GDM to autologin your Mythfrontend](#Using_GDM_to_autologin_your_Mythfrontend)
-    *   [9.2 Using XDM to Automically Login to your MythFrontend](#Using_XDM_to_Automically_Login_to_your_MythFrontend)
-    *   [9.3 Optmize your system](#Optmize_your_system)
-*   [10 References](#References)
+*   [8 Hints to a Happy Myth System](#Hints_to_a_Happy_Myth_System)
+    *   [8.1 Using GDM to autologin your Mythfrontend](#Using_GDM_to_autologin_your_Mythfrontend)
+    *   [8.2 Using XDM to Automically Login to your MythFrontend](#Using_XDM_to_Automically_Login_to_your_MythFrontend)
+    *   [8.3 Optmize your system](#Optmize_your_system)
+*   [9 References](#References)
 
 ## Structure
 
@@ -303,14 +302,6 @@ There are a number of plugins available for MythTV in the AUR. They range from R
 As of 7-10-08 Mythweather is broken in Extra
 
 extra/mythweather 0.21-1 (mythtv-extras)
-
-## Environment Variables
-
-I found mythbackend would randomly stop running with the following error message: `Cannot locate your home directory. Please set the environment variable HOME or MYTHCONFDIR`
-
-So I did the following as root: `mkdir /home/mythtv ; cp /home/(myusername)/.lircrc /home/mythtv/ ; chown -R (myusername):users /home/mythtv`
-
-And then put the following in /etc/rc.conf `MYTHCONFDIR=/home/mythtv`
 
 ## Hints to a Happy Myth System
 

@@ -3,105 +3,16 @@ This document describes the steps needed to install Apache Tomcat. It also optio
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuring Tomcat](#Configuring_Tomcat)
-    *   [2.1 THE FOLLOWING SHOULD NO LONGER BE NEEDED](#THE_FOLLOWING_SHOULD_NO_LONGER_BE_NEEDED)
-*   [3 Test Tomcat](#Test_Tomcat)
-*   [4 Configure Apache](#Configure_Apache)
-    *   [4.1 Without mod_jk](#Without_mod_jk)
-    *   [4.2 Using mod_jk](#Using_mod_jk)
-*   [5 Configure MySQL](#Configure_MySQL)
+*   [2 Configure Apache](#Configure_Apache)
+    *   [2.1 Without mod_jk](#Without_mod_jk)
+    *   [2.2 Using mod_jk](#Using_mod_jk)
+*   [3 Configure MySQL](#Configure_MySQL)
 
 ## Installation
 
-Install and configure Apache as in the [LAMP](/index.php/LAMP "LAMP") tutorial. You may install PHP and MySQL at this time if you want them. [Install](/index.php/Install "Install") [tomcat](https://www.archlinux.org/packages/?name=tomcat).
+Install and configure Apache as in the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server").
 
-## Configuring Tomcat
-
-Edit `/etc/conf.d/tomcat`. Replace the line
-
-```
-TOMCAT_JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk \
-
-```
-
-with this one (assuming that `/opt/java` is your JAVA_HOME):
-
-```
-TOMCAT_JAVA_HOME=/opt/java \
-
-```
-
-###### THE FOLLOWING SHOULD NO LONGER BE NEEDED
-
-Edit `/etc/conf.d/tomcat`. Change CATALINA_USER to some user that suites your system (like "nobody")
-
-```
-modprobe capability
-
-```
-
-Now add capabilities to modules in `/etc/rc.conf`.
-
-Also you may have to edit `/etc/rc.d/tomcat` to change the java home for jsvc. In the "start" section you have change this line:
-
-```
--home /usr/lib/jvm/java-1.6.0-openjdk \
-
-```
-
-with this one (assuming that `/opt/java` is your JAVA_HOME):
-
-```
--home /opt/java \
-
-```
-
-## Test Tomcat
-
-Run in terminal (as root):
-
-```
-# /etc/rc.d/tomcat start
-
-```
-
-Notice that you can check the logs in `/opt/tomcat/logs/catalina.log`.
-
-Tomcat should be running. Test by visiting [http://localhost:8080/](http://localhost:8080/) in a web browser. You can browse the JSP and servlet examples if you like.
-
-This is all that is needed to run Tomcat as a stand-alone server. You can add new webapp directories to the `/opt/tomcat/webapps` directory. Optionally, if you want to place webapps in a different directory, you can make `/opt/tomcat/webapps/` a symbolic link to another directory. For example, if you wanted to place your web applications in `/home/httpd/tomcat` run these commands (as root):
-
-```
-# cd /opt/tomcat
-# mv webapps /home/httpd/tomcat
-# ln -s /home/httpd/tomcat/webapps webapps
-
-```
-
-You can also place symbolic links within the webapps directory.
-
-If you wish tomcat to start on bootup:
-Edit `/opt/tomcat/bin/catalina.sh` and add this line at the top:
-
-```
-JAVA_HOME=/opt/java
-
-```
-
-This is needed because JAVA_HOME is not set when the daemons are started
-Edit `/etc/rc.conf`:
-
-```
-DAEMONS=(some daemons now add tomcat)
-
-```
-
-**Or** add this line to `rc.local`:
-
-```
-/etc/rc.d/tomcat start
-
-```
+Install and configure Tomcat as described in [Tomcat](/index.php/Tomcat "Tomcat").
 
 ## Configure Apache
 
@@ -127,12 +38,7 @@ Instead of / you can map APPNAME to an arbitrary web path. mod_jk (described bel
 
 ### Using mod_jk
 
-There are two ways to install mod_jk: from [AUR](https://aur.archlinux.org/packages.php?ID=3362) or from [upstream](http://tomcat.apache.org/download-connectors.cgi?Preferred=http%3A%2F%2Fapache.multidist.com). In the latter case you should copy it to the directory `/usr/lib/httpd/modules/`. Then rename the file to `mod_jk.so` and set it executable with
-
-```
-# chmod a+x mod_jk.so
-
-```
+[Install](/index.php/Install "Install") the [mod_jk](https://aur.archlinux.org/packages/mod_jk/) package.
 
 Edit `/etc/httpd/conf/httpd.conf`
 Add this line to the end of the LoadModule section:
@@ -170,14 +76,7 @@ worker.worker2.mount=/jsp-examples /jsp-examples/*
 
 ```
 
-Start Apache. Run in terminal (as root):
-
-```
-# /etc/rc.d/httpd start
-
-```
-
-Only run httpd after tomcat is started (EDIT: I'm not sure if this is true, I can restart & start tomcat and apache separately from each other, I will just get a 'Service unavailable' in Apache if I request a .jsp while tomcat is restarting..)
+Restart Apache (`httpd.service`).
 
 Visit [http://localhost/jsp-examples](http://localhost/jsp-examples) The Tomcat JSP examples should be visible.
 
@@ -204,12 +103,7 @@ cp mysql-connector-java-3.0.11-stable/mysql-connector-java-3.0.11-stable-bin.jar
 
 ```
 
-Start MySQL if it isn't already running (as root):
-
-```
-# /etc/rc.d/mysqld start
-
-```
+Restart MySQL (`mysqld.service`).
 
 Test that the driver can be loaded:
 Save this as `~TestMysql.java`

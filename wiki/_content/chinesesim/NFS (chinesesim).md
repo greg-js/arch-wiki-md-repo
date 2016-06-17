@@ -16,10 +16,10 @@
     *   [2.2 客户端](#.E5.AE.A2.E6.88.B7.E7.AB.AF)
         *   [2.2.1 Error from systemd](#Error_from_systemd)
         *   [2.2.2 Manual mounting](#Manual_mounting)
-        *   [2.2.3 Mount using /etc/fstab](#Mount_using_.2Fetc.2Ffstab)
+        *   [2.2.3 通过 /etc/fstab 挂载](#.E9.80.9A.E8.BF.87_.2Fetc.2Ffstab_.E6.8C.82.E8.BD.BD)
         *   [2.2.4 Mount using /etc/fstab with systemd](#Mount_using_.2Fetc.2Ffstab_with_systemd)
         *   [2.2.5 Mount using autofs](#Mount_using_autofs)
-*   [3 Tips and tricks](#Tips_and_tricks)
+*   [3 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [3.1 性能调优](#.E6.80.A7.E8.83.BD.E8.B0.83.E4.BC.98)
     *   [3.2 Automounting shares with systemd-networkd](#Automounting_shares_with_systemd-networkd)
     *   [3.3 Automatic mount handling](#Automatic_mount_handling)
@@ -223,7 +223,7 @@ If mount fails try including the server's export root (required for Debian/RHEL/
 
 **Note:** Server name needs to be a valid hostname (not just IP address). Otherwise mounting of remote share will hang.
 
-#### Mount using /etc/fstab
+#### 通过 /etc/fstab 挂载
 
 Using [fstab](/index.php/Fstab "Fstab") is useful for a server which is always on, and the NFS shares are available whenever the client boots up. Edit `/etc/fstab` file, and add an appropriate line reflecting the setup. Again, the server's NFS export root is omitted.
 
@@ -273,7 +273,7 @@ One might have to reboot the client to make systemd aware of the changes to fsta
 
 Using [autofs](/index.php/Autofs "Autofs") is useful when multiple machines want to connect via NFS; they could both be clients as well as servers. The reason this method is preferable over the earlier one is that if the server is switched off, the client will not throw errors about being unable to find NFS shares. See [autofs#NFS network mounts](/index.php/Autofs#NFS_network_mounts "Autofs") for details.
 
-## Tips and tricks
+## 提示与技巧
 
 ### 性能调优
 

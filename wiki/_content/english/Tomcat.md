@@ -34,13 +34,15 @@ INFO: The APR based Apache Tomcat Native library which allows optimal performanc
 
 ### Filesystem hierarchy
 
+Replace the `*` with your installed version (6, 7 or 8).
+
 | Pathname | Use |
-| `/usr/share/tomcat7` | Main Tomcat folder containing scripts and links to other directories |
-| `/usr/share/java/tomcat7` | Tomcat Java libraries (jars) |
-| `/etc/tomcat7` | Configuration files. Among some: `tomcat-users.xml` (defines users allowed to use administration tools and their roles), `server.xml` (Main Tomcat configuration file), `catalina.policy` (security policies configuration file) |
-| `/var/log/tomcat7` | Log files **not** handled by `systemd` (see [#Logging](#Logging)) |
-| `/var/lib/tomcat7/webapps` | Where Tomcat deploys your web applications |
-| `/var/tmp/tomcat7` | Where Tomcat store your webapps' data |
+| `/etc/tomcat*` | Configuration files. Among some: `tomcat-users.xml` (defines users allowed to use administration tools and their roles), `server.xml` (Main Tomcat configuration file), `catalina.policy` (security policies configuration file) |
+| `/usr/share/tomcat*` | Main Tomcat folder containing scripts and links to other directories |
+| `/usr/share/java/tomcat*` | Tomcat Java libraries (jars) |
+| `/var/log/tomcat*` | Log files **not** handled by `systemd` (see [#Logging](#Logging)) |
+| `/var/lib/tomcat*/webapps` | Where Tomcat deploys your web applications |
+| `/var/tmp/tomcat*` | Where Tomcat store your webapps' data |
 
 ## Initial configuration
 

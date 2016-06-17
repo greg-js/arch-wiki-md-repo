@@ -54,6 +54,27 @@ Install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-inpu
 
 The correct driver is called **SynPS/2 Synaptics TouchPad**.
 
+Enable Natural scrolling: First get the current settings:
+
+```
+xinput list-props "SynPS/2 Synaptics TouchPad" | grep "Synaptics Scrolling Distance"
+
+```
+
+It shows on my laptop:
+
+```
+Synaptics Scrolling Distance (301):	114, 114
+
+```
+
+Set these two values to negative to reverse the scrolling orientation:
+
+```
+xinput set-prop "SynPS/2 Synaptics TouchPad" 301 -114 -114
+
+```
+
 ### Audio
 
 Works with [PulseAudio](/index.php/PulseAudio "PulseAudio") and [ALSA](/index.php/ALSA "ALSA") installed. The built-in speakers, headphone, and mic all work.

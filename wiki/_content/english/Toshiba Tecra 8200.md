@@ -3,10 +3,9 @@
 *   [1 INSTALL in a toshiba tecra 8200](#INSTALL_in_a_toshiba_tecra_8200)
 *   [2 Audio](#Audio)
 *   [3 Video](#Video)
-*   [4 Network](#Network)
-*   [5 Modem](#Modem)
-*   [6 Some tweaking](#Some_tweaking)
-*   [7 Some references](#Some_references)
+*   [4 Modem](#Modem)
+*   [5 Some tweaking](#Some_tweaking)
+*   [6 Some references](#Some_references)
 
 ## INSTALL in a toshiba tecra 8200
 
@@ -46,30 +45,6 @@ EndSection
 ```
 
 Do not forget to install the window manager of your choice. it could be xfce or gnome or kde. and to pacman the trident driver
-
-## Network
-
-*   Wired
-
-in `/etc/modprobe.d/modprobe.conf`
-
-```
-alias eth0 eepro100
-
-```
-
-and in `rc.conf`, configure your network as you want. in my case eth0 is like
-
-```
-eth0="192.168.0.2 netmask 255.255.255.0 broadcast 192.168.0.255"
-gateway="default gw 192.168.0.1"
-ROUTES=(gateway)
-
-```
-
-*   Wireless
-
-if i follow other persons, it would be run with orinoco_cs. you must install pcmcia_cs and wirelesstools
 
 ## Modem
 

@@ -277,7 +277,7 @@ esac
 
 ### Considerations before switching
 
-*   Interactive *initscripts* are not working with *systemd*. In particular, *netcfg-menu* cannot be used at system start-up ([FS#31377](https://bugs.archlinux.org/task/31377)).
+*   Interactive *initscripts* do not work with *systemd*.
 
 ### Supplementary information
 

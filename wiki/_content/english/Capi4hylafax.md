@@ -2,34 +2,25 @@
 
 [Install](/index.php/Install "Install") the [capi4hylafax](https://www.archlinux.org/packages/?name=capi4hylafax) package.
 
-### Setup:
+### Setup
 
-*   Please run 'faxsetup' as root user to adjust hylafax to your needs.
-*   Do not even try to run faxaddmodem for capi20 devices!!!
-*   c2faxaddmodem' is a nice tool for configuring your isdn card.
-*   var/spool/hylafax/etc/config/config.faxCAPI to your needs, if you need more.
-*   Please add 'hylafax' and 'capi4hylafax' to your daemons list in /etc/rc.conf.
-*   Please be sure that your device has the right permissions 'uucp', udev users please
-*   restart udev after installation.
+Run *faxsetup* as root user to adjust hylafax to your needs. Further adjust `/var/spool/hylafax/etc/config/config.faxCAPI` to your needs.
 
-*   Add the following two lines to /var/spool/hylafax/etc/config:
+**Warning:** Do not even try to run faxaddmodem for capi20 devices!
 
-```
-   SendFaxCmd: /usr/bin/c2faxsend
+*c2faxaddmodem* is a nice tool for configuring your ISDN card.
 
-```
+[Start](/index.php/Start "Start") `hylafax.service` and `c2faxrecv.service`.
 
-### Notes:
+Be sure that your device has the right permissions 'uucp'.
 
-*   to save your config, please do not forget to add to /etc/pacman.conf
+Add the following line to `/var/spool/hylafax/etc/config`:
 
 ```
- NoUpgrade   = var/spool/hylafax/etc/config/config.faxCAPI
+SendFaxCmd: /usr/bin/c2faxsend
 
 ```
 
-*   If you need more than one isdn controller please read the manual of capi4hylafax.
+**Note:** If you need more than one isdn controller please read the manual of capi4hylafax.
 
-For comments about the package please use this thread: [https://bbs.archlinux.org/viewtopic.php?t=11089](https://bbs.archlinux.org/viewtopic.php?t=11089)
-
-For Hints and Tips please have a look at [Hylafax](/index.php/Hylafax "Hylafax") wiki.
+For hints and tips see [Hylafax](/index.php/Hylafax "Hylafax").

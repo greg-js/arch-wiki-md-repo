@@ -14,24 +14,15 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
         *   [4.1.1 Building from scratch without JHBuild, or in a JHBuild shell](#Building_from_scratch_without_JHBuild.2C_or_in_a_JHBuild_shell)
         *   [4.1.2 itstool missing Python modules](#itstool_missing_Python_modules)
     *   [4.2 pkg-config issues](#pkg-config_issues)
-    *   [4.3 totem does not build](#totem_does_not_build)
-    *   [4.4 evolution does not build](#evolution_does_not_build)
-    *   [4.5 gnome-devel-docs does not build](#gnome-devel-docs_does_not_build)
-    *   [4.6 devhelp does not build](#devhelp_does_not_build)
-    *   [4.7 libosinfo does not build](#libosinfo_does_not_build)
-    *   [4.8 ibus-pinyin does not build](#ibus-pinyin_does_not_build)
-    *   [4.9 cairo does not build](#cairo_does_not_build)
-    *   [4.10 pango does not build](#pango_does_not_build)
-    *   [4.11 Other broken modules](#Other_broken_modules)
+    *   [4.3 gnome-devel-docs does not build](#gnome-devel-docs_does_not_build)
+    *   [4.4 pango does not build](#pango_does_not_build)
+    *   [4.5 Other broken modules](#Other_broken_modules)
 *   [5 Packages needed to build specific modules](#Packages_needed_to_build_specific_modules)
 *   [6 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") a JHBuild variant from the [AUR](/index.php/AUR "AUR"):
-
-*   [jhbuild](https://aur.archlinux.org/packages/jhbuild/) - Stable version.
-*   [jhbuild-git](https://aur.archlinux.org/packages/jhbuild-git/) - Development version.
+Install the [jhbuild](https://aur.archlinux.org/packages/jhbuild/) package, which provides the stable version.
 
 ## Configuration
 
@@ -84,12 +75,14 @@ You should edit (at least) *modules* to the desired modules to be built. A refer
 
 ### Installing prerequisites
 
-JHBuild can check if the required tools are installed by running *sanitycheck*:
+JHBuild can check if the required tools are installed by running *sysdeps*:
 
 ```
-$ jhbuild sanitycheck
+$ jhbuild sysdeps
 
 ```
+
+*sanitycheck* has the similar function of *sysdeps*, but it fails on checking automake version due to an [regexp error in automake](http://lists.gnu.org/archive/html/automake/2016-05/msg00000.html) until 1.15 ([Already fixed next automake version](http://git.savannah.gnu.org/gitweb/?p=automake.git;a=commit;h=13f00eb4493c217269b76614759e452d8302955e)).
 
 If any errors are shown, missing packages may be installed from repositories or running the *bootstrap* command, which tries to download, build and install the build prerequisites:
 
@@ -166,28 +159,6 @@ Then, exit the shell and choose `[1] Rerun phase configure`. See [this merge req
 
 If you have a malformatted .pc file on your PKG_CONFIG_PATH, JHBuild will not be able to detect all the (valid) .pc files you have installed and will complain that the .pc files are missing. Look at the output of `jhbuild sysdeps`—there should be a message about the problematic .pc files.
 
-### totem does not build
-
-Choose `[4] Start shell` and run:
-
-```
-$ curl [https://git.gnome.org/browse/totem/patch/?id=198d7f251e7816f837378fb2081829188847b916](https://git.gnome.org/browse/totem/patch/?id=198d7f251e7816f837378fb2081829188847b916) | git apply
-
-```
-
-Then, exit the shell and choose `[1] Rerun phase build`.
-
-### evolution does not build
-
-Choose `[4] Start shell` and run:
-
-```
-$ curl [https://bug707112.bugzilla-attachments.gnome.org/attachment.cgi?id=253584](https://bug707112.bugzilla-attachments.gnome.org/attachment.cgi?id=253584) | git apply
-
-```
-
-Then, exit the shell and choose `[1] Rerun phase build`. See [this bug](https://bugzilla.gnome.org/show_bug.cgi?id=707112) for further details.
-
 ### gnome-devel-docs does not build
 
 Choose `[4] Start shell` and run:
@@ -198,43 +169,6 @@ $ git revert --no-edit 9ba0d959
 ```
 
 Then, exit the shell and choose `[1] Rerun phase build`. See [this bug](https://bugzilla.gnome.org/show_bug.cgi?id=707007) for further details.
-
-### devhelp does not build
-
-Choose `[4] Start shell` and run:
-
-```
-$ curl [https://bug707490.bugzilla-attachments.gnome.org/attachment.cgi?id=254113](https://bug707490.bugzilla-attachments.gnome.org/attachment.cgi?id=254113) | git apply
-
-```
-
-Then, exit the shell and choose `[1] Rerun phase build`. See [this bug](https://bugzilla.gnome.org/show_bug.cgi?id=707490) for further details.
-
-### libosinfo does not build
-
-Choose `[4] Start shell` and run:
-
-```
-$ curl [https://fedorahosted.org/libosinfo/raw-attachment/ticket/9/0001-Don-t-use-AM_GNU_GETTEXT.patch](https://fedorahosted.org/libosinfo/raw-attachment/ticket/9/0001-Don-t-use-AM_GNU_GETTEXT.patch) | git apply
-
-```
-
-Then, exit the shell and choose `[1] Rerun phase build`. See [this bug](https://fedorahosted.org/libosinfo/ticket/9) for further details.
-
-### ibus-pinyin does not build
-
-Choose `[4] Start shell` and run:
-
-```
-$ curl [https://github.com/ibus/ibus-pinyin/commit/3d0680c2b9533d0abff30258d0e772b8aa97af1c.patch](https://github.com/ibus/ibus-pinyin/commit/3d0680c2b9533d0abff30258d0e772b8aa97af1c.patch) | git apply
-
-```
-
-Then, exit the shell and choose `[8] Go to phase "clean"`. See [this bug](https://code.google.com/p/ibus/issues/detail?id=1581) for further details.
-
-### cairo does not build
-
-Add "-flto -ffat-lto-objects" to CFLAGS. See [FS#40313](https://bugs.archlinux.org/task/40313) for further details.
 
 ### pango does not build
 

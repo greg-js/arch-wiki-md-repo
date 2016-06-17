@@ -4,11 +4,11 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Opening Remote API](#Opening_Remote_API)
-    *   [2.2 Proxies](#Proxies)
-        *   [2.2.1 Daemon Proxy Configuration](#Daemon_Proxy_Configuration)
-        *   [2.2.2 Container Configuration](#Container_Configuration)
-    *   [2.3 Daemon Socket Configuration](#Daemon_Socket_Configuration)
+    *   [2.1 Opening remote API](#Opening_remote_API)
+    *   [2.2 Daemon socket configuration](#Daemon_socket_configuration)
+    *   [2.3 Proxies](#Proxies)
+        *   [2.3.1 Proxy configuration](#Proxy_configuration)
+        *   [2.3.2 Container configuration](#Container_configuration)
     *   [2.4 Configuring DNS](#Configuring_DNS)
     *   [2.5 Images location](#Images_location)
 *   [3 Docker 0.9.0 -- 1.2.x and LXC](#Docker_0.9.0_--_1.2.x_and_LXC)
@@ -57,7 +57,7 @@ $ newgrp docker
 
 ## Configuration
 
-### Opening Remote API
+### Opening remote API
 
 To opening the Remote API to port `4243` manually.
 
@@ -70,11 +70,21 @@ To opening the Remote API to port `4243` manually.
 
 `-H unix:///var/run/docker.sock` part for host machine access via terminal.
 
+### Daemon socket configuration
+
+The *docker* daemon listens to a [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket "wikipedia:Unix domain socket") by default. To listen on a specified port instead, edit `/etc/systemd/system/docker.socket`, where `ListenStream` is the used port:
+
+```
+[Socket]
+ListenStream=0.0.0.0:2375
+
+```
+
 ### Proxies
 
 Proxy configuration is broken down into two. First is the host configuration of the Docker daemon, second is the configuration required for your container to see your proxy.
 
-#### Daemon Proxy Configuration
+#### Proxy configuration
 
 Copy `/usr/lib/systemd/system/docker.service` to `/etc/systemd/system/docker.service`. Then edit `/etc/systemd/system/docker.service`, where `http_proxy` is your proxy server and `-g <path>` is your docker home. The path defaults to `/var/lib/docker`.
 
@@ -102,7 +112,7 @@ Environment=HTTP_PROXY=192.168.1.1
 
 Restart Docker: `sudo systemctl restart docker`
 
-#### Container Configuration
+#### Container configuration
 
 The settings in the `docker.service` file will not translate into containers. To achieve this you must set `ENV` variables in your `Dockerfile` thus:
 
@@ -114,16 +124,6 @@ The settings in the `docker.service` file will not translate into containers. To
 ```
 
 [Docker](https://docs.docker.com/reference/builder/#env) provide detailed information on configuration via `ENV` within a Dockerfile.
-
-### Daemon Socket Configuration
-
-The *docker* daemon listens to a [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket "wikipedia:Unix domain socket") by default. To listen on a specified port instead, edit `/etc/systemd/system/docker.socket`, where `ListenStream` is the used port:
-
-```
-[Socket]
-ListenStream=0.0.0.0:2375
-
-```
 
 ### Configuring DNS
 
@@ -219,6 +219,13 @@ Archlinux on Docker can become problematic when multiple images are created and 
 ```
 $ docker pull pritunl/archlinux:latest
 $ docker run --rm -t -i pritunl/archlinux:latest /bin/bash
+
+```
+
+Alternatively, you could use [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") by freezing `/etc/pacman.d/mirrorlist`
+
+```
+ Server=[https://archive.archlinux.org/repos/2020/01/02/$repo/os/$arch](https://archive.archlinux.org/repos/2020/01/02/$repo/os/$arch)
 
 ```
 

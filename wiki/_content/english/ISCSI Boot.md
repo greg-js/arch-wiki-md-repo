@@ -84,7 +84,7 @@ pacman -S open-iscsi
 
 ```
 
-5\. Before doing [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") in the "future" root file system, you have to prepare the following two files and have to install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package.
+5\. Before doing [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") in the "future" root file system, you have to prepare the following two files.
 
 i) `/mnt/usr/lib/initcpio/install/iscsi`
 
