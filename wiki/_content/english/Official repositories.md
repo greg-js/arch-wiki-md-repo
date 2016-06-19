@@ -77,19 +77,15 @@ New packages go into *testing* if:
 
 **Note:** *testing* is not for the "newest of the new" package versions. Part of its purpose is to hold package updates that have the potential to break the system, either by being part of the *core* set of packages, or by being critical in other ways. As such, users of *testing* are strongly encouraged to subscribe to the [arch-dev-public mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), watch the [testing repository forum](https://bbs.archlinux.org/viewforum.php?id=49), and to [report all bugs](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
 
-If you enable *testing*, you must also enable *community-testing*.
+If you enable *testing*, you must also enable *community-testing*. If you enable any other testing repository listed in the following subsections, you must also enable *testing*.
 
 #### community-testing
 
 This repository is similar to the *testing* repository, but for packages that are candidates for the *community* repository.
 
-If you enable it, you must also enable *testing*.
-
 #### multilib-testing
 
 This repository is similar to the *testing* repository, but for packages that are candidates for the *multilib* repository.
-
-If you enable it, you must also enable *testing*.
 
 #### gnome-unstable
 

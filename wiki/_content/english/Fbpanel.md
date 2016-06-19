@@ -27,8 +27,8 @@ You can find the configuration file in `~/.config/fbpanel`
 If it doesn't exist, copy over the default configuration file:
 
 ```
-# mkdir ~/.config/fbpanel
-# cp /usr/share/fbpanel/default ~/.config/fbpanel
+$ mkdir ~/.config/fbpanel
+$ cp /usr/share/fbpanel/default ~/.config/fbpanel
 
 ```
 

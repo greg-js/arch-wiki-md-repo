@@ -21,6 +21,8 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point, but mi
 
 When using [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput), middle-button scrolling is enabled by default.
 
+**Tip:** On two button trackpoints, the scroll button can be set to right click button without removing functionality.
+
 When using [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev), middle-button scrolling is supported via *xinput* from the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package. For example:
 
  `~/.xinitrc` 

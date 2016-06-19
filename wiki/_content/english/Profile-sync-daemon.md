@@ -58,7 +58,8 @@ Example: Let's say that Chromium, Opera and Midori are installed but only Chromi
 
 ```
 # List browsers separated by spaces to include in the sync. Useful if you do not
-# wish to have all possible browser profiles sync'ed.
+# wish to have all possible browser profiles sync'ed which is the default if
+# this variable is left commented.
 #
 # Possible values:
 #  chromium
@@ -72,19 +73,23 @@ Example: Let's say that Chromium, Opera and Midori are installed but only Chromi
 #  google-chrome-unstable
 #  heftig-aurora
 #  icecat
+#  inox
 #  luakit
 #  midori
 #  opera
-#  opera-developer
 #  opera-beta
+#  opera-developer
+#  opera-legacy
+#  otter-browser
 #  qupzilla
+#  qutebrowser
 #  palemoon
 #  rekonq
 #  seamonkey
+#  surf
 #  vivaldi
+#  vivaldi-snapshot
 #
-# If the following is commented out (default), then all available/supported 
-# browsers will be sync'ed, separated by comma
 BROWSERS="chromium opera"
 
 ```
@@ -108,11 +113,16 @@ Currently, the following browsers are auto-detected and managed:
 *   [heftig's version of Aurora](https://bbs.archlinux.org/viewtopic.php?id=117157): An Arch Linux-only browser
 *   [icecat](https://aur.archlinux.org/packages/icecat/)
 *   [Luakit](/index.php/Luakit "Luakit")
+*   [inox](/index.php/AUR "AUR") / [inox](/index.php/AUR "AUR")
 *   [Midori](/index.php/Midori "Midori")
 *   [Opera](/index.php/Opera "Opera")
+*   [otter-browser](/index.php/AUR "AUR")
+*   [Qutebrowser](/index.php/Qutebrowser "Qutebrowser")
+*   [palemoon](/index.php/AUR "AUR") / [palemoon-bin](/index.php/AUR "AUR")
 *   Qupzilla
 *   [rekonq](https://www.archlinux.org/packages/?name=rekonq)
 *   [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
+*   [surf](https://www.archlinux.org/packages/?name=surf)
 *   [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
 
 ## Using psd

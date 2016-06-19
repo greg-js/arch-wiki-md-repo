@@ -484,22 +484,30 @@ If you would like to set this behaviour as default, [export](/index.php/Environm
 
 ### Journal size limit
 
-If the journal is persistent (non-volatile), its size limit is set to a default value of 10% of the size of the respective file system. For example, with `/var/log/journal` located on a 50 GiB root partition this would lead to 5 GiB of journal data. The maximum size of the persistent journal can be controlled by uncommenting and changing the following:
+If the journal is persistent (non-volatile), its size limit is set to a default value of 10% of the size of the underlying file system but capped to 4 GiB. For example, with `/var/log/journal/` located on a 20 GiB partition, journal data may take up to 2 GiB. On a 50 GiB partition, it would max at 4 GiB.
+
+The maximum size of the persistent journal can be controlled by uncommenting and changing the following:
 
  `/etc/systemd/journald.conf`  `SystemMaxUse=50M` 
 
-Refer to `man journald.conf` for more info.
+It is also possible to use the drop-in snippets configuration override mechanism rather than editing the global configuration file. In this case do not forget to place the overrides under the `[Journal]` header:
+
+ `/etc/systemd/journald.conf.d/00-journal-size.conf` 
+```
+[Journal]
+SystemMaxUse=50M
+```
+
+See `man journald.conf` for more info.
 
 ### Clean journal files manually
 
-The journal files are located under `/var/log/journal`, `rm` will do the work. Or, use `journalctl`,
-
-Examples:
+Journal files can be globally removed from `/var/log/journal/` using *e.g.* `rm`, or can be trimmed according to various criteria using `journalctl`. Examples:
 
 *   Remove archived journal files until the disk space they use falls below 100M: `# journalctl --vacuum-size=100M` 
 *   Make all journal files contain no data older than 2 weeks. `# journalctl --vacuum-time=2weeks` 
 
-Refer to `man journalctl` for more info.
+See `man journalctl` for more info.
 
 ### Journald in conjunction with syslog
 

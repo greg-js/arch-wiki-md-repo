@@ -91,7 +91,7 @@ Chromium uses [NSS](/index.php/Network_Security_Services "Network Security Servi
 
 ## Tips and tricks
 
-See the main article: [Chromium tweaks](/index.php/Chromium_tweaks "Chromium tweaks")
+See the main article: [Chromium/Tips and tricks](/index.php/Chromium/Tips_and_tricks "Chromium/Tips and tricks").
 
 ## Troubleshooting
 

@@ -7,6 +7,10 @@ Two packages of Django are currently available in the [official repositories](/i
 *   [python-django](https://www.archlinux.org/packages/?name=python-django) - Latest python support, with documentation in the [django-docs](https://aur.archlinux.org/packages/django-docs/) package from [AUR](/index.php/AUR "AUR").
 *   [python2-django](https://www.archlinux.org/packages/?name=python2-django) - Python 2 legacy support
 
+### Database driver
+
+If you intend to use a [MySQL](/index.php/MySQL "MySQL")/MariaDB database as backend, also install the [python-mysqlclient](https://aur.archlinux.org/packages/python-mysqlclient/) package.
+
 ## Usage
 
 If you wish to start a Django project, use `django-admin` command

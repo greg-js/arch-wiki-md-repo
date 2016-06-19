@@ -6,7 +6,7 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
 
 *   [1 Setup](#Setup)
     *   [1.1 Required software](#Required_software)
-    *   [1.2 Host Network Configuration](#Host_Network_Configuration)
+    *   [1.2 Host network configuration](#Host_network_configuration)
         *   [1.2.1 Example for a wired network](#Example_for_a_wired_network)
         *   [1.2.2 Example for a wireless network](#Example_for_a_wireless_network)
     *   [1.3 Container creation](#Container_creation)
@@ -36,9 +36,9 @@ $ lxc-checkconfig
 
 Due to security concerns, the default Arch kernel does **not** ship with the ability to run containers as an unprivileged user; therefore, it is normal to see a **missing** status for "User namespaces" when running the check. See [FS#36969](https://bugs.archlinux.org/task/36969) for this feature request.
 
-### Host Network Configuration
+### Host network configuration
 
-LXCs support different virtual network types. A bridge device on the host is required for most types of virtual networking. The examples of creating a bridge provided below are not meant to be limiting, but illustrative. Users may use other programs to achieve the same results. A wired and wireless example is provided below, but other setups are possible. Users are referred to the [Network bridge](/index.php/Network_bridge "Network bridge") article for additional options.
+LXCs support different virtual network types and devices (see [lxc.container.conf(5)](https://linuxcontainers.org/lxc/manpages//man5/lxc.container.conf.5.html)). A bridge device on the host is required for most types of virtual networking. The examples of creating a bridge provided below are not meant to be limiting, but illustrative. Users may use other programs to achieve the same results. A wired and wireless example is provided below, but other setups are possible. Users are referred to the [Network bridge](/index.php/Network_bridge "Network bridge") article for additional options.
 
 #### Example for a wired network
 

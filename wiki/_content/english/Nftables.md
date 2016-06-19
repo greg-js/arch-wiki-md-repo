@@ -202,13 +202,16 @@ There are three types a chain can have and they correspond to the tables used in
 
 ##### Hooks
 
-There are five hooks a chain can use and they correspond to the chains used in iptables:
+There are six hooks a chain can use and all except ingress correspond to chains used in iptables:
 
+*   ingress
 *   input
 *   output
 *   forward
 *   prerouting
 *   postrouting
+
+The ingress hook is an alternative to the existing `tc` utility.
 
 ##### Priorities
 

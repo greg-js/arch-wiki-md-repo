@@ -244,6 +244,8 @@ where `/dev/sdXY` is the partition containing the bootloader.
 
 **Note:** The config file for UEFI is `$esp/EFI/syslinux/syslinux.cfg`, not `/boot/syslinux/syslinux.cfg`. Files in `/boot/syslinux/` are BIOS specific and not related to UEFI Syslinux.
 
+**Note:** When booted in BIOS mode, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will not be able to set EFI nvram entry for `/efi/syslinux/syslinux.efi`. To work around, place resources at the default EFI location: `$esp/efi/syslinux/* -> $esp/efi/boot/*` and `$esp/efi/syslinux/syslinux.efi -> $esp/efi/boot/bootx64.efi`
+
 ## Configuration
 
 The Syslinux configuration file, `syslinux.cfg`, should be created in the same directory where you installed Syslinux. In our case, `/boot/syslinux/` for BIOS systems and `$esp/EFI/syslinux/` for UEFI systems.

@@ -9,6 +9,8 @@
     *   [3.2 Cron](#Cron)
     *   [3.3 Incron](#Incron)
     *   [3.4 Automatic push to remote repo](#Automatic_push_to_remote_repo)
+        *   [3.4.1 Using etckeeper provided hook](#Using_etckeeper_provided_hook)
+        *   [3.4.2 Through a custom hook](#Through_a_custom_hook)
     *   [3.5 Wrapper script](#Wrapper_script)
 
 ## Installation
@@ -52,7 +54,34 @@ As an alternative to the above, you could set up incron to automatically commit 
 
 **Warning:** Pushing your etckeeper repository to a publicly accessible remote repository can expose sensitive data such as password hashes or private keys. Proceed with caution.
 
-Whilst having a local backup in `/etc/.git` is a good first step, etckeeper can automatically push your changes on each commit to a remote repository such as Github. Create an executable file `/etc/etckeeper/commit.d/40github-push`:
+Whilst having a local backup in `/etc/.git` is a good first step, etckeeper can automatically push your changes on each commit to a remote repository such as Github.
+
+First, edit `etc/.git` and add your remote Github repository:
+
+```
+# git remote add origin [https://github.com/user/repo.git](https://github.com/user/repo.git)
+
+```
+
+Next, a hook must be used or configured to push.
+
+#### Using etckeeper provided hook
+
+Edit the `PUSH_REMOTE` option in `/etc/etckeeper/etckeeper.conf`, with the name of the remotes you want etckeeper to push to. Multiple remotes can be added, separated with spaces.
+
+ `/etc/etckeeper/etckeeper.conf` 
+```
+# [...]
+
+# To push each commit to a remote, put the name of the remote here.
+# (eg, "origin" for git). Space-separated lists of multiple remotes
+# also work (eg, "origin gitlab github" for git).
+PUSH_REMOTE="origin"
+```
+
+#### Through a custom hook
+
+Create an executable file `/etc/etckeeper/commit.d/40github-push`:
 
 ```
 #!/bin/sh
@@ -62,13 +91,6 @@ if [ "$VCS" = git ] && [ -d .git ]; then
   cd /etc/
   git push origin master
 fi
-
-```
-
-Change to `etc/.git` and add your remote Github repository:
-
-```
-# git remote add origin [https://github.com/user/repo.git](https://github.com/user/repo.git)
 
 ```
 

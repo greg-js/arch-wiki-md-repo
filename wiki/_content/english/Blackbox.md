@@ -22,3 +22,4 @@ There are several additional packages to enhance the functionality of Blackbox (
 ## See also
 
 *   [Blackbox Wiki](http://blackboxwm.sourceforge.net/) - Official documentation
+*   [HOWTO: A Blackbox Guide](http://ubuntuforums.org/showthread.php?t=125084) - Ubuntu forums

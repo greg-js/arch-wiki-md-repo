@@ -6,7 +6,7 @@
 | <small>1.2.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(3) (also in [Package management](/index.php/Category:Package_management "Category:Package management"))</small> |
 | <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(13)</small> |
 | <small>1.3.1.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
-| <small>1.4.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(1)</small> |
+| <small>1.4.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
 | <small>1.5.</small> [Events](/index.php/Category:Events "Category:Events") <small>(7)</small> |
 | <small>1.6.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(28)</small> |
 | <small>1.7.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(2)</small> |

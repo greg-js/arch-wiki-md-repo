@@ -4,7 +4,7 @@
 | <small>1.2.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Status monitoring and notification (한국어)") <small>(1)</small> |
 | <small>2.</small> [Command shells](/index.php/Category:Command_shells_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Command shells (한국어)") <small>(2)</small> |
 | <small>3.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Daemons and system services (한국어)") <small>(3)</small> |
-| <small>4.</small> [Desktop environments](/index.php/Category:Desktop_environments_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Desktop environments (한국어)") <small>(1)</small> |
+| <small>4.</small> [Desktop environments](/index.php/Category:Desktop_environments_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Desktop environments (한국어)") <small>(2)</small> |
 | <small>4.1.</small> [Display managers](/index.php/Category:Display_managers_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Display managers (한국어)") <small>(1)</small> |
 | <small>4.2.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Dynamic WMs (한국어)") <small>(2)</small> |
 | <small>4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Tiling WMs (한국어)") <small>(2)</small> |

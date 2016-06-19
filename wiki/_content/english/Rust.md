@@ -17,7 +17,7 @@ To [install](/index.php/Install "Install") the latest stable version of Rust, [i
 
 If you would like to build the stable or Beta from source, visit [Rust Downloads](http://www.rust-lang.org/install.html). You may also obtain [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) via the [AUR](/index.php/AUR "AUR") for the latest development snapshot (provides Cargo).
 
-An alternative is to use [multirust](https://aur.archlinux.org/packages/multirust/), a tool that allows to install and manage multiple rust installations (stable, beta, nightly), and easily switch between them.
+An alternative is to use [rustup](https://aur.archlinux.org/packages/rustup/), a tool that allows you to install and manage multiple rust installations (stable, beta, nightly), and easily switch between them.
 
 ### Test your installation
 
@@ -74,7 +74,7 @@ The [unofficial repo archlinuxcn](/index.php/Unofficial_user_repositories#archli
 
 ## Cargo
 
-[Cargo](https://crates.io/), Rust's package manager, can be [installed](/index.php/Installed "Installed") as [cargo](https://www.archlinux.org/packages/?name=cargo). The nightly version is available in the AUR as [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/). If you use [multirust](https://aur.archlinux.org/packages/multirust/), it already includes cargo.
+[Cargo](https://crates.io/), Rust's package manager, can be [installed](/index.php/Installed "Installed") as [cargo](https://www.archlinux.org/packages/?name=cargo). The nightly version is available in the AUR as [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/). If you use [rustup](https://aur.archlinux.org/packages/rustup/), it already includes cargo.
 
 Cargo is a tool that allows Rust projects to declare their various dependencies, and ensure that you'll always get a repeatable build. You're encouraged to read the [official guide](http://doc.crates.io/guide.html).
 

@@ -71,7 +71,7 @@ Synaptics Scrolling Distance (301):	114, 114
 Set these two values to negative to reverse the scrolling orientation:
 
 ```
-xinput set-prop "SynPS/2 Synaptics TouchPad" 301 -114 -114
+xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Scrolling Distance" -114 -114
 
 ```
 

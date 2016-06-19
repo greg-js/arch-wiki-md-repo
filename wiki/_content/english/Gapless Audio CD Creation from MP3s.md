@@ -30,7 +30,7 @@ First of all, copy all the songs you want on the CD to a folder. If necessary, r
 ```
 mkdir wav
 for file in *.mp3 ; do
-   lame --decode "$file" "wav/$file.wav" ;
+   lame --decode "$file" "wav/${file%.mp3}.wav" ;
 done
 
 ```

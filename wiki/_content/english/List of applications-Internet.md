@@ -191,9 +191,17 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
 
+*   **[Otter Browser](https://en.wikipedia.org/wiki/Otter_Browser "wikipedia:Otter Browser")** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
+
+	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser-qtwebengine-git](https://aur.archlinux.org/packages/otter-browser-qtwebengine-git/)
+
 *   **Quill** — A simple web browser that hopefully won't leave you asking "Why is the RAM gone?".
 
 	[https://bitbucket.org/xiannox/quill](https://bitbucket.org/xiannox/quill) || [quill-git](https://aur.archlinux.org/packages/quill-git/)
+
+*   **[QupZilla v2.x](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — New and very fast open source browser based on QWebEngine, written in Qt framework.
+
+	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla-git](https://aur.archlinux.org/packages/qupzilla-git/)
 
 *   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced browser made with the power user in mind.
 

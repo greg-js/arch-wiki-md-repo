@@ -19,8 +19,8 @@ Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
 When encrypting a system it is necessary to regenerate the initial ramdisk after properly configuring [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). Depending on the particular scenarios, a subset of the following hooks will have to be enabled:
 
-*   `encrypt`: always needed when encrypting the root partition, or a partition that needs to be mounted *before* root. It is not needed in all the other cases, as system initialization scripts like `/etc/crypttab` take care of unlocking other encrypted partitions.
-*   `shutdown`: recommended before *mkinitcpio 0.16* to ensure controlled unmounting during system shutdown. It is still functional, but not deemed necessary [anymore](https://mailman.archlinux.org/pipermail/arch-dev-public/2013-December/025742.html).
+*   `encrypt`: always needed when encrypting the root partition, or a partition that needs to be mounted *before* root. It is not needed in all the other cases, as system initialization scripts like `/etc/crypttab` take care of unlocking other encrypted partitions. This hook must be placed *after* the `udev` hook, if that is used.
+*   `shutdown`: deprecated, not necessary [anymore](https://mailman.archlinux.org/pipermail/arch-dev-public/2013-December/025742.html).
 *   `keymap`: provides support for foreign keymaps for typing encryption passwords; it must come *before* the `encrypt` hook.
 *   `keyboard`: needed to make USB keyboards work in early userspace.
     *   `usbinput`: deprecated, but can be given a try in case `keyboard` does not work.

@@ -87,7 +87,7 @@ NFS 需要查看 `/etc/exports` 文件中定义的共享（“导出”）列表
 
 #### 开始运行服务
 
-[启用](/index.php/Enable "Enable")并[运行](/index.php/Start "Start") `nfs-server.service` 服务。对于较老的 V2 和 V3 版也要开启 `rpcbind.service` 服务。如果仅运行 V4 版，请按[[1]](https://bbs.archlinux.org/viewtopic.php?id=193629)这里的讨论确认完全禁用 V2 和 V3 版：
+[启用](/index.php/Enable "Enable")并[运行](/index.php/Start "Start") `nfs-server.service` 服务。对于较老的 V2 和 V3 版也要开启 `rpcbind.service` 服务。如果仅运行 V4 版，请按[这里](https://bbs.archlinux.org/viewtopic.php?id=193629)的讨论确认完全禁用 V2 和 V3 版：
 
  `/etc/conf.d/nfs-server.conf`  `NFSD_OPTS="-N 2 -N 3"` 
 

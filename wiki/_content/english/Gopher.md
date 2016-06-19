@@ -1,4 +1,4 @@
-Gopher is a protocol for information transfer over the internet that was very popular before HTTP took over as the dominant protocol, but there is still a community of gopher users that prefer the simplicity of the protocol over the more complex and large protocols more often encountered. A few examples of gopher sites can be found [here.](gopher://gopher.floodgap.com/1/new) Note that not all browsers support gopher, or have incomplete support. Firefox has limited support, but it can be enhanced with [this](https://addons.mozilla.org/en-US/firefox/addon/7685) add-on.
+Gopher is a protocol for information transfer over the internet that was very popular before HTTP took over as the dominant protocol, but there is still a community of gopher users that prefer the simplicity of the protocol over the more complex and large protocols more often encountered. A few examples of gopher sites can be found [here](gopher://gopher.floodgap.com/1/new). Note that not all browsers support gopher, or have incomplete support. Firefox has limited support, but it can be enhanced with [this](https://addons.mozilla.org/en-US/firefox/addon/7685) add-on.
 
 ## Contents
 
@@ -21,14 +21,9 @@ Install [gofish](https://aur.archlinux.org/packages/gofish/) from the [AUR](/ind
 
 There are some basic settings for the server you can change in the /etc/gofish.conf file, but the defaults will work. If you do not alter any settings, the root of the gopher server will be /var/gopher and it will run on port 70\. (Note that Firefox can only use the gopher protocol on port 70, so changing it will mean your users must use some other client.)
 
-To run the server:
+To run the server, [start](/index.php/Start "Start") `gofish.service`.
 
-```
-# /etc/rc.d/gopherd start
-
-```
-
-As always, put in the daemons array in your /etc/rc.conf to autostart it at boot. You can now connect to your server and see what you have by navigating to [gopher://127.0.0.1](gopher://127.0.0.1)
+You can now connect to your server and see what you have by navigating to [gopher://127.0.0.1](gopher://127.0.0.1)
 
 ### .cache
 
@@ -62,7 +57,7 @@ Notice that the URI is 9/ebooks/Book1.chm, NOT 1/ebooks/9Book1.chm . There is al
 
 ## Gopher Browser
 
-To browse gopherspace as it was originally intended to be browsed, you can build the [University of Minnesota gopher browser](https://aur.archlinux.org/packages/gopher) from the [AUR](/index.php/AUR "AUR").
+To browse gopherspace as it was originally intended to be browsed, you can install the University of Minnesota gopher browser with the [gopher](https://aur.archlinux.org/packages/gopher/) package.
 
 ## Additional Resources
 

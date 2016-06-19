@@ -43,7 +43,7 @@ The primary root certificate used has a CN of "DoD Root CA 2": this certificate 
 
 ### Chromium/Google Chrome
 
-1\. Ensure CAC is connected, [Chromium](/index.php/Chromium "Chromium") is closed and enter the following in a terminal: `$ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/lopensc-pkcs11.so`
+1\. Ensure CAC is connected, [Chromium](/index.php/Chromium "Chromium") is closed and enter the following in a terminal: `$ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so`
 
 2\. Go to : [http://iase.disa.mil/pki-pke/Pages/tools.aspx](http://iase.disa.mil/pki-pke/Pages/tools.aspx)
 

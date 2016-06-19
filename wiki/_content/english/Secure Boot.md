@@ -6,6 +6,7 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 *   [2 Using a signed boot loader](#Using_a_signed_boot_loader)
     *   [2.1 Booting archiso](#Booting_archiso)
     *   [2.2 Set up PreLoader](#Set_up_PreLoader)
+        *   [2.2.1 Fallback](#Fallback)
     *   [2.3 Remove PreLoader](#Remove_PreLoader)
 *   [3 Using your own keys](#Using_your_own_keys)
     *   [3.1 Creating keys](#Creating_keys)
@@ -56,14 +57,14 @@ For a verbose status, another way is to execute:
 
 **Note:** `PreLoader.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package is not signed, so its usefulness is limited. You can get a signed `PreLoader.efi` from [[1]](http://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
 
-[Install](/index.php/Install "Install") the [efitools](https://www.archlinux.org/packages/?name=efitools) package and copy `PreLoader.efi` and `HashTool.efi` to the boot{loader,manager} directory; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
+[Install](/index.php/Install "Install") the [efitools](https://www.archlinux.org/packages/?name=efitools) package and copy `PreLoader.efi` and `HashTool.efi` to the [boot loader](/index.php/Boot_loader "Boot loader") directory; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
 
 ```
 # cp /usr/share/efitools/efi/{PreLoader,HashTool}.efi *esp*/EFI/systemd
 
 ```
 
-Now copy over the boot{loader,manager} binary and rename it to "loader.efi"; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
+Now copy over the boot loader binary and rename it to `loader.efi`; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
 
 ```
 # cp *esp*/EFI/systemd/systemd-bootx64.efi *esp*/EFI/systemd/loader.efi
@@ -80,6 +81,8 @@ Finally, create a new NVRAM entry to boot `PreLoader.efi`:
 Replace `X` with the drive letter and replace `Y` with the partition number of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
 This entry should be added to the list as the first to boot; check with the `efibootmgr` command and adjust the boot-order if necessary.
+
+#### Fallback
 
 If there are problems booting the custom NVRAM entry, copy `HashTool.efi` & `loader.efi` to the default loader location booted automatically by UEFI systems:
 
@@ -136,19 +139,19 @@ Secure Boot implementations use these keys:
 
 	Platform Key (PK)
 
-	top level key
+	Top-level key
 
 	Key Exchange Key (KEK)
 
-	key used to sign signature databases or EFI binaries
+	Key used to sign signature databases or EFI binaries
 
 	Signature Database (db)
 
-	contains keys and/or hashes used to sign EFI binaries
+	Contains keys and/or hashes used to sign EFI binaries
 
 	Forbidden Signatures Database (dbx)
 
-	contains keys and/or hashes used to blacklist EFI binaries
+	Contains keys and/or hashes used to blacklist EFI binaries
 
 To use Secure Boot you need at least **PK**, **KEK** and **db** keys.
 
@@ -158,9 +161,9 @@ To generate keys, [install](/index.php/Install "Install") [efitools](https://www
 
 You will need keys and certificates in multiple formats:
 
-1.  create keys and **PEM** format certificates for `sbsign`
-2.  convert certificates to **DER** format for firmware
-3.  convert certificates to **EFI Signature List** for `KeyTool`
+1.  Create keys and **PEM** format certificates for `sbsign`
+2.  Convert certificates to **DER** format for firmware
+3.  Convert certificates to **EFI Signature List** for `KeyTool`
 
 Create a [GUID](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") for owner identification:
 
@@ -179,7 +182,7 @@ $ sign-efi-sig-list -g *GUID* -k PK.key -c PK.crt PK PK.esl PK.auth
 
 ```
 
-	create an empty file *null.esl* and sign it to allow deleting Platform Key:
+Create an empty file `null.esl` and sign it to allow deleting Platform Key:
 
 ```
 $ sign-efi-sig-list -g *GUID* -c PK.crt -k PK.key PK *null.esl* rm_PK.auth

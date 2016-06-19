@@ -69,7 +69,7 @@ To start the server you may either use systemd or run it directly from the comma
 
 To easily control the server you may use the provided `minecraftd` script. It is capable of doing the basic commands like `start`, `stop`, `restart` or attaching to the session with `console`. Moreover it may be used to display status information with `status`, backup the server world directory with `backup`, restore world data from backups `restore` or run single commands in the server console with `command <server command>`.
 
-**Note:** Regarding the server `console`, remember that you can exit any screen session with `^A,D`.
+**Note:** Regarding the server `console`, remember that you can exit any screen session with `ctrl+a` `d`.
 
 To tweak the default settings (e.g. the maximum RAM, number of threads etc.) edit the file `/etc/conf.d/minecraft`.
 

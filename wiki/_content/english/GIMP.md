@@ -1,4 +1,10 @@
-GIMP is one of many in the [List of applications/Multimedia#Raster editors](/index.php/List_of_applications/Multimedia#Raster_editors "List of applications/Multimedia")
+[GIMP](http://www.gimp.org/) is one of many in the [List of applications/Multimedia#Raster editors](/index.php/List_of_applications/Multimedia#Raster_editors "List of applications/Multimedia").
+
+## Installation
+
+[Install](/index.php/Install "Install") the [gimp](https://www.archlinux.org/packages/?name=gimp) package.
+
+## Troubleshooting
 
 ### GIMP PDF editing doesn't work
 

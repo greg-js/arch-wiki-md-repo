@@ -69,7 +69,7 @@ prefix = '/opt/gnome'
 
 ```
 
-You should edit (at least) *modules* to the desired modules to be built. A reference for most configuration variables is available at [GNOME JHBuild Manual](http://developer.gnome.org/jhbuild/unstable/config-reference.html.en).
+You should edit (at least) *modules* to the desired modules to be built. A reference for most configuration variables is available at [GNOME JHBuild Manual](http://developer.gnome.org/jhbuild/unstable/config-reference.html).
 
 ## Usage
 

@@ -69,7 +69,7 @@ See [Wikipedia:Tor (anonymity network)](https://en.wikipedia.org/wiki/Tor_(anony
 
 The [arm](https://www.archlinux.org/packages/?name=arm) (Anonymizing Relay Monitor) package provides a terminal status monitor for bandwidth usage, connection details and more.
 
-For GUI could be used [vidalia](https://aur.archlinux.org/packages/vidalia/)
+For a GUI, you can use [vidalia](https://aur.archlinux.org/packages/vidalia/).
 
 ## Configuration
 

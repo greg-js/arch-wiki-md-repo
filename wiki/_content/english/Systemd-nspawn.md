@@ -53,7 +53,7 @@ Next, we use pacstrap to install a basic arch-system into the container. At mini
 
 **Tip:** The `-i` option will **avoid** auto-confirmation of package selection. As you do not need to install the Linux kernel in the container, you can remove it from the package list selection to save space. See [Pacman#Usage](/index.php/Pacman#Usage "Pacman").
 
-**Note:** The package [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) required by [linux](https://www.archlinux.org/packages/?name=linux) which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group and it isn't necessary to run the container, causes some issues to `systemd-tmpfiles-setup.service` during the booting process with `systemd-nspawn`. It's possible to install the [base](https://www.archlinux.org/groups/x86_64/base/) group but excluding the [linux](https://www.archlinux.org/packages/?name=linux) package and its dependencies when building the container with `# pacstrap -i -c -d ~/MyContainer base --ignore linux [additional pkgs/groups]`. The `--ignore` flag will be simply passed to [pacman](https://www.archlinux.org/packages/?name=pacman). See [FS#46591](https://bugs.archlinux.org/task/46591) for more information.
+**Note:** The package [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) required by [linux](https://www.archlinux.org/packages/?name=linux), which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group and isn't necessary to run the container, causes some issues to `systemd-tmpfiles-setup.service` during the booting process with `systemd-nspawn`. It's possible to install the [base](https://www.archlinux.org/groups/x86_64/base/) group but excluding the [linux](https://www.archlinux.org/packages/?name=linux) package and its dependencies when building the container with `# pacstrap -i -c -d ~/MyContainer base --ignore linux [additional pkgs/groups]`. The `--ignore` flag will be simply passed to [pacman](https://www.archlinux.org/packages/?name=pacman). See [FS#46591](https://bugs.archlinux.org/task/46591) for more information.
 
 Once your installation is finished, boot into the container:
 
@@ -113,6 +113,8 @@ See [Creating packages for other distributions](/index.php/Creating_packages_for
 ## Management
 
 ### machinectl
+
+**Note:** The *machinectl* tool requires [systemd](/index.php/Systemd "Systemd") and [dbus](https://www.archlinux.org/packages/?name=dbus) to be installed in the container. See [[2]](https://github.com/systemd/systemd/issues/685) for detailed discussion.
 
 Managing your containers is essentially done with the `machinectl` command. See `machinectl(1)` for details.
 
@@ -256,7 +258,7 @@ See [Init#systemd-nspawn](/index.php/Init#systemd-nspawn "Init").
 
 ### Per-container settings
 
-To specify per-container settings and not overrides for all (e.g. bind a directory to only one container)[[2]](https://github.com/systemd/systemd/issues/3442#issuecomment-223837408), the ".nspawn" file definition can be used [[3]](https://www.freedesktop.org/software/systemd/man/systemd.nspawn.html#)
+To specify per-container settings and not overrides for all (e.g. bind a directory to only one container)[[3]](https://github.com/systemd/systemd/issues/3442#issuecomment-223837408), the ".nspawn" file definition can be used [[4]](https://www.freedesktop.org/software/systemd/man/systemd.nspawn.html#)
 
 ```
  man systemd.nspawn
@@ -282,7 +284,7 @@ pam_securetty(login:auth): access denied: tty 'pts/0' is not secure !
 
 ```
 
-Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[4]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[5]](https://github.com/systemd/systemd/issues/852).
+Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[5]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[6]](https://github.com/systemd/systemd/issues/852).
 
 ### Unable to upgrade some packages on the container
 

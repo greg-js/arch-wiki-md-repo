@@ -35,7 +35,7 @@ Add the nick you want to use on git and a link to your public key to the table.
 
 | Nick | SSH Public Key |
 | meskarune | [public key](https://ptpb.pw/vj4X/sh) |
-| nick | key |
+| ripelascra | [public key](https://ptpb.pw/KEKy/sh) |
 | nick | key |
 | nick | key |
 

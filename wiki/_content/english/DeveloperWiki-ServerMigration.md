@@ -102,6 +102,4 @@
         *   sources are a part of the repos (currently split to a different box for space and bandwidth reasons)
     *   Set up web access to repos (and sources)
         *   Limit access to the repos to the lastsync file only
-    *   Fix archweb updater (currently archweb updates because data is synced back to nymeria where the updater works)
-    *   Remove sync cronjob on nymeria
     *   Migrate archive from seblu's server

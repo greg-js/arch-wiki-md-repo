@@ -21,6 +21,7 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [2.1.4 xyne-any](#xyne-any)
     *   [2.2 Unsigned](#Unsigned)
         *   [2.2.1 archlinuxgr-any](#archlinuxgr-any)
+        *   [2.2.2 youtube-dl](#youtube-dl)
 *   [3 Both i686 and x86_64](#Both_i686_and_x86_64)
     *   [3.1 Signed](#Signed_2)
         *   [3.1.1 arcanisrepo](#arcanisrepo)
@@ -222,6 +223,17 @@ Server = http://archlinuxgr.tiven.org/archlinux/any
 
 ```
 
+#### youtube-dl
+
+*   **Maintainer:** [Case_Of](https://bbs.archlinux.org/profile.php?id=94876)
+*   **Description:** A repository for latest release of youtube-dl package.
+
+```
+[youtube-dl]
+Server = http://yt-dl.tk
+
+```
+
 ## Both i686 and x86_64
 
 Repositories with both i686 and x86_64 versions. The `$arch` variable will be set automatically by pacman.
@@ -262,7 +274,7 @@ Server = http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
 *   **Description:** Packages by the Chinese Arch Linux community (mostly signed)
 *   **Git Repo:** [https://github.com/archlinuxcn/repo](https://github.com/archlinuxcn/repo)
 *   **Mirrors:** [https://github.com/archlinuxcn/mirrorlist-repo](https://github.com/archlinuxcn/mirrorlist-repo) (Mostly for users in mainland China)
-*   **Key-ID:** Once the repo is added, *archlinuxcn-keyring* package must be installed before any other so you don't get errors about PGP signatures.
+*   **Key-ID:** Once the repo is added, *archlinuxcn-keyring* package must be installed before any other so you do not get errors about PGP signatures.
 
 ```
 [archlinuxcn]
@@ -382,7 +394,7 @@ Server = http://ivasilev.net/pacman/$arch
 
 *   **Maintainer:** [Luchesar V. ILIEV (kerberizer)](/index.php/User:Kerberizer "User:Kerberizer")
 *   **Description:** [llvm-svn](https://aur.archlinux.org/pkgbase/llvm-svn) and [lib32-llvm-svn](https://aur.archlinux.org/pkgbase/lib32-llvm-svn) from AUR: the LLVM compiler infrastructure, the Clang frontend, and the tools associated with it
-*   **Key-ID:** [0x76563F75679E4525](https://sks-keyservers.net/pks/lookup?op=vindex&search=0x76563F75679E4525&fingerprint=on&exact=on), fingerprint <tt>D16C F22D 27D1 091A 841C 4BE9 7656 3F75 679E 4525</tt>
+*   **Key-ID:** [0x76563F75679E4525](https://sks-keyservers.net/pks/lookup?op=vindex&search=0x76563F75679E4525&fingerprint=on&exact=on), fingerprint `D16C F22D 27D1 091A 841C 4BE9 7656 3F75 679E 4525`
 
 ```
 [llvm-svn]
@@ -394,7 +406,7 @@ Server = http://repos.uni-plovdiv.net/archlinux/$repo/$arch
 
 *   **Maintainer:** [Patrick Burroughs (Celti) <celti@celti.name>](https://www.celti.name/)
 *   **Description:** Packages for the [Nuvola Player](https://tiliado.eu/nuvolaplayer) cloud music player and its various integrations. Includes both stable and git versions. The [build scripts](https://repo.celti.name/nuvolaplayer/) used to manage the repository (using makepkg-template, makechrootpkg, and repose) are available. Both the packages and the database are signed.
-*   **Key-ID:** <tt>[123C 3F8B 058A 707F 8664 3316 FA68 2BD8 910C F4EA](https://sks-keyservers.net/pks/lookup?op=vindex&search=0x123C3F8B058A707F86643316FA682BD8910CF4EA)</tt>
+*   **Key-ID:** `[123C 3F8B 058A 707F 8664 3316 FA68 2BD8 910C F4EA](https://sks-keyservers.net/pks/lookup?op=vindex&search=0x123C3F8B058A707F86643316FA682BD8910CF4EA)`
 
 ```
 [nuvolaplayer]
@@ -1126,7 +1138,7 @@ Server = http://dl.dropbox.com/u/298301785/arch/linux-ck-pax/$arch
 
 *   **Maintainer**: Anna Ivanova ([kalterfive](https://aur.archlinux.org/account/kalterfive))
 *   **Upstream page**: [https://kalterfive.github.io/linux-kalterfx/about.html](https://kalterfive.github.io/linux-kalterfx/about.html)
-*   **Description**: A custom kernel with applied pf patchset and compiled fs/reiser4.
+*   **Description**: A stable kernel with [pf-kernel](#Linux-pf), [reiser4](/index.php/Reiser4 "Reiser4") and smack
 *   **Key-ID**: A0C04F15
 *   **Keyfile**: [https://keybase.io/kalterfive/key.asc](https://keybase.io/kalterfive/key.asc)
 

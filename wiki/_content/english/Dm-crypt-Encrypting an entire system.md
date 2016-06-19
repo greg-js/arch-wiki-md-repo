@@ -110,7 +110,8 @@ This scenario also employs USB devices for `/boot` and key storage, which may be
  | 
 
 *   Data resilience for cases where a LUKS header may be damaged
-*   Allows [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption")
+*   Allows [Full Disk Encryption](https://en.wikipedia.org/wiki/Disk_encryption#Full_disk_encryption "wikipedia:Disk encryption")
+*   Helps addressing [problems](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") with SSDs
 
  | 
 
@@ -507,18 +508,23 @@ If you want to expand the logical volume for `/home` (or any other volume) at a 
 
 ## Plain dm-crypt
 
-This scenario sets up a system on a dm-crypt a full disk with *plain* mode encryption. Note that for most use cases, the methods using LUKS described above are the better options for both system encryption and encrypted partitions. LUKS features like key management with multiple pass-phrases/key-files are unavailable with *plain* mode.
+Contrary to LUKS, dm-crypt *plain* mode does not require a header on the encrypted device: this scenario exploits this feature to set up a system on an unpartitioned, encrypted disk that will be indistinguishable from a disk filled with random data, which could allow [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption"). See also [wikipedia:Disk encryption#Full disk encryption](https://en.wikipedia.org/wiki/Disk_encryption#Full_disk_encryption "wikipedia:Disk encryption").
 
-dm-crypt *plain* mode does not require a header on the encrypted disk: this means that an unpartitioned, encrypted disk will be indistinguishable from a disk filled with random data, which is the desired attribute for this scenario, see also [Wikipedia:Deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption").
+Note that if full-disk encryption is not required, the methods using LUKS described in the sections above are better options for both system encryption and encrypted partitions. LUKS features like key management with multiple pass-phrases/key-files are unavailable with *plain* mode.
 
-*Plain* dm-crypt encrypted disks can be more resilient to damage than LUKS encrypted disks, because it does not rely on an encryption master-key which can be a single-point of failure if damaged. However, using *plain* mode also requires more manual configuration of encryption options to achieve the same cryptographic strength. See also [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption").
+*Plain* dm-crypt encryption can be more resilient to damage than LUKS, because it does not rely on an encryption master-key which can be a single-point of failure if damaged. However, using *plain* mode also requires more manual configuration of encryption options to achieve the same cryptographic strength. See also [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Using *plain* mode could also be considered if concerned with the problems explained in [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties").
 
 **Tip:** If headerless encryption is your goal but you are unsure about the lack of key-derivation with *plain* mode, then two alternatives are:
 
 *   [tcplay](/index.php/Tcplay "Tcplay") which offers headerless encryption but with the PBKDF2 function, or
 *   dm-crypt LUKS mode by using the *cryptsetup* `--header` option. It cannot be used with the standard *encrypt* hook, but the hook [may be modified](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header "Dm-crypt/Specialties").
 
-The scenario uses a USB stick for the boot device and another one to store the encryption key. The disk layout is:
+The scenario uses two USB sticks:
+
+*   one for the boot device, which also allows storing the options required to open/unlock the plain encrypted device in the boot loader configuration, since typing them on each boot would be error prone;
+*   another for the encryption key file, assuming it stored as raw bits so that to the eyes of an unaware attacker who might get the usbkey the encryption key will appear as random data instead of being visible as a normal file. See also [Wikipedia:Security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity"), follow [Dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") to prepare the keyfile.
+
+The disk layout is:
 
 ```
 +--------------------+------------------+--------------------+ +---------------+ +---------------+
@@ -532,10 +538,6 @@ The scenario uses a USB stick for the boot device and another one to store the e
 +------------------------------------------------------------+ +---------------+ +---------------+
 
 ```
-
-`/boot` and the boot loader cannot be kept on the encrypted drive, or it will defeat the purpose of using *plain* mode for deniable encryption. This also allows storing the options required to open/unlock the plain encrypted device in the boot loader configuration, since typing them on each boot would be error prone.
-
-This scenario also uses a key file, assuming it stored as raw bits on a second USB stick, so that to the eyes of an unaware attacker who might get the usbkey the encryption key will appear as random data instead of being visible as a normal file. See also [Wikipedia:Security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity"), follow [Dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") to prepare the keyfile.
 
 **Tip:**
 

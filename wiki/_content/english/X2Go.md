@@ -45,7 +45,7 @@ In order for the server to be able to access files on the client computer you sh
 
 ### Setup SQLite database
 
-Run the following command to initialize SQLite database
+Run the following command on the server to initialize the SQLite database (which is required in order for the x2go server to work):
 
 ```
 # x2godbadmin --createdb

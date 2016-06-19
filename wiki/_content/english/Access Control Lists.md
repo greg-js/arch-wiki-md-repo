@@ -6,6 +6,7 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Enabling ACL](#Enabling_ACL)
     *   [2.2 Set ACL](#Set_ACL)
+    *   [2.3 Show ACL](#Show_ACL)
 *   [3 Examples](#Examples)
     *   [3.1 Output of ls command](#Output_of_ls_command)
 *   [4 Granting execution permissions for private files to a Web Server](#Granting_execution_permissions_for_private_files_to_a_Web_Server)
@@ -91,7 +92,9 @@ Remove each entry:
 
 ```
 
-To check permissions use:
+### Show ACL
+
+To show permissions, use:
 
 ```
 # getfacl filename

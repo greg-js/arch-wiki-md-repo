@@ -39,7 +39,7 @@ Suspending the T460s by closing the lid when running on battery causes the machi
 
 ### Hibernate / Resume
 
-The kernel patch for fixing suspend resume (see above) causes hibernation resume to fail when on charger power. The workaround is to unplug the charger when resuming from hibernation.
+A long standing kernel bug caused resume from hibernation to fail with a probability that depended on the amount of allocated RAM. This bug is fixed by [this patch](https://patchwork.kernel.org/patch/9172981/%7C), and is included in the [linux-t460s](https://aur.archlinux.org/packages/linux-t460s/) package.
 
 ### Fingerprint Sensor
 
