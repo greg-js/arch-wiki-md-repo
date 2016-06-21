@@ -205,7 +205,7 @@ Proceed as usual.
 
 ### Sound
 
-There is currently no sound driver for the the x205ta's Realtek RT5648\. Keep your eye on [this](https://bugzilla.kernel.org/show_bug.cgi?id=95681) for updates. Note that while the sound does not work at the moment, it does work using an external USB audio adapter. [Here](http://ubuntuforums.org/showthread.php?t=2254322) is another thread showing progress being made to get the sound and other hardware working for the X205TA.
+There is currently no sound driver for the the x205ta's Realtek RT5648\. Keep your eye on [this](https://bugzilla.kernel.org/show_bug.cgi?id=95681) for updates. Note that while the sound does not work at the moment, it does work using an external USB audio adapter or via Bluetooth. [Here](http://ubuntuforums.org/showthread.php?t=2254322) is another thread showing progress being made to get the sound and other hardware working for the X205TA.
 
 ### Power level information (ACPI)
 
@@ -272,9 +272,7 @@ Setting kernel argument "intel_idle.max_cstate=1" solve the problem without affe
 
 ### Bluetooth
 
-Needs tested on a X205TA (works on a T100TA).
-
-Tested on X205TA and it does not work out of the box, albeit it seems promising: BT chip is recognized, but firmware is missing. Using BCM43341B0.hcd from T100 leads to tx-timeouts.
+Install a correct firmware file (e.g., BCM43341B0_002.001.014.0122.0176.hcd from Windows 10 driver) as /lib/firmware/brcm/BCM43341B0.hcd.
 
 [Install](/index.php/Install "Install") the [bluez](https://www.archlinux.org/packages/?name=bluez) package, [enable](/index.php/Enable "Enable") the `bluetooth.service` systemd service, and then run this command
 

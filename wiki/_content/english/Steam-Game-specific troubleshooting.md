@@ -228,35 +228,38 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [68.1 Crash on launch](#Crash_on_launch)
 *   [69 Transistor](#Transistor)
     *   [69.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
-*   [70 Trine 2](#Trine_2)
-    *   [70.1 Dependencies](#Dependencies_34)
-    *   [70.2 Troubleshooting](#Troubleshooting_27)
-*   [71 Unity3D](#Unity3D)
-    *   [71.1 Locale Settings](#Locale_Settings_2)
-    *   [71.2 Unity 5 sound problems](#Unity_5_sound_problems)
-*   [72 Unity of Command](#Unity_of_Command)
-    *   [72.1 Dependencies](#Dependencies_35)
-    *   [72.2 Troubleshooting](#Troubleshooting_28)
-        *   [72.2.1 No audio](#No_audio_5)
-*   [73 Unrest](#Unrest)
+*   [70 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [70.1 Troubleshooting](#Troubleshooting_27)
+    *   [70.2 Dependencies](#Dependencies_34)
+*   [71 Trine 2](#Trine_2)
+    *   [71.1 Dependencies](#Dependencies_35)
+    *   [71.2 Troubleshooting](#Troubleshooting_28)
+*   [72 Unity3D](#Unity3D)
+    *   [72.1 Locale Settings](#Locale_Settings_2)
+    *   [72.2 Unity 5 sound problems](#Unity_5_sound_problems)
+*   [73 Unity of Command](#Unity_of_Command)
     *   [73.1 Dependencies](#Dependencies_36)
-*   [74 War Thunder](#War_Thunder)
-    *   [74.1 Troubleshooting](#Troubleshooting_29)
-*   [75 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [75.1 Dependencies](#Dependencies_37)
-    *   [75.2 Troubleshooting](#Troubleshooting_30)
-*   [76 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [73.2 Troubleshooting](#Troubleshooting_29)
+        *   [73.2.1 No audio](#No_audio_5)
+*   [74 Unrest](#Unrest)
+    *   [74.1 Dependencies](#Dependencies_37)
+*   [75 War Thunder](#War_Thunder)
+    *   [75.1 Troubleshooting](#Troubleshooting_30)
+*   [76 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
     *   [76.1 Dependencies](#Dependencies_38)
-*   [77 World of Goo](#World_of_Goo)
-    *   [77.1 Changing resolution](#Changing_resolution)
-*   [78 Worms Reloaded](#Worms_Reloaded)
-    *   [78.1 Dependencies](#Dependencies_39)
-*   [79 XCOM](#XCOM)
+    *   [76.2 Troubleshooting](#Troubleshooting_31)
+*   [77 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [77.1 Dependencies](#Dependencies_39)
+*   [78 World of Goo](#World_of_Goo)
+    *   [78.1 Changing resolution](#Changing_resolution)
+*   [79 Worms Reloaded](#Worms_Reloaded)
     *   [79.1 Dependencies](#Dependencies_40)
-    *   [79.2 Hangs on startup](#Hangs_on_startup)
-    *   [79.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
-*   [80 Saints Row IV](#Saints_Row_IV)
-    *   [80.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+*   [80 XCOM](#XCOM)
+    *   [80.1 Dependencies](#Dependencies_41)
+    *   [80.2 Hangs on startup](#Hangs_on_startup)
+    *   [80.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [81 Saints Row IV](#Saints_Row_IV)
+    *   [81.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
 
 ## Air Brawl
 
@@ -1615,6 +1618,31 @@ This will force Steam to do the fix whenever Transistor is started, but allows S
 Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed there [[7]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
 
 Also, check out this thread [[8]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/)
+
+## Transmissions: Element 120
+
+### Troubleshooting
+
+Make sure you have all libraries installed. Above the standard set required by Steam runtime, the game requires few additional ones. The typical error message that indicates that is
+
+```
+AppFramework : Unable to load module vguimatsurface.so!
+
+```
+
+To show which dependencies are satisfied, go to the folder in which you installed the game (`SteamLibrary/steamapps/common/Transmissions Element 120`) and execute:
+
+```
+LD_LIBRARY_PATH=bin ldd bin/vguimatsurface.so
+
+```
+
+look for entries that say `not found`
+
+### Dependencies
+
+*   [lib32-libgcrypt15](https://www.archlinux.org/packages/?name=lib32-libgcrypt15)
+*   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12)
 
 ## Trine 2
 

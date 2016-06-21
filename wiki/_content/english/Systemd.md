@@ -15,7 +15,7 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [2.2 Service types](#Service_types)
     *   [2.3 Editing provided units](#Editing_provided_units)
         *   [2.3.1 Replacement unit files](#Replacement_unit_files)
-        *   [2.3.2 Drop-in snippets](#Drop-in_snippets)
+        *   [2.3.2 Drop-in files](#Drop-in_files)
         *   [2.3.3 Examples](#Examples)
 *   [3 Targets](#Targets)
     *   [3.1 Get current targets](#Get_current_targets)
@@ -309,9 +309,9 @@ This opens `/etc/systemd/system/*unit*` in your editor (copying the installed ve
 
 **Note:** Pacman does not update the replacement unit files when the originals are updated, so this method can make system maintenance more difficult. For this reason the next approach is recommended.
 
-#### Drop-in snippets
+#### Drop-in files
 
-To create drop-in snippets for the unit file `/usr/lib/systemd/system/*unit*`, create the directory `/etc/systemd/system/*unit*.d/` and place *.conf* files there to override or add new options. *systemd* will parse these *.conf* files and apply them on top of the original unit.
+To create drop-in files for the unit file `/usr/lib/systemd/system/*unit*`, create the directory `/etc/systemd/system/*unit*.d/` and place *.conf* files there to override or add new options. *systemd* will parse these *.conf* files and apply them on top of the original unit.
 
 The easiest way to do this is to run:
 

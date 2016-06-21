@@ -1,4 +1,4 @@
-**man pages** (abbreviation for "manual pages") are the extensive documentation that comes preinstalled with almost all substantial UNIX-like operating systems, including Arch Linux. The command used to display them is `man`.
+**man pages**—abbreviation for "manual pages"—are the extensive documentation that comes preinstalled with almost all substantial UNIX-like operating systems, including Arch Linux. The command used to display them is `man`.
 
 In spite of their scope, man pages are designed to be self-contained documents, consequentially limiting themselves to referring to other man pages when discussing related subjects. This is in sharp contrast with the hyperlink-aware info files, GNU's attempt at replacing the traditional man page format.
 
@@ -6,7 +6,7 @@ In spite of their scope, man pages are designed to be self-contained documents, 
 
 ## Contents
 
-*   [1 Accessing Man Pages](#Accessing_Man_Pages)
+*   [1 Accessing man pages](#Accessing_man_pages)
 *   [2 Format](#Format)
 *   [3 Searching manuals](#Searching_manuals)
 *   [4 Colored man pages](#Colored_man_pages)
@@ -28,7 +28,7 @@ In spite of their scope, man pages are designed to be self-contained documents, 
 *   [8 Noteworthy manpages](#Noteworthy_manpages)
 *   [9 See also](#See_also)
 
-## Accessing Man Pages
+## Accessing man pages
 
 To read a man page, simply enter:
 
@@ -37,16 +37,7 @@ $ man *page_name*
 
 ```
 
-Manuals are sorted into several sections:
-
-1.  General commands
-2.  System calls (functions provided by the kernel)
-3.  Library calls (C library functions)
-4.  Special files (usually found in /dev) and drivers
-5.  File formats and conventions
-6.  Games
-7.  Miscellaneous (including conventions)
-8.  System administration commands (usually requiring root privileges) and daemons
+Manuals are sorted into several sections. For a full listing see the section entitled "Sections of the manual pages" in `man man-pages`.
 
 Man pages are usually referred to by their name, followed by their section number in parentheses. Often there are multiple man pages of the same name, such as man(1) and man(7). In this case, give man the section number followed by the name of the man page, for example:
 
@@ -67,22 +58,11 @@ ls (1)               - list directory contents
 
 ## Format
 
-Man pages all follow a fairly standard format, which helps in navigating them. Some sections which are often present include:
-
-*   NAME - The name of the command and a one-line statement of its purpose.
-*   SYNOPSIS - A list of the options and arguments a command takes or the parameters the function takes and its header file.
-*   DESCRIPTION - A more in depth description of a command or function's purpose and workings.
-*   EXAMPLES - Common examples, usually ranging from the simple to the relatively complex.
-*   OPTIONS - Descriptions of each of the options a command takes and what they do.
-*   EXIT STATUS - The meanings of different exit codes.
-*   FILES - Files related to a command or function.
-*   BUGS - Problems with the command or function that are pending repair. Also known as KNOWN BUGS.
-*   SEE ALSO - A list of related commands or functions.
-*   AUTHOR, HISTORY, COPYRIGHT, LICENSE, WARRANTY - Information about the program, its past, its terms of use, and its creator.
+Man pages all follow a fairly standard format, which helps in navigating them. See the section entitled "Sections within a manual page" in `man man-pages`.
 
 ## Searching manuals
 
-Whilst the `man` utility allows users to display man pages, and search their contents via *less*, a problem arises when one knows not the exact name of the desired manual page in the first place! Fortunately, the `-k` or `--apropos` options can be used to search the manual page descriptions for instances of a given keyword.
+Even though the `man` utility allows users to display man pages, and search their contents via *less*, a problem arises when one knows not the exact name of the desired manual page in the first place! Fortunately, the `-k` or `--apropos` options can be used to search the manual page descriptions for instances of a given keyword.
 
 The research feature is provided by a dedicated cache. By default you may not have any cache built and all your searches will give you the *nothing appropriate* result. You can generate the cache or update it by running
 
@@ -129,11 +109,7 @@ Color-enabled man pages allow for a clearer presentation and easier digestion of
 
 ### Using less (Recommended)
 
-	<small>*Source: [nion's blog - less colors for man pages](http://nion.modprobe.de/blog/archives/572-less-colors-for-man-pages.html)*</small>
-
-This method has the advantage that `less` has a bigger feature set than `most`, and is the default for viewing man pages.
-
-Add the following to a shell configuration file. For [Bash](/index.php/Bash "Bash") it would be:
+Add the following to a shell configuration file.[[1]](http://nion.modprobe.de/blog/archives/572-less-colors-for-man-pages.html) For [Bash](/index.php/Bash "Bash") it would be:
 
  `~/.bashrc` 
 ```
@@ -265,8 +241,6 @@ setkey edit "v"
 
 ### Colored man pages on xterm or rxvt-unicode
 
-	<small>*Source: [XFree resources file for XTerm program](http://pub.ligatura.org/fs/xfree86/xresources/xterm)*</small>
-
 A quick way to add color to manual pages viewed on [xterm](https://www.archlinux.org/packages/?name=xterm)/`uxterm` or [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) is to modify `~/.Xresources`.
 
 #### xterm
@@ -327,20 +301,11 @@ Feel free to combine this function with the [color settings](#Colored_man_pages)
 
 ## Reading local man pages
 
-Instead of the standard interface, using browsers such as [lynx](https://www.archlinux.org/packages/?name=lynx) and [Firefox](/index.php/Firefox "Firefox") to view man pages allows users to reap info pages' main benefit: hyperlinked text.
+Instead of the standard interface, using browsers such as [lynx](https://www.archlinux.org/packages/?name=lynx) and [Firefox](/index.php/Firefox "Firefox") to view man pages allows users to reap info pages' main benefit of hyperlinked text. Alternatives include the following:
 
-[KDE](/index.php/KDE "KDE") users can read man pages in Konqueror using:
-
-```
-man:<name>
-
-```
-
-From the [Official repositories](/index.php/Official_repositories "Official repositories") come two other possibilities:
-
-1\. [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) provides a categorized look at man pages in [X](/index.php/X "X").
-
-2\. The [GNOME](/index.php/GNOME "GNOME") Help Browser [yelp](https://www.archlinux.org/packages/?name=yelp) is a more neat way but has some dependencies.
+*   [KDE](/index.php/KDE "KDE") users can read man pages in Konqueror using `man:<name>`.
+*   [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) provides a categorized look at man pages in [X](/index.php/X "X").
+*   The [GNOME](/index.php/GNOME "GNOME") Help Browser [yelp](https://www.archlinux.org/packages/?name=yelp) can be used via `yelp man:<name>`.
 
 ### Converting to browser-readable HTML
 

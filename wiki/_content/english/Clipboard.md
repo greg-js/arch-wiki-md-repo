@@ -81,7 +81,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **Qlipper** — Lightweight and cross-platform clipboard history applet based on Qt.
 
-	[https://code.google.com/p/qlipper/](https://code.google.com/p/qlipper/) || [qlipper](https://aur.archlinux.org/packages/qlipper/)
+	[https://github.com/pvanek/qlipper/](https://github.com/pvanek/qlipper/) || [qlipper](https://aur.archlinux.org/packages/qlipper/)
 
 *   **Xclip** — A lightweight, command-line based interface to the clipboard.
 

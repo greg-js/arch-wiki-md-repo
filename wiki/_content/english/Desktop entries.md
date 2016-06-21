@@ -51,15 +51,33 @@ Following is an example of its structure with additional comments. The example i
 
 ```
 [Desktop Entry]
-Type=Application                          # Indicates the type as listed above
-Version=1.0                               # The version of the desktop entry specification to which this file complies
-Name=jMemorize                            # The name of the application
-Comment=Flash card based learning tool    # A comment which can/will be used as a tooltip
-Path=/opt/jmemorise                       # The path to the folder in which the executable is run
-Exec=jmemorize                            # The executable of the application.
-Icon=jmemorize                            # The name of the icon that will be used to display this entry
-Terminal=false                            # Describes whether this application needs to be run in a terminal or not
-Categories=Education;Languages;Java;      # Describes the categories in which this entry should be shown
+
+# The type as listed above
+Type=Application
+
+# The version of the desktop entry specification to which this file complies
+Version=1.0
+
+# The name of the application
+Name=jMemorize
+
+# A comment which can/will be used as a tooltip
+Comment=Flash card based learning tool
+
+# The path to the folder in which the executable is run
+Path=/opt/jmemorise
+
+# The executable of the application.
+Exec=jmemorize
+
+# The name of the icon that will be used to display this entry
+Icon=jmemorize
+
+# Describes whether this application needs to be run in a terminal or not
+Terminal=false
+
+# Describes the categories in which this entry should be shown
+Categories=Education;Languages;Java;
 
 ```
 

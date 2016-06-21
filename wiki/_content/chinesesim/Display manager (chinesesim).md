@@ -40,14 +40,14 @@
 	[http://enlightenment.org/](http://enlightenment.org/) || [entrance-git](https://aur.archlinux.org/packages/entrance-git/)
 
 *   [GDM](/index.php/GDM "GDM"): [GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") 显示管理器 。[http://projects.gnome.org/gdm/](http://projects.gnome.org/gdm/)[gdm](https://www.archlinux.org/packages/?name=gdm)
-*   [KDM](/index.php/KDM "KDM"): [KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")4 显示管理器 ([kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/))(已经停止开发).
+*   [KDM](/index.php/KDM "KDM"): [KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")4 显示管理器 ([kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/))(已经停止开发，请使用SDDM).
 *   [LightDM](/index.php/LightDM "LightDM"):Ubuntu 开发的 GDM 替代品，使用 WebKit。跨桌面的显示管理器，可以使用各种前端写的任何工具。[http://www.freedesktop.org/wiki/Software/LightDM](http://www.freedesktop.org/wiki/Software/LightDM)[lightdm](https://www.archlinux.org/packages/?name=lightdm)||[lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/)
 *   [LXDM](/index.php/LXDM "LXDM"): [LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)") 显示管理器 (独立于桌面环境) ([lxdm](https://www.archlinux.org/packages/?name=lxdm))
 *   **MDM** — MDM 显示管理器使用在Linux Mint, a fork of GDM 2.
 
 	[https://github.com/linuxmint/mdm](https://github.com/linuxmint/mdm) || [mdm-display-manager](https://aur.archlinux.org/packages/mdm-display-manager/)
 
-*   [SDDM](/index.php/SDDM "SDDM")：基于QML的显示管理器，在 Plasma5 之后替代 SDDM。[https://github.com/sddm/sddm](https://github.com/sddm/sddm)[sddm](https://www.archlinux.org/packages/?name=sddm)
+*   [SDDM](/index.php/SDDM "SDDM")：基于QML的显示管理器，在 Plasma5 之后替代 KDM，推荐搭配Plamsa5和LXQt使用。[https://github.com/sddm/sddm](https://github.com/sddm/sddm)[sddm](https://www.archlinux.org/packages/?name=sddm)
 *   [SLiM](/index.php/SLiM "SLiM"): 简单登录管理器 ([slim](https://www.archlinux.org/packages/?name=slim))
     **Warning:** slim登录管理器已经停止开发，不推荐使用
 

@@ -11,7 +11,22 @@
 
 ## 触摸板
 
-如果安装的是Gnome、KDE之外的轻量桌面管理器，需要额外安装[xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics)驱动触摸板，请参考[Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")。
+如果安装的是Gnome、KDE之外的轻量桌面管理器，需要额外安装[xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics)驱动触摸板。有些时候，触控板不能正确执行单击、双击及中键击，需要以下额外设置：
+
+ `/etc/X11/xorg.conf.d/70-synaptics.conf` 
+```
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+        Option "TapButton1" "1"
+        Option "TapButton2" "3"
+        Option "TapButton3" "2"
+EndSection
+
+```
+
+更多细节，请参考[Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")。
 
 ## 屏幕背光
 

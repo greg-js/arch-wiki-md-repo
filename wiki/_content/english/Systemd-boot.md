@@ -2,7 +2,7 @@
 
 It is simple to configure, but can only start EFI executables, such as the Linux kernel [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, the Windows Boot Manager, and such.
 
-**Warning:** systemd-boot simply provides a boot menu for EFISTUB kernels. In case you have issues booting EFISTUB kernels like in [FS#33745](https://bugs.archlinux.org/task/33745), you should use a boot loader which does not use EFISTUB, like [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") or [ELILO](/index.php/Boot_loaders#ELILO "Boot loaders").
+**Warning:** *systemd-boot* simply provides a boot menu for EFISTUB kernels. In case you have issues booting EFISTUB kernels like in [FS#33745](https://bugs.archlinux.org/task/33745), you should use a boot loader which does not use EFISTUB, like [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") or [ELILO](/index.php/Boot_loaders#ELILO "Boot loaders").
 
 ## Contents
 
@@ -32,18 +32,18 @@ It is simple to configure, but can only start EFI executables, such as the Linux
 1.  Make sure you are booted in UEFI mode.
 2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
 3.  Mount your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")(ESP) properly. `*esp*` is used to denote the mountpoint in this article.
-    **Note:** systemd-boot cannot load EFI binaries from other partitions. It is therefore recommended to mount your ESP to `/boot`. See [#Updating](#Updating) for more information and work-around, in case you want to separate `/boot` from the ESP.
+    **Note:** *systemd-boot* cannot load EFI binaries from other partitions. It is therefore recommended to mount your ESP to `/boot`. See [#Updating](#Updating) for more information and work-around, in case you want to separate `/boot` from the ESP.
 
 4.  Copy your kernel and initramfs onto that ESP.
-    **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted. If your efi partition is using automount, you may need to add vfat to a file in /etc/modules-load.d/ to ensure the current running kernel has the vfat module loaded at boot, before any kernel update happens that could replace the module for the currently running version making the mounting of /boot/efi impossible until reboot.
+    **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted. If your efi partition is using automount, you may need to add `vfat` to a file in `/etc/modules-load.d/` to ensure the current running kernel has the `vfat` module loaded at boot, before any kernel update happens that could replace the module for the currently running version making the mounting of `/boot/efi` impossible until reboot.
 
-5.  Finally, Type the following command to install systemd-boot: `# bootctl --path=*esp* install` It will copy the systemd-boot binary to your EFI System Partition (`*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/Boot/BOOTX64.EFI` - both of which are identical - on x64 systems) and add systemd-boot itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
+5.  Finally, Type the following command to install *systemd-boot*: `# bootctl --path=*esp* install` It will copy the *systemd-boot* binary to your EFI System Partition (`*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/Boot/BOOTX64.EFI` - both of which are identical - on x64 systems) and add *systemd-boot* itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
 ### Legacy boot
 
-**Warning:** This is not the recommended process
+**Warning:** This is not the recommended process.
 
-You can also successfully install systemd-boot if booted with a legacy OS. However, this requires that you later on tell your firmware to launch systemd-boot's EFI file on boot:
+You can also successfully install *systemd-boot* if booted with a legacy OS. However, this requires that you later on tell your firmware to launch *systemd-boot'*s EFI file on boot:
 
 *   you either have a working EFI shell somewhere;
 *   or your firmware interface provides you with a way of properly setting the EFI file that will be loaded at boot time.
@@ -54,7 +54,7 @@ If you can do so, the installation is easier: go into your EFI shell or your fir
 
 ### Updating
 
-systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) assumes that your EFI System Partition is mounted on `/boot`. Unlike the previous separate *gummiboot* package, which updated automatically on a new package release with a `post_install` script, updates of new systemd-boot versions are now handled manually by the user:
+*systemd-boot* (`man bootctl`, `man systemd-efi-boot-generator`) assumes that your EFI System Partition is mounted on `/boot`. Unlike the previous separate *gummiboot* package, which updated automatically on a new package release with a `post_install` script, updates of new *systemd-boot* versions are now handled manually by the user:
 
 ```
 # bootctl update
@@ -68,7 +68,7 @@ If the ESP is not mounted on `/boot`, the `--path=` option can pass it. For exam
 
 ```
 
-**Note:** This is also the command to use when migrating from *gummiboot*, before removing that package. If that package has already been removed, however, run `bootctl --path=*esp* install`
+**Note:** This is also the command to use when migrating from *gummiboot*, before removing that package. If that package has already been removed, however, run `bootctl --path=*esp* install`.
 
 ## Configuration
 
@@ -92,15 +92,15 @@ editor   0
 
 ```
 
-Note that the first 2 options can be changed in the boot menu itself, which will store them as EFI variables.
+**Note:** The first 2 options can be changed in the boot menu itself, which will store them as EFI variables.
 
 ### Adding boot entries
 
-**Note:** bootctl will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`). Where detected, entries will also automatically be generated for them as well. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the kernel, manual configuration entries must be created. If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
+**Note:** *bootctl* will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`). Where detected, entries will also automatically be generated for them as well. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the kernel, manual configuration entries must be created. If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
 
-**Tip:** You can find the PARTUUID for your Root partition with the command `blkid -s PARTUUID -o value /dev/sdxY`, where 'x' is the device letter and 'Y' is the partition number. This is required only for your Root partition, not `*esp*`.
+**Tip:** You can find the `PARTUUID` for your root partition with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only for your root partition, not `*esp*`.
 
-bootctl searches for boot menu items in `*esp*/loader/entries/*.conf` – each file found must contain exactly one boot entry. The possible options are:
+*bootctl* searches for boot menu items in `*esp*/loader/entries/*.conf` – each file found must contain exactly one boot entry. The possible options are:
 
 *   `title` – operating system name. **Required.**
 
@@ -110,7 +110,7 @@ bootctl searches for boot menu items in `*esp*/loader/entries/*.conf` – each f
 
 *   `efi` – EFI program to start, relative to your ESP (`*esp*`); e.g. `/vmlinuz-linux`. Either this or `linux` (see below) is **required.**
 
-*   `options` – command line options to pass to the EFI program or Kernel Boot Parameters. Optional, but you will need at least `initrd=*efipath*` and `root=*dev*` if booting Linux.
+*   `options` – command line options to pass to the EFI program or kernel boot parameters. Optional, but you will need at least `initrd=*efipath*` and `root=*dev*` if booting Linux.
 
 For Linux, you can specify `linux *path-to-vmlinuz*` and `initrd *path-to-initramfs*`; this will be automatically translated to `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 
@@ -126,11 +126,11 @@ initrd         /initramfs-linux.img
 options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw
 ```
 
-Please note in the example above that PARTUUID/PARTLABEL identifies a GPT partition, and differs from UUID/LABEL, which identifies a filesystem. Using the PARTUUID/PARTLABEL is advantageous because it is invariant (i.e. unchanging) if you reformat the partition with another filesystem, or if the /dev/sd* mapping changed for some reason. It is also useful if you do not have a filesystem on the partition (or use LUKS, which does not support LABELs).
+Please note in the example above that `PARTUUID`/`PARTLABEL` identifies a GPT partition, and differs from `UUID`/`LABEL`, which identifies a filesystem. Using the `PARTUUID`/`PARTLABEL` is advantageous because it is invariant (i.e. unchanging) if you reformat the partition with another filesystem, or if the `/dev/sd*` mapping changed for some reason. It is also useful if you do not have a filesystem on the partition (or use LUKS, which does not support `LABEL`s).
 
 #### LVM root installations
 
-**Warning:** Systemd-boot cannot be used without a separate `/boot` filesystem outside of LVM.
+**Warning:** *systemd-boot* cannot be used without a separate `/boot` filesystem outside of LVM.
 
 Here is an example for a root partition using [Logical Volume Management](/index.php/LVM "LVM"):
 
@@ -164,9 +164,9 @@ initrd /initramfs-linux.img
 options cryptdevice=UUID=<UUID>:<mapped-name> root=/dev/mapper/<mapped-name> quiet rw
 ```
 
-UUID is used in this example; PARTUUID should be able to replace the UUID, if so desired. You may also replace the /dev path with a regular UUID. Mapped-name is whatever you want it to be called. See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
+UUID is used in this example; `PARTUUID` should be able to replace the UUID, if so desired. You may also replace the `/dev` path with a regular UUID. `mapped-name` is whatever you want it to be called. See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
 
-If you are using LVM, your cryptdevice line will looks like this.
+If you are using LVM, your cryptdevice line will look like this:
 
  `*esp*/loader/entries/arch-encrypted-lvm.conf` 
 ```
@@ -266,10 +266,10 @@ To make Windows 8.X and above respect your boot order, you must enter a Windows 
 6.  Under the *Scripts* tab, choose the *Add* button
 7.  Click *Browse* and select the batch file you created in step 4.
 
-Alternatively, you can make the default Windows boot loader load systemd-boot instead. In an administrator command prompt in Windows, one can change this entry as follows:
+Alternatively, you can make the default Windows boot loader load *systemd-boot* instead. In an administrator command prompt in Windows, one can change this entry as follows:
 
 ```
-bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
+# bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 
 ```
 

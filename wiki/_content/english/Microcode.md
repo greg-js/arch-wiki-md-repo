@@ -6,7 +6,9 @@ Users of CPUs belonging to the Intel Haswell and Broadwell processor families in
 
 *   [1 Installation](#Installation)
 *   [2 Enabling Intel microcode updates](#Enabling_Intel_microcode_updates)
-    *   [2.1 Grub](#Grub)
+    *   [2.1 GRUB](#GRUB)
+        *   [2.1.1 Automatic method](#Automatic_method)
+        *   [2.1.2 Manual method](#Manual_method)
     *   [2.2 systemd-boot](#systemd-boot)
     *   [2.3 EFI boot stub / EFI handover](#EFI_boot_stub_.2F_EFI_handover)
     *   [2.4 rEFInd](#rEFInd)
@@ -29,16 +31,20 @@ Microcode must be loaded by the bootloader. Because of the wide variability in u
 
 These updates must be enabled by adding `/boot/intel-ucode.img` as the **first initrd in the bootloader config file**. This is in addition to the normal initrd file. See below for instructions for common bootloaders.
 
-### Grub
+### GRUB
 
-*grub-mkconfig* will automatically detect the microcode update and configure grub appropriately. After installing the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package, users are directed to regenerate the grub config to activate loading the microcode update by running:
+#### Automatic method
+
+*grub-mkconfig* will automatically detect the microcode update and configure [GRUB](/index.php/GRUB "GRUB") appropriately. After installing the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package, users are directed to regenerate the GRUB config to activate loading the microcode update by running:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
-Alternatively, users that manage their grub config file manually can add `/intel-ucode.img` or `/boot/intel-ucode.img` to `grub.cfg` as follows:
+#### Manual method
+
+Alternatively, users that manage their GRUB config file manually can add `/intel-ucode.img` or `/boot/intel-ucode.img` to `grub.cfg` as follows:
 
 ```
 [...]
@@ -50,7 +56,7 @@ Alternatively, users that manage their grub config file manually can add `/intel
 
 Repeat it for each menu entry.
 
-**Warning:** This file will automatically be overwritten by `/usr/bin/grub-mkconfig` during certain updates negating the changes. It is strongly recommended to use the configuration directory in `/etc/grub.d` to manage your grub configuration needs.
+**Warning:** This file will automatically be overwritten by `/usr/bin/grub-mkconfig` during certain updates negating the changes. It is strongly recommended to use the configuration directory in `/etc/grub.d/` to manage your GRUB configuration needs.
 
 ### systemd-boot
 

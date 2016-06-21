@@ -44,6 +44,8 @@ Always verify the correct path to the .efi file. Also, adjust the device boot or
 
 #### Change the OS boot loader path to match the hard coded path
 
+**Warning:** If you are trying to boot on a the mSATA port (m.2 SSD), this is the only working method.
+
 **Warning:** This method is not recommended, as it will create conflicts in a dual boot setup with Microsoft Windows. Also, everytime you install GRUB, you have to remember to copy it to the hard coded path.
 
 Change the UEFI application path of the OS boot loader to that hard coded path. On your ESP (see [UEFI#EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI"); e.g. with the $MOUNTPOINT `/boot/efi`), do (e.g. with [GRUB](/index.php/GRUB "GRUB") entry `grub_archlinux`):

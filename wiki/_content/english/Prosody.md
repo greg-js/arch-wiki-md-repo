@@ -42,6 +42,8 @@ Prosody has optional depedencies that although not strictly required for its ope
 	Allow Prosody to use a MySQL/mariadb/Postgresql backend for better scaling and performance.
 *Requires:* [luadbi](https://aur.archlinux.org/packages/luadbi/)
 
+**Warning:** If enabled, Prosody will store passwords in plaintext within the database by default. It is recommended to use a hashed authentication module such as [mod_auth_internal_hashed](http://prosody.im/doc/modules/mod_auth_internal_hashed)
+
 	Better Connection Scaling (Recommended)
 
 	Allow Prosody to use [libevent](http://www.monkey.org/~provos/libevent/) to handle a greater number of simultaneous connections.

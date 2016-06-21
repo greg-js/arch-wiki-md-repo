@@ -16,7 +16,7 @@
 
 The stable version is available as [snapd](https://aur.archlinux.org/packages/snapd/).
 
-Installing it will install the `snapd` daemon as well as *snap-confine*, which mounts, confines and launches snap packages.
+Installing it will install the `snapd` daemon as well as *snap-confine*, which mounts, confines and launches snap packages. Note that [snap-confine](https://github.com/snapcore/snap-confine) relies on an [AppArmor](/index.php/AppArmor "AppArmor") enabled kernel.
 
 **Tip:** `snapd` installs a script in `/etc/profile.d/` to export the paths of binaries installed with the snapd package and desktop entries. Reboot once to make this change take effect.
 
@@ -56,9 +56,9 @@ Uninstalling the [snapd](https://aur.archlinux.org/packages/snapd/) package will
 
 ```
 # find /etc/systemd/system -name "snap-*.mount" -delete
-# find /etc/systemd/system -name "snap*.service" -delete
+# find /etc/systemd/system -name "snap.*.service" -delete
 # find /etc/systemd/system/multi-user.target.wants -name "snap-*.mount" -delete
-# find /etc/systemd/system/multi-user.target.wants -name "snap*.service" -delete
+# find /etc/systemd/system/multi-user.target.wants -name "snap.*.service" -delete
 
 ```
 

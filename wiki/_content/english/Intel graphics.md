@@ -14,6 +14,8 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 *   [3 Loading](#Loading)
     *   [3.1 Enable early KMS](#Enable_early_KMS)
 *   [4 Module-based Powersaving Options](#Module-based_Powersaving_Options)
+    *   [4.1 RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_.28enable_rc6.29)
+    *   [4.2 Framebuffer compression (enable_fbc)](#Framebuffer_compression_.28enable_fbc.29)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Tear-free video](#Tear-free_video)
     *   [5.2 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_.28VSYNC.29)
@@ -138,9 +140,29 @@ options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1 semaphores=1
 
 ```
 
+### RC6 sleep modes (enable_rc6)
+
 You can experiment with higher values for `enable_rc6`, but your GPU may not support them or the activation of the other options [[3]](https://wiki.archlinux.org/index.php?title=Talk:Intel_Graphics&oldid=327547#Kernel_Module_options).
 
-Framebuffer compression, for example, may be unreliable or unavailable on Intel GPU generations before Sandy Bridge (generation 6). This results in messages logged to the system journal similar to this one:
+The available `enable_rc6` values are a bitmask with bit values RC6=1, RC6p=2, RC6pp=3[[4]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/intel_pm.c#n34) - where "RC6p" and "RC6pp" are lower power states.
+
+To confirm the current running RC6 level, you can look in sysfs:
+
+```
+# cat /sys/class/drm/card0/power/rc6_enable
+
+```
+
+... if the value read is a lower number than expected, the other RC6 level are probably not supported. Passing `drm.debug=0xe` will add DRM debugging information to the kernel log - possibly including a line like this:
+
+```
+[drm:sanitize_rc6_option] Adjusting RC6 mask to 1 (requested 7, valid 1)
+
+```
+
+### Framebuffer compression (enable_fbc)
+
+Framebuffer compression may be unreliable or unavailable on Intel GPU generations before Sandy Bridge (generation 6). This results in messages logged to the system journal similar to this one:
 
 ```
 kernel: drm: not enough stolen space for compressed buffer, disabling.
@@ -214,7 +236,7 @@ If that does not work, try disabling TV1 or VGA1 instead of SVIDEO-1.
 
 ### H.264 decoding on GMA 4500
 
-The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package provides MPEG-2 decoding only for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[4]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[5]](http://www.emmolution.org/?p=192&cpage=1#comment-12292).
+The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package provides MPEG-2 decoding only for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[5]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[6]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done.
 
 ### Setting brightness and gamma
 
@@ -309,17 +331,25 @@ This issue is covered on the [Xrandr page](/index.php/Xrandr#Adding_undetected_r
 
 Kernel 3.9 contains a new default "Automatic" mode for the "Broadcast RGB" property in the Intel driver. It is almost equivalent to "Limited 16:235" (instead of the old default "Full") whenever an HDMI/DP output is in a [CEA mode](http://raspberrypi.stackexchange.com/questions/7332/what-is-the-difference-between-cea-and-dmt). If a monitor does not support signal in limited color range, it will cause weathered colors.
 
-**Note:** Some monitors/TVs support both color range. In that case an option often known as *Black Level* may need to be adjusted to make them handle the signal correctly.
+**Note:** Some monitors/TVs support both color range. In that case an option often known as *Black Level* may need to be adjusted to make them handle the signal correctly. Some TVs can handle signal in limited range only. Setting Broadcast RGB to "Full" will cause color clipping. You may need to set it to "Limited 16:235" manually to avoid the clipping.
 
-One can force mode e.g. `xrandr --output <HDMI> --set "Broadcast RGB" "Full"` (replace `<HDMI>` with the appropriate output device, verify by running `xrandr`). You can add it into your `.xprofile`, make it executable to run the command before it will start the graphical mode.
+One can force mode e.g. `xrandr --output <HDMI> --set "Broadcast RGB" "Full"` (replace `<HDMI>` with the appropriate output device, verify by running `xrandr`).
 
-**Note:** Some TVs can handle signal in limited range only. Setting Broadcast RGB to "Full" will cause color clipping. You may need to set it to "Limited 16:235" manually to avoid the clipping.
+This can be made permanent with an `xorg.conf.d` configuration file. [[7]](ftp://www.x.org/pub/X11R7.5/doc/man/man4/intel.4.html)
 
-Also there are other related problems which can be fixed editing GPU registers. More information can be found [[6]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[7]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
-
-Unfortunately, the Intel driver does not support setting the color range through an `xorg.conf.d` configuration file.
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   ...
+   Option      "BROADCAST_RGB" "0"
+EndSection
+```
 
 A [bug report](https://bugzilla.kernel.org/show_bug.cgi?id=94921) is filed and a patch can be found in the attachment.
+
+Also there are other related problems which can be fixed editing GPU registers. More information can be found [[8]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[9]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
 
 ### Backlight is not adjustable
 

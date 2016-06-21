@@ -14,7 +14,8 @@
     *   [3.1 Starting manually](#Starting_manually)
 *   [4 Back-end configuration](#Back-end_configuration)
     *   [4.1 ALSA](#ALSA)
-        *   [4.1.1 ALSA/dmix without grabbing hardware device](#ALSA.2Fdmix_without_grabbing_hardware_device)
+        *   [4.1.1 Expose PulseAudio sources, sinks and mixers to ALSA](#Expose_PulseAudio_sources.2C_sinks_and_mixers_to_ALSA)
+        *   [4.1.2 ALSA/dmix without grabbing hardware device](#ALSA.2Fdmix_without_grabbing_hardware_device)
     *   [4.2 OSS](#OSS)
         *   [4.2.1 ossp](#ossp)
         *   [4.2.2 padsp wrapper](#padsp_wrapper)
@@ -61,7 +62,7 @@ Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseau
 
 ### Front-ends
 
-There is a number of front-ends available for controlling the PulseAudio daemon:
+There are a number of front-ends available for controlling the PulseAudio daemon:
 
 *   GTK GUIs: [paprefs](https://www.archlinux.org/packages/?name=paprefs) and [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
 *   Volume control via mapped keyboard keys: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/)
@@ -178,6 +179,57 @@ To prevent applications from using ALSA's OSS emulation and bypassing PulseAudio
 # rmmod snd_pcm_oss
 
 ```
+
+#### Expose PulseAudio sources, sinks and mixers to ALSA
+
+Although [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) contains the necessary configuration file to allow ALSA applications to use PulseAudio's default device, ALSA's `pulse` plugin is more versatile than that:
+
+ `~/.asoundrc (or /etc/asound.conf)` 
+```
+# Create an alsa input/output using specific PulseAudio sources/sinks
+ pcm.pulse-example1 {
+     type pulse
+     device "my-combined-sink" # name of a source or sink
+     fallback "pulse-example2" # if combined not available
+ }
+
+ pcm.pulse-example2 {
+     type pulse
+     device "other-sound-card" # name of a source or sink
+     # example: device "alsa_output.pci-0000_00_1b.0.analog-stereo"
+ }
+
+ # Create an alsa mixer using specific PulseAudio sources/sinks
+ # these can be tested with "alsamixer -D pulse-example3"
+ ctl.pulse-example3 {
+     type pulse
+     device "my-output" # name of source or sink to control
+
+     # example: always control the laptop speakers:
+     # device "alsa_output.pci-0000_00_1b.0.analog-stereo"
+     fallback "pulse-example4" # supports fallback too
+ }
+
+ # Mixers also can control a specific source and sink, separately:
+ ctl.pulse-example4 {
+     type pulse
+     sink "my-usb-headphones"
+     source "my-internal-mic"
+
+     # example: output to HDMI, record using internal
+     sink "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1"
+     source "alsa_input.pci-0000_00_1b.0.analog-stereo"
+ }
+
+ # These can override the default mixer (example: for pnmixer integration)
+ ctl.!default {
+     type pulse
+     sink "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1"
+     source "alsa_input.pci-0000_00_1b.0.analog-stereo"
+ }
+```
+
+The [soure code](http://git.alsa-project.org/?p=alsa-plugins.git;a=tree;f=pulse;hb=HEAD) can be read to know all available options.
 
 #### ALSA/dmix without grabbing hardware device
 

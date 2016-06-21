@@ -52,7 +52,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [Netcup](https://www.netcup.de/) | 2012.11.xx | KVM | Germany (DE) | (German language site only) |
 | [OnePoundWebHosting](https://www.onepoundwebhosting.co.uk/) | 2014.01 | Xen PV, Xen HVM | United Kingdom (UK) | They are a registrar too. Unable to verify server locations. |
 | [OVH](https://www.ovh.com/us/vps/) | Latest | KVM | France, Canada |
-| [PacmanVPS](https://www.pacmanvps.com/) | Latest | KVM | Poland (PL) | Support for any kernel. Ready to use template or install manually from ISO in VNC console. |
+| [PacmanVPS](https://www.pacmanvps.com/) | [Latest](https://panel.pacmanvps.com/machines/new) | KVM | Canada (CA), Poland (PL) | Support for any kernel. Ready to use template or install manually from ISO in VNC console. |
 | [Proplay](https://www.proplay.de/) | Latest | OpenVZ, KVM | Germany (DE) | (German language site only) |
 | [Rackspace Cloud](https://www.rackspace.com/cloud/servers) | 2013.6 | Xen | [Multiple international locations](https://www.rackspace.com/whyrackspace/network/datacenters/) | Billed per hour. Use their "next gen" VPSes (using the mycloud.rackspace.com panel); the Arch image on the first gen Rackspace VPSes is out of date. |
 | [RamHost.us](http://www.ramhost.us/) | [2013.05.01](http://www.ramhost.us/?page=news) | OpenVZ, KVM | Los Angeles, US-CA; Great Britain (GB); Atlanta, US-GA; Germany (DE) | You can request a newer ISO on RamHost's IRC network. |
@@ -93,6 +93,9 @@ This process (with minor modification) also works to migrate existing Arch insta
     *   SSH is not strictly required, but rsync over SSH is the method used here.
 *   A VPS running any distribution, with `rsync` and a working SSH server
     *   Its architecture (x86_64 or i686) does not matter as long as the OpenVZ installation can support your target architecture.
+
+**Note:** Since Arch Linux uses symlinks for `/bin`, `/sbin`, `/lib` and `/lib64`, it is recommended to use a distribution that does the same to avoid issues while installing Arch Linux with `rsync`. An example of such a distribution is Fedora 23.
+
 *   OpenVZ's serial console feature (usually accessible via your provider's control panel)
     *   Without this, any network configuration for the target VPS will have to be done immediately after the "Build" step below.
 
@@ -108,9 +111,10 @@ As root, build the installation (optionally replacing `build` with your preferre
 
 Other tweaks for the `pacstrap` command:
 
-*   `-C custom-pacman-config.conf` - Use a custom pacman configuration file. By default, pacstrap builds according to your local pacman.conf. This determines the architecture (i686 or x86_64) of the build, the mirror list, etc.
-*   `-B` - Prevent pacstrap from copying your system's pacman keyring to the new build. If you use this option, you will need to run `pacman-key --init` and `pacman-key --populate archlinux` in the [Configuration](#Configuration) step to set up the keyring.
-*   `-M` - Prevent pacstrap from copying your system's pacman mirror list to the new build.
+*   `-C custom-pacman-config.conf` - Use a custom pacman configuration file. By default, `pacstrap` builds according to your local pacman.conf. This determines the architecture (i686 or x86_64) of the build, the mirror list, etc.
+*   `-G` - Prevent `pacstrap` from copying your system's pacman keyring to the new build. If you use this option, you will need to run `pacman-key --init` and `pacman-key --populate archlinux` in the [Configuration](#Configuration) step to set up the keyring.
+*   `-M` - Prevent `pacstrap` from copying your system's pacman mirror list to the new build.
+*   You can pass a list of packages to `pacstrap` to add them to your install, instead of the default `base` group. For example: `pacstrap -cd build base openssh dnsutils gnu-netcat traceroute vim`
 
 ##### Replacing everything on the VPS with the Arch build
 
@@ -132,6 +136,24 @@ At minimum, only the `-a` (preserve timestamps, permissions, etc.), `-x` (do not
 1.  Reboot the VPS externally (using your provider's control panel, for example).
 2.  Using OpenVZ's serial console feature, configure the [network](/index.php/Network "Network") and [basic system settings](/index.php/Installation_guide#Configure_the_system "Installation guide") (ignoring fstab generation and arch-chroot steps).
     *   If you do not have access to the serial console feature, you will need to preconfigure your network settings before synchronizing Arch to the VPS.
+    *   On some VPS configuration you won't have a gateway to connect to, here is an example [netctl](/index.php/Netctl "Netctl") configuration for this setup. It configures static IP addresses and default routes on venet0 and uses Google Public DNS.
+
+ `/etc/netctl/venet` 
+```
+Description='VPS venet connection'
+Interface=venet0
+Connection=ethernet
+
+IP=static
+Address=('192.0.2.42/24')
+Routes=('default')
+
+IP6=static
+Address6=('2001:db8::1234:5678/128')
+Routes6=('default')
+
+DNS=('2001:4860:4860::8888' '2001:4860:4860::8844' '8.8.8.8' '8.8.4.4')
+```
 
 ### Xen
 

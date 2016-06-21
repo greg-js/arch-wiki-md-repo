@@ -59,7 +59,7 @@ Whilst having a local backup in `/etc/.git` is a good first step, etckeeper can 
 First, edit `etc/.git` and add your remote Github repository:
 
 ```
-# git remote add origin [https://github.com/user/repo.git](https://github.com/user/repo.git)
+# git remote add origin *https://github.com/user/repo.git*
 
 ```
 
@@ -67,17 +67,14 @@ Next, a hook must be used or configured to push.
 
 #### Using etckeeper provided hook
 
-Edit the `PUSH_REMOTE` option in `/etc/etckeeper/etckeeper.conf`, with the name of the remotes you want etckeeper to push to. Multiple remotes can be added, separated with spaces.
+Edit the `PUSH_REMOTE` option in `/etc/etckeeper/etckeeper.conf`, with the name of the remote repository you want etckeeper to push to. For example:
 
- `/etc/etckeeper/etckeeper.conf` 
 ```
-# [...]
+PUSH_REMOTE="*origin*"
 
-# To push each commit to a remote, put the name of the remote here.
-# (eg, "origin" for git). Space-separated lists of multiple remotes
-# also work (eg, "origin gitlab github" for git).
-PUSH_REMOTE="origin"
 ```
+
+Multiple remote repositories can be added separated with spaces.
 
 #### Through a custom hook
 

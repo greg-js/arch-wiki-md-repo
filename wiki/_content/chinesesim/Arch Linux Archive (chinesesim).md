@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Arch_Linux_Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-11，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=408495)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_Linux_Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-20，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=438253)可以查看翻译后英文页面的改动。
 
 Arch Linux 存档（**A**rch **L**inux **Archive**，*简称 ala*），以前称为 *Arch Linux 回滚机器（Arch Linux Rollback Machine*，*简称 ARM*），保存了 *官方仓库快照*、*iso 镜像* 和 *引导程序包* 的历史版本。
 
@@ -15,18 +15,10 @@ Arch Linux 存档（**A**rch **L**inux **Archive**，*简称 ala*），以前称
     *   [2.1 /repos](#.2Frepos)
     *   [2.2 /packages](#.2Fpackages)
     *   [2.3 /iso](#.2Fiso)
-*   [3 agetpkg](#agetpkg)
-    *   [3.1 Download a previous version of ferm package](#Download_a_previous_version_of_ferm_package)
-    *   [3.2 Download xterm version 296](#Download_xterm_version_296)
-    *   [3.3 List all zsh versions](#List_all_zsh_versions)
-    *   [3.4 Install all gvfs packages in version 1.26.0 release 3](#Install_all_gvfs_packages_in_version_1.26.0_release_3)
-    *   [3.5 Download all pwgen packages](#Download_all_pwgen_packages)
-*   [4 常见问题](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98)
-    *   [4.1 如何降级某个包](#.E5.A6.82.E4.BD.95.E9.99.8D.E7.BA.A7.E6.9F.90.E4.B8.AA.E5.8C.85)
-    *   [4.2 如何恢复所有包到指定日期](#.E5.A6.82.E4.BD.95.E6.81.A2.E5.A4.8D.E6.89.80.E6.9C.89.E5.8C.85.E5.88.B0.E6.8C.87.E5.AE.9A.E6.97.A5.E6.9C.9F)
-*   [5 源码](#.E6.BA.90.E7.A0.81)
-*   [6 未来计划](#.E6.9C.AA.E6.9D.A5.E8.AE.A1.E5.88.92)
-*   [7 历史](#.E5.8E.86.E5.8F.B2)
+*   [3 常见问题](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98)
+    *   [3.1 如何降级某个包](#.E5.A6.82.E4.BD.95.E9.99.8D.E7.BA.A7.E6.9F.90.E4.B8.AA.E5.8C.85)
+    *   [3.2 如何恢复所有包到指定日期](#.E5.A6.82.E4.BD.95.E6.81.A2.E5.A4.8D.E6.89.80.E6.9C.89.E5.8C.85.E5.88.B0.E6.8C.87.E5.AE.9A.E6.97.A5.E6.9C.9F)
+*   [4 历史](#.E5.8E.86.E5.8F.B2)
 
 ## 位置
 
@@ -35,12 +27,15 @@ Arch Linux 存档目前位于 [https://archive.archlinux.org/](https://archive.a
 此前的下列网址即将关闭，建议不要再使用：
 
 *   [http://seblu.net/a/archive](http://seblu.net/a/archive)
-*   [ftp://seblu.net/archlinux/archive](ftp://seblu.net/archlinux/archive)
+*   [http://ala.seblu.net/](http://ala.seblu.net/)
 
 下列网址已关闭：
 
 *   [http://seblu.net/a/arm](http://seblu.net/a/arm)
 *   [ftp://seblu.net/archlinux/arm](ftp://seblu.net/archlinux/arm)
+*   [ftp://seblu.net/archlinux/archive](ftp://seblu.net/archlinux/archive)
+
+[这里](https://github.com/seblu/archivetools) 的源代码可以帮助您假设自己的服务器。
 
 ## 目录
 
@@ -136,7 +131,7 @@ repos
 
 ```
 
-你可以使用“魔法目录”[.all](https://archive.archlinux.org/packages/.all) 按包名访问所有包。In a nutshell, all versions of each package in one flat directory. No clear-text listing allowed here.
+你可以使用“魔法目录”[.all](https://archive.archlinux.org/packages/.all) 按包名访问所有包。这是一个没有子目录的结构。
 
 ```
 ├── packages
@@ -149,11 +144,22 @@ repos
 
 ```
 
-An lightweight index, named [index.0.xz](https://archive.archlinux.org/packages/.all/index.0.xz) is available to list all package in once.
+可以下载一个压缩的索引文件，包含完整的软件包列表 [index.0.xz](https://archive.archlinux.org/packages/.all/index.0.xz).
+
+ `$ curl https://archive.archlinux.org/packages/.all/index.0.xz | unxz` 
+```
+0ad-a14-1-i686
+0ad-a14-1-x86_64
+0ad-a14-2-i686
+...
+zziplib-0.13.62-1-x86_64
+zziplib-0.13.62-2-i686
+zziplib-0.13.62-2-x86_64
+```
 
 ### /iso
 
-The [iso](https://archive.archlinux.org/iso) directory contains official ISO images and bootstrap tarballs sorted by release date.
+[iso](https://archive.archlinux.org/iso) 目录按发布日期，保存官方 ISO 镜像和启动压缩包。
 
 ```
 ├── 2014.09.03
@@ -177,56 +183,13 @@ The [iso](https://archive.archlinux.org/iso) directory contains official ISO ima
 
 ```
 
-## agetpkg
-
-[agetpkg](https://www.archlinux.org/packages/?name=agetpkg) is a command line tool used to quickly list/get/install packages stored in the Archive.
-
-##### Download a previous version of ferm package
-
-```
-agetpkg ferm
-
-```
-
-##### Download xterm version 296
-
-```
-agetpkg ^xterm 296
-
-```
-
-##### List all zsh versions
-
-```
-agetpkg -l zsh$
-
-```
-
-##### Install all gvfs packages in version 1.26.0 release 3
-
-```
-agetpkg -i gvfs 1.26.0 3
-
-```
-
-##### Download all pwgen packages
-
-```
-agetpkg -g -a pwgen
-
-```
-
 ## 常见问题
 
 ### 如何降级某个包
 
-You can use [#agetpkg](#agetpkg) to easily download a specific package version from the Archive.
+在 [/packages](#.2Fpackages) 中找到需要的软件包，下载并通过 `pacman -U` 安装.
 
-Or you can do it manually:
-
-1.  Run your favorite internet browser and go to [http://ala.seblu.net/packages](http://ala.seblu.net/packages);
-2.  Go to the package you need and download it;
-3.  Run `pacman -U *pkgname*.pkg.tar.xz` as root.
+[Downgrading packages#Automation](/index.php/Downgrading_packages#Automation "Downgrading packages") 包含了可以简化这个过程的工具。
 
 ### 如何恢复所有包到指定日期
 
@@ -265,21 +228,11 @@ Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 ```
 
-**注意:** 混用归档和更新镜像很不安全。万一降级失败，In case of download failure, you can fall-back on an upstream package and you will have packages not from the same epoch as the rest of the system.
-
-## 源码
-
-*   [archivetools](https://github.com/seblu/archivetools) -- Software to run an Archive server
-*   [agetpkg](https://github.com/seblu/agetpkg) -- Software to easy downgrade package from the Archive
-
-## 未来计划
-
-*   Move to official infrastructure.
-*   Automatic clean-up after a defined amount of time?
-*   Archive more stuff?
+**注意:** 混用归档和更新镜像很不安全。万一降级失败，可能使用的是上游软件包，会出现软件包的 epoch 和系统其它软件不一致的现象。
 
 ## 历史
 
-*   New URL and closing the old ARM hierarchy on 2015-10-13\. A new software, agetpkg was introduced.
 *   The original ARM (*Archlinux Rollback Machine*) was closed on 2013-08-18 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360).
 *   The new one is hosted on [seblu.net](http://seblu.net) since 2013-08-31.
+*   New URL and closing the old ARM hierarchy on 2015-10-13\. A new software, [agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) was introduced.
+*   Moved to [archive.archlinux.org](https://archive.archlinux.org) on 2015-12-19.[[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2015-December/027635.html)

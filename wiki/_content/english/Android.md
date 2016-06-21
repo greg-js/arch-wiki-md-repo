@@ -352,7 +352,7 @@ To build any version of Android, you need to install these packages:
 
 *   64-bit systems only: [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline)
 
-*   AUR Packages 32-bit and 64-bit systems: [libtinfo](https://aur.archlinux.org/packages/libtinfo/) [libtinfo-5](https://aur.archlinux.org/packages/libtinfo-5/) [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
+*   AUR Packages 32-bit and 64-bit systems: [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
 
 *   AUR Packages 64-bit systems only: [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
 

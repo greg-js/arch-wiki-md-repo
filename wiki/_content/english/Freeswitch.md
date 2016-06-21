@@ -30,9 +30,9 @@ Startup options are configured in /etc/conf.d/freeswitch.conf. You may wish to a
 
 FreeSWITCH can be started with
 
- `rc.d start freeswitch` 
+ `systemctl start freeswitch.service` 
 
-To start FreeSWITCH upon each boot, add "freeswitch" to DAEMONS in /etc/rc.conf if using the default archlinux default init system. If using [Systemd](/index.php/Systemd "Systemd") or [Runit](/index.php/Runit "Runit"), add to your running service via their provided methods. You'll need to use the -nc and -nf options to the freeswitch command line to keep it running in the foreground as supervisors expect.
+To start FreeSWITCH upon each boot, enable freeswitch.service with `systemctl enable freeswitch.service`. You'll need to use the -nc and -nf options to the freeswitch command line to keep it running in the foreground as supervisors expect.
 
 ## Testing
 

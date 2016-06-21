@@ -98,8 +98,4 @@
 *   Set up status backup checking script (ask Florian, simple find command) on vostok
 
 *   Set up orion
-    *   Set up sources and repos
-        *   sources are a part of the repos (currently split to a different box for space and bandwidth reasons)
-    *   Set up web access to repos (and sources)
-        *   Limit access to the repos to the lastsync file only
     *   Migrate archive from seblu's server

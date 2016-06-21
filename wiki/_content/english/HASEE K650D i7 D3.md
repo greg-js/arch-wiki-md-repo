@@ -11,7 +11,22 @@ The HASEE K650D-i7-D3 is a powerful laptop, on which Arch-Linux runs fine. For a
 
 ## Touchpad synaptics
 
-[xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) should be installed for a light-weight window manager (but not Gnome or KDE). See [Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
+[xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) should be installed for a light-weight window manager (but not Gnome or KDE). In some cases, addition configuration is necessary for single-click, double-click and middle-click:
+
+ `/etc/X11/xorg.conf.d/70-synaptics.conf` 
+```
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+        Option "TapButton1" "1"
+        Option "TapButton2" "3"
+        Option "TapButton3" "2"
+EndSection
+
+```
+
+For details, see [Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 ## Backlight
 

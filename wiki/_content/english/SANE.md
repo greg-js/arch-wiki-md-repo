@@ -87,7 +87,7 @@ If the backend of your scanner is not part of the sane package (such as hpaio.co
 
 Many frontends exist for SANE, a non-exhaustive list of which can be found on the [sane-project website](http://www.sane-project.org/sane-frontends.html). Another way to find them is to use `pacman` to [search the repositories](/index.php/Pacman#Querying_package_databases "Pacman") for keywords such as "sane" or "scanner".
 
-*   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — A GTK2-based GUI to produce PDFs, TIFFs or DjVus from scanned documents. It is also able to apply OCR in the process using different engines. Depends on a few Perl packages to build of which some are in the [AUR](/index.php/AUR "AUR") as well.
+*   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — A GTK2-based GUI to produce PDFs, TIFFs or DjVus from scanned documents. It is also able to apply OCR in the process using different engines.
 
 	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://aur.archlinux.org/packages/gscan2pdf/)
 
@@ -160,7 +160,7 @@ If you get an "Invalid argument" error with xsane or another sane front-end, thi
 
 #### Missing firmware file
 
-No firmware file was provided for the used scanner (see above for details).
+No firmware file was provided for the used scanner (see [#Firmware](#Firmware) for details).
 
 #### Wrong firmware file permissions
 

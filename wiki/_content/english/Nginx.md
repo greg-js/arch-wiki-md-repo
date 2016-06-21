@@ -29,15 +29,17 @@
     *   [4.2 Create necessary directories](#Create_necessary_directories)
     *   [4.3 Populate the chroot](#Populate_the_chroot)
     *   [4.4 Modify nginx.service to start chroot](#Modify_nginx.service_to_start_chroot)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Configuration validation](#Configuration_validation)
-    *   [5.2 Accessing local IP redirects to localhost](#Accessing_local_IP_redirects_to_localhost)
-    *   [5.3 Error: The page you are looking for is temporarily unavailable. Please try again later. (502 Bad Gateway)](#Error:_The_page_you_are_looking_for_is_temporarily_unavailable._Please_try_again_later._.28502_Bad_Gateway.29)
-    *   [5.4 Error: No input file specified](#Error:_No_input_file_specified)
-    *   [5.5 Error: "File not found" in browser or "Primary script unknown" in log file](#Error:_.22File_not_found.22_in_browser_or_.22Primary_script_unknown.22_in_log_file)
-    *   [5.6 Error: chroot: '/usr/sbin/nginx' No such file or directory](#Error:_chroot:_.27.2Fusr.2Fsbin.2Fnginx.27_No_such_file_or_directory)
-    *   [5.7 Alternative script for systemd](#Alternative_script_for_systemd)
-*   [6 See also](#See_also)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Running unprivileged using systemd](#Running_unprivileged_using_systemd)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Configuration validation](#Configuration_validation)
+    *   [6.2 Accessing local IP redirects to localhost](#Accessing_local_IP_redirects_to_localhost)
+    *   [6.3 Error: The page you are looking for is temporarily unavailable. Please try again later. (502 Bad Gateway)](#Error:_The_page_you_are_looking_for_is_temporarily_unavailable._Please_try_again_later._.28502_Bad_Gateway.29)
+    *   [6.4 Error: No input file specified](#Error:_No_input_file_specified)
+    *   [6.5 Error: "File not found" in browser or "Primary script unknown" in log file](#Error:_.22File_not_found.22_in_browser_or_.22Primary_script_unknown.22_in_log_file)
+    *   [6.6 Error: chroot: '/usr/sbin/nginx' No such file or directory](#Error:_chroot:_.27.2Fusr.2Fsbin.2Fnginx.27_No_such_file_or_directory)
+    *   [6.7 Alternative script for systemd](#Alternative_script_for_systemd)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -91,15 +93,17 @@ The maximum connections nginx will accept is given by `max_clients = worker_proc
 
 #### Running under different user
 
-By default nginx runs as user `nobody`. To run it as another user, change the `user` line in `nginx.conf`:
+By default, [nginx](https://www.archlinux.org/packages/?name=nginx) runs the master process as `root` and worker processes as user `http`. To run worker processes as another user, change the `user` directive in `nginx.conf`:
 
  `/etc/nginx/nginx.conf` 
 ```
-user *myuser* *mygroup*; # e.g. http
+user *user* [*group*];
 
 ```
 
-Nginx should now run as user `myuser` and under group `mygroup`. If the group is omitted, a group whose name equals that of user is used.
+If the group is omitted, a group whose name equals that of *user* is used.
+
+**Tip:** It is also possible to run nginx without anything running as `root` using [systemd](/index.php/Systemd "Systemd"). See [#Running_unprivileged_using_systemd](#Running_unprivileged_using_systemd).
 
 #### Server blocks
 
@@ -690,6 +694,67 @@ If you do not remove the non-chrooted nginx installation, you may want to make s
 # ps -C nginx | awk '{print $1}' | sed 1d | while read -r PID; do ls -l /proc/$PID/root; done
 
 ```
+
+## Tips and tricks
+
+#### Running unprivileged using [systemd](/index.php/Systemd "Systemd")
+
+[Edit nginx.service](/index.php/Systemd#Editing_provided_units "Systemd") and set the `User=` and optionally `Group=` options under `[Service]`:
+
+ `/etc/systemd/system/nginx.service.d/user.conf` 
+```
+[Service]
+User=*user*
+Group=*group*
+```
+
+**Tip:** See [systemd.exec(5)](http://www.freedesktop.org/software/systemd/man/systemd.exec.html#User=) for more options of confinement.
+
+Then we need to ensure that `*user*` has access to everything it needs:
+
+	Port
+
+	Linux does not permit non-`root` processes to bind to ports below 1024 by default. A port above 1024 can be used: `/etc/nginx/nginx.conf` 
+```
+server {
+        listen 8080;
+}
+
+```
+
+**Tip:** If you want nginx accessible on port 80 or 443, configure your [firewall](/index.php/Firewall "Firewall") to redirect requests from 80 or 443 to the ports nginx listens to.
+
+	PID file
+
+	[nginx](https://www.archlinux.org/packages/?name=nginx) uses `/run/nginx.pid` by default. We can create a directory that *user* has write access to and place our PID file in there. An example using [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd"): `/etc/tmpfiles.d/nginx.conf`  `d /run/nginx 770 *user* *group*` 
+
+Run the configuration:
+
+```
+ # systemd-tmpfiles --create
+
+```
+
+[Edit nginx.service](/index.php/Systemd#Editing_provided_units "Systemd"):
+
+ `/etc/systemd/system/nginx.service.d/user.conf` 
+```
+[Service]
+...
+PIDFile=/run/nginx/nginx.pid
+ExecStart=
+ExecStart=/usr/bin/nginx -g 'pid /run/nginx/nginx.pid; error_log stderr;' # copied from nginx.service
+```
+
+	`/var/lib/nginx/*`
+
+	Some directories under `/var/lib/nginx` need to be bootstrapped by nginx running as `root`. It is not necessary to start the whole server to do that, nginx will do it on a simple [configuration test](#Configuration_validation). So just run one of those and you're good to go.
+
+	Remove logs
+
+	The step of running a configuration test will create a dangling `root`-owned log. Remove logs in `/var/log/nginx` to start fresh.
+
+Now we should be good to go. Go ahead and [start](/index.php/Systemd#Using_units "Systemd") nginx, and enjoy your completely rootless nginx.
 
 ## Troubleshooting
 

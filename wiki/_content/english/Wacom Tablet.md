@@ -251,6 +251,8 @@ For further configuration tips and tricks see below in [#Specific configuration 
 
 **Note:** You can reset your temporary configuration at any time by unplugging and replugging in your tablet.
 
+**Note:** There are some configurations that can only be set up dynamically with xsetwacom. In those cases it is possible to run a script that configures the device calling xsetwacom every time the device is plugged in. See [[1]](http://unix.stackexchange.com/a/290940/89955).
+
 #### Permanent configuration
 
 To make a permanent configuration the preferred way for *Xorg*>1.8 is to create a new file in `/etc/X11/xorg.conf.d` e.g. `52-wacom-options.conf` with the following content.

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Arch_Linux](/index.php/Arch_Linux "Arch Linux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-12，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=423847)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_Linux](/index.php/Arch_Linux "Arch Linux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-20，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=435940)可以查看翻译后英文页面的改动。
 
 Arch Linux 是通用 i686/x86-64 GNU/Linux 行版。Arch采用滚动升级模式，尽全力提供最新的稳定版软件。初始安装的Arch只是一个基本系统，随后用户可以根据自己的喜好安装需要的软件并配置成符合自己理想的系统.
 
@@ -32,7 +32,7 @@ Arch Linux 将简洁定义为：**避免任何不必要的添加、修改和复�
 
 Arch尽全力保持软件处于最新的稳定版本，只要不出现系统软件包破损，都尽量用最新版本。Arch采用[滚动升级](https://en.wikipedia.org/wiki/Rolling_release "wikipedia:Rolling release")策略，安装之后可以持续升级。
 
-Arch向GNU/Linux用户提供了许多新特性，包括[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")初始化系统、现代的文件系统（Ext2/3/4、Reiser、XFS、JFS、BTRFS）、LVM2/EVMS、软件磁盘阵列（软RAID）、udev支持、initcpio（附带mkinitcpio）以及最新的内核。
+Arch向GNU/Linux用户提供了许多新特性，包括[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")初始化系统、现代的[文件系统](/index.php/File_systems "File systems")、LVM2/EVMS、软件磁盘阵列（软RAID）、udev支持、initcpio（附带mkinitcpio）以及最新的内核。
 
 ### 实用
 

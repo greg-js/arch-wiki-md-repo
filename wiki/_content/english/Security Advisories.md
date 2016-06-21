@@ -38,6 +38,11 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### June 2016
 
+*   [20 June 2016] [ASA-201606-19](https://lists.archlinux.org/pipermail/arch-security/2016-June/000654.html) [wget](https://www.archlinux.org/packages/?name=wget) arbitrary file upload
+*   [20 June 2016] [ASA-201606-18](https://lists.archlinux.org/pipermail/arch-security/2016-June/000653.html) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) multiple issues
+*   [19 June 2016] [ASA-201606-17](https://lists.archlinux.org/pipermail/arch-security/2016-June/000652.html) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) denial of service
+*   [19 June 2016] [ASA-201606-16](https://lists.archlinux.org/pipermail/arch-security/2016-June/000651.html) [glibc](https://www.archlinux.org/packages/?name=glibc) denial of service
+*   [19 June 2016] [ASA-201606-15](https://lists.archlinux.org/pipermail/arch-security/2016-June/000650.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) multiple issues
 *   [13 June 2016] [ASA-201606-14](https://lists.archlinux.org/pipermail/arch-security/2016-June/000649.html) [lib32-expat](https://www.archlinux.org/packages/?name=lib32-expat) multiple issues
 *   [13 June 2016] [ASA-201606-13](https://lists.archlinux.org/pipermail/arch-security/2016-June/000648.html) [expat](https://www.archlinux.org/packages/?name=expat) multiple issues
 *   [10 June 2016] [ASA-201606-12](https://lists.archlinux.org/pipermail/arch-security/2016-June/000647.html) [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls) arbitrary file overwrite

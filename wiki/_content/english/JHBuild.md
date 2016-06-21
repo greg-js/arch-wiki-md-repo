@@ -16,7 +16,8 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
     *   [4.2 pkg-config issues](#pkg-config_issues)
     *   [4.3 gnome-devel-docs does not build](#gnome-devel-docs_does_not_build)
     *   [4.4 pango does not build](#pango_does_not_build)
-    *   [4.5 Other broken modules](#Other_broken_modules)
+    *   [4.5 geary does not build](#geary_does_not_build)
+    *   [4.6 Other broken modules](#Other_broken_modules)
 *   [5 Packages needed to build specific modules](#Packages_needed_to_build_specific_modules)
 *   [6 See also](#See_also)
 
@@ -179,6 +180,20 @@ If build failed due to cairo.h not found, do the following: Enter [4]shell, edit
 to
 
  ` #define <cairo/cairo.h>` 
+
+### geary does not build
+
+If you are getting this error message...
+
+```
+[ 78%] Generating webkitgtk-3.0.vapi
+error: /home/rffontenelle/jhbuild/install/share/gir-1.0/WebKit-3.0.gir not found
+Generation failed: 1 error(s), 0 warning(s)
+make[2]: *** [src/CMakeFiles/geary.dir/build.make:1277: src/webkitgtk-3.0.vapi] Error 1
+make[1]: *** [CMakeFiles/Makefile2:798: src/CMakeFiles/geary.dir/all] Error 2
+```
+
+... then please notice that geary depends on WebKitGTK (<= 2.4), but JHBuild compiles WebKit2GTK (newer). This is a known issue ([#741866](https://bugzilla.gnome.org/show_bug.cgi?id=741866) and [mailing list](https://mail.gnome.org/archives/geary-list/2016-June/msg00022.html)) and there is a plan for porting Geary ([#728002](https://bugzilla.gnome.org/show_bug.cgi?id=728002))
 
 ### Other broken modules
 

@@ -46,11 +46,11 @@ Other alternatives include:
 
 *   **Firefox Beta** — cutting-edge version
 
-	[https://www.mozilla.org/firefox/channel/](https://www.mozilla.org/firefox/channel/) || [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
+	[https://www.mozilla.org/firefox/channel/#beta](https://www.mozilla.org/firefox/channel/#beta) || [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
 
-*   **Firefox Aurora/Developer edition** — for developers
+*   **Firefox Developer Edition/Aurora** — for developers
 
-	[https://www.mozilla.org/firefox/aurora/](https://www.mozilla.org/firefox/aurora/) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/)
+	[https://www.mozilla.org/firefox/channel/#developer](https://www.mozilla.org/firefox/channel/#developer) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/)
 
 *   **Firefox Nightly** — nightly builds for testing
 

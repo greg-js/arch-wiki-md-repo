@@ -88,4 +88,4 @@ If you choose to install StoneSense manually instead of using the AUR package, y
 
 *   [lib32-libjpeg6-turbo](https://aur.archlinux.org/packages/lib32-libjpeg6-turbo/)
 *   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)
-*   [lib-32-allegro](https://aur.archlinux.org/packages/lib-32-allegro/)
+*   [lib32-allegro](https://aur.archlinux.org/packages/lib32-allegro/)

@@ -68,7 +68,7 @@ Pre-2008 Macs mostly have i386-efi firmware while >=2008 Macs have mostly x86_64
 To find out the arch of the efi firmware in a Mac, type the following into the Mac OS X terminal:
 
 ```
-ioreg -l -p IODeviceTree | grep firmware-abi
+$ ioreg -l -p IODeviceTree | grep firmware-abi
 
 ```
 
@@ -123,14 +123,14 @@ $ efivar -l
 
 ### UEFI Variables Support in Linux Kernel
 
-Linux kernel exposes EFI variables data to userspace via **efivarfs** (**EFI** **VAR**iable **F**ile**S**ystem) interface (CONFIG_EFIVAR_FS) - mounted using `efivarfs` kernel module at `/sys/firmware/efi/efivars` - it has no maximum per-variable size limitation and supports UEFI Secure Boot variables. Introduced in kernel 3.8.
+Linux kernel exposes EFI variables data to userspace via **efivarfs** (**EFI** **VAR**iable **F**ile**S**ystem) interface (`CONFIG_EFIVAR_FS`) - mounted using `efivarfs` kernel module at `/sys/firmware/efi/efivars` - it has no maximum per-variable size limitation and supports UEFI Secure Boot variables. Introduced in kernel 3.8.
 
 ### Requirements for UEFI variable support
 
 1.  EFI Runtime Services support should be present in the kernel (`CONFIG_EFI=y`, check if present with `zgrep CONFIG_EFI /proc/config.gz`).
-2.  Kernel processor [bitness](#UEFI_Firmware_bitness) and EFI processor bitness should match
-3.  Kernel should be booted in EFI mode (via [EFISTUB](/index.php/EFISTUB "EFISTUB") or any [EFI boot loader](/index.php/Boot_loaders "Boot loaders"), not via BIOS/CSM or Apple's "bootcamp" which is also BIOS/CSM)
-4.  EFI Runtime Services in the kernel SHOULD NOT be disabled via kernel cmdline, i.e. `noefi` kernel parameter SHOULD NOT be used
+2.  Kernel processor [bitness](#UEFI_Firmware_bitness) and EFI processor bitness should match.
+3.  Kernel should be booted in EFI mode (via [EFISTUB](/index.php/EFISTUB "EFISTUB") or any [EFI boot loader](/index.php/Boot_loaders "Boot loaders"), not via BIOS/CSM or Apple's "bootcamp" which is also BIOS/CSM).
+4.  EFI Runtime Services in the kernel SHOULD NOT be disabled via kernel cmdline, i.e. `noefi` kernel parameter SHOULD NOT be used.
 5.  `efivarfs` filesystem should be mounted at `/sys/firmware/efi/efivars`, otherwise follow [#Mount efivarfs](#Mount_efivarfs) section below.
 6.  `efivar` should list (option `-l`) the EFI Variables without any error.
 
@@ -410,10 +410,10 @@ Mainboards with this kind of problem:
 
 ### Windows changes boot order
 
-In some motherboards (confirmed in ASRock Z77 Extreme4) Windows 8 changes the boot order in the NVRAM everytime is booted. This can be fixed making the Windows Boot Manager to load another loader instead of booting Windows. Run this command in a Administrator mode console in Windows:
+In some motherboards (confirmed in ASRock Z77 Extreme4), Windows 8 changes the boot order in the NVRAM everytime is booted. This can be fixed making the Windows Boot Manager to load another loader instead of booting Windows. Run this command in a Administrator mode console in Windows:
 
 ```
-bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
+# bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
 
 ```
 

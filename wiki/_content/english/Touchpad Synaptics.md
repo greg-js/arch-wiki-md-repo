@@ -1,6 +1,6 @@
 This article details the installation and configuration process of the ***Synaptics input driver*** for Synaptics (and ALPS) touchpads found on most notebooks.
 
-**Tip:** An alternative touchpad driver is [libinput](/index.php/Libinput "Libinput"). It implements a different approach to recognize and process multitouch features.
+**Tip:** An alternative touchpad driver is [libinput](/index.php/Libinput "Libinput"). It implements a different approach to recognize and process multitouch features and has better desktop integration
 
 ## Contents
 
@@ -59,7 +59,7 @@ This article details the installation and configuration process of the ***Synapt
 
 ## Installation
 
-The Synaptics driver can be [installed](/index.php/Installed "Installed") with the package [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
+The Synaptics driver can be [installed](/index.php/Installed "Installed") with the package [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics). Please note that if you want desktop integration (i.e. ability to configure touchpad via GNOME control center or KDE settings), you need [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput).
 
 ## Configuration
 

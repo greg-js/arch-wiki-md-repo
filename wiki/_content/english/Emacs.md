@@ -35,6 +35,7 @@
     *   [6.10 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
     *   [6.11 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
     *   [6.12 Invalid font name for Oxygen-Sans](#Invalid_font_name_for_Oxygen-Sans)
+    *   [6.13 Slow startup if helm-mode is enabled](#Slow_startup_if_helm-mode_is_enabled)
 *   [7 Alternatives](#Alternatives)
     *   [7.1 mg](#mg)
     *   [7.2 zile](#zile)
@@ -327,7 +328,7 @@ $ setxkbmap -option "shift:both_capslock"
 
 ### Multiplexing emacs and emacsclient
 
-To open the new file in the same `emacs-session` its use needs use to use `emacsclient`. `emacs` command can be itself warpped to do the smarter job to open the file if the session exists.
+To open the new file in the same `emacs-session` its use needs use to use `emacsclient`. `emacs` command can be itself wrapped to do the smarter job to open the file if the session exists.
 
 To start session you need to `start-server`. This snippet will create server in first session of emacs. Add this to your `emacs` configuration file.
 
@@ -828,6 +829,18 @@ Error:invalid font name.-unknown-Oxygen-Sans-nolmal-normal--15----*-0-iso10646-1
 ```
 
 when setting font attributes. This seems to be a bug in emacs, which is fixed in [emacs-git](https://aur.archlinux.org/packages/emacs-git/) (25.1.50.r125104-1).
+
+### Slow startup if helm-mode is enabled
+
+When `helm-mode` is enabled and causes Emacs slow to startup, we can edit the `.emacs` file by adding
+
+```
+(setq tramp-ssh-controlmaster-options
+      "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+(require 'tramp)
+; before (helm-mode 1)
+
+```
 
 ## Alternatives
 

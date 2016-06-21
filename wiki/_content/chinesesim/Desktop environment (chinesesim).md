@@ -59,6 +59,10 @@
 
 	ROX是一个高效、友好的桌面环境。它的核心是文件浏览器，秉承传统Unix的“一切皆文件”理念，而非把一切都放在菜单、向导什么的里面。ROX致力于打造设计完善且功能清晰的桌面环境，把一些小型程序结合在一起（而不是搞整合的万能软件）。
 
+	[Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Deepin Desktop Environment (简体中文)")
+
+	Deepin桌面界面和应用程序功能的直观和优雅的设计。四处移动，共享和搜索等已经成为一个简单的愉悦体验。[http://www.deepin.org/](http://www.deepin.org/)
+
 ### 非官方支持
 
 *   **[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop")** — Budgie 桌面是一个轻量级桌面环境设计充分考虑了现代用户，它着重于简洁和漂亮。此外，它类似于 Chrome/ Chromium OS桌面布局
@@ -68,10 +72,6 @@
 *   **[CDE](/index.php/CDE "CDE")** — The Common Desktop Environment (CDE) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations.
 
 	[http://sourceforge.net/projects/cdesktopenv/](http://sourceforge.net/projects/cdesktopenv/) || [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/)
-
-*   **[Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Deepin Desktop Environment (简体中文)")** — Deepin桌面界面和应用程序功能的直观和优雅的设计。四处移动，共享和搜索等已经成为一个简单的愉悦体验。
-
-	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-desktop-environment](https://aur.archlinux.org/packages/deepin-desktop-environment/)
 
 *   **[EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment")** — “Equinox桌面环境”是一个DE设计简单,非常轻,快。
 

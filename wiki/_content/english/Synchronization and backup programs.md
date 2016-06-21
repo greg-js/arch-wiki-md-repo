@@ -211,7 +211,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   Provides cloud storage, file sharing and collaborative editing.
     *   Multiple clients are available.
 
-	[https://drive.google.com](https://drive.google.com) || [google-drive-ocamlfuse](https://aur.archlinux.org/packages/google-drive-ocamlfuse/) (free), [drive](https://aur.archlinux.org/packages/drive/) (free), [grive](https://aur.archlinux.org/packages/grive/) (free), [insync](/index.php/Insync "Insync") (non-free)
+	[https://drive.google.com](https://drive.google.com) || [google-drive-ocamlfuse](https://aur.archlinux.org/packages/google-drive-ocamlfuse/) (free), [drive](https://aur.archlinux.org/packages/drive/) (free), [grive](https://aur.archlinux.org/packages/grive/) (free), [gdrivefs](https://aur.archlinux.org/packages/gdrivefs/) (free), [insync](/index.php/Insync "Insync") (non-free)
 
 *   **[iDrive](https://en.wikipedia.org/wiki/IDrive_Inc. "wikipedia:IDrive Inc.")** — Universal Online Backup.
     *   Multiple Device Backup.
