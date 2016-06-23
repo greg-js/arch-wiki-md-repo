@@ -111,6 +111,10 @@ This article explains different methods to take [screenshots](https://en.wikiped
 
 	[http://sourceforge.net/projects/enlightenment/](http://sourceforge.net/projects/enlightenment/) || [imlib2](https://www.archlinux.org/packages/?name=imlib2)
 
+*   **MATE Utils** — Common MATE utilities for viewing disk usage, logs and fonts, taking screenshots, managing dictionaries and searching files.
+
+	[http://mate-desktop.org](http://mate-desktop.org) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
+
 ## Details: general methods
 
 ### ImageMagick/GraphicsMagick

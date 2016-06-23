@@ -463,14 +463,6 @@ If you run **lunch** without arguments, it will ask what build you want to creat
 
 The build takes a very long time.
 
-**Note:** If `make` fails with something like
-```
-flex-2.5.39: loadlocale.c:131: _nl_intern_locale_data: Assertion `cnt < (sizeof (_nl_value_type_LC_COLLATE) / sizeof (_nl_value_type_LC_COLLATE[0]))' failed.
-
-```
-
-try running `LANG=C make` instead.
-
 **Note:** Make sure you have enough RAM.
 
 Android will use the /tmp directory heavily. By default the size of the partition the /tmp folder is mounted on is half the size of your RAM. If it fills up, the build will fail. 4GB of RAM or more is recommended.

@@ -192,6 +192,8 @@ Note that there `^` is a control letter. To enter the control sequence `^M` pres
 
 Alternatively install the package [dos2unix](https://www.archlinux.org/packages/?name=dos2unix) and run `dos2unix *file*` to fix the file.
 
+**Note:** Another simple way is by changing `fileformat` setting. `set ff=unix` to convert files with DOS/Windows line ending to Unix line ending. To do the reverse, just issue `set ff=dos` to convert files with Unix line ending to DOS/Windows line ending.
+
 ### Empty space at the bottom of gVim windows
 
 When using a [window manager](/index.php/Window_manager "Window manager") configured to ignore window size hints, gVim will fill the non-functional area with the GTK theme background color.

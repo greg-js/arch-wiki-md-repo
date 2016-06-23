@@ -120,7 +120,7 @@ Where `linux` is the name of the image loaded on boot. If you installed [linux-m
 
 If you are using an older kernel 4.3 or earlier, you also require the kernel parameter `i915.preliminary_hw_support=1`, see [Intel graphics#Driver not working for Intel Skylake chips](/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips "Intel graphics"). (For later kernels 4.3+ or [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/) the parameter is unnecessary.)
 
-If you have the newer i7-6560 CPU with Iris 540 graphics, the GPU hangs every few minutes with the current kernel (4.4.1) and up. This is probably due to this bug [https://bugs.freedesktop.org/show_bug.cgi?id=94161](https://bugs.freedesktop.org/show_bug.cgi?id=94161) and can be countered by either disabling DRI in your Xorg configuration:
+If you have the newer i7-6560 CPU with Iris 540 graphics, the GPU hangs every few minutes with kernel versions before 4.6\. This is probably due to this bug [https://bugs.freedesktop.org/show_bug.cgi?id=94161](https://bugs.freedesktop.org/show_bug.cgi?id=94161) and can be countered by either disabling DRI in your Xorg configuration:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```

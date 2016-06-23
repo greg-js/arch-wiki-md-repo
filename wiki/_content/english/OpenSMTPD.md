@@ -1,30 +1,53 @@
-This article explains how to install and configure a simple OpenSMTPD server.
+This article explains how to install and configure a simple [OpenSMTPD](https://www.opensmtpd.org/) server.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Simple OpenSMTPD/mbox configuration](#Simple_OpenSMTPD.2Fmbox_configuration)
-    *   [2.1 Create encryption keys](#Create_encryption_keys)
-    *   [2.2 Create user accounts](#Create_user_accounts)
-    *   [2.3 Craft a simple smtpd.conf setup](#Craft_a_simple_smtpd.conf_setup)
-    *   [2.4 Create tables](#Create_tables)
-    *   [2.5 Test the configuration](#Test_the_configuration)
-*   [3 Starting the server](#Starting_the_server)
-*   [4 Watch the spice flow!](#Watch_the_spice_flow.21)
-*   [5 Debugging](#Debugging)
-    *   [5.1 Console debugging](#Console_debugging)
-    *   [5.2 Subsystem tracing](#Subsystem_tracing)
-    *   [5.3 Manual Submission port authentication](#Manual_Submission_port_authentication)
-    *   [5.4 Resources](#Resources)
-*   [6 See also](#See_also)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Local mail](#Local_mail)
+        *   [2.1.1 Local-only](#Local-only)
+    *   [2.2 Simple OpenSMTPD/mbox configuration](#Simple_OpenSMTPD.2Fmbox_configuration)
+        *   [2.2.1 Create encryption keys](#Create_encryption_keys)
+        *   [2.2.2 Create user accounts](#Create_user_accounts)
+        *   [2.2.3 Craft a simple smtpd.conf setup](#Craft_a_simple_smtpd.conf_setup)
+        *   [2.2.4 Create tables](#Create_tables)
+    *   [2.3 Test the configuration](#Test_the_configuration)
+*   [3 Watch the spice flow!](#Watch_the_spice_flow.21)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Console debugging](#Console_debugging)
+    *   [4.2 Subsystem tracing](#Subsystem_tracing)
+    *   [4.3 Manual Submission port authentication](#Manual_Submission_port_authentication)
+    *   [4.4 Resources](#Resources)
+*   [5 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-## Simple OpenSMTPD/mbox configuration
+## Configuration
 
-### Create encryption keys
+[opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) is configured in `/etc/smtpd`.
+
+### Local mail
+
+To have local mail working, for example for [cron](/index.php/Cron "Cron") mails, it is enough to simply [start](/index.php/Start "Start") `smtpd.service`.
+
+[The default configuration](http://man.openbsd.org/smtpd.conf#EXAMPLES) of OpenSMTPD is to do local retrieval and delivery of mail, and also relay outgoing mail.
+
+#### Local-only
+
+To do local-only mail, the following is enough:
+
+ `/etc/smtpd/smtpd.conf` 
+```
+listen on localhost
+accept for local alias <aliases> deliver to mbox
+
+```
+
+### Simple OpenSMTPD/mbox configuration
+
+#### Create encryption keys
 
 [openssl](https://www.archlinux.org/packages/?name=openssl) provides TLS support and is installed by default on Arch installations.
 
@@ -37,7 +60,7 @@ Create a private key and self-signed certificate. This is adequate for most inst
 
 ```
 
-### Create user accounts
+#### Create user accounts
 
 *   Create a user account on the mail server for each desired mailbox.
 
@@ -50,7 +73,7 @@ Create a private key and self-signed certificate. This is adequate for most inst
 *   OpenSMTPD will deliver messages to the user account's mbox file at `/var/spool/mail/<username>`
 *   Multiple SMTP email addresses can be routed to a given mbox if desired.
 
-### Craft a simple smtpd.conf setup
+#### Craft a simple smtpd.conf setup
 
 *   A working configuration can be had in as little as nine lines!
 
@@ -71,7 +94,7 @@ accept for any relay
 
 ```
 
-### Create tables
+#### Create tables
 
 *   For the domain table file; simply put one domain per line
 
@@ -112,32 +135,16 @@ shirley                            <password hash created using 'smtpctl encrypt
 
 ```
 
-If you get a message that says 'configuration OK' - you're ready to rock and roll. If not, work on any configuration errors and try again.
-
-## Starting the server
-
-Use the standard [systemd](/index.php/Systemd "Systemd") syntax to control the `smtpd.service` [daemon](/index.php/Daemon "Daemon").
-
-```
-# systemctl start smtpd.service
-
-```
-
-To have it start on boot
-
-```
-# systemctl enable smtpd.service
-
-```
+If you get a message that says 'configuration OK' - you're ready to [rock and roll](/index.php/Systemd "Systemd"). If not, work on any configuration errors and try again.
 
 ## Watch the spice flow!
 
 ```
-# journalctl -f _SYSTEMD_UNIT=smtpd.service
+# journalctl -fu smtpd.service
 
 ```
 
-## Debugging
+## Troubleshooting
 
 ### Console debugging
 

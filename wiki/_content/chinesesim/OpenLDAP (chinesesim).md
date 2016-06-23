@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [openLDAP](/index.php/OpenLDAP "OpenLDAP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-06-01，点击[这里](https://wiki.archlinux.org/index.php?title=openLDAP&diff=0&oldid=317024)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [openLDAP](/index.php/OpenLDAP "OpenLDAP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-06-21，点击[这里](https://wiki.archlinux.org/index.php?title=openLDAP&diff=0&oldid=317024)可以查看翻译后英文页面的改动。
 
-OpenLDAP 是 LDAP 协议的一个开源实现。LDAP 服务器基本上是一个为只读访问而优化的非关系型数据库。它主要用做地址簿查询（如 email 客户端）或对各种服务访问做后台认证以及用户数据权限管控。（例如，访问 Samba 时，LDAP 可以起到域控制器的作用；或者 [Linux 系统认证](/index.php/LDAP_authentication "LDAP authentication") 时代替 `/etc/passwd` 的作用。）
+OpenLDAP 是 LDAP 协议的一个开源实现。LDAP 服务器本质上是一个为只读访问而优化的非关系型数据库。它主要用做地址簿查询（如 email 客户端）或对各种服务访问做后台认证以及用户数据权限管控。（例如，访问 Samba 时，LDAP 可以起到域控制器的作用；或者 [Linux 系统认证](/index.php/LDAP_authentication "LDAP authentication") 时代替 `/etc/passwd` 的作用。）
 
 **注意:** 以 `ldap` 开头的命令（如： `ldapsearch`）是客户端工具，以 `slap` 开头的命令（如： `slapcat` `slapcat`）是服务端工具。
 
@@ -15,7 +15,7 @@ OpenLDAP 是 LDAP 协议的一个开源实现。LDAP 服务器基本上是一个
     *   [2.1 服务端](#.E6.9C.8D.E5.8A.A1.E7.AB.AF)
     *   [2.2 客户端](#.E5.AE.A2.E6.88.B7.E7.AB.AF)
     *   [2.3 测试安装好的系统](#.E6.B5.8B.E8.AF.95.E5.AE.89.E8.A3.85.E5.A5.BD.E7.9A.84.E7.B3.BB.E7.BB.9F)
-    *   [2.4 基于TLS的OpenLDAP](#.E5.9F.BA.E4.BA.8ETLS.E7.9A.84OpenLDAP)
+    *   [2.4 基于 TLS 的 OpenLDAP](#.E5.9F.BA.E4.BA.8E_TLS_.E7.9A.84_OpenLDAP)
         *   [2.4.1 创建一个自签署的证书](#.E5.88.9B.E5.BB.BA.E4.B8.80.E4.B8.AA.E8.87.AA.E7.AD.BE.E7.BD.B2.E7.9A.84.E8.AF.81.E4.B9.A6)
         *   [2.4.2 配置基于SSL的slapd](#.E9.85.8D.E7.BD.AE.E5.9F.BA.E4.BA.8ESSL.E7.9A.84slapd)
         *   [2.4.3 启动基于SSL的slapd](#.E5.90.AF.E5.8A.A8.E5.9F.BA.E4.BA.8ESSL.E7.9A.84slapd)
@@ -37,7 +37,7 @@ OpenLDAP 软件包同时包含了服务器和客户端。可以从 [官方源](/
 
 服务器的配置文件位于 `/etc/openldap/slapd.conf`。
 
-Edit the suffix and rootdn. The suffix typically is your domain name but it does not have to be. It depends on how you use your directory. We will use *example* for the domain name, and *com* for the tld. The rootdn is your LDAP administrator's name (we will use *root* here).
+需要编辑后缀和 rootdn。典型的后缀通常是你所用的域名，但这并非强制要求，而是依赖于你如何使用你的目录。下例中以 *example* 做为域名，tld 为 *com*，rootdn 则是 LDAP 管理员的名字（这里用 *root*）。
 
 ```
 suffix     "dc=example,dc=com"
@@ -45,11 +45,11 @@ rootdn     "cn=root,dc=example,dc=com"
 
 ```
 
-Now we delete the default root password and create a strong one:
+现在删除默认 root 口令并创建一个强口令：
 
 ```
 # sed -i "/rootpw/ d" /etc/openldap/slapd.conf #find the line with rootpw and delete it
-# echo "rootpw    $(slappasswd)" >> /etc/openldap/slapd.conf  #add a line which includes the hashed password output from slappasswd
+# echo "rootpw    $(slappasswd)" >> /etc/openldap/slapd.conf  # 添加一行包含经由 slappasswd 哈希化的口令行
 
 ```
 
@@ -81,7 +81,7 @@ Now prepare the database directory. You will need to copy the default config fil
 
 ```
 
-**Note:** With OpenLDAP 2.4 the configuration of `slapd.conf` is deprecated. From this version on all configuration settings are stored in `/etc/openldap/slapd.d/`.
+**注意:** 对于 OpenLDAP 2.4 ，不推荐使用 `slapd.conf` 作为配置文件。从这个版本开始所有配置数据都保存在 `/etc/openldap/slapd.d/`中。
 
 To store the recent changes in `slapd.conf` to the new `/etc/openldap/slapd.d/` configuration settings, we have to delete the old configuration files first, do this every time you change the configuration:
 
@@ -152,7 +152,7 @@ $ ldapsearch -D "cn=root,dc=example,dc=com" -W '(objectclass=*)'
 
 Now you should see some information about your database.
 
-### 基于TLS的OpenLDAP
+### 基于 TLS 的 OpenLDAP
 
 **Note:** [upstream documentation](http://web.archive.org/web/20130211222328/http://www.openldap.org/pub/ksoper/OpenLDAP_TLS.html#4.0) is much more useful/complete than this section
 

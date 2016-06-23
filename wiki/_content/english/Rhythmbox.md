@@ -120,4 +120,4 @@ Install [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp).
 
 ### Music files within the music library are not found
 
-Sometimes it helps to rebuild the rhythmbox library in order to rescan it properly. To do this quit rhythmbox, delete (do not forget to make a backup of the file) `/.local/share/rhythmbox/rhythmdb.xml`, restart rhythmbox and rescan your music library.
+Sometimes it helps to remove the rhythmbox library in order to rebuild it properly. To do this quit rhythmbox, delete (do not forget to make a backup of the file) `/.local/share/rhythmbox/rhythmdb.xml`, restart rhythmbox and rescan your music library.

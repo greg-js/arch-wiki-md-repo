@@ -8,7 +8,7 @@ This document describes how to set up Exim (a mail transfer agent) to use a remo
 *   [3 Update: 11-Feb-05](#Update:_11-Feb-05)
 *   [4 Update: 10-Feb-08](#Update:_10-Feb-08)
 *   [5 Update 10-Oct-15](#Update_10-Oct-15)
-*   [6 Using GMail as smarthost](#Using_GMail_as_smarthost)
+*   [6 Using Gmail as smarthost](#Using_Gmail_as_smarthost)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 451 Temporary local problem](#451_Temporary_local_problem)
 
@@ -201,7 +201,7 @@ I found the information here a little confusing and may be out of date. The foll
 
 I.e. just comment out the dnslookup block and add the smarthost block plus the single rewrite rule (last line above). That line is added just after the "begin rewrite" section. I was getting DNS timeouts for the "require verify = sender" for most messages so I had to disable that also. Restart exim and it is good to go.
 
-## Using GMail as smarthost
+## Using Gmail as smarthost
 
 **Note:** The following must be put in the appropriate sections of the configuration file, eg, after **begin authenticators**.
 

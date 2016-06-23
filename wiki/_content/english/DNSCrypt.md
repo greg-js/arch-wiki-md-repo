@@ -12,6 +12,7 @@
     *   [3.2 Enable EDNS0](#Enable_EDNS0)
         *   [3.2.1 Test EDNS0](#Test_EDNS0)
     *   [3.3 Redundant DNSCrypt providers](#Redundant_DNSCrypt_providers)
+    *   [3.4 Running DNSCrypt as unprivileged user](#Running_DNSCrypt_as_unprivileged_user)
 
 ## Installation
 
@@ -248,3 +249,27 @@ systemctl restart unbound
 ```
 
 If successful, your two selected dns providers should be the only ones found when using one of the dns leak test websites.
+
+### Running DNSCrypt as unprivileged user
+
+Since DNSCrypt is a long-running network service, it's better to not run the service as `root`. To run `dnscrypt-proxy` as `nobody`, simply create a new systemd-unit e.g. `/etc/systemd/system/dnscrypt-proxy@cisco.service`, by including `User=nobody` inside the `[Service]` section.
+
+```
+# cat /etc/systemd/system/dnscrypt-proxy@cisco.service
+[Unit]
+Description=dnscrypt proxy forwarder to Cisco's OpenDNS
+
+[Install]
+Wanted-by=multi-user.target
+
+[Service]
+User=nobody
+Type=simple
+NonBlocking=true
+ExecStart=/usr/bin/dnscrypt-proxy \
+        -a 127.0.0.1:5300 \
+        -R cisco
+
+```
+
+Of course, it is possible to have more than one `dnscrypt-proxy@custom.service` running as `nobody`. Just remember to set different listen port to avoid service start failure. Since the new service unit is disabled by default, it is necessary to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `dnscrypt-proxy@custom` to get it up and running.

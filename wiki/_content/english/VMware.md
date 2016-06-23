@@ -82,10 +82,8 @@ For the `System service scripts directory`, use `/etc/init.d` (the default).
 
 ### Kernel modules
 
-*   VMware 12 and newer will work out-of-the box, since they take advantage of the [mainlined](http://www.phoronix.com/scan.php?page=news_item&px=MTI3MTE) kernel modules.
+*   VMware Workstation 12 supports kernels up to 4.4\. For 4.6 and later, a source modification is needed, see [#Kernel modules fail to build after Linux 4.6](#Kernel_modules_fail_to_build_after_Linux_4.6).
 *   VMware 11 and older require patching the VMCI/VSOCK sources. This is automated by installing the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
-
-VMware Workstation 12 supports kernels up to 4.4\. For 4.6 and later, a source modification is needed, see [#Kernel modules fail to build after Linux 4.6](#Kernel_modules_fail_to_build_after_Linux_4.6).
 
 ### systemd services
 

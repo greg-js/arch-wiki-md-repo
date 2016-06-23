@@ -20,6 +20,8 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [3.2 Show track notifications](#Show_track_notifications)
     *   [3.3 Skip overplayed radio tracks](#Skip_overplayed_radio_tracks)
     *   [3.4 Mute commercials](#Mute_commercials)
+        *   [3.4.1 blockify](#blockify)
+        *   [3.4.2 spotblock](#spotblock)
     *   [3.5 Remote Control](#Remote_Control)
         *   [3.5.1 Send commands via SSH](#Send_commands_via_SSH)
         *   [3.5.2 Grab the Spotify window via SSH](#Grab_the_Spotify_window_via_SSH)
@@ -254,6 +256,8 @@ GLib.MainLoop().run()
 
 ### Mute commercials
 
+#### blockify
+
 With [blockify](https://github.com/mikar/blockify) you can mute commercials. It is available in the [AUR](/index.php/AUR "AUR") as [blockify](https://aur.archlinux.org/packages/blockify/).
 
 To have this start and run in the background every time Spotify starts you will need to automate this yourself:
@@ -274,6 +278,10 @@ fi
 ```
 
 By placing this script at `/usr/local/bin/spotify`, it gets preferred to `/usr/bin/spotify` everytime you start Spotify, so there's nothing else to change and updates won't break it.
+
+#### spotblock
+
+[spotblock](https://github.com/mahkoh/spotblock) ([spotblock-git](https://aur.archlinux.org/packages/spotblock-git/)) is a resource-efficient ad blocker that runs as a systemd daemon.
 
 ### Remote Control
 

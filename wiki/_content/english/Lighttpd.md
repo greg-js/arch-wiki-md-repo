@@ -4,7 +4,10 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Basic Setup](#Basic_Setup)
+    *   [2.1 Basic setup](#Basic_setup)
+        *   [2.1.1 Basic logging](#Basic_logging)
+        *   [2.1.2 Enabling https via SSL](#Enabling_https_via_SSL)
+        *   [2.1.3 Password protecting a directory](#Password_protecting_a_directory)
     *   [2.2 CGI](#CGI)
     *   [2.3 FastCGI](#FastCGI)
         *   [2.3.1 PHP](#PHP)
@@ -13,10 +16,9 @@
             *   [2.3.1.3 Try a php page](#Try_a_php_page)
         *   [2.3.2 Ruby on Rails](#Ruby_on_Rails)
         *   [2.3.3 Python FastCGI](#Python_FastCGI)
-    *   [2.4 SSL](#SSL)
-        *   [2.4.1 Server Name Indication](#Server_Name_Indication)
-        *   [2.4.2 Redirect HTTP requests to HTTPS](#Redirect_HTTP_requests_to_HTTPS)
-    *   [2.5 Output Compression](#Output_Compression)
+            *   [2.3.3.1 Server name indication](#Server_name_indication)
+        *   [2.3.4 Redirect http requests to https](#Redirect_http_requests_to_https)
+    *   [2.4 Output compression](#Output_compression)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -25,7 +27,7 @@
 
 ## Configuration
 
-### Basic Setup
+### Basic setup
 
 The lighttpd configuration file is: `/etc/lighttpd/lighttpd.conf`. By default it should produce a working test page.
 
@@ -43,6 +45,79 @@ The default configuration file specifies `/srv/http/` as the document directory 
 Then [start/enable](/index.php/Start/enable "Start/enable") the `lighttpd.service` and point your browser to `localhost`, where you should see the test page.
 
 Example configuration files are available in `/usr/share/doc/lighttpd/`.
+
+#### Basic logging
+
+Lighttpd can write out both errors and access to log files. To enabled both or of the logging options, simply edit `/etc/lighttpd/lighttpd.conf` as follows:
+
+```
+server.modules = (
+   "mod_access",
+   "mod_accesslog",
+)
+
+server.errorlog   = "/var/log/lighttpd/error.log"
+accesslog.filename = "/var/log/lighttpd/access.log"
+
+```
+
+#### Enabling https via SSL
+
+**Warning:** Users planning to implementing SSL/TLS, should know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how they apply to Lighttpd and other services (such as email) visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
+
+Self-signed SSL Certificates can be generated assuming [openssl](https://www.archlinux.org/packages/?name=openssl) is installed on the system as follows:
+
+1.  mkdir /etc/lighttpd/certs
+2.  openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -sha256 -keyout /etc/lighttpd/certs/server.pem -out /etc/lighttpd/certs/server.pem
+3.  chmod 600 /etc/lighttpd/certs/server.pem
+
+Modify `/etc/lighttpd/lighttpd.conf` adding the following lines to enable https:
+
+```
+$SERVER["socket"] == ":443" {
+    ssl.engine                  = "enable" 
+    ssl.pemfile                 = "/etc/lighttpd/certs/server.pem" 
+ }
+
+```
+
+#### Password protecting a directory
+
+A passwd file which is lighttpd's equivalent to the system's `/etc/passwd` is needed for user authentication. The setup requires a specific format and md5sum hashed password but users can quickly and easily create an entry using the following as an example:
+
+```
+$ user=foo
+$ password=b@R102
+$ realm='Password Required'
+$ hash=`echo -n "$user:$realm:$pass" | md5sum | cut -b -32`
+
+# echo "$user:$realm:$hash" >> /etc/lighttpd/lighttpd.user
+
+```
+
+Modify `/etc/lighttpd/lighttpd.conf` adding the following lines to enable the directory protection:
+
+```
+server.modules = (
+   "mod_auth",
+ )
+
+auth.debug = 2
+auth.backend                = "htdigest"
+auth.backend.htdigest.userfile = "/etc/lighttpd/lighttpd.user"
+
+# note this entry is relative to the server.document-root
+auth.require = ( "/secret" =>
+   (
+    "method" => "basic",
+    "realm" => "Password Required",
+    "require" => "user=foo"
+   )
+)
+
+```
+
+**Note:** The realm and user entered into `/etc/lighttpd/lighttpd.conf` must match the values chosen in `/etc/lighttpd/lighttpd.user` for authentication to work.
 
 ### CGI
 
@@ -311,66 +386,7 @@ if __name__ == '__main__':
 
 [Thanks to firecat53 for his explanation](https://bbs.archlinux.org/viewtopic.php?pid=734173#p734173)
 
-### SSL
-
-**Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how they apply to Lighttpd and other services (such as email) visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
-
-Generate an SSL Cert, e.g. like that:
-
-```
-# mkdir /etc/lighttpd/certs
-# openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -sha256 -keyout /etc/lighttpd/certs/www.example.com.pem -out /etc/lighttpd/certs/www.example.com.pem
-# chmod 600 /etc/lighttpd/certs/www.example.com.pem
-
-```
-
-Edit `/etc/lighttpd/lighttpd.conf`. To make lighttpd SSL-only (you probably need to set the server port to 443 as well)
-
-```
-ssl.engine = "enable" 
-ssl.ca-file = "/etc/lighttpd/certs/ca.pem"
-ssl.pemfile = "/etc/lighttpd/certs/www.example.com.pem"
-
-```
-
-To enable SSL in addition to normal HTTP
-
-```
-$SERVER["socket"] == ":443" {
-    ssl.engine                  = "enable" 
-    ssl.ca-file                 = "/etc/lighttpd/certs/ca.pem"
-    ssl.pemfile                 = "/etc/lighttpd/certs/www.example.com.pem" 
- }
-
-```
-
-If you want to serve different sites, you can change the document root inside the socket conditional:
-
-```
-$SERVER["socket"] == ":443" {
-    server.document-root = "/srv/ssl" # use your ssl directory here
-    ssl.engine                 = "enable"
-    ssl.ca-file                = "/etc/lighttpd/certs/ca.pem"
-    ssl.pemfile                = "/etc/lighttpd/certs/www.example.com.pem"  # use the path where you created your pem file
- }
-
-```
-
-or as alternative you can use the scheme conditional to distinguish between secure and normal requests.
-
-```
-$HTTP["scheme"] == "https" {
-    server.document-root = "/srv/ssl" # use your ssl directory here
-    ssl.engine                 = "enable"
-    ssl.ca-file                = "/etc/lighttpd/certs/ca.pem"
-    ssl.pemfile                = "/etc/lighttpd/certs/www.example.com.pem"  # use the path where you created your pem file
- }
-
-```
-
-Note that you cannot use the scheme conditional around ssl.engine above, since lighttpd needs to know on what port to enable SSL.
-
-##### Server Name Indication
+##### Server name indication
 
 To use [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication "wikipedia:Server Name Indication") with lighttpd, simply put additional ssl.pemfile configuration directives inside host conditionals. A default ssl.pemfile is [still required](https://redmine.lighttpd.net/projects/1/wiki/Docs_SSL#Server-Name-Indication-SNI).
 
@@ -385,7 +401,7 @@ $HTTP["host"] == "mail.example.org" {
 
 ```
 
-#### Redirect HTTP requests to HTTPS
+#### Redirect http requests to https
 
 You should add `"mod_redirect"` in server.modules array in `/etc/lighttpd/lighttpd.conf`:
 
@@ -429,7 +445,7 @@ $SERVER["socket"] == ":80" {
 
 ```
 
-### Output Compression
+### Output compression
 
 In `/etc/lighttpd/lighttpd.conf` add
 

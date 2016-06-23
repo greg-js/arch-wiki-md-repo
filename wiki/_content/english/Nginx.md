@@ -699,13 +699,22 @@ If you do not remove the non-chrooted nginx installation, you may want to make s
 
 #### Running unprivileged using [systemd](/index.php/Systemd "Systemd")
 
-[Edit nginx.service](/index.php/Systemd#Editing_provided_units "Systemd") and set the `User=` and optionally `Group=` options under `[Service]`:
+[Edit nginx.service](/index.php/Systemd#Editing_provided_units "Systemd") and set the `User` and optionally `Group` options under `[Service]`:
 
  `/etc/systemd/system/nginx.service.d/user.conf` 
 ```
 [Service]
 User=*user*
 Group=*group*
+```
+
+We can harden the service against ever elevating privileges:
+
+ `/etc/systemd/system/nginx.service.d/user.conf` 
+```
+[Service]
+...
+NoNewPrivileges=yes
 ```
 
 **Tip:** See [systemd.exec(5)](http://www.freedesktop.org/software/systemd/man/systemd.exec.html#User=) for more options of confinement.
@@ -755,6 +764,8 @@ ExecStart=/usr/bin/nginx -g 'pid /run/nginx/nginx.pid; error_log stderr;' # copi
 	The step of running a configuration test will create a dangling `root`-owned log. Remove logs in `/var/log/nginx` to start fresh.
 
 Now we should be good to go. Go ahead and [start](/index.php/Systemd#Using_units "Systemd") nginx, and enjoy your completely rootless nginx.
+
+**Tip:** The same setup may be desirable for your [FastCGI server](#FastCGI) as well.
 
 ## Troubleshooting
 

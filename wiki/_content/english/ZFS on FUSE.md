@@ -94,11 +94,17 @@ The nfs-kernel daemon should be installed and started:
 
 ```
 # pacman -S nfs-utils
-# rc.d start nfs-kernel
+# systemctl start nfs-kernel
 
 ```
 
-Add the nfs-server to DAEMONS array in `/etc/rc.conf` well before the nfs-fuse.
+Enable and Start the nfs-fuse daemon.
+
+```
+# systemctl enable nfs-fuse.service
+# systemctl start nfs-fuse.service
+
+```
 
 The syntax of setting the NFS share is:
 

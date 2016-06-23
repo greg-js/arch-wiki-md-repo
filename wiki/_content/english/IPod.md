@@ -27,8 +27,9 @@ The purpose of this article is to demonstrate the use of iDevices under Arch Lin
     *   [5.5 The iFuse Way - iPhone OS 3.x and 4.x](#The_iFuse_Way_-_iPhone_OS_3.x_and_4.x)
     *   [5.6 Rhythmbox](#Rhythmbox)
 *   [6 iPod Classic/Nano3g](#iPod_Classic.2FNano3g)
-*   [7 iPod management apps](#iPod_management_apps)
-*   [8 See also](#See_also)
+*   [7 iPod Shuffle 1st and 2nd generation](#iPod_Shuffle_1st_and_2nd_generation)
+*   [8 iPod management apps](#iPod_management_apps)
+*   [9 See also](#See_also)
 
 ## Required Packages
 
@@ -83,18 +84,20 @@ Both videos and photos can be found in typically in `*<mountpoint>*/DCIM/100APPL
 Typically you want to convert MOV files to a HTML5 video format like OGV using ffmpeg2theora. Note that the creation date metadata is not in the converted video, so you need to use a script like:
 
 ```
-   find -name "*.MOV" | while read mov
-   do
-       d=$(gst-discoverer-0.10 -v $mov | awk '/datetime:/{print $2}' | tr -d \")
-       base=${mov%.*}
-       if test -f $base.ogv
-       then
-               touch -d${d} $base.ogv
-               ls -l $base.ogv
-       else
-               echo $base.ogv missing
-       fi
-   done
+#!/usr/bin/sh
+
+find -name "*.MOV" | while read mov
+do
+    d=$(gst-discoverer-0.10 -v $mov | awk '/datetime:/{print $2}' | tr -d \")
+    base=${mov%.*}
+    if test -f $base.ogv
+    then
+        touch -d${d} $base.ogv
+        ls -l $base.ogv
+    else
+        echo $base.ogv missing
+    fi
+done
 
 ```
 
@@ -105,7 +108,7 @@ And use `cp -a` or `rsync -t` in order to preserve the file's date & time.
 You can move photos and videos out of `*<mountpoint>*/DCIM/100APPLE`, however you need to trigger a rebuild of the "Camera Roll" database by deleting the old databases.
 
 ```
-   PhotoData$ sudo rm Photos* com.apple.photos.caches_metadata.plist
+# rm Photos* com.apple.photos.caches_metadata.plist
 
 ```
 
@@ -169,7 +172,7 @@ mencoder INPUT -o output.mp4 \
 Another encoder with comprehensive configuration support. Example command to encode for 5G iPod:
 
 ```
-ffmpeg -vcodec xvid -b 300 -qmin 3 -qmax 5 -bufsize 4096 \
+$ ffmpeg -vcodec xvid -b 300 -qmin 3 -qmax 5 -bufsize 4096 \
 -g 300 -acodec aac -ab 96 -i INPUT -s 320x240 \
 -aspect 4:3 output.mp4
 
@@ -178,7 +181,7 @@ ffmpeg -vcodec xvid -b 300 -qmin 3 -qmax 5 -bufsize 4096 \
 or iPod Touch/iPhone compatible video output:
 
 ```
-ffmpeg -f mp4 -vcodec mpeg4 -maxrate 1000 -b 700 -qmin 3 -qmax 5\
+$ ffmpeg -f mp4 -vcodec mpeg4 -maxrate 1000 -b 700 -qmin 3 -qmax 5\
 -bufsize 4096 -g 300 -acodec aac -ab 192 -s 480×320 -aspect 4:3 -i INPUT output.mp4
 
 ```
@@ -396,7 +399,7 @@ You need to set up the iPod to make libgpod able to find its FireWire ID. For th
 2 ) Find the serial number by typing
 
 ```
-  sudo lsusb -v | grep -i Serial 
+# lsusb -v | grep -i Serial 
 
 ```
 
@@ -412,6 +415,17 @@ this should print a 16 character long string like 00A1234567891231 (it will have
 (replace ffffffffffffffff with the 16 digit string you obtained at the previous step and do not forget the leading 0x before the string)
 
 Your iPod can now be managed with Amarok or gtkpod.
+
+## iPod Shuffle 1st and 2nd generation
+
+Due to the simple structure of the Shuffle (compared to the "big" iPods), it is possible to use the player almost like any other USB flash MP3 player. What is necessary is [rebuild_db.py](http://sourceforge.net/projects/shuffle-db/files/latest/download) file stored in the iPod's root directory. Simply copy MP3 files onto the iPod Shuffle (sub-folders are allowed too) and run:
+
+```
+$ python2 /path/to/rebuild_db.py
+
+```
+
+[Source](http://shuffle-db.sourceforge.net/)
 
 ## iPod management apps
 

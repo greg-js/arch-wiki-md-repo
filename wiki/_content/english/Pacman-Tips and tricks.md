@@ -314,7 +314,7 @@ The database can be restored by moving the `pacman_database.tar.bz2` file into t
 
 ### Check changelogs easily
 
-When maintainers update packages, commits are often commented in a useful fashion. Users can quickly check these from the command line by installing [paclog](https://aur.archlinux.org/packages/paclog/). This utility lists recent commit messages for packages from the official repositories or the AUR, by using `paclog package`.
+When maintainers update packages, commits are often commented in a useful fashion. Users can quickly check these from the command line by installing [pacolog](https://aur.archlinux.org/packages/pacolog/). This utility lists recent commit messages for packages from the official repositories or the AUR, by using `pacolog <package>`.
 
 ## Installation and recovery
 

@@ -335,21 +335,11 @@ Kernel 3.9 contains a new default "Automatic" mode for the "Broadcast RGB" prope
 
 One can force mode e.g. `xrandr --output <HDMI> --set "Broadcast RGB" "Full"` (replace `<HDMI>` with the appropriate output device, verify by running `xrandr`).
 
-This can be made permanent with an `xorg.conf.d` configuration file. [[7]](ftp://www.x.org/pub/X11R7.5/doc/man/man4/intel.4.html)
-
- `/etc/X11/xorg.conf.d/20-intel.conf` 
-```
-Section "Device"
-   Identifier  "Intel Graphics"
-   Driver      "intel"
-   ...
-   Option      "BROADCAST_RGB" "0"
-EndSection
-```
+Unfortunately, the Intel driver does not support setting the color range through an `xorg.conf.d` configuration file.
 
 A [bug report](https://bugzilla.kernel.org/show_bug.cgi?id=94921) is filed and a patch can be found in the attachment.
 
-Also there are other related problems which can be fixed editing GPU registers. More information can be found [[8]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[9]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
+Also there are other related problems which can be fixed editing GPU registers. More information can be found [[7]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[8]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
 
 ### Backlight is not adjustable
 

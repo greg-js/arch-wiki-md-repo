@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [CPU_Frequency_Scaling](/index.php/CPU_Frequency_Scaling "CPU Frequency Scaling") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-04-14，点击[这里](https://wiki.archlinux.org/index.php?title=CPU_Frequency_Scaling&diff=0&oldid=362979)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [CPU_Frequency_Scaling](/index.php/CPU_Frequency_Scaling "CPU Frequency Scaling") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-22，点击[这里](https://wiki.archlinux.org/index.php?title=CPU_Frequency_Scaling&diff=0&oldid=436397)可以查看翻译后英文页面的改动。
 
 [CPUfreq](http://www.kernel.org/pub/linux/utils/kernel/cpufreq/cpufreq.html) 引用了内核架构中的 CPU 频率调整部分相关功能。这项技术使得操作系统能够提高或降低CPU速度来达到省电目的。CPU 频率可以根据系统负荷自动调整，或响应 ACPI 事件而调整，或通过用户空间程序手工调整。
 
@@ -16,11 +16,14 @@
     *   [3.1 调节 ondemand 调速器](#.E8.B0.83.E8.8A.82_ondemand_.E8.B0.83.E9.80.9F.E5.99.A8)
         *   [3.1.1 开关阙值](#.E5.BC.80.E5.85.B3.E9.98.99.E5.80.BC)
         *   [3.1.2 采样率](#.E9.87.87.E6.A0.B7.E7.8E.87)
+        *   [3.1.3 保存设置](#.E4.BF.9D.E5.AD.98.E8.AE.BE.E7.BD.AE)
 *   [4 与ACPI事件交互](#.E4.B8.8EACPI.E4.BA.8B.E4.BB.B6.E4.BA.A4.E4.BA.92)
 *   [5 GNOME下的授权](#GNOME.E4.B8.8B.E7.9A.84.E6.8E.88.E6.9D.83)
 *   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [6.1 BIOS频率限制](#BIOS.E9.A2.91.E7.8E.87.E9.99.90.E5.88.B6)
-*   [7 See also](#See_also)
+*   [7 Common issues](#Common_issues)
+    *   [7.1 High load](#High_load)
+*   [8 参阅](#.E5.8F.82.E9.98.85)
 
 ## 用户空间工具
 
@@ -34,9 +37,7 @@ By default, it monitors CPU temperature using available CPU digital temperature 
 
 ### i7z
 
-[i7z](https://www.archlinux.org/packages/?name=i7z) 是 Linux 下极其好用的针对 i7 CPU 的报告工具（也同样适用于 i3 和 i5 CPU）。您可以在终端下输入 `i7z` 或者使用图形化工具 `i7z-gui` 来运行它。
-
-**注意:** [i7z](https://www.archlinux.org/packages/?name=i7z)-0.27.2 在 2012 年 9月已经释出。这里推荐安装 [i7z-git](https://aur.archlinux.org/packages/i7z-git/)，以适应更多的硬件类型。
+[i7z](https://www.archlinux.org/packages/?name=i7z) 是 i7 CPU 的报告工具（也同样适用于 i3 和 i5 CPU）。您可以在终端下输入 `i7z` 或者使用图形化工具 `i7z-gui` 来运行它。
 
 ### cpupower
 
@@ -57,17 +58,17 @@ The configuration file for *cpupower* is located in `/etc/default/cpupower`. Thi
 
 **注意:**
 
-*   从 kernel 3.4 开始，原生的 CPU 模块将会自动加载。
-*   从 kernel 3.9 开始，名为 `pstate` 的新的功率驱动程序将会在以下的驱动程序之前自动为现代的 Intel CPU 启用。该驱动会优先于其他的驱动程序，因为它是内置驱动，而不是作为一个模块来加载。该驱动自动作用于 Sandy Bridge 和 Ivy Bridge 这两个类型的 CPU。如果您在使用这个驱动的时候遇到问题，建议您在 Grub 的内核参数中对其禁用（即修改 /etc/default/grub 文件，在 GRUB_CMDLINE_LINUX_DEFAULT= 后添加 intel_pstate=disable）。
+*   原生的 CPU 模块将会自动加载。
+*   `pstate` 的新的功率驱动程序将会在以下的驱动程序之前自动为现代的 Intel CPU 启用。该驱动会优先于其他的驱动程序，因为它是内置驱动，而不是作为一个模块来加载。该驱动自动作用于 Sandy Bridge 和 Ivy Bridge 这两个类型的 CPU。如果您在使用这个驱动的时候遇到问题，建议您在 Grub 的内核参数中对其禁用（即修改 /etc/default/grub 文件，在 GRUB_CMDLINE_LINUX_DEFAULT= 后添加 intel_pstate=disable）。
 *   实际上，P 状态的状态功能可以通过 `/sys/devices/system/cpu/intel_pstate` 进行更改。例如：通过 `# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo` 可以关闭 Intel Turbo Boost 来降低 CPU 的温度。
-*   对于现代的 Intel CPU，[Linux Thermal Daemon](https://01.org/linux-thermal-daemon) 也提供了一些其他的控制方法（例如，AUR 中的 [thermald](https://aur.archlinux.org/packages/thermald/)），它们能够更加激进的用 P-states，T-states 或 Intel power clamp driver 对系统温度进行抑制。thermald 也可用于老式的 Intel CPUs。如果最新的驱动不可用，守护进程将会恢复到 x86 model specific registers 而用 Linux ‘cpufreq subsystem’ 来抱持系统的清凉。
+*   对于现代的 Intel CPU，[Linux Thermal Daemon](https://01.org/linux-thermal-daemon) 也提供了一些其他的控制方法（例如[thermald](https://aur.archlinux.org/packages/thermald/)），它们能够更加激进的用 P-states，T-states 或 Intel power clamp driver 对系统温度进行抑制。thermald 也可用于老式的 Intel CPUs。如果最新的驱动不可用，守护进程将会恢复到 x86 model specific registers 而用 Linux ‘cpufreq subsystem’ 来抱持系统的清凉。
 
 *cpupower* 需要模块才能知道本地的 CPU 限制信息：
 
 | 模块 | 描述 |
 | intel_pstate | This driver implements a scaling driver with an internal governor for Intel Core (SandyBridge and newer) processors. |
 | acpi-cpufreq | CPUFreq driver which utilizes the ACPI Processor Performance States. This driver also supports Intel Enhanced SpeedStep (previously supported by the deprecated speedstep-centrino module).支持ACPI Processor Performance States的CPUFreq驱动。该驱动也支持Intel Enhanced SpeedStep（之前由已过期的模块speedstep-centrino支持）。 |
-| speedstep-lib | CPUFreq drive for Intel speedstep enabled processors (mostly atoms and older pentiums (< 3)) 支持拥有speedstep功能的Intel处理器（通常是atom和奔腾3代或更老的处理器）CPUFreq驱动。 |
+| speedstep-lib | CPUFreq driver for Intel speedstep enabled processors (mostly atoms and older pentiums (< 3)) 支持拥有speedstep功能的Intel处理器（通常是atom和奔腾3代或更老的处理器）CPUFreq驱动。 |
 | powernow-k8 | CPUFreq driver for K8/K10 Athlon64/Opteron/Phenom processors. **Deprecated since linux 3.7 - Use acpi_cpufreq.**支持K8/K10 Athlon64/Opteron/Phenom处理器的CPUFreq驱动。**从linux 3.7开始进入淘汰阶段，使用acpi-cpufreq替代。** |
 | pcc-cpufreq | This driver supports Processor Clocking Control interface by Hewlett-Packard and Microsoft Corporation which is useful on some Proliant servers.支持HP和微软提出的“处理器时钟频率控制”接口，这在一些Proliant服务器上很有用。 |
 | p4-clockmod | CPUFreq driver for Intel Pentium 4 / Xeon / Celeron processors. When enabled it will lower CPU temperature by skipping clocks.
@@ -119,6 +120,8 @@ $ cpupower frequency-info
 *   The governor，频率的最大值和最小值可以在 `/etc/default/cpupower` 中设置。
 
 ## 调整调速器
+
+**Note:** pstate 驱动仅支持 performance 和 powersave governors and the performance [可以比老的 ondemand governor 更省电](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ).
 
 调速器（见下表）是预设的 CPU 电源方案。在同一时刻只会有一个会调速器被激活。可以查询内核源码的 [内核文档](https://www.kernel.org/doc/Documentation/cpu-freq/governors.txt) 得到更多的相关信息。
 
@@ -181,7 +184,7 @@ $ watch grep \"cpu MHz\" /proc/cpuinfo
 
 #### 采样率
 
-采样率决定调速器多久进行一次检查并调整CPU频率。 设置`sampling_down_factor`大于1将通过降低负载评估的消耗，并将CPU保持在最高运行频率而提高性能。这个可调参数对低CPU频率/负载没有效果。
+采样率决定调速器多久进行一次检查并调整CPU频率。 设置`sampling_down_factor`大于1将通过降低负载评估的消耗，并将CPU保持在最高运行频率而提高性能。`sampling_down_factor` 的可选数值是 1 到 100000。这个可调参数对低CPU频率/负载没有效果。
 
 要获取这个值 (default = 1)，运行：
 
@@ -194,6 +197,16 @@ $ cat /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 
 ```
 # echo -n <value> > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
+
+```
+
+#### 保存设置
+
+要在重启后自动启用设置，可以使用 systemd-tmpfiles. 例如要在启动时设置 sampling_down_factor，创建并编辑 `/etc/tmpfiles.d/10-cpu-sampling-down.conf`：
+
+ `/etc/tmpfiles.d/10-cpu-sampling-down.conf` 
+```
+w /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor - - - - 40
 
 ```
 
@@ -290,7 +303,13 @@ ResultActive=yes
 options processor ignore_ppc=1
 ```
 
-## See also
+## Common issues
+
+### High load
+
+There is a bug in the kernel module `rtsx_usb_ms` which causes a constant load over 1.0\. Test whether it makes a difference by temporarily removing it `rmmod rtsx_usb_ms`
+
+## 参阅
 
 *   [Linux CPUFreq - kernel documentation](https://www.kernel.org/doc/Documentation/cpu-freq/index.txt)
 *   [Comprehensive explanation of pstate](http://www.reddit.com/r/linux/comments/1hdogn/acpi_cpufreq_or_intel_pstates/)

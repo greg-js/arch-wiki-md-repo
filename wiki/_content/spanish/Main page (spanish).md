@@ -72,6 +72,8 @@ Las páginas de ArchWiki tienen sus propias convenciones específicas, por lo qu
 
 Si busca información específica, pruebe a utilizar el recuadro de búsqueda del márgen superior izquierdo de esta página. También puede utilizar su motor de búsqueda favorito de la web, que probablemente le proporcione una sintaxis especial o una interfaz para limitar los resultados de búsqueda a un sitio web en particular (normalmente será suficiente añadir `site:wiki.archlinux.org` a los términos de búsqueda). Véase [Help:Searching](/index.php/Help:Searching "Help:Searching") para conocer otros trucos.
 
-### Registro de cuenta desde sistemas que no sean Arch
+### Suspendidas temporalmente las altas de nuevas cuentas
 
-El [captcha](https://en.wikipedia.org/wiki/es:Captcha "wikipedia:es:Captcha") utilizado para registrar una nueva cuenta en la wiki requiere la ejecución de un sistema Arch actualizado. No obstante, los usuarios de otros sistemas operativos son, por supuesto, muy bienvenidos, a condición de que contribuyan únicamente con contenido [genérico](/index.php/ArchWiki:Contributing#Non-Arch_users "ArchWiki:Contributing") relacionado con Linux: con el fin de responder al captcha, se les aconseja arrancar la última [imagen live](https://www.archlinux.org/download/) de Arch, por ejemplo, en una máquina virtual, o enviar un correo electrónico a un [administrador](/index.php/ArchWiki:Administrators "ArchWiki:Administrators") activo para obtener ayuda.
+Los registros de nuevos usuarios para esta wiki han quedado suspendidos temporalmente debido a los repetidos ataques de spam. Con el fin de crear una cuenta, [compruebe](/index.php/Special:ListUsers "Special:ListUsers") si el nombre de usuario deseado está disponible. A continuación, puede unirse a [#archlinux-wiki](/index.php/ArchWiki:IRC "ArchWiki:IRC") y pedir a uno de los administradores presentes que le cree su usuario (comparta los detalles de su correo electrónico a través de mensaje privado), o puede enviar [directamente un correo electrónico a un admnistrador](/index.php/ArchWiki:Administrators "ArchWiki:Administrators").
+
+Con suerte, esto se solucionará en breve. Gracias por su paciencia.

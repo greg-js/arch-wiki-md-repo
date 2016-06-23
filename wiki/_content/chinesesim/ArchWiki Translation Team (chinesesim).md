@@ -131,7 +131,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [ATI (简体中文)](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)") | 完成 | skysailing | 无 |
 | [AUR helpers (简体中文)](/index.php/AUR_helpers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helpers (简体中文)") | 进行中 | Stonex | 无 |
 | [awesome (简体中文)](/index.php/Awesome_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Awesome (简体中文)") | 进行中 | Cael | 无 |
-| [BIND (简体中文)](/index.php/BIND_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "BIND (简体中文)") | 翻译中 | SteamedFish | 无 |
+| [BIND (简体中文)](/index.php/BIND_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "BIND (简体中文)") | 完成 | Dargasia | SteamFish 未完成翻译，2016-06-22 重新开始。请求校对。 |
 | [Bumblebee (简体中文)](/index.php/Bumblebee_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bumblebee (简体中文)") | 完成 | Peter | 无 |
 | [Chromium (简体中文)](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)") | 翻译中 | Bobby | 部分未翻译 |
 | [Ceph (简体中文)](/index.php/Ceph_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ceph (简体中文)") | 翻译中 | Aaron Chen | 部分未翻译 |
@@ -146,7 +146,6 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [File recovery (简体中文)](/index.php/File_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File recovery (简体中文)") | 翻译中 | _spaike97 | 无 |
 | [Font configuration (简体中文)](/index.php/Font_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Font configuration (简体中文)") | 翻译中 | Jaurung | 完善中 |
 | [Fonts (简体中文)](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)") | 翻译中 | qqbzg | 无 |
-| [KDE (简体中文)](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)") | 翻译中 | Mithrandir | 未完成 |
 | [LAMP (简体中文)](/index.php/LAMP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LAMP (简体中文)") | 完成 | Liuzhengyi | 勘误中 |
 | [LibreOffice (简体中文)](/index.php/LibreOffice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LibreOffice (简体中文)") | 完成 | qqbzg | 勘误中 |
 | [Local Mirror (简体中文)](/index.php/Local_Mirror_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Local Mirror (简体中文)") | 完成 | Jason Zhang | 完善中 |
@@ -165,7 +164,6 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Systemd-timesyncd (简体中文)‎‎](/index.php/Systemd-timesyncd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-timesyncd (简体中文)") | 完成 | Peter |
 | [Vim (简体中文)](/index.php/Vim_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Vim (简体中文)") | 完成 | Crupest | 无 |
 | [VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") | 翻译中 | Carl X. Su | 请优先翻译此文 |
-| [VirtualBox Extras (简体中文)](/index.php/VirtualBox_Extras_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox Extras (简体中文)") | 部分翻译 | 无 | 需要合并到 [VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") |
 | [VMware (简体中文)](/index.php/VMware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VMware (简体中文)") | 翻译中 | Jason Zhang | 无 |
 | [Xfce (简体中文)](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)") | 翻译中 | ZaticWu | 请优先翻译 |
 | [Xmonad (简体中文)](/index.php/Xmonad_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xmonad (简体中文)") | 未翻译 | Rns | 翻译中 |

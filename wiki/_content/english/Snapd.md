@@ -16,7 +16,7 @@
 
 The stable version is available as [snapd](https://aur.archlinux.org/packages/snapd/).
 
-Installing it will install the `snapd` daemon as well as *snap-confine*, which mounts, confines and launches snap packages. Note that [snap-confine](https://github.com/snapcore/snap-confine) relies on an [AppArmor](/index.php/AppArmor "AppArmor") enabled kernel.
+Installing it will install the `snapd` daemon as well as *snap-confine*, which mounts and launches snap packages. Note that [snap-confine](https://github.com/snapcore/snap-confine) is built with the `--disable-confinement` option; full confinement relies on an [AppArmor](/index.php/AppArmor "AppArmor") enabled kernel and related profile for the snap.
 
 **Tip:** `snapd` installs a script in `/etc/profile.d/` to export the paths of binaries installed with the snapd package and desktop entries. Reboot once to make this change take effect.
 

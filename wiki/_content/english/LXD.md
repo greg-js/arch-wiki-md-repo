@@ -10,7 +10,9 @@
         *   [1.4.1 Example network configuration](#Example_network_configuration)
 *   [2 Basic usage](#Basic_usage)
     *   [2.1 First steps](#First_steps)
-*   [3 See also](#See_also)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
+*   [4 See also](#See_also)
 
 ## Setup
 
@@ -26,6 +28,8 @@ $ lxc-checkconfig
 ```
 
 Due to security concerns, the default Arch kernel does **not** ship with the ability to run containers as an unprivileged user. LXD however needs this ability to run. You can either build a kernel yourself that has `CONFIG_USER_NS` enabled, or use [linux-user-ns-enabled](https://aur.archlinux.org/packages/linux-user-ns-enabled/) from the [AUR](/index.php/AUR "AUR").
+
+**Note:** You still be able to run containers without CONFIG_USER_NS kernel feature. See: [#Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
 
 ### Sub{u,g}id configuration
 
@@ -117,6 +121,40 @@ Alternatively, you can also use a remote LXD host as a source of images. One com
 
 ```
 $ lxc launch images:centos/7/amd64 centos
+
+```
+
+## Troubleshooting
+
+### Launching container without CONFIG_USER_NS
+
+For launching images you must provide `security.privileged=true` during image creation:
+
+```
+$ lxc launch ubuntu:16.04 test_ubuntu -c security.privileged=true
+
+```
+
+Or for already existed image you may edit config:
+
+```
+$ lxc config edit test_ubuntu
+
+```
+
+```
+name: test_ubuntu
+profiles:
+- default
+config:
+  ...
+  security.privileged: "true"
+  ...
+devices:
+  root:
+    path: /
+    type: disk
+ephemeral: false
 
 ```
 

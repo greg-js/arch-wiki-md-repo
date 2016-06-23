@@ -23,7 +23,7 @@ For more information on creating key pairs see, [SSH Keys](/index.php/SSH_keys "
 After generating key pairs you should have a public and private key in `~/.ssh`. The public key has the extension `.pub`. To paste your public key to [ptpb.pw](https://ptpb.pw) do:
 
 ```
-cat ~/rsa_id.pub | curl -F c=@- https://ptpb.pw/
+cat ~/.ssh/id_rsa.pub | curl -F c=@- https://ptpb.pw/
 
 ```
 
@@ -36,7 +36,7 @@ Add the nick you want to use on git and a link to your public key to the table.
 | Nick | SSH Public Key |
 | meskarune | [public key](https://ptpb.pw/vj4X/sh) |
 | ripelascra | [public key](https://ptpb.pw/KEKy/sh) |
-| nick | key |
+| therue | [public key](https://ptpb.pw/2pnP/sh) |
 | nick | key |
 
 ### Help

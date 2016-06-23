@@ -72,6 +72,12 @@ ArchWiki 有一些特殊的语法和标注方式，要了解它们，请阅读 [
 
 你需要一个最新的 Arch Linux 来获得注册账户时需要的验证问题的答案。不是 Arch Linux 用户？也欢迎来贡献与发行版无关的[通用](/index.php/ArchWiki:Contributing#Non-Arch_users "ArchWiki:Contributing")内容。启动 Arch Linux 的 Live 映像就可以获得验证问题的答案，或者你也可以电子邮件联系一个[管理员](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")来获得账户。
 
+### 账户注册功能暂不开放
+
+由于这个 Wiki 不断受到广告的攻击，新用户的注册暂时不被接受。如果您需要注册一个账户的话，请先[检查](/index.php/Special:ListUsers "Special:ListUsers")用户名是否可用。之后，您既可以加入 freenode 上的 [#archlinux-wiki](/index.php/ArchWiki:IRC "ArchWiki:IRC") 频道来请求管理员为您手动创建一个账户（在有空的管理员回复之后，把自己的用户名与邮箱通过私信传递），也可以[直接给管理员发送邮件](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")。
+
+我们希望这个限制是短期的。感谢您的配合与耐心。
+
 ## 相关链接
 
 全世界的 Arch 用户乐于帮助您，您可以通过以下方式找到他们：

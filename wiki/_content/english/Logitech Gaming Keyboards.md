@@ -1,4 +1,9 @@
-Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The options are the python based [Gnome15 project](http://www.gnome15.org) and the C based [g15daemon project](http://sourceforge.net/projects/g15daemon/).
+Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. There are a few packages available
+
+*   the python based [Gnome15 project](http://www.gnome15.org)
+*   the C based [g15daemon project](http://sourceforge.net/projects/g15daemon/).
+*   [https://github.com/tolga9009/sidewinderd](https://github.com/tolga9009/sidewinderd)
+*   [https://github.com/Wattos/logitech-g710-linux-driver](https://github.com/Wattos/logitech-g710-linux-driver)
 
 ## Install
 
@@ -7,6 +12,10 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 [gnome15](https://aur.archlinux.org/packages/gnome15/) is available in AUR.
 
 **Note:** The source site has been down since mid November 2014\. The AUR package cannot be built. The new Maintainer is actively working on providing all existing packages.
+
+[sidewinderd](https://aur.archlinux.org/packages/sidewinderd/)
+
+[hid-lg-g710-plus-dkms-git](https://aur.archlinux.org/packages/hid-lg-g710-plus-dkms-git/)
 
 ### Supported Models
 
@@ -25,6 +34,14 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 *   G13
 *   G110
 *   G510 and G510s (Partial)
+
+[sidewinderd](https://aur.archlinux.org/packages/sidewinderd/) supports:
+
+*   Logitech 710+ (And Microsoft Sidewinder X4 / X6 hence name)
+
+[hid-lg-g710-plus-dkms-git](https://aur.archlinux.org/packages/hid-lg-g710-plus-dkms-git/) supports:
+
+*   Logitech G710+
 
 ## G510 on g15daemon
 
