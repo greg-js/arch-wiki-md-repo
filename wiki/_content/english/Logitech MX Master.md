@@ -37,11 +37,11 @@ If using PulseAudio (more info [here](/index.php/Xbindkeys#Xbindkeysrc "Xbindkey
 
 ```
 # thumb wheel up => increase volume
-pactl set-sink-volume @DEFAULT_SINK@ +2%
+"pactl set-sink-volume @DEFAULT_SINK@ +2%"
    b:6
 
 # thumb wheel down => lower volume
-pactl set-sink-volume @DEFAULT_SINK@ -2%
+"pactl set-sink-volume @DEFAULT_SINK@ -2%"
    b:7
 
 ```

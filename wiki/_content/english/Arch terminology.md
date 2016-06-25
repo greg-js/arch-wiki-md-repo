@@ -147,7 +147,7 @@ The [pacman](/index.php/Pacman "Pacman") [package manager](https://en.wikipedia.
 
 *pacman* keeps the system up to date by synchronizing package lists with the master server. This server/client model also allows the user to download/install packages with a simple command, complete with all required dependencies.
 
-NB: Pacman was written by Judd Vinet, the creator of Arch Linux. It is used as a package management tool by other distributions as well, such as FrugalWare, Rubix, UfficioZero (in Italy, based on Ubuntu), and, of course, [Arch based distributions](/index.php/Arch_based_distributions_(active) "Arch based distributions (active)") such as Archie and AEGIS.
+NB: Pacman was written by Judd Vinet, the creator of Arch Linux. It is used as a package management tool by other distributions as well, such as FrugalWare, Rubix, UfficioZero (in Italy, based on Ubuntu), and, of course, [Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions") such as Archie and AEGIS.
 
 ## pacman.conf
 

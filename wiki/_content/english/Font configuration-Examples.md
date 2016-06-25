@@ -134,7 +134,7 @@ Some users prefer the sharper rendering that anti-aliasing does not offer:
 
 ## Default fonts
 
-For font consistency, all applications should be set to use the serif, sans-serif, and monospace aliases, which are mapped to particular fonts by fontconfig. See [Metric-compatible_fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts") for options and examples.
+For font consistency, all applications should be set to use the serif, sans-serif, and monospace aliases, which are mapped to particular fonts by fontconfig. See [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts") for options and examples.
 
 ### Japanese
 

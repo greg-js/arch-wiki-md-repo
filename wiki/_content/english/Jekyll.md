@@ -86,7 +86,7 @@ If you are unfamiliar with Markdown, Gruber's [website](http://daringfireball.ne
 
 ## Configuration
 
-A default Jekyll directory tree looks like the following, where "." denotes the root directory of your Jeykll generated website.
+A default Jekyll directory tree looks like the following, where "." denotes the root directory of your Jekyll generated website.
 
 ```
 .

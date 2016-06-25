@@ -87,7 +87,7 @@ Arch heeft een vitale en actieve gemeenschap van software-ontwikkelaars. Als u e
 
 **Note:** Alle hier genoemde projecten zijn projecten voor de gemeenschap. Geen van deze projecten worden beschouwd als officiële Arch projecten.
 
-[**Arch gebaseerde distributies**](/index.php/Arch_Based_Distributions "Arch Based Distributions")
+[**Arch gebaseerde distributies**](/index.php/Arch_based_distributions "Arch based distributions")
 
 	Andere distributies op Arch Linux
 

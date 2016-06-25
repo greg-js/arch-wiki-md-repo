@@ -103,7 +103,7 @@ user *user* [*group*];
 
 If the group is omitted, a group whose name equals that of *user* is used.
 
-**Tip:** It is also possible to run nginx without anything running as `root` using [systemd](/index.php/Systemd "Systemd"). See [#Running_unprivileged_using_systemd](#Running_unprivileged_using_systemd).
+**Tip:** It is also possible to run nginx without anything running as `root` using [systemd](/index.php/Systemd "Systemd"). See [#Running unprivileged using systemd](#Running_unprivileged_using_systemd).
 
 #### Server blocks
 
@@ -763,7 +763,7 @@ ExecStart=/usr/bin/nginx -g 'pid /run/nginx/nginx.pid; error_log stderr;' # copi
 
 	The step of running a configuration test will create a dangling `root`-owned log. Remove logs in `/var/log/nginx` to start fresh.
 
-Now we should be good to go. Go ahead and [start](/index.php/Systemd#Using_units "Systemd") nginx, and enjoy your completely rootless nginx.
+Now we should be good to go. Go ahead and [start](/index.php/Start "Start") nginx, and enjoy your completely rootless nginx.
 
 **Tip:** The same setup may be desirable for your [FastCGI server](#FastCGI) as well.
 

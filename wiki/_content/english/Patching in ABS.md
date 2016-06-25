@@ -5,9 +5,6 @@ This document covers the steps to creating and/or applying patches to packages w
 *   [1 Creating patches](#Creating_patches)
 *   [2 Applying patches](#Applying_patches)
 *   [3 Using quilt](#Using_quilt)
-    *   [3.1 Creating a new patch](#Creating_a_new_patch)
-    *   [3.2 Applying and reverting patches](#Applying_and_reverting_patches)
-    *   [3.3 Importing patches](#Importing_patches)
 *   [4 See also](#See_also)
 
 ## Creating patches
@@ -27,7 +24,7 @@ Creating a patch for a package involves creating two copies of the package, edit
 7.  Run `diff -aur package.pristine package.new` This will output all the changes you made in unified diff format. You can scan these to make sure the patch is good.
 8.  Run `diff -aur package.pristine package.new > package.patch` to capture all the changes in a file named `package.patch`. This is the file that will be used by patch. You may now apply the changes to a copy of the original directory and make sure they are working properly. You should also check to ensure that the patch does not contain any extraneous details. For example, you do not want the patch to convert all tabs in the files you edited to spaces because your text editor did that behind your back. You can edit the patch either using a text editor, or to be safer (and not accidentally introduce errors into the diff file), edit the original files and create the patch afresh.
 
-**Note:** A simpler way to create patches is using [quilt](https://www.archlinux.org/packages/?name=quilt) which has better job to manage many patches, such as applying patches, refreshing patches, and reverting patched files to original state. [quilt](https://www.archlinux.org/packages/?name=quilt) is used on [Debian](https://wiki.debian.org/UsingQuilt) to manage their patches. [#Using quilt](#Using_quilt) section of this wiki has basic information about basic quilt usage to generate, apply patches, and reverting patched files. [git](/index.php/Git "Git") is also capable to generate patch via `git diff -p -u commit_hash > patchfile.diff` inside a working tree.
+**Note:** [git](/index.php/Git "Git") is also able to generate patch via `git diff -p -u commit_hash > patchfile.diff` inside a working tree.
 
 ## Applying patches
 
@@ -64,66 +61,8 @@ Most developers create patches from the parent directory of the directory that i
 
 ## Using quilt
 
-Here, I'll explain basic `quilt` usage. For more detailed information about `quilt`, read the quilt manual page.
-
-### Creating a new patch
-
-1.  Navigate to source directory.
-2.  Set environment variable `QUILT_PATCHES='.'` and `QUILT_REFRESH_ARGS='-p ab'`. #*This can be done automatically by setting a `~/.quiltrc` file as below.
-
-    	`QUILT_PATCHES='.'`
-
-    	`QUILT_REFRESH_ARGS='-p ab'`
-
-3.  Create a new patch file via quilt. `$ quilt new 001-fix.diff`
-4.  Add a file to be included in the patch. `$ quilt add Makefile`
-5.  Edit the desired file. `$ nano Makefile`.
-6.  After saving the file, review the patch that will be generated. `$ quilt diff -p ab`.
-7.  If the generated patch is ok, refresh the patch file. `$ quilt refresh`.
-8.  Optionally, add a header to describe what the patch is doing. `$ EDITOR=nano quilt header -e`
-9.  The patch `001-fix.diff` is ready and can be attached to bug tracking system or emailed as text to development mailing list.
-
-### Applying and reverting patches
-
-1.  Set `QUILT_PATCHES` environment variable. In this case, `QUILT_PATCHES='.'` (the current working directory). This step can be skipped if you have a `~/.quiltrc` file containing `QUILT_PATCHES='.'` line.
-2.  In the current working directory, create a `series` file containing patch filenames. The patches will be applied according to their order in the `series` file. For example, I have three patch files: `001-fix.diff`, `002-hello.diff`, and `003-Makefile.diff`. The content of `series` file will be as follow.
-
-    	`001-fix.diff`
-
-    	`002-hello.diff`
-
-    	`003-Makefile.diff`
-
-    *   The `series` file can be generated simply using this command.
-
-    	`$ ls *.diff | tee ./series`
-
-    	You may need to sort the `series` file for correct patching order.
-
-3.  To apply the patches, simply use this command.
-
-    	`$ quilt push -a`
-
-4.  If you want to revert patched files to the original state (reverse patching), simply issue this command.
-
-    	`$ quilt pop -a`
-
-### Importing patches
-
-Instead of manually creating `series` file, patches can be imported and quilt will automatically generate series file. Just issue these command (according to my example before).
-
-```
-$ quilt import 001-fix.diff
-$ quilt import 002-hello.diff
-$ quilt import 003-Makefile.diff
-
-```
-
-Or to simplify, just issue this one line command. `$ quilt import *.diff`
+A simpler way to create patches is using [quilt](https://www.archlinux.org/packages/?name=quilt) which has better job to manage many patches, such as applying patches, refreshing patches, and reverting patched files to original state. [quilt](https://www.archlinux.org/packages/?name=quilt) is used on [Debian](https://wiki.debian.org/UsingQuilt) to manage their patches. See [Using Quilt](http://www.shakthimaan.com/downloads/glv/quilt-tutorial/quilt-doc.pdf) for basic information about basic quilt usage to generate, apply patches, and reverting patched files.
 
 ## See also
 
 *   [http://www.kegel.com/academy/opensource.html](http://www.kegel.com/academy/opensource.html) — Useful information on patching files
-*   [https://packages.gentoo.org/](https://packages.gentoo.org/)
-*   [http://pkgs.fedoraproject.org/cgit/](http://pkgs.fedoraproject.org/cgit/)
-*   [https://wiki.debian.org/UsingQuilt](https://wiki.debian.org/UsingQuilt)

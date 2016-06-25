@@ -587,7 +587,7 @@ If you want to bind your `+` and `-` buttons you must copy the line at the botto
 
 For the newest G5 mouse which is reported as "product 0xc049" original hack does not work. You have to simply change the `#define MOUSE_G5 0xc041` to `#define MOUSE_G5 0xc049` and recompile.
 
-You can execute the g5hack tool at system start up using systemd unit. See [Systemd#Writing_unit_files](/index.php/Systemd#Writing_unit_files "Systemd") for detail.
+You can execute the g5hack tool at system start up using systemd unit. See [Systemd#Writing unit files](/index.php/Systemd#Writing_unit_files "Systemd") for detail.
 
 ## User tools
 

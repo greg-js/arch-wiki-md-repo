@@ -39,7 +39,7 @@
 
 ### 加入聊天室
 
-可以在 [IRC 频道](/index.php/IRC_channel "IRC channel") 中帮助新人解决问题。进入前请先阅读[规则](/index.php/IRC_channel#archlinux_rules "IRC channel")和[指南](/index.php/IRC_channel#archlinux_guidelines "IRC channel")。[有许多频道](/index.php/IRC_channels "IRC channels")专门用来讨论不同的问题。
+可以在 [IRC 频道](/index.php/IRC_channel "IRC channel") 中帮助新人解决问题。进入前请先阅读[规则](/index.php/IRC_channel#.23archlinux_rules "IRC channel")和[指南](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel")。[有许多频道](/index.php/IRC_channels "IRC channels")专门用来讨论不同的问题。
 
 ### 报告安装的软件
 
@@ -109,7 +109,7 @@ Arch 拥有一个充满活力的用户社区。如果您的项目想参与到社
 
 	由社群成员维护的非官方二进制仓库。
 
-	[Arch Based Distributions](/index.php/Arch_Based_Distributions "Arch Based Distributions")
+	[Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
 
 	基于 Arch 的其他发行版。
 

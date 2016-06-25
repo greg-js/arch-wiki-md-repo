@@ -137,7 +137,7 @@ This is the CPIO archive containing the fixed ACPI tables. To use them, copy the
 
 ```
 
-Lastly, configure the [bootloader](/index.php/Boot_loaders "Boot loaders") to load your CPIO archive. For example, using [Systemd-boot](/index.php/Systemd-boot "Systemd-boot"), `/boot/loader/entries/arch.conf` might look like this:
+Lastly, configure the [bootloader](/index.php/Bootloader "Bootloader") to load your CPIO archive. For example, using [Systemd-boot](/index.php/Systemd-boot "Systemd-boot"), `/boot/loader/entries/arch.conf` might look like this:
 
 ```
 title	 Arch Linux

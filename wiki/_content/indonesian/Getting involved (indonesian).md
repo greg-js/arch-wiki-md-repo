@@ -80,7 +80,7 @@ Archlinux mempunyai komunitas untuk pengembangan perangkat lunak yang masih akti
 
 **Note:** Semua proyek yang ada dibawah ini adalah proyek komunitas.Namun tak ada satupun yang termasuk kedalah ***proyek resmi Archlinux***.
 
-#### [Distro berdasarkan Archlinux](/index.php/Arch_Based_Distributions "Arch Based Distributions")
+#### [Distro berdasarkan Archlinux](/index.php/Arch_based_distributions "Arch based distributions")
 
 	Merupakan distro turunan dari Archlinux.
 

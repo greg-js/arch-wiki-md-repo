@@ -17,7 +17,7 @@
 *   [6 'Rolling Release' ezine](#.27Rolling_Release.27_ezine)
 *   [7 Arch projects](#Arch_projects)
 *   [8 Community projects](#Community_projects)
-    *   [8.1 Arch Based Distributions](#Arch_Based_Distributions)
+    *   [8.1 Arch based distributions](#Arch_based_distributions)
     *   [8.2 AUR helpers](#AUR_helpers)
     *   [8.3 Pacman GUI Frontends](#Pacman_GUI_Frontends)
     *   [8.4 Rc.conf GUI Frontends](#Rc.conf_GUI_Frontends)
@@ -95,7 +95,7 @@ Arch has a vital and active community of software developers and contributing pr
 
 **Note:** All projects listed here are community projects. None of these projects are considered ***official*** Arch projects.
 
-#### [Arch Based Distributions](/index.php/Arch_Based_Distributions "Arch Based Distributions")
+#### [Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
 
 	Other distributions based on Arch Linux
 

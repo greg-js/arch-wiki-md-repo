@@ -5,7 +5,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 **Note:**
 
 *   Some recommend not installing the Intel driver, and instead falling back on the modesetting driver. See [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel), [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and `man modesetting`.
-*   PowerVR-based graphics ([GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500") and [GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") series) are not supported by open source drivers.
+*   PowerVR-based graphics ([GMA 500](/index.php/GMA_500 "GMA 500") and [GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") series) are not supported by open source drivers.
 
 ## Contents
 

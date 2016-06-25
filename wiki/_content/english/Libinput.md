@@ -13,6 +13,7 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
     *   [3.2 Mouse button re-mapping](#Mouse_button_re-mapping)
     *   [3.3 Debugging](#Debugging)
     *   [3.4 Multitouch events](#Multitouch_events)
+    *   [3.5 Natural scrolling](#Natural_scrolling)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -143,6 +144,31 @@ While the libinput driver already contains logic to process advanced multitouch 
 For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile.
 
 The utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file. An [AUR](/index.php/AUR "AUR") package is not available yet.[[2]](https://github.com/bulletmark/libinput-gestures/issues/6)
+
+### Natural scrolling
+
+To set up natural (reverse) scrolling, add the following configuration file:
+
+ `/etc/X11/xorg.conf.d/20-natural-scrolling.conf` 
+```
+Section "InputClass"
+        Identifier "libinput pointer catchall"
+        MatchIsPointer "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+	Option "NaturalScrolling" "true"
+EndSection
+
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+	Option "NaturalScrolling" "true"
+EndSection
+```
+
+This will enable natural scrolling for any touchpads or mice.
 
 ## See also
 

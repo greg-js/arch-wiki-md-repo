@@ -2,7 +2,7 @@ Before downgrading a single or multiple packages, consider why you wish to do so
 
 **Warning:**
 
-*   Downgrading one package may require that its dependencies be downgraded as well. When the number of packages to downgrade is large, consider using a snapshot. See [Arch Linux Archive#How to restore all my packages at a specific date](/index.php/Arch_Linux_Archive#How_to_restore_all_my_packages_at_a_specific_date "Arch Linux Archive").
+*   Downgrading one package may require that its dependencies be downgraded as well. When the number of packages to downgrade is large, consider using a snapshot. See [Arch Linux Archive#How to restore all packages to a specific date](/index.php/Arch_Linux_Archive#How_to_restore_all_packages_to_a_specific_date "Arch Linux Archive").
 *   Be careful with changes to configuration files and scripts. For now pacman will handle this for us, as long as we do not bypass its safeguards.
 
 ## Contents

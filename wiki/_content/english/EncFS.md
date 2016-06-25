@@ -288,9 +288,7 @@ rm "$lock" 2>/dev/null
 
 ### Mount using KDE KWallet
 
-This can be done in KDE 4 with the [kdeencfs](http://jaxartes.net/files/kdeencfs) script, with more usage information [here](http://jaxartes.net/linux/kdeencfs.html). You will also have to [install](/index.php/Install "Install") the [kdebase-kdialog](https://www.archlinux.org/packages/?name=kdebase-kdialog) package from the [official repositories](/index.php/Official_repositories "Official repositories").
-
-There are no known solutions for Plasma 5.
+This can be done in KDE with the [kdeencfs](http://pastebin.com/RR1hguwE) script. You will also have to [install](/index.php/Install "Install") the [kdebase-kdialog](https://www.archlinux.org/packages/?name=kdebase-kdialog) and [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) packages from the [official repositories](/index.php/Official_repositories "Official repositories"). kwallet-pam has to started with the session which it is by default. It can be used by calling *kdeencfs encrypted-folder decrypted-folder*.
 
 ## Encrypted backup
 

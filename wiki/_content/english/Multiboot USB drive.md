@@ -443,10 +443,10 @@ menuentry '[loopback]Fedora-20-x86_64-DVD' {
 *   Init system: [systemd](/index.php/Systemd "Systemd") (cmdline: [[18]](http://www.freedesktop.org/software/systemd/man/kernel-command-line.html))
 
 ```
-menuentry '[loopback]Fedora-Live-Workstation-x86_64-23-10' {
-	set isofile='/boot/iso/Fedora-Live-Workstation-x86_64-23-10.iso'
+menuentry '[loopback]Fedora-Live-Workstation-x86_64-24-1.2' {
+	set isofile='/boot/iso/Fedora-Live-Workstation-x86_64-24-1.2.iso'
 	loopback loop $isofile
-	linux (loop)/isolinux/vmlinuz0 root=live:CDLABEL=Fedora-Live-WS-x86_64-23-10 iso-scan/filename=$isofile rd.live.image
+	linux (loop)/isolinux/vmlinuz0 root=live:CDLABEL=Fedora-Live-WS-x86_64-24-1-2 iso-scan/filename=$isofile rd.live.image quiet splash --
 	initrd (loop)/isolinux/initrd0.img
 }
 ```

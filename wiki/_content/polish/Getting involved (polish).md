@@ -40,7 +40,7 @@ Jeśli czujesz się na siłach w [editing wiki pages](/index.php/Help:Editing "H
 
 ### Przyłącz się do czatu
 
-Jako zaawansowany użytkownik Linuksa zawsze możesz pomóc młodym użytkownikom w rozwiązywaniu ich problemów na [IRC channel](/index.php/IRC_channel "IRC channel"). Zanim jednak rozpoczniesz przygodę zalecanym jest zapoznanie się z [rules](/index.php/IRC_channel#archlinux_rules "IRC channel") oraz [guidelines](/index.php/IRC_channel#archlinux_guidelines "IRC channel"). [Further channels](/index.php/IRC_channels "IRC channels") dostępne są dla poszczególnych tematów.
+Jako zaawansowany użytkownik Linuksa zawsze możesz pomóc młodym użytkownikom w rozwiązywaniu ich problemów na [IRC channel](/index.php/IRC_channel "IRC channel"). Zanim jednak rozpoczniesz przygodę zalecanym jest zapoznanie się z [rules](/index.php/IRC_channel#.23archlinux_rules "IRC channel") oraz [guidelines](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel"). [Further channels](/index.php/IRC_channels "IRC channels") dostępne są dla poszczególnych tematów.
 
 ### Naprawa i zgłaszanie błędów
 
@@ -104,7 +104,7 @@ Specyficzne grupy Archa, do których możesz dołączyć.
 
 Oprogramowanie celujące w grupę użytkowników Archa.
 
-	[Arch Based Distributions](/index.php/Arch_Based_Distributions "Arch Based Distributions")
+	[Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
 
 	Dystrybucje Linuksa bazujące na dystrybucji Arch Linux.
 

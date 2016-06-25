@@ -260,7 +260,7 @@ Since DNSCrypt is a long-running network service, it's better to not run the ser
 Description=dnscrypt proxy forwarder to Cisco's OpenDNS
 
 [Install]
-Wanted-by=multi-user.target
+WantedBy=multi-user.target
 
 [Service]
 User=nobody

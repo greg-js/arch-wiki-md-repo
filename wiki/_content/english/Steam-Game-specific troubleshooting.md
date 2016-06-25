@@ -44,9 +44,11 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [13.6 Low Performance on AMD card using Catalyst proprietary driver ( <= 15.7 )](#Low_Performance_on_AMD_card_using_Catalyst_proprietary_driver_.28_.3C.3D_15.7_.29)
     *   [13.7 Brightness slider not working](#Brightness_slider_not_working)
 *   [14 Crusader Kings II](#Crusader_Kings_II)
-    *   [14.1 Troubleshooting](#Troubleshooting_2)
-        *   [14.1.1 No audio](#No_audio)
-        *   [14.1.2 Odd Sized Starting Window](#Odd_Sized_Starting_Window)
+    *   [14.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29)
+    *   [14.2 Tips and tricks](#Tips_and_tricks)
+    *   [14.3 Troubleshooting](#Troubleshooting_2)
+        *   [14.3.1 No audio](#No_audio)
+        *   [14.3.2 Odd Sized Starting Window](#Odd_Sized_Starting_Window)
 *   [15 Defender's Quest: Valley of the Forgotten](#Defender.27s_Quest:_Valley_of_the_Forgotten)
     *   [15.1 Dependencies](#Dependencies_6)
     *   [15.2 Troubleshooting](#Troubleshooting_3)
@@ -54,11 +56,11 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [16 Divinity: Original Sin Enhanced Edition](#Divinity:_Original_Sin_Enhanced_Edition)
     *   [16.1 Game doesn't start when using Bumblebee optirun or primusrun](#Game_doesn.27t_start_when_using_Bumblebee_optirun_or_primusrun)
 *   [17 Don't Starve](#Don.27t_Starve)
-    *   [17.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29)
+    *   [17.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29_2)
     *   [17.2 Troubleshooting](#Troubleshooting_4)
         *   [17.2.1 No sound](#No_sound_2)
 *   [18 Dota 2](#Dota_2)
-    *   [18.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29_2)
+    *   [18.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29_3)
     *   [18.2 Dependencies (Dota 2 reborn)](#Dependencies_.28Dota_2_reborn.29)
     *   [18.3 Troubleshooting](#Troubleshooting_5)
         *   [18.3.1 In-game font is unreadable](#In-game_font_is_unreadable)
@@ -168,7 +170,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [47.1 Dependencies](#Dependencies_20)
     *   [47.2 No sound](#No_sound_5)
 *   [48 Redshirt](#Redshirt)
-    *   [48.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29_3)
+    *   [48.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29_4)
 *   [49 Revenge of the Titans](#Revenge_of_the_Titans)
     *   [49.1 Dependencies](#Dependencies_21)
 *   [50 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
@@ -559,6 +561,12 @@ exit $STATUS
 ```
 
 ## Crusader Kings II
+
+### Dependencies (x86_64)
+
+*   [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl)
+
+### Tips and tricks
 
 Game is installed into `$HOME/Steam/SteamApps/common/Crusader Kings II`. Game can be started directly, without need of running Steam on background, using command `$HOME/Steam/SteamApps/common/Crusader Kings II/ck2`.
 

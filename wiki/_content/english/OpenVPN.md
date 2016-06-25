@@ -39,6 +39,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [8.5 Connect clients and client LANs](#Connect_clients_and_client_LANs)
 *   [9 DNS](#DNS)
     *   [9.1 Update resolv-conf script](#Update_resolv-conf_script)
+    *   [9.2 Update systemd-resolved script](#Update_systemd-resolved_script)
 *   [10 L2 Ethernet bridging](#L2_Ethernet_bridging)
 *   [11 Troubleshooting](#Troubleshooting)
     *   [11.1 Resolve issues](#Resolve_issues)
@@ -691,6 +692,20 @@ down /etc/openvpn/update-resolv-conf
 ```
 
 Now, when your launch your OpenVPN connection, you should find that your resolv.conf file is updated accordingly, and also returns to normal when your close the connection.
+
+### Update systemd-resolved script
+
+Since systemd-229, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")'s `systemd-resolved.service` has exposed an API through DBus allowing management of DNS configuration on a per-link basis. Tools such as [openresolv](https://www.archlinux.org/packages/?name=openresolv) may not work reliably when `/etc/resolv.conf` is managed by `systemd-resolved`, and will not work at all if you are using `resolve` instead of `dns` in your `/etc/nsswitch.conf` file. The [update-systemd-resolved](https://github.com/jonathanio/update-systemd-resolved) script is another alternative and links OpenVPN with `systemd-resolved` via DBus to update the DNS records.
+
+If you copy the script into `/etc/openvpn` and mark as executable with [chmod](/index.php/Chmod "Chmod"), or install it via the AUR package ([openvpn-update-systemd-resolved](https://aur.archlinux.org/packages/openvpn-update-systemd-resolved/)), you can add lines like the following into your OpenVPN client configuration file:
+
+```
+script-security 2
+setenv PATH /usr/bin
+up /etc/openvpn/update-systemd-resolved
+down /etc/openvpn/update-systemd-resolved
+
+```
 
 ## L2 Ethernet bridging
 

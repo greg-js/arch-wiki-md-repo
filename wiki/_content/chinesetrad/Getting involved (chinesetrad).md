@@ -79,7 +79,7 @@ Arch擁有一個充滿活力的用戶社區。如果你的項目想參與到社�
 
 **Note:** 下列所有項目都是社區支持的，是***非官方***的。
 
-#### [基於Arch的發行版](/index.php/Arch_Based_Distributions "Arch Based Distributions")
+#### [基於Arch的發行版](/index.php/Arch_based_distributions "Arch based distributions")
 
 	基於Arch的其他GNU/Linux發行版。
 

@@ -9,7 +9,6 @@ The content of this article was originally written on [this page](https://wiki.u
     *   [2.1 Register to get the source code](#Register_to_get_the_source_code)
     *   [2.2 Installing from the AUR](#Installing_from_the_AUR)
     *   [2.3 Compile from source code](#Compile_from_source_code)
-    *   [2.4 AUR helpers](#AUR_helpers)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Compilation problems](#Compilation_problems)
     *   [3.2 Runtime problems](#Runtime_problems)
@@ -43,17 +42,6 @@ For a smaller download, you can [download the release as a tar.gz](https://githu
 ### Compile from source code
 
 To compile manually, refer to [the official instructions to build on Linux](https://wiki.unrealengine.com/Building_On_Linux#Building).
-
-### AUR helpers
-
-Due to the heavy build requirements, it's not recommended to install with an [AUR helper](/index.php/AUR_helper "AUR helper"), better to [install with makepkg](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") directly.
-
-Add unreal-engine to IgnorePkg in /etc/pacman.conf to exclude it from updates:
-
-```
-IgnorePkg = unreal-engine
-
-```
 
 ## Troubleshooting
 

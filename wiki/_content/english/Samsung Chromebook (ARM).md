@@ -22,7 +22,7 @@ More information at dedicated pages by [Google](http://www.google.com/intl/en/ch
 
 This article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before. Arch newbies are encouraged to read the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") if unsure how to preform standard tasks such as creating users, managing the system, etc.
 
-**Note:** Support for the ARM architecture is provided on [http://archlinuxarm.org](http://archlinuxarm.org) not through posts to the official Arch Linux Forum. Any posts related to ARM specific issues will be promptly closed per the [Arch Linux Distrubution Support ONLY](/index.php/Forum_etiquette#Arch_Linux_distribution_support_ONLY "Forum etiquette") policy.
+**Note:** Support for the ARM architecture is provided on [http://archlinuxarm.org](http://archlinuxarm.org) not through posts to the official Arch Linux Forum. Any posts related to ARM specific issues will be promptly closed per the [Arch Linux Distrubution Support ONLY](/index.php/Forum_etiquette#Arch_Linux_distribution_support_.2Aonly.2A "Forum etiquette") policy.
 
 ## Installing Arch Linux ARM
 

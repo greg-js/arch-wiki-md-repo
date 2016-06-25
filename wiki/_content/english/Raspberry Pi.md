@@ -317,12 +317,9 @@ mmal: Only 64M of gpu_mem is configured. Try running "sudo raspi-config" and ens
 
 ```
 
-can be corrected by adding the following line into the `/etc/modprobe.d/blacklist.conf`:
+can be corrected by adding the following line:
 
-```
-blacklist i2c_bcm2708
-
-```
+ `/etc/modprobe.d/blacklist.conf`  `blacklist i2c_bcm2708` 
 
 In order to use standard applications (those that look for `/dev/video0`) the V4L2 driver must be loaded. This can be done automatically at boot by creating an autoload file such as the following.
 

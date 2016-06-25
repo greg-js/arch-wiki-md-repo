@@ -10,33 +10,22 @@ This page uses a table to display the correspondence of [package management](htt
 *   The command `pkgfile` can be found in the [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) package.
 
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SUSE/openSUSE** | **Gentoo** |
-| Install a package(s) by name | pacman -S
-<tt>pacman --sync</tt> | dnf install | apt-get install | zypper install
+| Install a package(s) by name | pacman -S | dnf install | apt-get install | zypper install
 zypper in | emerge [-a] |
-| Remove a package(s) by name | pacman -Rs
-<tt>pacman --remove --recursive</tt> | dnf remove | apt-get autoremove | zypper remove
+| Remove a package(s) by name | pacman -Rs | dnf remove | apt-get autoremove | zypper remove
 zypper rm | emerge -C |
-| Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | pacman -Ss
-<tt>pacman --sync --search</tt> | dnf search | apt-cache search | zypper search
+| Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | pacman -Ss | dnf search | apt-cache search | zypper search
 zypper se [-s] | emerge -S |
-| Upgrade Packages - Install packages which have an older version already installed | pacman -Syu
-<tt>pacman --sync --refresh --sysupgrade</tt> | dnf upgrade | apt-get update; apt-get upgrade | zypper update zypper up | emerge -u world |
-| Upgrade Packages - Another form of the update command, which can perform more complex updates -- like distribution upgrades. When the usual update command will omit package updates, which include changes in dependencies, this command can perform those updates. | pacman -Syu
-<tt>pacman --sync --refresh --sysupgrade</tt> | dnf distro-sync | apt-get dist-upgrade | zypper dup | emerge -uDN world |
-| Reinstall given Package - Will reinstall the given package without dependency hassle. | pacman -S
-<tt>pacman --sync</tt> | dnf reinstall | apt-get install --reinstall | zypper install --force | emerge [-a] |
-| Installs local package file, e.g. app.rpm and uses the installation sources to resolve dependencies | pacman -U
-<tt>pacman --upgrade</tt> | dnf install | dpkg -i && apt-get install -f | zypper in /path/to/local.rpm | emerge |
-| Updates package(s) with local packages and uses the installation sources to resolve dependencies | pacman -U
-<tt>pacman --upgrade</tt> | dnf upgrade | debi | emerge |
+| Upgrade Packages - Install packages which have an older version already installed | pacman -Syu | dnf upgrade | apt-get update; apt-get upgrade | zypper update zypper up | emerge -u world |
+| Upgrade Packages - Another form of the update command, which can perform more complex updates -- like distribution upgrades. When the usual update command will omit package updates, which include changes in dependencies, this command can perform those updates. | pacman -Syu | dnf distro-sync | apt-get dist-upgrade | zypper dup | emerge -uDN world |
+| Reinstall given Package - Will reinstall the given package without dependency hassle. | pacman -S | dnf reinstall | apt-get install --reinstall | zypper install --force | emerge [-a] |
+| Installs local package file, e.g. app.rpm and uses the installation sources to resolve dependencies | pacman -U | dnf install | dpkg -i && apt-get install -f | zypper in /path/to/local.rpm | emerge |
+| Updates package(s) with local packages and uses the installation sources to resolve dependencies | pacman -U | dnf upgrade | debi | emerge |
 | Use some magic to fix broken dependencies in a system | pacman dep level - testdb, shared lib level - findbrokenpkgs or lddd | dnf repoquery --unsatisfied | apt-get --fix-broken
 aptitude install | zypper verify | revdep-rebuild |
-| Only downloads the given package(s) without unpacking or installing them | pacman -Sw
-<tt>pacman --sync --downloadonly</tt> | dnf download | apt-get install --download-only (into the package cache)
+| Only downloads the given package(s) without unpacking or installing them | pacman -Sw | dnf download | apt-get install --download-only (into the package cache)
 apt-get download (bypass the package cache) | zypper --download-only | emerge --fetchonly |
-| Remove dependencies that are no longer needed, because e.g. the package which needed the dependencies was removed. | pacman -Rs -
-<tt>pacman --query --deps --unrequired --quiet |\
-pacman --remove --recursive</tt> | dnf autoremove | apt-get autoremove | zypper rm -u | emerge --depclean |
+| Remove dependencies that are no longer needed, because e.g. the package which needed the dependencies was removed. | pacman -Qdtq | pacman -Rs - | dnf autoremove | apt-get autoremove | zypper rm -u | emerge --depclean |
 | Downloads the corresponding source package(s) to the given package name(s) | Use [ABS](/index.php/ABS "ABS") && makepkg -o | dnf download --source | apt-get source / debcheckout | zypper source-install | emerge --fetchonly |
 | Remove packages no longer included in any repositories. | package-cleanup --orphans | aptitude purge '~o' |
 | Install/Remove packages to satisfy build-dependencies. Uses information in the source package. | automatic | dnf builddep | apt-get build-dep | zypper si -d | emerge -o |

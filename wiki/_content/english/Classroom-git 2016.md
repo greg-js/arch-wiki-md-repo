@@ -16,7 +16,7 @@ You will need an ssh key to access git on the [Arch Women](https://archwomen.org
 
 ```
 
-For more information on creating key pairs see, [SSH Keys](/index.php/SSH_keys "SSH keys")
+For more information on creating key pairs see, [SSH keys](/index.php/SSH_keys "SSH keys")
 
 ### Share Your Public Key
 

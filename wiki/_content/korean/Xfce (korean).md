@@ -7,18 +7,18 @@
 *   [3 설정하기](#.EC.84.A4.EC.A0.95.ED.95.98.EA.B8.B0)
     *   [3.1 메뉴](#.EB.A9.94.EB.89.B4)
         *   [3.1.1 Whisker 메뉴](#Whisker_.EB.A9.94.EB.89.B4)
-        *   [3.1.2 Edit entries](#Edit_entries)
-    *   [3.2 Desktop](#Desktop)
-        *   [3.2.1 Transparent background for icon titles](#Transparent_background_for_icon_titles)
-        *   [3.2.2 Remove Thunar options from right-click menu](#Remove_Thunar_options_from_right-click_menu)
-        *   [3.2.3 Kill window shortcut](#Kill_window_shortcut)
-    *   [3.3 Session](#Session)
-        *   [3.3.1 Startup applications](#Startup_applications)
-            *   [3.3.1.1 Delay application startup](#Delay_application_startup)
-        *   [3.3.2 Lock the screen](#Lock_the_screen)
-        *   [3.3.3 User switching](#User_switching)
-        *   [3.3.4 Disable saved sessions](#Disable_saved_sessions)
-        *   [3.3.5 Default window manager](#Default_window_manager)
+        *   [3.1.2 메뉴 편집](#.EB.A9.94.EB.89.B4_.ED.8E.B8.EC.A7.91)
+    *   [3.2 바탕화면](#.EB.B0.94.ED.83.95.ED.99.94.EB.A9.B4)
+        *   [3.2.1 투명한 아이콘 제목 배경색](#.ED.88.AC.EB.AA.85.ED.95.9C_.EC.95.84.EC.9D.B4.EC.BD.98_.EC.A0.9C.EB.AA.A9_.EB.B0.B0.EA.B2.BD.EC.83.89)
+        *   [3.2.2 오른쪽 마우스 클릭 메뉴에서 Thunar 옵션 제거](#.EC.98.A4.EB.A5.B8.EC.AA.BD_.EB.A7.88.EC.9A.B0.EC.8A.A4_.ED.81.B4.EB.A6.AD_.EB.A9.94.EB.89.B4.EC.97.90.EC.84.9C_Thunar_.EC.98.B5.EC.85.98_.EC.A0.9C.EA.B1.B0)
+        *   [3.2.3 프로그램 강제 종료 단축키](#.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EA.B0.95.EC.A0.9C_.EC.A2.85.EB.A3.8C_.EB.8B.A8.EC.B6.95.ED.82.A4)
+    *   [3.3 세션](#.EC.84.B8.EC.85.98)
+        *   [3.3.1 시작 프로그램](#.EC.8B.9C.EC.9E.91_.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8)
+            *   [3.3.1.1 시작 프로그램 지연 설정](#.EC.8B.9C.EC.9E.91_.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EC.A7.80.EC.97.B0_.EC.84.A4.EC.A0.95)
+        *   [3.3.2 화면 잠금](#.ED.99.94.EB.A9.B4_.EC.9E.A0.EA.B8.88)
+        *   [3.3.3 사용자 전환 버튼](#.EC.82.AC.EC.9A.A9.EC.9E.90_.EC.A0.84.ED.99.98_.EB.B2.84.ED.8A.BC)
+        *   [3.3.4 저장된 세션 비활성화하기](#.EC.A0.80.EC.9E.A5.EB.90.9C_.EC.84.B8.EC.85.98_.EB.B9.84.ED.99.9C.EC.84.B1.ED.99.94.ED.95.98.EA.B8.B0)
+        *   [3.3.5 기본 창 관리자](#.EA.B8.B0.EB.B3.B8_.EC.B0.BD_.EA.B4.80.EB.A6.AC.EC.9E.90)
     *   [3.4 Theming](#Theming)
     *   [3.5 Sound](#Sound)
         *   [3.5.1 Xfce4 mixer](#Xfce4_mixer)
@@ -78,25 +78,25 @@ Xfce는 설정 옵션들을 [Xfconf](http://docs.xfce.org/xfce/xfconf/start)에 
 
 #### Whisker 메뉴
 
-[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) is an alternate application launcher. It shows a list of favorites, browses through all installed applications through category buttons, and supports fuzzy searching.
+[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) is an alternate application launcher. It shows a list of favorites, browses through all installed applications through category buttons, and supports fuzzy searching. [xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) 는 xfce의 또다른 어플리케이션 런처이다. 즐겨찾기 목록을 보여주고, 카테고리 버튼을 통해 설치된 프로그램을 탐색할 수 있으며 퍼지 검색을 지원한다.
 
-#### Edit entries
+#### 메뉴 편집
 
-A number of graphical tools are available for this task:
+메뉴를 편집하기 위해서 다음과 같은 그래픽 인터페이스 기반의 툴들을 사용할 수 있다:
 
-*   **XAME** — GUI tool written in Gambas designed specifically for editing menu entries in Xfce, it will not work in other environments.
+*   **XAME** — Xfce 메뉴 편집용으로 디자인 된 Gambas 기반의 GUI 툴. 오직 Xfce에서만 사용가능하며 다른 Desktop Environment에서는 작동하지 않는다.
 
 	[http://www.redsquirrel87.com/XAME.html](http://www.redsquirrel87.com/XAME.html) || [xame](https://aur.archlinux.org/packages/xame/)
 
-*   **MenuLibre** — An advanced menu editor that provides modern features in a clean, easy-to-use interface.
+*   **MenuLibre** — 깔끔하고 사용하기 쉬운 인터페이스로 최신 기능을 제공하는 고급 메뉴 편집기
 
 	[https://launchpad.net/menulibre](https://launchpad.net/menulibre) || [menulibre](https://aur.archlinux.org/packages/menulibre/).
 
-*   **Alacarte** — Menu editor for GNOME
+*   **Alacarte** — GNOME용 메뉴 편집기
 
 	[http://www.gnome.org/](http://www.gnome.org/) || [alacarte](https://www.archlinux.org/packages/?name=alacarte)
 
-Alternatively, create the file `~/.config/menus/xfce-applications.menu` manually. See the example configuration below:
+다른 방법으로, `~/.config/menus/xfce-applications.menu` 파일을 직접 만들어 메뉴를 관리할 수 있다. 다음의 예제를 참고한다.
 
 ```
 <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
@@ -136,19 +136,19 @@ Alternatively, create the file `~/.config/menus/xfce-applications.menu` manually
 
 ```
 
-The `<MergeFile>` tag includes the default Xfce menu.
+`<MergeFile>` 태그는 기본 Xfce 메뉴를 포함한다.
 
-The `<Exclude>` tag excludes applications which we do not want to appear in the menu. Here we excluded some Xfce default shortcuts, but you can exclude `firefox.desktop` or any other application.
+`<Exclude>` 태그는 메뉴로부터 태그 안의 어플리케이션을 제외시킨다. 예제에서는 Xfce의 기본 바로가기만을 제외시켰지만 `firefox.desktop` 혹은 다른 어플리케이션도 제외시킬 수 있다.
 
-The `<Layout>` tag defines the layout of the menu. The applications can be organized in folders or however we wish. For more details see the [Xfce wiki](http://wiki.xfce.org/howto/customize-menu).
+`<Layout>` 태그는 메뉴의 레이아웃을 정의한다. 어플리케이션들은 폴더 내 혹은 사용자가 원하는 곳에 배치될 수 있다. 자세한 정보는 [Xfce wiki](http://wiki.xfce.org/howto/customize-menu)를 참고한다.
 
-You can also make changes to the Xfce menu by editing the `.desktop` files themselves. To hide entries, see [Desktop entries#Hide desktop entries](/index.php/Desktop_entries#Hide_desktop_entries "Desktop entries"). You can edit the application's category by modifying the `Categories=` line of the desktop entry, see [Desktop entries#File example](/index.php/Desktop_entries#File_example "Desktop entries").
+추가적으로 `.desktop` 파일들을 수정하여 Xfce 메뉴를 변경할 수도 있다. 메뉴 엔트리를 숨기기 위해서는 [Desktop entries#Hide desktop entries](/index.php/Desktop_entries#Hide_desktop_entries "Desktop entries")를 참고한다. `Categories=` desktop entry를 수정하여 어플리케이션의 카테고리도 변경이 가능하다. 관련 내용은 [Desktop entries#File example](/index.php/Desktop_entries#File_example "Desktop entries")을 참고한다.
 
-### Desktop
+### 바탕화면
 
-#### Transparent background for icon titles
+#### 투명한 아이콘 제목 배경색
 
-To change the default white background of desktop icon titles to something more suitable, create or edit `~/.gtkrc-2.0`:
+바탕화면에 있는 아이콘 이름 부분의 기본 하얀색 배경을 좀 더 배경과 어울리게 바꾸기 위해서, `~/.gtkrc-2.0` 파일을 생성하거나 편집한다:
 
 ```
 style "xfdesktop-icon-view" {
@@ -164,97 +164,95 @@ widget_class "*XfdesktopIconView*" style "xfdesktop-icon-view"
 
 ```
 
-#### Remove Thunar options from right-click menu
+#### 오른쪽 마우스 클릭 메뉴에서 Thunar 옵션 제거
 
-Issue the following command:
+다음 명령어를 실행한다.
 
 ```
 $ xfconf-query -c xfce4-desktop -v --create -p /desktop-icons/style -t int -s 0
 
 ```
 
-#### Kill window shortcut
+#### 프로그램 강제 종료 단축키
 
-Xfce does not have a shortcut to kill a window, for example when a program freezes.
-
-With [xorg-xkill](https://www.archlinux.org/packages/?name=xorg-xkill), use `xkill` to interactively kill a window. For the currently active window, use [xdotool](https://www.archlinux.org/packages/?name=xdotool):
+Xfce에서는 프로그램이 멈추었을 때 강제 종료하기 위한 기본 단축키가 없다. 하지만 [xorg-xkill](https://www.archlinux.org/packages/?name=xorg-xkill) 패키지의 `xkill` 명령어를 사용하여 열려있는 창을 강제로 닫을 수 있다. 현재 활성화 상태의 창이라면(현재 창이 열려 있고 포커스를 가지고 있는 경우), [xdotool](https://www.archlinux.org/packages/?name=xdotool)를 사용하여 활성화 상태의 창을 강제종료할 수 있다.
 
 ```
 $ xdotool getwindowfocus windowkill
 
 ```
 
-Alternatively:
+또 다른 방법으로, 다음 명령어을 사용할 수 있다.
 
 ```
 $ xkill -id "$(xprop -root -notype | sed -n '/^_NET_ACTIVE_WINDOW/ s/^.*# *\|\,.*$//g p')"
 
 ```
 
-To add the shortcut, use *Settings > Keyboard* or an application like [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys).
+단축키를 추가하기 위해서는 *Settings > Keyboard* 혹은 [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) 어플리케이션을 사용한다.
 
-### Session
+### 세션
 
-#### Startup applications
+#### 시작 프로그램
 
-To launch custom applications when Xfce starts up, click the *Applications Menu > Settings > Settings Manager* and then choose the *Session and Startup* option and click the tab *Application Autostart*. You will see a list of programs that get launched on startup. To add an entry, click the *Add* button and fill out the form, specifying the path to an executable you want to run.
+사용자정의 프로그램을 Xfce 시작시에 실행되도록 하기 위해서는 *Applications Menu > Settings > Settings Manager*의 *Session and Startup > Application Autostart* 탭을 확인한다. 해당 탭을 통해 시작 시에 실행되는 프로그램 리스트를 확인할 수 있다. 시작프로그램을 추가하기 위해서는 *Add* 버튼을 클릭하고 등록하고자 하는 실행파일의 경로를 정의한다.
 
-Alternatively, add the commands you wish to run (including setting environment variables) to [xinitrc](/index.php/Xinitrc "Xinitrc") (or [xprofile](/index.php/Xprofile "Xprofile") when a [display manager](/index.php/Display_manager "Display manager") is being used).
+또 다른 방법으로, [xinitrc](/index.php/Xinitrc "Xinitrc") ([display manager](/index.php/Display_manager "Display manager")가 사용되고 있는 경우에는 [xprofile](/index.php/Xprofile "Xprofile"))에 명령어를 추가하여 시작 프로그램을 등록할 수 있다.
 
-##### Delay application startup
+##### 시작 프로그램 지연 설정
 
-Sometimes it might be useful to delay the startup of an application. Specifying a command such as `sleep 3 && command` under *Application Autostart* does not work. As a workaround, one can use the following syntax instead:
+가끔, 시작프로그램의 시작을 늦추는 것이 유용할 때가 있다. 이러한 경우, *Application Autostart* 에서 `sleep 3 && command`와 같이 등록한 것은 동작하지 않기 때문에 다음 명령어를 대신 사용한다.
 
 ```
 sh -c "sleep 3 && command"
 
 ```
 
-#### Lock the screen
+#### 화면 잠금
 
-To lock an Xfce4 session through the *xflock4* script one of [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore) packages needs to be installed. Alternatively you can set a lock command with
+*xflock4*ᅟ을 통해 Xfce4 세션을 잠그기 위해서는 [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock), [xlockmore](https://www.archlinux.org/packages/?name=xlockmore) 중 하나는 설치되어 있어야 한다. 또는, 다음 명령어를 통해 잠금 명령어를 설정할 수도 있다.
 
 ```
 $ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l" --create -t string
 
 ```
 
-If you want to update the command, you can use
+만약 명령어를 업데이트하고 싶다면 다음과 같이 명령어를 새로 업데이트할 수 있다.
 
 ```
 $ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l"
 
 ```
 
-See [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") for a comprehensive list of screen lockers.
+화면 잠금 관련 프로그램은 [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security")에서 확인할 수 있다.
 
-**Tip:** The [light-locker](https://www.archlinux.org/packages/?name=light-locker) session locker integrates with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager). If light-locker is installed, a *Security* tab is added to the power manager settings and the existing *Lock screen when system is going for sleep* setting is relocated under the *Security* tab.
+**Tip:** [light-locker](https://www.archlinux.org/packages/?name=light-locker) 세션 잠금은 [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager)와 통합된다. 만약 light-locker가 설치되어 있다면, 전원관리설정(power manager settings)에 추가된 *Security* 탭과 *Security* 탭에 *Lock screen when system is going for sleep* 설정이 있는 것을 확인할 수 있다.
 
-**Note:** The *xflock4* script can also be modified manually as described in the post [[1]](https://bbs.archlinux.org/viewtopic.php?id=189484). To avoid having the changes overwritten on upgrades, you might wish to copy *xflock4* to `/usr/local/bin` and make the changes to that copy as this will take precedence over the packaged version in `/usr/bin`.
+**Note:** The *xflock4* 스크립트는 포스팅[[1]](https://bbs.archlinux.org/viewtopic.php?id=189484)에서 언급된 것처럼 직접적으로 수정될 수 있다. 다만, 패키지 업그레이드로 수정된 사항이 덮어쓰기되는 것을 방지하기 위해서 xflock4를 `/usr/local/bin`에 복사하고 해당 경로가 `/usr/bin`보다 우선적으로 실행될 수 있도록 설정해야 한다. (환경변수 PATH에서 /usr/local/bin:/usr/bin 과 같은 순서로 될 수 있도록 한다.)
 
-#### User switching
+#### 사용자 전환 버튼
 
-**Note:** For the User Switch action button to work without GDM, a workaround is required:
+**Note:** GDM 없이 사용자 전환 버튼을 사용하기 위해서는 다음의 해결 방법이 필요하다:
 
-*   For LXDM - [LXDM#Simultaneous users and switching users](/index.php/LXDM#Simultaneous_users_and_switching_users "LXDM").
-*   For LightDM - [LightDM#User switching under Xfce4](/index.php/LightDM#User_switching_under_Xfce4 "LightDM").
+*   LXDM - [LXDM#Simultaneous users and switching users](/index.php/LXDM#Simultaneous_users_and_switching_users "LXDM").
+*   LightDM - [LightDM#User switching under Xfce4](/index.php/LightDM#User_switching_under_Xfce4 "LightDM").
 
-Xfce4 has support for user switching when used with a [Display manager](/index.php/Display_manager "Display manager") that has this functionality - examples being [LightDM](/index.php/LightDM "LightDM") and [GDM](/index.php/GDM "GDM"). Please consult your display manager's wiki page for more information. When you have a display manager installed and configured correctly you can switch users from the 'action buttons' menu item in the panel.
+Xfce4는 [LightDM](/index.php/LightDM "LightDM")과 [GDM](/index.php/GDM "GDM")과 같이 사용자 전환 기능을 가지고 있는 [Display manager](/index.php/Display_manager "Display manager")가 사용되고 있는 경우에 사용자 전환을 지원한다. 더 자세한 정보는 Display manager 관련 위키페이지를 참조하도록 한다. display manager가 설치되어 있고 올바르게 설정이 되어있다면 Xfce 패널의 사용자 전환 버튼을 통해 사용자 전환이 가능하다.
 
-#### Disable saved sessions
+#### 저장된 세션 비활성화하기
 
-Per user, saved sessions can be disabled by executing the following:
+유저마다 저장된 세션은 다음 명령어를 실행하여 비활성화될 수 있다.
 
 ```
 $ xfconf-query -t bool -c xfce4-session -p /general/SaveOnExit -s false
 
 ```
 
-Then navigate to *Applications* -> *Settings* -> *Session and Startup* -> *Sessions* and click the *Clear saved sessions* button.
+명령어 실행 이후, *Applications* -> *Settings* -> *Session and Startup* -> *Sessions* 안의 *Clear saved sessions* 버튼을 클릭한다.
 
-**Tip:** If the command above does not change the setting persistently, use the following command instead: `xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false`
+**Tip:** 만약 위의 명령어가 설정을 영구적으로 변경하지 않는다면 다음 명령어를 대신 사용한다: `xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false`
 
-Alternatively, Xfce [kiosk mode](https://wiki.xfce.org/howto/kiosk_mode) can be used to disable the saving of sessions systemwide. To disable sessions, create or edit the file `/etc/xdg/xfce4/kiosk/kioskrc` and add the following:
+또 다른 방법으로, Xfce [kiosk mode](https://wiki.xfce.org/howto/kiosk_mode)가 사용될 수 있다. 세션을 비활성화하기 위해, `/etc/xdg/xfce4/kiosk/kioskrc` 을 만들거나 수정하고 다음을 추가한다.
 
 ```
 [xfce4-session]
@@ -262,43 +260,43 @@ SaveSession=NONE
 
 ```
 
-If kiosk mode is not working, the user can set read only permissions for the sessions directory:
+만일 kiosk 모드가 작동하지 않는다면 현재 사용자가 세션관련 디렉토리에 대해 read 권한만 갖고 있기 때문이다.
 
 ```
 $ rm ~/.cache/sessions/* && chmod 500 ~/.cache/sessions
 
 ```
 
-This will prevent Xfce from saving any sessions despite any configuration that specifies otherwise.
+위의 명령어가 Xfce가 모든 관련 설정에 상관없이 세션이 저장되는 것을 방지할 것이다.
 
-#### Default window manager
+#### 기본 창 관리자
 
-**Note:** For the changes to take effect, you will need to clear the saved sessions and ensure that session saving is disabled when logging out for the first time. Once the window manager of choice is running, session saving can be enabled again.
+**Note:** 변경 사항을 적용하기 위해서는 저장된 세션을 지우고 처음 로그아웃시에 세션 저장 기능을 반드시 비활성화해야 한다. 창 관리자가 실행되면 세션 저장기능은 다시 활성화된다.
 
-The files specifying the default window manager are found in the following locations:
+기본 창관리자를 명시하는 파일은 다음 위치에서 찾을 수 있다.
 
-*   `~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml` - per user
-*   `/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml` - systemwide
+*   `~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml` - 각 사용자 영역
+*   `/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml` - 시스템 전역
 
-The default window manager for the user can be set easily using *xfconf-query*:
+기본 창 관리자는 *xfconf-query*를 사용하여 간단하게 설정될 수 있다.
 
 ```
 $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa **wm_name**
 
 ```
 
-If you want to start the window manager with command line options, see the command below:
+만약 커맨드라인 옵션을 사용하여 창 관리자를 실행하고 싶을 경우, 다음 명령어들을 참고한다:
 
 ```
 $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -t string -s **wm_name** -s **--wm-option**
 
 ```
 
-If you need more command line options, simply add more `-t string` and `-s **--wm-option**` arguments to the command.
+더 많은 커맨드라인 옵션이 필요하다면, 간단하게 `-t string`와 `-s **--wm-option**` 인자들을 명령어에 추가한다.
 
-If you want to change the default window manager systemwide, edit the file specified above manually, changing *xfwm4* to the preferred window manager and adding more `<value type="string" value="**--wm-option**"/>` lines for extra command line options if needed.
+시스템 전역적으로 기본 창 관리자를 변경하고 싶다면 위에서 명시된 파일을 직접 수정하여 *xfwm4*를 선호하는 창 관리자로 바꾸고 필요시에는 `<value type="string" value="**--wm-option**"/>` 라인을 extra command line 옵션으로 추가한다.
 
-You can also change the window manager by autostarting `**wm_name** --replace` using the autostart facility or by running `**wm_name** --replace &` in a terminal and making sure the session is saved on logout. Be aware though that this method does not truly change the default manager, it merely replaces it at login. Note that if you are using the autostart facility, you should disable saved sessions as this could lead to the new window manager being started twice after the default window manager.
+또한 `**wm_name** --replace` 를 자동시작되도록 하거나 `**wm_name** --replace &`가 터미널에서 시작되도록 하고 해당 세션이 저장되도록 하여 창 관리자를 변경할 수 있다. 하지만 이 방법은 실제로 기본 창관리자를 변경하지 않는다는 점에 주의하자. 만약 자동시작 기능을 사용한다면 저장된 세션 때문에 해당 창 관리자가 두 번 중복되어 실행될 수 있으므로 저장된 세션을 비활성화한다.
 
 ### Theming
 

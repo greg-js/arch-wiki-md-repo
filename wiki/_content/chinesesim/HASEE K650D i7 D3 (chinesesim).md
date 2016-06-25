@@ -26,7 +26,7 @@ EndSection
 
 ```
 
-更多细节，请参考[Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")。
+更多细节，请参考[Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")。
 
 ## 屏幕背光
 
@@ -36,7 +36,7 @@ EndSection
 
 战神系列的笔记本都有两块显卡（一个Intel核显和一个NVIDIA的独显），需要安装[Bumblebee](/index.php/Bumblebee "Bumblebee")支持双显卡，平时会自动关闭NVIDIA独显，节能和降温，请参考[这里](/index.php/Bumblebee "Bumblebee")。NVIDIA显卡的驱动最好安装官方的[nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms)，以方便升级内核时显卡的自动配置，具体请参考[NVIDIA#Installation](/index.php/NVIDIA#Installation "NVIDIA")。
 
-很重要的是，如果出现鼠标滑轮浏览网页卡顿、切换NVIDIA玩游戏黑屏等现象，请需要把Intel核显的加速模式修改为uxa模式，请参考[Intel_graphics#SNA_issues](/index.php/Intel_graphics#SNA_issues "Intel graphics")。
+很重要的是，如果出现鼠标滑轮浏览网页卡顿、切换NVIDIA玩游戏黑屏等现象，请需要把Intel核显的加速模式修改为uxa模式，请参考[Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics")。
 
 ## 声音
 

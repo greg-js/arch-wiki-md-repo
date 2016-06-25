@@ -893,7 +893,7 @@ Ovviamente questo non avrà nessun effetto collaterale su un sistema desktop.
 
 ### Visualizzatore PDF di default nelle applicazioni GTK sotto KDE
 
-In alcuni casi, quando si installano [Inkscape](/index.php/Inkscape "Inkscape"), [Gimp](/index.php/Gimp "Gimp") o altri programmi di elaborazione grafica, le applicazioni GTK ([Firefox](/index.php/Firefox_(Italiano) "Firefox (Italiano)") ad esempio) potrebbero non selezionare più Okular come il visualizzatore PDF di default, e non seguiranno le impostazioni di KDE circa le applicazioni di default. Il seguente comando utente può essere usato per ripristinare Okular come default per i PDF.
+In alcuni casi, quando si installano [Inkscape](/index.php/Inkscape "Inkscape"), [GIMP](/index.php/GIMP "GIMP") o altri programmi di elaborazione grafica, le applicazioni GTK ([Firefox](/index.php/Firefox_(Italiano) "Firefox (Italiano)") ad esempio) potrebbero non selezionare più Okular come il visualizzatore PDF di default, e non seguiranno le impostazioni di KDE circa le applicazioni di default. Il seguente comando utente può essere usato per ripristinare Okular come default per i PDF.
 
 ```
 $ xdg-mime default kde4-okularApplication_pdf.desktop application/pdf

@@ -655,7 +655,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 	[http://www.darktable.org//](http://www.darktable.org//) || [darktable](https://www.archlinux.org/packages/?name=darktable)
 
-*   [Gimp](/index.php/Gimp "Gimp")
+*   [GIMP](/index.php/GIMP "GIMP")
 *   [Inkscape](/index.php/Inkscape "Inkscape")
 *   **mtPaint** — A graphic editing program geared towards creating indexed palette images and pixel art
 

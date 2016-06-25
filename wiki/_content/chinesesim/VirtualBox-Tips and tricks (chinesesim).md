@@ -142,7 +142,7 @@ XF86Battery
 
 ### 使用 USB 摄像头 / 麦克风
 
-**Note:** 在遵照下列步骤前，你需要安装 VirtualBox 扩展包。详见 [VirtualBox_Extras#Extension_pack](/index.php/VirtualBox_Extras#Extension_pack "VirtualBox Extras")。
+**Note:** 在遵照下列步骤前，你需要安装 VirtualBox 扩展包。详见 [VirtualBox Extras#Extension pack](/index.php/VirtualBox_Extras#Extension_pack "VirtualBox Extras")。
 
 1.  要确保没有在运行虚拟机，以及没有使用摄像头 / 麦克风。
 2.  进入VirtualBox主界面并打开Arch系统的设置界面，到USB设备页。
@@ -381,7 +381,7 @@ Finally, you may want to seamlessly integrate your Arch Linux with your host ope
 
 ### 安装VirtualBox的本地Arch Linux系统
 
-In some cases it may be useful to install a native Arch Linux system while running another operating system: one way to accomplish this is to perform the installation through VirtualBox on a [raw disk](http://www.virtualbox.org/manual/ch09.html#rawdisk). If the existing operating system is Linux based, you may want to consider following [Install from Existing Linux](/index.php/Install_from_Existing_Linux "Install from Existing Linux") instead.
+In some cases it may be useful to install a native Arch Linux system while running another operating system: one way to accomplish this is to perform the installation through VirtualBox on a [raw disk](http://www.virtualbox.org/manual/ch09.html#rawdisk). If the existing operating system is Linux based, you may want to consider following [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux") instead.
 
 This scenario is very similar to [#Run a native Arch Linux installation inside VirtualBox](#Run_a_native_Arch_Linux_installation_inside_VirtualBox), but will follow those steps in a different order: start by [#Create a raw disk .vmdk image](#Create_a_raw_disk_.vmdk_image), then [#Create the VM configuration file](#Create_the_VM_configuration_file).
 

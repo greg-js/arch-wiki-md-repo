@@ -88,7 +88,7 @@ The above video modes can have some havoc on your display if you simply use xran
 
 ## Working applications
 
-See [Virtual Reality#Working Applications](/index.php/Virtual_Reality#Working_Applications "Virtual Reality").
+See [Virtual reality#Working Applications](/index.php/Virtual_reality#Working_Applications "Virtual reality").
 
 ## Troubleshooting
 

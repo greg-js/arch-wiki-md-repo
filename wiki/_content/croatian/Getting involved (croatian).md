@@ -97,7 +97,7 @@ Arch-specifične skupine koje možete sudjelovati u.
 
 Zajednica je razvila softver koji se usredotočuje na Arch Linux.
 
-	[Arch Based Distributions](/index.php/Arch_Based_Distributions "Arch Based Distributions")
+	[Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
 
 	Linux distribucije koje se temelje na *Arch Linux*u
 

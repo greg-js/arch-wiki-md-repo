@@ -39,7 +39,7 @@ See [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd").
 
 ### Partition the disks
 
-See [Partitioning](/index.php/Partitioning "Partitioning") for details; some special partitions may be needed, see [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") and [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
+See [Partitioning](/index.php/Partitioning "Partitioning") for details; some special partitions may be needed, see [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") and [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 
 ### Format the partitions
 

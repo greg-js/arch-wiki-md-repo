@@ -19,9 +19,9 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [2.1.2 ivasilev](#ivasilev)
         *   [2.1.3 pkgbuilder](#pkgbuilder)
         *   [2.1.4 xyne-any](#xyne-any)
+        *   [2.1.5 youtube-dl](#youtube-dl)
     *   [2.2 Unsigned](#Unsigned)
         *   [2.2.1 archlinuxgr-any](#archlinuxgr-any)
-        *   [2.2.2 youtube-dl](#youtube-dl)
 *   [3 Both i686 and x86_64](#Both_i686_and_x86_64)
     *   [3.1 Signed](#Signed_2)
         *   [3.1.1 arcanisrepo](#arcanisrepo)
@@ -210,6 +210,18 @@ Server = http://xyne.archlinux.ca/repos/xyne
 
 ```
 
+#### youtube-dl
+
+*   **Maintainer:** [Case_Of](https://bbs.archlinux.org/profile.php?id=94876)
+*   **Description:** A repository for latest release of youtube-dl package.
+*   **Key-ID:** 9F213FB2
+
+```
+[youtube-dl]
+Server = http://yt-dl.tk
+
+```
+
 ### Unsigned
 
 #### archlinuxgr-any
@@ -220,17 +232,6 @@ Server = http://xyne.archlinux.ca/repos/xyne
 ```
 [archlinuxgr-any]
 Server = http://archlinuxgr.tiven.org/archlinux/any
-
-```
-
-#### youtube-dl
-
-*   **Maintainer:** [Case_Of](https://bbs.archlinux.org/profile.php?id=94876)
-*   **Description:** A repository for latest release of youtube-dl package.
-
-```
-[youtube-dl]
-Server = http://yt-dl.tk
 
 ```
 

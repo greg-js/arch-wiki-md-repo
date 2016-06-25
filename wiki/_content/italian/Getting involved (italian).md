@@ -89,7 +89,7 @@ Arch ha una vivace ed attiva comunità di sviluppatori software e progetti colla
 
 **Nota:** Tutti i progetti qui elencati sono considerati della comunità. Nessuno di questi è retenuto un progetto ***ufficiale*** di Arch.
 
-#### [Distribuzioni basate su Arch](/index.php/Arch_Based_Distributions "Arch Based Distributions")
+#### [Distribuzioni basate su Arch](/index.php/Arch_based_distributions "Arch based distributions")
 
 	Altre distribuzioni basate su Arch Linux
 

@@ -13,7 +13,7 @@ I biologi er [mutualisme](https://en.wikipedia.org/wiki/Mutualism_(biology) et s
 *   [3 Bugs](#Bugs)
 *   [4 AUR](#AUR)
 *   [5 Community projects](#Community_projects)
-    *   [5.1 Arch Based Distributions](#Arch_Based_Distributions)
+    *   [5.1 Arch based distributions](#Arch_based_distributions)
     *   [5.2 AUR helpers](#AUR_helpers)
     *   [5.3 Pacman GUI Frontends](#Pacman_GUI_Frontends)
     *   [5.4 Other](#Other)
@@ -75,7 +75,7 @@ Arch has a vital and active community of software developers and contributing pr
 
 **Note:** All projects listed here are community projects. None of these projects are considered ***official*** Arch projects.
 
-#### [Arch Based Distributions](/index.php/Arch_Based_Distributions "Arch Based Distributions")
+#### [Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
 
 	Other distributions based on Arch Linux
 

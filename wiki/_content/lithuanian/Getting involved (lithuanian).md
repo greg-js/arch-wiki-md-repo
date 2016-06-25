@@ -67,7 +67,7 @@ Arch turi gyvybiškai svarbią ir aktyvią bendruomenę, kuri susideda iš progr
 
 **Note:** Visi toliau išvardinti projektai yra palaikomi bendruomenės. Joks projektas nėra pažymėtas """oficialiu""" Arch projektu.
 
-#### [Paremtos Arch distribucijos](/index.php/Arch_Based_Distributions "Arch Based Distributions")
+#### [Paremtos Arch distribucijos](/index.php/Arch_based_distributions "Arch based distributions")
 
 	Kitos distribucijos, paremos Arch Linux
 

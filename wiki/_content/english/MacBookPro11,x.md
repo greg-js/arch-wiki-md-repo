@@ -46,6 +46,7 @@ This wiki page should help you in getting your MacBook Pro from Late 2013 or Mid
     *   [4.1 General](#General)
     *   [4.2 Wi-Fi](#Wi-Fi)
     *   [4.3 Web cam](#Web_cam)
+    *   [4.4 Backlight keys / Suspend support](#Backlight_keys_.2F_Suspend_support)
 *   [5 Discussions](#Discussions)
 *   [6 See also](#See_also)
 
@@ -554,6 +555,10 @@ Updated 2015-04-08
 *   In OS X, the camera is listed as FaceTime HD camera 1570.
 *   No known Linux driver. [Kernel.org Bug](https://bugzilla.kernel.org/show_bug.cgi?id=71131)
 *   Efforts to develop a reverse engineered driver: [https://github.com/patjak/bcwc_pcie/](https://github.com/patjak/bcwc_pcie/)
+
+### Backlight keys / Suspend support
+
+[linux-macbook-pro](https://aur.archlinux.org/packages/linux-macbook-pro/) is an AUR package created specifically for MacBook Pro laptops that includes patches for these issues (as well fixing powering off correctly).
 
 ## Discussions
 

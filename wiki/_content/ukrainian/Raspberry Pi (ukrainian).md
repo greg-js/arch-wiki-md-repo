@@ -38,7 +38,7 @@
 
 Ця стаття не є путівником по встановленню і припускає, що читач уже має встановлену систему Arch. Початківцям бажано прочитати [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), де описано початкові завдання, як створення користувачів, керування системою, етс.
 
-**Note:** Підтримка для архітектури ARM представлена на сторінці [http://archlinuxarm.org](http://archlinuxarm.org), а не через повідомлення на офіційному форумі Arch Linux. Будь-які повідомлення, які стосуються специфічних проблем, пов'язаних з ARM, будуть закриті в зв'язку з політикою [Arch Linux distribution support ONLY](/index.php/Forum_etiquette#Arch_Linux_distribution_support_ONLY "Forum etiquette").
+**Note:** Підтримка для архітектури ARM представлена на сторінці [http://archlinuxarm.org](http://archlinuxarm.org), а не через повідомлення на офіційному форумі Arch Linux. Будь-які повідомлення, які стосуються специфічних проблем, пов'язаних з ARM, будуть закриті в зв'язку з політикою [Arch Linux distribution support ONLY](/index.php/Forum_etiquette#Arch_Linux_distribution_support_.2Aonly.2A "Forum etiquette").
 
 ## Системна архітектура
 

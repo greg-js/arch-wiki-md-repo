@@ -875,7 +875,7 @@ shopt -s histappend
 
 ### KDE 中 GTK 应用中默认的 PDF 查看器
 
-某些情况下，当你安装了 [Inkscape](/index.php/Inkscape "Inkscape")， [Gimp](/index.php/Gimp "Gimp") 或者其它图像程序， GTK 应用（尤其是 [Firefox](/index.php/Firefox "Firefox")）可能不会使用 Okular 作为默认 PDF 应用，它们不会使用 KDE 中配置的默认应用。你可以使用以下命令来使 Okular 再次变成默认应用。
+某些情况下，当你安装了 [Inkscape](/index.php/Inkscape "Inkscape")， [GIMP](/index.php/GIMP "GIMP") 或者其它图像程序， GTK 应用（尤其是 [Firefox](/index.php/Firefox "Firefox")）可能不会使用 Okular 作为默认 PDF 应用，它们不会使用 KDE 中配置的默认应用。你可以使用以下命令来使 Okular 再次变成默认应用。
 
 ```
 $ xdg-mime default kde4-okularApplication_pdf.desktop application/pdf

@@ -1,4 +1,4 @@
-The [GNU Build System](https://en.wikipedia.org/wiki/GNU_Build_System) is a collection of applications and configuration files that assist with compiling software projects. It's the software that developers use to provide the following convenient installation method for end users and package maintainers:
+The [GNU Build System](https://en.wikipedia.org/wiki/GNU_Build_System "wikipedia:GNU Build System") is a collection of applications and configuration files that assist with compiling software projects. It's the software that developers use to provide the following convenient installation method for end users and package maintainers:
 
 ```
  ./configure --prefix=/usr

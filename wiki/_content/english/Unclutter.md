@@ -40,8 +40,6 @@ Unclutter could cause unusual mouse behaviour in some SDL Games. The mouse curso
 
 There are two known workarounds for this. You can either add `SDL_VIDEO_X11_DGAMOUSE=0` to your environment variables which does not work for all games or run unclutter with `-grab` option. However, it is important to note that the grab option may cause some applications such as gksu to not work properly.
 
-Unclutter may also cause issues if you use keyboard shortcuts in Firefox, the solution may be to use [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/) instead.
-
 ## Alternatives
 
 ### unclutter-xfixes

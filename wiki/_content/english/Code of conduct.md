@@ -7,7 +7,7 @@ Familiarising yourself with the principles and guidelines here is both a courtes
 ## Contents
 
 *   [1 Common sense introduction](#Common_sense_introduction)
-*   [2 Code of Conduct](#Code_of_Conduct)
+*   [2 Code of conduct](#Code_of_conduct)
     *   [2.1 Respect](#Respect)
         *   [2.1.1 Respect other users](#Respect_other_users)
         *   [2.1.2 Respect other operating systems and projects](#Respect_other_operating_systems_and_projects)
@@ -58,7 +58,7 @@ Familiarising yourself with the principles and guidelines here is both a courtes
 
 ***Proactively seek to give of yourself and to bring only benefit to your peers and community.***
 
-## Code of Conduct
+## Code of conduct
 
 The *minimum necessary standards* when interacting with others in the Arch Linux community comprise four main points. In addition to those points, there are guidelines specific to each of the community fora; the [#Forums](#Forums), [#Wiki](#Wiki), [#IRC](#IRC), [#Mailing lists](#Mailing_lists), [#AUR](#AUR) and [#Bug tracker](#Bug_tracker).
 

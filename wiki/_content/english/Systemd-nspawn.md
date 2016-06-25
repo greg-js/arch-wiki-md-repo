@@ -78,7 +78,7 @@ It is possible to install a minimal i686 Arch Linux inside a subdirectory and us
 ```
  # pacman_conf=/tmp/pacman.conf # this is pacman.conf without multilib
  # mkdir /mnt/i686-archlinux
- # linux32 pacstrap -C ${pacman_conf} -di /mnt/i686-archlinux base base-devel
+ # linux32 pacstrap -C "$pacman_conf" -di /mnt/i686-archlinux base base-devel
 
 ```
 

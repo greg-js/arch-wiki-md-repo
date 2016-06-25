@@ -26,7 +26,7 @@ EndSection
 
 ```
 
-For details, see [Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
+For details, see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 ## Backlight
 
@@ -34,7 +34,7 @@ Hot keys for backlight might not work after installation of Arch-Linux, so [xorg
 
 ## Video cards
 
-Install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee "Bumblebee"). [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) is recommended for auto configuration after kernel updates. Acceleration mode of the Intel video card should be changed to "uxa", according to [Intel_graphics#SNA_issues](/index.php/Intel_graphics#SNA_issues "Intel graphics"), so that firefox will not fail to scroll smoothly, and 3D games will run normally.
+Install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee "Bumblebee"). [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) is recommended for auto configuration after kernel updates. Acceleration mode of the Intel video card should be changed to "uxa", according to [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics"), so that firefox will not fail to scroll smoothly, and 3D games will run normally.
 
 ## Audio
 

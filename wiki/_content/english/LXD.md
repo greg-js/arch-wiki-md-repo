@@ -51,7 +51,7 @@ $ usermod -a -G lxd <user>
 
 ### LXD Networking
 
-LXD uses LXC's networking capabilities. By default it connects containers to the `lxcbr0` network device. Refer to the LXC documentation on [network configuration](/index.php/Linux_Containers#Host_Network_Configuration "Linux Containers") to set up a bridge for your containers.
+LXD uses LXC's networking capabilities. By default it connects containers to the `lxcbr0` network device. Refer to the LXC documentation on [network configuration](/index.php/Linux_Containers#Host_network_configuration "Linux Containers") to set up a bridge for your containers.
 
 If you want to use a different interface than `lxcbr0` edit the default using the lxc command line tool:
 

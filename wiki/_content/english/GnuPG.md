@@ -469,7 +469,7 @@ Restart=on-abort
 WantedBy=default.target
 ```
 
-**Note:** If you use non-default value for the [#GNUPGHOME](#GNUPGHOME) environment variable, you need to pass it to the service. See [systemd/User#Environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User") for details.
+**Note:** If you use non-default value for the [GNUPGHOME](#Directory_location) environment variable, you need to pass it to the service. See [systemd/User#Environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User") for details.
 
 ### Unattended passphrase
 
@@ -527,6 +527,8 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 
 ```
+
+**Note:** If you use non-default [GnuPG home directory](#Directory_location), run `gpgconf --create-socketdir` to create a socket directory under `/run/user/$UID/gnupg/`. Otherwise the socket will be placed in the GnuPG home directory.
 
 Also set the GPG TTY and refresh the TTY in case user has switched into an X session. Example:
 

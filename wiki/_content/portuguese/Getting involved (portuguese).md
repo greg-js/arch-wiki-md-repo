@@ -103,7 +103,7 @@ Grupos específicos do Arch, que podem ser de seu interesse.
 
 Softwares desenvolvidos pela comunidade com foco no Arch.
 
-	[Arch Based Distributions](/index.php/Arch_Based_Distributions "Arch Based Distributions")
+	[Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
 
 	Distribuições baseadas no Arch Linux.
 
