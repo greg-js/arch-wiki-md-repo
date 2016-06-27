@@ -54,9 +54,9 @@
 
 	汇总世界各地的 Arch Linux 社区的信息。
 
-	[论坛礼仪](/index.php/Forum_etiquette_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Forum etiquette (简体中文)")
+	[行为准则](/index.php/Code_of_conduct_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Code of conduct (简体中文)")
 
-	Arch 论坛行为规范。
+	Arch 社区的行为规范。
 
 	[IRC 频道列表](/index.php/IRC_channels_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "IRC channels (简体中文)")
 

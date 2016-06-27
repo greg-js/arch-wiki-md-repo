@@ -407,7 +407,7 @@ With the help of *xinput* you can temporarily disable or enable input sources. T
 
 [Install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Find the ID of the device you want to disable:
+Find the name or ID of the device you want to disable:
 
 ```
 $ xinput
@@ -432,7 +432,7 @@ For example in a Lenovo ThinkPad T500, the output looks like this:
 
 ```
 
-Disable the device with `xinput --disable *device_id*`, where *device_id* is the device ID you want to disable. In this example we will disable the Synaptics Touchpad, with the ID 10:
+Disable the device with `xinput --disable *device*`, where *device* is the device ID or name of the device you want to disable. In this example we will disable the Synaptics Touchpad, with the ID 10:
 
 ```
 $ xinput --disable 10
@@ -443,6 +443,13 @@ To re-enable the device, just issue the opposite command:
 
 ```
 $ xinput --enable 10
+
+```
+
+Alternatively using the device name, the command to disable the touchpad would be:
+
+```
+$ xinput --disable "SynPS/2 Synaptics TouchPad"
 
 ```
 

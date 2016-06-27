@@ -19,7 +19,7 @@
         *   [3.3.3 사용자 전환 버튼](#.EC.82.AC.EC.9A.A9.EC.9E.90_.EC.A0.84.ED.99.98_.EB.B2.84.ED.8A.BC)
         *   [3.3.4 저장된 세션 비활성화하기](#.EC.A0.80.EC.9E.A5.EB.90.9C_.EC.84.B8.EC.85.98_.EB.B9.84.ED.99.9C.EC.84.B1.ED.99.94.ED.95.98.EA.B8.B0)
         *   [3.3.5 기본 창 관리자](#.EA.B8.B0.EB.B3.B8_.EC.B0.BD_.EA.B4.80.EB.A6.AC.EC.9E.90)
-    *   [3.4 Theming](#Theming)
+    *   [3.4 테마](#.ED.85.8C.EB.A7.88)
     *   [3.5 Sound](#Sound)
         *   [3.5.1 Xfce4 mixer](#Xfce4_mixer)
             *   [3.5.1.1 Change default sound card in Xfce4 mixer](#Change_default_sound_card_in_Xfce4_mixer)
@@ -298,13 +298,13 @@ $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string 
 
 또한 `**wm_name** --replace` 를 자동시작되도록 하거나 `**wm_name** --replace &`가 터미널에서 시작되도록 하고 해당 세션이 저장되도록 하여 창 관리자를 변경할 수 있다. 하지만 이 방법은 실제로 기본 창관리자를 변경하지 않는다는 점에 주의하자. 만약 자동시작 기능을 사용한다면 저장된 세션 때문에 해당 창 관리자가 두 번 중복되어 실행될 수 있으므로 저장된 세션을 비활성화한다.
 
-### Theming
+### 테마
 
-XFCE themes are available at [xfce-look.org](http://www.xfce-look.org). *Xfwm* themes are stored in `/usr/share/themes/xfce4`, and set in *Settings > Window Manager*. [GTK+](/index.php/GTK%2B "GTK+") themes are set in *Settings > Appearance*.
+XFCE 테마들은 [xfce-look.org](http://www.xfce-look.org)에서 구할 수 있다. *Xfwm* 테마들은 `/usr/share/themes/xfce4`에 저장되며 *Settings > Window Manager*의 설정 탭을 통하여 설정할 수 있다. [GTK+](/index.php/GTK%2B "GTK+") 테마는 *Settings > Appearance*에서 설정할 수 있다.
 
-To achieve a uniform look for all applications, see [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
+모든 어플리케이션에서 동일한 모양새를 얻고 싶다면, [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications")을 참고한다.
 
-See also [Cursor themes](/index.php/Cursor_themes "Cursor themes"), [Icons](/index.php/Icons "Icons"), and [Font configuration](/index.php/Font_configuration "Font configuration").
+참고: [Cursor themes](/index.php/Cursor_themes "Cursor themes"), [Icons](/index.php/Icons "Icons"), [Font configuration](/index.php/Font_configuration "Font configuration")
 
 ### Sound
 

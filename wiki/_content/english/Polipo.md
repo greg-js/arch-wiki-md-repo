@@ -98,7 +98,7 @@ Unlike other proxies, Polipo needs to be restarted after alterations.
 
 ### Browser
 
-Set the browser so that it uses `localhost:8123` for proxying. Be sure to disable the browser's disk cache to avoid redundant IO operations and bad performance.
+Set the browser so that it uses `localhost:8123` for proxying. Be sure to disable the browser's disk cache to avoid redundant IO operations and bad performance. If `localhost:8123` does not work, try matching `/etc/hosts` like `*hostname*.localdomain:8123`.
 
 ### Tunneling
 

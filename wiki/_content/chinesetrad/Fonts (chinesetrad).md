@@ -15,38 +15,40 @@
     *   [2.1 Pacman](#Pacman)
     *   [2.2 建立軟體包](#.E5.BB.BA.E7.AB.8B.E8.BB.9F.E9.AB.94.E5.8C.85)
     *   [2.3 手動安裝](#.E6.89.8B.E5.8B.95.E5.AE.89.E8.A3.9D)
-    *   [2.4 手動安裝：進階方式](#.E6.89.8B.E5.8B.95.E5.AE.89.E8.A3.9D.EF.BC.9A.E9.80.B2.E9.9A.8E.E6.96.B9.E5.BC.8F)
-    *   [2.5 舊版應用程式](#.E8.88.8A.E7.89.88.E6.87.89.E7.94.A8.E7.A8.8B.E5.BC.8F)
-    *   [2.6 Pango 警告訊息](#Pango_.E8.AD.A6.E5.91.8A.E8.A8.8A.E6.81.AF)
-    *   [2.7 讓字型搭配 X.Org](#.E8.AE.93.E5.AD.97.E5.9E.8B.E6.90.AD.E9.85.8D_X.Org)
+    *   [2.4 舊版應用程式](#.E8.88.8A.E7.89.88.E6.87.89.E7.94.A8.E7.A8.8B.E5.BC.8F)
+    *   [2.5 Pango 警告訊息](#Pango_.E8.AD.A6.E5.91.8A.E8.A8.8A.E6.81.AF)
 *   [3 終端機字型](#.E7.B5.82.E7.AB.AF.E6.A9.9F.E5.AD.97.E5.9E.8B)
     *   [3.1 預覽和測試](#.E9.A0.90.E8.A6.BD.E5.92.8C.E6.B8.AC.E8.A9.A6)
-    *   [3.2 更改預設字型](#.E6.9B.B4.E6.94.B9.E9.A0.90.E8.A8.AD.E5.AD.97.E5.9E.8B)
+    *   [3.2 持續性的設定](#.E6.8C.81.E7.BA.8C.E6.80.A7.E7.9A.84.E8.A8.AD.E5.AE.9A)
 *   [4 字型軟體包](#.E5.AD.97.E5.9E.8B.E8.BB.9F.E9.AB.94.E5.8C.85)
-    *   [4.1 盲文點字](#.E7.9B.B2.E6.96.87.E9.BB.9E.E5.AD.97)
-    *   [4.2 國際 (非英語系) 使用者](#.E5.9C.8B.E9.9A.9B_.28.E9.9D.9E.E8.8B.B1.E8.AA.9E.E7.B3.BB.29_.E4.BD.BF.E7.94.A8.E8.80.85)
-        *   [4.2.1 阿拉伯和烏爾都文字](#.E9.98.BF.E6.8B.89.E4.BC.AF.E5.92.8C.E7.83.8F.E7.88.BE.E9.83.BD.E6.96.87.E5.AD.97)
-        *   [4.2.2 中日韓越文字](#.E4.B8.AD.E6.97.A5.E9.9F.93.E8.B6.8A.E6.96.87.E5.AD.97)
-            *   [4.2.2.1 中文字](#.E4.B8.AD.E6.96.87.E5.AD.97)
-            *   [4.2.2.2 日文字](#.E6.97.A5.E6.96.87.E5.AD.97)
-            *   [4.2.2.3 韓文字](#.E9.9F.93.E6.96.87.E5.AD.97)
-        *   [4.2.3 希臘文字](#.E5.B8.8C.E8.87.98.E6.96.87.E5.AD.97)
-        *   [4.2.4 希伯來文字](#.E5.B8.8C.E4.BC.AF.E4.BE.86.E6.96.87.E5.AD.97)
-        *   [4.2.5 印地文字](#.E5.8D.B0.E5.9C.B0.E6.96.87.E5.AD.97)
-        *   [4.2.6 高棉文字](#.E9.AB.98.E6.A3.89.E6.96.87.E5.AD.97)
-        *   [4.2.7 僧伽羅文字](#.E5.83.A7.E4.BC.BD.E7.BE.85.E6.96.87.E5.AD.97)
-        *   [4.2.8 塔米爾文字](#.E5.A1.94.E7.B1.B3.E7.88.BE.E6.96.87.E5.AD.97)
-        *   [4.2.9 藏文字](#.E8.97.8F.E6.96.87.E5.AD.97)
-    *   [4.3 數學字型](#.E6.95.B8.E5.AD.B8.E5.AD.97.E5.9E.8B)
-    *   [4.4 Microsoft 字型](#Microsoft_.E5.AD.97.E5.9E.8B)
-    *   [4.5 Apple Mac OS X 字型](#Apple_Mac_OS_X_.E5.AD.97.E5.9E.8B)
-    *   [4.6 等寬字型](#.E7.AD.89.E5.AF.AC.E5.AD.97.E5.9E.8B)
-        *   [4.6.1 TrueType 字型](#TrueType_.E5.AD.97.E5.9E.8B)
-        *   [4.6.2 點陣字型](#.E9.BB.9E.E9.99.A3.E5.AD.97.E5.9E.8B)
-    *   [4.7 無襯線字型](#.E7.84.A1.E8.A5.AF.E7.B7.9A.E5.AD.97.E5.9E.8B)
-    *   [4.8 手寫體](#.E6.89.8B.E5.AF.AB.E9.AB.94)
-    *   [4.9 襯線字型](#.E8.A5.AF.E7.B7.9A.E5.AD.97.E5.9E.8B)
-    *   [4.10 未分類字型](#.E6.9C.AA.E5.88.86.E9.A1.9E.E5.AD.97.E5.9E.8B)
+    *   [4.1 古文字](#.E5.8F.A4.E6.96.87.E5.AD.97)
+    *   [4.2 盲文點字](#.E7.9B.B2.E6.96.87.E9.BB.9E.E5.AD.97)
+    *   [4.3 表情符號(顏文字)](#.E8.A1.A8.E6.83.85.E7.AC.A6.E8.99.9F.28.E9.A1.8F.E6.96.87.E5.AD.97.29)
+    *   [4.4 國際 (非英語系) 使用者](#.E5.9C.8B.E9.9A.9B_.28.E9.9D.9E.E8.8B.B1.E8.AA.9E.E7.B3.BB.29_.E4.BD.BF.E7.94.A8.E8.80.85)
+        *   [4.4.1 阿拉伯和烏爾都文字](#.E9.98.BF.E6.8B.89.E4.BC.AF.E5.92.8C.E7.83.8F.E7.88.BE.E9.83.BD.E6.96.87.E5.AD.97)
+        *   [4.4.2 緬甸文](#.E7.B7.AC.E7.94.B8.E6.96.87)
+        *   [4.4.3 中日韓越文字](#.E4.B8.AD.E6.97.A5.E9.9F.93.E8.B6.8A.E6.96.87.E5.AD.97)
+            *   [4.4.3.1 Pan-CJK](#Pan-CJK)
+            *   [4.4.3.2 中文字](#.E4.B8.AD.E6.96.87.E5.AD.97)
+            *   [4.4.3.3 日文字](#.E6.97.A5.E6.96.87.E5.AD.97)
+            *   [4.4.3.4 韓文字](#.E9.9F.93.E6.96.87.E5.AD.97)
+        *   [4.4.4 希臘文字](#.E5.B8.8C.E8.87.98.E6.96.87.E5.AD.97)
+        *   [4.4.5 希伯來文字](#.E5.B8.8C.E4.BC.AF.E4.BE.86.E6.96.87.E5.AD.97)
+        *   [4.4.6 印地文字](#.E5.8D.B0.E5.9C.B0.E6.96.87.E5.AD.97)
+        *   [4.4.7 高棉文字](#.E9.AB.98.E6.A3.89.E6.96.87.E5.AD.97)
+        *   [4.4.8 僧伽羅文字](#.E5.83.A7.E4.BC.BD.E7.BE.85.E6.96.87.E5.AD.97)
+        *   [4.4.9 塔米爾文字](#.E5.A1.94.E7.B1.B3.E7.88.BE.E6.96.87.E5.AD.97)
+        *   [4.4.10 藏文字](#.E8.97.8F.E6.96.87.E5.AD.97)
+    *   [4.5 數學字型](#.E6.95.B8.E5.AD.B8.E5.AD.97.E5.9E.8B)
+    *   [4.6 Microsoft 字型](#Microsoft_.E5.AD.97.E5.9E.8B)
+    *   [4.7 Apple Mac OS X 字型](#Apple_Mac_OS_X_.E5.AD.97.E5.9E.8B)
+    *   [4.8 等寬字型](#.E7.AD.89.E5.AF.AC.E5.AD.97.E5.9E.8B)
+        *   [4.8.1 TrueType 字型](#TrueType_.E5.AD.97.E5.9E.8B)
+        *   [4.8.2 點陣字型](#.E9.BB.9E.E9.99.A3.E5.AD.97.E5.9E.8B)
+    *   [4.9 無襯線字型](#.E7.84.A1.E8.A5.AF.E7.B7.9A.E5.AD.97.E5.9E.8B)
+    *   [4.10 手寫體](#.E6.89.8B.E5.AF.AB.E9.AB.94)
+    *   [4.11 襯線字型](#.E8.A5.AF.E7.B7.9A.E5.AD.97.E5.9E.8B)
+    *   [4.12 未分類字型](#.E6.9C.AA.E5.88.86.E9.A1.9E.E5.AD.97.E5.9E.8B)
 *   [5 X11 的字型採用順序](#X11_.E7.9A.84.E5.AD.97.E5.9E.8B.E6.8E.A1.E7.94.A8.E9.A0.86.E5.BA.8F)
 *   [6 字型別名](#.E5.AD.97.E5.9E.8B.E5.88.A5.E5.90.8D)
 *   [7 小提示](#.E5.B0.8F.E6.8F.90.E7.A4.BA)
@@ -105,62 +107,34 @@ $ pacman -Ss ttf
 
 ```
 
-某些字型，像是 [terminus-font](https://www.archlinux.org/packages/?name=terminus-font)，會安裝在 `/usr/share/fonts/local`，這個目錄預設沒有被加進字型路徑。將以下內容加入 `~/.xinitrc`，就可以在 X11 使用這類字型：
-
-```
-xset +fp /usr/share/fonts/local
-xset fp rehash
-
-```
-
-如果執行第一行指令後出現以下錯誤
-
-```
-$ xset +fp /usr/share/fonts/local/
-xset:  bad font path element (#0), possible causes are:
-    Directory does not exist or has wrong permissions
-    Directory missing fonts.dir
-    Incorrect font server address or syntax
-
-```
-
-需要執行
-
-```
-# cd /usr/share/fonts/local;mkfontdir
-
-```
-
 ### 建立軟體包
 
 您應該將管理字型的工作交給 pacman。字型可以打包成一份 Arch 軟體包，還可以透過 [AUR](/index.php/AUR "AUR") 和社群分享。這裡有一個建立基本軟體包的範例。若想要更了解如何組建軟體包，請閱讀 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")。
 
+字型檔案的家族名稱可以使用 `fc-query` 指令取得。例如： `fc-query -f '%{family[0]}
+' /path/to/file`。使用的格式請參考 FcPatternFormat(3) 手冊之說明。
+
+ `PKGBUILD` 
 ```
-pkgname=ttf-fontname
+pkgname=fontname-fonts
 pkgver=1.0
 pkgrel=1
-pkgdesc="custom fonts"
+pkgdesc="一些關於此字型之描述"
 arch=('any')
 depends=('fontconfig' 'xorg-font-utils')
 source=("http://someurl.org/$pkgname.tar.bz2")
 install=$pkgname.install
 
 package() {
-  install -d "$pkgdir/usr/share/fonts/TTF"
-  cp -dpr --no-preserve=ownership "$srcdir/$pkgname/"*.ttf "$pkgdir/usr/share/fonts/TTF/"
+  install -Dm644 $pkgname/font.otf "$pkgdir"/usr/share/fonts/family_name/font.otf
+  install -Dm644 $pkgname/font_bold.otf "$pkgdir"/usr/share/fonts/family_name/font_bold.otf
 }
 
 ```
-
-這份 PKGBUILD 假定字型為 TrueType 類型。之後還必須建立一份安裝檔案 (`ttf-fontname.install`) 更新字型快取：
-
+ `fontname-fonts.install` 
 ```
 post_install() {
-  echo -n "Updating font cache... "
-  fc-cache -fs >/dev/null
-  mkfontscale /usr/share/fonts/TTF /usr/share/fonts/Type1
-  mkfontdir /usr/share/fonts/TTF /usr/share/fonts/Type1
-  echo "done"
+  fc-cache -s
 }
 
 post_upgrade() {
@@ -173,15 +147,13 @@ post_remove() {
 
 ```
 
-若需要更方便的 ttf 字型建立方式，可以使用 [AUR](/index.php/AUR "AUR") 提供的 [makefontpkg](https://aur.archlinux.org/packages/makefontpkg/)。
-
 ### 手動安裝
 
 要為系統新增一個軟體庫未收錄的字型，建議方法是[#建立軟體包](#.E5.BB.BA.E7.AB.8B.E8.BB.9F.E9.AB.94.E5.8C.85)。採用這個方式讓 pacman 之後能夠移除或升級字型。不過您也可以用手動的方式安裝字型。
 
-若要將字型安裝到系統 (讓所有使用者都能使用)，將字型資料夾移至 `/usr/share/fonts/` 目錄。如果只要為單一使用者安裝字型，則改移至 `~/.fonts/` 目錄。
+若要將字型安裝到系統 (讓所有使用者都能使用)，將字型資料夾移至 `/usr/share/fonts/` 目錄。為了使得這些字型檔案能夠被所有使用者讀取，使用 [chmod](/index.php/Chmod "Chmod") 指令設定正確的權限：檔案至少必須是 `0444`，而目錄則是 `0555`。若要安裝給單一使用者，則將自行檔案安裝於 `~/.local/share/fonts` 目錄。(注意：`~/.fonts/` 的用法已經不被支援了)
 
-要讓 X 伺服器可以直接載入字型 (不使用「字型伺服器」)，需要將新增字型的所在目錄加為 FontPath 項目。這個項目位在[您的 Xorg 設定檔案](/index.php/Xorg#Configuration "Xorg") (例如 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf`) 的 *Files* 區。更多詳細資訊請參閱[#讓字型搭配 X.Org](#.E8.AE.93.E5.AD.97.E5.9E.8B.E6.90.AD.E9.85.8D_X.Org)。
+要讓 X 伺服器可以直接載入字型 (不使用「字型伺服器」)，需要將新增字型的所在目錄加為 FontPath 項目。這個項目位在[您的 Xorg 設定檔案](/index.php/Xorg#Configuration "Xorg") (例如 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf`) 的 *Files* 區。更多詳細資訊請參閱[#舊版應用程式](#.E8.88.8A.E7.89.88.E6.87.89.E7.94.A8.E7.A8.8B.E5.BC.8F)。
 
 接著更新 fontconfig 字型快取：
 
@@ -189,75 +161,6 @@ post_remove() {
 $ fc-cache -vf
 
 ```
-
-### 手動安裝：進階方式
-
-如果您有特殊的字型收集需求：使用商業字型、使用不同格式的字型、安裝/移除字型檔相當頻繁，或只是希望可以更能夠控制存取自己的字型資源，那就相當適合用手動的方式來安裝維護字型。採用這種方案會獲得很多好處：
-
-*   避免重複安裝不同版本、格式的同一種字型家族 (一個常見原因是算繪問題)。
-*   字型可使用多個非標準的實體來源 (例如額外的硬碟、分割區)。
-*   避免依賴隱晦又佔體積的本地字型來源 (例如 TeX Live & `09-texlive-fonts.conf`，或是從 AUR 抓下來的某個字型集合)；您可能只需要其中 5 種字型，卻連帶安裝其它 55 種不需要的字型。
-*   避免字型算繪問題，因為您的 fontconfig 設定檔已被調成和與安裝在系統的那份不同的格式。
-*   只要觀察主字型目錄下的內容，就能夠確定系統上有哪種格式的字型家族可供應用程式使用。您不需要複雜、佔用大量資源的字型管理程式；[gtk2fontsel](https://www.archlinux.org/packages/?name=gtk2fontsel) 和基本的指令工具 (如 [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) 軟體包下的 `fc-query`) 就可以將這件差事辦得又快又好。
-*   當您安裝或升級單一字型，所有應用程式都可以使用該版本，包含 LaTeX 相關軟體。
-*   有必要的話，可以快速啟用 / 停用某個字型家族，因為您知道它們在哪個目錄下 (除錯時很好用)。
-*   不需擔心有任何多餘的 `/etc/fonts/conf.avail/nn-foo.conf` fontconfig 檔案會潛在跟您的算繪設定起衝突 (特別是當您使用[自訂的字型設定與修補過的函式庫](/index.php/Font_configuration#Patched_packages "Font configuration"))。
-*   長遠來看，可以省下那些因軟體包管理者的失誤，解決問題和清除衝突所浪費的寶貴時間。
-
-實作上有幾種方式，有必要的話可由任何軟體包管理員採用。以下所舉出的實作方式相當有效率，即使字型數目眾多也相當安全。
-
-*   我們要將字型來源位置 (例如 `/usr/share/fonts.avail`：這是我們要存放字型的位置) 和包含字型家族軟連結的目錄 (`/usr/share/fonts`) 給分隔開來。
-
-*   將每個字型家族分別放在一個明確命名的子目錄下。命名規則必須一致且明確，例如這樣：
-
-```
-<ttf|otf|t1>-<字型作者或組織(選用)>-<字型家族名稱>
-
-```
-
-字型來源目錄的內容會長得像這樣：
-
-```
-$ ls /usr/share/fonts.avail
-
-/usr/share/fonts.avail/otf-heuristica
-/usr/share/fonts.avail/ttf-liberation
-/usr/share/fonts.avail/ttf-ms-arial
-...
-
-```
-
-*   我們不會動到 TeX Live 的字型目錄，以避免 LaTeX 軟體發生任何問題。既然我們可以使用多個位置，我們將在 `/usr/share/fonts` 建立軟連結，讓應用程式可以存取特定的字型家族：
-
-```
-# cd /usr/share/fonts
-# ln -s ../fonts.avail/otf-heuristica .
-# ln -s /opt/texlive/texmf-dist/fonts/truetype/public/opensans ttf-texlive-open.sans
-
-```
-
-結果如下：
-
-```
-$ ls /usr/share/fonts
-
-ttf-liberation        -> ..fonts.avail/ttf-liberation
-ttf-ms-arial          -> ..fonts.avail/ttf-ms-arial
-otf-heuristica        -> ..fonts.avail/otf-heuristica
-otf-texlive-tex.gyre  -> /opt/texlive/texmf-dist/fonts/opentype/public/tex-gyre
-ttf-texlive-open.sans -> /opt/texlive/texmf-dist/fonts/truetype/public/opensans
-...
-
-```
-
-最後，依照慣例執行：
-
-```
-# fc-cache && mkfontscale && mkfontdir
-
-```
-
-[TeX Live](/index.php/TeX_Live "TeX Live") Wiki 文章內也有一個類似做法，比較簡單，但較適用於單一使用者的情境，而非全域設定。
 
 ### 舊版應用程式
 
@@ -276,6 +179,13 @@ $ for dir in /font/dir1/ /font/dir2/; do xset +fp $dir; done && xset fp rehash
 
 ```
 
+又或者，若字型被安裝在不同的子資料夾如 `/usr/share/fonts` ：
+
+```
+$ for dir in * ; do if [  -d  "$dir"  ]; then cd "$dir";xset +fp "$PWD" ;mkfontscale; mkfontdir;cd .. ;fi; done && xset fp rehash
+
+```
+
 有時候 X 伺服器會無法成功載入字型資料夾，這時您需要重新掃描所有 `fonts.dir` 檔案：
 
 ```
@@ -291,6 +201,28 @@ $ xlsfonts | grep fontname
 
 ```
 
+**Note:** 許多套件在安裝時會自動設定Xorg以使用字型，若是這種情況，則不需要執行本步驟。
+
+這也可以在 `/etc/X11/xorg.conf` 或是 `/etc/X11/xorg.conf.d` 設定檔中全域設置。
+
+以下是一個必須要加到 `/etc/X11/xorg.conf` 檔案中的例子。請依照特定字型的需求自行增減設定中的路徑。
+
+```
+# Let X.Org know about the custom font directories
+Section "Files"
+    FontPath    "/usr/share/fonts/100dpi"
+    FontPath    "/usr/share/fonts/75dpi"
+    FontPath    "/usr/share/fonts/cantarell"
+    FontPath    "/usr/share/fonts/cyrillic"
+    FontPath    "/usr/share/fonts/encodings"
+    FontPath    "/usr/share/fonts/misc"
+    FontPath    "/usr/share/fonts/truetype"
+    FontPath    "/usr/share/fonts/TTF"
+    FontPath    "/usr/share/fonts/util"
+EndSection
+
+```
+
 ### Pango 警告訊息
 
 若您的系統有在使用 [Pango](http://www.pango.org/)，它會從 [fontconfig](http://www.freedesktop.org/wiki/Software/fontconfig) 讀取字型來源。
@@ -301,13 +233,10 @@ $ xlsfonts | grep fontname
 
 ```
 
-如果您看到與上面類似的錯誤，或者應用程式內的字元變成了方框，您需要新增字型並更新字型快取。這個範例使用 [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) 字型演示，並以 root 執行以套用至全系統。
+如果您看到與上面類似的錯誤，或者應用程式內的字元變成了方框，您需要新增字型並更新字型快取。這個範例使用 [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) 字型演示(成功安裝此套件之後)，並以 root 執行以套用至全系統。
 
 ```
-# pacman -S ttf-liberation
-  -- 略過部分輸出，假設安裝已經成功 -- 
-
-# fc-cache -vfs
+# fc-cache
 /usr/share/fonts: caching, new cache contents: 0 fonts, 3 dirs
 /usr/share/fonts/TTF: caching, new cache contents: 16 fonts, 0 dirs
 /usr/share/fonts/encodings: caching, new cache contents: 0 fonts, 1 dirs
@@ -326,40 +255,25 @@ LiberationMono-Regular.ttf: "Liberation Mono" "Regular"
 
 ```
 
-### 讓字型搭配 X.Org
-
-為了讓 [Xorg](/index.php/Xorg "Xorg") 可以找到並使用您新安裝的字型，必須將字型路徑加入 `/etc/X11/xorg.conf` (另一個 X.Org 設定檔也可以)。
-
-這是必須加入 `/etc/X11/xorg.conf` 的範例內容。根據您的字型需求新增/移除路徑。
-
-```
-# 讓 X.Org 知道自訂字型目錄
-Section "Files"
-    FontPath    "/usr/share/fonts/100dpi"
-    FontPath    "/usr/share/fonts/75dpi"
-    FontPath    "/usr/share/fonts/cantarell"
-    FontPath    "/usr/share/fonts/cyrillic"
-    FontPath    "/usr/share/fonts/encodings"
-    FontPath    "/usr/share/fonts/local"
-    FontPath    "/usr/share/fonts/misc"
-    FontPath    "/usr/share/fonts/truetype"
-    FontPath    "/usr/share/fonts/TTF"
-    FontPath    "/usr/share/fonts/util"
-EndSection
-
-```
-
 ## 終端機字型
 
-[虛擬終端機](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")使用核心內建字型，預設顯示 ASCII 字元，這兩種設定都可以輕易改變。
+**Note:** 本節是關於 [Linux console](https://en.wikipedia.org/wiki/Linux_console "wikipedia:Linux console")。對於提供更多功能的其他的終端機(支援全 Unicode 字型、現代的顯示卡等等)，請參考 [fbterm](/index.php/Fbterm "Fbterm") 、 [KMSCON](/index.php/KMSCON "KMSCON") 或之類的相關專案。
 
-終端機字型限定為 256 或 512 個字元。可供使用的字型存放在 `/usr/share/kbd/consolefonts/` 目錄。
+預設的條件下 [虛擬終端機](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") 使用核心內建的字型與 [CP437](https://en.wikipedia.org/wiki/CP437 "wikipedia:CP437") 字元表， 但這是很容易修改的。
 
-鍵盤映射 (Keymap) 是按鍵和電腦使用字元的對應關係表，可以在 `/usr/share/kbd/keymaps/` 的子目錄下找到。
+[Linux 虛擬終端機](https://en.wikipedia.org/wiki/Linux_console "wikipedia:Linux console") 預設使用 UTF-8 編碼，但由於使用了標準的 VGA 相容偵緩衝，一個虛擬終端機被限制只能使用標準的 256 或 512 個字符。若一個字型超過 256 個字符，則色彩就會從 16 種降級到 8 種。為了指配正確的符號以顯示給訂的 Unicode，便需要一種特殊的轉換表，*unimap*。現在大多數虛擬終端機字型都有內建這個功能，傳統上則需要分開載入。
+
+[kbd](https://www.archlinux.org/packages/?name=kbd) 套件提供了改變虛擬終端機字型及字型對應的工具。可用的字型被存放在 `/usr/share/kbd/consolefonts/` 目錄中，這些副檔名為 *.psfu* or *.psfu.gz* 的檔案具有內建的 Unicode 轉換表。
+
+Keymaps, the connection between the key pressed and the character used by the computer, are found in the subdirectories of `/usr/share/kbd/keymaps/`, see [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") for details.
+
+鍵盤映射 (Keymap) 是按鍵和電腦使用字元的對應關係表，可以在 `/usr/share/kbd/keymaps/` 的子目錄下找到。詳細資訊請參照 [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") 。
+
+**Note:** 替換這些字型可能造成某些問題，因為有些程式預期標準的 VGA 風格字型，如某些畫線的圖形軟體。
 
 ### 預覽和測試
 
-**提示:** 一個整理過的預覽影像資料庫：[Linux 終端機字型截圖](http://alexandre.deverteuil.net/consolefonts/consolefonts.html)。
+**提示:** 一個整理過的預覽影像資料庫：[Linux 終端機字型截圖](http://alexandre.deverteuil.net/pages/consolefonts)。
 
 *showconsolefont* 指令會以表格形式顯示可用字與字元：
 
@@ -368,21 +282,14 @@ $ showconsolefont
 
 ```
 
-*setfont* 工具可以暫時改變字型，讓使用者可以決定是否要採為預設值。只要指定字型名稱即可 (這些字型位於 `/usr/share/kbd/consolefonts/`)：
+*setfont* 工具可以暫時改變字型，讓使用者認為那是固定的字型。只要指定字型名稱即可 (這些字型位於 `/usr/share/kbd/consolefonts/`)，例如：
 
 ```
-$ setfont Lat2-Terminus16
-
-```
-
-您可以用 `-m` 選項指定使用什麼字元集：
-
-```
-$ setfont Lat2-Terminus16 -m 8859-2
+$ setfont lat2-16 -m 8859-2
 
 ```
 
-如果對新換的字型不滿意，用以下指令可以還原至預設字型 (就算終端機顯示亂碼，這個指令依然可以執行 -- 將指令「盲打」進去即可)：
+需注意字型名稱的大小寫呈現，不可混淆。如果對新換的字型不滿意，用以下指令可以還原至預設字型 (就算終端機顯示亂碼，這個指令依然可以執行，將指令「盲打」進去即可)：
 
 ```
 $ setfont
@@ -391,45 +298,56 @@ $ setfont
 
 **註記:** *setfont* 只作用於目前正在使用的終端機。其它終端機無論活躍與否都不受影響。
 
-### 更改預設字型
+### 持續性的設定
 
-`/etc/vconsole.conf` 的 `FONT` 和 `FONT_MAP` 變數可用來改變預設字型。
+`/etc/vconsole.conf` 的 `FONT` 用來在開機時設定字型，對於所有的虛擬終端機都是固定的，詳情請參見 `man 5 vconsole.conf` 的說明。
 
 若要顯示 *Č, ž, đ, š* 或 *Ł, ę, ą, ś* 之類的字元，使用 `lat2-16.psfu.gz` 這個字型：
 
+ `/etc/vconsole.conf` 
 ```
-FONT=lat2-16
-
-```
-
-這代表使用 ISO/IEC 8859 字元的第二部分，大小設定為 16。您可以使用其它值更改字型大小 (如 `lat2-08`)。您可以在[維基百科的這張表](https://en.wikipedia.org/wiki/ISO/IEC_8859#The_Parts_of_ISO.2FIEC_8859 "wikipedia:ISO/IEC 8859")查詢 8859 規格定義的區域。如果您經常在沒有 X 伺服器的終端機上工作，建議可以使用一種 Terminus 字型。比如說 ter-216b，代表包含 latin-2 部分，大小 16，粗體字。ter-216n 是正常磅數的版本。Terminus 字型大小最大可以到 32。
-
-現在設定適當的字型映射，若使用 lat2-16 則會是：
-
-```
-FONT_MAP=8859-2
-
+...
+ FONT=lat2-16
+ FONT_MAP=8859-2
 ```
 
-若要為早期的使用者空間套用指定字型，在 `/etc/mkinitcpio.conf` 使用 `keymap` 勾子。更多資訊請參閱 [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio")。
+這代表使用 ISO/IEC 8859 字元的第二部分，大小設定為 16。您可以使用其它值更改字型大小 (如 `lat2-08`)。您可以在[維基百科的這張表](https://en.wikipedia.org/wiki/ISO/IEC_8859#The_Parts_of_ISO.2FIEC_8859 "wikipedia:ISO/IEC 8859")查詢 8859 規格定義的區域。
 
-如果開機時字型沒有任何變化，或只變化一下就回復原樣，則有可能是因為圖形驅動啟動時字型被重設，然後終端機被切至幀緩衝 (framebuffer)。提早載入圖形驅動可以避免這個問題。若要在套用 `/etc/vconsole.conf` 之前將幀緩衝準備好，請參閱[核心模式設定#提早啟動 KMS](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")、[[1]](https://bbs.archlinux.org/viewtopic.php?id=145765) 或其它方式。
+若要為早期的使用者空間套用指定字型，在 `/etc/mkinitcpio.conf` 使用 `keymap` 的設定。更多資訊請參閱 [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio")。
+
+如果開機時字型沒有任何變化，或只變化一下就回復原樣，則有可能是因為圖形驅動啟動時字型被重設，然後終端機被切至幀緩衝 (framebuffer)。提早載入圖形驅動可以避免這個問題。若要在套用 `/etc/vconsole.conf` 之前將幀緩衝準備好，請參閱[核心模式設定#提早啟動 KMS](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")、[[2]](https://bbs.archlinux.org/viewtopic.php?id=145765) 或其它方式。
 
 ## 字型軟體包
 
 以下是收錄於官方軟體庫和 [AUR](/index.php/AUR "AUR") 的字型軟體包列表，種類繁多，可依照需求選用。若字型有廣泛的萬國碼 (Unicode) 支援，會加註 "Unicode" 標記，詳情請參閱字型專案或相關的維基百科頁面。
 
-一位 Github 使用者 Ternstor 用 python 腳本產生 [extra](http://ternstor.github.com/archfonts/extra.html), [community](http://ternstor.github.com/archfonts/community.html) 和 [AUR](http://ternstor.github.com/archfonts/aur.html) 庫內字型的 PNG 圖像，您可以在那裡預覽以下所提到的字型。
+一位 Github 使用者 Ternstor 用 python 腳本產生含有所有官方及 AUR 套件庫字型的 PNG 圖像的 HTML 文件，請參照 [[3]](https://github.com/ternstor/distrofonts/blob/master/archfonts.py) 。
+
+### 古文字
+
+*   [ttf-ancient-fonts](https://aur.archlinux.org/packages/ttf-ancient-fonts/) - 包含了許多古文明字型的 Unicode 符號集合
 
 ### 盲文點字
 
 *   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - 包含 Unicode **盲文點字**符號的字型
 
+### 表情符號(顏文字)
+
+設計用來表示表情的圖形化符號集合。
+
+*   emojione-color-fontAUR - a complete, independent, open-source emoji set focused on design correctness
+*   twemoji-color-fontAUR - Twitter's open-sourced emoji glyphs
+*   ttf-symbola - provides many Unicode symbols, including emoji, in outline style
+*   noto-fonts-emoji - Google's own emoji font, like on Android or Google Hangouts
+
+部份新增的符號在 Noto 字型中的顯示不佳。
+
 ### 國際 (非英語系) 使用者
 
 應用程式與瀏覽器會根據 fontconfig 設定和 Unicode 文字可用的字型來選擇其顯示字型。用指令 `fc-list :lang="雙字母的語言代碼"` 列舉系統安裝了哪些可對應該語言的字型。例如，列舉已經安裝的阿拉伯文字型，以及支援阿拉伯字的字型：
 
- `$ fc-list :lang=ar | cut -d: -f1` 
+ `$ fc-list -f '%{file}
+' :lang=ar` 
 ```
 /usr/share/fonts/TTF/FreeMono.ttf
 /usr/share/fonts/TTF/DejaVuSansCondensed.ttf
@@ -439,17 +357,32 @@ FONT_MAP=8859-2
 
 ```
 
-若要在多國語言的網站 (如維基百科、Arch Linux wiki) 正確描繪字形，安裝這些軟體包：[ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk)
+若要在多國語言的網站 (如維基百科、Arch Linux wiki) 正確描繪字形，請安裝下列軟體包組合之一：
+
+*   Google 的 [Noto](http://www.google.com/get/noto/) 以支援所有語言為目標。[安裝](/index.php/Install "Install") [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts)、 [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) 以及 [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji)。
+*   另外一個能夠良好涵蓋多語言環境的字型組合是 [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)、[ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) 以及 [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk)。
 
 #### 阿拉伯和烏爾都文字
 
+*   [ttf-amiri](https://aur.archlinux.org/packages/ttf-amiri/) - A classical Arabic typeface in Naskh style poineered by Amiria Press
+*   [ttf-qurancomplex-fonts](https://aur.archlinux.org/packages/ttf-qurancomplex-fonts/) - Fonts by King Fahd Glorious Quran Printing Complex in al-Madinah al-Munawwarah
 *   [ttf-qurancomplex-fonts](https://aur.archlinux.org/packages/ttf-qurancomplex-fonts/) - 位於麥地那的 King Fahd Glorious Quran Printing Complex 製作的字型
-*   [ttf-amiri](https://aur.archlinux.org/packages/ttf-amiri/) - 一個典型的阿拉伯文謄抄體 (Naskh) 字型，一開始由 Amiria Press 採用
+*   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - Collection of free Arabic fonts
 *   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - 來自 SIL 的 Unicode 阿拉伯文字型
 *   [ttf-sil-scheherazade](https://aur.archlinux.org/packages/ttf-sil-scheherazade/) - 來自 SIL 的 Unicode 阿拉伯文字型
-*   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - 自由的阿拉伯文字型集合
+*   [ttf-urdufonts](https://aur.archlinux.org/packages/ttf-urdufonts/) - Urdu fonts (Jameel Noori Nastaleeq (+kasheeda), Nafees Web Naskh, PDMS Saleem Quran Font) and font configuration to set Jameel Noori Nastaleeq as default font for Urdu
+
+#### 緬甸文
+
+*   [ttf-my-paduk](https://aur.archlinux.org/packages/ttf-my-paduk/) - Padauk font for Myanmar/Birmania
+*   [ttf-myanmar-fonts](https://aur.archlinux.org/packages/ttf-myanmar-fonts/) - 121 Fonts from myordbok.com
 
 #### 中日韓越文字
+
+##### Pan-CJK
+
+*   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - 一個支援簡/繁中文、日文及韓文的大型字型集合，並具有一致的設計。是下者的別名。
+*   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts)
 
 ##### 中文字
 
@@ -678,7 +611,7 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"
 
 ### 應用程式專用的字型快取
 
-Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) 或 [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) 使用自己的字型快取，因此更新字型後記得移除 `$HOME/.matplotlib/fontList.cache`，這樣它才會再產生一次快取並找到新字型 [[2]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html)。
+Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) 或 [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) 使用自己的字型快取，因此更新字型後記得移除 `$HOME/.matplotlib/fontList.cache`，這樣它才會再產生一次快取並找到新字型 [[4]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html)。
 
 ## 另請參閱
 

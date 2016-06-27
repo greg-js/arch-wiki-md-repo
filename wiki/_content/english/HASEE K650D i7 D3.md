@@ -7,7 +7,8 @@ The HASEE K650D-i7-D3 is a powerful laptop, on which Arch-Linux runs fine. For a
 *   [3 Video cards](#Video_cards)
 *   [4 Audio](#Audio)
 *   [5 Webcam](#Webcam)
-*   [6 Further suggestions](#Further_suggestions)
+*   [6 Software access point](#Software_access_point)
+*   [7 Further suggestions](#Further_suggestions)
 
 ## Touchpad synaptics
 
@@ -52,6 +53,16 @@ After that, run `alsamixer` to unmute.
 ## Webcam
 
 The webcam is supported fully by default. [MPlayer](/index.php/Webcam_setup#MPlayer "Webcam setup") or [FFmpeg](/index.php/Webcam_setup#FFmpeg "Webcam setup") can be used for test.
+
+## Software access point
+
+A Wi-Fi access point can be created in this computer following [Software access point](/index.php/Software_access_point "Software access point"). However, WPA/WPA2 will not work properly in [channel](https://en.wikipedia.org/wiki/List_of_WLAN_channels#Interference_Concerns "wikipedia:List of WLAN channels") 1 ~ 9, so [channel](https://en.wikipedia.org/wiki/List_of_WLAN_channels#Interference_Concerns "wikipedia:List of WLAN channels") must be set at 10 or more in the configuration:
+
+ `/etc/hostapd/hostapd.conf` 
+```
+
+channel=10 
+```
 
 ## Further suggestions
 

@@ -150,6 +150,11 @@ In that article, the device connected to the LAN is `net0`. That device would be
 
 The [create_ap](https://bbs.archlinux.org/viewtopic.php?pid=1269258) script combines [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [iptables](/index.php/Iptables "Iptables") to create a Bridged/NATed Access Point (available in the [AUR](/index.php/AUR "AUR") [create_ap](https://aur.archlinux.org/packages/create_ap/)).
 
+```
+# create_ap wlan0 internet0 MyAccessPoint MyPassPhrase
+
+```
+
 ### RADIUS
 
 See [[1]](https://me.m01.eu/blog/2012/05/wpa-2-enterprise-from-scratch-on-a-raspberry-pi/) for instructions to run a [FreeRADIUS](http://freeradius.org/) server for [WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise").

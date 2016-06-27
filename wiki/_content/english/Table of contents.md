@@ -1,5 +1,5 @@
 | [English](/index.php/Category:English "Category:English") <small>(1)</small> |
-| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(23)</small> |
+| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(22)</small> |
 | <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(21) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(50)</small> |
 | <small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
@@ -22,7 +22,7 @@
 | <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(51)</small> |
 | <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(67) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>2.10.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
-| <small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(19)</small> |
+| <small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(23)</small> |
 | <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(25)</small> |
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(44)</small> |
@@ -89,7 +89,7 @@
 | <small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(10) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(67) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>5.5.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
-| <small>5.5.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(19)</small> |
+| <small>5.5.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>5.5.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(23)</small> |
 | <small>5.6.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(24)</small> |
 | <small>5.7.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |

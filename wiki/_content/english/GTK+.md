@@ -86,6 +86,10 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://github.com/tista500/Adapta](https://github.com/tista500/Adapta) || [adapta-gtk-theme](https://aur.archlinux.org/packages/adapta-gtk-theme/)
 
+*   **Flat-Plat** — A Material Design-like flat theme for GTK3, GTK2, and GNOME-Shell.
+
+	[https://github.com/nana-4/Flat-Plat](https://github.com/nana-4/Flat-Plat) || [flatplat-theme-git](https://aur.archlinux.org/packages/flatplat-theme-git/)
+
 *   **Arc** — A flat theme with a modern look and transparent elements.
 
 	[https://github.com/horst3180/arc-theme](https://github.com/horst3180/arc-theme) || [gtk-theme-arc](https://aur.archlinux.org/packages/gtk-theme-arc/)

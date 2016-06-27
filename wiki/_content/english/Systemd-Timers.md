@@ -189,7 +189,7 @@ If you like crontabs just because they provide a unified view of all scheduled j
 *   [Gentoo wiki section](https://wiki.gentoo.org/wiki/Systemd#Timer_services) on *systemd* timer services
 *   **systemd-cron-next** — tool to generate timers/services from crontab and anacrontab files
 
-	[https://github.com/kstep/systemd-cron-next](https://github.com/kstep/systemd-cron-next) || [systemd-cron-next](https://aur.archlinux.org/packages/systemd-cron-next/)
+	[https://github.com/systemd-cron/systemd-cron-next](https://github.com/systemd-cron/systemd-cron-next) || [systemd-cron-next](https://aur.archlinux.org/packages/systemd-cron-next/)
 
 *   **systemd-cron** — provides systemd units to run cron scripts; using *systemd-crontab-generator* to convert crontabs
 

@@ -67,9 +67,12 @@ accesslog.filename = "/var/log/lighttpd/access.log"
 
 Self-signed SSL Certificates can be generated assuming [openssl](https://www.archlinux.org/packages/?name=openssl) is installed on the system as follows:
 
-1.  mkdir /etc/lighttpd/certs
-2.  openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -sha256 -keyout /etc/lighttpd/certs/server.pem -out /etc/lighttpd/certs/server.pem
-3.  chmod 600 /etc/lighttpd/certs/server.pem
+```
+# mkdir /etc/lighttpd/certs
+# openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -sha256 -keyout /etc/lighttpd/certs/server.pem -out /etc/lighttpd/certs/server.pem
+# chmod 600 /etc/lighttpd/certs/server.pem
+
+```
 
 Modify `/etc/lighttpd/lighttpd.conf` adding the following lines to enable https:
 

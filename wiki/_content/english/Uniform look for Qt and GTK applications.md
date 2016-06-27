@@ -37,7 +37,7 @@ A *theme engine* can be thought of as a thin layer API which translates themes (
 
 ### QGtkStyle
 
-**Note:** QGtkStyle will be removed from [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) 5.7 [[1]](https://github.com/qtproject/qtbase/commit/899a815414e95da8d9429a4a4f4d7094e49cfc55). and added to [qt5-qtstyleplugins](https://aur.archlinux.org/packages/qt5-qtstyleplugins/) as name gtk2 [[2]](https://github.com/qtproject/qtstyleplugins/commit/102da7d50231fc5723dba6e72340bef3d29471aa)
+**Note:** QGtkStyle has been removed from [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) 5.7.0 [[1]](https://github.com/qtproject/qtbase/commit/899a815414e95da8d9429a4a4f4d7094e49cfc55) and added to [qt5-styleplugins](https://aur.archlinux.org/packages/qt5-styleplugins/) [[2]](https://github.com/qtproject/qtstyleplugins/commit/102da7d50231fc5723dba6e72340bef3d29471aa)
 
 **Warning:** Depending on GTK+ 2 theme, this style may cause rendering issues such as transparent fonts or inconsistent widgets.
 
@@ -55,7 +55,7 @@ style=GTK+
 ...
 ```
 
-*   For Qt 5, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_STYLE_OVERRIDE=GTK+`.
+*   For Qt 5, it can be enabled by installing [qt5-styleplugins](https://aur.archlinux.org/packages/qt5-styleplugins/) and setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_STYLE_OVERRIDE='gtk2'`
 
 For full uniformity, make sure that the configured [GTK+ theme](/index.php/GTK%2B#Themes "GTK+") supports both GTK+ 2 and GTK+ 3.
 

@@ -112,7 +112,7 @@ Other considerations in this category include:
 
 #### Arch Linux distribution support *only*
 
-Arch-based distributions have their own support fora and users of those distributions should be actively encouraged to seek support there. These distributions often use different packages, package versions, repositories, and make custom system configurations surreptitiously, practically rendering support for such projects within Arch Linux impossible. Community technical support shall only be provided for the Arch Linux distribution and the Arch User Repository. Issues with, and requesting support for, derivate distributions, or operating systems other than Arch Linux are prohibited.
+Arch-based distributions have their own support fora and users of those distributions should be actively encouraged to seek support there. These distributions often use different packages, package versions, repositories, and make custom system configurations silently, practically rendering support for such projects within Arch Linux impossible. Community technical support shall only be provided for the Arch Linux distribution and the Arch User Repository. Issues with, and requesting support for, derivate distributions, or operating systems other than Arch Linux are prohibited.
 
 #### Personal topics/rants
 
@@ -216,7 +216,7 @@ Only quote the necessary elements from a previous email. Bulk quoting quickly bl
 
 #### Plain text
 
-Plain text is the Unix and email standard. HTML is unnecessary and, for people using command line clients, unwelcome. Please keep your line lengths reasonable: 72 characters is considered the default to wrap at.
+Plain text is the Unix and email standard. HTML is unnecessary and, for those using command line clients, unwelcome. Please keep your line lengths reasonable: 72 characters is considered the default to wrap at.
 
 ### [AUR](https://aur.archlinux.org/)
 
@@ -227,7 +227,27 @@ Guidelines for the Arch User Repository can be found here:
 
 ### [IRC](/index.php/IRC "IRC")
 
-See the main page: [IRC channel##archlinux - The official support channel](/index.php/IRC_channel#.23archlinux_-_The_official_support_channel "IRC channel").
+All Arch Linux IRC channels are on the freenode irc network. Users on freenode must follow the [network policy](https://freenode.net/policies) and freenode [channel guidelines](https://freenode.net/changuide).
+
+The official language of the **#archlinux** channel is English. If you need help in another language, search [international arch channels](/index.php/IRC_channels#International_IRC_channels "IRC channels").
+
+*   **The main topic of #archlinux is support for and discussion about Arch Linux.** General conversation on software and hardware is allowed so long as it does not interfere with the main topic of discussion. If you are asked to take something to another channel or private message you should do so.
+
+*   Read the channel topic on a regular basis with `/topic`. It often contains important information.
+
+*   There is only one official channel bot. `phrik!~archbot@archlinux/bot/phrik`. Do not spam bot commands and limit your usage to things that are helpful. If you want to bring your own bot into any Arch Linux channel, ask the operators before doing so.
+
+*   Do not flood the channel with text. This includes ASCII art, bot commands and error logs.
+    *   **Use a paste bin to share something longer than three lines**. `program &> program-output.txt` in combination with [pastebin clients](/index.php/Pastebin_Clients "Pastebin Clients") can ease this step.
+    *   If you want to try out bot commands or look through the help function, then do it in a `/query` or `/msg`. Example: `/query phrik help <command>`.
+
+*   Auto-response in channel or in private message is not allowed with a single exception for away responses at nick highlights in a private message.
+
+*   Do not ask whether anyone is alive or uses your software, just state your question.
+
+*   Do not demand help, ask for it. Wait patiently for a few minutes before restating questions. Most questions get answered by 'just another user', like you.
+
+*   When asking for help, always reply to people that ask you for more information, if you do not know the answer then say so.
 
 ### Wiki
 
@@ -253,4 +273,4 @@ If you feel that an egregious oversight has been made, or you need to alert staf
 
 *   For the Forums: use the 'Report' button found below every text box, or email [forum@archlinux.org](mailto:forum@archlinux.org) to contact the forum admins.
 *   For the Wiki: contact the [ArchWiki:Administrators](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")
-*   For the IRC channels: contact [one of the ops](/index.php/IRC_channel#.23archlinux_operators "IRC channel")
+*   For the IRC channels: contact [one of the ops](/index.php/IRC_channel#Channel_operators "IRC channel")

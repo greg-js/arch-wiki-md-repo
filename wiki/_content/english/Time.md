@@ -269,7 +269,7 @@ To force your clock to the correct time, and to also write the correct UTC to yo
 
 ## See also
 
-*   [Linux Tips - Linux, Clocks, and Time](http://www.linuxsa.org.au/tips/time.html) 
+*   [Linux Tips - Linux, Clocks, and Time](http://sunnyan.tistory.com/entry/Linux-Clocks-and-Time)
 *   [Sources for Time Zone and Daylight Saving Time Data](http://www.twinsun.com/tz/tz-link.htm) for [tzdata](https://www.archlinux.org/packages/?name=tzdata)
 *   [Time Scales](http://www.ucolick.org/~sla/leapsecs/timescales.html)
 *   [Wikipedia:Time](https://en.wikipedia.org/wiki/Time "wikipedia:Time")

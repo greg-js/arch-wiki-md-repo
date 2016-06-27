@@ -132,6 +132,13 @@ overscan_bottom=-16
 
 ```
 
+Or you can simply disable overscan if you have a "fit to screen" option in your monitor/TV:
+
+```
+disable_overscan=1
+
+```
+
 Users wishing to use the analog video out should consult [this](https://raw.github.com/Evilpaul/RPi-config/master/config.txt) config file which contains options for non-NTSC outputs.
 
 A reboot is needed for new settings to take effect.

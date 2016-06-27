@@ -73,4 +73,4 @@ Where *YourOAuthToken* is the OAuth token you received in the previous step.
 ## See also
 
 *   [Livestreamer repository on GitHub](https://github.com/chrippa/livestreamer)
-*   [Livestreamer documentation](http://livestreamer.tanuki.se/en/latest)
+*   [Livestreamer documentation](http://docs.livestreamer.io/)

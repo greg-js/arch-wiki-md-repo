@@ -2,6 +2,14 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.6.3-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.3](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.3)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=e0793fbd0e10e44b7e4f3609fe987772fceb8a5b](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=e0793fbd0e10e44b7e4f3609fe987772fceb8a5b)
+*   LinuxChanges: [http://kernelnewbies.org/Linux_4.6](http://kernelnewbies.org/Linux_4.6)
+
+Paolo has assured me that BFQ v7 is fine for the 4.6.x series of kernels; the bug that is affecting it applies equally to 4.5.x kernel users so there is no harm in including it against the 4.6.x series. He is testing prev8 of BFQ now but would not predict a release date. Enjoy the 4.6 series.
+
 **Bump to v4.5.7-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.7](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.7)

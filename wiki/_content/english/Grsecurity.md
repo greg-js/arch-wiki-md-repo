@@ -56,7 +56,6 @@ The following incompatibilities require building a custom kernel with fewer feat
 
 *   hibernation is not supported (conflicts with `CONFIG_GRKERNSEC_KMEM`, `CONFIG_PAX_MEMORY_SANITIZE` and `CONFIG_RANDOMIZE_BASE`)
 *   Xen and [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) are not supported (conflicts with `CONFIG_PAX_KERNEXEC` and `CONFIG_PAX_MEMORY_UDEREF`)
-*   `CONFIG_GRKERNSEC_KMEM` is incompatible with software altering the CPU MSR, such as power saving configuration tools like [cpupower](https://www.archlinux.org/packages/?name=cpupower), [powertop](https://www.archlinux.org/packages/?name=powertop) and [x86_energy_perf_policy](https://www.archlinux.org/packages/?name=x86_energy_perf_policy) (optionally used by [tlp](https://www.archlinux.org/packages/?name=tlp)). Rather than disabling the option, you could recompile the kernel with your desired defaults.
 
 Known incompatibilities with other packages:
 

@@ -324,6 +324,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[http://github.com/comotion/cpm](http://github.com/comotion/cpm) || [cpm](https://aur.archlinux.org/packages/cpm/)
 
+*   **Enpass** — A multiplatform password manager
+
+	[https://www.enpass.io/](https://www.enpass.io/) || [enpass-bin](https://aur.archlinux.org/packages/enpass-bin/)
+
 *   **Figaro's Password Manager 2** — GTK2 port of [Figaro's Password Manager](http://fpm.sourceforge.net/) with some new enhancements.
 
 	[http://als.regnet.cz/fpm2/](http://als.regnet.cz/fpm2/) || [fpm2](https://aur.archlinux.org/packages/fpm2/)

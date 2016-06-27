@@ -7,7 +7,8 @@
 *   [3 显卡驱动设置](#.E6.98.BE.E5.8D.A1.E9.A9.B1.E5.8A.A8.E8.AE.BE.E7.BD.AE)
 *   [4 声音](#.E5.A3.B0.E9.9F.B3)
 *   [5 摄像头](#.E6.91.84.E5.83.8F.E5.A4.B4)
-*   [6 其他建议](#.E5.85.B6.E4.BB.96.E5.BB.BA.E8.AE.AE)
+*   [6 Wi-Fi 热点](#Wi-Fi_.E7.83.AD.E7.82.B9)
+*   [7 其他建议](#.E5.85.B6.E4.BB.96.E5.BB.BA.E8.AE.AE)
 
 ## 触摸板
 
@@ -54,6 +55,16 @@ defaults.ctl.card 1
 ## 摄像头
 
 系统默认支持摄像头，可以直接用[MPlayer](/index.php/Webcam_setup#MPlayer "Webcam setup")或者[FFmpeg](/index.php/Webcam_setup#FFmpeg "Webcam setup")进行测试。
+
+## Wi-Fi 热点
+
+根据[Software access point](/index.php/Software_access_point "Software access point")，网卡可以设置为Wi-Fi 热点。但是，WPA/WPA2在1～9[频道](https://en.wikipedia.org/wiki/List_of_WLAN_channels#Interference_Concerns "wikipedia:List of WLAN channels")不能正确工作，需要在配置文件里设置[频道](https://en.wikipedia.org/wiki/List_of_WLAN_channels#Interference_Concerns "wikipedia:List of WLAN channels")为10或更高：
+
+ `/etc/hostapd/hostapd.conf` 
+```
+
+channel=10 
+```
 
 ## 其他建议
 

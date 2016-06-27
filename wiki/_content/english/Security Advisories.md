@@ -38,6 +38,12 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### June 2016
 
+*   [25 June 2016] [ASA-201606-25](https://lists.archlinux.org/pipermail/arch-security/2016-June/000660.html) [phpmyadmin](https://www.archlinux.org/packages/?name=phpmyadmin) multiple issues
+*   [25 June 2016] [ASA-201606-24](https://lists.archlinux.org/pipermail/arch-security/2016-June/000659.html) [libpurple](https://www.archlinux.org/packages/?name=libpurple) arbitrary code execution
+*   [25 June 2016] [ASA-201606-23](https://lists.archlinux.org/pipermail/arch-security/2016-June/000658.html) [libdwarf](https://www.archlinux.org/packages/?name=libdwarf) arbitrary code execution
+*   [25 June 2016] [ASA-201606-22](https://lists.archlinux.org/pipermail/arch-security/2016-June/000657.html) [xerces-c](https://www.archlinux.org/packages/?name=xerces-c) arbitrary code execution
+*   [25 June 2016] [ASA-201606-21](https://lists.archlinux.org/pipermail/arch-security/2016-June/000656.html) [vlc](https://www.archlinux.org/packages/?name=vlc) arbitrary code execution
+*   [25 June 2016] [ASA-201606-20](https://lists.archlinux.org/pipermail/arch-security/2016-June/000655.html) [chromium](https://www.archlinux.org/packages/?name=chromium) arbitrary code execution
 *   [20 June 2016] [ASA-201606-19](https://lists.archlinux.org/pipermail/arch-security/2016-June/000654.html) [wget](https://www.archlinux.org/packages/?name=wget) arbitrary file upload
 *   [20 June 2016] [ASA-201606-18](https://lists.archlinux.org/pipermail/arch-security/2016-June/000653.html) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) multiple issues
 *   [19 June 2016] [ASA-201606-17](https://lists.archlinux.org/pipermail/arch-security/2016-June/000652.html) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) denial of service

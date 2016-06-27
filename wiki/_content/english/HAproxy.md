@@ -14,7 +14,7 @@
 
 ## Installation
 
-Install the [haproxy](https://www.archlinux.org/packages/?name=haproxy) package from repositories.
+Install the [haproxy](https://www.archlinux.org/packages/?name=haproxy) package from the repositories.
 
 ## Running
 

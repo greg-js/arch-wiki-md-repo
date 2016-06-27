@@ -565,7 +565,7 @@ Make sure the driver is **dri2**, not your video card code (like r600).
 
 If vsync is still enabled, you can try to disable it by editing the xf86-video-ati configuration :
 
- `/etc/X11/xorg.conf.d/20-radeon.con` 
+ `/etc/X11/xorg.conf.d/20-radeon.conf` 
 ```
 Section "Device"
 	Identifier  "My Graphics Card"

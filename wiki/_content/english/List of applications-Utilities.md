@@ -851,6 +851,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://github.com/mate-desktop/mate-system-monitor](https://github.com/mate-desktop/mate-system-monitor) || [mate-system-monitor](https://www.archlinux.org/packages/?name=mate-system-monitor)
 
+*   **netdata** — A web-based real-time performance monitor
+
+	[https://github.com/firehol/netdata/wiki](https://github.com/firehol/netdata/wiki) || [netdata](https://www.archlinux.org/packages/?name=netdata)
+
 *   **Task Manager** — GTK2 process mangement application for [Xfce](/index.php/Xfce "Xfce").
 
 	[http://goodies.xfce.org/projects/applications/xfce4-taskmanager](http://goodies.xfce.org/projects/applications/xfce4-taskmanager) || [xfce4-taskmanager](https://www.archlinux.org/packages/?name=xfce4-taskmanager)
@@ -862,6 +866,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 *   **Sysstat** — A collection of resource monitoring tools: iostat, isag, mpstat, pidstat, sadf, sar.
 
 	[http://pagesperso-orange.fr/sebastien.godard/](http://pagesperso-orange.fr/sebastien.godard/) || [sysstat](https://www.archlinux.org/packages/?name=sysstat)
+
+*   **xosview** — A system monitor that resembles gr_osview from SGI IRIX
+
+	[http://www.pogo.org.uk/~mark/xosview/](http://www.pogo.org.uk/~mark/xosview/) || [xosview](https://aur.archlinux.org/packages/xosview/)
 
 ### System information viewers
 

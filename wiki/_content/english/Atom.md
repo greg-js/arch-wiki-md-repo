@@ -12,12 +12,13 @@
 The following packages provide Atom:
 
 *   [atom-editor](https://aur.archlinux.org/packages/atom-editor/)
+*   [atom-editor-arch](https://aur.archlinux.org/packages/atom-editor-arch/)
 *   [atom-editor-bin](https://aur.archlinux.org/packages/atom-editor-bin/)
 *   [atom-editor-git](https://aur.archlinux.org/packages/atom-editor-git/)
 *   [atom-editor-beta](https://aur.archlinux.org/packages/atom-editor-beta/)
 *   [atom-editor-beta-bin](https://aur.archlinux.org/packages/atom-editor-beta-bin/)
 *   *atom* from the unofficial [atom](/index.php/Unofficial_user_repositories#atom "Unofficial user repositories") repository.
-    **Note:** Bugs regarding binary packages from the *atom* repository can be reported on [Github](https://github.com/tensor5/arch-atom/issues). Bugs regarding Atom itself should be reported upstream.
+    **Note:** Bugs regarding binary packages from the *atom* repository can be reported on [GitHub](https://github.com/tensor5/arch-atom/issues). Bugs regarding Atom itself should be reported upstream.
 
 ## Packages
 

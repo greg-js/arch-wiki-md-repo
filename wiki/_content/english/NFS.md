@@ -42,7 +42,7 @@ It is **highly** recommended to use a time sync daemon such as [ntp](https://www
 
 ### Server
 
-NFS needs to see the list of shares (referred to as "exports" from here on out), which are defined in `/etc/exports` in order to serve-up the content. This can be any directory on the file system. In the interest of security, it is recommended to use an NFS export root which will keep users limited to that mount point only. The following example illustrates this concept.
+NFS needs to see the list of shares (referred to as "exports" from here on out), which are defined in `/etc/exports` in order to serve-up the content. The NFS root directory can be any directory on the file system. In the interest of security, it is recommended to use an NFS export root which will keep users limited to that mount point only. The following example illustrates this concept.
 
 Any NFS shares defined in `/etc/exports` are relative to the NFS root. In this example, the NFS root will be `/srv/nfs4` and we are sharing `/mnt/music`.
 
@@ -53,7 +53,7 @@ Any NFS shares defined in `/etc/exports` are relative to the NFS root. In this e
 
 Read/Write permissions must be set on the music directory so clients may write to it.
 
-Now mount the actual target share, `/mnt/music` to the NFS share via the mount command:
+Now mount the actual target share, `/mnt/music` to the directory under the NFS root via the mount --bind command:
 
 ```
 # mount --bind /mnt/music /srv/nfs4/music

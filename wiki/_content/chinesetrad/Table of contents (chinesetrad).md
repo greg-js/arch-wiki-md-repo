@@ -12,7 +12,7 @@
 | <small>2.</small> [應用程式](/index.php/Category:Applications_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Applications (正體中文)") <small>(7)</small> |
 | <small>2.1.</small> [指令 shell](/index.php/Category:Command_shells_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Command shells (正體中文)") <small>(1)</small> |
 | <small>2.2.</small> [資料壓縮和封存](/index.php/Category:Data_compression_and_archiving_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Data compression and archiving (正體中文)") <small>(2)</small> |
-| <small>2.3.</small> [圖形和桌面出版](/index.php/Category:Graphics_and_desktop_publishing_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Graphics and desktop publishing (正體中文)") <small>(1)</small> |
+| <small>2.3.</small> [圖形和桌面出版](/index.php/Category:Graphics_and_desktop_publishing_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Graphics and desktop publishing (正體中文)") <small>(0)</small> |
 | <small>2.4.</small> [網路應用程式](/index.php/Category:Internet_applications_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Internet applications (正體中文)") <small>(2) (還在 [網路](/index.php/Category:Networking_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Networking (正體中文)"))</small> |
 | <small>2.4.1.</small> [Email clients](/index.php/Category:Email_clients_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Email clients (正體中文)") <small>(2)</small> |
 | <small>2.5.</small> [數學和科學](/index.php/Category:Mathematics_and_science_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Mathematics and science (正體中文)") <small>(1)</small> |

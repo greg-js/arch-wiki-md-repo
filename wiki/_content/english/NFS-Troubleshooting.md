@@ -25,13 +25,14 @@ Dedicated article for common problems and solutions.
     *   [3.4 Buffer cache size and MTU](#Buffer_cache_size_and_MTU)
 *   [4 Debugging](#Debugging)
     *   [4.1 Using rpcdebug](#Using_rpcdebug)
-    *   [4.2 Kernel Interfaces](#Kernel_Interfaces)
-    *   [4.3 NFSD debug flags](#NFSD_debug_flags)
-    *   [4.4 NFS debug flags](#NFS_debug_flags)
-    *   [4.5 NLM debug flags](#NLM_debug_flags)
-    *   [4.6 RPC debug flags](#RPC_debug_flags)
-    *   [4.7 General Notes](#General_Notes)
-    *   [4.8 References](#References)
+    *   [4.2 Using mountstats](#Using_mountstats)
+    *   [4.3 Kernel Interfaces](#Kernel_Interfaces)
+    *   [4.4 NFSD debug flags](#NFSD_debug_flags)
+    *   [4.5 NFS debug flags](#NFS_debug_flags)
+    *   [4.6 NLM debug flags](#NLM_debug_flags)
+    *   [4.7 RPC debug flags](#RPC_debug_flags)
+    *   [4.8 General Notes](#General_Notes)
+    *   [4.9 References](#References)
 *   [5 Other issues](#Other_issues)
     *   [5.1 Permissions issues](#Permissions_issues)
 
@@ -270,6 +271,77 @@ rpcdebug -m nfsd -c all   # clears all debug flags for NFS Server
 ```
 
 Once the flags are set you can tail the journal for the debug output, usually `journalctl -fl` or similar.
+
+### Using mountstats
+
+The [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) package contains the `mountstats` tool, which can retrieve a lot of statistics about NFS mounts, including average timings and packet size.
+
+```
+$ mountstats 
+Stats for example:/tank mounted on /tank:
+  NFS mount options: rw,sync,vers=4.2,rsize=524288,wsize=524288,namlen=255,acregmin=3,acregmax=60,acdirmin=30,acdirmax=60,soft,proto=tcp,port=0,timeo=15,retrans=2,sec=sys,clientaddr=xx.yy.zz.tt,local_lock=none
+  NFS server capabilities: caps=0xfbffdf,wtmult=512,dtsize=32768,bsize=0,namlen=255
+  NFSv4 capability flags: bm0=0xfdffbfff,bm1=0x40f9be3e,bm2=0x803,acl=0x3,sessions,pnfs=notconfigured
+  NFS security flavor: 1  pseudoflavor: 0
+
+NFS byte counts:
+  applications read 248542089 bytes via read(2)
+  applications wrote 0 bytes via write(2)
+  applications read 0 bytes via O_DIRECT read(2)
+  applications wrote 0 bytes via O_DIRECT write(2)
+  client read 171375125 bytes via NFS READ
+  client wrote 0 bytes via NFS WRITE
+
+RPC statistics:
+  699 RPC requests sent, 699 RPC replies received (0 XIDs not found)
+  average backlog queue length: 0
+
+READ:
+	338 ops (48%) 
+	avg bytes sent per op: 216	avg bytes received per op: 507131
+	backlog wait: 0.005917 	RTT: 548.736686 	total execute time: 548.775148 (milliseconds)
+GETATTR:
+	115 ops (16%) 
+	avg bytes sent per op: 199	avg bytes received per op: 240
+	backlog wait: 0.008696 	RTT: 15.756522 	total execute time: 15.843478 (milliseconds)
+ACCESS:
+	93 ops (13%) 
+	avg bytes sent per op: 203	avg bytes received per op: 168
+	backlog wait: 0.010753 	RTT: 2.967742 	total execute time: 3.032258 (milliseconds)
+LOOKUP:
+	32 ops (4%) 
+	avg bytes sent per op: 220	avg bytes received per op: 274
+	backlog wait: 0.000000 	RTT: 3.906250 	total execute time: 3.968750 (milliseconds)
+OPEN_NOATTR:
+	25 ops (3%) 
+	avg bytes sent per op: 268	avg bytes received per op: 350
+	backlog wait: 0.000000 	RTT: 2.320000 	total execute time: 2.360000 (milliseconds)
+CLOSE:
+	24 ops (3%) 
+	avg bytes sent per op: 224	avg bytes received per op: 176
+	backlog wait: 0.000000 	RTT: 30.250000 	total execute time: 30.291667 (milliseconds)
+DELEGRETURN:
+	23 ops (3%) 
+	avg bytes sent per op: 220	avg bytes received per op: 160
+	backlog wait: 0.000000 	RTT: 6.782609 	total execute time: 6.826087 (milliseconds)
+READDIR:
+	4 ops (0%) 
+	avg bytes sent per op: 224	avg bytes received per op: 14372
+	backlog wait: 0.000000 	RTT: 198.000000 	total execute time: 198.250000 (milliseconds)
+SERVER_CAPS:
+	2 ops (0%) 
+	avg bytes sent per op: 172	avg bytes received per op: 164
+	backlog wait: 0.000000 	RTT: 1.500000 	total execute time: 1.500000 (milliseconds)
+FSINFO:
+	1 ops (0%) 
+	avg bytes sent per op: 172	avg bytes received per op: 164
+	backlog wait: 0.000000 	RTT: 2.000000 	total execute time: 2.000000 (milliseconds)
+PATHCONF:
+	1 ops (0%) 
+	avg bytes sent per op: 164	avg bytes received per op: 116
+	backlog wait: 0.000000 	RTT: 1.000000 	total execute time: 1.000000 (milliseconds)
+
+```
 
 ### Kernel Interfaces
 
