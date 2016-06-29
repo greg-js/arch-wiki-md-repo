@@ -1,23 +1,38 @@
-**翻译状态：** 本文是英文页面 [Audacious](/index.php/Audacious "Audacious") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-10-06，点击[这里](https://wiki.archlinux.org/index.php?title=Audacious&diff=0&oldid=277182)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Audacious](/index.php/Audacious "Audacious") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-28，点击[这里](https://wiki.archlinux.org/index.php?title=Audacious&diff=0&oldid=437889)可以查看翻译后英文页面的改动。
 
 [Audacious](http://audacious-media-player.org/) 是轻量级、自由软件、基于GTK+开发的GUI音乐播放器，注重音质且支持广泛的文件编码格式，并可透过第三方附加组件扩充功能。
-
-Audacious有着Winamp风格且支持界面更换，使用过WinAMP的人应该相当熟悉。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 Audtool](#Audtool)
-*   [3 GTK UI](#GTK_UI)
-*   [4 标准 UI 面板](#.E6.A0.87.E5.87.86_UI_.E9.9D.A2.E6.9D.BF)
-    *   [4.1 使用 Winamp 面板](#.E4.BD.BF.E7.94.A8_Winamp_.E9.9D.A2.E6.9D.BF)
-    *   [4.2 加入Winamp面板](#.E5.8A.A0.E5.85.A5Winamp.E9.9D.A2.E6.9D.BF)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
+    *   [2.1 界面](#.E7.95.8C.E9.9D.A2)
+    *   [2.2 加入 Winamp 皮肤](#.E5.8A.A0.E5.85.A5_Winamp_.E7.9A.AE.E8.82.A4)
+*   [3 技巧和问题](#.E6.8A.80.E5.B7.A7.E5.92.8C.E9.97.AE.E9.A2.98)
+    *   [3.1 Audtool](#Audtool)
+    *   [3.2 MP3 问题](#MP3_.E9.97.AE.E9.A2.98)
+    *   [3.3 Audacious 将自己设置为默认文件管理器](#Audacious_.E5.B0.86.E8.87.AA.E5.B7.B1.E8.AE.BE.E7.BD.AE.E4.B8.BA.E9.BB.98.E8.AE.A4.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8)
 
 ## 安装
 
-[audacious](https://www.archlinux.org/packages/?name=audacious) 位于 [官方软件仓库](/index.php/Official_repositories "Official repositories"). 可以通过 [pacman](/index.php/Pacman "Pacman") 进行安装。如果要音频 CD 支持，请安装[libcdio](https://www.archlinux.org/packages/?name=libcdio).
+[安装](/index.php/Pacman "Pacman") 软件包 [audacious](https://www.archlinux.org/packages/?name=audacious)。如果要音频 CD 支持，请安装[libcdio](https://www.archlinux.org/packages/?name=libcdio).
 
-## Audtool
+## 配置
+
+### 界面
+
+Audacious有两种不同的界面，可以通过配置进行设置：
+
+*   Winamp 经典界面
+*   GTK+ 界面（默认）
+
+### 加入 Winamp 皮肤
+
+加入 Winamp 面板到 Audacious 很简单，只要复制你的面板(.zip, .wsz, .tgz, .tar.gz, 和 .tar.bz2 档)到 **`/usr/share/audacious/Skins`**或全局的`/usr/share/audacious/Skins`。然后就能在 主选单 > *Preferences* > *Skinned Interface* 选择使用的皮肤。
+
+## 技巧和问题
+
+### Audtool
 
 Audacious附带有威力强大的管理工具Audtool，可以从播放器取得信息或控制播放器。
 
@@ -40,32 +55,10 @@ audtool --help
 
 ```
 
-## GTK UI
+### MP3 问题
 
-Audacious有选项可使用不同的UI(用户介面)。 要使用新的 GTK UI，用以下方式启动 audacious2 ，或者在 外观-->界面 中调整
+安装 [mpg123](https://www.archlinux.org/packages/?name=mpg123).
 
-```
-audacious -i gtkui
+### Audacious 将自己设置为默认文件管理器
 
-```
-
-## 标准 UI 面板
-
-### 使用 Winamp 面板
-
-Audacious 支持 Winamp classic 界面，你可以在 Audacious 随意使用它们。 启动方式:
-
-```
-audacious -i skinned
-
-```
-
-### 加入Winamp面板
-
-加入 Winamp 面板到 Audacious 很简单，只要复制你的面板(.zip, .wsz, .tgz, .tar.gz, 和 .tar.bz2 档)到 **`/usr/share/audacious/Skins`**。 之后你就能在 主选单 > *Preferences* > *Skinned Interface* 选择面板使用。
-
-这些地方可以找到面板：
-
-*   [http://www.customize.org/list/winamp2](http://www.customize.org/list/winamp2)
-*   [http://www.deviantart.com/#catpath=customization/skins/media/winamp/classic](http://www.deviantart.com/#catpath=customization/skins/media/winamp/classic)
-*   [http://www.1001skins.com](http://www.1001skins.com)
+请阅读 [File manager functionality#Directories are not opened in the file manager](/index.php/File_manager_functionality#Directories_are_not_opened_in_the_file_manager "File manager functionality").

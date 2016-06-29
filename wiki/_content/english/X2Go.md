@@ -16,6 +16,8 @@
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Authentication error](#Authentication_error)
     *   [6.2 No selection screen in x2goclient](#No_selection_screen_in_x2goclient)
+    *   [6.3 Sessions do not logoff correctly](#Sessions_do_not_logoff_correctly)
+    *   [6.4 Shared folders do not mount (Windows Clients)](#Shared_folders_do_not_mount_.28Windows_Clients.29)
 *   [7 Links](#Links)
 
 ## Installation
@@ -153,6 +155,38 @@ Delete the servers entry from `~/.ssh/known_hosts` file and retry to authenticat
 A regression in [iproute2](https://www.archlinux.org/packages/?name=iproute2) causes *ss* to show no result when specifying the `-u` flag, as done in `/usr/bin/x2golistdesktops`. [[1]](https://marc.info/?l=linux-netdev&m=143018447007958&w=2)
 
 See [[2]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=799), [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1541035) for more information.
+
+### Sessions do not logoff correctly
+
+Due to [this bug](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=914) the X2Go sessions might not logoff correctly. The script that initiates the session spits out many log lines that might confuse X2go. A simple workarround is to create a custom session script and redirect the log output either to a file or to `/dev/null` and then point your X2Go-client to this custom script.
+
+Here is a sample script for an XFCE session:
+
+```
+ #!/bin/sh
+ #
+ #xfce4-session spits out quite a bit of text during logout, which I guess
+ #confuses x2go so we would get a black screen and session hang.
+ #adding redirect to a logfile like "~/logfile" or "/dev/null" nicely solved it
+ # see [http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=914](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=914)
+ /usr/bin/xfce4-session > /dev/null
+
+```
+
+### Shared folders do not mount (Windows Clients)
+
+The ssh-daemon used by the X2go windows client uses depreceated ssh-dss keys by default and because Arch does not accept them your shared folders will not mount. Check out this [bug report](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=1009) for more information.
+
+This can be solved on the windows side by generating different type of key:
+
+```
+ C:\Program Files (x86)\x2goclient\ssh-keygen -b 2048 -t rsa
+
+```
+
+And simply replace `c:\Users\User\.x2go\etc\ssh_host_dsa_key` and `c:\Users\User\.x2go\etc\ssh_host_dsa_key.pub` with the newly generated key files.
+
+Other workarrounds from [[4]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=1009) might help, too.
 
 ## Links
 

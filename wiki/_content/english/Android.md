@@ -362,8 +362,6 @@ To build Android 6+, you need to install these additional packages:
 
 **Note:** You must now also install [maven](https://www.archlinux.org/packages/?name=maven) to build CyanogenMod since, from cm-13.0, they are using maven artifacts
 
-**Note:** You may want to install [make3](https://aur.archlinux.org/packages/make3/) to build Android since make-4 has parallelism issues
-
 ### Java Development Kit
 
 Android 5 (Lollipop) can be built with [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk).

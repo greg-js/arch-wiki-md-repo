@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [System_maintenance](/index.php/System_maintenance "System maintenance") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-23，点击[这里](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=426303)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [System_maintenance](/index.php/System_maintenance "System maintenance") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-28，点击[这里](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=435140)可以查看翻译后英文页面的改动。
 
 要持续使用 Arch linux，需要进行系统日常维护，每个用户都应该及时维护系统。
 
@@ -24,9 +24,9 @@
     *   [3.9 谨慎使用非官方或测试不足的软件包](#.E8.B0.A8.E6.85.8E.E4.BD.BF.E7.94.A8.E9.9D.9E.E5.AE.98.E6.96.B9.E6.88.96.E6.B5.8B.E8.AF.95.E4.B8.8D.E8.B6.B3.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [3.10 更新镜像列表](#.E6.9B.B4.E6.96.B0.E9.95.9C.E5.83.8F.E5.88.97.E8.A1.A8)
 *   [4 清理文件系统](#.E6.B8.85.E7.90.86.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-    *   [4.1 旧配置文件s](#.E6.97.A7.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6s)
+    *   [4.1 软件包缓存](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BC.93.E5.AD.98)
     *   [4.2 不需要的软件包](#.E4.B8.8D.E9.9C.80.E8.A6.81.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [4.3 软件包缓存](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BC.93.E5.AD.98)
+    *   [4.3 旧配置文件s](#.E6.97.A7.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6s)
     *   [4.4 破损的软链接](#.E7.A0.B4.E6.8D.9F.E7.9A.84.E8.BD.AF.E9.93.BE.E6.8E.A5)
 *   [5 技巧](#.E6.8A.80.E5.B7.A7)
     *   [5.1 使用经过验证的软件包](#.E4.BD.BF.E7.94.A8.E7.BB.8F.E8.BF.87.E9.AA.8C.E8.AF.81.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
@@ -73,7 +73,7 @@ Xorg 的相关错误可以查看 [Xorg#Troubleshooting](/index.php/Xorg#Troubles
 
 维护一个所有安装软件包的列表，这样在不得己进行系统重装时，可以很快恢复到初始环境。
 
-详情参考 [Pacman tips#Backing up and retrieving a list of installed packages](/index.php/Pacman_tips#Backing_up_and_retrieving_a_list_of_installed_packages "Pacman tips")。
+详情参考 [Pacman tips#List of installed packages](/index.php/Pacman_tips#List_of_installed_packages "Pacman tips")。
 
 ### Pacman 数据库
 
@@ -121,7 +121,7 @@ pacman 软件包提供的 *checkupdates* 脚本可以检查更新但不进行实
 
 ### 处理配置文件更新
 
-pacman 可能会创建 `.pacnew`, `.pacsave` 和 `.pacorig` 文件，这是 pacman 会通知用户，而用户需要主动处理这些文件。详细的操作说明请参考：[Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files").
+pacman 可能会创建 `.pacnew` 和 `.pacsave` 文件，这是 pacman 会通知用户，而用户需要主动处理这些文件。详细的操作说明请参考：[Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files").
 
 同样，注意所有你可能会复制或创建的配置文件。如果软件包提供了一个空配置文件，这个文件被复制到主目录，请注意查看示例文件是否有更新。
 
@@ -135,7 +135,7 @@ pacman 可能会创建 `.pacnew`, `.pacsave` 和 `.pacorig` 文件，这是 pacm
 
 软件包管理 [pacman](/index.php/Pacman "Pacman") 可以比你更好的记录安装的文件。如果你手动地安装软件，你会过了一会就不知道你到底安装了什么，到底安装在哪里，安装导致的那些冲突，是否安装在了错误的地方，等等问题. 避免安装自编译的软件包,可以自己[创建软件包](/index.php/Creating_packages "Creating packages")。
 
-要清理自己安装的文件，可以查看[这里](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks").
+要清理自己安装的文件，可以[这里](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks").
 
 ### 选择开源驱动
 
@@ -158,6 +158,14 @@ pacman 可能会创建 `.pacnew`, `.pacsave` 和 `.pacorig` 文件，这是 pacm
 *   [List of applications#Disk usage display](/index.php/List_of_applications#Disk_usage_display "List of applications").
 *   [List of applications#Disk cleaning](/index.php/List_of_applications#Disk_cleaning "List of applications").
 
+### 软件包缓存
+
+从 `/var/cache/pacman/pkg/` 删除不需要的 `.pkg` 可以减少空间占用。详情参考 [Pacman#Cleaning the package cache](/index.php/Pacman#Cleaning_the_package_cache "Pacman").
+
+### 不需要的软件包
+
+从系统里面删除不需要的软件包可以减少空间占用和维护难度。详情参考 [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks").
+
 ### 旧配置文件s
 
 旧的配置文件可能和新软件版本不兼容，所以请定期清理和更新配置文件，尤其是主目录和 `~/.config`. 在重新安装或共享 /home 时，注意下面文件夹：
@@ -171,14 +179,6 @@ pacman 可能会创建 `.pacnew`, `.pacsave` 和 `.pacorig` 文件，这是 pacm
 为了帮助清理 home 目录，建议维护一份不需要的文件列表并定期清理，例如使用 [rmshit.py](https://github.com/lahwaacz/Scripts/blob/master/rmshit.py).
 
 [rmlint](https://www.archlinux.org/packages/?name=rmlint) 也可以用来查找不需要的重复文件，空文件和损坏的软链接。
-
-### 不需要的软件包
-
-从系统里面删除不需要的软件包可以减少空间占用和维护难度。详情参考 [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks").
-
-### 软件包缓存
-
-从 `/var/cache/pacman/pkg/` 删除不需要的 `.pkg` 可以减少空间占用。详情参考 [Pacman#Cleaning the package cache](/index.php/Pacman#Cleaning_the_package_cache "Pacman").
 
 ### 破损的软链接
 

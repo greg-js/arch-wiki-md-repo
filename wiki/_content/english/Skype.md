@@ -27,6 +27,7 @@
     *   [5.10 Skype does not start after upgrade to 4.3.](#Skype_does_not_start_after_upgrade_to_4.3.)
     *   [5.11 You are already signed in on this computer](#You_are_already_signed_in_on_this_computer)
     *   [5.12 Empty white screen window](#Empty_white_screen_window)
+    *   [5.13 Skype doesn't output any sound after upgrading PulseAudio](#Skype_doesn.27t_output_any_sound_after_upgrading_PulseAudio)
 
 ## Installation
 
@@ -865,5 +866,14 @@ If you get a white empty window when launching skype, try to autologin like this
 
 ```
 $ echo *username* *password* | skype --pipelogin
+
+```
+
+### Skype doesn't output any sound after upgrading PulseAudio
+
+Currently, Skype doesn't work PulseAudio 9.0, the only solution is to downgrade to 8.0 and to prevent future updates you may add all pulse-related packages to pacman.conf.
+
+```
+ IgnorePkg = lib32-libpulse libpulse pulseaudio pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-gconf
 
 ```

@@ -67,9 +67,3 @@ Visit the [Table of contents](/index.php/Table_of_contents "Table of contents") 
 ArchWiki pages follow specific conventions, so if you have trouble reading ArchWiki or understanding some instructions, see [Help:Reading](/index.php/Help:Reading "Help:Reading") for a clarification.
 
 If looking for specific information, try using the search box to the left. Alternatively, use your favorite web search engine which likely provides a special syntax or interface for restricting results to a particular website (usually appending `site:wiki.archlinux.org` to the search terms is enough). See [Help:Searching](/index.php/Help:Searching "Help:Searching") for other tricks.
-
-### Registrations of new accounts suspended temporarily
-
-The registrations of new accounts for this wiki have been temporarily suspended due to repeated spam attacks. In order to create an account, [check](/index.php/Special:ListUsers "Special:ListUsers") if your desired user name is available. Then, you can either join [#archlinux-wiki](/index.php/ArchWiki:IRC "ArchWiki:IRC") on Freenode and ask one of the administrators in there to create the user for you (exchange your email details via pm), or you can [email an administrator directly](/index.php/ArchWiki:Administrators "ArchWiki:Administrators").
-
-Hopefully, this will only be a short term workaround. Thank you for your patience.

@@ -140,13 +140,22 @@ Alternatively, your proprietary video card drivers may come with a tool to autom
 
 ## Input devices
 
-[Udev](/index.php/Udev "Udev") will detect your hardware and [evdev](https://en.wikipedia.org/wiki/evdev "wikipedia:evdev") will act as the hotplugging input driver for almost all devices. Udev is provided by [systemd](https://www.archlinux.org/packages/?name=systemd) and [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) is required by [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), so there is no need to explicitly install those packages.
+For input devices, the virtual package *xf86-input-driver* ensures at least one input driver of either [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) or [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) is installed.[[2]](https://www.archlinux.org/news/xorg-1180-enters-testing/)
 
-You should have `10-evdev.conf` in the `/usr/share/X11/xorg.conf.d/` directory, which manages keyboards, mice, touchpads and touchscreens.
+[Udev](/index.php/Udev "Udev"), which is provided as a systemd dependency, will detect your hardware and both drivers will act as hotplugging input driver for almost all devices, as defined in the default configuration files `10-evdev.conf` and `60-libinput.conf` in the `/usr/share/X11/xorg.conf.d/` directory.
 
-If evdev does not support your device, install the needed driver from the [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) group. Alike evdev, [libinput](/index.php/Libinput "Libinput") ([xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)) is a driver which supports a wide array of hardware from all device categories.
+After starting X server, the log file will show which driver hotplugged for the individual devices (note the most recent log file name may vary):
 
-See the following pages for specific instructions, or the [Fedora wiki](https://fedoraproject.org/wiki/Input_device_configuration) entry for more examples.
+```
+$ grep -e "Using input driver " ~/.local/share/xorg/Xorg.0.log
+
+```
+
+If both do not support a particular device, install the needed driver from the [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) group. The same applies, if you want to use another driver.
+
+To influence hotplugging, see [#Configuration](#Configuration).
+
+For specific instructions, see also the [libinput](/index.php/Libinput "Libinput") article, the following pages below, or the [Fedora wiki](https://fedoraproject.org/wiki/Input_device_configuration) entry for more examples.
 
 ### Mouse acceleration
 
@@ -471,7 +480,7 @@ Deps: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotoo
 
 ### General
 
-If a problem occurs, view the log stored in either `/var/log/` or, for the rootless X default since v1.16, in `~/.local/share/xorg/`. [GDM](/index.php/GDM "GDM") users should check the [systemd](/index.php/Systemd "Systemd") journal. [[2]](https://bbs.archlinux.org/viewtopic.php?id=184639)
+If a problem occurs, view the log stored in either `/var/log/` or, for the rootless X default since v1.16, in `~/.local/share/xorg/`. [GDM](/index.php/GDM "GDM") users should check the [systemd](/index.php/Systemd "Systemd") journal. [[3]](https://bbs.archlinux.org/viewtopic.php?id=184639)
 
 The logfiles are of the form `Xorg.n.log` with `n` being the display number. For a single user machine with default configuration the applicable log is frequently `Xorg.0.log`, but otherwise it may vary. To make sure to pick the right file it may help to look at the timestamp of the X server session start and from which console it was started. For example:
 
@@ -634,7 +643,7 @@ Make some free space on your root partition and X will start.
 
 ### Rootless Xorg (v1.16)
 
-As of version 1.16 [[3]](https://www.archlinux.org/news/xorg-server-116-is-now-available/), Xorg may run with standard user privileges with the help of `logind`. The requirements for this are:
+As of version 1.16 [[4]](https://www.archlinux.org/news/xorg-server-116-is-now-available/), Xorg may run with standard user privileges with the help of `logind`. The requirements for this are:
 
 *   [systemd](/index.php/Systemd "Systemd"); version >=216 for multiple instances
 *   Starting X via [xinit](/index.php/Xinit "Xinit"); display managers are not supported
@@ -658,7 +667,7 @@ exec startx -- -keeptty -nolisten tcp > ~/.xorg.log 2>&1
 
 ```
 
-Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
+Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
 
 ### Why do I get a green screen whenever I try to watch a video?
 

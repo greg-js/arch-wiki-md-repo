@@ -1,129 +1,121 @@
 **翻译状态：** 本文是英文页面 [Enlightenment](/index.php/Enlightenment "Enlightenment") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-04-18，点击[这里](https://wiki.archlinux.org/index.php?title=Enlightenment&diff=0&oldid=254514)可以查看翻译后英文页面的改动。
 
-[Enlightenment - Enlightenment](http://trac.enlightenment.org/e/wiki/Enlightenment) 的描述：
-
-	*Enlightenment* 桌面环境基于 Enlightenment Foundation Libraries 与其他基本的如文件管理器、桌面图标和部件等的桌面环境组件，提供了一个高效而又惊艳的窗口管理器。它的优势在于：在提供了前所未有的定制主题的能力的同时仍然能在老旧的硬件和嵌入式设备上运行流畅。
-
 ## Contents
 
-*   [1 Enlightenment Desktop Shell (之前的 E17)](#Enlightenment_Desktop_Shell_.28.E4.B9.8B.E5.89.8D.E7.9A.84_E17.29)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-    *   [2.1 使用 extra 仓库](#.E4.BD.BF.E7.94.A8_extra_.E4.BB.93.E5.BA.93)
-    *   [2.2 从AUR安装](#.E4.BB.8EAUR.E5.AE.89.E8.A3.85)
-*   [3 启动 Enlightenment](#.E5.90.AF.E5.8A.A8_Enlightenment)
-    *   [3.1 startx](#startx)
-    *   [3.2 Entrance](#Entrance)
-    *   [3.3 其它](#.E5.85.B6.E5.AE.83)
-*   [4 配置网络](#.E9.85.8D.E7.BD.AE.E7.BD.91.E7.BB.9C)
-    *   [4.1 connman](#connman)
-    *   [4.2 NetworkManager](#NetworkManager)
-*   [5 配置输入法](#.E9.85.8D.E7.BD.AE.E8.BE.93.E5.85.A5.E6.B3.95)
-    *   [5.1 ibus](#ibus)
-*   [6 安装主题](#.E5.AE.89.E8.A3.85.E4.B8.BB.E9.A2.98)
-*   [7 Modules and Gadgets](#Modules_and_Gadgets)
-    *   [7.1 Places](#Places)
-    *   [7.2 缩放窗口](#.E7.BC.A9.E6.94.BE.E7.AA.97.E5.8F.A3)
-        *   [7.2.1 Engage](#Engage)
-*   [8 集成 Gnome Keyring](#.E9.9B.86.E6.88.90_Gnome_Keyring)
-*   [9 故障及解决办法](#.E6.95.85.E9.9A.9C.E5.8F.8A.E8.A7.A3.E5.86.B3.E5.8A.9E.E6.B3.95)
-    *   [9.1 屏幕解锁不工作](#.E5.B1.8F.E5.B9.95.E8.A7.A3.E9.94.81.E4.B8.8D.E5.B7.A5.E4.BD.9C)
-    *   [9.2 难以分辨的字体](#.E9.9A.BE.E4.BB.A5.E5.88.86.E8.BE.A8.E7.9A.84.E5.AD.97.E4.BD.93)
-    *   [9.3 无法挂载内部分区](#.E6.97.A0.E6.B3.95.E6.8C.82.E8.BD.BD.E5.86.85.E9.83.A8.E5.88.86.E5.8C.BA)
-*   [10 相关链接](#.E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5)
+*   [1 Enlightenment](#Enlightenment)
+    *   [1.1 安装](#.E5.AE.89.E8.A3.85)
+        *   [1.1.1 从AUR安装](#.E4.BB.8EAUR.E5.AE.89.E8.A3.85)
+    *   [1.2 启动 Enlightenment](#.E5.90.AF.E5.8A.A8_Enlightenment)
+        *   [1.2.1 Entrance](#Entrance)
+        *   [1.2.2 手动启动 Enlightenment](#.E6.89.8B.E5.8A.A8.E5.90.AF.E5.8A.A8_Enlightenment)
+    *   [1.3 配置](#.E9.85.8D.E7.BD.AE)
+        *   [1.3.1 网络](#.E7.BD.91.E7.BB.9C)
+*   [2 配置输入法](#.E9.85.8D.E7.BD.AE.E8.BE.93.E5.85.A5.E6.B3.95)
+    *   [2.1 ibus](#ibus)
+*   [3 安装主题](#.E5.AE.89.E8.A3.85.E4.B8.BB.E9.A2.98)
+*   [4 Modules and Gadgets](#Modules_and_Gadgets)
+    *   [4.1 Places](#Places)
+    *   [4.2 缩放窗口](#.E7.BC.A9.E6.94.BE.E7.AA.97.E5.8F.A3)
+        *   [4.2.1 Engage](#Engage)
+*   [5 集成 Gnome Keyring](#.E9.9B.86.E6.88.90_Gnome_Keyring)
+*   [6 故障及解决办法](#.E6.95.85.E9.9A.9C.E5.8F.8A.E8.A7.A3.E5.86.B3.E5.8A.9E.E6.B3.95)
+    *   [6.1 屏幕解锁不工作](#.E5.B1.8F.E5.B9.95.E8.A7.A3.E9.94.81.E4.B8.8D.E5.B7.A5.E4.BD.9C)
+    *   [6.2 难以分辨的字体](#.E9.9A.BE.E4.BB.A5.E5.88.86.E8.BE.A8.E7.9A.84.E5.AD.97.E4.BD.93)
+    *   [6.3 无法挂载内部分区](#.E6.97.A0.E6.B3.95.E6.8C.82.E8.BD.BD.E5.86.85.E9.83.A8.E5.88.86.E5.8C.BA)
+*   [7 相关链接](#.E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5)
 
-## Enlightenment Desktop Shell (之前的 E17)
+## Enlightenment
 
-包括 Enlightment [窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")和提供了如工具包、对象画布和抽象对象等额外的桌面环境特性的 Enlightenment Foundation Libraries(EFL) 。从 2005 年开始开发，并在 2011 年 2 月发布第一个稳定的 1.0 发行版。Enlightenment 窗口管理器已于 2012 年 12 月 21 日发布，EFL 库的 1.7.4 版也同期发布。目前很多人可以毫无障碍地将 Enlightenment 作为日常桌面环境使用。
+这个软件包括Enlightenment [Enlightenment](https://www.enlightenment.org/) 窗体管理器[window manager](/index.php/Window_manager "Window manager") 和 Enlightenment Foundation Libraries (EFL), 他提供额外的桌面环境特性,比如工具包,对象画布抽象对象.从2005年开始开发,但2011年2月才看到1.0稳定版本.
 
-**Warning:** This page refers to both stable and development packages. Any PKGBUILD which ends with -svn or -git will use unstable development code. Use them at your own risk. Since the release of the EFL libraries and Enlightenment itself, it's no longer necessary and even discouraged to build the core programs from SVN or GIT. "Unless you're developing E or willing to live bleeding edge, stay away from trunk."([source](http://sourceforge.net/mailarchive/message.php?msg_id=30310890)) Unfortunately, many of the additional software packages have not been released and building from SVN or GIT is the only way to use them.
+### 安装
 
-## 安装
+可以 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 同名软件包 [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) 来安装 enlightenment .
 
-### 使用 extra 仓库
+也可以安装 [terminology](https://www.archlinux.org/packages/?name=terminology), 这是一个基于ELF的终端程序 .
 
-安装 Enlightenment：
+#### 从AUR安装
 
-```
-pacman -S enlightenment17
+**警告:** 某些软件包是不稳定的开发版，请自己决定.
 
-```
+开发版本的软件包和源码及其依赖的包构建文件可以从AUR下载 [enlightenment-git](https://aur.archlinux.org/packages/enlightenment-git/) .
 
-安装 e17 的附加模块以及应用程序
+以下是基于EFL 的应用,大部份是开发版本，没有正式发布:
 
-```
-pacman -S e-modules-extra-svn
+*   [econcentration-git](https://aur.archlinux.org/packages/econcentration-git/) – Econcentration 打牌游戏
+*   [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) – Ecrire 文本编辑器
+*   [elbow-git](https://aur.archlinux.org/packages/elbow-git/) – Elbow 浏览器
+*   [eluminance-git](https://aur.archlinux.org/packages/eluminance-git/) – Eluminance 图片浏览器
+*   [emprint-git](https://aur.archlinux.org/packages/emprint-git/) – Emprint 截屏工具
+*   [enjoy-git](https://aur.archlinux.org/packages/enjoy-git/) – [Enjoy](https://trac.enlightenment.org/e/wiki/Enjoy) 音乐播放
+*   [epad](https://aur.archlinux.org/packages/epad/) – ePad 文本编辑器
+*   [eperiodique](https://aur.archlinux.org/packages/eperiodique/) – [Eperiodique](http://eperiodique.sourceforge.net/) periodic 表格查看
+*   [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) – [Ephoto](https://trac.enlightenment.org/e/wiki/Ephoto) 图片查看器
+*   [epour](https://aur.archlinux.org/packages/epour/) and [epour-git](https://aur.archlinux.org/packages/epour-git/) – Epour BT客户端
+*   [epymc-git](https://aur.archlinux.org/packages/epymc-git/) – E Python 多媒体中心
+*   [equate-git](https://aur.archlinux.org/packages/equate-git/) – Equate 计算器
+*   [eruler-git](https://aur.archlinux.org/packages/eruler-git/) – Eruler 屏幕尺和测量工具
+*   [efbb-git](https://aur.archlinux.org/packages/efbb-git/) – Escape from Booty Bay 愤怒的小鸟类型游戏
+*   [elemines-git](https://aur.archlinux.org/packages/elemines-git/) – [Elemines](http://elemines.sourceforge.net/) 扫雷类型游戏
+*   [espionage-git](https://aur.archlinux.org/packages/espionage-git/) – Espionage D-Bus 工具
+*   [ev-git](https://aur.archlinux.org/packages/ev-git/) – ev 简单图片查看
+*   [e_cho-git](https://aur.archlinux.org/packages/e_cho-git/) – E_Cho simon类型游戏
+*   [e_jeweled-git](https://aur.archlinux.org/packages/e_jeweled-git/) – E_Jeweled 宝石类型游戏
+*   [rage](https://aur.archlinux.org/packages/rage/) and [rage-git](https://aur.archlinux.org/packages/rage-git/) – Rage 视频播放器
+*   [jesus-git](https://aur.archlinux.org/packages/jesus-git/) – 文件管理器
 
-```
+### 启动 Enlightenment
 
-你或许需要安装额外的 [字体](/index.php/Fonts "Fonts") ，至少需要一个 True Type 字体。详见 [桌面环境推荐使用的字体](/index.php/Fonts#Desktop_environments "Fonts") 。
+很简单，从你喜欢的[display manager](/index.php/Display_manager "Display manager")选择*Enlightenment* ， 或配置 [xinitrc](/index.php/Xinitrc "Xinitrc") 来启动 。
 
-如果你需要的 e17 软件包不在 extra 仓库，可以看看在不在[AUR](/index.php/AUR "AUR")中。
+#### Entrance
 
-### 从AUR安装
+**警告:** Entrance 还是实验性质的版本 , 还不被systemd完全支持 ，请自己决定 .
 
-可以从 AUR 上下载[enlightenment17-git](https://aur.archlinux.org/packages/enlightenment17-git/)得到最新的 SVN 版源码及其依赖的包构建文件（PKGBUILDs）。
+Enlightenment 有个新的显示管理器，叫Entrance, 目前由 [entrance-git](https://aur.archlinux.org/packages/entrance-git/) 提供. Entrance 很复杂，并且配置由 `/etc/entrance.conf` 管理 . 可以用命令 enable `entrance.service` 来启用 [using systemd](/index.php/Systemd#Using_units "Systemd").
 
-## 启动 Enlightenment
+#### 手动启动 Enlightenment
 
-### startx
+如果你喜欢手工启动他 , 把下面内容加入 `~/.xinitrc` 文件 :
 
-如果你用 `startx` 或者一个简单的 [Display manager](/index.php/Display_manager "Display manager") ，比如 XDM 或者 [SLiM](/index.php/SLiM "SLiM") 的话，在 [xinitrc](/index.php/Xinitrc "Xinitrc") 中添加下面的命令：
-
+ `~/.xinitrc` 
 ```
 exec enlightenment_start
 
 ```
 
-### Entrance
+然后可以输入 `startx` 来启动 Enlightenment . 详见 [xinitrc](/index.php/Xinitrc "Xinitrc") .
 
-Enlightenment 现在提供了新的显示管理器 Entrance，可以通过 [entrance-git](https://aur.archlinux.org/packages/entrance-git/) 软件包从 [AUR](/index.php/AUR "AUR") 安装。通过 `/etc/entrance.conf` 配置。要使用entrance：
+### 配置
 
-```
- # systemctl enable entrance.service 
+Enlightenment has a sophisticated configuration system that can be accessed from the Main menu's Settings submenu.
 
-```
+#### 网络
 
-### 其它
+**ConnMan**
 
-更高级一点的显示管理器，比如 [GDM](/index.php/GDM "GDM") 和 [KDM](/index.php/KDM "KDM") 会自动检测到 E17。这多亏了 [enlightenment17](https://www.archlinux.org/packages/?name=enlightenment17) 软件包里的 `/usr/share/xsessions/enlightenment.desktop` 文件。
+Enlightenment 首先的网络管理器是 [ConnMan](/index.php/Connman "Connman") ，包名： [connman](https://www.archlinux.org/packages/?name=connman) . 配置方法见： [Connman](/index.php/Connman "Connman") .
 
-## 配置网络
+高多配置, 您还可以安装Econnman (通过 AUR : [econnman](https://aur.archlinux.org/packages/econnman/) 或 [econnman-git](https://aur.archlinux.org/packages/econnman-git/)) .
 
-### connman
+**把 ConnMan 放进桌面面板Shelf**
 
-E17 推荐的网络管理器是 [Connman](/index.php/Connman "Connman")，可以通过 [community] 软件仓库中的[connman](https://www.archlinux.org/packages/?name=connman)软件包进行安装。}} 。为了与 Enlightenment 的默认网络模块交互工作，需要安装[AUR](/index.php/AUR "AUR") 中的 [econnman](https://aur.archlinux.org/packages/econnman/) 或 [econnman-git](https://aur.archlinux.org/packages/econnman-git/)。
+1.  设置 -> 扩展 -> 模块
+2.  系统
+3.  连接管理 （Connection Manager）
+4.  加载
+5.  屏幕底部面板右键
+6.  面板Shelf -> 内容
+7.  然后 ,找到 *ConnMan*.
+8.  点击添加 *Add* .
 
-设置为开机启动:
+**NetworkManager**
 
-```
-systemctl enable connman.service
+你也可以使用 [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) 来管理网络连接 . 见 [NetworkManager](/index.php/NetworkManager "NetworkManager") .
 
-```
+你可能也需要 [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) 的帮助 . 把他加入自动启动，这样每次进桌面就能看到他在系统托盘 . 方法是： *设置 > 全部 > 应用程序 > 启动应用程序 > 系统* ， 开启 *Network*.
 
-ConnMan 启动很快并能自动配置 DHCP。如果你安装了 [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") ，ConnMan 会使用它显示所有可用的无线连接。
-
-### NetworkManager
-
-你可以使用 [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) 来管理网络连接。
-
-```
-pacman -S networkmanager
-
-```
-
-然后你就可以按照 [NetworkManager](/index.php/NetworkManager "NetworkManager") 页面里的指示配置就可以了。你也可以使用 [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) 来帮助你设置。
-
-```
-pacman -S network-manager-applet
-
-```
-
-你可以将它设置成自动启动程序，以便每次 E17 启动时，它都在系统托盘中：
-
-```
-Settings -> Settings Panel -> Apps -> Startup Applications -> System -> Network
-
-```
+如果没有 [#System tray](#System_tray)， 当网络连接时，指示器将不会显示。
 
 ## 配置输入法
 

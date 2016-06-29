@@ -60,7 +60,7 @@ If you cannot find a package for the icon theme you are looking for, you will ne
 
 ## fstab / gvfs
 
-According to this [document](https://github.com/GNOME/gvfs/blob/master/monitor/udisks2/what-is-shown.txt) file managers using [GVFS](/index.php/GVFS "GVFS") (like nautilus or thunar) can display icons for custom locations, like NFS shares. All you need are some extended mount options inside `/etc/fstab` with icon names supported by your selected icon theme:
+According to this [document](https://github.com/GNOME/gvfs/blob/master/monitor/udisks2/what-is-shown.txt) file managers using [GVFS](/index.php/GVFS "GVFS") (like Gnome Files or Thunar) can display icons for custom locations, like NFS shares. All you need are some extended mount options inside `/etc/fstab` with icon names supported by your selected icon theme:
 
  `/etc/fstab` 
 ```

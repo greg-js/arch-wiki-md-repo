@@ -12,6 +12,7 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
     *   [3.1 Touchpad configuration](#Touchpad_configuration)
     *   [3.2 Mouse button re-mapping](#Mouse_button_re-mapping)
     *   [3.3 Debugging](#Debugging)
+        *   [3.3.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
     *   [3.4 Multitouch events](#Multitouch_events)
     *   [3.5 Natural scrolling](#Natural_scrolling)
 *   [4 See also](#See_also)
@@ -136,6 +137,15 @@ First, see whether the packaged *libinput-debug-events* tool can support you in 
 Some inputs require kernel support. The tool *evemu-describe* from the [evemu](https://www.archlinux.org/packages/?name=evemu) package can be used to check:
 
 Compare the output of [software supported input trackpad driver](http://ix.io/m6b) with [a supported trackpad](https://github.com/whot/evemu-devices/blob/master/touchpads/SynPS2%20Synaptics%20TouchPad-with-scrollbuttons.events). i.e. a couple of ABS_ axes, a couple of ABS_MT axes and no REL_X/Y axis. For a clickpad the `INPUT_PROP_BUTTONPAD` property should also be set, if it is supported.
+
+##### Touchpad not working in GNOME
+
+Ensure the touchpad events are being sent to the GNOME desktop by running the following command:
+
+```
+ $ gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
+
+```
 
 ### Multitouch events
 

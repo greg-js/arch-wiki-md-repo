@@ -493,7 +493,8 @@ Or as a preemptive alternative to [localepurge](https://aur.archlinux.org/packag
 
 ```
 NoExtract = usr/share/help/* !usr/share/help/en*
-NoExtract = usr/share/locale/* !usr/share/locale/en* !usr/share/locale/locale.alias
+NoExtract = usr/share/locale/* usr/share/X11/locale/* usr/share/i18n/locales/* opt/google/chrome/locales/*
+NoExtract = !*locale*/en* !usr/share/*locale*/locale.alias !usr/share/*locales/i18n !usr/share/*locales/iso* !usr/share/*locales/trans*
 NoExtract = usr/share/man/* !usr/share/man/man*
 NoExtract = usr/share/vim/vim74/lang/*
 
@@ -516,9 +517,9 @@ where `*/path/to/common/settings*` file contains the same options for both confi
 
 #### Hooks
 
-*pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`, which defaults to `/etc/pacman.d/hooks`.
+*pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`, which defaults to `/etc/pacman.d/hooks`. Hook file names must be suffixed with *.hook*.
 
-For more information on the alpm hooks, see the [alpm-hooks(5)](https://www.archlinux.org/pacman/alpm-hooks.5.html) man page.
+For more information on alpm hooks, see [alpm-hooks(5)](https://www.archlinux.org/pacman/alpm-hooks.5.html)
 
 ### Repositories and mirrors
 

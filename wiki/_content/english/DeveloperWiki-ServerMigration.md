@@ -9,7 +9,7 @@
     *   [1.6 gerolde.archlinux.org](#gerolde.archlinux.org)
     *   [1.7 celestia.archlinux.org](#celestia.archlinux.org)
 *   [2 Desired setup](#Desired_setup)
-    *   [2.1 vostok.archlinux.org (old name, new box, Intel Xeon E3-1245 2 x 3 TB 16GB ECC RAM)](#vostok.archlinux.org_.28old_name.2C_new_box.2C_Intel_Xeon_E3-1245_2_x_3_TB_16GB_ECC_RAM.29)
+    *   [2.1 vostok.archlinux.org (Intel Xeon E3-1245 2 x 3 TB 16GB ECC RAM)](#vostok.archlinux.org_.28Intel_Xeon_E3-1245_2_x_3_TB_16GB_ECC_RAM.29)
     *   [2.2 apollo.archlinux.org ([1])](#apollo.archlinux.org_.28.5B1.5D.29)
     *   [2.3 soyuz.archlinux.org ([2])](#soyuz.archlinux.org_.28.5B2.5D.29)
     *   [2.4 orion.archlinux.org (Intel Xeon E3-1245V2 32GB ECC 2x3TB)](#orion.archlinux.org_.28Intel_Xeon_E3-1245V2_32GB_ECC_2x3TB.29)
@@ -28,11 +28,11 @@
 ## nymeria.archlinux.org
 
 *   mail
-*   repos/rsync
+*   repos/rsync [turned off]
 
 ## dragon.archlinux.org
 
-*   backups
+*   backups [turned off]
 
 ## alberich.archlinux.org
 
@@ -41,7 +41,7 @@
 
 ## gudrun.archlinux.org
 
-*   planet
+*   planet [turned off]
 *   bugs
 *   archweb
 *   patchwork
@@ -55,9 +55,9 @@
 
 # Desired setup
 
-## vostok.archlinux.org (old name, new box, Intel Xeon E3-1245 2 x 3 TB 16GB ECC RAM)
+## vostok.archlinux.org (Intel Xeon E3-1245 2 x 3 TB 16GB ECC RAM)
 
-*   backups
+*   backups [done]
 
 ## apollo.archlinux.org ([[1]](https://www.hetzner.de/de/hosting/produkte_rootserver/px61ssd))
 
@@ -65,7 +65,7 @@
 *   wiki
 *   aur
 *   mailman
-*   planet
+*   planet [done]
 *   bugs
 *   archweb
 *   patchwork
@@ -79,8 +79,8 @@
 
 ## orion.archlinux.org (Intel Xeon E3-1245V2 32GB ECC 2x3TB)
 
-*   repos/rsync
-*   sources
+*   repos/rsync [done]
+*   sources [done]
 *   archive
 
 # Plan of attack

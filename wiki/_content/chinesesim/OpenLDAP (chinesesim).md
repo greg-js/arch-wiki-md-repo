@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [openLDAP](/index.php/OpenLDAP "OpenLDAP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-06-21，点击[这里](https://wiki.archlinux.org/index.php?title=openLDAP&diff=0&oldid=317024)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [openLDAP](/index.php/OpenLDAP "OpenLDAP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-29，点击[这里](https://wiki.archlinux.org/index.php?title=openLDAP&diff=0&oldid=429445)可以查看翻译后英文页面的改动。
 
 OpenLDAP 是 LDAP 协议的一个开源实现。LDAP 服务器本质上是一个为只读访问而优化的非关系型数据库。它主要用做地址簿查询（如 email 客户端）或对各种服务访问做后台认证以及用户数据权限管控。（例如，访问 Samba 时，LDAP 可以起到域控制器的作用；或者 [Linux 系统认证](/index.php/LDAP_authentication "LDAP authentication") 时代替 `/etc/passwd` 的作用。）
 
@@ -14,26 +14,28 @@ OpenLDAP 是 LDAP 协议的一个开源实现。LDAP 服务器本质上是一个
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 服务端](#.E6.9C.8D.E5.8A.A1.E7.AB.AF)
     *   [2.2 客户端](#.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [2.3 测试安装好的系统](#.E6.B5.8B.E8.AF.95.E5.AE.89.E8.A3.85.E5.A5.BD.E7.9A.84.E7.B3.BB.E7.BB.9F)
-    *   [2.4 基于 TLS 的 OpenLDAP](#.E5.9F.BA.E4.BA.8E_TLS_.E7.9A.84_OpenLDAP)
-        *   [2.4.1 创建一个自签署的证书](#.E5.88.9B.E5.BB.BA.E4.B8.80.E4.B8.AA.E8.87.AA.E7.AD.BE.E7.BD.B2.E7.9A.84.E8.AF.81.E4.B9.A6)
-        *   [2.4.2 配置基于SSL的slapd](#.E9.85.8D.E7.BD.AE.E5.9F.BA.E4.BA.8ESSL.E7.9A.84slapd)
-        *   [2.4.3 启动基于SSL的slapd](#.E5.90.AF.E5.8A.A8.E5.9F.BA.E4.BA.8ESSL.E7.9A.84slapd)
+    *   [2.3 创建初始项](#.E5.88.9B.E5.BB.BA.E5.88.9D.E5.A7.8B.E9.A1.B9)
+    *   [2.4 测试安装好的系统](#.E6.B5.8B.E8.AF.95.E5.AE.89.E8.A3.85.E5.A5.BD.E7.9A.84.E7.B3.BB.E7.BB.9F)
+    *   [2.5 基于 TLS 的 OpenLDAP](#.E5.9F.BA.E4.BA.8E_TLS_.E7.9A.84_OpenLDAP)
+        *   [2.5.1 创建一个自签署的证书](#.E5.88.9B.E5.BB.BA.E4.B8.80.E4.B8.AA.E8.87.AA.E7.AD.BE.E7.BD.B2.E7.9A.84.E8.AF.81.E4.B9.A6)
+        *   [2.5.2 配置基于SSL的slapd](#.E9.85.8D.E7.BD.AE.E5.9F.BA.E4.BA.8ESSL.E7.9A.84slapd)
+        *   [2.5.3 启动基于SSL的slapd](#.E5.90.AF.E5.8A.A8.E5.9F.BA.E4.BA.8ESSL.E7.9A.84slapd)
 *   [3 下一步](#.E4.B8.8B.E4.B8.80.E6.AD.A5)
 *   [4 排错](#.E6.8E.92.E9.94.99)
     *   [4.1 检查客户端认证](#.E6.A3.80.E6.9F.A5.E5.AE.A2.E6.88.B7.E7.AB.AF.E8.AE.A4.E8.AF.81)
     *   [4.2 LDAP服务突然停止](#LDAP.E6.9C.8D.E5.8A.A1.E7.AA.81.E7.84.B6.E5.81.9C.E6.AD.A2)
+    *   [4.3 LDAP Server Doesn't Start](#LDAP_Server_Doesn.27t_Start)
 *   [5 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
-OpenLDAP 软件包同时包含了服务器和客户端。可以从 [官方源](/index.php/Official_repositories "Official repositories") 安装 [openldap](https://www.archlinux.org/packages/?name=openldap)。
+OpenLDAP 软件包同时包含了服务器和客户端。请[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")软件包 [openldap](https://www.archlinux.org/packages/?name=openldap)。
 
 ## 配置
 
 ### 服务端
 
-**注意:** 系统中现有的 OpenLDAP 数据库要通过清空 `/var/lib/openldap/openldap-data/`目录的方法将其删除。
+**注意:** 需要先清空系统中现有 OpenLDAP 数据库，请删除 `/var/lib/openldap/openldap-data/`目录。
 
 服务器的配置文件位于 `/etc/openldap/slapd.conf`。
 
@@ -53,16 +55,23 @@ rootdn     "cn=root,dc=example,dc=com"
 
 ```
 
-You will likely want to add some typically used [schemas](http://www.openldap.org/doc/admin24/schema.html) to the top of `slapd.conf`:
+在 `slapd.conf` 头部添加一些 [schemas](http://www.openldap.org/doc/admin24/schema.html):
 
 ```
+cp /usr/share/doc/samba/examples/LDAP/samba.schema /etc/openldap/schema
+
+```
+
+```
+include         /etc/openldap/schema/core.schema
 include         /etc/openldap/schema/cosine.schema
 include         /etc/openldap/schema/inetorgperson.schema
 include         /etc/openldap/schema/nis.schema
+include         /etc/openldap/schema/samba.schema
 
 ```
 
-You will likely want to add some typically used [indexes](http://www.openldap.org/doc/admin24/tuning.html#Indexes) to the bottom of `slapd.conf`:
+可能需要在 `slapd.conf` 底部加入一些常用的 [indexes](http://www.openldap.org/doc/admin24/tuning.html#Indexes):
 
 ```
 index   uid             pres,eq
@@ -73,7 +82,7 @@ index   dc              eq
 
 ```
 
-Now prepare the database directory. You will need to copy the default config file and set the proper ownership:
+现在准备数据目录，需要复制默认配置文件并设置用户和群组：
 
 ```
 # cp /etc/openldap/DB_CONFIG.example /var/lib/openldap/openldap-data/DB_CONFIG
@@ -83,45 +92,52 @@ Now prepare the database directory. You will need to copy the default config fil
 
 **注意:** 对于 OpenLDAP 2.4 ，不推荐使用 `slapd.conf` 作为配置文件。从这个版本开始所有配置数据都保存在 `/etc/openldap/slapd.d/`中。
 
-To store the recent changes in `slapd.conf` to the new `/etc/openldap/slapd.d/` configuration settings, we have to delete the old configuration files first, do this every time you change the configuration:
+将 `slapd.conf` 中的改动应用到 `/etc/openldap/slapd.d/`，需要先删除老配置：
 
 ```
 # rm -rf /etc/openldap/slapd.d/*
 
 ```
 
-(if you do not have a database yet, you might need to create one by starting and stopping the `slapd.service` [using systemd](/index.php/Systemd#Using_units "Systemd") )
+如果还没有数据库，用 [using systemd](/index.php/Systemd#Using_units "Systemd") 启动然后停止 `slapd.service` 服务。
 
-Then we generate the new configuration with:
+用下面命令生成配置文件:
 
 ```
 # slaptest -f /etc/openldap/slapd.conf -F /etc/openldap/slapd.d/
 
 ```
 
-The above command has to be run every time you change `slapd.conf`. Check if everything succeeded. Ignore message "bdb_monitor_db_open: monitoring disabled; configure monitor database to enable".
+每次修改 `slapd.conf` 后，都需要执行上面命令。检查有没有问题，可以忽略 "bdb_monitor_db_open: monitoring disabled; configure monitor database to enable".
 
-Change ownership recursively on the new files and directory in /etc/openldap/slapd.d:
+修改 /etc/openldap/slapd.d 中所有文件的权限:
 
 ```
 # chown -R ldap:ldap /etc/openldap/slapd.d
 
 ```
 
-**Note:** Index the directory after you populate it. You should stop slapd before doing this.
+**注意:** 增加文件后，请建立索引，建立前请停止 slapd 服务.
 ```
 # slapindex
 # chown ldap:ldap /var/lib/openldap/openldap-data/*
 
 ```
 
-Finally, start the slapd daemon with `slapd.service` using systemd.
+或者
+
+```
+$ sudo -u ldap slapindex
+
+```
+
+最后，启动 `slapd.service` 服务。
 
 ### 客户端
 
-The client config file is located at `/etc/openldap/ldap.conf`.
+客户的配置文件位于 `/etc/openldap/ldap.conf`.
 
-It is quite simple: you'll only have to alter `BASE` to reflect the suffix of the server, and `URI` to reflect the address of the server, like:
+这个配置很简单，只需要将`BASE` 设置为服务器的前缀，将 `URI` 设置为服务器的地址:
 
  `/etc/openldap/ldap.conf` 
 ```
@@ -129,32 +145,55 @@ BASE            dc=example,dc=com
 URI             ldap://localhost
 ```
 
-If you decide to use SSL:
+要使用 SSL 的话:
 
-*   The protocol (ldap or ldaps) in the `URI` entry has to conform with the slapd configuration
-*   If you decide to use self-signed certificates, add a `TLS_REQCERT allow` line to `ldap.conf`
+*   `URI` 的协议 (ldap 或 ldaps) 要和 slapd 配置一致
+*   要使用自签名的证书，在 `ldap.conf` 中添加 `TLS_REQCERT allow` 行
+*   要从认证机构获取自签名证书，在 `ldap.conf` 中添加`TLS_CACERTDIR /usr/share/ca-certificates/trust-source`行.
+
+### 创建初始项
+
+配置好客户端后，创建根项和 root 角色项：
+
+```
+$ ldapadd -x -D 'cn=root,dc=example,dc=com' -W
+dn: dc=example,dc=com
+objectClass: dcObject	
+objectClass: organization
+dc: example
+o: Example
+description: Example directory
+dn: cn=root,dc=example,dc=com
+objectClass: organizationalRole
+cn: root
+description: Directory Manager
+^D
+
+```
+
+第一行后的内容是在 stdin 输入的，或者用 -f 选项从文件或重定向读入.
 
 ### 测试安装好的系统
 
-This is easy, just run the command below:
+运行下面命令:
 
 ```
 $ ldapsearch -x '(objectclass=*)'
 
 ```
 
-Or authenticating as the rootdn (replacing `-x` by `-D <user> -W`), using the example configuration we had above:
+或认证为 rootdn (将 `-x` 替换为 `-D <user> -W`), 用上面配置的例子的话：
 
 ```
 $ ldapsearch -D "cn=root,dc=example,dc=com" -W '(objectclass=*)'
 
 ```
 
-Now you should see some information about your database.
+应该能看到数据库中的信息.
 
 ### 基于 TLS 的 OpenLDAP
 
-**Note:** [upstream documentation](http://web.archive.org/web/20130211222328/http://www.openldap.org/pub/ksoper/OpenLDAP_TLS.html#4.0) is much more useful/complete than this section
+**Note:** [upstream documentation](http://www.openldap.org/doc/admin24/) is much more useful/complete than this section
 
 If you access the OpenLDAP server over the network and especially if you have sensitive data stored on the server you run the risk of someone sniffing your data which is sent clear-text. The next part will guide you on how to setup an SSL connection between the LDAP server and the client so the data will be sent encrypted.
 
@@ -190,15 +229,27 @@ Edit the daemon configuration file (`/etc/openldap/slapd.conf`) to tell LDAP whe
 
 ```
 # Certificate/SSL Section
-TLSCipherSuite HIGH:MEDIUM:-SSLv2
+TLSCipherSuite DEFAULT
 TLSCertificateFile /etc/openldap/ssl/slapdcert.pem
 TLSCertificateKeyFile /etc/openldap/ssl/slapdkey.pem
 
 ```
 
-The TLSCipherSuite specifies a list of OpenSSL ciphers from which slapd will choose when negotiating TLS connections, in decreasing order of preference. In addition to those specific ciphers, you can use any of the wildcards supported by OpenSSL. **NOTE:** HIGH, MEDIUM, and +SSLv2 are all wildcards.
+If you are using a signed SSL Certificate from a certification authority such as [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt"), you will also need to specify the path to the root certificates database and your intermediary certificate. You will also need to change ownership of the `.pem` files and intermediary directories to make them readable to the user `ldap`:
 
-**Note:** To see which ciphers are supported by your local OpenSSL installation, type the following: `openssl ciphers -v ALL`
+```
+# Certificate/SSL Section
+TLSCipherSuite DEFAULT
+TLSCertificateFile /etc/letsencrypt/live/ldap.my-domain.com/cert.pem
+TLSCertificateKeyFile /etc/letsencrypt/live/ldap.my-domain.com/privkey.pem	
+TLSCACertificateFile /etc/letsencrypt/live/ldap.my-domain.com/chain.pem
+TLSCACertificatePath /usr/share/ca-certificates/trust-source
+
+```
+
+The TLSCipherSuite specifies a list of OpenSSL ciphers from which slapd will choose when negotiating TLS connections, in decreasing order of preference. In addition to those specific ciphers, you can use any of the wildcards supported by OpenSSL. DEFAULT is a wildcard. See `man ciphers` for description of ciphers, wildcards and options supported.
+
+**Note:** To see which ciphers are supported by your local OpenSSL installation, type the following: `openssl ciphers -v ALL:COMPLEMENTOFALL`. Always test which ciphers will actually be enabled by TLSCipherSuite by providing it to OpenSSL command, like this: `openssl ciphers -v 'DEFAULT'`
 
 Regenerate the configuration directory:
 
@@ -213,18 +264,13 @@ Regenerate the configuration directory:
 
 You will have to edit `slapd.service` to change to protocol slapd listens on.
 
-First, disable `slapd.service` if it's enabled.
+Create the override unit:
 
-Then, copy the stock service to `/etc/systemd/system/`:
-
+ `systemctl edit slapd.service` 
 ```
-# cp /usr/lib/systemd/system/slapd.service /etc/systemd/system/
-
+[Service]
+ExecStart=/usr/bin/slapd -u ldap -g ldap -h "ldaps:///"
 ```
-
-Edit it, and add change `ExecStart` to:
-
- `/etc/systemd/system/slapd.service`  `ExecStart=/usr/bin/slapd -u ldap -g ldap -h "ldaps:///"` 
 
 Localhost connections don't need to use SSL. So, if you want to access the server locally you should change the `ExecStart` line to:
 
@@ -233,13 +279,7 @@ ExecStart=/usr/bin/slapd -u ldap -g ldap -h "ldap://127.0.0.1 ldaps:///"
 
 ```
 
-Then reenable and start it:
-
-```
-# systemctl daemon-reload
-# systemctl restart slapd.service
-
-```
+Then [restart](/index.php/Restart "Restart") `slapd.service`. If it was enabled before, reenable it now.
 
 If `slapd` started successfully you can enable it.
 
@@ -281,6 +321,15 @@ If you notice that slapd seems to start but then stops, try running:
 ```
 
 to allow slapd write access to its data directory as the user "ldap".
+
+### LDAP Server Doesn't Start
+
+Try starting the server from the command line with debugging output enabled:
+
+```
+# slapd -u ldap -g ldap -h ldaps://ldaservername:636 -d Config,Stats
+
+```
 
 ## 参阅
 

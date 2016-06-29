@@ -16,7 +16,7 @@ You can use sshfs to mount a remote system - accessible via [SSH](/index.php/SSH
     *   [6.1 Checklist](#Checklist)
     *   [6.2 Connection reset by peer](#Connection_reset_by_peer)
     *   [6.3 Remote host has disconnected](#Remote_host_has_disconnected)
-    *   [6.4 Freezing apps (e.g. Nautilus, Gedit)](#Freezing_apps_.28e.g._Nautilus.2C_Gedit.29)
+    *   [6.4 Freezing apps (e.g. Gnome Files, Gedit)](#Freezing_apps_.28e.g._Gnome_Files.2C_Gedit.29)
     *   [6.5 Shutdown hangs when sshfs is mounted](#Shutdown_hangs_when_sshfs_is_mounted)
 *   [7 See also](#See_also)
 
@@ -278,7 +278,7 @@ If you receive this message directly after attempting to use *sshfs*:
 
 For Arch Linux the default value in `/etc/ssh/sshd_config` is `Subsystem sftp /usr/lib/ssh/sftp-server`.
 
-### Freezing apps (e.g. Nautilus, Gedit)
+### Freezing apps (e.g. Gnome Files, Gedit)
 
 **Note:** This prevents the recently used file list from being populated and may lead to possible write errors.
 

@@ -42,7 +42,7 @@
 
 ### 服务端
 
-NFS 需要查看 `/etc/exports` 文件中定义的共享（“导出”）列表。共享的对象可以是文件系统中的任意目录。出于安全考虑，建议指定一个 NFS 输出的根（目录），来限制用户的可用挂载点。下面的例子践行此原则。
+NFS 需要查看 `/etc/exports` 文件中定义的共享（“导出”）列表。共享的对象可以是文件系统中的任意目录。出于安全考虑，建议指定一个 NFS 共享输出的根（目录），来限制用户的可用挂载点。下面的例子遵循此原则。
 
 在 `/etc/exports` 中定义的任何 NFS 共享都关联到 NFS 根目录。本例中，NFS 根目录是 `/srv/nfs4` ，将要共享的目录是 `/mnt/music`。
 
@@ -53,7 +53,7 @@ NFS 需要查看 `/etc/exports` 文件中定义的共享（“导出”）列表
 
 客户端可能会对 music 目录做写操作，因此必须开放读/写权限。
 
-现在用 mount 命令将实际的 music 目录挂载到 NFS 的共享挂载点 `/mnt/music`。
+现在用 mount --bind 命令将实际的 music 目录挂载到 NFS 的共享根目录。
 
 ```
 # mount --bind /mnt/music /srv/nfs4/music
@@ -87,7 +87,7 @@ NFS 需要查看 `/etc/exports` 文件中定义的共享（“导出”）列表
 
 #### 开始运行服务
 
-[启用](/index.php/Enable "Enable")并[运行](/index.php/Start "Start") `nfs-server.service` 服务。对于较老的 V2 和 V3 版也要开启 `rpcbind.service` 服务。如果仅运行 V4 版，请按[这里](https://bbs.archlinux.org/viewtopic.php?id=193629)的讨论确认完全禁用 V2 和 V3 版：
+[启用](/index.php/Enable "Enable")并[运行](/index.php/Start "Start") `nfs-server.service` 服务。对于较老的 V2 和 V3 版也要开启 `rpcbind.service` 服务。如果仅运行 V4 版，请参阅[这里](https://bbs.archlinux.org/viewtopic.php?id=193629)的讨论确认完全禁用 V2 和 V3 版：
 
  `/etc/conf.d/nfs-server.conf`  `NFSD_OPTS="-N 2 -N 3"` 
 

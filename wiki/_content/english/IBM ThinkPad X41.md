@@ -8,18 +8,16 @@ This article contains some useful tweaks to make the most of your machine, the t
 *   [2 Useful packages](#Useful_packages)
     *   [2.1 System Packages](#System_Packages)
     *   [2.2 Applications](#Applications)
-*   [3 General Tweaks](#General_Tweaks)
-    *   [3.1 Scrolling with trackpoint](#Scrolling_with_trackpoint)
-*   [4 Powersaving tweaks](#Powersaving_tweaks)
-    *   [4.1 laptop-mode (kernel)](#laptop-mode_.28kernel.29)
-    *   [4.2 SATA-ALPM (pm-utils)](#SATA-ALPM_.28pm-utils.29)
-    *   [4.3 Powersaving on PCI devices](#Powersaving_on_PCI_devices)
-    *   [4.4 i915 RC6 powersaving](#i915_RC6_powersaving)
-    *   [4.5 Disable NMI watchdog](#Disable_NMI_watchdog)
-    *   [4.6 PHC](#PHC)
-*   [5 Tablet support](#Tablet_support)
-    *   [5.1 Getting display keys to work](#Getting_display_keys_to_work)
-*   [6 External links](#External_links)
+*   [3 Powersaving tweaks](#Powersaving_tweaks)
+    *   [3.1 laptop-mode (kernel)](#laptop-mode_.28kernel.29)
+    *   [3.2 SATA-ALPM (pm-utils)](#SATA-ALPM_.28pm-utils.29)
+    *   [3.3 Powersaving on PCI devices](#Powersaving_on_PCI_devices)
+    *   [3.4 i915 RC6 powersaving](#i915_RC6_powersaving)
+    *   [3.5 Disable NMI watchdog](#Disable_NMI_watchdog)
+    *   [3.6 PHC](#PHC)
+*   [4 Tablet support](#Tablet_support)
+    *   [4.1 Getting display keys to work](#Getting_display_keys_to_work)
+*   [5 External links](#External_links)
 
 ## Installation
 
@@ -36,6 +34,7 @@ Some useful packages for your IBM/Lenovo ThinkPad X41:
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Xorg driver for the Intel 915GM graphics chip.
 *   [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) - Adds support for SMAPI functions (battery discharge control, battery information, hdaps acceloremeter support). If you're using [Linux-ck](/index.php/Linux-ck "Linux-ck") try [tp_smapi-dkms](https://aur.archlinux.org/packages/tp_smapi-dkms/) (AUR).
 *   [thinkfinger](https://www.archlinux.org/packages/?name=thinkfinger) - Driver for fingerprint reader.
+*   See [TrackPoint](/index.php/TrackPoint "TrackPoint") for track point support.
 
 The IBM X41 comes with a "ipw2915" wireless Centrino (A, B and G) or ipw2200 wireless Centrino (B and G) module, the kernel provides support for these two devices. [netctl](https://www.archlinux.org/packages/?name=netctl) has been tested and works flawlessly with the "ipw2915". See [Wireless network configuration#ipw2100 and ipw2200](/index.php/Wireless_network_configuration#ipw2100_and_ipw2200 "Wireless network configuration")
 
@@ -48,27 +47,6 @@ The IBM X41 comes with a "ipw2915" wireless Centrino (A, B and G) or ipw2200 wir
 
 *   [thinkfan](https://aur.archlinux.org/packages/thinkfan/) - Control the utilisation of the fan.
 *   [gpm](https://www.archlinux.org/packages/?name=gpm) - Linux console mouse server.
-
-## General Tweaks
-
-### Scrolling with trackpoint
-
-The following file can be added for trackpoint scrolling support in X.
-
- `/etc/X11/xorg.conf.d/10-trackpoint.conf` 
-```
-
-Section "InputClass"
-        Identifier      "Trackpoint Wheel Emulation"
-        MatchProduct    "TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc. Composite TouchPad / TrackPoint|ThinkPad USB Keyboard with TrackPoint|USB Trackpoint pointing device"
-        MatchDevicePath "/dev/input/event*"
-        Option          "EmulateWheel"          "true"
-        Option          "EmulateWheelButton"    "2"
-        Option          "Emulate3Buttons"       "false"
-        Option          "XAxisMapping"          "6 7"
-        Option          "YAxisMapping"          "4 5"
-EndSection
-```
 
 ## Powersaving tweaks
 

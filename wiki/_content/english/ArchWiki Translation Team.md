@@ -27,7 +27,6 @@ List here articles that only exist in non-English languages, or that exist in En
 | [Asus M50Vm (Русский)](/index.php/Asus_M50Vm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Asus M50Vm (Русский)") | Russian | in Russian only |
 | [CloudCross (Русский)](/index.php/CloudCross_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CloudCross (Русский)") | Russian |
 | [Collect system information (Español)](/index.php/Collect_system_information_(Espa%C3%B1ol) "Collect system information (Español)") | Spanish |
-| [Daemontools and pppoe (Русский)](/index.php?title=Daemontools_and_pppoe_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&action=edit&redlink=1 "Daemontools and pppoe (Русский) (page does not exist)") | Russian | in Russian only |
 | [DeaDBeeF (正體中文)](/index.php/DeaDBeeF_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "DeaDBeeF (正體中文)") | Chinese (Traditional) |
 | [Dlua (Русский)](/index.php/Dlua_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dlua (Русский)") | Russian | in Russian only |
 | [Fcitx (简体中文)](/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fcitx (简体中文)") | Chinese (Simplified) |
@@ -35,7 +34,6 @@ List here articles that only exist in non-English languages, or that exist in En
 | [GtkD (Русский)](/index.php/GtkD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GtkD (Русский)") | Russian |
 | [HASEE K650D i7 D3 (简体中文)](/index.php/HASEE_K650D_i7_D3_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "HASEE K650D i7 D3 (简体中文)") | Chinese (Simplified) |
 | [Hime (正體中文)](/index.php/Hime_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Hime (正體中文)") | Chinese (Traditional) |
-| [How to repair a local pacman database (Русский)](/index.php?title=How_to_repair_a_local_pacman_database_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&action=edit&redlink=1 "How to repair a local pacman database (Русский) (page does not exist)") | Russian | in Russian only |
 | [HP Nx7400 (Česky)](/index.php/HP_Nx7400_(%C4%8Cesky) "HP Nx7400 (Česky)") | Czech |
 | [Huawei E3276 4G modem (Русский)](/index.php/Huawei_E3276_4G_modem_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Huawei E3276 4G modem (Русский)") | Russian |
 | [IBM T43 (Česky)](/index.php/IBM_T43_(%C4%8Cesky) "IBM T43 (Česky)") | Czech |

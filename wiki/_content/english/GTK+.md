@@ -70,6 +70,10 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 **GTK+ 2 and GTK+ 3.20 or newer are supported:**
 
+*   **Breeze** — GTK+ version of KDE's default widget theme.
+
+	[https://quickgit.kde.org/?p=breeze-gtk.git](https://quickgit.kde.org/?p=breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
+
 *   **GNOME Standard Themes** — Default themes for the GNOME desktop. Includes: *Adwaita*, *HighContrast*
 
 	[https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
@@ -107,10 +111,6 @@ More themes can be installed from the official repositories or the [AUR](/index.
 	[https://github.com/lassekongo83/zuki-themes](https://github.com/lassekongo83/zuki-themes) || [zuki-themes-git](https://aur.archlinux.org/packages/zuki-themes-git/)
 
 **GTK+ 2 and GTK+ 3.18 or older are supported:**
-
-*   **Breeze** — GTK+ version of KDE's default widget theme.
-
-	[https://quickgit.kde.org/?p=breeze-gtk.git](https://quickgit.kde.org/?p=breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
 
 *   **Deepin** — Default theme for the Deepin desktop.
 

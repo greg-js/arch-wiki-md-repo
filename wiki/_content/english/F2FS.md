@@ -39,4 +39,4 @@ With the latest [installation media](https://www.archlinux.org/download/) it is 
 4.  Install [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) on the newly installed system as well.
 5.  Regenerate the [initramfs](/index.php/Initramfs "Initramfs") while chrooted.
 
-The driver included in the kernel 4.6 or higher uses Crypto API for computing CRC32\. Add `crc32_generic` and `crc32-pclmul` to the `MODULES` array in `/etc/mkinitpcio.conf` and regenerate the initramfs if the driver fails to load a CRC32 module at boot.
+The driver included in the kernel 4.6 or higher uses Crypto API for computing CRC32\. Add `crc32_generic` and `crc32-pclmul` to the `MODULES` array in `/etc/mkinitcpio.conf` and regenerate the initramfs if the driver fails to load a CRC32 module at boot.

@@ -104,8 +104,8 @@ BIOS/[GPT](/index.php/GPT "GPT")配置中，一个 [BIOS启动分区](http://www
 **Note:**
 
 *   在尝试分区之前请记住不是所有的系统都能够支持这种分区方案, 关于更多请阅读[GUID分区表](/index.php/GUID_Partition_Table#BIOS_systems "GUID Partition Table").
-*   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). GRUB for GPT, however, does not use the Post-GPT gap to conform to GPT specifications that require 1_megabyte/2048_sector disk boundaries.
-*   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required as no embedding of boot sectors takes place in that case.
+*   此额外分区只在GRUB, BIOS/GPT分区方式中使用. 对于GRUB, BIOS/MBR分区方式, GRUB会把`core.img`放到MBR后面的间隙中去. 而GPT不使用这个间隙, 因为GPT分区需要满足1M/2048扇区的磁盘边界规范.
+*   [UEFI](/index.php/UEFI "UEFI") 系统也不需要这额外分区, 应为它不需要嵌入启动扇区.
 
 Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no file system and type BIOS boot (*BIOS boot* in fdisk, `ef02` in gdisk, `bios_grub` in `parted`). This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below. The post-GPT gap can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded (though some disk utilities will display a warning about it). In `fdisk` or `gdisk` create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
 

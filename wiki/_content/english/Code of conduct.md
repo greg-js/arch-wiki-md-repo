@@ -116,7 +116,7 @@ Arch-based distributions have their own support fora and users of those distribu
 
 #### Personal topics/rants
 
-Rants and complaints are frowned on and may be closed as they are discovered. Posts of this type are much better suited for a blog or other personal web space and are unwanted in the Arch community. Public posts should be open, productive and inviting to all members. Discussions among a select group of users should take place in private message.
+Rants and complaints are actively discouraged. This type of content is much better suited to a blog or other personal web space and are considered undesirable in the Arch community. Your contributions should be open, productive and inviting to all participants. Also see [Respect other operating systems and projects](#Respect_other_operating_systems_and_projects).
 
 #### Avoid controversy/controversial topics
 

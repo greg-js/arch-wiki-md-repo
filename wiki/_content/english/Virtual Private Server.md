@@ -38,7 +38,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [Atlantic.Net](https://www.atlantic.net/) | 2015.05.01 | KVM | NYC/SF/Toronto/Dallas/Orlando, US & Canada | 100% SSD 1-click Arch Linux, ready in 30 seconds |
 | [BuyVM](http://www.buyvm.net/) | 2013.07.01 | KVM | LA, Buffalo NY | Must chose a different OS at sign up. Once accessible, choose to mount the latest Arch ISO and reboot to install manually. |
 | [Coinshost](https://coinshost.com/en/vps) | 2015.04 | Xen | Zurich, Switzerland | Bitcoin and other cryptocurrencies accepted. |
-| [DirectVPS](https://www.directvps.nl/) | [2014.01.xx](https://www.directvps.nl/try-1.plp?p=31) | OpenVZ | Amsterdam, NL; Rotterdam, NL | (Dutch language site only) |
+| [DirectVPS](https://www.directvps.nl/) | 2014.01.xx | OpenVZ | Amsterdam, NL; Rotterdam, NL | (Dutch language site only) |
 | [Edis](http://www.edis.at/en/) | [2013.03.01](http://www.edis.at/en/support-and-service/faq/server-faq/which-distributions-are-available-with-edis-kvm-vps-plans/) | vServer, KVM, OpenVZ | [Multiple international locations](http://www.edis.at/en/server/kvm-vps/austria/). | Also offer dedicated server options as well as an "off-shore" location at the Isle of Man (IM). |
 | [Gandi](https://www.gandi.net/hosting/) | 2013.10.27 | Xen | Paris, FR; Baltimore, MD, US; Bissen, LU | Very granular scaling of system resources (e.g. RAM, disk space); IPv6-only option available; you can supply your own install image, version based on keyring package version |
 | [GigaTux](https://www.gigatux.com/virtual.php) | [2013.06.01](https://www.gigatux.com/distro/) | Xen | Chicago, US-IL; Frankfurt, DE; London, GB; San Jose, US-CA |
@@ -145,7 +145,7 @@ Interface=venet0
 Connection=ethernet
 
 IP=static
-Address=('192.0.2.42/24')
+Address=('192.0.2.42/32')
 Routes=('default')
 
 IP6=static

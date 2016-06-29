@@ -211,9 +211,11 @@ Lastly, and this goes without saying, please verify that your solution is correc
  |
 | [isync](http://isync.sourceforge.net) | `~/.mbsyncrc` | `$ mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc` |
 | [libice](ftp://www.x.org/pub/xorg/current/doc/libICE/ice.html) | `~/.ICEauthority` | `$ export ICEAUTHORITY="$XDG_RUNTIME_DIR"/X11/iceauthority` |
-| [less](http://www.greenwoodsoftware.com/less/) | `~/.lesshst` | `$ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history`
+| [less](http://www.greenwoodsoftware.com/less/) | `~/.lesshst` | `$ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history` (It is required to create the `"$XDG_CACHE_HOME"/less` directory manually.)
 
 `$ export LESSHISTFILE=-` can be used to disable this feature.
+
+`$ export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey`
 
  |
 | [libdvdcss](http://www.videolan.org/developers/libdvdcss.html) | `~/.dvdcss` | [[49]](https://mailman.videolan.org/pipermail/libdvdcss-devel/2014-August/001022.html) | `$ export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss` |

@@ -28,35 +28,7 @@ The graphics driver is provided by the [xf86-video-intel](https://www.archlinux.
 
 ### Trackpoint and Clickpad
 
-Though this model does have physical Trackpoint buttons, the middle-button-scroll does not work by default. In order to make it work, you need to install the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package from the [Official repositories](/index.php/Official_repositories "Official repositories").
-
-As the Clickpad is buttonless, middle- and right-click support can be enabled by following the instructions [on the Synaptics page](/index.php/Synaptics#Buttonless_touchpads_.28aka_ClickPads.29 "Synaptics").
-
-Trackpoint properties like speed and sensitivity can be configured using either the sysfs or [udev rules](/index.php/Udev_rules "Udev rules").
-
-To set the speed and sensitivity temporarily, run as root:
-
-```
-# echo 120 > /sys/devices/platform/i8042/serio1/speed
-# echo 200 > /sys/devices/platform/i8042/serio1/sensitivity
-
-```
-
-The following udev rule makes these changes permanent:
-
- `/etc/udev/rules.d/82-trackpoint.rules` 
-```
-# Set the trackpoint speed and sensitivity
-SUBSYSTEM=="serio", DRIVERS=="psmouse", ATTR{sensitivity}="200", ATTR{speed}="120"
-```
-
-Alternatively an udev add-rule can be used, if the changes are not applied correctly. This can happen if the trackpoint device was not instantiated yet. This solution was posted here: [thinkpad-forum.de](http://thinkpad-forum.de/threads/160979-gel%C3%B6st-Trackpoint-Sensitivit%C3%A4t-Geschwindigkeit-ArchLinux?p=1621976&viewfull=1#post1621976)
-
- `/etc/udev/rules.d/82-trackpoint.rules` 
-```
-# Set the trackpoint speed and sensitivity
-ACTION=="add",SUBSYSTEM=="input",ATTR{name}=="TPPS/2 IBM TrackPoint",ATTR{device/sensitivity}="240",ATTR{device/speed}="200"
-```
+See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 
 ## Issues
 

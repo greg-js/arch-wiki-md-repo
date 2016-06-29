@@ -675,7 +675,7 @@ Comparison:
 
 ### Primus issues under compositing window managers
 
-Since compositing hurts performance, invoking primus when a compositing WM is active is not recommended.[[2]](https://github.com/amonakov/primus#issues-under-compositing-wms) If you need to use primus with compositing and see flickering or bad performance, synchronizing primus' display thread with the application's rendering thread may help:
+Since compositing hurts performance, invoking primus when a compositing WM is active is not recommended.[[3]](https://github.com/amonakov/primus#issues-under-compositing-wms) If you need to use primus with compositing and see flickering or bad performance, synchronizing primus' display thread with the application's rendering thread may help:
 
 ```
 $ PRIMUS_SYNC=1 primusrun ...

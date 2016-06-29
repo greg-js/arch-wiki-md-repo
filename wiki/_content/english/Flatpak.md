@@ -95,7 +95,13 @@ $ flatpak uninstall *name*
 
 ## Creating a custom base runtime
 
+**Note:** You may want to use an untrusted, unprivileged user account for bundling untrusted software because the software is not sandboxed during app and runtime creation.
+
+**Note:** When distributing bundles to others, you may be legally obliged to provide the source code of some of the bundled software upon request. You may want to use [ABS](/index.php/Arch_Build_System "Arch Build System") to build these packages from source.
+
 You can create a custom Arch-based base runtime and base SDK for Flatpak using pacman. You can then use it for building and packaging applications. This is an alternative for personal use to the default `org.freedesktop.BasePlatform` and `org.freedesktop.BaseSdk` runtimes.
+
+In addition to [flatpak](https://www.archlinux.org/packages/?name=flatpak), you need to have installed [fakeroot](https://www.archlinux.org/packages/?name=fakeroot) and for pacman hooks support also [fakechroot](https://www.archlinux.org/packages/?name=fakechroot).
 
 First, start by creating a directory for building the runtime and possibly applications.
 
@@ -124,7 +130,7 @@ You need and may want to adapt your `pacman.conf` before installing packages to 
 Now install the packages for the runtime.
 
 ```
-$ fakeroot pacman -Syu --root myruntime/files --dbpath myruntime/files/var/lib/pacman --config pacman.conf base
+$ fakechroot fakeroot pacman -Syu --root myruntime/files --dbpath myruntime/files/var/lib/pacman --config pacman.conf base
 $ mv pacman.conf myruntime/files/etc/pacman.conf
 
 ```
@@ -133,7 +139,7 @@ The base SDK can be created from the base runtime with added applications needed
 
 ```
 $ cp -r myruntime mysdk
-$ fakeroot pacman -S --root mysdk/files --dbpath mysdk/files/var/lib/pacman --config mysdk/files/etc/pacman.conf base-devel fakeroot
+$ fakechroot fakeroot pacman -S --root mysdk/files --dbpath mysdk/files/var/lib/pacman --config mysdk/files/etc/pacman.conf base-devel fakeroot fakechroot
 
 ```
 
@@ -178,63 +184,64 @@ $ flatpak install --user myarchos org.mydomain.BaseSdk 2016-06-26
 As an alternative to building applications [the usual way](http://flatpak.org/developer.html), we can use pacman to create a containerized version of the regular Arch packages. Note that `/usr` is read-only when creating apps, so we can not use Arch’s packages when building an app. To create a real app with pacman, we can either
 
 *   use pacman to create a runtime containing all dependencies
-*   and compile the app ourselves [as usual](http://flatpak.org/developer.html) or perhaps using pacman with a custom `PKGBUILD` tailored to Flatpak which uses `--prefix=/app` for the `configure` script,
+*   and compile the app ourselves [as usual](http://flatpak.org/developer.html) or perhaps using pacman with a custom [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") tailored to Flatpak which uses `--prefix=/app` for the `configure` script,
 
 or we can
 
 *   use pacman to create a runtime containing the app installed with pacman
 *   and create a dummy app to launch it.
 
-For doing the latter, first create a runtime using pacman such as this one for [xterm](https://www.archlinux.org/packages/?name=xterm). The runtime is first initialized and prepared for use with pacman.
+For doing the latter, first create a runtime using pacman such as this one for [gedit](https://www.archlinux.org/packages/?name=gedit). The runtime is first initialized and prepared for use with pacman.
 
 ```
-$ flatpak build-init -w xtermruntime org.mydomain.xtermruntime org.mydomain.BaseSdk org.mydomain.BasePlatform 2016-06-26
-$ flatpak build xtermruntime sed -i "s/^#Server/Server/g" /etc/pacman.d/mirrorlist
-$ flatpak build xtermruntime ln -s /usr/var/lib /var/lib
-$ flatpak build xtermruntime fakeroot pacman-key --init
-$ flatpak build xtermruntime fakeroot pacman-key --populate archlinux
+$ flatpak build-init -w geditruntime org.mydomain.geditruntime org.mydomain.BaseSdk org.mydomain.BasePlatform 2016-06-26
+$ flatpak build geditruntime sed -i "s/^#Server/Server/g" /etc/pacman.d/mirrorlist
+$ flatpak build geditruntime ln -s /usr/var/lib /var/lib
+$ flatpak build geditruntime fakeroot pacman-key --init
+$ flatpak build geditruntime fakeroot pacman-key --populate archlinux
 
 ```
 
 Then the package is installed. The host’s network connection must be made available to pacman.
 
 ```
-$ flatpak build --share=network xtermruntime fakeroot pacman --root /usr -S xterm
+$ flatpak build --share=network geditruntime fakechroot fakeroot pacman --root /usr -S gedit
 
 ```
 
-You can test the installation before finishing the runtime.
+You can test the installation before finishing the runtime (without proper sandboxing).
 
 ```
-$ flatpak build --socket=x11 xtermruntime xterm
+$ flatpak build --socket=x11 geditruntime gedit
 
 ```
 
 Now finish building the runtime and export it to a new local repository. pacman’s GnuPG keys have permissions that may interfere and need to be removed first.
 
 ```
-$ flatpak build xtermruntime rm -r /etc/pacman.d/gnupg
-$ flatpak build-finish xtermruntime
-$ sed -i "s/\[Application\]/\[Runtime\]/;s/runtime=org.mydomain.BasePlatform/runtime=org.mydomain.xtermruntime/" xtermruntime/metadata
-$ flatpak build-export -r xtermrepo xtermruntime
+$ flatpak build geditruntime rm -r /etc/pacman.d/gnupg
+$ flatpak build-finish geditruntime
+$ sed -i "s/\[Application\]/\[Runtime\]/;s/runtime=org.mydomain.BasePlatform/runtime=org.mydomain.geditruntime/" geditruntime/metadata
+$ flatpak build-export -r geditrepo geditruntime
 
 ```
 
 Then create a dummy app.
 
 ```
-$ flatpak build-init xtermapp net.invisible_island.xterm org.mydomain.BaseSdk org.mydomain.xtermruntime
-$ flatpak build-finish xtermapp --socket=x11 --command=xterm
-$ flatpak build-export xtermrepo xtermapp
+$ flatpak build-init geditapp org.gnome.gedit org.mydomain.BaseSdk org.mydomain.geditruntime
+$ flatpak build-finish geditapp --socket=x11 --command=gedit
+$ flatpak build-export geditrepo geditapp
 
 ```
 
 Install it along with the runtime.
 
 ```
-$ flatpak --user remote-add --no-gpg-verify xtermrepo xtermrepo
-$ flatpak install --user xtermrepo net.invisible_island.xterm
-$ flatpak run net.invisible_island.xterm
+$ flatpak --user remote-add --no-gpg-verify geditrepo geditrepo
+$ flatpak install --user geditrepo org.mydomain.geditruntime
+$ flatpak install --user geditrepo org.gnome.gedit
+$ flatpak run org.gnome.gedit
 
 ```
 

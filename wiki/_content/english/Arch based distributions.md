@@ -2,55 +2,68 @@
 
 This is a listing of Linux distributions which are derived from Arch Linux either in whole or in part. This page is here to serve as a useful reference; for a detailed comparison, see [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
 
+## Contents
+
+*   [1 Active](#Active)
+    *   [1.1 Desktop](#Desktop)
+    *   [1.2 Others](#Others)
+*   [2 Arch-influenced](#Arch-influenced)
+*   [3 Inactive](#Inactive)
+
 ## Active
 
 Actively developed Arch derived Linux distributions.
 
-| Name | Default DE/WM | Target Audience |
-| [Antergos](http://antergos.com/) | [GNOME](/index.php/GNOME "GNOME") | Desktop users |
-| [alphaOS](http://alphaos.tuxfamily.org/) | [Openbox](/index.php/Openbox "Openbox") | live system |
-| [Apricity OS](http://apricityos.com/) | [GNOME](/index.php/GNOME "GNOME") | Desktop users |
-| [ArchBang](http://www.archbang.org/) | [Openbox](/index.php/Openbox "Openbox") | Desktop users |
-| [ArchEX](http://archex.exton.net/) | [LXDE](/index.php/LXDE "LXDE") | live system |
-| [Arch Hurd](http://www.archhurd.org/) | none | HURD kernel |
-| [Architect Linux](https://sourceforge.net/projects/architect-linux/) | Net based installer |
-| [Arch Linux ARM](http://archlinuxarm.org/) | none | ARM CPU support |
-| [ArchStrike](https://archstrike.org) | pentesting |
-| [BBQLinux](http://www.bbqlinux.org/) | [Cinnamon](/index.php/Cinnamon "Cinnamon") | Desktop, android development |
-| [BlackArch Linux](http://blackarch.org/) | [Awesome](/index.php/Awesome "Awesome"), [Blackbox](/index.php/Blackbox "Blackbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), [spectrwm](/index.php/Spectrwm "Spectrwm") | pentesting, ARM CPU support |
-| [Bluestar Linux](http://bluestarlinux.sourceforge.net/) | [KDE](/index.php/KDE "KDE") | Desktop |
-| [Bridge Linux](http://bridgelinux.org/) |
-| [DidJiX](http://easy.open.and.free.fr/didjix/) | [Openbox](/index.php/Openbox "Openbox") | live system |
-| [MSYS2](http://msys2.github.io/) | Windows |
-| [PacBSD](https://www.pacbsd.org/) | none | Desktop, BSD |
-| [Papyros](http://papyros.io/) | custom "Papyros" |
-| [Parabola GNU/Linux-libre](https://www.parabola.nu/) | none | Focus on free software, ARMv7 CPU support |
-| [PoliArch](http://www.poliarch.org/) | live system |
-| [Ninja OS](http://ninjaos.org) |
-| [Tux Hat Linux](http://sourceforge.net/projects/tuxhatlinux/) |
-| [UBOS](http://ubos.net/) |
+### Desktop
 
-### Arch-influenced distributions
+The following distributions include a pre-installed [Desktop environment](/index.php/Desktop_environment "Desktop environment").
+
+*   [Antergos](http://antergos.com/)
+*   [alphaOS](http://alphaos.tuxfamily.org/)
+*   [Apricity OS](http://apricityos.com/)
+*   [ArchBang](http://www.archbang.org/)
+*   [ArchEX](http://archex.exton.net/)
+*   [BBQLinux](http://www.bbqlinux.org/)
+*   [BlackArch Linux](http://blackarch.org/)
+*   [Bluestar Linux](http://bluestarlinux.sourceforge.net/)
+*   [DidJiX](http://easy.open.and.free.fr/didjix/)
+*   [Papyros](http://papyros.io/)
+*   [PoliArch](http://www.poliarch.org/)
+*   [Ninja OS](http://ninjaos.org)
+
+### Others
+
+*   [Arch Hurd](http://www.archhurd.org/)
+*   [Architect Linux](https://sourceforge.net/projects/architect-linux/)
+*   [Arch Linux ARM](http://archlinuxarm.org/)
+*   [ArchStrike](https://archstrike.org)
+*   [Bridge Linux](http://bridgelinux.org/)
+*   [PacBSD](https://www.pacbsd.org/)
+*   [Parabola GNU/Linux-libre](https://www.parabola.nu/)
+*   [UBOS](http://ubos.net/)
+
+## Arch-influenced
 
 Linux distributions that were influenced by Arch Linux.
 
-| Name | Note |
-| [Alpine Linux](http://alpinelinux.org/) |
-| [Arquetype CRT](https://arquetype.org/) |
-| [Chakra](http://chakraos.org/) |
-| [Enlisy](http://www.enlisy.net/en/) |
-| [Frugalware](http://frugalware.org/) |
-| [Kademar](http://www.kademar.org/) |
-| [KaOS](http://kaosx.us/) |
-| [LinHES](http://linhes.org/) |
-| [Manjaro Linux](https://manjaro.github.io/) |
-| [Netrunner Rolling](http://www.netrunner.com/) |
+*   [Alpine Linux](http://alpinelinux.org/)
+*   [Arquetype CRT](https://arquetype.org/)
+*   [Chakra](http://chakraos.org/)
+*   [Enlisy](http://www.enlisy.net/en/)
+*   [Frugalware](http://frugalware.org/)
+*   [Kademar](http://www.kademar.org/)
+*   [KaOS](http://kaosx.us/)
+*   [LinHES](http://linhes.org/)
+*   [Manjaro Linux](https://manjaro.github.io/)
+*   [MSYS2](http://msys2.github.io/)
+*   [Netrunner Rolling](http://www.netrunner.com/)
 
 ## Inactive
 
 There have been many Arch based distributions created over the years. As Arch Linux has grown, so has the number of projects derived from it. These distributions are no longer being actively developed, but show some of the history surrounding Arch Linux and the greater FOSS community.
 
 | Name | Last Release | Default DE/WM | Target Audience |
+| [Tux Hat Linux](https://sourceforge.net/projects/tuxhatlinux/) | 2015 | [Fluxbox](/index.php/Fluxbox "Fluxbox") |
 | [Arch Linux MIPS](https://github.com/Arch-Linux-MIPS) | 2014 | none | MIPS CPU support |
 | [Mesk Linux](http://web.archive.org/web/20141217163857/http://mesklinux.org/) | 2014 | OpenRC with Arabic localization |
 | [CDN Linux](http://forum.freesco.pl/viewtopic.php?f=34&t=18935) | 2013 | For servers and routers, polish support |
@@ -58,7 +71,7 @@ There have been many Arch based distributions created over the years. As Arch Li
 | [ArchServer](http://web.archive.org/web/20131124072119/http://www.archserver.org/) | 2012 | none | server |
 | [ConnochaetOS](http://www.connochaetos.org/) | 2012 | libre only with old hardware support |
 | [Kahel OS](http://www.kahelos.org/) | 2012 | [GNOME](/index.php/GNOME "GNOME") | desktop with Filipino language support |
-| [LDR](https://web.archive.org/web/20120314025441/http://www.tommed.co.uk/ldr/) (Linux Done Right) | 2012 | Desktop |
+| [LDR](https://web.archive.org/web/20120314025441/http://www.tommed.co.uk/ldr/) | 2012 | Desktop |
 | [Nosonja](https://web.archive.org/web/20130727233942/http://nosonja.org/) | 2012 | [Xfce](/index.php/Xfce "Xfce") | Desktop for beginners |
 | [Archlive](http://code.google.com/p/archlive/) | 2011 | live cd with Chinese language support |
 | [CTKArch](http://ctkarch.org/) | 2011 | [Openbox](/index.php/Openbox "Openbox") | live cd, french and english |

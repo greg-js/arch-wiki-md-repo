@@ -5,7 +5,6 @@ Find your card's [codename](http://nouveau.freedesktop.org/wiki/CodeNames) (a mo
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Supported GPU Hardware](#Supported_GPU_Hardware)
 *   [2 Loading](#Loading)
     *   [2.1 Enable early KMS](#Enable_early_KMS)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -26,10 +25,6 @@ Find your card's [codename](http://nouveau.freedesktop.org/wiki/CodeNames) (a mo
 [Install](/index.php/Install "Install") the [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package. It provides the DDX driver for 2D acceleration in [Xorg](/index.php/Xorg "Xorg"), and pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency which provides the DRI driver for 3D acceleration.
 
 For OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl), and [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) when using [multilib](/index.php/Multilib "Multilib").
-
-### Supported GPU Hardware
-
-Check the [nouveau FeatureMatrix](https://nouveau.freedesktop.org/wiki/FeatureMatrix/) to see if, or how well, your card is supported. Check [nouveau CodeNames](https://nouveau.freedesktop.org/wiki/CodeNames/) to find the code used for your card in the FeatureMatrix.
 
 ## Loading
 
@@ -229,13 +224,13 @@ $ modinfo -p video
 
 ```
 
-#### Disable MSI
+### Disable MSI
 
 If you are still having problems loading the module or starting X server append `nouveau.config=NvMSI=0` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 Source: [https://bugs.freedesktop.org/show_bug.cgi?id=78441](https://bugs.freedesktop.org/show_bug.cgi?id=78441)
 
-#### Phantom Output Issue
+### Phantom Output Issue
 
 It is possible for the nouveau driver to detect "phantom" outputs. For example, both VGA-1 and LVDS-1 are shown as connected but only LVDS-1 is present.
 
@@ -262,6 +257,6 @@ EndSection
 
 Source: [http://gentoo-en.vfose.ru/wiki/Nouveau#Phantom_and_unpopulated_output_connector_issues](http://gentoo-en.vfose.ru/wiki/Nouveau#Phantom_and_unpopulated_output_connector_issues)
 
-#### Random lockups with kernel error messages
+### Random lockups with kernel error messages
 
 Specific Nvidia chips with Nouveau may give random system lockups and more commonly throw many kernel messages, seen with *dmesg*. Try adding the `nouveau.noaccel=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [[2]](https://fedoraproject.org/wiki/Common_kernel_problems#Systems_with_nVidia_adapters_using_the_nouveau_driver_lock_up_randomly) for more information.

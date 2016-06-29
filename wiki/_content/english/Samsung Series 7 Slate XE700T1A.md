@@ -108,7 +108,7 @@ The touch screen works out of the box with [xf86-input-evdev](https://www.archli
 
 In order to get the pen button to emulate a right click, go into the Wacom settings in System Preferences.
 
-The touch screen will be recognised as a finger input by many applications, such as nautilus or chromium by default and will result in dragging causing the page to scroll, rather than selecting text or objects.
+The touch screen will be recognized as a finger input by many applications, such as Gnome Files or chromium by default and will result in dragging causing the page to scroll, rather than selecting text or objects.
 
 ### Screen Rotation
 

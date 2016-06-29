@@ -1,4 +1,4 @@
-The TrackPoint is Lenovo's trademark for the pointing-stick in the middle of the keyboard. It is supported by [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). The evdev driver is default for [Xorg](/index.php/Xorg "Xorg").
+The TrackPoint is Lenovo's trademark for the pointing-stick in the middle of the keyboard. It is supported by [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput).
 
 Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point, but middle-click and scrolling requires extra configuration.
 
@@ -6,12 +6,12 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point, but mi
 
 *   [1 GUI configuration](#GUI_configuration)
 *   [2 Middle button scroll](#Middle_button_scroll)
+    *   [2.1 Xorg configuration](#Xorg_configuration)
 *   [3 Tap to select](#Tap_to_select)
 *   [4 udev configuration rule](#udev_configuration_rule)
-*   [5 Xorg configuration](#Xorg_configuration)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Trackpoint is not detected or is detected after X minutes](#Trackpoint_is_not_detected_or_is_detected_after_X_minutes)
-*   [7 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Trackpoint is not detected or is detected after X minutes](#Trackpoint_is_not_detected_or_is_detected_after_X_minutes)
+*   [6 See also](#See_also)
 
 ## GUI configuration
 
@@ -42,6 +42,24 @@ tpset "Device Accel Constant Deceleration" 0.95
 *   Devices names can be listed with `xinput --list` or [hwinfo](https://www.archlinux.org/packages/?name=hwinfo).
 *   The `"Device Accel Constant Deceleration"` line configures the sensitivity of the trackpoint.
 
+### Xorg configuration
+
+Alternative to an `~/.xinitrc` configuration, you can also create an [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg"). For example, as `/etc/X11/xorg.conf.d/20-thinkpad.conf`, replacing `TPPS/2 IBM TrackPoint` with the device name from *xinput*:
+
+```
+Section "InputClass"
+    Identifier	"Trackpoint Wheel Emulation"
+    MatchProduct	"*TPPS/2 IBM TrackPoint*"
+    MatchDevicePath	"/dev/input/event*"
+    Option		"EmulateWheel"		"true"
+    Option		"EmulateWheelButton"	"2"
+    Option		"Emulate3Buttons"	"false"
+    Option		"XAxisMapping"		"6 7"
+    Option		"YAxisMapping"		"4 5"
+EndSection
+
+```
+
 ## Tap to select
 
 The TrackPoint supports tap-to-click functionality just as most touchpads do. To enable it manually:
@@ -58,24 +76,6 @@ The TrackPoint supports tap-to-click functionality just as most touchpads do. To
 This rule increases the trackpoint **speed** and enables **tap to select** (see above) on boot. Feel free to alter the values and add other modifications to files in /sys/devices/platform/i8042/serio1/serio2/. The rule also works for trackpoint-only devices.
 
  `/etc/udev/rules.d/10-trackpoint.rules`  `ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/sensitivity}="240", ATTR{device/press_to_select}="1"` 
-
-## Xorg configuration
-
-To enable scrolling with the TrackPoint while holding down the middle mouse button, create `/etc/X11/xorg.conf.d/20-thinkpad.conf`, replacing `TPPS/2 IBM TrackPoint` with the device name from *xinput*:
-
-```
-Section "InputClass"
-    Identifier	"Trackpoint Wheel Emulation"
-    MatchProduct	"*TPPS/2 IBM TrackPoint*"
-    MatchDevicePath	"/dev/input/event*"
-    Option		"EmulateWheel"		"true"
-    Option		"EmulateWheelButton"	"2"
-    Option		"Emulate3Buttons"	"false"
-    Option		"XAxisMapping"		"6 7"
-    Option		"YAxisMapping"		"4 5"
-EndSection
-
-```
 
 ## Troubleshooting
 

@@ -44,7 +44,7 @@ One of the powers of cgroups is that you can create "ad-hoc" groups on the fly. 
 
 ```
 
-Alternatively, using with user ID `1000` and system group *root* (GID 0):
+Alternatively, using `cgmanager` with user ID `1000` and system group *root* (GID 0):
 
 ```
 # cgm create memory *groupname*

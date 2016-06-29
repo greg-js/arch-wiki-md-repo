@@ -215,7 +215,7 @@ See more at [https://github.com/Harvie/Programs/tree/master/bash/encfs/automount
 
 #### How to
 
-**1.** You need USB automount working for this - like thunar or nautilus does.
+**1.** You need USB automount working for this - like Thunar or Gnome Files does.
 **2.** Make encrypted folder on your drive, eg.: `encfs /media/USB/somename /media/USB/somename.plain` (and then unmount everything).
 **3.** Create a `~/.config/fsniper/config` file:
 

@@ -29,7 +29,7 @@
 
 [Install](/index.php/Install "Install") the [mpd](https://www.archlinux.org/packages/?name=mpd) package, or [mpd-git](https://aur.archlinux.org/packages/mpd-git/) for the development version.
 
-**Note:** An alternative plug-in based implementation called [Mopidy](http://www.mopidy.com) exists. It is available as [mopidy](https://www.archlinux.org/packages/?name=mopidy) and [mopidy-git](https://aur.archlinux.org/packages/mopidy-git/). Be warned that is not a complete MPD [drop-in replacement](http://docs.mopidy.com/en/latest/ext/mpd/#limitations).
+**Note:** An alternative implementation written in Python called [Mopidy](http://www.mopidy.com) exists. It is available as [mopidy](https://www.archlinux.org/packages/?name=mopidy) and [mopidy-git](https://aur.archlinux.org/packages/mopidy-git/). Be warned that is not a complete MPD [drop-in replacement](http://docs.mopidy.com/en/latest/ext/mpd/#limitations). The advantage of Mopidy over MPD is that it has plug-ins for playing music from cloud services like Spotify, SoundCloud, and Google Play Music.
 
 ## Setup
 

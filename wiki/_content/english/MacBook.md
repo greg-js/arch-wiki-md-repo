@@ -58,8 +58,9 @@ Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to inst
         *   [8.2.1 Early 2015 13"/15" - Version 12,x/11,4+](#Early_2015_13.22.2F15.22_-_Version_12.2Cx.2F11.2C4.2B)
             *   [8.2.1.1 Wireless](#Wireless)
             *   [8.2.1.2 Bluetooth](#Bluetooth_2)
-            *   [8.2.1.3 Keyboard & Trackpad](#Keyboard_.26_Trackpad)
-            *   [8.2.1.4 Graphics](#Graphics)
+            *   [8.2.1.3 Suspend & Power Off (11,4+)](#Suspend_.26_Power_Off_.2811.2C4.2B.29)
+            *   [8.2.1.4 Keyboard & Trackpad](#Keyboard_.26_Trackpad)
+            *   [8.2.1.5 Graphics](#Graphics)
         *   [8.2.2 2012 - 2014 models](#2012_-_2014_models)
     *   [8.3 MacBook Air](#MacBook_Air)
         *   [8.3.1 Early 2014 11" - Version 6,1](#Early_2014_11.22_-_Version_6.2C1)
@@ -1309,6 +1310,10 @@ The `brcmfmac` driver is working as of 2015-11-20, with newer firmware necessary
 ##### Bluetooth
 
 Bluetooth is fully supported starting from kernel-4.4.0.
+
+##### Suspend & Power Off (11,4+)
+
+The 11,4 and 11,5 MacBook Pros do not shutdown or suspend correctly with the default kernel. This issue has been addressed in [Bug 103211](https://bugzilla.kernel.org/show_bug.cgi?id=103211) and the patch is currently available in [linux-macbook-pro](https://aur.archlinux.org/packages/linux-macbook-pro/).
 
 ##### Keyboard & Trackpad
 

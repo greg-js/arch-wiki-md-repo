@@ -1,88 +1,45 @@
-There is currently only a Mac OS and a Windows version of LoL. This page outlines working methods to get the Windows League of Legends version working on your arch system through Wine.
-
-**This guide was last tested with:**
-
-*Arch Linux Kernel:* **4.2.3-1-ARCH**
-
-*Wine Version:* **1.7.53**
-
-*LoL Version:* **5.20**
-
-**Issues:**
-
-*   Icons for runes in the launcher store do not appear
-*   Right clicking friends in the friend list (to invite to a game) does not work (this issue can be circumvented by using the invite button in the lobby)
-    *   [Another workaround](https://bugs.winehq.org/show_bug.cgi?id=35701#c5) to this issue is to mouse over your friend, press down right mouse button, press down left mouse button, release left mouse button, and then release right mouse button.
-*   Lesser performance than running the game on windows
-*   In a 64-bit Wine prefix the Patcher will be black (but pressing buttons will work) and launching a match will end up in a black screen.
-*   The installer hangs when it should start the installation
-*   The Basic Tutorial does not work.
+[League of Legends](https://www.leagueoflegends.com) is a multiplayer online battle arena video game developed and published by [Riot Games](http://www.riotgames.com/) for Microsoft Windows and OS X. This page outlines working methods to get the Windows version of League of Legends working through [Wine](/index.php/Wine "Wine").
 
 ## Contents
 
-*   [1 PlayonLinux Method](#PlayonLinux_Method)
-    *   [1.1 Troubleshooting](#Troubleshooting)
-*   [2 Wine Method](#Wine_Method)
-    *   [2.1 Create a 32-bit Wine PREFIX](#Create_a_32-bit_Wine_PREFIX)
-    *   [2.2 Install the dependencies](#Install_the_dependencies)
-    *   [2.3 Installation](#Installation)
-        *   [2.3.1 Get your hands on an installed copy of the game](#Get_your_hands_on_an_installed_copy_of_the_game)
-        *   [2.3.2 Compatibility Steps](#Compatibility_Steps)
-    *   [2.4 Run the Game](#Run_the_Game)
-*   [3 Troubleshooting/Tips](#Troubleshooting.2FTips)
-    *   [3.1 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
-    *   [3.2 In-game shop crash](#In-game_shop_crash)
-    *   [3.3 Store Authentication Required](#Store_Authentication_Required)
-    *   [3.4 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
-    *   [3.5 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
+*   [1 Installation](#Installation)
+    *   [1.1 PlayonLinux Method](#PlayonLinux_Method)
+    *   [1.2 AUR Package](#AUR_Package)
+    *   [1.3 Wine Method](#Wine_Method)
+        *   [1.3.1 Create a 32-bit Wine PREFIX](#Create_a_32-bit_Wine_PREFIX)
+        *   [1.3.2 Install the dependencies](#Install_the_dependencies)
+        *   [1.3.3 Client installation](#Client_installation)
+            *   [1.3.3.1 Using Windows installer](#Using_Windows_installer)
+            *   [1.3.3.2 Using a existing copy of the game](#Using_a_existing_copy_of_the_game)
+        *   [1.3.4 Compatibility Steps (Optional)](#Compatibility_Steps_.28Optional.29)
+        *   [1.3.5 Run the game under Wine](#Run_the_game_under_Wine)
+*   [2 Troubleshooting/Tips](#Troubleshooting.2FTips)
+    *   [2.1 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
+    *   [2.2 In-game shop crash](#In-game_shop_crash)
+    *   [2.3 Store Authentication Required](#Store_Authentication_Required)
+    *   [2.4 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
+    *   [2.5 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
+    *   [2.6 PlayOnLinux Troubleshooting](#PlayOnLinux_Troubleshooting)
 
-## PlayonLinux Method
+## Installation
 
-This is the easiest method. Just install [playonlinux](https://www.archlinux.org/packages/?name=playonlinux).
+### PlayonLinux Method
 
-After installation run from the command line
+**Note:** The PlayOnLinux script is out of date and may not work. There is a [beta script](https://www.playonlinux.com/en/app-1135-League_Of_Legends.html#contributions) that is reported to work.
 
-```
-$ playonlinux
+To install League of Legends using this method, [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) must be installed in the system. When you first run it, [PlayOnLinux](https://wiki.archlinux.org/index.php/Wine#PlayOnLinux.2FPlayOnMac) will install some necessary fonts. Afterwards, click Install, check the "testing box" and then search for "League of Legends". The rest is self-explanatory.
 
-```
+### AUR Package
 
-When you first run it, playonlinux will install some necessary fonts. Afterwards, click Install, check the "testing box" and then search for "League of Legends". The rest is self-explanatory.
+**Note:** You may need to add your user to `games` group.
 
-### Troubleshooting
+[leagueoflegends](https://aur.archlinux.org/packages/leagueoflegends/) from the [AUR](/index.php/AUR "AUR") is available to ease the installation of the game using the method used in the [#Wine Method](#Wine_Method) section. This package will download the game installer in `/var/games/leagueoflegends` and configure the wine environment to run the game. Additionally, it creates a bash script and a `.desktop` file to launch the game.
 
-*   **Bugsplat opening patcher:** To fix this you need to configure the PlayOnLinux's wine version by clicking the configure gear, change wine version to system from 1.9-LeagueOfLegends and if you have not done so already install [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap).
-
-*   **Adobe air missing:** To fix this you need to install [lib32-lcms2](https://www.archlinux.org/packages/?name=lib32-lcms2).
-
-*   **The login server did not respond:**
-
-PlayOnLinux seem to be missing a symlink from the generic version of [libgcrypt](https://www.archlinux.org/packages/?name=libgcrypt) to the specific version it ships. That can be fixed by finding the folders of the affected Wine versions and creating the links manually. Replace ARCH with either x86 or amd64, and VERSION with the Wine version you intend to fix.
-
-```
-$ cd ~/.PlayOnLinux/wine/linux-ARCH/VERSION/lib
-$ ln -s libgcrypt.so.11.* libgcrypt.so.11
-$ ln -s libgcrypt.so.11 libgcrypt.so
-
-```
-
-If you are still unable to login after setting up the above symlinks, [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls) may need to be manually installed or re-installed.
-
-*   **No sounds:** install [lib32-alsa-lib](https://www.archlinux.org/packages/?name=lib32-alsa-lib) (for pulseaudio users: [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) and [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse))
-
-*   **Store (for runes) is all black:** [install IE8](http://forums.eune.leagueoflegends.com/board/showthread.php?t=571456) in the PlayOnLinux components.
-
-*   **Crash after champ select:** [install directx9](http://www.playonlinux.com/en/topic-11344-1.html) in the PlayOnLinux components.
-
-## Wine Method
+### Wine Method
 
 **Note:** The guide is written mostly for x86_64 systems, if your architecture is i686, you can skip setting up the new Wine Prefix (Just use the default wine prefix instead: .wine). You can also ignore WINEARCH/WINEPREFIX parts of commands· And to you, "lib32-lcms2" would just be "lcms2"
 
-**Warning:** The installer does not currently seem to be working in Wine
-
-### Create a 32-bit Wine PREFIX
-
-**Tip:** There is an experimental higher d3d performance [patched version of wine](https://aur.archlinux.org/packages/wine-d3dstream-git/) available in AUR, the performance boost it offers requires adding a registry key with regedit in Wine. I see my framerate go from 160 to 240 with this feature enabled, that is a solid +50% increase in framerate. See more at the bottom of the page.
+#### Create a 32-bit Wine PREFIX
 
 Install [wine](https://www.archlinux.org/packages/?name=wine) on your system and run:
 
@@ -93,7 +50,7 @@ Install [wine](https://www.archlinux.org/packages/?name=wine) on your system and
 
 to create a default 32-bit prefix at $HOME/.wine. If it asks to install something (like Wine Mono or Wine Gecko or some such) just always click install. After this make sure Windows Version is set to Windows XP.
 
-### Install the dependencies
+#### Install the dependencies
 
 Install the required packages on your system:
 
@@ -119,16 +76,22 @@ If you run into problems installing adobeair, you need to make a little change i
 
 Access the libraries tab, find in the list of existing libraries (or add a new entry for it if it does not exist) **dnsapi**, click Edit... and configure it for "**Native then Builtin**"
 
-### Installation
+#### Client installation
 
-The installer is currently not working for me in Wine, but the command to execute it if you want to try would be the following:
+##### Using Windows installer
+
+**Warning:** The Windows installer may not work on some systems.
+
+In order to use the installer using Wine 32bit prefix, execute the following command:
 
 ```
-# GC_DONT_GC=1 WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine /path/to/installer.exe
+GC_DONT_GC=1 WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine /PATH/TO/INSTALLER.exe
 
 ```
 
-#### Get your hands on an installed copy of the game
+Follow the steps indicated on the installer menu.
+
+##### Using a existing copy of the game
 
 There are several ways to do this, the Windows version (as long as it can run the Installer which probably requires Windows XP or newer) here are a few methods.
 
@@ -148,7 +111,9 @@ After you get your hands on the game, either move or symlink it to your wine32 p
 
 ```
 
-#### Compatibility Steps
+#### Compatibility Steps (Optional)
+
+**Warning:** These steps may be not necessary.
 
 *   **Hostname** (Fixes the game failing to run after Champion Select screen)
 
@@ -205,7 +170,7 @@ alias lol-update='python2 $HOME/.lol_patch/lol_linux.py texture_patch'
 
 The patch will only take long to finish the first time you run it, as it does not need to patch all of the files again, only the ones that are new or have changed.
 
-### Run the Game
+#### Run the game under Wine
 
 Create an alias to execute the 32-bit Wine installation (in ~/.bashrc) this is not really a required step, but just a good practice since you can use this to run other programs that play better with a 32-bit wine prefix than a 64-bit one.
 
@@ -341,3 +306,28 @@ For a permanent solution:
 #### Hang after champ select with AMD proprietary fglrx driver
 
 If you have the proprietary AMD fglrx driver installed, you should install trough winetricks the `directx9` package (Not d3dx_y)
+
+#### PlayOnLinux Troubleshooting
+
+*   **Bugsplat opening patcher:** To fix this you need to configure the PlayOnLinux's wine version by clicking the configure gear, change wine version to system from 1.9-LeagueOfLegends and if you have not done so already install [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap).
+
+*   **Adobe air missing:** To fix this you need to install [lib32-lcms2](https://www.archlinux.org/packages/?name=lib32-lcms2).
+
+*   **The login server did not respond:**
+
+PlayOnLinux seem to be missing a symlink from the generic version of [libgcrypt](https://www.archlinux.org/packages/?name=libgcrypt) to the specific version it ships. That can be fixed by finding the folders of the affected Wine versions and creating the links manually. Replace ARCH with either x86 or amd64, and VERSION with the Wine version you intend to fix.
+
+```
+$ cd ~/.PlayOnLinux/wine/linux-ARCH/VERSION/lib
+$ ln -s libgcrypt.so.11.* libgcrypt.so.11
+$ ln -s libgcrypt.so.11 libgcrypt.so
+
+```
+
+If you are still unable to login after setting up the above symlinks, [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls) may need to be manually installed or re-installed.
+
+*   **No sounds:** install [lib32-alsa-lib](https://www.archlinux.org/packages/?name=lib32-alsa-lib) (for pulseaudio users: [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) and [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse))
+
+*   **Store (for runes) is all black:** [install IE8](http://forums.eune.leagueoflegends.com/board/showthread.php?t=571456) in the PlayOnLinux components.
+
+*   **Crash after champ select:** [install directx9](http://www.playonlinux.com/en/topic-11344-1.html) in the PlayOnLinux components.

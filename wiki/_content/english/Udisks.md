@@ -123,6 +123,25 @@ KERNEL=="sda2", ENV{UDISKS_IGNORE}="1"
 
 ```
 
+Because block device names can change between reboots, it is possible to also use UUID (as gathered from executing the `blkid /dev/sdX` command) to hide the partitions or whole devices:
+
+For example:
+
+```
+# blkid /dev/sdX
+/dev/sdX: LABEL="Filesystem Label" UUID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX" UUID_SUB="YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY" TYPE="btrfs"
+
+```
+
+Then the following line can be used:
+
+```
+ENV{ID_FS_UUID}=="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX", ENV{UDISKS_IGNORE}="1"
+
+```
+
+The above line is also useful to hide multi device btrfs filesystems, as all the devices from a single btrtfs filesystem will share the same UUID across the devices but will have different SUB_UUID for each individual device.
+
 ## Troubleshooting
 
 ### Hidden devices (udisks2)

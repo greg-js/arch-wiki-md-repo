@@ -326,9 +326,9 @@ Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-lin
 
 ## tar
 
-As an early Unix compression format, `tar` files (known as **tarballs**) are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") `Tar` program by default.
+As an early Unix archiving format, .tar files (known as **tarballs**) are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are compressed tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") *tar* program by default.
 
-For `tar` archives, `tar` by default will extract the file according to its extension:
+For .tar archives, *tar* by default will extract the file according to its extension:
 
 ```
 $ tar xvf file.EXTENSION
@@ -347,7 +347,7 @@ Forcing a given format:
 | `file.tar.xz` | `tar xvJf file.tar.xz`
 `xz -cd file.xz | tar xvf -` |
 
-The construction of some of these `tar` arguments may be considered legacy, but they are still useful when performing specific operations. The **Compatibility** section of `tar`'s [man page](/index.php/Man_page "Man page") shows how they work in detail.
+The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See its [man page](/index.php/Man_page "Man page") with `man tar` for details.
 
 ## which
 

@@ -15,21 +15,20 @@
     *   [3.5 多媒体播放](#.E5.A4.9A.E5.AA.92.E4.BD.93.E6.92.AD.E6.94.BE)
 *   [4 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [4.1 设置 email 客户端](#.E8.AE.BE.E7.BD.AE_email_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [4.2 “打开所在文件夹” 错误 (GNOME3)](#.E2.80.9C.E6.89.93.E5.BC.80.E6.89.80.E5.9C.A8.E6.96.87.E4.BB.B6.E5.A4.B9.E2.80.9D_.E9.94.99.E8.AF.AF_.28GNOME3.29)
-    *   [4.3 “打开所在文件夹” 错误 (KDE)](#.E2.80.9C.E6.89.93.E5.BC.80.E6.89.80.E5.9C.A8.E6.96.87.E4.BB.B6.E5.A4.B9.E2.80.9D_.E9.94.99.E8.AF.AF_.28KDE.29)
-    *   [4.4 Firefox 自动创建 ~/Desktop，但我不需要](#Firefox_.E8.87.AA.E5.8A.A8.E5.88.9B.E5.BB.BA_.7E.2FDesktop.EF.BC.8C.E4.BD.86.E6.88.91.E4.B8.8D.E9.9C.80.E8.A6.81)
-    *   [4.5 禁止插件弹窗](#.E7.A6.81.E6.AD.A2.E6.8F.92.E4.BB.B6.E5.BC.B9.E7.AA.97)
-    *   [4.6 中键点击问题](#.E4.B8.AD.E9.94.AE.E7.82.B9.E5.87.BB.E9.97.AE.E9.A2.98)
-    *   [4.7 Backspace 键无法实现“后退”功能](#Backspace_.E9.94.AE.E6.97.A0.E6.B3.95.E5.AE.9E.E7.8E.B0.E2.80.9C.E5.90.8E.E9.80.80.E2.80.9D.E5.8A.9F.E8.83.BD)
-    *   [4.8 无法记录登录信息](#.E6.97.A0.E6.B3.95.E8.AE.B0.E5.BD.95.E7.99.BB.E5.BD.95.E4.BF.A1.E6.81.AF)
-    *   [4.9 使用深色GTK主题时文本区域故障](#.E4.BD.BF.E7.94.A8.E6.B7.B1.E8.89.B2GTK.E4.B8.BB.E9.A2.98.E6.97.B6.E6.96.87.E6.9C.AC.E5.8C.BA.E5.9F.9F.E6.95.85.E9.9A.9C)
-    *   [4.10 文件关联问题](#.E6.96.87.E4.BB.B6.E5.85.B3.E8.81.94.E9.97.AE.E9.A2.98)
-    *   [4.11 关闭Firefox时不询问是否保存标签](#.E5.85.B3.E9.97.ADFirefox.E6.97.B6.E4.B8.8D.E8.AF.A2.E9.97.AE.E6.98.AF.E5.90.A6.E4.BF.9D.E5.AD.98.E6.A0.87.E7.AD.BE)
-    *   [4.12 Firefox 界面字体很难看](#Firefox_.E7.95.8C.E9.9D.A2.E5.AD.97.E4.BD.93.E5.BE.88.E9.9A.BE.E7.9C.8B)
-    *   [4.13 Firefox 在某些网页中字体很难看](#Firefox_.E5.9C.A8.E6.9F.90.E4.BA.9B.E7.BD.91.E9.A1.B5.E4.B8.AD.E5.AD.97.E4.BD.93.E5.BE.88.E9.9A.BE.E7.9C.8B)
-    *   [4.14 解决Firefox中与Google字体有关的字体问题](#.E8.A7.A3.E5.86.B3Firefox.E4.B8.AD.E4.B8.8EGoogle.E5.AD.97.E4.BD.93.E6.9C.89.E5.85.B3.E7.9A.84.E5.AD.97.E4.BD.93.E9.97.AE.E9.A2.98)
-    *   [4.15 更新至Firefox 13后菜单无法弹出](#.E6.9B.B4.E6.96.B0.E8.87.B3Firefox_13.E5.90.8E.E8.8F.9C.E5.8D.95.E6.97.A0.E6.B3.95.E5.BC.B9.E5.87.BA)
-    *   [4.16 从Marketplace安装桌面应用失败且无错误提示](#.E4.BB.8EMarketplace.E5.AE.89.E8.A3.85.E6.A1.8C.E9.9D.A2.E5.BA.94.E7.94.A8.E5.A4.B1.E8.B4.A5.E4.B8.94.E6.97.A0.E9.94.99.E8.AF.AF.E6.8F.90.E7.A4.BA)
+    *   [4.2 程序关联](#.E7.A8.8B.E5.BA.8F.E5.85.B3.E8.81.94)
+    *   [4.3 Firefox 自动创建 ~/Desktop，但我不需要](#Firefox_.E8.87.AA.E5.8A.A8.E5.88.9B.E5.BB.BA_.7E.2FDesktop.EF.BC.8C.E4.BD.86.E6.88.91.E4.B8.8D.E9.9C.80.E8.A6.81)
+    *   [4.4 禁止插件弹窗](#.E7.A6.81.E6.AD.A2.E6.8F.92.E4.BB.B6.E5.BC.B9.E7.AA.97)
+    *   [4.5 中键点击问题](#.E4.B8.AD.E9.94.AE.E7.82.B9.E5.87.BB.E9.97.AE.E9.A2.98)
+    *   [4.6 Backspace 键无法实现“后退”功能](#Backspace_.E9.94.AE.E6.97.A0.E6.B3.95.E5.AE.9E.E7.8E.B0.E2.80.9C.E5.90.8E.E9.80.80.E2.80.9D.E5.8A.9F.E8.83.BD)
+    *   [4.7 无法记录登录信息](#.E6.97.A0.E6.B3.95.E8.AE.B0.E5.BD.95.E7.99.BB.E5.BD.95.E4.BF.A1.E6.81.AF)
+    *   [4.8 使用深色GTK主题时文本区域故障](#.E4.BD.BF.E7.94.A8.E6.B7.B1.E8.89.B2GTK.E4.B8.BB.E9.A2.98.E6.97.B6.E6.96.87.E6.9C.AC.E5.8C.BA.E5.9F.9F.E6.95.85.E9.9A.9C)
+    *   [4.9 文件关联问题](#.E6.96.87.E4.BB.B6.E5.85.B3.E8.81.94.E9.97.AE.E9.A2.98)
+    *   [4.10 关闭Firefox时不询问是否保存标签](#.E5.85.B3.E9.97.ADFirefox.E6.97.B6.E4.B8.8D.E8.AF.A2.E9.97.AE.E6.98.AF.E5.90.A6.E4.BF.9D.E5.AD.98.E6.A0.87.E7.AD.BE)
+    *   [4.11 Firefox 界面字体很难看](#Firefox_.E7.95.8C.E9.9D.A2.E5.AD.97.E4.BD.93.E5.BE.88.E9.9A.BE.E7.9C.8B)
+    *   [4.12 Firefox 在某些网页中字体很难看](#Firefox_.E5.9C.A8.E6.9F.90.E4.BA.9B.E7.BD.91.E9.A1.B5.E4.B8.AD.E5.AD.97.E4.BD.93.E5.BE.88.E9.9A.BE.E7.9C.8B)
+    *   [4.13 解决Firefox中与Google字体有关的字体问题](#.E8.A7.A3.E5.86.B3Firefox.E4.B8.AD.E4.B8.8EGoogle.E5.AD.97.E4.BD.93.E6.9C.89.E5.85.B3.E7.9A.84.E5.AD.97.E4.BD.93.E9.97.AE.E9.A2.98)
+    *   [4.14 更新至Firefox 13后菜单无法弹出](#.E6.9B.B4.E6.96.B0.E8.87.B3Firefox_13.E5.90.8E.E8.8F.9C.E5.8D.95.E6.97.A0.E6.B3.95.E5.BC.B9.E5.87.BA)
+    *   [4.15 从Marketplace安装桌面应用失败且无错误提示](#.E4.BB.8EMarketplace.E5.AE.89.E8.A3.85.E6.A1.8C.E9.9D.A2.E5.BA.94.E7.94.A8.E5.A4.B1.E8.B4.A5.E4.B8.94.E6.97.A0.E9.94.99.E8.AF.AF.E6.8F.90.E7.A4.BA)
 *   [5 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
@@ -143,31 +142,9 @@ about:plugins
 
 一般地，Firefox 会使用像 Gmail 或 Yahoo Mail 这样的 Web 程序打开 `mailto` 链接。要使 Firefox 用你的email 客户端打开 `mailto` 链接，找到 *选项 > 应用程序* 并将 `mailto` 对应的*动作*修改为你的 email 客户端的准确路径，如 `/usr/bin/kmail`。
 
-### “打开所在文件夹” 错误 (GNOME3)
+### 程序关联
 
-如果你希望 Firefox 用 [Nautilus](/index.php?title=Nautilus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Nautilus (简体中文) (page does not exist)") 来 “打开所在文件夹”，而 [Thunar](/index.php/Thunar_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Thunar (简体中文)") 或 [Wine](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)") 却运行了，请检查 `~/.local/share/applications/defaults.list` 文件中的这两行:
-
-```
-inode/directory=*someprogram*.desktop
-x-directory/normal=*someprogram*.desktop
-
-```
-
-如果 *someprogram* 不是 *nautilus*, 就将其修改为 *nautilus*。
-
-### “打开所在文件夹” 错误 (KDE)
-
-KDE中使用“下载”窗口中的“打开所在文件夹”时，如果 Firefox 没使用设置的文件管理器，先在如下位置进行设置：
-
-	**System Settings -> Default Applications -> File Manager**
-
-如果 Firefox 仍不能使用指定的文件管理器打开文件夹，在`$HOME/.local/share/applications/defaults.list` 中添加：
-
-```
-x-directory/normal=kde4-dolphin.desktop;kde4-kfmclient_dir.desktop;
-inode/directory=kde4-dolphin.desktop;kde4-kfmclient_dir.desktop;kde4-gwenview.desktop;kde4-filelight.desktop;kde4-cervisia.desktop;
-
-```
+请参考 [Default applications](/index.php/Default_applications "Default applications").
 
 ### Firefox 自动创建 ~/Desktop，但我不需要
 

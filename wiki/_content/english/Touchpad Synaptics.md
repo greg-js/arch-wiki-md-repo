@@ -233,7 +233,10 @@ You can now use `xinput` to find your touchpad's capabilities:
 ```
 $ xinput list-props "SynPS/2 Synaptics TouchPad" | grep Capabilities
 
-      Synaptics Capabilities (309):  1, 0, 1, 0, 0, 1, 1
+```
+
+```
+  Synaptics Capabilities (309):  1, 0, 1, 0, 0, 1, 1
 
 ```
 
@@ -246,6 +249,28 @@ From left to right, this shows:
 *   (0) device does not support three-finger detection
 *   (1) device can configure vertical resolution
 *   (1) device can configure horizontal resolution
+
+To get/set mouse button events triggered by a tap action:
+
+```
+$ xinput list-props "SynPS/2 Synaptics TouchPad" | grep "Synaptics Tap Action"
+
+```
+
+```
+  Synaptics Tap Action (287):	0, 0, 0, 0, 1, 3, 2
+
+```
+
+From left to right, this shows:
+
+*   right top corner tap. (0: disabled)
+*   right bottom corner tap.
+*   left top corner tap.
+*   left bottom corner tap.
+*   non-corner one-finger tap. (1: reports left button)
+*   non-corner two-finger tap. (3: reports right button)
+*   non-corner three-finger tap. (2: reports right button)
 
 Use `xinput list-props "SynPS/2 Synaptics TouchPad"` to list all device properties.
 

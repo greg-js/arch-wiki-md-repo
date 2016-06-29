@@ -70,7 +70,7 @@ The bytes-per-inode ratio can also be set directly via the `-i` option: *e.g.* u
 
 **Tip:** Conversely, if you are setting up a partition dedicated to host millions of small files like emails or newsgroup items, you can use smaller *usage-type* values such as `news` (one inode for every 4096 bytes) or `small` (same plus smaller inode and block sizes).
 
-**Warning:** If you make a heavy use of symbolic or hard links, *e.g.* you use a backup scheme leveraging [rsync](/index.php/Rsync "Rsync") `--link-dest` feature ([rsnapshot](/index.php/Rsnapshot "Rsnapshot"), [BackupPC](/index.php/BackupPC "BackupPC"), [backintime](https://aur.archlinux.org/packages/backintime/)...), make sure to keep the inode count high enough with a low bytes-per-inode ratio, because while not taking more space every new hardlink consumes one new inode and therefore the filesystem may run out of them quickly.
+**Warning:** If you make a heavy use of symbolic links, make sure to keep the inode count high enough with a low bytes-per-inode ratio, because while not taking more space every new symbolic link consumes one new inode and therefore the filesystem may run out of them quickly.
 
 ### Reserved blocks
 
