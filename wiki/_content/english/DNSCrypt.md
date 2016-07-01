@@ -252,10 +252,10 @@ If successful, your two selected dns providers should be the only ones found whe
 
 ### Run as unprivileged user
 
-Since DNSCrypt is a long-running network service, it is recommended to run it as its own, unprivileged user. [Create the user](/index.php/Users_and_groups#User_management "Users and groups"):
+Since DNSCrypt is a long-running network service, it is recommended to run it as its own, unprivileged user. [Create the user](/index.php/Users_and_groups#User_management "Users and groups") (assuming an empty skeleton directory, such as provided by [ssh](https://www.archlinux.org/packages/?name=ssh)):
 
 ```
-# useradd -r -d /var/dnscrypt -m -s /bin/nologin dnscrypt
+# useradd -r -d /var/dnscrypt -m -k /var/empty -s /bin/nologin dnscrypt
 
 ```
 

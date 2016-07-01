@@ -139,7 +139,7 @@ The base SDK can be created from the base runtime with added applications needed
 
 ```
 $ cp -r myruntime mysdk
-$ fakechroot fakeroot pacman -S --root mysdk/files --dbpath mysdk/files/var/lib/pacman --config mysdk/files/etc/pacman.conf base-devel fakeroot fakechroot
+$ fakechroot fakeroot pacman -S --root mysdk/files --dbpath mysdk/files/var/lib/pacman --config mysdk/files/etc/pacman.conf base-devel fakeroot fakechroot --needed
 
 ```
 

@@ -9,6 +9,18 @@ This is a listing of Linux distributions which are derived from Arch Linux eithe
     *   [1.2 Others](#Others)
 *   [2 Arch-influenced](#Arch-influenced)
 *   [3 Inactive](#Inactive)
+    *   [3.1 2015](#2015)
+    *   [3.2 2014](#2014)
+    *   [3.3 2013](#2013)
+    *   [3.4 2012](#2012)
+    *   [3.5 2011](#2011)
+    *   [3.6 2010](#2010)
+    *   [3.7 2009](#2009)
+    *   [3.8 2008](#2008)
+    *   [3.9 2007](#2007)
+    *   [3.10 2006](#2006)
+    *   [3.11 2005](#2005)
+    *   [3.12 2004](#2004)
 
 ## Active
 
@@ -18,80 +30,112 @@ Actively developed Arch derived Linux distributions.
 
 The following distributions include a pre-installed [Desktop environment](/index.php/Desktop_environment "Desktop environment").
 
-*   [Antergos](http://antergos.com/)
-*   [alphaOS](http://alphaos.tuxfamily.org/)
-*   [Apricity OS](http://apricityos.com/)
-*   [ArchBang](http://www.archbang.org/)
-*   [ArchEX](http://archex.exton.net/)
-*   [BBQLinux](http://www.bbqlinux.org/)
+*   [Antergos](https://sourceforge.net/projects/antergos/)
+*   [alphaOS](https://sourceforge.net/projects/alphaos/)
+*   [Apricity OS](https://sourceforge.net/projects/apricityos/)
+*   [ArchBang](https://sourceforge.net/projects/archbang/)
+*   [ArchEX](https://sourceforge.net/projects/archex/)
+*   [BBQLinux](https://sourceforge.net/projects/bbqlinux/)
 *   [BlackArch Linux](http://blackarch.org/)
-*   [Bluestar Linux](http://bluestarlinux.sourceforge.net/)
+*   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/)
 *   [DidJiX](http://easy.open.and.free.fr/didjix/)
-*   [Papyros](http://papyros.io/)
-*   [PoliArch](http://www.poliarch.org/)
-*   [Ninja OS](http://ninjaos.org)
+*   [PacBang](https://sourceforge.net/projects/architect-linux/)
+*   [PoliArch](https://sourceforge.net/projects/poliarch/)
+*   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 
 ### Others
 
-*   [Arch Hurd](http://www.archhurd.org/)
-*   [Architect Linux](https://sourceforge.net/projects/architect-linux/)
 *   [Arch Linux ARM](http://archlinuxarm.org/)
-*   [ArchStrike](https://archstrike.org)
-*   [Bridge Linux](http://bridgelinux.org/)
-*   [PacBSD](https://www.pacbsd.org/)
 *   [Parabola GNU/Linux-libre](https://www.parabola.nu/)
 *   [UBOS](http://ubos.net/)
 
 ## Arch-influenced
 
-Linux distributions that were influenced by Arch Linux.
+Linux or other distributions that were influenced by Arch Linux.
 
 *   [Alpine Linux](http://alpinelinux.org/)
 *   [Arquetype CRT](https://arquetype.org/)
-*   [Chakra](http://chakraos.org/)
-*   [Enlisy](http://www.enlisy.net/en/)
+*   [Chakra](https://sourceforge.net/projects/chakra/)
 *   [Frugalware](http://frugalware.org/)
-*   [Kademar](http://www.kademar.org/)
-*   [KaOS](http://kaosx.us/)
+*   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [LinHES](http://linhes.org/)
-*   [Manjaro Linux](https://manjaro.github.io/)
-*   [MSYS2](http://msys2.github.io/)
-*   [Netrunner Rolling](http://www.netrunner.com/)
+*   [PacBSD](https://www.pacbsd.org/)
+*   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
+*   [MSYS2](https://sourceforge.net/projects/msys2/)
 
 ## Inactive
 
-There have been many Arch based distributions created over the years. As Arch Linux has grown, so has the number of projects derived from it. These distributions are no longer being actively developed, but show some of the history surrounding Arch Linux and the greater FOSS community.
+These distributions are no longer developed, but show some of the history surrounding Arch Linux and the greater FOSS community. Sections show the year of the latest release.
 
-| Name | Last Release | Default DE/WM | Target Audience |
-| [Tux Hat Linux](https://sourceforge.net/projects/tuxhatlinux/) | 2015 | [Fluxbox](/index.php/Fluxbox "Fluxbox") |
-| [Arch Linux MIPS](https://github.com/Arch-Linux-MIPS) | 2014 | none | MIPS CPU support |
-| [Mesk Linux](http://web.archive.org/web/20141217163857/http://mesklinux.org/) | 2014 | OpenRC with Arabic localization |
-| [CDN Linux](http://forum.freesco.pl/viewtopic.php?f=34&t=18935) | 2013 | For servers and routers, polish support |
-| [Arch Linux PPC](https://web.archive.org/web/20120614085009/http://archlinuxppc.org/) | 2012 | none | PowerPC CPU support |
-| [ArchServer](http://web.archive.org/web/20131124072119/http://www.archserver.org/) | 2012 | none | server |
-| [ConnochaetOS](http://www.connochaetos.org/) | 2012 | libre only with old hardware support |
-| [Kahel OS](http://www.kahelos.org/) | 2012 | [GNOME](/index.php/GNOME "GNOME") | desktop with Filipino language support |
-| [LDR](https://web.archive.org/web/20120314025441/http://www.tommed.co.uk/ldr/) | 2012 | Desktop |
-| [Nosonja](https://web.archive.org/web/20130727233942/http://nosonja.org/) | 2012 | [Xfce](/index.php/Xfce "Xfce") | Desktop for beginners |
-| [Archlive](http://code.google.com/p/archlive/) | 2011 | live cd with Chinese language support |
-| [CTKArch](http://ctkarch.org/) | 2011 | [Openbox](/index.php/Openbox "Openbox") | live cd, french and english |
-| [Elegance](http://web.archive.org/web/20140108111301/http://k2z.com/elegance-a-arch-linux-spin-off-2/) | 2011 | [Openbox](/index.php/Openbox "Openbox") | Desktop |
-| [LinuX-gamers](http://live.linux-gamers.net/) | 2011 | live system, gaming |
-| [ArchPwn](http://www.archpwn.org/) | 2010 | live system, pentesting |
-| [Chaox](https://web.archive.org/web/20110202101442/http://blag.chaox.net/) | 2010 | live cd, pentesting, forensics |
-| [uArch](https://web.archive.org/web/20100125175854/http://code.google.com/p/uarch/) | 2010 | router, cellphone |
-| [UKnow4Kids](https://web.archive.org/web/20140329212256/http://www.uknow4kids.org/) | 2010 | [Openbox](/index.php/Openbox "Openbox") | live cd, children |
-| [Uzume Linux](https://bbs.archlinux.org/viewtopic.php?pid=717249) | 2010 | Desktop, beginner |
-| [archlive-i586](http://code.google.com/p/archlinux-i586/) | 2009 | counterpart distribution |
-| [Firefly Linux](http://distrowatch.com/table.php?distribution=firefly) | 2009 | [LXDE](/index.php/LXDE "LXDE") | Desktop, netbooks |
-| [Shift Linux](http://web.archive.org/web/20100210093146/http://www.shiftlinux.net/) | 2009 | Desktop |
-| [Maryan Linux 2](https://web.archive.org/web/20091227101903/http://en.maryanlinux.com/) | 2009 | [e17](/index.php/E17 "E17") | Desktop |
-| [Arch Linux Modified](http://web.archive.org/web/20081224231003/http://rusher.webhop.org/wordpress/?page_id=143) | 2008 | Desktop, beginner |
-| [Archie](https://web.archive.org/web/20090726221110/http://archie.dotsrc.org/) | 2008 | live system |
-| [FaunOS](http://distrowatch.com/table.php?distribution=faunos) | 2008 | live system |
-| [March Linux](http://marchlinux.wikidot.com/) | 2007 | [Fluxbox](/index.php/Fluxbox "Fluxbox") | Desktop |
-| [Aegis Project](https://web.archive.org/web/20110728041813/http://arch-egis.berlios.de/news.php) | 2006 | GIS toolkit |
-| [Lowarch](https://web.archive.org/web/20100213030324/http://sourceforge.net/projects/freshmeat_lowarch/) | 2006 | Desktop |
-| [Minimax](https://web.archive.org/web/20070528084125/http://www.kotek.net/minimax/) | 2006 | live system |
-| [Underground Desktop](http://distrowatch.com/table.php?distribution=underground) | 2005 | [KDE](/index.php/KDE "KDE") | Desktop |
-| [Arch Linux Embedded Project](https://web.archive.org/web/20090327055005/http://www.datavibe.net/~essiene/ale/) | 2004 |
+### 2015
+
+*   [ArchAssault](https://sourceforge.net/projects/archassault/)
+*   [Bridge Linux](https://sourceforge.net/projects/bridgelinux/)
+*   [Kademar](http://www.kademar.org/)
+*   [Tux Hat Linux](https://sourceforge.net/projects/tuxhatlinux/)
+
+### 2014
+
+*   [Arch Linux MIPS](https://github.com/Arch-Linux-MIPS)
+*   [Mesk Linux](http://web.archive.org/web/20141217163857/http://mesklinux.org/)
+
+### 2013
+
+*   [CDN Linux](http://forum.freesco.pl/viewtopic.php?f=34&t=18935)
+
+### 2012
+
+*   [Arch Linux PPC](https://web.archive.org/web/20120614085009/http://archlinuxppc.org/)
+*   [ArchServer](http://web.archive.org/web/20131124072119/http://www.archserver.org/)
+*   [ConnochaetOS](http://www.connochaetos.org/)
+*   [Kahel OS](http://www.kahelos.org/)
+*   [LDR](https://web.archive.org/web/20120314025441/http://www.tommed.co.uk/ldr/)
+*   [Nosonja](https://web.archive.org/web/20130727233942/http://nosonja.org/)
+
+### 2011
+
+*   [Arch Hurd](http://www.archhurd.org/)
+*   [Archlive](http://code.google.com/p/archlive/)
+*   [CTKArch](http://ctkarch.org/)
+*   [Elegance](http://web.archive.org/web/20140108111301/http://k2z.com/elegance-a-arch-linux-spin-off-2/)
+*   [LinuX-gamers](http://live.linux-gamers.net/)
+
+### 2010
+
+*   [ArchPwn](http://www.archpwn.org/)
+*   [Chaox](https://web.archive.org/web/20110202101442/http://blag.chaox.net/)
+*   [uArch](https://web.archive.org/web/20100125175854/http://code.google.com/p/uarch/)
+*   [UKnow4Kids](https://web.archive.org/web/20140329212256/http://www.uknow4kids.org/)
+*   [Uzume Linux](https://bbs.archlinux.org/viewtopic.php?pid=717249)
+
+### 2009
+
+*   [archlive-i586](http://code.google.com/p/archlinux-i586/)
+*   [Enlisy](http://web.archive.org/web/20150819194741/http://www.enlisy.net/en/)
+*   [Firefly Linux](http://distrowatch.com/table.php?distribution=firefly)
+*   [Maryan Linux 2](https://web.archive.org/web/20091227101903/http://en.maryanlinux.com/)
+*   [Shift Linux](http://web.archive.org/web/20100210093146/http://www.shiftlinux.net/)
+
+### 2008
+
+*   [Arch Linux Modified](http://web.archive.org/web/20081224231003/http://rusher.webhop.org/wordpress/?page_id=143)
+*   [Archie](https://web.archive.org/web/20090726221110/http://archie.dotsrc.org/)
+*   [FaunOS](http://distrowatch.com/table.php?distribution=faunos)
+
+### 2007
+
+*   [March Linux](http://marchlinux.wikidot.com/)
+
+### 2006
+
+*   [Aegis Project](https://web.archive.org/web/20110728041813/http://arch-egis.berlios.de/news.php)
+*   [Lowarch](https://web.archive.org/web/20100213030324/http://sourceforge.net/projects/freshmeat_lowarch/)
+*   [Minimax](https://web.archive.org/web/20070528084125/http://www.kotek.net/minimax/)
+
+### 2005
+
+*   [Underground Desktop](http://distrowatch.com/table.php?distribution=underground)
+
+### 2004
+
+*   [Arch Linux Embedded Project](https://web.archive.org/web/20090327055005/http://www.datavibe.net/~essiene/ale/)

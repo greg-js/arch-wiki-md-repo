@@ -61,17 +61,18 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.2.11 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
         *   [3.2.12 mesa-git](#mesa-git)
         *   [3.2.13 noware](#noware)
-        *   [3.2.14 oracle](#oracle)
-        *   [3.2.15 pantheon](#pantheon)
-        *   [3.2.16 paulburton-fitbitd](#paulburton-fitbitd)
-        *   [3.2.17 pietma](#pietma)
-        *   [3.2.18 pfkernel](#pfkernel)
-        *   [3.2.19 suckless](#suckless)
-        *   [3.2.20 trinity](#trinity)
-        *   [3.2.21 Unity-for-Arch](#Unity-for-Arch)
-        *   [3.2.22 Unity-for-Arch-Extra](#Unity-for-Arch-Extra)
-        *   [3.2.23 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.24 QOwnNotes](#QOwnNotes)
+        *   [3.2.14 openrc-eudev](#openrc-eudev)
+        *   [3.2.15 oracle](#oracle)
+        *   [3.2.16 pantheon](#pantheon)
+        *   [3.2.17 paulburton-fitbitd](#paulburton-fitbitd)
+        *   [3.2.18 pietma](#pietma)
+        *   [3.2.19 pfkernel](#pfkernel)
+        *   [3.2.20 suckless](#suckless)
+        *   [3.2.21 trinity](#trinity)
+        *   [3.2.22 Unity-for-Arch](#Unity-for-Arch)
+        *   [3.2.23 Unity-for-Arch-Extra](#Unity-for-Arch-Extra)
+        *   [3.2.24 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.25 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 eee-ck](#eee-ck)
@@ -667,6 +668,20 @@ Server = http://pkgbuild.com/~lcarlier/$repo/$arch
 ```
 [noware]
 Server = http://direct.$repo.systems.:2/repository/arch/$arch
+
+```
+
+#### openrc-eudev
+
+*   **Maintainer:** [nous](/index.php/User:Nous "User:Nous")
+*   **Description:** OpenRC init system, initscripts, eudev and nosystemd packages from the AUR.
+*   **Upstream page:** [https://sourceforge.net/projects/archopenrc](https://sourceforge.net/projects/archopenrc)
+*   **Upstream sources:** [https://github.com/cromerc/arch-openrc](https://github.com/cromerc/arch-openrc), [https://github.com/cromerc/arch-nosystemd](https://github.com/cromerc/arch-nosystemd) and the AUR
+
+```
+[openrc-eudev]
+Server=http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
+Server=ftp://ftp.heanet.ie/mirrors/sourceforge/a/ar/archopenrc/$repo/$arch
 
 ```
 

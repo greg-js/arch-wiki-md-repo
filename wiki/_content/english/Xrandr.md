@@ -14,6 +14,7 @@
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Adding undetected resolutions](#Adding_undetected_resolutions)
         *   [4.1.1 EDID checksum is invalid](#EDID_checksum_is_invalid)
+        *   [4.1.2 Screen resolution reverts back after a blink](#Screen_resolution_reverts_back_after_a_blink)
     *   [4.2 Permanently adding undetected resolutions](#Permanently_adding_undetected_resolutions)
     *   [4.3 Resolution lower than expected](#Resolution_lower_than_expected)
     *   [4.4 Full RGB in HDMI](#Full_RGB_in_HDMI)
@@ -338,6 +339,14 @@ Also, change `VGA1` to correct output name.
 If the previous method results in an `*ERROR* EDID checksum is invalid` error during boot, see [KMS#Forcing modes and EDID](/index.php/KMS#Forcing_modes_and_EDID "KMS") and [[1]](http://askubuntu.com/questions/201081/how-can-i-make-linux-behave-better-when-edid-is-unavailable).
 
 Or `xrandr --addmode` might give you the error `X Error of failed request: BadMatch`. This could also indicate an invalid EDID checksum. To verify that this is the case, run X in verbose mode (e.g. `startx -- -logverbose 6`) and check your Xorg log for messages about a bad EDID. NVIDIA users should read [NVIDIA/Troubleshooting#Override EDID](/index.php/NVIDIA/Troubleshooting#Override_EDID "NVIDIA/Troubleshooting").
+
+#### Screen resolution reverts back after a blink
+
+If you use [GNOME](/index.php/GNOME "GNOME") and your monitor doesn't have an EDID, above [#Adding undetected resolutions](#Adding_undetected_resolutions) might not work, with your screen just blinking once, after `xrandr --output`.
+
+Poke around with `~/.config/monitors.xml`, or delete the file completely, and then reboot.
+
+It is better explained in [this](http://unix.stackexchange.com/questions/184941/gnome-prevents-high-resolution-vga-without-edid-info-over-vga) article.
 
 ### Permanently adding undetected resolutions
 

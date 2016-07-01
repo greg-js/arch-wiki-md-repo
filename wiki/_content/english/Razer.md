@@ -11,8 +11,9 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
         *   [2.1.1 Killer Wireless Network Adapter](#Killer_Wireless_Network_Adapter)
         *   [2.1.2 Touchpad](#Touchpad)
         *   [2.1.3 Graphics Drivers](#Graphics_Drivers)
-        *   [2.1.4 Tweaking](#Tweaking)
-        *   [2.1.5 Unresolved Issues](#Unresolved_Issues)
+        *   [2.1.4 Suspend Loop](#Suspend_Loop)
+        *   [2.1.5 Tweaking](#Tweaking)
+        *   [2.1.6 Unresolved Issues](#Unresolved_Issues)
     *   [2.2 2014 version](#2014_version)
         *   [2.2.1 Problems](#Problems)
         *   [2.2.2 Possible trackpad solution](#Possible_trackpad_solution)
@@ -130,7 +131,7 @@ Alternatively, if you prefer using the [Touchpad Synaptics](/index.php/Touchpad_
 
 The graphics card works OK with the standard intel drivers which you can [install](/index.php/Install "Install") with the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. See [Intel graphics](/index.php/Intel_graphics "Intel graphics") for more information on installation and configuration.
 
-Issues with screen flickering seem to be resolved by changing *AccelMethod* to *sna* as described in the [SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") section.
+Issues with screen flickering seem to be resolved by changing *AccelMethod* to *uxa* as described in the [SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") section.
 
 ```
 # cat >/etc/X11/xorg.conf.d/20-intel.conf 
@@ -143,6 +144,17 @@ EndSection
 
 ```
 
+#### Suspend Loop
+
+Suspending (Close laptop lid) does not seem to work with a basic installation. You can suspend but once the system resumes it suffers from random suspends or the screen going blank for no apparent reason.
+
+A temporary fix is to disable the automatic systemd suspend action by chaning the *HandleLidSwitch* value in the */etc/systemd/logind.conf* file:
+
+```
+HandleLidSwitch=ignore
+
+```
+
 #### Tweaking
 
 If you are using [GNOME](/index.php/GNOME "GNOME"), the *gnome-tweak-tool* can be used to adjust the window and font scaling. A font scale of *1.25* puts the font sizes closer to how they are displayed by default in Windows 10.
@@ -152,7 +164,6 @@ If you are using an external monitor that is not [HiDPI](/index.php/HiDPI "HiDPI
 #### Unresolved Issues
 
 *   the webcam does not seem to work with a basic installation. External webcams work fine. It seems to fail when the resolution is anything but 640x480\. [guvcview](https://www.archlinux.org/packages/?name=guvcview) works because it defaults to the resolution. [cheese](https://www.archlinux.org/packages/?name=cheese) and [Google Hangouts](https://hangouts.google.com) do not because they default to the max resolution.
-*   Suspending does not seem to work with a basic installation. You can suspend but once the system resumes it suffers from random suspends or the screen going blank for no apparent reason.
 
 ### 2014 version
 

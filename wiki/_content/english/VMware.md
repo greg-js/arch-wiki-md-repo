@@ -505,7 +505,7 @@ As of VMware Workstation Pro 12.1, the module source needs to be modified to be 
 # mv vmmon.tar vmmon.old.tar
 # sed -i -e 's/get_user_pages/get_user_pages_remote/g' vmmon-only/linux/hostif.c
 # tar cf vmmon.tar vmmon-only
-# rm -rf vmmon-only
+# rm -r vmmon-only
 
 ```
 
@@ -514,7 +514,7 @@ As of VMware Workstation Pro 12.1, the module source needs to be modified to be 
 # mv vmnet.tar vmnet.old.tar
 # sed -i -e 's/get_user_pages/get_user_pages_remote/g' vmnet-only/userif.c
 # tar cf vmnet.tar vmnet-only
-# rm -rf vmnet-only
+# rm -r vmnet-only
 
 ```
 

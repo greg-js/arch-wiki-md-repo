@@ -43,9 +43,9 @@ Ensure that the configuration directory is writeable with the user you configure
 
  `# chown -R bitlbee:bitlbee /var/lib/bitlbee` 
 
-Then [start](/index.php/Start "Start") the `bitlbee` daemon. You can also [enable](/index.php/Enable "Enable") the `bitlbee` daemon to run on startup.
+Then [start](/index.php/Start "Start") the `bitlbee` daemon. You can also [enable](/index.php/Enable "Enable") the `bitlbee` daemon to start on boot.
 
-(Note: just starting the server does not log you into any of your chat accounts)
+Note that just starting the server does not log you into any of your chat accounts.
 
 ## Basic Usage (Jabber/XMPP)
 

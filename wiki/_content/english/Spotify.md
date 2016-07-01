@@ -35,6 +35,7 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [4.6 Pulseaudio](#Pulseaudio)
     *   [4.7 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
     *   [4.8 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
+    *   [4.9 Segmentation fault when playing a local file](#Segmentation_fault_when_playing_a_local_file)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -503,6 +504,10 @@ So your full launch path should look something like this:
 /usr/share/spotify/spotify-client/spotify -stylesheet=/home/user/spotify-override.css
 
 ```
+
+### Segmentation fault when playing a local file
+
+The cause of this problem is a missing dependency. For Pulseaudio users, installing [ffmpeg-compat-54](https://aur.archlinux.org/packages/ffmpeg-compat-54/) should fix it.
 
 ## See also
 

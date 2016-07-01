@@ -29,6 +29,8 @@ acpi_osi= acpi_backlight=native
 
 ## Module Configuration
 
+Warning: Before trying out below fixes run pacman -Syu
+
 To fix noise headphone noise create `/etc/modprobe.d/alsa-base.conf` containing:
 
 ```

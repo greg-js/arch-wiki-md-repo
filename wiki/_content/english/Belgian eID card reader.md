@@ -22,11 +22,11 @@ If you have installed eid-viewer, you can open it and (with card reader and your
 
 ### Firefox
 
-There is no plugin for Chrome, but there is one for Firefox. Add the [Firefox plugin](https://addons.mozilla.org/nl/firefox/addon/belgium-eid/%7C) to your browser. You should now be able to use your eID reader in Firefox. Try it out using the [test page](http://test.eid.belgium.be/%7C)
+There is no plugin for Chrome, but there is one for Firefox. Add the [Firefox plugin](https://addons.mozilla.org/nl/firefox/addon/belgium-eid) to your browser. You should now be able to use your eID reader in Firefox. Try it out using the [test page](http://test.eid.belgium.be)
 
 ## Troubleshooting
 
-You may find hints for troubleshooting in the [official documentation (Dutch)](http://faq.eid.belgium.be/nl/index.html%7C) but note that Arch Linux is not officially supported.
+You may find hints for troubleshooting in the [official documentation (Dutch)](http://faq.eid.belgium.be/nl/index.html) but note that Arch Linux is not officially supported.
 
 ### Card reader stopped working during session
 

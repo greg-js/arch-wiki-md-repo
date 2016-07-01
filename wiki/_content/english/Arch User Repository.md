@@ -183,9 +183,14 @@ Host aur.archlinux.org
   User aur
 ```
 
-You should [create a new key pair](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") rather than use an existing one, so that you can selectively revoke the keys should something happen.
+You should [create a new key pair](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") rather than use an existing one, so that you can selectively revoke the keys should something happen:
 
-**Note:** You can add multiple public keys to your profile by seperating them with a newline in the input field.
+```
+$ ssh-keygen -f ~/.ssh/aur
+
+```
+
+**Tip:** You can add multiple public keys to your profile by seperating them with a newline in the input field.
 
 #### Creating a new package
 

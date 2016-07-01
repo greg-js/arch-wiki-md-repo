@@ -299,9 +299,9 @@ This will set the brightness level to 200%. It will cause higher power usage and
 
 ### Backlight PWM modulation frequency (Intel i915 only)
 
-Laptops with LED backlight are known to have screen flicker sometimes. The reason for this, is that it is hard enough to dim LEDs by limiting direct current flowing through. It is easier to control brightness by switching LEDs on and off fast enough.
+Laptops with LED backlight are known to have screen flicker sometimes. This is because the most efficient way of controlling LED backlight brightness is by turning the LED's on and off very quickly varying the amount of time they are on.
 
-However, frequency of the switching (so-called PWM modulation frequency) is not high enough actually, and some people may notice flicker either explicitly or by feeling headache and eyestrain.
+However, the frequency of the switching (so-called PWM modulation frequency) may not be high enough for the eye to perceive it as a single brightness and instead see flickering. This causes some people to have symptoms such as headaches and eyestrain.
 
 If you have an Intel i915 GPU, then it may be possible to adjust PWM modulation frequency to eliminate flicker.
 

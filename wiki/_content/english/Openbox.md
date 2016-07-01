@@ -38,7 +38,6 @@ A comprehensive list of features are documented at the [official Openbox website
     *   [5.3 Generators](#Generators)
         *   [5.3.1 obmenu-generator](#obmenu-generator)
         *   [5.3.2 openbox-menu](#openbox-menu)
-        *   [5.3.3 obmenugen](#obmenugen)
     *   [5.4 Menu icons](#Menu_icons)
     *   [5.5 Desktop menu as a panel menu](#Desktop_menu_as_a_panel_menu)
 *   [6 Desktop theming](#Desktop_theming)
@@ -585,11 +584,7 @@ To automatically iconify entries, the `-i` option would be added:
 
 **Tip:** If this menu produces an error, it may be solved by enabling icons in `~/.config/openbox/rc.xml`.
 
-[openbox-menu](https://aur.archlinux.org/packages/openbox-menu/) uses the [LXDE](/index.php/LXDE "LXDE") [menu-cache](http://sourceforge.net/projects/lxde/files/menu-cache/) to create dynamic menus. The [official homepage](http://mimasgpc.free.fr/openbox-menu_en.html) provides further information and screenshots.
-
-#### obmenugen
-
-[Obmenugen](https://aur.archlinux.org/packages/Obmenugen/) can be used to a generate static or dynamic application menu based on `.desktop` files. The [official homepage](http://obmenugen.sourceforge.net/) provides further information.
+[openbox-menu](https://aur.archlinux.org/packages/openbox-menu/) uses the [LXDE](/index.php/LXDE "LXDE") [menu-cache](http://sourceforge.net/projects/lxde/files/menu-cache/) to create dynamic menus. The [official homepage](http://fabrice.thiroux.free.fr/openbox-menu_en.html) provides further information and screenshots.
 
 ### Menu icons
 
@@ -676,7 +671,7 @@ Both Openbox-specific and Openbox-compatible themes installed from the [official
 
 ### Installation: other sources
 
-[box-look.org](http://www.box-look.org/index.php?xcontentmode=7402) is an excellent and well-established source of themes. [deviantART.com](http://www.deviantart.com/) is another excellent resource. Many more can be found through the utilisation of a search engine.
+[box-look.org](https://www.box-look.org/browse/ord/latest/) is an excellent and well-established source of themes. [deviantART.com](http://www.deviantart.com/) is another excellent resource. Many more can be found through the utilisation of a search engine.
 
 ### Troubleshooting
 

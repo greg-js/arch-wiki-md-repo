@@ -393,6 +393,10 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://www.stellarium.org/](http://www.stellarium.org/) || [stellarium](https://www.archlinux.org/packages/?name=stellarium)
 
+*   **Where Is M13** — Application to visualize the locations and physical properties of deep sky objects.
+
+	[http://www.thinkastronomy.com/M13/](http://www.thinkastronomy.com/M13/) || [where-is-m13](https://aur.archlinux.org/packages/where-is-m13/)
+
 *   **[XEphem](https://en.wikipedia.org/wiki/XEphem "wikipedia:XEphem")** — Motif-based ephemeris and planetarium program.
 
 	[http://www.clearskyinstitute.com/xephem/xephem.html](http://www.clearskyinstitute.com/xephem/xephem.html) || [xephem](https://aur.archlinux.org/packages/xephem/)

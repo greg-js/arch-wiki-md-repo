@@ -4,9 +4,9 @@
 
 There are two packages available on the [AUR](/index.php/AUR "AUR"), velox and velox-git. [velox](https://aur.archlinux.org/packages/velox/) is supposed to be the more stable package and [velox-git](https://aur.archlinux.org/packages/velox-git/) the upstream version. Even though *velox* is supposed to be the more stable branch, that's not always the case since that branch rarely gets updated and a lot of bug fixes have been pushed since.
 
-The default terminal emulator for velox is [st-wl-git](https://aur.archlinux.org/packages/st-wl-git/) as it has great wayland support. Other terminals such as [urxvt](/index.php/Urxvt "Urxvt") also work, but only under xwayland.
+The default terminal emulator for velox is [st-wayland-git](https://aur.archlinux.org/packages/st-wayland-git/) as it has great wayland support. Other terminals such as [urxvt](/index.php/Urxvt "Urxvt") also work, but only under xwayland.
 
-You probably also want to install [dmenu-wl-git](https://aur.archlinux.org/packages/dmenu-wl-git/) from the AUR to be able to more easily launch applications.
+You probably also want to install [dmenu-wayland-git](https://aur.archlinux.org/packages/dmenu-wayland-git/) from the AUR to be able to more easily launch applications.
 
 ## Configuration
 

@@ -373,7 +373,6 @@ Afterwards continue with the installation procedure up to the `mkinitcpio` step.
 Add the `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
  `/etc/mkinitcpio.conf`  `HOOKS="... **encrypt** **lvm2** ... filesystems ..."` 
-**Note:** The order of both hooks no longer matters with the current implementation of `lvm2`.
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -799,7 +798,7 @@ GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*<device-UUID>*:lvm root=/dev/mapper/My
 GRUB_ENABLE_CRYPTODISK=y
 ```
 
-See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details. The `*<device-UUID>*` refers to the UUID of `/dev/sdaX`, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details. The `*<device-UUID>*` refers to the UUID of `/dev/sdaZ` (the partition which holds the lvm containing the root filesystem), see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file and [install](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP:
 

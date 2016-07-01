@@ -181,8 +181,10 @@ Depending on setup, there are four ways to handle these situations:
 
 *   For errors of the unit, a simple way is to [edit](/index.php/Edit "Edit") it and add a `Restart=on-failure` to the `[Service]` section. Though, this alone will not delete any obsoleted routes, so it may happen that the restarted tunnel is not routed properly.
 *   The package contains the `/usr/lib/openvpn/plugins/openvpn-plugin-down-root.so` (see README in its directory), which can be used to let *openvpn* fork a process with root privileges with the only task to execute a custom script when receiving a down signal from the main process, which is handling the tunnel with dropped privileges.[[1]](https://community.openvpn.net/openvpn/browser/plugin/down-root/README?rev=d02a86d37bed69ee3fb63d08913623a86c88da15)
-*   The [OpenVPN howto](https://openvpn.net/index.php/open-source/documentation/howto.html#security) explains another way how to create an unprivileged user mode and wrapper script to have the routes restored automatically.
-*   Further, it is possible to let OpenVPN start as a non-privileged user in the first place, without ever running as root, see [this OpenVPN wiki page](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser).
+*   The [OpenVPN HowTo](https://openvpn.net/index.php/open-source/documentation/howto.html#security) explains another way how to create an unprivileged user mode and wrapper script to have the routes restored automatically.
+*   Further, it is possible to let OpenVPN start as a non-privileged user in the first place, without ever running as root, see [this OpenVPN wiki HowTo](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser).
+
+**Note:** The OpenVPN HowTos linked above create a dedicated non-privileged user/group, instead of the already existing `nobody`. The advantage is that this avoids potential risks when sharing a user among daemons.
 
 ### Testing the OpenVPN configuration
 
@@ -311,23 +313,10 @@ After some trial and error..., we discover that we need to fragment packets on 5
  `/etc/openvpn/client.conf` 
 ```
 remote elmer.acmecorp.org 1194
-.
-.
+...
 fragment 548
 mssfix 548
-.
-.
-user nobody
-group nobody
-.
-.
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/bugs.crt
-key /etc/openvpn/bugs.key
-.
-.
-tls-auth /etc/openvpn/ta.key **1**
-
+...
 ```
 
 We also need to tell the server about the fragmentation. Note that "mssfix" is NOT needed in the server configuration.
@@ -335,20 +324,7 @@ We also need to tell the server about the fragmentation. Note that "mssfix" is N
 **Note:** Clients that do not support the 'fragment' directive (e.g. OpenELEC, [iOS app](https://forums.openvpn.net/topic13201.html#p31156)) are not able to connect to a server that uses the 'fragment' directive. To support such clients, skip this section and configure the clients with the 'mtu-test' directive described below.
  `/etc/openvpn/server.conf` 
 ```
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/elmer.crt
-key /etc/openvpn/elmer.key
-
-dh /etc/openvpn/dh2048.pem
-.
-.
-tls-auth /etc/openvpn/ta.key **0**
-.
-.
-user nobody
-group nobody
-.
-.
+...
 fragment 548
 
 ```
@@ -360,20 +336,9 @@ You can also allow OpenVPN to do this for you by having OpenVPN do the ping test
  `/etc/openvpn/client.conf` 
 ```
 remote elmer.acmecorp.org 1194
-.
-.
+...
 mtu-test
-.
-.
-user nobody
-group nobody
-.
-.
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/bugs.crt
-key /etc/openvpn/bugs.key
-.
-.
+...
 tls-auth /etc/openvpn/ta.key **1**
 
 ```

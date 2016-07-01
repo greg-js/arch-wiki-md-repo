@@ -21,7 +21,7 @@ zypper se [-s] | emerge -S |
 | Reinstall given Package - Will reinstall the given package without dependency hassle. | pacman -S | dnf reinstall | apt-get install --reinstall | zypper install --force | emerge [-a] |
 | Installs local package file, e.g. app.rpm and uses the installation sources to resolve dependencies | pacman -U | dnf install | dpkg -i && apt-get install -f | zypper in /path/to/local.rpm | emerge |
 | Updates package(s) with local packages and uses the installation sources to resolve dependencies | pacman -U | dnf upgrade | debi | emerge |
-| Use some magic to fix broken dependencies in a system | pacman dep level - testdb, shared lib level - findbrokenpkgs or lddd | dnf repoquery --unsatisfied | apt-get --fix-broken
+| Use some magic to fix broken dependencies in a system | pacman dep level - pacman -Dk, shared lib level - findbrokenpkgs or lddd | dnf repoquery --unsatisfied | apt-get --fix-broken
 aptitude install | zypper verify | revdep-rebuild |
 | Only downloads the given package(s) without unpacking or installing them | pacman -Sw | dnf download | apt-get install --download-only (into the package cache)
 apt-get download (bypass the package cache) | zypper --download-only | emerge --fetchonly |
@@ -58,7 +58,7 @@ pkgfile -l | dnf repoquery -l $pkgname | dpkg-query -L $pkgname | rpm -ql $pkgna
 | List all packages that require a particular package | repoquery --whatrequires [--recursive] | aptitude search \~D{depends,recommends,suggests}:pattern / aptitude why pkg | zypper search --requires | equery depends -a |
 | Search all packages to find the one which holds the specified file. auto-apt is using this functionality. | pkgfile -s | dnf provides | apt-file search | zypper search -f | equery belongs |
 | Display all packages that the specified packages obsoletes. | dnf list obsoletes | apt-cache show |
-| Verify dependencies of the complete system. Used if installation process was forcefully killed. | testdb | dnf repoquery --requires | apt-get check | zypper verify | emerge -uDN world |
+| Verify dependencies of the complete system. Used if installation process was forcefully killed. | pacman -Dk | dnf repoquery --requires | apt-get check | zypper verify | emerge -uDN world |
 | Generates a list of installed packages | pacman -Q | dnf list installed | dpkg --list | grep ^i | zypper search --installed-only | emerge -ep world |
 | List packages that are installed but are not available in any installation source (anymore). | pacman -Qm | dnf list extras | deborphan | zypper se -si | grep 'System Packages' | eix-test-obsolete |
 | List packages that were recently added to one of the installation sources, i.e. which are new to it. | (none) | dnf list recent | aptitude search '~N' / aptitude forget-new | n/a | eix-diff |

@@ -41,7 +41,7 @@ GNOME (pronounced *gah-nohm* or *nohm*)是一个简单易用的[桌面环境](/i
         *   [5.2.5 字体](#.E5.AD.97.E4.BD.93)
         *   [5.2.6 启动应用程序](#.E5.90.AF.E5.8A.A8.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
         *   [5.2.7 电源](#.E7.94.B5.E6.BA.90)
-            *   [5.2.7.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
+            *   [5.2.7.1 配置合上盖子时的行为](#.E9.85.8D.E7.BD.AE.E5.90.88.E4.B8.8A.E7.9B.96.E5.AD.90.E6.97.B6.E7.9A.84.E8.A1.8C.E4.B8.BA)
             *   [5.2.7.2 修改电池电量严重不足时的行为](#.E4.BF.AE.E6.94.B9.E7.94.B5.E6.B1.A0.E7.94.B5.E9.87.8F.E4.B8.A5.E9.87.8D.E4.B8.8D.E8.B6.B3.E6.97.B6.E7.9A.84.E8.A1.8C.E4.B8.BA)
         *   [5.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
 *   [6 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
@@ -71,7 +71,7 @@ GNOME (pronounced *gah-nohm* or *nohm*)是一个简单易用的[桌面环境](/i
     *   [6.14 渐变背景](#.E6.B8.90.E5.8F.98.E8.83.8C.E6.99.AF)
     *   [6.15 自定义 GNOME 会话](#.E8.87.AA.E5.AE.9A.E4.B9.89_GNOME_.E4.BC.9A.E8.AF.9D)
 *   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [7.1 终端冻结](#.E7.BB.88.E7.AB.AF.E5.86.BB.E7.BB.93)
+    *   [7.1 Gnome Shell 界面卡死](#Gnome_Shell_.E7.95.8C.E9.9D.A2.E5.8D.A1.E6.AD.BB)
     *   [7.2 Incorrect application defaults](#Incorrect_application_defaults)
     *   [7.3 Tracker & Documents do not list any local files](#Tracker_.26_Documents_do_not_list_any_local_files)
     *   [7.4 Unable to add accounts in Empathy and GNOME Online Accounts](#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts)
@@ -465,7 +465,7 @@ For hinting, RGBA will likely be desired as this fits most monitors types, and i
 
 #### 电源
 
-The basic power settings that may want to be altered (these example settings assume the user is using a laptop - change them as desired):
+你可能希望修改基本的电源管理设置（以下的设置以笔记本电脑用户为例，请按需调整）：
 
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.power button-power *hibernate*
@@ -477,22 +477,22 @@ $ gsettings set org.gnome.desktop.lockdown disable-lock-screen *true*
 
 ```
 
-To keep a monitor active on lid close:
+如需在合上盖子后依然保持显示器开启：
 
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup do-nothing
 
 ```
 
-##### Configure behaviour on lid switch close
+##### 配置合上盖子时的行为
 
-The GNOME Tweak Tool, as of version 3.17.1, can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[3]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the Tweak Tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
+GNOME TWEAK Tool 自 3.17.1 开始，可以**阻止** *systemd* 在“合上盖子”这一 ACPI 事件发生后采取默认行动。[[3]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) 若想要**阻止** *systemd* 的默认行为，打开 Tweak Tool，在“电源”标签页下选择“合上盖子后不待机”的选项。此选项意味着在盖子合上后，系统将不会默认待机，而是不采取任何措施。如果选择了此选项，一个自启动项目`~/.config/autostart/ignore-lid-switch-tweak.desktop`将会被创建，用于阻止*systemd*的默认行为。
 
-If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+如果你在合上盖子后既不希望系统待机，也不希望系统不动于衷，你首先要确保你并没有打开上述的选项，然后再配置*systemd*的`HandleLidSwitch=*默认行为*`选项，详见[Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management")中的说明。
 
 ##### 修改电池电量严重不足时的行为
 
-The System Settings panel only allows the user to choose between *Suspend* or *Hibernate*. To choose another option such as *Do Nothing* open the `dconf-editor` and navigate to `org.gnome.settings-daemon.plugins.power`. Edit the `"critical-battery-action"` value to `"nothing"`.
+系统设置面板只允许用户在电量不足时，要么“待机”要么“休眠”。如果要选择其他的行为，比如“不采取任何措施”，打开`dconf-editor`，转到`org.gnome.settings-daemon.plugins.power`中，并编辑`"critical-battery-action"`，将其值设置为`"nothing"`。
 
 #### Sort applications into application (app) folders
 
@@ -818,13 +818,11 @@ Exec=gnome-session --session=gnome-openbox
 
 ## 故障排除
 
-### 终端冻结
+### Gnome Shell 界面卡死
 
-In the event of a Shell freeze (which might be caused by certain appearance tweaks, malfunctioning extensions or perhaps a lack of available memory) restarting the Shell by pressing `Alt` + `F2` and then entering **r** may not be possible.
+如果 Gnome Shell 的界面卡死了（可能是由于某些外观调整异常、某个扩展出问题，或内存不足），你可能就连按下 `Alt` + `F2` 并输入 **r** 的机会都没有。这时，请试着切换到另一个 TTY（**Ctrl** + **Alt** + **F2**） 上，并输入命令`pkill -HUP gnome-shell`。Gnome Shell 将重新启动，可能需要个几十秒。这样的重启方式不会注销已登录的用户，因此所有的程序也将继续运行。不过，保存你正在编辑文件总是个好主意。
 
-In this case, try switching to another TTY (**Ctrl** + **Alt** + **F2**) and entering the following command: `pkill -HUP gnome-shell`. It may take a few seconds before the Shell successfully restarts. Restarting the shell in this fashion should not log the user out but it is a good idea to try and ensure that all work is saved anyway.
-
-If this fails, the [Xorg](/index.php/Xorg "Xorg") server will need to be restarted either by: `pkill X` for console logins or: `systemctl restart gdm` for GDM logins. Bear in mind that restarting the Xorg server will log the user out so try to ensure that all work is saved before attempting this.
+如果这也不行，那你可能得重新启动 [Xorg](/index.php/Xorg "Xorg") 服务器。如果你通过终端登录，输入 `pkill X`；如果你通过 GDM 登录，输入 `systemctl restart gdm`。但需要注意的是，重启 Xorg 服务器会导致已登录的用户被注销，因此请确保在这之前已经设法保存你所有的文件。
 
 ### Incorrect application defaults
 

@@ -27,9 +27,8 @@ Source-based distributions are highly portable, giving the advantage of controll
 ### CRUX
 
 *   Before creating Arch, Judd Vinet admired and used CRUX; a minimalist distribution created by Per Lidén. Originally inspired by ideas in common with CRUX and BSD, Arch was built from scratch, and [pacman](/index.php/Pacman "Pacman") was then coded in C.
-*   Arch and CRUX share some guiding principles: for instance, both are architecture-optimized, minimalist and K.I.S.S.-oriented.
-*   Both ship with ports-like systems, and, like *BSD, both provide a minimal base environment to build upon.
-*   Arch features pacman, which handles binary system package management and works seamlessly with the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). CRUX uses a community contributed system called prt-get, which, in combination with its own ports system, handles dependency resolution, but builds all packages from source (though the CRUX base installation is binary).
+*   Both ship with ports-like systems, and, like *BSD, both provide a base environment to build upon.
+*   Arch features pacman, which handles binary system package management and works seamlessly with the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). CRUX uses a community contributed system called *prt-get*, which, in combination with its own ports system, handles dependency resolution, but builds all packages from source (though the CRUX base installation is binary).
 *   Arch officially supports x86_64 and i686 only, whereas CRUX officially offers only x86_64.
 *   Arch uses a rolling-release system and features a large array of binary package repositories as well as the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). CRUX provides a more slimmed-down officially supported ports system in addition to a comparatively modest community repository.
 
@@ -54,7 +53,7 @@ These distributions offer a broad range of advantages and strengths, and can be 
 
 ### Debian GNU/Linux
 
-*   Debian is the largest upstream Linux distribution with a bigger community and features stable, testing, and unstable branches, offering over 43,000 packages. The available number of Arch binary packages is more modest. However, when including the AUR, the quantities are very comparable.
+*   Debian is the largest upstream Linux distribution with a bigger community and features stable, testing, and unstable branches, offering over 43,000 packages. The available number of Arch binary packages is more modest. However, when including the AUR, the quantities are comparable.
 
 *   Debian has a more vehement stance on free software but still includes non-free software in its non-free repos. Arch is more lenient, and therefore inclusive, concerning *non-free packages* as defined by GNU.
 
@@ -91,10 +90,6 @@ These distributions offer a broad range of advantages and strengths, and can be 
 *   Arch Linux provides what is widely regarded as the most thorough and comprehensive distribution wiki. The Fedora wiki is used in the original sense of the word "wiki", or a way to exchange information between developers, testers and users rapidly. It is not meant to be an end-user knowledge base like Arch's. Fedora's wiki resembles an issue tracker or a corporate wiki.
 
 ### Slackware
-
-*   Slackware and Arch are quite similar in that both are simple distributions focused on elegance and minimalism.
-
-*   Slackware is famous for its lack of branding and completely vanilla packages, from the kernel up. Arch typically applies patching only to avoid severe breakage or to ensure packages will compile cleanly.
 
 *   Slackware uses BSD-style init scripts, whereas Arch uses [systemd](/index.php/Systemd "Systemd").
 
@@ -137,7 +132,7 @@ openSUSE is centered around the RPM package format and its well-regarded YaST2 G
 
 ### Mandriva/Mageia
 
-Mandriva Linux (formerly Mandrake Linux) was created in 1998 with the goal of making GNU/Linux easy to use for everyone; it is RPM-based and uses the urpmi package manager. Mageia is a Mandriva fork created by former Mandriva employees which opposes its parent distribution's commercial position, being a non-profit and community-driven project. Again, Arch takes a simpler approach than Mandriva or Mageia, being text-based and relying on more manual configuration, and is aimed at intermediate to advanced users.
+Mandriva Linux (formerly Mandrake Linux) was created in 1998 with the goal of making GNU/Linux easy to use for everyone; it is RPM-based and uses the urpmi package manager. Mageia is a Mandriva fork created by former Mandriva employees which opposes its parent distribution's commercial position, being a non-profit and community-driven project. Arch takes a simpler approach than Mandriva or Mageia, being text-based and relying on more manual configuration, and is aimed at intermediate to advanced users.
 
 ## The *BSDs
 

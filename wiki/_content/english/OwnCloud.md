@@ -3,20 +3,23 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "
 ## Contents
 
 *   [1 Prerequisites](#Prerequisites)
+    *   [1.1 An all-in-one alternative with Docker](#An_all-in-one_alternative_with_Docker)
 *   [2 Installation](#Installation)
     *   [2.1 Database support](#Database_support)
     *   [2.2 Caching](#Caching)
     *   [2.3 Exif support](#Exif_support)
     *   [2.4 Setting strong permissions](#Setting_strong_permissions)
-    *   [2.5 An all-in-one alternative with Docker](#An_all-in-one_alternative_with_Docker)
-*   [3 Apache configuration](#Apache_configuration)
-    *   [3.1 WebDAV](#WebDAV)
-    *   [3.2 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
-*   [4 Nginx](#Nginx)
-    *   [4.1 php-fpm configuration](#php-fpm_configuration)
-    *   [4.2 uWSGI configuration](#uWSGI_configuration)
-        *   [4.2.1 Configuration](#Configuration)
-        *   [4.2.2 Activation](#Activation)
+*   [3 Database Setup](#Database_Setup)
+    *   [3.1 Mariadb](#Mariadb)
+*   [4 Webserver Setup](#Webserver_Setup)
+    *   [4.1 Apache configuration](#Apache_configuration)
+        *   [4.1.1 WebDAV](#WebDAV)
+        *   [4.1.2 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
+    *   [4.2 Nginx](#Nginx)
+        *   [4.2.1 php-fpm configuration](#php-fpm_configuration)
+    *   [4.3 uWSGI configuration](#uWSGI_configuration)
+        *   [4.3.1 Configuration](#Configuration)
+        *   [4.3.2 Activation](#Activation)
 *   [5 Synchronization](#Synchronization)
     *   [5.1 Desktop](#Desktop)
         *   [5.1.1 Calendar](#Calendar)
@@ -43,6 +46,12 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "
 ## Prerequisites
 
 *ownCloud* needs a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP") and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). For instance, a classic [LAMP stack](/index.php/LAMP "LAMP") should work fine and is the [recommended configuration](https://doc.owncloud.org/server/8.2/admin_manual/installation/system_requirements.html#recommended-setup-for-running-owncloud).
+
+### An all-in-one alternative with Docker
+
+A alternative to installing and configuring your own *ownCloud* is to use a 3rd party supported [Docker](/index.php/Docker "Docker") image. You can find several images of fully working LAMP stack with pre-installed *ownCloud* in the [Docker repositories](https://index.docker.io/search?q=ownCloud). *Docker* containers are generally safer than a [chroot](/index.php/Chroot "Chroot") environment and the overhead is very low; *ownCloud* in Docker works smoothly even on quite old machines. The whole setup including installing *Docker* and *ownCloud* image is considerably easier and quicker than a native installation but you must trust the 3rd party whom you've now given complete control to regarding the installation of your ownCloud instance.
+
+**Note:** Docker images are not officially supported by ownCloud.
 
 ## Installation
 
@@ -147,13 +156,25 @@ fi
 
 If you have customized your ownCloud installation and your filepaths are different than the standard installation, then modify this script accordingly.
 
-### An all-in-one alternative with Docker
+## Database Setup
 
-A quicker alternative to installing and configuring your own *ownCloud* is to use a 3rd party supported [Docker](/index.php/Docker "Docker") image. You can find several images of fully working LAMP stack with pre-installed *ownCloud* in the [Docker repositories](https://index.docker.io/search?q=ownCloud). *Docker* containers are generally safer than a [chroot](/index.php/Chroot "Chroot") environment and the overhead is very low; *ownCloud* in Docker works smoothly even on quite old machines. The whole setup including installing *Docker* and *ownCloud* image is considerably easier and quicker than a native installation but you must trust the 3rd party whom you've now given complete control to regarding the installation of your ownCloud instance.
+### Mariadb
 
-**Note:** Docker images are not officially supported by ownCloud.
+After [MySQL#Installation](/index.php/MySQL#Installation "MySQL") and the initial setup described therein, a database and user for owncloud needs to be created within mariadb:
 
-## Apache configuration
+```
+$ mysql -u root -p
+create database owncloud;
+create user ownclouduser@localhost identified by 'password';
+grant all privileges on owncloud.* to ownclouduser@localhost identified by 'password';
+flush privileges;
+exit;
+
+```
+
+## Webserver Setup
+
+### Apache configuration
 
 **Note:** Make sure PHP is enabled, as described in [Apache HTTP Server#PHP](/index.php/Apache_HTTP_Server#PHP "Apache HTTP Server").
 
@@ -187,9 +208,9 @@ By including the default `owncloud.conf` in `httpd.conf`, ownCloud will take con
 
 If you would like to have ownCloud run in a subdirectory, then edit the `/etc/httpd/conf/extra/owncloud.conf` you included and comment out the `<VirtualHost *:80> ... </VirtualHost>` part of the include file.
 
-## Nginx
+### Nginx
 
-### php-fpm configuration
+#### php-fpm configuration
 
 *ownCloud* official documentation uses [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) for [PHP](/index.php/PHP "PHP") and as such it is the best supported configuration. See [Nginx#PHP implementation](/index.php/Nginx#PHP_implementation "Nginx") to set up *php-fpm* and [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") to acquire and/or set up a TLS certificate.
 
