@@ -10,9 +10,11 @@
         *   [1.4.1 Example network configuration](#Example_network_configuration)
 *   [2 Basic usage](#Basic_usage)
     *   [2.1 First steps](#First_steps)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
-*   [4 See also](#See_also)
+*   [3 Advance usage](#Advance_usage)
+    *   [3.1 Modify processes and files limit](#Modify_processes_and_files_limit)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
+*   [5 See also](#See_also)
 
 ## Setup
 
@@ -27,7 +29,7 @@ $ lxc-checkconfig
 
 ```
 
-Due to security concerns, the default Arch kernel does **not** ship with the ability to run containers as an unprivileged user. LXD however needs this ability to run. You can either build a kernel yourself that has `CONFIG_USER_NS` enabled, or use [linux-user-ns-enabled](https://aur.archlinux.org/packages/linux-user-ns-enabled/) from the [AUR](/index.php/AUR "AUR").
+Due to security concerns, the default Arch kernel does **not** ship with the ability to run containers as an unprivileged user. LXD however needs this ability to run. You can either build a kernel yourself that has `CONFIG_USER_NS` enabled, or use [linux-userns](https://aur.archlinux.org/packages/linux-userns/) or [linux-lts-userns](https://aur.archlinux.org/packages/linux-lts-userns/) from the [AUR](/index.php/AUR "AUR").
 
 **Note:** You still be able to run containers without CONFIG_USER_NS kernel feature. See: [#Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
 
@@ -121,6 +123,34 @@ Alternatively, you can also use a remote LXD host as a source of images. One com
 
 ```
 $ lxc launch images:centos/7/amd64 centos
+
+```
+
+## Advance usage
+
+### Modify processes and files limit
+
+You may want to increase file descriptor limit or max user processes limit, since default file descriptor limit is 1024 on Archlinux
+
+```
+$ sudo systemctl edit lxd
+
+```
+
+And config as follow:
+
+```
+[Service]
+LimitNOFILE=infinity
+LimitNPROC=infinity
+TasksMax=infinity
+
+```
+
+Then restart lxd
+
+```
+$ sudo systemctl restart lxd
 
 ```
 

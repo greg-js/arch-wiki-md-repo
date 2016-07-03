@@ -153,7 +153,7 @@ The following styles are included in Qt5: *GTK+*, *Fusion*, *Windows*. Others ca
 
 *   **Qt style plugins** — Additional style plugins for Qt5, including *Cleanlooks*, *Motif*, *Plastique*.
 
-	[http://code.qt.io/cgit/qt/qtstyleplugins.git](http://code.qt.io/cgit/qt/qtstyleplugins.git) || [qt5-qtstyleplugins](https://aur.archlinux.org/packages/qt5-qtstyleplugins/)
+	[http://code.qt.io/cgit/qt/qtstyleplugins.git](http://code.qt.io/cgit/qt/qtstyleplugins.git) || [qt5-styleplugins](https://aur.archlinux.org/packages/qt5-styleplugins/)
 
 ### Qt Style Sheets
 

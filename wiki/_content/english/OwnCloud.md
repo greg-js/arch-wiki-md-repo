@@ -8,7 +8,9 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "
     *   [2.1 Database support](#Database_support)
     *   [2.2 Caching](#Caching)
     *   [2.3 Exif support](#Exif_support)
-    *   [2.4 Setting strong permissions](#Setting_strong_permissions)
+    *   [2.4 Optional but recommended security hardening](#Optional_but_recommended_security_hardening)
+        *   [2.4.1 Setting strong permissions for the filesystem](#Setting_strong_permissions_for_the_filesystem)
+        *   [2.4.2 Protection from hacking with fail2ban](#Protection_from_hacking_with_fail2ban)
 *   [3 Database Setup](#Database_Setup)
     *   [3.1 Mariadb](#Mariadb)
 *   [4 Webserver Setup](#Webserver_Setup)
@@ -49,7 +51,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "
 
 ### An all-in-one alternative with Docker
 
-A alternative to installing and configuring your own *ownCloud* is to use a 3rd party supported [Docker](/index.php/Docker "Docker") image. You can find several images of fully working LAMP stack with pre-installed *ownCloud* in the [Docker repositories](https://index.docker.io/search?q=ownCloud). *Docker* containers are generally safer than a [chroot](/index.php/Chroot "Chroot") environment and the overhead is very low; *ownCloud* in Docker works smoothly even on quite old machines. The whole setup including installing *Docker* and *ownCloud* image is considerably easier and quicker than a native installation but you must trust the 3rd party whom you've now given complete control to regarding the installation of your ownCloud instance.
+A alternative to installing and configuring your own *ownCloud* is to use a 3rd party supported [Docker](/index.php/Docker "Docker") image. You can find several images of fully working LAMP stack with pre-installed *ownCloud* in the [Docker repositories](https://index.docker.io/search?q=ownCloud). *Docker* containers are generally safer than a [chroot](/index.php/Chroot "Chroot") environment and the overhead is very low; *ownCloud* in Docker works smoothly even on quite old machines. The whole setup including installing *Docker* and *ownCloud* image is considerably easier and quicker than a native installation but you must trust the third party whom you have now given complete control to regarding the installation of your ownCloud instance.
 
 **Note:** Docker images are not officially supported by ownCloud.
 
@@ -77,7 +79,7 @@ mcrypt.so
 
 ```
 
-#### Database support
+### Database support
 
 Depending on which database backend you are going to use, uncomment the following extensions in `/etc/php/php.ini`:
 
@@ -85,7 +87,7 @@ Depending on which database backend you are going to use, uncomment the followin
 *   For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), uncomment `pdo_pgsql.so` and `pgsql.so`, and install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql).
 *   For [SQLite](/index.php/SQLite "SQLite"), uncomment `pdo_sqlite.so` and `sqlite3.so`, and install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite).
 
-#### Caching
+### Caching
 
 For enhanced performance, it is recommended to implement PHP caching using APCu, as described in [PHP#APCu](/index.php/PHP#APCu "PHP"). It is also beneficial to enable OPCache, as described in [PHP#OPCache](/index.php/PHP#OPCache "PHP").
 
@@ -96,15 +98,17 @@ Then, after enabling APCu, add the following directive to `/etc/webapps/owncloud
 
 ```
 
-**Note:** Make sure to add `apc.enable_cli=1` under the `[apc]` portion of your [PHP configuration](/index.php/PHP#Configuration "PHP") and uncomment `extension=apcu.so` in `/etc/php/conf.d/apcu.ini`. As of 2015-07-12, [several](https://github.com/owncloud/core/issues/17329#issuecomment-119248944) [things](https://github.com/owncloud/documentation/issues/1233#issuecomment-120664134) won't work properly without it.
+**Note:** Make sure to add `apc.enable_cli=1` under the `[apc]` portion of your [PHP configuration](/index.php/PHP#Configuration "PHP") and uncomment `extension=apcu.so` in `/etc/php/conf.d/apcu.ini`. As of 2015-07-12, [several](https://github.com/owncloud/core/issues/17329#issuecomment-119248944) [things](https://github.com/owncloud/documentation/issues/1233#issuecomment-120664134) will not work properly without it.
 
 See [the official documentation](https://doc.owncloud.org/server/8.1/admin_manual/configuration_server/config_sample_php_parameters.html#memory-caching-backend-configuration).
 
-#### Exif support
+### Exif support
 
 Additionally enable exif support by installing the [exiv2](https://www.archlinux.org/packages/?name=exiv2) package and uncommenting the `exif.so` extension in `php.ini`.
 
-#### Setting strong permissions
+### Optional but recommended security hardening
+
+#### Setting strong permissions for the filesystem
 
 From the [official installation manual](https://doc.owncloud.org/server/8.2/admin_manual/installation/installation_wizard.html#setting-strong-directory-permissions):
 
@@ -155,6 +159,37 @@ fi
 ```
 
 If you have customized your ownCloud installation and your filepaths are different than the standard installation, then modify this script accordingly.
+
+#### Protection from hacking with fail2ban
+
+Setting up [fail2ban](/index.php/Fail2ban "Fail2ban") is highly recommended. Once installed, create the following files:
+
+ `/etc/fail2ban/filter.d/owncloud.conf` 
+```
+[Definition]
+failregex={"reqId":".*","remoteAddr":".*","app":"core","message":"Login failed: '.*' \(Remote IP: '<HOST>'\)","level":2,"time":".*"}
+
+ignoreregex =
+
+```
+ `/etc/fail2ban/jail.local` 
+```
+[owncloud]
+enabled = true
+filter  = owncloud
+port    =  http,https
+logpath = /usr/share/webapps/owncloud/data/owncloud.log
+# optionally whitelist internal LAN IP addresses
+ignoreip = 192.168.1.1/24
+
+```
+
+[Restart](/index.php/Restart "Restart") the `fail2ban` service. One can test the configuration by running the following:
+
+```
+fail2ban-regex /usr/share/webapps/owncloud/data/owncloud.log /etc/fail2ban/filter.d/owncloud.conf -v
+
+```
 
 ## Database Setup
 
@@ -323,7 +358,7 @@ server {
 
 *php-fpm* is already configured to run as the user `http`, so assuming you are using the permissions described above it should function fine. It is not recommended to manually copy the `config.example.php` in the ownCloud configuration, and instead let it be automatically generated on first run.
 
-**Note:** Automatic configuration relies on the `data/` directory creation, as done in [#Setting strong permissions](#Setting_strong_permissions).
+**Note:** Automatic configuration relies on the `data/` directory creation, as done in [#Setting strong permissions for the filesystem](#Setting_strong_permissions_for_the_filesystem).
 
 ### uWSGI configuration
 
@@ -469,7 +504,7 @@ To enable the uwsgi service by default at start-up, run:
 
 ```
 
-**Note:** Here we make use of [systemd socket activation](http://0pointer.de/blog/projects/socket-activation.html) to prevent unnecessary resources consumption when no connections are made to the instance. If you'd rather have it constantly active, simply remove the `.socket` part to start and enable the service instead.
+**Note:** Here we make use of [systemd socket activation](http://0pointer.de/blog/projects/socket-activation.html) to prevent unnecessary resources consumption when no connections are made to the instance. If you would rather have it constantly active, simply remove the `.socket` part to start and enable the service instead.
 
 See also [Uwsgi#Starting service](/index.php/Uwsgi#Starting_service "Uwsgi").
 
@@ -547,7 +582,7 @@ To enable contacts and calendar sync:
 
 *   If you are planning on using ownCloud's [sync-clients](http://owncloud.org/sync-clients/), make sure to have [ntpd](/index.php/Ntpd "Ntpd") installed and running on your ownCloud server, otherwise the sync-clients will fail.
 
-*   Add some [SSL encryption](/index.php/LAMP#SSL "LAMP") to your connection!
+*   Add some [SSL encryption](/index.php/LAMP#TLS.2FSSL "LAMP") to your connection!
 
 (If adding SSL encryption as above, be sure to edit /etc/httpd/conf/extra/httpd-ssl.conf and change DocumentRoot "/srv/http" to DocumentRoot "/usr/share/webapps/owncloud" )
 

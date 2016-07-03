@@ -16,7 +16,7 @@
     *   [6.1 Контрольный список](#.D0.9A.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.81.D0.BF.D0.B8.D1.81.D0.BE.D0.BA)
     *   [6.2 Сброс соединения пиром](#.D0.A1.D0.B1.D1.80.D0.BE.D1.81_.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D0.B8.D1.80.D0.BE.D0.BC)
     *   [6.3 Удаленный хост отключен](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D1.85.D0.BE.D1.81.D1.82_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD)
-    *   [6.4 Подвисание приложений (например, Nautilus, Gedit)](#.D0.9F.D0.BE.D0.B4.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.28.D0.BD.D0.B0.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D1.80.2C_Nautilus.2C_Gedit.29)
+    *   [6.4 Подвисание приложений (например, Gnome Files, Gedit)](#.D0.9F.D0.BE.D0.B4.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.28.D0.BD.D0.B0.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D1.80.2C_Gnome_Files.2C_Gedit.29)
     *   [6.5 Завершение работы зависает, когда sshfs примонтирована](#.D0.97.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.B5.D1.82.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_sshfs_.D0.BF.D1.80.D0.B8.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B0)
 *   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
@@ -283,7 +283,7 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 
 Для Arch Linux значением по умолчанию в `/etc/ssh/sshd_config` является `Subsystem sftp /usr/lib/ssh/sftp-server`.
 
-### Подвисание приложений (например, Nautilus, Gedit)
+### Подвисание приложений (например, Gnome Files, Gedit)
 
 **Примечание:** Этот способ предотвращает от загрязнения список последних использованных файлов и может привести к возможным ошибкам записи.
 

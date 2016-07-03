@@ -2,8 +2,8 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(146)</small> |
-| <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(24)</small> |
+| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(143)</small> |
+| <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(23)</small> |
 | <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
 | <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(17)</small> |
 | <small>1.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
@@ -22,8 +22,8 @@
 | <small>2.7.</small> [图形和排版](/index.php/Category:Graphics_and_desktop_publishing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics and desktop publishing (简体中文)") <small>(4)</small> |
 | <small>2.8.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(15) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>2.8.1.</small> [邮件客户端](/index.php/Category:Email_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Email clients (简体中文)") <small>(1)</small> |
-| <small>2.8.2.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(4)</small> |
-| <small>2.8.3.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(4)</small> |
+| <small>2.8.2.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(3)</small> |
+| <small>2.8.3.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(5)</small> |
 | <small>2.9.</small> [数学和自然科学](/index.php/Category:Mathematics_and_science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mathematics and science (简体中文)") <small>(5)</small> |
 | <small>2.10.</small> [播放器](/index.php/Category:Multimedia_players_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Multimedia players (简体中文)") <small>(5)</small> |
 | <small>2.11.</small> [办公](/index.php/Category:Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Office (简体中文)") <small>(3)</small> |
@@ -69,8 +69,8 @@
 | <small>6.3.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(3) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
 | <small>6.4.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(15) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |
 | <small>6.4.1.</small> [邮件客户端](/index.php/Category:Email_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Email clients (简体中文)") <small>(1)</small> |
-| <small>6.4.2.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(4)</small> |
-| <small>6.4.3.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(4)</small> |
+| <small>6.4.2.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(3)</small> |
+| <small>6.4.3.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(5)</small> |
 | <small>6.5.</small> [邮件服务器](/index.php/Category:Mail_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mail server (简体中文)") <small>(1)</small> |
 | <small>6.6.</small> [Network sharing](/index.php/Category:Network_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network sharing (简体中文)") <small>(1)</small> |
 | <small>6.7.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(3) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |

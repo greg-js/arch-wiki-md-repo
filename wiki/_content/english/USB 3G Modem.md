@@ -7,13 +7,14 @@ A number of mobile telephone networks around the world offer mobile internet con
 *   [3 Mode switching](#Mode_switching)
 *   [4 Connection](#Connection)
     *   [4.1 Network Manager](#Network_Manager)
-    *   [4.2 wvdial](#wvdial)
-    *   [4.3 netctl](#netctl)
-    *   [4.4 sakis3g](#sakis3g)
-    *   [4.5 Low connection speed](#Low_connection_speed)
-        *   [4.5.1 QoS parameter](#QoS_parameter)
-        *   [4.5.2 Baud parameter](#Baud_parameter)
-    *   [4.6 Monitor used bandwith](#Monitor_used_bandwith)
+    *   [4.2 pppd](#pppd)
+    *   [4.3 wvdial](#wvdial)
+    *   [4.4 netctl](#netctl)
+    *   [4.5 sakis3g](#sakis3g)
+    *   [4.6 Low connection speed](#Low_connection_speed)
+        *   [4.6.1 QoS parameter](#QoS_parameter)
+        *   [4.6.2 Baud parameter](#Baud_parameter)
+    *   [4.7 Monitor used bandwith](#Monitor_used_bandwith)
 *   [5 Reading SMS](#Reading_SMS)
     *   [5.1 command line script](#command_line_script)
 *   [6 Fix image quality](#Fix_image_quality)
@@ -71,6 +72,10 @@ Make sure [mobile-broadband-provider-info](https://www.archlinux.org/packages/?n
 A system restart might be necessary for ModemManager to detect the USB modem. After you restart the NetworkManager-applet and plug the modem in again NetworkManager should recognize the modem in the menu without further configuration. Setting up the modem in NetworkManager is self-explanatory, you should only need the login-information provided by your network provider.
 
 Whilst running ModemManager gammu will not work. SMS and Ussd codes can be still used with [modem-manager-gui](https://www.archlinux.org/packages/?name=modem-manager-gui).
+
+### pppd
+
+[pppd](/index.php/Pppd "Pppd") can be used to configure 3g connections. Step by step instruction is available on [3G and GPRS modems with pppd](/index.php/3G_and_GPRS_modems_with_pppd "3G and GPRS modems with pppd"). Optionally, [pppconfig](https://aur.archlinux.org/packages/pppconfig/) can be used to simplify the pppd configuration using dialog interface.
 
 ### wvdial
 

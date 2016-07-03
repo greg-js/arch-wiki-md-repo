@@ -27,15 +27,23 @@
 
 	[https://github.com/u8sand/Baka-MPlayer/](https://github.com/u8sand/Baka-MPlayer/) || [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)
 
-*   **CMPlayer** — Продвинутый и лёгкий мультимедийный плеер. Qt 5.
+*   **bomi** — Мощный и легкий универсальный мультимедиа проигрыватель. (Qt 5).bomi был ранее известен как CMPlayer.
 
-	[https://cmplayer.github.io/](https://cmplayer.github.io/) || [cmplayer](https://aur.archlinux.org/packages/cmplayer/), [cmplayer-git](https://aur.archlinux.org/packages/cmplayer-git/)
+	[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/), [bomi-git](https://aur.archlinux.org/packages/bomi-git/)
+
+*   **GNOME MPV** — Простой интерфейс для *mpv* (GTK+ 3).
+
+	[https://github.com/gnome-mpv/gnome-mpv/](https://github.com/gnome-mpv/gnome-mpv/) || [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/), [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/)
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Мультимедийный плеер с дополнительным функционалом (CSS темы, интеграция с YouTube и другое) (Qt 5).
 
 	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
-**Примечание:** Пакеты CMPlayer включают в себя также и сам *mpv*
+*   **xt7-player-mpv** — Qt/Gambas графическая оболочка для MPV с богатым набором настраиваемых опций, включая фильтры и драйвера, поддержка плагинов LADSPA, а также библиотека / плейлист менеджер, YouTube, интернет-радио, подкасты, DVB-T и многое другое.
+
+	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv-git](https://aur.archlinux.org/packages/xt7-player-mpv-git/)
+
+**Примечание:** Пакеты SMPlayer/bomi включают в себя также и сам *mpv*
 
 ## Настройка
 

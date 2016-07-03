@@ -46,7 +46,7 @@ Then [start](/index.php/Start "Start") the `bluetooth.service` systemd unit. You
 **Note:**
 
 *   By default the bluetooth daemon will only give out bnep0 devices to users that are a member of the `lp` group. Make sure to add your user to that group if you intend to connect to a bluetooth tether. You can change the group that is required in the file `/etc/dbus-1/system.d/bluetooth.conf`.
-*   Some Bluetooth adapters are bundled with a Wi-Fi card (e.g. [Intel Centrino](http://www.intel.com/content/www/us/en/wireless-products/centrino-advanced-n-6235.html)). These require that the Wi-Fi card is first enabled (typically a keyboard shortcut on a laptop) in order to make the Bluetooth adapter visible to the kernel.
+*   Some Bluetooth adapters are bundled with a Wi-Fi card (e.g. [Intel Centrino](http://www.intel.com/content/www/us/en/wireless-products/centrino-advanced-n-6235.html)). These require that the Wi-Fi card is firstly enabled (typically a keyboard shortcut on a laptop) in order to make the Bluetooth adapter visible to the kernel.
 *   Some Bluetooth cards (e.g. Broadcom) conflict with the network adapter. Thus, you need to make sure that your Bluetooth device get connected before the network service boot.
 
 ## Configuration via the CLI

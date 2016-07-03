@@ -5,7 +5,8 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 PPPoE](#PPPoE)
-    *   [2.2 Starting pppd on boot](#Starting_pppd_on_boot)
+    *   [2.2 Easy wizard configuration](#Easy_wizard_configuration)
+    *   [2.3 Starting pppd on boot](#Starting_pppd_on_boot)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Do an auto redial](#Do_an_auto_redial)
     *   [3.2 ISP auto-disconnect after 24h](#ISP_auto-disconnect_after_24h)
@@ -124,6 +125,17 @@ To close a connection, use this
 # poff *your_provider*
 
 ```
+
+### Easy wizard configuration
+
+[pppconfig](https://aur.archlinux.org/packages/pppconfig/) provides a dialog interface to create pppd configuration easily. The usage is as simple as running `pppconfig` as root and it will guide the configuration creation.
+
+```
+# pppconfig --dialog
+
+```
+
+The resulting configuration can be called using `pon` and discarded using `poff` as mentioned before.
 
 ### Starting pppd on boot
 

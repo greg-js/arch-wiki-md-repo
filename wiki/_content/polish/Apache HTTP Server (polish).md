@@ -24,7 +24,7 @@ Tworzymy nowego użytkownika przypisujemy mu katalog /srv/http/
 
 	Dzięki tej komendzie utworzyliśmy użytkownika http jako katalog przypisaliśmy mu ścieżkę do folderu /srv/http/ i dodaliśmy go do grupy o nazwie również http:
 
-	Edytujemy plik hosts ; vim/etc/hosts
+	Edytujemy plik hosts ; vim /etc/hosts
 
 ```
 127.0.0.1 localhost.localdomain localhost

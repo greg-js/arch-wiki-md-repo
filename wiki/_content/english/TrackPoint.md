@@ -1,6 +1,6 @@
 The TrackPoint is Lenovo's trademark for the pointing-stick in the middle of the keyboard. It is supported by [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput).
 
-Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point, but middle-click and scrolling requires extra configuration.
+Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point. For the `evdev` driver middle-click and scrolling requires extra configuration.
 
 ## Contents
 
@@ -44,7 +44,7 @@ tpset "Device Accel Constant Deceleration" 0.95
 
 ### Xorg configuration
 
-Alternative to an `~/.xinitrc` configuration, you can also create an [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg"). For example, as `/etc/X11/xorg.conf.d/20-thinkpad.conf`, replacing `TPPS/2 IBM TrackPoint` with the device name from *xinput*:
+Alternative to an `~/.xinitrc` configuration, you can also create an [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg") for the `evdev` driver. For example, as `/etc/X11/xorg.conf.d/20-thinkpad.conf`, replacing `TPPS/2 IBM TrackPoint` with the device name from *xinput*:
 
 ```
 Section "InputClass"
@@ -83,10 +83,10 @@ This rule increases the trackpoint **speed** and enables **tap to select** (see 
 
 This appears to be a kernel bug. See: [https://bugzilla.kernel.org/show_bug.cgi?id=33292](https://bugzilla.kernel.org/show_bug.cgi?id=33292)
 
-A workaround is passing proto=bare to the psmouse module. However this disable scrolling with the clickpad and the two finger middle click.
+A workaround is passing `proto=bare` to the `psmouse` module. However, this disables scrolling with the clickpad and the two-finger middle click:
 
 ```
-modprobe psmouse proto=bare
+# modprobe psmouse proto=bare
 
 ```
 

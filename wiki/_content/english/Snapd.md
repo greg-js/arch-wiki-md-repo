@@ -14,7 +14,7 @@
 
 ## Installation
 
-The stable version is available as [snapd](https://aur.archlinux.org/packages/snapd/).
+[Install](/index.php/Install "Install") [snapd](https://www.archlinux.org/packages/?name=snapd) from the official repositories.
 
 Installing it will install the `snapd` daemon as well as *snap-confine*, which mounts and launches snap packages. Note that [snap-confine](https://github.com/snapcore/snap-confine) is built with the `--disable-confinement` option; full confinement relies on an [AppArmor](/index.php/AppArmor "AppArmor") enabled kernel and related profile for the snap.
 

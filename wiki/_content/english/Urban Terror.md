@@ -1,4 +1,4 @@
-"*[Urban Terror](http://www.urbanterror.net)™ is a free multiplayer first person shooter, it can be described as a Hollywood tactical shooter; somewhat realism based, but the motto is "fun over realism". This results in a very unique, enjoyable and addictive game.*" <small>[[1]](http://www.urbanterror.net)</small>
+"*[Urban Terror](http://www.urbanterror.info/)™ is a free multiplayer first person shooter, it can be described as a Hollywood tactical shooter; somewhat realism based, but the motto is "fun over realism". This results in a very unique, enjoyable and addictive game.*" <small>[[1]](http://www.urbanterror.net)</small>
 
 ## Contents
 

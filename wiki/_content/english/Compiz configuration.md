@@ -85,10 +85,19 @@ Emerald settings such as window button pulse can be configured in `emerald-theme
 
 Many Metacity themes are available for download on [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=101&PHPSESSID=4f445abca9b58ff018024a7581ce7085). Once downloaded, they should be unpacked into a directory such as `/usr/local/share/themes` (create it if it does not exist).
 
-*   **Selecting the theme in Compiz 0.9**: The 0.9 version of GTK Window Decorator will read Metacity's theme settings from GSettings. The theme can be set with the following command:
+*   **Selecting the theme in Compiz 0.9**: The 0.9 version of GTK Window Decorator will read Metacity's theme settings from GSettings.
+
+Firstly, ensure that the theme type is set to metacity:
 
 ```
-$ gsettings set org.gnome.metacity theme *theme-name*
+$ gsettings set org.gnome.metacity.theme type metacity
+
+```
+
+Then the theme can be set with the following command:
+
+```
+$ gsettings set org.gnome.metacity.theme name *theme-name*
 
 ```
 

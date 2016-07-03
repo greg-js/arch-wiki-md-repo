@@ -52,13 +52,16 @@ Disk /dev/mapper/container: 1000 MB, 1000277504 bytes
 Disk /dev/mapper/container does not contain a valid partition table
 ```
 
-Finally, wipe it with pseudorandom (because encrypted) data. A use of `if=/dev/urandom` is not required as the encryption cipher is used for randomness.
+Finally, wipe /dev/mapper/container with zeros. A use of `if=/dev/urandom` is not required as the encryption cipher is used for randomness.
 
  `# dd if=/dev/zero of=/dev/mapper/container status=progress`  `dd: writing to ‘/dev/mapper/container’: No space left on device` 
+**Note:** More than likely this will take several hours to complete. You may want to start the wipe before you go to bed.
+
 **Tip:**
 
 *   Using *dd* with the `bs=` option, e.g. `bs=1M`, is frequently used to increase disk throughput of the operation.
 *   If you want to perform a check of the operation, zero the partition before creating the wipe container. After the wipe command `blockdev --getsize64 */dev/mapper/container*` can be used to get the exact container size as root. Now *od* can be used to spotcheck whether the wipe overwrote the zeroed sectors, e.g. `od -j *containersize - blocksize*` to view the wipe completed to the end.
+*   If wiping a SSD or flash drive, you may want to consider using the `shred` command to ensure all blocks are overwritten. More information can be found at the [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk") wiki page.
 
 If you are encrypting an entire system, the next step is [#Partitioning](#Partitioning). If you are just encrypting a partition, continue [dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system").
 

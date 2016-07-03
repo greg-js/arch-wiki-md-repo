@@ -1,4 +1,4 @@
-**Samba** is a re-implementation of the [SMB](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") networking protocol, it facilitates file and printer sharing among Linux and Windows systems as an alternative to [NFS](/index.php/NFS "NFS"). Some users say that Samba is easily configured and that operation is very straight-forward. However, many new users run into problems with its complexity and non-intuitive mechanism. This article provides instructions for users on how to setup Samba. It is strongly suggested that the user sticks close to the following directions.
+**Samba** is a re-implementation of the [SMB](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") networking protocol. It facilitates file and printer sharing among Linux and Windows systems as an alternative to [NFS](/index.php/NFS "NFS"). Some users say that Samba is easily configured and that operation is very straight-forward. However, many new users run into problems with its complexity and non-intuitive mechanism. This article provides instructions for users on how to setup Samba. It is strongly suggested that the user sticks close to the following directions.
 
 ## Contents
 
@@ -247,6 +247,21 @@ The following command lists public shares on a server:
 
 ```
 $ smbclient -L *hostname* -U%
+
+```
+
+Alternatively, running smbtree will show a tree diagram of all the shares. This isn't advisable on a network with a lot of computers, but can be helpful for diagnosing if you have the correct sharename.
+
+```
+$ smbtree -b -N
+
+```
+
+Where the options are:
+
+```
+-b, --broadcast                    Use broadcast instead of using the master browser 
+-N, --no-pass                      Don't ask for a password
 
 ```
 

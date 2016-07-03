@@ -1,13 +1,13 @@
-**翻译状态：** 本文是英文页面 [Intel_Graphics](/index.php/Intel_Graphics "Intel Graphics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-23，点击[这里](https://wiki.archlinux.org/index.php?title=Intel_Graphics&diff=0&oldid=407162)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Intel_Graphics](/index.php/Intel_Graphics "Intel Graphics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-03，点击[这里](https://wiki.archlinux.org/index.php?title=Intel_Graphics&diff=0&oldid=438925)可以查看翻译后英文页面的改动。
 
-由于Intel对X.Org开源驱动的支持，Intel的显卡现在基本上是即插即用的。
+由于 Intel 提供和支持 X.Org 开源驱动，Intel 的显卡基本上是即插即用的。
 
 Intel显卡和相应芯片组、cpu的完整型号参考[this comparison on wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units")。
 
 **注意:**
 
-*   有些人建议不要安装Intel驱动，而应该回滚使用modesetting驱动。 参见 [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel) 与 [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/).
-*   开源驱动不支持基于PowerVR的显卡([GMA 500](/index.php/Poulsbo "Poulsbo") 和 [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600") 系列)。
+*   有些人建议不要安装Intel驱动，而应该使用通用的 modesetting 驱动。 参见 [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel) 与 [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/).
+*   开源驱动不支持基于PowerVR的显卡([GMA 500](/index.php/GMA_500 "GMA 500") 和 [GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") 系列)。
 
 ## Contents
 
@@ -15,31 +15,38 @@ Intel显卡和相应芯片组、cpu的完整型号参考[this comparison on wiki
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
 *   [3 加载](#.E5.8A.A0.E8.BD.BD)
     *   [3.1 启用 early KMS](#.E5.90.AF.E7.94.A8_early_KMS)
-*   [4 Module-based Powersaving Options](#Module-based_Powersaving_Options)
+*   [4 基于模块的省电选项](#.E5.9F.BA.E4.BA.8E.E6.A8.A1.E5.9D.97.E7.9A.84.E7.9C.81.E7.94.B5.E9.80.89.E9.A1.B9)
+    *   [4.1 RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_.28enable_rc6.29)
+    *   [4.2 Framebuffer compression (enable_fbc)](#Framebuffer_compression_.28enable_fbc.29)
 *   [5 技巧](#.E6.8A.80.E5.B7.A7)
-    *   [5.1 选择加速方式](#.E9.80.89.E6.8B.A9.E5.8A.A0.E9.80.9F.E6.96.B9.E5.BC.8F)
-    *   [5.2 设置自动缩放模式](#.E8.AE.BE.E7.BD.AE.E8.87.AA.E5.8A.A8.E7.BC.A9.E6.94.BE.E6.A8.A1.E5.BC.8F)
-    *   [5.3 KMS 问题: 终端面积很小](#KMS_.E9.97.AE.E9.A2.98:_.E7.BB.88.E7.AB.AF.E9.9D.A2.E7.A7.AF.E5.BE.88.E5.B0.8F)
-    *   [5.4 在 GMA 4500 硬解 H.264](#.E5.9C.A8_GMA_4500_.E7.A1.AC.E8.A7.A3_H.264)
-    *   [5.5 设置伽马和亮度](#.E8.AE.BE.E7.BD.AE.E4.BC.BD.E9.A9.AC.E5.92.8C.E4.BA.AE.E5.BA.A6)
+    *   [5.1 避免播放视频时屏幕撕裂](#.E9.81.BF.E5.85.8D.E6.92.AD.E6.94.BE.E8.A7.86.E9.A2.91.E6.97.B6.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82)
+    *   [5.2 禁用 VSYNC](#.E7.A6.81.E7.94.A8_VSYNC)
+    *   [5.3 设置自动缩放模式](#.E8.AE.BE.E7.BD.AE.E8.87.AA.E5.8A.A8.E7.BC.A9.E6.94.BE.E6.A8.A1.E5.BC.8F)
+    *   [5.4 KMS 问题: 终端面积很小](#KMS_.E9.97.AE.E9.A2.98:_.E7.BB.88.E7.AB.AF.E9.9D.A2.E7.A7.AF.E5.BE.88.E5.B0.8F)
+    *   [5.5 在 GMA 4500 硬解 H.264](#.E5.9C.A8_GMA_4500_.E7.A1.AC.E8.A7.A3_H.264)
+    *   [5.6 设置伽马和亮度](#.E8.AE.BE.E7.BD.AE.E4.BC.BD.E9.A9.AC.E5.92.8C.E4.BA.AE.E5.BA.A6)
 *   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [6.1 Glxgears 显示性能低下](#Glxgears_.E6.98.BE.E7.A4.BA.E6.80.A7.E8.83.BD.E4.BD.8E.E4.B8.8B)
-        *   [6.1.1 禁用 VSYNC](#.E7.A6.81.E7.94.A8_VSYNC)
-    *   [6.2 在启动阶段，当 "Loading modules" 时黑屏](#.E5.9C.A8.E5.90.AF.E5.8A.A8.E9.98.B6.E6.AE.B5.EF.BC.8C.E5.BD.93_.22Loading_modules.22_.E6.97.B6.E9.BB.91.E5.B1.8F)
-    *   [6.3 播放视频时屏幕撕裂](#.E6.92.AD.E6.94.BE.E8.A7.86.E9.A2.91.E6.97.B6.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82)
+    *   [6.1 SNA 问题](#SNA_.E9.97.AE.E9.A2.98)
+    *   [6.2 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
+    *   [6.3 在启动阶段，当 "Loading modules" 时黑屏](#.E5.9C.A8.E5.90.AF.E5.8A.A8.E9.98.B6.E6.AE.B5.EF.BC.8C.E5.BD.93_.22Loading_modules.22_.E6.97.B6.E9.BB.91.E5.B1.8F)
     *   [6.4 X 冻结/崩溃](#X_.E5.86.BB.E7.BB.93.2F.E5.B4.A9.E6.BA.83)
     *   [6.5 添加未识别分辨率](#.E6.B7.BB.E5.8A.A0.E6.9C.AA.E8.AF.86.E5.88.AB.E5.88.86.E8.BE.A8.E7.8E.87)
-    *   [6.6 更新到 libGL 9 和 Intel-DRI 9 后，系统变慢](#.E6.9B.B4.E6.96.B0.E5.88.B0_libGL_9_.E5.92.8C_Intel-DRI_9_.E5.90.8E.EF.BC.8C.E7.B3.BB.E7.BB.9F.E5.8F.98.E6.85.A2)
-    *   [6.7 视频游戏时出现黑色纹理](#.E8.A7.86.E9.A2.91.E6.B8.B8.E6.88.8F.E6.97.B6.E5.87.BA.E7.8E.B0.E9.BB.91.E8.89.B2.E7.BA.B9.E7.90.86)
+    *   [6.6 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
+    *   [6.7 Backlight is not adjustable](#Backlight_is_not_adjustable)
+    *   [6.8 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
+    *   [6.9 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
+    *   [6.10 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
+    *   [6.11 Skylake support](#Skylake_support)
+    *   [6.12 Lag in Windows guests](#Lag_in_Windows_guests)
 *   [7 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
 
 ## 安装
 
 先安装 [Xorg](/index.php/Xorg "Xorg")，然后[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的 [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) 软件包。它提供了用于2D加速的DDX驱动和旧显卡的[XvMC](/index.php/XvMC "XvMC")视频解码驱动。它依赖于3D加速的DRI驱动 [mesa](https://www.archlinux.org/packages/?name=mesa)。
 
-启用OpenGL支持, 安装 [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl)。64位系统需要安装[lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) 才能在 32 位程序中使用加速功能。
+启用OpenGL支持, 安装 [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl)。64位系统需要安装[multilib](/index.php/Multilib "Multilib") 仓库中的 [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) 才能在 32 位程序中使用加速功能。
 
-要使用新 GPU 的硬件编解码功能，请参考 [VA-API](/index.php/VA-API "VA-API") 与 [VDPAU](/index.php/VDPAU "VDPAU") 页面；对于一些老型号的GPU，这项功能被集成在 [XvMC](/index.php/XvMC "XvMC")中，同时也包括了DDX驱动。
+参考 [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
 Ivy-Bridge以及更新的GPU支持 [Vulkan](/index.php/Vulkan "Vulkan") ，要启用这项功能，请安装 [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) 。
 
@@ -47,7 +54,7 @@ Ivy-Bridge以及更新的GPU支持 [Vulkan](/index.php/Vulkan "Vulkan") ，要�
 
 没必要做任何形式的配置来运行 [Xorg](/index.php/Xorg "Xorg")（不需要`xorg.conf`，但若有则要正确配置）。
 
-**注意:** 一些最新型号的核心显卡（例如Skylake/HD 530）可能需要额外的设置，参见[#Skylake Support](#Skylake_Support)
+**注意:** 一些最新型号的核心显卡（例如Skylake/HD 530）可能需要额外的设置，参见[#Skylake 支持](#Skylake_.E6.94.AF.E6.8C.81)
 
 然而，为了设定驱动的选项，你可能需要创建一份形式如下的Xorg的配置文件。
 
@@ -63,7 +70,7 @@ EndSection
 
 **注意:**
 
-*   在创建配置文件时，你可能需要指定`AccelMethod`（加速方式），哪怕只是将他设定为默认的方式 （现在的默认加速方式为 `"sna"`）；否则 X 可能会崩溃。
+*   在创建配置文件时，你可能需要指定`Option "AccelMethod"`（加速方式），哪怕只是将他设定为默认的方式 （现在的默认加速方式为 `"sna"`）；否则 X 可能会崩溃。
 *   你可能会需要在配置文件中添加更多的`Section "Device"`（驱动部分）。在相应的文章中会提示你在何处添加。
 
 查看完整选项列表，在终端中输入`man intel`。
@@ -88,7 +95,7 @@ MODULES="**i915**"
 
 ```
 
-**注意:** 有些用户也许需要在 `i915` 之前添加`intel_agp` 用来阻止 ACPI 错误。顺序很重要，因为模块是按顺序加载的
+**注意:** 有些用户也许需要在 `i915` 之前添加`intel_agp` 用来阻止 ACPI 错误。顺序很重要，因为模块是按顺序加载的.
 
 如果您使用的是自定义的 [EDID](https://en.wikipedia.org/wiki/Extended_display_identification_data "wikipedia:Extended display identification data") 文件,你应该也把它添加到initramfs中：
 
@@ -103,18 +110,18 @@ mkinitcpio -p linux
 
 重启系统，一切搞定！
 
-## Module-based Powersaving Options
+## 基于模块的省电选项
 
-The `i915` kernel module allows for configuration via [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Some of the module options impact power saving.
+可以通过[内核模块选项](/index.php/Kernel_modules#Setting_module_options "Kernel modules") 配置 `i915` 内核模块，其中一些选项会对影响省电功能。
 
-A list of all options along with short descriptions and default values can be generated with the following command:
+通过下面命令可以获得所有支持选项及其简介和默认值
 
 ```
 $ modinfo -p i915
 
 ```
 
-To check which options are currently enabled, run
+要检查目前启用了那些选项：
 
 ```
 # systool -m i915 -av
@@ -133,9 +140,29 @@ options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1 semaphores=1
 
 ```
 
+### RC6 sleep modes (enable_rc6)
+
 You can experiment with higher values for `enable_rc6`, but your GPU may not support them or the activation of the other options [[3]](https://wiki.archlinux.org/index.php?title=Talk:Intel_Graphics&oldid=327547#Kernel_Module_options).
 
-Framebuffer compression, for example, may be unreliable or unavailable on Intel GPU generations before Sandy Bridge (generation 6). This results in messages logged to the system journal similar to this one:
+The available `enable_rc6` values are a bitmask with bit values RC6=1, RC6p=2, RC6pp=3[[4]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/intel_pm.c#n34) - where "RC6p" and "RC6pp" are lower power states.
+
+To confirm the current running RC6 level, you can look in sysfs:
+
+```
+# cat /sys/class/drm/card0/power/rc6_enable
+
+```
+
+... if the value read is a lower number than expected, the other RC6 level are probably not supported. Passing `drm.debug=0xe` will add DRM debugging information to the kernel log - possibly including a line like this:
+
+```
+[drm:sanitize_rc6_option] Adjusting RC6 mask to 1 (requested 7, valid 1)
+
+```
+
+### Framebuffer compression (enable_fbc)
+
+Framebuffer compression may be unreliable or unavailable on Intel GPU generations before Sandy Bridge (generation 6). This results in messages logged to the system journal similar to this one:
 
 ```
 kernel: drm: not enough stolen space for compressed buffer, disabling.
@@ -144,24 +171,37 @@ kernel: drm: not enough stolen space for compressed buffer, disabling.
 
 ## 技巧
 
-### 选择加速方式
+### 避免播放视频时屏幕撕裂
 
-*   UXA - (Unified Acceleration Architecture) 是支持GEM驱动模型(GEM driver model)的成熟后端(backend)
-*   SNA - (Sandybridge's New Acceleration) 在有硬件支持下比UXA更快
+若使用 SNA，将下列内容添加到 `/etc/X11/xorg.conf.d/20-intel.conf` 的 `Device` 段可杜绝屏幕撕裂问题。
 
-现在默认的加速方式为SNA(截至 2013-08-05[[4]](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/xf86-video-intel&id=d03f5fb77df413017821f492aa81e5d68def7e48))，比UXA更快，但是稳定性比UXA稍差
-
-DDX驱动可重设你需要的加速方式。Phoronix的基准测试在 [[5]](http://www.phoronix.com/scan.php?page=news_item&px=MTEzOTE).Sandy Bridge为[[6]](http://www.phoronix.com/scan.php?page=article&item=intel_glamor_first&num=1)，Ivy Bridge为[[7]](http://www.phoronix.com/scan.php?page=article&item=intel_ivy_glamor&num=1). 若使用SNA有问题，UXA仍为稳妥的选择.
-
-要使用旧的UXA加速方式, 创建包含下列内容的`/etc/X11/xorg.conf.d/20-intel.conf` 就可使用UXA:
-
- `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
-Section "Device"
-   Identifier  "Intel Graphics"
-   Driver      "intel"
-   Option      "AccelMethod"  "uxa"
-EndSection
+Option "TearFree" "true"
+
+```
+
+See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686) for more info.
+
+**Note:**
+
+*   This option may not work when `SwapbuffersWait` is `false`.
+*   This option is problematic for applications that are very picky about vsync timing, like [Super Meat Boy](https://en.wikipedia.org/wiki/Super_Meat_Boy "wikipedia:Super Meat Boy").
+*   This option does not work with UXA acceleration method, only with SNA.
+*   This option should not be needed with DRI3 enabled.
+
+### 禁用 VSYNC
+
+在`/etc/X11/xorg.conf.d/20-intel.conf` 的 `Section "Device"` 段添加 `Option "SwapbuffersWait" "false"` 可禁用 VSYNC.
+
+在 `~/.drirc` 中将 `vblank_mode` 设为 `0` 并且将 `driver` 设为 `dri2` 也可达到上述效果:
+
+ `~/.drirc` 
+```
+<device screen="0" driver="dri2">
+   <application name="Default">
+   <option name="vblank_mode" value="0"/>
+   </application>
+</device>
 ```
 
 ### 设置自动缩放模式
@@ -196,66 +236,34 @@ $ xrandr --output LVDS1 --set "scaling mode" param
 
 ### 在 GMA 4500 硬解 H.264
 
-GMA 4500 平台上，[libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) 只能硬解 MPEG-2。 H.264 的硬解为另一分支——g45-h264， 在 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 中安装 [libva-driver-intel-g45-h264](https://aur.archlinux.org/packages/libva-driver-intel-g45-h264/) 就OK。 但注意 g45-h264 目前仍处于试验阶段，且开发不活跃。通过 VA-API 会减轻cpu的负载但不如使用非加速方式流畅。 mplayer的测试表明 使用vaapi 播放H.264 编码的 1080p 视频会让cpu的负载减半 (与XV相比) ，但播放很不稳定, 而 720p 则很到位 [[8]](https://bbs.archlinux.org/viewtopic.php?id=150550)。其他一些用户也提到这点[[9]](http://www.emmolution.org/?p=192&cpage=1#comment-12292)。
+GMA 4500 平台上，[libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) 只能硬解 MPEG-2。 H.264 的硬解为另一分支——g45-h264， 在 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 中安装 [libva-driver-intel-g45-h264](https://aur.archlinux.org/packages/libva-driver-intel-g45-h264/) 就OK。 但注意 g45-h264 目前仍处于试验阶段，且开发不活跃。通过 VA-API 会减轻cpu的负载但不如使用非加速方式流畅。 mplayer的测试表明 使用vaapi 播放H.264 编码的 1080p 视频会让cpu的负载减半 (与XV相比) ，但播放很不稳定, 而 720p 则很到位 [[5]](https://bbs.archlinux.org/viewtopic.php?id=150550)。其他一些用户也提到这点[[6]](http://www.emmolution.org/?p=192&cpage=1#comment-12292)。
 
 ### 设置伽马和亮度
 
-Intel没有提供在驱动层面设置这些值的途径，幸运的是，可通过 `xgamma` 和 `xrandr` 来设置。
-
-设置伽马:
-
-```
-$ xgamma -gamma 1.0
-
-```
-
-或:
-
-```
-$ xrandr --output VGA1 --gamma 1.0:1.0:1.0
-
-```
-
-设置亮度:
-
-```
-$ xrandr --output VGA1 --brightness 1.0
-
-```
+See [Backlight](/index.php/Backlight "Backlight").
 
 ## 疑难解答
 
-### Glxgears 显示性能低下
+### SNA 问题
 
-**注意:** `glxgears` 不是在不同系统上进行比较的基准测试工具。
+xf86-video-intel 现在默认的加速方式为SNA，如果出现图形问题，可以尝试使用使用旧的 UXA 加速方式, 创建包含下列内容的`/etc/X11/xorg.conf.d/20-intel.conf` 就可使用UXA:
 
-若运行 `glxgears` 来获取显卡性能参数, 你会发现结果都在 60 FPS 左右， 如:
-
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
-[...]
-311 frames in 5.0 seconds = 61.973 FPS
-311 frames in 5.0 seconds = 62.064 FPS
-311 frames in 5.0 seconds = 62.026 FPS
-[...]
-
+Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option      "AccelMethod"  "uxa"
+EndSection
 ```
 
-这不是性能低下的表现, 这是因为显卡使用了 [vertical synchronization](https://en.wikipedia.org/wiki/Analog_television#Vertical_synchronization "wikipedia:Analog television"), 也就是显示器的原生帧频.
+### Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)
 
-#### 禁用 VSYNC
+Should you experience missing font glyphs in GTK+ applications, the following workaround might help. [Edit](/index.php/Edit#Append.2C_add.2C_create.2C_edit "Edit") `/etc/environment` to add the following line:
 
-在`/etc/X11/xorg.conf.d/20-intel.conf` 的 `Section "Device"` 段添加 `Option "SwapbuffersWait" "false"` 可禁用 VSYNC.
+ `/etc/environment`  `COGL_ATLAS_DEFAULT_BLIT_MODE=framebuffer` 
 
-在 `~/.drirc` 中将 `vblank_mode` 设为 `0` 并且将 `driver` 设为 `dri2` 也可达到上述效果:
-
- `~/.drirc` 
-```
-<device screen="0" driver="dri2">
-   <application name="Default">
-   <option name="vblank_mode" value="0"/>
-   </application>
-</device>
-```
+See also [FreeDesktop bug 88584](https://bugs.freedesktop.org/show_bug.cgi?id=88584).
 
 ### 在启动阶段，当 "Loading modules" 时黑屏
 
@@ -268,12 +276,10 @@ video=SVIDEO-1:d
 
 ```
 
-### 播放视频时屏幕撕裂
-
-若使用 SNA，将下列内容添加到 `/etc/X11/xorg.conf.d/20-intel.conf` 的 `Device` 段可杜绝屏幕撕裂问题。
+如果是输出到 VGA:
 
 ```
-Option "TearFree" "true"
+video=VGA-1:1280x800
 
 ```
 
@@ -301,23 +307,145 @@ Section "Device"
 EndSection
 ```
 
+If you experience crashes and have
+
+```
+Option "TearFree" "true"
+Option "AccelMethod" "sna"
+
+```
+
+in your configuration file, in most cases these can be fixed by adding
+
+```
+i915.semaphores=1
+
+```
+
+to your boot parameters.
+
+If you are using kernel 4.0.X or above on Baytrail architecture and frequently encounter complete system freezes (especially when watching video or using GFX intensivelly), you should try adding the following kernel option as a workaround, until [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=109051) will be fixed permanently.
+
+```
+ intel_idle.max_cstate=1
+
+```
+
 ### 添加未识别分辨率
 
 [Xrandr page](/index.php/Xrandr#Adding_undetected_resolutions "Xrandr") 讲到了此问题。
 
-### 更新到 libGL 9 和 Intel-DRI 9 后，系统变慢
+### Weathered colors (color range problem)
 
-[降级软件包](/index.php/Downgrading_packages#ARM "Downgrading packages") 到 Intel-DRI 8 和 libGL 8.
+**Note:** This problem is related to the [changes](http://lists.freedesktop.org/archives/dri-devel/2013-January/033576.html) in the kernel 3.9\. This problem still remains in kernel 4.1.
 
-### 视频游戏时出现黑色纹理
+Kernel 3.9 contains a new default "Automatic" mode for the "Broadcast RGB" property in the Intel driver. It is almost equivalent to "Limited 16:235" (instead of the old default "Full") whenever an HDMI/DP output is in a [CEA mode](http://raspberrypi.stackexchange.com/questions/7332/what-is-the-difference-between-cea-and-dmt). If a monitor does not support signal in limited color range, it will cause weathered colors.
 
-启用 S3TC 纹理压缩支持可能会解决此问题。 通过 [driconf](https://www.archlinux.org/packages/?name=driconf) 或安装 [libtxc_dxtn](https://www.archlinux.org/packages/?name=libtxc_dxtn) 都可启用。
+**Note:** Some monitors/TVs support both color range. In that case an option often known as *Black Level* may need to be adjusted to make them handle the signal correctly. Some TVs can handle signal in limited range only. Setting Broadcast RGB to "Full" will cause color clipping. You may need to set it to "Limited 16:235" manually to avoid the clipping.
 
-此问题很快会得到解决，参考 [newer drivers](http://www.phoronix.com/scan.php?page=news_item&px=MTIwOTg)
+One can force mode e.g. `xrandr --output <HDMI> --set "Broadcast RGB" "Full"` (replace `<HDMI>` with the appropriate output device, verify by running `xrandr`).
 
-更多 S3TC 信息参考: [http://dri.freedesktop.org/wiki/S3TC](http://dri.freedesktop.org/wiki/S3TC) [wikipedia:S3_Texture_Compression](https://en.wikipedia.org/wiki/S3_Texture_Compression "wikipedia:S3 Texture Compression")
+Unfortunately, the Intel driver does not support setting the color range through an `xorg.conf.d` configuration file.
 
-受此影响的其中一个游戏是 [Oil Rush](http://www.phoronix.com/scan.php?page=article&item=unigine_oilrush_gold&num=2)
+A [bug report](https://bugzilla.kernel.org/show_bug.cgi?id=94921) is filed and a patch can be found in the attachment.
+
+Also there are other related problems which can be fixed editing GPU registers. More information can be found [[7]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[8]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
+
+### Backlight is not adjustable
+
+If after resuming from suspend, the hotkeys for changing the screen brightness do not take effect, check your configuration against the [Backlight](/index.php/Backlight "Backlight") article.
+
+If the problem persists, try one of the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+
+```
+acpi_osi=Linux
+acpi_osi="!Windows 2012"
+acpi_osi=
+
+```
+
+### Disabling frame buffer compression
+
+Enabling frame buffer compression on pre-Sandy Bridge CPUs results in endless error messages:
+
+```
+$ dmesg |tail 
+[ 2360.475430] [drm] not enough stolen space for compressed buffer (need 4325376 bytes), disabling
+[ 2360.475437] [drm] hint: you may be able to increase stolen memory size in the BIOS to avoid this
+
+```
+
+The solution is to disable frame buffer compression which will slightly increase power consumption. In order to disable it add `i915.enable_fbc=0` to the kernel line parameters. More information on the results of disabled compression can be found [here](http://zinc.canonical.com/~cking/power-benchmarking/background-colour-and-framebuffer-compression/results.txt).
+
+### Corruption/Unresponsiveness in Chromium and Firefox
+
+If you experience corruption or unresponsiveness in Chromium and/or Firefox [set the AccelMethod to "uxa"](#SNA_issues).
+
+### Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips
+
+A few seconds after X/Wayland loads the machine will freeze and journalctl will log a kernel crash referencing the Intel graphics as below:
+
+```
+Jun 16 17:54:03 hostname kernel: BUG: unable to handle kernel NULL pointer dereference at           (null)
+Jun 16 17:54:03 hostname kernel: IP: [<          (null)>]           (null)
+...
+Jun 16 17:54:03 hostname kernel: CPU: 0 PID: 733 Comm: gnome-shell Tainted: G     U     O    4.0.5-1-ARCH #1
+...
+Jun 16 17:54:03 hostname kernel: Call Trace:
+Jun 16 17:54:03 hostname kernel:  [<ffffffffa055cc27>] ? i915_gem_object_sync+0xe7/0x190 [i915]
+Jun 16 17:54:03 hostname kernel:  [<ffffffffa0579634>] intel_execlists_submission+0x294/0x4c0 [i915]
+Jun 16 17:54:03 hostname kernel:  [<ffffffffa05539fc>] i915_gem_do_execbuffer.isra.12+0xabc/0x1230 [i915]
+Jun 16 17:54:03 hostname kernel:  [<ffffffffa055d349>] ? i915_gem_object_set_to_cpu_domain+0xa9/0x1f0 [i915]
+Jun 16 17:54:03 hostname kernel:  [<ffffffff811ba2ae>] ? __kmalloc+0x2e/0x2a0
+Jun 16 17:54:03 hostname kernel:  [<ffffffffa0555471>] i915_gem_execbuffer2+0x141/0x2b0 [i915]
+Jun 16 17:54:03 hostname kernel:  [<ffffffffa042fcab>] drm_ioctl+0x1db/0x640 [drm]
+Jun 16 17:54:03 hostname kernel:  [<ffffffffa0555330>] ? i915_gem_execbuffer+0x450/0x450 [i915]
+Jun 16 17:54:03 hostname kernel:  [<ffffffff8122339b>] ? eventfd_ctx_read+0x16b/0x200
+Jun 16 17:54:03 hostname kernel:  [<ffffffff811ebc36>] do_vfs_ioctl+0x2c6/0x4d0
+Jun 16 17:54:03 hostname kernel:  [<ffffffff811f6452>] ? __fget+0x72/0xb0
+Jun 16 17:54:03 hostname kernel:  [<ffffffff811ebec1>] SyS_ioctl+0x81/0xa0
+Jun 16 17:54:03 hostname kernel:  [<ffffffff8157a589>] system_call_fastpath+0x12/0x17
+Jun 16 17:54:03 hostname kernel: Code:  Bad RIP value.
+Jun 16 17:54:03 hostname kernel: RIP  [<          (null)>]           (null)
+
+```
+
+This can be fixed by disabling execlist support which was changed to default on with kernel 4.0\. Add the following kernel parameter:
+
+```
+i915.enable_execlists=0
+
+```
+
+This is known to be broken to at least kernel 4.0.5.
+
+### Skylake support
+
+For linux kernels older than 4.3.x, `i915.preliminary_hw_support=1` must be added to your boot parameters for the driver to work on the new Intel Skylake (6th gen.) GPUs. On a fully updated system running kernel 4.3.x and up, this step is unneccesary.
+
+**Note:** Fixes for the GPU/DRM bugs are pending in kernel 4.6\. The following steps are unneccesary if you have [testing](/index.php/Testing "Testing") repo enabled, or once 4.6 lands in [core](/index.php/Official_repositories#core "Official repositories").
+
+The i915 DRM driver is known to cause various GPU hangs, crashes and even full system freezes. It might be neccesary to disable hardware acceleration to workaround these issues. One solution is to use the following Xorg configuration.
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+	Identifier  "Intel Graphics"
+	Driver      "intel"
+	Option	    "DRI"	"false"
+EndSection
+
+```
+
+Otherwise, specific applications such as Chromium and Firefox browsers can be instructed to disable hardware rendering directly.
+
+Another option that seems to work for some users is to add the `i915.enable_rc6=0` kernel boot parameter, which will cause the CPU/GPU to remain in high-power modes, but seems to resolve most cases of GPU hangs and system freezes.
+
+**Note:** If the system appears to hang after "Loading Initial Ramdisk", make sure that the IGD aperture size in BIOS is less than 4GB.
+
+### Lag in Windows guests
+
+The video output of a Windows guests in VirtualBox sometimes hangs until the host forces a screen update (e.g. by moving the mouse cursor). Removing the `enable_fbc=1` option fixes this issue.
 
 ## 更多信息
 

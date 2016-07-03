@@ -20,7 +20,7 @@ Basically DKIM means digitally signing all messages on the server to verify the 
 
 *   When the message arrives, the receiver (or his server) requests the public key from the domain's DNS and verifies the signature.
 
-This ensures the message was sent from a server who's private key matches the domain's public key.
+This ensures the message was sent from a server whose private key matches the domain's public key.
 
 For more info see [RFC 6376](http://tools.ietf.org/html/rfc6376)
 

@@ -125,6 +125,10 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://gist.github.com/felipec/94752ddd08e1adfb80ac57947982443c](https://gist.github.com/felipec/94752ddd08e1adfb80ac57947982443c) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
+*   **updpkgver** — Detects upstream releases and updates the PKGBUILD automatically
+
+	[https://github.com/renatosilva/pactoys/tree/master/source/updpkgver](https://github.com/renatosilva/pactoys/tree/master/source/updpkgver) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 ## Libraries
 
 *   **haskell-archlinux** — Library to access the AUR and package metadata from the Haskell programming language

@@ -12,6 +12,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/flatpak "wikipedia:flatpak"): "[F
     *   [3.3 List installed runtimes and applications](#List_installed_runtimes_and_applications)
     *   [3.4 Update a runtime or application](#Update_a_runtime_or_application)
     *   [3.5 Uninstall a runtime or application](#Uninstall_a_runtime_or_application)
+    *   [3.6 Adding Flatpak .desktop files to your menu](#Adding_Flatpak_.desktop_files_to_your_menu)
 *   [4 Creating a custom base runtime](#Creating_a_custom_base_runtime)
     *   [4.1 Creating apps with pacman](#Creating_apps_with_pacman)
 *   [5 See also](#See_also)
@@ -93,6 +94,17 @@ $ flatpak uninstall *name*
 
 ```
 
+### Adding Flatpak .desktop files to your menu
+
+Some window managers and launchers do not scan the Flatpak directory by default. If you can edit the list of directories scanned, add this to it:
+
+```
+~/.local/share/flatpak/exports/applications
+
+```
+
+This is known to be necessary in Awesome.
+
 ## Creating a custom base runtime
 
 **Note:** You may want to use an untrusted, unprivileged user account for bundling untrusted software because the software is not sandboxed during app and runtime creation.
@@ -106,23 +118,31 @@ In addition to [flatpak](https://www.archlinux.org/packages/?name=flatpak), you 
 First, start by creating a directory for building the runtime and possibly applications.
 
 ```
-$ mkdir myflatpakbuilddir
-$ cd myflatpakbuilddir
+$ mkdir *myflatpakbuilddir*
+$ cd *myflatpakbuilddir*
 
 ```
 
 You can then prepare a directory for building the runtime base platform. The files subdirectory will contain what will later be the `/usr` directory in the sandbox. Therefore you will need to create symbolic links so the default `/usr/share` etc. from Arch can still be accessed at the usual path.
 
 ```
-$ mkdir -p myruntime/files/var/lib/pacman
-$ touch myruntime/files/.ref
-$ ln -s /usr/usr/share myruntime/files/share
-$ ln -s /usr/usr/include myruntime/files/include
-$ ln -s /usr/usr/local myruntime/files/local
+$ mkdir -p *myruntime*/files/var/lib/pacman
+$ touch *myruntime*/files/.ref
+$ ln -s /usr/usr/share *myruntime*/files/share
+$ ln -s /usr/usr/include *myruntime*/files/include
+$ ln -s /usr/usr/local *myruntime*/files/local
 
 ```
 
-You need and may want to adapt your `pacman.conf` before installing packages to the runtime. Run `cp /etc/pacman.conf pacman.conf` and then make the following changes:
+Make your host OS fonts available to the Arch runtime:
+
+```
+$ mkdir -p *myruntime*/files/usr/share/fonts
+$ ln -s /run/host/fonts *myruntime*/files/usr/share/fonts/flatpakhostfonts
+
+```
+
+You need and may want to adapt your `pacman.conf` before installing packages to the runtime. Copy `/etc/pacman.conf` to your build directory and then make the following changes:
 
 *   Remove the `CheckSpace` option so pacman will not complain about errors finding the root filesystem for checking disk space.
 *   Remove any undesired custom repositories and `IgnorePkg`, `IgnoreGroup`, `NoUpgrade` and `NoExtract` settings that are needed only for the host system.
@@ -130,22 +150,29 @@ You need and may want to adapt your `pacman.conf` before installing packages to 
 Now install the packages for the runtime.
 
 ```
-$ fakechroot fakeroot pacman -Syu --root myruntime/files --dbpath myruntime/files/var/lib/pacman --config pacman.conf base
-$ mv pacman.conf myruntime/files/etc/pacman.conf
+$ fakechroot fakeroot pacman -Syu --root *myruntime*/files --dbpath *myruntime*/files/var/lib/pacman --config pacman.conf base
+$ mv pacman.conf *myruntime*/files/etc/pacman.conf
+
+```
+
+Set up the [locales](/index.php/Locale "Locale") to be used by editing `*myruntime*/files/etc/locale.gen`. Then regenerate the runtime’s locales.
+
+```
+$ fakechroot chroot *myruntime*/files locale-gen
 
 ```
 
 The base SDK can be created from the base runtime with added applications needed for building packages and running pacman.
 
 ```
-$ cp -r myruntime mysdk
+$ cp -r *myruntime* mysdk
 $ fakechroot fakeroot pacman -S --root mysdk/files --dbpath mysdk/files/var/lib/pacman --config mysdk/files/etc/pacman.conf base-devel fakeroot fakechroot --needed
 
 ```
 
 Insert metadata about runtime and SDK.
 
- `myruntime/metadata` 
+ `*myruntime*/metadata` 
 ```
 [Runtime]
 name=org.mydomain.BasePlatform
@@ -164,7 +191,7 @@ Add base runtime and SDK to a local repository in the current directory. You may
 
 ```
 $ ostree init --mode archive-z2 --repo=.
-$ EDITOR="nano -w" ostree commit -b runtime/org.mydomain.BasePlatform/x86_64/2016-06-26 --tree=dir=myruntime
+$ EDITOR="nano -w" ostree commit -b runtime/org.mydomain.BasePlatform/x86_64/2016-06-26 --tree=dir=*myruntime*
 $ EDITOR="nano -w" ostree commit -b runtime/org.mydomain.BaseSdk/x86_64/2016-06-26 --tree=dir=mysdk
 $ ostree summary -u
 
@@ -231,6 +258,12 @@ Then create a dummy app.
 ```
 $ flatpak build-init geditapp org.gnome.gedit org.mydomain.BaseSdk org.mydomain.geditruntime
 $ flatpak build-finish geditapp --socket=x11 --command=gedit
+
+```
+
+If you wish to fine-tune the app’s access permissions when sandboxed, adapt `geditapp/metadata` to your needs as described on Flatpak’s [GitHub wiki](https://github.com/flatpak/flatpak/wiki/Metadata) before exporting. When the metadata file is complete, export the app to the repository.
+
+```
 $ flatpak build-export geditrepo geditapp
 
 ```

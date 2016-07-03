@@ -510,10 +510,7 @@ HOOKS="... **systemd** ... block **sd-encrypt** sd-lvm2 filesystems ..."
 
 [Recreate the initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") and you are done.
 
-**Note:**
-
-*   No cryptsetup parameters need to be passed to the kernel command line, since`/etc/crypttab.initramfs` will be added as `/etc/crypttab` in the initramfs. If you wish to specify them in the kernel command line see [systemd-cryptsetup-generator(8)](http://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html) for the supported options.
-*   Be aware the `systemd` hook adds further files to the initramfs (e.g. `/etc/passwd` and `/etc/group`), in case you consider them sensitive.
+**Note:** No cryptsetup parameters need to be passed to the kernel command line, since`/etc/crypttab.initramfs` will be added as `/etc/crypttab` in the initramfs. If you wish to specify them in the kernel command line see [systemd-cryptsetup-generator(8)](http://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html) for the supported options.
 
 #### Modifying encrypt hook
 

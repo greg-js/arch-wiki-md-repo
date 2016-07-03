@@ -7,20 +7,19 @@ This is a listing of Linux distributions which are derived from Arch Linux eithe
 *   [1 Active](#Active)
     *   [1.1 Desktop](#Desktop)
     *   [1.2 Others](#Others)
-*   [2 Arch-influenced](#Arch-influenced)
-*   [3 Inactive](#Inactive)
-    *   [3.1 2015](#2015)
-    *   [3.2 2014](#2014)
-    *   [3.3 2013](#2013)
-    *   [3.4 2012](#2012)
-    *   [3.5 2011](#2011)
-    *   [3.6 2010](#2010)
-    *   [3.7 2009](#2009)
-    *   [3.8 2008](#2008)
-    *   [3.9 2007](#2007)
-    *   [3.10 2006](#2006)
-    *   [3.11 2005](#2005)
-    *   [3.12 2004](#2004)
+*   [2 Inactive](#Inactive)
+    *   [2.1 2015](#2015)
+    *   [2.2 2014](#2014)
+    *   [2.3 2013](#2013)
+    *   [2.4 2012](#2012)
+    *   [2.5 2011](#2011)
+    *   [2.6 2010](#2010)
+    *   [2.7 2009](#2009)
+    *   [2.8 2008](#2008)
+    *   [2.9 2007](#2007)
+    *   [2.10 2006](#2006)
+    *   [2.11 2005](#2005)
+    *   [2.12 2004](#2004)
 
 ## Active
 
@@ -31,6 +30,7 @@ Actively developed Arch derived Linux distributions.
 The following distributions include a pre-installed [Desktop environment](/index.php/Desktop_environment "Desktop environment").
 
 *   [Antergos](https://sourceforge.net/projects/antergos/)
+*   [Arquetype CRT](https://arquetype.org/)
 *   [alphaOS](https://sourceforge.net/projects/alphaos/)
 *   [Apricity OS](https://sourceforge.net/projects/apricityos/)
 *   [ArchBang](https://sourceforge.net/projects/archbang/)
@@ -38,30 +38,25 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [BBQLinux](https://sourceforge.net/projects/bbqlinux/)
 *   [BlackArch Linux](http://blackarch.org/)
 *   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/)
+*   [Chakra](https://sourceforge.net/projects/chakra/)
 *   [DidJiX](http://easy.open.and.free.fr/didjix/)
+*   [Frugalware](http://frugalware.org/)
+*   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [PacBang](https://sourceforge.net/projects/architect-linux/)
+*   [Obarun](http://www.obarun.org/index.html)
+*   [PacBSD](https://www.pacbsd.org/)
 *   [PoliArch](https://sourceforge.net/projects/poliarch/)
+*   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 
 ### Others
 
-*   [Arch Linux ARM](http://archlinuxarm.org/)
-*   [Parabola GNU/Linux-libre](https://www.parabola.nu/)
-*   [UBOS](http://ubos.net/)
-
-## Arch-influenced
-
-Linux or other distributions that were influenced by Arch Linux.
-
 *   [Alpine Linux](http://alpinelinux.org/)
-*   [Arquetype CRT](https://arquetype.org/)
-*   [Chakra](https://sourceforge.net/projects/chakra/)
-*   [Frugalware](http://frugalware.org/)
-*   [KaOS](https://sourceforge.net/projects/kaosx/)
+*   [Arch Linux ARM](http://archlinuxarm.org/)
 *   [LinHES](http://linhes.org/)
-*   [PacBSD](https://www.pacbsd.org/)
-*   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
+*   [Parabola GNU/Linux-libre](https://www.parabola.nu/)
 *   [MSYS2](https://sourceforge.net/projects/msys2/)
+*   [UBOS](http://ubos.net/)
 
 ## Inactive
 

@@ -111,7 +111,7 @@ For more information on configuring LILO, see the [LILO](/index.php/LILO "LILO")
 
 	 `"Boot to X"   "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff *quiet splash*"` 
 
-*   If you have disabled auto-detection of OS's in rEFInd and are defining OS stanzas instead in `/boot/EFI/refind/refind.conf` to load your OS's, you can edit it like:
+*   If you have disabled auto-detection of OSes in rEFInd and are defining OS stanzas instead in `/boot/EFI/refind/refind.conf` to load your OSes, you can edit it like:
 
 ```
 menuentry "Arch" {

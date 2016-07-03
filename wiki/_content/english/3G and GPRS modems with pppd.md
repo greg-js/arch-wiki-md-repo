@@ -11,6 +11,7 @@ You may be reading this page by the same reason it was written for: you may have
     *   [2.1 /etc/ppp/options-mobile](#.2Fetc.2Fppp.2Foptions-mobile)
     *   [2.2 /etc/ppp/peers](#.2Fetc.2Fppp.2Fpeers)
     *   [2.3 /etc/ppp/chatscripts](#.2Fetc.2Fppp.2Fchatscripts)
+    *   [2.4 Easy wizard configuration](#Easy_wizard_configuration)
 *   [3 Start the pppd](#Start_the_pppd)
 *   [4 Patch for modem availability after booting](#Patch_for_modem_availability_after_booting)
     *   [4.1 netcfg hook](#netcfg_hook)
@@ -189,6 +190,10 @@ AT
 ```
 
 The SYSCFG line in the **mode.*** files is device-dependent, and likely Huawei-specific. It does not works in Nokia phones (you may symlink **mode** to **mode.NONE**, which only sends the AT command with no effect). I had to investigate before achieving success with both EM770 and E220 modems. Despite many forums reporting a "4" trailing code, it seems that the trailing 0/1 number, while optional in E220, becomes mandatory in EM770 for truly switching the mode. At the end of this guide there are explained the available options for this command. As previously said, you may simply link to **mode.NONE** and use your modem defaults in case of problems.
+
+### Easy wizard configuration
+
+Instead of manually creating pppd configuration, [pppconfig](https://aur.archlinux.org/packages/pppconfig/) can be used to create pppd configuration and chatscripts easily. Editing chatscript is needed to provide APN name, e.g. adding `AT+CDGCONT=1,"IP","apnname"` on specific chatscript profile, e.g. `/etc/chatscripts/mobile`.
 
 ## Start the pppd
 
