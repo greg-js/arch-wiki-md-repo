@@ -21,42 +21,41 @@ Note that certain font licenses may impose some legal limitations.
 *   [4 Font packages](#Font_packages)
     *   [4.1 Ancient Scripts](#Ancient_Scripts)
     *   [4.2 Braille](#Braille)
-    *   [4.3 Emoji](#Emoji)
-    *   [4.4 Kaomoji](#Kaomoji)
-    *   [4.5 International users](#International_users)
-        *   [4.5.1 Arabic & Urdu](#Arabic_.26_Urdu)
-        *   [4.5.2 Burmese](#Burmese)
-        *   [4.5.3 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
-            *   [4.5.3.1 Pan-CJK](#Pan-CJK)
-            *   [4.5.3.2 (Mainly) Chinese](#.28Mainly.29_Chinese)
-            *   [4.5.3.3 Japanese](#Japanese)
-            *   [4.5.3.4 Korean](#Korean)
-        *   [4.5.4 Cyrillic](#Cyrillic)
-        *   [4.5.5 Greek](#Greek)
-        *   [4.5.6 Hebrew](#Hebrew)
-        *   [4.5.7 Indic](#Indic)
-        *   [4.5.8 Khmer](#Khmer)
-        *   [4.5.9 Lao](#Lao)
-        *   [4.5.10 Persian](#Persian)
-        *   [4.5.11 Sinhala](#Sinhala)
-        *   [4.5.12 Thai](#Thai)
-        *   [4.5.13 Tibetan](#Tibetan)
-    *   [4.6 Math](#Math)
-    *   [4.7 Metric-compatible fonts](#Metric-compatible_fonts)
-    *   [4.8 Apple OS X fonts](#Apple_OS_X_fonts)
-    *   [4.9 Monospaced](#Monospaced)
-        *   [4.9.1 TrueType](#TrueType)
-        *   [4.9.2 Bitmap](#Bitmap)
-    *   [4.10 Sans-serif](#Sans-serif)
-    *   [4.11 Script](#Script)
-    *   [4.12 Serif](#Serif)
-    *   [4.13 Unsorted](#Unsorted)
+    *   [4.3 Emoji and symbols](#Emoji_and_symbols)
+        *   [4.3.1 Arabic & Urdu](#Arabic_.26_Urdu)
+        *   [4.3.2 Burmese](#Burmese)
+        *   [4.3.3 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
+            *   [4.3.3.1 Pan-CJK](#Pan-CJK)
+            *   [4.3.3.2 (Mainly) Chinese](#.28Mainly.29_Chinese)
+            *   [4.3.3.3 Japanese](#Japanese)
+            *   [4.3.3.4 Korean](#Korean)
+        *   [4.3.4 Cyrillic](#Cyrillic)
+        *   [4.3.5 Greek](#Greek)
+        *   [4.3.6 Hebrew](#Hebrew)
+        *   [4.3.7 Indic](#Indic)
+        *   [4.3.8 Khmer](#Khmer)
+        *   [4.3.9 Lao](#Lao)
+        *   [4.3.10 Persian](#Persian)
+        *   [4.3.11 Sinhala](#Sinhala)
+        *   [4.3.12 Thai](#Thai)
+        *   [4.3.13 Tibetan](#Tibetan)
+    *   [4.4 Math](#Math)
+    *   [4.5 Metric-compatible fonts](#Metric-compatible_fonts)
+    *   [4.6 Apple OS X fonts](#Apple_OS_X_fonts)
+    *   [4.7 Monospaced](#Monospaced)
+        *   [4.7.1 TrueType](#TrueType)
+        *   [4.7.2 Bitmap](#Bitmap)
+    *   [4.8 Sans-serif](#Sans-serif)
+    *   [4.9 Script](#Script)
+    *   [4.10 Serif](#Serif)
+    *   [4.11 Unsorted](#Unsorted)
 *   [5 Fallback font order with X11](#Fallback_font_order_with_X11)
 *   [6 Font alias](#Font_alias)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 List all installed fonts](#List_all_installed_fonts)
-    *   [7.2 Set terminal font on-the-fly](#Set_terminal_font_on-the-fly)
-    *   [7.3 Application-specific font cache](#Application-specific_font_cache)
+    *   [7.2 Lists installed fonts for a particular language](#Lists_installed_fonts_for_a_particular_language)
+    *   [7.3 Set terminal font on-the-fly](#Set_terminal_font_on-the-fly)
+    *   [7.4 Application-specific font cache](#Application-specific_font_cache)
 *   [8 See also](#See_also)
 
 ## Font formats
@@ -332,40 +331,16 @@ Github user Ternstor has created a python script that generates HTML documents w
 
 *   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - Font containing Unicode symbols for *braille*
 
-### Emoji
+### Emoji and symbols
 
 A section of the Unicode standard is designated for picotographic characters called "emoji".
 
 *   [emojione-color-font](https://aur.archlinux.org/packages/emojione-color-font/) - a complete, independent, open-source emoji set focused on design correctness
 *   [twemoji-color-font](https://aur.archlinux.org/packages/twemoji-color-font/) - Twitter's open-sourced emoji glyphs
 *   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - provides many Unicode symbols, including emoji, in outline style
-*   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts
-
-Some newer additions to Unicode appear to render poorly with Noto fonts.
-
-### Kaomoji
+*   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts. Some newer additions to Unicode appear to render poorly with Noto fonts.
 
 [Kaomoji](https://en.wikipedia.org/wiki/Emoticon#Japanese_style "wikipedia:Emoticon") are sometimes referred to as "Japanese emoticons" and are composed of characters from various character sets, including CJK and Indic fonts. For example, the following set of packages covers most of existing kaomoji: [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), and [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
-
-### International users
-
-Applications and browsers select and display fonts depending upon fontconfig preferences and available font glyph for Unicode text. To list installed fonts for a particular language, issue a command `fc-list :lang="two letter language code"`. For instance, to list installed Arabic fonts or fonts supporting Arabic glyph:
-
- `$ fc-list -f '%{file}
-' :lang=ar` 
-```
-/usr/share/fonts/TTF/FreeMono.ttf
-/usr/share/fonts/TTF/DejaVuSansCondensed.ttf
-/usr/share/fonts/truetype/custom/DroidKufi-Bold.ttf
-/usr/share/fonts/TTF/DejaVuSansMono.ttf
-/usr/share/fonts/TTF/FreeSerif.ttf
-
-```
-
-To properly render fonts for multilingual websites like Wikipedia or this Arch Linux wiki, install one of the following sets of packages:
-
-*   Google's [Noto](http://www.google.com/get/noto/) is a font family that aims to support all languages. [Install](/index.php/Install "Install") it with the [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts), [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) and [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) packages.
-*   An alternative set of fonts which has a good coverage of languages is [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) with [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) and [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk).
 
 #### Arabic & Urdu
 
@@ -595,7 +570,6 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 
 *   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - a huge collection of free fonts (including ubuntu, inconsolata, droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
 *   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Covers full plane 1 and several scripts
-*   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - Provides emoji and many many other symbols
 *   [font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf) - X.Org Luxi fonts
 *   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) - Font collection from *dustismo.com*
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) - Junius font containing almost complete medieval latin script glyphs
@@ -651,6 +625,21 @@ You can use the following command to list all installed fonts that are available
 
 ```
 $ fc-list
+
+```
+
+### Lists installed fonts for a particular language
+
+Applications and browsers select and display fonts depending upon fontconfig preferences and available font glyph for Unicode text. To list installed fonts for a particular language, issue a command `fc-list :lang="two letter language code"`. For instance, to list installed Arabic fonts or fonts supporting Arabic glyph:
+
+ `$ fc-list -f '%{file}
+' :lang=ar` 
+```
+/usr/share/fonts/TTF/FreeMono.ttf
+/usr/share/fonts/TTF/DejaVuSansCondensed.ttf
+/usr/share/fonts/truetype/custom/DroidKufi-Bold.ttf
+/usr/share/fonts/TTF/DejaVuSansMono.ttf
+/usr/share/fonts/TTF/FreeSerif.ttf
 
 ```
 

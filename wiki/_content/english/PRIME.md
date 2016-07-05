@@ -14,7 +14,6 @@ PRIME is a technology used to manage hybrid graphics found on recent laptops ([O
         *   [4.2.1 Black screen with GL-based compositors](#Black_screen_with_GL-based_compositors)
     *   [4.3 Kernel crash/oops when using PRIME and switching windows/workspaces](#Kernel_crash.2Foops_when_using_PRIME_and_switching_windows.2Fworkspaces)
     *   [4.4 Glitches/Ghosting synchronization problem on second monitor when using reverse PRIME](#Glitches.2FGhosting_synchronization_problem_on_second_monitor_when_using_reverse_PRIME)
-    *   [4.5 MPlayer crashes when launched in PRIME mode](#MPlayer_crashes_when_launched_in_PRIME_mode)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -48,17 +47,7 @@ OpenGL renderer string: Mesa DRI Intel(R) Ivybridge Mobile
 
 ```
 
-Sometimes, the displayed provider is not displayed as radeon.
-
- `$ xrandr --listproviders` 
-```
-Providers: number : 2
-Provider 0: id: 0x78 cap: 0xb, Source Output, Sink Output, Sink Offload crtcs: 4 outputs: 5 associated providers: 1 name:Intel
-Provider 1: id: 0x4f cap: 0xf, Source Output, Sink Output, Source Offload, Sink Offload crtcs: 0 outputs: 0 associated providers: 1 name:HAINAN @ pci:0000:03:00.0
-
-```
-
-In this case, the providers are `Intel` and `"HAINAN @ pci:0000:03:00.0"`, not `radeon`. You should provide `HAINAN @ pci:0000:03:00.0` in the next command.
+**Note:** Sometimes, the displayed provider is `"HAINAN @ pci:0000:03:00.0"`, not `radeon`. In this case you should use `"HAINAN @ pci:0000:03:00.0"` as the provider in the next command.
 
 ### Closed Source Drivers
 
@@ -206,30 +195,6 @@ CLUTTER_PAINT=disable-clipped-redraws:disable-culling
 CLUTTER_VBLANK=True
 
 ```
-
-### MPlayer crashes when launched in PRIME mode
-
-When launching [mplayer](https://www.archlinux.org/packages/?name=mplayer) using this method, it will crash
-
- `$ DRI_PRIME=1 mplayer somevideo.video` 
-```
-...
-MPlayer interrupted by signal 11 in module: preinit_libvo
-- MPlayer crashed by bad usage of CPU/FPU/RAM.
-  Recompile MPlayer with --enable-debug and make a 'gdb' backtrace and
-  disassembly. Details in DOCS/HTML/en/bugreports_what.html#bugreports_crash.
-- MPlayer crashed. This shouldn't happen.
-  It can be a bug in the MPlayer code _or_ in your drivers _or_ in your
-  gcc version. If you think it's MPlayer's fault, please read
-  DOCS/HTML/en/bugreports.html and follow the instructions there. We can't and
-  won't help unless you provide this information when reporting a possible bug.
-```
-
-Possible workaround: install [mpv](https://www.archlinux.org/packages/?name=mpv). Launch the video using [mpv](https://www.archlinux.org/packages/?name=mpv) instead of [mplayer](https://www.archlinux.org/packages/?name=mplayer).
-
-`$ DRI_PRIME=1 mpv somevideo.video`
-
-The video will play just fine with mpv.
 
 ## See also
 

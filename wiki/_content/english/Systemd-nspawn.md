@@ -13,7 +13,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
     *   [2.1 Create and boot a minimal Arch Linux distribution in a container](#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container)
         *   [2.1.1 Bootstrapping Arch Linux i686 inside x86_64 host](#Bootstrapping_Arch_Linux_i686_inside_x86_64_host)
     *   [2.2 Create a Debian or Ubuntu environment](#Create_a_Debian_or_Ubuntu_environment)
-    *   [2.3 Enable Container on boot](#Enable_Container_on_boot)
+    *   [2.3 Enable container on boot](#Enable_container_on_boot)
     *   [2.4 Building and testing packages](#Building_and_testing_packages)
 *   [3 Management](#Management)
     *   [3.1 machinectl](#machinectl)
@@ -116,7 +116,7 @@ Unlike Arch, Debian and Ubuntu will not let you login without a password on firs
 
 ```
 
-### Enable Container on boot
+### Enable container on boot
 
 When using a container frequently, you may want to start it on boot.
 

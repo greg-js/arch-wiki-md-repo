@@ -42,24 +42,24 @@ To use the new Notifications and messaging tray, activate the following options 
 
 To fully enable spell-check, you need to install the correct dictionary besides [enchant](https://www.archlinux.org/packages/?name=enchant). Find your correct dictionary by [searching](/index.php/Pacman#Querying_package_databases "Pacman") for [hunspell](https://www.archlinux.org/packages/?name=hunspell).
 
-For English this is [hunspell-en](https://www.archlinux.org/packages/?name=hunspell-en). Restart XChat after installation.
+For English this is [hunspell-en](https://www.archlinux.org/packages/?name=hunspell-en). Restart HexChat after installation.
 
 ### Missing tray icon
 
-If XChat was loaded *before* the panel containing its icon, for example when the panel is forcibly reloaded, the icon may be invisible. [[1]](https://bugs.launchpad.net/ubuntu/+source/xchat/+bug/410525) To restore the icon, run:
+If HexChat was loaded *before* the panel containing its icon, for example when the panel is forcibly reloaded, the icon may be invisible. [[1]](https://bugs.launchpad.net/ubuntu/+source/xchat/+bug/410525) To restore the icon, run:
 
 ```
-$ xchat --existing --command="set gui_tray 0"
-$ xchat --existing --command="gui apply"
-$ xchat --existing --command="set gui_tray 1"
-$ xchat --existing --command="gui apply"
+$ hexchat --existing --command="set gui_tray 0"
+$ hexchat --existing --command="gui apply"
+$ hexchat --existing --command="set gui_tray 1"
+$ hexchat --existing --command="gui apply"
 
 ```
 
 Or restore the main window with:
 
 ```
-$ xchat --existing --command="gui show"
+$ hexchat --existing --command="gui show"
 
 ```
 

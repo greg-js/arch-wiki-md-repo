@@ -1,6 +1,8 @@
 This article details the installation and configuration process of the ***Synaptics input driver*** for Synaptics (and ALPS) touchpads found on most notebooks.
 
-**Tip:** An alternative touchpad driver is [libinput](/index.php/Libinput "Libinput"). It implements a different approach to recognize and process multitouch features and has better desktop integration
+**Tip:** An alternative touchpad driver is [libinput](/index.php/Libinput "Libinput"). It implements a different approach to recognize and process multitouch features.
+
+**Note:** If you want to configure touchpad via GNOME control center, you need to use the [libinput](/index.php/Libinput "Libinput") driver.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12)
 
 ## Contents
 
@@ -20,13 +22,13 @@ This article details the installation and configuration process of the ***Synapt
     *   [3.5 Circular Scrolling](#Circular_Scrolling)
     *   [3.6 Natural scrolling](#Natural_scrolling)
     *   [3.7 Software toggle](#Software_toggle)
-    *   [3.8 Disable trackpad while typing](#Disable_trackpad_while_typing)
+    *   [3.8 Disable touchpad while typing](#Disable_touchpad_while_typing)
         *   [3.8.1 Using the driver's automatic palm detection](#Using_the_driver.27s_automatic_palm_detection)
         *   [3.8.2 Using syndaemon](#Using_syndaemon)
     *   [3.9 Disable touchpad on mouse detection](#Disable_touchpad_on_mouse_detection)
         *   [3.9.1 Basic desktop](#Basic_desktop)
         *   [3.9.2 GDM](#GDM)
-            *   [3.9.2.1 With syndeamon running](#With_syndeamon_running)
+            *   [3.9.2.1 With syndaemon running](#With_syndaemon_running)
             *   [3.9.2.2 touchpad-state](#touchpad-state)
         *   [3.9.3 GNOME](#GNOME)
         *   [3.9.4 KDE](#KDE)
@@ -35,7 +37,7 @@ This article details the installation and configuration process of the ***Synapt
         *   [3.10.1 Bottom edge correction](#Bottom_edge_correction)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Touchpad does not work after resuming from hibernate/suspend](#Touchpad_does_not_work_after_resuming_from_hibernate.2Fsuspend)
-    *   [4.2 xorg.conf.d/70-synaptics.conf does not seem to apply under GNOME and MATE](#xorg.conf.d.2F70-synaptics.conf_does_not_seem_to_apply_under_GNOME_and_MATE)
+    *   [4.2 xorg.conf.d/70-synaptics.conf does not seem to apply in MATE](#xorg.conf.d.2F70-synaptics.conf_does_not_seem_to_apply_in_MATE)
     *   [4.3 The touchpad is not working, Xorg.0.log shows "Query no Synaptics: 6003C8"](#The_touchpad_is_not_working.2C_Xorg.0.log_shows_.22Query_no_Synaptics:_6003C8.22)
     *   [4.4 Touchpad detected as "PS/2 Generic Mouse" or "Logitech PS/2 mouse"](#Touchpad_detected_as_.22PS.2F2_Generic_Mouse.22_or_.22Logitech_PS.2F2_mouse.22)
         *   [4.4.1 Elantech touchpads](#Elantech_touchpads)
@@ -54,12 +56,11 @@ This article details the installation and configuration process of the ***Synapt
     *   [4.15 Touchpad not recognized after shutdown from Arch](#Touchpad_not_recognized_after_shutdown_from_Arch)
     *   [4.16 Trackpoint and Clickpad](#Trackpoint_and_Clickpad)
     *   [4.17 ASUS Touchpads only recognised as PS/2 FocalTech emulated mouse](#ASUS_Touchpads_only_recognised_as_PS.2F2_FocalTech_emulated_mouse)
-    *   [4.18 Trouble with touchpad settings under GNOME](#Trouble_with_touchpad_settings_under_GNOME)
 *   [5 See also](#See_also)
 
 ## Installation
 
-The Synaptics driver can be [installed](/index.php/Installed "Installed") with the package [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics). Please note that if you want desktop integration (i.e. ability to configure touchpad via GNOME control center or KDE settings), you need [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput).
+The Synaptics driver can be [installed](/index.php/Installed "Installed") with the package [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
 
 ## Configuration
 
@@ -67,7 +68,7 @@ The primary method of configuration for the touchpad is through an [Xorg](/index
 
 ### Frequently used options
 
-The following lists options that many users may wish to configure. This example configuration file enables vertical, horizontal and circular scrolling as well as touchpad tap to click:
+The following example file configures some common options, including vertical, horizontal and circular scrolling as well as tap-to-click:
 
  `/etc/X11/xorg.conf.d/70-synaptics.conf` 
 ```
@@ -153,23 +154,21 @@ EndSection
 
 **Note:**
 
-*   If you find that your hand frequently brushes your touchpad, causing the TapButton2 option to be triggered (which will more than likely paste from your clipboard), and you do not mind losing two-finger-tap functionality, set `TapButton2` to 0.
+*   If you find that your hand frequently brushes your touchpad, causing the TapButton2 option to be triggered (which will more than likely paste from your clipboard), and you do not mind losing two-finger-tap functionality, set `TapButton2` to 0\. Alternatively, see [#Disable touchpad while typing](#Disable_touchpad_while_typing).
 *   Recent versions include a "Coasting" feature, enabled by default, which may have the undesired effect of continuing almost any scrolling until the next tap or click, even if you are no longer touching the touchpad. This means that to scroll just a bit, you need to scroll (by using the edge, or a multitouch option) and then almost immediately tap the touchpad, otherwise scrolling will continue forever. If wish to avoid this, set `CoastingSpeed` to 0.
 *   If your touchpad is too sensitive, use higher values for `FingerLow` and `FingerHigh` and vice versa. Remember that `FingerLow` should be smaller than `FingerHigh`
 
 ### Configuration on the fly
 
-Next to the traditional method of configuration, the Synaptics driver also supports on the fly configuration. This means that users can set certain options through a software application, these options are applied immediately without needing a restart of Xorg. This is useful to test configuration options before you include them in the configuration file.
-
-**Warning:** On-the-fly configuration is non-permanent and will not remain active through a reboot, suspend/resume, or restart of Xorg. This should only be used to test, fine-tune or script configuration features.
+Next to the traditional method of configuration, the Synaptics driver also supports on the fly configuration. This means that users can set certain options through a software application, these options are applied immediately without needing to restart Xorg. This is useful to test configuration options before you include them in the configuration file or a script. Note that on the fly configuration is not persistent and lasts only until the Xorg server exists.
 
 #### Console tools
 
-*   **[Synclient](#Synclient) (Recommended)** — command line utility to configure and query Synaptics driver settings on a live system, the tool is developed by the synaptics driver maintainers and is provided with the synaptics driver
+*   **[Synclient](#Synclient)** — command line utility to configure and query Synaptics driver settings
 
 	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics)
 
-*   **[xinput](#Using_xinput_to_determine_touchpad_capabilities)** — small general-purpose CLI tool to configure devices
+*   **[xinput](#Using_xinput_to_determine_touchpad_capabilities)** — general-purpose utility to configure X input devices
 
 	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput)
 
@@ -224,7 +223,7 @@ Depending on your model, synaptic touchpads may have or lack capabilities. We ca
 First, find the name of your touchpad:
 
 ```
-$ xinput -list
+$ xinput list
 
 ```
 
@@ -250,29 +249,7 @@ From left to right, this shows:
 *   (1) device can configure vertical resolution
 *   (1) device can configure horizontal resolution
 
-To get/set mouse button events triggered by a tap action:
-
-```
-$ xinput list-props "SynPS/2 Synaptics TouchPad" | grep "Synaptics Tap Action"
-
-```
-
-```
-  Synaptics Tap Action (287):	0, 0, 0, 0, 1, 3, 2
-
-```
-
-From left to right, this shows:
-
-*   right top corner tap. (0: disabled)
-*   right bottom corner tap.
-*   left top corner tap.
-*   left bottom corner tap.
-*   non-corner one-finger tap. (1: reports left button)
-*   non-corner two-finger tap. (3: reports right button)
-*   non-corner three-finger tap. (2: reports right button)
-
-Use `xinput list-props "SynPS/2 Synaptics TouchPad"` to list all device properties.
+Use `xinput list-props "SynPS/2 Synaptics TouchPad"` to list all device properties. See `synaptics(4)` for full documentation of the Synaptics properties.
 
 ### Synclient
 
@@ -394,11 +371,11 @@ synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
 
 ```
 
-### Disable trackpad while typing
+### Disable touchpad while typing
 
 #### Using the driver's automatic palm detection
 
-First of all you should test if it works properly for your trackpad and if the settings are accurate. Enable palm detection with
+First of all you should test if it works properly for your touchpad and if the settings are accurate. Enable palm detection with
 
 ```
 $ synclient PalmDetect=1
@@ -443,10 +420,10 @@ $ syndaemon -h
 
 ```
 
-For example, to disable tapping and scrolling for 2 seconds after each keypress (ignoring modifier keys like Ctrl), use
+For example, to disable tapping and scrolling for 0.5 seconds after each keypress (ignoring modifier keys like Ctrl), use
 
 ```
-$ syndaemon -i 2 -t -k 
+$ syndaemon -i 0.5 -t -K -R
 
 ```
 
@@ -478,7 +455,7 @@ SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="remove", PROGRAM="/usr/bin/fi
 
 Furthermore, you should validate that your udev script is running properly! You can check for the conditions using `udevadm monitor -p` which must be run as root.
 
-##### With syndeamon running
+##### With syndaemon running
 
 `syndaemon` whether started by the [user](#Using_syndaemon) or the desktop environment can conflict with synclient and will need to be disabled. A rule like this will be needed:
 
@@ -499,9 +476,7 @@ GNOME users can install GNOME shell extension [Touchpad Indicator](https://exten
 
 #### KDE
 
-If using KDE, the package [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad) can be set to disable the touchpad on mouse detection.
-
-If using Plasma, the package [kcm-touchpad-frameworks](https://www.archlinux.org/packages/?name=kcm-touchpad-frameworks) can be used to manage the touchpad.
+If using Plasma, the package [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) can be used to manage the touchpad.
 
 #### System with multiple X sessions
 
@@ -679,11 +654,9 @@ modprobe psmouse
 
 Now switch back to the tty that X is running on. If you chose the right module, your touchpad should be working again.
 
-### xorg.conf.d/70-synaptics.conf does not seem to apply under GNOME and MATE
+### xorg.conf.d/70-synaptics.conf does not seem to apply in MATE
 
-[GNOME](/index.php/GNOME "GNOME") and [MATE](/index.php/MATE "MATE"), by default, will overwrite various options for your touch-pad. This includes configurable features for which there is no graphical configuration within GNOME's system control panel. This may cause it to appear that `/etc/X11/xorg.conf.d/70-synaptics.conf` is not applied. Please refer to the GNOME section in this article to prevent this behavior.
-
-*   [#Xfce4/Cinnamon](#Xfce4.2FCinnamon)
+[MATE](/index.php/MATE "MATE") will by default overwrite various options for your touchpad. This includes configurable features for which there is no graphical configuration within MATE's system control panel. This may cause it to appear that `/etc/X11/xorg.conf.d/70-synaptics.conf` is not applied. Follow [#MATE](#MATE) to prevent this behavior.
 
 ### The touchpad is not working, Xorg.0.log shows "Query no Synaptics: 6003C8"
 
@@ -818,9 +791,9 @@ These problems seem to be occurring on several models of LG laptops. Symptoms in
 The scrolling issue can be resolved by entering in `xorg.conf`:
 
  `/etc/X11/xorg.conf.d/xorg.conf`  `Option "UpDownScrolling" "0"` 
-**Note:** This will make Synaptics interpret one button push as three. There is a patch written by Oskar Sandberg[[1]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) that removes these clicks.
+**Note:** This will make Synaptics interpret one button push as three. There is a patch written by Oskar Sandberg[[2]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) that removes these clicks.
 
-Apparently, when trying to compile this against the latest version of Synaptics it fails. The solution to this is using the GIT repository for Synaptics[[2]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
+Apparently, when trying to compile this against the latest version of Synaptics it fails. The solution to this is using the GIT repository for Synaptics[[3]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
 
 There is also a package build file in the AUR to automate this: [xf86-input-synaptics-lg](https://aur.archlinux.org/packages/xf86-input-synaptics-lg/).
 
@@ -907,10 +880,6 @@ Newer Thinkpads do not have physical buttons for their Trackpoint anymore and in
 2.  Install the focaltech-dkms from [https://github.com/hanipouspilot/focaltech-dkms](https://github.com/hanipouspilot/focaltech-dkms)
 3.  Restart your computer
 4.  Edit your settings in the "Mouse and Trackpad" settings.
-
-### Trouble with touchpad settings under GNOME
-
-Synaptics is no longer supported under GNOME. Migrate to [libinput](/index.php/Libinput "Libinput"). See [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
 
 ## See also
 

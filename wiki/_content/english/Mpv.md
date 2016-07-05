@@ -174,11 +174,11 @@ If you're using a compositor (e.g. in KDE Plasma 5) and find that composition is
 
 Vapoursynth is an alternative to AviSynth that can be used on Linux and allows for Video manipulation via python scripts. Vapoursynths python scripts can be used as video filters for *mpv*.
 
-To use vapoursynth filters you have to install the `vapoursynth` package and compile *mpv* with the `--enable-vapoursynth` build flag.
+To use vapoursynth filters you have to install the [vapoursynth](https://www.archlinux.org/packages/?name=vapoursynth) package and compile *mpv* with the `--enable-vapoursynth` build flag.
 
 ### Debanding (flash3kyuu)
 
-To use the f3k_db debanding filter install [vapoursynth-plugin-flash3kyuu_deband-git](https://aur.archlinux.org/packages/vapoursynth-plugin-flash3kyuu_deband-git/) and write a python script that uses the *vapoursynth* extension.
+To use the `f3k_db` debanding filter install [vapoursynth-plugin-flash3kyuu_deband-git](https://aur.archlinux.org/packages/vapoursynth-plugin-flash3kyuu_deband-git/) and write a python script that uses the *vapoursynth* extension.
 
 The following sample script can be used to enable debanding in *mpv*.
 
@@ -196,6 +196,6 @@ clip.set_output()
 Finally specify the python script in the config file or use a command line argument when executing mpv.
 
 ```
-mpv --vf=vapoursynth=f3k_db.py <video_file>
+$ mpv --vf=vapoursynth=f3k_db.py <video_file>
 
 ```

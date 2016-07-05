@@ -249,29 +249,7 @@ where `/dev/sdXY` is the [EFI System Partition](/index.php/UEFI#EFI_System_Parti
 
 ### Menu does not appear after Windows upgrade
 
-For example, if you upgraded from Windows 8 to Windows 8.1, and you no longer see a boot menu after the upgrade (i.e., Windows boots immediately):
-
-*   Make sure Secure Boot (UEFI setting) and [Fast Startup](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") (Windows power option setting) are both disabled.
-*   Make sure your UEFI prefers Linux Boot Manager over Windows Boot Manager (UEFI setting like Hard Drive Disk Priority).
-
-**Note:** Windows 8.x+, including Windows 10, will overwrite any UEFI choices you make and install itself as the priority boot choice after every boot. Changing the boot order in the UEFI firmware will only last until the next Windows 10 boot. Know what the *Change Boot Option* key is for your motherboard.
-
-To make Windows 8.X and above respect your boot order, you must enter a Windows group policy and have it execute a batch (*.bat*) file on startup. In Windows:
-
-1.  Open a command prompt with admin privlages. Type in `bcdedit /enum firmware`
-2.  Find the Firmware Application that has "Linux" in the description, e.g. "Linux Boot Manager"
-3.  Copy the Identifier, including the brackets, e.g. `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
-4.  Create a batch file (e.g. `bootorder.bat`) somewhere on your system with the following contents: `bcdedit /set {fwbootmgr} DEFAULT {*identifier_copied_in_step_3*}` (e.g. `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
-5.  Open *gpedit* and under *Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)*, choose *Startup*. That should open a window named *Startup Properties*.
-6.  Under the *Scripts* tab, choose the *Add* button
-7.  Click *Browse* and select the batch file you created in step 4.
-
-Alternatively, you can make the default Windows boot loader load *systemd-boot* instead. In an administrator command prompt in Windows, one can change this entry as follows:
-
-```
-# bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
-
-```
+See [UEFI#Windows changes boot order](/index.php/UEFI#Windows_changes_boot_order "UEFI").
 
 ## See also
 

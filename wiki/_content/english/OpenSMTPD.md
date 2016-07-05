@@ -12,13 +12,12 @@ This article explains how to install and configure a simple [OpenSMTPD](https://
         *   [2.2.3 Craft a simple smtpd.conf setup](#Craft_a_simple_smtpd.conf_setup)
         *   [2.2.4 Create tables](#Create_tables)
     *   [2.3 Test the configuration](#Test_the_configuration)
-*   [3 Watch the spice flow!](#Watch_the_spice_flow.21)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Console debugging](#Console_debugging)
-    *   [4.2 Subsystem tracing](#Subsystem_tracing)
-    *   [4.3 Manual Submission port authentication](#Manual_Submission_port_authentication)
-    *   [4.4 Resources](#Resources)
-*   [5 See also](#See_also)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Console debugging](#Console_debugging)
+    *   [3.2 Subsystem tracing](#Subsystem_tracing)
+    *   [3.3 Manual Submission port authentication](#Manual_Submission_port_authentication)
+    *   [3.4 Resources](#Resources)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -136,13 +135,6 @@ shirley                            <password hash created using 'smtpctl encrypt
 ```
 
 If you get a message that says 'configuration OK' - you're ready to [rock and roll](/index.php/Systemd "Systemd"). If not, work on any configuration errors and try again.
-
-## Watch the spice flow!
-
-```
-# journalctl -fu smtpd.service
-
-```
 
 ## Troubleshooting
 

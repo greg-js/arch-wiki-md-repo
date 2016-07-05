@@ -44,8 +44,6 @@ This page details how you should proceed to host your own (Mozilla) Firefox Sync
 
 This is for Firefox version 29 and onward.
 
-**Warning:** I could not get the 1.5 version to work when running behind nginx with HTTPS. I'm affected by the bug described in [https://mail.mozilla.org/pipermail/sync-dev/2014-August/000955.html](https://mail.mozilla.org/pipermail/sync-dev/2014-August/000955.html) and I do not understand how the problem got resolved. It works for me with plain HTTP connexions though. [Siosm](/index.php/User:Siosm "User:Siosm") ([talk](/index.php?title=User_talk:Siosm&action=edit&redlink=1 "User talk:Siosm (page does not exist)")) 09:32, 12 September 2014 (UTC)
-
 ### Installation
 
 [mozilla-firefox-sync-server-git](https://aur.archlinux.org/packages/mozilla-firefox-sync-server-git/) is available in the [AUR](/index.php/AUR "AUR").

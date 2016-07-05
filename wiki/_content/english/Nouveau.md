@@ -31,7 +31,7 @@ For OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages
 The Nouveau kernel module should load automatically on system boot. If it does not happen, then:
 
 *   Make sure you do **not** have `nomodeset` or `vga=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), since Nouveau requires kernel mode-setting.
-*   Also, check that you have not disabled Nouveau by using any modprobe blacklisting within `/etc/modprobe.d/` or `/usr/lib/modprobe.d/`.
+*   Also, check that you do not have disabled Nouveau by using any modprobe blacklisting technique within `/etc/modprobe.d/` or `/usr/lib/modprobe.d/`.
 *   If all above still fails to load nouveau check dmesg for opcode error. Add `nouveau.config=NvBios=PRAMIN` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to prevent module unloading.[[1]](http://nouveau.freedesktop.org/wiki/TroubleShooting/#index10h3)
 
 ### Enable early KMS

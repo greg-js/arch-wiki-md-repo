@@ -53,7 +53,7 @@ xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata
 
 The XFS v5 on-disk format is considered stable for production workloads starting Linux Kernel 3.15.
 
-**Warning:** Unlike [Btrfs](/index.php/Btrfs "Btrfs") and [ZFS](/index.php/ZFS "ZFS"), the CRC32 checksum only applies to the metadata and not actual data.
+**Note:** Unlike [Btrfs](/index.php/Btrfs "Btrfs") and [ZFS](/index.php/ZFS "ZFS"), the CRC32 checksum only applies to the metadata and not actual data.
 
 ## Performance
 
@@ -116,17 +116,17 @@ Starting Linux 3.16, XFS has added a btree that tracks free inodes. It is equiva
 
 This feature relies on the new v5 on-disk format that has been considered stable for production workloads starting Linux Kernel 3.15\. It does not change existing on-disk structures, but adds a new one that must remain consistent with the inode allocation btree; for this reason older kernels will only be able to mount read-only filesystems with the free inode btree feature.
 
-The feature enabled by default when using xfsprogs 3.2.3 or later. If you need writable filesystem for older kernel, it cab be disable with `finobt=0` switch when formatting a XFS partition. You will need `crc=0` together.
+The feature enabled by default when using xfsprogs 3.2.3 or later. If you need writable filesystem for older kernel, it can be disable with `finobt=0` switch when formatting a XFS partition. You will need `crc=0` together.
 
 ```
- # mkfs.xfs -m crc=0,finobt=0 /dev/*target_partition*
+# mkfs.xfs -m crc=0,finobt=0 /dev/*target_partition*
 
 ```
 
 or shortly (`finobt` depends `crc`)
 
 ```
- # mkfs.xfs -m crc=0 /dev/*target_partition*
+# mkfs.xfs -m crc=0 /dev/*target_partition*
 
 ```
 

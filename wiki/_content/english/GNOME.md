@@ -115,7 +115,7 @@ Currently, by default, GNOME applications will be run as traditional X applicati
 
 **Note:** Setting a global Wayland environment, by running `env GDK_BACKEND=wayland gnome-session --session=gnome-wayland`, currently does not work. For workarounds, see [GNOME/Troubleshooting#Setting global Wayland environment with an environment variable](/index.php/GNOME/Troubleshooting#Setting_global_Wayland_environment_with_an_environment_variable "GNOME/Troubleshooting").
 
-See the the current status of Wayland on GNOME at [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/).
+See the current status of Wayland on GNOME at [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/).
 
 ## Navigation
 
@@ -375,7 +375,7 @@ For hinting, RGBA will likely be desired as this fits most monitors types, and i
 
 To start certain applications on login, copy the relevant `.desktop` file from `/usr/share/applications/` to `~/.config/autostart/`.
 
-The same effect can be achieved using the Tweak Tool.
+The [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) allows managing autostart-entries.
 
 **Tip:** If the plus sign button in the Tweak Tool's Startup Applications section is unresponsive, try start the Tweak Tool from the terminal using the following command: `gnome-tweak-tool`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
 

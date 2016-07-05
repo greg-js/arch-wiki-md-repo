@@ -461,8 +461,6 @@ The `~/.config/openbox/menu.xml` file will be the sole source of static desktop 
 
 #### menumaker
 
-**Warning:** A root terminal **must** be installed in order to use MenuMaker, even though a standard user terminal may be used to run it. [xterm](https://www.archlinux.org/packages/?name=xterm) is a good choice.
-
 [menumaker](https://www.archlinux.org/packages/?name=menumaker) automatically generates `xml` menus for several window managers, including Openbox, [Fluxbox](/index.php/Fluxbox "Fluxbox"), [IceWM](/index.php/IceWM "IceWM") and [Xfce](/index.php/Xfce "Xfce"). It will search for all installed executable programs and consequently create a menu file for them. It is also possible to configure MenuMaker to exclude certain application types (e.g. relating to [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE")), if desired.
 
 Once installed and executed, it will automatically generate a new `~/.config/openbox/menu.xml` file. To avoid overwriting an existing file, enter:

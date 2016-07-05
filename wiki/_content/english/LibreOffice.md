@@ -1,38 +1,33 @@
 From [Home - LibreOffice](http://www.libreoffice.org/):
 
-	*LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base. [Support](http://www.libreoffice.org/get-help/) and [documentation](http://www.libreoffice.org/get-help/documentation/) is free from our large, dedicated community of users, contributors and developers. [You, too, can also get involved!](http://www.libreoffice.org/get-involved/)*
+	*LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base.*
 
 ## Contents
 
-*   [1 LibreOffice in Arch Linux](#LibreOffice_in_Arch_Linux)
-*   [2 Installation](#Installation)
-*   [3 Theme](#Theme)
-    *   [3.1 Firefox themes](#Firefox_themes)
-    *   [3.2 Disable startup logo](#Disable_startup_logo)
-*   [4 Extension management](#Extension_management)
-*   [5 Language aids](#Language_aids)
-    *   [5.1 Spell checking](#Spell_checking)
-    *   [5.2 Hyphenation rules](#Hyphenation_rules)
-    *   [5.3 Thesaurus](#Thesaurus)
-    *   [5.4 Grammar checking](#Grammar_checking)
-    *   [5.5 Offline help for en-US](#Offline_help_for_en-US)
-*   [6 Installing macros](#Installing_macros)
-*   [7 Speed up LibreOffice](#Speed_up_LibreOffice)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Font substitution](#Font_substitution)
-    *   [8.2 Anti-aliasing](#Anti-aliasing)
-    *   [8.3 Hanging when using NFSv3 shares](#Hanging_when_using_NFSv3_shares)
-    *   [8.4 LibreOffice does not detect my certificates](#LibreOffice_does_not_detect_my_certificates)
-    *   [8.5 Run .pps files in edit mode (without slideshow)](#Run_.pps_files_in_edit_mode_.28without_slideshow.29)
-    *   [8.6 Application Error (not starting)](#Application_Error_.28not_starting.29)
-    *   [8.7 Exit while pushing the save button](#Exit_while_pushing_the_save_button)
-    *   [8.8 Media support](#Media_support)
-    *   [8.9 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
-    *   [8.10 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
-
-## LibreOffice in Arch Linux
-
-Official support for [OpenOffice.org](/index.php/OpenOffice.org "OpenOffice.org") was dropped in favor of LibreOffice, the "Document Foundation" fork of the project, which also includes enhancements and additional features. See [Dropping Oracle OpenOffice (arch-general)](https://mailman.archlinux.org/pipermail/arch-general/2011-March/018819.html).
+*   [1 Installation](#Installation)
+*   [2 Theme](#Theme)
+    *   [2.1 Firefox themes](#Firefox_themes)
+    *   [2.2 Disable startup logo](#Disable_startup_logo)
+*   [3 Extension management](#Extension_management)
+*   [4 Language aids](#Language_aids)
+    *   [4.1 Spell checking](#Spell_checking)
+    *   [4.2 Hyphenation rules](#Hyphenation_rules)
+    *   [4.3 Thesaurus](#Thesaurus)
+    *   [4.4 Grammar checking](#Grammar_checking)
+    *   [4.5 Offline help for en-US](#Offline_help_for_en-US)
+*   [5 Installing macros](#Installing_macros)
+*   [6 Speed up LibreOffice](#Speed_up_LibreOffice)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Font substitution](#Font_substitution)
+    *   [7.2 Anti-aliasing](#Anti-aliasing)
+    *   [7.3 Hanging when using NFSv3 shares](#Hanging_when_using_NFSv3_shares)
+    *   [7.4 LibreOffice does not detect my certificates](#LibreOffice_does_not_detect_my_certificates)
+    *   [7.5 Run .pps files in edit mode (without slideshow)](#Run_.pps_files_in_edit_mode_.28without_slideshow.29)
+    *   [7.6 Application Error (not starting)](#Application_Error_.28not_starting.29)
+    *   [7.7 Exit while pushing the save button](#Exit_while_pushing_the_save_button)
+    *   [7.8 Media support](#Media_support)
+    *   [7.9 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
+    *   [7.10 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
 
 ## Installation
 

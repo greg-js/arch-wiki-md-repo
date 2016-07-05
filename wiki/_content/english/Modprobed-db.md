@@ -55,6 +55,14 @@ $ systemctl --user start modprobed-db.service
 
 ```
 
+Status of the service and of the timer can be queried like any service and timer:
+
+```
+$ systemctl --user status modprobed-db
+$ systemctl --user list-timers
+
+```
+
 ### Data Recall
 
 As mentioned earlier, this script is meant to be used in concert with the **make localmodconfig** step of compiling a kernel. After the database has been adequately populated, simply invoke `/usr/bin/modprobed-db recall` prior to compiling a kernel to load all modules followed by the **make localmodconfig** to do the magic.

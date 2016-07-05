@@ -17,6 +17,7 @@ This is a simple article detailing different methods of Arch/Windows coexistence
     *   [2.2 UEFI systems](#UEFI_systems)
     *   [2.3 Troubleshooting](#Troubleshooting)
         *   [2.3.1 Couldn't create a new partition or locate an existing one](#Couldn.27t_create_a_new_partition_or_locate_an_existing_one)
+        *   [2.3.2 Cannot boot Linux after installing Windows](#Cannot_boot_Linux_after_installing_Windows)
 *   [3 Time standard](#Time_standard)
 *   [4 See also](#See_also)
 
@@ -174,6 +175,10 @@ Computers that come with newer versions of Windows often have [secure boot](/ind
 #### Couldn't create a new partition or locate an existing one
 
 The usb-stick for installing Windows 8.1 seems to need a MBR partition table (not GPT), otherwise the installation gets confused and prints something like "Couldn't create a new partition or locate an existing one", although the partitions were created.
+
+#### Cannot boot Linux after installing Windows
+
+See [UEFI#Windows changes boot order](/index.php/UEFI#Windows_changes_boot_order "UEFI").
 
 ## Time standard
 

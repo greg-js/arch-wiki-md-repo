@@ -7,7 +7,9 @@ At this time Budgie is heavily under development, so you can expect minor bugs a
 *   [1 Installation](#Installation)
     *   [1.1 Starting](#Starting)
 *   [2 Usage](#Usage)
-*   [3 See also](#See_also)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Changing button layout](#Changing_button_layout)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -27,6 +29,22 @@ exec budgie-desktop
 ## Usage
 
 You can see the notification messages, set volume, and modify the look and feel of the desktop with the sidebar called "Raven". It can be accessed with `Super+N` key or by clicking on the Status Indicator applet.
+
+## Configuration
+
+Configuration of Budgie Desktop is done through the sidebar and changes to system settings are made through [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)
+
+### Changing button layout
+
+Window button layout can be changed using [dconf](https://www.archlinux.org/packages/?name=dconf), [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) or gsettings.
+
+For example:
+
+```
+gsettings set com.solus-project.budgie-wm button-layout 'close,minimize,maximize:appmenu'
+gsettings set com.solus-project.budgie-helper.workarounds fix-button-layout 'close,minimize,maximize:menu'
+
+```
 
 ## See also
 

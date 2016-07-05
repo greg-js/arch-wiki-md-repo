@@ -410,12 +410,19 @@ Mainboards with this kind of problem:
 
 ### Windows changes boot order
 
-In some motherboards (confirmed in ASRock Z77 Extreme4), Windows 8 changes the boot order in the NVRAM everytime is booted. This can be fixed making the Windows Boot Manager to load another loader instead of booting Windows. Run this command in a Administrator mode console in Windows:
+If you [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") and your motherboard just boots Windows immediately instead of your chosen UEFI application, there are several possible causes and workarounds.
 
-```
-# bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
-
-```
+*   Ensure [Fast Startup](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") is disabled in your Windows power options
+*   Ensure [Secure Boot](/index.php/Secure_Boot "Secure Boot") is disabled in your BIOS (if you are not using a signed boot loader)
+*   Ensure your UEFI boot order does not have Windows Boot Manager set first e.g. using [#efibootmgr](#efibootmgr) and what you see in the configuration tool of the UEFI. Some motherboards override by default any settings set with efibootmgr by Windows if it detects it. This is confirmed in a Packard Bell laptop.
+*   If your motherboard is booting the default UEFI path (`\EFI\BOOT\BOOTX64.EFI`), this file may have been overwritten with the Windows boot loader. Try setting the correct boot path e.g. using [#efibootmgr](#efibootmgr).
+*   If the previous steps do not work, you can tell the Windows boot loader to run a different UEFI application. From a Windows Administrator command prompt: `# bcdedit /set {bootmgr} path \EFI\*path*\*to*\*app.efi*` 
+*   Alternatively, you can set a startup script in Windows that ensures that the boot order is set correctly every time you boot Windows.
+    1.  Open a command prompt with admin privlages. Run `bcdedit /enum firmware` and find your desired boot entry.
+    2.  Copy the Identifier, including the brackets, e.g. `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
+    3.  Create a batch file with the command `bcdedit /set {fwbootmgr} DEFAULT *{copied boot identifier}*`
+    4.  Open *gpedit* and under *Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)*, choose *Startup*
+    5.  Under the *Scripts* tab, choose the *Add* button, and select your batch file
 
 ### USB media gets struck with black screen
 

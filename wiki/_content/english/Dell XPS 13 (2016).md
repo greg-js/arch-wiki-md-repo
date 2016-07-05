@@ -44,7 +44,7 @@ In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightne
 
 ## BIOS updates
 
-[BIOS update 1.3.3](http://downloads.dell.com/FOLDER03596893M/1/XPS_9350_1.3.3.exe) was released on 2016-03-30\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
+[BIOS update 1.4.4](http://downloads.dell.com/FOLDER03769593M/1/XPS_9350_1.4.4.exe) was released on 2016-06-30\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
 
 ## Thunderbolt Firmware Updates
 

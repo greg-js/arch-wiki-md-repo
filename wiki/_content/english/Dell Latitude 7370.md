@@ -4,13 +4,15 @@ These laptops are a part of the Latitude 13 7000 Series featuring Intel Skylake 
 
 *   [1 kernel](#kernel)
 *   [2 dock](#dock)
-*   [3 card reader](#card_reader)
-*   [4 displays](#displays)
-*   [5 lspci and lsusb](#lspci_and_lsusb)
-    *   [5.1 lspci](#lspci)
-    *   [5.2 lsusb](#lsusb)
-*   [6 known issues](#known_issues)
-    *   [6.1 suspend](#suspend)
+*   [3 bios](#bios)
+    *   [3.1 updating](#updating)
+*   [4 card reader](#card_reader)
+*   [5 displays](#displays)
+*   [6 lspci and lsusb](#lspci_and_lsusb)
+    *   [6.1 lspci](#lspci)
+    *   [6.2 lsusb](#lsusb)
+*   [7 known issues](#known_issues)
+    *   [7.1 suspend](#suspend)
 
 ## kernel
 
@@ -20,9 +22,15 @@ It is highly suggest to run a 4.6 (or greater) kernel (currently outside of [cor
 
 The TB15 thunderbolt dock is still a work-in-progress for support [[2]](http://en.community.dell.com/techcenter/os-applications/f/4613/t/19678284?pi22229=4). It seems to, currently, work best when plugged in before booting and avoiding any form of hot-plugging [[3]](https://github.com/01org/thunderbolt-software/issues/2)
 
+## bios
+
+### updating
+
+Download the BIOS update from the dell site and place it at the root of a FAT-formatted USB disk. Reboot and hit F12 during startup, selecting "BIOS Flash Update". The simple file browser should see the executable, select it and allow the update to occur.
+
 ## card reader
 
-The Broadcom reader is currently not supported via [ccid](https://www.archlinux.org/packages/?name=ccid) and [pcsclite](https://www.archlinux.org/packages/?name=pcsclite)
+The Broadcom reader is currently not supported via [ccid](https://www.archlinux.org/packages/?name=ccid) and [pcsclite](https://www.archlinux.org/packages/?name=pcsclite). It may also require a firmware/BIOS update : [https://bugs.launchpad.net/ubuntu/+source/pcsc-lite/+bug/1596662](https://bugs.launchpad.net/ubuntu/+source/pcsc-lite/+bug/1596662)
 
 ## displays
 

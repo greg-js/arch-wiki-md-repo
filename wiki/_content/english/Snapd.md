@@ -16,7 +16,7 @@
 
 [Install](/index.php/Install "Install") [snapd](https://www.archlinux.org/packages/?name=snapd) from the official repositories.
 
-Installing it will install the `snapd` daemon as well as *snap-confine*, which mounts and launches snap packages. Note that [snap-confine](https://github.com/snapcore/snap-confine) is built with the `--disable-confinement` option; full confinement relies on an [AppArmor](/index.php/AppArmor "AppArmor") enabled kernel and related profile for the snap.
+Installing it will install the `snapd` daemon as well as *snap-confine*, which mounts and launches snap packages. Note that [snap-confine](https://github.com/snapcore/snap-confine) is built with the `--disable-apparmor` option; full confinement relies on an [AppArmor](/index.php/AppArmor "AppArmor") enabled kernel and related profile for the snap.
 
 **Tip:** `snapd` installs a script in `/etc/profile.d/` to export the paths of binaries installed with the snapd package and desktop entries. Reboot once to make this change take effect.
 
@@ -35,7 +35,7 @@ To start the timer which periodically refreshes snaps when a new version is push
 
 ## Removal
 
-Uninstalling the [snapd](https://aur.archlinux.org/packages/snapd/) package will not remove directories and files created while using *snap*. It's best to remove your snaps with *snap remove* before uninstalling the [snapd](https://aur.archlinux.org/packages/snapd/) package. At this time it is not possible to remove the ubuntu-core snap through the *snap* command. To remove the state, snap package cache and mount unit files completely, you can follow the instructions below.
+Uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package will not remove directories and files created while using *snap*. It's best to remove your snaps with *snap remove* before uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package. At this time it is not possible to remove the ubuntu-core snap through the *snap* command. To remove the state, snap package cache and mount unit files completely, you can follow the instructions below.
 
 1\. We unmount any currently active snap that is mounted to `/snap`.
 

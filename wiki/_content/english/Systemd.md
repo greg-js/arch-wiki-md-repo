@@ -27,12 +27,14 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 *   [5 Timers](#Timers)
 *   [6 Mounting](#Mounting)
 *   [7 Journal](#Journal)
-    *   [7.1 Filtering output](#Filtering_output)
-    *   [7.2 Journal size limit](#Journal_size_limit)
-    *   [7.3 Clean journal files manually](#Clean_journal_files_manually)
-    *   [7.4 Journald in conjunction with syslog](#Journald_in_conjunction_with_syslog)
-    *   [7.5 Forward journald to /dev/tty12](#Forward_journald_to_.2Fdev.2Ftty12)
-    *   [7.6 Specify a different journal to view](#Specify_a_different_journal_to_view)
+    *   [7.1 Facility](#Facility)
+    *   [7.2 Priority level](#Priority_level)
+    *   [7.3 Filtering output](#Filtering_output)
+    *   [7.4 Journal size limit](#Journal_size_limit)
+    *   [7.5 Clean journal files manually](#Clean_journal_files_manually)
+    *   [7.6 Journald in conjunction with syslog](#Journald_in_conjunction_with_syslog)
+    *   [7.7 Forward journald to /dev/tty12](#Forward_journald_to_.2Fdev.2Ftty12)
+    *   [7.8 Specify a different journal to view](#Specify_a_different_journal_to_view)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Enable installed units by default](#Enable_installed_units_by_default)
 *   [9 Troubleshooting](#Troubleshooting)
@@ -452,6 +454,69 @@ Since systemd is a replacement for System V init, it is in charge of the mounts 
 
 In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If you or some program delete that directory, *systemd* will **not** recreate it automatically and instead will write its logs to `/run/systemd/journal` in a nonpersistent way. However, the folder will be recreated when you set `Storage=persistent` and run `systemctl restart systemd-journald` (or reboot).
 
+While syslog is deprecated, nevertheless systemd journal event notification message logging classification corresponds to classical BSD syslog protocol style ([Wiki](https://en.wikipedia.org/wiki/Syslog), [RFC 5424](https://tools.ietf.org/html/rfc5424)). For more info see subsections [Facility](#Facility), [Priority level](#Priority_level), and for examples on how to use it in [Filtering output](#Filtering_output).
+
+### Facility
+
+A syslog facility code is used to specify the type of program that is logging the message [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
+
+| Facility code | Keyword | Description | Info |
+| 0 | kern | kernel messages |
+| 1 | user | user-level messages |
+| 2 | mail | mail system | Archaic POSIX still supported and sometimes used system, for more `man mail`) |
+| 3 | daemon | system daemons | All deamons, including systemd and its subsystems |
+| 4 | auth | security/authorization messages | Also watch for different facility 10 |
+| 5 | syslog | messages generated internally by syslogd | As it standartized for syslogd, not used by systemd (see facility 3) |
+| 6 | lpr | line printer subsystem (archaic subsystem) |
+| 7 | news | network news subsystem (archaic subsystem) |
+| 8 | uucp | UUCP subsystem (archaic subsystem) |
+| 9 | clock daemon | systemd-timesyncd |
+| 10 | authpriv | security/authorization messages | Also watch for different facility 4 |
+| 11 | ftp | FTP daemon |
+| 12 | - | NTP subsystem |
+| 13 | - | log audit |
+| 14 | - | log alert |
+| 15 | cron | scheduling daemon |
+| 16 | local0 | local use 0 (local0) |
+| 17 | local1 | local use 1 (local1) |
+| 18 | local2 | local use 2 (local2) |
+| 19 | local3 | local use 3 (local3) |
+| 20 | local4 | local use 4 (local4) |
+| 21 | local5 | local use 5 (local5) |
+| 22 | local6 | local use 6 (local6) |
+| 23 | local7 | local use 7 (local7) |
+
+So, useful facilities to watch: 0,1,3,4,9,10,15.
+
+### Priority level
+
+A syslog severity code (in systemd called priority) is used to mark the importance of a message [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
+
+| Value | Severity | Keyword | Description | Examples |
+| 0 | Emergency | emerg | System is unusable | Severe Kernel BUG, systemd dumped core.
+This level should not be used by applications. |
+| 1 | Alert | alert | Should be corrected immediately | Vital subsystem goes out of work. Data loss.
+`kernel: BUG: unable to handle kernel paging request at ffffc90403238ffc`. |
+| 2 | Critical | crit | Critical conditions | Crashes, coredumps. Like familiar flash:
+`systemd-coredump[25319]: Process 25310 (plugin-containe) of user 1000 dumped core`
+Failure in the system primary application, like X11. |
+| 3 | Error | err | Error conditions | Not severe error reported:
+`kernel: usb 1-3: 3:1: cannot get freq at ep 0x84`,
+`systemd[1]: Failed unmounting /var.`,
+`libvirtd[1720]: internal error: Failed to initialize a valid firewall backend`). |
+| 4 | Warning | warning | May indicate that an error will occur if action is not taken. | A non-root file system has only 1GB free.
+`org.freedesktop. Notifications[1860]: (process:5999): Gtk-WARNING **: Locale not supported by C library. Using the fallback 'C' locale`. |
+| 5 | Notice | notice | Events that are unusual, but not error conditions. | `systemd[1]: var.mount: Directory /var to mount over is not empty, mounting anyway`. `gcr-prompter[4997]: Gtk: GtkDialog mapped without a transient parent. This is discouraged`. |
+| 6 | Informational | info | Normal operational messages that require no action. | `lvm[585]: 7 logical volume(s) in volume group "archvg" now active`. |
+| 7 | Debug | debug | Information useful to developers for debugging the application. | `kdeinit5[1900]: powerdevil: Scheduling inhibition from ":1.14" "firefox" with cookie 13 and reason "screen"`. |
+
+If issue you are looking for, was not found on according level, search it on couple of priority levels above and below. This rules are recommendations. Some errors considered a normal occasion for program so they marked low in priority by developer, and on the contrary, sometimes too many messages plaques too high priorities for them, but often it's an arguable situation. And often you really should solve an issue, also to understand architecture and adopt best practices.
+
+Examples:
+
+*   Info message: `pulseaudio[2047]: W: [pulseaudio] alsa-mixer.c: Volume element Master has 8 channels. That's too much! I can't handle that!` It is an warning or error by definition.
+*   Plaguing alert message: `sudo[21711]:     user : a password is required ; TTY=pts/0 ; PWD=/home/user ; USER=root ; COMMAND=list /usr/bin/pacman --color auto -Sy` The [reason](https://bbs.archlinux.org/viewtopic.php?id=184455) - user was manually added to sudoers file, not to wheel group, which is arguably normal action, but sudo produced an alert on every occasion.
+
 ### Filtering output
 
 *journalctl* allows you to filter the output by specific fields. Be aware that if there are many messages to display or filtering of large time span has to be done, the output of this command can be delayed for quite some time.
@@ -468,7 +533,8 @@ Examples:
 *   Show all messages by a specific process: `# journalctl _PID=1` 
 *   Show all messages by a specific unit: `# journalctl -u netcfg` 
 *   Show kernel ring buffer: `# journalctl -k` 
-*   Show auth.log equivalent by filtering on syslog facility: `# journalctl -f -l SYSLOG_FACILITY=10` 
+*   Show auth.log equivalent by filtering on syslog facility: `# journalctl SYSLOG_FACILITY=10` 
+*   Show only error, critical, and alert priority messages `# journalctl -p err..alert` Numbers also can be used, `journalctl -p 3..1`. If single number/keyword used, `journalctl -p 3` - all higher priority levels also included.
 
 See `man 1 journalctl`, `man 7 systemd.journal-fields`, or Lennart's [blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
 

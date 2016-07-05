@@ -690,9 +690,9 @@ $ git remote set-url origin git@localhost:*my_repository*.git
 
 ```
 
-Connecting on a port other than 22 can be configured on a per-host basis in `/etc/ssh/ssh_config` or `~/.ssh/config`. To set up ports for a repository, if the repository is in `~/` and using 443 for the port:
+Connecting on a port other than 22 can be configured on a per-host basis in `/etc/ssh/ssh_config` or `~/.ssh/config`. To set up ports for a repository (here 443 as example):
 
- `~/.git/config` 
+ `.git/config` 
 ```
 [remote "origin"]
     url = ssh://*user*@*foobar*.com:443/~*my_repository*/repo.git

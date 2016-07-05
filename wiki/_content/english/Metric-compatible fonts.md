@@ -11,8 +11,8 @@
     *   [3.2 GNU FreeFont](#GNU_FreeFont)
     *   [3.3 Liberation](#Liberation)
     *   [3.4 Google](#Google)
-        *   [3.4.1 Chrome OS](#Chrome_OS)
-        *   [3.4.2 Noto](#Noto)
+    *   [3.5 Chrome OS](#Chrome_OS)
+        *   [3.5.1 Noto](#Noto)
 *   [4 Example configuration](#Example_configuration)
     *   [4.1 Example for binding method](#Example_for_binding_method)
     *   [4.2 Example for prefer method](#Example_for_prefer_method)
@@ -74,13 +74,13 @@ Older, GPL-licensed versions of this font is based on Ascender Corporation's fon
 
 Google provides a high number of [fonts](https://www.google.com/fonts), including different metric-compatible font families.
 
-#### Chrome OS
+### Chrome OS
 
 Google ships open-source metric-compatible fonts with its operating system, Chrome OS, under the Apache License 2.0\. CrOS core (croscore, [ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) is a collection of Arimo (sans), Tinos (serif) and Cousine (mono), also licensed from Ascender Corporation. A set of extra fonts, CrOS extra (crosextra) provides Carlito ([ttf-carlito](https://aur.archlinux.org/packages/ttf-carlito/)) and Caladea ([ttf-caladea](https://aur.archlinux.org/packages/ttf-caladea/)) to match default fonts for Microsoft Word.
 
 #### Noto
 
-[Google's Noto Fonts](https://www.google.com/get/noto/) are available via [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts). They are licensed under SIL OFL.
+[Google's Noto Fonts](https://www.google.com/get/noto/) are available via [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts). They are licensed under SIL OFL. Noto Fonts are designed to supplement glyph coverage for Roboto, the standard typeface for Android, and are vertically (i.e. same line height for the same font size) metric-compatible with Roboto.
 
 ## Example configuration
 
@@ -120,6 +120,7 @@ The following example configuration uses the [#Chrome OS](#Chrome_OS) fonts, add
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
 
+  <!-- Prefer fonts for generics -->
   <alias>
     <family>serif</family>
     <prefer><family>Tinos</family></prefer>
@@ -137,6 +138,7 @@ The following example configuration uses the [#Chrome OS](#Chrome_OS) fonts, add
     <prefer><family>Cousine</family></prefer>
   </alias>
 
+  <!-- Map specific families to CrOS ones -->
   <match>
     <test name="family"><string>Arial</string></test>
     <edit name="family" mode="assign" binding="strong">

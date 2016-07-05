@@ -20,9 +20,14 @@ Before encrypting a drive, you should perform a secure erase of the disk by over
 
 In deciding which method to use for secure erasure of a hard disk drive, remember that this needs only to be performed once for as long as the drive is used as an encrypted drive.
 
-**Warning:** Make appropriate backups of valuable data prior to starting.
+**Warning:** Make appropriate backups of valuable data prior to starting!
 
-**Tip:** The process of filling an encrypted drive can take over a day to complete on a multi-terabyte disk. In order not to leave the machine unusable during the operation, it may be worth to do it from a system already installed on another drive, rather than from the live Arch installation system.
+**Note:** When wiping large amount of data, the process will take several hours to several days to complete.
+
+**Tip:**
+
+*   The process of filling an encrypted drive can take over a day to complete on a multi-terabyte disk. In order not to leave the machine unusable during the operation, it may be worth to do it from a system already installed on another drive, rather than from the live Arch installation system.
+*   For [SSDs](/index.php/SSD "SSD"), as a best effort to minimize [flash memory](/index.php/Securely_wipe_disk#Flash_memory "Securely wipe disk") cache artifacts, consider performing a [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing") *prior* to instructions below.
 
 ### Generic methods
 
@@ -30,7 +35,7 @@ For detailed instructions on how to erase and prepare a drive consult [Securely 
 
 ### dm-crypt specific methods
 
-The following two methods are specific for dm-crypt and are mentioned complementarily, because they are very fast and can be performed after a partition setup too.
+The following two methods are specific for dm-crypt and are mentioned because they are very fast and can be performed after a partition setup too.
 
 The [cryptsetup FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) mentions a very simple procedure to use an existing dm-crypt-volume to wipe all free space accessible on the underlying block device with random data by acting as a simple pseudorandom number generator. It is also claimed to protect against disclosure of usage patterns. That is because encrypted data is practically indistinguishable from random.
 
@@ -52,16 +57,13 @@ Disk /dev/mapper/container: 1000 MB, 1000277504 bytes
 Disk /dev/mapper/container does not contain a valid partition table
 ```
 
-Finally, wipe /dev/mapper/container with zeros. A use of `if=/dev/urandom` is not required as the encryption cipher is used for randomness.
+Finally, wipe the container with zeros. A use of `if=/dev/urandom` is not required as the encryption cipher is used for randomness.
 
  `# dd if=/dev/zero of=/dev/mapper/container status=progress`  `dd: writing to ‘/dev/mapper/container’: No space left on device` 
-**Note:** More than likely this will take several hours to complete. You may want to start the wipe before you go to bed.
-
 **Tip:**
 
 *   Using *dd* with the `bs=` option, e.g. `bs=1M`, is frequently used to increase disk throughput of the operation.
 *   If you want to perform a check of the operation, zero the partition before creating the wipe container. After the wipe command `blockdev --getsize64 */dev/mapper/container*` can be used to get the exact container size as root. Now *od* can be used to spotcheck whether the wipe overwrote the zeroed sectors, e.g. `od -j *containersize - blocksize*` to view the wipe completed to the end.
-*   If wiping a SSD or flash drive, you may want to consider using the `shred` command to ensure all blocks are overwritten. More information can be found at the [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk") wiki page.
 
 If you are encrypting an entire system, the next step is [#Partitioning](#Partitioning). If you are just encrypting a partition, continue [dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system").
 
@@ -85,7 +87,7 @@ The above process has to be repeated for every partition blockdevice created and
 
 #### Wipe LUKS header
 
-The partitions formatted with dm-crypt/LUKS contain a header with the cipher and crypt-options used, which is referred to `dm-mod` when opening the blockdevice. After the header the actual random data partition starts. Hence, when re-installing on an already randomised drive, or de-commissioning one (e.g. sale of PC, switch of drives, etc.) it *may* be just enough to wipe the header of the partition, rather than overwriting the whole drive - which can be a lengthy process.
+The partitions formatted with dm-crypt/LUKS contain a header with the cipher and crypt-options used, which is referred to `dm-mod` when opening the blockdevice. After the header the actual random data partition starts. Hence, when re-installing on an already randomized drive, or de-commissioning one (e.g. sale of PC, switch of drives, etc.) it *may* be just enough to wipe the header of the partition, rather than overwriting the whole drive - which can be a lengthy process.
 
 Wiping the LUKS header will delete the PBKDF2-encrypted (AES) master key, salts and so on.
 

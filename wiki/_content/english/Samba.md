@@ -250,20 +250,14 @@ $ smbclient -L *hostname* -U%
 
 ```
 
-Alternatively, running smbtree will show a tree diagram of all the shares. This isn't advisable on a network with a lot of computers, but can be helpful for diagnosing if you have the correct sharename.
+Alternatively, running *smbtree* will show a tree diagram of all the shares. This is not advisable on a network with a lot of computers, but can be helpful for diagnosing if you have the correct sharename.
 
 ```
 $ smbtree -b -N
 
 ```
 
-Where the options are:
-
-```
--b, --broadcast                    Use broadcast instead of using the master browser 
--N, --no-pass                      Don't ask for a password
-
-```
+Where the options are `-b` (`--broadcast`) to use broadcast instead of using the master browser and `-N` (`-no-pass`) to not ask for a password.
 
 ### WINS host names
 

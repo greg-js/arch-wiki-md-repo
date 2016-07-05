@@ -126,10 +126,11 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.2.9 mazdlc-kde-frameworks-5](#mazdlc-kde-frameworks-5)
         *   [5.2.10 mikroskeem](#mikroskeem)
         *   [5.2.11 mingw-w64](#mingw-w64)
-        *   [5.2.12 pnsft-pur](#pnsft-pur)
-        *   [5.2.13 rakudo](#rakudo)
-        *   [5.2.14 rightlink](#rightlink)
-        *   [5.2.15 zrootfs](#zrootfs)
+        *   [5.2.12 pkgbuild-current](#pkgbuild-current)
+        *   [5.2.13 pnsft-pur](#pnsft-pur)
+        *   [5.2.14 rakudo](#rakudo)
+        *   [5.2.15 rightlink](#rightlink)
+        *   [5.2.16 zrootfs](#zrootfs)
 *   [6 armv6h only](#armv6h_only)
     *   [6.1 Unsigned](#Unsigned_5)
         *   [6.1.1 arch-fook-armv6h](#arch-fook-armv6h)
@@ -1413,6 +1414,18 @@ Server = https://nightsnack.cf/~mark/arch-pkgs
 [mingw-w64]
 Server = http://downloads.sourceforge.net/project/mingw-w64-archlinux/$arch
 #Server = http://amr.linuxd.org/archlinux/$repo/os/$arch
+
+```
+
+#### pkgbuild-current
+
+*   **Maintainer**: [Brenton Horne](https://fusion809.github.io) (fusion809)
+*   **Description**: most of the packages in the [fusion809/PKGBUILDs](https://github.com/fusion809/PKGBUILDs) GitHub repository. Full list of packages can be found [here](https://github.com/fusion809/PKGBUILDs/releases/tag/current).
+*   **Upstream page**: [https://fusion809.github.io/PKGBUILDs](https://fusion809.github.io/PKGBUILDs)
+
+```
+[pkgbuild-current]
+Server = https://github.com/fusion809/PKGBUILDs/releases/download/current
 
 ```
 

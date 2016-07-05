@@ -958,7 +958,6 @@ You can use the following website to get your device's coordinates along with a 
 43.320512,-0.352522 "rdoursenaud" # Pau, France
 35.665460,138.639732 "kusanaginoturugi" # Fuefuki, Yamanashi, Japan
 49.996480,-110.672823 "sketchet" # Medicine Hat, AB, Canada
-30.285122,-97.734057 "Jarkore" # Austin, TX, USA
 34.727100,10.719314 "lejenome" # Sfax, Tunisia
 26.508936, 80.231026 "govg" # Kanpur, India
 55.755826,37.6173 "Agent0" # Moscow, Russia

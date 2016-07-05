@@ -54,7 +54,7 @@ $ R
 *   Use `Shift+u` for the command (some shells use the `r` letter to repeat the last entered command). Once in your `R` session, the prompt will change to `>`
 *   **site** refers to **system-wide** in R Documentation
 
-Run `??Startup` to read the documentation about system file configuration, `help()` for the on-line help,`help.start()` for the HTML browser interface to help, `demo()` for some demos and `q()` to close the session and quit.
+Run `?Startup` to read the documentation about system file configuration, `help()` for the on-line help,`help.start()` for the HTML browser interface to help, `demo()` for some demos and `q()` to close the session and quit.
 
 When closing the session, you will be prompted : `Save workspace Image ?[y/n/c]`. The *workspace* is your current working environment and include any user-defined objects, functions. The saved image is stored in `.RData` format and will be automatically reloaded the next time `R` is started. You can manually save the workspace at any time in the session with the `save.image(image.RData)` command, save as many images as you want (eg : *image1.RData*, *image2.RData*). You can load image with the `load.image(image.RData)` command at any time of your session.
 

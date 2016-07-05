@@ -12,7 +12,9 @@ Before being formatted, a drive should be [partitioned](/index.php/Partitioning 
     *   [1.1 Journaling](#Journaling)
     *   [1.2 Arch Linux support](#Arch_Linux_support)
     *   [1.3 FUSE-based file systems](#FUSE-based_file_systems)
-*   [2 Create a filesystem](#Create_a_filesystem)
+*   [2 Create a file system](#Create_a_file_system)
+    *   [2.1 Identify the devices](#Identify_the_devices)
+    *   [2.2 Formatting](#Formatting)
 *   [3 See also](#See_also)
 
 ## Types of file systems
@@ -147,25 +149,38 @@ Some FUSE-based file systems:
 
 See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace") for more.
 
-## Create a filesystem
+## Create a file system
 
 **Note:**
 
 *   If you want to change the partition layout, see [Partitioning](/index.php/Partitioning "Partitioning").
 *   If you want to create a swap partition, see [Swap](/index.php/Swap "Swap").
 
-Before starting, you need to know which name Linux gave to your device. Hard drives and USB sticks show up as `/dev/sd*x*`, where *x* is a lowercase letter, while partitions show up as `/dev/sd*xY*`, where *Y* is a number.
+### Identify the devices
 
-Usually filesystems are created on a partition, but they can also be created inside of logical containers like [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID"), or [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
-
-To create a new filesystem on a partition, the existing filesystem located on the partition must not be mounted.
-
-If the partition you want to format contains a mounted filesystem, it will show up in the *MOUNTPOINT* column of lsblk.
+The first step is to identify the devices where the new system will be installed. The following command will show all the available devices:
 
 ```
-$ lsblk
+# lsblk
 
 ```
+
+This will list all devices connected to your system along with their partition schemes. On [installation](/index.php/Installation_guide "Installation guide"), this includes those used to host and boot live Arch media, such as a USB drive. Not all devices listed are therefore viable or appropriate mediums for installation; results ending in `rom`, `loop` or `airoot` can be ignored.
+
+Devices (e.g. hard disks) will be listed as `sd**x**`, where `**x**` is a lower-case letter starting from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. *Existing* partitions on those devices will be listed as `sdx**Y**`, where `**Y**` is a number starting from `1` for the first partition, `2` for the second, and so on. In the example below, only one device is available (`sda`), and that device has only one partition (`sda1`):
+
+```
+NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda               8:0    0    80G  0 disk
+└─sda1            8:1    0    80G  0 part
+
+```
+
+**Note:** Usually filesystems are created on a partition, but they can also be created inside of logical containers like [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID"), or [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
+
+### Formatting
+
+To create a new filesystem on a partition, the existing filesystem located on the partition must not be mounted. If the partition you want to format contains a mounted filesystem, it will show up in the *MOUNTPOINT* column of lsblk.
 
 To unmount it, you can use *umount* on the directory where the filesystem was mounted to:
 

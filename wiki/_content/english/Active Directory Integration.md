@@ -261,8 +261,6 @@ Joined 'MYARCHLINUX' to realm 'EXAMPLE.COM'
 
 ```
 
-See screenshot of Active Directory Users and Computers [wikipedia:File:Ads myarchlinux computer account.png](https://en.wikipedia.org/wiki/File:Ads_myarchlinux_computer_account.png "wikipedia:File:Ads myarchlinux computer account.png")
-
 ## Starting and testing services
 
 ### Starting Samba

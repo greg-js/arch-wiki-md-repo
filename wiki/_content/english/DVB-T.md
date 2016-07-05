@@ -7,7 +7,7 @@
     *   [2.1 Scanning](#Scanning)
 *   [3 Clients](#Clients)
     *   [3.1 VLC](#VLC)
-    *   [3.2 MPlayer](#MPlayer)
+    *   [3.2 MPlayer / mpv](#MPlayer_.2F_mpv)
         *   [3.2.1 Channel selector](#Channel_selector)
     *   [3.3 ffmpeg](#ffmpeg)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -75,7 +75,7 @@ If you do not know your country code, enter the following to get a list of codes
 
 ```
 
-More advanced scanning options can be found under [DVB-S#Scanning channels](/index.php/DVB-S#Scanning_channels "DVB-S"). See also *w_scan'*s [man page](http://dev.man-online.org/man2/w_scan/) and [documentation](http://linuxtv.org/wiki/index.php/W_scan).
+Note that country code is optional is some cases (see `man w_scan` for details). More advanced scanning options can be found under [DVB-S#Scanning channels](/index.php/DVB-S#Scanning_channels "DVB-S"). See also *w_scan'*s [man page](http://dev.man-online.org/man2/w_scan/) and [documentation](http://linuxtv.org/wiki/index.php/W_scan).
 
 ## Clients
 
@@ -83,7 +83,15 @@ See also [how to disable screensaver when playing video/TV](/index.php/XScreenSa
 
 ### VLC
 
-Viewing the DVB-T stream throgh [VLC](/index.php/VLC "VLC") can be done using:
+The simplest way to watch DVB-T channels with [VLC](/index.php/VLC "VLC") is to first generate a playlist:
+
+```
+$ w_scan -ft -c [country_code] -L > dvb.xspf
+$ vlc dvb.xspf
+
+```
+
+You can also specify the frequency and programs by hand. This can be done using:
 
 ```
 $ vlc dvb://frequency=543000000
@@ -99,12 +107,19 @@ $ vlc dvb://frequency=543000000 :program=3
 
 ```
 
-### MPlayer
+### MPlayer / mpv
 
-For DVB streaming, MPlayer requires a channels configuration file at `~/.mplayer/channels.conf`. Follow [#Scanning](#Scanning) for instructions on how to generate it, but make sure to use the `-M` flag to generate the proper format for MPlayer, if you're using `w_scan`:
+For DVB streaming, [MPlayer](/index.php/MPlayer "MPlayer") (or [mpv](/index.php/Mpv "Mpv")) requires a channels configuration file at `~/.mplayer/channels.conf`. Follow [#Scanning](#Scanning) for instructions on how to generate it, but make sure to use the `-M` flag to generate the proper format for MPlayer, if you're using `w_scan`:
 
 ```
 $ w_scan -ft -c [country_code] -M > ~/.mplayer/channels.conf
+
+```
+
+For *mpv*, use:
+
+```
+$ w_scan -ft -c [country_code] -M > ~/.config/mpv/channels.conf
 
 ```
 
@@ -119,7 +134,7 @@ $ mplayer dvb://"STREAM NAME"
 
 with a valid `STREAM NAME` from the channels configuration file.
 
-**Warning:** MPlayer cannot handle and play channels from a command line that contains some of Linux special symbols like `/` in their names but you can manually rename them by editing `~/.mplayer/channels.conf`.
+**Note:** MPlayer cannot handle and play channels from a command line that contains some of Linux special symbols like `/` in their names, but you can manually rename them by editing `~/.mplayer/channels.conf`.
 
 #### Channel selector
 

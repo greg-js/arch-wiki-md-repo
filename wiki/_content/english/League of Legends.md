@@ -13,13 +13,16 @@
             *   [1.3.3.2 Using a existing copy of the game](#Using_a_existing_copy_of_the_game)
         *   [1.3.4 Compatibility Steps (Optional)](#Compatibility_Steps_.28Optional.29)
         *   [1.3.5 Run the game under Wine](#Run_the_game_under_Wine)
-*   [2 Troubleshooting/Tips](#Troubleshooting.2FTips)
-    *   [2.1 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
-    *   [2.2 In-game shop crash](#In-game_shop_crash)
-    *   [2.3 Store Authentication Required](#Store_Authentication_Required)
-    *   [2.4 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
-    *   [2.5 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
-    *   [2.6 PlayOnLinux Troubleshooting](#PlayOnLinux_Troubleshooting)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Tips](#Tips)
+    *   [2.2 Launcher screen is black](#Launcher_screen_is_black)
+    *   [2.3 Login server does not respond](#Login_server_does_not_respond)
+    *   [2.4 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
+    *   [2.5 In-game shop crash](#In-game_shop_crash)
+    *   [2.6 Store Authentication Required](#Store_Authentication_Required)
+    *   [2.7 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
+    *   [2.8 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
+    *   [2.9 PlayOnLinux Troubleshooting](#PlayOnLinux_Troubleshooting)
 
 ## Installation
 
@@ -227,13 +230,13 @@ Run the bash script/alias/shortcut and you should be good to go!
 
 To test if the game is working, create a custom Summoner's Rift match with one bot. If it loads and you do not crash upon opening the in-game store, you are golden! Congratulations!
 
-## Troubleshooting/Tips
+## Troubleshooting
+
+### Tips
 
 *   In case of flashing minimap or exceedingly low FPS try disabling HUD animations in the in-game options for notable boost in performance.
 
 *   On certain intel cards, enabling vertical sync can lead to a big boost in performance.
-
-*   If the launcher is all black, make sure you have a lib32 version of libgl installed [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)/[lib32-catalyst-libgl](/index.php/AMD_Catalyst#Installing_from_the_unofficial_repository "AMD Catalyst")
 
 *   If the terrain is too dark, one solution would be to install the proprietary drivers of your graphics card.
 
@@ -241,18 +244,31 @@ To test if the game is working, create a custom Summoner's Rift match with one b
 
 *   If there is no ingame audio with usb sound cards, installing [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) may resolve it.
 
-*   If the login server doesn't respond, you can try by removing wininet:
+### Launcher screen is black
+
+You should make sure you have a lib32 version of libgl installed [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)/[lib32-catalyst-libgl](/index.php/AMD_Catalyst#Installing_from_the_unofficial_repository "AMD Catalyst").
+
+### Login server does not respond
+
+You need to properly configure **wininet** library:
 
 ```
 # WINEARCH=win32 WINEPREFIX=$HOME/.wine32 winecfg
 
 ```
 
-Access the libraries tab, find in the list of existing libraries **wininet**, click Remove...
+In the library tab, you need to edit the configuration of the **wininet** library to **Built-in then native**.
 
 *   For further troubleshooting, go to [this thread](https://bbs.archlinux.org/viewtopic.php?id=183860).
 
-#### For d3dstream patched Wine
+Alternatively, you can disable the library by adding the following variable override to the launch command:
+
+```
+ WINEDLLOVERRIDES='wininet=b,n'
+
+```
+
+### For d3dstream patched Wine
 
 **Warning:** On some setups users may experience temporary game freezes during gameplay if using this patch, proceed with caution. If this happens to you, you may be better off using the official version of Wine as freezing is not tolerable in competitive games.
 
@@ -265,7 +281,7 @@ wine .wine32/drive_c/Riot\ Games/League\ of\ Legends/lol.launcher.exe
 
 ```
 
-#### In-game shop crash
+### In-game shop crash
 
 Edit the file `Config/game.cfg` and add `x3d_platform=1` to `[General]` section.
 
@@ -279,7 +295,7 @@ This option should switch to the OpenGL renderer.
 
 **Warning:** This may cause some moderate to severe graphic bugs and blurry textures, depending on setup.
 
-#### Store Authentication Required
+### Store Authentication Required
 
 If clicking "Browse the Store" causes a dialog box titled "Authentication Required" with the text "Please enter your username and password: Server store.XX#.lol.riotgame.com", do not enter your user/pass. Clicking OK leads to a screen filled with black text (highlight to confirm), and clicking Cancel probably gives some network timeout error.
 
@@ -287,7 +303,7 @@ A possible solution: After you log in, there is a home screen containing element
 
 Tip via [Play on Linux thread](https://www.playonlinux.com/en/app-1135-League_Of_Legends.html).
 
-#### Connection Error: connection failure unable to connect to the pvp.net server
+### Connection Error: connection failure unable to connect to the pvp.net server
 
 Authentication and logging in works, however the connection then fails with the abovementioned error. One possible solution, according to [https://appdb.winehq.org/objectManager.php?sClass=version&iId=19141](https://appdb.winehq.org/objectManager.php?sClass=version&iId=19141) is disabling TCP timestamps:
 
@@ -303,11 +319,11 @@ For a permanent solution:
 
 ```
 
-#### Hang after champ select with AMD proprietary fglrx driver
+### Hang after champ select with AMD proprietary fglrx driver
 
 If you have the proprietary AMD fglrx driver installed, you should install trough winetricks the `directx9` package (Not d3dx_y)
 
-#### PlayOnLinux Troubleshooting
+### PlayOnLinux Troubleshooting
 
 *   **Bugsplat opening patcher:** To fix this you need to configure the PlayOnLinux's wine version by clicking the configure gear, change wine version to system from 1.9-LeagueOfLegends and if you have not done so already install [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap).
 

@@ -15,7 +15,7 @@
     *   [4.2 ObexFTP transfers](#ObexFTP_transfers)
     *   [4.3 Obex Object Push](#Obex_Object_Push)
     *   [4.4 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
-*   [5 Examples](#Examples)
+*   [5 Audio](#Audio)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 bluetoothctl](#bluetoothctl_2)
     *   [6.2 gnome-bluetooth](#gnome-bluetooth)
@@ -226,9 +226,11 @@ More info in:
 *   [https://gist.github.com/joergschiller/1673341](https://gist.github.com/joergschiller/1673341)
 *   [http://www.lightofdawn.org/blog/?viewDetailed=00031](http://www.lightofdawn.org/blog/?viewDetailed=00031)
 
-## Examples
+## Audio
 
-All examples have been moved to the [bluez4](/index.php/Bluez4 "Bluez4") article. They need to be checked and fixed for use with bluez5.
+In order to be able to use audio equipment like bluetooth headphones, you need to install the additional [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package.
+
+Please have a look at the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page for more information about bluetooth audio and bluetooth headsets.
 
 ## Troubleshooting
 

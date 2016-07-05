@@ -313,13 +313,9 @@ Afterwards, you can continue in normal installation instructions with the [creat
 
 If your root device is on a thinly-provisioned LVM volume (as may be needed by [snapper](/index.php/Snapper "Snapper") if you don't trust [btrfs](/index.php/Btrfs "Btrfs")), then some more preparations are needed.
 
-First, `mkinitcpio` by default does not include modules and binaries needed for thin provisioning. Adjust the configuration file to compensate:
+First, `mkinitcpio` by default does not include binaries needed for thin provisioning ([FS#32884](https://bugs.archlinux.org/task/32884)). Adjust the configuration file to compensate:
 
- `/etc/mkinitcpio.conf` 
-```
-MODULES="... **dm-thin-pool** ..."
-BINARIES="**/usr/bin/thin_check /usr/bin/pdata_tools** ..."
-```
+ `/etc/mkinitcpio.conf`  `BINARIES="**/usr/bin/thin_check /usr/bin/pdata_tools** ..."` 
 
 LVM only calls `thin_check` while booting, but if the check fails, you will need other commands provided by `pdata_tools` for recovery.
 

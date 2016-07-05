@@ -170,46 +170,16 @@ In the following steps `/dev/sdxX` denotes the path to the partition to be conve
 
 ## Using ext4 per directory encryption
 
-Linux comes with an Ext4 feature to encrypt directories of a filesystem.[[5]](http://lwn.net/Articles/639427/) [[6]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656) See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the features, an overview of the implementation state and practical test results with kernel 4.1\.
+Linux comes with an Ext4 feature to encrypt directories of a filesystem. See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the features, an overview of the implementation state and practical test results with kernel 4.1\.
 
 Encryption keys are stored in the keyring. To get started, make sure you have enabled `CONFIG_KEYS` and `CONFIG_EXT4_ENCRYPTION` kernel options and you have kernel 4.1 or higher. Note the Arch default [linux](https://www.archlinux.org/packages/?name=linux) does not have `CONFIG_EXT4_ENCRYPTION` set yet.
 
-First of all, you need to update [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) to at least version 1.43, which is a work in progress as of July 2015\. Package [e2fsprogs-git](https://aur.archlinux.org/packages/e2fsprogs-git/) is available to install the latest git version.
+First of all, you need to update [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) to at least version 1.43.
 
-e4crypt source has disabled a relevant section in its source code, enable it:
-
-```
-diff --git a/misc/e4crypt.c b/misc/e4crypt.c
-index c5b384a..828e7cf 100644
---- a/misc/e4crypt.c
-+++ b/misc/e4crypt.c
-@@ -714,9 +714,6 @@ void do_set_policy(int argc, char **argv, const struct cmd_desc *cmd)
-               exit(1);
-       }
-
--      printf("arg %s
-", argv[optind]);
--      exit(0);
--
-       strcpy(saltbuf.key_ref_str, argv[optind]);
-       if ((strlen(argv[optind]) != (EXT4_KEY_DESCRIPTOR_SIZE * 2)) ||
-           hex2byte(argv[optind], (EXT4_KEY_DESCRIPTOR_SIZE * 2),
+Let us make a directory that we will encrypt. Encryption policy can be set only on new empty directories. For example, if we are to encrypt `/encrypted/dir`, create the upper level directory:
 
 ```
-
-Make sure you have installed updated versions of e2fsck and e4crypt:
-
-```
-# e2fsck -V
-e2fsck 1.43-WIP (18-May-2015)
-        Using EXT2FS Library version 1.43-WIP, 18-May-2015
-
-```
-
-Let us make a directory that we will encrypt. Encryption policy can be set only on empty directories:
-
-```
-# mkdir -p /encrypted/dir
+# mkdir /encrypted
 
 ```
 
@@ -224,7 +194,7 @@ First generate a random salt value and store it in a safe place:
 Now generate and add a new key into your keyring: this step should be repeated every time you flush your keychain (reboot)
 
 ```
-# e4crypt -S 0x877282f53bd0adbbef92142fc4cac459
+# e4crypt add_key -S 0x877282f53bd0adbbef92142fc4cac459
 Enter passphrase (echo disabled): 
 Added key with descriptor [f88747555a6115f5]
 
@@ -259,11 +229,11 @@ That is all. If you try accessing the disk without adding a key into keychain, f
 
 ### Barriers and Performance
 
-Since kernel 2.6.30, ext4 performance has decreased due to changes that serve to improve data integrity [[8]](http://www.phoronix.com/scan.php?page=article&item=ext4_then_now&num=1).
+Since kernel 2.6.30, ext4 performance has decreased due to changes that serve to improve data integrity [[5]](http://www.phoronix.com/scan.php?page=article&item=ext4_then_now&num=1).
 
 *Most file systems (XFS, ext3, ext4, reiserfs) send write barriers to disk after fsync or during transaction commits. Write barriers enforce proper ordering of writes, making volatile disk write caches safe to use (at some performance penalty). If your disks are battery-backed in one way or another, disabling barriers may safely improve performance.*
 
-*Sending write barriers can be disabled using the `barrier=0` mount option (for ext3, ext4, and reiserfs), or using the `nobarrier` mount option (for XFS)* [[9]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.io.html).
+*Sending write barriers can be disabled using the `barrier=0` mount option (for ext3, ext4, and reiserfs), or using the `nobarrier` mount option (for XFS)* [[6]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.io.html).
 
 **Warning:** Disabling barriers when disks cannot guarantee caches are properly written in case of power failure can lead to severe file system corruption and data loss.
 
@@ -275,3 +245,5 @@ To turn barriers off add the option `barrier=0` to the desired filesystem. For e
 
 *   [Official Ext4 wiki](https://ext4.wiki.kernel.org/)
 *   [Ext4 Disk Layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout)
+*   [Ext4 Encryption](http://lwn.net/Articles/639427/)
+*   Kernel commits of ext4 encryption [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)

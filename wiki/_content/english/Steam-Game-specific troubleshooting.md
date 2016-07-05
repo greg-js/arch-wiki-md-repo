@@ -651,6 +651,7 @@ On the game, go to the option and set all audio to the proper volume.
 
 ### Dependencies (Dota 2 reborn)
 
+*   [libpng12](https://www.archlinux.org/packages/?name=libpng12)
 *   [libudev0](https://aur.archlinux.org/packages/libudev0/) or [libudev.so.0](https://aur.archlinux.org/packages/libudev.so.0/)
 
 ### Troubleshooting
