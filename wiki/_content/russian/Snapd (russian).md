@@ -27,14 +27,14 @@
 Для того чтобы `snapd` демон запускался, когда *snap* обращается к нему, запустите `snapd.socket`.
 
 ```
-# systemctl start snapd.socket.
+# systemctl start snapd.socket
 
 ```
 
 Вы также можете активировать его при старте системы.
 
 ```
-# systemctl enable snapd.socket.
+# systemctl enable snapd.socket
 
 ```
 

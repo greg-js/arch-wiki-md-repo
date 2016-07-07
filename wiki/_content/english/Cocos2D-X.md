@@ -5,8 +5,10 @@ Cocos2D-X is a high-performance cross platform 2D/3D game engine that supports m
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 PATH Environment Variable](#PATH_Environment_Variable)
-    *   [2.2 Cross Compiling for Android](#Cross_Compiling_for_Android)
-    *   [2.3 Updating SDKBOX](#Updating_SDKBOX)
+    *   [2.2 Python Scripts Workaround](#Python_Scripts_Workaround)
+    *   [2.3 Disable sending usage data](#Disable_sending_usage_data)
+    *   [2.4 Cross Compiling for Android](#Cross_Compiling_for_Android)
+    *   [2.5 Updating SDKBOX](#Updating_SDKBOX)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -21,6 +23,38 @@ After installation, add `/opt/cocos2d-x/tools/cocos2d-console/bin`, and `/opt/co
 
 ```
 export PATH=/opt/cocos2d-x/tools/cocos2d-console/bin:/opt/cocos2d-x/tools/cocos2d-console/plugins/plugin_package:${PATH}
+
+```
+
+### Python Scripts Workaround
+
+Since some Cocos2D-X scripts use `python2` instead of `python3`, like `sdkbox`, simply calling `python2 foo.pyc` will not suffice since other modules will be called with "env python" which could point to python3\. To fix this, read [here](/index.php/Python#Dealing_with_version_problem_in_build_scripts "Python"). Don't forget to add `/usr/local/bin`, or whichever directory the workaround shell script is installed at, before `/usr/bin` in your PATH environment variable. The following should suffice:
+
+```
+export PATH=/usr/local/bin:${PATH}
+
+```
+
+Here's an example shell script workaround:
+
+ `/usr/local/bin/python` 
+```
+#!/bin/bash
+script=$(readlink -f -- "$1")
+case "$script" in (/opt/cocos2d-x/*|/path/to/project1/*|/path/to/project2/*|/path/to/project3/*)
+    exec python2 "$@"
+esac
+
+exec python3 "$@"
+
+```
+
+### Disable sending usage data
+
+Sending the usage data can be disabled setting `enable_stat` to `false` in `/opt/cocos2d-x/tools/cocos2d-console/bin/cocos2d.ini`:
+
+```
+# sed -e 's/enable_stat=.*/enable_stat=false/g' -i /opt/cocos2d-x/tools/cocos2d-console/bin/cocos2d.ini
 
 ```
 

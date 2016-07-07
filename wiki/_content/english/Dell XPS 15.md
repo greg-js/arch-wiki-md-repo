@@ -12,7 +12,7 @@ This page is a work in progress! More info coming soon.
 | System info | Not tested |
 | Power management | Buggy |
 | WiDi | Not working |
-| Touchpad gestures | Not working |
+| Touchpad gestures | Modify |
 
 *   Works - Works out-of-the-box
 *   Modify - Works with modifications
@@ -40,7 +40,11 @@ This page is a work in progress! More info coming soon.
     *   [2.10 Special Touch Keys](#Special_Touch_Keys)
         *   [2.10.1 Alternative method](#Alternative_method)
     *   [2.11 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
-    *   [2.12 Notes](#Notes)
+    *   [2.12 Touchpad Gestures](#Touchpad_Gestures)
+        *   [2.12.1 libinput](#libinput)
+            *   [2.12.1.1 XPS 9550](#XPS_9550)
+        *   [2.12.2 Synaptics](#Synaptics)
+    *   [2.13 Notes](#Notes)
 *   [3 Howtos](#Howtos)
 
 ## System Settings
@@ -585,12 +589,24 @@ For L502X model: there are additional Fn+<Key> (sequences) that are not marked a
 | Fn+Del | Ctrl + Pause/Break |
 | Fn+PrntScr | Alt + PrtSc/SysRq |
 
+### Touchpad Gestures
+
+#### libinput
+
+##### XPS 9550
+
+Working, using libinput and libinput-gestures.
+
+#### Synaptics
+
+If using Synaptics, read [Synaptics](/index.php/Synaptics "Synaptics").
+
 ### Notes
 
 *   Remember to turn on Wi-Fi and Bluetooth by pressing the F2 button.
-*   Touchpad can handle multitouch. Read [Synaptics](/index.php/Synaptics "Synaptics") to get that working.
 *   Card reader is finnicky. Try booting with a card inserted or inserting a card after it is booted and running `sudo echo 1 > /sys/bus/pci/rescan`. Otherwise, card reader will not be detected. It seems that a certain kernel update results in the workaround not working as well. More info needed.
 
 ## Howtos
 
-*   [A fairly comprehensive writeup of running Arch Linux on an XPS 15.](http://drwho.virtadpt.net/archive/2015/01/05/linux-on-the-dell-xps-15-9530)
+*   [A fairly comprehensive writeup of running Arch Linux on an XPS 15 9530.](http://drwho.virtadpt.net/archive/2015/01/05/linux-on-the-dell-xps-15-9530)
+*   [Comprehensive coverage of Arch Linux on XPS 15 9550](https://ahxxm.com/151.moew/)

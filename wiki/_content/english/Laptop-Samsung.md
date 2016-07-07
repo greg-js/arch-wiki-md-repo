@@ -45,6 +45,6 @@ CPU frequency scaling: Yes | N/A | Web-Cam: OK;
 Card reader: Untested;
 Fn keys - All Out-of-Box;
 Elan Touchpad works perfectly | N/A |
-| Samsung Notebook 7 Spin [NP740U3L-L02US](/index.php?title=Samsung_NP740U3L-L02US&action=edit&redlink=1 "Samsung NP740U3L-L02US (page does not exist)") | 2016.07.01 | Intel HD Graphics 520 | works | N/A | *iwlwifi* driver | Not tested |  ? | N/A | Need to work on touchpad sensitivity
+| Samsung Notebook 7 Spin [NP740U3L-L02US](/index.php/Samsung_NP740U3L-L02US "Samsung NP740U3L-L02US") | 2016.07.01 | Intel HD Graphics 520 | works | N/A | *iwlwifi* driver | Not tested |  ? | N/A | Need to work on touchpad sensitivity
 
 Dual booting required shutting off secure boot | Very recent (as of July 4, 2016) 2-in-1 laptop model with pretty generic hardware (spec info [here](http://www.notebookocean.com/samsung-notebook-7-spin-np740u3l-l02us-specs/)); so far seems very usable |

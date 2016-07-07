@@ -7,10 +7,10 @@ This article provides a list of (not commonly known) default keyboard shortcuts 
     *   [1.2 Terminal](#Terminal)
         *   [1.2.1 Virtual console](#Virtual_console)
         *   [1.2.2 Readline](#Readline)
-    *   [1.3 X11](#X11)
+    *   [1.3 X11 & Wayland](#X11_.26_Wayland)
 *   [2 User customization](#User_customization)
     *   [2.1 Readline](#Readline_2)
-    *   [2.2 X11](#X11_2)
+    *   [2.2 X11](#X11)
     *   [2.3 Firefox](#Firefox)
     *   [2.4 Key binding for X-selection-paste](#Key_binding_for_X-selection-paste)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -93,10 +93,10 @@ GNU readline is a commonly used library for line-editing; it is used for example
 | `Alt+?` | List all possible completions |
 | `Alt+*` | Insert all possible completions |
 
-### X11
+### X11 & Wayland
 
 | Keyboard Shortcut | Description | Notes |
-| `Ctrl+Alt+F1`, `F2`, `F3`, ... | Switch to *n*-th virtual console |
+| `Ctrl+Alt+F1`, `F2`, `F3`, ... | Switch to *n*-th virtual console | If it doesn't work try `Ctrl+Fn+Alt+F…` |
 | `Shift+Insert`
 `Mouse Button 2` | Paste text from the [PRIMARY buffer](/index.php/Clipboard "Clipboard") | By default, Qt maps `Shift+Insert` to CLIPBOARD instead of the PRIMARY buffer (see e.g. [[1]](http://doc.qt.io/qt-5/qlineedit.html#details)). |
 

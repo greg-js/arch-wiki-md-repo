@@ -260,9 +260,9 @@ To check the result:
 
 ## Configure the IP address
 
-You have two options: a dynamically assigned address using [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol"), or an unchanging "static" address.
+**Warning:** Use a single method to manage the network, as several methods may conflict.
 
-**Tip:** In addition to the methods described below one can also use a [network manager](/index.php/List_of_applications#Network_managers "List of applications"). Network managers are especially useful for dynamic network connections and wifi networking.
+You have two options: a dynamically assigned address using [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol"), or an unchanging "static" address. See also [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").
 
 ### Dynamic IP address
 

@@ -20,7 +20,7 @@
     *   [3.5 Power-off tray icon fails](#Power-off_tray_icon_fails)
     *   [3.6 Login information with SLiM](#Login_information_with_SLiM)
     *   [3.7 Custom SLiM Login Commands](#Custom_SLiM_Login_Commands)
-    *   [3.8 SLiM and Gnome Keyring](#SLiM_and_Gnome_Keyring)
+    *   [3.8 Gnome Keyring](#Gnome_Keyring)
     *   [3.9 Setting DPI with SLiM](#Setting_DPI_with_SLiM)
     *   [3.10 Use a random theme](#Use_a_random_theme)
     *   [3.11 Move the whole session to another VT](#Move_the_whole_session_to_another_VT)
@@ -242,7 +242,7 @@ Or if you want to play a song when slim loads (and you have the beep program ins
 
 ```
 
-### SLiM and Gnome Keyring
+### Gnome Keyring
 
 **Note:** slim 1.3.5-1 ships with `/etc/pam.d/slim` preconfigured to unlock keyring upon login. Users no longer need to modify the file.
 

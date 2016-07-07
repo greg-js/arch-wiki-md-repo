@@ -3,7 +3,8 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Assigning keyboard shortcuts to sxiv](#Assigning_keyboard_shortcuts_to_sxiv)
+*   [2 Usage](#Usage)
+    *   [2.1 Assigning keyboard shortcuts](#Assigning_keyboard_shortcuts)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Browse through images in directory after opening a single file](#Browse_through_images_in_directory_after_opening_a_single_file)
     *   [3.2 Showing the image size in the status bar](#Showing_the_image_size_in_the_status_bar)
@@ -11,9 +12,11 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [sxiv](https://www.archlinux.org/packages/?name=sxiv), which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [sxiv](https://www.archlinux.org/packages/?name=sxiv) package, or [sxiv-git](https://aur.archlinux.org/packages/sxiv-git/) for the development version.
 
-## Assigning keyboard shortcuts to sxiv
+## Usage
+
+### Assigning keyboard shortcuts
 
 sxiv supports external key events. First you have to press `Ctrl-x` to send the next key to the external key-handler. The external key-handler requires an executable file `~/.config/sxiv/exec/key-handler` and passes the key combination pressed via argument as well the names of the currently marked images as stdin (or, if none are marked, the currently selected image).
 
@@ -58,10 +61,9 @@ $ mkdir ~/.trash
 
 ### Browse through images in directory after opening a single file
 
-Place [this script](http://git.savannah.gnu.org/cgit/ranger.git/tree/examples/rifle_sxiv.sh)
+Place [this script](https://github.com/ranger/ranger/blob/master/examples/rifle_sxiv.sh) in `/usr/local/bin` and call it like this:
 
 ```
-in `/usr/local/bin` and call it like this:
 $ *scriptname* a_single_image.jpg
 
 ```

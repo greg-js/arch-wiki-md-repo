@@ -13,7 +13,7 @@ The *LI*nux *LO*ader, or **LILO** for short, is a legacy multi-boot loader for L
 
 ## Installation
 
-LILO is available as [lilo](https://aur.archlinux.org/packages/lilo/) and [lilo-git](https://aur.archlinux.org/packages/lilo-git/) (the development version). LILO only works on BIOS systems. ELILO is a version of LILO for UEFI systems and it can be installed from the [elilo-efi](https://aur.archlinux.org/packages/elilo-efi/) package.
+LILO is available as [lilo](https://aur.archlinux.org/packages/lilo/) and [lilo-git](https://aur.archlinux.org/packages/lilo-git/) (the development version). LILO only works on BIOS systems. ELILO is a [now unmaintained version](https://sourceforge.net/mailarchive/message.php?msg_id=31524008) of LILO for UEFI systems, available from the [elilo-efi](https://aur.archlinux.org/packages/elilo-efi/) package.
 
 Running the command `lilo` (as root) will install LILO to the MBR. Before running the lilo command you should edit `/etc/lilo.conf` to ensure that the root entry points towards the root partition. If your root partition is on /dev/sda1 then the root entry should look like this: `root=/dev/sda1`. Remember to change the root line for both the 'arch' and the 'arch-fallback' entries.
 

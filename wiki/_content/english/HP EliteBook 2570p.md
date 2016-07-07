@@ -1,7 +1,7 @@
 | **Device** | **Working** |
 | Fan is throttled | Yes |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
-| DisplayPort | Not tested |
+| DisplayPort | Yes |
 | VGA | Yes |
 | [Audio](/index.php/Audio "Audio") | Yes |
 | USB 3.0 | Yes |
@@ -17,7 +17,7 @@
 | [Hardware switches](/index.php/Extra_keyboard_keys "Extra keyboard keys") | Yes |
 | Card reader | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
-| [Fingerprint reader](/index.php/Fprint "Fprint") | Not tested |
+| [Fingerprint reader](/index.php/Fprint "Fprint") | Not working, missing driver |
 
 HP EliteBook 2570p is a powerful and customizable 12.5-inch notebook with a socketted Ivy Bridge processor and interesting [specifications](https://www.fajnykomputer.pl/pl/p/file/b7a0ac330691b6f4eec20261b93dfaab/quick_spec_hp_elitebook_2570p.pdf) (and even a [SuSE certificate](https://www.suse.com/yes/138109.htm)). Arch Linux installs and runs on it without major problems. There are a few hacks needed to enable all of the [power management](/index.php/Power_management "Power management") functions and gain the maximum battery life.
 

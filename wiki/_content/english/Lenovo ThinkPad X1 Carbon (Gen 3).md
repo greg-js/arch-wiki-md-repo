@@ -8,6 +8,10 @@
     *   [2.3 Display](#Display)
         *   [2.3.1 HDMI](#HDMI)
     *   [2.4 Fingerprint Reader](#Fingerprint_Reader)
+    *   [2.5 WiFi](#WiFi)
+        *   [2.5.1 Bluetooth](#Bluetooth)
+    *   [2.6 WWAN](#WWAN)
+        *   [2.6.1 GPS](#GPS)
 *   [3 See also](#See_also)
 
 ## Model description
@@ -118,6 +122,31 @@ Bus 001 Device 004: ID 138a:0017 Validity Sensors, Inc. Fingerprint Reader
 ```
 
 Note that recent versions of fprint are broken for this model : One is able to enroll a finger but recognition always fails.
+
+### WiFi
+
+There are several cards used - all should be covered by iiwlwifi:
+
+*   Intel Wireless-N 7265, 2x2, 802.11b/g/n
+*   Intel Dual Band Wireless-N 7265, 2x2 802.11a/b/g/n
+*   Intel Dual Band Wireless-AC 7265, 2x2, 802.11a/b/g/n/ac
+
+#### Bluetooth
+
+All cards feature BT4.0 connectivity and should work out of the box when starting the bluetooth service
+
+### WWAN
+
+There are several cards used
+
+*   Ericsson N5321 (3.5G)
+*   Sierra Wireless EM7345 (4G)
+
+EM7345: SIM-Problems, TBD
+
+#### GPS
+
+N5321 is unknown EM7345 can output GPS using AT-Commands. You can use [[1]](https://github.com/tuxmaster/gpsd-tcp%7Cgpsd-tcp) to interface to gpsd.
 
 ## See also
 

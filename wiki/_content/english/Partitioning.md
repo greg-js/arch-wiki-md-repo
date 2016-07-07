@@ -22,6 +22,9 @@ Each partition should be formatted to a [file system type](/index.php/File_syste
         *   [2.3.5 /tmp](#.2Ftmp)
         *   [2.3.6 Swap](#Swap)
         *   [2.3.7 How big should my partitions be?](#How_big_should_my_partitions_be.3F)
+    *   [2.4 Example layouts](#Example_layouts)
+        *   [2.4.1 UEFI/GPT example partition layout](#UEFI.2FGPT_example_partition_layout)
+        *   [2.4.2 BIOS/MBR example partition layout](#BIOS.2FMBR_example_partition_layout)
 *   [3 Partitioning tools](#Partitioning_tools)
 *   [4 Partition alignment](#Partition_alignment)
     *   [4.1 Hard disk drives](#Hard_disk_drives)
@@ -147,13 +150,13 @@ The size of the partitions depends on personal preference, but the following inf
 
 	It requires only about 100 MB, but if multiple kernels/boot images are likely to be in use, 200 or 300 MB is a better choice.
 
-	/ - 15-20 GB 
+	/ - 15–20 GB 
 
-	It traditionally contains the `/usr` directory, which can grow significantly depending upon how much software is installed. 15-20 GB should be sufficient for most users with modern hard disks. If you plan to store a swap file here, you might need a larger partition size.
+	It traditionally contains the `/usr` directory, which can grow significantly depending upon how much software is installed. 15–20 GB should be sufficient for most users with modern hard disks. If you plan to store a swap file here, you might need a larger partition size.
 
-	/var - 8-12 GB 
+	/var - 8–12 GB 
 
-	It will contain, among other data, the [ABS](/index.php/ABS "ABS") tree and the [pacman](/index.php/Pacman "Pacman") cache. Retaining these packages is helpful in case a package upgrade causes instability, requiring a [downgrade](/index.php/Downgrade "Downgrade") to an older, archived package. The pacman cache in particular will grow as the system is expanded and updated, but it can be safely cleared if space becomes an issue. 8-12 GB on a desktop system should be sufficient for `/var`, depending on how much software will be installed.
+	It will contain, among other data, the [ABS](/index.php/ABS "ABS") tree and the [pacman](/index.php/Pacman "Pacman") cache. Retaining these packages is helpful in case a package upgrade causes instability, requiring a [downgrade](/index.php/Downgrade "Downgrade") to an older, archived package. The pacman cache in particular will grow as the system is expanded and updated, but it can be safely cleared if space becomes an issue. 8–12 GB on a desktop system should be sufficient for `/var`, depending on how much software will be installed.
 
 	/home - [varies] 
 
@@ -171,6 +174,27 @@ The size of the partitions depends on personal preference, but the following inf
 
 *   See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") to hibernate into a swap partition or file.
 *   A swap partition is highly recommended when using [virtual machine](/index.php/Virtual_machine "Virtual machine") guests.
+
+### Example layouts
+
+The sections below assume that a new, contiguous layout is applied to a single device in `/dev/sd**x**`. Change device names, partition numbers, and partition layout where necessary.
+
+#### UEFI/GPT example partition layout
+
+A special *bootable* [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is required, here assumed in `/boot`.
+
+| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
+| /boot | /dev/sd**x**1 | EFI System partition | Yes | 260–512 MiB |
+ /dev/sd**x**2 | Linux swap | No | More than 512 MiB |
+| / | /dev/sd**x**3 | Linux | No | 15–20 GiB |
+| /home | /dev/sd**x**4 | Linux | No | Remainder of the device |
+
+#### BIOS/MBR example partition layout
+
+| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Bootable flag | Suggested size |
+ /dev/sd**x**1 | Linux swap | No | More than 512 MiB |
+| / | /dev/sd**x**2 | Linux | Yes | 15–20 GiB |
+| /home | /dev/sd**x**3 | Linux | No | Remainder of the device |
 
 ## Partitioning tools
 

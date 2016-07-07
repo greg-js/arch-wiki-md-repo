@@ -70,11 +70,11 @@ Next, if there are separate filesystems for other system directories (e.g. `/boo
 
 ## Change root
 
-**Note:** Some [systemd](/index.php/Systemd "Systemd") tools such as *localectl* and *timedatectl* do not work inside a chroot, as they require an active [dbus](/index.php/Dbus "Dbus") connection. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
+**Note:** Some [systemd](/index.php/Systemd "Systemd") tools such as *localectl* and *timedatectl* can not be used inside a chroot, as they require an active [dbus](/index.php/Dbus "Dbus") connection. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
 
 ### Using arch-chroot
 
-The bash script `arch-chroot` is part of the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Before running `/usr/bin/chroot` the script mounts api filesystems like `/proc` and makes `/etc/resolv.conf` available from the chroot.
+The bash script `arch-chroot` is part of the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) package. Before running `/usr/bin/chroot` the script mounts api filesystems like `/proc` and makes `/etc/resolv.conf` available from the chroot.
 
 Run arch-chroot with the new root directory as first argument:
 

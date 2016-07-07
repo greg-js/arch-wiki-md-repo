@@ -400,15 +400,9 @@ Try adding `ServerAlias *` into `/etc/cups/cupsd.conf`.
 
 ### Conflict with SANE
 
-If you are also running [SANE](/index.php/SANE "SANE"), it's possible that it is conflicting with CUPS.
+If you are also running [SANE](/index.php/SANE "SANE"), it's possible that it is conflicting with CUPS. To fix this create a [Udev](/index.php/Udev "Udev") rule marking the device as matched by libsane:
 
-To fix this create the following file:
-
- `/etc/udev/rules.d/99-printer.rules` 
-```
-# idProduct and idVendor needs to match your printer
-ATTRS{idVendor}=="04e8", ATTRS{idProduct}=="341b", MODE="0664", GROUP="lp", ENV{libsane_matched}="yes"
-```
+ `/etc/udev/rules.d/99-printer.rules`  `ATTRS{idVendor}=="*vendor id*", ATTRS{idProduct}=="*product id*", MODE="0664", GROUP="lp", ENV{libsane_matched}="yes"` 
 
 ### Cannot print from LibreOffice
 

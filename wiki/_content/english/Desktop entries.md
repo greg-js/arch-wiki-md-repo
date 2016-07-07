@@ -259,12 +259,6 @@ Examples
 
 ### Hide desktop entries
 
-**Tip:** Desktop entries can be hidden by creating a symbolic link to `/dev/null`. For example:
-```
-$ ln -s /dev/null ~/.local/share/applications/*foo*.desktop
-
-```
-
 Firstly, copy the desktop entry file in question to `~/.local/share/applications` to avoid your changes being overwritten.
 
 Then, to hide the entry in all environments, open the desktop entry file in a text editor and add the following line: `NoDisplay=true`.

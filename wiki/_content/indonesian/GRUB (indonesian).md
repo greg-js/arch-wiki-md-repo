@@ -1,7 +1,5 @@
 | **Summary**  |
 | GRUB2 adalah generasi terbaru dari grub. |
-| **Overview** |
-| In order to boot Arch Linux, a Linux-capable boot loader such as [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux"), [LILO](/index.php/LILO "LILO") or [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") must be installed to the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") or the [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). The boot loader is responsible for loading the kernel and [initial ramdisk](/index.php/Initial_ramdisk "Initial ramdisk") before initiating the [boot process](/index.php/Boot_process "Boot process"). |
 | **Related** |
 | [Burg](/index.php/Burg "Burg") - Burg adalah boot loader baru yang berdasar atas GRUB2\. Yang menggunakan format object dimana hal ini membuat BURG dapat di gunakan di berbagai Operating System termasuk Linux/Windows/OSX/Solaris/FreeBSD, dll. Juga mempunyai tampilan untuk di konfigurasi yang unik baik melalui text mode atau GUI mode. |
 | **Resources** |

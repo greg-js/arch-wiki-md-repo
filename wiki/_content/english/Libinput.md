@@ -112,7 +112,7 @@ $ xinput set-button-map *device* 1 6 3 4 5 0 7
 
 ```
 
-In this example, we mapped button 6 to be the middle button and disabled the original middle button by assigning it to button 0.
+In this example, we mapped button 6 to be the middle button and disabled the original middle button by assigning it to button 0\. This may also be used for [Wayland](/index.php/Wayland "Wayland"), but be aware both the *device* number and its button-map will be different. Hence, settings are not directly interchangeable.
 
 **Tip:** You can use *xev* (from the [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) package) to find out which physical button is currently mapped to which ID.
 

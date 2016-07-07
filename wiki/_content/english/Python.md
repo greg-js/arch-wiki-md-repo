@@ -13,7 +13,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
 *   [2 Widget bindings](#Widget_bindings)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 IPython](#IPython)
-    *   [3.2 virtualenv](#virtualenv)
+    *   [3.2 Virtual environment](#Virtual_environment)
     *   [3.3 Getting completion in Python2 shell](#Getting_completion_in_Python2_shell)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Dealing with version problem in build scripts](#Dealing_with_version_problem_in_build_scripts)
@@ -92,7 +92,7 @@ $ which python
 
 ```
 
-A similar approach in tricking the environment, which also relies on `#!/usr/bin/env python` to be called by the script in question, is to use a [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv").
+A similar approach in tricking the environment, which also relies on `#!/usr/bin/env python` to be called by the script in question, is to use a [#Virtual environment](#Virtual_environment).
 
 ### Old versions
 
@@ -157,11 +157,11 @@ to autostart the browser and run the IPython kernel. You can select the python v
 
 [bpython](http://bpython-interpreter.org/) is a ncurses interface to the Python interpreter, available in the official repositories as [bpython](https://www.archlinux.org/packages/?name=bpython) and [bpython2](https://www.archlinux.org/packages/?name=bpython2).
 
-### virtualenv
+### Virtual environment
 
-[python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv) is a Python tool written by Ian Bicking and used to create isolated environments for Python in which you can install packages without interfering with the other virtualenvs nor with the system Python's packages. It could change the python interpreter used for a specific application.
+Python provides tools to create isolated environments in which you can install packages without interfering with the other virtual environments nor with the system Python's packages. It could change the python interpreter used for a specific application.
 
-See [Python/Virtualenv](/index.php/Python/Virtualenv "Python/Virtualenv") for details.
+See [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment") for details.
 
 ### Getting completion in Python2 shell
 

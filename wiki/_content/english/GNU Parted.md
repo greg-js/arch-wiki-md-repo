@@ -21,7 +21,7 @@ GNU Parted is a program for creating and manipulating partition tables. [GParted
 
 ## Installation
 
-[Install](/index.php/Install "Install") [parted](https://www.archlinux.org/packages/?name=parted) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [parted](https://www.archlinux.org/packages/?name=parted) package.
 
 ## Usage
 

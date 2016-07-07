@@ -4,28 +4,29 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 *   [1 Scheduled Advisories](#Scheduled_Advisories)
 *   [2 Recent Advisories](#Recent_Advisories)
-    *   [2.1 June 2016](#June_2016)
-    *   [2.2 May 2016](#May_2016)
-    *   [2.3 April 2016](#April_2016)
-    *   [2.4 March 2016](#March_2016)
-    *   [2.5 February 2016](#February_2016)
-    *   [2.6 January 2016](#January_2016)
-    *   [2.7 December 2015](#December_2015)
-    *   [2.8 November 2015](#November_2015)
-    *   [2.9 October 2015](#October_2015)
-    *   [2.10 September 2015](#September_2015)
-    *   [2.11 August 2015](#August_2015)
-    *   [2.12 July 2015](#July_2015)
-    *   [2.13 June 2015](#June_2015)
-    *   [2.14 May 2015](#May_2015)
-    *   [2.15 Apr 2015](#Apr_2015)
-    *   [2.16 Mar 2015](#Mar_2015)
-    *   [2.17 Feb 2015](#Feb_2015)
-    *   [2.18 Jan 2015](#Jan_2015)
-    *   [2.19 Dec 2014](#Dec_2014)
-    *   [2.20 Nov 2014](#Nov_2014)
-    *   [2.21 Oct 2014](#Oct_2014)
-    *   [2.22 Sep 2014](#Sep_2014)
+    *   [2.1 July 2016](#July_2016)
+    *   [2.2 June 2016](#June_2016)
+    *   [2.3 May 2016](#May_2016)
+    *   [2.4 April 2016](#April_2016)
+    *   [2.5 March 2016](#March_2016)
+    *   [2.6 February 2016](#February_2016)
+    *   [2.7 January 2016](#January_2016)
+    *   [2.8 December 2015](#December_2015)
+    *   [2.9 November 2015](#November_2015)
+    *   [2.10 October 2015](#October_2015)
+    *   [2.11 September 2015](#September_2015)
+    *   [2.12 August 2015](#August_2015)
+    *   [2.13 July 2015](#July_2015)
+    *   [2.14 June 2015](#June_2015)
+    *   [2.15 May 2015](#May_2015)
+    *   [2.16 Apr 2015](#Apr_2015)
+    *   [2.17 Mar 2015](#Mar_2015)
+    *   [2.18 Feb 2015](#Feb_2015)
+    *   [2.19 Jan 2015](#Jan_2015)
+    *   [2.20 Dec 2014](#Dec_2014)
+    *   [2.21 Nov 2014](#Nov_2014)
+    *   [2.22 Oct 2014](#Oct_2014)
+    *   [2.23 Sep 2014](#Sep_2014)
 *   [3 Publishing a new advisory](#Publishing_a_new_advisory)
     *   [3.1 Templates](#Templates)
     *   [3.2 Vim-Snippet](#Vim-Snippet)
@@ -35,6 +36,12 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
+
+### July 2016
+
+*   [05 July 2016] [ASA-201607-3](https://lists.archlinux.org/pipermail/arch-security/2016-July/000663.html) [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) arbitrary code execution
+*   [05 July 2016] [ASA-201607-2](https://lists.archlinux.org/pipermail/arch-security/2016-July/000662.html) [xerces-c](https://www.archlinux.org/packages/?name=xerces-c) denial of service
+*   [05 July 2016] [ASA-201607-1](https://lists.archlinux.org/pipermail/arch-security/2016-July/000661.html) [libarchive](https://www.archlinux.org/packages/?name=libarchive) arbitrary code execution
 
 ### June 2016
 

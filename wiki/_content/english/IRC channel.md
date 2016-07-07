@@ -20,7 +20,7 @@ To join the channels, you need an IRC client. See [List of applications/Internet
 
 ### Registration
 
-**#archlinux** and **#archlinux-offtopic** now the channel mode set to `+r` and `+q $~a`. This means you need to be identified to `NickServ` to join the channel and send messages, respectively. We needed to do this to reduce spam.
+**#archlinux** and **#archlinux-offtopic** now have the channel mode set to `+r` and `+q $~a`. This means you need to be identified to `NickServ` to join the channel and send messages, respectively. We needed to do this to reduce spam.
 
 To register with NickServ, follow the [freenode FAQ](https://freenode.net/kb/answer/registration), as well as `NickServ help` when connected to *chat.freenode.net*:
 

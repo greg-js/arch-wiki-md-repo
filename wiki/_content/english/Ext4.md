@@ -1,6 +1,6 @@
-Ext4 is the evolution of the most used Linux filesystem, Ext3\. In many ways, Ext4 is a deeper improvement over Ext3 than Ext3 was over Ext2\. Ext3 was mostly about adding journaling to Ext2, but Ext4 modifies important data structures of the filesystem such as the ones destined to store the file data. The result is a filesystem with an improved design, better performance, reliability, and features.
+From [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4):
 
-Source: [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4)
+	Ext4 is the evolution of the most used Linux filesystem, Ext3\. In many ways, Ext4 is a deeper improvement over Ext3 than Ext3 was over Ext2\. Ext3 was mostly about adding journaling to Ext2, but Ext4 modifies important data structures of the filesystem such as the ones destined to store the file data. The result is a filesystem with an improved design, better performance, reliability, and features.
 
 ## Contents
 
@@ -17,9 +17,8 @@ Source: [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4)
 *   [3 Using ext4 per directory encryption](#Using_ext4_per_directory_encryption)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 E4rat](#E4rat)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Barriers and Performance](#Barriers_and_Performance)
-*   [6 See also](#See_also)
+    *   [4.2 Barriers and performance](#Barriers_and_performance)
+*   [5 See also](#See_also)
 
 ## Create a new ext4 filesystem
 
@@ -225,15 +224,13 @@ That is all. If you try accessing the disk without adding a key into keychain, f
 
 [E4rat](/index.php/E4rat "E4rat") is a preload application designed for the ext4 filesystem. It monitors files opened during boot, optimizes their placement on the partition to improve access time, and preloads them at the very beginning of the boot process. [E4rat](/index.php/E4rat "E4rat") does not offer improvements with [SSDs](/index.php/SSD "SSD"), whose access time is negligible compared to hard disks.
 
-## Troubleshooting
+### Barriers and performance
 
-### Barriers and Performance
+Since kernel 2.6.30, ext4 performance has decreased due to changes that serve to improve data integrity.[[5]](http://www.phoronix.com/scan.php?page=article&item=ext4_then_now&num=1)
 
-Since kernel 2.6.30, ext4 performance has decreased due to changes that serve to improve data integrity [[5]](http://www.phoronix.com/scan.php?page=article&item=ext4_then_now&num=1).
+	Most file systems (XFS, ext3, ext4, reiserfs) send write barriers to disk after fsync or during transaction commits. Write barriers enforce proper ordering of writes, making volatile disk write caches safe to use (at some performance penalty). If your disks are battery-backed in one way or another, disabling barriers may safely improve performance.
 
-*Most file systems (XFS, ext3, ext4, reiserfs) send write barriers to disk after fsync or during transaction commits. Write barriers enforce proper ordering of writes, making volatile disk write caches safe to use (at some performance penalty). If your disks are battery-backed in one way or another, disabling barriers may safely improve performance.*
-
-*Sending write barriers can be disabled using the `barrier=0` mount option (for ext3, ext4, and reiserfs), or using the `nobarrier` mount option (for XFS)* [[6]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.io.html).
+	Sending write barriers can be disabled using the `barrier=0` mount option (for ext3, ext4, and reiserfs), or using the `nobarrier` mount option (for XFS).[[6]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.io.html)
 
 **Warning:** Disabling barriers when disks cannot guarantee caches are properly written in case of power failure can lead to severe file system corruption and data loss.
 
@@ -244,6 +241,6 @@ To turn barriers off add the option `barrier=0` to the desired filesystem. For e
 ## See also
 
 *   [Official Ext4 wiki](https://ext4.wiki.kernel.org/)
-*   [Ext4 Disk Layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout)
-*   [Ext4 Encryption](http://lwn.net/Articles/639427/)
-*   Kernel commits of ext4 encryption [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
+*   [Ext4 Disk Layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout) described in its wiki
+*   [Ext4 Encryption](http://lwn.net/Articles/639427/) LWM article
+*   Kernel commits for ext4 encryption [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)

@@ -6,7 +6,7 @@
 
 ## Configuration
 
-Surfraw uses the default browser to open the successful query. If none of the standard browsers are installed, Surfraw will call $BROWSER. If that variable is empty, you will get an error message as Surfraw has no way to open the query. You can configure your browser, and any other options, via `~/.surfraw.conf`:
+Surfraw uses the default browser to open the successful query. If none of the standard browsers are installed, Surfraw will call $BROWSER. If that variable is empty, you will get an error message as Surfraw has no way to open the query. You can configure your browser, and any other options, via `~/.config/surfraw/conf`:
 
 ```
 SURFRAW_graphical_browser=/usr/bin/chromium

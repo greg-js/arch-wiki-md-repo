@@ -1,6 +1,4 @@
-From [Wikipedia](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font"):
-
-	*A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats.*
+From [Wikipedia](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font"): "A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats."
 
 Note that certain font licenses may impose some legal limitations.
 

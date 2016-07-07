@@ -558,7 +558,7 @@ Updated 2015-04-08
 
 ### Backlight keys / Suspend support
 
-[linux-macbook-pro](https://aur.archlinux.org/packages/linux-macbook-pro/) is an AUR package created specifically for MacBook Pro laptops that includes patches for these issues (as well fixing powering off correctly).
+[linux-macbook](https://aur.archlinux.org/packages/linux-macbook/) is an AUR package created specifically for MacBook laptops that includes patches for these issues, as well fixing powering off correctly and CPU frequency scaling with the intel_pstate driver.
 
 ## Discussions
 

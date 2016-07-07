@@ -4,11 +4,10 @@ The [Master Boot Record](https://en.wikipedia.org/wiki/Master_Boot_Record "w:Mas
 
 *   [1 Introduction](#Introduction)
     *   [1.1 Problems with MBR](#Problems_with_MBR)
-*   [2 History](#History)
-*   [3 Backup and restoration](#Backup_and_restoration)
-*   [4 Restoring a Windows boot record](#Restoring_a_Windows_boot_record)
-*   [5 TestDisk MBRCode](#TestDisk_MBRCode)
-*   [6 See also](#See_also)
+*   [2 Backup and restoration](#Backup_and_restoration)
+*   [3 Restoring a Windows boot record](#Restoring_a_Windows_boot_record)
+*   [4 TestDisk MBRCode](#TestDisk_MBRCode)
+*   [5 See also](#See_also)
 
 ## Introduction
 
@@ -30,14 +29,6 @@ The entire information about the primary partitions is limited to the 64 bytes a
 4.  MBR stores partition sector information using 32-bit LBA values. This LBA length along with 512 byte sector size (more commonly used) limits the maximum addressable size of the disk to be 2 [TiB](https://en.wikipedia.org/wiki/TiB "wikipedia:TiB"). Any space beyond 2 TiB cannot be defined as a partition if MBR partitioning is used.
 
 [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") is the next generation partitioning scheme designed to succeed the Master Boot Record partitioning scheme method to fix above problems.
-
-## History
-
-The MBR consists of a short piece of assembly code (the initial bootloader – 446 bytes), a partition table for the 4 primary partitions (16 bytes each) and a *sentinel* (0xAA55).
-
-The "Conventional" Windows/DOS MBR bootloader code will check the partition table for one and only one *active* partition, read X sectors from this partition and then transfer control to the operating system. The Windows/DOS bootloader can *not* boot an Arch Linux partition because it is not designed to load the Linux kernel, and it can only cater for an *active*, *primary* partition (which GRUB safely ignores).
-
-The [GRand Unified Bootloader (GRUB)](/index.php/GRUB "GRUB") is the de facto standard bootloader for GNU/Linux, and users are recommended to install it on the MBR to allow booting from *any* partition, whether it be primary or logical.
 
 ## Backup and restoration
 

@@ -61,11 +61,10 @@
     *   [6.6 Automatically unlock keyring after login](#Automatically_unlock_keyring_after_login)
         *   [6.6.1 GNOME](#GNOME_2)
         *   [6.6.2 SLiM login manager](#SLiM_login_manager)
-    *   [6.7 KDE and OpenConnect VPN with password authentication](#KDE_and_OpenConnect_VPN_with_password_authentication)
-        *   [6.7.1 Troubleshooting](#Troubleshooting_2)
-    *   [6.8 Ignore specific devices](#Ignore_specific_devices)
-    *   [6.9 Enable DNS Caching](#Enable_DNS_Caching)
-    *   [6.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
+        *   [6.6.3 Troubleshooting](#Troubleshooting_2)
+    *   [6.7 Ignore specific devices](#Ignore_specific_devices)
+    *   [6.8 Enable DNS Caching](#Enable_DNS_Caching)
+    *   [6.9 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -413,8 +412,6 @@ For static IP addresses, you will have to configure NetworkManager to understand
 
 ## Troubleshooting
 
-Some fixes to common problems.
-
 ### No prompt for password of secured Wi-Fi networks
 
 When trying to connect to a secured Wi-Fi network, no prompt for a password is shown and no connection is established. This happens when no keyring package is installed. An easy solution is to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). If you want the passwords to be stored in encrypted form, follow [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") to set up the *gnome-keyring-daemon*.
@@ -723,11 +720,7 @@ NetworkManager requires access to the login keyring to connect to networks requi
 
 #### SLiM login manager
 
-See [SLiM#SLiM and Gnome Keyring](/index.php/SLiM#SLiM_and_Gnome_Keyring "SLiM").
-
-### KDE and OpenConnect VPN with password authentication
-
-[kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm) now supports configuring username and password for OpenConnect VPN connections. Open your VPN connection, accept the certificate, and connection fields will appear. If not, see the instructions below. Now enter the correct username and password.
+See [SLiM#Gnome Keyring](/index.php/SLiM#Gnome_Keyring "SLiM").
 
 #### Troubleshooting
 

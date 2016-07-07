@@ -142,7 +142,7 @@ See also [Intel graphics#X freeze/crash with intel driver](/index.php/Intel_grap
 
 ## Touchpad
 
-Only key-presses work out of the box. Installing `xf86-input-synaptics` and restarting X fixes the problem (see [Dell Studio XPS 13](/index.php/Dell_Studio_XPS_13 "Dell Studio XPS 13")). `xf86-input-libinput` may be a good alternative that also handles touchscreen - see [libinput](/index.php/Libinput "Libinput") for configuration.
+Only key-presses work out of the box. Installing `xf86-input-libinput` is sufficient for proper mouse support plus it also handles the touchscreen - see [libinput](/index.php/Libinput "Libinput") for configuration. Features such as tap-to-click are usually adjustable within the desktop environment. Alternatively you may want to install `xf86-input-synaptics` as driver but it may lack the ability to be easily adjustable within your DE (see [Dell Studio XPS 13](/index.php/Dell_Studio_XPS_13 "Dell Studio XPS 13")). Restarting the X server might be required.
 
 If `dmesg | grep -i psmouse` returns an error, but your touchpad still works, then it might be a good idea to disable `psmouse`. First create a config file:
 

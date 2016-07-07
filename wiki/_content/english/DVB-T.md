@@ -53,7 +53,7 @@ After plugging the device in, `dmesg` should show something like this:
 
 **Note:** in this case we see that the dongle has a R820T tuner, but there are several other popular tuners that you might run into. Also note the IR sensor device that was recognized that, properly configured, can be used with the device remote control. See [LIRC](/index.php/LIRC "LIRC") for more information.
 
-Additionally, you should now see the adapter device under `/dev/dvb/adapter0`.
+Additionally, you should now see the adapter device under `/dev/dvb/adapter0`. Some cards need additional firmwares that are not distributed for various reasons. Usually you will find an explicit message about that in dmesg. Look for the name of the file(s) you see with your favorite search engine, and once you have them, put the required firmware(s) in /usr/lib/firmware. Possibly a package might exist in the AUR.
 
 ## Utilities
 

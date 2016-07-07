@@ -55,6 +55,13 @@ You need to enable the `ldap` extension in PHP by editing `/etc/php/php.ini` and
 
 ```
 
+You also need to enable the `gettext` extension so that PHP can use the bindtextdomain() function
+
+```
+;extension=gettext.so
+
+```
+
 You need to make sure that PHP can access `/usr/share/webapps` and `/etc/webapps`. Add them to `open_basedir` in `/etc/php/php.ini` :
 
 ```

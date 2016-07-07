@@ -6,14 +6,13 @@ Improving the boot performance of a system can provide reduced boot wait times a
     *   [1.1 Using systemd-analyze](#Using_systemd-analyze)
     *   [1.2 Using systemd-bootchart](#Using_systemd-bootchart)
     *   [1.3 Using bootchart2](#Using_bootchart2)
-*   [2 Readahead](#Readahead)
-*   [3 Compiling a custom kernel](#Compiling_a_custom_kernel)
-*   [4 Initramfs](#Initramfs)
-*   [5 Early start for services](#Early_start_for_services)
-*   [6 Staggered spin-up](#Staggered_spin-up)
-*   [7 Filesystem mounts](#Filesystem_mounts)
-*   [8 Less output during boot](#Less_output_during_boot)
-*   [9 Suspend to RAM](#Suspend_to_RAM)
+*   [2 Compiling a custom kernel](#Compiling_a_custom_kernel)
+*   [3 Initramfs](#Initramfs)
+*   [4 Early start for services](#Early_start_for_services)
+*   [5 Staggered spin-up](#Staggered_spin-up)
+*   [6 Filesystem mounts](#Filesystem_mounts)
+*   [7 Less output during boot](#Less_output_during_boot)
+*   [8 Suspend to RAM](#Suspend_to_RAM)
 
 ## Analyzing the boot process
 
@@ -85,22 +84,6 @@ $ pybootchartgui -i
 ```
 
 Read the [bootchart2 documentation](https://github.com/mmeeks/bootchart) for further details on using this version of bootchart.
-
-## Readahead
-
-[systemd](/index.php/Systemd "Systemd") came until version 216 with its own readahead implementation that should in principle improve boot time. There are two services: `systemd-readahead-collect`, which collects information on which files are used during boot, and `systemd-readahead-replay`, which pulls these files into cache early in the boot process.
-
-To enable systemd readahead install the [systemd-readahead](https://aur.archlinux.org/packages/systemd-readahead/) package from [AUR](/index.php/AUR "AUR") and type:
-
-```
-# systemctl enable systemd-readahead-collect systemd-readahead-replay
-
-```
-
-**Note:**
-
-*   You need to reboot a few times for systemd-readahead-collect to collect enough information for systemd-readahead-replay to work effectively.
-*   Depending on your kernel version and the type of your hard drive, your mileage may vary (for example, with an SSD you will see little to no benefit or may even see worse performance).
 
 ## Compiling a custom kernel
 

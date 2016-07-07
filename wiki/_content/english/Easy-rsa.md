@@ -202,9 +202,7 @@ This will be used to add an additional HMAC signature to all SSL/TLS handshake p
 *   SSL/TLS handshake initiations from unauthorized machines.
 *   Any eventual buffer overflow vulnerabilities in the SSL/TLS implementation.
 
-All the created keys and certificates have been stored in /root/easy-rsa/keys. If you make a mistake, you can start over by running the clean-all script again.
-
-**Warning:** This will delete any previously generated certificates stored in /root/easy-rsa/keys, including the [Certificate Authority (CA)](https://en.wikipedia.org/wiki/Certificate_Authority "wikipedia:Certificate Authority") certificate.
+**Note:** All the created keys and certificates have been stored in `/root/easy-rsa/keys`. If you make a mistake, you can start over by running the clean-all script again. This will delete any previously generated certificates stored in `/root/easy-rsa/keys`, including the [Certificate Authority (CA)](https://en.wikipedia.org/wiki/Certificate_Authority "wikipedia:Certificate Authority") certificate.
 
 ### Creating certificates on the client
 

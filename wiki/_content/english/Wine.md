@@ -261,7 +261,7 @@ $ rm ~/.local/share/mime/application/x-wine-extension*
 
 ## Using Windows applications
 
-**Warning:** Do not run or install Wine applications as root! See [Running Wine as root](https://wiki.winehq.org/FAQ#run_as_root) for the official statement.
+**Warning:** Do not run or install Wine applications as root! See [Running Wine as root](https://wiki.winehq.org/FAQ#Should_I_run_Wine_as_root.3F) for the official statement.
 
 See [Installing Windows Applications](https://wiki.winehq.org/FAQ#Installing_Windows_Applications) at WineHQ. See [#Desktop launcher menus](#Desktop_launcher_menus) for information on where the shortcuts were created.
 

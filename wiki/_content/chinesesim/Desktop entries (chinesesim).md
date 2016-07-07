@@ -1,6 +1,8 @@
-**翻译状态：** 本文是英文页面 [Desktop_entries](/index.php/Desktop_entries "Desktop entries") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-24，点击[这里](https://wiki.archlinux.org/index.php?title=Desktop_entries&diff=0&oldid=409972)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Desktop_entries](/index.php/Desktop_entries "Desktop entries") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-07，点击[这里](https://wiki.archlinux.org/index.php?title=Desktop_entries&diff=0&oldid=440288)可以查看翻译后英文页面的改动。
 
-桌面配置项（Desktop entries）是 [freedesktop.org（自由桌面社区）](http://www.freedesktop.org/wiki/) 制订的一个用于规范 [Xorg](/index.php/Xorg "Xorg") 环境中程序运行行为的标准。它是一个配置文件，描述了某个应用程序如何被启动以及怎样在菜单中以图标形式出现。大部分桌面配置项是 `.desktop` 和 `.directory` 文件。本文将概述如何创建一个合规可用的桌面配置项，主要面向软件包发布者和维护者，但对软件开发者及其他人也会是有用的。
+自由桌面社区的[桌面配置项规范](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html)为应用程序和[桌面环境](/index.php/Desktop_environment "Desktop environment")的整合提供了一个标准方法。桌面配置项是描述如何启动程序，如何处理数据的配置文件，它们还会和 [菜单规范](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html) 同步作用，定义一个程序在菜单中的显示图标。
+
+大部分桌面配置项是 `.desktop` 和 `.directory` 文件。本文将概述如何创建一个合规可用的桌面配置项，主要面向软件包发布者和维护者，但对软件开发者及其他人也会是有用的。
 
 桌面配置项大致分为三类：
 
@@ -17,6 +19,8 @@
 	某个菜单项元数据的容器
 
 下列章节概述如何创建它们并使其生效。
+
+`.desktop` 文件中还定义了数据文件的 MIME 类型关联。[Default applications](/index.php/Default_applications "Default applications") 介绍了它们的配置方法。
 
 ## Contents
 
@@ -36,33 +40,52 @@
 *   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [4.1 隐藏桌面配置项](#.E9.9A.90.E8.97.8F.E6.A1.8C.E9.9D.A2.E9.85.8D.E7.BD.AE.E9.A1.B9)
     *   [4.2 自动启动](#.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8)
+    *   [4.3 修改环境变量](#.E4.BF.AE.E6.94.B9.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
 *   [5 参阅](#.E5.8F.82.E9.98.85)
 
 ## 应用程序配置项
 
-Desktop entries for applications, or `.desktop` files, are generally a combination of meta information resources and a shortcut of an application. These files usually reside in `/usr/share/applications` or `/usr/local/share/applications` for applications installed system-wide, or `~/.local/share/applications` for user-specific applications. User entries take precedence over system entries.
+应用程序配置项，即 `.desktop` 文件是原信息资源和应用程序快捷图标的集合。系统程序的配置项通常位于 `/usr/share/applications` 或 `/usr/local/share/applications`目录，单用户安装的程序位于 `~/.local/share/applications` 目录，优先使用用户的配置项。
 
 ### 范例文件
 
-Following is an example of its structure with additional comments. The example is only meant to give a quick impression, and does not show how to utilize all possible entry keys. The complete list of keys can be found in the [freedesktop.org specification](http://standards.freedesktop.org/desktop-entry-spec/latest/ar01s05.html).
+下面是一个示例结构和注释，这个示例文件没有使用所有的键值，[freedesktop.org 规范](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys)包含了完整的键值列表.
 
 ```
 [Desktop Entry]
-Type=Application                          # Indicates the type as listed above
-Version=1.0                               # The version of the desktop entry specification to which this file complies
-Name=jMemorize                            # The name of the application
-Comment=Flash card based learning tool    # A comment which can/will be used as a tooltip
-Path=/opt/jmemorise                       # The path to the folder in which the executable is run
-Exec=jmemorize                            # The executable of the application.
-Icon=jmemorize                            # The name of the icon that will be used to display this entry
-Terminal=false                            # Describes whether this application needs to be run in a terminal or not
-Categories=Education;Languages;Java;      # Describes the categories in which this entry should be shown
+
+# The type as listed above
+Type=Application
+
+# The version of the desktop entry specification to which this file complies
+Version=1.0
+
+# The name of the application
+Name=jMemorize
+
+# A comment which can/will be used as a tooltip
+Comment=Flash card based learning tool
+
+# The path to the folder in which the executable is run
+Path=/opt/jmemorise
+
+# The executable of the application.
+Exec=jmemorize
+
+# The name of the icon that will be used to display this entry
+Icon=jmemorize
+
+# Describes whether this application needs to be run in a terminal or not
+Terminal=false
+
+# Describes the categories in which this entry should be shown
+Categories=Education;Languages;Java;
 
 ```
 
 ### 关键字定义
 
-All Desktop recognized desktop entries can be found [on the freedesktop.org site](http://standards.freedesktop.org/desktop-entry-spec/latest/ar01s05.html). For example, the `Type` key defines three types of desktop entries: Application (type 1), Link (type 2) and Directory (type 3).
+All Desktop recognized desktop entries can be found [freedesktop.org](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys). For example, the `Type` key defines three types of desktop entries: Application (type 1), Link (type 2) and Directory (type 3).
 
 *   `Version` key does not stand for the version of the application, but for the version of the desktop entry specification to which this file complies.
 
@@ -100,32 +123,34 @@ This will give you very verbose and useful warnings and error messages.
 
 ## 图标
 
+参考 [图标主题标准](https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html).
+
 ### 通用图像格式
 
 用于图标的图像文件格式简述如下：
 
-<caption>Support for image formats for icons as specified by the [freedesktop.org standard](http://standards.freedesktop.org/icon-theme-spec/latest/ar01s02.html).</caption>
+<caption>Support for image formats for icons as specified by the freedesktop.org standard.</caption>
 | Extension | Full Name and/or Description | Graphics Type | Container Format | Supported |
-| .[png](https://en.wikipedia.org/wiki/Portable_Network_Graphics "wikipedia:Portable Network Graphics") | Portable Network Graphics | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | no | yes |
-| .[svg(z)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics "wikipedia:Scalable Vector Graphics") | Scalable Vector Graphics | [Vector](https://en.wikipedia.org/wiki/Vector_graphics "wikipedia:Vector graphics") | no | yes (optional) |
-| .[xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap") | X PixMap | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | no | yes (deprecated) |
-| .[gif](https://en.wikipedia.org/wiki/Graphics_Interchange_Format "wikipedia:Graphics Interchange Format") | Graphics Interchange Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | no | no |
-| .[ico](https://en.wikipedia.org/wiki/ICO_(icon_image_file_format) | MS Windows Icon Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | yes | no |
-| .[icns](https://en.wikipedia.org/wiki/Apple_Icon_Image "wikipedia:Apple Icon Image") | Apple Icon Image | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | yes | no |
+| .[png](https://en.wikipedia.org/wiki/Portable_Network_Graphics "wikipedia:Portable Network Graphics") | Portable Network Graphics | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | Yes |
+| .[svg(z)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics "wikipedia:Scalable Vector Graphics") | Scalable Vector Graphics | [Vector](https://en.wikipedia.org/wiki/Vector_graphics "wikipedia:Vector graphics") | No | Yes (optional) |
+| .[xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap") | X PixMap | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | Yes (deprecated) |
+| .[gif](https://en.wikipedia.org/wiki/Graphics_Interchange_Format "wikipedia:Graphics Interchange Format") | Graphics Interchange Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | No |
+| .[ico](https://en.wikipedia.org/wiki/ICO_(icon_image_file_format) | MS Windows Icon Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | Yes | No |
+| .[icns](https://en.wikipedia.org/wiki/Apple_Icon_Image "wikipedia:Apple Icon Image") | Apple Icon Image | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | Yes | No |
 
 ### 图标格式转换
 
-If you stumble across an icon which is in a format that is not supported by the freedesktop.org standard (like *gif* or *ico*), you can **convert** (which is part of the **imagemagick** package) it to a supported/recommended format, e.g.:
+If you stumble across an icon which is in a format that is not supported by the freedesktop.org standard (like `gif` or `ico`), you can use the *convert* tool (which is part of the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package) to convert it to a supported/recommended format, e.g.:
 
 ```
 $ convert <icon name>.gif <icon name>.png
 
 ```
 
-If you convert from a container format like *ico*, you will get all images that were encapsulated in the *ico* file in the form *<icon name>-<number>.png*. If you want to know the size of the image, or the number of images in a container file like *ico* you can use **identify** (also part of the **imagemagick** package)
+If you convert from a container format like `ico`, you will get all images that were encapsulated in the `ico` file in the form `<icon name>-<number>.png`. If you want to know the size of the image, or the number of images in a container file like `ico` you can use the *identify* tool (also part of the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package):
 
+ `$ identify /usr/share/vlc/vlc48x48.ico` 
 ```
-$ identify /usr/share/vlc/vlc48x48.ico
 /usr/share/vlc/vlc48x48.ico[0] ICO 32x32 32x32+0+0 8-bit DirectClass 84.3kb
 /usr/share/vlc/vlc48x48.ico[1] ICO 16x16 16x16+0+0 8-bit DirectClass 84.3kb
 /usr/share/vlc/vlc48x48.ico[2] ICO 128x128 128x128+0+0 8-bit DirectClass 84.3kb
@@ -135,7 +160,21 @@ $ identify /usr/share/vlc/vlc48x48.ico
 
 ```
 
-As you can see, the example *ico* file, although its name might suggest a single image of size 48x48, contains no less than 6 different sizes, of which one is even greater than 48x48, namely 128x128\. And to give a bit of motivation on this subject, at the point of writing this section (2008-10-27), the 128x128 size was missing in the *vlc* package (0.9.4-2). So the next step would be to look at the vlc PKGBUILD and check whether this icon format was not in the source package to begin with (in that case we would inform the vlc developers), or whether this icon was somehow omitted from the Arch-specific package (in that case we can file a bug report at [the Arch Linux bug tracker](https://bugs.archlinux.org/)). (*Update:* this bug has now been [fixed](https://bugs.archlinux.org/task/11923), so as you can see, your work will not be in vain.)
+As you can see, the example *ico* file, although its name might suggest a single image of size 48x48, contains no less than 6 different sizes, of which one is even greater than 48x48, namely 128x128.
+
+Alternatively, you can use *icotool* (from [icoutils](https://www.archlinux.org/packages/?name=icoutils)) to extract png images from ico container:
+
+```
+$ icotool -x <icon name>.ico
+
+```
+
+For extracting images from .icns container, you can use *icns2png* (provided by [libicns](https://aur.archlinux.org/packages/libicns/)):
+
+```
+$ icns2png -x <icon name>.icns
+
+```
 
 ### Obtaining icons
 
@@ -190,16 +229,16 @@ Icons can be automatically downloaded from [openiconlibrary](http://openiconlibr
 
 ```
 # lsdesktopf
-# lsdesktopf game
-# lsdesktopf gtk
+# lsdesktopf --less
+# lsdesktopf --less gtk zh_TW,zh_CN,en_GB
 
 ```
 
-完全相同的功能之上，但垂直文本輸出可讀性，包括相關的變量名：
+List MIME-types or parts of MIME-types found in *.desktop*, and which desktop files shares same MIME-type, output is equal as in [mimeapps.list](/index.php/Default_applications#Configuration_of_the_mimeapps.list_file "Default applications") for section `[Added Associations]`.
 
 ```
-# lsdesktopf --more
-# lsdesktopf --more game
+# lsdesktopf --gm
+# lsdesktopf --gm [options]
 
 ```
 
@@ -222,43 +261,36 @@ Examples
 
 ### 隐藏桌面配置项
 
-**Tip:** Desktop entries can be hidden by creating a symbolic link to `/dev/null`. For example:
-```
-$ ln -s /dev/null ~/.local/share/applications/*foo*.desktop
+首先，将桌面配置项复制到 `~/.local/share/applications`，避免修改被后续升级覆盖。
 
-```
+要在所有环境隐藏，在桌面配置项中加入 `NoDisplay=true`. 要在某个环境中隐藏，在桌面配置项中加入 `NotShowIn=*desktop-name*`
 
-Firstly, copy the desktop entry file in question to `~/.local/share/applications` to avoid your changes being overwritten.
-
-Then, to hide the entry in all environments, open the desktop entry file in a text editor and add the following line: `NoDisplay=true`.
-
-To hide the entry in a specific desktop, add the following line to the desktop entry file: `NotShowIn=*desktop-name*`
-
-where *desktop-name* can be option such as *GNOME*, *Xfce*, *KDE* etc. A desktop entry can be hidden in more than desktop at once - simply separate the desktop names with a semi-colon.
+*desktop-name* 可以是 *GNOME*, *Xfce*, *KDE* 等，指定多个桌面时用分号隔开。
 
 ### 自动启动
 
-If you use an XDG-compliant desktop environment, such as GNOME or KDE, the desktop environment will automatically start [*.desktop](/index.php/Desktop_entries "Desktop entries") files found in the following directories:
+兼容 XDG 的桌面环境例如s GNOME 或 KDE 会自动, 启动如下位置的 [*.desktop](/index.php/Desktop_entries "Desktop entries") 文件:
 
-*   System-wide: `$XDG_CONFIG_DIRS/autostart/` (`/etc/xdg/autostart/` by default)
+*   系统目录: `$XDG_CONFIG_DIRS/autostart/` (默认是`/etc/xdg/autostart/`)
 
-*   GNOME also starts files found in `/usr/share/gnome/autostart/`
+*   GNOME 会启动 `/usr/share/gnome/autostart/` 中的程序
 
-*   User-specific: `$XDG_CONFIG_HOME/autostart/` (`~/.config/autostart/` by default)
+*   用户目录 `$XDG_CONFIG_HOME/autostart/` (默认是`~/.config/autostart/`)
 
-Users can override system-wide `*.desktop` files by copying them into the user-specific `~/.config/autostart/` folder.
+将 `*.desktop` 文件复制到用户的 `~/.config/autostart/` 目录可以覆盖系统设置。
 
-For an explanation of the desktop file standard refer to [Desktop Entry Specification](http://standards.freedesktop.org/desktop-entry-spec/latest/). For a more specific description of directories used, [Desktop Application Autostart Specification](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
+参考[桌面程序自启动规范](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
 
-**Note:** This method is supported only by XDG-compliant desktop environments. Tools like [dapper](https://aur.archlinux.org/packages/dapper/), [dex](https://www.archlinux.org/packages/?name=dex), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) can be used to offer XDG autostart in unsupported desktop environments as long as some other autostart mechanism exists. Use the existing mechanism to start the xdg compliant autostart tool.
+**Note:** 此方法仅适用于兼容 XDG 标准的桌面，如果桌面环境不支持此标准，可以使用 [dapper](https://aur.archlinux.org/packages/dapper/), [dex](https://www.archlinux.org/packages/?name=dex) 或 [fbautostart](https://aur.archlinux.org/packages/fbautostart/) 实现 XDG 自启动。先用桌面已有的方式自启动它们，这些工具启动后会安装 xdg 方式启动其它程序。
+
+### 修改环境变量
+
+在 `Exec` 命令中可以使用 `env` 修改环境变量:
+
+ `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
 
 ## 参阅
 
 *   [DeveloperWiki:Removal of desktop files](/index.php/DeveloperWiki:Removal_of_desktop_files "DeveloperWiki:Removal of desktop files")
 *   [desktop wikipedia article](https://en.wikipedia.org/wiki/.desktop "wikipedia:.desktop")
-*   [recognized desktop entry keys](http://standards.freedesktop.org/desktop-entry-spec/latest/ar01s05.html)
-*   [freedesktop.org desktop entry specification](http://freedesktop.org/wiki/Specifications/desktop-entry-spec)
-*   [freedesktop.org icon theme specification](http://freedesktop.org/wiki/Specifications/icon-theme-spec)
-*   [freedesktop.org menu specification](http://freedesktop.org/wiki/Specifications/menu-spec)
-*   [freedesktop.org basedir specification](http://freedesktop.org/wiki/Specifications/basedir-spec)
 *   [information for developers](http://freedesktop.org/wiki/Howto_desktop_files)

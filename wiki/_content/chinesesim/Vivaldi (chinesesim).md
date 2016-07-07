@@ -12,7 +12,7 @@
 
 ## 安装
 
-Vivaldi 可以从 AUR 安装 [vivaldi 正式版](https://aur.archlinux.org/packages/vivaldi+%E6%AD%A3%E5%BC%8F%E7%89%88/) 或 [vivaldi-beta 版](https://aur.archlinux.org/packages/vivaldi-beta+%E7%89%88/) 或 [vivaldi-snapshot 快照版](https://aur.archlinux.org/packages/vivaldi-snapshot+%E5%BF%AB%E7%85%A7%E7%89%88/) 等版本。 或者也可以添加 [herecura的仓库](http://repo.herecura.eu)得到已构建好的包。
+Vivaldi 可以从 AUR 安装 [vivaldi](https://aur.archlinux.org/packages/vivaldi/)（正式版）或 [vivaldi-beta](https://aur.archlinux.org/packages/vivaldi-beta/)（beta版）或 [vivaldi-snapshot](https://aur.archlinux.org/packages/vivaldi-snapshot/)（快照版）等版本。 或者也可以添加 [herecura的仓库](http://repo.herecura.eu)得到已构建好的包。
 
 ## 媒体播放
 

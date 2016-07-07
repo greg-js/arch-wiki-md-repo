@@ -21,7 +21,7 @@ To use it, a functional *mpd* must be present on the system since *ncmpcpp*/*mpd
 
 ## Basic configuration
 
-The shell "GUI" for *ncmpcpp* is highly customizable. Edit `~/.ncmpcpp/config` to your liking. If, after installation, `~/.ncmpcpp/config` has not been created, simply copy the sample config, [change owner](/index.php/Chmod#chown "Chmod") and edit at the very least the following three configuration options:
+The shell "GUI" for *ncmpcpp* is highly customizable. Edit `~/.ncmpcpp/config` to your liking. If, after installation, `~/.ncmpcpp/config` has not been created, simply copy the sample config, [change owner](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes") and edit at the very least the following three configuration options:
 
 *   **mpd_host** - Should point to the host on which *mpd* resides, can be "localhost" or "127.0.0.1" if on the same machine
 *   **mpd_port** - The default of *mpd* should be "6600"

@@ -45,7 +45,7 @@
 *   bugs
 *   archweb
 *   patchwork
-*   projects
+*   projects [turned off]
 
 ## gerolde.archlinux.org
 

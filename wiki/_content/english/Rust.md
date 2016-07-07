@@ -1,49 +1,32 @@
-[Rust](http://rust-lang.org/) is a general-purpose, multi-paradigm, compiled systems programming language that runs blazingly fast, prevents nearly all segfaults, and guarantees thread safety.
+From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wikipedia:Rust (programming language)"):
+
+	*[Rust](http://rust-lang.org/) is a general-purpose, multi-paradigm, compiled programming language sponsored by Mozilla Research. It is designed to be a "safe, concurrent, practical language", supporting pure-functional, imperative-procedural, and object-oriented styles.*
+
+	*The goal of Rust is to be a good language for creating highly concurrent and highly safe systems, and programming in the large. This has led to a feature set with an emphasis on safety, control of memory layout, and concurrency. Performance of idiomatic Rust is comparable to the performance of idiomatic C++.*
 
 ## Contents
 
-*   [1 Background](#Background)
-    *   [1.1 Design](#Design)
-    *   [1.2 Rust Core Library](#Rust_Core_Library)
-    *   [1.3 Rust Standard Library](#Rust_Standard_Library)
-    *   [1.4 Release Cycle](#Release_Cycle)
-*   [2 Features](#Features)
-    *   [2.1 Immutable By Default](#Immutable_By_Default)
-    *   [2.2 Borrowing and Ownership](#Borrowing_and_Ownership)
-    *   [2.3 Trait-based Polymorphism](#Trait-based_Polymorphism)
-        *   [2.3.1 Implementing Traits](#Implementing_Traits)
-        *   [2.3.2 Trait-based Generics](#Trait-based_Generics)
-    *   [2.4 Sum Types & Pattern Matching](#Sum_Types_.26_Pattern_Matching)
-    *   [2.5 Concurrency](#Concurrency)
-        *   [2.5.1 Channel Selection (Requires Nightly)](#Channel_Selection_.28Requires_Nightly.29)
-        *   [2.5.2 Channel Selection (Stable)](#Channel_Selection_.28Stable.29)
-        *   [2.5.3 Chan Crate Periodic Timer](#Chan_Crate_Periodic_Timer)
-*   [3 Installation](#Installation)
-    *   [3.1 Native Installation](#Native_Installation)
-    *   [3.2 Official Rustup Installation](#Official_Rustup_Installation)
-    *   [3.3 Test your installation](#Test_your_installation)
-*   [4 Cross Compiling](#Cross_Compiling)
-    *   [4.1 Using rustup](#Using_rustup)
-    *   [4.2 Windows](#Windows)
-    *   [4.3 unofficial packages](#unofficial_packages)
-*   [5 Cargo](#Cargo)
-    *   [5.1 Usage](#Usage)
-*   [6 IDE Support](#IDE_Support)
-    *   [6.1 Tools](#Tools)
-        *   [6.1.1 Racer](#Racer)
-        *   [6.1.2 Clippy](#Clippy)
-    *   [6.2 Editors](#Editors)
-        *   [6.2.1 Atom](#Atom)
-        *   [6.2.2 Visual Studio Code](#Visual_Studio_Code)
-*   [7 See also](#See_also)
-
-## Background
-
-Rust originally started as a personal project by Graydon Hoare, a Mozilla employee. Shortly thereafter, Mozilla began sponsoring the project in 2009 before announcing the project publicly in 2010\. However, although sponsored by Mozilla, it is largely an open community project. A significant portion of the commits are from community members. The initial rustc compiler was written in OCaml until it achieved self-compiling status with the port to Rust in 2011\. Over the next several years, the design of the language was refined as Rust was developed alongside the Servo web browser layout engine. Finally, on May 15th, 2015, the first stable release of Rust (1.0) was released.
-
-### Design
-
-The design and tooling of the language is heavily inspired by the myriad of programming languages that have come before. On the language aspect, Rust lifts a plethora of concepts from both functional programming languages such as Haskell and ML, as well as imperative programming languages such as C and C++. On the tooling side, Rust provides the Cargo package manager as the standard build tool which takes a page directly from Node's NPM and improves upon that concept.
+*   [1 Rust Core Library](#Rust_Core_Library)
+*   [2 Rust Standard Library](#Rust_Standard_Library)
+*   [3 Release Cycle](#Release_Cycle)
+*   [4 Installation](#Installation)
+    *   [4.1 Native Installation](#Native_Installation)
+    *   [4.2 Official Rustup Installation](#Official_Rustup_Installation)
+    *   [4.3 Test your installation](#Test_your_installation)
+*   [5 Cross Compiling](#Cross_Compiling)
+    *   [5.1 Using rustup](#Using_rustup)
+    *   [5.2 Windows](#Windows)
+    *   [5.3 unofficial packages](#unofficial_packages)
+*   [6 Cargo](#Cargo)
+    *   [6.1 Usage](#Usage)
+*   [7 IDE Support](#IDE_Support)
+    *   [7.1 Tools](#Tools)
+        *   [7.1.1 Racer](#Racer)
+        *   [7.1.2 Clippy](#Clippy)
+    *   [7.2 Editors](#Editors)
+        *   [7.2.1 Atom](#Atom)
+        *   [7.2.2 Visual Studio Code](#Visual_Studio_Code)
+*   [8 See also](#See_also)
 
 ### Rust Core Library
 
@@ -55,218 +38,7 @@ The [Rust Standard Library](http://doc.rust-lang.org/std/index.html) provides th
 
 ### Release Cycle
 
-Rust follows a regular six week release cycle, similar to the release cycle of Firefox, to enable Rust to become an agile language that can react quickly to advances in technology. With each new release, the core and standard libraries are improved to support more platforms, improve performance, and to stabilize new features for use with stable Rust. Some consider Rust to be an eternally unstable language due to the plan to continue perpetual development of Rust, but Rust's commitment to stability has proven otherwise.
-
-## Features
-
-### Immutable By Default
-
-All variables are initialized using the `let` binding, but unlike other languages, variables are immutable by default. It is only when variables have been initialized with `let mut` that they can be later modified. An immutable `let` binding should not be confused with the `const` keyword, however, as `const` defines immutability at compile-time, versus immutability at run-time with `let`.
-
-### Borrowing and Ownership
-
-Another key feature of Rust is the borrowing and ownership model which is used by the compiler to detect and prevent a large number of errors at compile-time. Many newcomers to Rust from other programming languages often fight with the compiler because of the borrowing and ownership rules, as they do not necessarily understand how it works. When a variable is passed into a function by value (`String`), the ownership of the variable is given to that function, and the variable will be destroyed upon the return of the function. Typically, functions are written to take values by reference instead of by value so that they may live beyond the function call, but in cases where you cannot pass a value by reference, you must use the `clone` method on that variable to create a copy of itself to pass to the function.
-
-```
-let value = String::from("This is some text");
-do_something_with(value); // <- `value` will be destroyed by the function after use
-println!("{}", value);    // <- Causes an error because `value` was moved
-
-```
-
-```
-let value = String::from("This is some text");
-do_something_with(&value); // <- `value` will not be destroyed
-println!("{}", value);     // <- Will print the value of `value`
-
-```
-
-```
-let value = String::from("This is some text");
-do_something_with(value.clone()); // <- Creates a copy of `value`
-println!("{}", value);            // <- Will print the value of `value`
-
-```
-
-### Trait-based Polymorphism
-
-Inspired by Haskell's type classes, the type system features traits which allow Rust to obtain ad-hoc polymorphism. Traits provide the ability to extend the feature set of types with additional methods beyond their initial implementations. They are not bound to any specific type, and thus they may be re-used. In addition, they are used in generics to define what types are supported as function inputs, and soon, what types are supported as function outputs. What makes them particularly potent is that trait implementations do not have to happen in the same crate that a type is defined, so they can be used to extend both Rust's primitive types as well as imported types from other crates.
-
-#### Implementing Traits
-
-```
-trait Number {
-    fn is_even(&self) -> bool;
-}
-
-impl Number for u64 {
-    fn is_even(&self) -> bool {
-        *self % 2 == 0
-    }
-}
-
-impl Number for u32 {
-    fn is_even(&self) -> bool {
-        *self % 2 == 0
-    }
-}
-
-fn main() {
-    println!("{}", 6u64.is_even());
-    println!("{}", 6u32.is_even());
-}
-
-```
-
-#### Trait-based Generics
-
-```
-trait Number {
-    fn is_even(&self) -> bool;
-}
-
-impl Number for u64 {
-    fn is_even(&self) -> bool {
-        *self % 2 == 0
-    }
-}
-
-impl Number for u32 {
-    fn is_even(&self) -> bool {
-        *self % 2 == 0
-    }
-}
-
-fn is_even<N: Number>(input: N) -> bool {
-    input.is_even()
-}
-
-fn main() {
-    println!("{}", is_even(6u64));
-    println!("{}", is_even(6u32));
-}
-
-```
-
-### Sum Types & Pattern Matching
-
-Used throughout the language are sum types such as `Option` and `Result`. The purpose of these types are to denote that the value may or may not exist (`Option`), or that a value may or may not have encountered an error `Result`. By combining them with enums, it is possible to perform advanced pattern matching to cover a large number of possible scenarios, especially given that enums may also contain unique values
-
-```
-enum Attempt { Int(i64), String(String) }
-
-enum AttemptError { NoResponse, InvalidResponse(String), Fatal(String) }
-
-match attempt() {
-    Ok(Attempt::Int(value)) if value > 5           => println!("returned integer, {}, is greater than five"),
-    Ok(Attempt::Int(value))                        => println!("returned integer: {}", value),
-    Ok(Attempt::String(value)) if value.is_empty() => println!("returned string is empty"),
-    Ok(Attempt::String(value))                     => println!("returned string: {}", value),
-    Err(AttemptError::NoResponse)                  => println!("no response given"),
-    Err(AttemptError::InvalidResponse(cause))      => println!("invalid response received: {}", cause),
-    Err(AttemptError::Fatal(cause))                => panic!("fatal error: {}", cause),
-}
-
-```
-
-### Concurrency
-
-Rust provides strong support for concurrency out of the box, which is made even better with additional crates such as [bus](https://jon.tsp.io/crates/bus/) and [chan](http://burntsushi.net/rustdoc/chan/). Rust supports the concept of channels that have been pioneered by previous languages, namely Newsqueak and Go, and combines them with the ownership and borrowing model to provide strong thread-safety guarantees.
-
-#### Channel Selection (Requires Nightly)
-
-```
-#![feature(mpsc_select)]
-use std::sync::mpsc::channel;
-use std::thread;
-use std::time::Duration;
-
-fn main() {
-    // Create channels for sending and receieving
-    let (one_tx, one_rx) = channel();
-    let (three_tx, three_rx) = channel();
-
-    // Spawn one second timer
-    thread::spawn(move || {
-        loop {
-            thread::sleep(Duration::from_secs(1));
-            one_tx.send("tick").unwrap();
-        }
-    });
-
-    // Spawn three second timer
-    thread::spawn(move || {
-        loop {
-            thread::sleep(Duration::from_secs(3));
-            three_tx.send("tock").unwrap();
-        }
-    });
-
-    loop {
-        select! {
-            reply = one_rx.recv()   => println!("{}", reply.unwrap()),
-            reply = three_rx.recv() => println!("{}", reply.unwrap())
-        }
-    }
-}
-
-```
-
-#### Channel Selection (Stable)
-
-```
-use std::sync::mpsc::channel;
-use std::thread;
-use std::time::Duration;
-
-fn main() {
-    // Create channels for sending and receieving
-    let (one_tx, one_rx) = channel();
-    let (three_tx, three_rx) = channel();
-
-    // Spawn one second timer
-    thread::spawn(move || {
-        loop {
-            thread::sleep(Duration::from_secs(1));
-            one_tx.send("tick").unwrap();
-        }
-    });
-
-    // Spawn three second timer
-    thread::spawn(move || {
-        loop {
-            thread::sleep(Duration::from_secs(3));
-            three_tx.send("tock").unwrap();
-        }
-    });
-
-    loop {
-        thread::sleep(Duration::from_millis(50));
-        let _ = one_rx.try_recv().map(|reply| println!("{}", reply));
-        let _ = three_rx.try_recv().map(|reply| println!("{}", reply));
-    }
-}
-
-```
-
-#### Chan Crate Periodic Timer
-
-```
-#[macro_use]
-extern crate chan;
-
-fn main() {
-    let tick = chan::tick_ms(1000);
-    let tock = chan::tick_ms(3000);
-    loop {
-        chan_select! {
-            tick.recv() => println!("tick"),
-            tock.recv() => println!("tock"),
-        }
-    }
-}
-
-```
+Rust follows a regular six week release cycle, similar to the release cycle of Firefox. With each new release, the core and standard libraries are improved to support more platforms, improve performance, and to stabilize new features for use with stable Rust.
 
 ## Installation
 
@@ -276,9 +48,14 @@ To [install](/index.php/Install "Install") the latest stable version of Rust fro
 
 ### Official Rustup Installation
 
-The official and recommended method of installing Rust for the purpose of developing software is to use the [Rustup toolchain manager](https://www.rustup.rs/), written in Rust. After installing rustup, one only needs to run `rustup self update` to upgrade rustup in the future. `curl -sSf [https://static.rust-lang.org/rustup.sh](https://static.rust-lang.org/rustup.sh) ` 
+The official and recommended method of installing Rust for the purpose of developing software is to use the [Rustup toolchain manager](https://www.rustup.rs/), written in Rust.
 
 The benefits to using the Rustup toolchain manager instead of the standalone prepackaged Rust in the software repository is the ability to install multiple toolchains (stable, beta, nightly) for multiple targets (windows, mac, android) and architectures (x86, x86_64, arm). It is also important to note that tools such as [Clippy](https://github.com/Manishearth/rust-clippy) require compiler plugin support, which is only supported in nightly builds of Rust.
+
+One has 2 choices for a rustup installation, one is officially supported by Rust, while the other is supported by archlinux wiki
+
+1.  `curl -sSf [https://static.rust-lang.org/rustup.sh](https://static.rust-lang.org/rustup.sh) && sh rustup.sh` This will start rustup installation. To update rustup afterwards, one only needs to do `rustup self update`.
+2.  [rustup](https://aur.archlinux.org/packages/rustup/) is also available on the AUR. Note that `rustup self update` will **not** work when installed from the AUR, the package needs to be updated from the AUR directly.
 
 By default, only the stable channel from your architecture will be installed. It will however not be usable right away, you need to specify the installed stable channel as default for it to work.
 
@@ -404,7 +181,7 @@ authors = ["Your Name <you@example.com>"]
 
 #### Racer
 
-The [Racer](https://github.com/phildawes/racer) autocomplete engine is the current best method of gaining autocomplete support. However, it requires that you also install a copy of the Rust source code, which you can obtain either directly or from the AUR ([rust-src](https://aur.archlinux.org/packages/rust-src/) or [rust-nightly-src](https://aur.archlinux.org/packages/rust-nightly-src/)). After installing the source code, you can either use `Cargo` to install racer or obtain it from the AUR ([racer](https://aur.archlinux.org/packages/racer/)).
+The [Racer](https://github.com/phildawes/racer) autocomplete engine is the current best method of gaining autocomplete support. However, it requires that you also install a copy of the Rust source code, which you can obtain either directly or from the AUR ([rust-src](https://aur.archlinux.org/packages/rust-src/) or [rust-nightly-src](https://aur.archlinux.org/packages/rust-nightly-src/)). After installing the source code, you can either use `Cargo` to install racer or obtain it from the AUR ([rust-racer](https://aur.archlinux.org/packages/rust-racer/)).
 
  `cargo install racer` 
 

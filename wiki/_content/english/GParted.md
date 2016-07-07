@@ -17,7 +17,7 @@
 
 ## Installation on Arch
 
-[Install](/index.php/Install "Install") [gparted](https://www.archlinux.org/packages/?name=gparted) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [gparted](https://www.archlinux.org/packages/?name=gparted) package.
 
 ### Optional dependencies
 
