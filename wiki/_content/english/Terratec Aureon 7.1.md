@@ -85,7 +85,7 @@ fi
 
 #### Configure mplayer for surround sound (optional)
 
-Add the following codec settings for mplayer
+Add the following codec settings for *mplayer*:
 
  `.mplayer/config` 
 ```
@@ -93,7 +93,7 @@ ac=hwac3,hwdts,a52,dts,
 ao=alsa
 ```
 
-I recommend using XBMC for media playback, as most receivers do no support the AAC codec. XBMC will re-encode AAC to a common codec (AC3 probably) in realtime, so you can watch most surround sound media files. XBMC has a self-explanatory configuration system using a GUI.
+[Kodi](/index.php/Kodi "Kodi") can be used for media playback too, as most receivers do no support the AAC codec. [Kodi](/index.php/Kodi "Kodi") will re-encode AAC to a common codec (AC3 probably) in realtime, so you can watch most surround sound media files. It also has a self-explanatory configuration system using a GUI.
 
 #### Tips
 

@@ -76,7 +76,9 @@ Untested.
 
 ### Remote
 
-Special thanks to [pj7](http://ubuntuforums.org/member.php?u=109915) of the Ubuntu forums for putting together a working driver for the receiver.
+The Asus remote has limited functionality out of the box. Everything except the eight 'special' media buttons at the bottom. Also, you may have to blacklist the kernals `mceusb` module since is fails out. [Lirc](/index.php/Lirc "Lirc")'s `mceusb` module handles the remote better, but still does not support all the buttons on the Asus remote.
+
+Source of the following approach and module developer: [user pj7 on a Ubuntu forum thread](http://ubuntuforums.org/member.php?u=109915).
 
 The included IR receiver requires a kernel module to be built to accommodate it. Apparently, it is a rather tricky little device. It seems to work best with the included remote -- it coverts the included remotes' button presses directly to keyboard keystrokes, but when using another **MCE** remote it reports to the system the raw code. It seems to understand other signals, but you will need a remote that sends the right signal. This results in limited functionality of the device where it can only use the included ASUS remote, a JP1 Programmable remote (to program the known signals), or a universal remote that has the ability to learn the IR signals of the ASUS remote.
 
@@ -88,7 +90,7 @@ As a result, this section will focus on getting the included remote working with
 
 	If you know more about the nitty gritty aspects of kernel driver development and IR remotes, please take a look at [this thread](http://ubuntuforums.org/showthread.php?t=1458300&page=4) to see if functionality can be added to this driver, especially for basic MCE remotes.
 
-Download the source and then extract with `tar -xvf hid-philips-asus.tar`. The resulting directory will include the source files, along with a Linux-to-X11 input key map. Before you build the source, you must edit `mappings.h`. This file maps the button presses to Linux input keys. Be aware that Linux input ***does not equal*** X11 input. Graphical programs, such as media players, XBMC, and the like, are only aware of X11 inputs, and so you must match a X11 input with a Linux input to. That's what the `map_linux_to_x11.txt` file is for.
+Download the source and then extract with `tar -xvf hid-philips-asus.tar`. The resulting directory will include the source files, along with a Linux-to-X11 input key map. Before you build the source, you must edit `mappings.h`. This file maps the button presses to Linux input keys. Be aware that Linux input ***does not equal*** X11 input. Graphical programs, such as media players, Kodi, and the like, are only aware of X11 inputs, and so you must match a X11 input with a Linux input to. That's what the `map_linux_to_x11.txt` file is for.
 
 For example, if you wish to define the "Next Track" button as "XF86AudioNext" (which most programs will look for to play the next item in the playlist), you will need to define `BUTTON_NEXT` in `mappings.h` as `KEY_NEXTSONG` rather than `KEY_NEXT`. This is because `KEY_NEXTSONG` maps to "XF86AudioNext" (KEY_NEXT doesn't register as anything).
 

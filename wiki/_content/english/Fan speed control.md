@@ -1,5 +1,7 @@
 Fancontrol, part of [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors), can be used to control the speed and sound of CPU/case fans. This article covers configuration/setup of the utility.
 
+For some Dell laptops, an alternative is [i8kutils](#i8kutils).
+
 ## Contents
 
 *   [1 Sensor driver](#Sensor_driver)
@@ -8,6 +10,11 @@ Fancontrol, part of [lm_sensors](https://www.archlinux.org/packages/?name=lm_sen
 *   [2 Configuration](#Configuration)
     *   [2.1 Tweaking](#Tweaking)
 *   [3 fancontrol](#fancontrol)
+*   [4 i8kutils](#i8kutils)
+    *   [4.1 Dependencies](#Dependencies)
+    *   [4.2 Configuration](#Configuration_2)
+    *   [4.3 Disable BIOS fan speed control](#Disable_BIOS_fan_speed_control)
+    *   [4.4 Installation as a service](#Installation_as_a_service)
 
 ## Sensor driver
 
@@ -142,10 +149,80 @@ Try to run *fancontrol*:
 
 A properly configured setup will not error out and will take control of system fans. Users should hear system fans slowing shortly after executing this command.
 
-**Note:** For Dell Latitude/Inspiron laptops, [i8kutils](https://aur.archlinux.org/packages/i8kutils/) is available. The `i8k` kernel module is known to have issues on several models.
-
 To make *fancontrol* start automatically on every boot, [enable](/index.php/Enable "Enable") `fancontrol.service`.
 
-For the `i8kmon` service to be capable of controlling the fan, the `auto` config option needs to be set to `1` in `/etc/i8kutils/i8kmon.conf`.
-
 **Note:** Upon upgrading/changing the kernel, running fancontrol may result in an error regarding changed device paths. This issue may be fixed by running `sensors-detect` and restarting the system.
+
+## i8kutils
+
+[i8kutils](https://aur.archlinux.org/packages/i8kutils/) provides an alternative method of controlling the fan speed on some Dell Inspiron and Latitude laptops. It makes use of the `/proc/i8k` interface provided by the `dell_smm_hwmon` driver (formerly `i8k`). Results will vary depending on the exact model of laptop.
+
+### Dependencies
+
+[tcl](https://www.archlinux.org/packages/?name=tcl) must be installed in order to run `i8kmon` as a background service (using the `--daemon` option). To run the X11 desktop applet, [tk](https://www.archlinux.org/packages/?name=tk) is required as well.
+
+### Configuration
+
+By default, `i8kmon` only monitors the CPU temperature and fan speed passively. To enable its fan speed control, either run it with the `--auto` option or enable the option permanently in `/etc/i8kutils/i8kmon.conf`:
+
+```
+set config(auto)       1
+
+```
+
+The temperature points at which the fan changes speed can be adjusted in the same configuration file. Only three fans speeds are supported (high, low, and off). Look for a section similar to the following:
+
+```
+set config(0)  {{0 0}  -1  55  -1  55}
+set config(1)  {{1 1}  45  75  45  75}
+set config(2)  {{2 2}  65 128  65 128}
+
+```
+
+This example starts the fan at low speed when the CPU temperature reaches 55 °C, switching to high speed at 75 °C. The fan will switch back to low speed once the temperature drops to 65 °C, and turns off completely at 45 °C.
+
+### Disable BIOS fan speed control
+
+It may be necessary to turn off control of the fan speed by the BIOS to prevent it from "fighting" with `i8kmon`. On some laptops, this can be done using the `smm` utility. **This utility is extremely dangerous as it writes directly to an I/O port to invoke the processor's [System Management Mode](https://en.wikipedia.org/wiki/System_Management_Mode "wikipedia:System Management Mode"). Use it at your own risk.**
+
+`smm` must be compiled and installed manually. On a 64-bit system, [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) is required. Locate the file `smm.c` in the `i8kutils` source and compile it:
+
+```
+$ gcc -m32 -o smm smm.c
+
+```
+
+To disable BIOS fan speed control, run (as root):
+
+```
+# ./smm 30a3
+
+```
+
+To enable it again:
+
+```
+# ./smm 31a3
+
+```
+
+**Note:** This method may disable other power management features of the BIOS as well, such as notifying Linux when the power button is pressed.
+
+### Installation as a service
+
+`i8kmon` can be started automatically as a [systemd](/index.php/Systemd "Systemd") service using a unit file similar to the following:
+
+ `/etc/systemd/system/i8kmon.service` 
+```
+[Unit]
+Description=i8kmon
+
+[Service]
+#ExecStartPre=/usr/bin/smm 30a3  # uncomment to disable BIOS fan control
+ExecStart=/usr/bin/i8kmon -d
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+```

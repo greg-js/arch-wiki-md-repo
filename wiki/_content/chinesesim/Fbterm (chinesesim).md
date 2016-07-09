@@ -49,7 +49,7 @@ sudo chmod u+s /usr/bin/fbterm
 
 ### 配置文件
 
-Fbterm 使用 ~/.fbermrc 来进行配置。该文件将在第一次运行 Fbterm 之后自动生成。文件内有详细的注释，可以帮助您了解如何配置 Fbterm。
+Fbterm 使用 ~/.fbtermrc 来进行配置。该文件将在第一次运行 Fbterm 之后自动生成。文件内有详细的注释，可以帮助您了解如何配置 Fbterm。
 
 ### 字体
 

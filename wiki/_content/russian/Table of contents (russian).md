@@ -72,7 +72,7 @@
  <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(71)</small> |
  <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(3)</small> |
  <small>4.9.14.</small> [Nokia](/index.php/Category:Nokia "Category:Nokia") <small>(1)</small> |
-| <small>4.8.4.</small> [Samsung](/index.php/Category:Samsung_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Samsung (Русский)") <small>(1)</small> | <small>4.9.15.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(11)</small> |
+| <small>4.8.4.</small> [Samsung](/index.php/Category:Samsung_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Samsung (Русский)") <small>(1)</small> | <small>4.9.15.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(12)</small> |
  <small>4.9.16.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(12)</small> |
  <small>4.9.17.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(17)</small> |
  <small>4.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(5)</small> |
@@ -81,7 +81,7 @@
  <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(22)</small> |
 | <small>4.11.</small> [Принтеры](/index.php/Category:Printers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Printers (Русский)") <small>(2)</small> | <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(9)</small> |
 | <small>4.12.</small> [Звук](/index.php/Category:Sound_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Sound (Русский)") <small>(6)</small> | <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(20)</small> |
-| <small>4.13.</small> [Накопители информации](/index.php/Category:Storage_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Storage (Русский)") <small>(4)</small> | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(20)</small> |
+| <small>4.13.</small> [Накопители информации](/index.php/Category:Storage_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Storage (Русский)") <small>(4)</small> | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(21)</small> |
 | <small>4.13.1.</small> [Оптические](/index.php/Category:Optical_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Optical (Русский)") <small>(1)</small> | <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
  <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
 | <small>5.</small> [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)") <small>(33)</small> | <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(70)</small> |

@@ -94,6 +94,8 @@ editor   0
 
 **Note:** The first 2 options can be changed in the boot menu itself, which will store them as EFI variables.
 
+**Tip:** A basic configuration file example is located at `/usr/share/systemd/bootctl`.
+
 ### Adding boot entries
 
 **Note:** *bootctl* will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`). Where detected, entries will also automatically be generated for them as well. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the kernel, manual configuration entries must be created. If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
@@ -127,6 +129,8 @@ options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw
 ```
 
 Please note in the example above that `PARTUUID`/`PARTLABEL` identifies a GPT partition, and differs from `UUID`/`LABEL`, which identifies a filesystem. Using the `PARTUUID`/`PARTLABEL` is advantageous because it is invariant (i.e. unchanging) if you reformat the partition with another filesystem, or if the `/dev/sd*` mapping changed for some reason. It is also useful if you do not have a filesystem on the partition (or use LUKS, which does not support `LABEL`s).
+
+**Tip:** An example entry file is located at `/usr/share/systemd/bootctl`.
 
 #### LVM root installations
 

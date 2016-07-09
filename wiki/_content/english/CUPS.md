@@ -180,7 +180,7 @@ The remote system's default printer setting will be used by default.
 
 ## Configuration
 
-The CUPS server configuration located in `/etc/cups/cupsd.conf`. After editing, [restart](/index.php/Restart "Restart") `org.cups.cupsd.service` to apply any changes. The default configuration is sufficient for most users.
+The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cups/cups-files.conf`. After editing either file, [restart](/index.php/Restart "Restart") `org.cups.cupsd.service` to apply any changes. The default configuration is sufficient for most users.
 
 [Groups](/index.php/Groups "Groups") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` group is used by default.
 

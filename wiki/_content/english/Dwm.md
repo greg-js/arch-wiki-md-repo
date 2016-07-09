@@ -11,8 +11,7 @@
         *   [3.2.1 Adding custom keybinds/shortcuts](#Adding_custom_keybinds.2Fshortcuts)
     *   [3.3 Customizing config.mk](#Customizing_config.mk)
     *   [3.4 Statusbar configuration](#Statusbar_configuration)
-        *   [3.4.1 Examples of statusbar configuration](#Examples_of_statusbar_configuration)
-        *   [3.4.2 Conky statusbar](#Conky_statusbar)
+        *   [3.4.1 Conky statusbar](#Conky_statusbar)
 *   [4 Basic usage](#Basic_usage)
     *   [4.1 Using dmenu](#Using_dmenu)
     *   [4.2 Controlling windows](#Controlling_windows)
@@ -166,89 +165,7 @@ In this case the date is shown in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8
 
 **Note:** It is not recommended to set the update interval equal to zero or remove the "sleep" line entirely since this will cause CPU usage to rise substantially (you can assess the effect with *top* and [powertop](/index.php/Powertop "Powertop")).
 
-#### Examples of statusbar configuration
-
-This example shows battery state (note that it depends on the [acpi](https://www.archlinux.org/packages/?name=acpi) package):
-
-```
-while true ; do
-    xsetroot -name "$(acpi -b | awk 'sub(/,/,"") {print $3, $4}')"
-    sleep 1m
-done &
-exec dwm
-
-```
-
-Below is another example that displays also the [ALSA](/index.php/ALSA "ALSA") volume and the battery state. The latter is displayed only when the system is off-line.
-
-```
-#set statusbar
- while true
- do
-    if acpi -a | grep off-line > /dev/null; then
-        xsetroot -name "Bat. $(awk 'sub(/,/,"") {print $3, $4}' <(acpi -b)) \
-        | Vol. $(awk '/dB/ { gsub(/[\[\]]/,""); print $5}' <(amixer get Master)) \
-        | $(date +"%a, %b %d %R")"
-    else
-        xsetroot -name "Vol. $(awk '/dB/ { gsub(/[\[\]]/,""); print $5}' <(amixer get Master)) \
-        | $(date +"%a, %b %d %R")"
-    fi
-    sleep 1s   
- done &
-
-```
-
-Alternatively, you could create a script with variables for each type of data to be displayed - this should improve readability and maintainability. See the example below:
-
-```
-while true; do
-
-# Power/Battery Status
-if [ "$( cat /sys/class/power_supply/AC0/online )" -eq "1" ]; then
-        DWM_BATTERY="AC";
-        DWM_RENEW_INT=3;
-else
-        DWM_BATTERY=$(( `cat /sys/class/power_supply/BAT0/energy_now` * 100 / `cat /sys/class/power_supply/BAT0/energy_full` ));
-        DWM_RENEW_INT=30;
-fi;
-
-# Wi-Fi eSSID
-if [ "$( cat /sys/class/net/eth1/rfkill1/state )" -eq "1" ]; then
-		  DWM_ESSID=$( /sbin/iwgetid -r ); 
-else
-		  DWM_ESSID="OFF";
-fi;
-
-# Keyboard layout
-if [ "`xset -q | awk -F \" \" '/Group 2/ {print($4)}'`" = "on" ]; then 
-		  DWM_LAYOUT="ru"; 
-else 
-		  DWM_LAYOUT="en"; 
-fi; 
-
-# Volume Level
-DWM_VOL=$( amixer -c1 sget Master | awk -vORS=' ' '/Mono:/ {print($6$4)}' );
-
-# Date and Time
-DWM_CLOCK=$( date '+%e %b %Y %a | %k:%M' );
-
-# Overall output command
-DWM_STATUS="WiFi: [$DWM_ESSID] | Lang: [$DWM_LAYOUT] | Power: [$DWM_BATTERY] | Vol: $DWM_VOL | $DWM_CLOCK";
-xsetroot -name "$DWM_STATUS";
-sleep $DWM_RENEW_INT;
-
-done &
-
-```
-
-Example output from the script above:
-
-```
-WiFi: [OFF] | Lang: [en] | Power: [96] | Vol: [on][31%]  | 10 Jan 2014 Fri | 23:01
-
-```
-
-**Note:** In the script above the "sleep" interval is adjusted automatically depending on whether your laptop is running on battery or not. For desktop computers without a battery, this section is not necessary.
+More examples of statusbars are included [on the suckless wiki](http://dwm.suckless.org/dwmstatus/).
 
 #### Conky statusbar
 

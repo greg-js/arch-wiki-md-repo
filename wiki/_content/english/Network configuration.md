@@ -99,6 +99,8 @@ A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a u
 
 This will put `*myhostname*` into `/etc/hostname`. See `man 5 hostname` and `man 1 hostnamectl` for details.
 
+**Note:** *hostnamectl* does not work in the Arch Linux installation chroot environment. To set the hostname in the installation chroot environment, manually [edit](/index.php/Edit "Edit") `/etc/hostname` to contain a single line containing `*myhostname*`.
+
 It is recommended to also set the hostname in `/etc/hosts`:
 
  `/etc/hosts` 

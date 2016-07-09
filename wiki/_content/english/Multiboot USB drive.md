@@ -428,10 +428,10 @@ menuentry '[loopback]elementaryos-freya-amd64.20150411' {
 *   Init system: [systemd](/index.php/Systemd "Systemd") (cmdline: [[16]](http://www.freedesktop.org/software/systemd/man/kernel-command-line.html))
 
 ```
-menuentry '[loopback]Fedora-20-x86_64-DVD' {
-	set isofile='/boot/iso/Fedora-20-x86_64-DVD.iso'
+menuentry '[loopback]Fedora-Workstation-netinst-x86_64-24-1.2' {
+	set isofile='/boot/iso/Fedora-Workstation-netinst-x86_64-24-1.2.iso'
 	loopback loop $isofile
-	linux (loop)/isolinux/vmlinuz noeject inst.stage2=hd:**/dev/sdb2**:/$isofile
+	linux (loop)/isolinux/vmlinuz inst.stage2=hd:LABEL=Fedora-WS-dvd-x86_64-24 iso-scan/filename=$isofile quiet
 	initrd (loop)/isolinux/initrd.img
 }
 ```

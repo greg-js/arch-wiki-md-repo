@@ -102,14 +102,16 @@ password = *your libre.fm password*
 journal = /home/*YOUR_USERNAME*/.mpdscribble/librefm.journal
 ```
 
-Your password can also be in the form of an md5hash, but this is [deprecated](http://bugs.musicpd.org/view.php?id=3836):
+Your password can also be in the form of an md5hash.
 
 ```
 echo -n "*password*" | md5sum | cut -f 1 -d " "
 
 ```
 
-To autostart *mpdscribble* along with *mpd*, add an entry for it into the file in which you start *mpd* (e.g. `~/.xinitrc`):
+To autostart *mpdscribble* you can use the `mpdscribble.service` under systemd user instance. See [systemd/User](/index.php/Systemd/User "Systemd/User") for details.
+
+Alternatively you can autostart *mpdscribble* along with *mpd*, add an entry for it into the file in which you start *mpd* (e.g. `~/.xinitrc`):
 
 ```
 [[ -z $(pgrep -xU $UID mpdscribble) ]] && mpdscribble &
@@ -117,8 +119,6 @@ To autostart *mpdscribble* along with *mpd*, add an entry for it into the file i
 ```
 
 **Note:** If you get a `[last.fm] handshake failed, username or password incorrect (BADAUTH)` error, make sure your username and password are correct, and that your password is not [32 characters long](http://bugs.musicpd.org/view.php?id=3836).
-
-Alternatively you can use the `mpdscribble.service` to start *mpdscribble* under systemd user instance. See [systemd/User](/index.php/Systemd/User "Systemd/User") for details.
 
 ### Sonata
 

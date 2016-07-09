@@ -44,9 +44,9 @@ $ free -h
 
 ## Swap partition
 
-A swap partition can be created with most GNU/Linux partitioning tools (e.g. `fdisk`, `cfdisk`). Swap partitions are typically designated as type **82**, however it is possible to use any partition type as swap.
+A swap partition can be created with most GNU/Linux [partitioning tools](/index.php/Partitioning_tools "Partitioning tools"). Swap partitions are typically designated as type `82`. Even though it is possible to use any partition type as swap, it is recommended to use type `82` in most cases since systemd will automatically detect it and mount it (see below).
 
-To set up a Linux swap area, the `mkswap` command is used. For example:
+To set up a partition as Linux swap area, the `mkswap` command is used. For example:
 
 ```
 # mkswap /dev/sda2
@@ -54,13 +54,6 @@ To set up a Linux swap area, the `mkswap` command is used. For example:
 ```
 
 **Warning:** All data on the specified partition will be lost.
-
-The *mkswap* utility generates a UUID for the partition by default, use the `-U` flag in case you want to specify custom UUID:
-
-```
-# mkswap -U *custom_UUID* /dev/sda2
-
-```
 
 To enable the device for paging:
 
@@ -81,13 +74,13 @@ To enable this swap partition on boot, add an entry to [fstab](/index.php/Fstab 
 
 ### Activation by systemd
 
-systemd activates swap partitions based on two different mechanisms, both are executables in `/usr/lib/systemd/system-generators`. The generators are run on start-up and create native systemd units for mounts. The first, `systemd-fstab-generator`, reads the fstab to generate units, including a unit for swap. The second, `systemd-gpt-auto-generator` inspects the root disk to generate units. It operates on GPT disks only, and can identify swap partitions by their type code **82**.
+systemd activates swap partitions based on two different mechanisms. Both are executables in `/usr/lib/systemd/system-generators`. The generators are run on start-up and create native systemd units for mounts. The first, `systemd-fstab-generator`, reads the fstab to generate units, including a unit for swap. The second, `systemd-gpt-auto-generator` inspects the root disk to generate units. It operates on GPT disks only, and can identify swap partitions by their type code `82`.
 
 This can be solved by one of the following options:
 
-*   removing the swap entry from `/etc/fstab`
-*   changing the swap partition's type code from **82** to an arbitrary type code
-*   setting the attribute of the swap partition to "**63**: do not automount"
+*   Removing the swap entry from `/etc/fstab`
+*   Changing the swap partition's type code from `82` to an arbitrary type code
+*   Setting the attribute of the swap partition to "**63**: do not automount"
 
 ### Disabling swap
 

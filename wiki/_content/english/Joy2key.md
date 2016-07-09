@@ -1,7 +1,5 @@
 ### Use a joystick/gamepad to control applications which accept keyboard commands
 
-**Note:** This solution may not work with XBMC 11.0 and joy2key 1.6.3-1\. An alternative and more direct approach is described in the [Joystick wiki page](/index.php/Joystick#Using_Joystick_to_send_keystrokes "Joystick").
-
 I use [joy2key](http://interreality.org/~tetron/technology/joy2key/) to work around issues with the Logitech Cordless RumblePad 2 "hat" (a.k.a. d-pad) in [XBMC](http://xbmc.org/).
 
 XBMC 10.0 or probably a recent Arch update (SDL?) broke the joystick hat functionality for me. On XBMC startup, `xbmc.log` shows 0 hats and 6 - instead of 4 - axes:

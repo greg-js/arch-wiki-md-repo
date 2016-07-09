@@ -231,7 +231,7 @@ WantedBy=sleep.target
 
 *   `RemainAfterExit=yes`: After started, the service is considered active until it is explicitly stopped.
 *   `StopWhenUnneeded=yes`: When active, the service will be stopped if no other active service requires it. In this specific example, it will be stopped after *sleep.target* is stopped.
-*   Because *sleep.target* is pulled in by *suspend.target*, *hibernate.target* and *hybrid-sleep.target* and *sleep.target* itself is a *StopWhenUnneeded* service, the hook is guaranteed to start/stop properly for different tasks.
+*   Because *sleep.target* is pulled in by *suspend.target*, *hibernate.target* and *hybrid-sleep.target* and because *sleep.target* itself is a *StopWhenUnneeded* service, the hook is guaranteed to start/stop properly for different tasks.
 
 #### Delayed hibernation service file
 

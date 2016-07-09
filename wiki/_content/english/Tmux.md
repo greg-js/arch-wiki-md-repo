@@ -20,8 +20,7 @@ Tmux is a BSD-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Sc
     *   [4.1 Scrolling issues](#Scrolling_issues)
     *   [4.2 Mouse scrolling](#Mouse_scrolling)
     *   [4.3 Terminal emulator does not support UTF-8 mouse events](#Terminal_emulator_does_not_support_UTF-8_mouse_events)
-    *   [4.4 Fix reverse-video/italic mode in urxvt](#Fix_reverse-video.2Fitalic_mode_in_urxvt)
-    *   [4.5 Shift+F6 not working in Midnight Commander](#Shift.2BF6_not_working_in_Midnight_Commander)
+    *   [4.4 Shift+F6 not working in Midnight Commander](#Shift.2BF6_not_working_in_Midnight_Commander)
 *   [5 X clipboard integration](#X_clipboard_integration)
     *   [5.1 Urxvt middle click](#Urxvt_middle_click)
 *   [6 Tips and tricks](#Tips_and_tricks)
@@ -141,17 +140,17 @@ bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; new-window -n "urlvie
 
 #### 256 colors
 
-If you are using a 256 colour terminal, you will need to set the correct term in tmux. You can do this in `tmux.conf`:
+If you are using a 256 colour terminal, you will need to set the correct term in tmux. As of [tmux 2.1](https://raw.githubusercontent.com/tmux/tmux/master/CHANGES), this is now *tmux*. You can do this in `tmux.conf`:
 
 ```
-set -g default-terminal "screen-256color" 
+set -g default-terminal "tmux" 
 
 ```
 
-or:
+Other, older alternatives, include *screen*, or *screen-256color*:
 
 ```
-set -g default-terminal "xterm-256color"
+set -g default-terminal "screen-256color"
 
 ```
 
@@ -349,17 +348,6 @@ To solve this issue set:
 
 ```
 set -g mouse-utf8 off
-
-```
-
-### Fix reverse-video/italic mode in urxvt
-
-If your reverse-video and italic modes are reversed, for example in vim when italics are replaced by highlighting, or in less when the search highlighting is replaced by italics. This is because the screen terminfo doesn't define italics, and the italics escape of urxvt happens to be the standout escape defined in the terminfo.
-
-This could be fixed by use the tmux or tmux-256color terminfo by putting the following line in your tmux.conf:
-
-```
-set -g default-terminal "tmux-256color"
 
 ```
 

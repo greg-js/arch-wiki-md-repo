@@ -1,4 +1,4 @@
-This article is an introduction to building custom kernels from **kernel.org sources**. This method of compiling kernels is the traditional method common to all distributions. It is, of course, more complicated than compiling according to [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). Consider the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") tools are developed and maintained to make repeatable compilation tasks efficient and safe.
+This article is an introduction to building custom kernels from **kernel.org sources**. This method of compiling kernels is the traditional method common to all distributions. It can be, depending on your background, more complicated than using the [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). Consider the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") tools are developed and maintained to make repeatable compilation tasks efficient and safe.
 
 ## Contents
 

@@ -4,13 +4,15 @@ Locales are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and 
 
 *   [1 Generating locales](#Generating_locales)
 *   [2 Setting the locale](#Setting_the_locale)
-    *   [2.1 Other uses](#Other_uses)
-*   [3 Supported variables](#Supported_variables)
+    *   [2.1 Setting the system locale](#Setting_the_system_locale)
+    *   [2.2 Overriding system locale per user session](#Overriding_system_locale_per_user_session)
+    *   [2.3 Other uses](#Other_uses)
+*   [3 Variables](#Variables)
     *   [3.1 LANG: default locale](#LANG:_default_locale)
     *   [3.2 LANGUAGE: fallback locales](#LANGUAGE:_fallback_locales)
     *   [3.3 LC_TIME: date and time format](#LC_TIME:_date_and_time_format)
     *   [3.4 LC_COLLATE: collation](#LC_COLLATE:_collation)
-    *   [3.5 LC_ALL](#LC_ALL)
+    *   [3.5 LC_ALL: troubleshooting](#LC_ALL:_troubleshooting)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 My terminal does not support UTF-8](#My_terminal_does_not_support_UTF-8)
         *   [4.1.1 Gnome-terminal or rxvt-unicode does not support UTF-8](#Gnome-terminal_or_rxvt-unicode_does_not_support_UTF-8)
@@ -26,7 +28,7 @@ $ locale -a
 
 ```
 
-The locales that can be generated are listed in the `/etc/locale.gen` file: their names are defined using the format `[language][_TERRITORY][.CODESET][@modifier]`. To generate a locale, first uncomment the corresponding line in the file (or comment to remove); when doing this, also consider localizations needed by other users on the system and specific [variables](#Supported_variables). For example, for American-English uncomment `en_US.UTF-8 UTF-8`.
+The locales that can be generated are listed in the `/etc/locale.gen` file: their names are defined using the format `[language][_TERRITORY][.CODESET][@modifier]`. To generate a locale, first uncomment the corresponding line in the file (or comment to remove); when doing this, also consider localizations needed by other users on the system and specific [#Variables](#Variables). For example, for American-English uncomment `en_US.UTF-8 UTF-8`.
 
  `/etc/locale.gen` 
 ```
@@ -59,42 +61,51 @@ $ locale
 
 ```
 
-The locale to be used, chosen among the previously generated ones, is set in `locale.conf` files, each of which must contain a new-line separated list of environment variable assignments, for example:
+The locale to be used, chosen among the previously generated ones, is set in `locale.conf` files, each of which must contain a new-line separated list of environment variable assignments having the same format as output by *locale*.
 
- `locale.conf` 
+To list available locales that can be used which have been previously generated do:
+
 ```
-LANG=en_AU.UTF-8
-LC_COLLATE=C
-LC_TIME=en_DK.UTF-8
+$ localectl list-locales
+
 ```
 
-*   A **system-wide** locale can be set by creating or editing `/etc/locale.conf`. The same result can be obtained with the *localectl* command:
+### Setting the system locale
 
-	 `# localectl set-locale LANG=en_US.UTF-8` 
+To set the system locale use the *localectl* command, where *en_US.UTF-8* is from the **first column** of an uncommented entry in `/etc/locale.gen`.
 
-	See `man 1 localectl` for details.
+```
+# localectl set-locale LANG=*en_US.UTF-8*
 
-**Tip:** During system installation, if the output of *locale* is to your liking, you can save a little time by doing: `locale > /etc/locale.conf` while chrooted.
+```
 
-*   The system-wide locale can be overridden in each **user session** by creating or editing `~/.config/locale.conf` (or, in general, `$XDG_CONFIG_HOME/locale.conf` or `$HOME/.config/locale.conf`).
+**Note:** *localectl* cannot be used to set the system locale in the installation chroot environment. `/etc/locale.conf` must be edited manually as follows.
+
+Alternatively, manually [edit](/index.php/Edit "Edit") or [create](/index.php/Create "Create") `/etc/locale.conf`:
+
+ `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
+
+To make the above change immediate do:
+
+```
+$ export LANG=*en_US.UTF-8*
+
+```
+
+Otherwise, the change will not take affect until the system is rebooted.
+
+See [#Variables](#Variables), `man 5 locale.conf` and related for details.
+
+### Overriding system locale per user session
+
+The system-wide locale can be overridden in each user session by creating or editing `~/.config/locale.conf` (or, in general, `$XDG_CONFIG_HOME/locale.conf` or `$HOME/.config/locale.conf`).
+
+The precedence of these `locale.conf` files is defined in `/etc/profile.d/locale.sh`.
 
 **Tip:**
 
 *   This can also allow keeping the logs in `/var/log` in English while using the local language in the user environment.
 *   You can create a `/etc/skel/.config/locale.conf` file so that any new users added using *useradd* and the `-m` option will have `~/.config/locale.conf` automatically generated.
-
-The precedence of these `locale.conf` files is defined in `/etc/profile.d/locale.sh`.
-
-See [#Supported variables](#Supported_variables), `man 5 locale.conf` and related for details.
-
-Once `locale.conf` files have been created or edited, their new values will take effect for new sessions at login. To have the current environment use the new settings, do:
-
-```
-$ LANG= source /etc/profile.d/locale.sh
-
-```
-
-**Note:** The `LANG` variable has to be unset first, otherwise `locale.sh` will not update the values from `locale.conf`. Only new and changed variables will be updated, variables removed from `locale.conf` will still be set in the session.
 
 ### Other uses
 
@@ -114,7 +125,7 @@ $ export LANG=C
 
 ```
 
-## Supported variables
+## Variables
 
 `locale.conf` files support the following environment variables:
 
@@ -167,7 +178,7 @@ See also [[3]](http://superuser.com/a/448294/175967).
 
 To get around potential issues, Arch used to set `LC_COLLATE=C` in `/etc/profile`, but this method is now deprecated.
 
-### LC_ALL
+### LC_ALL: troubleshooting
 
 The locale set for this variable will always override `LANG` and all the other `LC_*` variables, whether they are set or not.
 

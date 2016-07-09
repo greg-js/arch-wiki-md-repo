@@ -105,17 +105,15 @@ If both drives will be in the same computer, you need to randomize the GUID's:
 
 ## Create a partition table and partitions
 
-The first step to [partitioning](/index.php/Partitioning "Partitioning") a disk is making a partition table. There are two different partition table types that Arch Linux can use, [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) and [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR). GPT is the more modern partition table type that supports larger disks and on disk partition table backups among others. MBR may be required if you [dual boot](/index.php/Dual_boot "Dual boot") with Microsoft Windows.
-
-After that, the actual partitions are created according to the desired [partition scheme](/index.php/Partition_scheme "Partition scheme").
+The first step to [partitioning](/index.php/Partitioning "Partitioning") a disk is making a partition table After that, the actual partitions are created according to the desired [partition scheme](/index.php/Partition_scheme "Partition scheme"). See the [partition table](/index.php/Partition_table "Partition table") article to help decide whether to use [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT").
 
 Before beginning, you may wish to [backup](#Backup_and_restore) your current partition table and scheme.
 
-The following shows how to use both *gdisk* and *fdisk* to perform both steps. Differences are noted when necessary.
+The following shows how to use both *gdisk* and *fdisk* to perform both the creation of a partition table and the creation of the actual partitions. Differences are noted when necessary.
 
 ### Start the partition manipulator
 
-Start either *fdisk* or *gdisk* as instructed in the following sections. Then continue with [#Create a new table](#Create_a_new_table).
+Start either *fdisk* or *gdisk* as instructed in the following sections. Then continue with [#Create new table](#Create_new_table).
 
 #### fdisk
 
@@ -160,6 +158,14 @@ For *fdisk*, when prompted, specify the partition type, type `p` to create a pri
 Both start and end sectors can be specified in absolute terms as sector numbers or as positions measured in kibibytes (`K`), mebibytes (`M`), gibibytes (`G`), tebibytes (`T`), or pebibytes (`P`); for instance, `40M` specifies a position 40MiB from the start of the disk. You can specify locations relative to the start or end of the specified default range by preceding the number by a `+` or `-` symbol, as in `+2G` to specify a point 2GiB after the default start sector, or `-200M` to specify a point 200MiB before the last available sector. Pressing the `Enter` key with no input specifies the default value, which is the start of the largest available block for the start sector and the end of the same block for the end sector.
 
 Select the partition's type id. The default, `Linux filesystem`, should be fine for most use. Press `l` (*fdisk*) or `L` (*gdisk*) to show the codes list.
+
+**Tip:**
+
+*   [EFI system partitions](/index.php/EFI_system_partition "EFI system partition") require code `EF00` with *gdisk* and `EFI System` with *fdisk*.
+*   [GRUB](/index.php/GRUB "GRUB") requires a BIOS boot partition with code `EF02` with *gdisk* and `BIOS boot` with *fdisk* when installing GRUB to a disk.
+*   It is recommended to use `8200` with *gdisk* and `Linux swap` with *fdisk* for any [swap](/index.php/Swap "Swap") partitions, since systemd will automount it.
+
+See the above articles for considerations concerning the size and location of these partitions.
 
 Repeat this procedure until you have the partitions you desire.
 

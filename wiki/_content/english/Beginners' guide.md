@@ -25,8 +25,8 @@ The community-maintained [ArchWiki](/index.php/Main_page "Main page") is the pri
     *   [4.3 Locale](#Locale)
     *   [4.4 Time](#Time)
     *   [4.5 Initramfs](#Initramfs)
-    *   [4.6 Install a boot loader](#Install_a_boot_loader)
-    *   [4.7 Configure the network](#Configure_the_network)
+    *   [4.6 Boot loader](#Boot_loader)
+    *   [4.7 Network configuration](#Network_configuration)
         *   [4.7.1 Hostname](#Hostname)
         *   [4.7.2 Wired](#Wired)
         *   [4.7.3 Wireless](#Wireless)
@@ -40,7 +40,7 @@ Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchi
 
 See [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") for instructions on downloading the installation medium, and methods for booting it to the target machine(s). This guide assumes you use the latest available version.
 
-After booting into the installation media, you will be automatically logged in as the root user and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt. *Zsh* provides advanced [tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html) and other features as part of the [grml config](http://grml.org/zsh/). For [modifying or creating](/index.php/Create "Create") configuration files, typically in `/etc`, [nano](/index.php/Nano#Usage "Nano") or [vim](/index.php/Vim#Usage "Vim") are suggested.
+After booting into the installation media, you will be automatically logged in as the root user and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt. For [modifying or creating](/index.php/Create "Create") configuration files, typically in `/etc`, [nano](/index.php/Nano#Usage "Nano") or [vim](/index.php/Vim#Usage "Vim") are suggested.
 
 ### UEFI mode
 
@@ -168,12 +168,12 @@ The examples below demonstrate a basic [partition scheme](/index.php/Partition_s
 
 | UEFI/GPT example layout |
 | Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
-| /boot | /dev/sd**x**1 | EFI System partition | Yes | 260–512 MiB |
-| [SWAP] | /dev/sd**x**2 | Linux swap | No | More than 512 MiB |
+| /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | 260–512 MiB |
+| [SWAP] | /dev/sd**x**2 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
 | / | /dev/sd**x**3 | Linux | No | Remainder of the device |
 | MBR/BIOS example layout |
 | Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Bootable flag | Suggested size |
-| [SWAP] | /dev/sd**x**1 | Linux swap | No | More than 512 MiB |
+| [SWAP] | /dev/sd**x**1 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
 | / | /dev/sd**x**2 | Linux | Yes | Remainder of the device |
 
 ### Format the partitions
@@ -323,7 +323,7 @@ If other operating systems are installed on the machine, they must be configured
 
 ### Initramfs
 
-Because [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") was run on installation of [linux](https://www.archlinux.org/packages/?name=linux) with *pacstrap*, most users can use the defaults provided in `mkinitcpio.conf`.
+Because [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") was run on installation of [linux](https://www.archlinux.org/packages/?name=linux) with *pacstrap*, most users do not need to regenerate the intramfs image so this step can be skipped.
 
 For special configurations, set the correct [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") in `/etc/mkinitcpio.conf` and [re-generate](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") the initramfs image:
 
@@ -332,11 +332,13 @@ For special configurations, set the correct [hooks](/index.php/Mkinitcpio#HOOKS 
 
 ```
 
-### Install a boot loader
+### Boot loader
 
-See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for available choices and configurations. Choices include [grub](/index.php/Grub "Grub") (BIOS/UEFI), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (UEFI) and [syslinux](/index.php/Syslinux "Syslinux") (BIOS). If you have an Intel CPU, in addition to installing a boot loader, install the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package and [enable microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
+See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for available choices and configurations. Choices include [grub](/index.php/Grub "Grub") (BIOS/UEFI), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (UEFI) and [syslinux](/index.php/Syslinux "Syslinux") (BIOS).
 
-### Configure the network
+If you have an Intel CPU, in addition to installing a boot loader, install the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package and [enable microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
+
+### Network configuration
 
 The procedure is similar to [#Connect to the Internet](#Connect_to_the_Internet) for the live installation environment, except made persistent for subsequent boots.
 

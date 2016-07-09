@@ -357,6 +357,13 @@ cryptdevice=/dev/sdaX:root:allow-discards
 
 For the main `cryptdevice` configuration options before the `:allow-discards` see [Dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration").
 
+If you are using a systemd based initrd, you must pass:
+
+```
+rd.luks.options=discard
+
+```
+
 Besides the kernel option, it is also required to periodically run `fstrim` or mount the filesystem (e.g. `/dev/mapper/root` in this example) with the `discard` option in `/etc/fstab`. For details, please refer to the [SSD](/index.php/SSD#TRIM "SSD") page.
 
 For LUKS devices unlocked manually on the console or via `/etc/crypttab` either `discard` or `allow-discards` may be used.

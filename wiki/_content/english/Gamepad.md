@@ -17,7 +17,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [4.5 Configuring curves and responsivness](#Configuring_curves_and_responsivness)
 *   [5 Disable Joystick From Controlling Mouse](#Disable_Joystick_From_Controlling_Mouse)
 *   [6 Using Joystick to send keystrokes](#Using_Joystick_to_send_keystrokes)
-    *   [6.1 via X.org](#via_X.org)
+    *   [6.1 Xorg configuration example](#Xorg_configuration_example)
 *   [7 Specific devices](#Specific_devices)
     *   [7.1 Dance pads](#Dance_pads)
     *   [7.2 Logitech Thunderpad Digital](#Logitech_Thunderpad_Digital)
@@ -247,9 +247,9 @@ EndSection
 
 A couple joystick to keystroke programs exist like [rejoystick](https://aur.archlinux.org/packages/rejoystick/), [qjoypad](https://aur.archlinux.org/packages/qjoypad/) or [antimicro-qt4](https://aur.archlinux.org/packages/antimicro-qt4/), all work well without the need for X.org configuration.
 
-### via X.org
+### Xorg configuration example
 
-This is a good solution for systems where restarting Xorg is a rare event because it's a static configuration loaded only on X startup. I use it on my media PC running XBMC controlled with Logitech Cordless RumblePad 2\. Due to a problem with the d-pad (a.k.a. "hat") being recognized as another axis, I used to run [Joy2key](/index.php/Joy2key "Joy2key") as a workaround. Since I upgraded to XBMC 11.0 and joy2key 1.6.3-1, this setup no longer worked for me. I ended up taking a more direct approach and let Xorg handle joystick events.
+This is a good solution for systems where restarting Xorg is a rare event because it is a static configuration loaded only on X startup. The example runs on a [Kodi](/index.php/Kodi "Kodi") media PC, controlled with a Logitech Cordless RumblePad 2\. Due to a problem with the d-pad (a.k.a. "hat") being recognized as another axis, [Joy2key](/index.php/Joy2key "Joy2key") was used as a workaround. Since upgrade to Kodi version 11.0 and joy2key 1.6.3-1, this setup no longer worked and the following was created for letting Xorg handle joystick events.
 
 First, make sure you have [xf86-input-joystick](https://www.archlinux.org/packages/?name=xf86-input-joystick) installed. Then, create `/etc/X11/xorg.conf.d/51-joystick.conf` like so:
 
@@ -264,7 +264,7 @@ First, make sure you have [xf86-input-joystick](https://www.archlinux.org/packag
 
 ```
 
-**Note:** The *MatchIsJoystick "on"* line doesn't seem to be required for this to work but you may want to uncomment it.
+**Note:** The `MatchIsJoystick "on"` line does not seem to be required for the setup to work, but you may want to uncomment it.
 
 ## Specific devices
 

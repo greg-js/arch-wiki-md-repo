@@ -157,21 +157,7 @@ Now mount the device and see if the options "took"
 
 **Note:** Mounting with `go-mtpfs` might fail if an external SD Card is present. If you try to access your device while having an SD card and go-mtpfs complains, try removing the SD card and mounting again.
 
-Install [android-udev](https://www.archlinux.org/packages/?name=android-udev), which will allow you to edit `/etc/udev/rules.d/51-android.rules` and apply to your `idVendor` and `idProduct`, which you can see after running *mtp-detect*. To the end of the line, add your user `OWNER="<user>"`. First, create the `fuse` group if it does not exist:
-
-```
-# groupadd fuse
-
-```
-
-Add yourself to the `fuse` group:
-
-```
-# gpasswd -a <user> fuse
-
-```
-
-Reboot might be required.
+Install [android-udev](https://www.archlinux.org/packages/?name=android-udev), which will allow you to edit `/etc/udev/rules.d/51-android.rules` and apply to your `idVendor` and `idProduct`, which you can see after running *mtp-detect*. To the end of the line, add your user `OWNER="<user>"`.
 
 Mount device on `~/mnt`:
 

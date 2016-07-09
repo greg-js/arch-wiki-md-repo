@@ -96,7 +96,7 @@ There are many different [levels of RAID](https://en.wikipedia.org/wiki/Standard
 ### RAID level comparison
 
 | RAID level | Data redundancy | Physical drive utilization | Read performance | Write performance | Min drives |
-| **0** | **No** | 100% | nX
+| **0** | No | 100% | nX
 
 **Best**
 

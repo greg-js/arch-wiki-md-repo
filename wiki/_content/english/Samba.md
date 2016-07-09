@@ -429,7 +429,7 @@ auth			"hostname" "username" "password"
 
 It is also possible to add entries for specific hosts to be mounted by smbnetfs, if necessary. More details can be found in `~/.smb/smbnetfs.conf`.
 
-If you are using the Dolphin or Nautilus file managers, you may want to add the following to `~/.smb/smbnetfs.conf` to avoid "Disk full" errors as smbnetfs by default will report 0 bytes of free space:
+If you are using the [Dolphin](/index.php/Dolphin "Dolphin") or [GNOME Files](/index.php/GNOME/Files "GNOME/Files"), you may want to add the following to `~/.smb/smbnetfs.conf` to avoid "Disk full" errors as smbnetfs by default will report 0 bytes of free space:
 
  `~/.smb/smbnetfs.conf` 
 ```

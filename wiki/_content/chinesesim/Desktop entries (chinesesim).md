@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Desktop_entries](/index.php/Desktop_entries "Desktop entries") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-07，点击[这里](https://wiki.archlinux.org/index.php?title=Desktop_entries&diff=0&oldid=440288)可以查看翻译后英文页面的改动。
 
-自由桌面社区的[桌面配置项规范](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html)为应用程序和[桌面环境](/index.php/Desktop_environment "Desktop environment")的整合提供了一个标准方法。桌面配置项是描述如何启动程序，如何处理数据的配置文件，它们还会和 [菜单规范](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html) 同步作用，定义一个程序在菜单中的显示图标。
+自由桌面社区的[桌面配置项规范](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html)为应用程序和[桌面环境](/index.php/Desktop_environment "Desktop environment")的整合提供了一个标准方法。桌面配置项是描述如何启动程序，如何处理数据的配置文件，它们还会和[菜单规范](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html)同步作用，定义一个程序在菜单中的显示图标。
 
 大部分桌面配置项是 `.desktop` 和 `.directory` 文件。本文将概述如何创建一个合规可用的桌面配置项，主要面向软件包发布者和维护者，但对软件开发者及其他人也会是有用的。
 
@@ -20,7 +20,7 @@
 
 下列章节概述如何创建它们并使其生效。
 
-`.desktop` 文件中还定义了数据文件的 MIME 类型关联。[Default applications](/index.php/Default_applications "Default applications") 介绍了它们的配置方法。
+`.desktop` 文件中还定义了数据文件的 MIME 类型关联。[Default applications (简体中文)](/index.php/Default_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Default applications (简体中文)") 介绍了它们的配置方法。
 
 ## Contents
 
@@ -85,11 +85,11 @@ Categories=Education;Languages;Java;
 
 ### 关键字定义
 
-All Desktop recognized desktop entries can be found [freedesktop.org](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys). For example, the `Type` key defines three types of desktop entries: Application (type 1), Link (type 2) and Directory (type 3).
+全部有效的桌面配置项可参阅[freedesktop.org网站](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys)。 举例：`Type`关键字（类型）定义了三类桌面项：应用程序（Application (type 1)），链接（Link (type 2)）和目录（Directory (type 3)）。
 
-*   `Version` key does not stand for the version of the application, but for the version of the desktop entry specification to which this file complies.
+*   `Version` （版本）关键字不是指应用程序的版本，而是本文件所遵循的**桌面配置项规范**的版本。
 
-*   `Name`, `GenericName` and `Comment` often contain redundant values in the form of combinations of them, like:
+*   `Name`（名称）、`GenericName`（通称）和`Comment` 注释often contain redundant values in the form of combinations of them, like:
 
 ```
 Name=Pidgin Internet Messenger
@@ -133,7 +133,7 @@ This will give you very verbose and useful warnings and error messages.
 | Extension | Full Name and/or Description | Graphics Type | Container Format | Supported |
 | .[png](https://en.wikipedia.org/wiki/Portable_Network_Graphics "wikipedia:Portable Network Graphics") | Portable Network Graphics | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | Yes |
 | .[svg(z)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics "wikipedia:Scalable Vector Graphics") | Scalable Vector Graphics | [Vector](https://en.wikipedia.org/wiki/Vector_graphics "wikipedia:Vector graphics") | No | Yes (optional) |
-| .[xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap") | X PixMap | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | Yes (deprecated) |
+| .[xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap") | X PixMap | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | Yes (不推荐) |
 | .[gif](https://en.wikipedia.org/wiki/Graphics_Interchange_Format "wikipedia:Graphics Interchange Format") | Graphics Interchange Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | No |
 | .[ico](https://en.wikipedia.org/wiki/ICO_(icon_image_file_format) | MS Windows Icon Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | Yes | No |
 | .[icns](https://en.wikipedia.org/wiki/Apple_Icon_Image "wikipedia:Apple Icon Image") | Apple Icon Image | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | Yes | No |

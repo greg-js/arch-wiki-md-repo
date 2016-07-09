@@ -71,6 +71,8 @@ The [arm](https://www.archlinux.org/packages/?name=arm) (Anonymizing Relay Monit
 
 For a GUI, you can use [vidalia](https://aur.archlinux.org/packages/vidalia/).
 
+**Warning:** Vidalia is discontinued and no longer supported by the Tor Project. Please see [https://blog.torproject.org/blog/plain-vidalia-bundles-be-discontinued-dont-panic](https://blog.torproject.org/blog/plain-vidalia-bundles-be-discontinued-dont-panic)
+
 ## Configuration
 
 By default Tor reads configurations from the file `/etc/tor/torrc`. The configuration options are explained in `man tor` and the [Tor website](https://torproject.org/docs/tor-manual.html.en). The default configuration should work fine for most Tor users.

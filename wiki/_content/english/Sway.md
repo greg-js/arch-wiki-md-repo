@@ -1,24 +1,37 @@
-*sway* (SirCmpwn's Wayland window manager) is an attempt to create a [Wayland](/index.php/Wayland "Wayland") version of [i3](/index.php/I3 "I3").
+*sway* is a compositor for [Wayland](/index.php/Wayland "Wayland") designed to be fully compatible with [i3](/index.php/I3 "I3").
 
-**Note:** This is still a work in progress so caution is advised. However, it is deemed ready for regular use by the creator.
+> <font color="grey">*Sway is a drop-in replacement for the i3 window manager, but for Wayland instead of X11\. It works with your existing i3 configuration and supports most of i3's features, and a few extras.*</font>
+> — swaywm.org
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Starting sway](#Starting_sway)
-    *   [2.1 From TTY](#From_TTY)
-    *   [2.2 Using a display manager](#Using_a_display_manager)
-    *   [2.3 From X](#From_X)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Keymap](#Keymap)
-    *   [3.2 Statusbar](#Statusbar)
-    *   [3.3 Wallpaper](#Wallpaper)
-    *   [3.4 Input devices](#Input_devices)
-    *   [3.5 Custom keybindings](#Custom_keybindings)
-*   [4 Known issues](#Known_issues)
-    *   [4.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
-    *   [4.2 hidpi](#hidpi)
-*   [5 See also](#See_also)
+*   [1 Status](#Status)
+*   [2 Installation](#Installation)
+*   [3 Starting sway](#Starting_sway)
+    *   [3.1 From a terminal](#From_a_terminal)
+    *   [3.2 Using a display manager](#Using_a_display_manager)
+    *   [3.3 From X](#From_X)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Keymap](#Keymap)
+    *   [4.2 Statusbar](#Statusbar)
+    *   [4.3 Wallpaper](#Wallpaper)
+    *   [4.4 Input devices](#Input_devices)
+    *   [4.5 Custom keybindings](#Custom_keybindings)
+*   [5 Known issues](#Known_issues)
+    *   [5.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
+    *   [5.2 hidpi](#hidpi)
+*   [6 See also](#See_also)
+
+## Status
+
+Sway is a work-in-progress so caution is advised. However, the project's creator, [Drew DeVault](https://drewdevault.com/) (aka SirCmpwn) has deemed ready for regular use.
+
+A detailed accounting of what features have been implemented and what features are still outstanding can be found at the following links:
+
+*   [i3 feature support](https://github.com/SirCmpwn/sway/issues/2#issue-99897933)
+*   [IPC feature support](https://github.com/SirCmpwn/sway/issues/98)
+*   [i3bar compatibility](https://github.com/SirCmpwn/sway/issues/343)
+*   [Airblader fork features](https://github.com/SirCmpwn/sway/issues/307)
 
 ## Installation
 
@@ -26,9 +39,9 @@
 
 ## Starting sway
 
-### From TTY
+### From a terminal
 
-You can start sway by simply typing `sway` in the TTY.
+You can start sway by simply typing `sway` in a terminal.
 
 ### Using a display manager
 

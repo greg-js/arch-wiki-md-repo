@@ -19,7 +19,7 @@
 
 **Warning:**
 
-*   `/etc/pacman.d/mirrorlist` will be overwritten by default. Make a backup before running reflector.
+*   In the following examples, `/etc/pacman.d/mirrorlist` will be overwritten. Make a backup before proceeding.
 *   Make sure the resulting `/etc/pacman.d/mirrorlist` does not contain entries that you consider untrustworthy before syncing or updating with [Pacman](/index.php/Pacman "Pacman").
 
 To see all of the available commands, run the following command:
@@ -30,13 +30,6 @@ To see all of the available commands, run the following command:
 ```
 
 ### Examples
-
-For the below examples, a country-sorted list can be retrieved with *curl*:
-
-```
-# curl -o /etc/pacman.d/mirrorlist [https://www.archlinux.org/mirrorlist/all/](https://www.archlinux.org/mirrorlist/all/)
-
-```
 
 Filter the first five mirrors, sort them by download rate and overwrite the file `/etc/pacman.d/mirrorlist`:
 
@@ -52,10 +45,10 @@ Verbosely rate the 200 most recently synchronized HTTP servers, sort them by dow
 
 ```
 
-Verbosely rate the 200 most recently synchronized HTTP servers located in the US, sort them by download rate, and overwrite the file `/etc/pacman.d/mirrorlist`:
+Verbosely rate the 200 most recently synchronized HTTPS servers located in the US, sort them by download rate, and overwrite the file `/etc/pacman.d/mirrorlist`:
 
 ```
-# reflector --verbose --country 'United States' -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --verbose --country 'United States' -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 
@@ -68,7 +61,7 @@ Description=Pacman mirrorlist update
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/reflector --protocol http --latest 30 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
+ExecStart=/usr/bin/reflector --protocol https --latest 30 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 
@@ -85,7 +78,7 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/reflector --protocol http --latest 30 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
+ExecStart=/usr/bin/reflector --protocol https --latest 30 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
 
 [Install]
 RequiredBy=multi-user.target

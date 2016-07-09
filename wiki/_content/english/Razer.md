@@ -228,12 +228,14 @@ Feature still not working: pinch to zoom, 3rd mouse button
 There are currently two Python scripts available to enable macro keys under Linux:
 
 *   [blackwidowcontrol](https://aur.archlinux.org/packages/blackwidowcontrol/)
-    *   works with regular BlackWidow and BlackWidow 2013\. Might work with BlackWidow Ultimate / 2013
+    *   works with regular BlackWidow and BlackWidow 2013
+    *   might work with BlackWidow Ultimate (2013), too
+    *   does not work with BlackWidow (Ultimate) 2016 yet
     *   uses Python 3
     *   does not bundle any scripts to create macros (use hot key configuration tool from your desktop environment)
     *   allows to control the status of the LED
 *   [razer-blackwidow-macro-scripts](https://aur.archlinux.org/packages/razer-blackwidow-macro-scripts/)
-    *   works with BlackWidow Ultimate 2013
+    *   works with BlackWidow Ultimate 2013 (unknown whether it works with other versions)
     *   uses Python 2
     *   also bundles scripts to create and execute macros
 

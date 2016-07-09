@@ -1,4 +1,4 @@
-This is the sign up page for a GIT class/workshop being held in 2016\. Instructions are below.
+This is the sign up page for a GIT class/workshop being held in 2016\. You only need to sign up if you want access to the git repo hosted by Arch Linux Women for the class. You can still go to the class and learn without signing up. Instructions to share your ssh key are below.
 
 ## Contents
 

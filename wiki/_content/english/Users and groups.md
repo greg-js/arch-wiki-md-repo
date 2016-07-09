@@ -16,7 +16,7 @@ Users and groups are used on GNU/Linux for [access control](https://en.wikipedia
     *   [7.1 User groups](#User_groups)
     *   [7.2 System groups](#System_groups)
     *   [7.3 Software groups](#Software_groups)
-    *   [7.4 Deprecated or unused groups](#Deprecated_or_unused_groups)
+    *   [7.4 Unused groups](#Unused_groups)
         *   [7.4.1 Pre-systemd groups](#Pre-systemd_groups)
 
 ## Overview
@@ -381,32 +381,31 @@ If the user is currently logged in, he/she must log out and in again for the cha
 Workstation/desktop users often add their non-root user to some of following groups to allow access to peripherals and other hardware and facilitate system administration:
 
 | Group | Affected files | Purpose |
+| adm | Administration group, similar to `wheel`. |
+| ftp | `/srv/ftp/` | Access to files served by [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP") servers. |
 | games | `/var/games` | Access to some game software. |
+| http | `/srv/http/` | Access to files served by [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP") servers. |
+| log | Access to log files in `/var/log/` created by [syslog-ng](/index.php/Syslog-ng "Syslog-ng"). |
 | rfkill | `/dev/rfkill` | Right to control wireless devices power state (used by [rfkill](https://www.archlinux.org/packages/?name=rfkill)). |
+| sys | Right to administer printers in [CUPS](/index.php/CUPS "CUPS"). |
+| systemd-journal | `/var/log/journal/*` | Can be used to provide read-only access to the systemd logs, as an alternative to `adm` and `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). Otherwise, only user generated messages are displayed. |
 | users | Standard users group. |
 | uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+` | RS-232 serial ports and devices connected to them. |
 | wheel | Administration group, commonly used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default, configurable in `/etc/pam.d/su` and `/etc/pam.d/su-l`). It can also be used to gain full read access to [journal](/index.php/Systemd#Journal "Systemd") files. |
 
 ### System groups
 
-The following groups are used for system purposes and are not likely to be used by novice Arch users:
+The following groups are used for system purposes and are not likely to be used by users:
 
 | Group | Affected files | Purpose |
-| bin | none | Historical |
-| daemon |
 | dbus | used internally by [dbus](https://www.archlinux.org/packages/?name=dbus) |
-| ftp | `/srv/ftp` | used by [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP") servers like [Proftpd](/index.php/Proftpd "Proftpd") |
-| fuse | Used by fuse to allow user mounts. |
-| http |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
 | mail | `/usr/bin/mail` |
-| mem |
 | nobody | Unprivileged group. |
 | polkitd | [polkit](/index.php/Polkit "Polkit") group. |
 | proc | `/proc/*pid*/` | A group authorized to learn processes information otherwise prohibited by `hidepid=` mount option of the [proc filesystem](https://www.kernel.org/doc/Documentation/filesystems/proc.txt). The group must be explicitly set with the `gid=` mount option. |
 | root | `/*` | Complete system administration and control (root, admin). |
-| smmsp | [sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") group. |
-| systemd-journal | `/var/log/journal/*` | Provides access to the complete systemd logs. Otherwise, only user generated messages are displayed. |
+| smmsp | [sendmail](/index.php/Sendmail "Sendmail") group. |
 | tty | `/dev/tty`, `/dev/vcc`, `/dev/vc`, `/dev/ptmx` |
 
 ### Software groups
@@ -423,8 +422,8 @@ These groups are used by certain non-essential software. Sometimes they are used
 | clamav | `/var/lib/clamav/*`, `/var/log/clamav/*` | Used by [Clam AntiVirus](/index.php/Clam_AntiVirus "Clam AntiVirus"). |
 | gdm | X server authorization directory (ServAuthDir) | [GDM](/index.php/GDM "GDM") group. |
 | locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Right to use [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb") command. |
+| lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*`, `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | Access to printer hardware, parallel port devices and read-only access to [CUPS](/index.php/CUPS "CUPS") files. Used by [CUPS](/index.php/CUPS "CUPS") to run helpers. See [[2]](https://wiki.archlinux.org/index.php?title=User_talk:Lahwaacz&diff=437507&oldid=437506#Parallel_ports) for a discussion about the implied problems. |
 | mpd | `/var/lib/mpd/*`, `/var/log/mpd/*`, `/var/run/mpd/*`, optionally music directories | [MPD](/index.php/MPD "MPD") group. |
-| networkmanager | Requirement for your user to connect wirelessly with [NetworkManager](/index.php/NetworkManager "NetworkManager"). This group is not included with Arch by default so it must be added manually. |
 | ntp | `/var/lib/ntp/*` | [NTPd](/index.php/NTPd "NTPd") group. |
 | thinkpad | `/dev/misc/nvram` | Used by ThinkPad users for access to tools such as [tpb](/index.php/Tpb "Tpb"). |
 | vboxsf | virtual machines' shared folders | Used by [VirtualBox](/index.php/VirtualBox "VirtualBox"). |
@@ -432,30 +431,31 @@ These groups are used by certain non-essential software. Sometimes they are used
 | vmware | Right to use [VMware](/index.php/VMware "VMware") software. |
 | wireshark | Right to capture packets with [Wireshark](/index.php/Wireshark "Wireshark"). |
 
-### Deprecated or unused groups
+### Unused groups
 
 Following groups are currently of no use for anyone:
 
-| Group | Purpose |
-| log | Access to log files in `/var/log/` created by [syslog-ng](/index.php/Syslog-ng "Syslog-ng"). |
-| ssh | ~~[Sshd](/index.php/Sshd "Sshd") can be configured to only allow members of this group to login.~~ This is true for any arbitrary group; the `ssh` group is not created by default, hence non-standard. |
-| stb-admin | **Unused!** Right to access [system-tools-backends](http://system-tools-backends.freedesktop.org/) |
-| kvm | Adding a user to the `kvm` group used to be required to allow non-root users to access virtual machines using [KVM](/index.php/KVM "KVM"). This has been deprecated in favor of using [udev](/index.php/Udev "Udev") rules, and this is done automatically. |
+| Group | Affected files | Purpose |
+| bin | none | Historical |
+| daemon |
+| mem |
+| network | Unused by default. Can be used e.g. for granting access to NetworkManager (see [NetworkManager#Set up PolicyKit permissions](/index.php/NetworkManager#Set_up_PolicyKit_permissions "NetworkManager")). |
+| power |
 
 #### Pre-systemd groups
 
-These groups used to be needed before arch migrated to [systemd](/index.php/Systemd "Systemd"). That is no longer the case, as long as the *logind* session is not broken (see [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") to check it). The groups can even cause some functionality to break. See [SysVinit#Migration to systemd](/index.php/SysVinit#Migration_to_systemd "SysVinit") for details.
+Before arch migrated to [systemd](/index.php/Systemd "Systemd"), users had to be manually added to these groups in order to be able to access the corresponding devices. This way has been deprecated in favour of [udev](/index.php/Udev "Udev") marking the devices with a `uaccess` tag and *logind* assigning the permissions to users dynamically via [ACLs](/index.php/ACL "ACL") according to which session is currently active. Note that the session must not be broken for this to work (see [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") to check it).
+
+There are some notable exceptions which require adding a user to some of these groups: for example if you want to allow users to access the device even when they are not logged in. However, note that adding users to the groups can even cause some functionality to break (for example, the `audio` group will break fast user switching and allows applications to block software mixing).
 
 | Group | Affected files | Purpose |
-| audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Direct access to sound hardware, for all sessions (requirement is imposed by both [ALSA](/index.php/ALSA "ALSA") and [OSS](/index.php/OSS "OSS")). Local sessions already have the ability to play sound and access mixer controls. |
+| audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Direct access to sound hardware, for all sessions. It is still required to make [ALSA](/index.php/ALSA "ALSA") and [OSS](/index.php/OSS "OSS") work in remote sessions, see [ALSA#User privileges](/index.php/ALSA#User_privileges "ALSA"). |
 | camera | Access to [Digital Cameras](/index.php/Digital_Cameras "Digital Cameras"). |
-| disk | `/dev/sda[1-9]`, `/dev/sdb[1-9]` | Access to block devices not affected by other groups such as `optical`, `floppy`, and `storage`. |
+| disk | `/dev/sd[a-z][1-9]` | Access to block devices not affected by other groups such as `optical`, `floppy`, and `storage`. |
 | floppy | `/dev/fd[0-9]` | Access to floppy drives. |
-| lp | `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups`, `/dev/parport[0-9]` | Access to printer hardware; enables the user to manage print jobs. |
-| network | Right to change network settings such as when using [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
+| input | `/dev/input/event[0-9]*`, `/dev/input/mouse[0-9]*` | Access to input devices. Introduced in systemd 215 [[3]](http://lists.freedesktop.org/archives/systemd-commits/2014-June/006343.html). |
+| kvm | `/dev/kvm` | Access to virtual machines using [KVM](/index.php/KVM "KVM"). |
 | optical | `/dev/sr[0-9]`, `/dev/sg[0-9]` | Access to optical devices such as CD and DVD drives. |
-| power | Right to use [Pm-utils](/index.php/Pm-utils "Pm-utils") (suspend, hibernate...) and power management controls. |
 | scanner | `/var/lock/sane` | Access to scanner hardware. |
 | storage | Access to removable drives such as USB hard drives, flash/jump drives, MP3 players; enables the user to mount storage devices. |
-| sys | Right to administer printers in [CUPS](/index.php/CUPS "CUPS"). |
-| video | `/dev/fb/0`, `/dev/misc/agpgart` | Access to video capture devices, 2D/3D hardware acceleration, framebuffer ([X](/index.php/X "X") can be used *without* belonging to this group). Local sessions already have the ability to use hardware acceleration and video capture. |
+| video | `/dev/fb/0`, `/dev/misc/agpgart` | Access to video capture devices, 2D/3D hardware acceleration, framebuffer ([X](/index.php/X "X") can be used *without* belonging to this group). |

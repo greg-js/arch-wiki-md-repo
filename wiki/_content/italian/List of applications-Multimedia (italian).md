@@ -774,6 +774,6 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[http://tellico-project.org/](http://tellico-project.org/) || [tellico](https://www.archlinux.org/packages/?name=tellico)
 
-*   **[XBMC](https://en.wikipedia.org/wiki/XBMC "wikipedia:XBMC")** — Applicazione per organizzare varie collezioni capace di recuperare automaticamente informazioni riguardo essi (video, music, photos).
+*   **[Kodi](/index.php/Kodi "Kodi")** — Applicazione per organizzare varie collezioni capace di recuperare automaticamente informazioni riguardo essi (video, music, photos).
 
-	[http://xbmc.org/](http://xbmc.org/) || [xbmc](https://www.archlinux.org/packages/?name=xbmc)
+	[https://kodi.tv/](https://kodi.tv/) || [kodi](https://www.archlinux.org/packages/?name=kodi)

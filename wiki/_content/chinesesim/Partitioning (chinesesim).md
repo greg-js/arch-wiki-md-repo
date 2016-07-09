@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Partitioning](/index.php/Partitioning "Partitioning") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-12，点击[这里](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=430918)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Partitioning](/index.php/Partitioning "Partitioning") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-09，点击[这里](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=440434)可以查看翻译后英文页面的改动。
 
 *分区* 硬盘的可用空间可以划分为多个逻辑区块，区块之间的访问是相互独立的。
 
@@ -24,6 +24,9 @@
         *   [2.3.5 /tmp](#.2Ftmp)
         *   [2.3.6 Swap](#Swap)
         *   [2.3.7 分区应该设置多大？](#.E5.88.86.E5.8C.BA.E5.BA.94.E8.AF.A5.E8.AE.BE.E7.BD.AE.E5.A4.9A.E5.A4.A7.EF.BC.9F)
+    *   [2.4 分区示例](#.E5.88.86.E5.8C.BA.E7.A4.BA.E4.BE.8B)
+        *   [2.4.1 UEFI/GPT 分区示例](#UEFI.2FGPT_.E5.88.86.E5.8C.BA.E7.A4.BA.E4.BE.8B)
+        *   [2.4.2 BIOS/MBR 分区示例](#BIOS.2FMBR_.E5.88.86.E5.8C.BA.E7.A4.BA.E4.BE.8B)
 *   [3 分区工具](#.E5.88.86.E5.8C.BA.E5.B7.A5.E5.85.B7)
 *   [4 分区对齐](#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90)
     *   [4.1 机械硬盘](#.E6.9C.BA.E6.A2.B0.E7.A1.AC.E7.9B.98)
@@ -171,6 +174,27 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 	可以为需要多用户共享的文件建立一个“data”分区。也可以使用 `/home` 分区用于这一目的。
 
+### 分区示例
+
+这里假定要使用一个新的连续分区方式，占据整个 `/dev/sd**x**` 设备. 请根据需要修改设备名、分区号和布局。
+
+#### UEFI/GPT 分区示例
+
+需要一个*bootable* [EFI 系统分区](/index.php/EFI_System_Partition "EFI System Partition")，假设被挂载成 `/boot`.
+
+| 挂载点 | 分区 | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | 启动标记 | 建议大小 |
+| /boot | /dev/sd**x**1 | EFI 系统分区 | Yes | 260–512 MiB |
+ /dev/sd**x**2 | Linux swap | No | 不超过 512 MiB |
+| / | /dev/sd**x**3 | Linux | No | 15–20 GiB |
+| /home | /dev/sd**x**4 | Linux | No | 剩余空间 |
+
+#### BIOS/MBR 分区示例
+
+| 挂载点 | 分区 | [分区类型](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | 启动标记 | 建议大小 |
+ /dev/sd**x**1 | Linux swap | No | 不超过 512 MiB |
+| / | /dev/sd**x**2 | Linux | Yes | 15–20 GiB |
+| /home | /dev/sd**x**3 | Linux | No | 剩余空间 |
+
 ## 分区工具
 
 *   **[fdisk](/index.php/Fdisk "Fdisk")** — Linux 自带的命令行分区工具。
@@ -180,6 +204,10 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 *   **[cfdisk](/index.php/Cfdisk "Cfdisk")** — 使用 ncurses 库编写的具有伪图形界面的命令行分区工具。
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
+*   **[sfdisk](/index.php/Sfdisk "Sfdisk")** — 支持脚本的 fdisk.
+
+	|| [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
 *   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](/index.php/GPT "GPT") 版的 fdisk。
 
@@ -209,6 +237,50 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 	[http://qtparted.sourceforge.net/](http://qtparted.sourceforge.net/) || [qtparted](https://aur.archlinux.org/packages/qtparted/)
 
+下面表格可以帮助选择
+
+| 用户交互 | MBR | GPT |
+| 对话框 | fdisk
+
+parted
+
+ | fdisk
+
+gdisk
+
+parted
+
+ |
+| 模拟图形界面 | cfdisk | cfdisk
+
+cgdisk
+
+ |
+| 非交互 | sfdisk
+
+parted
+
+ | sfdisk
+
+sgdisk
+
+parted
+
+ |
+| 图形界面 | gparted
+
+partitionmanager
+
+qtparted(?)
+
+ | gparted
+
+partitionmanager
+
+qtparted(?)
+
+ |
+
 ## 分区对齐
 
 恰当的分区对齐有助于提升性能和使用寿命。这是由硬件层面和文件系统层面的每次[块](https://en.wikipedia.org/wiki/Block_(data_storage) I/O 操作特性决定的。对齐的关健是分区大小（至少）是*块大小*的倍数，*块大小*取决于选用的硬件设备。如果分区没有以*块大小*的整数倍对齐，对齐文件系统就失去意义了，因为从分区的起始偏移开始就是有偏差的。
@@ -221,7 +293,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 ### 固态硬盘
 
-固态硬盘基于[闪存芯片](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory")，与机械硬盘有显著的不同。只读访问能够以随机方式进行，而擦除（覆写或随机写入）只能以[整块](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory")进行。此外，*擦除块大小*（Erase Block Size，EBS）比*块大小*明显大很多，例如 128KiB vs 4KiB，所以需要以 EBS 的整数倍进行对齐。[NVMe](/index.php/NVMe "NVMe") 需要 4KiB 对齐。
+固态硬盘基于[闪存芯片](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory")，与机械硬盘有显著的不同。只读访问能够以随机方式进行，而擦除（覆写或随机写入）只能以[整块](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory")进行。此外，*擦除块大小*（Erase Block Size，EBS）比*块大小*明显大很多，例如 128KiB vs 4KiB，所以需要以 EBS 的整数倍进行对齐。有些 [NVMe](/index.php/NVMe "NVMe") 需要 4KiB 对齐，要确定 SSD 大小，请查看 [Advanced Format#How to determine if HDD employ a 4k sector](/index.php/Advanced_Format#How_to_determine_if_HDD_employ_a_4k_sector "Advanced Format").
 
 ### 分区工具
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [File_Systems](/index.php/File_Systems "File Systems") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-31，点击[这里](https://wiki.archlinux.org/index.php?title=File_Systems&diff=0&oldid=436183)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [File_Systems](/index.php/File_Systems "File Systems") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-08，点击[这里](https://wiki.archlinux.org/index.php?title=File_Systems&diff=0&oldid=439828)可以查看翻译后英文页面的改动。
 
 根据 [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
@@ -15,6 +15,8 @@ Arch Linux支持许多文件系统类型，我们可以为每个磁盘分区设�
     *   [1.2 文件系统支持](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E6.94.AF.E6.8C.81)
 *   [2 基于 FUSE 的文件系统支持](#.E5.9F.BA.E4.BA.8E_FUSE_.E7.9A.84.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E6.94.AF.E6.8C.81)
 *   [3 创建文件系统](#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+    *   [3.1 识别设备](#.E8.AF.86.E5.88.AB.E8.AE.BE.E5.A4.87)
+    *   [3.2 格式化](#.E6.A0.BC.E5.BC.8F.E5.8C.96)
 *   [4 参考资料](#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99)
 
 ## 文件系统类型
@@ -149,18 +151,31 @@ Arch Linux支持许多文件系统类型，我们可以为每个磁盘分区设�
 
 ## 创建文件系统
 
-**注意:**
+### 识别设备
 
-*   如果你想要改变分区划分，请参考 [分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")。
-*   如果你想要创建一个交换分区，请参考 [Swap](/index.php/Swap "Swap")。
+首先要确定系统安装的目标设备，下面命令会显示所有连接到系统的设备和分区状况：
 
-在开始前，你需要知道 Linux 给你的设备起了什么名字。硬盘和U盘使用 `/dev/sd*x*` 这样的名字，其中 *x* 是一个或多个小写字母。文件系统被命名为 `/dev/sd*xY*`，其中 *Y* 是一个数字。
+```
+# lsblk
+
+```
+
+[安装](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")时，结果中会包含 Arch 安装设备(例如 USB 安装盘)，不是所有设备都适合安装。`rom`, `loop` 或 `airoot` 格式的分区可以忽略。
+
+硬盘和U盘使用 `/dev/sd*x*` 这样的名字，其中 *x* 是一个或多个小写字母。文件系统被命名为 `/dev/sd*xY*`，其中 *Y* 是一个数字。请按照您系统的实际状况修改命令。
+
+```
+ NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda               8:0    0    80G  0 disk
+└─sda1            8:1    0    80G  0 part
+
+```
 
 通常来说，文件系统是在一个分区上创建的，不过也可以在逻辑容器如[LVM](/index.php/LVM "LVM")，[RAID](/index.php/RAID "RAID")，或者 [dm-crypt](/index.php/Dm-crypt "Dm-crypt") 上创建文件系统。
 
-创建文件系统之前，目标分区必须处于未挂载状态。
+### 格式化
 
-如果你想要进行格式化的分区包含了一个已挂载的文件系统，在 lsblk 命令的 *MOUNTPOINT* 列中可以看到它。
+创建文件系统之前，目标分区必须处于未挂载状态。如果你要格式化的分区包含了一个已挂载的文件系统，在 lsblk 命令的 *MOUNTPOINT* 列中可以看到它。
 
 ```
 $ lsblk

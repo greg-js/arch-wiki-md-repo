@@ -617,6 +617,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.zdoom.org/](http://www.zdoom.org/) || [zdoom](https://aur.archlinux.org/packages/zdoom/)
 
+*   **Doom Retro** — DOOM Retro is the classic, refined DOOM source port. Based on Chocolate DOOM with enhancements from other source ports.
+
+	[http://doomretro.com/](http://doomretro.com/) || [doom-retro-git](https://aur.archlinux.org/packages/doom-retro-git/)
+
 *   [Doom 3](https://en.wikipedia.org/wiki/Doom_3 "wikipedia:Doom 3")
 
 *   **Doom 3** — Stock Doom 3 binaries

@@ -159,6 +159,10 @@ If "0", does not restore the backlight settings on boot. However, settings will 
 
 Brightness can alternatively be set using the [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) package.
 
+**Note:** xbacklight only works with intel. Radeon does not support the RandR backlight property
+
+**Note:** xbacklight currently does not work with the modesetting driver: The intel driver must be used - see [https://bugs.freedesktop.org/show_bug.cgi?id=96572](https://bugs.freedesktop.org/show_bug.cgi?id=96572)
+
 ```
 $ xbacklight -set 50  # sets brightness to 50% of maximum
 
@@ -194,8 +198,6 @@ EndSection
 ```
 
 See [FS#27677](https://bugs.archlinux.org/task/27677) and [[1]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
-
-**Note:** This only works with intel. Radeon does not support the RandR backlight property
 
 ### light
 

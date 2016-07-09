@@ -230,7 +230,7 @@ Arch User Repository 的指南位于:
 
 ### [IRC](/index.php/IRC "IRC")
 
-All Arch Linux IRC channels are on the freenode irc network. Users on freenode must follow the [network policy](https://freenode.net/policies) and freenode [channel guidelines](https://freenode.net/changuide).
+所有的官方 IRC 频道都位于 freenode 上，请遵守它们的 [网络政策](https://freenode.net/policies)和[频道指南](https://freenode.net/changuide)。
 
 **#archlinux**频道的官方语言是英语,如果你需要以其它语言获得帮助,[这里](/index.php/IRC_channels_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.9C.AC.E5.9C.B0.E5.8C.96_IRC_.E9.A2.91.E9.81.93 "IRC channels (简体中文)") 有各种本地化频道的列表.
 

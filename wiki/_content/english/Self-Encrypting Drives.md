@@ -1,4 +1,4 @@
-Hardware-based full-disk encryption (FDE) is now available from many hard disk drive (HDD) vendors, becoming increasingly common, especially for solid-state drives (SSD). The term "Self-Encrypting Drive" (SED) is now common when referring to HDDs / SSDs with built-in full-disk encryption (FDE).
+Hardware-based full-disk encryption (FDE) is now available from many hard disk drive (HDD) vendors, becoming increasingly common especially for solid-state drives (SSD). The term "Self-Encrypting Drive" (SED) is now common when referring to HDDs / SSDs with built-in full-disk encryption (FDE).
 
 ## Contents
 
@@ -23,9 +23,9 @@ Hardware-based full-disk encryption (FDE) is now available from many hard disk d
 
 ## Overview
 
-A lot of modern SED FDE is made by HDD/SSD vendors adhering to the [OPAL 2.0](http://www.trustedcomputinggroup.org/files/resource_files/FF80CE7D-1A4B-B294-D060AD8807BF9453/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf) and [Enterprise](http://www.trustedcomputinggroup.org/files/resource_files/FFAE13C6-1A4B-B294-D0D8D885F9F4FB67/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) standards developed by the Trusted Computing Group (TCG). Enterprise SAS versions of the TCG standard are called "TCG Enterprise" drives. The hardware manufactured according to the standards is [labelled](http://www.wave.com/self-encrypting-drive-compatibility-list) accordingly.
+Many modern SED FDE are made by HDD/SSD vendors which adher to the [OPAL 2.0](http://www.trustedcomputinggroup.org/files/resource_files/FF80CE7D-1A4B-B294-D060AD8807BF9453/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf) and [Enterprise](http://www.trustedcomputinggroup.org/files/resource_files/FFAE13C6-1A4B-B294-D0D8D885F9F4FB67/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) standards developed by the Trusted Computing Group (TCG). Enterprise SAS versions of the TCG standard are called "TCG Enterprise" drives. The hardware manufactured according to the standards is [labelled](http://www.wave.com/self-encrypting-drive-compatibility-list) accordingly.
 
-Unlocking (for runtime decryption) of the drive takes place via either a software pre-boot authentication environment or with a [#BIOS based ATA-password](#BIOS_based_ATA-password) on power up.
+Unlocking (for runtime decryption) of the drive takes place via either a software, pre-boot authentication environment or with a [#BIOS based ATA-password](#BIOS_based_ATA-password) on power up.
 
 **Tip:** "Encryption" in the context of this page refers to hardware-based encryption. See [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") and [Disk encryption#Stacked filesystem encryption](/index.php/Disk_encryption#Stacked_filesystem_encryption "Disk encryption") for software-based encryption.
 
@@ -37,15 +37,16 @@ Refer to the [#Advantages](#Advantages) and [#Disadvantages](#Disadvantages) sec
 
 Key management takes place within the disk controller and encryption keys are usually 128 or 256 bit Advanced Encryption Standard (AES).
 
-SEDs' adhearing to the TGS OPAL 2.0 standard specification (almost all modern SEDs') implement key management via an Authentication Key (AK), and a 2nd-level Data Encryption Key (DEK). The DEK is the key against which the data is actually encrypted/decrypeted. The AK is the user-facing 1st-level password/passphrase which decrypts the DEK (which in-turn decrypts the data). This approach has specific advantages:
+SEDs' adhering to the TGS OPAL 2.0 standard specification (almost all modern SEDs) implement key management via an Authentication Key (AK), and a 2nd-level Data Encryption Key (DEK). The DEK is the key against which the data is actually encrypted/decrypeted. The AK is the user-facing 1st-level password/passphrase which decrypts the DEK (which in-turn decrypts the data). This approach has specific advantages:
 
 *   Allows the user to change the passphrase *without* losing the existing encrypted data on the disk
-    *   This improves security as it is fast and easy to respond to security threats and revoke a compromised passphrase
-*   Facilitates near-instant, and cryptographically secure full disk erasure
+    *   This improves security, as it is fast and easy to respond to security threats and revoke a compromised passphrase
+*   Facilitates near-instant and cryptographically secure full disk erasure.
 
-For those who are familiar; this concept is similar to the LUKS key management layer often used in a [dm-crypt](/index.php/Dm-crypt "Dm-crypt") deployment. Utilizing LUKS, the user can effectively have up to 8 different key-files / passphrases to decrypt the *encryption key*, which in turn decrypts the underlying data. This approach allows the user to revoke / change these key-files / passphrases as required *without* needing to re-encrypt the data, as the 2nd-level encryption key *is unchanged* (itself being re-encrypted by the new passphrase).
+For those who are familiar; this concept is similar to the LUKS key management layer often used in a [dm-crypt](/index.php/Dm-crypt "Dm-crypt") deployment. Using LUKS, the user can effectively have up to 8 different key-files / passphrases to decrypt the *encryption key*, which in turn decrypts the underlying data. This approach allows the user to revoke / change these key-files / passphrases as required *without* needing to re-encrypt the data, as the 2nd-level encryption key *is unchanged* (itself being re-encrypted by the new passphrase).
 
-In fact; in drives featuring FDE, data is *always* encrypted with the DEK when stored to disk, even if there is no password set (e.g. a new drive). Manufacturers do this to make it easier for users who are not able to, or do not wish to enable the SEDs' security features. This can be thought of as all drives by default having a zero-length password that transparently encrypts/decrypts the data *always* (similar to how passwordless ssh keys provide (somewhat) secure access without user intervention).
+In fact, in drives featuring FDE, data is *always* encrypted with the DEK when stored to disk, even if there is no password set (e.g. a new drive). Manufacturers do this to make it easier for users who are not able to, or do not wish to enable the SEDs' security features. This can be thought of as all drives by default having a zero-length password that transparently encrypts/decrypts the data *always* (similar to how passwordless ssh keys provide (somewhat) secure access without user intervention).
+
 *The key point to note* is that if at a later stage a user wishes to *"enable"* encryption, they can configure the passphrase (AK), which will then be used to encrypt the *existing* DEK (thus prompting for passphrase beforing decrypting the DEK in future). However, as the existing DEK *will not* be changed / regenerated; this in effect locks the drive, while preserving the existing encrypted data on the disk.
 
 ### Advantages
@@ -80,7 +81,7 @@ In fact; in drives featuring FDE, data is *always* encrypted with the DEK when s
 
 **Note:** UEFI support currently requires that Secure Boot be turned off.
 
-`libata.allow_tpm` **must** be set to `1` (true) in order to use sedutil. Either add `libata.allow_tpm=1` to the kernel flags at boot time as [outlined here](/index.php/GRUB#Additional_arguments "GRUB") (recommended) or by setting /sys/module/libata/parameters/allow_tpm to `1` on a running system.
+`libata.allow_tpm` **must** be set to `1` (true) in order to use sedutil. Either add `libata.allow_tpm=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), or by setting `/sys/module/libata/parameters/allow_tpm` to `1` on a running system.
 
 ## Encrypting the root (boot) drive
 

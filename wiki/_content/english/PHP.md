@@ -48,6 +48,8 @@
 
 [Install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
+You can find older versions of PHP in the AUR, such as [php56](https://aur.archlinux.org/packages/php56/).
+
 Note that to run PHP scripts as plain CGI, you need the [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) package.
 
 ## Running
@@ -91,6 +93,8 @@ $ pacman -Ss php-
 ```
 
 **Tip:** Instead of editing `/etc/php/php.ini`, a extension may be enabled/configured in the `/etc/php/conf.d` directory instead (e.g. `/etc/php/conf.d/gd.ini`)
+
+Extensions for older versions of PHP can be found in the AUR, under the prefix php56-*, eg. [php56-mcrypt](https://aur.archlinux.org/packages/php56-mcrypt/)
 
 ### gd
 

@@ -33,7 +33,8 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [5.10 hp-setup: finds the printer automatically but reports "Unable to communicate with device" when printing test page immediately afterwards](#hp-setup:_finds_the_printer_automatically_but_reports_.22Unable_to_communicate_with_device.22_when_printing_test_page_immediately_afterwards)
 *   [6 Other](#Other)
     *   [6.1 Printer "Paused" or "Stopped" with Status "Rendering completed"](#Printer_.22Paused.22_or_.22Stopped.22_with_Status_.22Rendering_completed.22)
-        *   [6.1.1 Explanation of the GID issue](#Explanation_of_the_GID_issue)
+        *   [6.1.1 Low ink](#Low_ink)
+        *   [6.1.2 Permission issue](#Permission_issue)
     *   [6.2 Printing fails with unauthorised error](#Printing_fails_with_unauthorised_error)
     *   [6.3 Unknown supported format: application/postscript](#Unknown_supported_format:_application.2Fpostscript)
     *   [6.4 Print-Job client-error-document-format-not-supported](#Print-Job_client-error-document-format-not-supported)
@@ -287,7 +288,7 @@ The issue might have to do with the file permission change that had been made to
 
 #### Permission problem
 
-It may be needed to [add the user to the lp and sys groups](/index.php/Groups#Group_management "Groups").
+It may be needed to add the user to the `lp` and `sys` [groups](/index.php/Group "Group").
 
 #### Virtual CDROM printers
 
@@ -313,47 +314,23 @@ This at least happens to hplip 3.13.5-2 for HP Officejet 6500A through local net
 
 ### Printer "Paused" or "Stopped" with Status "Rendering completed"
 
+#### Low ink
+
 When low on ink, some printers will get stuck in "Rendering completed" status and, if it is a network printer, the printer may even become unreachable from CUPS' perspective despite being properly connected to the network. Replacing the low/depleted ink cartridge(s) in this setting will return the printer to "Ready" status and, if it is a network printer, will make the printer available to CUPS again.
 
 **Note:** If you use third-party ink cartridges, the ink levels reported by the printer may be inaccurate. If you use third-party ink and your printer used to work fine but is now getting stuck on "Rendering completed" status, replace the ink cartridges regardless of the reported ink levels before trying other fixes.
 
-If low ink is not the issue, check the "Group ID" of files in `/etc/cups`, `/var/log/cups`, and, if you have "root" permission, `/var/spool/cups`. The files should have GID `lp`. If some files have GID `nobody`, then check the named groups in the "Group" and "SystemGroup" directives in the file `/etc/cups/cups-files.conf`. Typically there will be `Group lp` and `SystemGroup lpadmin sys root`. Make sure that the group in "Group" is NOT also in "SystemGroup". In particular, make sure that the name `lp` is NOT listed in the "SystemGroup" directive, when it is used in the "Group" directive. This is counter to recommendations made in the CUPS and KDE wiki pages in the past. If you had added `lp` to the "SystemGroup" directive, as had been suggested, remove `lp` from the "SystemGroup", or run the following command and change `lp` to `lpadmin` in the "SystemGroup" directive.
+#### Permission issue
 
-```
-# groupadd -g107 lpadmin
+Prior to [cups](https://www.archlinux.org/packages/?name=cups) 2.0.0-2, if the group set in the `Group` directive is also listed in the `SystemGroup` directive in `/etc/cups/cups-files.conf`, `cupsd` will instead run any helper programs with a group of `nobody`. However, the helpers may need to write to printer devices, which are created with user `root` and group `lp`, and will be unable to if they are run with a group of `nobody`, causing the print queue to become "Paused" or "Stopped".
 
-```
+To fix this, ensure that the the `Group` directive is set to `lp`, and the `SystemGroup` directive does not include `lp`.
 
-#### Explanation of the GID issue
-
-For security reasons, `cupsd` does not allow external CUPS helper programs, which are run with the GID selected with the "Group" directive, to run with any GID of the administrative groups, which are those GIDs listed in the "SystemGroup" directive. If the named group in the Group directive is also in the SystemGroup directive, then `cupsd` will instead run the helper programs with GID `nobody`, without warning. Note that the printer devices in `/dev/`, for instance `/dev/parport0`, are created with user `root` and group `lp`. When `cupsd` then tries to print, it "pauses" or "stops" because it does not have permission to write the printer device file, and does not provide any useful error message. The printer device files can be made "world writable" to bypass the problem, but that is insecure and is not the proper solution.
-
-As of CUPS version 2.0.0-2, if the group in the Group directive is also in the SystemGroup directive, `cupsd` will exit immediately after starting, and, at a log level of "notice" or higher, will log an error message to the default error log, but not to the system log.
-
- `/var/log/cups/error_log`  `Group and SystemGroup cannot use the same groups.` 
-
-This solves the problem of `cupsd` running in a non-functional state and failing to print without explanation.
-
-At the default log level of "warn", no group collision error message is logged. To see this error message, increase the log level to "notice", "info", "debug", or "debug2".
-
- `/etc/cups/cupsd.conf`  `LogLevel notice` 
-
-Error messages can be sent to the systemd-journald log instead of to the default `/var/log/cups/error_log`, but not to both, by explicitly setting the ErrorLog directive.
-
- `/etc/cups/cups-files.conf`  `ErrorLog syslog` 
-
-Currently, even then, the command `systemctl status org.cups.cupsd.service` will not properly display the final group collision error message, but the error message can still be seen in the journal, with for instance, `sudo journalctl -f`.
+Fixed in Arch with [[1]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=c20b22f4f996cb08b1aa856d4c8991e869459eb2).
 
 ### Printing fails with unauthorised error
 
-If the user has been added to the lp group, and allowed to print (set in `cupsd.conf`), then the problem lies in `/etc/cups/printers.conf`. This line could be the culprit:
-
-```
-AuthInfoRequired negotiate
-
-```
-
-Comment it out and restart CUPS.
+If a remote printer requests authentication CUPS will automatically add an `AuthInfoRequired` directive to the printer in `/etc/cups/printers.conf`. However, some graphical applications (for instance, some versions of [LibreOffice](/index.php/LibreOffice "LibreOffice") [[2]](https://bugs.documentfoundation.org/show_bug.cgi?id=53029)) have no way to prompt for credentials, so printing fails. To fix this include the required username and password in the URI. See [[3]](https://bugs.launchpad.net/ubuntu/+source/cups/+bug/283811), [[4]](https://bbs.archlinux.org/viewtopic.php?id=61826),
 
 ### Unknown supported format: application/postscript
 
