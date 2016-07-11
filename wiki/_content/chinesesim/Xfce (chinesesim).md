@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Xfce](/index.php/Xfce "Xfce") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-07-10，点击[这里](https://wiki.archlinux.org/index.php?title=Xfce&diff=0&oldid=242786)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Xfce](/index.php/Xfce "Xfce") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-10，点击[这里](https://wiki.archlinux.org/index.php?title=Xfce&diff=0&oldid=439589)可以查看翻译后英文页面的改动。
 
-[Xfce](http://www.xfce.org) 是一个轻量级模块化的 [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)") 现基于 GTK+ 2。为了提供完整的用户体验，它包含窗口管理器、文件管理器、桌面和面板。
+[Xfce](http://www.xfce.org) 是一个基于 GTK+2 的轻量级模块化的 [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")。为了提供完整的用户体验，它包含窗口管理器、文件管理器、桌面和面板。
 
 ## Contents
 
@@ -8,8 +8,8 @@
 *   [2 启动Xfce](#.E5.90.AF.E5.8A.A8Xfce)
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
     *   [3.1 菜单](#.E8.8F.9C.E5.8D.95)
-        *   [3.1.1 Whisker menu](#Whisker_menu)
-        *   [3.1.2 编辑项](#.E7.BC.96.E8.BE.91.E9.A1.B9)
+        *   [3.1.1 Whisker 菜单](#Whisker_.E8.8F.9C.E5.8D.95)
+        *   [3.1.2 编辑菜单](#.E7.BC.96.E8.BE.91.E8.8F.9C.E5.8D.95)
     *   [3.2 桌面](#.E6.A1.8C.E9.9D.A2)
         *   [3.2.1 图标文字的背景透明](#.E5.9B.BE.E6.A0.87.E6.96.87.E5.AD.97.E7.9A.84.E8.83.8C.E6.99.AF.E9.80.8F.E6.98.8E)
         *   [3.2.2 从右击菜单中剔除Thunar选项](#.E4.BB.8E.E5.8F.B3.E5.87.BB.E8.8F.9C.E5.8D.95.E4.B8.AD.E5.89.94.E9.99.A4Thunar.E9.80.89.E9.A1.B9)
@@ -19,7 +19,7 @@
             *   [3.3.1.1 延迟自启动应用程序](#.E5.BB.B6.E8.BF.9F.E8.87.AA.E5.90.AF.E5.8A.A8.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
         *   [3.3.2 锁定屏幕](#.E9.94.81.E5.AE.9A.E5.B1.8F.E5.B9.95)
         *   [3.3.3 切换用户](#.E5.88.87.E6.8D.A2.E7.94.A8.E6.88.B7)
-        *   [3.3.4 禁用会话](#.E7.A6.81.E7.94.A8.E4.BC.9A.E8.AF.9D)
+        *   [3.3.4 禁用保存的会话](#.E7.A6.81.E7.94.A8.E4.BF.9D.E5.AD.98.E7.9A.84.E4.BC.9A.E8.AF.9D)
         *   [3.3.5 默认窗口管理器](#.E9.BB.98.E8.AE.A4.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
     *   [3.4 更换主题](#.E6.9B.B4.E6.8D.A2.E4.B8.BB.E9.A2.98)
     *   [3.5 声音](#.E5.A3.B0.E9.9F.B3)
@@ -60,7 +60,7 @@
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) 包组。如果需要的话，还可以安装 [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/) 包组。此包组提供了一些额外的插件和一些有用的工具，如 [mousepad](https://www.archlinux.org/packages/?name=mousepad) 编辑器。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) 包组。如果需要的话，还可以安装 [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/) 包组。此包组提供了一些额外的插件和一些有用的工具，如 [mousepad](https://www.archlinux.org/packages/?name=mousepad) 编辑器。 Xfce 默认使用 [Xfwm](/index.php/Xfwm "Xfwm") 作为窗口管理器。
 
 ## 启动Xfce
 
@@ -78,11 +78,11 @@ Xfce把配置的选项保存到[Xfconf](http://docs.xfce.org/xfce/xfconf/start)�
 
 ### 菜单
 
-#### Whisker menu
+#### Whisker 菜单
 
-[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) 是一个可选应用启动器。它可以显示所有的已安装应用中最喜欢和经常被使用的应用。
+[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) 是一个可选应用启动器。它可以显示所有的已安装应用中最喜欢和经常被使用的应用。支持应用分类和模糊查询。
 
-#### 编辑项
+#### 编辑菜单
 
 有一些工具可以用来实现此项需求
 
@@ -104,16 +104,10 @@ Xfce把配置的选项保存到[Xfconf](http://docs.xfce.org/xfce/xfconf/start)�
 <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
   "[http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd](http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd)">
 
-```
-
-```
 <Menu>
     <Name>Xfce</Name>
     <MergeFile type="parent">/etc/xdg/menus/xfce-applications.menu</MergeFile>
 
-```
-
-```
     <Exclude>
         <Filename>xfce4-run.desktop</Filename>
         <Filename>exo-terminal-emulator.desktop</Filename>
@@ -124,9 +118,6 @@ Xfce把配置的选项保存到[Xfconf](http://docs.xfce.org/xfce/xfconf/start)�
         <Filename>xfhelp4.desktop</Filename>
     </Exclude>
 
-```
-
-```
     <Layout>
         <Merge type="all"/>
         <Separator/>
@@ -201,17 +192,7 @@ $ xkill -id "$(xprop -root -notype | sed -n '/^_NET_ACTIVE_WINDOW/ s/^.*# *\|\,.
 
 可以在 **程序 > 设置 > 设置管理器 > 会话和自启动** 中，设置与Xfce一起启动的自启动程序。 此处列出了所有自启动的程序。点击 **添加** 按钮后可以添加自定义的自启动任务。
 
-当然，也可以选择命令行脚本来启动你需要的程序。包括给GUI运行时设置必须的变量。
-
-*   复制文件 `/etc/xdg/xfce4/xinitrc` 到 `~/.config/xfce4/`
-*   编辑此文件。 比如，你可以添加一些如下的命令行到文件中：
-
-```
-source $HOME/.bashrc
-# start rxvt-unicode server
-urxvtd -q -o -f
-
-```
+当然，也可以将要执行的命令（包括变量）加入 [xinitrc](/index.php/Xinitrc "Xinitrc")。如果使用 [[Display manager|显示管理器「」，则加入 [xprofile](/index.php/Xprofile "Xprofile")
 
 ##### 延迟自启动应用程序
 
@@ -224,24 +205,51 @@ sh -c "sleep 3 && command"
 
 #### 锁定屏幕
 
-**Tip:** The [light-locker](https://www.archlinux.org/packages/?name=light-locker) 对话锁定集成在 [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) 包中。 如果安装了亮度控制, '安全’标签页会加入到电源管理设定中。已经有的'到系统休眠时锁定屏幕'的选项会集成到'安全'标签页中。
+要通过 *xflock4* 脚本锁定 Xfce4 会话，可以从下面软件列表中选择安装一个：[xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) 和 [xlockmore](https://www.archlinux.org/packages/?name=xlockmore)。
 
-锁定Xfce4对话（通过`xflock4`），如下包中至少需要安装一个：[xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) 和 [xlockmore](https://www.archlinux.org/packages/?name=xlockmore)。You may also make a local copy of *xflock4*, for example `/usr/local/bin/xflock4`, which specifies another screen locker of choice.
+或者可以选择使用下面命令设置屏保：
 
-为了改变屏保，或通过 Whisker Menu (**Properties > Behavior > Lock Screen**)这样的程序改变。可以在[List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") 看到其他的选项。
+```
+$ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l" --create -t string
+
+```
+
+要更新命令是，可以使用：
+
+```
+$ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l"
+
+```
+
+[List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") 包含了屏幕锁定程序列表。
+
+**Tip:** The [light-locker](https://www.archlinux.org/packages/?name=light-locker) 会话锁定集成在 [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) 中。安装后,'安全’标签页会显示在电源管理设定中。已经有的'系统休眠时锁定屏幕'选项会集成到'安全'标签页中。
+
+**Note:** 可以手动修改 *xflock4* 脚本，参考帖子：[[1]](https://bbs.archlinux.org/viewtopic.php?id=189484). 为了避免修改被更新覆盖，可以将 *xflock4* 复制到 `/usr/local/bin`，这里的修改会覆盖 `/usr/bin` 下的默认版本。
 
 #### 切换用户
 
-**注意:** 想要不用GDM而能切换用户, 需要安装一个DM:
+只要 [Display manager](/index.php/Display_manager "Display manager") 有切换用户的功能，Xfce4都是可以支持的，比如 [LightDM](/index.php/LightDM "LightDM") 和 [GDM](/index.php/GDM "GDM") 。关于你所使用的DM的信息，需要参看其wiki页面。当你已经安装并配置好你的DM之后，你就可以通过'actions buttons'菜单项来切换用户。
+
+想要不用GDM而能切换用户, 需要安装一个DM:
 
 *   For LXDM - [LXDM#Simultaneous users and switching users](/index.php/LXDM#Simultaneous_users_and_switching_users "LXDM").
 *   For LightDM - [LightDM (简体中文)#Xfce4 下多用户切换](/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Xfce4_.E4.B8.8B.E5.A4.9A.E7.94.A8.E6.88.B7.E5.88.87.E6.8D.A2 "LightDM (简体中文)").
 
-只要 [Display manager](/index.php/Display_manager "Display manager") 有切换用户的功能，Xfce4都是可以支持的，比如 [LightDM](/index.php/LightDM "LightDM") 和 [GDM](/index.php/GDM "GDM") 。关于你所使用的DM的信息，需要参看其wiki页面。当你已经安装并配置好你的DM之后，你就可以通过'actions buttons'菜单项来切换用户。
+#### 禁用保存的会话
 
-#### 禁用会话
+可以通过下面命令禁用某个用户的会话：
 
-Xfce kiosk 模式可以用来彻底禁用对话的保存。为了禁用对话，创建或者编辑 `/etc/xdg/xfce4/kiosk/kioskrc` 并加入如下的行：
+```
+$ xfconf-query -t bool -c xfce4-session -p /general/SaveOnExit -s false
+
+```
+
+然后进入 *Applications* -> *Settings* -> *Session and Startup* -> *Sessions* 并点击 *Clear saved sessions* 按钮.
+
+**Tip:** 如果上面命令无法持久生效，可以用下面命令：`xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false`
+
+Xfce [kiosk](https://wiki.xfce.org/howto/kiosk_mode) 模式可以用来彻底禁用对话的保存。为了禁用对话，创建或者编辑 `/etc/xdg/xfce4/kiosk/kioskrc` 并加入如下的行：
 
 ```
 [xfce4-session]
@@ -249,7 +257,7 @@ SaveSession=NONE
 
 ```
 
-如果kiosk模式不能工作，用户可以给对话目录设置 r/o 权限：
+如果kiosk模式不能工作，用户可以给对话目录设置只读权限：
 
 ```
 $ rm ~/.cache/sessions/* && chmod 500 ~/.cache/sessions
@@ -260,23 +268,28 @@ $ rm ~/.cache/sessions/* && chmod 500 ~/.cache/sessions
 
 #### 默认窗口管理器
 
-**注意:** 为了使你做的更改能起作用，在设置后你必须清楚以保存的会话，并确保初次登出时没有勾选保存会话。当更改奇效后，可以再开启保存会话
+**注意:** 为了应用更改，在设置后必须清除已经保存的会话，并确保初次登出时没有勾选保存会话。更改生效后，可以再开启保存会话
 
-窗口管理器的全局设定保存在 `/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml`。单独用户的配置，可以通过执行下面的命令获得：
+窗口管理器的设定保存在
+
+*   /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml - 系统设置
+*   ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml - 用户设置
+
+单个用户的默认窗口管理器可以用下面命令修改：
 
 ```
-$ cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
+$ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa **wm_name**
 
 ```
-这些文件中，窗口管理器的配置只有在 **Client0_Command**下面的才会起作用。此行必须把 `<value type="string" value="xfwm4"/>` 改为 `<value type="string" value="window_manager_executable"/>` 
 
-也可以运行命令 `window_manager --replace`， 用你的窗口管理器的名字来替代其中的 **window_manger**，比如 `metacity`。
+下面命令增加参数:
 
-如果使能了保存会话，在你登出时还在运行的窗口，在你下次登入是会自动打开运行。
+```
+$ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -t string -s **wm_name** -s **--wm-option**
 
-**注意:** 如果你使用了自启动列表来启动你的窗口管理器，那么建议你禁用保存会话。如果保存会话没有使能，窗口管理器可以会在登入时启动两次。
+```
 
-如果你不想用保存会话，你也可以添加把需要的窗口管理器启动添加到Xfce的自启动列表。可以在主菜单中 *Settings Manager > Session and Startup > Application Autostart*然后点击 *Add*。在 *Command* 输入正确的命令启动需要的窗口管理器，然后可以起添加名字和描述。点击 *Ok* ，然后登出再登入，就能生效。（原谅这个翻译，我并不使用中文的Xfce界面，所以并不知道这些设置对应的翻译是怎么样的，请求别人翻译）
+要修改整个系统的默认窗口管理器，需要手动编辑配置文件，将 *xfwm4* 修改为需要的管理器。可以使用 `<value type="string" value="**--wm-option**"/>` 增加额外的参数。
 
 ### 更换主题
 
@@ -337,7 +350,7 @@ $ cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml ~/.config/xfce4
 
 ```
 
-如果仍然失败，就到论坛发贴求助，或者到OSS官方论坛查看[[1]](http://www.4front-tech.com/forum/)
+如果仍然失败，就到论坛发贴求助，或者到OSS官方论坛查看[[2]](http://www.4front-tech.com/forum/)
 
 #### 使用快捷键改变音量
 
@@ -544,7 +557,7 @@ ColorPalette16=#eeeeeeeeecec
 
 ### 颜色管理
 
-Xfce has no native support for colour management. [[2]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
+Xfce has no native support for colour management. [[3]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
 
 ### 多显示器
 

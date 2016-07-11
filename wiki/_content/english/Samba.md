@@ -64,7 +64,7 @@ Otherwise, smbd will fail to start.
 
 ### Creating a share
 
-Edit `/etc/samba/smb.conf`, scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory. However, users cannot actually log in unless they add a users wildcard.
+Open `/etc/samba/smb.conf` and scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory. However, users cannot actually log in unless you add a users wildcard.
 
  `/etc/samba/smb.conf` 
 ```
@@ -76,7 +76,7 @@ Edit `/etc/samba/smb.conf`, scroll down to the **Share Definitions** section. Th
    valid users = %S
 ```
 
-It also creates a share for printers by default. There are a number of commented sample configurations included. More information about available options for shared resources can be found in `man smb.conf`. [There](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) is also an on-line version available.
+The default config file also shares your printers and contains several commented sample configurations. For more information about available options you can read the `smb.conf` man page (which is also available [online](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html)).
 
 On Windows side, be sure to change `smb.conf` to the in-use Windows Workgroup (default: `WORKGROUP`).
 

@@ -10,16 +10,16 @@ This page uses a table to display the correspondence of [package management](htt
 *   The command `pkgfile` can be found in the [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) package.
 
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SUSE/openSUSE** | **Gentoo** |
-| Install a package(s) by name | pacman -S | dnf install | apt-get install | zypper install
+| Install a package(s) by name | pacman -S | dnf install | apt install | zypper install
 zypper in | emerge [-a] |
-| Remove a package(s) by name | pacman -Rs | dnf remove | apt-get autoremove | zypper remove
+| Remove a package(s) by name | pacman -Rs | dnf remove | apt autoremove | zypper remove
 zypper rm | emerge -C |
-| Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | pacman -Ss | dnf search | apt-cache search | zypper search
+| Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | pacman -Ss | dnf search | apt search | zypper search
 zypper se [-s] | emerge -S |
-| Upgrade Packages - Install packages which have an older version already installed | pacman -Syu | dnf upgrade | apt-get update; apt-get upgrade | zypper update zypper up | emerge -u world |
-| Upgrade Packages - Another form of the update command, which can perform more complex updates -- like distribution upgrades. When the usual update command will omit package updates, which include changes in dependencies, this command can perform those updates. | pacman -Syu | dnf distro-sync | apt-get dist-upgrade | zypper dup | emerge -uDN world |
-| Reinstall given Package - Will reinstall the given package without dependency hassle. | pacman -S | dnf reinstall | apt-get install --reinstall | zypper install --force | emerge [-a] |
-| Installs local package file, e.g. app.rpm and uses the installation sources to resolve dependencies | pacman -U | dnf install | dpkg -i && apt-get install -f | zypper in /path/to/local.rpm | emerge |
+| Upgrade Packages - Install packages which have an older version already installed | pacman -Syu | dnf upgrade | apt update; apt upgrade | zypper update zypper up | emerge -u world |
+| Upgrade Packages - Another form of the update command, which can perform more complex updates -- like distribution upgrades. When the usual update command will omit package updates, which include changes in dependencies, this command can perform those updates. | pacman -Syu | dnf distro-sync | apt full-upgrade | zypper dup | emerge -uDN world |
+| Reinstall given Package - Will reinstall the given package without dependency hassle. | pacman -S | dnf reinstall | apt install --reinstall | zypper install --force | emerge [-a] |
+| Installs local package file, e.g. app.rpm and uses the installation sources to resolve dependencies | pacman -U | dnf install | apt install path/to/debfile | zypper in /path/to/local.rpm | emerge |
 | Updates package(s) with local packages and uses the installation sources to resolve dependencies | pacman -U | dnf upgrade | debi | emerge |
 | Use some magic to fix broken dependencies in a system | pacman dep level - pacman -Dk, shared lib level - findbrokenpkgs or lddd | dnf repoquery --unsatisfied | apt-get --fix-broken
 aptitude install | zypper verify | revdep-rebuild |
@@ -42,8 +42,8 @@ modify IgnorePkg array | dnf.conf <--”exclude” option (add/amend) | apt-mark
 | Install package(s) as dependency / without marking as explicitly required. | pacman -S --asdeps | aptitude install 'pkg&M' | emerge -1 |
 | ***Package information management*** |
 | Get a dump of the whole system information - Prints, Saves or similar the current state of the package management system. Preferred output is text or XML. (Note: Why either-or here? No tool offers the option to choose the output format.) | (see /var/lib/pacman/local) | (see /var/lib/rpm/Packages) | apt-cache stats | n/a | emerge --info |
-| Show all or most information about a package. The tools' verbosity for the default command vary. But with options, the tools are on par with each other. | pacman -[S|Q]i | dnf list, dnf info | apt-cache show / apt-cache policy | zypper info zypper if | emerge -S; emerge -pv; eix |
-| Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | pacman -Ss | dnf search | apt-cache search | zypper search zypper se [-s] | emerge -S |
+| Show all or most information about a package. The tools' verbosity for the default command vary. But with options, the tools are on par with each other. | pacman -[S|Q]i | dnf list, dnf info | apt show / apt-cache policy | zypper info zypper if | emerge -S; emerge -pv; eix |
+| Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | pacman -Ss | dnf search | apt search | zypper search zypper se [-s] | emerge -S |
 | Display changelogs | apt-get changelog |
 | e-mail delivery of package changes | apt-get install apt-listchanges |
 | Lists packages which have an update available. Note: Some provide special commands to limit the output to certain installation sources, others use options. | pacman -Qu | dnf list updates, dnf check-update | apt-get upgrade -> n | zypper list-updates zypper patch-check (just for patches) | emerge -uDNp world |

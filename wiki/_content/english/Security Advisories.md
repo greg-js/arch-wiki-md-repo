@@ -39,6 +39,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### July 2016
 
+*   [10 July 2016] [ASA-201607-4](https://lists.archlinux.org/pipermail/arch-security/2016-July/000664.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) arbitrary code execution
 *   [05 July 2016] [ASA-201607-3](https://lists.archlinux.org/pipermail/arch-security/2016-July/000663.html) [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) arbitrary code execution
 *   [05 July 2016] [ASA-201607-2](https://lists.archlinux.org/pipermail/arch-security/2016-July/000662.html) [xerces-c](https://www.archlinux.org/packages/?name=xerces-c) denial of service
 *   [05 July 2016] [ASA-201607-1](https://lists.archlinux.org/pipermail/arch-security/2016-July/000661.html) [libarchive](https://www.archlinux.org/packages/?name=libarchive) arbitrary code execution

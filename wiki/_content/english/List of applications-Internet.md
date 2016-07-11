@@ -13,9 +13,8 @@
         *   [1.3.1 Console](#Console)
         *   [1.3.2 Graphical](#Graphical)
             *   [1.3.2.1 Gecko-based](#Gecko-based)
-                *   [1.3.2.1.1 Firefox forks](#Firefox_forks)
             *   [1.3.2.2 Blink-based](#Blink-based)
-            *   [1.3.2.3 Webkit-based](#Webkit-based)
+            *   [1.3.2.3 WebKit-based](#WebKit-based)
                 *   [1.3.2.3.1 Browsers based on webkitgtk/webkitgtk2/qtwebkit](#Browsers_based_on_webkitgtk.2Fwebkitgtk2.2Fqtwebkit)
             *   [1.3.2.4 Other](#Other)
     *   [1.4 File sharing](#File_sharing)
@@ -151,19 +150,11 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 
-###### Firefox forks
-
-**Warning:** The following browsers are third-party builds of Firefox. Please direct any support requests to their respective creators.
-
-*   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — Web browser distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
+*   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — A Firefox fork distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
 
 	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/)
 
-*   **[Iceweasel](https://en.wikipedia.org/wiki/Mozilla_Corporation_software_rebranded_by_the_Debian_project#Iceweasel "wikipedia:Mozilla Corporation software rebranded by the Debian project")** — Fork of Firefox developed by Debian Linux. The main difference is that it does not include any trademarked Mozilla artwork. See [glandium](http://web.glandium.org/blog/?p=97) for more information on Iceweasel's existence.
-
-	[https://wiki.debian.org/Iceweasel](https://wiki.debian.org/Iceweasel) || [iceweasel](https://aur.archlinux.org/packages/iceweasel/)
-
-*   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) "wikipedia:Pale Moon (web browser)")** — Fork based on Firefox, using a Firefox 3+ interface through selective use of add-ons. Firefox add-ons may not be compatible. [[1]](https://addons.palemoon.org/firefox/incompatible/) Compiled for SSE2, with disabled optional code and no support for newer Firefox features such as cache2, e10s, and OTMC.
+*   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) "wikipedia:Pale Moon (web browser)")** — A Firefox fork focussing on speed, with a pre-Firefox 29 interface. Firefox add-ons may not be compatible. [[1]](https://addons.palemoon.org/firefox/incompatible/) Compiled for SSE2, with disabled optional code and no support for newer Firefox features such as cache2, e10s, and OTMC.
 
 	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)
 
@@ -191,17 +182,13 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
 
-*   **[Otter Browser](https://en.wikipedia.org/wiki/Otter_Browser "wikipedia:Otter Browser")** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
-
-	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser-qtwebengine-git](https://aur.archlinux.org/packages/otter-browser-qtwebengine-git/)
-
 *   **Quill** — A simple web browser that hopefully won't leave you asking "Why is the RAM gone?".
 
 	[https://bitbucket.org/xiannox/quill](https://bitbucket.org/xiannox/quill) || [quill-git](https://aur.archlinux.org/packages/quill-git/)
 
-*   **[QupZilla v2.x](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — New and very fast open source browser based on QWebEngine, written in Qt framework.
+*   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — New and very fast open source browser based on QtWebEngine, written in Qt framework.
 
-	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla-git](https://aur.archlinux.org/packages/qupzilla-git/)
+	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
 
 *   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced browser made with the power user in mind.
 
@@ -211,9 +198,9 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[https://browser.yandex.ru/beta/](https://browser.yandex.ru/beta/) || [yandex-browser-beta](https://aur.archlinux.org/packages/yandex-browser-beta/)
 
-##### Webkit-based
+##### WebKit-based
 
-See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webkit").
+See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit").
 
 *   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 
@@ -233,7 +220,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **Surf 2** — A simple web browser based on WebKit2GTK+.
 
-	[http://surf.suckless.org](http://surf.suckless.org) || [surf2](https://aur.archlinux.org/packages/surf2/)
+	[http://surf.suckless.org](http://surf.suckless.org) || [surf-webkit2gtk-git](https://aur.archlinux.org/packages/surf-webkit2gtk-git/)
 
 *   **Webby** — Allows to use web apps as regular desktop apps, integrated with the OS, without tabs and using the default system launcher.
 
@@ -241,7 +228,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 ###### Browsers based on webkitgtk/webkitgtk2/qtwebkit
 
-**Warning:** The following browsers are based on one of three webkit ports that are today considered insecure and outdated. GTK+ browsers should be switching to webkit2gtk and Qt browsers to qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
+**Warning:** The following browsers are based on one of three WebKit ports that are today considered insecure and outdated. GTK+ browsers should be switching to webkit2gtk and Qt browsers to qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
 
 *   **[Arora](https://en.wikipedia.org/wiki/Arora_(browser) "wikipedia:Arora (browser)")** — Cross-platform web browser built using QtWebKit. Development stopped in January 2012.
 
@@ -266,10 +253,6 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 *   **Otter-browser** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
 	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
-
-*   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — New and very fast open source browser based on WebKit core, written in Qt framework.
-
-	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
 
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebKit.
 
@@ -507,7 +490,7 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 *   **[Sharelin](https://en.wikipedia.org/wiki/Sharelin "wikipedia:Sharelin")** — Gnutella2 only client with a web UI.
 
-	[http://sourceforge.net/apps/mediawiki/sharelin](http://sourceforge.net/apps/mediawiki/sharelin) || [sharelin](https://aur.archlinux.org/packages/sharelin/)
+	[https://sourceforge.net/projects/sharelin/](https://sourceforge.net/projects/sharelin/) || [sharelin](https://aur.archlinux.org/packages/sharelin/)
 
 #### Video downloaders
 

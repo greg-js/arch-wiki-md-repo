@@ -267,13 +267,7 @@ The folder `satellites` should have the following permissions set:
 
 #### Initialize Gitlab database
 
-Start the Redis server before we create the database:
-
-```
-# systemctl start redis
-# systemctl enable redis
-
-```
+Start the Redis server before we create the database [start/enable](/index.php/Start/enable "Start/enable") the `redis` systemd unit.
 
 Now you have to install bundler and the required gems with:
 
@@ -374,12 +368,7 @@ Make sure [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQ
 
 If needed see [#Redis Over Unix Socket](#Redis_Over_Unix_Socket) example if GitLab cannot load `redis` correctly.
 
-After starting the database backends, we can start GitLab with its webserver (Unicorn):
-
-```
-# systemctl start gitlab-sidekiq gitlab-unicorn
-
-```
+After starting the database backends, we can start GitLab with its webserver (Unicorn) by [starting](/index.php/Start "Start") both the `gitlab-sidekiq` and `gitlab-unicorn` systemd units.
 
 With the following commands we check if the steps we followed so far are configured properly:
 

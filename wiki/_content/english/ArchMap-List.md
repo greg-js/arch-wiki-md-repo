@@ -1014,5 +1014,6 @@ You can use the following website to get your device's coordinates along with a 
 -23.588182,-46.610116 "gaballench" # São Paulo, Brazil
 52.7577027,7.2108198 "SunRed" # Haren (Ems), Lower Saxony, Germany
 42.351812, -71.141449 "jethrosun7" # Boston, MA, USA
+55.992348, 92.796414 "Prototik" # Krasnoyarsk, Russia
 
 ```

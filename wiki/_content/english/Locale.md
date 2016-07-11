@@ -6,7 +6,8 @@ Locales are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and 
 *   [2 Setting the locale](#Setting_the_locale)
     *   [2.1 Setting the system locale](#Setting_the_system_locale)
     *   [2.2 Overriding system locale per user session](#Overriding_system_locale_per_user_session)
-    *   [2.3 Other uses](#Other_uses)
+    *   [2.3 Make locale changes immediate](#Make_locale_changes_immediate)
+    *   [2.4 Other uses](#Other_uses)
 *   [3 Variables](#Variables)
     *   [3.1 LANG: default locale](#LANG:_default_locale)
     *   [3.2 LANGUAGE: fallback locales](#LANGUAGE:_fallback_locales)
@@ -85,15 +86,6 @@ Alternatively, manually [edit](/index.php/Edit "Edit") or [create](/index.php/Cr
 
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 
-To make the above change immediate do:
-
-```
-$ export LANG=*en_US.UTF-8*
-
-```
-
-Otherwise, the change will not take affect until the system is rebooted.
-
 See [#Variables](#Variables), `man 5 locale.conf` and related for details.
 
 ### Overriding system locale per user session
@@ -106,6 +98,17 @@ The precedence of these `locale.conf` files is defined in `/etc/profile.d/locale
 
 *   This can also allow keeping the logs in `/var/log` in English while using the local language in the user environment.
 *   You can create a `/etc/skel/.config/locale.conf` file so that any new users added using *useradd* and the `-m` option will have `~/.config/locale.conf` automatically generated.
+
+### Make locale changes immediate
+
+Once system and user `locale.conf` files have been created or edited, their new values will take effect for new sessions at login. To have the current environment use the new settings unset `LANG` and source `/etc/profile.d/locale.sh`:
+
+```
+$ LANG= source /etc/profile.d/locale.sh
+
+```
+
+**Note:** The `LANG` variable has to be unset first, otherwise `locale.sh` will not update the values from `locale.conf`. Only new and changed variables will be updated; variables removed from `locale.conf` will still be set in the session.
 
 ### Other uses
 

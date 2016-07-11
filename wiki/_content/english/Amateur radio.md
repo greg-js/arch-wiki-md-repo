@@ -32,7 +32,7 @@ then logoff and logon.
 
 *   **Hamlib** — provides an interface between hardware and radio control programs. It is a software layer to facilitate the control of radios and other hardware (eg. for logging, digital modes) and is not a stand-alone application.
 
-	[http://sourceforge.net/apps/mediawiki/hamlib/](http://sourceforge.net/apps/mediawiki/hamlib/) || [hamlib](https://aur.archlinux.org/packages/hamlib/)
+	[https://sourceforge.net/projects/hamlib/](https://sourceforge.net/projects/hamlib/) || [hamlib](https://aur.archlinux.org/packages/hamlib/)
 
 *   **Soundmodem** — was written by Tom Sailer (HB9JNX/AE4WA) to allow a standard PC soundcard to act as a packet radio modem for use with the various AX.25 communication modes. The data rate can be as high as 9600 baud depending on the hardware and application. Soundmodem can be used as a KISS modem on the serial port or as an AX.25 network device. To use soundmodem as an MKISS network device, the kernel must be re-built with MKISS modules. More information is in the [Xastir wiki](http://www.xastir.org/wiki/index.php/HowTo:SoundModem)
 

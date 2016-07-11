@@ -112,7 +112,7 @@ This method has the advantage that you do not need to recompile your kernel, and
 First, create the following folder structure:
 
 ```
-$ mkdir kernel/firmware/acpi
+$ mkdir -p kernel/firmware/acpi
 
 ```
 
@@ -123,14 +123,14 @@ $ cp dsdt.aml ssdt1.aml kernel/firmware/acpi
 
 ```
 
-In the folder where the newly created `kernel/` folder resides, run:
+Within the same folder where the newly created `kernel/` folder resides, run:
 
 ```
 $ find kernel | cpio -H newc --create > acpi_override
 
 ```
 
-This is the CPIO archive containing the fixed ACPI tables. To use them, copy the archive to the `boot` directory.
+This creates the CPIO archive containing the fixed ACPI tables. Copy the archive to the `boot` directory.
 
 ```
 # cp acpi_override /boot
@@ -148,7 +148,7 @@ options  root=PARTUUID=ec9d5998-a9db-4bd8-8ea0-35a45df04701 resume=PARTUUID=58d0
 
 ```
 
-This is it. Now all that is left to do is to reboot and to [verify the result.](#Verify_successful_override)
+Now all that is left to do is to reboot and to [verify the result.](#Verify_successful_override)
 
 ### Compiling into the kernel
 

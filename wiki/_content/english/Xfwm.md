@@ -78,7 +78,7 @@ Alternatively, (un)check *Window Manager Tweaks* > *Accessibility* > *Automatica
 
 [Install](/index.php/Install "Install") [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) from the [official repositories](/index.php/Official_repositories "Official repositories")
 
-**Warning:** Installing `xfce4-settings` may change the default applications for certain tasks. See [xdg-open](/index.php/Xdg-open "Xdg-open") to set the default applications to your liking.
+**Note:** Installing [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) may change the default applications for certain tasks. See [xdg-open](/index.php/Xdg-open "Xdg-open") to set the default applications to your liking.
 
 ### Additional Themes
 

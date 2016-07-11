@@ -61,7 +61,7 @@ If you want to use the capability/feature, perhaps because an Ethernet connectio
 
 ```
 # iw dev wlan0 interface add wlan0_sta type managed addr 12:34:56:78:ab:cd  
-# iw dev wlan0 interface add wlan0_ap  type wds addr 12:34:56:78:ab:ce
+# iw dev wlan0 interface add wlan0_ap  type managed addr 12:34:56:78:ab:ce
 
 ```
 

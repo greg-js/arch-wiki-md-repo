@@ -74,7 +74,11 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-See [Partitioning](/index.php/Partitioning "Partitioning") for details; some special partitions may be needed, see [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") and [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
+Identify the device names with `lsblk` (results ending in `rom`, `loop` or `airoot` can be ignored), and print existing [partition tables](/index.php/Partition_table "Partition table") with `fdisk -l */dev/sda* print`. To modify tables, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or [gdisk](/index.php/Gdisk "Gdisk") for GPT only.
+
+At the minimum, a partition must be available for the `/` directory; [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+
+If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 
 ### Format the partitions
 

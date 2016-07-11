@@ -198,11 +198,11 @@ Make the script executable:
 
 ```
 
-Now configure lightdm to run the script by editing the `[SeatDefaults]` section in `/etc/lightdm/lightdm.conf`:
+Now configure lightdm to run the script by editing the `[Seat:*]` section in `/etc/lightdm/lightdm.conf`:
 
  `/etc/lightdm/lightdm.conf` 
 ```
-[SeatDefaults]
+[Seat:*]
 display-setup-script=/etc/lightdm/display_setup.sh
 ```
 

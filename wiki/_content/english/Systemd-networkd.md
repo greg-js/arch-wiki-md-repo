@@ -328,6 +328,8 @@ Below is a basic structure of a *Mydevice*.link file:
 
 The `[Match]` section will determine if a given link file may be applied to a given device, when the `[Link]` section specifies the device configuration.
 
+**Tip:** Use `udevadm test-builtin net_setup_link /sys/path/to/network/device` to diagnose problems with `.link` files.
+
 #### [Match] section
 
 Most common keys are `MACAddress=`, `Host=` and `Virtualization=`.

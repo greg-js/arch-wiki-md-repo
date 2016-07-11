@@ -103,16 +103,10 @@ Alternatively, create the file `~/.config/menus/xfce-applications.menu` manually
 <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
   "[http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd](http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd)">
 
-```
-
-```
 <Menu>
     <Name>Xfce</Name>
     <MergeFile type="parent">/etc/xdg/menus/xfce-applications.menu</MergeFile>
 
-```
-
-```
     <Exclude>
         <Filename>xfce4-run.desktop</Filename>
         <Filename>exo-terminal-emulator.desktop</Filename>
@@ -123,9 +117,6 @@ Alternatively, create the file `~/.config/menus/xfce-applications.menu` manually
         <Filename>xfhelp4.desktop</Filename>
     </Exclude>
 
-```
-
-```
     <Layout>
         <Merge type="all"/>
         <Separator/>
@@ -235,12 +226,12 @@ See [List of applications/Security#Screen lockers](/index.php/List_of_applicatio
 
 #### User switching
 
-**Note:** For the User Switch action button to work without GDM, a workaround is required:
+Xfce4 has support for user switching when used with a [Display manager](/index.php/Display_manager "Display manager") that has this functionality - examples being [LightDM](/index.php/LightDM "LightDM") and [GDM](/index.php/GDM "GDM"). Please consult your display manager's wiki page for more information. When you have a display manager installed and configured correctly you can switch users from the 'action buttons' menu item in the panel.
+
+For the User Switch action button to work without GDM, a workaround is required:
 
 *   For LXDM - [LXDM#Simultaneous users and switching users](/index.php/LXDM#Simultaneous_users_and_switching_users "LXDM").
 *   For LightDM - [LightDM#User switching under Xfce4](/index.php/LightDM#User_switching_under_Xfce4 "LightDM").
-
-Xfce4 has support for user switching when used with a [Display manager](/index.php/Display_manager "Display manager") that has this functionality - examples being [LightDM](/index.php/LightDM "LightDM") and [GDM](/index.php/GDM "GDM"). Please consult your display manager's wiki page for more information. When you have a display manager installed and configured correctly you can switch users from the 'action buttons' menu item in the panel.
 
 #### Disable saved sessions
 
@@ -456,7 +447,7 @@ ColorPalette16=#eeeeeeeeecec
 
 ### Colour management
 
-Xfce has no native support for colour management. [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
+Xfce has no native support for colour management. [[6]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
 
 ### Multiple monitors
 
@@ -575,7 +566,7 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 ### Keyboard settings are not saved in xkb-plugin
 
-There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[6]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
+There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[7]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
 
 ### NVIDIA and xfce4-sensors-plugin
 
@@ -583,7 +574,7 @@ To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https:/
 
 ### Panel applets keep being aligned on the left
 
-Add a separator someplace before the right end and set its "expand" property. [[7]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
+Add a separator someplace before the right end and set its "expand" property. [[8]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
 
 ### Preferred Applications preferences have no effect
 

@@ -2,7 +2,7 @@ Desde que Intel desarrolla y proporciona controladores de código abierto, las t
 
 Para obtener una lista completa de los modelos GPU-Intel, y los chipsets y CPUs correspondientes, consulte [esta comparación en la wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
 
-**Nota:** Las tarjetas gráficas basadas en el chip PowerVR (series [GMA 500](/index.php/GMA_500 "GMA 500") y [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600")) no son compatibles con los controladores de código abierto.
+**Nota:** Las tarjetas gráficas basadas en el chip PowerVR (series [GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500") y [GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600")) no son compatibles con los controladores de código abierto.
 
 ## Contents
 

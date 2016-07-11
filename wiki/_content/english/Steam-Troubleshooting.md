@@ -91,21 +91,23 @@ You can work around the issue by forcing Steam to use the up-to-date system vers
 
 ##### Using the dynamic linker
 
-The dynamic linker (`man 8 ld.so`) can be told to load specific libraries using the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable").
+The dynamic linker (`man 8 ld.so`) can be told to load specific libraries using the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable"), in your own wrapper, for example:
+
+ `/usr/local/bin/steam` 
+```
+#!/bin/sh
+LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' steam "$@"
 
 ```
-LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' steam
 
-```
+**Note:** The '$LIB' above is not a variable but a directive to the linker to pick the appropriate architecture for the library. The single quotes are required to prevent the shell from treating $LIB as a variable.
 
-If you wish to use this method in a .desktop shortcut, you can use this command in the **Exec=** field.
+If you wish to use this method in a .desktop shortcut instead, you can use this command in the **Exec=** field.
 
 ```
 Exec=env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam %U
 
 ```
-
-**Note:** The '$LIB' above is not a variable but a directive to the linker to pick the appropriate architecture for the library. The single quotes are required to prevent the shell from treating $LIB as a variable.
 
 ##### Deleting the runtime libraries
 
@@ -207,6 +209,22 @@ An alternative workaround is to add the `libasound.so.*` library to the **LD_PRE
 LD_PRELOAD='/usr/$LIB/libasound.so.2 '${LD_PRELOAD} steam
 
 ```
+
+If audio still won't work, adding the Pulseaudio-libs to the **LD_PRELOAD** variable may help:
+
+```
+LD_PRELOAD='/usr/$LIB/libpulse.so.0 /usr/$LIB/libpulse-simple.so.0 '${LD_PRELOAD}
+
+```
+
+Be adviced that their names may change over time. If so, it is necessary to take a look in
+
+```
+~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu
+
+```
+
+and find the new libs and their versions.
 
 Bugs reports have been filed: [#3376](https://github.com/ValveSoftware/steam-for-linux/issues/3376) and [#3504](https://github.com/ValveSoftware/steam-for-linux/issues/3504)
 

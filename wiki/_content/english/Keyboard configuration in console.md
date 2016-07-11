@@ -14,16 +14,7 @@ Keyboard mappings (keymaps) for [virtual console](https://en.wikipedia.org/wiki/
 
 ## Viewing keyboard settings
 
-You can use the following command to view the current keyboard configurations, amongst other localised settings:
-
- `$ localectl status` 
-```
-   System Locale: LANG=en_GB.utf8
-                  LC_COLLATE=C
-       VC Keymap: cz-qwertz
-      X11 Layout: cz
-
-```
+Use `localectl status` to view the current keyboard configurations.
 
 ## Setting keyboard layout
 
@@ -80,7 +71,7 @@ The `--no-convert` option can be used to prevent `localectl` from automatically 
 
 ### Temporary configuration
 
-Of course it is possible to set a keymap just for current session. This is useful for testing different keymaps, solving problems etc.
+It is possible to set a keymap just for current session. This is useful for testing different keymaps, solving problems etc.
 
 The *loadkeys* tool is used for this purpose, it is used internally by [systemd](/index.php/Systemd "Systemd") when loading the keymap configured in `/etc/vconsole.conf`. It can be used very simply for this purpose:
 
@@ -136,8 +127,4 @@ WantedBy=multi-user.target
 
 ```
 
-```
-$ systemctl enable kbdrate.service
-$ systemctl start kbdrate.service
-
-```
+Then [start/enable](/index.php/Start/enable "Start/enable") the `kbdrate.service` systemd service.

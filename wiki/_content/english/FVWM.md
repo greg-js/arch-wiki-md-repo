@@ -372,7 +372,7 @@ The following [styles](#Style_command) might be useful:
 
 #### Colorsets
 
-Colorsets in FVWM are a set of four colors (a foreground color, a background color, a shadow color and a highlight color) as well as a an optional background pixmap. Any part of FVWM that uses a particular colorset will be affected if that colorset is changed.
+Colorsets in FVWM are a set of four colors (a foreground color, a background color, a shadow color and a highlight color) as well as an optional background pixmap. Any part of FVWM that uses a particular colorset will be affected if that colorset is changed.
 
 All colorsets are identified by a number. The first 40 colorsets, 0-39, are reserved. Those colorsets are documented on [sourceforge](http://fvwm-themes.sourceforge.net/doc/colorsets).
 

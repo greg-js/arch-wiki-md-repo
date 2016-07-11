@@ -17,6 +17,7 @@
     *   [1.10 Evo/Lution Linux](#Evo.2FLution_Linux)
     *   [1.11 TalkingArch](#TalkingArch)
     *   [1.12 Tux Hat Linux](#Tux_Hat_Linux)
+    *   [1.13 Velt OS](#Velt_OS)
 *   [2 移植到别的内核和构架](#.E7.A7.BB.E6.A4.8D.E5.88.B0.E5.88.AB.E7.9A.84.E5.86.85.E6.A0.B8.E5.92.8C.E6.9E.84.E6.9E.B6)
     *   [2.1 Arch BSD](#Arch_BSD)
     *   [2.2 Arch Linux ARM](#Arch_Linux_ARM)
@@ -149,6 +150,12 @@ TalkingArch 是 Arch Linux 的 live CD/USB 衍生版，经过修改之后包含�
 Tux Hat Linux的是一种轻型AwesomeWM的GNU/Linux LiveCD/DVD/USB ISO
 
 *   主页: [http://sourceforge.net/projects/tuxhatlinux/](http://sourceforge.net/projects/tuxhatlinux/)
+
+### Velt OS
+
+Velt OS提供一个轻型的Arch解决方案（目前仍为技术预览版）
+
+*   主页：[https://velt.io/](https://velt.io/)
 
 ## 移植到别的内核和构架
 

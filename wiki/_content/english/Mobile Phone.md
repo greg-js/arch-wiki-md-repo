@@ -1,6 +1,30 @@
+This page is going to express how to connect your mobile device.
+
+## Contents
+
+*   [1 Android](#Android)
+    *   [1.1 To install a ".apk" file](#To_install_a_.22.apk.22_file)
+*   [2 iPhone](#iPhone)
+*   [3 CDMA](#CDMA)
+*   [4 Samsung Galaxy SII](#Samsung_Galaxy_SII)
+
+## Android
+
+To manage your Android mobile file, please install [mtpfs](https://www.archlinux.org/packages/?name=mtpfs) .
+
+1\. Connect your phone with data wire.
+
+2\. Open the file manager. You will see your phone folder.(Remember to allow the computer to visit on the phone. )
+
+3\. Manage your file.
+
+### To install a ".apk" file
+
+See Android [[1]](https://wiki.archlinux.org/index.php/Android#Android_Debug_Bridge_.28ADB.29)
+
 ## iPhone
 
-You will need [libimobiledevice-git](https://aur.archlinux.org/packages/libimobiledevice-git/) and [libgpod-git](https://aur.archlinux.org/packages/libgpod-git/) compiled with afc support. You can use the [ifuse-git](https://aur.archlinux.org/packages/ifuse-git/) to mount your [iPod](/index.php/IPod "IPod") or if you use [GNOME](/index.php/GNOME "GNOME") you can compile [Gvfs](/index.php/Gvfs "Gvfs") with the option `--with-afc` [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gvfs).
+You will need [libimobiledevice-git](https://aur.archlinux.org/packages/libimobiledevice-git/) and [libgpod-git](https://aur.archlinux.org/packages/libgpod-git/) compiled with afc support. You can use the [ifuse-git](https://aur.archlinux.org/packages/ifuse-git/) to mount your [iPod](/index.php/IPod "IPod") or if you use [GNOME](/index.php/GNOME "GNOME") you can compile [Gvfs](/index.php/Gvfs "Gvfs") with the option `--with-afc` [[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gvfs).
 
 For more info see the [iPod](/index.php/IPod#iPhone.2FiPod_Touch "IPod") page.
 

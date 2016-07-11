@@ -379,7 +379,7 @@ pactl move-sink-input $INPUTID $BINAURALSINKNAME
 
 ## PulseAudio over network
 
-One of PulseAudio's unique features is its ability to stream audio from clients over TCP to a server running the PulseAudio daemon reliably within a LAN.
+One of PulseAudio's unique features is its ability to stream audio from clients over TCP to a server running the PulseAudio daemon reliably within a LAN. Ensure that client and server systems agree on the time (e.g. use NTP), or audio streams may be choppy or may not work at all.
 
 To accomplish this, one needs to enable module-native-protocol-tcp.
 
@@ -416,13 +416,7 @@ Change the LAN IP subnet to match that of the those clients you wish to have acc
 
 For the remote PulseAudio server to appear in the PulseAudio Device Chooser (`pasystray`), load the appropriate zeroconf modules, and enable the [Avahi](/index.php/Avahi "Avahi") [daemon](/index.php/Daemon "Daemon").
 
-On both machines, run:
-
-```
-$ systemctl start avahi-daemon
-$ systemctl enable avahi-daemon
-
-```
+On both machines, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `avahi-daemon` systemd unit.
 
 On the server, add `load-module module-zeroconf-publish` to `/etc/pulse/default.pa`, on the client, add `load-module module-zeroconf-discover` to `/etc/pulse/default.pa`. Now redirect any stream or complete audio output to the remote PulseAudio server by selecting the appropriate sink.
 

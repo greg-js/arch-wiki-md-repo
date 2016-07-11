@@ -140,11 +140,9 @@ mpv %c
 For a more general approach that can handle many 'tube' sites, you will need [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl). Then add the following command,
 
 ```
-youtube-dl -o - %c | mplayer - 
+youtube-dl -o - %c | mplayer -
 
 ```
-
-I used [mplayer](https://www.archlinux.org/packages/?name=mplayer) because i couldn't get it to work with mpv. Anyway, this is not as nice as mpv's support for YouTube links. Mpv gives you full control of position in the stream which is wonderful!
 
 ## Troubleshoot
 

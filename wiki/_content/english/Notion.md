@@ -90,6 +90,6 @@ to
 
 ## See also
 
-*   [http://sourceforge.net/apps/mediawiki/notion/index.php?title=Tour](http://sourceforge.net/apps/mediawiki/notion/index.php?title=Tour) - Tour of Notion
+*   [http://notion.sourceforge.net/](http://notion.sourceforge.net/) - Notion website
 *   [http://notion.sourceforge.net/notionconf/](http://notion.sourceforge.net/notionconf/) - Configuring and Extending Notion using LUA
-*   [http://sourceforge.net/apps/mediawiki/notion](http://sourceforge.net/apps/mediawiki/notion) - Notion Wiki
+*   [https://sourceforge.net/projects/notion/](https://sourceforge.net/projects/notion/) - Notion Wiki

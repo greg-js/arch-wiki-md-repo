@@ -18,7 +18,7 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 
 ## Disable Secure Boot
 
-Secure Boot feature can be disabled from the firmware interface, see [Rod Smith's Disabling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html#disable).
+Secure Boot feature can be disabled from the firmware interface. Access the firmware configuration. You can do it by pressing a special key during the boot process, when the special key depends on the firmware; it is usually one of the key ESC, F2, DEL or possibly another F<n> key. If that didn't work for you and you can boot Windows, you can force a reboot into the firmware configuration in the following way (for Windows 10): Settings -> Update & Security -> Recovery -> Advanced startup (Restart now) -> Troubleshoot -> Advanced options -> UEFI Firmware settings -> restart. You should find an option to disable secure boot. Note that some motherboards (this is the case in a Packard Bell laptop) only allow to disable secure boot if you have set an administrator password (that can be removed afterwards). see also [Rod Smith's Disabling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html#disable).
 
 ## Using a signed boot loader
 

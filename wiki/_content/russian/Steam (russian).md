@@ -13,12 +13,12 @@
     *   [3.1 Запуск игр с дополнительными параметрами](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B8.D0.B3.D1.80_.D1.81_.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.BC.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D0.B0.D0.BC.D0.B8)
     *   [3.2 Отключение отдельных композиторов при запуске игр](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D1.82.D0.B4.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.D0.B8.D0.B3.D1.80)
     *   [3.3 Using native runtime](#Using_native_runtime)
-    *   [3.4 Skins for Steam](#Skins_for_Steam)
-        *   [3.4.1 Steam skin manager](#Steam_skin_manager)
+    *   [3.4 Оформление для Steam](#.D0.9E.D1.84.D0.BE.D1.80.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BB.D1.8F_Steam)
+        *   [3.4.1 Менеджер тем Steam](#.D0.9C.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80_.D1.82.D0.B5.D0.BC_Steam)
     *   [3.5 Changing the Steam friends notification placement](#Changing_the_Steam_friends_notification_placement)
         *   [3.5.1 Use a skin](#Use_a_skin)
         *   [3.5.2 On-the-fly patch](#On-the-fly_patch)
-    *   [3.6 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
+    *   [3.6 Предотвращение дампов памяти потребляющих RAM](#.D0.9F.D1.80.D0.B5.D0.B4.D0.BE.D1.82.D0.B2.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B0.D0.BC.D0.BF.D0.BE.D0.B2_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D0.B8_.D0.BF.D0.BE.D1.82.D1.80.D0.B5.D0.B1.D0.BB.D1.8F.D1.8E.D1.89.D0.B8.D1.85_RAM)
 *   [4 Устранение неполадок](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.BF.D0.BE.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA)
 *   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
@@ -202,21 +202,21 @@ If Steam displays errors related to libcanberra-gtk3 install [lib32-libcanberra]
 
 While most games will run with the minimal set of libraries listed here some games will require additional libraries to run. For a list of known game-compatibility libraries consult the [game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") page.
 
-### Skins for Steam
+### Оформление для Steam
 
-**Note:** Using skins that are not up-to-date with the version of the Steam client may cause visual errors.
+**Note:** Использование устаревших скинов Steam может привести к визуальными/графическим ошибкам.
 
-The Steam interface can be fully customized by copying its various interface files in its skins directory and modifying them.
+Графический интерфейс Steam может быть полностью кастомизирован, достаточно скопировать файлы тем в их директорию и изменить.
 
-An extensive list of skins can be found on [Steam's forums](http://forums.steampowered.com/forums/showthread.php?t=1161035).
+Большой список тем можно найти на [форуме Steam](http://forums.steampowered.com/forums/showthread.php?t=1161035).
 
-#### Steam skin manager
+#### Менеджер тем Steam
 
-The process of applying a skin to Steam can be greatly simplified by installing the [steam-skin-manager](https://aur.archlinux.org/packages/steam-skin-manager/) package. The package also comes with a hacked version of the Steam launcher which allows the window manager to draw its borders on the Steam window.
+Смена различных тем может быть упрощена установкой пакета [steam-skin-manager](https://aur.archlinux.org/packages/steam-skin-manager/). Пакет идёт вместе с изменённым Steam-лаунчером, позволяющим оконным менеджерам отрисовывать границы окна на клиенте Steam.
 
-As a result, skins for Steam will come in two flavors, one with and one without window buttons. The skin manager will prompt you whether you use the hacked version or not, and will automatically apply the theme corresponding to your GTK+ theme if it is found. You can of course still apply another skin if you want.
+Как результат, темы для Steam идут двух видов - с кнопками окна и без них. Менеджер тем предупредит вас, используете ли вы изменённую версию клиента и автоматически применит соответствующую тему GTK+. Вы так же можете использовать другую тему, если захотите.
 
-The package ships with two themes for the default Ubuntu themes, Ambiance and Radiance.
+Пакет распространяется с двумя Ubuntu-темами по умолчанию - Ambiance и Radiance.
 
 ### Changing the Steam friends notification placement
 
@@ -320,16 +320,16 @@ And the launch options should be something like the following.
 
 There is another file in the same folder as **gameoverlay.style** folder called **steam.style** which has an entry with the exact same function as the file we patched and will change the notification corner for the desktop only (not in-game), but for editing this file to actually work it has to be set before steam is launched and the folder set to read-only so steam cannot re-write the file. Therefore the only two ways to modify that file is to make the directory read only so steam cannot change it when it is launched (can break updates) or making a skin like in method 1.
 
-### Prevent Memory Dumps Consuming RAM
+### Предотвращение дампов памяти потребляющих RAM
 
-Every time steam crashes, it writes a memory dump to **/tmp/dumps/**. If Steam falls into a crash loop, and it often does, the dump files can start consuming considerable space. Since **/tmp** on Arch is mounted as tmpfs, memory and swap file can be consumed needlessly. To prevent this, you can make a symbolic link to **/dev/null** or create and modify permissions on **/tmp/dumps**. Then Steam will be unable to write dump files to the directory. This also has the added benefit of Steam not uploading these dumps to Valve's servers.
+Каждый раз, когда steam крашится, он записывает дамп памяти в **/tmp/dumps/**. Если Steam часто падает в циклическую ошибку, то дамп-файлы могут потреблять значительное количество места. Поскольку **/tmp** в Arch примонтирован как tmpfs, память и swap файл будут потребляться без необходимости. Что-бы предотвратить это, вы можете создать символическую ссылку в **/dev/null** или создать и изменить права доступа **/tmp/dumps**. После этого Steam не сможет записывать дампы в эту директорию. Это также заставит Steam не выгружать дампы на сервера Valve.
 
 ```
 # ln -s /dev/null /tmp/dumps
 
 ```
 
-or
+или
 
 ```
 # mkdir /tmp/dumps

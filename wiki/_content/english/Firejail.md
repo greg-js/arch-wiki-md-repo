@@ -4,11 +4,11 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Paths With Spaces](#Paths_With_Spaces)
+    *   [2.1 Paths with spaces](#Paths_with_spaces)
 *   [3 Usage](#Usage)
-    *   [3.1 Private Mode](#Private_Mode)
-    *   [3.2 Using Firejail by Default](#Using_Firejail_by_Default)
-        *   [3.2.1 Desktop Files](#Desktop_Files)
+    *   [3.1 Private mode](#Private_mode)
+    *   [3.2 Using Firejail by default](#Using_Firejail_by_default)
+        *   [3.2.1 Desktop files](#Desktop_files)
         *   [3.2.2 Daemons](#Daemons)
         *   [3.2.3 Notes](#Notes)
 *   [4 Firetools](#Firetools)
@@ -20,14 +20,14 @@
 
 ## Configuration
 
-Firejail uses profiles for the applications executed inside of it - you can find the default profiles in /etc/firejail/*application*.profile. Should you require custom profiles for applications not included, or wish to modify the defaults, you may place new rules or copies of the defaults in ~/.config/firejail.
+Firejail uses profiles for the applications executed inside of it - you can find the default profiles in `/etc/firejail/*application*.profile`. Should you require custom profiles for applications not included, or wish to modify the defaults, you may place new rules or copies of the defaults in `~/.config/firejail`.
 
-### Paths With Spaces
+### Paths with spaces
 
 If you need to reference, whitelist, or blacklist a directory within a custom profile, such as with [palemoon](https://aur.archlinux.org/packages/palemoon/), you must do so using the absolute path, without encapsulation or escapes:
 
 ```
-   /home/user/.moonchild productions
+/home/user/.moonchild productions
 
 ```
 
@@ -40,7 +40,7 @@ $ firejail --seccomp firefox
 
 ```
 
-#### Private Mode
+#### Private mode
 
 Firejail also includes a one time private mode, in which no mounts are made in the chroots to your home directory. In doing this, you can execute applications without performing any changes to disk. For example, to execute firefox in private mode, do the following:
 
@@ -49,13 +49,20 @@ $ firejail --seccomp --private firefox
 
 ```
 
-### Using Firejail by Default
+### Using Firejail by default
 
-For most applications launched from the console, or from `.desktop` files, you can place your own launcher proxies for each in `/usr/local/bin`. For example, [create](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") the following file for firefox make it executable:
+To execute an application in Firejail per default, create a symbolic link pointing to `/usr/bin/firejail`. For example:
 
- `/usr/local/bin/firefox`  `firejail --seccomp /usr/bin/firefox $@` 
+```
+$ ln -s /usr/bin/firejail /usr/local/bin/firefox
 
-#### Desktop Files
+```
+
+The *firecfg* tool can be used to automate this process.
+
+**Tip:** To open the application with your custom Firejail options, [create](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") the following file instead for Firefox and make it executable: `/usr/local/bin/firefox`  `firejail --seccomp /usr/bin/firefox $@` 
+
+#### Desktop files
 
 Some applications use non standard paths. For these you will want to copy the `.desktop` launchers from `/usr/share/applications/*.desktop` to `~/.local/share/applications/` and then proceed to include firejail (and possibly seccomp) on the EXEC line.
 

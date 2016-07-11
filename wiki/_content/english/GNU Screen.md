@@ -21,9 +21,8 @@
     *   [3.10 Setting a different bash prompt while in screen](#Setting_a_different_bash_prompt_while_in_screen)
     *   [3.11 Turn off visual bell](#Turn_off_visual_bell)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Fix Midnight Commander hard hang when starting in screen](#Fix_Midnight_Commander_hard_hang_when_starting_in_screen)
-    *   [4.2 Fix for residual editor text](#Fix_for_residual_editor_text)
-    *   [4.3 Fix for Name column in windowlist only show "bash"](#Fix_for_Name_column_in_windowlist_only_show_.22bash.22)
+    *   [4.1 Fix for residual editor text](#Fix_for_residual_editor_text)
+    *   [4.2 Fix for Name column in windowlist only show "bash"](#Fix_for_Name_column_in_windowlist_only_show_.22bash.22)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -279,10 +278,6 @@ vbell off
 ```
 
 ## Troubleshooting
-
-### Fix Midnight Commander hard hang when starting in screen
-
-In some cases (need deeper inspection) [old gpm bug](https://bugzilla.redhat.com/show_bug.cgi?id=168076) gets alive. So, then you try to run mc inside screen, you get a frozen screen window. Try to kill gpm daemon before starting mc and/or disable it in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")`.
 
 ### Fix for residual editor text
 

@@ -945,7 +945,7 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 
 *   **[Kodi](/index.php/Kodi "Kodi")** — Application for organizing various collections and automatically retrieving info about them (video, music, photos).
 
-	[http://kodi.tv/](http://kodi.tv/) || [kodi](https://www.archlinux.org/packages/?name=kodi)
+	[https://kodi.tv/](https://kodi.tv/) || [kodi](https://www.archlinux.org/packages/?name=kodi)
 
 *   **[Tellico](https://en.wikipedia.org/wiki/Tellico "wikipedia:Tellico")** — KDE application for organizing various collections (books, video, music, coins, etc.).
 

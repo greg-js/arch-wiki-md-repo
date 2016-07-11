@@ -22,9 +22,6 @@ Each partition should be formatted to a [file system type](/index.php/File_syste
         *   [2.3.5 /tmp](#.2Ftmp)
         *   [2.3.6 Swap](#Swap)
         *   [2.3.7 How big should my partitions be?](#How_big_should_my_partitions_be.3F)
-    *   [2.4 Example layouts](#Example_layouts)
-        *   [2.4.1 UEFI/GPT example partition layout](#UEFI.2FGPT_example_partition_layout)
-        *   [2.4.2 BIOS/MBR example partition layout](#BIOS.2FMBR_example_partition_layout)
 *   [3 Partitioning tools](#Partitioning_tools)
 *   [4 Partition alignment](#Partition_alignment)
     *   [4.1 Hard disk drives](#Hard_disk_drives)
@@ -36,6 +33,8 @@ Each partition should be formatted to a [file system type](/index.php/File_syste
 
 Partition information is stored in the partition table; today, there are 2 main formats in use: the classic [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"), and the modern [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). The latter is an improved version that does away with several limitations of MBR style.
 
+**Note:** Existing tables can be printed with `parted */dev/sda* print` or `fdisk -l */dev/sda*`, where `*/dev/sda*` is a device name.
+
 ### Master Boot Record
 
 MBR originally only supported up to 4 partitions. Later on, extended and logical partitions were introduced to get around this limitation.
@@ -46,7 +45,9 @@ There are 3 types of partitions:
 *   Extended
     *   Logical
 
-**Primary** partitions can be bootable and are limited to four partitions per disk or RAID volume. If a partitioning scheme requires more than four partitions, an **extended** partition containing **logical** partitions is used. Extended partitions can be thought of as containers for logical partitions. A hard disk can contain no more than one extended partition. The extended partition is also counted as a primary partition so if the disk has an extended partition, only three additional primary partitions are possible (i.e. three primary partitions and one extended partition). The number of logical partitions residing in an extended partition is unlimited. A system that dual boots with Windows will require that Windows reside in a primary partition.
+**Primary** partitions can be bootable and are limited to four partitions per disk or RAID volume. If a partitioning scheme requires more than four partitions, an **extended** partition containing **logical** partitions is used.
+
+Extended partitions can be thought of as containers for logical partitions. A hard disk can contain no more than one extended partition. The extended partition is also counted as a primary partition so if the disk has an extended partition, only three additional primary partitions are possible (i.e. three primary partitions and one extended partition). The number of logical partitions residing in an extended partition is unlimited. A system that dual boots with Windows will require that Windows reside in a primary partition.
 
 The customary numbering scheme is to create primary partitions *sda1* through *sda3* followed by an extended partition *sda4*. The logical partitions on *sda4* are numbered *sda5*, *sda6*, etc.
 
@@ -85,7 +86,9 @@ There are no strict rules for partitioning a hard drive, although one may follow
 
 ### Single root partition
 
-This scheme is the simplest and should be enough for most use cases. A [swapfile](/index.php/Swapfile "Swapfile") can be created and easily resized as needed. It usually makes sense to start by considering a single `/` partition and then separate out others based on specific use cases like RAID, encryption, a shared media partition, etc. Note that installing GRUB on a BIOS system partitioned with GPT requires an additional BIOS boot partition.
+This scheme is the simplest and should be enough for most use cases. A [swapfile](/index.php/Swapfile "Swapfile") can be created and easily resized as needed. It usually makes sense to start by considering a single `/` partition and then separate out others based on specific use cases like RAID, encryption, a shared media partition, etc.
+
+Note that [UEFI](/index.php/UEFI "UEFI") systems require an [EFI system partition](/index.php/EFI_system_partition "EFI system partition"), and installing [GRUB](/index.php/GRUB "GRUB") on a BIOS system partitioned with [GPT](/index.php/GPT "GPT") requires an additional BIOS boot partition.
 
 ### Discrete partitions
 
@@ -96,8 +99,6 @@ Separating out a path as a partition allows for the choice of a different filesy
 The following mount points are possible choices for separate partitions, you can make your decision based on actual needs.
 
 #### Root partition
-
-**Note:** Upon installation, the `/` (root) partition must be mounted **first**: this is because any directories such as `/boot` or `/home` that have separate partitions will have to be created in the root file system. The `/mnt` directory of the live system will be used to mount the root partition, and consequently all the other partitions will stem from there. Once the `/` partition has been mounted, any remaining partitions may be mounted in any order. The general procedure is to first create the mount point, and then mount the partition to it.
 
 The root directory is the top of the hierarchy, the point where the primary filesystem is mounted and from which all other filesystems stem. All files and directories appear under the root directory `/`, even if they are stored on different physical devices. The contents of the root filesystem must be adequate to boot, restore, recover, and/or repair the system. Therefore, certain directories under `/` are not candidates for separate partitions.
 
@@ -164,39 +165,15 @@ The size of the partitions depends on personal preference, but the following inf
 
 	swap - [varies] 
 
-	Historically, the general rule for swap partition size was to allocate twice the amount of physical RAM. As computers have gained ever larger memory capacities, this rule is outdated. For example, on average desktop machines with up to 512MB RAM, the 2x rule is usually adequate; if a sufficient amount of RAM (more than 1024MB) is available, it may be possible to have a smaller swap partition.
+	Historically, the general rule for swap partition size was to allocate twice the amount of physical RAM. As computers have gained ever larger memory capacities, this rule is outdated. For example, on average desktop machines with up to 512MB RAM, the 2x rule is usually adequate; if a sufficient amount of RAM (more than 1024MB) is available, it may be possible to have a smaller swap partition. See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") to hibernate into a swap partition or file.
 
 	/data - [varies] 
 
 	One can consider mounting a "data" partition to cover various files to be shared by all users. Using the `/home` partition for this purpose is fine as well.
 
-**Note:**
-
-*   See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") to hibernate into a swap partition or file.
-*   A swap partition is highly recommended when using [virtual machine](/index.php/Virtual_machine "Virtual machine") guests.
-
-### Example layouts
-
-The sections below assume that a new, contiguous layout is applied to a single device in `/dev/sd**x**`. Change device names, partition numbers, and partition layout where necessary.
-
-#### UEFI/GPT example partition layout
-
-A special *bootable* [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is required, here assumed in `/boot`.
-
-| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
-| /boot | /dev/sd**x**1 | EFI System partition | Yes | 260–512 MiB |
- /dev/sd**x**2 | Linux swap | No | More than 512 MiB |
-| / | /dev/sd**x**3 | Linux | No | 15–20 GiB |
-| /home | /dev/sd**x**4 | Linux | No | Remainder of the device |
-
-#### BIOS/MBR example partition layout
-
-| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Bootable flag | Suggested size |
- /dev/sd**x**1 | Linux swap | No | More than 512 MiB |
-| / | /dev/sd**x**2 | Linux | Yes | 15–20 GiB |
-| /home | /dev/sd**x**3 | Linux | No | Remainder of the device |
-
 ## Partitioning tools
+
+**Warning:** To partition devices, use a partitioning tool compatible to the chosen type of partition table. Incompatible tools may result in the destruction of that table, along with existing partitions or data.
 
 *   **[fdisk](/index.php/Fdisk "Fdisk")** — Terminal partitioning tools included in Linux.
 
@@ -234,53 +211,22 @@ A special *bootable* [EFI System Partition](/index.php/EFI_System_Partition "EFI
 
 	[http://sourceforge.net/projects/partitionman/](http://sourceforge.net/projects/partitionman/) || [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)
 
-*   **QtParted** — Similar to Partitionmanager, available in [AUR](/index.php/AUR "AUR").
-
-	[http://qtparted.sourceforge.net/](http://qtparted.sourceforge.net/) || [qtparted](https://aur.archlinux.org/packages/qtparted/)
-
 This table will help you to choose utility for your needs:
 
 | User interaction | MBR | GPT |
 | Dialog | fdisk
-
-parted
-
- | fdisk
-
+parted | fdisk
 gdisk
-
-parted
-
- |
+parted |
 | Pseudo-graphics | cfdisk | cfdisk
-
-cgdisk
-
- |
+cgdisk |
 | Non-interactive | sfdisk
-
-parted
-
- | sfdisk
-
+parted | sfdisk
 sgdisk
-
-parted
-
- |
-| Graphical | gparted
-
-partitionmanager
-
-qtparted(?)
-
- | gparted
-
-partitionmanager
-
-qtparted(?)
-
- |
+parted |
+| Graphical | GParted
+partitionmanager | GParted
+partitionmanager |
 
 ## Partition alignment
 

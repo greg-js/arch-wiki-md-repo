@@ -80,7 +80,7 @@ that produces: tablet is landscape and orientation "normal" - joystick up -> pag
 ## http://creativecommons.org/licenses/GPL/2.0/
 
 ## https://wiki.archlinux.org/index.php/Tablet_PC
-## REQUIRES: linuxwacom (http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Main_Page)
+## REQUIRES: linuxwacom (https://sourceforge.net/projects/linuxwacom/)
 
 #### Function(s)
 function set_normal {

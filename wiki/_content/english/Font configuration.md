@@ -203,7 +203,7 @@ To enable subpixel rendering:
 
 ```
 
-**Note:** Subpixel rendering effectively triples the horizontal (or vertical) resolution for fonts by making use of subpixels. The default autohinter and subpixel rendering are not designed to work together, hence you will want to enable the subpixel autohinter by Infinality, et al. Freetype2 is compiled with [the <tt>TT_CONFIG_OPTION_SUBPIXEL_HINTING</tt> macro](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/0003-Enable-subpixel-hinting.patch?h=9867afd). However, it must be enabled by setting the FT2_SUBPIXEL_HINTING [environment variable](/index.php/Environment_variable "Environment variable") to any value.[FS#35274](https://bugs.archlinux.org/task/35274)
+**Note:** Subpixel rendering effectively triples the horizontal (or vertical) resolution for fonts by making use of subpixels. The default autohinter and subpixel rendering are not designed to work together, hence you will want to enable the subpixel autohinter. The [freetype2](https://www.archlinux.org/packages/?name=freetype2) package is compiled with a [patch](https://git.archlinux.org/svntogit/packages.git/tree/trunk/0003-Make-subpixel-hinting-mode-configurable.patch?h=packages/freetype2) the subpixel hinting mode configurable by the `FT2_SUBPIXEL_HINTING` [environment variable](/index.php/Environment_variable "Environment variable"). Possible values are 0 (disabled), 1 (Infinality) and 2 (minimal).
 
 #### LCD filter
 

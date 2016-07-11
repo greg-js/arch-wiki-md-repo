@@ -16,7 +16,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 *   [4 GUI toolkits](#GUI_toolkits)
     *   [4.1 Qt 5](#Qt_5)
     *   [4.2 GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)
-    *   [4.3 Elementary (EFL)](#Elementary_.28EFL.29)
+    *   [4.3 GTK+ 2](#GTK.2B_2)
+    *   [4.4 Elementary (EFL)](#Elementary_.28EFL.29)
 *   [5 Display managers](#Display_managers)
     *   [5.1 SDDM](#SDDM)
 *   [6 Applications](#Applications)
@@ -182,6 +183,10 @@ export GDK_DPI_SCALE=0.5
 
 ```
 
+### GTK+ 2
+
+Scaling of UI elements is not supported by the toolkit itself, however it's possible to generate a theme with elements pre-scaled for HiDPI display using [oomox-git](https://aur.archlinux.org/packages/oomox-git/).
+
 ### Elementary (EFL)
 
 To scale UI elements by a factor of 1.5:
@@ -279,6 +284,13 @@ The output window fontsize can be controlled from Tools → Options → Miscelan
 ### Gimp 2.8
 
 Use a high DPI theme, or [adjust](http://gimpforums.com/thread-increase-all-icons-on-hidpi-screen?pid=39113#pid39113) `gtkrc` of an existing theme. For example set `GimpToolPalette::tool-icon-size` to `dialog`.
+
+There's also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi), however the installation command is wrong on the site, it should be:
+
+```
+ $ unzip gimp-hidpi-master.zip -d ~/.gimp-2.8/themes/gimp-hidpi/
+
+```
 
 ### VLC
 

@@ -36,7 +36,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **Astromenace** — Modern 3D scrolling space shooter with ship upgrade possibilities.
 
-	[http://sourceforge.net/projects/openastromenace/](http://sourceforge.net/projects/openastromenace/) || [astromenace](https://www.archlinux.org/packages/?name=astromenace).
+	[https://sourceforge.net/projects/openastromenace/](https://sourceforge.net/projects/openastromenace/) || [astromenace](https://www.archlinux.org/packages/?name=astromenace).
 
 *   **Barrage** — Violent *point-and-click* shooting game with nice effects
 
@@ -48,7 +48,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **[Blob Wars: Blob and Conquer](https://en.wikipedia.org/wiki/Blob_Wars "wikipedia:Blob Wars")** — 3D Action-adventure game, sequel to 2D platform game, Blob Wars: Metal Blob Solid.
 
-	[http://sourceforge.net/projects/blobandconquer/](http://sourceforge.net/projects/blobandconquer/) || [blobandconquer](https://aur.archlinux.org/packages/blobandconquer/)
+	[https://sourceforge.net/projects/blobandconquer/](https://sourceforge.net/projects/blobandconquer/) || [blobandconquer](https://aur.archlinux.org/packages/blobandconquer/)
 
 *   **[BZFlag](https://en.wikipedia.org/wiki/BZFlag "wikipedia:BZFlag")** — Multiperson, first-person tank shooter.
 
@@ -194,7 +194,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **[Warmux](https://en.wikipedia.org/wiki/Warmux "wikipedia:Warmux") (previously *Wormux*)** — Somewhat similar to Worms 2/Worms Armageddon
 
-	[http://sourceforge.net/projects/warmux.mirror/](http://sourceforge.net/projects/warmux.mirror/) || [warmux](https://aur.archlinux.org/packages/warmux/)
+	[https://sourceforge.net/projects/warmux.mirror/](https://sourceforge.net/projects/warmux.mirror/) || [warmux](https://aur.archlinux.org/packages/warmux/)
 
 ## Casual games
 
@@ -382,6 +382,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[https://sourceforge.net/projects/netris/](https://sourceforge.net/projects/netris/) || [netris](https://aur.archlinux.org/packages/netris/)
 
+*   **Picmi** — Nonogram puzzle game
+
+	[https://games.kde.org/picmi](https://games.kde.org/picmi) || [picmi](https://www.archlinux.org/packages/?name=picmi)
+
 *   **Pingus** — Lemmings clone, i.e. a level-based puzzle game.
 
 	[http://pingus.seul.org/](http://pingus.seul.org/) || [pingus](https://www.archlinux.org/packages/?name=pingus)
@@ -444,7 +448,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **Trigger Rally** — Free OpenGL rally car racing game.
 
-	[http://sourceforge.net/projects/trigger-rally/](http://sourceforge.net/projects/trigger-rally/) || [trigger](https://aur.archlinux.org/packages/trigger/)
+	[https://sourceforge.net/projects/trigger-rally/](https://sourceforge.net/projects/trigger-rally/) || [trigger](https://aur.archlinux.org/packages/trigger/)
 
 *   **Ultimate Stunts** — Remake of the famous DOS-game 'stunts'.
 
@@ -530,7 +534,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **fheores2** — Attempt to reimplement the [Heroes of Might and Magic II](https://en.wikipedia.org/wiki/Heroes_of_Might_and_Magic_II "wikipedia:Heroes of Might and Magic II") engine using SDL.
 
-	[http://sourceforge.net/apps/mediawiki/fheroes2/index.php](http://sourceforge.net/apps/mediawiki/fheroes2/index.php) || [fheroes2-svn](https://aur.archlinux.org/packages/fheroes2-svn/)
+	[https://sourceforge.net/projects/fheroes2/](https://sourceforge.net/projects/fheroes2/) || [fheroes2-svn](https://aur.archlinux.org/packages/fheroes2-svn/)
 
 *   **Flare** — Action game similar to Diablo.
 

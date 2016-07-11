@@ -14,6 +14,8 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [3.1 Unable to locate printer](#Unable_to_locate_printer)
     *   [3.2 CUPS identifies printer but cannot connect to it](#CUPS_identifies_printer_but_cannot_connect_to_it)
 *   [4 USB printers](#USB_printers)
+    *   [4.1 Conflict with SANE](#Conflict_with_SANE)
+    *   [4.2 Conflict with usblp](#Conflict_with_usblp)
 *   [5 HP issues](#HP_issues)
     *   [5.1 CUPS: "/usr/lib/cups/backend/hp failed"](#CUPS:_.22.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.22)
     *   [5.2 CUPS: Job is shown as complete but the printer does nothing](#CUPS:_Job_is_shown_as_complete_but_the_printer_does_nothing)
@@ -41,10 +43,9 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [6.5 Unable to get list of printer drivers](#Unable_to_get_list_of_printer_drivers)
     *   [6.6 lp: Error - Scheduler Not Responding](#lp:_Error_-_Scheduler_Not_Responding)
     *   [6.7 "Using invalid Host" error message](#.22Using_invalid_Host.22_error_message)
-    *   [6.8 Conflict with SANE](#Conflict_with_SANE)
-    *   [6.9 Cannot print from LibreOffice](#Cannot_print_from_LibreOffice)
-    *   [6.10 Printer output shifted](#Printer_output_shifted)
-    *   [6.11 Printer becomes stuck after a problem](#Printer_becomes_stuck_after_a_problem)
+    *   [6.8 Cannot print from LibreOffice](#Cannot_print_from_LibreOffice)
+    *   [6.9 Printer output shifted](#Printer_output_shifted)
+    *   [6.10 Printer becomes stuck after a problem](#Printer_becomes_stuck_after_a_problem)
 
 ## Introduction
 
@@ -134,6 +135,14 @@ Enable debug logging. If you see `Executing backend "/usr/lib/cups/backend/dnssd
 Example: `socket://192.168.11.6:9100`. The port number can be confirmed via [nmap](/index.php/Nmap "Nmap") or `telnet *your-printer-ip* 9100`.
 
 ## USB printers
+
+### Conflict with SANE
+
+If you are also running [SANE](/index.php/SANE "SANE"), it's possible that it is conflicting with CUPS. To fix this create a [Udev](/index.php/Udev "Udev") rule marking the device as matched by libsane:
+
+ `/etc/udev/rules.d/99-printer.rules`  `ATTRS{idVendor}=="*vendor id*", ATTRS{idProduct}=="*product id*", MODE="0664", GROUP="lp", ENV{libsane_matched}="yes"` 
+
+### Conflict with usblp
 
 USB printers can be accessed using two methods: The usblp kernel module and libusb. The former is the classic way. It is simple: data is sent to the printer by writing it to a device file as a simple serial data stream. Reading the same device file allows bi-di access, at least for things like reading out ink levels, status, or printer capability information (PJL). It works very well for simple printers, but for multi-function devices (printer/scanner) it is not suitable and manufacturers like HP supply their own backends. Source: [here](http://lists.linuxfoundation.org/pipermail/printing-architecture/2012/002412.html).
 
@@ -374,12 +383,6 @@ If you get this error, ensure [CUPS](/index.php/CUPS "CUPS") is running, the env
 ### "Using invalid Host" error message
 
 Try adding `ServerAlias *` into `/etc/cups/cupsd.conf`.
-
-### Conflict with SANE
-
-If you are also running [SANE](/index.php/SANE "SANE"), it's possible that it is conflicting with CUPS. To fix this create a [Udev](/index.php/Udev "Udev") rule marking the device as matched by libsane:
-
- `/etc/udev/rules.d/99-printer.rules`  `ATTRS{idVendor}=="*vendor id*", ATTRS{idProduct}=="*product id*", MODE="0664", GROUP="lp", ENV{libsane_matched}="yes"` 
 
 ### Cannot print from LibreOffice
 

@@ -43,6 +43,7 @@ Besides the sound device drivers, ALSA also bundles a user space driven library 
     *   [7.1 Hot-plugging a USB sound card](#Hot-plugging_a_USB_sound_card)
     *   [7.2 Simultaneous output](#Simultaneous_output)
     *   [7.3 Keyboard volume control](#Keyboard_volume_control)
+    *   [7.4 Virtual sound device using aloop-snd](#Virtual_sound_device_using_aloop-snd)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -840,6 +841,47 @@ To toggle mute/unmute of the volume:
 
 ```
 amixer set Master toggle
+
+```
+
+### Virtual sound device using aloop-snd
+
+You might want a jack alternative to create a virtual recording or play device in order to mix different sources, using the aloo-snd module:
+
+```
+modprobe aloop-snd
+
+```
+
+List your new virtual devices using:
+
+```
+aplay -l
+
+```
+
+now you can for example using ffmpeg:
+
+```
+ffmpeg -f alsa -i hw:1,1,0 -f alsa -i hw:1,1,1 -filter_complex amerge output.mp3
+
+```
+
+In the hw:R,W,N format R is your virtual card device number, W 1 recording devices 0 for writing, R is your sub device you can use all the virtual devices available and play/stop using applications like mplayer:
+
+```
+mplayer -ao alsa:device=hw=1,0,0 fileA
+mplayer -ao alsa:device=hw=1,0,1 fileB 
+
+```
+
+Another thing you could do with this approach, is using festival to generate a voice into a recording stream using an script like this:
+
+```
+#!/bin/bash
+echo $1|iconv -f utf-8 -t iso-8859-1| text2wave  > "_tmp_.wav";   
+mplayer -ao alsa:device=hw=2,0,0 "_tmp.wav";
+rm "_tmp.wav";
 
 ```
 

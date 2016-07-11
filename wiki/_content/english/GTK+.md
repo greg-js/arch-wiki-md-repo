@@ -86,6 +86,10 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-themes](https://www.archlinux.org/packages/?name=numix-themes)
 
+*   **Oo-mox** — Graphical application for generating different color variations of Numix theme (GTK2, GTK3) and gnome-colors icon theme.
+
+	[https://github.com/actionless/oomox](https://github.com/actionless/oomox) || [oomox-git](https://aur.archlinux.org/packages/oomox-git/)
+
 *   **Adapta** — An adaptive Gtk+ theme based on Material Design Guidelines.
 
 	[https://github.com/tista500/Adapta](https://github.com/tista500/Adapta) || [adapta-gtk-theme](https://aur.archlinux.org/packages/adapta-gtk-theme/)

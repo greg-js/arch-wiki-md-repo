@@ -1,4 +1,4 @@
-[GNU nano](http://www.nano-editor.org/) (or nano) is a text editor which aims to introduce a simple interface and intuitive command options to console based text editing. *nano* supports features including colorized syntax highlighting, DOS/Mac file type conversions, spellchecking and [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8") encoding. *nano* opened with an empty buffer typically occupies under 1.5 MB of resident memory.
+[GNU nano](https://www.nano-editor.org/) (or nano) is a text editor which aims to introduce a simple interface and intuitive command options to console based text editing. *nano* supports features including colorized syntax highlighting, DOS/Mac file type conversions, spellchecking and [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8") encoding. *nano* opened with an empty buffer typically occupies under 1.5 MB of resident memory.
 
 ## Contents
 
@@ -41,11 +41,18 @@ $ cp /etc/nanorc ~/.nanorc
 
 Proceed to establish the nano console environment by setting and/or unsetting commands within `~/.nanorc` file.
 
-**Tip:** [NANORC](http://www.nano-editor.org/dist/v2.2/nanorc.5.html) details the complete list configuration commands available for nano.
+**Tip:** [NANORC](https://www.nano-editor.org/dist/latest/nanorc.5.html) details the complete list configuration commands available for nano.
 
 **Note:** Command-line arguments override and take precedence over the configuration commands established in `~/.nanorc`
 
 ### Syntax highlighting
+
+Nano ships with a bunch of predefined syntax highlighting rules, defined in `/usr/share/nano/*.nanorc`. To enable them, add the following line to your `~/.nanorc` or to `/etc/nanorc`:
+
+```
+include "/usr/share/nano/*.nanorc"
+
+```
 
 #### PKGBUILD
 
@@ -184,7 +191,7 @@ set nowrap
 | ^C | F11 | Cur Pos | Display line, column and character position information at the current location of the cursor |
 | ^T | F12 | To Spell | Spellcheck the contents of the buffer with the built-in `spell`, if available |
 
-**Tip:** See the nano online help files via `Ctrl+g` within nano and the [nano Command Manual](http://www.nano-editor.org/dist/v2.1/nano.html) for complete descriptions and additional support.
+**Tip:** See the nano online help files via `Ctrl+g` within nano and the [nano Command Manual](https://www.nano-editor.org/dist/latest/nano.html) for complete descriptions and additional support.
 
 #### Selected toggle functions
 
@@ -195,7 +202,7 @@ set nowrap
 | Meta+m | Esc+m | Toggles mouse support for cursor placement, marking and shortcut execution |
 | Meta+x | Esc+x | Toggles the display of the shortcut list at the bottom of the nano screen for additional screen space |
 
-**Tip:** [Feature Toggles](http://www.nano-editor.org/dist/v2.1/nano.html#Feature-Toggles) lists the global toggles available for nano.
+**Tip:** [Feature Toggles](https://www.nano-editor.org/dist/latest/nano.html#Feature-Toggles) lists the global toggles available for nano.
 
 ## Tips & tricks
 
@@ -219,6 +226,6 @@ Some window managers have keybindings that conflict with nano, for example `Alt+
 ## See also
 
 *   [nano (text editor)](https://en.wikipedia.org/wiki/Nano_(text_editor) - Wikipedia Entry
-*   [GNU nano Homepage](http://www.nano-editor.org/) - Official Site
+*   [GNU nano Homepage](https://www.nano-editor.org/) - Official Site
 *   [GNU nano Bugs](https://savannah.gnu.org/bugs/?group=nano) Bug Reporting
 *   [Better syntax highlighting definitions](https://github.com/craigbarnes/nanorc)

@@ -3,19 +3,15 @@ BlackBerry is a line of mobile e-mail and smartphone devices developed by Canadi
 ## Contents
 
 *   [1 Synchronization using Barry](#Synchronization_using_Barry)
-    *   [1.1 BlackBerry 10 backup tool](#BlackBerry_10_backup_tool)
-    *   [1.2 Packages required for Evolution sync](#Packages_required_for_Evolution_sync)
-    *   [1.3 Syncing using the command line](#Syncing_using_the_command_line)
+    *   [1.1 Packages required for Evolution sync](#Packages_required_for_Evolution_sync)
+    *   [1.2 Syncing using the command line](#Syncing_using_the_command_line)
+*   [2 BlackBerry 10 backup tool](#BlackBerry_10_backup_tool)
 
 ## Synchronization using Barry
 
 **Warning:** As of 2015-09-17, these instructions are non-functional because the Barry opensync0.4x plugin will not build. [[1]](http://sourceforge.net/p/barry/mailman/barry-devel/thread/20120725215119.GA31202@foursquare.net/)
 
 Barry is an application that provides backup and sync support for BlackBerry devices. Synchronization is provided via the [OpenSync](/index.php/OpenSync "OpenSync") library; Barry must be compiled with OpenSync support in order for synchronization with BlackBerry devices to work. The steps below show how you can synchronize your BlackBerry's contacts and calender with your [Evolution](/index.php/Evolution "Evolution") contacts and calender using Barry. In theory the same principle should be able to be applied to other mail and calendar clients including Kmail and Google calender. For more information, please see the [Net Direct website](http://www.netdirect.ca/software/packages/barry/sync.php).
-
-### BlackBerry 10 backup tool
-
-[Install](/index.php/Install "Install") either [sachesi-git](https://aur.archlinux.org/packages/sachesi-git/) or [sachesi-bin](https://aur.archlinux.org/packages/sachesi-bin/). This tool allows one to install different versions of BB10 OS, make backups and restore from backups. Please see the [forum thread](http://forums.crackberry.com/bb10-leaked-beta-os-f395/sachesi-firmware-extractor-searcher-installer-825409/) on Crackberry for more information.
 
 ### Packages required for Evolution sync
 
@@ -78,3 +74,7 @@ Finally, make sure Evolution is closed and your BlackBerry is connected and then
 $ osynctool --sync evoberry
 
 ```
+
+## BlackBerry 10 backup tool
+
+[Install](/index.php/Install "Install") either [sachesi-git](https://aur.archlinux.org/packages/sachesi-git/) or [sachesi-bin](https://aur.archlinux.org/packages/sachesi-bin/). This tool allows one to install different versions of BB10 OS, make backups and restore from backups. Please see the [forum thread](http://forums.crackberry.com/bb10-leaked-beta-os-f395/sachesi-firmware-extractor-searcher-installer-825409/) on Crackberry for more information.

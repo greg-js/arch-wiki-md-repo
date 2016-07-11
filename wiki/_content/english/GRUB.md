@@ -150,14 +150,16 @@ If you use [LVM](/index.php/LVM "LVM") for your `/boot`, you can install GRUB on
 Assume your USB stick's first partition is FAT32 and its partition is /dev/sdy1
 
 ```
-# mkdir -p /mnt/usb ; mount /dev/sdy1 /mnt/usb
+# mkdir -p /mnt/usb
+# mount /dev/sdy1 /mnt/usb
 # grub-install --target=i386-pc --debug --boot-directory=/mnt/usb/boot /dev/sdy
 # grub-mkconfig -o /mnt/usb/boot/grub/grub.cfg
 
 ```
 
+Optionally backup configuration files of `grub.cfg`:
+
 ```
-# optional, backup config files of grub.cfg
 # mkdir -p /mnt/usb/etc/default
 # cp /etc/default/grub /mnt/usb/etc/default
 # cp -a /etc/grub.d /mnt/usb/etc

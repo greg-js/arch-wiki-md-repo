@@ -34,22 +34,23 @@
     *   [5.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
     *   [5.2 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
     *   [5.3 Network management disabled](#Network_management_disabled)
-    *   [5.4 Customizing resolv.conf](#Customizing_resolv.conf)
-    *   [5.5 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
-    *   [5.6 Hostname problems](#Hostname_problems)
-        *   [5.6.1 Configure dhclient to push the hostname to the DHCP server](#Configure_dhclient_to_push_the_hostname_to_the_DHCP_server)
-        *   [5.6.2 Configure NetworkManager to use a specific DHCP client](#Configure_NetworkManager_to_use_a_specific_DHCP_client)
-    *   [5.7 Missing default route](#Missing_default_route)
-    *   [5.8 3G modem not detected](#3G_modem_not_detected)
-    *   [5.9 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
-    *   [5.10 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
-    *   [5.11 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
-    *   [5.12 Forget hidden wireless network](#Forget_hidden_wireless_network)
-    *   [5.13 VPN not working in GNOME](#VPN_not_working_in_GNOME)
-    *   [5.14 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
-    *   [5.15 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
-    *   [5.16 Systemd Bottleneck](#Systemd_Bottleneck)
-    *   [5.17 Regular network disconnects (WiFi)](#Regular_network_disconnects_.28WiFi.29)
+    *   [5.4 Problems with internal DHCP client](#Problems_with_internal_DHCP_client)
+    *   [5.5 Customizing resolv.conf](#Customizing_resolv.conf)
+    *   [5.6 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
+    *   [5.7 Hostname problems](#Hostname_problems)
+        *   [5.7.1 Configure dhclient to push the hostname to the DHCP server](#Configure_dhclient_to_push_the_hostname_to_the_DHCP_server)
+        *   [5.7.2 Configure NetworkManager to use a specific DHCP client](#Configure_NetworkManager_to_use_a_specific_DHCP_client)
+    *   [5.8 Missing default route](#Missing_default_route)
+    *   [5.9 3G modem not detected](#3G_modem_not_detected)
+    *   [5.10 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
+    *   [5.11 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
+    *   [5.12 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
+    *   [5.13 Forget hidden wireless network](#Forget_hidden_wireless_network)
+    *   [5.14 VPN not working in GNOME](#VPN_not_working_in_GNOME)
+    *   [5.15 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
+    *   [5.16 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
+    *   [5.17 Systemd Bottleneck](#Systemd_Bottleneck)
+    *   [5.18 Regular network disconnects (WiFi)](#Regular_network_disconnects_.28WiFi.29)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
     *   [6.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
@@ -432,6 +433,16 @@ When NetworkManager shuts down but the pid (state) file is not removed, you will
 # rm /var/lib/NetworkManager/NetworkManager.state
 
 ```
+
+### Problems with internal DHCP client
+
+If you have problems with getting an IP address using the internal DHCP client, consider [dhclient](https://www.archlinux.org/packages/?name=dhclient) as DHCP client.
+
+After installation, update the NetworkManager config file:
+
+ `/etc/NetworkManager/NetworkManager.conf`  `dhcp=dhclient` 
+
+This workaround might solve problems in big wireless networks like eduroam.
 
 ### Customizing resolv.conf
 

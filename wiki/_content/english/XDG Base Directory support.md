@@ -27,15 +27,15 @@ Only `XDG_RUNTIME_DIR` is set by default through [pam_systemd](http://www.freede
 
 *   `XDG_CONFIG_HOME`
     *   Where user-specific configurations should be written (analogous to `/etc`).
-    *   Should default to `HOME/.config`.
+    *   Should default to `$HOME/.config`.
 
 *   `XDG_CACHE_HOME`
     *   Where user-specific non-essential (cached) data should be written (analogous to `/var/cache`).
-    *   Should default to `HOME/.cache`.
+    *   Should default to `$HOME/.cache`.
 
 *   `XDG_DATA_HOME`
     *   Where user-specific data files should be written (analogous to `/usr/share`).
-    *   Should default to `HOME/.local/share`.
+    *   Should default to `$HOME/.local/share`.
 
 *   `XDG_RUNTIME_DIR`
     *   Used for non-essential, user-specific data files such as sockets, named pipes, etc.

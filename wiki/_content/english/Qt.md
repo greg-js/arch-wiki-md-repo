@@ -131,9 +131,9 @@ Qt5 decides the style to use based on what desktop environment is used:
 *   In Cinnamon, GNOME, MATE, LXDE, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
 *   In other desktop environments, it uses Fusion.
 
-To force a specific style, you can set the `QT_STYLE_OVERRIDE` [environment variable](/index.php/Environment_variable "Environment variable"). Specifically, set it to `GTK+` if you want to use the [GTK+](/index.php/GTK%2B "GTK+") theme. Qt5 applications also support the `-style` flag, which you can use to launch a Qt5 application with a specific style.
+To force a specific style, you can set the `QT_STYLE_OVERRIDE` [environment variable](/index.php/Environment_variable "Environment variable"). Specifically, set it to `gtk2` if you want to use the [GTK+](/index.php/GTK%2B "GTK+") theme (Note: you will need to install the Qt style plugins mention below to get the GTK+ style). Qt5 applications also support the `-style` flag, which you can use to launch a Qt5 application with a specific style.
 
-The following styles are included in Qt5: *GTK+*, *Fusion*, *Windows*. Others can be installed from the official repositories:
+The following styles are included in Qt5: *Fusion*, *Windows*. Others can be installed from the official repositories:
 
 *   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
 
@@ -151,7 +151,7 @@ The following styles are included in Qt5: *GTK+*, *Fusion*, *Windows*. Others ca
 
 	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)
 
-*   **Qt style plugins** — Additional style plugins for Qt5, including *Cleanlooks*, *Motif*, *Plastique*.
+*   **Qt style plugins** — Additional style plugins for Qt5, including *GTK+*, *Cleanlooks*, *Motif*, *Plastique*.
 
 	[http://code.qt.io/cgit/qt/qtstyleplugins.git](http://code.qt.io/cgit/qt/qtstyleplugins.git) || [qt5-styleplugins](https://aur.archlinux.org/packages/qt5-styleplugins/)
 

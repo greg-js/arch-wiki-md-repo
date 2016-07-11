@@ -9,9 +9,9 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
     *   [2.1 Disk info](#Disk_info)
     *   [2.2 Benchmarking](#Benchmarking)
     *   [2.3 Power management configuration](#Power_management_configuration)
-        *   [2.3.1 Persistent configuration using udev rule](#Persistent_configuration_using_udev_rule)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 KDE => 4.4.4 and hdparm](#KDE_.3D.3E_4.4.4_and_hdparm)
+    *   [3.1 Persistent configuration using udev rule](#Persistent_configuration_using_udev_rule)
+    *   [3.2 Putting a drive to sleep directly after boot](#Putting_a_drive_to_sleep_directly_after_boot)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 APM level reset after suspend](#APM_level_reset_after_suspend)
     *   [4.2 Drive is not supported](#Drive_is_not_supported)
@@ -60,7 +60,9 @@ To apply different value, for example set APM to 127:
 
 ```
 
-#### Persistent configuration using udev rule
+## Tips and tricks
+
+### Persistent configuration using udev rule
 
 To make the setting persistent, adapt the following [udev](/index.php/Udev "Udev") rule for your values:
 
@@ -78,27 +80,37 @@ ACTION=="add|change", KERNEL=="sd[b-z]", ATTR{queue/rotational}=="1", RUN+="/usr
 
 ```
 
-## Tips and tricks
+### Putting a drive to sleep directly after boot
 
-### KDE => 4.4.4 and hdparm
+A device which is rarely needed can be put to sleep directly at the end of the boot process. This does not work with the above udev rule because it happens too early. In order to issue the command when the boot is completed, just create a [systemd](/index.php/Systemd "Systemd") service.
 
-To stop [KDE](/index.php/KDE "KDE") version 4.4.4 or greater from messing around with your (manually) configured hdparm values, enter the following and you should be done:
+ `/etc/systemd/system/hdparm.service` 
+```
+[Unit]
+Description=hdparm sleep
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hdparm -q -S 120 -y /dev/sdb
+
+[Install]
+WantedBy=multi-user.target
 
 ```
-# touch /etc/pm/power.d/harddrive
 
-```
+Then [enable](/index.php/Enable "Enable") it.
 
 ## Troubleshooting
 
 ### APM level reset after suspend
 
-The APM level may get reset after a suspend, so you will probably also have to re-execute the command after each resume. This can be automated with the following [systemd](/index.php/Systemd "Systemd") unit: (adapted from a [forum thread](https://bbs.archlinux.org/viewtopic.php?id=151640))
+The APM level may get reset after a suspend, so you will probably also have to re-execute the command after each resume. This can be automated with the following [systemd](/index.php/Systemd "Systemd") unit (adapted from a [forum thread](https://bbs.archlinux.org/viewtopic.php?id=151640)):
 
+ `/etc/systemd/system/apm.service` 
 ```
 [Unit]
 Description=Local system resume actions
-After=sleep.target
+After=suspend.target hybrid-sleep.target hibernate.target
 
 [Service]
 Type=simple
@@ -106,23 +118,11 @@ ExecStart=/usr/bin/hdparm -B 254 /dev/sda
 
 [Install]
 WantedBy=sleep.target
-
 ```
 
-Or you could create `/usr/lib/systemd/system-sleep/hdparm_set`: [found here](https://bbs.archlinux.org/viewtopic.php?id=159233)
+**Note:** The `sleep.target` is pulled by all `suspend`, `hybrid-sleep` and `hibernate` targets, but it finishes starting up *before* the system is suspended, so the three targets have to be specified explicitly. See [[1]](https://wiki.archlinux.org/index.php?title=Talk:Hdparm&oldid=440457#Troubleshooting_APM_settings_after_suspend.2C_hibernate_or_hybrid-sleep).
 
-```
-#!/bin/sh
-hdparm -B 254 /dev/sda
-
-```
-
-And make it executable:
-
-```
-chmod +x /usr/lib/systemd/system-sleep/hdparm_set
-
-```
+Alternatively you can create a [hook in /usr/lib/systemd/system-sleep](/index.php/Power_management#Hooks_in_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep "Power management").
 
 ### Drive is not supported
 

@@ -226,17 +226,17 @@ The [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) script is listi
 Examples
 
 ```
-# lsdesktopf
-# lsdesktopf --less
-# lsdesktopf --less gtk zh_TW,zh_CN,en_GB
+$ lsdesktopf
+$ lsdesktopf --less
+$ lsdesktopf --less gtk zh_TW,zh_CN,en_GB
 
 ```
 
 List MIME-types or parts of MIME-types found in *.desktop*, and which desktop files shares same MIME-type, output is equal as in [mimeapps.list](/index.php/Default_applications#Configuration_of_the_mimeapps.list_file "Default applications") for section `[Added Associations]`.
 
 ```
-# lsdesktopf --gm
-# lsdesktopf --gm [options]
+$ lsdesktopf --gm
+$ lsdesktopf --gm [options]
 
 ```
 
@@ -249,9 +249,9 @@ The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) bash sc
 Examples
 
 ```
-# fbrokendesktop
-# fbrokendesktop /usr
-# fbrokendesktop /usr/share/apps/kdm/sessions/icewm.desktop
+$ fbrokendesktop
+$ fbrokendesktop /usr
+$ fbrokendesktop /usr/share/apps/kdm/sessions/icewm.desktop
 
 ```
 

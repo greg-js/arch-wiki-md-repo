@@ -97,16 +97,7 @@ $ hadoop namenode -format
 
 ```
 
-Start the hadoop daemons:
-
-```
-# systemctl start hadoop-datanode
-# systemctl start hadoop-jobtracker
-# systemctl start hadoop-namenode
-# systemctl start hadoop-secondarynamenode
-# systemctl start hadoop-tasktracker
-
-```
+[Start](/index.php/Start "Start") the following hadoop systemd units: `hadoop-datanode`, `hadoop-jobtracker`, `hadoop-namenode`, `hadoop-secondarynamenode`, `hadoop-tasktracker`.
 
 The hadoop daemon log output is written to the `${HADOOP_LOG_DIR}` directory (defaults to `/var/log/hadoop`).
 

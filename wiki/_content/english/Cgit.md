@@ -270,11 +270,19 @@ repo.desc=That's my other git repository
 
 ```
 
-If you prefer not having to manually specify each repository, it is also possible to configure cgit to search for them:
+Or else, it is also possible to configure cgit to automatically search for the repo:
 
 ```
 scan-path=/srv/git/
 
+```
+
+If you use the method above, add the descriptions to `.git/description` file and add the following lines to show the author:
+
+ `.git/config` 
+```
+[gitweb]
+        owner = John Cena <john@riseup.net>
 ```
 
 If you are coming from gitweb and want to keep the descriptions and owner information, then use:
@@ -296,6 +304,23 @@ Install [python-pygments](https://www.archlinux.org/packages/?name=python-pygmen
 
 ```
 source-filter=/usr/lib/cgit/filters/syntax-highlighting.py
+
+```
+
+To change the coloring style, modify the `style` argument that is passed to `HtmlFormatter` in the `syntax-highlighting.py` file. For instance, to change the coloring style to 'tango':
+
+```
+ formatter = HtmlFormatter(encoding='utf-8', style='tango')
+
+```
+
+To get a list of all coloring styles that are available, do:
+
+```
+ $ python
+ >>> from pygments.styles import get_all_styles
+ >>> list(get_all_styles())
+ ['manni', 'igor', 'xcode', 'vim', 'autumn', 'vs', 'rrt', 'native', 'perldoc', 'borland', 'tango', 'emacs', 'friendly', 'monokai', 'paraiso-dark', 'colorful', 'murphy', 'bw', 'pastie', 'paraiso-light', 'trac', 'default', 'fruity']
 
 ```
 

@@ -70,7 +70,7 @@ There are two time standards: **localtime** and [Coordinated Universal Time](htt
 
 The standard used by hardware clock (CMOS clock, the time that appears in BIOS) is defined by the operating system. By default, Windows uses localtime, Mac OS uses UTC, and UNIX-like operating systems vary. An OS that uses the UTC standard, generally, will consider CMOS (hardware clock) time a UTC time (GMT, Greenwich time) and make an adjustment to it while setting the System time on boot according to your time zone.
 
-If you have multiple operating systems installed in the same machine, they will all derive the current time from the same hardware clock: for this reason you must make sure that all of them see the hardware clock as providing time in the same chosen standard, or some of them will perform the time zone adjustement for the system clock, while others will not. In particular, it is strongly recommended to set the hardware clock to UTC, in order to avoid conflicts between the installed operating systems. For example, if the hardware clock was set to *localtime*, more than one operating system may adjust it after a [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") change, thus resulting in an overcorrection; more problems may arise when travelling between different time zones and using one of the operating systems to reset the system/hardware clock.
+If you have multiple operating systems installed in the same machine, they will all derive the current time from the same hardware clock: for this reason you must make sure that all of them see the hardware clock as providing time in the same chosen standard, or some of them will perform the time zone adjustement for the system clock, while others will not. In particular, it is recommended to set the hardware clock to UTC, in order to avoid conflicts between the installed operating systems. For example, if the hardware clock was set to *localtime*, more than one operating system may adjust it after a [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") change, thus resulting in an overcorrection; more problems may arise when travelling between different time zones and using one of the operating systems to reset the system/hardware clock.
 
 You can set the hardware clock time standard through the command line. You can check what you have set your Arch Linux install to use by:
 
@@ -144,8 +144,6 @@ If you are having issues with the offset of the time, try reinstalling [tzdata](
 
 ```
 
-Old versions of Windows may still be resetting the RTC to localtime unless the time synchronization feature is [disabled](http://www.addictivetips.com/windows-tips/disable-time-synchronization-in-windows-7/).
-
 ### UTC in Ubuntu
 
 Ubuntu and its derivatives have the hardware clock set to be interpreted as in "localtime" if Windows was detected on any disk during Ubuntu installation. This is apparently done deliberately to allow new Linux users to try out Ubuntu on their Windows computers without editing the registry.
@@ -189,14 +187,16 @@ Example:
 
 ```
 
-This will create an `/etc/localtime` symlink that points to a zoneinfo file under `/usr/share/zoneinfo/`. In case you choose to create the link manually, keep in mind that it must be a symbolic link, as specified in archlinux(7):
+This will create an `/etc/localtime` symlink that points to a zoneinfo file under `/usr/share/zoneinfo/`. In case you choose to create the link manually, keep in mind that it must be a symbolic link, as specified in `archlinux(7)`:
 
 ```
 # ln -sf /usr/share/zoneinfo/*Zone*/*SubZone* /etc/localtime
 
 ```
 
-See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for more details.
+**Tip:** The time zone can also be selected interactively with *tzselect*.
+
+See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for details.
 
 **Note:** If the pre-systemd configuration file `/etc/timezone` still exists in your system, you can remove it safely, since it is no longer used.
 
@@ -215,7 +215,6 @@ If the hardware clock keeps losing or gaining time in large increments, it is po
 The software clock is very accurate but like most clocks is not perfectly accurate and will drift as well. Though rarely, the system clock can lose accuracy if the kernel skips interrupts. There are some tools to improve software clock accuracy:
 
 *   See [#Time synchronization](#Time_synchronization).
-*   [adjtimex](https://aur.archlinux.org/packages/adjtimex/) in the [AUR](/index.php/AUR "AUR") can adjust kernel time variables like interrupt frequency to help improve the system clock time drift.
 
 ## Time synchronization
 

@@ -44,7 +44,7 @@ After booting into the installation media, you will be automatically logged in a
 
 ### UEFI mode
 
-In case you have a [UEFI](/index.php/UEFI "UEFI") motherboard with UEFI mode enabled, the CD/USB will automatically launch Arch Linux via [systemd-boot](http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/).
+In case you have a [UEFI](/index.php/UEFI "UEFI") motherboard with UEFI mode enabled, the CD/USB will automatically launch Arch Linux via [systemd-boot](/index.php/Systemd-boot "Systemd-boot").
 
 To verify you are booted in UEFI mode, check that the following directory is populated:
 
@@ -371,7 +371,7 @@ See [Network configuration#Configure the IP address](/index.php/Network_configur
 
 #### Wireless
 
-Install the [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), and (for [wifi-menu](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl")) [dialog](https://www.archlinux.org/packages/?name=dialog) packages:
+[Install](/index.php/Install "Install") the [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), and (for [wifi-menu](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl")) [dialog](https://www.archlinux.org/packages/?name=dialog) packages:
 
 ```
 # pacman -S iw wpa_supplicant dialog

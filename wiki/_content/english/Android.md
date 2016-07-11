@@ -254,7 +254,7 @@ Use the rules from [Android developer](http://source.android.com/source/initiali
 
  `/etc/udev/rules.d/51-android.rules` 
 ```
-SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", MODE="0660", GROUP="adbusers"
 SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_adb"
 SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_fastboot"
 ```
@@ -265,6 +265,8 @@ Then, to reload your new udev rules, execute:
 # udevadm control --reload-rules
 
 ```
+
+Make sure you are member of `adbusers` [group](/index.php/Group "Group") to access `adb` devices.
 
 #### Configuring adb
 
@@ -543,7 +545,7 @@ which means that your device is visible to Odin and is ready to be flashed.
 
 ### adb-sync
 
-[adb-sync](https://github.com/google/adb-sync) (available in [adb-sync-git](https://aur.archlinux.org/packages/adb-sync-git/)) is a tool to synchronize files between a PC and an Android device using the ADB
+[adb-sync](https://github.com/google/adb-sync) (available in [adb-sync-git](https://aur.archlinux.org/packages/adb-sync-git/)) is a tool to synchronize files between a PC and an Android device using the ADB protocol.
 
 ### AirDroid
 

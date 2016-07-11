@@ -176,7 +176,7 @@ export STEAM_RUNTIME=0
 
 If you create or edit this file while in a desktop session you will need to log out and then back into your [desktop environment](/index.php/Desktop_environment "Desktop environment") to enable the change to take effect.
 
-**Backing out the using native runtime in a graphical environment change**
+**Backing out using the native runtime in a graphical environment change**
 
 To reverse this change remove or comment out the export line in your [xprofile](/index.php/Xprofile "Xprofile") file. Log out and then in again to refresh your desktop session. When launched, Steam will use the old bundled Ubuntu libraries.
 

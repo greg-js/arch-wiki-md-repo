@@ -48,7 +48,12 @@ $ lspci -vnn -d 14e4:
 
 ### brcm80211
 
-The kernel contains two built-in open-source drivers: **brcmsmac** for PCI backends and **brcmfmac** for SDIO/USB backends. They should be automatically loaded when booting.
+The kernel contains two built-in open-source drivers: **brcmfmac** for native FullMAC and **brcmsmac** for mac80211-based SoftMAC. They should be automatically loaded when booting.
+
+**Note:**
+
+*   **brcmfmac** supports newer chipsets, whereas **brcmsmac** only supports old chipsets like BCM4313, BCM43224, BCM43225.
+*   **brcmsmac** does not support AP mode, P2P mode, or hardware encryption.
 
 ### b43
 
