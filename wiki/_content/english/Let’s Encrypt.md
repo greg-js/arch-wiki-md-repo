@@ -1,6 +1,6 @@
 [Let’s Encrypt](https://letsencrypt.org/) is a free, automated, and open certificate authority utilizing the [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") protocol.
 
-The official client is called **Certbot**, which allows to request valid SSL certificates straight from the command line. A minimal client with manual CSR creation is available at [acme-tiny](https://aur.archlinux.org/packages/acme-tiny/). More integrated clients suitable for scripts are e.g. [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) and [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
+The official client is called **Certbot**, which allows to request valid X.509 certificates straight from the command line. A minimal client with manual CSR creation is available at [acme-tiny](https://aur.archlinux.org/packages/acme-tiny/). More integrated clients suitable for scripts are e.g. [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) and [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
 
 **Note:** The official client, which was previously called *the Let’s Encrypt client*, is now called *Certbot*.
 

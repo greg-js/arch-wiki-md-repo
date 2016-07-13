@@ -8,6 +8,7 @@
     *   [2.2 Term](#Term)
     *   [2.3 Font](#Font)
     *   [2.4 Colors](#Colors)
+    *   [2.5 Desktop entry](#Desktop_entry)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Keyboard](#Keyboard)
         *   [3.1.1 DEL-Key not working properly in some Application](#DEL-Key_not_working_properly_in_some_Application)
@@ -53,14 +54,14 @@ To change the terminal type, edit this line:
 Edit the following line as you prefer:
 
 ```
- static char font[] = "Liberation Mono:pixelsize=12:antialias=false:autohint=false";
+static char font[] = "Liberation Mono:pixelsize=12:antialias=false:autohint=false";
 
 ```
 
 You can also pass the value of the font in the command line:
 
 ```
- st -f "Liberation Mono:size=12"
+$ st -f "Liberation Mono:size=12"
 
 ```
 
@@ -117,6 +118,27 @@ The values refer to the `*colorname[]` array in the same file, you can use defau
 
 ```
 
+### Desktop entry
+
+To simplify launching *st* with a decent font e.g. [adobe-source-code-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-code-pro-fonts), you can also create a [desktop entry](/index.php/Desktop_entry "Desktop entry"):
+
+ `~/.local/share/applications/simple-terminal.desktop` 
+```
+[Desktop Entry]
+Name=Simple Terminal
+GenericName=Terminal
+Comment=standard terminal emulator for the X window system
+Exec=st -t "Suckless Terminal" -f "Source Code Pro:style=Semibold:size=16" -g "80x24"
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Icon=terminal
+Categories=System;TerminalEmulator;
+Keywords=shell;prompt;command;commandline;cmd;
+```
+
+The menu entry will appear as **Simple Terminal** in the *System Tools* application list.
+
 ## Troubleshooting
 
 ### Keyboard
@@ -146,6 +168,15 @@ stty erase '^H'
 This will make the terminal interprets `^H` as an erase command.
 
 If you want to put the above command in a shell profile, you should consider checking the `$TERM` before launch it.
+
+As of version `0-6`, `st` interpret backspace as `^?` by default. An exception is when `Alt+BackSpace` pressed, `st` sends `^[^H` instead of `^[^?` ([FS#50000](https://bugs.archlinux.org/task/50000)). This inconsistent behavior leads to bad experience, especially on Emacs when pressing `Alt+BackSpace` no longer delete a word backwards. To fix this, adding a line on `config.h` is needed.
+
+```
+       { XK_BackSpace,     Mod1Mask,       "\033\177",      0,    0,    0},
+
+```
+
+Rebuild the package to apply the change.
 
 ### Vim
 

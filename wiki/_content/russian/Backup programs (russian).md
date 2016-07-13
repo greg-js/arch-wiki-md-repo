@@ -194,20 +194,20 @@
 
 	[http://code.google.com/p/archlinux-stuff/](http://code.google.com/p/archlinux-stuff/) || [arch-backup](https://aur.archlinux.org/packages/arch-backup/)
 
-*   **[hdup](/index.php/Backup_with_hdup "Backup with hdup")** — Очень простой инструмент резервного копирования, с использованием командной строки.
+*   **hdup** — Очень простой инструмент резервного копирования, с использованием командной строки.
     *   Создаёт tar.gz или tar.bz2 архивы.
     *   Поддержка шифрования gpg.
     *   Поддержка SSH.
     *   Множественные цели резервного копирования.
 
-	[http://miek.nl/projects/hdup2/](http://miek.nl/projects/hdup2/) || [hdup](https://aur.archlinux.org/packages/hdup/)
+	[http://miek.nl/projects/hdup2/](http://miek.nl/projects/hdup2/)  || [hdup](https://aur.archlinux.org/packages/hdup/)
 
 *   **rdup** — Платформа для создания резервных копий, снабжённая скриптами для облегченного резервного копирования и шифрования, сжатия, передачи и упаковки для других утилит в истинном Unix-пути.
     *   Создание tar.gz архивов или копий rsync-типа.
     *   Шифрование (gpg, blowfish и другие); относится также и к копированию rsync-типа.
     *   Сжатие (также доступно для копий rsync-типа).
 
-	[http://miek.nl/projects/rdup](http://miek.nl/projects/rdup) || [rdup](https://aur.archlinux.org/packages/rdup/)
+	[http://miek.nl/projects/rdup](http://miek.nl/projects/rdup)  || [rdup](https://aur.archlinux.org/packages/rdup/)
 
 *   **[Duplicity](/index.php/Duplicity "Duplicity")** — A simple command-line utility which allows encrypted compressed incremental backup to nearly any storage.
     *   Supports gpg encryption and signing.

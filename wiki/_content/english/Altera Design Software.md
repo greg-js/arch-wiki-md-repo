@@ -24,7 +24,8 @@ This tutorial shows how to download, install, and configure the following softwa
         *   [2.2.1 With the kernel 4.x and Upwards](#With_the_kernel_4.x_and_Upwards)
         *   [2.2.2 With freetype2 2.5.0.1-1](#With_freetype2_2.5.0.1-1)
         *   [2.2.3 With ncurses 5.9](#With_ncurses_5.9)
-        *   [2.2.4 Install libraries](#Install_libraries)
+        *   [2.2.4 lib32-glibc 2.23-1](#lib32-glibc_2.23-1)
+        *   [2.2.5 Install libraries](#Install_libraries)
     *   [2.3 Application Menu Entry - ModelSim-Altera Edition](#Application_Menu_Entry_-_ModelSim-Altera_Edition)
     *   [2.4 Resolving the "ModelSim Failed to access library 'work'" error](#Resolving_the_.22ModelSim_Failed_to_access_library_.27work.27.22_error)
 
@@ -295,7 +296,7 @@ Modelsim has a problem with version 4 of the linux kernel. You need to edit the 
 change
 
 ```
-/opt/altera/15.1/modelsim_ae/bin/vsim line 206
+/opt/altera/15.1/modelsim_ae/vco line 206
 
 ```
 
@@ -307,7 +308,7 @@ change
 to
 
 ```
-/opt/altera/15.1/modelsim_ae/bin/vsim line 206
+/opt/altera/15.1/modelsim_ae/vco line 206
 
 ```
 
@@ -348,10 +349,10 @@ libfreetype.so.6
 libfreetype.so.6.10.2
 ```
 
-*   Edit the ModelSim script in `/opt/altera/15.1/modelsim_ae/bin/vsim` and add near the top (after the `#!/bin/sh`)
+*   Edit the ModelSim script `/opt/altera/15.1/modelsim_ae/vco` and add near the top (after the `#!/bin/sh`)
 
 ```
-export LD_LIBRARY_PATH=/home/user/altera/xx.x/lib32
+export LD_LIBRARY_PATH=${HOME}/altera/xx.x/lib32
 
 ```
 
@@ -375,6 +376,17 @@ There are two solutions to this problem. One is to use [ncurses5-compat-libs](ht
 The other solution is to download the ncurses 5.9 source, compile it, and copy the generated libraries and symlinks to the same directory as the freetype2 libraries.
 
 Compiling ncurses 5.9 may lead to problems using GCC 5.x. It is also possible to get a precompiled library, using the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive"). The package can be found at [http://ala.seblu.net/packages/l/lib32-ncurses/](http://ala.seblu.net/packages/l/lib32-ncurses/).
+
+#### lib32-glibc 2.23-1
+
+Originally discussed here: [https://bbs.archlinux.org/viewtopic.php?id=212531](https://bbs.archlinux.org/viewtopic.php?id=212531)
+
+The upgrade from lib32-glibc version 2.23-1 to later versions of lib32-glibc breaks FlexLM and prevents ModelSim from checking out a license. One workaround is to download the [archived lib32-glibc-2.23-1](https://archive.archlinux.org/packages/l/lib32-glibc/) and extract it to a directory such as `${HOME}/altera/xx.x/lib32/glibc223-1`. Then create or modify the `LD_LIBRARY_PATH` environment variable at the top of the `/opt/altera/xx.x/modelsim_ae/vco` script to include the new glibc223-1/usr/lib32 directory in the search path:
+
+```
+export LD_LIBRARY_PATH=${HOME}/altera/xx.x/lib32;${HOME}/altera/xx.x/lib32/glibc223-1/usr/lib32
+
+```
 
 #### Install libraries
 

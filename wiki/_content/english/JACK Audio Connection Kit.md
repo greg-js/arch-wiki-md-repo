@@ -27,11 +27,11 @@ In order for JACK to work properly, your user needs to be [added](/index.php/Use
 
 **Note:** You need to manually add your user to the `audio` group even if you're using logind, since logind just handles access to direct hardware.
 
-There are two JACK implementations, see [this comparison](https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2) for the difference between the two.
+There are two JACK implementations, see [this comparison](https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2) for the difference between the two. In short, Jack 1 and Jack 2 are equivalent implementations of the same protocol. Programs compiled against Jack 1 will work with Jack 2 without recompile (and vice versa).
 
 ### JACK2
 
-**JACK2** is rewritten explicitly towards multiprocessor hardware. [Install](/index.php/Install "Install") it with the [jack2](https://www.archlinux.org/packages/?name=jack2) package. If you are on a 64-bit installation and need to run 32-bit applications that require JACK, also install the [lib32-jack2](https://www.archlinux.org/packages/?name=lib32-jack2) package from the [multilib](/index.php/Multilib "Multilib") repository.
+**JACK2** is a C++ implementation with SMP support. [Install](/index.php/Install "Install") it with the [jack2](https://www.archlinux.org/packages/?name=jack2) package. If you are on a 64-bit installation and need to run 32-bit applications that require JACK, also install the [lib32-jack2](https://www.archlinux.org/packages/?name=lib32-jack2) package from the [multilib](/index.php/Multilib "Multilib") repository.
 
 #### JACK2 D-Bus
 
@@ -50,7 +50,7 @@ jack_control dps period 256  -  set the driver parameter period to 256
 
 ### JACK
 
-Alternatively, there is the older **JACK**. [Install](/index.php/Install "Install") it with the [jack](https://www.archlinux.org/packages/?name=jack) package. If you are on a 64-bit installation and need to run 32-bit applications that require JACK, also install the [lib32-jack](https://www.archlinux.org/packages/?name=lib32-jack) package from the [multilib](/index.php/Multilib "Multilib") repository.
+**JACK** uses a C API and supports more than one soundcard on Linux (plus MIDI). [Install](/index.php/Install "Install") it with the [jack](https://www.archlinux.org/packages/?name=jack) package. If you are on a 64-bit installation and need to run 32-bit applications that require JACK, also install the [lib32-jack](https://www.archlinux.org/packages/?name=lib32-jack) package from the [multilib](/index.php/Multilib "Multilib") repository.
 
 ### GUI
 

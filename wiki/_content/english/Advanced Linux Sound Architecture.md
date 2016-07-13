@@ -43,7 +43,7 @@ Besides the sound device drivers, ALSA also bundles a user space driven library 
     *   [7.1 Hot-plugging a USB sound card](#Hot-plugging_a_USB_sound_card)
     *   [7.2 Simultaneous output](#Simultaneous_output)
     *   [7.3 Keyboard volume control](#Keyboard_volume_control)
-    *   [7.4 Virtual sound device using aloop-snd](#Virtual_sound_device_using_aloop-snd)
+    *   [7.4 Virtual sound device using snd-aloop](#Virtual_sound_device_using_snd-aloop)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -844,12 +844,12 @@ amixer set Master toggle
 
 ```
 
-### Virtual sound device using aloop-snd
+### Virtual sound device using snd-aloop
 
-You might want a jack alternative to create a virtual recording or play device in order to mix different sources, using the aloo-snd module:
+You might want a jack alternative to create a virtual recording or play device in order to mix different sources, using the snd-aloop module:
 
 ```
-modprobe aloop-snd
+modprobe snd-aloop
 
 ```
 

@@ -66,7 +66,7 @@ If you are not familiar with Active Directory, there are a few keywords that are
 
 ### Active Directory Configuration
 
-**Warning:** This section has not been validated. Proceed with caution
+This section works with the default configuration of Windows Server 2012 R2.
 
 #### Updating the GPO
 

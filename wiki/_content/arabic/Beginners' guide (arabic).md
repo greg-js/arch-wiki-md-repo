@@ -4,6 +4,8 @@
 
 تعتبر قناة المجتمع (IRC ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux) وأيضا المنتديات [forums](https://bbs.archlinux.org/) مصدرا ممتازا إن لم تجد إجابة عن اﻷسئلة في مكان آخر. وفقا لـ[منهج آرتش](https://wiki.archlinux.org/index.php/The_Arch_Way), نشجعك على أن تكتب man command لقراءة [دليل إرشادات](https://wiki.archlinux.org/index.php/Man_page) أي أمر غير مألوف لك.
 
+**ملاحظة:** يمكن الوصول لهذا الدليل من وسيط التثبيت الحي باستخدام متصفح [ELinks](/index.php/ELinks "ELinks")، وذلك بعد تنفيذ خطوة [#Connect to the Internet](#Connect_to_the_Internet). يمكنك فعل ذلك بالدخول إلى طرفية وهمية جديدة [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console")، والتبديل بين الطرفية التي تستخدمها للتثبيت والطرفية التي تشغل منها المتصفح بـ (`Alt+arrow`). وبشكل مشابه يمكن الدخول ل[غرفة المحادثة الفوريّة](/index.php/IRC "IRC") `#archlinux` باستخدام [irssi](/index.php/Irssi "Irssi").
+
 ## Contents
 
 *   [1 التجهيز](#.D8.A7.D9.84.D8.AA.D8.AC.D9.87.D9.8A.D8.B2)

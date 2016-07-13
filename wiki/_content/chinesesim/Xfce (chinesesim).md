@@ -23,22 +23,20 @@
         *   [3.3.5 默认窗口管理器](#.E9.BB.98.E8.AE.A4.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
     *   [3.4 更换主题](#.E6.9B.B4.E6.8D.A2.E4.B8.BB.E9.A2.98)
     *   [3.5 声音](#.E5.A3.B0.E9.9F.B3)
-        *   [3.5.1 使用OSS驱动如何让xfce4-mixer来控制音量](#.E4.BD.BF.E7.94.A8OSS.E9.A9.B1.E5.8A.A8.E5.A6.82.E4.BD.95.E8.AE.A9xfce4-mixer.E6.9D.A5.E6.8E.A7.E5.88.B6.E9.9F.B3.E9.87.8F)
-        *   [3.5.2 使用快捷键改变音量](#.E4.BD.BF.E7.94.A8.E5.BF.AB.E6.8D.B7.E9.94.AE.E6.94.B9.E5.8F.98.E9.9F.B3.E9.87.8F)
-            *   [3.5.2.1 ALSA](#ALSA)
-            *   [3.5.2.2 OSS](#OSS)
-            *   [3.5.2.3 Xfce4-volumed](#Xfce4-volumed)
-            *   [3.5.2.4 Volumeicon](#Volumeicon)
-        *   [3.5.3 加入启动音效](#.E5.8A.A0.E5.85.A5.E5.90.AF.E5.8A.A8.E9.9F.B3.E6.95.88)
+        *   [3.5.1 Xfce4 mixer](#Xfce4_mixer)
+            *   [3.5.1.1 Change default sound card in Xfce4 mixer](#Change_default_sound_card_in_Xfce4_mixer)
+        *   [3.5.2 xfce4-alsa-plugin](#xfce4-alsa-plugin)
+        *   [3.5.3 Keyboard volume buttons](#Keyboard_volume_buttons)
+            *   [3.5.3.1 Shortcuts](#Shortcuts)
     *   [3.6 键盘快捷键](#.E9.94.AE.E7.9B.98.E5.BF.AB.E6.8D.B7.E9.94.AE)
     *   [3.7 Polkit 身法认证代理](#Polkit_.E8.BA.AB.E6.B3.95.E8.AE.A4.E8.AF.81.E4.BB.A3.E7.90.86)
+    *   [3.8 Display blanking](#Display_blanking)
 *   [4 提示和小技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E5.B0.8F.E6.8A.80.E5.B7.A7)
     *   [4.1 从 thunar 和 xfdesktop 隐藏分区](#.E4.BB.8E_thunar_.E5.92.8C_xfdesktop_.E9.9A.90.E8.97.8F.E5.88.86.E5.8C.BA)
     *   [4.2 屏幕截图](#.E5.B1.8F.E5.B9.95.E6.88.AA.E5.9B.BE)
     *   [4.3 禁用终端 F1 和 F11 快捷方式](#.E7.A6.81.E7.94.A8.E7.BB.88.E7.AB.AF_F1_.E5.92.8C_F11_.E5.BF.AB.E6.8D.B7.E6.96.B9.E5.BC.8F)
         *   [4.3.1 终端的颜色主题和调色板](#.E7.BB.88.E7.AB.AF.E7.9A.84.E9.A2.9C.E8.89.B2.E4.B8.BB.E9.A2.98.E5.92.8C.E8.B0.83.E8.89.B2.E6.9D.BF)
-        *   [4.3.2 更改默认颜色主题](#.E6.9B.B4.E6.94.B9.E9.BB.98.E8.AE.A4.E9.A2.9C.E8.89.B2.E4.B8.BB.E9.A2.98)
-        *   [4.3.3 修改默认颜色主题](#.E4.BF.AE.E6.94.B9.E9.BB.98.E8.AE.A4.E9.A2.9C.E8.89.B2.E4.B8.BB.E9.A2.98)
+        *   [4.3.2 修改默认颜色主题](#.E4.BF.AE.E6.94.B9.E9.BB.98.E8.AE.A4.E9.A2.9C.E8.89.B2.E4.B8.BB.E9.A2.98)
     *   [4.4 终端之Tango主题](#.E7.BB.88.E7.AB.AF.E4.B9.8BTango.E4.B8.BB.E9.A2.98)
     *   [4.5 颜色管理](#.E9.A2.9C.E8.89.B2.E7.AE.A1.E7.90.86)
     *   [4.6 多显示器](#.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8)
@@ -46,16 +44,20 @@
     *   [4.8 Scroll a background window without shifting focus on it](#Scroll_a_background_window_without_shifting_focus_on_it)
     *   [4.9 修改鼠标按键](#.E4.BF.AE.E6.94.B9.E9.BC.A0.E6.A0.87.E6.8C.89.E9.94.AE)
 *   [5 常见问题与解答](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E4.B8.8E.E8.A7.A3.E7.AD.94)
-    *   [5.1 Xfce4-xkb-plugin settings issue](#Xfce4-xkb-plugin_settings_issue)
-    *   [5.2 Thunar 不显示缩略图](#Thunar_.E4.B8.8D.E6.98.BE.E7.A4.BA.E7.BC.A9.E7.95.A5.E5.9B.BE)
-    *   [5.3 Locales 设置被GDM忽略](#Locales_.E8.AE.BE.E7.BD.AE.E8.A2.ABGDM.E5.BF.BD.E7.95.A5)
-    *   [5.4 恢复默认设置](#.E6.81.A2.E5.A4.8D.E9.BB.98.E8.AE.A4.E8.AE.BE.E7.BD.AE)
-    *   [5.5 NVIDIA 和 xfce4-sensors-plugin](#NVIDIA_.E5.92.8C_xfce4-sensors-plugin)
-    *   [5.6 会话错误](#.E4.BC.9A.E8.AF.9D.E9.94.99.E8.AF.AF)
-    *   [5.7 升级Xfce 4.10以后window buttons不能自动扩展长度](#.E5.8D.87.E7.BA.A7Xfce_4.10.E4.BB.A5.E5.90.8Ewindow_buttons.E4.B8.8D.E8.83.BD.E8.87.AA.E5.8A.A8.E6.89.A9.E5.B1.95.E9.95.BF.E5.BA.A6)
-    *   [5.8 Preferred Applications preferences have no effect](#Preferred_Applications_preferences_have_no_effect)
-    *   [5.9 Action Buttons in the panel are missing icons](#Action_Buttons_in_the_panel_are_missing_icons)
-    *   [5.10 修改挂载参数](#.E4.BF.AE.E6.94.B9.E6.8C.82.E8.BD.BD.E5.8F.82.E6.95.B0)
+    *   [5.1 Action buttons are missing icons](#Action_buttons_are_missing_icons)
+    *   [5.2 Desktop icons rearrange themselves](#Desktop_icons_rearrange_themselves)
+    *   [5.3 GTK themes not working with multiple monitors](#GTK_themes_not_working_with_multiple_monitors)
+    *   [5.4 Xfce4-xkb-plugin settings issue](#Xfce4-xkb-plugin_settings_issue)
+    *   [5.5 Icons do not appear in right-click menus](#Icons_do_not_appear_in_right-click_menus)
+    *   [5.6 Keyboard settings are not saved in xkb-plugin](#Keyboard_settings_are_not_saved_in_xkb-plugin)
+    *   [5.7 NVIDIA 和 xfce4-sensors-plugin](#NVIDIA_.E5.92.8C_xfce4-sensors-plugin)
+    *   [5.8 Panel applets keep being aligned on the left](#Panel_applets_keep_being_aligned_on_the_left)
+    *   [5.9 Preferred Applications preferences have no effect](#Preferred_Applications_preferences_have_no_effect)
+    *   [5.10 Restore default settings](#Restore_default_settings)
+    *   [5.11 Session failure](#Session_failure)
+    *   [5.12 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
+    *   [5.13 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
+    *   [5.14 Rendering issues with Adwaita theme](#Rendering_issues_with_Adwaita_theme)
 *   [6 相关文章](#.E7.9B.B8.E5.85.B3.E6.96.87.E7.AB.A0)
 
 ## 安装
@@ -301,156 +303,37 @@ $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string 
 
 ### 声音
 
-[xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) 是 Xfce 组开发的用户混音程序和面板插件，是 xfce4 组的一部分，所以应该已经安装。它使用 [gstreamer](https://www.archlinux.org/packages/?name=gstreamer) 作为控制音量的后端，所以必须安装 xfce4-mixer 列出的可选依赖关系，否则点击时会出现如下错误：
+#### Xfce4 mixer
 
-```
- GStreamer was unable to detect any sound devices. Some sound system specific GStreamer packages may be missing. It may also be a permissions problem.
+**Note:** Xfce4 和 and Xfce4 volumed 因为无法移植到 GStreamer 1.0, 上游已经不再维护。详情参考：4.12 [新闻](http://www.xfce.org/about/news/?post=1425081600).
 
-```
+[xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) 是 Xfce 组开发的用户混音程序和面板插件，xfce4 软件组的一部分，所以应该已经安装。要支持 [PulseAudio](/index.php/PulseAudio "PulseAudio") 和 [OSS](/index.php/OSS "OSS")，需要安装 [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins)。
 
-需要的插件由硬件觉得，大部分用户需要 [安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 软件包 [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins). 如果面板已经启动，安装后需要重新登陆，或删除再加入。如果不能工作，可能还需要其他插件如[gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) 或 [gstreamer0.10-bad-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-bad-plugins).
+可能需要变更默认声卡才能正常使用 Xfce4 mixer 详情请参考 [Advanced Linux Sound Architecture#Set the default sound card](/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card "Advanced Linux Sound Architecture")，修改后需要重新登录。此外还可以使用 [PulseAudio](/index.php/PulseAudio "PulseAudio") 和 [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) 或 [OSS](/index.php/OSS "OSS"). 参考[OSS#Applications that use GStreamer](/index.php/OSS#Applications_that_use_GStreamer "OSS").
 
-更多关于默认声卡的设置请阅读 [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")。此外还可以使用 [PulseAudio](/index.php/PulseAudio "PulseAudio") 和 [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).
+##### Change default sound card in Xfce4 mixer
 
-#### 使用OSS驱动如何让xfce4-mixer来控制音量
+In some cases (when using [PulseAudio](/index.php/PulseAudio "PulseAudio") or [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) for instance) it might be necessary to change the default sound card in Xfce4 Mixer in order for volume control to work as expected. [[2]](http://grumbel.blogspot.co.uk/2011/10/fixing-volume-control-in-xfce4.html)
 
-新版的xfce4-mixer使用了gstreamer作为后端，这样就不用直接与驱动交流，更加统一。与驱动打交道的工作交给了gstreamer。因此如果你xfce4-mixer无法正常工作，就需要配置好gstreamer。首先当然你得安装xfce4-mixer。
+To change the default sound card, open *xfce4-settings-editor* and navigate to **xfce4-mixer** and check the entries under **sound-cards**. Locate the correct entry for the card you are using and then replace the values of **sound-card** and **active-card** with the entry. If you are using PulseAudio then the entry will likely be similar to the following: **PlaybackInternalAudioAnalogStereoPulseAudioMixer**. Then logout for the changes to take effect.
 
-```
- pacman -S xfce4-mixer gstreamer0.10-base-plugins
+#### xfce4-alsa-plugin
 
-```
+If you do not use PulseAudio, you can install [xfce4-alsa-plugin](https://aur.archlinux.org/packages/xfce4-alsa-plugin/). It provides a simple panel plugin with the ability to control ALSA volume, though it does not support keyboard volume buttons.
 
-你需要至少安装gstreamer0.10-good-plugins,考虑安装gstreamer0.10-bad-plugins
+#### Keyboard volume buttons
 
-```
- pacman -S gstreamer0.10-good-plugins gstreamer0.10-bad-plugins
+If the [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) package is version `4.10.0-3` or greater, then the mixer panel applet provides the ability to control the volume using the keyboard. However, volume notifications will not be shown. Alternatively, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) maps volume keys to Xfce4 mixer, and displays notifications through Xfce4-notifyd. If you are using PulseAudio and you do not wish to use Xfce4 Mixer at all, install [xfce4-pulseaudio-plugin](https://aur.archlinux.org/packages/xfce4-pulseaudio-plugin/). This provides a panel applet which has support for keyboard volume control and volume notifications.
 
-```
+For non desktop environment specific alternatives, see [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications").
 
-然后删除面板上的mixer插件，然后重新添加一次，或者先登出然后再登录一次，对gstreamer做更改后必须这样做才能让操作生效。
+##### Shortcuts
 
-也能够下载PKGBUILD 或者其他你需要的ABS[here](https://projects.archlinux.org/svntogit/packages.git/tree/gstreamer0.10-good/repos), 修改 PKGBUILD, 添加参数 --enable-oss.
+If you are not using an applet or daemon that controls the volume keys, you can map volume control commands to your volume keys manually using Xfce's keyboard settings. For the sound system you are using, see the sections linked to below for the appropriate commands.
 
-```
- ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
-   **--enable-oss \**
-   --disable-static --enable-experimental \
-   --disable-schemas-install \
-   --disable-hal \
-   --with-package-name="GStreamer Good Plugins (Archlinux)" \
-   --with-package-origin="[https://www.archlinux.org/](https://www.archlinux.org/)"
-
-```
-
-然后开始安装：
-
-```
- makepkg -i
-
-```
-
-如果仍然失败，就到论坛发贴求助，或者到OSS官方论坛查看[[2]](http://www.4front-tech.com/forum/)
-
-#### 使用快捷键改变音量
-
-使用xbindkeys也可以达到相同的效果。
-
-```
-Settings --> Keyboard
-
-```
-
-单击"Application Shortcuts" 选项卡中 "Add" 按钮. 输入命令即可添加快捷键了。
-
-##### ALSA
-
-升高音量：
-
-```
-amixer set Master 5%+
-
-```
-
-降低音量：
-
-```
-amixer set Master 5%-
-
-```
-
-静音：
-
-```
-amixer set Master toggle
-
-```
-
-你如果使用的是标准的XF86Audio 快捷键，在在终端输入以下内容：
-
-```
-xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioRaiseVolume -n -t string -s "amixer set Master 5%+ unmute"
-xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioLowerVolume -n -t string -s "amixer set Master 5%- unmute"
-xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioMute -n -t string -s "amixer set Master toggle"
-
-```
-
-若 `amixer set Master toggle` 不工作，尝试使用调节PCM直接调节音量(`amixer set PCM toggle`) 。
-
-这个频段必须使用 "mute" 参数工作。要检查计算机是否支持mute，运行 `alsamixer` 在终端查看Master条上是否有两个 M (MM) 。 若没有显示，则你的电脑可能不支持 mute 参数。假如你不得不切换使用 PCM 改变音量，那必须确保你的 xfce-mixer 也要调节 PCM 通道，而不是普通的 Master 通道。
-
-##### OSS
-
-使用脚本文件: [[http://www.opensound.com/wiki/index.php/Tips_And_Tricks#Using_multimedia_keys_with_OSS](http://www.opensound.com/wiki/index.php/Tips_And_Tricks#Using_multimedia_keys_with_OSS) ]
-
-如果你使用ossvol (推荐): 升高音量：
-
-```
-ossvol -i 1
-
-```
-
-降低音量：
-
-```
-ossvol -d 1
-
-```
-
-静音/取消静音：
-
-```
-ossvol -t
-
-```
-
-如果使用 pulseaudio 时 xfce4-volumed 无法静音，请尝试：
-
-```
-xfconf-query -c xfce4-mixer -p /active-card -s `xfconf-query -c xfce4-mixer -p /sound-card`
-
-```
-
-##### Xfce4-volumed
-
-来自[AUR](/index.php/AUR "AUR") 的 [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) daemon 能自动识别键盘的多媒体按键并映射到 Xfce-mixer。并能通过OSD通知音量变化的情况。Xfce4-volumed 不需要任何设置即可开始工作。
-
-假如你使用pulseaudio 和 xfce4-volumed 取消静音不能正常使用，可以按照上面的 pulseaudio 部分修改 pactl 命令的键盘命令。
-
-##### Volumeicon
-
-[volumeicon](https://www.archlinux.org/packages/?name=volumeicon) is an alternative to xfce4-volumed in the community repo also handling keybindings and notifications through [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd).
-
-#### 加入启动音效
-
-Arch中并没有内置启动音效的设置页面, 但是您可以通过把下面的字段加入程序自启动设置来实现:
-
-```
-aplay /boot/startupsound.wav
-
-```
-
-音频文件的来源和名称可以随意指定, 但是在命名时请尽量简明并保证文件的小巧，把音频文件放入`/boot`目录即可。
+*   ALSA: see [Advanced Linux Sound Architecture#Keyboard volume control](/index.php/Advanced_Linux_Sound_Architecture#Keyboard_volume_control "Advanced Linux Sound Architecture").
+*   PulseAudio: see [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio")
+*   OSS: see [OSS#Using multimedia keys with OSS](/index.php/OSS#Using_multimedia_keys_with_OSS "OSS").
 
 ### 键盘快捷键
 
@@ -461,6 +344,20 @@ aplay /boot/startupsound.wav
 在安装 [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session) 时，会一起安装 [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome) 代理，并会随系统自动启动;并不主要用户的干预。更多信息，参见 [Polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit")。
 
 Xfce可用的第三方的 Polkit 身法认证代理，参见 [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/)。
+
+### Display blanking
+
+**Note:** There are some issues associated with blanking and resuming from blanking in some configurations. See [[3]](https://bbs.archlinux.org/viewtopic.php?id=194313&p=2)[[4]](https://bugzilla.xfce.org/show_bug.cgi?id=11107).
+
+Some programs that are commonly used with Xfce will control monitor blanking and [DPMS](/index.php/DPMS "DPMS") (monitor powersaving) settings. They are discussed below.
+
+	Xfce Power Manager
+
+Xfce Power Manager will control blanking and DPMS settings. These settings can be configured by running *xfce4-power-manager-settings* and clicking the *Display* tab. Note that unticking the *Handle display power management* option means that the Power Manager will disable DPMS - it does not mean that the Power Manager will relinquish control of DPMS. Also note that it will not disable screen blanking. To disable both blanking and DPMS, right click on the power manager system tray icon or left click on the panel applet and make sure that the option labelled *Presentation mode* is ticked.
+
+	xset
+
+If neither of the above applications are running, then blanking and DPMS settings can be controlled using the *xset* command, see [DPMS#Modifying DPMS and screensaver settings using xset](/index.php/DPMS#Modifying_DPMS_and_screensaver_settings_using_xset "DPMS").
 
 ## 提示和小技巧
 
@@ -490,25 +387,6 @@ The xfce terminal binds F1 and F11 to help and fullscreen, respectively, which c
 #### 终端的颜色主题和调色板
 
 可以在首选项的外观标签下修改中断主题颜色和调色板. 这些色彩可用于多大数控制台程序如[Emacs](/index.php/Emacs "Emacs"), [Vi](/index.php/Vi "Vi")等. 它们的设置单独存储在每个用户的`~/.config/xfce4/terminal/terminalrc`文件. 还有更多主题可供选择. [Terminal Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?id=51818) 查找更多终端配色方案
-
-#### 更改默认颜色主题
-
-XFCE 的 `extra/terminal` 包带有暗色调色板. To change this, append the following in your terminalrc file for a lighter color theme, that is always visible in darker Terminal backgrounds.
-
-```
-~/.config/xfce4/terminal/terminalrc
-
-```
-
-```
-ColorPalette5=#38d0fcaaf3a9
-ColorPalette4=#e013a0a1612f
-ColorPalette2=#d456a81b7b42
-ColorPalette6=#ffff7062ffff
-ColorPalette3=#7ffff7bd7fff
-ColorPalette13=#82108210ffff
-
-```
 
 #### 修改默认颜色主题
 
@@ -557,7 +435,7 @@ ColorPalette16=#eeeeeeeeecec
 
 ### 颜色管理
 
-Xfce has no native support for colour management. [[3]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
+Xfce has no native support for colour management. [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
 
 ### 多显示器
 
@@ -605,6 +483,63 @@ $ xfconf-query -c xfwm4 -p /general/easy_click -n -t string -s "Ctrl><Alt"
 
 ## 常见问题与解答
 
+### Action buttons are missing icons
+
+This happens if icons for some actions (Suspend, Hibernate) are missing from the icon theme, or do not have the expected names. To fix this, install an icon theme which has the necessary icons already added; see [Icons#Xfce icons](/index.php/Icons#Xfce_icons "Icons").
+
+Then, you can switch to that icon theme using Applications -> Settings -> Appearance -> Icons.
+
+Alternatively you can use the required icons provided by the icon theme you installed in your current icon theme. To do so, you first need to find out what the currently used icon theme is called. You can do so by using the command below:
+
+```
+$ xfconf-query -c xsettings -p /Net/IconThemeName
+
+```
+
+Then set the following variable:
+
+```
+$ icontheme=/usr/share/icons/*theme-name*
+
+```
+
+where *theme-name* is the name of the current icon theme.
+
+Then create symbolic links from the current icon theme into the icon theme providing the icons (this example assumes the icons are being provided by the [elementary-xfce-icons](https://aur.archlinux.org/packages/elementary-xfce-icons/) theme.)
+
+```
+ln -s /usr/share/icons/elementary-xfce/apps/16/system-suspend.svg           ${icontheme}/16x16/actions/system-suspend.svg
+ln -s /usr/share/icons/elementary-xfce/apps/16/system-suspend-hibernate.svg ${icontheme}/16x16/actions/system-hibernate.svg
+ln -s /usr/share/icons/elementary-xfce/apps/22/system-suspend.svg           ${icontheme}/22x22/actions/system-suspend.svg
+ln -s /usr/share/icons/elementary-xfce/apps/22/system-suspend-hibernate.svg ${icontheme}/22x22/actions/system-hibernate.svg
+ln -s /usr/share/icons/elementary-xfce/apps/24/system-suspend.svg           ${icontheme}/24x24/actions/system-suspend.svg
+ln -s /usr/share/icons/elementary-xfce/apps/24/system-suspend-hibernate.svg ${icontheme}/24x24/actions/system-hibernate.svg
+ln -s /usr/share/icons/elementary-xfce/apps/48/system-suspend.svg           ${icontheme}/48x48/actions/system-suspend.svg
+ln -s /usr/share/icons/elementary-xfce/apps/48/system-suspend-hibernate.svg ${icontheme}/48x48/actions/system-hibernate.svg
+
+```
+
+Log out and in again, and you should see icons for all actions.
+
+### Desktop icons rearrange themselves
+
+At certain events (such as opening the panel settings dialog) icons on the desktop rearrange themselves. This is because icon positions are determined by files in the `~/.config/xfce4/desktop/` directory. Each time a change is made to the desktop (icons are added or removed or change position) a new file is generated in this directory and these files can conflict.
+
+To solve the problem, navigate to the directory and delete all the files other than the one which correctly defines the icon positions. You can determine which file defines the correct icon positions by opening it and examining the locations of the icons. The topmost row is defined as `row 0` and the leftmost column is defined by `col 0`. Therefore an entry of:
+
+```
+[Firefox]
+row=3
+col=0
+
+```
+
+means that the Firefox icon will be located on the 4th row of the leftmost column.
+
+### GTK themes not working with multiple monitors
+
+Some configuration tools may corrupt displays.xml, which results in GTK themes under *Applications Menu > Settings > Appearance* ceasing to work. To fix the issue, delete `~/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml` and reconfigure your screens.
+
 ### Xfce4-xkb-plugin settings issue
 
 There is a bug in version *0.5.4.1-1* which causes xkb-plugin to *lose keyboard, layout switching and compose key* settings. As a workaround you may enable *Use system defaults* option in keyboard settings. To do so run
@@ -616,47 +551,57 @@ xfce4-keyboard-settings
 
 Go to *Layout* tab and set the *Use system defaults* flag, then reconfigure xkb-plugin.
 
-### Thunar 不显示缩略图
+### Icons do not appear in right-click menus
 
-Thunar 已经支持 **Tumbler** 选项，只要安装Tumbler:
+**Note:** Despite the deprecation of GConf, this method does still work.
 
-```
-pacman -S tumbler
-
-```
-
-更详细内容请参考 [Thunar Wiki](/index.php/Thunar_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Thunar_Thumbnailers "Thunar (简体中文)").
-
-### Locales 设置被GDM忽略
-
-成为超级用户添加locales到 /var/lib/AccountsService/users/$USER:
+Users may find that icons do not appear when right-clicking options within some applications, including those made with [Qt](/index.php/Qt "Qt"). This problem only appears to happen within Xfce. Run these two commands:
 
 ```
-su -c "nano /var/lib/AccountsService/users/$USER"
+$ gconftool-2 --type boolean --set /desktop/gnome/interface/buttons_have_icons true
+$ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons true
 
 ```
 
-用你自己的locales代替 hu_HU.UTF-8 :
+### Keyboard settings are not saved in xkb-plugin
+
+There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[6]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
+
+### NVIDIA 和 xfce4-sensors-plugin
+
+要探测NVIDIA的gpu温度需要安装 [libxnvctrl](https://www.archlinux.org/packages/?name=libxnvctrl) 并且用 [ABS](/index.php/ABS "ABS") 重新编译 [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin) 软件包。You also have the option of using [xfce4-sensors-plugin-nvidia](https://aur.archlinux.org/packages/xfce4-sensors-plugin-nvidia/) which replaces [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin).
+
+### Panel applets keep being aligned on the left
+
+Add a separator someplace before the right end and set its "expand" property. [[7]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
+
+### Preferred Applications preferences have no effect
+
+Most applications rely on [xdg-open](/index.php/Xdg-open "Xdg-open") for opening a preferred application for a given file or URL.
+
+In order for xdg-open and xdg-settings to detect and integrate with the Xfce desktop environment correctly, you need to [install](/index.php/Install "Install") the [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) package.
+
+If you do not do that, your preferred applications preferences (set by exo-preferred-applications) will not be obeyed. Installing the package and allowing *xdg-open* to detect that you are running Xfce makes it forward all calls to *exo-open* instead, which correctly uses all your preferred applications preferences.
+
+To make sure xdg-open integration is working correctly, ask *xdg-settings* for the default web browser and see what the result is:
 
 ```
-[User]
-Language=hu_HU.UTF-8
-XSession=xfce
+# xdg-settings get default-web-browser
 
 ```
 
-也可以利用sed程序。 注意在 .UTF-8前面加 "/":
+If it replies with:
 
 ```
-su -c "sed -i 's/Language=.*/Language=hu_HU\.UTF-8/' /var/lib/AccountsService/users/$USER"
+xdg-settings: unknown desktop environment
 
 ```
 
-重启GDM。
+it means that it has failed to detect Xfce as your desktop environment, which is likely due to a missing [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) package.
 
-### 恢复默认设置
+### Restore default settings
 
-若你折腾到想还原xfce4的默认设置,重命名 `~/.config/xfce4-session/` 和 `~/.config/xfce4/`就可以了XD
+If for any reason you need to revert back: to the default settings, rename `~/.config/xfce4-session/` and `~/.config/xfce4/`
 
 ```
 $ mv ~/.config/xfce4-session/ ~/.config/xfce4-session-bak
@@ -664,76 +609,60 @@ $ mv ~/.config/xfce4/ ~/.config/xfce4-bak
 
 ```
 
-注销后生效。
+Relogin for changes to take effect. If you get `Unable to load a failsafe session` upon login, see the [#Session failure](#Session_failure) section.
 
-### NVIDIA 和 xfce4-sensors-plugin
+### Session failure
 
-要探测NVIDIA的gpu温度需要安装 [libxnvctrl](https://www.archlinux.org/packages/?name=libxnvctrl) 并且重新编译 [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin) 软件包。
+Symptoms include:
 
-### 会话错误
-
-如果窗口管理器不能正常运行（鼠标是一个X形，或者不能关闭窗口），不能正常还原，这时候说明会话出错。 删除掉session及其`.cache` 文件夹。
-
-```
-# rm -r ~/.cache/sessions/
-
-```
-
-在重启计算机之后会话应该就还原正常了。（只重启Xfce亦可）
-
-### 升级Xfce 4.10以后window buttons不能自动扩展长度
-
-这种情况导致类似windows布局的panel始终和通知区域来回移动，不能定位在右下方。 原因是新版的Window Buttons panel plugin不能自动适应面板长度。
-
-为了回到之前的效果，可以在Window Buttons之后添加一个分隔符，属性选中"*扩展*"。
-
-### Preferred Applications preferences have no effect
-
-If you have set your preferred applications with *exo-preferred-applications*, but they do not seem to be taken into consideration, see [Xfce#xdg-open_integration_.28Preferred_Applications.29](/index.php/Xfce#xdg-open_integration_.28Preferred_Applications.29 "Xfce")
-
-### Action Buttons in the panel are missing icons
-
-This happens if icons for some actions (Suspend, Hibernate) are missing from the icon theme, or at least do not have the expected names. First, find out the currently used icon theme in the Settings Manager (→Appearance→Icons). Match this with a subdirectory of `/usr/share/icons`. For example, if the icon theme is GNOME, make a note of the directory name `/usr/share/icons/gnome`.
+*   The mouse is an X and/or does not appear at all;
+*   Window decorations have disappeared and windows cannot be closed;
+*   (`xfwm4-settings`) will not start, reporting `These settings cannot work with your current window manager (unknown)`;
+*   Errors reported by a [display manager](/index.php/Display_manager "Display manager") such as `No window manager registered on screen 0`.
+*   Unable to load a failsafe session:
 
 ```
-icontheme=/usr/share/icons/gnome
+Unable to load a failsafe session.
+Unable to determine failsafe session name.  Possible causes: xfconfd isn't running (D-Bus setup problem); environment variable $XDG_CONFIG_DIRS is set incorrectly (must include "/etc"), or xfce4-session is installed incorrectly. 
 
 ```
 
-Make sure that the [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) is installed as this contains the needed icons. Now create symbolic links from the current icon theme into the `hicolor` icon theme.
+Restarting xfce or rebooting your system may solve the problem, but a corrupt session is the likely cause. Delete the session folder:
 
 ```
-ln -s /usr/share/icons/hicolor/16x16/actions/xfpm-suspend.png   ${icontheme}/16x16/actions/system-suspend.png
-ln -s /usr/share/icons/hicolor/16x16/actions/xfpm-hibernate.png ${icontheme}/16x16/actions/system-hibernate.png
-ln -s /usr/share/icons/hicolor/22x22/actions/xfpm-suspend.png   ${icontheme}/22x22/actions/system-suspend.png
-ln -s /usr/share/icons/hicolor/22x22/actions/xfpm-hibernate.png ${icontheme}/22x22/actions/system-hibernate.png
-ln -s /usr/share/icons/hicolor/24x24/actions/xfpm-suspend.png   ${icontheme}/24x24/actions/system-suspend.png
-ln -s /usr/share/icons/hicolor/24x24/actions/xfpm-hibernate.png ${icontheme}/24x24/actions/system-hibernate.png
-ln -s /usr/share/icons/hicolor/48x48/actions/xfpm-suspend.png   ${icontheme}/48x48/actions/system-suspend.png
-ln -s /usr/share/icons/hicolor/48x48/actions/xfpm-hibernate.png ${icontheme}/48x48/actions/system-hibernate.png
+$ rm -r ~/.cache/sessions/
 
 ```
 
-Log out and in again, and you should see icons for all actions.
+Also make sure that the relevant folders in `$HOME` are owned by the user starting `xfce4`. See [Chown](/index.php/Chown "Chown").
 
-### 修改挂载参数
+### Fonts in window title crashing xfce4-title
 
-比较常见的问题是自动挂载USB设备后，其中FAT文件系统的编码总是探测失败，ñ, ß, etc. 默认用utf8的iocharset编码能够有效解决这个问题，添加以下内容至`/etc/xdg/xfce4/mount.rc`：
+[Install](/index.php/Install "Install") [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid) and [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu). See also [FS#44382](https://bugs.archlinux.org/task/44382).
+
+### Laptop lid settings ignored
+
+You may find that the lid close settings in Xfce4 Power Manager are ignored, meaning that the laptop will always suspend on lid close, no matter what settings are chosen in the power manager. This is because the power manager is not set to handle lid close events by default. Instead, logind handles the lid close event. To change this behavior so that the the power manager handles lid close events, execute the following command:
 
 ```
-[vfat]
-uid=<auto>
-shortname=winnt
-**utf8=true**
-# FreeBSD specific option
-longnames=true
-flush=true
+$ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-switch -s false
 
 ```
 
-当你使用utf-8时，文件系统小心的探测文件中的内容。
+Note that each time the laptop lid settings are changed in the power manager, this setting will be reset.
 
-还有一个比较推荐添加的 **flush**参数 ，以免数据频繁更新导致拖慢thunar的复制进程。Adding *async* instead will speed up write ops, but make sure to use *Eject* option in Thunar to unmount the stick. Globally, mount options for storage devices present at boot can be set in [fstab](/index.php/Fstab "Fstab"), and for other devices in [udev](/index.php/Udev "Udev") rules.
+### Rendering issues with Adwaita theme
+
+Since the upgrade of gnome-themes-standard from 3.18.0-1 version to 3.20.0-1 the Adwaita theme exhibits several issues when being used in Xfce, like a frame around the notification area and dark background of the tooltip in eclipse.
+
+A ugly solution is to downgrade the [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) to the old 3.18.0-1 meanwhile. The package can be downloaded at:
+
+```
+$ wget https://archive.archlinux.org/repos/2016/04/08/extra/os/$(uname -m)/gnome-themes-standard-3.18.0-1-$(uname -m).pkg.tar.xz
+
+```
+
+and installed via pacman's `-U` option.
 
 ## 相关文章
 

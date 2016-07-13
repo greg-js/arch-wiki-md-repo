@@ -85,14 +85,14 @@ Sometimes, ACPI does not work well due to different motherboard implementations 
 acpi_backlight=video
 acpi_backlight=vendor
 acpi_backlight=native
-acpi_backlight=none
 
 ```
 
-**Note:**
+If you find that changing the `acpi_video0` backlight does not actually change the brightness, you may need to use `acpi_backlight=none`.
 
-*   If you find that changing the `acpi_video0` backlight does not actually change the brightness, you may need to use `acpi_backlight=none`.
-*   On an Asus notebooks you might also need to do: `# modprobe asus-nb-wmi` 
+**Tip:**
+
+*   On an Asus notebooks you might also need to `modprobe asus-nb-wmi` as root.
 *   Disabling legacy boot on Dell XPS13 breaks backlight support.
 
 ### Udev rule

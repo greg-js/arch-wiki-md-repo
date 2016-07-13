@@ -2,25 +2,25 @@
 
 ## Contents
 
-*   [1 Installing](#Installing)
-*   [2 Basic Usage](#Basic_Usage)
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
     *   [2.1 Navigation](#Navigation)
 *   [3 Configuration](#Configuration)
-*   [4 Tips](#Tips)
+*   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Defining URL-handlers](#Defining_URL-handlers)
-    *   [4.2 Using ELinks with Tor](#Using_ELinks_with_Tor)
+    *   [4.2 Tor usage](#Tor_usage)
     *   [4.3 Passing URL's to external commands](#Passing_URL.27s_to_external_commands)
         *   [4.3.1 Saving link to the X clipboard](#Saving_link_to_the_X_clipboard)
         *   [4.3.2 Passing YouTube-links through external player](#Passing_YouTube-links_through_external_player)
-*   [5 Troubleshoot](#Troubleshoot)
+*   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 ELinks froze and I can't start it without it freezing again](#ELinks_froze_and_I_can.27t_start_it_without_it_freezing_again)
-*   [6 See Also](#See_Also)
+*   [6 See also](#See_also)
 
-## Installing
+## Installation
 
-[elinks](https://www.archlinux.org/packages/?name=elinks) is available from the official repositories.
+[Install](/index.php/Install "Install") the [elinks](https://www.archlinux.org/packages/?name=elinks) package.
 
-## Basic Usage
+## Usage
 
 Start elinks with
 
@@ -40,9 +40,9 @@ $ elinks foo.bar.org
 
 Navigating the web with a text browser is more or less the same as a graphical browser, just without the 'distractions'. Once you've started *elinks*, you can press **g** and type in the web page you would like to request. Then you can navigate the page using arrow keys to navigate by line, the space bar to navigate by page, or the **j**, **k** keys to navigate by link.
 
-## Configuration
+**Tip:** To keep the original terminal session, *elinks* can be run in a separate [w:Virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") (switch with `Alt+arrow`) or with a [w:Terminal multiplexer](https://en.wikipedia.org/wiki/Terminal_multiplexer "w:Terminal multiplexer") such as [tmux](/index.php/Tmux "Tmux").
 
-Almost everything in ELinks can be configured to suit your fancy.
+## Configuration
 
 ELinks provides to two menus, accessable through ELinks, to customize options and keybinds respectivly.
 
@@ -50,9 +50,7 @@ It is recommened to use these tools as opposed to hand-editing the config files 
 
 By default, access to the option manager is through the **o** key and access to the keybind-manager is through the **k** key.
 
-**Note:** The organization of the option-manager is not always obvious and takes a bit of memorization to use efficiently once you eventually find what you were looking for
-
-## Tips
+## Tips and tricks
 
 ### Defining URL-handlers
 
@@ -90,16 +88,16 @@ set mime.type.image.gif = "image_viewer"
 set mime.type.image.bmp = "image_viewer"
 ```
 
-### Using ELinks with [Tor](/index.php/Tor "Tor")
+### [Tor](/index.php/Tor "Tor") usage
 
-ELinks does not support SOCKS directly, so alternatives are to either invoke ELinks thus `torify elinks` or install [privoxy](https://www.archlinux.org/packages/?name=privoxy) from the [official repositories](/index.php/Official_repositories "Official repositories") and use it for forwarding to Tor's SOCKS proxy, first by adding the following line to your `/etc/privoxy/config`:
+ELinks does not support SOCKS directly. Alternatives are to either invoke ELinks through `torify elinks`, or [install](/index.php/Install "Install") the [privoxy](https://www.archlinux.org/packages/?name=privoxy) package for forwarding to Tor's SOCKS proxy, first by adding the following line to your `/etc/privoxy/config`:
 
 ```
 forward-socks5 / localhost:9050 .
 
 ```
 
-Restart `privoxy.service` and then entering the following lines to your `~/.elinks/elinks.conf`:
+[Restart](/index.php/Restart "Restart") `privoxy.service`, then enter the following lines to your `~/.elinks/elinks.conf`:
 
 ```
 set protocol.http.proxy.host = "127.0.0.1:8118"
@@ -118,8 +116,6 @@ To do this, go into the options menu, navigate under **Document**, then to **URI
 Assuming the command "tab-external-command" is mapped to **KEY**, whenever you press **KEY**, a menu containing your commands will appear. Select the one you want, and ELinks passes the current URL to that command
 
 **Note:** Elinks allows you to define your own mappings for navigating this menu
-
-Here are some useful commands to get you started...
 
 #### Saving link to the X clipboard
 
@@ -144,27 +140,27 @@ youtube-dl -o - %c | mplayer -
 
 ```
 
-## Troubleshoot
+## Troubleshooting
 
 ### ELinks froze and I can't start it without it freezing again
 
 By default, every time you start ELinks you are connecting to an existing instance. Thus, if that instance freezes, all current and future instances will freeze as well.
 
-You can prevent ELinks from connecting to an existing instance by starting it like so
+You can prevent ELinks from connecting to an existing instance by starting it like so:
 
 ```
-elinks -no-connect
+$ elinks -no-connect
 
 ```
 
-If this happens a lot, you might consider making this your default startup by making an alias in your shell
+If this happens a lot, you might consider making this your default startup by making an alias in your shell:
 
 ```
 alias elinks="elinks -no-connect"
 
 ```
 
-## See Also
+## See also
 
 *   [Official web site](http://elinks.or.cz/)
 *   [Howto: Use elinks like a pro](http://kmandla.wordpress.com/2007/05/06/howto-use-elinks-like-a-pro/)

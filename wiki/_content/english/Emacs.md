@@ -229,11 +229,11 @@ Emacs is self-documenting by design. As such, a great deal of information is ava
 
 Emacs also includes a set of reference cards, useful for beginners and experts alike, see `/usr/share/emacs/<version>/etc/refcards/` (substitute <version> for your version of emacs).
 
-Emacs empowers the users with a tremendous amount of features, among which: keyboards macros, rectangular regions, whitespace cleanup, bookmarks, desktop session, various shells, spell checking, tables, semantic analysis...
+Emacs empowers the users with a tremendous amount of features, including: keyboards macros, rectangular regions, whitespace cleanup, bookmarks, desktop session, various shells, spell checking, tables, semantic analysis...
 
 ### The manuals
 
-If you really want to master Emacs, the most recommanded source of documentation remains the official manuals:
+If you really want to master Emacs, the most recommended source of documentation remains the official manuals:
 
 *   Emacs: the complete Emacs user manual.
 *   Emacs FAQ.

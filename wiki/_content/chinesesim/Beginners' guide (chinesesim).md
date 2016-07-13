@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Beginners'_Guide](/index.php/Beginners%27_Guide "Beginners' Guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-07，点击[这里](https://wiki.archlinux.org/index.php?title=Beginners'_Guide&diff=0&oldid=440464)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Beginners'_Guide](/index.php/Beginners%27_Guide "Beginners' Guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-12，点击[这里](https://wiki.archlinux.org/index.php?title=Beginners'_Guide&diff=0&oldid=440711)可以查看翻译后英文页面的改动。
 
 欢迎，本向导写给 Arch 新用户，但是会尽量做到成为所有用户的参考和信息库。 本文档指导您使用[Arch安装脚本](https://projects.archlinux.org/arch-install-scripts.git/)来安装[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")：一个简单、轻量级、适合计算机水平较高用户使用的发行版。建议在安装前先浏览一下[FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。 社区维护的[ArchWiki](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")应该有办法解决遇到的疑难。若在其它地方找不到解决办法，[IRC 频道](/index.php/IRC_channel "IRC channel")([irc://irc.freenode.net/#archlinux-cn](irc://irc.freenode.net/#archlinux-cn)) 和[论坛](https://bbs.archlinux.org/)都是求助的好地方。为了贯彻[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，如遇陌生的命令，可输入`man *command*`以查询相关`man`手册页。
 
@@ -27,8 +27,8 @@
     *   [4.5 时间](#.E6.97.B6.E9.97.B4)
     *   [4.6 Initramfs](#Initramfs)
     *   [4.7 设置 Root 密码](#.E8.AE.BE.E7.BD.AE_Root_.E5.AF.86.E7.A0.81)
-    *   [4.8 安装 bootloader](#.E5.AE.89.E8.A3.85_bootloader)
-    *   [4.9 配置网络](#.E9.85.8D.E7.BD.AE.E7.BD.91.E7.BB.9C)
+    *   [4.8 bootloader](#bootloader)
+    *   [4.9 网络配置](#.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
         *   [4.9.1 主机名](#.E4.B8.BB.E6.9C.BA.E5.90.8D)
         *   [4.9.2 有线网络](#.E6.9C.89.E7.BA.BF.E7.BD.91.E7.BB.9C)
         *   [4.9.3 无线网络](#.E6.97.A0.E7.BA.BF.E7.BD.91.E7.BB.9C)
@@ -46,7 +46,7 @@
 
 ### UEFI 模式
 
-如果您使用 [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)") 主板，且 UEFI 启动模式（优于 BIOS/Legacy 模式）已启用，CD/USB 会自动通过[systemd-boot](http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/) 启动 Arch Linux。要确认是否已进入UEFI模式，检查下面目录是否有文件：
+如果您使用 [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)") 主板，且 UEFI 启动模式（优于 BIOS/Legacy 模式）已启用，CD/USB 会自动通过 [systemd-boot](/index.php/Systemd-boot "Systemd-boot") 启动 Arch Linux。要确认是否已进入UEFI模式，检查下面目录是否有文件：
 
 ```
 # ls /sys/firmware/efi/efivars
@@ -388,13 +388,13 @@ FONT=lat9w-16
 
 ```
 
-### 安装 bootloader
+### bootloader
 
 [启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")页面介绍了可用选项和配置方法。包括 [grub](/index.php/Grub "Grub") (BIOS/UEFI), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (UEFI) 和 [syslinux](/index.php/Syslinux "Syslinux") (BIOS)等.
 
 Intel CPU 也需要安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) 并根据 [Microcode](/index.php/Microcode "Microcode") 配置 boot loader.
 
-### 配置网络
+### 网络配置
 
 该过程与[#建立网络连接](#.E5.BB.BA.E7.AB.8B.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5)基本一致，只不过该配置在新系统每次开机时都会自动生效。
 
@@ -428,7 +428,7 @@ Intel CPU 也需要安装 [intel-ucode](https://www.archlinux.org/packages/?name
 
 #### 无线网络
 
-安装 [iw](https://www.archlinux.org/packages/?name=iw), [dialog](https://www.archlinux.org/packages/?name=dialog) 和 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), 您要靠它们连网：
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [iw](https://www.archlinux.org/packages/?name=iw), [dialog](https://www.archlinux.org/packages/?name=dialog) 和 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), 您要靠它们连网：
 
 ```
 # pacman -S iw wpa_supplicant dialog

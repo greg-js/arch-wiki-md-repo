@@ -70,6 +70,7 @@
 *   archweb
 *   patchwork
 *   projects
+*   mail
 
 ## soyuz.archlinux.org ([[2]](https://www.hetzner.de/de/hosting/produkte_rootserver/px61ssd))
 

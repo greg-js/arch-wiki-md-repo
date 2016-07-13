@@ -435,12 +435,14 @@ With the assistance of [udev](/index.php/Udev "Udev"), it is possible to automat
 
 #### Basic desktop
 
+**Tip:** If you are using software touchpad toggle, you can replace `RUN+="/usr/bin/synclient TouchpadOff=0/1"` with your shortcut command, e.g. `RUN+="/usr/bin/sh /usr/local/bin/touchpad_toggle.sh"`.
+
 This is a basic rule generally for non-"desktop environment" sessions:
 
  `/etc/udev/rules.d/01-touchpad.rules` 
 ```
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/*username*/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=1"
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/*username*/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=0"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/**username**/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=1"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/**username**/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=0"
 ```
 
 #### GDM

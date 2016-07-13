@@ -220,48 +220,52 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [65.1 Dependencies](#Dependencies_33)
     *   [65.2 Troubleshooting](#Troubleshooting_24)
         *   [65.2.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
-*   [66 This War of Mine](#This_War_of_Mine)
+*   [66 The Stanley Parable](#The_Stanley_Parable)
     *   [66.1 Troubleshooting](#Troubleshooting_25)
-        *   [66.1.1 Game doesn't load](#Game_doesn.27t_load)
-*   [67 Tomb Raider](#Tomb_Raider)
+        *   [66.1.1 Game won't start](#Game_won.27t_start)
+*   [67 This War of Mine](#This_War_of_Mine)
     *   [67.1 Troubleshooting](#Troubleshooting_26)
-        *   [67.1.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
-*   [68 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-    *   [68.1 Crash on launch](#Crash_on_launch)
-*   [69 Transistor](#Transistor)
-    *   [69.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
-*   [70 Transmissions: Element 120](#Transmissions:_Element_120)
-    *   [70.1 Troubleshooting](#Troubleshooting_27)
-    *   [70.2 Dependencies](#Dependencies_34)
-*   [71 Trine 2](#Trine_2)
-    *   [71.1 Dependencies](#Dependencies_35)
-    *   [71.2 Troubleshooting](#Troubleshooting_28)
-*   [72 Unity3D](#Unity3D)
-    *   [72.1 Locale Settings](#Locale_Settings_2)
-    *   [72.2 Unity 5 sound problems](#Unity_5_sound_problems)
-*   [73 Unity of Command](#Unity_of_Command)
-    *   [73.1 Dependencies](#Dependencies_36)
-    *   [73.2 Troubleshooting](#Troubleshooting_29)
-        *   [73.2.1 No audio](#No_audio_5)
-*   [74 Unrest](#Unrest)
-    *   [74.1 Dependencies](#Dependencies_37)
-*   [75 War Thunder](#War_Thunder)
-    *   [75.1 Troubleshooting](#Troubleshooting_30)
-*   [76 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [76.1 Dependencies](#Dependencies_38)
-    *   [76.2 Troubleshooting](#Troubleshooting_31)
-*   [77 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-    *   [77.1 Dependencies](#Dependencies_39)
-*   [78 World of Goo](#World_of_Goo)
-    *   [78.1 Changing resolution](#Changing_resolution)
-*   [79 Worms Reloaded](#Worms_Reloaded)
-    *   [79.1 Dependencies](#Dependencies_40)
-*   [80 XCOM](#XCOM)
-    *   [80.1 Dependencies](#Dependencies_41)
-    *   [80.2 Hangs on startup](#Hangs_on_startup)
-    *   [80.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
-*   [81 Saints Row IV](#Saints_Row_IV)
-    *   [81.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+        *   [67.1.1 Game doesn't load](#Game_doesn.27t_load)
+*   [68 Tomb Raider](#Tomb_Raider)
+    *   [68.1 Troubleshooting](#Troubleshooting_27)
+        *   [68.1.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+        *   [68.1.2 Steam Controller not working ingame while being correctly recognised* by Steam outside of the game](#Steam_Controller_not_working_ingame_while_being_correctly_recognised.2A_by_Steam_outside_of_the_game)
+*   [69 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+    *   [69.1 Crash on launch](#Crash_on_launch)
+*   [70 Transistor](#Transistor)
+    *   [70.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
+*   [71 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [71.1 Troubleshooting](#Troubleshooting_28)
+    *   [71.2 Dependencies](#Dependencies_34)
+*   [72 Trine 2](#Trine_2)
+    *   [72.1 Dependencies](#Dependencies_35)
+    *   [72.2 Troubleshooting](#Troubleshooting_29)
+*   [73 Unity3D](#Unity3D)
+    *   [73.1 Locale Settings](#Locale_Settings_2)
+    *   [73.2 Unity 5 sound problems](#Unity_5_sound_problems)
+*   [74 Unity of Command](#Unity_of_Command)
+    *   [74.1 Dependencies](#Dependencies_36)
+    *   [74.2 Troubleshooting](#Troubleshooting_30)
+        *   [74.2.1 No audio](#No_audio_5)
+*   [75 Unrest](#Unrest)
+    *   [75.1 Dependencies](#Dependencies_37)
+*   [76 War Thunder](#War_Thunder)
+    *   [76.1 Troubleshooting](#Troubleshooting_31)
+*   [77 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [77.1 Dependencies](#Dependencies_38)
+    *   [77.2 Troubleshooting](#Troubleshooting_32)
+*   [78 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [78.1 Dependencies](#Dependencies_39)
+*   [79 World of Goo](#World_of_Goo)
+    *   [79.1 Changing resolution](#Changing_resolution)
+*   [80 Worms Reloaded](#Worms_Reloaded)
+    *   [80.1 Dependencies](#Dependencies_40)
+*   [81 XCOM](#XCOM)
+    *   [81.1 Dependencies](#Dependencies_41)
+    *   [81.2 Hangs on startup](#Hangs_on_startup)
+    *   [81.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [82 Saints Row IV](#Saints_Row_IV)
+    *   [82.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
 
 ## Air Brawl
 
@@ -1566,6 +1570,19 @@ To prevent the game from crashing at the very end when the credits are shown, ch
 
 The game segfaults during program start because of the `LD_LIBRARY_PATH` setting in the launcher script. Edit `~/.local/share/Steam/SteamApps/common/ThePolynomial/Polynomial64`, and comment out the `LD_LIBRARY_PATH` variable. Make sure to put the `./bin/Polynomial64 "$@"` command on a new line.
 
+## The Stanley Parable
+
+### Troubleshooting
+
+#### Game won't start
+
+as discussed in steam's store page, remove `libstdc++.so.6` from the game folder. For example::
+
+```
+rm ~/.local/share/Steam/steamapps/common/The\ Stanley\ Parable/bin/libstdc++.so.6
+
+```
+
 ## This War of Mine
 
 ### Troubleshooting
@@ -1597,6 +1614,18 @@ located in the archive and put on the main game folder: `~/.local/share/Steam/st
 Tomb Raider has a very heavy amount of dependency on the Steam runtime, the easiest solution is to just run it using the runtime. You can do so by setting the following as the launch option:
 
  `/home/[your username]/.local/share/Steam/ubuntu12_32/steam-runtime/run.sh %command%` 
+
+#### Steam Controller not working ingame while being correctly recognised* by Steam outside of the game
+
+If your Steam Controller is correctly recognised and paired but it still does not work in game then you can do the following:
+
+*   In Steam, non Big Screen, go to Settings -> Account -> Beta participation -> Change... and in the dropdown select box select Steam Beta Update
+
+*   Restart Steam
+
+*   Go to Big Screen and start Tomb Raider
+
+∗Correctly recognised means you can control desktop mouse and Steam in Big Picture mode and the controller is shown in Big Picture settings
 
 ## Towns / Towns Demo
 

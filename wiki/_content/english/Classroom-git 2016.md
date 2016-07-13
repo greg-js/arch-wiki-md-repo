@@ -38,6 +38,7 @@ Add the nick you want to use on git and a link to your public key to the table.
 | ripelascra | [public key](https://ptpb.pw/KEKy/sh) |
 | therue | [public key](https://ptpb.pw/2pnP/sh) |
 | cirrusUK | [public key](https://ptpb.pw/6di9/sh) |
+| 5225225 | [public key](https://ptpb.pw/TVjm/sh) |
 | nick | key |
 
 ### Help

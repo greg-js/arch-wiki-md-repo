@@ -1,4 +1,6 @@
-[GNU fdisk](https://www.gnu.org/software/fdisk/) is a dialogue-driven command-line utility that creates and manipulates partition tables and partitions on a hard disk. Hard disks are divided into partitions and this division is described in the partition table. Arch Linux needs at least one partition in order to be installed.
+[GNU fdisk](https://www.gnu.org/software/fdisk/) is a dialogue-driven command-line utility that creates and manipulates partition tables and partitions on a hard disk. Hard disks are divided into partitions and this division is described in the partition table.
+
+GPT fdisk, as implemented in the *gdisk* program and its associated utilities, works "on Globally Unique Identifier (GUID) Partition Table ([GPT](/index.php/GPT "GPT")) disks, rather than on the more common (through at least early 2013) Master Boot Record ([MBR](/index.php/MBR "MBR")) partition tables." [[1]](http://www.rodsbooks.com/gdisk/)
 
 This article covers **fdisk** and its related **sfdisk** and **cfdisk** utilities, as well as the analogous **gdisk**, **sgdisk** and **cgdisk** utilities.
 

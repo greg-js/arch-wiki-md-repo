@@ -134,7 +134,7 @@ or add the following to do so every 2 hours:
 
 #### Sync at login/logout
 
-Deeming [bash](/index.php/Bash "Bash") is being used, add the script to the login/logout files:
+Assuming [bash](/index.php/Bash "Bash") is being used, add the script to the login/logout files:
 
 ```
 $ echo '*~/bin/firefox-sync*' | tee -a ~/.bash_logout ~/.bash_login >/dev/null

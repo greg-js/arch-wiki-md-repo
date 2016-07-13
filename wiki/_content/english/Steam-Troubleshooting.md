@@ -96,8 +96,8 @@ The dynamic linker (`man 8 ld.so`) can be told to load specific libraries using 
  `/usr/local/bin/steam` 
 ```
 #!/bin/sh
-LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' steam "$@"
-
+LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so'
+exec /usr/bin/steam "$@"
 ```
 
 **Note:** The '$LIB' above is not a variable but a directive to the linker to pick the appropriate architecture for the library. The single quotes are required to prevent the shell from treating $LIB as a variable.

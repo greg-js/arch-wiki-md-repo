@@ -13,7 +13,7 @@ For more information on OpenFOAM and the OpenFOAM Foundation, please see [http:/
 
 ## Basic installation
 
-If you do not plan on doing development tasks with OpenFOAM, there is an updated version of the program available in the [AUR](/index.php/AUR "AUR") package [openfoam](https://aur.archlinux.org/packages/openfoam/) and git versions [openfoam2.3-git](https://aur.archlinux.org/packages/openfoam2.3-git/) or [openfoam2.4-git](https://aur.archlinux.org/packages/openfoam2.4-git/). For most users, this will be everything needed to get an installation up and running.
+If you do not plan on doing development tasks with OpenFOAM, there is an updated version of the program available in the [AUR](/index.php/AUR "AUR") package [openfoam](https://aur.archlinux.org/packages/openfoam/) and git versions [openfoam2.4-git](https://aur.archlinux.org/packages/openfoam2.4-git/) or [openfoam3.0-git](https://aur.archlinux.org/packages/openfoam3.0-git/). For most users, this will be everything needed to get an installation up and running.
 
 An **openfoam3.0.1** package is also available from the unofficial [home_Minerva_W_Science_Arch_Extra](/index.php/Unofficial_user_repositories#home_Minerva_W_Science_Arch_Extra "Unofficial user repositories") repository. Development and older versions are planned to be added as of April 2016.
 

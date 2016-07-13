@@ -125,8 +125,8 @@ This corresponds to the playback modes; ordered from left to right, they are:
 
 *   `r` - repeat mode **[r-----]**
 *   `z` - random mode **[-z----]**
-*   `y` - single mode **[--s---]**
-*   `R` - consume mode **[---c--]**
+*   `y` - single mode **[--s---]** (Repeats the current track after reaching the end.)
+*   `R` - consume mode **[---c--]** (Removes the current track from playlist after reaching the end.)
 *   `x` - crossfade mode **[----x-]**
 
 The final "-" is only active when the user forces an update to the datebase via `u`.

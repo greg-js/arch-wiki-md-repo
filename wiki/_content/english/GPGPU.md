@@ -14,7 +14,6 @@ GPGPU stands for [General-purpose computing on graphics processing units](https:
         *   [1.3.1 Language bindings](#Language_bindings)
 *   [2 CUDA](#CUDA)
     *   [2.1 Development](#Development_2)
-        *   [2.1.1 Using CUDA with an older GCC](#Using_CUDA_with_an_older_GCC)
     *   [2.2 Language bindings](#Language_bindings_2)
     *   [2.3 Driver issues](#Driver_issues)
 *   [3 List of OpenCL and CUDA accelerated software](#List_of_OpenCL_and_CUDA_accelerated_software)
@@ -148,28 +147,11 @@ The kernel module and CUDA "driver" library are shipped in [nvidia](https://www.
 
 ### Development
 
-**Note:** CUDA 7.5/8.0 is not compatible with GCC 6 (see [FS#49272](https://bugs.archlinux.org/task/49272)). This means that with the [cuda](https://www.archlinux.org/packages/?name=cuda) and [gcc](https://www.archlinux.org/packages/?name=gcc) packages from the official repositories, it is **impossible to compile CUDA code**. You will have to follow [#Using CUDA with an older GCC](#Using_CUDA_with_an_older_GCC).
-
 The [cuda](https://www.archlinux.org/packages/?name=cuda) package installs all components in the directory `/opt/cuda`. For compiling CUDA code, add `/opt/cuda/include` to your include path in the compiler instructions. For example this can be accomplished by adding `-I/opt/cuda/include` to the compiler flags/options. To use `nvcc`, a `gcc` wrapper provided by NVIDIA, just add `/opt/cuda/bin` to your path.
 
 To find whether the installation was successful and if cuda is up and running, you can compile the samples installed on `/opt/cuda/sample` (you can simply run `make` inside the directory, altough is a good practice to copy the `/opt/cuda/samples` directory to your home directory before compiling) and running the compiled examples. A nice way to check the installation is to run one of the examples, called `deviceQuery`.
 
-#### Using CUDA with an older GCC
-
-Since CUDA does often not support the latest GCC version, you might need to install an older GCC to compile CUDA programs.
-
-*   For CUDA 7.5, [install](/index.php/Install "Install") the [gcc49](https://aur.archlinux.org/packages/gcc49/) package.
-*   For CUDA 8.0, [install](/index.php/Install "Install") the [gcc5](https://aur.archlinux.org/packages/gcc5/) package.
-
-For CUDA 7.5/GCC 4.9, create the following symlinks, so CUDA will use the old compiler (for CUDA 8.0/GCC 5, replace `4.9` with `5`):
-
-```
-# ln -s /usr/bin/gcc-4.9 /opt/cuda/bin/gcc
-# ln -s /usr/bin/g++-4.9 /opt/cuda/bin/g++
-
-```
-
-You might also need to configure your build system to use the same GCC version for compiling host code.
+**Note:** CUDA 7.5/8.0 is not compatible with GCC 6 (see [FS#49272](https://bugs.archlinux.org/task/49272)). Therefore the [cuda](https://www.archlinux.org/packages/?name=cuda) package depends on [gcc5](https://www.archlinux.org/packages/?name=gcc5) and creates symbolic links in `/opt/cuda/bin/` for the older version to be picked up by `nvcc`. You might also need to configure your build system to use the same GCC version for compiling host code.
 
 ### Language bindings
 

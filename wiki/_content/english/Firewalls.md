@@ -85,10 +85,6 @@ The Linux kernel includes [iptables](/index.php/Iptables "Iptables") as a built-
 
 	[http://gufw.org/](http://gufw.org/) || [gufw](https://www.archlinux.org/packages/?name=gufw)
 
-*   **KMyFirewall** — KDE3 GUI for iptables. Firewall editing capabilities are simple enough to use to be suitable for beginners, but also allow for sophisticated tweaking of the firewall settings.
-
-	[http://kmyfirewall.sourceforge.net/](http://kmyfirewall.sourceforge.net/) || [kmyfirewall](https://aur.archlinux.org/packages/kmyfirewall/)
-
 *   **[PeerGuardian Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
 
 	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)

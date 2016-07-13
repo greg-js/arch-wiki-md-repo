@@ -71,7 +71,7 @@ To install a single package or list of packages (including dependencies), issue 
 
 ```
 
-To install a list of packages with regex (see [pacman tips#Operations and Bash syntax](/index.php/Pacman_tips#Operations_and_Bash_syntax "Pacman tips") and [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=7179)):
+To install a list of packages with regex (see [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=7179)):
 
 ```
 # pacman -S $(pacman -Ssq *package_regex*)

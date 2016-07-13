@@ -9,7 +9,7 @@ The Qt framework is emerging as a major development platform and is the basis of
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Qt5 Platform Plugins and Missing Dependencies](#Qt5_Platform_Plugins_and_Missing_Dependencies)
+    *   [1.1 Qt5 platform plugins and missing dependencies](#Qt5_platform_plugins_and_missing_dependencies)
 *   [2 Default Qt toolkit](#Default_Qt_toolkit)
     *   [2.1 Using environment variables](#Using_environment_variables)
     *   [2.2 Using configuration files](#Using_configuration_files)
@@ -49,9 +49,11 @@ Two versions of Qt are currently available in the [official repositories](/index
 
 **Warning:** Qt packages do not provide the usual bins (e.g. *qmake*) in `/usr/bin` anymore. Instead `-qt5`, `-qt4` and `-qt3` symlinks are provided (e.g. `qmake-qt5`, `qmake-qt4`, `qmake-qt3`). This may cause compilation failures in Qt3/4 applications. To install usual bins, see [#Default Qt toolkit](#Default_Qt_toolkit) section.
 
-### Qt5 Platform Plugins and Missing Dependencies
+### Qt5 platform plugins and missing dependencies
 
-Using [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) will install Qt5, which makes use of [platform abstractions](http://doc.qt.io/qt-5/qpa.html), but some platform abstraction plugin dependencies may be missing. Qt may tell you that the plugin is unavailable, rather than resolve the chain of missing dependencies. For instance, if your application relies on [xcb](http://xcb.freedesktop.org), and dependencies of the xcb library are missing, Qt will report:
+Using [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) will install Qt5, which makes use of [platform abstractions](http://doc.qt.io/qt-5/qpa.html), but some platform abstraction plugin dependencies may be missing. Qt may tell you that the plugin is unavailable, rather than resolve the chain of missing dependencies for other packages.
+
+For instance, if your application relies on [xcb](http://xcb.freedesktop.org), and dependencies of the xcb library are missing, Qt will report:
 
 ```
 This application failed to start because it could not find or load the Qt platform plugin "xcb". Available plugins are: xcb.
@@ -60,7 +62,7 @@ Reinstalling the application may fix this problem.
 
 ```
 
-The Qt5 page proposes a [list of packages](http://doc.qt.io/qt-5/linux-requirements.html) that are recommended for installation, blindly installing all of which may not be very Arch-like. Instead, you may identify the plugin (in the case of xcb, libqxcb.so), and use `ldd` to identify missing dependencies. Installing these dependencies should resolve the issue.
+This implies the application package misses some of its required dependencies not provided by [qt5-base](https://www.archlinux.org/packages/?name=qt5-base). You can use *ldd* to identify which are missing (e.g. `ldd /usr/bin/*application* |grep -e xcb`) and file a bug against the application package. The Qt5 page proposes a [list of packages](http://doc.qt.io/qt-5/linux-requirements.html) that are recommended for installation; it can help to identify the one missing.
 
 ## Default Qt toolkit
 

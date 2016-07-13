@@ -376,13 +376,6 @@ Create the needed directory and symlink it for the PHP wrapper:
 
 ```
 
-Uncomment following in `/etc/conf.d/apache`:
-
-```
-HTTPD=/usr/bin/httpd.worker
-
-```
-
 Create `/etc/httpd/conf/extra/php-fcgid.conf` with the following content:
 
  `/etc/httpd/conf/extra/php-fcgid.conf` 
@@ -412,7 +405,14 @@ Create `/etc/httpd/conf/extra/php-fcgid.conf` with the following content:
 
 ```
 
-Edit `/etc/httpd/conf/httpd.conf`, and add the following lines:
+Edit `/etc/httpd/conf/httpd.conf`, enabling the actions module:
+
+```
+LoadModule actions_module modules/mod_actions.so
+
+```
+
+And add the following lines:
 
 ```
 LoadModule fcgid_module modules/mod_fcgid.so

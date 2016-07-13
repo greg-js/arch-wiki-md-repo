@@ -27,7 +27,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/oshazard/apacman](https://github.com/oshazard/apacman) || [apacman](https://aur.archlinux.org/packages/apacman/)
 
-*   **[aura](/index.php/Aura "Aura")** — A package manager for Arch Linux written in Haskell.
+*   **aura** — A package manager for Arch Linux written in Haskell.
 
 	[https://github.com/aurapm/aura](https://github.com/aurapm/aura) || [aura](https://aur.archlinux.org/packages/aura/) or [aura-bin](https://aur.archlinux.org/packages/aura-bin/) (binary)
 
@@ -179,7 +179,7 @@ The columns have the following meaning:
 | pbget | Python3 | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |
 | PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[4]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |
 | prm | Bash | Yes [[5]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds, ABS support |
-| repoctl | Go | Yes | N/A | Yes [[6]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | No | None | S | No automatic builds, local repository support |
+| repoctl | Go | Yes | N/A | Yes [[6]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | No | zsh | S | No automatic builds, local repository support |
 | spinach | Bash | No [[7]](https://github.com/floft/spinach/blob/master/spinach#L287) | Yes | No | No | No | No | None | S | - |
 | trizen | Perl | Yes | Yes | Yes [[8]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | No | No | No | None | P | AUR comments |
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | S | Mirror updates, print news and AUR comments |

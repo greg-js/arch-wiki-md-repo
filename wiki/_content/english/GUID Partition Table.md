@@ -83,7 +83,7 @@ Several partitioning utilities exists.
 
 ### GPT fdisk
 
-GPT fdisk is a set of text-mode utilities for editing GPT disks. It consists of gdisk, sgdisk and cgdisk which are equivalent to respective tools from util-linux fdisk (used for MBR disks). It is available in the [extra] repository as [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk).
+See the [fdisk](/index.php/Fdisk "Fdisk") article.
 
 ### GNU Parted
 

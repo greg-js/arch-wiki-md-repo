@@ -15,17 +15,17 @@
         *   [2.1.4 运行模式](#.E8.BF.90.E8.A1.8C.E6.A8.A1.E5.BC.8F)
         *   [2.1.5 关联](#.E5.85.B3.E8.81.94)
         *   [2.1.6 获取 IP 地址](#.E8.8E.B7.E5.8F.96_IP_.E5.9C.B0.E5.9D.80)
-        *   [2.1.7 Example](#Example)
+        *   [2.1.7 示例](#.E7.A4.BA.E4.BE.8B)
         *   [2.1.8 自动设置](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE)
         *   [2.1.9 Connman](#Connman)
         *   [2.1.10 Netctl](#Netctl)
             *   [2.1.10.1 Wicd](#Wicd)
             *   [2.1.10.2 NetworkManager](#NetworkManager)
             *   [2.1.10.3 Wifi Radar](#Wifi_Radar)
-    *   [2.2 Power saving](#Power_saving)
-*   [3 Troubleshooting](#Troubleshooting)
+    *   [2.2 节电](#.E8.8A.82.E7.94.B5)
+*   [3 排错](#.E6.8E.92.E9.94.99)
     *   [3.1 Temporary internet access](#Temporary_internet_access)
-    *   [3.2 Rfkill caveat](#Rfkill_caveat)
+    *   [3.2 Rfkill 警告](#Rfkill_.E8.AD.A6.E5.91.8A)
     *   [3.3 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
     *   [3.4 Observing Logs](#Observing_Logs)
     *   [3.5 Failed to get IP address](#Failed_to_get_IP_address)
@@ -36,7 +36,7 @@
         *   [3.8.2 Cause #2](#Cause_.232)
         *   [3.8.3 Cause #3](#Cause_.233)
         *   [3.8.4 Cause #4](#Cause_.234)
-*   [4 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
+*   [4 驱动与固件排错Troubleshooting drivers and firmware](#.E9.A9.B1.E5.8A.A8.E4.B8.8E.E5.9B.BA.E4.BB.B6.E6.8E.92.E9.94.99Troubleshooting_drivers_and_firmware)
     *   [4.1 Ralink](#Ralink)
         *   [4.1.1 rt2x00](#rt2x00)
         *   [4.1.2 rt3090](#rt3090)
@@ -52,7 +52,7 @@
         *   [4.3.1 ath5k](#ath5k)
         *   [4.3.2 ath9k](#ath9k)
         *   [4.3.3 ath9k](#ath9k_2)
-            *   [4.3.3.1 Power saving](#Power_saving_2)
+            *   [4.3.3.1 Power saving](#Power_saving)
     *   [4.4 Intel](#Intel)
         *   [4.4.1 ipw2100 与 ipw2200](#ipw2100_.E4.B8.8E_ipw2200)
         *   [4.4.2 iwlegacy](#iwlegacy)
@@ -392,9 +392,9 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 **Tip:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 提供了 [钩子](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd"), 可以使用它自动在无线接口上启动 [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")。
 
-#### Example
+#### 示例
 
-Here is a complete example of setting up a wireless network with WPA supplicant and DHCP.
+下面是一个用 WPA supplicant 和 DHCP 设置无线网络的完整示例.
 
 ```
 # ip link set dev wlp13s1 up
@@ -403,14 +403,14 @@ Here is a complete example of setting up a wireless network with WPA supplicant 
 
 ```
 
-And then to close the connection, you can simply disable the interface:
+要关闭连接，可以禁用接口：
 
 ```
 # ip link set dev wlp13s1 down
 
 ```
 
-For a static IP, you would replace the dhcpcd command with
+要使用静态 IP，将 dhcpcd 命令替换为：
 
 ```
 # ip addr add 192.168.0.10/24 broadcast 192.168.0.255 dev wlp13s1
@@ -418,7 +418,7 @@ For a static IP, you would replace the dhcpcd command with
 
 ```
 
-And before disabling the interface you would first flush the IP address and gateway:
+禁用接口前，需要先刷新 IP 地址和网关:
 
 ```
 # ip addr flush dev wlp13s1
@@ -442,15 +442,13 @@ GUI | 控制台工具 |
 
 #### Connman
 
-ConnMan is an alternative to NetworkManager and Wicd, designed to be light on resources making it ideal for netbooks, and other mobile devices. It is modular in design takes advandage of the dbus API and provides proper abstraction on top of wpa_supplicant.
+ConnMan 可以替代 NetworkManager 或 Wicd, 设计上考虑低资源消耗，以上网本和其它移动设备为目标。模块化设计并利用 dbus API，提供了 wpa_supplicant 抽象.
 
-See: [Connman](/index.php/Connman "Connman")
+参阅: [Connman](/index.php/Connman "Connman")
 
 #### Netctl
 
-*netctl* is a replacement for *netcfg* designed to work with systemd. It uses a profile based setup and is capable of detection and connection to a wide range of network types. This is no harder than using graphical tools.
-
-参阅： [Netctl (简体中文)](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Netctl (简体中文)")
+*netctl* 替代了 *netcfg* 和 systemd 一起工作。使用基于 profile 的配置，可以检查和连接多种网络类型。使用简单，并不比图形工具难。 参阅： [Netctl (简体中文)](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Netctl (简体中文)")
 
 ##### Wicd
 
@@ -470,11 +468,11 @@ WiFi Radar是 一个Python/PyGTK2 的管理无线配置的程序（**只有**无
 
 详情请见[Wifi Radar (简体中文)](/index.php/Wifi_Radar_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wifi Radar (简体中文)")。
 
-### Power saving
+### 节电
 
 参阅 [Power management#Network interfaces](/index.php/Power_management#Network_interfaces "Power management").
 
-## Troubleshooting
+## 排错
 
 This section contains general troubleshooting tips, not strictly related to problems with drivers or firmware. For such topics, see next section [#Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware).
 
@@ -482,7 +480,7 @@ This section contains general troubleshooting tips, not strictly related to prob
 
 If you have problematic hardware and need internet access to, for example, download some software or get help in forums, you can make use of Android's built-in feature for internet sharing via USB cable. See [Android tethering#USB tethering](/index.php/Android_tethering#USB_tethering "Android tethering") for more information.
 
-### Rfkill caveat
+### Rfkill 警告
 
 Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use *rfkill* to show the current status:
 
@@ -666,7 +664,7 @@ If that works, enable WPA/WPA2 again but choose fixed and/or limited router sett
 *   Disable `40Mhz` channel bandwidth (lower throughput but less likely collisions)
 *   If the router has quality of service settings, check completeness of settings (e.g. Wi-Fi Multimedia (WMM) is part of optional QoS flow control. An erroneous router firmware may advertise its existence although the setting is not enabled)
 
-## Troubleshooting drivers and firmware
+## 驱动与固件排错Troubleshooting drivers and firmware
 
 This section covers methods and procedures for installing kernel modules and *firmware* for specific chipsets, that differ from generic method.
 

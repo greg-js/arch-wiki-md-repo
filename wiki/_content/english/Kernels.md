@@ -32,11 +32,11 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 	[linux](https://www.archlinux.org/packages/?name=linux)
 
-	The Linux kernel and modules from the [core] repository. Vanilla kernel with [a few patches applied](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux).
+	The Linux kernel and modules from the *core* repository. Vanilla kernel with [a few patches applied](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux).
 
 	[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
-	Long term support (LTS) Linux kernel and modules from the [core] repository.
+	Long term support (LTS) Linux kernel and modules from the *core* repository.
 
 	[linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec)
 
@@ -54,31 +54,9 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 
 	The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
 
-	[linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)
-
-	Linux kernel with [AppArmor](/index.php/AppArmor "AppArmor") capabilities enabled.
-
-	[linux-bfs](https://aur.archlinux.org/packages/linux-bfs/)
-
-	Linux kernel and modules with the [Brain Fuck Scheduler](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler") (BFS) - created by Con Kolivas for desktop computers with fewer than 4096 cores, with BFQ I/O scheduler as optional.
-
-	[linux-chromebook](https://aur.archlinux.org/packages/linux-chromebook/)
-
-	The Linux kernel with patches added to support chromebook hardware.
-
 	[linux-ck](https://aur.archlinux.org/packages/linux-ck/)
 
-	Linux Kernel built with Con Kolivas' ck1 patchset.
-
-	Additional options which can be toggled on/off in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") include: BFQ scheduler, nconfig, localmodconfig and use running kernel's config.
-
-	These are patches designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload. The ck patches include BFS.
-
-	For further information and installation instructions, please read the [linux-ck](/index.php/Linux-ck "Linux-ck") main article.
-
-	[linux-eee-ck](https://aur.archlinux.org/packages/linux-eee-ck/)
-
-	The Linux Kernel and modules for the Asus Eee PC 701, built with Con Kolivas' ck1 patchset.
+	Linux Kernel built with Con Kolivas' ck1 patchset—see the [#-ck](#-ck) section or the [linux-ck](/index.php/Linux-ck "Linux-ck") page. Additional options which can be toggled on/off in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") include: BFQ scheduler, nconfig, localmodconfig and use running kernel's config.
 
 	[linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/)
 
@@ -100,10 +78,6 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 
 	[Liquorix](http://liquorix.net) is a distro kernel replacement built using a Debian-targeted configuration and the ZEN kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the ZEN patchset as well.
 
-	[linux-lts34](https://aur.archlinux.org/packages/linux-lts34/)
-
-	The Linux 3.4 Long-Term Support Kernel and modules.
-
 	[linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)
 
 	The Linux 3.10 Long-Term Support Kernel and modules.
@@ -120,10 +94,6 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 
 	The Linux Kernel and modules with [Multipath TCP](http://multipath-tcp.org/) support.
 
-	[kernel-netbook](https://aur.archlinux.org/packages/kernel-netbook/)
-
-	Static kernel for netbooks with Intel Atom N270/N280/N450/N550 such as the Eee PC with the add-on of external firmware ([broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)) and patchset (BFS + TuxOnIce + BFQ optional) - Only Intel GPU
-
 	[linux-pax](https://aur.archlinux.org/packages/linux-pax/)
 
 	The Linux Kernel and modules with [PaX](/index.php/PaX "PaX") patches for increased security.
@@ -131,6 +101,10 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 	[linux-pf](https://aur.archlinux.org/packages/linux-pf/)
 
 	Linux kernel and modules with the pf-kernel patch [-ck patchset (BFS included), TuxOnIce, BFQ] and aufs3.
+
+	[linux-rt](https://aur.archlinux.org/packages/linux-rt/)
+
+	Linux kernel with the realtime patch set. Improves latency and introduces hard realtime support. [https://rt.wiki.kernel.org/](https://rt.wiki.kernel.org/)
 
 	[linux-tresor](https://aur.archlinux.org/packages/linux-tresor/)/[linux-lts-tresor](https://aur.archlinux.org/packages/linux-lts-tresor/)
 

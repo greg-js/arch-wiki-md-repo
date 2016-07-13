@@ -15,8 +15,9 @@ Vagrant uses a mostly declarative `Vagrantfile` to define virtualised machines. 
 *   [4 Base Boxes for Vagrant](#Base_Boxes_for_Vagrant)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 No ping between host and vagrant box (host-only networking)](#No_ping_between_host_and_vagrant_box_.28host-only_networking.29)
-    *   [5.2 'vagrant up' hangs on NFS mounting (Mounting NFS shared folders...)](#.27vagrant_up.27_hangs_on_NFS_mounting_.28Mounting_NFS_shared_folders....29)
-    *   [5.3 Error starting network 'default': internal error: Failed to initialize a valid firewall backend](#Error_starting_network_.27default.27:_internal_error:_Failed_to_initialize_a_valid_firewall_backend)
+    *   [5.2 Virtual machine is not network accessible from the Arch host OS](#Virtual_machine_is_not_network_accessible_from_the_Arch_host_OS)
+    *   [5.3 'vagrant up' hangs on NFS mounting (Mounting NFS shared folders...)](#.27vagrant_up.27_hangs_on_NFS_mounting_.28Mounting_NFS_shared_folders....29)
+    *   [5.4 Error starting network 'default': internal error: Failed to initialize a valid firewall backend](#Error_starting_network_.27default.27:_internal_error:_Failed_to_initialize_a_valid_firewall_backend)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -132,6 +133,10 @@ Here is a list of places to get all sorts of vagrant base boxes for different pu
 ### No ping between host and vagrant box (host-only networking)
 
 Sometimes there are troubles with host-only networking not functioning. Host have no ip on vboxnet interface, host cannot ping vagrant boxes and cannot be pinged from them. This is solved by installing good old [net-tools](https://www.archlinux.org/packages/?name=net-tools) as mentioned in [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1178607#p1178607) by kevin1024
+
+### Virtual machine is not network accessible from the Arch host OS
+
+As of version 1.8.4, Vagrant appears to use the deprecated `route` command to configure routing to the virtual network interface which bridges to the virtual machine(s). If `route` is not installed, you will not be able to access the virtual machine from the host OS due to the lack of suitable route. The solution, as mentioned above, is to install the [net-tools](https://www.archlinux.org/packages/?name=net-tools) package, which includes the route command.
 
 ### 'vagrant up' hangs on NFS mounting (Mounting NFS shared folders...)
 

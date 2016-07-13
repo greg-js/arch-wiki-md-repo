@@ -133,7 +133,7 @@ in the Firefox address bar or go to the *Add-ons* entry in the Firefox Menu and 
 
 ### GNOME Keyring integration
 
-Install [firefox-gnome-keyring](https://aur.archlinux.org/packages/firefox-gnome-keyring/) or [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
+Install [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
 
 ### KDE integration
 
@@ -167,7 +167,7 @@ A very extensive list of search engines can be found [here](http://mycroft.mozde
 
 Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar) extension to add a search to your search bar from any web site, by simply right clicking on the site's search field and selecting *Add to Search Bar...*
 
-If you want a manual solution, take a look at `~/.mozilla/firefox/*xxxxxxxx*.default/searchplugins/` (where *xxxxxxxx* is your profile ID).
+If you want a manual solution, take a look at [this](https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox) firefox helppage. (the old trick with the searchplugins folder does not work anymore.) You want to type the javascript command in the developer console and the xml file must be uploaded to a server. "file://..." will not work.
 
 #### arch-firefox-search
 

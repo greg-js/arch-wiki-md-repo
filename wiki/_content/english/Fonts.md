@@ -448,6 +448,8 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 *   [ttf-vazir](https://aur.archlinux.org/packages/ttf-vazir/), [ttf-samim](https://aur.archlinux.org/packages/ttf-samim/), [ttf-tanha](https://aur.archlinux.org/packages/ttf-tanha/), [ttf-shabnam](https://aur.archlinux.org/packages/ttf-shabnam/), [ttf-gandom](https://aur.archlinux.org/packages/ttf-gandom/), [ttf-parastoo](https://aur.archlinux.org/packages/ttf-parastoo/) - Beautiful Persian fonts made by Ali Rasti Kerdar.
 *   [ttf-persian-hm-xs2](https://aur.archlinux.org/packages/ttf-persian-hm-xs2/) - An improved and corrected font series derived from [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) Persian font series with Kashida feature.
 *   [ttf-persian-hm-ftx](https://aur.archlinux.org/packages/ttf-persian-hm-ftx/) - An improved and corrected font series derived from [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) Persian font series, Metafont and FarsiTeX fonts with Kashida feature.
+*   [ttf-iranian-sans](https://aur.archlinux.org/packages/ttf-iranian-sans/) and [ttf-iranian-serif](https://aur.archlinux.org/packages/ttf-iranian-serif/) - A family of fonts, designed by support from Iranian National Initiative for Free and Open Source Software to provide a good looking and free font for Persian script.
+*   [persian-fonts](https://aur.archlinux.org/packages/persian-fonts/) - Meta package for installing all Persian fonts in AUR.
 
 #### Sinhala
 

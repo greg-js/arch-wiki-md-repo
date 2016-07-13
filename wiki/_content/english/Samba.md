@@ -520,14 +520,14 @@ If nothing is known about other systems on the local network, and automated tool
 2\. `nmap` checks which ports are open:
 
 ```
-# nmap -p 139 -sT 192.168.1.*
+# nmap -p 139 -sT "192.168.1.*"
 
 ```
 
 In this case, a scan on the 192.168.1.* IP address range and port 139 has been performed, resulting in:
 
 ```
-$ nmap -sT 192.168.1.*
+$ nmap -sT "192.168.1.*"
 
 ```
 

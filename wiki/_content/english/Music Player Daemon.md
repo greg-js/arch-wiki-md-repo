@@ -281,7 +281,7 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 *   **pms** — Highly configurable and accessible ncurses client
 
-	[http://pms.sourceforge.net/](http://pms.sourceforge.net/) || [pmus-git](https://aur.archlinux.org/packages/pmus-git/)
+	[https://ambientsound.github.io/pms/](https://ambientsound.github.io/pms/) || [pmus-git](https://aur.archlinux.org/packages/pmus-git/)
 
 *   **vimpc** — Ncurses based MPD client with vi-like key bindings
 

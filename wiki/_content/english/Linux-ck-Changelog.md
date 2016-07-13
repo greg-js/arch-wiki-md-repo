@@ -2,6 +2,11 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.6.4-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.4](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.4)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=24e62be49feca5147e9072124b89440b72775302](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=24e62be49feca5147e9072124b89440b72775302)
+
 **Bump to v4.6.3-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.3](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.3)
