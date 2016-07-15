@@ -1,31 +1,33 @@
+**翻译状态：** 本文是英文页面 [Reporting_bug_guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-13，点击[这里](https://wiki.archlinux.org/index.php?title=Reporting_bug_guidelines&diff=0&oldid=433639)可以查看翻译后英文页面的改动。
+
 在 [Arch Linux 问题跟踪系统](https://bugs.archlinux.org/) 报告问题是 [帮助社区](/index.php/Getting_involved_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Getting involved (简体中文)") 的一种方式。然而，质量不高的问题报告却会起反作用，浪费开发者的时间。此文档将像那些愿意帮助社区的人给出有效报告问题和解决问题的指南。
 
 参见 Simon Tatham 的 [如何有效的报告问题](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html)。
 
 ## Contents
 
-*   [1 报告前](#.E6.8A.A5.E5.91.8A.E5.89.8D)
+*   [1 开始之前](#.E5.BC.80.E5.A7.8B.E4.B9.8B.E5.89.8D)
     *   [1.1 查找重复问题](#.E6.9F.A5.E6.89.BE.E9.87.8D.E5.A4.8D.E9.97.AE.E9.A2.98)
     *   [1.2 上游还是 Arch?](#.E4.B8.8A.E6.B8.B8.E8.BF.98.E6.98.AF_Arch.3F)
-    *   [1.3 问题还是新功能?](#.E9.97.AE.E9.A2.98.E8.BF.98.E6.98.AF.E6.96.B0.E5.8A.9F.E8.83.BD.3F)
-        *   [1.3.1 不是问题的原因](#.E4.B8.8D.E6.98.AF.E9.97.AE.E9.A2.98.E7.9A.84.E5.8E.9F.E5.9B.A0)
-        *   [1.3.2 不是新功能的原因](#.E4.B8.8D.E6.98.AF.E6.96.B0.E5.8A.9F.E8.83.BD.E7.9A.84.E5.8E.9F.E5.9B.A0)
-    *   [1.4 收集有用信息](#.E6.94.B6.E9.9B.86.E6.9C.89.E7.94.A8.E4.BF.A1.E6.81.AF)
-*   [2 新开一个问题](#.E6.96.B0.E5.BC.80.E4.B8.80.E4.B8.AA.E9.97.AE.E9.A2.98)
+    *   [1.3 Bug 或者 Feature?](#Bug_.E6.88.96.E8.80.85_Feature.3F)
+        *   [1.3.1 有些不该提交 Bug 报告的原因](#.E6.9C.89.E4.BA.9B.E4.B8.8D.E8.AF.A5.E6.8F.90.E4.BA.A4_Bug_.E6.8A.A5.E5.91.8A.E7.9A.84.E5.8E.9F.E5.9B.A0)
+        *   [1.3.2 有些不是 Feature 的原因](#.E6.9C.89.E4.BA.9B.E4.B8.8D.E6.98.AF_Feature_.E7.9A.84.E5.8E.9F.E5.9B.A0)
+    *   [1.4 收集有用的信息](#.E6.94.B6.E9.9B.86.E6.9C.89.E7.94.A8.E7.9A.84.E4.BF.A1.E6.81.AF)
+*   [2 新建一个 Bug 报告](#.E6.96.B0.E5.BB.BA.E4.B8.80.E4.B8.AA_Bug_.E6.8A.A5.E5.91.8A)
     *   [2.1 创建账户](#.E5.88.9B.E5.BB.BA.E8.B4.A6.E6.88.B7)
-    *   [2.2 项目和分类](#.E9.A1.B9.E7.9B.AE.E5.92.8C.E5.88.86.E7.B1.BB)
-    *   [2.3 总结](#.E6.80.BB.E7.BB.93)
+    *   [2.2 各个项目](#.E5.90.84.E4.B8.AA.E9.A1.B9.E7.9B.AE)
+    *   [2.3 摘要](#.E6.91.98.E8.A6.81)
     *   [2.4 严重性](#.E4.B8.A5.E9.87.8D.E6.80.A7)
-    *   [2.5 加入相关信息](#.E5.8A.A0.E5.85.A5.E7.9B.B8.E5.85.B3.E4.BF.A1.E6.81.AF)
-*   [3 跟踪一个问题](#.E8.B7.9F.E8.B8.AA.E4.B8.80.E4.B8.AA.E9.97.AE.E9.A2.98)
-    *   [3.1 投票和监视](#.E6.8A.95.E7.A5.A8.E5.92.8C.E7.9B.91.E8.A7.86)
-    *   [3.2 回答更多问题](#.E5.9B.9E.E7.AD.94.E6.9B.B4.E5.A4.9A.E9.97.AE.E9.A2.98)
+    *   [2.5 包括相关信息](#.E5.8C.85.E6.8B.AC.E7.9B.B8.E5.85.B3.E4.BF.A1.E6.81.AF)
+*   [3 追踪 Bug](#.E8.BF.BD.E8.B8.AA_Bug)
+    *   [3.1 投票与监视](#.E6.8A.95.E7.A5.A8.E4.B8.8E.E7.9B.91.E8.A7.86)
+    *   [3.2 回答追加的问题](#.E5.9B.9E.E7.AD.94.E8.BF.BD.E5.8A.A0.E7.9A.84.E9.97.AE.E9.A2.98)
     *   [3.3 软件新版本发布时更新问题报告](#.E8.BD.AF.E4.BB.B6.E6.96.B0.E7.89.88.E6.9C.AC.E5.8F.91.E5.B8.83.E6.97.B6.E6.9B.B4.E6.96.B0.E9.97.AE.E9.A2.98.E6.8A.A5.E5.91.8A)
-    *   [3.4 若解决则关闭](#.E8.8B.A5.E8.A7.A3.E5.86.B3.E5.88.99.E5.85.B3.E9.97.AD)
+    *   [3.4 关闭已经解决的问题](#.E5.85.B3.E9.97.AD.E5.B7.B2.E7.BB.8F.E8.A7.A3.E5.86.B3.E7.9A.84.E9.97.AE.E9.A2.98)
     *   [3.5 问题的状态](#.E9.97.AE.E9.A2.98.E7.9A.84.E7.8A.B6.E6.80.81)
-*   [4 消灭问题日](#.E6.B6.88.E7.81.AD.E9.97.AE.E9.A2.98.E6.97.A5)
+*   [4 另见](#.E5.8F.A6.E8.A7.81)
 
-## 报告前
+## 开始之前
 
 准备详细规范的问题报告并不难，但是需要报告者付出精力。 **报告前的工作才是最重要的。** 不幸的是，很少有人花时间做好这个工作。
 
@@ -33,197 +35,201 @@
 
 ### 查找重复问题
 
-当你遇到问题或要求一个新功能是，极有可能有人也遇到了同样的问题，产生同样的想法。一个问题报告可能已经存在。这时，不要创建重复问题，请跟踪原有问题。
+当你遇到问题或要求一个新功能是，极有可能有人也遇到了同样的问题，产生同样的想法。一个问题报告可能已经存在。这时，不要创建重复问题，请[跟踪原有问题](#.E8.BF.BD.E8.B8.AA_Bug)。
 
 全面查找已有信息，包括：
 
-*   [Arch Linux 论坛](https://bbs.archlinux.org/): The forums are often the first stop for users looking for help or sharing ideas. While a solution may not yet exist, additional background information and discussion can steer you in the right direction.
+*   [Arch Linux 论坛](https://bbs.archlinux.org/): 论坛通常是用户寻求帮助和分享解决方案的第一处。就算当时问题可能没有解决，各位用户追加的信息和讨论能帮助你找到正确的方向。
 
-*   [Arch Linux 问题跟踪系统](https://bugs.archlinux.org/): Your problem may have already been reported to Arch Linux developers. Duplicate bug reports are unhelpful and promptly closed. Search both **[recently closed bugs](https://bugs.archlinux.org/index.php?string=&project=1&status%5B%5D=closed&closedfrom=-1+week)** as well as open reports. Remember to mark 'search details' and/or 'search comments' under Advanced, the bug title may not contain the text you're searching for.
+*   [Arch Linux Bugtracker](https://bugs.archlinux.org/) （Arch Linux Bug 回报系统）: 也许你的问题已经由其他的用户提交给了开发者。重复的问题不仅没有帮助并且会被直接关闭。试着搜索**[最近关闭的 Bug 报告](https://bugs.archlinux.org/index.php?string=&project=1&status%5B%5D=closed&closedfrom=-1+week)** 和其它正在进行中的报告。记得在高级选项中选择“搜索详细信息”和“搜索评论”，因为可能标题不一定含有你搜索的信息。
 
-*   [Google](http://www.google.com) or your favorite search engine: Search using the program's name, version, and a relevant part of the error message, if any.
+*   [Google](http://www.google.com) 或者你喜欢的搜索引擎: 试着搜索程序名称，版本和相关的错误消息（如果有的话）。
 
-*   **上游** 论坛、邮件列表和问题跟踪系统: If Arch Linux is not responsible for a bug, it should be reported upstream rather than the Arch Linux Bugtracker. Search both recently closed bugs as well as open reports. Bugs may have already been fixed in the program's development version.
+*   **上游** 论坛,邮件列表和 Bug 回报系统: 如果 Arch Linux 不是造成 Bug 的原因，这个 Bug 应该提交到上游（而不是 Arch Linux）。试着搜索最近关闭的 Bug 报告和其它正在进行中的报告，你所遇到的 Bug 可能已经在上游被修复了。
 
-*   **其他发行版的论坛**: The free software community is vast; Archers are not the only users with ideas! Consider searching the [Gentoo Forums](http://forums.gentoo.org/), [FedoraForum.org](http://forums.fedoraforum.org/), and [Ubuntu Forums](http://ubuntuforums.org/), for example.
+*   **其它发行版的论坛**: 自由软件社区很宏大，有想法的不只有 Archer ! 考虑一下搜索其它发行版的论坛，例如 [Gentoo Forums](http://forums.gentoo.org/), [FedoraForum.org](http://forums.fedoraforum.org/), 和 [Ubuntu Forums](http://ubuntuforums.org/)。
 
 ### 上游还是 Arch?
 
-Arch Linux is a GNU/Linux *distribution*. Arch developers and Trusted Users are responsible for compiling, packaging, and distributing software from a wide range of sources. **Upstream** refers to these *sources* – the original authors or maintainers of software that is distributed in Arch Linux. For example, the popular Firefox web browser is developed by the Mozilla Project.
+Arch Linux 是一个 GNU/Linux *发行版* . Arch 开发者们和 Trusted User 们负责从各处编译,打包并分发软件.**上游**意味着*来源* – 就是 Arch Linux 所分发的软件的来源.例如 FireFox 浏览器是由 Mozilla 开发的.
 
-**If Arch is not responsible for a bug, the problem will not be solved by reporting the bug to Arch developers.** Responsibility for a bug is said to lie upstream when it is not caused through the distribution's porting and integration efforts.
+**如果 Arch 不是造成 Bug 的主要原因,把 Bug 报告提交到 Arch 开发者并不能解决问题.**
 
-By reporting bugs upstream, you will not only help Archers and Arch developers, but you will also help other people in the free software community as the solution will trickle down to all distributions.
+通过向上游提交 Bug 报告,你不只帮助到了 Arch Linux 用户和开发者,同时也是在帮助自由软件社区的其他用户们.这样其它发行版的用户也能从中获得解决方案.
 
-Once you have reported a bug upstream or have found other relevant information from upstream, it might be helpful to post this in the Arch bug tracker, so both Arch developers and users are made aware of it.
+如果你从上游获得了相关的信息,也许可以把它们发送到 Arch Linux Bugtracker ,这样 Arch 开发者和用户们便能从中了解一些信息.
 
-So what is Arch Linux responsible for?
+所以 Arch Linux 负责什么?
 
-*   **Arch Linux Projects**: pacman, AUR, initscripts, Arch Websites. If you have a doubt about if the project belongs to Arch or not, display the package information (pacman -Qi foobar_package or using the website) and look at the URL.
+*   [Arch Linux 计划](https://projects.archlinux.org/): [pacman](/index.php/Pacman "Pacman"), [AUR](/index.php/AUR "AUR"), [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"), Arch Linux 网站. 不知道这个包是不是 Arch 的项目? 查找项目信息 (`pacman -Qi *package_name*` 或者通过网站) 并从中寻找上游网址 .
 
-*   **Packaging**: Packaging basically consists of fetching the source code from upstream, compiling it with relevant options, making sure that it will be correctly installed on an Arch system, and checking that the main functionality works. Packaging at Arch does not consist of adding new functionality or patches for existing bugs; this is the job of the upstream developer.
+*   **打包**: 打包包含从上游获取源代码,用相关的选项编译,确认它能在 Arch 上正确安装与运行等环节. Arch 的 打包环节不包含增加新功能或是修复 Bug ,这些是上游开发者的工作.
 
-If a bug/feature is not under Arch's responsibility, report it upstream. See also [Reasons for not being a bug](/index.php/Reporting_bug_guidelines#Reasons_for_not_being_a_bug "Reporting bug guidelines").
+如果某个 Bug/Feature 不是 Arch 的原因,请把它提交给上游.另参阅 [有些不是 Bug 的原因](#.E6.9C.89.E4.BA.9B.E4.B8.8D.E6.98.AF_Bug_.E7.9A.84.E5.8E.9F.E5.9B.A0).
 
-### 问题还是新功能?
+### Bug 或者 Feature?
 
-*   **问题** 是一个应该工作却未正常工作的内容。
-*   **新功能** 是指有人编程之后会工作的内容。
+	bug
 
-#### 不是问题的原因
+	某些该工作的地方没有按开发者的预期工作.
 
-*   Something you would like a piece of software to do, which is not implemented by the upstream developers. In short : **a new feature**.
-*   A bug already reported upstream.
-*   A bug already fixed upstream but not in Arch because the package is not up-to-date.
-*   **A package which is not-up-to-date**. Use the **Flag Package Out-of-Date** feature on [Arch's packages website](https://archlinux.org/packages/).
-*   A package which does not use Fedora, Ubuntu or some other community patch. **Patches should be submitted *upstream***.
-*   A package where **non essential function** X or function Y is not activated. This is a feature request.
-*   A package which does not include a **.desktop file** or **icons** or other [freedesktop](http://www.freedesktop.org) stuff. This is not a bug if such files are not included in the source tarball, and this must be requested as a feature request *upstream*. If such files are provided by *upstream* but not used in the package then this is a bug.
+	feature
 
-#### 不是新功能的原因
+	something which software does or would do if somebody coded it.
 
-*   When it is a bug ...
-*   When it is not under Arch responsibility to implement the feature, ie an **upstream feature**.
-*   A package is not up-to-date. Use the **Flag Package Out-of-Date** feature on [Arch's packages website](https://archlinux.org/packages/).
-*   A package which does not use Fedora, Ubuntu or some other community patch. **Patches should be submitted *upstream***.
+#### 有些不该提交 Bug 报告的原因
 
-### 收集有用信息
+*   你想要一个还没有的功能（这是功能请求）。
+*   已经提交给上游的 Bug
+*   上游已经修复但是 Arch 还没更新软件包。
+*   **某个软件包过期了**，这种情况请使用 [Arch Linux 网站上的](https://archlinux.org/packages/) **标记这个包已过期** 按钮.
+*   某个软件包没使用来自其它发行版或其它社区的补丁,**补丁应该提交到上游**.
+*   某个软件包中的 **非核心功能** 没有启用.这种情况应该提交功能请求.
+*   某个软件包没有包含 [freedesktop](http://www.freedesktop.org) 相关文件,例如 **.desktop 文件** 或是 **图标**.只有在上游提供了这些文件但软件包中没有使用的情况下才是个 Bug .如果该上游没有提供这些文件,那么应该向上游提交功能请求.
 
-Here is a list of useful information that should be mentioned in your bug report :
+#### 有些不是 Feature 的原因
 
-*   **Version of the package** being used. **Always specify package version** Saying "the latest" , "todays" , or "the package in extra" have absolutely no meaning. Especially if the bug is not about to get fixed right away.
+*   这是个 Bug ......
+*   **某个软件包过期了**，这种情况请使用 [Arch Linux 网站上的](https://archlinux.org/packages/) **标记这个包已过期** 按钮.
+*   某个软件包没使用来自其它发行版或其它社区的补丁,**补丁应该提交到上游**.
 
-*   Version of the main libraries used by the package (available in the *depends* variable in the PKGBUILD), when they are involved in the problem. If you do not know exactly what information to provide then wait for a bug hunter to ask you for it ...
+### 收集有用的信息
 
-*   Version of the kernel used if you are having hardware related problems.
+这是一个关于你的 Bug 报告中应该包含的信息的列表:
 
-*   Indicate whether or not **the functionality worked at one time or not**. If so indicate since when it stopped working.
+*   **软件包的具体版本**,类似于"最新的","今天的","[Extra]中的"这样的描述毫无意义.
+
+*   软件包所使用的库 (可以在 PKGBUILD 中的 *depends* 中找到 ),它们可能和问题相关.如果你不知道确切的信息,那就等别人来问......
+
+*   如果遇到了硬件问题,记得提供你的内核版本.偶尔还需要你的硬件品牌相关的信息.
+
+*   这个功能 **是否有正常工作一次** .如果有的话,提出来什么时间停止工作的.
 
 *   Indicate your **hardware brand** when you are having hardware related problems
 
-*   Add **relevant log information** when any is available. This can be obtained in the following places depending on the problem :
-    *   /var/log/messages for kernel and hardware related issues.
-    *   /var/log/Xorg.0.log or /var/log/Xorg.2.log or any Xorg like log files if video related problems (nvidia, ati, xorg ...)
-    *   Run your program in a **console** and use **verbose** and/or **debug** mode if available (see your program documentation), and copy the output in a file. When running an application in a terminal make sure relevant information will be displayed in **english** so that many people can understand it. This can be done by using *export LC_ALL="c"*. Example with a software named *foobar* from which you would like to have relevant information at runtime and provided that foobar has a --verbose option :
+*   如果有的话,提供其它 **相关的日志** 这些信息可能会帮助找到问题所在:
+    *   [Systemd 日志](/index.php/Systemd_journal "Systemd journal").如果使用[syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), `/var/log/messages` 包含内核和硬件相关问题的信息.
+    *   `/var/log/Xorg.0.log` , `/var/log/Xorg.2.log` 或其他 Xorg 日志包含显示相关的问题的信息.
+    *   通过 **verbose** 或是 **debug** 模式在终端运行你的程序并收集其输出 (如果有的话,请参阅你的程序提供的文档) . 对于母语不是英语的用户,你也许需要在终端中设置相应的环境变量 (例如`export LC_ALL="C"`) 以使程序以英文输出.这样更多的人便可以读懂它.例如在终端下以 `--verbose` 选项运行 *foobar*:
 
 ```
-someone@somecomputer # export LC_ALL="C"
-someone@somecomputer # foobar --verbose
+$ export LC_ALL="C"
+$ foobar --verbose
 
 ```
 
-This will affect only the current terminal and will stop taking effect when the terminal is closed.
+这样改变环境变量只对当前终端生效.
 
-If you have to paste a lot of text, like the output of dmesg, or a Xorg log, is it preferred to save it as a file on your computer and attach it to your bug report. Attaching a file rather than using a pastebin to present relevant information is preferable in general due to the fact that pastebined content may suffer by expired links or any other potential problems. **Attaching a file guarantees the provided information will always be available.**
+如果你要提供大量的文本,例如 dmesg 的输出或是 Xorg 日志,最好把它们保存到文件中并随着 Bug 报告提供. **但是请保证提供的文件和 Bug 相关**.
 
-*   **Indicate how to reproduce the bug**. This is very important, it will help people test the bug and potential patches on their own computer.
+*   **复现 Bug 的方法**.这很重要,因为这样可以帮助其他人测试 Bug 是否修复和寻找潜在的修复方案.
 
-*   **The stack trace**. It is a list of calls made by the program during its execution, and helps in finding part of the program where the bug is located, especially if bug involves the program crashing. You can obtain a stack trace using gdb (The GNU Debugger) by running the program with "gdb name_of_program" and then typing "run" at the gdb prompt. When the program crashes, type "bt" at the gdb prompt to obtain the stack trace and then "quit" to exit gdb.
+*   **堆栈跟踪** .包含程序调用过程的列表,这可以帮助定位问题的位置(特别是那些导致程序崩溃的问题).[Debug - Getting Traces#Getting the trace](/index.php/Debug_-_Getting_Traces#Getting_the_trace "Debug - Getting Traces") 包含了使用[gdb](https://www.archlinux.org/packages/?name=gdb) (The GNU Debugger) 生成堆栈跟踪的详细信息.
 
-## 新开一个问题
+## 新建一个 Bug 报告
 
-When you are sure it is a bug or a feature and you gathered all useful information, then you are ready to open a bug report or feature request.
+在你收集到需要的信息并且确定是个 Bug 或者功能请求以后,你就可以提交 Bug 报告或者功能请求了.
 
 ### 创建账户
 
-You have to create an account on [Arch's bug tracker system](https://bugs.archlinux.org/). This is as easy as creating an account on a wiki or a forum and there is nothing particular to mention here. Do not be afraid of giving the email address you currently use : it will be hidden and you will receive mails only for bugs you follow.
+首先在 [Arch 的 Bug 回报系统](https://bugs.archlinux.org/) 上注册一个账户,像 Wiki 和论坛一样简单.
 
-### 项目和分类
+只有在你跟踪的 Bug 更新以后才会收到邮件提醒,因此你不必担心收件箱会爆炸 :-)
 
-Once you have determined your feature or bug is related to Arch and not an upstream issue, you will need to file your problem in the correct place (watch the project name in the drop down list to the left of 'Switch' button in top left corner of bug report creation page.):
+### 各个项目
 
-*   **Arch Linux** - for packages in *testing*, *core*, or *extra*. It is also a place for documentation, websites (except AUR), and security issues.
+在你觉得某个 Bug 或功能请求确实和 Arch 相关以后,你应该将其放置在正确的项目里.在创建报告时从左侧选择一个正确的项目:
 
-*   **Arch User Repository (AUR)** - for the AUR website code and server issues. This does not include third party apps used to access the AUR or packages in *unsupported*.
+*   **Arch Linux** - *testing*, *core*, 或 *extra* 中的软件包的问题. 也包含 Arch Linux 的文档,网站(除了 AUR) 和安全问题.
 
-*   **Community Packages** - for packages in *community*. It is not a place for packages in *unsupported*.
+*   **Arch User Repository (AUR)** - AUR 网站代码和服务器相关.记住并不包含访问AUR中软件包的第三方程序.
 
-*   **Pacman** - for *pacman* and the official scripts and tools associated with it. This includes things like makepkg and abs. It does not include community developed packages such as yaourt.
+*   **Community Packages** - *community* 中的软件包 . 这并不包含 *unsupported* (AUR) 中的软件包.
 
-*   **Release Engineering** - intended for all release related issues (isos, installer, etc)
+*   **Pacman** - [pacman](/index.php/Pacman "Pacman") 和它关联的官方脚本和工具,例如makepkg 和 abs ,但并不包含 [AUR helpers](/index.php/AUR_helpers "AUR helpers") 这一类社区开发的软件 .
 
-There is no place for reporting problems with packages in *unsupported*. The AUR provides a way to add comments to a package in *unsupported*. You should use this to report bugs to the package maintainer.
+*   **Release Engineering** - 所有和发行相关的问题 (iso等......)
 
-### 总结
+对于 AUR 上软件包的问题,请使用 AUR 网站上的评论功能提交给 AUR 上该软件包的维护者.
 
-Please write a concise and descriptive Summary.
+### 摘要
 
-Here is a list of recommendations:
+请编写一个简洁且有描述性的摘要,下面是一些建议:
 
-*   **Do not** name your report "*pkgname* is broken after the last update" - it is non-descriptive and "after last update" has no meaning in Arch.
-*   Start the Summary with package name enclosed in square brackets, e.g. "**[*pkgname*]** 3.0.5-1 breaks copy-paste feature". By naming reports this way you make it much easier for developers to sort reports by package names.
-*   Do not write too much text in the Summary. Excessive text will not be visible in reports list.
+*   **不要写成** "*pkgname* is broken after the last update" 这样的,这不光没描述性而且没人知道 Arch 中的 "after last update" 是啥时候.
+*   用方括号表示软件包名称,例如 "**[*pkgname*]** 3.0.5-1 breaks copy-paste feature" .合理的命名可以帮助开发者搜索和排列报告.
+*   别太长,因为太长的内容会在列表中被截断.
 
 ### 严重性
 
-Choosing a *critical* severity will not help to solve the bug faster. It will only make truly critical problems less visible and probably make the developer assigned to your bug a bit less open to fixing it.
+选择一个*严重性等级*不会帮助更快的修复 Bug .这只是让关键的问题易于搜索和被开发者标记.
 
-Here is a general usage of severities :
+Here is a general usage of severities: 常见的严重等级有这几种:
 
-*   **Critical**- System crash, severe boot failure that is likely to affect more than just you, or an exploitable security issue in either a core or outward-facing service package.
-*   **High**- The main functionality of the application does not work, less critical security issues, etc.
-*   **Medium**- A non-essential functionality does not work, UNIX standards not respected, etc.
-*   **Low**- An optional functionality (plugin or compilation activated) does not work.
-*   **Very Low**- Translation or documentation mistake. Something that really does not matter much but should be noticed for a future release.
+*   **Critical**(严重),导致系统崩溃或启动失败,可能影响到其他用户的问题.或是对外服务的安全漏洞.
+*   **High**(高) - 程序的主要功能不工作,或是不那么严重的安全问题等等.
+*   **Medium**(中等) - 程序的非主要功能不工作,不遵循 UNIX 规范等等.
+*   **Low**(低) - 程序的可选功能(插件或是编译时选项)不工作.
+*   **Very Low**(很低) - 翻译或是文档错误,偶尔会是功能请求.
 
-### 加入相关信息
+### 包括相关信息
 
-This is maybe one of the most difficult parts of bug reporting. You have to choose from the chapter [Gather useful information](/index.php/Reporting_bug_guidelines#Gather_useful_information "Reporting bug guidelines") which information you will add to your bug report. This will depend on which your problem is. If you do not know what the relevant pieces of information are, do not be shy : **it is better to give more information than needed than not enough**.
+这也许是 Bug 报告中最困难的一个阶段,前面的[收集有用的信息](#.E6.94.B6.E9.9B.86.E6.9C.89.E7.94.A8.E7.9A.84.E4.BF.A1.E6.81.AF)一节应该包含了需要的信息;如果不知道要提供什么的话,记得"多多益善".
 
-A good tutorial on reporting bugs can be found at [[1]](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html)
+参见 Simon Tatham 的 [如何有效的报告问题](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html)。
 
-However, developers or bug hunters will ask you for more information if needed. Fortunately after a few bug reports you will know what information should be given.
+不过开发者可能会要求你提供更多信息,幸运的是在交谈过几次以后你应该会知道该提供哪些信息了.
 
-Short information can be inlined in your bug report, whereas **long information (logs, screenshots ...) should be attached**.
+短小的信息可以包含在你的报告里,长的信息请使用附件功能随附在报告里.
 
-## 跟踪一个问题
+## 追踪 Bug
 
-**Do not think the work is done once you have reported a bug**!
+**不要认为你提交完 Bug 报告就结束了**! 开发者和其他用户可能会询问你细节或是提供一些方法.没有持续的反馈会让 Bug 报告有始无终,同时也会惹恼用户和开发者们.
 
-Developers or other users will probably ask you for more details and give you some potential fixes to try. Without continued feedback, bugs cannot be closed and the end result is both angry users and developers.
+### 投票与监视
 
-### 投票和监视
+你可以为同样影响到你的 Bug **vote** (投票).投票会让开发者察觉有多少人受到了这个 Bug 的影响.但是如果你遇到了同样的问题,提交相关的信息是比投票更快的解决方法.
 
-You can **vote** for your favorite bugs. The number of votes indicates to the developers how many people are impacted by the bug. However, this is not a very effective way of getting the bug solved. Much more important would be posting any additional information you know about the bug if you were not the original reporter.
+**Watching** (监视/跟踪) 一个 Bug 很重要,你会收到关于你跟踪的 Bug 的进展的邮件.如果你提交了一个报告,请确保选中了 "Notify me whenever this task changes" (在 Task 改变时通知我) 选项.
 
-**Watching** a bug is important- you will receive an email when new comments are added or the bug status has changed. If you opened a bug verify that the *"Notify me whenever this task changes"* checkbox is activated in order to receive such emails.
+### 回答追加的问题
 
-### 回答更多问题
+其它人花时间阅读报告并尝试帮助你修复问题,你也应该尽所能向其他人提供你能做到的帮助.收不到回应不仅可能会让你的 Bug 难以修复,还会让帮助你的人失去信心.
 
-People will take the time to look at your bug report and will try to help you. You need to continue to help them resolve your bug. Not answering to their questions will keep your bug unresolved and likely hamper enthusiasm to fix it.
+**如果其他人需要更多信息,请尝试提供给他们.也请你尝试一下可能的解决方案。**.
 
-**Please take the time to give people more information if requested and try the solutions proposed**.
-
-Developers or bug hunters will close your bug if you do not answer questions after a few weeks or a month.
+开发者会关闭那些有新回复而提交 Bug 的人超过几周或是一个月没有回复的 Bug 报告。
 
 ### 软件新版本发布时更新问题报告
 
-Sometimes a bug is related to a given package version and is fixed in a new version. If this is the case then indicate it in the bug report comments and request a closure.
+有时某个 Bug 已经在新版本中修复，遇到这种情况的话记得在 Bug 报告中提出来然后提交一个关闭请求.
 
-### 若解决则关闭
+### 关闭已经解决的问题
 
-Sometimes people report a bug but do not notify when they have solved it on their own, leaving people searching for a solution that has already been found. Please request a closure if you found a solution and give the solution in the bug report comments.
+有些时候用户可能自己解决了自己遇到的 Bug ,遇到这种情况的话记得在 Bug 报告中提出来,**附上解决方案的参考链接**,然后提交一个关闭请求.
 
 ### 问题的状态
 
-During its life a bug goes through several states :
+一个 Bug 可能有下面这些状态:
 
-*   **Unconfirmed** : This is the default state. You have just reported it and nobody managed to reproduce the problem or confirmed that it is actually a bug.
+*   **Unconfirmed**(未确认) - 这是默认状态,表示还没人确认或是复现这个 Bug.
 
-*   **New** : The bug is confirmed but it has not been assigned to the developer responsible for the related software. It is usually the case when more investigation is needed to determine which software is responsible for the bug.
+*   **New**(新的/已确认) - 表示这个 Bug 已经确认,但还没关联到相关软件的负责人.通常是因为还没确认哪个软件引发的 Bug 的缘故.
 
-*   **Assigned** : The bug has been assigned to a developer responsible for the software involved in the bug. It does not mean that the developer will be the one who will fix the bug. It does not even mean that the developer will work on a solution. It just means that the developer will take care of the life cycle of the bug, including reviewing patches if any, releasing a fix and closing the bug when required. There is no point in contacting a developer directly to have a bug fixed more quickly, he/she will certainly not like it ...
+*   **Assigned**(已分配) - 这个 Bug 已经分配到与之关联的开发者.不过这不意味着只有这个开发者会帮忙解决这个 Bug .这只是表示开发者会 关注这个Bug,例如检查任何的修补,发表解决方案和在需要时关闭 Bug 报告.所以不要直接和这个被分配的开发者联系......
 
-*   **Researching** : Somebody is looking for a solution. This status is **rarely used at Arch** and it is better this way. The *researching* status could make people believe they do not need to get interested in the bug report. But usually we need more than one person to fix a bug : having several experienced people on a bug helps a lot.
+*   **Researching**(研究中) - 有人正在寻求解决方案. 这通常表示这个 Bug 可能呢个需要更多经验丰富的用户帮忙解决.
 
-*   **Waiting on customer** and **Requires testing** : The one who reported a bug is asked to provide more information or to try a proposed solution, but he/she did not give a feedback yet. Those status are **rarely used at Arch** and should be used more often. However it is important that you **watch the bug** (see the [voting and watching section](/index.php/Reporting_bug_guidelines#Voting_and_Watching "Reporting bug guidelines")) as developers or bug hunters usually ask questions in the comments.
+*   **Waiting on Response**(等待回复) 和 **Requires testing**(需要测试) - 有人提供了更多信息或是提供了一个可能的解决方法,但是需要反馈.**Watching** (监视/跟踪) 一个 Bug 很重要,因为你可能会被开发者要求提供更详细的信息.
 
-*   **A task closure has been requested** : this is not exactly a status, but you may find some bug reports with such a notification. This indicates that somebody requested a closure for the bug. A reason is added to the request most of the time. It is upon the assignee developer to decided whether he/she will accept the closure or not.
+*   **A task closure has been requested**(已提交关闭请求) - 这不是最终状态,但你也许会发现某些 Bug 报告是这样的状态.和它关联的开发者会决定是否关闭它.
 
-*   **Closed** : Either this is not a valid bug (see [Reasons for not being a bug](/index.php/Reporting_bug_guidelines#Reasons_for_not_being_a_bug "Reporting bug guidelines")) or a solution has been found and released.
+*   **Closed**(已关闭) - 可能因为这不是个 Bug [有些不该提交 Bug 报告的原因](#.E6.9C.89.E4.BA.9B.E4.B8.8D.E8.AF.A5.E6.8F.90.E4.BA.A4_Bug_.E6.8A.A5.E5.91.8A.E7.9A.84.E5.8E.9F.E5.9B.A0) 或者已经被解决.
 
-Some people (developers, TUs ...) are responsible for dispatching the bugs and change their status.
+像开发者和 TU 这样的人负责管理和更新各个 Bug 的状态.
 
-## 消灭问题日
+## 另见
 
-[Bug Squashing Day](/index.php/Bug_Squashing_Day "Bug Squashing Day")
+*   [Bug Day](/index.php/Bug_Day "Bug Day")，Bug日。
+*   [Midyear Cleanup](/index.php/Midyear_Cleanup "Midyear Cleanup")，年中杀虫会。
+*   [Christmas Cleanup](/index.php/Christmas_Cleanup "Christmas Cleanup")，圣诞节杀虫会。

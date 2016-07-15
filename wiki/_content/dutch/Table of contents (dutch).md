@@ -1,4 +1,4 @@
-| [Nederlands](/index.php/Category:Nederlands "Category:Nederlands") <small>(17)</small> |
+| [Nederlands](/index.php/Category:Nederlands "Category:Nederlands") <small>(16)</small> |
 | <small>1.</small> [Over Arch](/index.php/Category:About_Arch_(Nederlands) "Category:About Arch (Nederlands)") <small>(5)</small> |
 | <small>1.1.</small> [Arch ontwikkeling](/index.php/Category:Arch_development_(Nederlands) "Category:Arch development (Nederlands)") <small>(1)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Nederlands) "Category:ArchWiki (Nederlands)") <small>(2)</small> |

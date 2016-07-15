@@ -1,8 +1,8 @@
 To use multiple displays (some of which are touchscreens), you need to tell Xorg the mapping between the touch surface and the screen. This can be done using `xinput` to set the touchscreen's coordinate transformation matrix, as described [in the X.Org Wiki](http://www.x.org/wiki/XInputCoordinateTransformationMatrixUsage).
 
-This shall be a guide to do that.
+This is a guide to do that, the old-fashioned way, in cases when xrandr does not know about your separate screens because they have been merged into one (e.g., when using TwinView). Everyone else, please go to [Touchscreen](/index.php/Touchscreen "Touchscreen") to do it the easy way.
 
-You will need to run the `xinput` command every time you attach the monitor or log in. Or course, you can add the command to your session-autostart. You can also use [Udev](/index.php/Udev "Udev") to automate this; more details to follow once I get it working myself.
+You will need to run the `xinput` command every time you attach the monitor or log in. Or course, you can add the command to your session-autostart. You can also use [Udev](/index.php/Udev "Udev") to automate this.
 
 ## Contents
 
@@ -13,6 +13,7 @@ You will need to run the `xinput` command every time you attach the monitor or l
         *   [1.1.3 Touch area](#Touch_area)
     *   [1.2 Calculate the Coordinate Transformation Matrix](#Calculate_the_Coordinate_Transformation_Matrix)
     *   [1.3 Apply the Matrix](#Apply_the_Matrix)
+    *   [1.4 Do it automatically via a udev rule](#Do_it_automatically_via_a_udev_rule)
 *   [2 Troubleshooting](#Troubleshooting)
 *   [3 See also](#See_also)
 
@@ -128,6 +129,17 @@ xinput set-prop "Acer T230H" --type=float "Coordinate Transformation Matrix" 0.5
 ```
 
 to calibrate your touchscreen device. Now, it should work properly.
+
+### Do it automatically via a udev rule
+
+Create a file something like /etc/udev/rules.d/99-acer-touch.rules with contents like this:
+
+```
+ENV{ID_VENDOR_ID}=="2149",ENV{ID_MODEL_ID}=="2703",ENV{WL_OUTPUT}="DVI1",ENV{LIBINPUT_CALIBRATION_MATRIX}="1 0 0  0 1 0"
+
+```
+
+Substitute your own touchscreen's vendor ID, model ID, the xrandr output name, and the calibration matrix that you calculated above. This is based on the assumption that you are using the libinput driver for your touchscreen.
 
 ## Troubleshooting
 

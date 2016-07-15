@@ -1,45 +1,62 @@
+There are two official Linux versions of Skype available:
+
+*   The new Skype for Linux Alpha (released 2016-07-13): see [#Skype for Linux Alpha](#Skype_for_Linux_Alpha)
+
+	It is basically the web version in a wrapper. Voice chat works, video not yet.
+
+*   The old Skype (last release in June 2014): see [#Legacy Skype](#Legacy_Skype)
+
+	Video and voice chat no longer works. Group chats also broken.
+
+Alternatively, you can use the web version at [web.skype.com](https://web.skype.com/). It has working voice chat, at least with Chromium/Chrome.
+
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Skype sound](#Skype_sound)
-*   [3 Restricting Skype access](#Restricting_Skype_access)
-    *   [3.1 systemd-nspawn](#systemd-nspawn)
-    *   [3.2 Docker](#Docker)
-    *   [3.3 Use Skype with special user](#Use_Skype_with_special_user)
-        *   [3.3.1 Access Pulseaudio controls when using Skype as a different user](#Access_Pulseaudio_controls_when_using_Skype_as_a_different_user)
-        *   [3.3.2 Open URLs in your user's browser](#Open_URLs_in_your_user.27s_browser)
-        *   [3.3.3 Access received files](#Access_received_files)
-    *   [3.4 AppArmor](#AppArmor)
-    *   [3.5 TOMOYO](#TOMOYO)
-*   [4 Skype plugin for Pidgin](#Skype_plugin_for_Pidgin)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 GUI does not match GTK Theme](#GUI_does_not_match_GTK_Theme)
-    *   [5.2 Test call fails](#Test_call_fails)
-    *   [5.3 No video with GSPCA webcams](#No_video_with_GSPCA_webcams)
-    *   [5.4 No video with Compiz](#No_video_with_Compiz)
-    *   [5.5 Skype does not use a GTK+ theme, even though other Qt apps do](#Skype_does_not_use_a_GTK.2B_theme.2C_even_though_other_Qt_apps_do)
-    *   [5.6 No incoming video stream](#No_incoming_video_stream)
-    *   [5.7 Monster/low-octave "growling" distortion over mic](#Monster.2Flow-octave_.22growling.22_distortion_over_mic)
-    *   [5.8 Crackling/noisy sound (mainly using 64-bit OS)](#Crackling.2Fnoisy_sound_.28mainly_using_64-bit_OS.29)
-        *   [5.8.1 Solution 1](#Solution_1)
-        *   [5.8.2 Solution 2](#Solution_2)
-    *   [5.9 Skype sounds stops media player or other sound sources](#Skype_sounds_stops_media_player_or_other_sound_sources)
-    *   [5.10 Skype does not start after upgrade to 4.3.](#Skype_does_not_start_after_upgrade_to_4.3.)
-    *   [5.11 You are already signed in on this computer](#You_are_already_signed_in_on_this_computer)
-    *   [5.12 Empty white screen window](#Empty_white_screen_window)
-    *   [5.13 Skype doesn't output any sound after upgrading PulseAudio](#Skype_doesn.27t_output_any_sound_after_upgrading_PulseAudio)
+*   [1 Skype for Linux Alpha](#Skype_for_Linux_Alpha)
+*   [2 Legacy Skype](#Legacy_Skype)
+    *   [2.1 Installation](#Installation)
+    *   [2.2 Skype sound](#Skype_sound)
+    *   [2.3 Restricting Skype access](#Restricting_Skype_access)
+        *   [2.3.1 systemd-nspawn](#systemd-nspawn)
+        *   [2.3.2 Docker](#Docker)
+        *   [2.3.3 Use Skype with special user](#Use_Skype_with_special_user)
+            *   [2.3.3.1 Access Pulseaudio controls when using Skype as a different user](#Access_Pulseaudio_controls_when_using_Skype_as_a_different_user)
+            *   [2.3.3.2 Open URLs in your user's browser](#Open_URLs_in_your_user.27s_browser)
+            *   [2.3.3.3 Access received files](#Access_received_files)
+        *   [2.3.4 AppArmor](#AppArmor)
+        *   [2.3.5 TOMOYO](#TOMOYO)
+    *   [2.4 Troubleshooting](#Troubleshooting)
+        *   [2.4.1 GUI does not match GTK Theme](#GUI_does_not_match_GTK_Theme)
+        *   [2.4.2 Test call fails](#Test_call_fails)
+        *   [2.4.3 No video with GSPCA webcams](#No_video_with_GSPCA_webcams)
+        *   [2.4.4 No video with Compiz](#No_video_with_Compiz)
+        *   [2.4.5 Skype does not use a GTK+ theme, even though other Qt apps do](#Skype_does_not_use_a_GTK.2B_theme.2C_even_though_other_Qt_apps_do)
+        *   [2.4.6 No incoming video stream](#No_incoming_video_stream)
+        *   [2.4.7 Monster/low-octave "growling" distortion over mic](#Monster.2Flow-octave_.22growling.22_distortion_over_mic)
+        *   [2.4.8 Crackling/noisy sound (mainly using 64-bit OS)](#Crackling.2Fnoisy_sound_.28mainly_using_64-bit_OS.29)
+            *   [2.4.8.1 Solution 1](#Solution_1)
+            *   [2.4.8.2 Solution 2](#Solution_2)
+        *   [2.4.9 Skype sounds stops media player or other sound sources](#Skype_sounds_stops_media_player_or_other_sound_sources)
+        *   [2.4.10 You are already signed in on this computer](#You_are_already_signed_in_on_this_computer)
+        *   [2.4.11 Empty white screen window](#Empty_white_screen_window)
+        *   [2.4.12 Skype doesn't output any sound after upgrading PulseAudio](#Skype_doesn.27t_output_any_sound_after_upgrading_PulseAudio)
+*   [3 Skype plugin for Pidgin](#Skype_plugin_for_Pidgin)
 
-## Installation
+## Skype for Linux Alpha
 
-**Note:** The official Skype client for Linux has not been updated in a long time and receiving calls from the latest versions of other clients is [reportedly](http://nickforall.nl/skype/) broken.
+There is a new [Skype for Linux Alpha](http://blogs.skype.com/2016/07/13/skype-for-linux-alpha-and-calling-on-chrome-and-chromebooks/), which is basically the web version at [web.skype.com](https://web.skype.com/) in a wrapper. It has working text and voice (also group voice) chat.
 
-**Tip:** There is also a web version of Skype [available](https://web.skype.com), which you might want to use if you do not trust the proprietary Skype client. You can also use it as an unofficial app: [skype-desktop-bin](https://aur.archlinux.org/packages/skype-desktop-bin/). Audio/video is currently not supported because the required browser plugin is only available for OS X and Windows.
+[Install](/index.php/Install "Install") it with the [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package.
+
+## Legacy Skype
+
+### Installation
 
 [Install](/index.php/Install "Install") the [skype](https://www.archlinux.org/packages/?name=skype) package. If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository first, since Skype is 32-bit only.
 
 Running Skype is just as easy. Type `skype` into a terminal or double-click the Skype icon on your desktop or in your DE's application menu.
 
-## Skype sound
+### Skype sound
 
 Skype requires [PulseAudio](/index.php/PulseAudio "PulseAudio") for voice communication and does not support plain [ALSA](/index.php/ALSA "ALSA").
 
@@ -66,7 +83,7 @@ Exec=/usr/bin/apulse32 /usr/bin/skype  %U
 
 ```
 
-## Restricting Skype access
+### Restricting Skype access
 
 There are a couple of reasons you might want to restrict Skype's access to your computer:
 
@@ -77,7 +94,7 @@ See [[1]](http://www1.cs.columbia.edu/~salman/skype/index.html) for more informa
 
 Restrictions can be implemented in a number of ways, with varying ease and security. It is possible to run Skype in a container, run it as a separate user, or use the [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") functionality available in the Linux kernel.
 
-### systemd-nspawn
+#### systemd-nspawn
 
 **Warning:** systemd-nspawn provides the most straightforward way to run an application in a separate environment, however it is [not considered](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html) to provide a fully secure setup.
 
@@ -104,7 +121,7 @@ The following script will create a container in `/mnt/stor/vm/skype` and run Sky
 
 ```
 
-### Docker
+#### Docker
 
 **Warning:** Running Docker has its own set of security implications and caveats. Read the main Docker article for more information.
 
@@ -116,7 +133,7 @@ Container has access to `~/.Skype` and `~/Downloads` directories on your host sy
 
 For installation use [upstream instructions](https://github.com/sameersbn/docker-skype/blob/master/README.md).
 
-### Use Skype with special user
+#### Use Skype with special user
 
 **Warning:** As of version 1.16, Xorg runs as a regular user. This means a special user has no access to X. The following approach only works when enabling root for Xorg; see [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
 
@@ -184,7 +201,7 @@ In order to restrict user "skype" accessing your external drive mounted in `/med
 
 This way, it is ensured that only the owner (normally "root") and "users" can access the specified directory tree while the others, including "skype", will be forbidden.
 
-#### Access Pulseaudio controls when using Skype as a different user
+##### Access Pulseaudio controls when using Skype as a different user
 
 As the "main-user" copy /etc/pulse/default.pa to ~/.pulse/default.pa and add:
 
@@ -200,7 +217,7 @@ default-server = 127.0.0.1
 
 ```
 
-#### Open URLs in your user's browser
+##### Open URLs in your user's browser
 
 When one clicks URL in chat window, skype execute [xdg-open](/index.php/Xdg-open "Xdg-open") to handle it. By default `xdg-open` uses default web browser for skype user environment. In order to open links in your user's browser perform next setup.
 
@@ -280,7 +297,7 @@ skype ALL=(*your_user*) NOPASSWD: /usr/lib/firefox/firefox -new-tab http*, /usr/
 
 ```
 
-#### Access received files
+##### Access received files
 
 By default `skype` stores received files with 600 permissions (only owner can access them). One may use [incron](https://www.archlinux.org/packages/?name=incron) to perform automatic permission fix upon downloading.
 
@@ -327,7 +344,7 @@ $ ln -s /home/skype/downloads ~/skype_files
 
 ```
 
-### AppArmor
+#### AppArmor
 
 See the [AppArmor](/index.php/AppArmor "AppArmor") page for how to set up AppArmor.
 
@@ -434,7 +451,7 @@ Load the profile by the command,
 
 Now you can run Skype restricted but as your own user. Denials are logged in `messages.log`.
 
-### TOMOYO
+#### TOMOYO
 
 Please note that this section describes using TOMOYO 2.5\. See [TOMOYO Linux#TOMOYO Linux 2.x](/index.php/TOMOYO_Linux#TOMOYO_Linux_2.x "TOMOYO Linux") for installation.
 
@@ -627,17 +644,13 @@ The output of this command will show you rejected actions for Skype, so you will
 
 See [[2]](http://tomoyo.sourceforge.jp/2.5/index.html.en) for a detailed guide to TOMOYO configuration.
 
-## Skype plugin for Pidgin
+### Troubleshooting
 
-See [Pidgin#Skype plugin](/index.php/Pidgin#Skype_plugin "Pidgin").
-
-## Troubleshooting
-
-### GUI does not match GTK Theme
+#### GUI does not match GTK Theme
 
 See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for information about theming Qt based applications like [VirtualBox](/index.php/VirtualBox "VirtualBox") or Skype. Also, you may need to install the [lib32-gtk-engines](https://aur.archlinux.org/packages/lib32-gtk-engines/) package.
 
-### Test call fails
+#### Test call fails
 
 Call to Echo Test Service can fail with error "call failed" when the user profiles are usually corrupt. Solution is to remove the profile and file and re-add your account in Skype as seen in Ubuntu Forums.
 
@@ -646,7 +659,7 @@ Call to Echo Test Service can fail with error "call failed" when the user profil
 
 ```
 
-### No video with GSPCA webcams
+#### No video with GSPCA webcams
 
 Firstly, remove the Skype configuration directory. Otherwise preloading V4L libraries (see below) will not help, because old settings will override preloaded libraries. Note that all personal account settings will be lost.
 
@@ -680,7 +693,7 @@ alias skype='LD_PRELOAD=/usr/*libxx*/libv4l/v4l1compat.so skype'
 
 where *libxx* should be edited as appropriate.
 
-### No video with Compiz
+#### No video with Compiz
 
 Try launching Skype setting an environment variable like this:
 
@@ -689,7 +702,7 @@ $ XLIB_SKIP_ARGB_VISUALS=1 skype
 
 ```
 
-### Skype does not use a GTK+ theme, even though other Qt apps do
+#### Skype does not use a GTK+ theme, even though other Qt apps do
 
 Recent versions of Skype allow you to change the theme via the Options menu. However, selecting the GTK+ option may not work properly. This is probably because you do not have a 32-bit theme engine installed. Try to find the engine your theme uses in the multilib repository or the [AUR](/index.php/AUR "AUR"). If you have no idea which engine your theme is using, the easiest fix is to install [lib32-gtk-engines](https://aur.archlinux.org/packages/lib32-gtk-engines/). This does however contain quite a lot of packages, so the best would be to find and install only the needed package.
 
@@ -728,7 +741,7 @@ $ Exec=/usr/bin/skype --disable-cleanlooks -style GTK
 
 Similarly if you have set Skype to autostart then modify `~/.config/autostart/skype.desktop` in the same way.
 
-### No incoming video stream
+#### No incoming video stream
 
 If skype shows a black square for the video preview, but something else (like `xawtv -c /dev/video0`) shows video correctly, you might need to start Skype with:
 
@@ -751,13 +764,13 @@ cd /usr/lib/lib32/libv4l &&  LD_PRELOAD=v4l1compat.so skype;
 
 ```
 
-### Monster/low-octave "growling" distortion over mic
+#### Monster/low-octave "growling" distortion over mic
 
 Some users with newer kernels are experiencing a monster-like growling distortion of their sound stream on the other end of Skype. This can be fixed by creating a dummy ALSA device or by removing `~/.Skype/shared.xml`. See [https://bbs.archlinux.org/viewtopic.php?pid=819500#p819500](https://bbs.archlinux.org/viewtopic.php?pid=819500#p819500) for more information.
 
-### Crackling/noisy sound (mainly using 64-bit OS)
+#### Crackling/noisy sound (mainly using 64-bit OS)
 
-#### Solution 1
+##### Solution 1
 
 With root privileges, edit the `/usr/bin/skype` script to add the `PULSE_LATENCY_MSEC` variable, changing this line:
 
@@ -773,7 +786,7 @@ PULSE_LATENCY_MSEC=60 exec "$LIBDIR/skype/skype" "$@"
 
 ```
 
-#### Solution 2
+##### Solution 2
 
 Edit `/etc/pulse/default.pa` and change the following line
 
@@ -791,7 +804,7 @@ load-module module-udev-detect tsched=0
 
 See also: [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling "PulseAudio/Troubleshooting").
 
-### Skype sounds stops media player or other sound sources
+#### Skype sounds stops media player or other sound sources
 
 You can try commenting out the following modules in `/etc/pulse/default.pa`
 
@@ -824,32 +837,7 @@ $ pactl unload-module module-role-cork
 
 ```
 
-### Skype does not start after upgrade to 4.3.
-
-After upgrading Skype, you may see the welcome screen and contact list appear very briefly (or not at all), followed by Skype crashing. Should you run it from the terminal, the behaviour will be the same, except the message 'Aborted' will be displayed after it crashes.
-
-This issue affects users that upgrade from versions prior to 4.3, and is related to database changes which are incompatible with the old version of the database.
-
-Make sure Skype is not running, and run:
-
-```
-$ cd ~/.Skype/yourskypeusername
-$ cp main.db main.db.backup
-$ sqlite3 main.db
-update Messages 
-set body_xml=substr(body_xml,instr(body_xml,'<files'),12)||
-             substr(body_xml,0,instr(body_xml,'<files'))||
-             substr(body_xml,instr(body_xml,'alt=')+5) 
-where type=68 and body_xml not like '<file%';
-.quit
-
-```
-
-Now you can upgrade Skype. [[3]](http://community.skype.com/t5/Linux/Skype-4-3-crashes-with-old-chat-history/td-p/3220410/page/2)
-
-Note that Skype 4.3 requires a processor with SSE2 support. Otherwise Skype will crash with an 'Aborted' message. In that case use [skype42](https://aur.archlinux.org/packages/skype42/) instead.
-
-### You are already signed in on this computer
+#### You are already signed in on this computer
 
 If Skype is closed without the dc.lock file being deleted, it will fail to log back in.
 
@@ -860,7 +848,7 @@ $ rm ~/.Skype/shared_dynco/dc.lock
 
 ```
 
-### Empty white screen window
+#### Empty white screen window
 
 If you get a white empty window when launching skype, try to autologin like this instead:
 
@@ -869,7 +857,7 @@ $ echo *username* *password* | skype --pipelogin
 
 ```
 
-### Skype doesn't output any sound after upgrading PulseAudio
+#### Skype doesn't output any sound after upgrading PulseAudio
 
 Currently, Skype doesn't work PulseAudio 9.0, the only solution is to downgrade to 8.0 and to prevent future updates you may add all pulse-related packages to pacman.conf.
 
@@ -877,3 +865,7 @@ Currently, Skype doesn't work PulseAudio 9.0, the only solution is to downgrade 
  IgnorePkg = lib32-libpulse libpulse pulseaudio pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-gconf
 
 ```
+
+## Skype plugin for Pidgin
+
+See [Pidgin#Skype plugin](/index.php/Pidgin#Skype_plugin "Pidgin").

@@ -78,7 +78,29 @@ ExecStop=/usr/bin/kexec -l /boot/vmlinuz-%i --initrd=/boot/initramfs-%i.img --re
 WantedBy=basic.target
 ```
 
-Unfortunately, while the above file works reliably on some machines, the ExecStop command seems to fail to run on others. Hence, at present there does not appear to be a known reliable way to make "systemctl kexec" do the right thing on all machines. Until then, it may be best to call kexec manually before invoking "systemctl kexec" (or even "reboot", which will do the right thing when a kernel is loaded).
+Unfortunately, while the above file works reliably on some machines, the ExecStop command seems to fail to run on others.
+
+Stronger alternative with sysinit based ordering (guaranteeing proper service shutdown before any unmount action could even take place) is:
+
+```
+[Unit]
+Description=hook to load vmlinuz-%i kernel upon kexec
+Documentation=man:kexec(8)
+DefaultDependencies=no
+Requires=sysinit.target
+After=sysinit.target
+
+[Service]
+Type=oneshot
+ExecStart=-/usr/bin/true
+RemainAfterExit=yes
+ExecStop=/usr/bin/kexec -l /boot/vmlinuz-%i --initrd=/boot/initramfs-%i.img --reuse-cmdline
+
+[Install]
+WantedBy=basic.target
+```
+
+Note that Conflicts=shutdown.target is not really needed, as it's implicitly guaranteed by strict ordering on systinit.target which itself Conflicts= with shutdown.target.
 
 ### Manually
 

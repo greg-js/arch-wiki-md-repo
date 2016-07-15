@@ -51,12 +51,14 @@ $ chsh -l
 
 ```
 
-And to set one as default for your user (make sure you use the full path, as given by `chsh -l`):
+And to set one as default for your user do:
 
 ```
 $ chsh -s *full-path-to-shell*
 
 ```
+
+where *full-path-to-shell* is the full path as given by `chsh -l`.
 
 If you now log out and log in again, you will be greeted by the other shell.
 

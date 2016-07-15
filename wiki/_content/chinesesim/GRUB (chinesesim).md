@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [GRUB](/index.php/GRUB "GRUB") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-11-15，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=282734)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GRUB](/index.php/GRUB "GRUB") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-14，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=282734)可以查看翻译后英文页面的改动。
 
-[GRUB2](http://www.gnu.org/software/grub/) 是下一代 GRand Unified Bootloader (GRUB,请不要和Grub Legacy混淆了)。 它来自下一代 GRUB 研究项目 [PUPA](http://www.nongnu.org/pupa/)，代码全部重写，实现了模块化和增强了移植性。[[1]](http://www.gnu.org/software/grub/grub-faq.en.html#q1).
+[GRUB](https://www.gnu.org/software/grub/) , 是下一代 GRand Unified Bootloader (请不要和 [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")  混淆了)。 它来自下一代 GRUB 研究项目 [PUPA](http://www.nongnu.org/pupa/)，代码全部重写，实现了模块化和增强了移植性。[[1]](http://www.gnu.org/software/grub/grub-faq.en.html#q1).
 
 简单的说,**Boot Loader**是电脑启动时运行的第一个程序,它负责装载内核并将控制权转交。内核再初始化操作系统的其它部分。
 
@@ -8,136 +8,141 @@
 
 *   [1 前言](#.E5.89.8D.E8.A8.80)
 *   [2 BIOS 系统](#BIOS_.E7.B3.BB.E7.BB.9F)
-    *   [2.1 GUID分区表(GPT)具体说明](#GUID.E5.88.86.E5.8C.BA.E8.A1.A8.28GPT.29.E5.85.B7.E4.BD.93.E8.AF.B4.E6.98.8E)
-    *   [2.2 主引导记录(MBR)具体说明](#.E4.B8.BB.E5.BC.95.E5.AF.BC.E8.AE.B0.E5.BD.95.28MBR.29.E5.85.B7.E4.BD.93.E8.AF.B4.E6.98.8E)
+    *   [2.1 GUID分区表(GPT)特殊操作](#GUID.E5.88.86.E5.8C.BA.E8.A1.A8.28GPT.29.E7.89.B9.E6.AE.8A.E6.93.8D.E4.BD.9C)
+    *   [2.2 主引导记录(MBR)特殊操作](#.E4.B8.BB.E5.BC.95.E5.AF.BC.E8.AE.B0.E5.BD.95.28MBR.29.E7.89.B9.E6.AE.8A.E6.93.8D.E4.BD.9C)
     *   [2.3 安装](#.E5.AE.89.E8.A3.85)
-        *   [2.3.1 安装Boot文件](#.E5.AE.89.E8.A3.85Boot.E6.96.87.E4.BB.B6)
+        *   [2.3.1 安装启动文件](#.E5.AE.89.E8.A3.85.E5.90.AF.E5.8A.A8.E6.96.87.E4.BB.B6)
             *   [2.3.1.1 安装到磁盘上](#.E5.AE.89.E8.A3.85.E5.88.B0.E7.A3.81.E7.9B.98.E4.B8.8A)
             *   [2.3.1.2 安装到U盘](#.E5.AE.89.E8.A3.85.E5.88.B0U.E7.9B.98)
             *   [2.3.1.3 安装到分区上或者无分区磁盘上](#.E5.AE.89.E8.A3.85.E5.88.B0.E5.88.86.E5.8C.BA.E4.B8.8A.E6.88.96.E8.80.85.E6.97.A0.E5.88.86.E5.8C.BA.E7.A3.81.E7.9B.98.E4.B8.8A)
             *   [2.3.1.4 只生成core.img](#.E5.8F.AA.E7.94.9F.E6.88.90core.img)
-        *   [2.3.2 生成GRUB配置文件](#.E7.94.9F.E6.88.90GRUB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-        *   [2.3.3 多系统启动](#.E5.A4.9A.E7.B3.BB.E7.BB.9F.E5.90.AF.E5.8A.A8)
-            *   [2.3.3.1 在BIOS-MBR模式下安装的Microsoft Windows](#.E5.9C.A8BIOS-MBR.E6.A8.A1.E5.BC.8F.E4.B8.8B.E5.AE.89.E8.A3.85.E7.9A.84Microsoft_Windows)
 *   [3 UEFI 系统](#UEFI_.E7.B3.BB.E7.BB.9F)
     *   [3.1 检查你是否使用GPT且有ESP分区](#.E6.A3.80.E6.9F.A5.E4.BD.A0.E6.98.AF.E5.90.A6.E4.BD.BF.E7.94.A8GPT.E4.B8.94.E6.9C.89ESP.E5.88.86.E5.8C.BA)
     *   [3.2 建立ESP](#.E5.BB.BA.E7.AB.8BESP)
     *   [3.3 安装](#.E5.AE.89.E8.A3.85_2)
-        *   [3.3.1 延伸阅读](#.E5.BB.B6.E4.BC.B8.E9.98.85.E8.AF.BB)
-            *   [3.3.1.1 其他方法](#.E5.85.B6.E4.BB.96.E6.96.B9.E6.B3.95)
-        *   [3.3.2 在固件启动管理器中创建GRUB条目](#.E5.9C.A8.E5.9B.BA.E4.BB.B6.E5.90.AF.E5.8A.A8.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.AD.E5.88.9B.E5.BB.BAGRUB.E6.9D.A1.E7.9B.AE)
-        *   [3.3.3 创建GRUB Standalone模式的UEFI应用程序](#.E5.88.9B.E5.BB.BAGRUB_Standalone.E6.A8.A1.E5.BC.8F.E7.9A.84UEFI.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-*   [4 配置](#.E9.85.8D.E7.BD.AE)
-    *   [4.1 使用grub-mkconfig自动生成配置档](#.E4.BD.BF.E7.94.A8grub-mkconfig.E8.87.AA.E5.8A.A8.E7.94.9F.E6.88.90.E9.85.8D.E7.BD.AE.E6.A1.A3)
-        *   [4.1.1 额外的参数](#.E9.A2.9D.E5.A4.96.E7.9A.84.E5.8F.82.E6.95.B0)
-    *   [4.2 手动创建 grub.cfg](#.E6.89.8B.E5.8A.A8.E5.88.9B.E5.BB.BA_grub.cfg)
-    *   [4.3 双启动](#.E5.8F.8C.E5.90.AF.E5.8A.A8)
-        *   [4.3.1 使用/etc/grub.d/40_custom 和 grub-mkconfig自动生成](#.E4.BD.BF.E7.94.A8.2Fetc.2Fgrub.d.2F40_custom_.E5.92.8C_grub-mkconfig.E8.87.AA.E5.8A.A8.E7.94.9F.E6.88.90)
-            *   [4.3.1.1 GNU/Linux 启动项](#GNU.2FLinux_.E5.90.AF.E5.8A.A8.E9.A1.B9)
-            *   [4.3.1.2 FreeBSD 启动项](#FreeBSD_.E5.90.AF.E5.8A.A8.E9.A1.B9)
-            *   [4.3.1.3 Windows XP 启动项](#Windows_XP_.E5.90.AF.E5.8A.A8.E9.A1.B9)
-            *   [4.3.1.4 UEFI-GPT 模式下安装的Windows的启动项](#UEFI-GPT_.E6.A8.A1.E5.BC.8F.E4.B8.8B.E5.AE.89.E8.A3.85.E7.9A.84Windows.E7.9A.84.E5.90.AF.E5.8A.A8.E9.A1.B9)
-            *   [4.3.1.5 "Shutdown" 启动项](#.22Shutdown.22_.E5.90.AF.E5.8A.A8.E9.A1.B9)
-            *   [4.3.1.6 "Restart" 启动项](#.22Restart.22_.E5.90.AF.E5.8A.A8.E9.A1.B9)
-        *   [4.3.2 通过EasyBCD NeoGRUB 和Windows共存](#.E9.80.9A.E8.BF.87EasyBCD_NeoGRUB_.E5.92.8CWindows.E5.85.B1.E5.AD.98)
-    *   [4.4 可视化配置](#.E5.8F.AF.E8.A7.86.E5.8C.96.E9.85.8D.E7.BD.AE)
-        *   [4.4.1 设定帧缓冲的分辨率](#.E8.AE.BE.E5.AE.9A.E5.B8.A7.E7.BC.93.E5.86.B2.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87)
-        *   [4.4.2 915resolution hack](#915resolution_hack)
-        *   [4.4.3 背景图像和点阵字体](#.E8.83.8C.E6.99.AF.E5.9B.BE.E5.83.8F.E5.92.8C.E7.82.B9.E9.98.B5.E5.AD.97.E4.BD.93)
-        *   [4.4.4 主题](#.E4.B8.BB.E9.A2.98)
-        *   [4.4.5 目录颜色](#.E7.9B.AE.E5.BD.95.E9.A2.9C.E8.89.B2)
-        *   [4.4.6 隐藏目录](#.E9.9A.90.E8.97.8F.E7.9B.AE.E5.BD.95)
-        *   [4.4.7 禁用framebuffer](#.E7.A6.81.E7.94.A8framebuffer)
-    *   [4.5 其他选项](#.E5.85.B6.E4.BB.96.E9.80.89.E9.A1.B9)
-        *   [4.5.1 LVM](#LVM)
-        *   [4.5.2 阵列](#.E9.98.B5.E5.88.97)
-        *   [4.5.3 持久块设备命名法](#.E6.8C.81.E4.B9.85.E5.9D.97.E8.AE.BE.E5.A4.87.E5.91.BD.E5.90.8D.E6.B3.95)
-        *   [4.5.4 使用卷标](#.E4.BD.BF.E7.94.A8.E5.8D.B7.E6.A0.87)
-        *   [4.5.5 调用之前的启动项](#.E8.B0.83.E7.94.A8.E4.B9.8B.E5.89.8D.E7.9A.84.E5.90.AF.E5.8A.A8.E9.A1.B9)
-        *   [4.5.6 改变默认启动项](#.E6.94.B9.E5.8F.98.E9.BB.98.E8.AE.A4.E5.90.AF.E5.8A.A8.E9.A1.B9)
-        *   [4.5.7 安全](#.E5.AE.89.E5.85.A8)
-        *   [4.5.8 root加密](#root.E5.8A.A0.E5.AF.86)
-        *   [4.5.9 设定下次启动的启动项(一次性,非持久)](#.E8.AE.BE.E5.AE.9A.E4.B8.8B.E6.AC.A1.E5.90.AF.E5.8A.A8.E7.9A.84.E5.90.AF.E5.8A.A8.E9.A1.B9.28.E4.B8.80.E6.AC.A1.E6.80.A7.2C.E9.9D.9E.E6.8C.81.E4.B9.85.29)
-        *   [4.5.10 启动时隐藏GRUB界面,除非按着SHIFT键](#.E5.90.AF.E5.8A.A8.E6.97.B6.E9.9A.90.E8.97.8FGRUB.E7.95.8C.E9.9D.A2.2C.E9.99.A4.E9.9D.9E.E6.8C.89.E7.9D.80SHIFT.E9.94.AE)
-    *   [4.6 在GRUB中直接从ISO启动](#.E5.9C.A8GRUB.E4.B8.AD.E7.9B.B4.E6.8E.A5.E4.BB.8EISO.E5.90.AF.E5.8A.A8)
-        *   [4.6.1 Arch ISO](#Arch_ISO)
-            *   [4.6.1.1 x86_64](#x86_64)
-            *   [4.6.1.2 i686](#i686)
-        *   [4.6.2 Ubuntu ISO](#Ubuntu_ISO)
-        *   [4.6.3 Other ISOs](#Other_ISOs)
-*   [5 使用GRUB命令行](#.E4.BD.BF.E7.94.A8GRUB.E5.91.BD.E4.BB.A4.E8.A1.8C)
-    *   [5.1 分页支持](#.E5.88.86.E9.A1.B5.E6.94.AF.E6.8C.81)
-    *   [5.2 使用命令行引导操作系统](#.E4.BD.BF.E7.94.A8.E5.91.BD.E4.BB.A4.E8.A1.8C.E5.BC.95.E5.AF.BC.E6.93.8D.E4.BD.9C.E7.B3.BB.E7.BB.9F)
-        *   [5.2.1 链式加载一个分区](#.E9.93.BE.E5.BC.8F.E5.8A.A0.E8.BD.BD.E4.B8.80.E4.B8.AA.E5.88.86.E5.8C.BA)
-        *   [5.2.2 链式加载磁盘](#.E9.93.BE.E5.BC.8F.E5.8A.A0.E8.BD.BD.E7.A3.81.E7.9B.98)
-        *   [5.2.3 正常载入](#.E6.AD.A3.E5.B8.B8.E8.BD.BD.E5.85.A5)
-*   [6 图形化配置工具](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E9.85.8D.E7.BD.AE.E5.B7.A5.E5.85.B7)
-*   [7 parttool](#parttool)
-*   [8 使用应急命令行](#.E4.BD.BF.E7.94.A8.E5.BA.94.E6.80.A5.E5.91.BD.E4.BB.A4.E8.A1.8C)
-*   [9 使用UUID的基础脚本](#.E4.BD.BF.E7.94.A8UUID.E7.9A.84.E5.9F.BA.E7.A1.80.E8.84.9A.E6.9C.AC)
-*   [10 异常处理](#.E5.BC.82.E5.B8.B8.E5.A4.84.E7.90.86)
-    *   [10.1 Intel BIOS不能引导GPT](#Intel_BIOS.E4.B8.8D.E8.83.BD.E5.BC.95.E5.AF.BCGPT)
-    *   [10.2 启用调试信息](#.E5.90.AF.E7.94.A8.E8.B0.83.E8.AF.95.E4.BF.A1.E6.81.AF)
-    *   [10.3 "No suitable mode found" error](#.22No_suitable_mode_found.22_error)
-    *   [10.4 出现"msdos-style"错误消息](#.E5.87.BA.E7.8E.B0.22msdos-style.22.E9.94.99.E8.AF.AF.E6.B6.88.E6.81.AF)
-    *   [10.5 GRUB UEFI 启动到了rescue shell下](#GRUB_UEFI_.E5.90.AF.E5.8A.A8.E5.88.B0.E4.BA.86rescue_shell.E4.B8.8B)
-    *   [10.6 GRUB UEFI 无法被载入](#GRUB_UEFI_.E6.97.A0.E6.B3.95.E8.A2.AB.E8.BD.BD.E5.85.A5)
-    *   [10.7 "Invalid signature"错误](#.22Invalid_signature.22.E9.94.99.E8.AF.AF)
-    *   [10.8 引导过程卡死](#.E5.BC.95.E5.AF.BC.E8.BF.87.E7.A8.8B.E5.8D.A1.E6.AD.BB)
-    *   [10.9 回滚到 GRUB Legacy](#.E5.9B.9E.E6.BB.9A.E5.88.B0_GRUB_Legacy)
-    *   [10.10 其他系统不能自动发现Arch Linux](#.E5.85.B6.E4.BB.96.E7.B3.BB.E7.BB.9F.E4.B8.8D.E8.83.BD.E8.87.AA.E5.8A.A8.E5.8F.91.E7.8E.B0Arch_Linux)
-*   [11 参阅](#.E5.8F.82.E9.98.85)
+    *   [3.4 延伸阅读](#.E5.BB.B6.E4.BC.B8.E9.98.85.E8.AF.BB)
+        *   [3.4.1 其他方法](#.E5.85.B6.E4.BB.96.E6.96.B9.E6.B3.95)
+        *   [3.4.2 UEFI firmware workaround](#UEFI_firmware_workaround)
+        *   [3.4.3 在固件启动管理器中创建GRUB条目](#.E5.9C.A8.E5.9B.BA.E4.BB.B6.E5.90.AF.E5.8A.A8.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.AD.E5.88.9B.E5.BB.BAGRUB.E6.9D.A1.E7.9B.AE)
+        *   [3.4.4 创建GRUB Standalone模式的UEFI应用程序](#.E5.88.9B.E5.BB.BAGRUB_Standalone.E6.A8.A1.E5.BC.8F.E7.9A.84UEFI.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
+        *   [3.4.5 Technical information](#Technical_information)
+*   [4 生成主配置文件](#.E7.94.9F.E6.88.90.E4.B8.BB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
+*   [5 配置](#.E9.85.8D.E7.BD.AE)
+    *   [5.1 额外的参数](#.E9.A2.9D.E5.A4.96.E7.9A.84.E5.8F.82.E6.95.B0)
+    *   [5.2 多系统启动](#.E5.A4.9A.E7.B3.BB.E7.BB.9F.E5.90.AF.E5.8A.A8)
+        *   [5.2.1 使用 /etc/grub.d/40_custom 和 grub-mkconfig 自动生成](#.E4.BD.BF.E7.94.A8_.2Fetc.2Fgrub.d.2F40_custom_.E5.92.8C_grub-mkconfig_.E8.87.AA.E5.8A.A8.E7.94.9F.E6.88.90)
+        *   [5.2.2 在BIOS-MBR模式下安装的Microsoft Windows](#.E5.9C.A8BIOS-MBR.E6.A8.A1.E5.BC.8F.E4.B8.8B.E5.AE.89.E8.A3.85.E7.9A.84Microsoft_Windows)
+    *   [5.3 手动创建 grub.cfg](#.E6.89.8B.E5.8A.A8.E5.88.9B.E5.BB.BA_grub.cfg)
+    *   [5.4 可视化配置](#.E5.8F.AF.E8.A7.86.E5.8C.96.E9.85.8D.E7.BD.AE)
+        *   [5.4.1 设定帧缓冲的分辨率](#.E8.AE.BE.E5.AE.9A.E5.B8.A7.E7.BC.93.E5.86.B2.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87)
+        *   [5.4.2 915resolution hack](#915resolution_hack)
+        *   [5.4.3 背景图像和点阵字体](#.E8.83.8C.E6.99.AF.E5.9B.BE.E5.83.8F.E5.92.8C.E7.82.B9.E9.98.B5.E5.AD.97.E4.BD.93)
+        *   [5.4.4 主题](#.E4.B8.BB.E9.A2.98)
+        *   [5.4.5 目录颜色](#.E7.9B.AE.E5.BD.95.E9.A2.9C.E8.89.B2)
+        *   [5.4.6 隐藏目录](#.E9.9A.90.E8.97.8F.E7.9B.AE.E5.BD.95)
+        *   [5.4.7 禁用framebuffer](#.E7.A6.81.E7.94.A8framebuffer)
+    *   [5.5 其他选项](#.E5.85.B6.E4.BB.96.E9.80.89.E9.A1.B9)
+        *   [5.5.1 LVM](#LVM)
+        *   [5.5.2 阵列](#.E9.98.B5.E5.88.97)
+        *   [5.5.3 持久块设备命名法](#.E6.8C.81.E4.B9.85.E5.9D.97.E8.AE.BE.E5.A4.87.E5.91.BD.E5.90.8D.E6.B3.95)
+        *   [5.5.4 使用卷标](#.E4.BD.BF.E7.94.A8.E5.8D.B7.E6.A0.87)
+        *   [5.5.5 调用之前的启动项](#.E8.B0.83.E7.94.A8.E4.B9.8B.E5.89.8D.E7.9A.84.E5.90.AF.E5.8A.A8.E9.A1.B9)
+        *   [5.5.6 改变默认启动项](#.E6.94.B9.E5.8F.98.E9.BB.98.E8.AE.A4.E5.90.AF.E5.8A.A8.E9.A1.B9)
+        *   [5.5.7 安全](#.E5.AE.89.E5.85.A8)
+        *   [5.5.8 root加密](#root.E5.8A.A0.E5.AF.86)
+        *   [5.5.9 设定下次启动的启动项(一次性,非持久)](#.E8.AE.BE.E5.AE.9A.E4.B8.8B.E6.AC.A1.E5.90.AF.E5.8A.A8.E7.9A.84.E5.90.AF.E5.8A.A8.E9.A1.B9.28.E4.B8.80.E6.AC.A1.E6.80.A7.2C.E9.9D.9E.E6.8C.81.E4.B9.85.29)
+        *   [5.5.10 启动时隐藏GRUB界面,除非按着SHIFT键](#.E5.90.AF.E5.8A.A8.E6.97.B6.E9.9A.90.E8.97.8FGRUB.E7.95.8C.E9.9D.A2.2C.E9.99.A4.E9.9D.9E.E6.8C.89.E7.9D.80SHIFT.E9.94.AE)
+    *   [5.6 在GRUB中直接从ISO启动](#.E5.9C.A8GRUB.E4.B8.AD.E7.9B.B4.E6.8E.A5.E4.BB.8EISO.E5.90.AF.E5.8A.A8)
+        *   [5.6.1 Arch ISO](#Arch_ISO)
+            *   [5.6.1.1 x86_64](#x86_64)
+            *   [5.6.1.2 i686](#i686)
+        *   [5.6.2 Ubuntu ISO](#Ubuntu_ISO)
+        *   [5.6.3 Other ISOs](#Other_ISOs)
+*   [6 使用GRUB命令行](#.E4.BD.BF.E7.94.A8GRUB.E5.91.BD.E4.BB.A4.E8.A1.8C)
+    *   [6.1 分页支持](#.E5.88.86.E9.A1.B5.E6.94.AF.E6.8C.81)
+    *   [6.2 使用命令行引导操作系统](#.E4.BD.BF.E7.94.A8.E5.91.BD.E4.BB.A4.E8.A1.8C.E5.BC.95.E5.AF.BC.E6.93.8D.E4.BD.9C.E7.B3.BB.E7.BB.9F)
+        *   [6.2.1 链式加载一个分区](#.E9.93.BE.E5.BC.8F.E5.8A.A0.E8.BD.BD.E4.B8.80.E4.B8.AA.E5.88.86.E5.8C.BA)
+        *   [6.2.2 链式加载磁盘](#.E9.93.BE.E5.BC.8F.E5.8A.A0.E8.BD.BD.E7.A3.81.E7.9B.98)
+        *   [6.2.3 正常载入](#.E6.AD.A3.E5.B8.B8.E8.BD.BD.E5.85.A5)
+*   [7 图形化配置工具](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E9.85.8D.E7.BD.AE.E5.B7.A5.E5.85.B7)
+*   [8 parttool](#parttool)
+*   [9 使用应急命令行](#.E4.BD.BF.E7.94.A8.E5.BA.94.E6.80.A5.E5.91.BD.E4.BB.A4.E8.A1.8C)
+*   [10 使用UUID的基础脚本](#.E4.BD.BF.E7.94.A8UUID.E7.9A.84.E5.9F.BA.E7.A1.80.E8.84.9A.E6.9C.AC)
+*   [11 异常处理](#.E5.BC.82.E5.B8.B8.E5.A4.84.E7.90.86)
+    *   [11.1 Intel BIOS不能引导GPT](#Intel_BIOS.E4.B8.8D.E8.83.BD.E5.BC.95.E5.AF.BCGPT)
+    *   [11.2 启用调试信息](#.E5.90.AF.E7.94.A8.E8.B0.83.E8.AF.95.E4.BF.A1.E6.81.AF)
+    *   [11.3 "No suitable mode found" error](#.22No_suitable_mode_found.22_error)
+    *   [11.4 出现"msdos-style"错误消息](#.E5.87.BA.E7.8E.B0.22msdos-style.22.E9.94.99.E8.AF.AF.E6.B6.88.E6.81.AF)
+    *   [11.5 GRUB UEFI 启动到了rescue shell下](#GRUB_UEFI_.E5.90.AF.E5.8A.A8.E5.88.B0.E4.BA.86rescue_shell.E4.B8.8B)
+    *   [11.6 GRUB UEFI 无法被载入](#GRUB_UEFI_.E6.97.A0.E6.B3.95.E8.A2.AB.E8.BD.BD.E5.85.A5)
+    *   [11.7 "Invalid signature"错误](#.22Invalid_signature.22.E9.94.99.E8.AF.AF)
+    *   [11.8 引导过程卡死](#.E5.BC.95.E5.AF.BC.E8.BF.87.E7.A8.8B.E5.8D.A1.E6.AD.BB)
+    *   [11.9 回滚到 GRUB Legacy](#.E5.9B.9E.E6.BB.9A.E5.88.B0_GRUB_Legacy)
+    *   [11.10 其他系统不能自动发现Arch Linux](#.E5.85.B6.E4.BB.96.E7.B3.BB.E7.BB.9F.E4.B8.8D.E8.83.BD.E8.87.AA.E5.8A.A8.E5.8F.91.E7.8E.B0Arch_Linux)
+*   [12 参阅](#.E5.8F.82.E9.98.85)
 
 ## 前言
 
-*   引导程序是计算机启动时第一个运行的程序。它负责加载并将控制权转移到Linux内核。内核作为回报，将初始化操作系统剩余部分
-*   官方所称的GRUB代表的是本软件的第二版,即GRUB2,请参考[[2]](https://www.gnu.org/software/grub/).如果你是在找有关Grub Legacy的文章,请参考[GRUB Legacy](/index.php/GRUB_Legacy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB Legacy (简体中文)") .
-*   GRUB2支持由zlib或者LZO压缩过的[Btrfs](/index.php/Btrfs "Btrfs")格式的根目录,如果使用Btrfs,不需要单独的`/boot`分区.
-*   GRUB2 不支持[F2FS](/index.php/F2FS "F2FS")格式的根目录,所以你需要为`/boot`分区单独设置一个支持的文件系统.
+引导程序是计算机启动时第一个运行的程序。它负责加载并将控制权转移到Linux内核。内核接手后，将初始化操作系统剩余部分。官方所称的 GRUB 是软件的第二版,即 GRUB2,请参考[[2]](https://www.gnu.org/software/grub/).如果你是在找有关Grub Legacy的文章,请参考[旧版 GRUB](/index.php/GRUB_Legacy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB Legacy (简体中文)").
+
+*   GRUB 支持由 zlib 或者 LZO 压缩的 [Btrfs](/index.php/Btrfs "Btrfs")根目录,不需要单独的`/boot`分区.
+*   GRUB 不支持[F2FS](/index.php/F2FS "F2FS")格式的根目录,所以你需要为`/boot`分区单独设置一个支持的文件系统.
+*   XFS 支持请查看 [XFS#Installation](/index.php/XFS#Installation "XFS") 和 [FS#46856](https://bugs.archlinux.org/task/46856).
+
+**Note:** grub-1:2.02.beta2-6 还不支持从 NVMe 设备上的根文件系统启动，如果需要此功能，请使用 [grub-git](https://aur.archlinux.org/packages/grub-git/)。
 
 ## BIOS 系统
 
-### GUID分区表(GPT)具体说明
+### GUID分区表(GPT)特殊操作
 
-BIOS/[GPT](/index.php/GPT "GPT")配置中，一个 [BIOS启动分区](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html)是必需的。GRUB将`core.img`嵌入到这个分区。
+BIOS/[GPT](/index.php/GPT "GPT")配置中，[BIOS启动分区](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html)是必需的。GRUB将`core.img`嵌入到这个分区。
 
 **Note:**
 
-*   在尝试分区之前请记住不是所有的系统都能够支持这种分区方案, 关于更多请阅读[GUID分区表](/index.php/GUID_Partition_Table#BIOS_systems "GUID Partition Table").
-*   此额外分区只在GRUB, BIOS/GPT分区方式中使用. 对于GRUB, BIOS/MBR分区方式, GRUB会把`core.img`放到MBR后面的间隙中去. 而GPT不使用这个间隙, 因为GPT分区需要满足1M/2048扇区的磁盘边界规范.
+*   在尝试分区之前请记住不是所有的系统都支持这种分区方案, 请参阅 [GUID 分区表](/index.php/GUID_Partition_Table#BIOS_systems "GUID Partition Table").
+*   此额外分区只在GRUB, BIOS/GPT分区方式中使用. 对于 GRUB, BIOS/MBR 分区方式, GRUB会把`core.img`放到 MBR 后面的间隙中去. 而 GPT 下不使用这个间隙是因为 GPT 分区需要满足 1M/2048 扇区的磁盘边界规范.
 *   [UEFI](/index.php/UEFI "UEFI") 系统也不需要这额外分区, 应为它不需要嵌入启动扇区.
 
-Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no file system and type BIOS boot (*BIOS boot* in fdisk, `ef02` in gdisk, `bios_grub` in `parted`). This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below. The post-GPT gap can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded (though some disk utilities will display a warning about it). In `fdisk` or `gdisk` create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
+安装 GRUB 前，在一个没有文件系统的磁盘上，用 `fdisk` 或 `gdisk` 创建一个 `+1M` 分区，设置为 `BIOS boot` 类型，在 `fdisk` 中的类型号是 `4` in `fdisk`, 在 `gdisk`, `bios_grub` in `parted` 中的类型是 `ef02`。此分区可以在磁盘前 2TB 的任何位置。分区建立好后，按下面的命令安装启动管理器。
 
-### 主引导记录(MBR)具体说明
+GPT 后面的空间也可以用作 BIOS 启动分区，但是这会违反 GPT 对齐规范。因为这个分区不会经常访问，所以性能的影响很小。只不过有些分区工具会发出警告。在 `fdisk` 或 `gdisk` 中创建一个新分区，从 34 扇区开始，一直到 2047，然后设置类型。为了让其它分区对齐，可以最后再创建此分区。
 
-一般来说,如果使用兼容DOS的分区对齐模式,MBR后面空间(post-MBR gap)的大小都是31KiB(MBR和第一个分区之间的空间).不过,为了提供足够的空间嵌入GRUB的`core.img`文件([FS#24103](https://bugs.archlinux.org/task/24103)),建议将这个空间设置到1到2Mib.最好使用支持1MiB分区对齐的分区软件来分区,因为这样也能满足非512B扇区磁盘分区的需求.
+### 主引导记录(MBR)特殊操作
+
+一般来说,如果使用兼容 DOS 的分区对齐模式, [MBR](/index.php/MBR "MBR") 512 byte 结束位置和第一个分区之间都 31KB 的空闲空间。不过,为了提供足够的空间嵌入GRUB的`core.img`文件([FS#24103](https://bugs.archlinux.org/task/24103)),建议将这个空间设置为 1 到 2 Mib. 建议使用支持 1 MiB分区对齐的分区软件来分区, 因为这样也能满足非512B扇区磁盘分区的需求.
 
 ### 安装
 
-可以使用[pacman](/index.php/Pacman "Pacman")从[官方仓库](/index.php/Official_repositories "Official repositories")安装[grub](https://www.archlinux.org/packages/?name=grub)包.安装完成后它会代替[grub-legacy](https://aur.archlinux.org/packages/grub-legacy/).
+[安装](/index.php/Pacman "Pacman") 软件包 [grub](https://www.archlinux.org/packages/?name=grub). 如果之前安装过 [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/)，安装完成后它会代替[grub-legacy](https://aur.archlinux.org/packages/grub-legacy/).
 
-**Note:** 简单的安装Grub包并不会更新`/boot/grub/i386-pc/core.img`和`/boot/grub/i386-pc`里的GRUB模组.需要使用下面介绍的`grub-install`来手动更新它们.
+**Note:** 仅安装 Grub 包并不会更新`/boot/grub/i386-pc` 下的 `/boot/grub/i386-pc/core.img`和 GRUB 模块. 需要使用下面介绍的`grub-install` 进行手动更新.
 
-#### 安装Boot文件
+#### 安装启动文件
 
-有三种方式安装GRUB Boot文件:
+有四种方式安装 GRUB 启动文件:
 
 *   [安装到磁盘上](#.E5.AE.89.E8.A3.85.E5.88.B0.E7.A3.81.E7.9B.98.E4.B8.8A) (推荐方式)
 *   [安装到U盘](#.E5.AE.89.E8.A3.85.E5.88.B0U.E7.9B.98) (用于恢复)
 *   [安装到分区或者无分区磁盘上](#.E5.AE.89.E8.A3.85.E5.88.B0.E5.88.86.E5.8C.BA.E4.B8.8A.E6.88.96.E8.80.85.E6.97.A0.E5.88.86.E5.8C.BA.E7.A3.81.E7.9B.98.E4.B8.8A) (不推荐)
-*   [只生成core.img文件](#.E5.8F.AA.E7.94.9F.E6.88.90core.img) (最安全的方法, 但是需要另外的bootloader,比如[Syslinux](/index.php/Syslinux "Syslinux")来进行链式加载`/boot/grub/i386-pc/core.img`)
+*   [只生成core.img文件](#.E5.8F.AA.E7.94.9F.E6.88.90core.img) (最安全的方法, 但是需要另外的bootloader,比如 [Syslinux](/index.php/Syslinux "Syslinux") 链式加载`/boot/grub/i386-pc/core.img`)
 
 **Note:** 请参考 [http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) 获取更详尽的资料
 
 ##### 安装到磁盘上
 
-**Note:** 这种方法只限于将GRUB安装到可分区磁盘(MBR或GPT),GRUB 文件会被安装到`/boot/grub`,1st stage code会被安装到MBR的启动代码区域(以便和MBR分区表分开).对于无分区磁盘,请参考[#安装到分区上或者无分区磁盘上](#.E5.AE.89.E8.A3.85.E5.88.B0.E5.88.86.E5.8C.BA.E4.B8.8A.E6.88.96.E8.80.85.E6.97.A0.E5.88.86.E5.8C.BA.E7.A3.81.E7.9B.98.E4.B8.8A)
+**Note:** 这种方法只限于将GRUB安装到已分区的磁盘(MBR 或 GPT), GRUB 文件会被安装到`/boot/grub`,第一阶段代码会被安装到 440 Byte MBR 启动代码区域,不要和 MBR 分区表混淆.
 
-以下命令会将`grub`安装到MBR的启动代码区域,填充`/boot/grub`文件夹,生成`/boot/grub/i386-pc/core.img`,将其嵌入post-MBR gap或者放入BIOS boot partition中(分别对应MBR分区表和GPT分区表):
+以下命令会
+
+*   将`grub`安装到 MBR 的启动代码区域
+*   填充`/boot/grub`文件夹
+*   生成`/boot/grub/i386-pc/core.img`
+*   MBR 磁盘，将其嵌入 MBR 后面的 31KB 空间
+*   如果是 GPT 分区的磁盘，将其嵌入 BIOS 启动分区中:
 
 ```
-# grub-install --target=i386-pc --recheck --debug /dev/sda
+# grub-install --target=i386-pc /dev/sd*x*
+# grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
@@ -146,21 +151,23 @@ Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no 
 *   `/dev/sda` 只是示例.
 *   `--target=i386-pc`指示`grub-install`是为使用BIOS的系统安装. 推荐一直标明这点以防混淆.
 
-如果你使用[LVM](/index.php/LVM "LVM")来进行启动,你可以将GRUB安装在多个物理磁盘上. 执行`grub-install`并不会生成GRUB配置文件,请移至[#生成GRUB配置文件](#.E7.94.9F.E6.88.90GRUB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)一节
+如果 `/boot` 使用 [LVM](/index.php/LVM "LVM"),可以将 GRUB 安装在多个物理磁盘上.
 
 ##### 安装到U盘
 
-假设你的U盘第一个分区是FAT32，其分区是/dev/sdy1
+假设 U盘的第一个分区是 FAT32，其分区是/dev/sdy1
 
 ```
-# mkdir -p /mnt/usb ; mount /dev/sdy1 /mnt/usb
-# grub-install --target=i386-pc --recheck --debug --boot-directory=/mnt/usb/boot /dev/sdy
+# mkdir -p /mnt/usb
+# mount /dev/sdy1 /mnt/usb
+# grub-install --target=i386-pc --debug --boot-directory=/mnt/usb/boot /dev/sdy
 # grub-mkconfig -o /mnt/usb/boot/grub/grub.cfg
 
 ```
 
+可以选择将配置备份到 `grub.cfg`:
+
 ```
-# optional, backup config files of grub.cfg
 # mkdir -p /mnt/usb/etc/default
 # cp /etc/default/grub /mnt/usb/etc/default
 # cp -a /etc/grub.d /mnt/usb/etc
@@ -168,29 +175,26 @@ Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no 
 ```
 
 ```
-#  sync ; umount /mnt/usb
+# sync; umount /mnt/usb
 
 ```
 
 ##### 安装到分区上或者无分区磁盘上
 
-**Note:** GRUB并不推荐将其安装到分区启动扇区或者无分区磁盘上(Grub Legacy和syslinux相反).这种安装方式不安全,当升级时可能会损坏.Arch开发人员也不支持这种方式
+**警告:** GRUB **不推荐**将其安装到分区启动扇区或者无分区磁盘上(Grub Legacy和syslinux相反).这种安装方式不安全,当升级时可能会损坏. Arch开发人员也不支持这种方式
 
-下面的命令将会将GRUB2安装到分区扇区或者无分区磁盘上(比如闪存上):
+下面的命令将会将 GRUB 安装到分区扇区或者无分区磁盘上,下面例子中 `/dev/sdaX` 用作 `/boot`
 
 ```
 # chattr -i /boot/grub/i386-pc/core.img
-# grub-install --target=i386-pc --recheck --debug --force /dev/sdaX
+# grub-install --target=i386-pc --debug --force /dev/sdaX
 # chattr +i /boot/grub/i386-pc/core.img
 
 ```
 
-**Note:**
-
-*   `/dev/sda` 只是示例.
-*   `--target=i386-pc`指示`grub-install`是为使用BIOS的系统安装. 推荐一直标明这点以防混淆.
-
-必须使用`--force`选项来启用对blocklists(块列表)的支持,不应使用`--grub-setup=/bin/true`(这个选项的效果类似于只生成`core.img`). `grub-install`会生成以下警告,你可以通过这些警告判断发生了什么问题:
+*   使用 `--target=i386-pc` 参数时，仅安装 BIOS 系统. 推荐一直标明这点以防混淆.
+*   不应使用`--grub-setup=/bin/true`(这个选项的效果类似于只生成`core.img`)
+*   `grub-install`会生成以下警告, 请了解这个方式有可能出现的问题。
 
 ```
 /sbin/grub-setup: warn: Attempting to install GRUB to a partitionless disk or to a partition. This is a BAD idea.
@@ -199,7 +203,7 @@ Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no 
 
 ```
 
-如果不指定`--force`选项,会出现以下错误,并且不会将启动代码安装到启动扇区上:
+*   必须使用`--force`选项来启用对 blocklists (块列表)的支持。否则会出现以下错误,并且不会将启动代码安装到启动扇区上:
 
 ```
 /sbin/grub-setup: error: will not proceed with blocklists
@@ -213,103 +217,273 @@ Installation finished. No error reported.
 
 ```
 
-`grub-setup`不默认允许这种情况的原因是,在分区或者无分区磁盘上,`grub`依赖于嵌入分区引导扇区的块列表(blocklists)来定位`/boot/grub/i386-pc/core.img`和`/boot/grub`.而`core.img`在分区上的扇区位置很有可能随着分区文件系统的更改而变化(复制文件,删除文件等).详情请参考https://bugzilla.redhat.com/show_bug.cgi?id=728742 和 [https://bugzilla.redhat.com/show_bug.cgi?id=730915](https://bugzilla.redhat.com/show_bug.cgi?id=730915).
+`grub-setup` 默认不允许这种情况的原因是,在分区或者无分区磁盘上,`grub`依赖于嵌入分区引导扇区的块列表(blocklists)来定位`/boot/grub/i386-pc/core.img`和`/boot/grub`.而`core.img`在分区上的扇区位置很有可能随着分区文件系统的更改而变化(复制文件,删除文件等).详情请参考https://bugzilla.redhat.com/show_bug.cgi?id=728742 和 [https://bugzilla.redhat.com/show_bug.cgi?id=730915](https://bugzilla.redhat.com/show_bug.cgi?id=730915).
 
-临时解决方案是给`/boot/grub/i386-pc/core.img`文件加"不可变"(immutable)标志.只有当将`grub`安装到分区启动扇区或者无分区磁盘上时才需要给core.img加"不可变"标志. 执行`grub-install`并不会生成GRUB配置文件,请移至[#生成GRUB配置文件](#.E7.94.9F.E6.88.90GRUB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)一节
+临时解决方案是给`/boot/grub/i386-pc/core.img`文件加"不可变"(immutable)标志.这样 `core.img` 文件的位置就不会变。只有当将`grub`安装到分区启动扇区或者无分区磁盘上时才需要给core.img加"不可变"标志.
+
+执行`grub-install`并不会生成GRUB配置文件,请移至[#生成GRUB配置文件](#.E7.94.9F.E6.88.90GRUB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)一节
+
+即使没有报错，生成的 `grub.cfg` 文件并不会包含正确的 UUID。参考 [https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604.要解决这个问题：](https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604.要解决这个问题：)
+
+```
+# mount /dev/sdxY /mnt        #Your root partition.
+# mount /dev/sdxZ /mnt/boot   #Your boot partition (if you have one).
+# arch-chroot /mnt
+# pacman -S linux
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+```
 
 ##### 只生成core.img
 
-通过添加`--grub-setup=/bin/true`选项,`grub-install`命令会填充`/boot/grub`文件夹并生成`/boot/grub/i386-pc/core.img`,但是不会将grub启动引导代码嵌入到MBR,post-MBR gap和分区引导扇区中:
+通过添加`--grub-setup=/bin/true`选项,`grub-install`命令会填充`/boot/grub`文件夹并生成`/boot/grub/i386-pc/core.img`,但是不会将grub启动引导代码嵌入到MBR,post-MBR gap和分区引导扇区中, 以 `/dev/sda` 磁盘为例：
 
 ```
-# grub-install --target=i386-pc --grub-setup=/bin/true --recheck --debug /dev/sda
+# grub-install --target=i386-pc --grub-setup=/bin/true --debug /dev/sda
 
 ```
 
-**Note:**
+**Note:** `--target=i386-pc`指示`grub-install`是为使用BIOS的系统安装. 推荐一直标明这点以防混淆.
 
-*   `/dev/sda` 只是示例.
-*   `--target=i386-pc`指示`grub-install`是为使用BIOS的系统安装. 推荐一直标明这点以防混淆.
+生成后, Grub Legacy 或者 syslinux 就可以通过链式加载 GRUB 的`core.img`来间接加载Linux内核或者多启动内核了.参阅[Syslinux#Chainloading](/index.php/Syslinux#Chainloading "Syslinux")。
 
-生成后,Grub Legacy或者syslinux就可以通过链式加载GRUB2的`core.img`来间接加载Linux内核或者多启动内核了.
+## UEFI 系统
 
-#### 生成GRUB配置文件
+**注意:**
 
-最后,生成GRUB2所需的配置文件(在配置章节会详述):
+*   建议阅读并理解[UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders")
+*   使用UEFI安装时，重要的是从开始安装时您的机器就在 UEFI 模式。Arch Linux的安装介质必须是UEFI启动。
+
+### 检查你是否使用GPT且有ESP分区
+
+要使用 EFI 在某个磁盘上进行启动,就需要使用[EFI系统分区](/index.php/EFI_System_Partition "EFI System Partition")(ESP). GPT 倒不是必须的,不过我们还是高度建议使用 GTP,并且这也是本文当前唯一支持的方法.如果你在一个支持 EFI,并且已经有操作系统(Win8/Win10)的电脑上安装 Arch,系统上已经有了ESP.可以通过`parted`来列出启动磁盘上的分区表以检查其是否支持GPT和ESP(假设这个启动磁盘是/dev/sda)
+
+```
+# parted /dev/sda print
+
+```
+
+如果使用 GPT,那么会出现"分区表:GPT".如果使用 EFI,那么会有一个文件系统为vfat的小分区(一般小于512MiB)并且被标志为启动分区.在这个小分区上,应该有一个名为EFI的文件夹.如果这些条件都满足,那么这就是ESP了.注意分区序号,因为之后安装 GRUB 时你需要先挂载这个分区。
+
+### 建立ESP
+
+如果你没有ESP,请参考[EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")的引导来创建它
+
+### 安装
+
+**注意:** 众所周知,不同硬件厂商的 UEFI 实现方式也不一样.我们鼓励用户将其配置过程中遇到的问题及其细节分享出来.为了保证[GRUB](/index.php/GRUB "GRUB")页面的简洁,请参考[GRUB/EFI examples (简体中文)](/index.php/GRUB/EFI_examples_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB/EFI examples (简体中文)")。
+
+本节假设您正在 x86_64 上安装 GRUB 系统(x86_64-EFI）。对于 i686 系统，将 `x86_64-efi` 替换为 `i386-efi`。
+
+请确保您在 [bash](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)") shell 中。例如，当从Arch ISO引导时：
+
+```
+# arch-chroot /mnt /bin/bash
+
+```
+
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [grub](https://www.archlinux.org/packages/?name=grub) 和 [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr)。"GRUB"是引导程序， *efibootmgr* 创建 GRUB 安装脚本使用的 `.efi` 启动项。
+
+接下来的步骤安装 GRUB UEFI 程序到 `**$esp**/EFI/grub`中, 安装其模块到`/boot/grub/x86_64-efi`, 然后将可以启动的 `grubx64.efi` 到 `**$esp**/EFI/grub`.
+
+首先，告诉 GRUB 使用 UEFI，设置引导目录，并设置引导程序ID，将`$esp` 修改为你的 efi 分区 (通常为 `/boot`)
+
+```
+# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=**grub**
+
+```
+
+`--bootloader-id` 是启动项中用来识别 GRUB EFI 的标记，请用容易判断的信息。安装程序会在 `*esp*/EFI/` 的相同目录创建相同名称的目录用来存放 EFI 二进制启动加载器。
+
+上述安装完成后 GRUB 的主目录将位于 `/boot/grub/`。
+
+请记得阅读 [#生成主配置文件](#.E7.94.9F.E6.88.90.E4.B8.BB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6) 和 [#配置](#.E9.85.8D.E7.BD.AE).
+
+**注意:**
+
+*   一些发行版要求必须有 `/boot/efi`或`/boot/EFI`目录，但 Arch 没有这样的要求。
+*   `--efi-directory` 和 `--bootloader-id`是 GRUB UEFI 特有的. `--efi-directory` 指定了 ESP 分区的挂载点，替代了已经废弃的 `--root-directory`
+*   您可能注意到在 `grub-install` 命令中没有一个<device_path>选项(例如: `/dev/sda`)。事实上即使提供了 <device_path>,也会被 GRUB 安装脚本忽略，因为 UEFI 启动加载器不使用 MBR 或启动扇区。
+
+### 延伸阅读
+
+下面是关于通过 UEFI 安装 Arch 的相关信息。
+
+#### 其他方法
+
+通常，不管 EFI 系统分区是否挂载，GRUB 多会将所有文件放到 `/boot`。
+
+如果你想将所有的文件放在 ESP 中,请给grub-install命令添加 `--boot-directory=*esp*` 选项:
+
+```
+# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=grub --boot-directory=*esp* --debug
+
+```
+
+这个命令会将 GRUB 文件放在 {{ic|*esp*/grub} 而不是 `/boot/grub` 中. 使用这个方法, 请确保 grub-mkconfig 设置了正确的目录:
+
+```
+# grub-mkconfig -o *esp*/grub/grub.cfg
+
+```
+
+配置档是一样的.
+
+#### UEFI firmware workaround
+
+Some UEFI firmware requires that the bootable `.efi` stub have a specific name and be placed in a specific location: `*esp*/EFI/boot/bootx64.efi` (where `*esp*` is the UEFI partition mountpoint). Failure to do so in such instances will result in an unbootable installation. Fortunately, this will not cause any problems with other firmware that does not require this.
+
+To do so, first create the necessary directory, and then copy across the grub `.efi` stub, renaming it in the process:
+
+```
+# mkdir *esp*/EFI/boot
+# cp *esp*/EFI/grub_uefi/grubx64.efi *esp*/EFI/boot/bootx64.efi
+
+```
+
+#### 在固件启动管理器中创建GRUB条目
+
+`grub-install`会自动尝试在启动管理器中创建GRUB条目.如果没有成功,请参考[Beginners' guide#GRUB](/index.php/Beginners%27_guide#GRUB "Beginners' guide"),里面有关于使用`efibootmgr`创建启动目录条目的介绍.一般来说,这个问题都是因为你没有以UEFI模式启动CD/USB造成的.请参考[UEFI#Create UEFI bootable USB from ISO](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
+
+#### 创建GRUB Standalone模式的UEFI应用程序
+
+可以建立一个`grubx64_standalone.efi`,这个应用将所有的模组嵌入自身的memdisk中,所以就不需要使用单独的目录来存放GRUB UEFI模组和其他相关文件了,使用[grub](https://www.archlinux.org/packages/?name=grub)包里的`grub-mkstandalone`可以实现这个功能.
+
+最简单的的方法就是使用`grub-mkstandalone`,不过,我们还可以指定嵌入哪些模组:
+
+```
+# grub-mkstandalone --directory="/usr/lib/grub/x86_64-efi/" --format="x86_64-efi" --compression="xz" \
+--output="$esp/EFI/grub/grubx64_standalone.efi" <你想嵌入的模组>
+
+```
+
+`grubx64_standalone.efi`文件要求将`grub.cfg`放置到`(memdisk)/boot/grub`中,而这个memdisk是嵌入到EFI应用当中的.`grub-mkstandlone`脚本允许传递将要嵌入memdisk的文件列表.(上面命令里的"<你想嵌入的模组>")
+
+如果你的`grub.cfg`的路径是`/home/user/Desktop/grub.cfg`,那么需要创建一个临时的`/home/user/Desktop/boot/grub/`目录,然后将grub.cfg复制到其中并进入这个目录并运行:
+
+```
+# grub-mkstandalone --directory="/usr/lib/grub/x86_64-efi/" --format="x86_64-efi" --compression="xz" \
+--output="$esp/EFI/grub/grubx64_standalone.efi" "boot/grub/grub.cfg"
+
+```
+
+进入`/home/user/Desktop/boot/grub/`但是传递`boot/grub/grub.cfg`参数(请注意是`boot/`而不是`/boot/`)的原因是`grub-mkstandalone`会自动将boot/grub/grub.cfg处理为`/(memdisk)/boot/grub/grub.cfg`
+
+如果你传递`/home/user/Desktop/grub.cfg`,那么处理后的结果会是`(memdisk)/home/user/Desktop/grub.cfg`.如果传递`/home/user/Desktop/boot/grub/grub.cfg`,那么结果就是`(memdisk)/home/user/Desktop/boot/grub/grub.cfg`.所以需要进入`/home/user/Desktop/boot/grub/`并传递`boot/grub/grub.cfg`参数,因为这样才能生成`grub.efi`需要的`(memdisk)/boot/grub/grub.cfg`.
+
+如果需要为`$esp/EFI/arch_grub/grubx64_standalone.efi`创建一个UEFI启动器条目,使用`efibootmgr`.[#Create GRUB entry in the Firmware Boot Manager](#Create_GRUB_entry_in_the_Firmware_Boot_Manager)里有介绍
+
+#### Technical information
+
+The GRUB EFI file always expects its config file to be at `${prefix}/grub.cfg`. However in the standalone GRUB EFI file, the `${prefix}` is located inside a tar archive and embedded inside the standalone GRUB EFI file itself (inside the GRUB environment, it is denoted by `"(memdisk)"`, without quotes). This tar archive contains all the files that would be stored normally at `/boot/grub` in case of a normal GRUB EFI install.
+
+Due to this embedding of `/boot/grub` contents inside the standalone image itself, it does not rely on actual (external) `/boot/grub` for anything. Thus in case of standalone GRUB EFI file `${prefix}==(memdisk)/boot/grub` and the standalone GRUB EFI file reads expects the config file to be at `${prefix}/grub.cfg==(memdisk)/boot/grub/grub.cfg`.
+
+Hence to make sure the standalone GRUB EFI file reads the external `grub.cfg` located in the same directory as the EFI file (inside the GRUB environment, it is denoted by `${cmdpath}` ), we create a simple `/tmp/grub.cfg` which instructs GRUB to use `${cmdpath}/grub.cfg` as its config (`configfile ${cmdpath}/grub.cfg` command in `(memdisk)/boot/grub/grub.cfg`). We then instruct grub-mkstandalone to copy this `/tmp/grub.cfg` file to `${prefix}/grub.cfg` (which is actually `(memdisk)/boot/grub/grub.cfg`) using the option `"boot/grub/grub.cfg=/tmp/grub.cfg"`.
+
+This way, the standalone GRUB EFI file and actual `grub.cfg` can be stored in any directory inside the EFI System Partition (as long as they are in the same directory), thus making them portable.
+
+## 生成主配置文件
+
+安装后,需要生成置文件 `grub.cfg`。配置文件的生成过程受到 `/etc/default/grub` 和 `/etc/grub.d/` 下脚本的影响。
+
+如果没有额外配置，自动生成程序会侦测 root 目录。所以请确保系统已经启动或 chroot 进入。
+
+使用下面命令生成 `grub.cfg`:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
-**Note:** 文件路径是`/boot/grub/grub.cfg`, 而不是`/boot/grub/i386-pc/grub.cfg`.
+默认文件路径是`/boot/grub/grub.cfg`, 而不是`/boot/grub/i386-pc/grub.cfg`.[grub](https://www.archlinux.org/packages/?name=grub) 软件包提供了示例 `/boot/grub/grub.cfg` 文件，请确保需要的修改都保存在此文件中。 如果是在 chroot 或 *systemd-nspawn* 容器中执行 *grub-mkconfig*，可能会报 *grub-probe* 无法获取 "canonical path of /dev/sdaX" 错误，请尝试使用 *arch-chroot*。参考 [BBS post](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
 
-如果GRUB在启动时报错"no suitable mode found",请参考[#"No suitable mode found" error](#.22No_suitable_mode_found.22_error).
+默认生成脚本自动为 Arch Linux 创建菜单项，其它系统的配置参考 [#双启动](#.E5.8F.8C.E5.90.AF.E5.8A.A8).
 
-如果`grub-mkconfig`执行失败,可以通过如下方式将`/boot/grub/menu.lst`文件转化为`/boot/grub/grub.cfg`
+## 配置
 
-**Note:** 这种方法只适合BIOS,不适合UEFI
+本部分介绍了 `/etc/default/grub` 文件的配置，更多信息请参考 [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks").
+
+每次修改 `/etc/default/grub` 后，都需要重新[#生成主配置文件](#.E7.94.9F.E6.88.90.E4.B8.BB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6).
+
+### 额外的参数
+
+在 `/etc/default/grub` 中设置 `GRUB_CMDLINE_LINUX` 和 `GRUB_CMDLINE_LINUX_DEFAULT` 变量可以向 Linux 镜像传递额外的参数. 生成普通启动项时,这两个参数的值会合并在一起加入, 对于*recovery*启动项, 则添加 `GRUB_CMDLINE_LINUX` 参数的值.
+
+没有必要两者都使用，如果要系统支持休眠后恢复,可以使用`GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sdaX quiet"` (`sda**X**`是交换分区).生成 recovery 启动项时,不会加入 resume 和 quiet 参数; 而其他的普通启动项会包含它们.
+
+*grub-mkconfig* 默认使用根文件系统的 [UUID](/index.php/UUID "UUID") 要禁用此设置，取消 `GRUB_DISABLE_LINUX_UUID=true` 前的注释.
+
+你也可以使用`GRUB_CMDLINE_LINUX="resume=UUID=uuid-of-swap-partition"`
+
+要生成 GRUB recovery启动项,需要在 `/etc/default/grub` 中将 `#GRUB_DISABLE_RECOVERY=true` 注释掉.
+
+更多信息请参考[Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+### 多系统启动
+
+**Tip:** [install](/index.php/Install "Install") [os-prober](https://www.archlinux.org/packages/?name=os-prober) 后，*grub-mkconfig* 会自动查找其它安装的系统。
+
+#### 使用 /etc/grub.d/40_custom 和 grub-mkconfig 自动生成
+
+添加其他启动项的最好方法是编辑 `/etc/grub.d/40_custom` 或 `/boot/grub/custom.cfg`. 运行`grub-mkconfig`后,这些文件中的启动项会被自动添加到 `/boot/grub/custom.cfg` 中.
+
+更新了这些文件后,运行下面命令更新`grub.cfg`:
 
 ```
-# grub-menulst2cfg /boot/grub/menu.lst /boot/grub/grub.cfg
+# grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
-示例如下:
-
- `/boot/grub/menu.lst` 
-```
-default=0
-timeout=5
-
-title  Arch Linux Stock Kernel
-root   (hd0,0)
-kernel /vmlinuz-linux root=/dev/sda2 ro
-initrd /initramfs-linux.img
-
-title  Arch Linux Stock Kernel Fallback
-root   (hd0,0)
-kernel /vmlinuz-linux root=/dev/sda2 ro
-initrd /initramfs-linux-fallback.img
+在UEFI-GPT模式下,运行:
 
 ```
- `/boot/grub/grub.cfg` 
+# grub-mkconfig -o /boot/efi/EFI/GRUB/grub.cfg
+
 ```
-set default='0'; if [ x"$default" = xsaved ]; then load_env; set default="$saved_entry"; fi
-set timeout=5
 
-menuentry 'Arch Linux Stock Kernel' {
-  set root='(hd0,1)'; set legacy_hdbias='0'
-  legacy_kernel   '/vmlinuz-linux' '/vmlinuz-linux' 'root=/dev/sda2' 'ro'
-  legacy_initrd '/initramfs-linux.img' '/initramfs-linux.img'
+一个典型 `/etc/grub.d/40_custom` 示例文件类似于下面。每个 `menuentry` 的结构都应该和下面的类似.请注意 UEFI 分区`/dev/sda2` 被命名为`hd0,gpt2` 和 `ahci0,gpt2`(请参考[here](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB")获取更多信息)
 
+ `/etc/grub.d/40_custom` 
+```
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+
+menuentry "Microsoft Windows 8.1" {
+	echo "Loading Microsoft Windows 8.1..."
+	insmod part_gpt
+	insmod fat
+	insmod search_fs_uuid
+	insmod chain
+	search --fs-uuid --no-floppy --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2 763A-9CB6
+	chainloader /EFI/Microsoft/Boot/bootmgfw.efi
 }
 
-menuentry 'Arch Linux Stock Kernel Fallback' {
-  set root='(hd0,1)'; set legacy_hdbias='0'
-  legacy_kernel   '/vmlinuz-linux' '/vmlinuz-linux' 'root=/dev/sda2' 'ro'
-  legacy_initrd '/initramfs-linux-fallback.img' '/initramfs-linux-fallback.img'
+menuentry "Microsoft Control Center" {
+	echo "Loading Microsoft Control Center..."
+	insmod part_gpt
+	insmod fat
+	insmod search_fs_uuid
+	insmod chain
+	search --fs-uuid --no-floppy --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2 763A-9CB6
+	chainloader /EFI/HP/boot/bootmgfw.efi
 }
 
+menuentry "System shutdown" {
+	echo "System shutting down..."
+	halt
+}
+
+menuentry "System restart" {
+	echo "System rebooting..."
+	reboot
+}
 ```
 
-如果你忘记创建GRUB配置文件`/boot/grub/grub.cfg`,然后直接重启到了GRUB命令行界面,输入以下命令:
-
-```
-sh:grub> insmod legacycfg
-sh:grub> legacy_configfile ${prefix}/menu.lst
-
-```
-
-选择启动到Arch下然后再重新创建合适的GRUB配置文件`/boot/grub/grub.cfg`
-
-#### 多系统启动
-
-为了实现多系统启动,需要安装[os-prober](https://www.archlinux.org/packages/?name=os-prober).安装后,再执行`grub-mkconfig -o /boot/grub/grub.cfg`.如果执行失败,可能就需要手动添加启动条目了.(后面有指导)
-
-**Note:** 如果找不到Windows,可以将其boot partition挂载后再试
-
-##### 在BIOS-MBR模式下安装的Microsoft Windows
+#### 在BIOS-MBR模式下安装的Microsoft Windows
 
 **Note:** GRUB支持直接从`bootmgr`启动,现在不再需要链式加载分区启动扇区了
 
@@ -378,146 +552,6 @@ x:\> "bootrec.exe /RebuildBcd".
 
 **Note:** `nn` 应该比06大,这样才能确保必要的脚本被优先执行
 
-## UEFI 系统
-
-**注意:**
-
-*   建议阅读并理解[UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders")
-*   使用UEFI安装时，重要的是从开始安装时您的机器就在 UEFI 模式。Arch Linux的安装介质必须是UEFI启动。
-
-### 检查你是否使用GPT且有ESP分区
-
-如果想要使用EFI在某个磁盘上进行启动,那么就需要使用[EFI系统分区](/index.php?title=EFI%E7%B3%BB%E7%BB%9F%E5%88%86%E5%8C%BA&action=edit&redlink=1 "EFI系统分区 (page does not exist)")(EFI System Partition,即ESP),GPT倒不是必须的,不过我们还是高度建议使用GTP,并且这也是本篇文章当前支持的方法.如果你在一个支持EFI,并且已经有操作系统的电脑上安装Arch(比如Windows 8),那么你已经有了ESP了.可以通过`parted`来列出启动磁盘上的分区表以检查其是否支持GPT和ESP(假设这个启动磁盘是/dev/sda)
-
-```
-# parted /dev/sda print
-
-```
-
-如果使用GPT,那么会出现"分区表:GPT".如果使用EFI,那么会有一个文件系统为vfat的小分区(一般小于512MiB)并且被标志为启动分区.在这个小分区上,应该有一个名为EFI的文件夹.如果这些条件都满足,那么这就是ESP了.注意分区序号,因为之后安装GRUB2时你需要mount它.
-
-### 建立ESP
-
-如果你没有ESP,请参考[EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")的引导来创建它
-
-### 安装
-
-**注意:** 众所周知,不同的主板厂商的UEFI实现方式也不一样.我们鼓励用户将其配置过程中遇到的问题及其细节分享出来.为了保证[GRUB](/index.php/GRUB "GRUB")页面的简洁,请参考[GRUB/EFI examples (简体中文)](/index.php/GRUB/EFI_examples_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB/EFI examples (简体中文)")
-
-本节假设您正在安装GRUB的x86_64系统下（x86_64-EFI）。对于 i686 系统，在适当情况下替换为 `x86_64-efi` 和 `i386-efi`。 请确保您在 [bash](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)") shell 中。例如，当从Arch ISO引导时：
-
-```
-# arch-chroot /mnt /bin/bash
-
-```
-
-安装[grub](https://www.archlinux.org/packages/?name=grub) [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr)包。"GRUB"是引导程序， *efibootmgr* creates bootable `.efi` stub entries used by the GRUB installation script. 接下来的步骤将安装GRUB UEFI 程序到 `**$esp**/EFI/grub`中, 安装其模块到`/boot/grub/x86_64-efi`, and place the bootable `grubx64.efi` stub in `**$esp**/EFI/grub`.
-
-首先，告诉GRUB使用UEFI，设置引导目录，并设置引导程序ID，将`$esp` 修改为你的 efi 分区 (通常为 `/boot`)
-
-```
-# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub --recheck
-
-```
-
-The `--bootloader-id` is what appears in the boot options to identity the GRUB EFI boot option; make sure this is something you will recognize later. The install will create a directory of the same name under `$esp/EFI/` where the EFI binary bootloader will be placed. 上述安装完成后 GRUB 的主目录将位于 `/boot/grub/`。
-
-**注意:**
-
-*   虽然一些发行版需要 `/boot/efi`或`/boot/EFI`目录，但 Arch没有。
-*   `--efi-directory` 和 `--bootloader-id`是特定于GRUB UEFI的. `--efi-directory` 指定了 ESP分区的挂载点。`--root-directory`已经废弃了并被取代。
-*   您可能注意到在 `grub-install`命令中没有一个<device_path>选项(例如: `/dev/sda`)。In fact any <device_path> provided will be ignored by the GRUB install script, as UEFI bootloaders do not use a MBR or partition boot sector at all.
-
-现在GRUB已经安装好了.请移至[配置](#.E9.85.8D.E7.BD.AE)一节继续.
-
-#### 延伸阅读
-
-下面是关于通过UEFI安装Arch的相关信息
-
-##### 其他方法
-
-如果你想将所有的GRUB boot 文件放在ESP中,请给grub-install命令添加`--boot-directory=$esp/EFI`选项:
-
-```
-# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub --boot-directory=$esp/EFI --recheck --debug
-
-```
-
-下面的命令会将GRUB模组文件放在`$esp/EFI/grub`中.使用这个方法,grub.cfg也会被放在ESP中,所以请确保grub-mkconfig指向了正确的地方:
-
-```
-# grub-mkconfig -o $esp/EFI/grub/grub.cfg
-
-```
-
-配置档和BIOS-GRUB是一样的.
-
-#### 在固件启动管理器中创建GRUB条目
-
-`grub-install`会自动尝试在启动管理器中创建GRUB条目.如果没有成功,请参考[Beginners' guide#GRUB](/index.php/Beginners%27_guide#GRUB "Beginners' guide"),里面有关于使用`efibootmgr`创建启动目录条目的介绍.一般来说,这个问题都是因为你没有以UEFI模式启动CD/USB造成的.请参考[UEFI#Create UEFI bootable USB from ISO](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
-
-#### 创建GRUB Standalone模式的UEFI应用程序
-
-可以建立一个`grubx64_standalone.efi`,这个应用将所有的模组嵌入自身的memdisk中,所以就不需要使用单独的目录来存放GRUB UEFI模组和其他相关文件了,使用[grub](https://www.archlinux.org/packages/?name=grub)包里的`grub-mkstandalone`可以实现这个功能.
-
-最简单的的方法就是使用`grub-mkstandalone`,不过,我们还可以指定嵌入哪些模组:
-
-```
-# grub-mkstandalone --directory="/usr/lib/grub/x86_64-efi/" --format="x86_64-efi" --compression="xz" \
---output="$esp/EFI/grub/grubx64_standalone.efi" <你想嵌入的模组>
-
-```
-
-`grubx64_standalone.efi`文件要求将`grub.cfg`放置到`(memdisk)/boot/grub`中,而这个memdisk是嵌入到EFI应用当中的.`grub-mkstandlone`脚本允许传递将要嵌入memdisk的文件列表.(上面命令里的"<你想嵌入的模组>")
-
-如果你的`grub.cfg`的路径是`/home/user/Desktop/grub.cfg`,那么需要创建一个临时的`/home/user/Desktop/boot/grub/`目录,然后将grub.cfg复制到其中并进入这个目录并运行:
-
-```
-# grub-mkstandalone --directory="/usr/lib/grub/x86_64-efi/" --format="x86_64-efi" --compression="xz" \
---output="$esp/EFI/grub/grubx64_standalone.efi" "boot/grub/grub.cfg"
-
-```
-
-进入`/home/user/Desktop/boot/grub/`但是传递`boot/grub/grub.cfg`参数(请注意是`boot/`而不是`/boot/`)的原因是`grub-mkstandalone`会自动将boot/grub/grub.cfg处理为`/(memdisk)/boot/grub/grub.cfg`
-
-如果你传递`/home/user/Desktop/grub.cfg`,那么处理后的结果会是`(memdisk)/home/user/Desktop/grub.cfg`.如果传递`/home/user/Desktop/boot/grub/grub.cfg`,那么结果就是`(memdisk)/home/user/Desktop/boot/grub/grub.cfg`.所以需要进入`/home/user/Desktop/boot/grub/`并传递`boot/grub/grub.cfg`参数,因为这样才能生成`grub.efi`需要的`(memdisk)/boot/grub/grub.cfg`.
-
-如果需要为`$esp/EFI/arch_grub/grubx64_standalone.efi`创建一个UEFI启动器条目,使用`efibootmgr`.[#Create GRUB entry in the Firmware Boot Manager](#Create_GRUB_entry_in_the_Firmware_Boot_Manager)里有介绍
-
-## 配置
-
-可以自动生成配置档,也可以手动编辑`grub.cfg`.
-
-**Note:**
-
-*   对于EFI系统,如果在安装GRUB时使用 `--boot-directory=$esp/EFI`了选项,`grub.cfg`文件必须和`grubx64.efi`放在同一文件夹.如果没有使用这个选项,那么`grub.cfg`应当在`/boot/grub/`下,和GRUB BIOS系统一样.
-*   在[这里](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html)可以找到关于如何配置GRUB的完整描述.
-
-### 使用grub-mkconfig自动生成配置档
-
-和GRUB Legacy配置文件`menu.lst`对应的GRUB配置文件是`/etc/default/grub` 和`/etc/grub.d/*`.`grub-mkconfig`使用这些文件来生成`grub.cfg`.grub-mkconfig默认输出至stdout.以下命令可以生成一个`grub.cfg`文件:
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-`/etc/grub.d/10_linux`会自动为Arch Linux设置启动项.其他操作系统的话,可能需要手动在`/etc/grub.d/40_custom`或`/boot/grub/custom.cfg`中设置.
-
-**Note:** 如果你在一个chroot环境中或者systemd-nspawn容器里执行这些操作,可能完全不会成功,因为grub-probe不能获取'/dev/sdaX'这样的典型路径.这种情况下,可以尝试使用[arch-chroot](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
-
-#### 额外的参数
-
-在`/etc/default/grub`中设置`GRUB_CMDLINE_LINUX`和`GRUB_CMDLINE_LINUX_DEFAULT`变量可以实现将向Linux镜像传递额外的参数.生成`grub.cfg`时,如果遇到普通启动项,这两个参数会一起使用,遇到*recovery*启动项,就只使用`GRUB_CMDLINE_LINUX`参数.
-
-没有必要两者一起使用.这两个参数很有用.比如,如果要系统支持休眠后恢复,需要使用`GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sdaX quiet"` (`sda**X**`是交换分区).这个选项会生成一个recovery启动项,这个启动项没有resume和quiet参数.其他的普通启动项也可能使用它们.(GRUB会为每个内核生成两个启动项,一个默认的一个recovery的,GRUB_CMDLINE_LINUX指定的参数会传递给这两个启动项.GRUB_CMDLINE_LINUX_DEFAULT指定的参数只会传递给默认启动项)
-
-当生成GRUB recovery启动项时,你必须在`/etc/default/grub`中将`#GRUB_DISABLE_RECOVERY=true` 注释掉.
-
-你也可以使用`GRUB_CMDLINE_LINUX="resume=/dev/disk/by-uuid/${swap_uuid}"`, `${swap_uuid}` 是交换分区的[UUID](/index.php/Persistent_block_device_naming "Persistent block device naming")
-
-不同的启动项使用双引号引起来并用空格隔开.所以,对于即想使用resume又想使用systemd的用户来说,这个参数的设置可能是: `GRUB_CMDLINE_LINUX="resume=/dev/sdaX init=/usr/lib/systemd/systemd"` 更多信息请参考[Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
-
 ### 手动创建 grub.cfg
 
 **Warning:** *不推荐*编辑这个文件.这个文件由`grub-mkconfig`生成,最好编辑`/etc/default/grub`和`/etc/grub.d`文件夹下的脚本以实现修改.
@@ -567,173 +601,6 @@ menuentry "Arch Linux" {
 #}
 
 ```
-
-### 双启动
-
-**Note:** 如果你希望GRUB自动搜寻其他系统, 可以安装[os-prober](https://www.archlinux.org/packages/?name=os-prober).
-
-#### 使用/etc/grub.d/40_custom 和 grub-mkconfig自动生成
-
-添加其他启动项的最好方法是编辑`/etc/grub.d/40_custom`或`/boot/grub/custom.cfg`.运行`grub-mkconfig`后,这些文件中的启动项会被自动添加到grub.cfg中. 更新了这些文件后,运行:
-
- `# grub-mkconfig -o /boot/grub/grub.cfg` 
-
-在UEFI-GPT模式下,运行:
-
- `# grub-mkconfig -o /boot/efi/EFI/GRUB/grub.cfg` 
-
-这样会更新`grub.cfg`
-
-一个典型`/etc/grub.d/40_custom`文件类似于下面这个为[HP Pavilion 15-e056sl Notebook PC|预装WIN8的HP Pavilion 15-e056sl Notebook PC](http://h10025.www1.hp.com/ewfrf/wc/product?cc=us&destPage=product&lc=en&product=5402703&tmp_docname=)而作的配置.每个启动项的结构都应该和下面的类似.请注意UEFI分区`/dev/sda2` 被命名为`hd0,gpt2` 和`ahci0,gpt2`(请参考[here](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB")获取更多信息)
-
-**/etc/grub.d/40_custom**:
-
-```
-#!/bin/sh
-exec tail -n +3 $0
-# This file provides an easy way to add custom menu entries.  Simply type the
-# menu entries you want to add after this comment.  Be careful not to change
-# the 'exec tail' line above.
-
-menuentry "HP / Microsoft Windows 8.1" {
-	echo "Loading HP / Microsoft Windows 8.1..."
-	insmod part_gpt
-	insmod fat
-	insmod search_fs_uuid
-	insmod chain
-	search --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2 763A-9CB6
-	chainloader (${root})/EFI/Microsoft/Boot/bootmgfw.efi
-}
-
-menuentry "HP / Microsoft Control Center" {
-	echo "Loading HP / Microsoft Control Center..."
-	insmod part_gpt
-	insmod fat
-	insmod search_fs_uuid
-	insmod chain
-	search --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2 763A-9CB6
-	chainloader (${root})/EFI/HP/boot/bootmgfw.efi
-}
-
-menuentry "System shutdown" {
-	echo "System shutting down..."
-	halt
-}
-
-menuentry "System restart" {
-	echo "System rebooting..."
-	reboot
-}
-```
-
-##### GNU/Linux 启动项
-
-假设另一个发行版位于`sda2`:
-
-```
-menuentry "Other Linux" {
-	set root=(hd0,2)
-	linux /boot/vmlinuz (add other options here as required)
-	initrd /boot/initrd.img (if the other kernel uses/needs one)
-}
-```
-
-##### FreeBSD 启动项
-
-要求FreeBSD以UFS格式被安装在单独的分区上,假设安装在`sda4`上:
-
-```
-menuentry "FreeBSD" {
-	set root=(hd0,4)
-	chainloader +1
-}
-```
-
-##### Windows XP 启动项
-
-假设Windows分区是`sda3`.请记住需要将root设置到Windows安装时建立的启动分区上,然后链式加载它,而不是Windows系统所在分区.下面的例子就是假设启动分区就是`sda3`.
-
-```
-# (2) Windows XP
-menuentry "Windows XP" {
-	set root="(hd0,3)"
-	chainloader +1
-}
-```
-
-如果Windows的bootloader和GRUB不在一个硬盘上,那么需要让Windows认为它是在第一硬盘上.使用`drivemap`可以实现这点.假设GRUB在`hd0`而windows在`hd2`上,需要在设定root后执行:
-
- `drivemap -s hd0 hd2` 
-
-##### UEFI-GPT 模式下安装的Windows的启动项
-
-```
-if [ "${grub_platform}" == "efi" ]; then
-	menuentry "Microsoft Windows Vista/7/8 x86_64 UEFI-GPT" {
-		insmod part_gpt
-		insmod fat
-		insmod search_fs_uuid
-		insmod chain
-		search --fs-uuid --set=root $hints_string $uuid
-		chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-	}
-fi
-```
-
-`$hints_string` 和 `$uuid`可以通过以下命令获取:
-
-`$uuid`:
-
-```
-# grub-probe --target=fs_uuid $esp/EFI/Microsoft/Boot/bootmgfw.efi
-1ce5-7f28
-```
-
-`$hints_string`:
-
-```
-# grub-probe --target=hints_string $esp/EFI/Microsoft/Boot/bootmgfw.efi
- --hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1
-```
-
-这两个命令都是假设ESP挂载在`$esp`上.当然,Windows的EFI文件路径可能有变,因为这就是Windows....
-
-##### "Shutdown" 启动项
-
-```
-menuentry "System shutdown" {
-	echo "System shutting down..."
-	halt
-}
-```
-
-##### "Restart" 启动项
-
-```
-menuentry "System restart" {
-	echo "System rebooting..."
-	reboot
-}
-```
-
-#### 通过EasyBCD NeoGRUB 和Windows共存
-
-现在EasyBCD的NeoGRUB还不能识别GRUB的目录格式,在 `C:\NST\menu.lst` 中添加如下行以链式加载到GRUB:
-
-```
-default 0
-timeout 1
-
-```
-
-```
-title       Chainload into GRUB v2
-root        (hd0,7)
-kernel      /boot/grub/i386-pc/core.img
-
-```
-
-最后,使用`grub-mkconfig`重建`grub.cfg`
 
 ### 可视化配置
 

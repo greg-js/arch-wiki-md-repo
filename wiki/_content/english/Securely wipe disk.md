@@ -153,6 +153,8 @@ Alternatively sysfs does expose information:
 
 ```
 
+**Tip:** To show calculated dd examples for the destination storage device use [genwipe.sh](https://aur.archlinux.org/packages/genwipe.sh/), e.g. `genwipe.sh /dev/sd"XY"`.
+
 ### Calculate blocks to wipe manually
 
 In the following the determination of the data area to wipe is done in an example.

@@ -98,4 +98,4 @@ If you are receiving the "Network error: TLS fingerprint mismatch" error when ru
 
 *   [Project's homepage](http://6xq.net/projects/pianobar/)
 *   [Project's GitHub](https://github.com/PromyLOPh/pianobar/)
-*   [http://ketan.lithiumfox.com/doku.php/pianobar](http://ketan.lithiumfox.com/doku.php/pianobar)
+*   [https://wiki.k2patel.in/pianobar](https://wiki.k2patel.in/pianobar)

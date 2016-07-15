@@ -51,7 +51,9 @@
 
 ## 安装
 
-首先，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 位于[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") 的软件包 [xorg-server](https://www.archlinux.org/packages/?name=xorg-server)。可能还需要安装位于 [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) 组中的某些工具以进行某些特定的配置工作。另外一些有用的工具可以在 [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) 组中找到。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 位于[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") 的软件包 [xorg-server](https://www.archlinux.org/packages/?name=xorg-server)。
+
+另外，安装位于 [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) 组中的某些工具以进行某些特定的配置工作。其他一些有用的工具可以在 [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) 组中找到。
 
 **小贴士:** 用户通常需要选择安装某个 [窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 或 [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")以配合使用 X。
 

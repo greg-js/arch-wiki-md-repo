@@ -243,6 +243,6 @@ Further usage instructions can be found [here](https://github.com/blind-coder/rc
 
 ## See also
 
-*   [The Roundcube Howto Config Wiki page](http://trac.roundcube.net/wiki/Howto_Config)
+*   [The Roundcube Howto Config Wiki page](https://github.com/roundcube/roundcubemail/wiki/Configuration)
 *   [Offical web page](http://roundcube.net)
-*   [Official installation manual](http://trac.roundcube.net/wiki/Howto_Install)
+*   [Official installation manual](https://github.com/roundcube/roundcubemail/wiki/Installation)

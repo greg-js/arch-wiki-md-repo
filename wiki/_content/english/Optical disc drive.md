@@ -328,20 +328,11 @@ $ growisofs -dvd-compat -Z */dev/sr0*=*isoimage.iso*
 
 ```
 
-**Note:** * Make sure that the medium is not mounted when you begin to write to it. Mounting may happen automatically if the medium contains a readable file system. In the best case, it will prevent the burn programs from using the burner device. In the worst case, there will be misburns because read operations disturbed the drive.
+**Note:**
 
-So if in doubt, do:
-
-```
-# umount /dev/sr0
-
-```
-
-*   *growisofs* has a [small bug](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=713016) with blank BD-R media. It issues an error message after the burning is complete. Programs like *k3b* then believe the whole burn run failed.
-
-To prevent this, either
-
-*   *   format the blank BD-R by `dvd+rw-format */dev/sr0*` before submitting it to *growisofs*
+*   Make sure that the medium is not mounted when you begin to write to it. Mounting may happen automatically if the medium contains a readable file system. In the best case, it will prevent the burn programs from using the burner device. In the worst case, there will be misburns because read operations disturbed the drive. So if in doubt, do: `# umount /dev/sr0` 
+*   *growisofs* has a [small bug](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=713016) with blank BD-R media. It issues an error message after the burning is complete. Programs like *k3b* then believe the whole burn run failed. To prevent this, either
+    *   format the blank BD-R by `dvd+rw-format */dev/sr0*` before submitting it to *growisofs*
     *   or use *growisofs* option `-use-the-force-luke=spare:none`
 
 ### Verifying the burnt ISO image

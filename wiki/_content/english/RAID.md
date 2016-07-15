@@ -373,10 +373,17 @@ Stripe-width = (# of physical **data** disks * stride). In this example, the mat
 
 ## Mounting from a Live CD
 
-Users wanting to mount the RAID partition from a Live CD, use
+Users wanting to mount the RAID partition from a Live CD, use:
 
 ```
 # mdadm --assemble /dev/<disk1> /dev/<disk2> /dev/<disk3> /dev/<disk4>
+
+```
+
+If your RAID 1 that's missing a disk array was wrongly auto-detected as RAID 1 (as per `mdadm --detail /dev/md<number>`) and reported as inactive (as per `cat /proc/mdstat`), stop the array first:
+
+```
+# mdadm --stop /dev/md<number>
 
 ```
 

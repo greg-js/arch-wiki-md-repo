@@ -54,11 +54,9 @@ Install [xinput_calibrator](https://aur.archlinux.org/packages/xinput_calibrator
 
 ## Using a touchscreen in a multi-head setup
 
-To use multiple displays (some of which are touchscreens), you need to tell Xorg the mapping between the touch surface and the screen.
+To use multiple displays (some of which are touchscreens), you need to tell Xorg the mapping between the touch surface and the screen. This can be achieved with *xinput* as follows.
 
-This can be done very easily with xinput:
-
-Take for example the setup of having a wacom tablet and an external monitor. When we type xrandr we get a list of our two displays:
+Take for example the setup of having a wacom tablet and an external monitor; *xrandr* shows both displays:
 
 ```
 $ xrandr
@@ -95,7 +93,7 @@ You see we have two displays here. LVDS1 and VGA1\. LVDS1 is the display interna
 
 ```
 
-We see that we have two stylus inputs who's ID's are 13 and 14\. We now need to simply map our inputs to our output like so:
+We see that we have two stylus inputs who's ID's are `13` and `14`. We now need to simply map our inputs to our output like so:
 
 ```
 xinput --map-to-output 13 LVDS1
@@ -111,6 +109,8 @@ xinput --map-to-output $(xinput list --id-only "Serial Wacom Tablet WACf004 eras
 
 ```
 
+Also, the mapping will be lost if the touchscreen is disconnected and re-connected, for example, when switching monitors via a KVM. In that case it is better to use a udev rule. The [Calibrating Touchscreen](/index.php/Calibrating_Touchscreen "Calibrating Touchscreen") page has an example udev rule for the case when a transformation matrix has been calculated manually and needs to be applied automatically.
+
 ## Touchegg
 
-[Touchegg](/index.php/Touchegg "Touchegg") is a multitouch gesture program, that runs as a user in the background, and adds multitouch support to window managers.
+[Touchegg](/index.php/Touchegg "Touchegg") is a multitouch gesture program, that runs as a user in the background, recognizes gestures, and translates them to more conventional events such as mouse wheel movements, so that you can for example use two fingers to scroll. But it also interferes with applications or window managers which already do their own gesture recognition. If you have both a touchpad and a touchscreen, and if the touchpad driver (such as synaptics or libinput) has been configured not to recognize gestures itself, but to pass through the multi-touch events, then Touchegg will recognize gestures on both: this cannot be configured. In fact it does a better job of recognizing gestures than either the synaptics or libinput touchpad drivers; but on the touchscreen, it's generally better for applications to respond to touch in their own unique ways. Some Qt and GTK applications do that, but they will not be able to if you have Touchegg "eating" the touch events. So, Touchegg is useful when you are running mainly legacy applications which do not make their own use of touch events.

@@ -37,7 +37,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 *   **aurget** — pacman-like interface to the AUR, without wrapping pacman commands.
 
-	[http://github.com/pbrisbin/aurget/](http://github.com/pbrisbin/aurget/) || [aurget](https://aur.archlinux.org/packages/aurget/)
+	[https://github.com/pbrisbin/aurget/](https://github.com/pbrisbin/aurget/) || [aurget](https://aur.archlinux.org/packages/aurget/)
 
 *   **aurquery** — Caching wrapper around the AUR's RPC interface using the python3-aur library.
 
@@ -85,7 +85,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 *   **spinach** — An AUR helper written in Bash
 
-	[http://floft.net/wiki/Scripts/Spinach](http://floft.net/wiki/Scripts/Spinach) || [spinach](https://aur.archlinux.org/packages/spinach/)
+	[http://www.floft.net/code/spinach/](http://www.floft.net/code/spinach/) || [spinach](https://aur.archlinux.org/packages/spinach/)
 
 *   **trizen** — A wrapper for the AUR written in Perl.
 
@@ -101,7 +101,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 *   **yaourt** — A wrapper for the AUR and regular packages.
 
-	[http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)
+	[https://archlinux.fr/yaourt-en](https://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)
 
 ## Maintenance
 

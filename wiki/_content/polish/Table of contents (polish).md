@@ -1,4 +1,4 @@
-| [Polski](/index.php/Category:Polski "Category:Polski") <small>(35)</small> |
+| [Polski](/index.php/Category:Polski "Category:Polski") <small>(29)</small> |
 | <small>1.</small> [Applications](/index.php/Category:Applications_(Polski) "Category:Applications (Polski)") <small>(0)</small> |
 | <small>1.1.</small> [Internet applications](/index.php/Category:Internet_applications_(Polski) "Category:Internet applications (Polski)") <small>(1)</small> |
 | <small>1.2.</small> [Multimedia players](/index.php/Category:Multimedia_players_(Polski) "Category:Multimedia players (Polski)") <small>(2)</small> |
@@ -11,11 +11,11 @@
 | <small>5.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Polski) "Category:Secure Shell (Polski)") <small>(1)</small> |
 | <small>5.2.</small> [Web server](/index.php/Category:Web_server_(Polski) "Category:Web server (Polski)") <small>(1)</small> |
 | <small>6.</small> [Pages sorted by topic](/index.php/Category:Pages_sorted_by_topic_(Polski) "Category:Pages sorted by topic (Polski)") <small>(0)</small> |
-| <small>6.1.</small> [About Arch](/index.php/Category:About_Arch_(Polski) "Category:About Arch (Polski)") <small>(12)</small> |
-| <small>6.1.1.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(Polski) "Category:Getting and installing Arch (Polski)") <small>(8) (również w [Pages sorted by topic](/index.php/Category:Pages_sorted_by_topic_(Polski) "Category:Pages sorted by topic (Polski)"))</small> |
+| <small>6.1.</small> [About Arch](/index.php/Category:About_Arch_(Polski) "Category:About Arch (Polski)") <small>(6)</small> |
+| <small>6.1.1.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(Polski) "Category:Getting and installing Arch (Polski)") <small>(2) (również w [Pages sorted by topic](/index.php/Category:Pages_sorted_by_topic_(Polski) "Category:Pages sorted by topic (Polski)"))</small> |
 | <small>6.2.</small> [Arch development](/index.php/Category:Arch_development_(Polski) "Category:Arch development (Polski)") <small>(4)</small> |
 | <small>6.2.1.</small> [Pacman development](/index.php/Category:Pacman_development_(Polski) "Category:Pacman development (Polski)") <small>(1)</small> |
-| <small>6.3.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(Polski) "Category:Getting and installing Arch (Polski)") <small>(8) (również w [About Arch](/index.php/Category:About_Arch_(Polski) "Category:About Arch (Polski)"))</small> |
+| <small>6.3.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(Polski) "Category:Getting and installing Arch (Polski)") <small>(2) (również w [About Arch](/index.php/Category:About_Arch_(Polski) "Category:About Arch (Polski)"))</small> |
 | <small>6.4.</small> [System administration](/index.php/Category:System_administration_(Polski) "Category:System administration (Polski)") <small>(0)</small> |
 | <small>6.4.1.</small> [Audio/Video](/index.php/Category:Audio/Video_(Polski) "Category:Audio/Video (Polski)") <small>(1)</small> |
 | <small>6.4.2.</small> [Eye candy](/index.php/Category:Eye_candy_(Polski) "Category:Eye candy (Polski)") <small>(1)</small> |

@@ -22,6 +22,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Restoring the native window manager](#Restoring_the_native_window_manager)
     *   [4.2 Enabling the Alt+F2 run dialog](#Enabling_the_Alt.2BF2_run_dialog)
+    *   [4.3 Remove title bar from maximized windows](#Remove_title_bar_from_maximized_windows)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Missing GLX_EXT_texture_from_pixmaps](#Missing_GLX_EXT_texture_from_pixmaps)
         *   [5.1.1 On ATI cards (first solution)](#On_ATI_cards_.28first_solution.29)
@@ -274,6 +275,10 @@ xfce4-appfinder --collapsed
 	Other run dialogs
 
 Map the command for a [run dialog](/index.php/List_of_applications#Application_launchers "List of applications") of choice to the `Alt+F2` key combination using the *Commands* plugin in CCSM.
+
+### Remove title bar from maximized windows
+
+As mentioned [here](http://planetkris.com/2009/07/how-to-remove-the-title-bar-with-compiz-without-losing-3-hours-of-your-life/) , enter `ccsm` --> `Window Decoration` in Effects --> `Decoration Windows` : change `any` to `!state=maxvert`.
 
 ## Troubleshooting
 

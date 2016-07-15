@@ -50,7 +50,7 @@
     *   [5.15 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
     *   [5.16 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
     *   [5.17 Systemd Bottleneck](#Systemd_Bottleneck)
-    *   [5.18 Regular network disconnects (WiFi)](#Regular_network_disconnects_.28WiFi.29)
+    *   [5.18 Regular network disconnects (WiFi) latency and lost packets](#Regular_network_disconnects_.28WiFi.29_latency_and_lost_packets)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
     *   [6.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
@@ -606,7 +606,9 @@ You do not need to use the dispatcher described in step (1.) to auto-connect any
 
 Over time the log files (`/var/log/journal`) can become very large. This can have a big impact on boot performance when using NetworkManager, see: [Systemd#Boot time increasing over time](/index.php/Systemd#Boot_time_increasing_over_time "Systemd").
 
-### Regular network disconnects (WiFi)
+### Regular network disconnects (WiFi) latency and lost packets
+
+NetworkManager does a scan every 2 minutes.
 
 Some WiFi drivers have issues when scanning for base stations whilst connected/associated. Symptoms include VPN disconnects/reconnects and lost packets, web pages failing to load and then refresh fine.
 
@@ -617,7 +619,9 @@ NetworkManager[410]: <info>  (wlp3s0): roamed from BSSID 00:14:48:11:20:CF (my-w
 
 ```
 
-There is a patched version of NetworkManager which should prevent this type of scanning: [networkmanager-noscan](https://aur.archlinux.org/packages/networkmanager-noscan/).
+The periodic scanning behavior can be disabled by locking the BSSID of the access point in the WiFi connection profile.
+
+There is also a patched version of NetworkManager which should prevent this type of scanning: [networkmanager-noscan](https://aur.archlinux.org/packages/networkmanager-noscan/).
 
 ## Tips and tricks
 

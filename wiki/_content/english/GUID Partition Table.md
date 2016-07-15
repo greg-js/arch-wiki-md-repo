@@ -10,9 +10,8 @@ GUID Partition Table (GPT) is a partitioning scheme that is part of the [Unified
     *   [2.2 BIOS systems](#BIOS_systems)
         *   [2.2.1 Workarounds](#Workarounds)
 *   [3 Partitioning Utilities](#Partitioning_Utilities)
-    *   [3.1 GPT fdisk](#GPT_fdisk)
+    *   [3.1 fdisk and gdisk](#fdisk_and_gdisk)
     *   [3.2 GNU Parted](#GNU_Parted)
-    *   [3.3 Util-linux fdisk](#Util-linux_fdisk)
 *   [4 Partitioning examples](#Partitioning_examples)
     *   [4.1 gdisk basic](#gdisk_basic)
     *   [4.2 gdisk basic (with hybrid MBR)](#gdisk_basic_.28with_hybrid_MBR.29)
@@ -81,7 +80,7 @@ A few workarounds may help boot a BIOS/GPT partitioning scheme; however, before 
 
 Several partitioning utilities exists.
 
-### GPT fdisk
+### fdisk and gdisk
 
 See the [fdisk](/index.php/Fdisk "Fdisk") article.
 
@@ -90,10 +89,6 @@ See the [fdisk](/index.php/Fdisk "Fdisk") article.
 [GNU Parted](/index.php/GNU_Parted "GNU Parted") is a full-featured command line program for creating and manipulating partition tables. It can be used interactively and is the backend for the popular [GParted](/index.php/GParted "GParted") GUI partitioning tool.
 
 It supports GPT as well as MBR.
-
-### Util-linux fdisk
-
-The [fdisk](/index.php/Fdisk "Fdisk") utility from [util-linux](https://www.archlinux.org/packages/?name=util-linux) (based on util-linux internal libfdisk) partially supports GPT, but it is still in beta stage (as on 07 October 2013). The related utilities cfdisk and sfdisk do not yet support GPT, and may damage the GPT header and partition table if used on a GPT disk.
 
 ## Partitioning examples
 

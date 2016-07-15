@@ -140,7 +140,7 @@ If you get a message that says 'configuration OK' - you're ready to [rock and ro
 
 ### Console debugging
 
-If you're having problems with mail delivery, try stopping the smtpd.service and launching the daemon manually with the 'do not daemonize' and 'verbose output' options. Then watch the console for errors.
+If you're having problems with mail delivery, try [stopping](/index.php/Stop "Stop") the smtpd.service and launching the daemon manually with the 'do not daemonize' and 'verbose output' options. Then watch the console for errors.
 
 ```
 # systemctl stop smtpd.service

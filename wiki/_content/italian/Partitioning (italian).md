@@ -204,7 +204,7 @@ Se le partizioni non sono allineate per iniziare a multipli della EBS (512 KB pe
 
 ### Riepilogo utilizzando Gdisk
 
-Utilizzando GPT, l'utility per la modifica della tabella delle partizioni è chiamato gdisk. Esso può eseguire l'allineamento delle partizioni automaticamente con una base di dimensioni del blocco a 2048 settori (o 1024KiB), che deve essere compatibile con la stragrande maggioranza di SSD, se non tutti. GNU parted supporta anche GPT, ma è [meno facile da usare](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) per l'allineamento delle partizioni . L'ambiente fornito dall'ISO di installazione di Arhc include il comando *gdisk*. Se ne avete bisogno più avanti nel sistema già installato, *gdisk* è disponibile nel pacchetto [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk).
+Utilizzando GPT, l'utility per la modifica della tabella delle partizioni è chiamato gdisk. Esso può eseguire l'allineamento delle partizioni automaticamente con una base di dimensioni del blocco a 2048 settori (o 1024KiB), che deve essere compatibile con la stragrande maggioranza di SSD, se non tutti. GNU parted supporta anche GPT, ma è [meno facile da usare](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) per l'allineamento delle partizioni . L'ambiente fornito dall'ISO di installazione di Arch include il comando *gdisk*. Se ne avete bisogno più avanti nel sistema già installato, *gdisk* è disponibile nel pacchetto [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk).
 
 Una sintesi del uso tipico di *gdisk*  :
 

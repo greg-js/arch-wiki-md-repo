@@ -106,6 +106,8 @@ lxqt-config-session
 
 From this window, click on "AutoStart" on the left side. Here you can add a new application to either the global autostart (launched in all sessions implementing the said specification) or your local autostart (labled LXQt Autostart) (See [issue 746](https://github.com/lxde/lxqt/issues/746) for a bug related to this option).
 
+For each item you add, `lxqt-config-session` will create a .desktop-file at `~/.config/autostart`. Preinstalled applications that will be automatically started at login can be found at `/etc/xdg/autostart`. So you can also change your autostart preferences by editing the files in these directories. Besides, the distinction between "Global Autostart" and "LXQt Autostart" does not depend on the directory in which the corresponding .desktop-file is located, but rather on the `OnlyShowIn`-setting. If it is `OnlyShowIn=true`, it is considered an "LXQt Autostart". Furthermore, if `X-LXQt-Module=true`, the item is not shown in `lxqt-config-session`.
+
 ### Editing the Application Menu
 
 It is possible to edit menu entries by editing their .desktop files stored in `/usr/share/applications/lxqt-*.desktop` files. See [Desktop entries](/index.php/Desktop_entries "Desktop entries").

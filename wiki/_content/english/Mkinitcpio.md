@@ -199,11 +199,11 @@ A table of common hooks and how they affect image creation and runtime follows. 
 
 <caption>**Current hooks**</caption>
 | Hook | Installation | Runtime |
-| **base** | Sets up all initial directories and installs base utilities and libraries. Always add this hook as the first hook unless you know what you are doing. | -- |
+| **base** | Sets up all initial directories and installs base utilities and libraries. Always keep this hook as the first hook unless you know what you are doing. | -- |
 | **systemd** | This will install a basic systemd setup in your initramfs, and is meant to replace the *base*, *usr* and *udev* hooks. Other hooks (like encryption) would need to be ported, and may not work as intended. It is **required**, if you use any other systemd specific hooks ("sd-*") from below. This hook does not work as intended yet, when combined with lvm2 and may break your boot. Use the *sd-lvm2* hook instead of the *lvm2* one. You also may wish to still include the *base* hook (before this hook) to ensure that a rescue shell exists on your initramfs. This hook also installs the service and binary helper needed for resuming from [hibernation](/index.php/Hibernation "Hibernation").
 **Tip:** package [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-systemd-tool/) provides the *systemd-tool* hook, which offers configuration-driven approach to provision additional systemd services and initramfs resources. For show case see [remote system unlocking](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties").
  | -- |
-| **btrfs** | Sets the required modules to enable [Btrfs](/index.php/Btrfs "Btrfs") for root and the use of subvolumes. | Runs `btrfs device scan` to assemble a multi-device Btrfs root file system when no udev hook is present. The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package is required for this hook. |
+| **btrfs** | Sets the required modules to enable [Btrfs](/index.php/Btrfs "Btrfs") for using multiple devices with Btrfs. This hook is not required for using Btrfs on a single device. | Runs `btrfs device scan` to assemble a multi-device Btrfs root file system when no udev hook is present. The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package is required for this hook. |
 | **udev** | Adds udevd, udevadm, and a small subset of udev rules to your image. | Starts the udev daemon and processes uevents from the kernel; creating device nodes. As it simplifies the boot process by not requiring the user to explicitly specify necessary modules, using the udev hook is recommended. |
 | **autodetect** | Shrinks your initramfs to a smaller size by creating a whitelist of modules from a scan of sysfs. Be sure to verify included modules are correct and none are missing. This hook must be run before other subsystem hooks in order to take advantage of auto-detection. Any hooks placed before 'autodetect' will be installed in full. | -- |
 | **modconf** | Includes modprobe configuration files from `/etc/modprobe.d` and `/usr/lib/modprobe.d` | -- |
@@ -233,17 +233,7 @@ See the man page of systemd-cryptsetup-generator(8) for available kernel command
 
 ### COMPRESSION
 
-The kernel supports several formats for compression of the initramfs - [gzip](https://www.archlinux.org/packages/?name=gzip), [bzip2](https://www.archlinux.org/packages/?name=bzip2), lzma, [xz](https://www.archlinux.org/packages/?name=xz) (also known as lzma2), [lzo](https://www.archlinux.org/packages/?name=lzo), and [lz4](https://www.archlinux.org/packages/?name=lz4). For most use cases, gzip, lzop, and lz4 provide the best balance of compressed image size and decompression speed.
-
-```
-COMPRESSION="gzip"
-COMPRESSION="bzip2
-COMPRESSION="lzma"
-COMPRESSION="lzop"
-COMPRESSION="xz"
-COMPRESSION="lz4"
-
-```
+The kernel supports several formats for compression of the initramfs—[gzip](https://www.archlinux.org/packages/?name=gzip), [bzip2](https://www.archlinux.org/packages/?name=bzip2), lzma, [xz](https://www.archlinux.org/packages/?name=xz) (also known as lzma2), [lzo](https://www.archlinux.org/packages/?name=lzo), and [lz4](https://www.archlinux.org/packages/?name=lz4). For most use cases, gzip, lzop, and lz4 provide the best balance of compressed image size and decompression speed. The provided `mkinitcpio.conf` has the various `COMPRESSION` options commented out. Uncomment one to choose which compression format you desire.
 
 Specifying no `COMPRESSION` will result in a gzip-compressed initramfs file. To create an uncompressed image, specify `COMPRESSION=cat` in the config or use `-z cat` on the command line.
 

@@ -70,7 +70,7 @@ After adding a system user, update the main configuration file using the webinte
 ```
 ..
 DaemonUsername=nzbget # system user
-MainDir=/home/user/Downloads/NZBGet
+MainDir=/home/myuser/Downloads/NZBGet
 UMask=0022 # 755 for dirs - 644 for files
 ```
 
@@ -78,12 +78,12 @@ Create and set permissions for the desired directories:
 
 ```
 # mkdir /home/myuser/Downloads/NZBGet
-# chown -R nzbget:nzbget /home/user/Downloads/NZBGet
-# chmod 775 /home/user/Downloads/NZBGet
+# chown -R nzbget:nzbget /home/myuser/Downloads/NZBGet
+# chmod 775 /home/myuser/Downloads/NZBGet
 
 ```
 
-The `/home/user/Downloads/NZBGet` will be accessible for the user `nzbget` and for the `nzbget` group. Making the target directory world read/writable is highly discouraged (i.e. do not *chmod* the directory to *777*). Instead, give individual users/groups appropriate permissions to the appropriate directories (e.g. by adding 'yourself' to the `nzbget` group).
+The `/home/myuser/Downloads/NZBGet` will be accessible for the user `nzbget` and for the `nzbget` group. Making the target directory world read/writable is highly discouraged (i.e. do not *chmod* the directory to *777*). Instead, give individual users/groups appropriate permissions to the appropriate directories (e.g. by adding 'yourself' to the `nzbget` group).
 
 Starting NZBGet as user `nzbget` in daemon-mode, or start NZBGet by using the `nzbget.service` if installed with the [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/) instead:
 

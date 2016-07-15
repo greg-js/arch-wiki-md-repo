@@ -8,6 +8,7 @@ From [MATE homepage](http://mate-desktop.org/):
 *   [2 Installation](#Installation)
     *   [2.1 Additional MATE packages](#Additional_MATE_packages)
     *   [2.2 GTK+ 3 version](#GTK.2B_3_version)
+    *   [2.3 MATE 1.14 or greater](#MATE_1.14_or_greater)
 *   [3 Starting MATE](#Starting_MATE)
 *   [4 Configuration](#Configuration)
     *   [4.1 Accessibility](#Accessibility)
@@ -126,6 +127,16 @@ Additional packages need to be installed to take advantage of some of Caja's adv
 ### GTK+ 3 version
 
 An experimental GTK+ 3 build of MATE can be installed with [mate-gtk3](https://www.archlinux.org/groups/x86_64/mate-gtk3/) and [mate-extra-gtk3](https://www.archlinux.org/groups/x86_64/mate-extra-gtk3/) groups. While it works mostly, there are some known issues with [caja](https://github.com/mate-desktop/caja/milestones/Gtk+3), [eom](https://github.com/mate-desktop/eom/milestones/Gtk+3), [marco](https://github.com/mate-desktop/marco/milestones/Gtk+3), [mate-applets](https://github.com/mate-desktop/mate-applets/milestones/Gtk+3), [mate-control-center](https://github.com/mate-desktop/mate-control-center/milestones/Gtk+3), [mate-netbook](https://github.com/mate-desktop/mate-netbook/milestones/Gtk+3), [mate-notification-daemon](https://github.com/mate-desktop/mate-notification-daemon/milestones/Gtk+3), [mate-panel](https://github.com/mate-desktop/mate-panel/milestones/Gtk+3) and [pluma](https://github.com/mate-desktop/pluma/milestones/Gtk+3).
+
+### MATE 1.14 or greater
+
+As of 2016-07 the official MATE packages did not receive an update, cf. [forum](https://bbs.archlinux.org/viewtopic.php?pid=1624557#p1624557). Consider the following community efforts (from the thread):
+
+*   [https://aur.archlinux.org/packages/mate-desktop-1.15-gtk3/](https://aur.archlinux.org/packages/mate-desktop-1.15-gtk3/)
+    *   [https://github.com/nicman23/arch_mate](https://github.com/nicman23/arch_mate)
+    *   [https://github.com/Eadrom/arch_mate](https://github.com/Eadrom/arch_mate)
+*   [http://repo.manjaro.org/](http://repo.manjaro.org/) [https://github.com/manjaro/packages-community/tree/master/mate](https://github.com/manjaro/packages-community/tree/master/mate)
+*   [https://github.com/xpander69/mate-archbuilds](https://github.com/xpander69/mate-archbuilds)
 
 ## Starting MATE
 

@@ -368,7 +368,7 @@ To start the service for your user,
 
 ```
 
-Automatically starting Synergy is also documented in its [official reference page](http://synergy2.sourceforge.net/autostart.html).
+Automatically starting Synergy is also documented in its [official reference page](https://github.com/symless/synergy/wiki/Startup).
 
 ### Windows
 
@@ -398,7 +398,7 @@ If Arch is being used as a client in a Synergy installation, the server may not 
 
 ## Troubleshooting
 
-The official documentation has a [FAQ](http://synergy-project.org/wiki/Synergy_FAQ) and also a [troubleshooting page](http://synergy2.sourceforge.net/trouble.html).
+The official documentation has a [FAQ](http://synergy-project.org/wiki/Synergy_FAQ) and also a [troubleshooting page](https://github.com/symless/synergy/wiki/User-Guide#Troubleshooting).
 
 ### Keyboard AltGr
 

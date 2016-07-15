@@ -1,4 +1,4 @@
-Questo documento vi guiderà attraverso il processo di installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando il sistema live avviato con l'immagine ufficiale di installazione. Prima di installare, è consigliato dare una lettura alle [FAQ (Italiano)](/index.php/FAQ_(Italiano) "FAQ (Italiano)"). Si veda la [Guida per Principianti](/index.php/Guida_per_Principianti "Guida per Principianti") per una guida all'installazione molto dettagliata ed esplicativa.
+Questo documento vi guiderà attraverso il processo di installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando il sistema live avviato con l'immagine ufficiale di installazione. Prima di installare, è consigliato dare una lettura alle [FAQ (Italiano)](/index.php/FAQ_(Italiano) "FAQ (Italiano)").
 
 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") contiene diverse altre guide all'installazione per casi specifici.
 

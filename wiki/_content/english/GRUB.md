@@ -80,13 +80,13 @@
 
 A *bootloader* is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system. The name *GRUB* officially refers to version *2* of the software, see [[2]](https://www.gnu.org/software/grub/). If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
 
-**Note:**
+GRUB has a few root file system-specific limitations:
 
-*   GRUB supports [Btrfs](/index.php/Btrfs "Btrfs") as root (without a separate `/boot` file system needed), only compressed with either zlib (the btrfs default) or LZO.
-*   GRUB does not support [F2FS](/index.php/F2FS "F2FS") as root, so you will need a separate `/boot` with a supported file system.
-*   For GRUB's XFS support, see [XFS#Installation](/index.php/XFS#Installation "XFS") with the linked [FS#46856](https://bugs.archlinux.org/task/46856).
+*   [F2FS](/index.php/F2FS "F2FS") is not supported
+*   [XFS](/index.php/XFS "XFS") is not supported ([FS#46856](https://bugs.archlinux.org/task/46856))
+*   File systems on [NVMe](https://en.wikipedia.org/wiki/NVMe "wikipedia:NVMe") devices are not supported
 
-**Note:** As of grub-1:2.02.beta2-6, there is not native support to boot to a root filesystem contained on an NVMe device. Users wishing to do so are directed to [grub-git](https://aur.archlinux.org/packages/grub-git/) which does allow for this.
+If your root partition is on an unsupported file system, you must create a separate `/boot` partition with a supported file system. In some cases (such as XFS or NVMe devices) the development version of GRUB [grub-git](https://aur.archlinux.org/packages/grub-git/) has native support.
 
 ## BIOS systems
 

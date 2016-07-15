@@ -452,7 +452,7 @@ After making this change, reload the gpg-agent.
 
 It is possible to use the [Systemd/User](/index.php/Systemd/User "Systemd/User") facilities to start the agent.
 
-Create a systemd unit file:
+Create a user-specific systemd unit file:
 
  `~/.config/systemd/user/gpg-agent.service` 
 ```
@@ -462,7 +462,7 @@ IgnoreOnIsolate=true
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/gpg-agent --daemon
+ExecStart=/usr/bin/gpg-agent --options '%h/.gnupg/gpg-agent.conf' --daemon
 Restart=on-abort
 
 [Install]
@@ -516,7 +516,15 @@ fi
 
 ```
 
-Then set `SSH_AUTH_SOCK` so that SSH will use *gpg-agent* instead of *ssh-agent*:
+Then set `SSH_AUTH_SOCK` so that SSH will use *gpg-agent* instead of *ssh-agent*. To make sure each process can find your *gpg-agent* instance regardless of e.g. the type of shell it is child of use [pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables").
+
+ `~/.pam_environment` 
+```
+SSH_AGENT_PID	DEFAULT=
+SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+```
+
+Alternatively, depend on Bash:
 
  `~/.bashrc` 
 ```
@@ -530,7 +538,7 @@ fi
 
 **Note:** If you use non-default [GnuPG home directory](#Directory_location), run `gpgconf --create-socketdir` to create a socket directory under `/run/user/$UID/gnupg/`. Otherwise the socket will be placed in the GnuPG home directory.
 
-Also set the GPG TTY and refresh the TTY in case user has switched into an X session. Example:
+Also set the GPG_TTY and refresh the TTY in case user has switched into an X session as stated in `man gpg-agent`. For example:
 
  `~/.bashrc` 
 ```

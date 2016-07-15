@@ -69,7 +69,7 @@ There are 3 steps that need to be performed before you can develop Android appli
 
 **Note:** If you are running a 64-bit system, make sure the [multilib](/index.php/Multilib "Multilib") repository is enabled to avoid "error: target not found: lib32-zlib" error messages.
 
-**Note:** If you plan to install [Android Studio](/index.php/Android_Studio "Android Studio") and want the IDE to manage your SDK installation, you do not need to install these packages
+**Note:** If you plan to install [#Android Studio](#Android_Studio) and want the IDE to manage your SDK installation, you do not need to install these packages
 
 Before developing Android applications, you need to install the Android SDK, which is made of 3 distinct packages, all installable from [AUR](/index.php/AUR "AUR"):
 
@@ -118,7 +118,7 @@ $ newgrp sdkusers
 
 ### Android SDK platform API
 
-**Note:** If you plan to install [Android Studio](/index.php/Android_Studio "Android Studio") and want the IDE to handle your SDK, you don't need to install these packages
+**Note:** If you plan to install [#Android Studio](#Android_Studio) and want the IDE to handle your SDK, you don't need to install these packages
 
 Install the desired Android SDK Platform package from the [AUR](/index.php/AUR "AUR"):
 
@@ -586,7 +586,7 @@ You can install Debian like in this [thread](http://forum.xda-developers.com/sho
 
 ### Android Studio: Android Virtual Devices show 'failed to load'.
 
-Make sure you've exported the variable `ANDROID_HOME` as explained in [Android Studio](/index.php/Android_Studio "Android Studio").
+Make sure you've exported the variable `ANDROID_HOME` as explained in [#Android Studio](#Android_Studio).
 
 ### aapt: No such file or directory
 

@@ -7,6 +7,7 @@
     *   [1.2 HTTPS Setup](#HTTPS_Setup)
         *   [1.2.1 With Subsonic](#With_Subsonic)
         *   [1.2.2 With Nginx](#With_Nginx)
+        *   [1.2.3 With LightTPD](#With_LightTPD)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 FLAC playback](#FLAC_playback)
     *   [2.2 UTF-8 file names not added to the database](#UTF-8_file_names_not_added_to_the_database)
@@ -80,6 +81,72 @@ SUBSONIC_CONTEXT_PATH=/subsonic
 SUBSONIC_HOST=127.0.0.1
 SUBSONIC_PORT=4040
 SUBSONIC_HTTPS_PORT=0
+```
+
+#### With LightTPD
+
+The following configuration makes LightTPD accept HTTPS connections and proxy them to localhost. An advantage of this approach is that Subsonic does not need to be aware of SSL settings, and it can be left with default settings. This configuration is also designed to play well with the case where LightTPD is hosting multiple sites at a single IP address.
+
+ `/etc/lighttpd.conf` 
+```
+# Documentation at: [http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs](http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs)
+# Check for errors: lighttpd -t -f /path/to/config
+server.modules += ("mod_proxy", "mod_redirect")
+server.username       =  "http"
+server.groupname      =  "http"
+server.pid-file       =  "/var/run/lighttpd.pid"
+server.errorlog       =  "/var/log/lighttpd/error.log"
+server.document-root  = "/srv/http/"
+index-file.names = ("index.html")
+mimetype.assign = (
+    ".avi"       =>  "video/x-msvideo",
+    ".css"       =>  "text/css",
+    ".html"      =>  "text/html",
+    ".jpg"       =>  "image/jpeg",
+    ".log"        =>  "text/plain",
+    ".markdown"  =>  "text/plain",
+    ".md"        =>  "text/plain",  # markdown
+    ".mkv"       =>  "video/x-matroska",
+    ".mp4"       =>  "video/mp4",
+    ".nfo"        =>  "text/plain",
+    ".png"       =>  "image/png",
+    ".rc"        =>  "text/plain",
+    ".rst"       =>  "text/plain",  # reStructuredText
+    ".svg"       =>  "image/svg+xml",
+    ".txt"       =>  "text/plain",
+    ".xml"       =>  "application/xml",
+    ""           =>  "application/octet-stream"
+)
+
+$SERVER["socket"] == ":80" {
+    $HTTP["host"] == "subsonic.example.com" {
+        url.redirect = ("^/(.*)" => "[https://subsonic.example.com/$1](https://subsonic.example.com/$1)")
+    }
+}
+
+$SERVER["socket"] == ":443" {
+    # A default ssl.pemfile is required. It can be overridden in specific host
+    # blocks. It *may* also be possible to override ssl.ca-file, but this has
+    # not been tested.
+    ssl.engine  = "enable"
+    ssl.use-sslv3 = "disable"
+    ssl.ca-file = "/etc/lighttpd/ssl/GandiStandardSSLCA2.pem"
+    ssl.pemfile = "/etc/lighttpd/ssl/subsonic.example.com.pem"
+
+    $HTTP["host"] == "subsonic.example.com" {
+        ssl.pemfile = "/etc/lighttpd/ssl/subsonic.example.com.pem"
+        proxy.server = (
+            # This proxying is completely transparent to clients. We load
+            # balance requests for this path or extension...
+            "" => (
+                # ... among the following servers. The string naming each server
+                # is just a label, and it has little functional impact. (It
+                # might affect log file output?)
+                ("host" => "127.0.0.1", "port" => 4040)
+            )
+        )
+    }
+}
 ```
 
 ## Troubleshooting

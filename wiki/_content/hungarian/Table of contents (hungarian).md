@@ -1,4 +1,4 @@
-| [Magyar](/index.php/Category:Magyar "Category:Magyar") <small>(14)</small> |
+| [Magyar](/index.php/Category:Magyar "Category:Magyar") <small>(9)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch_(Magyar) "Category:About Arch (Magyar)") <small>(1)</small> |
 | <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(Magyar) "Category:ArchWiki (Magyar)") <small>(2)</small> |
 | <small>2.</small> [File systems](/index.php/Category:File_systems_(Magyar) "Category:File systems (Magyar)") <small>(5)</small> |

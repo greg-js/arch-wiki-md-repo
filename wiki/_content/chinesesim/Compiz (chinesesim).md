@@ -1,8 +1,8 @@
 **翻译状态：** 本文是英文页面 [Compiz](/index.php/Compiz "Compiz") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-08-14，点击[这里](https://wiki.archlinux.org/index.php?title=Compiz&diff=0&oldid=328840)可以查看翻译后英文页面的改动。
 
-来源于维基百科[Compiz条目](https://zh.wikipedia.org/wiki/Compiz)的解释:
+来自[维基百科](https://zh.wikipedia.org/wiki/Compiz)的解释:
 
-	*Compiz 是第一个由 [OpenGL](https://zh.wikipedia.org/wiki/OpenGL) 驱动的运行于 [X Window System](https://zh.wikipedia.org/wiki/X_Window_System) 上的混合窗口管理器 。Compiz的混合渲染能力使其可以在窗口管理过程中实现多种视觉效果，比如在矩形虚拟桌面上的窗口最小化。*
+	Compiz 是第一个由 [OpenGL](https://zh.wikipedia.org/wiki/OpenGL) 驱动的运行于 [X Window System](https://zh.wikipedia.org/wiki/X_Window_System) 上的混合窗口管理器 。Compiz的混合渲染能力使其可以在窗口管理过程中实现多种视觉效果，比如在矩形虚拟桌面上的窗口最小化。
 
 ## Contents
 
@@ -77,11 +77,30 @@
 
 ### 安装0.9系列版本
 
-**注意:** 从 Compiz 0.9.8 开始，所有的Compiz组件（包括CCSM、插件、gtk-window-decorator等）都是当作一个单独项目来开发的。也就是说一个安装包就包括了Compiz的全部组件。
+**注意:**
 
-你可以安装[compiz](https://aur.archlinux.org/packages/compiz/)或[compiz-bzr](https://aur.archlinux.org/packages/compiz-bzr/)，其中[compiz-bzr](https://aur.archlinux.org/packages/compiz-bzr/)是开发版本。
+*   从 Compiz 0.9.8 开始，所有的Compiz组件（包括CCSM、插件、gtk-window-decorator等）都是当作一个单独项目来开发的。也就是说一个安装包就包括了Compiz的全部组件。
+*   想要带 *emerald-themes*的*emerald0.9*, 先安装[emerald0.9](https://aur.archlinux.org/packages/emerald0.9/) 再安装 [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/). 相反的做法会导致依赖关系错误而冲突.
 
-Emerald窗口装饰器可以从下面任意一个包安装：[emerald0.9](https://aur.archlinux.org/packages/emerald0.9/)。 附加的Emerald主题可以从[emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)包中安装。
+必需的:
+
+*   **Compiz** — OpenGL合成管理器与CCSM,插件和GTK窗口装饰器.
+
+	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/)
+
+可选的:
+
+*   **Emerald** — Compiz的独立窗口装饰器
+
+	[http://www.compiz.org/](http://www.compiz.org/) || [emerald0.9](https://aur.archlinux.org/packages/emerald0.9/)
+
+*   **Emerald Themes** — Emerald 窗口装饰的额外主题.
+
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)
+
+*   **Fusion Icon** — Compiz的托盘小程序并且可以切换不同的窗口管理器以及装饰器.
+
+	[https://github.com/kozec/fusion-icon-gtk3](https://github.com/kozec/fusion-icon-gtk3) || [fusion-icon0.9](https://aur.archlinux.org/packages/fusion-icon0.9/)
 
 ### 安装0.8系列版本
 
@@ -122,26 +141,25 @@ Emerald窗口装饰器可以从 [emerald](https://aur.archlinux.org/packages/eme
 
 ### 启用重要的插件
 
+**提示:**
+
+*   *译者注* 为了大家看得方便，我把插件的名字保留了英文。因为有时候CCSM里面也会显示英文的插件名称。
+*   *译者注* 插件的中文名称可能翻译得不准确。
+
 在开始使用Compiz之前， 你需要激活一些提供窗口管理基本功能的插件。 要不然你可能连拖拽窗口都困难，更别说缩放和关闭了。
 
-重要的插件列在了下面：
+重要的插件:
 
-**提示:** *译者注* 为了大家看得方便，我把插件的名字保留了英文。因为有时候CCSM里面也会显示英文的插件名称。
+*   Window Decoration（*窗口装饰*） —— 提供窗口边框（上一节咱已经讨论过了）
+*   Move Window（*窗口移动*）
+*   Resize Window（*窗口缩放*）
+*   Place Windows（*窗口放置*） —— 设置关于窗口在屏幕上放置的选项
+*   Application Switcher（*程序切换*） —— 提供 Alt+Tab 开启的程序切换器（另外也有一些插件可以实现这个功能，而且具有不同的效果，比如 'Shift Switcher,' 'Static Application Switcher' 等等。并不是所有的切换器都是用 Alt+Tab 快捷键）。
 
-**提示:** *译者注* 插件的中文名称可能翻译得不准确。
+想要在不同的[视区](/index.php/Compiz_configuration#Workspaces_and_Viewports "Compiz configuration")之间切换，你需要激活以下其中一个插件：
 
-*   窗口装饰（*Window Decoration*） —— 提供窗口边框（上一节咱已经讨论过了）
-*   窗口移动（*Move Window*）
-*   窗口缩放（*Resize Window*）
-*   窗口放置（*Place Windows*） —— 设置关于窗口在屏幕上放置的选项
-*   程序切换器（*Application Switcher*） —— 提供 Alt+Tab 开启的程序切换器（另外也有一些插件可以实现这个功能，而且具有不同的效果，比如 'Shift Switcher,' 'Static Application Switcher' 等等。并不是所有的切换器都是用 Alt+Tab 快捷键）。
-*   OpenGL —— （只在CCSM 0.9版本中可见）。
-*   合成（*Composite*） —— （只在CCSM 0.9版本中可见）。
-
-想要在不同的”视口“（[viewports](/index.php/Compiz_configuration#Workspaces_and_Viewports "Compiz configuration")）之间切换，你需要激活以下其中一个插件：
-
-*   桌面立方(*Desktop Cube*）和旋转立方体（*Rotate Cube*） —— 提供一个可以浮空的立方体，每个面都是一个视口（*虚拟桌面*）。
-*   桌面墙壁（*Desktop Wall*） —— 视口全部并排陈列在一起（非常类似于[Cinnamon](/index.php/Cinnamon "Cinnamon") 和 [GNOME Shell](/index.php/GNOME_Shell "GNOME Shell") 中的窗口切换效果）。
+*   Desktop Cube（*立体桌面*）和Rotate Cube（*旋转立体*） —— 提供一个可以浮空的立方体，每个面都是一个视口（*虚拟桌面*）。
+*   Desktop Wall（*桌面墙壁*） —— 视口全部并排陈列在一起（非常类似于[Cinnamon](/index.php/Cinnamon "Cinnamon") 和 [GNOME Shell](/index.php/GNOME_Shell "GNOME Shell") 中的窗口切换效果）。
 *   Expo —— 当鼠标移动到屏幕左上角的时候，显示出全部的视口和窗口（*就是Ubuntu Unity里面那种！！*）。这个插件可以单独激活，或者是和前两个一起用不会冲突。
 
 ### 启动 Compiz

@@ -44,6 +44,30 @@ $ pacman -Ss firefox-i18n
 
 ```
 
+Otras alternativas incluyen:
+
+*   **Firefox Extended Support Release** — versión de soporte extendido
+
+	[https://www.mozilla.org/firefox/organizations/](https://www.mozilla.org/firefox/organizations/) || [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)
+
+*   **Firefox Beta** — versión en desarrollo
+
+	[https://www.mozilla.org/firefox/channel/#beta](https://www.mozilla.org/firefox/channel/#beta) || [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
+
+*   **Firefox Developer Edition/Aurora** — para desarrolladores
+
+	[https://www.mozilla.org/firefox/channel/#developer](https://www.mozilla.org/firefox/channel/#developer) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/)
+
+*   **Firefox Nightly** — creadas diariamente para pruebas
+
+	[https://nightly.mozilla.org/](https://nightly.mozilla.org/) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
+
+*   **Firefox KDE** — Version de Firefox que incorpora un parche de OpenSUSE para una mejor intregración con KDE de la que es posible con plugis de Firefox
+
+	[https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox](https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)
+
+Aquí pueden dar un vistazo a las diferentes [versiones](https://wiki.mozilla.org/Releases) de Firefox.
+
 ## Add-ons
 
 Firefox es bien conocido por su gran cantidad de add-ons que pueden ser empleados para añadir nuevas características o modificar el comportamiento de las características existentes de Firefox. Puede encontrar nuevos add-ons o administrar los instalados mediante el "Administrador de Add-ons" del propio Firefox.

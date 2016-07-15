@@ -16,17 +16,9 @@ Visitare la [Tabella dei Contenuti](/index.php/Table_of_contents_(Italiano) "Tab
 
 	Risassume le similitudini e le differenze tra Arch e le altre distribuzioni.
 
-	[Arch Linux press coverage](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
-
-	Cosa dicono di noi.
-
-	[Guida per Principianti](/index.php/Guida_per_Principianti "Guida per Principianti")
-
-	Guida dettagliata attraverso l'intero processo di installazione e configurazione di Arch Linux.
-
 	[Guida all'installazione](/index.php/Guida_all%27installazione "Guida all'installazione")
 
-	Guida di installazione più concisa destinata agli utenti esperti di Arch Linux.
+	Guida attraverso il processo di installazione e configurazione di Arch Linux.
 
 	[Raccomandazioni Generali](/index.php/Raccomandazioni_Generali "Raccomandazioni Generali")
 

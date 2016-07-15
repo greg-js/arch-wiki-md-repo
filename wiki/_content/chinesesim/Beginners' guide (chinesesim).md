@@ -14,7 +14,7 @@
 *   [2 准备存储设备](#.E5.87.86.E5.A4.87.E5.AD.98.E5.82.A8.E8.AE.BE.E5.A4.87)
     *   [2.1 识别设备](#.E8.AF.86.E5.88.AB.E8.AE.BE.E5.A4.87)
     *   [2.2 分区工具](#.E5.88.86.E5.8C.BA.E5.B7.A5.E5.85.B7)
-    *   [2.3 格式化文件系统并使用swap](#.E6.A0.BC.E5.BC.8F.E5.8C.96.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E5.B9.B6.E4.BD.BF.E7.94.A8swap)
+    *   [2.3 格式化分区](#.E6.A0.BC.E5.BC.8F.E5.8C.96.E5.88.86.E5.8C.BA)
     *   [2.4 挂载分区](#.E6.8C.82.E8.BD.BD.E5.88.86.E5.8C.BA)
 *   [3 安装](#.E5.AE.89.E8.A3.85)
     *   [3.1 选择安装镜像](#.E9.80.89.E6.8B.A9.E5.AE.89.E8.A3.85.E9.95.9C.E5.83.8F)
@@ -26,15 +26,14 @@
     *   [4.4 终端字体和键盘映射](#.E7.BB.88.E7.AB.AF.E5.AD.97.E4.BD.93.E5.92.8C.E9.94.AE.E7.9B.98.E6.98.A0.E5.B0.84)
     *   [4.5 时间](#.E6.97.B6.E9.97.B4)
     *   [4.6 Initramfs](#Initramfs)
-    *   [4.7 设置 Root 密码](#.E8.AE.BE.E7.BD.AE_Root_.E5.AF.86.E7.A0.81)
-    *   [4.8 bootloader](#bootloader)
-    *   [4.9 网络配置](#.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
-        *   [4.9.1 主机名](#.E4.B8.BB.E6.9C.BA.E5.90.8D)
-        *   [4.9.2 有线网络](#.E6.9C.89.E7.BA.BF.E7.BD.91.E7.BB.9C)
-        *   [4.9.3 无线网络](#.E6.97.A0.E7.BA.BF.E7.BD.91.E7.BB.9C)
-    *   [4.10 设置 root 密码](#.E8.AE.BE.E7.BD.AE_root_.E5.AF.86.E7.A0.81_2)
-    *   [4.11 卸载分区并重启系统](#.E5.8D.B8.E8.BD.BD.E5.88.86.E5.8C.BA.E5.B9.B6.E9.87.8D.E5.90.AF.E7.B3.BB.E7.BB.9F)
-*   [5 安装之后](#.E5.AE.89.E8.A3.85.E4.B9.8B.E5.90.8E)
+    *   [4.7 引导加载程序](#.E5.BC.95.E5.AF.BC.E5.8A.A0.E8.BD.BD.E7.A8.8B.E5.BA.8F)
+    *   [4.8 网络配置](#.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
+        *   [4.8.1 主机名](#.E4.B8.BB.E6.9C.BA.E5.90.8D)
+        *   [4.8.2 有线网络](#.E6.9C.89.E7.BA.BF.E7.BD.91.E7.BB.9C)
+        *   [4.8.3 无线网络](#.E6.97.A0.E7.BA.BF.E7.BD.91.E7.BB.9C)
+    *   [4.9 设置 root 密码](#.E8.AE.BE.E7.BD.AE_root_.E5.AF.86.E7.A0.81)
+*   [5 卸载分区并重启系统](#.E5.8D.B8.E8.BD.BD.E5.88.86.E5.8C.BA.E5.B9.B6.E9.87.8D.E5.90.AF.E7.B3.BB.E7.BB.9F)
+*   [6 安装之后](#.E5.AE.89.E8.A3.85.E4.B9.8B.E5.90.8E)
 
 ## 准备
 
@@ -171,45 +170,45 @@ Arch 安装盘中包含了多种 [分区工具](/index.php/Partitioning#Partitio
 | UEFI/GPT 分区示例 |
 | 挂载点 | 分区 | [分区类型 (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | 启动标记 | 建议大小 |
 | /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | 260–512 MiB |
-| [SWAP] | /dev/sd**x**2 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| / | /dev/sd**x**3 | Linux | No | Remainder of the device |
+| [SWAP] | /dev/sd**x**2 | Linux [swap](/index.php/Swap "Swap") | No | 大于 512 MiB |
+| / | /dev/sd**x**3 | Linux | No | 所有剩余空间 |
 | MBR/BIOS example layout |
-| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Bootable flag | Suggested size |
-| [SWAP] | /dev/sd**x**1 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| / | /dev/sd**x**2 | Linux | Yes | Remainder of the device |
+| 挂载点 | 分区 | [分区类型](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | 启动标记 | 建议大小 |
+| [SWAP] | /dev/sd**x**1 | Linux [swap](/index.php/Swap "Swap") | No | 大于 512 MiB |
+| / | /dev/sd**x**2 | Linux | Yes | 所有剩余空间 |
 
-### 格式化文件系统并使用swap
+### 格式化分区
 
-如果您想实现与 Windows 共存的双启动，在 UEFI/GPT 系统上不要格式化 UEFI 分区，因为这个分区包含 Windows *.efi* 启动文件。而且 Arch 应该按照同样的固件启动模式和本区组合。详见[Dual boot with Windows#Important information](/index.php/Dual_boot_with_Windows#Important_information "Dual boot with Windows").
+**警告:** 如果您想实现与 Windows 共存的双启动，在 UEFI/GPT 系统上不要格式化 UEFI 分区，因为这个分区包含 Windows *.efi* 启动文件。而且 Arch 应该按照同样的固件启动模式和本区组合。详见[Dual boot with Windows#Important information](/index.php/Dual_boot_with_Windows#Important_information "Dual boot with Windows").
 
 仅仅分区是不够的，还需要 `mkfs` 将分区格式化为指定的[文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)")。
 
 先查看所有分区：
 
 ```
-# lsblk /dev/sd*x*
+# lsblk /dev/sd**x**
 
 ```
 
 建议用 `ext4` 文件系统格式化其它分区：
 
 ```
-# mkfs.ext4 /dev/sd*xY*
+# mkfs.ext4 /dev/sd**xy**
 
 ```
 
 若您分了一个 [swap](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Swap (简体中文)") 区，也不要忘了格式化并启用它：
 
 ```
-# mkswap /dev/sda*X*
-# swapon /dev/sda*X*
+# mkswap /dev/sda**xy**
+# swapon /dev/sda**xy**
 
 ```
 
 如果新创建了 UEFI 系统分区，需要格式化成 `fat32` 或 `vfat32` 文件系统，否则无法启动。Windows 双启动系统不要再格式化。
 
 ```
-# mkfs.vfat -F32 /dev/sd*xY*
+# mkfs.vfat -F32 /dev/sd**xy**
 
 ```
 
@@ -379,16 +378,7 @@ FONT=lat9w-16
 
 ```
 
-### 设置 Root 密码
-
-用 `passwd` 设置一个 root 密码：
-
-```
-# passwd
-
-```
-
-### bootloader
+### 引导加载程序
 
 [启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")页面介绍了可用选项和配置方法。包括 [grub](/index.php/Grub "Grub") (BIOS/UEFI), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (UEFI) 和 [syslinux](/index.php/Syslinux "Syslinux") (BIOS)等.
 
@@ -397,8 +387,6 @@ Intel CPU 也需要安装 [intel-ucode](https://www.archlinux.org/packages/?name
 ### 网络配置
 
 该过程与[#建立网络连接](#.E5.BB.BA.E7.AB.8B.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5)基本一致，只不过该配置在新系统每次开机时都会自动生效。
-
-**注意:** 了解更多网络配置相关信息，请访问 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)") 及 [Wireless network configuration (简体中文)](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)").
 
 #### 主机名
 
@@ -448,7 +436,7 @@ Intel CPU 也需要安装 [intel-ucode](https://www.archlinux.org/packages/?name
 
 ```
 
-### 卸载分区并重启系统
+## 卸载分区并重启系统
 
 离开 chroot 环境：
 
