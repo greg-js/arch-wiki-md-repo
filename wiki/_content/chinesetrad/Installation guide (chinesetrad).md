@@ -86,7 +86,7 @@
 	 `# ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime` 
 
 *   取消 `/etc/locale.gen` 內的註解以選擇語系，並使用 `locale-gen` 產生它們。
-*   在 `/etc/locale.conf` 內設定[本地化](/index.php/Locale#Setting_system-wide_locale "Locale")。
+*   在 `/etc/locale.conf` 內設定[本地化](/index.php/Locale#Setting_the_system_locale "Locale")。
 *   在 `/etc/vconsole.conf` 內新增[終端機鍵盤布局](/index.php/KEYMAP "KEYMAP")與[終端機字型](/index.php/Fonts_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E7.B5.82.E7.AB.AF.E6.A9.9F.E5.AD.97.E5.9E.8B "Fonts (正體中文)")的偏好設定。
 *   依需求設定 `/etc/mkinitcpio.conf` (參閱 [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") )，並建立一個初始 RAM 碟：
 

@@ -43,7 +43,7 @@ ISO 이미지를 다운로드받은 후에는 반드시 전자서명 키를 이�
 
 ### 파티션 포맷
 
-자세한 사항은 [File systems](/index.php/File_systems#Create_a_filesystem "File systems")문서를 참고하십시오. 스왑을 사용하고 싶다면 [Swap](/index.php/Swap "Swap")문서를 보십시오.
+자세한 사항은 [File systems](/index.php/File_systems#Create_a_file_system "File systems")문서를 참고하십시오. 스왑을 사용하고 싶다면 [Swap](/index.php/Swap "Swap")문서를 보십시오.
 
 ### 파티션 마운트
 

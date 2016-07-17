@@ -93,9 +93,8 @@ With [GDM](/index.php/GDM "GDM"), [XDM](/index.php/XDM "XDM"), [KDM](/index.php/
 
  `~/.xinitrc` 
 ```
-if [ -s ~/.Xmodmap ]; then
-    xmodmap ~/.Xmodmap
-fi
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+
 ```
 
 Alternatively, edit the global startup script `/etc/X11/xinit/xinitrc`.

@@ -30,7 +30,7 @@
 
 **Note:** The PlayOnLinux script is out of date and may not work. There is a [beta script](https://www.playonlinux.com/en/app-1135-League_Of_Legends.html#contributions) that is reported to work.
 
-To install League of Legends using this method, [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) must be installed in the system. When you first run it, [PlayOnLinux](https://wiki.archlinux.org/index.php/Wine#PlayOnLinux.2FPlayOnMac) will install some necessary fonts. Afterwards, click Install, check the "testing box" and then search for "League of Legends". The rest is self-explanatory.
+To install League of Legends using this method, [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) must be installed in the system. When you first run it, [PlayOnLinux](/index.php/Wine#PlayOnLinux.2FPlayOnMac "Wine") will install some necessary fonts. Afterwards, click Install, check the "testing box" and then search for "League of Legends". The rest is self-explanatory.
 
 ### AUR Package
 

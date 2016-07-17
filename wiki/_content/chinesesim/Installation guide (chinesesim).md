@@ -109,7 +109,7 @@
 
 编辑 `/etc/locale.gen`，反注释需要的 locale，并用 `locale-gen` 生成正确的 locale 信息。
 
-在 `/etc/locale.conf` 里设置系统[locale](/index.php/Locale#Setting_system-wide_locale "Locale")偏好；单个用户请设置`$HOME/.config/locale.conf`:
+在 `/etc/locale.conf` 里设置系统[locale](/index.php/Locale#Setting_the_system_locale "Locale")偏好；单个用户请设置`$HOME/.config/locale.conf`:
 
 ```
 # echo LANG=*your_locale* > /etc/locale.conf

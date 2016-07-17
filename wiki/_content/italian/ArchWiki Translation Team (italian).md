@@ -144,7 +144,6 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [PulseAudio (Italiano)](/index.php/PulseAudio_(Italiano) "PulseAudio (Italiano)") | 2012-02-10 | Hilinus | n/a | n/a |
 | [PulseAudio/Examples (Italiano)](/index.php/PulseAudio/Examples_(Italiano) "PulseAudio/Examples (Italiano)") | 2012-02-10 | Hilinus | n/a | n/a |
 | [RAID (Italiano)](/index.php/RAID_(Italiano) "RAID (Italiano)") | 2012-11-04 | maveloth | n/a | n/a |
-| [Rc.conf (Italiano)](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)") | 2012-02-07 | 4javier | n/a | n/a |
 | [Start X at Login (Italiano)](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)") | 2011-09-20 | Hilinus | [Far partire X al boot](/index.php/Far_partire_X_al_boot "Far partire X al boot") | n/a |
 | [Syslinux (Italiano)](/index.php/Syslinux_(Italiano) "Syslinux (Italiano)") | 2012-08-01 | Hilinus | n/a | n/a |
 | [Systemd (Italiano)](/index.php/Systemd_(Italiano) "Systemd (Italiano)") | 2013-02-16 | ambro | n/a | n/a |

@@ -9,53 +9,46 @@
 ## Contents
 
 *   [1 التجهيز](#.D8.A7.D9.84.D8.AA.D8.AC.D9.87.D9.8A.D8.B2)
-*   [2 الإقلاع إلى وسيط التثبيت](#.D8.A7.D9.84.D8.A5.D9.82.D9.84.D8.A7.D8.B9_.D8.A5.D9.84.D9.89_.D9.88.D8.B3.D9.8A.D8.B7_.D8.A7.D9.84.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA)
-    *   [2.1 وضع UEFI](#.D9.88.D8.B6.D8.B9_UEFI)
-    *   [2.2 ضبط تنسيق لوحة المفاتيح keyboard layout](#.D8.B6.D8.A8.D8.B7_.D8.AA.D9.86.D8.B3.D9.8A.D9.82_.D9.84.D9.88.D8.AD.D8.A9_.D8.A7.D9.84.D9.85.D9.81.D8.A7.D8.AA.D9.8A.D8.AD_keyboard_layout)
-    *   [2.3 الإتصال بالإنترنت](#.D8.A7.D9.84.D8.A5.D8.AA.D8.B5.D8.A7.D9.84_.D8.A8.D8.A7.D9.84.D8.A5.D9.86.D8.AA.D8.B1.D9.86.D8.AA)
-    *   [2.4 تحديث وقت النظام](#.D8.AA.D8.AD.D8.AF.D9.8A.D8.AB_.D9.88.D9.82.D8.AA_.D8.A7.D9.84.D9.86.D8.B8.D8.A7.D9.85)
-*   [3 تجهيز وسائط التخزين](#.D8.AA.D8.AC.D9.87.D9.8A.D8.B2_.D9.88.D8.B3.D8.A7.D8.A6.D8.B7_.D8.A7.D9.84.D8.AA.D8.AE.D8.B2.D9.8A.D9.86)
-    *   [3.1 تحديد الأجهزة](#.D8.AA.D8.AD.D8.AF.D9.8A.D8.AF_.D8.A7.D9.84.D8.A3.D8.AC.D9.87.D8.B2.D8.A9)
-    *   [3.2 أنماط جدولة التقسيم Partition table types](#.D8.A3.D9.86.D9.85.D8.A7.D8.B7_.D8.AC.D8.AF.D9.88.D9.84.D8.A9_.D8.A7.D9.84.D8.AA.D9.82.D8.B3.D9.8A.D9.85_Partition_table_types)
-    *   [3.3 أدوات التقسيم](#.D8.A3.D8.AF.D9.88.D8.A7.D8.AA_.D8.A7.D9.84.D8.AA.D9.82.D8.B3.D9.8A.D9.85)
-        *   [3.3.1 استخدام parted بالوضع التفاعلي](#.D8.A7.D8.B3.D8.AA.D8.AE.D8.AF.D8.A7.D9.85_parted_.D8.A8.D8.A7.D9.84.D9.88.D8.B6.D8.B9_.D8.A7.D9.84.D8.AA.D9.81.D8.A7.D8.B9.D9.84.D9.8A)
-    *   [3.4 إنشاء جدول تقسيم جديد](#.D8.A5.D9.86.D8.B4.D8.A7.D8.A1_.D8.AC.D8.AF.D9.88.D9.84_.D8.AA.D9.82.D8.B3.D9.8A.D9.85_.D8.AC.D8.AF.D9.8A.D8.AF)
-    *   [3.5 مخطط التقسيم](#.D9.85.D8.AE.D8.B7.D8.B7_.D8.A7.D9.84.D8.AA.D9.82.D8.B3.D9.8A.D9.85)
-        *   [3.5.1 أمثلة UEFI/GPT](#.D8.A3.D9.85.D8.AB.D9.84.D8.A9_UEFI.2FGPT)
-        *   [3.5.2 أمثلة BIOS/MBR](#.D8.A3.D9.85.D8.AB.D9.84.D8.A9_BIOS.2FMBR)
-    *   [3.6 تهيئة أنظمة الملفات وتفعيل مساحة التبديل swap](#.D8.AA.D9.87.D9.8A.D8.A6.D8.A9_.D8.A3.D9.86.D8.B8.D9.85.D8.A9_.D8.A7.D9.84.D9.85.D9.84.D9.81.D8.A7.D8.AA_.D9.88.D8.AA.D9.81.D8.B9.D9.8A.D9.84_.D9.85.D8.B3.D8.A7.D8.AD.D8.A9_.D8.A7.D9.84.D8.AA.D8.A8.D8.AF.D9.8A.D9.84_swap)
-*   [4 التثبيت](#.D8.A7.D9.84.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA)
-    *   [4.1 اختيار المرايا](#.D8.A7.D8.AE.D8.AA.D9.8A.D8.A7.D8.B1_.D8.A7.D9.84.D9.85.D8.B1.D8.A7.D9.8A.D8.A7)
-    *   [4.2 تثبيت الحزم الأساسيّة](#.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA_.D8.A7.D9.84.D8.AD.D8.B2.D9.85_.D8.A7.D9.84.D8.A3.D8.B3.D8.A7.D8.B3.D9.8A.D9.91.D8.A9)
-*   [5 التكوين Configuration](#.D8.A7.D9.84.D8.AA.D9.83.D9.88.D9.8A.D9.86_Configuration)
-    *   [5.1 fstab](#fstab)
-    *   [5.2 تغيير الجذر Change root](#.D8.AA.D8.BA.D9.8A.D9.8A.D8.B1_.D8.A7.D9.84.D8.AC.D8.B0.D8.B1_Change_root)
-    *   [5.3 الإعدادات المحليّة Locale](#.D8.A7.D9.84.D8.A5.D8.B9.D8.AF.D8.A7.D8.AF.D8.A7.D8.AA_.D8.A7.D9.84.D9.85.D8.AD.D9.84.D9.8A.D9.91.D8.A9_Locale)
-    *   [5.4 الوقت](#.D8.A7.D9.84.D9.88.D9.82.D8.AA)
-    *   [5.5 Initramfs](#Initramfs)
-    *   [5.6 تثبيت محمّل الإقلاع](#.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA_.D9.85.D8.AD.D9.85.D9.91.D9.84_.D8.A7.D9.84.D8.A5.D9.82.D9.84.D8.A7.D8.B9)
-        *   [5.6.1 UEFI/GPT](#UEFI.2FGPT)
-        *   [5.6.2 BIOS/MBR](#BIOS.2FMBR)
-    *   [5.7 ضبط الشبكة](#.D8.B6.D8.A8.D8.B7_.D8.A7.D9.84.D8.B4.D8.A8.D9.83.D8.A9)
-        *   [5.7.1 Hostname](#Hostname)
-        *   [5.7.2 سلكي](#.D8.B3.D9.84.D9.83.D9.8A)
-        *   [5.7.3 لاسلكي](#.D9.84.D8.A7.D8.B3.D9.84.D9.83.D9.8A)
-*   [6 إلغاء توسيع الأقسام وإعادة التشغيل](#.D8.A5.D9.84.D8.BA.D8.A7.D8.A1_.D8.AA.D9.88.D8.B3.D9.8A.D8.B9_.D8.A7.D9.84.D8.A3.D9.82.D8.B3.D8.A7.D9.85_.D9.88.D8.A5.D8.B9.D8.A7.D8.AF.D8.A9_.D8.A7.D9.84.D8.AA.D8.B4.D8.BA.D9.8A.D9.84)
-*   [7 ما بعد التثبيت](#.D9.85.D8.A7_.D8.A8.D8.B9.D8.AF_.D8.A7.D9.84.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA)
+    *   [1.1 وضع UEFI](#.D9.88.D8.B6.D8.B9_UEFI)
+    *   [1.2 ضبط تنسيق لوحة المفاتيح keyboard layout](#.D8.B6.D8.A8.D8.B7_.D8.AA.D9.86.D8.B3.D9.8A.D9.82_.D9.84.D9.88.D8.AD.D8.A9_.D8.A7.D9.84.D9.85.D9.81.D8.A7.D8.AA.D9.8A.D8.AD_keyboard_layout)
+    *   [1.3 الإتصال بالإنترنت](#.D8.A7.D9.84.D8.A5.D8.AA.D8.B5.D8.A7.D9.84_.D8.A8.D8.A7.D9.84.D8.A5.D9.86.D8.AA.D8.B1.D9.86.D8.AA)
+    *   [1.4 تحديث وقت النظام](#.D8.AA.D8.AD.D8.AF.D9.8A.D8.AB_.D9.88.D9.82.D8.AA_.D8.A7.D9.84.D9.86.D8.B8.D8.A7.D9.85)
+*   [2 تجهيز وسائط التخزين](#.D8.AA.D8.AC.D9.87.D9.8A.D8.B2_.D9.88.D8.B3.D8.A7.D8.A6.D8.B7_.D8.A7.D9.84.D8.AA.D8.AE.D8.B2.D9.8A.D9.86)
+    *   [2.1 تحديد الأجهزة](#.D8.AA.D8.AD.D8.AF.D9.8A.D8.AF_.D8.A7.D9.84.D8.A3.D8.AC.D9.87.D8.B2.D8.A9)
+    *   [2.2 أنماط جدولة التقسيم Partition table types](#.D8.A3.D9.86.D9.85.D8.A7.D8.B7_.D8.AC.D8.AF.D9.88.D9.84.D8.A9_.D8.A7.D9.84.D8.AA.D9.82.D8.B3.D9.8A.D9.85_Partition_table_types)
+    *   [2.3 أدوات التقسيم](#.D8.A3.D8.AF.D9.88.D8.A7.D8.AA_.D8.A7.D9.84.D8.AA.D9.82.D8.B3.D9.8A.D9.85)
+        *   [2.3.1 استخدام parted بالوضع التفاعلي](#.D8.A7.D8.B3.D8.AA.D8.AE.D8.AF.D8.A7.D9.85_parted_.D8.A8.D8.A7.D9.84.D9.88.D8.B6.D8.B9_.D8.A7.D9.84.D8.AA.D9.81.D8.A7.D8.B9.D9.84.D9.8A)
+    *   [2.4 إنشاء جدول تقسيم جديد](#.D8.A5.D9.86.D8.B4.D8.A7.D8.A1_.D8.AC.D8.AF.D9.88.D9.84_.D8.AA.D9.82.D8.B3.D9.8A.D9.85_.D8.AC.D8.AF.D9.8A.D8.AF)
+    *   [2.5 مخطط التقسيم](#.D9.85.D8.AE.D8.B7.D8.B7_.D8.A7.D9.84.D8.AA.D9.82.D8.B3.D9.8A.D9.85)
+        *   [2.5.1 أمثلة UEFI/GPT](#.D8.A3.D9.85.D8.AB.D9.84.D8.A9_UEFI.2FGPT)
+        *   [2.5.2 أمثلة BIOS/MBR](#.D8.A3.D9.85.D8.AB.D9.84.D8.A9_BIOS.2FMBR)
+    *   [2.6 تهيئة أنظمة الملفات وتفعيل مساحة التبديل swap](#.D8.AA.D9.87.D9.8A.D8.A6.D8.A9_.D8.A3.D9.86.D8.B8.D9.85.D8.A9_.D8.A7.D9.84.D9.85.D9.84.D9.81.D8.A7.D8.AA_.D9.88.D8.AA.D9.81.D8.B9.D9.8A.D9.84_.D9.85.D8.B3.D8.A7.D8.AD.D8.A9_.D8.A7.D9.84.D8.AA.D8.A8.D8.AF.D9.8A.D9.84_swap)
+*   [3 التثبيت](#.D8.A7.D9.84.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA)
+    *   [3.1 اختيار المرايا](#.D8.A7.D8.AE.D8.AA.D9.8A.D8.A7.D8.B1_.D8.A7.D9.84.D9.85.D8.B1.D8.A7.D9.8A.D8.A7)
+    *   [3.2 تثبيت الحزم الأساسيّة](#.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA_.D8.A7.D9.84.D8.AD.D8.B2.D9.85_.D8.A7.D9.84.D8.A3.D8.B3.D8.A7.D8.B3.D9.8A.D9.91.D8.A9)
+*   [4 التكوين Configuration](#.D8.A7.D9.84.D8.AA.D9.83.D9.88.D9.8A.D9.86_Configuration)
+    *   [4.1 fstab](#fstab)
+    *   [4.2 تغيير الجذر Change root](#.D8.AA.D8.BA.D9.8A.D9.8A.D8.B1_.D8.A7.D9.84.D8.AC.D8.B0.D8.B1_Change_root)
+    *   [4.3 الإعدادات المحليّة Locale](#.D8.A7.D9.84.D8.A5.D8.B9.D8.AF.D8.A7.D8.AF.D8.A7.D8.AA_.D8.A7.D9.84.D9.85.D8.AD.D9.84.D9.8A.D9.91.D8.A9_Locale)
+    *   [4.4 الوقت](#.D8.A7.D9.84.D9.88.D9.82.D8.AA)
+    *   [4.5 Initramfs](#Initramfs)
+    *   [4.6 تثبيت محمّل الإقلاع](#.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA_.D9.85.D8.AD.D9.85.D9.91.D9.84_.D8.A7.D9.84.D8.A5.D9.82.D9.84.D8.A7.D8.B9)
+        *   [4.6.1 UEFI/GPT](#UEFI.2FGPT)
+        *   [4.6.2 BIOS/MBR](#BIOS.2FMBR)
+    *   [4.7 ضبط الشبكة](#.D8.B6.D8.A8.D8.B7_.D8.A7.D9.84.D8.B4.D8.A8.D9.83.D8.A9)
+        *   [4.7.1 Hostname](#Hostname)
+        *   [4.7.2 سلكي](#.D8.B3.D9.84.D9.83.D9.8A)
+        *   [4.7.3 لاسلكي](#.D9.84.D8.A7.D8.B3.D9.84.D9.83.D9.8A)
+*   [5 إلغاء توسيع الأقسام وإعادة التشغيل](#.D8.A5.D9.84.D8.BA.D8.A7.D8.A1_.D8.AA.D9.88.D8.B3.D9.8A.D8.B9_.D8.A7.D9.84.D8.A3.D9.82.D8.B3.D8.A7.D9.85_.D9.88.D8.A5.D8.B9.D8.A7.D8.AF.D8.A9_.D8.A7.D9.84.D8.AA.D8.B4.D8.BA.D9.8A.D9.84)
+*   [6 ما بعد التثبيت](#.D9.85.D8.A7_.D8.A8.D8.B9.D8.AF_.D8.A7.D9.84.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA)
 
 ## التجهيز
 
-يفترض أن يعمل آرتش لينكس على أي معالج بمعمارية [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) مع 256MB ذاكرة RAM كحد أدنى. التثبيت الأساسي مع كل الحزم من المجموعة [base](https://www.archlinux.org/groups/x86_64/base/) يتوقع أن يحتاج أقل من 800MB من مساحة القرص.
+يفترض أن يعمل آرتش لينكس على أي معالج بمعمارية [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) مع 256MB ذاكرة RAM كحد أدنى. يحتاج التثبيت الأساسي لكل الحزم من المجموعة [base](https://www.archlinux.org/groups/x86_64/base/) أقل من 800MB تقريبا من مساحة القرص.
 
-ألقي نظرة على [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") لمعلومات عن تنزيل وسيط التثبيت, وطرق إقلاعها على الجهاز المطلوب. هذا الدليل يفترض أنك تستخدم آخر إصدار.
+ألق نظرة على [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") لمعلومات عن تنزيل وسيط التثبيت, وطرق إقلاعها على الجهاز المطلوب. هذا يفترض الدليل أنك تستخدم آخر إصدار.
 
-## الإقلاع إلى وسيط التثبيت
-
-اجعل الإقلاع يتم من وسيط تثبيت Arch. يتم ذلك عادة بالضغط على مفتاح خلال المرحلة [POST](https://en.wikipedia.org/wiki/Power-on_self_test "wikipedia:Power-on self test"), كما هو مبين على شاشة البدأ. اطّلع على دليل لوحتك الأم motherboard لمزيد من التفاصيل.
-
-عندما تظهر قائمة Arch, اختر *Boot Arch Linux* واضغط `Enter` للدخول إلى بيئة التثبيت. انظر [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) لقائمة [boot parameters](/index.php/Kernel_parameters#Configuration "Kernel parameters").
-
-ستدخل بصلاحيات المستخدم الجذر ويظهر لك محث الصدفة [Zsh](/index.php/Zsh "Zsh"). *Zsh* يقدم ميزة [إتمام تلقائي](http://zsh.sourceforge.net/Guide/zshguide06.html) متقدمة ومزايا آخرى كجزء من [grml config](http://grml.org/zsh/). ملفات التكوين configuration files موجودة في `/etc`, ويُقترح استخدام [nano](/index.php/Nano#Usage "Nano") أو [vim](/index.php/Vim#Usage "Vim") للتعديل أو لإنشاء ملفات ملفات تكوين جديدة.
+سيتم تسجيل الدخول تلقائيا بحساب الجذر إلى صدفة [Zsh](/index.php/Zsh "Zsh"). ينصح باستخدام محرر مثل [nano](/index.php/Nano#Usage "Nano") أو [vim](/index.php/Vim#Usage "Vim") للتعديل على ملفات الضبط الموجودة عادة في `/etc`
 
 ### وضع UEFI
 
@@ -90,11 +83,13 @@
 
 ### الإتصال بالإنترنت
 
-	إتصال سلكي
-
 يتم تفعيل [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon عند الإقلاع للأجهزة السلكية, ويحاول إنشاء إتصال. للوصول إلى صفحة تسجيل الدخول, استخدم متصفح [ELinks](/index.php/ELinks "ELinks").
 
-تحقق من إنشاء الإتصال, باستخدام *ping* مثلا. إذا لم يكن الإتصال متوفرا, انتقل إلى الفقرة [تكوين الشبكة](/index.php/Network_configuration "Network configuration"); الأمثلة التالية تستخدم [netctl](/index.php/Netctl "Netctl") لهذا الغرض. لمنع التعارض, اوقف الخدمة *dhcpcd* (مستبدلا `enp0s25` بواجهة بطاقة الشبكة السلكية لديك):
+تتحقق من إنشاء الإتصال, بالأمر `ping archlinux.org` مثلا. إذا لم يكن الإتصال متوفرا, انتقل إلى الفقرة [ضبط الشبكة](https://wiki.archlinux.org/index.php/Beginners%27_guide_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)#.D8.B6.D8.A8.D8.B7_.D8.A7.D9.84.D8.B4.D8.A8.D9.83.D8.A9) أو اتبع أمثلة [netctl](/index.php/Netctl "Netctl") أدناه. في حال نجح الإتصال انتقل إلى [تحديث وقت النظام](https://wiki.archlinux.org/index.php/Beginners%27_guide_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)#.D8.AA.D8.AD.D8.AF.D9.8A.D8.AB_.D9.88.D9.82.D8.AA_.D8.A7.D9.84.D9.86.D8.B8.D8.A7.D9.85).
+
+	تجهيز Netctl
+
+لمنع التعارض, اوقف الخدمة *dhcpcd* (مستبدلا `enp0s25` بواجهة بطاقة الشبكة السلكية لديك):
 
 ```
 # systemctl stop dhcpcd@*enp0s25*.service

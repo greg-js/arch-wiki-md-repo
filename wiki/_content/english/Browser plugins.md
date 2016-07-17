@@ -227,7 +227,7 @@ There is no 64-bit version of Adobe Reader available. To use it in a 64-bit envi
 
 *   Follow [this guide](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64") originally posted in the forums. It involves creating a chrooted environment that could be reused for other 32-bit only applications.
 
-*   Install the [acroread](https://aur.archlinux.org/packages/acroread/) package (with all its 32-bit dependencies). Be advised that the [Firefox](/index.php/Firefox "Firefox") plugin cannot be used *directly* with this binary -- it will not load in the 64-bit browser. To load it install the [nspluginwrapper](https://www.archlinux.org/packages/?name=nspluginwrapper) package from the official [[multilib]](/index.php/Multilib "Multilib") repository and run:
+*   Install the [acroread](https://aur.archlinux.org/packages/acroread/) package (with all its 32-bit dependencies). Be advised that the [Firefox](/index.php/Firefox "Firefox") plugin cannot be used *directly* with this binary -- it will not load in the 64-bit browser. To load it install the [nspluginwrapper](https://www.archlinux.org/packages/?name=nspluginwrapper) package from the official [multilib](/index.php/Multilib "Multilib") repository and run:
 
 ```
 $ nspluginwrapper -v -a -i

@@ -92,8 +92,6 @@ If a hard drive marks a sector as bad, it cordons it off, and the section become
 
 A single, full overwrite with zeros or random data does not lead to any recoverable data on a modern high-density storage device.[[1]](http://www.howtogeek.com/115573/htg-explains-why-you-only-have-to-wipe-a-disk-once-to-erase-it/) Indications otherwise refer to single residual bits; reconstruction of byte patterns is generally not feasible.[[2]](https://web.archive.org/web/20120102004746/http://www.h-online.com/newsticker/news/item/Secure-deletion-a-single-overwrite-will-do-it-739699.html) See also [[3]](https://www.google.com/search?tbs=bks:1&q=isbn:9783540898610), [[4]](http://security.stackexchange.com/questions/26132/is-data-remanence-a-myth/26134#26134) and [[5]](http://www.nber.org/sys-admin/overwritten-data-guttman.html).
 
-Overwriting old magnetic storage devices (e.g. floppy disks, magnetic tape, early-generation hard drives) only once can instead allow the wiped data to be reconstructed by analyzing the measured [residual magnetics](https://en.wikipedia.org/wiki/Remanence "wikipedia:Remanence"), due to much lower [memory storage density](https://en.wikipedia.org/wiki/Memory_storage_density "wikipedia:Memory storage density"). Such devices can get disassembled in a cleanroom and then analyzed with equipment like a [magnetic force microscope](https://en.wikipedia.org/wiki/Magnetic_force_microscope "wikipedia:Magnetic force microscope"). This method of data recovery requires however substantial financial resources. For this reason, it is advisable to overwrite old storage devices multiple times; [degaussing](https://en.wikipedia.org/wiki/Degaussing#Degaussing_magnetic_data_storage_media "wikipedia:Degaussing") is another practiced countermeasure, and to ensure that data has been completely erased, most resources even advise physical destruction.
-
 ## Select a target
 
 **Note:** Fdisk will not work on [GPT](/index.php/GPT "GPT") formatted devices. Use gdisk ([gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)) instead.
@@ -153,7 +151,7 @@ Alternatively sysfs does expose information:
 
 ```
 
-**Tip:** To show calculated dd examples for the destination storage device use [genwipe.sh](https://aur.archlinux.org/packages/genwipe.sh/), e.g. `genwipe.sh /dev/sd"XY"`.
+**Tip:** This script helps to calculate parameters to wipe a device/partition with dd [genwipe.sh](https://aur.archlinux.org/packages/genwipe.sh/), e.g. `genwipe.sh /dev/sd"XY"`.
 
 ### Calculate blocks to wipe manually
 

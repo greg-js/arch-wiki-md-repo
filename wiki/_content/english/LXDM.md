@@ -1,5 +1,7 @@
 LXDM is a lightweight [display manager](/index.php/Display_manager "Display manager") for the [LXDE](/index.php/LXDE "LXDE") [desktop environment](/index.php/Desktop_environment "Desktop environment"). The UI is implemented with [GTK+](/index.php/GTK%2B "GTK+") 2.
 
+LXDM does not support the XDMCP protocol. An alternative that does is [LightDM](/index.php/LightDM "LightDM").
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -14,8 +16,6 @@ LXDM is a lightweight [display manager](/index.php/Display_manager "Display mana
     *   [3.2 Simultaneous users and switching users](#Simultaneous_users_and_switching_users)
     *   [3.3 Themes](#Themes)
     *   [3.4 Advanced Session Configuration](#Advanced_Session_Configuration)
-*   [4 Known issues](#Known_issues)
-    *   [4.1 XDMCP](#XDMCP)
 
 ## Installation
 
@@ -180,9 +180,3 @@ These files can be used to set session environment variables and to start servic
 Note that LXDM does *not* source `~/.xinitrc`, so those migrating from a DM that *does* use this file, like [SLiM](/index.php/SLiM "SLiM"), will have to move their settings elsewhere — probably `~/.xprofile`. Also note LXDM does not source `~/.bash_profile`.
 
 LXDM also makes use of .[Xresources](/index.php/Xresources "Xresources"), .[Xkbmap](/index.php/Xkbmap "Xkbmap"), and .[Xmodmap](/index.php/Xmodmap "Xmodmap"). See `/etc/lxdm/Xsession` for details on how LXDM uses system-wide and per-user configuration files to configure the session.[[1]](https://projects.archlinux.org/svntogit/community.git/tree/trunk/Xsession?h=packages/lxdm)
-
-## Known issues
-
-### XDMCP
-
-LXDM does not support the XDMCP protocol. An alternative that does is [LightDM](/index.php/LightDM "LightDM").

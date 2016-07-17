@@ -91,14 +91,13 @@ xrandr --output eDP1 --panning 2304x1296
 
 ### KDE
 
-Though some issues still prevail, KDE plasma 5 provides a decent support for HiDPI screens.
+KDE plasma 5 provides decent support for HiDPI screens.
 
 Please follow these guidelines for HiDPI support in KDE plasma 5
 
-1.  Increase font dpi (System Settings → Font → Force font dpi, enter a number such as 125, 144 or 150 etc)
-2.  If using QT<5.6, follow the instructions in the [Qt 5](#Qt_5) section to make Qt honor this setting.
-
-**Note:** You may have previously forced a scale factor, which may result in Qt applications appearing too large when a high DPI is set now that Qt 5.6 honors DPI settings. In this case, you will need to reset the scale factor (System Settings → Display and Monitor → Display Configuration → Scale Display, scroll value to 1).
+1.  System Settings → Display and Monitor → Display Configuration → Scale Display
+2.  Then drag the slider to 2
+3.  Log out and back in for all applications to take the new setting into account
 
 ### Xfce
 
@@ -166,6 +165,12 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 And set the executable bit on it.
 
 If automatic detection of DPI does not produce the desired effect, scaling can be set manually per-screen (`QT_SCREEN_SCALE_FACTORS`) or globally (`QT_SCALE_FACTOR`). For more details see the [Qt blog post](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/).
+
+Note if you manually set the screen factor, it's important to set QT_AUTO_SCREEN_SCALE_FACTOR=0 otherwise some applications which explicitly force high DPI enabling get scaled twice.
+
+QT_SCALE_FACTOR will scale fonts QT_SCREEN_SCALE_FACTORS will *not* scale fonts
+
+If you also set the font DPI manually in xrdb to support other toolkits - QT_SCALE_FACTORS will give you a huge fonts.
 
 ### GDK 3 (GTK+ 3)
 
@@ -285,12 +290,7 @@ The output window fontsize can be controlled from Tools → Options → Miscelan
 
 Use a high DPI theme, or [adjust](http://gimpforums.com/thread-increase-all-icons-on-hidpi-screen?pid=39113#pid39113) `gtkrc` of an existing theme. For example set `GimpToolPalette::tool-icon-size` to `dialog`.
 
-There's also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi), however the installation command is wrong on the site, it should be:
-
-```
- $ unzip gimp-hidpi-master.zip -d ~/.gimp-2.8/themes/gimp-hidpi/
-
-```
+There's also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 
 ### VLC
 

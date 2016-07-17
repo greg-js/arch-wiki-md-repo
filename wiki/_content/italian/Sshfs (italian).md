@@ -28,7 +28,7 @@ Per prima cosa il modulo necessario al corretto funzionamento dovrebbe essere ca
 
 ```
 
-(Sarà possibile inserire `fuse` nell'array `MODULES` all'interno del file `/etc/[rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)")` per farlo caricare automaticamente all'avvio.)
+(Sarà possibile inserire `fuse` nell'array `MODULES` all'interno del file `/etc/rc.conf` per farlo caricare automaticamente all'avvio.)
 
 ### Effettuare il mount
 

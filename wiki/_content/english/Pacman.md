@@ -354,14 +354,21 @@ The built-in option to remove all the cached packages that are not currently ins
 
 Because of the above limitations, consider an alternative for more control over which packages, and how many, are deleted from the cache:
 
-The *paccache* script, provided by the [pacman](https://www.archlinux.org/packages/?name=pacman) package itself, deletes all cached versions of each package, except for the most recent 3, by default:
+The *paccache* script, provided by the [pacman](https://www.archlinux.org/packages/?name=pacman) package itself, deletes all cached versions of each package regardless of whether they're installed or not, except for the most recent 3, by default:
 
 ```
 # paccache -r
 
 ```
 
-Used this way, it will *not* check whether a package is still installed or not, and uninstalled packages will remain in the cache. To remove all cached versions of uninstalled packages, re-run *paccache* with:
+You can also define how many recent versions you want to keep:
+
+```
+# paccache -rk 1
+
+```
+
+To remove all cached versions of uninstalled packages, re-run *paccache* with:
 
 ```
 # paccache -ruk0

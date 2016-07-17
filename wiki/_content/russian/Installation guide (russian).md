@@ -52,7 +52,7 @@
 
 ### Форматирование разделов
 
-Смотрите раздел [File systems#Create a filesystem](/index.php/File_systems#Create_a_filesystem "File systems") и статью [Swap](/index.php/Swap "Swap").
+Смотрите раздел [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") и статью [Swap](/index.php/Swap "Swap").
 
 ### Монтирование разделов
 

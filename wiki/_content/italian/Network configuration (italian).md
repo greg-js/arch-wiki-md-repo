@@ -96,7 +96,7 @@ Se si riesce a pingare quell'indirizzo, si può provare ad [aggiungere questo na
 
 ## Impostare l'host name
 
-Un host name è un nome univoco creato per identificare un pc in rete. Con Arch Linux, l’host name del pc è impostabile in `/etc/[rcconf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)")` o, fino a quando non si riavvia, con il comando `hostname`. Per gli host names si possono utilizzare solo caratteri alfanumerici. Il trattino (`-`) può essere utilizzato, ma né all’inizio né alla fine dell’host name. La lunghezza di quest'ultimo è limitata a 63 caratteri.
+Un host name è un nome univoco creato per identificare un pc in rete. Con Arch Linux, l’host name del pc è impostabile in `/etc/rc.conf` o, fino a quando non si riavvia, con il comando `hostname`. Per gli host names si possono utilizzare solo caratteri alfanumerici. Il trattino (`-`) può essere utilizzato, ma né all’inizio né alla fine dell’host name. La lunghezza di quest'ultimo è limitata a 63 caratteri.
 
 Semplicemente inserire il proprio host name in `/etc/hostname`; non inserire il nome di dominio in `/etc/hostname`. Qualora non esistesse, creare il file, come nell'esempio `archlinux` è l'host name:
 
@@ -227,7 +227,7 @@ Per alcune persone, il pacchetto `dhclient` (disponibile in [extra]) ha funziona
 
 #### Esecuzione all'avvio di DHCP
 
-In questo caso è necessario il pacchetto [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) (già disponibile nella maggior parte delle installazioni). Inoltre, è necessario editare `[/etc/rc.conf](/index.php/Rc.conf_(Italiano)#Gestione_della_rete "Rc.conf (Italiano)")` in questo modo:
+In questo caso è necessario il pacchetto [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) (già disponibile nella maggior parte delle installazioni). Inoltre, è necessario editare `/etc/rc.conf` in questo modo:
 
 ```
 interface="eth0"

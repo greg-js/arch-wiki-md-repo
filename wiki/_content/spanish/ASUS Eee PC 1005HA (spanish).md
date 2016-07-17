@@ -55,7 +55,7 @@ pacman -S xorg-server x86-video-intel
 
 ```
 
-Este ejemplo usa hotplugging (conexiones sin apagar el sistema). Este seguro de que tenga instalado e iniciado hal. Ademas, no se olvide de agregar hal al array de DAEMONS=() en **[rc.conf](/index.php/Rc.conf_(Espa%C3%B1ol) "Rc.conf (Español)")** ([en ingles](/index.php/Rc.conf "Rc.conf"))! (/etc/rc.conf por defecto).
+Este ejemplo usa hotplugging (conexiones sin apagar el sistema). Este seguro de que tenga instalado e iniciado hal. Ademas, no se olvide de agregar hal al array de DAEMONS=() en **rc.conf**! (/etc/rc.conf por defecto).
 
 Nota: La 1005HA funciona correctamente sin utilizar xorg.conf! No hay necesidad de crear un archivo xorg.conf.
 

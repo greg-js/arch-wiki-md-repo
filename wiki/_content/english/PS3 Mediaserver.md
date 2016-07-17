@@ -4,20 +4,18 @@ Server implemented in java. Has very good default transcoding profiles for sever
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-*   [3 Run as a daemon](#Run_as_a_daemon)
-    *   [3.1 SysVinit](#SysVinit)
-    *   [3.2 systemd](#systemd)
+*   [3 Running](#Running)
 *   [4 Indexing](#Indexing)
 
 ## Installation
 
 **Note:** Because of the dependency [tsmuxer](https://aur.archlinux.org/packages/tsmuxer/) having extra 32-bit dependencies, you will need to enable the [multilib](/index.php/Multilib "Multilib") repository if you have a 64-bit system.
 
-Install [pms](https://aur.archlinux.org/packages/pms/) from [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [pms](https://aur.archlinux.org/packages/pms/) package.
 
 ## Configuration
 
-The default install location is /opt/pms and the config file is at /opt/pms/PMS.conf, there are comments describing what each option is for.
+The default install location is `/opt/pms` and the config file is at `/opt/pms/PMS.conf`, there are comments describing what each option is for.
 
 If running headless on a server
 
@@ -49,105 +47,9 @@ mencoder_sublangs = loc,eng,und
 
 A list with all options can be found [here](http://ps3mediaserver.org/forum/viewtopic.php?f=3&t=254&hilit=pms.conf#p15283).
 
-## Run as a daemon
+## Running
 
-### SysVinit
-
-Use the following modified daemon script (originally from pms-svn).
-
- `/etc/rc.d/pms` 
-```
-#!/bin/bash
-
-. /etc/rc.conf
-. /etc/rc.d/functions
-. /etc/conf.d/pms
-
-PID=`cat /var/run/pms.pid 2> /dev/null`
-[ -z "$PID" ] && PID=`ps -Ao pid,command | grep java | grep pms.jar | awk '{print $1}'`
-
-case "$1" in
-	start)
-		stat_busy "Starting PS3 Media Server"
-		if [ -z "$PID" ]; then
-			if [ -n "$PMS_USER" ]; then
-				su -s '/bin/sh' $PMS_USER -c "/usr/bin/ps3mediaserver &>> /var/log/pms.log" &
-			else
-				/usr/bin/ps3mediaserver &>> /var/log/pms.log &
-			fi
-			PID=$!
-			if [ $? -gt 0 ]; then
-				stat_fail
-			else
-				echo $PID > /var/run/pms.pid
-				add_daemon pms
-				stat_done
-			fi
-		fi
-		;;
-	stop)
-		stat_busy "Stopping PS3 Media Server"
-		[ ! -z "$PID" ]  && kill $PID &> /dev/null
-		while ps -p $PID &> /dev/null; do sleep 1; done
-		if [ $? -gt 0 ]; then
-			stat_fail
-		else
-			rm /var/run/pms.pid 2> /dev/null
-			rm_daemon pms
-			stat_done
-		fi
-		;;
-	restart)
-		$0 stop
-		sleep 1
-		$0 start
-		;;
-	*)
-		echo "usage: $0 {start|stop|restart}"
-		;;
-esac
-exit 0
-
-```
-
-```
-# /etc/rc.d/pms start
-
-```
-
-*   (optionally) watch the output with 'tail -f /var/log/pms.log' or 'tail -f /opt/pms/debug.log' for any problems.
-
-### systemd
-
-The package ships a systemd unit file by default now (since 1.71.0-2). However, upon bootup the service [will not execute properly](http://www.ps3mediaserver.org/forum/viewtopic.php?f=3&t=17992). This can be resolved by adding a timeout before the service starts the involved script. One only has to edit the file as follows by adding the "ExecStartPre" line.
-
- `/usr/lib/systemd/system/pms@.service` 
-```
-[Unit]
-Description=PS3 Media Server
-After=syslog.target network.target rpcbind.service
-
-[Service]
-User=%i
-Group=users
-WorkingDirectory=/opt/pms/
-Type=simple
-ExecStartPre=/usr/bin/sleep 16
-ExecStart=/opt/pms/PMS.sh
-
-[Install]
-WantedBy=multi-user.target
-```
-
-After the addition just run:
-
-```
-# systemctl daemon-reload
-# systemctl start pms@<username> # to start once
-# systemctl enable pms@<username> # automatically start at boot
-# journalctl -u pms@<username> # to debug the logfiles
-
-```
+[Start](/index.php/Start "Start") `pms@**user**.service`, replacing `**user**` with the user you want PMS to run under.
 
 ## Indexing
 

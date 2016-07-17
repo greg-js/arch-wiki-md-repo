@@ -98,7 +98,7 @@ The chosen path has then to be writable for the chosen letsencrypt client. It al
 
 ##### Automatic renewal
 
-When running `certbot certonly`, Cerbot stores the domains and webroot directories in `/etc/letsencrypt/renewal`, so the certificates can be renewed later automatically by running `certbot renew`.
+When running `certbot certonly`, Certbot stores the domains and webroot directories in `/etc/letsencrypt/renewal`, so the certificates can be renewed later automatically by running `certbot renew`.
 
 You can fully automate this by creating the following systemd service file:
 
@@ -116,6 +116,8 @@ Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that 
 
 Then, you can add a timer to renew the certificates [daily](https://letsencrypt.org/getting-started/#writing-your-own-renewal-script). (The script will automatically skip certificates not due to renewal yet.)
 
+Include a randomized delay so that everyone's requests for renewal will be evenly spread over the day to lighten the Let's Encrypt server load.
+
  `/etc/systemd/system/certbot.timer` 
 ```
 [Unit]
@@ -123,6 +125,7 @@ Description=Daily renewal of Let's Encrypt's certificates
 
 [Timer]
 OnCalendar=daily
+RandomizedDelaySec=1day
 Persistent=true
 
 [Install]

@@ -136,7 +136,7 @@ This opens the *fdisk* dialogue where you can type in commands.
 
 Using [GPT](/index.php/GPT "GPT"), the utility for editing the partition table is called *gdisk*. Alternatively, you may use the curses-based version called *cgdisk*; however, the following instructions do not apply to it. See `man cgdisk` for its usage.
 
-*gdisk* can perform partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. [GNU parted](/index.php/GNU_parted "GNU parted") also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
+*gdisk* can perform partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. [GNU Parted](/index.php/GNU_Parted "GNU Parted") also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
 
 To use *gdisk*, run the program with the name of the device you want to change/edit. This example uses `/dev/sda`:
 
@@ -163,7 +163,7 @@ Select the partition's type id. The default, `Linux filesystem`, should be fine 
 
 **Tip:**
 
-*   [EFI system partitions](/index.php/EFI_system_partition "EFI system partition") require code `EF00` with *gdisk* and `EFI System` with *fdisk*.
+*   [EFI System Partitions](/index.php/EFI_System_Partition "EFI System Partition") require code `EF00` with *gdisk* and `EFI System` with *fdisk*.
 *   [GRUB](/index.php/GRUB "GRUB") requires a BIOS boot partition with code `EF02` with *gdisk* and `BIOS boot` with *fdisk* when installing GRUB to a disk.
 *   It is recommended to use `8200` with *gdisk* and `Linux swap` with *fdisk* for any [swap](/index.php/Swap "Swap") partitions, since systemd will automount it.
 

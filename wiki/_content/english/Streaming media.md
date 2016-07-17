@@ -35,7 +35,7 @@ And here is a list of DLNA controller applications. These can be used to control
 
 ### MPD
 
-*   [Mpd](/index.php/Mpd "Mpd")
+*   [MPD](/index.php/MPD "MPD")
 
 ## Clients
 

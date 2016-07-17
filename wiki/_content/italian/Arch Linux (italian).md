@@ -20,7 +20,7 @@ Arch Linux è stata fondata dal programmatore canadese Judd Vinet. Il suo primo 
 
 Seguendo [Il Metodo Arch](/index.php/Il_Metodo_Arch "Il Metodo Arch"), Arch Linux è leggera, flessibile, semplice e mira ad essere molto simile a UNIX. Al momento dell'installazione viene fornito un ambiente minimale (senza GUI) compilato per architetture i686/x86-64: invece di andare a rimuovere i pacchetti non necessari e non desiderati, all'utente corrente viene offerta la possibilità di costruire tutto dalle fondamenta, senza alcun modello di default scelto preventivamente. La sua filosofia di progettazione e realizzazione la rendono facilmente estendibile ed adattabile a qualsiasi sistema si vuole ottenere, da una console minimalista al più grandioso degli ambienti desktop disponibili: è l’utente che decide cosa diventerà il suo sistema Arch.
 
-Il semplice sistema di init di Arch è fortemente ispirato dal metodo *BSD, incorporando tutti i riferimenti in un solo file *single file* ([rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)")) piuttosto che in una struttura di directory SysVinit che contengono dozzine di link simbolici per ogni runlevel. La configurazione del sistema è ottenuta attraverso la modifica di semplici file di testo.
+Il semplice sistema di init di Arch è fortemente ispirato dal metodo *BSD, incorporando tutti i riferimenti in un solo file *single file* (rc.conf) piuttosto che in una struttura di directory SysVinit che contengono dozzine di link simbolici per ogni runlevel. La configurazione del sistema è ottenuta attraverso la modifica di semplici file di testo.
 
 ## Modernità
 

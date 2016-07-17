@@ -698,7 +698,7 @@ $ optirun nvidia-settings -c :8
 
 `X Server XVideo Settings -> Sync to VBlank` 以及 `OpenGL Settings -> Sync to VBlank` 应该都是已经启用状态。 Intel 显卡通常有比较少的撕裂，所以应该作为视频回放设备。特别是使用 VA-API 编码视频的时候（比如：`mplayer-vaapi` 以及 `-vsync` 参数）。
 
-参考[Intel](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.92.AD.E6.94.BE.E8.A7.86.E9.A2.91.E6.97.B6.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82 "Intel graphics (简体中文)")了解如何修复 Intel 显卡的视频撕裂。
+参考[Intel](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.81.BF.E5.85.8D.E6.92.AD.E6.94.BE.E8.A7.86.E9.A2.91.E6.97.B6.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82 "Intel graphics (简体中文)")了解如何修复 Intel 显卡的视频撕裂。
 
 如果仍然无效，尝试从桌面环境禁用 compositing。同时可尝试禁用 triple buffering.
 

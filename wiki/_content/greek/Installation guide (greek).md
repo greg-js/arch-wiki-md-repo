@@ -121,7 +121,7 @@
 
 ```
 
-*   Ρυθμίστε τις προτιμήσεις του [locale](/index.php/Locale#Setting_system-wide_locale "Locale") στο `/etc/locale.conf`.
+*   Ρυθμίστε τις προτιμήσεις του [locale](/index.php/Locale#Setting_the_system_locale "Locale") στο `/etc/locale.conf`.
 *   Προσθέστε τις προτίμήσεις του [console keymap και της γραμματοσειράς](/index.php/KEYMAP "KEYMAP") στο `/etc/vconsole.conf`
 *   Αποσχολιάστε το locale που θέλετε να χρησιμοποιήσετε στο `/etc/locale.gen` και δημιουργήστε το με `locale-gen`.
 *   Διαμορφώστε το `/etc/mkinitcpio.conf` όπως χρειάζεται (δείτε [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")) και δημιουργήστε το initial RAM disk με:

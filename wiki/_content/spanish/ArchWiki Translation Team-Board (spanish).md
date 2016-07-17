@@ -311,7 +311,6 @@ Versión inglesa redirigida a [Apache HTTP Server](/index.php/Apache_HTTP_Server
 | [PulseAudio (Español)](/index.php/PulseAudio_(Espa%C3%B1ol) "PulseAudio (Español)") | Servidor de sonido | `2011-05` | Parcialmente Sin traducir |
 | [QEMU (Español)](/index.php/QEMU_(Espa%C3%B1ol) "QEMU (Español)") | Virtualización | `2012-11` | Traducción muy pobre |
 | [Ramdisk (Español)](/index.php/Ramdisk_(Espa%C3%B1ol) "Ramdisk (Español)") | Sistema de archivos | `2012-04` | Actualmente, en la versión inglesa es una sección del artículo [tmpfs](/index.php/Tmpfs "Tmpfs") |
-| [rc.conf (Español)](/index.php/Rc.conf_(Espa%C3%B1ol) "Rc.conf (Español)") | Configuración sistema | `2011-11` | Versión inglesa propuesta para su borrado |
 | [Recuperación del cargador de arranque (Español)](/index.php/Recuperaci%C3%B3n_del_cargador_de_arranque_(Espa%C3%B1ol) "Recuperación del cargador de arranque (Español)") | Gestor arranque | `2008-07` | Página solo en español (sin versión inglesa). ¿Redirigir a [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)")? |
 | [Resolv.conf (Español)](/index.php/Resolv.conf_(Espa%C3%B1ol) "Resolv.conf (Español)") | Gestión DNS | `2014-09` |
 | [RTorrent (Español)](/index.php/RTorrent_(Espa%C3%B1ol) "RTorrent (Español)") | Gestor descargas torrent | `2008-05` |

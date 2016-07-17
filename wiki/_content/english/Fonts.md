@@ -331,7 +331,7 @@ Github user Ternstor has created a python script that generates HTML documents w
 
 ### Emoji and symbols
 
-A section of the Unicode standard is designated for picotographic characters called "emoji".
+A section of the Unicode standard is designated for pictographic characters called "emoji".
 
 *   [emojione-color-font](https://aur.archlinux.org/packages/emojione-color-font/) - a complete, independent, open-source emoji set focused on design correctness
 *   [twemoji-color-font](https://aur.archlinux.org/packages/twemoji-color-font/) - Twitter's open-sourced emoji glyphs

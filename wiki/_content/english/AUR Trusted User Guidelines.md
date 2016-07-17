@@ -75,7 +75,7 @@ The [community] repository now uses **devtools** which is the same system used f
 Initially you should do a **non-recursive checkout** of the [community] repository:
 
 ```
-svn checkout -N svn+ssh://svn-community@nymeria.archlinux.org/srv/repos/svn-community/svn
+svn checkout -N svn+ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn
 
 ```
 

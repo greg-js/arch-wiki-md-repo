@@ -34,7 +34,7 @@
 
 ## Nastavení hostname
 
-Hostname (název hostitele/počítače) je jedinečné jméno vytvořené pro účel identifikace stroje na síti. V Arch Linuxu se hostname stroje dá nastavit buď v souboru `/etc/[rc.conf](/index.php/Rc.conf_(%C4%8Cesky) "Rc.conf (Česky)")` nebo dočasně až do restartu pomocí příkazu *hostname*. Hostname je omezen na alfanumerické znaky; je povoleno použít pomlčku (–), ale nesmí jí začínat ani končit. Délka je omezena na 63 znaků.
+Hostname (název hostitele/počítače) je jedinečné jméno vytvořené pro účel identifikace stroje na síti. V Arch Linuxu se hostname stroje dá nastavit buď v souboru `/etc/rc.conf` nebo dočasně až do restartu pomocí příkazu *hostname*. Hostname je omezen na alfanumerické znaky; je povoleno použít pomlčku (–), ale nesmí jí začínat ani končit. Délka je omezena na 63 znaků.
 
 Otevřete `/etc/rc.conf` a nastavte `HOSTNAME` na vámi požadované jméno počítače (v tomto případě "archlinux"):
 

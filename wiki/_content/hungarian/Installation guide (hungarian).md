@@ -89,7 +89,7 @@ Egyéb csomagok telepítéséhez add hozzá azok neveit az előbbi parancshoz (s
 
 	 `hu_HU.UTF-8 UTF-8` 
 
-*   Állítsd be a [locale](/index.php/Locale#Setting_system-wide_locale "Locale") beállításait a `/etc/locale.conf` fájlban. Magyar nyelv esetén add hozzá az alábbi sort:
+*   Állítsd be a [locale](/index.php/Locale#Setting_the_system_locale "Locale") beállításait a `/etc/locale.conf` fájlban. Magyar nyelv esetén add hozzá az alábbi sort:
 
 	 `LANG=hu_HU.utf8` 
 

@@ -1,4 +1,4 @@
-Phrik is the IRC bot in Arch Linux's [IRC channels](/index.php/IRC_channel "IRC channel"). He is a [supybot](http://sourceforge.net/projects/supybot/) with loads of handy factoids and utilities for things like quoting oft-repeated phrases, quickly giving people useful links and other janitorial tasks. Custom commands can be edited or added once registered (not to be confused with NickServ registration.)
+Phrik is the IRC bot in Arch Linux's [IRC channels](/index.php/IRC_channels "IRC channels"). He is a [supybot](http://sourceforge.net/projects/supybot/) with loads of handy factoids and utilities for things like quoting oft-repeated phrases, quickly giving people useful links and other janitorial tasks. Custom commands can be edited or added once registered (not to be confused with NickServ registration.)
 
 ## Contents
 

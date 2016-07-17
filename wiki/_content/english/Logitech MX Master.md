@@ -71,3 +71,7 @@ Remember that all changes to `~/.xbindkeysrc` require a restart of the xbindkeys
 $ pkill xbindkeys && xbindkeys
 
 ```
+
+## Power
+
+Battery status can be read as described on [Logitech Unifying Receiver](/index.php/Logitech_Unifying_Receiver "Logitech Unifying Receiver"). e.g. Solaar has s system tray utility.

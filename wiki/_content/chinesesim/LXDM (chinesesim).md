@@ -1,4 +1,8 @@
-**翻译状态：** 本文是英文页面 [LXDM](/index.php/LXDM "LXDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-09-21，点击[这里](https://wiki.archlinux.org/index.php?title=LXDM&diff=0&oldid=391151)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [LXDM](/index.php/LXDM "LXDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-17，点击[这里](https://wiki.archlinux.org/index.php?title=LXDM&diff=0&oldid=430730)可以查看翻译后英文页面的改动。
+
+LXDM 是轻量级的 [LXDE](/index.php/LXDE "LXDE") [桌面环境](/index.php/Desktop_environment "Desktop environment") 使用的 [显示管理器](/index.php/Display_manager "Display manager")。界面使用 [GTK+](/index.php/GTK%2B "GTK+") 2.
+
+LXDM 不支持 XDMCP 协议，要使用 XDMCP，请使用 [LightDM](/index.php/LightDM "LightDM").
 
 ## Contents
 
@@ -16,6 +20,7 @@
     *   [4.1 Adding face icons](#Adding_face_icons)
     *   [4.2 自动用户和切换用户](#.E8.87.AA.E5.8A.A8.E7.94.A8.E6.88.B7.E5.92.8C.E5.88.87.E6.8D.A2.E7.94.A8.E6.88.B7)
     *   [4.3 主题](#.E4.B8.BB.E9.A2.98)
+    *   [4.4 高级会话配置](#.E9.AB.98.E7.BA.A7.E4.BC.9A.E8.AF.9D.E9.85.8D.E7.BD.AE)
 
 ## 安装
 
@@ -185,11 +190,13 @@ Type=XSession
 
 ### Adding face icons
 
-A 96x96 px image (jpg or png) can optionally be displayed on a per-user basis replacing the stock icon. Simply copy or symlink the target image to `$HOME/.FACE`. The [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) package supplies some default icons suitable for the lxdm screen. Look under `/usr/share/pixmaps/faces` after installing that package.
+A 96x96 px image (jpg or png) can optionally be displayed on a per-user basis replacing the stock icon. Simply copy or symlink the target image to `$HOME/.face`. The [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) package supplies some default icons suitable for the lxdm screen. Look under `/usr/share/pixmaps/faces` after installing that package.
 
 **Note:** Users need not keep [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) installed to use this images. Simply install it, copy them elsewhere, and remove it.
 
 **Note:** The user's directory needs have r-x permissions for others and the .face file needs have r-- permissions for others. Obviously though this has security and access implications as now anyone can browse your home directory.
+
+**Note:** A graphical tool `lxdm-config` shipped with lxdm can be used to place a `.face` file in the home directory, along with other configuration.
 
 ### 自动用户和切换用户
 
@@ -218,16 +225,31 @@ then user switching in Xfce should work fine also with LXDM.
 
 ### 主题
 
-The LXDM themes are located in `/usr/share/lxdm/themes`.
+LXDM 主题位于 `/usr/share/lxdm/themes`.
 
-There is only one theme provided with LXDM, namely Industrial. To display the background file `wave.svg` which is part of this theme, make sure you have [librsvg](https://www.archlinux.org/packages/?name=librsvg) installed.
+LXDM 仅提供了一个主题 Industrial. 要显示主题背景文件 `wave.svg`，请安装软件包 [librsvg](https://www.archlinux.org/packages/?name=librsvg).
 
-[lxdm-themes](https://aur.archlinux.org/packages/lxdm-themes/) provides 6 extra themes. Archlinux, ArchlinuxFull, ArchlinuxTop, Arch-Dark, Arch-Stripes and IndustrialArch. The ArchStripes and ArchDark themes are also provided with [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/) (with different names to avoid file conflicts).
+[lxdm-themes](https://aur.archlinux.org/packages/lxdm-themes/) 提供了 6 个额外的主题：Archlinux, ArchlinuxFull, ArchlinuxTop, Arch-Dark, Arch-Stripes 和 IndustrialArch. [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/) 也提供了 ArchStripes 和 ArchDark(名字改了一下以避免冲突).
 
-You can configure them on `/etc/lxdm/lxdm.conf`:
+主题文件通过 `/etc/lxdm/lxdm.conf` 配置:
 
 ```
 ## the theme of greeter
 theme=theme_name
 
 ```
+
+### 高级会话配置
+
+用户登录后，LXDM 会按下面顺序引用全部文件：
+
+1.  `/etc/profile`
+2.  `~/.profile`
+3.  `/etc/xprofile`
+4.  `~/.xprofile`
+
+这些文件可以设置会话的环境变量，启动必须的服务例如 ssh-agent. 详情请参考 [Xprofile](/index.php/Xprofile "Xprofile").
+
+LXDM **不会** 引用 `~/.xinitrc`，所以如果需要从使用这些文件的显示管理器迁移到 LXDM，需要将设置移动到其它文件，例如 `~/.xprofile`. LXDM 也不会引用 `~/.bash_profile`.
+
+LXDM 也会使用 .[Xresources](/index.php/Xresources "Xresources"), .[Xkbmap](/index.php/Xkbmap "Xkbmap"), 和 .[Xmodmap](/index.php/Xmodmap "Xmodmap"). LXDM 系统配置和用户配置的详细状况可以参考 `/etc/lxdm/Xsession`[[1]](https://projects.archlinux.org/svntogit/community.git/tree/trunk/Xsession?h=packages/lxdm)

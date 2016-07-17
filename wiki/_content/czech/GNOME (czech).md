@@ -495,7 +495,7 @@ The default installation sets the power button to suspend the system. ***Power o
 
 #### Rozložení klávesnice v GDM
 
-GDM neví o vašem nastavení klávesnice v GNOME 3\. Pro změnu nastavení klávesnice v GDM nastavte požadované rozložení v Xorg konfiguraci. Viz [Beginner's Guide.](/index.php/Beginners%27_guide_(%C4%8Cesky)#.C3.9Aprava_rozlo.C5.BEen.C3.AD_kl.C3.A1vesnice "Beginners' guide (Česky)")
+GDM neví o vašem nastavení klávesnice v GNOME 3\. Pro změnu nastavení klávesnice v GDM nastavte požadované rozložení v Xorg konfiguraci. Viz [Beginner's Guide.](/index.php/Beginners%27_guide_(%C4%8Cesky)#Rozlo.C5.BEen.C3.AD_kl.C3.A1vesnice "Beginners' guide (Česky)")
 
 ### Další tipy
 

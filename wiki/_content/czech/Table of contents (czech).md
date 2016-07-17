@@ -1,11 +1,11 @@
 | [Česky](/index.php/Category:%C4%8Cesky "Category:Česky") <small>(1)</small> |
-| <small>1.</small> [O Archu](/index.php/Category:About_Arch_(%C4%8Cesky) "Category:About Arch (Česky)") <small>(14)</small> |
+| <small>1.</small> [O Archu](/index.php/Category:About_Arch_(%C4%8Cesky) "Category:About Arch (Česky)") <small>(13)</small> |
 | <small>1.1.</small> [Vývoj Archu](/index.php/Category:Arch_development_(%C4%8Cesky) "Category:Arch development (Česky)") <small>(0)</small> |
 | <small>1.1.1.</small> [Vývoj balíčků](/index.php/Category:Package_development_(%C4%8Cesky) "Category:Package development (Česky)") <small>(5)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%C4%8Cesky) "Category:ArchWiki (Česky)") <small>(1)</small> |
 | <small>1.2.1.</small> [Pomoc](/index.php/Category:Help_(%C4%8Cesky) "Category:Help (Česky)") <small>(2)</small> |
 | <small>1.3.</small> [Události](/index.php/Category:Events_(%C4%8Cesky) "Category:Events (Česky)") <small>(1)</small> |
-| <small>1.4.</small> [Získání a instalace Archu](/index.php/Category:Getting_and_installing_Arch_(%C4%8Cesky) "Category:Getting and installing Arch (Česky)") <small>(5)</small> |
+| <small>1.4.</small> [Získání a instalace Archu](/index.php/Category:Getting_and_installing_Arch_(%C4%8Cesky) "Category:Getting and installing Arch (Česky)") <small>(4)</small> |
 | <small>2.</small> [Aplikace](/index.php/Category:Applications_(%C4%8Cesky) "Category:Applications (Česky)") <small>(4)</small> |
 | <small>2.1.</small> [Command shells](/index.php/Category:Command_shells_(%C4%8Cesky) "Category:Command shells (Česky)") <small>(1)</small> |
 | <small>2.2.</small> [Emulátory](/index.php/Category:Emulators_(%C4%8Cesky) "Category:Emulators (Česky)") <small>(3)</small> |
@@ -27,8 +27,8 @@
 | <small>5.1.</small> [Internetové aplikace](/index.php/Category:Internet_applications_(%C4%8Cesky) "Category:Internet applications (Česky)") <small>(7) (také v [Aplikace](/index.php/Category:Applications_(%C4%8Cesky) "Category:Applications (Česky)"))</small> |
 | <small>5.2.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%C4%8Cesky) "Category:Secure Shell (Česky)") <small>(1) (také v [Bezpečnost](/index.php/Category:Security_(%C4%8Cesky) "Category:Security (Česky)"))</small> |
 | <small>5.3.</small> [Web server](/index.php/Category:Web_server_(%C4%8Cesky) "Category:Web server (Česky)") <small>(5)</small> |
-| <small>6.</small> [Administrace systému](/index.php/Category:System_administration_(%C4%8Cesky) "Category:System administration (Česky)") <small>(3)</small> |
-| <small>6.1.</small> [Bootovací proces](/index.php/Category:Boot_process_(%C4%8Cesky) "Category:Boot process (Česky)") <small>(11)</small> |
+| <small>6.</small> [Administrace systému](/index.php/Category:System_administration_(%C4%8Cesky) "Category:System administration (Česky)") <small>(2)</small> |
+| <small>6.1.</small> [Bootovací proces](/index.php/Category:Boot_process_(%C4%8Cesky) "Category:Boot process (Česky)") <small>(10)</small> |
 | <small>6.2.</small> [Démoni a systémové služby](/index.php/Category:Daemons_and_system_services_(%C4%8Cesky) "Category:Daemons and system services (Česky)") <small>(2)</small> |
 | <small>6.3.</small> [Desktopová prostředí](/index.php/Category:Desktop_environments_(%C4%8Cesky) "Category:Desktop environments (Česky)") <small>(11)</small> |
 | <small>6.3.1.</small> [Display manažeři](/index.php/Category:Display_managers_(%C4%8Cesky) "Category:Display managers (Česky)") <small>(5)</small> |

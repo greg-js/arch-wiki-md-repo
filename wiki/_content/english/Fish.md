@@ -3,27 +3,24 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Input/output](#Input.2Foutput)
-    *   [2.1 File descriptors](#File_descriptors)
-    *   [2.2 Redirection](#Redirection)
-    *   [2.3 Piping](#Piping)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Web interface](#Web_interface)
-    *   [3.2 Command completion](#Command_completion)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Web interface](#Web_interface)
+    *   [2.2 Command completion](#Command_completion)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 History substitution](#History_substitution)
+    *   [3.2 Not setting fish as default shell](#Not_setting_fish_as_default_shell)
+        *   [3.2.1 Modify .bashrc to drop into fish](#Modify_.bashrc_to_drop_into_fish)
+        *   [3.2.2 Use terminal emulator options](#Use_terminal_emulator_options)
+        *   [3.2.3 Use terminal multiplexer options](#Use_terminal_multiplexer_options)
+        *   [3.2.4 Working with fish as default shell](#Working_with_fish_as_default_shell)
     *   [3.3 /etc/profile and ~/.profile compatibility](#.2Fetc.2Fprofile_and_.7E.2F.profile_compatibility)
-*   [4 Tips and Tricks](#Tips_and_Tricks)
-    *   [4.1 History substitution](#History_substitution)
-    *   [4.2 Disabling greeting message](#Disabling_greeting_message)
-    *   [4.3 Not setting fish as default shell](#Not_setting_fish_as_default_shell)
-        *   [4.3.1 Modify .bashrc to drop into fish](#Modify_.bashrc_to_drop_into_fish)
-        *   [4.3.2 Use terminal emulator options](#Use_terminal_emulator_options)
-        *   [4.3.3 Use terminal multiplexer options](#Use_terminal_multiplexer_options)
-        *   [4.3.4 Working with fish as default shell](#Working_with_fish_as_default_shell)
-    *   [4.4 su launching Bash](#su_launching_Bash)
-    *   [4.5 Start X at login](#Start_X_at_login)
-    *   [4.6 Liquidprompt](#Liquidprompt)
-    *   [4.7 Git status in prompt](#Git_status_in_prompt)
-    *   [4.8 Evaluating ssh-agent](#Evaluating_ssh-agent)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Disable greeting](#Disable_greeting)
+    *   [4.2 Make su launch fish](#Make_su_launch_fish)
+    *   [4.3 Start X at login](#Start_X_at_login)
+    *   [4.4 Use liquidprompt](#Use_liquidprompt)
+    *   [4.5 Put git status in prompt](#Put_git_status_in_prompt)
+    *   [4.6 Evaluate ssh-agent](#Evaluate_ssh-agent)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -32,73 +29,9 @@
 
 To make fish the default shell, see [Shell#Changing your default shell](/index.php/Shell#Changing_your_default_shell "Shell"); however, you should consider [#Not setting fish as default shell](#Not_setting_fish_as_default_shell).
 
-## Input/output
+Once installed simply type `fish` to drop into the fish shell.
 
-### File descriptors
-
-Like other shells, fish lets you redirect input/output streams. This is useful when using text files to save programs output or errors, or when using text files as input. Most programs use three input/output streams, represented by numbers called file descriptors (FD). These are:
-
-*   Standard input (FD 0), used for reading (keyboard by default).
-*   Standard output (FD 1), used for writing (screen by default).
-*   Standard error (FD 2), used for displaying errors and warnings (screen by default).
-
-### Redirection
-
-Any file descriptor can be directed to other files through a mechanism called redirection:
-
-```
-*Redirecting standard input:*
-$ command < source_file
-
-*Redirecting standard output:*
-$ command > destination
-
-*Appending standard output to an existing file:*
-$ command >> destination
-
-*Redirecting standard error:*
-$ command ^ destination
-
-*Appending standard error to an existing file:*
-$ command ^^ destination
-```
-
-You can use one of the following as `destination`:
-
-*   A filename (the output will be written to the specified file).
-*   An `&` followed by the number of another file descriptor. The output will be written to the other file descriptor.
-*   An `&` followed by a `-` sign. The output will not be written anywhere.
-
-Examples:
-
-```
-*Redirecting standard output to a file:*
-$ command > destination_file.txt
-
-*Redirecting both standard output and standard error to the same file:*
-$ command > destination_file.txt ^ &1
-
-*Silencing standard output:*
-$ command > &-
-```
-
-### Piping
-
-You can redirect standard output of one command to standard input of the next command. This is done by separating the commands by the pipe character (`|`). Example:
-
-```
-cat example.txt | head
-
-```
-
-You can redirect other file descriptors to the pipe (besides standard output). The next example shows how to use standard error of one command as standard input of another command, prepending standard error file descriptor's number and `>` to the pipe:
-
-```
-$ command 2>| less
-
-```
-
-This will run `command` and redirect its standard error to the `less` command.
+Documentation can be found by typing `help` from fish; it will be opened in a web browser. It is recommended to read at least the "Syntax overview" section, since fish's syntax is different from many other shells.
 
 ## Configuration
 
@@ -128,35 +61,11 @@ You can also define your own completions in `~/.config/fish/completions/`. See `
 
 Context-aware completions for Arch Linux-specific commands like *pacman*, *pacman-key*, *makepkg*, *cower*, *pbget*, *pacmatic* are built into fish, since the policy of the fish development is to include all the existent completions in the upstream tarball. The memory management is clever enough to avoid any negative impact on resources.
 
-### /etc/profile and ~/.profile compatibility
-
-Since standard POSIX `sh` syntax is not compatible with fish, fish will not be able to source `/etc/profile` and thus all `*.sh` in `/etc/profile.d`) and `~/.profile`. If you have fish as your default shell, you can work around this by doing the following:
-
-Install [dash](https://www.archlinux.org/packages/?name=dash) and add this line to your `config.fish`:
-
-```
-env -i HOME=$HOME dash -l -c printenv | sed -e '/PWD/d; /PATH/s/:/ /g;s/=/ /;s/^/set -x /' | source
-
-```
-
-an alternative variant will save you one executable invocation by using a builtin command:
-
-```
-env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
-
-```
-
-Also consider [#Not setting fish as default shell](#Not_setting_fish_as_default_shell).
-
-## Tips and Tricks
+## Troubleshooting
 
 ### History substitution
 
 Fish does not implement history substitution (e.g. `sudo !!`), and the fish developers have said that they [do not plan to](http://fishshell.com/docs/current/faq.html#faq-history). Still, this is an essential piece of many users' workflow. Reddit user, [crossroads1112](http://www.reddit.com/u/crossroads1112), created a function that regains some of the functionality of history substitution and with another syntax. The function is on [github](https://gist.github.com/crossroads1112/77badb2c3455e23b873b) and instructions are included as comments in it. There is a [forked version](https://gist.github.com/b-/981892a65837ab0a387e) that is closer to the original syntax and allows for `command !!` if you specify the command in the helper function.
-
-### Disabling greeting message
-
-By default, fish prints a greeting message at startup. To disable it, add `set fish_greeting` to your fish configuration file.
 
 ### Not setting fish as default shell
 
@@ -210,7 +119,33 @@ end
 
 Note that this route requires you to manually add various other environment variables, such as `$MOZ_PLUGIN_PATH`. It is a huge amount of work to get a seamless experience with fish as your default shell using this method. A better idea would be to [source /etc/profile and ~/.profile](#.2Fetc.2Fprofile_and_.7E.2F.profile_compatibility).
 
-### su launching Bash
+### /etc/profile and ~/.profile compatibility
+
+Since standard POSIX `sh` syntax is not compatible with fish, fish will not be able to source `/etc/profile` and thus all `*.sh` in `/etc/profile.d`) and `~/.profile`. If you have fish as your default shell, you can work around this by doing the following:
+
+Install [dash](https://www.archlinux.org/packages/?name=dash) and add this line to your `config.fish`:
+
+```
+env -i HOME=$HOME dash -l -c printenv | sed -e '/PWD/d; /PATH/s/:/ /g;s/=/ /;s/^/set -x /' | source
+
+```
+
+an alternative variant will save you one executable invocation by using a builtin command:
+
+```
+env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
+
+```
+
+Also consider [#Not setting fish as default shell](#Not_setting_fish_as_default_shell).
+
+## Tips and tricks
+
+### Disable greeting
+
+By default, fish prints a greeting message at startup. To disable it, add `set fish_greeting` to your fish configuration file.
+
+### Make su launch fish
 
 If *su* starts with Bash (because Bash is the default shell), define a function in your fish configuration file:
 
@@ -235,13 +170,13 @@ end
 
 ```
 
-### Liquidprompt
+### Use liquidprompt
 
 [Liquidprompt](https://github.com/nojhan/liquidprompt) is a popular "full-featured & carefully designed adaptive prompt for Bash & Zsh" and has no plans to make it compatible with fish [[1]](https://github.com/nojhan/liquidprompt/pull/230). [This project](https://github.com/wesbarnett/fish-lp) implements it for fish.
 
 **Note:** See [this issue](https://github.com/fish-shell/fish-shell/issues/1772) for reasons why `startx` requires the `-keeptty` flag when using fish.
 
-### Git status in prompt
+### Put git status in prompt
 
 If you would like fish to display the branch and dirty status when you are in a git directory, you can add the following to your `~/.config/fish/config.fish`:
 
@@ -270,7 +205,7 @@ end
 
 ```
 
-### Evaluating ssh-agent
+### Evaluate ssh-agent
 
 In fish, `eval (ssh-agent)` generate errors due to how variables are set. To work around this, use the csh-style option `-c`:
 

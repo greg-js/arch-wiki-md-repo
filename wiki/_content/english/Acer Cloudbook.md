@@ -29,8 +29,8 @@ At least four different versions of this laptop exist: AO1-131-C9PM and AO1-131-
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | Wireless | Yes |
 | [Audio](/index.php/ALSA "ALSA") | Yes |
-| [Touchpad](/index.php/Touchpad_Synaptics "Touchpad Synaptics") | Yes |
-| [Webcam](/index.php/Webcam_setup "Webcam setup") | Yes |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
+| [Webcam](/index.php/Webcam "Webcam") | Yes |
 | Card Reader | Yes |
 | Bluetooth | No |
 

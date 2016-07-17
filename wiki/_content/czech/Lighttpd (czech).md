@@ -59,7 +59,7 @@ Pro otestování správnosti instalace
 
 Následně zadejte do svého prohlížeče adresu localhost a měli byste vidět testovací stránku s nápisem 'Hello World!'.
 
-Pravděpodobně si budte chtít přidat lighttpd do pole daemonů, kteří se automaticky spouští při startu počítače. To provedete přidáním lighttpd do souboru `[/etc/rc.conf](/index.php/Rc.conf_(%C4%8Cesky) "Rc.conf (Česky)")` mezi DAEMONS (...)
+Pravděpodobně si budte chtít přidat lighttpd do pole daemonů, kteří se automaticky spouští při startu počítače. To provedete přidáním lighttpd do souboru `/etc/rc.conf` mezi DAEMONS (...)
 
 ## FastCGI
 

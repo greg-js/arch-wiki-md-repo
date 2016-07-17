@@ -1,5 +1,5 @@
 | [Italiano](/index.php/Category:Italiano "Category:Italiano") <small>(1)</small> |
-| <small>1.</small> [A proposito di Arch](/index.php/Category:About_Arch_(Italiano) "Category:About Arch (Italiano)") <small>(15)</small> |
+| <small>1.</small> [A proposito di Arch](/index.php/Category:About_Arch_(Italiano) "Category:About Arch (Italiano)") <small>(14)</small> |
 | <small>1.1.</small> [Sviluppo di Arch Linux](/index.php/Category:Arch_development_(Italiano) "Category:Arch development (Italiano)") <small>(0)</small> |
 | <small>1.1.1.</small> [Sviluppo dei Pacchetti](/index.php/Category:Package_development_(Italiano) "Category:Package development (Italiano)") <small>(19)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Italiano) "Category:ArchWiki (Italiano)") <small>(3)</small> |
@@ -55,7 +55,7 @@
 | <small>5.8.</small> [Reti Wireless](/index.php/Category:Wireless_networking_(Italiano) "Category:Wireless networking (Italiano)") <small>(4)</small> |
 | <small>6.</small> [Amministrazione del Sistema](/index.php/Category:System_administration_(Italiano) "Category:System administration (Italiano)") <small>(3)</small> |
 | <small>6.1.</small> [Audio/Video](/index.php/Category:Audio/Video_(Italiano) "Category:Audio/Video (Italiano)") <small>(15)</small> |
-| <small>6.2.</small> [Processo di Avvio](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)") <small>(20)</small> |
+| <small>6.2.</small> [Processo di Avvio](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)") <small>(19)</small> |
 | <small>6.2.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Italiano) "Category:Boot loaders (Italiano)") <small>(4)</small> |
 | <small>6.2.2.</small> [Bootsplash](/index.php/Category:Bootsplash_(Italiano) "Category:Bootsplash (Italiano)") <small>(2) (anche in [Eye candy](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)"))</small> |
 | <small>6.3.</small> [Shell dei comandi](/index.php/Category:Command_shells_(Italiano) "Category:Command shells (Italiano)") <small>(4)</small> |

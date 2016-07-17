@@ -92,7 +92,7 @@ Install [boinc-nox](https://www.archlinux.org/packages/?name=boinc-nox) to use B
 1.  Start the BOINC service.
 2.  Provide `boinccmd` with a password, used for communicating with the service's RPC API.
 
-To start the BOINC service, use the provided `boinc.service` unit file. (For more information, see [Systemd#Using_units](/index.php/Systemd#Using_units "Systemd").) The first time BOINC starts, it will generate a password and save it to `/var/lib/boinc/gui_rpc_auth.cfg`. To provide `boinccmd` with this password, consider one of the following:
+To start the BOINC service, use the provided `boinc.service` unit file. (For more information, see [Systemd#Using units](/index.php/Systemd#Using_units "Systemd").) The first time BOINC starts, it will generate a password and save it to `/var/lib/boinc/gui_rpc_auth.cfg`. To provide `boinccmd` with this password, consider one of the following:
 
 *   Provide the password as a command-line flag, e.g. `boinccmd --passwd abc123 --get_host_info`.
 *   Ensure a file named `gui_rpc_auth.cfg` is present in the current directory.

@@ -165,7 +165,7 @@ The first step is to identify the devices where the new system will be installed
 
 ```
 
-This will list all devices connected to your system along with their partition schemes. On [installation](/index.php/Installation_guide "Installation guide"), this includes those used to host and boot live Arch media, such as a USB drive. Not all devices listed are therefore viable or appropriate mediums for installation; results ending in `rom`, `loop` or `airoot` can be ignored.
+This will list all devices connected to your system along with their partition schemes. On [installation](/index.php/Installation "Installation"), this includes those used to host and boot live Arch media, such as a USB drive. Not all devices listed are therefore viable or appropriate mediums for installation; results ending in `rom`, `loop` or `airoot` can be ignored.
 
 Devices (e.g. hard disks) will be listed as `sd**x**`, where `**x**` is a lower-case letter starting from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. *Existing* partitions on those devices will be listed as `sdx**Y**`, where `**Y**` is a number starting from `1` for the first partition, `2` for the second, and so on. In the example below, only one device is available (`sda`), and that device has only one partition (`sda1`):
 

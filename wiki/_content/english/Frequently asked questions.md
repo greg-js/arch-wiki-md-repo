@@ -101,7 +101,7 @@ Arch gets plenty of press as it is. The goal of Arch Linux is not to be large; r
 
 ### Arch needs more developers
 
-Possibly so. Feel free to volunteer your time! Visit the [forums](https://bbs.archlinux.org), [IRC channels](/index.php/IRC_channel "IRC channel"), and [mailing lists](https://mailman.archlinux.org/mailman/listinfo/), and see what needs to be done. Getting involved in the Community Contributions subforum is a good way to start.
+Possibly so. Feel free to volunteer your time! Visit the [forums](https://bbs.archlinux.org), [IRC channels](/index.php/IRC_channels "IRC channels"), and [mailing lists](https://mailman.archlinux.org/mailman/listinfo/), and see what needs to be done. Getting involved in the Community Contributions subforum is a good way to start.
 
 ### Why is my internet so slow compared to other operating systems?
 

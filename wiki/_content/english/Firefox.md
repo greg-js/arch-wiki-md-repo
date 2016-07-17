@@ -167,8 +167,6 @@ A very extensive list of search engines can be found [here](http://mycroft.mozde
 
 Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar) extension to add a search to your search bar from any web site, by simply right clicking on the site's search field and selecting *Add to Search Bar...*
 
-If you want a manual solution, take a look at [this](https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox) firefox helppage. (the old trick with the searchplugins folder does not work anymore.) You want to type the javascript command in the developer console and the xml file must be uploaded to a server. "file://..." will not work.
-
 #### arch-firefox-search
 
 Install the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search) package to add Arch-specific searches (AUR, wiki, forum, etc, as specified by user) to the Firefox search toolbar.

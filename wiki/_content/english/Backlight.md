@@ -157,22 +157,25 @@ If "0", does not restore the backlight settings on boot. However, settings will 
 
 ### xbacklight
 
-Brightness can alternatively be set using the [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) package.
+Brightness can be set using the [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) package.
 
-**Note:** xbacklight only works with intel. Radeon does not support the RandR backlight property
+**Note:**
 
-**Note:** xbacklight currently does not work with the modesetting driver: The intel driver must be used - see [https://bugs.freedesktop.org/show_bug.cgi?id=96572](https://bugs.freedesktop.org/show_bug.cgi?id=96572)
+*   xbacklight only works with intel. Radeon does not support the RandR backlight property.
+*   xbacklight currently does not work with the modesetting driver [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=96572).
 
-```
-$ xbacklight -set 50  # sets brightness to 50% of maximum
-
-```
-
-Increments can be used instead of absolute values, for example:
+To set brightness to 50% of maximum:
 
 ```
-$ xbacklight -inc 10  # increase brightness by 10%
-$ xbacklight -dec 10  # decrease brightness by 10%
+$ xbacklight -set 50
+
+```
+
+Increments can be used instead of absolute values, for example to increase or decrease brightness by 10%:
+
+```
+$ xbacklight -inc 10
+$ xbacklight -dec 10
 
 ```
 
@@ -197,7 +200,7 @@ Section "Device"
 EndSection
 ```
 
-See [FS#27677](https://bugs.archlinux.org/task/27677) and [[1]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
+See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
 
 ### light
 
@@ -262,7 +265,7 @@ This program uses ICC technology to interact with X11 and while the screen is di
 
 Xflux is the [f.lux](http://justgetflux.com) port for the X-Windows system. It fluctuates your screen between blue during the day and yellow or orange at night. This helps you adapt to the time of day and stop staying up late because of your bright computer screen.
 
-Various packages exist in the AUR that use *f.lux*.[[2]](https://aur.archlinux.org/packages/?O=0&K=xflux) The "main" package is [xflux](https://aur.archlinux.org/packages/xflux/) which handles the command line functionality of *f.lux*. Various daemons exist to handle the automatic startup of the xflux package.
+Various packages exist in the AUR that use *f.lux*.[[3]](https://aur.archlinux.org/packages/?O=0&K=xflux) The "main" package is [xflux](https://aur.archlinux.org/packages/xflux/) which handles the command line functionality of *f.lux*. Various daemons exist to handle the automatic startup of the xflux package.
 
 ### redshift
 

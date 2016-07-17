@@ -96,7 +96,7 @@ Outros pacotes podem ser instalados adicionando seus nomes no comando acima (sep
 	 `# ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime` 
 
 *   Descomente o local selecionado em `/etc/locale.gen` e gere-o com `locale-gen`.
-*   Defina a preferência [locale](/index.php/Locale#Setting_system-wide_locale "Locale") em `/etc/locale.conf`.
+*   Defina a preferência [locale](/index.php/Locale#Setting_the_system_locale "Locale") em `/etc/locale.conf`.
 *   Adicione a preferência [console keymap](/index.php/KEYMAP "KEYMAP") e [font](/index.php/Fonts#Console_fonts "Fonts") em `/etc/vconsole.conf`
 *   Configure `/etc/mkinitcpio.conf` conforme necessário (veja [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")) e crie um disco RAM inicial com:
 

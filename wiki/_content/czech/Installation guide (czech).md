@@ -129,7 +129,7 @@ Dále provedeme [chroot](/index.php/Chroot "Chroot") do našeho nově nainstalov
 ```
 
 *   Odkomentujte vybrané locale v `/etc/locale.gen` a vygenerujte ho s `locale-gen`.
-*   Nastavte [locale](/index.php/Locale#Setting_system-wide_locale "Locale") v `/etc/locale.conf`.
+*   Nastavte [locale](/index.php/Locale#Setting_the_system_locale "Locale") v `/etc/locale.conf`.
 *   Nastavte [konzolové rozložení klávesnice](/index.php/KEYMAP "KEYMAP") and [konzolový font](/index.php/Fonts#Console_fonts "Fonts") v `/etc/vconsole.conf`
 *   Nakonfigurujte `/etc/mkinitcpio.conf` podle potřeby (vizte [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")) a vytvořte startovací RAM disk s:
 

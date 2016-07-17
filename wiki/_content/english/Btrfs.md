@@ -116,7 +116,7 @@ Multiple devices can be entered to create a RAID. Supported RAID levels include 
 
 **Note:** Mounting such a filesystem may result in all but one of the according *.device*-jobs getting stuck and systemd never finishing startup due to a [bug](https://github.com/systemd/systemd/issues/1921) in handling this type of filesystem.
 
-See [RAID](#RAID) for advice on maintenance specific to multi-device Btrfs file systems.
+See [#RAID](#RAID) for advice on maintenance specific to multi-device Btrfs file systems.
 
 ### Converting a file system from Ext3/4
 

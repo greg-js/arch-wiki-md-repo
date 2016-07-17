@@ -153,7 +153,7 @@
 
 ```
 
-*   Також можливо ви захочете налаштувати [locale](/index.php/Locale#Setting_system-wide_locale "Locale") в `/etc/locale.conf`.
+*   Також можливо ви захочете налаштувати [locale](/index.php/Locale#Setting_the_system_locale "Locale") в `/etc/locale.conf`.
 *   Налаштуйте [розкладку консолі та шрифти](/index.php/KEYMAP "KEYMAP") в `/etc/vconsole.conf`
 *   Розкоментуйте(приберіть знак 'гратки', що стоїть на початку рядка) потрібні рядки [locales](/index.php/Locale "Locale") в `/etc/locale.gen` і згенеруйте `locale-gen`.
 *   Налаштуйте `/etc/mkinitcpio.conf` для ваших потреб (читай [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")) і створіть ramdisk:

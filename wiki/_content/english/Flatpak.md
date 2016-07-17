@@ -109,7 +109,7 @@ This is known to be necessary in Awesome.
 
 **Note:** You may want to use an untrusted, unprivileged user account for bundling untrusted software because the software is not sandboxed during app and runtime creation.
 
-**Note:** When distributing bundles to others, you may be legally obliged to provide the source code of some of the bundled software upon request. You may want to use [ABS](/index.php/Arch_Build_System "Arch Build System") to build these packages from source.
+**Note:** When distributing bundles to others, you may be legally obliged to provide the source code of some of the bundled software upon request. You may want to use [ABS](/index.php/ABS "ABS") to build these packages from source.
 
 You can create a custom Arch-based base runtime and base SDK for Flatpak using pacman. You can then use it for building and packaging applications. This is an alternative for personal use to the default `org.freedesktop.BasePlatform` and `org.freedesktop.BaseSdk` runtimes.
 
@@ -260,7 +260,7 @@ $ flatpak build-init geditapp org.gnome.gedit org.mydomain.BaseSdk org.mydomain.
 
 ```
 
-Now finish the dummy app. You can fine-tune the app’s access permissions when sandboxed by giving additional options when finishing the build. For possible options see the [Flatpak documentation](/index.php/Flatpak#See_also "Flatpak") and the [GNOME manifest files](https://git.gnome.org/browse/gnome-apps-nightly/tree). Alternatively, adapt `geditapp/metadata` to your needs after finishing the build but before exporting. When the metadata file is complete, export the app to the repository.
+Now finish the dummy app. You can fine-tune the app’s access permissions when sandboxed by giving additional options when finishing the build. For possible options see the [Flatpak documentation](#See_also) and the [GNOME manifest files](https://git.gnome.org/browse/gnome-apps-nightly/tree). Alternatively, adapt `geditapp/metadata` to your needs after finishing the build but before exporting. When the metadata file is complete, export the app to the repository.
 
 ```
 $ flatpak build-finish geditapp --socket=x11 *[possibly other options]* --command=gedit

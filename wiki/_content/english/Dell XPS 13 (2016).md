@@ -6,7 +6,7 @@
 | Touchpad | Works after configuration |  ? |
 | Webcam | Working | uvcvideo |
 | Card Reader | Working | rtsx_pci |
-| Wireless switch | Will work in Linux 4.6 | intel-hid |
+| Wireless switch | Working | intel-hid |
 | Function/Multimedia Keys | Working |  ? |
 
 The Dell XPS 13 2016 (9350) is the third-generation model of the XPS 13 line. The laptop is available in both a standard edition with Windows installed as well as a Developer Edition which only differs in that it comes with Ubuntu installed as well as the Broadcom WiFi card replaced with an Intel WiFi card. Just like the older versions ([Dell XPS 13](/index.php/Dell_XPS_13 "Dell XPS 13") and [Dell XPS 13 (2015)](/index.php/Dell_XPS_13_(2015) "Dell XPS 13 (2015)")) it can be bought in different hardware configurations.
@@ -21,18 +21,29 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 *   [2 BIOS updates](#BIOS_updates)
 *   [3 Thunderbolt Firmware Updates](#Thunderbolt_Firmware_Updates)
 *   [4 SATA controller](#SATA_controller)
+    *   [4.1 Dual booting Linux and Windows](#Dual_booting_Linux_and_Windows)
 *   [5 NVM Express SSD](#NVM_Express_SSD)
     *   [5.1 Cannot find root device](#Cannot_find_root_device)
     *   [5.2 Note on Mount Options](#Note_on_Mount_Options)
 *   [6 Wireless](#Wireless)
 *   [7 Bluetooth](#Bluetooth)
+    *   [7.1 Intel WiFi](#Intel_WiFi)
+    *   [7.2 Broadcom Wifi](#Broadcom_Wifi)
+        *   [7.2.1 Wireless headset: strange bluetooth behavior](#Wireless_headset:_strange_bluetooth_behavior)
 *   [8 Video](#Video)
+    *   [8.1 Blank screen issue after booting](#Blank_screen_issue_after_booting)
+    *   [8.2 Linux kernel 4.3 or earlier](#Linux_kernel_4.3_or_earlier)
+    *   [8.3 Linux kernel 4.5 or earlier](#Linux_kernel_4.5_or_earlier)
 *   [9 Touchpad](#Touchpad)
+    *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
 *   [10 Sound](#Sound)
-    *   [10.1 PulseAudio Workaround](#PulseAudio_Workaround)
+    *   [10.1 Hissing/Crackling noises when using headphones](#Hissing.2FCrackling_noises_when_using_headphones)
+    *   [10.2 Loud popping-noises when sound was not playing](#Loud_popping-noises_when_sound_was_not_playing)
 *   [11 Microphone](#Microphone)
 *   [12 Diverting models](#Diverting_models)
     *   [12.1 XPS 12](#XPS_12)
+    *   [12.2 Dell XPS 15](#Dell_XPS_15)
+    *   [12.3 Dell XPS 13 (2015)](#Dell_XPS_13_.282015.29)
 *   [13 lspci and lsusb](#lspci_and_lsusb)
     *   [13.1 lspci](#lspci)
     *   [13.2 lsusb](#lsusb)
@@ -52,7 +63,18 @@ In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightne
 
 ## SATA controller
 
-When the SATA-controller is set to "RAID On" in Bios, the hard disk (at least the SSD) is not recognized. Set to "Off" or "AHCI" before attempting to install Arch. If dual boot to Windows is intended, follow [[1]](https://support.microsoft.com/en-us/kb/2795397) to work around the "INACCESSIBLE_BOOT_DEVICE" error.
+When the SATA-controller is set to `RAID On` in Bios, the hard disk (at least the SSD) is not recognized. Set to `Off` or `AHCI` (`AHCI` is recommended) before attempting to install Arch.
+
+### Dual booting Linux and Windows
+
+In order to boot into Windows properly without getting an `INACCESSIBLE_BOOT_DEVICE` error with disabled `RAID` you must configure Windows to use the `AHCI`-speaking SATA storage controller, assuming you used `AHCI` for installing Linux. The driver is effectively disabled even though it is installed. Either of the following methods were reported to activate the drivers without reinstallation (your mileage may vary):
+
+*   [booting into safe mode and back](http://www.tenforums.com/drivers-hardware/15006-attn-ssd-owners-enabling-ahci-mode-after-windows-10-installation.html)
+*   [Selecting `Microsoft Storage Spaces Controller` in Windows Device Manager](https://samnicholls.net/2016/01/14/how-to-switch-sata-raid-to-ahci-windows-10-xps-13/)
+*   [Modifying registry entries](http://www.tenforums.com/tutorials/22631-ahci-enable-windows-8-windows-10-after-installation.html)
+*   [Modifying other registry entries](http://superuser.com/questions/471102/change-from-ide-to-ahci-after-installing-windows-8/471108#471108)
+
+Consult the [microsoft support](https://support.microsoft.com/en-us/kb/2795397) page for additional information. Be aware that some manufactures propagate reinstalling Windows to be the only solution, which it is not.
 
 ## NVM Express SSD
 
@@ -90,11 +112,19 @@ The Broadcom adapter does not report its regulatory country and so, by default, 
 
 ## Bluetooth
 
-**Note:** **Intel WiFi users:** If your WiFi card supports Bluetooth, then the BT interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
+### Intel WiFi
 
-**Note:** **Wireless Headset users:** If your Bluetooth behaves weird, such as being able to connect but not to listen through it, etc. You probably need the firmware.
+If your WiFi card supports Bluetooth, then the BT interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
 
-The Broadcom Bluetooth firmware is not available in the kernel (the same as for 2015 model [source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will have to retrieve it from the [[2]](http://downloads.dell.com/FOLDER03272920M/1/9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE). You need to extract the `.exe` file with [p7zip](https://www.archlinux.org/packages/?name=p7zip) and then convert it to a `.hcd` file with *hex2hcd* from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
+### Broadcom Wifi
+
+Bluetooth should work right away. Load the module `btusb` and `bluetooth` if it was not already and [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `bluetooth.service`. Refer to [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information and configuration options.
+
+#### Wireless headset: strange bluetooth behavior
+
+If your Bluetooth behaves weird, such as being able to connect but not to listen through it, etc. You probably need the firmware.
+
+The Broadcom Bluetooth firmware is not available in the kernel (the same as for the 2015 model [source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), therefore you will have to retrieve it from a Windows [.exe](http://downloads.dell.com/FOLDER03272920M/1/9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE). You need to extract the `.exe` file with [p7zip](https://www.archlinux.org/packages/?name=p7zip) and then convert it to a `.hcd` file with *hex2hcd* from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
 
 ```
 $ 7z x 9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE
@@ -108,21 +138,17 @@ After reboot, the firmware should be available for your Bluetooth interface.
 
 ## Video
 
-The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. If you experience a blank screen issue after booting, try loading the driver early in the boot process (see [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics")):
+The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. Consult [Intel graphics](/index.php/Intel_graphics "Intel graphics") for a detailed installation and configuration guide as well as for [Troubleshooting](/index.php/Intel_graphics#Troubleshooting "Intel graphics").
 
- `/etc/mkinitcpio.conf`  `MODULES="... i915 ..."` 
-**Note:** Some hardware also need `intel_agp`. If you do, you should write `"... intel_agp i915 ..."` (the order matters).
+### Blank screen issue after booting
 
-Then update the bootloader.
+If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen goes blank when loading modules, it may help to add `i915` and `intel_agp` to the initramfs or using a special [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Consult [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics") for more information about the kernel paramter way and have a look at [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for a guide on how to setup the modules for the initramfs.
 
-```
-   # mkinitcpio -p linux
-
-```
-
-Where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) then change that to `linux-mainline`.
+### Linux kernel 4.3 or earlier
 
 If you are using an older kernel 4.3 or earlier, you also require the kernel parameter `i915.preliminary_hw_support=1`, see [Intel graphics#Driver not working for Intel Skylake chips](/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips "Intel graphics"). (For later kernels 4.3+ or [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/) the parameter is unnecessary.)
+
+### Linux kernel 4.5 or earlier
 
 If you have the newer i7-6560 CPU with Iris 540 graphics, the GPU hangs every few minutes with kernel versions before 4.6\. This is probably due to this bug [https://bugs.freedesktop.org/show_bug.cgi?id=94161](https://bugs.freedesktop.org/show_bug.cgi?id=94161) and can be countered by either disabling DRI in your Xorg configuration:
 
@@ -138,11 +164,13 @@ EndSection
 
 or by adding `i915.enable_rc6=0` to the kernel boot parameters.
 
-See also [Intel graphics#X freeze/crash with intel driver](/index.php/Intel_graphics#X_freeze.2Fcrash_with_intel_driver "Intel graphics")
-
 ## Touchpad
 
-Only key-presses work out of the box. Installing `xf86-input-libinput` is sufficient for proper mouse support plus it also handles the touchscreen - see [libinput](/index.php/Libinput "Libinput") for configuration. Features such as tap-to-click are usually adjustable within the desktop environment. Alternatively you may want to install `xf86-input-synaptics` as driver but it may lack the ability to be easily adjustable within your DE (see [Dell Studio XPS 13](/index.php/Dell_Studio_XPS_13 "Dell Studio XPS 13")). Restarting the X server might be required.
+Only key-presses work out of the box. Installing [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) is sufficient for proper mouse support plus it also handles the touchscreen - see [libinput](/index.php/Libinput "Libinput") for configuration. Features such as tap-to-click are usually adjustable within the desktop environment.
+
+Alternatively you may want to install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) as driver but "it is on maintenance mode and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) must be preferred over" (installation note from the package itself). Plus it may lack the ability to be easily adjustable within your DE (see [Dell Studio XPS 13](/index.php/Dell_Studio_XPS_13 "Dell Studio XPS 13")). Restarting the X server might be required.
+
+### Remove psmouse errors from dmesg
 
 If `dmesg | grep -i psmouse` returns an error, but your touchpad still works, then it might be a good idea to disable `psmouse`. First create a config file:
 
@@ -162,16 +190,11 @@ Then add this file to `/etc/mkinitcpio.conf`:
 
 ```
 
-Then update the bootloader.
-
-```
-   # mkinitcpio -p linux
-
-```
-
-where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) then change that to `linux-mainline`.
+Rebuild your initial ramdisk image (see [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")).
 
 ## Sound
+
+### Hissing/Crackling noises when using headphones
 
 Some people reported white hissing/crackling noises when using headphones. To get rid of them you can run `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils). Select your soundcard with F6 and set the headset-gain to 22 (3rd lever from the left) or use the `amixer` command:
 
@@ -184,19 +207,7 @@ Some people reported white hissing/crackling noises when using headphones. To ge
 
 ```
 
-Also people noticed loud popping-noises when sound was not playing. You can turn off the sound_power_save in `tlp`
-
-```
-   # nano /etc/default/tlp
-   ...
-   SOUND_POWER_SAVE_ON_BAT = 0 
-   ...
-
-```
-
-### PulseAudio Workaround
-
-PulseAudio will override the above setting every time you log in/out of your environment (or every time the PulseAudio service is restarted), even if the `alsa-restore.service` is enabled at [start](/index.php/Start "Start") up.
+Unfortunately [PulseAudio](/index.php/PulseAudio "PulseAudio") will override the above setting every time you log in/out of your environment (or every time the PulseAudio service is restarted), even if the `alsa-restore.service` is enabled at [start](/index.php/Start "Start") up.
 
 To work around this issue, edit `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-headphone-mic.conf` and comment out the section `[Element Headphone Mic Boost]`:
 
@@ -223,7 +234,21 @@ Similarly in `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.c
 
 ```
 
-This will prevent PulseAudio to fiddle with the gain setting at all. However, you must make the same modifications every time the PulseAudio package is updated.
+This will prevent PulseAudio to fiddle with the gain setting at all.
+
+**Note:** Unfortunately, you must make the same modifications every time the PulseAudio package is updated.
+
+### Loud popping-noises when sound was not playing
+
+Also people noticed loud popping-noises when sound was not playing. You can turn off the sound_power_save in through e.g. `tlp`
+
+```
+   # nano /etc/default/tlp
+   ...
+   SOUND_POWER_SAVE_ON_BAT = 0 
+   ...
+
+```
 
 ## Microphone
 
@@ -234,6 +259,14 @@ For ALSA, increase "Digital" channel for microphone to work.
 ## Diverting models
 
 ### XPS 12
+
+### Dell XPS 15
+
+Despite the similarities between the two devices they have quite different solutions for various problems, refer to [Dell XPS 15](/index.php/Dell_XPS_15 "Dell XPS 15") for more information.
+
+### Dell XPS 13 (2015)
+
+Information about the predecessor is available at [Dell XPS 13 (2015)](/index.php/Dell_XPS_13_(2015) "Dell XPS 13 (2015)").
 
 ## lspci and lsusb
 
@@ -294,3 +327,4 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ## See also
 
 *   [Arch Forum thread for XPS 13](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
+*   [Dell XPS 13 9350 driver and firmware updates](http://www.dell.com/support/home/us/en/19/product-support/product/xps-13-9350-laptop/drivers)

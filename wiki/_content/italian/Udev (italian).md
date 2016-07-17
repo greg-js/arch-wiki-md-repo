@@ -424,7 +424,7 @@ Creare una regola per udev, impostando `UDISKS_SYSTEM_INTERNAL=0`.Per maggiori i
 
 #### Moduli per lo scaling della frequenza della CPU
 
-L'attuale meccanismo di identificazione del modulo per lo scaling della frequenza non è adeguato, quindi per adesso è stato rimosso dal processo di caricamento automatico dei moduli. Per utilizzare lo [scaling della frequenza della CPU](/index.php/CPU_frequency_scaling_(Italiano) "CPU frequency scaling (Italiano)"), sarà necessario caricare il modulo appropriato esplicitamente all'interno dell'array `MODULES` in `/etc/rc.conf`. Per maggiori informazioni [rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)").
+L'attuale meccanismo di identificazione del modulo per lo scaling della frequenza non è adeguato, quindi per adesso è stato rimosso dal processo di caricamento automatico dei moduli. Per utilizzare lo [scaling della frequenza della CPU](/index.php/CPU_frequency_scaling_(Italiano) "CPU frequency scaling (Italiano)"), sarà necessario caricare il modulo appropriato esplicitamente all'interno dell'array `MODULES` in `/etc/rc.conf`.
 
 #### Problemi con l'audio o alcuni moduli non vengono caricati automaticamente
 

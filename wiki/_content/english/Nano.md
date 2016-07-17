@@ -2,7 +2,7 @@
 
 ## Contents
 
-*   [1 Package installation](#Package_installation)
+*   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Creating ~/.nanorc](#Creating_.7E.2F.nanorc)
     *   [2.2 Syntax highlighting](#Syntax_highlighting)
@@ -22,9 +22,9 @@
     *   [5.1 Hijacked keybindings](#Hijacked_keybindings)
 *   [6 See also](#See_also)
 
-## Package installation
+## Installation
 
-You can install the [nano](https://www.archlinux.org/packages/?name=nano) package from the [official repositories](/index.php/Official_repositories "Official repositories"). It is likely that is already on your system, as it is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+*nano* is available in the [nano](https://www.archlinux.org/packages/?name=nano) package. It is likely that is already on your system, as it is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
 ## Configuration
 

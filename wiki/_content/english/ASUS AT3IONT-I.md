@@ -76,7 +76,7 @@ Untested.
 
 ### Remote
 
-The Asus remote has limited functionality out of the box. Everything except the eight 'special' media buttons at the bottom. Also, you may have to blacklist the kernals `mceusb` module since is fails out. [Lirc](/index.php/Lirc "Lirc")'s `mceusb` module handles the remote better, but still does not support all the buttons on the Asus remote.
+The Asus remote has limited functionality out of the box. Everything except the eight 'special' media buttons at the bottom. Also, you may have to blacklist the kernals `mceusb` module since is fails out. [LIRC](/index.php/LIRC "LIRC")'s `mceusb` module handles the remote better, but still does not support all the buttons on the Asus remote.
 
 Source of the following approach and module developer: [user pj7 on a Ubuntu forum thread](http://ubuntuforums.org/member.php?u=109915).
 

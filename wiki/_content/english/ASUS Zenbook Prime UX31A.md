@@ -268,7 +268,7 @@ Note that disabling this plugin will cause the the current settings within the M
 
 ### Disable Touchpad While Typing
 
-One of the criticisms this laptop gets (see reviews at Amazon) is that the placement of the touchpad results in frequent touchpad brushing during typing. You should use whatever touchpad disabling method you prefer. See [Touchpad Synaptics#Disable trackpad while typing](/index.php/Touchpad_Synaptics#Disable_trackpad_while_typing "Touchpad Synaptics").
+One of the criticisms this laptop gets (see reviews at Amazon) is that the placement of the touchpad results in frequent touchpad brushing during typing. You should use whatever touchpad disabling method you prefer. See [Touchpad Synaptics#Disable touchpad while typing](/index.php/Touchpad_Synaptics#Disable_touchpad_while_typing "Touchpad Synaptics").
 
 ## HDMI plugged at boot
 

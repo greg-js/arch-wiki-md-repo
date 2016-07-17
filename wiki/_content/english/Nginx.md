@@ -733,6 +733,16 @@ server {
 
 **Tip:** If you want nginx accessible on port 80 or 443, configure your [firewall](/index.php/Firewall "Firewall") to redirect requests from 80 or 443 to the ports nginx listens to.
 
+	Or you may grant the nginx process the CAP_NET_BIND_SERVICE capability which will allow it to bind to ports below 1024: `/etc/systemd/system/nginx.service.d/user.conf` 
+```
+[Service]
+...
+CapabilityBoundingSet=
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+AmbientCapabilities=
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+```
+
 	PID file
 
 	[nginx](https://www.archlinux.org/packages/?name=nginx) uses `/run/nginx.pid` by default. We can create a directory that *user* has write access to and place our PID file in there. An example using [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd"): `/etc/tmpfiles.d/nginx.conf`  `d /run/nginx 770 *user* *group*` 

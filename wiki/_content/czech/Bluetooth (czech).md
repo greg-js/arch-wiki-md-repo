@@ -49,7 +49,7 @@ Dbus daemon se používá ke čtení nastavení a pro párování zařízení. B
 
 ```
 
-Pokud chcete spouštět bluetooth automaticky při startu počítače, přidejte bluetooth mezi pole daemonů v souboru [Rc.conf (Česky)](/index.php/Rc.conf_(%C4%8Cesky) "Rc.conf (Česky)") (daemon musí být umístěn až za dbus):
+Pokud chcete spouštět bluetooth automaticky při startu počítače, přidejte bluetooth mezi pole daemonů v souboru rc.conf (daemon musí být umístěn až za dbus):
 
 ```
 DAEMONS=(... bluetooth)

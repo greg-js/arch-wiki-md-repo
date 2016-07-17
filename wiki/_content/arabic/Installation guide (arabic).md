@@ -94,7 +94,7 @@
 	 `# ln -s /usr/share/zoneinfo/Europe/Athens /etc/localtime` 
 
 *   أزل التعليق عن المحليّة المحدّدة في `/etc/locale.gen` وولّدها عبر `locale-gen`.
-*   عيّن تفضيلات [المحليّة](/index.php/Locale#Setting_system-wide_locale "Locale") في `/etc/locale.conf`.
+*   عيّن تفضيلات [المحليّة](/index.php/Locale#Setting_the_system_locale "Locale") في `/etc/locale.conf`.
 *   أضف [خريطة مفاتيح الطرفية](/index.php/KEYMAP "KEYMAP") وتفضيلات [الخط](/index.php/Fonts#Console_fonts "Fonts") في `/etc/vconsole.conf`
 *   اضبط `/etc/mkinitcpio.conf` كما تحتاجه (طالع [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")) وأنشئ قرص الذاكرة العشوائية الأولي عبر:
 

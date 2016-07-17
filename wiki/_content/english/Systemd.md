@@ -454,7 +454,7 @@ Since systemd is a replacement for System V init, it is in charge of the mounts 
 
 In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If you or some program delete that directory, *systemd* will **not** recreate it automatically and instead will write its logs to `/run/systemd/journal` in a nonpersistent way. However, the folder will be recreated when you set `Storage=persistent` and run `systemctl restart systemd-journald` (or reboot).
 
-While syslog is deprecated, nevertheless systemd journal event notification message logging classification corresponds to classical BSD syslog protocol style ([Wiki](https://en.wikipedia.org/wiki/Syslog), [RFC 5424](https://tools.ietf.org/html/rfc5424)). For more info see subsections [Facility](#Facility), [Priority level](#Priority_level), and for examples on how to use it in [Filtering output](#Filtering_output).
+The systemd journal event notification message logging classification corresponds to classical BSD syslog protocol style ([Wikipedia](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog"), [RFC 5424](https://tools.ietf.org/html/rfc5424)). For more info see subsections [Facility](#Facility), [Priority level](#Priority_level), and for examples on how to use it in [Filtering output](#Filtering_output).
 
 ### Facility
 

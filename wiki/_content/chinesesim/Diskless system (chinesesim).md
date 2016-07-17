@@ -183,7 +183,7 @@ You will then need to append `nbd` to your `HOOKS` array after `net`; `net` will
 
 ## 配置客户端
 
-In addition to the setup mentioned here, you should also set up your [hostname](/index.php/HOSTNAME#Set_the_host_name "HOSTNAME"), [timezone](/index.php/Timezone#Time_Zone "Timezone"), [locale](/index.php/Locale#Setting_system-wide_locale "Locale"), and [keymap](/index.php/Keymap "Keymap"), and follow any other relevant parts of the [Installation guide](/index.php/Installation_guide "Installation guide").
+In addition to the setup mentioned here, you should also set up your [hostname](/index.php/HOSTNAME#Set_the_host_name "HOSTNAME"), [timezone](/index.php/Timezone#Time_Zone "Timezone"), [locale](/index.php/Locale#Setting_the_system_locale "Locale"), and [keymap](/index.php/Keymap "Keymap"), and follow any other relevant parts of the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ### 引导
 

@@ -452,7 +452,7 @@ After making this change, reload the gpg-agent.
 
 It is possible to use the [Systemd/User](/index.php/Systemd/User "Systemd/User") facilities to start the agent.
 
-Create a user-specific systemd unit file:
+Create a systemd unit file:
 
  `~/.config/systemd/user/gpg-agent.service` 
 ```
@@ -462,7 +462,7 @@ IgnoreOnIsolate=true
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/gpg-agent --options '%h/.gnupg/gpg-agent.conf' --daemon
+ExecStart=/usr/bin/gpg-agent --daemon
 Restart=on-abort
 
 [Install]
@@ -505,7 +505,7 @@ enable-ssh-support
 
 ```
 
-Next, make sure that *gpg-agent* is always started. Use either the [systemd user service](#Start_gpg-agent_with_systemd_user) or add the following to your `.bashrc` file:
+Next, make sure that *gpg-agent* is always started. Either follow [#Start gpg-agent with systemd user](#Start_gpg-agent_with_systemd_user), or add the following to your `.bashrc` file:
 
  `~/.bashrc` 
 ```
@@ -536,7 +536,10 @@ fi
 
 ```
 
-**Note:** If you use non-default [GnuPG home directory](#Directory_location), run `gpgconf --create-socketdir` to create a socket directory under `/run/user/$UID/gnupg/`. Otherwise the socket will be placed in the GnuPG home directory.
+**Note:**
+
+*   If you use non-default GnuPG [#Directory location](#Directory_location), run `gpgconf --create-socketdir` to create a socket directory under `/run/user/$UID/gnupg/`. Otherwise the socket will be placed in the GnuPG home directory.
+*   The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[3]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
 
 Also set the GPG_TTY and refresh the TTY in case user has switched into an X session as stated in `man gpg-agent`. For example:
 

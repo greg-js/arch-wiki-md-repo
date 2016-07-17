@@ -362,7 +362,7 @@ server {
 
 ### uWSGI configuration
 
-You can run *ownCloud* in its own process and service by using the [uWSGI](/index.php/Uwsgi "Uwsgi") application server with [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php). This allows you to define a [PHP configuration](/index.php/PHP#Configuration "PHP") only for this instance of PHP, without the need to edit the global `php.ini` and thus keeping your web application configurations compartmentalized. *uWSGI* itself has a wealth of features to limit the resource use and to harden the security of the application, and by being a separate process it can run under its own user.
+You can run *ownCloud* in its own process and service by using the [uWSGI](/index.php/UWSGI "UWSGI") application server with [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php). This allows you to define a [PHP configuration](/index.php/PHP#Configuration "PHP") only for this instance of PHP, without the need to edit the global `php.ini` and thus keeping your web application configurations compartmentalized. *uWSGI* itself has a wealth of features to limit the resource use and to harden the security of the application, and by being a separate process it can run under its own user.
 
 #### Configuration
 
@@ -488,7 +488,7 @@ cron2 = minute=-15,unique=1 /usr/bin/php -f /usr/share/webapps/owncloud/cron.php
 
 #### Activation
 
-[uWSGI](/index.php/Uwsgi "Uwsgi") provides a [template unit](/index.php/Systemd#Using_units "Systemd") that allows to start and enable application using their configuration file name as instance identifier. For example:
+[uWSGI](/index.php/UWSGI "UWSGI") provides a [template unit](/index.php/Systemd#Using_units "Systemd") that allows to start and enable application using their configuration file name as instance identifier. For example:
 
 ```
 # systemctl start uwsgi@owncloud.socket
@@ -506,7 +506,7 @@ To enable the uwsgi service by default at start-up, run:
 
 **Note:** Here we make use of [systemd socket activation](http://0pointer.de/blog/projects/socket-activation.html) to prevent unnecessary resources consumption when no connections are made to the instance. If you would rather have it constantly active, simply remove the `.socket` part to start and enable the service instead.
 
-See also [Uwsgi#Starting service](/index.php/Uwsgi#Starting_service "Uwsgi").
+See also [UWSGI#Starting service](/index.php/UWSGI#Starting_service "UWSGI").
 
 ## Synchronization
 

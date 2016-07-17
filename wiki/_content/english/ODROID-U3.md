@@ -1,26 +1,75 @@
-From [Arch Linux ARM ODROID-U3 Page](http://archlinuxarm.org/platforms/armv7/samsung/odroid-u3):
-
-	The ODROID-U3 is a very low cost and high performance development platform based on an Exynos 4412 ARM Cortex-A9 Quad Core 1.7GHz CPU. It has 3 USB 2.0 ports and micro HDMI.
+There are several supported ODROID ARM boards available to consumers. This wiki page offers general configuration that should be applicable to them all. At this point, the content has been verified to work on the ODROID-C2 and ODROID-U3.
 
 **Note:** Support for the ARM architecture is provided on [http://archlinuxarm.org](http://archlinuxarm.org) not through posts to the official Arch Linux Forum. Any posts related to ARM specific issues will be promptly closed per the [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct") policy.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 LEDs](#LEDs)
-    *   [2.1 Blue LED](#Blue_LED)
-        *   [2.1.1 List available triggers](#List_available_triggers)
-        *   [2.1.2 Temporary configuration](#Temporary_configuration)
-        *   [2.1.3 Permanent configuration](#Permanent_configuration)
-*   [3 CPU Fan](#CPU_Fan)
-    *   [3.1 Fan Mode](#Fan_Mode)
-    *   [3.2 Fan Speed (Manual Only)](#Fan_Speed_.28Manual_Only.29)
-    *   [3.3 Read CPU Temperature](#Read_CPU_Temperature)
-*   [4 See also](#See_also)
+*   [2 CPU frequency scaling](#CPU_frequency_scaling)
+    *   [2.1 Show online/offline cores](#Show_online.2Foffline_cores)
+    *   [2.2 Read CPU temperature](#Read_CPU_temperature)
+    *   [2.3 Read CPU frequency](#Read_CPU_frequency)
+    *   [2.4 Read CPU governor](#Read_CPU_governor)
+*   [3 LEDs](#LEDs)
+    *   [3.1 Blue LED](#Blue_LED)
+        *   [3.1.1 List available triggers](#List_available_triggers)
+        *   [3.1.2 Temporary configuration](#Temporary_configuration)
+        *   [3.1.3 Permanent configuration](#Permanent_configuration)
+*   [4 CPU Fan](#CPU_Fan)
+    *   [4.1 Fan Mode](#Fan_Mode)
+    *   [4.2 Fan Speed (Manual Only)](#Fan_Speed_.28Manual_Only.29)
+*   [5 See also](#See_also)
 
 ## Installation
 
-See the installation instructions at the [Arch Linux ARM ODROID-U3](http://archlinuxarm.org/platforms/armv7/samsung/odroid-u3) page.
+See the installation instructions at the [Arch ARM](https://archlinuxarm.org) project page.
+
+*   [ODROID-U2 (armv8)](https://archlinuxarm.org/platforms/armv8/amlogic/odroid-c2)
+*   [ODROID-C1 (armv7)](https://archlinuxarm.org/platforms/armv7/amlogic/odroid-c1)
+*   [ODROID-U2 (armv7)](https://archlinuxarm.org/platforms/armv7/samsung/odroid-u2)
+*   [ODROID-U3 (armv7)](https://archlinuxarm.org/platforms/armv7/samsung/odroid-u3)
+
+*   [ODROID-U3 (armv7)](https://archlinuxarm.org/platforms/armv7/samsung/odroid-x)
+*   [ODROID-X2 (armv7)](https://archlinuxarm.org/platforms/armv7/samsung/odroid-x2)
+*   [ODROID-XU (armv7)](https://archlinuxarm.org/platforms/armv7/samsung/odroid-xu)
+*   [ODROID-XU3 (armv7)](https://archlinuxarm.org/platforms/armv7/samsung/odroid-xu3)
+*   [ODROID-XU4 (armv7)](https://archlinuxarm.org/platforms/armv7/samsung/odroid-xu4)
+
+## CPU frequency scaling
+
+The [cpupower](https://www.archlinux.org/packages/?name=cpupower) package can be used to select alternative CPU governors for power savings. Edit `/etc/default/cpupower` and set the *governor=* line followed by [start](/index.php/Start "Start") cpupower.service.
+
+### Show online/offline cores
+
+If using the *hotplug* governor, idle cores are switched off to reduce power consumption and head generation.
+
+```
+lscpu |grep line
+
+```
+
+### Read CPU temperature
+
+```
+awk '{printf "%3.1f°C
+", $1/1000}' /sys/class/thermal/thermal_zone0/temp
+
+```
+
+### Read CPU frequency
+
+```
+awk '{printf "%3.1f MHz
+", $1/1000}' /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+
+```
+
+### Read CPU governor
+
+```
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+```
 
 ## LEDs
 
@@ -60,12 +109,6 @@ Values range from 0 (0%) to 255 (100%)
 
  `# echo 0 > /sys/devices/platform/odroidu2-fan/pwm_duty`  `# echo 255 > /sys/devices/platform/odroidu2-fan/pwm_duty` 
 
-### Read CPU Temperature
-
- `awk '{printf "%3.1f°C
-", $1/1000}' /sys/class/thermal/thermal_zone0/temp` 
-
 ## See also
 
-*   [[1]](http://archlinuxarm.org/platforms/armv7/samsung/odroid-u3) - ODROID-U3 Arch Linux ARM Page
-*   [[2]](http://www.hardkernel.com/main/products/prdt_info.php?g_code=g138745696275) - ODROID-U3 Hardkernel Product Page
+*   [Hardkernel Product Page](http://www.hardkernel.com/main/main.php)

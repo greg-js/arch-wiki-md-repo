@@ -67,7 +67,7 @@ $ man smb.conf
 
 ```
 
-Per avviare automaticamente `samba` all'avvio, aggiungerlo all'array `[DAEMONS](/index.php/Daemon_(Italiano) "Daemon (Italiano)")` in `/etc/[rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)")`.
+Per avviare automaticamente `samba` all'avvio, aggiungerlo all'array `[DAEMONS](/index.php/Daemon_(Italiano) "Daemon (Italiano)")` in `/etc/rc.conf`.
 
 ### Opzioni della shell
 
@@ -368,7 +368,7 @@ password=PASSWORD
 
 Per maggiore sicurezza è possibile assegnare i permessi tramite il comando `chmod 700` a questo file in modo da impedirne la lettura e la scrittura da parte di altri utenti.
 
-Se si aggiunge una condivisione nel file `fstab`, il demone `netfs` dovrà essere aggiunto nell'array `DAEMONS` in [rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)"), dopo [network](/index.php/Configuring_Network_(Italiano) "Configuring Network (Italiano)"). Il demone `netfs` si occuperà di montare le condivisioni durante la fase di avvio e, cosa più importante, di smontarle durante la fase di arresto del sistema. Anche se viene utilizzata l'opzione `noauto` in `fstab`, il demone `netfs` dovrebbe essere usato. Senza di esso se una condivisione fosse montata, durante la fase di spegnimento porterebbe il demone `network` ad attendere il time out della connessione, aumentando quindi la durata di arresto del sistema.
+Se si aggiunge una condivisione nel file `fstab`, il demone `netfs` dovrà essere aggiunto nell'array `DAEMONS` in rc.conf, dopo [network](/index.php/Configuring_Network_(Italiano) "Configuring Network (Italiano)"). Il demone `netfs` si occuperà di montare le condivisioni durante la fase di avvio e, cosa più importante, di smontarle durante la fase di arresto del sistema. Anche se viene utilizzata l'opzione `noauto` in `fstab`, il demone `netfs` dovrebbe essere usato. Senza di esso se una condivisione fosse montata, durante la fase di spegnimento porterebbe il demone `network` ad attendere il time out della connessione, aumentando quindi la durata di arresto del sistema.
 
 ##### Permettere agli utenti di montare le condivisioni
 

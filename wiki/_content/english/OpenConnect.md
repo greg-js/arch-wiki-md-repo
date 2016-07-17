@@ -48,6 +48,13 @@ Often VPN provider are offering different authentication groups for different ac
 
 ```
 
+Here is an example of how to to connect to a Juniper Pulse Secure Pulse Client. Only version 7.06 and higher are compatible.
+
+```
+# sudo openconnect --no-cert-check --authgroup="Single-Factor Pulse Clients" --juniper *example.com*/dana-na/auth/url_6/welcome.cgi
+
+```
+
 ### Integration in netctl
 
 A simple <tt>tuntap</tt> netctl.profile(5) can be used to integrate OpenConnect in the normal [Netctl](/index.php/Netctl "Netctl") workflow. For example:

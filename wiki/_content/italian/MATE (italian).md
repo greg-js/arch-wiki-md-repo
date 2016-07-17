@@ -91,7 +91,7 @@ Probabilmente si riceveranno messaggi di conflitto durante l'installazione. Si r
 
 ## Lanciare Mate
 
-Accertarsi di avere dbus tra i DAEMONS in [rc.conf (Italiano)](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)") prima di lanciare MATE.
+Accertarsi di avere dbus tra i DAEMONS in rc.conf prima di lanciare MATE.
 
 ### Manualmente
 

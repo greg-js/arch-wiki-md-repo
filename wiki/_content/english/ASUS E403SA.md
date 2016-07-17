@@ -42,7 +42,7 @@ Read [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency sca
 
 ### Video
 
-Install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), read [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics") for graphics driver setup. Both SNA and UXA acceleration works well.
+Install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), read [Intel graphics](/index.php/Intel_graphics "Intel graphics") for graphics driver setup. Both SNA and UXA acceleration works well.
 
 ### Touchpad
 

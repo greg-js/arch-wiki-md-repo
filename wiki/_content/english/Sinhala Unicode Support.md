@@ -13,7 +13,11 @@ This page explains how to get the Sinhala unicode support and sinhala unicode in
 
 ## Sinhala Unicode Font
 
-Install [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/) from the [AUR](/index.php/AUR "AUR").
+For Sinhala support, you can install any of these fonts.
+
+*   [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts) - Noto Sans Sinhala, a sans serif font.
+*   [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) - FreeSerif, a serif font.
+*   [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/) - LKLUG, a serif font.
 
 ## Guide to install Sinhala Unicode Font
 

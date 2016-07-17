@@ -17,7 +17,7 @@
 
 [Install](/index.php/Install "Install") the [mantisbt](https://www.archlinux.org/packages/?name=mantisbt) package.
 
-Choose your favorite [web server](/index.php/Category:Web_server "Category:Web server") and/or application server (such as [uwsgi](/index.php/Uwsgi "Uwsgi")) for making the application available.
+Choose your favorite [web server](/index.php/Category:Web_server "Category:Web server") and/or application server (such as [UWSGI](/index.php/UWSGI "UWSGI")) for making the application available.
 
 ## Configuration
 
@@ -115,7 +115,7 @@ server {
 
 ```
 
-[uwsgi](/index.php/Uwsgi "Uwsgi") can be used to achieve a resource preserving setup with dedicated PHP settings.
+[UWSGI](/index.php/UWSGI "UWSGI") can be used to achieve a resource preserving setup with dedicated PHP settings.
 
  `/etc/uwsgi/mantisbt.ini` 
 ```
@@ -152,7 +152,7 @@ php-set = extension=mysqli.so
 
 ```
 
-If your (modified) versions of these files are in place, you should restart your [nginx](/index.php/Nginx "Nginx") and [start/enable a uwsgi socket](/index.php/Uwsgi#Starting_service "Uwsgi") for *mantisbt* [using systemd](/index.php/Systemd#Using_units "Systemd").
+If your (modified) versions of these files are in place, you should restart your [nginx](/index.php/Nginx "Nginx") and [start/enable a uwsgi socket](/index.php/UWSGI#Starting_service "UWSGI") for *mantisbt* [using systemd](/index.php/Systemd#Using_units "Systemd").
 
 ### Database
 

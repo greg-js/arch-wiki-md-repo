@@ -121,7 +121,7 @@ I *daemons* (demoni) sono programmi che girano in background, e normalmente veng
 
 ### Riconoscimento automatico dell'hardware
 
-Durante il processo di boot, l'hardware dovrebbe essere riconosciuto automaticamente da [Udev](/index.php/Udev_(Italiano) "Udev (Italiano)"). Una potenziale riduzione del tempo di avvio può essere ottenuta disabilitando il caricamento automatico dei moduli a specificando i moduli richiesti manualmente, come spiegato in [rc.conf (Italiano)#Hardware](/index.php/Rc.conf_(Italiano)#Hardware "Rc.conf (Italiano)"). Anche [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") dovrebbe essere in grado di determinare automaticamente i driver richiesti grazie a udev, ma l'utente ha comunque la possibilità di configurare il server X manualmente.
+Durante il processo di boot, l'hardware dovrebbe essere riconosciuto automaticamente da [Udev](/index.php/Udev_(Italiano) "Udev (Italiano)"). Una potenziale riduzione del tempo di avvio può essere ottenuta disabilitando il caricamento automatico dei moduli a specificando i moduli richiesti manualmente in rc.conf. Anche [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") dovrebbe essere in grado di determinare automaticamente i driver richiesti grazie a udev, ma l'utente ha comunque la possibilità di configurare il server X manualmente.
 
 ### Attivare *Num Lock* all'avvio
 
@@ -173,7 +173,7 @@ I possessori di mouse avanzati, o comunque inusuali, potrebbero non trovare tutt
 
 ### Mappatura della tastiera
 
-Di default le tastiere diverse da quella standard inglese possono funzionare diversamente da come ci si aspetta. Per definire la mappatura della tastiera nelle console virtuali, bisogna settare la variabile [KEYMAP](/index.php/KEYMAP "KEYMAP") nel file [rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)"). Per gli utenti di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"), le modifiche richieste sono descritte in [Xorg (Italiano)#Impostazioni della tastiera](/index.php/Xorg_(Italiano)#Impostazioni_della_tastiera "Xorg (Italiano)").
+Di default le tastiere diverse da quella standard inglese possono funzionare diversamente da come ci si aspetta. Per definire la mappatura della tastiera nelle console virtuali, bisogna settare la variabile [KEYMAP](/index.php/KEYMAP "KEYMAP") nel file rc.conf. Per gli utenti di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"), le modifiche richieste sono descritte in [Xorg (Italiano)#Impostazioni della tastiera](/index.php/Xorg_(Italiano)#Impostazioni_della_tastiera "Xorg (Italiano)").
 
 ### Touchpad nei laptop
 

@@ -84,31 +84,9 @@ If it does not happen, then:
 
 ### Enable early KMS
 
-**Tip:** If you have problems with the resolution, you can check whether [enforcing the mode](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") helps.
-
 [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) is supported by Intel chipsets that use the i915 DRM driver and is mandatory and enabled by default.
 
-KMS is typically initialized after the [initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process"). It is possible, however, to enable KMS during the initramfs stage. To do this, add the `i915` module to the `MODULES` line in `/etc/mkinitcpio.conf`:
-
-```
-MODULES="... i915 ..."
-
-```
-
-**Tip:** Users might need to add `intel_agp` before `i915` to suppress the ACPI errors. The order matters because the modules are activated in sequence. This might be required for resuming from hibernation to work with changed display configuration!
-
-If you are using a custom [EDID](https://en.wikipedia.org/wiki/Extended_display_identification_data "wikipedia:Extended display identification data") file, you should embed it into initramfs as well:
-
- `/etc/mkinitcpio.conf`  `FILES="/lib/firmware/edid/your_edid.bin"` 
-
-Now, regenerate the initramfs:
-
-```
-# mkinitcpio -p linux
-
-```
-
-The change takes effect at the next reboot.
+Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for instuctions on how to enable KMS as soon as possible at the boot process.
 
 ## Module-based Powersaving Options
 

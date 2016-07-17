@@ -1,4 +1,4 @@
-[Prey](http://www.preyproject.com/) is a set of scripts that helps you track your computer when it is stolen.
+[Prey](http://preyproject.com/) is a set of scripts that helps you track your computer when it is stolen.
 
 This guide shows you how to install Prey.
 
@@ -21,11 +21,11 @@ Install [prey-node-client](https://aur.archlinux.org/packages/prey-node-client/)
 
 **Note:** It is [no longer possible](http://answers.preyproject.com/topics/add-new-device-manually#message-53178b9f27af477ee7000492) to add new devices using the control panel on Prey's website. Use [the Node.js client](https://github.com/prey/prey-node-client) or [the GUI](#GUI_config).
 
-Edit `/etc/prey/prey.conf` and add your device key and API key, both of which are listed in Prey's control panel. Or use the [the GUI](#GUI_config) to ste your account.
+First you must to have a Prey's account, if you don't have it, you can create it on the [website](https://panel.preyproject.com/signup/). To add your device, run `prey_project config account setup` and type your email account and password. Or use the [the GUI](#GUI_config) to set your account.
 
 Run `prey_project config activate` as prey user to ensure that the configuration is correct.
 
-The installer should enable automatically the [systemd](/index.php/Systemd "Systemd") service **prey-agent** to start Prey at boot. You can check if it's loaded and running with `# systemctl | grep prey-agent`
+The installer enable automatically the [systemd](/index.php/Systemd "Systemd") service **prey-agent** to start Prey at boot. You can check if it's loaded and running with `systemctl status prey-agent`
 
 ### Plugins
 

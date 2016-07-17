@@ -266,7 +266,7 @@ Check the resulting file in `/mnt/etc/fstab` afterwards, and edit it in case of 
 
 ### Change root
 
-Copy *netctl* profiles you may have edited in `/etc/netctl` to the new system in `/mnt`. Then [chroot](/index.php/Chroot#Change_root "Chroot") to it:
+[Chroot](/index.php/Chroot#Change_root "Chroot") to the new system:
 
 ```
 # arch-chroot /mnt /bin/bash
@@ -334,7 +334,7 @@ For special configurations, set the correct [hooks](/index.php/Mkinitcpio#HOOKS 
 
 ### Boot loader
 
-See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for available choices and configurations. Choices include [grub](/index.php/Grub "Grub") (BIOS/UEFI), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (UEFI) and [syslinux](/index.php/Syslinux "Syslinux") (BIOS).
+See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for available choices and configurations. Choices include [GRUB](/index.php/GRUB "GRUB") (BIOS/UEFI), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (UEFI) and [syslinux](/index.php/Syslinux "Syslinux") (BIOS).
 
 If you have an Intel CPU, in addition to installing a boot loader, install the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package and [enable microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 
@@ -378,7 +378,7 @@ See [Network configuration#Configure the IP address](/index.php/Network_configur
 
 ```
 
-Additional [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless") may also be required. When using *wifi-menu*, do so after [#Unmount_the_partitions_and_reboot](#Unmount_the_partitions_and_reboot).
+Additional [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless") may also be required. When using *wifi-menu*, do so after [#Unmount the partitions and reboot](#Unmount_the_partitions_and_reboot).
 
 See [Wireless#Wireless management](/index.php/Wireless#Wireless_management "Wireless") for other available methods.
 

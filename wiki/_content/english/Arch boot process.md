@@ -63,7 +63,7 @@ If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enabled, the boot proc
 
 ### Multibooting in UEFI
 
-Since each OS or vendor can maintain its own files within the EFI System Partition without affecting the other, multi-booting using UEFI is just a matter of launching a different UEFI application corresponding to the particular OS's bootloader. This removes the need for relying on chainloading mechanisms of one [boot loader](/index.php/Boot_loader "Boot loader") to load another to switch OSes.
+Since each OS or vendor can maintain its own files within the EFI System Partition without affecting the other, multi-booting using UEFI is just a matter of launching a different UEFI application corresponding to the particular OS's bootloader. This removes the need for relying on chainloading mechanisms of one [boot loader](/index.php/Boot_loader "Boot loader") to load another OS.
 
 See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
 
@@ -113,7 +113,7 @@ Once the user's [shell](/index.php/Shell "Shell") is started, it will typically 
 
 ## See also
 
-*   [Early Userspace in Arch Linux](http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/)
+*   [Early Userspace in Arch Linux](https://web.archive.org/web/20150430223035/http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/)
 *   [Inside the Linux boot process](http://www.ibm.com/developerworks/linux/library/l-linuxboot/)
 *   [Boot with GRUB](http://www.linuxjournal.com/article/4622)
 *   [Wikipedia:Linux startup process](https://en.wikipedia.org/wiki/Linux_startup_process "wikipedia:Linux startup process")

@@ -1,6 +1,6 @@
 This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") from the live system booted with the official installation image. Before installing, it would be advised to view the [FAQ](/index.php/FAQ "FAQ"). For conventions used in this document, see [Help:Reading](/index.php/Help:Reading "Help:Reading").
 
-For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles (accessible from the installation environment with [elinks](/index.php/Elinks "Elinks")), or the various programs' [man pages](/index.php/Man_page "Man page"); see [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) for an overview of the configuration. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
+For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles (accessible from the installation environment with [ELinks](/index.php/ELinks "ELinks")), or the various programs' [man pages](/index.php/Man_page "Man page"); see [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) for an overview of the configuration. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
 
 ## Contents
 
@@ -55,11 +55,13 @@ The layout can be changed with *loadkeys*, appending a file name (path and file 
 
 ```
 
-[Console fonts](/index.php/Fonts#Console_fonts "Fonts") are located in `/usr/share/kbd/consolefonts/`, and can likewise be set with *setfont*.
+[Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/`, and can likewise be set with *setfont*.
 
 ### Connect to the Internet
 
-Internet service via DHCP discovery is enabled on boot for supported wired devices; read more at [Network configuration](/index.php/Network_configuration "Network configuration"). For supported wireless devices run `wifi-menu` to set up the network; read more with [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). If needing a static IP or network management tools, [stop](/index.php/Stop "Stop") `dhcpcd@*eth0*.service` and read [Netctl](/index.php/Netctl "Netctl").
+Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as *ping*.
+
+For other [network configuration](/index.php/Network_configuration "Network configuration"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [netctl](/index.php/Netctl "Netctl") are included; for examples, see `systemd.network(5)` and `netctl.profile(7)`, respectively. Before using a different networking service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service`.
 
 ### Update the system clock
 
@@ -82,7 +84,7 @@ If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), 
 
 ### Format the partitions
 
-See [File systems](/index.php/File_systems#Create_a_filesystem "File systems") and optionally [Swap](/index.php/Swap "Swap") for details.
+See [File systems](/index.php/File_systems#Create_a_file_system "File systems") and optionally [Swap](/index.php/Swap "Swap") for details.
 
 ### Mount the partitions
 

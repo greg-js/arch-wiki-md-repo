@@ -67,8 +67,6 @@ install CD version
 
 ## XPS
 
-}
-
 | Model version | Arch Linux
 install CD version
  | Hardware support | Remarks |

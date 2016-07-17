@@ -34,7 +34,7 @@ acpid puede ser usado asi mismo, o combinado con un sistema más robusto como [p
 Para que inicie al arranque :
 
 *   Si usas [systemd](/index.php/Systemd "Systemd") (seguramente), pon en un terminal `systemctl enable acpid` ;
-*   Si usas [initscripts](/index.php/Rc.conf "Rc.conf"), edita `/etc/rc.conf` como superusuario y añade `acpid` a la[variable DAEMONS](/index.php/Rc.conf_(Espa%C3%B1ol)#Demonios "Rc.conf (Español)").
+*   Si usas [initscripts](/index.php/Rc.conf "Rc.conf"), edita `/etc/rc.conf` como superusuario y añade `acpid` a la variable DAEMONS.
 
 ## Configuración
 

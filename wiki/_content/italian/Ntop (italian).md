@@ -33,7 +33,7 @@ Ntop è un analizzatore del traffico di rete basato su [libcap](http://www.tcpdu
 
 ```
 
-*   Se si ritiene necessario, è possibile aggiungere ntop all'array DAEMONS in [/etc/rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)") per avviare automaticamente il demone di ntop all'avvio.
+*   Se si ritiene necessario, è possibile aggiungere ntop all'array DAEMONS in /etc/rc.conf per avviare automaticamente il demone di ntop all'avvio.
 
 ## Trucchi e suggerimenti
 

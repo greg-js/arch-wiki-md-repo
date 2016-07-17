@@ -43,7 +43,7 @@
 
 ### ฟอร์แมตพาร์ทิชั่น
 
-อ่าน [ระบบไฟล์](/index.php/File_systems#Create_a_filesystem "File systems") และ [Swap](/index.php/Swap "Swap") สำหรับรายละเอียดและวิธีการ
+อ่าน [ระบบไฟล์](/index.php/File_systems#Create_a_file_system "File systems") และ [Swap](/index.php/Swap "Swap") สำหรับรายละเอียดและวิธีการ
 
 ### Mount พาร์ทิชั่น
 

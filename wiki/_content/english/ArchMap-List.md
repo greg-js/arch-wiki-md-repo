@@ -1015,5 +1015,6 @@ You can use the following website to get your device's coordinates along with a 
 52.7577027,7.2108198 "SunRed" # Haren (Ems), Lower Saxony, Germany
 42.351812, -71.141449 "jethrosun7" # Boston, MA, USA
 55.992348, 92.796414 "Prototik" # Krasnoyarsk, Russia
+41.946728, 12.825640 "Daniele" # Tivoli, Italy
 
 ```

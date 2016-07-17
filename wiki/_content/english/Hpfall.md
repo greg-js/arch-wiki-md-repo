@@ -4,7 +4,6 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Service](#Service)
 *   [3 Testing](#Testing)
     *   [3.1 Testing Shock protection](#Testing_Shock_protection)
 
@@ -27,15 +26,7 @@ DEVICE=/dev/sda
 
 ```
 
-### Service
-
-You can now start hpfall daemon:
-
- `# systemctl start hpfall.service` 
-
-To start hpfall at boot time::
-
- `# systemctl enable hpfall.service` 
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `hpfall.service`
 
 ## Testing
 

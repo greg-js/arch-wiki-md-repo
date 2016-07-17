@@ -801,7 +801,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[openBVE](https://en.wikipedia.org/wiki/BVE_Trainsim#openBVE "wikipedia:BVE Trainsim")** — Free-as-in-freedom train simulator placed in the public domain.
 
-	[http://web.archive.org/web/odakyufan.zxq.net/openbve/](http://web.archive.org/web/odakyufan.zxq.net/openbve/) || [openbve](https://aur.archlinux.org/packages/openbve/)
+	[http://web.archive.org/web/odakyufan.zxq.net/openbve/](http://web.archive.org/web/odakyufan.zxq.net/openbve/) || [openbve](https://www.archlinux.org/packages/?name=openbve)
 
 *   **Powder Toy** — Physics and chemistry simulation sandbox game.
 

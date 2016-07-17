@@ -96,7 +96,7 @@ GNU readline is a commonly used library for line-editing; it is used for example
 ### X11 & Wayland
 
 | Keyboard Shortcut | Description | Notes |
-| `Ctrl+Alt+F1`, `F2`, `F3`, ... | Switch to *n*-th virtual console | If it doesn't work try `Ctrl+Fn+Alt+F…` |
+| `Ctrl+Alt+F1`, `F2`, `F3`, ... | Switch to *n*-th virtual console | If it does not work, try `Ctrl+Fn+Alt+F…`. |
 | `Shift+Insert`
 `Mouse Button 2` | Paste text from the [PRIMARY buffer](/index.php/Clipboard "Clipboard") | By default, Qt maps `Shift+Insert` to CLIPBOARD instead of the PRIMARY buffer (see e.g. [[1]](http://doc.qt.io/qt-5/qlineedit.html#details)). |
 

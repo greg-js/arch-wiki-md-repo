@@ -100,7 +100,7 @@ Compilare i moduli richiesti:
 
 ```
 
-Infine editare `/etc/[rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)")` ed aggiungere *vboxdrv* nell'array MODULES per caricare il driver di VirtualBox all'avvio del sistema:
+Infine editare `/etc/rc.conf` ed aggiungere *vboxdrv* nell'array MODULES per caricare il driver di VirtualBox all'avvio del sistema:
 
 ```
 MODULES=(... *vboxdrv*)

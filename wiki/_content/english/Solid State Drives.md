@@ -30,7 +30,7 @@ This section describes optimized [filesystems](/index.php/Filesystems "Filesyste
 
 It's still possible/required to use other filesystems, e.g. FAT32 for the [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI").
 
-For TRIM support, see [Solid_State_Drives/Tips_and_tricks#TRIM](/index.php/Solid_State_Drives/Tips_and_tricks#TRIM "Solid State Drives/Tips and tricks").
+For TRIM support, see [Solid State Drives/Tips and tricks#TRIM](/index.php/Solid_State_Drives/Tips_and_tricks#TRIM "Solid State Drives/Tips and tricks").
 
 ### Btrfs
 

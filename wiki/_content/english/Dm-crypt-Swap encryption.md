@@ -54,26 +54,38 @@ After a reboot to activate the encrypted swap, you will note that running `swapo
 
 ### UUID and LABEL
 
-As stated above, it is very dangerous to use crypttab swap with the kernel's simple naming or even with the device's ID, since these can easily change and the contents of the swap partition are deleted on every boot. To get around the changing of UUID's and label's of the swap partition on every boot, one can label a partition preceding the swap partition on the disk, and the swap partition can use the `offset` option to indicate its location. The preceding partition's label and UUID will not change upon every boot.
+It's dangerous to use crypttab swap with simple kernel device names like `/dev/sdX#` or even `/dev/disk/by-id/ata-SERIAL-partX`. A small change in your device names or partitioning layout and `/etc/crypttab` will see your valuable data formatted on the next boot. Same if you use PARTUUID and then decide to use that partition for something else without removing the crypttab entry first.
 
-In this example, a smaller partition is created explicitly for this purpose, although any existing partition preceding the swap partition can be used. To do this, first create a smaller filesystem with the label of your choice:
+It is more reliable to identify the correct partition by giving it a genuine UUID or LABEL. By default that does not work because dm-crypt and `mkswap` would simply overwrite any content on that partition which would remove the LABEL too; however, it is possible to specify a swap offset. This allows you to create a very small, empty, bogus filesystem with no other purpose than providing a persistant UUID or LABEL for the swap encryption.
+
+Create a filesystem with label of your choice:
 
 ```
-# mkfs.ext2 -L *mylabel* /dev/sd*X#* 1M
+# mkfs.ext2 -L *cryptswap* /dev/sd*X#* 1M
 
 ```
 
-where the *`#`* is the partition number that will be before the swap partition, and `*mylabel*` is the label you want to give the partition. The `1M` indicates a size of 1 MiB for this smaller partition.
+The unusual parameter after the device name limits the filesystem size to 1 MiB, leaving room for encrypted swap behind it.
 
-Now, in `/etc/crypttab`, change `<device>` to either the label of UUID of the preceding partition. Additionally add the `offset` option. In this example, the swap partition is offset from the beginning of the smaller partition by 2048 sectors (1 MiB) and the label is used:
+ `# blkid /dev/sdX#`  `/dev/sdX#: LABEL="cryptswap" UUID="b72c384e-bd3c-49aa-b7a7-a28ea81a2605" TYPE="ext2"` 
+
+With this, `/dev/sdX#` now can easily be identified either by UUID or LABEL, regardless of how its device name or even partition number might change in the future. All that's left is the `/etc/crypttab` and `/etc/fstab` entries:
 
  `/etc/crypttab` 
 ```
 # <name> <device>       <password>    <options>
-swap     LABEL=*mylabel*  /dev/urandom  swap,offset=2048,cipher=aes-cbc-essiv:sha256,size=256
+swap     LABEL=*cryptswap*  /dev/urandom  swap,offset=2048,cipher=aes-xts-plain64,size=256
 ```
 
-**Warning:** An incorrect label or offset option in crypttab can cause irrevocable data loss.
+Note the offset: it's 2048 sectors of 512 bytes, thus 1 MiB. This way the encrypted swap will not affect the filesystem LABEL/UUID, and data alignment works out as well.
+
+ `/etc/fstab` 
+```
+# <filesystem>         <dir>  <type>  <options>  <dump>  <pass>
+/dev/mapper/cryptswap  none   swap    defaults   0       0
+```
+
+Using this setup, the cryptswap will only try to use the partition with the corresponding LABEL, regardless of what its device name may be. Should you decide to use the partition for something else, by formatting it the cryptswap LABEL would also be gone, so cryptswap won't overwrite it on your next boot.
 
 ## With suspend-to-disk support
 

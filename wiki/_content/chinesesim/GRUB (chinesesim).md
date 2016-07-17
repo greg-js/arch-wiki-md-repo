@@ -221,7 +221,7 @@ Installation finished. No error reported.
 
 临时解决方案是给`/boot/grub/i386-pc/core.img`文件加"不可变"(immutable)标志.这样 `core.img` 文件的位置就不会变。只有当将`grub`安装到分区启动扇区或者无分区磁盘上时才需要给core.img加"不可变"标志.
 
-执行`grub-install`并不会生成GRUB配置文件,请移至[#生成GRUB配置文件](#.E7.94.9F.E6.88.90GRUB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)一节
+执行`grub-install`并不会生成GRUB配置文件,请移至[#生成主配置文件](#.E7.94.9F.E6.88.90.E4.B8.BB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)一节
 
 即使没有报错，生成的 `grub.cfg` 文件并不会包含正确的 UUID。参考 [https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604.要解决这个问题：](https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604.要解决这个问题：)
 

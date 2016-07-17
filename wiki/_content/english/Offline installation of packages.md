@@ -172,7 +172,7 @@ Finally install the packages:
 
 ### Restoring online sources
 
-Should Bob ever be put online we can resore access to the online sources by replacing /etc/pacman.conf with the previously created /etc/pacman.conf.old
+Should Bob ever be put online we can restore access to the online sources by replacing /etc/pacman.conf with the previously created /etc/pacman.conf.old
 
 #### Links and sources
 

@@ -93,7 +93,7 @@
 
 要编译 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 提供的内核文件，需要同时安装对应的内核头文件(例如安装 [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) 的头文件 [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) VirtualBox 或内核更新的时候，DKMS Pacman 钩子会自动编译内核模块。
 
-要使用基于 [Qt](/index.php/Qt "Qt") 的图形界面，需要安装 [qt4](https://www.archlinux.org/packages/?name=qt4) 软件包。如果使用命令行命令，则不需要安装。
+要使用基于 [Qt](/index.php/Qt "Qt") 的图形界面，需要安装 [qt5-x11extras](https://www.archlinux.org/packages/?name=qt5-x11extras) 软件包。如果使用命令行命令，则不需要安装。
 
 ### 加载VirtualBox的内核模块
 
@@ -152,7 +152,7 @@ Oracle 的扩展组件以仅供个人使用的协议发布，在这里提供 [ad
 *   如果你只想在命令行下使用 VirtualBox (只想启动现有的虚拟机或是更改一些配置)，你可以使用 `VBoxSDL` 命令。VBoxSDL 仅仅提供一个简单的窗口包含所有虚拟机，没有菜单或是其他控制项。
 *   如果你想使用命令行并且不使用任何 GUI (例如在服务器上) 来创建、运行和配置虚拟机，使用 `VBoxHeadless` 命令，不会有任何图形输出，但是仅仅使用 VRDP 数据(安装扩展模块之后才能使用)
 
-如果你安装了 [qt4](https://www.archlinux.org/packages/?name=qt4)这一可选依赖，你可以运行 `VirtualBox` 来获得一个美观易用的图形界面并能够使用鼠标。
+如果你安装了 [qt5-x11extras](https://www.archlinux.org/packages/?name=qt5-x11extras)这一可选依赖，你可以运行 `VirtualBox` 来获得一个美观易用的图形界面并能够使用鼠标。
 
 最后你可以使用 [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox") 来通过网页界面来管理你的虚拟机。
 

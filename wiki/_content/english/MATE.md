@@ -132,10 +132,9 @@ An experimental GTK+ 3 build of MATE can be installed with [mate-gtk3](https://w
 
 As of 2016-07 the official MATE packages did not receive an update, cf. [forum](https://bbs.archlinux.org/viewtopic.php?pid=1624557#p1624557). Consider the following community efforts (from the thread):
 
-*   [https://aur.archlinux.org/packages/mate-desktop-1.15-gtk3/](https://aur.archlinux.org/packages/mate-desktop-1.15-gtk3/)
+*   [mate-desktop-1.15-gtk3](https://aur.archlinux.org/packages/mate-desktop-1.15-gtk3/)
     *   [https://github.com/nicman23/arch_mate](https://github.com/nicman23/arch_mate)
     *   [https://github.com/Eadrom/arch_mate](https://github.com/Eadrom/arch_mate)
-*   [http://repo.manjaro.org/](http://repo.manjaro.org/) [https://github.com/manjaro/packages-community/tree/master/mate](https://github.com/manjaro/packages-community/tree/master/mate)
 *   [https://github.com/xpander69/mate-archbuilds](https://github.com/xpander69/mate-archbuilds)
 
 ## Starting MATE

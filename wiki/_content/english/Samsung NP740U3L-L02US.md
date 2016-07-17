@@ -16,7 +16,7 @@ Overall this 2-in-1 [Samsung notebook](/index.php/Laptop/Samsung "Laptop/Samsung
 
 This is a UEFI laptop. Dual booting required disabling secure boot in BIOS. Hit F2 immediately when machine powers up to get into setup. Select "Boot" and make relevant changes. You may need to change some other settings too. Save your settings and shut down. You should now be able to plug in some kind of USB-based install media, go back into setup, and select it from the boot order menu.
 
-**To keep Windows 10**: This unit has a 1TB hard drive. Windows 10 and some recovery partitions consume most of it. It was resized pretty painlessly with [gparted](/index.php/Gparted "Gparted") using a live CD distro installed on a USB drive. Shrink the Windows 10 partition to a reasonable size with a live CD, move the recovery partitions to the right side of the disk, and create your Linux partitions. You probably minimally want a system partition and a swap partition larger than your system's RAM. Here is a sample configuration that worked (gave Linux almost 700GiB):
+**To keep Windows 10**: This unit has a 1TB hard drive. Windows 10 and some recovery partitions consume most of it. It was resized pretty painlessly with [GParted](/index.php/GParted "GParted") using a live CD distro installed on a USB drive. Shrink the Windows 10 partition to a reasonable size with a live CD, move the recovery partitions to the right side of the disk, and create your Linux partitions. You probably minimally want a system partition and a swap partition larger than your system's RAM. Here is a sample configuration that worked (gave Linux almost 700GiB):
 ```
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda      8:0    0 931.5G  0 disk 
@@ -49,7 +49,7 @@ Note: wifi-menu throws a warning or error but appears to work.
 
 ## Sound
 
-Worked out of the box with [pulseaudio](/index.php/Pulseaudio "Pulseaudio"); have not tested extensively though.
+Worked out of the box with [PulseAudio](/index.php/PulseAudio "PulseAudio"); have not tested extensively though.
 
 ## Graphics
 

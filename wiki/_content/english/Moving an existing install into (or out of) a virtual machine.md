@@ -97,7 +97,7 @@ Now load the necessary module and mount it as a loopback device, on `/dev/loop5`
 
 ```
 
-Next, partition the `/dev/loop5` device by running your favourite [partitioning tool](/index.php/Partitioning#Partitioning_tools "Partitioning"). Create a partition table on it (e.g. `msdos`), choose the [partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning") and create the partitions. Then create a [file system](/index.php/File_system "File system") on the partitions, which will appear as `/dev/loop5p1`, `/dev/loop5p2`, etc.
+Next, partition the `/dev/loop5` device by running your favourite [partitioning tool](/index.php/Partitioning#Partitioning_tools "Partitioning"). Create a partition table on it (e.g. `msdos`), choose the [partition scheme](/index.php/Partition_scheme "Partition scheme") and create the partitions. Then create a [file system](/index.php/File_system "File system") on the partitions, which will appear as `/dev/loop5p1`, `/dev/loop5p2`, etc.
 
 ### Transfer the system
 
