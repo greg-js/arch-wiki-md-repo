@@ -27,13 +27,10 @@ When using [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-inpu
 
  `~/.xinitrc` 
 ```
-tpset() { xinput set-prop "*TPPS/2 IBM TrackPoint*" "$@"; }
-
-tpset "Evdev Wheel Emulation" 1
-tpset "Evdev Wheel Emulation Button" 2
-tpset "Evdev Wheel Emulation Timeout" 200
-tpset "Evdev Wheel Emulation Axes" 6 7 4 5
-tpset "Device Accel Constant Deceleration" 0.95
+xinput set-prop "*TPPS/2 IBM TrackPoint*" "Evdev Wheel Emulation" 1
+xinput set-prop "*TPPS/2 IBM TrackPoint*" "Evdev Wheel Emulation Button" 2
+xinput set-prop "*TPPS/2 IBM TrackPoint*" "Evdev Wheel Emulation Timeout" 200
+xinput set-prop "*TPPS/2 IBM TrackPoint*" "Evdev Wheel Emulation Axes" 6 7 4 5
 
 ```
 

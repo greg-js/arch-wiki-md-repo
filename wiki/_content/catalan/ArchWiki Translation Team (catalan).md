@@ -41,26 +41,26 @@ done
 # Instal·lació
 
 | Secció | Autor | Versió | Revisat i aprovat | Comentaris |
-| [0\. Intro](/index.php/Installation_Guide_(Catal%C3%A0)#Installation "Installation Guide (Català)") | jsoler | v0.1b | Repassar gramàtica i millorar |
-| [1\. Download](/index.php/Installation_Guide_(Catal%C3%A0)#Download "Installation Guide (Català)") | jsoler | v0.01 | Completar |
-| [2.1 Keyboard layout](/index.php/Installation_Guide_(Catal%C3%A0)#Keyboard_layout "Installation Guide (Català)") | v0.0 |
-| [2.2 Partition disks](/index.php/Installation_Guide_(Catal%C3%A0)#Partition_disks "Installation Guide (Català)") | v0.0 |
-| [2.3 Format the partitions](/index.php/Installation_Guide_(Catal%C3%A0)#Format_the_partitions "Installation Guide (Català)") | v0.0 |
-| [2.4 Mount_the_partitions](/index.php/Installation_Guide_(Catal%C3%A0)#Mount_the_partitions "Installation Guide (Català)") | v0.0 |
-| [2.5 Connect to the internet](/index.php/Installation_Guide_(Catal%C3%A0)#Connect_to_the_internet "Installation Guide (Català)") | v0.0 |
-| [2.5.1 Wireless](/index.php/Installation_Guide_(Catal%C3%A0)#Wireless "Installation Guide (Català)") | v0.0 |
-| [2.6 Install the base system](/index.php/Installation_Guide_(Catal%C3%A0)#Install_the_base_system "Installation Guide (Català)") | v0.0 |
-| [2.7 Configure the system](/index.php/Installation_Guide_(Catal%C3%A0)#Configure_the_system "Installation Guide (Català)") | v0.0 |
-| [2.8 Install and configure a boot loader](/index.php/Installation_Guide_(Catal%C3%A0)#Install_and_configure_a_boot_loader "Installation Guide (Català)") | v0.0 |
-| [2.9 Unmount and reboot](/index.php/Installation_Guide_(Catal%C3%A0)#Unmount_and_reboot "Installation Guide (Català)") | v0.0 |
-| [3.0 Post-installation](/index.php/Installation_Guide_(Catal%C3%A0)#Post-installation "Installation Guide (Català)") | v0.0 |
-| [3.1 User management](/index.php/Installation_Guide_(Catal%C3%A0)#User_management "Installation Guide (Català)") | v0.0 |
-| [3.2 Package management](/index.php/Installation_Guide_(Catal%C3%A0)#Package_management "Installation Guide (Català)") | v0.0 |
-| [3.3 Service management](/index.php/Installation_Guide_(Catal%C3%A0)#Service_management "Installation Guide (Català)") | v0.0 |
-| [3.4 Sound](/index.php/Installation_Guide_(Catal%C3%A0)#Sound "Installation Guide (Català)") | v0.0 |
-| [3.5 Display server](/index.php/Installation_Guide_(Catal%C3%A0)#Display_server "Installation Guide (Català)") | v0.0 |
-| [3.6 Fonts](/index.php/Installation_Guide_(Catal%C3%A0)#Fonts "Installation Guide (Català)") | v0.0 |
-| [4.Appendix](/index.php/Installation_Guide_(Catal%C3%A0)#Appendix "Installation Guide (Català)") | v0.0 |
+| [0\. Intro](/index.php/Installation_guide_(Catal%C3%A0)#Installation "Installation guide (Català)") | jsoler | v0.1b | Repassar gramàtica i millorar |
+| [1\. Download](/index.php/Installation_guide_(Catal%C3%A0)#Download "Installation guide (Català)") | jsoler | v0.01 | Completar |
+| [2.1 Keyboard layout](/index.php/Installation_guide_(Catal%C3%A0)#Keyboard_layout "Installation guide (Català)") | v0.0 |
+| [2.2 Partition disks](/index.php/Installation_guide_(Catal%C3%A0)#Partition_disks "Installation guide (Català)") | v0.0 |
+| [2.3 Format the partitions](/index.php/Installation_guide_(Catal%C3%A0)#Format_the_partitions "Installation guide (Català)") | v0.0 |
+| [2.4 Mount_the_partitions](/index.php/Installation_guide_(Catal%C3%A0)#Mount_the_partitions "Installation guide (Català)") | v0.0 |
+| [2.5 Connect to the internet](/index.php/Installation_guide_(Catal%C3%A0)#Connect_to_the_internet "Installation guide (Català)") | v0.0 |
+| [2.5.1 Wireless](/index.php/Installation_guide_(Catal%C3%A0)#Wireless "Installation guide (Català)") | v0.0 |
+| [2.6 Install the base system](/index.php/Installation_guide_(Catal%C3%A0)#Install_the_base_system "Installation guide (Català)") | v0.0 |
+| [2.7 Configure the system](/index.php/Installation_guide_(Catal%C3%A0)#Configure_the_system "Installation guide (Català)") | v0.0 |
+| [2.8 Install and configure a boot loader](/index.php/Installation_guide_(Catal%C3%A0)#Install_and_configure_a_boot_loader "Installation guide (Català)") | v0.0 |
+| [2.9 Unmount and reboot](/index.php/Installation_guide_(Catal%C3%A0)#Unmount_and_reboot "Installation guide (Català)") | v0.0 |
+| [3.0 Post-installation](/index.php/Installation_guide_(Catal%C3%A0)#Post-installation "Installation guide (Català)") | v0.0 |
+| [3.1 User management](/index.php/Installation_guide_(Catal%C3%A0)#User_management "Installation guide (Català)") | v0.0 |
+| [3.2 Package management](/index.php/Installation_guide_(Catal%C3%A0)#Package_management "Installation guide (Català)") | v0.0 |
+| [3.3 Service management](/index.php/Installation_guide_(Catal%C3%A0)#Service_management "Installation guide (Català)") | v0.0 |
+| [3.4 Sound](/index.php/Installation_guide_(Catal%C3%A0)#Sound "Installation guide (Català)") | v0.0 |
+| [3.5 Display server](/index.php/Installation_guide_(Catal%C3%A0)#Display_server "Installation guide (Català)") | v0.0 |
+| [3.6 Fonts](/index.php/Installation_guide_(Catal%C3%A0)#Fonts "Installation guide (Català)") | v0.0 |
+| [4.Appendix](/index.php/Installation_guide_(Catal%C3%A0)#Appendix "Installation guide (Català)") | v0.0 |
 
 # Articles solts
 

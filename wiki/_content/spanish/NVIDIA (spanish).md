@@ -672,7 +672,7 @@ BusID "PCI:3:0:0"
 
 ```
 
-**Nota:** El formato es importante. El valor BusID debe especificarse como `"PCI:<BusID>:0:0"`
+**Nota:** El formato es importante. El valor BusID debe especificarse como `"PCI:*BusID*:0:0"`
 
 Añadir el valor deseado para la modalidad de renderizado SLI a utilizar en la sección `Screen`:
 
@@ -798,7 +798,7 @@ La transición de nouveau puede causar al inicio una visualización del terminal
 
 **Hardware requerido:**
 
-Tener una tarjeta de vídeo que soporte, al menos, la segunda generación de PureVideo HD [[1]](http://en.wikipedia.org/wiki/PureVideo_HD#Table_of_PureVideo_.28HD.29_GPUs)
+Tener una tarjeta de vídeo que soporte, al menos, la segunda generación de PureVideo HD [wikipedia:PureVideo_HD#Table_of_PureVideo_.28HD.29_GPUs](https://en.wikipedia.org/wiki/PureVideo_HD#Table_of_PureVideo_.28HD.29_GPUs "wikipedia:PureVideo HD")
 
 **Software requerido:**
 
@@ -1004,10 +1004,10 @@ Se puede ajustar la velocidad del ventilador de la tarjeta gráfica con la inter
 
 **Nota:** Las tarjetas de la serie GTX 4xx/5xx actualmente no pueden establecer la velocidad del ventilador al iniciar la sesión utilizando este método. Este método solo permite el ajuste de la velocidad del ventilador dentro de la sesión X actual a través de nvidia-settings.
 
-Coloque la línea siguiente en el archivo `~/.xinitrc` para ajustar la velocidad del ventilador al iniciar Xorg. Sustituya `<n>` con un valor porcentual relativo a la velocidad del ventilador que desea configurar.
+Coloque la línea siguiente en el archivo `~/.xinitrc` para ajustar la velocidad del ventilador al iniciar Xorg. Sustituya `*n*` con un valor porcentual relativo a la velocidad del ventilador que desea configurar.
 
 ```
- nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=<n>"
+ nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=*n*"
 
 ```
 
@@ -1016,17 +1016,17 @@ También puede configurar una segunda GPU mediante el incremento del número de 
 ```
  nvidia-settings -a "[gpu:0]/GPUFanControlState=1" \ 
  -a "[gpu:1]/GPUFanControlState=1" \
- -a "[fan:0]/GPUCurrentFanSpeed=<n>" \
- -a  [fan:1]/GPUCurrentFanSpeed=<n>" &
+ -a "[fan:0]/GPUCurrentFanSpeed=*n*" \
+ -a  [fan:1]/GPUCurrentFanSpeed=*n*" &
 
 ```
 
-Si utiliza un gestor de inicio de sesión, como GDM o KDM, puede crear un archivo .desktop para procesar este ajuste. Cree el archivo `~/.config/autostart/nvidia-fan-speed.desktop` y coloque el texto que sigue en su interior. Una vez más, sustituya `<n>` por el valor porcentual en base a su exigencia.
+Si utiliza un gestor de inicio de sesión, como GDM o KDM, puede crear un archivo .desktop para procesar este ajuste. Cree el archivo `~/.config/autostart/nvidia-fan-speed.desktop` y coloque el texto que sigue en su interior. Una vez más, sustituya `*n*` por el valor porcentual en base a su exigencia.
 
 ```
  [Desktop Entry]
  Type=Application
- Exec=nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=<n>"
+ Exec=nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=*n*"
  X-GNOME-Autostart-enabled=true
  Name=nvidia-fan-speed
 
@@ -1178,7 +1178,7 @@ La primera cosa a intentar es quitar otros dispositivos de vídeo tales como tar
 
 ```
 
-Si se ejecuta un kernel de 64 bits, un defecto del controlador puede hacer que el módulo nvidia aborte la inicialización [IOMMU](http://en.wikipedia.org/wiki/IOMMU) cuando está encendido. Algunos usuarios han reportado que apagarlo en la BIOS puede ser la solución. [[2]](http://www.nvnews.net/vbulletin/showthread.php?s=68bb2fabadcb53b10b286aa42d13c5bc&t=159335)[User:Clickthem#nvidia module](/index.php/User:Clickthem#nvidia_module "User:Clickthem")
+Si se ejecuta un kernel de 64 bits, un defecto del controlador puede hacer que el módulo nvidia aborte la inicialización [IOMMU](https://en.wikipedia.org/wiki/IOMMU "wikipedia:IOMMU") cuando está encendido. Algunos usuarios han reportado que apagarlo en la BIOS puede ser la solución. [[1]](http://www.nvnews.net/vbulletin/showthread.php?s=68bb2fabadcb53b10b286aa42d13c5bc&t=159335)[User:Clickthem#nvidia module](/index.php/User:Clickthem#nvidia_module "User:Clickthem")
 
 Otra cosa que puede probar es cambiar su BIOS IRQ routing de `Operating system controlled` en `BIOS controlled` o al revés. El primero de ellos se puede pasar como un parámetro del kernel:
 

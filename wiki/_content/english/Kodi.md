@@ -40,6 +40,7 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
     *   [3.10 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
     *   [3.11 Raspberry Pi](#Raspberry_Pi)
         *   [3.11.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+        *   [3.11.2 Shutdown buttons](#Shutdown_buttons)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -563,6 +564,10 @@ To make sure that [sudo](/index.php/Sudo "Sudo") does not ask for password for `
 *UserNameHere* ALL=NOPASSWD: /usr/bin/chvt
 
 ```
+
+#### Shutdown buttons
+
+Install [polkit](https://www.archlinux.org/packages/?name=polkit) to enable the shutdown and reboot button when exiting kodi.
 
 ## See also
 

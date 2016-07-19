@@ -9,23 +9,25 @@
 | Wireless switch | Working, see issues | intel-hid |
 | Function/Multimedia Keys | Working |  ? |
 
-Arch Linux is currently running successfully on this laptop with only minor issues after certain customization. The screen natively runs at 2560x1440\. Regular console is still ok compared to bricks running at 3200x1800\. Although you should keep in mind Gnome does only support whole numbers as a scaling factor. With this a scaling of 1 is hard to read while a scaling of 2 is for the blind. See tweaks for a work around.
+This article covers hardware specific configuration of this laptop, some minor issues remain after customization. These can be performed after an installation of Arch Linux has been finished and the machine rebooted into it.
+
+For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
 ## Contents
 
 *   [1 Hardware info](#Hardware_info)
-    *   [1.1 hardware options](#hardware_options)
+    *   [1.1 Hardware options](#Hardware_options)
     *   [1.2 lspci on a 4231](#lspci_on_a_4231)
 *   [2 Installation](#Installation)
 *   [3 Tweaks](#Tweaks)
-    *   [3.1 brightness / backlight](#brightness_.2F_backlight)
+    *   [3.1 Brightness / backlight](#Brightness_.2F_backlight)
     *   [3.2 Gnome scaling](#Gnome_scaling)
-    *   [3.3 video driver](#video_driver)
+    *   [3.3 Video driver](#Video_driver)
 *   [4 Issues](#Issues)
 
-### Hardware info
+## Hardware info
 
-#### hardware options
+### Hardware options
 
 The HP Spectre x360 is shipped for some years already. While the overall look & feel of the brick hasn't changed, some hardware configuration changed a lot. It is important to keep in mind that the article focuses on the year 2016 model packed with Intel Iris graphics. The main hardware components are
 
@@ -34,7 +36,7 @@ The HP Spectre x360 is shipped for some years already. While the overall look & 
 *   500 GB M.2 SDD
 *   8 GB RAM
 
-#### lspci on a 4231
+### lspci on a 4231
 
 ```
 00:00.0 Host bridge: Intel Corporation Skylake Host Bridge/DRAM Registers (rev 09)
@@ -56,13 +58,13 @@ The HP Spectre x360 is shipped for some years already. While the overall look & 
 
 ```
 
-### Installation
+## Installation
 
 Installing arch is straight forward for everything (disable secure boot, F10 for BIOS, F9 for boot options) but one thing: you may have to disable a BIOS option called "fast boot". While this option is activated in BIOS the machine may boot into Windows no matter what you select. If you make to boot into the latest arch ISO (June 2016) on a USB, arch EFI boot menu hangs. After you installed arch on HDD and moved all of M$ Windows to /dev/null, you may activate that option again. Although no difference in boot performance could be observed with the option activated or deactivated.
 
-### Tweaks
+## Tweaks
 
-#### brightness / backlight
+### Brightness / backlight
 
 `/sys/class/backlight/intel_backlight` exists but is not working as of kernel 4.6 and 4.7rc6\. Proposed kernel parameters (such as `acpi_os`) do not remedy the issue. It may be helpful to know that OLED displays by their nature do not have backlight. xrandr offers some neat feature to change brightness of your screen. Depending on your driver (modesetting driver included in Xorg or xf86-video-intel, see [Intel graphics](/index.php/Intel_graphics "Intel graphics")) your screen is named eDP-1 or eDP1\. Use `xrandr` to determine the correct name if in doubt. The following statement changes brightness to 50%.
 
@@ -113,9 +115,9 @@ While all this fixes brightness issues on the brick quite well, there are still 
 *   Chromium and some other programs reset brightness to 100% upon their first start since reboot.
 *   Hotkeys aren't working prior to login.
 
-#### Gnome scaling
+### Gnome scaling
 
-Gnome by default assumes a scaling factor of 2 since the screen resolution at y-axis is greater than 1200 [1](https://wiki.gnome.org/HowDoI/HiDpi). With this, at first glance all controls are quite over sized. xrandr offers some nice workaround:
+The screen natively runs at 2560x1440\. Gnome by default assumes a scaling factor of 2 since the screen resolution at y-axis is greater than 1200 [1](https://wiki.gnome.org/HowDoI/HiDpi). With this, at first glance all controls are quite over sized. xrandr offers some nice workaround:
 
 ```
 xrandr --output eDP1 --scale 1.25x1.25
@@ -125,11 +127,11 @@ xrandr --output eDP1 --panning 3200x1800
 
 Those commands should be executed in two steps tho. Gnome doesn't adjust size for sure each time. Setting those changes in an autostart script after login is not very reliable if some other programs are started at the same time. Even adding some sleep does not improve reliability to an acceptable level. Testing will be continued since this is a perfect resolution.
 
-#### video driver
+### Video driver
 
-As mentioned in [Intel graphics](/index.php/Intel_graphics "Intel graphics") some people recommend to stay with the modesetting driver included in Xorg. As of Xorg 1.18.2, mesa before 12.0 the performance of this driver is inacceptable when it comes to web serving, scrolling documents or anything alike. On this machine installing xf86-video-intel improves performance a lot.
+As mentioned in [Intel graphics](/index.php/Intel_graphics "Intel graphics") some people recommend to stay with the modesetting driver included in Xorg. As of Xorg 1.18.2, Mesa before 12.0 the performance of this driver is inacceptable when it comes to simple tasks like web browsing, scrolling documents or anything alike. On this machine installing [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) improves performance a lot.
 
-### Issues
+## Issues
 
 Issues for which no resolution could be found:
 
@@ -139,5 +141,3 @@ Issues for which no resolution could be found:
     *   Right after login to Gnome the hotkey is spammed and thus airplane mode turned off and on for like 7 seconds. `dmesg` shows some hard faults caused by wifi module being unexpectedly unavailable but nothing else suspicious.
     *   If you wait in GDM for a while, the spam hotkey spam won't happen after login. I.e. the timer is running already while you are in GDM.
 *   Bluetooth not working. This has not been investigated at all yet. Maybe just a missing driver.
-*   It is a HP product. Don't expect any service by the HP support. They seem to consider this brick an oversized Windows phone rather than a mobile computer. At least they don't support any OS other than Windows 10.
-*   The machine is heavy compared to a Yoga 900\. I installed Arch because it's supposed to be a lightweight distribution. It doesn't meet my expectations ;-).

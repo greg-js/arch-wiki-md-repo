@@ -132,7 +132,7 @@ See [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to
 
 ### Minimal build
 
-Gains in UI response can be gleaned by not using menu icons and by disabling the use of [Xft](http://en.wikipedia.org/wiki/Xft) fonts. Further gains can be accomplished by removing support for external libraries with a custom build. The result is also a reduction in resource requirements. A minimal build compiled with Xft support and using Xft fonts is allocated approximately 3 MB of resident and 1.5 MB of shared memory. The same build compiled without Xft support is allocated under 1.5 MB and approximately 1.2 MB, respectively. See the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") page for further details.
+Gains in UI response can be gleaned by not using menu icons and by disabling the use of [Xft](https://en.wikipedia.org/wiki/Xft "wikipedia:Xft") fonts. Further gains can be accomplished by removing support for external libraries with a custom build. The result is also a reduction in resource requirements. A minimal build compiled with Xft support and using Xft fonts is allocated approximately 3 MB of resident and 1.5 MB of shared memory. The same build compiled without Xft support is allocated under 1.5 MB and approximately 1.2 MB, respectively. See the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") page for further details.
 
 #### Minimal PKGBUILD example
 

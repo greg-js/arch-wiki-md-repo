@@ -28,7 +28,7 @@ Install the [teamspeak3-server](https://aur.archlinux.org/packages/teamspeak3-se
 
 ### Configuration
 
-*   You can configure the TeamSpeak server. If you are using [systemd](/index.php/Systemd "Systemd") please check `/usr/share/doc/teamspeak3-server/server_quickstart.txt` for all available command line parameters.
+*   You can configure the TeamSpeak server. If you are using [systemd](/index.php/Systemd "Systemd") please check `/usr/share/doc/teamspeak3-server/doc/server_quickstart.txt` for all available command line parameters.
 
 *   If you possess a license file please copy it to `/var/lib/teamspeak3-server/licensekey.dat`.
 

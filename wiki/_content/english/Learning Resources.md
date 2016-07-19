@@ -47,7 +47,7 @@
 
 #### [C](https://en.wikipedia.org/wiki/C_(programming_language) "wikipedia:C (programming language)")
 
-*   [The C Programming Language, Second Edition](http://cm.bell-labs.com/cm/cs/cbook/)
+*   [The C Programming Language, Second Edition](http://www.ime.usp.br/~pf/Kernighan-Ritchie/C-Programming-Ebook.pdf)
 *   [Learn C The Hard Way](http://c.learncodethehardway.org/)
 
 #### [C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++")

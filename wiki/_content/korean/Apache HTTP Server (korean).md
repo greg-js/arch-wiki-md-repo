@@ -1,6 +1,6 @@
 [Apache HTTP Server](https://en.wikipedia.org/wiki/Apache_HTTP_Server "wikipedia:Apache HTTP Server")(생략해서 Apache라고도 한다)는 아파치 소프트웨어 재단에서 개발된 유명한 웹 서버이다.
 
-아파치는 보통 MySQL 같은 데이터베이스와 PHP 등의 스크립트 언어와 함께 사용된다. 이러ᅟ한 아파치와의 연동은 흔히 [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) stack (**L**inux, **A**pache, **M**ySQL, **P**HP)이라고 불린다. 이 위ᅟᅵ키페이지에서는 아파치 서버 구축 방법과 [PHP](/index.php/PHP "PHP"), [MySQL](/index.php/MySQL "MySQL") 연동 방법에 대해서 설명한다.
+아파치는 보통 MySQL 같은 데이터베이스와 PHP 등의 스크립트 언어와 함께 사용된다. 이러ᅟ한 아파치와의 연동을 흔히 [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) stack (**L**inux, **A**pache, **M**ySQL, **P**HP)이라고 불린다. 이 문서에서는 아파치 서버 구축 방법과 [PHP](/index.php/PHP "PHP"), [MySQL](/index.php/MySQL "MySQL") 연동 방법에 대해서 설명한다.
 
 ## Contents
 
@@ -10,21 +10,21 @@
     *   [2.2 사용자 디렉토리](#.EC.82.AC.EC.9A.A9.EC.9E.90_.EB.94.94.EB.A0.89.ED.86.A0.EB.A6.AC)
     *   [2.3 TLS/SSL](#TLS.2FSSL)
         *   [2.3.1 키 생성과 자체 서명 인증 방법](#.ED.82.A4_.EC.83.9D.EC.84.B1.EA.B3.BC_.EC.9E.90.EC.B2.B4_.EC.84.9C.EB.AA.85_.EC.9D.B8.EC.A6.9D_.EB.B0.A9.EB.B2.95)
-    *   [2.4 Virtual hosts](#Virtual_hosts)
-        *   [2.4.1 Managing many virtual hosts](#Managing_many_virtual_hosts)
-*   [3 Extensions](#Extensions)
+    *   [2.4 가상 호스트](#.EA.B0.80.EC.83.81_.ED.98.B8.EC.8A.A4.ED.8A.B8)
+        *   [2.4.1 가상 호스트 관리](#.EA.B0.80.EC.83.81_.ED.98.B8.EC.8A.A4.ED.8A.B8_.EA.B4.80.EB.A6.AC)
+*   [3 확장 모듈(Extensions)](#.ED.99.95.EC.9E.A5_.EB.AA.A8.EB.93.88.28Extensions.29)
     *   [3.1 PHP](#PHP)
-        *   [3.1.1 Using php-fpm and mod_proxy_fcgi](#Using_php-fpm_and_mod_proxy_fcgi)
-        *   [3.1.2 Using apache2-mpm-worker and mod_fcgid](#Using_apache2-mpm-worker_and_mod_fcgid)
+        *   [3.1.1 php-fpm, mod_proxy_fcgi 사용하기](#php-fpm.2C_mod_proxy_fcgi_.EC.82.AC.EC.9A.A9.ED.95.98.EA.B8.B0)
+        *   [3.1.2 apache2-mpm-worker, mod_fcgid 사용하기](#apache2-mpm-worker.2C_mod_fcgid_.EC.82.AC.EC.9A.A9.ED.95.98.EA.B8.B0)
         *   [3.1.3 MySQL/MariaDB](#MySQL.2FMariaDB)
     *   [3.2 HTTP2](#HTTP2)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Apache Status and Logs](#Apache_Status_and_Logs)
+*   [4 문제 해결](#.EB.AC.B8.EC.A0.9C_.ED.95.B4.EA.B2.B0)
+    *   [4.1 아파치 서버 상태와 로그](#.EC.95.84.ED.8C.8C.EC.B9.98_.EC.84.9C.EB.B2.84_.EC.83.81.ED.83.9C.EC.99.80_.EB.A1.9C.EA.B7.B8)
     *   [4.2 Error: PID file /run/httpd/httpd.pid not readable (yet?) after start](#Error:_PID_file_.2Frun.2Fhttpd.2Fhttpd.pid_not_readable_.28yet.3F.29_after_start)
     *   [4.3 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)
     *   [4.4 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
     *   [4.5 Changing the max_execution_time in php.ini has no effect](#Changing_the_max_execution_time_in_php.ini_has_no_effect)
-*   [5 See also](#See_also)
+*   [5 참조](#.EC.B0.B8.EC.A1.B0)
 
 ## 설치
 
@@ -78,7 +78,7 @@ DocumentRoot "/srv/http"
 
 두 개의 디렉토리(DocumentRoot, DocumentRoot의 부모 디렉토리)는 반드시 다른 사용자들에게도 실행권한이 부여되어야 한다. (`chmod o+x /path/to/DocumentRoot`를 통해 설정할 수 있다)
 
-위에서 언급된 권한관련 해결방법에는 몇 가지 논란이 있다. 반드시 모든 사용자들에게 실행 권한을 줄 필요가 없고 ACL을 통해 웹서버에만 실행 권한을 줄 수 있는 방법이 있기 때문이다. 자세한 내용은 다음 링크를 살펴보자. [Access Control Lists#Granting execution permissions for private files to a Web Server](/index.php/Access_Control_Lists#Granting_execution_permissions_for_private_files_to_a_Web_Server "Access Control Lists"), [[[1]](https://wiki.archlinux.org/index.php/Talk:Apache_HTTP_Server)]
+위에서 언급된 권한관련 해결방법에는 몇 가지 논란이 있다. 반드시 모든 사용자들에게 실행 권한을 줄 필요가 없고 ACL을 통해 웹서버에만 실행 권한을 줄 수 있는 방법이 있기 때문이다. 자세한 내용은 다음 링크를 살펴보자. [Access Control Lists#Granting execution permissions for private files to a Web Server](/index.php/Access_Control_Lists#Granting_execution_permissions_for_private_files_to_a_Web_Server "Access Control Lists"), [Talk:Apache HTTP Server](/index.php/Talk:Apache_HTTP_Server "Talk:Apache HTTP Server")
 
 ```
 AllowOverride None
@@ -142,7 +142,7 @@ Include conf/extra/httpd-ssl.conf
 
 ```
 
-TLS/SSL를 위해서는 키와 인증이 필요하다. 만약 공공 도메인을 가지고 있다면 무료로 인증을 받기 위해 [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt")를 사용할 수 있다. 공공 도메인을 가지고 있지 않다면 [#키 생성과 자체 서명 인증](#.ED.82.A4_.EC.83.9D.EC.84.B1.EA.B3.BC_.EC.9E.90.EC.B2.B4_.EC.84.9C.EB.AA.85_.EC.9D.B8.EC.A6.9D)방법을 참고한다.
+TLS/SSL를 위해서는 키와 인증이 필요하다. 만약 공공 도메인을 가지고 있다면 무료로 인증을 받기 위해 [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt")를 사용할 수 있다. 공공 도메인을 가지고 있지 않다면 [#키 생성과 자체 서명 인증 방법](#.ED.82.A4_.EC.83.9D.EC.84.B1.EA.B3.BC_.EC.9E.90.EC.B2.B4_.EC.84.9C.EB.AA.85_.EC.9D.B8.EC.A6.9D_.EB.B0.A9.EB.B2.95)방법을 참고한다.
 
 키와 인증을 얻고 나서는 `/etc/httpd/conf/extra/httpd-ssl.conf` 파일 내의 `SSLCertificateFile`, `SSLCertificateKeyFile` 라인에서 해당 키와 인증을 가리키도록 설정한다.
 
@@ -175,20 +175,20 @@ TLS/SSL를 위해서는 키와 인증이 필요하다. 만약 공공 도메인�
 
 **Note:** 더 많은 openssl 옵션을 보려면 [man page](https://www.openssl.org/docs/apps/openssl.html) 또는 peruse openssl의 [extensive documentation](https://www.openssl.org/docs/)를 참고한다.
 
-### Virtual hosts
+### 가상 호스트
 
-**Note:** You will need to add a separate <VirtualHost dommainame:443> section for virtual host SSL support. See [#Managing many virtual hosts](#Managing_many_virtual_hosts) for an example file.
+**Note:** SSL 가상 호스트를 사용하기 위해서는 독립적인 <VirtualHost dommainame:443> 섹션을 추가해야한다. 관련된 예제는 다음 링크를 참고한다: [#Managing many virtual hosts](#Managing_many_virtual_hosts)
 
-If you want to have more than one host, uncomment the following line in `/etc/httpd/conf/httpd.conf`:
+한 개 이상의 호스트를 원하는 경우에 `/etc/httpd/conf/httpd.conf` 설정 파일에서 아래 기술된 부분의 주석을 해제한다.
 
 ```
 Include conf/extra/httpd-vhosts.conf
 
 ```
 
-In `/etc/httpd/conf/extra/httpd-vhosts.conf` set your virtual hosts. The default file contains an elaborate example that should help you get started.
+또한, `/etc/httpd/conf/extra/httpd-vhosts.conf` 파일에서 가상 호스트를 설정할 수 있다. 제공되는 기본 설정파일에는 자세한 예제가 많기 때문에 호스트 설정을 위해 참고하기에 유용하다.
 
-To test the virtual hosts on you local machine, add the virtual names to your `/etc/hosts` file:
+로컬 머신에서 가상 호스트를 테스트하고 싶다면, `/etc/hosts` 파일에 가상 도메인명을 다음과 같이 등록한다:
 
 ```
 127.0.0.1 domainname1.dom 
@@ -196,20 +196,20 @@ To test the virtual hosts on you local machine, add the virtual names to your `/
 
 ```
 
-Restart `httpd.service` to apply any changes.
+파일 변경 후, 설정 적용을 위해 `httpd.service`를 재시작한다.
 
-#### Managing many virtual hosts
+#### 가상 호스트 관리
 
-If you have a huge amount of virtual hosts, you may want to easily disable and enable them. It is recommended to create one configuration file per virtual host and store them all in one folder, eg: `/etc/httpd/conf/vhosts`.
+이 절에서는 엄청나게 많은 가상 호스트를 가지고 있는 경우에 가상 호스트들을 관리하는 방법에 대하여 기술한다. 이러한 경우에는 가상 호스트별로 설정 파일을 만들고 이를 하나의 디렉토리(예: `/etc/httpd/conf/vhosts`)에 저장하는 것을 권장한다.
 
-First create the folder:
+먼저 디렉토리를 하나 생성한다:
 
 ```
 # mkdir /etc/httpd/conf/vhosts
 
 ```
 
-Then place the single configuration files in it:
+각 가상 호스트별 설정 파일을 생성한 디렉토리 안에 생성한다:
 
 ```
 # nano /etc/httpd/conf/vhosts/domainname1.dom
@@ -218,7 +218,7 @@ Then place the single configuration files in it:
 
 ```
 
-In the last step, `Include` the single configurations in your `/etc/httpd/conf/httpd.conf`:
+마지막으로 아파치 메인 설정파일인 `/etc/httpd/conf/httpd.conf` 안에 `Include`를 사용하서 가상 호스트별로 생성해둔 설정 파일들을 포함시킨다:
 
 ```
 #Enabled Vhosts:
@@ -227,9 +227,9 @@ Include conf/vhosts/domainname2.dom
 
 ```
 
-You can enable and disable single virtual hosts by commenting or uncommenting them.
+위처럼 각각의 가상 호스트를 주석처리를 통해 간단하게 활성화/비활성화할 수 있다.
 
-A very basic vhost file will look like this:
+다음은 각 가상 호스트별 파일의 예제이다:
 
  `/etc/httpd/conf/vhosts/domainname1.dom` 
 ```
@@ -264,73 +264,73 @@ A very basic vhost file will look like this:
 </VirtualHost>
 ```
 
-## Extensions
+## 확장 모듈(Extensions)
 
 ### PHP
 
-To install [PHP](/index.php/PHP "PHP"), first [install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) and [php-apache](https://www.archlinux.org/packages/?name=php-apache) packages.
+[PHP](/index.php/PHP "PHP") 설치를 위해서는 [php](https://www.archlinux.org/packages/?name=php), [php-apache](https://www.archlinux.org/packages/?name=php-apache) 패키지를 설치한다.
 
-In `/etc/httpd/conf/httpd.conf`, comment the line:
+`/etc/httpd/conf/httpd.conf` 파일에서 아래의 줄을 주석처리 한다:
 
 ```
 #LoadModule mpm_event_module modules/mod_mpm_event.so
 
 ```
 
-and uncomment the line:
+그리고 아래의 줄의 주석을 해제한다:
 
 ```
 LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
 ```
 
-**Note:** The above is required, because `libphp7.so` included with [php-apache](https://www.archlinux.org/packages/?name=php-apache) does not work with `mod_mpm_event`, but will only work `mod_mpm_prefork` instead. ([FS#39218](https://bugs.archlinux.org/task/39218))
+**Note:** [php-apache](https://www.archlinux.org/packages/?name=php-apache)에 포함된 `libphp7.so`이 `mod_mpm_event`와는 제대로 동작하지 않고 `mod_mpm_prefork`에서만 정상적으로 동작하기 때문에 위에서 기술된 것처럼 설정해주어야 한다.(참고: [FS#39218](https://bugs.archlinux.org/task/39218))
 
-Otherwise you will get the following error:
+위의 처리를 해주지 않는 경우 다음과 같은 에러 메세지가 출력된다:
 
 ```
 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.  You need to recompile PHP.
 AH00013: Pre-configuration failed
 httpd.service: control process exited, code=exited status=1
 ```
-As an alternative, you can use `mod_proxy_fcgi` (see [#Using php-fpm and mod_proxy_fcgi](#Using_php-fpm_and_mod_proxy_fcgi) below).
+또 다른 해결 방법으로, `mod_proxy_fcgi`를 사용하는 방법이 있다. 자세한 방법은 이하 절의 [#Using php-fpm and mod_proxy_fcgi](#Using_php-fpm_and_mod_proxy_fcgi)를 참고한다.
 
-To enable PHP, add these lines to `/etc/httpd/conf/httpd.conf`:
+PHP를 활성화하기 위해서 `/etc/httpd/conf/httpd.conf` 파일에 아래 코드를 추가해준다:
 
-*   Place this in the `LoadModule` list anywhere after `LoadModule dir_module modules/mod_dir.so`:
+*   `LoadModule` 리스트에서, `LoadModule dir_module modules/mod_dir.so` 다음의 원하는 곳에 아래 코드를 추가한다:
 
 ```
 LoadModule php7_module modules/libphp7.so
 
 ```
 
-*   Place this at the end of the `Include` list:
+*   `Include` 리스트 마지막 부분에 다음을 추가한다:
 
 ```
 Include conf/extra/php7_module.conf
 
 ```
 
-Restart `httpd.service` [using systemd](/index.php/Systemd#Using_units "Systemd")
+설정을 완료한 후, [systemd를 사용하여](/index.php/Systemd#Using_units "Systemd") `httpd.service`를 재시작한다.
 
-To test whether PHP was correctly configured: create a file called `test.php` in your Apache `DocumentRoot` directory (e.g. `/srv/http/` or `~/public_html`) with the following contents:
+PHP가 올바르게 설정되었는지 확인하려면 아파치 `DocumentRoot` 디렉토리(예. `/srv/http/` 혹은 `~/public_html`)에 `test.php` 파일을 생성하여 다음 코드를 해당 파일에 추가한다:
 
 ```
 <?php phpinfo(); ?>
 
 ```
 
-To see if it works go to: [http://localhost/test.php](http://localhost/test.php) or [http://localhost/~myname/test.php](http://localhost/~myname/test.php)
+파일을 저장한 뒤, PHP가 제대로 작동하는지 확인하기 위하여 브라우저를 통해 다음 URL을 연다: [http://localhost/test.php](http://localhost/test.php) 또는 [http://localhost/~myname/test.php](http://localhost/~myname/test.php)
 
-For advanced configuration and extensions, please read [PHP](/index.php/PHP "PHP").
+더 많은 설정 옵션과 확장 모듈(extensions)에 대한 정보는 [PHP](/index.php/PHP "PHP")를 참고한다.
 
-#### Using php-fpm and mod_proxy_fcgi
+#### php-fpm, mod_proxy_fcgi 사용하기
 
-**Note:** Unlike the widespread setup with ProxyPass, the proxy configuration with SetHandler respects other Apache directives like DirectoryIndex. This ensures a better compatibility with software designed for libphp7, mod_fastcgi and mod_fcgid. If you still want to try ProxyPass, experiment with a line like this: `ProxyPassMatch ^/(.*\.php(/.*)?)$ unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/srv/http/$1` 
+**Note:** 널리 알려진 ProxyPass를 이용한 설정과 다르게 SetHandler를 이용한 프록시 설정은 DirectoryIndex와 같이 아파치에서 사용되는 디렉티브를 방해하지 않는다. 이러한 특징ᅟ 덕분에 libphp7, mod_fastcgi, mod_fcgid 등으로 디자인된 소프트웨어와 더 나은 호환성을 보장한다. 하지만 그래도 ProxyPass를 계속해서 사용하고 싶다면, 아래 코드와 같이 시도하여 사용할 수 있다: `ProxyPassMatch ^/(.*\.php(/.*)?)$ unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/srv/http/$1` 
 
-[Install](/index.php/Install "Install") the [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) package.
+[php-fpm](https://www.archlinux.org/packages/?name=php-fpm) 패키지를 설치한다.
 
-Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
+아래의 내용으로 `/etc/httpd/conf/extra/php-fpm.conf` 파일을 생성한다:
 
  `/etc/httpd/conf/extra/php-fpm.conf` 
 ```
@@ -345,20 +345,20 @@ Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
 
 ```
 
-And include it at the bottom of `/etc/httpd/conf/httpd.conf`:
+그리고 나서 `/etc/httpd/conf/httpd.conf` 파일의 최하단에 include 코드를 추가한다:
 
 ```
 Include conf/extra/php-fpm.conf
 
 ```
 
-**Note:** The pipe between `sock` and `fcgi` is not allowed to be surrounded by a space! `localhost` can be replaced by any string but it should match in `SetHandler` and `Proxy` directives. More [here](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html). `SetHandler` and `Proxy` can be used per vhost configs but the name after `fcgi://` should differ for each vhost setup.
+**Note:** 위 코드에서 `sock`과 `fcgi` 사이의 파이프 좌우로 빈칸은 허용되지 않는 점에 유의해야 한다. `localhost`는 다른 문자열로 치환될 수 있으며, 치환된 문자열은 반드시 `SetHandler`와 `Proxy` 디렉티브에서도 일치해야 한다. 더 자세한 정보는 [이곳](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html)에서 확인할 수 있다. `SetHandler`와 `Proxy`는 가상 호스트 설정 파일별로 사용가능하지만 `fcgi://` 이후의 이름은 반드시 가상 호스트들끼리 서로 달라야 한다.
 
-You can configure PHP-FPM in `/etc/php/php-fpm.d/www.conf`, but the default setup should work fine.
+`/etc/php/php-fpm.d/www.conf`에서 PHP-FPM을 설정할 수 있지만 기본 설정으로도 정상적으로 동작한다.
 
 **Note:**
 
-If you have added the following lines to `httpd.conf`, remove them, as they are no longer needed:
+아래 코드는 더이상 필요하지 않기 때문에 만약 `httpd.conf` 파일에 추가했다면 삭제하도록 한다.
 
 ```
 LoadModule php7_module modules/libphp7.so
@@ -366,13 +366,13 @@ Include conf/extra/php7_module.conf
 
 ```
 
-[Restart](/index.php/Restart "Restart") `httpd.service` and `php-fpm.service`.
+`httpd.service`와 `php-fpm.service`를 재시작한다.
 
-#### Using apache2-mpm-worker and mod_fcgid
+#### apache2-mpm-worker, mod_fcgid 사용하기
 
-[Install](/index.php/Install "Install") the [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) packages.
+[mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid)와 [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) 패키지를 설치한다.
 
-Create the needed directory and symlink it for the PHP wrapper:
+PHP wrapper를 위해 필요한 디렉토리와 심볼릭 링크를 만들어준다:
 
 ```
 # mkdir /srv/http/fcgid-bin
@@ -380,7 +380,7 @@ Create the needed directory and symlink it for the PHP wrapper:
 
 ```
 
-Create `/etc/httpd/conf/extra/php-fcgid.conf` with the following content:
+다음 내용으로 `/etc/httpd/conf/extra/php-fcgid.conf` 파일을 생성한다:
 
  `/etc/httpd/conf/extra/php-fcgid.conf` 
 ```
@@ -409,14 +409,14 @@ Create `/etc/httpd/conf/extra/php-fcgid.conf` with the following content:
 
 ```
 
-Edit `/etc/httpd/conf/httpd.conf`, enabling the actions module:
+`/etc/httpd/conf/httpd.conf` 파일을 편집하여 actions 모듈을 활성화한다:
 
 ```
 LoadModule actions_module modules/mod_actions.so
 
 ```
 
-And add the following lines:
+다음을 추가해준다.
 
 ```
 LoadModule fcgid_module modules/mod_fcgid.so
@@ -427,7 +427,7 @@ Include conf/extra/php-fcgid.conf
 
 **Note:**
 
-If you have added the following lines to `httpd.conf`, remove them, as they are no longer needed:
+아래 코드는 더이상 필요하지 않기 때문에 만약 `httpd.conf` 파일에 추가했다면 삭제하도록 한다.
 
 ```
 LoadModule php7_module modules/libphp7.so
@@ -435,56 +435,56 @@ Include conf/extra/php7_module.conf
 
 ```
 
-[Restart](/index.php/Restart "Restart") `httpd.service`.
+`httpd.service`을 재시작한다.
 
 #### MySQL/MariaDB
 
-Follow the instructions in [PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "PHP").
+[PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "PHP") 위키페이지의 설명서를 따른다.
 
-When configuration is complete, [restart](/index.php/Restart "Restart") `httpd.service` to apply all the changes.
+설정이 완료되면 `httpd.service`를 재시작한다.
 
 ### HTTP2
 
-To enable HTTP/2 support, install the [nghttp2](https://www.archlinux.org/packages/?name=nghttp2) package.
+HTTP/2 지원을 위해서는 [nghttp2](https://www.archlinux.org/packages/?name=nghttp2) 패키지를 설치해야 한다.
 
-Then uncomment the following line in `httpd.conf`:
+설치 후에 `httpd.conf` 파일에서 다음 줄의 주석을 해제한다:
 
 ```
 LoadModule http2_module modules/mod_http2.so
 
 ```
 
-And add the following line:
+다음 줄을 추가한다:
 
 ```
 Protocols h2 http/1.1
 
 ```
 
-For more information, see the [mod_http2](https://httpd.apache.org/docs/2.4/mod/mod_http2.html) documentation.
+더 자세한 내용은 [mod_http2](https://httpd.apache.org/docs/2.4/mod/mod_http2.html) 문서를 참고한다.
 
-## Troubleshooting
+## 문제 해결
 
-### Apache Status and Logs
+### 아파치 서버 상태와 로그
 
-See the status of the Apache daemon with [systemctl](/index.php/Systemctl "Systemctl").
+[systemctl](/index.php/Systemctl "Systemctl")를 통해 아파치 데몬의 현재 상태를 확인할 수 있다.
 
-Apache logs can be found in `/var/log/httpd/`
+아파치 로그파일은 `/var/log/httpd/`에서 찾을 수 있다.
 
 ### Error: PID file /run/httpd/httpd.pid not readable (yet?) after start
 
-Comment out the `unique_id_module` line in `httpd.conf`: `#LoadModule unique_id_module modules/mod_unique_id.so`
+`httpd.conf`파일에서 `unique_id_module` 부분을 주석처리한다: `#LoadModule unique_id_module modules/mod_unique_id.so`
 
 ### Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.
 
-If when loading `php7_module` the `httpd.service` fails, and you get an error like this in the journal:
+`httpd.service`가 `php7_module`을 로딩할 때 다음과 같은 에러메세지가 출력되는 경우:
 
 ```
 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.  You need to recompile PHP.
 
 ```
 
-you need to replace `mpm_event_module` with `mpm_prefork_module`:
+설정파일에서 다음과 같이 `mpm_event_module`를 `mpm_prefork_module`로 바꿔준다:
 
  `/etc/httpd/conf/httpd.conf` 
 ```
@@ -493,11 +493,11 @@ LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
 ```
 
-and restart `httpd.service`.
+그리고나서, `httpd.service`를 재시작한다.
 
 ### AH00534: httpd: Configuration error: No MPM loaded.
 
-You might encounter this error after a recent upgrade. This is only the result of a recent change in `httpd.conf` that you might not have reproduced in your local configuration. To fix it, uncomment the following line.
+아파치를 최신 버전으로 업그레이드하면서 나타나는 문제다. 이는 최신 아파치 설정 부분에서 변경된 부분이 이전의 설정파일에 반영되지 않았기 때문에 생기는 문제로서 다음 부분의 주석을 해제해주면 해결이 가능하다.
 
  `/etc/httpd/conf/httpd.conf` 
 ```
@@ -505,11 +505,11 @@ LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
 ```
 
-Also check [the above](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.) if more errors occur afterwards.
+이 후에도 계속해서 에러메세지가 출력된다면 [위에서 언급된 부분](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)을 참고한다.
 
 ### Changing the max_execution_time in php.ini has no effect
 
-If you changed the `max_execution_time` in `php.ini` to a value greater than 30 (seconds), you may still get a `503 Service Unavailable` response from Apache after 30 seconds. To solve this, add a `ProxyTimeout` directive to your http configuration right before the `<FilesMatch \.php$>` block:
+`php.ini`파일에서 `max_execution_time`의 값을 30(초)보다 큰 값으로 변경하면 30초 후에 아파치로부터 `503 Service Unavailable`라는 응답을 받게 된다. 이를 해결하기 위해서는 http 설정에서 `<FilesMatch \.php$>` 부분 이전에 `ProxyTimeout` 디렉티브를 추가해주면 해결 가능하다:
 
  `/etc/httpd/conf/httpd.conf` 
 ```
@@ -517,9 +517,9 @@ ProxyTimeout 300
 
 ```
 
-and restart `httpd.service`.
+변경 후에는 `httpd.service`를 재시작한다.
 
-## See also
+## 참조
 
 *   [Apache Official Website](http://www.apache.org/)
 *   [Tutorial for creating self-signed certificates](http://www.akadia.com/services/ssh_test_certificate.html)

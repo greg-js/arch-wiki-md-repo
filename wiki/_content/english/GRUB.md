@@ -26,26 +26,21 @@
 *   [5 Configuration](#Configuration)
     *   [5.1 Additional arguments](#Additional_arguments)
     *   [5.2 Dual-booting](#Dual-booting)
-        *   [5.2.1 Automatically generating using /etc/grub.d/40_custom and grub-mkconfig](#Automatically_generating_using_.2Fetc.2Fgrub.d.2F40_custom_and_grub-mkconfig)
-            *   [5.2.1.1 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
-            *   [5.2.1.2 FreeBSD menu entry](#FreeBSD_menu_entry)
-                *   [5.2.1.2.1 Loading the kernel directly](#Loading_the_kernel_directly)
-                *   [5.2.1.2.2 Chainloading the embedded boot record](#Chainloading_the_embedded_boot_record)
-                *   [5.2.1.2.3 Running the traditional BSD 2nd stage loader](#Running_the_traditional_BSD_2nd_stage_loader)
-            *   [5.2.1.3 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
-            *   [5.2.1.4 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
-            *   [5.2.1.5 "Restart" menu entry](#.22Restart.22_menu_entry)
-            *   [5.2.1.6 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
-        *   [5.2.2 With Windows via EasyBCD and NeoGRUB](#With_Windows_via_EasyBCD_and_NeoGRUB)
-        *   [5.2.3 parttool for hide/unhide](#parttool_for_hide.2Funhide)
-    *   [5.3 Suspend to disk](#Suspend_to_disk)
-    *   [5.4 LVM](#LVM)
-    *   [5.5 RAID](#RAID)
-    *   [5.6 Multiple entries](#Multiple_entries)
-    *   [5.7 Encryption](#Encryption)
-        *   [5.7.1 Root partition](#Root_partition)
-        *   [5.7.2 Boot partition](#Boot_partition)
-            *   [5.7.2.1 Manual Configuration of Core Image for Early Boot](#Manual_Configuration_of_Core_Image_for_Early_Boot)
+        *   [5.2.1 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
+        *   [5.2.2 "Restart" menu entry](#.22Restart.22_menu_entry)
+        *   [5.2.3 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
+        *   [5.2.4 FreeBSD menu entry](#FreeBSD_menu_entry)
+            *   [5.2.4.1 Loading the kernel directly](#Loading_the_kernel_directly)
+            *   [5.2.4.2 Chainloading the embedded boot record](#Chainloading_the_embedded_boot_record)
+            *   [5.2.4.3 Running the traditional BSD 2nd stage loader](#Running_the_traditional_BSD_2nd_stage_loader)
+        *   [5.2.5 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
+        *   [5.2.6 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
+    *   [5.3 LVM](#LVM)
+    *   [5.4 RAID](#RAID)
+    *   [5.5 Multiple entries](#Multiple_entries)
+    *   [5.6 Encryption](#Encryption)
+        *   [5.6.1 Root partition](#Root_partition)
+        *   [5.6.2 Boot partition](#Boot_partition)
 *   [6 Using the command shell](#Using_the_command_shell)
     *   [6.1 Pager support](#Pager_support)
     *   [6.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
@@ -395,7 +390,9 @@ Use the *grub-mkconfig* tool to generate `grub.cfg`:
 *   The default file path is `/boot/grub/grub.cfg`, not `/boot/grub/i386-pc/grub.cfg`. The [grub](https://www.archlinux.org/packages/?name=grub) includes a sample `/boot/grub/grub.cfg`; ensure your intended changes were written to this file.
 *   If you are trying to run *grub-mkconfig* in a chroot or *systemd-nspawn* container, you might notice that it does not work, complaining that *grub-probe* cannot get the "canonical path of /dev/sdaX". In this case, try using *arch-chroot* as described in the [BBS post](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
 
-By default the generation scripts automatically add menu entries for Arch Linux to any generated configuration. See [#Dual-booting](#Dual-booting) for configuration with other systems.
+By default the generation scripts automatically add menu entries for Arch Linux to any generated configuration. See [Multiboot USB drive#Boot entries](/index.php/Multiboot_USB_drive#Boot_entries "Multiboot USB drive") and [#Dual-booting](#Dual-booting) for custom menu entries for other systems.
+
+**Tip:** To have *grub-mkconfig* search for other installed systems, [install](/index.php/Install "Install") [os-prober](https://www.archlinux.org/packages/?name=os-prober).
 
 ## Configuration
 
@@ -419,10 +416,6 @@ See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for mo
 
 ### Dual-booting
 
-**Tip:** To have *grub-mkconfig* search for other installed systems, [install](/index.php/Install "Install") [os-prober](https://www.archlinux.org/packages/?name=os-prober).
-
-#### Automatically generating using /etc/grub.d/40_custom and grub-mkconfig
-
 The best way to add other entries is editing the `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg`. The entries in this file will be automatically added when running `grub-mkconfig`. After adding the new lines, run:
 
  `# grub-mkconfig -o /boot/grub/grub.cfg` 
@@ -433,41 +426,18 @@ or, for UEFI-GPT Mode (As per [#Alternative install method](#Alternative_install
 
 to generate an updated `grub.cfg`.
 
-For example, a typical `/etc/grub.d/40_custom` file, could appear similar to the following one, created for [HP Pavilion 15-e056sl Notebook PC](http://h10025.www1.hp.com/ewfrf/wc/product?cc=us&destPage=product&lc=en&product=5402703&tmp_docname=), originally with Microsoft Windows 8 preinstalled. Each `menuentry` should maintain a structure similar to the following ones. Note that the UEFI partition `/dev/sda2` within GRUB is called `hd0,gpt2` and `ahci0,gpt2` (see [here](#Windows_installed_in_UEFI-GPT_Mode_menu_entry) for more info).
+##### "Shutdown" menu entry
 
- `/etc/grub.d/40_custom` 
 ```
-#!/bin/sh
-exec tail -n +3 $0
-# This file provides an easy way to add custom menu entries.  Simply type the
-# menu entries you want to add after this comment.  Be careful not to change
-# the 'exec tail' line above.
-
-menuentry "HP / Microsoft Windows 8.1" {
-	echo "Loading HP / Microsoft Windows 8.1..."
-	insmod part_gpt
-	insmod fat
-	insmod search_fs_uuid
-	insmod chain
-	search --fs-uuid --no-floppy --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2 763A-9CB6
-	chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-}
-
-menuentry "HP / Microsoft Control Center" {
-	echo "Loading HP / Microsoft Control Center..."
-	insmod part_gpt
-	insmod fat
-	insmod search_fs_uuid
-	insmod chain
-	search --fs-uuid --no-floppy --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2 763A-9CB6
-	chainloader /EFI/HP/boot/bootmgfw.efi
-}
-
 menuentry "System shutdown" {
 	echo "System shutting down..."
 	halt
 }
+```
 
+##### "Restart" menu entry
+
+```
 menuentry "System restart" {
 	echo "System rebooting..."
 	reboot
@@ -566,24 +536,6 @@ where `$hints_string` and `$fs_uuid` are obtained with the following two command
 
 These two commands assume the ESP Windows uses is mounted at `$esp`. There might be case differences in the path to Windows's EFI file, what with being Windows, and all.
 
-##### "Shutdown" menu entry
-
-```
-menuentry "System shutdown" {
-	echo "System shutting down..."
-	halt
-}
-```
-
-##### "Restart" menu entry
-
-```
-menuentry "System restart" {
-	echo "System rebooting..."
-	reboot
-}
-```
-
 ##### Windows installed in BIOS-MBR mode
 
 **Note:** GRUB supports booting `bootmgr` directly and chainload of partition boot sector is no longer required to boot Windows in a BIOS-MBR setup.
@@ -655,61 +607,6 @@ Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out.
 `/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/nn_custom`. Where `nn` defines the precendence, indicating the order the script is executed. The order scripts are executed determine the placement in the grub boot menu.
 
 **Note:** `nn` should be greater than 06 to ensure necessary scripts are executed first.
-
-#### With Windows via EasyBCD and NeoGRUB
-
-Since EasyBCD's NeoGRUB currently does not understand the GRUB menu format, chainload to it by replacing the contents of your `C:\NST\menu.lst` file with lines similar to the following:
-
-```
-default 0
-timeout 1
-
-```
-
-```
-title       Chainload into GRUB v2
-root        (hd0,7)
-kernel      /boot/grub/i386-pc/core.img
-
-```
-
-Finally, [#Generate the main configuration file](#Generate_the_main_configuration_file).
-
-#### parttool for hide/unhide
-
-If you have a Windows 9x paradigm with hidden `C:\` disks GRUB can hide/unhide it using `parttool`. For example, to boot the third `C:\` disk of three Windows 9x installations on the CLI enter the CLI and:
-
-```
-parttool hd0,1 hidden+ boot-
-parttool hd0,2 hidden+ boot-
-parttool hd0,3 hidden- boot+
-set root=hd0,3
-chainloader +1
-boot
-
-```
-
-### Suspend to disk
-
-By default, GRUB will not add a [resume](/index.php/Power_management/Suspend_and_hibernate#Required_kernel_parameters "Power management/Suspend and hibernate") parameter to the kernel command line. If you do not want to use [#Additional arguments](#Additional_arguments) and want GRUB to automatically add it to every linux kernel entry in the `/boot/grub/grub.cfg` file when running *grub-mkconfig*, you can edit `/etc/grub.d/10_linux` file and replace the following line (around line 140 as of 2016/04/10):
-
-```
-linux  ${rel_dirname}/${basename} root=${linux_root_device_thisversion} rw ${args}
-
-```
-
-with:
-
-```
-linux   ${rel_dirname}/${basename} root=${linux_root_device_thisversion} rw ${args} resume=UUID=`swapon --show=UUID | tail -1`
-
-```
-
-This will add the *last* found swap partition to all found linux entries. If you only have one swap partition, then you do not have to worry since it will add the only available swap partition.
-
-Do not forget to [#Generate the main configuration file](#Generate_the_main_configuration_file). Also, if the `initrd` has not been updated, follow the instructions as told in [Power management/Suspend and hibernate#Configure the initramfs](/index.php/Power_management/Suspend_and_hibernate#Configure_the_initramfs "Power management/Suspend and hibernate").
-
-Source: [the Debian wiki](https://wiki.debian.org/Grub#Dual_Boot).
 
 ### LVM
 
@@ -787,55 +684,6 @@ Without further changes you will be prompted twice for a passhrase: the first fo
 *   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub as below appending the following to the end of your installation command:
 
  `# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--modules="part_gpt part_msdos"**` 
-
-##### Manual Configuration of Core Image for Early Boot
-
-If you require a special keymap or other complex steps that GRUB isn't able to configure automatically in order to make `/boot` available to the GRUB environment, you can generate a core image yourself. On UEFI systems, the core image is the `grubx64.efi` file that is loaded by the firmware on boot. Building your own core image will allow you to embed any modules required for very early boot, as well as a configuration script to bootstrap GRUB.
-
-Firstly, taking as an example a requirement for the `dvorak` keymap embedded in early-boot in order to enter a password for a crypted `/boot` on a UEFI system:
-
-Determine from the generated `/boot/grub/grub.cfg` file what modules are required in order to mount the crypted `/boot`. For instance, under your `menuentry` you should see lines similar to:
-
-```
-insmod diskfilter cryptodisk luks gcry_rijndael gcry_rijndael gcry_sha256
-insmod ext2
-cryptomount -u 1234abcdef1234abcdef1234abcdef
-set root='cryptouuid/1234abcdef1234abcdef1234abcdef'
-```
-
-Take note of all of those modules: they'll need to be included in the core image. Now, create a tarball containing your keymap. This will be bundled in the core image as a memdisk:
-
-```
-# ckbcomp dvorak | grub-mklayout > dvorak.gkb
-# tar cf memdisk.tar dvorak.gkb
-
-```
-
-Now create a config file to be run by the GRUB core image. This is in the same format as your regular grub config, but need contain only a few lines to find and run the main config file on our `/boot` partition:
-
- `early-grub.cfg` 
-```
-root=(memdisk)
-prefix=($root)/
-
-terminal_input at_keyboard
-keymap /dvorak.gkb
-
-cryptomount -u 1234abcdef1234abcdef1234abcdef
-set root='cryptouuid/1234abcdef1234abcdef1234abcdef'
-set prefix=($root)/grub
-
-configfile grub.cfg
-```
-
-Finally, generate the core image, listing all of the modules determined to be required in the generated `grub.cfg`, along with any modules used in the `early-grub.cfg` script. In our case, we will need to add the following in addition: `memdisk tar at_keyboard keylayouts configfile`
-
-```
-# grub-mkimage -c early-grub.cfg -o grubx64.efi -O x86_64-efi -m memdisk.tar diskfilter cryptodisk luks gcry_rijndael gcry_sha256 ext2 memdisk tar at_keyboard keylayouts configfile
-
-```
-
-The generated EFI core image can now be used in the same way as the image that is generated automatically by `grub-install`: place it in your EFI partition and enable it with `efibootmgr`, or configure as appropriate for your system firmware.
 
 ## Using the command shell
 

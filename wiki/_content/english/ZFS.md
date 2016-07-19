@@ -129,9 +129,9 @@ Use `# parted --list` to see a list of all available drives. It is not necessary
 
 **Note:** If some or all device have been used in a software RAID set it is paramount to erase any old RAID configuration information. ([Mdadm#Prepare_the_Devices](/index.php/Mdadm#Prepare_the_Devices "Mdadm"))
 
-**Warning:** For Advanced Format Disks with 4KB sector size, an ashift of 12 is recommended for best performance. Advanced Format disks emulate a sector size of 512 bytes for compatibility with legacy systems, this causes ZFS to sometimes use an ashift option number that is not ideal. Once the pool has been created, the only way to change the ashift option is to recreate the pool. Using an ashift of 12 would also decrease available capacity. See [1.10 What’s going on with performance?](http://zfsonlinux.org/faq.html#PerformanceConsideration), [1.15 How does ZFS on Linux handle Advanced Format disks?](http://zfsonlinux.org/faq.html#HowDoesZFSonLinuxHandleAdvacedFormatDrives), and [ZFS and Advanced Format disks](http://wiki.illumos.org/display/illumos/ZFS+and+Advanced+Format+disks).
+**Warning:** For Advanced Format Disks with 4KB sector size, an ashift of 12 is recommended for best performance. Advanced Format disks emulate a sector size of 512 bytes for compatibility with legacy systems, this causes ZFS to sometimes use an ashift option number that is not ideal. Once the pool has been created, the only way to change the ashift option is to recreate the pool. Using an ashift of 12 would also decrease available capacity. See [1.10 What’s going on with performance?](https://github.com/zfsonlinux/zfs/wiki/faq#performance-considerations), [1.15 How does ZFS on Linux handle Advanced Format disks?](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks), and [ZFS and Advanced Format disks](http://wiki.illumos.org/display/illumos/ZFS+and+Advanced+Format+disks).
 
-Having identified the list of drives, it is now time to get the id's of the drives to add to the zpool. The [zfs on Linux developers recommend](http://zfsonlinux.org/faq.html#WhatDevNamesShouldIUseWhenCreatingMyPool) using device ids when creating ZFS storage pools of less than 10 devices. To find the id's, simply:
+Having identified the list of drives, it is now time to get the id's of the drives to add to the zpool. The [zfs on Linux developers recommend](https://github.com/zfsonlinux/zfs/wiki/faq#selecting-dev-names-when-creating-a-pool) using device ids when creating ZFS storage pools of less than 10 devices. To find the id's, simply:
 
 ```
 # ls -lh /dev/disk/by-id/
@@ -203,7 +203,7 @@ Here is an example for the full command:
 
 ### Advanced format disks
 
-In case Advanced Format disks are used which have a native sector size of 4096 bytes instead of 512 bytes, the automated sector size detection algorithm of ZFS might detect 512 bytes because the backwards compatibility with legacy systems. This would result in degraded performance. To make sure a correct sector size is used, the `ashift=12` option should be used (See the [ZFS on Linux FAQ](http://zfsonlinux.org/faq.html#HowDoesZFSonLinuxHandleAdvacedFormatDrives)). The full command would in this case be:
+In case Advanced Format disks are used which have a native sector size of 4096 bytes instead of 512 bytes, the automated sector size detection algorithm of ZFS might detect 512 bytes because the backwards compatibility with legacy systems. This would result in degraded performance. To make sure a correct sector size is used, the `ashift=12` option should be used (See the [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks)). The full command would in this case be:
 
 ```
 # zpool create -f -o ashift=12 -m /mnt/data bigdata \
@@ -745,7 +745,7 @@ cannot replace ata-ST3000DM001-9YN166_S1F0KDGY with ata-ST3000DM001-1CH166_W1F47
 
 ZFS uses the ashift option to adjust for physical block size. When replacing the faulted disk, ZFS is attempting to use `ashift=12`, but the faulted disk is using a different ashift (probably `ashift=9`) and this causes the resulting error.
 
-For Advanced Format Disks with 4KB blocksize, an ashift of 12 is recommended for best performance. See [1.10 What’s going on with performance?](http://zfsonlinux.org/faq.html#PerformanceConsideration) and [ZFS and Advanced Format disks](http://wiki.illumos.org/display/illumos/ZFS+and+Advanced+Format+disks).
+For Advanced Format Disks with 4KB blocksize, an ashift of 12 is recommended for best performance. See [1.10 What’s going on with performance?](https://github.com/zfsonlinux/zfs/wiki/faq#performance-considerations) and [ZFS and Advanced Format disks](http://wiki.illumos.org/display/illumos/ZFS+and+Advanced+Format+disks).
 
 Use zdb to find the ashift of the zpool: `zdb` , then use the `-o` argument to set the ashift of the replacement drive:
 
@@ -955,7 +955,7 @@ WantedBy=local-fs.target
 
 *   [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS")
 *   [ZFS on Linux](http://zfsonlinux.org/)
-*   [ZFS on Linux FAQ](http://zfsonlinux.org/faq.html)
+*   [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq)
 *   [FreeBSD Handbook -- The Z File System](http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/filesystems-zfs.html)
 *   [Oracle Solaris ZFS Administration Guide](http://docs.oracle.com/cd/E19253-01/819-5461/index.html)
 *   [Solaris Internals -- ZFS Troubleshooting Guide](http://www.solarisinternals.com/wiki/index.php/ZFS_Troubleshooting_Guide)

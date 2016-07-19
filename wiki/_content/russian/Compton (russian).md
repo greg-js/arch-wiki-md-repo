@@ -127,53 +127,53 @@ seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 
 ### Slock (Затухание)
 
-Где для неактивного окна прозрачность была включен (запущено с командным аргументом `-i`), это может вызвать проблемы, когда также используется [slock](/index.php/Slock "Slock"). Решение заключается внесением изменений в прозрачности `0.2`. Например, когда работает compton аргументы в команде:
+Включение прозрачности для неактивного окна (запуск с ключом `-i`), может вызвать проблемы при совместным использованием со [slock](/index.php/Slock "Slock"). Решением может являться установка значения прозрачности `0.2`. Например, при запуске compton из командной строки:
 
 ```
 compton <any other arguments> -i 0.2
 
 ```
 
-В другом случае, с помощью файла настроек:
+Либо с помощью файла настроек:
 
 ```
 inactive-dim = 0.2;
 
 ```
 
-Alternatively, you may try to exclude slock by its window id, or by excluding all windows with no name.
+Другим спосбом является исключение slock по его идентификатору окна, или исключение всех окон без имени.
 
-**Примечание:** Some programs change their id for every new instance, but slock's appears to be static. Someone more knowledgeable will have to confirm that slock's id is in fact static- until then, use at your own risk.
+**Примечание:** Некоторые программы изменяют id своего окна при каждом новом выполнении, однако slock, похоже, имеет статический идентификатор. Требуется подтверждение, что slock имеет постоянный идентификатор. До тех пор вы используете данное решение на свой страх и риск.
 
-Exclude all windows with no name from compton using the following options:
+Для исключения всех безымянных окон из обработки compton используйте следующие параметры:
 
 ```
 $ compton <other arguments> --focus-exclude "! name~=*"*
 
 ```
 
-Find your slock's window id by running the command:
+Узнать идентификатор окна slock можно при помощи следующей комманды:
 
 ```
 $ xwininfo & slock
 
 ```
 
-Quickly click anywhere on the screen (before slock exits), then type your password to unlock. You should see the window id in the output:
+Немедленно кликните где-либо на экране (до того, как slock завершится), затем введите свой пароль для разблокировки. Вы должны получить идентификатор окна в выводе терминала:
 
 ```
 xwininfo: Window id: 0x1800001 (has no name)
 
 ```
 
-Take the window id and exclude it from compton with:
+Скопируйте идентификатор и исключите его из обработки compton как указано:
 
 ```
 $ compton <any other arguments> --focus-exclude 'id = 0x1800001'
 
 ```
 
-Otherwise, where using a configuration file:
+Либо, используя конфигурационный файл:
 
 ```
 focus-exclude = "id = 0x1800001";

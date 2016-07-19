@@ -1,4 +1,4 @@
-[GNU nano](https://www.nano-editor.org/) (or nano) is a text editor which aims to introduce a simple interface and intuitive command options to console based text editing. *nano* supports features including colorized syntax highlighting, DOS/Mac file type conversions, spellchecking and [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8") encoding. *nano* opened with an empty buffer typically occupies under 1.5 MB of resident memory.
+[nano](https://www.nano-editor.org/) is a text editor which aims to introduce a simple interface and intuitive command options to console based text editing. *nano* supports features including colorized syntax highlighting, DOS/Mac file type conversions, spellchecking and [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8") encoding. *nano* opened with an empty buffer typically occupies under 1.5 MB of resident memory.
 
 ## Contents
 
@@ -226,6 +226,6 @@ Some window managers have keybindings that conflict with nano, for example `Alt+
 ## See also
 
 *   [nano (text editor)](https://en.wikipedia.org/wiki/Nano_(text_editor) - Wikipedia Entry
-*   [GNU nano Homepage](https://www.nano-editor.org/) - Official Site
-*   [GNU nano Bugs](https://savannah.gnu.org/bugs/?group=nano) Bug Reporting
+*   [nano Homepage](https://www.nano-editor.org/) - Official Site
+*   [nano Bugs](https://savannah.gnu.org/bugs/?group=nano) Bug Reporting
 *   [Better syntax highlighting definitions](https://github.com/craigbarnes/nanorc)

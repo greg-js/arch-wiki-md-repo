@@ -38,7 +38,7 @@ There exists a similar application that you may also want to consider: [rbenv](/
 
 ## Installing RVM
 
-The install process is very easy, and is the very same for any distro, including Arch Linux. You have two choices, one system-wide, another as a user. The first is for production servers, or if you are alone on your machine, you'll need root privileges. The second is recommended for multiple users on the same machine (like a development test box). If you do not know which to choose then start with a single user installation.
+The install process is very easy, and is the same for any distro, including Arch Linux. You have two choices, one system-wide, another as a user. The first is for production servers, or if you are alone on your machine, you'll need root privileges. The second is recommended for multiple users on the same machine (like a development test box). If you do not know which to choose then start with a single user installation.
 
 The upstream instructions for installing RVM should just work. The install script is aware enough to tell you what packages you need to install on Arch Linux to make different rubies work. This usually involves gcc and some other stuff needed to compile ruby.
 

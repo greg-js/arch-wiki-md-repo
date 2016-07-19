@@ -639,7 +639,7 @@ group nobody
 chroot /srv
 script-security 2
 up /etc/openvpn/client.up 
-plugin /usr/lib/openvpn/plugins/openvpn-plugin-down-root.so "/etc/openvpn/client.down"
+plugin /usr/lib/openvpn/plugins/openvpn-plugin-down-root.so "/etc/openvpn/client.down tun0"
 ```
 
 ### Update resolv-conf script

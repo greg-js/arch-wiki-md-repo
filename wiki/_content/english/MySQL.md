@@ -506,6 +506,6 @@ Alternatively, you can purge some binary logs in `/var/lib/mysql` to free up dis
 *   [MariaDB Official Website](https://mariadb.org/)
 *   [MariaDB knowledge Base](https://mariadb.com/kb/en/)
 *   [MySQL documentation](http://dev.mysql.com/doc/)
-*   [LAMP](/index.php/LAMP "LAMP") - ArchWiki article covering the setup of a LAMP server (Linux Apache MySQL PHP)
+*   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") - ArchWiki article on the Apache HTTP Server
 *   [PHP](/index.php/PHP "PHP") - ArchWiki article on PHP.
 *   [MySQL Performance Tuning Scripts and Know-How](http://www.askapache.com/mysql/performance-tuning-mysql.html)

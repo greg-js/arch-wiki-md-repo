@@ -100,14 +100,14 @@ LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so
 exec /usr/bin/steam "$@"
 ```
 
-**Note:** The '$LIB' above is not a variable but a directive to the linker to pick the appropriate architecture for the library. The single quotes are required to prevent the shell from treating $LIB as a variable.
-
-If you wish to use this method in a .desktop shortcut instead, you can use this command in the **Exec=** field.
+Note that if you use the .desktop shortcut you will need to modify it to set `Exec=/usr/local/bin/steam %U`. Alternatively you can define the environment variable directly in the shortcut:
 
 ```
 Exec=env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam %U
 
 ```
+
+**Note:** The '$LIB' above is not a variable but a directive to the linker to pick the appropriate architecture for the library. The single quotes are required to prevent the shell from treating $LIB as a variable.
 
 ##### Deleting the runtime libraries
 

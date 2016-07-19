@@ -94,14 +94,14 @@ Tutto ciò che segue da questo punto in poi è configurare l'ambiente editando i
 
 #### <Comandi avvio>
 
-*   Carica e aggancia [Parcellite](http://parcellite.sourceforge.net/) come [demone](http://en.wikipedia.org/wiki/Daemon_(computer_software)) in background quando JWM viene avviato:
+*   Carica e aggancia [Parcellite](http://parcellite.sourceforge.net/) come [demone](https://en.wikipedia.org/wiki/Daemon_(computer_software) in background quando JWM viene avviato:
 
 ```
  <StartupCommand>parcellite -d</StartupCommand>
 
 ```
 
-*   Collega e aggancia a [urxvtd](/index.php/Rxvt-unicode "Rxvt-unicode") [daemon](http://en.wikipedia.org/wiki/Daemon_(computer_software)) al `$DISPLAY` corrente quando viene avviato JWM
+*   Collega e aggancia a [urxvtd](/index.php/Rxvt-unicode "Rxvt-unicode") [daemon](https://en.wikipedia.org/wiki/Daemon_(computer_software) al `$DISPLAY` corrente quando viene avviato JWM
 
 ```
  <StartupCommand>urxvtd -q -o -f</StartupCommand>
@@ -346,14 +346,14 @@ xprop è parte del pacchetto[xorg-utils](https://www.archlinux.org/packages/?nam
 
 #### <Comandi di Riavvio>
 
-*   Chiamare [sync](http://en.wikipedia.org/wiki/Sync_(Unix)) per svuotare il buffer del file system prima di smontare tutti i volumi montati con [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") quando l'utente si disconnette dalla sessione X corrente:
+*   Chiamare [sync](https://en.wikipedia.org/wiki/Sync_(Unix) per svuotare il buffer del file system prima di smontare tutti i volumi montati con [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") quando l'utente si disconnette dalla sessione X corrente:
 
 ```
 <RestartCommand>sync; truecrypt -d</RestartCommand>
 
 ```
 
-*   L'oggetto `<<RestartCommand>`< implementa o può prendere il posto di `$HOME/.bash_logout` per gli utenti che lavorano in una ambiente X.
+*   L'oggetto `<RestartCommand>` implementa o può prendere il posto di `$HOME/.bash_logout` per gli utenti che lavorano in una ambiente X.
 
 #### <Comando di spegnimento>
 
@@ -392,7 +392,7 @@ Se non si è loggati e non si sta lavorando su `tty1`, la combinazione di tasti 
 
 *   [Orage](http://www.xfce.org/projects/orage/) può essere eseguito in JWM `<Clock>` per fornire funzioni di calendario, eventi, caratteristiche.
 *   [slock](http://tools.suckless.org/slock) può essere associato a `<Program>` e/o `<Key>` per fornire una soluzione leggere per bloccare lo schermo in X.
-*   [Parcellite](http://parcellite.sourceforge.net/) può essere integrato nel vassoio come un leggero [X11](http://en.wikipedia.org/wiki/X_Window_System) gestore per gli appunti.
+*   [Parcellite](http://parcellite.sourceforge.net/) può essere integrato nel vassoio come un leggero [X11](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") gestore per gli appunti.
 *   [Conky](/index.php/Conky "Conky") può venir eseguito con `<StartupCommand>` per la visualizzazione di molti tipi di informazioni sul sistema (es. batteria, spazio su disco, ram, cpu, etc).
 *   [PCMan File Manager](http://pcmanfm.sourceforge.net/) Si può usare per gestire i file ed il desktop. Il vantaggio di PCMan File Manager è la leggerezza integrata ad un gestore potente come altri più blasonati.
 *   [Xfce Desktop Manager](http://www.xfce.org/projects/xfdesktop/) (o xfdesktop) Altra alternativa alla gestione del desktop. Per aggirare il problema di ridisegnare xfdesktop sulla finestra principale del desktop di Conky :
@@ -483,7 +483,7 @@ Consultare [ArchWiki entry regarding allowing users to shutdown](/index.php/Allo
 
 ### Compilazione minimale personalizzata
 
-Un incremento di reattività delle interfacce grafiche si può ottenere non usando le icone dei menu e disabilitando l'uso dei [Xft](http://en.wikipedia.org/wiki/Xft) fonts. Un ulteriore guadagno si può ottenere rimuovendo il supporto alle librerie esterne con una compilazione personalizzata. Si avrà inoltre una riduzione di assorbimento delle risorse del sistema. Una compilazione minima con il supporto Xft e usando i font Xft allocca circa tra 3 MB e 1.5 MB di memoria. La stessa compilazione senza il supporto Xft ne occupa rispettivamente tra 1.5 MB e 1.2 MB. Consultare la pagina [Arch Build System](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)") per ulteriori informazioni.
+Un incremento di reattività delle interfacce grafiche si può ottenere non usando le icone dei menu e disabilitando l'uso dei [Xft](https://en.wikipedia.org/wiki/Xft per ulteriori informazioni.
 
 #### Minimal PKGBUILD Example
 

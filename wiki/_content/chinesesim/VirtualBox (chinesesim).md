@@ -475,7 +475,7 @@ You can also use [mount.vdi](https://github.com/pld-linux/VirtualBox/blob/master
 
 ```
 
-Alternately you can use [qemu](https://www.archlinux.org/packages/?name=qemu)'s kernel module that can do this [[attrib](http://bethesignal.org/blog/2011/01/05/how-to-mount-virtualbox-vdi-image/)]:
+Alternately you can use [qemu](https://www.archlinux.org/packages/?name=qemu)'s kernel module that can do this [attrib](http://bethesignal.org/blog/2011/01/05/how-to-mount-virtualbox-vdi-image/):
 
 ```
 # modprobe nbd max_part=16
@@ -817,11 +817,11 @@ Your guest operating system is a GNU/Linux distribution and you want to open a n
 
 While VirtualBox can mount ISO images without problem, there are some image formats which cannot reliably be converted to ISO. For instance, ccd2iso ignores .ccd and .sub files, which can give disk images with broken files.
 
-In this case, you will either have to use [CDEmu](/index.php/CDEmu "CDEmu") for Linux inside VirtualBox or any other utility used to mount disk images.
+In this case, you will either have to use [CDemu](/index.php/CDemu "CDemu") for Linux inside VirtualBox or any other utility used to mount disk images.
 
 ### VirtualBox的GUI没有应用我的GTK主题
 
-See [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications") for information about theming Qt based applications like Virtualbox.
+See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for information about theming Qt based applications like Virtualbox.
 
 ### OpenBSD系统无法使用时，虚拟化指令不可用
 
@@ -855,7 +855,7 @@ Also make sure that your user is a member of the `storage` group.
 
 ### 主机模式网络接口创建失败
 
-Make sure all required kernel modules are loaded. See [#Load the VirtualBox kernel modules](#Load_the_VirtualBox_kernel_modules).
+Make sure all required kernel modules are loaded. See [#Load the Virtualbox kernel modules](#Load_the_Virtualbox_kernel_modules).
 
 To be able to create a Host-Only Network Adapter or a Bridged Network Adapter the kernel modules `vboxnetadp` and `vboxnetflt` need to be loaded, you also need to make sure the [net-tools](https://www.archlinux.org/packages/?name=net-tools) package is installed. It's possible to load these kernel modules manually with
 

@@ -196,8 +196,6 @@ NetworkManager is [controlled](/index.php/Systemd#Using_units "Systemd") via `Ne
 
 NetworkManager has a global configuration file at `/etc/NetworkManager/NetworkManager.conf`. Usually no configuration needs to be done to the global defaults.
 
-**Note:** NetworkManager will print meaningless warnings ([FS#34971](https://bugs.archlinux.org/task/34971)) to your system log, when [NetworkManager-dispatcher.service](#Network_services_with_NetworkManager_dispatcher) and [ModemManager.service](https://www.archlinux.org/packages/?name=modemmanager) are not enabled. You may enable both to suppress the messages. *As of May 2016, this is no more a problem because it was "fixed" upstream.*
-
 ### Enable NetworkManager Wait Online
 
 If you have services which fail if they are started before the network is up, you may use `NetworkManager-wait-online.service` in addition to `NetworkManager.service`. This is, however, rarely necessary because most networked daemons start up okay, even if the network has not been configured yet.

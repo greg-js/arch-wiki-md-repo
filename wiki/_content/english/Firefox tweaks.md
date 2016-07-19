@@ -322,7 +322,7 @@ To place the tab bar horizontally stacked along the sides of the browser window:
 
 #### Hide window border and title bar
 
-Install the [Hide Caption Titlebar Plus](https://addons.mozilla.org/en-US/firefox/addon/hide-caption-titlebar-plus-sma/) extension and set the following settings (leaving other settings to default):
+Install the [Hide Caption Titlebar Plus](https://addons.mozilla.org/firefox/addon/hide-caption-titlebar-plus-sma/) extension and set the following settings (leaving other settings to default):
 
 | Option | Value |
 | Show Custom Caption/TitleBar | Never |
@@ -332,7 +332,7 @@ Install the [Hide Caption Titlebar Plus](https://addons.mozilla.org/en-US/firefo
 | Drag Fx window using Tab-bar background | Enable |
 | Alternative hide-titlebar feature | Use |
 
-The extension [Classic Theme Restorer](https://addons.mozilla.org/nl/firefox/addon/classicthemerestorer/) provides more tweaking options to get the best result (e.g. set tab height to 28px, enable/disable toolbars/buttons, etc.).
+The extension [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/classicthemerestorer/) provides more tweaking options to get the best result (e.g. set tab height to 28px, enable/disable toolbars/buttons, etc.).
 
 #### Auto-hide Bookmarks Toolbar
 
@@ -364,7 +364,7 @@ The extension [Classic Theme Restorer](https://addons.mozilla.org/nl/firefox/add
 
 This section deals with the `userContent.css` file in which you can add custom CSS rules for web content. Changes to this file will take effect once the browser is restarted.
 
-This file can be used for making small fixes or to apply personal styles to frequently visited websites. Custom stylesheets for popular websites are available from sources such as [userstyles.org](http://userstyles.org/). You can install an add-on such as [superUserContent](https://addons.mozilla.org/en-US/firefox/addon/superusercontent/) to manage themes. This add-on creates the directory `chrome/userContent.css.d` and applies changes to the CSS files therein when the page is refreshed.
+This file can be used for making small fixes or to apply personal styles to frequently visited websites. Custom stylesheets for popular websites are available from sources such as [userstyles.org](http://userstyles.org/). You can install an add-on such as [superUserContent](https://addons.mozilla.org/firefox/addon/superusercontent/) to manage themes. This add-on creates the directory `chrome/userContent.css.d` and applies changes to the CSS files therein when the page is refreshed.
 
 #### Import other CSS files
 
@@ -572,7 +572,7 @@ See [[2]](http://superuser.com/questions/44072/how-do-i-associate-magnet-links-w
 
 ### Prevent accidental closing
 
-The [Disable Ctrl-Q Shortcut](https://addons.mozilla.org/en-us/firefox/addon/disable-ctrl-q-shortcut/) extension can be installed to prevent unwanted closing of the browser.
+The [Disable Ctrl-Q Shortcut](https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/) extension can be installed to prevent unwanted closing of the browser.
 
 An alternative is to add a rule in your window manager configuration file. For example in openbox add:
 
@@ -593,7 +593,7 @@ in the *<keyboard>* section of your `rc.xml` file.
 
 Due to Arch's bleeding edge nature, there can be some compatibility issues with plugins not working with the latest Firefox install (e.g. [Pentadactyl](http://5digits.org/pentadactyl/index)). If possible, try installing the nightly/beta builds available, or see [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages").
 
-[Disable Add-on Compatibility Checks](https://addons.mozilla.org/en-us/firefox/addon/checkcompatibility/?src=userprofile) plugin should take care of spurious compatibility issues when the plugins get disabled, even though they work just fine with the new version.
+[Disable Add-on Compatibility Checks](https://addons.mozilla.org/firefox/addon/checkcompatibility/) plugin should take care of spurious compatibility issues when the plugins get disabled, even though they work just fine with the new version.
 
 ### Jerky or choppy scrolling
 
@@ -610,7 +610,7 @@ Now scrolling should flow smoothly.
 
 **Warning:** This method disables WebRTC.
 
-To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC)'s peer-to-peer (and JavaScript), open `about:config` and set `media.peerconnection.enabled` to **false** (or use this [addon](https://addons.mozilla.org/en-US/firefox/addon/happy-bonobo-disable-webrtc/)).
+To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC)'s peer-to-peer (and JavaScript), open `about:config` and set `media.peerconnection.enabled` to **false** (or use this [addon](https://addons.mozilla.org/firefox/addon/happy-bonobo-disable-webrtc/)).
 
 ### Run Firefox inside an nspawn container
 
@@ -657,7 +657,7 @@ Then consider checking your SSL configuration at [https://www.howsmyssl.com/](ht
 
 ### Show search matches position in scroll bar
 
-This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.org/en-US/firefox/addon/findbar-tweak/?src=hp-dl-featured) extension.
+This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.org/firefox/addon/findbar-tweak/) extension.
 
 ## See also
 

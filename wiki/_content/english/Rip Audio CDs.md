@@ -41,7 +41,7 @@ If you want to rip an audio CD gapless and using CD-Text you can use the shell s
 One can create a bin/cue file pair from an audio CD by using [cdrdao](https://www.archlinux.org/packages/?name=cdrdao) from the shell:
 
 ```
-$ crdao read-cd --read-raw --datafile cdimage.bin cdimage.cue
+$ cdrdao read-cd --read-raw --datafile cdimage.bin cdimage.cue
 
 ```
 

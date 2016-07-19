@@ -35,7 +35,7 @@ Arch Linux 存档目前位于 [https://archive.archlinux.org/](https://archive.a
 *   [ftp://seblu.net/archlinux/arm](ftp://seblu.net/archlinux/arm)
 *   [ftp://seblu.net/archlinux/archive](ftp://seblu.net/archlinux/archive)
 
-[这里](https://github.com/seblu/archivetools) 的源代码可以帮助您假设自己的服务器。
+[这里](https://github.com/seblu/archivetools) 的源代码可以帮助您架设自己的服务器。
 
 ## 目录
 

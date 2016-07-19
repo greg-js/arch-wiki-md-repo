@@ -576,7 +576,7 @@ $ VBoxManage internalcommands dumphdinfo <storage.vdi> | grep "offData"
 
 ```
 
-Также можно использовать модули ядра [qemu](https://www.archlinux.org/packages/?name=qemu) , которые выполняют эту же функцию [[attrib](http://bethesignal.org/blog/2011/01/05/how-to-mount-virtualbox-vdi-image/)]:
+Также можно использовать модули ядра [qemu](https://www.archlinux.org/packages/?name=qemu) , которые выполняют эту же функцию [attrib](http://bethesignal.org/blog/2011/01/05/how-to-mount-virtualbox-vdi-image/):
 
 ```
 # modprobe nbd max_part=16
@@ -918,7 +918,7 @@ initrd /initramfs-linux-vbox.img
 
 #### Убедитесь в корректности образа mkinitcpio
 
-Убедитесь, что в конфигурации вашего [mkinitcpio](/index.php/Mkinitcpio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mkinitcpio (Русский)") есть [хук](/index.php/Mkinitcpio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BE.D0.B1.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.87.D0.B8.D0.BA.D0.BE.D0.B2_.28HOOKS.29 "Mkinitcpio (Русский)") `block`:
+Убедитесь, что в конфигурации вашего [mkinitcpio](/index.php/Mkinitcpio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mkinitcpio (Русский)") есть [хук](/index.php/Mkinitcpio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82_.D0.BE.D0.B1.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.87.D0.B8.D0.BA.D0.BE.D0.B2 "Mkinitcpio (Русский)") `block`:
 
  `/etc/mkinitcpio.conf` 
 ```
@@ -1042,11 +1042,11 @@ $ VBoxManage storageattach machineA --storagectl "SATA Controller" --port 0 --de
 
 Наконец, вы можете легко интегрировать Arch Linux с хост-системой и синхронизировать буфер обмена между двумя ОС. Обратитесь к [установке гостевых дополнений](#.D0.9E.D0.B1.D1.80.D0.B0.D0.B7_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0_.D1.81_.D0.B3.D0.BE.D1.81.D1.82.D0.B5.D0.B2.D1.8B.D0.BC.D0.B8_.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8) для этого.
 
-**Важно:** Для [Xorg_(Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)"), чтобы работать в родной и в виртуальной машине, так как очевидно, он должен использовать другой драйвер, то лучше, если не будет `/etc/X11/xorg.conf` - так как Xorg будет собирать все, что необходимо на лету. Однако, если вам действительно нужно свою собственную конфигурацию Xorg, может быть, стоит установить используемые по умолчанию цели Systemd к `multi-user.target` с `# systemctl isolate graphical.target` (более [подробно](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.B9_.D1.86.D0.B5.D0.BB.D0.B8 "Systemd (Русский)")). Таким образом, графический интерфейс будет отключен (т.е. Xorg не запустится) и после входа в систему вы сможете выполнить `startx` вручную с пользовательским `xorg.conf`.
+**Важно:** Для [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)"), чтобы работать в родной и в виртуальной машине, так как очевидно, он должен использовать другой драйвер, то лучше, если не будет `/etc/X11/xorg.conf` - так как Xorg будет собирать все, что необходимо на лету. Однако, если вам действительно нужно свою собственную конфигурацию Xorg, может быть, стоит установить используемые по умолчанию цели Systemd к `multi-user.target` с `# systemctl isolate graphical.target` (более [подробно](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.B9_.D1.86.D0.B5.D0.BB.D0.B8 "Systemd (Русский)")). Таким образом, графический интерфейс будет отключен (т.е. Xorg не запустится) и после входа в систему вы сможете выполнить `startx` вручную с пользовательским `xorg.conf`.
 
 ### Физическая установка системы Arch Linux из VirtualBox
 
-В некоторых случаях это может быть полезно для установки родной системы Arch Linux из другой операционной системы: один из способов достижения этой цели является выполнение установки через VirtualBox на [жёсткий диск](http://www.virtualbox.org/manual/ch09.html#rawdisk). Если существующая операционная система на основе Linux, вы можете рассмотреть [установку из существующего Linux](/index.php/Install_from_Existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Install from Existing Linux (Русский)") вместо этого.
+В некоторых случаях это может быть полезно для установки родной системы Arch Linux из другой операционной системы: один из способов достижения этой цели является выполнение установки через VirtualBox на [жёсткий диск](http://www.virtualbox.org/manual/ch09.html#rawdisk). Если существующая операционная система на основе Linux, вы можете рассмотреть [установку из существующего Linux](/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Install from existing Linux (Русский)") вместо этого.
 
 Этот сценарий очень похож на [Запуск установленного ArchLinux в VirtualBox](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_Arch_Linux_.D0.B2.D0.BD.D1.83.D1.82.D1.80.D0.B8_VirtualBox), но будет реализовывать эти шаги в другом порядке: начать с создания [.vmdk образа жёсткого диска](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.B9.D1.82.D0.B5_.D0.BF.D0.BE.D1.82.D0.BE.D0.BA.D0.BE.D0.B2.D1.8B.D0.B9.28raw.29_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7_.vmdk), а затем [создавать файл конфигурации виртуальной машины](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.B8_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D1.8B).
 
@@ -1164,11 +1164,11 @@ Partition number (''1-3'', default ''3''): ''1''
 
 В то время как VirtualBox монтирует оригинальный образы ISO без проблем, есть такие форматы образов, которые не могут надежно быть преобразованы в ISO. Например, ccd2iso игнорирует .ccd и .sub файлы, что может привести к созданию образа диска с разбитыми файлами.
 
-В этом случае вам придется использовать [CDEmu](/index.php/CDEmu "CDEmu") для Linux внутри VirtualBox или любую другую утилиту, предназначенную для монтирования образов дисков.
+В этом случае вам придется использовать [CDemu](/index.php/CDemu "CDemu") для Linux внутри VirtualBox или любую другую утилиту, предназначенную для монтирования образов дисков.
 
 ### VirtualBox GUI не видит мою тему GTK 2x/3x
 
-Смотрите [Единый интерфейс GTK/QT приложений](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform Look for Qt and GTK Applications (Русский)") для получения информации о настройке GUI Qt в GTK-окружениях.
+Смотрите [Единый интерфейс GTK/QT приложений](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform look for Qt and GTK applications (Русский)") для получения информации о настройке GUI Qt в GTK-окружениях.
 
 ### OpenBSD не работает при недоступных инструкциях виртуализации
 

@@ -308,6 +308,15 @@ jack:x:1001:100:Jack Smith,some comment here,,:/home/jack:/bin/bash
 
 Broken down, this means: user `jack`, whose password is in `/etc/shadow`, whose UID is 1001 and whose primary group is 100\. Jack Smith is his full name and there is a comment associated to his account; his home directory is `/home/jack` and he is using [Bash](/index.php/Bash "Bash").
 
+The *pwck* command can be used to verify the integrity of the user database. It can sort the user list by GID at the same time, which can be helpful for comparison:
+
+```
+# pwck -s
+
+```
+
+Note that the Arch Linux defaults of the files are created as .pacnew files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed, because new users and groups are usually added also by the install scripts.
+
 ## Group management
 
 `/etc/group` is the file that defines the groups on the system (`man group` for details).
@@ -374,6 +383,10 @@ To remove users from a group:
 
 If the user is currently logged in, he/she must log out and in again for the change to take effect.
 
+The *grpck* command can be used to verify the integrity of the system's group files.
+
+Updates to the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package create .pacnew files. Alike the .pacnew files for the [#User database](#User_database), these can be disregarded/removed, because the install script adds any new required groups.
+
 ## Group list
 
 ### User groups
@@ -412,7 +425,10 @@ The following groups are used for system purposes and are not likely to be used 
 
 These groups are used by certain non-essential software. Sometimes they are used just internally, in these cases you should not add your user into these groups. See the main page for the software for details.
 
-**Note:** Do **not** create the groups manually, they will be created with [correct GID](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database") when the relevant package is installed. [FS#42182](https://bugs.archlinux.org/task/42182)
+**Note:**
+
+*   Do **not** create the groups manually, they will be created with [correct GID](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database") when the relevant package is installed. [FS#42182](https://bugs.archlinux.org/task/42182)
+*   A later removal of the package does not remove the respective user/group again. This is intentional because any files created during its usage would otherwise be left orphaned as a potential security risk.
 
 | Group | Affected files | Purpose |
 | adbusers | devices nodes under `/dev/` | Right to access [Android](/index.php/Android "Android") Debugging Bridge. |

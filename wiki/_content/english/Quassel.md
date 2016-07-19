@@ -31,7 +31,7 @@ Generate a certificate (this will be valid for 1 years, after which it needs to 
 
 As this is a self-signed certificate, you can type whatever you want in the fields.
 
-Open port 4242 in your firewall.
+Open port 4242 in your [firewall](/index.php/Firewall "Firewall").
 
 Start core by [starting](/index.php/Start "Start") `quassel.service`.
 

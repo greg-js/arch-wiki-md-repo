@@ -25,6 +25,7 @@ See [GRUB](/index.php/GRUB "GRUB") for the main article.
     *   [10.3 Changing the default menu entry](#Changing_the_default_menu_entry)
     *   [10.4 Boot non-default entry only once](#Boot_non-default_entry_only_once)
 *   [11 Play a tune](#Play_a_tune)
+*   [12 Manual configuration of core image for early boot](#Manual_configuration_of_core_image_for_early_boot)
 
 ## GUI configuration tools
 
@@ -381,3 +382,52 @@ You can play a tune through the PC-speaker while booting by modifying the variab
 `GRUB_INIT_TUNE="312 262 3 247 3 262 3 220 3 247 3 196 3 220 3 220 3 262 3 262 3 294 3 262 3 247 3 220 3 196 3 247 3 262 3 247 5 220 1 220 5"`
 
 For information on this, you can look at `info grub -n play`.
+
+## Manual configuration of core image for early boot
+
+If you require a special keymap or other complex steps that GRUB is not able to configure automatically in order to make `/boot` available to the GRUB environment, you can generate a core image yourself. On UEFI systems, the core image is the `grubx64.efi` file that is loaded by the firmware on boot. Building your own core image will allow you to embed any modules required for very early boot, as well as a configuration script to bootstrap GRUB.
+
+Firstly, taking as an example a requirement for the `dvorak` keymap embedded in early-boot in order to enter a password for a crypted `/boot` on a UEFI system:
+
+Determine from the generated `/boot/grub/grub.cfg` file what modules are required in order to mount the crypted `/boot`. For instance, under your `menuentry` you should see lines similar to:
+
+```
+insmod diskfilter cryptodisk luks gcry_rijndael gcry_rijndael gcry_sha256
+insmod ext2
+cryptomount -u 1234abcdef1234abcdef1234abcdef
+set root='cryptouuid/1234abcdef1234abcdef1234abcdef'
+```
+
+Take note of all of those modules: they'll need to be included in the core image. Now, create a tarball containing your keymap. This will be bundled in the core image as a memdisk:
+
+```
+# ckbcomp dvorak | grub-mklayout > dvorak.gkb
+# tar cf memdisk.tar dvorak.gkb
+
+```
+
+Now create a configuration file to be used in the GRUB core image. This is in the same format as your regular grub config, but need contain only a few lines to find and load the main config file on the `/boot` partition:
+
+ `early-grub.cfg` 
+```
+root=(memdisk)
+prefix=($root)/
+
+terminal_input at_keyboard
+keymap /dvorak.gkb
+
+cryptomount -u 1234abcdef1234abcdef1234abcdef
+set root='cryptouuid/1234abcdef1234abcdef1234abcdef'
+set prefix=($root)/grub
+
+configfile grub.cfg
+```
+
+Finally, generate the core image, listing all of the modules determined to be required in the generated `grub.cfg`, along with any modules used in the `early-grub.cfg` script. The example above needs `memdisk`, `tar`, `at_keyboard`, `keylayouts` and `configfile`.
+
+```
+# grub-mkimage -c early-grub.cfg -o grubx64.efi -O x86_64-efi -m memdisk.tar diskfilter cryptodisk luks gcry_rijndael gcry_sha256 ext2 memdisk tar at_keyboard keylayouts configfile
+
+```
+
+The generated EFI core image can now be used in the same way as the image that is generated automatically by `grub-install`: place it in your EFI partition and enable it with `efibootmgr`, or configure as appropriate for your system firmware.

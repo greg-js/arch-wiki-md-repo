@@ -194,7 +194,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **[Warmux](https://en.wikipedia.org/wiki/Warmux "wikipedia:Warmux") (previously *Wormux*)** — Somewhat similar to Worms 2/Worms Armageddon
 
-	[https://sourceforge.net/projects/warmux.mirror/](https://sourceforge.net/projects/warmux.mirror/) || [warmux](https://aur.archlinux.org/packages/warmux/)
+	[http://gna.org/projects/warmux/](http://gna.org/projects/warmux/) || [warmux](https://aur.archlinux.org/packages/warmux/)
 
 ## Casual games
 
@@ -518,7 +518,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **Arx Libertatis** — This project is a fully working, open source port of Arx Fatalis, a 2002 first-person role-playing game developed by Arkane Studios. It features some improvements over the original engine like bug fixes and wide screen support.
 
-	[http://arx-libertatis.org/](http://arx-libertatis.org/) || [arx-libertatis](https://aur.archlinux.org/packages/arx-libertatis/)
+	[http://arx-libertatis.org/](http://arx-libertatis.org/) || [arxlibertatis](https://aur.archlinux.org/packages/arxlibertatis/)
 
 *   **Egoboo** — Open-source action RPG/dungeon crawling adventure with OpenGL 3D graphics.
 
@@ -538,7 +538,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **Flare** — Action game similar to Diablo.
 
-	[http://www.flarerpg.org/](http://www.flarerpg.org/) || [flare-game](https://aur.archlinux.org/packages/flare-game/)
+	[http://www.flarerpg.org/](http://www.flarerpg.org/) || [flare-game-git](https://aur.archlinux.org/packages/flare-game-git/)
 
 *   **FreedroidRPG** — Mature science fiction role playing game set in the future
 
@@ -887,7 +887,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[MegaGlest](https://en.wikipedia.org/wiki/MegaGlest "wikipedia:MegaGlest")** — Fork of Glest, a 3D real-time strategy game in a fantastic world.
 
-	[http://github.com/megaglest](http://github.com/megaglest) || [megaglest](https://www.archlinux.org/packages/?name=megaglest)
+	[https://github.com/megaglest](https://github.com/megaglest) || [megaglest](https://www.archlinux.org/packages/?name=megaglest)
 
 *   **[Netpanzer](https://en.wikipedia.org/wiki/Netpanzer "wikipedia:Netpanzer")** — Realtime Strategy game like Command and Conquer but without building bases.
 

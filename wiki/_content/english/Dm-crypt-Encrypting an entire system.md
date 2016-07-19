@@ -864,7 +864,7 @@ Create the needed partitions, at least one for `/` (e.g. `/dev/sda*X*`). See [Pa
 
 ### Preparing the system partition
 
-The following commands create and mount the encrypted system partition (which includes `/boot`). If you want to use particular non-default encryption options (e.g. cipher, key length), see the [encryption options](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before executing the first command:
+The following commands create and mount the encrypted system partition, which includes `/boot`. If you want to use particular non-default encryption options (e.g. cipher, key length), see the [encryption options](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before executing the first command:
 
 ```
 # cryptsetup -y -v luksFormat /dev/sda*X*
@@ -962,28 +962,15 @@ At the [pacstrap](/index.php/Installation_guide#Install_the_base_packages "Insta
 
 ### Configuring mkinitcpio
 
-In order for GRUB to open the LUKS partition without having the user enter his passphrase twice, we will use a keyfile. The following generates a keyfile which uses GRUB's default name for `cryptkey`, so it does not need to be specified with a kernel parameter.
+In order for GRUB to open the LUKS partition without having the user enter his passphrase twice, we will use a keyfile embedded in the initramfs. Follow [Dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") making sure to add the key to `/dev/sda*X*` at the *luksAddKey* step.
 
-```
-# dd bs=512 count=4 if=/dev/urandom of=/crypto_keyfile.bin
-# chmod 000 /crypto_keyfile.bin
-# cryptsetup luksAddKey /dev/sda*X* /crypto_keyfile.bin
-
-```
-
-See [dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for more details.
-
-Add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+After creating, adding, and embedding the key, add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
  `/etc/mkinitcpio.conf`  `HOOKS="... **encrypt** ... filesystems ..."` 
 
-Add `/usr/bin/btrfsck` to `BINARIES`, so that it is available if there is a problem booting the system later:
+Add `/usr/bin/btrfs` to `BINARIES`, so that it is available if there is a problem booting the system later:
 
- `/etc/mkinitcpio.conf`  `BINARIES="/usr/bin/btrfsck"` 
-
-Add the previously generated keyfile to `FILES`. This will embed the keyfile into the RAM disk:
-
- `/etc/mkinitcpio.conf`  `FILES="/crypto_keyfile.bin"` 
+ `/etc/mkinitcpio.conf`  `BINARIES="/usr/bin/btrfs"` 
 
 Create a new initial RAM disk with:
 
@@ -1006,25 +993,7 @@ where `*UUID*` is the UUID of the system partition (the UUID of `/dev/sda*X*`, *
 
 See [GRUB#Encryption](/index.php/GRUB#Encryption "GRUB") for more details and options.
 
-**BIOS**. If you are using a traditional BIOS (not UEFI) do:
-
-```
-# grub-install /dev/sda
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-See [GRUB#Install to disk](/index.php/GRUB#Install_to_disk "GRUB") for more details and options.
-
-**UEFI**. If you are using UEFI do:
-
-```
-# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub --recheck
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-See [GRUB#Installation 2](/index.php/GRUB#Installation_2 "GRUB") for more details and options.
+Then proceed to install [GRUB](/index.php/GRUB "GRUB") to `/dev/sda` and generate the main GRUB configuration file.
 
 ### Configuring swap
 

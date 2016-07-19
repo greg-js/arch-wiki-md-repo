@@ -39,6 +39,9 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### July 2016
 
+*   [18 July 2016] [ASA-201607-7](https://lists.archlinux.org/pipermail/arch-security/2016-July/000667.html) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) multiple issues
+*   [18 July 2016] [ASA-201607-6](https://lists.archlinux.org/pipermail/arch-security/2016-July/000666.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) multiple issues
+*   [17 July 2016] [ASA-201607-5](https://lists.archlinux.org/pipermail/arch-security/2016-July/000665.html) [gimp](https://www.archlinux.org/packages/?name=gimp) arbitrary code execution
 *   [10 July 2016] [ASA-201607-4](https://lists.archlinux.org/pipermail/arch-security/2016-July/000664.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) arbitrary code execution
 *   [05 July 2016] [ASA-201607-3](https://lists.archlinux.org/pipermail/arch-security/2016-July/000663.html) [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) arbitrary code execution
 *   [05 July 2016] [ASA-201607-2](https://lists.archlinux.org/pipermail/arch-security/2016-July/000662.html) [xerces-c](https://www.archlinux.org/packages/?name=xerces-c) denial of service

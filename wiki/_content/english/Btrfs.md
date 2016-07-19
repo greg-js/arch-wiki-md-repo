@@ -6,10 +6,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 
 	Btrfs is a new copy on write (CoW) filesystem for Linux aimed at implementing advanced features while focusing on fault tolerance, repair and easy administration. Jointly developed at Oracle, Red Hat, Fujitsu, Intel, SUSE, STRATO and many others, Btrfs is licensed under the GPL and open for contribution from anyone.
 
-**Warning:**
-
-*   Btrfs has some features that are considered experimental. See the Btrfs Wiki's [Stability status](https://btrfs.wiki.kernel.org/index.php/Main_Page#Stability_status), [Is Btrfs stable?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) and [Getting started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for more detailed information.
-*   Beware of the [limitations](#Limitations).
+**Warning:** Btrfs has some features that are considered experimental. See the Btrfs Wiki's [Stability status](https://btrfs.wiki.kernel.org/index.php/Main_Page#Stability_status), [Is Btrfs stable?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) and [Getting started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for more detailed information. See the [#Known issues](#Known_issues) section.
 
 ## Contents
 
@@ -19,7 +16,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [3.1 Creating a new file system](#Creating_a_new_file_system)
         *   [3.1.1 File system on a single device](#File_system_on_a_single_device)
         *   [3.1.2 Multi-device file system](#Multi-device_file_system)
-    *   [3.2 Converting a file system from Ext3/4](#Converting_a_file_system_from_Ext3.2F4)
+    *   [3.2 Ext3/4 to Btrfs conversion](#Ext3.2F4_to_Btrfs_conversion)
 *   [4 Configuring the file system](#Configuring_the_file_system)
     *   [4.1 Copy-On-Write (CoW)](#Copy-On-Write_.28CoW.29)
         *   [4.1.1 Disabling CoW](#Disabling_CoW)
@@ -43,7 +40,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [5.5 RAID](#RAID)
     *   [5.6 Snapshots](#Snapshots)
     *   [5.7 Send/receive](#Send.2Freceive)
-*   [6 Limitations](#Limitations)
+*   [6 Known issues](#Known_issues)
     *   [6.1 Encryption](#Encryption)
     *   [6.2 Swap file](#Swap_file)
     *   [6.3 Linux-rt kernel](#Linux-rt_kernel)
@@ -114,11 +111,13 @@ Multiple devices can be entered to create a RAID. Supported RAID levels include 
 
 ```
 
+You **must** include either the `udev` hook or the `btrfs` hook in `/etc/mkinitcpio.conf` in order to use multiple btrfs devices in a pool. See the [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") article for more information.
+
 **Note:** Mounting such a filesystem may result in all but one of the according *.device*-jobs getting stuck and systemd never finishing startup due to a [bug](https://github.com/systemd/systemd/issues/1921) in handling this type of filesystem.
 
 See [#RAID](#RAID) for advice on maintenance specific to multi-device Btrfs file systems.
 
-### Converting a file system from Ext3/4
+### Ext3/4 to Btrfs conversion
 
 **Warning:** As of mid-to-late 2015, there are many reports on the btrfs mailing list about incomplete/corrupt/broken conversions. The situation is improving as patches are being submitted, but proceed very carefully. Make sure you have *working* backups of any data you cannot afford to lose. See [Conversion from Ext3](https://btrfs.wiki.kernel.org/index.php/Conversion_from_Ext3) on the btrfs wiki.
 
@@ -416,7 +415,7 @@ Now a new subvolume named `root_backup_new` will be present in `/backup`.
 
 See [Btrfs Wiki's Incremental Backup page](https://btrfs.wiki.kernel.org/index.php/Incremental_Backup) on how to use this for an incremental backup and for tools that automate the process.
 
-## Limitations
+## Known issues
 
 A few limitations should be known before trying.
 
@@ -486,15 +485,6 @@ See [Btrfsck](https://btrfs.wiki.kernel.org/index.php/Btrfsck) for more informat
 
 *   **Official site**
     *   [Btrfs Wiki](https://btrfs.wiki.kernel.org/)
-    *   [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary)
-*   **Official FAQs**
-    *   [Btrfs Wiki FAQ](https://btrfs.wiki.kernel.org/index.php/FAQ)
-    *   [Btrfs Wiki Problem FAQ](https://btrfs.wiki.kernel.org/index.php/Problem_FAQ)
-*   **Btrfs pull requests**
-    *   [3.14](http://lkml.indiana.edu/hypermail/linux/kernel/1401.3/03045.html)
-    *   [3.13](http://lkml.indiana.edu/hypermail/linux/kernel/1311.1/03526.html)
-    *   [3.12](http://lkml.indiana.edu/hypermail/linux/kernel/1309.1/02981.html)
-    *   [3.11](http://lkml.indiana.edu/hypermail/linux/kernel/1305.1/01064.html)
 *   **Performance related**
     *   [Btrfs on raw disks?](http://superuser.com/questions/432188/should-i-put-my-multi-device-btrfs-filesystem-on-disk-partitions-or-raw-devices)
     *   [Varying leafsize and nodesize in Btrfs](http://comments.gmane.org/gmane.comp.file-systems.btrfs/19440)

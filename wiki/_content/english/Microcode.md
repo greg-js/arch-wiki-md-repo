@@ -91,11 +91,11 @@ objcopy ... --add-section .initrd=my_new_initrd
 Edit boot options in `/boot/refind_linux.conf` as per EFI boot stub above, example:
 
 ```
-"Boot with standard options" "ro root=UUID=(...) quiet initrd=intel-ucode.img initrd=initramfs-linux.img"
+"Boot with standard options" "ro root=UUID=(...) quiet initrd=/boot/intel-ucode.img initrd=/boot/initramfs-linux.img"
 
 ```
 
-Users employing [manual stanzas](/index.php/REFInd#Manual_boot_stanzas "REFInd") in `/boot/refind.conf` to define the kernels should simply add `initrd=/intel-ucode.img` or `/boot/intel-ucode.img` as required to the options line, and not in the main part of the stanza.
+Users employing [manual stanzas](/index.php/REFInd#Manual_boot_stanzas "REFInd") in `*esp*/EFI/refind/refind.conf` to define the kernels should simply add `initrd=/intel-ucode.img` or `/boot/intel-ucode.img` as required to the options line, and not in the main part of the stanza.
 
 ### Syslinux
 

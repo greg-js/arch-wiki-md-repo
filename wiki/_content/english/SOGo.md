@@ -105,7 +105,7 @@ Edit the `/etc/httpd/conf/extra/SOGo.conf` file and modify the following lines (
 
 ### nginx
 
-If using [nginx](/index.php/Nginx "Nginx") for the web server, add the following to `/etc/nginx/nginx.conf`:
+If using [nginx](/index.php/Nginx "Nginx") for the web server, you will only configure on 443, SSL certificates must be in place prior to configuration. Add the following to `/etc/nginx/nginx.conf`:
 
 ```
    server {
@@ -194,7 +194,7 @@ Create the state directory and start services:
 
 Then enable and start the `sogo` and either `httpd` or `nginx` services.
 
-Open a browser and go to http://**mail.domain.tld**/SOGo/ but do not try to login just yet, just verify that you can connect and get the login screen.
+Open a browser and go to http://**mail.domain.tld**/SOGo/ for Apache, or https://**mail.domain.tld**/SOGo/ for nginx. Do not try to login just yet, just verify that you can connect and get the login screen as authentication sources have not been setup yet.
 
 ## SOGo database configuration
 
@@ -1016,6 +1016,8 @@ Modify the `/etc/sogo/sogo.conf` file and add the LDAP user sources (and global 
         bindDN = "cn=ldap,cn=Users,dc=**internal**,dc=**domain**,dc=**tld**";
         bindPassword = **ldapPW**;
         filter = "((NOT isCriticalSystemObject='TRUE') AND (mail=\'*\') AND (NOT objectClass=contact))";
+        //Uncomment to list local users in WebUI without searching (small directories only)
+        //listRequiresDot = NO;
       },
       {
         id = sambaContacts;
@@ -1035,6 +1037,8 @@ Modify the `/etc/sogo/sogo.conf` file and add the LDAP user sources (and global 
                  OR (((objectClass=group) AND (gidNumber>=2000)) AND (NOT isCriticalSystemObject='TRUE') AND (NOT showInAdvancedViewOnly='TRUE')))";
         mapping = {
             displayname = ("cn");
+        //Uncomment to list contacts in WebUI without searching (few contacts only)
+        //listRequiresDot = NO;
         };
       }
     );
@@ -1090,7 +1094,7 @@ Go ahead and go to the regular http page and it should redirect you to the https
 
 ### nginx
 
-To be added...
+Since the nginx configuration was already setup for SSL, nothing more need be done.
 
 ## ActiveSync configuration
 
@@ -1111,7 +1115,24 @@ This will result in extended locking delays if you have more than a handful of u
 
 ### nginx
 
-To be added...
+Add the following to your server definition for SOGo in `/etc/nginx/nginx.com`:
+
+```
+...
+        location ^~ /Microsoft-Server-ActiveSync {
+                proxy_pass [http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync](http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync);
+                proxy_redirect [http://127.0.0.1:20000/Microsoft-Server-ActiveSync](http://127.0.0.1:20000/Microsoft-Server-ActiveSync) /;
+        }
+
+        location ^~ /SOGo/Microsoft-Server-ActiveSync {
+                proxy_pass [http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync](http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync);
+                proxy_redirect [http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync](http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync) /;
+        }
+...
+
+```
+
+Additional tuning may be required for the parameters in the SOGo section below (timeout, retry, and next host values, specifically).
 
 ### SOGo
 

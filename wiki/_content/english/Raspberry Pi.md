@@ -233,6 +233,8 @@ loglevel=5
 
 ```
 
+**Note:** The Pi3 requires `enable_uart=1` be added to `/boot/cmdline.txt` in order to display boot messages.
+
 If the default speed of 115200 does not work properly, try changing it to 38400:
 
 ```

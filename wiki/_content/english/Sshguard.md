@@ -172,6 +172,13 @@ Then use the following command to unban, with the line-number as identified in t
 
 ```
 
+You will also need to remove the ip address from `/var/db/sshguard/blacklist.db` in order to make unbanning persistent.
+
+```
+# sed -i '/<ip-address>/d' /var/db/sshguard/blacklist.db
+
+```
+
 ### Logging
 
 If you aren't sure what is being passed to sshguard, you can add a tee command to the script in /usr/lib/system/scripts/sshguard-journalctl:

@@ -1,4 +1,4 @@
-NeoGRUB is an implementation of GRUB4DOS provided by the EasyBCD bootloader-configurator for Windows. When installed to the Windows bootloader (via Add New Entry - NeoGrub ) from EasyBCD, it embeds an implementation of GRUB Legacy *inside the Windows Bootloader*. This implementation can boot Arch Linux and other Linuxes *directly, without chainloading a Linux bootloader installed on the linux's /boot.*
+NeoGRUB is an implementation of GRUB4DOS provided by the EasyBCD bootloader-configurator for Windows. When installed to the Windows bootloader (via Add New Entry - NeoGrub) from EasyBCD, it embeds an implementation of GRUB Legacy *inside the Windows Bootloader*. This implementation can boot Arch Linux and other Linuxes *directly, without chainloading a Linux bootloader installed on the linux's /boot.*
 
 This can be helpful if you find that updates to Arch are breaking your Arch's GRUB or Syslinux.
 
@@ -23,3 +23,22 @@ More information of the nature and workings of EasyBCD and NeoGRUB is at the dev
 *   [https://neosmart.net/wiki/easybcd/neogrub/linux/](https://neosmart.net/wiki/easybcd/neogrub/linux/)
 
 note that that last link has an example to boot Ubuntu. Ubuntu adds version numbers to its vmlinuz and initrd files, which would require that you update the NeoGRUB every kernel update. Arch does not have this problem. Also note that Arch uses initramfs, not initrd, but you still use the syntax in the code box above.
+
+## Chainloading GRUB
+
+Since EasyBCD's NeoGRUB currently does not understand the GRUB menu format, chainload to it by replacing the contents of your `C:\NST\menu.lst` file with lines similar to the following:
+
+```
+default 0
+timeout 1
+
+```
+
+```
+title       Chainload into GRUB v2
+root        (hd0,7)
+kernel      /boot/grub/i386-pc/core.img
+
+```
+
+Finally, [#Generate the main configuration file](#Generate_the_main_configuration_file).

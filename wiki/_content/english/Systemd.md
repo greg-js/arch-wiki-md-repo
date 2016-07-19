@@ -344,7 +344,7 @@ ExecStart=
 ExecStart=*new command*
 ```
 
-Note how `ExecStart` must be cleared before being re-assigned ([[1]](https://bugzilla.redhat.com/show_bug.cgi?id=756787#c9)).
+Note how `ExecStart` must be cleared before being re-assigned ([[1]](https://bugzilla.redhat.com/show_bug.cgi?id=756787#c9)). The same holds for every item that can be specified multiple times, e.g. `OnCalendar` for timers.
 
 One more example to automatically restart a service:
 

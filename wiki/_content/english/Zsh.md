@@ -1,10 +1,4 @@
-[Zsh](http://zsh.sourceforge.net/Intro/intro_1.html) is a powerful shell that operates as both an interactive shell and as a scripting language interpreter. While being compatible with [Bash](/index.php/Bash "Bash") (not by default, only if issuing `emulate sh`), it offers many advantages such as:
-
-*   Efficiency
-*   Improved [tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html)
-*   Improved globbing
-*   Improved array handling
-*   Full customisability
+[Zsh](http://zsh.sourceforge.net/Intro/intro_1.html) is a powerful shell that operates as both an interactive shell and as a scripting language interpreter. While being compatible with [Bash](/index.php/Bash "Bash") (not by default, only if issuing `emulate sh`), it offers advantages such as improved [tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html) and [globbing](http://zsh.sourceforge.net/Doc/Release/Expansion.html).
 
 The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reasons to use Zsh.
 
@@ -20,26 +14,25 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
     *   [3.3 Command completion](#Command_completion)
     *   [3.4 Autostart X at login](#Autostart_X_at_login)
     *   [3.5 The "command not found" hook](#The_.22command_not_found.22_hook)
-    *   [3.6 Preventing duplicate lines in the history](#Preventing_duplicate_lines_in_the_history)
-    *   [3.7 The ttyctl command](#The_ttyctl_command)
-    *   [3.8 Key bindings](#Key_bindings)
-        *   [3.8.1 Bind key to ncurses application](#Bind_key_to_ncurses_application)
-        *   [3.8.2 Alternate way to bind ncurses application](#Alternate_way_to_bind_ncurses_application)
-        *   [3.8.3 File manager key binds](#File_manager_key_binds)
-    *   [3.9 History search](#History_search)
-    *   [3.10 Prompts](#Prompts)
-        *   [3.10.1 Prompt themes](#Prompt_themes)
-        *   [3.10.2 Customized prompt](#Customized_prompt)
-            *   [3.10.2.1 Colors](#Colors)
-            *   [3.10.2.2 Example](#Example)
-    *   [3.11 Remembering recent directories](#Remembering_recent_directories)
-        *   [3.11.1 Dirstack](#Dirstack)
-        *   [3.11.2 cdr](#cdr)
-    *   [3.12 Help command](#Help_command)
-    *   [3.13 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
-    *   [3.14 Sample .zshrc files](#Sample_.zshrc_files)
-    *   [3.15 Configuration Frameworks](#Configuration_Frameworks)
-    *   [3.16 Persistent rehash](#Persistent_rehash)
+    *   [3.6 The ttyctl command](#The_ttyctl_command)
+    *   [3.7 Key bindings](#Key_bindings)
+        *   [3.7.1 Bind key to ncurses application](#Bind_key_to_ncurses_application)
+        *   [3.7.2 Alternate way to bind ncurses application](#Alternate_way_to_bind_ncurses_application)
+        *   [3.7.3 File manager key binds](#File_manager_key_binds)
+    *   [3.8 History search](#History_search)
+    *   [3.9 Prompts](#Prompts)
+        *   [3.9.1 Prompt themes](#Prompt_themes)
+        *   [3.9.2 Customized prompt](#Customized_prompt)
+            *   [3.9.2.1 Colors](#Colors)
+            *   [3.9.2.2 Example](#Example)
+    *   [3.10 Remembering recent directories](#Remembering_recent_directories)
+        *   [3.10.1 Dirstack](#Dirstack)
+        *   [3.10.2 cdr](#cdr)
+    *   [3.11 Help command](#Help_command)
+    *   [3.12 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
+    *   [3.13 Sample .zshrc files](#Sample_.zshrc_files)
+    *   [3.14 Configuration Frameworks](#Configuration_Frameworks)
+    *   [3.15 Persistent rehash](#Persistent_rehash)
 *   [4 Uninstallation](#Uninstallation)
 *   [5 See also](#See_also)
 
@@ -207,19 +200,6 @@ See [Xinitrc#Autostart X at login](/index.php/Xinitrc#Autostart_X_at_login "Xini
 ### The "command not found" hook
 
 See [Pkgfile#Command not found](/index.php/Pkgfile#Command_not_found "Pkgfile").
-
-### Preventing duplicate lines in the history
-
-To ignore duplicate lines in the history, use the following:
-
- `~/.zshrc`  `setopt HIST_IGNORE_DUPS` 
-
-To free the history from already created duplicates, run:
-
-```
-$ sort -t ";" -k 2 -u ~/.zsh_history | sort -o ~/.zsh_history
-
-```
 
 ### The ttyctl command
 

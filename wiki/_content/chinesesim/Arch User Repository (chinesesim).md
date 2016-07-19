@@ -208,7 +208,7 @@ $ git fetch *remote_name*
 
 `*remote_name*` 是需要创建的仓库，参考 [Git#Using remotes](/index.php/Git#Using_remotes "Git")。
 
-第一次 *push* 之后，AUR 上就会出现软件包。可以将源代码加入本地 Git 仓库，参考 [#上传软件包](#.E4.B8.8A.E4.BC.A0.E8.BD.AF.E4.BB.B6.E5.8C.85).
+第一次 *push* 之后，AUR 上就会出现软件包。可以将源代码加入本地 Git 仓库，参考 [#维护软件包](#.E7.BB.B4.E6.8A.A4.E8.BD.AF.E4.BB.B6.E5.8C.85).
 
 **Warning:** AUR 提交会通过 git 用户名和邮件定义作者，一旦提交很难改变。如果需要修改用户名和密码，请通过 `git config user.name [...]` 和 `git config user.email [...]` 修改。请一定在推送前进行检查。
 

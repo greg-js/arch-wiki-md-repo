@@ -563,7 +563,7 @@ También puede utilizar el script [mount.vdi](https://github.com/pld-linux/Virtu
 
 ```
 
-Alternativamente, puede usar el módulo del kernel [qemu](https://www.archlinux.org/packages/?name=qemu) que puede hacer este [[attrib](http://bethesignal.org/blog/2011/01/05/how-to-mount-virtualbox-vdi-image/)]:
+Alternativamente, puede usar el módulo del kernel [qemu](https://www.archlinux.org/packages/?name=qemu) que puede hacer este [attrib](http://bethesignal.org/blog/2011/01/05/how-to-mount-virtualbox-vdi-image/):
 
 ```
 # modprobe nbd max_part=16
@@ -721,7 +721,7 @@ $ VBoxManage internalcommands sethduuid */path/to/disk.vdi*
 
 **Sugerencia:** En el futuro, para evitar la copia del disco virtual y la asignación de un nuevo UUID a su archivo de forma manual, use `[VBoxManage clonehd](http://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi)` en su lugar.
 
-**Nota:** Las órdenes anteriores soportan [todos los formatos de disco virtual admitidos por VirtualBox](#Formats_supported_by_VirtualBox).
+**Nota:** Las órdenes anteriores soportan [todos los formatos de disco virtual admitidos por VirtualBox](#Formatos_soportados_por_VirtualBox).
 
 ## Configuración avanzada
 
@@ -1037,7 +1037,7 @@ Por último, es posible que desee una integración perfecta entre su sistema Arc
 
 ### Instalar un sistema nativo de Arch Linux desde VirtualBox
 
-En algunos casos, puede ser útil instalar un sistema nativo de Linux Arch mientras se ejecuta otro sistema operativo: una forma de lograr esto es realizar la instalación a través de VirtualBox en un [disco raw](http://www.virtualbox.org/manual/ch09.html#rawdisk). Si el sistema operativo existente está basado en Linux, es posible que desee considerar el siguiente artículo [Install from Existing Linux](/index.php/Install_from_Existing_Linux "Install from Existing Linux") en su lugar.
+En algunos casos, puede ser útil instalar un sistema nativo de Linux Arch mientras se ejecuta otro sistema operativo: una forma de lograr esto es realizar la instalación a través de VirtualBox en un [disco raw](http://www.virtualbox.org/manual/ch09.html#rawdisk). Si el sistema operativo existente está basado en Linux, es posible que desee considerar el siguiente artículo [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux") en su lugar.
 
 Este escenario es muy similar a la [#Ejecutar una instalación nativa de Arch Linux dentro de VirtualBox](#Ejecutar_una_instalaci.C3.B3n_nativa_de_Arch_Linux_dentro_de_VirtualBox), pero seguirá los pasos en un orden diferente: empiece por [#Crear una imagen .vmdk de disco raw](#Crear_una_imagen_.vmdk_de_disco_raw), y luego [#Crear el archivo de configuración de la máquina virtual](#Crear_el_archivo_de_configuraci.C3.B3n_de_la_m.C3.A1quina_virtual).
 
@@ -1053,7 +1053,7 @@ Ahora, debe tener una configuración de máquina virtual funcional cuyos discos 
 
 *   Esta razones hacen recomendable crear, primero, las particiones en una instalación nativa, de lo contrario las particiones no serán tomadas en consideración en su tabla de particiones MBR/GPT.
 
-Después de completar la instalación, arranque el ordenador con un soporte de instalación de GNU/Linux (ya se trate de Arch Linux o no), entre en entorno [chroot](/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Efectuar_chroot_y_configurar_el_sistema_base "Beginners' Guide (Español)") en su recién instalado Arch Linux e [#instale y configure un gestor de arranque](/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Instalar_y_configurar_un_gestor_de_arranque "Beginners' Guide (Español)").
+Después de completar la instalación, arranque el ordenador con un soporte de instalación de GNU/Linux (ya se trate de Arch Linux o no), entre en entorno [chroot](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Efectuar_chroot_y_configurar_el_sistema_base "Beginners' guide (Español)") en su recién instalado Arch Linux e [#instale y configure un gestor de arranque](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Instalar_un_gestor_de_arranque "Beginners' guide (Español)").
 
 ### Mover una instalación nativa de Windows a una máquina virtual
 
@@ -1101,9 +1101,9 @@ Los primeros tres siguientes puntos vienen de [esta página desactualizada de la
 
 *   Trate de arrancar su maquina virtual de Windows, Debería funcionar sin más. Primero, sin embargo, retire y repare los discos desde el proceso de arranque, ya que pueden interferir (y probablemente lo hagan) arrancar en modo seguro.
 
-*   Intente arrancar su máquina virtual Windows en modo seguro (pulse la tecla F8 antes de que el logotipo de Windows aparezca)... si se dan problemas de arranque, lea [#Arreglar_el_MBR_y_el_gestor_de_arranque_de_Microsoft](#Arreglar_el_MBR_y_el_gestor_de_arranque_de_Microsoft). En modo seguro, los controladores se instalarán probablemente por el mecanismo de detección plug-and-play de Windows ([vistas](http://i.imgur.com/hh1RrSp.png)). Adicionalmente, instale los Guest Additions de VirtualBox a través del menú *Devices* > *Insert Guest Additions CD image...*. Si no aparece un nuevo diálogo para el disco, vaya a la unidad del CD e inicie el instalador manualmente.
+*   Intente arrancar su máquina virtual Windows en modo seguro (pulse la tecla F8 antes de que el logotipo de Windows aparezca)... si se dan problemas de arranque, lea [#Arreglar el MBR y el gestor de arranque de Microsoft](#Arreglar_el_MBR_y_el_gestor_de_arranque_de_Microsoft). En modo seguro, los controladores se instalarán probablemente por el mecanismo de detección plug-and-play de Windows ([vistas](http://i.imgur.com/hh1RrSp.png)). Adicionalmente, instale los Guest Additions de VirtualBox a través del menú *Devices* > *Insert Guest Additions CD image...*. Si no aparece un nuevo diálogo para el disco, vaya a la unidad del CD e inicie el instalador manualmente.
 
-*   Finalmente, debe tener una máquina virtual de Windows funcional. No se olvide de leer las [#Limitaciones_conocidas](#Limitaciones_conocidas).
+*   Finalmente, debe tener una máquina virtual de Windows funcional. No se olvide de leer las [#Limitaciones conocidas](#Limitaciones_conocidas).
 
 #### Arreglar el MBR y el gestor de arranque de Microsoft
 
@@ -1149,11 +1149,11 @@ Si su sistema operativo huésped es una distribución de GNU/Linux puede abrir u
 
 Mientras que VirtualBox puede montar imágenes ISO sin problema, hay algunos formatos de imagen que no se pueden convertir a ISO de forma fiable. Por ejemplo, ccd2iso ignora archivos .ccd y .sub, lo que puede dar como resultado imágenes de disco con archivos dañados.
 
-En estos casos, tendrá que usar [CDEmu](/index.php/CDEmu "CDEmu") para Linux dentro de VirtualBox o cualquier otra herramienta que se utiliza para montar imágenes de disco.
+En estos casos, tendrá que usar [CDemu](/index.php/CDemu "CDemu") para Linux dentro de VirtualBox o cualquier otra herramienta que se utiliza para montar imágenes de disco.
 
 ### La interfaz gráfica de VirtualBox no coincide con mi tema GTK
 
-Vea [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications") para obtener información sobre la tematización de aplicaciones basadas en Qt como VirtualBox.
+Vea [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") para obtener información sobre la tematización de aplicaciones basadas en Qt como VirtualBox.
 
 ### OpenBSD inutilizable cuando las instrucciones de virtualización no están disponibles
 

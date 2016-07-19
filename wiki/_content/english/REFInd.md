@@ -31,7 +31,7 @@
 
 [Install](/index.php/Install "Install") [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
-**Warning:** Your kernel and initramfs need to reside on a file system which *rEFInd*can read.
+**Warning:** Your kernel and initramfs need to reside on a file system which *rEFInd* can read.
 
 *rEFInd* has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+, and NTFS. Additionally *rEFInd* can use drivers from the UEFI firmware i.e. FAT (or HFS+ on Macs or ISO-9660 on some systems).
 
@@ -180,8 +180,8 @@ If *rEFInd* automatically detects your kernel, you can place a `refind_linux.con
  `/boot/refind_linux.conf` 
 ```
 "Boot using default options"     "root=PARTUUID=XXXXXXXX rw add_efi_memmap"
+"Boot using fallback initramfs"  "root=PARTUUID=XXXXXXXX rw add_efi_memmap initrd=/boot/initramfs-linux-fallback.img"
 "Boot to terminal"               "root=PARTUUID=XXXXXXXX rw add_efi_memmap systemd.unit=multi-user.target"
-"Boot using fallback initramfs"  "root=PARTUUID=XXXXXXXX rw add_efi_memmap initrd=initramfs-linux-fallback.img"
 
 ```
 
@@ -194,7 +194,7 @@ Alternatively, try running:
 
 Which will attempt to find your kernel in `/boot` and automatically generate `refind_linux.conf`. The script will only set up the most basic kernel parameters, so be sure to check the file it created for correctness.
 
-If you do not specify an `initrd=` parameter, *rEFInd* will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters (e.g. for [Microcode](/index.php/Microcode "Microcode")) you must specify them manually in `refind_linux.conf`.
+If you do not specify an `initrd=` parameter, *rEFInd* will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters, you must specify them manually in `refind_linux.conf`. For example, a [Microcode](/index.php/Microcode "Microcode") passed before the initramfs: `... initrd=/boot/intel-ucode.img initrd=/boot/initramfs-linux.img`.
 
 #### Manual boot stanzas
 
@@ -221,6 +221,8 @@ menuentry "Arch Linux" {
 ```
 
 It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Ext3#Assigning a label](/index.php/Ext3#Assigning_a_label "Ext3") as an example of assigning a volume label.
+
+**Warning:** `loader` and `initrd` paths are relative to the root of `volume`.
 
 ## Using rEFInd with an existing UEFI Windows installation
 

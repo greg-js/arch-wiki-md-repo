@@ -24,7 +24,7 @@
 | <small>2.10.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
 | <small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(23)</small> |
-| <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(25)</small> |
+| <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(26)</small> |
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(44)</small> |
 | <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(14)</small> |
 | <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(22)</small> |
@@ -32,11 +32,11 @@
 | <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(16)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(4)</small> |
 | <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(2)</small> |
-| <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(11)</small> |
+| <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(12)</small> |
 | <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17)</small> |
 | <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(12)</small> |
 | <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small> |
-| <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(55)</small> |
+| <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(57)</small> |
 | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(21) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(51)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
@@ -83,7 +83,7 @@
 | <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
 | <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
 | <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(70)</small> |
-| <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
+| <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(6)</small> |
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(13)</small> |
 | <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(8)</small> |
 | <small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(10) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
@@ -121,7 +121,7 @@
 | <small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy") <small>(28)</small> |
 | <small>6.5.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small> |
 | <small>6.5.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(8)</small> |
-| <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(78)</small> |
+| <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(79)</small> |
 | <small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(16)</small> |
 | <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(41)</small> |
 | <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |

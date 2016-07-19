@@ -13,7 +13,7 @@ This section covers how to manually utilize *dm-crypt* from the command line to 
 *   [4 Encrypting devices with cryptsetup](#Encrypting_devices_with_cryptsetup)
     *   [4.1 Encrypting devices with LUKS mode](#Encrypting_devices_with_LUKS_mode)
         *   [4.1.1 Formatting LUKS partitions](#Formatting_LUKS_partitions)
-            *   [4.1.1.1 Using LUKS to Format Partitions with a Keyfile](#Using_LUKS_to_Format_Partitions_with_a_Keyfile)
+            *   [4.1.1.1 Using LUKS to format partitions with a keyfile](#Using_LUKS_to_format_partitions_with_a_keyfile)
         *   [4.1.2 Unlocking/Mapping LUKS partitions with the device mapper](#Unlocking.2FMapping_LUKS_partitions_with_the_device_mapper)
     *   [4.2 Encrypting devices with plain mode](#Encrypting_devices_with_plain_mode)
 *   [5 Cryptsetup actions specific for LUKS](#Cryptsetup_actions_specific_for_LUKS)
@@ -118,14 +118,14 @@ The *cryptsetup* action to set up a new dm-crypt device in LUKS encryption mode 
 As LUKS is the default encryption mode,
 
 ```
-# cryptsetup -v luksFormat <device>
+# cryptsetup -v luksFormat *device*
 
 ```
 
 is all that is needed to create a new LUKS device with default parameters (`-v` is optional). For comparison, we can specify the default options manually too:
 
 ```
-# cryptsetup -v --cipher aes-xts-plain64 --key-size 256 --hash sha256 --iter-time 2000 --use-urandom --verify-passphrase luksFormat <device> 
+# cryptsetup -v --cipher aes-xts-plain64 --key-size 256 --hash sha256 --iter-time 2000 --use-urandom --verify-passphrase luksFormat *device*
 
 ```
 
@@ -188,31 +188,34 @@ This section shows how to employ the options for creating new encrypted blockdev
 
 In order to setup a partition as an encrypted LUKS partition execute:
 
- `# cryptsetup -c <cipher> -y -s <key size> luksFormat /dev/<partition name>` 
 ```
-Enter passphrase: <password>
-Verify passphrase: <password>
-```
-
-first to setup the encrypted master-key. Checking results can be done with:
-
-```
-# cryptsetup luksDump /dev/<drive>
+# cryptsetup luksFormat *device*
 
 ```
 
-This should be repeated for all partitions to be encrypted (except for `/boot`). You will note that the dump not only shows the cipher header information, but also the key-slots in use for the LUKS partition.
+You will then be prompted to enter a password and verify it.
 
-The following example will create an encrypted root partition using the default AES cipher in XTS mode with an effective 256-bit encryption
+See [#Encryption options for LUKS mode](#Encryption_options_for_LUKS_mode) for command line options.
 
- `# cryptsetup -s 512 luksFormat /dev/sdaX` 
+You can check the results with:
 
-##### Using LUKS to Format Partitions with a Keyfile
+```
+# cryptsetup luksDump *device*
+
+```
+
+You will note that the dump not only shows the cipher header information, but also the key-slots in use for the LUKS partition.
+
+The following example will create an encrypted root partition on `/dev/sda1` using the default AES cipher in XTS mode with an effective 256-bit encryption
+
+ `# cryptsetup -s 512 luksFormat /dev/sda1` 
+
+##### Using LUKS to format partitions with a keyfile
 
 When creating a new LUKS encrypted partition, a keyfile may be associated with the partition on its creation using:
 
 ```
-# cryptsetup -c <desired cipher> -s <key size> luksFormat /dev/<volume to encrypt> **/path/to/mykeyfile**
+# cryptsetup luksFormat *device* */path/to/mykeyfile*
 
 ```
 
@@ -222,54 +225,41 @@ See [#Keyfiles](#Keyfiles) for instructions on how to generate and manage keyfil
 
 #### Unlocking/Mapping LUKS partitions with the device mapper
 
-Once the LUKS partitions have been created it is time to unlock them.
+Once the LUKS partitions have been created, they can then be unlocked.
 
-The unlocking process will map the partitions to a new device name using the device mapper. This alerts the kernel that `/dev/<partition name>` is actually an encrypted device and should be addressed through LUKS using the `/dev/mapper/<name>` so as not to overwrite the encrypted data. To guard against accidental overwriting, read about the possibilities to [backup the cryptheader](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption") after finishing setup.
+The unlocking process will map the partitions to a new device name using the device mapper. This alerts the kernel that `*device*` is actually an encrypted device and should be addressed through LUKS using the `/dev/mapper/*dm_name*` so as not to overwrite the encrypted data. To guard against accidental overwriting, read about the possibilities to [backup the cryptheader](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption") after finishing setup.
 
 In order to open an encrypted LUKS partition execute:
 
- `# cryptsetup open --type luks /dev/<partition name> <device-mapper name>` 
 ```
-Enter any LUKS passphrase: <password>
-key slot 0 unlocked.
-Command successful.
-```
-
-Usually the device mapped name is descriptive of the function of the partition that is mapped, example:
-
-```
-# cryptsetup open --type luks /dev/sdaX root 
+# cryptsetup open --type luks *device* *dm_name*
 
 ```
 
-Once opened, the root partition device address would be `/dev/mapper/root` instead of the partition (e.g. `/dev/sdaX`).
+You will then be prompted for the password to unlock the partition. Usually the device mapped name is descriptive of the function of the partition that is mapped. For example the following unlocks a luks partition `/dev/sda1` and maps it to device mapper named `cryptroot`:
 
 ```
-# cryptsetup open --type luks /dev/sda3 lvmpool 
-
-```
-
-For setting up LVM ontop the encryption layer the device file for the decrypted volume group would be anything like `/dev/mapper/lvmpool` instead of `/dev/sdaX`. LVM will then give additional names to all logical volumes created, e.g. `/dev/mapper/lvmpool-root` and `/dev/mapper/lvmpool-swap`.
-
-In order to write encrypted data into the partition it must be accessed through the device mapped name. The first step of access will typically be to create a filesystem
-
-```
-# mkfs -t ext4 /dev/mapper/root
+# cryptsetup open --type luks /dev/sda1 cryptroot 
 
 ```
 
-and mount it
+Once opened, the root partition device address would be `/dev/mapper/cryptroot` instead of the partition (e.g. `/dev/sda1`).
+
+For setting up LVM ontop the encryption layer the device file for the decrypted volume group would be anything like `/dev/mapper/cryptroot` instead of `/dev/sda1`. LVM will then give additional names to all logical volumes created, e.g. `/dev/mapper/lvmpool-root` and `/dev/mapper/lvmpool-swap`.
+
+In order to write encrypted data into the partition it must be accessed through the device mapped name. The first step of access will typically be to [create a filesystem](/index.php/File_systems#Formatting "File systems"). For example:
 
 ```
-# mount -t ext4 /dev/mapper/root /mnt
+# mkfs -t ext4 /dev/mapper/cryptroot
 
 ```
 
-The mounted blockdevice can then be used like any other partition. Once done, closing the device locks it again
+The device `/dev/mapper/cryptroot` can then be [mounted](/index.php/Mount "Mount") like any other partition.
+
+To close the luks container, unmount the partition and do:
 
 ```
-# umount /mnt
-# cryptsetup close root
+# cryptsetup close cryptroot
 
 ```
 

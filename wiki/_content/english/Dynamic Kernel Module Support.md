@@ -68,7 +68,7 @@ Tab-completion is available by doing:
 To list the current status of modules, versions and kernels within the tree:
 
 ```
-$ dkms status
+# dkms status
 
 ```
 

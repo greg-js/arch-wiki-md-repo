@@ -361,7 +361,7 @@ audio_output {
 
 ```
 
-Consulte también: [Music Player Daemon#Global Configuration](/index.php/Music_Player_Daemon#Global_Configuration "Music Player Daemon").
+Consulte también: [Music Player Daemon#Global configuration](/index.php/Music_Player_Daemon#Global_configuration "Music Player Daemon").
 
 ### Mplayer
 
@@ -463,11 +463,11 @@ Algunos ejemplos de frecuencias de muestreo:
 
 	44100hz
 
-	Frecuencia de muestreo estándar de [Red Book](http://en.wikipedia.org/wiki/Red_Book_%28audio_CD_standard%29) para el CD de audio.
+	Frecuencia de muestreo estándar de [Red Book](https://en.wikipedia.org/wiki/Red_Book_(audio_CD_standard) para el CD de audio.
 
 	88000hz
 
-	Frecuencia de muestreo de [SACD](http://en.wikipedia.org/wiki/Super_Audio_CD) de alta definición. Es raro que su placa base soporte este tipo de frecuencia.
+	Frecuencia de muestreo de [SACD](https://en.wikipedia.org/wiki/Super_Audio_CD "wikipedia:Super Audio CD") de alta definición. Es raro que su placa base soporte este tipo de frecuencia.
 
 	96000hz
 
@@ -826,7 +826,7 @@ Luego, cuando se utilizan dispositivos HD Audio, a menudo se encuentran controle
 
 #### Cómo resolverlo
 
-Abra `ossxmix` y trate de cambiar todos los controles del mezclador en el **área central** (*«middle area»*), que contiene los controles específicos de las tarjetas de sonido, tal como se explica en la sección anterior [Control de volumen](/index.php/Open_Sound_System_(Espa%C3%B1ol)#Control_del_Volumen_con_el_Mezclador "Open Sound System (Español)").
+Abra `ossxmix` y trate de cambiar todos los controles del mezclador en el **área central** (*«middle area»*), que contiene los controles específicos de las tarjetas de sonido, tal como se explica en la sección anterior [Control de volumen](#Control_del_Volumen_con_el_Mezclador).
 
 Probablemente esté interesado en configurar un programa para grabar/reproducir continuamente en segundo plano (por ejemplo, `ossrecord - | ossplay -` para grabar, o `osstest -lV` para reproducir), mientras se está cambiando la configuración del mezclador con `ossxmix` en primer plano.
 

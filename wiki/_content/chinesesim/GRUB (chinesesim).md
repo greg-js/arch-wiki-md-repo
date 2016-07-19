@@ -31,7 +31,16 @@
     *   [5.1 额外的参数](#.E9.A2.9D.E5.A4.96.E7.9A.84.E5.8F.82.E6.95.B0)
     *   [5.2 多系统启动](#.E5.A4.9A.E7.B3.BB.E7.BB.9F.E5.90.AF.E5.8A.A8)
         *   [5.2.1 使用 /etc/grub.d/40_custom 和 grub-mkconfig 自动生成](#.E4.BD.BF.E7.94.A8_.2Fetc.2Fgrub.d.2F40_custom_.E5.92.8C_grub-mkconfig_.E8.87.AA.E5.8A.A8.E7.94.9F.E6.88.90)
-        *   [5.2.2 在BIOS-MBR模式下安装的Microsoft Windows](#.E5.9C.A8BIOS-MBR.E6.A8.A1.E5.BC.8F.E4.B8.8B.E5.AE.89.E8.A3.85.E7.9A.84Microsoft_Windows)
+            *   [5.2.1.1 GNU/Linux 启动项](#GNU.2FLinux_.E5.90.AF.E5.8A.A8.E9.A1.B9)
+            *   [5.2.1.2 FreeBSD 启动项](#FreeBSD_.E5.90.AF.E5.8A.A8.E9.A1.B9)
+                *   [5.2.1.2.1 直接加载内核](#.E7.9B.B4.E6.8E.A5.E5.8A.A0.E8.BD.BD.E5.86.85.E6.A0.B8)
+                *   [5.2.1.2.2 Chainloading 嵌入的启动项](#Chainloading_.E5.B5.8C.E5.85.A5.E7.9A.84.E5.90.AF.E5.8A.A8.E9.A1.B9)
+                *   [5.2.1.2.3 运行传统的 BSD 第二阶段 loader](#.E8.BF.90.E8.A1.8C.E4.BC.A0.E7.BB.9F.E7.9A.84_BSD_.E7.AC.AC.E4.BA.8C.E9.98.B6.E6.AE.B5_loader)
+            *   [5.2.1.3 UEFI-GPT 模式下安装的Windows的启动项](#UEFI-GPT_.E6.A8.A1.E5.BC.8F.E4.B8.8B.E5.AE.89.E8.A3.85.E7.9A.84Windows.E7.9A.84.E5.90.AF.E5.8A.A8.E9.A1.B9)
+            *   [5.2.1.4 "Shutdown" 启动项](#.22Shutdown.22_.E5.90.AF.E5.8A.A8.E9.A1.B9)
+            *   [5.2.1.5 "Restart" 启动项](#.22Restart.22_.E5.90.AF.E5.8A.A8.E9.A1.B9)
+            *   [5.2.1.6 在BIOS-MBR模式下安装的Microsoft Windows](#.E5.9C.A8BIOS-MBR.E6.A8.A1.E5.BC.8F.E4.B8.8B.E5.AE.89.E8.A3.85.E7.9A.84Microsoft_Windows)
+        *   [5.2.2 通过EasyBCD NeoGRUB 和Windows共存](#.E9.80.9A.E8.BF.87EasyBCD_NeoGRUB_.E5.92.8CWindows.E5.85.B1.E5.AD.98)
     *   [5.3 手动创建 grub.cfg](#.E6.89.8B.E5.8A.A8.E5.88.9B.E5.BB.BA_grub.cfg)
     *   [5.4 可视化配置](#.E5.8F.AF.E8.A7.86.E5.8C.96.E9.85.8D.E7.BD.AE)
         *   [5.4.1 设定帧缓冲的分辨率](#.E8.AE.BE.E5.AE.9A.E5.B8.A7.E7.BC.93.E5.86.B2.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87)
@@ -483,7 +492,120 @@ menuentry "System restart" {
 }
 ```
 
-#### 在BIOS-MBR模式下安装的Microsoft Windows
+##### GNU/Linux 启动项
+
+假设另一个发行版位于`sda2`:
+
+```
+menuentry "Other Linux" {
+	set root=(hd0,2)
+	linux /boot/vmlinuz (add other options here as required)
+	initrd /boot/initrd.img (if the other kernel uses/needs one)
+}
+```
+
+或者让 grub 根据 *UUID* 或 *label* 查找启动项:
+
+```
+menuentry "Other Linux" {
+        # assuming that UUID is 763A-9CB6
+	search --set=root --fs-uuid 763A-9CB6
+
+        # search by label OTHER_LINUX (make sure that partition label is unambiguous)
+        #search --set=root --label OTHER_LINUX
+
+	linux /boot/vmlinuz (add other options here as required, for example: root=UUID=763A-9CB6)
+	initrd /boot/initrd.img (if the other kernel uses/needs one)
+}
+```
+
+##### FreeBSD 启动项
+
+要求 FreeBSD 安装在单独的 UFS(v2) 分区上,假设在分区表里面 FreeBSD 分区是 `sda4`:
+
+###### 直接加载内核
+
+```
+menuentry 'FreeBSD' {
+	insmod ufs2
+	set root='hd0,gpt4,bsd1'
+	## or 'hd0,msdos4,bsd1', if using an IBM-PC (MS-DOS) style partition table
+	kfreebsd /boot/kernel/kernel
+	kfreebsd_loadenv /boot/device.hints
+	set kFreeBSD.vfs.root.mountfrom=ufs:/dev/ada0s4a
+	set kFreeBSD.vfs.root.mountfrom.options=rw
+}
+```
+
+###### Chainloading 嵌入的启动项
+
+```
+menuentry 'FreeBSD' {
+	insmod ufs2
+	set root='hd0,gpt4,bsd1'
+	chainloader +1
+}
+```
+
+###### 运行传统的 BSD 第二阶段 loader
+
+```
+menuentry 'FreeBSD' {
+  insmod ufs2
+  set root='(hd0,4)'
+  kfreebsd /boot/loader
+}
+```
+
+##### UEFI-GPT 模式下安装的Windows的启动项
+
+**Note:** 这个启动项仅在 UEFI 模式下才起作用，而且 Windows 和 UEFI 的位数必须相同。如果 Grub 是 BIOS 模式，这个方法**无效**。想去参考 [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") 和 [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows").
+
+```
+if [ "${grub_platform}" == "efi" ]; then
+	menuentry "Microsoft Windows Vista/7/8/8.1 UEFI-GPT" {
+		insmod part_gpt
+		insmod fat
+		insmod search_fs_uuid
+		insmod chain
+		search --fs-uuid --set=root $hints_string $fs_uuid
+		chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+	}
+fi
+```
+
+`$hints_string` 和 `$uuid`可以通过以下命令获取。`$uuid`:
+
+```
+# grub-probe --target=fs_uuid $esp/EFI/Microsoft/Boot/bootmgfw.efi
+1ce5-7f28
+```
+
+`$hints_string`:
+
+ `# grub-probe --target=hints_string $esp/EFI/Microsoft/Boot/bootmgfw.efi`  `--hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1` 
+
+这两个命令都是假设ESP挂载在`$esp`上.当然,Windows的EFI文件路径可能有变,因为这就是Windows....
+
+##### "Shutdown" 启动项
+
+```
+menuentry "System shutdown" {
+	echo "System shutting down..."
+	halt
+}
+```
+
+##### "Restart" 启动项
+
+```
+menuentry "System restart" {
+	echo "System rebooting..."
+	reboot
+}
+```
+
+##### 在BIOS-MBR模式下安装的Microsoft Windows
 
 **Note:** GRUB支持直接从`bootmgr`启动,现在不再需要链式加载分区启动扇区了
 
@@ -551,6 +673,25 @@ x:\> "bootrec.exe /RebuildBcd".
 `/etc/grub.d/40_custom`可以做为创建`/etc/grub.d/nn_custom`的模板.`nn`定义了脚本执行的优先级.脚本执行的顺序又决定了grub引导启动目录的内容.
 
 **Note:** `nn` 应该比06大,这样才能确保必要的脚本被优先执行
+
+#### 通过EasyBCD NeoGRUB 和Windows共存
+
+现在EasyBCD的NeoGRUB还不能识别GRUB的目录格式,在 `C:\NST\menu.lst` 中添加如下行以链式加载到GRUB:
+
+```
+default 0
+timeout 1
+
+```
+
+```
+title       Chainload into GRUB v2
+root        (hd0,7)
+kernel      /boot/grub/i386-pc/core.img
+
+```
+
+最后,使用`grub-mkconfig`重建`grub.cfg`
 
 ### 手动创建 grub.cfg
 

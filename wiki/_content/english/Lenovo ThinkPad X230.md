@@ -74,7 +74,7 @@ Setting e.g. the motion-acceleration value in dconf to 2.8 works nicely.
 
 Due to an issue with the firmware of several ThinkPads the backlight control keys (fn + F8/F9 on the X230) don't work correctly. Setting the brightness via e.g. the GNOME power control panel or altering the brightness value in sysfs is possible.
 
-The issue can be temporarily and partially [http://www.example.com](http://www.example.com) link titlefixed in adding the acpi_osi="!Windows 2012" [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). The fix is partial in that only 8 steps are accessible via the keys. See [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=51231) for details.
+The issue can be temporarily and partially fixed in adding the acpi_osi="!Windows 2012" [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). The fix is partial in that only 8 steps are accessible via the keys. See [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=51231) for details.
 
 ### Suspend to ram
 

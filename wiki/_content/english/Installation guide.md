@@ -31,13 +31,13 @@ For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWik
 
 Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) compatible machine with a minimum of 256 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space.
 
-Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt. To [edit](/index.php/Edit "Edit") configuration files, [nano](/index.php/Nano#Usage "Nano"), *vi* and [vim](/index.php/Vim#Usage "Vim") are available.
+Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as *systemctl* can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion"). To [edit](/index.php/Edit "Edit") configuration files, [nano](/index.php/Nano#Usage "Nano"), *vi* and [vim](/index.php/Vim#Usage "Vim") are available.
 
 The installation process needs to retrieve packages from a remote repository, therefore a working internet connection is required.
 
 ### Verify the boot mode
 
-As instructions differ for [UEFI](/index.php/UEFI "UEFI") systems, verify if the system is booted in UEFI mode by checking [efivars](/index.php/Efivars "Efivars"):
+As instructions differ for [UEFI](/index.php/UEFI "UEFI") systems, verify the boot mode by checking [efivars](/index.php/Efivars "Efivars"):
 
 ```
 # ls /sys/firmware/efi/efivars
@@ -61,7 +61,12 @@ The layout can be changed with *loadkeys*, appending a file name (path and file 
 
 Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as *ping*.
 
-For other [network configuration](/index.php/Network_configuration "Network configuration"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [netctl](/index.php/Netctl "Netctl") are included; for examples, see `systemd.network(5)` and `netctl.profile(7)`, respectively. Before using a different networking service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service`.
+For other [network configuration](/index.php/Network_configuration "Network configuration"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [netctl](/index.php/Netctl "Netctl") are included; for examples, see `systemd.network(5)` and `netctl.profile(7)`, respectively. When using a different networking service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service` first:
+
+```
+# systemctl stop dhcpcd@*interface*.service
+
+```
 
 ### Update the system clock
 
@@ -76,7 +81,7 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-Identify the device names with `lsblk` (results ending in `rom`, `loop` or `airoot` can be ignored), and print existing [partition tables](/index.php/Partition_table "Partition table") with `fdisk -l */dev/sda* print`. To modify tables, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or [gdisk](/index.php/Gdisk "Gdisk") for GPT only.
+Identify the disk names with `lsblk` (results ending in `rom`, `loop` or `airoot` can be ignored), and print existing [partition tables](/index.php/Partition_table "Partition table") with `fdisk -l */dev/sda* print`. To modify tables, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or [gdisk](/index.php/Gdisk "Gdisk") for GPT only.
 
 At the minimum, a partition must be available for the `/` directory; [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 
@@ -105,7 +110,7 @@ Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/
 
 ```
 
-Other packages or groups can be installed by appending their names to the above command (space separated), possibly including the boot loader.
+To [install](/index.php/Install "Install") other packages to the new system, append their names to *pacstrap* (space separated), or to individual *pacman* commands after [changing root](#Chroot). For example, the [base-devel](https://www.archlinux.org/packages/?name=base-devel) group is required to use the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and [Arch Build System](/index.php/Arch_Build_System "Arch Build System").
 
 ## Configure the system
 

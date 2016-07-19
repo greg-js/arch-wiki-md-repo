@@ -35,7 +35,7 @@ Install a custom kernel with CONFIG_AUDIT enabled. Install [audit](https://www.a
 
 Audit framework is composed of the auditd daemon, responsible for writing the audit messages that were generated through the audit kernel interface and triggered by application and system activity.
 
-This daemon can be controled by several commands and files:
+This daemon can be controlled by several commands and files:
 
 *   auditctl : to control the behavior of the daemon on the fly, adding rules etc.
 *   /etc/audit/audit.rules : contains the rules and various parameters of the auditd daemon

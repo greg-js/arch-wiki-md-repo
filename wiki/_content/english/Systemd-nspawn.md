@@ -11,23 +11,23 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
 *   [1 Installation](#Installation)
 *   [2 Examples](#Examples)
     *   [2.1 Create and boot a minimal Arch Linux distribution in a container](#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container)
-        *   [2.1.1 Bootstrapping Arch Linux i686 inside x86_64 host](#Bootstrapping_Arch_Linux_i686_inside_x86_64_host)
+        *   [2.1.1 Bootstrap Arch Linux i686 inside x86_64 host](#Bootstrap_Arch_Linux_i686_inside_x86_64_host)
     *   [2.2 Create a Debian or Ubuntu environment](#Create_a_Debian_or_Ubuntu_environment)
     *   [2.3 Enable container on boot](#Enable_container_on_boot)
-    *   [2.4 Building and testing packages](#Building_and_testing_packages)
+    *   [2.4 Build and test packages](#Build_and_test_packages)
 *   [3 Management](#Management)
     *   [3.1 machinectl](#machinectl)
     *   [3.2 systemd toolchain](#systemd_toolchain)
-*   [4 Tips](#Tips)
-    *   [4.1 X environment](#X_environment)
-    *   [4.2 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Use an X environment](#Use_an_X_environment)
+    *   [4.2 Run Firefox](#Run_Firefox)
     *   [4.3 Access host filesystem](#Access_host_filesystem)
-    *   [4.4 Networking](#Networking)
+    *   [4.4 Configure networking](#Configure_networking)
         *   [4.4.1 nsswitch.conf](#nsswitch.conf)
-        *   [4.4.2 use host networking](#use_host_networking)
+        *   [4.4.2 Use host networking](#Use_host_networking)
         *   [4.4.3 Virtual Ethernet interfaces](#Virtual_Ethernet_interfaces)
-    *   [4.5 Running on a non-systemd system](#Running_on_a_non-systemd_system)
-    *   [4.6 Per-container settings](#Per-container_settings)
+    *   [4.5 Run on a non-systemd system](#Run_on_a_non-systemd_system)
+    *   [4.6 Specify per-container settings](#Specify_per-container_settings)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 root login fails](#root_login_fails)
     *   [5.2 Unable to upgrade some packages on the container](#Unable_to_upgrade_some_packages_on_the_container)
@@ -71,7 +71,7 @@ The container can be powered off by running `poweroff` from within the container
 
 **Note:** To terminate the *session* from within the container, hold `Ctrl` and rapidly press `]` three times. Non US keyboard will use `%` instead of `]`
 
-#### Bootstrapping Arch Linux i686 inside x86_64 host
+#### Bootstrap Arch Linux i686 inside x86_64 host
 
 It is possible to install a minimal i686 Arch Linux inside a subdirectory and use it as systemd-nspawn container instead of [chroot](/index.php/Chroot "Chroot") or [virtualization](/index.php/Virtualization "Virtualization"). This is useful for testing `PKGBUILD` compilation for i686 and other tasks. Make sure you use a `pacman.conf` **without** `multilib` repository.
 
@@ -127,7 +127,7 @@ First [enable](/index.php/Enable "Enable") the `machines.target` target, then `s
 *   Symbolic links to containers in `/var/lib/machines` do not work as of [systemd](https://www.archlinux.org/packages/?name=systemd) v229, see [[1]](https://github.com/systemd/systemd/issues/2001).
 *   To customize the startup of a container, [edit](/index.php/Edit "Edit") the `systemd-nspawn@*myContainer*` unit instance. See `systemd-nspawn(1)` for all options.
 
-### Building and testing packages
+### Build and test packages
 
 See [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions") for example uses.
 
@@ -212,9 +212,9 @@ $ systemd-cgtop
 
 ```
 
-## Tips
+## Tips and tricks
 
-### X environment
+### Use an X environment
 
 See [Xhost](/index.php/Xhost "Xhost") and [Change root#Run graphical applications from chroot](/index.php/Change_root#Run_graphical_applications_from_chroot "Change root").
 
@@ -222,15 +222,22 @@ You will need to set the `DISPLAY` environment variable inside your container se
 
 X stores some required files in the `/tmp` directory. In order for your container to display anything, it needs access to those files. To do so, append the `--bind=/tmp/.X11-unix:/tmp/.X11-unix` option when starting the container.
 
-### Run Firefox inside an nspawn container
+### Run Firefox
 
 See [Firefox tweaks](/index.php/Firefox_tweaks#Run_Firefox_inside_an_nspawn_container "Firefox tweaks").
 
 ### Access host filesystem
 
-See `--bind`, `--bind-ro` in `man systemd-nspawn`.
+See `--bind` and `--bind-ro` in `man systemd-nspawn`.
 
-### Networking
+If both the host and the container are Arch Linux, then one could, for example, share the pacman cache:
+
+```
+# systemd-nspawn --bind=/var/cache/pacman/pkg
+
+```
+
+### Configure networking
 
 Note the canonical [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") host and container .network files are from [https://github.com/systemd/systemd/tree/master/network](https://github.com/systemd/systemd/tree/master/network)
 
@@ -249,7 +256,7 @@ hosts: files mymachines dns myhostname
 
 Then, any DNS lookup for hostname `foo` on the host will first consult `/etc/hosts`, then the names of local containers, then upstream DNS etc.
 
-#### use host networking
+#### Use host networking
 
 To disable private networking used by containers started with `machinectl start MyContainer`, [edit](/index.php/Edit "Edit") the configuration of `systemd-nspawn@.service` with `systemctl edit systemd-nspawn@.service` and set the `ExecStart=` option without the `--network-veth` parameter unlike the original service:
 
@@ -273,11 +280,11 @@ When examining the interfaces with `ip link`, interface names will be shown with
 
 For example, a host virtual Ethernet interface shown as `ve-foo@if2` will connect to container `foo`, and inside the container to the second network interface -- the one shown with index 2 when running `ip link` inside the container. Similarly, in the container, the interface named `host0@if9` will connect to the 9th slot on the host.
 
-### Running on a non-systemd system
+### Run on a non-systemd system
 
 See [Init#systemd-nspawn](/index.php/Init#systemd-nspawn "Init").
 
-### Per-container settings
+### Specify per-container settings
 
 To specify per-container settings and not overrides for all (e.g. bind a directory to only one container)[[3]](https://github.com/systemd/systemd/issues/3442#issuecomment-223837408), the ".nspawn" file definition can be used [[4]](https://www.freedesktop.org/software/systemd/man/systemd.nspawn.html#)
 

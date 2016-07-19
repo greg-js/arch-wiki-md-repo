@@ -7,34 +7,28 @@ XDM предоставляет простой и прямолинейный гр
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Фоны для XDM](#.D0.A4.D0.BE.D0.BD.D1.8B_.D0.B4.D0.BB.D1.8F_XDM)
-*   [3 Проблемы и решения](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D0.B8_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F)
-    *   [3.1 XDM отображается повторно после входа в систему](#XDM_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D0.B2.D1.82.D0.BE.D1.80.D0.BD.D0.BE_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
+*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+*   [3 Фоны для XDM](#.D0.A4.D0.BE.D0.BD.D1.8B_.D0.B4.D0.BB.D1.8F_XDM)
+*   [4 Проблемы и решения](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D0.B8_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [4.1 XDM отображается повторно после входа в систему](#XDM_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D0.B2.D1.82.D0.BE.D1.80.D0.BD.D0.BE_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
 
 ## Установка
 
-Установите пакет [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+Установите пакет [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"), после чего активируйте соответствующий сервис:
 
-Далее возможны два варианта:
+ `systemctl enable xdm.service` 
 
-Можно использовать скрипт **~/.xsession** Для этого нужно разрешить выполнение файла `~/.xsession`.
-
-```
-$ cp /etc/skel/.xsession /etc/skel/.xinitrc ~ # use default launch script
-
-```
-
-Или обойтись одной строкой (предположим, вы используете оконный менеджер 'openbox')
-
-```
-$ echo exec openbox > ~/.xsession
-$ chmod 744 ~/.xsession
-
-```
-
-Если вы также хотите установить тему “Arch Linux” для XDM, вам поможет пакет [xdm-archlinux](https://www.archlinux.org/packages/?name=xdm-archlinux) (также доступен в официальном репозитории).
+[xdm-archlinux](https://www.archlinux.org/packages/?name=xdm-archlinux) (также доступен в официальном репозитории) содержит тему "Arch Linux" для XDG. При установке данного пакета **активируйте не** `xdm.service`, а `xdm-archlinux.service`.
 
 Дополнительная информация доступна здесь: [Display Manager](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)").
+
+## Настройка
+
+В отличие от многих других современных [менеджеров дисплеев](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)"), таких как [GDM](/index.php/GDM "GDM") и [LightDM](/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LightDM (Русский)"), XDM не подключает доступные сессии, расположенные в виде desktop-файлов в директории `/usr/share/xsessions`. XDG не имеет меню выбора сессий как такового. Вместо этого XDG исполняет файл `.xinitrc` в домашней директории пользователя (см. [Xinitrc#Configuration](/index.php/Xinitrc#Configuration "Xinitrc")). Так, для запуска оконного менеджера [i3](/index.php/I3_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "I3 (Русский)") `.xinitrc` должен содержать команду `i3`.
+
+Убедитесь, что файл `.xinitrc` в вашей домашней директории является исполняемым. Чтобы сделать его исполняемым, выполните:
+
+ ` $ chmod 744 ~/.xinitrc` 
 
 ## Фоны для XDM
 

@@ -6,7 +6,7 @@
 *   [4 Function keys do not work](#Function_keys_do_not_work)
     *   [4.1 If the above doesn't work for your wireless keyboard](#If_the_above_doesn.27t_work_for_your_wireless_keyboard)
 *   [5 < and > have changed place with § and ½](#.3C_and_.3E_have_changed_place_with_.C2.A7_and_.C2.BD)
-*   [6 < and > have changed place with ^ and °](#.3C_and_.3E_have_changed_place_with_.5E_and_.C2.B0)
+*   [6 < and > have changed place with ^ and ° (or @ and #)](#.3C_and_.3E_have_changed_place_with_.5E_and_.C2.B0_.28or_.40_and_.23.29)
 *   [7 The ` and ~ keys output < and >](#The_.60_and_.7E_keys_output_.3C_and_.3E)
 *   [8 Media Keys](#Media_Keys)
 *   [9 PrintScreen and SysRq](#PrintScreen_and_SysRq)
@@ -132,9 +132,9 @@ keycode  49 = ugrave Ugrave ugrave Ugrave notsign notsign
 
 Then run `xmodmap ~/.Xmodmap`. This command can also go into `~/.bashrc`.
 
-## < and > have changed place with ^ and °
+## < and > have changed place with ^ and ° (or @ and #)
 
-With German layout, circumflex/degree symbol and 'smaller than'/'bigger than' are exchanged.
+With German layout, circumflex/degree symbol and 'smaller than'/'bigger than' are exchanged. With French layout, @/# are exchanged.
 
 **The new way:**
 

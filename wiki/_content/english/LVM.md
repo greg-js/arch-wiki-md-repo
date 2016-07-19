@@ -15,8 +15,7 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
     *   [4.5 Create logical volumes](#Create_logical_volumes)
     *   [4.6 Create file systems and mount logical volumes](#Create_file_systems_and_mount_logical_volumes)
     *   [4.7 Add lvm2 hook to mkinitcpio.conf for root on LVM](#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM)
-    *   [4.8 Special preparations for root on thinly-provisioned volume](#Special_preparations_for_root_on_thinly-provisioned_volume)
-    *   [4.9 Kernel options](#Kernel_options)
+    *   [4.8 Kernel options](#Kernel_options)
 *   [5 Volume operations](#Volume_operations)
     *   [5.1 Advanced options](#Advanced_options)
     *   [5.2 Resizing volumes](#Resizing_volumes)
@@ -48,6 +47,7 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
     *   [7.4 LVM on removable media](#LVM_on_removable_media)
     *   [7.5 Resizing a contiguous logical volume fails](#Resizing_a_contiguous_logical_volume_fails)
     *   [7.6 Command "grub-mkconfig" reports "unknown filesystem" errors](#Command_.22grub-mkconfig.22_reports_.22unknown_filesystem.22_errors)
+    *   [7.7 Thinly-provisioned root volume device times out](#Thinly-provisioned_root_volume_device_times_out)
 *   [8 See also](#See_also)
 
 ### LVM Building Blocks
@@ -308,18 +308,6 @@ Afterwards, you can continue in normal installation instructions with the [creat
 **Tip:** The `lvm2` hook is installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running *mkinitcpio* in an *arch-chroot* for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the *arch-chroot* for *mkinitcpio* to find the `lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the *arch-chroot*, *mkinitcpio* will output `Error: Hook 'lvm2' cannot be found`.
 
 **Warning:** When using the `systemd` mkinitcpio hook you should use the `sd-lvm2` hook instead of the `lvm2` hook. Otherwise your system might not boot. See [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio")
-
-### Special preparations for root on thinly-provisioned volume
-
-If your root device is on a thinly-provisioned LVM volume (as may be needed by [snapper](/index.php/Snapper "Snapper") if you don't trust [btrfs](/index.php/Btrfs "Btrfs")), then some more preparations are needed.
-
-First, `mkinitcpio` by default does not include binaries needed for thin provisioning ([FS#32884](https://bugs.archlinux.org/task/32884)). Adjust the configuration file to compensate:
-
- `/etc/mkinitcpio.conf`  `BINARIES="**/usr/bin/thin_check /usr/bin/pdata_tools** ..."` 
-
-LVM only calls `thin_check` while booting, but if the check fails, you will need other commands provided by `pdata_tools` for recovery.
-
-Second, with a large number of snapshots, `thin_check` runs for a long enough time so that waiting for the root device times out. To compensate, add the `rootdelay=60` kernel boot parameter to your boot loader configuration.
 
 ### Kernel options
 
@@ -816,6 +804,10 @@ To fix this, prior to extending the logical volume, change its allocation policy
 ### Command "grub-mkconfig" reports "unknown filesystem" errors
 
 Make sure to remove snapshot volumes before generating grub.cfg.
+
+### Thinly-provisioned root volume device times out
+
+With a large number of snapshots, `thin_check` runs for a long enough time so that waiting for the root device times out. To compensate, add the `rootdelay=60` kernel boot parameter to your boot loader configuration.
 
 ## See also
 

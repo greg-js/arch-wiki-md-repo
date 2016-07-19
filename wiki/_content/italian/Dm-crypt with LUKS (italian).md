@@ -140,7 +140,7 @@ Ovviamente sarà necessario ripetere il precedente processo per ogni contenitore
 #### Cancellare i keyslot LUKS
 
 ```
-#cryptsetup luksKillSlot <device> <numero key slot>
+#cryptsetup luksKillSlot *device* *numero_key_slot*
 
 ```
 
@@ -312,8 +312,8 @@ Example:
 Common options used with luksFormat:
 
 | Available options | Cryptsetup defaults | Comment | Example | Comment |
-| --cipher, -c | `aes-cbc-essiv:sha256` | Use the AES-[cipher](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") with [CBC/ESSIV](http://en.wikipedia.org/wiki/Disk_encryption_theory#Cipher-block_chaining_.28CBC.29). | `aes-xts-plain64` | [XTS](http://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29). For volumes >2TiB use `aes-xts-plain64` (requires kernel >= 2.6.33). |
-| --key-size, -s | `256` | The cipher is used with 256 bit key-size. | `512` | [XTS splits the supplied key](http://en.wikipedia.org/wiki/XEX-TCB-CTS#Issues_with_XTS) into fraternal twins. For an effective AES-256 the XTS key-size must be `512`. |
+| --cipher, -c | `aes-cbc-essiv:sha256` | Use the AES-[cipher](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") with [CBC/ESSIV](https://en.wikipedia.org/wiki/Disk_encryption_theory#Cipher-block_chaining_.28CBC.29 "wikipedia:Disk encryption theory"). | `aes-xts-plain64` | [XTS](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory"). For volumes >2TiB use `aes-xts-plain64` (requires kernel >= 2.6.33). |
+| --key-size, -s | `256` | The cipher is used with 256 bit key-size. | `512` | [XTS splits the supplied key](https://en.wikipedia.org/wiki/XEX-TCB-CTS#Issues_with_XTS "wikipedia:XEX-TCB-CTS") into fraternal twins. For an effective AES-256 the XTS key-size must be `512`. |
 | --hash, -h | `sha1` | Hash algorithm used for [PBKDF2](/index.php/Disk_encryption#Keys.2C_keyfiles_and_passphrases "Disk encryption"). | `sha512` |
 | --iter-time, -i | `1000` | Number of milliseconds to spend with PBKDF2 passphrase processing. | `5000` | Using a hash stronger than sha1 results in less iterations if iter-time is not increased. |
 | --use-random | `--use-**u**random` | /dev/u[random](/index.php/Random "Random") is used as randomness source for the (long-term) volume master key. | `--use-random` | Avoid generating an insecure master key if low on entropy. Will block if the entropy pool is used up. |
@@ -329,16 +329,17 @@ First of all make sure the device mapper kernel module is loaded by executing th
 
 In order to format a desired partition as an encrypted LUKS partition execute:
 
- `# cryptsetup -c <cipher> -y -s <key size> luksFormat /dev/<partition name>` 
+ `# cryptsetup -c *cipher* -y -s *key_size* luksFormat /dev/*partition_name*` 
 ```
-Enter passphrase: <password>
-Verify passphrase: <password>
+Enter passphrase: *password*
+Verify passphrase: *password*
+
 ```
 
 Check results:
 
 ```
-# cryptsetup luksDump /dev/<drive>
+# cryptsetup luksDump /dev/*drive*
 
 ```
 
@@ -355,13 +356,13 @@ The example below will create an encrypted root partition using the AES cipher i
 
 Once the LUKS partitions have been created it is time to unlock them.
 
-The unlocking process will map the partitions to a new device name using the device mapper. This alerts the kernel that `/dev/<partition name>` is actually an encrypted device and should be addressed through LUKS using the `/dev/mapper/<name>` so as not to overwrite the encrypted data. To guard against accidental overwriting, read about the possibilities to [backup the cryptheader](/index.php/LUKS#Backup_the_cryptheader "LUKS") after finishing setup.
+The unlocking process will map the partitions to a new device name using the device mapper. This alerts the kernel that `/dev/*partition*` is actually an encrypted device and should be addressed through LUKS using the `/dev/mapper/*name*` so as not to overwrite the encrypted data. To guard against accidental overwriting, read about the possibilities to [backup the cryptheader](/index.php/LUKS#Backup_the_cryptheader "LUKS") after finishing setup.
 
 In order to open an encrypted LUKS partition execute:
 
- `# cryptsetup luksOpen /dev/<partition name> <device-mapper name>` 
+ `# cryptsetup luksOpen /dev/*partition_name* *device-mapper_name*` 
 ```
-Enter any LUKS passphrase: <password>
+Enter any LUKS passphrase: *password*
 key slot 0 unlocked.
 Command successful.
 ```
@@ -386,7 +387,7 @@ In order to write encrypted data into the partition it must be accessed through 
 
 #### Using LUKS to Format Partitions with a Keyfile
 
-**Note:** This section describes using a plaintext keyfile, if you want to encrypt your keyfile giving you two factor authentication see [Section 9](https://wiki.archlinux.org/index.php/System_Encryption_with_LUKS#Using_GPG_or_OpenSSL_Encrypted_Keyfiles) for details, but please still read this section.
+**Note:** This section describes using a plaintext keyfile, if you want to encrypt your keyfile giving you two factor authentication see [Section 9](/index.php/System_Encryption_with_LUKS#Using_GPG_or_OpenSSL_Encrypted_Keyfiles "System Encryption with LUKS") for details, but please still read this section.
 
 **What is a Keyfile?**
 
@@ -450,23 +451,23 @@ Adding new keyslots is accomplished using cryptsetup with the `luksAddKey` actio
 
 Don't forget wiping unused keyslots with `luksKillSlot` as described in [#Wipe LUKS keyslots](#Wipe_LUKS_keyslots).)
 
- `# cryptsetup luksAddKey /dev/mapper/<device> (/path/to/<additionalkeyfile>)` 
+ `# cryptsetup luksAddKey /dev/mapper/*device* (/path/to/additionalkeyfile)` 
 ```
 Enter any passphrase:
 Enter new passphrase for key slot:
 Verify passphrase:
 ```
 
-Where <device> is the volume containing the LUKS header to wich the new keyslot is added. This works on header backup files as well.
+Where `*device*` is the volume containing the LUKS header to wich the new keyslot is added. This works on header backup files as well.
 
-If `/path/to/<additionalkeyfile>` is given, cryptsetup will add a new keyslot for <additionalkeyfile>. Otherwise a new passphrase will be prompted for twice.
+If `/path/to/additionalkeyfile` is given, cryptsetup will add a new keyslot for additionalkeyfile. Otherwise a new passphrase will be prompted for twice.
 
 For adding keyslots cryptsetup has to decrypt the master key from an existing keyslot so it first asks for "any passphrase" (of an existing keyslot).
 
-For getting the master key from an existing keyfile keyslot the `--key-file` or `-d` option followed by the "old" <keyfile> will try to unlock all available keyfile keyslots.
+For getting the master key from an existing keyfile keyslot the `--key-file` or `-d` option followed by the "old" keyfile will try to unlock all available keyfile keyslots.
 
 ```
-# cryptsetup luksAddKey /dev/mapper/<device> (/path/to/<additionalkeyfile>) -d /path/to/<keyfile>
+# cryptsetup luksAddKey /dev/mapper/*device* (/path/to/additionalkeyfile) -d /path/to/keyfile
 
 ```
 
@@ -714,33 +715,33 @@ That is all, reboot and have fun! And look if your partitions still work after t
 
 In systems where suspend to disk is not a desired feature, it is possible to create a swap file that will have a random master key with each boot. This is accomplished by using dm-crypt directly without LUKS extensions.
 
-The `/etc/crypttab` is well commented and you can basically just uncomment the swap line and change <device> to a persistent symlink.
+The `/etc/crypttab` is well commented and you can basically just uncomment the swap line and change device to a persistent symlink.
 
  `/etc/crypttab` 
 ```
-# <name>       <device>         <password>              <options>
+# name       device         password              options
 # swap         /dev/hdx4        /dev/urandom            swap,cipher=aes-cbc-essiv:sha256,size=256
 ```
 
 Where:
 
-	<name>
+	name
 
-	Represents the name (`/dev/mapper/<name>`) to list in /etc/fstab.
+	Represents the name (`/dev/mapper/*name*`) to list in /etc/fstab.
 
-	<device>
+	device
 
 	Should be the symlink to the actual partition's device file.
 
-	<password>
+	password
 
 	`/dev/urandom` sets the dm-crypt master key to be randomized on every volume recreation.
 
-	<options>
+	options
 
 	The `swap` option runs mkswap after cryptographic's are setup.
 
-**Warning:** You should use persistent block device naming (in example ID's) for <device> because if there are multiple hard drives installed in the system, their naming order (sda, sdb,...) can occasionally be scrambled upon boot and thus the swap would be created over a valuable file system, destroying its content.
+**Warning:** You should use persistent block device naming (in example ID's) for device because if there are multiple hard drives installed in the system, their naming order (sda, sdb,...) can occasionally be scrambled upon boot and thus the swap would be created over a valuable file system, destroying its content.
 
 Persistent block device naming is implemented with simple symlinks. Using UUID's or filesystem-labels is not possible as plain dm-crypt writes only encrypted data without a persistent header like LUKS. If you are not familar with one of the directories under `/dev/disk/` read on in the section on [#Preparation for Persistent block device naming](#Preparation_for_Persistent_block_device_naming)
 
@@ -750,7 +751,7 @@ Example line for the `/dev/sda2` symlink from above:
 
  `/etc/crypttab` 
 ```
-# <name>                      <device>                                   <password>     <options>
+# name                      device                                   password     options
   swap  /dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-part2  /dev/urandom   swap,cipher=aes-cbc-essiv:sha256,size=256
 ```
 
@@ -765,7 +766,7 @@ To be able to resume after suspending the computer to disk (hibernate), it is re
 If you want to use a partition which is currently used by the system, you have to disable it first:
 
 ```
-# swapoff /dev/<device>
+# swapoff /dev/*device*
 
 ```
 
@@ -777,12 +778,12 @@ The following setup has the disadvantage of having to insert an additional passp
 
 **Warning:** Do not use this setup with a key file. Please read about the issue reported [here](/index.php/Talk:System_Encryption_with_LUKS_for_dm-crypt#Suspend_to_disk_instructions_are_insecure "Talk:System Encryption with LUKS for dm-crypt")
 
-To format the encrypted container for the swap partition, follow steps similar to those described in [#Configuring LUKS](#Configuring_LUKS) above and create keyslot for a user-memorizable passphrase.
+To format the encrypted container for the swap partition, follow steps similar to those described in [#Configurare LUKS](#Configurare_LUKS) above and create keyslot for a user-memorizable passphrase.
 
 Open the partition in `/dev/mapper`:
 
 ```
-# cryptsetup luksOpen /dev/<device> swapDevice
+# cryptsetup luksOpen /dev/*device* swapDevice
 
 ```
 
@@ -1001,24 +1002,24 @@ mkinitcpio -p linux
 
 #### GRUB2
 
-The article on GRUB2 gives a brief introduction and features [a small section on configuration for system encryption](/index.php/GRUB2#Root_Encryption "GRUB2").
+The article on GRUB2 gives a brief introduction and features [a small section on configuration for system encryption](/index.php/GRUB2#Encryption "GRUB2").
 
 The recommended way for configuring GRUB is `/etc/default/grub` where the kernel line has to be adjusted so GRUB can pass to the kernel how to map the (encrypted) root device.
 
 The syntax for **cryptdevice** is:
 
 ```
-cryptdevice=<device>:<dmname>
+cryptdevice=*device:dmname*
 
 ```
 
-	<device>
+	device
 
 	The path to the raw encrypted device. Usage of [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") is advisable.
 
-	<dmname>
+	dmname
 
-	The name given to the device after decryption, will be available as `/dev/mapper/<dmname>`. (**DO NOT** set dmname to a name you already used for your LVM partitions!)
+	The name given to the device after decryption, will be available as `/dev/mapper/*dmname*`. (**DO NOT** set dmname to a name you already used for your LVM partitions!)
 
 So if the encrypted root device is in example `/dev/sda2` and the decrypted one should be mapped to `/dev/mapper/cryptroot` the kernel line must look like:
 
@@ -1027,38 +1028,38 @@ So if the encrypted root device is in example `/dev/sda2` and the decrypted one 
 Depending on the setup other parameters are required as well:
 
 ```
-GRUB_CMDLINE_LINUX="cryptdevice=<device>:<dmname> root=<device> resume=<device> cryptkey=<device>:<fstype>:<path>"
+GRUB_CMDLINE_LINUX="cryptdevice=*device:dmname* root=*device* resume=*device* cryptkey=*device:fstype:path*"
 
 ```
 
-	root=<device>
+	root=*device*
 
-	The device file of the actual (decrypted) root filesystem. If the filesystem is formatted directly on the decrypted device file this will be `/dev/mapper/<dmname>`. If LVM is in between sth. like `/dev/mapper/<volgroup>-<pvol>` or `/dev/<volgroup>/<pvol>` does the trick.
+	The device file of the actual (decrypted) root filesystem. If the filesystem is formatted directly on the decrypted device file this will be `/dev/mapper/*dmname*`. If LVM is in between sth. like `/dev/mapper/*volgroup-pvol*` or `/dev/*volgroup/pvol*` does the trick.
 
-	resume=<device>
+	resume=*device*
 
 	The device file of the decrypted (swap) filesystem used for suspend2disk.
 
-	cryptkey=<device>:<fstype>:<path>
+	cryptkey=*device:fstype:path*
 
 	Required for reading a [keyfile](#Storing_the_Key_File) from a filesystem.
 
 The syntax for the optional **cryptkey** parameter is:
 
 ```
-cryptkey=<device>:<fstype>:<path>
+cryptkey=*device:fstype:path*
 
 ```
 
-	<device>
+	device
 
 	The raw block device where the key exists.
 
-	<fstype>
+	fstype
 
-	The filesystem type of <device> (or auto).
+	The filesystem type of device (or auto).
 
-	<path>
+	path
 
 	The absolute path of the keyfile within the device.
 
@@ -1076,7 +1077,7 @@ The device name your harddrive should be mapped to depends on your setup and con
 The Article on Syslinux describes in [the basic config-section](/index.php/Syslinux#Basic_Config "Syslinux") how to use LUKS for system encryption (added 2012):
 
 ```
-APPEND root=/dev/mapper/<name> cryptdevice=/dev/sda2:<name> ro
+APPEND root=/dev/mapper/*name* cryptdevice=/dev/sda2:*name* ro
 
 ```
 
@@ -1148,23 +1149,23 @@ Therefore, having a backup of the headers and storing them on another disk might
 Cryptsetups `luksHeaderBackup` action stores a binary backup of the LUKS header and keyslot area:
 
 ```
-# cryptsetup luksHeaderBackup /dev/<device> --header-backup-file /mnt/<backup>/<file>.img
+# cryptsetup luksHeaderBackup /dev/*device* --header-backup-file /mnt/*backup/file*.img
 
 ```
 
-where <device> is the partition containing the LUKS volume.
+where *device* is the partition containing the LUKS volume.
 
 **Note:** Using `-` as header backup file writes to a file named `-`.
 
 **Tip:** You can also back up the plaintext header into ramfs and encrypt it in example with gpg before writing to persistent backup storage by executing the following commands.
 
 ```
-# mkdir /root/<tmp>/
-# mount ramfs /root/<tmp>/ -t ramfs
-# cryptsetup luksHeaderBackup /dev/<device> --header-backup-file /root/<tmp>/<file>.img
-# gpg2 --recipient <User ID> --encrypt /root/<tmp>/<file>.img 
-# cp /root/<tmp>/<file>.img.gpg /mnt/<backup>/
-# umount /root/<tmp>
+# mkdir /root/*tmp*/
+# mount ramfs /root/*tmp*/ -t ramfs
+# cryptsetup luksHeaderBackup /dev/*device* --header-backup-file /root/*tmp/file*.img
+# gpg2 --recipient <User ID> --encrypt /root/*tmp/file*.img 
+# cp /root/*tmp*/*file*.img.gpg /mnt/*backup*/
+# umount /root/*tmp*
 ```
 
 **Warning:** Tmpfs can swap to harddisk if low on memory so it is not recommended here.
@@ -1173,12 +1174,12 @@ where <device> is the partition containing the LUKS volume.
 
 First you have to find out the payload offset of the crypted partition:
 
- `# cryptsetup luksDump /dev/<device> | grep "Payload offset"`  ` Payload offset:	4040` 
+ `# cryptsetup luksDump /dev/*device* | grep "Payload offset"`  ` Payload offset:	4040` 
 
 Now that you know the value, you can backup the header with a simple dd command:
 
 ```
-dd if=/dev/<device> of=/path/to/<file>.img bs=512 count=4040
+dd if=/dev/*device* of=/path/to/*file*.img bs=512 count=4040
 
 ```
 
@@ -1579,7 +1580,7 @@ Note that:
 
 *   You can follow the above instructions with only two primary partitions one boot partition
 
-(required because of LVM), and one primary LVM partition. Within the LVM partition you can have as many partitions as you need, but most importantly it should contain at least root, swap, and home logical volume partitions. This has the added benefit of having only one keyfile for all your partitions, and having the ability to hibernate your computer (suspend to disk) where the swap partition is encrypted. If you decide to do so your hooks in `/etc/mkinitcpio.conf` should look like `HOOKS=" ... usb usbinput (etwo or ssldec) encrypt(if using openssl) lvm2 resume ... "` and you should add to your `kernel` line(if using grub, `/boot/grub/menu.lst`) or `GRUB_CMD_LINE`(if using grub2, `/etc/default/grub`): `"resume=/dev/mapper/<VolumeGroupName>-<LVNameOfSwap>"`
+(required because of LVM), and one primary LVM partition. Within the LVM partition you can have as many partitions as you need, but most importantly it should contain at least root, swap, and home logical volume partitions. This has the added benefit of having only one keyfile for all your partitions, and having the ability to hibernate your computer (suspend to disk) where the swap partition is encrypted. If you decide to do so your hooks in `/etc/mkinitcpio.conf` should look like `HOOKS=" ... usb usbinput (etwo or ssldec) encrypt(if using openssl) lvm2 resume ... "` and you should add to your `kernel` line(if using grub, `/boot/grub/menu.lst`) or `GRUB_CMD_LINE`(if using grub2, `/etc/default/grub`): `"resume=/dev/mapper/*VolumeGroupName-LVNameOfSwap*"`
 
 *   If you need to temporarily store the unecrypted keyfile somewhere, do not store them on an
 
@@ -1641,7 +1642,7 @@ echo "Pacman update [3] All done, let's roll on ..."
 
 ## Automount user homes on login
 
-See [Pam mount](/index.php/Pam_mount "Pam mount").
+See [pam_mount](/index.php/Pam_mount "Pam mount").
 
 ## Resources
 

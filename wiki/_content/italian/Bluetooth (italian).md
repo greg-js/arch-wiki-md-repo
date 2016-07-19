@@ -103,7 +103,7 @@ Per aggiungere una voce "Inviare a" nel menu del Bluetooth, nel file di configur
 
 ### BlueDevil
 
-Lo strumento di gestione Bluetooth per [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)") è [BlueDevil](https://projects.kde.org/projects/extragear/base/bluedevil). Esso può essere installato con il pacchetto [bluedevil](https://www.archlinux.org/packages/?name=bluedevil), disponibile nei [Repository Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Lo strumento di gestione Bluetooth per [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)") è [BlueDevil](https://projects.kde.org/projects/extragear/base/bluedevil). Esso può essere installato con il pacchetto [bluedevil](https://www.archlinux.org/packages/?name=bluedevil), disponibile nei [Repository Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Assicurarsi che il demone `bluetooth` sia in esecuzione, come descritto sopra. Dovrebbe apparire un'icona Bluetooth sia in Dolphin sia nel vassoio di sistema, da cui è possibile configurare BlueDevil e rilevare i dispositivi Bluetooth. E' possibile configurare BlueDevil anche da Impostazioni di Sistema di KDE.
 
@@ -167,7 +167,7 @@ With bluez 4.98 and alsa-lib 1.0.24.1, you may have to try with:
 
 **Nota:** Questa sezione non è del tutto completa. Grazie Gattschardo per la soluzione del pin
 
-Molti dispositivi bluetooth richiedono [pairing](http://en.wikipedia.org/wiki/Bluetooth#Pairing). L'esatto procedimento dipende, tra le altre cose, dai dispositivi utilizzati e dalle loro funzionalità. Il procedimento per collegare un telefono cellulare potrebbe essere una cosa di questo tipo:
+Molti dispositivi bluetooth richiedono [pairing](https://en.wikipedia.org/wiki/Bluetooth#Pairing "wikipedia:Bluetooth"). L'esatto procedimento dipende, tra le altre cose, dai dispositivi utilizzati e dalle loro funzionalità. Il procedimento per collegare un telefono cellulare potrebbe essere una cosa di questo tipo:
 
 *   Il computer invia una richiesta di connessione al telefono.
 *   Il pin, determinato dal computer, viene accettato dal telefono
@@ -187,7 +187,7 @@ Per sincronizzare un dispositivo senza usare il gnome-bluez package si può usar
 
 ```
 
-Se tutto funziona correttemente, si dovrebbe ottenere il messaggio "Agent registered" sulla console. Sarà possibile quindi iniziare la sincronizzazione dal dispositivo mobile, lo script vi richiederà il codice di accesso sulla console, lo si scriverà e confermerà con enter - fatto. Ora si potrà anche spegnere l' agent usando ^C-c, dato che è necessario solo per la prima sincronizzazione e non per ogni seguente connessione. Se non si possono rilevare computer dal telefono cellulare, consultare la sezione [Errori e risoluzione di problemi](https://wiki.archlinux.org/index.php/Bluetooth_(Italiano)#Il_mio_computer_non_.C3.A8_visibile).
+Se tutto funziona correttemente, si dovrebbe ottenere il messaggio "Agent registered" sulla console. Sarà possibile quindi iniziare la sincronizzazione dal dispositivo mobile, lo script vi richiederà il codice di accesso sulla console, lo si scriverà e confermerà con enter - fatto. Ora si potrà anche spegnere l' agent usando ^C-c, dato che è necessario solo per la prima sincronizzazione e non per ogni seguente connessione. Se non si possono rilevare computer dal telefono cellulare, consultare la sezione [Errori e risoluzione di problemi](#Il_mio_computer_non_.C3.A8_visibile).
 
 Se si vuole associare un dispositivo "passivo" come un auricolare, è possibile fornire il relativo indirizzo per tentare l'associazione dal proprio computer:
 

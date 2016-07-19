@@ -31,7 +31,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [8.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
     *   [8.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
     *   [8.3 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
-*   [9 Additionnal information](#Additionnal_information)
+*   [9 Additional Information](#Additional_Information)
     *   [9.1 Passing through a USB controller](#Passing_through_a_USB_controller)
     *   [9.2 ACS Override Patch](#ACS_Override_Patch)
 *   [10 See also](#See_also)
@@ -51,6 +51,8 @@ A VGA Passthrough relies on a number of technologies that are not ubiquitous as 
 You will probably want to have a spare monitor (the GPU will not display anything if there is no screen plugged it and using a VNC or Spice connection will not help your performance), as well as a mouse and a keyboard you can pass to your VM. If anything goes wrong, you will at least have a way to control your host machine this way.
 
 ## Setting up IOMMU
+
+IOMMU is a system specific IO mapping mechanism and can be used with most devices. IOMMU is a generic name for Intel VT-x/Intel and AMD AMD-V/AMD-Vi.
 
 ### Enabling IOMMU
 
@@ -664,7 +666,7 @@ options kvm ignore_msrs=1
 
 Windows 8 or Windows 10 guests may raise a generic compatibility exception at boot, namely "System Thread Exception Not Handled", which tends to be caused by legacy drivers acting strangely on real machines. On KVM machines this issue can generally be solved by setting the CPU model to `core2duo`.
 
-## Additionnal information
+## Additional Information
 
 ### Passing through a USB controller
 
