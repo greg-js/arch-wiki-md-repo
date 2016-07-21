@@ -90,7 +90,7 @@ You may want to add that to a startup script.
 Install [boinc-nox](https://www.archlinux.org/packages/?name=boinc-nox) to use BOINC on a headless system. Two command-line management tools are available: `boinccmd` and `boinc`. `boinccmd` is recommended. To use `boinccmd`, you must:
 
 1.  Start the BOINC service.
-2.  Provide `boinccmd` with a password, used for communicating with the service's RPC API.
+2.  Provide `boinccmd` with a password for communicating with the service's RPC API.
 
 To start the BOINC service, use the provided `boinc.service` unit file. (For more information, see [Systemd#Using units](/index.php/Systemd#Using_units "Systemd").) The first time BOINC starts, it will generate a password and save it to `/var/lib/boinc/gui_rpc_auth.cfg`. To provide `boinccmd` with this password, consider one of the following:
 
@@ -99,7 +99,7 @@ To start the BOINC service, use the provided `boinc.service` unit file. (For mor
 
 That done, you can register with a project and attach BOINC to the project.
 
-To register with a project, you may be able to use the command-line client, or you may need to register with a separate website. To register with a project from the command-line, pick a project from [BOINC Wiki Project List](https://boinc.berkeley.edu/wiki/Project_list), and execute a command like `boinccmd --passwd abc123 --create_account ${project_url} ${my_email} ${project_password} ${project_username`}. Regardless of how you register, you must obtain a key for each project you'd like BOINC to attach to. To attach BOINC to a project, execute a command like `boinccmd --passwd abc123 --project_attach ${project_url} ${project_key`}.
+To register with a project, you may be able to use the command-line client, or you may need to register with a separate website. To register with a project from the command-line, pick a project from [BOINC Wiki Project List](https://boinc.berkeley.edu/wiki/Project_list), and execute a command like `boinccmd --passwd abc123 --create_account ${project_url} ${my_email} ${project_password} ${project_username}` . Regardless of how you register, you must obtain a key for each project you'd like BOINC to attach to. To attach BOINC to a project, execute a command like `boinccmd --passwd abc123 --project_attach ${project_url} ${project_key}` .
 
 ## Log files
 

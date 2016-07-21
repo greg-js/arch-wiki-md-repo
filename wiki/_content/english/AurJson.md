@@ -53,26 +53,26 @@ If a maintainer search is performed and the search argument is left empty, a lis
 
 Examples:
 
+Search for *foobar*:
+
 ```
 https://aur.archlinux.org/rpc/?v=5&type=search&arg=foobar
 
 ```
 
-Search for *foobar*.
+Search for packages maintained by *john*:
 
 ```
 https://aur.archlinux.org/rpc/?v=5&type=search&by=maintainer&arg=john
 
 ```
 
-Search for packages maintained by *john*.
+Search with callback:
 
 ```
 https://aur.archlinux.org/rpc/?v=5&type=search&arg=foobar&callback=jsonp1192244621103
 
 ```
-
-Search with callback.
 
 #### info
 
@@ -89,19 +89,19 @@ Possible return types are ***multiinfo*** and ***error***.
 
 Examples:
 
+Info for single *foobar* package:
+
 ```
 https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foobar
 
 ```
 
-Info for single *foobar* package.
+Info for multiple *foobar* and *bar* packages:
 
 ```
 https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foo&arg[]=bar
 
 ```
-
-Info for multiple *foobar* and *bar* packages.
 
 ### Return types
 

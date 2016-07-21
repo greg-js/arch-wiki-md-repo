@@ -1,4 +1,4 @@
-From [https://fedorahosted.org/logrotate/](https://fedorahosted.org/logrotate/):
+From [https://github.com/logrotate/logrotate](https://github.com/logrotate/logrotate):
 
 	*The logrotate utility is designed to simplify the administration of log files on a system which generates a lot of log files. Logrotate allows for the automatic rotation compression, removal and mailing of log files. Logrotate can be set to handle a log file daily, weekly, monthly or when the log file gets to a certain size.*
 

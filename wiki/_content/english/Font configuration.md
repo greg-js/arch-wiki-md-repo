@@ -477,8 +477,8 @@ Some applications like [URxvt](/index.php/URxvt "URxvt") will ignore fontconfig 
  `~/.Xresources` 
 ```
 Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintslight
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb

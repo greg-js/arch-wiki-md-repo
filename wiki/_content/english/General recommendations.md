@@ -122,7 +122,7 @@ Every package in the repositories along with those present in the AUR are subjec
 
 ### Arch User Repository
 
-While the ABS tree allows the ability of building software available in the official repositories, the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) is the equivalent for user submitted packages. It is an unsupported repository of build scripts accessible through the [web interface](https://aur.archlinux.org/) or by an [AUR helper](/index.php/AUR_helper "AUR helper").
+While the ABS tree allows the ability of building software available in the official repositories, the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) is the equivalent for user submitted packages. It is an unsupported repository of build scripts accessible through the [web interface](https://aur.archlinux.org/) or through [AurJson](/index.php/AurJson "AurJson").
 
 ## Booting
 

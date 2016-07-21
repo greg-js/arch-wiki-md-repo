@@ -165,13 +165,15 @@ Additionally if you are using an Intel IGP you might be able to fix the GL Compo
 
 For details see [FDO Bug #69101.](https://bugs.freedesktop.org/show_bug.cgi?id=69101)
 
+One other way to approach this issue is by enabling DRI3 in the Intel driver. See the below issue for a sample config.
+
 ### Kernel crash/oops when using PRIME and switching windows/workspaces
 
 Note: this has been tested on a system with Intel+AMD
 
 Using DRI3 WITH a config file for the integrated card seems to fix this issue.
 
-To enable DRI3, you need to recompile mesa with --enable-dri3 in the configure flags[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1494777#p1494777) and create a config for the integrated card adding the DRI3 option:
+To enable DRI3, you need to create a config for the integrated card adding the DRI3 option:
 
 ```
 Section "Device"
@@ -186,9 +188,9 @@ After this you can use DRI_PRIME=1 WITHOUT having to run `xrandr --setproviderof
 
 ### Glitches/Ghosting synchronization problem on second monitor when using reverse PRIME
 
-This problem can affect users when not using a [composite manager](/index.php/Composite_manager "Composite manager"), such as with [i3](/index.php/I3 "I3"). [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=75579)
+This problem can affect users when not using a [composite manager](/index.php/Composite_manager "Composite manager"), such as with [i3](/index.php/I3 "I3"). [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=75579)
 
-If you experience this problem under Gnome, then a possible fix is to set some environment variables in `/etc/environment` [[3]](https://bbs.archlinux.org/viewtopic.php?id=177925)
+If you experience this problem under Gnome, then a possible fix is to set some environment variables in `/etc/environment` [[2]](https://bbs.archlinux.org/viewtopic.php?id=177925)
 
 ```
 CLUTTER_PAINT=disable-clipped-redraws:disable-culling

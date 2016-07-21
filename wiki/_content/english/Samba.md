@@ -155,9 +155,14 @@ Although the user name is shared with Linux system, Samba uses a password separa
 
 ```
 
-**Note:** Depending on the [server role](https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html#SERVERROLE), existing [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") may need to be altered for the Samba user account.
+Depending on the [server role](https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html#SERVERROLE), existing [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") may need to be altered for the Samba user account.
 
-**Note:** If you want the new user only to be allowed to remotely access the file server shares through Samba, you can restrict other login options - disabling shell (`usermod --shell /usr/bin/nologin --lock username`), disabling SSH logons (/etc/ssh/sshd_conf, option `AllowUsers`), etc... Also see [Security](/index.php/Security "Security") for hardening your system.
+If you want the new user only to be allowed to remotely access the file server shares through Samba, you can restrict other login options：
+
+*   disabling shell - `usermod --shell /usr/bin/nologin --lock username`
+*   disabling SSH logons - edit `/etc/ssh/sshd_conf`, change option `AllowUsers`
+
+Also see [Security](/index.php/Security "Security") for hardening your system.
 
 ### Changing Samba user's password
 
@@ -299,10 +304,6 @@ To allow users to mount it as long as the mount point resides in a directory con
 	See `man mount.cifs` for more information.
 
 **Note:**
-
-*   The output "mount error(13): Permission denied", might be due to a bug in mount.cifs. See the following bug report. [https://bugs.archlinux.org/task/43015#comment130771](https://bugs.archlinux.org/task/43015#comment130771)
-
-Try specifying the option "sec=ntlmv2" as workaround.
 
 *   Abstain from using a trailing `/`. `//*SERVER*/*sharename***/**` will not work.
 *   If your mount does not work stable, stutters or freezes, try to enable different SMB protocol version with `vers=` option. For example, `vers=2.0` for Windows Vista mount.

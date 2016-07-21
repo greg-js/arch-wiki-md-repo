@@ -66,6 +66,8 @@ setenv nographics "1"
 
 ```
 
+**Note:** Arch ARM provides `amlogic.service` to setup the display. The service will harmlessly fail if thie above setting is applied.
+
 ### CPU frequency scaling
 
 The [cpupower](https://www.archlinux.org/packages/?name=cpupower) package can be used to select alternative CPU governors for power savings. Edit `/etc/default/cpupower` and set the *governor=* line followed by [start](/index.php/Start "Start") cpupower.service.

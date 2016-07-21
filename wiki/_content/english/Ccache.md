@@ -7,10 +7,11 @@
     *   [2.1 Enable ccache for makepkg](#Enable_ccache_for_makepkg)
     *   [2.2 Enable for command line](#Enable_for_command_line)
     *   [2.3 Enable with colorgcc](#Enable_with_colorgcc)
-*   [3 Misc.](#Misc.)
+*   [3 Misc](#Misc)
     *   [3.1 Change the cache directory](#Change_the_cache_directory)
     *   [3.2 Disable the cache via environment](#Disable_the_cache_via_environment)
     *   [3.3 CLI](#CLI)
+    *   [3.4 makechrootpkg](#makechrootpkg)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -61,7 +62,7 @@ f77:/usr/bin/g77
 gcj:/usr/bin/gcj
 ```
 
-## Misc.
+## Misc
 
 ### Change the cache directory
 
@@ -98,6 +99,18 @@ or clear the cache completely:
 $ ccache -C
 
 ```
+
+### makechrootpkg
+
+It is also possible to use ccache with makechrootpkg. To retain the cache when the chroot is cleaned the makechrootpkg option `-d` can be used to bind the cache directory from the regular system into the chroot, eg.:
+
+```
+$ mkdir /path/of/chroot/ccache
+$ makechrootpkg -d /path/to/cache/:/ccache -r /path/of/chroot -- CCACHE_DIR=/ccache
+
+```
+
+Then ccache can be configured for the chroot in the same way as explained above for the regular system.
 
 ## See also
 

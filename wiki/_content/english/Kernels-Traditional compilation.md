@@ -80,8 +80,6 @@ $ make clean && make mrproper
 
 ## Configuration
 
-**Warning:** If you are compiling a kernel using your current `.config` file, do not forget to rename your kernel version in the `General Setup --->` option using one of the user interfaces listed later. If you skip this, there is the risk of overwriting one of your existing kernels by mistake.
-
 This is the most crucial step in customizing the kernel to reflect your computer's precise specifications. Kernel configuration is set in its `.config` file, which includes the use of the [Kernel modules](/index.php/Kernel_modules "Kernel modules"). By setting the options in `.config` properly, your kernel and computer will function most efficiently. Note that - again - it is not necessary to use the root account or root privileges for this stage.
 
 ### Simple configuration
@@ -101,6 +99,8 @@ This method will create a `.config` file for the custom kernel using the default
 $ zcat /proc/config.gz > .config
 
 ```
+
+**Warning:** If you are compiling a kernel using your current `.config` file, do not forget to rename your kernel version in the `General Setup --->` option using one of the user interfaces listed later. If you skip this, there is the risk of overwriting one of your existing kernels by mistake.
 
 #### Generated configuration file
 

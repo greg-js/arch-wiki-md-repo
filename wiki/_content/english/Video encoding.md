@@ -43,8 +43,6 @@ mencoder -ovc lavc -lavcopts vcodec=msmpeg4v2:vpass=2:$opt -oac mp3lame -o outpu
 
 ## Common Misconceptions
 
-(Easy one-liners? I'll think I'll do this Section first, as I did & do have a LOT of misconceptions and I'm sure a lot of people who mostly used windows to convert videos in the past have, too;))
-
 ### Codecs v.s. Containers
 
 A common source of confusion when it comes to video encoding is the difference between codecs / encoding formats, and containers. The difference between them can be illustrated with a few examples, MKV, AVI, WEBM are all container formats, while XviD, H.264, VP8 are video encoding formats, AAC, Vorbis and MP3 are audio encoding formats.

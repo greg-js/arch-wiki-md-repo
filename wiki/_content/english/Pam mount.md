@@ -80,32 +80,4 @@ session         optional        pam_ck_connector.so
 
 ### GDM
 
-For [GDM](/index.php/GDM "GDM"):
-
-**Note:** The configuration file has changed to be /etc/pam.d/gdm-password (instead of /etc/pam.d/gdm) as of GDM version 3.2.
- `/etc/pam.d/gdm-password` 
-```
-#%PAM-1.0
-auth            requisite       pam_nologin.so
-auth            required        pam_env.so
-
-auth            requisite       pam_unix.so nullok
-**auth	        optional        pam_mount.so**
-auth            optional        pam_gnome_keyring.so
-
-auth            sufficient      pam_succeed_if.so uid >= 1000 quiet
-auth            required        pam_deny.so
-
-account         required        pam_unix.so
-
-password        required        pam_unix.so
-**password        optional        pam_mount.so**
-
-session         required        pam_loginuid.so
--session        optional        pam_systemd.so
-session         optional        pam_keyinit.so force revoke
-session         required        pam_limits.so
-session         required        pam_unix.so
-**session         optional        pam_mount.so**
-session         optional        pam_gnome_keyring.so auto_start
-```
+Manual configuration for GDM is not needed, since it relies on `/etc/pam.d/system-auth`.

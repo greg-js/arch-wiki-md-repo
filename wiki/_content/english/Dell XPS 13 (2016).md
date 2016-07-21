@@ -40,14 +40,15 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [10.1 Hissing/Crackling noises when using headphones](#Hissing.2FCrackling_noises_when_using_headphones)
     *   [10.2 Loud popping-noises when sound was not playing](#Loud_popping-noises_when_sound_was_not_playing)
 *   [11 Microphone](#Microphone)
-*   [12 Diverting models](#Diverting_models)
-    *   [12.1 XPS 12](#XPS_12)
-    *   [12.2 Dell XPS 15](#Dell_XPS_15)
-    *   [12.3 Dell XPS 13 (2015)](#Dell_XPS_13_.282015.29)
-*   [13 lspci and lsusb](#lspci_and_lsusb)
-    *   [13.1 lspci](#lspci)
-    *   [13.2 lsusb](#lsusb)
-*   [14 See also](#See_also)
+*   [12 CPU slowdown after resume from suspend](#CPU_slowdown_after_resume_from_suspend)
+*   [13 Diverting models](#Diverting_models)
+    *   [13.1 XPS 12](#XPS_12)
+    *   [13.2 Dell XPS 15](#Dell_XPS_15)
+    *   [13.3 Dell XPS 13 (2015)](#Dell_XPS_13_.282015.29)
+*   [14 lspci and lsusb](#lspci_and_lsusb)
+    *   [14.1 lspci](#lspci)
+    *   [14.2 lsusb](#lsusb)
+*   [15 See also](#See_also)
 
 ## Content adaptive brightness control
 
@@ -255,6 +256,10 @@ Also people noticed loud popping-noises when sound was not playing. You can turn
 **Note:** Not all hardware has the "Digital" channel
 
 For ALSA, increase "Digital" channel for microphone to work.
+
+## CPU slowdown after resume from suspend
+
+If you are experiencing a very slow computer after resume from suspend, you may be subject to a bug where your CPU frequency is capped to a very low value. Use `cpupower frequency-info` to check. If so, please read [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1558948#p1558948) for debug information, and a workaround.
 
 ## Diverting models
 

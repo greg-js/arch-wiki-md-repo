@@ -2,7 +2,7 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(143)</small> |
+| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(142)</small> |
 | <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(23)</small> |
 | <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
 | <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(17)</small> |
@@ -56,7 +56,7 @@
 | <small>4.8.4.</small> [HASEE](/index.php/Category:HASEE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:HASEE (简体中文)") <small>(1)</small> |
 | <small>4.8.5.</small> [Lenovo](/index.php/Category:Lenovo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lenovo (简体中文)") <small>(2)</small> |
 | <small>4.9.</small> [主板和BIOS](/index.php/Category:Mainboards_and_BIOS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mainboards and BIOS (简体中文)") <small>(3)</small> |
-| <small>4.10.</small> [移动设备](/index.php/Category:Mobile_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mobile devices (简体中文)") <small>(3)</small> |
+| <small>4.10.</small> [移动设备](/index.php/Category:Mobile_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mobile devices (简体中文)") <small>(4)</small> |
 | <small>4.11.</small> [其他硬件](/index.php/Category:Other_hardware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Other hardware (简体中文)") <small>(1)</small> |
 | <small>4.12.</small> [打印设备](/index.php/Category:Printers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Printers (简体中文)") <small>(2)</small> |
 | <small>4.13.</small> [声音](/index.php/Category:Sound_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Sound (简体中文)") <small>(6)</small> |

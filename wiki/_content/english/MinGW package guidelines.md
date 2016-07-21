@@ -32,7 +32,7 @@ Packaging for cross platform packages can be fairly tricky as there are many dif
 *   always use and follow the original `pkgver` of the official package
 *   always build both 32-bit and 64-bit versions of libraries, unless of course the package can only target, or is meant to only target, 32-bit or 64-bit, or if problems arise building one of the two.
 *   always put all stuff under the `/usr/i686-w64-mingw32` and `/usr/x86_64-w64-mingw32` prefix
-*   always use `any` as the architecture (except the package contains executables which must run on the host)
+*   always use `any` as the architecture (except the package contains executables which must run on the build system)
 *   always build both shared and static binaries, unless they conflict
 *   always remove Win32 executables (*.exe) if the intended package is a library (`rm "$pkgdir"/usr/${_arch}/bin/*.exe`)
 *   consider removing unneeded documentation (`rm -r $pkgdir/usr/i686-w64-mingw32/share/{doc,info,man}`, `rm -r $pkgdir/usr/x86_64-w64-mingw32/share/{doc,info,man}`)

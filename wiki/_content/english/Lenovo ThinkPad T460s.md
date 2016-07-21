@@ -31,7 +31,7 @@ The [linux-t460s](https://aur.archlinux.org/packages/linux-t460s/) package inclu
 
 ### Touchpad/TrackPoint
 
-With older kernels than 4.5.1, there is a [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=114321) which causes the physical mouse button (belonging to the TrackPoint) to report release events immediately even when pressing and holding the button. This prevents drag and drop and similar actions from working. This bug was fixed in linux-4.5.1.
+With kernels older than 4.5.1, there is a [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=114321) which causes the physical mouse button (belonging to the TrackPoint) to report release events immediately even when pressing and holding the button. This prevents drag and drop and similar actions from working. This bug was fixed in linux-4.5.1.
 
 ### Suspend / Resume
 
@@ -39,7 +39,7 @@ Suspending the T460s by closing the lid when running on battery causes the machi
 
 ### Hibernate / Resume
 
-A long standing kernel bug caused resume from hibernation to fail with a probability that depended on the amount of allocated RAM. This bug is fixed by [this patch](https://patchwork.kernel.org/patch/9172981/%7C), and is included in the [linux-t460s](https://aur.archlinux.org/packages/linux-t460s/) package.
+A long standing kernel bug caused resume from hibernation to fail with a probability that depended on the amount of allocated RAM. This bug is fixed by [this patch](https://bugzilla.kernel.org/show_bug.cgi?id=104771), and is included in the [linux-t460s](https://aur.archlinux.org/packages/linux-t460s/) package.
 
 ### Fingerprint Sensor
 

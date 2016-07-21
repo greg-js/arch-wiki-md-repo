@@ -80,7 +80,7 @@ For this to work you do not need any `xorg.conf` file, any configurations are ma
 
 With the arrival of Xorg 1.8 support for HAL was dropped in favor of [udev](/index.php/Udev "Udev") which might break auto-detection for some tablets as fitting udev rules might not exist yet, so you may need to write your own.
 
-If you have installed [libwacom](https://www.archlinux.org/packages/?name=libwacom) or associated packages like [libwacom-fedora](https://aur.archlinux.org/packages/libwacom-fedora/) remove those packages first. They are known to cause problems with newer version of X. *xf86-input-wacom* is the only package you need to install the X11 drivers.
+If you have installed like [libwacom](https://www.archlinux.org/packages/?name=libwacom) remove those packages first. They are known to cause problems with newer version of X. *xf86-input-wacom* is the only package you need to install the X11 drivers.
 
 ### Manual setup
 

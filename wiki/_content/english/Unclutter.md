@@ -8,11 +8,12 @@ Unclutter hides your X mouse cursor when you do not need it, to prevent it from 
     *   [3.1 Misbehaviour of the mouse cursor](#Misbehaviour_of_the_mouse_cursor)
 *   [4 Alternatives](#Alternatives)
     *   [4.1 unclutter-xfixes](#unclutter-xfixes)
+    *   [4.2 xbanish](#xbanish)
 *   [5 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [unclutter](https://www.archlinux.org/packages/?name=unclutter) from the [official repositories](/index.php/Official_repositories "Official repositories") or the modern rewrite [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [unclutter](https://www.archlinux.org/packages/?name=unclutter) package.
 
 ## Usage
 
@@ -45,6 +46,10 @@ There are two known workarounds for this. You can either add `SDL_VIDEO_X11_DGAM
 ### unclutter-xfixes
 
 Unclutter is a tool from the early 90s and has not been updated since. It works by creating fake windows or active pointer grabs, both of which often cause problems. By now, the X11 extensions Xinput2 and Xfixes have been released and are commonly found on most user systems. Using those, [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/) can provide the cursor hiding functionality without interfering with any application.
+
+### xbanish
+
+xbanish is a popular rewrite of unclutter. You can grab it on the AUR as [xbanish](https://aur.archlinux.org/packages/xbanish/) or [xbanish-git](https://aur.archlinux.org/packages/xbanish-git/).
 
 ## See also
 

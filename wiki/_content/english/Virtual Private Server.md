@@ -46,6 +46,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [Hostigation](https://hostigation.com/) | [2010.05 i686](https://hostigation.com/wiki/index.php?title=KVM:Install) | OpenVZ, KVM | Charlotte, US-NC; Los Angeles, US-CA | You can [migrate to x86_64](/index.php/Migrating_Between_Architectures_Without_Reinstalling "Migrating Between Architectures Without Reinstalling"). |
 | [Kloud51](https://www.kloud51.com) | Latest | OpenVZ | US-CA, Canada | SSD, 2 images available: A bare-bones system or a pre-configured Desktop with OpenBox, XRDP, Firefox, SSH Brute Force, Geany, and Yaourt. |
 | [Leapswitch Networks](https://leapswitch.com) | 2013.10.xx | OpenVZ/KVM | USA, India, Portugal, Spain, Ukraine, Germany | Arch Linux currently available in Control Panel for reinstall, not on order form. |
+| [Linevast.de](https://linevast.de) | Latest | OpenVZ, KVM | Germany | Arch Linux is possible on openvz and on KVM with the one click os installer. |
 | [Linode.com](https://www.linode.com) | [2015.08 and 2015.02](https://www.linode.com/faq.cfm) | Xen, KVM | [Tokyo, JP; Multiple US; London, GB](https://www.linode.com/speedtest/) | To run a custom kernel, install [linux-linode](https://aur.archlinux.org/packages/linux-linode/) ([linux](https://www.archlinux.org/packages/?name=linux) will break on a 32-bit Linode). When shipped, the NIC enp4s0 is renamed to eth0 and reverts back to enp4s0 on reboot --- on reboot, this may cause sshd load to fail. |
 | [LYLIX](http://lylix.net/) | [2014.01.xx](http://lylix.net/archlinux) | OpenVZ | Multiple US; Europe | 32-bit and 64-bit available |
 | [Node Deploy](https://www.nodedeploy.com/) | 2014.10.01 | OpenVZ, KVM | Germany (DE); Los Angeles, US-CA; Atlanta, US-GA; Phoenix, US-AZ | "At NodeDeploy we support virtually every linux distribution." Arch Linux is listed under their Operating Systems. No version information. |
@@ -60,6 +61,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [RoseHosting](https://www.rosehosting.com/) | Latest | OpenVZ, KVM | St. Louis, Missouri, USA | SSD powered hosting plans with free fully-managed 24/7 support |
 | [Tilaa](https://www.tilaa.com/) | 2016.03.01 | [KVM](https://www.tilaa.com/pages/vps/technology) | Amsterdam, NL |
 | [TransIP](https://www.transip.eu/) | [2016.02.01](https://www.transip.eu/vps/vps-os/) | [KVM](https://www.transip.eu/vps/vps-technology/) | Amsterdam, NL | Also registrar. |
+| [upCUBE](https://upcube.io) | Latest | Docker | Germany | Different prepared arch linux templates available |
 | [XenVZ](http://www.xenvz.co.uk/) | 2009.12.07 | OpenVZ, Xen | United Kingdom (UK), United States (US) | [Hardware](http://www.xenvz.co.uk/faq.php#use2) |
 | [Virpus](http://virpus.com/) | [2014.11.07](http://virpus.com/linux-vps.php) | Xen | Kansas City, US-KS; Los Angeles, US-CA | A subcompany of Wow Technologies, Inc. 24/7 support via Live Chat, Email, Phone, and Ticket System. |
 | [Virtual Master](https://www.virtualmaster.com/) | 2012-08 |  ?? | Prague, CZ |

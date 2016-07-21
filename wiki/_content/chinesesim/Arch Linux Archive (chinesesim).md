@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Arch_Linux_Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-20，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=438253)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_Linux_Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-20，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=438253)可以查看翻译后英文页面的改动。
 
 Arch Linux 存档（**A**rch **L**inux **Archive**，*简称 ala*），以前称为 *Arch Linux 回滚机器（Arch Linux Rollback Machine*，*简称 ARM*），保存了 *官方仓库快照*、*iso 镜像* 和 *引导程序包* 的历史版本。
 
@@ -189,7 +189,7 @@ zziplib-0.13.62-2-x86_64
 
 在 [/packages](#.2Fpackages) 中找到需要的软件包，下载并通过 `pacman -U` 安装.
 
-[Downgrading packages#Automation](/index.php/Downgrading_packages#Automation "Downgrading packages") 包含了可以简化这个过程的工具。
+[软件包降级#自动化](/index.php/%E8%BD%AF%E4%BB%B6%E5%8C%85%E9%99%8D%E7%BA%A7#.E8.87.AA.E5.8A.A8.E5.8C.96 "软件包降级") 包含了可以简化这个过程的工具。
 
 ### 如何恢复所有包到指定日期
 
@@ -232,7 +232,7 @@ Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 ## 历史
 
-*   The original ARM (*Archlinux Rollback Machine*) was closed on 2013-08-18 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360).
-*   The new one is hosted on [seblu.net](http://seblu.net) since 2013-08-31.
-*   New URL and closing the old ARM hierarchy on 2015-10-13\. A new software, [agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) was introduced.
-*   Moved to [archive.archlinux.org](https://archive.archlinux.org) on 2015-12-19.[[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2015-December/027635.html)
+*   最早的 ARM （*Archlinux 回滚机器*） 已于 2013-08-18 关闭[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360)。
+*   [seblu.net 新站点](http://seblu.net) 已于 2013-08-31 上线。
+*   2015-10-13 旧站关闭，同时启用新 URL 并导入一个新软件 [agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) 。
+*   2015-12-19 迁移至 [archive.archlinux.org](https://archive.archlinux.org)。[[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2015-December/027635.html)

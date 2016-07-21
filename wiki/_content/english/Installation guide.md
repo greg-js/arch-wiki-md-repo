@@ -110,7 +110,7 @@ Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/
 
 ```
 
-To [install](/index.php/Install "Install") other packages to the new system, append their names to *pacstrap* (space separated), or to individual *pacman* commands after [changing root](#Chroot). For example, the [base-devel](https://www.archlinux.org/packages/?name=base-devel) group is required to use the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and [Arch Build System](/index.php/Arch_Build_System "Arch Build System").
+To [install](/index.php/Install "Install") other packages or groups to the new system, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or a [boot loader](/index.php/Boot_loader "Boot loader"), append their names to *pacstrap* (space separated) or to individual *pacman* commands after [changing root](#Chroot).
 
 ## Configure the system
 

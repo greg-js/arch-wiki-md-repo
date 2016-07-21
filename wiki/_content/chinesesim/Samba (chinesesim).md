@@ -2,70 +2,94 @@
 
 ## Contents
 
-*   [1 服务配置](#.E6.9C.8D.E5.8A.A1.E9.85.8D.E7.BD.AE)
+*   [1 服务器配置](#.E6.9C.8D.E5.8A.A1.E5.99.A8.E9.85.8D.E7.BD.AE)
     *   [1.1 建立共享](#.E5.BB.BA.E7.AB.8B.E5.85.B1.E4.BA.AB)
     *   [1.2 启动服务](#.E5.90.AF.E5.8A.A8.E6.9C.8D.E5.8A.A1)
     *   [1.3 建立 Usershare 路径](#.E5.BB.BA.E7.AB.8B_Usershare_.E8.B7.AF.E5.BE.84)
     *   [1.4 添加用户](#.E6.B7.BB.E5.8A.A0.E7.94.A8.E6.88.B7)
     *   [1.5 更改 samba 用户的密码](#.E6.9B.B4.E6.94.B9_samba_.E7.94.A8.E6.88.B7.E7.9A.84.E5.AF.86.E7.A0.81)
     *   [1.6 端口设置](#.E7.AB.AF.E5.8F.A3.E8.AE.BE.E7.BD.AE)
+    *   [1.7 验证配置](#.E9.AA.8C.E8.AF.81.E9.85.8D.E7.BD.AE)
 *   [2 客户端配置](#.E5.AE.A2.E6.88.B7.E7.AB.AF.E9.85.8D.E7.BD.AE)
-    *   [2.1 Manual mounting](#Manual_mounting)
-        *   [2.1.1 Add Share to /etc/fstab](#Add_Share_to_.2Fetc.2Ffstab)
-        *   [2.1.2 User mounting](#User_mounting)
-    *   [2.2 WINS host names](#WINS_host_names)
-    *   [2.3 Automatic mounting](#Automatic_mounting)
-        *   [2.3.1 smbnetfs](#smbnetfs)
-            *   [2.3.1.1 Daemon](#Daemon)
-        *   [2.3.2 autofs](#autofs)
-    *   [2.4 文件管理器配置](#.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8.E9.85.8D.E7.BD.AE)
-        *   [2.4.1 GNOME Files, Nemo, Thunar and PCManFM](#GNOME_Files.2C_Nemo.2C_Thunar_and_PCManFM)
-        *   [2.4.2 KDE](#KDE)
-        *   [2.4.3 Other graphical environments](#Other_graphical_environments)
-*   [3 See also](#See_also)
+    *   [2.1 显示可用共享](#.E6.98.BE.E7.A4.BA.E5.8F.AF.E7.94.A8.E5.85.B1.E4.BA.AB)
+    *   [2.2 WINS 主机名](#WINS_.E4.B8.BB.E6.9C.BA.E5.90.8D)
+    *   [2.3 手动挂载](#.E6.89.8B.E5.8A.A8.E6.8C.82.E8.BD.BD)
+        *   [2.3.1 保存共享密码](#.E4.BF.9D.E5.AD.98.E5.85.B1.E4.BA.AB.E5.AF.86.E7.A0.81)
+    *   [2.4 自动挂载](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD)
+        *   [2.4.1 As mount entry](#As_mount_entry)
+        *   [2.4.2 As systemd unit](#As_systemd_unit)
+        *   [2.4.3 smbnetfs](#smbnetfs)
+            *   [2.4.3.1 Daemon](#Daemon)
+        *   [2.4.4 autofs](#autofs)
+    *   [2.5 文件管理器配置](#.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8.E9.85.8D.E7.BD.AE)
+        *   [2.5.1 GNOME Files, Nemo, Caja, Thunar and PCManFM](#GNOME_Files.2C_Nemo.2C_Caja.2C_Thunar_and_PCManFM)
+        *   [2.5.2 KDE](#KDE)
+        *   [2.5.3 Other graphical environments](#Other_graphical_environments)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Block certain file extensions on Samba share](#Block_certain_file_extensions_on_Samba_share)
+    *   [3.2 Discovering network shares](#Discovering_network_shares)
+    *   [3.3 Remote control of Windows computer](#Remote_control_of_Windows_computer)
+    *   [3.4 Share files without a username and password](#Share_files_without_a_username_and_password)
+        *   [3.4.1 Sample Passwordless Configuration](#Sample_Passwordless_Configuration)
+    *   [3.5 Build Samba without CUPS](#Build_Samba_without_CUPS)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB.2FCIFS_server)
+    *   [4.2 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files.2C_permissions_errors)
+    *   [4.3 Windows clients keep asking for password even if Samba shares are created with guest permissions](#Windows_clients_keep_asking_for_password_even_if_Samba_shares_are_created_with_guest_permissions)
+    *   [4.4 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error.2812.29:_cannot_allocate_memory)
+    *   [4.5 Trouble accessing a password-protected share from Windows](#Trouble_accessing_a_password-protected_share_from_Windows)
+    *   [4.6 Getting a dialog box up takes a long time](#Getting_a_dialog_box_up_takes_a_long_time)
+    *   [4.7 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
+    *   [4.8 Sharing a folder fails](#Sharing_a_folder_fails)
+    *   [4.9 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
+    *   [4.10 You are not the owner of the folder](#You_are_not_the_owner_of_the_folder)
+    *   [4.11 protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
+    *   [4.12 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
+    *   [4.13 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
+*   [5 参阅](#.E5.8F.82.E9.98.85)
 
-## 服务配置
+## 服务器配置
 
-如果只是访问文件,而不需要共享文件,仅 [安装](/index.php/Pacman#Installing_specific_packages "Pacman") [smbclient](https://www.archlinux.org/packages/?name=smbclient) 程序就足够了.
+要通过 Samba 共享文件,还需额外 [安装](/index.php/Pacman "Pacman") 软件包 [samba](https://www.archlinux.org/packages/?name=samba)。
 
-```
-# pacman -S smbclient
-
-```
-
-如果想要使用 Samba 共享您的文件,还需额外 [安装](/index.php/Pacman#Installing_specific_packages "Pacman") [samba](https://www.archlinux.org/packages/?name=samba) 包( 这将同时安装客户端 ):
-
-```
-# pacman -S samba
-
-```
-
-Samba 服务的默认配置文件在 `/etc/samba/smb.conf.default` 中，你可以将初始配置复制到 `/etc/samba/smb.conf` 中：
+Samba 服务的默认配置文件在 `/etc/samba/smb.conf.default` 中，需要将初始配置复制到 `/etc/samba/smb.conf`，否则 smbd 无法启动：
 
 ```
 # cp /etc/samba/smb.conf.default /etc/samba/smb.conf
 
 ```
 
-**Tip:** 运行 `testparm` 检查 samba 的配置文件是否合法。
-
 ### 建立共享
 
-编辑 `/etc/samba/smb.conf` ，滚动到 **Share Definitions** 部分，默认的配置文件会为所有用户在 HOME 目录建立一个共享文件夹和打印机。同时，它也包含一些不错的示例配置。更多的可用选项可以通过 `man smb.conf` 查询，在此处 [Here](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) 是在线版本。
+编辑 `/etc/samba/smb.conf` ，滚动到 **Share Definitions** 部分，默认的配置文件会为所有用户在 HOME 目录建立一个共享。但是需要进行下面配置用户才能登录：
 
-如果需要共享给 Windows，需要在 `smb.conf` 添加 Windows Workgroup （Windows 系统的工作组默认名称是： WORKGROUP）。
+ `/etc/samba/smb.conf` 
+```
+...
+[homes]
+   comment = Home Directories
+   browseable = no
+   writable = yes
+   valid users = %S
+```
+
+同时，默认配置文件也共享打印机，包含一些不错的示例配置。更多的可用选项可以通过 `man smb.conf` 查询，在此处 [Here](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) 是在线版本。
+
+On Windows side, be sure to change `smb.conf` to the in-use Windows Workgroup (default: `WORKGROUP`).
+
+如果需要共享给 Windows，需要在 `smb.conf` 中设置当前使用的 Windows 工作组（默认是 `WORKGROUP`）。
 
 ### 启动服务
 
-为了能够用 SMB 使用最基本的文件共享服务，[start/enable](/index.php/Systemd#Using_units "Systemd") `smbd.service` 和 `nmbd.service` 服务。 查看 [smbd](http://www.samba.org/samba/docs/man/manpages-3/smbd.8.html) 和 [nmbd](http://www.samba.org/samba/docs/man/manpages-3/nmbd.8.html) 的 man 手册查看更多信息。
+为了能够使用 SMB 进行基本的文件共享，[start/enable](/index.php/Systemd#Using_units "Systemd") `smbd.service` 和 `nmbd.service` 服务。更多信息参阅 [smbd](http://www.samba.org/samba/docs/man/manpages-3/smbd.8.html) 和 [nmbd](http://www.samba.org/samba/docs/man/manpages-3/nmbd.8.html) 的 man 手册。
 
-**Tip:** Instead of having the service running since boot, you can enable `smbd.socket` so the daemon is started on the first incoming connection. Don't forget to disable `smbd.service`.
+**Tip:** 除了在启动时启动服务，可以选择启用 `smbd.socket`，禁用 `smbd.service`。这样的话会在第一次收到连接请求是启动后台进程。
 
 ### 建立 Usershare 路径
 
-**Note:** 此为高阶选项，如无需要可以跳过。
+**Note:** 此为可选功能，如无需要可以跳过。
 
-"Usershare" 为那些不具有 root 权限的用户提供了可以添加、修改和删除属于他们自己的文件夹的功能。
+"Usershare" 让不具有 root 权限的用户可以进行添加、修改和删除自己的文件夹的操作。
 
 以下操作将会在 `/var/lib/samba` 添加 usershares 目录：
 
@@ -108,36 +132,40 @@ Samba 服务的默认配置文件在 `/etc/samba/smb.conf.default` 中，你可�
   ...
 ```
 
-以下操作将会将用户添加到群组 *sambashare* 中。其中，替换 `*your_username*` 为实际的用户名：
+将用户添加到群组 *sambashare* 中。其中，替换 `*your_username*` 为实际的用户名：
 
 ```
 # usermod -a -G sambashare *your_username*
 
 ```
 
-重启 `smbd` 和 `nmbd` 服务。
+重启 `smbd.service` 和 `nmbd.service` 服务。
 
 注销后重新登陆，此时您应该就可以使用 GUI 程序配置您的 samba 共享服务了。例如，在 [Thunar](/index.php/Thunar "Thunar") 中您可以右键点击任何一个文件夹将它在局域网中共享。如果你想共享自己主目录内的路径，需要主目录的内容让其它用户可以列出。
 
 ### 添加用户
 
-Create a [Linux user account](/index.php/Users_and_groups#User_management "Users and groups") for *samba* user. Substitute `*samba_user*` with preferred name if desired:
+Samba 需要 Linux 账户才能使用 - 可以使用已有账户或 [创建新用户](/index.php/Users_and_groups#User_management "Users and groups").
+
+虽然用户名可以和 Linux 系统共享，Samba 使用单独的密码管理，将下面的 `samba_user` 替换为选择的 Samba 用户:
 
 ```
-# useradd *samba_user*
+# smbpasswd -a *samba_user*
 
 ```
 
-Then create a *Samba* user account with the same name:
+根据 [服务器角色](https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html#SERVERROLE) 的差异，可能需要修改已有的 [文件权限和属性](/index.php/File_permissions_and_attributes "File permissions and attributes")。
 
-```
-# pdbedit -a -u *samba_user*
+要让新创建的用户仅能访问 Samba 远程文件服务器，可以禁用其它登录选项
 
-```
+*   禁用 shell - `usermod --shell /usr/bin/nologin --lock username`
+*   禁用 SSH logons - /etc/ssh/sshd_conf, option `AllowUsers`
+
+参阅[Security](/index.php/Security "Security")。
 
 ### 更改 samba 用户的密码
 
-To change a user's password, use `smbpasswd`:
+用 `smbpasswd` 修改 samba 用户的密码:
 
 ```
 # smbpasswd *samba_user*
@@ -146,103 +174,157 @@ To change a user's password, use `smbpasswd`:
 
 ### 端口设置
 
-If you're using a [firewall](/index.php/Firewall "Firewall"); don't forget to open required ports (usually 137-139 + 445). For a complete list please check [Samba port usage](https://wiki.samba.org/index.php/Samba_port_usage).
+如果使用 [firewall](/index.php/Firewall "Firewall")，需要将打开 samba 对于的窗口，通常是 137-139 + 445\. 完整列表请参考 [Samba port](https://wiki.samba.org/index.php/Samba_port_usage).
+
+### 验证配置
+
+`testparm` 可以检查 samba.conf 是否有错误:
+
+```
+# testparm -s
+
+```
 
 ## 客户端配置
 
-如果想要从 Samba/SMB/CIFS 服务器中读取文件，仅需要安装 [smbclient](https://www.archlinux.org/packages/?name=smbclient)。此安装包可以直接从官方源取得。
+如果不需要查询公开的共享，可以安装轻量级的 [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) 软件包，使用 `/usr/bin/mount.cifs` 命令挂载共享.
 
-Shared resources from other computers on the LAN may be accessed and mounted locally by GUI or CLI methods. Depending on the [desktop environment](/index.php/Desktop_environment "Desktop environment"), GUI methods may not be available. See also [#File_manager_configuration](#File_manager_configuration) for use with a file manager.
+要使用类似 ftp 的命令行界面，请安装软件包 [smbclient](https://www.archlinux.org/packages/?name=smbclient)。常用命令请参考 `man smbclient`。
 
-There are two parts in sharing access. The first is the underlying file system mechanism, which some environments have built in. The second is the interface which allows the user to mount shared resources.
+[桌面环境](/index.php/Desktop_environment "Desktop environment") 可能提供了图形界面，参考[#文件管理器配置](#.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8.E9.85.8D.E7.BD.AE).
 
-**Note:**
+**Note:** 安装 [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) 或 [smbclient](https://www.archlinux.org/packages/?name=smbclient) 后，请加载 `cifs` [内核模块](/index.php/Kernel_module "Kernel module") 或重启以避免挂载失败。
 
-*   After installing cifs-utils or smbclient, you must restart or modprobe cifs
-*   Otherwise mount fails with "cifs filesystem not supported by the system"
+### 显示可用共享
 
-### Manual mounting
-
-For a lighter approach without support for listing public shares, only install [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) to provide `/usr/bin/mount.cifs`.
-
-To list public shares on a server:
+下面命令会显示服务器上的可用共享:
 
 ```
 $ smbclient -L *hostname* -U%
 
 ```
 
-Create a mount point for the share:
+*smbtree* 可用显示共享目录树，不建议再有大量计算机的网络上使用此功能。可用它检查共享名是否可用。
+
+```
+$ smbtree -b -N
+
+```
+
+`-b` (`--broadcast`) 使用广播模式，`-N` (`-no-pass`) 不询问密码.
+
+### WINS 主机名
+
+[smbclient](https://www.archlinux.org/packages/?name=smbclient) 提供了一个用 WINS 解析主机名的驱动，要启用它，将 “wins” 添加到 /etc/nsswitch.conf 的 “hosts” 行。
+
+### 手动挂载
+
+创建共享挂载点：
 
 ```
 # mkdir /mnt/*mountpoint*
 
 ```
 
-Mount the share using the `mount.cifs` type. Not all the options listed below are needed or desirable (ie. `password`).
+使用 `mount.cifs` 作为挂载类型 `type`，下面列出的选项并不是全部都需要：
 
- `# mount -t cifs //*SERVER*/*sharename* /mnt/*mountpoint* -o user=*username*,password=*password*,workgroup=*workgroup*,ip=*serverip*` 
-**Note:** If you get the output "mount error(13): Permission denied", this might be due to a bug in mount.cifs. See the following bug report. [https://bugs.archlinux.org/task/43015#comment130771](https://bugs.archlinux.org/task/43015#comment130771) Try specifying the option "sec=ntlmv2" to work around it.
+ `# mount -t cifs //*SERVER*/*sharename* /mnt/*mountpoint* -o user=*username*,password=*password*,uid=*username*,gid=*group*,workgroup=*workgroup*,ip=*serverip*,iocharset=*utf8*` 
+
+要允许用户挂载到自己可以访问的目录，请使用 `users` 挂载选项。
+
+**Note:** 请注意这里有 **s**,其它文件系统一般用的是 *user*。
+
+使用 `uid` 和 `gid` 挂载选项时，请注意 [文件权限](/index.php/File_permissions_and_attributes "File permissions and attributes")，否则会出现 I/O 错误。}}
 
 *SERVER*
 
-	The Windows system name.
+	服务器名.
 
 *sharename*
 
-	The shared directory.
+	共享目录.
 
 *mountpoint*
 
-	The local directory where the share will be mounted.
+	本地的挂载点.
 
 `-o [options]`
 
-	See `man mount.cifs` for more information.
+	详情请参考 `man mount.cifs`.
 
 **Note:**
 
-*   Abstain from using a trailing `/`. `//*SERVER*/*sharename***/**` will not work.
-*   If your mount does not work stable, stutters or freezes, try to enable different SMB protocol version with `vers=` option. For example, `vers=2.0` for Windows Vista mount.
+*   结尾不要加 `/`. `//*SERVER*/*sharename***/**` 无法工作.
+*   如果挂载工作不稳定，出现死机和掉线问题，请尝试用 `vers=` 设置不同的 SMB 协议版本。例如， 挂载 Vista 用 `vers=2.0`.
+*   如果挂载了 cifs 机器上出现关机超时，请参考 [WPA supplicant#Problem with mounted network shares (cifs) and shutdown (Date: 1st Oct. 2015)](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown_.28Date:_1st_Oct._2015.29 "WPA supplicant").
 
-#### Add Share to /etc/fstab
+##### 保存共享密码
 
-The simplest way to add an fstab entry is something like this:
+不建议将密码保存在所有人都可读的文件中，一个更安全的方式是创建密码文件：
 
- `/etc/fstab`  `//*SERVER*/*sharename* /mnt/*mountpoint* cifs username=*username*,password=*password* 0 0` 
-
-However, storing passwords in a world readable file is not recommended! A safer method would be to use a credentials file. As an example, create a file and `chmod 600 *filename*` so only the owning user can read and write to it. It should contain the following information:
-
- `/path/to/credentials/sambacreds` 
+ `/path/to/credentials/share` 
 ```
-username=*username*
-password=*password*
+username=*myuser*
+password=*mypass*
 ```
 
-and the line in your fstab should look something like this:
+将 `username=myuser,password=mypass` 替换为 `credentials=/path/to/credentials/share`.
 
- `/etc/fstab`  `//SERVER/SHARENAME /mnt/*mountpoint* cifs credentials=*/path/to/credentials/sambacreds* 0 0` 
+修改密码文件的权限：
 
-If using *systemd* (modern installations), one can utilize the `x-systemd.automount` option, which speeds up service boot by a few seconds. Also, one can map current user and group to make life a bit easier, utilizing `uid` and `gid` options.
+```
+# chmod 600 /path/to/credentials/share
 
-**Warning:** Using the `uid` and `gid` options may cause input ouput errors in programs that try to fetch data from network drives.
- `/etc/fstab`  `//*SERVER*/*SHARENAME* /mnt/*mountpoint* cifs credentials=*/path/to/smbcredentials*,x-systemd.automount,uid=*username*,gid=*usergroup* 0 0` 
+```
+
+### 自动挂载
+
+**Note:** You may need to [enable](/index.php/Enable "Enable") `systemd-networkd-wait-online.service` or `NetworkManager-wait-online.service` (depending on your setup) to proper enable booting on start-up.
+
+#### As mount entry
+
+This is an simple example of a `cifs` [mount entry](/index.php/Fstab "Fstab") that requires authentication:
+
+ `/etc/fstab`  `//*SERVER*/*sharename* /mnt/*mountpoint* cifs username=*myuser*,password=*mypass* 0 0` 
 **Note:** Space in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//*SERVER*/share name` on the command line should be `//*SERVER*/share\040name` in `/etc/fstab`.
 
-#### User mounting
+To speed up the service on boot, add the `x-systemd.automount` option to the entry:
 
- `/etc/fstab`  `//*SERVER*/*SHARENAME* /mnt/*mountpoint* cifs users,credentials=*/path/to/smbcredentials*,workgroup=*workgroup*,ip=*serverip* 0 0` 
-**Note:** The option is user**s** (plural). For other filesystem types handled by mount, this option is usually *user*; sans the "**s**".
+ `/etc/fstab`  `//*SERVER*/*SHARENAME* /mnt/*mountpoint* cifs credentials=*/path/to/smbcredentials/share*,x-systemd.automount 0 0` 
 
-This will allow users to mount it as long as the mount point resides in a directory controllable by the user; i.e. the user's home. For users to be allowed to mount and unmount the Samba shares with mount points that they do not own, use [smbnetfs](#smbnetfs), or grant privileges using [sudo](/index.php/Sudo "Sudo").
+#### As systemd unit
 
-### WINS host names
+Create a new `.mount` file inside `/etc/systemd/system`, e.g. `mnt-myshare.mount`.
 
-The [smbclient](https://www.archlinux.org/packages/?name=smbclient) package provides a driver to resolve host names using WINS. To enable it, add “wins” to the “hosts” line in /etc/nsswitch.conf.
+`Requires=` replace (if needed) with your [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration").
 
-### Automatic mounting
+`What=` path to share
 
-There are several ways to easily browse shared resources:
+`Where=` path to mount the share
+
+`Options=` share mounting options
+
+ `/etc/systemd/system/mnt-myshare.mount` 
+```
+[Unit]
+Description=Mount Share at boot
+Requires=systemd-networkd.service
+After=network-online.target
+Wants=network-online.target
+
+[Mount]
+What=//server/share
+Where=/mnt/myshare
+Options=credentials=/etc/samba/creds/myshare,iocharset=utf8,rw,x-systemd.automount
+Type=cifs
+TimeoutSec=30
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+To use `mnt-myshare.mount`, [start](/index.php/Start "Start") the unit and [enable](/index.php/Enable "Enable") it to run on system boot.
 
 #### smbnetfs
 
@@ -262,7 +344,7 @@ domain master = auto
 
 ```
 
-Now [restart](/index.php/Systemd#Using_units "Systemd") `smbd.service` and `nmbd.service`.
+Now [restart](/index.php/Restart "Restart") `smbd.service` and `nmbd.service`.
 
 If everything works as expected, [install](/index.php/Pacman#Installing_specific_packages "Pacman") [smbnetfs](https://www.archlinux.org/packages/?name=smbnetfs) from the official repositories.
 
@@ -270,13 +352,6 @@ Then, add the following line to `/etc/fuse.conf`:
 
 ```
 user_allow_other
-
-```
-
-and load the `fuse` [kernel module](/index.php/Kernel_module "Kernel module"):
-
-```
-# modprobe fuse
 
 ```
 
@@ -304,7 +379,7 @@ auth			"hostname" "username" "password"
 
 It is also possible to add entries for specific hosts to be mounted by smbnetfs, if necessary. More details can be found in `~/.smb/smbnetfs.conf`.
 
-If you are using the Dolphin or Nautilus file managers, you may want to the following to `~/.smb/smbnetfs.conf` to avoid "Disk full" errors as smbnetfs by default will report 0 bytes of free space:
+If you are using the [Dolphin](/index.php/Dolphin "Dolphin") or [GNOME Files](/index.php/GNOME_Files "GNOME Files"), you may want to add the following to `~/.smb/smbnetfs.conf` to avoid "Disk full" errors as smbnetfs by default will report 0 bytes of free space:
 
  `~/.smb/smbnetfs.conf` 
 ```
@@ -340,13 +415,13 @@ Then, you can start and/or enable the `smbnetfs` [daemon](/index.php/Daemon "Dae
 
 ### 文件管理器配置
 
-#### GNOME Files, Nemo, Thunar and PCManFM
+#### GNOME Files, Nemo, Caja, Thunar and PCManFM
 
-In order to access samba shares through GNOME Files, Nemo, Thunar or PCManFM, install the [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
+In order to access samba shares through GNOME Files, Nemo, Caja, Thunar or PCManFM, install the [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Press `Ctrl+l` and enter `smb://*servername*/*share*` in the location bar to access your share.
 
-The mounted share is likely to be present at `/run/user/*your_UID*/gvfs` in the filesystem.
+The mounted share is likely to be present at `/run/user/*your_UID*/gvfs` or `~/.gvfs` in the filesystem.
 
 #### KDE
 
@@ -363,7 +438,384 @@ There are a number of useful programs, but they may need to have packages create
 *   [pyneighborhood](https://www.archlinux.org/packages/?name=pyneighborhood) is available in the official repositories.
 *   LinNeighborhood, RUmba, xffm-samba plugin for Xffm are not available in the official repositories or the AUR. As they are not officially (or even unofficially supported), they may be obsolete and may not work at all.
 
-## See also
+## Tips and tricks
+
+### Block certain file extensions on Samba share
+
+**Note:** Setting this parameter will affect the performance of Samba, as it will be forced to check all files and directories for a match as they are scanned.
+
+Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in `man smb.conf`.
+
+ `/etc/samba/smb.conf` 
+```
+...
+[myshare]
+  comment = Private
+  path = /mnt/data
+  read only = no
+  veto files = /*.exe/*.com/*.dll/*.bat/*.vbs/*.tmp/*.mp3/*.avi/*.mp4/*.wmv/*.wma/
+```
+
+### Discovering network shares
+
+If nothing is known about other systems on the local network, and automated tools such as [smbnetfs](#smbnetfs) are not available, the following methods allow one to manually probe for Samba shares.
+
+1\. First, install [nmap](https://www.archlinux.org/packages/?name=nmap) and [smbclient](https://www.archlinux.org/packages/?name=smbclient) using [pacman](/index.php/Pacman "Pacman"):
+
+```
+# pacman -S nmap smbclient
+
+```
+
+2\. `nmap` checks which ports are open:
+
+```
+# nmap -p 139 -sT "192.168.1.*"
+
+```
+
+In this case, a scan on the 192.168.1.* IP address range and port 139 has been performed, resulting in:
+
+```
+$ nmap -sT "192.168.1.*"
+
+```
+
+```
+Starting nmap 3.78 ( [http://www.insecure.org/nmap/](http://www.insecure.org/nmap/) ) at 2005-02-15 11:45 PHT
+Interesting ports on 192.168.1.1:
+(The 1661 ports scanned but not shown below are in state: closed)
+PORT     STATE SERVICE
+**139/tcp  open  netbios-ssn**
+5000/tcp open  UPnP
+
+Interesting ports on 192.168.1.5:
+(The 1662 ports scanned but not shown below are in state: closed)
+PORT     STATE SERVICE
+6000/tcp open  X11
+
+Nmap run completed -- 256 IP addresses (2 hosts up) scanned in 7.255 seconds
+
+```
+
+The first result is another system; the second happens to be the client from where this scan was performed.
+
+3\. Now that systems with port 139 open are revealed, use `nmblookup` to check for NetBIOS names:
+
+```
+$ nmblookup -A 192.168.1.1
+
+```
+
+```
+Looking up status of 192.168.1.1
+        PUTER           <00> -         B <ACTIVE>
+        HOMENET         <00> - <GROUP> B <ACTIVE>
+        PUTER           <03> -         B <ACTIVE>
+        **PUTER           <20> -         B <ACTIVE>**
+        HOMENET         <1e> - <GROUP> B <ACTIVE>
+        USERNAME        <03> -         B <ACTIVE>
+        HOMENET         <1d> -         B <ACTIVE>
+        MSBROWSE        <01> - <GROUP> B <ACTIVE>
+
+```
+
+Regardless of the output, look for **<20>**, which shows the host with open services.
+
+4\. Use `smbclient` to list which services are shared on *PUTER*. If prompted for a password, pressing enter should still display the list:
+
+```
+$ smbclient -L \\PUTER
+
+```
+
+```
+Sharename       Type      Comment
+---------       ----      -------
+MY_MUSIC        Disk
+SHAREDDOCS      Disk
+PRINTER$        Disk
+PRINTER         Printer
+IPC$            IPC       Remote Inter Process Communication
+
+Server               Comment
+---------            -------
+PUTER
+
+Workgroup            Master
+---------            -------
+HOMENET               PUTER
+
+```
+
+### Remote control of Windows computer
+
+Samba offers a set of tools for communication with Windows. These can be handy if access to a Windows computer through remote desktop is not an option, as shown by some examples.
+
+Send shutdown command with a comment:
+
+```
+$ net rpc shutdown -C "comment" -I IPADDRESS -U USERNAME%PASSWORD
+
+```
+
+A forced shutdown instead can be invoked by changing -C with comment to a single -f. For a restart, only add -r, followed by a -C or -f.
+
+Stop and start services:
+
+```
+$ net rpc service stop SERVICENAME -I IPADDRESS -U USERNAME%PASSWORD
+
+```
+
+To see all possible net rpc command:
+
+```
+$ net rpc
+
+```
+
+### Share files without a username and password
+
+Edit `/etc/samba/smb.conf` and add the following line:
+
+ `map to guest = Bad User` 
+
+After this line:
+
+ `security = user` 
+
+Restrict the shares data to a specific interface replace:
+
+ `;   interfaces = 192.168.12.2/24 192.168.13.2/24` 
+
+with:
+
+```
+interfaces = lo eth0
+bind interfaces only = true
+```
+
+Optionally edit the account that access the shares, edit the following line:
+
+ `;   guest account = nobody` 
+
+For example:
+
+ `   guest account = pcguest` 
+
+And do something in the likes of:
+
+ `# useradd -c "Guest User" -d /dev/null -s /bin/false pcguest` 
+
+Then setup a "" password for user pcguest.
+
+The last step is to create share directory (for write access make writable = yes):
+
+```
+[Public Share]
+path = /path/to/public/share
+available = yes
+browsable = yes
+public = yes
+writable = no
+
+```
+
+**Note:** Make sure the guest also has permission to visit /path, /path/to and /path/to/public, according to [http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory](http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory)
+
+#### Sample Passwordless Configuration
+
+This is the configuration I use with samba 4 for easy passwordless filesharing with family on a home network. Change any options needed to suit your network (workgroup and interface). I'm restricting it to the static IP I have on my ethernet interface, just delete that line if you do not care which interface is used.
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+
+   workgroup = WORKGROUP
+
+   server string = Media Server
+
+   security = user
+   map to guest = Bad User
+
+   log file = /var/log/samba/%m.log
+
+   max log size = 50
+
+   interfaces = 192.168.2.194/24
+
+   dns proxy = no 
+
+[media]
+   path = /shares
+   public = yes
+   only guest = yes
+   writable = yes
+
+[storage]
+   path = /media/storage
+   public = yes
+   only guest = yes
+   writable = yes
+
+```
+
+### Build Samba without CUPS
+
+Just build without cups installed. From the [Samba Wiki](https://wiki.samba.org/index.php/Samba_as_a_print_server):
+
+> Samba has built-in support [for CUPS] and defaults to CUPS if the development package (aka header files and libraries) could be found at compile time.
+
+Of course, modifications to the PKGBUILD will also be necessary: libcups will have to be removed from the depends and makedepends arrays and other references to cups and printing will need to be deleted. In the case of the 4.1.9-1 PKGBUILD, 'other references' includes lines 169, 170 and 236:
+
+```
+    mkdir -p ${pkgdir}/usr/lib/cups/backend
+    ln -sf /usr/bin/smbspool ${pkgdir}/usr/lib/cups/backend/smb
+  install -d -m1777 ${pkgdir}/var/spool/samba
+
+```
+
+## Troubleshooting
+
+### Failed to start Samba SMB/CIFS server
+
+Check if the permissions are set correctly for `/var/cache/samba/` and restart the `smbd.service` or `smbd.socket`:
+
+```
+# chmod 0755 /var/cache/samba/msg
+
+```
+
+### Unable to overwrite files, permissions errors
+
+Possible solutions:
+
+*   Append the mount option `nodfs` to the `/etc/fstab` [entry](#Add_Share_to_.2Fetc.2Ffstab).
+*   Add `msdfs root = no` to the `[global]` section of the server's `/etc/samba/smb.conf`.
+
+### Windows clients keep asking for password even if Samba shares are created with guest permissions
+
+Set `map to guest` inside the `global` section of `/etc/samba/smb.conf`:
+
+```
+map to guest = Bad User
+
+```
+
+### Windows 7 connectivity problems - mount error(12): cannot allocate memory
+
+A known Windows 7 bug that causes "mount error(12): cannot allocate memory" on an otherwise perfect cifs share on the Linux end can be fixed by setting a few registry keys on the Windows box as follows:
+
+*   `HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\LargeSystemCache` (set to `1`)
+*   `HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\Size` (set to `3`)
+
+Alternatively, start Command Prompt in Admin Mode and execute the following:
+
+```
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "LargeSystemCache" /t REG_DWORD /d 1 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" /v "Size" /t REG_DWORD /d 3 /f
+
+```
+
+Do one of the following for the settings to take effect:
+
+*   Restart Windows
+*   Restart the Server service via services.msc
+*   From the Command Prompt run: 'net stop lanmanserver' and 'net start lanmanserver' - The server may automatically restart after stopping it.
+
+**Note:** Googling will reveal another tweak recommending users to add a key modifying the "IRPStackSize" size. This is incorrect for fixing this issue under Windows 7\. Do not attempt it.
+
+[Original article](http://alan.lamielle.net/2009/09/03/windows-7-nonpaged-pool-srv-error-2017).
+
+### Trouble accessing a password-protected share from Windows
+
+**Note:** This needs to be added to the **local smb.conf**, not to the server's smb.conf
+
+For trouble accessing a password protected share from Windows, try adding this to `/etc/samba/smb.conf`:[[1]](http://blogs.computerworld.com/networking_nightmare_ii_adding_linux)
+
+```
+[global]
+# lanman fix
+client lanman auth = yes
+client ntlmv2 auth = no
+
+```
+
+### Getting a dialog box up takes a long time
+
+I had a problem that it took ~30 seconds to get a password dialog box up when trying to connect from both Windows XP/Windows 7\. Analyzing the error.log on the server I saw:
+
+```
+[2009/11/11 06:20:12,  0] printing/print_cups.c:cups_connect(103)
+Unable to connect to CUPS server localhost:631 - Interrupted system call
+
+```
+
+This keeps samba from asking cups and also from complaining about /etc/printcap missing:
+
+```
+printing = bsd
+printcap name = /dev/null
+
+```
+
+### Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL
+
+If you are a home user and using samba purely for file sharing from a server or NAS, you are probably not interested in sharing printers through it. If so, you can prevent this error from occurring by adding the following lines to your `/etc/samba/smb.conf`:
+
+```
+load printers = No
+printing = bsd
+printcap name = /dev/null
+disable spoolss = Yes
+
+```
+
+[Restart](/index.php/Restart "Restart") the samba service, `smbd.service`, and then check your logs:
+
+ `cat /var/log/samba/smbd.log` 
+
+and the error should now no longer be appearing.
+
+### Sharing a folder fails
+
+It means that while you are sharing a folder from *Dolphin* (file manager) and everything seems ok at first, after restarting *Dolphin* the share icon is gone from the shared folder, and also some output like this in terminal (*Konsole*) output:
+
+```
+‘net usershare’ returned error 255: net usershare: usershares are currently disabled
+
+```
+
+To fix it, enable usershare as described in [#Creating usershare path](#Creating_usershare_path).
+
+### "Browsing" network fails with "Failed to retrieve share list from server"
+
+And you are using a firewall (iptables) because you do not trust your local (school, university, hotel) local network. This may be due to the following: When the smbclient is browsing the local network it sends out a broadcast request on udp port 137\. The servers on the network then reply to your client but as the source address of this reply is different from the destination address iptables saw when sending the request for the listing out, iptables will not recognize the reply as being "ESTABLISHED" or "RELATED", and hence the packet is dropped. A possible solution is to add:
+```
+iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns
+
+```
+
+to your iptables setup.
+
+### You are not the owner of the folder
+
+Simply try to reboot the system.
+
+### protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE
+
+The client probably does not have access to shares. Make sure clients' IP address is in `hosts allow =` line in `/etc/samba/smb.conf`.
+
+### Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)
+
+You are probably passing wrong server name to `smbclient`. To find out the server name, run `hostnamectl` on the server and look at "Transient hostname" line
+
+### Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)
+
+Make sure that the server has started. The shared directories should exist and be accessible.
+
+## 参阅
 
 *   [Samba: An Introduction](http://www.samba.org/samba/docs/SambaIntro.html)
 *   [Official Samba site](http://www.samba.org/)

@@ -44,8 +44,19 @@ The following are examples of common scenarios of full system encryption with *d
 *   [8 Btrfs subvolumes with swap](#Btrfs_subvolumes_with_swap)
     *   [8.1 Preparing the disk](#Preparing_the_disk_6)
     *   [8.2 Preparing the system partition](#Preparing_the_system_partition)
+        *   [8.2.1 Create LUKS container](#Create_LUKS_container)
+        *   [8.2.2 Unlock LUKS container](#Unlock_LUKS_container)
+        *   [8.2.3 Format mapped device](#Format_mapped_device)
+        *   [8.2.4 Mount mapped device](#Mount_mapped_device)
     *   [8.3 Creating btrfs subvolumes](#Creating_btrfs_subvolumes)
+        *   [8.3.1 Layout](#Layout)
+        *   [8.3.2 Create top-level subvolumes](#Create_top-level_subvolumes)
+        *   [8.3.3 Mount top-level subvolumes](#Mount_top-level_subvolumes)
+        *   [8.3.4 Create nested subvolumes](#Create_nested_subvolumes)
+        *   [8.3.5 Mount ESP](#Mount_ESP)
     *   [8.4 Configuring mkinitcpio](#Configuring_mkinitcpio_6)
+        *   [8.4.1 Create keyfile](#Create_keyfile)
+        *   [8.4.2 Edit mkinitcpio.conf](#Edit_mkinitcpio.conf)
     *   [8.5 Configuring the boot loader](#Configuring_the_boot_loader_6)
     *   [8.6 Configuring swap](#Configuring_swap)
 
@@ -835,9 +846,13 @@ If for some reason the keyfile fails to unlock the boot partition, systemd will 
 
 ## Btrfs subvolumes with swap
 
-The following example creates a full system encryption with LUKS using [btrfs](/index.php/Btrfs "Btrfs") subvolumes to simulate partitions. NOTE: the EFI System Partition (ESP) cannot be encrypted. The layout shows an unencrypted [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an encrypted `/`. This is the setup that works with UEFI.
+The following example creates a full system encryption with LUKS using [Btrfs](/index.php/Btrfs "Btrfs") subvolumes to [simulate partitions](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
 
-Additionally an optional [swap](/index.php/Swap "Swap") partition is shown.
+If using UEFI, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required. `/boot` itself may reside on `/` and be encrypted; however, the ESP itself cannot be encrypted. In this example layout, the ESP is `/dev/sda*Y*` and is mounted at `/boot/ef`. `/boot` itself is located on the system partition, `/dev/sda*X*`.
+
+Since `/boot` resides on the encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[1]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
+
+Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partition is shown.
 
 **Warning:** Do not use a [swap file](/index.php/Swap_file "Swap file") instead of a separate partition, because this may result in data loss. See [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs").
 
@@ -852,39 +867,37 @@ Additionally an optional [swap](/index.php/Swap "Swap") partition is shown.
 
 ```
 
-If using BIOS instead of UEFI, a separate and unencrypted /boot is not absolutely necessary. `/boot` can reside on the encrypted `/`. However, in that case [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because (at this time) only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[1]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
-
 ### Preparing the disk
 
 **Note:** It is not possible to use btrfs partitioning as described in [Btrfs#Partitioning](/index.php/Btrfs#Partitioning "Btrfs") when using LUKS. Traditional partitioning must be used, even if it is just to create one partition.
 
 Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). If you are using [UEFI](/index.php/UEFI "UEFI") create an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an appropriate size. It will later be mounted at `/boot/efi`. If you are going to create an encrypted swap partition, create the partition for it, but do **not** mark it as swap, since plain *dm-crypt* will be used with the partition.
 
-Create the needed partitions, at least one for `/` (e.g. `/dev/sda*X*`). See [Partitioning](/index.php/Partitioning "Partitioning").
+Create the needed partitions, at least one for `/` (e.g. `/dev/sda*X*`). See the [Partitioning](/index.php/Partitioning "Partitioning") article.
 
 ### Preparing the system partition
 
-The following commands create and mount the encrypted system partition, which includes `/boot`. If you want to use particular non-default encryption options (e.g. cipher, key length), see the [encryption options](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before executing the first command:
+#### Create LUKS container
 
-```
-# cryptsetup -y -v luksFormat /dev/sda*X*
-# cryptsetup open /dev/sdaX cryptroot
-# mkfs -t btrfs -L *mylabel* /dev/mapper/cryptroot
-# mount -t btrfs -o compress=lzo /dev/mapper/cryptroot /mnt
+Follow [Dm-crypt/Device_encryption#Encrypting devices with LUKS mode](/index.php/Dm-crypt/Device_encryption#Encrypting_devices_with_LUKS_mode "Dm-crypt/Device encryption") to setup `/dev/sda*X*` for LUKS. See the [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before doing so for a list of encryption options.
 
-```
+#### Unlock LUKS container
 
-Check the mapping works as intended:
+Now follow [Dm-crypt/Device encryption#Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking.2FMapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption") to unlock the LUKS container and map it.
 
-```
-# umount /mnt
-# cryptsetup close cryptroot
-# cryptsetup open /dev/sdaX cryptroot
-# mount -t btrfs -o compress=lzo /dev/mapper/cryptroot /mnt
+#### Format mapped device
 
-```
+Proceed to format the mapped device as described in [Btrfs#File system on a single device](/index.php/Btrfs#File_system_on_a_single_device "Btrfs"), where `*/dev/partition*` is the name of the mapped device (i.e., `cryptroot`) and **not** `/dev/sda*X*`.
+
+#### Mount mapped device
+
+Finally, [mount](/index.php/Mount "Mount") the now-formatted mapped device (i.e., `/dev/mapper/cryptroot`) to `/mnt`.
+
+**Tip:** You may want to use the `compress=lzo` mount option. See [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs") for more information.
 
 ### Creating btrfs subvolumes
+
+#### Layout
 
 [Subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") will be used to simulate partitions, but other (nested) subvolumes will also be created. Here is a partial representation of what the following example will generate:
 
@@ -915,46 +928,40 @@ subvolid=5 (/dev/sda*X*)
 
 This section follows the [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper"), which is most useful when used with [Snapper](/index.php/Snapper "Snapper"). You should also consult [Btrfs Wiki SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout).
 
+#### Create top-level subvolumes
+
 Here we are using the convention of prefixing `@` to subvolume names that will be used as mount points, and `@` will be the subvolume that is mounted as `/`.
 
-```
-# btrfs subvolume create /mnt/@
-# btrfs subvolume create /mnt/@snapshots
-# btrfs subvolume create /mnt/@home
-
-```
+Following the [Btrfs#Creating a subvolume](/index.php/Btrfs#Creating_a_subvolume "Btrfs") article, create subvolumes at `/mnt/@`, `/mnt/@snapshots`, and `/mnt/@home`.
 
 Create any additional subvolumes you wish to use as mount points now.
 
-Unmount the system partition and mount the newly created `@` subvolume which will serve as `/`. Also mount the other subvolumes to their respective mount points.
+#### Mount top-level subvolumes
+
+Unmount the system partition at `/mnt`.
+
+Now mount the newly created `@` subvolume which will serve as `/` to `/mnt` using the `subvol=` mount option. Assuming the mapped device is named `cryptroot`, the command would look like:
 
 ```
-# umount /mnt
 # mount -o compress=lzo,subvol=@ /dev/mapper/cryptroot /mnt
-# mkdir -p /mnt/home
-# mount -o compress=lzo,subvol=@home /dev/mapper/cryptroot /mnt/home
-# mkdir -p /mnt/.snapshots
-# mount -o compress=lzo,subvol=@snapshots /dev/mapper/cryptroot /mnt/.snapshots
 
 ```
 
-Create any subvolumes you do **not** want to have snapshots of when taking a snapshot of `/`. For example, you probably do not want to take snapshots of `/var/cache/pacman/pkg`. These subvolumes will be nested under the `@` subvolume, but just as easily could have been created earlier at the same level as `@` according to your preference. For this example do:
+See [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs") for more details.
 
-```
-# mkdir -p /mnt/var/cache/pacman
-# btrfs subvolume create /mnt/var/cache/pacman/pkg
+Also mount the other subvolumes to their respective mount points: `@home` to `/mnt/home` and `@snapshots` to `/mnt/.snapshots`.
 
-```
+#### Create nested subvolumes
 
-Other directories you may wish to do this with are `/var/abs`, `/var/tmp`, `/tmp`, and `/srv`.
+Create any subvolumes you do **not** want to have snapshots of when taking a snapshot of `/`. For example, you probably do not want to take snapshots of `/var/cache/pacman/pkg`. These subvolumes will be nested under the `@` subvolume, but just as easily could have been created earlier at the same level as `@` according to your preference.
 
-If you prepared an EFI partition earlier, mount it now:
+Since the `@` subvolume is mounted at `/mnt` you will need to [create a subvolume](/index.php/Create_a_subvolume "Create a subvolume") at `/mnt/var/cache/pacman/pkg` for this example. You may have to create any parent directories first.
 
-```
-# mkdir -p /mnt/boot/efi
-# mount /dev/sda*Y* /mnt/boot/efi
+Other directories you may wish to do this with are `/var/abs`, `/var/tmp`, and `/srv`.
 
-```
+#### Mount ESP
+
+If you prepared an EFI system partition earlier, create its mount point and mount it now.
 
 **Note:** Btrfs snapshots will exclude `/boot/efi`, since it is not a btrfs file system.
 
@@ -962,38 +969,19 @@ At the [pacstrap](/index.php/Installation_guide#Install_the_base_packages "Insta
 
 ### Configuring mkinitcpio
 
+#### Create keyfile
+
 In order for GRUB to open the LUKS partition without having the user enter his passphrase twice, we will use a keyfile embedded in the initramfs. Follow [Dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") making sure to add the key to `/dev/sda*X*` at the *luksAddKey* step.
 
-After creating, adding, and embedding the key, add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+#### Edit mkinitcpio.conf
 
- `/etc/mkinitcpio.conf`  `HOOKS="... **encrypt** ... filesystems ..."` 
+After creating, adding, and embedding the key as described above, add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") as well as any other hooks you require. See [Dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for detailed information. Be sure to regenerate the initial ramdisk when finished.
 
-Add `/usr/bin/btrfs` to `BINARIES`, so that it is available if there is a problem booting the system later:
-
- `/etc/mkinitcpio.conf`  `BINARIES="/usr/bin/btrfs"` 
-
-Create a new initial RAM disk with:
-
-```
-# mkinitcpio -p linux
-
-```
+**Tip:** You may want to add `BINARIES="/usr/bin/btrfs"` to your `mkinitcpio.conf`. See the [Btrfs#Corruption recovery](/index.php/Btrfs#Corruption_recovery "Btrfs") article.
 
 ### Configuring the boot loader
 
-Add the following lines to `/etc/default/grub`:
-
- `/etc/default/grub` 
-```
-GRUB_CMDLINE_LINUX="...**cryptdevice=/dev/disk/by-uuid/*UUID*:cryptroot**..."
-GRUB_ENABLE_CRYPTODISK=y
-```
-
-where `*UUID*` is the UUID of the system partition (the UUID of `/dev/sda*X*`, **not** the UUID of `/dev/mapper/cryptroot`).
-
-See [GRUB#Encryption](/index.php/GRUB#Encryption "GRUB") for more details and options.
-
-Then proceed to install [GRUB](/index.php/GRUB "GRUB") to `/dev/sda` and generate the main GRUB configuration file.
+Install [GRUB](/index.php/GRUB "GRUB") to `/dev/sda`. Then, edit `/etc/default/grub` as instructed in the [GRUB#Encryption](/index.php/GRUB#Encryption "GRUB") article, following both the instructions for an encrypted root and boot partition. Finally, generate the GRUB configuration file.
 
 ### Configuring swap
 

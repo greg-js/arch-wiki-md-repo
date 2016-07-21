@@ -93,7 +93,7 @@ auth		required	pam_unix.so	use_first_pass
 
 ```
 
-Then do one of the following. I personally would highly recommend the HTTPS method, but the choice is yours. --[Gohu](/index.php?title=User:Gohu&action=edit&redlink=1 "User:Gohu (page does not exist)") 17:49, 24 April 2011 (EDT)
+Then choose one of the following.
 
 #### If using HTTPS to authenticate the validation server
 

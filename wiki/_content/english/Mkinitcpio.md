@@ -385,7 +385,7 @@ If your root device is on [LVM](/index.php/LVM "LVM"), see [Add lvm2 hook to mki
 
 ### Using encrypted root
 
-If using an [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"), the `encrypt` hook must be added after the `udev` hook and before `filesystems` and other hooks that may be needed. Specific kernel command line parameters also need to be passed depending on your bootloader: see [Dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for detailed information.
+If using an [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") see [Dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for detailed information on which hooks to include.
 
 ### /usr as a separate partition
 

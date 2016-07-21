@@ -76,7 +76,7 @@ A good example is cryptsetup using `/dev/urandom` for [wiping the LUKS keyslots]
 
 Other "features" like transparent compression (all SandForce SSD's) can compress your /dev/zero or pattern stream so if wiping is fast beyond belief this might be the case.
 
-Disassembling Flash memory devices, unsoldering the chips and analyzing data content without the controller in between is feasible without difficulty using [simple hardware](http://www.flash-extractor.com/manual/reader_models/). Data recovery companys do it for cheap money.
+Disassembling Flash memory devices, unsoldering the chips and analyzing data content without the controller in between is feasible without difficulty using [simple hardware](http://www.flash-extractor.com/manual/reader_models/). Data recovery companies do it for cheap money.
 
 For more information see:
 

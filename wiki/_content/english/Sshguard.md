@@ -96,8 +96,6 @@ To finish saving your iptables configuration. Repeat above steps with `ip6tables
 
 For more information on using iptables to create powerful firewalls, see [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
 
-The sshguard setup page, [here](http://www.sshguard.net/docs/setup/#netfilter-iptables), under "Here is a sample ruleset that makes sense", lists a slightly more elaborate, slightly more efficient ruleset that only allows services the host supports to even enter the sshguard rule chain.
-
 ## Usage
 
 ### systemd
@@ -151,17 +149,10 @@ Finally [restart](/index.php/Restart "Restart") the `sshguard.service` unit.
 
 ### Unbanning
 
-If you get banned, you can wait to get unbanned automatically or use iptables to unban yourself. First check if your ip is banned by sshguard:
+If you get banned, you can wait to get unbanned automatically or use iptables to unban yourself. First check if your IP is banned by sshguard:
 
 ```
-# iptables -L sshguard --line-numbers
-
-```
-
-Or this, which is a lot faster as it returns packet/byte counts and ip addresses instead of names (saves a lot of DNS lookups of probably bogus sites).
-
-```
-# iptables -L sshguard -v -n --line-numbers -v
+# iptables -L sshguard --line-numbers --numeric
 
 ```
 
@@ -172,7 +163,7 @@ Then use the following command to unban, with the line-number as identified in t
 
 ```
 
-You will also need to remove the ip address from `/var/db/sshguard/blacklist.db` in order to make unbanning persistent.
+You will also need to remove the IP address from `/var/db/sshguard/blacklist.db` in order to make unbanning persistent.
 
 ```
 # sed -i '/<ip-address>/d' /var/db/sshguard/blacklist.db
@@ -181,14 +172,9 @@ You will also need to remove the ip address from `/var/db/sshguard/blacklist.db`
 
 ### Logging
 
-If you aren't sure what is being passed to sshguard, you can add a tee command to the script in /usr/lib/system/scripts/sshguard-journalctl:
+To see what is being passed to sshguard, examine the script in `/usr/lib/systemd/scripts/sshguard-journalctl` and the systemd service `sshguard.service`. An equivalent command to view the logs in the terminal:
 
 ```
-#!/bin/sh
-SSHGUARD_OPTS=$1
-shift
-LANG=C /usr/bin/journalctl -afb -p info -n1 -o cat "$@" | tee -a /var/log/sshguard.log | /usr/bin/sshguard $SSHGUARD_OPTS
+$ journalctl -afb -p info SYSLOG_FACILITY=4 SYSLOG_FACILITY=10
 
 ```
-
-but use this with care, remember the warning about how a bad-guy can flood your system and potentially lock you out? This makes it a lot easier to do so.

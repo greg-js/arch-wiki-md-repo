@@ -241,7 +241,7 @@ esac
 
 To run commands dependening on [Xorg](/index.php/Xorg "Xorg"), defining the X display as well as the MIT magic cookie file (via XAUTHORITY) is required. Latter is a security credential providing read and write access to the X server, display, and any input devices (see `man xauth`).
 
-See [[1]](https://gist.githubusercontent.com/anonymous/a1f8537740aec26ebd8f/raw/a055bf052d58c8d711b89221638cf0bd00a0508f/acpid) for an example function when using [xinitrc](/index.php/Xinitrc "Xinitrc").
+See [[1]](https://gist.githubusercontent.com/AladW/de1c5676d93d05a5a0e1/raw/16e010ecda9f2328e1e22d4e02ac814ed27717b4/gistfile1.txt) for an example function when using [xinitrc](/index.php/Xinitrc "Xinitrc").
 
 **Note:**
 
@@ -255,6 +255,8 @@ In addition to rule files, acpid accepts connections on a UNIX domain socket, by
 ```
 #!/bin/bash
 coproc acpi_listen
+trap 'kill $COPROC_PID' EXIT
+
 while read -u ${COPROC[0]} -a event; do
     *handler.sh* ${event[@]}
 done

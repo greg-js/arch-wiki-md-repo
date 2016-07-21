@@ -528,9 +528,13 @@ Windows related links:
 
 *   Samsung drivers can be downloaded from [here](http://androidxda.com/download-samsung-usb-drivers).
 *   Odin can be downloaded from [here](https://www.androidfilehost.com/?fid=23501681358557126).
-*   Samsung Android firmwares can be downloaded from [here](http://www.sammobile.com/firmwares/).
+*   Samsung Android firmware can be downloaded from [here](http://www.sammobile.com/firmwares/).
 
-If you want to make sure that everything is working and ready, connect your Samsung device turned on into a Download mode, and open Odin. The white box (a big one at the bottom-left) named **Message**, should print a line similar to this:
+If you want to make sure that everything is working and ready:
+
+1.  Turn your device into Download mode and connect to your Linux machine.
+2.  In virtual machine toolbar, select `devices` --> `USB` --> `...Samsung...` device.
+3.  Open Odin. The white box (a big one at the bottom-left side) named **Message**, should print a line similar to this:
 
 ```
 <ID:0/003> Added!!

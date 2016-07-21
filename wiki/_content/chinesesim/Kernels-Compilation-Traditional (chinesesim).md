@@ -1,212 +1,269 @@
+**翻译状态：** 本文是英文页面 [Kernels/Traditional_compilation](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-20，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels/Traditional_compilation&diff=0&oldid=442198)可以查看翻译后英文页面的改动。
+
 以下的一些步骤有助于你从 **kernel.org 源代码** 编译自己的内核。这种方法是一种对所有发行版均适用的传统方法；但同时，本文也包含了用 makepkg 和 pacman 干净安装自己的内核的优秀方法。
 
 另外你可以选择用 [ABS 工具](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)") 建立并安装你的内核；参见 [用ABS工具编译内核](/index.php/Kernels/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernels/Arch Build System (简体中文)")。使用已有的 [linux](https://www.archlinux.org/packages/?name=linux) PKGBUILD 文件可以自动化大多数过程并生成一个软件包，然而，一些 Arch 使用者更喜欢用**传统**方法。
 
 ## Contents
 
-*   [1 获取源码](#.E8.8E.B7.E5.8F.96.E6.BA.90.E7.A0.81)
-    *   [1.1 /usr/src/怎么样?](#.2Fusr.2Fsrc.2F.E6.80.8E.E4.B9.88.E6.A0.B7.3F)
-*   [2 构建配置](#.E6.9E.84.E5.BB.BA.E9.85.8D.E7.BD.AE)
-    *   [2.1 编译前设置](#.E7.BC.96.E8.AF.91.E5.89.8D.E8.AE.BE.E7.BD.AE)
-    *   [2.2 设置内核](#.E8.AE.BE.E7.BD.AE.E5.86.85.E6.A0.B8)
-        *   [2.2.1 传统菜单配置（menuconfig）](#.E4.BC.A0.E7.BB.9F.E8.8F.9C.E5.8D.95.E9.85.8D.E7.BD.AE.EF.BC.88menuconfig.EF.BC.89)
-        *   [2.2.2 localmodconfig](#localmodconfig)
-        *   [2.2.3 本地版本](#.E6.9C.AC.E5.9C.B0.E7.89.88.E6.9C.AC)
+*   [1 准备](#.E5.87.86.E5.A4.87)
+    *   [1.1 安装核心软件包](#.E5.AE.89.E8.A3.85.E6.A0.B8.E5.BF.83.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [1.2 创建内核编译目录](#.E5.88.9B.E5.BB.BA.E5.86.85.E6.A0.B8.E7.BC.96.E8.AF.91.E7.9B.AE.E5.BD.95)
+    *   [1.3 获取源码](#.E8.8E.B7.E5.8F.96.E6.BA.90.E7.A0.81)
+    *   [1.4 解压内核代码](#.E8.A7.A3.E5.8E.8B.E5.86.85.E6.A0.B8.E4.BB.A3.E7.A0.81)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
+    *   [2.1 简单配置](#.E7.AE.80.E5.8D.95.E9.85.8D.E7.BD.AE)
+    *   [2.2 导出当前内核设置](#.E5.AF.BC.E5.87.BA.E5.BD.93.E5.89.8D.E5.86.85.E6.A0.B8.E8.AE.BE.E7.BD.AE)
+        *   [2.2.1 用 localmodconfig 生成配置](#.E7.94.A8_localmodconfig_.E7.94.9F.E6.88.90.E9.85.8D.E7.BD.AE)
+    *   [2.3 高级配置](#.E9.AB.98.E7.BA.A7.E9.85.8D.E7.BD.AE)
 *   [3 编译和安装](#.E7.BC.96.E8.AF.91.E5.92.8C.E5.AE.89.E8.A3.85)
-    *   [3.1 编译](#.E7.BC.96.E8.AF.91)
-    *   [3.2 安装模块](#.E5.AE.89.E8.A3.85.E6.A8.A1.E5.9D.97)
+    *   [3.1 编译内核](#.E7.BC.96.E8.AF.91.E5.86.85.E6.A0.B8)
+    *   [3.2 编译内核模块](#.E7.BC.96.E8.AF.91.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
     *   [3.3 拷贝内核到 /boot 目录](#.E6.8B.B7.E8.B4.9D.E5.86.85.E6.A0.B8.E5.88.B0_.2Fboot_.E7.9B.AE.E5.BD.95)
     *   [3.4 制作初始化内存盘](#.E5.88.B6.E4.BD.9C.E5.88.9D.E5.A7.8B.E5.8C.96.E5.86.85.E5.AD.98.E7.9B.98)
+        *   [3.4.1 自动生成](#.E8.87.AA.E5.8A.A8.E7.94.9F.E6.88.90)
+        *   [3.4.2 手动方法](#.E6.89.8B.E5.8A.A8.E6.96.B9.E6.B3.95)
     *   [3.5 拷贝System.map](#.E6.8B.B7.E8.B4.9DSystem.map)
 *   [4 Bootloader 设置](#Bootloader_.E8.AE.BE.E7.BD.AE)
-*   [5 在自定义内核下使用nVIDIA视频驱动](#.E5.9C.A8.E8.87.AA.E5.AE.9A.E4.B9.89.E5.86.85.E6.A0.B8.E4.B8.8B.E4.BD.BF.E7.94.A8nVIDIA.E8.A7.86.E9.A2.91.E9.A9.B1.E5.8A.A8)
 
-## 获取源码
+## 准备
 
-*   先从 `[ftp://ftp.xx.kernel.org/pub/linux/kernel/](ftp://ftp.xx.kernel.org/pub/linux/kernel/)` 或者 `[http://www.kernel.org/pub/linux/kernel/](http://www.kernel.org/pub/linux/kernel/)`获得源码, xx 是你的国家代号 (f.e. 'us', 'uk', 'de', ... - 查看 [完整的镜像列表](http://www.kernel.org))。 如果你没有图形界面的ftp程序，你可以用`wget`。例如，我们可以获取3.2.9的源码并编译；你可以将版本号改成你所需要的版本号。
+准备编译时，不需要也不建议使用 root 账号或用 [Sudo](/index.php/Sudo "Sudo") 等工具获取 root 权限。
 
-例:
+### 安装核心软件包
+
+安装 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 软件组，这个组包含了 [make](https://www.archlinux.org/packages/?name=make) 和 [gcc](https://www.archlinux.org/packages/?name=gcc) 等需要的软件包。同时也建议参考 Arch kernel [PKGBUILD](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/linux) 安装下面的软件包：[xmlto](https://www.archlinux.org/packages/?name=xmlto), [docbook-xsl](https://www.archlinux.org/packages/?name=docbook-xsl), [kmod](https://www.archlinux.org/packages/?name=kmod), [inetutils](https://www.archlinux.org/packages/?name=inetutils), [bc](https://www.archlinux.org/packages/?name=bc)
+
+### 创建内核编译目录
+
+建议创建单独的内核编译目录，本文使用 `home` 下的 `kernelbuild` 目录。
 
 ```
-$ wget -c [http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.2.9.tar.bz2](http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.2.9.tar.bz2)
+$ mkdir ~/kernelbuild
 
 ```
+
+### 获取源码
 
 *   验证下载到的任何tar压缩包的签名总是好的做法。参见[kernel.org/signature](http://kernel.org/signature.html#using-gnupg-to-verify-kernel-signatures)以了解此如何运作及其他细节。
+*   [systemd](/index.php/Systemd "Systemd") 需要 3.11 或更新版本，需要 [cgroups](/index.php/Cgroups "Cgroups") 架构支持的话，需要 4.2 或更新的版本，参考 `/usr/share/systemd/README`。
 
-*   将源码拷贝到你的构建目录:
+从 [http://www.kernel.org](http://www.kernel.org) 获得源码, 应该是 [tarball](https://en.wikipedia.org/wiki/Tar_(computing) (`tar.xz`) 文件。可以在浏览器右击 `tar.xz` 链接下载或通过 [FTP](/index.php/Ftp#FTP "Ftp"), [RSYNC](/index.php/Rsync "Rsync") 或 [Git](/index.php/Git "Git") 下载，下面例子中使用 [wget](https://www.archlinux.org/packages/?name=wget) 下载 3.18 内核到 `~/kernelbuild` 目录:
+
+```
+$ cd ~/kernelbuild
+$ wget [https://kernel.org/pub/linux/kernel/v3.x/linux-3.18.28.tar.xz](https://kernel.org/pub/linux/kernel/v3.x/linux-3.18.28.tar.xz)
+
+```
+
+将源码拷贝到你的构建目录:
 
 ```
 $ cp linux-3.2.9.tar.bz2 ~/kernelbuild/
 
 ```
 
+### 解压内核代码
+
 *   将其解压后进入源码目录:
 
 ```
-$ cd ~/kernelbuild
-$ tar -xvjf linux-3.2.9.tar.bz2
-$ cd linux-3.2.9
+$ tar -xvJf linux-3.18.28.tar.xz
 
 ```
 
-运行如下命令以进行编译准备工作：
+为确保内核树绝对干净，进入内核目录并执行 `make mrproper` 命令:
 
 ```
-make mrproper
-
-```
-
-该命令确保内核树绝对干净。内核组推荐每次编译内核前都执行该命令。而不要依靠解压后的内核树是干净的。
-
-### /usr/src/怎么样?
-
-作为root用户，使用/usr/src目录编译内核，并创建相关链接，被某些黑客认为是糟糕的习惯。他们认为最干净的方法是仅使用家目录。如果你认同该观点，请作为普通用户构建和配置你的内核，然后作为root用户安装，或者[用makepkg和pacman](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System").
-
-然而，该观点受到争议，其他那些经验丰富的黑客认为作为root在/usr/src/目录下编译的习惯完全安全，可接受，甚至要更好。
-
-所以，你只要选择你认为更舒服的方式就好。
-
-## 构建配置
-
-这是定制精确适配你的电脑的规格的内核的最关键步骤。通过在'menuconfig'中设置合适的配置，你的内核和电脑将会以最有效的方式运行。
-
-### 编译前设置
-
-可选，但是对于初学者强烈推荐：
-
-*   如果你想更改默认的Arch设置，拷贝正在运行的内核的配置文件（.config文件）。
-
-```
- $ zcat /proc/config.gz > .config
+$ cd linux-3.18.28
+$ make clean && make mrproper
 
 ```
 
-*   注意`lsmod`输出的当前载入的模块。该输出结果在每个系统上都不一样。
+## 配置
 
-### 设置内核
+这是定制精确适配你的电脑的规格的内核的最关键步骤。内核及[内核模块](/index.php/Kernel_modules "Kernel modules")的配置通过 `.config` 设置。不需要 root 权限就能进行内核配置。
 
-**警告:** 如果为了早期的KMS，将较新的显卡的*radeon*驱动编译进内核（>3.3.3），你**必须**包括你的显卡的固件文件。否者加速将失效。参见[这里](http://wiki.x.org/wiki/radeonBuildHowTo#Missing_Extra_Firmware)
+### 简单配置
 
-**Tip:** 通过***简单的配置***是有可能配置出一个无initramfs的内核的。确保显卡/输入/磁盘/文件系统所需的所有模块都被编译进内核。同时至少支持DEVTMPFS_MOUNT，TMPFS，AUTOFS4_FS。如果有疑问，*在尝试编译之前*，请了解这些选项和其含义。
+**Note:** 定制的内核可以配置使用和 Arch 内核不同的功能，`y` 是启用, `n` 是禁用, `m` 是需要时启用.
 
-有两个主流选择:
+参考使用下面内容可以节省时间：
 
-#### 传统菜单配置（menuconfig）
+*   使用 Arch 官方内核的设置(推荐)
+*   生成正在运行内核的配置文件和设置。
 
-`$ make menuconfig`
+### 导出当前内核设置
 
-该命令将启动一个全新的`.config`配置文件，除非已经存在一个（例如拷贝过来的）配置文件。选项依赖会自动被选中。而新选项（例如用一个旧版本的内核`.config`配置文件）不一定会自动被选中。
-
-改变配置文件并保存。在源代码目录外备份.config文件是明智之举，因为你可能需要编译多次，直到所有的选项都配置正确。如果不确定每个选项的含义，每次编译只改变少量选项。如果无法启动新构建的内核，参见[这里](https://www.archlinux.org/news/users-of-unofficial-kernels-must-enable-devtmpfs-support/)查看必须的配置项列表。从liveCD运行`$ lspci -k #`以列出使用中的内核模块的名字。最重要的是，你必须保持CGROUPS支持。对[systemd](/index.php/Systemd "Systemd")来说，它是必须的。
-
-#### localmodconfig
-
-自2.6.32版本内核以来，该构建选项被用于最简化配置步骤。这是新手的超级捷径，应当只选择那些当前被使用的选项。
-
-为获得最大效用：
-
-1.  启动进入备用`-ARCH`内核，然后插上所有你希望在系统上使用的设备。
-2.  在源码目录中运行：`$ make localmodconfig`
-3.  配置结果会被写入到`.config`文件。然后你可以进行普通构建安装过程。
-
-#### 本地版本
-
-如果你用当前配置文件编译内核，不要忘记重命名你的内核版本，否者你可能错误地使用一个已存在的内核版本。
+导出正在运行的内核的 .config 配置文件:
 
 ```
-$ make menuconfig
-General setup  --->
- (-ARCH) Local version - append to kernel release '3.n.n-RCn'
+$ zcat /proc/config.gz > .config
 
 ```
+
+**警告:** 如果使用导出的 `.config` 文件，不要忘了在 `General Setup --->` 选项中修改内核版本，这样可以避免编译的内核覆盖当前内核文件。
+
+#### 用 localmodconfig 生成配置
+
+**Tip:** 使用此方法是，请插上所有需要使用的设备。
+
+自 2.6.32 版本内核开始，可以使用 `localmodconfig` 命令创建 `.config` 文件。当前内核没有被使用的选项都会被禁用。也就是说，只会启用当前在使用的选项。
+
+虽然这个方法可以生成一个非常精简高效的内核，也是有缺点的，例如无法支持新硬件、外围设备或其它功能。
+
+```
+$ make localmodconfig
+
+```
+
+### 高级配置
+
+**Tip:** 如果不想在启动和关闭时看到很多内核输出，可以禁用相关的调试选项。
+
+有多种方式可以协助配置内核：
+
+*   `make menuconfig`: 老的 ncurses 界面，被 `nconfig` 取代
+*   `make nconfig`: 新的命令行 ncurses 界面
+*   `make xconfig`: 用户友好的图形界面，需要安装 [packagekit-qt4](https://www.archlinux.org/packages/?name=packagekit-qt4)。建议没有经验的用户使用此方法。
+*   `make gconfig`: 和 xconfig 类似的图形界面，使用 gtk.
+
+在内核源代码目录执行选择的方法，将生成一个全新的`.config`，可选参数默认是选中的，但是如果有老内核的 `.config` 文件，这些参数不一定会被选中。
+
+改变配置文件并保存。建议在源代码目录外备份`.config`,因为你可能需要编译多次，直到所有的选项都配置正确。如果不确定每个选项的影响，每次编译只改变少量选项。如果无法启动新构建的内核，参见[这里](https://www.archlinux.org/news/users-of-unofficial-kernels-must-enable-devtmpfs-support/)查看必须的配置项列表。从liveCD运行`$ lspci -k #`以列出使用中的内核模块的名字。最重要的是，你必须保留 [systemd](/index.php/Systemd "Systemd") 需要的 CGROUPS 支持。
 
 ## 编译和安装
 
-如果你手动编译和安装的话，见下面的步骤：
+如果希望 [gcc](https://www.archlinux.org/packages/?name=gcc) 根据处理器指令集进行优化， 编辑内核目录下的 `arch/x86/Makefile` (i686) 或 `arch/x86_64/Makefile` (86_64)文件：
 
-### 编译
+*   查找 `Processor type and features > Processor Family` 中设置的处理器系列 `CONFIG_MK8,CONFIG_MPSC,CONFIG_MCORE2,CONFIG_MATOM,CONFIG_GENERIC_CPU`
+*   将 cc 调用选项设置为 `-march=native`，例如 `cflags-$(CONFIG_MK8) += $(call cc-option,-march=native)`.
 
-**警告:** 如果你用的是 GRUB，并且同时装有 LILO，不要运行 `make all` ； 因它最后会设置 LILO，这样你可能再也不能启动你的机器了。如果你使用的是 GRUB， 先卸载 LILO(pacman -R lilo)，然后执行`make all`。
+对 32bit 内核，需要编辑 `arch/x86/Makefile_32.cpu` 并设置处理器的 `-march=native`。
 
-*   开始编译。
+### 编译内核
 
-```
-$ make      (等效于make vmlinux && make modules && make bzImage——关于这方面，参见‘make help’以获取详细信息。)
-
-```
-
-or
+编译时间将从15分钟到超过一小时不等。这很大程度依赖于选择了多少选项/模块和处理器性能。详情参考 [Makeflags](/index.php/Makepkg#MAKEFLAGS "Makepkg")。`.config` 配置好之后，在内核目录允许：
 
 ```
-$ make -jN   (N = 处理器数目 + 1) (该选项使得编译时100%使用所有的CPUs。)
+$ make
 
 ```
 
-编译时间将从15分钟到超过一小时不等。这很大程度依赖于选择了多少选项/模块和处理器性能。
+### 编译内核模块
 
-### 安装模块
+**Warning:** 从这里开始，需要 root 权限执行命令，否则会失败.
+
+编译完内核后编译模块:
 
 ```
 # make modules_install
 
 ```
 
-该命令将编译好的模块拷贝至`/lib/modules/`[内核版本号 + CONFIG_LOCALVERSION]。这样，这些模块和那些被你电脑上其他内核使用的模块就独立开来。
+该命令将编译好的模块拷贝至 `/lib/modules/<kernel version>-<config local version>`，例如 `/lib/modules/3.18.28-ARCH`。这样，这些模块和那些被你电脑上其他内核使用的模块就独立开来。
+
+**Tip:** 如果系统需要正常 Linux 内核外的模块，需要在定制内核安装完成之后重新编译它们。Nvidia 显卡模块可以参考 [NVIDIA#Alternate install: custom kernel](/index.php/NVIDIA#Alternate_install:_custom_kernel "NVIDIA")。
 
 ### 拷贝内核到 /boot 目录
 
+内核编译完成后会生成内核的 `bzImage` (big zImage) 文件，根据系统架构，将此文件复制到 `/boot` 目录，以 3.18 内核为例：
+
+*   32-bit (i686) kernel:
+
 ```
-# cp -v arch/x86/boot/bzImage /boot/vmlinuz-YourKernelName
+# cp -v arch/x86/boot/bzImage /boot/vmlinuz-linux318
+
+```
+
+*   64-bit (x86_64) kernel:
+
+```
+# cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-linux318
 
 ```
 
 ### 制作初始化内存盘
 
-初始化内存盘（GRUB菜单中的initrd选项，或，“initramfs-YourKernelName.img”文件）是一个在真正的根文件系统可访问之前被挂载的初始化根目录文件系统。初始化内存盘（initrd）被绑定到对应的内核，且作为内核启动过程的一部分被载入。内核将该初始化内存盘（initrd）作为两阶段启动过程的一部分挂载起来，以载入模块使得真正的文件系统可用，然后得到真正的根文件系统。初始化内存盘包含实现以上过程的目录和可执行文件的最小集合，例如用来将内核模块安装到内核的insmod工具。对桌面或服务器Linux系统来说，初始化内存盘(initrd)就是一个临时的文件系统。其生命周期短暂，仅作为到真正的根文件系统的桥梁。在没有可变存储的嵌入式系统中，初始化内存盘就是永久的根文件系统。
+初始化内存盘，是一个在真正的根文件系统可访问之前被挂载的初始化根目录文件系统。初始化内存盘（initrd）被绑定到对应的内核，且作为内核启动过程的一部分被载入。内核将该初始化内存盘（initrd）作为两阶段启动过程的一部分挂载起来，以载入模块使得真正的文件系统可用，然后得到真正的根文件系统。初始化内存盘包含实现以上过程的目录和可执行文件的最小集合，例如用来将内核模块安装到内核的insmod工具。对桌面或服务器Linux系统来说，初始化内存盘(initrd)就是一个临时的文件系统。其生命周期短暂，仅作为到真正的根文件系统的桥梁。在没有可变存储的嵌入式系统中，初始化内存盘就是永久的根文件系统。参考 [Initramfs on Wikipedia](https://en.wikipedia.org/wiki/Initrd "wikipedia:Initrd") 和 [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")。
 
-如果挂载根文件系统需要你载入任何模块，创建一个内存盘（大部分用户需要这样做）。-k参数接收内核版本，然后追加到你在menuconfig中设置的字符串之后，该字符串被用于定位'/usr/lib/modules'中的相应模块目录。
+/boot 中的文件可以取任何名字。然而，为了方便区分，建议采取统一的命名规范，例如使用 `linux<major revision><minor revision>`。
+
+如果你使用LILO且其无法与内核设备映射器驱动连通，你可能需要先运行`modprobe dm-mod`命令。
+
+#### 自动生成
+
+复制和修改 [mkinitcpio preset](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")，就能用官方内核一样的方式生成自定义内核的 initramfs 镜像。下面例子中将已有的 preset 复制到 `linux318` 要使用的版本:
 
 ```
-# mkinitcpio -k FullKernelName -c /etc/mkinitcpio.conf -g /boot/initramfs-YourKernelName.img
+# cp /etc/mkinitcpio.d/linux.preset /etc/mkinitcpio.d/linux318.preset
 
 ```
 
-You are free to name the /boot files anything you want. However, using the [kernel-major-minor-revision] naming scheme helps to keep order if you: Keep multiple kernels/ Use mkinitcpio often/ Build third-party modules. 你可以为以上命令中/boot中的文件取任何名字。然而，如果你：使用多个内核/经常使用mkinitcpio/构建第三方模块，使用[内核名-主版本号-次版本号-修订版本号]的命名方案可以保持命名的一致性。
+针对定制内核编辑和修改此文件，`ALL_kver=` 应该和定制内核匹配：
 
-**Tip:** 如果经常重构镜像，用类似`# mkinitcpio -p custom`的命令创建一个独立的预先设置文件可能会有帮助。参见[这里](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")
+ `/etc/mkinitcpio.d/linux318.preset` 
+```
+...
+ALL_kver="/boot/vmlinuz-linux318"
+...
+default_image="/boot/initramfs-linux318.img"
+...
+fallback_image="/boot/initramfs-linux318-fallback.img"
+```
 
-If you are using LILO and it cannot communicate with the kernel device-mapper driver, you have to run `modprobe dm-mod` first. 如果你使用LILO且其无法与内核设备映射器驱动连通，你可能需要先运行`modprobe dm-mod`命令。
+用官方内核一样的方式生成 initramfs 镜像：
+
+```
+# mkinitcpio -p linux318
+
+```
+
+#### 手动方法
+
+不是呀 preset 文件，可以用 mkinitcpio 手动生成：
+
+```
+# mkinitcpio -k <kernelversion> -g /boot/initramfs-<file name>.img
+
+```
+
+*   `-k` (--kernel <kernelversion>): 生成 initramfs image 的内核版本. `<kernelversion>` 需要和内核源代码目录和`/usr/lib/modules/`下的模块目录一致.
+*   `-g` (--generate <filename>): 要生成的 initramfs 文件。
+
+示例：
+
+```
+# mkinitcpio -k linux-3.18.28 -g /boot/initramfs-linux318.img
+
+```
 
 ### 拷贝System.map
 
-System.map文件非Linux启动必须的。它是一种“电话本”，列出内核的某够特定构建的功能。System.map包含一张内核标识符的列表（例如函数名，变量名等等）和他们相应的地址。该“标识符到地址的映射”是用于：
+`System.map`文件并非 Linux 启动必须的。它是一种“电话本”，列出内核的某够特定构建的功能。System.map 包含一张内核标识符的列表（例如函数名，变量名等等）和他们相应的地址。该“标识符到地址的映射”是用于：
 
 *   某些进程，像klogd, ksymoops等
 *   OOPS处理程序，当内核崩溃出错信息释放到屏幕时（例如类似于内核在某个函数中崩溃了的信息）。
 
-将System.map拷贝到/boot目录然后创建链接：
+**Tip:** UEFI partitions are formatted using FAT32, which does not support symlinks.
+
+如果 `/boot` 支持软链接(i.e., not FAT32), 将 `System.map` 复制到 `/boot`, 然后创建 `/boot/System.map` 软链接到 `/boot/System.map-YourKernelName`:
 
 ```
 # cp System.map /boot/System.map-YourKernelName
+# ln -sf /boot/System.map-YourKernelName /boot/System.map
 
 ```
 
 完成以上所有步骤之后，你的/boot目录中应该多出以下三个文件和一个软链接：
 
-```
-vmlinuz-YourKernelName          (Kernel)
-initramfs-YourKernelName.img    (Ramdisk)
-System.map-YourKernelName       (System Map)
-
-```
+*   Kernel: `vmlinuz-YourKernelName`
+*   Initramfs: `Initramfs-YourKernelName.img`
+*   System Map: `System.map-YourKernelName`
+*   System Map kernel symlink
 
 ## Bootloader 设置
 
-在你的启动器（bootloader）配置文件中为你神奇的新内核添加一个入口——范例见[GRUB](/index.php/GRUB "GRUB"), [LILO](/index.php/LILO "LILO"), [GRUB2](/index.php/GRUB2 "GRUB2") or [Syslinux](/index.php/Syslinux "Syslinux")。
+在你的启动器（bootloader）配置文件中为你神奇的新内核添加一个入口。范例见[GRUB](/index.php/GRUB "GRUB"), [LILO](/index.php/LILO "LILO"), [GRUB2](/index.php/GRUB2 "GRUB2") or [Syslinux](/index.php/Syslinux "Syslinux")。
 
 **Tip:** 内核源码中有一个为LILO准备的脚本，以自动化实现该步骤：`$ arch/x86/boot/install.sh`。记得以root权限执行`lilo`来更新它。
-
-## 在自定义内核下使用nVIDIA视频驱动
-
-想在你自己编译的内核下用nVIDIA 视频驱动，参见: [如何为定制内核安装 nVIDIA 驱动](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.A4.87.E7.94.A8.E5.AE.89.E8.A3.85.EF.BC.9A.E5.AE.9A.E5.88.B6.E5.86.85.E6.A0.B8 "NVIDIA (简体中文)").

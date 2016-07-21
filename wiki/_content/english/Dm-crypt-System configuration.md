@@ -23,7 +23,7 @@ When encrypting a system it is necessary to regenerate the initial ramdisk after
 *   `shutdown`: deprecated, not necessary [anymore](https://mailman.archlinux.org/pipermail/arch-dev-public/2013-December/025742.html).
 *   `keymap`: provides support for foreign keymaps for typing encryption passwords; it must come *before* the `encrypt` hook.
 *   `keyboard`: needed to make USB keyboards work in early userspace.
-    *   `usbinput`: deprecated, but can be given a try in case `keyboard` does not work.
+*   `usbinput`: deprecated, but can be given a try in case `keyboard` does not work.
 
 Other hooks needed should be clear from other manual steps followed during the installation of the system.
 

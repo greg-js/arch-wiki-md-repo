@@ -39,6 +39,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### July 2016
 
+*   [20 July 2016] [ASA-201607-8](https://lists.archlinux.org/pipermail/arch-security/2016-July/000668.html) [bind](https://www.archlinux.org/packages/?name=bind) denial of service
 *   [18 July 2016] [ASA-201607-7](https://lists.archlinux.org/pipermail/arch-security/2016-July/000667.html) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) multiple issues
 *   [18 July 2016] [ASA-201607-6](https://lists.archlinux.org/pipermail/arch-security/2016-July/000666.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) multiple issues
 *   [17 July 2016] [ASA-201607-5](https://lists.archlinux.org/pipermail/arch-security/2016-July/000665.html) [gimp](https://www.archlinux.org/packages/?name=gimp) arbitrary code execution

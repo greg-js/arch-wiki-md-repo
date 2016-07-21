@@ -59,6 +59,8 @@ A alternative to installing and configuring your own *ownCloud* is to use a 3rd 
 
 [Install](/index.php/Install "Install") the [owncloud](https://www.archlinux.org/packages/?name=owncloud) package.
 
+**Note:** When the Arch owncloud package is updated via pacman, it may become necessary to connect via the web interface to manually trigger an update of the associated files. Failure to do so will render the mobile app unable to connect.
+
 Uncomment the following [required](https://doc.owncloud.org/server/8.2/admin_manual/installation/source_installation.html#prerequisites) extensions in `/etc/php/php.ini`:
 
 ```

@@ -546,9 +546,9 @@ $ rvm install 1.8.7 -C --with-openssl-dir=$HOME/.rvm/usr
 It may be necessary to patch 1.8.7:
 
 ```
-$ wget [http://redmine.ruby-lang.org/attachments/download/1931/stdout-rouge-fix.patch](http://redmine.ruby-lang.org/attachments/download/1931/stdout-rouge-fix.patch)
+$ wget [https://gist.githubusercontent.com/waseem/0e8607e443bcd0b3e60cfad56cd9999b/raw/2083ae1cc7643174bb291fce8c25b1b643d91af7/ssl.patch](https://gist.githubusercontent.com/waseem/0e8607e443bcd0b3e60cfad56cd9999b/raw/2083ae1cc7643174bb291fce8c25b1b643d91af7/ssl.patch)
 $ rvm remove 1.8.7
-$ rvm install --patch Downloads/stdout-rouge-fix.patch ruby-1.8.7-p352
+$ rvm install --patch ./ssl.patch ruby-1.8.7-p352
 
 ```
 

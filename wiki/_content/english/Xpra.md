@@ -17,6 +17,7 @@ Xpra is '[screen](/index.php/Screen "Screen") for X': it allows you to run X pro
         *   [3.1.2 Client](#Client)
             *   [3.1.2.1 Method 1: .xinitrc](#Method_1:_.xinitrc)
             *   [3.1.2.2 Method 2: systemd user session](#Method_2:_systemd_user_session)
+    *   [3.2 Error: Only console users are allowed to run the X server](#Error:_Only_console_users_are_allowed_to_run_the_X_server)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -161,6 +162,18 @@ Example:
  `xpra-client@ssh:myuser@example.com:7.service` 
 
 [Enable that service](/index.php/Daemons "Daemons"), and remember to use the `--user` flag on `systemctl`.
+
+### Error: Only console users are allowed to run the X server
+
+If the execution fails with this error message in the log file you need to make the following changes:
+
+Create the file /etc/X11/Xwrapper.config with the content
+
+ `/etc/X11/Xwrapper.config` 
+```
+allowed_users=anybody
+
+```
 
 ## See also
 

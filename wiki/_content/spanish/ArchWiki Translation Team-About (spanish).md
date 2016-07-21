@@ -95,7 +95,7 @@ En el afán de trasladar ese esfuerzo colectivo a los usuarios de habla hispana,
 *   [Emiralle](/index.php/User:Emiralle "User:Emiralle") - Logro bastante bien el trabajo más grueso, pero agradecería muchísimo si alguien podría revisar mis traducciones.
 *   [Fran](/index.php/User:Fmgb92 "User:Fmgb92") - Estoy dispuesto a ayudar. Mis conocimientos son algo básicos, pero me gustaría ayudar. [email](/index.php/Special:EmailUser/Fmgb92 "Special:EmailUser/Fmgb92")
 *   [Helena](/index.php/User:Helena_ryuu "User:Helena ryuu") - creo que mi ingles es bueno y mi área es traducir artículos que aún no estén en español.
-*   [Jimmy Montano](/index.php/User:JimmyMontano "User:JimmyMontano") - Me interesa apoyar en lo que sea posible.
+*   [Jimmy Montano](/index.php/User:JimmyMontano "User:JimmyMontano") - Me interesa apoyar en lo que sea posible. [email](/index.php/Special:EmailUser/JimmyMontano "Special:EmailUser/JimmyMontano")
 *   [Son_link](/index.php?title=User:Son_link&action=edit&redlink=1 "User:Son link (page does not exist)") - Mi ingles es básico, pero puedo traducir entradas fáciles de entender o no muy largas.
 *   [Zap](/index.php?title=User:Zap&action=edit&redlink=1 "User:Zap (page does not exist)")
 *   [Miguel](/index.php/User:Zodiac_es "User:Zodiac es") - Mi inglés va mejorando, reviso artículos traducidos e intento iniciar algunas traducciones. [Enviar Email](/index.php/Special:EmailUser/zodiac_es "Special:EmailUser/zodiac es")

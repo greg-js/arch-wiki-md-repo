@@ -17,15 +17,16 @@
 *   [6 Delete a snapshot](#Delete_a_snapshot)
 *   [7 Access for non-root users](#Access_for_non-root_users)
 *   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 Wrapping pacman transactions in snapshots](#Wrapping_pacman_transactions_in_snapshots)
-    *   [8.2 Suggested filesystem layout](#Suggested_filesystem_layout)
-        *   [8.2.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
-        *   [8.2.2 Restoring / to a previous snapshot of @](#Restoring_.2F_to_a_previous_snapshot_of_.40)
-    *   [8.3 Deleting files from snapshots](#Deleting_files_from_snapshots)
-    *   [8.4 Preventing slowdowns](#Preventing_slowdowns)
-        *   [8.4.1 updatedb](#updatedb)
-        *   [8.4.2 Incremental backup to external drive](#Incremental_backup_to_external_drive)
-    *   [8.5 Preserving log files](#Preserving_log_files)
+    *   [8.1 Snapshots on boot](#Snapshots_on_boot)
+    *   [8.2 Wrapping pacman transactions in snapshots](#Wrapping_pacman_transactions_in_snapshots)
+    *   [8.3 Suggested filesystem layout](#Suggested_filesystem_layout)
+        *   [8.3.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
+        *   [8.3.2 Restoring / to a previous snapshot of @](#Restoring_.2F_to_a_previous_snapshot_of_.40)
+    *   [8.4 Deleting files from snapshots](#Deleting_files_from_snapshots)
+    *   [8.5 Preventing slowdowns](#Preventing_slowdowns)
+        *   [8.5.1 updatedb](#updatedb)
+        *   [8.5.2 Incremental backup to external drive](#Incremental_backup_to_external_drive)
+    *   [8.6 Preserving log files](#Preserving_log_files)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Snapper logs](#Snapper_logs)
     *   [9.2 IO error](#IO_error)
@@ -230,6 +231,31 @@ Eventually, you want to be able to browse the `.snapshots` directory with a user
 
 ## Tips and tricks
 
+### Snapshots on boot
+
+One can setup a [systemd](/index.php/Systemd "Systemd") unit and timer to have snapper create snapshots on boot:
+
+ `/etc/systemd/system/snapper-boot.timer` 
+```
+[Unit]
+Description=Take snapper snapshot of root on boot
+
+[Timer]
+OnBootSec=1
+
+[Install]
+WantedBy=basic.target
+```
+ `/etc/systemd/system/snapper-boot.service` 
+```
+[Unit]
+Description=Take snapper snapshot of root on boot
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/snapper -c root create --description "boot"
+```
+
 ### Wrapping pacman transactions in snapshots
 
 There are a couple of packages used for automatically creating snapshots upon a pacman transaction:
@@ -337,7 +363,7 @@ If you want to delete a specific file or folder from past snapshots without dele
 
 Keeping many of snapshots for a large timeframe on a busy filesystem like `/`, where many system updates happen over time) can cause serious slowdowns. You can prevent it by:
 
-*   [Creating](/index.php/Btrfs#Creating_a_subvolume "Btrfs") subvolumes for things that are not worth being snapshotted, like `/var/cache/pacman/pkg`, `/var/abs`, `/var/tmp`, `/tmp`, and `/srv`.
+*   [Creating](/index.php/Btrfs#Creating_a_subvolume "Btrfs") subvolumes for things that are not worth being snapshotted, like `/var/cache/pacman/pkg`, `/var/abs`, `/var/tmp`, and `/srv`.
 *   Editing the default settings for hourly/daily/monthly/yearly snapshots when using [#Automatic timeline snapshots](#Automatic_timeline_snapshots).
 
 #### updatedb

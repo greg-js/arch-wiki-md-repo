@@ -28,6 +28,8 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
         *   [4.4.3 Virtual Ethernet interfaces](#Virtual_Ethernet_interfaces)
     *   [4.5 Run on a non-systemd system](#Run_on_a_non-systemd_system)
     *   [4.6 Specify per-container settings](#Specify_per-container_settings)
+    *   [4.7 Use Btrfs subvolume as container root](#Use_Btrfs_subvolume_as_container_root)
+    *   [4.8 Use temporary Btrfs snapshot of container](#Use_temporary_Btrfs_snapshot_of_container)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 root login fails](#root_login_fails)
     *   [5.2 Unable to upgrade some packages on the container](#Unable_to_upgrade_some_packages_on_the_container)
@@ -292,6 +294,32 @@ To specify per-container settings and not overrides for all (e.g. bind a directo
  man systemd.nspawn
 
 ```
+
+### Use Btrfs subvolume as container root
+
+To use a btrfs subvolume as a template for the container's root, use the `--template` flag. This takes a snapshot of the subvolume and populates the root directory for the container with it.
+
+**Note:** If the template path specified is not the root of a subvolume, the **entire** tree is copied. This will be very time consuming.
+
+For example, to use a snapshot located at `/.snapshots/403/snapshot`:
+
+```
+# systemd-nspawn --template=/.snapshots/403/snapshots -b -D *my-container*
+
+```
+
+where `*my-container*` is the name of the directory that will be created for the container. After powering off, the newly created subvolume is retained.
+
+### Use temporary Btrfs snapshot of container
+
+One can use the `--ephemeral` flag to create a temporary btrfs snapshot of the container and use it as the container root. Any changes made while booted in the container will be lost. For example:
+
+```
+# systemd-nspawn -b -D *my-container* --ephemeral
+
+```
+
+where *my-container* is the directory of an **existing** container. After powering off the container, the btrfs subvolume that was created is immediately removed.
 
 ## Troubleshooting
 

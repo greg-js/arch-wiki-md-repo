@@ -681,6 +681,10 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 	[http://www.pcsx2.net/](http://www.pcsx2.net/) || [pcsx2](https://www.archlinux.org/packages/?name=pcsx2)
 
+*   **PPSSPP** — PlayStation Portable emulator.
+
+	[http://ppsspp.org/](http://ppsspp.org/) || [ppsspp](https://www.archlinux.org/packages/?name=ppsspp)
+
 *   **snes-9x** — Portable, freeware Super Nintendo Entertainment System (SNES) emulator.
 
 	[http://www.snes9x.com/](http://www.snes9x.com/) || [snes9x](https://www.archlinux.org/packages/?name=snes9x)

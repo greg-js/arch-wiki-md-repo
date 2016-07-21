@@ -331,6 +331,19 @@ pxe-service=X86-64_EFI, "PXELINUX (EFI)", "efi64/syslinux.efi"
 
 ```
 
+**Note:** In case `pxe-service` doesn't work (especially for UEFI-based clients), combination of `dhcp-match` and `dhcp-boot` can be used. See [RFC4578](https://tools.ietf.org/html/rfc4578#section-2.1) for more `client-arch` numbers for use with dhcp boot protocol.
+
+```
+dhcp-match=set:efi-x86_64,option:client-arch,7
+dhcp-match=set:efi-x86_64,option:client-arch,9
+dhcp-match=set:efi-x86,option:client-arch,6
+dhcp-match=set:bios,option:client-arch,0
+dhcp-boot=tag:efi-x86_64,"efi64/syslinux.efi"
+dhcp-boot=tag:efi-x86,"efi32/syslinux.efi"
+dhcp-boot=tag:bios,"bios/lpxelinux.0"
+
+```
+
 The rest is up to the bootloader.
 
 ## Start the daemon

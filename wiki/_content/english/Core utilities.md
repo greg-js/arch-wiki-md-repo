@@ -23,10 +23,11 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [15 rm](#rm)
 *   [16 sed](#sed)
 *   [17 seq](#seq)
-*   [18 tar](#tar)
-*   [19 which](#which)
-*   [20 wipefs](#wipefs)
-*   [21 See also](#See_also)
+*   [18 ss](#ss)
+*   [19 tar](#tar)
+*   [20 which](#which)
+*   [21 wipefs](#wipefs)
+*   [22 See also](#See_also)
 
 ## Basic commands
 
@@ -138,7 +139,7 @@ See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/201
 
 ## iconv
 
-`iconv` converts the encoding of characters from one codeset to another.
+*iconv* converts the encoding of characters from one codeset to another.
 
 The following command will convert the file `foo` from ISO-8859-15 to UTF-8 saving it to `foo.utf`:
 
@@ -323,6 +324,35 @@ Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-lin
 ## seq
 
 **seq** prints a sequence of numbers. Shell built-in alternatives are available, so it is good practice to use them as explained on [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
+
+## ss
+
+*ss* is a utility to investigate network ports and is part of [iproute2](https://www.archlinux.org/packages/?name=iproute2) in the base group. It has a similar functionality to the [deprecated](https://www.archlinux.org/news/deprecation-of-net-tools/) netstat utility.
+
+Common usage includes:
+
+Display all TCP Sockets (with service names):
+
+```
+$ ss -at
+
+```
+
+Display all TCP Sockets (with port numbers):
+
+```
+$ ss -atn
+
+```
+
+Display all UDP Sockets:
+
+```
+$ ss -au
+
+```
+
+For more information see `man ss`; or [introductory examples](http://www.cyberciti.biz/files/ss.html).
 
 ## tar
 
