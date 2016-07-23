@@ -40,6 +40,10 @@ Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i l
 
 	[http://cinnamon.linuxmint.com/](http://cinnamon.linuxmint.com/) || [cinnamon](https://www.archlinux.org/packages/?name=cinnamon)
 
+*   **[Deepin](/index.php/Deepin "Deepin")** — Deepin è una interfaccia desktop con applicazioni caratterizzate da un design intuitivo ed elegante. Intuitivo, semplice ed elegante ed usarlo è una gioiosa esperienza.
+
+	[deepin](https://www.archlinux.org/groups/x86_64/deepin/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 *   **[Enlightenment](/index.php/Enlightenment_(Italiano) "Enlightenment (Italiano)")** — L'ambiente di lavoro Enlightenment fornisce un window manager efficiente e mozzafiato basato sul Enlightenment Foundation Libraries (EFL) insieme ad altri componenti del desktop essenziali, come un file manager, le icone del desktop e widget. Vanta un livello senza precedenti di capacità di eseguire temi grafici, pur essendo in grado di eseguirli con hardware più vecchio o su dispositivi embedded.
 
 	[http://www.enlightenment.org/](http://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
@@ -69,10 +73,6 @@ Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i l
 	[http://www.xfce.org/](http://www.xfce.org/) || [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/)
 
 #### Non supportati ufficialmente
-
-*   **[Deepin](/index.php?title=Deepin&action=edit&redlink=1 "Deepin (page does not exist)")** — Deepin è una interfaccia desktop con applicazioni caratterizzate da un design intuitivo ed elegante. Intuitivo, semplice ed elegante ed usarlo è una gioiosa esperienza.
-
-	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-desktop-environment](https://aur.archlinux.org/packages/deepin-desktop-environment/)
 
 *   **[EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment")** — "Equinox Desktop Environment" è un DE designato per essere semplice, estremamente leggero e veloce.
 
@@ -134,7 +134,7 @@ Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i l
 [totem](https://www.archlinux.org/packages/?name=totem) | [Firefox](/index.php/Firefox "Firefox")
 [firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk3-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk3-greeter) |
-| [Deepin](/index.php?title=Deepin&action=edit&redlink=1 "Deepin (page does not exist)") | [GTK+](/index.php/GTK%2B "GTK+") 2/3
+| [Deepin](/index.php/Deepin "Deepin") | [GTK+](/index.php/GTK%2B "GTK+") 2/3
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Compiz](/index.php/Compiz "Compiz")
 [compiz-devel](https://aur.archlinux.org/packages/compiz-devel/) | Dock
 [deepin-desktop-environment](https://aur.archlinux.org/packages/deepin-desktop-environment/) | Deepin Terminal

@@ -23,7 +23,7 @@ Follow the instructions to install [LAMP](/index.php/LAMP "LAMP").
 
 ## Download and install Moodle
 
-There is also an AUR package [moodle](https://aur.archlinux.org/packages/moodle/) for the installation. Eighter you can use this way:
+There is also an AUR package [moodle](https://aur.archlinux.org/packages/moodle/) for the installation. Either you can use this way:
 
 Download the most current version of Moodle from [http://download.moodle.org/](http://download.moodle.org/) - this installation was done with 2.3.1+, and there may be minor changes to the install routine in later versions.
 

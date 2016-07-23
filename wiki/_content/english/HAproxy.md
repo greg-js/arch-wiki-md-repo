@@ -76,4 +76,4 @@ If a large number of backends are declared with the `check` option, HAProxy will
 ## See also
 
 *   [The official HAProxy website](http://www.haproxy.org/)
-*   [Configuration guide](http://cbonte.github.io/haproxy-dconv/configuration-1.7.html)
+*   [Configuration guide](http://cbonte.github.io/haproxy-dconv/)

@@ -54,9 +54,7 @@ For additional functionality, you may wish to install the following:
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
-*   **[XScreenSaver](/index.php/XScreenSaver "XScreenSaver")** — A screen saver required for screen locking in LXQt.[FS#49444](https://bugs.archlinux.org/task/49444)
-
-	[https://www.jwz.org/xscreensaver/](https://www.jwz.org/xscreensaver/) || [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)
+*   A screen locker, if needed. For example, [slock](https://www.archlinux.org/packages/?name=slock) or [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver). Both are confirmed to integrate with LXQt, others may too.
 
 Some LXQt panel plugins require extra packages to function, check the [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") for [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel).
 

@@ -1,4 +1,4 @@
-[Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX") is a collection of boot loaders capable of booting from hard drives, CDs, and over the network via PXE. It supports the [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), and [Btrfs](/index.php/Btrfs "Btrfs") [file systems](/index.php/File_systems "File systems").
+[Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX") is a collection of boot loaders capable of booting from hard drives, CDs, and over the network via PXE. It supports the [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), and uncompressed single-device [Btrfs](/index.php/Btrfs "Btrfs") [file systems](/index.php/File_systems "File systems").
 
 **Note:** Syslinux cannot access files from partitions other than its own. For an alternative bootloader with the multi-filesystem feature see [GRUB](/index.php/GRUB "GRUB").
 
@@ -45,6 +45,7 @@
     *   [4.9 Chainloading Windows does not work, when it is installed on another drive](#Chainloading_Windows_does_not_work.2C_when_it_is_installed_on_another_drive)
     *   [4.10 Read bootloader log](#Read_bootloader_log)
     *   [4.11 Btrfs compression](#Btrfs_compression)
+    *   [4.12 Btrfs multi-device](#Btrfs_multi-device)
 *   [5 See also](#See_also)
 
 ## BIOS Systems
@@ -929,6 +930,16 @@ invalid or corrupt kernel image.
 ```
 
 [GRUB](/index.php/GRUB "GRUB") supports btrfs with compression.
+
+### Btrfs multi-device
+
+Booting from multiple-device btrfs is not supported.[[12]](http://repo.or.cz/syslinux.git/blob/HEAD:/extlinux/main.c) (As of 7/21/2016 line 1246 in validate_device_btrfs() in main.c) This head-scratching error will show (assuming you're installing on sda1):
+
+```
+/boot/syslinux is device /dev/sda1
+extlinux: path /boot/syslinux doesn't match device /dev/sda1
+
+```
 
 ## See also
 

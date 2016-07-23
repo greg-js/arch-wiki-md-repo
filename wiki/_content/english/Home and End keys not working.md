@@ -148,6 +148,15 @@ URxvt.keysym.KP_End:  \033[4~
 
 Where KP_Home and KP_End are the numpad Home and End keys. These binds might also fix programs running within URxvt e.g. Nano.
 
+Another solution is to add the following section to `/etc/inputrc`
+
+```
+# those two are for rxvt
+"\e[7~":beginning-of-line
+"\e[8~":end-of-line
+
+```
+
 ### Zsh
 
 In short, use the terminfo database to set the correct keybind.

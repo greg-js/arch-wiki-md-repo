@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Vivaldi](/index.php/Vivaldi "Vivaldi") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-01，点击[这里](https://wiki.archlinux.org/index.php?title=Vivaldi&diff=0&oldid=439501)可以查看翻译后英文页面的改动。
 
-[Vivaldi](http://vivaldi.com/) 是由前 [Opera](/index.php/Opera "Opera") 团队成员开发一款新浏览器。Vivaldi 基于 Chromium 开发，专注于个性化体验。
+[Vivaldi](http://vivaldi.com/) 是由前 [Opera](/index.php/Opera "Opera") 团队成员新近开发的一款浏览器。Vivaldi 基于 Chromium 开发，专注于个性化体验。
 
 ## Contents
 
@@ -29,3 +29,4 @@ Vivaldi 可以从 AUR 安装 [vivaldi](https://aur.archlinux.org/packages/vivald
 ## 参阅
 
 *   [官方网站](http://vivaldi.com/)
+*   [Vivaldi中文爱好者俱乐部](https://vivaldi.club/)（非官方。站长：前*Opera中国*员工 [@Csineneo](https://twitter.com/csineneo)）

@@ -509,7 +509,7 @@ You can get list of your video outputs with following command:
 
 ## HDMI audio
 
-HDMI audio is supported in the [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) video driver. By default HDMI audio is disabled in the driver kernel versions >=3.0 because it can be problematic. To enable HDMI audio add `radeon.audio=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+HDMI audio is supported in the [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) video driver. If you are using a kernel 3.x older than 3.13, HDMI audio is disabled by default because it can be problematic. To enable HDMI audio add `radeon.audio=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 If there is no video after boot up, the driver option has to be disabled.
 

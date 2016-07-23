@@ -205,7 +205,7 @@ The first step is granting execution permission to `webserver` so it can access 
 
 *Remember*: Execution permissions to a directory are necessary for a process to list the directory's content.
 
-Since `webserver` is now able to access files in `/home/geoffrey`, `other`s do no longer need access:
+Since `webserver` is now able to access files in `/home/geoffrey`, `other` no longer needs access, so it can be safely removed:
 
 ```
 # chmod o-rx /home/geoffrey
@@ -228,7 +228,7 @@ other::---
 
 ```
 
-As the above output shows, `other`s no longer have any permissions, but `webserver` still is able to access the files, thus security might be considered increased.
+As the above output shows, `other`'s no longer have any permissions, but `webserver` still is able to access the files, thus security might be considered increased.
 
 ## See also
 

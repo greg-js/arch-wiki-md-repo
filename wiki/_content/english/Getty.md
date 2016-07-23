@@ -21,6 +21,13 @@ A [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") is the ge
 
 Open the file `/etc/systemd/logind.conf` and set the option **NAutoVTs=6** to the number of virtual terminals that you want at boot.
 
+If you wish to start one temporarily, you can start a getty service at the desired TTY by typing:
+
+```
+$ systemctl start getty@ttyN.service
+
+```
+
 ### Automatic login to virtual console
 
 #### Configuration

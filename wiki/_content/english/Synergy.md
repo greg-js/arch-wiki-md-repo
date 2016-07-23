@@ -297,12 +297,14 @@ Here, `server-host-name` is the host name of the server.
 
 #### Use Encryption
 
-To use the encryption feature type:
+If you use the synergy command line client, copy the file containing the fingerprint **`~/.synergy/SSL/Fingerprints/Local.txt`** from the server into the clients home directory **`~/.synergy/SSL/Fingerprints/TrustedServers.txt`**. To start the synergy command line client with encryption, type:
 
 ```
 $ synergyc --enable-crypto
 
 ```
+
+**Note:** There is an open issue with the GUI client of synergy (see [https://github.com/symless/synergy/issues/4737](https://github.com/symless/synergy/issues/4737)). The dialog to prompt for confirmation of the server's fingerprint, only pops up if the logging level is set to INFO, DEBUG or DEBUG2.
 
 #### Autostart
 

@@ -743,6 +743,8 @@ or
 
  `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
 
+If you have very poor signal maybe your device has only one antenna connected and auto mode doesn't work. You can force the antenna with `ant_sel=1` or `ant_sel=2` kernel option.
+
 ### Atheros
 
 The [MadWifi team](http://madwifi-project.org/) currently maintains three different drivers for devices with Atheros chipset:

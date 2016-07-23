@@ -5,7 +5,6 @@ In an operating system, the time (clock) is determined by four parts: time value
 *   [1 Hardware clock and system clock](#Hardware_clock_and_system_clock)
     *   [1.1 Read clock](#Read_clock)
     *   [1.2 Set clock](#Set_clock)
-    *   [1.3 RTC clock](#RTC_clock)
 *   [2 Time standard](#Time_standard)
     *   [2.1 UTC in Windows](#UTC_in_Windows)
     *   [2.2 UTC in Ubuntu](#UTC_in_Ubuntu)
@@ -26,6 +25,12 @@ A computer has two clocks that need to be considered: the "Hardware clock" and t
 **Hardware clock** (a.k.a. the Real Time Clock (RTC) or CMOS clock) stores the values of: Year, Month, Day, Hour, Minute, and the Seconds. It does not have the ability to store the time standard (localtime or UTC), nor whether DST is used.
 
 **System clock** (a.k.a. the software clock) keeps track of: time, time zone, and DST if applicable. It is calculated by the Linux kernel as the number of seconds since midnight January 1st 1970, UTC. The initial value of the system clock is calculated from the hardware clock, dependent on the contents of `/etc/adjtime`. After boot-up has completed, the system clock runs independently of the hardware clock. The Linux kernel keeps track of the system clock by counting timer interrupts.
+
+Standard behavior of most operating systems is:
+
+*   Set the system clock from the hardware clock on boot.
+*   Keep accurate time of the system clock with an NTP daemon, see [#Time synchronization](#Time_synchronization).
+*   Set the hardware clock from the system clock on shutdown.
 
 ### Read clock
 
@@ -54,21 +59,13 @@ For example:
 
 sets the time to May 26th, year 2014, 11:13 and 54 seconds.
 
-### RTC clock
-
-Standard behavior of most operating systems is:
-
-*   Set the system clock from the hardware clock on boot.
-*   Keep accurate time of the system clock with an NTP daemon, see [#Time synchronization](#Time_synchronization).
-*   Set the hardware clock from the system clock on shutdown.
-
 ## Time standard
-
-**Note:** [Systemd](/index.php/Systemd "Systemd") will use UTC for the hardware clock by default.
 
 There are two time standards: **localtime** and [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time "wikipedia:Coordinated Universal Time") (**UTC**). The localtime standard is dependent on the current *time zone*, while UTC is the *global* time standard and is independent of time zone values. Though conceptually different, UTC is also known as GMT (Greenwich Mean Time).
 
 The standard used by hardware clock (CMOS clock, the time that appears in BIOS) is defined by the operating system. By default, Windows uses localtime, Mac OS uses UTC, and UNIX-like operating systems vary. An OS that uses the UTC standard, generally, will consider CMOS (hardware clock) time a UTC time (GMT, Greenwich time) and make an adjustment to it while setting the System time on boot according to your time zone.
+
+**Note:** If `/etc/adjtime` is not present, [systemd](/index.php/Systemd "Systemd") assumes the hardware clock is set to UTC.
 
 If you have multiple operating systems installed in the same machine, they will all derive the current time from the same hardware clock: for this reason you must make sure that all of them see the hardware clock as providing time in the same chosen standard, or some of them will perform the time zone adjustement for the system clock, while others will not. In particular, it is recommended to set the hardware clock to UTC, in order to avoid conflicts between the installed operating systems. For example, if the hardware clock was set to *localtime*, more than one operating system may adjust it after a [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") change, thus resulting in an overcorrection; more problems may arise when travelling between different time zones and using one of the operating systems to reset the system/hardware clock.
 

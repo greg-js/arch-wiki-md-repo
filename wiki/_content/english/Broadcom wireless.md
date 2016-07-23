@@ -31,9 +31,9 @@ In September 2010, Broadcom [released](http://thread.gmane.org/gmane.linux.kerne
 The types of available drivers are:
 
 | Driver | Description |
-| brcm80211 | Kernel driver open-source version |
+| brcm80211 | Kernel driver mainline version (recommended) |
 | b43 | Kernel driver reverse-engineered version |
-| broadcom-wl | Broadcom driver restricted-license |
+| broadcom-wl | Broadcom driver with restricted license |
 
 ## Driver selection
 
@@ -52,8 +52,8 @@ The kernel contains two built-in open-source drivers: **brcmfmac** for native Fu
 
 **Note:**
 
-*   **brcmfmac** supports newer chipsets, whereas **brcmsmac** only supports old chipsets like BCM4313, BCM43224, BCM43225.
-*   **brcmsmac** does not support AP mode, P2P mode, or hardware encryption.
+*   **brcmfmac** supports newer chipsets, and supports AP mode, P2P mode, or hardware encryption.
+*   **brcmsmac** only supports old chipsets like BCM4313, BCM43224, BCM43225.
 
 ### b43
 

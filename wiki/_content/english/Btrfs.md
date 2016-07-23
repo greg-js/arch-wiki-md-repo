@@ -62,7 +62,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 
 ## Preparation
 
-The official kernels [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) include support for Btrfs. Additionally [GRUB](/index.php/GRUB "GRUB"), [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"), and [Syslinux](/index.php/Syslinux "Syslinux") have support for Btrfs and require no additional configuration.
+The official kernels [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) include support for Btrfs. If you want to boot from a Btrfs file system, check if your [boot loader](/index.php/Boot_loader "Boot loader") supports Btrfs.
 
 User space utilities are available by [installing](/index.php/Installing "Installing") the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package.
 

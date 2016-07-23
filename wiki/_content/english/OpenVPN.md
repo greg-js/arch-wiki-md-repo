@@ -500,6 +500,8 @@ Additionally be sure to accept connections from the OpenVPN port (default 1194) 
 
 When you are satisfied make the changes permanent as shown in [iptables#Configuration and usage](/index.php/Iptables#Configuration_and_usage "Iptables").
 
+If you have multiple `tun` or `tap` interfaces, or more than one VPN configuration, you can "pin" the name of your interface by specifying it in the OpenVPN config file, e.g. `tun22` instead of `tun`. This is advantageous if you have different firewall rules for different interfaces or OpenVPN configurations.
+
 ### Prevent leaks if vpn goes down
 
 The idea is simple: prevent all traffic through our default interface (enp3s0 for example) and only allow tun0. If the openvpn connection drops, your computer will lose its internet access and therefore, avoid your programs to continue connecting through an insecure network adapter.

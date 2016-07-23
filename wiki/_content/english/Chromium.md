@@ -1,4 +1,4 @@
-[Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) is an open-source graphical web browser from Google, based on the [Blink](https://en.wikipedia.org/wiki/Blink_(layout_engine) rendering engine.
+[Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) is an open-source graphical web browser from "The Chromium Project", based on the [Blink](https://en.wikipedia.org/wiki/Blink_(layout_engine) rendering engine.
 
 ## Contents
 

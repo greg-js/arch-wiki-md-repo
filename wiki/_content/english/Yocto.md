@@ -1,5 +1,7 @@
 The Yocto Project (YP) is a popular open-source collaboration project focused on embedded Linux developers. In early versions of YP it could be problematic to get it running on Arch Linux. In later versions this is no longer the case, and hopefully in the future it will be even easier. For information about how to get it running on older version, there is a good guide [here](http://wor.github.io/bash/2013/08/11/embedded-excursions-part-1.html).
 
+To use bitbake as a standalone tool, install [bitbake](https://aur.archlinux.org/packages/bitbake/). To edit bitbake recipes in vim, install [bitbake-vim](https://aur.archlinux.org/packages/bitbake-vim/).
+
 For this guide the focus will be on YP Core 1.8 (Fido) and newer.
 
 **Note:** Arch Linux is not validated to work with Yocto/Poky.

@@ -129,7 +129,7 @@ Instead, find takes a set of directories and matches each file under them agains
 
 ## locate
 
-Install the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. When `mlocate` is installed, a script is automatically scheduled to run daily via `systemd`, to update the database. You can also manually run `updatedb` as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so `locate` may not discover files on external devices. See `man updatedb.conf` for details.
+[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. When `mlocate` is installed, a script is automatically scheduled to run daily via `systemd`, to update the database. You can also manually run `updatedb` as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so `locate` may not discover files on external devices. See `man updatedb.conf` for details.
 
 `locate` is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by `locate`. This problem is minimised by regular, typically scheduled use of the `updatedb` command, which (as the name suggests) updates the database.
 
@@ -259,7 +259,7 @@ The `-v` switch make it verbose.
 
 Changing mode of a just created directory using *chmod* is not necessary as the `-m` option lets you define the access permissions.
 
-**Tip:** If you just want a temporary directory, a better alternative may be [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file") (*make temporary*): `mktemp -p`.
+**Tip:** If you just want a temporary directory, a better alternative may be [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file"): `mktemp -p`.
 
 ## mv
 
@@ -323,22 +323,22 @@ Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-lin
 
 ## seq
 
-**seq** prints a sequence of numbers. Shell built-in alternatives are available, so it is good practice to use them as explained on [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
+*seq* prints a sequence of numbers. Shell built-in alternatives are available, so it is good practice to use them as explained on [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
 
 ## ss
 
-*ss* is a utility to investigate network ports and is part of [iproute2](https://www.archlinux.org/packages/?name=iproute2) in the base group. It has a similar functionality to the [deprecated](https://www.archlinux.org/news/deprecation-of-net-tools/) netstat utility.
+*ss* is a utility to investigate network ports and is part of the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package in the [base](https://www.archlinux.org/groups/x86_64/base/) group. It has a similar functionality to the [deprecated](https://www.archlinux.org/news/deprecation-of-net-tools/) netstat utility.
 
 Common usage includes:
 
-Display all TCP Sockets (with service names):
+Display all TCP Sockets with service names:
 
 ```
 $ ss -at
 
 ```
 
-Display all TCP Sockets (with port numbers):
+Display all TCP Sockets with port numbers:
 
 ```
 $ ss -atn
@@ -352,36 +352,36 @@ $ ss -au
 
 ```
 
-For more information see `man ss`; or [introductory examples](http://www.cyberciti.biz/files/ss.html).
+For more information see `man ss` or [introductory examples](http://www.cyberciti.biz/files/ss.html).
 
 ## tar
 
-As an early Unix archiving format, .tar files (known as **tarballs**) are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are compressed tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") *tar* program by default.
+As an early Unix archiving format, .tar files—known as "tarballs"—are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are compressed tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") *tar* program by default.
 
 For .tar archives, *tar* by default will extract the file according to its extension:
 
 ```
-$ tar xvf file.EXTENSION
+$ tar xvf *file.EXTENSION*
 
 ```
 
 Forcing a given format:
 
 | File Type | Extraction Command |
-| `file.tar` | `tar xvf file.tar` |
-| `file.tgz` | `tar xvzf file.tgz` |
-| `file.tar.gz` | `tar xvzf file.tar.gz` |
-| `file.tar.bz` | `bzip -cd file.bz | tar xvf -` |
-| `file.tar.bz2` | `tar xvjf file.tar.bz2`
-`bzip2 -cd file.bz2 | tar xvf -` |
-| `file.tar.xz` | `tar xvJf file.tar.xz`
-`xz -cd file.xz | tar xvf -` |
+| `*file*.tar` | `tar xvf *file*.tar` |
+| `*file*.tgz` | `tar xvzf *file*.tgz` |
+| `*file*.tar.gz` | `tar xvzf *file*.tar.gz` |
+| `*file*.tar.bz` | `bzip -cd *file*.bz | tar xvf -` |
+| `*file*.tar.bz2` | `tar xvjf *file*.tar.bz2`
+`bzip2 -cd *file*.bz2 | tar xvf -` |
+| `*file*.tar.xz` | `tar xvJf *file*.tar.xz`
+`xz -cd *file*.xz | tar xvf -` |
 
 The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See its [man page](/index.php/Man_page "Man page") with `man tar` for details.
 
 ## which
 
-[which](https://en.wikipedia.org/wiki/Which_(Unix) shows the full path of (shell) commands. In the following example the full path of `ssh` is used as an argument for `journalctl`:
+[which](https://en.wikipedia.org/wiki/Which_(Unix) shows the full path of shell commands. In the following example the full path of `ssh` is used as an argument for `journalctl`:
 
 ```
 # journalctl $(which sshd)
@@ -390,7 +390,7 @@ The construction of some of these *tar* arguments may be considered legacy, but 
 
 ## wipefs
 
-**wipefs** can list or erase [file system](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") or [partition-table](/index.php/Partition "Partition") signatures (magic strings) from the specified device. It does not erase the file systems themselves nor any other data from the device.
+*wipefs* can list or erase [file system](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") or [partition-table](/index.php/Partition "Partition") signatures (magic strings) from the specified device. It does not erase the file systems themselves nor any other data from the device.
 
 See wipefs(8) for more information.
 

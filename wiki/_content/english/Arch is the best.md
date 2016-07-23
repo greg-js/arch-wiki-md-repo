@@ -1554,6 +1554,13 @@ Arch je najbolji!
 
 ```
 
+	Shona
+
+```
+Arch iripamberi!
+
+```
+
 	Singaporean
 
 ```

@@ -20,10 +20,11 @@ For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWik
     *   [3.2 Chroot](#Chroot)
     *   [3.3 Time zone](#Time_zone)
     *   [3.4 Locale](#Locale)
-    *   [3.5 Network configuration](#Network_configuration)
-    *   [3.6 Initramfs](#Initramfs)
-    *   [3.7 Root password](#Root_password)
-    *   [3.8 Boot loader](#Boot_loader)
+    *   [3.5 Hostname](#Hostname)
+    *   [3.6 Network configuration](#Network_configuration)
+    *   [3.7 Initramfs](#Initramfs)
+    *   [3.8 Root password](#Root_password)
+    *   [3.9 Boot loader](#Boot_loader)
 *   [4 Reboot](#Reboot)
 *   [5 Post-installation](#Post-installation)
 
@@ -61,7 +62,7 @@ The layout can be changed with *loadkeys*, appending a file name (path and file 
 
 Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as *ping*.
 
-For other [network configuration](/index.php/Network_configuration "Network configuration"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [netctl](/index.php/Netctl "Netctl") are included; for examples, see `systemd.network(5)` and `netctl.profile(7)`, respectively. When using a different networking service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service` first:
+For other [network configuration](/index.php/Network_configuration "Network configuration"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [netctl](/index.php/Netctl "Netctl") are included; for examples, see `man systemd.network` and `man netctl.profile`. When using a different networking service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service` first:
 
 ```
 # systemctl stop dhcpcd@*interface*.service
@@ -93,7 +94,7 @@ See [File systems](/index.php/File_systems#Create_a_file_system "File systems") 
 
 ### Mount the partitions
 
-Mount the root partition on `/mnt`. After that, create directories for and mount any other partitions (`/mnt/boot`, `/mnt/home`, ...) and activate your *swap* partition if you want them to be detected later by *genfstab*.
+Mount the root partition on `/mnt`. After that, create directories for and mount any other partitions (`/mnt/boot`, `/mnt/home`, ...) and activate your *swap* partition with *swapon*, if you want them to be detected later by *genfstab*.
 
 ## Installation
 
@@ -143,6 +144,13 @@ Set the [time zone](/index.php/Time_zone "Time zone"):
 
 ```
 
+Run *hwclock* to generate `/etc/adjtime`. If the [time standard](/index.php/Time_standard "Time standard") is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), other operating systems should be configured accordingly.
+
+```
+# hwclock --systohc --*utc*
+
+```
+
 ### Locale
 
 Uncomment the needed [locales](/index.php/Locale "Locale") in `/etc/locale.gen`, then generate them with:
@@ -152,19 +160,21 @@ Uncomment the needed [locales](/index.php/Locale "Locale") in `/etc/locale.gen`,
 
 ```
 
-Add at least `LANG=*your_locale*` in `/etc/locale.conf` and possibly `$HOME/.config/locale.conf`.
+Add `LANG=*your_locale*` to `/etc/locale.conf`, and console [keymap](/index.php/Keymap "Keymap") and [font](/index.php/Fonts#Console_fonts "Fonts") preferences to `/etc/vconsole.conf`.
 
-Add console [keymap](/index.php/Keymap "Keymap") and [font](/index.php/Fonts#Console_fonts "Fonts") preferences in `/etc/vconsole.conf`.
+### Hostname
+
+Create an entry for your [hostname](/index.php/Hostname "Hostname") in `/etc/hostname` and `/etc/hosts`. See `man hosts` for the correct format.
 
 ### Network configuration
 
-[Create](/index.php/Create "Create") the [/etc/hostname](/index.php//etc/hostname "/etc/hostname") file.
+Configure the network for the newly installed environment: see [Network configuration](/index.php/Network_configuration "Network configuration").
 
-Configure the network for the newly installed environment: see [Network configuration](/index.php/Network_configuration "Network configuration") and [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Install "Install") the [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), and [dialog](https://www.archlinux.org/packages/?name=dialog) packages; additional [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless") may be required.
 
 ### Initramfs
 
-Configure [/etc/mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio") if additional features are needed. Create a new initial RAM disk with:
+When making configuration changes to [/etc/mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio"), create a new initial RAM disk with:
 
 ```
 # mkinitcpio -p linux
@@ -182,7 +192,9 @@ Set the root [password](/index.php/Password "Password"):
 
 ### Boot loader
 
-See [Boot loaders](/index.php/Boot_loaders "Boot loaders") for the available choices and configuration.
+See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for available choices and configurations. Choices include [GRUB](/index.php/GRUB "GRUB") (BIOS/UEFI), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (UEFI) and [syslinux](/index.php/Syslinux "Syslinux") (BIOS).
+
+If you have an Intel CPU, in addition to installing a boot loader, install the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package and [enable microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 
 ## Reboot
 

@@ -3,7 +3,7 @@
 | Nvidia | **Working** | nvidia-beta(AUR) |
 | Ethernet | **Working** | r8169 |
 | Wireless | **Working** | iwlwifi |
-| Audio | **Working** | snd_hda_intel |
+| Audio | **Partially** | snd_hda_intel |
 | Touchpad | **Working** |
 | Camera | **Working** | uvcvideo |
 | USB 3.0 | **Working** | xhci_hcd |

@@ -44,7 +44,7 @@ OTHER_OPTS='-is -m alsa_seq -r 48000'
 
 ```
 
-After that, you can [start/enable](/index.php/Start/enable "Start/enable") the fluidsynth service.
+After that, you can [start/enable](/index.php/Start/enable "Start/enable") the fluidsynth service. Be aware of bug [https://bugs.archlinux.org/task/50122](https://bugs.archlinux.org/task/50122) when using pulseaudio driver
 
 The following will give you an output software MIDI port (in addition of hardware MIDI ports on your system, if any):
 

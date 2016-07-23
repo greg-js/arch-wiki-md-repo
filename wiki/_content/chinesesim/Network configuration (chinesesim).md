@@ -10,7 +10,7 @@
     *   [3.1 检测驱动状态](#.E6.A3.80.E6.B5.8B.E9.A9.B1.E5.8A.A8.E7.8A.B6.E6.80.81)
     *   [3.2 加载设备模块](#.E5.8A.A0.E8.BD.BD.E8.AE.BE.E5.A4.87.E6.A8.A1.E5.9D.97)
 *   [4 网络接口](#.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3)
-    *   [4.1 设备名称](#.E8.AE.BE.E5.A4.87.E5.90.8D.E7.A7.B0)
+    *   [4.1 设备命名](#.E8.AE.BE.E5.A4.87.E5.91.BD.E5.90.8D)
     *   [4.2 获取当前网络名](#.E8.8E.B7.E5.8F.96.E5.BD.93.E5.89.8D.E7.BD.91.E7.BB.9C.E5.90.8D)
         *   [4.2.1 更改设备名称](#.E6.9B.B4.E6.94.B9.E8.AE.BE.E5.A4.87.E5.90.8D.E7.A7.B0)
         *   [4.2.2 使用传统网络命名规则](#.E4.BD.BF.E7.94.A8.E4.BC.A0.E7.BB.9F.E7.BD.91.E7.BB.9C.E5.91.BD.E5.90.8D.E8.A7.84.E5.88.99)
@@ -149,9 +149,9 @@ $ dmesg |grep atl1
 
 ## 网络接口
 
-### 设备名称
+### 设备命名
 
-对于有多块网卡的电脑，固定设备名称很重要。许多配置问题都是由于网络接口名称变化引起的。
+对于有多块网卡的电脑，固定的设备名称很重要。许多配置问题都是由于网络接口名称变化引起的。
 
 [udev](/index.php/Udev "Udev") 负责给设备命名。Systemd v197 引入了[可预测的网络接口名称](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames)自动给网络设备分配静态名称，网络接口现在是以前缀 `en`（以太网）、`wl`（WLAN）、或者 `ww`（WWAN）附上一个自动生成的标识符，产生了一个类似于 `enp0s25` 的条目。在 [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") 中添加 `net.ifnames=0` 可以禁用此功能.
 

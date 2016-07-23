@@ -274,4 +274,4 @@ Benchmarking was done using `iperf` (average of 3 run times). Client BPi and Ser
 
 ## See also
 
-*   [Manufacturers FAQ](http://wiki.lemaker.org/FAQ)
+*   [[1]](http://wiki.lemaker.org/BananaPro/Pi:FAQs)

@@ -46,9 +46,9 @@ Another alternative is to try to use [ttf-freefont](https://www.archlinux.org/pa
 
 Some resolutions cause menus to appear empty. Try using your settings.cfg file to enable fullscreen and/or change your resolution by a few pixels, e.g. 1366x768 to 1363x768\.
 
-A solution that work with any screen resolution is to add `-force-glcore` as a launch option, or passed in as a command line flag. Under Steam go to: Library -) right click on KSP -) Proprieties -) Set up launch options and add -force-glcore The game engine will try to run the game with the best OpenGL version possible and all available OpenGL extensions. With this option enabled you may encounter shadow glitches, try few different settings in-game in the setting panel to resolve the problem.
+Imperfect resolutions can cause poor font rendering. If this happens you can use the AnyRes mod to change your resolution in-game to find a good one, rather than launching the game for every change.
 
-Imperfect resolutions can cause poor font rendering. If this happens you can use the AnyRes mod to change your resolution in-game to find a good one, rather than launching the game for every change
+Another solution that may work on some architectures is to add `-force-glcore` as a launch option, or passed in as a command line flag. For Steam, go to: Library -) right click on KSP -) Proprieties -) Set up launch options and add -force-glcore The game engine will try to run the game with the best OpenGL version possible and all available OpenGL extensions. With this option enabled you may encounter shadow glitches, try few different settings in-game in the setting panel to resolve the problem.
 
 ### Graphics flickering when using primusrun
 

@@ -42,11 +42,11 @@ This wiki page should help you in getting your MacBook Pro from Late 2013 or Mid
     *   [3.8 Powersave](#Powersave)
     *   [3.9 SD Card Reader](#SD_Card_Reader)
     *   [3.10 Repurpose the power key](#Repurpose_the_power_key)
+    *   [3.11 Web cam](#Web_cam)
 *   [4 What does not work](#What_does_not_work)
     *   [4.1 General](#General)
     *   [4.2 Wi-Fi](#Wi-Fi)
-    *   [4.3 Web cam](#Web_cam)
-    *   [4.4 Backlight keys / Suspend support](#Backlight_keys_.2F_Suspend_support)
+    *   [4.3 Backlight keys / Suspend support](#Backlight_keys_.2F_Suspend_support)
 *   [5 Discussions](#Discussions)
 *   [6 See also](#See_also)
 
@@ -537,9 +537,13 @@ Now the power key can be repurposed as keycode 124\. For example in i3 conf:
 
 ```
 
+### Web cam
+
+A reverse engineered driver is being developed here: [https://github.com/patjak/bcwc_pcie/](https://github.com/patjak/bcwc_pcie/) . It is marked experimental, but basic functionality seems to be working. Install [bcwc-pcie-dkms](https://aur.archlinux.org/packages/bcwc-pcie-dkms/) or [bcwc-pcie-git](https://aur.archlinux.org/packages/bcwc-pcie-git/).
+
 ## What does not work
 
-Updated 2015-04-08
+Updated 2016-07-21
 
 ### General
 
@@ -547,14 +551,6 @@ Updated 2015-04-08
 
 *   [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) from the [AUR](/index.php/AUR "AUR") works
     *   Stability is an issue for some, look at [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for possible fixes (e.g. downgrading kernel works if your card is BCM4360)
-
-### Web cam
-
-*   Listed on PCI bus as: Multimedia controller: Broadcom Corporation Device 1570.
-    *   When the apple_set_os grub patch is used with a 11,3 machine lspci reports; 04:00.0 Multimedia controller: Broadcom Corporation 720p FaceTime HD Camera
-*   In OS X, the camera is listed as FaceTime HD camera 1570.
-*   No known Linux driver. [Kernel.org Bug](https://bugzilla.kernel.org/show_bug.cgi?id=71131)
-*   Efforts to develop a reverse engineered driver: [https://github.com/patjak/bcwc_pcie/](https://github.com/patjak/bcwc_pcie/)
 
 ### Backlight keys / Suspend support
 

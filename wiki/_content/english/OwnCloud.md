@@ -3,7 +3,6 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "
 ## Contents
 
 *   [1 Prerequisites](#Prerequisites)
-    *   [1.1 An all-in-one alternative with Docker](#An_all-in-one_alternative_with_Docker)
 *   [2 Installation](#Installation)
     *   [2.1 Database support](#Database_support)
     *   [2.2 Caching](#Caching)
@@ -11,55 +10,49 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "
     *   [2.4 Optional but recommended security hardening](#Optional_but_recommended_security_hardening)
         *   [2.4.1 Setting strong permissions for the filesystem](#Setting_strong_permissions_for_the_filesystem)
         *   [2.4.2 Protection from hacking with fail2ban](#Protection_from_hacking_with_fail2ban)
-*   [3 Database Setup](#Database_Setup)
-    *   [3.1 Mariadb](#Mariadb)
-*   [4 Webserver Setup](#Webserver_Setup)
-    *   [4.1 Apache configuration](#Apache_configuration)
-        *   [4.1.1 WebDAV](#WebDAV)
-        *   [4.1.2 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
-    *   [4.2 Nginx](#Nginx)
-        *   [4.2.1 php-fpm configuration](#php-fpm_configuration)
-    *   [4.3 uWSGI configuration](#uWSGI_configuration)
-        *   [4.3.1 Configuration](#Configuration)
-        *   [4.3.2 Activation](#Activation)
-*   [5 Synchronization](#Synchronization)
-    *   [5.1 Desktop](#Desktop)
-        *   [5.1.1 Calendar](#Calendar)
-        *   [5.1.2 Contacts](#Contacts)
-        *   [5.1.3 Mounting files with davfs2](#Mounting_files_with_davfs2)
-    *   [5.2 Android](#Android)
-*   [6 Important notes](#Important_notes)
-    *   [6.1 SABnzbd](#SABnzbd)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
-    *   [7.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
-    *   [7.3 Cannot write into config directory!](#Cannot_write_into_config_directory.21)
-    *   [7.4 Cannot create data directory (/path/to/dir)](#Cannot_create_data_directory_.28.2Fpath.2Fto.2Fdir.29)
-    *   [7.5 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
-    *   [7.6 Seeing white page after login](#Seeing_white_page_after_login)
-    *   [7.7 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
-    *   [7.8 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
-    *   [7.9 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
-    *   [7.10 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
-    *   [7.11 Password not saved](#Password_not_saved)
-*   [8 Upload and Share from File Manager](#Upload_and_Share_from_File_Manager)
-*   [9 See also](#See_also)
+*   [3 Maintenance associated with Arch package updates](#Maintenance_associated_with_Arch_package_updates)
+*   [4 Database Setup](#Database_Setup)
+    *   [4.1 Mariadb](#Mariadb)
+*   [5 Webserver Setup](#Webserver_Setup)
+    *   [5.1 Apache configuration](#Apache_configuration)
+        *   [5.1.1 WebDAV](#WebDAV)
+        *   [5.1.2 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
+    *   [5.2 Nginx](#Nginx)
+        *   [5.2.1 php-fpm configuration](#php-fpm_configuration)
+    *   [5.3 uWSGI configuration](#uWSGI_configuration)
+        *   [5.3.1 Configuration](#Configuration)
+        *   [5.3.2 Activation](#Activation)
+*   [6 Synchronization](#Synchronization)
+    *   [6.1 Desktop](#Desktop)
+        *   [6.1.1 Calendar](#Calendar)
+        *   [6.1.2 Contacts](#Contacts)
+        *   [6.1.3 Mounting files with davfs2](#Mounting_files_with_davfs2)
+    *   [6.2 Android](#Android)
+*   [7 Important notes](#Important_notes)
+    *   [7.1 SABnzbd](#SABnzbd)
+*   [8 An all-in-one alternative with Docker](#An_all-in-one_alternative_with_Docker)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
+    *   [9.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
+    *   [9.3 Cannot write into config directory!](#Cannot_write_into_config_directory.21)
+    *   [9.4 Cannot create data directory (/path/to/dir)](#Cannot_create_data_directory_.28.2Fpath.2Fto.2Fdir.29)
+    *   [9.5 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
+    *   [9.6 Seeing white page after login](#Seeing_white_page_after_login)
+    *   [9.7 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
+    *   [9.8 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
+    *   [9.9 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
+    *   [9.10 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
+    *   [9.11 Password not saved](#Password_not_saved)
+*   [10 Upload and Share from File Manager](#Upload_and_Share_from_File_Manager)
+*   [11 See also](#See_also)
 
 ## Prerequisites
 
 *ownCloud* needs a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP") and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). For instance, a classic [LAMP stack](/index.php/LAMP "LAMP") should work fine and is the [recommended configuration](https://doc.owncloud.org/server/8.2/admin_manual/installation/system_requirements.html#recommended-setup-for-running-owncloud).
 
-### An all-in-one alternative with Docker
-
-A alternative to installing and configuring your own *ownCloud* is to use a 3rd party supported [Docker](/index.php/Docker "Docker") image. You can find several images of fully working LAMP stack with pre-installed *ownCloud* in the [Docker repositories](https://index.docker.io/search?q=ownCloud). *Docker* containers are generally safer than a [chroot](/index.php/Chroot "Chroot") environment and the overhead is very low; *ownCloud* in Docker works smoothly even on quite old machines. The whole setup including installing *Docker* and *ownCloud* image is considerably easier and quicker than a native installation but you must trust the third party whom you have now given complete control to regarding the installation of your ownCloud instance.
-
-**Note:** Docker images are not officially supported by ownCloud.
-
 ## Installation
 
 [Install](/index.php/Install "Install") the [owncloud](https://www.archlinux.org/packages/?name=owncloud) package.
-
-**Note:** When the Arch owncloud package is updated via pacman, it may become necessary to connect via the web interface to manually trigger an update of the associated files. Failure to do so will render the mobile app unable to connect.
 
 Uncomment the following [required](https://doc.owncloud.org/server/8.2/admin_manual/installation/source_installation.html#prerequisites) extensions in `/etc/php/php.ini`:
 
@@ -192,6 +185,17 @@ ignoreip = 192.168.1.1/24
 fail2ban-regex /usr/share/webapps/owncloud/data/owncloud.log /etc/fail2ban/filter.d/owncloud.conf -v
 
 ```
+
+## Maintenance associated with Arch package updates
+
+When the Arch owncloud package is updated via pacman, it may become necessary to connect via the web interface to manually trigger an update of the associated files. Alternatively, one can run use `/usr/share/webapps/owncloud/occ upgrade` from the shell but it must be run as the *http* user:
+
+```
+# sudo -u http /usr/share/webapps/owncloud/occ upgrade
+
+```
+
+**Note:** Failure to do so will render the mobile app unable to connect.
 
 ## Database Setup
 
@@ -613,6 +617,12 @@ folder_rename 0
 ```
 
 in your sabnzbd.ini file, because ownCloud will scan the files as soon as they get uploaded, preventing SABnzbd from removing UNPACKING prefixes etc.
+
+## An all-in-one alternative with Docker
+
+A alternative to installing and configuring your own *ownCloud* is to use a 3rd party supported [Docker](/index.php/Docker "Docker") image. You can find several images of fully working LAMP stack with pre-installed *ownCloud* in the [Docker repositories](https://index.docker.io/search?q=ownCloud). *Docker* containers are generally safer than a [chroot](/index.php/Chroot "Chroot") environment and the overhead is very low; *ownCloud* in Docker works smoothly even on quite old machines. The whole setup including installing *Docker* and *ownCloud* image is considerably easier and quicker than a native installation but you must trust the third party whom you have now given complete control to regarding the installation of your ownCloud instance.
+
+**Note:** Docker images are not officially supported by ownCloud.
 
 ## Troubleshooting
 

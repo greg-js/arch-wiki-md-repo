@@ -16,7 +16,7 @@ This section is about **#archlinux**, the main Arch Linux support [IRC](https://
 
 The central topic for **#archlinux** is support and general discussion about Arch Linux. For a list of rules refer to the [Code of conduct](/index.php/Code_of_conduct "Code of conduct") and [Code of conduct#IRC](/index.php/Code_of_conduct#IRC "Code of conduct"). For a list of commonly used abbreviations, see [Arch terminology](/index.php/Arch_terminology "Arch terminology") and [IRC Jargon](http://leonardo.spidernet.net/Copernicus/831/mirc/tips5/jarg.html).
 
-To join the channels, you need an IRC client. See [List of applications/Internet#IRC clients](/index.php/List_of_applications/Internet#IRC_clients "List of applications/Internet") or [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients") for a list.
+To join the channels, you need an IRC client. The [installation](/index.php/Installation "Installation") environment includes the [Irssi](/index.php/Irssi "Irssi") client. See [List of applications/Internet#IRC clients](/index.php/List_of_applications/Internet#IRC_clients "List of applications/Internet") or [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients") for a list.
 
 ### Registration
 

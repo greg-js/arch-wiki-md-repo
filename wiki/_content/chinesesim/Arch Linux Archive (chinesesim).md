@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Arch_Linux_Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-20，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=438253)可以查看翻译后英文页面的改动。
 
-Arch Linux 存档（**A**rch **L**inux **Archive**，*简称 ala*），以前称为 *Arch Linux 回滚机器（Arch Linux Rollback Machine*，*简称 ARM*），保存了 *官方仓库快照*、*iso 镜像* 和 *引导程序包* 的历史版本。
+Arch Linux 存档库（**A**rch **L**inux **Archive**，*简称 ala*），以前称为 *Arch Linux 回滚机（Arch Linux Rollback Machine*，*简称 ARM*），保存了 *官方仓库快照*、*iso 镜像* 和 *引导程序包* 的历史版本。
 
 **用途**
 
@@ -22,7 +22,7 @@ Arch Linux 存档（**A**rch **L**inux **Archive**，*简称 ala*），以前称
 
 ## 位置
 
-Arch Linux 存档目前位于 [https://archive.archlinux.org/](https://archive.archlinux.org/) (即以前的 [http://ala.seblu.net/](http://ala.seblu.net/) ) 。
+Arch Linux 存档库目前位于 [https://archive.archlinux.org/](https://archive.archlinux.org/) (即以前的 [http://ala.seblu.net/](http://ala.seblu.net/) ) 。
 
 此前的下列网址即将关闭，建议不要再使用：
 
@@ -35,11 +35,11 @@ Arch Linux 存档目前位于 [https://archive.archlinux.org/](https://archive.a
 *   [ftp://seblu.net/archlinux/arm](ftp://seblu.net/archlinux/arm)
 *   [ftp://seblu.net/archlinux/archive](ftp://seblu.net/archlinux/archive)
 
-[这里](https://github.com/seblu/archivetools) 的源代码可以帮助您架设自己的服务器。
+[这里](https://github.com/seblu/archivetools) 的源代码可以帮助您架设自己的存档库服务器。
 
 ## 目录
 
-**存档**分为下列三个主目录：
+**存档库**分为下列三个主目录：
 
 ```
 ├── iso
@@ -232,7 +232,7 @@ Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 ## 历史
 
-*   最早的 ARM （*Archlinux 回滚机器*） 已于 2013-08-18 关闭[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360)。
+*   最早的 ARM （*Archlinux 回滚机*） 已于 2013-08-18 关闭[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360)。
 *   [seblu.net 新站点](http://seblu.net) 已于 2013-08-31 上线。
 *   2015-10-13 旧站关闭，同时启用新 URL 并导入一个新软件 [agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) 。
 *   2015-12-19 迁移至 [archive.archlinux.org](https://archive.archlinux.org)。[[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2015-December/027635.html)

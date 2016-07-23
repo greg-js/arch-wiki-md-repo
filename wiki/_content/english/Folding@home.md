@@ -8,11 +8,8 @@ From the project [home page](http://folding.stanford.edu/):
 *   [2 Configuration](#Configuration)
     *   [2.1 The graphical way](#The_graphical_way)
     *   [2.2 The terminal way](#The_terminal_way)
-*   [3 Multi-Core CPUs and Folding@home](#Multi-Core_CPUs_and_Folding.40home)
-    *   [3.1 A quick note on hyperthreading](#A_quick_note_on_hyperthreading)
-    *   [3.2 Multiple Folding@home installs](#Multiple_Folding.40home_installs)
-*   [4 Monitoring work-unit progress](#Monitoring_work-unit_progress)
-*   [5 See also](#See_also)
+*   [3 Monitoring work-unit progress](#Monitoring_work-unit_progress)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -56,18 +53,6 @@ The behaviour of foldingathome can be customized by editing `/opt/fah/config.xml
 <slot id='0' type='CPU'/>
 
 ```
-
-## Multi-Core CPUs and Folding@home
-
-As of version 7.x, multi-core CPUs no longer require any special configuration. If you are using version 6.x, read on.
-
-### A quick note on hyperthreading
-
-If you have a single-core hyperthreading CPU, you may be tempted to follow the multi-core instructions. It is highly recommenced that you do **not** do this as the Folding@home team prefers fewer results quickly, than more results slowly. There is also a time-limit on work-units, so if it runs slower, your work-units may not be returned in time, and so distributed to another user. If you have one core, run one folding process.
-
-### Multiple Folding@home installs
-
-Multiple installations of FAH on a single machine are useless, as in v7, you can use slots for every workload. The software is uniform now for GPU and CPU.
 
 ## Monitoring work-unit progress
 

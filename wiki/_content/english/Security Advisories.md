@@ -39,6 +39,9 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### July 2016
 
+*   [22 July 2016] [ASA-201607-11](https://lists.archlinux.org/pipermail/arch-security/2016-July/000671.html) [python2-django](https://www.archlinux.org/packages/?name=python2-django) cross site scripting
+*   [22 July 2016] [ASA-201607-10](https://lists.archlinux.org/pipermail/arch-security/2016-July/000670.html) [python-django](https://www.archlinux.org/packages/?name=python-django) cross site scripting
+*   [21 July 2016] [ASA-201607-9](https://lists.archlinux.org/pipermail/arch-security/2016-July/000669.html) [drupal](https://www.archlinux.org/packages/?name=drupal) proxy injection
 *   [20 July 2016] [ASA-201607-8](https://lists.archlinux.org/pipermail/arch-security/2016-July/000668.html) [bind](https://www.archlinux.org/packages/?name=bind) denial of service
 *   [18 July 2016] [ASA-201607-7](https://lists.archlinux.org/pipermail/arch-security/2016-July/000667.html) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) multiple issues
 *   [18 July 2016] [ASA-201607-6](https://lists.archlinux.org/pipermail/arch-security/2016-July/000666.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) multiple issues
@@ -582,6 +585,7 @@ You may then:
 
 *   add a line in the "[Scheduled Advisories](#Scheduled_Advisories)" list of this page, indicating that you are going to publish an advisory soon ;
 *   use the following template as an example to write the advisory ;
+*   ensure that every line in the advisory is properly wrapped after 72 characters
 *   send the advisory to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) mailing-list (note that it would be nice if you could send a PGP-signed e-mail, but it is not required).
 *   move the published advisory from "[Scheduled Advisories](#Scheduled_Advisories)" to "[Recent Advisories](#Recent_Advisories)"
 *   adapt the [CVE](/index.php/CVE#Documented_CVE.27s "CVE") tracking page for the fixed package and add a link to the appropriate ASA.

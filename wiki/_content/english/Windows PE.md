@@ -79,7 +79,7 @@ Simply [burn](/index.php/Optical_disc_drive#Burning "Optical disc drive") `winpe
 
 ### From Network
 
-Windows PE can be booted from the network using [PXELINUX](http://www.syslinux.org/wiki/index.php/PXELINUX) and its [MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK) module.
+Windows PE can be booted from the network using [PXELINUX](http://www.syslinux.org/wiki/index.php/PXELINUX) and its [MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK) module on BIOS systems. For UEFI systems, [wimboot](http://ipxe.org/wimboot) and [iPXE](http://ipxe.org) can be used.
 
 Install [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa).
 

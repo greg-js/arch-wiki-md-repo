@@ -71,41 +71,6 @@ options=(debug !strip)
 
 Alternatively you can put the debug information in a separate package by enabling both `debug` and `strip`, debugging information will then be stripped from the main package and placed in a separate `*foo*-debug` package.
 
-It is possible to have a separate config for your debug builds that will load the default config and alter some variables. This way you can create debug builds only when you need to and without editing PKGBUILD or configuration files each time.
-
-```
-. /etc/makepkg.conf
-
-cmake() {
-  command cmake -DCMAKE_BUILD_TYPE=Debug "$@"
-}
-
-_remove_opt() {
-local newarr=()
-for el in "${OPTIONS[@]}"; do
-case $el in
-"$1") ;;
-*) newarr+=( "$el" );;
-esac
-done
-OPTIONS=( "${newarr[@]}" )
-}
-
-_remove_opt strip
-_remove_opt !strip
-_remove_opt debug 
-_remove_opt !debug
-OPTIONS=( "${OPTIONS[@]}" !strip debug )
-
-```
-
-Save it into `/etc/makepkg-debug.conf` and use the it like this:
-
-```
- makepkg --config /etc/makepkg-debug.conf ...
-
-```
-
 **Note:** It is insufficient to simply install the newly compiled debug package, because the debugger will check that the file containing the debug symbols is from the same build as the associated library and executable. You must install both of the recompiled packages. In Arch, the debug symbols files are installed under `/usr/lib/debug`. See the [GDB documentation](https://sourceware.org/gdb/onlinedocs/gdb/Separate-Debug-Files.html) for more information about debug packages.
 
 Note that certain packages such as *glibc* are stripped regardless. Check the PKGBUILD for sections such as:

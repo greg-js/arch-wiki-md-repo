@@ -564,5 +564,4 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 ## See also
 
 *   [Official OfflineIMAP mailing list](http://lists.alioth.debian.org/mailman/listinfo/offlineimap-project)
-*   [Gnus, Dovecot, OfflineIMAP, search: a HOWTO](http://roland.entierement.nu/blog/2010/09/08/gnus-dovecot-offlineimap-search-a-howto.html)
 *   [Mutt + Gmail + Offlineimap](http://pbrisbin.com/posts/mutt_gmail_offlineimap/) - An outline of brisbin's simple gmail/mutt setup using cron to keep offlineimap syncing.
