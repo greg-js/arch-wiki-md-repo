@@ -339,7 +339,7 @@ location ~ \.(php**|html|htm**)$ {
 
 ```
 
-Non *.php* extension processing in php-fpm should be explicitly added in `/etc/php/php-fpm.conf`:
+Non *.php* extension processing in php-fpm should be explicitly added in `/etc/php/php-fpm.d/www.conf`:
 
 ```
 security.limit_extensions = .php .html .htm

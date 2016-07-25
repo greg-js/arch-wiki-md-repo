@@ -1,5 +1,3 @@
-See [pacman](/index.php/Pacman "Pacman") for the main article.
-
 For general methods to improve the flexibility of the provided tips or pacman itself, see [Core utilities](/index.php/Core_utilities "Core utilities") and [Bash](/index.php/Bash "Bash").
 
 ## Contents

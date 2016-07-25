@@ -8,6 +8,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 *   [1 Installation](#Installation)
     *   [1.1 Driver installation](#Driver_installation)
+    *   [1.2 ATI](#ATI)
 *   [2 Running](#Running)
     *   [2.1 Display manager](#Display_manager)
     *   [2.2 Manually](#Manually)
@@ -78,11 +79,13 @@ $ pacman -Ss xf86-video
 
 ```
 
-Xorg searches for installed drivers automatically. If it cannot find the specific driver installed for the hardware (listed below), it first searches for *fbdev* ([xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev)). If that is not found, it searches for *vesa* ([xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), the generic driver, which handles a large number of chipsets but does not include any 2D or 3D acceleration. If *vesa* is not found, Xorg will fall back to kernel mode setting, which includes GLAMOR acceleration (see `man modesetting`).
+Xorg searches for installed drivers automatically:
+
+*   If it cannot find the specific driver installed for the hardware (listed below), it first searches for *fbdev* ([xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev)).
+*   If that is not found, it searches for *vesa* ([xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), the generic driver, which handles a large number of chipsets but does not include any 2D or 3D acceleration.
+*   If *vesa* is not found, Xorg will fall back to [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"), which includes GLAMOR acceleration (see `man modesetting`).
 
 In order for video acceleration to work, and often to expose all the modes that the GPU can set, a proper video driver is required:
-
-**Note:** If you have a NVIDIA Optimus enabled laptop which uses an integrated video card combined with a dedicated GPU, see [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
 | Brand | Type | Driver | OpenGL | OpenGL ([Multilib](/index.php/Multilib "Multilib")) | Documentation |
 | **AMD/
@@ -95,9 +98,29 @@ ATI** | Open source | [xf86-video-amdgpu](https://www.archlinux.org/packages/?na
 | [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl) | [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) |
 | [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) | [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl) | [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl) |
 
+**Note:** For NVIDIA Optimus enabled laptop which uses an integrated video card combined with a dedicated GPU, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") or [Bumblebee](/index.php/Bumblebee "Bumblebee").
+
 Other video drivers can be found in the [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) group.
 
 Xorg should run smoothly without closed source drivers, which are typically needed only for advanced features such as fast 3D-accelerated rendering for games.
+
+### ATI
+
+| GPU architecture | Radeon cards | Open-source driver | Proprietary driver |
+| GCN 4 | RX 400 | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
+| GCN 3 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [Catalyst](/index.php/Catalyst "Catalyst") /
+[AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
+| GCN 2 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
+| GCN 1 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
+| TeraScale 2&3 | HD 5000 - HD 6000 | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
+| TeraScale 1 | HD 2000 - HD 4000 | [Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") legacy |
+| Older | X1000 and older | *not available* |
+
+	: [experimental AMDGPU support coming in Linux 4.8](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code)
+
+	: [experimental AMDGPU support](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released)
+
+	: [linux](https://www.archlinux.org/packages/?name=linux)>=4.7
 
 ## Running
 
@@ -107,7 +130,7 @@ A convenient way to start X, but one that requires an additional application and
 
 ### Manually
 
-To start the X server without a display manager, see [Xinitrc](/index.php/Xinitrc "Xinitrc").
+To start the X server without a display manager, see [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 
@@ -345,7 +368,7 @@ Option              "DPI" "96 x 96"
 
 ### DPMS
 
-DPMS (Display Power Management Signaling) is a technology that allows power saving behaviour of monitors when the computer is not in use. This will allow you to have your monitors automatically go into standby after a predefined period of time. See: [DPMS](/index.php/DPMS "DPMS")
+[DPMS](/index.php/DPMS "DPMS") (Display Power Management Signaling) is a technology that allows power saving behaviour of monitors when the computer is not in use. This will allow you to have your monitors automatically go into standby after a predefined period of time.
 
 ## Composite
 

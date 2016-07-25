@@ -180,24 +180,24 @@ If creating a new EFI System Partition, use the following commands (the recommen
 The remaining partition scheme is entirely up to you. For one other partition using 100% of remaining space:
 
 ```
-(parted) mkpart primary ext3 513MiB 100%
+(parted) mkpart primary ext4 513MiB 100%
 
 ```
 
 For separate `/` (20GiB) and `/home` (all remaining space) partitions:
 
 ```
-(parted) mkpart primary ext3 513MiB 20.5GiB
-(parted) mkpart primary ext3 20.5GiB 100%
+(parted) mkpart primary ext4 513MiB 20.5GiB
+(parted) mkpart primary ext4 20.5GiB 100%
 
 ```
 
 And for separate `/` (20GiB), swap (4GiB), and `/home` (all remaining space) partitions:
 
 ```
-(parted) mkpart primary ext3 513MiB 20.5GiB
+(parted) mkpart primary ext4 513MiB 20.5GiB
 (parted) mkpart primary linux-swap 20.5GiB 24.5GiB
-(parted) mkpart primary ext3 24.5GiB 100%
+(parted) mkpart primary ext4 24.5GiB 100%
 
 ```
 
@@ -206,7 +206,7 @@ And for separate `/` (20GiB), swap (4GiB), and `/home` (all remaining space) par
 For a minimum single primary partition using all available disk space, the following command would be used:
 
 ```
-(parted) mkpart primary ext3 1MiB 100%
+(parted) mkpart primary ext4 1MiB 100%
 (parted) set 1 boot on
 
 ```
@@ -214,9 +214,9 @@ For a minimum single primary partition using all available disk space, the follo
 In the following instance, a 20GiB `/` partition will be created, followed by a `/home` partition using all the remaining space:
 
 ```
-(parted) mkpart primary ext3 1MiB 20GiB
+(parted) mkpart primary ext4 1MiB 20GiB
 (parted) set 1 boot on
-(parted) mkpart primary ext3 20GiB 100%
+(parted) mkpart primary ext4 20GiB 100%
 
 ```
 
@@ -272,7 +272,7 @@ To shrink the filesystem on the partition:
 
 ```
 
-Where `*sdaX*` stands for the partition you are growing, and `*size*` is the new size of the partition.
+Where `*sdaX*` stands for the partition you are shrinking, and `*size*` is the new size of the partition.
 
 Then shrink the partition (in parted interactive mode):
 

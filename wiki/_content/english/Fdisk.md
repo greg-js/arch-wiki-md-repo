@@ -29,14 +29,16 @@ To use *fdisk* and its associated utilities, the [util-linux](https://www.archli
 To list partition tables and partitions on a device, you can run the following, where device is a name like `/dev/sda`:
 
 ```
-# fdisk -l /dev/sda
+# fdisk -l */dev/sda*
 
 ```
+
+**Note:** If the device is not specified, *fdisk* will list all partitions in `/proc/partitions`.
 
 Or for the *gdisk*:
 
 ```
-# gdisk -l /dev/sda
+# gdisk -l */dev/sda*
 
 ```
 

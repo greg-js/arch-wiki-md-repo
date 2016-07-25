@@ -4,7 +4,7 @@ The tablet can run the x86_64 version of Archlinux, but at the time of writing t
 
 *   [1 How to install](#How_to_install)
 *   [2 What works out of the box](#What_works_out_of_the_box)
-*   [3 What doesn't work](#What_doesn.27t_work)
+*   [3 What does not work](#What_does_not_work)
     *   [3.1 Power management](#Power_management)
     *   [3.2 Touchscreen (needs hacking, works)](#Touchscreen_.28needs_hacking.2C_works.29)
     *   [3.3 Wifi (needs hacking)](#Wifi_.28needs_hacking.29)
@@ -16,7 +16,7 @@ The tablet can run the x86_64 version of Archlinux, but at the time of writing t
 
 ## How to install
 
-The tablet features the same uefi bios as a "standard" x86 pc, to enter it hook an USB keyboard through the OTG port and press "Canc" during boot, you should now be inside the bios.
+The tablet features the same uefi bios as a "standard" x86 pc, to enter it keep the "volume up" button pressed during boot, you can also hook an USB keyboard through the OTG port and press "Canc", you should now be inside the bios, you can navigate it via touchscreen or keyboard.
 
 To boot from a specific uefi partition go to the last page of the bios and select the partition inside the "boot override" section, you should be able to boot and do the installation normally from the live usb. Use an usb hub and a wifi or ethernet dongle to complete the installation.
 
@@ -24,7 +24,7 @@ Linux can be installed without issues on an external usb storage, or in the inte
 
 A way to boot Linux automatically or from the graphical bootloader is yet to be discovered, the only known way is to go in the bios and manually boot each time.
 
-# What works out of the box
+## What works out of the box
 
 *   Video output (see below)
 *   Screen backlight slider (the one inside kde at least)
@@ -32,15 +32,15 @@ A way to boot Linux automatically or from the graphical bootloader is yet to be 
 
 With kernel 4.6 some crashes in the i915 driver were encountered, upgrading to linux-git (4.7 rc7) solved the issue, this renders unusable any form of graphical installation (an issue for other distros)
 
-# What doesn't work
+## What does not work
 
-## Power management
+### Power management
 
 No, battery level and charge state is totally absent
 
-Probably related bug: [https://bugzilla.redhat.com/show_bug.cgi?id=1337627](https://bugzilla.redhat.com/show_bug.cgi?id=1337627)
+Probably related bugs: [https://bugs.launchpad.net/ubuntu/+bug/1569995](https://bugs.launchpad.net/ubuntu/+bug/1569995) [https://bugzilla.redhat.com/show_bug.cgi?id=1337627](https://bugzilla.redhat.com/show_bug.cgi?id=1337627)
 
-## Touchscreen (needs hacking, works)
+### Touchscreen (needs hacking, works)
 
 The touchscreen does not work out of the box, but it can be made to work with the following driver:
 
@@ -59,7 +59,7 @@ $ wget -qO- [https://gist.githubusercontent.com/Keziolio/caed197e8cff640b00e766a
 
 The touchscreen will not be precise, touchscreen calibration is needed to get proper functionality. After the calibration it should work without major issues.
 
-## Wifi (needs hacking)
+### Wifi (needs hacking)
 
 No, not out of the box, the device is "Realtek RTL8723BS Wireless LAN 802.11n SDIO Network Adapter", this is a potential working driver:
 
@@ -67,22 +67,22 @@ No, not out of the box, the device is "Realtek RTL8723BS Wireless LAN 802.11n SD
 
 But it needs some kernel patches applied, i have yet to get it to work, it's not tested.
 
-## Power and volume buttons
+### Power and volume buttons
 
 No, totally unresponsive, more research is needed
 
-## Sound card
+### Sound card
 
 No, the device name may be "es8316"
 
-## Camera
+### Camera
 
 No, the device name may be "Unicam ov2680"
 
-## Accelerometer
+### Accelerometer
 
 Unknown, the device name is "Kionix KXCJ9 3-axis accelerometer SPB"
 
-## Bluetooth
+### Bluetooth
 
 Unknown

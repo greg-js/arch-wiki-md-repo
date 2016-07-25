@@ -13,6 +13,7 @@
         *   [2.2.3 Multi-user mode](#Multi-user_mode)
 *   [3 Running vncserver to directly control the local display](#Running_vncserver_to_directly_control_the_local_display)
     *   [3.1 Using tigervnc's x0vncserver](#Using_tigervnc.27s_x0vncserver)
+        *   [3.1.1 Starting and stopping x0vncserver via systemd](#Starting_and_stopping_x0vncserver_via_systemd)
     *   [3.2 Using x11vnc](#Using_x11vnc)
 *   [4 Connecting to vncserver](#Connecting_to_vncserver)
     *   [4.1 Passwordless authentication](#Passwordless_authentication)
@@ -129,26 +130,14 @@ $ systemctl --user enable vncserver@:1
 
 #### System mode
 
-Create `/etc/systemd/system/vncserver@:1.service` and modify it defining the user to run the server, and the desired options.
+**Warning:** Do not run this service if your local area network is untrusted.
 
- `/etc/systemd/system/vncserver@:1.service` 
+Create `/etc/systemd/system/vncserver@*:1*.service`, where `:1` is the `$DISPLAY` [environment variable](/index.php/Environment_variable "Environment variable").
+
+Modify the service by defining the user (`User=`) to run the server, and the desired [Vncserver](/index.php/Vncserver "Vncserver") options (`usr/bin/vncserver %i -arg1 -arg2 -argn`).
+
+ `/etc/systemd/system/vncserver@*:1*.service` 
 ```
-
-# The vncserver service unit file system mode
-#
-# 1\. Copy this file to /etc/systemd/system/vncserver@:<display>.service
-# 2\. Edit User=
-#   ("User=foo")
-# 3\. Edit the vncserver parameters appropriately
-#   ("/usr/bin/vncserver %i -arg1 -arg2 -argn")
-# 4\. Run `systemctl --system daemon-reload`
-# 5\. Run `systemctl enable vncserver@:<display>.service`
-#
-# DO NOT RUN THIS SERVICE if your local area network is untrusted! 
-#
-# See the wiki page for more on security
-# https://wiki.archlinux.org/index.php/Vncserver
-
 [Unit]
 Description=Remote desktop service (VNC)
 After=syslog.target network.target
@@ -167,7 +156,7 @@ WantedBy=multi-user.target
 
 ```
 
-[Start](/index.php/Start "Start") `vncserver@:1.service` and optionally [enable](/index.php/Enable "Enable") it to run at boot time/shutdown.
+[Start](/index.php/Start "Start") `vncserver@*:1*.service` and optionally [enable](/index.php/Enable "Enable") it to run at boot time/shutdown.
 
 #### Multi-user mode
 
@@ -228,6 +217,33 @@ For more see
 
 ```
 man x0vncserver
+
+```
+
+#### Starting and stopping x0vncserver via systemd
+
+**Warning:** Do not run this service if your local area network is untrusted!
+
+In order to have a VNC Server runnning x0vncserver, which is the easiest way for most users to quickly have remote access to the current desktop, you can create a systemd unit.
+
+**Note:** This unit will only be useful if the user in the unit is currently running a X session.
+
+Create `/etc/systemd/system/x0vncserver.service` and modify it defining the user to run the server, and the desired options.
+
+ `/etc/systemd/system/x0vncserver.service` 
+```
+
+[Unit]
+Description=Remote desktop service (VNC)
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=foo
+ExecStart=/usr/bin/sh -c '/usr/bin/x0vncserver -display :0 -rfbport 5900 -passwordfile /home/foo/.vnc/passwd &'
+
+[Install]
+WantedBy=multi-user.target
 
 ```
 

@@ -1,5 +1,3 @@
-See [NVIDIA](/index.php/NVIDIA "NVIDIA") for the main article.
-
 ## Contents
 
 *   [1 Fixing terminal resolution](#Fixing_terminal_resolution)

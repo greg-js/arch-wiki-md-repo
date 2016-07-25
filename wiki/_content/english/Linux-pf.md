@@ -1,7 +1,6 @@
 [Linux-pf](http://pf.natalenko.name/) is a kernel package based on the stock -ARCH kernel, with the following patches applied:
 
 *   [The latest Con Kolivas' -ck patchset, including BFS](http://ck-hack.blogspot.com/)
-*   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
 *   [BFQ](http://algo.ing.unimo.it/people/paolo/disk_sched/) (as default I/O scheduler)
 *   [UKSM](http://kerneldedup.org/projects/uksm/)
 *   [AUFS3](http://aufs.sourceforge.net/)
@@ -91,18 +90,6 @@ kernel (hd0,0)/vmlinuz-linux-pf root=/dev/disk/by-label/ROOT ro vga=0x318 lapic 
 initrd (hd0,0)/initramfs-linux-pf.img
 
 ```
-
-If you intend to use TuxOnIce for hibernation, make sure you have added the necessary modules to the MODULES array of `/etc/mkinitcpio.conf` and at least the *resume* hook to the HOOKS array:
-
-```
-MODULES="... lzo tuxonice_compress tuxonice_swap tuxonice_userui ..."
-HOOKS="... block userui resume filesystems ..."
-
-```
-
-In the example above, TuxOnIce is setup to use a swap partition as the suspended image allocator. The *resume* hook must be placed before *filesystems*. Also, a progress indicator is requested with *userui*. Please read the [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") wiki page for more detailed information.
-
-Last, you must choose whether you want to suspend using [pm-utils](/index.php/Pm-utils "Pm-utils") or the [hibernate-script](/index.php/Hibernate-script "Hibernate-script"). Please, refer to the respective wiki pages for more details. [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") offers the option for a text mode or an even nicer [framebuffer splash](/index.php/Fbsplash "Fbsplash") progress indicator.
 
 ## Tips and tricks
 

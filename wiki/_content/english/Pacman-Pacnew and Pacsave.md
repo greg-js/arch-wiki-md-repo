@@ -1,5 +1,3 @@
-See [pacman](/index.php/Pacman "Pacman") for the main article.
-
 When *pacman* removes a package that has a configuration file, it normally creates a backup copy of that config file and appends *.pacsave* to the name of the file. Likewise, when *pacman* upgrades a package which includes a new config file created by the maintainer differing from the currently installed file, it writes a *.pacnew* config file. *pacman* provides notice when these files are written.
 
 ## Contents

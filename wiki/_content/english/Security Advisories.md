@@ -39,6 +39,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### July 2016
 
+*   [24 July 2016] [ASA-201607-12](https://lists.archlinux.org/pipermail/arch-security/2016-July/000672.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
 *   [22 July 2016] [ASA-201607-11](https://lists.archlinux.org/pipermail/arch-security/2016-July/000671.html) [python2-django](https://www.archlinux.org/packages/?name=python2-django) cross site scripting
 *   [22 July 2016] [ASA-201607-10](https://lists.archlinux.org/pipermail/arch-security/2016-July/000670.html) [python-django](https://www.archlinux.org/packages/?name=python-django) cross site scripting
 *   [21 July 2016] [ASA-201607-9](https://lists.archlinux.org/pipermail/arch-security/2016-July/000669.html) [drupal](https://www.archlinux.org/packages/?name=drupal) proxy injection

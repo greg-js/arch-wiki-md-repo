@@ -2,17 +2,16 @@ This article covers configuration specific to this laptop's hardware.
 
 | **Device** | **Status** | **Kernel modules** | **X.org modules** |
 | Bluetooth adapter | Does not work | wl |
-| GPU | Works | i915 | intel_drv |
-| Touchpad | Works | psmouse | synaptics_drv |
+| GPU | Works | i915 | modesetting |
+| Touchpad | Works | psmouse | libinput |
 | Wireless NIC | Works | wl |
 
 ## Contents
 
 *   [1 Hardware](#Hardware)
     *   [1.1 Bluetooth adapter](#Bluetooth_adapter)
-    *   [1.2 GPU](#GPU)
-    *   [1.3 Touchpad](#Touchpad)
-    *   [1.4 Wireless NIC](#Wireless_NIC)
+    *   [1.2 Touchpad](#Touchpad)
+    *   [1.3 Wireless NIC](#Wireless_NIC)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Laptop freezes on boot](#Laptop_freezes_on_boot)
 
@@ -22,17 +21,9 @@ This article covers configuration specific to this laptop's hardware.
 
 Installing the [Broadcom wireless#broadcom-wl](/index.php/Broadcom_wireless#broadcom-wl "Broadcom wireless") driver will not help and the Bluetooth adapter is essentially inoperational.
 
-### GPU
-
-GPU has kernel support and works out of the box.
-
-For X.org drivers, [install](/index.php/Install "Install") [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel).
-
 ### Touchpad
 
 Install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput).
-
-**Note:** FocalTech touchpads are only properly supported since Linux 4.0.
 
 ### Wireless NIC
 

@@ -1,6 +1,6 @@
 This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") from the live system booted with the official installation image. Before installing, it would be advised to view the [FAQ](/index.php/FAQ "FAQ"). For conventions used in this document, see [Help:Reading](/index.php/Help:Reading "Help:Reading").
 
-For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles (accessible from the installation environment with [ELinks](/index.php/ELinks "ELinks")), or the various programs' [man pages](/index.php/Man_page "Man page"); see [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) for an overview of the configuration. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
+For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles (accessible from the installation environment with [ELinks](/index.php/ELinks "ELinks")), or the various programs' [man pages](/index.php/Man_page "Man page"); see `[archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt)` for an overview of the configuration. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
 
 ## Contents
 
@@ -32,7 +32,9 @@ For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWik
 
 Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) compatible machine with a minimum of 256 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space.
 
-Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as *systemctl* can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion"). To [edit](/index.php/Edit "Edit") configuration files, [nano](/index.php/Nano#Usage "Nano"), *vi* and [vim](/index.php/Vim#Usage "Vim") are available.
+Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as `[systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html#)` can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
+
+To [edit](/index.php/Edit "Edit") configuration files, [nano](/index.php/Nano#Usage "Nano"), *vi* and [vim](/index.php/Vim#Usage "Vim") are available.
 
 The installation process needs to retrieve packages from a remote repository, therefore a working internet connection is required.
 
@@ -49,20 +51,22 @@ As instructions differ for [UEFI](/index.php/UEFI "UEFI") systems, verify the bo
 
 The default [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Available choices can be listed with `ls /usr/share/kbd/keymaps/**/*.map.gz`.
 
-The layout can be changed with *loadkeys*, appending a file name (path and file extension can be omitted). For example:
+The layout can be changed with `[loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html#)`, appending a file name (path and file extension can be omitted). For example:
 
 ```
 # loadkeys *de-latin1*
 
 ```
 
-[Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/`, and can likewise be set with *setfont*.
+[Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/`, and can likewise be set with `[setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html#)`.
 
 ### Connect to the Internet
 
-Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as *ping*.
+Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as `[8(ping)](http://man7.org/linux/man-pages/manping/8.ping.html#)`.
 
-For other [network configuration](/index.php/Network_configuration "Network configuration"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [netctl](/index.php/Netctl "Netctl") are included; for examples, see `man systemd.network` and `man netctl.profile`. When using a different networking service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service` first:
+For other [network configuration](/index.php/Network_configuration "Network configuration"), `[systemd-networkd(8)](http://man7.org/linux/man-pages/man8/systemd-networkd.8.html#)` and `[netctl(1)](https://git.archlinux.org/netctl.git/tree/docs/netctl.1.txt)` are available. See `[systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html#)` and `[netctl.profile(5)](https://git.archlinux.org/netctl.git/tree/docs/netctl.profile.5.txt)` for examples.
+
+When using either service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service`:
 
 ```
 # systemctl stop dhcpcd@*interface*.service
@@ -71,7 +75,7 @@ For other [network configuration](/index.php/Network_configuration "Network conf
 
 ### Update the system clock
 
-Use [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") to ensure the system clock is accurate:
+Use `[timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html#)` to ensure the system clock is accurate:
 
 ```
 # timedatectl set-ntp true
@@ -82,9 +86,9 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-Identify the disk names with `lsblk` (results ending in `rom`, `loop` or `airoot` can be ignored), and print existing [partition tables](/index.php/Partition_table "Partition table") with `fdisk -l */dev/sda* print`. To modify tables, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or [gdisk](/index.php/Gdisk "Gdisk") for GPT only.
+To modify and print [partition tables](/index.php/Partition_table "Partition table"), use `[fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html#)` or `[parted(8)](http://man7.org/linux/man-pages/man8/parted.8.html#)` for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or `[gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html)` for GPT only.
 
-At the minimum, a partition must be available for the `/` directory; [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+At least one partition must be available for the `/` directory. [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 
 If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 
@@ -94,13 +98,15 @@ See [File systems](/index.php/File_systems#Create_a_file_system "File systems") 
 
 ### Mount the partitions
 
-Mount the root partition on `/mnt`. After that, create directories for and mount any other partitions (`/mnt/boot`, `/mnt/home`, ...) and activate your *swap* partition with *swapon*, if you want them to be detected later by *genfstab*.
+`[mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html#)` the root partition on `/mnt`. After that, create directories for and mount any other partitions (`/mnt/boot`, `/mnt/home`, ...) and activate your *swap* partition with `[swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html#)`, if you want them to be detected later by *genfstab*.
 
 ## Installation
 
 ### Select the mirrors
 
-Edit `/etc/pacman.d/mirrorlist` and select a download mirror(s). Regional mirrors usually work best; however, other criteria may be necessary to discern, read more on [Mirrors](/index.php/Mirrors "Mirrors"). This copy of the `mirrorlist` file will later be copied on the new system by *pacstrap*, so it is worth getting it right.
+Edit `/etc/pacman.d/mirrorlist` and select a download mirror(s). Regional mirrors usually work best; however, other criteria may be necessary to discern, read more on [Mirrors](/index.php/Mirrors "Mirrors").
+
+This file will later be copied to the new system by *pacstrap*, so it is worth getting right.
 
 ### Install the base packages
 
@@ -117,7 +123,7 @@ To [install](/index.php/Install "Install") other packages or groups to the new s
 
 ### Fstab
 
-Generate an [fstab](/index.php/Fstab "Fstab") file (use `-U` or `-L` to define by [UUID](/index.php/UUID "UUID") or labels):
+Generate an `[fstab(5)](http://man7.org/linux/man-pages/man5/fstab.5.html#)` file (use `-U` or `-L` to define by [UUID](/index.php/UUID "UUID") or labels):
 
 ```
 # genfstab -p /mnt >> /mnt/etc/fstab
@@ -144,7 +150,7 @@ Set the [time zone](/index.php/Time_zone "Time zone"):
 
 ```
 
-Run *hwclock* to generate `/etc/adjtime`. If the [time standard](/index.php/Time_standard "Time standard") is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), other operating systems should be configured accordingly.
+Run `[hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html#)` to generate `/etc/adjtime`. If the [time standard](/index.php/Time_standard "Time standard") is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), other operating systems should be configured accordingly.
 
 ```
 # hwclock --systohc --*utc*
@@ -160,21 +166,21 @@ Uncomment the needed [locales](/index.php/Locale "Locale") in `/etc/locale.gen`,
 
 ```
 
-Add `LANG=*your_locale*` to `/etc/locale.conf`, and console [keymap](/index.php/Keymap "Keymap") and [font](/index.php/Fonts#Console_fonts "Fonts") preferences to `/etc/vconsole.conf`.
+Add `LANG=*your_locale*` to `[locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html#)`, and if required, [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [font](/index.php/Fonts#Console_fonts "Fonts") to `[vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html#)`.
 
 ### Hostname
 
-Create an entry for your [hostname](/index.php/Hostname "Hostname") in `/etc/hostname` and `/etc/hosts`. See `man hosts` for the correct format.
+Create an entry for your [hostname](/index.php/Hostname "Hostname") in `/etc/hostname` and `/etc/hosts`. See `[hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html#)` and `[hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html#)`.
 
 ### Network configuration
 
 Configure the network for the newly installed environment: see [Network configuration](/index.php/Network_configuration "Network configuration").
 
-For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Install "Install") the [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), and [dialog](https://www.archlinux.org/packages/?name=dialog) packages; additional [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless") may be required.
+For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Install "Install") the [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), and [dialog](https://www.archlinux.org/packages/?name=dialog) packages, as well as needed [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless").
 
 ### Initramfs
 
-When making configuration changes to [/etc/mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio"), create a new initial RAM disk with:
+When making configuration changes to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"), create a new initial RAM disk with:
 
 ```
 # mkinitcpio -p linux
@@ -200,7 +206,7 @@ If you have an Intel CPU, in addition to installing a boot loader, install the [
 
 Exit the chroot environment by typing `exit` or pressing `Ctrl+D`.
 
-Optionally manually unmount all the partitions with `umount -R /mnt`: this allows noticing any "busy" partitions, and finding the cause with [fuser](https://en.wikipedia.org/wiki/fuser_(Unix) "wikipedia:fuser (Unix)").
+Optionally manually unmount all the partitions with `umount -R /mnt`: this allows noticing any "busy" partitions, and finding the cause with `[fuser(1)](http://man7.org/linux/man-pages/man1/fuser.1.html#)`.
 
 Finally, restart the machine by typing `reboot`: any partitions still mounted will be automatically unmounted by *systemd*. Remember to remove the installation media and then login into the new system with the root account.
 

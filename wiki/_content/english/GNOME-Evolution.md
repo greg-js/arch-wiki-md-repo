@@ -221,7 +221,7 @@ In order to use Evolution outside of Gnome desktop you must export [gnome-keyrin
 
 ## Spell Check
 
-Make sure you have a local dictionary installed. You can run `pacman -Ss aspell` for a list of dictionaries.
+You need a local dictionary installed. See the [aspell](/index.php/Aspell "Aspell") article.
 
 ## Tips and tricks
 

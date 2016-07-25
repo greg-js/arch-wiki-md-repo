@@ -1,40 +1,74 @@
-The [Humble Bundle](https://humblebundle.com) is a platform to sell collections of games (or "bundles") at a price determined by the purchaser. The website also maintains a storefront for traditional purchases.
+[Humble Bundle](https://humblebundle.com) is a digital distributor of commercial video games, that stocks many titles with Linux support.
 
-## Linux Support
+## Contents
 
-Many of the titles offered on the platform include Linux support, often distributing .debs for Debian/Ubuntu and .tar.gz archives for 'generic' Linux distribution. While it is certainly possible to extract and run the .tar.gz archives directly the game could fail to run due to missing dependencies. One could easily utilise [AUR](/index.php/AUR "AUR") packages for proper dependency handling and desktop integration. These AUR package names typically include the '-hib' suffix to denote that it expects sources from the Humble Bundle storefront.
+*   [1 Purchase](#Purchase)
+*   [2 Installation](#Installation)
+    *   [2.1 Using AUR packages](#Using_AUR_packages)
+        *   [2.1.1 Providing the game archive](#Providing_the_game_archive)
+    *   [2.2 Manual installation](#Manual_installation)
 
-## PKGBUILD Installation
+## Purchase
 
-One must download the packages from Humble Bundle's website in order for the PKGBUILD to build. There are a few ways to achieve this:
+There are two purchasing methods:
 
-*   Manual: view the PKGBUILD and download the file it expects from humblebundle.com to your build directory. If using an [AUR helper](/index.php/AUR_helper "AUR helper"), the build directory will be located in a subdirectory of /tmp by default.
+*   *Humble Indie Bundles* – time-limited promotions where a collection of games can be bought at a price determined by the purchaser.
+*   *Humble Store* – traditional (fixed-price, single-game) purchases, usually via a widget on the game developer's website.
 
-*   `hib:// DLAGENT`: by creating a `DLAGENT` in [makepkg](/index.php/Makepkg "Makepkg")'s configuration file, the process of giving the PKGBUILD the game files is entirely automated. The recommended package for such a scenario is [hib-dlagent](https://aur.archlinux.org/packages/hib-dlagent/), available in the AUR.
+Both give you the exact same versions of the games, and in both cases the game ends up in your personal game library on the Humble Bundle website, from where you can download it.
 
-After installing a dlagent helper, associate *hib://* as a valid dlagent in */etc/makepkg.conf*:
+## Installation
 
-```
-hib::/usr/bin/hib-dlagent -u USER-EMAIL -o %o %u
+Many of the games offered on the platform have Linux versions, often provided in the form of a `.deb` package for Debian/Ubuntu, and a `.tar.gz` archive or `.sh` self-extracting archive for "generic" Linux distributions.
 
-```
+In some cases, you can just extract the `.tar.gz` or `.sh` somewhere on your Arch Linux system and run the game executable in the extracted folder. But in many other cases, additional installation steps are required to make the game run error-free.
 
-When set to download a package from Humble Bundle, your password will need to be supplied. If complete automation is desired one could include the password:
+### Using AUR packages
 
-```
-hib::/usr/bin/hib-dlagent -u USER-EMAIL -p PASSWORD -o %o %u
+[AUR](/index.php/AUR "AUR") packages for Humble Bundle games take care of all the steps required to make each game run on Arch Linux.
 
-```
+These AUR package typically include the suffix `-hib` in their name.
 
-**Warning:** Be aware that any user on the system can read this file. This could expose your password.
+#### Providing the game archive
 
-For a per-user setup, the following could be added to *~/.makepkg.conf*:
+Of course you have to provide your purchased game archive to the AUR package, so that it can install it. There are a few ways to achieve this:
 
-```
-DLAGENT+=('hib::/usr/bin/hib-dlagent -u USER-EMAIL -p PASSWORD -o %o %u')
+*   **Manually copy/symlink the archive:**
 
-```
+	Manually download the game archive from your Humble Bundle library. Then copy or symlink the game archive to the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") folder. (You can look at the `source` array in the PKGBUILD to see which exact archive file it expects.
 
-Now installation of Humble Bundle games will be a simple installation command away (provided the associated PKGBUILD supports the *hib://* scheme).
+*   **Register a download agent:**
 
-**Warning:** Since AUR automators will download files to the /tmp directory excessively large game files will likely cause /tmp to run out of room. The manual method is best for very large downloads.
+	Most AUR packages for Humble Bundle games helpfully mark the game archive using the custom `hib://` URI protocol. You can specify a handler for this protocol in the configuration file `/etc/makepkg.conf`, by adding a line to the `DLAGENTS` array right at the top of the file. You only need to do this once. The process for placing game archives into PKGBUILD directories will then be automated.
+
+*   ***DLAGENT that finds the manually downloaded archive:***
+
+	If you use the following DLAGENT, you can simply download your Humble Bundle archives to somewhere in your `~/downloads`, and AUR packages will automatically find and symlink it:
+
+	 `'hib::/usr/bin/sh -c find\ \$HOME/Downloads\ -name\ \$(basename\ %u)\ -exec\ ln\ -s\ \\\{\\\}\ %o\ \\\;\ -quit'` 
+
+*   ***DLAGENT that automatically downloads the archive:***
+
+	If you have the [hib-dlagent](https://aur.archlinux.org/packages/hib-dlagent/) program installed, you can use the following DLAGENT to have it automatically download the game archive from your Humble Bundle library on demand:
+
+	 `'hib::/usr/bin/hib-dlagent -u USER-EMAIL -o %o %u'` 
+
+	It will ask you for your password each time. If complete automation is desired, you can hard-code the password using the `-p` parameter, but for security reason you probably shouldn't do this in the global `/etc/makepkg.conf` which all user accounts can read, but rather create the file `~/.makepkg.conf` and add it there as such:
+
+	 `DLAGENT+=('hib::/usr/bin/hib-dlagent -u USER-EMAIL -p PASSWORD -o %o %u')` 
+
+### Manual installation
+
+Manually getting a Humble Bundle game to run on Arch Linux, after extracting it, typically involves:
+
+*   **Installing dependencies**:
+
+	The games tend to assume that all dependencies which are part of a standard Ubuntu system, are installed.
+
+	Remember that if the game only has a 32bit binary, you have to install the `lib32-` versions of all dependencies on a 64bit system.
+
+*   **Removing bundled libraries that cause problems**:
+
+	Some dependencies *are* bundled with the games, usually in a subfolder called `lib` or `lib32` or `lib64`. Unfortunately, some of these cause problems on Arch Linux, in which case you'll have to delete the troublemakers from that subfolder, so that the game will use the version of the library from `/usr/lib*`) instead. (Of course you'll then have to install the Arch Linux package which provides the library.)
+
+If you're unsure, ask on the [forum](https://bbs.archlinux.org/viewforum.php?id=32) for help.

@@ -74,7 +74,7 @@
 | <small>4.9.16.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(12)</small> |
 | <small>4.9.17.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(17)</small> |
 | <small>4.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(5)</small> |
-| <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(15)</small> |
+| <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(16)</small> |
 | <small>4.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(22)</small> |
 | <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small> |

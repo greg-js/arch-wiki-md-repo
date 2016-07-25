@@ -9,73 +9,68 @@ They can do many operations, including:
 *   theming xscreensaver
 *   altering preferences on low-level X applications (xclock ([xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock)), [xpdf](https://www.archlinux.org/packages/?name=xpdf), [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode), etc.)
 
-**Note:** Using `~/.Xdefaults` is deprecated, so this article will only refer to resources loaded with xrdb
-
 ## Contents
 
-*   [1 Usage](#Usage)
-    *   [1.1 Parsing .Xresources](#Parsing_.Xresources)
-    *   [1.2 Adding to xinitrc](#Adding_to_xinitrc)
-    *   [1.3 Default settings](#Default_settings)
-    *   [1.4 Xresources syntax](#Xresources_syntax)
-        *   [1.4.1 Basic syntax](#Basic_syntax)
-        *   [1.4.2 Wildcard matching](#Wildcard_matching)
-        *   [1.4.3 Commenting](#Commenting)
-        *   [1.4.4 Include files](#Include_files)
-*   [2 Sample usage](#Sample_usage)
-    *   [2.1 Terminal colors](#Terminal_colors)
-    *   [2.2 Xcursor](#Xcursor)
-    *   [2.3 Xft](#Xft)
-    *   [2.4 Xterm](#Xterm)
-    *   [2.5 rxvt-unicode](#rxvt-unicode)
-    *   [2.6 Xpdf](#Xpdf)
-*   [3 Color scheme commands](#Color_scheme_commands)
-    *   [3.1 Display all 256 colors](#Display_all_256_colors)
-    *   [3.2 Display tput escape codes](#Display_tput_escape_codes)
-    *   [3.3 Enumerating colors supported by terminals](#Enumerating_colors_supported_by_terminals)
-    *   [3.4 Enumerating terminal capabilities](#Enumerating_terminal_capabilities)
-*   [4 Color scheme scripts](#Color_scheme_scripts)
-    *   [4.1 LUA](#LUA)
-    *   [4.2 Bash](#Bash)
-    *   [4.3 Ruby](#Ruby)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Parsing errors](#Parsing_errors)
-*   [6 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
+    *   [2.1 Load resource file](#Load_resource_file)
+    *   [2.2 xinitrc](#xinitrc)
+    *   [2.3 Default settings](#Default_settings)
+    *   [2.4 Xresources syntax](#Xresources_syntax)
+        *   [2.4.1 Basic syntax](#Basic_syntax)
+        *   [2.4.2 Wildcard matching](#Wildcard_matching)
+        *   [2.4.3 Commenting](#Commenting)
+        *   [2.4.4 Include files](#Include_files)
+*   [3 Sample usage](#Sample_usage)
+    *   [3.1 Terminal colors](#Terminal_colors)
+    *   [3.2 Xcursor](#Xcursor)
+    *   [3.3 Xft](#Xft)
+    *   [3.4 Xterm](#Xterm)
+    *   [3.5 rxvt-unicode](#rxvt-unicode)
+    *   [3.6 Xpdf](#Xpdf)
+*   [4 Color scheme commands](#Color_scheme_commands)
+    *   [4.1 Display all 256 colors](#Display_all_256_colors)
+    *   [4.2 Display tput escape codes](#Display_tput_escape_codes)
+    *   [4.3 Enumerating colors supported by terminals](#Enumerating_colors_supported_by_terminals)
+    *   [4.4 Enumerating terminal capabilities](#Enumerating_terminal_capabilities)
+*   [5 Color scheme scripts](#Color_scheme_scripts)
+    *   [5.1 LUA](#LUA)
+    *   [5.2 Bash](#Bash)
+    *   [5.3 Ruby](#Ruby)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Parsing errors](#Parsing_errors)
+*   [7 See also](#See_also)
+
+## Installation
+
+[Install](/index.php/Install "Install") the [xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb) package.
 
 ## Usage
 
-Make sure that [xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb) is installed in your system.
+### Load resource file
 
-### Parsing .Xresources
+Resources are stored in the X server, so have to only be read once. They are also accessible to *remote* X11 clients (such as those forwarded over SSH).
 
-The file `~/.Xresources` does not exist by default. It is a plain-text file, so you can create it with any text editor. Once present it will be parsed automatically, by one of:
+Load a resource file (such as the conventional `.Xresources`), replacing any current settings:
+
+```
+$ xrdb *~/.Xresources*
+
+```
+
+Load a resource file, and merge with the current settings:
+
+```
+$ xrdb -merge *~/.Xresources*
+
+```
+
+**Note:**
 
 *   Most [Display managers](/index.php/Display_manager "Display manager") will load the `~/.Xresources` file on login.
-*   If using `startx` you may need to edit `.xinitrc`, see below for details.
+*   The older `~/.Xdefaults` file is read when an X11 program starts, but only if *xrdb* has not been used in the current session. [[1]](https://groups.google.com/forum/#!msg/comp.windows.x/hQBEdql8l-Q/hF3DETcIHGwJ)
 
-The resources will be stored in the X server, so the file does not need to be read every time an app is started. The file can be reread to make any changes take effect.
-
-To reread the `.Xresources` file and throw away the old resources:
-
-```
-xrdb ~/.Xresources
-
-```
-
-To reread the `.Xresources` file and keep the old resources:
-
-```
-xrdb -merge ~/.Xresources
-
-```
-
-**Tip:** `~/.Xresources` is just a naming convention; `xrdb` can load any file. If you use `xrdb` manually, you can put such a file anywhere you want (for example, `~/.config/Xresources`).
-
-**Note:** Resources loaded with `xrdb` are also accessible to *remote* X11 clients (such as those forwarded over SSH).
-
-**Warning:** The older and deprecated `~/.Xdefaults` file is read every time you start an X11 program such as `xterm`, but **only** if `xrdb` has not **ever** been used in the current X session. [[1]](https://groups.google.com/forum/#!msg/comp.windows.x/hQBEdql8l-Q/hF3DETcIHGwJ)
-
-### Adding to xinitrc
+### xinitrc
 
 If you are using a copy of the default [xinitrc](/index.php/Xinitrc "Xinitrc") as your `.xinitrc` it already merges `~/.Xresources`.
 

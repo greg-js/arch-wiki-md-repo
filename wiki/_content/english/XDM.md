@@ -32,7 +32,7 @@ Unlike many more modern [display managers](/index.php/Display_manager "Display m
 Ensure that the `.xinitrc` file in your home directory is executable. To do this use the following command:
 
 ```
-$ chmod 744 ~/.xinitrc
+$ chmod 700 ~/.xinitrc
 
 ```
 

@@ -1,5 +1,3 @@
-See [NVIDIA](/index.php/NVIDIA "NVIDIA") for the main article.
-
 ## Contents
 
 *   [1 Wayland (gdm) crashes after nvidia-libgl installation](#Wayland_.28gdm.29_crashes_after_nvidia-libgl_installation)

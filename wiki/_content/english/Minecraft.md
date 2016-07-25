@@ -50,9 +50,9 @@ There are several [programs and editors](http://www.minecraftwiki.net/wiki/Progr
 
 ### Installation
 
-**Note:** Regardless of how you install the Minecraft server, it will need [Java](/index.php/Java "Java") to run. Some people (apparently especially on ARMv7 machines) have reported that the server doesn't run well, if at all, using the OpenJDK packages and have reported success using the Oracle Java packages ([jdk-arm](https://aur.archlinux.org/packages/jdk-arm/)) instead. Your mileage may vary.
-
 The simplest way to install the Minecraft server on an Arch Linux system is by using the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. It provides additional systemd unit files and includes a small control script.
+
+**Note:** Except for [Cuberite](#Cuberite) which is written in C++ and Lua almost all Minecraft servers will require [Java](/index.php/Java "Java") to run. Some people (apparently especially on ARMv7 machines) have reported that the server doesn't run well, if at all, using the OpenJDK packages and have reported success using the Oracle Java packages ([jdk-arm](https://aur.archlinux.org/packages/jdk-arm/)) instead. Your mileage may vary.
 
 ### Setup
 

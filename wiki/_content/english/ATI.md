@@ -6,49 +6,54 @@ If unsure, try the open source driver first, it will suit most needs and is gene
 
 ## Contents
 
-*   [1 Naming conventions](#Naming_conventions)
-*   [2 Installation](#Installation)
-*   [3 Configuration](#Configuration)
-*   [4 Loading](#Loading)
-    *   [4.1 Enable early KMS](#Enable_early_KMS)
-*   [5 Performance tuning](#Performance_tuning)
-    *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
-    *   [5.2 Driver options](#Driver_options)
-    *   [5.3 Kernel parameters](#Kernel_parameters)
-        *   [5.3.1 Deactivating PCI-E 2.0](#Deactivating_PCI-E_2.0)
-    *   [5.4 Gallium Heads-Up Display](#Gallium_Heads-Up_Display)
-*   [6 Hybrid graphics/AMD Dynamic Switchable Graphics](#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics)
-*   [7 Powersaving](#Powersaving)
-    *   [7.1 Dynamic power management](#Dynamic_power_management)
-        *   [7.1.1 Commandline Tools](#Commandline_Tools)
-    *   [7.2 Old methods](#Old_methods)
-        *   [7.2.1 Dynamic frequency switching](#Dynamic_frequency_switching)
-        *   [7.2.2 Profile-based frequency switching](#Profile-based_frequency_switching)
-        *   [7.2.3 Persistent configuration](#Persistent_configuration)
-        *   [7.2.4 Graphical tools](#Graphical_tools)
-    *   [7.3 Other notes](#Other_notes)
-*   [8 Fan Speed](#Fan_Speed)
-*   [9 TV out](#TV_out)
-    *   [9.1 Force TV-out in KMS](#Force_TV-out_in_KMS)
-*   [10 HDMI audio](#HDMI_audio)
-*   [11 Multihead setup](#Multihead_setup)
-    *   [11.1 Using the RandR extension](#Using_the_RandR_extension)
-    *   [11.2 Independent X screens](#Independent_X_screens)
-*   [12 Turn vsync off](#Turn_vsync_off)
-*   [13 Troubleshooting](#Troubleshooting)
-    *   [13.1 Artifacts upon logging in](#Artifacts_upon_logging_in)
-    *   [13.2 Adding undetected resolutions](#Adding_undetected_resolutions)
-    *   [13.3 AGP is disabled (with KMS)](#AGP_is_disabled_.28with_KMS.29)
-    *   [13.4 TV showing a black border around the screen](#TV_showing_a_black_border_around_the_screen)
-    *   [13.5 Black screen with mouse cursor on resume from suspend in X](#Black_screen_with_mouse_cursor_on_resume_from_suspend_in_X)
-    *   [13.6 No desktop effects in KDE4 with X1300 and Radeon driver](#No_desktop_effects_in_KDE4_with_X1300_and_Radeon_driver)
-    *   [13.7 Black screen and no console, but X works in KMS](#Black_screen_and_no_console.2C_but_X_works_in_KMS)
-    *   [13.8 2D performance (e.g. scrolling) is slow](#2D_performance_.28e.g._scrolling.29_is_slow)
-    *   [13.9 Monitor rotation works for cursor but not windows/content](#Monitor_rotation_works_for_cursor_but_not_windows.2Fcontent)
-    *   [13.10 ATI X1600 (RV530 series) 3D application show black windows](#ATI_X1600_.28RV530_series.29_3D_application_show_black_windows)
-    *   [13.11 Cursor corruption after coming out of sleep](#Cursor_corruption_after_coming_out_of_sleep)
-    *   [13.12 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
-    *   [13.13 Low 2D performance in console and X](#Low_2D_performance_in_console_and_X)
+*   [1 Selecting the right driver](#Selecting_the_right_driver)
+*   [2 Naming conventions](#Naming_conventions)
+*   [3 Installation](#Installation)
+*   [4 Configuration](#Configuration)
+*   [5 Loading](#Loading)
+    *   [5.1 Enable early KMS](#Enable_early_KMS)
+*   [6 Performance tuning](#Performance_tuning)
+    *   [6.1 Enabling video acceleration](#Enabling_video_acceleration)
+    *   [6.2 Driver options](#Driver_options)
+    *   [6.3 Kernel parameters](#Kernel_parameters)
+        *   [6.3.1 Deactivating PCI-E 2.0](#Deactivating_PCI-E_2.0)
+    *   [6.4 Gallium Heads-Up Display](#Gallium_Heads-Up_Display)
+*   [7 Hybrid graphics/AMD Dynamic Switchable Graphics](#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics)
+*   [8 Powersaving](#Powersaving)
+    *   [8.1 Dynamic power management](#Dynamic_power_management)
+        *   [8.1.1 Commandline Tools](#Commandline_Tools)
+    *   [8.2 Old methods](#Old_methods)
+        *   [8.2.1 Dynamic frequency switching](#Dynamic_frequency_switching)
+        *   [8.2.2 Profile-based frequency switching](#Profile-based_frequency_switching)
+        *   [8.2.3 Persistent configuration](#Persistent_configuration)
+        *   [8.2.4 Graphical tools](#Graphical_tools)
+    *   [8.3 Other notes](#Other_notes)
+*   [9 Fan Speed](#Fan_Speed)
+*   [10 TV out](#TV_out)
+    *   [10.1 Force TV-out in KMS](#Force_TV-out_in_KMS)
+*   [11 HDMI audio](#HDMI_audio)
+*   [12 Multihead setup](#Multihead_setup)
+    *   [12.1 Using the RandR extension](#Using_the_RandR_extension)
+    *   [12.2 Independent X screens](#Independent_X_screens)
+*   [13 Turn vsync off](#Turn_vsync_off)
+*   [14 Troubleshooting](#Troubleshooting)
+    *   [14.1 Artifacts upon logging in](#Artifacts_upon_logging_in)
+    *   [14.2 Adding undetected resolutions](#Adding_undetected_resolutions)
+    *   [14.3 AGP is disabled (with KMS)](#AGP_is_disabled_.28with_KMS.29)
+    *   [14.4 TV showing a black border around the screen](#TV_showing_a_black_border_around_the_screen)
+    *   [14.5 Black screen with mouse cursor on resume from suspend in X](#Black_screen_with_mouse_cursor_on_resume_from_suspend_in_X)
+    *   [14.6 No desktop effects in KDE4 with X1300 and Radeon driver](#No_desktop_effects_in_KDE4_with_X1300_and_Radeon_driver)
+    *   [14.7 Black screen and no console, but X works in KMS](#Black_screen_and_no_console.2C_but_X_works_in_KMS)
+    *   [14.8 2D performance (e.g. scrolling) is slow](#2D_performance_.28e.g._scrolling.29_is_slow)
+    *   [14.9 Monitor rotation works for cursor but not windows/content](#Monitor_rotation_works_for_cursor_but_not_windows.2Fcontent)
+    *   [14.10 ATI X1600 (RV530 series) 3D application show black windows](#ATI_X1600_.28RV530_series.29_3D_application_show_black_windows)
+    *   [14.11 Cursor corruption after coming out of sleep](#Cursor_corruption_after_coming_out_of_sleep)
+    *   [14.12 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
+    *   [14.13 Low 2D performance in console and X](#Low_2D_performance_in_console_and_X)
+
+## Selecting the right driver
+
+Depending on the card you have, find the right driver in [Xorg#ATI](/index.php/Xorg#ATI "Xorg"). This page has instructions for **ATI**.
 
 ## Naming conventions
 
@@ -643,14 +648,14 @@ Enabled=true
 
 ### Black screen and no console, but X works in KMS
 
-This is a solution to no-console problem that might come up, when using two or more ATI cards on the same PC. Fujitsu Siemens Amilo PA 3553 laptop for example has this problem. This is due to fbcon console driver mapping itself to wrong framebuffer device that exist on the wrong card. This can be fixed by adding a this to the kernel boot line:
+This is a solution to the no-console problem that might come up, when using two or more ATI cards on the same PC. Fujitsu Siemens Amilo PA 3553 laptop for example has this problem. This is due to fbcon console driver mapping itself to the wrong framebuffer device that exists on the wrong card. This can be fixed by adding this to the kernel boot line:
 
 ```
 fbcon=map:1
 
 ```
 
-This will tell the fbcon to map itself to the `/dev/fb1` framebuffer dev and not the `/dev/fb0`, that in our case exist on the wrong graphics card. If that does not fix your problem, try booting with
+This will tell the fbcon to map itself to the `/dev/fb1` framebuffer dev and not the `/dev/fb0`, that in our case exists on the wrong graphics card. If that does not fix your problem, try booting with
 
 ```
 fbcon=map:0
@@ -661,7 +666,7 @@ instead.
 
 ### 2D performance (e.g. scrolling) is slow
 
-If you have problem with 2D performance, like scrolling in terminal or browser, you might need to add `Option "MigrationHeuristic" "greedy"` into the `"Device"` section of your `xorg.conf` file.
+If you're having problems with 2D performance, like scrolling in terminal or browser, you might need to add `Option "MigrationHeuristic" "greedy"` into the `"Device"` section of your `xorg.conf` file.
 
 **Note:** This only applies to EXA.
 
@@ -691,7 +696,7 @@ Acceleration is disabled when using EXA on newer graphics cards (source: [commen
 
 There are three possible solutions:
 
-*   Try add `pci=nomsi` to your boot loader [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+*   Try adding `pci=nomsi` to your boot loader [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 *   If this does not work, you can try adding `noapic` instead of `pci=nomsi`.
 *   If none of the above work, then you can try running `vblank_mode=0 glxgears` or `vblank_mode=1 glxgears` to see which one works for you, then install [driconf](https://www.archlinux.org/packages/?name=driconf) and set that option in `~/.drirc`.
 

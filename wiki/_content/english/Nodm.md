@@ -4,21 +4,16 @@
 
 [Install](/index.php/Install "Install") the [nodm](https://www.archlinux.org/packages/?name=nodm) package.
 
+## Usage
+
 Now ensure no other display managers get started by [disabling](/index.php/Disabling "Disabling") their systemd services.
 
-After installing nodm, you should modify the /etc/nodm.conf file.
+After installing nodm, modify the `/etc/nodm.conf` file. Set the `NODM_USER` variable to the user which should be automatically logged in, and change the `NODM_XSESSION` variable to point to the script that starts your session. This script must be executable!
 
-Now set the NODM_USER variable to the user that should be automatically logged in, and change the NODM_XSESSION variable to point to the script that starts your session. This script must be executable!
-
+ `/etc/nodm.conf` 
 ```
-NODM_USER='{user}'
-NODM_XSESSION='/home/{user}/.xinitrc'
-
+NODM_USER=*user*
+NODM_XSESSION=/home/*user/.xinitrc*
 ```
 
-Enable the systemd service so it will be started on boot.
-
-```
-sudo systemctl enable nodm
-
-```
+[Enable](/index.php/Enable "Enable") `nodm.service` so *nodm* will be started on boot.

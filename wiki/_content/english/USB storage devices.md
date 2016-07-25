@@ -27,7 +27,7 @@ If you do not use a custom-made kernel, you are ready to go, for all Arch Linux 
 
 ### Identifying device
 
-First thing one need to access storage device is its identifier assigned by kernel. See [fstab#Identifying filesystems](/index.php/Fstab#Identifying_filesystems "Fstab") for details.
+The first thing one needs to access a storage device is its identifier assigned by kernel. See [fstab#Identifying filesystems](/index.php/Fstab#Identifying_filesystems "Fstab") for details.
 
 **Tip:** To see which device is your USB device, you can compare the output of `lsblk -f` (explained in the linked article) when the USB device is connected and when it is unconnected.
 

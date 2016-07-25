@@ -988,7 +988,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **RSS Guard** — Very tiny RSS and ATOM news reader developed using Qt framework.
 
-	[https://bitbucket.org/skunkos/rssguard](https://bitbucket.org/skunkos/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)
+	[https://github.com/martinrotter/rssguard](https://github.com/martinrotter/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)
 
 *   **[RSSOwl](https://en.wikipedia.org/wiki/RSSOwl "wikipedia:RSSOwl")** — Powerful aggregator for RSS and Atom feeds, written in Java using Eclipse Rich Client Platform and SWT as a widget toolkit.
 

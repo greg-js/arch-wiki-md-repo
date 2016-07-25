@@ -100,3 +100,6 @@
 
 *   Set up orion
     *   Migrate archive from seblu's server
+
+*   Migrate patchwork. Reference: [https://github.com/getpatchwork/patchwork/blob/master/docs/deployment.md](https://github.com/getpatchwork/patchwork/blob/master/docs/deployment.md)
+    *   Add automatic updates when patches are pushed to a repo (at the bottom of the above link)

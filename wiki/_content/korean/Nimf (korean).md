@@ -27,6 +27,7 @@
 
 ```
 export GTK_IM_MODULE=nimf
+export QT4_IM_MODULE="nimf"
 export QT_IM_MODULE=nimf
 export XMODIFIERS="@im=nimf"
 nimf-daemon
@@ -45,7 +46,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMM
 
 ## 설정 변경
 
-님프 설정을 변경하려면, `nimf-settings` 를 사용하세요. 터미널에서 `nimf-settings` 를 실행 하거나, 시스템 트레이에 표시되는 님프 표시기를 클릭하면 나타나는 표시기 메뉴에서 `Settings` 를 선택하여 실행하실 수 있습니다.
+님프 설정을 변경하려면, `nimf-settings` 를 사용하세요. 터미널에서 `nimf-settings` 를 실행 하거나, 시스템 트레이에 표시되는 님프 표시기를 클릭하면 나타나는 표시기 메뉴에서 `설정` 을 선택하여 실행하실 수 있습니다.
 
 ## 더 보기
 

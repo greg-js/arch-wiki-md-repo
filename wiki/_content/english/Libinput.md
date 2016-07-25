@@ -8,13 +8,14 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
+    *   [2.1 Graphical tools](#Graphical_tools)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Touchpad configuration](#Touchpad_configuration)
-    *   [3.2 Mouse button re-mapping](#Mouse_button_re-mapping)
-    *   [3.3 Debugging](#Debugging)
-        *   [3.3.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
+    *   [3.1 Touchpad tapping](#Touchpad_tapping)
+    *   [3.2 Natural scrolling](#Natural_scrolling)
+    *   [3.3 Mouse button re-mapping](#Mouse_button_re-mapping)
     *   [3.4 Multitouch events](#Multitouch_events)
-    *   [3.5 Natural scrolling](#Natural_scrolling)
+    *   [3.5 Debugging](#Debugging)
+        *   [3.5.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -56,7 +57,7 @@ $ xinput set-prop *device-number* *option-number* *setting*
 
 to change a setting.
 
-See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") and [#Touchpad configuration](#Touchpad_configuration) illustrate examples.
+See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") and [#Touchpad tapping](#Touchpad_tapping) illustrate examples.
 
 Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence.
 
@@ -80,9 +81,15 @@ is a notebok without any configuration files in `/etc/X11/xorg.conf.d/`, i.e. de
 
 Of course you can elect to use an alternative driver for one device and libinput for others. A number of factors may influence which driver to use. For example, in comparison to [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") the libinput driver has fewer options to customize touchpad behaviour to one's own taste, but far more programmatic logic to process multitouch events (e.g. palm detection as well). Hence, it makes sense to try the alternative, if you are experiencing problems on your hardware with one driver or the other.
 
+### Graphical tools
+
+There are different GUI tools:
+
+*   [GNOME](/index.php/GNOME "GNOME"): Control center
+
 ## Tips and tricks
 
-### Touchpad configuration
+### Touchpad tapping
 
 Tapping may be disabled by default. To enable it, add a configuration file:
 
@@ -95,6 +102,31 @@ Section "InputClass"
         Option "Tapping" "on"
 EndSection
 ```
+
+### Natural scrolling
+
+To set up natural (reverse) scrolling, add the following configuration file:
+
+ `/etc/X11/xorg.conf.d/20-natural-scrolling.conf` 
+```
+Section "InputClass"
+        Identifier "libinput pointer catchall"
+        MatchIsPointer "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+	Option "NaturalScrolling" "true"
+EndSection
+
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+	Option "NaturalScrolling" "true"
+EndSection
+```
+
+This will enable natural scrolling for any mice or touchpads.
 
 ### Mouse button re-mapping
 
@@ -130,6 +162,14 @@ done
 ...
 ```
 
+### Multitouch events
+
+While the libinput driver already contains logic to process advanced multitouch events like swipe and pinch, the [Desktop environment](/index.php/Desktop_environment "Desktop environment") or [Window manager](/index.php/Window_manager "Window manager") might not have implemented actions for all of them yet.
+
+For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile.
+
+The utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file. An [AUR](/index.php/AUR "AUR") package is not available yet.[[2]](https://github.com/bulletmark/libinput-gestures/issues/6)
+
 ### Debugging
 
 First, see whether the packaged *libinput-debug-events* tool can support you in debugging the problem. Executing `libinput-debug-events --help` shows options it covers.
@@ -146,39 +186,6 @@ Ensure the touchpad events are being sent to the GNOME desktop by running the fo
  $ gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 
 ```
-
-### Multitouch events
-
-While the libinput driver already contains logic to process advanced multitouch events like swipe and pinch, the [Desktop environment](/index.php/Desktop_environment "Desktop environment") or [Window manager](/index.php/Window_manager "Window manager") might not have implemented actions for all of them yet.
-
-For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile.
-
-The utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file. An [AUR](/index.php/AUR "AUR") package is not available yet.[[2]](https://github.com/bulletmark/libinput-gestures/issues/6)
-
-### Natural scrolling
-
-To set up natural (reverse) scrolling, add the following configuration file:
-
- `/etc/X11/xorg.conf.d/20-natural-scrolling.conf` 
-```
-Section "InputClass"
-        Identifier "libinput pointer catchall"
-        MatchIsPointer "on"
-        MatchDevicePath "/dev/input/event*"
-        Driver "libinput"
-	Option "NaturalScrolling" "true"
-EndSection
-
-Section "InputClass"
-        Identifier "libinput touchpad catchall"
-        MatchIsTouchpad "on"
-        MatchDevicePath "/dev/input/event*"
-        Driver "libinput"
-	Option "NaturalScrolling" "true"
-EndSection
-```
-
-This will enable natural scrolling for any touchpads or mice.
 
 ## See also
 

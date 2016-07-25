@@ -391,6 +391,13 @@ $ qemu-system-x86_64 -enable-kvm -net none -m 1024 -drive file=/usr/share/ovmf/o
 
 ```
 
+As shorter alternative, [ovmf](https://www.archlinux.org/packages/?name=ovmf) can be loaded using `-bios` parameter
+
+```
+$ qemu-system-x86_64 -enable-kvm -m 1G -bios /usr/share/ovmf/ovmf_x64.bin
+
+```
+
 ### DUET for BIOS only systems
 
 DUET is a tianocore project that enables chainloading a full UEFI environment from a BIOS system, in a way similar to BIOS OS booting. This method is being discussed extensively in [http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/](http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/). Pre-build DUET images can be downloaded from one of the repos at [https://gitorious.org/tianocore_uefi_duet_builds](https://gitorious.org/tianocore_uefi_duet_builds). Specific instructions for setting up DUET is available at [https://gitorious.org/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blobs/raw/master/Migle_BootDuet_INSTALL.txt](https://gitorious.org/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blobs/raw/master/Migle_BootDuet_INSTALL.txt).

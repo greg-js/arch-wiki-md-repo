@@ -1,5 +1,3 @@
-See [GRUB](/index.php/GRUB "GRUB") for the main article.
-
 ## Contents
 
 *   [1 GUI configuration tools](#GUI_configuration_tools)

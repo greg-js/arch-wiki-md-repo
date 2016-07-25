@@ -49,7 +49,7 @@ Although an [AUR](/index.php/AUR "AUR") package exists ([haskell-platform](https
 
 *   ghc ([ghc](https://www.archlinux.org/packages/?name=ghc)) — The compiler
 *   cabal-install ([cabal-install](https://www.archlinux.org/packages/?name=cabal-install)) — A command line interface for *Cabal* and *Hackage*
-*   haddock ([haddock](https://www.archlinux.org/packages/?name=haddock)) — Tools for generating documentation
+*   haddock ([haskell-haddock-api](https://www.archlinux.org/packages/?name=haskell-haddock-api) and [haskell-haddock-library](https://www.archlinux.org/packages/?name=haskell-haddock-library)) — Tools for generating documentation
 *   happy ([happy](https://www.archlinux.org/packages/?name=happy)) — Parser generator
 *   alex ([alex](https://www.archlinux.org/packages/?name=alex)) — Lexical analyzer generator
 

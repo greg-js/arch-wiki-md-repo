@@ -273,9 +273,9 @@ Many Intel i5 and i7 chips, even when overclocked properly through the BIOS or U
 
 A way to modify performance ([ref](http://lkml.org/lkml/2009/9/6/136)) is to use Con Kolivas' desktop-centric kernel patchset, which, among other things, replaces the Completely Fair Scheduler (CFS) with the Brain Fuck Scheduler (BFS).
 
-Kernel PKGBUILDs that include the BFS patch can be installed from the [AUR](/index.php/AUR "AUR") or [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"). See the respective pages for [linux-ck](https://aur.archlinux.org/packages/linux-ck/) and [Linux-ck](/index.php/Linux-ck "Linux-ck") wiki page, [linux-pf](https://aur.archlinux.org/packages/linux-pf/) and [Linux-pf](/index.php/Linux-pf "Linux-pf") wiki page or [linux-bfs](https://aur.archlinux.org/packages/linux-bfs/) for more information on their additional patches.
+Kernel PKGBUILDs that include the BFS patch can be installed from the [AUR](/index.php/AUR "AUR") or [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"). See the respective pages for [linux-ck](https://aur.archlinux.org/packages/linux-ck/) and [Linux-ck](/index.php/Linux-ck "Linux-ck") wiki page, [linux-pf](https://aur.archlinux.org/packages/linux-pf/) and [Linux-pf](/index.php/Linux-pf "Linux-pf") wiki page for more information on their additional patches.
 
-**Note:** BFS/CK are designed for desktop/laptop use and not servers. They provide low latency and work well for 16 CPUs or less. Also, Con Kolivas suggests setting HZ to 1000\. For more information, see the [BFS FAQ](http://ck.kolivas.org/patches/bfs/bfs-faq.txt) and [Kernel patch homepage of Con Kolivas](http://users.on.net/~ckolivas/kernel/).
+**Note:** BFS/CK are designed for desktop/laptop use and not servers. They provide low latency and work well for 16 CPUs or less. Also, Con Kolivas suggests setting HZ to 1000\. For more information, see the [BFS FAQ](http://ck.kolivas.org/patches/bfs/bfs-faq.txt) and [Kernel patch homepage of Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/).
 
 ### Verynice
 

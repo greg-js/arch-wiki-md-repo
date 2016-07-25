@@ -11,9 +11,10 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [1.2 Windows (Wine)](#Windows_.28Wine.29)
 *   [2 Global media hotkeys](#Global_media_hotkeys)
     *   [2.1 Linux](#Linux_2)
-        *   [2.1.1 Playerctl](#Playerctl)
+        *   [2.1.1 MPRIS](#MPRIS)
+            *   [2.1.1.1 Playerctl](#Playerctl)
+            *   [2.1.1.2 D-Bus](#D-Bus)
         *   [2.1.2 xdotool](#xdotool)
-        *   [2.1.3 D-Bus](#D-Bus)
     *   [2.2 Windows](#Windows)
 *   [3 Tips & Tricks](#Tips_.26_Tricks)
     *   [3.1 Disable track notifications](#Disable_track_notifications)
@@ -93,9 +94,13 @@ Spotify has support for media keys like `XF86AudioPlay`, but out of the box they
 
 ### Linux
 
-#### Playerctl
+#### MPRIS
 
-The [playerctl](https://aur.archlinux.org/packages/playerctl/) utility provides a command line tool to send commands to the Spotify process. The only commands you will likely need to bind globally are `play-pause`, `next` and `previous`
+The Spotify client implements the [MPRIS2](https://specifications.freedesktop.org/mpris-spec/latest/) D-Bus interface which allows external control.
+
+##### Playerctl
+
+The [playerctl](https://aur.archlinux.org/packages/playerctl/) utility provides a command line tool to send commands to MPRIS clients. The only commands you will likely need to bind globally are `play-pause`, `next` and `previous`
 
 ```
 $ playerctl play-pause
@@ -106,45 +111,9 @@ $ playerctl previous
 
 Playerctl will send the command to the first player it finds, so this method will also work with others players such as [vlc](/index.php/Vlc "Vlc"). To ignore other players, pass `--player=spotify` as an argument.
 
-#### xdotool
+##### D-Bus
 
-With the help of `xdotool` it is possible to send your hotkeys to the application. The following script is an example of how to control Spotify from the outside:
-
-```
-#!/bin/sh
-
-case $1 in
-   "play")
-       key="XF86AudioPlay"
-       ;;
-   "next")
-       key="XF86AudioNext"
-       ;;
-   "prev")
-       key="XF86AudioPrev"
-       ;;
-   *)
-       echo "Usage: $0 play|next|prev"
-       exit 1
-        ;;
-esac
-xdotool key --window $(xdotool search --name "Spotify (Premium |Unlimited |Free )?- Linux Preview"|head -n1) $key
-exit 0
-
-```
-
-Let us call it `musickeys.sh`. Make the script executable:
-
-```
-$ chmod +x musickeys.sh
-
-```
-
-By executing `./musickeys.sh play` you can now toggle playing a song. Now you can bind this script to any tool that catches keypresses, such as [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
-
-#### D-Bus
-
-An alternative to the above is [D-Bus](/index.php/D-Bus "D-Bus"), which should be available by default as it is a dependency of [systemd](/index.php/Systemd "Systemd"). With D-Bus we have a consistent and reliable way to communicate with other processes, such as Spotify.
+An alternative to the above is to manually use [D-Bus](/index.php/D-Bus "D-Bus"), which should be available by default as it is a dependency of [systemd](/index.php/Systemd "Systemd").
 
 To play or pause the current song in Spotify:
 
@@ -190,6 +159,42 @@ If the above commands do not work, try setting the dbus address:
  fi
 
 ```
+
+#### xdotool
+
+With the help of `xdotool` it is possible to send your hotkeys to the application. The following script is an example of how to control Spotify from the outside:
+
+```
+#!/bin/sh
+
+case $1 in
+   "play")
+       key="XF86AudioPlay"
+       ;;
+   "next")
+       key="XF86AudioNext"
+       ;;
+   "prev")
+       key="XF86AudioPrev"
+       ;;
+   *)
+       echo "Usage: $0 play|next|prev"
+       exit 1
+        ;;
+esac
+xdotool key --window $(xdotool search --name "Spotify (Premium |Unlimited |Free )?- Linux Preview"|head -n1) $key
+exit 0
+
+```
+
+Let us call it `musickeys.sh`. Make the script executable:
+
+```
+$ chmod +x musickeys.sh
+
+```
+
+By executing `./musickeys.sh play` you can now toggle playing a song. Now you can bind this script to any tool that catches keypresses, such as [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
 
 ### Windows
 

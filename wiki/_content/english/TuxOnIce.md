@@ -17,7 +17,7 @@ This is a quick start guide for installing [TuxOnIce](http://www.tuxonice.net) (
 
 TuxOnIce consists of a kernel patch, plus an optional user interface. Only the kernel patch is necessary, the user interface merely provides a graphical interface displayed during the hibernation/resume cycle.
 
-You can use the [linux-ice](https://aur.archlinux.org/packages/linux-ice/) or the [linux-pf](/index.php/Linux-pf "Linux-pf") packages available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). They automate all the patch routines, the compilation and installation of the kernel, and the regeneration of the initramfs with an appropriate hook. You maintain control over the install process, and its easy to make changes if you want to repeat the process. More detailed information at installing [linux-pf](/index.php/Linux-pf "Linux-pf") and configuring it with TuxOnIce can be found at its wiki page.
+You can use the [linux-ice](https://aur.archlinux.org/packages/linux-ice/) package available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). It automates all the patch routines, the compilation and installation of the kernel, and the regeneration of the initramfs with an appropriate hook. You maintain control over the install process, and its easy to make changes if you want to repeat the process.
 
 Otherwise, you need to patch, configure and compile your own kernel, visit [Kernel Compilation From Source](/index.php/Kernel_Compilation_From_Source "Kernel Compilation From Source") and [Kernel Compilation with ABS](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS") for instructions. The required patch can be obtained from the TuxOnIce website mentioned above.
 
@@ -37,19 +37,12 @@ HOOKS="base udev autodetect block resume filesystems"
 
 ```
 
-If you built a custom kernel with tuxonice_compress and tuxonice_swap as modules, add them to MODULES. This is not needed for [linux-pf](/index.php/Linux-pf "Linux-pf") or linux-ice as they are built-in. If you want to use the tuxonice interface, add tuxonice_userui in MODULES as well.
+If you built a custom kernel with tuxonice_compress and tuxonice_swap as modules, add them to MODULES. This is not needed for linux-ice as they are built-in. If you want to use the tuxonice interface, add tuxonice_userui in MODULES as well.
 
 Rebuild the initramfs:
 
 ```
 # mkinitcpio -p linux-ice
-
-```
-
-or
-
-```
-# mkinitcpio -p linux-pf
 
 ```
 

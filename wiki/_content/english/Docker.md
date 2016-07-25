@@ -135,7 +135,7 @@ By default, docker images are located at `/var/lib/docker`. They can be moved to
 
 If you have run the docker images, you need to make sure the images are unmounted totally. Once that is completed, you may move the images from `/var/lib/docker` to the target destination.
 
-Then add a [Drop-in file](https://wiki.archlinux.org/index.php/Systemd#Drop-in_files) for the `docker.service`, adding the `-g` parameter to the `ExecStart`:
+Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `-g` parameter to the `ExecStart`:
 
  `/etc/systemd/system/docker.service.d/imagelocation.conf` 
 ```

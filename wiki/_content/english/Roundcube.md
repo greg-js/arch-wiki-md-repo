@@ -5,10 +5,12 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 MariaDB](#MariaDB)
-    *   [2.2 Roundcube](#Roundcube)
-    *   [2.3 PHP](#PHP)
-    *   [2.4 Webserver (Apache)](#Webserver_.28Apache.29)
-    *   [2.5 Webserver (Nginx)](#Webserver_.28Nginx.29)
+    *   [2.2 SQLite](#SQLite)
+    *   [2.3 Other Databases](#Other_Databases)
+    *   [2.4 Roundcube](#Roundcube)
+    *   [2.5 PHP](#PHP)
+    *   [2.6 Webserver (Apache)](#Webserver_.28Apache.29)
+    *   [2.7 Webserver (Nginx)](#Webserver_.28Nginx.29)
 *   [3 Install Roundcube](#Install_Roundcube)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Setting Roundcube up for use with an IMAP server that only allows TLS authentication](#Setting_Roundcube_up_for_use_with_an_IMAP_server_that_only_allows_TLS_authentication)
@@ -40,6 +42,14 @@ $ mysql -u root -p roundcubemail < /usr/share/webapps/roundcubemail/SQL/mysql.in
 
 ```
 
+### SQLite
+
+A SQLite DB will be created automagically by Roundcube. Ensure the file specified in the config is located in a basedir location. Consider adding /var/lib/roundcubemail to your basedir definition. This implies creating the directory and chowning it to http.
+
+### Other Databases
+
+Roundcubemail has installation scripts for mssql, Oracle, and Postgres.
+
 ### Roundcube
 
 Copy the example configuration file and adjust it to your configuration:
@@ -56,6 +66,7 @@ Set your mail server settings, and set `enable_installer` to enable the setup wi
 $config['db_dsnw'] = 'mysql://roundcube:****@localhost/roundcubemail';
 $config['default_host'] = 'tls://localhost';
 $config['smtp_server'] = 'localhost';
+$config['des_key'] = 'some_awesome_long_semi_random_string';
 $config['enable_installer'] = true;
 
 ```
@@ -76,6 +87,8 @@ and uncomment
 extension=iconv.so
 
 ```
+
+**Warning:** The distributed Apache conf file includes these directories. Adding to your php.ini will make them apply to all php web apps. See [phpsec open_basedir](http://phpsec.org/projects/phpsecinfo/tests/open_basedir.html)
 
 You also need to make sure that PHP can access `/etc/webapps` and `/usr/share/webapps`. Add them to `open_basedir` in `/etc/php/php.ini` if open_basedir is not yet configured:
 

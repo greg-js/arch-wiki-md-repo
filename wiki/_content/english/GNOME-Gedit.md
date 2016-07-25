@@ -32,7 +32,7 @@ To enable this behaviour, access gedit's Preferences panel (for GNOME Shell user
 
 ## Spell Checking
 
-In order to use spell checking in gedit [install](/index.php/Install "Install") the according language, e.g., [aspell-en](https://www.archlinux.org/packages/?name=aspell-en).
+In order to use spell checking in *gedit* you need an *aspell* dictionary. See the [aspell](/index.php/Aspell "Aspell") article.
 
 ## Plugins
 

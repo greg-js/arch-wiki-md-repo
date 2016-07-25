@@ -1,5 +1,3 @@
-See [pacman](/index.php/Pacman "Pacman") for the main article.
-
 This page uses a table to display the correspondence of [package management](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") commands among some of the most popular Linux distributions. The original inspiration was given by [openSUSE's Software Management Command Line Comparison](http://old-en.opensuse.org/Software_Management_Command_Line_Comparison).
 
 **Tip:** Arch users having to temporarily deal with another Linux distribution can use [pacapt](https://github.com/icy/pacapt), a simple wrapper around other package managers.

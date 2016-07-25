@@ -53,4 +53,13 @@ The next step is to set up a virtual host for radicale. An example:
 
 ## Client support
 
-Since it uses the CalDav and CardDav protocols, it should support most clients. Currently, the officially supported list is this: Mozilla Lightning GNOME Evolution KDE KOrganizer aCal, ContactSync, CalendarSync, CalDAV-Sync CardDAV-Sync and DAVdroid for Google Android InfCloud, CalDavZAP, CardDavMATE Apple iOS Mac OSX Calendar/Contacts syncEvolution
+Since it uses the CalDav and CardDav protocols, it should support most clients. Currently, the officially supported list is this:
+
+*   [Thunderbird#Lightning - Calendar](/index.php/Thunderbird#Lightning_-_Calendar "Thunderbird")
+*   [GNOME/Evolution](/index.php/GNOME/Evolution "GNOME/Evolution")
+*   KOrganizer [korganizer](https://www.archlinux.org/packages/?name=korganizer)
+*   InfCloud [infcloud](https://aur.archlinux.org/packages/infcloud/), CalDavZAP [caldavzap](https://aur.archlinux.org/packages/caldavzap/), CardDavMATE [carddavmate](https://aur.archlinux.org/packages/carddavmate/)
+*   syncEvolution [syncrevolution](https://aur.archlinux.org/packages/syncrevolution/)
+*   aCal, ContactSync, CalendarSync, CalDAV-Sync CardDAV-Sync and DAVdroid for Google Android
+*   Apple iOS
+*   Mac OSX Calendar/Contacts

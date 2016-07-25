@@ -7,11 +7,11 @@ Distcc is a program to distribute builds of C, C++, Objective C or Objective C++
 *   [3 Configuration](#Configuration)
     *   [3.1 Slaves](#Slaves)
     *   [3.2 Master](#Master)
-        *   [3.2.1 Standalone](#Standalone)
-        *   [3.2.2 Makepkg](#Makepkg)
+        *   [3.2.1 For use with makepkg](#For_use_with_makepkg)
+        *   [3.2.2 For use without makepkg](#For_use_without_makepkg)
 *   [4 Compile](#Compile)
-    *   [4.1 Standalone](#Standalone_2)
-    *   [4.2 Makepkg](#Makepkg_2)
+    *   [4.1 With makepkg](#With_makepkg)
+    *   [4.2 Without makepkg](#Without_makepkg)
 *   [5 Monitoring progress](#Monitoring_progress)
 *   [6 "Cross Compiling" with distcc](#.22Cross_Compiling.22_with_distcc)
     *   [6.1 X86](#X86)
@@ -20,6 +20,8 @@ Distcc is a program to distribute builds of C, C++, Objective C or Objective C++
             *   [6.1.1.2 Invoke makepkg from the Native Environment](#Invoke_makepkg_from_the_Native_Environment)
         *   [6.1.2 Multilib GCC method (not recommended)](#Multilib_GCC_method_.28not_recommended.29)
     *   [6.2 Other architectures](#Other_architectures)
+        *   [6.2.1 Arch ARM](#Arch_ARM)
+        *   [6.2.2 Additional toolchains](#Additional_toolchains)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Journalctl](#Journalctl)
     *   [7.2 code 110](#code_110)
@@ -63,7 +65,28 @@ A nice tool for converting address ranges to CIDR format can be found here: [CID
 
 ### Master
 
-#### Standalone
+#### For use with makepkg
+
+Edit `/etc/makepkg.conf` in the following three sections:
+
+1.  BUILDENV has distcc unbanged i.e. without exclamation point.
+2.  Uncomment the *DISTCC_HOSTS* line and add the IP addresses of the slaves then a slash and the number of threads they are to use. The subsequent IP address/threads should be separated by a white space. This list is ordered from most powerful to least powerful (processing power).
+3.  Adjust the MAKEFLAGS variable to correspond to the number of sum of the number of individual values specified for the max threads per server. In the example below, this is 5+3+3=11\. If users specify more than this sum, the extra theoretical thread(s) will be blocked by distcc and appear as such in monitoring utils such as *distccmon-text* described below.
+
+**Note:** It is common practice although optional to define the number of threads as the number of physical core+hyperhtreaded cores (if they exist) plus 1\. Do this on a per-server basis, NOT in the MAKEFLAGS!
+
+Example using relevant lines:
+
+```
+BUILDENV=(distcc fakeroot color !ccache check !sign)
+MAKEFLAGS="-j11"
+DISTCC_HOSTS="192.168.0.2/5 192.168.0.3/3 192.168.0.4/3"
+
+```
+
+If users wish to use distcc through SSH, add an "@" symbol in front of the IP address in this section. If key-based auth is not setup on the systems, set the DISTCC_SSH variable to ignore checking for authenticated hosts, i.e. DISTCC_SSH="ssh -i"
+
+#### For use without makepkg
 
 The minimal configuration for distcc on the master includes the setting of the available slaves. This can either be done by setting the addresses in the environment variable `DISTCC_HOSTS` or in either of the configuration files `$DISTCC_HOSTS`, `$DISTCC_DIR/hosts`, `~/.distcc/hosts` or `/etc/distcc/hosts`.
 
@@ -95,30 +118,13 @@ A description for the pump mode can be found here: [HOW DISTCC-PUMP MODE WORKS](
 
 To use distcc-pump mode for a slave, users must start the compilation using the pump script otherwise the compilation will fail.
 
-#### Makepkg
-
-Edit `/etc/makepkg.conf` in the following three sections:
-
-1.  BUILDENV has distcc unbanged i.e. without exclamation point.
-2.  Uncomment the *DISTCC_HOSTS* line and add the IP addresses of the slaves then a slash and the number of threads they are to use. The subsequent IP address/threads should be separated by a white space. This list is ordered from most powerful to least powerful (processing power).
-3.  Adjust the MAKEFLAGS variable to correspond to the number of sum of the number of individual values specified for the max threads per server. In the example below, this is 5+3+3=11\. If users specify more than this sum, the extra theoretical thread(s) will be blocked by distcc and appear as such in monitoring utils such as *distccmon-text* described below.
-
-**Note:** It is common practice to define the number of threads as the number of physical core+hyperhtreaded cores (if they exist) plus 1\. Do this on a per-server basis, NOT in the MAKEFLAGS!
-
-Example using relevant lines:
-
-```
-BUILDENV=(distcc fakeroot color !ccache !check)
-MAKEFLAGS="-j11"
-DISTCC_HOSTS="192.168.0.2/5 192.168.0.3/3 192.168.0.4/3"
-
-```
-
-If users wish to use distcc through SSH, add an "@" symbol in front of the IP address in this section. If key-based auth is not setup on the systems, set the DISTCC_SSH variable to ignore checking for authenticated hosts, i.e. DISTCC_SSH="ssh -i"
-
 ## Compile
 
-### Standalone
+### With makepkg
+
+Compile via makepkg as normal.
+
+### Without makepkg
 
 To compile a source file using the distcc pump mode, use the following command:
 
@@ -141,10 +147,6 @@ $ pump make -j2 CC="distcc gcc -std=gnu99"
 ```
 
 This example would compile gzip using distcc's pump mode with two compile threads. For the correct `-j` setting have a look at [What -j level to use?](https://cdn.rawgit.com/distcc/distcc/master/doc/web/faq.html)
-
-### Makepkg
-
-Compile via makepkg as normal.
 
 ## Monitoring progress
 
@@ -234,62 +236,40 @@ See [Makepkg#Build 32-bit packages on a 64-bit system](/index.php/Makepkg#Build_
 
 ### Other architectures
 
-Users wishing to cross compile for other architectures, need to install a cross compile environment on the slave(s). Either build a cross compile tool chain, or use a pre-configured one. This section is mainly about an ARM cross compilation tool chain but most of the information should be valid for other architectures also. There are several possibilities for getting the tool chain:
+#### Arch ARM
+
+When building on an Arch ARM device, the developers *highly* recommend using the official project toolchains.
+
+*   [ARMv8](https://archlinuxarm.org/builder/xtools/x-tools8.tar.xz)
+*   [ARMv7l hard](https://archlinuxarm.org/builder/xtools/x-tools7h.tar.xz)
+*   [ARMv6l hard](https://archlinuxarm.org/builder/xtools/x-tools6h.tar.xz)
+*   [ARMv5te soft](https://archlinuxarm.org/builder/xtools/x-tools.tar.xz)
+
+Extract the toolchain corresponding to the requisite architecture somewhere on the **slave filesystem** and edit `/etc/conf.d/distccd` adjusting the PATH to allow the toolchain to be used.
+
+Example with the toolchair extracted to `/mnt/data`:
+
+```
+PATH=/mnt/data/x-tools8/aarch64-unknown-linux-gnueabi/bin:$PATH
+
+```
+
+To read in the configuration file, [restart](/index.php/Restart "Restart") `distcc.service`.
+
+Optionally link it to your user's homedir if planning to build without makepkg. Example:
+
+```
+$ ln -s /mnt/data/x-tools8 x-tools8
+
+```
+
+#### Additional toolchains
 
 *   [EmbToolkit](https://embtoolkit.org/): Tool for creating cross compilation tool chain; supports ARM and MIPS architectures; supports building of an LLVM based tool chain
 *   [crosstool-ng](http://crosstool-ng.org/): Similar to EmbToolkit; supports more architectures (see website for more information)
 *   [Linaro](https://www.linaro.org/downloads/): Provides tool chains for ARM development
 
 The `EmbToolkit` provides a nice graphical configuration menu (`make xconfig`) for configuring the tool chain.
-
-Make sure that the execute bit is set on all folders in the tree leading to the cross compiler folder for the others group. Also make sure that users from the others group are allowed to execute the compiler commands. This is necessary as the distcc daemon is normally started as user `nobody` (change the user in `/lib/systemd/system/distccd.service`).
-
-Normally the executables will have some prefixes for example `gcc` could look like this: `arm-unknown-linux-gnueabihf-gcc`. To make the name consistent with the names distcc expects, execute the following script in the folder where the binary files reside:
-
- `create_links.sh` 
-```
-#!/bin/bash
-for file in `ls`; do
-    if [[ "$file" == "link" ]]; then
-        continue
-    fi
-    ln -s $file ${file#$1}
-done
-if [[ ! -f cc ]]; then
-    ln -s $1gcc cc
-fi
-
-```
-
-Make sure the script is executable:
-
-```
-$ chmod +x create_links.sh
-
-```
-
-and execute the script:
-
-```
-$ ./create_links.sh arm-cortex_a8-linux-gnueabihf-
-
-```
-
-Now adjust the distccd configuration so that the cross compiler will be found first in the path:
-
- `/etc/conf.d/distccd` 
-```
-#
-# Parameters to be passed to distccd
-#
-# You must explicitly add IPs (or subnets) that are allowed to connect,
-# using the --allow switch.  See the distccd manpage for more info.
-#
-PATH=/home/martin/abs/embtoolkit-1.7.0/generated/tools-arm-linux-cortex-a8/bin:${PATH}
-DISTCC_ARGS="--allow 10.42.0.0/24 --verbose"
-```
-
-and [restart](/index.php/Restart "Restart") `distcc.service`.
 
 ## Troubleshooting
 

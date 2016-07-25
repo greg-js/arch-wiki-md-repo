@@ -6,17 +6,22 @@ Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/inde
 
 ## Contents
 
-*   [1 Installation](#Installation)
-    *   [1.1 AMDGPU PRO](#AMDGPU_PRO)
-*   [2 Configuration](#Configuration)
-*   [3 Loading](#Loading)
-    *   [3.1 Enable early KMS](#Enable_early_KMS)
-*   [4 Performance tuning](#Performance_tuning)
-    *   [4.1 Enabling video acceleration](#Enabling_video_acceleration)
-*   [5 Enable amdgpu for Sea Islands Cards](#Enable_amdgpu_for_Sea_Islands_Cards)
-*   [6 Disable radeon driver](#Disable_radeon_driver)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
+*   [1 Selecting the right driver](#Selecting_the_right_driver)
+*   [2 Installation](#Installation)
+    *   [2.1 AMDGPU PRO](#AMDGPU_PRO)
+*   [3 Configuration](#Configuration)
+*   [4 Loading](#Loading)
+    *   [4.1 Enable early KMS](#Enable_early_KMS)
+*   [5 Performance tuning](#Performance_tuning)
+    *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
+*   [6 Enable amdgpu for Sea Islands Cards](#Enable_amdgpu_for_Sea_Islands_Cards)
+*   [7 Disable radeon driver](#Disable_radeon_driver)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
+
+## Selecting the right driver
+
+Depending on the card you have, find the right driver in [Xorg#ATI](/index.php/Xorg#ATI "Xorg"). This page has instructions for **AMDGPU** and **AMDGPU PRO**.
 
 ## Installation
 

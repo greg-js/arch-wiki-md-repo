@@ -190,43 +190,43 @@ The following are official Qt tools:
 
 *   **[Qt Creator](https://en.wikipedia.org/wiki/Qt_Creator "wikipedia:Qt Creator")** — A cross-platform IDE tailored for Qt that supports all of its features.
 
-	[http://qt-project.org/doc/qtcreator/](http://qt-project.org/doc/qtcreator/) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
+	[http://doc.qt.io/qtcreator/](http://doc.qt.io/qtcreator/) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
 *   **Qt Linguist** — A set of tools that speed the translation and internationalization of Qt applications.
 
-	[http://qt-project.org/doc/qt-4.8/linguist-manual.html](http://qt-project.org/doc/qt-4.8/linguist-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://doc.qt.io/qt-5/qtlinguist-index.html](http://doc.qt.io/qt-5/qtlinguist-index.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **Qt Assistant** — A configurable and redistributable documentation reader for Qt *qch* files.
 
-	[http://qt-project.org/doc/qt-4.8/assistant-manual.html](http://qt-project.org/doc/qt-4.8/assistant-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://doc.qt.io/qt-5/qtassistant-index.html](http://doc.qt.io/qt-5/qtassistant-index.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **Qt Designer** — A powerful cross-platform GUI layout and forms builder for Qt widgets.
 
-	[http://qt-project.org/doc/qt-4.8/designer-manual.html](http://qt-project.org/doc/qt-4.8/designer-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://doc.qt.io/qt-5/qtdesigner-manual.html](http://doc.qt.io/qt-5/qtdesigner-manual.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **Qt Quick Designer** — A visual editor for QML files which supports WYSIWYG. It allows you to rapidly design and build Qt Quick applications and components from scratch.
 
-	[http://qt-project.org/doc/qtcreator-2.8/creator-using-qt-quick-designer.html](http://qt-project.org/doc/qtcreator-2.8/creator-using-qt-quick-designer.html) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
+	[http://doc.qt.io/qtcreator/creator-using-qt-quick-designer.html](http://doc.qt.io/qtcreator/creator-using-qt-quick-designer.html) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
-*   **QML Viewer** — A tool for loading QML documents that makes it easy to quickly develop and debug QML applications.
+*   **qmlscene** — A tool for loading QML documents that makes it easy to quickly develop and debug QML applications.
 
-	[http://qt-project.org/doc/qt-4.8/qmlviewer.html](http://qt-project.org/doc/qt-4.8/qmlviewer.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://doc.qt.io/qt-5/qtquick-qmlscene.html](http://doc.qt.io/qt-5/qtquick-qmlscene.html) || Qt 5: [qt5-declarative](https://www.archlinux.org/packages/?name=qt5-declarative), Qt 4 QML Viewer: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **[qmake](https://en.wikipedia.org/wiki/Qmake "wikipedia:Qmake")** — A tool that helps simplify the build process for development project across different platforms, similar to [cmake](https://en.wikipedia.org/wiki/CMake "wikipedia:CMake"), but with fewer options and tailored for Qt applications.
 
-	[https://qt-project.org/doc/qt-4.8/qmake-manual.html](https://qt-project.org/doc/qt-4.8/qmake-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://doc.qt.io/qt-5/qmake-manual.html](http://doc.qt.io/qt-5/qmake-manual.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **uic** — A tool that reads **.ui* XML files and generates the corresponding C++ files.
 
-	[http://qt-project.org/doc/qt-4.8/uic.html](http://qt-project.org/doc/qt-4.8/uic.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://doc.qt.io/qt-5/uic.html](http://doc.qt.io/qt-5/uic.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **rcc** — A tool that is used to embed resources (such as pictures) into a Qt application during the build process. It works by generating a C++ source file containing data specified in a Qt resource (.qrc) file.
 
-	[http://qt-project.org/doc/qt-4.8/rcc.html](http://qt-project.org/doc/qt-4.8/rcc.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://doc.qt.io/qt-5/rcc.html](http://doc.qt.io/qt-5/rcc.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **moc** — A tool that handles Qt's C++ extensions (the signals and slots mechanism, the run-time type information, and the dynamic property system, etc.).
 
-	[http://doc.qt.digia.com/4.7-snapshot/moc.html](http://doc.qt.digia.com/4.7-snapshot/moc.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://doc.qt.io/qt-5/moc.html](http://doc.qt.io/qt-5/moc.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 ### Bindings
 

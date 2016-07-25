@@ -45,7 +45,7 @@
 
 [Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git) package. For the development version, install [git-git](https://aur.archlinux.org/packages/git-git/) from the AUR. Check the optional dependencies when using tools such as *git svn*, *git gui* and *gitk*.
 
-**Note:** To enable spell checking in *git-gui*, [aspell](https://www.archlinux.org/packages/?name=aspell) is required, along with the dictionary corresponding to the `LC_MESSAGES` [environment variable](/index.php/Environment_variable "Environment variable"). See [FS#28181](https://bugs.archlinux.org/task/28181).
+**Note:** To enable spell checking in *git-gui*, [aspell](https://www.archlinux.org/packages/?name=aspell) is required, along with the dictionary corresponding to the `LC_MESSAGES` [environment variable](/index.php/Environment_variable "Environment variable"). See [FS#28181](https://bugs.archlinux.org/task/28181) and the [aspell](/index.php/Aspell "Aspell") article.
 
 ## Configuration
 

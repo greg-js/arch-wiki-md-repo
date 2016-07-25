@@ -51,7 +51,7 @@ Reinstall your bootloader/boot manager: either [Syslinux](/index.php/Syslinux "S
 
 ### Adjust the fstab
 
-Since your entire root tree has been transferred to a single partition, edit the [/etc/fstab](/index.php//etc/fstab "/etc/fstab") file to reflect the right partition(s).
+Since your entire root tree has been transferred to a single partition, edit the [/etc/fstab](/index.php?title=Moving_an_existing_install_into_(or_out_of)_a_virtual_machine/etc/fstab&action=edit&redlink=1 "Moving an existing install into (or out of) a virtual machine/etc/fstab (page does not exist)") file to reflect the right partition(s).
 
 Check with the `blkid` command, since `lsblk` is not very useful inside a chroot.
 

@@ -1,5 +1,3 @@
-See [Pacman](/index.php/Pacman "Pacman") for the main article.
-
 Signs that pacman needs a local database restoration:
 
 *   `pacman -Q` gives absolutely no output, and `pacman -Syu` erroneously reports that the system is up to date.

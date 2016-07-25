@@ -27,6 +27,7 @@ Add the following lines to your desktop start up script files to register the in
 
 ```
 export GTK_IM_MODULE=nimf
+export QT4_IM_MODULE="nimf"
 export QT_IM_MODULE=nimf
 export XMODIFIERS="@im=nimf"
 nimf-daemon

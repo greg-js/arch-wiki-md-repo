@@ -18,7 +18,11 @@ From [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4):
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 E4rat](#E4rat)
     *   [4.2 Barriers and performance](#Barriers_and_performance)
-*   [5 See also](#See_also)
+*   [5 Enabling metadata checksums](#Enabling_metadata_checksums)
+    *   [5.1 New filesystem](#New_filesystem)
+    *   [5.2 Existing filesystem](#Existing_filesystem)
+    *   [5.3 Impact on performance](#Impact_on_performance)
+*   [6 See also](#See_also)
 
 ## Create a new ext4 filesystem
 
@@ -238,9 +242,83 @@ To turn barriers off add the option `barrier=0` to the desired filesystem. For e
 
  `/etc/fstab`  `/dev/sda5    /    ext4    noatime,barrier=0    0    1` 
 
+## Enabling metadata checksums
+
+In both cases of enabling metadata checksums for new and existing filesystems, you will need to load some kernel modules.
+
+If your CPU supports SSE 4.2, make sure the `crc32c_intel` kernel module is loaded in order to enable the hardware accelerated CRC32C algorithm. If not you will need to load the `crc32c_generic` module.
+
+If this is the root file-system your `crc32c_` module might need to be added to `/etc/mkinitcpio.conf`:
+
+```
+   MODULES="... crc32c_intel crc32c_generic"
+
+```
+
+And then regenerate the initramfs. See [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
+
+After this, you are ready to enable support for metadata checksums as described in the following two sections. In both cases the device must not be mounted.
+
+More about metadata checksums can be read on the [ext4 wiki](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums).
+
+### New filesystem
+
+To enable support for ext4 metadata checksums on a new file system make sure that you have `e2fsprogs 1.43` or newer and simply do a:
+
+```
+# mkfs.ext4 */dev/path/to/disk*
+
+```
+
+The `metadata_csum` and `64bit` options will be enabled by default.
+
+The file-system can then be mounted as usual.
+
+### Existing filesystem
+
+To enable support on an existing ext4 file system do the following.
+
+This needs to be done with the partition unmounted, so if you want to convert the root, you'll need to run off an USB live distro.
+
+First the partition needs to be checked and optimized using:
+
+```
+# e2fsck -Df */dev/path/to/disk*  
+
+```
+
+Then the file-system needs to be converted to 64bit:
+
+```
+# resize2fs -b */dev/path/to/disk* 
+
+```
+
+Finally checksums can be added
+
+```
+# tune2fs -O metadata_csum */dev/path/to/disk*
+
+```
+
+The file-system can then be mounted as usual.
+
+You can check whether the features were successfully enabled by running:
+
+```
+# dumpe2fs */dev/path/to/disk*
+
+```
+
+### Impact on performance
+
+Keep in mind that the intel module consistently performs 10x faster than the generic one, peaking at 20x faster as can be seen in [this benchmark](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums#Benchmarking).
+
 ## See also
 
 *   [Official Ext4 wiki](https://ext4.wiki.kernel.org/)
 *   [Ext4 Disk Layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout) described in its wiki
-*   [Ext4 Encryption](http://lwn.net/Articles/639427/) LWM article
+*   [Ext4 Encryption](http://lwn.net/Articles/639427/) LWN article
 *   Kernel commits for ext4 encryption [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
+*   [e2fsprogs Changelog](http://e2fsprogs.sourceforge.net/e2fsprogs-release.html)
+*   [Ext4 Metadata Checksums](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums)

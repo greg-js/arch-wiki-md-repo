@@ -1,6 +1,4 @@
-From the project [home page](http://www.pidgin.im/):
-
-	*Pidgin is an easy to use and free chat client used by millions. Connect to AIM, MSN, Yahoo, and more chat networks all at once.*
+From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use and free chat client used by millions. Connect to AIM, MSN, Yahoo, and more chat networks all at once."
 
 ## Contents
 
@@ -41,14 +39,7 @@ You may also want to install additional plugins from the [purple-plugin-pack](ht
 
 ## Spellcheck
 
-Aspell will be installed as a dependency, but to prevent all of your text from showing up as incorrect you will need to install an aspell dictionary like [aspell-en](https://www.archlinux.org/packages/?name=aspell-en). Use `pacman -Ss aspell` to list available languages.
-
-If spell checking doesn't work try running aspell separately to check that it is setup correctly and doesn't spit out a helpful error message.
-
-```
-$ echo center | aspell -a
-
-```
+The [aspell](https://www.archlinux.org/packages/?name=aspell) package will be installed as a dependency, but to prevent all of your text from showing up as incorrect you will need to install an aspell dictionary. See the [aspell](/index.php/Aspell "Aspell") article.
 
 **Note:** The **switch spell** plugin is included in the [purple-plugin-pack](https://www.archlinux.org/packages/?name=purple-plugin-pack). It allows you to switch between multiple languages.
 

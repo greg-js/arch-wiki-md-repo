@@ -3,20 +3,38 @@ The Lenovo P50 is a quad core Intel Skylake Laptop.
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 Sluggish graphics performance with HD Graphics 530 (Skylake GT2)](#Sluggish_graphics_performance_with_HD_Graphics_530_.28Skylake_GT2.29)
-    *   [2.2 High CPU chromium bug](#High_CPU_chromium_bug)
-    *   [2.3 High fan speed on low CPU load](#High_fan_speed_on_low_CPU_load)
-    *   [2.4 Mouse cursor disappears after screen unlocks](#Mouse_cursor_disappears_after_screen_unlocks)
-    *   [2.5 Touchpad active even if disabled in BIOS](#Touchpad_active_even_if_disabled_in_BIOS)
-    *   [2.6 Prevent tap clicking while typing](#Prevent_tap_clicking_while_typing)
-*   [3 lspci](#lspci)
+*   [2 Configuration](#Configuration)
+    *   [2.1 External video](#External_video)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Sluggish graphics performance with HD Graphics 530 (Skylake GT2)](#Sluggish_graphics_performance_with_HD_Graphics_530_.28Skylake_GT2.29)
+    *   [3.2 High CPU chromium bug](#High_CPU_chromium_bug)
+    *   [3.3 High fan speed on low CPU load](#High_fan_speed_on_low_CPU_load)
+    *   [3.4 Mouse cursor disappears after screen unlocks](#Mouse_cursor_disappears_after_screen_unlocks)
+    *   [3.5 Touchpad active even if disabled in BIOS](#Touchpad_active_even_if_disabled_in_BIOS)
+    *   [3.6 Prevent tap clicking while typing](#Prevent_tap_clicking_while_typing)
+*   [4 lspci](#lspci)
 
 ## Installation
 
 If you have the 4K display, console fonts will be extremely small. Run `setfont sun12x22` to make them a bit bigger.
 
 After that, follow the [Beginner's guide](/index.php/Beginner%27s_guide "Beginner's guide") to install Arch.
+
+## Configuration
+
+### External video
+
+External video using the Mini DisplayPort seems to work most reliably when the BIOS is configured to use only the discrete graphics card. To use Xorg with this configuration, install [nvidia](https://www.archlinux.org/packages/?name=nvidia) and create a `/etc/X11/xorg.conf.d/20-nvidia.conf` file with the following contents:
+
+```
+   Section "Device"
+       Identifier "Device0"
+       Driver "nvidia"
+       VendorName "NVIDIA Corporation"
+       Option "NoLogo" "true"
+   EndSection
+
+```
 
 ## Troubleshooting
 

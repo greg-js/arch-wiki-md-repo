@@ -252,11 +252,9 @@ An array of files needed to build the package. It must contain the location of t
 
 Files can also be supplied directly in the location of the `PKGBUILD` and added to this array. These paths are resolved relative to the directory of the `PKGBUILD`. Before the actual build process is started, all of the files referenced in this array will be downloaded or checked for existence, and *makepkg* will not proceed, if any are missing.
 
-**Note:** *.install* files should not be included.
+*.install* files are recognized automatically by *makepkg* and should not be included in the source array. Files in the source array with extensions *.sig*, *.sign*, or *.asc* are recognized by *makepkg* as PGP signatures and will be automatically used to verify the integrity of the corresponding source file.
 
-**Tip:** An alternative source name for the downloaded file can be specified with the syntax `source=('*filename*::*fileuri*')`: `source=("project_name::hg+https://googlefontdirectory.googlecode.com/hg/")` 
-
-Files in the source array with extensions *.sig*, *.sign*, or *.asc* are recognized by *makepkg* as PGP signatures and will be automatically used to verify the integrity of the corresponding source file.
+**Note:** File names of downloaded sources should be globally unique, because the [SRCDEST](/index.php/Makepkg#Package_output "Makepkg") variable could be the same directory for all packages. This can be ensured by specifying an alternative source name with the syntax `source=('*filename*::*fileuri*')`, where the chosen `*filename*` should be related to the package name: `source=("project_name::hg+https://googlefontdirectory.googlecode.com/hg/")` 
 
 ### noextract
 

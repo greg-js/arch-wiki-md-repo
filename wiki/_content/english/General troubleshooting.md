@@ -18,14 +18,13 @@ This article explains some methods for general troubleshooting. For application 
 *   [5 Session permissions](#Session_permissions)
 *   [6 error while loading shared libraries](#error_while_loading_shared_libraries)
 *   [7 file: could not find any magic files!](#file:_could_not_find_any_magic_files.21)
-*   [8 Spellcheck is marking all of my text as incorrect!](#Spellcheck_is_marking_all_of_my_text_as_incorrect.21)
-*   [9 See also](#See_also)
+*   [8 See also](#See_also)
 
 ## General procedures
 
 ### Attention to detail
 
-In order to resolve an issue that you are having, it is *absolutely crucial* to have a firm basic understanding of how that specific subsystem functions. How it works, and what does it need to run without error? If you cannot comfortably answer these question then you would best review the [Archwiki](/index.php/Table_of_contents "Table of contents") article for the subsystem that you are having trouble with. Once you feel like you've understood it, it will be easier for you to pinpoint the cause of the problem.
+In order to resolve an issue that you are having, it is *absolutely crucial* to have a firm basic understanding of how that specific subsystem functions. How does it work, and what does it need to run without error? If you cannot comfortably answer these question then you would best review the [Archwiki](/index.php/Table_of_contents "Table of contents") article for the subsystem that you are having trouble with. Once you feel like you've understood it, it will be easier for you to pinpoint the cause of the problem.
 
 ### Questions/checklist
 
@@ -211,26 +210,6 @@ Typically a previously installed application had placed a configuration file wit
 
 ```
 # pacman -S <package>
-
-```
-
-## Spellcheck is marking all of my text as incorrect!
-
-Have you installed an [aspell](https://www.archlinux.org/packages/?name=aspell) dictionary? Use `pacman -Ss aspell` to see available dictionaries for downloading.
-
-If installing the dictionary files did not resolve the problem, it is most likely a problem with `enchant`. Check for known dictionary files:
-
- `$ aspell dicts` 
-```
-en
-en_GB
-...etc
-```
-
-If your respective language dictionary is listed, add it to `/usr/share/enchant/enchant.ordering`. From the above example, it would be:
-
-```
-en_GB:aspell
 
 ```
 

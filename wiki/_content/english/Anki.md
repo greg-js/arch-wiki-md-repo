@@ -12,7 +12,7 @@ This guide shows you how to install Anki.
 
 ## Installation
 
-Install [anki](https://www.archlinux.org/packages/?name=anki) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+Install the [anki](https://www.archlinux.org/packages/?name=anki) package.
 
 If you prefer to use Anki version 1, install [anki12](https://aur.archlinux.org/packages/anki12/) from the [AUR](/index.php/AUR "AUR").
 

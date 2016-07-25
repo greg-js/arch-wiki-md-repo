@@ -36,12 +36,11 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
         *   [5.11.1 GTK+ greeter](#GTK.2B_greeter_2)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Wrong locale displayed](#Wrong_locale_displayed)
-    *   [6.2 Xresources not being parsed correctly](#Xresources_not_being_parsed_correctly)
-    *   [6.3 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
-    *   [6.4 LightDM freezes on login attempt](#LightDM_freezes_on_login_attempt)
-    *   [6.5 LightDM displaying in wrong monitor](#LightDM_displaying_in_wrong_monitor)
-    *   [6.6 LightDM doesn't appear](#LightDM_doesn.27t_appear)
-    *   [6.7 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
+    *   [6.2 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
+    *   [6.3 LightDM freezes on login attempt](#LightDM_freezes_on_login_attempt)
+    *   [6.4 LightDM displaying in wrong monitor](#LightDM_displaying_in_wrong_monitor)
+    *   [6.5 LightDM doesn't appear](#LightDM_doesn.27t_appear)
+    *   [6.6 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -334,24 +333,6 @@ In case of your locale not being displayed correctly in Lightdm add your locale 
  LANG=pt_PT.utf8
 
 ```
-
-### Xresources not being parsed correctly
-
-LightDM has an [upstream bug](https://bugs.launchpad.net/lightdm/+bug/1084885) where your [Xresources](/index.php/Xresources "Xresources") file will not be loaded with a pre-processor. In practical terms, this means that variables set with `#define` are not expanded when called later. You may see this reflected as an all-pink screen if using a custom color set with urxvt. To fix it, edit `/etc/lightdm/Xsession` and search for the line:
-
-```
-xrdb -nocpp -merge "$file"
-
-```
-
-Change it to read:
-
-```
-xrdb -merge "$file"
-
-```
-
-Your Xresources will now be pre-processed so that variables are correctly expanded.
 
 ### Missing icons with GTK greeter
 
