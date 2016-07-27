@@ -11,7 +11,7 @@
 | <small>3.</small> [Arch development](/index.php/Category:Arch_development_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Arch development (Српски)") <small>(1)</small> |
 | <small>4.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Arch User Repository (Српски)") <small>(1)</small> |
 | <small>5.</small> [Audio/Video](/index.php/Category:Audio/Video_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Audio/Video (Српски)") <small>(2)</small> |
-| <small>6.</small> [Boot process](/index.php/Category:Boot_process_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Boot process (Српски)") <small>(0)</small> |
+| <small>6.</small> [Boot process](/index.php?title=Category:Boot_process_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8)&action=edit&redlink=1 "Category:Boot process (Српски) (page does not exist)") <small>(0)</small> |
 | <small>7.</small> [Desktop environments](/index.php/Category:Desktop_environments_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Desktop environments (Српски)") <small>(1)</small> |
 | <small>8.</small> [Development](/index.php/Category:Development_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Development (Српски)") <small>(0)</small> |
 | <small>8.1.</small> [Programming languages](/index.php/Category:Programming_languages_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Programming languages (Српски)") <small>(1)</small> |

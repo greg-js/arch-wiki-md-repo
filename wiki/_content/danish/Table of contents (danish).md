@@ -8,4 +8,4 @@
 | <small>4.1.</small> [Artikler om pakkehåndtering](/index.php/Category:Package_management_(Dansk) "Category:Package management (Dansk)") <small>(4)</small> |
 | <small>5.</small> [Systemadministration](/index.php/Category:System_administration_(Dansk) "Category:System administration (Dansk)") <small>(0)</small> |
 | <small>5.1.</small> [Artikler om lyd og video](/index.php/Category:Audio/Video_(Dansk) "Category:Audio/Video (Dansk)") <small>(2)</small> |
-| <small>5.2.</small> [Eye candy](/index.php/Category:Eye_candy_(Dansk) "Category:Eye candy (Dansk)") <small>(0)</small> |
+| <small>5.2.</small> [Eye candy](/index.php?title=Category:Eye_candy_(Dansk)&action=edit&redlink=1 "Category:Eye candy (Dansk) (page does not exist)") <small>(0)</small> |

@@ -1,4 +1,4 @@
-[sudo](http://www.gratisoft.us/sudo/) ("substitute user do") allows a system administrator to delegate authority to give certain users (or groups of users) the ability to run some (or all) commands as root or another user while providing an audit trail of the commands and their arguments.
+[sudo](http://www.gratisoft.us/sudo/) allows a system administrator to delegate authority to give certain users—or groups of users—the ability to run commands as root or another user while providing an audit trail of the commands and their arguments.
 
 Sudo is an alternative to [su](/index.php/Su "Su") for running commands as root. Unlike [su](/index.php/Su "Su"), which launches a root shell that allows all further commands root access, sudo instead grants temporary privilege escalation to a single command. By enabling root privileges only when needed, sudo usage reduces the likelihood that a typo or a bug in an invoked command will ruin the system.
 
@@ -97,7 +97,7 @@ USER_NAME   ALL=(ALL) ALL
 
 ```
 
-To allow a user to run all commands as any user but only the machine with hostname HOST_NAME:
+To allow a user to run all commands as any user but only the machine with hostname `HOST_NAME`:
 
 ```
 USER_NAME   HOST_NAME=(ALL) ALL
@@ -111,14 +111,14 @@ To allow members of group `wheel` sudo access:
 
 ```
 
-To disable asking for a password for user USER_NAME:
+To disable asking for a password for user `USER_NAME`:
 
 ```
 Defaults:USER_NAME      !authenticate
 
 ```
 
-Enable explicitly defined commands only for user USER_NAME on host HOST_NAME:
+Enable explicitly defined commands only for user `USER_NAME` on host `HOST_NAME`:
 
 ```
 USER_NAME HOST_NAME=/usr/bin/halt,/usr/bin/poweroff,/usr/bin/reboot,/usr/bin/pacman -Syu
@@ -127,7 +127,7 @@ USER_NAME HOST_NAME=/usr/bin/halt,/usr/bin/poweroff,/usr/bin/reboot,/usr/bin/pac
 
 **Note:** the most customized option should go at the end of the file, as the later lines overrides the previous ones. In particular such a line should be after the `%wheel` line if your user is in this group.
 
-Enable explicitly defined commands only for user USER_NAME on host HOST_NAME without password:
+Enable explicitly defined commands only for user `USER_NAME` on host `HOST_NAME` without password:
 
 ```
 USER_NAME HOST_NAME= NOPASSWD: /usr/bin/halt,/usr/bin/poweroff,/usr/bin/reboot,/usr/bin/pacman -Syu

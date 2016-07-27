@@ -2,23 +2,19 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 
 ## Contents
 
-*   [1 Disable Secure Boot](#Disable_Secure_Boot)
-*   [2 Using a signed boot loader](#Using_a_signed_boot_loader)
-    *   [2.1 Booting archiso](#Booting_archiso)
-    *   [2.2 Set up PreLoader](#Set_up_PreLoader)
-        *   [2.2.1 Fallback](#Fallback)
-    *   [2.3 Remove PreLoader](#Remove_PreLoader)
-*   [3 Using your own keys](#Using_your_own_keys)
-    *   [3.1 Creating keys](#Creating_keys)
-    *   [3.2 Signing bootloader and kernel](#Signing_bootloader_and_kernel)
-    *   [3.3 Put firmware in "Setup Mode"](#Put_firmware_in_.22Setup_Mode.22)
-    *   [3.4 Enrol keys in firmware](#Enrol_keys_in_firmware)
-        *   [3.4.1 Using firmware setup utility](#Using_firmware_setup_utility)
-        *   [3.4.2 Using KeyTool](#Using_KeyTool)
-
-## Disable Secure Boot
-
-Secure Boot feature can be disabled from the firmware interface. Access the firmware configuration. You can do it by pressing a special key during the boot process, when the special key depends on the firmware; it is usually one of the key ESC, F2, DEL or possibly another F<n> key. If that didn't work for you and you can boot Windows, you can force a reboot into the firmware configuration in the following way (for Windows 10): Settings -> Update & Security -> Recovery -> Advanced startup (Restart now) -> Troubleshoot -> Advanced options -> UEFI Firmware settings -> restart. You should find an option to disable secure boot. Note that some motherboards (this is the case in a Packard Bell laptop) only allow to disable secure boot if you have set an administrator password (that can be removed afterwards). see also [Rod Smith's Disabling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html#disable).
+*   [1 Using a signed boot loader](#Using_a_signed_boot_loader)
+    *   [1.1 Booting archiso](#Booting_archiso)
+    *   [1.2 Set up PreLoader](#Set_up_PreLoader)
+        *   [1.2.1 Fallback](#Fallback)
+    *   [1.3 Remove PreLoader](#Remove_PreLoader)
+*   [2 Using your own keys](#Using_your_own_keys)
+    *   [2.1 Creating keys](#Creating_keys)
+    *   [2.2 Signing bootloader and kernel](#Signing_bootloader_and_kernel)
+    *   [2.3 Put firmware in "Setup Mode"](#Put_firmware_in_.22Setup_Mode.22)
+    *   [2.4 Enrol keys in firmware](#Enrol_keys_in_firmware)
+        *   [2.4.1 Using firmware setup utility](#Using_firmware_setup_utility)
+        *   [2.4.2 Using KeyTool](#Using_KeyTool)
+*   [3 Disable Secure Boot](#Disable_Secure_Boot)
 
 ## Using a signed boot loader
 
@@ -127,9 +123,9 @@ Simply [remove](/index.php/Remove "Remove") the installed [efitools](https://www
 
 ```
 
-Where `N` is the NVRAM boot entry created for booting `PreLoader.efi`. Check with the `efibootmgr` command and adjust the boot-order if necessary.
+Where `N` is the NVRAM boot entry created for booting `PreLoader.efi`. Check with the *efibootmgr* command and adjust the boot-order if necessary.
 
-**Note:** The above commands cover the easiest case; if you have created, copied, renamed or edited further files probably you have to handle with them, too.
+**Note:** The above commands cover the easiest case; if you have created, copied, renamed or edited further files probably you have to handle with them, too. If PreLoader was your operational boot entry, you obviously also need to [#Disable Secure Boot](#Disable_Secure_Boot).
 
 ## Using your own keys
 
@@ -253,3 +249,7 @@ Firmwares have various different interfaces, see [Replacing Keys Using Your Firm
 Launch `KeyTool-signed.efi` using firmware setup utility, boot loader or [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") and enrol keys.
 
 See [Replacing Keys Using KeyTool](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#keytool) for explanation of KeyTool menu options.
+
+## Disable Secure Boot
+
+The Secure Boot feature can be disabled from the firmware interface. You may access the firmware configuration by pressing a special key during the boot process. They key to use depends on the firmware. It is usually one of `ESC`, `F2`, `DEL` or possibly another `F*n*` key. If that did not work for you and you can boot Windows, you can force a reboot into the firmware configuration in the following way (for Windows 10): *Settings > Update & Security > Recovery > Advanced startup (Restart now) > Troubleshoot > Advanced options > UEFI Firmware settings > restart*. You should find an option to disable secure boot. Note that some motherboards (this is the case in a Packard Bell laptop) only allow to disable secure boot if you have set an administrator password (that can be removed afterwards). See also [Rod Smith's Disabling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html#disable).

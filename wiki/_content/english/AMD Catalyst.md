@@ -82,7 +82,7 @@ Compared with the open source driver, Catalyst performs better in both 2D and 3D
 
 ## Selecting the right driver
 
-Depending on the card you have, find the right driver in the following table. This page has instructions for **Catalyst** and **Catalyst legacy**. [Template:AMD GPU drivers](/index.php?title=Template:AMD_GPU_drivers&action=edit&redlink=1 "Template:AMD GPU drivers (page does not exist)")
+Depending on the card you have, find the right driver in [Xorg#ATI](/index.php/Xorg#ATI "Xorg"). This page has instructions for **Catalyst** and **Catalyst legacy**.
 
 ## Installation
 

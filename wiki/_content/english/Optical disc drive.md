@@ -675,7 +675,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 	[http://thomas.apestaart.org/morituri/trac/](http://thomas.apestaart.org/morituri/trac/) || [morituri](https://www.archlinux.org/packages/?name=morituri)
 
-*   **ripperX** — GTK+ program to rip and encode MP3 files.
+*   **ripperX** — GTK+ program to rip CD audio tracks and encode them to the Ogg, MP3, or FLAC formats.
 
 	[http://sourceforge.net/projects/ripperx/](http://sourceforge.net/projects/ripperx/) || [ripperx](https://www.archlinux.org/packages/?name=ripperx)
 

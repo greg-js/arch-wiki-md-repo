@@ -16,7 +16,7 @@
 | <small>2.3.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(15)</small> |
 | <small>2.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(11)</small> |
 | <small>2.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(13)</small> |
-| <small>2.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(1)</small> |
+| <small>2.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(2)</small> |
 | <small>2.7.</small> [Emulators](/index.php/Category:Emulators "Category:Emulators") <small>(15)</small> |
 | <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small> |
 | <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(51)</small> |

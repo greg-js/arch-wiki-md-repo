@@ -210,7 +210,7 @@ CFS implements three scheduling policies:
 
 ## See also
 
-*   [IO Benchmarking: How, why and with what](http://www.cuddletech.com/blog/pivot/entry.php?id=820)
+*   [IO Benchmarking: How, why and with what](http://cuddletech.com/?p=330)
 *   [CGROUPS Kernel documentation](http://www.kernel.org/doc/Documentation/cgroups/cgroups.txt)
 *   [Optimizing servers and processes for speed with ionice, nice, ulimit](http://www.askapache.com/linux-unix/optimize-nice-ionice.html)
 *   [SYSSTAT utilities home page](http://sebastien.godard.pagesperso-orange.fr/)

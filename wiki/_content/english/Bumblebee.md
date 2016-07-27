@@ -41,6 +41,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [7.10 Primusrun mouse delay/disable VSYNC](#Primusrun_mouse_delay.2Fdisable_VSYNC)
     *   [7.11 Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)
     *   [7.12 Problems with bumblebee after resuming from standby](#Problems_with_bumblebee_after_resuming_from_standby)
+    *   [7.13 Optirun doesn't work, no debug output](#Optirun_doesn.27t_work.2C_no_debug_output)
 *   [8 See also](#See_also)
 
 ## Bumblebee: Optimus for Linux
@@ -687,6 +688,46 @@ This makes primus display the previously rendered frame.
 ### Problems with bumblebee after resuming from standby
 
 In some systems, it can happens that the nvidia module is loaded after resuming from standby. The solution for this, is to install the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) and [acpi](https://www.archlinux.org/packages/?name=acpi) package.
+
+### Optirun doesn't work, no debug output
+
+Users are reporting that in some cases, even though Bumblebee was installed correctly, running
+
+```
+$ optirun glxgears -info
+
+```
+
+gives no output at all, and the glxgears window does not appear. Any programs that need 3d acceleration crashes:
+
+```
+$ optirun bash
+$ glxgears
+Segmentation fault (core dumped)
+
+```
+
+Apparently it is a bug of some versions of virtualgl. So a workaround is to install and use primus instead.
+
+```
+$ pacman -Sy primus lib32-primus
+$ primusrun glxspheres64
+$ optirun -b primus glxspheres64
+
+```
+
+By default primus locks the framerate to the vrate of your monitor (usually 60 fps), if needed it can be unlocked by passing the `vblank_mode=0` environment variable.
+
+```
+$ vblank_mode=0 primusrun glxspheres64
+
+```
+
+Usually there is no need to display more frames han your monitor can handle, but you might want to for benchmarking or to have faster reactions in games (e.g., if a game need 3 frames to react to a mouse movement with `vblank_mode=0` the reaction will be as quick as your system can handle, without it will always need 1/20 of second).
+
+You might want to edit `/etc/bumblebee/bumblebee.conf` to use the primus render as default. If after an update you want to check if the bug has been fixed just use `optirun -b virtualgl`.
+
+See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1643609) for more information.
 
 ## See also
 

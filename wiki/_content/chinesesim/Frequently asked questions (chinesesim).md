@@ -41,7 +41,6 @@
     *   [3.4 Arch比起其他“小型”发行版，有何独特之处？](#Arch.E6.AF.94.E8.B5.B7.E5.85.B6.E4.BB.96.E2.80.9C.E5.B0.8F.E5.9E.8B.E2.80.9D.E5.8F.91.E8.A1.8C.E7.89.88.EF.BC.8C.E6.9C.89.E4.BD.95.E7.8B.AC.E7.89.B9.E4.B9.8B.E5.A4.84.EF.BC.9F)
 *   [4 其他](#.E5.85.B6.E4.BB.96)
     *   [4.1 Q) AUR是什么？](#Q.29_AUR.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
-    *   [4.2 Q) 拼写检查说所有文本都是错误的！](#Q.29_.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5.E8.AF.B4.E6.89.80.E6.9C.89.E6.96.87.E6.9C.AC.E9.83.BD.E6.98.AF.E9.94.99.E8.AF.AF.E7.9A.84.EF.BC.81)
 *   [5 64-bit](#64-bit)
     *   [5.1 我如何确定我的处理器是否支持 x86_64?](#.E6.88.91.E5.A6.82.E4.BD.95.E7.A1.AE.E5.AE.9A.E6.88.91.E7.9A.84.E5.A4.84.E7.90.86.E5.99.A8.E6.98.AF.E5.90.A6.E6.94.AF.E6.8C.81_x86_64.3F)
     *   [5.2 32-bit Arch 中的所有软件包都有 64bit 版本吗?](#32-bit_Arch_.E4.B8.AD.E7.9A.84.E6.89.80.E6.9C.89.E8.BD.AF.E4.BB.B6.E5.8C.85.E9.83.BD.E6.9C.89_64bit_.E7.89.88.E6.9C.AC.E5.90.97.3F)
@@ -254,26 +253,6 @@ libbaz=1.5
 ### Q) AUR是什么？
 
 **A)** 参见：[Arch用户软件仓库#FAQ](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#FAQ "Arch User Repository (简体中文)")。
-
-### Q) 拼写检查说所有文本都是错误的！
-
-**A)** 安装[aspell](https://www.archlinux.org/packages/?name=aspell)词典了吗？使用`pacman -Ss aspell`查找可用词典。
-
-如果安装字典也没用，可能是`enchant`出问题了。查看aspell识别到的词典文件：
-
- `$ aspell dicts` 
-```
-en
-en_GB
-...etc
-```
-
-如果你需要的语言不在其中，添加下面的内容到`/usr/share/enchant/enchant.ordering`：
-
-```
-en_GB:aspell # 以en_GB为例
-
-```
 
 ## 64-bit
 

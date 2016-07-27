@@ -1,6 +1,6 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Дата последней синхронизации: 24 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd/Timers&diff=0&oldid=427528).
 
-Таймеры это файлы служб [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") имя которых оканчивается на `.timer` они контролируют файлы `.service` или события. Таймеры могут использоваться как альтернатива [cron](/index.php/Cron_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Cron (Русский)") (читайте [#В качестве замены cron](#.D0.92_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B_cron)). Таймеры имеют встроенную поддержку временных календарных событий, монотонных временных событий, и могут быть запущены в асинхронном режиме.
+Таймеры - файлы служб [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), имя которых оканчивается на `.service`, а также они контролируют файлы `.service` или события. И могут выступать альтернативой [cron](/index.php/Cron "Cron") (смотрите [#В качестве замены cron](#.D0.92_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B_cron)). Помимо этого имеют встроенную поддержку временных событий календаря, монотонных временных событий и могут быть запущены в асинхронном режиме.
 
 ## Contents
 
@@ -10,29 +10,30 @@
 *   [4 Пример](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80)
     *   [4.1 Монотонный таймер](#.D0.9C.D0.BE.D0.BD.D0.BE.D1.82.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D1.82.D0.B0.D0.B9.D0.BC.D0.B5.D1.80)
     *   [4.2 Таймер в реальном времени](#.D0.A2.D0.B0.D0.B9.D0.BC.D0.B5.D1.80_.D0.B2_.D1.80.D0.B5.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8)
-*   [5 В качестве замены cron](#.D0.92_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B_cron)
-    *   [5.1 Полезности](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D0.BE.D1.81.D1.82.D0.B8)
-    *   [5.2 Предостережения](#.D0.9F.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B5.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
-    *   [5.3 MAILTO](#MAILTO)
-    *   [5.4 Использование crontab](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_crontab)
-*   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [5 Transient .timer units](#Transient_.timer_units)
+*   [6 В качестве замены cron](#.D0.92_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B_cron)
+    *   [6.1 Полезности](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D0.BE.D1.81.D1.82.D0.B8)
+    *   [6.2 Предостережения](#.D0.9F.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B5.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [6.3 MAILTO](#MAILTO)
+    *   [6.4 Использование crontab](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_crontab)
+*   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Юниты таймера
 
-Таймеры *systemd* это файлы юнитов с суфиксом `.timer`. Таймеры, как и другие файлы [файлы настроек юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") и загружаются по одному и тому же пути, но включают в себя секцию `[Timer]`. Секция `[Timer]` определяет, когда и как таймер активизируется. Таймеры определяются в качестве одного из двух типов:
+Таймеры *systemd* - это файлы юнитов с суффиксом `.timer`. Они, как и другие [файлы настроек юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)"), загружаются по одному и тому же пути, но включают в себя секцию `[Timer]`. Она определяет, как и когда таймер запускается. Таймер может быть одним из следующих двух типов:
 
-*   **Монотонный таймер** активируется после определенного промежутка времени по отношению к той или иной отправной точки. Есть несколько различных монотонных таймеров, но все они имеют вид: `On*Type*Sec=`. `OnBootSec` и `OnActiveSec` являются общими монотонными таймерами.
-*   **Таймер реального времени** (также известный как таймер настенный часы) активируется на события календаря (как cronjobs). Для их определения используется опция `OnCalendar=`.
+*   **Монотонный таймер** - активируется после определенного промежутка времени по отношению к той или иной отправной точки. Есть несколько различных монотонных таймеров, но все они имеют вид: `On*Type*Sec=`. `OnBootSec` и `OnActiveSec` являются общими монотонными таймерами.
+*   **Таймер реального времени** (также известный как таймер настенный часы) запускается в зависимости от событий календаря (как cronjobs). Для определения такого таймера используется опция `OnCalendar=`.
 
-Для полного объяснения опций таймера смотрите `systemd.timer(5)` [странице справочного руководства](/index.php/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0_%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0 "Страница справочного руководства"). Синтаксис аргументов для событий календаря и промежутка времени определяется на `systemd.time(7)` [странице справочного руководства](/index.php/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0_%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0 "Страница справочного руководства").
+Для полного объяснения опций таймера смотрите [страницу справочного руководства](/index.php/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0_%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0 "Страница справочного руководства") `systemd.timer(5)`. Синтаксис аргументов для событий календаря и промежутка времени смотрите в `systemd.time(7)`.
 
 ## Служба юнита
 
-For each `.timer` file, a matching `.service` file exists (e.g. `foo.timer` and `foo.service`). The `.timer` file activates and controls the `.service` file. The `.service` does not require an `[Install]` section as it is the *timer* units that are enabled. If necessary, it is possible to control a differently-named unit using the `Unit=` option in the timer's `[Timer]` section.
+Каждому файлу `.timer` подходит соответствующий файл `.service` (например, `foo.timer` и `foo.service`). Файл `.timer` запускается и контролирует файл `.service`. `.service` не требует секции `[Install]`, так как она присутствует в юните *timer*, который уже включен. Если необходимо, то можно контролировать юниты с разным названием, используя опцию `Unit=` в таймере в секции `[Timer]`.
 
 ## Управление
 
-To use a *timer* unit [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") it like any other unit (remember to add the `.timer` suffix). To view all started timers, run:
+Для того, чтобы использовать юнит *timer*, [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") и [запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") его, как любой другой юнит. (не забудьте добавить суффикс `.timer`). Для того, чтобы увидеть все запущенные таймеры, используйте:
 
  `$ systemctl list-timers` 
 ```
@@ -44,9 +45,9 @@ Fri 2014-07-11 00:00:00 CEST  15h left    Thu 2014-07-10 00:00:13 CEST  8h ago  
 
 **Примечание:**
 
-*   To list all timers (including inactive), use `systemctl list-timers --all`.
-*   The status of a service started by a timer will likely be inactive unless it is currently being triggered.
-*   If a timer gets out of sync, it may help to delete its `stamp-*` file in `/var/lib/systemd/timers`. These are zero length files which mark the last time each timer was run. If deleted, they will be reconstructed on the next start of their timer.
+*   Чтобы увидеть все таймеры (в том числе и неактивные), используйте `systemctl list-timers --all`.
+*   Статус сервиса, который запускается посредством таймера, вероятно, будет неактивный, если не сработает условие его запуска.
+*   Если таймер рассинхронизировался, то может помочь удаление соответствующих файлов `stamp-*` в `/var/lib/systemd/timers`. Это файлы, с нулевой длинной, которые отмечают последнее время, когда таймер был запущен. Если данные файлы отсутствуют, то они будут перестроены при следующем запуске соответствующего таймера.
 
 ## Пример
 
@@ -54,7 +55,7 @@ No changes to service unit files are needed to schedule them with a timer. The f
 
 ### Монотонный таймер
 
-A timer which will start 15 minutes after boot and again every week while the system is running.
+Таймер, который запустится через 15 минут после загрузки, а затем снова будет запускаться каждую неделю во время работы системы.
 
  `/etc/systemd/system/foo.timer` 
 ```
@@ -72,7 +73,7 @@ WantedBy=timers.target
 
 ### Таймер в реальном времени
 
-A timer which starts once a week (at 12:00am on Monday). It starts once immediately if it missed the last start time (option `Persistent=true`), for example due to the system being powered off:
+Таймер, который будет запускаться один раз в неделю (в 12:00 в понедельник). Он принудительно запустится единожды, если отсутствует последнее время запуска (опция `Persistent=true`), например, в связи с отключением системы:
 
  `/etc/systemd/system/foo.timer` 
 ```
@@ -87,7 +88,32 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-**Совет:** Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. The `RandomizedDelaySec` option avoids this problem by randomly staggering the start time of each timer. See `systemd.timer (5)`.
+Если требуется указать более точную дату и время, используйте следующий формат: `DayOfWeek Year-Month-Day Hour:Minute:Second`. Звездочка может быть использована, чтобы указать все значения, а запятые могут быть использованы для перечисления возможных значений. В следующем примере сервис запускается в первые четыре дня каждого месяца в полдень, но *только*, если этими днями являются понедельник или вторник. Более подробная информация доступна в `man systemd.time`.
+
+```
+OnCalendar=Mon,Tue *-*-01,02,03,04 12:00:00
+
+```
+
+**Совет:** Специальные выражения событий, такие как `daily` и `weekly`, относятся к *конкретному времени начала* и, таким образом, все таймеры, использующие эти выражения, запустятся одновременно. Таймеры, использующие специальные выражения, могут негативно сказаться на производительности системы, если сервисы, запускаемые таймерами, являются ресурсозатратными. Опция `RandomizedDelaySec` помогает избежать подобных проблем посредством случайного выбора времени запуска каждого из таймеров. Смотрите `systemd.timer (5)`.
+
+## Transient .timer units
+
+One can use `systemd-run` to create transient `.timer` units. That is, one can set a command to run at a specified time without having a service file. For example the following command touches a file after 30 seconds:
+
+```
+# systemd-run --on-active=30 /bin/touch /tmp/foo
+
+```
+
+One can also specify a pre-existing service file that does not have a timer file. For example, the following starts the systemd unit named `*someunit*.service` after 12.5 hours have elapsed:
+
+```
+# systemd-run --on-active="12h 30m" --unit *someunit*.service
+
+```
+
+See `man systemd-run` for more information and examples.
 
 ## В качестве замены cron
 

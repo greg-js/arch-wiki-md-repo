@@ -192,6 +192,8 @@ $ picocom -b 9600 /dev/ttyS0
 
 ```
 
+**Note:** if the backspace key won't work properly try out this option: '--omap delbs'
+
 See its manual for detailed usage.
 
 ##### Screen

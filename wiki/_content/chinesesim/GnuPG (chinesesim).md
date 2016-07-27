@@ -1,8 +1,8 @@
-**翻译状态：** 本文是英文页面 [GnuPG](/index.php/GnuPG "GnuPG") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-11，点击[这里](https://wiki.archlinux.org/index.php?title=GnuPG&diff=0&oldid=430354)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GnuPG](/index.php/GnuPG "GnuPG") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-27，点击[这里](https://wiki.archlinux.org/index.php?title=GnuPG&diff=0&oldid=441685)可以查看翻译后英文页面的改动。
 
 根据 [官方网站](http://www.gnupg.org):
 
-	GnuPG 是 RFC4880 OpenPGP 标准([PGP](https://en.wikipedia.org/wiki/PGP "wikipedia:PGP")) 的完整实现，自由软件。GnuPG 可以加密和签名数据和信息传递，包含一个通用的密钥管理系统，包含的访问模块可以访问各种公钥目录。 GnuPG, 简称 GPG, 是命令行工具，很方便和其它程序进行整合，具有很多前端程序和函数库。 GnuPG V2 还支持 S/MIME 和 Secure Shell (ssh).
+	GnuPG 是 RFC4880 OpenPGP 标准 PGP 的完整实现，自由软件。GnuPG 可以加密和签名数据和信息传递，包含一个通用的密钥管理系统，包含的访问模块可以访问各种公钥目录。 GnuPG, 简称 GPG, 是命令行工具，很方便和其它程序进行整合，具有很多前端程序和函数库。 GnuPG V2 还支持 S/MIME 和 Secure Shell (ssh).
 
 ## Contents
 
@@ -13,16 +13,15 @@
     *   [2.3 新用户的默认选项](#.E6.96.B0.E7.94.A8.E6.88.B7.E7.9A.84.E9.BB.98.E8.AE.A4.E9.80.89.E9.A1.B9)
 *   [3 用法](#.E7.94.A8.E6.B3.95)
     *   [3.1 创建密钥对](#.E5.88.9B.E5.BB.BA.E5.AF.86.E9.92.A5.E5.AF.B9)
-    *   [3.2 备份私钥](#.E5.A4.87.E4.BB.BD.E7.A7.81.E9.92.A5)
+    *   [3.2 查看密钥](#.E6.9F.A5.E7.9C.8B.E5.AF.86.E9.92.A5)
     *   [3.3 导出公钥](#.E5.AF.BC.E5.87.BA.E5.85.AC.E9.92.A5)
-    *   [3.4 导入密钥](#.E5.AF.BC.E5.85.A5.E5.AF.86.E9.92.A5)
+    *   [3.4 导入公共密钥](#.E5.AF.BC.E5.85.A5.E5.85.AC.E5.85.B1.E5.AF.86.E9.92.A5)
     *   [3.5 Use a keyserver](#Use_a_keyserver)
     *   [3.6 Encrypt and decrypt](#Encrypt_and_decrypt)
 *   [4 密钥维护](#.E5.AF.86.E9.92.A5.E7.BB.B4.E6.8A.A4)
     *   [4.1 Edit your key](#Edit_your_key)
     *   [4.2 Exporting subkey](#Exporting_subkey)
     *   [4.3 Rotating subkeys](#Rotating_subkeys)
-    *   [4.4 List keys](#List_keys)
 *   [5 Signatures](#Signatures)
     *   [5.1 Sign a file](#Sign_a_file)
     *   [5.2 Clearsign a file or message](#Clearsign_a_file_or_message)
@@ -121,25 +120,32 @@ $ gpg --full-gen-key
 
 **注意:** 任何导入密钥的人都可以看到这里的用户名和电子邮件地址。
 
-### 备份私钥
+### 查看密钥
 
-用下面方法备份私钥，然后将私钥保存在一个安全的位置，加锁或加密磁盘。
-
-```
-$ gpg --export-secret-keys --armor *<user-id>* > *privkey.asc*
+查看公钥：
 
 ```
+$ gpg --list-keys
 
-**警告:** 如果有人能访问备份文件，就可以伪装成你进行加密和签名，而且**不**需要密码.
+```
+
+查看私钥:
+
+```
+$ gpg --list-secret-keys
+
+```
 
 ### 导出公钥
 
-其他人需要有你的公钥才能给你发加密信息。
+gpg's main usage is to ensure confidentiality of exchanged messages via public-key cryptography. With it each user distributes the public key of their keyring, which can be be used by others to encrypt messages to the user. The private key must *always* be kept private, otherwise confidentiality is broken. See [w:Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "w:Public-key cryptography") for examples about the message exchange.
+
+所以其他人需要有你的公钥才能给你发加密信息。
 
 要生成公钥的 ASCII 版本，(例如通过电子邮件发布):
 
 ```
-$ gpg --armor --output *public.key* --export *<user-id>*
+$ gpg --output *public.key* --armor --export *<user-id>*  
 
 ```
 
@@ -147,7 +153,7 @@ $ gpg --armor --output *public.key* --export *<user-id>*
 
 **Tip:** 使用 `--no-emit-version` 可以避免打印版本号，通过配置文件也可以进行此设置。
 
-### 导入密钥
+### 导入公共密钥
 
 要给其他人发送加密信息，或者验证他们的签名，就需要他们的公钥。通过文件 `*public.key*` 导入公钥到密钥环：
 
@@ -192,33 +198,30 @@ $ gpg --recv-keys *<key-id>*
 
 ### Encrypt and decrypt
 
-When encrypting or decrypting it is possible to have more than one private key in use. If this occurs you need to select the active key by using the option `-u *<user-id>*` or `--local-user *<user-id>*`.
+You need to [#Import a public key](#Import_a_public_key) of a user before encrypting (options `--encrypt` or `-e`) a file or message to that recipient (options `--recipient` or `-r`).
 
-To encrypt a file named `*doc*` using ASCII armor (suitable for copying and pasting a message in text format), use:
-
-```
-$ gpg --encrypt --armor *doc*
+To encrypt a file with the name *doc*, use:
 
 ```
+$ gpg --recipient *<user-id>* --encrypt *doc*
 
-If you want to just encrypt a file, exclude `--armor`.
+```
+
+To decrypt (option `--decrypt` or `-d`) a file with the name *doc.gpg* encrypted with your public key, use:
+
+```
+$ gpg --output *doc* --decrypt *doc.gpg*
+
+```
+
+*gpg* will prompt you for your passphrase and then decrypt and write the data from *doc.gpg* to *doc*. If you omit the `-o` (`--output`) option, *gpg* will write the decrypted data to stdout.
 
 **Tip:**
 
-*   If you want to change recipient this can be done by the option `-r *<user-id>*` (or `--recipient *<user-id>*`).
-*   Add `-R *<user-id>*` or `--hidden-recipient *<user-id>*` instead of `--recipient` to not put the recipient key IDs in the encrypted message. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis.
+*   Add `--armor` to encrypt a file using ASCII armor (suitable for copying and pasting a message in text format)
+*   Use `-R *<user-id>*` or `--hidden-recipient *<user-id>*` instead of `-r` to not put the recipient key IDs in the encrypted message. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis.
 *   Add `--no-emit-version` to avoid printing the version number, or add the corresponding setting to your configuration file.
-
-**Note:** You can use gnupg to encrypt your sensitive documents, but only individual files at a time. If you want to encrypt directories or a whole file-system you should consider using [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") or [EncFS](/index.php/EncFS "EncFS"), though you can always tarball various files and then encrypt them.
-
-To decrypt a file, use:
-
-```
-$ gpg --decrypt *doc.asc*
-
-```
-
-You will be prompted to enter your passphrase. You will need to have already [imported](#Import_a_key) the sender's public key to decrypt a file or message from them.
+*   You can use gnupg to encrypt your sensitive documents by using your own user-id as recipient, but only individual files at a time, though you can always tarball various files and then encrypt the tarball. See also [Disk encryption#Available methods](/index.php/Disk_encryption#Available_methods "Disk encryption") if you want to encrypt directories or a whole file-system.
 
 ## 密钥维护
 
@@ -309,22 +312,6 @@ $ gpg --keyserver pgp.mit.edu --send-keys *<user-id>*
 ```
 
 **Note:** Revoking expired subkeys is unnecessary and arguably bad form. If you are constantly revoking keys, it may cause others to lack confidence in you.
-
-### List keys
-
-To list keys in your public key ring:
-
-```
-$ gpg --list-keys
-
-```
-
-To list keys in your secret key ring:
-
-```
-$ gpg --list-secret-keys
-
-```
 
 ## Signatures
 
@@ -499,7 +486,7 @@ enable-ssh-support
 
 ```
 
-Next, make sure that *gpg-agent* is always started. Use either the [systemd user service](#Start_gpg-agent_with_systemd_user) or add the following to your `.bashrc` file:
+Next, make sure that *gpg-agent* is always started. Either follow [#Start gpg-agent with systemd user](#Start_gpg-agent_with_systemd_user), or add the following to your `.bashrc` file:
 
  `~/.bashrc` 
 ```
@@ -510,19 +497,32 @@ fi
 
 ```
 
-Then set `SSH_AUTH_SOCK` so that SSH will use *gpg-agent* instead of *ssh-agent*:
+Then set `SSH_AUTH_SOCK` so that SSH will use *gpg-agent* instead of *ssh-agent*. To make sure each process can find your *gpg-agent* instance regardless of e.g. the type of shell it is child of use [pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables").
+
+ `~/.pam_environment` 
+```
+SSH_AGENT_PID	DEFAULT=
+SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+```
+
+Alternatively, depend on Bash:
 
  `~/.bashrc` 
 ```
 # Set SSH to use gpg-agent
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+  export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
 fi
 
 ```
 
-Also set the GPG TTY and refresh the TTY in case user has switched into an X session. Example:
+**Note:**
+
+*   If you use non-default GnuPG [#Directory location](#Directory_location), run `gpgconf --create-socketdir` to create a socket directory under `/run/user/$UID/gnupg/`. Otherwise the socket will be placed in the GnuPG home directory.
+*   The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[3]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
+
+Also set the GPG_TTY and refresh the TTY in case user has switched into an X session as stated in `man gpg-agent`. For example:
 
  `~/.bashrc` 
 ```
@@ -650,13 +650,7 @@ By default the recipient's key ID is in the encrypted message. This can be remov
 
 To allow users to validate keys on the keyservers and in their keyrings (i.e. make sure they are from whom they claim to be), PGP/GPG uses he [Web of Trust](https://en.wikipedia.org/wiki/Web_of_Trust "wikipedia:Web of Trust"). Keysigning parties allow users to get together in physical location to validate keys. The [Zimmermann-Sassaman](https://en.wikipedia.org/wiki/Zimmermann%E2%80%93Sassaman_key-signing_protocol "wikipedia:Zimmermann–Sassaman key-signing protocol") key-signing protocol is a way of making these very effective. [Here](http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html) you will find a how-to article.
 
-For an easier process of signing keys and sending signatures to the owners after a keysigning party, you can use the tool *caff*. It can be installed from the AUR with the package [caff-svn](https://aur.archlinux.org/packages/caff-svn/) or bundled together with other useful tools in the package [signing-party-svn](https://aur.archlinux.org/packages/signing-party-svn/). Either way, there will be a lot of dependencies installing from the AUR. Alternatively you can install them from CPAN with
-
-```
-cpanm Any::Moose
-cpanm GnuPG::Interface
-
-```
+For an easier process of signing keys and sending signatures to the owners after a keysigning party, you can use the tool *caff*. It can be installed from the AUR with the package [caff-svn](https://aur.archlinux.org/packages/caff-svn/).
 
 To send the signatures to their owners you need a working [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent"). If you do not have already one, install [msmtp](/index.php/Msmtp "Msmtp").
 
@@ -756,7 +750,7 @@ Then use an [udev](/index.php/Udev#Writing_udev_rules "Udev") rule, similar to t
 
  `/etc/udev/rules.d/71-gnupg-ccid.rules` 
 ```
-ACTION=="add", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0116|0111", MODE="664", GROUP="scard"
+ACTION=="add", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0116|0111", MODE="660", GROUP="scard"
 
 ```
 

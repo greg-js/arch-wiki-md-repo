@@ -9,7 +9,8 @@ PIA is a subscription based service provided from the [PIA](https://www.privatei
     *   [3.2 Manually Connecting to VPN](#Manually_Connecting_to_VPN)
     *   [3.3 Automatically connect to VPN](#Automatically_connect_to_VPN)
     *   [3.4 WIP: Advanced Options](#WIP:_Advanced_Options)
-*   [4 See also](#See_also)
+*   [4 Example Configuration](#Example_Configuration)
+*   [5 See also](#See_also)
 
 ## Requirements
 
@@ -19,7 +20,7 @@ PIA supports nearly any operating system and solution any user would need. This 
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/) package.
+[Install](/index.php/Install "Install") the [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/) or [private-internet-access-vpn-dev](https://aur.archlinux.org/packages/private-internet-access-vpn-dev/)package.
 
 The package downloads the [OPENVPN CONFIGURATION FILES (DEFAULT)](https://www.privateinternetaccess.com/openvpn/openvpn.zip) and stores them in `/etc/openvpn`. However, it updates the file names to better support using them on the command line.
 
@@ -80,8 +81,25 @@ Run `openvpn --config /etc/openvpn/{config_file_name}` as root. {config_file_nam
 | option | option values | description |
 | openvpn_auto-login | True,False | Default: True; Configures if OpenVPN configuration files should have auto-login enabled. See [#Enabling auto-login](#Enabling_auto-login) |
 | port | 80, 443, 110, 53, 8080, 9201 | Default: 1194; This configures which port and protocol the VPN uses. 80,443,110=TCP; 53,8080,9201=UDP |
-| cipher | AES-128-CBC, BF-CBC, None | Default: BF-CBC; This configures the data encryption cipher. |
-| auth | SHA1, SHA256, None | Default: SHA1; This configures the data authentication. |
+| cipher | aes-128-cbc, aes-256-cbc, bf-cbc, None | Default: aes-128-cbc; This configures the data encryption cipher. |
+| auth | sha1, sha265, None | Default: sha1; This configures the data authentication. |
+
+## Example Configuration
+
+The configuration enables auto-login, configures only Connman and OpenVPN, uses port 8080 over UDP, and configures only US East, US West, Japan, UK London, and UK Southampton VPN endpoints. OpenVPN is always configured.
+
+ `/etc/private-internet-access-vpn/pia.conf` 
+```
+
+[pia]
+openvpn_auto_login = True
+
+[configure]
+apps = cm
+port = UDP/8080
+hosts = US East, US West, Japan, UK London, UK Southampton
+
+```
 
 ## See also
 

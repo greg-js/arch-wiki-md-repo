@@ -15,6 +15,7 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
         *   [2.3.4 Changing your avatar](#Changing_your_avatar)
     *   [2.4 Numlock](#Numlock)
     *   [2.5 Configuration GUI](#Configuration_GUI)
+    *   [2.6 DPI settings](#DPI_settings)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Hangs after login](#Hangs_after_login)
     *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
@@ -110,6 +111,14 @@ If you want to enforce Numlock to be enabled, set `Numlock=on` in the `[General]
 
 *   KDE Frameworks' System Settings contains an SDDM configuration module. Install [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) package to use it.
 *   There is a Qt-based [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/) in the AUR.
+
+### DPI settings
+
+Sometimes it's useful to set up correct monitor's PPI settings on a "Display Manager" level. To do so you need to find "ServerArguments" parameter in sdd.conf and add -dpi %YOUR RESOLUTION at the end of the string.
+
+For example:
+
+ `/etc/sddm.conf`  `ServerArguments=-nolisten tcp -dpi 94` 
 
 ## Troubleshooting
 

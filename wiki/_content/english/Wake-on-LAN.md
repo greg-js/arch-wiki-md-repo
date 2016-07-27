@@ -4,12 +4,13 @@ Wake-on-LAN (WOL) is a feature to switch on a computer via a network connection 
 
 *   [1 Hardware settings](#Hardware_settings)
 *   [2 Software configuration](#Software_configuration)
-    *   [2.1 netctl](#netctl)
-    *   [2.2 systemd-networkd](#systemd-networkd)
-    *   [2.3 systemd service](#systemd_service)
-    *   [2.4 udev](#udev)
-    *   [2.5 cron](#cron)
-    *   [2.6 NetworkManager](#NetworkManager)
+    *   [2.1 Make it persistent](#Make_it_persistent)
+        *   [2.1.1 netctl](#netctl)
+        *   [2.1.2 systemd-networkd](#systemd-networkd)
+        *   [2.1.3 systemd service](#systemd_service)
+        *   [2.1.4 udev](#udev)
+        *   [2.1.5 cron](#cron)
+        *   [2.1.6 NetworkManager](#NetworkManager)
 *   [3 Trigger a wake up](#Trigger_a_wake_up)
     *   [3.1 On the same LAN](#On_the_same_LAN)
     *   [3.2 With port forwarding](#With_port_forwarding)
@@ -45,7 +46,7 @@ Query the network device via this command:
  `# ethtool net0 | grep Wake-on` 
 ```
         Supports Wake-on: pumbag
-	Wake-on: d
+    Wake-on: d
 
 ```
 
@@ -60,13 +61,15 @@ To enable the WOL feature in the driver:
 
 This command might not last beyond the next reboot, so it must be repeated via some mechanism. Common solutions are listed in the following subsections.
 
-### netctl
+### Make it persistent
+
+#### netctl
 
 If using netctl, one can make this setting persistent by adding the following the netctl profile:
 
  `/etc/netctl/*profile*`  `ExecUpPost='/usr/bin/ethtool -s net0 wol g'` 
 
-### systemd-networkd
+#### systemd-networkd
 
 If [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") is used to setup machine's network then it is easy to enable Wake-On-Lan using `systemd.link` configuration. Add `WakeOnLan` option to the network link file:
 
@@ -79,7 +82,7 @@ WakeOnLan=magic
 
 See [systemd-networkd#link files](/index.php/Systemd-networkd#link_files "Systemd-networkd") and `man systemd.link` for more information.
 
-### systemd service
+#### systemd service
 
 This is an equivalent of previous `systemd.link` option, but uses a standalone systemd service.
 
@@ -102,7 +105,7 @@ Alternatively install the [wol-systemd](https://aur.archlinux.org/packages/wol-s
 
 Then activate this new service by [starting](/index.php/Starting "Starting") `wol@*interface*.service`.
 
-### udev
+#### udev
 
 [udev](/index.php/Udev "Udev") is capable of running any command as soon as a device is visible. The following rule will turn on WOL on all [network interfaces](/index.php/Network_interface "Network interface") whose name matches `enp*`:
 
@@ -116,7 +119,7 @@ The `$name` placeholder will be replaced by the value of the `NAME` variable for
 
 **Note:** The name of the configuration file is important. Due to the introduction of [persistent device names](/index.php/Network_configuration#Device_names "Network configuration") in systemd v197, it is important that the rules matching a specific network interface are named lexicographically after `80-net-name-slot.rules`, so that they are applied after the devices gain the persistent names.
 
-### cron
+#### cron
 
 A command can be run each time the computer is (re)booted using "@reboot" in a crontab. First, make sure [cron](/index.php/Cron#Installation "Cron") is enabled, and then [edit a crontab](/index.php/Cron#Basic_commands "Cron") for the root user that contains the following line:
 
@@ -125,7 +128,7 @@ A command can be run each time the computer is (re)booted using "@reboot" in a c
 
 ```
 
-### NetworkManager
+#### NetworkManager
 
 In version 1.0.6 NetworkManager [adds Wake-on-LAN controls](https://www.phoronix.com/scan.php?page=news_item&px=NetworkManager-WoL-Control). One way to enable Wake-on-LAN by magic packet is through nmcli.
 

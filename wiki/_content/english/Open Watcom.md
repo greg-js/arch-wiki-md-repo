@@ -138,7 +138,7 @@ add **-bt=netware** for wcc386 or **-bcl=netware** for wcl386 or **-bnetware** f
 
  `export INCLUDE=$WATCOM/h:$WATCOM/novh`  `export LIBPATH=$WATCOM/nlm:$LIBPATH` 
 
-Some packages may need a [| proprietary set of libraries and headers from Novell](http://www.novell.com/coolsolutions/trench/411.html), which have been packaged in AUR: [ow-netware_ndk](https://aur.archlinux.org/packages/ow-netware_ndk/) 
+Some packages may need a [| proprietary set of libraries and headers from Novell](http://www.novell.com/coolsolutions/trench/411.html), which have been packaged in AUR: [ow-netware_ndk](https://aur.archlinux.org/packages/ow-netware_ndk/)
 
 ### QNX
 

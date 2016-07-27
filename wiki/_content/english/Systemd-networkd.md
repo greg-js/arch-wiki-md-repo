@@ -108,7 +108,7 @@ Gateway=10.1.10.1
 
 ```
 
-See the `systemd.network(5)` man page for more network options such as specifying DNS servers and a broadcast address.
+You may specify multiple IP addresses. Add an IPv6 address with another Address= line. See the `systemd.network(5)` man page for more network options such as specifying DNS servers and a broadcast address.
 
 #### Wired adapter using both DHCP and a static IP
 

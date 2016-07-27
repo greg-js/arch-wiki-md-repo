@@ -71,9 +71,3 @@ Si quiere colaborar con la wiki, de forma más específica, a través del equipo
 Las páginas de ArchWiki tienen sus propias convenciones específicas, por lo que si tiene problemas al leer ArchWiki o para entender algunas de sus instrucciones, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)") para aclararse.
 
 Si busca información específica, pruebe a utilizar el recuadro de búsqueda del márgen superior izquierdo de esta página. También puede utilizar su motor de búsqueda favorito de la web, que probablemente le proporcione una sintaxis especial o una interfaz para limitar los resultados de búsqueda a un sitio web en particular (normalmente será suficiente añadir `site:wiki.archlinux.org` a los términos de búsqueda). Véase [Help:Searching](/index.php/Help:Searching "Help:Searching") para conocer otros trucos.
-
-### Suspendidas temporalmente las altas de nuevas cuentas
-
-Los registros de nuevos usuarios para esta wiki han quedado suspendidos temporalmente debido a los repetidos ataques de spam. Con el fin de crear una cuenta, [compruebe](/index.php/Special:ListUsers "Special:ListUsers") si el nombre de usuario deseado está disponible. A continuación, puede unirse a [#archlinux-wiki](/index.php/ArchWiki:IRC "ArchWiki:IRC") y pedir a uno de los administradores presentes que le cree su usuario (comparta los detalles de su correo electrónico a través de mensaje privado), o puede enviar [directamente un correo electrónico a un admnistrador](/index.php/ArchWiki:Administrators "ArchWiki:Administrators").
-
-Con suerte, esto se solucionará en breve. Gracias por su paciencia.

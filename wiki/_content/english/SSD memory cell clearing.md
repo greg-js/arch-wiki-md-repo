@@ -10,6 +10,7 @@ On occasion, users may wish to completely reset an SSD's cells to the same virgi
 ## Contents
 
 *   [1 Step 1 - Make sure the drive security is not frozen](#Step_1_-_Make_sure_the_drive_security_is_not_frozen)
+    *   [1.1 Dell Systems](#Dell_Systems)
 *   [2 Step 2 - Enable security by setting a user password](#Step_2_-_Enable_security_by_setting_a_user_password)
 *   [3 Step 3 - Issue the ATA Secure Erase command](#Step_3_-_Issue_the_ATA_Secure_Erase_command)
 *   [4 Tips](#Tips)
@@ -26,6 +27,16 @@ Issue the following command:
 If the command output shows "frozen" one cannot continue to the next step. Some BIOSes block the ATA Secure Erase command by issuing a "SECURITY FREEZE" command to "freeze" the drive before booting an operating system.
 
 A possible solution is to simply suspend the system. Upon waking up, it is likely that the freeze will be lifted. If unsuccessful, one can try hot-(re)plug the data cable (which might crash the kernel). If hot-(re)plugging the SATA data cable crashes the kernel try letting the operating system fully boot up, then quickly hot-(re)plug both the SATA power and data cables. If hot-(re)plugging of SATA cables still crashes the kernel, make sure that AHCI is enabled in the BIOS (AHCI allows hot-(re)plugging operations without a crash). Using a USB-to-SATA adapter is an option if it supports hotplugging. One can also use [hdparm](https://www.archlinux.org/packages/?name=hdparm) via USB.
+
+### Dell Systems
+
+If the command output shows "frozen", you may be able to work around it by:
+
+1.  Reboot into the Dell BIOS by pressing F2 on startup.
+2.  Set the Internal HDD Password in the BIOS.
+3.  Apply the changes and reboot.
+4.  When prompted for the password by Dell Security Manager, press Escape rather than entering it. The drive will remain locked but not frozen.
+5.  Skip to Step 3 below.
 
 ## Step 2 - Enable security by setting a user password
 

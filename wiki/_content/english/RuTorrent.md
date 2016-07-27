@@ -113,7 +113,7 @@ ln -s /usr/share/webapps/rutorrent/ /usr/share/nginx/html/rutorrent
 
 ## ruTorrent Configuration
 
-See upstream wiki [here](https://github.com/Novik/ruTorrent/wiki/Config).
+See upstream wiki [here](https://github.com/Novik/ruTorrent/wiki/Config). By default the configuration files are symlinked to `/etc/webapps/rutorrent/conf`.
 
 ## See Also
 

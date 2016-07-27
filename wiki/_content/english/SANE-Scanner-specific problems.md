@@ -15,7 +15,6 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
 *   [5 Fujitsu](#Fujitsu)
     *   [5.1 S300M](#S300M)
 *   [6 HP](#HP)
-    *   [6.1 Scanning over the network with HP all-in-one printer/scanner/faxes](#Scanning_over_the_network_with_HP_all-in-one_printer.2Fscanner.2Ffaxes)
 *   [7 Mustek](#Mustek)
     *   [7.1 BearPaw 2400CU](#BearPaw_2400CU)
 *   [8 Samsung](#Samsung)
@@ -177,23 +176,22 @@ For the operation of the scanner S300M a firmware file `/usr/share/sane/epjitsu/
 
 ## HP
 
-For HP hardware you may also need to [install](/index.php/Install "Install") the [hplip](https://www.archlinux.org/packages/?name=hplip) package (see [hplip supported devices](http://hplipopensource.com/hplip-web/supported_devices/index.html)) and/or [hpoj](https://aur.archlinux.org/packages/hpoj/) (see [hpoj supported devices](http://hpoj.sourceforge.net/suplist.shtml)).
+If your HP device [is supported by hplip](http://hplipopensource.com/hplip-web/supported_devices/index.html), install the [install](/index.php/Install "Install") the [hplip](https://www.archlinux.org/packages/?name=hplip) package.
 
-*   Uncomment or add `hpaio` and `hpoj` to a new line in `/etc/sane.d/dll.conf`.
-*   Running `hp-setup` as root may help you add your device.
+The latter comes with 3 tools:
+
+*   `hp-setup` to add and setup the device
 *   `hp-plugin` is the 'HPLIP Plugin Download and Install Utility'.
-*   `hp-scan` is the 'HPLIP Scan Utility'. It requires [python-pillow](https://www.archlinux.org/packages/?name=python-pillow) .
+*   `hp-scan` is the 'HPLIP Scan Utility'. If you need that tool, you will need to install [python-pillow](https://www.archlinux.org/packages/?name=python-pillow).
 
-For Hewlett-Packard OfficeJet, PSC, LaserJet, and PhotoSmart printer multi-function peripherals, run `ptal-init setup` as root and follow instructions. Then start the **ptal-init** [daemon](/index.php/Daemon "Daemon").
+`hp-setup` requires Python Qt4 when run using the GUI (which is the default). To avoid installing the old Qt4 toolchain, you can run hp-setup in CLI using `-i` as argument.
 
-Sometimes it helps to install the HP plugins with `hp-plugin` without running the **ptal-init** daemon. After that just do `hp-scan`.
+If your device is plugged as USB, run `hp-setup` as root and follow the on screen instructions.
 
-### Scanning over the network with HP all-in-one printer/scanner/faxes
-
-Install the drivers [as above](#For_HP_hardware), and configure it via:
+If your devices is connected on the network, run `hp-setup` like this:
 
 ```
-$ hp-setup <printer ip>
+# hp-setup <printer ip>
 
 ```
 

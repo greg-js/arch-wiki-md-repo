@@ -12,7 +12,7 @@
 
 ## Installation
 
-Install the [hwdetect](https://www.archlinux.org/packages/?name=hwdetect) package.
+[Install](/index.php/Install "Install") the [hwdetect](https://www.archlinux.org/packages/?name=hwdetect) package.
 
 ## Usage
 
@@ -50,10 +50,13 @@ To generated a list of modules currently not used, use the following script:
 
 ```
 #!/bin/bash
-for m in $(hwdetect --show-modules | cut -d ':' -f 2 | tr '
-' ' '); do
-    if ! grep -sq $(echo $m|tr - _) <(lsmod); then
-        echo $m;
+modules=($(awk '{print $1}' /proc/modules))
+
+for hw in $(hwdetect --show-modules | awk -F: '{gsub("-","_"); print $2}'); do
+    if ! grep -q "$hw" <(printf '%s
+' "${modules[@]}"); then
+        printf '%s
+' "$hw";
     fi
 done
 
@@ -61,16 +64,17 @@ done
 
 ### Higher level modules
 
-The converse script is also of interest as it lists modules which are higher level in the sense that they are less related to specific pieces of hardware:
+The converse script is also of interest as it lists modules which are higher level, in the sense that they are less related to specific pieces of hardware:
 
 ```
 #!/bin/bash
-lowLevelModules=$(hwdetect --show-modules | cut -d ':' -f 2 | tr '
-' ' ' | tr - _)
-for m in $(lsmod | grep -v '^Module' - | cut -d ' ' -f 1 | tr '
-' ' '); do
-    if ! echo $lowLevelModules | grep -q $m -; then
-        echo $m;
+lowlevel=($(hwdetect --show-modules | awk -F: '{gsub("-","_"); print $2}'))
+
+for mod in $(awk '{print $1}' /proc/modules); do
+    if ! grep -q "$mod" <(printf '%s
+' "${lowlevel[@]}"); then
+        printf '%s
+' "$mod";
     fi
 done
 
@@ -78,4 +82,4 @@ done
 
 ## See also
 
-*   [lspci, and other hardware detection related tools](https://en.wikipedia.org/wiki/Lspci)
+*   [lspci, and other hardware detection related tools](https://en.wikipedia.org/wiki/Lspci "wikipedia:Lspci")

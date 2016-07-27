@@ -178,9 +178,7 @@ Next to the traditional method of configuration, the Synaptics driver also suppo
 
 	[https://wiki.gnome.org/Attic/GPointingDeviceSettings](https://wiki.gnome.org/Attic/GPointingDeviceSettings) || [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings)
 
-*   **kcm-touchpad** — A new touchpad configuration tool for [KDE](/index.php/KDE "KDE"), provides a module under input devices in system settings. Released in February 2014, works under KDE SC 4.12+. It is to be considered a replacement for [synaptiks](https://aur.archlinux.org/packages/synaptiks/) and [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/).
-
-	[https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository](https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository) || [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)
+*   Under KDE Plasma 5, kcm_touchpad, a new configuration tool for [KDE](/index.php/KDE "KDE"), included in plasma-desktop, provides a module under input devices in System Settings. It is to be considered a replacement for [synaptiks](https://aur.archlinux.org/packages/synaptiks/) and the old kcm-touchpad module.[[2]](https://quickgit.kde.org/?p=plasma-desktop.git&a=tree&f=kcms%2Ftouchpad)
 
 ### Xfce4/Cinnamon
 
@@ -791,9 +789,9 @@ These problems seem to be occurring on several models of LG laptops. Symptoms in
 The scrolling issue can be resolved by entering in `xorg.conf`:
 
  `/etc/X11/xorg.conf.d/xorg.conf`  `Option "UpDownScrolling" "0"` 
-**Note:** This will make Synaptics interpret one button push as three. There is a patch written by Oskar Sandberg[[2]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) that removes these clicks.
+**Note:** This will make Synaptics interpret one button push as three. There is a patch written by Oskar Sandberg[[3]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) that removes these clicks.
 
-Apparently, when trying to compile this against the latest version of Synaptics it fails. The solution to this is using the GIT repository for Synaptics[[3]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
+Apparently, when trying to compile this against the latest version of Synaptics it fails. The solution to this is using the GIT repository for Synaptics[[4]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
 
 There is also a package build file in the AUR to automate this: [xf86-input-synaptics-lg](https://aur.archlinux.org/packages/xf86-input-synaptics-lg/).
 

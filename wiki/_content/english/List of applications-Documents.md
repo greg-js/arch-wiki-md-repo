@@ -507,7 +507,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Cool Reader** — E-book viewer with many supported formats such as EPUB (non-DRM), FictionBook, TXT, RTF, HTML, CHM and TCR.
 
-	[http://crengine.sourceforge.net/](http://crengine.sourceforge.net/) || [coolreader](https://aur.archlinux.org/packages/coolreader/)
+	[http://crengine.sourceforge.net/](http://crengine.sourceforge.net/) || [coolreader3-git](https://aur.archlinux.org/packages/coolreader3-git/)
 
 *   **epub** — A console EPUB reader using Python and Curses.
 

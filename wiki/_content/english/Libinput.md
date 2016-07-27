@@ -14,9 +14,9 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
     *   [3.2 Natural scrolling](#Natural_scrolling)
     *   [3.3 Mouse button re-mapping](#Mouse_button_re-mapping)
     *   [3.4 Multitouch events](#Multitouch_events)
-    *   [3.5 Debugging](#Debugging)
-        *   [3.5.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
-*   [4 See also](#See_also)
+*   [4 Debugging](#Debugging)
+    *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -86,6 +86,7 @@ Of course you can elect to use an alternative driver for one device and libinput
 There are different GUI tools:
 
 *   [GNOME](/index.php/GNOME "GNOME"): Control center
+*   KDE Plasma 5: Basic options within Touchpad (kcm_touchpad) in System Settings.
 
 ## Tips and tricks
 
@@ -170,7 +171,7 @@ For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extend
 
 The utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file. An [AUR](/index.php/AUR "AUR") package is not available yet.[[2]](https://github.com/bulletmark/libinput-gestures/issues/6)
 
-### Debugging
+## Debugging
 
 First, see whether the packaged *libinput-debug-events* tool can support you in debugging the problem. Executing `libinput-debug-events --help` shows options it covers.
 
@@ -178,7 +179,7 @@ Some inputs require kernel support. The tool *evemu-describe* from the [evemu](h
 
 Compare the output of [software supported input trackpad driver](http://ix.io/m6b) with [a supported trackpad](https://github.com/whot/evemu-devices/blob/master/touchpads/SynPS2%20Synaptics%20TouchPad-with-scrollbuttons.events). i.e. a couple of ABS_ axes, a couple of ABS_MT axes and no REL_X/Y axis. For a clickpad the `INPUT_PROP_BUTTONPAD` property should also be set, if it is supported.
 
-##### Touchpad not working in GNOME
+### Touchpad not working in GNOME
 
 Ensure the touchpad events are being sent to the GNOME desktop by running the following command:
 

@@ -24,6 +24,7 @@
             *   [4.5.1.1 Execute commands on established connection](#Execute_commands_on_established_connection)
             *   [4.5.1.2 Activate network-online.target](#Activate_network-online.target)
             *   [4.5.1.3 Set default DHCP client](#Set_default_DHCP_client)
+    *   [4.6 Minimal WPAConfigSection](#Minimal_WPAConfigSection)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
     *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
@@ -122,18 +123,19 @@ After enabling a profile, it will be started at next boot. Obviously this can on
 
 #### Automatic switching of profiles
 
-*netctl* provides two special [systemd](/index.php/Systemd "Systemd") services for automatic switching of profiles:
+*netctl* provides special [systemd](/index.php/Systemd "Systemd") services for automatically switching of profile for wired and wireless connections:
 
-*   Package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) for wired interfaces: After [starting and enabling](/index.php/Start "Start") `netctl-ifplugd@*interface*.service` DHCP profiles are started/stopped when the network cable is plugged in and out. To include a static IP profile the option `ExcludeAuto=no` needs to be set in it.
-*   Package [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) for wireless interfaces: After [starting and enabling](/index.php/Start "Start") `netctl-auto@*interface*.service` profiles are started/stopped automatically as you move from the range of one network into the range of another network (roaming).
+*   For wired interfaces, install package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd): After [starting and enabling](/index.php/Start "Start") `netctl-ifplugd@*interface*.service` DHCP profiles are started/stopped when the network cable is plugged in/unplugged.
+    *   The `netctl-ifplugd@*interface*.service` will prefer profiles which use [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP").
+    *   To automatically start a static IP profile the option `ExcludeAuto=no` needs to be set in it.
+    *   To prioritize a profile with a static IP over DHCP profiles, you can set `Priority=2`, which is higher than the default priority given to DHCP profiles of `Priority=1`.
 
-Note that *interface* is not literal, but to be substituted by the name of your device's interface, e.g. `netctl-auto@wlp4s0.service`.
+*   For wireless interfaces, install package [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond): After [starting and enabling](/index.php/Start "Start") `netctl-auto@*interface*.service` profiles are started/stopped automatically as you move from the range of one network into the range of another network (roaming).
+    *   Profiles must use `Security=wpa-configsection` to work with *netctl-auto* rather than `Security=wpa-config`.
+    *   If you want some wireless profile **not** to be started automatically by `netctl-auto@*interface*.service`, you have to explicitly add `ExcludeAuto=yes` to that profile.
+    *   You can use `priority=` in the *WPAConfigSection* (see `/etc/netctl/examples/wireless-wpa-configsection`) to set priority of a profile when multiple wireless access points are available.
 
-The following options can be used:
-
-*   If you want some wireless profile **not** to be started automatically by `netctl-auto@*interface*.service`, you have to explicitly add `ExcludeAuto=yes` to that profile.
-*   The `netctl-ifplugd@*interface*.service` will prefer profiles which use [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP"). To prefer a profile with a static IP, you can set `Priority=2`, which is higher than the default priority given to DHCP profiles of `Priority=1`. Do not forget to also set `ExcludeAuto=no` as mentioned above. See `netctl.profile(5)` for details.
-*   You can use `priority=` in the *WPAConfigSection* (see `/etc/netctl/examples/wireless-wpa-configsection`) to set priority of a profile when multiple wireless access points are available. Note that automatic selection of a WPA profile by *netctl-auto* is not possible with option `Security=wpa-config`, use `Security=wpa-configsection` instead.
+Note that *interface* is not literal, but to be substituted by the name of your device's interface, e.g. `netctl-auto@wlp4s0.service`. See `netctl.profile(5)` for details.
 
 **Warning:**
 
@@ -467,6 +469,23 @@ Alternatively, it may also be specified for a specific network interface by crea
 
 ```
 DHCPClient='dhclient'
+
+```
+
+### Minimal WPAConfigSection
+
+As stated in the [netctl.profile(5)](https://projects.archlinux.org/netctl.git/tree/docs/netctl.profile.5.txt#n281) man page, the `WPAConfigSection` variable is an array of config lines passed to [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"). So, a minimal WPAConfigSection would contain:
+
+```
+Description='A wireless connection using a custom network block configuration'
+Interface=wlan0
+Connection=wireless
+Security=wpa-configsection
+IP=dhcp
+WPAConfigSection=(
+    'ssid="University"'
+    'psk="very secret passphrase"'
+)
 
 ```
 

@@ -245,7 +245,7 @@ EndSection
 
 ## Using Joystick to send keystrokes
 
-A couple joystick to keystroke programs exist like [rejoystick](https://aur.archlinux.org/packages/rejoystick/), [qjoypad](https://aur.archlinux.org/packages/qjoypad/) or [antimicro-qt4](https://aur.archlinux.org/packages/antimicro-qt4/), all work well without the need for X.org configuration.
+A couple joystick to keystroke programs exist like [rejoystick](https://aur.archlinux.org/packages/rejoystick/), [qjoypad](https://aur.archlinux.org/packages/qjoypad/) or [antimicro](https://aur.archlinux.org/packages/antimicro/), all work well without the need for X.org configuration.
 
 ### Xorg configuration example
 

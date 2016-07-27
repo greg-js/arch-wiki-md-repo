@@ -108,7 +108,7 @@ Here is a list of useful information that should be mentioned in your bug report
 
 *   Add **relevant log information** when any is available. This can be obtained in the following places depending on the problem:
     *   [systemd journal](/index.php/Systemd_journal "Systemd journal"). If using [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), `/var/log/messages` contains logs related to kernel and hardware related issues.
-    *   `/var/log/Xorg.0.log` or `/var/log/Xorg.2.log` or any Xorg like log files if video related problems (nvidia, ati, xorg...)
+    *   `~/.local/share/xorg/Xorg.0.log` or `/var/log/Xorg.0.log` or `/var/log/Xorg.2.log` or any Xorg like log files if video related problems (nvidia, ati, xorg...)
     *   Run your program in a **console** and use **verbose** and/or **debug** mode if available (see your program documentation), and copy the output in a file. When running an application in a terminal make sure relevant information will be displayed in **English** so that many people can understand it. This can be done by using `export LC_ALL="C"`. Example with a software named *foobar* from which you would like to have relevant information at runtime and provided that *foobar* has a `--verbose` option:
 
 ```

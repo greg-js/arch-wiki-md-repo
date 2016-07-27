@@ -75,7 +75,7 @@ Riavviate e dovreste avere i vostri driver abilitati e funzionanti
 
 ## Modesetting driver e procedura per l'uso di un monitor esterno
 
-Puoi impostare una risoluzione diversa a un monitor esterno usando [xrandr](/index.php/Xrandr "Xrandr") scaricando [xorg-xserver](https://www.archlinux.org/packages/?name=xorg-xserver) dai repository ufficiali. Se scegli di usare il pacchetto git ([xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/)), ricordati di ricompilarlo dopo ogni aggiornamento di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"). Dopo l'installazione, un file di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") deve essere modificato per usare il driver. Modifica quindi il file `/etc/X11/xorg.conf.d/20-gpudriver.conf` aggiungendo:
+Puoi impostare una risoluzione diversa a un monitor esterno usando [xrandr](/index.php/Xrandr "Xrandr") scaricando [xorg-xserver](https://www.archlinux.org/packages/?name=xorg-xserver) dai repository ufficiali. Se scegli di usare il pacchetto git ( [xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/)), ricordati di ricompilarlo dopo ogni aggiornamento di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"). Dopo l'installazione, un file di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") deve essere modificato per usare il driver. Modifica quindi il file `/etc/X11/xorg.conf.d/20-gpudriver.conf` aggiungendo:
 
 ```
 Section "Device"

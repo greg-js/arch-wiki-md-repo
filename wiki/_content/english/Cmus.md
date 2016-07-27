@@ -168,3 +168,4 @@ Now when you use the `XF86AudioPlay` key on your keyboard, cmus will open up. If
 
 *   [Git Repository](https://github.com/cmus/cmus)
 *   [Website](https://cmus.github.io/)
+*   [User submitted scripts](https://github.com/cmus/cmus/wiki)

@@ -20,7 +20,7 @@ Visit [http://127.0.0.1:2368/ghost](http://127.0.0.1:2368/ghost) for final confi
 
 This instruction will guide you through the installation of Ghost using [nginx](/index.php/Nginx "Nginx") as web server.
 
-[Install](/index.php/Install "Install") [nginx](https://www.archlinux.org/packages/?name=nginx), [npm](https://www.archlinux.org/packages/?name=npm), [sqlite](https://www.archlinux.org/packages/?name=sqlite), [python2](https://www.archlinux.org/packages/?name=python2), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [unzip](https://www.archlinux.org/packages/?name=unzip) and [nodejs](https://www.archlinux.org/packages/?name=nodejs) .
+[Install](/index.php/Install "Install") [nginx](https://www.archlinux.org/packages/?name=nginx), [npm](https://www.archlinux.org/packages/?name=npm), [sqlite](https://www.archlinux.org/packages/?name=sqlite), [python2](https://www.archlinux.org/packages/?name=python2), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [unzip](https://www.archlinux.org/packages/?name=unzip) and [nodejs](https://www.archlinux.org/packages/?name=nodejs).
 
 ### Installation
 

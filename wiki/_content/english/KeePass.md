@@ -19,9 +19,11 @@ There are two major implementations of KeePass, both of which are included in of
 
 	[http://keepass.info](http://keepass.info) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 
-*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application *Keepass Password Safe (v1.x)*. KeePassX only supports the KeePass 2.x (.kdbx) password database format in the 2.0 branch. However, you can create an export in KeePass 1.x database format (.kdb) from KeePass 2.x, which can be imported to KeePassX. One may also import PwManager databases and KWallet XML databases. While KeepassX does not support plugins on its master branch, the KeepassX-HTTP branch supports KeepassHTTP protocol. Thus, it allows integration through browser addons such as ChromeIPass and PassIFox.
+*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application *Keepass Password Safe*. The new version [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) is compatible with 2.x database formats, but can import 1.x databases. One may also import PwManager databases and KWallet XML databases.
 
 	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) [keepassx-http](https://aur.archlinux.org/packages/keepassx-http/)
+
+**Note:** KeepassX does not support plugins on its master branch. An alternative is to use global autotype feature. If plugins are absolutely necessary, [keepassx-http](https://aur.archlinux.org/packages/keepassx-http/) supports KeepassHTTP protocol. Thus, it allows integration through browser addons such as ChromeIPass and PassIFox.
 
 Other lesser known implementations are found in the AUR:
 
@@ -60,6 +62,10 @@ Firefox extension that links the browser to existing or new KeePass database. Ke
 *   [PassIFox](https://addons.mozilla.org/en-US/firefox/addon/passifox/) ([KeepassHTTP plugin](https://github.com/pfn/keepasshttp/))
 
 Extension allowing Firefox to form-fill passwords stored in KeePass.
+
+*   [KeePass Helper](https://addons.mozilla.org/en-us/firefox/addon/keepass-helper/)
+
+Modifies window title to assist autotype feature.
 
 ### Chrome/Chromium
 

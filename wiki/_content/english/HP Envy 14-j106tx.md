@@ -12,7 +12,7 @@
 | Function Keys | **Working** |
 | Suspend to RAM | **Working** |
 
-# Hardware
+## Hardware
 
 *CPU* Intel(R) Core(TM) i7-6700HQ CPU (2.60 GHz Quad-core, 6 MB Cache, hyperthreading, Turbo Boost (3.4 GHz))
 

@@ -98,9 +98,12 @@ editor   0
 
 ### Adding boot entries
 
-**Note:** *bootctl* will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`). Where detected, entries will also automatically be generated for them as well. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the kernel, manual configuration entries must be created. If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
+**Note:**
 
-**Tip:** You can find the `PARTUUID` for your root partition with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only for your root partition, not `*esp*`.
+*   *bootctl* will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`). Where detected, entries will also automatically be generated for them as well. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the kernel, manual configuration entries must be created.
+*   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
+*   Remember to load the intel [microcode](/index.php/Microcode "Microcode") with `initrd` if applicable.
+*   You can find the `PARTUUID` for your root partition with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only for your root partition, not `*esp*`.
 
 *bootctl* searches for boot menu items in `*esp*/loader/entries/*.conf` – each file found must contain exactly one boot entry. The possible options are:
 

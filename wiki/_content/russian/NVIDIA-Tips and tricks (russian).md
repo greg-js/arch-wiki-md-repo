@@ -8,21 +8,22 @@
 *   [2 Использование ТВ-выхода](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.A2.D0.92-.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.B0)
 *   [3 X with a TV (DFP) as the only display](#X_with_a_TV_.28DFP.29_as_the_only_display)
 *   [4 Проверьте источник питания](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D1.8C.D1.82.D0.B5_.D0.B8.D1.81.D1.82.D0.BE.D1.87.D0.BD.D0.B8.D0.BA_.D0.BF.D0.B8.D1.82.D0.B0.D0.BD.D0.B8.D1.8F)
-*   [5 Listening to ACPI events](#Listening_to_ACPI_events)
+*   [5 Прослушивание ACPI-событий](#.D0.9F.D1.80.D0.BE.D1.81.D0.BB.D1.83.D1.88.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_ACPI-.D1.81.D0.BE.D0.B1.D1.8B.D1.82.D0.B8.D0.B9)
 *   [6 Отображение температуры графического процессора в оболочке](#.D0.9E.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D0.BC.D0.BF.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D1.8B_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81.D0.BE.D1.80.D0.B0_.D0.B2_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B5)
     *   [6.1 Method 1 - nvidia-settings](#Method_1_-_nvidia-settings)
     *   [6.2 Method 2 - nvidia-smi](#Method_2_-_nvidia-smi)
     *   [6.3 Method 3 - nvclock](#Method_3_-_nvclock)
 *   [7 Установка скорости вентилятора при входе](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.B2.D0.B5.D0.BD.D1.82.D0.B8.D0.BB.D1.8F.D1.82.D0.BE.D1.80.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5)
 *   [8 Switching between NVIDIA and nouveau drivers](#Switching_between_NVIDIA_and_nouveau_drivers)
-*   [9 Как избежать разрывов/тиринга на картах GeForce серий 500/600/700/900](#.D0.9A.D0.B0.D0.BA_.D0.B8.D0.B7.D0.B1.D0.B5.D0.B6.D0.B0.D1.82.D1.8C_.D1.80.D0.B0.D0.B7.D1.80.D1.8B.D0.B2.D0.BE.D0.B2.2F.D1.82.D0.B8.D1.80.D0.B8.D0.BD.D0.B3.D0.B0_.D0.BD.D0.B0_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D1.85_GeForce_.D1.81.D0.B5.D1.80.D0.B8.D0.B9_500.2F600.2F700.2F900)
-*   [10 Manual configuration](#Manual_configuration)
-    *   [10.1 Отключение логотипа при загрузке](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.BE.D0.B3.D0.BE.D1.82.D0.B8.D0.BF.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5)
-    *   [10.2 Overriding monitor detection](#Overriding_monitor_detection)
-    *   [10.3 Включение контроля яркости](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8F_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D0.B8)
-    *   [10.4 Включение SLI](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_SLI)
-    *   [10.5 Включение разгона](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0)
-        *   [10.5.1 Настройка статического 2D/3D разгона](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_2D.2F3D_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0)
+*   [9 Переключение драйверов NVIDIA и nouveau](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.BE.D0.B2_NVIDIA_.D0.B8_nouveau)
+*   [10 Как избежать разрывов/тиринга на картах GeForce серий 500/600/700/900](#.D0.9A.D0.B0.D0.BA_.D0.B8.D0.B7.D0.B1.D0.B5.D0.B6.D0.B0.D1.82.D1.8C_.D1.80.D0.B0.D0.B7.D1.80.D1.8B.D0.B2.D0.BE.D0.B2.2F.D1.82.D0.B8.D1.80.D0.B8.D0.BD.D0.B3.D0.B0_.D0.BD.D0.B0_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D1.85_GeForce_.D1.81.D0.B5.D1.80.D0.B8.D0.B9_500.2F600.2F700.2F900)
+*   [11 Ручная конфигурация](#.D0.A0.D1.83.D1.87.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [11.1 Отключение логотипа при загрузке](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.BE.D0.B3.D0.BE.D1.82.D0.B8.D0.BF.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5)
+    *   [11.2 Переопределение обнаружения монитора](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BD.D0.B0.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B0)
+    *   [11.3 Включение контроля яркости](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8F_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D0.B8)
+    *   [11.4 Включение SLI](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_SLI)
+    *   [11.5 Включение разгона](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0)
+        *   [11.5.1 Настройка статического 2D/3D разгона](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_2D.2F3D_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0)
 
 ## Исправление разрешения терминала
 
@@ -78,13 +79,13 @@ Option "ConnectedMonitor" "DFP-0"
 
 ## Проверьте источник питания
 
-The NVIDIA X.org driver can also be used to detect the GPU's current source of power. To see the current power source, check the 'GPUPowerSource' read-only parameter (0 - AC, 1 - battery):
+С помощью драйвера NVIDIA можно выяснить текущий источник питания видеокарты. Для этого нужно получить значение параметра 'GPUPowerSource' с помощью утилиты `nvidia-settings` (0 - питание от сети переменного напряжения, 1 - питание от батареи):
 
  `$ nvidia-settings -q GPUPowerSource -t`  `1` 
 
-## Listening to ACPI events
+## Прослушивание ACPI-событий
 
-NVIDIA drivers automatically try to connect to the [acpid](/index.php/Acpid "Acpid") daemon and listen to ACPI events such as battery power, docking, some hotkeys, etc. If connection fails, X.org will output the following warning:
+Драйверы NVIDIA автоматически пытаются подключиться к демону [acpid](/index.php/Acpid "Acpid") и получать уведомления о ACPI событиях (подключение/отключение источника питания, некоторые горячие клавиши и т.д.). Если соединение завершается неудачей, то X сервер выведет следующее предупреждение:
 
  `~/.local/share/xorg/Xorg.0.log` 
 ```
@@ -99,19 +100,20 @@ NVIDIA(0):     Config Options in the README.
 
 ```
 
-While completely harmless, you may get rid of this message by disabling the `ConnectToAcpid` option in your `/etc/X11/xorg.conf.d/20-nvidia.conf`:
+Вы можете запретить вывод этого сообщения, отключив опцию `ConnectToAcpid` в вашем конфигурационном файле:
+
+ `/etc/X11/xorg.conf.d/20-nvidia.conf` 
+```
+ Section "Device"
+   ...
+   Driver "nvidia"
+   Option "ConnectToAcpid" "0"
+   ...
+ EndSection
 
 ```
-Section "Device"
-  ...
-  Driver "nvidia"
-  Option "ConnectToAcpid" "0"
-  ...
-EndSection
 
-```
-
-If you are on laptop, it might be a good idea to install and enable the [acpid](/index.php/Acpid "Acpid") daemon instead.
+Однако если вы пользователь ноутбука, возможно более грамотным решением проблемы станет установка и запуск [acpid](/index.php/Acpid "Acpid") демона.
 
 ## Отображение температуры графического процессора в оболочке
 
@@ -247,7 +249,9 @@ Name=nvidia-fan-speed
 
 ## Switching between NVIDIA and nouveau drivers
 
-If you need to switch between drivers, you may use the following script, run as root (say yes to all confirmations):
+## Переключение драйверов NVIDIA и nouveau
+
+Если вам необходимо переключиться между драйверами, вы можете воспользоваться следующим скриптом (запускайте с правами суперпользователя и пишите yes во всех подтверждениях) :
 
 ```
 #!/bin/bash
@@ -286,11 +290,11 @@ Option  "metamodes" "nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On
 
 Если у вас нет конфигурационного файла Xorg, вы можете создать его для текущей видеокарты исполльзуя `nvidia-xconfig` (смотрите [#Автоматическая настройка](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)) и переместить его из `/etc/X11/xorg.conf` в более удобное место `/etc/X11/xorg.conf.d/20-nvidia.conf`.
 
-## Manual configuration
+## Ручная конфигурация
 
-Several tweaks (which cannot be enabled [automatically](#Automatic_configuration) or with the [GUI](#NVIDIA_Settings)) can be performed by editing your [config](#Configuring) file. The Xorg server will need to be restarted before any changes are applied.
+Некоторые настройки (которые не могут быть настроены [автоматически](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0) или с помощью [GUI](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#NVIDIA_Settings "NVIDIA (Русский)")) можно выполнить с помощью редактирования [конфигурационного](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "NVIDIA (Русский)") файла. Для вступления изменений в силу перезапустите X сервер.
 
-See [NVIDIA Accelerated Linux Graphics Driver README and Installation Guide](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt) for additional details and options.
+Обратитесь к [NVIDIA Accelerated Linux Graphics Driver README and Installation Guide](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt) для дополнительных сведений.
 
 ### Отключение логотипа при загрузке
 
@@ -301,18 +305,18 @@ Option "NoLogo" "1"
 
 ```
 
-### Overriding monitor detection
+### Переопределение обнаружения монитора
 
-The `"ConnectedMonitor"` option under section `Device` allows to override monitor detection when X server starts, which may save a significant amount of time at start up. The available options are: `"CRT"` for analog connections, `"DFP"` for digital monitors and `"TV"` for televisions.
+Опция `"ConnectedMonitor"` в секции `Device` позволяет переопределить обнаружение монитора при старте Х сервера, что может сэкономить значительное время при запуске системы. Возможные значения: `"CRT"` для аналоговых соединений, `"DFP"` для цифровых соединений и `"TV"` для телевизоров.
 
-The following statement forces the NVIDIA driver to bypass startup checks and recognize the monitor as DFP:
+Следующее выражение заставляет драйвер NVIDIA пропустить стартовые проверки и распознать монитор как DFP:
 
 ```
 Option "ConnectedMonitor" "DFP"
 
 ```
 
-**Note:** Use "CRT" for all analog 15 pin VGA connections, even if the display is a flat panel. "DFP" is intended for DVI, HDMI, or DisplayPort digital connections only.
+**Примечание:** Используйте "CRT" для всех 15-контактных VGA подключений, даже если диплей является плоскопанельным. Значение "DFP" предназначено только для DVI, HDMI, или DisplayPort соединений.
 
 ### Включение контроля яркости
 

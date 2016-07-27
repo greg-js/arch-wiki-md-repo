@@ -192,7 +192,7 @@ See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_
 
 *   **[Bmpanel](/index.php/Bmpanel "Bmpanel")** — Lightweight, NETWM compliant panel.
 
-	[http://code.google.com/p/bmpanel2/](http://code.google.com/p/bmpanel2/) || [bmpanel](https://aur.archlinux.org/packages/bmpanel/)
+	[http://code.google.com/p/bmpanel2/](http://code.google.com/p/bmpanel2/) || [bmpanel2](https://aur.archlinux.org/packages/bmpanel2/)
 
 *   **[Cairo-Dock](/index.php/Cairo-Dock "Cairo-Dock")** — Highly customizable dock and launcher application.
 

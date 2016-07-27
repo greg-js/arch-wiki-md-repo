@@ -37,6 +37,8 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [5.2 Defragmentation](#Defragmentation)
     *   [5.3 RAID](#RAID)
         *   [5.3.1 Scrub](#Scrub)
+            *   [5.3.1.1 Start manually](#Start_manually)
+            *   [5.3.1.2 Start with a service or timer](#Start_with_a_service_or_timer)
         *   [5.3.2 Balance](#Balance)
     *   [5.4 Snapshots](#Snapshots)
     *   [5.5 Send/receive](#Send.2Freceive)
@@ -150,7 +152,7 @@ Finally [balance](#Balance) the file system to reclaim the space.
 
 ### Copy-On-Write (CoW)
 
-By default, Btrfs uses [Wikipedia:copy-on-write](https://en.wikipedia.org/wiki/copy-on-write "wikipedia:copy-on-write") for all files all the time. See [the Btrfs Sysadmin Guide section](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Copy_on_Write_.28CoW.29)] for implementation details, as well as advantages and disadvantages.
+By default, Btrfs uses [Wikipedia:copy-on-write](https://en.wikipedia.org/wiki/copy-on-write "wikipedia:copy-on-write") for all files all the time. See [the Btrfs Sysadmin Guide section](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Copy_on_Write_.28CoW.29) for implementation details, as well as advantages and disadvantages.
 
 #### Disabling CoW
 
@@ -285,7 +287,7 @@ System-wide settings also affect commit intervals. They include the files under 
 
 ### Checkpoint interval
 
-Starting with Linux 3.12, users are able to change the checkpoint interval from the default 30 s to any value by appending the `commit` mount option in `/etc/fstab` for the btrfs partition.
+Users are able to change the checkpoint interval from the default 30 s to any value by appending the `commit` mount option in `/etc/fstab` for the btrfs partition.
 
 ```
 LABEL=arch64 / btrfs defaults,noatime,ssd,compress=lzo,commit=120 0 0
@@ -296,7 +298,7 @@ LABEL=arch64 / btrfs defaults,noatime,ssd,compress=lzo,commit=120 0 0
 
 A Btrfs filesystem will automatically free unused blocks from an SSD drive supporting the TRIM command.
 
-More information about enabling and using TRIM can be found in [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives").
+More information about enabling and using TRIM can be found in [Solid State Drives/Tips and tricks#TRIM](/index.php/Solid_State_Drives/Tips_and_tricks#TRIM "Solid State Drives/Tips and tricks").
 
 ## Usage
 
@@ -363,17 +365,29 @@ Btrfs offers native "RAID" for [#Multi-device file systems](#Multi-device_file_s
 
 The [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary) says that Btrfs scrub is "[a]n online filesystem checking tool. Reads all the data and metadata on the filesystem, and uses checksums and the duplicate copies from RAID storage to identify and repair any corrupt data."
 
+**Warning:** A running scrub process will prevent the system from suspending, see [this thread](http://comments.gmane.org/gmane.comp.file-systems.btrfs/33106) for details.
+
+##### Start manually
+
+To start a scrub for the subvolume mounted at root do:
+
 ```
 # btrfs scrub start /
+
+```
+
+To check the status of the scrub do:
+
+```
 # btrfs scrub status /
 
 ```
 
-**Warning:** The running scrub process will prevent the system from suspending, see [this thread](http://comments.gmane.org/gmane.comp.file-systems.btrfs/33106) for details.
+##### Start with a service or timer
 
 The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package brings the `btrfs-scrub@.timer` unit for monthly scrubbing the specified mountpoint. [Enable](/index.php/Enable "Enable") the timer with an escaped path, e.g. `btrfs-scrub@-.timer` for `/` and `btrfs-scrub@home.timer` for `/home`. You can use the *systemd-escape* tool to escape a given string, see `systemd-escape(1)` for examples.
 
-You can also run the scrub manually by [starting](/index.php/Starting "Starting") `btrfs-scrub@.service` (with the same encoded path). The advantage of this over `# btrfs scrub` is that the results of the scrub will be logged in the [systemd journal](/index.php/Systemd_journal "Systemd journal").
+You can also run the scrub by [starting](/index.php/Starting "Starting") `btrfs-scrub@.service` (with the same encoded path). The advantage of this over `# btrfs scrub` is that the results of the scrub will be logged in the [systemd journal](/index.php/Systemd_journal "Systemd journal").
 
 #### Balance
 

@@ -7,9 +7,10 @@
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
     *   [1.1 Не поддерживаемые драйвера](#.D0.9D.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0)
     *   [1.2 Альтернативная установка: собственное ядро](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.B0.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0:_.D1.81.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE)
-        *   [1.2.1 Автоматическая пересборка модуля NVIDIA при обновлении ядра](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B0_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F_NVIDIA_.D0.BF.D1.80.D0.B8_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B8_.D1.8F.D0.B4.D1.80.D0.B0)
-    *   [1.3 Pure Video HD (VDPAU/VAAPI)](#Pure_Video_HD_.28VDPAU.2FVAAPI.29)
-    *   [1.4 Аппаратное ускорение декодирования видео с помощью XvMC](#.D0.90.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B5_.D1.83.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B5.D0.BA.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_XvMC)
+    *   [1.3 Pure Video HD](#Pure_Video_HD)
+    *   [1.4 DRM kernel mode setting](#DRM_kernel_mode_setting)
+        *   [1.4.1 Pacman hook](#Pacman_hook)
+    *   [1.5 Аппаратное ускорение видео посредством XvMC](#.D0.90.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B5_.D1.83.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE_.D0.BF.D0.BE.D1.81.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B2.D0.BE.D0.BC_XvMC)
 *   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
     *   [2.1 Минимальная настройка](#.D0.9C.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
     *   [2.2 Автоматическая настройка](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
@@ -29,15 +30,15 @@
 
 ## Установка
 
-**Важно:** Избегайте установки пакета драйвера с сайта NVIDIA. Установка через [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)"), позволяет обновлять драйвер вместе с остальной системой.
+**Важно:** Избегайте установки пакета драйвера с сайта NVIDIA. Установка через [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") позволяет обновлять драйвер вместе с остальной системой.
 
-Данная инструкция предназначена для предоставляемых в дистрибутиве пакетов ядра [linux](https://www.archlinux.org/packages/?name=linux) или [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). Для пользователей ядра, собранного самостоятельно, следует обратится к [следующему](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.B0.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0:_.D1.81.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE) подразделу.
+Данные инструкции предназначены для предоставляемых в дистрибутиве пакетов ядра [linux](https://www.archlinux.org/packages/?name=linux) или [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). Для пользователей ядра, собранного самостоятельно, следует обратится к [следующему](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.B0.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0:_.D1.81.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE) подразделу.
 
 1\. Если вы не знаете модель графической карты, установленной у вас, для поиска используйте данный запрос:
 
 	 `$ lspci -k | grep -A 2 -E "(VGA|3D)"` 
 
-2\. Есть несколько вариантов определения необходимой для вас версии драйвера:
+2\. Есть несколько вариантов определения необходимой версии драйвера:
 
 *   поиск по кодовому имени (например, NV50, NVC0 и т.д.) на [странице с кодовыми именами nouveau](http://nouveau.freedesktop.org/wiki/CodeNames)
 *   просмотр модели в [списке устаревших графических карт](http://www.nvidia.com/object/IO_32667.html) NVIDIA: если вашей карты нет в списке, используйте драйвер для нового оборудования
@@ -45,24 +46,22 @@
 
 3\. Установите подходящий драйвер для своей карты:
 
-*   Для карт GeForce 400 series и более новых [NVCx и новее], [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) или [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) вместе с [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl). (Для самых новых моделей графических ускорителей может потребоваться [установка](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакета [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/), т.к. стабильная версия драйвера может не поддерживать новые функции, добавленные в эти карты.
-
+*   Для карт GeForce 400 series и более новых [NVCx и новее], [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) или [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) вместе с [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl). (Для самых новых моделей графических ускорителей может потребоваться [установка](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакета [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/), т.к. стабильная версия драйвера может не поддерживать новые функции, добавленные в эти карты).
 *   Для карт GeForce 8000/9000 и 100-300 series [NV5x, NV8x, NV9x и NVAx] года производства 2006-2010, [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) или [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) вместе с [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl).
 *   Для карт GeForce 6000/7000 series [NV4x и NV6x] года производства 2004-2006, [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) или [nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) вместе с [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl).
-
 *   Для более старых моделей, обратитесь к подразделу [#Не поддерживаемые драйвера](#.D0.9D.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0).
 
-4\. Если у вас разрядность ОС 64-бит и вам необходима поддержка OpenGL 32-бит,то необходимо установить соответствующие пакеты *lib32* с репозитория [multilib](/index.php/Multilib "Multilib") (например, [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl), [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) или [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl)).
+4\. Если разрядность вашей ОС 64-бит и вам необходима поддержка OpenGL 32-бит, то необходимо установить соответствующие пакеты *lib32* из репозитория [multilib](/index.php/Multilib "Multilib") (например, [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl), [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) или [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl)).
 
-5\. Перезагрузите систему. Пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) содержит файл с чёрным списком для модуля *nouveau*, поэтому перезагрузка необходима.
+5\. Перезагрузите систему. Пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) содержит файл с чёрным списком, который включает в себя модуль *nouveau*, поэтому перезагрузка необходима.
 
 После того, как драйвер будет установлен, можно перейти к разделу [#Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0).
 
 ### Не поддерживаемые драйвера
 
-Если вы имеете карту GeForce 5 FX series или старее, Nvidia не поддерживает больше драйвера для вашей карты. Это означает, что эти драйвера [не поддерживают текущую версию Xorg](http://nvidia.custhelp.com/app/answers/detail/a_id/3142/). В вашем случае, проще использовать драйвер [nouveau](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)"), который поддерживает старые карты в текущей версии Xorg.
+Если вы имеете карту GeForce 5 FX series или старее, Nvidia не поддерживает больше драйвера для вашей карты. Это означает, что эти драйвера [не поддерживают текущую версию Xorg](http://nvidia.custhelp.com/app/answers/detail/a_id/3142/). В вашем случае, проще использовать драйвер [nouveau](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)"), который поддерживает старые карты с текущей версией Xorg.
 
-Однако, старые драйвера Nvidia пока ещё доступны и могут предоставлять лучшую 3D производительность/стабильность если вы откатите версию Xorg:
+Однако, старые драйвера Nvidia пока ещё доступны и могут предоставлять лучшую 3D производительность/стабильность, если вы откатите версию Xorg:
 
 *   Для карт GeForce 5 FX series [NV30-NV36], установите пакет [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/). Последняя поддерживаемая версия Xorg 1.15.
 *   Для карт GeForce 2/3/4 MX/Ti series [NV11, NV17-NV28], установите пакет [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/). Последняя поддерживаемая версия Xorg 1.12.
@@ -71,80 +70,42 @@
 
 ### Альтернативная установка: собственное ядро
 
-Прежде всего, очень хорошо понимать, как работает система ABS, путём прочтения некоторых статей об этом:
+Если вы используете собственной ядро, то сборка модулей Nvidia может быть автоматизированна при помощи [DKMS](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dynamic Kernel Module Support (Русский)").
 
-*   Основная статья о [ABS](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)")
-*   Статья о [makepkg](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)")
-*   Статья о [Creating packages](/index.php/Creating_packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Creating packages (Русский)")
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) (или специфичную ветку, например, [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). Модуль будет пересобираться после каждого обновления Nvidia или ядра благодаря DKMS [Pacman Hook](/index.php/Pacman#Hooks "Pacman").
 
-Следующее небольшое руководство описывает процесс создания собственного пакета драйвера NVIDIA, используя [ABS](/index.php/ABS "ABS"):
+### Pure Video HD
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [abs](https://www.archlinux.org/packages/?name=abs) и сгенерируйте дерево:
+По крайней мере, видеокартам со второго поколения [PureVideo HD](https://en.wikipedia.org/wiki/ru:Nvidia_PureVideo#.D0.A2.D0.B0.D0.B1.D0.BB.D0.B8.D1.86.D0.B0._.D0.92.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D1.8B_.D1.81_.D0.B1.D0.BB.D0.BE.D0.BA.D0.BE.D0.BC_PureVideo "wikipedia:ru:Nvidia PureVideo") необходимо [аппаратное ускорение](/index.php/Hardware_video_acceleration "Hardware video acceleration"), использующее VDPAU.
 
+### DRM kernel mode setting
+
+**Примечание:** Драйвер Nvidia **не** предоставляет драйвер `fbdev` для высокого разрешения в консоли для скомпилированного модуля ядра `vesafb`. Тем не менее, скомпилированный в ядро модуль `efifb` поддерживает высокое разрешение в консоли на EFI системах.[[1]](http://forums.fedoraforum.org/showthread.php?t=306271)
+
+Пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 добавляет поддержку DRM [Kernel mode setting](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"). Чтобы включить эту особенность, добавьте {{ic|1=nvidia-drm.modeset=1} в [параметры ядра](/index.php/Kernel_parameters_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel parameters (Русский)"), а также: nvidia, nvidia_modeset, nvidia_uvm и nvidia_drm в [initramfs#MODULES](/index.php/Initramfs#MODULES "Initramfs")
+
+**Важно:** Не забывайте запускать `mkinitcpio` каждый раз после обновления драйвера.
+
+#### Pacman hook
+
+Для того, чтобы не забывать обновлять initramfs после обновления nvidia, вы можете использовать pacman hook следующим образом:
+
+ `/etc/pacman.d/hooks/nvidia.hook` 
 ```
-# abs
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+Target=nvidia
 
-```
-
-Как обычный пользователь, сделайте временный каталог для создания нового пакета:
-
-```
-$ mkdir -p ~/abs
-
-```
-
-Сделайте копию каталога пакета `nvidia`:
-
-```
-$ cp -r /var/abs/extra/nvidia/ ~/abs/
-
-```
-
-Зайдите в временный каталог сборки `nvidia`:
-
-```
-$ cd ~/abs/nvidia
-
-```
-
-Теперь необходимо отредактировать файлы `nvidia.install` и `PKGBUILD`, они должны содержать правильные переменные версии ядра.
-
-Когда запущено собственное ядро, узнайте версию и имя ядра:
-
-```
-$ uname -r
-
+[Action]
+Depends=mkinitcpio
+When=PostTransaction
+Exec=/usr/bin/mkinitcpio -p linux
 ```
 
-1.  В nvidia.install, замените переменную `EXTRAMODULES='extramodules-3.4-ARCH'` собственной версией ядра, например `EXTRAMODULES='extramodules-3.4.4'` или `EXTRAMODULES='extramodules-3.4.4-custom'` в зависимости от названия и версии вашего ядра. Сделайте эти изменения для всех найденых совпадений в этом файле.
-2.  В PKGBUILD, измените переменную `_extramodules=extramodules-3.4-ARCH` на совпадающую с вашей версией ядра, как описано выше.
-3.  Если вы установили параллельно несколько ядер (например собственное ядро и ядро -ARCH, предоставляемое по умолчанию), измените название в PKGBUILD `pkgname=nvidia` на уникальное, такое как nvidia-344 или nvidia-custom. Это позволяет ядрам использовать разные модули nvidia, собственный модуль nvidia будет иметь другое название пакета и не будет переписан оригинальным. Вам также понадобится закоментировать строку в `package()`, которая добавляет в чёрный список модуль nouveau в `/usr/lib/modprobe.d/nvidia.conf` (нет необходимости делать это снова).
-
-Теперь выполните:
-
-```
-$ makepkg -ci
-
-```
-
-Ключ `-c` говорит makepkg очистить оставшиеся файлы после сборки пакета, ключ `-i` указывает makepkg автоматически выполнить запуск pacman для установки собранного пакета.
-
-#### Автоматическая пересборка модуля NVIDIA при обновлении ядра
-
-Это возможно благодаря пакету [nvidia-hook](https://aur.archlinux.org/packages/nvidia-hook/) с [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"). Вам необходимо установить пакет с исходным кодом модуля: [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms). В *nvidia-hook*, автоматическая пересборка выполняется хуком `nvidia` в [mkinitcpio](/index.php/Mkinitcpio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mkinitcpio (Русский)") принудительно, при обновлении пакета [linux-headers](https://www.archlinux.org/packages/?name=linux-headers). Вам необходимо добавить `nvidia` в раздел HOOKS файла `/etc/mkinitcpio.conf`.
-
-Хук будет вызывать команду *dkms* для обновления модуля NVIDIA при обновлении версии вашего ядра.
-
-**Примечание:**
-
-*   Если вы используете данную функциональность **необходимо** наблюдать процесс установки пакета [linux](https://www.archlinux.org/packages/?name=linux) (или другого ядра). Хук nvidia будет сообщать вам, если что-то пойдет не так.
-*   Если вы хотите это делать вручную, обратитесь к статье [Dynamic Kernel Module Support (Русский)#Использование](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Dynamic Kernel Module Support (Русский)").
-
-### Pure Video HD (VDPAU/VAAPI)
-
-Видеокартам со второго поколения [PureVideo HD](https://en.wikipedia.org/wiki/ru:Nvidia_PureVideo#.D0.A2.D0.B0.D0.B1.D0.BB.D0.B8.D1.86.D0.B0._.D0.92.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D1.8B_.D1.81_.D0.B1.D0.BB.D0.BE.D0.BA.D0.BE.D0.BC_PureVideo и [VA-API](/index.php/VA-API_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VA-API (Русский)").
-
-### Аппаратное ускорение декодирования видео с помощью XvMC
+### Аппаратное ускорение видео посредством XvMC
 
 Ускоренное декодирование видео MPEG-1 и MPEG-2 с помощью [XvMC](/index.php/XvMC "XvMC") поддерживается на серии видеокарт GeForce4, GeForce 5 FX, GeForce 6 и GeForce 7\. Смотрите [XvMC](/index.php/XvMC "XvMC").
 

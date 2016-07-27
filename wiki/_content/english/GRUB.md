@@ -73,7 +73,7 @@
 
 ## Preface
 
-A *bootloader* is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system. The name *GRUB* officially refers to version *2* of the software, see [[2]](https://www.gnu.org/software/grub/). If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
+A *bootloader* is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system. The name *GRUB* officially refers to version *2* of the software. See [[2]](https://www.gnu.org/software/grub/). If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
 
 GRUB has a few root file system-specific limitations:
 
@@ -91,13 +91,13 @@ On a BIOS/[GPT](/index.php/GPT "GPT") configuration a [BIOS boot partition](http
 
 **Note:**
 
-*   Before attempting this method keep in mind that not all systems will be able to support this partitioning scheme, read more on [GUID partition tables](/index.php/GUID_Partition_Table#BIOS_systems "GUID Partition Table").
+*   Before attempting this method keep in mind that not all systems will be able to support this partitioning scheme. Read more on [GUID partition tables](/index.php/GUID_Partition_Table#BIOS_systems "GUID Partition Table").
 *   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). GRUB for GPT, however, does not use the Post-GPT gap to conform to GPT specifications that require 1_megabyte/2048_sector disk boundaries.
-*   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required as no embedding of boot sectors takes place in that case.
+*   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required, since no embedding of boot sectors takes place in that case. However, UEFI systems still require an [ESP](/index.php/ESP "ESP").
 
-Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no file system and type BIOS boot (`BIOS boot`, respectively partition type number `4` in `fdisk`, `ef02` in `gdisk`, `bios_grub` in `parted`). This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
+Create a mebibyte partition (`+1M` with [fdisk](/index.php/Fdisk "Fdisk") or [gdisk](/index.php/Gdisk "Gdisk")) on the disk with no file system and with partition type BIOS boot. Select `BIOS boot` and partition type number `4` for *fdisk*, `ef02` for *gdisk*, and `bios_grub` for *parted*. This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
 
-The post-GPT gap can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded (though some disk utilities will display a warning about it). In `fdisk` or `gdisk` create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
+The post-GPT gap can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded, though some disk utilities will display a warning about it. In *fdisk* or *gdisk* create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
 
 ### Master Boot Record (MBR) specific instructions
 

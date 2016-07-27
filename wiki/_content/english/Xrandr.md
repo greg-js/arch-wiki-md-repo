@@ -14,8 +14,7 @@
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Adding undetected resolutions](#Adding_undetected_resolutions)
         *   [4.1.1 EDID checksum is invalid](#EDID_checksum_is_invalid)
-        *   [4.1.2 Low maximum resolution (2048x1152) on WQHD monitor](#Low_maximum_resolution_.282048x1152.29_on_WQHD_monitor)
-        *   [4.1.3 Screen resolution reverts back after a blink](#Screen_resolution_reverts_back_after_a_blink)
+        *   [4.1.2 Screen resolution reverts back after a blink](#Screen_resolution_reverts_back_after_a_blink)
     *   [4.2 Permanently adding undetected resolutions](#Permanently_adding_undetected_resolutions)
     *   [4.3 Resolution lower than expected](#Resolution_lower_than_expected)
     *   [4.4 Full RGB in HDMI](#Full_RGB_in_HDMI)
@@ -339,11 +338,7 @@ Also, change `VGA1` to correct output name.
 
 If the previous method results in an `*ERROR* EDID checksum is invalid` error during boot, see [KMS#Forcing modes and EDID](/index.php/KMS#Forcing_modes_and_EDID "KMS") and [[1]](http://askubuntu.com/questions/201081/how-can-i-make-linux-behave-better-when-edid-is-unavailable).
 
-Or `xrandr --addmode` might give you the error `X Error of failed request: BadMatch`. This could also indicate an invalid EDID checksum. To verify that this is the case, run X in verbose mode (e.g. `startx -- -logverbose 6`) and check your Xorg log for messages about a bad EDID. NVIDIA users should read [NVIDIA/Troubleshooting#Override EDID](/index.php/NVIDIA/Troubleshooting#Override_EDID "NVIDIA/Troubleshooting").
-
-#### Low maximum resolution (2048x1152) on WQHD monitor
-
-If you are trying to configure WQHD monitor such as DELL U2515H using the above method and `xrandr --addmode` gives you the error `X Error of failed request: BadMatch` then it might be a problem with your GPU driver. Proprietary NVIDIA driver may clip the pixel clock maximum frequency of HDMI output to the value of 225 MHz or lower. To set monitor to maximum resolution you have to install nouveau drivers, see [Nouveau#Installation](/index.php/Nouveau#Installation "Nouveau"). You can additionally force nouveau to use specific pixel clock frequency by setting `nouveau.hdmimhz=297 or 330`, see [Kernel_parameters](/index.php/Kernel_parameters "Kernel parameters").
+Or `xrandr --addmode` might give you the error `X Error of failed request: BadMatch`. NVIDIA users should read [NVIDIA/Troubleshooting#xrandr BadMatch](/index.php/NVIDIA/Troubleshooting#xrandr_BadMatch "NVIDIA/Troubleshooting"). `BadMatch` could indicate an invalid EDID checksum. To verify that this is the case, run X in verbose mode (e.g. `startx -- -logverbose 6`) and check your Xorg log for messages about a bad EDID.
 
 #### Screen resolution reverts back after a blink
 

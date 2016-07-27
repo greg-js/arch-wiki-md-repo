@@ -426,7 +426,7 @@ tail -50 /usr/share/X11/xkb/rules/evdev
 
 ```
 
-To set the caps lock key as `mod4` add the following to [Template:~/.xinitrc](/index.php?title=Template:~/.xinitrc&action=edit&redlink=1 "Template:~/.xinitrc (page does not exist)"):
+To set the caps lock key as `mod4` add the following to `~/.xinitrc`:
 
 ```
 setxkbmap -option caps:hyper

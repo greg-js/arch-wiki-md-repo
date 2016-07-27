@@ -21,7 +21,7 @@
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 vsftpd: no connection (Error 500) with recent kernels (3.5 and newer) and .service](#vsftpd:_no_connection_.28Error_500.29_with_recent_kernels_.283.5_and_newer.29_and_.service)
     *   [4.2 vsftpd: refusing to run with writable root inside chroot()](#vsftpd:_refusing_to_run_with_writable_root_inside_chroot.28.29)
-    *   [4.3 FileZilla Client: GnuTLS error -8 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_when_connecting_via_SSL)
+    *   [4.3 FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL)
     *   [4.4 vsftpd.service fails to run on boot](#vsftpd.service_fails_to_run_on_boot)
     *   [4.5 ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6](#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6)
 *   [5 See also](#See_also)
@@ -433,9 +433,9 @@ or alternative:
 
 Install [vsftpd-ext](https://aur.archlinux.org/packages/vsftpd-ext/) and set in the conf file allow_writable_root=YES
 
-### FileZilla Client: GnuTLS error -8 when connecting via SSL
+### FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL
 
-vsftpd tries to display plain-text error messages in the SSL session. In order to debug this, temporarily disable encryption and you will see the correct error message.[[1]](http://ramblings.linkerror.com/?p=45)
+vsftpd tries to display plain-text error messages in the SSL session. In order to debug this, temporarily disable encryption and you will see the correct error message.[[1]](http://ramblings.linkerror.com/?p=45) [[2]](https://serverfault.com/questions/772494/vsftpd-list-causes-gnutls-error-15)
 
 ### vsftpd.service fails to run on boot
 

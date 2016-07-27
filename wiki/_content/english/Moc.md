@@ -23,6 +23,8 @@
 
 The package includes a sample configuration file at `/usr/share/doc/moc/config.example`. To configure *moc*, copy this file to `~/.moc/config` and edit it.
 
+Themes are stored in `/usr/share/moc/themes` which are easy to understand and make, see example_theme for instructions.
+
 For instructions about customizing the keybindings, read `/usr/share/doc/moc/keymap.example`.
 
 If you want to use Moc with [OSS](/index.php/OSS "OSS") v4.1, see [OSS#MOC](/index.php/OSS#MOC "OSS").

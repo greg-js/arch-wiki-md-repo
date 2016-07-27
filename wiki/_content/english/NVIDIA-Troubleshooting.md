@@ -19,10 +19,11 @@
 *   [16 X fails with "no screens found" with Intel iGPU](#X_fails_with_.22no_screens_found.22_with_Intel_iGPU)
 *   [17 Xorg fails during boot, but otherwise starts fine](#Xorg_fails_during_boot.2C_but_otherwise_starts_fine)
 *   [18 Flash video players crashes](#Flash_video_players_crashes)
-*   [19 Override EDID](#Override_EDID)
-*   [20 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
-*   [21 Avoid screen tearing](#Avoid_screen_tearing)
-    *   [21.1 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
+*   [19 xrandr BadMatch](#xrandr_BadMatch)
+*   [20 Override EDID](#Override_EDID)
+*   [21 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
+*   [22 Avoid screen tearing](#Avoid_screen_tearing)
+    *   [22.1 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
 
 ## Wayland (gdm) crashes after nvidia-libgl installation
 
@@ -331,6 +332,12 @@ If you are getting frequent crashes of Flash video players, try to switch off Ha
  `/etc/adobe/mms.cfg`  `EnableLinuxHWVideoDecode=0` 
 
 (This problem appeared after installing the proprietary nvidia driver, and was fixed by changing this setting.)
+
+## xrandr BadMatch
+
+If you are trying to configure a WQHD monitor such as DELL U2515H using [xrandr](/index.php/Xrandr "Xrandr") and `xrandr --addmode` gives you the error `X Error of failed request: BadMatch`, it might be because the proprietary NVIDIA driver clips the pixel clock maximum frequency of HDMI output to 225 MHz or lower. To set the monitor to maximum resolution you have to install [nouveau](/index.php/Nouveau "Nouveau") drivers. You can force nouveau to use a specific pixel clock frequency by setting `nouveau.hdmimhz=297` (or `330`) in your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+Alternatively, it may be that your monitor's EDID is incorrect. See [#Override EDID](#Override_EDID).
 
 ## Override EDID
 

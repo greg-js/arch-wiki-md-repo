@@ -116,7 +116,7 @@ Xorg 可以通过 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf` 和位于 `/etc/X11/
 
 ## 输入设备
 
-[udev](/index.php/Udev "Udev") 会自动检测硬件，[evdev](https://en.wikipedia.org/wiki/evdev "wikipedia:evdev") 可以用作绝大部分设备的即插即用驱动。Udev 由[systemd](https://www.archlinux.org/packages/?name=systemd) 和 [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev)需要通过 [xorg-server](https://www.archlinux.org/packages/?name=xorg-server)提供，所以不需要显式安装。
+[udev](/index.php/Udev "Udev") 会自动检测硬件，[evdev](https://en.wikipedia.org/wiki/evdev "wikipedia:evdev") 可以用作绝大部分设备的即插即用驱动。Udev 由 [systemd](https://www.archlinux.org/packages/?name=systemd) 和 [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev)需要通过 [xorg-server](https://www.archlinux.org/packages/?name=xorg-server)提供，所以不需要显式安装。
 
 你应该有`10-evdev.conf` 在 `/usr/share/X11/xorg.conf.d/` 目录,它管理键盘，鼠标，触摸板和触摸屏。
 

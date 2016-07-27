@@ -1016,5 +1016,6 @@ You can use the following website to get your device's coordinates along with a 
 42.351812, -71.141449 "jethrosun7" # Boston, MA, USA
 55.992348, 92.796414 "Prototik" # Krasnoyarsk, Russia
 41.946728, 12.825640 "Daniele" # Tivoli, Italy
+50.697456, 7.251146 "autarchprinceps" # Heisterbacherroth, NRW, Germany
 
 ```

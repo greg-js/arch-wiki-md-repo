@@ -82,7 +82,7 @@ Note the offset: it's 2048 sectors of 512 bytes, thus 1 MiB. This way the encryp
  `/etc/fstab` 
 ```
 # <filesystem>         <dir>  <type>  <options>  <dump>  <pass>
-/dev/mapper/cryptswap  none   swap    defaults   0       0
+/dev/mapper/swap  none   swap    defaults   0       0
 ```
 
 Using this setup, the cryptswap will only try to use the partition with the corresponding LABEL, regardless of what its device name may be. Should you decide to use the partition for something else, by formatting it the cryptswap LABEL would also be gone, so cryptswap won't overwrite it on your next boot.
